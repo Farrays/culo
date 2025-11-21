@@ -1,0 +1,31 @@
+# Robots.txt - Farray's International Dance Center
+# Updated: 2025-11-08
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin/test paths if they exist
+Disallow: /admin/
+Disallow: /test/
+Disallow: /*.json$
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://www.farrayscenter.com/sitemap.xml
+
+# Crawl delay for polite bots
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1

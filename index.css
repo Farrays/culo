@@ -1,0 +1,79 @@
+/* Farray's International Dance Center - Global Styles */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Reset básico (complementa Tailwind's preflight) */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom scrollbar aesthetics */
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #c82260;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e63d7e;
+  }
+
+  .holographic-text {
+    color: white;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #c82260, 0 0 30px #c82260, 0 0 40px #c82260, 0 0 55px #c82260, 0 0 75px #c82260;
+  }
+
+  /* Accessibility: Focus-visible styles for keyboard navigation */
+  *:focus {
+    outline: none;
+  }
+
+  *:focus-visible {
+    outline: 2px solid #c82260;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  button:focus-visible,
+  a:focus-visible,
+  [role="button"]:focus-visible {
+    outline: 2px solid #c82260;
+    outline-offset: 2px;
+  }
+
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid #c82260;
+    outline-offset: 1px;
+    border-color: #c82260;
+  }
+
+  /* Accessibility: Reduce motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

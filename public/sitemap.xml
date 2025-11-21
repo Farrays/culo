@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Home Page -->
+  <url>
+    <loc>https://www.farrayscenter.com/es</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/ca</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/en</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/fr</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es"/>
+  </url>
+
+  <!-- Dance Classes Page -->
+  <url>
+    <loc>https://www.farrayscenter.com/es/clases</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/ca/clases</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/en/clases</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/fr/clases</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases"/>
+  </url>
+
+  <!-- Danza Barcelona Page -->
+  <url>
+    <loc>https://www.farrayscenter.com/es/clases/danza-barcelona</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/danza-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/danza-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/danza-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/danza-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/danza-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/ca/clases/danza-barcelona</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/danza-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/danza-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/danza-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/danza-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/danza-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/en/clases/danza-barcelona</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/danza-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/danza-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/danza-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/danza-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/danza-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/fr/clases/danza-barcelona</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/danza-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/danza-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/danza-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/danza-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/danza-barcelona"/>
+  </url>
+
+  <!-- Salsa y Bachata Barcelona Page -->
+  <url>
+    <loc>https://www.farrayscenter.com/es/clases/salsa-bachata-barcelona</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/salsa-bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/salsa-bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/salsa-bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/salsa-bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/salsa-bachata-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/ca/clases/salsa-bachata-barcelona</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/salsa-bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/salsa-bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/salsa-bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/salsa-bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/salsa-bachata-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/en/clases/salsa-bachata-barcelona</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/salsa-bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/salsa-bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/salsa-bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/salsa-bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/salsa-bachata-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/fr/clases/salsa-bachata-barcelona</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/salsa-bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/salsa-bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/salsa-bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/salsa-bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/salsa-bachata-barcelona"/>
+  </url>
+
+  <!-- Danzas Urbanas Barcelona Page -->
+  <url>
+    <loc>https://www.farrayscenter.com/es/clases/danzas-urbanas-barcelona</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/danzas-urbanas-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/danzas-urbanas-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/danzas-urbanas-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/danzas-urbanas-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/danzas-urbanas-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/ca/clases/danzas-urbanas-barcelona</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/danzas-urbanas-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/danzas-urbanas-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/danzas-urbanas-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/danzas-urbanas-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/danzas-urbanas-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/en/clases/danzas-urbanas-barcelona</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/danzas-urbanas-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/danzas-urbanas-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/danzas-urbanas-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/danzas-urbanas-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/danzas-urbanas-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/fr/clases/danzas-urbanas-barcelona</loc>
+    <lastmod>2025-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/danzas-urbanas-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/danzas-urbanas-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/danzas-urbanas-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/danzas-urbanas-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/danzas-urbanas-barcelona"/>
+  </url>
+
+  <!-- Dancehall Page -->
+  <url>
+    <loc>https://www.farrayscenter.com/es/clases/dancehall-barcelona</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/dancehall-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/dancehall-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/dancehall-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/dancehall-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/dancehall-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/ca/clases/dancehall-barcelona</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/dancehall-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/dancehall-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/dancehall-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/dancehall-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/dancehall-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/en/clases/dancehall-barcelona</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/dancehall-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/dancehall-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/dancehall-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/dancehall-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/dancehall-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/fr/clases/dancehall-barcelona</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/dancehall-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/dancehall-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/dancehall-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/dancehall-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/dancehall-barcelona"/>
+  </url>
+</urlset>
