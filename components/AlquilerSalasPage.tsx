@@ -114,6 +114,8 @@ const RoomGallery: React.FC<{ images: string[]; roomName: string; t: (key: strin
       <img
         src={images[currentIndex]}
         alt={`${roomName} - Foto ${currentIndex + 1}`}
+        width="1200"
+        height="800"
         className="w-full h-full object-cover select-none"
         draggable={false}
       />

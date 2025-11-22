@@ -30,7 +30,6 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
           }
         }}
         className="flex items-center space-x-2 bg-black/30 hover:bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full transition-all duration-300 border border-white/10 hover:border-primary-accent/50"
-        aria-label="Select language"
         aria-expanded={isLangDropdownOpen}
       >
         <GlobeIcon className="w-4 h-4 text-primary-accent" />
@@ -52,7 +51,6 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                   ? 'bg-primary-accent text-white'
                   : 'text-neutral/90 hover:bg-white/10 hover:text-white'
               }`}
-              aria-label={`Switch to ${languageNames[lang]}`}
             >
               <span>{languageNames[lang]}</span>
               <span className="text-xs opacity-70">{lang.toUpperCase()}</span>

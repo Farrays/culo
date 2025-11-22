@@ -3,10 +3,10 @@
     "collect": {
       "staticDistDir": "./dist",
       "url": [
-        "http://localhost/es/index.html",
-        "http://localhost/es/clases/dancehall-barcelona/index.html",
-        "http://localhost/es/clases/baile-barcelona/index.html",
-        "http://localhost/en/index.html"
+        "http://localhost/es/",
+        "http://localhost/es/clases/dancehall-barcelona/",
+        "http://localhost/es/clases/baile-barcelona/",
+        "http://localhost/en/"
       ],
       "numberOfRuns": 3
     },

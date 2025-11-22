@@ -303,6 +303,8 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
                       <img
                         src={activity.imageUrl}
                         alt={`${t(`prepFisica_activity_${activity.key}_title`)} - Clases en Barcelona`}
+                        width="800"
+                        height="600"
                         className="w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110 opacity-60 group-hover:opacity-80"
                         loading={index < 3 ? 'eager' : 'lazy'}
                         decoding="async"

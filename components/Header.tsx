@@ -184,7 +184,6 @@ const Header: React.FC = () => {
               to={`/${locale}#enroll`}
               onClick={handleEnrollClick}
               className="bg-primary-accent text-white font-bold text-lg py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow whitespace-nowrap"
-              aria-label={t('enrollNow') || 'Enroll now in dance classes'}
             >
               {t('enrollNow')}
             </Link>

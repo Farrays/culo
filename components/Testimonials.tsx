@@ -197,6 +197,8 @@ const Testimonials: React.FC = () => {
                   <img
                     src={testimonial.image}
                     alt={`Foto de perfil de ${testimonial.name}`}
+                    width="56"
+                    height="56"
                     loading="lazy"
                     className="w-14 h-14 rounded-full border-2 border-primary-accent object-cover"
                   />

@@ -308,6 +308,8 @@ const SalsaBachataPage: React.FC = () => {
                       <img
                         src={salsaBachataCategory.imageUrl}
                         alt={`${t(`danceClassesHub_style_${style.key}`)} - Clases en Barcelona`}
+                        width="800"
+                        height="600"
                         className="w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110"
                         loading={index < 3 ? 'eager' : 'lazy'}
                         decoding="async"
