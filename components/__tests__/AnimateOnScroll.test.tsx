@@ -5,7 +5,7 @@ import AnimateOnScroll from '../AnimateOnScroll';
 describe('AnimateOnScroll', () => {
   it('should render children content', () => {
     render(
-      <AnimateOnScroll animation="fade-in">
+      <AnimateOnScroll>
         <div data-testid="test-child">Test Content</div>
       </AnimateOnScroll>
     );
@@ -16,7 +16,7 @@ describe('AnimateOnScroll', () => {
 
   it('should apply animation class', () => {
     const { container } = render(
-      <AnimateOnScroll animation="fade-in">
+      <AnimateOnScroll>
         <div>Content</div>
       </AnimateOnScroll>
     );
@@ -27,7 +27,7 @@ describe('AnimateOnScroll', () => {
 
   it('should support custom delay', () => {
     render(
-      <AnimateOnScroll animation="fade-in" delay={500}>
+      <AnimateOnScroll delay={500}>
         <div>Content</div>
       </AnimateOnScroll>
     );

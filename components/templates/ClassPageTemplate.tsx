@@ -219,11 +219,20 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
 
         {/* Testimonials Section */}
         {showTestimonials && testimonials && testimonials.length > 0 && (
-          <TestimonialsSection testimonials={testimonials} />
+          <TestimonialsSection
+            titleKey={`${categoryKey}_testimonials_title`}
+            testimonials={testimonials}
+          />
         )}
 
         {/* FAQs Section */}
-        {showFAQs && faqs.length > 0 && <FAQSection faqs={faqs} />}
+        {showFAQs && faqs.length > 0 && (
+          <FAQSection
+            title={t(`${categoryKey}_faq_title`)}
+            faqs={faqs}
+            pageUrl={`/clases/${categoryPath}`}
+          />
+        )}
       </div>
     </>
   );

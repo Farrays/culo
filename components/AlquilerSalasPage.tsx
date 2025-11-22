@@ -82,11 +82,11 @@ const RoomGallery: React.FC<{ images: string[]; roomName: string; t: (key: strin
 
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(0); // Reset
-    setTouchStart(e.targetTouches[0].clientX);
+    setTouchStart(e.targetTouches[0]?.clientX ?? 0);
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
+    setTouchEnd(e.targetTouches[0]?.clientX ?? 0);
   };
 
   const onTouchEnd = () => {

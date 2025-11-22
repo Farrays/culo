@@ -507,7 +507,11 @@ const EstudioGrabacionPage: React.FC = () => {
             </AnimateOnScroll>
 
             <div className="max-w-4xl mx-auto">
-              <FAQSection faqs={studioFaqs} />
+              <FAQSection
+                title={t('estudioGrabacion_faq_title')}
+                faqs={studioFaqs}
+                pageUrl="/servicios/estudio-grabacion"
+              />
             </div>
           </div>
         </section>

@@ -175,19 +175,19 @@ const ContactPage: React.FC = () => {
     const errors: Record<string, string> = {};
 
     if (!validateName(sanitizedData.name)) {
-      errors.name = 'Name must be between 2 and 100 characters';
+      errors['name'] = 'Name must be between 2 and 100 characters';
     }
 
     if (!validateEmail(sanitizedData.email)) {
-      errors.email = 'Please enter a valid email address';
+      errors['email'] = 'Please enter a valid email address';
     }
 
     if (sanitizedData.phone && !validatePhone(sanitizedData.phone)) {
-      errors.phone = 'Please enter a valid phone number';
+      errors['phone'] = 'Please enter a valid phone number';
     }
 
     if (!validateMessage(sanitizedData.message)) {
-      errors.message = 'Message must be between 10 and 2000 characters';
+      errors['message'] = 'Message must be between 10 and 2000 characters';
     }
 
     // If there are validation errors, stop and show them
@@ -392,11 +392,11 @@ const ContactPage: React.FC = () => {
                           required
                           minLength={2}
                           maxLength={100}
-                          className={`w-full px-4 py-3 bg-black/70 border rounded-lg text-neutral focus:border-primary-accent focus:outline-none focus:ring-2 focus:ring-primary-accent/50 transition-all ${validationErrors.name ? 'border-red-500' : 'border-primary-dark/50'}`}
+                          className={`w-full px-4 py-3 bg-black/70 border rounded-lg text-neutral focus:border-primary-accent focus:outline-none focus:ring-2 focus:ring-primary-accent/50 transition-all ${validationErrors['name'] ? 'border-red-500' : 'border-primary-dark/50'}`}
                           placeholder={t('contact_form_name_placeholder')}
                         />
-                        {validationErrors.name && (
-                          <p className="mt-1 text-sm text-red-400">{validationErrors.name}</p>
+                        {validationErrors['name'] && (
+                          <p className="mt-1 text-sm text-red-400">{validationErrors['name']}</p>
                         )}
                       </div>
 
@@ -411,11 +411,11 @@ const ContactPage: React.FC = () => {
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className={`w-full px-4 py-3 bg-black/70 border rounded-lg text-neutral focus:border-primary-accent focus:outline-none focus:ring-2 focus:ring-primary-accent/50 transition-all ${validationErrors.email ? 'border-red-500' : 'border-primary-dark/50'}`}
+                          className={`w-full px-4 py-3 bg-black/70 border rounded-lg text-neutral focus:border-primary-accent focus:outline-none focus:ring-2 focus:ring-primary-accent/50 transition-all ${validationErrors['email'] ? 'border-red-500' : 'border-primary-dark/50'}`}
                           placeholder={t('contact_form_email_placeholder')}
                         />
-                        {validationErrors.email && (
-                          <p className="mt-1 text-sm text-red-400">{validationErrors.email}</p>
+                        {validationErrors['email'] && (
+                          <p className="mt-1 text-sm text-red-400">{validationErrors['email']}</p>
                         )}
                       </div>
 
@@ -429,11 +429,11 @@ const ContactPage: React.FC = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          className={`w-full px-4 py-3 bg-black/70 border rounded-lg text-neutral focus:border-primary-accent focus:outline-none focus:ring-2 focus:ring-primary-accent/50 transition-all ${validationErrors.phone ? 'border-red-500' : 'border-primary-dark/50'}`}
+                          className={`w-full px-4 py-3 bg-black/70 border rounded-lg text-neutral focus:border-primary-accent focus:outline-none focus:ring-2 focus:ring-primary-accent/50 transition-all ${validationErrors['phone'] ? 'border-red-500' : 'border-primary-dark/50'}`}
                           placeholder={t('contact_form_phone_placeholder')}
                         />
-                        {validationErrors.phone && (
-                          <p className="mt-1 text-sm text-red-400">{validationErrors.phone}</p>
+                        {validationErrors['phone'] && (
+                          <p className="mt-1 text-sm text-red-400">{validationErrors['phone']}</p>
                         )}
                       </div>
 
@@ -471,11 +471,11 @@ const ContactPage: React.FC = () => {
                           minLength={10}
                           maxLength={2000}
                           rows={6}
-                          className={`w-full px-4 py-3 bg-black/70 border rounded-lg text-neutral focus:border-primary-accent focus:outline-none focus:ring-2 focus:ring-primary-accent/50 transition-all resize-none ${validationErrors.message ? 'border-red-500' : 'border-primary-dark/50'}`}
+                          className={`w-full px-4 py-3 bg-black/70 border rounded-lg text-neutral focus:border-primary-accent focus:outline-none focus:ring-2 focus:ring-primary-accent/50 transition-all resize-none ${validationErrors['message'] ? 'border-red-500' : 'border-primary-dark/50'}`}
                           placeholder={t('contact_form_message_placeholder')}
                         />
-                        {validationErrors.message && (
-                          <p className="mt-1 text-sm text-red-400">{validationErrors.message}</p>
+                        {validationErrors['message'] && (
+                          <p className="mt-1 text-sm text-red-400">{validationErrors['message']}</p>
                         )}
                       </div>
 

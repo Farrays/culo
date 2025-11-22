@@ -44,50 +44,50 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
 
   // Focus trap: Auto-focus first element and handle Escape key
   useEffect(() => {
-    if (isMenuOpen) {
-      // Focus first link when menu opens
-      firstFocusableRef.current?.focus();
+    if (!isMenuOpen) return;
 
-      // Handle Escape key to close menu
-      // eslint-disable-next-line no-undef
-      const handleEscape = (e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-          setIsMenuOpen(false);
+    // Focus first link when menu opens
+    firstFocusableRef.current?.focus();
+
+    // Handle Escape key to close menu
+    // eslint-disable-next-line no-undef
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMenuOpen(false);
+      }
+    };
+
+    // Trap focus within menu
+    // eslint-disable-next-line no-undef
+    const handleTabKey = (e: KeyboardEvent) => {
+      if (e.key === 'Tab' && menuRef.current) {
+        const focusableElements = menuRef.current.querySelectorAll(
+          'a[href], button:not([disabled])'
+        );
+        const firstElement = focusableElements[0] as HTMLElement;
+        const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+
+        if (e.shiftKey && document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
         }
-      };
+      }
+    };
 
-      // Trap focus within menu
-      // eslint-disable-next-line no-undef
-      const handleTabKey = (e: KeyboardEvent) => {
-        if (e.key === 'Tab' && menuRef.current) {
-          const focusableElements = menuRef.current.querySelectorAll(
-            'a[href], button:not([disabled])'
-          );
-          const firstElement = focusableElements[0] as HTMLElement;
-          const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+    document.addEventListener('keydown', handleEscape);
+    document.addEventListener('keydown', handleTabKey);
 
-          if (e.shiftKey && document.activeElement === firstElement) {
-            e.preventDefault();
-            lastElement.focus();
-          } else if (!e.shiftKey && document.activeElement === lastElement) {
-            e.preventDefault();
-            firstElement.focus();
-          }
-        }
-      };
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = 'hidden';
 
-      document.addEventListener('keydown', handleEscape);
-      document.addEventListener('keydown', handleTabKey);
-
-      // Prevent body scroll when menu is open
-      document.body.style.overflow = 'hidden';
-
-      return () => {
-        document.removeEventListener('keydown', handleEscape);
-        document.removeEventListener('keydown', handleTabKey);
-        document.body.style.overflow = '';
-      };
-    }
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.removeEventListener('keydown', handleTabKey);
+      document.body.style.overflow = '';
+    };
   }, [isMenuOpen, setIsMenuOpen]);
 
   return (
