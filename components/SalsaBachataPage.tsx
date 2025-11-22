@@ -11,6 +11,7 @@ import AnimatedCounter from './AnimatedCounter';
 import Icon, { type IconName } from './Icon';
 import type { ValuePillar } from '../types';
 import TestimonialsSection from './TestimonialsSection';
+import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 
 // Type extension for ValuePillar with icon names instead of components
 type ValuePillarWithIcon = Omit<ValuePillar, 'Icon'> & { iconName: IconName };
@@ -137,45 +138,43 @@ const SalsaBachataPage: React.FC = () => {
     })),
   };
 
-  // Schema Markup - Course
-  const courseSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Course',
-    name: 'Clases de Salsa y Bachata en Barcelona',
-    description: t('salsaBachataBarcelona_description'),
-    provider: {
-      '@type': 'Organization',
-      name: "Farray's International Dance Center",
-      sameAs: 'https://www.farrayscenter.com',
-    },
-    hasCourseInstance: salsaBachataCategory.allStyles.map(style => ({
-      '@type': 'CourseInstance',
-      name: t(`danceClassesHub_style_${style.key}`),
-      courseMode: 'onsite',
-      location: {
-        '@type': 'Place',
-        name: "Farray's International Dance Center",
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: "Carrer d'Entença, 100, Local 1",
-          addressLocality: 'Barcelona',
-          addressRegion: 'Catalonia',
-          postalCode: '08015',
-          addressCountry: 'ES',
-        },
-      },
-    })),
-  };
-
   return (
     <>
       {/* SEO metadata (title, description, og, hreflang) is handled by the global SEO.tsx component */}
       {/* Page-specific Schema Markup */}
+      <CourseSchema
+        name={t('salsaBachataBarcelona_h1')}
+        description={t('salsaBachataBarcelona_description')}
+        provider={{
+          name: "Farray's International Dance Center",
+          url: baseUrl,
+        }}
+        educationalLevel="Beginner to Advanced"
+        teaches="Salsa Cubana, Salsa on2, Bachata Sensual, Bachata Dominicana"
+        availableLanguage={['es', 'ca', 'en', 'fr']}
+      />
+      <LocalBusinessSchema
+        name="Farray's International Dance Center"
+        description={t('salsaBachataBarcelona_description')}
+        url={baseUrl}
+        telephone="+34622247085"
+        email="info@farrayscenter.com"
+        address={{
+          streetAddress: "Carrer d'Entença, 100, Local 1",
+          addressLocality: 'Barcelona',
+          postalCode: '08015',
+          addressCountry: 'ES',
+        }}
+        geo={{
+          latitude: '41.380420',
+          longitude: '2.148014',
+        }}
+        priceRange="€€"
+      />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(courseSchema)}</script>
       </Helmet>
 
       <div className="pt-20 md:pt-24">

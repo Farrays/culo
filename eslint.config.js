@@ -84,7 +84,13 @@ export default [
     files: ['**/*.js', '**/*.mjs', '**/*.cjs', 'test/**/*.ts'],
     languageOptions: {
       sourceType: 'module',
-      globals: nodeGlobals,
+      globals: {
+        ...nodeGlobals,
+        module: 'readonly',
+        require: 'readonly',
+        __dirname: 'readonly',
+        __filename: 'readonly',
+      },
     },
   },
   {

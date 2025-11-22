@@ -19,7 +19,10 @@
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,json,md}\"",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "size": "size-limit",
+    "lighthouse": "lhci autorun",
+    "csp:hash": "node scripts/generate-csp-hashes.mjs"
   },
   "dependencies": {
     "@sentry/react": "^10.23.0",
@@ -33,6 +36,9 @@
   "devDependencies": {
     "@axe-core/react": "^4.11.0",
     "@eslint/js": "^9.39.1",
+    "@lhci/cli": "^0.15.1",
+    "@size-limit/file": "^11.2.0",
+    "@size-limit/preset-app": "^11.2.0",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",

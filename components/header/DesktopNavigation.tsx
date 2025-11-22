@@ -88,6 +88,7 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
               }}
               className="ml-1 text-neutral/75 hover:text-white transition-colors"
               aria-expanded={isClassesDropdownOpen}
+              aria-controls="classes-menu"
               aria-label={t('navClasses')}
             >
               <ChevronDownIcon
@@ -98,7 +99,11 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
 
           {/* Dropdown Menu */}
           {isClassesDropdownOpen && (
-            <div className="absolute top-full left-0 mt-2 bg-black/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl shadow-primary-accent/10 overflow-hidden min-w-[280px] animate-fadeIn z-50">
+            <div
+              id="classes-menu"
+              role="menu"
+              className="absolute top-full left-0 mt-2 bg-black/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl shadow-primary-accent/10 overflow-hidden min-w-[280px] animate-fadeIn z-50"
+            >
               {menuStructure.classes.submenu?.map(item => (
                 <div key={item.path}>
                   {item.submenu ? (
