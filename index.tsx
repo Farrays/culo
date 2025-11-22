@@ -19,15 +19,15 @@ function sendToAnalytics(metric: Metric) {
     });
   }
 
-  // Log to console in development
-  if (import.meta.env.DEV) {
-    console.info(`[Web Vitals] ${metric.name}:`, {
-      value: metric.value,
-      rating: metric.rating,
-      delta: metric.delta,
-      id: metric.id,
-    });
-  }
+  // Log to console in development (disabled to pass ESLint)
+  // if (import.meta.env.DEV) {
+  //   console.info(`[Web Vitals] ${metric.name}:`, {
+  //     value: metric.value,
+  //     rating: metric.rating,
+  //     delta: metric.delta,
+  //     id: metric.id,
+  //   });
+  // }
 
   // Send to Sentry (if configured)
   if (window.Sentry && import.meta.env.PROD) {

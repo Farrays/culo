@@ -47,7 +47,11 @@
       "Bash(git init:*)",
       "Bash(del /f nul 2)",
       "Bash(NUL)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(npm info:*)",
+      "Bash(npm view:*)",
+      "Bash(npm run lint:*)"
     ],
     "deny": [],
     "ask": []
