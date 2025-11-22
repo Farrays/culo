@@ -305,7 +305,6 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                       ? 'bg-primary-accent text-white shadow-lg'
                       : 'text-neutral hover:bg-white/10 hover:text-white'
                   }`}
-                  aria-label={`Switch to ${languageNames[lang]}`}
                 >
                   <span>{languageNames[lang]}</span>
                   <span className="text-sm opacity-70">{lang.toUpperCase()}</span>

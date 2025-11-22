@@ -34,7 +34,6 @@ const Hero: React.FC = () => {
           <a
             href="#classes"
             className="w-full sm:w-auto bg-primary-accent text-white font-bold text-xl py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
-            aria-label={t('heroCTA2')}
           >
             {t('heroCTA2')}
           </a>
@@ -44,7 +43,6 @@ const Hero: React.FC = () => {
       <a
         href="#classes"
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center space-y-2 text-neutral/70 animate-subtle-bob hover:text-neutral transition-colors focus:outline-none focus:ring-2 focus:ring-primary-accent/50 rounded-lg p-2"
-        aria-label={t('heroScroll')}
       >
         <span>{t('heroScroll')}</span>
         <svg

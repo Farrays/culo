@@ -91,7 +91,6 @@ const Teachers: React.FC = () => {
             <a
               href="#all-teachers"
               className="inline-block bg-primary-accent text-white font-bold py-4 px-10 rounded-full transition-all duration-300 hover:bg-white hover:text-primary-accent shadow-lg hover:shadow-accent-glow hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
-              aria-label={t('teachersCTA')}
             >
               {t('teachersCTA')}
             </a>
