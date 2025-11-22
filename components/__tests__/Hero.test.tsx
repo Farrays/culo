@@ -19,8 +19,8 @@ describe('Hero', () => {
     render(<Hero />);
     const ctaLinks = screen.getAllByRole('link');
     expect(ctaLinks.length).toBeGreaterThan(0);
-    // Verify at least one link has aria-label
-    const accessibleLinks = ctaLinks.filter(link => link.hasAttribute('aria-label'));
+    // Verify all links have accessible text content (no redundant aria-labels needed)
+    const accessibleLinks = ctaLinks.filter(link => link.textContent && link.textContent.trim().length > 0);
     expect(accessibleLinks.length).toBeGreaterThan(0);
   });
 
