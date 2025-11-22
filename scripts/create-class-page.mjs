@@ -12,7 +12,7 @@
  *   npm run create:class
  */
 
-import { readFile, writeFile, mkdir, access } from 'node:fs/promises';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
@@ -476,7 +476,7 @@ async function generatePlaceholderImages(className, componentName) {
       log.info('Ya existen imágenes, saltando generación de placeholders');
       return;
     }
-  } catch (error) {
+  } catch {
     // El directorio no existe o está vacío, continuar
   }
 
