@@ -21,7 +21,8 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,json,md}\"",
     "typecheck": "tsc --noEmit",
     "size": "size-limit",
-    "lighthouse": "lhci autorun"
+    "lighthouse": "lhci autorun",
+    "csp:hash": "node scripts/generate-csp-hashes.mjs"
   },
   "dependencies": {
     "@sentry/react": "^10.23.0",

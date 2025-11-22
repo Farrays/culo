@@ -99,7 +99,7 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
 
           {/* Dropdown Menu */}
           {isClassesDropdownOpen && (
-            <div 
+            <div
               id="classes-menu"
               role="menu"
               className="absolute top-full left-0 mt-2 bg-black/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl shadow-primary-accent/10 overflow-hidden min-w-[280px] animate-fadeIn z-50"
