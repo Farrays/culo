@@ -1,0 +1,48 @@
+{
+  "defaults": {
+    "timeout": 30000,
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox", "--disable-setuid-sandbox"]
+    },
+    "standard": "WCAG2AA",
+    "runners": [
+      "axe",
+      "htmlcs"
+    ],
+    "ignore": [
+      "notice",
+      "warning"
+    ],
+    "hideElements": ".grecaptcha-badge"
+  },
+  "urls": [
+    {
+      "url": "http://localhost:4173/es",
+      "screenCapture": "dist/a11y-screenshots/home-es.png"
+    },
+    {
+      "url": "http://localhost:4173/en",
+      "screenCapture": "dist/a11y-screenshots/home-en.png"
+    },
+    {
+      "url": "http://localhost:4173/es/clases",
+      "screenCapture": "dist/a11y-screenshots/clases-es.png"
+    },
+    {
+      "url": "http://localhost:4173/es/clases/dancehall-barcelona",
+      "screenCapture": "dist/a11y-screenshots/dancehall-es.png"
+    },
+    {
+      "url": "http://localhost:4173/en/classes/dancehall-barcelona",
+      "screenCapture": "dist/a11y-screenshots/dancehall-en.png"
+    },
+    {
+      "url": "http://localhost:4173/es/instalaciones",
+      "screenCapture": "dist/a11y-screenshots/instalaciones-es.png"
+    },
+    {
+      "url": "http://localhost:4173/es/contacto",
+      "screenCapture": "dist/a11y-screenshots/contacto-es.png"
+    }
+  ]
+}

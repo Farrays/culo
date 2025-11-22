@@ -46,7 +46,7 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
   const location = useLocation();
 
   return (
-    <nav className="hidden md:block flex-1">
+    <nav className="hidden md:block flex-1" aria-label="Main navigation">
       <ul className="flex items-center space-x-8 text-sm font-medium">
         {/* Home */}
         <li>
