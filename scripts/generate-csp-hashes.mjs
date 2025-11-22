@@ -3,8 +3,14 @@
  * Calculate SHA-256 hash for inline scripts in index.html
  * Used for Content Security Policy (CSP) hash-based script authorization
  * 
+ * IMPORTANT: This script only processes application/ld+json scripts (JSON-LD structured data)
+ * If you add other types of inline scripts, you'll need to update this script
+ * or manually calculate their hashes.
+ * 
  * Run this script when you modify the inline JSON-LD script in index.html
  * Then update the hash in vercel.json under Content-Security-Policy header
+ * 
+ * Usage: npm run csp:hash
  */
 
 import { createHash } from 'crypto';
@@ -18,7 +24,8 @@ const __dirname = dirname(__filename);
 const indexPath = join(__dirname, '..', 'index.html');
 const indexContent = readFileSync(indexPath, 'utf8');
 
-// Extract all inline scripts
+// Extract JSON-LD scripts (application/ld+json)
+// NOTE: If you need to support other inline script types, update this regex
 const scriptRegex = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/g;
 let match;
 let scriptNumber = 1;
