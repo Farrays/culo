@@ -416,6 +416,45 @@ if (!fs.existsSync(indexHtmlPath)) {
 
 const baseHtml = fs.readFileSync(indexHtmlPath, 'utf-8');
 
+// Find critical asset files for preloading
+const assetsPath = path.join(distPath, 'assets');
+const assetFiles = fs.readdirSync(assetsPath);
+
+// Find the main chunks that should be preloaded
+const criticalChunks = {
+  index: assetFiles.find(f => f.startsWith('index-') && f.endsWith('.js')),
+  reactVendor: assetFiles.find(f => f.startsWith('react-vendor-') && f.endsWith('.js')),
+  routerVendor: assetFiles.find(f => f.startsWith('router-vendor-') && f.endsWith('.js')),
+  mainCss: assetFiles.find(f => f.startsWith('index-') && f.endsWith('.css')),
+  // Locale-specific i18n chunks
+  es: assetFiles.find(f => f.startsWith('es-') && f.endsWith('.js')),
+  ca: assetFiles.find(f => f.startsWith('ca-') && f.endsWith('.js')),
+  en: assetFiles.find(f => f.startsWith('en-') && f.endsWith('.js')),
+  fr: assetFiles.find(f => f.startsWith('fr-') && f.endsWith('.js')),
+};
+
+// Generate preload hints for critical assets (common to all pages)
+const commonPreloadHints = [];
+if (criticalChunks.index) {
+  commonPreloadHints.push(`<link rel="modulepreload" href="/assets/${criticalChunks.index}" />`);
+}
+if (criticalChunks.reactVendor) {
+  commonPreloadHints.push(`<link rel="modulepreload" href="/assets/${criticalChunks.reactVendor}" />`);
+}
+if (criticalChunks.routerVendor) {
+  commonPreloadHints.push(`<link rel="modulepreload" href="/assets/${criticalChunks.routerVendor}" />`);
+}
+if (criticalChunks.mainCss) {
+  commonPreloadHints.push(`<link rel="preload" href="/assets/${criticalChunks.mainCss}" as="style" />`);
+}
+
+console.log(`📦 Found critical chunks:`);
+console.log(`   - Main bundle: ${criticalChunks.index || 'not found'}`);
+console.log(`   - React vendor: ${criticalChunks.reactVendor || 'not found'}`);
+console.log(`   - Router vendor: ${criticalChunks.routerVendor || 'not found'}`);
+console.log(`   - Main CSS: ${criticalChunks.mainCss || 'not found'}`);
+console.log(`   - i18n chunks: es=${criticalChunks.es ? '✓' : '✗'}, ca=${criticalChunks.ca ? '✓' : '✗'}, en=${criticalChunks.en ? '✓' : '✗'}, fr=${criticalChunks.fr ? '✓' : '✗'}\n`);
+
 let generatedCount = 0;
 
 routes.forEach(route => {
@@ -424,6 +463,16 @@ routes.forEach(route => {
   // Get metadata and content
   const meta = metadata[lang][page];
   const content = initialContent[lang][page];
+
+  // Build preload hints for this specific page (common + locale-specific i18n)
+  const pagePreloadHints = [...commonPreloadHints];
+  if (criticalChunks[lang]) {
+    pagePreloadHints.push(`<link rel="modulepreload" href="/assets/${criticalChunks[lang]}" />`);
+  }
+  
+  const preloadHintsHtml = pagePreloadHints.length > 0 
+    ? `\n    <!-- Preload critical chunks for faster LCP -->\n    ${pagePreloadHints.join('\n    ')}\n`
+    : '';
 
   // Generate hreflang alternates
   let pagePath = '';
@@ -509,7 +558,7 @@ routes.forEach(route => {
     <meta name="twitter:title" content="${meta.title}" />
     <meta name="twitter:description" content="${meta.description}" />
     <meta name="twitter:image" content="https://www.farrayscenter.com/images/og-${page}.jpg" />
-
+${preloadHintsHtml}
     ${localeScript}
   </head>`);
 
