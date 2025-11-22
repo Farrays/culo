@@ -225,6 +225,8 @@ const DanceClassesPage: React.FC = () => {
                         <img
                           src={category.imageUrl}
                           alt={`${t(category.titleKey)} - Clases en Barcelona`}
+                          width="800"
+                          height="600"
                           className="w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110 opacity-60 group-hover:opacity-80"
                           loading={index < 3 ? 'eager' : 'lazy'}
                           decoding="async"
@@ -451,6 +453,8 @@ const DanceClassesPage: React.FC = () => {
                                 : 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop&q=80&auto=format'
                         }
                         alt={`${t(`danceClassesHub_style_${style.key}`)} - Clases en Barcelona`}
+                        width="800"
+                        height="600"
                         className="w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110 opacity-60 group-hover:opacity-80"
                         loading={index < 6 ? 'eager' : 'lazy'}
                         decoding="async"

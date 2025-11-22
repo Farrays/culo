@@ -326,6 +326,8 @@ const DancehallPage: React.FC = () => {
                     <img
                       src="/images/classes/dancehall/img/dancehall-classes-barcelona-01_960.webp"
                       alt="Clases de Dancehall en Barcelona - Estudiantes bailando en la academia"
+                      width="960"
+                      height="640"
                       loading="lazy"
                       className="w-full h-full object-cover"
                     />
@@ -596,6 +598,8 @@ const DancehallPage: React.FC = () => {
                       <img
                         src="/images/cid-unesco-logo.webp"
                         alt="CID UNESCO - Consejo Internacional de la Danza"
+                        width="80"
+                        height="80"
                         loading="lazy"
                         className="w-full h-full object-contain"
                       />
@@ -607,6 +611,8 @@ const DancehallPage: React.FC = () => {
                       <img
                         src="/images/Street-Dance-2.webp"
                         alt="Street Dance 2 - Película de danza urbana"
+                        width="80"
+                        height="80"
                         loading="lazy"
                         className="w-full h-full object-cover"
                       />
@@ -620,6 +626,8 @@ const DancehallPage: React.FC = () => {
                       <img
                         src="/images/the-dancer-espectaculo-baile-cuadrada.webp"
                         alt="The Dancer - Espectáculo de baile"
+                        width="80"
+                        height="80"
                         loading="lazy"
                         className="w-full h-full object-cover"
                       />
@@ -631,6 +639,8 @@ const DancehallPage: React.FC = () => {
                       <img
                         src="/images/telecinco-logo.webp"
                         alt="Telecinco - Cadena de televisión española"
+                        width="80"
+                        height="80"
                         loading="lazy"
                         className="w-full h-full object-cover"
                       />
@@ -653,6 +663,8 @@ const DancehallPage: React.FC = () => {
             <img
               src="/images/classes/dancehall/raw/Jamaica.webp"
               alt="Bandera de Jamaica - Origen del Dancehall"
+              width="1920"
+              height="1080"
               loading="lazy"
               className="w-full h-full object-cover"
               style={{ filter: 'brightness(0.9)' }}
@@ -677,6 +689,8 @@ const DancehallPage: React.FC = () => {
                       <img
                         src="/images/teachers/isabel-lopez.jpg"
                         alt="Isabel López"
+                        width="192"
+                        height="192"
                         loading="lazy"
                         className="w-full h-full object-cover"
                       />
@@ -697,6 +711,8 @@ const DancehallPage: React.FC = () => {
                       <img
                         src="/images/teachers/sandra-gomez.jpg"
                         alt="Sandra Gómez"
+                        width="192"
+                        height="192"
                         loading="lazy"
                         className="w-full h-full object-cover"
                       />

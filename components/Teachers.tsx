@@ -60,6 +60,8 @@ const Teachers: React.FC = () => {
                     <img
                       src={teacher.image}
                       alt={`${teacher.name}, ${t(teacher.specialtyKey)}`}
+                      width="160"
+                      height="160"
                       loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
