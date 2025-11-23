@@ -16,7 +16,7 @@ const DEFAULT_PLACEHOLDER =
 /**
  * Lazy-loaded image component with Intersection Observer
  * Automatically loads images when they enter the viewport
- * 
+ *
  * @param priority - 'high' for LCP images (above-the-fold), 'auto' for others
  */
 const LazyImage: React.FC<LazyImageProps> = ({
