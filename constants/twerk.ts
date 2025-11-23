@@ -27,8 +27,8 @@ export const TWERK_TESTIMONIALS: Testimonial[] = [
     quote: {
       en: 'The Twerk classes are amazing. Great atmosphere and the teacher explains very well.',
       es: 'Las clases de Twerk son increíbles. El ambiente es genial y el profesor explica muy bien.',
-      ca: 'Les classes de Twerk són increïbles. L\'ambient és genial i el professor explica molt bé.',
-      fr: 'Les cours de Twerk sont incroyables. L\'ambiance est géniale et le professeur explique très bien.',
+      ca: "Les classes de Twerk són increïbles. L'ambient és genial i el professor explica molt bé.",
+      fr: "Les cours de Twerk sont incroyables. L'ambiance est géniale et le professeur explique très bien.",
     },
   },
 ];

@@ -1,11 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
-import {
-  TWERK_TESTIMONIALS,
-  TWERK_FAQS_CONFIG,
-  TWERK_SCHEDULE_KEYS,
-} from '../constants/twerk';
+import { TWERK_TESTIMONIALS, TWERK_FAQS_CONFIG, TWERK_SCHEDULE_KEYS } from '../constants/twerk';
 import AnimateOnScroll from './AnimateOnScroll';
 import CulturalHistorySection from './CulturalHistorySection';
 import ScheduleSection from './ScheduleSection';
@@ -208,7 +204,9 @@ const TwerkPage: React.FC = () => {
                   >
                     {t('twerkCTA1')}
                   </a>
-                  <p className="text-xs text-neutral/70 mt-2 text-center">{t('twerkCTA1Subtext')}</p>
+                  <p className="text-xs text-neutral/70 mt-2 text-center">
+                    {t('twerkCTA1Subtext')}
+                  </p>
                 </div>
                 <div className="w-full sm:w-auto">
                   <a
@@ -217,7 +215,9 @@ const TwerkPage: React.FC = () => {
                   >
                     {t('twerkCTA2')}
                   </a>
-                  <p className="text-xs text-neutral/70 mt-2 text-center">{t('twerkCTA2Subtext')}</p>
+                  <p className="text-xs text-neutral/70 mt-2 text-center">
+                    {t('twerkCTA2Subtext')}
+                  </p>
                 </div>
               </div>
 
