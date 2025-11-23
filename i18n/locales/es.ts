@@ -3422,6 +3422,117 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
   twerkImage2Alt: 'Estudiantes practicando Twerk con Sandra Gómez',
   twerkImage3Alt: 'Sandra Gómez - Instructora de Twerk y Perreo',
 
+  // Hero additional keys
+  twerkHeroDesc: 'Mucho más que baile, una forma de empoderamiento.',
+  twerkHeroLocation: 'En pleno corazón de Barcelona, cerca de Plaza España',
+  
+  // CTA keys
+  twerkCTA1: 'Hazte Socio Ahora',
+  twerkCTA1Subtext: 'Quedan pocas plazas este mes',
+  twerkCTA2: 'Reserva tu Clase de Prueba',
+  twerkCTA2Subtext: 'Válido por tiempo limitado',
+  
+  // What Is Section
+  twerkWhatIsTitle: '¿Qué es el Twerk y por qué está arrasando en Barcelona?',
+  twerkWhatIsP1: 'El Twerk es mucho más que un baile viral de redes sociales. Es un estilo de danza urbana que nació en Nueva Orleans, fusionando ritmos africanos, bounce music y cultura hip hop. Un movimiento que celebra el cuerpo, la confianza y la libertad de expresión.',
+  twerkWhatIsP2: 'En Barcelona, el Twerk ha explotado como una forma de fitness, empoderamiento femenino y conexión con la música urbana. No es solo mover las caderas: es técnica, control, musicalidad y actitud. Es sudor, risas y liberación.',
+  twerkWhatIsP3: 'Las clases de Twerk en Farray\'s Center combinan técnica profesional con un ambiente libre de juicios, donde todas pueden aprender, crecer y brillar sin importar su nivel o experiencia previa.',
+  twerkWhatIsP4: 'Desde movimientos básicos de aislamiento hasta coreografías completas, cada clase te empuja a descubrir una versión más segura, fuerte y libre de ti misma.',
+  twerkWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
+  twerkWhatIsQuestionAnswer: 'Sí, lo es.',
+
+  // Cultural Section
+  twerkCulturalShort: 'El Twerk tiene raíces profundas en la cultura africana y afroamericana, pasando por Nueva Orleans hasta convertirse en un fenómeno global de la cultura urbana.',
+  twerkCulturalFull: 'El Twerk moderno nació en Nueva Orleans en los años 90, influenciado por el bounce music y la rica herencia de bailes africanos que celebran el movimiento de caderas y glúteos. Artistas como Big Freedia y Miley Cyrus lo catapultaron a la fama mundial, pero sus raíces van mucho más allá. Es un baile de resistencia, liberación y celebración del cuerpo. En Barcelona, el Twerk se ha convertido en una forma de fitness, arte y empoderamiento que trasciende estereotipos y une a personas de todos los orígenes.',
+
+  // Identify Section
+  twerkIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
+  twerkIdentify1: 'Quieres ponerte en forma pero el gimnasio te aburre mortalmente',
+  twerkIdentify2: 'Buscas una actividad donde puedas liberar el estrés y sentirte poderosa',
+  twerkIdentify3: 'Te encanta la música urbana y quieres bailar sin complejos',
+  twerkIdentify4: 'Quieres mejorar tu autoestima y conexión con tu cuerpo',
+  twerkIdentify5: 'Necesitas un espacio donde nadie te juzgue y puedas ser tú misma',
+  twerkIdentify6: 'Buscas una comunidad de mujeres que te apoyen y te inspiren',
+  twerkIdentifyTransition: 'Si has dicho "sí" a alguno de estos puntos, ya sabes lo que necesitas.',
+  twerkNeedEnrollTitle: 'Necesitas apuntarte a clases de Twerk en una academia de baile',
+  twerkIdentifyAgitate1: 'Seguir buscando excusas solo te aleja de la mejor versión de ti misma. Cada semana que pasa sin hacer nada es una oportunidad perdida de sentirte más fuerte, segura y libre. El miedo al "qué dirán" o el "no soy buena bailando" solo son barreras mentales que se rompen desde la primera clase.',
+  twerkIdentifySolution: 'En Farray\'s Center, encontrarás un espacio diseñado para que te sueltes, aprendas y crezcas sin presión. Aquí no se trata de ser perfecta, sino de ser tú misma y disfrutar del proceso.',
+  twerkIdentifyClosing: 'Déjate seducir por la energía y el power del Twerk.',
+
+  // Transform Section
+  twerkTransformTitle: 'Imagina tu antes y después',
+  twerkTransform1Title: 'Vuelves a tener energía y ganas',
+  twerkTransform1Desc: 'Las clases te sacan de la rutina y te devuelven la vida.',
+  twerkTransform2Title: 'Ganas seguridad sin darte cuenta',
+  twerkTransform2Desc: 'Te sueltas, te liberas y empiezas a gustarte más.',
+  twerkTransform3Title: 'Te pones en forma sin aburrirte',
+  twerkTransform3Desc: 'Cada clase es distinta. Te ríes, sudas y disfrutas.',
+  twerkTransform4Title: 'Conoces gente real',
+  twerkTransform4Desc: 'Nada forzado: buen rollo, comunidad y gente como tú.',
+  twerkTransform5Title: 'Conectas con la música urbana',
+  twerkTransform5Desc: 'Ritmo, energía y flow en cada clase.',
+  twerkTransform6Title: 'Aprendes movimientos nuevos cada semana',
+  twerkTransform6Desc: 'Más flow, más estilo, más tú.',
+  twerkTransformCTA: "¿Por qué elegir Farray's Center como tu academia de Twerk en Barcelona?",
+
+  // Why Choose Section
+  twerkWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
+  twerkWhyChoose1Desc: 'Calidad internacional respaldada por la organización mundial de la danza.',
+  twerkWhyChoose2Title: 'Instructora especializada en Twerk y Perreo',
+  twerkWhyChoose2Desc: 'Sandra Gómez, con más de 8 años de experiencia enseñando estilos urbanos.',
+  twerkWhyChoose3Title: 'Ubicación inmejorable',
+  twerkWhyChoose3Desc: 'En pleno corazón de Barcelona, cerca de Plaza España y Sants. Fácil acceso en metro, bus y tren.',
+  twerkWhyChoose4Title: 'Ambiente inclusivo y sin juicios',
+  twerkWhyChoose4Desc: 'Un espacio seguro donde todas pueden aprender y brillar sin importar su nivel.',
+  twerkWhyChoose5Title: 'Instalaciones profesionales',
+  twerkWhyChoose5Desc: 'Salas amplias con espejos, suelo especial para bailar, aire acondicionado y vestuarios con duchas.',
+  twerkWhyChoose6Title: 'Academia multidisciplinar',
+  twerkWhyChoose6Desc: 'Más de 25 estilos de baile. Puedes combinar Twerk con otras clases urbanas.',
+  twerkWhyChoose7Title: 'Eventos y workshops',
+  twerkWhyChoose7Desc: 'Gala anual, workshops con bailarines internacionales y oportunidades de performance.',
+
+  // Logos Section
+  twerkLogosTitle: 'Nos has podido ver en…',
+  twerkLogosIntlFestivalsText: 'y en los mejores festivales de danza de todo el mundo',
+
+  // Teachers Section
+  twerkTeachersTitle: 'Conoce a tu instructora de Twerk',
+  twerkTeachersSubtitle: 'Experta en Twerk y Perreo con años de experiencia',
+  twerkTeacher1Specialty: 'Profesora auxiliar de estilos urbanos',
+  twerkTeacher1Bio: 'Apoyo en clases y talleres especiales.',
+  twerkTeacher2Specialty: '+8 años como referente en Twerk & Perreo',
+  twerkTeacher2Bio: 'Sandra Gómez combina técnica impecable, energía contagiosa y un enfoque inclusivo que ha transformado la experiencia de cientos de alumnas en Barcelona.',
+  twerkTeachersClosing: 'Con Sandra, no solo aprendes a bailar Twerk: descubres una nueva forma de conectar con tu cuerpo, tu confianza y tu poder.',
+
+  // Schedule Section
+  twerkScheduleTitle: 'Horarios de nuestras clases de Twerk',
+  twerkScheduleSubtitle: 'Tres niveles para que encuentres tu clase perfecta',
+
+  // Video Section
+  twerkVideoTitle: 'Ven a descubrir nuestras clases de Twerk',
+  twerkVideoDesc: 'Mira cómo es una clase en Farray\'s Center: energía, técnica y buen rollo. ¡Te esperamos!',
+
+  // Why Today Section
+  twerkWhyTodayFullTitle: '¿Por qué apuntarte hoy a clases de Twerk en Barcelona?',
+  twerkWhyToday1: 'Porque cada día que pasa sin hacer nada es un día menos de sentirte increíble.',
+  twerkWhyToday2: 'Porque tu cuerpo merece moverse, tu mente merece desconectar y tu espíritu merece brillar.',
+  twerkWhyToday3: 'Porque el Twerk no es solo un baile: es confianza, es poder, es liberación.',
+  twerkWhyTodayClosing1: 'No necesitas ser bailarina profesional. No necesitas tener el "cuerpo perfecto". Solo necesitas ganas de probar algo nuevo y disfrutar del proceso.',
+  twerkWhyTodayClosing2: 'Da el primer paso hoy. Tu yo del futuro te lo agradecerá.',
+
+  // Final CTA Section
+  twerkFinalCTATitle: '¿Lista para empezar tu viaje con el Twerk?',
+  twerkFinalCTASubtitle: 'Únete a Farray\'s Center y descubre tu poder',
+  twerkFinalCTADesc: 'Reserva tu clase de prueba hoy y experimenta por ti misma la energía, el empoderamiento y la comunidad que te están esperando. Sin compromiso, sin presión, solo buena vibra.',
+  twerkFinalCTAFunny: 'PD: Tu trasero te lo agradecerá 🍑',
+  
+  // FAQ Title
+  twerkFaqTitle: 'Preguntas Frecuentes sobre Twerk',
+
+  // Course Schema
+  twerkCourseSchemaName: 'Clases de Twerk en Barcelona - Farray\'s Center',
+  twerkCourseSchemaDesc: 'Aprende Twerk y Perreo con instructora especializada Sandra Gómez. Clases para todos los niveles en el corazón de Barcelona.',
+
   // Breadcrumb
   twerkBreadcrumbHome: 'Inicio',
   twerkBreadcrumbClasses: 'Clases',
