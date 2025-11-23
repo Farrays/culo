@@ -2730,4 +2730,61 @@ export const en = {
   roomRental_gallery_prev: 'Previous image',
   roomRental_gallery_next: 'Next image',
   roomRental_gallery_view: 'View image',
+
+  // ===== Twerk Page =====
+  twerkPageTitle: 'Twerk Classes in Barcelona | Farray\'s Center',
+  twerkMetaDescription: 'Learn Twerk and Perreo in Barcelona with Sandra Gómez. Urban dance classes for all levels. Unleash your energy and confidence!',
+
+  twerkHeroTitle: 'Twerk',
+  twerkHeroSubtitle: 'Unleash your energy and confidence with Twerk classes in Barcelona',
+
+  twerkAboutTitle: 'What is Twerk?',
+  twerkAboutDesc1: 'Twerk is an urban dance style that combines hip movements, intense rhythm, and attitude. Originating in New Orleans and popularized worldwide, this dance allows you to express your energy, improve your fitness, and develop self-confidence.',
+  twerkAboutDesc2: 'At Farray\'s Center, our Twerk classes go beyond dancing: we work on technique, body control, endurance, and attitude. A safe space where everyone can learn, enjoy, and feel empowered.',
+
+  twerkPillar1Title: 'Technique',
+  twerkPillar1Desc: 'Learn fundamental movements and hip control',
+  twerkPillar2Title: 'Confidence',
+  twerkPillar2Desc: 'Develop self-assurance and stage presence',
+  twerkPillar3Title: 'Conditioning',
+  twerkPillar3Desc: 'Improve your strength, endurance, and flexibility',
+
+  twerkClassesTitle: 'Our Twerk Classes',
+  twerkClassesSubtitle: 'Classes for all levels',
+
+  twerkLevelBeginnerTitle: 'Beginner',
+  twerkLevelBeginnerDesc: 'Ideal for those starting from scratch. Learn Twerk fundamentals and basic hip movements.',
+  twerkLevelInterTitle: 'Intermediate',
+  twerkLevelInterDesc: 'Perfect your technique, learn choreographies, and develop your own style.',
+  twerkLevelAdvancedTitle: 'Advanced',
+  twerkLevelAdvancedDesc: 'Complete Twerk mastery with complex choreographies, freestyle, and performance.',
+
+  twerkInstructorTitle: 'Your Instructor',
+  twerkInstructorName: 'Sandra Gómez',
+  twerkInstructorSpecialty: 'Twerk and Perreo',
+  twerkInstructorBio: 'Sandra Gómez is a professional dancer specialized in urban styles with over 8 years of experience teaching Twerk and Perreo. Trained in Barcelona and with international workshops, Sandra combines technique, energy, and attitude to create an environment where everyone feels comfortable and empowered. Her inclusive and motivating approach has helped hundreds of students discover their confidence through dance.',
+
+  twerkTestimonialsTitle: 'What our students say',
+  twerkTestimonial1Name: 'Laura M.',
+  twerkTestimonial1Quote: 'Twerk classes with Sandra are amazing. The atmosphere is great, no judgments, and the teacher explains everything very well. I\'ve gained so much confidence.',
+  twerkTestimonial2Name: 'Ana R.',
+  twerkTestimonial2Quote: 'I started knowing nothing and now I feel super comfortable dancing. Sandra is the best teacher, always motivating and with good vibes.',
+
+  twerkFaqQ1: 'Do I need previous experience for Twerk classes?',
+  twerkFaqA1: 'No, our beginner classes are designed for people with no experience. We start from the basics and progress gradually.',
+  twerkFaqQ2: 'Are the classes only for women?',
+  twerkFaqA2: 'Our classes are open to all people regardless of gender, age, or level. We create an inclusive and respectful environment for everyone.',
+  twerkFaqQ3: 'What should I bring to Twerk classes?',
+  twerkFaqA3: 'Comfortable clothing that allows movement (shorts, leggings, sports bra) and sneakers. Bring water and a towel. We have changing rooms with showers available.',
+  twerkFaqQ4: 'Is Twerk good physical exercise?',
+  twerkFaqA4: 'Yes, Twerk is an excellent cardiovascular exercise that works glutes, core, legs, and endurance. It\'s fun and you burn calories while learning to dance.',
+
+  twerkImage1Alt: 'Twerk Classes in Barcelona - Farray\'s Center',
+  twerkImage2Alt: 'Students practicing Twerk with Sandra Gómez',
+  twerkImage3Alt: 'Sandra Gómez - Twerk and Perreo Instructor',
+
+  // Breadcrumb
+  twerkBreadcrumbHome: 'Home',
+  twerkBreadcrumbClasses: 'Classes',
+  twerkBreadcrumbCurrent: 'Twerk',
 };

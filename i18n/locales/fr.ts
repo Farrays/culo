@@ -2631,4 +2631,61 @@ export const fr = {
   roomRental_gallery_prev: 'Image précédente',
   roomRental_gallery_next: 'Image suivante',
   roomRental_gallery_view: "Voir l'image",
+
+  // ===== Twerk Page =====
+  twerkPageTitle: 'Cours de Twerk à Barcelone | Farray\'s Center',
+  twerkMetaDescription: 'Apprenez le Twerk et le Perreo à Barcelone avec Sandra Gómez. Cours de danse urbaine pour tous les niveaux. Libérez votre énergie et votre confiance!',
+
+  twerkHeroTitle: 'Twerk',
+  twerkHeroSubtitle: 'Libérez votre énergie et votre confiance avec les cours de Twerk à Barcelone',
+
+  twerkAboutTitle: 'Qu\'est-ce que le Twerk?',
+  twerkAboutDesc1: 'Le Twerk est un style de danse urbaine qui combine mouvements de hanches, rythme intense et attitude. Originaire de la Nouvelle-Orléans et popularisé dans le monde entier, cette danse vous permet d\'exprimer votre énergie, améliorer votre condition physique et développer votre confiance en vous.',
+  twerkAboutDesc2: 'Au Farray\'s Center, nos cours de Twerk vont au-delà de la danse: nous travaillons la technique, le contrôle corporel, l\'endurance et l\'attitude. Un espace sûr où tout le monde peut apprendre, s\'amuser et se sentir autonome.',
+
+  twerkPillar1Title: 'Technique',
+  twerkPillar1Desc: 'Apprenez les mouvements fondamentaux et le contrôle des hanches',
+  twerkPillar2Title: 'Confiance',
+  twerkPillar2Desc: 'Développez votre assurance et votre présence scénique',
+  twerkPillar3Title: 'Conditionnement',
+  twerkPillar3Desc: 'Améliorez votre force, endurance et flexibilité',
+
+  twerkClassesTitle: 'Nos Cours de Twerk',
+  twerkClassesSubtitle: 'Cours pour tous les niveaux',
+
+  twerkLevelBeginnerTitle: 'Débutant',
+  twerkLevelBeginnerDesc: 'Idéal pour ceux qui commencent de zéro. Apprenez les fondamentaux du Twerk et les mouvements de hanches de base.',
+  twerkLevelInterTitle: 'Intermédiaire',
+  twerkLevelInterDesc: 'Perfectionnez votre technique, apprenez des chorégraphies et développez votre propre style.',
+  twerkLevelAdvancedTitle: 'Avancé',
+  twerkLevelAdvancedDesc: 'Maîtrise complète du Twerk avec chorégraphies complexes, freestyle et performance.',
+
+  twerkInstructorTitle: 'Votre Instructrice',
+  twerkInstructorName: 'Sandra Gómez',
+  twerkInstructorSpecialty: 'Twerk et Perreo',
+  twerkInstructorBio: 'Sandra Gómez est une danseuse professionnelle spécialisée dans les styles urbains avec plus de 8 ans d\'expérience dans l\'enseignement du Twerk et du Perreo. Formée à Barcelone et avec des workshops internationaux, Sandra combine technique, énergie et attitude pour créer un environnement où tout le monde se sent à l\'aise et autonome. Son approche inclusive et motivante a aidé des centaines d\'élèves à découvrir leur confiance à travers la danse.',
+
+  twerkTestimonialsTitle: 'Ce que disent nos élèves',
+  twerkTestimonial1Name: 'Laura M.',
+  twerkTestimonial1Quote: 'Les cours de Twerk avec Sandra sont incroyables. L\'ambiance est géniale, pas de jugements et la professeure explique tout très bien. J\'ai gagné beaucoup de confiance.',
+  twerkTestimonial2Name: 'Ana R.',
+  twerkTestimonial2Quote: 'J\'ai commencé sans rien savoir et maintenant je me sens super à l\'aise en dansant. Sandra est la meilleure prof, toujours motivante et avec une bonne ambiance.',
+
+  twerkFaqQ1: 'Ai-je besoin d\'expérience préalable pour les cours de Twerk?',
+  twerkFaqA1: 'Non, nos cours débutants sont conçus pour les personnes sans expérience. Nous commençons par les bases et progressons graduellement.',
+  twerkFaqQ2: 'Les cours sont-ils réservés aux femmes?',
+  twerkFaqA2: 'Nos cours sont ouverts à toutes les personnes sans distinction de genre, d\'âge ou de niveau. Nous créons un environnement inclusif et respectueux pour tous.',
+  twerkFaqQ3: 'Que dois-je apporter aux cours de Twerk?',
+  twerkFaqA3: 'Des vêtements confortables permettant le mouvement (shorts, leggings, brassière de sport) et des baskets. Apportez de l\'eau et une serviette. Nous avons des vestiaires avec douches disponibles.',
+  twerkFaqQ4: 'Le Twerk est-il un bon exercice physique?',
+  twerkFaqA4: 'Oui, le Twerk est un excellent exercice cardiovasculaire qui travaille les fessiers, le core, les jambes et l\'endurance. C\'est amusant et vous brûlez des calories tout en apprenant à danser.',
+
+  twerkImage1Alt: 'Cours de Twerk à Barcelone - Farray\'s Center',
+  twerkImage2Alt: 'Étudiants pratiquant le Twerk avec Sandra Gómez',
+  twerkImage3Alt: 'Sandra Gómez - Instructrice de Twerk et Perreo',
+
+  // Breadcrumb
+  twerkBreadcrumbHome: 'Accueil',
+  twerkBreadcrumbClasses: 'Cours',
+  twerkBreadcrumbCurrent: 'Twerk',
 };

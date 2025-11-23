@@ -2729,4 +2729,61 @@ export const ca = {
   roomRental_gallery_prev: 'Imatge anterior',
   roomRental_gallery_next: 'Següent imatge',
   roomRental_gallery_view: 'Veure imatge',
+
+  // ===== Twerk Page =====
+  twerkPageTitle: 'Classes de Twerk a Barcelona | Farray\'s Center',
+  twerkMetaDescription: 'Aprèn Twerk i Perreo a Barcelona amb Sandra Gómez. Classes de ball urbà per a tots els nivells. Allibera la teva energia i confiança!',
+
+  twerkHeroTitle: 'Twerk',
+  twerkHeroSubtitle: 'Allibera la teva energia i confiança amb les classes de Twerk a Barcelona',
+
+  twerkAboutTitle: 'Què és Twerk?',
+  twerkAboutDesc1: 'El Twerk és un estil de ball urbà que combina moviments de maluc, ritme intens i actitud. Originat a Nova Orleans i popularitzat mundialment, aquest ball et permet expressar la teva energia, millorar la teva condició física i desenvolupar confiança en tu mateixa.',
+  twerkAboutDesc2: 'A Farray\'s Center, les nostres classes de Twerk van més enllà del ball: treballem tècnica, control corporal, resistència i actitud. Un espai segur on tothom pot aprendre, gaudir i sentir-se empoderat.',
+
+  twerkPillar1Title: 'Tècnica',
+  twerkPillar1Desc: 'Aprèn els moviments fonamentals i control de maluc',
+  twerkPillar2Title: 'Confiança',
+  twerkPillar2Desc: 'Desenvolupa seguretat en tu mateixa i actitud a l\'escenari',
+  twerkPillar3Title: 'Condicionament',
+  twerkPillar3Desc: 'Millora la teva força, resistència i flexibilitat',
+
+  twerkClassesTitle: 'Les Nostres Classes de Twerk',
+  twerkClassesSubtitle: 'Classes per a tots els nivells',
+
+  twerkLevelBeginnerTitle: 'Principiant',
+  twerkLevelBeginnerDesc: 'Ideal per a qui comença des de zero. Aprèn els fonaments del Twerk i moviments bàsics de maluc.',
+  twerkLevelInterTitle: 'Intermedi',
+  twerkLevelInterDesc: 'Perfecciona la teva tècnica, aprèn coreografies i desenvolupa el teu propi estil.',
+  twerkLevelAdvancedTitle: 'Avançat',
+  twerkLevelAdvancedDesc: 'Dominació completa del Twerk amb coreografies complexes, freestyle i performance.',
+
+  twerkInstructorTitle: 'La Teva Instructora',
+  twerkInstructorName: 'Sandra Gómez',
+  twerkInstructorSpecialty: 'Twerk i Perreo',
+  twerkInstructorBio: 'Sandra Gómez és una ballarina professional especialitzada en estils urbans amb més de 8 anys d\'experiència ensenyant Twerk i Perreo. Formada a Barcelona i amb workshops internacionals, Sandra combina tècnica, energia i actitud per crear un ambient on tothom se sent còmode i empoderat. El seu enfocament inclusiu i motivador ha ajudat centenars d\'alumnes a descobrir la seva confiança a través del ball.',
+
+  twerkTestimonialsTitle: 'El que diuen els nostres alumnes',
+  twerkTestimonial1Name: 'Laura M.',
+  twerkTestimonial1Quote: 'Les classes de Twerk amb Sandra són increïbles. L\'ambient és genial, no hi ha judicis i la professora explica tot molt bé. He guanyat moltíssima confiança.',
+  twerkTestimonial2Name: 'Ana R.',
+  twerkTestimonial2Quote: 'Vaig començar sense saber res i ara em sento súper còmoda ballant. Sandra és la millor professora, sempre motivant i amb bon rotllo.',
+
+  twerkFaqQ1: 'Necessito experiència prèvia per a les classes de Twerk?',
+  twerkFaqA1: 'No, les nostres classes de principiants estan dissenyades per a persones sense experiència. Comencem des del més bàsic i avancem progressivament.',
+  twerkFaqQ2: 'Les classes són només per a dones?',
+  twerkFaqA2: 'Les nostres classes estan obertes a totes les persones sense importar gènere, edat o nivell. Creem un ambient inclusiu i respectuós per a tothom.',
+  twerkFaqQ3: 'Què he de portar a les classes de Twerk?',
+  twerkFaqA3: 'Roba còmoda que permeti moviment (shorts, malles, top esportiu) i sabatilles esportives. Porta aigua i una tovallola. Tenim vestidors amb dutxes disponibles.',
+  twerkFaqQ4: 'El Twerk és un bon exercici físic?',
+  twerkFaqA4: 'Sí, el Twerk és un excel·lent exercici cardiovascular que treballa glutis, core, cames i resistència. És divertit i cremes calories mentre aprens a ballar.',
+
+  twerkImage1Alt: 'Classes de Twerk a Barcelona - Farray\'s Center',
+  twerkImage2Alt: 'Estudiants practicant Twerk amb Sandra Gómez',
+  twerkImage3Alt: 'Sandra Gómez - Instructora de Twerk i Perreo',
+
+  // Breadcrumb
+  twerkBreadcrumbHome: 'Inici',
+  twerkBreadcrumbClasses: 'Classes',
+  twerkBreadcrumbCurrent: 'Twerk',
 };

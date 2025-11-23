@@ -3369,4 +3369,61 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
   // Breadcrumb
   facilitiesBreadcrumbHome: 'Inicio',
   facilitiesBreadcrumbCurrent: 'Instalaciones',
+
+  // ===== Twerk Page =====
+  twerkPageTitle: 'Clases de Twerk en Barcelona | Farray\'s Center',
+  twerkMetaDescription: 'Aprende Twerk y Perreo en Barcelona con Sandra Gómez. Clases de baile urbano para todos los niveles. ¡Libera tu energía y confianza!',
+
+  twerkHeroTitle: 'Twerk',
+  twerkHeroSubtitle: 'Libera tu energía y confianza con las clases de Twerk en Barcelona',
+
+  twerkAboutTitle: '¿Qué es Twerk?',
+  twerkAboutDesc1: 'El Twerk es un estilo de baile urbano que combina movimientos de cadera, ritmo intenso y actitud. Originado en Nueva Orleans y popularizado mundialmente, este baile te permite expresar tu energía, mejorar tu condición física y desarrollar confianza en ti misma.',
+  twerkAboutDesc2: 'En Farray\'s Center, nuestras clases de Twerk van más allá del baile: trabajamos técnica, control corporal, resistencia y actitud. Un espacio seguro donde todas pueden aprender, disfrutar y sentirse empoderadas.',
+
+  twerkPillar1Title: 'Técnica',
+  twerkPillar1Desc: 'Aprende los movimientos fundamentales y control de cadera',
+  twerkPillar2Title: 'Confianza',
+  twerkPillar2Desc: 'Desarrolla seguridad en ti misma y actitud en el escenario',
+  twerkPillar3Title: 'Acondicionamiento',
+  twerkPillar3Desc: 'Mejora tu fuerza, resistencia y flexibilidad',
+
+  twerkClassesTitle: 'Nuestras Clases de Twerk',
+  twerkClassesSubtitle: 'Clases para todos los niveles',
+
+  twerkLevelBeginnerTitle: 'Principiante',
+  twerkLevelBeginnerDesc: 'Ideal para quienes empiezan desde cero. Aprende los fundamentos del Twerk y movimientos básicos de cadera.',
+  twerkLevelInterTitle: 'Intermedio',
+  twerkLevelInterDesc: 'Perfecciona tu técnica, aprende coreografías y desarrolla tu propio estilo.',
+  twerkLevelAdvancedTitle: 'Avanzado',
+  twerkLevelAdvancedDesc: 'Dominación completa del Twerk con coreografías complejas, freestyle y performance.',
+
+  twerkInstructorTitle: 'Tu Instructora',
+  twerkInstructorName: 'Sandra Gómez',
+  twerkInstructorSpecialty: 'Twerk y Perreo',
+  twerkInstructorBio: 'Sandra Gómez es una bailarina profesional especializada en estilos urbanos con más de 8 años de experiencia enseñando Twerk y Perreo. Formada en Barcelona y con workshops internacionales, Sandra combina técnica, energía y actitud para crear un ambiente donde todas se sienten cómodas y empoderadas. Su enfoque inclusivo y motivador ha ayudado a cientos de alumnas a descubrir su confianza a través del baile.',
+
+  twerkTestimonialsTitle: 'Lo que dicen nuestros alumnos',
+  twerkTestimonial1Name: 'Laura M.',
+  twerkTestimonial1Quote: 'Las clases de Twerk con Sandra son increíbles. El ambiente es genial, no hay juicios y la profesora explica todo muy bien. He ganado muchísima confianza.',
+  twerkTestimonial2Name: 'Ana R.',
+  twerkTestimonial2Quote: 'Empecé sin saber nada y ahora me siento súper cómoda bailando. Sandra es la mejor profesora, siempre motivando y con buen rollo.',
+
+  twerkFaqQ1: '¿Necesito experiencia previa para las clases de Twerk?',
+  twerkFaqA1: 'No, nuestras clases de principiantes están diseñadas para personas sin experiencia. Empezamos desde lo más básico y avanzamos progresivamente.',
+  twerkFaqQ2: '¿Las clases son solo para mujeres?',
+  twerkFaqA2: 'Nuestras clases están abiertas a todas las personas sin importar género, edad o nivel. Creamos un ambiente inclusivo y respetuoso para todos.',
+  twerkFaqQ3: '¿Qué debo llevar a las clases de Twerk?',
+  twerkFaqA3: 'Ropa cómoda que permita movimiento (shorts, mallas, top deportivo) y zapatillas deportivas. Trae agua y una toalla. Tenemos vestuarios con duchas disponibles.',
+  twerkFaqQ4: '¿El Twerk es un buen ejercicio físico?',
+  twerkFaqA4: 'Sí, el Twerk es un excelente ejercicio cardiovascular que trabaja glúteos, core, piernas y resistencia. Es divertido y quemas calorías mientras aprendes a bailar.',
+
+  twerkImage1Alt: 'Clases de Twerk en Barcelona - Farray\'s Center',
+  twerkImage2Alt: 'Estudiantes practicando Twerk con Sandra Gómez',
+  twerkImage3Alt: 'Sandra Gómez - Instructora de Twerk y Perreo',
+
+  // Breadcrumb
+  twerkBreadcrumbHome: 'Inicio',
+  twerkBreadcrumbClasses: 'Clases',
+  twerkBreadcrumbCurrent: 'Twerk',
 };
