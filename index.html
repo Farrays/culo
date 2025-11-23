@@ -23,9 +23,11 @@
     <link rel="dns-prefetch" href="https://i.ytimg.com">
     <link rel="dns-prefetch" href="https://browser.sentry-cdn.com">
 
-    <!-- Preconnect to critical external resources -->
+    <!-- Preconnect to critical external resources (reduce DNS + TLS time) -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
     <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
+    <link rel="preconnect" href="https://browser.sentry-cdn.com">
 
     <!-- Self-hosted fonts for better performance (no external DNS lookup) -->
     <link rel="preload" href="/fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>

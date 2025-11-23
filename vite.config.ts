@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { imagetools } from 'vite-imagetools';
+import viteCompression from 'vite-plugin-compression';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -26,6 +27,20 @@ export default defineConfig({
       gzipSize: true,
       brotliSize: true,
       template: 'treemap', // or 'sunburst', 'network'
+    }),
+    // Brotli compression (better than gzip: 15-20% smaller)
+    viteCompression({
+      algorithm: 'brotliCompress',
+      ext: '.br',
+      threshold: 1024, // Only compress files larger than 1KB
+      deleteOriginFile: false,
+    }),
+    // Gzip compression (fallback for older browsers)
+    viteCompression({
+      algorithm: 'gzip',
+      ext: '.gz',
+      threshold: 1024,
+      deleteOriginFile: false,
     }),
   ],
   build: {

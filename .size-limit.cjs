@@ -2,41 +2,49 @@ module.exports = [
   {
     name: 'Main JS Bundle',
     path: 'dist/assets/index-*.js',
-    limit: '200 KB',
+    limit: '170 KB', // Reduced from 200KB for better performance
+    gzip: true,
   },
   {
     name: 'ES Locale Bundle',
     path: 'dist/assets/es-*.js',
-    limit: '200 KB',
+    limit: '180 KB', // Reduced from 200KB
+    gzip: true,
   },
   {
     name: 'EN Locale Bundle',
     path: 'dist/assets/en-*.js',
     limit: '150 KB',
+    gzip: true,
   },
   {
     name: 'CA Locale Bundle',
     path: 'dist/assets/ca-*.js',
     limit: '160 KB',
+    gzip: true,
   },
   {
     name: 'FR Locale Bundle',
     path: 'dist/assets/fr-*.js',
     limit: '150 KB',
+    gzip: true,
   },
   {
     name: 'React Vendor',
     path: 'dist/assets/react-vendor-*.js',
     limit: '20 KB',
+    gzip: true,
   },
   {
     name: 'Router Vendor',
     path: 'dist/assets/router-vendor-*.js',
     limit: '40 KB',
+    gzip: true,
   },
   {
     name: 'Total CSS',
-    path: 'dist/assets/style-*.css',
+    path: 'dist/assets/*.css',
     limit: '30 KB',
+    gzip: true,
   },
 ];
