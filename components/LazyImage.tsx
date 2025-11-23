@@ -7,6 +7,7 @@ interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   placeholder?: string;
   threshold?: number;
   rootMargin?: string;
+  priority?: 'high' | 'low' | 'auto'; // For LCP images
 }
 
 const DEFAULT_PLACEHOLDER =
@@ -15,6 +16,8 @@ const DEFAULT_PLACEHOLDER =
 /**
  * Lazy-loaded image component with Intersection Observer
  * Automatically loads images when they enter the viewport
+ * 
+ * @param priority - 'high' for LCP images (above-the-fold), 'auto' for others
  */
 const LazyImage: React.FC<LazyImageProps> = ({
   src,
@@ -22,6 +25,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
   placeholder = DEFAULT_PLACEHOLDER,
   threshold,
   rootMargin,
+  priority = 'auto',
   className = '',
   ...props
 }) => {
@@ -39,6 +43,8 @@ const LazyImage: React.FC<LazyImageProps> = ({
         isLoaded ? 'opacity-100' : 'opacity-50'
       } ${className}`}
       loading="lazy"
+      decoding="async"
+      fetchPriority={priority}
       {...props}
     />
   );

@@ -162,7 +162,7 @@ jobs:
           path: .lighthouseci/
           retention-days: 7
 
-  # Job 6: Security Audit (optional)
+  # Job 6: Security Audit (BLOCKING - fails PR if vulnerabilities found)
   security:
     name: Security Audit
     runs-on: ubuntu-latest
@@ -175,6 +175,6 @@ jobs:
           node-version: '20'
           cache: 'npm'
       
-      - name: Audit dependencies
+      - name: Audit dependencies (BLOCKING for moderate+)
         run: npm audit --audit-level=moderate
-        continue-on-error: true
+        # Removed continue-on-error to make it blocking
