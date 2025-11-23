@@ -13,6 +13,7 @@ const routes = [
   { path: 'es/clases/salsa-bachata-barcelona', lang: 'es', page: 'salsaBachata' },
   { path: 'es/clases/danzas-urbanas-barcelona', lang: 'es', page: 'danzasUrbanas' },
   { path: 'es/clases/dancehall-barcelona', lang: 'es', page: 'dancehall' },
+  { path: 'es/clases/twerk-barcelona', lang: 'es', page: 'twerk' },
   { path: 'es/clases-particulares-baile', lang: 'es', page: 'clasesParticulares' },
   { path: 'es/sobre-nosotros', lang: 'es', page: 'about' },
   { path: 'es/yunaisy-farray', lang: 'es', page: 'yunaisy' },
@@ -27,6 +28,7 @@ const routes = [
   { path: 'ca/clases/salsa-bachata-barcelona', lang: 'ca', page: 'salsaBachata' },
   { path: 'ca/clases/danzas-urbanas-barcelona', lang: 'ca', page: 'danzasUrbanas' },
   { path: 'ca/clases/dancehall-barcelona', lang: 'ca', page: 'dancehall' },
+  { path: 'ca/clases/twerk-barcelona', lang: 'ca', page: 'twerk' },
   { path: 'ca/clases-particulares-baile', lang: 'ca', page: 'clasesParticulares' },
   { path: 'ca/sobre-nosotros', lang: 'ca', page: 'about' },
   { path: 'ca/yunaisy-farray', lang: 'ca', page: 'yunaisy' },
@@ -41,6 +43,7 @@ const routes = [
   { path: 'en/clases/salsa-bachata-barcelona', lang: 'en', page: 'salsaBachata' },
   { path: 'en/clases/danzas-urbanas-barcelona', lang: 'en', page: 'danzasUrbanas' },
   { path: 'en/clases/dancehall-barcelona', lang: 'en', page: 'dancehall' },
+  { path: 'en/clases/twerk-barcelona', lang: 'en', page: 'twerk' },
   { path: 'en/clases-particulares-baile', lang: 'en', page: 'clasesParticulares' },
   { path: 'en/sobre-nosotros', lang: 'en', page: 'about' },
   { path: 'en/yunaisy-farray', lang: 'en', page: 'yunaisy' },
@@ -55,6 +58,7 @@ const routes = [
   { path: 'fr/clases/salsa-bachata-barcelona', lang: 'fr', page: 'salsaBachata' },
   { path: 'fr/clases/danzas-urbanas-barcelona', lang: 'fr', page: 'danzasUrbanas' },
   { path: 'fr/clases/dancehall-barcelona', lang: 'fr', page: 'dancehall' },
+  { path: 'fr/clases/twerk-barcelona', lang: 'fr', page: 'twerk' },
   { path: 'fr/clases-particulares-baile', lang: 'fr', page: 'clasesParticulares' },
   { path: 'fr/sobre-nosotros', lang: 'fr', page: 'about' },
   { path: 'fr/yunaisy-farray', lang: 'fr', page: 'yunaisy' },
@@ -90,6 +94,10 @@ const metadata = {
     dancehall: {
       title: 'Clases de Dancehall en Barcelona - Academia de Baile Urbano | FarRays Center',
       description: 'Aprende Dancehall auténtico en Barcelona con profesores expertos. Clases para todos los niveles. Descubre el ritmo de Jamaica.',
+    },
+    twerk: {
+      title: 'Clases de Twerk en Barcelona | Farray\'s Center',
+      description: 'Aprende Twerk y Perreo en Barcelona con Sandra Gómez. Clases de baile urbano para todos los niveles. ¡Libera tu energía y confianza!',
     },
     clasesParticulares: {
       title: 'Clases Particulares de Baile en Barcelona | Personalizado y a Tu Ritmo | Farray\'s Center',
@@ -145,6 +153,10 @@ const metadata = {
       title: 'Classes de Dancehall a Barcelona - Acadèmia de Ball Urbà | FarRays Center',
       description: 'Aprèn Dancehall autèntic a Barcelona amb professors experts. Classes per a tots els nivells. Descobreix el ritme de Jamaica.',
     },
+    twerk: {
+      title: 'Classes de Twerk a Barcelona | Farray\'s Center',
+      description: 'Aprèn Twerk i Perreo a Barcelona amb Sandra Gómez. Classes de ball urbà per a tots els nivells. Allibera la teva energia i confiança!',
+    },
     clasesParticulares: {
       title: 'Classes Particulars de Ball a Barcelona | Personalitzat i al Teu Ritme | Farray\'s Center',
       description: 'Classes particulars de ball a Barcelona 100% personalitzades. Professor exclusiu per a tu, horaris flexibles, tots els estils. Aprèn 3x més ràpid que en classes grupals. Bons disponibles.',
@@ -199,6 +211,10 @@ const metadata = {
       title: 'Dancehall Classes in Barcelona - Urban Dance Academy | FarRays Center',
       description: 'Learn authentic Dancehall in Barcelona with expert teachers. Classes for all levels. Discover the rhythm of Jamaica.',
     },
+    twerk: {
+      title: 'Twerk Classes in Barcelona | Farray\'s Center',
+      description: 'Learn Twerk and Perreo in Barcelona with Sandra Gómez. Urban dance classes for all levels. Unleash your energy and confidence!',
+    },
     clasesParticulares: {
       title: 'Private Dance Classes in Barcelona | Personalized and At Your Pace | Farray\'s Center',
       description: 'Private dance classes in Barcelona with 100% dedicated teacher. Salsa, Bachata, Dancehall, Contemporary Dance. Personalized teaching, flexible schedules and guaranteed results. Reserve your class now!',
@@ -252,6 +268,10 @@ const metadata = {
     dancehall: {
       title: 'Cours de Dancehall à Barcelone - Académie de Danse Urbaine | FarRays Center',
       description: 'Apprenez le Dancehall authentique à Barcelone avec des professeurs experts. Cours pour tous les niveaux. Découvrez le rythme de la Jamaïque.',
+    },
+    twerk: {
+      title: 'Cours de Twerk à Barcelone | Farray\'s Center',
+      description: 'Apprenez le Twerk et le Perreo à Barcelone avec Sandra Gómez. Cours de danse urbaine pour tous les niveaux. Libérez votre énergie et votre confiance!',
     },
     clasesParticulares: {
       title: 'Cours Particuliers de Danse à Barcelone | Personnalisé et à Votre Rythme | Farray\'s Center',
@@ -488,6 +508,8 @@ routes.forEach(route => {
     pagePath = 'clases/danzas-urbanas-barcelona';
   } else if (page === 'dancehall') {
     pagePath = 'clases/dancehall-barcelona';
+  } else if (page === 'twerk') {
+    pagePath = 'clases/twerk-barcelona';
   } else if (page === 'clasesParticulares') {
     pagePath = 'clases-particulares-baile';
   }
@@ -591,7 +613,7 @@ console.log(`\n🎉 Prerendering complete! Generated ${generatedCount} pages.`);
 console.log('\n📊 Summary:');
 console.log(`   - Total pages: ${generatedCount}`);
 console.log(`   - Languages: es, ca, en, fr (4)`);
-console.log(`   - Pages per language: home, baile-barcelona, danza-barcelona, salsa-bachata-barcelona, danzas-urbanas-barcelona, dancehall-barcelona, clases-particulares-baile (7)`);
+console.log(`   - Pages per language: home, baile-barcelona, danza-barcelona, salsa-bachata-barcelona, danzas-urbanas-barcelona, dancehall-barcelona, twerk-barcelona, clases-particulares-baile (8)`);
 console.log(`   - SEO: ✅ Metadata, ✅ hreflang, ✅ Canonical, ✅ Open Graph`);
 console.log(`   - Locale: ✅ Pre-set via localStorage + cookie before React hydration`);
 console.log('\n🔍 Verify: Run "npm run preview" and view page source to see prerendered content\n');

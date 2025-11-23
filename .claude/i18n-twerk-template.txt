@@ -1,0 +1,51 @@
+// ===== Twerk Page =====
+  twerkPageTitle: 'Clases de Twerk en Barcelona | Farray\'s Center',
+  twerkMetaDescription: 'Aprende Twerk en Barcelona con los mejores instructores. Clases para todos los niveles. ¡Reserva tu plaza!',
+
+  twerkHeroTitle: 'Twerk',
+  twerkHeroSubtitle: 'Descubre el ritmo y la pasión del Twerk en Farray\'s Center',
+
+  twerkAboutTitle: '¿Qué es Twerk?',
+  twerkAboutDesc1: 'Descripción general del Twerk. [TODO: Personalizar]',
+  twerkAboutDesc2: 'Descripción adicional sobre el estilo y la cultura. [TODO: Personalizar]',
+
+  twerkPillar1Title: 'Pilar 1',
+  twerkPillar1Desc: 'Descripción del pilar 1',
+  twerkPillar2Title: 'Pilar 2',
+  twerkPillar2Desc: 'Descripción del pilar 2',
+  twerkPillar3Title: 'Pilar 3',
+  twerkPillar3Desc: 'Descripción del pilar 3',
+
+  twerkClassesTitle: 'Nuestras Clases de Twerk',
+  twerkClassesSubtitle: 'Clases para todos los niveles',
+
+  twerkLevelBeginnerTitle: 'Principiante',
+  twerkLevelBeginnerDesc: 'Ideal para quienes empiezan desde cero. Aprende los fundamentos del Twerk.',
+  twerkLevelInterTitle: 'Intermedio',
+  twerkLevelInterDesc: 'Perfecciona tu técnica y aprende movimientos avanzados.',
+  twerkLevelAdvancedTitle: 'Avanzado',
+  twerkLevelAdvancedDesc: 'Dominación completa del Twerk con coreografías y freestyle.',
+
+  twerkInstructorTitle: 'Tu Instructor',
+  twerkInstructorName: 'Sandra Gómez',
+  twerkInstructorSpecialty: 'Twerk y Perreo',
+  twerkInstructorBio: 'Biografía del instructor. [TODO: Personalizar con experiencia, logros, estilo de enseñanza]',
+
+  twerkTestimonialsTitle: 'Lo que dicen nuestros alumnos',
+  twerkTestimonial1Name: 'María G.',
+  twerkTestimonial1Quote: 'Las clases de Twerk son increíbles. El ambiente es genial y el profesor explica muy bien.',
+  twerkTestimonial2Name: 'David L.',
+  twerkTestimonial2Quote: 'He mejorado muchísimo en solo 3 meses. Totalmente recomendable.',
+
+  twerkFaqQ1: 'Pregunta 1',
+  twerkFaqA1: 'Respuesta 1',
+  twerkFaqQ2: 'Pregunta 2',
+  twerkFaqA2: 'Respuesta 2',
+  twerkFaqQ3: 'Pregunta 3',
+  twerkFaqA3: 'Respuesta 3',
+  twerkFaqQ4: 'Pregunta 4',
+  twerkFaqA4: 'Respuesta 4',
+
+  twerkImage1Alt: 'Clases de Twerk en Barcelona - Farray\'s Center',
+  twerkImage2Alt: 'Estudiantes practicando Twerk',
+  twerkImage3Alt: 'Sandra Gómez - Instructor de Twerk',

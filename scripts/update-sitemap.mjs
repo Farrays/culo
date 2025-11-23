@@ -19,6 +19,7 @@ const routes = [
   { path: '', priority: '1.0', changefreq: 'weekly' },  // Home
   { path: 'clases/baile-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/dancehall-barcelona', priority: '0.8', changefreq: 'monthly' },
+  { path: 'clases/twerk-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/danza-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/salsa-bachata-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/danzas-urbanas-barcelona', priority: '0.8', changefreq: 'monthly' },
