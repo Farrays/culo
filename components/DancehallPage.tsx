@@ -349,7 +349,7 @@ const DancehallPage: React.FC = () => {
         />
 
         {/* Identification Section - ¿Te identificas? */}
-        <section className="py-16 md:py-24 bg-black">
+        <section className="pt-8 pb-16 md:pt-12 md:pb-24 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-16">
@@ -884,7 +884,7 @@ const DancehallPage: React.FC = () => {
         </section>
 
         {/* Final CTA Section */}
-        <section id="final-cta" className="relative py-20 md:py-32 overflow-hidden">
+        <section id="final-cta" className="relative pt-12 pb-20 md:pt-16 md:pb-32 overflow-hidden">
           {/* Background like Hero */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
