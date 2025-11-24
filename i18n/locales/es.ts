@@ -3375,8 +3375,8 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
   twerkMetaDescription:
     'Aprende Twerk y Perreo en Barcelona con Sandra Gómez. Clases de baile urbano para todos los niveles. ¡Libera tu energía y confianza!',
 
-  twerkHeroTitle: 'Twerk',
-  twerkHeroSubtitle: 'Libera tu energía y confianza con las clases de Twerk en Barcelona',
+  twerkHeroTitle: 'Clases de Twerk en Barcelona',
+  twerkHeroSubtitle: 'Sube tu autoestima, tonifica tu cuerpo y baila con actitud en un espacio sin juicios ni postureos.',
 
   twerkAboutTitle: '¿Qué es Twerk?',
   twerkAboutDesc1:
@@ -3437,7 +3437,7 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
 
   // Hero additional keys
   twerkHeroDesc: 'Mucho más que baile, una forma de empoderamiento.',
-  twerkHeroLocation: 'En pleno corazón de Barcelona, cerca de Plaza España',
+  twerkHeroLocation: 'Clases desde iniciación hasta avanzado, entre Plaza España y Sants',
 
   // CTA keys
   twerkCTA1: 'Hazte Socio Ahora',
@@ -3568,6 +3568,7 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
 
   // Breadcrumb
   twerkBreadcrumbHome: 'Inicio',
-  twerkBreadcrumbClasses: 'Clases',
-  twerkBreadcrumbCurrent: 'Twerk',
+  twerkBreadcrumbClasses: 'Clases de Baile',
+  twerkBreadcrumbUrban: 'Danzas Urbanas',
+  twerkBreadcrumbCurrent: 'Clases de Twerk',
 };

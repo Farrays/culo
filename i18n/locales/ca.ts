@@ -2735,8 +2735,8 @@ export const ca = {
   twerkMetaDescription:
     'Aprèn Twerk i Perreo a Barcelona amb Sandra Gómez. Classes de ball urbà per a tots els nivells. Allibera la teva energia i confiança!',
 
-  twerkHeroTitle: 'Twerk',
-  twerkHeroSubtitle: 'Allibera la teva energia i confiança amb les classes de Twerk a Barcelona',
+  twerkHeroTitle: 'Classes de Twerk a Barcelona',
+  twerkHeroSubtitle: "Puja l'autoestima, tonifica el teu cos i balla amb actitud en un espai sense prejudicis.",
 
   twerkAboutTitle: 'Què és Twerk?',
   twerkAboutDesc1:
@@ -2797,7 +2797,7 @@ export const ca = {
 
   // Hero additional keys
   twerkHeroDesc: "Molt més que ball, una forma d'empoderament.",
-  twerkHeroLocation: 'Al cor de Barcelona, prop de Plaça Espanya',
+  twerkHeroLocation: "Classes des d'iniciació fins a avançat, entre Plaça Espanya i Sants",
 
   // CTA keys
   twerkCTA1: 'Fes-te Soci Ara',
@@ -2927,6 +2927,7 @@ export const ca = {
 
   // Breadcrumb
   twerkBreadcrumbHome: 'Inici',
-  twerkBreadcrumbClasses: 'Classes',
-  twerkBreadcrumbCurrent: 'Twerk',
+  twerkBreadcrumbClasses: 'Classes de Ball',
+  twerkBreadcrumbUrban: 'Danses Urbanes',
+  twerkBreadcrumbCurrent: 'Classes de Twerk',
 };

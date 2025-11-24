@@ -2637,8 +2637,8 @@ export const fr = {
   twerkMetaDescription:
     'Apprenez le Twerk et le Perreo à Barcelone avec Sandra Gómez. Cours de danse urbaine pour tous les niveaux. Libérez votre énergie et votre confiance!',
 
-  twerkHeroTitle: 'Twerk',
-  twerkHeroSubtitle: 'Libérez votre énergie et votre confiance avec les cours de Twerk à Barcelone',
+  twerkHeroTitle: 'Cours de Twerk à Barcelone',
+  twerkHeroSubtitle: 'Boostez votre estime de vous, tonifiez votre corps et dansez avec attitude dans un espace sans jugement.',
 
   twerkAboutTitle: "Qu'est-ce que le Twerk?",
   twerkAboutDesc1:
@@ -2699,7 +2699,7 @@ export const fr = {
 
   // Hero additional keys
   twerkHeroDesc: "Bien plus qu'une danse, une forme d'autonomisation.",
-  twerkHeroLocation: 'Au cœur de Barcelone, près de la Plaça Espanya',
+  twerkHeroLocation: "Cours du niveau débutant à avancé, entre Plaça Espanya et Sants",
 
   // CTA keys
   twerkCTA1: 'Devenez Membre Maintenant',
@@ -2836,6 +2836,7 @@ export const fr = {
 
   // Breadcrumb
   twerkBreadcrumbHome: 'Accueil',
-  twerkBreadcrumbClasses: 'Cours',
-  twerkBreadcrumbCurrent: 'Twerk',
+  twerkBreadcrumbClasses: 'Cours de Danse',
+  twerkBreadcrumbUrban: 'Danses Urbaines',
+  twerkBreadcrumbCurrent: 'Cours de Twerk',
 };
