@@ -2737,7 +2737,8 @@ export const en = {
     'Learn Twerk and Perreo in Barcelona with Sandra Gómez. Urban dance classes for all levels. Unleash your energy and confidence!',
 
   twerkHeroTitle: 'Twerk Classes in Barcelona',
-  twerkHeroSubtitle: 'Boost your self-esteem, tone your body and dance with attitude in a judgment-free space.',
+  twerkHeroSubtitle:
+    'Boost your self-esteem, tone your body and dance with attitude in a judgment-free space.',
 
   twerkAboutTitle: 'What is Twerk?',
   twerkAboutDesc1:

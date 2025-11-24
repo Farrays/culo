@@ -3376,7 +3376,8 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
     'Aprende Twerk y Perreo en Barcelona con Sandra Gómez. Clases de baile urbano para todos los niveles. ¡Libera tu energía y confianza!',
 
   twerkHeroTitle: 'Clases de Twerk en Barcelona',
-  twerkHeroSubtitle: 'Sube tu autoestima, tonifica tu cuerpo y baila con actitud en un espacio sin juicios ni postureos.',
+  twerkHeroSubtitle:
+    'Sube tu autoestima, tonifica tu cuerpo y baila con actitud en un espacio sin juicios ni postureos.',
 
   twerkAboutTitle: '¿Qué es Twerk?',
   twerkAboutDesc1:
