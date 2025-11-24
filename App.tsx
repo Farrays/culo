@@ -42,6 +42,7 @@ const ServiciosBailePage = lazy(() => import('./components/ServiciosBailePage'))
 const EstudioGrabacionPage = lazy(() => import('./components/EstudioGrabacionPage'));
 const FacilitiesPage = lazy(() => import('./components/FacilitiesPage'));
 const TwerkPage = lazy(() => import('./components/TwerkPage'));
+const AfrobeatPage = lazy(() => import('./components/AfrobeatPage'));
 
 // Valid locales
 const VALID_LOCALES: Locale[] = ['es', 'en', 'ca', 'fr'];
@@ -139,6 +140,16 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <TwerkPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/clases/afrobeat-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <AfrobeatPage />
                 </>
               }
             />
@@ -346,6 +357,18 @@ const AppContent: React.FC = () => {
             <Route
               path="/clases/twerk-barcelona"
               element={<Navigate to={`/${locale}/clases/twerk-barcelona`} replace />}
+            />
+            <Route
+              path="/afrobeat"
+              element={<Navigate to={`/${locale}/clases/afrobeat-barcelona`} replace />}
+            />
+            <Route
+              path="/afrodance"
+              element={<Navigate to={`/${locale}/clases/afrobeat-barcelona`} replace />}
+            />
+            <Route
+              path="/clases/afrobeat-barcelona"
+              element={<Navigate to={`/${locale}/clases/afrobeat-barcelona`} replace />}
             />
 
             {/* Catch-all for 404 - redirect to localized 404 page */}
