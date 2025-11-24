@@ -73,6 +73,12 @@ const TwerkPage: React.FC = () => {
       {
         '@type': 'ListItem',
         position: 3,
+        name: t('twerkBreadcrumbUrban'),
+        item: `${baseUrl}/${locale}/clases`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
         name: t('twerkBreadcrumbCurrent'),
         item: pageUrl,
       },
@@ -83,6 +89,7 @@ const TwerkPage: React.FC = () => {
   const breadcrumbItems = [
     { name: t('twerkBreadcrumbHome'), url: `/${locale}` },
     { name: t('twerkBreadcrumbClasses'), url: `/${locale}/clases` },
+    { name: t('twerkBreadcrumbUrban'), url: `/${locale}/clases` },
     {
       name: t('twerkBreadcrumbCurrent'),
       url: `/${locale}/clases/twerk-barcelona`,
@@ -248,7 +255,7 @@ const TwerkPage: React.FC = () => {
                     </div>
                   </AnimateOnScroll>
 
-                  {/* ~500 Calorías */}
+                  {/* ~600 Calorías */}
                   <AnimateOnScroll delay={100}>
                     <div className="text-center">
                       <div className="mb-2 flex justify-center">
@@ -263,7 +270,7 @@ const TwerkPage: React.FC = () => {
                       <div className="flex items-center justify-center gap-1">
                         <span className="text-3xl md:text-4xl font-black holographic-text">~</span>
                         <AnimatedCounter
-                          target={500}
+                          target={600}
                           className="text-4xl md:text-5xl font-black holographic-text"
                         />
                       </div>
