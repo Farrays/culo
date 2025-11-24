@@ -95,7 +95,7 @@ const AfrobeatPage: React.FC = () => {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${t('afroPageTitle')} | Farray's Center`} />
+        <meta name="twitter:title" content={`${t('afroPageTitle')} | Farray&apos;s Center`} />
         <meta name="twitter:description" content={t('afroMetaDescription')} />
         <meta name="twitter:image" content={`${baseUrl}/images/og-afrobeat.jpg`} />
       </Helmet>
