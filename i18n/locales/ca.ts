@@ -2982,11 +2982,11 @@ export const ca = {
   afroBreadcrumbCurrent: "Classes d'Afrobeats",
 
   // Hero
-  afroHeroTitle: "Classes d'Afrobeats a Barcelona",
+  afroHeroTitle: "Classes d'Afrobeats i Afrodance a Barcelona",
   afroHeroSubtitle: 'Gaudeix dels ritmes africans més divertits del moment',
   afroHeroDesc: 'Àfrica es mou, et mous amb ella?',
   afroHeroLocation:
-    "Viatja a Àfrica sense sortir de Barcelona | Classes des d'iniciació fins a intermedi, entre Plaça Espanya i Sants",
+    "Viatja a Àfrica sense sortir de Barcelona | Classes d'Afrobeats i Afrodance des d'iniciació fins a intermedi, entre Plaça Espanya i Sants",
 
   // CTAs
   afroCTA1: 'Fes-te Soci Ara',
@@ -3046,15 +3046,16 @@ Encara que l'Afrodance pugui veure's molt per xarxes, la seva arrel és profunda
   // Identification
   afroIdentifyTitle: "T'identifiques amb alguna d'aquestes situacions?",
   afroIdentify1:
-    "Sents que la música africana et mou per dins però mai has tingut l'oportunitat d'aprendre a ballar-la.",
-  afroIdentify2: "Vols entrenar fort i suar però t'avorreixen els gimnasos convencionals.",
-  afroIdentify3: "Busques una forma d'expressar-te i connectar amb el teu cos de manera divertida.",
+    'Estàs tan fart/a de la rutina que ja ni el cafè et vol. Necessites alguna cosa que et desperti JA.',
+  afroIdentify2:
+    "Busques una forma d'expressar-te i connectar amb el teu cos de manera diferent i divertida.",
+  afroIdentify3: "Odies el gimnàs... i el gimnàs també t'odia. No us suporteu. Mai va ser amor.",
   afroIdentify4:
-    "T'agradaria conèixer gent nova amb interessos similars i formar part d'una comunitat.",
+    'Et fa falta conèixer gent real, bona onda, rialles i un lloc on ser tu sense filtres ni postureos.',
   afroIdentify5:
-    'Vols aprendre els passos que veus als videoclips dels teus artistes africans preferits.',
+    "Sents que la música i l'essència africana et mou per dins però mai has tingut l'oportunitat d'aprendre a ballar-la.",
   afroIdentify6:
-    "L'essència d'Àfrica i la seva cultura et mouen per dins? Si t'inspira tot el que representa Àfrica hauries de trobar formes d'experimentar la seva cultura sense haver de sortir de la ciutat.",
+    "T'encanta ballar, però necessites més flow, més actitud i menys coreografies de robot sense bateria.",
 
   afroIdentifyConclusion: "Si has dit «sí» a algun d'aquests punts, ja saps el que necessites.",
   afroIdentifyTransition:
@@ -3116,7 +3117,7 @@ Encara que l'Afrodance pugui veure's molt per xarxes, la seva arrel és profunda
   afroTeachersSubtitle: "Experts en Afrodance amb anys d'experiència",
   afroTeacher1Specialty: '+6 anys ensenyant Afrobeat i Ntcham',
   afroTeacher1Bio:
-    'May Corn és un professor i ballarí internacional, natiu de Tanzània i especialista en Ntcham. Les seves arrels, coneixements, energia i alegria contagiant el converteixen en un dels mestres més recomanats de tot Barcelona.',
+    'Redblueh és un professor i ballarí internacional, natiu de Tanzània i especialista en Ntcham. Les seves arrels, coneixements, energia i alegria contagiant el converteixen en un dels mestres més recomanats de tot Barcelona.',
   afroTeacher2Specialty: '+5 anys com a expert en Afrobeat i Danses Africanes',
   afroTeacher2Bio:
     "Charlie Breezy, mestre internacional i ballarí cubà. Va néixer en un país on la cultura africana està totalment arrelada. Format a l'ENA (Escola Nacional d'Art de Cuba), Charlie és un ballarí polifacètic que, a més de dominar diferents estils de dansa africana, destaca en contemporani, ballet i un ampli ventall de danses urbanes.",
@@ -3126,6 +3127,11 @@ Encara que l'Afrodance pugui veure's molt per xarxes, la seva arrel és profunda
   // Schedule
   afroScheduleTitle: "Horaris de les nostres classes d'Afrobeats",
   afroScheduleSubtitle: 'Classes disponibles diverses vegades per setmana',
+
+  // Video
+  afroVideoTitle: 'Mira com ballem Afrobeats i Afrodance',
+  afroVideoDesc:
+    "Descobreix l'energia i el ritme de les nostres classes d'Afrobeats i Afrodance a Barcelona",
 
   // Why Today
   afroWhyTodayFullTitle: 'Per què avui és el millor moment per començar a ballar Afrobeat?',
@@ -3139,7 +3145,7 @@ Encara que l'Afrodance pugui veure's molt per xarxes, la seva arrel és profunda
     "I l'experiència Afrobeat és alguna cosa que només pots entendre quan la vius.",
 
   // FAQ
-  afroFaqTitle: "Preguntes freqüents sobre les nostres classes d'Afrobeats a Barcelona",
+  afroFaqTitle: "Preguntes freqüents sobre les nostres classes d'Afrodance a Barcelona",
   afroFaqQ1: 'Puc començar des de zero si mai no he ballat Afrobeat?',
   afroFaqA1:
     "ÉS CLAR! Els alumnes que mai no han ballat abans trien els cursos de nivell principiant i els que tenen una mica d'experiència en algun tipus de ball trien el nivell bàsic. Les nostres classes estan dissenyades perquè qualsevol pugui seguir el ritme des del primer dia.",

@@ -1,8 +1,8 @@
-import * as Sentry from '@sentry/react';
-
+/* eslint-disable no-undef */
 /**
- * Initialize Sentry error tracking
+ * Initialize Sentry error tracking (lazy loaded)
  * Only enabled in production with a valid DSN
+ * Loads Sentry asynchronously to avoid blocking initial render
  */
 export const initSentry = (): void => {
   // Get DSN from environment variable
@@ -10,59 +10,59 @@ export const initSentry = (): void => {
 
   // Only initialize in production and if DSN is configured
   if (import.meta.env.PROD && dsn) {
-    Sentry.init({
-      dsn,
-      environment: import.meta.env.MODE || 'production',
-      release: import.meta.env.VITE_APP_VERSION || 'unknown',
-      integrations: [
-        Sentry.browserTracingIntegration(),
-        Sentry.replayIntegration({
-          maskAllText: true,
-          blockAllMedia: true,
-        }),
-      ],
-      // Performance Monitoring
-      tracesSampleRate: import.meta.env.VITE_SENTRY_TRACES_SAMPLE_RATE
-        ? parseFloat(import.meta.env.VITE_SENTRY_TRACES_SAMPLE_RATE)
-        : 0.2, // Capture 20% of transactions by default
-      // Session Replay
-      replaysSessionSampleRate: import.meta.env.VITE_SENTRY_REPLAYS_SESSION_SAMPLE_RATE
-        ? parseFloat(import.meta.env.VITE_SENTRY_REPLAYS_SESSION_SAMPLE_RATE)
-        : 0.1, // Sample 10% of sessions
-      replaysOnErrorSampleRate: 1.0, // Sample 100% of sessions with errors
-      // Filter out non-critical errors
-      beforeSend(event, hint) {
-        // Don't send development errors
-        if (import.meta.env.DEV) return null;
+    // Use requestIdleCallback to load Sentry when browser is idle
+    const loadSentry = () => {
+      import('@sentry/react').then(Sentry => {
+        Sentry.init({
+          dsn,
+          environment: import.meta.env.MODE || 'production',
+          release: import.meta.env.VITE_APP_VERSION || 'unknown',
+          integrations: [
+            Sentry.browserTracingIntegration(),
+            Sentry.replayIntegration({
+              maskAllText: true,
+              blockAllMedia: true,
+            }),
+          ],
+          tracesSampleRate: import.meta.env.VITE_SENTRY_TRACES_SAMPLE_RATE
+            ? parseFloat(import.meta.env.VITE_SENTRY_TRACES_SAMPLE_RATE)
+            : 0.2,
+          replaysSessionSampleRate: import.meta.env.VITE_SENTRY_REPLAYS_SESSION_SAMPLE_RATE
+            ? parseFloat(import.meta.env.VITE_SENTRY_REPLAYS_SESSION_SAMPLE_RATE)
+            : 0.1,
+          replaysOnErrorSampleRate: 1.0,
+          beforeSend(event, hint) {
+            if (import.meta.env.DEV) return null;
+            const error = hint.originalException;
+            if (error instanceof Error) {
+              if (error.message.includes('ResizeObserver')) return null;
+              if (error.message.includes('Non-Error promise rejection')) return null;
+              if (error.message.includes('ChunkLoadError')) return null;
+            }
+            return event;
+          },
+        });
+        // Store reference globally for web-vitals integration
+        window.Sentry = Sentry;
+      });
+    };
 
-        // Filter out known non-critical errors
-        const error = hint.originalException;
-        if (error instanceof Error) {
-          if (error.message.includes('ResizeObserver')) return null;
-          if (error.message.includes('Non-Error promise rejection')) return null;
-          if (error.message.includes('ChunkLoadError')) return null;
-        }
-
-        return event;
-      },
-    });
-
-    // Log successful initialization in development
-    if (import.meta.env.DEV) {
-      console.warn('✅ Sentry initialized successfully');
+    // Load when browser is idle, or after 2s as fallback
+    if (typeof window.requestIdleCallback === 'function') {
+      window.requestIdleCallback(loadSentry, { timeout: 2000 });
+    } else {
+      setTimeout(loadSentry, 2000);
     }
-  } else if (!dsn && import.meta.env.PROD) {
-    console.warn('⚠️ Sentry DSN not configured. Error tracking disabled.');
   }
 };
 
 /**
- * Capture exception manually
+ * Capture exception manually (works with lazy-loaded Sentry)
  */
 export const captureException = (error: Error, context?: Record<string, unknown>): void => {
-  if (import.meta.env.PROD) {
-    Sentry.captureException(error, { extra: context });
-  } else {
+  if (import.meta.env.PROD && window.Sentry) {
+    window.Sentry.captureException(error, { extra: context });
+  } else if (import.meta.env.DEV) {
     console.error('Error captured:', error, context);
   }
 };
@@ -71,16 +71,20 @@ export const captureException = (error: Error, context?: Record<string, unknown>
  * Set user context for error tracking
  */
 export const setUser = (user: { id?: string; email?: string; username?: string }): void => {
-  Sentry.setUser(user);
+  if (window.Sentry) {
+    window.Sentry.setUser(user);
+  }
 };
 
 /**
  * Add breadcrumb for debugging
  */
 export const addBreadcrumb = (message: string, data?: Record<string, unknown>): void => {
-  Sentry.addBreadcrumb({
-    message,
-    data,
-    level: 'info',
-  });
+  if (window.Sentry) {
+    window.Sentry.addBreadcrumb({
+      message,
+      data,
+      level: 'info',
+    });
+  }
 };

@@ -11,6 +11,7 @@ import CulturalHistorySection from './CulturalHistorySection';
 import ScheduleSection from './ScheduleSection';
 import FAQSection from './FAQSection';
 import AnimatedCounter from './AnimatedCounter';
+import YouTubeEmbed from './YouTubeEmbed';
 import { LocalBusinessSchema, CourseSchema, AggregateReviewsSchema } from './SchemaMarkup';
 
 const AfrobeatPage: React.FC = () => {
@@ -317,14 +318,26 @@ const AfrobeatPage: React.FC = () => {
                     </div>
                   </div>
                   <div className="rounded-2xl overflow-hidden shadow-lg">
-                    <img
-                      src="/images/classes/afrobeat/img/clases-afrobeat-barcelona-01_960.webp"
-                      alt="Clases de Afrobeats en Barcelona - Estudiantes bailando en la academia"
-                      width="960"
-                      height="640"
-                      loading="lazy"
-                      className="w-full h-full object-cover"
-                    />
+                    <picture>
+                      <source
+                        srcSet="/images/classes/afrobeat/img/clases-afrobeat-barcelona_640.webp 640w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_960.webp 960w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_1440.webp 1440w"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        type="image/webp"
+                      />
+                      <source
+                        srcSet="/images/classes/afrobeat/img/clases-afrobeat-barcelona_640.jpg 640w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_960.jpg 960w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_1440.jpg 1440w"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        type="image/jpeg"
+                      />
+                      <img
+                        src="/images/classes/afrobeat/img/clases-afrobeat-barcelona_960.jpg"
+                        alt="Clases de Afrobeats en Barcelona - Estudiantes bailando en la academia"
+                        width="960"
+                        height="612"
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                    </picture>
                   </div>
                 </div>
               </div>
@@ -679,16 +692,22 @@ const AfrobeatPage: React.FC = () => {
                 <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                   <div className="flex flex-col items-center text-center">
                     <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6">
-                      <img
-                        src="/images/teachers/may-corn.jpg"
-                        alt="May Corn - Profesor de Afrobeats"
-                        width="192"
-                        height="192"
-                        loading="lazy"
-                        className="w-full h-full object-cover"
-                      />
+                      <picture>
+                        <source
+                          srcSet="/images/teachers/img/profesor-redblueh_640.webp"
+                          type="image/webp"
+                        />
+                        <img
+                          src="/images/teachers/img/profesor-redblueh_640.jpg"
+                          alt="Redblueh - Profesor de Afrobeats"
+                          width="192"
+                          height="192"
+                          loading="lazy"
+                          className="w-full h-full object-cover"
+                        />
+                      </picture>
                     </div>
-                    <h3 className="text-2xl font-bold text-neutral mb-2">May Corn</h3>
+                    <h3 className="text-2xl font-bold text-neutral mb-2">Redblueh</h3>
                     <p className="text-primary-accent font-semibold mb-4">
                       {t('afroTeacher1Specialty')}
                     </p>
@@ -701,14 +720,20 @@ const AfrobeatPage: React.FC = () => {
                 <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                   <div className="flex flex-col items-center text-center">
                     <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6">
-                      <img
-                        src="/images/teachers/charlie-breezy.jpg"
-                        alt="Charlie Breezy - Profesor de Afrobeats"
-                        width="192"
-                        height="192"
-                        loading="lazy"
-                        className="w-full h-full object-cover"
-                      />
+                      <picture>
+                        <source
+                          srcSet="/images/teachers/img/profesor-charlie-breezy_640.webp"
+                          type="image/webp"
+                        />
+                        <img
+                          src="/images/teachers/img/profesor-charlie-breezy_640.jpg"
+                          alt="Charlie Breezy - Profesor de Afrobeats"
+                          width="192"
+                          height="192"
+                          loading="lazy"
+                          className="w-full h-full object-cover"
+                        />
+                      </picture>
                     </div>
                     <h3 className="text-2xl font-bold text-neutral mb-2">Charlie Breezy</h3>
                     <p className="text-primary-accent font-semibold mb-4">
@@ -802,8 +827,31 @@ const AfrobeatPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Video Section */}
+        <section id="video" className="py-20 md:py-32 bg-primary-dark/10">
+          <div className="container mx-auto px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
+                  {t('afroVideoTitle')}
+                </h2>
+                <p className="text-lg text-neutral/70">{t('afroVideoDesc')}</p>
+              </div>
+            </AnimateOnScroll>
+
+            <div className="max-w-3xl mx-auto">
+              <AnimateOnScroll delay={100}>
+                <YouTubeEmbed
+                  videoId="8ztKfzywfbA"
+                  title="Clases de Afrobeats en Barcelona - Farray's Center"
+                />
+              </AnimateOnScroll>
+            </div>
+          </div>
+        </section>
+
         {/* Why Today Section */}
-        <section className="py-20 md:py-32 bg-primary-dark/10">
+        <section className="py-20 md:py-32 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-3xl mx-auto text-center space-y-6">

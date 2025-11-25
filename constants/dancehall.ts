@@ -23,12 +23,13 @@ export const DANCEHALL_FAQS_CONFIG: FAQ[] = [
 ];
 
 // Testimonials for Dancehall page (extends Google reviews with specific testimonial)
+// Note: images are empty as we use InitialsAvatar for rendering
 export const DANCEHALL_TESTIMONIALS: Testimonial[] = [
   ...GOOGLE_REVIEWS_TESTIMONIALS,
   {
     id: 4,
     name: 'Paula Galindo Calanda',
-    image: '/images/testimonials/placeholder-f.jpg',
+    image: '',
     rating: 5,
     city: {
       en: 'Barcelona, Spain',

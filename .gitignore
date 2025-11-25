@@ -21,3 +21,9 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+
+# Raw images (source files, not needed in repo)
+public/images/**/raw/
+public/images/teachers/raw/
+.lighthouseci/
+.claude/settings.local.json

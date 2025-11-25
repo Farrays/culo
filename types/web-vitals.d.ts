@@ -6,10 +6,8 @@ declare global {
       targetId: string,
       config?: Record<string, unknown>
     ) => void;
-    Sentry?: {
-      captureMessage: (message: string, options?: Record<string, unknown>) => void;
-      captureException: (error: Error, options?: Record<string, unknown>) => void;
-    };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    Sentry?: any;
   }
 }
 

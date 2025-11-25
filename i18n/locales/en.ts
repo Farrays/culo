@@ -2981,11 +2981,11 @@ export const en = {
   afroBreadcrumbCurrent: 'Afrobeats Classes',
 
   // Hero
-  afroHeroTitle: 'Afrobeats Classes in Barcelona',
+  afroHeroTitle: 'Afrobeats and Afrodance Classes in Barcelona',
   afroHeroSubtitle: 'Enjoy the most fun African rhythms of the moment',
   afroHeroDesc: 'Africa moves, do you move with it?',
   afroHeroLocation:
-    'Travel to Africa without leaving Barcelona | Classes from beginner to intermediate, between Plaza España and Sants',
+    'Travel to Africa without leaving Barcelona | Afrobeats and Afrodance classes from beginner to intermediate, between Plaza España and Sants',
 
   // CTAs
   afroCTA1: 'Become a Member Now',
@@ -3117,7 +3117,7 @@ Although Afrodance may be seen a lot on social media, its root is deep: it is a 
   afroTeachersSubtitle: 'Afrodance experts with years of experience',
   afroTeacher1Specialty: '+6 years teaching Afrobeats and Ntcham',
   afroTeacher1Bio:
-    'May Corn is an international teacher and dancer, native of Tanzania and Ntcham specialist. His roots, knowledge, energy and contagious joy make him one of the most recommended teachers in all of Barcelona.',
+    'Redblueh is an international teacher and dancer, native of Tanzania and Ntcham specialist. His roots, knowledge, energy and contagious joy make him one of the most recommended teachers in all of Barcelona.',
   afroTeacher2Specialty: '+5 years as an expert in Afrobeats and African Dances',
   afroTeacher2Bio:
     'Charlie Breezy, international master and Cuban dancer. He was born in a country where African culture is totally rooted. Trained at the ENA (National School of Art of Cuba), Charlie is a versatile dancer who, besides mastering different African dance styles, excels in contemporary, ballet and a wide range of urban dances.',
@@ -3127,6 +3127,11 @@ Although Afrodance may be seen a lot on social media, its root is deep: it is a 
   // Schedule
   afroScheduleTitle: 'Schedules for our Afrobeats classes',
   afroScheduleSubtitle: 'Classes available several times a week',
+
+  // Video
+  afroVideoTitle: 'Watch how we dance Afrobeats and Afrodance',
+  afroVideoDesc:
+    'Discover the energy and rhythm of our Afrobeats and Afrodance classes in Barcelona',
 
   // Why Today
   afroWhyTodayFullTitle: 'Why is today the best time to start dancing Afrobeats?',
@@ -3140,7 +3145,7 @@ Although Afrodance may be seen a lot on social media, its root is deep: it is a 
     'And the Afrobeats experience is something you can only understand when you live it.',
 
   // FAQ
-  afroFaqTitle: 'Frequently asked questions about our Afrobeats classes in Barcelona',
+  afroFaqTitle: 'Frequently asked questions about our Afrodance classes in Barcelona',
   afroFaqQ1: 'Can I start from scratch if I have never danced Afrobeats?',
   afroFaqA1:
     'OF COURSE! Students who have never danced before choose beginner level courses and those with some experience in any type of dance choose the basic level. Our classes are designed so anyone can follow the rhythm from day one.',

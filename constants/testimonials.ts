@@ -1,11 +1,12 @@
 import type { Testimonial } from '../types';
 
 // Google Reviews testimonials - centralized to avoid duplication across pages
+// Note: images are empty as we use InitialsAvatar for rendering
 export const GOOGLE_REVIEWS_TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
     name: 'Ana Cid',
-    image: '/images/testimonials/placeholder-f.jpg',
+    image: '',
     rating: 5,
     city: {
       en: 'Barcelona, Spain',
@@ -23,7 +24,7 @@ export const GOOGLE_REVIEWS_TESTIMONIALS: Testimonial[] = [
   {
     id: 2,
     name: 'Marina Martínez',
-    image: '/images/testimonials/placeholder-f.jpg',
+    image: '',
     rating: 5,
     city: {
       en: 'Barcelona, Spain',
@@ -41,7 +42,7 @@ export const GOOGLE_REVIEWS_TESTIMONIALS: Testimonial[] = [
   {
     id: 3,
     name: 'Olga Folque Sanz',
-    image: '/images/testimonials/placeholder-f.jpg',
+    image: '',
     rating: 5,
     city: {
       en: 'Barcelona, Spain',

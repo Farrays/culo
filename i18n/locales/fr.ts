@@ -2889,11 +2889,11 @@ export const fr = {
   afroBreadcrumbCurrent: "Cours d'Afrobeats",
 
   // Hero
-  afroHeroTitle: "Cours d'Afrobeats à Barcelone",
+  afroHeroTitle: "Cours d'Afrobeats et Afrodance à Barcelone",
   afroHeroSubtitle: 'Profitez des rythmes africains les plus fun du moment',
   afroHeroDesc: "L'Afrique bouge, tu bouges avec elle ?",
   afroHeroLocation:
-    'Voyage en Afrique sans quitter Barcelone | Cours du niveau débutant à intermédiaire, entre Plaza España et Sants',
+    "Voyage en Afrique sans quitter Barcelone | Cours d'Afrobeats et Afrodance du niveau débutant à intermédiaire, entre Plaza España et Sants",
 
   // CTAs
   afroCTA1: 'Deviens Membre Maintenant',
@@ -2953,17 +2953,17 @@ Bien que l'Afrodance puisse être très visible sur les réseaux, sa racine est 
   // Identification
   afroIdentifyTitle: "Tu t'identifies à l'une de ces situations ?",
   afroIdentify1:
-    "Tu sens que la musique africaine te fait vibrer intérieurement mais tu n'as jamais eu l'occasion d'apprendre à la danser.",
+    'Tu en as tellement marre de la routine que même le café ne veut plus de toi. Tu as besoin de quelque chose pour te réveiller MAINTENANT.',
   afroIdentify2:
-    "Tu veux t'entraîner dur et transpirer mais les salles de sport conventionnelles t'ennuient.",
+    "Tu cherches une façon de t'exprimer et de te connecter à ton corps de manière différente et amusante.",
   afroIdentify3:
-    "Tu cherches une façon de t'exprimer et de te connecter à ton corps de manière amusante.",
+    "Tu détestes la salle de sport... et la salle de sport te déteste aussi. Vous ne vous supportez pas. Ça n'a jamais été de l'amour.",
   afroIdentify4:
-    "Tu aimerais rencontrer de nouvelles personnes avec des intérêts similaires et faire partie d'une communauté.",
+    'Tu as besoin de rencontrer des vraies personnes, de la bonne ambiance, des rires et un endroit où être toi-même sans filtres ni faux-semblants.',
   afroIdentify5:
-    'Tu veux apprendre les pas que tu vois dans les clips de tes artistes africains préférés.',
+    "Tu sens que la musique et l'essence africaine te font vibrer à l'intérieur mais tu n'as jamais eu l'occasion d'apprendre à la danser.",
   afroIdentify6:
-    "L'essence de l'Afrique et sa culture te font vibrer intérieurement ? Si tout ce que représente l'Afrique t'inspire, tu devrais trouver des moyens d'expérimenter sa culture sans quitter la ville.",
+    "Tu adores danser, mais tu as besoin de plus de flow, plus d'attitude et moins de chorégraphies de robot sans batterie.",
 
   afroIdentifyConclusion: "Si tu as dit «oui» à l'un de ces points, tu sais ce dont tu as besoin.",
   afroIdentifyTransition:
@@ -3026,7 +3026,7 @@ Bien que l'Afrodance puisse être très visible sur les réseaux, sa racine est 
   afroTeachersSubtitle: "Experts en Afrodance avec des années d'expérience",
   afroTeacher1Specialty: "+6 ans d'enseignement de l'Afrobeats et Ntcham",
   afroTeacher1Bio:
-    "May Corn est un professeur et danseur international, natif de Tanzanie et spécialiste du Ntcham. Ses racines, connaissances, énergie et joie contagieuse en font l'un des maîtres les plus recommandés de tout Barcelone.",
+    "Redblueh est un professeur et danseur international, natif de Tanzanie et spécialiste du Ntcham. Ses racines, connaissances, énergie et joie contagieuse en font l'un des maîtres les plus recommandés de tout Barcelone.",
   afroTeacher2Specialty: '+5 ans comme expert en Afrobeat et Danses Africaines',
   afroTeacher2Bio:
     "Charlie Breezy, maître international et danseur cubain. Il est né dans un pays où la culture africaine est totalement enracinée. Formé à l'ENA (École Nationale d'Art de Cuba), Charlie est un danseur polyvalent qui, en plus de maîtriser différents styles de danse africaine, excelle en contemporain, ballet et un large éventail de danses urbaines.",
@@ -3036,6 +3036,11 @@ Bien que l'Afrodance puisse être très visible sur les réseaux, sa racine est 
   // Schedule
   afroScheduleTitle: "Horaires de nos cours d'Afrobeat",
   afroScheduleSubtitle: 'Cours disponibles plusieurs fois par semaine',
+
+  // Video
+  afroVideoTitle: "Regarde comment on danse l'Afrobeats et l'Afrodance",
+  afroVideoDesc:
+    "Découvre l'énergie et le rythme de nos cours d'Afrobeats et Afrodance à Barcelone",
 
   // Why Today
   afroWhyTodayFullTitle:
@@ -3051,7 +3056,7 @@ Bien que l'Afrodance puisse être très visible sur les réseaux, sa racine est 
     "Et l'expérience Afrobeat est quelque chose que tu ne peux comprendre que lorsque tu la vis.",
 
   // FAQ
-  afroFaqTitle: "Questions fréquentes sur nos cours d'Afrobeat à Barcelone",
+  afroFaqTitle: "Questions fréquentes sur nos cours d'Afrodance à Barcelone",
   afroFaqQ1: "Puis-je commencer de zéro si je n'ai jamais dansé l'Afrobeats ?",
   afroFaqA1:
     "BIEN SÛR ! Les élèves qui n'ont jamais dansé choisissent les cours de niveau débutant et ceux qui ont un peu d'expérience dans n'importe quel type de danse choisissent le niveau basique. Nos cours sont conçus pour que n'importe qui puisse suivre le rythme dès le premier jour.",

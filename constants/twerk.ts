@@ -22,12 +22,13 @@ export const TWERK_FAQS_CONFIG: FAQ[] = [
 ];
 
 // Testimonials for Twerk page (extends Google reviews with specific testimonial)
+// Note: images are empty as we use InitialsAvatar for rendering
 export const TWERK_TESTIMONIALS: Testimonial[] = [
   ...GOOGLE_REVIEWS_TESTIMONIALS,
   {
     id: 4,
     name: '[TODO: Nombre del testimonio]',
-    image: '/images/testimonials/placeholder-f.jpg',
+    image: '',
     rating: 5,
     city: {
       en: 'Barcelona, Spain',

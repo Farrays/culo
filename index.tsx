@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.css';
 import App from './App';
 import { initSentry } from './utils/sentry';
 import { onCLS, onINP, onFCP, onLCP, onTTFB, Metric } from 'web-vitals';
