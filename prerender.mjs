@@ -622,13 +622,9 @@ ${preloadHintsHtml}
     fs.mkdirSync(dir, { recursive: true });
   }
 
-  // Transform blocking CSS to non-blocking (Critical CSS is already inline)
-  // Pattern: <link rel="stylesheet" ... href="/assets/style-xxx.css">
-  // To: <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" ... href="/assets/style-xxx.css">
-  html = html.replace(
-    /<link\s+rel="stylesheet"\s+crossorigin\s+href="(\/assets\/style-[^"]+\.css)">/g,
-    '<link rel="preload" as="style" href="$1" crossorigin onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link rel="stylesheet" href="$1" crossorigin></noscript>'
-  );
+  // CSS loads synchronously - Critical CSS is already inline for fast first paint
+  // The main CSS file is kept as a regular stylesheet to avoid CSP issues with inline JS
+  // (onload handlers are blocked by strict CSP without 'unsafe-inline')
 
   // Save file
   fs.writeFileSync(filePath, html);
