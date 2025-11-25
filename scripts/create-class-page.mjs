@@ -188,79 +188,177 @@ async function updateAppRoutes(className, componentName) {
 }
 
 async function createI18nKeys(className, componentName, instructor, specialty) {
-  log.info('Generando claves i18n (plantilla en español)...');
+  log.info('Generando claves i18n COMPLETAS (plantilla en español con 15 FAQs)...');
 
-  const classTemplate = classTemplates[className] || {
-    pillar1: { title: 'Pilar 1', desc: 'Descripción del pilar 1' },
-    pillar2: { title: 'Pilar 2', desc: 'Descripción del pilar 2' },
-    pillar3: { title: 'Pilar 3', desc: 'Descripción del pilar 3' },
-    faqs: [
-      { q: 'Pregunta 1', a: 'Respuesta 1' },
-      { q: 'Pregunta 2', a: 'Respuesta 2' },
-      { q: 'Pregunta 3', a: 'Respuesta 3' },
-      { q: 'Pregunta 4', a: 'Respuesta 4' },
-    ],
-  };
+  const keyPrefix = className.replace(/-/g, '');
 
+  // Generate complete i18n template with all sections we've been using
   const i18nTemplate = `
   // ===== ${componentName} Page =====
-  ${className}PageTitle: 'Clases de ${componentName} en Barcelona | Farray\\'s Center',
-  ${className}MetaDescription: 'Aprende ${componentName} en Barcelona con los mejores instructores. Clases para todos los niveles. ¡Reserva tu plaza!',
+  ${keyPrefix}PageTitle: 'Clases de ${componentName} en Barcelona | Academia Farray\\'s Center',
+  ${keyPrefix}MetaDescription: 'Aprende ${componentName} en Barcelona con instructores especializados. Clases de ${componentName} para todos los niveles cerca de Plaza España y Sants. ¡Reserva tu clase de prueba!',
 
-  ${className}HeroTitle: '${componentName}',
-  ${className}HeroSubtitle: 'Descubre el ritmo y la pasión del ${componentName} en Farray\\'s Center',
+  // Breadcrumb (4 niveles: Home > Clases > Urbanas > Current)
+  ${keyPrefix}BreadcrumbHome: 'Inicio',
+  ${keyPrefix}BreadcrumbClasses: 'Clases de Baile',
+  ${keyPrefix}BreadcrumbUrban: 'Danzas Urbanas',
+  ${keyPrefix}BreadcrumbCurrent: 'Clases de ${componentName}',
 
-  ${className}AboutTitle: '¿Qué es ${componentName}?',
-  ${className}AboutDesc1: 'Descripción general del ${componentName}. [TODO: Personalizar]',
-  ${className}AboutDesc2: 'Descripción adicional sobre el estilo y la cultura. [TODO: Personalizar]',
+  // Hero
+  ${keyPrefix}HeroTitle: 'Clases de ${componentName} en Barcelona',
+  ${keyPrefix}HeroSubtitle: 'Descubre el ritmo y la pasión del ${componentName}',
+  ${keyPrefix}HeroDesc: 'Mucho más que un baile, una forma de expresión.',
+  ${keyPrefix}HeroLocation: 'Clases desde nivel principiante hasta avanzado, entre Plaza España y Sants',
 
-  ${className}Pillar1Title: '${classTemplate.pillar1.title}',
-  ${className}Pillar1Desc: '${classTemplate.pillar1.desc}',
-  ${className}Pillar2Title: '${classTemplate.pillar2.title}',
-  ${className}Pillar2Desc: '${classTemplate.pillar2.desc}',
-  ${className}Pillar3Title: '${classTemplate.pillar3.title}',
-  ${className}Pillar3Desc: '${classTemplate.pillar3.desc}',
+  // CTAs
+  ${keyPrefix}CTA1: 'Hazte Miembro Ahora',
+  ${keyPrefix}CTA1Subtext: 'Quedan pocas plazas este mes',
+  ${keyPrefix}CTA2: 'Reserva Tu Clase de Prueba',
+  ${keyPrefix}CTA2Subtext: 'Oferta por tiempo limitado',
 
-  ${className}ClassesTitle: 'Nuestras Clases de ${componentName}',
-  ${className}ClassesSubtitle: 'Clases para todos los niveles',
+  // What Is Section
+  ${keyPrefix}WhatIsTitle: '¿Qué es ${componentName} y por qué está arrasando en Barcelona?',
+  ${keyPrefix}WhatIsP1: 'Descripción del ${componentName}: origen, características principales. [TODO: Personalizar]',
+  ${keyPrefix}WhatIsP2: 'Segunda descripción sobre el estilo y la cultura. [TODO: Personalizar]',
+  ${keyPrefix}WhatIsP3: 'Tercera descripción sobre qué se aprende. [TODO: Personalizar]',
+  ${keyPrefix}WhatIsP4: 'Cuarta descripción sobre los beneficios. [TODO: Personalizar]',
+  ${keyPrefix}WhatIsQuestionTitle: '¿Te preguntas si es para ti?',
+  ${keyPrefix}WhatIsQuestionAnswer: 'Sí, lo es.',
 
-  ${className}LevelBeginnerTitle: 'Principiante',
-  ${className}LevelBeginnerDesc: 'Ideal para quienes empiezan desde cero. Aprende los fundamentos del ${componentName}.',
-  ${className}LevelInterTitle: 'Intermedio',
-  ${className}LevelInterDesc: 'Perfecciona tu técnica y aprende movimientos avanzados.',
-  ${className}LevelAdvancedTitle: 'Avanzado',
-  ${className}LevelAdvancedDesc: 'Dominación completa del ${componentName} con coreografías y freestyle.',
+  // Cultural Section (con markdown ### para títulos holográficos)
+  ${keyPrefix}CulturalShort: 'Breve introducción a la historia del ${componentName}. [TODO: Personalizar - máx 2 frases]',
+  ${keyPrefix}CulturalFull: '### Sección 1: Orígenes\\n\\nContenido de la sección 1. [TODO]\\n\\n### Sección 2: Evolución\\n\\nContenido de la sección 2. [TODO]\\n\\n### Sección 3: El ${componentName} hoy\\n\\nContenido de la sección 3. [TODO]',
 
-  ${className}InstructorTitle: 'Tu Instructor',
-  ${className}InstructorName: '${instructor}',
-  ${className}InstructorSpecialty: '${specialty}',
-  ${className}InstructorBio: 'Biografía del instructor. [TODO: Personalizar con experiencia, logros, estilo de enseñanza]',
+  // Identify Section
+  ${keyPrefix}IdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
+  ${keyPrefix}Identify1: 'Quieres ponerte en forma pero el gimnasio te aburre',
+  ${keyPrefix}Identify2: 'Buscas una actividad donde puedas liberar el estrés',
+  ${keyPrefix}Identify3: 'Te encanta la música urbana y quieres bailar sin complejos',
+  ${keyPrefix}Identify4: 'Quieres mejorar tu autoestima y conexión con tu cuerpo',
+  ${keyPrefix}Identify5: 'Necesitas un espacio donde nadie te juzgue',
+  ${keyPrefix}Identify6: 'Buscas una comunidad que te apoye e inspire',
+  ${keyPrefix}IdentifyTransition: 'Si has dicho "sí" a alguno de estos puntos, ya sabes lo que necesitas.',
+  ${keyPrefix}NeedEnrollTitle: 'Necesitas apuntarte a clases de ${componentName} en una academia de baile',
+  ${keyPrefix}IdentifyAgitate1: 'Seguir buscando excusas solo te aleja de la mejor versión de ti. [TODO: Personalizar]',
+  ${keyPrefix}IdentifySolution: 'En Farray\\'s Center encontrarás un espacio pensado para que te sueltes, aprendas y crezcas sin presiones.',
+  ${keyPrefix}IdentifyClosing: 'Déjate llevar por la energía y el poder del ${componentName}.',
 
-  ${className}TestimonialsTitle: 'Lo que dicen nuestros alumnos',
-  ${className}Testimonial1Name: 'María G.',
-  ${className}Testimonial1Quote: 'Las clases de ${componentName} son increíbles. El ambiente es genial y el profesor explica muy bien.',
-  ${className}Testimonial2Name: 'David L.',
-  ${className}Testimonial2Quote: 'He mejorado muchísimo en solo 3 meses. Totalmente recomendable.',
+  // Transform Section (6 transformaciones)
+  ${keyPrefix}TransformTitle: 'Imagina tu antes y después',
+  ${keyPrefix}Transform1Title: 'Recuperas energía e ilusión',
+  ${keyPrefix}Transform1Desc: 'Las clases te sacan de la rutina y te devuelven a la vida.',
+  ${keyPrefix}Transform2Title: 'Ganas seguridad sin darte cuenta',
+  ${keyPrefix}Transform2Desc: 'Te sueltas, te liberas y empiezas a quererte más.',
+  ${keyPrefix}Transform3Title: 'Te pones en forma sin aburrirte',
+  ${keyPrefix}Transform3Desc: 'Cada clase es diferente. Te diviertes mientras fortaleces tu cuerpo.',
+  ${keyPrefix}Transform4Title: 'Conoces a gente real',
+  ${keyPrefix}Transform4Desc: 'Nada forzado: buen rollo, comunidad y gente como tú.',
+  ${keyPrefix}Transform5Title: 'Conectas con la música urbana',
+  ${keyPrefix}Transform5Desc: 'Ritmo, flow y capacidad de improvisación.',
+  ${keyPrefix}Transform6Title: 'Aprendes movimientos nuevos cada semana',
+  ${keyPrefix}Transform6Desc: 'Más flow, más estilo, más tú.',
+  ${keyPrefix}TransformCTA: '¿Por qué elegir Farray\\'s Center como academia de ${componentName} en Barcelona?',
 
-  ${className}FaqQ1: '${classTemplate.faqs[0].q}',
-  ${className}FaqA1: '${classTemplate.faqs[0].a}',
-  ${className}FaqQ2: '${classTemplate.faqs[1].q}',
-  ${className}FaqA2: '${classTemplate.faqs[1].a}',
-  ${className}FaqQ3: '${classTemplate.faqs[2].q}',
-  ${className}FaqA3: '${classTemplate.faqs[2].a}',
-  ${className}FaqQ4: '${classTemplate.faqs[3].q}',
-  ${className}FaqA4: '${classTemplate.faqs[3].a}',
+  // Why Choose Section (7 items - incluye profesores especializados)
+  ${keyPrefix}WhyChoose1Title: 'Academia reconocida por el CID UNESCO',
+  ${keyPrefix}WhyChoose1Desc: 'Dirigida por Yunaisy Farray, actriz de Street Dance 2 y una de las profesoras más reconocidas del mundo.',
+  ${keyPrefix}WhyChoose2Title: 'Ubicación inmejorable',
+  ${keyPrefix}WhyChoose2Desc: 'Calle Entença 100, entre Plaza España y Sants, a 5 minutos de Plaça Espanya y Sants. Metro, bus y tren en la puerta.',
+  ${keyPrefix}WhyChoose3Title: 'Ambiente familiar, con el profesionalismo que necesitas',
+  ${keyPrefix}WhyChoose3Desc: 'Acogedor, inclusivo y sin juicios ni comparaciones, pero con el profesionalismo que necesitas para evolucionar de verdad.',
+  ${keyPrefix}WhyChoose4Title: 'Instalaciones realmente preparadas',
+  ${keyPrefix}WhyChoose4Desc: 'Más de 700 m², salas amplias, espejos, sonido profesional, climatización y ventilación centralizada.',
+  ${keyPrefix}WhyChoose5Title: 'Academia multidisciplinar',
+  ${keyPrefix}WhyChoose5Desc: 'Más de 25 estilos para que nunca te aburras: urbanos, latinas, contemporáneo, técnica, stretching y mucho más.',
+  ${keyPrefix}WhyChoose6Title: 'Gala anual + workshops potentes',
+  ${keyPrefix}WhyChoose6Desc: 'Brilla en un teatro profesional, participa en workshops internacionales y vive experiencias únicas.',
+  ${keyPrefix}WhyChoose7Title: 'Profesores especializados en ${componentName}',
+  ${keyPrefix}WhyChoose7Desc: '${instructor}: experto en ${componentName} con años de experiencia. Técnica, flow y energía contagiosa en cada clase.',
 
-  ${className}Image1Alt: 'Clases de ${componentName} en Barcelona - Farray\\'s Center',
-  ${className}Image2Alt: 'Estudiantes practicando ${componentName}',
-  ${className}Image3Alt: '${instructor} - Instructor de ${componentName}',
+  // Logos Section
+  ${keyPrefix}LogosTitle: 'Has podido vernos en…',
+  ${keyPrefix}LogosIntlFestivalsText: 'y en los mejores festivales de baile de todo el mundo',
+
+  // Teachers Section
+  ${keyPrefix}TeachersTitle: 'Conoce a tu instructor de ${componentName}',
+  ${keyPrefix}TeachersSubtitle: 'Experto en ${componentName} con años de experiencia',
+  ${keyPrefix}Teacher1Specialty: '${specialty}',
+  ${keyPrefix}Teacher1Bio: 'Biografía del instructor. [TODO: Personalizar con experiencia y estilo]',
+  ${keyPrefix}TeachersClosing: 'Con ${instructor} no solo aprendes a bailar ${componentName}: descubres una nueva forma de conectar con tu cuerpo y tu confianza.',
+
+  // Schedule Section
+  ${keyPrefix}ScheduleTitle: 'Horario de clases de ${componentName}',
+  ${keyPrefix}ScheduleSubtitle: 'Varios niveles para que encuentres tu clase perfecta',
+
+  // Video Section
+  ${keyPrefix}VideoTitle: 'Ven a descubrir nuestras clases de ${componentName}',
+  ${keyPrefix}VideoDesc: 'Mira cómo es una clase en Farray\\'s Center: energía, técnica y buen rollo. ¡Te esperamos!',
+
+  // Why Today Section
+  ${keyPrefix}WhyTodayFullTitle: '¿Por qué hoy es el mejor momento para empezar a bailar ${componentName} con nosotros?',
+  ${keyPrefix}WhyToday1: 'Porque siempre esperas "el momento perfecto" pero lo único perfecto es empezar hoy.',
+  ${keyPrefix}WhyToday2: 'Porque estás a UNA clase de cambiar tu rutina y sentirte mejor que ayer.',
+  ${keyPrefix}WhyToday3: 'Porque no se trata de bailar bien, sino de sentirse bien bailando.',
+  ${keyPrefix}WhyTodayClosing1: 'En Farray\\'s no vendemos clases. Creamos experiencias.',
+  ${keyPrefix}WhyTodayClosing2: 'Te esperamos con música pegadiza, profes carismáticos y una energía única en Barcelona.',
+
+  // Final CTA Section
+  ${keyPrefix}FinalCTATitle: 'Únete a la comunidad de ${componentName} más activa de Barcelona',
+  ${keyPrefix}FinalCTASubtitle: 'Da el paso.',
+  ${keyPrefix}FinalCTADesc: 'Reserva tu plaza ahora y no dejes que te lo cuenten… ni que te lo bailen.',
+  ${keyPrefix}FinalCTAFunny: 'Las plazas vuelan más rápido que un paso de ${componentName} un viernes por la noche.',
+
+  // FAQ Title
+  ${keyPrefix}FaqTitle: 'Preguntas Frecuentes sobre ${componentName} en Barcelona',
+
+  // 15 FAQs (optimizado para SEO - última FAQ con contacto)
+  ${keyPrefix}FaqQ1: '¿Cómo funcionan las clases de ${componentName} en Barcelona?',
+  ${keyPrefix}FaqA1: 'Trabajamos con grupos reducidos, divididos por niveles, para que puedas avanzar a tu ritmo. Cada clase dura 1 hora y combina calentamiento, técnica y coreografía.',
+  ${keyPrefix}FaqQ2: '¿Puedo empezar desde cero si nunca he bailado ${componentName}?',
+  ${keyPrefix}FaqA2: 'Absolutamente. El 80% de nuestros alumnos empiezan sin experiencia previa. Nuestra metodología está pensada para que te sientas cómodo desde el primer día.',
+  ${keyPrefix}FaqQ3: '¿Qué pasa si no tengo buena coordinación?',
+  ${keyPrefix}FaqA3: 'La coordinación se entrena. En nuestras clases desglosamos cada movimiento en pasos simples para que puedas asimilarlo de forma natural.',
+  ${keyPrefix}FaqQ4: '¿Qué necesito traer a las clases de ${componentName}?',
+  ${keyPrefix}FaqA4: 'Ropa cómoda que permita movimiento, zapatillas deportivas con buena suela, y trae una botella de agua. Tenemos vestuarios con duchas y wifi.',
+  ${keyPrefix}FaqQ5: '¿Qué niveles de ${componentName} tenéis?',
+  ${keyPrefix}FaqA5: 'Ofrecemos clases en varios niveles: Principiante (sin experiencia), Básico (ya has tocado algo), Intermedio y Avanzado. El profe te guiará al nivel que más te convenga.',
+  ${keyPrefix}FaqQ6: '¿Puedo unirme a las clases en cualquier momento del año?',
+  ${keyPrefix}FaqA6: 'Sí, nuestras clases funcionan con sistema abierto, así que puedes inscribirte cuando quieras. No hace falta esperar a principio de trimestre.',
+  ${keyPrefix}FaqQ7: '¿Tenéis algún descuento especial?',
+  ${keyPrefix}FaqA7: 'Sí. Tenemos bonos trimestrales y anuales con grandes ventajas, además de ofertas de lanzamiento para nuevos miembros.',
+  ${keyPrefix}FaqQ8: '¿Puedo probar una clase antes de inscribirme?',
+  ${keyPrefix}FaqA8: 'Por supuesto. Puedes reservar una clase de prueba para ver si es lo que buscas. Preferimos que descubras la energía del ${componentName} antes de decidir.',
+  ${keyPrefix}FaqQ9: '¿Y si falto a una clase por trabajo o compromisos?',
+  ${keyPrefix}FaqA9: 'Las clases son recuperables, así que si faltas un día, puedes venir a la siguiente clase disponible en tu mismo nivel.',
+  ${keyPrefix}FaqQ10: 'Si falto a una clase de ${componentName}, ¿puedo recuperarla haciendo otro estilo?',
+  ${keyPrefix}FaqA10: 'Sí. En Farray\\'s puedes usar tu clase perdida en otro estilo (Dancehall, Hip Hop, Bachata...), siempre que el nivel sea equivalente.',
+  ${keyPrefix}FaqQ11: '¿Organizáis eventos o workshops especiales?',
+  ${keyPrefix}FaqA11: 'Sí. Tenemos masterclasses con artistas invitados, battles, showcases y nuestra gala anual donde puedes lucirte en un escenario profesional.',
+  ${keyPrefix}FaqQ12: '¿Las clases son solo para mujeres o también para hombres?',
+  ${keyPrefix}FaqA12: 'Nuestras clases son 100% inclusivas. Todos los géneros, edades y cuerpos son bienvenidos. Lo que importa es las ganas de bailar y mejorar.',
+  ${keyPrefix}FaqQ13: '¿El ${componentName} es un buen ejercicio físico?',
+  ${keyPrefix}FaqA13: 'El ${componentName} es un entrenamiento completo que trabaja especialmente piernas, core y coordinación. En una hora puedes quemar entre 400 y 600 calorías.',
+  ${keyPrefix}FaqQ14: '¿Dónde puedo encontrar clases de ${componentName} cerca de Plaza España?',
+  ${keyPrefix}FaqA14: 'Farray\\'s Center está ubicado en Calle Entença 100, a solo 5 minutos de Plaza España y Estación de Sants. Puedes llegar en metro (L1, L3), bus o tren.',
+  ${keyPrefix}FaqQ15: '¿Qué hago si tengo dudas o necesito más información?',
+  ${keyPrefix}FaqA15: 'Si tienes alguna pregunta adicional o necesitas más información, puedes contactarnos:<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Dirección:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+
+  // Image alts
+  ${keyPrefix}Image1Alt: 'Clases de ${componentName} en Barcelona - Farray\\'s Center',
+  ${keyPrefix}Image2Alt: 'Estudiantes practicando ${componentName}',
+  ${keyPrefix}Image3Alt: '${instructor} - Instructor de ${componentName}',
+
+  // Course Schema (SEO)
+  ${keyPrefix}CourseSchemaName: 'Clases de ${componentName} en Barcelona - Farray\\'s Center',
+  ${keyPrefix}CourseSchemaDesc: 'Aprende ${componentName} con ${instructor}, instructor especializado. Clases para todos los niveles en el corazón de Barcelona.',
 `;
 
   // Guardar en archivo temporal para que el usuario lo copie
   const outputPath = join(rootDir, `.claude/i18n-${className}-template.txt`);
   await writeFile(outputPath, i18nTemplate.trim(), 'utf-8');
-  log.success(`Generado: .claude/i18n-${className}-template.txt`);
+  log.success(`Generado: .claude/i18n-${className}-template.txt (COMPLETO con 15 FAQs)`);
   log.warning(`👉 Copia estas claves a i18n/locales/es.ts y traduce a los demás idiomas`);
+  log.info(`   📝 Incluye: Hero, Cultural History, Identify, Transform, Why Choose (7), FAQs (15), Contact info`);
 }
 
 async function createImageStructure(className) {
@@ -336,25 +434,26 @@ async function updateBuildImagesScript(className) {
   }
 }
 
-// 🆕 MEJORA 1: Generar archivo de constantes automáticamente
+// 🆕 MEJORA 1: Generar archivo de constantes automáticamente (con 15 FAQs)
 async function createConstantsFile(className, componentName, instructor) {
-  log.info(`Generando constants/${className}.ts...`);
+  log.info(`Generando constants/${className}.ts con 15 FAQs...`);
 
-  const classTemplate = classTemplates[className];
-  const faqCount = classTemplate?.faqs?.length || 4;
-  
+  // Always generate 15 FAQs for comprehensive SEO coverage
+  const faqCount = 15;
+
   // Convert className to valid constant name (replace hyphens with underscores)
   const constName = className.toUpperCase().replace(/-/g, '_');
+  const keyPrefix = className.replace(/-/g, '');
 
   const constantsContent = `import { GOOGLE_REVIEWS_TESTIMONIALS } from './testimonials';
 import type { Testimonial } from '../types';
 import type { FAQ } from '../components/templates/ClassPageTemplate';
 
-// FAQs configuration for ${componentName} page
+// FAQs configuration for ${componentName} page (15 FAQs for comprehensive SEO)
 export const ${constName}_FAQS_CONFIG: FAQ[] = [
 ${Array.from({ length: faqCount }, (_, i) => {
   const num = i + 1;
-  return `  { id: '${className}-${num}', questionKey: '${className.replace(/-/g, '')}FaqQ${num}', answerKey: '${className.replace(/-/g, '')}FaqA${num}' },`;
+  return `  { id: '${className}-${num}', questionKey: '${keyPrefix}FaqQ${num}', answerKey: '${keyPrefix}FaqA${num}' },`;
 }).join('\n')}
 ];
 
@@ -381,9 +480,9 @@ export const ${constName}_TESTIMONIALS: Testimonial[] = [
   },
 ];
 
-// Course schema configuration
+// Course schema configuration (optimized for SEO with keywords)
 export const ${constName}_COURSE_CONFIG = {
-  teaches: '${componentName}, técnica de danza, musicalidad',
+  teaches: '${componentName}, técnica de danza, musicalidad, coreografía',
   prerequisites: 'Ninguno',
   lessons: '5 clases semanales',
   duration: 'PT1H',
@@ -402,13 +501,21 @@ export const ${constName}_SCHEDULE_KEYS = [
   {
     id: '2',
     dayKey: 'wednesday',
+    className: '${componentName} Básico',
+    time: '20:00 - 21:00',
+    teacher: '${instructor}',
+    levelKey: 'basicLevel',
+  },
+  {
+    id: '3',
+    dayKey: 'thursday',
     className: '${componentName} Intermedio',
     time: '20:00 - 21:00',
     teacher: '${instructor}',
     levelKey: 'intermediateLevel',
   },
   {
-    id: '3',
+    id: '4',
     dayKey: 'friday',
     className: '${componentName} Avanzado',
     time: '21:00 - 22:00',
@@ -417,17 +524,21 @@ export const ${constName}_SCHEDULE_KEYS = [
   },
 ];
 
-// Breadcrumb custom keys for ${componentName}
+// Breadcrumb custom keys for ${componentName} (4 levels: Home > Classes > Urban > Current)
 export const ${constName}_BREADCRUMB_KEYS = {
-  home: '${className.replace(/-/g, '')}BreadcrumbHome',
-  classes: '${className.replace(/-/g, '')}BreadcrumbClasses',
-  current: '${className.replace(/-/g, '')}BreadcrumbCurrent',
+  home: '${keyPrefix}BreadcrumbHome',
+  classes: '${keyPrefix}BreadcrumbClasses',
+  urban: '${keyPrefix}BreadcrumbUrban',
+  current: '${keyPrefix}BreadcrumbCurrent',
 };
+
+// YouTube video ID for the page (update with real video)
+export const ${constName}_VIDEO_ID = 'YOUR_YOUTUBE_VIDEO_ID';
 `;
 
   const outputPath = join(rootDir, `constants/${className}.ts`);
   await writeFile(outputPath, constantsContent, 'utf-8');
-  log.success(`Creado: constants/${className}.ts`);
+  log.success(`Creado: constants/${className}.ts (con 15 FAQs y YouTube config)`);
 }
 
 // 🆕 MEJORA 2: Actualizar sitemap.xml automáticamente
@@ -522,59 +633,67 @@ async function generateSummary(className, componentName) {
   console.log(`
 📦 ${colors.bright}Archivos creados:${colors.reset}
    ${colors.green}✓${colors.reset} components/${componentName}Page.tsx
-   ${colors.green}✓${colors.reset} constants/${className}.ts ${colors.cyan}(NUEVO!)${colors.reset}
+   ${colors.green}✓${colors.reset} constants/${className}.ts ${colors.cyan}(15 FAQs + YouTube + Breadcrumbs)${colors.reset}
    ${colors.green}✓${colors.reset} public/images/classes/${className}/raw/
    ${colors.green}✓${colors.reset} public/images/classes/${className}/img/ ${colors.cyan}(con placeholders SVG)${colors.reset}
-   ${colors.green}✓${colors.reset} .claude/i18n-${className}-template.txt
+   ${colors.green}✓${colors.reset} .claude/i18n-${className}-template.txt ${colors.cyan}(COMPLETO - 100+ claves)${colors.reset}
 
 📝 ${colors.bright}Archivos actualizados:${colors.reset}
    ${colors.green}✓${colors.reset} App.tsx (rutas añadidas)
    ${colors.green}✓${colors.reset} scripts/build-images.mjs
-   ${colors.green}✓${colors.reset} scripts/update-sitemap.mjs ${colors.cyan}(NUEVO!)${colors.reset}
+   ${colors.green}✓${colors.reset} scripts/update-sitemap.mjs
    ${colors.green}✓${colors.reset} sitemap.xml ${colors.cyan}(regenerado automáticamente!)${colors.reset}
 
-🎉 ${colors.bright}Mejoras implementadas:${colors.reset}
-   ${colors.cyan}1.${colors.reset} Constantes generadas automáticamente
-   ${colors.cyan}2.${colors.reset} Sitemap actualizado con nueva ruta
-   ${colors.cyan}3.${colors.reset} Placeholders SVG creados (reemplázalos con imágenes reales)
+🎉 ${colors.bright}MEJORAS v2.0 implementadas:${colors.reset}
+   ${colors.cyan}1.${colors.reset} ${colors.bright}15 FAQs completas${colors.reset} (SEO optimizado, con contacto en FAQ15)
+   ${colors.cyan}2.${colors.reset} ${colors.bright}7 Why Choose items${colors.reset} (incluye card de profesores)
+   ${colors.cyan}3.${colors.reset} ${colors.bright}Cultural History${colors.reset} con markdown ### (títulos holográficos)
+   ${colors.cyan}4.${colors.reset} ${colors.bright}YouTube video${colors.reset} config en constants
+   ${colors.cyan}5.${colors.reset} ${colors.bright}Breadcrumbs 4 niveles${colors.reset} (Home > Clases > Urbanas > Current)
+   ${colors.cyan}6.${colors.reset} ${colors.bright}Contact info formateado${colors.reset} con emojis y links clicables
+   ${colors.cyan}7.${colors.reset} ${colors.bright}Course Schema SEO${colors.reset} optimizado
 
 🔧 ${colors.bright}Siguiente paso (TODO):${colors.reset}
 
 1️⃣  ${colors.cyan}Añadir traducciones i18n:${colors.reset}
-    - Abre: .claude/i18n-${className}-template.txt
+    - Abre: ${colors.yellow}.claude/i18n-${className}-template.txt${colors.reset}
     - Copia las claves a: i18n/locales/es.ts
     - Traduce a: en.ts, ca.ts, fr.ts
+    ${colors.bright}⚠️  ¡El template ya incluye las 100+ claves necesarias!${colors.reset}
 
-2️⃣  ${colors.cyan}Reemplazar placeholders con imágenes reales:${colors.reset}
-    - Los placeholders SVG ya están en: public/images/classes/${className}/img/
-    - Sube 3 imágenes JPG a: public/images/classes/${className}/raw/
-      → ${className}-hero.jpg
-      → ${className}-clase-1.jpg
-      → ${className}-profesor.jpg
+2️⃣  ${colors.cyan}Actualizar YouTube video:${colors.reset}
+    - Abre: constants/${className}.ts
+    - Cambia: ${colors.yellow}${className.toUpperCase().replace(/-/g, '_')}_VIDEO_ID = 'YOUR_YOUTUBE_VIDEO_ID'${colors.reset}
+    - Por el ID real de tu video de YouTube
+
+3️⃣  ${colors.cyan}Reemplazar placeholders con imágenes reales:${colors.reset}
+    - Sube imágenes JPG a: public/images/classes/${className}/raw/
     - Ejecuta: ${colors.yellow}npm run build:images${colors.reset}
 
-3️⃣  ${colors.cyan}Personalizar contenido:${colors.reset}
-    - Abre: components/${componentName}Page.tsx
-    - Actualiza imports para usar: ${colors.yellow}constants/${className}${colors.reset}
-    - Ajusta: textos, FAQs, testimonios en constants/${className}.ts
-    - Reemplaza [TODO] en las traducciones
+4️⃣  ${colors.cyan}Personalizar contenido:${colors.reset}
+    - Actualiza las secciones marcadas con [TODO] en las traducciones
+    - Ajusta: Cultural History, Why Choose 7, FAQs específicas
+    - Añade instructor bio real
 
-4️⃣  ${colors.cyan}Probar localmente:${colors.reset}
+5️⃣  ${colors.cyan}Probar localmente:${colors.reset}
     ${colors.yellow}npm run dev${colors.reset}
     - Abre: http://localhost:5173/es/clases/${className}-barcelona
 
-5️⃣  ${colors.cyan}Desplegar (workflow seguro):${colors.reset}
+6️⃣  ${colors.cyan}Desplegar (workflow seguro):${colors.reset}
     ${colors.yellow}git checkout -b feat/${className}-page${colors.reset}
     ${colors.yellow}git add .${colors.reset}
-    ${colors.yellow}git commit -m "feat: Add ${componentName} class page with auto-generated constants and sitemap"${colors.reset}
+    ${colors.yellow}git commit -m "feat: Add ${componentName} class page (15 FAQs, full SEO)"${colors.reset}
     ${colors.yellow}git push -u origin feat/${className}-page${colors.reset}
     - Abre PR en GitHub
-    - Revisa preview de Vercel
-    - Mergea cuando esté perfecto
 
-📚 ${colors.bright}Documentación:${colors.reset}
-    - Workflow: .claude/WORKFLOW_GUIDE.md
-    - Imágenes: EJEMPLO_USO_IMAGENES.md
+📋 ${colors.bright}Checklist pre-lanzamiento:${colors.reset}
+   [ ] Todas las traducciones completas (es, en, ca, fr)
+   [ ] Imágenes optimizadas con npm run build:images
+   [ ] Video de YouTube añadido
+   [ ] Cultural History personalizado
+   [ ] Instructor bio real
+   [ ] 15 FAQs revisadas y personalizadas
+   [ ] npm run typecheck sin errores
 
 🎉 ${colors.green}¡Todo listo para empezar a trabajar en ${componentName}!${colors.reset}
 `);
