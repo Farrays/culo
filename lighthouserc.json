@@ -26,7 +26,8 @@
         "max-potential-fid": ["warn", { "maxNumericValue": 200 }],
         "color-contrast": "off",
         "errors-in-console": "off",
-        "heading-order": "off"
+        "heading-order": "off",
+        "image-delivery-insight": ["warn", { "minScore": 0 }]
       }
     },
     "upload": {
