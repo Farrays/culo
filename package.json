@@ -25,7 +25,7 @@
     "csp:hash": "node scripts/generate-csp-hashes.mjs"
   },
   "dependencies": {
-    "@sentry/react": "^10.23.0",
+    "@sentry/react": "^10.27.0",
     "@types/dompurify": "^3.0.5",
     "dompurify": "^3.3.0",
     "react": "^19.2.0",
