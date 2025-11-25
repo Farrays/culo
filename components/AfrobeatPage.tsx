@@ -296,7 +296,7 @@ const AfrobeatPage: React.FC = () => {
                     <p>{t('afroWhatIsP2')}</p>
                     <p>{t('afroWhatIsP3')}</p>
                     <p>{t('afroWhatIsP4')}</p>
-                    <p className="text-xl font-bold holographic-text mt-6 pt-4 border-t border-primary-accent/30">
+                    <p className="text-xl font-semibold italic text-white mt-6">
                       {t('afroWhatIsP4Highlight')}
                     </p>
                     <p>{t('afroWhatIsP5')}</p>
@@ -392,10 +392,10 @@ const AfrobeatPage: React.FC = () => {
         {/* Nueva Sección - Necesitas apuntarte */}
         <section className="py-20 md:py-32 bg-primary-dark/10">
           <div className="container mx-auto px-6">
-            {/* Texto de transición pequeño */}
+            {/* Texto de transición destacado holográfico */}
             <AnimateOnScroll>
               <div className="text-center mb-8">
-                <p className="text-sm text-neutral/75 italic max-w-2xl mx-auto">
+                <p className="text-xl md:text-2xl font-bold holographic-text max-w-2xl mx-auto">
                   {t('afroIdentifyTransition')}
                 </p>
               </div>
@@ -411,10 +411,7 @@ const AfrobeatPage: React.FC = () => {
 
             <AnimateOnScroll>
               <div className="max-w-3xl mx-auto text-center space-y-6">
-                <p className="text-xl font-semibold holographic-text">
-                  {t('afroIdentifyAgitate1')}
-                </p>
-                <p className="text-lg text-neutral/90">{t('afroIdentifySolution')}</p>
+                <p className="text-lg text-neutral/90">{t('afroIdentifyAgitate1')}</p>
                 <p className="text-xl text-neutral/90 italic">{t('afroIdentifyClosing')}</p>
               </div>
             </AnimateOnScroll>

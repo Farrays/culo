@@ -3023,7 +3023,7 @@ Encara que l'Afrodance pugui veure's molt per xarxes, la seva arrel és profunda
     "L'Afrobeat no és només un ball: és energia, és cultura, és connexió amb les teves arrels o amb una cultura que t'inspira profundament.",
   afroIdentifySolution:
     "A les nostres classes no només aprendràs passos: viuràs l'experiència completa de l'Afrodance, amb professors natius que coneixen la cultura de primera mà.",
-  afroIdentifyClosing: "Deixa't portar pel ritme africà i descobreix una nova forma de moure't.",
+  afroIdentifyClosing: "Deixa't seduir per l'energia i l'alegria de l'Afrobeats.",
 
   afroNeedEnrollTitle: "Necessites apuntar-te a classes d'Afrobeats en una acadèmia de ball",
 

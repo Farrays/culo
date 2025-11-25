@@ -3667,7 +3667,7 @@ Aunque el Afrodance pueda verse mucho por redes, su raíz es profunda: es manife
     'Si quieres salir de la rutina, sentirte mejor contigo mismo/a, conocer gente nueva y ponerte en forma mientras te diviertes, el Afrodance es para ti.',
   afroIdentifySolution:
     'En nuestras clases no solo aprenderás pasos: vivirás la experiencia completa del Afrodance, con profesores nativos que conocen la cultura de primera mano.',
-  afroIdentifyClosing: 'Déjate seducir por la energía y el feeling del Afrodance.',
+  afroIdentifyClosing: 'Déjate seducir por la energía y la alegría del Afrobeats.',
 
   afroNeedEnrollTitle: 'Necesitas apuntarte a clases de Afrobeats en una academia de baile',
 

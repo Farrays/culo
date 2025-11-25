@@ -3026,7 +3026,7 @@ Although Afrodance may be seen a lot on social media, its root is deep: it is a 
     'If you want to get out of the routine, feel better about yourself, meet new people and get in shape while having fun, Afrodance is for you.',
   afroIdentifySolution:
     'In our classes you will not only learn steps: you will live the complete Afrodance experience, with native teachers who know the culture first-hand.',
-  afroIdentifyClosing: 'Let yourself be seduced by the energy and feeling of Afrodance.',
+  afroIdentifyClosing: 'Let yourself be seduced by the energy and joy of Afrobeats.',
 
   afroNeedEnrollTitle: 'You need to sign up for Afrobeats classes at a dance academy',
 

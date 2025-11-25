@@ -2934,8 +2934,7 @@ Bien que l'Afrodance puisse être très visible sur les réseaux, sa racine est 
     "L'Afrobeat n'est pas seulement une danse : c'est de l'énergie, c'est de la culture, c'est une connexion avec tes racines ou avec une culture qui t'inspire profondément.",
   afroIdentifySolution:
     "Dans nos cours, tu n'apprendras pas seulement des pas : tu vivras l'expérience complète de l'Afrodance, avec des professeurs natifs qui connaissent la culture de première main.",
-  afroIdentifyClosing:
-    'Laisse-toi porter par le rythme africain et découvre une nouvelle façon de bouger.',
+  afroIdentifyClosing: "Laisse-toi séduire par l'énergie et la joie de l'Afrobeats.",
 
   afroNeedEnrollTitle:
     "Tu as besoin de t'inscrire à des cours d'Afrobeat dans une académie de danse",

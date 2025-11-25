@@ -2,7 +2,7 @@ import sharp from "sharp";
 import { readdir, mkdir } from "node:fs/promises";
 import { join, extname, basename } from "node:path";
 
-const classes = ["dancehall", "twerk"]; // añade más clases aquí: ["dancehall", "afrobeats", "bachata"]
+const classes = ["dancehall", "twerk", "afrobeat"]; // añade más clases aquí: ["dancehall", "afrobeats", "bachata"]
 const logos = true; // procesar logos
 const sizesByAspect = {
   "16x9": [640, 1280, 1920],
