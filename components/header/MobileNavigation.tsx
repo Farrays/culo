@@ -307,7 +307,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                   }`}
                 >
                   <span>{languageNames[lang]}</span>
-                  <span className="text-sm opacity-70">{lang.toUpperCase()}</span>
+                  <span className="text-sm opacity-90">{lang.toUpperCase()}</span>
                 </button>
               ))}
             </div>
