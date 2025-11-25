@@ -8,6 +8,7 @@ interface ClassSchedule {
   time: string;
   teacher: string;
   level: string;
+  note?: string;
 }
 
 interface ScheduleSectionProps {
@@ -54,6 +55,11 @@ const ScheduleSection: React.FC<ScheduleSectionProps> = ({
                   <div className="flex flex-col md:items-end gap-1">
                     <span className="text-2xl font-bold holographic-text">{schedule.time}</span>
                     <span className="text-sm text-neutral/90">{schedule.teacher}</span>
+                    {schedule.note && (
+                      <span className="text-xs text-primary-accent italic mt-1">
+                        {schedule.note}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>

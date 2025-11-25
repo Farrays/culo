@@ -5,6 +5,7 @@ import { join, extname, basename } from "node:path";
 const classes = ["dancehall", "twerk", "afrobeat"]; // añade más clases aquí: ["dancehall", "afrobeats", "bachata"]
 const logos = true; // procesar logos
 const teachers = true; // procesar fotos de profesores
+const teacherSizes = [320, 640, 960]; // tamaños para fotos de profesores (cuadradas)
 const sizesByAspect = {
   "16x9": [640, 1280, 1920],
   "1x1":  [480, 960, 1440],
@@ -108,28 +109,32 @@ if (teachers) {
   const outDir = `public/images/teachers/img`;
   await mkdir(outDir, { recursive: true });
 
-  const files = (await readdir(rawDir)).filter(f => /\.(jpe?g|png|webp)$/i.test(f));
+  let files = [];
+  try {
+    files = (await readdir(rawDir)).filter(f => /\.(jpe?g|png|webp)$/i.test(f));
+  } catch {
+    console.log(`  ⚠️ No se encontró carpeta ${rawDir} o está vacía`);
+  }
 
   for (const file of files) {
     const inPath = join(rawDir, file);
+    const ext = extname(file).toLowerCase();
+    const base = basename(file, ext).toLowerCase().replace(/\s+/g, "-");
+
     const meta = await sharp(inPath).metadata();
-    const aspect = guessAspect(meta.width ?? 800, meta.height ?? 1000);
-    const sizes = sizesByAspect[aspect] ?? sizesByAspect["3x4"];
-    const base = basename(file, extname(file)).toLowerCase().replace(/\s+/g, "-");
+    console.log(`  Processing teacher: ${file} (${meta.width}x${meta.height})`);
 
-    console.log(`  Processing: ${file} (${meta.width}x${meta.height}) → ${aspect}`);
-
-    for (const w of sizes) {
+    for (const w of teacherSizes) {
       // WEBP
       await sharp(inPath)
-        .resize({ width: w, withoutEnlargement: true })
-        .webp({ quality: 82 })
+        .resize({ width: w, height: w, fit: 'cover' })
+        .webp({ quality: 85 })
         .toFile(join(outDir, `${base}_${w}.webp`));
 
       // JPEG fallback
       await sharp(inPath)
-        .resize({ width: w, withoutEnlargement: true })
-        .jpeg({ quality: 82, mozjpeg: true })
+        .resize({ width: w, height: w, fit: 'cover' })
+        .jpeg({ quality: 85, mozjpeg: true })
         .toFile(join(outDir, `${base}_${w}.jpg`));
 
       console.log(`    ✓ Generated ${base}_${w}.webp & .jpg`);

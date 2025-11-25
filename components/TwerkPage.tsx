@@ -20,6 +20,7 @@ const TwerkPage: React.FC = () => {
     ...schedule,
     day: t(schedule.dayKey),
     level: t(schedule.levelKey),
+    note: 'note' in schedule ? schedule.note : undefined,
   }));
 
   // FAQs - traducir las keys dinámicamente desde constants
@@ -47,10 +48,10 @@ const TwerkPage: React.FC = () => {
     '@type': 'VideoObject',
     name: t('twerkVideoTitle'),
     description: t('twerkVideoDesc'),
-    thumbnailUrl: `${baseUrl}/images/classes/twerk/video-thumbnail.jpg`,
+    thumbnailUrl: 'https://img.youtube.com/vi/7QCgHDiGHg8/maxresdefault.jpg',
     uploadDate: '2025-01-01',
-    contentUrl: `${baseUrl}/videos/twerk-class-experience.mp4`,
-    embedUrl: `${baseUrl}/videos/twerk-class-experience.mp4`,
+    contentUrl: 'https://www.youtube.com/watch?v=7QCgHDiGHg8',
+    embedUrl: 'https://www.youtube.com/embed/7QCgHDiGHg8',
   };
 
   // BreadcrumbList Schema (JSON-LD)
@@ -493,7 +494,7 @@ const TwerkPage: React.FC = () => {
             </AnimateOnScroll>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
-              {[1, 2, 3, 4, 5, 6].map((num, index) => (
+              {[1, 7, 2, 3, 4, 5, 6].map((num, index) => (
                 <AnimateOnScroll key={num} delay={index * 100} className="[perspective:1000px]">
                   <div className="group h-full p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                     <div className="flex items-start gap-4">
@@ -522,33 +523,6 @@ const TwerkPage: React.FC = () => {
                   </div>
                 </AnimateOnScroll>
               ))}
-              <AnimateOnScroll delay={500} className="[perspective:1000px] md:col-start-2">
-                <div className="group h-full p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
-                      <svg
-                        className="w-6 h-6 text-primary-accent"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-neutral mb-2">
-                        {t(`twerkWhyChoose${7}Title`)}
-                      </h3>
-                      <p className="text-neutral/90 text-sm leading-relaxed">
-                        {t(`twerkWhyChoose${7}Desc`)}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </AnimateOnScroll>
             </div>
 
             {/* Trust Bar - Stats */}
@@ -655,17 +629,6 @@ const TwerkPage: React.FC = () => {
 
         {/* Teachers Section - REAL */}
         <section id="teachers" className="py-20 md:py-32 bg-black relative overflow-hidden">
-          {/* Jamaica Flag Background */}
-          <div className="absolute inset-0 opacity-30">
-            <img
-              src="/images/classes/dancehall/raw/Jamaica.webp"
-              alt="Bandera de Jamaica - Origen del Twerk"
-              loading="lazy"
-              className="w-full h-full object-cover"
-              style={{ filter: 'brightness(0.9)' }}
-            />
-          </div>
-
           <div className="container mx-auto px-6 relative z-10">
             <AnimateOnScroll>
               <div className="text-center mb-16">
@@ -680,15 +643,22 @@ const TwerkPage: React.FC = () => {
               <AnimateOnScroll delay={100} className="[perspective:1000px]">
                 <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6 bg-gradient-to-br from-primary-accent/30 to-primary-dark/50 flex items-center justify-center">
-                      <svg
-                        className="w-24 h-24 text-primary-accent/60"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                      >
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                      </svg>
+                    <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6">
+                      <picture>
+                        <source
+                          srcSet="/images/teachers/img/profesora-dancehall-isabel-lopez_320.webp 320w, /images/teachers/img/profesora-dancehall-isabel-lopez_640.webp 640w"
+                          sizes="192px"
+                          type="image/webp"
+                        />
+                        <img
+                          src="/images/teachers/img/profesora-dancehall-isabel-lopez_640.jpg"
+                          alt="Isabel López - Profesora de Twerk y Dancehall"
+                          width="192"
+                          height="192"
+                          loading="lazy"
+                          className="w-full h-full object-cover"
+                        />
+                      </picture>
                     </div>
                     <h3 className="text-2xl font-bold text-neutral mb-2">Isabel López</h3>
                     <p className="text-primary-accent font-semibold mb-4">
@@ -702,15 +672,22 @@ const TwerkPage: React.FC = () => {
               <AnimateOnScroll delay={200} className="[perspective:1000px]">
                 <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6 bg-gradient-to-br from-primary-accent/30 to-primary-dark/50 flex items-center justify-center">
-                      <svg
-                        className="w-24 h-24 text-primary-accent/60"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                      >
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                      </svg>
+                    <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6">
+                      <picture>
+                        <source
+                          srcSet="/images/teachers/img/profesora-twerk-dancehall-sandra-gomez_320.webp 320w, /images/teachers/img/profesora-twerk-dancehall-sandra-gomez_640.webp 640w"
+                          sizes="192px"
+                          type="image/webp"
+                        />
+                        <img
+                          src="/images/teachers/img/profesora-twerk-dancehall-sandra-gomez_640.jpg"
+                          alt="Sandra Gómez - Profesora de Twerk y Dancehall"
+                          width="192"
+                          height="192"
+                          loading="lazy"
+                          className="w-full h-full object-cover"
+                        />
+                      </picture>
                     </div>
                     <h3 className="text-2xl font-bold text-neutral mb-2">Sandra Gómez</h3>
                     <p className="text-primary-accent font-semibold mb-4">
@@ -816,43 +793,13 @@ const TwerkPage: React.FC = () => {
               </div>
             </AnimateOnScroll>
 
-            {/* Videos Grid - 3 horizontales */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {/* Video centrado */}
+            <div className="max-w-4xl mx-auto">
               <AnimateOnScroll delay={100}>
                 <YouTubeEmbed
-                  videoId="TteV2if6Qso"
+                  videoId="7QCgHDiGHg8"
                   title="Clases de Twerk en Barcelona - Farray's Center"
                 />
-              </AnimateOnScroll>
-
-              <AnimateOnScroll delay={200}>
-                <div className="aspect-video rounded-2xl overflow-hidden border-2 border-primary-accent/50 bg-black/50 backdrop-blur-sm flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <svg
-                      className="w-16 h-16 mx-auto mb-4 text-primary-accent/50"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
-                    </svg>
-                    <p className="text-neutral/70 font-semibold">Video próximamente</p>
-                  </div>
-                </div>
-              </AnimateOnScroll>
-
-              <AnimateOnScroll delay={300}>
-                <div className="aspect-video rounded-2xl overflow-hidden border-2 border-primary-accent/50 bg-black/50 backdrop-blur-sm flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <svg
-                      className="w-16 h-16 mx-auto mb-4 text-primary-accent/50"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
-                    </svg>
-                    <p className="text-neutral/70 font-semibold">Video próximamente</p>
-                  </div>
-                </div>
               </AnimateOnScroll>
             </div>
           </div>
