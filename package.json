@@ -72,5 +72,9 @@
     "vite-imagetools": "^9.0.0",
     "vite-plugin-compression": "^0.5.1",
     "vitest": "^3.2.4"
+  },
+  "overrides": {
+    "tmp": "^0.2.5",
+    "body-parser": "^2.2.1"
   }
 }

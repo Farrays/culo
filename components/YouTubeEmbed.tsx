@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 interface YouTubeEmbedProps {
@@ -9,11 +9,43 @@ interface YouTubeEmbedProps {
   duration?: string;
 }
 
+// Declaración global para la API de YouTube
+declare global {
+  interface Window {
+    YT: {
+      Player: new (
+        elementId: string | HTMLElement,
+        config: {
+          videoId: string;
+          playerVars?: Record<string, number | string>;
+          events?: {
+            onReady?: (event: { target: YTPlayer }) => void;
+            onStateChange?: (event: { data: number; target: YTPlayer }) => void;
+          };
+        }
+      ) => YTPlayer;
+      PlayerState: {
+        ENDED: number;
+        PLAYING: number;
+        PAUSED: number;
+      };
+    };
+    onYouTubeIframeAPIReady?: () => void;
+  }
+}
+
+interface YTPlayer {
+  destroy: () => void;
+  playVideo: () => void;
+  pauseVideo: () => void;
+}
+
 /**
  * YouTube Embed Component with Thumbnail Placeholder
  *
  * Features:
  * - Lazy loading: Shows thumbnail initially, loads iframe only when clicked
+ * - No suggested videos: Returns to thumbnail when video ends
  * - Performance: Saves bandwidth and improves initial page load
  * - Accessibility: Proper ARIA labels and semantic HTML
  * - Responsive: 16:9 aspect ratio maintained across all screen sizes
@@ -26,8 +58,10 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   duration = 'PT5M',
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const playerRef = useRef<YTPlayer | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
-  const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}`;
 
   const videoSchema = {
     '@context': 'https://schema.org',
@@ -40,6 +74,67 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
     embedUrl: embedUrl,
     contentUrl: `https://www.youtube.com/watch?v=${videoId}`,
   };
+
+  // Cargar la API de YouTube cuando se necesite
+  useEffect(() => {
+    if (!isLoaded) return;
+
+    // Función para inicializar el player
+    const initPlayer = () => {
+      if (!containerRef.current || playerRef.current) return;
+
+      playerRef.current = new window.YT.Player(containerRef.current, {
+        videoId: videoId,
+        playerVars: {
+          autoplay: 1,
+          rel: 0,
+          modestbranding: 1,
+          playsinline: 1,
+        },
+        events: {
+          onStateChange: event => {
+            // Cuando el video termina, volver al thumbnail
+            if (event.data === window.YT.PlayerState.ENDED) {
+              playerRef.current?.destroy();
+              playerRef.current = null;
+              setIsLoaded(false);
+            }
+          },
+        },
+      });
+    };
+
+    // Si la API ya está cargada, inicializar directamente
+    if (window.YT && window.YT.Player) {
+      initPlayer();
+    } else {
+      // Cargar la API de YouTube
+      const existingScript = document.querySelector(
+        'script[src="https://www.youtube.com/iframe_api"]'
+      );
+
+      if (!existingScript) {
+        const script = document.createElement('script');
+        script.src = 'https://www.youtube.com/iframe_api';
+        script.async = true;
+        document.body.appendChild(script);
+      }
+
+      // Callback cuando la API está lista
+      const previousCallback = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = () => {
+        previousCallback?.();
+        initPlayer();
+      };
+    }
+
+    return () => {
+      if (playerRef.current) {
+        playerRef.current.destroy();
+        playerRef.current = null;
+      }
+    };
+  }, [isLoaded, videoId]);
 
   if (!isLoaded) {
     return (
@@ -91,15 +186,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
         <script type="application/ld+json">{JSON.stringify(videoSchema)}</script>
       </Helmet>
       <div className="aspect-video rounded-2xl overflow-hidden border-2 border-primary-accent/50 shadow-accent-glow">
-        <iframe
-          className="w-full h-full"
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-          title={title}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          referrerPolicy="no-referrer-when-downgrade"
-        />
+        <div ref={containerRef} className="w-full h-full" />
       </div>
     </>
   );
