@@ -145,7 +145,7 @@ const AppContent: React.FC = () => {
             />
 
             <Route
-              path="/:locale/clases/afrobeat-barcelona"
+              path="/:locale/clases/afrobeats-barcelona"
               element={
                 <>
                   <LocaleSync />
@@ -360,15 +360,20 @@ const AppContent: React.FC = () => {
             />
             <Route
               path="/afrobeat"
-              element={<Navigate to={`/${locale}/clases/afrobeat-barcelona`} replace />}
+              element={<Navigate to={`/${locale}/clases/afrobeats-barcelona`} replace />}
             />
             <Route
               path="/afrodance"
-              element={<Navigate to={`/${locale}/clases/afrobeat-barcelona`} replace />}
+              element={<Navigate to={`/${locale}/clases/afrobeats-barcelona`} replace />}
             />
             <Route
+              path="/clases/afrobeats-barcelona"
+              element={<Navigate to={`/${locale}/clases/afrobeats-barcelona`} replace />}
+            />
+            {/* Legacy redirect for old URL */}
+            <Route
               path="/clases/afrobeat-barcelona"
-              element={<Navigate to={`/${locale}/clases/afrobeat-barcelona`} replace />}
+              element={<Navigate to={`/${locale}/clases/afrobeats-barcelona`} replace />}
             />
 
             {/* Catch-all for 404 - redirect to localized 404 page */}

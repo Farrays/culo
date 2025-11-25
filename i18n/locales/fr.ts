@@ -2848,12 +2848,12 @@ export const fr = {
 
   // Breadcrumb
   afroBreadcrumbHome: 'Accueil',
-  afroBreadcrumbClasses: 'Cours de Danse Barcelone',
-  afroBreadcrumbUrban: 'Cours de Danses Urbaines',
-  afroBreadcrumbCurrent: "Cours d'Afrobeat",
+  afroBreadcrumbClasses: 'Cours de Danse',
+  afroBreadcrumbUrban: 'Danses Urbaines',
+  afroBreadcrumbCurrent: "Cours d'Afrobeats",
 
   // Hero
-  afroHeroTitle: "Cours d'Afrobeat à Barcelone",
+  afroHeroTitle: "Cours d'Afrobeats à Barcelone",
   afroHeroSubtitle: 'Profitez des rythmes africains les plus fun du moment',
   afroHeroDesc: "L'Afrique bouge, tu bouges avec elle ?",
   afroHeroLocation:
@@ -3025,7 +3025,8 @@ Bien que l'Afrodance puisse être très visible sur les réseaux, sa racine est 
   afroFaqQ3: "Qu'est-ce que je dois apporter pour les cours d'Afrobeat à Barcelone ?",
   afroFaqA3:
     "Vêtements confortables et légers : Porte des vêtements de sport qui te permettent de bouger librement pendant les cours. Baskets propres : Apporte des chaussures de sport propres exclusivement pour une utilisation à l'intérieur du studio. Serviette et eau : Tu danseras intensément. N'oublie pas ta serviette et une bouteille d'eau pour t'hydrater.",
-  afroFaqQ4: "Quels styles d'Afrobeat enseignons-nous dans notre école de Barcelone ?",
+  afroFaqQ4:
+    "Quels styles d'Afrobeats et d'Afrodance enseignons-nous dans notre école de Barcelone ?",
   afroFaqA4:
     "Différents styles pour différents goûts : AFROBEATS AMAPIANO : Ce style de danse originaire d'Afrique du Sud combine des éléments de house, jazz et musique africaine. Il se caractérise par des rythmes doux et mélodiques, avec des mouvements fluides et relaxés. AFROBEATS NTCHAM : Ce style de danse, également connu sous le nom de «Ntcham Bolo», est une forme d'expression qui se concentre sur des mouvements énergiques et rythmiques. Originaire de la culture africaine, le Ntcham combine des pas de danse traditionnels avec des influences modernes.",
   afroFaqQ5: "Quels niveaux d'Afrobeats avons-nous dans notre école de Barcelone ?",
@@ -3037,9 +3038,9 @@ Bien que l'Afrodance puisse être très visible sur les réseaux, sa racine est 
   afroFaqQ7: 'Avez-vous une réduction spéciale ?',
   afroFaqA7:
     "Oui, nous offrons des réductions si tu t'inscris à plus d'un cours. Consulte notre site web ou demande-nous directement pour plus de détails.",
-  afroFaqQ8: "Puis-je essayer un cours d'Afrobeat avant de m'inscrire ?",
+  afroFaqQ8: "Puis-je essayer un cours d'Afrobeats avant de m'inscrire ?",
   afroFaqA8:
-    "Bien sûr ! Tu peux venir à un cours d'essai gratuit sans engagement. Monte, clique sur le bouton «Essaie 1 Cours Gratuit» et suis les étapes pour réserver ton cours.",
+    "Écoute, l'important c'est que tu essaies. Selon la saison, le cours d'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L'idée est que tu puisses essayer l'expérience sans engagement.",
   afroFaqQ9: "Et si je rate un cours à cause du travail ou d'engagements ?",
   afroFaqA9:
     "Si tu as un abonnement et que tu annules un cours, tu as 30 jours pour le rattraper, à compter de la date du cours annulé. Si tu as un forfait d'heures, c'est toi qui gères tes cours de manière flexible et tu dois seulement annuler ton cours et le réserver pour un autre jour quand tu le souhaites, avant la fin de la période d'expiration. Toute la gestion se fait exclusivement depuis l'application numérique de l'académie.",
@@ -3052,8 +3053,9 @@ Bien que l'Afrodance puisse être très visible sur les réseaux, sa racine est 
     "Oui, nous organisons des ateliers, masterclasses et événements sociaux pendant l'année. Suis-nous sur les réseaux ou consulte notre site pour rester informé.",
   afroFaqQ12: 'Les cours sont-ils seulement pour les femmes ou aussi pour les hommes ?',
   afroFaqA12:
-    "Nos cours sont ouverts à toutes les personnes, quel que soit le genre ou l'expérience préalable. L'Afrobeat est pour tout le monde !",
-  afroFaqQ13: "Qu'est-ce qui différencie l'Afrobeats des autres styles de danse urbaine ?",
+    "Nos cours d'Afrobeats et d'Afrodance sont ouverts à toutes les personnes, quel que soit le genre ou l'expérience préalable. L'Afrobeats est pour tout le monde !",
+  afroFaqQ13:
+    "Qu'est-ce qui différencie l'Afrobeats et l'Afrodance des autres styles de danse urbaine ?",
   afroFaqA13:
     "L'Afrobeat est un style originaire d'Afrique, qui fusionne les rythmes traditionnels avec des influences hip-hop et R&B. Il se caractérise par des mouvements fluides et expressifs, reflétant la culture africaine. Sa musicalité et son énergie le rendent unique, permettant aux danseurs d'improviser et de se connecter émotionnellement à la musique.",
   afroFaqQ14: "Où puis-je trouver des cours d'Afrobeat près de Plaza España à Barcelone ?",

@@ -16,7 +16,7 @@ import { LocalBusinessSchema, CourseSchema, AggregateReviewsSchema } from './Sch
 const AfrobeatPage: React.FC = () => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
-  const pageUrl = `${baseUrl}/${locale}/clases/afrobeat-barcelona`;
+  const pageUrl = `${baseUrl}/${locale}/clases/afrobeats-barcelona`;
 
   // Schedule data - traducir las keys dinámicamente
   const schedules = AFROBEAT_SCHEDULE_KEYS.map(schedule => ({
@@ -64,6 +64,12 @@ const AfrobeatPage: React.FC = () => {
       {
         '@type': 'ListItem',
         position: 3,
+        name: t('afroBreadcrumbUrban'),
+        item: `${baseUrl}/${locale}/clases/danzas-urbanas-barcelona`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
         name: t('afroBreadcrumbCurrent'),
         item: pageUrl,
       },
@@ -74,9 +80,10 @@ const AfrobeatPage: React.FC = () => {
   const breadcrumbItems = [
     { name: t('afroBreadcrumbHome'), url: `/${locale}` },
     { name: t('afroBreadcrumbClasses'), url: `/${locale}/clases` },
+    { name: t('afroBreadcrumbUrban'), url: `/${locale}/clases/danzas-urbanas-barcelona` },
     {
       name: t('afroBreadcrumbCurrent'),
-      url: `/${locale}/clases/afrobeat-barcelona`,
+      url: `/${locale}/clases/afrobeats-barcelona`,
       isActive: true,
     },
   ];
@@ -386,22 +393,22 @@ const AfrobeatPage: React.FC = () => {
                 </div>
               </AnimateOnScroll>
             </div>
-
-            {/* Texto de cierre de identificación */}
-            <AnimateOnScroll>
-              <div className="text-center mt-8">
-                <p className="text-xl text-neutral/80 italic max-w-2xl mx-auto">
-                  {t('afroIdentifyConclusion')}
-                </p>
-              </div>
-            </AnimateOnScroll>
           </div>
         </section>
 
         {/* Nueva Sección - Necesitas apuntarte */}
         <section className="py-20 md:py-32 bg-primary-dark/10">
           <div className="container mx-auto px-6">
-            {/* Primero el título */}
+            {/* Texto de cierre de identificación - ahora dentro de esta sección */}
+            <AnimateOnScroll>
+              <div className="text-center mb-6">
+                <p className="text-base text-neutral/70 italic max-w-2xl mx-auto">
+                  {t('afroIdentifyConclusion')}
+                </p>
+              </div>
+            </AnimateOnScroll>
+
+            {/* Título */}
             <AnimateOnScroll>
               <div className="text-center mb-8">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text">

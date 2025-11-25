@@ -2939,8 +2939,8 @@ export const ca = {
 
   // Breadcrumb
   afroBreadcrumbHome: 'Inici',
-  afroBreadcrumbClasses: 'Classes de Ball Barcelona',
-  afroBreadcrumbUrban: 'Classes de Danses Urbanes',
+  afroBreadcrumbClasses: 'Classes de Ball',
+  afroBreadcrumbUrban: 'Danses Urbanes',
   afroBreadcrumbCurrent: "Classes d'Afrobeats",
 
   // Hero
@@ -3111,7 +3111,7 @@ Encara que l'Afrodance pugui veure's molt per xarxes, la seva arrel és profunda
   afroFaqQ3: "Què necessito portar per a les classes d'Afrobeats a Barcelona?",
   afroFaqA3:
     "Roba còmoda i lleugera: Fes servir roba esportiva que et permeti moure't amb llibertat durant les classes. Sabatilles netes: Porta calçat esportiu net i exclusiu per fer servir dins de l'estudi. Tovallola i aigua: Ballaràs intensament. No oblidis la teva tovallola i una ampolla d'aigua per hidratar-te.",
-  afroFaqQ4: "Quins estils d'Afrobeats ensenyem a la nostra escola de Barcelona?",
+  afroFaqQ4: "Quins estils d'Afrobeats i Afrodance ensenyem a la nostra escola de Barcelona?",
   afroFaqA4:
     "Diferents estils per a diferents gustos: AFROBEATS AMAPIANO: Aquest estil de ball originari de Sud-àfrica combina elements de house, jazz i música africana. Es caracteritza pels seus ritmes suaus i melòdics, juntament amb moviments fluids i relaxats. AFROBEATS NTCHAM: Aquest estil de ball, també conegut com «Ntcham Bolo», és una forma d'expressió que se centra en moviments energètics i rítmics. Originari de la cultura africana, el Ntcham combina passos de ball tradicionals amb influències modernes.",
   afroFaqQ5: "Quins nivells d'Afrobeats tenim a la nostra escola de Barcelona?",
@@ -3125,7 +3125,7 @@ Encara que l'Afrodance pugui veure's molt per xarxes, la seva arrel és profunda
     "Sí, oferim descomptes si t'apuntes a més d'un curs. Consulta la nostra web o pregunta'ns directament per a més detalls.",
   afroFaqQ8: "Puc provar una classe d'Afrobeats abans d'inscriure'm?",
   afroFaqA8:
-    'És clar! Pots venir a una classe de prova gratuïta sense compromís. Puja a dalt, prem el botó «Prova 1 Classe Gratis» i segueix els passos per reservar la teva classe.',
+    "Mira, l'important és que provis. Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l'experiència sense compromís.",
   afroFaqQ9: 'I si falto a una classe per feina o compromisos?',
   afroFaqA9:
     "Si tens una membresía i cancel·les una classe tens 30 dies per recuperar-la, comptant des de la data de la classe cancel·lada. Si tens un abonament d'hores, ets tu qui gestiona les teves classes de manera flexible i només has de cancel·lar la teva classe i reservar-la per a un altre dia quan així ho desitgis, abans que acabi el període de caducitat. Totes les gestions es fan exclusivament des de l'aplicació digital de l'acadèmia.",
@@ -3138,8 +3138,8 @@ Encara que l'Afrodance pugui veure's molt per xarxes, la seva arrel és profunda
     "Sí, organitzem tallers, masterclasses i esdeveniments socials durant l'any. Segueix-nos a xarxes o consulta la nostra web per estar al dia.",
   afroFaqQ12: 'Les classes són només per a dones o també per a homes?',
   afroFaqA12:
-    "Les nostres classes estan obertes a totes les persones, sense importar gènere o experiència prèvia. L'Afrobeat és per a tothom!",
-  afroFaqQ13: "Què diferencia l'Afrobeat d'altres estils de ball urbà?",
+    "Les nostres classes d'Afrobeats i Afrodance estan obertes a totes les persones, sense importar gènere o experiència prèvia. L'Afrobeats és per a tothom!",
+  afroFaqQ13: "Què diferencia l'Afrobeats i l'Afrodance d'altres estils de ball urbà?",
   afroFaqA13:
     "L'Afrobeat és un estil originari d'Àfrica, que fusiona ritmes tradicionals amb influències de hip-hop i R&B. Es caracteritza per moviments fluids i expressius, reflectint la cultura africana. La seva musicalitat i energia el fan únic, permetent als ballarins improvisar i connectar emocionalment amb la música.",
   afroFaqQ14: "On puc trobar classes d'Afrobeats a prop de Plaça Espanya a Barcelona?",

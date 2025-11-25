@@ -3580,8 +3580,8 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
 
   // Breadcrumb
   afroBreadcrumbHome: 'Inicio',
-  afroBreadcrumbClasses: 'Clases de Baile Barcelona',
-  afroBreadcrumbUrban: 'Clases de Danzas Urbanas',
+  afroBreadcrumbClasses: 'Clases de Baile',
+  afroBreadcrumbUrban: 'Danzas Urbanas',
   afroBreadcrumbCurrent: 'Clases de Afrobeats',
 
   // Hero
@@ -3754,7 +3754,7 @@ Aunque el Afrodance pueda verse mucho por redes, su raíz es profunda: es manife
   afroFaqQ3: '¿Qué necesito traer para las clases de Afrobeats en Barcelona?',
   afroFaqA3:
     'Ropa cómoda y ligera: Usa ropa deportiva que te permita moverte con libertad durante las clases. Zapatillas limpias: Trae calzado deportivo limpio y exclusivo para usar dentro del estudio. Toalla y agua: Bailarás intensamente. No olvides tu toalla y una botella de agua para hidratarte.',
-  afroFaqQ4: '¿Qué estilos de Afrobeats enseñamos en nuestra escuela de Barcelona?',
+  afroFaqQ4: '¿Qué estilos de Afrobeats y Afrodance enseñamos en nuestra escuela de Barcelona?',
   afroFaqA4:
     'Diferentes estilos para diferentes gustos: AFROBEATS AMAPIANO: Este estilo de baile originario de Sudáfrica combina elementos de house, jazz y música africana. Se caracteriza por sus ritmos suaves y melódicos, junto con movimientos fluidos y relajados. AFROBEATS NTCHAM: Este estilo de baile, también conocido como «Ntcham Bolo», es una forma de expresión que se centra en movimientos enérgicos y rítmicos. Originario de la cultura africana, el Ntcham combina pasos de baile tradicionales con influencias modernas.',
   afroFaqQ5: '¿Qué niveles de Afrobeats tenemos en nuestra escuela de Barcelona?',
@@ -3768,7 +3768,7 @@ Aunque el Afrodance pueda verse mucho por redes, su raíz es profunda: es manife
     'Sí, ofrecemos descuentos si te apuntas a más de un curso. Consulta nuestra web o pregúntanos directamente para más detalles.',
   afroFaqQ8: '¿Puedo probar una clase de Afrobeats antes de inscribirme?',
   afroFaqA8:
-    '¡Por supuesto! Puedes venir a una clase de prueba gratuita sin compromiso. Sube arriba, pulsa en el botón «Prueba 1 Clase Gratis» y sigue los pasos para reservar tu clase.',
+    'Mira, lo importante es que pruebes. Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
   afroFaqQ9: '¿Y si falto a una clase por trabajo o compromisos?',
   afroFaqA9:
     'Si tienes una membresía y cancelas una clase tienes 30 días para recuperarla, contando desde la fecha de la clase cancelada. Si tienes un abono de horas, eres tú quien gestiona tus clases de manera flexible y solamente debes cancelar tu clase y reservarla para otro día cuando así lo desees, antes de que termine el periodo de caducidad. Todas las gestiones se hacen exclusivamente desde la aplicación digital de la academia.',
@@ -3781,8 +3781,8 @@ Aunque el Afrodance pueda verse mucho por redes, su raíz es profunda: es manife
     'Sí, organizamos talleres, masterclasses y eventos sociales durante el año. Síguenos en redes o consulta nuestra web para estar al día.',
   afroFaqQ12: '¿Las clases son solo para mujeres o también para hombres?',
   afroFaqA12:
-    'Nuestras clases están abiertas a todas las personas, sin importar género o experiencia previa. ¡El Afrobeats es para todos!',
-  afroFaqQ13: '¿Qué diferencia el Afrobeats de otros estilos de baile urbano?',
+    'Nuestras clases de Afrobeats y Afrodance están abiertas a todas las personas, sin importar género o experiencia previa. ¡El Afrobeats es para todos!',
+  afroFaqQ13: '¿Qué diferencia el Afrobeats y el Afrodance de otros estilos de baile urbano?',
   afroFaqA13:
     'El Afrobeats es un estilo originario de África, que fusiona ritmos tradicionales con influencias de hip-hop y R&B. Se caracteriza por movimientos fluidos y expresivos, reflejando la cultura africana. Su musicalidad y energía lo hacen único, permitiendo a los bailarines improvisar y conectar emocionalmente con la música.',
   afroFaqQ14: '¿Dónde puedo encontrar clases de Afrobeats cerca de Plaza España en Barcelona?',

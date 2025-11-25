@@ -2939,8 +2939,8 @@ export const en = {
 
   // Breadcrumb
   afroBreadcrumbHome: 'Home',
-  afroBreadcrumbClasses: 'Dance Classes Barcelona',
-  afroBreadcrumbUrban: 'Urban Dance Classes',
+  afroBreadcrumbClasses: 'Dance Classes',
+  afroBreadcrumbUrban: 'Urban Dance',
   afroBreadcrumbCurrent: 'Afrobeats Classes',
 
   // Hero
@@ -3113,7 +3113,7 @@ Although Afrodance may be seen a lot on social media, its root is deep: it is a 
   afroFaqQ3: 'What do I need to bring for Afrobeats classes in Barcelona?',
   afroFaqA3:
     'Comfortable and light clothing: Wear sports clothes that allow you to move freely during classes. Clean sneakers: Bring clean sports shoes exclusive for use inside the studio. Towel and water: You will dance intensely. Do not forget your towel and a bottle of water to hydrate.',
-  afroFaqQ4: 'What Afrobeats styles do we teach at our Barcelona school?',
+  afroFaqQ4: 'What Afrobeats and Afrodance styles do we teach at our Barcelona school?',
   afroFaqA4:
     'Different styles for different tastes: AFROBEATS AMAPIANO: This South African dance style combines elements of house, jazz and African music. It is characterized by smooth and melodic rhythms, along with fluid and relaxed movements. AFROBEATS NTCHAM: This dance style, also known as «Ntcham Bolo», is a form of expression that focuses on energetic and rhythmic movements. Native to African culture, Ntcham combines traditional dance steps with modern influences.',
   afroFaqQ5: 'What levels of Afrobeats do we have at our Barcelona school?',
@@ -3127,7 +3127,7 @@ Although Afrodance may be seen a lot on social media, its root is deep: it is a 
     'Yes, we offer discounts if you sign up for more than one course. Check our website or ask us directly for more details.',
   afroFaqQ8: 'Can I try an Afrobeats class before enrolling?',
   afroFaqA8:
-    'Of course! You can come to a free trial class with no commitment. Go up, click on the «Try 1 Free Class» button and follow the steps to book your class.',
+    'Look, the important thing is that you try. Depending on the season, the trial class for residents may be free or have a symbolic welcome price. The idea is that you can try the experience with no commitment.',
   afroFaqQ9: 'What if I miss a class due to work or commitments?',
   afroFaqA9:
     'If you have a membership and cancel a class you have 30 days to make it up, counting from the date of the cancelled class. If you have an hour package, you are the one who manages your classes flexibly and you only need to cancel your class and book it for another day whenever you want, before the expiration period ends. All management is done exclusively from the academy digital app.',
@@ -3140,8 +3140,8 @@ Although Afrodance may be seen a lot on social media, its root is deep: it is a 
     'Yes, we organize workshops, masterclasses and social events during the year. Follow us on social media or check our website to stay up to date.',
   afroFaqQ12: 'Are classes only for women or also for men?',
   afroFaqA12:
-    'Our classes are open to all people, regardless of gender or previous experience. Afrobeats is for everyone!',
-  afroFaqQ13: 'What differentiates Afrobeats from other urban dance styles?',
+    'Our Afrobeats and Afrodance classes are open to all people, regardless of gender or previous experience. Afrobeats is for everyone!',
+  afroFaqQ13: 'What differentiates Afrobeats and Afrodance from other urban dance styles?',
   afroFaqA13:
     'Afrobeats is a style originating from Africa, which fuses traditional rhythms with hip-hop and R&B influences. It is characterized by fluid and expressive movements, reflecting African culture. Its musicality and energy make it unique, allowing dancers to improvise and connect emotionally with the music.',
   afroFaqQ14: 'Where can I find Afrobeats classes near Plaza España in Barcelona?',
