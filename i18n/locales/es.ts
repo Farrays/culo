@@ -3572,4 +3572,234 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
   twerkBreadcrumbClasses: 'Clases de Baile',
   twerkBreadcrumbUrban: 'Danzas Urbanas',
   twerkBreadcrumbCurrent: 'Clases de Twerk',
+
+  // ===== Afrobeat Page =====
+  afroPageTitle: "Clases de Afrobeats y Afrodance en Barcelona | Academia Farray's Center",
+  afroMetaDescription:
+    'Aprende Afrobeats y Afrodance en Barcelona con profesores nativos de África. Clases de Amapiano, Ntcham y danzas africanas modernas para todos los niveles en el corazón de Barcelona, cerca de Plaza España y Sants.',
+
+  // Breadcrumb
+  afroBreadcrumbHome: 'Inicio',
+  afroBreadcrumbClasses: 'Clases de Baile',
+  afroBreadcrumbUrban: 'Danzas Urbanas',
+  afroBreadcrumbCurrent: 'Clases de Afrobeats',
+
+  // Hero
+  afroHeroTitle: 'Clases de Afrobeats en Barcelona',
+  afroHeroSubtitle: 'Disfruta de los ritmos africanos más divertidos del momento',
+  afroHeroDesc: 'África se mueve, ¿te mueves con ella?',
+  afroHeroLocation:
+    'Viaja a África sin salir de Barcelona | Clases desde iniciación hasta intermedio, entre Plaza España y Sants',
+
+  // CTAs
+  afroCTA1: 'Hazte Socio Ahora',
+  afroCTA1Subtext: 'Quedan pocas plazas este mes',
+  afroCTA2: 'Reserva tu Clase de Prueba',
+  afroCTA2Subtext: 'Válido por tiempo limitado',
+
+  // What is Afrobeats
+  afroWhatIsTitle: '¿Por qué está arrasando el Afrobeats en Barcelona?',
+  afroWhatIsP1:
+    'El Afrobeats es mucho más que un estilo musical: es el latido contemporáneo de África, una explosión de energía y creatividad que fusiona la herencia africana con sonidos globales.',
+  afroWhatIsP2:
+    'Nacido en Nigeria y Ghana a finales de los años 90, el Afrobeats recoge la esencia de ritmos tradicionales africanos como el highlife y la música yoruba, y los mezcla con influencias de funk, hip hop, dancehall, electrónica y pop internacional.',
+  afroWhatIsP3:
+    'Bailar Afrobeats es sumergirse en una cultura apasionante y en constante evolución, donde la tradición y la modernidad están en continua interacción.',
+  afroWhatIsP4:
+    'Cada paso, cada gesto, es una celebración de la identidad africana, de la libertad de expresión y de la alegría de vivir.',
+  afroWhatIsP4Highlight:
+    'En Afrobeats no hay reglas estrictas: lo importante es sentir la música, conectar con el «groove» y dejar que tu cuerpo hable por ti.',
+  afroWhatIsP5:
+    'El fenómeno Afrobeats ha conquistado el mundo, inspirando a millones de personas y creando una comunidad global unida por la pasión por la música y la danza africanas. Y Barcelona se ha convertido en uno de los focos de Afrobeats más activos de Europa.',
+  afroWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
+  afroWhatIsQuestionAnswer: 'Sí, lo es.',
+
+  // Cultural History
+  afroCulturalTitle: 'Historia y cultura del Afrobeats y Afrodance',
+  afroCulturalShort:
+    'Afrobeats (en plural) surge a finales de los 90 y principios de los 2000 entre Nigeria y Ghana. No es un único género, sino una corriente urbana que mezcla ritmos africanos con highlife, hip hop, R&B, dancehall y pop.',
+  afroCulturalFull: `### Orígenes: Lagos, Accra y la Nueva Ola Africana
+
+Afrobeats (en plural) surge a finales de los 90 y principios de los 2000 entre Nigeria y Ghana. No es un único género, sino una corriente urbana que mezcla ritmos africanos con highlife, hip hop, R&B, dancehall y pop. El resultado es un sonido reconocible: percusión marcada, bajos potentes, melodías pegadizas y estribillos inolvidables.
+
+### De Fela Kuti al Afrobeats Actual
+
+Antes de esta ola moderna, en los 60 y 70, Fela Kuti revolucionó la música nigeriana originando el Afrobeat (en singular): una fusión de jazz, funk, highlife y ritmos yoruba con mensajes de protesta social y política, canciones extensas y estructuras instrumentales inmersivas. Afrobeats actual toma elementos rítmicos del Afrobeat, pero los adapta a canciones más cortas, producción digital y una orientación al consumo internacional para radio y clubs.
+
+### Del Sonido al Movimiento: Afrodance
+
+El auge musical de Afrobeats trajo consigo nuevas formas de baile: lo que hoy se define como Afrodance o danzas afro urbanas. Estos movimientos nacen en calles y clubs de Lagos, Accra o Johannesburgo, y algunos ejemplos virales han sido:
+
+• Azonto (Ghana): caderas, hombros y gestos cotidianos.
+
+• Etighi, Shoki, Shaku Shaku, Zanku/Legwork (Nigeria): trabajo intenso de pies, rebote de rodillas y brazos relajados.
+
+Estas danzas se viralizan globalmente a través de YouTube, TikTok e Instagram. Además, desde Gabón ha surgido recientemente la Ntcham o Tcham Bolo, una expresión musical y de danza urbana originada en los barrios populares y las prisiones de Libreville, que combina raíces afrobeat con sonidos locales y refleja la realidad y resiliencia de la juventud gabonesa.
+
+### Expansión Global: De Lagos a Barcelona
+
+Desde los 2000, artistas como Wizkid, Davido, Tiwa Savage y Burna Boy han llevado el Afrobeats fuera de África, colaborando con estrellas internacionales de pop y rap. Festivales, clubs y plataformas digitales han transformado este género en un símbolo de la nueva cultura africana, influyendo en música, baile, moda y actitud a nivel mundial.
+
+En ciudades como Barcelona, la comunidad de Afrodance crece rápidamente. Cada vez más personas buscan conectar con la energía y el flow característicos de estos bailes llenos de rebote, juego de pies y celebración colectiva.
+
+### Más que una Moda: Identidad y Comunidad
+
+Aunque el Afrodance pueda verse mucho por redes, su raíz es profunda: es manifestación de orgullo, alegría, humor, sensualidad y sentimiento africano. Cada paso respira intención: juego, poder, disfrute. Afrobeats y Afrodance conectan con el instinto básico de moverse, compartir energía, y sentirse parte de una identidad global, aunque estés lejos de Lagos o Accra.`,
+
+  // Identification
+  afroIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
+  afroIdentify1:
+    'Estás tan harto/a de la rutina que ya ni el café te quiere. Necesitas algo que te despierte YA.',
+  afroIdentify2:
+    'Buscas una forma de expresarte y conectar con tu cuerpo de manera diferente y divertida.',
+  afroIdentify3:
+    'Odias el gimnasio... y el gimnasio también te odia. No os soportáis. Nunca fue amor.',
+  afroIdentify4:
+    'Te hace falta conocer gente real, buen rollo, risas y un lugar donde ser tú sin filtros ni postureos.',
+  afroIdentify5:
+    'Sientes que la música y la esencia africana te mueve por dentro pero nunca has tenido la oportunidad de aprender a bailarla.',
+  afroIdentify6:
+    'Te encanta bailar, pero necesitas más flow, más actitud y menos coreografías de robot sin batería.',
+
+  afroIdentifyConclusion: 'Si has dicho «sí» a alguno de estos puntos, ya sabes lo que necesitas.',
+  afroIdentifyTransition:
+    'Sientes que tu cuerpo te pide algo diferente… ¿pero haces algo para sentirte mejor?',
+  afroIdentifyAgitate1:
+    'Si quieres salir de la rutina, sentirte mejor contigo mismo/a, conocer gente nueva y ponerte en forma mientras te diviertes, el Afrobeats es para ti.',
+  afroIdentifySolution:
+    'En nuestras clases no solo aprenderás pasos: vivirás la experiencia completa del Afrobeats, con profesores nativos que conocen la cultura de primera mano.',
+  afroIdentifyClosing: 'Déjate seducir por la energía y la alegría del Afrobeats.',
+
+  afroNeedEnrollTitle: 'Necesitas apuntarte a clases de Afrobeats en una academia de baile',
+
+  // Transformation
+  afroTransformTitle: 'Imagina tu antes y después',
+  afroTransform1Title: 'Vuelves a tener energía y ganas',
+  afroTransform1Desc: 'Las clases te sacan de la rutina y te devuelven la vida.',
+  afroTransform2Title: 'Ganas seguridad sin darte cuenta',
+  afroTransform2Desc: 'Te sueltas, te liberas y empiezas a gustarte más.',
+  afroTransform3Title: 'Te pones en forma sin aburrirte',
+  afroTransform3Desc: 'Cada clase es distinta. Te ríes, sudas y disfrutas.',
+  afroTransform4Title: 'Conoces gente real',
+  afroTransform4Desc: 'Nada forzado: buen rollo, comunidad y gente como tú.',
+  afroTransform5Title: 'Viajas a África sin salir de Barcelona',
+  afroTransform5Desc: 'Ritmo, energía y esencia africana real en cada clase.',
+  afroTransform6Title: 'Aprendes movimientos nuevos cada semana',
+  afroTransform6Desc: 'Más flow, más estilo africano, más tú.',
+
+  afroTransformCTA: "¿Por qué elegir Farray's Center como tu academia de Afrobeats en Barcelona?",
+
+  // Why Choose
+  afroWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
+  afroWhyChoose1Desc:
+    'Dirigida por Yunaisy Farray, actriz de Street Dance 2 y una de las maestras más reconocidas del mundo.',
+  afroWhyChoose2Title: 'Profesores con raíces africanas',
+  afroWhyChoose2Desc:
+    'Nuestros profesores de Afrobeats vienen de Tanzania y Cuba, trayendo autenticidad y conocimiento cultural profundo a cada clase.',
+  afroWhyChoose3Title: 'Ubicación inmejorable',
+  afroWhyChoose3Desc:
+    'Calle Entença 100, entre Plaza España y Sants, a 5 minutos de Plaça Espanya y Sants. Metro, buses y tren a la puerta. Fácil llegar. Fácil volver.',
+  afroWhyChoose4Title: 'Ambiente familiar, con la profesionalidad que necesitas',
+  afroWhyChoose4Desc:
+    'Aquí no eres un número. Te conocemos, te cuidamos y te acompañamos en cada paso de tu evolución.',
+  afroWhyChoose5Title: 'Instalaciones preparadas de verdad',
+  afroWhyChoose5Desc:
+    'Más de 700 m², salas amplias, espejos, sonido profesional, aire acondicionado y ventilación centralizada para entrenar a gusto todo el año.',
+  afroWhyChoose6Title: 'Academia multidisciplinar',
+  afroWhyChoose6Desc:
+    'Además de Afrobeats, ofrecemos más de 25 estilos. Puedes complementar tu formación con Dancehall, Hip Hop, Salsa, Bachata y mucho más.',
+  afroWhyChoose7Title: 'Gala anual + workshops potentes',
+  afroWhyChoose7Desc:
+    'Una vez al año celebramos tu progreso en nuestra gala. Y durante el año, traemos maestros internacionales para workshops exclusivos.',
+
+  // Logos
+  afroLogosTitle: 'Nos has podido ver en…',
+  afroLogosIntlFestivalsText: 'y en los mejores festivales de danza de todo el mundo',
+
+  // Teachers
+  afroTeachersTitle: 'Conoce a nuestros profesores de Afrobeats',
+  afroTeachersSubtitle: 'Expertos en Afrodance con años de experiencia',
+  afroTeacher1Specialty: '+6 años enseñando Afrobeats y Ntcham',
+  afroTeacher1Bio:
+    'May Corn es un profesor y bailarín internacional, nativo de Tanzania y especialista en Ntcham. Sus raíces, conocimientos, energía y alegría contagiante lo convierten en uno de los maestros más recomendados de toda Barcelona.',
+  afroTeacher2Specialty: '+5 años como experto en Afrobeats y Danzas Africanas',
+  afroTeacher2Bio:
+    'Charlie Breezy, maestro internacional y bailarín cubano. Nació en un país donde la cultura africana está totalmente arraigada. Formado en la ENA (Escuela Nacional de Arte de Cuba), Charlie es un bailarín polifacético que, además de dominar diferentes estilos de danza africana, destaca en contemporáneo, ballet y un amplio abanico de danzas urbanas.',
+  afroTeachersClosing:
+    'Nuestros profesores no solo enseñan pasos: transmiten cultura, historia y pasión por el Afrodance.',
+
+  // Schedule
+  afroScheduleTitle: 'Horarios de nuestras clases de Afrobeats',
+  afroScheduleSubtitle: 'Clases disponibles varias veces por semana',
+
+  // Why Today
+  afroWhyTodayFullTitle: '¿Por qué hoy es el mejor momento para empezar a bailar Afrobeats?',
+  afroWhyToday1:
+    'Porque sigues esperando "el momento perfecto" pero lo único perfecto es empezar hoy.',
+  afroWhyToday2:
+    'Porque estás a tan solo UNA clase de cambiar tu rutina y sentirte mejor que ayer.',
+  afroWhyToday3: 'Porque esto no va de bailar bien, sino de sentirte bien bailando.',
+  afroWhyTodayClosing1: "En Farray's no vendemos clases. Creamos experiencias.",
+  afroWhyTodayClosing2:
+    'Y la experiencia Afrobeats es algo que solo puedes entender cuando la vives.',
+
+  // FAQ
+  afroFaqTitle: 'Preguntas frecuentes sobre nuestras clases de Afrobeats en Barcelona',
+  afroFaqQ1: '¿Puedo empezar desde cero si nunca he bailado Afrobeats?',
+  afroFaqA1:
+    '¡CLARO! Los alumnos que nunca bailaron antes eligen los cursos de nivel principiante y los que tienen algo de experiencia en algún tipo de baile eligen el nivel básico. Nuestras clases están diseñadas para que cualquiera pueda seguir el ritmo desde el primer día.',
+  afroFaqQ2: '¿Qué pasa si no tengo buena coordinación?',
+  afroFaqA2:
+    'No te preocupes, la coordinación se desarrolla con la práctica. Nuestros profesores te guiarán paso a paso y el ambiente es muy acogedor. ¡Lo importante es que seas constante y disfrutes del proceso!',
+  afroFaqQ3: '¿Qué necesito traer para las clases de Afrobeats en Barcelona?',
+  afroFaqA3:
+    'Ropa cómoda y ligera: Usa ropa deportiva que te permita moverte con libertad durante las clases. Zapatillas limpias: Trae calzado deportivo limpio y exclusivo para usar dentro del estudio. Toalla y agua: Bailarás intensamente. No olvides tu toalla y una botella de agua para hidratarte.',
+  afroFaqQ4: '¿Qué estilos de Afrobeats y Afrodance enseñamos en nuestra escuela de Barcelona?',
+  afroFaqA4:
+    'Diferentes estilos para diferentes gustos: AFROBEATS AMAPIANO: Este estilo de baile originario de Sudáfrica combina elementos de house, jazz y música africana. Se caracteriza por sus ritmos suaves y melódicos, junto con movimientos fluidos y relajados. AFROBEATS NTCHAM: Este estilo de baile, también conocido como «Ntcham Bolo», es una forma de expresión que se centra en movimientos enérgicos y rítmicos. Originario de la cultura africana, el Ntcham combina pasos de baile tradicionales con influencias modernas.',
+  afroFaqQ5: '¿Qué niveles de Afrobeats tenemos en nuestra escuela de Barcelona?',
+  afroFaqA5:
+    'DIFERENTES NIVELES PARA QUE NADIE SE QUEDE SIN BAILAR: Afrobeats Principiantes: Ideal para estudiantes que quieren empezar desde cero, para aprender paso a paso y con buen rollo. Afrobeats Básico: Ideal para estudiantes que ya tienen un poco de experiencia en Afrobeats u otras danzas urbanas.',
+  afroFaqQ6: '¿Puedo unirme en cualquier momento del año?',
+  afroFaqA6:
+    '¡Sí! Puedes empezar cuando quieras. Consulta nuestro calendario para ver las próximas clases disponibles. Si tienes dudas sobre el nivel o el grupo, escríbenos y te orientamos.',
+  afroFaqQ7: '¿Tenéis algún descuento especial?',
+  afroFaqA7:
+    'Sí, ofrecemos descuentos si te apuntas a más de un curso. Consulta nuestra web o pregúntanos directamente para más detalles.',
+  afroFaqQ8: '¿Puedo probar una clase de Afrobeats antes de inscribirme?',
+  afroFaqA8:
+    'Mira, lo importante es que pruebes. Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
+  afroFaqQ9: '¿Y si falto a una clase por trabajo o compromisos?',
+  afroFaqA9:
+    'Si tienes una membresía y cancelas una clase tienes 30 días para recuperarla, contando desde la fecha de la clase cancelada. Si tienes un abono de horas, eres tú quien gestiona tus clases de manera flexible y solamente debes cancelar tu clase y reservarla para otro día cuando así lo desees, antes de que termine el periodo de caducidad. Todas las gestiones se hacen exclusivamente desde la aplicación digital de la academia.',
+  afroFaqQ10:
+    '¿Si falto a una clase debo recuperarla haciendo el mismo estilo, o puedo hacer otro diferente?',
+  afroFaqA10:
+    'Puedes recuperar tu clase cancelada haciendo otro estilo diferente, siempre y cuando respetes el nivel de la clase y gestiones la recuperación desde la aplicación de la escuela.',
+  afroFaqQ11: '¿Organizáis eventos o talleres especiales?',
+  afroFaqA11:
+    'Sí, organizamos talleres, masterclasses y eventos sociales durante el año. Síguenos en redes o consulta nuestra web para estar al día.',
+  afroFaqQ12: '¿Las clases son solo para mujeres o también para hombres?',
+  afroFaqA12:
+    'Nuestras clases de Afrobeats y Afrodance están abiertas a todas las personas, sin importar género o experiencia previa. ¡El Afrobeats es para todos!',
+  afroFaqQ13: '¿Qué diferencia el Afrobeats y el Afrodance de otros estilos de baile urbano?',
+  afroFaqA13:
+    'El Afrobeats es un estilo originario de África, que fusiona ritmos tradicionales con influencias de hip-hop y R&B. Se caracteriza por movimientos fluidos y expresivos, reflejando la cultura africana. Su musicalidad y energía lo hacen único, permitiendo a los bailarines improvisar y conectar emocionalmente con la música.',
+  afroFaqQ14: '¿Dónde puedo encontrar clases de Afrobeats cerca de Plaza España en Barcelona?',
+  afroFaqA14:
+    "Farray's Center está ubicado en Calle Entença 100, Barcelona, a solo 5 minutos de Plaza España y Estación de Sants. Contamos con profesores con amplia experiencia y un ambiente familiar para todos los niveles.",
+  afroFaqQ15: '¿Qué hago si tengo dudas o necesito más información?',
+  afroFaqA15:
+    'Si tienes alguna pregunta adicional o necesitas más información, puedes contactarnos:<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Dirección:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+
+  // Final CTA
+  afroFinalCTATitle: 'Únete a la comunidad de Afrobeats más activa de Barcelona',
+  afroFinalCTASubtitle: 'Da el paso.',
+  afroFinalCTADesc: 'Reserva tu plaza ahora y no dejes que te lo cuenten… ni que te lo bailen.',
+  afroFinalCTAFunny: '¡Las plazas vuelan más rápido que un «Shaku Shaku» en viernes por la noche!',
+
+  // Course Schema
+  afroCourseSchemaName: 'Clases de Afrobeats y Afrodance en Barcelona',
+  afroCourseSchemaDesc:
+    'Aprende Afrobeats, Amapiano, Ntcham y danzas africanas modernas con profesores nativos. Clases para todos los niveles en el corazón de Barcelona.',
 };
