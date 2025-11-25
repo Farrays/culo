@@ -282,7 +282,7 @@ const AfrobeatPage: React.FC = () => {
           </div>
         </section>
 
-        {/* What is Afrobeat Section */}
+        {/* What is Afrobeats Section */}
         <section className="py-20 md:py-32 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
@@ -294,8 +294,11 @@ const AfrobeatPage: React.FC = () => {
                   <div className="space-y-6 text-lg text-neutral/90 leading-relaxed">
                     <p className="text-xl font-semibold holographic-text">{t('afroWhatIsP1')}</p>
                     <p>{t('afroWhatIsP2')}</p>
-                    <p className="font-medium text-neutral">{t('afroWhatIsP3')}</p>
+                    <p>{t('afroWhatIsP3')}</p>
                     <p>{t('afroWhatIsP4')}</p>
+                    <p className="text-xl font-bold holographic-text mt-6 pt-4 border-t border-primary-accent/30">
+                      {t('afroWhatIsP4Highlight')}
+                    </p>
                     <p>{t('afroWhatIsP5')}</p>
                     <div className="mt-12 pt-8 border-t border-primary-accent/30">
                       <p className="text-center text-2xl font-bold holographic-text italic">
@@ -309,7 +312,7 @@ const AfrobeatPage: React.FC = () => {
                   <div className="rounded-2xl overflow-hidden shadow-lg">
                     <img
                       src="/images/classes/afrobeat/img/clases-afrobeat-barcelona-01_960.webp"
-                      alt="Clases de Afrobeat en Barcelona - Estudiantes bailando en la academia"
+                      alt="Clases de Afrobeats en Barcelona - Estudiantes bailando en la academia"
                       width="960"
                       height="640"
                       loading="lazy"
