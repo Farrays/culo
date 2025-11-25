@@ -155,7 +155,6 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
         <meta name="twitter:title" content={`${t(`${categoryKey}_pageTitle`)} | Farray's Center`} />
         <meta name="twitter:description" content={t(`${categoryKey}_metaDescription`)} />
         <meta name="twitter:image" content={ogImage || `${baseUrl}/images/og-classes.jpg`} />
-
       </Helmet>
 
       {/* BreadcrumbList Schema */}
