@@ -3,35 +3,54 @@ import { useI18n } from '../hooks/useI18n';
 import type { Teacher } from '../types';
 import AnimateOnScroll from './AnimateOnScroll';
 
+// Avatar colors for initials
+const avatarColors = [
+  'from-primary-accent to-primary-dark',
+  'from-purple-500 to-purple-800',
+  'from-pink-500 to-pink-800',
+];
+
+// InitialsAvatar component for teachers without photos
+const InitialsAvatar: React.FC<{ name: string; index: number }> = ({ name, index }) => {
+  const initials = name
+    .split(' ')
+    .map(n => n[0])
+    .join('')
+    .toUpperCase()
+    .slice(0, 2);
+
+  return (
+    <div
+      className={`w-full h-full bg-gradient-to-br ${avatarColors[index % avatarColors.length]} flex items-center justify-center`}
+    >
+      <span className="text-white font-bold text-4xl md:text-5xl">{initials}</span>
+    </div>
+  );
+};
+
 const teacherData: Teacher[] = [
   {
     id: 1,
     name: 'Yunaisy Farray',
-    image: '/images/teachers/yunaisy-farray.jpg',
+    image: '',
     specialtyKey: 'teacher1Specialty',
     bioKey: 'teacher1Bio',
   },
   {
     id: 2,
     name: 'Joni Pila',
-    image: '/images/teachers/joni-pila.jpg',
+    image: '',
     specialtyKey: 'teacher2Specialty',
     bioKey: 'teacher2Bio',
   },
   {
     id: 3,
     name: 'Elena Petrova',
-    image: '/images/teachers/elena-petrova.jpg',
+    image: '',
     specialtyKey: 'teacher3Specialty',
     bioKey: 'teacher3Bio',
   },
 ];
-
-const UserPlaceholderIcon: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-  </svg>
-);
 
 const Teachers: React.FC = () => {
   const { t } = useI18n();
@@ -56,20 +75,7 @@ const Teachers: React.FC = () => {
             >
               <div className="group bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] hover:!z-50 p-8 flex flex-col md:flex-row items-center gap-8">
                 <div className="flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
-                  {teacher.image ? (
-                    <img
-                      src={teacher.image}
-                      alt={`${teacher.name}, ${t(teacher.specialtyKey)}`}
-                      width="160"
-                      height="160"
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-primary-dark/50 flex items-center justify-center">
-                      <UserPlaceholderIcon className="w-24 h-24 text-neutral/40" />
-                    </div>
-                  )}
+                  <InitialsAvatar name={teacher.name} index={index} />
                 </div>
                 <div className="text-center md:text-left">
                   <h3 className="text-3xl font-bold text-neutral group-hover:text-white transition-colors duration-300">

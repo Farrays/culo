@@ -465,7 +465,7 @@ const criticalChunks = {
   index: assetFiles.find(f => f.startsWith('index-') && f.endsWith('.js')),
   reactVendor: assetFiles.find(f => f.startsWith('react-vendor-') && f.endsWith('.js')),
   routerVendor: assetFiles.find(f => f.startsWith('router-vendor-') && f.endsWith('.js')),
-  mainCss: assetFiles.find(f => f.startsWith('index-') && f.endsWith('.css')),
+  mainCss: assetFiles.find(f => f.startsWith('style-') && f.endsWith('.css')),
   // Locale-specific i18n chunks
   es: assetFiles.find(f => f.startsWith('es-') && f.endsWith('.js')),
   ca: assetFiles.find(f => f.startsWith('ca-') && f.endsWith('.js')),
@@ -621,6 +621,14 @@ ${preloadHintsHtml}
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
+
+  // Transform blocking CSS to non-blocking (Critical CSS is already inline)
+  // Pattern: <link rel="stylesheet" ... href="/assets/style-xxx.css">
+  // To: <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" ... href="/assets/style-xxx.css">
+  html = html.replace(
+    /<link\s+rel="stylesheet"\s+crossorigin\s+href="(\/assets\/style-[^"]+\.css)">/g,
+    '<link rel="preload" as="style" href="$1" crossorigin onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link rel="stylesheet" href="$1" crossorigin></noscript>'
+  );
 
   // Save file
   fs.writeFileSync(filePath, html);

@@ -4,6 +4,7 @@ import { useI18n } from '../../hooks/useI18n';
 import { LocalBusinessSchema, CourseSchema, AggregateReviewsSchema } from '../SchemaMarkup';
 import FAQSection from '../FAQSection';
 import TestimonialsSection from '../TestimonialsSection';
+import YouTubeEmbed from '../YouTubeEmbed';
 import type { Testimonial } from '../../types';
 
 export interface FAQ {
@@ -43,6 +44,16 @@ interface ClassPageTemplateProps {
   ogImage?: string;
   showTestimonials?: boolean;
   showFAQs?: boolean;
+
+  // Video section configuration
+  videoConfig?: {
+    videoId: string;
+    title: string;
+    description?: string;
+    uploadDate?: string;
+    duration?: string;
+    sectionTitleKey?: string; // i18n key for section title
+  };
 }
 
 const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
@@ -57,6 +68,7 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
   ogImage,
   showTestimonials = true,
   showFAQs = true,
+  videoConfig,
 }) => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
@@ -143,6 +155,7 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
         <meta name="twitter:title" content={`${t(`${categoryKey}_pageTitle`)} | Farray's Center`} />
         <meta name="twitter:description" content={t(`${categoryKey}_metaDescription`)} />
         <meta name="twitter:image" content={ogImage || `${baseUrl}/images/og-classes.jpg`} />
+
       </Helmet>
 
       {/* BreadcrumbList Schema */}
@@ -216,6 +229,28 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
 
         {/* Custom Sections (secciones específicas de cada página) */}
         {customSections}
+
+        {/* Video Section */}
+        {videoConfig && (
+          <section className="py-16 md:py-24 bg-gradient-to-b from-black to-gray-900">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              {videoConfig.sectionTitleKey && (
+                <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-white">
+                  {t(videoConfig.sectionTitleKey)}
+                </h2>
+              )}
+              <div className="max-w-4xl mx-auto">
+                <YouTubeEmbed
+                  videoId={videoConfig.videoId}
+                  title={videoConfig.title}
+                  description={videoConfig.description}
+                  uploadDate={videoConfig.uploadDate}
+                  duration={videoConfig.duration}
+                />
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Testimonials Section */}
         {showTestimonials && testimonials && testimonials.length > 0 && (

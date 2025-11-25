@@ -29,14 +29,38 @@
     <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
     <link rel="preconnect" href="https://browser.sentry-cdn.com">
 
-    <!-- Self-hosted fonts for better performance (no external DNS lookup) -->
+    <!-- Self-hosted fonts - preload critical weights only -->
     <link rel="preload" href="/fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/roboto-v30-latin-700.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="/fonts/fonts.css">
+    <!-- Font CSS loads async (fonts are preloaded, CSS just defines @font-face) -->
+    <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
 
-    <!-- Preload critical CSS -->
-    <link rel="preload" href="/index.css" as="style">
-    <link rel="stylesheet" href="/index.css">
+    <!-- Critical CSS inline (above the fold) -->
+    <style>
+      /* Critical font-face with swap for fast text rendering */
+      @font-face{font-family:Roboto;font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/roboto-v30-latin-regular.woff2) format('woff2')}
+      @font-face{font-family:Roboto;font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/roboto-v30-latin-700.woff2) format('woff2')}
+      /* Critical: Layout, fonts, colors for first paint */
+      *,::after,::before{box-sizing:border-box;border:0 solid #e5e7eb}
+      html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:Roboto,ui-sans-serif,system-ui,sans-serif}
+      body{margin:0;line-height:inherit;background-color:#000;color:#d4d4d4}
+      #root{min-height:100vh;display:flex;flex-direction:column}
+      .bg-black{background-color:#000}.text-neutral{color:#d4d4d4}
+      .antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+      .overflow-x-hidden{overflow-x:hidden}
+      /* Header critical */
+      header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(0,0,0,.9)}
+      nav{display:flex;align-items:center;justify-content:space-between;padding:1rem}
+      /* Hero critical */
+      .min-h-screen{min-height:100vh}.relative{position:relative}
+      .flex{display:flex}.items-center{align-items:center}.justify-center{justify-content:center}
+      .text-center{text-align:center}.text-white{color:#fff}
+      /* Loading spinner */
+      @keyframes spin{to{transform:rotate(360deg)}}
+      .animate-spin{animation:spin 1s linear infinite}
+    </style>
+    <!-- Main CSS: Vite injects during build, prerender.mjs makes it non-blocking -->
 
 
     <!-- Prefetch next likely navigation -->

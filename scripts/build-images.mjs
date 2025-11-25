@@ -4,6 +4,7 @@ import { join, extname, basename } from "node:path";
 
 const classes = ["dancehall", "twerk", "afrobeat"]; // añade más clases aquí: ["dancehall", "afrobeats", "bachata"]
 const logos = true; // procesar logos
+const teachers = true; // procesar fotos de profesores
 const sizesByAspect = {
   "16x9": [640, 1280, 1920],
   "1x1":  [480, 960, 1440],
@@ -98,6 +99,44 @@ if (logos) {
   }
 
   console.log(`✔ Logos: todas las imágenes generadas\n`);
+}
+
+// Procesar fotos de profesores
+if (teachers) {
+  console.log("\n👨‍🏫 Procesando fotos de profesores...\n");
+  const rawDir = `public/images/teachers/raw`;
+  const outDir = `public/images/teachers/img`;
+  await mkdir(outDir, { recursive: true });
+
+  const files = (await readdir(rawDir)).filter(f => /\.(jpe?g|png|webp)$/i.test(f));
+
+  for (const file of files) {
+    const inPath = join(rawDir, file);
+    const meta = await sharp(inPath).metadata();
+    const aspect = guessAspect(meta.width ?? 800, meta.height ?? 1000);
+    const sizes = sizesByAspect[aspect] ?? sizesByAspect["3x4"];
+    const base = basename(file, extname(file)).toLowerCase().replace(/\s+/g, "-");
+
+    console.log(`  Processing: ${file} (${meta.width}x${meta.height}) → ${aspect}`);
+
+    for (const w of sizes) {
+      // WEBP
+      await sharp(inPath)
+        .resize({ width: w, withoutEnlargement: true })
+        .webp({ quality: 82 })
+        .toFile(join(outDir, `${base}_${w}.webp`));
+
+      // JPEG fallback
+      await sharp(inPath)
+        .resize({ width: w, withoutEnlargement: true })
+        .jpeg({ quality: 82, mozjpeg: true })
+        .toFile(join(outDir, `${base}_${w}.jpg`));
+
+      console.log(`    ✓ Generated ${base}_${w}.webp & .jpg`);
+    }
+  }
+
+  console.log(`✔ Teachers: todas las imágenes generadas\n`);
 }
 
 console.log("🎉 Build completo!");

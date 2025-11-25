@@ -22,12 +22,13 @@ export const AFROBEAT_FAQS_CONFIG: FAQ[] = [
 ];
 
 // Testimonials for Afrobeat page (extends Google reviews with specific testimonial)
+// Note: images are empty as we use InitialsAvatar for rendering
 export const AFROBEAT_TESTIMONIALS: Testimonial[] = [
   ...GOOGLE_REVIEWS_TESTIMONIALS,
   {
     id: 4,
     name: 'María García',
-    image: '/images/testimonials/placeholder-f.jpg',
+    image: '',
     rating: 5,
     city: {
       en: 'Barcelona, Spain',
@@ -36,10 +37,10 @@ export const AFROBEAT_TESTIMONIALS: Testimonial[] = [
       fr: 'Barcelone, Espagne',
     },
     quote: {
-      en: 'Afrobeats classes with May Corn are incredible. His energy is contagious and you learn the African roots in every step.',
-      es: 'Las clases de Afrobeats con May Corn son increíbles. Su energía es contagiosa y aprendes las raíces africanas en cada paso.',
-      ca: "Les classes d'Afrobeats amb May Corn són increïbles. La seva energia és contagiosa i aprens les arrels africanes a cada pas.",
-      fr: "Les cours d'Afrobeats avec May Corn sont incroyables. Son énergie est contagieuse et on apprend les racines africaines à chaque pas.",
+      en: 'Afrobeats classes with Redblueh are incredible. His energy is contagious and you learn the African roots in every step.',
+      es: 'Las clases de Afrobeats con Redblueh son increíbles. Su energía es contagiosa y aprendes las raíces africanas en cada paso.',
+      ca: "Les classes d'Afrobeats amb Redblueh són increïbles. La seva energia és contagiosa i aprens les arrels africanes a cada pas.",
+      fr: "Les cours d'Afrobeats avec Redblueh sont incroyables. Son énergie est contagieuse et on apprend les racines africaines à chaque pas.",
     },
   },
 ];
@@ -59,7 +60,7 @@ export const AFROBEAT_SCHEDULE_KEYS = [
     dayKey: 'tuesday',
     className: 'Afrobeat Básico',
     time: '18:00 - 19:00',
-    teacher: 'May Corn',
+    teacher: 'Redblueh',
     levelKey: 'basicLevel',
   },
   {

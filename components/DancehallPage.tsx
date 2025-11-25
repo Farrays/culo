@@ -685,15 +685,15 @@ const DancehallPage: React.FC = () => {
               <AnimateOnScroll delay={100} className="[perspective:1000px]">
                 <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6">
-                      <img
-                        src="/images/teachers/isabel-lopez.jpg"
-                        alt="Isabel López"
-                        width="192"
-                        height="192"
-                        loading="lazy"
-                        className="w-full h-full object-cover"
-                      />
+                    <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6 bg-gradient-to-br from-primary-accent/30 to-primary-dark/50 flex items-center justify-center">
+                      <svg
+                        className="w-24 h-24 text-primary-accent/60"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                      </svg>
                     </div>
                     <h3 className="text-2xl font-bold text-neutral mb-2">Isabel López</h3>
                     <p className="text-primary-accent font-semibold mb-4">
@@ -707,15 +707,15 @@ const DancehallPage: React.FC = () => {
               <AnimateOnScroll delay={200} className="[perspective:1000px]">
                 <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6">
-                      <img
-                        src="/images/teachers/sandra-gomez.jpg"
-                        alt="Sandra Gómez"
-                        width="192"
-                        height="192"
-                        loading="lazy"
-                        className="w-full h-full object-cover"
-                      />
+                    <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6 bg-gradient-to-br from-primary-accent/30 to-primary-dark/50 flex items-center justify-center">
+                      <svg
+                        className="w-24 h-24 text-primary-accent/60"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                      </svg>
                     </div>
                     <h3 className="text-2xl font-bold text-neutral mb-2">Sandra Gómez</h3>
                     <p className="text-primary-accent font-semibold mb-4">

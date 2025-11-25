@@ -3,11 +3,38 @@ import { useI18n } from '../hooks/useI18n';
 import type { Testimonial } from '../types';
 import AnimateOnScroll from './AnimateOnScroll';
 
+// Avatar colors for initials
+const avatarColors = [
+  'from-primary-accent to-primary-dark',
+  'from-purple-500 to-purple-800',
+  'from-pink-500 to-pink-800',
+  'from-cyan-500 to-cyan-800',
+  'from-amber-500 to-amber-800',
+];
+
+// InitialsAvatar component for testimonials without photos
+const InitialsAvatar: React.FC<{ name: string; index: number }> = ({ name, index }) => {
+  const initials = name
+    .split(' ')
+    .map(n => n[0])
+    .join('')
+    .toUpperCase()
+    .slice(0, 2);
+
+  return (
+    <div
+      className={`w-14 h-14 rounded-full bg-gradient-to-br ${avatarColors[index % avatarColors.length]} flex items-center justify-center border-2 border-primary-accent`}
+    >
+      <span className="text-white font-bold text-lg">{initials}</span>
+    </div>
+  );
+};
+
 const testimonialData: Testimonial[] = [
   {
     id: 1,
     name: 'Anna K.',
-    image: '/images/testimonials/anna-k.jpg',
+    image: '',
     rating: 5,
     city: {
       en: 'Barcelona, Spain',
@@ -25,7 +52,7 @@ const testimonialData: Testimonial[] = [
   {
     id: 2,
     name: 'David L.',
-    image: '/images/testimonials/david-l.jpg',
+    image: '',
     rating: 5,
     city: {
       en: 'London, UK',
@@ -43,7 +70,7 @@ const testimonialData: Testimonial[] = [
   {
     id: 3,
     name: 'Sophie M.',
-    image: '/images/testimonials/sophie-m.jpg',
+    image: '',
     rating: 5,
     city: { en: 'Paris, France', es: 'París, Francia', ca: 'París, França', fr: 'Paris, France' },
     quote: {
@@ -56,7 +83,7 @@ const testimonialData: Testimonial[] = [
   {
     id: 4,
     name: 'Maria G.',
-    image: '/images/testimonials/maria-g.jpg',
+    image: '',
     rating: 5,
     city: {
       en: 'New York, USA',
@@ -74,7 +101,7 @@ const testimonialData: Testimonial[] = [
   {
     id: 5,
     name: 'Carlos R.',
-    image: '/images/testimonials/carlos-r.jpg',
+    image: '',
     rating: 5,
     city: { en: 'Miami, USA', es: 'Miami, EE. UU.', ca: 'Miami, EUA', fr: 'Miami, États-Unis' },
     quote: {
@@ -194,14 +221,7 @@ const Testimonials: React.FC = () => {
                   <p className="text-lg">&ldquo;{testimonial.quote[locale]}&rdquo;</p>
                 </blockquote>
                 <div className="flex items-center space-x-4 mt-auto">
-                  <img
-                    src={testimonial.image}
-                    alt={`Foto de perfil de ${testimonial.name}`}
-                    width="56"
-                    height="56"
-                    loading="lazy"
-                    className="w-14 h-14 rounded-full border-2 border-primary-accent object-cover"
-                  />
+                  <InitialsAvatar name={testimonial.name} index={index} />
                   <div>
                     <cite className="font-bold text-lg text-neutral not-italic">
                       {testimonial.name}

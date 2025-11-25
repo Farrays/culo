@@ -63,8 +63,7 @@ export default defineConfig({
           // Vendor chunks
           'react-vendor': ['react', 'react-dom'],
           'router-vendor': ['react-router-dom', 'react-helmet-async'],
-          // Security & monitoring chunks
-          'sentry': ['@sentry/react'],
+          // Monitoring (lazy-loaded: Sentry loads via dynamic import)
           'analytics': ['web-vitals'],
           'sanitization': ['dompurify'],
         },
