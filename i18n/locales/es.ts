@@ -3661,12 +3661,13 @@ Aunque el Afrodance pueda verse mucho por redes, su raíz es profunda: es manife
   afroIdentify6:
     'Te encanta bailar, pero necesitas más flow, más actitud y menos coreografías de robot sin batería.',
 
+  afroIdentifyConclusion: 'Si has dicho «sí» a alguno de estos puntos, ya sabes lo que necesitas.',
   afroIdentifyTransition:
     'Sientes que tu cuerpo te pide algo diferente… ¿pero haces algo para sentirte mejor?',
   afroIdentifyAgitate1:
-    'Si quieres salir de la rutina, sentirte mejor contigo mismo/a, conocer gente nueva y ponerte en forma mientras te diviertes, el Afrodance es para ti.',
+    'Si quieres salir de la rutina, sentirte mejor contigo mismo/a, conocer gente nueva y ponerte en forma mientras te diviertes, el Afrobeats es para ti.',
   afroIdentifySolution:
-    'En nuestras clases no solo aprenderás pasos: vivirás la experiencia completa del Afrodance, con profesores nativos que conocen la cultura de primera mano.',
+    'En nuestras clases no solo aprenderás pasos: vivirás la experiencia completa del Afrobeats, con profesores nativos que conocen la cultura de primera mano.',
   afroIdentifyClosing: 'Déjate seducir por la energía y la alegría del Afrobeats.',
 
   afroNeedEnrollTitle: 'Necesitas apuntarte a clases de Afrobeats en una academia de baile',
@@ -3758,7 +3759,7 @@ Aunque el Afrodance pueda verse mucho por redes, su raíz es profunda: es manife
     'Diferentes estilos para diferentes gustos: AFROBEATS AMAPIANO: Este estilo de baile originario de Sudáfrica combina elementos de house, jazz y música africana. Se caracteriza por sus ritmos suaves y melódicos, junto con movimientos fluidos y relajados. AFROBEATS NTCHAM: Este estilo de baile, también conocido como «Ntcham Bolo», es una forma de expresión que se centra en movimientos enérgicos y rítmicos. Originario de la cultura africana, el Ntcham combina pasos de baile tradicionales con influencias modernas.',
   afroFaqQ5: '¿Qué niveles de Afrobeats tenemos en nuestra escuela de Barcelona?',
   afroFaqA5:
-    'DIFERENTES NIVELES PARA QUE NADIE SE QUEDE SIN BAILAR: Afrobeats Principiantes: Ideal para estudiantes que quieren empezar desde cero, para aprender paso a paso y con buen rollo. Afrobeats Básico: Ideal para estudiantes que ya tienen un poco de experiencia en Afrodance u otras danzas urbanas.',
+    'DIFERENTES NIVELES PARA QUE NADIE SE QUEDE SIN BAILAR: Afrobeats Principiantes: Ideal para estudiantes que quieren empezar desde cero, para aprender paso a paso y con buen rollo. Afrobeats Básico: Ideal para estudiantes que ya tienen un poco de experiencia en Afrobeats u otras danzas urbanas.',
   afroFaqQ6: '¿Puedo unirme en cualquier momento del año?',
   afroFaqA6:
     '¡Sí! Puedes empezar cuando quieras. Consulta nuestro calendario para ver las próximas clases disponibles. Si tienes dudas sobre el nivel o el grupo, escríbenos y te orientamos.',

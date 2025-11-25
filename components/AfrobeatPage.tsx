@@ -386,26 +386,36 @@ const AfrobeatPage: React.FC = () => {
                 </div>
               </AnimateOnScroll>
             </div>
+
+            {/* Texto de cierre de identificación */}
+            <AnimateOnScroll>
+              <div className="text-center mt-8">
+                <p className="text-xl text-neutral/80 italic max-w-2xl mx-auto">
+                  {t('afroIdentifyConclusion')}
+                </p>
+              </div>
+            </AnimateOnScroll>
           </div>
         </section>
 
         {/* Nueva Sección - Necesitas apuntarte */}
         <section className="py-20 md:py-32 bg-primary-dark/10">
           <div className="container mx-auto px-6">
-            {/* Texto de transición destacado holográfico */}
+            {/* Primero el título */}
             <AnimateOnScroll>
               <div className="text-center mb-8">
-                <p className="text-xl md:text-2xl font-bold holographic-text max-w-2xl mx-auto">
-                  {t('afroIdentifyTransition')}
-                </p>
+                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text">
+                  {t('afroNeedEnrollTitle')}
+                </h2>
               </div>
             </AnimateOnScroll>
 
+            {/* Después el texto holográfico de transición */}
             <AnimateOnScroll>
               <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
-                  {t('afroNeedEnrollTitle')}
-                </h2>
+                <p className="text-xl md:text-2xl font-bold holographic-text max-w-2xl mx-auto">
+                  {t('afroIdentifyTransition')}
+                </p>
               </div>
             </AnimateOnScroll>
 

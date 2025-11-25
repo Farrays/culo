@@ -3020,12 +3020,13 @@ Although Afrodance may be seen a lot on social media, its root is deep: it is a 
   afroIdentify6:
     'You love dancing, but you need more flow, more attitude and fewer robot choreographies without battery.',
 
+  afroIdentifyConclusion: 'If you said "yes" to any of these points, you know what you need.',
   afroIdentifyTransition:
     'You feel your body is asking for something different... but are you doing something to feel better?',
   afroIdentifyAgitate1:
-    'If you want to get out of the routine, feel better about yourself, meet new people and get in shape while having fun, Afrodance is for you.',
+    'If you want to get out of the routine, feel better about yourself, meet new people and get in shape while having fun, Afrobeats is for you.',
   afroIdentifySolution:
-    'In our classes you will not only learn steps: you will live the complete Afrodance experience, with native teachers who know the culture first-hand.',
+    'In our classes you will not only learn steps: you will live the complete Afrobeats experience, with native teachers who know the culture first-hand.',
   afroIdentifyClosing: 'Let yourself be seduced by the energy and joy of Afrobeats.',
 
   afroNeedEnrollTitle: 'You need to sign up for Afrobeats classes at a dance academy',
@@ -3117,7 +3118,7 @@ Although Afrodance may be seen a lot on social media, its root is deep: it is a 
     'Different styles for different tastes: AFROBEATS AMAPIANO: This South African dance style combines elements of house, jazz and African music. It is characterized by smooth and melodic rhythms, along with fluid and relaxed movements. AFROBEATS NTCHAM: This dance style, also known as «Ntcham Bolo», is a form of expression that focuses on energetic and rhythmic movements. Native to African culture, Ntcham combines traditional dance steps with modern influences.',
   afroFaqQ5: 'What levels of Afrobeats do we have at our Barcelona school?',
   afroFaqA5:
-    'DIFFERENT LEVELS SO NO ONE IS LEFT WITHOUT DANCING: Afrobeats Beginners: Ideal for students who want to start from scratch, to learn step by step with good vibes. Afrobeats Basic: Ideal for students who already have some experience in Afrodance or other urban dances.',
+    'DIFFERENT LEVELS SO NO ONE IS LEFT WITHOUT DANCING: Afrobeats Beginners: Ideal for students who want to start from scratch, to learn step by step with good vibes. Afrobeats Basic: Ideal for students who already have some experience in Afrobeats or other urban dances.',
   afroFaqQ6: 'Can I join at any time of the year?',
   afroFaqA6:
     'Yes! You can start whenever you want. Check our calendar to see the upcoming available classes. If you have doubts about the level or the group, write to us and we will guide you.',

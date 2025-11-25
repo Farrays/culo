@@ -3018,11 +3018,13 @@ Encara que l'Afrodance pugui veure's molt per xarxes, la seva arrel és profunda
   afroIdentify6:
     "L'essència d'Àfrica i la seva cultura et mouen per dins? Si t'inspira tot el que representa Àfrica hauries de trobar formes d'experimentar la seva cultura sense haver de sortir de la ciutat.",
 
-  afroIdentifyTransition: 'Si has dit "sí" a algun d\'aquests punts, ja saps el que necessites.',
+  afroIdentifyConclusion: "Si has dit «sí» a algun d'aquests punts, ja saps el que necessites.",
+  afroIdentifyTransition:
+    'Sents que el teu cos et demana alguna cosa diferent… però fas alguna cosa per sentir-te millor?',
   afroIdentifyAgitate1:
-    "L'Afrobeat no és només un ball: és energia, és cultura, és connexió amb les teves arrels o amb una cultura que t'inspira profundament.",
+    "Si vols sortir de la rutina, sentir-te millor amb tu mateix/a, conèixer gent nova i posar-te en forma mentre et diverteixes, l'Afrobeats és per a tu.",
   afroIdentifySolution:
-    "A les nostres classes no només aprendràs passos: viuràs l'experiència completa de l'Afrodance, amb professors natius que coneixen la cultura de primera mà.",
+    "A les nostres classes no només aprendràs passos: viuràs l'experiència completa de l'Afrobeats, amb professors natius que coneixen la cultura de primera mà.",
   afroIdentifyClosing: "Deixa't seduir per l'energia i l'alegria de l'Afrobeats.",
 
   afroNeedEnrollTitle: "Necessites apuntar-te a classes d'Afrobeats en una acadèmia de ball",
@@ -3114,7 +3116,7 @@ Encara que l'Afrodance pugui veure's molt per xarxes, la seva arrel és profunda
     "Diferents estils per a diferents gustos: AFROBEATS AMAPIANO: Aquest estil de ball originari de Sud-àfrica combina elements de house, jazz i música africana. Es caracteritza pels seus ritmes suaus i melòdics, juntament amb moviments fluids i relaxats. AFROBEATS NTCHAM: Aquest estil de ball, també conegut com «Ntcham Bolo», és una forma d'expressió que se centra en moviments energètics i rítmics. Originari de la cultura africana, el Ntcham combina passos de ball tradicionals amb influències modernes.",
   afroFaqQ5: "Quins nivells d'Afrobeats tenim a la nostra escola de Barcelona?",
   afroFaqA5:
-    "DIFERENTS NIVELLS PERQUÈ NINGÚ ES QUEDI SENSE BALLAR: Afrobeat Principiants: Ideal per a estudiants que volen començar des de zero, per aprendre pas a pas i amb bon rotllo. Afrobeat Bàsic: Ideal per a estudiants que ja tenen una mica d'experiència en Dancehall o altres danses urbanes.",
+    "DIFERENTS NIVELLS PERQUÈ NINGÚ ES QUEDI SENSE BALLAR: Afrobeats Principiants: Ideal per a estudiants que volen començar des de zero, per aprendre pas a pas i amb bon rotllo. Afrobeats Bàsic: Ideal per a estudiants que ja tenen una mica d'experiència en Afrobeats o altres danses urbanes.",
   afroFaqQ6: "Puc unir-me en qualsevol moment de l'any?",
   afroFaqA6:
     "Sí! Pots començar quan vulguis. Consulta el nostre calendari per veure les properes classes disponibles. Si tens dubtes sobre el nivell o el grup, escriu-nos i t'orientem.",

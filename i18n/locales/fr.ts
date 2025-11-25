@@ -2929,15 +2929,17 @@ Bien que l'Afrodance puisse être très visible sur les réseaux, sa racine est 
   afroIdentify6:
     "L'essence de l'Afrique et sa culture te font vibrer intérieurement ? Si tout ce que représente l'Afrique t'inspire, tu devrais trouver des moyens d'expérimenter sa culture sans quitter la ville.",
 
-  afroIdentifyTransition: 'Si tu as dit "oui" à l\'un de ces points, tu sais ce dont tu as besoin.',
+  afroIdentifyConclusion: "Si tu as dit «oui» à l'un de ces points, tu sais ce dont tu as besoin.",
+  afroIdentifyTransition:
+    'Tu sens que ton corps demande quelque chose de différent... mais fais-tu quelque chose pour te sentir mieux ?',
   afroIdentifyAgitate1:
-    "L'Afrobeat n'est pas seulement une danse : c'est de l'énergie, c'est de la culture, c'est une connexion avec tes racines ou avec une culture qui t'inspire profondément.",
+    "Si tu veux sortir de la routine, te sentir mieux dans ta peau, rencontrer de nouvelles personnes et te mettre en forme en t'amusant, l'Afrobeats est pour toi.",
   afroIdentifySolution:
-    "Dans nos cours, tu n'apprendras pas seulement des pas : tu vivras l'expérience complète de l'Afrodance, avec des professeurs natifs qui connaissent la culture de première main.",
+    "Dans nos cours, tu n'apprendras pas seulement des pas : tu vivras l'expérience complète de l'Afrobeats, avec des professeurs natifs qui connaissent la culture de première main.",
   afroIdentifyClosing: "Laisse-toi séduire par l'énergie et la joie de l'Afrobeats.",
 
   afroNeedEnrollTitle:
-    "Tu as besoin de t'inscrire à des cours d'Afrobeat dans une académie de danse",
+    "Tu as besoin de t'inscrire à des cours d'Afrobeats dans une académie de danse",
 
   // Transformation
   afroTransformTitle: 'Imagine ton avant et après',
@@ -3026,9 +3028,9 @@ Bien que l'Afrodance puisse être très visible sur les réseaux, sa racine est 
   afroFaqQ4: "Quels styles d'Afrobeat enseignons-nous dans notre école de Barcelone ?",
   afroFaqA4:
     "Différents styles pour différents goûts : AFROBEATS AMAPIANO : Ce style de danse originaire d'Afrique du Sud combine des éléments de house, jazz et musique africaine. Il se caractérise par des rythmes doux et mélodiques, avec des mouvements fluides et relaxés. AFROBEATS NTCHAM : Ce style de danse, également connu sous le nom de «Ntcham Bolo», est une forme d'expression qui se concentre sur des mouvements énergiques et rythmiques. Originaire de la culture africaine, le Ntcham combine des pas de danse traditionnels avec des influences modernes.",
-  afroFaqQ5: "Quels niveaux d'Afrobeat avons-nous dans notre école de Barcelone ?",
+  afroFaqQ5: "Quels niveaux d'Afrobeats avons-nous dans notre école de Barcelone ?",
   afroFaqA5:
-    "DIFFÉRENTS NIVEAUX POUR QUE PERSONNE NE RESTE SANS DANSER : Afrobeat Débutants : Idéal pour les étudiants qui veulent commencer de zéro, pour apprendre pas à pas avec bonne ambiance. Afrobeat Basique : Idéal pour les étudiants qui ont déjà un peu d'expérience en Dancehall ou autres danses urbaines.",
+    "DIFFÉRENTS NIVEAUX POUR QUE PERSONNE NE RESTE SANS DANSER : Afrobeats Débutants : Idéal pour les étudiants qui veulent commencer de zéro, pour apprendre pas à pas avec bonne ambiance. Afrobeats Basique : Idéal pour les étudiants qui ont déjà un peu d'expérience en Afrobeats ou autres danses urbaines.",
   afroFaqQ6: "Puis-je rejoindre à n'importe quel moment de l'année ?",
   afroFaqA6:
     'Oui ! Tu peux commencer quand tu veux. Consulte notre calendrier pour voir les prochains cours disponibles. Si tu as des doutes sur le niveau ou le groupe, écris-nous et nous te guiderons.',
