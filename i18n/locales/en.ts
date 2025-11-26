@@ -2451,9 +2451,6 @@ export const en = {
   estudioGrabacion_faq2_q: 'Can I bring my own recording equipment?',
   estudioGrabacion_faq2_a:
     'Yes, you can bring your own cameras, lights, tripods and any technical tools you need. We have temporary storage space and enough outlets to set up your complete setup.',
-  estudioGrabacion_faq3_q: 'Do the rooms have natural light?',
-  estudioGrabacion_faq3_a:
-    'Yes, some of our rooms have large windows with natural light that you can take advantage of. You can also completely darken them if you prefer to work only with artificial lighting.',
   estudioGrabacion_faq4_q: 'Do you offer production services or just space rental?',
   estudioGrabacion_faq4_a:
     "We offer both. You can rent just the space or contract additional production services, technical assistance, editing, professional photography and more. Tell us about your project and we'll create a custom package.",
@@ -2466,6 +2463,9 @@ export const en = {
   estudioGrabacion_faq7_q: 'Can I visit before booking?',
   estudioGrabacion_faq7_a:
     'Of course. Contact us to schedule a free guided tour of the facilities. We want you to see the rooms, get to know the space and feel confident before booking.',
+  estudioGrabacion_faq8_q: 'Do you offer video maker or professional photographer services?',
+  estudioGrabacion_faq8_a:
+    "Yes, we have a team of audiovisual professionals to meet your needs. We can offer videography, professional photography, editing and post-production services. Whether you need to record a music video, photo session, social media content or any creative project, we have the talent and technical equipment to make it happen. Tell us your idea and we'll prepare a personalized quote.",
   estudioGrabacion_finalCTA_title: 'Turn Your Vision into Reality',
   estudioGrabacion_finalCTA_subtitle:
     'Stop settling for mediocre studios. Rent a space where your creativity can shine without limits.',
