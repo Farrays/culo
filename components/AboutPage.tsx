@@ -173,12 +173,14 @@ const AboutPage: React.FC = () => {
         <section aria-labelledby="our-story-title" className="py-16 md:py-24 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <h2
-                id="our-story-title"
-                className="text-4xl md:text-5xl font-black tracking-tighter mb-12 text-center holographic-text"
-              >
-                {t('about_story_title')}
-              </h2>
+              <div className="max-w-4xl mx-auto">
+                <h2
+                  id="our-story-title"
+                  className="text-4xl md:text-5xl font-black tracking-tighter mb-12 text-center holographic-text"
+                >
+                  {t('about_story_title')}
+                </h2>
+              </div>
             </AnimateOnScroll>
 
             <div className="max-w-4xl mx-auto space-y-6 text-neutral/90 leading-relaxed">
@@ -207,12 +209,14 @@ const AboutPage: React.FC = () => {
         >
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <h2
-                id="vision-title"
-                className="text-4xl md:text-5xl font-black tracking-tighter mb-12 text-center holographic-text"
-              >
-                {t('about_vision_title')}
-              </h2>
+              <div className="max-w-4xl mx-auto">
+                <h2
+                  id="vision-title"
+                  className="text-4xl md:text-5xl font-black tracking-tighter mb-12 text-center holographic-text"
+                >
+                  {t('about_vision_title')}
+                </h2>
+              </div>
             </AnimateOnScroll>
 
             <div className="max-w-4xl mx-auto space-y-6 text-neutral/90 leading-relaxed">
@@ -233,12 +237,14 @@ const AboutPage: React.FC = () => {
         <section aria-labelledby="today-title" className="py-16 md:py-24 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <h2
-                id="today-title"
-                className="text-4xl md:text-5xl font-black tracking-tighter mb-12 text-center holographic-text"
-              >
-                {t('about_today_title')}
-              </h2>
+              <div className="max-w-4xl mx-auto">
+                <h2
+                  id="today-title"
+                  className="text-4xl md:text-5xl font-black tracking-tighter mb-12 text-center holographic-text"
+                >
+                  {t('about_today_title')}
+                </h2>
+              </div>
             </AnimateOnScroll>
 
             <div className="max-w-4xl mx-auto mb-12">
@@ -295,12 +301,14 @@ const AboutPage: React.FC = () => {
         >
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <h2
-                id="mission-title"
-                className="text-4xl md:text-5xl font-black tracking-tighter mb-12 text-center holographic-text"
-              >
-                {t('about_mission_title')}
-              </h2>
+              <div className="max-w-4xl mx-auto">
+                <h2
+                  id="mission-title"
+                  className="text-4xl md:text-5xl font-black tracking-tighter mb-12 text-center holographic-text"
+                >
+                  {t('about_mission_title')}
+                </h2>
+              </div>
             </AnimateOnScroll>
 
             <div className="max-w-4xl mx-auto space-y-6 text-neutral/90 leading-relaxed">
@@ -323,12 +331,14 @@ const AboutPage: React.FC = () => {
         <section aria-labelledby="social-impact-title" className="py-16 md:py-24 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <h2
-                id="social-impact-title"
-                className="text-4xl md:text-5xl font-black tracking-tighter mb-12 text-center holographic-text"
-              >
-                {t('about_social_title')}
-              </h2>
+              <div className="max-w-4xl mx-auto">
+                <h2
+                  id="social-impact-title"
+                  className="text-4xl md:text-5xl font-black tracking-tighter mb-12 text-center holographic-text"
+                >
+                  {t('about_social_title')}
+                </h2>
+              </div>
             </AnimateOnScroll>
 
             <div className="max-w-4xl mx-auto space-y-6 text-neutral/90 leading-relaxed">
@@ -349,12 +359,14 @@ const AboutPage: React.FC = () => {
         >
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <h2
-                id="values-title"
-                className="text-4xl md:text-5xl font-black tracking-tighter mb-4 text-center holographic-text"
-              >
-                {t('about_values_title')}
-              </h2>
+              <div className="max-w-4xl mx-auto">
+                <h2
+                  id="values-title"
+                  className="text-4xl md:text-5xl font-black tracking-tighter mb-4 text-center holographic-text"
+                >
+                  {t('about_values_title')}
+                </h2>
+              </div>
             </AnimateOnScroll>
 
             <AnimateOnScroll delay={100}>
@@ -411,15 +423,17 @@ const AboutPage: React.FC = () => {
           </div>
           <div className="relative z-20 container mx-auto px-6 text-center">
             <AnimateOnScroll>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 holographic-text">
-                {t('about_final_cta_title')}
-              </h2>
-              <p className="max-w-2xl mx-auto text-xl text-neutral/90 mb-4">
-                {t('about_final_cta_subtitle')}
-              </p>
-              <p className="max-w-xl mx-auto text-lg text-neutral/75 mb-10">
-                {t('about_final_cta_description')}
-              </p>
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 holographic-text">
+                  {t('about_final_cta_title')}
+                </h2>
+                <p className="max-w-2xl mx-auto text-xl text-neutral/90 mb-4">
+                  {t('about_final_cta_subtitle')}
+                </p>
+                <p className="max-w-xl mx-auto text-lg text-neutral/75 mb-10">
+                  {t('about_final_cta_description')}
+                </p>
+              </div>
             </AnimateOnScroll>
 
             <AnimateOnScroll delay={200}>

@@ -352,7 +352,7 @@ const DancehallPage: React.FC = () => {
         <section className="pt-8 pb-16 md:pt-12 md:pb-24 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-16">
+              <div className="text-center mb-16 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
                   {t('dhV3IdentifyTitle')}
                 </h2>
@@ -415,7 +415,7 @@ const DancehallPage: React.FC = () => {
             </AnimateOnScroll>
 
             <AnimateOnScroll>
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
                   {t('dhV3NeedEnrollTitle')}
                 </h2>
@@ -438,7 +438,7 @@ const DancehallPage: React.FC = () => {
         <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-16">
+              <div className="text-center mb-16 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
                   {t('dhV3TransformTitle')}
                 </h2>
@@ -480,7 +480,7 @@ const DancehallPage: React.FC = () => {
         <section className="py-20 md:py-32 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
                   {t('dhV3TransformCTA')}
                 </h2>
@@ -588,7 +588,7 @@ const DancehallPage: React.FC = () => {
         <section className="py-16 md:py-20 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
                   {t('dhV3LogosTitle')}
                 </h2>
@@ -673,7 +673,7 @@ const DancehallPage: React.FC = () => {
 
           <div className="container mx-auto px-6 relative z-10">
             <AnimateOnScroll>
-              <div className="text-center mb-16">
+              <div className="text-center mb-16 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text">
                   {t('dhV3TeachersTitle')}
                 </h2>
@@ -747,7 +747,7 @@ const DancehallPage: React.FC = () => {
         <section id="testimonials" className="py-20 md:py-32 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
                   {t('testimonialsNotRequested')}
                 </h2>
@@ -813,7 +813,7 @@ const DancehallPage: React.FC = () => {
         <section id="video" className="py-20 md:py-32 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
                   {t('dhV3VideoTitle')}
                 </h2>

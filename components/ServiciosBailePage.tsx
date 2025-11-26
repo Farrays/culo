@@ -423,12 +423,14 @@ const ServiciosBailePage: React.FC = () => {
           </div>
           <div className="relative z-20 container mx-auto px-6 text-center">
             <AnimateOnScroll>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 holographic-text">
-                {t('serviciosBaile_finalCTA_title')}
-              </h2>
-              <p className="max-w-2xl mx-auto text-xl text-neutral/90 mb-4">
-                {t('serviciosBaile_finalCTA_subtitle')}
-              </p>
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 holographic-text">
+                  {t('serviciosBaile_finalCTA_title')}
+                </h2>
+                <p className="max-w-2xl mx-auto text-xl text-neutral/90 mb-4">
+                  {t('serviciosBaile_finalCTA_subtitle')}
+                </p>
+              </div>
             </AnimateOnScroll>
 
             <AnimateOnScroll delay={200}>

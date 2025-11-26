@@ -358,7 +358,7 @@ const TwerkPage: React.FC = () => {
         <section className="py-16 md:py-24 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-16">
+              <div className="text-center mb-16 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
                   {t('twerkIdentifyTitle')}
                 </h2>
@@ -421,7 +421,7 @@ const TwerkPage: React.FC = () => {
             </AnimateOnScroll>
 
             <AnimateOnScroll>
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
                   {t('twerkNeedEnrollTitle')}
                 </h2>
@@ -444,7 +444,7 @@ const TwerkPage: React.FC = () => {
         <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-16">
+              <div className="text-center mb-16 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
                   {t('twerkTransformTitle')}
                 </h2>
@@ -486,7 +486,7 @@ const TwerkPage: React.FC = () => {
         <section className="py-20 md:py-32 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
                   {t('twerkTransformCTA')}
                 </h2>
@@ -567,7 +567,7 @@ const TwerkPage: React.FC = () => {
         <section className="py-16 md:py-20 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
                   {t('twerkLogosTitle')}
                 </h2>
@@ -631,7 +631,7 @@ const TwerkPage: React.FC = () => {
         <section id="teachers" className="py-20 md:py-32 bg-black relative overflow-hidden">
           <div className="container mx-auto px-6 relative z-10">
             <AnimateOnScroll>
-              <div className="text-center mb-16">
+              <div className="text-center mb-16 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text">
                   {t('twerkTeachersTitle')}
                 </h2>
@@ -719,7 +719,7 @@ const TwerkPage: React.FC = () => {
         <section id="testimonials" className="py-20 md:py-32 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
                   {t('testimonialsNotRequested')}
                 </h2>
@@ -785,7 +785,7 @@ const TwerkPage: React.FC = () => {
         <section id="video" className="py-20 md:py-32 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
                   {t('twerkVideoTitle')}
                 </h2>
