@@ -103,7 +103,7 @@ const Header: React.FC = () => {
               textKey: 'navHipHopReggaeton',
             },
             { path: `/${locale}/clases/twerk-barcelona`, textKey: 'navTwerk' },
-            { path: `/${locale}/clases/afrobeat-barcelona`, textKey: 'navAfrobeat' },
+            { path: `/${locale}/clases/afrobeats-barcelona`, textKey: 'navAfrobeat' },
           ],
         },
         { path: `/${locale}/clases/salsa-bachata-barcelona`, textKey: 'navSalsaBachata' },
