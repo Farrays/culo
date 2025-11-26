@@ -5,6 +5,7 @@ import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import AnimatedCounter from './AnimatedCounter';
+import FAQSection from './FAQSection';
 import Icon, { type IconName } from './Icon';
 
 const EstudioGrabacionPage: React.FC = () => {
@@ -91,6 +92,17 @@ const EstudioGrabacionPage: React.FC = () => {
     },
   ];
 
+  // FAQ data
+  const studioFaqs = [
+    { id: 'eg-1', question: t('estudioGrabacion_faq1_q'), answer: t('estudioGrabacion_faq1_a') },
+    { id: 'eg-2', question: t('estudioGrabacion_faq2_q'), answer: t('estudioGrabacion_faq2_a') },
+    { id: 'eg-3', question: t('estudioGrabacion_faq3_q'), answer: t('estudioGrabacion_faq3_a') },
+    { id: 'eg-4', question: t('estudioGrabacion_faq4_q'), answer: t('estudioGrabacion_faq4_a') },
+    { id: 'eg-5', question: t('estudioGrabacion_faq5_q'), answer: t('estudioGrabacion_faq5_a') },
+    { id: 'eg-6', question: t('estudioGrabacion_faq6_q'), answer: t('estudioGrabacion_faq6_a') },
+    { id: 'eg-7', question: t('estudioGrabacion_faq7_q'), answer: t('estudioGrabacion_faq7_a') },
+  ];
+
   // Schema Markup - BreadcrumbList
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -161,6 +173,20 @@ const EstudioGrabacionPage: React.FC = () => {
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: studioFaqs.map(faq => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+              },
+            })),
+          })}
+        </script>
       </Helmet>
 
       <div className="pt-20 md:pt-24">
@@ -460,6 +486,19 @@ const EstudioGrabacionPage: React.FC = () => {
                   </div>
                 </div>
               </AnimateOnScroll>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section - Sin título redundante */}
+        <section className="py-16 md:py-24 bg-black">
+          <div className="container mx-auto px-6">
+            <div className="max-w-4xl mx-auto">
+              <FAQSection
+                title={t('estudioGrabacion_faq_title')}
+                faqs={studioFaqs}
+                pageUrl="/servicios/estudio-grabacion"
+              />
             </div>
           </div>
         </section>
