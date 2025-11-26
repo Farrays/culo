@@ -12,6 +12,9 @@ export const fr = {
   navDanza: 'Danse Classique',
   navDanzasUrbanas: 'Danses Urbaines',
   navDancehall: 'Dancehall',
+  navHipHopReggaeton: 'Hip Hop Reggaeton',
+  navTwerk: 'Twerk',
+  navAfrobeat: 'Afrobeat',
   navPrepFisica: 'Entraînement pour Danseurs',
   navClasesParticulares: 'Cours Particuliers',
   navServices: 'Services',
@@ -2346,9 +2349,6 @@ export const fr = {
   estudioGrabacion_faq2_q: "Puis-je apporter mon propre équipement d'enregistrement ?",
   estudioGrabacion_faq2_a:
     "Oui, vous pouvez apporter vos propres caméras, lumières, trépieds et tous les outils techniques dont vous avez besoin. Nous disposons d'un espace de stockage temporaire et de prises suffisantes pour installer votre configuration complète.",
-  estudioGrabacion_faq3_q: 'Les salles ont-elles de la lumière naturelle ?',
-  estudioGrabacion_faq3_a:
-    "Oui, certaines de nos salles ont de grandes fenêtres avec lumière naturelle dont vous pouvez profiter. Vous pouvez également les obscurcir complètement si vous préférez travailler uniquement avec l'éclairage artificiel.",
   estudioGrabacion_faq4_q:
     "Offrez-vous des services de production ou seulement la location d'espace ?",
   estudioGrabacion_faq4_a:
@@ -2362,6 +2362,9 @@ export const fr = {
   estudioGrabacion_faq7_q: 'Puis-je visiter avant de réserver ?',
   estudioGrabacion_faq7_a:
     "Bien sûr. Contactez-nous pour planifier une visite guidée gratuite des installations. Nous voulons que vous voyiez les salles, découvriez l'espace et vous sentiez en confiance avant de réserver.",
+  estudioGrabacion_faq8_q: 'Proposez-vous des services de vidéaste ou photographe professionnel ?',
+  estudioGrabacion_faq8_a:
+    "Oui, nous disposons d'une équipe de professionnels audiovisuels à la hauteur de vos besoins. Nous pouvons vous offrir des services de vidéographie, photographie professionnelle, montage et post-production. Que vous ayez besoin d'enregistrer un clip musical, une séance photo, du contenu pour les réseaux sociaux ou tout projet créatif, nous avons le talent et l'équipement technique pour le réaliser. Parlez-nous de votre idée et nous vous préparerons un devis personnalisé.",
   estudioGrabacion_finalCTA_title: 'Transformez Votre Vision en Réalité',
   estudioGrabacion_finalCTA_subtitle:
     'Arrêtez de vous contenter de studios médiocres. Louez un espace où votre créativité peut briller sans limites.',

@@ -168,26 +168,25 @@ const EstudioGrabacionPage: React.FC = () => {
     },
   };
 
-  // Schema Markup - FAQPage
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: studioFaqs.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
-
   return (
     <>
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: studioFaqs.map(faq => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+              },
+            })),
+          })}
+        </script>
       </Helmet>
 
       <div className="pt-20 md:pt-24">
@@ -491,21 +490,9 @@ const EstudioGrabacionPage: React.FC = () => {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section aria-labelledby="faq-title" className="py-16 md:py-24 bg-black">
+        {/* FAQ Section - Sin título redundante */}
+        <section className="py-16 md:py-24 bg-black">
           <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <h2
-                id="faq-title"
-                className="text-4xl md:text-5xl font-black tracking-tighter mb-6 text-neutral text-center holographic-text"
-              >
-                {t('estudioGrabacion_faq_title')}
-              </h2>
-              <p className="max-w-3xl mx-auto text-xl text-neutral/90 mb-16 text-center">
-                {t('estudioGrabacion_faq_subtitle')}
-              </p>
-            </AnimateOnScroll>
-
             <div className="max-w-4xl mx-auto">
               <FAQSection
                 title={t('estudioGrabacion_faq_title')}

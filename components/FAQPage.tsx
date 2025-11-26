@@ -288,7 +288,7 @@ const FAQPage: React.FC = () => {
                 <AnimateOnScroll key={category.id} delay={categoryIndex * 100}>
                   <div className="space-y-6">
                     {/* Category Title */}
-                    <div className="text-center mb-10">
+                    <div className="text-center mb-10 max-w-4xl mx-auto">
                       <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-2 holographic-text">
                         {category.title}
                       </h2>

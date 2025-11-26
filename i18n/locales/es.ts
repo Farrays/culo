@@ -13,6 +13,9 @@ export const es = {
   navSalsaBachata: 'Salsa y Bachata',
   navDanzasUrbanas: 'Danzas Urbanas',
   navDancehall: 'Dancehall',
+  navHipHopReggaeton: 'Hip Hop Reggaeton',
+  navTwerk: 'Twerk',
+  navAfrobeat: 'Afrobeat',
   navPrepFisica: 'Entrenamiento para Bailarines',
   navClasesParticulares: 'Clases Particulares',
   navServices: 'Servicios',
@@ -2995,9 +2998,6 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
   estudioGrabacion_faq2_q: '¿Puedo traer mi propio equipo de grabación?',
   estudioGrabacion_faq2_a:
     'Sí, puedes traer tu propio equipo de cámaras, luces, trípodes y cualquier herramienta técnica que necesites. Tenemos espacio de almacenamiento temporal y enchufes suficientes para montar tu setup completo.',
-  estudioGrabacion_faq3_q: '¿Las salas tienen luz natural?',
-  estudioGrabacion_faq3_a:
-    'Sí, algunas de nuestras salas tienen amplios ventanales con luz natural que puedes aprovechar. También puedes oscurecerlas completamente si prefieres trabajar solo con iluminación artificial.',
   estudioGrabacion_faq4_q: '¿Ofrecen servicios de producción o solo alquiler de espacio?',
   estudioGrabacion_faq4_a:
     'Ofrecemos ambos. Puedes alquilar solo el espacio o contratar servicios adicionales de producción, asistencia técnica, edición, fotografía profesional y más. Cuéntanos tu proyecto y te armamos un paquete a medida.',
@@ -3010,6 +3010,9 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
   estudioGrabacion_faq7_q: '¿Puedo hacer una visita antes de reservar?',
   estudioGrabacion_faq7_a:
     'Por supuesto. Contáctanos para agendar una visita guiada gratuita a las instalaciones. Queremos que veas las salas, conozcas el espacio y te sientas seguro antes de reservar.',
+  estudioGrabacion_faq8_q: '¿Ofrecen servicio de video maker o fotógrafo profesional?',
+  estudioGrabacion_faq8_a:
+    'Sí, contamos con un equipo de profesionales audiovisuales a la altura de tus necesidades. Podemos ofrecerte servicios de videografía, fotografía profesional, edición y postproducción. Tanto si necesitas grabar un videoclip, sesión de fotos, contenido para redes sociales o cualquier proyecto creativo, tenemos el talento y el equipo técnico para hacerlo realidad. Cuéntanos tu idea y te preparamos un presupuesto personalizado.',
 
   // Final CTA
   estudioGrabacion_finalCTA_title: 'Convierte Tu Visión en Realidad',
@@ -4060,4 +4063,235 @@ Las últimas tendencias y estilos se fusionan en nuestras clases de forma variad
   hhrCourseSchemaName: "Clases de Hip Hop Reggaeton en Barcelona - Farray's Center",
   hhrCourseSchemaDesc:
     'Aprende Hip Hop Reggaeton con Charlie Breezy, instructor especializado en fusión urbana. Clases para todos los niveles en el corazón de Barcelona.',
+
+  // ===== Sexy Reggaeton Page =====
+  sxrPageTitle: "Clases de Sexy Reggaeton en Barcelona | Academia Farray's Center",
+  sxrMetaDescription:
+    'Aprende Sexy Reggaeton en Barcelona con profesores especializados. Clases de perreo, body roll y sensualidad para todos los niveles cerca de Plaza España y Sants. ¡Reserva tu clase de prueba!',
+
+  // Breadcrumb (4 niveles: Home > Clases > Urbanas > Current)
+  sxrBreadcrumbHome: 'Inicio',
+  sxrBreadcrumbClasses: 'Clases de Baile',
+  sxrBreadcrumbUrban: 'Danzas Urbanas',
+  sxrBreadcrumbCurrent: 'Clases de Sexy Reggaeton',
+
+  // Hero
+  sxrHeroTitle: 'Clases de Sexy Reggaeton en Barcelona',
+  sxrHeroSubtitle: 'Fuerza, sensualidad y actitud en cada movimiento',
+  sxrHeroDesc:
+    'Aprende a bailar los éxitos más sonados del momento con un estilo único y muy sexy.',
+  sxrHeroLocation: 'Clases desde nivel principiante hasta avanzado, entre Plaza España y Sants',
+
+  // CTAs
+  sxrCTA1: 'Hazte Socia Ahora',
+  sxrCTA1Subtext: 'Quedan pocas plazas este mes',
+  sxrCTA2: 'Reserva tu Clase de Prueba',
+  sxrCTA2Subtext: 'Oferta por tiempo limitado',
+
+  // Stat
+  sxrSensualityGuaranteed: 'Sensualidad garantizada',
+
+  // What Is Section
+  sxrWhatIsTitle: '¿Qué es el Sexy Reggaeton y por qué te engancha?',
+  sxrWhatIsP1:
+    'El Sexy Reggaeton es la fusión perfecta entre la potencia del reggaeton y la sensualidad del baile femenino. No es solo bailar: es conectar con tu cuerpo, tu actitud y tu poder personal.',
+  sxrWhatIsP2:
+    'Dominarás figuras provocativas como el body roll, el perreo hasta el suelo, el movimiento de caderas sostenido y las "peleas de pista" que hacen vibrar cualquier fiesta. Aprenderás a colocar tu cuerpo con precisión mientras liberas tu lado más sensual y expresivo.',
+  sxrWhatIsP3:
+    '"No necesitas ser la más flexible ni la más fuerte. Solo necesitas las ganas de soltarte y pasarlo bien."',
+  sxrWhatIsP4:
+    'Cada clase es un entrenamiento completo: trabajas piernas, core, flexibilidad y resistencia mientras aprendes coreografías que puedes lucir en cualquier pista de baile.',
+  sxrWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
+  sxrWhatIsQuestionAnswer: 'Si tienes ganas de sentirte más sexy y segura, es para ti.',
+
+  // Cultural Section
+  sxrCulturalShort:
+    'El reggaeton nació en los años 90 entre Panamá y Puerto Rico, surgido de la mezcla del reggae jamaicano, el hip hop estadounidense y ritmos latinos caribeños.',
+  sxrCulturalFull: `### Origen y evolución
+
+El reggaeton nació en los años 90 entre Panamá y Puerto Rico, surgido de la mezcla del reggae jamaicano, el hip hop estadounidense y ritmos latinos caribeños, especialmente el dembow panameño que es la base rítmica esencial. Inicialmente underground y con letras y bailes provocativos, el reggaeton incorporó influencias del dancehall y la música urbana latina.
+
+El Sexy Reggaeton es una evolución contemporánea del perreo clásico puertorriqueño, que combina movimientos sensuales con técnicas de baile femenino refinadas, incluyendo body rolls, disociación corporal, perreo y bajadas controladas al suelo (drops). Este estilo fusiona elementos de reggaeton, dancehall y twerk, adaptándose para un enfoque tanto lúdico como de entrenamiento físico.
+
+### Técnicas principales
+
+Las técnicas principales del Sexy Reggaeton incluyen:
+
+- **Body roll**: ondulación fluida del torso.
+- **Perreo**: movimientos de cadera hacia abajo, típicos del reggaeton.
+- **Disociación corporal**: control independiente de distintas partes del cuerpo.
+- **Drops**: bajadas al suelo controladas que exigen fuerza y coordinación.
+
+Estas técnicas trabajan piernas, core, flexibilidad y resistencia, implicando un entrenamiento completo que potencia la confianza y la expresión corporal.
+
+### Popularización y contexto actual
+
+Artistas como Bad Bunny, Karol G, Daddy Yankee y Anitta han difundido a nivel global una imagen de reggaeton con bailes sensuales coreografiados que refuerzan el empoderamiento y la celebración de la sexualidad libre.
+
+Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equilibrado entre técnica, actitud y diversión, buscando que quienes lo practican se sientan seguras y confiadas, más allá de la mera ejecución de movimientos.`,
+
+  // Identify Section
+  sxrIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
+  sxrIdentify1:
+    'Te encanta el reggaeton pero sientes que no tienes "el movimiento" para bailarlo como las de los videoclips.',
+  sxrIdentify2:
+    'Quieres sentirte más sexy y segura con tu cuerpo, pero no sabes por dónde empezar.',
+  sxrIdentify3:
+    'Te gustaría soltarte en la discoteca sin sentir vergüenza ni quedarte quieta junto a la pared.',
+  sxrIdentify4:
+    'Buscas una actividad que te ponga en forma, pero el gimnasio te aburre y necesitas algo divertido.',
+  sxrIdentify5:
+    'Sientes que tu cuerpo está rígido y desconectado, y quieres recuperar la flexibilidad y la soltura.',
+  sxrIdentify6: 'Necesitas un espacio donde nadie te juzgue y puedas expresarte libremente.',
+
+  // Transition
+  sxrIdentifyTransition: 'Si has dicho "sí" a alguno de estos puntos, ya sabes lo que necesitas.',
+  sxrNeedEnrollTitle: 'Necesitas apuntarte a clases de Sexy Reggaeton en una academia de baile',
+  sxrIdentifyAgitate1:
+    'Seguir esperando el "momento perfecto" solo te aleja de la versión más sexy y empoderada de ti misma. Cada día que pasa es un día menos bailando.',
+  sxrIdentifySolution:
+    "En Farray's Center encontrarás un espacio seguro, sin juicios, donde aprenderás a mover tu cuerpo con confianza y actitud. Profesoras que te guían paso a paso, música que te hace vibrar y compañeras que te animan.",
+  sxrIdentifyClosing:
+    'Tu cuerpo ya tiene todo lo que necesita. Solo falta que le des permiso para soltarse.',
+
+  // Transform Section
+  sxrTransformTitle: 'Imagina tu antes y después',
+  sxrTransform1Title: 'De rígida a fluida',
+  sxrTransform1Desc:
+    'Aprendes a mover las caderas de forma sostenida, a disociar el tronco de las piernas y a crear ondulaciones sensuales.',
+  sxrTransform2Title: 'De vergüenza a actitud',
+  sxrTransform2Desc:
+    'Trabajas la actitud y la mirada. Dejas de esconderte y empiezas a brillar en cualquier pista de baile.',
+  sxrTransform3Title: 'De cansada a poderosa',
+  sxrTransform3Desc:
+    'Fortaleces piernas, core y glúteos mientras quemas calorías. Cada clase es un entrenamiento que no se siente como tal.',
+  sxrTransform4Title: 'De sola a acompañada',
+  sxrTransform4Desc:
+    'Conoces a mujeres con la misma pasión. Se crea un ambiente de complicidad y apoyo mutuo.',
+  sxrTransform5Title: 'De principiante a sexy queen',
+  sxrTransform5Desc:
+    'Dominas figuras como el body roll, el perreo hasta el suelo, los drops y las transiciones sensuales.',
+  sxrTransform6Title: 'De espectadora a protagonista',
+  sxrTransform6Desc:
+    'Participas en coreografías inspiradas en las "peleas de pista" y te sientes capaz de robarte todas las miradas.',
+  sxrTransformCTA: "¿Por qué elegir Farray's Center como academia de Sexy Reggaeton en Barcelona?",
+
+  // Why Choose Section
+  sxrWhyChoose1Title: 'Academia multidisciplinar',
+  sxrWhyChoose1Desc:
+    'Más de 25 estilos para que nunca te aburras y puedas crecer a tu ritmo: urbanos, bailes latinos, contemporáneo, técnica, estiramiento y mucho más.',
+  sxrWhyChoose2Title: 'Ubicación inmejorable',
+  sxrWhyChoose2Desc:
+    'Calle Entença 100, entre Plaza España y Sants, a 5 minutos de Plaça Espanya y Sants. Metro, buses y tren a la puerta. Fácil llegar. Fácil volver.',
+  sxrWhyChoose3Title: 'Ambiente familiar, con la profesionalidad que necesitas',
+  sxrWhyChoose3Desc:
+    'Cercano, inclusivo y sin juicios ni comparaciones, pero con la profesionalidad que necesitas para evolucionar de verdad.',
+  sxrWhyChoose4Title: 'Instalaciones preparadas de verdad',
+  sxrWhyChoose4Desc:
+    'Más de 700 m², salas amplias con espejos, sonido profesional, climatización y vestuarios con duchas.',
+  sxrWhyChoose5Title: 'Metodología progresiva',
+  sxrWhyChoose5Desc:
+    'Clases estructuradas por niveles para que avances a tu ritmo. Desde movimientos básicos hasta coreografías avanzadas.',
+  sxrWhyChoose6Title: 'Gala anual + workshops potentes',
+  sxrWhyChoose6Desc:
+    'Brilla en un teatro profesional, participa en workshops internacionales y vive experiencias que no encontrarás en ninguna otra escuela.',
+  sxrWhyChoose7Title: 'Profesora experta: Yasmina Fernández',
+  sxrWhyChoose7Desc:
+    'Yasmina lleva más de 8 años enseñando danzas urbanas y sensuales. Su energía, técnica y cercanía hacen que cada clase sea una experiencia transformadora.',
+
+  // Logos Section
+  sxrLogosTitle: 'Has podido vernos en…',
+  sxrLogosIntlFestivalsText: 'y en los mejores festivales de baile de todo el mundo',
+
+  // Teachers Section
+  sxrTeachersTitle: 'Conoce a tu instructora de Sexy Reggaeton',
+  sxrTeachersSubtitle: 'Experta en danzas urbanas sensuales con más de 8 años de experiencia',
+  sxrTeacher1Specialty: 'Sexy Reggaeton, Twerk, Dancehall & Danzas Urbanas',
+  sxrTeacher1Bio:
+    'Yasmina Fernández es una de las profesoras más carismáticas de la academia. Lleva más de 8 años formando alumnas en danzas urbanas y sensuales. Su estilo combina técnica impecable con una actitud empoderada que contagia.',
+  sxrTeachersClosing:
+    'Con Yasmina no solo aprendes a bailar Sexy Reggaeton: descubres una forma de conectar con tu feminidad y tu poder sin pedir permiso.',
+
+  // Schedule Section
+  sxrScheduleTitle: 'Horario de clases de Sexy Reggaeton',
+  sxrScheduleSubtitle: 'Varios niveles para que encuentres tu clase perfecta',
+
+  // Video Section
+  sxrVideoTitle: 'Ven a descubrir nuestras clases de Sexy Reggaeton',
+  sxrVideoDesc:
+    "Mira cómo es una clase en Farray's Center: energía, técnica, sensualidad y buen rollo. ¡Te esperamos!",
+
+  // Why Today Section
+  sxrWhyTodayFullTitle: '¿Por qué hoy es el mejor momento para empezar a bailar Sexy Reggaeton?',
+  sxrWhyToday1:
+    'Porque llevas demasiado tiempo sintiéndote incómoda con tu cuerpo y esperando el "momento perfecto" que nunca llega.',
+  sxrWhyToday2:
+    'Porque estás a UNA clase de descubrir una versión de ti que mueve las caderas sin complejos y se siente poderosa.',
+  sxrWhyToday3:
+    'Porque no se trata de bailar perfecto, sino de sentirse sexy bailando. Y eso se entrena.',
+  sxrWhyTodayClosing1: "En Farray's no vendemos clases. Creamos experiencias que te transforman.",
+  sxrWhyTodayClosing2:
+    'Te esperamos con la mejor música, profes que te inspiran y una comunidad de mujeres que se apoyan.',
+
+  // Final CTA Section
+  sxrFinalCTATitle: 'Únete a la comunidad de Sexy Reggaeton más activa de Barcelona',
+  sxrFinalCTASubtitle: 'Da el paso. Tu cuerpo ya está listo.',
+  sxrFinalCTADesc: 'Reserva tu plaza ahora y no dejes que te lo cuenten… ni que te lo bailen.',
+  sxrFinalCTAFunny: 'Las plazas vuelan más rápido que un perreo un viernes por la noche.',
+
+  // FAQ Title
+  sxrFaqTitle: 'Preguntas Frecuentes sobre Sexy Reggaeton en Barcelona',
+
+  // 15 FAQs
+  sxrFaqQ1: '¿Cómo funcionan nuestras clases de Sexy Reggaeton en Barcelona?',
+  sxrFaqA1:
+    'En nuestras clases de Sexy Reggaeton y reggaeton sensual en Barcelona se enseñan coreografías con movimientos sensuales y técnica de perreo. Cada sesión dura 1 hora e incluye: Calentamiento (preparación del cuerpo con ejercicios específicos para caderas y core), Técnica (body roll, perreo, disociación corporal y drops) y Coreografía (secuencias sensuales con actitud y flow que podrás lucir en cualquier pista de baile).',
+  sxrFaqQ2: '¿Puedo empezar desde cero si nunca he bailado Sexy Reggaeton?',
+  sxrFaqA2:
+    'Claro. Las alumnas que nunca han bailado antes eligen los cursos de nivel principiante y quienes tienen algo de experiencia en algún tipo de baile eligen el nivel básico. Nuestras clases de reggaeton sensual están diseñadas para que cualquiera pueda seguir el ritmo desde el primer día.',
+  sxrFaqQ3: '¿Qué pasa si no tengo buena coordinación o me da vergüenza?',
+  sxrFaqA3:
+    'No te preocupes, la coordinación y la soltura se desarrollan con la práctica. Nuestras profesoras te guiarán paso a paso y el ambiente es muy acogedor y libre de juicios. Lo importante es ser constante y disfrutar del proceso. La sensualidad se entrena como cualquier otra habilidad.',
+  sxrFaqQ4: '¿Qué necesito traer para las clases de Sexy Reggaeton en Barcelona?',
+  sxrFaqA4:
+    'Ropa cómoda y ajustada que permita moverte con libertad (shorts o leggins funcionan muy bien), zapatillas limpias de uso exclusivo dentro del estudio, toalla y agua, porque bailarás intensamente y necesitas hidratarte.',
+  sxrFaqQ5: '¿Qué estilos de Sexy Reggaeton enseñamos en nuestra escuela de Barcelona?',
+  sxrFaqA5:
+    '<strong>Sexy Reggaeton / Reggaeton Sensual:</strong> Estilo con movimientos sensuales, perreo, body roll y actitud. Sensualidad, feminidad y empoderamiento. <strong>Sexy Reggaeton + Twerk:</strong> Integra movimientos de Twerk/Bootydance con reggaeton sensual. Energía, sensualidad y técnica de glúteos.',
+  sxrFaqQ6: '¿Qué niveles de Sexy Reggaeton tenemos en nuestra escuela de Barcelona?',
+  sxrFaqA6:
+    '<strong>Principiantes:</strong> Para empezar desde cero, aprender paso a paso y con buen ambiente. <strong>Básico:</strong> Para quienes ya tienen algo de experiencia en reggaeton sensual u otras danzas urbanas. <strong>Intermedio:</strong> Para mejorar técnica, coordinación y musicalidad con movimientos más complejos. <strong>Avanzado:</strong> Para llevar tu nivel al máximo y consolidar tu estilo.',
+  sxrFaqQ7: '¿Puedo unirme en cualquier momento del año?',
+  sxrFaqA7:
+    'Sí. Puedes empezar cuando quieras. Consulta nuestro calendario para ver las próximas clases disponibles. Si tienes dudas sobre el nivel o el grupo, escríbenos y te orientamos.',
+  sxrFaqQ8: '¿Tenéis algún descuento especial?',
+  sxrFaqA8:
+    'Sí. Ofrecemos descuentos si te apuntas a más de un curso. Consulta la web o pregúntanos directamente para más detalles.',
+  sxrFaqQ9: '¿Puedo probar una clase de Sexy Reggaeton antes de inscribirme?',
+  sxrFaqA9:
+    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en la parte superior de esta página.',
+  sxrFaqQ10: '¿Y si falto a una clase por trabajo o compromisos?',
+  sxrFaqA10:
+    'Si tienes una membresía y cancelas una clase, dispones de 30 días para recuperarla desde la fecha de la clase cancelada. Si tienes un abono de horas, gestionas tus clases de forma flexible: cancela y reserva otro día dentro del periodo de caducidad. Todas las gestiones se realizan exclusivamente desde la aplicación digital de la academia.',
+  sxrFaqQ11:
+    'Si falto a una clase, ¿debo recuperarla haciendo el mismo estilo o puedo hacer otro diferente?',
+  sxrFaqA11:
+    'Puedes recuperarla haciendo la misma clase otro día o seleccionar otro estilo (Twerk, Dancehall, Hip Hop Reggaeton...), siempre que respetes el nivel de la clase y gestiones la recuperación desde la aplicación de la escuela.',
+  sxrFaqQ12: '¿Organizáis eventos o talleres especiales?',
+  sxrFaqA12:
+    'Sí. Organizamos talleres, masterclasses y eventos sociales durante el año. Síguenos en redes o consulta la web para estar al día.',
+  sxrFaqQ13: '¿Las clases son solo para mujeres o también para hombres?',
+  sxrFaqA13:
+    'Nuestras clases de Sexy Reggaeton y reggaeton sensual están abiertas a todas las personas, sin importar el género o la experiencia previa. El Sexy Reggaeton es para quien quiera conectar con su sensualidad y disfrutar bailando.',
+  sxrFaqQ14: '¿Qué diferencia el Sexy Reggaeton de otros estilos de baile urbano?',
+  sxrFaqA14:
+    'El Sexy Reggaeton o reggaeton sensual es un estilo que combina la energía del reggaeton con movimientos sensuales como el perreo, body roll y disociación corporal. A diferencia de otros estilos urbanos, se enfoca en la conexión con tu cuerpo, la actitud y la feminidad. Es ideal si buscas empoderarte, ganar confianza y expresar tu sensualidad bailando.',
+  sxrFaqQ15: '¿Dónde puedo encontrar clases de Sexy Reggaeton cerca de Plaza España en Barcelona?',
+  sxrFaqA15:
+    "Farray's Center está ubicado en Calle Entença 100, 08015 Barcelona, a solo 5 minutos de Plaza España y Estación de Sants. Contamos con profesoras con amplia experiencia en reggaeton sensual y un ambiente seguro y familiar para todos los niveles.",
+
+  // Course Schema
+  sxrCourseSchemaName: "Clases de Sexy Reggaeton en Barcelona - Farray's Center",
+  sxrCourseSchemaDesc:
+    'Aprende Sexy Reggaeton con Yunaisy Farray, experta en danzas urbanas sensuales. Clases de perreo, body roll y sensualidad para todos los niveles en el corazón de Barcelona.',
 };

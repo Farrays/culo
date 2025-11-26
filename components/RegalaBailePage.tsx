@@ -207,7 +207,7 @@ const RegalaBailePage: React.FC = () => {
 
           <div className="container mx-auto px-6 relative z-10">
             <AnimateOnScroll>
-              <div className="text-center mb-16">
+              <div className="text-center mb-16 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-6 holographic-text">
                   {t('regalaBaile_benefits_title')}
                 </h2>
@@ -237,7 +237,7 @@ const RegalaBailePage: React.FC = () => {
         <section className="py-16 md:py-20 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-6 holographic-text">
                   {t('regalaBaile_occasions_title')}
                 </h2>
@@ -266,7 +266,7 @@ const RegalaBailePage: React.FC = () => {
         <section className="py-16 md:py-20 bg-gradient-to-b from-black via-primary-dark/5 to-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-16">
+              <div className="text-center mb-16 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-6 holographic-text">
                   {t('regalaBaile_how_title')}
                 </h2>
@@ -328,7 +328,7 @@ const RegalaBailePage: React.FC = () => {
         <section className="py-16 md:py-20 bg-gradient-to-b from-black via-primary-dark/5 to-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-6 holographic-text">
                   {t('regalaBaile_delivery_title')}
                 </h2>
@@ -392,15 +392,17 @@ const RegalaBailePage: React.FC = () => {
 
           <div className="container mx-auto px-6 text-center relative z-10">
             <AnimateOnScroll>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 holographic-text">
-                {t('regalaBaile_final_cta_title')}
-              </h2>
-              <p className="max-w-2xl mx-auto text-xl text-neutral/90 mb-4">
-                {t('regalaBaile_final_cta_subtitle')}
-              </p>
-              <p className="max-w-xl mx-auto text-lg text-neutral/75 mb-10">
-                {t('regalaBaile_final_cta_description')}
-              </p>
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 holographic-text">
+                  {t('regalaBaile_final_cta_title')}
+                </h2>
+                <p className="max-w-2xl mx-auto text-xl text-neutral/90 mb-4">
+                  {t('regalaBaile_final_cta_subtitle')}
+                </p>
+                <p className="max-w-xl mx-auto text-lg text-neutral/75 mb-10">
+                  {t('regalaBaile_final_cta_description')}
+                </p>
+              </div>
             </AnimateOnScroll>
 
             <AnimateOnScroll delay={200}>

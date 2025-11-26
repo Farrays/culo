@@ -12,6 +12,9 @@ export const ca = {
   navDanza: 'Classes de Dansa',
   navDanzasUrbanas: 'Danses Urbanes',
   navDancehall: 'Dancehall',
+  navHipHopReggaeton: 'Hip Hop Reggaeton',
+  navTwerk: 'Twerk',
+  navAfrobeat: 'Afrobeat',
   navPrepFisica: 'Entrenament per a Ballarins',
   navClasesParticulares: 'Classes Particulars',
   navServices: 'Serveis',
@@ -2447,9 +2450,6 @@ export const ca = {
   estudioGrabacion_faq2_q: 'Puc portar el meu propi equip de gravació?',
   estudioGrabacion_faq2_a:
     "Sí, pots portar el teu propi equip de càmeres, llums, trípodes i qualsevol eina tècnica que necessitis. Tenim espai d'emmagatzematge temporal i endolls suficients per muntar el teu setup complet.",
-  estudioGrabacion_faq3_q: 'Les sales tenen llum natural?',
-  estudioGrabacion_faq3_a:
-    'Sí, algunes de les nostres sales tenen amplis finestrals amb llum natural que pots aprofitar. També pots enfosquir-les completament si prefereixes treballar només amb il·luminació artificial.',
   estudioGrabacion_faq4_q: "Oferiu serveis de producció o només lloguer d'espai?",
   estudioGrabacion_faq4_a:
     "Oferim ambdós. Pots llogar només l'espai o contractar serveis addicionals de producció, assistència tècnica, edició, fotografia professional i més. Explica'ns el teu projecte i et muntem un paquet a mida.",
@@ -2462,6 +2462,9 @@ export const ca = {
   estudioGrabacion_faq7_q: 'Puc fer una visita abans de reservar?',
   estudioGrabacion_faq7_a:
     "Per descomptat. Contacta'ns per agendar una visita guiada gratuïta a les instal·lacions. Volem que vegis les sales, coneguis l'espai i et sentis segur abans de reservar.",
+  estudioGrabacion_faq8_q: 'Oferiu servei de video maker o fotògraf professional?',
+  estudioGrabacion_faq8_a:
+    "Sí, comptem amb un equip de professionals audiovisuals a l'altura de les teves necessitats. Podem oferir-te serveis de videografia, fotografia professional, edició i postproducció. Tant si necessites gravar un videoclip, sessió de fotos, contingut per a xarxes socials o qualsevol projecte creatiu, tenim el talent i l'equip tècnic per fer-ho realitat. Explica'ns la teva idea i et preparem un pressupost personalitzat.",
   estudioGrabacion_finalCTA_title: 'Converteix la Teva Visió en Realitat',
   estudioGrabacion_finalCTA_subtitle:
     'Deixa de conformar-te amb estudis mediocres. Lloga un espai on la teva creativitat pot brillar sense límits.',

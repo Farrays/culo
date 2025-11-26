@@ -280,12 +280,14 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
         <section aria-labelledby="activities-title" className="py-12 md:py-20 bg-primary-dark/10">
           <div className="container mx-auto px-6 text-center">
             <AnimateOnScroll>
-              <h2
-                id="activities-title"
-                className="text-4xl md:text-5xl font-black tracking-tighter mb-4 holographic-text"
-              >
-                {t('prepFisica_activities_title')}
-              </h2>
+              <div className="max-w-4xl mx-auto">
+                <h2
+                  id="activities-title"
+                  className="text-4xl md:text-5xl font-black tracking-tighter mb-4 holographic-text"
+                >
+                  {t('prepFisica_activities_title')}
+                </h2>
+              </div>
             </AnimateOnScroll>
             <AnimateOnScroll delay={200}>
               <p className="max-w-3xl mx-auto text-lg text-neutral/90 mb-12">
@@ -340,15 +342,17 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
         <section aria-labelledby="which-activity-title" className="py-16 md:py-24 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <h2
-                id="which-activity-title"
-                className="text-4xl md:text-5xl font-black tracking-tighter mb-6 text-neutral text-center holographic-text"
-              >
-                {t('prepFisica_whichActivity_title')}
-              </h2>
-              <p className="max-w-3xl mx-auto text-lg text-neutral/90 mb-12 text-center">
-                {t('prepFisica_whichActivity_intro')}
-              </p>
+              <div className="max-w-4xl mx-auto">
+                <h2
+                  id="which-activity-title"
+                  className="text-4xl md:text-5xl font-black tracking-tighter mb-6 text-neutral text-center holographic-text"
+                >
+                  {t('prepFisica_whichActivity_title')}
+                </h2>
+                <p className="max-w-3xl mx-auto text-lg text-neutral/90 mb-12 text-center">
+                  {t('prepFisica_whichActivity_intro')}
+                </p>
+              </div>
             </AnimateOnScroll>
 
             {/* Comparison Table */}
@@ -565,15 +569,17 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
           </div>
           <div className="relative z-20 container mx-auto px-6 text-center">
             <AnimateOnScroll>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 holographic-text">
-                {t('prepFisica_finalCTA_title')}
-              </h2>
-              <p className="max-w-2xl mx-auto text-xl text-neutral/90 mb-4">
-                {t('prepFisica_finalCTA_subtitle')}
-              </p>
-              <p className="max-w-xl mx-auto text-lg text-neutral/75 mb-10">
-                {t('prepFisica_finalCTA_description')}
-              </p>
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 holographic-text">
+                  {t('prepFisica_finalCTA_title')}
+                </h2>
+                <p className="max-w-2xl mx-auto text-xl text-neutral/90 mb-4">
+                  {t('prepFisica_finalCTA_subtitle')}
+                </p>
+                <p className="max-w-xl mx-auto text-lg text-neutral/75 mb-10">
+                  {t('prepFisica_finalCTA_description')}
+                </p>
+              </div>
             </AnimateOnScroll>
 
             <AnimateOnScroll delay={200}>

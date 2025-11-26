@@ -359,7 +359,7 @@ const AfrobeatPage: React.FC = () => {
         <section className="pt-8 pb-16 md:pt-12 md:pb-24 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-16">
+              <div className="text-center mb-16 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
                   {t('afroIdentifyTitle')}
                 </h2>
@@ -423,7 +423,7 @@ const AfrobeatPage: React.FC = () => {
 
             {/* Título */}
             <AnimateOnScroll>
-              <div className="text-center mb-8">
+              <div className="text-center mb-8 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text">
                   {t('afroNeedEnrollTitle')}
                 </h2>
@@ -452,7 +452,7 @@ const AfrobeatPage: React.FC = () => {
         <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-16">
+              <div className="text-center mb-16 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
                   {t('afroTransformTitle')}
                 </h2>
@@ -494,7 +494,7 @@ const AfrobeatPage: React.FC = () => {
         <section className="py-20 md:py-32 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
                   {t('afroTransformCTA')}
                 </h2>
@@ -602,7 +602,7 @@ const AfrobeatPage: React.FC = () => {
         <section className="py-16 md:py-20 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
                   {t('afroLogosTitle')}
                 </h2>
@@ -679,7 +679,7 @@ const AfrobeatPage: React.FC = () => {
 
           <div className="container mx-auto px-6 relative z-10">
             <AnimateOnScroll>
-              <div className="text-center mb-16">
+              <div className="text-center mb-16 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text">
                   {t('afroTeachersTitle')}
                 </h2>
@@ -765,7 +765,7 @@ const AfrobeatPage: React.FC = () => {
         <section id="testimonials" className="py-20 md:py-32 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
                   {t('testimonialsNotRequested')}
                 </h2>
@@ -831,7 +831,7 @@ const AfrobeatPage: React.FC = () => {
         <section id="video" className="py-20 md:py-32 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-12">
+              <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
                   {t('afroVideoTitle')}
                 </h2>
