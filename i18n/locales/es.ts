@@ -4195,9 +4195,9 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   sxrWhyChoose6Title: 'Gala anual + workshops potentes',
   sxrWhyChoose6Desc:
     'Brilla en un teatro profesional, participa en workshops internacionales y vive experiencias que no encontrarás en ninguna otra escuela.',
-  sxrWhyChoose7Title: 'Profesora experta: Yunaisy Farray',
+  sxrWhyChoose7Title: 'Profesora experta: Yasmina Fernández',
   sxrWhyChoose7Desc:
-    'Yunaisy lleva más de 8 años enseñando danzas urbanas y sensuales. Su energía, técnica y cercanía hacen que cada clase sea una experiencia transformadora.',
+    'Yasmina lleva más de 8 años enseñando danzas urbanas y sensuales. Su energía, técnica y cercanía hacen que cada clase sea una experiencia transformadora.',
 
   // Logos Section
   sxrLogosTitle: 'Has podido vernos en…',
@@ -4208,9 +4208,9 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   sxrTeachersSubtitle: 'Experta en danzas urbanas sensuales con más de 8 años de experiencia',
   sxrTeacher1Specialty: 'Sexy Reggaeton, Twerk, Dancehall & Danzas Urbanas',
   sxrTeacher1Bio:
-    'Yunaisy Farray es directora de la academia y una de las bailarinas más reconocidas de España. Ha participado en Street Dance 2, The Dancer y ha formado a miles de alumnas en danzas urbanas y sensuales. Su estilo combina técnica impecable con una actitud empoderada que contagia.',
+    'Yasmina Fernández es una de las profesoras más carismáticas de la academia. Lleva más de 8 años formando alumnas en danzas urbanas y sensuales. Su estilo combina técnica impecable con una actitud empoderada que contagia.',
   sxrTeachersClosing:
-    'Con Yunaisy no solo aprendes a bailar Sexy Reggaeton: descubres una forma de conectar con tu feminidad y tu poder sin pedir permiso.',
+    'Con Yasmina no solo aprendes a bailar Sexy Reggaeton: descubres una forma de conectar con tu feminidad y tu poder sin pedir permiso.',
 
   // Schedule Section
   sxrScheduleTitle: 'Horario de clases de Sexy Reggaeton',

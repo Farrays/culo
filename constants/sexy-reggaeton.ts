@@ -59,7 +59,7 @@ export const SEXY_REGGAETON_SCHEDULE_KEYS = [
     dayKey: 'monday',
     className: 'Sexy Reggaeton Básico',
     time: '20:00 - 21:00',
-    teacher: 'Yunaisy Farray',
+    teacher: 'Yasmina Fernández',
     levelKey: 'basicLevel',
   },
   {
@@ -67,7 +67,7 @@ export const SEXY_REGGAETON_SCHEDULE_KEYS = [
     dayKey: 'wednesday',
     className: 'Sexy Reggaeton Intermedio',
     time: '20:00 - 21:00',
-    teacher: 'Yunaisy Farray',
+    teacher: 'Yasmina Fernández',
     levelKey: 'intermediateLevel',
   },
   {
@@ -75,7 +75,7 @@ export const SEXY_REGGAETON_SCHEDULE_KEYS = [
     dayKey: 'friday',
     className: 'Sexy Reggaeton Avanzado',
     time: '19:00 - 20:00',
-    teacher: 'Yunaisy Farray',
+    teacher: 'Yasmina Fernández',
     levelKey: 'advancedLevel',
   },
 ];

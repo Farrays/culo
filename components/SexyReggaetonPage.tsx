@@ -639,7 +639,7 @@ const SexyReggaetonPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Teacher Section - Yunaisy Farray */}
+        {/* Teacher Section - Yasmina Fernández */}
         <section id="teachers" className="py-20 md:py-32 bg-black relative overflow-hidden">
           <div className="container mx-auto px-6 relative z-10">
             <AnimateOnScroll>
@@ -658,13 +658,13 @@ const SexyReggaetonPage: React.FC = () => {
                     <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6">
                       <picture>
                         <source
-                          srcSet="/images/teachers/img/profesora-yunaisy-farray_320.webp 320w, /images/teachers/img/profesora-yunaisy-farray_640.webp 640w"
+                          srcSet="/images/teachers/img/profesora-yasmina-fernandez_320.webp 320w, /images/teachers/img/profesora-yasmina-fernandez_640.webp 640w"
                           sizes="192px"
                           type="image/webp"
                         />
                         <img
-                          src="/images/teachers/img/profesora-yunaisy-farray_640.jpg"
-                          alt="Yunaisy Farray - Profesora de Sexy Reggaeton"
+                          src="/images/teachers/img/profesora-yasmina-fernandez_640.jpg"
+                          alt="Yasmina Fernández - Profesora de Sexy Reggaeton"
                           width="192"
                           height="192"
                           loading="lazy"
@@ -672,7 +672,7 @@ const SexyReggaetonPage: React.FC = () => {
                         />
                       </picture>
                     </div>
-                    <h3 className="text-2xl font-bold text-neutral mb-2">Yunaisy Farray</h3>
+                    <h3 className="text-2xl font-bold text-neutral mb-2">Yasmina Fernández</h3>
                     <p className="text-primary-accent font-semibold mb-4">
                       {t('sxrTeacher1Specialty')}
                     </p>
