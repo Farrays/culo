@@ -1162,13 +1162,13 @@ export const en = {
   // URBAN DANCES BARCELONA PAGE
   // ==========================================
   danzasUrbanas_title:
-    "Urban Dance Classes in Barcelona | Hip Hop, Dancehall, K-Pop & Reggaeton | Farray's Center",
+    'Urban Dance in Barcelona | Style Guide: Dancehall, Twerk, Afrobeats, Hip Hop...',
   danzasUrbanas_description:
-    'Discover our urban dance classes in Barcelona: Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat and more. Leading academy in urban styles. Book your trial class.',
+    "Which urban dance style suits you? Discover Dancehall, Twerk, Afrobeats, Hip Hop Reggaeton and Sexy Reggaeton in Barcelona. Compare styles, levels and teachers. Farray's Center Academy.",
   danzasUrbanas_breadcrumb_home: 'Home',
   danzasUrbanas_breadcrumb_classes: 'Dance Classes in Barcelona',
-  danzasUrbanas_breadcrumb_current: 'Urban Dance Classes in Barcelona',
-  danzasUrbanas_h1: 'Urban Dance Classes in Barcelona',
+  danzasUrbanas_breadcrumb_current: 'Urban Dance',
+  danzasUrbanas_h1: 'Urban Dance in Barcelona: Find Your Style',
   danzasUrbanas_intro:
     "At Farray's Center you train Dancehall, Hip Hop, Twerk, Reggaeton, Heels and more with the exclusive Farray Method® created by Yunaisy Farray (Street Dance 2 dancer) and specialist teachers who teach you from the basics: musicality, coordination, energy, presence… and Flow, lots of flow. Get in shape, release stress and enjoy a sports activity that does NOT bore: every class is different, dynamic and full of good vibes.",
 
@@ -3211,9 +3211,9 @@ Although Afrodance may be seen a lot on social media, its root is deep: it is a 
     'Learn Afrobeats, Amapiano, Ntcham and modern African dances with native teachers. Classes for all levels in the heart of Barcelona.',
 
   // ===== Hip Hop Reggaeton Page =====
-  hhrPageTitle: "Hip Hop Reggaeton Classes in Barcelona | Farray's Center Academy",
+  hhrPageTitle: 'Hip Hop Reggaeton Classes in Barcelona | Urban Fusion with Flow',
   hhrMetaDescription:
-    'Learn Hip Hop Reggaeton in Barcelona with Charlie Breezy. Unique fusion of hip-hop and reggaeton with lots of flow. Classes for all levels near Plaza España and Sants. Book your trial class!',
+    'Hip Hop Reggaeton classes in Barcelona with Charlie Breezy. Urban fusion of hip-hop and reggaeton with flow and technique. Music video style choreography for all levels. Book your trial class!',
 
   // Breadcrumb
   hhrBreadcrumbHome: 'Home',
@@ -3223,7 +3223,7 @@ Although Afrodance may be seen a lot on social media, its root is deep: it is a 
 
   // Hero
   hhrHeroTitle: 'Hip Hop Reggaeton Classes in Barcelona',
-  hhrHeroSubtitle: 'The most explosive fusion of hip-hop and reggaeton',
+  hhrHeroSubtitle: 'Urban fusion with flow, rhythm and music video choreography',
   hhrHeroDesc: 'More than a dance: a unique, informal, sensual fusion with lots of flow.',
   hhrHeroLocation: 'Classes from beginner to advanced level, between Plaza España and Sants',
 
