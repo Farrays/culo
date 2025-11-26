@@ -96,7 +96,15 @@ const Header: React.FC = () => {
         {
           path: `/${locale}/clases/danzas-urbanas-barcelona`,
           textKey: 'navDanzasUrbanas',
-          submenu: [{ path: `/${locale}/clases/dancehall-barcelona`, textKey: 'navDancehall' }],
+          submenu: [
+            { path: `/${locale}/clases/dancehall-barcelona`, textKey: 'navDancehall' },
+            {
+              path: `/${locale}/clases/hip-hop-reggaeton-barcelona`,
+              textKey: 'navHipHopReggaeton',
+            },
+            { path: `/${locale}/clases/twerk-barcelona`, textKey: 'navTwerk' },
+            { path: `/${locale}/clases/afrobeat-barcelona`, textKey: 'navAfrobeat' },
+          ],
         },
         { path: `/${locale}/clases/salsa-bachata-barcelona`, textKey: 'navSalsaBachata' },
         { path: `/${locale}/clases/entrenamiento-bailarines-barcelona`, textKey: 'navPrepFisica' },
