@@ -79,7 +79,7 @@ const SexyReggaetonPage: React.FC = () => {
         '@type': 'ListItem',
         position: 3,
         name: t('sxrBreadcrumbUrban'),
-        item: `${baseUrl}/${locale}/clases`,
+        item: `${baseUrl}/${locale}/clases/danzas-urbanas-barcelona`,
       },
       {
         '@type': 'ListItem',
@@ -94,7 +94,7 @@ const SexyReggaetonPage: React.FC = () => {
   const breadcrumbItems = [
     { name: t('sxrBreadcrumbHome'), url: `/${locale}` },
     { name: t('sxrBreadcrumbClasses'), url: `/${locale}/clases` },
-    { name: t('sxrBreadcrumbUrban'), url: `/${locale}/clases` },
+    { name: t('sxrBreadcrumbUrban'), url: `/${locale}/clases/danzas-urbanas-barcelona` },
     {
       name: t('sxrBreadcrumbCurrent'),
       url: `/${locale}/clases/sexy-reggaeton-barcelona`,

@@ -1674,13 +1674,13 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
   // DANZAS URBANAS BARCELONA PAGE
   // ==========================================
   danzasUrbanas_title:
-    "Clases de Danzas Urbanas en Barcelona | Hip Hop, Dancehall, K-Pop y Reggaeton | Farray's Center",
+    'Danzas Urbanas en Barcelona | Guía de Estilos: Dancehall, Twerk, Afrobeats, Hip Hop...',
   danzasUrbanas_description:
-    'Descubre nuestras clases de danzas urbanas en Barcelona: Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat y más. Academia de referencia en estilos urbanos. Reserva tu clase de prueba.',
+    "¿Qué estilo de danza urbana va contigo? Descubre Dancehall, Twerk, Afrobeats, Hip Hop Reggaeton y Sexy Reggaeton en Barcelona. Compara estilos, niveles y profesores. Academia Farray's Center.",
   danzasUrbanas_breadcrumb_home: 'Inicio',
   danzasUrbanas_breadcrumb_classes: 'Clases de Baile en Barcelona',
-  danzasUrbanas_breadcrumb_current: 'Clases de Danzas Urbanas en Barcelona',
-  danzasUrbanas_h1: 'Clases de Danzas Urbanas en Barcelona',
+  danzasUrbanas_breadcrumb_current: 'Danzas Urbanas',
+  danzasUrbanas_h1: 'Danzas Urbanas en Barcelona: Encuentra tu Estilo',
   danzasUrbanas_intro:
     "En Farray's Center entrenas Dancehall, Hip Hop, Twerk, Reggaetón, Heels y más con el exclusivo Método Farray® creado por Yunaisy Farray (bailarina de Street Dance 2) y profesores especialistas que te enseñan desde la base: musicalidad, coordinación, energía, presencia… y Flow, mucho flow. Ponte en forma, libera estrés y disfruta de una actividad deportiva que NO aburre: cada clase es diferente, dinámica y llena de buen rollo.",
 
@@ -3850,9 +3850,9 @@ Aunque el Afrodance pueda verse mucho por redes, su raíz es profunda: es manife
     'Aprende Afrobeats, Amapiano, Ntcham y danzas africanas modernas con profesores nativos. Clases para todos los niveles en el corazón de Barcelona.',
 
   // ===== Hip Hop Reggaeton Page =====
-  hhrPageTitle: "Clases de Hip Hop Reggaeton en Barcelona | Academia Farray's Center",
+  hhrPageTitle: 'Clases de Hip Hop Reggaeton en Barcelona | Fusión Urbana con Flow',
   hhrMetaDescription:
-    'Aprende Hip Hop Reggaeton en Barcelona con Charlie Breezy. Fusión única de hip-hop y reggaeton con mucho flow. Clases para todos los niveles cerca de Plaza España y Sants. ¡Reserva tu clase de prueba!',
+    'Clases de Hip Hop Reggaeton en Barcelona con Charlie Breezy. Fusión urbana de hip-hop y reggaeton con flow y técnica. Coreografías estilo videoclip para todos los niveles. ¡Reserva tu clase de prueba!',
 
   // Breadcrumb
   hhrBreadcrumbHome: 'Inicio',
@@ -3862,7 +3862,7 @@ Aunque el Afrodance pueda verse mucho por redes, su raíz es profunda: es manife
 
   // Hero
   hhrHeroTitle: 'Clases de Hip Hop Reggaeton en Barcelona',
-  hhrHeroSubtitle: 'La fusión más explosiva de hip-hop y reggaeton',
+  hhrHeroSubtitle: 'Fusión urbana con flow, ritmo y coreografías de videoclip',
   hhrHeroDesc: 'Mucho más que un baile: una fusión única, informal, sensual y con mucho flow.',
   hhrHeroLocation: 'Clases desde nivel principiante hasta avanzado, entre Plaza España y Sants',
 
@@ -4065,9 +4065,9 @@ Las últimas tendencias y estilos se fusionan en nuestras clases de forma variad
     'Aprende Hip Hop Reggaeton con Charlie Breezy, instructor especializado en fusión urbana. Clases para todos los niveles en el corazón de Barcelona.',
 
   // ===== Sexy Reggaeton Page =====
-  sxrPageTitle: "Clases de Sexy Reggaeton en Barcelona | Academia Farray's Center",
+  sxrPageTitle: "Clases de Reggaeton Sensual para Mujeres en Barcelona | Farray's Center",
   sxrMetaDescription:
-    'Aprende Sexy Reggaeton en Barcelona con profesores especializados. Clases de perreo, body roll y sensualidad para todos los niveles cerca de Plaza España y Sants. ¡Reserva tu clase de prueba!',
+    'Clases de reggaeton sensual y perreo para mujeres en Barcelona. Empoderamiento femenino, body roll y confianza corporal. Ambiente seguro y sin juicios. ¡Reserva tu clase de prueba!',
 
   // Breadcrumb (4 niveles: Home > Clases > Urbanas > Current)
   sxrBreadcrumbHome: 'Inicio',
@@ -4076,8 +4076,8 @@ Las últimas tendencias y estilos se fusionan en nuestras clases de forma variad
   sxrBreadcrumbCurrent: 'Clases de Sexy Reggaeton',
 
   // Hero
-  sxrHeroTitle: 'Clases de Sexy Reggaeton en Barcelona',
-  sxrHeroSubtitle: 'Fuerza, sensualidad y actitud en cada movimiento',
+  sxrHeroTitle: 'Clases de Reggaeton Sensual para Mujeres en Barcelona',
+  sxrHeroSubtitle: 'Empoderamiento, sensualidad y actitud en cada movimiento',
   sxrHeroDesc:
     'Aprende a bailar los éxitos más sonados del momento con un estilo único y muy sexy.',
   sxrHeroLocation: 'Clases desde nivel principiante hasta avanzado, entre Plaza España y Sants',

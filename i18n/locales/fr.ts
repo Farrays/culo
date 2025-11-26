@@ -1095,13 +1095,13 @@ export const fr = {
   // DANSES URBAINES BARCELONE PAGE
   // ==========================================
   danzasUrbanas_title:
-    "Cours de Danses Urbaines à Barcelone | Hip Hop, Dancehall, K-Pop et Reggaeton | Farray's Center",
+    'Danses Urbaines à Barcelone | Guide des Styles : Dancehall, Twerk, Afrobeats, Hip Hop...',
   danzasUrbanas_description:
-    "Découvrez nos cours de danses urbaines à Barcelone : Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat et plus. Académie de référence en styles urbains. Réservez votre cours d'essai.",
+    "Quel style de danse urbaine te correspond ? Découvre Dancehall, Twerk, Afrobeats, Hip Hop Reggaeton et Sexy Reggaeton à Barcelone. Compare les styles, niveaux et professeurs. Académie Farray's Center.",
   danzasUrbanas_breadcrumb_home: 'Accueil',
   danzasUrbanas_breadcrumb_classes: 'Cours de Danse à Barcelone',
-  danzasUrbanas_breadcrumb_current: 'Cours de Danses Urbaines à Barcelone',
-  danzasUrbanas_h1: 'Cours de Danses Urbaines à Barcelone',
+  danzasUrbanas_breadcrumb_current: 'Danses Urbaines',
+  danzasUrbanas_h1: 'Danses Urbaines à Barcelone : Trouve ton Style',
   danzasUrbanas_intro:
     "Chez Farray's Center, vous vous entraînez au Dancehall, Hip Hop, Twerk, Reggaeton, Heels et plus avec la Méthode Farray® exclusive créée par Yunaisy Farray (danseuse de Street Dance 2) et des professeurs spécialistes qui vous enseignent depuis les bases : musicalité, coordination, énergie, présence… et Flow, beaucoup de flow. Mettez-vous en forme, libérez le stress et profitez d'une activité sportive qui ne s'ennuie PAS : chaque cours est différent, dynamique et plein de bonne ambiance.",
 
@@ -3124,9 +3124,9 @@ Bien que l'Afrodance puisse être très visible sur les réseaux, sa racine est 
     "Apprends l'Afrobeats, Amapiano, Ntcham et les danses africaines modernes avec des professeurs natifs. Cours pour tous les niveaux au cœur de Barcelone.",
 
   // ===== Hip Hop Reggaeton Page =====
-  hhrPageTitle: "Cours de Hip Hop Reggaeton à Barcelone | Académie Farray's Center",
+  hhrPageTitle: 'Cours de Hip Hop Reggaeton à Barcelone | Fusion Urbaine avec Flow',
   hhrMetaDescription:
-    "Apprends le Hip Hop Reggaeton à Barcelone avec Charlie Breezy. Fusion unique de hip-hop et reggaeton avec beaucoup de flow. Cours pour tous les niveaux près de Plaza España et Sants. Réserve ton cours d'essai !",
+    "Cours de Hip Hop Reggaeton à Barcelone avec Charlie Breezy. Fusion urbaine de hip-hop et reggaeton avec flow et technique. Chorégraphies style clip vidéo pour tous les niveaux. Réserve ton cours d'essai !",
 
   // Breadcrumb
   hhrBreadcrumbHome: 'Accueil',
@@ -3136,7 +3136,7 @@ Bien que l'Afrodance puisse être très visible sur les réseaux, sa racine est 
 
   // Hero
   hhrHeroTitle: 'Cours de Hip Hop Reggaeton à Barcelone',
-  hhrHeroSubtitle: 'La fusion la plus explosive de hip-hop et reggaeton',
+  hhrHeroSubtitle: 'Fusion urbaine avec flow, rythme et chorégraphies de clip vidéo',
   hhrHeroDesc:
     "Plus qu'une danse : une fusion unique, informelle, sensuelle et avec beaucoup de flow.",
   hhrHeroLocation: 'Cours du niveau débutant à avancé, entre Plaza España et Sants',

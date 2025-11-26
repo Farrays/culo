@@ -75,7 +75,7 @@ const TwerkPage: React.FC = () => {
         '@type': 'ListItem',
         position: 3,
         name: t('twerkBreadcrumbUrban'),
-        item: `${baseUrl}/${locale}/clases`,
+        item: `${baseUrl}/${locale}/clases/danzas-urbanas-barcelona`,
       },
       {
         '@type': 'ListItem',
@@ -90,7 +90,7 @@ const TwerkPage: React.FC = () => {
   const breadcrumbItems = [
     { name: t('twerkBreadcrumbHome'), url: `/${locale}` },
     { name: t('twerkBreadcrumbClasses'), url: `/${locale}/clases` },
-    { name: t('twerkBreadcrumbUrban'), url: `/${locale}/clases` },
+    { name: t('twerkBreadcrumbUrban'), url: `/${locale}/clases/danzas-urbanas-barcelona` },
     {
       name: t('twerkBreadcrumbCurrent'),
       url: `/${locale}/clases/twerk-barcelona`,

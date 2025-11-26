@@ -77,6 +77,12 @@ const DancehallPage: React.FC = () => {
       {
         '@type': 'ListItem',
         position: 3,
+        name: t('dhV3BreadcrumbUrban'),
+        item: `${baseUrl}/${locale}/clases/danzas-urbanas-barcelona`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
         name: t('dhV3BreadcrumbCurrent'),
         item: pageUrl,
       },
@@ -87,6 +93,7 @@ const DancehallPage: React.FC = () => {
   const breadcrumbItems = [
     { name: t('dhV3BreadcrumbHome'), url: `/${locale}` },
     { name: t('dhV3BreadcrumbClasses'), url: `/${locale}/clases` },
+    { name: t('dhV3BreadcrumbUrban'), url: `/${locale}/clases/danzas-urbanas-barcelona` },
     {
       name: t('dhV3BreadcrumbCurrent'),
       url: `/${locale}/clases/dancehall-barcelona`,

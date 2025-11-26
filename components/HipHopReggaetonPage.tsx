@@ -79,7 +79,7 @@ const HipHopReggaetonPage: React.FC = () => {
         '@type': 'ListItem',
         position: 3,
         name: t('hhrBreadcrumbUrban'),
-        item: `${baseUrl}/${locale}/clases`,
+        item: `${baseUrl}/${locale}/clases/danzas-urbanas-barcelona`,
       },
       {
         '@type': 'ListItem',
@@ -94,7 +94,7 @@ const HipHopReggaetonPage: React.FC = () => {
   const breadcrumbItems = [
     { name: t('hhrBreadcrumbHome'), url: `/${locale}` },
     { name: t('hhrBreadcrumbClasses'), url: `/${locale}/clases` },
-    { name: t('hhrBreadcrumbUrban'), url: `/${locale}/clases` },
+    { name: t('hhrBreadcrumbUrban'), url: `/${locale}/clases/danzas-urbanas-barcelona` },
     {
       name: t('hhrBreadcrumbCurrent'),
       url: `/${locale}/clases/hip-hop-reggaeton-barcelona`,
