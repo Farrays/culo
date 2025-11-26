@@ -2,7 +2,7 @@ import sharp from "sharp";
 import { readdir, mkdir } from "node:fs/promises";
 import { join, extname, basename } from "node:path";
 
-const classes = ["dancehall", "twerk", "afrobeat"]; // añade más clases aquí: ["dancehall", "afrobeats", "bachata"]
+const classes = ["dancehall", "twerk", "afrobeat", "hip-hop-reggaeton"]; // añade más clases aquí
 const logos = true; // procesar logos
 const teachers = true; // procesar fotos de profesores
 const teacherSizes = [320, 640, 960]; // tamaños para fotos de profesores (cuadradas)

@@ -58,9 +58,13 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   duration = 'PT5M',
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [thumbnailError, setThumbnailError] = useState(false);
   const playerRef = useRef<YTPlayer | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+  // maxresdefault may not exist for all videos, use hqdefault as fallback
+  const thumbnailUrl = thumbnailError
+    ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
+    : `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
   const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}`;
 
   const videoSchema = {
@@ -162,6 +166,14 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
             height="720"
             loading="lazy"
             className="w-full h-full object-cover"
+            onLoad={e => {
+              // YouTube returns 120x90 gray placeholder when maxresdefault doesn't exist
+              const img = e.currentTarget;
+              if (!thumbnailError && img.naturalWidth <= 120) {
+                setThumbnailError(true);
+              }
+            }}
+            onError={() => !thumbnailError && setThumbnailError(true)}
           />
           <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
             <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">

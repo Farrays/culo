@@ -32,9 +32,8 @@
     <!-- Self-hosted fonts - preload critical weights only -->
     <link rel="preload" href="/fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/roboto-v30-latin-700.woff2" as="font" type="font/woff2" crossorigin>
-    <!-- Font CSS loads async (fonts are preloaded, CSS just defines @font-face) -->
-    <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
+    <!-- Font CSS (critical @font-face rules are also inlined below for fast first paint) -->
+    <link rel="stylesheet" href="/fonts/fonts.css">
 
     <!-- Critical CSS inline (above the fold) -->
     <style>
