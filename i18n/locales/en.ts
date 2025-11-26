@@ -441,6 +441,7 @@ export const en = {
 
   // Days of week
   monday: 'Monday',
+  tuesday: 'Tuesday',
   wednesday: 'Wednesday',
   thursday: 'Thursday',
   friday: 'Friday',
@@ -449,6 +450,7 @@ export const en = {
   beginnerLevel: 'Beginner',
   basicLevel: 'Basic',
   intermediateLevel: 'Intermediate',
+  intermediateAdvancedLevel: 'Intermediate/Advanced',
   advancedLevel: 'Advanced',
 
   // Testimonials
@@ -3204,4 +3206,220 @@ Although Afrodance may be seen a lot on social media, its root is deep: it is a 
   afroCourseSchemaName: 'Afrobeats and Afrodance Classes in Barcelona',
   afroCourseSchemaDesc:
     'Learn Afrobeats, Amapiano, Ntcham and modern African dances with native teachers. Classes for all levels in the heart of Barcelona.',
+
+  // ===== Hip Hop Reggaeton Page =====
+  hhrPageTitle: "Hip Hop Reggaeton Classes in Barcelona | Farray's Center Academy",
+  hhrMetaDescription:
+    'Learn Hip Hop Reggaeton in Barcelona with Charlie Breezy. Unique fusion of hip-hop and reggaeton with lots of flow. Classes for all levels near Plaza España and Sants. Book your trial class!',
+
+  // Breadcrumb
+  hhrBreadcrumbHome: 'Home',
+  hhrBreadcrumbClasses: 'Dance Classes',
+  hhrBreadcrumbUrban: 'Urban Dances',
+  hhrBreadcrumbCurrent: 'Hip Hop Reggaeton Classes',
+
+  // Hero
+  hhrHeroTitle: 'Hip Hop Reggaeton Classes in Barcelona',
+  hhrHeroSubtitle: 'The most explosive fusion of hip-hop and reggaeton',
+  hhrHeroDesc: 'More than a dance: a unique, informal, sensual fusion with lots of flow.',
+  hhrHeroLocation: 'Classes from beginner to advanced level, between Plaza España and Sants',
+
+  // CTAs
+  hhrCTA1: 'Become a Member Now',
+  hhrCTA1Subtext: 'Limited spots this month',
+  hhrCTA2: 'Book Your Trial Class',
+  hhrCTA2Subtext: 'Limited time offer',
+
+  // Flow Guaranteed
+  hhrFlowGuaranteed: 'Flow guaranteed',
+
+  // What Is Section
+  hhrWhatIsTitle: 'What is Hip Hop Reggaeton and why is it taking over Barcelona?',
+  hhrWhatIsP1:
+    'Hip Hop Reggaeton is a unique and explosive fusion that mixes the best of hip-hop with the energy of reggaeton.',
+  hhrWhatIsP2:
+    "In Farray's Hip Hop Reggaeton classes you'll learn to dance mixing these two styles in a modern, informal fusion exclusive to our academy.",
+  hhrWhatIsP3:
+    'Enjoy a unique style with lots of "flow", where you\'ll fuse hip-hop movements with reggaeton elements and dance technical resources.',
+  hhrWhatIsP4:
+    'This style takes it to an informal, sensual and daring level that will allow you to express yourself authentically.',
+  hhrWhatIsQuestionTitle: "Wondering if it's for you?",
+  hhrWhatIsQuestionAnswer: 'Yes, it is.',
+
+  // Cultural History
+  hhrCulturalShort:
+    "Hip Hop Reggaeton is a fusion of two iconic styles: American hip-hop and Latin reggaeton. At Farray's we've created a unique style that combines the best of both worlds.",
+  hhrCulturalFull: `### Hip Hop Origins
+
+Hip-hop was born in the Bronx of New York in the 70s, as an artistic expression of African-American and Latino communities. From breakdance to popping and locking, hip-hop revolutionized the way of moving and expressing through dance.
+
+### Reggaeton: Latin Rhythm
+
+Reggaeton emerged in Puerto Rico in the 90s, fusing Jamaican reggae with Latin rhythms and hip-hop. Its characteristic "dembow" and sensual movements made it a global phenomenon.
+
+### Farray's Unique Fusion
+
+At Farray's International Dance Center we've created our own style that fuses both worlds: the technique and swagger of hip-hop with the sensuality and rhythm of reggaeton. The result is a modern, informal and explosive dance that allows you to express your unique personality.
+
+### A Constantly Evolving Style
+
+The latest trends and styles merge in our classes in a varied, dynamic and fun way. We incorporate elements from current music videos, viral movements from social media and the essence of both genres to create fresh and original choreographies every week.`,
+
+  // Identification Section - Do you identify?
+  hhrIdentifyTitle: 'Do you identify with any of these situations?',
+  hhrIdentify1:
+    "You're so fed up with routine that even coffee doesn't want you anymore. You need something to wake you up NOW.",
+  hhrIdentify2:
+    'You want to look in the mirror and see pure confidence, real attitude and zero fear of what others think.',
+  hhrIdentify3:
+    "You hate the gym... and the gym hates you too. You can't stand each other. It was never love.",
+  hhrIdentify4:
+    'You need real people, good vibes, laughs and a place where you can be yourself without filters or pretense.',
+  hhrIdentify5:
+    'Reggaeton and hip-hop move you inside, but your routine feels more like an eternal Monday than a Friday party.',
+  hhrIdentify6:
+    'You love dancing, but you need more flow, more attitude and fewer robot-without-battery choreographies.',
+
+  // Necesitas apuntarte Section
+  hhrIdentifyTransition:
+    'If you said "yes" to any of these points, you already know what you need.',
+  hhrNeedEnrollTitle: 'You need to sign up for Hip Hop Reggaeton classes at a dance academy',
+  hhrIdentifyAgitate1:
+    'You feel your body asking for something different... but are you doing something to feel better?',
+  hhrIdentifySolution:
+    'If you want to break out of the routine, feel better about yourself, meet new people and get fit while having fun, this style full of flow is for you.',
+  hhrIdentifyClosing:
+    "You'll learn to incorporate large doses of creativity and improvisation into your dance so you can create your own different and unique style.",
+
+  // Transformation Section
+  hhrTransformTitle: 'Imagine your before and after',
+  hhrTransform1Title: 'You regain energy and enthusiasm',
+  hhrTransform1Desc: 'Classes take you out of routine and bring back motivation.',
+  hhrTransform2Title: 'You develop your own style',
+  hhrTransform2Desc: 'Learn to improvise and create unique movements.',
+  hhrTransform3Title: 'You get fit without getting bored',
+  hhrTransform3Desc: 'Each class is different. You have fun while burning tons of calories.',
+  hhrTransform4Title: 'You meet people with your same passion',
+  hhrTransform4Desc: 'Good vibes, community and people who share your taste for urban music.',
+  hhrTransform5Title: 'You connect with urban music',
+  hhrTransform5Desc: 'Rhythm, flow and improvisation ability in every class.',
+  hhrTransform6Title: 'You create your own unique style',
+  hhrTransform6Desc: 'More creativity, more flow, more you.',
+  hhrTransformCTA: "Why choose Farray's Center as your Hip Hop Reggaeton academy in Barcelona?",
+
+  // Why Choose Section
+  hhrWhyChoose1Title: 'Academy recognized by CID UNESCO',
+  hhrWhyChoose1Desc:
+    'Led by Yunaisy Farray, actress from Street Dance 2 and one of the most recognized teachers in the world.',
+  hhrWhyChoose2Title: 'Unbeatable location',
+  hhrWhyChoose2Desc:
+    'Calle Entença 100, between Plaza España and Sants, 5 minutes from metro. Easy to get to, easy to get back.',
+  hhrWhyChoose3Title: 'Family atmosphere with professionalism',
+  hhrWhyChoose3Desc:
+    'Welcoming, inclusive and non-judgmental, but with the standards you need to truly evolve.',
+  hhrWhyChoose4Title: 'Truly prepared facilities',
+  hhrWhyChoose4Desc:
+    'Over 700 m², spacious rooms, mirrors, professional sound, air conditioning and centralized ventilation.',
+  hhrWhyChoose5Title: 'Multidisciplinary academy',
+  hhrWhyChoose5Desc:
+    'Over 25 styles so you never get bored: urban, Latin, contemporary, technique, stretching and much more.',
+  hhrWhyChoose6Title: 'Annual gala + powerful workshops',
+  hhrWhyChoose6Desc:
+    'Shine on a professional stage, participate in international workshops and live unique experiences.',
+  hhrWhyChoose7Title: 'Specialized instructor: Charlie Breezy',
+  hhrWhyChoose7Desc:
+    'Charlie Breezy is an expert in Hip Hop Reggaeton with years of experience. Technique, flow and contagious energy in every class.',
+
+  // Logos Section
+  hhrLogosTitle: "You've seen us on...",
+  hhrLogosIntlFestivalsText: 'and at the best dance festivals around the world',
+
+  // Teachers Section
+  hhrTeachersTitle: 'Meet your Hip Hop Reggaeton instructor',
+  hhrTeachersSubtitle: 'Urban fusion expert with years of experience',
+  hhrTeacher1Specialty: 'Hip Hop Reggaeton, Afrobeats & Urban Dances',
+  hhrTeacher1Bio:
+    'Charlie Breezy is an international master and Cuban dancer trained at the ENA (National Art School of Cuba). Specialist in Hip Hop Reggaeton, he masters the fusion of urban styles with impeccable technique. His energy, creativity and ability to transmit "flow" make him one of the most recommended teachers in Barcelona.',
+  hhrTeachersClosing:
+    "With Charlie Breezy you don't just learn to dance Hip Hop Reggaeton: you discover your own style and connect with your creativity.",
+
+  // Schedule Section
+  hhrScheduleTitle: 'Hip Hop Reggaeton class schedule',
+  hhrScheduleSubtitle: 'Various levels to find your perfect class',
+
+  // Video Section
+  hhrVideoTitle: 'Come discover our Hip Hop Reggaeton classes',
+  hhrVideoDesc:
+    "See what a class at Farray's Center is like: fusion, flow and good vibes. We're waiting for you!",
+
+  // Why Today Section
+  hhrWhyTodayFullTitle: 'Why is today the best time to start dancing Hip Hop Reggaeton?',
+  hhrWhyToday1:
+    'Because you\'re always waiting for "the perfect moment" but the only perfect thing is to start today.',
+  hhrWhyToday2:
+    "Because you're just ONE class away from changing your routine and feeling better than yesterday.",
+  hhrWhyToday3: "Because it's not about dancing well, but about feeling good dancing.",
+  hhrWhyTodayClosing1: "At Farray's we don't sell classes. We create experiences.",
+  hhrWhyTodayClosing2:
+    "We're waiting for you with catchy music, Charlie Breezy's flow and a unique energy in Barcelona.",
+
+  // Final CTA Section
+  hhrFinalCTATitle: 'Join the most active Hip Hop Reggaeton community in Barcelona',
+  hhrFinalCTASubtitle: 'Take the step.',
+  hhrFinalCTADesc:
+    "Book your spot now and don't let them tell you about it... or dance it for you.",
+  hhrFinalCTAFunny: 'Spots fly faster than a Hip Hop Reggaeton step on a Friday night.',
+
+  // FAQ Section
+  hhrFaqTitle: 'Frequently Asked Questions about Hip Hop Reggaeton in Barcelona',
+  hhrFaqQ1: 'How do Hip Hop Reggaeton classes work in Barcelona?',
+  hhrFaqA1:
+    'In our Hip Hop Reggaeton classes in Barcelona we teach choreographies that fuse hip-hop and reggaeton, but we also work on improvisation. Each session lasts 1 hour and includes: Warm-up (body preparation with specific exercises), Choreography (dynamic sequences combining hip-hop steps with reggaeton flow) and Improvisation (creativity work to take your dancing to an informal, expressive level with personality).',
+  hhrFaqQ2: 'Can I start from zero if I have never danced Hip Hop Reggaeton?',
+  hhrFaqA2:
+    'Of course. Students who have never danced before choose beginner level courses and those with some experience in any type of dance choose basic level. Our classes are designed so anyone can follow the rhythm from day one.',
+  hhrFaqQ3: "What if I don't have good coordination?",
+  hhrFaqA3:
+    "Don't worry, coordination develops with practice. Our teachers will guide you step by step and the atmosphere is very welcoming. The important thing is to be consistent and enjoy the process.",
+  hhrFaqQ4: 'What do I need to bring to Hip Hop Reggaeton classes?',
+  hhrFaqA4:
+    'Comfortable, light clothing that allows you to move freely, clean shoes for exclusive use inside the studio, towel and water, because you will dance intensely and need to stay hydrated.',
+  hhrFaqQ5: 'What Hip Hop Reggaeton levels do you have?',
+  hhrFaqA5:
+    'Beginners: To start from scratch, learn step by step in a good atmosphere. Basic: For those with some experience in Hip Hop Reggaeton or other urban dances. Intermediate: To improve technique, coordination and musicality with more complex steps. Advanced: To take your level to the max and consolidate your style.',
+  hhrFaqQ6: 'Can I join classes at any time of the year?',
+  hhrFaqA6:
+    "Yes. You can start whenever you want. Check our calendar for upcoming available classes. If you have questions about level or group, write to us and we'll guide you.",
+  hhrFaqQ7: 'Do you have any special discounts?',
+  hhrFaqA7:
+    'Yes. We offer discounts if you sign up for more than one course. Check the website or ask us directly for more details.',
+  hhrFaqQ8: 'Can I try a class before enrolling?',
+  hhrFaqA8:
+    'Depending on the season, the trial class for residents may be free or have a symbolic welcome price. The idea is for you to try the experience with no commitment. Book your spot by clicking the "Book Your Trial Class" button at the top of this page.',
+  hhrFaqQ9: 'What if I miss a class due to work or commitments?',
+  hhrFaqA9:
+    "If you have a membership and cancel a class, you have 30 days to make it up from the date of the cancelled class. If you have an hours package, you manage your classes flexibly: cancel and book another day within the expiration period. All management is done exclusively through the academy's digital app.",
+  hhrFaqQ10: 'If I miss a Hip Hop Reggaeton class, can I make it up doing another style?',
+  hhrFaqA10:
+    "You can make it up by attending the same class another day or select another style, as long as you respect the class level and manage the recovery through the school's app.",
+  hhrFaqQ11: 'Do you organize special events or workshops?',
+  hhrFaqA11:
+    'Yes. We organize workshops, masterclasses and social events throughout the year. Follow us on social media or check the website to stay updated.',
+  hhrFaqQ12: 'Are classes only for women or also for men?',
+  hhrFaqA12:
+    'Our classes are open to everyone, regardless of gender or previous experience. Hip Hop Reggaeton is for everyone.',
+  hhrFaqQ13: 'What makes Hip Hop Reggaeton different from other urban dance styles?',
+  hhrFaqA13:
+    "Hip Hop Reggaeton is an exclusive fusion from our school that combines the technique and swagger of American hip-hop with the sensuality and rhythm of Latin reggaeton. It's a modern, informal and explosive style that allows you to express your unique personality, ideal if you're looking for more than just choreographed steps.",
+  hhrFaqQ14: 'Where can I find Hip Hop Reggaeton classes near Plaza España?',
+  hhrFaqA14:
+    "Farray's Center is located at Calle Entença 100, 08015 Barcelona, just 5 minutes from Plaza España and Sants Station. We have teachers with extensive experience and a family atmosphere for all levels.",
+  hhrFaqQ15: 'What do I do if I have questions or need more information?',
+  hhrFaqA15:
+    'If you have any additional questions or need more information, you can contact us:<br/><br/>📞 <strong>Phone:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Address:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+
+  // Course Schema
+  hhrCourseSchemaName: "Hip Hop Reggaeton Classes in Barcelona - Farray's Center",
+  hhrCourseSchemaDesc:
+    'Learn Hip Hop Reggaeton with Charlie Breezy, specialized urban fusion instructor. Classes for all levels in the heart of Barcelona.',
 };

@@ -441,6 +441,7 @@ export const ca = {
 
   // Days of week
   monday: 'Dilluns',
+  tuesday: 'Dimarts',
   wednesday: 'Dimecres',
   thursday: 'Dijous',
   friday: 'Divendres',
@@ -449,6 +450,7 @@ export const ca = {
   beginnerLevel: 'Principiants',
   basicLevel: 'Bàsic',
   intermediateLevel: 'Intermedi',
+  intermediateAdvancedLevel: 'Intermedi/Avançat',
   advancedLevel: 'Avançat',
 
   // Testimonials
@@ -3203,4 +3205,218 @@ Encara que l'Afrodance pugui veure's molt per xarxes, la seva arrel és profunda
   afroCourseSchemaName: "Classes d'Afrobeats i Afrodance a Barcelona",
   afroCourseSchemaDesc:
     'Aprèn Afrobeat, Amapiano, Ntcham i danses africanes modernes amb professors natius. Classes per a tots els nivells al cor de Barcelona.',
+
+  // ===== Hip Hop Reggaeton Page =====
+  hhrPageTitle: "Classes de Hip Hop Reggaeton a Barcelona | Acadèmia Farray's Center",
+  hhrMetaDescription:
+    'Aprèn Hip Hop Reggaeton a Barcelona amb Charlie Breezy. Fusió única de hip-hop i reggaeton amb molt de flow. Classes per a tots els nivells a prop de Plaça Espanya i Sants. Reserva la teva classe de prova!',
+
+  // Breadcrumb
+  hhrBreadcrumbHome: 'Inici',
+  hhrBreadcrumbClasses: 'Classes de Ball',
+  hhrBreadcrumbUrban: 'Danses Urbanes',
+  hhrBreadcrumbCurrent: 'Classes de Hip Hop Reggaeton',
+
+  // Hero
+  hhrHeroTitle: 'Classes de Hip Hop Reggaeton a Barcelona',
+  hhrHeroSubtitle: 'La fusió més explosiva de hip-hop i reggaeton',
+  hhrHeroDesc: 'Més que un ball: una fusió única, informal, sensual i amb molt de flow.',
+  hhrHeroLocation: 'Classes des de nivell principiant fins a avançat, entre Plaça Espanya i Sants',
+
+  // CTAs
+  hhrCTA1: 'Fes-te Soci Ara',
+  hhrCTA1Subtext: 'Queden poques places aquest mes',
+  hhrCTA2: 'Reserva la Teva Classe de Prova',
+  hhrCTA2Subtext: 'Oferta per temps limitat',
+
+  // Flow Guaranteed
+  hhrFlowGuaranteed: 'Flow garantit',
+
+  // What Is Section
+  hhrWhatIsTitle: 'Què és Hip Hop Reggaeton i per què està arrasant a Barcelona?',
+  hhrWhatIsP1:
+    "El Hip Hop Reggaeton és una fusió única i explosiva que barreja el millor del hip-hop amb l'energia del reggaeton.",
+  hhrWhatIsP2:
+    "A les classes de Hip Hop Reggaeton de Farray's aprendràs a ballar barrejant aquests dos estils en una fusió moderna, informal i exclusiva de la nostra acadèmia.",
+  hhrWhatIsP3:
+    'Gaudeix d\'un estil únic amb molt de "flow", on fusionaràs moviments propis del hip-hop amb elements del reggaeton i recursos tècnics de la dansa.',
+  hhrWhatIsP4:
+    'Aquest estil ho porta a un nivell informal, sensual i atrevit que et permetrà expressar-te de forma autèntica.',
+  hhrWhatIsQuestionTitle: 'Et preguntes si és per a tu?',
+  hhrWhatIsQuestionAnswer: 'Sí, ho és.',
+
+  // Cultural History
+  hhrCulturalShort:
+    "El Hip Hop Reggaeton és una fusió de dos estils icònics: el hip-hop nord-americà i el reggaeton llatí. A Farray's hem creat un estil únic que combina el millor de tots dos mons.",
+  hhrCulturalFull: `### Orígens del Hip Hop
+
+El hip-hop va néixer al Bronx de Nova York als anys 70, com a expressió artística de les comunitats afroamericanes i llatines. Des del breakdance fins al popping i el locking, el hip-hop va revolucionar la forma de moure's i expressar-se a través de la dansa.
+
+### El Reggaeton: Ritme Llatí
+
+El reggaeton va sorgir a Puerto Rico als anys 90, fusionant el reggae jamaicà amb ritmes llatins i hip-hop. El seu característic "dembow" i moviments sensuals el van convertir en un fenomen mundial.
+
+### La Fusió Única de Farray's
+
+A Farray's International Dance Center hem creat un estil propi que fusiona tots dos mons: la tècnica i el swagger del hip-hop amb la sensualitat i el ritme del reggaeton. El resultat és un ball modern, informal i explosiu que et permet expressar la teva personalitat única.
+
+### Un Estil en Constant Evolució
+
+Les últimes tendències i estils es fusionen a les nostres classes de forma variada, dinàmica i divertida. Incorporem elements de videoclips actuals, moviments virals de xarxes socials i l'essència d'ambdós gèneres per crear coreografies fresques i originals cada setmana.`,
+
+  // Identification Section - T'hi identifiques?
+  hhrIdentifyTitle: "T'identifiques amb alguna d'aquestes situacions?",
+  hhrIdentify1:
+    'Estàs tan fart/a de la rutina que ja ni el cafè et vol. Necessites alguna cosa que et desperti JA.',
+  hhrIdentify2:
+    'Vols mirar-te al mirall i veure confiança pura, actitud real i zero por al què diran.',
+  hhrIdentify3: 'Odies el gimnàs... i el gimnàs també et odia. No us suporteu. Mai va ser amor.',
+  hhrIdentify4:
+    'Et fa falta gent real, bon rotllo, riures i un lloc on ser tu sense filtres ni postureos.',
+  hhrIdentify5:
+    'El reggaeton i el hip-hop et mouen per dins, però la teva rutina sembla més un dilluns etern que un divendres de festa.',
+  hhrIdentify6:
+    "T'encanta ballar, però necessites més flow, més actitud i menys coreografies de robot sense bateria.",
+
+  // Necessites apuntar-te Section
+  hhrIdentifyTransition: 'Si has dit "sí" a algun d\'aquests punts, ja saps el que necessites.',
+  hhrNeedEnrollTitle:
+    'Necessites apuntar-te a classes de Hip Hop Reggaeton en una acadèmia de ball',
+  hhrIdentifyAgitate1:
+    'Sents que el teu cos et demana alguna cosa diferent... però fas alguna cosa per sentir-te millor?',
+  hhrIdentifySolution:
+    'Si vols sortir de la rutina, sentir-te millor amb tu mateix/a, conèixer gent nova i posar-te en forma mentre et diverteixes, aquest estil ple de flow és per a tu.',
+  hhrIdentifyClosing:
+    'Aprendràs a incorporar grans dosis de creativitat i improvisació al teu ball perquè puguis crear el teu estil propi, diferent i únic.',
+
+  // Transformation Section
+  hhrTransformTitle: 'Imagina el teu abans i després',
+  hhrTransform1Title: 'Recuperes energia i il·lusió',
+  hhrTransform1Desc: 'Les classes et treuen de la rutina i et tornen la motivació.',
+  hhrTransform2Title: 'Desenvolupes el teu propi estil',
+  hhrTransform2Desc: 'Aprens a improvisar i crear moviments únics.',
+  hhrTransform3Title: 'Et poses en forma sense avorrir-te',
+  hhrTransform3Desc: 'Cada classe és diferent. Et diverteixes mentre cremes un munt de calories.',
+  hhrTransform4Title: 'Coneixes gent amb la teva mateixa passió',
+  hhrTransform4Desc:
+    'Bon rotllo, comunitat i gent que comparteix el teu gust per la música urbana.',
+  hhrTransform5Title: 'Connectes amb la música urbana',
+  hhrTransform5Desc: "Ritme, flow i capacitat d'improvisació a cada classe.",
+  hhrTransform6Title: 'Crees el teu estil propi i únic',
+  hhrTransform6Desc: 'Més creativitat, més flow, més tu.',
+  hhrTransformCTA: "Per què triar Farray's Center com a acadèmia de Hip Hop Reggaeton a Barcelona?",
+
+  // Why Choose Section
+  hhrWhyChoose1Title: 'Acadèmia reconeguda pel CID UNESCO',
+  hhrWhyChoose1Desc:
+    'Dirigida per Yunaisy Farray, actriu de Street Dance 2 i una de les professores més reconegudes del món.',
+  hhrWhyChoose2Title: 'Ubicació immillorable',
+  hhrWhyChoose2Desc:
+    'Carrer Entença 100, entre Plaça Espanya i Sants, a 5 minuts del metro. Fàcil arribar, fàcil tornar.',
+  hhrWhyChoose3Title: 'Ambient familiar amb professionalisme',
+  hhrWhyChoose3Desc:
+    "Acollidor, inclusiu i sense judicis, però amb l'exigència que necessites per evolucionar de veritat.",
+  hhrWhyChoose4Title: 'Instal·lacions preparades de veritat',
+  hhrWhyChoose4Desc:
+    'Més de 700 m², sales àmplies, miralls, so professional, climatització i ventilació centralitzada.',
+  hhrWhyChoose5Title: 'Acadèmia multidisciplinària',
+  hhrWhyChoose5Desc:
+    "Més de 25 estils perquè mai t'avorreixis: urbans, llatines, contemporani, tècnica, stretching i molt més.",
+  hhrWhyChoose6Title: 'Gala anual + workshops potents',
+  hhrWhyChoose6Desc:
+    'Brilla en un teatre professional, participa en workshops internacionals i viu experiències úniques.',
+  hhrWhyChoose7Title: 'Professor especialitzat: Charlie Breezy',
+  hhrWhyChoose7Desc:
+    "Charlie Breezy és expert en Hip Hop Reggaeton amb anys d'experiència. Tècnica, flow i energia contagiosa a cada classe.",
+
+  // Logos Section
+  hhrLogosTitle: 'Ens has pogut veure a…',
+  hhrLogosIntlFestivalsText: 'i als millors festivals de ball de tot el món',
+
+  // Teachers Section
+  hhrTeachersTitle: 'Coneix el teu instructor de Hip Hop Reggaeton',
+  hhrTeachersSubtitle: "Expert en fusió urbana amb anys d'experiència",
+  hhrTeacher1Specialty: 'Hip Hop Reggaeton, Afrobeats & Danses Urbanes',
+  hhrTeacher1Bio:
+    "Charlie Breezy és un mestre internacional i ballarí cubà format a l'ENA (Escola Nacional d'Art de Cuba). Especialista en Hip Hop Reggaeton, domina la fusió d'estils urbans amb tècnica impecable. La seva energia, creativitat i capacitat per transmetre el \"flow\" el converteixen en un dels professors més recomanats de Barcelona.",
+  hhrTeachersClosing:
+    'Amb Charlie Breezy no només aprens a ballar Hip Hop Reggaeton: descobreixes el teu propi estil i connectes amb la teva creativitat.',
+
+  // Schedule Section
+  hhrScheduleTitle: 'Horari de classes de Hip Hop Reggaeton',
+  hhrScheduleSubtitle: 'Diversos nivells perquè trobis la teva classe perfecta',
+
+  // Video Section
+  hhrVideoTitle: 'Vine a descobrir les nostres classes de Hip Hop Reggaeton',
+  hhrVideoDesc: "Mira com és una classe a Farray's Center: fusió, flow i bon rotllo. T'esperem!",
+
+  // Why Today Section
+  hhrWhyTodayFullTitle: 'Per què avui és el millor moment per començar a ballar Hip Hop Reggaeton?',
+  hhrWhyToday1:
+    'Perquè sempre esperes "el moment perfecte" però l\'únic perfecte és començar avui.',
+  hhrWhyToday2: 'Perquè estàs a UNA classe de canviar la teva rutina i sentir-te millor que ahir.',
+  hhrWhyToday3: 'Perquè no es tracta de ballar bé, sinó de sentir-se bé ballant.',
+  hhrWhyTodayClosing1: "A Farray's no venem classes. Creem experiències.",
+  hhrWhyTodayClosing2:
+    "T'esperem amb música enganxosa, el flow de Charlie Breezy i una energia única a Barcelona.",
+
+  // Final CTA Section
+  hhrFinalCTATitle: 'Uneix-te a la comunitat de Hip Hop Reggaeton més activa de Barcelona',
+  hhrFinalCTASubtitle: 'Fes el pas.',
+  hhrFinalCTADesc: "Reserva la teva plaça ara i no deixis que t'ho expliquin… ni que t'ho ballin.",
+  hhrFinalCTAFunny:
+    'Les places volen més ràpid que un pas de Hip Hop Reggaeton un divendres a la nit.',
+
+  // FAQ Section
+  hhrFaqTitle: 'Preguntes Freqüents sobre Hip Hop Reggaeton a Barcelona',
+  hhrFaqQ1: 'Com funcionen les classes de Hip Hop Reggaeton a Barcelona?',
+  hhrFaqA1:
+    'A les nostres classes de Hip Hop Reggaeton a Barcelona ensenyem coreografies que fusionen hip-hop i reggaeton, però també treballem la improvisació. Cada sessió dura 1 hora i inclou: Escalfament (preparació del cos amb exercicis específics), Coreografia (seqüències dinàmiques que combinen passos de hip-hop amb el flow del reggaeton) i Improvisació (treball de creativitat per portar el teu ball a un nivell informal, expressiu i amb personalitat).',
+  hhrFaqQ2: 'Puc començar des de zero si mai he ballat Hip Hop Reggaeton?',
+  hhrFaqA2:
+    'Clar. Els alumnes que mai han ballat abans trien els cursos de nivell principiant i els qui tenen alguna experiència en algun tipus de ball trien el nivell bàsic. Les nostres classes estan dissenyades perquè qualsevol pugui seguir el ritme des del primer dia.',
+  hhrFaqQ3: 'Què passa si no tinc bona coordinació?',
+  hhrFaqA3:
+    "No et preocupis, la coordinació es desenvolupa amb la pràctica. Els nostres professors et guiaran pas a pas i l'ambient és molt acollidor. L'important és ser constant i gaudir del procés.",
+  hhrFaqQ4: 'Què necessito portar a les classes de Hip Hop Reggaeton?',
+  hhrFaqA4:
+    "Roba còmoda i lleugera que et permeti moure't amb llibertat, sabatilles netes d'ús exclusiu dins l'estudi, tovallola i aigua, perquè ballaràs intensament i necessites hidratar-te.",
+  hhrFaqQ5: 'Quins nivells de Hip Hop Reggaeton teniu?',
+  hhrFaqA5:
+    'Principiants: Per començar des de zero, aprendre pas a pas i amb bon ambient. Bàsic: Per als qui ja tenen alguna experiència en Hip Hop Reggaeton o altres danses urbanes. Intermedi: Per millorar tècnica, coordinació i musicalitat amb passos més complexos. Avançat: Per portar el teu nivell al màxim i consolidar el teu estil.',
+  hhrFaqQ6: "Puc unir-me a les classes en qualsevol moment de l'any?",
+  hhrFaqA6:
+    "Sí. Pots començar quan vulguis. Consulta el nostre calendari per veure les properes classes disponibles. Si tens dubtes sobre el nivell o el grup, escriu-nos i t'orientem.",
+  hhrFaqQ7: 'Teniu algun descompte especial?',
+  hhrFaqA7:
+    "Sí. Oferim descomptes si t'apuntes a més d'un curs. Consulta la web o pregunta'ns directament per a més detalls.",
+  hhrFaqQ8: "Puc provar una classe abans d'inscriure'm?",
+  hhrFaqA8:
+    'Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça clicant el botó "Reserva la teva Classe de Prova" a la part superior d\'aquesta pàgina.',
+  hhrFaqQ9: 'I si falto a una classe per feina o compromisos?',
+  hhrFaqA9:
+    "Si tens una membresía i cancelles una classe, disposes de 30 dies per recuperar-la des de la data de la classe cancel·lada. Si tens un abonament d'hores, gestiones les teves classes de forma flexible: cancel·la i reserva un altre dia dins del període de caducitat. Totes les gestions es realitzen exclusivament des de l'aplicació digital de l'acadèmia.",
+  hhrFaqQ10: 'Si falto a una classe de Hip Hop Reggaeton, puc recuperar-la fent un altre estil?',
+  hhrFaqA10:
+    "Pots recuperar-la fent la mateixa classe un altre dia o seleccionar un altre estil, sempre que respectis el nivell de la classe i gestionis la recuperació des de l'aplicació de l'escola.",
+  hhrFaqQ11: 'Organitzeu esdeveniments o tallers especials?',
+  hhrFaqA11:
+    "Sí. Organitzem tallers, masterclasses i esdeveniments socials durant l'any. Segueix-nos a xarxes o consulta la web per estar al dia.",
+  hhrFaqQ12: 'Les classes són només per a dones o també per a homes?',
+  hhrFaqA12:
+    "Les nostres classes estan obertes a totes les persones, sense importar el gènere o l'experiència prèvia. El Hip Hop Reggaeton és per a tothom.",
+  hhrFaqQ13: "Què diferencia el Hip Hop Reggaeton d'altres estils de ball urbà?",
+  hhrFaqA13:
+    'El Hip Hop Reggaeton és una fusió exclusiva de la nostra escola que combina la tècnica i el swagger del hip-hop americà amb la sensualitat i el ritme del reggaeton llatí. És un estil modern, informal i explosiu que et permet expressar la teva personalitat única, ideal si busques quelcom més que passos coreografiats.',
+  hhrFaqQ14: 'On puc trobar classes de Hip Hop Reggaeton a prop de Plaça Espanya?',
+  hhrFaqA14:
+    "Farray's Center està ubicat al Carrer Entença 100, 08015 Barcelona, a només 5 minuts de Plaça Espanya i Estació de Sants. Comptem amb professors amb àmplia experiència i un ambient familiar per a tots els nivells.",
+  hhrFaqQ15: 'Què faig si tinc dubtes o necessito més informació?',
+  hhrFaqA15:
+    'Si tens alguna pregunta addicional o necessites més informació, pots contactar-nos:<br/><br/>📞 <strong>Telèfon:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Adreça:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Carrer Entença 100, 08015 Barcelona</a>',
+
+  // Course Schema
+  hhrCourseSchemaName: "Classes de Hip Hop Reggaeton a Barcelona - Farray's Center",
+  hhrCourseSchemaDesc:
+    'Aprèn Hip Hop Reggaeton amb Charlie Breezy, instructor especialitzat en fusió urbana. Classes per a tots els nivells al cor de Barcelona.',
 };
