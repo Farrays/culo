@@ -610,7 +610,7 @@ export const fr = {
   dhV3FaqQ14: "Qu'est-ce qui différencie le Dancehall des autres styles de danse urbaine ?",
   dhV3FaqA14:
     "Le Dancehall est un style originaire de la Jamaïque avec beaucoup d'énergie, des pas caractéristiques et une culture propre. Il combine des mouvements énergiques et sensuels avec des rythmes reggae et hip-hop, avec une grande place pour l'improvisation et la créativité. C'est idéal si vous cherchez plus que des pas chorégraphiés.",
-  dhV3FaqQ15: 'Où se trouve l\'académie et comment puis-je vous contacter ?',
+  dhV3FaqQ15: "Où se trouve l'académie et comment puis-je vous contacter ?",
   dhV3FaqA15:
     'Nous sommes au Calle Entença 100, 08015 Barcelone (à 5 min de Plaza España et Sants).<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
 
@@ -3360,7 +3360,8 @@ Les dernières tendances et styles fusionnent dans nos cours de manière variée
   rcbHeroSubtitle: 'Reparto et Cubatón Authentique',
   rcbHeroDescription:
     'Apprends à danser le reggaeton authentique dansé dans les rues de Cuba. Pas le commercial, le vrai.',
-  rcbHeroLocation: 'Cours avec des professeurs cubains qui viennent directement de La Havane, entre Plaza España et Sants.',
+  rcbHeroLocation:
+    'Cours avec des professeurs cubains qui viennent directement de La Havane, entre Plaza España et Sants.',
   rcbHeroCTA: 'Deviens Membre Maintenant',
   rcbHeroCTASubtext: 'Peu de places restantes ce mois',
   rcbHeroSecondaryCTA: "Réserve ton Cours d'Essai",
@@ -3447,12 +3448,12 @@ Les dernières tendances et styles fusionnent dans nos cours de manière variée
   rcbWhyChoose5Title: 'Ambiance cubaine familiale',
   rcbWhyChoose5Desc:
     "Ici tu n'es pas un numéro. Tu fais partie d'une communauté qui partage la passion du rythme cubain.",
-  rcbWhyChoose6Title: 'Plus de 25 styles complémentaires',
+  rcbWhyChoose6Title: 'Emplacement imbattable',
   rcbWhyChoose6Desc:
-    "Salsa cubaine, Afrobeats, Hip Hop... complète ton Reggaeton Cubain avec d'autres danses.",
-  rcbWhyChoose7Title: 'Emplacement imbattable',
-  rcbWhyChoose7Desc:
     "Calle Entença 100, entre Plaza España et Sants, à 5 minutes de métro. Facile d'y aller, facile de revenir.",
+  rcbWhyChoose7Title: 'Plus de 25 styles complémentaires',
+  rcbWhyChoose7Desc:
+    "Salsa cubaine, Afrobeats, Hip Hop... complète ton Reggaeton Cubain avec d'autres danses.",
 
   // Logos Section
   rcbLogosTitle: 'Tu as pu nous voir sur...',
@@ -3499,8 +3500,7 @@ Les dernières tendances et styles fusionnent dans nos cours de manière variée
   rcbFinalCTASubtitle: 'Fais le pas.',
   rcbFinalCTADesc:
     'Réserve ta place maintenant et ne laisse personne te le raconter… ni te le danser.',
-  rcbFinalCTAFunny:
-    "Les places s'envolent plus vite qu'un dembow à une fête de La Havane.",
+  rcbFinalCTAFunny: "Les places s'envolent plus vite qu'un dembow à une fête de La Havane.",
 
   // FAQ Section
   rcbFaqTitle: 'Questions Fréquentes sur le Reparto Cubain à Barcelone',
@@ -3519,7 +3519,8 @@ Les dernières tendances et styles fusionnent dans nos cours de manière variée
   rcbFaqQ5: 'Que dois-je apporter aux cours de Reggaeton Cubain ?',
   rcbFaqA5:
     "Des vêtements confortables, des chaussures propres, une serviette et de l'eau. Rien de fancy. Le Reparto se danse avec attitude, pas avec des vêtements chers.",
-  rcbFaqQ6: 'Si je manque un cours, dois-je le rattraper en faisant le même style ou puis-je en faire un autre ?',
+  rcbFaqQ6:
+    'Si je manque un cours, dois-je le rattraper en faisant le même style ou puis-je en faire un autre ?',
   rcbFaqA6:
     "Tu peux le rattraper en prenant le même cours un autre jour à un horaire différent ou sélectionner un autre style, tant que tu respectes le niveau du cours et que tu gères la récupération depuis l'application de l'école.",
   rcbFaqQ7: 'Quels jours et horaires avez-vous des cours de Reggaeton Cubain ?',
@@ -3527,7 +3528,7 @@ Les dernières tendances et styles fusionnent dans nos cours de manière variée
     'Consulte les horaires en haut de cette page. Nous avons des cours le mardi, jeudi et samedi pour différents niveaux.',
   rcbFaqQ8: "Puis-je essayer un cours avant de m'inscrire ?",
   rcbFaqA8:
-    'Selon la saison, le cours d\'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L\'idée est que tu puisses essayer l\'expérience sans engagement. Réserve ta place en cliquant sur le bouton "Réserve ton Cours d\'Essai" en haut de cette page.',
+    "Selon la saison, le cours d'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L'idée est que tu puisses essayer l'expérience sans engagement. Réserve ta place en cliquant sur le bouton \"Réserve ton Cours d'Essai\" en haut de cette page.",
   rcbFaqQ9: "Qu'est-ce que le Cubatón exactement ?",
   rcbFaqA9:
     "Cubatón est un autre nom pour le Reggaeton Cubain, mettant l'accent sur les racines cubaines du genre. Reparto et Cubatón font référence au même style.",
@@ -3540,7 +3541,7 @@ Les dernières tendances et styles fusionnent dans nos cours de manière variée
   rcbFaqQ12: 'Organisez-vous des événements ou workshops de Reggaeton Cubain ?',
   rcbFaqA12:
     "Oui. Nous organisons des workshops spéciaux avec des maîtres cubains invités et participons à des festivals de danse tout au long de l'année.",
-  rcbFaqQ13: 'Et si je manque un cours à cause du travail ou d\'engagements ?',
+  rcbFaqQ13: "Et si je manque un cours à cause du travail ou d'engagements ?",
   rcbFaqA13:
     "Si tu as un abonnement et que tu annules un cours, tu disposes de 30 jours pour le rattraper à partir de la date du cours annulé. Si tu as un forfait d'heures, tu gères tes cours de manière flexible : annule et réserve un autre jour dans la période de validité. Toutes les gestions se font exclusivement depuis l'application digitale de l'académie.",
   rcbFaqQ14: "Qu'est-ce qui différencie Farray's Center des autres académies ?",

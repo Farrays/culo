@@ -604,7 +604,7 @@ export const ca = {
   dhV3FaqQ14: "Què diferencia el Dancehall d'altres estils de ball urbà?",
   dhV3FaqA14:
     'El Dancehall és un estil originari de Jamaica amb molta energia, passos característics i una cultura pròpia. Combina moviments enèrgics i sensuals amb ritmes de reggae i hip-hop, amb gran marge per a la improvisació i la creativitat. És ideal si busques alguna cosa més que passos coreografiats.',
-  dhV3FaqQ15: 'On és l\'acadèmia i com puc contactar?',
+  dhV3FaqQ15: "On és l'acadèmia i com puc contactar?",
   dhV3FaqA15:
     'Som al Carrer Entença 100, 08015 Barcelona (a 5 min de Plaça Espanya i Sants).<br/><br/>📞 <strong>Telèfon:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
 
@@ -3435,8 +3435,9 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
   rcbHeroTitle: 'Classes de Reggaeton Cubà a Barcelona',
   rcbHeroSubtitle: 'Reparto i Cubatón Autèntic',
   rcbHeroDescription:
-    "Aprèn a ballar el reggaeton autèntic que es balla als carrers de Cuba. No el comercial, el de veritat.",
-  rcbHeroLocation: "Classes amb mestres cubans que venen directament de l'Havana, entre Plaça Espanya i Sants.",
+    'Aprèn a ballar el reggaeton autèntic que es balla als carrers de Cuba. No el comercial, el de veritat.',
+  rcbHeroLocation:
+    "Classes amb mestres cubans que venen directament de l'Havana, entre Plaça Espanya i Sants.",
   rcbHeroCTA: 'Fes-te Soci Ara',
   rcbHeroCTASubtext: 'Queden poques places aquest mes',
   rcbHeroSecondaryCTA: 'Reserva la teva Classe de Prova',
@@ -3523,12 +3524,12 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
   rcbWhyChoose5Title: 'Ambient cubà familiar',
   rcbWhyChoose5Desc:
     "Aquí no ets un número. Formes part d'una comunitat que comparteix la passió pel ritme cubà.",
-  rcbWhyChoose6Title: 'Més de 25 estils complementaris',
+  rcbWhyChoose6Title: 'Ubicació immillorable',
   rcbWhyChoose6Desc:
-    'Salsa cubana, Afrobeats, Hip Hop... complementa el teu Reggaeton Cubà amb altres danses.',
-  rcbWhyChoose7Title: 'Ubicació immillorable',
-  rcbWhyChoose7Desc:
     'Carrer Entença 100, entre Plaça Espanya i Sants, a 5 minuts de metro. Fàcil arribar, fàcil tornar.',
+  rcbWhyChoose7Title: 'Més de 25 estils complementaris',
+  rcbWhyChoose7Desc:
+    'Salsa cubana, Afrobeats, Hip Hop... complementa el teu Reggaeton Cubà amb altres danses.',
 
   // Logos Section
   rcbLogosTitle: "Has pogut veure'ns a...",
@@ -3572,10 +3573,8 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
   // Final CTA Section
   rcbFinalCTATitle: 'Uneix-te a la comunitat de Reggaeton Cubà més autèntica de Barcelona',
   rcbFinalCTASubtitle: 'Fes el pas.',
-  rcbFinalCTADesc:
-    "Reserva la teva plaça ara i no deixis que t'ho expliquin… ni que t'ho ballin.",
-  rcbFinalCTAFunny:
-    "Les places volen més ràpid que un dembow en una festa de l'Havana.",
+  rcbFinalCTADesc: "Reserva la teva plaça ara i no deixis que t'ho expliquin… ni que t'ho ballin.",
+  rcbFinalCTAFunny: "Les places volen més ràpid que un dembow en una festa de l'Havana.",
 
   // FAQ Section
   rcbFaqTitle: 'Preguntes Freqüents sobre Reparto Cubà a Barcelona',

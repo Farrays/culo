@@ -4309,7 +4309,8 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   rcbHeroSubtitle: 'Reparto y Cubatón Auténtico',
   rcbHeroDesc:
     'Aprende a bailar el reggaeton auténtico que se baila en las calles de Cuba. No el comercial, el de verdad.',
-  rcbHeroLocation: 'Clases con maestros cubanos que vienen directamente de la Habana, entre Plaza España y Sants.',
+  rcbHeroLocation:
+    'Clases con maestros cubanos que vienen directamente de la Habana, entre Plaza España y Sants.',
 
   // CTAs
   rcbCTA1: 'Hazte Socio Ahora',
@@ -4398,12 +4399,12 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   rcbWhyChoose5Title: 'Metodología de improvisación',
   rcbWhyChoose5Desc:
     'No solo coreografías: trabajamos técnica, disociación corporal e improvisación en cada clase. Aprenderás a bailar, no a copiar.',
-  rcbWhyChoose6Title: 'Gala anual + workshops internacionales',
+  rcbWhyChoose6Title: 'Ubicación inmejorable',
   rcbWhyChoose6Desc:
-    'Brilla en un teatro profesional, participa en workshops con artistas cubanos y vive experiencias únicas.',
-  rcbWhyChoose7Title: 'Ubicación inmejorable',
-  rcbWhyChoose7Desc:
     'Calle Entença 100, entre Plaza España y Sants, a 5 minutos de metro. Fácil llegar, fácil volver.',
+  rcbWhyChoose7Title: 'Gala anual + workshops internacionales',
+  rcbWhyChoose7Desc:
+    'Brilla en un teatro profesional, participa en workshops con artistas cubanos y vive experiencias únicas.',
 
   // Logos Section
   rcbLogosTitle: 'Has podido vernos en…',
@@ -4447,10 +4448,8 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   // Final CTA Section
   rcbFinalCTATitle: 'Únete a la comunidad de Reggaeton Cubano más auténtica de Barcelona',
   rcbFinalCTASubtitle: 'Da el Paso.',
-  rcbFinalCTADesc:
-    'Reserva tu plaza ahora y no dejes que te lo cuenten… ni que te lo bailen.',
-  rcbFinalCTAFunny:
-    'Las plazas vuelan más rápido que un dembow en una fiesta de La Habana.',
+  rcbFinalCTADesc: 'Reserva tu plaza ahora y no dejes que te lo cuenten… ni que te lo bailen.',
+  rcbFinalCTAFunny: 'Las plazas vuelan más rápido que un dembow en una fiesta de La Habana.',
 
   // FAQ Title
   rcbFaqTitle: 'Preguntas Frecuentes sobre Reparto Cubano en Barcelona',
@@ -4492,7 +4491,8 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   rcbFaqQ12: '¿Cuántas calorías se queman en una clase de Reggaeton Cubano?',
   rcbFaqA12:
     'El Reggaeton Cubano es un entrenamiento completo. En una hora puedes quemar entre 400 y 600 calorías mientras te diviertes.',
-  rcbFaqQ13: 'Si falto a una clase, ¿debo recuperarla haciendo el mismo estilo o puedo hacer otro diferente?',
+  rcbFaqQ13:
+    'Si falto a una clase, ¿debo recuperarla haciendo el mismo estilo o puedo hacer otro diferente?',
   rcbFaqA13:
     'Puedes recuperarla haciendo la misma clase otro día en un horario diferente o seleccionar otro estilo, siempre que respetes el nivel de la clase y gestiones la recuperación desde la aplicación de la escuela.',
   rcbFaqQ14: '¿Qué diferencia hay entre Cubatón, Reparto y Reggaeton Cubano?',

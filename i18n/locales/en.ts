@@ -3435,7 +3435,8 @@ The latest trends and styles merge in our classes in a varied, dynamic and fun w
   rcbHeroSubtitle: 'Authentic Reparto & Cubatón',
   rcbHeroDesc:
     'Learn to dance the authentic reggaeton from the streets of Cuba. Not the commercial one, the real deal.',
-  rcbHeroLocation: 'Classes with Cuban instructors who come directly from Havana, between Plaza España and Sants.',
+  rcbHeroLocation:
+    'Classes with Cuban instructors who come directly from Havana, between Plaza España and Sants.',
   rcbCTA1: 'Become a Member Now',
   rcbCTA1Subtext: 'Few spots left this month',
   rcbCTA2: 'Book Your Trial Class',
@@ -3507,12 +3508,12 @@ The latest trends and styles merge in our classes in a varied, dynamic and fun w
   rcbWhyChoose5Title: 'Improvisation methodology',
   rcbWhyChoose5Desc:
     "Not just choreography: we work on technique, body dissociation, and improvisation in every class. You'll learn to dance, not copy.",
-  rcbWhyChoose6Title: 'Annual gala + international workshops',
+  rcbWhyChoose6Title: 'Unbeatable location',
   rcbWhyChoose6Desc:
-    'Shine on a professional stage, participate in workshops with Cuban artists, and live unique experiences.',
-  rcbWhyChoose7Title: 'Unbeatable location',
-  rcbWhyChoose7Desc:
     'Calle Entença 100, between Plaza España and Sants, 5 minutes by metro. Easy to get there, easy to leave.',
+  rcbWhyChoose7Title: 'Annual gala + international workshops',
+  rcbWhyChoose7Desc:
+    'Shine on a professional stage, participate in workshops with Cuban artists, and live unique experiences.',
   rcbLogosTitle: 'You may have seen us in…',
   rcbLogosIntlFestivalsText: 'and at the best dance festivals worldwide',
   rcbTeachersTitle: 'Meet your Reparto instructors',
@@ -3538,7 +3539,7 @@ The latest trends and styles merge in our classes in a varied, dynamic and fun w
   rcbWhyToday2:
     "Because training Reparto with Cuban-rooted instructors makes your body truly understand the rhythm, musicality, and 'sabor' that can't be learned from a tutorial.",
   rcbWhyToday3:
-    "Because in every class you sweat, laugh, and forget about stress while getting in shape without realizing it and leave feeling much better about yourself than when you walked in.",
+    'Because in every class you sweat, laugh, and forget about stress while getting in shape without realizing it and leave feeling much better about yourself than when you walked in.',
   rcbWhyTodayClosing1: "At Farray's, we don't sell classes. We create Experiences.",
   rcbWhyTodayClosing2:
     "We're waiting for you with Cuban rhythm, passionate instructors, and an energy you'll only find in Cuba... and at our academy.",
@@ -3571,7 +3572,7 @@ The latest trends and styles merge in our classes in a varied, dynamic and fun w
     "Comfortable clothes that allow movement. Pants that don't restrict your hips, t-shirt, and sneakers. Bring water because you'll sweat.",
   rcbFaqQ8: 'What if I miss a class due to work or commitments?',
   rcbFaqA8:
-    'If you have a membership and cancel a class, you have 30 days to make it up from the date of the canceled class. If you have an hour package, you manage your classes flexibly: cancel and book another day within the expiration period. All management is done exclusively through the academy\'s digital app.',
+    "If you have a membership and cancel a class, you have 30 days to make it up from the date of the canceled class. If you have an hour package, you manage your classes flexibly: cancel and book another day within the expiration period. All management is done exclusively through the academy's digital app.",
   rcbFaqQ9: 'Do you organize special Cuban Reggaeton events or workshops?',
   rcbFaqA9:
     'Yes. We organize masterclasses with invited Cuban artists, showcases, and our annual gala where you can shine on a professional stage.',
@@ -3584,9 +3585,10 @@ The latest trends and styles merge in our classes in a varied, dynamic and fun w
   rcbFaqQ12: 'How many calories are burned in a Cuban Reggaeton class?',
   rcbFaqA12:
     'Cuban Reggaeton is a complete workout. In one hour, you can burn between 400 and 600 calories while having fun.',
-  rcbFaqQ13: 'If I miss a class, do I have to make it up with the same style or can I do a different one?',
+  rcbFaqQ13:
+    'If I miss a class, do I have to make it up with the same style or can I do a different one?',
   rcbFaqA13:
-    'You can make it up by taking the same class on another day at a different time or select another style, as long as you respect the class level and manage the recovery through the school\'s app.',
+    "You can make it up by taking the same class on another day at a different time or select another style, as long as you respect the class level and manage the recovery through the school's app.",
   rcbFaqQ14: "What's the difference between Cubatón, Reparto, and Cuban Reggaeton?",
   rcbFaqA14:
     "They're terms used interchangeably. Cubatón is the fusion of reggaeton with Cuban music. Reparto refers to the neighborhood style. Cuban Reggaeton is the general term. In our classes, we work on all these styles.",
