@@ -610,12 +610,9 @@ export const fr = {
   dhV3FaqQ14: "Qu'est-ce qui différencie le Dancehall des autres styles de danse urbaine ?",
   dhV3FaqA14:
     "Le Dancehall est un style originaire de la Jamaïque avec beaucoup d'énergie, des pas caractéristiques et une culture propre. Il combine des mouvements énergiques et sensuels avec des rythmes reggae et hip-hop, avec une grande place pour l'improvisation et la créativité. C'est idéal si vous cherchez plus que des pas chorégraphiés.",
-  dhV3FaqQ15: 'Où puis-je trouver des cours de Dancehall près de Plaça España à Barcelone ?',
+  dhV3FaqQ15: 'Où se trouve l\'académie et comment puis-je vous contacter ?',
   dhV3FaqA15:
-    "Farray's Center est situé au Carrer Entença 100, 08015 Barcelone, à seulement 5 minutes de Plaça España et de la gare de Sants. Nous avons des professeurs avec une vaste expérience et une ambiance familiale pour tous les niveaux.",
-  dhV3FaqQ16: "Que faire si j'ai des questions ou besoin de plus d'informations ?",
-  dhV3FaqA16:
-    'Téléphone : <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a> | Email : <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a> | Web : <a href="https://www.farrayscenter.com/contacto" class="text-primary-accent hover:underline" target="_blank" rel="noopener noreferrer">www.farrayscenter.com/contacto</a> | Adresse : <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" class="text-primary-accent hover:underline" target="_blank" rel="noopener noreferrer">Carrer Entença 100, 08015 Barcelona</a>',
+    'Nous sommes au Calle Entença 100, 08015 Barcelone (à 5 min de Plaza España et Sants).<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
 
   dhV3FinalCTATitle: 'Rejoignez la communauté de Dancehall la plus active de Barcelone',
   dhV3FinalCTASubtitle: 'Franchissez le pas.',
@@ -3346,4 +3343,215 @@ Les dernières tendances et styles fusionnent dans nos cours de manière variée
   hhrCourseSchemaName: "Cours de Hip Hop Reggaeton à Barcelone - Farray's Center",
   hhrCourseSchemaDesc:
     'Apprends le Hip Hop Reggaeton avec Charlie Breezy, instructeur spécialisé en fusion urbaine. Cours pour tous les niveaux au cœur de Barcelone.',
+
+  // ============================================================
+  // REGGAETON CUBANO PAGE (RCB) - French Translations
+  // ============================================================
+
+  // SEO Meta
+  rcbMetaTitle: 'Cours de Reggaeton Cubain à Barcelone | Reparto et Cubatón Authentique',
+  rcbMetaDesc:
+    "Apprends le Reggaeton Cubain authentique à Barcelone avec des professeurs cubains. Reparto, Cubatón, improvisation et isolation corporelle. Cours pour tous les niveaux à Farray's Center.",
+  rcbMetaKeywords:
+    'reggaeton cubain barcelone, reparto barcelone, cubatón cours, reggaeton authentique, cours reparto, académie reggaeton cubain',
+
+  // Hero Section
+  rcbHeroTitle: 'Cours de Reggaeton Cubain à Barcelone',
+  rcbHeroSubtitle: 'Reparto et Cubatón Authentique',
+  rcbHeroDescription:
+    'Apprends à danser le reggaeton authentique dansé dans les rues de Cuba. Pas le commercial, le vrai.',
+  rcbHeroLocation: 'Cours avec des professeurs cubains qui viennent directement de La Havane, entre Plaza España et Sants.',
+  rcbHeroCTA: 'Deviens Membre Maintenant',
+  rcbHeroCTASubtext: 'Peu de places restantes ce mois',
+  rcbHeroSecondaryCTA: "Réserve ton Cours d'Essai",
+  rcbHeroSecondaryCTASubtext: 'Offre à durée limitée',
+
+  // Breadcrumbs
+  rcbBreadcrumbHome: 'Accueil',
+  rcbBreadcrumbClasses: 'Cours',
+  rcbBreadcrumbUrban: 'Danses Urbaines',
+  rcbBreadcrumbCurrent: 'Reggaeton Cubain',
+
+  // What Is Section
+  rcbWhatIsTitle: "Qu'est-ce que le Reggaeton Cubain ?",
+  rcbWhatIsP1:
+    "Le Reggaeton Cubain est le style originaire de Cuba qui a évolué parallèlement au reggaeton portoricain. Avec des racines dans le reggae, le hip-hop et les rythmes afro-cubains, le Reparto et le Cubatón ont une identité unique : plus d'improvisation, plus de connexion avec le sol et une isolation corporelle que tu ne trouveras dans aucun autre style.",
+  rcbWhatIsP2:
+    "Contrairement au reggaeton commercial, le Reggaeton Cubain se danse avec plus de sabrosura, plus de swing et moins de chorégraphies préétablies. C'est la danse des quartiers de La Havane, où la créativité et l'expression personnelle sont les protagonistes.",
+
+  // Cultural History Section
+  rcbCulturalTitle: 'Histoire du Reggaeton Cubain : Du Quartier au Monde',
+  rcbCulturalP1:
+    'Le Reggaeton Cubain est né dans les quartiers populaires de La Havane à la fin des années 90, fusionnant le reggae jamaïcain avec le hip-hop américain et les rythmes afro-cubains. Alors que Porto Rico développait son propre style, Cuba créait quelque chose de différent : plus organique, plus terrien, plus improvisé.',
+  rcbCulturalP2:
+    "Le terme 'Reparto' vient des quartiers (repartos) de La Havane où ce mouvement a pris naissance. Des artistes comme El Chacal, Chocolate MC, Los 4 et Yomil y el Dany ont porté le son cubain au monde, tout en maintenant cette essence de rue qui le rend reconnaissable entre tous.",
+  rcbCulturalP3:
+    "Aujourd'hui, le Cubatón est reconnu mondialement pour son rythme contagieux, ses paroles directes et une façon de danser qui privilégie le feeling sur la technique. Si tu veux danser le reggaeton comme on le danse à Cuba, tu dois apprendre d'un Cubain.",
+
+  // Identify Section
+  rcbIdentifyTitle: "Tu t'identifies à l'une de ces situations ?",
+  rcbIdentify1: 'Tu aimes le reggaeton mais tu sens que le commercial ne te représente pas ?',
+  rcbIdentify2: 'Tu veux apprendre à improviser au lieu de répéter des chorégraphies ?',
+  rcbIdentify3: 'Tu cherches des professeurs cubains qui comprennent vraiment le rythme ?',
+  rcbIdentify4: "Tu veux développer l'isolation corporelle et le swing ?",
+  rcbIdentify5: "Tu te sens frustré(e) par les académies qui enseignent un reggaeton 'générique' ?",
+  rcbIdentify6: 'Tu veux apprendre le style authentique dansé dans les quartiers de La Havane ?',
+  rcbIdentifyClosing: "Si tu t'es identifié(e) à l'une de ces situations, tu es au bon endroit.",
+
+  // Need Enroll Section
+  rcbNeedEnrollTitle: "Tu as besoin d'apprendre le Reparto Cubain dans une académie de danse",
+  rcbNeedEnroll1:
+    'Tu écoutes du reggaeton cubain et ton corps bouge tout seul, mais tu ne sais pas canaliser ce rythme',
+  rcbNeedEnroll2:
+    "Tu veux danser avec la sabrosura cubaine mais tu ne trouves personne pour t'enseigner vraiment",
+  rcbNeedEnroll3: "Tu t'ennuies avec les chorégraphies et tu veux apprendre à improviser",
+  rcbNeedEnroll4: 'Tu cherches une connexion plus profonde avec la musique et ton corps',
+  rcbNeedEnroll5: "Tu veux maîtriser l'isolation corporelle qui caractérise le Reparto",
+  rcbNeedEnrollClosing:
+    "Avec le Reggaeton Cubain, tu apprends à ressentir, pas seulement à exécuter. Si tu cherches l'authenticité, tu la trouveras ici.",
+
+  // Transform Section
+  rcbTransformTitle: "Qu'obtiendras-tu avec nos cours ?",
+  rcbTransform1Title: "Tu maîtrises l'isolation corporelle",
+  rcbTransform1Desc:
+    'Hanches, poitrine, épaules... chaque partie de ton corps bouge de façon indépendante et en rythme.',
+  rcbTransform2Title: 'Tu apprends à vraiment improviser',
+  rcbTransform2Desc:
+    'Pas de séquences à suivre. Tu écoutes la musique et ton corps répond naturellement.',
+  rcbTransform3Title: 'Tu développes le swing cubain',
+  rcbTransform3Desc:
+    "Cette façon de bouger qu'on ne peut pas enseigner avec des pas mais oui avec des professeurs cubains.",
+  rcbTransform4Title: 'Tu te connectes à la musique à un autre niveau',
+  rcbTransform4Desc:
+    'Tu comprends les rythmes, les accents, les pauses. Tu danses AVEC la musique, pas SUR elle.',
+  rcbTransform5Title: "Confiance sur n'importe quelle piste",
+  rcbTransform5Desc:
+    "En club, à une fête, n'importe où. Tu sais que tu peux improviser et te démarquer.",
+  rcbTransform6Title: 'Tu crées ton style unique',
+  rcbTransform6Desc: "Avec les bases du Reparto, développe ta propre façon de t'exprimer.",
+  rcbTransformCTA: "Pourquoi choisir Farray's Center pour le Reggaeton Cubain ?",
+
+  // Why Choose Section
+  rcbWhyChoose1Title: 'Académie reconnue par le CID UNESCO',
+  rcbWhyChoose1Desc:
+    "Dirigée par Yunaisy Farray, actrice de Street Dance 2 et reconnue mondialement. La seule académie de danses urbaines à Barcelone approuvée par l'UNESCO.",
+  rcbWhyChoose2Title: "Professeurs cubains formés à l'ENA",
+  rcbWhyChoose2Desc:
+    "Charlie Breezy et Alejandro Miñoso, maîtres internationaux cubains formés à l'ENA (École Nationale d'Art de Cuba), tous deux références à Barcelone.",
+  rcbWhyChoose3Title: 'Ambiance cubaine authentique',
+  rcbWhyChoose3Desc:
+    "Ce n'est pas seulement une académie : c'est un petit bout de Cuba à Barcelone. Musique, énergie et saveur à chaque cours.",
+  rcbWhyChoose4Title: 'Installations de premier niveau',
+  rcbWhyChoose4Desc:
+    'Plus de 700 m², salles avec miroirs, son professionnel et climatisation. Tout pour une expérience optimale.',
+  rcbWhyChoose5Title: 'Ambiance cubaine familiale',
+  rcbWhyChoose5Desc:
+    "Ici tu n'es pas un numéro. Tu fais partie d'une communauté qui partage la passion du rythme cubain.",
+  rcbWhyChoose6Title: 'Plus de 25 styles complémentaires',
+  rcbWhyChoose6Desc:
+    "Salsa cubaine, Afrobeats, Hip Hop... complète ton Reggaeton Cubain avec d'autres danses.",
+  rcbWhyChoose7Title: 'Emplacement imbattable',
+  rcbWhyChoose7Desc:
+    "Calle Entença 100, entre Plaza España et Sants, à 5 minutes de métro. Facile d'y aller, facile de revenir.",
+
+  // Logos Section
+  rcbLogosTitle: 'Tu as pu nous voir sur...',
+  rcbLogosIntlFestivalsText: 'et dans les meilleurs festivals de danse du monde',
+
+  // Teachers Section
+  rcbTeachersTitle: 'Découvre tes professeurs de Reparto',
+  rcbTeachersSubtitle: "Nés à Cuba, formés à l'ENA et références à Barcelone",
+  rcbTeacher1Name: 'Charlie Breezy',
+  rcbTeacher1Specialty: 'Reggaeton Cubain, Reparto & Danses Urbaines',
+  rcbTeacher1Bio:
+    "Charlie Breezy est un maître international et danseur cubain formé à l'ENA (École Nationale d'Art de Cuba). Spécialiste du Reggaeton Cubain et du Reparto, il maîtrise l'improvisation et l'isolation corporelle avec une technique impeccable. Son énergie, sa créativité et sa capacité à transmettre la saveur cubaine font de lui l'un des professeurs les plus recommandés de Barcelone.",
+  rcbTeacher2Name: 'Alejandro Miñoso',
+  rcbTeacher2Specialty: 'Reggaeton Cubain, Reparto & Improvisation',
+  rcbTeacher2Bio:
+    "Alejandro Miñoso est maître international cubain formé à l'ENA (École Nationale d'Art de Cuba). Spécialiste du Reparto et de la technique d'improvisation, il apporte une méthodologie unique qui connecte le rythme cubain avec l'expression corporelle. Sa passion pour transmettre la culture du reggaeton authentique fait de lui une référence à Barcelone.",
+  rcbTeachersClosing:
+    "Avec Charlie et Alejandro, tu n'apprends pas seulement à danser le Reparto : tu découvres la saveur authentique que seuls les Cubains peuvent transmettre.",
+
+  // Schedule Section
+  rcbScheduleTitle: 'Horaires des cours de Reggaeton Cubain',
+  rcbScheduleSubtitle: 'Trouve ton niveau et ton horaire parfait',
+
+  // Video Section
+  rcbVideoTitle: 'Découvre nos cours de Reggaeton Cubain',
+  rcbVideoDesc:
+    "Regarde comment on vit un cours à Farray's Center : sabrosura, improvisation et rythme cubain. On t'attend !",
+
+  // Why Today Section
+  rcbWhyTodayFullTitle:
+    "Pourquoi aujourd'hui est le meilleur moment pour commencer à danser le Reggaeton Cubain ?",
+  rcbWhyToday1:
+    'Parce que tu es à quelques cours de bouger avec plus de flow, plus de confiance et plus de style que jamais.',
+  rcbWhyToday2:
+    "Parce qu'entraîner le Reparto avec des professeurs aux racines cubaines fait que ton corps comprenne vraiment le rythme, la musicalité et le 'sabor' qu'on n'apprend pas dans un tutoriel.",
+  rcbWhyToday3:
+    "Parce qu'à chaque cours tu sues, tu ris et tu oublies le stress tout en te mettant en forme sans t'en rendre compte et tu sors en te sentant beaucoup mieux avec toi-même qu'en entrant.",
+  rcbWhyTodayClosing1: "Chez Farray's, nous ne vendons pas des cours. Nous créons des Expériences.",
+  rcbWhyTodayClosing2:
+    "On t'attend avec le rythme du Reparto, la sabrosura de Yunaisy et l'énergie unique de Barcelone avec saveur cubaine.",
+
+  // Final CTA Section
+  rcbFinalCTATitle: 'Rejoins la communauté de Reggaeton Cubain la plus authentique de Barcelone',
+  rcbFinalCTASubtitle: 'Fais le pas.',
+  rcbFinalCTADesc:
+    'Réserve ta place maintenant et ne laisse personne te le raconter… ni te le danser.',
+  rcbFinalCTAFunny:
+    "Les places s'envolent plus vite qu'un dembow à une fête de La Havane.",
+
+  // FAQ Section
+  rcbFaqTitle: 'Questions Fréquentes sur le Reparto Cubain à Barcelone',
+  rcbFaqQ1: 'Quelle différence y a-t-il entre le Reggaeton Cubain et le commercial ?',
+  rcbFaqA1:
+    "Le Reggaeton Cubain (Reparto/Cubatón) vient directement des quartiers de La Havane et se caractérise par plus d'improvisation, d'isolation corporelle et de swing. Le commercial se base davantage sur des chorégraphies préétablies et est moins terrien. Ici nous enseignons l'authentique.",
+  rcbFaqQ2: "Ai-je besoin d'expérience préalable pour les cours de Reparto ?",
+  rcbFaqA2:
+    "Non. Nous avons des niveaux pour débutants absolus. L'important est d'avoir envie de bouger et de te connecter au rythme cubain.",
+  rcbFaqQ3: "Qu'est-ce que l'isolation corporelle et comment l'enseigne-t-on ?",
+  rcbFaqA3:
+    "L'isolation est la capacité de bouger différentes parties du corps de façon indépendante. Elle s'enseigne progressivement avec des exercices spécifiques qui séparent hanches, poitrine et épaules.",
+  rcbFaqQ4: 'Puis-je apprendre à improviser ou seulement des chorégraphies ?',
+  rcbFaqA4:
+    "Notre approche privilégie l'improvisation sur les chorégraphies. Tu apprends les bases et ensuite tu développes ton propre style en répondant à la musique.",
+  rcbFaqQ5: 'Que dois-je apporter aux cours de Reggaeton Cubain ?',
+  rcbFaqA5:
+    "Des vêtements confortables, des chaussures propres, une serviette et de l'eau. Rien de fancy. Le Reparto se danse avec attitude, pas avec des vêtements chers.",
+  rcbFaqQ6: 'Si je manque un cours, dois-je le rattraper en faisant le même style ou puis-je en faire un autre ?',
+  rcbFaqA6:
+    "Tu peux le rattraper en prenant le même cours un autre jour à un horaire différent ou sélectionner un autre style, tant que tu respectes le niveau du cours et que tu gères la récupération depuis l'application de l'école.",
+  rcbFaqQ7: 'Quels jours et horaires avez-vous des cours de Reggaeton Cubain ?',
+  rcbFaqA7:
+    'Consulte les horaires en haut de cette page. Nous avons des cours le mardi, jeudi et samedi pour différents niveaux.',
+  rcbFaqQ8: "Puis-je essayer un cours avant de m'inscrire ?",
+  rcbFaqA8:
+    'Selon la saison, le cours d\'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L\'idée est que tu puisses essayer l\'expérience sans engagement. Réserve ta place en cliquant sur le bouton "Réserve ton Cours d\'Essai" en haut de cette page.',
+  rcbFaqQ9: "Qu'est-ce que le Cubatón exactement ?",
+  rcbFaqA9:
+    "Cubatón est un autre nom pour le Reggaeton Cubain, mettant l'accent sur les racines cubaines du genre. Reparto et Cubatón font référence au même style.",
+  rcbFaqQ10: 'Les cours sont-ils uniquement pour les femmes ?',
+  rcbFaqA10:
+    "Les cours sont pour tout le monde. Le Reggaeton Cubain est un style que n'importe qui peut apprendre et apprécier.",
+  rcbFaqQ11: "Où se trouve Farray's Center ?",
+  rcbFaqA11:
+    'Calle Entença 100, 08015 Barcelone. À 5 minutes de Plaza España et de la Gare de Sants. Métro L1 et L3.',
+  rcbFaqQ12: 'Organisez-vous des événements ou workshops de Reggaeton Cubain ?',
+  rcbFaqA12:
+    "Oui. Nous organisons des workshops spéciaux avec des maîtres cubains invités et participons à des festivals de danse tout au long de l'année.",
+  rcbFaqQ13: 'Et si je manque un cours à cause du travail ou d\'engagements ?',
+  rcbFaqA13:
+    "Si tu as un abonnement et que tu annules un cours, tu disposes de 30 jours pour le rattraper à partir de la date du cours annulé. Si tu as un forfait d'heures, tu gères tes cours de manière flexible : annule et réserve un autre jour dans la période de validité. Toutes les gestions se font exclusivement depuis l'application digitale de l'académie.",
+  rcbFaqQ14: "Qu'est-ce qui différencie Farray's Center des autres académies ?",
+  rcbFaqA14:
+    "Nous sommes la seule académie à Barcelone avec des professeurs cubains authentiques, la reconnaissance du CID UNESCO et une ambiance familiale qui maintient l'essence des quartiers de La Havane.",
+  rcbFaqQ15: "Comment puis-je vous contacter pour plus d'informations ?",
+  rcbFaqA15:
+    'Pour plus d\'informations tu peux nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+
+  // Course Schema
+  rcbCourseSchemaName: "Cours de Reggaeton Cubain à Barcelone - Farray's Center",
+  rcbCourseSchemaDesc:
+    'Apprends le Reggaeton Cubain authentique avec Yunaisy Farray, maître cubaine formée à La Havane. Reparto, Cubatón et improvisation pour tous les niveaux.',
 };
