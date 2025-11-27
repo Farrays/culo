@@ -1,4 +1,4 @@
-import React, { useEffect, lazy, Suspense } from 'react';
+import React, { useEffect, useRef, lazy, Suspense } from 'react';
 import {
   BrowserRouter,
   Routes,
@@ -7,6 +7,7 @@ import {
   useParams,
   Navigate,
   useNavigate,
+  useNavigationType,
 } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { I18nProvider, useI18n } from './hooks/useI18n';
@@ -45,16 +46,38 @@ const TwerkPage = lazy(() => import('./components/TwerkPage'));
 const AfrobeatPage = lazy(() => import('./components/AfrobeatPage'));
 const HipHopReggaetonPage = lazy(() => import('./components/HipHopReggaetonPage'));
 const SexyReggaetonPage = lazy(() => import('./components/SexyReggaetonPage'));
+const ReggaetonCubanoPage = lazy(() => import('./components/ReggaetonCubanoPage'));
 
 // Valid locales
 const VALID_LOCALES: Locale[] = ['es', 'en', 'ca', 'fr'];
 
 const ScrollToTop: React.FC = () => {
   const location = useLocation();
+  const navigationType = useNavigationType();
+  const prevPathRef = useRef<string>('');
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
+    // Extract path without locale prefix (e.g., /es/clases -> /clases)
+    const getPathWithoutLocale = (pathname: string): string => {
+      const parts = pathname.split('/').filter(Boolean);
+      if (parts.length > 0 && VALID_LOCALES.includes(parts[0] as Locale)) {
+        return '/' + parts.slice(1).join('/');
+      }
+      return pathname;
+    };
+
+    const currentPath = getPathWithoutLocale(location.pathname);
+    const prevPath = prevPathRef.current;
+
+    // Only scroll to top on PUSH navigation (clicking links) to a different page
+    // Don't scroll on POP (back/forward/refresh) - let browser restore scroll position
+    // Don't scroll when only locale changes (same path)
+    if (navigationType === 'PUSH' && prevPath && prevPath !== currentPath) {
+      window.scrollTo(0, 0);
+    }
+
+    prevPathRef.current = currentPath;
+  }, [location.pathname, navigationType]);
 
   return null;
 };
@@ -172,6 +195,16 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <SexyReggaetonPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/clases/reggaeton-cubano-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <ReggaetonCubanoPage />
                 </>
               }
             />
@@ -412,6 +445,22 @@ const AppContent: React.FC = () => {
             <Route
               path="/clases/sexy-reggaeton-barcelona"
               element={<Navigate to={`/${locale}/clases/sexy-reggaeton-barcelona`} replace />}
+            />
+            <Route
+              path="/reggaeton-cubano"
+              element={<Navigate to={`/${locale}/clases/reggaeton-cubano-barcelona`} replace />}
+            />
+            <Route
+              path="/clases/reggaeton-cubano-barcelona"
+              element={<Navigate to={`/${locale}/clases/reggaeton-cubano-barcelona`} replace />}
+            />
+            <Route
+              path="/reparto"
+              element={<Navigate to={`/${locale}/clases/reggaeton-cubano-barcelona`} replace />}
+            />
+            <Route
+              path="/cubaton"
+              element={<Navigate to={`/${locale}/clases/reggaeton-cubano-barcelona`} replace />}
             />
 
             {/* Catch-all for 404 - redirect to localized 404 page */}

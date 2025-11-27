@@ -1184,12 +1184,9 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
   dhV3FaqQ14: '¿Qué diferencia el Dancehall de otros estilos de baile urbano?',
   dhV3FaqA14:
     'El Dancehall es un estilo originario de Jamaica con mucha energía, pasos característicos y una cultura propia. Combina movimientos enérgicos y sensuales con ritmos de reggae y hip-hop, con gran margen para la improvisación y la creatividad. Es ideal si buscas algo más que pasos coreografiados.',
-  dhV3FaqQ15: '¿Dónde puedo encontrar clases de Dancehall cerca de Plaza España en Barcelona?',
+  dhV3FaqQ15: '¿Dónde está la academia y cómo puedo contactar?',
   dhV3FaqA15:
-    "Farray's Center está ubicado en Calle Entença 100, 08015 Barcelona, a solo 5 minutos de Plaza España y Estación de Sants. Contamos con profesores con amplia experiencia y un ambiente familiar para todos los niveles.",
-  dhV3FaqQ16: '¿Qué hago si tengo dudas o necesito más información?',
-  dhV3FaqA16:
-    'Teléfono: <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a> | Email: <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a> | Web: <a href="https://www.farrayscenter.com/contacto" class="text-primary-accent hover:underline" target="_blank" rel="noopener noreferrer">www.farrayscenter.com/contacto</a> | Dirección: <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" class="text-primary-accent hover:underline" target="_blank" rel="noopener noreferrer">Calle Entença 100, 08015 Barcelona</a>',
+    'Estamos en Calle Entença 100, 08015 Barcelona (a 5 min de Plaza España y Sants).<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
 
   dhV3FinalCTATitle: 'Únete a la comunidad de Dancehall más activa de Barcelona',
   dhV3FinalCTASubtitle: 'Da el paso.',
@@ -4294,4 +4291,219 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   sxrCourseSchemaName: "Clases de Sexy Reggaeton en Barcelona - Farray's Center",
   sxrCourseSchemaDesc:
     'Aprende Sexy Reggaeton con Yunaisy Farray, experta en danzas urbanas sensuales. Clases de perreo, body roll y sensualidad para todos los niveles en el corazón de Barcelona.',
+
+  // ===== REGGAETON CUBANO / REPARTO PAGE =====
+  // SEO & Meta
+  rcbPageTitle: 'Clases de Reggaeton Cubano en Barcelona | Reparto y Cubatón Auténtico',
+  rcbMetaDescription:
+    'Aprende Reggaeton Cubano auténtico en Barcelona con maestros cubanos. Clases de Reparto, Cubatón e improvisación cerca de Plaza España y Sants. ¡El reggaeton de las calles de Cuba!',
+
+  // Breadcrumb (4 levels: Home > Classes > Urban > Current)
+  rcbBreadcrumbHome: 'Inicio',
+  rcbBreadcrumbClasses: 'Clases de Baile',
+  rcbBreadcrumbUrban: 'Danzas Urbanas',
+  rcbBreadcrumbCurrent: 'Reggaeton Cubano',
+
+  // Hero
+  rcbHeroTitle: 'Reggaeton Cubano en Barcelona',
+  rcbHeroSubtitle: 'Reparto y Cubatón Auténtico',
+  rcbHeroDesc:
+    'Aprende a bailar el reggaeton auténtico que se baila en las calles de Cuba. No el comercial, el de verdad.',
+  rcbHeroLocation:
+    'Clases con maestros cubanos que vienen directamente de la Habana, entre Plaza España y Sants.',
+
+  // CTAs
+  rcbCTA1: 'Hazte Socio Ahora',
+  rcbCTA1Subtext: 'Quedan pocas plazas este mes',
+  rcbCTA2: 'Reserva tu Clase de Prueba',
+  rcbCTA2Subtext: 'Oferta por tiempo limitado',
+
+  // Stats
+  rcbAuthenticGuaranteed: 'Sabor Cubano',
+
+  // What Is Section
+  rcbWhatIsTitle: '¿Qué es el Reggaeton Cubano y por qué es diferente?',
+  rcbWhatIsP1:
+    'El Reggaeton Cubano, también conocido como Cubatón o Reparto, es el reggaeton auténtico que nació y evolucionó en las calles de Cuba.',
+  rcbWhatIsP2:
+    'A diferencia del reggaeton comercial que ves en los videoclips, el cubano se caracteriza por la improvisación, la disociación corporal extrema y un estilo más crudo y callejero. No es solo seguir una coreografía: es sentir la música y dejar que tu cuerpo responda.',
+  rcbWhatIsP3:
+    '"En Cuba no bailamos para impresionar. Bailamos para sentir. Y eso es lo que enseñamos aquí."',
+  rcbWhatIsP4:
+    'Aprenderás a disociar cada parte de tu cuerpo, a improvisar con la música y a desarrollar tu propio estilo. Porque el reggaeton cubano no se copia: se vive.',
+  rcbWhatIsQuestionTitle: '¿Cansado del reggaeton comercial que todo el mundo baila igual?',
+  rcbWhatIsQuestionAnswer: 'Entonces esto es para ti.',
+
+  // Cultural History Section
+  rcbCulturalShort:
+    'El reggaeton cubano tiene sus raíces en los barrios de La Habana, donde la fusión del reggae jamaicano con ritmos afrocubanos creó un estilo único y callejero.',
+  rcbCulturalFull:
+    '### Orígenes en las calles de Cuba\n\nEl reggaeton cubano nació en los años 90 en los barrios populares de La Habana, como resultado de la fusión entre el reggae jamaicano que llegaba por radio y los ritmos afrocubanos tradicionales. A diferencia del reggaeton puertorriqueño más comercial, el cubano mantuvo su esencia callejera y su énfasis en la improvisación.\n\n### El Reparto: el estilo de los barrios\n\nEl término "Reparto" viene de los barrios (repartos) donde nació este estilo. Es un reggaeton más crudo, con movimientos más exagerados y una conexión más directa con la música. Los bailarines de reparto son reconocidos por su capacidad de improvisación y su dominio de la disociación corporal.\n\n### El Cubatón hoy\n\nHoy, el Cubatón se ha expandido internacionalmente, pero mantiene su esencia: la improvisación, el sabor y esa energía única que solo viene de Cuba. Artistas como Chocolate MC, El Chacal y Jacob Forever han llevado el sonido cubano al mundo, y con él, su forma de bailar.',
+
+  // Identify Section - Pain Points específicos de Reggaeton Cubano
+  rcbIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
+  rcbIdentify1:
+    'Has probado clases de reggaeton pero sientes que es todo coreografía y nada de improvisación',
+  rcbIdentify2: 'Quieres bailar con más libertad, pero no sabes cómo soltar tu cuerpo de verdad',
+  rcbIdentify3: 'Te encanta el reggaeton pero estás cansado/a de que todo el mundo baile igual',
+  rcbIdentify4: 'Quieres aprender disociación corporal pero no encuentras quién te lo enseñe bien',
+  rcbIdentify5:
+    'Buscas el sabor auténtico del Caribe, no la versión light de las academias comerciales',
+  rcbIdentify6: 'Quieres aprender de maestros cubanos que conocen el estilo de raíz',
+  rcbIdentifyTransition:
+    'Si has dicho "sí" a alguno de estos puntos, necesitas conocer el reggaeton de verdad.',
+
+  // Need to Enroll Section
+  rcbNeedEnrollTitle: 'Necesitas aprender Reparto Cubano en una academia de baile',
+  rcbIdentifyAgitate1:
+    'Seguir bailando el mismo reggaeton comercial de siempre te mantiene en tu zona de confort. Nunca desarrollarás tu propio estilo ni esa libertad que ves en los bailarines cubanos.',
+  rcbIdentifySolution:
+    "En Farray's Center aprenderás con Alejandro Miñoso y Charlie Breezy, cubanos de nacimiento. No te enseñarán coreografías: te enseñarán a BAILAR con sentimiento.",
+  rcbIdentifyClosing:
+    'Deja el reggaeton de academia y descubre el reggaeton de las calles de Cuba.',
+
+  // Transformation Section
+  rcbTransformTitle: 'Imagina tu antes y después',
+  rcbTransform1Title: 'Dominas la improvisación',
+  rcbTransform1Desc:
+    'Ya no necesitas una coreografía. Suena cualquier reggaeton y tu cuerpo sabe qué hacer.',
+  rcbTransform2Title: 'Disociación corporal real',
+  rcbTransform2Desc:
+    'Cada parte de tu cuerpo se mueve independiente. Caderas, pecho, hombros... todo fluye.',
+  rcbTransform3Title: 'Desarrollas tu propio estilo',
+  rcbTransform3Desc: 'Dejas de copiar y empiezas a crear. Tu baile es único porque viene de ti.',
+  rcbTransform4Title: 'Musicalidad avanzada',
+  rcbTransform4Desc:
+    'Escuchas el dembow, los breaks, los cambios de ritmo. Y tu cuerpo los interpreta.',
+  rcbTransform5Title: 'Confianza en cualquier pista',
+  rcbTransform5Desc:
+    'En la discoteca, en una fiesta, donde sea. Sabes que puedes improvisar y destacar.',
+  rcbTransform6Title: 'Conexión con la cultura cubana',
+  rcbTransform6Desc:
+    'No solo aprendes pasos: entiendes la cultura, la historia y el sentimiento detrás del baile.',
+  rcbTransformCTA: "¿Por qué elegir Farray's Center para aprender Reggaeton Cubano?",
+
+  // Why Choose Section (7 cards)
+  rcbWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
+  rcbWhyChoose1Desc:
+    'Dirigida por Yunaisy Farray, actriz de Street Dance 2 y reconocida mundialmente. La única academia de danzas urbanas en Barcelona avalada por la UNESCO.',
+  rcbWhyChoose2Title: 'Maestros cubanos formados en la ENA',
+  rcbWhyChoose2Desc:
+    'Charlie Breezy y Alejandro Miñoso, maestros internacionales cubanos formados en la ENA (Escuela Nacional de Arte de Cuba), ambos referentes en Barcelona.',
+  rcbWhyChoose3Title: 'Ambiente cubano auténtico',
+  rcbWhyChoose3Desc:
+    'No es solo una academia: es un pedacito de Cuba en Barcelona. Música, energía y sabor en cada clase.',
+  rcbWhyChoose4Title: 'Instalaciones profesionales',
+  rcbWhyChoose4Desc:
+    'Más de 700 m², salas amplias con espejos, sonido profesional y climatización. Todo para que te enfoques en bailar.',
+  rcbWhyChoose5Title: 'Metodología de improvisación',
+  rcbWhyChoose5Desc:
+    'No solo coreografías: trabajamos técnica, disociación corporal e improvisación en cada clase. Aprenderás a bailar, no a copiar.',
+  rcbWhyChoose6Title: 'Ubicación inmejorable',
+  rcbWhyChoose6Desc:
+    'Calle Entença 100, entre Plaza España y Sants, a 5 minutos de metro. Fácil llegar, fácil volver.',
+  rcbWhyChoose7Title: 'Gala anual + workshops internacionales',
+  rcbWhyChoose7Desc:
+    'Brilla en un teatro profesional, participa en workshops con artistas cubanos y vive experiencias únicas.',
+
+  // Logos Section
+  rcbLogosTitle: 'Has podido vernos en…',
+  rcbLogosIntlFestivalsText: 'y en los mejores festivales de baile del mundo',
+
+  // Teachers Section
+  rcbTeachersTitle: 'Conoce a tus maestros de Reparto',
+  rcbTeachersSubtitle: 'Cubanos de nacimiento, formados en la ENA y referentes en Barcelona',
+  rcbTeacher1Name: 'Charlie Breezy',
+  rcbTeacher1Specialty: 'Reggaeton Cubano, Reparto & Danzas Urbanas',
+  rcbTeacher1Bio:
+    'Charlie Breezy es un maestro internacional y bailarín cubano formado en la ENA (Escuela Nacional de Arte de Cuba). Especialista en Reggaeton Cubano y Reparto, domina la improvisación y la disociación corporal con técnica impecable. Su energía, creatividad y capacidad para transmitir el sabor cubano lo convierten en uno de los profesores más recomendados de Barcelona.',
+  rcbTeacher2Name: 'Alejandro Miñoso',
+  rcbTeacher2Specialty: 'Reggaeton Cubano, Reparto & Improvisación',
+  rcbTeacher2Bio:
+    'Alejandro Miñoso es maestro internacional cubano formado en la ENA (Escuela Nacional de Arte de Cuba). Especialista en Reparto y técnica de improvisación, aporta una metodología única que conecta el ritmo cubano con la expresión corporal. Su pasión por transmitir la cultura del reggaeton auténtico lo hace un referente en Barcelona.',
+  rcbTeachersClosing:
+    'Con Charlie y Alejandro no solo aprendes a bailar Reparto: descubres el sabor auténtico que solo los cubanos pueden transmitir.',
+
+  // Schedule Section
+  rcbScheduleTitle: 'Horario de clases de Reggaeton Cubano',
+  rcbScheduleSubtitle: 'Varios niveles para que encuentres tu clase perfecta',
+
+  // Video Section
+  rcbVideoTitle: 'Descubre el Reggaeton Cubano en acción',
+  rcbVideoDesc:
+    'Mira cómo se baila el reggaeton auténtico de Cuba. Improvisación, disociación y puro sabor.',
+
+  // Why Today Section
+  rcbWhyTodayFullTitle: '¿Por qué hoy es el mejor momento para aprender Reggaeton Cubano?',
+  rcbWhyToday1:
+    'Porque estás a un par de clases de moverte con más flow, más seguridad y más estilo que nunca.',
+  rcbWhyToday2:
+    "Porque entrenar Reparto con maestros de raíces cubanas hace que tu cuerpo entienda de verdad el ritmo, la musicalidad y el 'sabor' que no se aprende en un tutorial.",
+  rcbWhyToday3:
+    'Porque en cada clase sudas, ríes y te olvidas del estrés mientras te pones en forma sin darte cuenta y sales sintiéndote mucho mejor contigo que cuando entraste.',
+  rcbWhyTodayClosing1: "En Farray's no vendemos clases. Creamos Experiencias.",
+  rcbWhyTodayClosing2:
+    'Te esperamos con ritmo cubano, maestros apasionados y una energía que solo encuentras en Cuba... y en nuestra academia.',
+
+  // Final CTA Section
+  rcbFinalCTATitle: 'Únete a la comunidad de Reggaeton Cubano más auténtica de Barcelona',
+  rcbFinalCTASubtitle: 'Da el Paso.',
+  rcbFinalCTADesc: 'Reserva tu plaza ahora y no dejes que te lo cuenten… ni que te lo bailen.',
+  rcbFinalCTAFunny: 'Las plazas vuelan más rápido que un dembow en una fiesta de La Habana.',
+
+  // FAQ Title
+  rcbFaqTitle: 'Preguntas Frecuentes sobre Reparto Cubano en Barcelona',
+
+  // 15 FAQs
+  rcbFaqQ1: '¿Qué diferencia hay entre Reggaeton Cubano y el reggaeton comercial?',
+  rcbFaqA1:
+    'El Reggaeton Cubano (también llamado Reparto o Cubatón) es más crudo, callejero y enfocado en la improvisación. El comercial suele ser más coreografiado y pulido. En nuestras clases aprendes el auténtico, el que se baila en las calles de Cuba.',
+  rcbFaqQ2: '¿Necesito experiencia previa para las clases de Reggaeton Cubano?',
+  rcbFaqA2:
+    'No. Tenemos niveles desde principiante hasta avanzado. Lo importante es venir con ganas de soltar el cuerpo y disfrutar.',
+  rcbFaqQ3: '¿Qué es el "Reparto" exactamente?',
+  rcbFaqA3:
+    'El Reparto es un estilo de reggaeton cubano que viene de los barrios (repartos) de La Habana. Se caracteriza por movimientos más exagerados, improvisación y una conexión directa con el dembow.',
+  rcbFaqQ4: '¿Las clases son solo coreografía o también improvisación?',
+  rcbFaqA4:
+    'Nuestras clases combinan ambas: aprendes coreografías para desarrollar técnica, pero también trabajamos improvisación para que puedas bailar libremente en cualquier situación.',
+  rcbFaqQ5: '¿Qué es la disociación corporal y por qué es importante?',
+  rcbFaqA5:
+    'La disociación corporal es la capacidad de mover diferentes partes del cuerpo de forma independiente (caderas por un lado, pecho por otro). Es fundamental en el reggaeton cubano y lo trabajamos en cada clase.',
+  rcbFaqQ6: '¿Las clases de Reggaeton Cubano son solo para mujeres?',
+  rcbFaqA6:
+    'No. El reggaeton cubano lo bailan tanto hombres como mujeres en Cuba. Nuestras clases son mixtas y abiertas a todos.',
+  rcbFaqQ7: '¿Qué ropa debo llevar a las clases?',
+  rcbFaqA7:
+    'Ropa cómoda que permita movimiento. Pantalones que no restrinjan las caderas, camiseta y zapatillas deportivas. Trae agua porque sudarás.',
+  rcbFaqQ8: '¿Y si falto a una clase por trabajo o compromisos?',
+  rcbFaqA8:
+    'Si tienes una membresía y cancelas una clase, dispones de 30 días para recuperarla desde la fecha de la clase cancelada. Si tienes un abono de horas, gestionas tus clases de forma flexible: cancela y reserva otro día dentro del periodo de caducidad. Todas las gestiones se realizan exclusivamente desde la aplicación digital de la academia.',
+  rcbFaqQ9: '¿Hacéis eventos o workshops especiales de Reggaeton Cubano?',
+  rcbFaqA9:
+    'Sí. Organizamos masterclasses con artistas cubanos invitados, showcases y nuestra gala anual donde puedes lucirte en un escenario profesional.',
+  rcbFaqQ10: '¿Puedo probar una clase antes de inscribirme?',
+  rcbFaqA10:
+    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en la parte superior de esta página.',
+  rcbFaqQ11: '¿Tenéis algún descuento especial?',
+  rcbFaqA11:
+    'Sí. Ofrecemos descuentos si te apuntas a más de un curso. Consulta la web o pregúntanos directamente para más detalles.',
+  rcbFaqQ12: '¿Cuántas calorías se queman en una clase de Reggaeton Cubano?',
+  rcbFaqA12:
+    'El Reggaeton Cubano es un entrenamiento completo. En una hora puedes quemar entre 400 y 600 calorías mientras te diviertes.',
+  rcbFaqQ13:
+    'Si falto a una clase, ¿debo recuperarla haciendo el mismo estilo o puedo hacer otro diferente?',
+  rcbFaqA13:
+    'Puedes recuperarla haciendo la misma clase otro día en un horario diferente o seleccionar otro estilo, siempre que respetes el nivel de la clase y gestiones la recuperación desde la aplicación de la escuela.',
+  rcbFaqQ14: '¿Qué diferencia hay entre Cubatón, Reparto y Reggaeton Cubano?',
+  rcbFaqA14:
+    'Son términos que se usan de forma intercambiable. Cubatón es la fusión del reggaeton con la música cubana. Reparto se refiere al estilo de los barrios. Reggaeton Cubano es el término general. En nuestras clases trabajamos todos estos estilos.',
+  rcbFaqQ15: '¿Dónde está la academia y cómo puedo contactar?',
+  rcbFaqA15:
+    'Estamos en Calle Entença 100, 08015 Barcelona (a 5 min de Plaza España y Sants).<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+
+  // Course Schema
+  rcbCourseSchemaName: "Clases de Reggaeton Cubano en Barcelona - Farray's Center",
+  rcbCourseSchemaDesc:
+    'Aprende Reggaeton Cubano auténtico con Yunaisy Farray, maestra cubana y actriz de Street Dance 2. Clases de Reparto, Cubatón e improvisación para todos los niveles en Barcelona.',
 };

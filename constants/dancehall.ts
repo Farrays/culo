@@ -19,7 +19,6 @@ export const DANCEHALL_FAQS_CONFIG: FAQ[] = [
   { id: 'dhv3-13', questionKey: 'dhV3FaqQ13', answerKey: 'dhV3FaqA13' },
   { id: 'dhv3-14', questionKey: 'dhV3FaqQ14', answerKey: 'dhV3FaqA14' },
   { id: 'dhv3-15', questionKey: 'dhV3FaqQ15', answerKey: 'dhV3FaqA15' },
-  { id: 'dhv3-16', questionKey: 'dhV3FaqQ16', answerKey: 'dhV3FaqA16' },
 ];
 
 // Testimonials for Dancehall page (extends Google reviews with specific testimonial)

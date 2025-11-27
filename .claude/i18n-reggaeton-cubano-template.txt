@@ -1,0 +1,157 @@
+// ===== ReggaetonCubano Page =====
+  reggaetoncubanoPageTitle: 'Clases de ReggaetonCubano en Barcelona | Academia Farray\'s Center',
+  reggaetoncubanoMetaDescription: 'Aprende ReggaetonCubano en Barcelona con instructores especializados. Clases de ReggaetonCubano para todos los niveles cerca de Plaza España y Sants. ¡Reserva tu clase de prueba!',
+
+  // Breadcrumb (4 niveles: Home > Clases > Urbanas > Current)
+  reggaetoncubanoBreadcrumbHome: 'Inicio',
+  reggaetoncubanoBreadcrumbClasses: 'Clases de Baile',
+  reggaetoncubanoBreadcrumbUrban: 'Danzas Urbanas',
+  reggaetoncubanoBreadcrumbCurrent: 'Clases de ReggaetonCubano',
+
+  // Hero
+  reggaetoncubanoHeroTitle: 'Clases de ReggaetonCubano en Barcelona',
+  reggaetoncubanoHeroSubtitle: 'Descubre el ritmo y la pasión del ReggaetonCubano',
+  reggaetoncubanoHeroDesc: 'Mucho más que un baile, una forma de expresión.',
+  reggaetoncubanoHeroLocation: 'Clases desde nivel principiante hasta avanzado, entre Plaza España y Sants',
+
+  // CTAs
+  reggaetoncubanoCTA1: 'Hazte Miembro Ahora',
+  reggaetoncubanoCTA1Subtext: 'Quedan pocas plazas este mes',
+  reggaetoncubanoCTA2: 'Reserva Tu Clase de Prueba',
+  reggaetoncubanoCTA2Subtext: 'Oferta por tiempo limitado',
+
+  // What Is Section
+  reggaetoncubanoWhatIsTitle: '¿Qué es ReggaetonCubano y por qué está arrasando en Barcelona?',
+  reggaetoncubanoWhatIsP1: 'Descripción del ReggaetonCubano: origen, características principales. [TODO: Personalizar]',
+  reggaetoncubanoWhatIsP2: 'Segunda descripción sobre el estilo y la cultura. [TODO: Personalizar]',
+  reggaetoncubanoWhatIsP3: 'Tercera descripción sobre qué se aprende. [TODO: Personalizar]',
+  reggaetoncubanoWhatIsP4: 'Cuarta descripción sobre los beneficios. [TODO: Personalizar]',
+  reggaetoncubanoWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
+  reggaetoncubanoWhatIsQuestionAnswer: 'Sí, lo es.',
+
+  // Cultural Section (con markdown ### para títulos holográficos)
+  reggaetoncubanoCulturalShort: 'Breve introducción a la historia del ReggaetonCubano. [TODO: Personalizar - máx 2 frases]',
+  reggaetoncubanoCulturalFull: '### Sección 1: Orígenes\n\nContenido de la sección 1. [TODO]\n\n### Sección 2: Evolución\n\nContenido de la sección 2. [TODO]\n\n### Sección 3: El ReggaetonCubano hoy\n\nContenido de la sección 3. [TODO]',
+
+  // Identify Section
+  reggaetoncubanoIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
+  reggaetoncubanoIdentify1: 'Quieres ponerte en forma pero el gimnasio te aburre',
+  reggaetoncubanoIdentify2: 'Buscas una actividad donde puedas liberar el estrés',
+  reggaetoncubanoIdentify3: 'Te encanta la música urbana y quieres bailar sin complejos',
+  reggaetoncubanoIdentify4: 'Quieres mejorar tu autoestima y conexión con tu cuerpo',
+  reggaetoncubanoIdentify5: 'Necesitas un espacio donde nadie te juzgue',
+  reggaetoncubanoIdentify6: 'Buscas una comunidad que te apoye e inspire',
+  reggaetoncubanoIdentifyTransition: 'Si has dicho "sí" a alguno de estos puntos, ya sabes lo que necesitas.',
+  reggaetoncubanoNeedEnrollTitle: 'Necesitas apuntarte a clases de ReggaetonCubano en una academia de baile',
+  reggaetoncubanoIdentifyAgitate1: 'Seguir buscando excusas solo te aleja de la mejor versión de ti. [TODO: Personalizar]',
+  reggaetoncubanoIdentifySolution: 'En Farray\'s Center encontrarás un espacio pensado para que te sueltes, aprendas y crezcas sin presiones.',
+  reggaetoncubanoIdentifyClosing: 'Déjate llevar por la energía y el poder del ReggaetonCubano.',
+
+  // Transform Section (6 transformaciones)
+  reggaetoncubanoTransformTitle: 'Imagina tu antes y después',
+  reggaetoncubanoTransform1Title: 'Recuperas energía e ilusión',
+  reggaetoncubanoTransform1Desc: 'Las clases te sacan de la rutina y te devuelven a la vida.',
+  reggaetoncubanoTransform2Title: 'Ganas seguridad sin darte cuenta',
+  reggaetoncubanoTransform2Desc: 'Te sueltas, te liberas y empiezas a quererte más.',
+  reggaetoncubanoTransform3Title: 'Te pones en forma sin aburrirte',
+  reggaetoncubanoTransform3Desc: 'Cada clase es diferente. Te diviertes mientras fortaleces tu cuerpo.',
+  reggaetoncubanoTransform4Title: 'Conoces a gente real',
+  reggaetoncubanoTransform4Desc: 'Nada forzado: buen rollo, comunidad y gente como tú.',
+  reggaetoncubanoTransform5Title: 'Conectas con la música urbana',
+  reggaetoncubanoTransform5Desc: 'Ritmo, flow y capacidad de improvisación.',
+  reggaetoncubanoTransform6Title: 'Aprendes movimientos nuevos cada semana',
+  reggaetoncubanoTransform6Desc: 'Más flow, más estilo, más tú.',
+  reggaetoncubanoTransformCTA: '¿Por qué elegir Farray\'s Center como academia de ReggaetonCubano en Barcelona?',
+
+  // Why Choose Section (7 items - incluye profesores especializados)
+  reggaetoncubanoWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
+  reggaetoncubanoWhyChoose1Desc: 'Dirigida por Yunaisy Farray, actriz de Street Dance 2 y una de las profesoras más reconocidas del mundo.',
+  reggaetoncubanoWhyChoose2Title: 'Ubicación inmejorable',
+  reggaetoncubanoWhyChoose2Desc: 'Calle Entença 100, entre Plaza España y Sants, a 5 minutos de Plaça Espanya y Sants. Metro, bus y tren en la puerta.',
+  reggaetoncubanoWhyChoose3Title: 'Ambiente familiar, con el profesionalismo que necesitas',
+  reggaetoncubanoWhyChoose3Desc: 'Acogedor, inclusivo y sin juicios ni comparaciones, pero con el profesionalismo que necesitas para evolucionar de verdad.',
+  reggaetoncubanoWhyChoose4Title: 'Instalaciones realmente preparadas',
+  reggaetoncubanoWhyChoose4Desc: 'Más de 700 m², salas amplias, espejos, sonido profesional, climatización y ventilación centralizada.',
+  reggaetoncubanoWhyChoose5Title: 'Academia multidisciplinar',
+  reggaetoncubanoWhyChoose5Desc: 'Más de 25 estilos para que nunca te aburras: urbanos, latinas, contemporáneo, técnica, stretching y mucho más.',
+  reggaetoncubanoWhyChoose6Title: 'Gala anual + workshops potentes',
+  reggaetoncubanoWhyChoose6Desc: 'Brilla en un teatro profesional, participa en workshops internacionales y vive experiencias únicas.',
+  reggaetoncubanoWhyChoose7Title: 'Profesores especializados en ReggaetonCubano',
+  reggaetoncubanoWhyChoose7Desc: 'Yunaisy Farray: experto en ReggaetonCubano con años de experiencia. Técnica, flow y energía contagiosa en cada clase.',
+
+  // Logos Section
+  reggaetoncubanoLogosTitle: 'Has podido vernos en…',
+  reggaetoncubanoLogosIntlFestivalsText: 'y en los mejores festivales de baile de todo el mundo',
+
+  // Teachers Section
+  reggaetoncubanoTeachersTitle: 'Conoce a tu instructor de ReggaetonCubano',
+  reggaetoncubanoTeachersSubtitle: 'Experto en ReggaetonCubano con años de experiencia',
+  reggaetoncubanoTeacher1Specialty: 'Reggaeton Cubano & Reparto',
+  reggaetoncubanoTeacher1Bio: 'Biografía del instructor. [TODO: Personalizar con experiencia y estilo]',
+  reggaetoncubanoTeachersClosing: 'Con Yunaisy Farray no solo aprendes a bailar ReggaetonCubano: descubres una nueva forma de conectar con tu cuerpo y tu confianza.',
+
+  // Schedule Section
+  reggaetoncubanoScheduleTitle: 'Horario de clases de ReggaetonCubano',
+  reggaetoncubanoScheduleSubtitle: 'Varios niveles para que encuentres tu clase perfecta',
+
+  // Video Section
+  reggaetoncubanoVideoTitle: 'Ven a descubrir nuestras clases de ReggaetonCubano',
+  reggaetoncubanoVideoDesc: 'Mira cómo es una clase en Farray\'s Center: energía, técnica y buen rollo. ¡Te esperamos!',
+
+  // Why Today Section
+  reggaetoncubanoWhyTodayFullTitle: '¿Por qué hoy es el mejor momento para empezar a bailar ReggaetonCubano con nosotros?',
+  reggaetoncubanoWhyToday1: 'Porque siempre esperas "el momento perfecto" pero lo único perfecto es empezar hoy.',
+  reggaetoncubanoWhyToday2: 'Porque estás a UNA clase de cambiar tu rutina y sentirte mejor que ayer.',
+  reggaetoncubanoWhyToday3: 'Porque no se trata de bailar bien, sino de sentirse bien bailando.',
+  reggaetoncubanoWhyTodayClosing1: 'En Farray\'s no vendemos clases. Creamos experiencias.',
+  reggaetoncubanoWhyTodayClosing2: 'Te esperamos con música pegadiza, profes carismáticos y una energía única en Barcelona.',
+
+  // Final CTA Section
+  reggaetoncubanoFinalCTATitle: 'Únete a la comunidad de ReggaetonCubano más activa de Barcelona',
+  reggaetoncubanoFinalCTASubtitle: 'Da el paso.',
+  reggaetoncubanoFinalCTADesc: 'Reserva tu plaza ahora y no dejes que te lo cuenten… ni que te lo bailen.',
+  reggaetoncubanoFinalCTAFunny: 'Las plazas vuelan más rápido que un paso de ReggaetonCubano un viernes por la noche.',
+
+  // FAQ Title
+  reggaetoncubanoFaqTitle: 'Preguntas Frecuentes sobre ReggaetonCubano en Barcelona',
+
+  // 15 FAQs (optimizado para SEO - última FAQ con contacto)
+  reggaetoncubanoFaqQ1: '¿Cómo funcionan las clases de ReggaetonCubano en Barcelona?',
+  reggaetoncubanoFaqA1: 'Trabajamos con grupos reducidos, divididos por niveles, para que puedas avanzar a tu ritmo. Cada clase dura 1 hora y combina calentamiento, técnica y coreografía.',
+  reggaetoncubanoFaqQ2: '¿Puedo empezar desde cero si nunca he bailado ReggaetonCubano?',
+  reggaetoncubanoFaqA2: 'Absolutamente. El 80% de nuestros alumnos empiezan sin experiencia previa. Nuestra metodología está pensada para que te sientas cómodo desde el primer día.',
+  reggaetoncubanoFaqQ3: '¿Qué pasa si no tengo buena coordinación?',
+  reggaetoncubanoFaqA3: 'La coordinación se entrena. En nuestras clases desglosamos cada movimiento en pasos simples para que puedas asimilarlo de forma natural.',
+  reggaetoncubanoFaqQ4: '¿Qué necesito traer a las clases de ReggaetonCubano?',
+  reggaetoncubanoFaqA4: 'Ropa cómoda que permita movimiento, zapatillas deportivas con buena suela, y trae una botella de agua. Tenemos vestuarios con duchas y wifi.',
+  reggaetoncubanoFaqQ5: '¿Qué niveles de ReggaetonCubano tenéis?',
+  reggaetoncubanoFaqA5: 'Ofrecemos clases en varios niveles: Principiante (sin experiencia), Básico (ya has tocado algo), Intermedio y Avanzado. El profe te guiará al nivel que más te convenga.',
+  reggaetoncubanoFaqQ6: '¿Puedo unirme a las clases en cualquier momento del año?',
+  reggaetoncubanoFaqA6: 'Sí, nuestras clases funcionan con sistema abierto, así que puedes inscribirte cuando quieras. No hace falta esperar a principio de trimestre.',
+  reggaetoncubanoFaqQ7: '¿Tenéis algún descuento especial?',
+  reggaetoncubanoFaqA7: 'Sí. Tenemos bonos trimestrales y anuales con grandes ventajas, además de ofertas de lanzamiento para nuevos miembros.',
+  reggaetoncubanoFaqQ8: '¿Puedo probar una clase antes de inscribirme?',
+  reggaetoncubanoFaqA8: 'Por supuesto. Puedes reservar una clase de prueba para ver si es lo que buscas. Preferimos que descubras la energía del ReggaetonCubano antes de decidir.',
+  reggaetoncubanoFaqQ9: '¿Y si falto a una clase por trabajo o compromisos?',
+  reggaetoncubanoFaqA9: 'Las clases son recuperables, así que si faltas un día, puedes venir a la siguiente clase disponible en tu mismo nivel.',
+  reggaetoncubanoFaqQ10: 'Si falto a una clase de ReggaetonCubano, ¿puedo recuperarla haciendo otro estilo?',
+  reggaetoncubanoFaqA10: 'Sí. En Farray\'s puedes usar tu clase perdida en otro estilo (Dancehall, Hip Hop, Bachata...), siempre que el nivel sea equivalente.',
+  reggaetoncubanoFaqQ11: '¿Organizáis eventos o workshops especiales?',
+  reggaetoncubanoFaqA11: 'Sí. Tenemos masterclasses con artistas invitados, battles, showcases y nuestra gala anual donde puedes lucirte en un escenario profesional.',
+  reggaetoncubanoFaqQ12: '¿Las clases son solo para mujeres o también para hombres?',
+  reggaetoncubanoFaqA12: 'Nuestras clases son 100% inclusivas. Todos los géneros, edades y cuerpos son bienvenidos. Lo que importa es las ganas de bailar y mejorar.',
+  reggaetoncubanoFaqQ13: '¿El ReggaetonCubano es un buen ejercicio físico?',
+  reggaetoncubanoFaqA13: 'El ReggaetonCubano es un entrenamiento completo que trabaja especialmente piernas, core y coordinación. En una hora puedes quemar entre 400 y 600 calorías.',
+  reggaetoncubanoFaqQ14: '¿Dónde puedo encontrar clases de ReggaetonCubano cerca de Plaza España?',
+  reggaetoncubanoFaqA14: 'Farray\'s Center está ubicado en Calle Entença 100, a solo 5 minutos de Plaza España y Estación de Sants. Puedes llegar en metro (L1, L3), bus o tren.',
+  reggaetoncubanoFaqQ15: '¿Qué hago si tengo dudas o necesito más información?',
+  reggaetoncubanoFaqA15: 'Si tienes alguna pregunta adicional o necesitas más información, puedes contactarnos:<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Dirección:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+
+  // Image alts
+  reggaetoncubanoImage1Alt: 'Clases de ReggaetonCubano en Barcelona - Farray\'s Center',
+  reggaetoncubanoImage2Alt: 'Estudiantes practicando ReggaetonCubano',
+  reggaetoncubanoImage3Alt: 'Yunaisy Farray - Instructor de ReggaetonCubano',
+
+  // Course Schema (SEO)
+  reggaetoncubanoCourseSchemaName: 'Clases de ReggaetonCubano en Barcelona - Farray\'s Center',
+  reggaetoncubanoCourseSchemaDesc: 'Aprende ReggaetonCubano con Yunaisy Farray, instructor especializado. Clases para todos los niveles en el corazón de Barcelona.',

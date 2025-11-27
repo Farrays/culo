@@ -604,12 +604,9 @@ export const ca = {
   dhV3FaqQ14: "Què diferencia el Dancehall d'altres estils de ball urbà?",
   dhV3FaqA14:
     'El Dancehall és un estil originari de Jamaica amb molta energia, passos característics i una cultura pròpia. Combina moviments enèrgics i sensuals amb ritmes de reggae i hip-hop, amb gran marge per a la improvisació i la creativitat. És ideal si busques alguna cosa més que passos coreografiats.',
-  dhV3FaqQ15: 'On puc trobar classes de Dancehall a prop de Plaça Espanya a Barcelona?',
+  dhV3FaqQ15: "On és l'acadèmia i com puc contactar?",
   dhV3FaqA15:
-    "Farray's Center està ubicat al Carrer Entença 100, 08015 Barcelona, a només 5 minuts de Plaça Espanya i Estació de Sants. Comptem amb professors amb àmplia experiència i un ambient familiar per a tots els nivells.",
-  dhV3FaqQ16: 'Què faig si tinc dubtes o necessito més informació?',
-  dhV3FaqA16:
-    'Telèfon: <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a> | Email: <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a> | Web: <a href="https://www.farrayscenter.com/contacto" class="text-primary-accent hover:underline" target="_blank" rel="noopener noreferrer">www.farrayscenter.com/contacto</a> | Adreça: <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" class="text-primary-accent hover:underline" target="_blank" rel="noopener noreferrer">Carrer Entença 100, 08015 Barcelona</a>',
+    'Som al Carrer Entença 100, 08015 Barcelona (a 5 min de Plaça Espanya i Sants).<br/><br/>📞 <strong>Telèfon:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
 
   dhV3FinalCTATitle: 'Uneix-te a la comunitat de Dancehall més activa de Barcelona',
   dhV3FinalCTASubtitle: 'Fes el pas.',
@@ -3422,4 +3419,213 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
   hhrCourseSchemaName: "Classes de Hip Hop Reggaeton a Barcelona - Farray's Center",
   hhrCourseSchemaDesc:
     'Aprèn Hip Hop Reggaeton amb Charlie Breezy, instructor especialitzat en fusió urbana. Classes per a tots els nivells al cor de Barcelona.',
+
+  // ============================================================
+  // REGGAETON CUBANO PAGE (RCB) - Catalan Translations
+  // ============================================================
+
+  // SEO Meta
+  rcbMetaTitle: 'Classes de Reggaeton Cubà a Barcelona | Reparto i Cubatón Autèntic',
+  rcbMetaDesc:
+    "Aprèn Reggaeton Cubà autèntic a Barcelona amb mestres cubans. Reparto, Cubatón, improvisació i disociació corporal. Classes per a tots els nivells a Farray's Center.",
+  rcbMetaKeywords:
+    'reggaeton cubà barcelona, reparto barcelona, cubatón classes, reggaeton autèntic, classes reparto, acadèmia reggaeton cubà',
+
+  // Hero Section
+  rcbHeroTitle: 'Classes de Reggaeton Cubà a Barcelona',
+  rcbHeroSubtitle: 'Reparto i Cubatón Autèntic',
+  rcbHeroDescription:
+    'Aprèn a ballar el reggaeton autèntic que es balla als carrers de Cuba. No el comercial, el de veritat.',
+  rcbHeroLocation:
+    "Classes amb mestres cubans que venen directament de l'Havana, entre Plaça Espanya i Sants.",
+  rcbHeroCTA: 'Fes-te Soci Ara',
+  rcbHeroCTASubtext: 'Queden poques places aquest mes',
+  rcbHeroSecondaryCTA: 'Reserva la teva Classe de Prova',
+  rcbHeroSecondaryCTASubtext: 'Oferta per temps limitat',
+
+  // Breadcrumbs
+  rcbBreadcrumbHome: 'Inici',
+  rcbBreadcrumbClasses: 'Classes',
+  rcbBreadcrumbUrban: 'Danses Urbanes',
+  rcbBreadcrumbCurrent: 'Reggaeton Cubà',
+
+  // What Is Section
+  rcbWhatIsTitle: 'Què és el Reggaeton Cubà?',
+  rcbWhatIsP1:
+    "El Reggaeton Cubà és l'estil originari de Cuba que va evolucionar paral·lelament al reggaeton porto-riqueny. Amb arrels en el reggae, el hip-hop i els ritmes afrocubans, el Reparto i el Cubatón tenen una identitat única: més improvisació, més connexió amb el terra i una disociació corporal que no trobaràs en cap altre estil.",
+  rcbWhatIsP2:
+    "A diferència del reggaeton comercial, el Reggaeton Cubà es balla amb més sabrosura, més swing i menys coreografies preestablertes. És la dansa dels barris de l'Havana, on la creativitat i l'expressió personal són protagonistes.",
+
+  // Cultural History Section
+  rcbCulturalTitle: 'Història del Reggaeton Cubà: Del Barri al Món',
+  rcbCulturalP1:
+    "El Reggaeton Cubà va néixer als barris populars de l'Havana a finals dels 90, fusionant el reggae jamaicà amb el hip-hop americà i els ritmes afrocubans. Mentre Puerto Rico desenvolupava el seu propi estil, Cuba creava quelcom diferent: més orgànic, més terrenal, més improvisat.",
+  rcbCulturalP2:
+    "El terme 'Reparto' ve dels barris (repartos) de l'Havana on es va gestar aquest moviment. Artistes com El Chacal, Chocolate MC, Los 4 i Yomil y el Dany van portar el so cubà al món, mantenint sempre aquesta essència de carrer que el fa inconfusible.",
+  rcbCulturalP3:
+    "Avui, el Cubatón és reconegut mundialment pel seu ritme contagiós, lletres directes i una manera de ballar que prioritza el feeling sobre la tècnica. Si vols ballar reggaeton com es balla a Cuba, has d'aprendre d'un cubà.",
+
+  // Identify Section
+  rcbIdentifyTitle: "T'identifiques amb alguna d'aquestes situacions?",
+  rcbIdentify1: "T'agrada el reggaeton però sents que el comercial no et representa?",
+  rcbIdentify2: 'Vols aprendre a improvisar en lloc de repetir coreografies?',
+  rcbIdentify3: 'Busques mestres cubans que entenguin el ritme de veritat?',
+  rcbIdentify4: 'Vols desenvolupar la disociació corporal i el swing?',
+  rcbIdentify5: "Et sents frustrat/da amb academies que ensenyen reggaeton 'generic'?",
+  rcbIdentify6: "Vols aprendre l'estil autèntic que es balla als barris de l'Havana?",
+  rcbIdentifyClosing:
+    "Si t'has sentit identificat/da amb alguna d'aquestes situacions, estàs al lloc correcte.",
+
+  // Need Enroll Section
+  rcbNeedEnrollTitle: 'Necessites aprendre Reparto Cubà en una acadèmia de ball',
+  rcbNeedEnroll1:
+    'Escoltes reggaeton cubà i el teu cos es mou sol, però no saps canalitzar aquest ritme',
+  rcbNeedEnroll2: "Vols ballar amb la sabrosura cubana però no trobes qui t'ensenyi de veritat",
+  rcbNeedEnroll3: "T'avorreixes amb coreografies i vols aprendre a improvisar",
+  rcbNeedEnroll4: 'Busques una connexió més profunda amb la música i el teu cos',
+  rcbNeedEnroll5: 'Vols dominar la disociació corporal que caracteritza el Reparto',
+  rcbNeedEnrollClosing:
+    'Al Reggaeton Cubà aprens a sentir, no només a executar. Si busques autenticitat, aquí la trobaràs.',
+
+  // Transform Section
+  rcbTransformTitle: 'Què aconseguiràs amb les nostres classes?',
+  rcbTransform1Title: 'Domines la disociació corporal',
+  rcbTransform1Desc:
+    'Maluc, pit, espatlles... cada part del teu cos es mou de forma independent i amb ritme.',
+  rcbTransform2Title: 'Aprens a improvisar de veritat',
+  rcbTransform2Desc:
+    'Res de seguir seqüències. Escoltes la música i el teu cos respon naturalment.',
+  rcbTransform3Title: 'Desenvolupes el swing cubà',
+  rcbTransform3Desc:
+    "Aquesta manera de moure's que no es pot ensenyar amb passos però sí amb mestres cubans.",
+  rcbTransform4Title: 'Connectes amb la música a un altre nivell',
+  rcbTransform4Desc:
+    'Entens els ritmes, els accents, les pauses. Balles AMB la música, no SOBRE ella.',
+  rcbTransform5Title: 'Confiança a qualsevol pista',
+  rcbTransform5Desc: 'A la discoteca, a una festa, on sigui. Saps que pots improvisar i destacar.',
+  rcbTransform6Title: 'Crees el teu estil únic',
+  rcbTransform6Desc:
+    "Amb les bases del Reparto, desenvolupa la teva manera personal d'expressar-te.",
+  rcbTransformCTA: "Per què triar Farray's Center per a Reggaeton Cubà?",
+
+  // Why Choose Section
+  rcbWhyChoose1Title: 'Acadèmia reconeguda pel CID UNESCO',
+  rcbWhyChoose1Desc:
+    "Dirigida per Yunaisy Farray, actriu de Street Dance 2 i reconeguda mundialment. L'única acadèmia de danses urbanes a Barcelona avalada per la UNESCO.",
+  rcbWhyChoose2Title: 'Mestres cubans formats a la ENA',
+  rcbWhyChoose2Desc:
+    "Charlie Breezy i Alejandro Miñoso, mestres internacionals cubans formats a l'ENA (Escola Nacional d'Art de Cuba), ambdós referents a Barcelona.",
+  rcbWhyChoose3Title: 'Ambient cubà autèntic',
+  rcbWhyChoose3Desc:
+    'No és només una acadèmia: és un trosset de Cuba a Barcelona. Música, energia i sabor a cada classe.',
+  rcbWhyChoose4Title: 'Instal·lacions de primer nivell',
+  rcbWhyChoose4Desc:
+    'Més de 700 m², sales amb miralls, so professional i climatització. Tot per a una experiència òptima.',
+  rcbWhyChoose5Title: 'Ambient cubà familiar',
+  rcbWhyChoose5Desc:
+    "Aquí no ets un número. Formes part d'una comunitat que comparteix la passió pel ritme cubà.",
+  rcbWhyChoose6Title: 'Ubicació immillorable',
+  rcbWhyChoose6Desc:
+    'Carrer Entença 100, entre Plaça Espanya i Sants, a 5 minuts de metro. Fàcil arribar, fàcil tornar.',
+  rcbWhyChoose7Title: 'Més de 25 estils complementaris',
+  rcbWhyChoose7Desc:
+    'Salsa cubana, Afrobeats, Hip Hop... complementa el teu Reggaeton Cubà amb altres danses.',
+
+  // Logos Section
+  rcbLogosTitle: "Has pogut veure'ns a...",
+  rcbLogosIntlFestivalsText: 'i als millors festivals de ball de tot el món',
+
+  // Teachers Section
+  rcbTeachersTitle: 'Coneix els teus mestres de Reparto',
+  rcbTeachersSubtitle: "Cubans de naixement, formats a l'ENA i referents a Barcelona",
+  rcbTeacher1Name: 'Charlie Breezy',
+  rcbTeacher1Specialty: 'Reggaeton Cubà, Reparto & Danses Urbanes',
+  rcbTeacher1Bio:
+    "Charlie Breezy és un mestre internacional i ballarí cubà format a l'ENA (Escola Nacional d'Art de Cuba). Especialista en Reggaeton Cubà i Reparto, domina la improvisació i la disociació corporal amb tècnica impecable. La seva energia, creativitat i capacitat per transmetre el sabor cubà el converteixen en un dels professors més recomanats de Barcelona.",
+  rcbTeacher2Name: 'Alejandro Miñoso',
+  rcbTeacher2Specialty: 'Reggaeton Cubà, Reparto & Improvisació',
+  rcbTeacher2Bio:
+    "Alejandro Miñoso és mestre internacional cubà format a l'ENA (Escola Nacional d'Art de Cuba). Especialista en Reparto i tècnica d'improvisació, aporta una metodologia única que connecta el ritme cubà amb l'expressió corporal. La seva passió per transmetre la cultura del reggaeton autèntic el fa un referent a Barcelona.",
+  rcbTeachersClosing:
+    'Amb Charlie i Alejandro no només aprens a ballar Reparto: descobreixes el sabor autèntic que només els cubans poden transmetre.',
+
+  // Schedule Section
+  rcbScheduleTitle: 'Horari de classes de Reggaeton Cubà',
+  rcbScheduleSubtitle: 'Troba el teu nivell i horari perfecte',
+
+  // Video Section
+  rcbVideoTitle: 'Descobreix les nostres classes de Reggaeton Cubà',
+  rcbVideoDesc:
+    "Mira com es viu una classe a Farray's Center: sabrosura, improvisació i ritme cubà. T'esperem!",
+
+  // Why Today Section
+  rcbWhyTodayFullTitle: 'Per què avui és el millor moment per començar a ballar Reggaeton Cubà?',
+  rcbWhyToday1:
+    "Perquè estàs a un parell de classes de moure't amb més flow, més seguretat i més estil que mai.",
+  rcbWhyToday2:
+    "Perquè entrenar Reparto amb mestres d'arrels cubanes fa que el teu cos entengui de veritat el ritme, la musicalitat i el 'sabor' que no s'aprèn en un tutorial.",
+  rcbWhyToday3:
+    "Perquè a cada classe sues, rius i t'oblides de l'estrès mentre et poses en forma sense adonar-te'n i surts sentint-te molt millor amb tu que quan vas entrar.",
+  rcbWhyTodayClosing1: "A Farray's no venem classes. Creem Experiències.",
+  rcbWhyTodayClosing2:
+    "T'esperem amb ritme de Reparto, la sabrosura de Yunaisy i l'energia única de Barcelona amb sabor a Cuba.",
+
+  // Final CTA Section
+  rcbFinalCTATitle: 'Uneix-te a la comunitat de Reggaeton Cubà més autèntica de Barcelona',
+  rcbFinalCTASubtitle: 'Fes el pas.',
+  rcbFinalCTADesc: "Reserva la teva plaça ara i no deixis que t'ho expliquin… ni que t'ho ballin.",
+  rcbFinalCTAFunny: "Les places volen més ràpid que un dembow en una festa de l'Havana.",
+
+  // FAQ Section
+  rcbFaqTitle: 'Preguntes Freqüents sobre Reparto Cubà a Barcelona',
+  rcbFaqQ1: 'Quina diferència hi ha entre el Reggaeton Cubà i el comercial?',
+  rcbFaqA1:
+    "El Reggaeton Cubà (Reparto/Cubatón) prové directament dels barris de l'Havana i es caracteritza per més improvisació, disociació corporal i swing. El comercial es basa més en coreografies preestablertes i és menys terrenal. Aquí ensenyem l'autèntic.",
+  rcbFaqQ2: 'Necessito experiència prèvia per a les classes de Reparto?',
+  rcbFaqA2:
+    "No. Tenim nivells per a principiants absoluts. L'important és tenir ganes de moure't i connectar amb el ritme cubà.",
+  rcbFaqQ3: "Què és la disociació corporal i com s'ensenya?",
+  rcbFaqA3:
+    "La disociació és la capacitat de moure diferents parts del cos de forma independent. S'ensenya progressivament amb exercicis específics que separen maluc, pit i espatlles.",
+  rcbFaqQ4: 'Puc aprendre a improvisar o només coreografies?',
+  rcbFaqA4:
+    'El nostre enfocament prioritza la improvisació sobre les coreografies. Aprens les bases i després desenvolupa el teu propi estil responent a la música.',
+  rcbFaqQ5: 'Què necessito portar a les classes de Reggaeton Cubà?',
+  rcbFaqA5:
+    'Roba còmoda, sabatilles netes, tovallola i aigua. Res de fancy. El Reparto es balla amb actitud, no amb roba cara.',
+  rcbFaqQ6: 'Si falto a una classe, he de recuperar-la fent el mateix estil o puc fer-ne un altre?',
+  rcbFaqA6:
+    "Pots recuperar-la fent la mateixa classe un altre dia en un horari diferent o seleccionar un altre estil, sempre que respectis el nivell de la classe i gestionis la recuperació des de l'aplicació de l'escola.",
+  rcbFaqQ7: 'Quins dies i horaris teniu classes de Reggaeton Cubà?',
+  rcbFaqA7:
+    "Consulta l'horari a dalt d'aquesta pàgina. Tenim classes dimarts, dijous i dissabte per a diferents nivells.",
+  rcbFaqQ8: "Puc provar una classe abans d'inscriure'm?",
+  rcbFaqA8:
+    'Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça clicant el botó "Reserva la teva Classe de Prova" a la part superior d\'aquesta pàgina.',
+  rcbFaqQ9: 'Què és el Cubatón exactament?',
+  rcbFaqA9:
+    'Cubatón és un altre nom per al Reggaeton Cubà, emfatitzant les arrels cubanes del gènere. Reparto i Cubatón es refereixen al mateix estil.',
+  rcbFaqQ10: 'Les classes són només per a dones?',
+  rcbFaqA10:
+    'Les classes són per a tothom. El Reggaeton Cubà és un estil que qualsevol pot aprendre i gaudir.',
+  rcbFaqQ11: "On està Farray's Center?",
+  rcbFaqA11:
+    'Carrer Entença 100, 08015 Barcelona. A 5 minuts de Plaça Espanya i Estació de Sants. Metro L1 i L3.',
+  rcbFaqQ12: 'Organitzeu esdeveniments o workshops de Reggaeton Cubà?',
+  rcbFaqA12:
+    "Sí. Organitzem workshops especials amb mestres cubans visitants i participem en festivals de ball durant tot l'any.",
+  rcbFaqQ13: 'I si falto a una classe per feina o compromisos?',
+  rcbFaqA13:
+    "Si tens una membresía i cancel·les una classe, disposes de 30 dies per recuperar-la des de la data de la classe cancel·lada. Si tens un abonament d'hores, gestiones les teves classes de forma flexible: cancel·la i reserva un altre dia dins del període de caducitat. Totes les gestions es fan exclusivament des de l'aplicació digital de l'acadèmia.",
+  rcbFaqQ14: "Què diferencia Farray's Center d'altres academies?",
+  rcbFaqA14:
+    "Som l'única acadèmia a Barcelona amb mestres cubans autèntics, reconeixement del CID UNESCO i un ambient familiar que manté l'essència dels barris de l'Havana.",
+  rcbFaqQ15: 'Com contacto per a més informació?',
+  rcbFaqA15:
+    'Per a més informació pots contactar-nos:<br/><br/>📞 <strong>Telèfon:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Adreça:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Carrer Entença 100, 08015 Barcelona</a>',
+
+  // Course Schema
+  rcbCourseSchemaName: "Classes de Reggaeton Cubà a Barcelona - Farray's Center",
+  rcbCourseSchemaDesc:
+    "Aprèn Reggaeton Cubà autèntic amb Yunaisy Farray, mestra cubana formada a l'Havana. Reparto, Cubatón i improvisació per a tots els nivells.",
 };

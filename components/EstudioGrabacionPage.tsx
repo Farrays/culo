@@ -96,11 +96,11 @@ const EstudioGrabacionPage: React.FC = () => {
   const studioFaqs = [
     { id: 'eg-1', question: t('estudioGrabacion_faq1_q'), answer: t('estudioGrabacion_faq1_a') },
     { id: 'eg-2', question: t('estudioGrabacion_faq2_q'), answer: t('estudioGrabacion_faq2_a') },
-    { id: 'eg-3', question: t('estudioGrabacion_faq3_q'), answer: t('estudioGrabacion_faq3_a') },
-    { id: 'eg-4', question: t('estudioGrabacion_faq4_q'), answer: t('estudioGrabacion_faq4_a') },
-    { id: 'eg-5', question: t('estudioGrabacion_faq5_q'), answer: t('estudioGrabacion_faq5_a') },
-    { id: 'eg-6', question: t('estudioGrabacion_faq6_q'), answer: t('estudioGrabacion_faq6_a') },
-    { id: 'eg-7', question: t('estudioGrabacion_faq7_q'), answer: t('estudioGrabacion_faq7_a') },
+    { id: 'eg-3', question: t('estudioGrabacion_faq4_q'), answer: t('estudioGrabacion_faq4_a') },
+    { id: 'eg-4', question: t('estudioGrabacion_faq5_q'), answer: t('estudioGrabacion_faq5_a') },
+    { id: 'eg-5', question: t('estudioGrabacion_faq6_q'), answer: t('estudioGrabacion_faq6_a') },
+    { id: 'eg-6', question: t('estudioGrabacion_faq7_q'), answer: t('estudioGrabacion_faq7_a') },
+    { id: 'eg-7', question: t('estudioGrabacion_faq8_q'), answer: t('estudioGrabacion_faq8_a') },
   ];
 
   // Schema Markup - BreadcrumbList
