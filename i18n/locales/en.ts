@@ -3628,19 +3628,14 @@ The latest trends and styles merge in our classes in a varied, dynamic and fun w
   // What is Heels Section (Point 1 - SEO CRITICAL)
   heelsBarcelona_whatIs_title: 'What are Heels Dance Classes?',
   heelsBarcelona_whatIs_definition:
-    'Heels classes are dance disciplines where you learn to move and dance in high heels safely, elegantly and sensually. It combines contemporary dance, jazz and body expression techniques with wearing heels, developing posture, balance, strength and confidence. It\'s much more than dancing: it\'s a form of female empowerment and connection with your sensuality.',
-  heelsBarcelona_whatIs_benefits_title:
-    'Benefits of dancing in heels with the Farray Method®:',
-  heelsBarcelona_whatIs_benefits_list1:
-    'Improve your posture, body alignment and balance',
-  heelsBarcelona_whatIs_benefits_list2:
-    'Strengthen legs, glutes and core while dancing',
-  heelsBarcelona_whatIs_benefits_list3:
-    'Develop coordination, elegance and stage presence',
+    "Heels classes are dance disciplines where you learn to move and dance in high heels safely, elegantly and sensually. It combines contemporary dance, jazz and body expression techniques with wearing heels, developing posture, balance, strength and confidence. It's much more than dancing: it's a form of female empowerment and connection with your sensuality.",
+  heelsBarcelona_whatIs_benefits_title: 'Benefits of dancing in heels with the Farray Method®:',
+  heelsBarcelona_whatIs_benefits_list1: 'Improve your posture, body alignment and balance',
+  heelsBarcelona_whatIs_benefits_list2: 'Strengthen legs, glutes and core while dancing',
+  heelsBarcelona_whatIs_benefits_list3: 'Develop coordination, elegance and stage presence',
   heelsBarcelona_whatIs_benefits_list4:
     'Connect with your femininity and sensuality in a healthy way',
-  heelsBarcelona_whatIs_benefits_list5:
-    'Gain confidence to walk and dance in heels at any event',
+  heelsBarcelona_whatIs_benefits_list5: 'Gain confidence to walk and dance in heels at any event',
   heelsBarcelona_whatIs_benefits_list6:
     'Release stress and boost your self-esteem with every class',
 
@@ -3658,8 +3653,7 @@ The latest trends and styles merge in our classes in a varied, dynamic and fun w
     'Sensual dance in heels with attitude and expressive freedom. Hip movements, body waves, floorwork and choreographies that enhance your femininity. For all ages and levels.',
 
   // Which Style to Choose Section (Point 2 - SEO CRITICAL)
-  heelsBarcelona_whichStyle_title:
-    'Femmology or Sexy Style? Find Your Perfect Discipline',
+  heelsBarcelona_whichStyle_title: 'Femmology or Sexy Style? Find Your Perfect Discipline',
   heelsBarcelona_whichStyle_intro:
     'Femmology is dance therapy: demanding technique + emotional work. Sexy Style is fun: expressive freedom + sensual choreographies. Discover which one suits you best.',
 
@@ -3667,8 +3661,10 @@ The latest trends and styles merge in our classes in a varied, dynamic and fun w
   heelsBarcelona_whichStyle_femmology_title: 'Femmology',
   heelsBarcelona_whichStyle_femmology_subtitle: 'Dance Therapy + Heels Technique',
   heelsBarcelona_whichStyle_femmology_for: "It's for you if you're looking for...",
-  heelsBarcelona_whichStyle_femmology_point1: 'Working through fears, insecurities and emotional blocks through dance',
-  heelsBarcelona_whichStyle_femmology_point2: 'High technical demands with an elite teacher (Yunaisy Farray)',
+  heelsBarcelona_whichStyle_femmology_point1:
+    'Working through fears, insecurities and emotional blocks through dance',
+  heelsBarcelona_whichStyle_femmology_point2:
+    'High technical demands with an elite teacher (Yunaisy Farray)',
   heelsBarcelona_whichStyle_femmology_point3: 'Self-knowledge, self-esteem and body acceptance',
   heelsBarcelona_whichStyle_femmology_point4: 'Style fusion: Hip Hop, Cabaret, Street Jazz, Funky',
   heelsBarcelona_whichStyle_femmology_point5: 'Learning to use hair, floor, body dissociation',
@@ -3679,7 +3675,8 @@ The latest trends and styles merge in our classes in a varied, dynamic and fun w
   heelsBarcelona_whichStyle_sexystyle_for: "It's for you if you're looking for...",
   heelsBarcelona_whichStyle_sexystyle_point1: 'Having fun dancing without high technical pressure',
   heelsBarcelona_whichStyle_sexystyle_point2: 'Hip movements, body waves and attitude',
-  heelsBarcelona_whichStyle_sexystyle_point3: 'Sensual and catchy choreographies to have a good time',
+  heelsBarcelona_whichStyle_sexystyle_point3:
+    'Sensual and catchy choreographies to have a good time',
   heelsBarcelona_whichStyle_sexystyle_point4: 'Floorwork and free body expression',
   heelsBarcelona_whichStyle_sexystyle_point5: 'Feeling sexy without needing high heels',
   heelsBarcelona_whichStyle_sexystyle_point6: 'A more relaxed and accessible environment',
@@ -3700,7 +3697,7 @@ The latest trends and styles merge in our classes in a varied, dynamic and fun w
   heelsBarcelona_table_focus_fem: 'Dance Therapy + Technique',
   heelsBarcelona_table_focus_sexy: 'Fun + Expression',
   heelsBarcelona_table_emotional: 'Emotional work',
-  heelsBarcelona_table_emotional_fem: 'Yes, it\'s the core of the class',
+  heelsBarcelona_table_emotional_fem: "Yes, it's the core of the class",
   heelsBarcelona_table_emotional_sexy: 'No, focused on dance',
   heelsBarcelona_table_teacher: 'Teacher',
   heelsBarcelona_table_teacher_fem: 'Yunaisy Farray (creator)',
@@ -3743,8 +3740,7 @@ The latest trends and styles merge in our classes in a varied, dynamic and fun w
     "Femmology and Sexy Style students share their experience at Farray's Center Barcelona. No filters, no scripts. Just real transformation stories.",
 
   // FAQ Section
-  heelsBarcelona_faq_title:
-    'Frequently asked questions about our Heels classes in Barcelona',
+  heelsBarcelona_faq_title: 'Frequently asked questions about our Heels classes in Barcelona',
 
   // 10 FAQs
   heelsFaqQ1: 'Do I need previous experience for Heels classes?',
@@ -3753,27 +3749,27 @@ The latest trends and styles merge in our classes in a varied, dynamic and fun w
 
   heelsFaqQ2: 'What heels do I need for classes?',
   heelsFaqA2:
-    'For beginners we recommend 7-9 cm heels with platform for greater stability. If you\'ve never danced in heels, you can start with a chunky heel. We\'ll guide you on which model to choose in your first class.',
+    "For beginners we recommend 7-9 cm heels with platform for greater stability. If you've never danced in heels, you can start with a chunky heel. We'll guide you on which model to choose in your first class.",
 
   heelsFaqQ3: 'Are Heels classes only for women?',
   heelsFaqA3:
     'Our Heels classes are open to everyone who wants to explore this dance style, regardless of gender. What matters is attitude and willingness to learn.',
 
-  heelsFaqQ4: 'What\'s the difference between Femmology and Sexy Style?',
+  heelsFaqQ4: "What's the difference between Femmology and Sexy Style?",
   heelsFaqA4:
     'Femmology Heels focuses on elegance, walking technique in heels, posture and refined sensuality. Sexy Style is freer, with more hip movement, body waves and floorwork. Both develop femininity but with different approaches.',
 
   heelsFaqQ5: 'Is it dangerous to dance in heels? Can I get injured?',
   heelsFaqA5:
-    'With correct technique, dancing in heels is safe. In our classes we teach specific warm-up, correct alignment and ankle and knee strengthening. We never force and respect each student\'s pace.',
+    "With correct technique, dancing in heels is safe. In our classes we teach specific warm-up, correct alignment and ankle and knee strengthening. We never force and respect each student's pace.",
 
   heelsFaqQ6: 'Can I come with low heels or without heels at first?',
   heelsFaqA6:
-    'Yes. If you\'re a beginner or have any discomfort, you can start with lower heels or even without heels to learn basic technique. The goal is for you to feel comfortable and safe.',
+    "Yes. If you're a beginner or have any discomfort, you can start with lower heels or even without heels to learn basic technique. The goal is for you to feel comfortable and safe.",
 
   heelsFaqQ7: 'How long does it take to dance well in heels?',
   heelsFaqA7:
-    'With consistency (2 classes per week), you\'ll notice significant improvements in balance, posture and confidence in 4-6 weeks. In 3 months you\'ll be able to dance complete choreographies smoothly.',
+    "With consistency (2 classes per week), you'll notice significant improvements in balance, posture and confidence in 4-6 weeks. In 3 months you'll be able to dance complete choreographies smoothly.",
 
   heelsFaqQ8: 'What clothes should I wear to Heels classes?',
   heelsFaqA8:
@@ -3781,7 +3777,7 @@ The latest trends and styles merge in our classes in a varied, dynamic and fun w
 
   heelsFaqQ9: 'Do you organize showcases or events where I can perform?',
   heelsFaqA9:
-    'Yes. Every year we organize an Annual Gala at a professional theater in Barcelona where Heels students can present choreographies prepared during the course. It\'s a unique empowerment experience.',
+    "Yes. Every year we organize an Annual Gala at a professional theater in Barcelona where Heels students can present choreographies prepared during the course. It's a unique empowerment experience.",
 
   heelsFaqQ10: 'Where is the school and how do I contact you?',
   heelsFaqA10:

@@ -104,7 +104,10 @@ const HeelsBarcelonaPage: React.FC = () => {
   const breadcrumbItems = [
     { name: t('heelsBarcelona_breadcrumb_home'), url: `/${locale}` },
     { name: t('heelsBarcelona_breadcrumb_classes'), url: `/${locale}/clases/baile-barcelona` },
-    { name: t('heelsBarcelona_breadcrumb_urban'), url: `/${locale}/clases/danzas-urbanas-barcelona` },
+    {
+      name: t('heelsBarcelona_breadcrumb_urban'),
+      url: `/${locale}/clases/danzas-urbanas-barcelona`,
+    },
     {
       name: t('heelsBarcelona_breadcrumb_current'),
       url: `/${locale}/clases/heels-barcelona`,
@@ -348,8 +351,18 @@ const HeelsBarcelonaPage: React.FC = () => {
                       {/* CTA Link */}
                       <div className="pt-2 text-primary-accent font-bold text-sm flex items-center group-hover:translate-x-1 transition-transform duration-300">
                         {t('heelsBarcelona_viewMore')}
-                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        <svg
+                          className="w-4 h-4 ml-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
                         </svg>
                       </div>
                     </div>
@@ -421,8 +434,18 @@ const HeelsBarcelonaPage: React.FC = () => {
                     className="inline-flex items-center justify-center w-full bg-primary-accent text-white font-bold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-accent-glow"
                   >
                     {t('heelsBarcelona_whichStyle_femmology_cta')}
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    <svg
+                      className="w-4 h-4 ml-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
                     </svg>
                   </Link>
                 </div>
@@ -470,8 +493,18 @@ const HeelsBarcelonaPage: React.FC = () => {
                     className="inline-flex items-center justify-center w-full bg-transparent border-2 border-primary-accent text-primary-accent font-bold py-3 px-6 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white hover:scale-105"
                   >
                     {t('heelsBarcelona_whichStyle_sexystyle_cta')}
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    <svg
+                      className="w-4 h-4 ml-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
                     </svg>
                   </Link>
                 </div>
@@ -497,7 +530,9 @@ const HeelsBarcelonaPage: React.FC = () => {
                   </thead>
                   <tbody className="text-sm">
                     <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                      <td className="py-3 px-4 text-neutral/90">{t('heelsBarcelona_table_heels')}</td>
+                      <td className="py-3 px-4 text-neutral/90">
+                        {t('heelsBarcelona_table_heels')}
+                      </td>
                       <td className="py-3 px-4 text-center text-primary-accent font-medium">
                         {t('heelsBarcelona_table_heels_fem')}
                       </td>
@@ -506,7 +541,9 @@ const HeelsBarcelonaPage: React.FC = () => {
                       </td>
                     </tr>
                     <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                      <td className="py-3 px-4 text-neutral/90">{t('heelsBarcelona_table_level')}</td>
+                      <td className="py-3 px-4 text-neutral/90">
+                        {t('heelsBarcelona_table_level')}
+                      </td>
                       <td className="py-3 px-4 text-center text-primary-accent font-medium">
                         {t('heelsBarcelona_table_level_fem')}
                       </td>
@@ -515,7 +552,9 @@ const HeelsBarcelonaPage: React.FC = () => {
                       </td>
                     </tr>
                     <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                      <td className="py-3 px-4 text-neutral/90">{t('heelsBarcelona_table_focus')}</td>
+                      <td className="py-3 px-4 text-neutral/90">
+                        {t('heelsBarcelona_table_focus')}
+                      </td>
                       <td className="py-3 px-4 text-center text-primary-accent font-medium">
                         {t('heelsBarcelona_table_focus_fem')}
                       </td>
@@ -524,7 +563,9 @@ const HeelsBarcelonaPage: React.FC = () => {
                       </td>
                     </tr>
                     <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                      <td className="py-3 px-4 text-neutral/90">{t('heelsBarcelona_table_emotional')}</td>
+                      <td className="py-3 px-4 text-neutral/90">
+                        {t('heelsBarcelona_table_emotional')}
+                      </td>
                       <td className="py-3 px-4 text-center text-primary-accent font-medium">
                         {t('heelsBarcelona_table_emotional_fem')}
                       </td>
@@ -533,7 +574,9 @@ const HeelsBarcelonaPage: React.FC = () => {
                       </td>
                     </tr>
                     <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                      <td className="py-3 px-4 text-neutral/90">{t('heelsBarcelona_table_teacher')}</td>
+                      <td className="py-3 px-4 text-neutral/90">
+                        {t('heelsBarcelona_table_teacher')}
+                      </td>
                       <td className="py-3 px-4 text-center text-primary-accent font-medium">
                         {t('heelsBarcelona_table_teacher_fem')}
                       </td>
@@ -542,7 +585,9 @@ const HeelsBarcelonaPage: React.FC = () => {
                       </td>
                     </tr>
                     <tr className="hover:bg-white/5 transition-colors">
-                      <td className="py-3 px-4 text-neutral/90">{t('heelsBarcelona_table_ideal')}</td>
+                      <td className="py-3 px-4 text-neutral/90">
+                        {t('heelsBarcelona_table_ideal')}
+                      </td>
                       <td className="py-3 px-4 text-center text-primary-accent font-medium">
                         {t('heelsBarcelona_table_ideal_fem')}
                       </td>

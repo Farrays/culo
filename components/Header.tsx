@@ -108,12 +108,18 @@ const Header: React.FC = () => {
               path: `/${locale}/clases/heels-barcelona`,
               textKey: 'navHeels',
               submenu: [
-                { path: `/${locale}/clases/femmology-sexy-style-en-barcelona`, textKey: 'navFemmology' },
+                {
+                  path: `/${locale}/clases/femmology-sexy-style-en-barcelona`,
+                  textKey: 'navFemmology',
+                },
                 { path: `/${locale}/clases/clases-de-sexy-style`, textKey: 'navSexyStyle' },
               ],
             },
             { path: `/${locale}/clases/hip-hop-barcelona`, textKey: 'navHipHop' },
-            { path: `/${locale}/clases/hip-hop-reggaeton-barcelona`, textKey: 'navHipHopReggaeton' },
+            {
+              path: `/${locale}/clases/hip-hop-reggaeton-barcelona`,
+              textKey: 'navHipHopReggaeton',
+            },
             { path: `/${locale}/clases/reggaeton-cubano-barcelona`, textKey: 'navReggaetonCubano' },
             { path: `/${locale}/clases/sexy-reggaeton-barcelona`, textKey: 'navSexyReggaeton' },
             { path: `/${locale}/clases/twerk-barcelona`, textKey: 'navTwerk' },

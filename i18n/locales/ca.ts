@@ -801,7 +801,7 @@ export const ca = {
   danceClassesHub_style_sexy_style_desc:
     'Feminitat urbana amb actitud. Combina sensualitat, força i presència escènica potent.',
   danceClassesHub_style_heels_barcelona_desc:
-    'Hub de classes de ball en talons a Barcelona: Femmology (dansateràpia + tècnica d\'elit amb Yunaisy Farray) i Sexy Style (diversió + expressió amb Yasmina Fernández). Dos estils, un objectiu: brillar en talons.',
+    "Hub de classes de ball en talons a Barcelona: Femmology (dansateràpia + tècnica d'elit amb Yunaisy Farray) i Sexy Style (diversió + expressió amb Yasmina Fernández). Dos estils, un objectiu: brillar en talons.",
   danceClassesHub_style_twerk_desc:
     "Enforteix glutis ballant. Aprèn aïllacions, control muscular i moviments d'impacte.",
   danceClassesHub_style_commercial_dance_desc:
@@ -1264,7 +1264,7 @@ export const ca = {
   danzasUrbanas_style_reggaeton_cubano_seo:
     "Reggaeton autèntic de L'Havana: flow cubà, reparto, musicalitat i sabor caribenya directe de Cuba. Aprèn l'essència original del reggaeton amb tècnica, actitud i cultura del barri.",
   danzasUrbanas_style_heels_barcelona_seo:
-    'Hub de classes en talons: Femmology (dansateràpia + tècnica d\'elit amb Yunaisy Farray) i Sexy Style (diversió sense pressió amb Yasmina Fernández). Dos estils, un objectiu: brillar en talons.',
+    "Hub de classes en talons: Femmology (dansateràpia + tècnica d'elit amb Yunaisy Farray) i Sexy Style (diversió sense pressió amb Yasmina Fernández). Dos estils, un objectiu: brillar en talons.",
 
   danzasUrbanas_why_title:
     'La Diferència FIDC: Per què triar la nostra Acadèmia de danses urbanes a Barcelona?',
@@ -3643,8 +3643,7 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
   // ====================
   // HEELS BARCELONA PAGE (Category Hub Page)
   // ====================
-  heelsBarcelona_title:
-    "Classes de Heels a Barcelona | Femmology i Sexy Style | Farray's Center",
+  heelsBarcelona_title: "Classes de Heels a Barcelona | Femmology i Sexy Style | Farray's Center",
   heelsBarcelona_description:
     'Aprèn a ballar amb talons amb elegància i sensualitat a Barcelona. Classes de Femmology Heels i Sexy Style amb Yunaisy Farray, reconeguda per CID-UNESCO. Tots els nivells.',
   heelsBarcelona_breadcrumb_home: 'Inici',
@@ -3659,25 +3658,21 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
   heelsBarcelona_whatIs_title: 'Què són les Classes de Heels?',
   heelsBarcelona_whatIs_definition:
     "Les classes de Heels són disciplines de ball on aprens a moure't i ballar amb talons alts de forma segura, elegant i sensual. Combina tècniques de dansa contemporània, jazz i expressió corporal amb l'ús de talons, desenvolupant postura, equilibri, força i confiança. És molt més que ballar: és una forma d'apoderament femení i connexió amb la teva sensualitat.",
-  heelsBarcelona_whatIs_benefits_title:
-    'Beneficis de ballar amb talons amb el Mètode Farray®:',
-  heelsBarcelona_whatIs_benefits_list1:
-    'Millora la teva postura, alineació corporal i equilibri',
-  heelsBarcelona_whatIs_benefits_list2:
-    'Enforteix cames, glutis i core mentre balles',
-  heelsBarcelona_whatIs_benefits_list3:
-    "Desenvolupa coordinació, elegància i presència escènica",
+  heelsBarcelona_whatIs_benefits_title: 'Beneficis de ballar amb talons amb el Mètode Farray®:',
+  heelsBarcelona_whatIs_benefits_list1: 'Millora la teva postura, alineació corporal i equilibri',
+  heelsBarcelona_whatIs_benefits_list2: 'Enforteix cames, glutis i core mentre balles',
+  heelsBarcelona_whatIs_benefits_list3: 'Desenvolupa coordinació, elegància i presència escènica',
   heelsBarcelona_whatIs_benefits_list4:
     'Connecta amb la teva feminitat i sensualitat de forma sana',
   heelsBarcelona_whatIs_benefits_list5:
     'Guanya seguretat per caminar i ballar amb talons a qualsevol event',
   heelsBarcelona_whatIs_benefits_list6:
-    "Allibera estrès i augmenta la teva autoestima amb cada classe",
+    'Allibera estrès i augmenta la teva autoestima amb cada classe',
 
   // Styles Section
   heelsBarcelona_styles_title: 'Estils de Heels que Oferim',
   heelsBarcelona_styles_description:
-    'Dues disciplines úniques per expressar la teva feminitat i sensualitat a través del moviment. Tria el teu estil o combina\'ls per a un desenvolupament complet.',
+    "Dues disciplines úniques per expressar la teva feminitat i sensualitat a través del moviment. Tria el teu estil o combina'ls per a un desenvolupament complet.",
 
   // Style Cards SEO Text
   heelsBarcelona_style_femmology_title: 'Femmology Heels',
@@ -3688,8 +3683,7 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
     'Ball sensual amb talons amb actitud i llibertat expressiva. Moviments de maluc, ones corporals, floorwork i coreografies que potencien la teva feminitat. Per a totes les edats i nivells.',
 
   // Which Style to Choose Section (Point 2 - SEO CRITICAL)
-  heelsBarcelona_whichStyle_title:
-    'Femmology o Sexy Style? Troba la Teva Disciplina Perfecta',
+  heelsBarcelona_whichStyle_title: 'Femmology o Sexy Style? Troba la Teva Disciplina Perfecta',
   heelsBarcelona_whichStyle_intro:
     "Femmology és dansateràpia: tècnica exigent + treball emocional. Sexy Style és diversió: llibertat expressiva + coreografies sensuals. Descobreix quin s'adapta millor a tu.",
 
@@ -3697,12 +3691,16 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
   heelsBarcelona_whichStyle_femmology_title: 'Femmology',
   heelsBarcelona_whichStyle_femmology_subtitle: 'Dansateràpia + Tècnica amb Talons',
   heelsBarcelona_whichStyle_femmology_for: 'És per a tu si busques...',
-  heelsBarcelona_whichStyle_femmology_point1: 'Treballar pors, inseguretats i bloquejos emocionals a través de la dansa',
-  heelsBarcelona_whichStyle_femmology_point2: "Alta exigència tècnica amb una mestra d'elit (Yunaisy Farray)",
+  heelsBarcelona_whichStyle_femmology_point1:
+    'Treballar pors, inseguretats i bloquejos emocionals a través de la dansa',
+  heelsBarcelona_whichStyle_femmology_point2:
+    "Alta exigència tècnica amb una mestra d'elit (Yunaisy Farray)",
   heelsBarcelona_whichStyle_femmology_point3: 'Autoconeixement, autoestima i acceptació corporal',
-  heelsBarcelona_whichStyle_femmology_point4: "Fusió d'estils: Hip Hop, Cabaret, Street Jazz, Funky",
-  heelsBarcelona_whichStyle_femmology_point5: 'Aprendre a utilitzar cabell, terra, dissociació corporal',
-  heelsBarcelona_whichStyle_femmology_point6: "Estimar-te més cada dia, bonica dona",
+  heelsBarcelona_whichStyle_femmology_point4:
+    "Fusió d'estils: Hip Hop, Cabaret, Street Jazz, Funky",
+  heelsBarcelona_whichStyle_femmology_point5:
+    'Aprendre a utilitzar cabell, terra, dissociació corporal',
+  heelsBarcelona_whichStyle_femmology_point6: 'Estimar-te més cada dia, bonica dona',
 
   heelsBarcelona_whichStyle_sexystyle_title: 'Sexy Style',
   heelsBarcelona_whichStyle_sexystyle_subtitle: 'Llibertat Expressiva + Diversió',
@@ -3741,7 +3739,7 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
 
   heelsBarcelona_whichStyle_combine_title: 'Puc combinar ambdós estils?',
   heelsBarcelona_whichStyle_combine_text:
-    "Sí! Moltes alumnes fan tots dos. Femmology et transforma per dins (pors, bloquejos, autoestima) mentre desenvolupes tècnica exigent amb Yunaisy. Sexy Style et dona llibertat per gaudir sense pressió. Junts, et converteixen en una dona més completa per dins i per fora.",
+    'Sí! Moltes alumnes fan tots dos. Femmology et transforma per dins (pors, bloquejos, autoestima) mentre desenvolupes tècnica exigent amb Yunaisy. Sexy Style et dona llibertat per gaudir sense pressió. Junts, et converteixen en una dona més completa per dins i per fora.',
 
   // Why Choose Section (Value Pillars)
   heelsBarcelona_why_title: "Per què aprendre Heels a Farray's Center?",
@@ -3751,7 +3749,7 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
   heelsBarcelona_why_reason2_title: 'Yunaisy Farray - Creadora del Mètode',
   heelsBarcelona_why_reason2_desc:
     'Aprèn amb la creadora del Mètode Farray®, actriu de Street Dance 2 i referent internacional en dansa femenina. Experiència i passió a cada classe.',
-  heelsBarcelona_why_reason3_title: "Enfocament en Feminitat i Apoderament",
+  heelsBarcelona_why_reason3_title: 'Enfocament en Feminitat i Apoderament',
   heelsBarcelona_why_reason3_desc:
     'Les nostres classes van més enllà de la tècnica: treballem autoestima, expressió corporal i connexió amb la teva feminitat en un ambient segur i respectuós.',
   heelsBarcelona_why_reason4_title: 'Tècnica Segura per a les Teves Articulacions',
@@ -3773,13 +3771,12 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
     "Alumnes de Femmology i Sexy Style comparteixen la seva experiència a Farray's Center Barcelona. Sense filtres, sense guions. Només històries reals de transformació.",
 
   // FAQ Section
-  heelsBarcelona_faq_title:
-    'Preguntes freqüents sobre les nostres classes de Heels a Barcelona',
+  heelsBarcelona_faq_title: 'Preguntes freqüents sobre les nostres classes de Heels a Barcelona',
 
   // 10 FAQs
   heelsFaqQ1: 'Necessito experiència prèvia per a les classes de Heels?',
   heelsFaqA1:
-    'No necessites experiència prèvia. Tenim nivells des de principiant absolut fins a avançat. L\'important és venir amb ganes d\'explorar la teva feminitat i gaudir del moviment amb talons.',
+    "No necessites experiència prèvia. Tenim nivells des de principiant absolut fins a avançat. L'important és venir amb ganes d'explorar la teva feminitat i gaudir del moviment amb talons.",
 
   heelsFaqQ2: 'Quins talons necessito per a les classes?',
   heelsFaqA2:
@@ -3787,11 +3784,11 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
 
   heelsFaqQ3: 'Les classes de Heels són només per a dones?',
   heelsFaqA3:
-    'Les nostres classes de Heels estan obertes a totes les persones que vulguin explorar aquest estil de ball, sense importar el gènere. L\'important és l\'actitud i les ganes d\'aprendre.',
+    "Les nostres classes de Heels estan obertes a totes les persones que vulguin explorar aquest estil de ball, sense importar el gènere. L'important és l'actitud i les ganes d'aprendre.",
 
   heelsFaqQ4: 'Quina diferència hi ha entre Femmology i Sexy Style?',
   heelsFaqA4:
-    'Femmology Heels s\'enfoca en elegància, tècnica de caminar amb talons, postura i sensualitat refinada. Sexy Style és més lliure, amb més moviment de maluc, ones corporals i treball de terra. Ambdós desenvolupen feminitat però amb enfocaments diferents.',
+    "Femmology Heels s'enfoca en elegància, tècnica de caminar amb talons, postura i sensualitat refinada. Sexy Style és més lliure, amb més moviment de maluc, ones corporals i treball de terra. Ambdós desenvolupen feminitat però amb enfocaments diferents.",
 
   heelsFaqQ5: 'És perillós ballar amb talons? Puc lesionar-me?',
   heelsFaqA5:
@@ -3799,7 +3796,7 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
 
   heelsFaqQ6: 'Puc venir amb talons baixos o sense talons al principi?',
   heelsFaqA6:
-    'Sí. Si ets principiant o tens alguna molèstia, pots començar amb talons més baixos o fins i tot sense talons per aprendre la tècnica bàsica. L\'objectiu és que et sentis còmoda i segura.',
+    "Sí. Si ets principiant o tens alguna molèstia, pots començar amb talons més baixos o fins i tot sense talons per aprendre la tècnica bàsica. L'objectiu és que et sentis còmoda i segura.",
 
   heelsFaqQ7: 'Quant temps triguen a poder ballar bé amb talons?',
   heelsFaqA7:
@@ -3807,13 +3804,13 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
 
   heelsFaqQ8: 'Quina roba he de portar a les classes de Heels?',
   heelsFaqA8:
-    'Roba que et faci sentir bé i permeti llibertat de moviment: pantalons curts, leggings, body, top. L\'important és que puguis veure\'t al mirall i sentir-te còmoda. Porta els teus talons i genolleres si en tens.',
+    "Roba que et faci sentir bé i permeti llibertat de moviment: pantalons curts, leggings, body, top. L'important és que puguis veure't al mirall i sentir-te còmoda. Porta els teus talons i genolleres si en tens.",
 
   heelsFaqQ9: 'Organitzeu showcases o events on pugui ballar?',
   heelsFaqA9:
-    'Sí. Cada any organitzem una Gala Anual en un teatre professional de Barcelona on les alumnes de Heels poden presentar coreografies preparades durant el curs. És una experiència única d\'apoderament.',
+    "Sí. Cada any organitzem una Gala Anual en un teatre professional de Barcelona on les alumnes de Heels poden presentar coreografies preparades durant el curs. És una experiència única d'apoderament.",
 
-  heelsFaqQ10: 'On és l\'escola i com contacto?',
+  heelsFaqQ10: "On és l'escola i com contacto?",
   heelsFaqA10:
     'Som al Carrer Entença 100, 08015 Barcelona (a 5 min de Plaça Espanya i Sants).<br/><br/>📞 <strong>Telèfon:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
 
@@ -3823,11 +3820,11 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
 
   heelsFaqQ12: 'Quins beneficis té ballar amb talons per al meu cos i ment?',
   heelsFaqA12:
-    'Ballar amb talons enforteix cames, glutis i core, millora la postura i l\'equilibri. A nivell mental, augmenta la confiança, l\'autoestima i la connexió amb la teva feminitat. A Femmology a més treballem pors, inseguretats i bloquejos emocionals a través de la dansateràpia.',
+    "Ballar amb talons enforteix cames, glutis i core, millora la postura i l'equilibri. A nivell mental, augmenta la confiança, l'autoestima i la connexió amb la teva feminitat. A Femmology a més treballem pors, inseguretats i bloquejos emocionals a través de la dansateràpia.",
 
   // CTA Final
   heelsBarcelona_cta_title: 'Descobreix el Teu Poder amb Talons',
-  heelsBarcelona_cta_subtitle: 'La teva primera classe de Heels t\'està esperant.',
+  heelsBarcelona_cta_subtitle: "La teva primera classe de Heels t'està esperant.",
   heelsBarcelona_cta_description:
     "Uneix-te a centenars d'alumnes que estan descobrint la seva feminitat, guanyant confiança i brillant amb talons a Farray's Center Barcelona. Femmology, Sexy Style i molt més amb l'exclusiu Mètode Farray® creat per Yunaisy Farray.",
 

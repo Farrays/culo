@@ -4521,8 +4521,7 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   // ====================
   // HEELS BARCELONA PAGE (Category Hub Page)
   // ====================
-  heelsBarcelona_title:
-    "Clases de Heels en Barcelona | Femmology y Sexy Style | Farray's Center",
+  heelsBarcelona_title: "Clases de Heels en Barcelona | Femmology y Sexy Style | Farray's Center",
   heelsBarcelona_description:
     'Aprende a bailar en tacones con elegancia y sensualidad en Barcelona. Clases de Femmology Heels y Sexy Style con Yunaisy Farray, reconocida por CID-UNESCO. Todos los niveles.',
   heelsBarcelona_breadcrumb_home: 'Inicio',
@@ -4537,20 +4536,14 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   heelsBarcelona_whatIs_title: '¿Qué son las Clases de Heels?',
   heelsBarcelona_whatIs_definition:
     'Las clases de Heels son disciplinas de baile donde aprendes a moverte y bailar con tacones altos de forma segura, elegante y sensual. Combina técnicas de danza contemporánea, jazz y expresión corporal con el uso de tacones, desarrollando postura, equilibrio, fuerza y confianza. Es mucho más que bailar: es una forma de empoderamiento femenino y conexión con tu sensualidad.',
-  heelsBarcelona_whatIs_benefits_title:
-    'Beneficios de bailar en tacones con el Método Farray®:',
-  heelsBarcelona_whatIs_benefits_list1:
-    'Mejora tu postura, alineación corporal y equilibrio',
-  heelsBarcelona_whatIs_benefits_list2:
-    'Fortalece piernas, glúteos y core mientras bailas',
-  heelsBarcelona_whatIs_benefits_list3:
-    'Desarrolla coordinación, elegancia y presencia escénica',
-  heelsBarcelona_whatIs_benefits_list4:
-    'Conecta con tu feminidad y sensualidad de forma sana',
+  heelsBarcelona_whatIs_benefits_title: 'Beneficios de bailar en tacones con el Método Farray®:',
+  heelsBarcelona_whatIs_benefits_list1: 'Mejora tu postura, alineación corporal y equilibrio',
+  heelsBarcelona_whatIs_benefits_list2: 'Fortalece piernas, glúteos y core mientras bailas',
+  heelsBarcelona_whatIs_benefits_list3: 'Desarrolla coordinación, elegancia y presencia escénica',
+  heelsBarcelona_whatIs_benefits_list4: 'Conecta con tu feminidad y sensualidad de forma sana',
   heelsBarcelona_whatIs_benefits_list5:
     'Gana seguridad para caminar y bailar con tacones en cualquier evento',
-  heelsBarcelona_whatIs_benefits_list6:
-    'Libera estrés y aumenta tu autoestima con cada clase',
+  heelsBarcelona_whatIs_benefits_list6: 'Libera estrés y aumenta tu autoestima con cada clase',
 
   // Styles Section
   heelsBarcelona_styles_title: 'Estilos de Heels que Ofrecemos',
@@ -4566,8 +4559,7 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
     'Baile sensual en tacones con actitud y libertad expresiva. Movimientos de cadera, ondas corporales, floorwork y coreografías que potencian tu feminidad. Para todas las edades y niveles.',
 
   // Which Style to Choose Section (Point 2 - SEO CRITICAL)
-  heelsBarcelona_whichStyle_title:
-    '¿Femmology o Sexy Style? Encuentra tu Disciplina Perfecta',
+  heelsBarcelona_whichStyle_title: '¿Femmology o Sexy Style? Encuentra tu Disciplina Perfecta',
   heelsBarcelona_whichStyle_intro:
     'Femmology es danzaterapia: técnica exigente + trabajo emocional. Sexy Style es diversión: libertad expresiva + coreografías sensuales. Descubre cuál se adapta mejor a ti.',
 
@@ -4575,10 +4567,13 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   heelsBarcelona_whichStyle_femmology_title: 'Femmology',
   heelsBarcelona_whichStyle_femmology_subtitle: 'Danzaterapia + Técnica en Tacones',
   heelsBarcelona_whichStyle_femmology_for: 'Es para ti si buscas...',
-  heelsBarcelona_whichStyle_femmology_point1: 'Trabajar miedos, inseguridades y bloqueos emocionales a través de la danza',
-  heelsBarcelona_whichStyle_femmology_point2: 'Alta exigencia técnica con una maestra de élite (Yunaisy Farray)',
+  heelsBarcelona_whichStyle_femmology_point1:
+    'Trabajar miedos, inseguridades y bloqueos emocionales a través de la danza',
+  heelsBarcelona_whichStyle_femmology_point2:
+    'Alta exigencia técnica con una maestra de élite (Yunaisy Farray)',
   heelsBarcelona_whichStyle_femmology_point3: 'Autoconocimiento, autoestima y aceptación corporal',
-  heelsBarcelona_whichStyle_femmology_point4: 'Fusión de estilos: Hip Hop, Cabaret, Street Jazz, Funky',
+  heelsBarcelona_whichStyle_femmology_point4:
+    'Fusión de estilos: Hip Hop, Cabaret, Street Jazz, Funky',
   heelsBarcelona_whichStyle_femmology_point5: 'Aprender a usar pelo, suelo, disociación corporal',
   heelsBarcelona_whichStyle_femmology_point6: 'Quererte más cada día, hermosa mujer',
 
@@ -4587,7 +4582,8 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   heelsBarcelona_whichStyle_sexystyle_for: 'Es para ti si buscas...',
   heelsBarcelona_whichStyle_sexystyle_point1: 'Divertirte bailando sin presión técnica elevada',
   heelsBarcelona_whichStyle_sexystyle_point2: 'Movimientos de cadera, ondas corporales y actitud',
-  heelsBarcelona_whichStyle_sexystyle_point3: 'Coreografías sensuales y pegadizas para pasarlo bien',
+  heelsBarcelona_whichStyle_sexystyle_point3:
+    'Coreografías sensuales y pegadizas para pasarlo bien',
   heelsBarcelona_whichStyle_sexystyle_point4: 'Floorwork y expresión corporal libre',
   heelsBarcelona_whichStyle_sexystyle_point5: 'Sentirte sexy sin necesidad de tacones altos',
   heelsBarcelona_whichStyle_sexystyle_point6: 'Un ambiente más relajado y accesible',
@@ -4651,8 +4647,7 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
     "Alumnas de Femmology y Sexy Style comparten su experiencia en Farray's Center Barcelona. Sin filtros, sin guiones. Solo historias reales de transformación.",
 
   // FAQ Section
-  heelsBarcelona_faq_title:
-    'Preguntas frecuentes sobre nuestras clases de Heels en Barcelona',
+  heelsBarcelona_faq_title: 'Preguntas frecuentes sobre nuestras clases de Heels en Barcelona',
 
   // 10 FAQs
   heelsFaqQ1: '¿Necesito experiencia previa para las clases de Heels?',
