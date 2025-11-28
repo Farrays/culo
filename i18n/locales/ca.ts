@@ -726,6 +726,7 @@ export const ca = {
   danceClassesHub_style_sexy_reggaeton: 'Sexy Reggaeton',
   danceClassesHub_style_sexy_style: 'Sexy Style',
   danceClassesHub_style_twerk: 'Twerk',
+  danceClassesHub_style_heels_barcelona: 'Heels Barcelona',
   danceClassesHub_style_commercial_dance: 'Commercial Dance',
   danceClassesHub_style_k_pop: 'K-Pop',
   danceClassesHub_style_salsa_cubana: 'Salsa Cubana',
@@ -793,6 +794,8 @@ export const ca = {
     'Sensualitat amb control i ritme llatí. Desenvolupa confiança ballant amb personalitat pròpia.',
   danceClassesHub_style_sexy_style_desc:
     'Feminitat urbana amb actitud. Combina sensualitat, força i presència escènica potent.',
+  danceClassesHub_style_heels_barcelona_desc:
+    'Hub de classes de ball en talons a Barcelona: Femmology (dansateràpia + tècnica d\'elit amb Yunaisy Farray) i Sexy Style (diversió + expressió amb Yasmina Fernández). Dos estils, un objectiu: brillar en talons.',
   danceClassesHub_style_twerk_desc:
     "Enforteix glutis ballant. Aprèn aïllacions, control muscular i moviments d'impacte.",
   danceClassesHub_style_commercial_dance_desc:
@@ -1254,6 +1257,8 @@ export const ca = {
     'Fusió explosiva de Hip Hop americà i Reggaeton llatí. Combina groove urbà, bounce i flow caribenya en una sola classe. Ideal per desenvolupar versatilitat, cardio intens i ritme complet.',
   danzasUrbanas_style_reggaeton_cubano_seo:
     "Reggaeton autèntic de L'Havana: flow cubà, reparto, musicalitat i sabor caribenya directe de Cuba. Aprèn l'essència original del reggaeton amb tècnica, actitud i cultura del barri.",
+  danzasUrbanas_style_heels_barcelona_seo:
+    'Hub de classes en talons: Femmology (dansateràpia + tècnica d\'elit amb Yunaisy Farray) i Sexy Style (diversió sense pressió amb Yasmina Fernández). Dos estils, un objectiu: brillar en talons.',
 
   danzasUrbanas_why_title:
     'La Diferència FIDC: Per què triar la nostra Acadèmia de danses urbanes a Barcelona?',

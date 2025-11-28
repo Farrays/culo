@@ -732,6 +732,7 @@ export const fr = {
   danceClassesHub_style_sexy_reggaeton: 'Sexy Reggaeton',
   danceClassesHub_style_sexy_style: 'Sexy Style',
   danceClassesHub_style_twerk: 'Twerk',
+  danceClassesHub_style_heels_barcelona: 'Heels Barcelona',
   danceClassesHub_style_commercial_dance: 'Commercial Dance',
   danceClassesHub_style_k_pop: 'K-Pop',
   danceClassesHub_style_salsa_cubana: 'Salsa Cubaine',
@@ -800,6 +801,8 @@ export const fr = {
     'Sensualité avec contrôle et rythme latin. Développez la confiance en dansant avec votre propre personnalité.',
   danceClassesHub_style_sexy_style_desc:
     'Féminité urbaine avec attitude. Combine sensualité, force et présence scénique puissante.',
+  danceClassesHub_style_heels_barcelona_desc:
+    'Hub de cours de danse en talons à Barcelone : Femmology (danse-thérapie + technique d\'élite avec Yunaisy Farray) et Sexy Style (plaisir + expression avec Yasmina Fernández). Deux styles, un objectif : briller en talons.',
   danceClassesHub_style_twerk_desc:
     "Renforcez les fessiers en dansant. Apprenez isolations, contrôle musculaire et mouvements d'impact.",
   danceClassesHub_style_commercial_dance_desc:
@@ -1146,6 +1149,8 @@ export const fr = {
     'Fusion explosive de Hip Hop américain et Reggaeton latino. Combine groove urbain, bounce et flow caribéen en un seul cours. Idéal pour développer polyvalence, cardio intense et rythme complet.',
   danzasUrbanas_style_reggaeton_cubano_seo:
     "Reggaeton authentique de La Havane : flow cubain, reparto, musicalité et saveur caribéenne directement de Cuba. Apprenez l'essence originale du reggaeton avec technique, attitude et culture de quartier.",
+  danzasUrbanas_style_heels_barcelona_seo:
+    'Hub de cours en talons : Femmology (danse-thérapie + technique d\'élite avec Yunaisy Farray) et Sexy Style (plaisir sans pression avec Yasmina Fernández). Deux styles, un objectif : briller en talons.',
 
   danzasUrbanas_why_title:
     'La Différence FIDC : Pourquoi choisir notre Académie de danses urbaines à Barcelone ?',

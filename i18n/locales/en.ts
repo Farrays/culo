@@ -727,6 +727,7 @@ export const en = {
   danceClassesHub_style_sexy_reggaeton: 'Sexy Reggaeton',
   danceClassesHub_style_sexy_style: 'Sexy Style',
   danceClassesHub_style_twerk: 'Twerk',
+  danceClassesHub_style_heels_barcelona: 'Heels Barcelona',
   danceClassesHub_style_commercial_dance: 'Commercial Dance',
   danceClassesHub_style_k_pop: 'K-Pop',
   danceClassesHub_style_salsa_cubana: 'Cuban Salsa',
@@ -795,6 +796,8 @@ export const en = {
     'Sensuality with control and Latin rhythm. Build confidence dancing with your own personality.',
   danceClassesHub_style_sexy_style_desc:
     'Urban femininity with attitude. Combines sensuality, strength and powerful stage presence.',
+  danceClassesHub_style_heels_barcelona_desc:
+    'Heels dancing hub in Barcelona: Femmology (dance therapy + elite technique with Yunaisy Farray) and Sexy Style (fun + expression with Yasmina Fernández). Two styles, one goal: to shine in heels.',
   danceClassesHub_style_twerk_desc:
     'Strengthen glutes while dancing. Learn isolations, muscle control and impactful movements.',
   danceClassesHub_style_commercial_dance_desc:
@@ -1269,6 +1272,8 @@ export const en = {
     'Explosive fusion of American Hip Hop and Latin Reggaeton. Combines urban groove, bounce and Caribbean flow in one class. Ideal for developing versatility, intense cardio and complete rhythm.',
   danzasUrbanas_style_reggaeton_cubano_seo:
     'Authentic Havana reggaeton: Cuban flow, reparto, musicality and Caribbean flavor straight from Cuba. Learn the original essence of reggaeton with technique, attitude and neighborhood culture.',
+  danzasUrbanas_style_heels_barcelona_seo:
+    'Heels dancing hub: Femmology (dance therapy + elite technique with Yunaisy Farray) and Sexy Style (fun without pressure with Yasmina Fernández). Two styles, one goal: to shine in heels.',
 
   danzasUrbanas_why_title: 'The FIDC Difference: Why choose our Urban Dance Academy in Barcelona?',
 

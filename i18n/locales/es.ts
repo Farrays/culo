@@ -497,6 +497,9 @@ export const es = {
   danceClassesHub_style_afrobeat: 'Afrobeat',
   danceClassesHub_style_dancehall: 'Dancehall',
   danceClassesHub_style_femmology_heels: 'Femmology Heels',
+  danceClassesHub_style_heels_barcelona: 'Heels Barcelona',
+  danceClassesHub_style_heels_barcelona_desc:
+    'Hub de clases de baile en tacones en Barcelona: Femmology (danzaterapia + técnica de élite con Yunaisy Farray) y Sexy Style (diversión + expresión con Yasmina Fernández). Aprende a bailar con tacones de forma segura, desarrolla feminidad, sensualidad, postura y confianza. Para todos los niveles.',
   danceClassesHub_style_hip_hop: 'Hip Hop',
   danceClassesHub_style_hip_hop_reggaeton: 'Hip Hop Reggaeton',
   danceClassesHub_style_reggaeton_cubano: 'Reggaeton Cubano (Reparto)',
@@ -1769,6 +1772,8 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
     'Baile comercial coreano: coreografías de precisión inspiradas en BTS, Blackpink, Stray Kids. Sincronización perfecta, formaciones grupales, detalles faciales. Ideal para amantes del K-Pop y danza comercial.',
   danzasUrbanas_style_femmology_heels_seo:
     'Técnica femenina en tacones: fusión de sensualidad, elegancia y fuerza. Desarrolla confianza, control corporal, aislaciones y presencia escénica. Entrenamiento completo de piernas, core y feminidad.',
+  danzasUrbanas_style_heels_barcelona_seo:
+    'Hub de clases en tacones: Femmology (danzaterapia + técnica de élite con Yunaisy Farray) y Sexy Style (diversión sin presión con Yasmina Fernández). Dos estilos, un objetivo: brillar en tacones.',
   danzasUrbanas_style_sexy_style_seo:
     'Sensualidad en movimiento: técnica en tacones que combina feminidad, confianza y control corporal. Desarrolla elegancia, fuerza de piernas y expresión sexy sin perder el respeto.',
   danzasUrbanas_style_sexy_reggaeton_seo:

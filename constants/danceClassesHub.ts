@@ -42,7 +42,7 @@ export const HUB_CATEGORIES: HubCategory[] = [
     ],
   },
 
-  // 2. Danzas Urbanas / Hip Hop
+  // 2. Danzas Urbanas / Hip Hop (ordenado alfabéticamente)
   {
     key: 'urban',
     titleKey: 'classCatUrbanTitle',
@@ -52,22 +52,23 @@ export const HUB_CATEGORIES: HubCategory[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1547153760-18fc9c88c1c8?w=800&h=600&fit=crop&q=80&auto=format',
     featuredStyles: [
-      { key: 'dancehall', url: '/clases/dancehall-barcelona/' },
-      { key: 'k_pop', url: '/clases/k-pop-barcelona/' },
-      { key: 'hip_hop', url: '/clases/hip-hop-barcelona/' },
+      { key: 'dancehall', url: '/clases/dancehall-barcelona' },
+      { key: 'heels_barcelona', url: '/clases/heels-barcelona' },
+      { key: 'hip_hop_reggaeton', url: '/clases/hip-hop-reggaeton-barcelona' },
     ],
     allStyles: [
-      { key: 'afrobeat', url: '/clases/afrobeat-barcelona/' },
-      { key: 'dancehall', url: '/clases/dancehall-barcelona/' },
-      { key: 'femmology_heels', url: '/clases/femmology-heels-barcelona/' },
-      { key: 'hip_hop', url: '/clases/hip-hop-barcelona/' },
-      { key: 'hip_hop_reggaeton', url: '/clases/hip-hop-reggaeton-barcelona/' },
-      { key: 'reggaeton_cubano', url: '/clases/reggaeton-cubano-reparto-barcelona/' },
-      { key: 'sexy_reggaeton', url: '/clases/sexy-reggaeton-barcelona/' },
-      { key: 'sexy_style', url: '/clases/sexy-style-barcelona/' },
-      { key: 'twerk', url: '/clases/twerk-barcelona/' },
-      { key: 'commercial_dance', url: '/clases/commercial-dance-barcelona/' },
-      { key: 'k_pop', url: '/clases/k-pop-barcelona/' },
+      // Ordenado alfabéticamente - URLs sin barra final
+      { key: 'afrobeat', url: '/clases/afrobeats-barcelona' },
+      { key: 'commercial_dance', url: '/clases/commercial-dance-barcelona' },
+      { key: 'dancehall', url: '/clases/dancehall-barcelona' },
+      { key: 'heels_barcelona', url: '/clases/heels-barcelona' },
+      { key: 'hip_hop', url: '/clases/hip-hop-barcelona' },
+      { key: 'hip_hop_reggaeton', url: '/clases/hip-hop-reggaeton-barcelona' },
+      { key: 'k_pop', url: '/clases/k-pop-barcelona' },
+      { key: 'reggaeton_cubano', url: '/clases/reggaeton-cubano-barcelona' },
+      { key: 'sexy_reggaeton', url: '/clases/sexy-reggaeton-barcelona' },
+      { key: 'sexy_style', url: '/clases/clases-de-sexy-style' },
+      { key: 'twerk', url: '/clases/twerk-barcelona' },
     ],
   },
 
