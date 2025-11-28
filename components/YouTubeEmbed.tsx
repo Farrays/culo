@@ -83,25 +83,39 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   useEffect(() => {
     if (!isLoaded) return;
 
+    let isMounted = true;
+
     // Función para inicializar el player
     const initPlayer = () => {
-      if (!containerRef.current || playerRef.current) return;
+      if (!containerRef.current || playerRef.current || !isMounted) return;
 
       playerRef.current = new window.YT.Player(containerRef.current, {
         videoId: videoId,
         playerVars: {
           autoplay: 1,
-          rel: 0,
+          rel: 0, // Solo videos del mismo canal (no externos)
           modestbranding: 1,
           playsinline: 1,
+          controls: 1,
+          fs: 1, // Permitir pantalla completa
+          iv_load_policy: 3, // No mostrar anotaciones
+          showinfo: 0, // No mostrar info del video
         },
         events: {
+          onReady: event => {
+            // Asegurar que el video comienza a reproducirse
+            event.target.playVideo();
+          },
           onStateChange: event => {
-            // Cuando el video termina, volver al thumbnail
+            // Cuando el video termina, volver al thumbnail inmediatamente
             if (event.data === window.YT.PlayerState.ENDED) {
-              playerRef.current?.destroy();
-              playerRef.current = null;
-              setIsLoaded(false);
+              if (playerRef.current) {
+                playerRef.current.destroy();
+                playerRef.current = null;
+              }
+              if (isMounted) {
+                setIsLoaded(false);
+              }
             }
           },
         },
@@ -110,7 +124,8 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
 
     // Si la API ya está cargada, inicializar directamente
     if (window.YT && window.YT.Player) {
-      initPlayer();
+      // Pequeño delay para asegurar que el DOM está listo
+      window.setTimeout(initPlayer, 50);
     } else {
       // Cargar la API de YouTube
       const existingScript = document.querySelector(
@@ -124,15 +139,25 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
         document.body.appendChild(script);
       }
 
-      // Callback cuando la API está lista
-      const previousCallback = window.onYouTubeIframeAPIReady;
-      window.onYouTubeIframeAPIReady = () => {
-        previousCallback?.();
-        initPlayer();
-      };
+      // Usar un array de callbacks para manejar múltiples componentes
+      const win = window as unknown as { ytCallbacks?: (() => void)[] };
+      const existingCallbacks = win.ytCallbacks || [];
+      existingCallbacks.push(initPlayer);
+      win.ytCallbacks = existingCallbacks;
+
+      // Solo configurar el callback global si no existe
+      if (!window.onYouTubeIframeAPIReady) {
+        window.onYouTubeIframeAPIReady = () => {
+          const w = window as unknown as { ytCallbacks?: (() => void)[] };
+          const callbacks = w.ytCallbacks || [];
+          callbacks.forEach(cb => cb());
+          w.ytCallbacks = [];
+        };
+      }
     }
 
     return () => {
+      isMounted = false;
       if (playerRef.current) {
         playerRef.current.destroy();
         playerRef.current = null;

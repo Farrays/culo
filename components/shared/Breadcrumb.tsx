@@ -93,8 +93,9 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
                       itemScope
                       itemType="https://schema.org/WebPage"
                       itemID={absoluteUrl}
+                      aria-current="page"
                     >
-                      <span itemProp="name" className="text-neutral/90">
+                      <span itemProp="name" className="text-neutral/90 font-medium">
                         {item.name}
                       </span>
                     </span>

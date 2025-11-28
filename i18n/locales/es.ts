@@ -832,6 +832,7 @@ El dancehall ha sido siempre una forma de resistencia cultural y expresión de i
 Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce" (homenaje a Willie Haggart), "Nuh Linga" (no te demores). Cada movimiento cuenta una historia.`,
   readMore: 'Leer Más Sobre la Historia y Cultura',
   readLess: 'Leer Menos',
+  skipToContent: 'Saltar al contenido principal',
 
   // Benefits Section
   dancehallBenefitsTitle: '¿Por Qué Apuntarte a Clases de Dancehall Mejorará Tu Vida?',
@@ -4711,4 +4712,247 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
 
   // View More
   heelsBarcelona_viewMore: 'Ver más →',
+
+  // ===== FEMMOLOGY PAGE =====
+  // SEO & Meta
+  femPageTitle: 'Clases de Femmology en Barcelona | Baile en Tacones con Yunaisy Farray',
+  femMetaDescription:
+    'Aprende a bailar en tacones con Yunaisy Farray, creadora del Método Farray® exclusivo, actriz de Street Dance 2 y maestra UNESCO. Clases de Femmology en exclusiva en Barcelona. ¡Hazte Socia!',
+
+  // Breadcrumb (5 levels: Home > Classes > Urban > Heels > Current)
+  femBreadcrumbHome: 'Inicio',
+  femBreadcrumbClasses: 'Clases de Baile',
+  femBreadcrumbUrban: 'Danzas Urbanas',
+  femBreadcrumbHeels: 'Clases de Heels',
+  femBreadcrumbCurrent: 'Femmology',
+
+  // Hero
+  femHeroTitle: 'Femmology: Empodérate Bailando en Tus Tacones',
+  femHeroSubtitle: 'Un proyecto personal de Yunaisy Farray para que descubras todo tu potencial',
+  femHeroDesc:
+    'Nuestras clases de danza en tacones te llevarán al otro nivel. Aprende con la creadora del Método Farray®, actriz de Street Dance 2 y una de las maestras más reconocidas del mundo.',
+  femHeroLocation: 'EN EXCLUSIVA en Barcelona • Todos los niveles',
+
+  // CTAs
+  femCTA1: '¡Hazte Socia Ahora!',
+  femCTA1Subtext: 'Quedan pocas plazas este mes',
+  femCTA2: 'Reserva tu Clase de Prueba',
+  femCTA2Subtext: 'Válido por tiempo limitado',
+
+  // Stats
+  femTransformationStat: 'Exclusivo',
+  femDanceTherapy: 'Baile en Tacones + Sensualidad',
+  femFemininityGuaranteed: 'Método Farray® único',
+
+  // What Is Section
+  femWhatIsTitle: '¿Qué es Femmology y qué consigues en nuestras clases?',
+  femWhatIsP1:
+    'Femmology es un proyecto personal de Yunaisy Farray pensado para que la mujer descubra todo su potencial a través del baile en tacones. Una disciplina innovadora, en auge en Estados Unidos, que Yunaisy trae en exclusiva a Barcelona.',
+  femWhatIsP2:
+    'A través de la danza, estarás contigo misma, avanzarás en tu autoconocimiento y trabajarás tus propios mecanismos de autoestima y aceptación. Nuestra maestra te ayudará a liberarte de tus tensiones, a aumentar la confianza en ti misma mientras disfrutas de un estilo sexy y moderno.',
+  femWhatIsP3: '"Femmology by Yunaisy Farray: para que te quieras cada día más, hermosa mujer."',
+  femWhatIsP4:
+    'Abierto a todos los niveles, este curso está hecho para quien tiene ganas de descubrirse, tocarse, mirarse y quererse. En nuestras clases se fusionan hip-hop, cabaret, sexy style, street jazz y funky para expresar toda la sensualidad de tu cuerpo.',
+  femWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
+  femWhatIsQuestionAnswer: 'Sí, lo es.',
+  femImageAlt: 'Clases de Femmology en Barcelona - Baile en tacones con Yunaisy Farray',
+
+  // Cultural Section
+  femCulturalShort:
+    'Femmology nace de la fusión entre la danza en tacones, la danzaterapia y la expresión de la feminidad, creada por Yunaisy Farray como herramienta de empoderamiento.',
+  femCulturalFull: `### Origen de Femmology
+
+Femmology es una disciplina creada por Yunaisy Farray, maestra internacional y fundadora de Farray's International Dance Center. Nace de su experiencia como bailarina profesional, su formación en la Escuela Nacional de Arte de Cuba y su profunda conexión con la feminidad como fuente de poder.
+
+A diferencia de otras clases de tacones que se centran solo en coreografías, Femmology integra elementos de danzaterapia para trabajar la autoestima, la conexión corporal y la liberación emocional a través del movimiento.
+
+### Filosofía y metodología
+
+El nombre "Femmology" fusiona "femme" (mujer en francés) con "ology" (estudio de), significando literalmente "el estudio de la feminidad". La metodología se basa en tres pilares:
+
+- **Conexión corporal**: Trabajar la postura, la disociación y el control del cuerpo.
+- **Expresión emocional**: Usar el movimiento para liberar bloqueos y reconectar con las emociones.
+- **Empoderamiento femenino**: Cultivar la confianza, la actitud y el amor propio a través del baile.
+
+### Qué diferencia a Femmology
+
+Lo que hace único a Femmology es que no se trata de "bailar sexy para otros", sino de "sentirte poderosa para ti misma". Cada clase es un espacio seguro donde las mujeres exploran su feminidad sin juicios, aprendiendo a moverse con elegancia y sensualidad desde un lugar de autorespeto y amor propio.
+
+Actualmente, Femmology se imparte exclusivamente en Farray's Center bajo la dirección de Yunaisy Farray, quien ha formado a cientos de mujeres en esta disciplina transformadora.`,
+
+  // Identify Section
+  femIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
+  femIdentify1:
+    'Ya bailas en tacones pero quieres llevar tu técnica al siguiente nivel con una maestra de élite mundial.',
+  femIdentify2:
+    'Quieres aprender a bailar en tacones desde cero, pero no sabes por dónde empezar o qué maestra elegir.',
+  femIdentify3:
+    'Quieres aprender a moverte con elegancia y sensualidad, pero no sabes por dónde empezar.',
+  femIdentify4:
+    'Te falta confianza y sientes que has perdido la conexión con tu feminidad y no sabes cómo recuperarlas.',
+  femIdentify5:
+    'Necesitas hacer deporte pero buscas un espacio donde trabajas no solo tu cuerpo, pero también tus emociones, sin miedo ni perjuicios.',
+  femIdentify6:
+    'Te cuesta sentirte cómoda y sexy con tu propio cuerpo, y evitas mirarte al espejo.',
+
+  // Need Enroll Section
+  femIdentifyTransition: 'Si has dicho "sí" a alguno de estos puntos, ya sabes lo que necesitas.',
+  femNeedEnrollTitle: 'Necesitas Apuntarte a clases de Femmology',
+  femIdentifyAgitate1:
+    'Seguir desconectada de tu feminidad te aleja de vivir plenamente. Cada día que pasa sin reconectar contigo misma es un día menos sintiéndote completa.',
+  femIdentifySolution:
+    "En Farray's Center encontrarás más que clases de baile. Yunaisy Farray ha creado un espacio donde las mujeres se transforman, ganan confianza y descubren una versión de sí mismas que habían olvidado.",
+  femIdentifyClosing:
+    'Tu feminidad no está perdida. Solo está esperando que le des permiso para florecer.',
+
+  // Transform Section - Focused on personal transformation
+  femTransformTitle: 'Imagina tu antes y después',
+  femTransform1Title: 'De principiante a artista',
+  femTransform1Desc:
+    'Dominas la técnica del baile en tacones, la postura, los giros y las transiciones con elegancia y actitud.',
+  femTransform2Title: 'De desconectada a presente',
+  femTransform2Desc:
+    'Aprendes a habitar tu cuerpo, a sentir cada movimiento y a estar presente en el momento. Ya no bailas por fuera: bailas desde dentro.',
+  femTransform3Title: 'De rígida a expresiva',
+  femTransform3Desc:
+    'Liberas bloqueos corporales y emocionales. Tu cuerpo se vuelve más fluido, flexible y expresivo.',
+  femTransform4Title: 'De insegura a empoderada',
+  femTransform4Desc:
+    'Trabajas la actitud, la mirada y la presencia. Sales de cada clase sintiéndote más segura y valiosa.',
+  femTransform5Title: 'De sola a acompañada',
+  femTransform5Desc:
+    'Encuentras una comunidad de mujeres que se apoyan. Compartes el camino con otras que buscan lo mismo que tú.',
+  femTransform6Title: 'De apagada a radiante',
+  femTransform6Desc:
+    'Reconectas con tu energía femenina. Empiezas a brillar no solo cuando bailas, sino en tu día a día.',
+  femTransformCTA: "¿Por qué elegir Farray's Center para Femmology?",
+
+  // Why Choose Section - Balanced reasons
+  femWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
+  femWhyChoose1Desc:
+    'Aprende directamente con Yunaisy Farray, creadora de Femmology, actriz de Street Dance 2 y reconocida internacionalmente por CID-UNESCO.',
+  femWhyChoose2Title: 'Ambiente seguro y sin juicios',
+  femWhyChoose2Desc:
+    'Un espacio donde puedes explorar tu feminidad libremente, rodeada de mujeres que te apoyan.',
+  femWhyChoose3Title: 'Más que baile: danzaterapia',
+  femWhyChoose3Desc:
+    'Femmology trabaja cuerpo, mente y emociones. Cada clase es una sesión de transformación personal.',
+  femWhyChoose4Title: 'Metodología progresiva',
+  femWhyChoose4Desc:
+    'Clases adaptadas a tu nivel. Desde iniciación hasta avanzado, siempre con seguimiento personalizado.',
+  femWhyChoose5Title: 'Instalaciones preparadas de verdad',
+  femWhyChoose5Desc:
+    'Más de 700 m², salas amplias, espejos, sonido profesional, aire acondicionado y ventilación centralizada para entrenar a gusto todo el año.',
+  femWhyChoose6Title: 'Ubicación inmejorable',
+  femWhyChoose6Desc:
+    'Calle Entença 100, entre Plaza España y Sants, a 5 minutos de Plaça Espanya y Sants. Metro, buses y tren a la puerta. Fácil llegar. Fácil volver.',
+
+  // Logos Section
+  femLogosTitle: 'Has podido vernos en…',
+  femLogosIntlFestivalsText: 'y en los mejores festivales de danza del mundo',
+
+  // Teachers Section
+  femTeachersTitle: 'Conoce a Yunaisy Farray',
+  femTeachersSubtitle: 'Creadora de Femmology y una de las maestras más reconocidas del mundo',
+  femTeacher1Specialty: 'Creadora del Método Farray® | Street Dance 2 | CID-UNESCO',
+  femTeacher1Bio:
+    'Yunaisy Farray es bailarina profesional, actriz de "Street Dance 2", finalista de "Got Talent" y creadora del Método Farray® exclusivo. Formada en la Escuela Nacional de Arte de Cuba y reconocida por CID-UNESCO, es una de las maestras de baile más reconocidas del mundo. Como fundadora de Farray\'s Center, trae Femmology en exclusiva a Barcelona.',
+  femTeachersClosing:
+    'Con Yunaisy aprenderás a bailar en tacones como una profesional mientras descubres todo tu potencial femenino.',
+
+  // Schedule Section
+  femScheduleTitle: 'Horario de clases de Femmology',
+  femScheduleSubtitle: 'Clases directamente con Yunaisy Farray',
+
+  // Video Section
+  femVideoTitle: 'Descubre Femmology en acción',
+  femVideoDesc:
+    'Mira cómo se vive una clase de Femmology con Yunaisy Farray: baile en tacones, sensualidad y mucha diversión.',
+
+  // Why Today Section
+  femWhyTodayFullTitle: '¿Por qué hacerte socia de Femmology hoy?',
+  femWhyToday1:
+    'Porque pocas veces tendrás la oportunidad de aprender baile en tacones con una maestra del calibre de Yunaisy Farray.',
+  femWhyToday2:
+    'Porque esta disciplina solo se enseña aquí, en exclusiva en Barcelona. No la encontrarás en ningún otro lugar.',
+  femWhyToday3:
+    'Porque además de aprender a bailar como una profesional, trabajarás tu autoestima y confianza de forma natural.',
+  femWhyTodayClosing1:
+    'Femmology by Yunaisy Farray: para que te quieras cada día más, hermosa mujer.',
+  femWhyTodayClosing2: 'Nuestras clases de danza en tacones te llevarán al otro nivel.',
+
+  // Final CTA Section
+  femFinalCTATitle: 'Únete a las clases más sexys y atrevidas de Barcelona',
+  femFinalCTASubtitle: 'Da el Paso',
+  femFinalCTADesc: 'Las plazas vuelan más rápido que un giro sobre tus zapatos de tacón.',
+  femFinalCTAFunny: 'Femmology by Yunaisy Farray: para que te quieras cada día más.',
+
+  // FAQ Title
+  femFaqTitle: 'Preguntas Frecuentes sobre Femmology en Barcelona',
+
+  // 15 FAQs - Rewritten with heels dancing focus
+  femFaqQ1: '¿Qué es exactamente Femmology?',
+  femFaqA1:
+    'Femmology es un proyecto personal de Yunaisy Farray pensado para que la mujer descubra todo su potencial a través del baile en tacones. Es una disciplina innovadora en auge en Estados Unidos que Yunaisy trae en exclusiva a Barcelona. Fusiona hip-hop, cabaret, sexy style, street jazz y funky para expresar la sensualidad a través del baile en tacones.',
+
+  femFaqQ2: '¿Necesito experiencia previa en baile o en tacones para empezar?',
+  femFaqA2:
+    'No necesitas experiencia previa. Femmology está abierto a todos los niveles: desde principiantes hasta avanzados. Las clases se adaptan a tu ritmo y Yunaisy te guía paso a paso. Este curso está hecho para quien tiene ganas de descubrirse.',
+
+  femFaqQ3: '¿Qué tipo de tacones necesito para las clases de Femmology?',
+  femFaqA3:
+    'El uso de tacones es obligatorio en las clases de Femmology. Recomendamos zapatos tipo Stiletto con suela antideslizante y tira en el tobillo para mayor estabilidad, de 7-9 cm. Si eres principiante, puedes empezar con tacones más bajos e ir subiendo progresivamente.',
+
+  femFaqQ4: '¿Quién es Yunaisy Farray y por qué aprender con ella?',
+  femFaqA4:
+    'Yunaisy Farray es la creadora del Método Farray® exclusivo, fundadora de Farray\'s Center, actriz de "Street Dance 2", finalista de "Got Talent" y maestra reconocida por CID-UNESCO. Formada en la Escuela Nacional de Arte de Cuba, es una de las maestras de baile más reconocidas del mundo.',
+
+  femFaqQ5: '¿Qué beneficios físicos tiene practicar Femmology?',
+  femFaqA5:
+    'Femmology mejora tu postura, te enseña a bailar en tacones, mejora tu ritmo y coordinación motora, te ayuda a disociar las diferentes partes de tu cuerpo, y quemas un montón de calorías mientras bailas. Aprenderás a usar el pelo y el suelo como las profesionales.',
+
+  femFaqQ6: '¿Qué diferencia a Femmology de otras clases de tacones?',
+  femFaqA6:
+    'Femmology es exclusivo de Yunaisy Farray y solo se enseña aquí. Fusiona múltiples estilos (hip-hop, cabaret, sexy style, street jazz, funky) y además de bailar, trabajas tu lado femenino y autoestima. No es solo aprender pasos: es descubrirte y quererte mientras bailas.',
+
+  femFaqQ7: '¿Femmology solo está disponible en Barcelona?',
+  femFaqA7:
+    "Sí. Femmology es una disciplina en auge en Estados Unidos que Yunaisy Farray trae en exclusiva a Barcelona, a Farray's International Dance Center (Calle Entença 100, 08015 Barcelona, a 5 minutos de Plaza España y Estación de Sants). No encontrarás esta formación en ningún otro lugar de España.",
+
+  femFaqQ8: '¿Puedo probar una clase de Femmology antes de inscribirme?',
+  femFaqA8:
+    'Sí. Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. Pulsa "Reserva tu Clase de Prueba" y descubre si esta disciplina es para ti.',
+
+  femFaqQ9: '¿Qué aprenderé en las clases de Femmology?',
+  femFaqA9:
+    'Aprenderás a bailar en tacones, mejorarás tu postura, desarrollarás tu capacidad de improvisación e interpretación musical, aprenderás coreografías sensuales, y dominarás técnicas como usar el pelo y el suelo. Todo mientras aumentas tu confianza y autoestima.',
+
+  femFaqQ10: '¿Qué debo llevar a las clases de Femmology?',
+  femFaqA10:
+    'Ropa cómoda y ajustada que te permita moverte con libertad, tacones con tira en el tobillo (o zapatillas si eres principiante), toalla y agua. Rodilleras opcionales si tus rodillas son sensibles.',
+
+  femFaqQ11: '¿Femmology es lo mismo que Sexy Style o son cosas diferentes?',
+  femFaqA11:
+    "Son disciplinas complementarias pero diferentes. Femmology es el proyecto personal de Yunaisy que fusiona múltiples estilos y trabaja también el autoconocimiento. Las clases de Femmology son más técnicas y el grado de exigencia es superior. Sexy Style se enfoca más en coreografías sensuales específicas. En Farray's Center ofrecemos ambas.",
+
+  femFaqQ12: '¿Puedo recuperar clases si falto?',
+  femFaqA12:
+    'Sí. Si tienes una membresía y cancelas una clase, dispones de 30 días para recuperarla en cualquier otra clase del mismo nivel. Si tienes un abono de horas, gestionas tus clases de forma flexible y solo se restan horas de las clases a las que asistes.',
+
+  femFaqQ13: '¿Para quién está pensado el curso de Femmology?',
+  femFaqA13:
+    'Femmology está hecho para quien tiene ganas de descubrirse, tocarse, mirarse y quererse. No importa tu edad ni tu nivel de baile. Si quieres aprender a bailar en tacones con una de las mejores maestras del mundo, Femmology es para ti.',
+
+  femFaqQ14: '¿Femmology ayuda con la autoestima?',
+  femFaqA14:
+    'Sí. Además de aprender a bailar en tacones, Femmology trabaja tu lado femenino, tu autoconocimiento y tus mecanismos de autoestima y aceptación. Nuestra maestra te ayuda a liberarte de tensiones y a aumentar la confianza en ti misma.',
+
+  femFaqQ15: '¿Dónde están las clases de Femmology y cómo puedo contactar?',
+  femFaqA15:
+    'Las clases de Femmology se imparten exclusivamente en Farray\'s International Dance Center. Estamos en Calle Entença 100, 08015 Barcelona (a 5 min de Plaza España y Sants).<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+
+  // Course Schema
+  femCourseSchemaName: 'Clases de Femmology en Barcelona - Baile en Tacones con Yunaisy Farray',
+  femCourseSchemaDesc:
+    'Aprende a bailar en tacones con Yunaisy Farray, creadora del Método Farray®, actriz de Street Dance 2 y maestra UNESCO. Clases de Femmology en exclusiva en Barcelona.',
 };

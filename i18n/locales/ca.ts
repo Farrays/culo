@@ -447,6 +447,7 @@ export const ca = {
     "### Els orígens: Kingston, Jamaica (1970s–1980s)\n\nEl Dancehall va néixer als guetos de Kingston a finals dels anys 70. Va sorgir com una evolució natural del reggae, quan els sound systems (sistemes de so mòbils) van començar a portar la música als carrers i als dancehalls (sales de ball). El nom \"dancehall\" prové d'aquests espais on la comunitat es reunia per ballar, socialitzar i expressar-se. Era el lloc on les tensions socials es lliberaven a través de la música i el moviment.\n\n### Les llegendes: Bogle, Passa Passa i els pioners\n\nGerald \"Bogle\" Levy (1964–2005) és considerat el pare del Dancehall modern. Va crear moviments icònics com Bogle, Row Di Boat, Log On i Willie Bounce, base del vocabulari Dancehall. Passa Passa, les sessions llegendàries de street dancehall a Tivoli Gardens (Kingston), va ser l'epicentre on naixien nous passos i es consagraven els ballarins. Altres pioners com Ding Dong, Keiva, John Hype i crews com Ravers Clavers van portar el Dancehall a nivell internacional als 2000.\n\n### L'expansió global (2000s–present)\n\nAls anys 2000, el Dancehall va explotar globalment gràcies a artistes com Sean Paul, Shaggy, Elephant Man i Beenie Man. Les xarxes socials i YouTube van popularitzar passos com Dutty Wine, Daggering i Nuh Linga. Avui, el Dancehall és un fenomen mundial amb comunitats actives a Europa, Àfrica, Àsia i Amèrica; Barcelona és un dels seus epicentres europeus.\n\n### La música: Riddims i cultura Sound System\n\nEl Dancehall es balla sobre riddims (bases instrumentals) que els productors creen i múltiples artistes vocalitzen. Riddims llegendaris com Diwali, Coolie Dance o Dump Truck van definir èpoques senceres. La cultura del sound system —amb els seus selectors, MCs i el famós rewind quan una cançó és tan bona que es torna a posar des del principi— és essencial per entendre el Dancehall.\n\n### Més que ball: identitat i resistència\n\nEl Dancehall ha estat sempre una forma de resistència cultural i expressió d'identitat per a les comunitats marginades de Jamaica. És la veu dels guetos, una celebració de l'alegria malgrat les dificultats. Cada pas té un significat: Log On (connectar-se), Willie Bounce (homenatge a Willie Haggart), Nuh Linga (no et demoris). Cada moviment conta una història.",
   readMore: 'Llegir Més Sobre la Història i Cultura',
   readLess: 'Llegir Menys',
+  skipToContent: 'Saltar al contingut principal',
 
   // Days of week
   monday: 'Dilluns',
@@ -3835,4 +3836,247 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
 
   // View More
   heelsBarcelona_viewMore: 'Veure més →',
+
+  // ===== FEMMOLOGY PAGE =====
+  // SEO & Meta
+  femPageTitle: 'Classes de Femmology a Barcelona | Ball amb Talons amb Yunaisy Farray',
+  femMetaDescription:
+    'Aprèn a ballar amb talons amb Yunaisy Farray, creadora del Mètode Farray® exclusiu, actriu de Street Dance 2 i mestra reconeguda per UNESCO. Classes de Femmology per a tots els nivells a Barcelona. Reserva la teva classe!',
+
+  // Breadcrumb (5 levels: Home > Classes > Urban > Heels > Current)
+  femBreadcrumbHome: 'Inici',
+  femBreadcrumbClasses: 'Classes de Ball',
+  femBreadcrumbUrban: 'Danses Urbanes',
+  femBreadcrumbHeels: 'Classes de Heels',
+  femBreadcrumbCurrent: 'Femmology',
+
+  // Hero
+  femHeroTitle: "Femmology: Apodera't Ballant amb els Teus Talons",
+  femHeroSubtitle:
+    'Un projecte personal de Yunaisy Farray perquè descobreixis tot el teu potencial',
+  femHeroDesc:
+    'Les nostres classes de ball amb talons et portaran al següent nivell. Aprèn amb la creadora del Mètode Farray®, actriu de Street Dance 2 i una de les mestres més reconegudes del món.',
+  femHeroLocation: 'EN EXCLUSIVA a Barcelona • Tots els nivells',
+
+  // CTAs
+  femCTA1: 'Fes-te Sòcia Ara!',
+  femCTA1Subtext: 'Queden poques places aquest mes',
+  femCTA2: 'Reserva la teva Classe de Prova',
+  femCTA2Subtext: 'Vàlid per temps limitat',
+
+  // Stats
+  femTransformationStat: 'Exclusiu',
+  femDanceTherapy: 'Ball amb Talons + Sensualitat',
+  femFemininityGuaranteed: 'Mètode Farray® únic',
+
+  // What Is Section
+  femWhatIsTitle: 'Què és Femmology i què aconseguiràs a les nostres classes?',
+  femWhatIsP1:
+    'Femmology és un projecte personal de Yunaisy Farray pensat perquè la dona descobreixi tot el seu potencial a través del ball amb talons. Una disciplina que fusiona sensualitat, tècnica, treball de terra, cabells i interpretació musical.',
+  femWhatIsP2:
+    'A les nostres classes de ball amb talons aprendràs postura, ritme, coordinació, interpretació musical i dissociacions corporals. Tot mentre millores la teva forma física, cremes calories i ho passes increïble.',
+  femWhatIsP3: '"Femmology by Yunaisy Farray: perquè t\'estimis cada dia més, preciosa dona."',
+  femWhatIsP4:
+    "A més, les nostres classes tenen un plus terapèutic: un espai per descobrir-te, tocar-te, mirar-te i estimar-te. El ball com a camí cap a l'autoestima i l'autoconfiança.",
+  femWhatIsQuestionTitle: 'Et preguntes si és per a tu?',
+  femWhatIsQuestionAnswer: 'Sí, ho és.',
+  femImageAlt: 'Classes de Femmology a Barcelona - Ball amb talons amb Yunaisy Farray',
+
+  // Cultural Section
+  femCulturalShort:
+    "Femmology neix de la fusió entre el ball amb talons, la dansateràpia i l'expressió de la feminitat, creada per Yunaisy Farray com a eina d'apoderament.",
+  femCulturalFull: `### Origen de Femmology
+
+Femmology és una disciplina creada per Yunaisy Farray, mestra internacional i fundadora de Farray's International Dance Center. Neix de la seva experiència com a ballarina professional, la seva formació a l'Escola Nacional d'Art de Cuba i la seva profunda connexió amb la feminitat com a font de poder.
+
+A diferència d'altres classes de talons que es centren només en coreografies, Femmology integra elements de dansateràpia per treballar l'autoestima, la connexió corporal i l'alliberament emocional a través del moviment.
+
+### Filosofia i metodologia
+
+El nom "Femmology" fusiona "femme" (dona en francès) amb "ology" (estudi de), significant literalment "l'estudi de la feminitat". La metodologia es basa en tres pilars:
+
+- **Connexió corporal**: Treballar la postura, la dissociació i el control del cos.
+- **Expressió emocional**: Usar el moviment per alliberar bloquejos i reconnectar amb les emocions.
+- **Apoderament femení**: Cultivar la confiança, l'actitud i l'amor propi a través del ball.
+
+### Què diferencia Femmology
+
+El que fa únic a Femmology és que no es tracta de "ballar sexy per als altres", sinó de "sentir-te poderosa per a tu mateixa". Cada classe és un espai segur on les dones exploren la seva feminitat sense judicis, aprenent a moure's amb elegància i sensualitat des d'un lloc d'autorespect i amor propi.
+
+Actualment, Femmology s'imparteix exclusivament a Farray's Center sota la direcció de Yunaisy Farray, qui ha format centenars de dones en aquesta disciplina transformadora.`,
+
+  // Identify Section
+  femIdentifyTitle: "T'identifiques amb alguna d'aquestes situacions?",
+  femIdentify1:
+    "Ja balles amb talons però vols portar la teva tècnica al següent nivell amb una mestra d'elit mundial.",
+  femIdentify2:
+    'Vols aprendre a ballar amb talons des de zero, però no saps per on començar o quina mestra triar.',
+  femIdentify3:
+    "Vols aprendre a moure't amb elegància i sensualitat, però no saps per on començar.",
+  femIdentify4:
+    'Et falta confiança i sents que has perdut la connexió amb la teva feminitat i no saps com recuperar-les.',
+  femIdentify5:
+    'Necessites fer esport però busques un espai on treballes no només el teu cos, sinó també les teves emocions, sense por ni perjudicis.',
+  femIdentify6:
+    'Et costa sentir-te còmoda i sexy amb el teu propi cos, i evites mirar-te al mirall.',
+
+  // Need Enroll Section
+  femIdentifyTransition: 'Si has dit "sí" a algun d\'aquests punts, ja saps què necessites.',
+  femNeedEnrollTitle: 'Necessites Apuntar-te a classes de Femmology',
+  femIdentifyAgitate1:
+    "Seguir desconnectada de la teva feminitat t'allunya de viure plenament. Cada dia que passa sense reconnectar amb tu mateixa és un dia menys sentint-te completa.",
+  femIdentifySolution:
+    "A Farray's Center trobaràs més que classes de ball. Yunaisy Farray ha creat un espai on les dones es transformen, guanyen confiança i descobreixen una versió d'elles mateixes que havien oblidat.",
+  femIdentifyClosing:
+    'La teva feminitat no està perduda. Només està esperant que li donis permís per florir.',
+
+  // Transform Section - Focused on personal transformation
+  femTransformTitle: 'Imagina el teu abans i després',
+  femTransform1Title: 'De principiant a artista',
+  femTransform1Desc:
+    'Domines la tècnica del ball amb talons, la postura, els girs i les transicions amb elegància i actitud.',
+  femTransform2Title: 'De desconnectada a present',
+  femTransform2Desc:
+    'Aprens a habitar el teu cos, a sentir cada moviment i a estar present en el moment. Ja no balles per fora: balles des de dins.',
+  femTransform3Title: 'De rígida a expressiva',
+  femTransform3Desc:
+    'Alliberes bloquejos corporals i emocionals. El teu cos es torna més fluid, flexible i expressiu.',
+  femTransform4Title: "D'insegura a apoderada",
+  femTransform4Desc:
+    "Treballes l'actitud, la mirada i la presència. Surts de cada classe sentint-te més segura i valuosa.",
+  femTransform5Title: 'De sola a acompanyada',
+  femTransform5Desc:
+    'Trobes una comunitat de dones que es donen suport. Comparteixes el camí amb altres que busquen el mateix que tu.',
+  femTransform6Title: "D'apagada a radiant",
+  femTransform6Desc:
+    'Reconnectes amb la teva energia femenina. Comences a brillar no només quan balles, sinó en el teu dia a dia.',
+  femTransformCTA: "Per què triar Farray's Center per a Femmology?",
+
+  // Why Choose Section - Balanced reasons
+  femWhyChoose1Title: 'Acadèmia reconeguda pel CID UNESCO',
+  femWhyChoose1Desc:
+    'Aprèn directament amb Yunaisy Farray, creadora de Femmology, actriu de Street Dance 2 i reconeguda internacionalment pel CID-UNESCO.',
+  femWhyChoose2Title: 'Ambient segur i sense judicis',
+  femWhyChoose2Desc:
+    'Un espai on pots explorar la teva feminitat lliurement, envoltada de dones que et donen suport.',
+  femWhyChoose3Title: 'Més que ball: dansateràpia',
+  femWhyChoose3Desc:
+    'Femmology treballa cos, ment i emocions. Cada classe és una sessió de transformació personal.',
+  femWhyChoose4Title: 'Metodologia progressiva',
+  femWhyChoose4Desc:
+    "Classes adaptades al teu nivell. Des d'iniciació fins a avançat, sempre amb seguiment personalitzat.",
+  femWhyChoose5Title: 'Instal·lacions preparades de veritat',
+  femWhyChoose5Desc:
+    "Més de 700 m², sales àmplies, miralls, so professional, aire condicionat i ventilació centralitzada per entrenar a gust tot l'any.",
+  femWhyChoose6Title: 'Ubicació inmillorable',
+  femWhyChoose6Desc:
+    'Carrer Entença 100, entre Plaça Espanya i Sants, a 5 minuts de Plaça Espanya i Sants. Metro, busos i tren a la porta. Fàcil arribar. Fàcil tornar.',
+
+  // Logos Section
+  femLogosTitle: "Has pogut veure'ns a…",
+  femLogosIntlFestivalsText: 'i als millors festivals de dansa del món',
+
+  // Teachers Section
+  femTeachersTitle: 'Coneix a Yunaisy Farray',
+  femTeachersSubtitle: 'Creadora de Femmology i una de les mestres més reconegudes del món',
+  femTeacher1Specialty: 'Creadora del Mètode Farray® | Street Dance 2 | CID-UNESCO',
+  femTeacher1Bio:
+    "Yunaisy Farray és ballarina professional formada a l'Escola Nacional d'Art de Cuba, actriu de Street Dance 2, artista de Got Talent i mestra reconeguda pel CID-UNESCO. Considerada una de les majors referents de la dansa femenina cubana, ha creat el Mètode Farray® exclusiu i fundat Farray's Center a Barcelona. Figures com Albert Torres i Eddie Torres l'anomenen \"la nova Celia Cruz de la salsa\".",
+  femTeachersClosing:
+    "Amb Yunaisy no només aprendràs a ballar amb talons: descobriràs tot el teu potencial i t'estimaràs cada dia més.",
+
+  // Schedule Section
+  femScheduleTitle: 'Horari de classes de Femmology',
+  femScheduleSubtitle: 'Classes directament amb Yunaisy Farray',
+
+  // Video Section
+  femVideoTitle: 'Descobreix Femmology en acció',
+  femVideoDesc:
+    "Mira com ballem amb talons a Farray's Center: tècnica, sensualitat i el Mètode Farray® amb Yunaisy en persona.",
+
+  // Why Today Section
+  femWhyTodayFullTitle: 'Per què fer-te sòcia de Femmology avui?',
+  femWhyToday1:
+    'Perquè portes massa temps mirant com ballen altres mentre dius "m\'agradaria saber fer això".',
+  femWhyToday2:
+    'Perquè estàs a UNA classe de descobrir una versió de tu que es mou amb confiança i se sent poderosa.',
+  femWhyToday3:
+    "Perquè a més d'aprendre a ballar com una professional, treballaràs la teva autoestima i confiança de manera natural.",
+  femWhyTodayClosing1: "Femmology by Yunaisy Farray: perquè t'estimis cada dia més, preciosa dona.",
+  femWhyTodayClosing2: "Les nostres classes de dansa amb talons et portaran a l'altre nivell.",
+
+  // Final CTA Section
+  femFinalCTATitle: 'Uneix-te a les classes més sexys i atrevides de Barcelona',
+  femFinalCTASubtitle: 'Fes el Pas',
+  femFinalCTADesc: 'Les places volen més ràpid que un gir sobre les teves sabates de taló.',
+  femFinalCTAFunny: "Femmology by Yunaisy Farray: perquè t'estimis cada dia més.",
+
+  // FAQ Title
+  femFaqTitle: 'Preguntes Freqüents sobre Femmology a Barcelona',
+
+  // 15 FAQs
+  femFaqQ1: 'Què és exactament Femmology?',
+  femFaqA1:
+    'Femmology és una disciplina de ball amb talons creada per Yunaisy Farray que fusiona sensualitat, tècnica professional, treball de terra, cabells i interpretació musical. Més que ball, és una forma de descobrir el teu potencial i connectar amb la teva feminitat.',
+
+  femFaqQ2: 'Necessito experiència prèvia en ball o en talons per començar?',
+  femFaqA2:
+    "No necessites experiència prèvia. Femmology està dissenyat per a dones de tots els nivells. Yunaisy adapta cada classe al teu ritme i et guia pas a pas. L'únic que necessites són ganes d'aprendre.",
+
+  femFaqQ3: 'Quin tipus de talons necessito per a les classes de Femmology?',
+  femFaqA3:
+    "Recomanem començar amb talons de 7-9 cm amb tira al turmell per a major estabilitat. Si ets principiant absoluta, pots començar sense talons fins que et sentis còmoda. L'important és que et sentis segura.",
+
+  femFaqQ4: 'Qui és Yunaisy Farray i per què aprendre amb ella?',
+  femFaqA4:
+    "Yunaisy Farray és ballarina professional formada a l'Escola Nacional d'Art de Cuba, actriu de Street Dance 2, artista de Got Talent i mestra reconeguda pel CID-UNESCO. És la creadora del Mètode Farray® exclusiu i una de les mestres més reconegudes del món. Aprendre directament amb ella és una oportunitat que només trobaràs a Farray's Center.",
+
+  femFaqQ5: 'Quins beneficis físics té practicar Femmology?',
+  femFaqA5:
+    "Femmology millora la postura, enforteix cames i core, augmenta la flexibilitat, treballa l'equilibri i tonifica el cos. En fer-ho amb talons, s'activen músculs específics i es millora la coordinació. És un entrenament complet disfressat de ball.",
+
+  femFaqQ6: "Què diferencia Femmology d'altres classes de talons?",
+  femFaqA6:
+    "Femmology és l'única disciplina creada per Yunaisy Farray amb el Mètode Farray® exclusiu. No aprens coreografies genèriques: aprens tècnica professional, interpretació musical i expressió personal. A més, ho fas directament amb la creadora.",
+
+  femFaqQ7: 'Femmology només està disponible a Barcelona?',
+  femFaqA7:
+    "Sí. Femmology amb Yunaisy Farray només s'imparteix a Farray's Center de Barcelona (Carrer Entença 100, 08015 Barcelona, a 5 minuts de Plaça Espanya i Estació de Sants). És l'únic lloc del món per aprendre aquesta disciplina amb la seva creadora. Sense còpies, sense imitacions.",
+
+  femFaqQ8: "Puc provar una classe de Femmology abans d'inscriure'm?",
+  femFaqA8:
+    'Sí. Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. Prem "Reserva la teva Classe de Prova" i descobreix si aquesta disciplina és per a tu.',
+
+  femFaqQ9: 'Què aprendré a les classes de Femmology?',
+  femFaqA9:
+    'A les classes de Femmology aprendràs: tècnica de talons (postura, equilibri, girs), treball de terra i cabells, dissociacions corporals, interpretació musical, sensualitat i expressió femenina. Tot amb el Mètode Farray® exclusiu.',
+
+  femFaqQ10: 'Què he de portar a les classes de Femmology?',
+  femFaqA10:
+    "Roba còmoda i ajustada que et permeti moure't amb llibertat, talons amb tira al turmell (o sabatilles si ets principiant), tovallola i aigua. També et recomanem portar genolleres per al treball de terra.",
+
+  femFaqQ11: 'Femmology és el mateix que Sexy Style o són coses diferents?',
+  femFaqA11:
+    "Són disciplines complementàries però diferents. Femmology és el projecte personal de Yunaisy que fusiona múltiples estils i també treballa l'autoconeixement. Les classes de Femmology són més tècniques i el grau d'exigència és superior. Sexy Style s'enfoca més en coreografies sensuals específiques. A Farray's Center oferim ambdues.",
+
+  femFaqQ12: 'Puc recuperar classes si falto?',
+  femFaqA12:
+    "Sí. Si tens una membresía i cancel·les una classe, disposes de 30 dies per recuperar-la en qualsevol altra classe del mateix nivell. Si tens un abonament d'hores, gestiones les teves classes de forma flexible i només es resten hores de les classes a les quals assisteixes.",
+
+  femFaqQ13: 'Per a qui està pensat el curs de Femmology?',
+  femFaqA13:
+    "Femmology és per a qualsevol dona que vulgui aprendre a ballar amb talons, millorar la seva postura i confiança, i descobrir la seva sensualitat. No hi ha límit d'edat ni requisit d'experiència prèvia.",
+
+  femFaqQ14: "Femmology ajuda amb l'autoestima?",
+  femFaqA14:
+    'Absolutament. Més enllà de la tècnica, Femmology és un espai per descobrir-te, tocar-te, mirar-te i estimar-te. Moltes alumnes reporten sentir-se més segures i poderoses després de cada classe.',
+
+  femFaqQ15: 'On són les classes de Femmology i com puc contactar?',
+  femFaqA15:
+    'Les classes de Femmology s\'imparteixen exclusivament a Farray\'s International Dance Center. Som al Carrer Entença 100, 08015 Barcelona (a 5 min de Plaça Espanya i Sants).<br/><br/>📞 <strong>Telèfon:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+
+  // Course Schema
+  femCourseSchemaName: 'Classes de Femmology a Barcelona - Ball amb Talons amb Yunaisy Farray',
+  femCourseSchemaDesc:
+    'Aprèn a ballar amb talons amb Yunaisy Farray, creadora del Mètode Farray® exclusiu, actriu de Street Dance 2 i mestra reconeguda per UNESCO. Classes de Femmology per a tots els nivells a Barcelona.',
 };
