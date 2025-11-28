@@ -447,6 +447,7 @@ export const en = {
     '### The origins: Kingston, Jamaica (1970s–1980s)\n\nDancehall was born in the ghettos of Kingston in the late 70s. It emerged as a natural evolution of reggae when sound systems (mobile sound systems) began taking music to the streets and dancehalls. The name "dancehall" comes from those spaces where the community gathered to dance, socialize, and express themselves. It was where social tensions were released through music and movement.\n\n### The legends: Bogle, Passa Passa, and the pioneers\n\nGerald "Bogle" Levy (1964–2005) is considered the father of modern Dancehall. He created iconic moves like Bogle, Row Di Boat, Log On, and Willie Bounce, the foundation of the Dancehall vocabulary. Passa Passa, the legendary street dancehall sessions in Tivoli Gardens (Kingston), was the epicenter where new steps were born and dancers were consecrated. Other pioneers like Ding Dong, Keiva, John Hype, and crews like Ravers Clavers took Dancehall international in the 2000s.\n\n### Global expansion (2000s–present)\n\nIn the 2000s, Dancehall exploded globally thanks to artists like Sean Paul, Shaggy, Elephant Man, and Beenie Man. Social media and YouTube popularized steps like Dutty Wine, Daggering, and Nuh Linga. Today, Dancehall is a worldwide phenomenon with active communities in Europe, Africa, Asia, and America; Barcelona is one of its European epicenters.\n\n### The music: Riddims and Sound System culture\n\nDancehall is danced to riddims (instrumental bases) that producers create and multiple artists voice over. Legendary riddims like Diwali, Coolie Dance, or Dump Truck defined entire eras. Sound system culture—with its selectors, MCs, and the famous rewind when a song is so good it gets replayed from the start—is essential to understanding Dancehall.\n\n### More than dance: identity and resistance\n\nDancehall has always been a form of cultural resistance and identity expression for Jamaica\'s marginalized communities. It\'s the voice of the ghettos, a celebration of joy despite difficulties. Each step has meaning: Log On (connect), Willie Bounce (tribute to Willie Haggart), Nuh Linga (don\'t delay). Every movement tells a story.',
   readMore: 'Read More About History and Culture',
   readLess: 'Read Less',
+  skipToContent: 'Skip to main content',
 
   // Days of week
   monday: 'Monday',
@@ -3804,4 +3805,249 @@ The latest trends and styles merge in our classes in a varied, dynamic and fun w
 
   // View More
   heelsBarcelona_viewMore: 'View more →',
+
+  // ===== FEMMOLOGY PAGE =====
+  // SEO & Meta
+  femPageTitle: 'Femmology Classes in Barcelona | Heels Dancing with Yunaisy Farray',
+  femMetaDescription:
+    'Learn to dance in heels with Yunaisy Farray, creator of the exclusive Farray Method®, actress in Street Dance 2 and UNESCO-recognized teacher. Femmology classes for all levels in Barcelona. Book your trial class!',
+
+  // Breadcrumb (5 levels: Home > Classes > Urban > Heels > Current)
+  femBreadcrumbHome: 'Home',
+  femBreadcrumbClasses: 'Dance Classes',
+  femBreadcrumbUrban: 'Urban Dance',
+  femBreadcrumbHeels: 'Heels Classes',
+  femBreadcrumbCurrent: 'Femmology',
+
+  // Hero
+  femHeroTitle: 'Femmology: Empower Yourself Dancing in Your Heels',
+  femHeroSubtitle: 'A personal project by Yunaisy Farray to help you discover your full potential',
+  femHeroDesc:
+    'Our heels dance classes will take you to the next level. Learn with the creator of the Farray Method®, actress in Street Dance 2 and one of the most recognized teachers in the world.',
+  femHeroLocation: 'EXCLUSIVE in Barcelona • All levels welcome',
+
+  // CTAs
+  femCTA1: 'Become a Member Now!',
+  femCTA1Subtext: 'Few spots left this month',
+  femCTA2: 'Book Your Trial Class',
+  femCTA2Subtext: 'Valid for limited time',
+
+  // Stats
+  femTransformationStat: 'Exclusive',
+  femDanceTherapy: 'Heels Dancing + Sensuality',
+  femFemininityGuaranteed: 'Unique Farray Method®',
+
+  // What Is Section
+  femWhatIsTitle: 'What is Femmology and what will you achieve in our classes?',
+  femWhatIsP1:
+    'Femmology is a personal project by Yunaisy Farray designed to help women discover their full potential through heels dancing. A discipline that fuses sensuality, technique, floor work, hair styling and musical interpretation.',
+  femWhatIsP2:
+    'In our heels dance classes you will learn posture, rhythm, coordination, musical interpretation and body dissociations. All while improving your physical fitness, burning calories and having an incredible time.',
+  femWhatIsP3:
+    '"Femmology by Yunaisy Farray: so you love yourself more every day, beautiful woman."',
+  femWhatIsP4:
+    'Plus, our classes have a therapeutic bonus: a space to discover yourself, touch yourself, look at yourself and love yourself. Dance as a path to self-esteem and self-confidence.',
+  femWhatIsQuestionTitle: "Wondering if it's for you?",
+  femWhatIsQuestionAnswer: 'Yes, it is.',
+  femImageAlt: 'Femmology Classes in Barcelona - Heels dance with Yunaisy Farray',
+
+  // Cultural Section
+  femCulturalShort:
+    'Femmology is born from the fusion of heels dancing, dance therapy and the expression of femininity, created by Yunaisy Farray as an empowerment tool.',
+  femCulturalFull: `### The Origin of Femmology
+
+Femmology is a discipline created by Yunaisy Farray, international teacher and founder of Farray's International Dance Center. It was born from her experience as a professional dancer, her training at the National School of Art of Cuba and her deep connection with femininity as a source of power.
+
+Unlike other heels classes that focus only on choreographies, Femmology integrates dance therapy elements to work on self-esteem, body connection and emotional release through movement.
+
+### Philosophy and Methodology
+
+The name "Femmology" combines "femme" (woman in French) with "ology" (the study of), literally meaning "the study of femininity". The methodology is based on three pillars:
+
+- **Body connection**: Working on posture, dissociation and body control.
+- **Emotional expression**: Using movement to release blockages and reconnect with emotions.
+- **Female empowerment**: Cultivating confidence, attitude and self-love through dance.
+
+### What Makes Femmology Different
+
+What makes Femmology unique is that it's not about "dancing sexy for others", but about "feeling powerful for yourself". Each class is a safe space where women explore their femininity without judgment, learning to move with elegance and sensuality from a place of self-respect and self-love.
+
+Currently, Femmology is taught exclusively at Farray's Center under the direction of Yunaisy Farray, who has trained hundreds of women in this transformative discipline.`,
+
+  // Identify Section
+  femIdentifyTitle: 'Do you identify with any of these situations?',
+  femIdentify1:
+    'You already dance in heels but want to take your technique to the next level with a world-class teacher.',
+  femIdentify2:
+    "You want to learn to dance in heels from scratch, but don't know where to start or which teacher to choose.",
+  femIdentify3:
+    "You want to learn to move with elegance and sensuality, but don't know where to start.",
+  femIdentify4:
+    'You lack confidence and feel disconnected from your femininity, not knowing how to recover them.',
+  femIdentify5:
+    'You need to exercise but are looking for a space where you work not only your body, but also your emotions, without fear or judgment.',
+  femIdentify6:
+    'You struggle to feel comfortable and sexy in your own body, and you avoid looking at yourself in the mirror.',
+
+  // Need Enroll Section
+  femIdentifyTransition:
+    'If you said "yes" to any of these points, you already know what you need.',
+  femNeedEnrollTitle: 'You Need to Sign Up for Femmology Classes',
+  femIdentifyAgitate1:
+    'Staying disconnected from your femininity keeps you from living fully. Each day that passes without reconnecting with yourself is one less day feeling complete.',
+  femIdentifySolution:
+    "At Farray's Center you'll find more than dance classes. Yunaisy Farray has created a space where women transform, gain confidence and discover a version of themselves they had forgotten.",
+  femIdentifyClosing:
+    "Your femininity isn't lost. It's just waiting for you to give it permission to bloom.",
+
+  // Transform Section - Focused on personal transformation
+  femTransformTitle: 'Imagine Your Before and After',
+  femTransform1Title: 'From beginner to artist',
+  femTransform1Desc:
+    'You master heels dancing technique, posture, turns and transitions with elegance and attitude.',
+  femTransform2Title: 'From disconnected to present',
+  femTransform2Desc:
+    'You learn to inhabit your body, feel every movement and be present in the moment. You no longer dance from the outside: you dance from within.',
+  femTransform3Title: 'From rigid to expressive',
+  femTransform3Desc:
+    'You release physical and emotional blockages. Your body becomes more fluid, flexible and expressive.',
+  femTransform4Title: 'From insecure to empowered',
+  femTransform4Desc:
+    'You work on attitude, gaze and presence. You leave each class feeling more confident and valuable.',
+  femTransform5Title: 'From alone to accompanied',
+  femTransform5Desc:
+    'You find a community of women who support each other. You share the journey with others seeking the same as you.',
+  femTransform6Title: 'From dull to radiant',
+  femTransform6Desc:
+    'You reconnect with your feminine energy. You start to shine not just when dancing, but in everyday life.',
+  femTransformCTA: "Why choose Farray's Center for Femmology?",
+
+  // Why Choose Section - Balanced reasons
+  femWhyChoose1Title: 'Academy recognized by CID UNESCO',
+  femWhyChoose1Desc:
+    'Learn directly with Yunaisy Farray, creator of Femmology, Street Dance 2 actress and internationally recognized by CID-UNESCO.',
+  femWhyChoose2Title: 'Safe, judgment-free environment',
+  femWhyChoose2Desc:
+    'A space where you can explore your femininity freely, surrounded by women who support you.',
+  femWhyChoose3Title: 'More than dance: dance therapy',
+  femWhyChoose3Desc:
+    'Femmology works on body, mind and emotions. Each class is a personal transformation session.',
+  femWhyChoose4Title: 'Progressive methodology',
+  femWhyChoose4Desc:
+    'Classes adapted to your level. From beginner to advanced, always with personalized guidance.',
+  femWhyChoose5Title: 'Truly prepared facilities',
+  femWhyChoose5Desc:
+    'Over 700 m², spacious rooms, mirrors, professional sound, air conditioning and centralized ventilation to train comfortably all year round.',
+  femWhyChoose6Title: 'Unbeatable location',
+  femWhyChoose6Desc:
+    'Calle Entença 100, between Plaza España and Sants, 5 minutes from Plaça Espanya and Sants. Metro, buses and train at the door. Easy to arrive. Easy to return.',
+
+  // Logos Section
+  femLogosTitle: 'You may have seen us in…',
+  femLogosIntlFestivalsText: 'and at the best dance festivals in the world',
+
+  // Teachers Section
+  femTeachersTitle: 'Meet Yunaisy Farray',
+  femTeachersSubtitle: 'Creator of Femmology and one of the most recognized teachers in the world',
+  femTeacher1Specialty: 'Creator of Farray Method® | Street Dance 2 | CID-UNESCO',
+  femTeacher1Bio:
+    'Yunaisy Farray is a professional dancer trained at the National School of Art of Cuba, Street Dance 2 actress, Got Talent performer and CID-UNESCO recognized teacher. Considered one of the greatest references in Cuban female dance, she has created the exclusive Farray Method® and founded Farray\'s Center in Barcelona. Figures like Albert Torres and Eddie Torres call her "the new Celia Cruz of salsa".',
+  femTeachersClosing:
+    'With Yunaisy you will not just learn to dance in heels: you will discover your full potential and love yourself more every day.',
+
+  // Schedule Section
+  femScheduleTitle: 'Femmology class schedule',
+  femScheduleSubtitle: 'Classes directly with Yunaisy Farray',
+
+  // Video Section
+  femVideoTitle: 'Discover Femmology in action',
+  femVideoDesc:
+    "See how we dance in heels at Farray's Center: technique, sensuality and the Farray Method® with Yunaisy in person.",
+
+  // Why Today Section
+  femWhyTodayFullTitle: 'Why become a Femmology member today?',
+  femWhyToday1:
+    'Because you have spent too long watching others dance while saying "I wish I could do that".',
+  femWhyToday2:
+    'Because you are ONE class away from discovering a version of yourself that moves with confidence and feels powerful.',
+  femWhyToday3:
+    'Because in addition to learning to dance like a professional, you will work on your self-esteem and confidence naturally.',
+  femWhyTodayClosing1:
+    'Femmology by Yunaisy Farray: so you love yourself more every day, beautiful woman.',
+  femWhyTodayClosing2: 'Our heels dance classes will take you to the next level.',
+
+  // Final CTA Section
+  femFinalCTATitle: 'Join the sexiest and boldest classes in Barcelona',
+  femFinalCTASubtitle: 'Take the Step',
+  femFinalCTADesc: 'Spots fly faster than a spin on your heels.',
+  femFinalCTAFunny: 'Femmology by Yunaisy Farray: so you love yourself more every day.',
+
+  // FAQ Title
+  femFaqTitle: 'Frequently Asked Questions about Femmology in Barcelona',
+
+  // 15 FAQs
+  femFaqQ1: 'What exactly is Femmology?',
+  femFaqA1:
+    'Femmology is a heels dance discipline created by Yunaisy Farray that fuses sensuality, professional technique, floor work, hair styling and musical interpretation. More than dance, it is a way to discover your potential and connect with your femininity.',
+
+  femFaqQ2: 'Do I need previous dance or heels experience to start?',
+  femFaqA2:
+    'You do not need previous experience. Femmology is designed for women of all levels. Yunaisy adapts each class to your pace and guides you step by step. The only thing you need is the desire to learn.',
+
+  femFaqQ3: 'What type of heels do I need for Femmology classes?',
+  femFaqA3:
+    'We recommend starting with 7-9 cm heels with an ankle strap for greater stability. If you are a complete beginner, you can start without heels until you feel comfortable. The important thing is that you feel safe.',
+
+  femFaqQ4: 'Who is Yunaisy Farray and why learn with her?',
+  femFaqA4:
+    "Yunaisy Farray is a professional dancer trained at the National School of Art of Cuba, Street Dance 2 actress, Got Talent performer and CID-UNESCO recognized teacher. She is the creator of the exclusive Farray Method® and one of the most recognized teachers in the world. Learning directly with her is an opportunity you will only find at Farray's Center.",
+
+  femFaqQ5: 'What are the physical benefits of practicing Femmology?',
+  femFaqA5:
+    'Femmology improves posture, strengthens legs and core, increases flexibility, works on balance and tones the body. By doing it in heels, specific muscles are activated and coordination is improved. It is a complete workout disguised as dance.',
+
+  femFaqQ6: 'What makes Femmology different from other heels classes?',
+  femFaqA6:
+    'Femmology is the only discipline created by Yunaisy Farray with the exclusive Farray Method®. You do not learn generic choreographies: you learn professional technique, musical interpretation and personal expression. Plus, you do it directly with the creator.',
+
+  femFaqQ7: 'Is Femmology only available in Barcelona?',
+  femFaqA7:
+    "Yes. Femmology with Yunaisy Farray is only taught at Farray's Center in Barcelona (Calle Entença 100, 08015 Barcelona, 5 minutes from Plaza España and Sants Station). It is the unique place in the world to learn this discipline with its creator. No copies, no imitations.",
+
+  femFaqQ8: 'Can I try a Femmology class before signing up?',
+  femFaqA8:
+    'Yes. Depending on the season, trial classes for residents may be free or have a symbolic welcome price. Click "Book Your Trial Class" and discover if this discipline is for you.',
+
+  femFaqQ9: 'What will I learn in Femmology classes?',
+  femFaqA9:
+    'In Femmology classes you will learn: heels technique (posture, balance, turns), floor and hair work, body dissociations, musical interpretation, sensuality and feminine expression. Everything with the exclusive Farray Method®.',
+
+  femFaqQ10: 'What should I bring to Femmology classes?',
+  femFaqA10:
+    'Comfortable, fitted clothing that allows you to move freely, heels with ankle strap (or sneakers if you are a beginner), towel and water. We also recommend bringing knee pads for floor work.',
+
+  femFaqQ11: 'Is Femmology the same as Sexy Style or are they different things?',
+  femFaqA11:
+    "They are complementary but different disciplines. Femmology is Yunaisy's personal project that fuses multiple styles and also works on self-awareness. Femmology classes are more technical and the level of demand is higher. Sexy Style focuses more on specific sensual choreographies. At Farray's Center we offer both.",
+
+  femFaqQ12: 'Can I make up classes if I miss?',
+  femFaqA12:
+    'Yes. If you have a membership and cancel a class, you have 30 days to make it up in any other class of the same level. If you have an hours package, you manage your classes flexibly and only hours from classes you attend are deducted.',
+
+  femFaqQ13: 'Who is the Femmology course designed for?',
+  femFaqA13:
+    'Femmology is for any woman who wants to learn to dance in heels, improve her posture and confidence, and discover her sensuality. There is no age limit or previous experience requirement.',
+
+  femFaqQ14: 'Does Femmology help with self-esteem?',
+  femFaqA14:
+    'Absolutely. Beyond technique, Femmology is a space to discover yourself, touch yourself, look at yourself and love yourself. Many students report feeling more confident and powerful after each class.',
+
+  femFaqQ15: 'Where are the Femmology classes and how can I contact you?',
+  femFaqA15:
+    'Femmology classes are taught exclusively at Farray\'s International Dance Center. We are located at Calle Entença 100, 08015 Barcelona (5 min from Plaza España and Sants).<br/><br/>📞 <strong>Phone:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+
+  // Course Schema
+  femCourseSchemaName: 'Femmology Classes in Barcelona - Heels Dancing with Yunaisy Farray',
+  femCourseSchemaDesc:
+    'Learn to dance in heels with Yunaisy Farray, creator of the exclusive Farray Method®, actress in Street Dance 2 and UNESCO-recognized teacher. Femmology classes for all levels in Barcelona.',
 };

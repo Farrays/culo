@@ -16,8 +16,29 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  // Check for reduced motion preference
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    // eslint-disable-next-line no-undef -- MediaQueryListEvent is a valid DOM type
+    const handleChange = (e: MediaQueryListEvent): void => {
+      setPrefersReducedMotion(e.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
 
   useEffect(() => {
+    // If user prefers reduced motion, show content immediately
+    if (prefersReducedMotion) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       entries => {
         const entry = entries[0];
@@ -42,7 +63,16 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
         observer.unobserve(currentRef);
       }
     };
-  }, []);
+  }, [prefersReducedMotion]);
+
+  // If reduced motion, render without animation classes
+  if (prefersReducedMotion) {
+    return (
+      <div ref={ref} className={className} style={style}>
+        {children}
+      </div>
+    );
+  }
 
   return (
     <div

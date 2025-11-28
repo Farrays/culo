@@ -48,6 +48,7 @@ const HipHopReggaetonPage = lazy(() => import('./components/HipHopReggaetonPage'
 const SexyReggaetonPage = lazy(() => import('./components/SexyReggaetonPage'));
 const ReggaetonCubanoPage = lazy(() => import('./components/ReggaetonCubanoPage'));
 const HeelsBarcelonaPage = lazy(() => import('./components/HeelsBarcelonaPage'));
+const FemmologyPage = lazy(() => import('./components/FemmologyPage'));
 
 // Valid locales
 const VALID_LOCALES: Locale[] = ['es', 'en', 'ca', 'fr'];
@@ -226,6 +227,16 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <HeelsBarcelonaPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/clases/femmology-sexy-style-en-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <FemmologyPage />
                 </>
               }
             />

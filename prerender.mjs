@@ -19,6 +19,7 @@ const routes = [
   { path: 'es/clases/sexy-reggaeton-barcelona', lang: 'es', page: 'sexyReggaeton' },
   { path: 'es/clases/reggaeton-cubano-barcelona', lang: 'es', page: 'reggaetonCubano' },
   { path: 'es/clases/heels-barcelona', lang: 'es', page: 'heelsBarcelona' },
+  { path: 'es/clases/femmology-sexy-style-en-barcelona', lang: 'es', page: 'femmology' },
   { path: 'es/clases-particulares-baile', lang: 'es', page: 'clasesParticulares' },
   { path: 'es/sobre-nosotros', lang: 'es', page: 'about' },
   { path: 'es/yunaisy-farray', lang: 'es', page: 'yunaisy' },
@@ -39,6 +40,7 @@ const routes = [
   { path: 'ca/clases/sexy-reggaeton-barcelona', lang: 'ca', page: 'sexyReggaeton' },
   { path: 'ca/clases/reggaeton-cubano-barcelona', lang: 'ca', page: 'reggaetonCubano' },
   { path: 'ca/clases/heels-barcelona', lang: 'ca', page: 'heelsBarcelona' },
+  { path: 'ca/clases/femmology-sexy-style-en-barcelona', lang: 'ca', page: 'femmology' },
   { path: 'ca/clases-particulares-baile', lang: 'ca', page: 'clasesParticulares' },
   { path: 'ca/sobre-nosotros', lang: 'ca', page: 'about' },
   { path: 'ca/yunaisy-farray', lang: 'ca', page: 'yunaisy' },
@@ -59,6 +61,7 @@ const routes = [
   { path: 'en/clases/sexy-reggaeton-barcelona', lang: 'en', page: 'sexyReggaeton' },
   { path: 'en/clases/reggaeton-cubano-barcelona', lang: 'en', page: 'reggaetonCubano' },
   { path: 'en/clases/heels-barcelona', lang: 'en', page: 'heelsBarcelona' },
+  { path: 'en/clases/femmology-sexy-style-en-barcelona', lang: 'en', page: 'femmology' },
   { path: 'en/clases-particulares-baile', lang: 'en', page: 'clasesParticulares' },
   { path: 'en/sobre-nosotros', lang: 'en', page: 'about' },
   { path: 'en/yunaisy-farray', lang: 'en', page: 'yunaisy' },
@@ -79,6 +82,7 @@ const routes = [
   { path: 'fr/clases/sexy-reggaeton-barcelona', lang: 'fr', page: 'sexyReggaeton' },
   { path: 'fr/clases/reggaeton-cubano-barcelona', lang: 'fr', page: 'reggaetonCubano' },
   { path: 'fr/clases/heels-barcelona', lang: 'fr', page: 'heelsBarcelona' },
+  { path: 'fr/clases/femmology-sexy-style-en-barcelona', lang: 'fr', page: 'femmology' },
   { path: 'fr/clases-particulares-baile', lang: 'fr', page: 'clasesParticulares' },
   { path: 'fr/sobre-nosotros', lang: 'fr', page: 'about' },
   { path: 'fr/yunaisy-farray', lang: 'fr', page: 'yunaisy' },
@@ -138,6 +142,10 @@ const metadata = {
     heelsBarcelona: {
       title: 'Clases de Heels en Barcelona | Femmology y Sexy Style | Farray\'s Center',
       description: 'Aprende a bailar en tacones con elegancia y sensualidad en Barcelona. Clases de Femmology Heels y Sexy Style con Yunaisy Farray, reconocida por CID-UNESCO. Todos los niveles.',
+    },
+    femmology: {
+      title: 'Clases de Femmology en Barcelona | Danza Terapéutica y Feminidad | Farray\'s Center',
+      description: 'Descubre Femmology en Barcelona: danzaterapia con tacones creada por Yunaisy Farray. Conecta con tu feminidad, autoestima y sensualidad. Método Farray®. ¡Reserva tu clase!',
     },
     clasesParticulares: {
       title: 'Clases Particulares de Baile en Barcelona | Personalizado y a Tu Ritmo | Farray\'s Center',
@@ -217,6 +225,10 @@ const metadata = {
       title: 'Classes de Heels a Barcelona | Femmology i Sexy Style | Farray\'s Center',
       description: 'Aprèn a ballar amb talons amb elegància i sensualitat a Barcelona. Classes de Femmology Heels i Sexy Style amb Yunaisy Farray, reconeguda per CID-UNESCO. Tots els nivells.',
     },
+    femmology: {
+      title: 'Classes de Femmology a Barcelona | Dansa Terapèutica i Feminitat | Farray\'s Center',
+      description: 'Descobreix Femmology a Barcelona: dansateràpia amb talons creada per Yunaisy Farray. Connecta amb la teva feminitat, autoestima i sensualitat. Mètode Farray®. Reserva la teva classe!',
+    },
     clasesParticulares: {
       title: 'Classes Particulars de Ball a Barcelona | Personalitzat i al Teu Ritme | Farray\'s Center',
       description: 'Classes particulars de ball a Barcelona 100% personalitzades. Professor exclusiu per a tu, horaris flexibles, tots els estils. Aprèn 3x més ràpid que en classes grupals. Bons disponibles.',
@@ -295,6 +307,10 @@ const metadata = {
       title: 'Heels Dance Classes in Barcelona | Femmology & Sexy Style | Farray\'s Center',
       description: 'Learn to dance in heels with elegance and sensuality in Barcelona. Femmology Heels and Sexy Style classes with Yunaisy Farray, CID-UNESCO recognized. All levels welcome.',
     },
+    femmology: {
+      title: 'Femmology Classes in Barcelona | Dance Therapy and Femininity | Farray\'s Center',
+      description: 'Discover Femmology in Barcelona: dance therapy in heels created by Yunaisy Farray. Connect with your femininity, self-esteem and sensuality. Farray Method®. Book your class!',
+    },
     clasesParticulares: {
       title: 'Private Dance Classes in Barcelona | Personalized and At Your Pace | Farray\'s Center',
       description: 'Private dance classes in Barcelona with 100% dedicated teacher. Salsa, Bachata, Dancehall, Contemporary Dance. Personalized teaching, flexible schedules and guaranteed results. Reserve your class now!',
@@ -372,6 +388,10 @@ const metadata = {
     heelsBarcelona: {
       title: 'Cours de Heels à Barcelone | Femmology et Sexy Style | Farray\'s Center',
       description: 'Apprends à danser en talons avec élégance et sensualité à Barcelone. Cours de Femmology Heels et Sexy Style avec Yunaisy Farray, reconnue par CID-UNESCO. Tous les niveaux.',
+    },
+    femmology: {
+      title: 'Cours de Femmology à Barcelone | Danse-Thérapie et Féminité | Farray\'s Center',
+      description: 'Découvrez Femmology à Barcelone: danse-thérapie en talons créée par Yunaisy Farray. Connectez avec votre féminité, estime de soi et sensualité. Méthode Farray®. Réservez votre cours!',
     },
     clasesParticulares: {
       title: 'Cours Particuliers de Danse à Barcelone | Personnalisé et à Votre Rythme | Farray\'s Center',
