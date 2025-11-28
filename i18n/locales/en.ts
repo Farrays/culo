@@ -3619,6 +3619,7 @@ The latest trends and styles merge in our classes in a varied, dynamic and fun w
     'Learn to dance in heels with elegance and sensuality in Barcelona. Femmology Heels and Sexy Style classes with Yunaisy Farray, CID-UNESCO recognized. All levels welcome.',
   heelsBarcelona_breadcrumb_home: 'Home',
   heelsBarcelona_breadcrumb_classes: 'Dance Classes',
+  heelsBarcelona_breadcrumb_urban: 'Urban Dance Classes',
   heelsBarcelona_breadcrumb_current: 'Heels Classes',
   heelsBarcelona_h1: 'Heels Dance Classes in Barcelona',
   heelsBarcelona_intro:

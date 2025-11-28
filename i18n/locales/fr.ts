@@ -3576,6 +3576,7 @@ Les dernières tendances et styles fusionnent dans nos cours de manière variée
     'Apprends à danser en talons avec élégance et sensualité à Barcelone. Cours de Femmology Heels et Sexy Style avec Yunaisy Farray, reconnue par CID-UNESCO. Tous les niveaux.',
   heelsBarcelona_breadcrumb_home: 'Accueil',
   heelsBarcelona_breadcrumb_classes: 'Cours de Danse',
+  heelsBarcelona_breadcrumb_urban: 'Cours de Danses Urbaines',
   heelsBarcelona_breadcrumb_current: 'Cours de Heels',
   heelsBarcelona_h1: 'Cours de Heels à Barcelone',
   heelsBarcelona_intro:

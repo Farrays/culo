@@ -3649,6 +3649,7 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
     'Aprèn a ballar amb talons amb elegància i sensualitat a Barcelona. Classes de Femmology Heels i Sexy Style amb Yunaisy Farray, reconeguda per CID-UNESCO. Tots els nivells.',
   heelsBarcelona_breadcrumb_home: 'Inici',
   heelsBarcelona_breadcrumb_classes: 'Classes de Ball',
+  heelsBarcelona_breadcrumb_urban: 'Classes de Danses Urbanes',
   heelsBarcelona_breadcrumb_current: 'Classes de Heels',
   heelsBarcelona_h1: 'Classes de Heels a Barcelona',
   heelsBarcelona_intro:

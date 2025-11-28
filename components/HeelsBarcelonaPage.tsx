@@ -88,6 +88,12 @@ const HeelsBarcelonaPage: React.FC = () => {
       {
         '@type': 'ListItem',
         position: 3,
+        name: t('heelsBarcelona_breadcrumb_urban'),
+        item: `${baseUrl}/${locale}/clases/danzas-urbanas-barcelona`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
         name: t('heelsBarcelona_breadcrumb_current'),
         item: `${baseUrl}/${locale}/clases/heels-barcelona`,
       },
@@ -98,6 +104,7 @@ const HeelsBarcelonaPage: React.FC = () => {
   const breadcrumbItems = [
     { name: t('heelsBarcelona_breadcrumb_home'), url: `/${locale}` },
     { name: t('heelsBarcelona_breadcrumb_classes'), url: `/${locale}/clases/baile-barcelona` },
+    { name: t('heelsBarcelona_breadcrumb_urban'), url: `/${locale}/clases/danzas-urbanas-barcelona` },
     {
       name: t('heelsBarcelona_breadcrumb_current'),
       url: `/${locale}/clases/heels-barcelona`,

@@ -4527,6 +4527,7 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
     'Aprende a bailar en tacones con elegancia y sensualidad en Barcelona. Clases de Femmology Heels y Sexy Style con Yunaisy Farray, reconocida por CID-UNESCO. Todos los niveles.',
   heelsBarcelona_breadcrumb_home: 'Inicio',
   heelsBarcelona_breadcrumb_classes: 'Clases de Baile',
+  heelsBarcelona_breadcrumb_urban: 'Clases de Danzas Urbanas',
   heelsBarcelona_breadcrumb_current: 'Clases de Heels',
   heelsBarcelona_h1: 'Clases de Heels en Barcelona',
   heelsBarcelona_intro:
