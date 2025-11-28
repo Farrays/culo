@@ -4,6 +4,12 @@ import { useI18n } from '../../hooks/useI18n';
 import { GlobeIcon } from '../../lib/icons';
 import type { Locale } from '../../types';
 
+interface SubSubMenuItem {
+  path: string;
+  textKey: string;
+  submenu?: Array<{ path: string; textKey: string }>;
+}
+
 interface MenuStructure {
   home: { path: string; textKey: string };
   classes: {
@@ -12,7 +18,7 @@ interface MenuStructure {
     submenu?: Array<{
       path: string;
       textKey: string;
-      submenu?: Array<{ path: string; textKey: string }>;
+      submenu?: SubSubMenuItem[];
     }>;
   };
 }
@@ -143,23 +149,58 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                 >
                   {t(item.textKey)}
                 </Link>
-                {/* Sub-submenu (Dancehall under Urban) */}
+                {/* Sub-submenu (Urban styles) */}
                 {item.submenu && (
                   <div className="flex flex-col items-center space-y-2 pl-4">
-                    {item.submenu.map(subitem => (
-                      <Link
-                        key={subitem.path}
-                        to={subitem.path}
-                        onClick={() => setIsMenuOpen(false)}
-                        className={`text-lg font-medium transition-colors duration-300 ${
-                          location.pathname === subitem.path
-                            ? 'text-primary-accent'
-                            : 'text-neutral hover:text-white'
-                        }`}
-                      >
-                        {t(subitem.textKey)}
-                      </Link>
-                    ))}
+                    {item.submenu.map(subitem =>
+                      subitem.submenu ? (
+                        // Item with sub-submenu (e.g., Heels with Femmology & Sexy Style)
+                        <div key={subitem.path} className="flex flex-col items-center space-y-2">
+                          <Link
+                            to={subitem.path}
+                            onClick={() => setIsMenuOpen(false)}
+                            className={`text-lg font-medium transition-colors duration-300 ${
+                              location.pathname === subitem.path
+                                ? 'text-primary-accent'
+                                : 'text-neutral hover:text-white'
+                            }`}
+                          >
+                            {t(subitem.textKey)}
+                          </Link>
+                          {/* 3rd level submenu */}
+                          <div className="flex flex-col items-center space-y-1 pl-4">
+                            {subitem.submenu.map(subsubitem => (
+                              <Link
+                                key={subsubitem.path}
+                                to={subsubitem.path}
+                                onClick={() => setIsMenuOpen(false)}
+                                className={`text-base font-medium transition-colors duration-300 ${
+                                  location.pathname === subsubitem.path
+                                    ? 'text-primary-accent'
+                                    : 'text-neutral/70 hover:text-white'
+                                }`}
+                              >
+                                {t(subsubitem.textKey)}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        // Regular subitem
+                        <Link
+                          key={subitem.path}
+                          to={subitem.path}
+                          onClick={() => setIsMenuOpen(false)}
+                          className={`text-lg font-medium transition-colors duration-300 ${
+                            location.pathname === subitem.path
+                              ? 'text-primary-accent'
+                              : 'text-neutral hover:text-white'
+                          }`}
+                        >
+                          {t(subitem.textKey)}
+                        </Link>
+                      )
+                    )}
                   </div>
                 )}
               </div>
