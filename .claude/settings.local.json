@@ -67,7 +67,8 @@
       "Bash(npx tsc:*)",
       "Bash(npx eslint:*)",
       "Bash(npx prettier:*)",
-      "Bash(node scripts/create-class-page.mjs:*)"
+      "Bash(node scripts/create-class-page.mjs:*)",
+      "Bash(git stash:*)"
     ],
     "deny": [],
     "ask": []

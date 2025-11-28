@@ -16,6 +16,12 @@ export const es = {
   navHipHopReggaeton: 'Hip Hop Reggaeton',
   navTwerk: 'Twerk',
   navAfrobeat: 'Afrobeat',
+  navHipHop: 'Hip Hop',
+  navSexyReggaeton: 'Sexy Reggaeton',
+  navReggaetonCubano: 'Reggaeton Cubano',
+  navHeels: 'Heels',
+  navFemmology: 'Femmology',
+  navSexyStyle: 'Sexy Style',
   navPrepFisica: 'Entrenamiento para Bailarines',
   navClasesParticulares: 'Clases Particulares',
   navServices: 'Servicios',
@@ -497,6 +503,9 @@ export const es = {
   danceClassesHub_style_afrobeat: 'Afrobeat',
   danceClassesHub_style_dancehall: 'Dancehall',
   danceClassesHub_style_femmology_heels: 'Femmology Heels',
+  danceClassesHub_style_heels_barcelona: 'Heels Barcelona',
+  danceClassesHub_style_heels_barcelona_desc:
+    'Hub de clases de baile en tacones en Barcelona: Femmology (danzaterapia + técnica de élite con Yunaisy Farray) y Sexy Style (diversión + expresión con Yasmina Fernández). Aprende a bailar con tacones de forma segura, desarrolla feminidad, sensualidad, postura y confianza. Para todos los niveles.',
   danceClassesHub_style_hip_hop: 'Hip Hop',
   danceClassesHub_style_hip_hop_reggaeton: 'Hip Hop Reggaeton',
   danceClassesHub_style_reggaeton_cubano: 'Reggaeton Cubano (Reparto)',
@@ -1769,6 +1778,8 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
     'Baile comercial coreano: coreografías de precisión inspiradas en BTS, Blackpink, Stray Kids. Sincronización perfecta, formaciones grupales, detalles faciales. Ideal para amantes del K-Pop y danza comercial.',
   danzasUrbanas_style_femmology_heels_seo:
     'Técnica femenina en tacones: fusión de sensualidad, elegancia y fuerza. Desarrolla confianza, control corporal, aislaciones y presencia escénica. Entrenamiento completo de piernas, core y feminidad.',
+  danzasUrbanas_style_heels_barcelona_seo:
+    'Hub de clases en tacones: Femmology (danzaterapia + técnica de élite con Yunaisy Farray) y Sexy Style (diversión sin presión con Yasmina Fernández). Dos estilos, un objetivo: brillar en tacones.',
   danzasUrbanas_style_sexy_style_seo:
     'Sensualidad en movimiento: técnica en tacones que combina feminidad, confianza y control corporal. Desarrolla elegancia, fuerza de piernas y expresión sexy sin perder el respeto.',
   danzasUrbanas_style_sexy_reggaeton_seo:
@@ -4506,4 +4517,198 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   rcbCourseSchemaName: "Clases de Reggaeton Cubano en Barcelona - Farray's Center",
   rcbCourseSchemaDesc:
     'Aprende Reggaeton Cubano auténtico con Yunaisy Farray, maestra cubana y actriz de Street Dance 2. Clases de Reparto, Cubatón e improvisación para todos los niveles en Barcelona.',
+
+  // ====================
+  // HEELS BARCELONA PAGE (Category Hub Page)
+  // ====================
+  heelsBarcelona_title: "Clases de Heels en Barcelona | Femmology y Sexy Style | Farray's Center",
+  heelsBarcelona_description:
+    'Aprende a bailar en tacones con elegancia y sensualidad en Barcelona. Clases de Femmology Heels y Sexy Style con Yunaisy Farray, reconocida por CID-UNESCO. Todos los niveles.',
+  heelsBarcelona_breadcrumb_home: 'Inicio',
+  heelsBarcelona_breadcrumb_classes: 'Clases de Baile',
+  heelsBarcelona_breadcrumb_urban: 'Clases de Danzas Urbanas',
+  heelsBarcelona_breadcrumb_current: 'Clases de Heels',
+  heelsBarcelona_h1: 'Clases de Heels en Barcelona',
+  heelsBarcelona_intro:
+    "Descubre el arte de bailar en tacones en Farray's Center Barcelona. Nuestras clases de Heels combinan técnica, elegancia y sensualidad para que camines y bailes con seguridad y estilo. Desde Femmology hasta Sexy Style, encuentra la disciplina perfecta para conectar con tu feminidad, mejorar tu postura y ganar confianza con el exclusivo Método Farray® creado por Yunaisy Farray.",
+
+  // What is Heels Section (Point 1 - SEO CRITICAL)
+  heelsBarcelona_whatIs_title: '¿Qué son las Clases de Heels?',
+  heelsBarcelona_whatIs_definition:
+    'Las clases de Heels son disciplinas de baile donde aprendes a moverte y bailar con tacones altos de forma segura, elegante y sensual. Combina técnicas de danza contemporánea, jazz y expresión corporal con el uso de tacones, desarrollando postura, equilibrio, fuerza y confianza. Es mucho más que bailar: es una forma de empoderamiento femenino y conexión con tu sensualidad.',
+  heelsBarcelona_whatIs_benefits_title: 'Beneficios de bailar en tacones con el Método Farray®:',
+  heelsBarcelona_whatIs_benefits_list1: 'Mejora tu postura, alineación corporal y equilibrio',
+  heelsBarcelona_whatIs_benefits_list2: 'Fortalece piernas, glúteos y core mientras bailas',
+  heelsBarcelona_whatIs_benefits_list3: 'Desarrolla coordinación, elegancia y presencia escénica',
+  heelsBarcelona_whatIs_benefits_list4: 'Conecta con tu feminidad y sensualidad de forma sana',
+  heelsBarcelona_whatIs_benefits_list5:
+    'Gana seguridad para caminar y bailar con tacones en cualquier evento',
+  heelsBarcelona_whatIs_benefits_list6: 'Libera estrés y aumenta tu autoestima con cada clase',
+
+  // Styles Section
+  heelsBarcelona_styles_title: 'Estilos de Heels que Ofrecemos',
+  heelsBarcelona_styles_description:
+    'Dos disciplinas únicas para expresar tu feminidad y sensualidad a través del movimiento. Elige tu estilo o combínalos para un desarrollo completo.',
+
+  // Style Cards SEO Text
+  heelsBarcelona_style_femmology_title: 'Femmology Heels',
+  heelsBarcelona_style_femmology_seo:
+    'La disciplina exclusiva creada por Yunaisy Farray que fusiona técnica de tacones, sensualidad elegante, expresión corporal y empoderamiento femenino. Aprende a moverte con gracia, presencia y confianza.',
+  heelsBarcelona_style_sexy_style_title: 'Sexy Style',
+  heelsBarcelona_style_sexy_style_seo:
+    'Baile sensual en tacones con actitud y libertad expresiva. Movimientos de cadera, ondas corporales, floorwork y coreografías que potencian tu feminidad. Para todas las edades y niveles.',
+
+  // Which Style to Choose Section (Point 2 - SEO CRITICAL)
+  heelsBarcelona_whichStyle_title: '¿Femmology o Sexy Style? Encuentra tu Disciplina Perfecta',
+  heelsBarcelona_whichStyle_intro:
+    'Femmology es danzaterapia: técnica exigente + trabajo emocional. Sexy Style es diversión: libertad expresiva + coreografías sensuales. Descubre cuál se adapta mejor a ti.',
+
+  // Comparison Cards
+  heelsBarcelona_whichStyle_femmology_title: 'Femmology',
+  heelsBarcelona_whichStyle_femmology_subtitle: 'Danzaterapia + Técnica en Tacones',
+  heelsBarcelona_whichStyle_femmology_for: 'Es para ti si buscas...',
+  heelsBarcelona_whichStyle_femmology_point1:
+    'Trabajar miedos, inseguridades y bloqueos emocionales a través de la danza',
+  heelsBarcelona_whichStyle_femmology_point2:
+    'Alta exigencia técnica con una maestra de élite (Yunaisy Farray)',
+  heelsBarcelona_whichStyle_femmology_point3: 'Autoconocimiento, autoestima y aceptación corporal',
+  heelsBarcelona_whichStyle_femmology_point4:
+    'Fusión de estilos: Hip Hop, Cabaret, Street Jazz, Funky',
+  heelsBarcelona_whichStyle_femmology_point5: 'Aprender a usar pelo, suelo, disociación corporal',
+  heelsBarcelona_whichStyle_femmology_point6: 'Quererte más cada día, hermosa mujer',
+
+  heelsBarcelona_whichStyle_sexystyle_title: 'Sexy Style',
+  heelsBarcelona_whichStyle_sexystyle_subtitle: 'Libertad Expresiva + Diversión',
+  heelsBarcelona_whichStyle_sexystyle_for: 'Es para ti si buscas...',
+  heelsBarcelona_whichStyle_sexystyle_point1: 'Divertirte bailando sin presión técnica elevada',
+  heelsBarcelona_whichStyle_sexystyle_point2: 'Movimientos de cadera, ondas corporales y actitud',
+  heelsBarcelona_whichStyle_sexystyle_point3:
+    'Coreografías sensuales y pegadizas para pasarlo bien',
+  heelsBarcelona_whichStyle_sexystyle_point4: 'Floorwork y expresión corporal libre',
+  heelsBarcelona_whichStyle_sexystyle_point5: 'Sentirte sexy sin necesidad de tacones altos',
+  heelsBarcelona_whichStyle_sexystyle_point6: 'Un ambiente más relajado y accesible',
+  heelsBarcelona_whichStyle_femmology_cta: 'Descubre Femmology',
+  heelsBarcelona_whichStyle_sexystyle_cta: 'Descubre Sexy Style',
+
+  // Comparison Table
+  heelsBarcelona_table_aspect: 'Aspecto',
+  heelsBarcelona_table_femmology: 'Femmology',
+  heelsBarcelona_table_sexystyle: 'Sexy Style',
+  heelsBarcelona_table_heels: 'Uso de tacones',
+  heelsBarcelona_table_heels_fem: 'Obligatorio',
+  heelsBarcelona_table_heels_sexy: 'Opcional (puedes empezar sin)',
+  heelsBarcelona_table_level: 'Exigencia técnica',
+  heelsBarcelona_table_level_fem: 'Alta',
+  heelsBarcelona_table_level_sexy: 'Media-Baja',
+  heelsBarcelona_table_focus: 'Enfoque principal',
+  heelsBarcelona_table_focus_fem: 'Danzaterapia + Técnica',
+  heelsBarcelona_table_focus_sexy: 'Diversión + Expresión',
+  heelsBarcelona_table_emotional: 'Trabajo emocional',
+  heelsBarcelona_table_emotional_fem: 'Sí, es el core de la clase',
+  heelsBarcelona_table_emotional_sexy: 'No, centrado en baile',
+  heelsBarcelona_table_teacher: 'Profesora',
+  heelsBarcelona_table_teacher_fem: 'Yunaisy Farray (creadora)',
+  heelsBarcelona_table_teacher_sexy: 'Yasmina Fernández',
+  heelsBarcelona_table_ideal: 'Ideal para',
+  heelsBarcelona_table_ideal_fem: 'Transformación personal profunda',
+  heelsBarcelona_table_ideal_sexy: 'Pasarlo bien bailando sensual',
+
+  heelsBarcelona_whichStyle_combine_title: '¿Puedo combinar ambos estilos?',
+  heelsBarcelona_whichStyle_combine_text:
+    '¡Sí! Muchas alumnas hacen ambos. Femmology te transforma por dentro (miedos, bloqueos, autoestima) mientras desarrollas técnica exigente con Yunaisy. Sexy Style te da libertad para disfrutar sin presión. Juntos, te convierten en una mujer más completa por dentro y por fuera.',
+
+  // Why Choose Section (Value Pillars)
+  heelsBarcelona_why_title: "¿Por qué aprender Heels en Farray's Center?",
+  heelsBarcelona_why_reason1_title: 'Academia Reconocida por CID-UNESCO',
+  heelsBarcelona_why_reason1_desc:
+    'La única escuela de Heels en Barcelona avalada por el Consejo Internacional de Danza de la UNESCO. Certificación y reconocimiento internacional para tu formación.',
+  heelsBarcelona_why_reason2_title: 'Yunaisy Farray - Creadora del Método',
+  heelsBarcelona_why_reason2_desc:
+    'Aprende con la creadora del Método Farray®, actriz de Street Dance 2 y referente internacional en danza femenina. Experiencia y pasión en cada clase.',
+  heelsBarcelona_why_reason3_title: 'Enfoque en Feminidad y Empoderamiento',
+  heelsBarcelona_why_reason3_desc:
+    'Nuestras clases van más allá de la técnica: trabajamos autoestima, expresión corporal y conexión con tu feminidad en un ambiente seguro y respetuoso.',
+  heelsBarcelona_why_reason4_title: 'Técnica Segura para Tus Articulaciones',
+  heelsBarcelona_why_reason4_desc:
+    'Enseñamos a bailar en tacones sin dañar tus rodillas ni tobillos. Calentamiento específico, técnica correcta y ejercicios de fortalecimiento incluidos.',
+  heelsBarcelona_why_reason5_title: 'Instalaciones de 700 m²',
+  heelsBarcelona_why_reason5_desc:
+    'Salas amplias con suelo profesional, espejos de pared completa, barras, aire acondicionado y vestuarios equipados. Todo para que te enfoques en brillar.',
+  heelsBarcelona_why_reason6_title: 'Ubicación Céntrica',
+  heelsBarcelona_why_reason6_desc:
+    'Calle Entença 100, a 5 minutos de Plaza España y Sants. Fácil acceso en metro, tren y bus. Fácil llegar, fácil volver.',
+
+  // Stats Section
+  heelsBarcelona_stats_title: 'La Academia de Heels de Referencia en Barcelona',
+
+  // Testimonials Section
+  heelsBarcelona_testimonials_title: 'Testimonios de Nuestras Alumnas',
+  heelsBarcelona_testimonials_intro:
+    "Alumnas de Femmology y Sexy Style comparten su experiencia en Farray's Center Barcelona. Sin filtros, sin guiones. Solo historias reales de transformación.",
+
+  // FAQ Section
+  heelsBarcelona_faq_title: 'Preguntas frecuentes sobre nuestras clases de Heels en Barcelona',
+
+  // 10 FAQs
+  heelsFaqQ1: '¿Necesito experiencia previa para las clases de Heels?',
+  heelsFaqA1:
+    'No necesitas experiencia previa. Tenemos niveles desde principiante absoluto hasta avanzado. Lo importante es venir con ganas de explorar tu feminidad y disfrutar del movimiento en tacones.',
+
+  heelsFaqQ2: '¿Qué tacones necesito para las clases?',
+  heelsFaqA2:
+    'Para principiantes recomendamos tacones de 7-9 cm con plataforma para mayor estabilidad. Si nunca has bailado en tacones, puedes empezar con tacón grueso. Te guiaremos sobre qué modelo elegir en tu primera clase.',
+
+  heelsFaqQ3: '¿Las clases de Heels son solo para mujeres?',
+  heelsFaqA3:
+    'Nuestras clases de Heels están abiertas a todas las personas que quieran explorar este estilo de baile, sin importar género. Lo importante es la actitud y las ganas de aprender.',
+
+  heelsFaqQ4: '¿Qué diferencia hay entre Femmology y Sexy Style?',
+  heelsFaqA4:
+    'Femmology Heels se enfoca en elegancia, técnica de caminar en tacones, postura y sensualidad refinada. Sexy Style es más libre, con más movimiento de cadera, ondas corporales y trabajo de suelo. Ambos desarrollan feminidad pero con diferentes enfoques.',
+
+  heelsFaqQ5: '¿Es peligroso bailar en tacones? ¿Puedo lesionarme?',
+  heelsFaqA5:
+    'Con la técnica correcta, bailar en tacones es seguro. En nuestras clases enseñamos calentamiento específico, alineación correcta y fortalecimiento de tobillos y rodillas. Nunca forzamos y respetamos el ritmo de cada alumna.',
+
+  heelsFaqQ6: '¿Puedo venir con tacones bajos o sin tacones al principio?',
+  heelsFaqA6:
+    'Sí. Si eres principiante o tienes alguna molestia, puedes empezar con tacones más bajos o incluso sin tacones para aprender la técnica básica. El objetivo es que te sientas cómoda y segura.',
+
+  heelsFaqQ7: '¿Cuánto tiempo tardo en poder bailar bien en tacones?',
+  heelsFaqA7:
+    'Con constancia (2 clases por semana), notarás mejoras significativas en equilibrio, postura y confianza en 4-6 semanas. En 3 meses ya podrás bailar coreografías completas con soltura.',
+
+  heelsFaqQ8: '¿Qué ropa debo llevar a las clases de Heels?',
+  heelsFaqA8:
+    'Ropa que te haga sentir bien y permita libertad de movimiento: shorts, leggins, body, top. Lo importante es que puedas verte en el espejo y sentirte cómoda. Trae tus tacones y rodilleras si tienes.',
+
+  heelsFaqQ9: '¿Organizan showcases o eventos donde pueda bailar?',
+  heelsFaqA9:
+    'Sí. Cada año organizamos una Gala Anual en un teatro profesional de Barcelona donde las alumnas de Heels pueden presentar coreografías preparadas durante el curso. Es una experiencia única de empoderamiento.',
+
+  heelsFaqQ10: '¿Dónde está la escuela y cómo contacto?',
+  heelsFaqA10:
+    'Estamos en Calle Entença 100, 08015 Barcelona (a 5 min de Plaza España y Sants).<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+
+  heelsFaqQ11: '¿Cuál es la mejor clase de Heels para principiantes en Barcelona?',
+  heelsFaqA11:
+    'Para principiantes recomendamos empezar con <strong>Sexy Style</strong>, ya que permite comenzar sin tacones y tiene menor exigencia técnica. Una vez te sientas cómoda, puedes probar <strong>Femmology</strong> con Yunaisy Farray para un trabajo más profundo de técnica y desarrollo personal.',
+
+  heelsFaqQ12: '¿Qué beneficios tiene bailar en tacones para mi cuerpo y mente?',
+  heelsFaqA12:
+    'Bailar en tacones fortalece piernas, glúteos y core, mejora la postura y el equilibrio. A nivel mental, aumenta la confianza, la autoestima y la conexión con tu feminidad. En Femmology además trabajamos miedos, inseguridades y bloqueos emocionales a través de la danzaterapia.',
+
+  // CTA Final
+  heelsBarcelona_cta_title: 'Descubre tu Poder en Tacones',
+  heelsBarcelona_cta_subtitle: 'Tu primera clase de Heels te está esperando.',
+  heelsBarcelona_cta_description:
+    "Únete a cientos de alumnas que están descubriendo su feminidad, ganando confianza y brillando en tacones en Farray's Center Barcelona. Femmology, Sexy Style y mucho más con el exclusivo Método Farray® creado por Yunaisy Farray.",
+
+  // Course Schema
+  heelsCourseSchemaName: "Clases de Heels en Barcelona - Farray's Center",
+  heelsCourseSchemaDesc:
+    'Aprende a bailar en tacones con Yunaisy Farray, creadora del Método Farray® y reconocida por CID-UNESCO. Clases de Femmology y Sexy Style para todos los niveles en Barcelona.',
+
+  // View More
+  heelsBarcelona_viewMore: 'Ver más →',
 };

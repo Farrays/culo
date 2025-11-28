@@ -4,6 +4,12 @@ import { useI18n } from '../../hooks/useI18n';
 import { ChevronDownIcon } from '../../lib/icons';
 import type { Locale } from '../../types';
 
+interface SubSubMenuItem {
+  path: string;
+  textKey: string;
+  submenu?: Array<{ path: string; textKey: string }>;
+}
+
 interface MenuStructure {
   home: { path: string; textKey: string };
   classes: {
@@ -12,7 +18,7 @@ interface MenuStructure {
     submenu?: Array<{
       path: string;
       textKey: string;
-      submenu?: Array<{ path: string; textKey: string }>;
+      submenu?: SubSubMenuItem[];
     }>;
   };
 }
@@ -24,6 +30,8 @@ interface DesktopNavigationProps {
   setIsClassesDropdownOpen: (open: boolean) => void;
   isUrbanDropdownOpen: boolean;
   setIsUrbanDropdownOpen: (open: boolean) => void;
+  isHeelsDropdownOpen: boolean;
+  setIsHeelsDropdownOpen: (open: boolean) => void;
   isServicesDropdownOpen: boolean;
   setIsServicesDropdownOpen: (open: boolean) => void;
   isAboutUsDropdownOpen: boolean;
@@ -37,6 +45,8 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
   setIsClassesDropdownOpen,
   isUrbanDropdownOpen,
   setIsUrbanDropdownOpen,
+  isHeelsDropdownOpen,
+  setIsHeelsDropdownOpen,
   isServicesDropdownOpen,
   setIsServicesDropdownOpen,
   isAboutUsDropdownOpen,
@@ -139,19 +149,66 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
                       </div>
                       {isUrbanDropdownOpen && (
                         <div className="bg-black/80 border-t border-white/10">
-                          {item.submenu.map(subitem => (
-                            <Link
-                              key={subitem.path}
-                              to={subitem.path}
-                              onClick={() => {
-                                setIsClassesDropdownOpen(false);
-                                setIsUrbanDropdownOpen(false);
-                              }}
-                              className="block px-8 py-3 text-sm font-medium text-neutral/80 hover:bg-white/10 hover:text-white transition-all duration-200"
-                            >
-                              {t(subitem.textKey)}
-                            </Link>
-                          ))}
+                          {item.submenu.map(subitem =>
+                            subitem.submenu ? (
+                              // Item with sub-submenu (e.g., Heels with Femmology & Sexy Style)
+                              <div key={subitem.path} className="relative heels-dropdown">
+                                <div className="flex items-center justify-between px-8 py-3 text-sm font-medium text-neutral/80 hover:bg-white/10 hover:text-white transition-all duration-200">
+                                  <Link
+                                    to={subitem.path}
+                                    className="flex-1"
+                                    onClick={() => {
+                                      setIsClassesDropdownOpen(false);
+                                      setIsUrbanDropdownOpen(false);
+                                      setIsHeelsDropdownOpen(false);
+                                    }}
+                                  >
+                                    {t(subitem.textKey)}
+                                  </Link>
+                                  <button
+                                    onClick={() => setIsHeelsDropdownOpen(!isHeelsDropdownOpen)}
+                                    className="ml-2"
+                                    aria-expanded={isHeelsDropdownOpen}
+                                  >
+                                    <ChevronDownIcon
+                                      className={`w-3 h-3 transition-transform duration-300 ${isHeelsDropdownOpen ? 'rotate-180' : ''}`}
+                                    />
+                                  </button>
+                                </div>
+                                {isHeelsDropdownOpen && (
+                                  <div className="bg-black/90 border-t border-white/5">
+                                    {subitem.submenu.map(subsubitem => (
+                                      <Link
+                                        key={subsubitem.path}
+                                        to={subsubitem.path}
+                                        onClick={() => {
+                                          setIsClassesDropdownOpen(false);
+                                          setIsUrbanDropdownOpen(false);
+                                          setIsHeelsDropdownOpen(false);
+                                        }}
+                                        className="block px-12 py-2 text-sm font-medium text-neutral/70 hover:bg-white/10 hover:text-white transition-all duration-200"
+                                      >
+                                        {t(subsubitem.textKey)}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            ) : (
+                              // Regular subitem
+                              <Link
+                                key={subitem.path}
+                                to={subitem.path}
+                                onClick={() => {
+                                  setIsClassesDropdownOpen(false);
+                                  setIsUrbanDropdownOpen(false);
+                                }}
+                                className="block px-8 py-3 text-sm font-medium text-neutral/80 hover:bg-white/10 hover:text-white transition-all duration-200"
+                              >
+                                {t(subitem.textKey)}
+                              </Link>
+                            )
+                          )}
                         </div>
                       )}
                     </div>

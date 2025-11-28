@@ -17,6 +17,7 @@ const Header: React.FC = () => {
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const [isClassesDropdownOpen, setIsClassesDropdownOpen] = useState(false);
   const [isUrbanDropdownOpen, setIsUrbanDropdownOpen] = useState(false);
+  const [isHeelsDropdownOpen, setIsHeelsDropdownOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   const [isAboutUsDropdownOpen, setIsAboutUsDropdownOpen] = useState(false);
 
@@ -43,6 +44,9 @@ const Header: React.FC = () => {
       }
       if (!target.closest('.urban-dropdown')) {
         setIsUrbanDropdownOpen(false);
+      }
+      if (!target.closest('.heels-dropdown')) {
+        setIsHeelsDropdownOpen(false);
       }
       if (!target.closest('.services-dropdown')) {
         setIsServicesDropdownOpen(false);
@@ -97,13 +101,28 @@ const Header: React.FC = () => {
           path: `/${locale}/clases/danzas-urbanas-barcelona`,
           textKey: 'navDanzasUrbanas',
           submenu: [
+            // Ordenado alfabéticamente - Heels tiene submenú con Femmology y Sexy Style
+            { path: `/${locale}/clases/afrobeats-barcelona`, textKey: 'navAfrobeat' },
             { path: `/${locale}/clases/dancehall-barcelona`, textKey: 'navDancehall' },
+            {
+              path: `/${locale}/clases/heels-barcelona`,
+              textKey: 'navHeels',
+              submenu: [
+                {
+                  path: `/${locale}/clases/femmology-sexy-style-en-barcelona`,
+                  textKey: 'navFemmology',
+                },
+                { path: `/${locale}/clases/clases-de-sexy-style`, textKey: 'navSexyStyle' },
+              ],
+            },
+            { path: `/${locale}/clases/hip-hop-barcelona`, textKey: 'navHipHop' },
             {
               path: `/${locale}/clases/hip-hop-reggaeton-barcelona`,
               textKey: 'navHipHopReggaeton',
             },
+            { path: `/${locale}/clases/reggaeton-cubano-barcelona`, textKey: 'navReggaetonCubano' },
+            { path: `/${locale}/clases/sexy-reggaeton-barcelona`, textKey: 'navSexyReggaeton' },
             { path: `/${locale}/clases/twerk-barcelona`, textKey: 'navTwerk' },
-            { path: `/${locale}/clases/afrobeat-barcelona`, textKey: 'navAfrobeat' },
           ],
         },
         { path: `/${locale}/clases/salsa-bachata-barcelona`, textKey: 'navSalsaBachata' },
@@ -130,6 +149,8 @@ const Header: React.FC = () => {
             setIsClassesDropdownOpen={setIsClassesDropdownOpen}
             isUrbanDropdownOpen={isUrbanDropdownOpen}
             setIsUrbanDropdownOpen={setIsUrbanDropdownOpen}
+            isHeelsDropdownOpen={isHeelsDropdownOpen}
+            setIsHeelsDropdownOpen={setIsHeelsDropdownOpen}
             isServicesDropdownOpen={isServicesDropdownOpen}
             setIsServicesDropdownOpen={setIsServicesDropdownOpen}
             isAboutUsDropdownOpen={isAboutUsDropdownOpen}
