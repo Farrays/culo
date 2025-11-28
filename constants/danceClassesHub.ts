@@ -61,6 +61,7 @@ export const HUB_CATEGORIES: HubCategory[] = [
       { key: 'afrobeat', url: '/clases/afrobeats-barcelona' },
       { key: 'commercial_dance', url: '/clases/commercial-dance-barcelona' },
       { key: 'dancehall', url: '/clases/dancehall-barcelona' },
+      { key: 'femmology_heels', url: '/clases/femmology-sexy-style-en-barcelona' },
       { key: 'heels_barcelona', url: '/clases/heels-barcelona' },
       { key: 'hip_hop', url: '/clases/hip-hop-barcelona' },
       { key: 'hip_hop_reggaeton', url: '/clases/hip-hop-reggaeton-barcelona' },
