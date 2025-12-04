@@ -340,12 +340,7 @@ const ModernJazzPage: React.FC = () => {
         name={t('modernjazzPageTitle')}
         description={t('modernjazzMetaDescription')}
         url={pageUrl}
-        speakableSelectors={[
-          '#hero-title',
-          '#what-is-title',
-          '.speakable-intro',
-          '#faq',
-        ]}
+        speakableSelectors={['#hero-title', '#what-is-title', '.speakable-intro', '#faq']}
       />
 
       {/* DefinedTerm Schema - Technical Terms for AI understanding */}

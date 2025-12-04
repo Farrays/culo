@@ -338,7 +338,8 @@ export const EventSchema: React.FC<EventSchemaProps> = props => {
       },
     }),
     eventStatus: props.eventStatus || 'https://schema.org/EventScheduled',
-    eventAttendanceMode: props.eventAttendanceMode || 'https://schema.org/OfflineEventAttendanceMode',
+    eventAttendanceMode:
+      props.eventAttendanceMode || 'https://schema.org/OfflineEventAttendanceMode',
   };
 
   return (

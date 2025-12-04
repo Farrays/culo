@@ -68,7 +68,11 @@
       "Bash(npx eslint:*)",
       "Bash(npx prettier:*)",
       "Bash(node scripts/create-class-page.mjs:*)",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "Bash(npx vite build:*)",
+      "Bash(curl:*)",
+      "Bash(node prerender.mjs:*)",
+      "Bash(node:*)"
     ],
     "deny": [],
     "ask": []

@@ -5486,7 +5486,7 @@ Farray's International Dance Center está valorado cerca del **5/5 en Google**, 
   // ===== GEO OPTIMIZATION: HowTo Schema =====
   modernjazzHowToName: 'Cómo empezar a bailar Modern Jazz en Barcelona',
   modernjazzHowToDesc:
-    'Guía paso a paso para comenzar tus clases de Modern Jazz en Farray\'s Center. Desde elegir tu nivel hasta tu primera clase.',
+    "Guía paso a paso para comenzar tus clases de Modern Jazz en Farray's Center. Desde elegir tu nivel hasta tu primera clase.",
   modernjazzHowToSupply1: 'Ropa cómoda y elástica',
   modernjazzHowToSupply2: 'Zapatillas de jazz o calcetines antideslizantes',
   modernjazzHowToSupply3: 'Botella de agua',
@@ -5519,7 +5519,7 @@ Farray's International Dance Center está valorado cerca del **5/5 en Google**, 
     'La musicalidad en danza es la capacidad de interpretar y expresar la música a través del movimiento. Incluye entender el ritmo, acentos, dinámicas y emociones de la música para bailar "con" ella, no solo "sobre" ella.',
 
   // ===== GEO OPTIMIZATION: Event Schema =====
-  modernjazzEventName: 'Clase de Modern Jazz en Barcelona - Farray\'s Center',
+  modernjazzEventName: "Clase de Modern Jazz en Barcelona - Farray's Center",
   modernjazzEventDesc:
     'Clase semanal de Modern Jazz con Alejandro Miñoso. Técnica clásica, expresión contemporánea, coreografías de Broadway. Todos los niveles bienvenidos.',
 
@@ -5532,5 +5532,5 @@ Farray's International Dance Center está valorado cerca del **5/5 en Google**, 
   modernjazzCitableFact2:
     'Un famoso estudio publicado en New England Journal of Medicine demostró que las personas que bailaban con frecuencia tenían hasta un 76% menos riesgo de desarrollar demencia.',
   modernjazzCitableFact3:
-    'Farray\'s International Dance Center está valorado cerca del 5/5 en Google, con cientos de reseñas que lo sitúan entre los centros de danza mejor valorados de Barcelona.',
+    "Farray's International Dance Center está valorado cerca del 5/5 en Google, con cientos de reseñas que lo sitúan entre los centros de danza mejor valorados de Barcelona.",
 };

@@ -4653,9 +4653,9 @@ Farray's International Dance Center est noté près de **5/5 sur Google**, avec 
   modernjazzWhyChoose6Title: 'Gala annuel + workshops puissants',
   modernjazzWhyChoose6Desc:
     'Brillez sur une scène professionnelle, participez à des workshops internationaux et vivez des expériences que vous ne trouverez dans aucune autre école.',
-  modernjazzWhyChoose7Title: 'Maître cubain formé à l\'ENA',
+  modernjazzWhyChoose7Title: "Maître cubain formé à l'ENA",
   modernjazzWhyChoose7Desc:
-    'Alejandro Miñoso, maître international cubain formé à l\'ENA (École Nationale d\'Art de Cuba), ancien soliste de la compagnie de Carlos Acosta.',
+    "Alejandro Miñoso, maître international cubain formé à l'ENA (École Nationale d'Art de Cuba), ancien soliste de la compagnie de Carlos Acosta.",
 
   // Logos Section
   modernjazzLogosTitle: 'Vous avez pu nous voir…',
@@ -4809,15 +4809,15 @@ Farray's International Dance Center est noté près de **5/5 sur Google**, avec 
     "Le cours commence par des exercices d'échauffement et de technique de base. Le professeur vous guidera étape par étape, en s'adaptant à votre niveau.",
   modernjazzHowToStep5Name: 'Pratiquez la chorégraphie',
   modernjazzHowToStep5Text:
-    "Après la technique, vous apprendrez des séquences et des chorégraphies. Amusez-vous, exprimez-vous et connectez-vous à la musique. Vous êtes maintenant danseur de Modern Jazz !",
+    'Après la technique, vous apprendrez des séquences et des chorégraphies. Amusez-vous, exprimez-vous et connectez-vous à la musique. Vous êtes maintenant danseur de Modern Jazz !',
 
   // ===== GEO OPTIMIZATION: DefinedTerm Schema =====
   modernjazzDefinedTermModernJazz:
     "Le Modern Jazz est un style de danse qui combine la technique du ballet classique avec l'expressivité du jazz et de la danse contemporaine. Né aux États-Unis au XXe siècle, il se caractérise par des mouvements fluides, des tours, des sauts et une expression émotionnelle.",
   modernjazzDefinedTermJazzDance:
-    "Le Jazz Dance est le genre parent du Modern Jazz, originaire de la culture afro-américaine. Il comprend des styles comme Broadway Jazz, Lyrical Jazz et Funk Jazz. Il se caractérise par sa musicalité, ses isolations corporelles et son énergie.",
+    'Le Jazz Dance est le genre parent du Modern Jazz, originaire de la culture afro-américaine. Il comprend des styles comme Broadway Jazz, Lyrical Jazz et Funk Jazz. Il se caractérise par sa musicalité, ses isolations corporelles et son énergie.',
   modernjazzDefinedTermBroadway:
-    "Broadway Dance est le style de danse théâtrale utilisé dans les comédies musicales de Broadway. Il combine jazz, ballet et théâtre pour raconter des histoires. Nécessite technique, expression faciale et présence scénique.",
+    'Broadway Dance est le style de danse théâtrale utilisé dans les comédies musicales de Broadway. Il combine jazz, ballet et théâtre pour raconter des histoires. Nécessite technique, expression faciale et présence scénique.',
   modernjazzDefinedTermTecnica:
     "La technique de danse désigne l'ensemble des fondamentaux physiques et mouvements spécifiques d'un style. En Modern Jazz, elle comprend : pliés, tendus, tours (pirouettes), sauts (jetés), contractions et extensions.",
   modernjazzDefinedTermMusicalidad:
@@ -4826,7 +4826,7 @@ Farray's International Dance Center est noté près de **5/5 sur Google**, avec 
   // ===== GEO OPTIMIZATION: Event Schema =====
   modernjazzEventName: "Cours de Modern Jazz à Barcelone - Farray's Center",
   modernjazzEventDesc:
-    "Cours hebdomadaire de Modern Jazz avec Alejandro Miñoso. Technique classique, expression contemporaine, chorégraphies de Broadway. Tous niveaux bienvenus.",
+    'Cours hebdomadaire de Modern Jazz avec Alejandro Miñoso. Technique classique, expression contemporaine, chorégraphies de Broadway. Tous niveaux bienvenus.',
 
   // ===== GEO OPTIMIZATION: Citable Statistics =====
   modernjazzStatistics:
