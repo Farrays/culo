@@ -304,7 +304,7 @@ const FacilitiesPage: React.FC = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {[1, 2, 3, 4, 5, 6].map((num, index) => (
                 <AnimateOnScroll key={num} delay={index * 100} className="[perspective:1000px]">
-                  <div className="group h-full p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                  <div className="group h-full min-h-[100px] p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
                         <svg
@@ -404,7 +404,7 @@ const FacilitiesPage: React.FC = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {[1, 2, 3, 4, 5, 6].map((num, index) => (
                 <AnimateOnScroll key={num} delay={index * 100} className="[perspective:1000px]">
-                  <div className="group h-full p-8 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                  <div className="group h-full min-h-[180px] p-8 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                     <div className="text-6xl font-black text-primary-accent mb-4 holographic-text">
                       {num}
                     </div>

@@ -6,12 +6,12 @@ import type { FAQ } from '../components/templates/ClassPageTemplate';
 export const HEELS_STYLES = [
   {
     key: 'femmology',
-    url: '/clases/femmology-sexy-style-en-barcelona',
+    url: '/clases/femmology',
     imageUrl: '/images/classes/heels/femmology.webp',
   },
   {
     key: 'sexy_style',
-    url: '/clases/clases-de-sexy-style',
+    url: '/clases/sexy-style-barcelona',
     imageUrl: '/images/classes/heels/sexy-style.webp',
   },
 ];

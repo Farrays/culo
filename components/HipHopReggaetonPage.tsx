@@ -382,7 +382,7 @@ const HipHopReggaetonPage: React.FC = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
               {[1, 2, 3, 4, 5].map((num, index) => (
                 <AnimateOnScroll key={num} delay={index * 100} className="[perspective:1000px]">
-                  <div className="group relative h-full flex items-start gap-4 p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                  <div className="group relative h-full min-h-[100px] flex items-start gap-4 p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
                       <svg
                         className="w-5 h-5 text-primary-accent"
@@ -401,7 +401,7 @@ const HipHopReggaetonPage: React.FC = () => {
                 </AnimateOnScroll>
               ))}
               <AnimateOnScroll delay={500} className="[perspective:1000px]">
-                <div className="group relative h-full flex items-start gap-4 p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                <div className="group relative h-full min-h-[100px] flex items-start gap-4 p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
                     <svg
                       className="w-5 h-5 text-primary-accent"
@@ -466,7 +466,7 @@ const HipHopReggaetonPage: React.FC = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
               {[1, 2, 3, 4, 5].map((num, index) => (
                 <AnimateOnScroll key={num} delay={index * 100} className="[perspective:1000px]">
-                  <div className="group h-full p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                  <div className="group h-full min-h-[180px] p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                     <div className="text-6xl font-black text-primary-accent mb-4 holographic-text">
                       {num}
                     </div>
@@ -478,7 +478,7 @@ const HipHopReggaetonPage: React.FC = () => {
                 </AnimateOnScroll>
               ))}
               <AnimateOnScroll delay={500} className="[perspective:1000px]">
-                <div className="group h-full p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                <div className="group h-full min-h-[180px] p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                   <div className="text-6xl font-black text-primary-accent mb-4 holographic-text">
                     6
                   </div>
@@ -508,7 +508,7 @@ const HipHopReggaetonPage: React.FC = () => {
                   delay={index * 100}
                   className={`[perspective:1000px] ${index === arr.length - 1 ? 'lg:col-start-2' : ''}`}
                 >
-                  <div className="group h-full p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                  <div className="group h-full min-h-[120px] p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
                         <svg
@@ -731,7 +731,7 @@ const HipHopReggaetonPage: React.FC = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
               {hhrTestimonials.map((testimonial, index) => (
                 <AnimateOnScroll key={testimonial.id} delay={index * 100}>
-                  <div className="flex flex-col h-full p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
+                  <div className="flex flex-col h-full min-h-[180px] p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
                     <div className="flex mb-3">
                       {[...Array(5)].map((_, i) => (
                         <svg

@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
-import { GlobeIcon } from '../../lib/icons';
+import { GlobeIcon, ChevronDownIcon } from '../../lib/icons';
 import type { Locale } from '../../types';
 
 interface SubSubMenuItem {
@@ -40,7 +40,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
   locale,
   handleLanguageChange,
   handleEnrollClick,
-  languageNames,
+  languageNames: _languageNames,
 }) => {
   const { t } = useI18n();
   const location = useLocation();
@@ -48,9 +48,23 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
   // eslint-disable-next-line no-undef
   const firstFocusableRef = useRef<HTMLAnchorElement>(null);
 
+  // Accordion states
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
+
+  const toggleSection = (section: string) => {
+    setOpenSections(prev => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
+
   // Focus trap: Auto-focus first element and handle Escape key
   useEffect(() => {
-    if (!isMenuOpen) return;
+    if (!isMenuOpen) {
+      // Reset accordion states when menu closes
+      setOpenSections({});
+      return;
+    }
 
     // Focus first link when menu opens
     firstFocusableRef.current?.focus();
@@ -96,219 +110,310 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
     };
   }, [isMenuOpen, setIsMenuOpen]);
 
+  // Accordion header component
+  const AccordionHeader: React.FC<{
+    label: string;
+    isOpen: boolean;
+    onClick: () => void;
+    linkTo?: string;
+    isPrimary?: boolean;
+  }> = ({ label, isOpen, onClick, linkTo, isPrimary = false }) => (
+    <div className={`flex items-center justify-between w-full ${isPrimary ? 'py-3' : 'py-2'}`}>
+      {linkTo ? (
+        <Link
+          to={linkTo}
+          onClick={() => setIsMenuOpen(false)}
+          className={`flex-1 text-left font-semibold transition-colors duration-300 ${
+            isPrimary ? 'text-lg' : 'text-base'
+          } ${
+            location.pathname === linkTo
+              ? 'text-primary-accent'
+              : 'text-white hover:text-primary-accent'
+          }`}
+        >
+          {label}
+        </Link>
+      ) : (
+        <span
+          className={`flex-1 text-left font-semibold ${isPrimary ? 'text-lg' : 'text-base'} text-white`}
+        >
+          {label}
+        </span>
+      )}
+      <button
+        onClick={onClick}
+        className="p-2 -mr-2 text-neutral/70 hover:text-white transition-colors"
+        aria-expanded={isOpen}
+        aria-label={isOpen ? `Collapse ${label}` : `Expand ${label}`}
+      >
+        <ChevronDownIcon
+          className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+        />
+      </button>
+    </div>
+  );
+
   return (
     <div
       ref={menuRef}
       id="mobile-menu"
-      className={`fixed inset-0 bg-black/95 backdrop-blur-xl z-40 transition-transform duration-500 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}
+      className={`fixed inset-0 bg-black/98 backdrop-blur-xl z-40 transition-transform duration-300 ease-out transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}
       role="dialog"
       aria-modal="true"
       aria-label="Main navigation menu"
     >
-      <div className="flex flex-col items-center justify-center h-full space-y-12 overflow-y-auto py-20">
-        <nav className="flex flex-col items-center space-y-6">
+      <div className="flex flex-col h-full overflow-y-auto pt-24 pb-8 px-6">
+        <nav className="flex flex-col space-y-1">
           {/* Home */}
           <Link
             ref={firstFocusableRef}
             to={menuStructure.home.path}
             onClick={() => setIsMenuOpen(false)}
-            className={`text-2xl font-bold transition-colors duration-300 ${
+            className={`py-3 text-lg font-semibold transition-colors duration-300 ${
               location.pathname === menuStructure.home.path
                 ? 'text-primary-accent'
-                : 'text-neutral hover:text-white'
+                : 'text-white hover:text-primary-accent'
             }`}
           >
             {t(menuStructure.home.textKey)}
           </Link>
 
-          {/* Classes */}
-          <Link
-            to={menuStructure.classes.path}
-            onClick={() => setIsMenuOpen(false)}
-            className={`text-2xl font-bold transition-colors duration-300 ${
-              location.pathname === menuStructure.classes.path
-                ? 'text-primary-accent'
-                : 'text-neutral hover:text-white'
-            }`}
-          >
-            {t(menuStructure.classes.textKey)}
-          </Link>
+          {/* Divider */}
+          <div className="border-b border-white/10 my-2" />
 
-          {/* Submenu items */}
-          <div className="flex flex-col items-center space-y-4 pl-6">
-            {menuStructure.classes.submenu?.map(item => (
-              <div key={item.path} className="flex flex-col items-center space-y-3">
-                <Link
-                  to={item.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`text-xl font-semibold transition-colors duration-300 ${
-                    location.pathname === item.path
-                      ? 'text-primary-accent'
-                      : 'text-neutral hover:text-white'
-                  }`}
-                >
-                  {t(item.textKey)}
-                </Link>
-                {/* Sub-submenu (Urban styles) */}
-                {item.submenu && (
-                  <div className="flex flex-col items-center space-y-2 pl-4">
-                    {item.submenu.map(subitem =>
-                      subitem.submenu ? (
-                        // Item with sub-submenu (e.g., Heels with Femmology & Sexy Style)
-                        <div key={subitem.path} className="flex flex-col items-center space-y-2">
-                          <Link
-                            to={subitem.path}
-                            onClick={() => setIsMenuOpen(false)}
-                            className={`text-lg font-medium transition-colors duration-300 ${
-                              location.pathname === subitem.path
-                                ? 'text-primary-accent'
-                                : 'text-neutral hover:text-white'
-                            }`}
-                          >
-                            {t(subitem.textKey)}
-                          </Link>
-                          {/* 3rd level submenu */}
-                          <div className="flex flex-col items-center space-y-1 pl-4">
-                            {subitem.submenu.map(subsubitem => (
-                              <Link
-                                key={subsubitem.path}
-                                to={subsubitem.path}
-                                onClick={() => setIsMenuOpen(false)}
-                                className={`text-base font-medium transition-colors duration-300 ${
-                                  location.pathname === subsubitem.path
-                                    ? 'text-primary-accent'
-                                    : 'text-neutral/70 hover:text-white'
-                                }`}
-                              >
-                                {t(subsubitem.textKey)}
-                              </Link>
-                            ))}
+          {/* Classes Section - Accordion */}
+          <div>
+            <AccordionHeader
+              label={t(menuStructure.classes.textKey)}
+              isOpen={openSections['classes'] || false}
+              onClick={() => toggleSection('classes')}
+              linkTo={menuStructure.classes.path}
+              isPrimary
+            />
+
+            {openSections['classes'] && (
+              <div className="pl-4 space-y-1 border-l-2 border-primary-accent/30 ml-2">
+                {menuStructure.classes.submenu?.map(item => (
+                  <div key={item.path}>
+                    {item.submenu ? (
+                      // Nested accordion for Urban Dances
+                      <div>
+                        <AccordionHeader
+                          label={t(item.textKey)}
+                          isOpen={openSections[item.textKey] || false}
+                          onClick={() => toggleSection(item.textKey)}
+                          linkTo={item.path}
+                        />
+                        {openSections[item.textKey] && (
+                          <div className="pl-4 space-y-1 border-l-2 border-white/10 ml-2">
+                            {item.submenu.map(subitem =>
+                              subitem.submenu ? (
+                                // Third level - Heels with Femmology & Sexy Style
+                                <div key={subitem.path}>
+                                  <AccordionHeader
+                                    label={t(subitem.textKey)}
+                                    isOpen={openSections[subitem.textKey] || false}
+                                    onClick={() => toggleSection(subitem.textKey)}
+                                    linkTo={subitem.path}
+                                  />
+                                  {openSections[subitem.textKey] && (
+                                    <div className="pl-4 space-y-1 border-l-2 border-white/5 ml-2">
+                                      {subitem.submenu.map(subsubitem => (
+                                        <Link
+                                          key={subsubitem.path}
+                                          to={subsubitem.path}
+                                          onClick={() => setIsMenuOpen(false)}
+                                          className={`block py-2 text-sm font-medium transition-colors duration-300 ${
+                                            location.pathname === subsubitem.path
+                                              ? 'text-primary-accent'
+                                              : 'text-neutral/70 hover:text-white'
+                                          }`}
+                                        >
+                                          {t(subsubitem.textKey)}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
+                              ) : (
+                                <Link
+                                  key={subitem.path}
+                                  to={subitem.path}
+                                  onClick={() => setIsMenuOpen(false)}
+                                  className={`block py-2 text-sm font-medium transition-colors duration-300 ${
+                                    location.pathname === subitem.path
+                                      ? 'text-primary-accent'
+                                      : 'text-neutral/80 hover:text-white'
+                                  }`}
+                                >
+                                  {t(subitem.textKey)}
+                                </Link>
+                              )
+                            )}
                           </div>
-                        </div>
-                      ) : (
-                        // Regular subitem
-                        <Link
-                          key={subitem.path}
-                          to={subitem.path}
-                          onClick={() => setIsMenuOpen(false)}
-                          className={`text-lg font-medium transition-colors duration-300 ${
-                            location.pathname === subitem.path
-                              ? 'text-primary-accent'
-                              : 'text-neutral hover:text-white'
-                          }`}
-                        >
-                          {t(subitem.textKey)}
-                        </Link>
-                      )
+                        )}
+                      </div>
+                    ) : (
+                      // Simple link
+                      <Link
+                        to={item.path}
+                        onClick={() => setIsMenuOpen(false)}
+                        className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                          location.pathname === item.path
+                            ? 'text-primary-accent'
+                            : 'text-neutral/90 hover:text-white'
+                        }`}
+                      >
+                        {t(item.textKey)}
+                      </Link>
                     )}
                   </div>
-                )}
+                ))}
               </div>
-            ))}
+            )}
           </div>
 
-          {/* Services Section */}
-          <div className="text-2xl font-bold text-primary-accent">{t('navServices')}</div>
+          {/* Divider */}
+          <div className="border-b border-white/10 my-2" />
 
-          <div className="flex flex-col items-center space-y-4 pl-6">
-            <Link
-              to={`/${locale}/alquiler-salas-baile-barcelona`}
-              onClick={() => setIsMenuOpen(false)}
-              className={`text-xl font-semibold transition-colors duration-300 ${
-                location.pathname === `/${locale}/alquiler-salas-baile-barcelona`
-                  ? 'text-primary-accent'
-                  : 'text-neutral hover:text-white'
-              }`}
-            >
-              {t('headerRoomRental')}
-            </Link>
+          {/* Services Section - Accordion */}
+          <div>
+            <AccordionHeader
+              label={t('navServices')}
+              isOpen={openSections['services'] || false}
+              onClick={() => toggleSection('services')}
+              isPrimary
+            />
 
-            <Link
-              to={`/${locale}/estudio-grabacion-barcelona`}
-              onClick={() => setIsMenuOpen(false)}
-              className={`text-xl font-semibold transition-colors duration-300 ${
-                location.pathname === `/${locale}/estudio-grabacion-barcelona`
-                  ? 'text-primary-accent'
-                  : 'text-neutral/80 hover:text-white'
-              }`}
-            >
-              {t('headerRecordingStudio')}
-            </Link>
+            {openSections['services'] && (
+              <div className="pl-4 space-y-1 border-l-2 border-primary-accent/30 ml-2">
+                <Link
+                  to={`/${locale}/alquiler-salas-baile-barcelona`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                    location.pathname === `/${locale}/alquiler-salas-baile-barcelona`
+                      ? 'text-primary-accent'
+                      : 'text-neutral/90 hover:text-white'
+                  }`}
+                >
+                  {t('headerRoomRental')}
+                </Link>
 
-            <Link
-              to={`/${locale}/regala-baile`}
-              onClick={() => setIsMenuOpen(false)}
-              className={`text-xl font-semibold transition-colors duration-300 ${
-                location.pathname === `/${locale}/regala-baile`
-                  ? 'text-primary-accent'
-                  : 'text-neutral/80 hover:text-white'
-              }`}
-            >
-              {t('headerGiftDance')}
-            </Link>
+                <Link
+                  to={`/${locale}/estudio-grabacion-barcelona`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                    location.pathname === `/${locale}/estudio-grabacion-barcelona`
+                      ? 'text-primary-accent'
+                      : 'text-neutral/90 hover:text-white'
+                  }`}
+                >
+                  {t('headerRecordingStudio')}
+                </Link>
 
-            <Link
-              to={`/${locale}/clases-particulares-baile`}
-              onClick={() => setIsMenuOpen(false)}
-              className={`text-xl font-semibold transition-colors duration-300 ${
-                location.pathname === `/${locale}/clases-particulares-baile`
-                  ? 'text-primary-accent'
-                  : 'text-neutral/80 hover:text-white'
-              }`}
-            >
-              {t('navClasesParticulares')}
-            </Link>
+                <Link
+                  to={`/${locale}/regala-baile`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                    location.pathname === `/${locale}/regala-baile`
+                      ? 'text-primary-accent'
+                      : 'text-neutral/90 hover:text-white'
+                  }`}
+                >
+                  {t('headerGiftDance')}
+                </Link>
 
-            <Link
-              to={`/${locale}/merchandising`}
-              onClick={() => setIsMenuOpen(false)}
-              className={`text-xl font-semibold transition-colors duration-300 ${
-                location.pathname === `/${locale}/merchandising`
-                  ? 'text-primary-accent'
-                  : 'text-neutral/80 hover:text-white'
-              }`}
-            >
-              {t('headerMerchandising')}
-            </Link>
+                <Link
+                  to={`/${locale}/clases-particulares-baile`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                    location.pathname === `/${locale}/clases-particulares-baile`
+                      ? 'text-primary-accent'
+                      : 'text-neutral/90 hover:text-white'
+                  }`}
+                >
+                  {t('navClasesParticulares')}
+                </Link>
+
+                <Link
+                  to={`/${locale}/merchandising`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                    location.pathname === `/${locale}/merchandising`
+                      ? 'text-primary-accent'
+                      : 'text-neutral/90 hover:text-white'
+                  }`}
+                >
+                  {t('headerMerchandising')}
+                </Link>
+
+                <Link
+                  to={`/${locale}/instalaciones-escuela-baile-barcelona`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                    location.pathname === `/${locale}/instalaciones-escuela-baile-barcelona`
+                      ? 'text-primary-accent'
+                      : 'text-neutral/90 hover:text-white'
+                  }`}
+                >
+                  {t('navFacilities')}
+                </Link>
+              </div>
+            )}
           </div>
 
-          {/* About Us Section with Subcategories */}
-          <div className="text-2xl font-bold text-primary-accent">{t('navAboutUs')}</div>
+          {/* Divider */}
+          <div className="border-b border-white/10 my-2" />
 
-          <div className="flex flex-col items-center space-y-4 pl-6">
-            <Link
-              to={`/${locale}/yunaisy-farray`}
-              onClick={() => setIsMenuOpen(false)}
-              className={`text-xl font-semibold transition-colors duration-300 ${
-                location.pathname === `/${locale}/yunaisy-farray`
-                  ? 'text-primary-accent'
-                  : 'text-neutral/80 hover:text-white'
-              }`}
-            >
-              {t('sitemapYunaisy')}
-            </Link>
+          {/* About Us Section - Accordion */}
+          <div>
+            <AccordionHeader
+              label={t('navAboutUs')}
+              isOpen={openSections['about'] || false}
+              onClick={() => toggleSection('about')}
+              isPrimary
+            />
 
-            <Link
-              to={`/${locale}/sobre-nosotros`}
-              onClick={() => setIsMenuOpen(false)}
-              className={`text-xl font-semibold transition-colors duration-300 ${
-                location.pathname === `/${locale}/sobre-nosotros`
-                  ? 'text-primary-accent'
-                  : 'text-neutral/80 hover:text-white'
-              }`}
-            >
-              {t('headerAbout')}
-            </Link>
+            {openSections['about'] && (
+              <div className="pl-4 space-y-1 border-l-2 border-primary-accent/30 ml-2">
+                <Link
+                  to={`/${locale}/yunaisy-farray`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                    location.pathname === `/${locale}/yunaisy-farray`
+                      ? 'text-primary-accent'
+                      : 'text-neutral/90 hover:text-white'
+                  }`}
+                >
+                  {t('sitemapYunaisy')}
+                </Link>
+
+                <Link
+                  to={`/${locale}/sobre-nosotros`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                    location.pathname === `/${locale}/sobre-nosotros`
+                      ? 'text-primary-accent'
+                      : 'text-neutral/90 hover:text-white'
+                  }`}
+                >
+                  {t('headerAbout')}
+                </Link>
+              </div>
+            )}
           </div>
 
-          {/* Contact and FAQ Links */}
+          {/* Divider */}
+          <div className="border-b border-white/10 my-2" />
+
+          {/* Direct Links */}
           <Link
             to={`/${locale}/contacto`}
             onClick={() => setIsMenuOpen(false)}
-            className={`text-2xl font-bold transition-colors duration-300 ${
+            className={`py-3 text-lg font-semibold transition-colors duration-300 ${
               location.pathname === `/${locale}/contacto`
                 ? 'text-primary-accent'
-                : 'text-neutral hover:text-white'
+                : 'text-white hover:text-primary-accent'
             }`}
           >
             {t('headerContact')}
@@ -317,23 +422,27 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           <Link
             to={`/${locale}/preguntas-frecuentes`}
             onClick={() => setIsMenuOpen(false)}
-            className={`text-2xl font-bold transition-colors duration-300 ${
+            className={`py-3 text-lg font-semibold transition-colors duration-300 ${
               location.pathname === `/${locale}/preguntas-frecuentes`
                 ? 'text-primary-accent'
-                : 'text-neutral hover:text-white'
+                : 'text-white hover:text-primary-accent'
             }`}
           >
             {t('headerFAQ')}
           </Link>
         </nav>
-        {/* Mobile Language Selection */}
-        <div className="w-full max-w-xs">
-          <div className="bg-black/30 backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden">
-            <div className="flex items-center justify-center space-x-2 px-4 py-3 bg-primary-accent/20 border-b border-white/10">
-              <GlobeIcon className="w-5 h-5 text-primary-accent" />
-              <span className="text-sm font-bold text-white">Select Language</span>
+
+        {/* Bottom Section - Language & CTA */}
+        <div className="mt-auto pt-6 space-y-4">
+          {/* Language Selector */}
+          <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+            <div className="flex items-center justify-center gap-2 px-4 py-2 bg-primary-accent/10 border-b border-white/10">
+              <GlobeIcon className="w-4 h-4 text-primary-accent" />
+              <span className="text-xs font-semibold text-white/80">
+                {t('headerLanguage') || 'Idioma'}
+              </span>
             </div>
-            <div className="p-2 space-y-1">
+            <div className="grid grid-cols-4 gap-1 p-2">
               {(['es', 'ca', 'en', 'fr'] as Locale[]).map(lang => (
                 <button
                   key={lang}
@@ -341,29 +450,30 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                     handleLanguageChange(lang);
                     setIsMenuOpen(false);
                   }}
-                  className={`w-full text-left px-4 py-3 rounded-xl text-base font-bold transition-all duration-300 flex items-center justify-between ${
+                  className={`py-2 px-2 rounded-lg text-sm font-bold transition-all duration-300 ${
                     locale === lang
-                      ? 'bg-primary-accent text-white shadow-lg'
-                      : 'text-neutral hover:bg-white/10 hover:text-white'
+                      ? 'bg-primary-accent text-white'
+                      : 'text-neutral/70 hover:bg-white/10 hover:text-white'
                   }`}
                 >
-                  <span>{languageNames[lang]}</span>
-                  <span className="text-sm opacity-90">{lang.toUpperCase()}</span>
+                  {lang.toUpperCase()}
                 </button>
               ))}
             </div>
           </div>
+
+          {/* CTA Button */}
+          <Link
+            to={`/${locale}#enroll`}
+            onClick={() => {
+              handleEnrollClick();
+              setIsMenuOpen(false);
+            }}
+            className="block w-full text-center bg-primary-accent text-white text-lg font-bold py-4 rounded-full transition-all duration-300 hover:bg-white hover:text-primary-accent shadow-lg hover:shadow-accent-glow"
+          >
+            {t('enrollNow')}
+          </Link>
         </div>
-        <Link
-          to={`/${locale}#enroll`}
-          onClick={() => {
-            handleEnrollClick();
-            setIsMenuOpen(false);
-          }}
-          className="bg-primary-accent text-white text-xl font-bold py-4 px-10 rounded-full transition-all duration-300 hover:bg-white hover:text-primary-accent shadow-md hover:shadow-accent-glow animate-pulse-strong"
-        >
-          {t('enrollNow')}
-        </Link>
       </div>
     </div>
   );

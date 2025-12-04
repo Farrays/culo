@@ -33,19 +33,24 @@
     <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin>
     <link rel="preconnect" href="https://browser.sentry-cdn.com">
 
-    <!-- Self-hosted fonts - preload critical weights only -->
-    <link rel="preload" href="/fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/roboto-v30-latin-700.woff2" as="font" type="font/woff2" crossorigin>
-    <!-- Font CSS (critical @font-face rules are also inlined below for fast first paint) -->
-    <link rel="stylesheet" href="/fonts/fonts.css">
+    <!-- Self-hosted fonts - preload critical weights with high priority -->
+    <link rel="preload" href="/fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
+    <link rel="preload" href="/fonts/roboto-v30-latin-700.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
+    <!-- Preload hero texture for LCP optimization -->
+    <link rel="preload" href="/images/textures/stardust.png" as="image" fetchpriority="high">
 
-    <!-- Critical CSS (above the fold) -->
+    <!-- Critical CSS (above the fold) - render-blocking intentionally for FCP -->
     <link rel="stylesheet" href="/critical.css">
+
+    <!-- Font CSS - NON-BLOCKING (critical @font-face already in critical.css) -->
+    <link rel="stylesheet" href="/fonts/fonts.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
+
     <!-- Main CSS: Vite injects during build, prerender.mjs makes it non-blocking -->
 
 
-    <!-- Prefetch next likely navigation -->
-    <link rel="prefetch" href="/clases" as="document">
+    <!-- Prefetch next likely navigation (with locale for static hosting) -->
+    <link rel="prefetch" href="/es/clases/baile-barcelona" as="document">
 
     <!-- Prefetch Unsplash domain for images -->
     <link rel="dns-prefetch" href="https://images.unsplash.com">

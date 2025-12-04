@@ -378,7 +378,7 @@ const DanceClassesPage: React.FC = () => {
             {/* Info Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               <AnimateOnScroll delay={300}>
-                <div className="h-full bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
+                <div className="h-full min-h-[120px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
                   <h3 className="text-xl font-bold text-white mb-3">
                     {t('danceClassesHub_whichCategory_beginner_title')}
                   </h3>
@@ -389,7 +389,7 @@ const DanceClassesPage: React.FC = () => {
               </AnimateOnScroll>
 
               <AnimateOnScroll delay={400}>
-                <div className="h-full bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
+                <div className="h-full min-h-[120px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
                   <h3 className="text-xl font-bold text-white mb-3">
                     {t('danceClassesHub_whichCategory_combine_title')}
                   </h3>
@@ -400,7 +400,7 @@ const DanceClassesPage: React.FC = () => {
               </AnimateOnScroll>
 
               <AnimateOnScroll delay={500}>
-                <div className="h-full bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
+                <div className="h-full min-h-[120px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
                   <h3 className="text-xl font-bold text-white mb-3">
                     {t('danceClassesHub_whichCategory_schedule_title')}
                   </h3>
@@ -513,7 +513,7 @@ const DanceClassesPage: React.FC = () => {
               {/* Reason 1: Variety */}
               <div className="w-full sm:w-1/2 lg:w-1/3 p-4">
                 <AnimateOnScroll delay={100} className="h-full">
-                  <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full flex flex-col">
+                  <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full min-h-[180px] flex flex-col">
                     <div className="mb-6">
                       <div className="bg-primary-dark/30 group-hover:bg-primary-accent/20 p-4 rounded-xl inline-block shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                         <Icon
@@ -535,7 +535,7 @@ const DanceClassesPage: React.FC = () => {
               {/* Reason 2: Farray Method */}
               <div className="w-full sm:w-1/2 lg:w-1/3 p-4">
                 <AnimateOnScroll delay={200} className="h-full">
-                  <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full flex flex-col">
+                  <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full min-h-[180px] flex flex-col">
                     <div className="mb-6">
                       <div className="bg-primary-dark/30 group-hover:bg-primary-accent/20 p-4 rounded-xl inline-block shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                         <Icon
@@ -557,7 +557,7 @@ const DanceClassesPage: React.FC = () => {
               {/* Reason 3: Cuban Technique */}
               <div className="w-full sm:w-1/2 lg:w-1/3 p-4">
                 <AnimateOnScroll delay={300} className="h-full">
-                  <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full flex flex-col">
+                  <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full min-h-[180px] flex flex-col">
                     <div className="mb-6">
                       <div className="bg-primary-dark/30 group-hover:bg-primary-accent/20 p-4 rounded-xl inline-block shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                         <Icon
@@ -579,7 +579,7 @@ const DanceClassesPage: React.FC = () => {
               {/* Reason 4: Real Levels */}
               <div className="w-full sm:w-1/2 lg:w-1/3 p-4">
                 <AnimateOnScroll delay={400} className="h-full">
-                  <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full flex flex-col">
+                  <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full min-h-[180px] flex flex-col">
                     <div className="mb-6">
                       <div className="bg-primary-dark/30 group-hover:bg-primary-accent/20 p-4 rounded-xl inline-block shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                         <Icon
@@ -601,7 +601,7 @@ const DanceClassesPage: React.FC = () => {
               {/* Reason 5: Location */}
               <div className="w-full sm:w-1/2 lg:w-1/3 p-4">
                 <AnimateOnScroll delay={500} className="h-full">
-                  <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full flex flex-col">
+                  <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full min-h-[180px] flex flex-col">
                     <div className="mb-6">
                       <div className="bg-primary-dark/30 group-hover:bg-primary-accent/20 p-4 rounded-xl inline-block shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                         <Icon
@@ -623,7 +623,7 @@ const DanceClassesPage: React.FC = () => {
               {/* Reason 6: Schedule */}
               <div className="w-full sm:w-1/2 lg:w-1/3 p-4">
                 <AnimateOnScroll delay={600} className="h-full">
-                  <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full flex flex-col">
+                  <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full min-h-[180px] flex flex-col">
                     <div className="mb-6">
                       <div className="bg-primary-dark/30 group-hover:bg-primary-accent/20 p-4 rounded-xl inline-block shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                         <Icon
@@ -645,7 +645,7 @@ const DanceClassesPage: React.FC = () => {
               {/* Reason 7: Accreditation */}
               <div className="w-full sm:w-1/2 lg:w-1/3 p-4">
                 <AnimateOnScroll delay={700} className="h-full">
-                  <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full flex flex-col">
+                  <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full min-h-[180px] flex flex-col">
                     <div className="mb-6">
                       <div className="bg-primary-dark/30 group-hover:bg-primary-accent/20 p-4 rounded-xl inline-block shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                         <Icon

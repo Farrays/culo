@@ -32,6 +32,8 @@ export const ca = {
   headerContact: 'Contacte',
   headerMerchandising: 'Merchandising',
   headerFAQ: 'Preguntes Freqüents',
+  headerLanguage: 'Idioma',
+  navFacilities: 'Instal·lacions',
   breadcrumb_services: 'Serveis de Ball',
   enrollNow: 'Fes-te Soci Ara',
   // Hero
@@ -4079,4 +4081,741 @@ Actualment, Femmology s'imparteix exclusivament a Farray's Center sota la direcc
   femCourseSchemaName: 'Classes de Femmology a Barcelona - Ball amb Talons amb Yunaisy Farray',
   femCourseSchemaDesc:
     'Aprèn a ballar amb talons amb Yunaisy Farray, creadora del Mètode Farray® exclusiu, actriu de Street Dance 2 i mestra reconeguda per UNESCO. Classes de Femmology per a tots els nivells a Barcelona.',
+
+  // ===== Sexy Style Page =====
+  sexystylePageTitle: 'Classes de Sexy Style a Barcelona | Aprèn a Ballar amb Sensualitat',
+  sexystyleMetaDescription:
+    'Classes de Sexy Style a Barcelona amb Yasmina Fernández. Aprèn a expressar-te amb sensualitat, confiança i moviment. Tots els nivells. Reserva la teva classe de prova!',
+
+  // Breadcrumb
+  sexystyleBreadcrumbHome: 'Inici',
+  sexystyleBreadcrumbClasses: 'Classes de Ball',
+  sexystyleBreadcrumbUrban: 'Danses Urbanes',
+  sexystyleBreadcrumbCurrent: 'Classes de Sexy Style',
+
+  // Hero
+  sexystyleHeroTitle: 'Classes de Sexy Style a Barcelona',
+  sexystyleHeroSubtitle: 'Desperta la teva sensualitat ballant',
+  sexystyleHeroDesc:
+    'Descobreix el poder del teu cos a través del moviment. Sense vergonya, sense judicis, només tu i la teva expressió.',
+  sexystyleHeroLocation:
+    'Classes des de nivell principiant fins a avançat, entre Plaça Espanya i Sants',
+
+  // Stats
+  sexystyleSensualityStat: '~500',
+  sexystyleEmpowerment: 'Calories Cremades',
+  sexystyleConfidenceGuaranteed: 'Sensualitat garantida',
+
+  // CTAs
+  sexystyleCTA1: 'Fes-te Sòcia Ara',
+  sexystyleCTA1Subtext: 'Queden poques places aquest mes',
+  sexystyleCTA2: 'Reserva la teva Classe de Prova',
+  sexystyleCTA2Subtext: 'Oferta per temps limitat',
+
+  // What Is Section
+  sexystyleWhatIsTitle: 'Què és el Sexy Style i per què està revolucionant Barcelona?',
+  sexystyleWhatIsP1:
+    'El Sexy Style és molt més que un ball: és una forma de reconnectar amb el teu cos, la teva sensualitat i el teu poder interior.',
+  sexystyleWhatIsP2:
+    "A través de moviments fluids, ondulacions i coreografies dissenyades per despertar la teva expressió corporal, aprendràs a moure't amb confiança i actitud.",
+  sexystyleWhatIsP3: '«No es tracta de com et veuen els altres, sinó de com et sents tu»',
+  sexystyleWhatIsP4:
+    'A cada classe treballem tècnica, musicalitat i, sobretot, la connexió amb tu mateixa. Sortiràs sentint-te més forta, més lliure i més sexy.',
+  sexystyleWhatIsQuestionTitle: 'Et preguntes si és per a tu?',
+  sexystyleWhatIsQuestionAnswer: 'Sí, ho és. I ho descobriràs a la teva primera classe.',
+
+  // Cultural Section
+  sexystyleCulturalShort:
+    'Sexy Style pot explicar-se com una branca del ball comercial en videoclips i escenaris pop, nascuda de la fusió entre hip hop/new style, jazz-funk, burlesque i el treball en talons típic del "heels dance".',
+  sexystyleCulturalFull: `### Orígens del Sexy Style
+
+El Sexy Style sorgeix com a evolució natural del ball comercial, prenent la musicalitat i l'actitud del hip hop/new style i barrejant-les amb el glamour del cabaret, els musicals i el burlesque. D'aquests contextos escènics passa a les acadèmies, on es transforma en una disciplina pròpia que treballa passos, transicions i poses pensades tant per a escenari com per a videoclips, sempre des d'una energia femenina forta i segura.
+
+No és un ball de seducció cap a fora, sinó una pràctica de connexió interna que utilitza la sensualitat com a camí per habitar el cos amb més presència. A través del treball d'aïllaments, línies corporals, ús de malucs, tors i mirada, el Sexy Style convida a sentir-se protagonista, sense necessitat d'encaixar en un estereotip físic concret.
+
+### La revolució de l'empoderament
+
+En els últims anys, el Sexy Style ha viscut un boom gràcies a artistes com Beyoncé, Rihanna o Doja Cat, i a tota una generació de dones que han reivindicat el seu dret a expressar la seva sensualitat sense ser sexualitzades ni jutjades. Les classes actuals tradueixen aquest imaginari de videoclips i gires en un espai segur on treballar autoestima, actitud escènica i confiança personal, utilitzant el cos com a eina d'alliberament i no com a objecte.
+
+Aquest moviment ha convertit el que abans era només "ball per a show" en una via d'empoderament quotidià: moltes alumnes utilitzen el Sexy Style per reconciliar-se amb el seu cos, millorar la seva postura i descobrir una forma de moure's que se sent autèntica i pròpia. D'aquesta manera, la tècnica comercial i l'expressió emocional s'entrellacen per construir una identitat més sòlida dins i fora de la pista.
+
+### El Sexy Style a Barcelona
+
+Farray's Center va ser una de les primeres acadèmies a Barcelona en oferir classes de Sexy Style amb una metodologia professional, integrant tant l'arrel comercial (videoclips, gires, treball en talons) com l'enfocament d'empoderament personal. Sota la direcció de Yasmina Fernández, s'ha desenvolupat un programa que combina tècnica (equilibri, caminar en talons, dissociacions, musicalitat) amb treball d'actitud i presència escènica.
+
+Avui, el Sexy Style a Farray's es viu com un espai d'aprenentatge tècnic i, alhora, com un laboratori d'autoconfiança on cada alumna pot construir la seva pròpia versió del que significa ser sensual, forta i lliure.`,
+
+  // Identify Section
+  sexystyleIdentifyTitle: "T'identifiques amb alguna d'aquestes situacions?",
+  sexystyleIdentify1:
+    'Sents que vius en pilot automàtic i gairebé no et reconeixes al mirall ni et veus sensual',
+  sexystyleIdentify2:
+    'Vols deixar-te anar quan sona la música, però el teu cos es queda rígid i la vergonya et bloqueja, encara que ja hagis anat a classes',
+  sexystyleIdentify3:
+    'Has provat altres balls, però eren només passos i tècnica: no senties plaer ni més poder en sortir',
+  sexystyleIdentify4:
+    'Veus les teves artistes favorites en talons i penses "jo no podria", perquè creus que et falta cos, edat o talent',
+  sexystyleIdentify5:
+    'Desitges un estudi on jugar amb la teva sensualitat davant del mirall, sense mirades que jutgin ni comentaris sobre el teu cos',
+  sexystyleIdentify6:
+    'Necessites una estona a la setmana només per a tu, per pujar-te als talons, deixar anar la rutina i sortir sentint-te viva, empoderada i molt sexy',
+  sexystyleIdentifyTransition:
+    'Si has dit "sí" a algun d\'aquests punts, ja saps el que necessites.',
+
+  // Need Enroll Section
+  sexystyleNeedEnrollTitle: 'Necessites apuntar-te a classes de Sexy Style',
+  sexystyleIdentifyAgitate1:
+    "Cada dia que passes sense ballar, el teu cos s'acostuma a la rutina i s'oblida del plaer de ballar. La teva sensualitat no desapareix: només es queda adormida fins que decideixes despertar-la.",
+  sexystyleIdentifySolution:
+    "A Farray's Center, hem creat un espai on pots redescobrir el teu cos sense pressions. Aquí no hi ha cossos perfectes, només moments perfectes.",
+  sexystyleIdentifyClosing: "Deixa't anar i reconnecta amb la dona poderosa que portes dins.",
+
+  // Transform Section (6 transformacions que responen als 6 pain points)
+  sexystyleTransformTitle: 'Imagina el teu abans i després',
+  sexystyleTransform1Title: 'De desconnectada a present',
+  sexystyleTransform1Desc:
+    'Deixes de pensar en tot el demés. Durant una hora, només existeixes tu, la música i el teu cos.',
+  sexystyleTransform2Title: 'De rígida a fluida',
+  sexystyleTransform2Desc:
+    "El teu cos aprèn a moure's amb soltura. El que abans et costava, ara flueix natural.",
+  sexystyleTransform3Title: 'De "només passos" a gaudir de veritat',
+  sexystyleTransform3Desc:
+    'Abans anaves a classe, seguies la coreo i ja. Cansada, però igual per dins. Ara cada coreografia és una excusa per sentir-te millor que mai.',
+  sexystyleTransform4Title: 'De "jo no podria" a "mira\'m fer-ho"',
+  sexystyleTransform4Desc:
+    'Abans veies les teves artistes favorites i dubtaves de tu; ara, quan et mires al mirall, reconeixes una dona que es mou amb actitud i confiança.',
+  sexystyleTransform5Title: "D'amagar-te a brillar",
+  sexystyleTransform5Desc:
+    "Abans et costava moure't si algú mirava. Ara el mirall és el teu aliat i l'estudi el teu escenari: un espai on la teva sensualitat és benvinguda, celebrada i mai jutjada.",
+  sexystyleTransform6Title: 'De rutina grisa a cita setmanal amb tu',
+  sexystyleTransform6Desc:
+    'Abans els dies eren tots iguals; ara tens el teu moment Sexy Style: una hora per a tu, per suar, jugar, sentir-te viva i sortir de classe amb aquesta energia de "aquí mano jo".',
+  sexystyleTransformCTA: "Per què triar Farray's Center com a acadèmia de Sexy Style?",
+
+  // Why Choose Section
+  sexystyleWhyChoose1Title: 'Acadèmia reconeguda pel CID UNESCO',
+  sexystyleWhyChoose1Desc:
+    'Dirigida per Yunaisy Farray, actriu de Street Dance 2 i una de les professores més reconegudes del món.',
+  sexystyleWhyChoose2Title: 'Ambient segur i sense judicis',
+  sexystyleWhyChoose2Desc:
+    'Un espai on pots ser tu mateixa, experimentar i deixar-te anar sense por a la mirada dels altres.',
+  sexystyleWhyChoose3Title: 'Metodologia progressiva',
+  sexystyleWhyChoose3Desc:
+    "Comencem des de zero. Cada moviment es descompon perquè l'integris al teu ritme.",
+  sexystyleWhyChoose4Title: 'Ubicació immillorable',
+  sexystyleWhyChoose4Desc:
+    'Carrer Entença 100, a 5 minuts de Plaça Espanya i Sants. Metro, bus i tren a la porta.',
+  sexystyleWhyChoose5Title: 'Instal·lacions de primera',
+  sexystyleWhyChoose5Desc:
+    'Més de 700 m², sales àmplies amb miralls, so professional i climatització.',
+  sexystyleWhyChoose6Title: 'Professora especialitzada',
+  sexystyleWhyChoose6Desc:
+    "Yasmina Fernández: experta en Sexy Style amb anys d'experiència. Tècnica, flow i energia contagiosa.",
+  sexystyleWhyChoose7Title: 'Gala anual + workshops potents',
+  sexystyleWhyChoose7Desc:
+    'Brilla en un teatre professional, participa en workshops internacionals i viu experiències que no trobaràs a cap altra escola.',
+
+  // Logos Section
+  sexystyleLogosTitle: "Has pogut veure'ns…",
+  sexystyleLogosIntlFestivalsText: 'i als millors festivals de ball del món',
+
+  // Teachers Section
+  sexystyleTeachersTitle: 'Coneix la teva instructora de Sexy Style',
+  sexystyleTeachersSubtitle: 'Especialista en expressió corporal i sensualitat',
+  sexystyleTeacher1Specialty: 'Sexy Style & Expressió Corporal',
+  sexystyleTeacher1Bio:
+    "Yasmina Fernández és una de les professores més carismàtiques de l'acadèmia. Porta més de 8 anys formant alumnes en danses urbanes i sensuals. El seu estil combina tècnica impecable amb una actitud empoderada que contagia.",
+  sexystyleTeachersClosing:
+    "Amb Yasmina no només aprens a ballar Sexy Style: descobreixes una nova forma d'habitar el teu cos.",
+
+  // Schedule Section
+  sexystyleScheduleTitle: 'Horari de classes de Sexy Style',
+  sexystyleScheduleSubtitle: 'Diversos nivells perquè trobis la teva classe perfecta',
+
+  // Video Section
+  sexystyleVideoTitle: 'Descobreix les nostres classes de Sexy Style',
+  sexystyleVideoDesc:
+    "Mira com és una classe a Farray's Center: energia, tècnica i molt empoderament.",
+
+  // Why Today Section
+  sexystyleWhyTodayFullTitle: 'Per què avui és el millor moment per començar a ballar Sexy Style?',
+  sexystyleWhyToday1:
+    'Perquè cada dia que esperes és un dia menys sentint-te a gust en el teu propi cos.',
+  sexystyleWhyToday2:
+    'Perquè el teu cos ja està preparat, encara que la teva ment et digui que no.',
+  sexystyleWhyToday3: 'Perquè mereixes sentir-te sexy, poderosa i lliure. No "algun dia". Avui.',
+  sexystyleWhyTodayClosing1: "A Farray's no venem classes. Creem Experiències.",
+  sexystyleWhyTodayClosing2:
+    "T'esperem amb música alta, talons a punt i una profe disposada a treure la teva versió més poderosa en un ambient on et sentiràs com a casa.",
+
+  // Final CTA Section
+  sexystyleFinalCTATitle: 'Uneix-te a la comunitat de Sexy Style més empoderada de Barcelona',
+  sexystyleFinalCTASubtitle: 'Fes el pas.',
+  sexystyleFinalCTADesc:
+    'Reserva la teva plaça ara i descobreix tot el que el teu cos pot dir quan balla.',
+  sexystyleFinalCTAFunny: "Les places s'omplen abans que acabi la propera coreo.",
+
+  // FAQ Title
+  sexystyleFaqTitle: 'Preguntes Freqüents sobre les nostres classes de Sexy Style a Barcelona',
+
+  // 15 FAQs
+  sexystyleFaqQ1: 'Què és exactament el Sexy Style?',
+  sexystyleFaqA1:
+    "El Sexy Style és un estil de ball urbà que combina moviments sensuals, ondulacions, expressió corporal i coreografia. Se centra en la connexió amb el teu cos i la teva feminitat, treballant la confiança i l'actitud.",
+
+  sexystyleFaqQ2: 'Necessito experiència prèvia per començar?',
+  sexystyleFaqA2:
+    'No, de cap manera. El 85% de les nostres alumnes comencen sense experiència. Tenim classes per a principiants on es treballa des del més bàsic.',
+
+  sexystyleFaqQ3: "Quina roba he de portar a les classes? És obligatori l'ús de talons?",
+  sexystyleFaqA3:
+    "Roba còmoda que et permeti moure't amb llibertat: mallas o pantalons curts, top o samarreta ajustada. L'ús de talons NO és obligatori. Pots començar amb vambes i, quan et sentis preparada, fer el salt als talons. Si decideixes usar-los, els més recomanats són tipus stiletto amb sola antilliscant i tira al turmell, d'entre 7 i 10 cm.",
+
+  sexystyleFaqQ4: 'Les classes són només per a dones?',
+  sexystyleFaqA4:
+    "Les nostres classes de Sexy Style estan obertes a totes les persones que vulguin explorar la seva expressió corporal. La majoria de participants són dones, però l'espai és inclusiu.",
+
+  sexystyleFaqQ5: 'Quina diferència hi ha entre Sexy Style i Femmology?',
+  sexystyleFaqA5:
+    "El Sexy Style se centra en l'expressió personal i l'empoderament, amb un enfocament més lliure i fluid. Les classes de Femmology, en canvi, són més tècniques i el grau d'exigència és superior, treballant moviments més precisos i detallats. Ambdós estils treballen la sensualitat, però Sexy Style és ideal per començar i Femmology per a qui busca més desafiament tècnic.",
+
+  sexystyleFaqQ6: 'És un bon exercici físic?',
+  sexystyleFaqA6:
+    'El Sexy Style treballa especialment core, glutis, cames i flexibilitat. En una classe pots cremar entre 300 i 500 calories mentre et diverteixes.',
+
+  sexystyleFaqQ7: "Puc provar una classe de Sexy Style abans d'inscriure'm?",
+  sexystyleFaqA7:
+    'Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Prova" a la part superior d\'aquesta pàgina.',
+
+  sexystyleFaqQ8: 'Quins nivells de Sexy Style teniu?',
+  sexystyleFaqA8:
+    'Tenim quatre nivells: Principiant (sense experiència), Bàsic (primers passos fets), Intermedi (ja amb soltura) i Avançat (tècnica refinada i coreografies complexes).',
+
+  sexystyleFaqQ9: 'I si falto a una classe per feina o compromisos?',
+  sexystyleFaqA9:
+    "Si tens una membresía i cancel·les una classe, disposes de 30 dies per recuperar-la des de la data de la classe cancel·lada. Si tens un abonament d'hores, gestiones les teves classes de forma flexible: cancel·la i reserva un altre dia dins del període de caducitat. Totes les gestions es realitzen exclusivament des de l'aplicació digital de l'acadèmia.",
+
+  sexystyleFaqQ10: 'Feu coreografies de cançons conegudes?',
+  sexystyleFaqA10:
+    'Sí, treballem amb música actual i clàssics del R&B, pop i reggaeton. Les coreografies van rotant perquè sempre hi hagi novetat.',
+
+  sexystyleFaqQ11: "Puc apuntar-me en qualsevol moment de l'any?",
+  sexystyleFaqA11:
+    'Sí, el nostre sistema és obert. Pots incorporar-te quan vulguis sense esperar que comenci un nou cicle.',
+
+  sexystyleFaqQ12: 'Organitzeu esdeveniments o showcases?',
+  sexystyleFaqA12:
+    'Sí, tenim una gala anual on les alumnes poden lluir-se en un escenari professional. També organitzem workshops i masterclasses amb artistes convidats.',
+
+  sexystyleFaqQ13: 'Teniu descomptes o abonaments especials?',
+  sexystyleFaqA13:
+    "Sí, tenim diverses opcions d'estalvi:<br/><br/>• <strong>Descompte multicurs:</strong> Si t'apuntes a més d'un estil (ex: Sexy Style + Femmology), obtens un preu reduït per classe.<br/>• <strong>Abonaments mensuals il·limitats:</strong> Classes il·limitades d'un estil o de tots els estils.<br/>• <strong>Abonaments trimestrals i anuals:</strong> Major estalvi com més temps et comprometis.<br/>• <strong>Ofertes per a noves alumnes:</strong> Primera classe de prova amb preu especial.<br/><br/>Consulta preus actualitzats a recepció o escriu-nos per WhatsApp.",
+
+  sexystyleFaqQ14: "On és l'acadèmia?",
+  sexystyleFaqA14:
+    'Som al Carrer Entença 100, 08015 Barcelona. A només 5 minuts caminant de Plaça Espanya i Sants Estació. Perfectament connectada amb metro (L1, L3), bus i tren.',
+
+  sexystyleFaqQ15: 'On puc trobar classes de Sexy Style a prop de Plaça Espanya a Barcelona?',
+  sexystyleFaqA15:
+    'Farray\'s Center està a només 5 minuts caminant de Plaça Espanya, al Carrer Entença 100, 08015 Barcelona. Som l\'acadèmia de referència en Sexy Style a la zona, amb connexió directa per metro (L1, L3), bus i tren des de Sants Estació.<br/><br/>📍 <strong>Adreça:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Carrer Entença 100, 08015 Barcelona</a><br/>📞 <strong>Telèfon:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+
+  // Image alts
+  sexystyleImageAlt: "Classes de Sexy Style a Barcelona - Farray's Center",
+
+  // Course Schema
+  sexystyleCourseSchemaName: "Classes de Sexy Style a Barcelona - Farray's Center",
+  sexystyleCourseSchemaDesc:
+    'Aprèn Sexy Style amb Yasmina Fernández, instructora especialitzada. Classes per a tots els nivells al cor de Barcelona.',
+
+  // ===== Sexy Reggaeton Page =====
+  sxrPageTitle: "Classes de Reggaeton Sensual per a Dones a Barcelona | Farray's Center",
+  sxrMetaDescription:
+    'Classes de reggaeton sensual i perreo per a dones a Barcelona. Empoderament femení, body roll i confiança corporal. Ambient segur i sense judicis. Reserva la teva classe de prova!',
+
+  // Breadcrumb (4 nivells: Home > Classes > Urbanes > Current)
+  sxrBreadcrumbHome: 'Inici',
+  sxrBreadcrumbClasses: 'Classes de Ball',
+  sxrBreadcrumbUrban: 'Danses Urbanes',
+  sxrBreadcrumbCurrent: 'Classes de Sexy Reggaeton',
+
+  // Hero
+  sxrHeroTitle: 'Classes de Reggaeton Sensual per a Dones a Barcelona',
+  sxrHeroSubtitle: 'Empoderament, sensualitat i actitud a cada moviment',
+  sxrHeroDesc: 'Aprèn a ballar els èxits més sonats del moment amb un estil únic i molt sexy.',
+  sxrHeroLocation: 'Classes des de nivell principiant fins a avançat, entre Plaça Espanya i Sants',
+
+  // CTAs
+  sxrCTA1: 'Fes-te Sòcia Ara',
+  sxrCTA1Subtext: 'Queden poques places aquest mes',
+  sxrCTA2: 'Reserva la Teva Classe de Prova',
+  sxrCTA2Subtext: 'Oferta per temps limitat',
+  sxrCTA1AriaLabel: "Veure horari de classes de Sexy Reggaeton i donar-te d'alta",
+  sxrCTA2AriaLabel: 'Reservar una classe de prova de Sexy Reggaeton',
+  sxrOgImageAlt: "Classes de Sexy Reggaeton a Barcelona - Farray's Center",
+
+  // Stat
+  sxrSensualityGuaranteed: 'Sensualitat garantida',
+
+  // What Is Section
+  sxrWhatIsTitle: "Què és el Sexy Reggaeton i per què t'enganxa?",
+  sxrWhatIsP1:
+    'El Sexy Reggaeton és la fusió perfecta entre la potència del reggaeton i la sensualitat del ball femení. No és només ballar: és connectar amb el teu cos, la teva actitud i el teu poder personal.',
+  sxrWhatIsP2:
+    'Dominaràs figures provocatives com el body roll, el perreo fins al terra, el moviment de malucs sostingut i les "baralles de pista" que fan vibrar qualsevol festa. Aprendràs a col·locar el teu cos amb precisió mentre alliberes el teu costat més sensual i expressiu.',
+  sxrWhatIsP3:
+    '"No necessites ser la més flexible ni la més forta. Només necessites les ganes de deixar-te anar i passar-ho bé."',
+  sxrWhatIsP4:
+    'Cada classe és un entrenament complet: treballes cames, core, flexibilitat i resistència mentre aprens coreografies que pots lluir a qualsevol pista de ball.',
+  sxrWhatIsQuestionTitle: 'Et preguntes si és per a tu?',
+  sxrWhatIsQuestionAnswer: 'Si tens ganes de sentir-te més sexy i segura, és per a tu.',
+
+  // Cultural Section
+  sxrCulturalShort:
+    'El reggaeton va néixer als anys 90 entre Panamà i Puerto Rico, sorgit de la barreja del reggae jamaicà, el hip hop nord-americà i ritmes llatins caribenys.',
+  sxrCulturalFull: `### Origen i evolució
+
+El reggaeton va néixer als anys 90 entre Panamà i Puerto Rico, sorgit de la barreja del reggae jamaicà, el hip hop nord-americà i ritmes llatins caribenys, especialment el dembow panameny que és la base rítmica essencial. Inicialment underground i amb lletres i balls provocatius, el reggaeton va incorporar influències del dancehall i la música urbana llatina.
+
+El Sexy Reggaeton és una evolució contemporània del perreo clàssic porto-riqueny, que combina moviments sensuals amb tècniques de ball femení refinades, incloent body rolls, dissociació corporal, perreo i baixades controlades al terra (drops). Aquest estil fusiona elements de reggaeton, dancehall i twerk, adaptant-se per a un enfocament tant lúdic com d'entrenament físic.
+
+### Tècniques principals
+
+Les tècniques principals del Sexy Reggaeton inclouen:
+
+- **Body roll**: ondulació fluida del tors.
+- **Perreo**: moviments de maluc cap avall, típics del reggaeton.
+- **Dissociació corporal**: control independent de diferents parts del cos.
+- **Drops**: baixades al terra controlades que exigeixen força i coordinació.
+
+Aquestes tècniques treballen cames, core, flexibilitat i resistència, implicant un entrenament complet que potencia la confiança i l'expressió corporal.
+
+### Popularització i context actual
+
+Artistes com Bad Bunny, Karol G, Daddy Yankee i Anitta han difós a nivell global una imatge de reggaeton amb balls sensuals coreografiats que reforcen l'empoderament i la celebració de la sexualitat lliure.
+
+Actualment, el Sexy Reggaeton s'ensenya a Farray's Center amb un enfocament equilibrat entre tècnica, actitud i diversió, buscant que qui el practiqui se senti segura i confiada, més enllà de la mera execució de moviments.`,
+
+  // Identify Section
+  sxrIdentifyTitle: "T'identifiques amb alguna d'aquestes situacions?",
+  sxrIdentify1:
+    'T\'encanta el reggaeton però sents que no tens "el moviment" per ballar-lo com les dels videoclips.',
+  sxrIdentify2: 'Vols sentir-te més sexy i segura amb el teu cos, però no saps per on començar.',
+  sxrIdentify3:
+    "T'agradaria deixar-te anar a la discoteca sense sentir vergonya ni quedar-te quieta al costat de la paret.",
+  sxrIdentify4:
+    "Busques una activitat que et posi en forma, però el gimnàs t'avorreix i necessites alguna cosa divertida.",
+  sxrIdentify5:
+    'Sents que el teu cos està rígid i desconnectat, i vols recuperar la flexibilitat i la soltura.',
+  sxrIdentify6: 'Necessites un espai on ningú et jutgi i puguis expressar-te lliurement.',
+
+  // Transition
+  sxrIdentifyTransition: 'Si has dit "sí" a algun d\'aquests punts, ja saps el que necessites.',
+  sxrNeedEnrollTitle: 'Necessites apuntar-te a classes de Sexy Reggaeton en una acadèmia de ball',
+  sxrIdentifyAgitate1:
+    'Seguir esperant el "moment perfecte" només t\'allunya de la versió més sexy i empoderada de tu mateixa. Cada dia que passa és un dia menys ballant.',
+  sxrIdentifySolution:
+    "A Farray's Center trobaràs un espai segur, sense judicis, on aprendràs a moure el teu cos amb confiança i actitud. Professores que et guien pas a pas, música que et fa vibrar i companyes que t'animen.",
+  sxrIdentifyClosing:
+    'El teu cos ja té tot el que necessita. Només li falta que li donis permís per deixar-se anar.',
+
+  // Transform Section
+  sxrTransformTitle: 'Imagina el teu abans i després',
+  sxrTransform1Title: 'De rígida a fluida',
+  sxrTransform1Desc:
+    'Aprens a moure els malucs de forma sostinguda, a dissociar el tronc de les cames i a crear ondulacions sensuals.',
+  sxrTransform2Title: 'De vergonya a actitud',
+  sxrTransform2Desc:
+    "Treballes l'actitud i la mirada. Deixes d'amagar-te i comences a brillar a qualsevol pista de ball.",
+  sxrTransform3Title: 'De cansada a poderosa',
+  sxrTransform3Desc:
+    'Enforteix cames, core i glutis mentre cremes calories. Cada classe és un entrenament que no se sent com a tal.',
+  sxrTransform4Title: 'De sola a acompanyada',
+  sxrTransform4Desc:
+    'Coneixes dones amb la mateixa passió. Es crea un ambient de complicitat i suport mutu.',
+  sxrTransform5Title: 'De principiant a sexy queen',
+  sxrTransform5Desc:
+    'Domines figures com el body roll, el perreo fins al terra, els drops i les transicions sensuals.',
+  sxrTransform6Title: "D'espectadora a protagonista",
+  sxrTransform6Desc:
+    'Participes en coreografies inspirades en les "baralles de pista" i et sents capaç de robar totes les mirades.',
+  sxrTransformCTA: "Per què triar Farray's Center com a acadèmia de Sexy Reggaeton a Barcelona?",
+
+  // Why Choose Section
+  sxrWhyChoose1Title: 'Acadèmia multidisciplinària',
+  sxrWhyChoose1Desc:
+    "Més de 25 estils perquè mai t'avorreixis i puguis créixer al teu ritme: urbans, balls llatins, contemporani, tècnica, estirament i molt més.",
+  sxrWhyChoose2Title: 'Ubicació immillorable',
+  sxrWhyChoose2Desc:
+    'Carrer Entença 100, entre Plaça Espanya i Sants, a 5 minuts de Plaça Espanya i Sants. Metro, busos i tren a la porta. Fàcil arribar. Fàcil tornar.',
+  sxrWhyChoose3Title: 'Ambient familiar, amb la professionalitat que necessites',
+  sxrWhyChoose3Desc:
+    'Proper, inclusiu i sense judicis ni comparacions, però amb la professionalitat que necessites per evolucionar de veritat.',
+  sxrWhyChoose4Title: 'Instal·lacions preparades de veritat',
+  sxrWhyChoose4Desc:
+    'Més de 700 m², sales àmplies amb miralls, so professional, climatització i vestidors amb dutxes.',
+  sxrWhyChoose5Title: 'Metodologia progressiva',
+  sxrWhyChoose5Desc:
+    'Classes estructurades per nivells perquè avancis al teu ritme. Des de moviments bàsics fins a coreografies avançades.',
+  sxrWhyChoose6Title: 'Gala anual + workshops potents',
+  sxrWhyChoose6Desc:
+    'Brilla en un teatre professional, participa en workshops internacionals i viu experiències que no trobaràs a cap altra escola.',
+  sxrWhyChoose7Title: 'Professora experta: Yasmina Fernández',
+  sxrWhyChoose7Desc:
+    'Yasmina porta més de 8 anys ensenyant danses urbanes i sensuals. La seva energia, tècnica i proximitat fan que cada classe sigui una experiència transformadora.',
+
+  // Logos Section
+  sxrLogosTitle: "Has pogut veure'ns a…",
+  sxrLogosIntlFestivalsText: 'i als millors festivals de ball de tot el món',
+
+  // Teachers Section
+  sxrTeachersTitle: 'Coneix la teva instructora de Sexy Reggaeton',
+  sxrTeachersSubtitle: "Experta en danses urbanes sensuals amb més de 8 anys d'experiència",
+  sxrTeacher1Specialty: 'Sexy Reggaeton & Sexy Style',
+  sxrTeacher1Bio:
+    "Yasmina Fernández és una de les professores més carismàtiques de l'acadèmia. Porta més de 8 anys formant alumnes en danses urbanes i sensuals. El seu estil combina tècnica impecable amb una actitud empoderada que contagia.",
+  sxrTeachersClosing:
+    'Amb Yasmina no només aprens a ballar Sexy Reggaeton: descobreixes una forma de connectar amb la teva feminitat i el teu poder sense demanar permís.',
+
+  // Schedule Section
+  sxrScheduleTitle: 'Horari de classes de Sexy Reggaeton',
+  sxrScheduleSubtitle: 'Diversos nivells perquè trobis la teva classe perfecta',
+
+  // Video Section
+  sxrVideoTitle: 'Vine a descobrir les nostres classes de Sexy Reggaeton',
+  sxrVideoDesc:
+    "Mira com és una classe a Farray's Center: energia, tècnica, sensualitat i bon rotllo. T'esperem!",
+
+  // Why Today Section
+  sxrWhyTodayFullTitle: 'Per què avui és el millor moment per començar a ballar Sexy Reggaeton?',
+  sxrWhyToday1:
+    'Perquè portes massa temps sentint-te incòmoda amb el teu cos i esperant el "moment perfecte" que mai arriba.',
+  sxrWhyToday2:
+    'Perquè estàs a UNA classe de descobrir una versió de tu que mou els malucs sense complexos i se sent poderosa.',
+  sxrWhyToday3:
+    "Perquè no es tracta de ballar perfecte, sinó de sentir-se sexy ballant. I això s'entrena.",
+  sxrWhyTodayClosing1: "A Farray's no venem classes. Creem experiències que et transformen.",
+  sxrWhyTodayClosing2:
+    "T'esperem amb la millor música, profes que t'inspiren i una comunitat de dones que es donen suport.",
+
+  // Final CTA Section
+  sxrFinalCTATitle: 'Uneix-te a la comunitat de Sexy Reggaeton més activa de Barcelona',
+  sxrFinalCTASubtitle: 'Fes el pas. El teu cos ja està preparat.',
+  sxrFinalCTADesc: "Reserva la teva plaça ara i no deixis que t'ho expliquin… ni que t'ho ballin.",
+  sxrFinalCTAFunny: 'Les places volen més ràpid que un perreo un divendres a la nit.',
+
+  // FAQ Title
+  sxrFaqTitle: 'Preguntes Freqüents sobre Sexy Reggaeton a Barcelona',
+
+  // 15 FAQs
+  sxrFaqQ1: 'Com funcionen les nostres classes de Sexy Reggaeton a Barcelona?',
+  sxrFaqA1:
+    "A les nostres classes de Sexy Reggaeton i reggaeton sensual a Barcelona s'ensenyen coreografies amb moviments sensuals i tècnica de perreo. Cada sessió dura 1 hora i inclou: Escalfament (preparació del cos amb exercicis específics per a malucs i core), Tècnica (body roll, perreo, dissociació corporal i drops) i Coreografia (seqüències sensuals amb actitud i flow que podràs lluir a qualsevol pista de ball).",
+  sxrFaqQ2: 'Puc començar des de zero si mai he ballat Sexy Reggaeton?',
+  sxrFaqA2:
+    'Clar. Les alumnes que mai han ballat abans trien els cursos de nivell principiant i les que tenen alguna experiència en algun tipus de ball trien el nivell bàsic. Les nostres classes de reggaeton sensual estan dissenyades perquè qualsevol pugui seguir el ritme des del primer dia.',
+  sxrFaqQ3: 'Què passa si no tinc bona coordinació o em fa vergonya?',
+  sxrFaqA3:
+    "No et preocupis, la coordinació i la soltura es desenvolupen amb la pràctica. Les nostres professores et guiaran pas a pas i l'ambient és molt acollidor i lliure de judicis. L'important és ser constant i gaudir del procés. La sensualitat s'entrena com qualsevol altra habilitat.",
+  sxrFaqQ4: 'Què necessito portar per a les classes de Sexy Reggaeton a Barcelona?',
+  sxrFaqA4:
+    "Roba còmoda i ajustada que et permeti moure't amb llibertat (shorts o leggins funcionen molt bé), sabatilles netes d'ús exclusiu dins de l'estudi, tovallola i aigua, perquè ballaràs intensament i necessites hidratar-te.",
+  sxrFaqQ5: 'Quins estils de Sexy Reggaeton ensenyem a la nostra escola de Barcelona?',
+  sxrFaqA5:
+    '<strong>Sexy Reggaeton / Reggaeton Sensual:</strong> Estil amb moviments sensuals, perreo, body roll i actitud. Sensualitat, feminitat i empoderament. <strong>Sexy Reggaeton + Twerk:</strong> Integra moviments de Twerk/Bootydance amb reggaeton sensual. Energia, sensualitat i tècnica de glutis.',
+  sxrFaqQ6: 'Quins nivells de Sexy Reggaeton tenim a la nostra escola de Barcelona?',
+  sxrFaqA6:
+    '<strong>Principiants:</strong> Per començar des de zero, aprendre pas a pas i amb bon ambient. <strong>Bàsic:</strong> Per a qui ja té alguna experiència en reggaeton sensual o altres danses urbanes. <strong>Intermedi:</strong> Per millorar tècnica, coordinació i musicalitat amb moviments més complexos. <strong>Avançat:</strong> Per portar el teu nivell al màxim i consolidar el teu estil.',
+  sxrFaqQ7: "Puc unir-me en qualsevol moment de l'any?",
+  sxrFaqA7:
+    "Sí. Pots començar quan vulguis. Consulta el nostre calendari per veure les properes classes disponibles. Si tens dubtes sobre el nivell o el grup, escriu-nos i t'orientem.",
+  sxrFaqQ8: 'Teniu algun descompte especial?',
+  sxrFaqA8:
+    "Sí. Oferim descomptes si t'apuntes a més d'un curs. Consulta la web o pregunta'ns directament per a més detalls.",
+  sxrFaqQ9: "Puc provar una classe de Sexy Reggaeton abans d'inscriure'm?",
+  sxrFaqA9:
+    'Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la Teva Classe de Prova" a la part superior d\'aquesta pàgina.',
+  sxrFaqQ10: 'I si falto a una classe per feina o compromisos?',
+  sxrFaqA10:
+    "Si tens una membresía i cancel·les una classe, disposes de 30 dies per recuperar-la des de la data de la classe cancel·lada. Si tens un abonament d'hores, gestiones les teves classes de forma flexible: cancel·la i reserva un altre dia dins del període de caducitat. Totes les gestions es realitzen exclusivament des de l'aplicació digital de l'acadèmia.",
+  sxrFaqQ11:
+    'Si falto a una classe, he de recuperar-la fent el mateix estil o puc fer-ne un altre diferent?',
+  sxrFaqA11:
+    "Pots recuperar-la fent la mateixa classe un altre dia o seleccionar un altre estil (Twerk, Dancehall, Hip Hop Reggaeton...), sempre que respectis el nivell de la classe i gestionis la recuperació des de l'aplicació de l'escola.",
+  sxrFaqQ12: 'Organitzeu esdeveniments o tallers especials?',
+  sxrFaqA12:
+    "Sí. Organitzem tallers, masterclasses i esdeveniments socials durant l'any. Segueix-nos a xarxes o consulta la web per estar al dia.",
+  sxrFaqQ13: 'Les classes són només per a dones o també per a homes?',
+  sxrFaqA13:
+    "Les nostres classes de Sexy Reggaeton i reggaeton sensual estan obertes a totes les persones, sense importar el gènere o l'experiència prèvia. El Sexy Reggaeton és per a qui vulgui connectar amb la seva sensualitat i gaudir ballant.",
+  sxrFaqQ14: "Què diferencia el Sexy Reggaeton d'altres estils de ball urbà?",
+  sxrFaqA14:
+    "El Sexy Reggaeton o reggaeton sensual és un estil que combina l'energia del reggaeton amb moviments sensuals com el perreo, body roll i dissociació corporal. A diferència d'altres estils urbans, se centra en la connexió amb el teu cos, l'actitud i la feminitat. És ideal si busques empoderar-te, guanyar confiança i expressar la teva sensualitat ballant.",
+  sxrFaqQ15: 'On puc trobar classes de Sexy Reggaeton a prop de Plaça Espanya a Barcelona?',
+  sxrFaqA15:
+    "Farray's Center està ubicat al Carrer Entença 100, 08015 Barcelona, a només 5 minuts de Plaça Espanya i Estació de Sants. Comptem amb professores amb àmplia experiència en reggaeton sensual i un ambient segur i familiar per a tots els nivells.",
+
+  // Course Schema
+  sxrCourseSchemaName: "Classes de Sexy Reggaeton a Barcelona - Farray's Center",
+  sxrCourseSchemaDesc:
+    'Aprèn Sexy Reggaeton amb Yunaisy Farray, experta en danses urbanes sensuals. Classes de perreo, body roll i sensualitat per a tots els nivells al cor de Barcelona.',
+
+  // Image Alt
+  sxrImageAlt:
+    "Classes de Sexy Reggaeton a Barcelona - Alumnes ballant perreo i body roll a l'acadèmia",
+
+  // ===== MODERN JAZZ PAGE =====
+  // SEO & Meta
+  modernjazzPageTitle:
+    'Classes de Modern Jazz a Barcelona | Tècnica i Expressió amb Alejandro Miñoso',
+  modernjazzMetaDescription:
+    'Classes de Modern Jazz a Barcelona amb Alejandro Miñoso. Tècnica, musicalitat i expressió corporal. Des de principiant fins a avançat. Reserva la teva classe de prova!',
+
+  // Breadcrumb (4 nivells: Home > Classes > Dansa > Current)
+  modernjazzBreadcrumbHome: 'Inici',
+  modernjazzBreadcrumbClasses: 'Classes de Ball',
+  modernjazzBreadcrumbDance: 'Classes de Dansa',
+  modernjazzBreadcrumbCurrent: 'Classes de Modern Jazz',
+
+  // Hero
+  modernjazzHeroTitle: 'Classes de Modern Jazz a Barcelona',
+  modernjazzHeroSubtitle: 'Tècnica, expressió i llibertat de moviment',
+  modernjazzHeroDesc:
+    "Descobreix el Modern Jazz: una dansa que fusiona la tècnica del ballet clàssic amb l'energia i llibertat del jazz contemporani. Expressió, musicalitat i moviment fluid.",
+  modernjazzHeroLocation: 'Classes per a tots els nivells, entre Plaça Espanya i Sants',
+
+  // Stats
+  modernjazzTechniqueStat: 'Tècnica',
+  modernjazzEmpowerment: 'Ballet + Jazz',
+  modernjazzConfidenceGuaranteed: 'Expressió garantida',
+  modernjazzCaloriesStat: 'Calories Cremades',
+  modernjazzDanceStat: 'Dansa',
+
+  // CTAs
+  modernjazzCTA1: 'Fes-te Soci Ara',
+  modernjazzCTA1Subtext: 'Queden poques places aquest mes',
+  modernjazzCTA2: 'Reserva la teva Classe de Prova',
+  modernjazzCTA2Subtext: 'Oferta per temps limitat',
+
+  // What Is Section
+  modernjazzWhatIsTitle: 'Què és el Modern Jazz i per què et transformarà?',
+  modernjazzWhatIsP1:
+    'El Modern Jazz és una evolució de la Dansa Jazz que incorpora els estils musicals més actuals. És el referent als musicals de Broadway i a les coreografies dels teus artistes favorits.',
+  modernjazzWhatIsP2:
+    "Les nostres classes es distingeixen per la seva riquesa de ritmes, diversitat d'estils i per ser una barreja perfecta de tècnica, ritme i força. Treballem des del bàsic fins al més complex.",
+  modernjazzWhatIsP3:
+    '«Prestem especial atenció a la respiració, al moviment dels braços i a les entrades i sortides del terra, aspectes molt característics del Modern Jazz»',
+  modernjazzWhatIsP4:
+    'Diversió, tècnica i musicalitat: pensat per a ballarins de tots els nivells que vulguin adquirir una bona forma física treballant amb energia i interpretant les últimes tendències musicals.',
+  modernjazzWhatIsQuestionTitle: 'Et preguntes si és per a tu?',
+  modernjazzWhatIsQuestionAnswer: 'Sí, ho és.',
+
+  // Cultural Section
+  modernjazzCulturalShort:
+    'El Modern Jazz neix de la fusió del ballet clàssic amb el jazz americà i la dansa moderna, creant un estil únic que combina tècnica acadèmica amb expressió lliure.',
+  modernjazzCulturalFull: `### Orígens del Modern Jazz
+
+El Modern Jazz va emergir als Estats Units durant el segle XX, quan ballarins i coreògrafs van començar a fusionar la tècnica clàssica del ballet amb l'energia rítmica del jazz i l'expressivitat de la dansa moderna. Pioners com Jack Cole, Matt Mattox i Luigi van desenvolupar les bases del que avui coneixem com Modern Jazz.
+
+Aquesta dansa pren del ballet la postura, les línies netes, els girs i els salts; del jazz, la musicalitat, el groove i l'actitud; i de la dansa moderna, la llibertat de moviment, el treball de terra i l'expressió emocional.
+
+### L'evolució de l'estil
+
+El Modern Jazz ha evolucionat constantment, incorporant influències del hip hop, la dansa contemporània i els estils comercials. Coreògrafs com Bob Fosse van revolucionar el gènere amb el seu estil característic d'aïllaments, moviments angulars i sensualitat continguda.
+
+Avui en dia, el Modern Jazz es caracteritza per la seva versatilitat: des de peces líriques i emotives fins a coreografies energètiques i dinàmiques. És l'estil que veus als musicals de Broadway, a les pel·lícules de dansa i als espectacles més aclamats del món.
+
+### El Modern Jazz a Barcelona
+
+Farray's Center ofereix classes de Modern Jazz sota la direcció d'Alejandro Miñoso, un mestre amb formació clàssica i contemporània que combina l'exigència tècnica amb un ambient proper i motivador. Les classes treballen la tècnica de base, la musicalitat, l'expressió corporal i la interpretació, preparant als alumnes tant per a l'escenari com per gaudir ballant.`,
+
+  // Identify Section - Pain Points específics del Modern Jazz
+  modernjazzIdentifyTitle: "T'identifiques amb alguna d'aquestes situacions?",
+  modernjazzIdentify1: 'Vols aprendre a ballar amb tècnica real, no només copiar passos de vídeos',
+  modernjazzIdentify2:
+    "T'agraden els musicals i les pel·lícules de ball, però creus que això està fora del teu abast",
+  modernjazzIdentify3:
+    'Has provat altres classes però senties que faltava estructura i progressió tècnica',
+  modernjazzIdentify4:
+    "Vols millorar la teva postura, flexibilitat i forma de moure't, però els entrenaments de gimnàs t'avorreixen",
+  modernjazzIdentify5:
+    'Busques una activitat que treballi cos i ment, que et desafiï però també et faci gaudir',
+  modernjazzIdentify6: "Somies amb moure't amb elegància i expressió, però no saps per on començar",
+  modernjazzIdentifyTransition:
+    'Si has dit "sí" a algun d\'aquests punts, ja saps el que necessites.',
+
+  // Need Enroll Section
+  modernjazzNeedEnrollTitle: 'Necessites apuntar-te a classes de Modern Jazz',
+  modernjazzIdentifyAgitate1:
+    "La tècnica no s'aprèn sola. Sense una base sòlida, els mals hàbits s'instal·len i cada vegada és més difícil corregir-los. Com abans comencis amb un bon professor, més lluny arribaràs.",
+  modernjazzIdentifySolution:
+    "A Farray's Center, Alejandro Miñoso et guiarà des dels fonaments fins al moviment expressiu. Classes estructurades, correccions personalitzades i un ambient on créixer.",
+  modernjazzIdentifyClosing:
+    "El teu cos està esperant moure's amb llibertat i precisió. Dona-li l'oportunitat.",
+
+  // Transform Section (6 transformacions)
+  modernjazzTransformTitle: 'Imagina el teu abans i després',
+  modernjazzTransform1Title: 'De rígid a fluid',
+  modernjazzTransform1Desc:
+    'El teu cos guanya flexibilitat i soltura. Els moviments que abans et costaven ara flueixen naturalment.',
+  modernjazzTransform2Title: "D'insegur a tècnic",
+  modernjazzTransform2Desc:
+    'Domines els fonaments: postura, girs, salts, línies. Balles amb propietat, no improvisant.',
+  modernjazzTransform3Title: 'De copiar a interpretar',
+  modernjazzTransform3Desc:
+    "Ja no només segueixes passos: entens la música, l'expresses amb el teu cos i li dones el teu segell personal.",
+  modernjazzTransform4Title: "D'espectador a protagonista",
+  modernjazzTransform4Desc:
+    'Aquells moviments que admiraves en pel·lícules i musicals ara els executes tu.',
+  modernjazzTransform5Title: 'De sedentari a atlètic',
+  modernjazzTransform5Desc:
+    'La teva condició física millora: més força, més resistència, millor postura. Ballar és el teu nou entrenament.',
+  modernjazzTransform6Title: "D'aïllat a part d'una comunitat",
+  modernjazzTransform6Desc:
+    'Trobes persones que comparteixen la teva passió. El ball et connecta amb altres.',
+  modernjazzTransformCTA: "Per què triar Farray's Center per Modern Jazz?",
+
+  // Why Choose Section (6 items)
+  modernjazzWhyChoose1Title: 'Acadèmia reconeguda pel CID UNESCO',
+  modernjazzWhyChoose1Desc:
+    'Dirigida per Yunaisy Farray, actriu de Street Dance 2 i una de les mestres més reconegudes del món.',
+  modernjazzWhyChoose2Title: 'Ubicació immillorable',
+  modernjazzWhyChoose2Desc:
+    'Carrer Entença 100, entre Plaça Espanya i Sants, a 5 minuts de Plaça Espanya i Sants. Metro, busos i tren a la porta. Fàcil arribar. Fàcil tornar.',
+  modernjazzWhyChoose3Title: 'Ambient familiar, amb la professionalitat que necessites',
+  modernjazzWhyChoose3Desc:
+    'Proper, inclusiu i sense judicis ni comparacions, però amb la professionalitat que necessites per evolucionar de veritat.',
+  modernjazzWhyChoose4Title: 'Instal·lacions preparades de veritat',
+  modernjazzWhyChoose4Desc:
+    "Més de 700 m², sales àmplies, miralls, so professional, aire condicionat i ventilació centralitzada per entrenar a gust tot l'any.",
+  modernjazzWhyChoose5Title: 'Acadèmia multidisciplinar',
+  modernjazzWhyChoose5Desc:
+    "Més de 25 estils perquè mai t'avorreixis i puguis créixer al teu ritme: urbans, balls llatins, contemporani, tècnica, estirament i molt més.",
+  modernjazzWhyChoose6Title: 'Gala anual + workshops potents',
+  modernjazzWhyChoose6Desc:
+    'Brilla en un teatre professional, participa en workshops internacionals i viu experiències que no trobaràs en cap altra escola.',
+
+  // Logos Section
+  modernjazzLogosTitle: "Has pogut veure'ns…",
+  modernjazzLogosIntlFestivalsText: 'i als millors festivals de ball del món',
+
+  // Teachers Section
+  modernjazzTeachersTitle: 'Coneix el teu professor de Modern Jazz',
+  modernjazzTeachersSubtitle: 'Tècnica clàssica, esperit contemporani',
+  modernjazzTeacher1Specialty: 'Modern Jazz, Afro Jazz, Contemporani & Ballet',
+  modernjazzTeacher1Bio:
+    "Alejandro Miñoso és mestre internacional cubà format a la prestigiosa ENA (Escola Nacional d'Art de Cuba). Ex solista de la companyia Carlos Acosta, combina l'exigència tècnica del ballet clàssic amb la llibertat expressiva del jazz modern, creant classes dinàmiques on cada alumne progressa al seu ritme.",
+  modernjazzTeachersClosing:
+    "Amb Alejandro aprendràs tècnica sòlida mentre descobreixes la teva pròpia forma d'expressar-te.",
+
+  // Schedule Section
+  modernjazzScheduleTitle: 'Horari de classes de Modern Jazz',
+  modernjazzScheduleSubtitle: 'Classes amb Alejandro Miñoso',
+
+  // Video Section
+  modernjazzVideoTitle: 'Descobreix les nostres classes de Modern Jazz',
+  modernjazzVideoDesc:
+    "Mira com és una classe a Farray's Center: tècnica, expressió i passió pel ball.",
+
+  // Why Today Section
+  modernjazzWhyTodayFullTitle: 'Per què avui és el millor moment per començar Modern Jazz?',
+  modernjazzWhyToday1:
+    'Perquè la tècnica es construeix amb temps, i com abans comencis, abans veuràs resultats.',
+  modernjazzWhyToday2:
+    'Perquè el teu cos necessita alguna cosa més que oficina i sofà: necessita estirar-se, girar, saltar i respirar música.',
+  modernjazzWhyToday3:
+    "Perquè mereixes una activitat que t'exigeixi, et buidi la ment i et faci sentir més fort i més elegant.",
+  modernjazzWhyTodayClosing1: "A Farray's no venem classes. Creem Experiències.",
+  modernjazzWhyTodayClosing2:
+    "T'esperem amb bona música, molta tècnica i un professor disposat a portar la teva dansa a un altre nivell.",
+
+  // Final CTA Section
+  modernjazzFinalCTATitle: 'Uneix-te a les classes de Modern Jazz més tècniques de Barcelona',
+  modernjazzFinalCTASubtitle: 'Fes el pas.',
+  modernjazzFinalCTADesc: 'Reserva la teva plaça ara i descobreix el ballarí que portes dins.',
+  modernjazzFinalCTAFunny: 'Les places volen més ràpid que el teló que baixa quan comença el show.',
+
+  // FAQ Title
+  modernjazzFaqTitle: 'Preguntes Freqüents sobre les nostres classes de Modern Jazz a Barcelona',
+
+  // 15 FAQs
+  modernjazzFaqQ1: 'Què és exactament el Modern Jazz?',
+  modernjazzFaqA1:
+    "El Modern Jazz és un estil de dansa que fusiona la tècnica del ballet clàssic amb l'energia i llibertat del jazz americà i la dansa moderna. Treballa postura, flexibilitat, girs, salts i expressió corporal.",
+
+  modernjazzFaqQ2: 'Necessito experiència prèvia en dansa per començar?',
+  modernjazzFaqA2:
+    'No, les nostres classes estan obertes a tots els nivells. Comencem des dels fonaments perquè puguis construir una base tècnica sòlida des de zero.',
+
+  modernjazzFaqQ3: 'Quina roba i calçat necessito per a les classes?',
+  modernjazzFaqA3:
+    'Roba còmoda i ajustada que permeti veure les línies del cos (mallas, mallot o samarreta ajustada). Calçat: sabatilles de jazz, mitjons de dansa o peus descalços, segons preferència.',
+
+  modernjazzFaqQ4: 'El Modern Jazz és un bon exercici físic?',
+  modernjazzFaqA4:
+    'Excel·lent. Treballes flexibilitat, força, coordinació, resistència cardiovascular i control corporal. És un entrenament complet que a més és divertit.',
+
+  modernjazzFaqQ5: 'Quina diferència hi ha entre Modern Jazz i el Lyrical Jazz?',
+  modernjazzFaqA5:
+    "El Modern Jazz té una base més tècnica i acadèmica, influenciada pel ballet clàssic i la dansa moderna. Se centra en la tècnica, els girs, salts i la precisió del moviment. El Lyrical Jazz, en canvi, posa més èmfasi en la interpretació emocional i la connexió amb la lletra de les cançons, amb moviments més fluids i expressius. Ambdós estils treballen la musicalitat, però el Modern Jazz prioritza la tècnica mentre que el Lyrical Jazz prioritza l'emoció.",
+
+  modernjazzFaqQ6: 'Qui és Alejandro Miñoso?',
+  modernjazzFaqA6:
+    "Alejandro Miñoso és ballarí professional i professor de Modern Jazz a Farray's Center. Format a l'escola cubana, combina la precisió i elegància de dansa clàssica amb la fluïdesa i expressivitat de contemporani i del jazz. La seva metodologia se centra en construir una tècnica sòlida mentre es desenvolupa l'expressió artística.",
+
+  modernjazzFaqQ7: "Puc provar una classe de Modern Jazz abans d'inscriure'm?",
+  modernjazzFaqA7:
+    'Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Prova" a la part superior d\'aquesta pàgina.',
+
+  modernjazzFaqQ8: 'Quins nivells de Modern Jazz teniu?',
+  modernjazzFaqA8: 'Actualment oferim classes de nivell bàsic per a persones amb poca experiència.',
+
+  modernjazzFaqQ9: 'I si falto a una classe per feina o compromisos?',
+  modernjazzFaqA9:
+    "Si tens una membresía i cancel·les una classe, disposes de 30 dies per recuperar-la des de la data de la classe cancel·lada. Si tens un abonament d'hores, gestiones les teves classes de forma flexible: cancel·la i reserva un altre dia dins del període de caducitat. Totes les gestions es realitzen exclusivament des de l'aplicació digital de l'acadèmia.",
+
+  modernjazzFaqQ10: 'Quin tipus de música es fa servir a les classes?',
+  modernjazzFaqA10:
+    'Variada: des de clàssics del jazz i musicals de Broadway fins a música contemporània. La musicalitat és part fonamental de la formació.',
+
+  modernjazzFaqQ11: "Puc apuntar-me en qualsevol moment de l'any?",
+  modernjazzFaqA11:
+    'Sí, el nostre sistema és obert. Pots incorporar-te quan vulguis sense esperar que comenci un nou cicle.',
+
+  modernjazzFaqQ12: 'Organitzeu actuacions o gales?',
+  modernjazzFaqA12:
+    'Sí, tenim una gala anual on els alumnes poden lluir-se en un escenari professional. També organitzem workshops i masterclasses amb artistes convidats.',
+
+  modernjazzFaqQ13: 'Teniu algun descompte especial?',
+  modernjazzFaqA13:
+    "Sí. Oferim descomptes si t'apuntes a més d'un curs. Consulta la web o pregunta'ns directament per a més detalls.",
+
+  modernjazzFaqQ14: "On és l'acadèmia?",
+  modernjazzFaqA14:
+    'Som al Carrer Entença 100, 08015 Barcelona. A només 5 minuts caminant de Plaça Espanya i Sants Estació. Perfectament connectada amb metro (L1, L3), bus i tren.',
+
+  modernjazzFaqQ15: 'On puc trobar classes de Modern Jazz a prop de Plaça Espanya a Barcelona?',
+  modernjazzFaqA15:
+    'Farray\'s Center està a només 5 minuts caminant de Plaça Espanya, al Carrer Entença 100, 08015 Barcelona. Som referència en Modern Jazz a la zona, amb connexió directa per metro (L1, L3), bus i tren des de Sants Estació.<br/><br/>📍 <strong>Adreça:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Carrer Entença 100, 08015 Barcelona</a><br/>📞 <strong>Telèfon:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+
+  modernjazzFaqQ16: 'Què aconsegueixes al nostre curs de Modern Jazz a Barcelona?',
+  modernjazzFaqA16:
+    'La pràctica de Modern Jazz aportarà una gran flexibilitat al teu cos, a més de proporcionar-te una excel·lent forma física. Aprendràs a modular la teva respiració per augmentar la teva capacitat; practicaràs la dissociació, enfortiràs les teves cames i milloraràs la mobilitat del teu tors i braços. Tot això farà possible que creixin les teves habilitats interpretatives i la teva expressió corporal. Notaràs com la unió entre el cos i la música és cada cop més forta, i aprendràs a aplicar disciplina i passió a parts iguals. Si et dediques professionalment al ball, podràs aplicar el que has après per millorar la teva tècnica sigui quina sigui la disciplina que imparteixis.<br/><br/><strong>Beneficis:</strong><br/>✓ Millora la teva tècnica de dansa<br/>✓ Millora la teva musicalitat<br/>✓ Aprèn a dissociar el teu cos<br/>✓ Augmenta el teu repertori<br/>✓ Exercita la teva coordinació i la teva memòria<br/>✓ Millora la teva forma física',
+
+  modernjazzFaqQ17: 'Com funciona el nostre curs de Modern Jazz i per a qui està pensat?',
+  modernjazzFaqA17:
+    "Les classes de Modern Jazz a Farray's estan dirigides a ballarins de qualsevol nivell, ja que tots som capaços d'expressar-nos de forma creativa a través del ball. A classe la dinàmica s'organitza a partir d'una part tècnica d'escalfament seguida de diversos exercicis en els quals entrenaràs girs, salts, caigudes, etc. És una pràctica que afavoreix l'eliminació de tensions, l'adopció d'una postura correcta i l'expressió corporal a través de la música. Vine a provar una classe i deixa't enamorar!",
+
+  // Image alts
+  modernjazzImageAlt: "Classes de Modern Jazz a Barcelona - Farray's Center",
+
+  // Course Schema (SEO)
+  modernjazzCourseSchemaName: "Classes de Modern Jazz a Barcelona - Farray's Center",
+  modernjazzCourseSchemaDesc:
+    'Aprèn Modern Jazz amb Alejandro Miñoso. Tècnica clàssica, expressió contemporània. Classes per a tots els nivells a Barcelona.',
+
+  // Accessibility (A11y)
+  skipLinks: 'Enllaços de navegació ràpida',
+  skipToSchedule: "Anar a l'horari",
+  modernjazzCTAGroup: 'Accions de reserva',
+  modernjazzIdentifyListLabel: 'Situacions amb les quals et podries identificar',
 };

@@ -33,6 +33,8 @@ export const es = {
   headerContact: 'Contacto',
   headerMerchandising: 'Merchandising',
   headerFAQ: 'Preguntas Frecuentes',
+  headerLanguage: 'Idioma',
+  navFacilities: 'Instalaciones',
   breadcrumb_services: 'Servicios de Baile',
   enrollNow: 'Hazte Socio Ahora',
   // Hero
@@ -4096,6 +4098,9 @@ Las últimas tendencias y estilos se fusionan en nuestras clases de forma variad
   sxrCTA1Subtext: 'Quedan pocas plazas este mes',
   sxrCTA2: 'Reserva tu Clase de Prueba',
   sxrCTA2Subtext: 'Oferta por tiempo limitado',
+  sxrCTA1AriaLabel: 'Ver horario de clases de Sexy Reggaeton y darte de alta',
+  sxrCTA2AriaLabel: 'Reservar una clase de prueba de Sexy Reggaeton',
+  sxrOgImageAlt: "Clases de Sexy Reggaeton en Barcelona - Farray's Center",
 
   // Stat
   sxrSensualityGuaranteed: 'Sensualidad garantizada',
@@ -4215,7 +4220,7 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   // Teachers Section
   sxrTeachersTitle: 'Conoce a tu instructora de Sexy Reggaeton',
   sxrTeachersSubtitle: 'Experta en danzas urbanas sensuales con más de 8 años de experiencia',
-  sxrTeacher1Specialty: 'Sexy Reggaeton, Twerk, Dancehall & Danzas Urbanas',
+  sxrTeacher1Specialty: 'Sexy Reggaeton & Sexy Style',
   sxrTeacher1Bio:
     'Yasmina Fernández es una de las profesoras más carismáticas de la academia. Lleva más de 8 años formando alumnas en danzas urbanas y sensuales. Su estilo combina técnica impecable con una actitud empoderada que contagia.',
   sxrTeachersClosing:
@@ -4303,6 +4308,10 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   sxrCourseSchemaName: "Clases de Sexy Reggaeton en Barcelona - Farray's Center",
   sxrCourseSchemaDesc:
     'Aprende Sexy Reggaeton con Yunaisy Farray, experta en danzas urbanas sensuales. Clases de perreo, body roll y sensualidad para todos los niveles en el corazón de Barcelona.',
+
+  // Image Alt
+  sxrImageAlt:
+    'Clases de Sexy Reggaeton en Barcelona - Estudiantes bailando perreo y body roll en la academia',
 
   // ===== REGGAETON CUBANO / REPARTO PAGE =====
   // SEO & Meta
@@ -4955,4 +4964,509 @@ Actualmente, Femmology se imparte exclusivamente en Farray's Center bajo la dire
   femCourseSchemaName: 'Clases de Femmology en Barcelona - Baile en Tacones con Yunaisy Farray',
   femCourseSchemaDesc:
     'Aprende a bailar en tacones con Yunaisy Farray, creadora del Método Farray®, actriz de Street Dance 2 y maestra UNESCO. Clases de Femmology en exclusiva en Barcelona.',
+
+  // ===== Sexy Style Page =====
+  sexystylePageTitle: 'Clases de Sexy Style en Barcelona | Aprende a Bailar con Sensualidad',
+  sexystyleMetaDescription:
+    'Clases de Sexy Style en Barcelona con Yasmina Fernández. Aprende a expresarte con sensualidad, confianza y movimiento. Todos los niveles. ¡Reserva tu clase de prueba!',
+
+  // Breadcrumb (4 niveles: Home > Clases > Urbanas > Current)
+  sexystyleBreadcrumbHome: 'Inicio',
+  sexystyleBreadcrumbClasses: 'Clases de Baile',
+  sexystyleBreadcrumbUrban: 'Danzas Urbanas',
+  sexystyleBreadcrumbCurrent: 'Clases de Sexy Style',
+
+  // Hero
+  sexystyleHeroTitle: 'Clases de Sexy Style en Barcelona',
+  sexystyleHeroSubtitle: 'Despierta tu sensualidad bailando',
+  sexystyleHeroDesc:
+    'Descubre el poder de tu cuerpo a través del movimiento. Sin vergüenza, sin juicios, solo tú y tu expresión.',
+  sexystyleHeroLocation:
+    'Clases desde nivel principiante hasta avanzado, entre Plaza España y Sants',
+
+  // Stats
+  sexystyleSensualityStat: '~500',
+  sexystyleEmpowerment: 'Calorías Quemadas',
+  sexystyleConfidenceGuaranteed: 'Sensualidad garantizada',
+
+  // CTAs
+  sexystyleCTA1: 'Hazte Socia Ahora',
+  sexystyleCTA1Subtext: 'Quedan pocas plazas este mes',
+  sexystyleCTA2: 'Reserva tu Clase de Prueba',
+  sexystyleCTA2Subtext: 'Oferta por tiempo limitado',
+
+  // What Is Section
+  sexystyleWhatIsTitle: '¿Qué es el Sexy Style y por qué está revolucionando Barcelona?',
+  sexystyleWhatIsP1:
+    'El Sexy Style es mucho más que un baile: es una forma de reconectar con tu cuerpo, tu sensualidad y tu poder interior.',
+  sexystyleWhatIsP2:
+    'A través de movimientos fluidos, ondulaciones y coreografías diseñadas para despertar tu expresión corporal, aprenderás a moverte con confianza y actitud.',
+  sexystyleWhatIsP3: '«No se trata de cómo te ven los demás, sino de cómo te sientes tú»',
+  sexystyleWhatIsP4:
+    'En cada clase trabajamos técnica, musicalidad y, sobre todo, la conexión contigo misma. Saldrás sintiéndote más fuerte, más libre y más sexy.',
+  sexystyleWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
+  sexystyleWhatIsQuestionAnswer: 'Sí, lo es. Y vas a descubrirlo en tu primera clase.',
+
+  // Cultural Section
+  sexystyleCulturalShort:
+    'Sexy Style puede explicarse como una rama del baile comercial en videoclips y escenarios pop, nacida de la fusión entre hip hop/new style, jazz-funk, burlesque y el trabajo en tacones típico del "heels dance".',
+  sexystyleCulturalFull: `### Orígenes del Sexy Style
+
+El Sexy Style surge como evolución natural del baile comercial, tomando la musicalidad y la actitud del hip hop/new style y mezclándolas con el glamour del cabaret, los musicales y el burlesque. De esos contextos escénicos pasa a las academias, donde se transforma en una disciplina propia que trabaja pasos, transiciones y poses pensadas tanto para escenario como para videoclips, siempre desde una energía femenina fuerte y segura.
+
+No es un baile de seducción hacia fuera, sino una práctica de conexión interna que utiliza la sensualidad como camino para habitar el cuerpo con más presencia. A través del trabajo de aislamientos, líneas corporales, uso de caderas, torso y mirada, el Sexy Style invita a sentirse protagonista, sin necesidad de encajar en un estereotipo físico concreto.
+
+### La revolución del empoderamiento
+
+En los últimos años, el Sexy Style ha vivido un boom gracias a artistas como Beyoncé, Rihanna o Doja Cat, y a toda una generación de mujeres que han reivindicado su derecho a expresar su sensualidad sin ser sexualizadas ni juzgadas. Las clases actuales traducen ese imaginario de videoclips y giras en un espacio seguro donde trabajar autoestima, actitud escénica y confianza personal, utilizando el cuerpo como herramienta de liberación y no como objeto.
+
+Este movimiento ha convertido lo que antes era solo "baile para show" en una vía de empoderamiento cotidiano: muchas alumnas utilizan el Sexy Style para reconciliarse con su cuerpo, mejorar su postura y descubrir una forma de moverse que se siente auténtica y propia. De esta manera, la técnica comercial y la expresión emocional se entrelazan para construir una identidad más sólida dentro y fuera de la pista.
+
+### El Sexy Style en Barcelona
+
+Farray's Center fue una de las primeras academias en Barcelona en ofrecer clases de Sexy Style con una metodología profesional, integrando tanto la raíz comercial (videoclips, giras, trabajo en tacones) como el enfoque de empoderamiento personal. Bajo la dirección de Yasmina Fernández, se ha desarrollado un programa que combina técnica (equilibrio, caminar en tacones, disociaciones, musicalidad) con trabajo de actitud y presencia escénica.
+
+Hoy, el Sexy Style en Farray's se vive como un espacio de aprendizaje técnico y, a la vez, como un laboratorio de autoconfianza donde cada alumna puede construir su propia versión de lo que significa ser sensual, fuerte y libre.`,
+
+  // Identify Section - Pain Points específicos del Sexy Style
+  sexystyleIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
+  sexystyleIdentify1:
+    'Sientes que vives en piloto automático y casi no te reconoces en el espejo ni te ves sensual',
+  sexystyleIdentify2:
+    'Quieres soltarte cuando suena la música, pero tu cuerpo se queda rígido y la vergüenza te bloquea, aunque ya hayas ido a clases',
+  sexystyleIdentify3:
+    'Has probado otros bailes, pero eran solo pasos y técnica: no sentías placer ni más poder al salir',
+  sexystyleIdentify4:
+    'Ves a tus artistas favoritas en tacones y piensas "yo no podría", porque crees que te falta cuerpo, edad o talento',
+  sexystyleIdentify5:
+    'Deseas un estudio donde jugar con tu sensualidad frente al espejo, sin miradas juzgonas ni comentarios sobre tu cuerpo',
+  sexystyleIdentify6:
+    'Necesitas un rato a la semana solo para ti, para subirte a los tacones, soltar la rutina y salir sintiéndote viva, empoderada y muy sexy',
+  sexystyleIdentifyTransition:
+    'Si has dicho "sí" a alguno de estos puntos, ya sabes lo que necesitas.',
+
+  // Need Enroll Section
+  sexystyleNeedEnrollTitle: 'Necesitas apuntarte a clases de Sexy Style',
+  sexystyleIdentifyAgitate1:
+    'Cada día que pasas sin bailar, tu cuerpo se acostumbra a la rutina y se olvida del placer de bailar. Tu sensualidad no desaparece: solo se queda dormida hasta que decides despertarla.',
+  sexystyleIdentifySolution:
+    "En Farray's Center, hemos creado un espacio donde puedes redescubrir tu cuerpo sin presiones. Aquí no hay cuerpos perfectos, solo momentos perfectos.",
+  sexystyleIdentifyClosing: 'Déjate llevar y reconecta con la mujer poderosa que llevas dentro.',
+
+  // Transform Section (6 transformaciones que responden a los 6 pain points)
+  sexystyleTransformTitle: 'Imagina tu antes y después',
+  sexystyleTransform1Title: 'De desconectada a presente',
+  sexystyleTransform1Desc:
+    'Dejas de pensar en todo lo demás. Durante una hora, solo existes tú, la música y tu cuerpo.',
+  sexystyleTransform2Title: 'De rígida a fluida',
+  sexystyleTransform2Desc:
+    'Tu cuerpo aprende a moverse con soltura. Lo que antes te costaba, ahora fluye natural.',
+  sexystyleTransform3Title: 'De "solo pasos" a disfrutar de verdad',
+  sexystyleTransform3Desc:
+    'Antes ibas a clase, seguías la coreo y ya. Cansada, pero igual por dentro. Ahora cada coreografía es una excusa para sentirte mejor que nunca.',
+  sexystyleTransform4Title: 'De "yo no podría" a "mírame hacerlo"',
+  sexystyleTransform4Desc:
+    'Antes veías a tus artistas favoritas y dudabas de ti; ahora, cuando te miras en el espejo, reconoces a una mujer que se mueve con actitud y confianza.',
+  sexystyleTransform5Title: 'De esconderte a brillar',
+  sexystyleTransform5Desc:
+    'Antes te costaba moverte si alguien miraba. Ahora el espejo es tu aliado y el estudio tu escenario: un espacio donde tu sensualidad es bienvenida, celebrada y nunca juzgada.',
+  sexystyleTransform6Title: 'De rutina gris a cita semanal contigo',
+  sexystyleTransform6Desc:
+    'Antes los días eran todos iguales; ahora tienes tu momento Sexy Style: una hora para ti, para sudar, jugar, sentirte viva y salir de clase con esa energía de "aquí mando yo".',
+  sexystyleTransformCTA: "¿Por qué elegir Farray's Center como academia de Sexy Style?",
+
+  // Why Choose Section (6 items)
+  sexystyleWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
+  sexystyleWhyChoose1Desc:
+    'Dirigida por Yunaisy Farray, actriz de Street Dance 2 y una de las profesoras más reconocidas del mundo.',
+  sexystyleWhyChoose2Title: 'Ambiente seguro y sin juicios',
+  sexystyleWhyChoose2Desc:
+    'Un espacio donde puedes ser tú misma, experimentar y soltarte sin miedo a la mirada de otros.',
+  sexystyleWhyChoose3Title: 'Metodología progresiva',
+  sexystyleWhyChoose3Desc:
+    'Empezamos desde cero. Cada movimiento se descompone para que lo integres a tu ritmo.',
+  sexystyleWhyChoose4Title: 'Ubicación inmejorable',
+  sexystyleWhyChoose4Desc:
+    'Calle Entença 100, a 5 minutos de Plaza España y Sants. Metro, bus y tren en la puerta.',
+  sexystyleWhyChoose5Title: 'Instalaciones de primera',
+  sexystyleWhyChoose5Desc:
+    'Más de 700 m², salas amplias con espejos, sonido profesional y climatización.',
+  sexystyleWhyChoose6Title: 'Profesora especializada',
+  sexystyleWhyChoose6Desc:
+    'Yasmina Fernández: experta en Sexy Style con años de experiencia. Técnica, flow y energía contagiosa.',
+  sexystyleWhyChoose7Title: 'Gala anual + workshops potentes',
+  sexystyleWhyChoose7Desc:
+    'Brilla en un teatro profesional, participa en workshops internacionales y vive experiencias que no encontrarás en ninguna otra escuela.',
+
+  // Logos Section
+  sexystyleLogosTitle: 'Has podido vernos…',
+  sexystyleLogosIntlFestivalsText: 'y en los mejores festivales de baile del mundo',
+
+  // Teachers Section
+  sexystyleTeachersTitle: 'Conoce a tu instructora de Sexy Style',
+  sexystyleTeachersSubtitle: 'Especialista en expresión corporal y sensualidad',
+  sexystyleTeacher1Specialty: 'Sexy Style & Expresión Corporal',
+  sexystyleTeacher1Bio:
+    'Yasmina Fernández es una de las profesoras más carismáticas de la academia. Lleva más de 8 años formando alumnas en danzas urbanas y sensuales. Su estilo combina técnica impecable con una actitud empoderada que contagia.',
+  sexystyleTeachersClosing:
+    'Con Yasmina no solo aprendes a bailar Sexy Style: descubres una nueva forma de habitar tu cuerpo.',
+
+  // Schedule Section
+  sexystyleScheduleTitle: 'Horario de clases de Sexy Style',
+  sexystyleScheduleSubtitle: 'Varios niveles para que encuentres tu clase perfecta',
+
+  // Video Section
+  sexystyleVideoTitle: 'Descubre nuestras clases de Sexy Style',
+  sexystyleVideoDesc:
+    "Mira cómo es una clase en Farray's Center: energía, técnica y mucho empoderamiento.",
+
+  // Why Today Section
+  sexystyleWhyTodayFullTitle: '¿Por qué hoy es el mejor momento para empezar a bailar Sexy Style?',
+  sexystyleWhyToday1:
+    'Porque cada día que esperas es un día menos sintiéndote a gusto en tu propio cuerpo.',
+  sexystyleWhyToday2: 'Porque tu cuerpo ya está listo, aunque tu mente te diga que no.',
+  sexystyleWhyToday3: 'Porque mereces sentirte sexy, poderosa y libre. No "algún día". Hoy.',
+  sexystyleWhyTodayClosing1: "En Farray's no vendemos clases. Creamos Experiencias.",
+  sexystyleWhyTodayClosing2:
+    'Te esperamos con música alta, tacones listos y una profe dispuesta a sacar tu versión más poderosa en un ambiente en el que te vas a sentir en casa.',
+
+  // Final CTA Section
+  sexystyleFinalCTATitle: 'Únete a la comunidad de Sexy Style más empoderada de Barcelona',
+  sexystyleFinalCTASubtitle: 'Da el paso.',
+  sexystyleFinalCTADesc:
+    'Reserva tu plaza ahora y descubre todo lo que tu cuerpo es capaz de decir cuando baila.',
+  sexystyleFinalCTAFunny: 'Las plazas se llenan antes de que termine la próxima coreo.',
+
+  // FAQ Title
+  sexystyleFaqTitle: 'Preguntas Frecuentes sobre nuestras clases de Sexy Style en Barcelona',
+
+  // 15 FAQs
+  sexystyleFaqQ1: '¿Qué es exactamente el Sexy Style?',
+  sexystyleFaqA1:
+    'El Sexy Style es un estilo de baile urbano que combina movimientos sensuales, ondulaciones, expresión corporal y coreografía. Se enfoca en la conexión con tu cuerpo y tu feminidad, trabajando la confianza y la actitud.',
+
+  sexystyleFaqQ2: '¿Necesito experiencia previa para empezar?',
+  sexystyleFaqA2:
+    'No, para nada. El 85% de nuestras alumnas empiezan sin experiencia. Tenemos clases para principiantes donde se trabaja desde lo más básico.',
+
+  sexystyleFaqQ3: '¿Qué ropa debo llevar a las clases? ¿Es obligatorio el uso de tacones?',
+  sexystyleFaqA3:
+    'Ropa cómoda que te permita moverte con libertad: leggings o pantalón corto, top o camiseta ajustada. El uso de tacones NO es obligatorio. Puedes empezar con bambas y, cuando te sientas preparada, dar el salto a los tacones. Si decides usarlos, los más recomendados son tipo stiletto con suela antideslizante y tira en el tobillo, de entre 7 y 10 cm.',
+
+  sexystyleFaqQ4: '¿Las clases son solo para mujeres?',
+  sexystyleFaqA4:
+    'Nuestras clases de Sexy Style están abiertas a todas las personas que quieran explorar su expresión corporal. La mayoría de participantes son mujeres, pero el espacio es inclusivo.',
+
+  sexystyleFaqQ5: '¿Qué diferencia hay entre Sexy Style y Femmology?',
+  sexystyleFaqA5:
+    'El Sexy Style se centra en la expresión personal y el empoderamiento, con un enfoque más libre y fluido. Las clases de Femmology, en cambio, son más técnicas y el grado de exigencia es superior, trabajando movimientos más precisos y detallados. Ambos estilos trabajan la sensualidad, pero Sexy Style es ideal para empezar y Femmology para quienes buscan mayor desafío técnico.',
+
+  sexystyleFaqQ6: '¿Es un buen ejercicio físico?',
+  sexystyleFaqA6:
+    'El Sexy Style trabaja especialmente core, glúteos, piernas y flexibilidad. En una clase puedes quemar entre 300 y 500 calorías mientras te diviertes.',
+
+  sexystyleFaqQ7: '¿Puedo probar una clase de Sexy Style antes de inscribirme?',
+  sexystyleFaqA7:
+    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en la parte superior de esta página.',
+
+  sexystyleFaqQ8: '¿Qué niveles de Sexy Style tenéis?',
+  sexystyleFaqA8:
+    'Tenemos cuatro niveles: Principiante (sin experiencia), Básico (primeros pasos dados), Intermedio (ya con soltura) y Avanzado (técnica refinada y coreografías complejas).',
+
+  sexystyleFaqQ9: '¿Y si falto a una clase por trabajo o compromisos?',
+  sexystyleFaqA9:
+    'Si tienes una membresía y cancelas una clase, dispones de 30 días para recuperarla desde la fecha de la clase cancelada. Si tienes un abono de horas, gestionas tus clases de forma flexible: cancela y reserva otro día dentro del periodo de caducidad. Todas las gestiones se realizan exclusivamente desde la aplicación digital de la academia.',
+
+  sexystyleFaqQ10: '¿Hacéis coreografías de canciones conocidas?',
+  sexystyleFaqA10:
+    'Sí, trabajamos con música actual y clásicos del R&B, pop y reggaetón. Las coreografías van rotando para que siempre haya novedad.',
+
+  sexystyleFaqQ11: '¿Puedo apuntarme en cualquier momento del año?',
+  sexystyleFaqA11:
+    'Sí, nuestro sistema es abierto. Puedes incorporarte cuando quieras sin esperar a que empiece un nuevo ciclo.',
+
+  sexystyleFaqQ12: '¿Organizáis eventos o showcases?',
+  sexystyleFaqA12:
+    'Sí, tenemos una gala anual donde las alumnas pueden lucirse en un escenario profesional. También organizamos workshops y masterclasses con artistas invitados.',
+
+  sexystyleFaqQ13: '¿Tenéis descuentos o bonos especiales?',
+  sexystyleFaqA13:
+    'Sí, tenemos varias opciones de ahorro:<br/><br/>• <strong>Descuento multicurso:</strong> Si te apuntas a más de un estilo (ej: Sexy Style + Femmology), obtienes un precio reducido por clase.<br/>• <strong>Bonos mensuales ilimitados:</strong> Clases ilimitadas de un estilo o de todos los estilos.<br/>• <strong>Bonos trimestrales y anuales:</strong> Mayor ahorro cuanto más tiempo te comprometas.<br/>• <strong>Ofertas para nuevas alumnas:</strong> Primera clase de prueba con precio especial.<br/><br/>Consulta precios actualizados en recepción o escríbenos por WhatsApp.',
+
+  sexystyleFaqQ14: '¿Dónde está la academia?',
+  sexystyleFaqA14:
+    'Estamos en Calle Entença 100, 08015 Barcelona. A solo 5 minutos andando de Plaza España y Sants Estació. Perfectamente conectada con metro (L1, L3), bus y tren.',
+
+  sexystyleFaqQ15:
+    '¿Dónde puedo encontrar clases de Sexy Style cerca de Plaza España en Barcelona?',
+  sexystyleFaqA15:
+    'Farray\'s Center está a solo 5 minutos andando de Plaza España, en Calle Entença 100, 08015 Barcelona. Somos la academia de referencia en Sexy Style en la zona, con conexión directa por metro (L1, L3), bus y tren desde Sants Estació.<br/><br/>📍 <strong>Dirección:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+
+  // Image alts
+  sexystyleImageAlt: "Clases de Sexy Style en Barcelona - Farray's Center",
+
+  // Course Schema (SEO)
+  sexystyleCourseSchemaName: "Clases de Sexy Style en Barcelona - Farray's Center",
+  sexystyleCourseSchemaDesc:
+    'Aprende Sexy Style con Yasmina Fernández, instructora especializada. Clases para todos los niveles en el corazón de Barcelona.',
+
+  // ===== MODERN JAZZ PAGE =====
+  // SEO & Meta
+  modernjazzPageTitle:
+    'Clases de Modern Jazz en Barcelona | Técnica y Expresión con Alejandro Miñoso',
+  modernjazzMetaDescription:
+    'Clases de Modern Jazz en Barcelona con Alejandro Miñoso. Técnica, musicalidad y expresión corporal. Desde principiante hasta avanzado. ¡Reserva tu clase de prueba!',
+
+  // Breadcrumb (4 niveles: Home > Clases > Danza > Current)
+  modernjazzBreadcrumbHome: 'Inicio',
+  modernjazzBreadcrumbClasses: 'Clases de Baile',
+  modernjazzBreadcrumbDance: 'Clases de Danza',
+  modernjazzBreadcrumbCurrent: 'Clases de Modern Jazz',
+
+  // Hero
+  modernjazzHeroTitle: 'Clases de Modern Jazz en Barcelona',
+  modernjazzHeroSubtitle: 'Técnica, expresión y libertad de movimiento',
+  modernjazzHeroDesc:
+    'Descubre el Modern Jazz: una danza que fusiona la técnica del ballet clásico con la energía y libertad del jazz contemporáneo. Expresión, musicalidad y movimiento fluido.',
+  modernjazzHeroLocation: 'Clases para todos los niveles, entre Plaza España y Sants',
+
+  // Stats
+  modernjazzTechniqueStat: 'Técnica',
+  modernjazzEmpowerment: 'Ballet + Jazz',
+  modernjazzConfidenceGuaranteed: 'Expresión garantizada',
+  modernjazzCaloriesStat: 'Calorías Quemadas',
+  modernjazzDanceStat: 'Danza',
+
+  // CTAs
+  modernjazzCTA1: 'Hazte Socio Ahora',
+  modernjazzCTA1Subtext: 'Quedan pocas plazas este mes',
+  modernjazzCTA2: 'Reserva tu Clase de Prueba',
+  modernjazzCTA2Subtext: 'Oferta por tiempo limitado',
+
+  // What Is Section
+  modernjazzWhatIsTitle: '¿Qué es el Modern Jazz y por qué te va a transformar?',
+  modernjazzWhatIsP1:
+    'El Modern Jazz es una evolución de la Danza Jazz que incorpora los estilos musicales más actuales. Es el referente en los musicales de Broadway y en las coreografías de tus artistas favoritos.',
+  modernjazzWhatIsP2:
+    'Nuestras clases se distinguen por su riqueza de ritmos, diversidad de estilos y por ser una mezcla perfecta de técnica, ritmo y fuerza. Trabajamos desde lo básico hasta lo más complejo.',
+  modernjazzWhatIsP3:
+    '«Prestamos especial atención a la respiración, al movimiento de los brazos y a las entradas y salidas del suelo, aspectos muy característicos del Modern Jazz»',
+  modernjazzWhatIsP4:
+    'Diversión, técnica y musicalidad: pensado para bailarines de todos los niveles que quieran adquirir una buena forma física trabajando con energía e interpretando las últimas tendencias musicales.',
+  modernjazzWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
+  modernjazzWhatIsQuestionAnswer: 'Sí, lo es.',
+
+  // Cultural Section
+  modernjazzCulturalShort:
+    'El Modern Jazz nace de la fusión del ballet clásico con el jazz americano y la danza moderna, creando un estilo único que combina técnica académica con expresión libre.',
+  modernjazzCulturalFull: `### Orígenes del Modern Jazz
+
+El Modern Jazz emerge en Estados Unidos durante el siglo XX, cuando bailarines y coreógrafos empezaron a fusionar la técnica clásica del ballet con la energía rítmica del jazz y la expresividad de la danza moderna. Pioneros como Jack Cole, Matt Mattox y Luigi desarrollaron las bases de lo que hoy conocemos como Modern Jazz.
+
+Esta danza toma del ballet la postura, las líneas limpias, los giros y los saltos; del jazz, la musicalidad, el groove y la actitud; y de la danza moderna, la libertad de movimiento, el trabajo de suelo y la expresión emocional.
+
+### La evolución del estilo
+
+El Modern Jazz ha evolucionado constantemente, incorporando influencias del hip hop, la danza contemporánea y los estilos comerciales. Coreógrafos como Bob Fosse revolucionaron el género con su estilo característico de aislaciones, movimientos angulares y sensualidad contenida.
+
+Hoy en día, el Modern Jazz se caracteriza por su versatilidad: desde piezas líricas y emotivas hasta coreografías energéticas y dinámicas. Es el estilo que ves en los musicales de Broadway, en las películas de danza y en los espectáculos más aclamados del mundo.
+
+### El Modern Jazz en Barcelona
+
+Farray's Center ofrece clases de Modern Jazz bajo la dirección de Alejandro Miñoso, un maestro con formación clásica y contemporánea que combina la exigencia técnica con un ambiente cercano y motivador. Las clases trabajan la técnica de base, la musicalidad, la expresión corporal y la interpretación, preparando a los alumnos tanto para el escenario como para disfrutar bailando.`,
+
+  // Identify Section - Pain Points específicos del Modern Jazz
+  modernjazzIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
+  modernjazzIdentify1: 'Quieres aprender a bailar con técnica real, no solo copiar pasos de vídeos',
+  modernjazzIdentify2:
+    'Te gustan los musicales y las películas de baile, pero crees que eso está fuera de tu alcance',
+  modernjazzIdentify3:
+    'Has probado otras clases pero sentías que faltaba estructura y progresión técnica',
+  modernjazzIdentify4:
+    'Quieres mejorar tu postura, flexibilidad y forma de moverte, pero los entrenamientos de gimnasio te aburren',
+  modernjazzIdentify5:
+    'Buscas una actividad que trabaje cuerpo y mente, que te desafíe pero también te haga disfrutar',
+  modernjazzIdentify6:
+    'Sueñas con moverte con elegancia y expresión, pero no sabes por dónde empezar',
+  modernjazzIdentifyTransition:
+    'Si has dicho "sí" a alguno de estos puntos, ya sabes lo que necesitas.',
+
+  // Need Enroll Section
+  modernjazzNeedEnrollTitle: 'Necesitas apuntarte a clases de Modern Jazz',
+  modernjazzIdentifyAgitate1:
+    'La técnica no se aprende sola. Sin una base sólida, los malos hábitos se instalan y cada vez es más difícil corregirlos. Cuanto antes empieces con un buen profesor, más lejos llegarás.',
+  modernjazzIdentifySolution:
+    "En Farray's Center, Alejandro Miñoso te guiará desde los fundamentos hasta el movimiento expresivo. Clases estructuradas, correcciones personalizadas y un ambiente donde crecer.",
+  modernjazzIdentifyClosing:
+    'Tu cuerpo está esperando moverse con libertad y precisión. Dale la oportunidad.',
+
+  // Transform Section (6 transformaciones)
+  modernjazzTransformTitle: 'Imagina tu antes y después',
+  modernjazzTransform1Title: 'De rígido a fluido',
+  modernjazzTransform1Desc:
+    'Tu cuerpo gana flexibilidad y soltura. Los movimientos que antes te costaban ahora fluyen naturalmente.',
+  modernjazzTransform2Title: 'De inseguro a técnico',
+  modernjazzTransform2Desc:
+    'Dominas los fundamentos: postura, giros, saltos, líneas. Bailas con propiedad, no improvisando.',
+  modernjazzTransform3Title: 'De copiar a interpretar',
+  modernjazzTransform3Desc:
+    'Ya no solo sigues pasos: entiendes la música, la expresas con tu cuerpo y le das tu sello personal.',
+  modernjazzTransform4Title: 'De espectador a protagonista',
+  modernjazzTransform4Desc:
+    'Esos movimientos que admirabas en películas y musicales ahora los ejecutas tú.',
+  modernjazzTransform5Title: 'De sedentario a atlético',
+  modernjazzTransform5Desc:
+    'Tu condición física mejora: más fuerza, más resistencia, mejor postura. Bailar es tu nuevo entrenamiento.',
+  modernjazzTransform6Title: 'De aislado a parte de una comunidad',
+  modernjazzTransform6Desc:
+    'Encuentras personas que comparten tu pasión. El baile te conecta con otros.',
+  modernjazzTransformCTA: "¿Por qué elegir Farray's Center para Modern Jazz?",
+
+  // Why Choose Section (6 items)
+  modernjazzWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
+  modernjazzWhyChoose1Desc:
+    'Dirigida por Yunaisy Farray, actriz de Street Dance 2 y una de las maestras más reconocidas del mundo.',
+  modernjazzWhyChoose2Title: 'Ubicación inmejorable',
+  modernjazzWhyChoose2Desc:
+    'Calle Entença 100, entre Plaza España y Sants, a 5 minutos de Plaça Espanya y Sants. Metro, buses y tren a la puerta. Fácil llegar. Fácil volver.',
+  modernjazzWhyChoose3Title: 'Ambiente familiar, con la profesionalidad que necesitas',
+  modernjazzWhyChoose3Desc:
+    'Cercano, inclusivo y sin juicios ni comparaciones, pero con la profesionalidad que necesitas para evolucionar de verdad.',
+  modernjazzWhyChoose4Title: 'Instalaciones preparadas de verdad',
+  modernjazzWhyChoose4Desc:
+    'Más de 700 m², salas amplias, espejos, sonido profesional, aire acondicionado y ventilación centralizada para entrenar a gusto todo el año.',
+  modernjazzWhyChoose5Title: 'Academia multidisciplinar',
+  modernjazzWhyChoose5Desc:
+    'Más de 25 estilos para que nunca te aburras y puedas crecer a tu ritmo: urbanos, bailes latinos, contemporáneo, técnica, estiramiento y mucho más.',
+  modernjazzWhyChoose6Title: 'Gala anual + workshops potentes',
+  modernjazzWhyChoose6Desc:
+    'Brilla en un teatro profesional, participa en workshops internacionales y vive experiencias que no encontrarás en ninguna otra escuela.',
+
+  // Logos Section
+  modernjazzLogosTitle: 'Has podido vernos…',
+  modernjazzLogosIntlFestivalsText: 'y en los mejores festivales de baile del mundo',
+
+  // Teachers Section
+  modernjazzTeachersTitle: 'Conoce a tu profesor de Modern Jazz',
+  modernjazzTeachersSubtitle: 'Técnica clásica, espíritu contemporáneo',
+  modernjazzTeacher1Specialty: 'Modern Jazz, Afro Jazz, Contemporáneo & Ballet',
+  modernjazzTeacher1Bio:
+    'Alejandro Miñoso es maestro internacional cubano formado en la prestigiosa ENA (Escuela Nacional de Arte de Cuba). Ex solista de la compañía Carlos Acosta, combina la exigencia técnica del ballet clásico con la libertad expresiva del jazz moderno, creando clases dinámicas donde cada alumno progresa a su ritmo.',
+  modernjazzTeachersClosing:
+    'Con Alejandro aprenderás técnica sólida mientras descubres tu propia forma de expresarte.',
+
+  // Schedule Section
+  modernjazzScheduleTitle: 'Horario de clases de Modern Jazz',
+  modernjazzScheduleSubtitle: 'Clases con Alejandro Miñoso',
+
+  // Video Section
+  modernjazzVideoTitle: 'Descubre nuestras clases de Modern Jazz',
+  modernjazzVideoDesc:
+    "Mira cómo es una clase en Farray's Center: técnica, expresión y pasión por el baile.",
+
+  // Why Today Section
+  modernjazzWhyTodayFullTitle: '¿Por qué hoy es el mejor momento para empezar Modern Jazz?',
+  modernjazzWhyToday1:
+    'Porque la técnica se construye con tiempo, y cuanto antes empieces, antes verás resultados.',
+  modernjazzWhyToday2:
+    'Porque tu cuerpo necesita algo más que oficina y sofá: necesita estirarse, girar, saltar y respirar música.',
+  modernjazzWhyToday3:
+    'Porque mereces una actividad que te exija, te vacíe la mente y te haga sentir más fuerte y más elegante.',
+  modernjazzWhyTodayClosing1: "En Farray's no vendemos clases. Creamos Experiencias.",
+  modernjazzWhyTodayClosing2:
+    'Te esperamos con buena música, mucha técnica y un profesor dispuesto a llevar tu danza a otro nivel.',
+
+  // Final CTA Section
+  modernjazzFinalCTATitle: 'Únete a las clases de Modern Jazz más técnicas de Barcelona',
+  modernjazzFinalCTASubtitle: 'Da el paso.',
+  modernjazzFinalCTADesc: 'Reserva tu plaza ahora y descubre el bailarín que llevas dentro.',
+  modernjazzFinalCTAFunny:
+    'Las plazas vuelan más rápido que el telón que baja cuando empieza el show.',
+
+  // FAQ Title
+  modernjazzFaqTitle: 'Preguntas Frecuentes sobre nuestras clases de Modern Jazz en Barcelona',
+
+  // 15 FAQs
+  modernjazzFaqQ1: '¿Qué es exactamente el Modern Jazz?',
+  modernjazzFaqA1:
+    'El Modern Jazz es un estilo de danza que fusiona la técnica del ballet clásico con la energía y libertad del jazz americano y la danza moderna. Trabaja postura, flexibilidad, giros, saltos y expresión corporal.',
+
+  modernjazzFaqQ2: '¿Necesito experiencia previa en danza para empezar?',
+  modernjazzFaqA2:
+    'No, nuestras clases están abiertas a todos los niveles. Empezamos desde los fundamentos para que puedas construir una base técnica sólida desde cero.',
+
+  modernjazzFaqQ3: '¿Qué ropa y calzado necesito para las clases?',
+  modernjazzFaqA3:
+    'Ropa cómoda y ajustada que permita ver las líneas del cuerpo (leggings, maillot o camiseta ajustada). Calzado: zapatillas de jazz, calcetines de danza o pies descalzos, según preferencia.',
+
+  modernjazzFaqQ4: '¿Es el Modern Jazz un buen ejercicio físico?',
+  modernjazzFaqA4:
+    'Excelente. Trabajas flexibilidad, fuerza, coordinación, resistencia cardiovascular y control corporal. Es un entrenamiento completo que además es divertido.',
+
+  modernjazzFaqQ5: '¿Qué diferencia hay entre Modern Jazz y el Lyrical Jazz?',
+  modernjazzFaqA5:
+    'El Modern Jazz tiene una base más técnica y académica, influenciada por el ballet clásico y la danza moderna. Se enfoca en la técnica, los giros, saltos y la precisión del movimiento. El Lyrical Jazz, en cambio, pone mayor énfasis en la interpretación emocional y la conexión con la letra de las canciones, con movimientos más fluidos y expresivos. Ambos estilos trabajan la musicalidad, pero el Modern Jazz prioriza la técnica mientras que el Lyrical Jazz prioriza la emoción.',
+
+  modernjazzFaqQ6: '¿Quién es Alejandro Miñoso?',
+  modernjazzFaqA6:
+    "Alejandro Miñoso es bailarín profesional y profesor de Modern Jazz en Farray's Center. Formado en la escuela cubana, combina la precisión y elegancia de danza clásica con la fluidez y expresividad de contemporáneo y del jazz. Su metodología se centra en construir una técnica sólida mientras se desarrolla la expresión artística.",
+
+  modernjazzFaqQ7: '¿Puedo probar una clase de Modern Jazz antes de inscribirme?',
+  modernjazzFaqA7:
+    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en la parte superior de esta página.',
+
+  modernjazzFaqQ8: '¿Qué niveles de Modern Jazz tenéis?',
+  modernjazzFaqA8:
+    'Actualmente ofrecemos clases de nivel básico para personas con poca experiencia.',
+
+  modernjazzFaqQ9: '¿Y si falto a una clase por trabajo o compromisos?',
+  modernjazzFaqA9:
+    'Si tienes una membresía y cancelas una clase, dispones de 30 días para recuperarla desde la fecha de la clase cancelada. Si tienes un abono de horas, gestionas tus clases de forma flexible: cancela y reserva otro día dentro del periodo de caducidad. Todas las gestiones se realizan exclusivamente desde la aplicación digital de la academia.',
+
+  modernjazzFaqQ10: '¿Qué tipo de música se usa en las clases?',
+  modernjazzFaqA10:
+    'Variada: desde clásicos del jazz y musicales de Broadway hasta música contemporánea. La musicalidad es parte fundamental de la formación.',
+
+  modernjazzFaqQ11: '¿Puedo apuntarme en cualquier momento del año?',
+  modernjazzFaqA11:
+    'Sí, nuestro sistema es abierto. Puedes incorporarte cuando quieras sin esperar a que empiece un nuevo ciclo.',
+
+  modernjazzFaqQ12: '¿Organizáis actuaciones o galas?',
+  modernjazzFaqA12:
+    'Sí, tenemos una gala anual donde los alumnos pueden lucirse en un escenario profesional. También organizamos workshops y masterclasses con artistas invitados.',
+
+  modernjazzFaqQ13: '¿Tenéis algún descuento especial?',
+  modernjazzFaqA13:
+    'Sí. Ofrecemos descuentos si te apuntas a más de un curso. Consulta la web o pregúntanos directamente para más detalles.',
+
+  modernjazzFaqQ14: '¿Dónde está la academia?',
+  modernjazzFaqA14:
+    'Estamos en Calle Entença 100, 08015 Barcelona. A solo 5 minutos andando de Plaza España y Sants Estació. Perfectamente conectada con metro (L1, L3), bus y tren.',
+
+  modernjazzFaqQ15:
+    '¿Dónde puedo encontrar clases de Modern Jazz cerca de Plaza España en Barcelona?',
+  modernjazzFaqA15:
+    'Farray\'s Center está a solo 5 minutos andando de Plaza España, en Calle Entença 100, 08015 Barcelona. Somos referencia en Modern Jazz en la zona, con conexión directa por metro (L1, L3), bus y tren desde Sants Estació.<br/><br/>📍 <strong>Dirección:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+
+  modernjazzFaqQ16: '¿Qué consigues en nuestro curso de Modern Jazz en Barcelona?',
+  modernjazzFaqA16:
+    'La práctica de Modern Jazz aportará una gran flexibilidad a tu cuerpo, además de proporcionarte una excelente forma física. Aprenderás a modular tu respiración para aumentar tu capacidad; practicarás la disociación, fortalecerás tus piernas y mejorarás la movilidad de tu torso y brazos. Todo esto hará posible que crezcan tus habilidades interpretativas y tu expresión corporal. Notarás cómo la unión entre el cuerpo y la música es cada vez más fuerte, y aprenderás a aplicar disciplina y pasión a partes iguales. Si te dedicas profesionalmente al baile, podrás aplicar lo aprendido para mejorar tu técnica sea cual sea la disciplina que impartas.<br/><br/><strong>Beneficios:</strong><br/>✓ Mejora tu técnica de danza<br/>✓ Mejora tu musicalidad<br/>✓ Aprende a disociar tu cuerpo<br/>✓ Aumenta tu repertorio<br/>✓ Ejercita tu coordinación y tu memoria<br/>✓ Mejora tu forma física',
+
+  modernjazzFaqQ17: '¿Cómo funciona nuestro curso de Modern Jazz y para quién está pensado?',
+  modernjazzFaqA17:
+    "Las clases de Modern Jazz en Farray's están dirigidas a bailarines de cualquier nivel, ya que todos somos capaces de expresarnos de forma creativa a través del baile. En clase la dinámica se organiza a partir de una parte técnica de calentamiento seguida de varios ejercicios en los que entrenarás giros, saltos, caídas, etc. Es una práctica que favorece la eliminación de tensiones, la adopción de una postura correcta y la expresión corporal a través de la música. ¡Ven a probar una clase y déjate enamorar!",
+
+  // Image alts
+  modernjazzImageAlt: "Clases de Modern Jazz en Barcelona - Farray's Center",
+
+  // Course Schema (SEO)
+  modernjazzCourseSchemaName: "Clases de Modern Jazz en Barcelona - Farray's Center",
+  modernjazzCourseSchemaDesc:
+    'Aprende Modern Jazz con Alejandro Miñoso. Técnica clásica, expresión contemporánea. Clases para todos los niveles en Barcelona.',
+
+  // Accessibility (A11y)
+  skipLinks: 'Enlaces de navegación rápida',
+  skipToSchedule: 'Ir al horario',
+  modernjazzCTAGroup: 'Acciones de reserva',
+  modernjazzIdentifyListLabel: 'Situaciones con las que podrías identificarte',
 };

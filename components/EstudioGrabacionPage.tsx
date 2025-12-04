@@ -291,7 +291,7 @@ const EstudioGrabacionPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {studioServices.map((service, idx) => (
                 <AnimateOnScroll key={idx} delay={idx * 100}>
-                  <div className="h-full bg-gradient-to-br from-primary-dark/20 to-black border border-primary-accent/30 rounded-lg p-8 hover:border-primary-accent transition-all duration-300 hover:shadow-accent-glow flex flex-col">
+                  <div className="h-full min-h-[180px] bg-gradient-to-br from-primary-dark/20 to-black border border-primary-accent/30 rounded-lg p-8 hover:border-primary-accent transition-all duration-300 hover:shadow-accent-glow flex flex-col">
                     <div className="w-16 h-16 bg-primary-accent/10 rounded-full flex items-center justify-center mb-6">
                       <Icon name={service.icon} className="w-8 h-8 text-primary-accent" />
                     </div>
@@ -324,7 +324,7 @@ const EstudioGrabacionPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {/* Stat 1 - 700 metros cuadrados */}
               <AnimateOnScroll delay={0}>
-                <div className="h-full text-center p-8 bg-gradient-to-br from-primary-dark/20 to-black border border-primary-accent/30 rounded-lg flex flex-col items-center justify-center">
+                <div className="h-full min-h-[140px] text-center p-8 bg-gradient-to-br from-primary-dark/20 to-black border border-primary-accent/30 rounded-lg flex flex-col items-center justify-center">
                   <div className="text-5xl md:text-6xl font-black text-primary-accent mb-4">
                     <AnimatedCounter target={700} duration={2000} suffix="m²" />
                   </div>
@@ -336,7 +336,7 @@ const EstudioGrabacionPage: React.FC = () => {
 
               {/* Stat 2 - 4 salas */}
               <AnimateOnScroll delay={200}>
-                <div className="h-full text-center p-8 bg-gradient-to-br from-primary-dark/20 to-black border border-primary-accent/30 rounded-lg flex flex-col items-center justify-center">
+                <div className="h-full min-h-[140px] text-center p-8 bg-gradient-to-br from-primary-dark/20 to-black border border-primary-accent/30 rounded-lg flex flex-col items-center justify-center">
                   <div className="text-5xl md:text-6xl font-black text-primary-accent mb-4">
                     <AnimatedCounter target={4} duration={2000} />
                   </div>
@@ -348,7 +348,7 @@ const EstudioGrabacionPage: React.FC = () => {
 
               {/* Stat 3 - 200 producciones */}
               <AnimateOnScroll delay={400}>
-                <div className="h-full text-center p-8 bg-gradient-to-br from-primary-dark/20 to-black border border-primary-accent/30 rounded-lg flex flex-col items-center justify-center">
+                <div className="h-full min-h-[140px] text-center p-8 bg-gradient-to-br from-primary-dark/20 to-black border border-primary-accent/30 rounded-lg flex flex-col items-center justify-center">
                   <div className="text-5xl md:text-6xl font-black text-primary-accent mb-4">
                     <AnimatedCounter target={200} duration={2000} />
                   </div>
@@ -360,7 +360,7 @@ const EstudioGrabacionPage: React.FC = () => {
 
               {/* Stat 4 - 8 años */}
               <AnimateOnScroll delay={600}>
-                <div className="h-full text-center p-8 bg-gradient-to-br from-primary-dark/20 to-black border border-primary-accent/30 rounded-lg flex flex-col items-center justify-center">
+                <div className="h-full min-h-[140px] text-center p-8 bg-gradient-to-br from-primary-dark/20 to-black border border-primary-accent/30 rounded-lg flex flex-col items-center justify-center">
                   <div className="text-5xl md:text-6xl font-black text-primary-accent mb-4">
                     <AnimatedCounter target={8} duration={2000} />
                   </div>
@@ -521,7 +521,7 @@ const EstudioGrabacionPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
                 <AnimateOnScroll key={num} delay={num * 50}>
-                  <div className="h-full bg-gradient-to-br from-primary-dark/20 to-black border border-primary-accent/30 rounded-lg p-6 text-center hover:border-primary-accent transition-all duration-300 hover:shadow-accent-glow flex items-center justify-center">
+                  <div className="h-full min-h-[100px] bg-gradient-to-br from-primary-dark/20 to-black border border-primary-accent/30 rounded-lg p-6 text-center hover:border-primary-accent transition-all duration-300 hover:shadow-accent-glow flex items-center justify-center">
                     <h3 className="text-lg font-bold text-neutral">
                       {t(`estudioGrabacion_idealFor_item${num}`)}
                     </h3>
