@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { type JSX, useEffect, useRef, useState, type ReactNode } from 'react';
 
 interface AnimateOnScrollProps {
   children: ReactNode;

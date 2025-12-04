@@ -178,9 +178,17 @@ const SexyStylePage: React.FC = () => {
         <meta property="og:image" content={`${baseUrl}/images/og-sexy-style.jpg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content={t('sexystyleOgImageAlt') || 'Clases de Sexy Style en Barcelona - Farray\'s Center'} />
+        <meta
+          property="og:image:alt"
+          content={
+            t('sexystyleOgImageAlt') || "Clases de Sexy Style en Barcelona - Farray's Center"
+          }
+        />
         <meta property="og:site_name" content="Farray's International Dance Center" />
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
         <meta name="geo.region" content="ES-CT" />
         <meta name="geo.placename" content="Barcelona" />
         <meta name="geo.position" content="41.3751;2.1482" />
@@ -318,7 +326,10 @@ const SexyStylePage: React.FC = () => {
             <Breadcrumb items={breadcrumbItems} textColor="text-neutral/75" />
 
             <AnimateOnScroll>
-              <h1 id="sexy-style-hero-title" className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text">
+              <h1
+                id="sexy-style-hero-title"
+                className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text"
+              >
                 {t('sexystyleHeroTitle')}
               </h1>
               <p className="text-3xl md:text-4xl font-bold mb-4 holographic-text">
@@ -334,7 +345,9 @@ const SexyStylePage: React.FC = () => {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-8 sm:mt-10">
                 <div className="w-full sm:w-auto">
-                  <p id="cta1-desc" className="sr-only">{t('sexystyleCTA1Subtext')}</p>
+                  <p id="cta1-desc" className="sr-only">
+                    {t('sexystyleCTA1Subtext')}
+                  </p>
                   <a
                     href="#schedule"
                     aria-describedby="cta1-desc"
@@ -347,7 +360,9 @@ const SexyStylePage: React.FC = () => {
                   </p>
                 </div>
                 <div className="w-full sm:w-auto">
-                  <p id="cta2-desc" className="sr-only">{t('sexystyleCTA2Subtext')}</p>
+                  <p id="cta2-desc" className="sr-only">
+                    {t('sexystyleCTA2Subtext')}
+                  </p>
                   <a
                     href="#schedule"
                     aria-describedby="cta2-desc"
@@ -485,7 +500,10 @@ const SexyStylePage: React.FC = () => {
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-16 max-w-4xl mx-auto">
-                <h2 id="identification-title" className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
+                <h2
+                  id="identification-title"
+                  className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text"
+                >
                   {t('sexystyleIdentifyTitle')}
                 </h2>
               </div>
@@ -503,12 +521,13 @@ const SexyStylePage: React.FC = () => {
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
                   className="group relative h-full min-h-[100px] flex items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow motion-reduce:transform-none motion-reduce:transition-none [perspective:1000px]"
                 >
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300" aria-hidden="true">
+                  <div
+                    className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300"
+                    aria-hidden="true"
+                  >
                     <CheckIcon className="text-primary-accent" size="sm" />
                   </div>
-                  <p className="text-neutral/90 leading-relaxed">
-                    {t(`sexystyleIdentify${num}`)}
-                  </p>
+                  <p className="text-neutral/90 leading-relaxed">{t(`sexystyleIdentify${num}`)}</p>
                 </AnimateOnScroll>
               ))}
             </ul>
@@ -533,7 +552,10 @@ const SexyStylePage: React.FC = () => {
 
             <AnimateOnScroll>
               <div className="text-center mb-12 max-w-4xl mx-auto">
-                <h2 id="why-enroll-title" className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
+                <h2
+                  id="why-enroll-title"
+                  className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text"
+                >
                   {t('sexystyleNeedEnrollTitle')}
                 </h2>
               </div>
@@ -560,7 +582,10 @@ const SexyStylePage: React.FC = () => {
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-16 max-w-4xl mx-auto">
-                <h2 id="benefits-title" className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
+                <h2
+                  id="benefits-title"
+                  className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                >
                   {t('sexystyleTransformTitle')}
                 </h2>
               </div>
