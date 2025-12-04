@@ -147,6 +147,208 @@ export const ReviewSchema: React.FC<ReviewSchemaProps> = props => {
   );
 };
 
+// HowTo Schema for step-by-step guides (GEO optimization)
+interface HowToStep {
+  name: string;
+  text: string;
+  image?: string;
+  url?: string;
+}
+
+interface HowToSchemaProps {
+  name: string;
+  description: string;
+  image?: string;
+  totalTime?: string; // ISO 8601 duration format (e.g., "PT30M" for 30 minutes)
+  estimatedCost?: {
+    currency: string;
+    value: string;
+  };
+  supply?: string[];
+  tool?: string[];
+  steps: HowToStep[];
+}
+
+export const HowToSchema: React.FC<HowToSchemaProps> = props => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: props.name,
+    description: props.description,
+    ...(props.image && { image: props.image }),
+    ...(props.totalTime && { totalTime: props.totalTime }),
+    ...(props.estimatedCost && {
+      estimatedCost: {
+        '@type': 'MonetaryAmount',
+        currency: props.estimatedCost.currency,
+        value: props.estimatedCost.value,
+      },
+    }),
+    ...(props.supply && {
+      supply: props.supply.map(item => ({
+        '@type': 'HowToSupply',
+        name: item,
+      })),
+    }),
+    ...(props.tool && {
+      tool: props.tool.map(item => ({
+        '@type': 'HowToTool',
+        name: item,
+      })),
+    }),
+    step: props.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+      ...(step.image && { image: step.image }),
+      ...(step.url && { url: step.url }),
+    })),
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};
+
+// Speakable Schema for Voice Search optimization (GEO)
+interface SpeakableSchemaProps {
+  name: string;
+  description: string;
+  speakableSelectors: string[]; // CSS selectors for speakable content
+  url: string;
+}
+
+export const SpeakableSchema: React.FC<SpeakableSchemaProps> = props => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: props.name,
+    description: props.description,
+    url: props.url,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: props.speakableSelectors,
+    },
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};
+
+// DefinedTerm Schema for technical terms (GEO - helps AI understand terminology)
+interface DefinedTermSchemaProps {
+  terms: {
+    name: string;
+    description: string;
+    url?: string;
+  }[];
+}
+
+export const DefinedTermSchema: React.FC<DefinedTermSchemaProps> = props => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': props.terms.map(term => ({
+      '@type': 'DefinedTerm',
+      name: term.name,
+      description: term.description,
+      ...(term.url && { url: term.url }),
+      inDefinedTermSet: {
+        '@type': 'DefinedTermSet',
+        name: 'Terminología de Danza',
+      },
+    })),
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};
+
+// Event Schema for dance classes/events
+interface EventSchemaProps {
+  name: string;
+  description: string;
+  startDate: string;
+  endDate?: string;
+  location: {
+    name: string;
+    address: string;
+  };
+  organizer: {
+    name: string;
+    url: string;
+  };
+  offers?: {
+    price: string;
+    priceCurrency: string;
+    availability: string;
+    url: string;
+  };
+  performer?: {
+    name: string;
+    description?: string;
+  };
+  eventStatus?: string;
+  eventAttendanceMode?: string;
+}
+
+export const EventSchema: React.FC<EventSchemaProps> = props => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'DanceEvent',
+    name: props.name,
+    description: props.description,
+    startDate: props.startDate,
+    ...(props.endDate && { endDate: props.endDate }),
+    location: {
+      '@type': 'Place',
+      name: props.location.name,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: props.location.address,
+      },
+    },
+    organizer: {
+      '@type': 'Organization',
+      name: props.organizer.name,
+      url: props.organizer.url,
+    },
+    ...(props.offers && {
+      offers: {
+        '@type': 'Offer',
+        price: props.offers.price,
+        priceCurrency: props.offers.priceCurrency,
+        availability: `https://schema.org/${props.offers.availability}`,
+        url: props.offers.url,
+      },
+    }),
+    ...(props.performer && {
+      performer: {
+        '@type': 'Person',
+        name: props.performer.name,
+        ...(props.performer.description && { description: props.performer.description }),
+      },
+    }),
+    eventStatus: props.eventStatus || 'https://schema.org/EventScheduled',
+    eventAttendanceMode:
+      props.eventAttendanceMode || 'https://schema.org/OfflineEventAttendanceMode',
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};
+
 export const AggregateReviewsSchema: React.FC<{
   reviews: ReviewSchemaProps[];
   itemName: string;

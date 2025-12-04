@@ -44,7 +44,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ titleKey, tes
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <AnimateOnScroll key={testimonial.id} delay={index * 100}>
-              <div className="flex flex-col h-full p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
+              <div className="flex flex-col h-full min-h-[200px] p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
                 <div className="flex mb-3">
                   {[...Array(5)].map((_, i) => (
                     <svg

@@ -4597,7 +4597,17 @@ Today, Modern Jazz is characterized by its versatility: from lyrical and emotion
 
 ### Modern Jazz in Barcelona
 
-Farray's Center offers Modern Jazz classes under the direction of Alejandro Miñoso, a teacher with classical and contemporary training who combines technical demands with a friendly and motivating environment. Classes work on base technique, musicality, body expression and interpretation, preparing students for both the stage and enjoying dance.`,
+Farray's Center offers Modern Jazz classes under the direction of Alejandro Miñoso, a teacher with classical and contemporary training who combines technical demands with a friendly and motivating environment. Classes work on base technique, musicality, body expression and interpretation, preparing students for both the stage and enjoying dance.
+
+### Scientific Benefits of Dancing Modern Jazz
+
+Scientific studies show that dancing (like Modern Jazz) improves coordination, flexibility and significantly reduces stress, being as effective for body and mind as many gym workouts.
+
+**One hour of intense dance can burn between 300 and 800 calories**, similar to running at a moderate pace, but with music, expression and much more fun.
+
+A famous study published in the **New England Journal of Medicine** showed that people who danced frequently had up to **76% lower risk of developing dementia**.
+
+Farray's International Dance Center is rated close to **5/5 on Google**, with hundreds of reviews placing it among the best-rated dance centers in Barcelona.`,
 
   // Identify Section - Pain Points specific to Modern Jazz
   modernjazzIdentifyTitle: 'Do you identify with any of these situations?',
@@ -4664,6 +4674,9 @@ Farray's Center offers Modern Jazz classes under the direction of Alejandro Miñ
   modernjazzWhyChoose6Title: 'Annual gala + powerful workshops',
   modernjazzWhyChoose6Desc:
     "Shine on a professional stage, participate in international workshops and live experiences you won't find at any other school.",
+  modernjazzWhyChoose7Title: 'Cuban master trained at the ENA',
+  modernjazzWhyChoose7Desc:
+    'Alejandro Miñoso, international Cuban master trained at the ENA (National School of Art of Cuba), former soloist of Carlos Acosta company.',
 
   // Logos Section
   modernjazzLogosTitle: 'You may have seen us…',
@@ -4789,4 +4802,55 @@ Farray's Center offers Modern Jazz classes under the direction of Alejandro Miñ
   skipToSchedule: 'Skip to schedule',
   modernjazzCTAGroup: 'Booking actions',
   modernjazzIdentifyListLabel: 'Situations you might identify with',
+
+  // ===== GEO OPTIMIZATION: HowTo Schema =====
+  modernjazzHowToName: 'How to Start Dancing Modern Jazz in Barcelona',
+  modernjazzHowToDesc:
+    "Step-by-step guide to starting your Modern Jazz classes at Farray's Center. From choosing your level to your first class.",
+  modernjazzHowToSupply1: 'Comfortable, stretchy clothing',
+  modernjazzHowToSupply2: 'Jazz shoes or non-slip socks',
+  modernjazzHowToSupply3: 'Water bottle',
+  modernjazzHowToStep1Name: 'Choose your level',
+  modernjazzHowToStep1Text:
+    'Check our schedule and choose between beginner, intermediate or advanced level. If you have never danced, start with beginner.',
+  modernjazzHowToStep2Name: 'Book your first class',
+  modernjazzHowToStep2Text:
+    'Contact us via WhatsApp at +34 622 247 085 or email info@farrayscenter.com to book your free trial class.',
+  modernjazzHowToStep3Name: 'Prepare for class',
+  modernjazzHowToStep3Text:
+    'Come in comfortable clothes that allow movement. Jazz shoes are ideal, but you can start with socks. Bring water.',
+  modernjazzHowToStep4Name: 'Enjoy the warm-up',
+  modernjazzHowToStep4Text:
+    'Class begins with warm-up exercises and basic technique. The teacher will guide you step by step, adapting to your level.',
+  modernjazzHowToStep5Name: 'Practice the choreography',
+  modernjazzHowToStep5Text:
+    "After technique, you'll learn sequences and choreography. Have fun, express yourself and connect with the music. You're now a Modern Jazz dancer!",
+
+  // ===== GEO OPTIMIZATION: DefinedTerm Schema =====
+  modernjazzDefinedTermModernJazz:
+    'Modern Jazz is a dance style that combines classical ballet technique with the expressiveness of jazz and contemporary dance. Born in the USA in the 20th century, it features fluid movements, turns, jumps and emotional expression.',
+  modernjazzDefinedTermJazzDance:
+    'Jazz Dance is the parent genre of Modern Jazz, originating from African-American culture. It includes styles such as Broadway Jazz, Lyrical Jazz and Funk Jazz. Characterized by musicality, body isolations and energy.',
+  modernjazzDefinedTermBroadway:
+    'Broadway Dance is the theatrical dance style used in Broadway musicals. It combines jazz, ballet and theater to tell stories. Requires technique, facial expression and stage presence.',
+  modernjazzDefinedTermTecnica:
+    'Dance technique refers to the set of physical fundamentals and specific movements of a style. In Modern Jazz it includes: pliés, tendus, turns (pirouettes), jumps (jetés), contractions and extensions.',
+  modernjazzDefinedTermMusicalidad:
+    'Musicality in dance is the ability to interpret and express music through movement. It includes understanding rhythm, accents, dynamics and emotions of the music to dance "with" it, not just "over" it.',
+
+  // ===== GEO OPTIMIZATION: Event Schema =====
+  modernjazzEventName: "Modern Jazz Class in Barcelona - Farray's Center",
+  modernjazzEventDesc:
+    'Weekly Modern Jazz class with Alejandro Miñoso. Classical technique, contemporary expression, Broadway choreography. All levels welcome.',
+
+  // ===== GEO OPTIMIZATION: Citable Statistics =====
+  modernjazzStatistics:
+    'Scientific studies show that dancing (like Modern Jazz) improves coordination, flexibility and significantly reduces stress, being as effective for body and mind as many gym workouts.',
+  modernjazzStatisticsSource: 'Scientific studies on dance and health',
+  modernjazzCitableFact1:
+    'One hour of intense dance can burn between 300 and 800 calories, similar to running at a moderate pace, but with music, expression and much more fun.',
+  modernjazzCitableFact2:
+    'A famous study published in New England Journal of Medicine showed that people who danced frequently had up to 76% lower risk of developing dementia.',
+  modernjazzCitableFact3:
+    "Farray's International Dance Center is rated close to 5/5 on Google, with hundreds of reviews placing it among the best-rated dance centers in Barcelona.",
 };

@@ -21,7 +21,15 @@ import ScheduleSection from './ScheduleSection';
 import FAQSection from './FAQSection';
 import AnimatedCounter from './AnimatedCounter';
 import YouTubeEmbed from './YouTubeEmbed';
-import { LocalBusinessSchema, CourseSchema, AggregateReviewsSchema } from './SchemaMarkup';
+import {
+  LocalBusinessSchema,
+  CourseSchema,
+  AggregateReviewsSchema,
+  HowToSchema,
+  SpeakableSchema,
+  DefinedTermSchema,
+  EventSchema,
+} from './SchemaMarkup';
 
 // Animation delay constants (in ms)
 const ANIMATION_DELAYS = {
@@ -287,6 +295,110 @@ const ModernJazzPage: React.FC = () => {
         itemType="Course"
       />
 
+      {/* HowTo Schema - Cómo empezar en Modern Jazz (GEO Optimization) */}
+      <HowToSchema
+        name={t('modernjazzHowToName')}
+        description={t('modernjazzHowToDesc')}
+        totalTime="PT60M"
+        estimatedCost={{
+          currency: 'EUR',
+          value: '15',
+        }}
+        supply={[
+          t('modernjazzHowToSupply1'),
+          t('modernjazzHowToSupply2'),
+          t('modernjazzHowToSupply3'),
+        ]}
+        steps={[
+          {
+            name: t('modernjazzHowToStep1Name'),
+            text: t('modernjazzHowToStep1Text'),
+            url: `${pageUrl}#schedule`,
+          },
+          {
+            name: t('modernjazzHowToStep2Name'),
+            text: t('modernjazzHowToStep2Text'),
+            url: `${pageUrl}#schedule`,
+          },
+          {
+            name: t('modernjazzHowToStep3Name'),
+            text: t('modernjazzHowToStep3Text'),
+          },
+          {
+            name: t('modernjazzHowToStep4Name'),
+            text: t('modernjazzHowToStep4Text'),
+          },
+          {
+            name: t('modernjazzHowToStep5Name'),
+            text: t('modernjazzHowToStep5Text'),
+          },
+        ]}
+      />
+
+      {/* Speakable Schema - Voice Search Optimization (GEO) */}
+      <SpeakableSchema
+        name={t('modernjazzPageTitle')}
+        description={t('modernjazzMetaDescription')}
+        url={pageUrl}
+        speakableSelectors={['#hero-title', '#what-is-title', '.speakable-intro', '#faq']}
+      />
+
+      {/* DefinedTerm Schema - Technical Terms for AI understanding */}
+      <DefinedTermSchema
+        terms={[
+          {
+            name: 'Modern Jazz',
+            description: t('modernjazzDefinedTermModernJazz'),
+            url: pageUrl,
+          },
+          {
+            name: 'Jazz Dance',
+            description: t('modernjazzDefinedTermJazzDance'),
+            url: pageUrl,
+          },
+          {
+            name: 'Broadway Dance',
+            description: t('modernjazzDefinedTermBroadway'),
+            url: pageUrl,
+          },
+          {
+            name: 'Técnica de danza',
+            description: t('modernjazzDefinedTermTecnica'),
+            url: pageUrl,
+          },
+          {
+            name: 'Musicalidad',
+            description: t('modernjazzDefinedTermMusicalidad'),
+            url: pageUrl,
+          },
+        ]}
+      />
+
+      {/* Event Schema - Weekly Modern Jazz Class */}
+      <EventSchema
+        name={t('modernjazzEventName')}
+        description={t('modernjazzEventDesc')}
+        startDate={`${currentDate}T20:00:00+01:00`}
+        location={{
+          name: "Farray's International Dance Center",
+          address: 'Calle Entença 100, 08015 Barcelona',
+        }}
+        organizer={{
+          name: "Farray's International Dance Center",
+          url: baseUrl,
+        }}
+        offers={{
+          price: '15',
+          priceCurrency: 'EUR',
+          availability: 'InStock',
+          url: `${pageUrl}#schedule`,
+        }}
+        performer={{
+          name: 'Alejandro Miñoso',
+          description: t('modernjazzTeacher1Bio'),
+        }}
+      />
+
       {/* Skip Links for Accessibility - Enhanced */}
       <nav aria-label={t('skipLinks')} className="skip-links">
         <a
@@ -329,7 +441,7 @@ const ModernJazzPage: React.FC = () => {
               <p className="text-3xl md:text-4xl font-bold mb-4 holographic-text">
                 {t('modernjazzHeroSubtitle')}
               </p>
-              <p className="max-w-4xl mx-auto text-xl md:text-2xl text-neutral/90 mt-8 mb-6 leading-relaxed">
+              <p className="max-w-4xl mx-auto text-xl md:text-2xl text-neutral/90 mt-8 mb-6 leading-relaxed speakable-intro">
                 {t('modernjazzHeroDesc')}
               </p>
               <p className="text-lg md:text-xl text-neutral/90 italic mb-12">
@@ -477,7 +589,7 @@ const ModernJazzPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Cultural History - Expandable (without title) */}
+        {/* Cultural History - Expandable (with scientific benefits included) */}
         <CulturalHistorySection
           titleKey=""
           shortDescKey="modernjazzCulturalShort"
@@ -512,7 +624,7 @@ const ModernJazzPage: React.FC = () => {
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
                   className="[perspective:1000px]"
                 >
-                  <li className="group relative h-full min-h-[100px] flex items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow motion-reduce:transform-none motion-reduce:transition-colors">
+                  <li className="group relative h-full min-h-[140px] flex items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow motion-reduce:transform-none motion-reduce:transition-colors">
                     <div
                       className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300"
                       aria-hidden="true"
@@ -582,7 +694,7 @@ const ModernJazzPage: React.FC = () => {
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
                   className="[perspective:1000px]"
                 >
-                  <div className="group h-full min-h-[180px] p-5 sm:p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                  <div className="group h-full min-h-[220px] p-5 sm:p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                     <div className="text-5xl sm:text-6xl font-black text-primary-accent mb-4 holographic-text">
                       {num}
                     </div>
@@ -611,13 +723,14 @@ const ModernJazzPage: React.FC = () => {
             </AnimateOnScroll>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-16">
-              {[1, 2, 3, 4, 5, 6].map((num, index) => (
+              {/* Orden: 1-UNESCO, 7-Maestro cubano, 3-Ambiente, 5-Multidisciplinar, 4-Instalaciones, 2-Ubicación, 6-Gala (centrada) */}
+              {[1, 7, 3, 5, 4, 2, 6].map((num, index) => (
                 <AnimateOnScroll
                   key={num}
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
-                  className="[perspective:1000px]"
+                  className={`[perspective:1000px] ${index === 6 ? 'lg:col-start-2' : ''}`}
                 >
-                  <div className="group h-full min-h-[120px] p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                  <div className="group h-full min-h-[160px] p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                     <div className="flex items-start gap-3 sm:gap-4">
                       <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
                         <CheckCircleIcon className="w-6 h-6 text-primary-accent" />
@@ -834,7 +947,7 @@ const ModernJazzPage: React.FC = () => {
                   key={testimonial.id}
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
                 >
-                  <div className="flex flex-col h-full min-h-[180px] p-4 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
+                  <div className="flex flex-col h-full min-h-[200px] p-4 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
                     <div className="mb-3">
                       <StarRating size="sm" label="5 estrellas" />
                     </div>
