@@ -519,7 +519,7 @@ const SexyStylePage: React.FC = () => {
                   key={num}
                   as="li"
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
-                  className="group relative h-full min-h-[100px] flex items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow motion-reduce:transform-none motion-reduce:transition-none [perspective:1000px]"
+                  className="group relative h-full min-h-[140px] flex items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow motion-reduce:transform-none motion-reduce:transition-none [perspective:1000px]"
                 >
                   <div
                     className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300"
@@ -598,7 +598,7 @@ const SexyStylePage: React.FC = () => {
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
                   className="[perspective:1000px]"
                 >
-                  <div className="group h-full min-h-[180px] p-5 sm:p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                  <div className="group h-full min-h-[220px] p-5 sm:p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                     <div className="text-5xl sm:text-6xl font-black text-primary-accent mb-4 holographic-text">
                       {num}
                     </div>
@@ -633,7 +633,7 @@ const SexyStylePage: React.FC = () => {
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
                   className="[perspective:1000px]"
                 >
-                  <div className="group h-full min-h-[120px] p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                  <div className="group h-full min-h-[160px] p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                     <div className="flex items-start gap-3 sm:gap-4 h-full">
                       <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
                         <CheckCircleIcon className="w-6 h-6 text-primary-accent" />
@@ -843,7 +843,7 @@ const SexyStylePage: React.FC = () => {
                   key={testimonial.id}
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
                 >
-                  <div className="flex flex-col h-full p-4 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
+                  <div className="flex flex-col h-full min-h-[200px] p-4 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
                     <div className="mb-3">
                       <StarRating size="sm" label="5 estrellas" />
                     </div>

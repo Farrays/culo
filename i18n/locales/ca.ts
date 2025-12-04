@@ -4626,7 +4626,17 @@ Avui en dia, el Modern Jazz es caracteritza per la seva versatilitat: des de pec
 
 ### El Modern Jazz a Barcelona
 
-Farray's Center ofereix classes de Modern Jazz sota la direcció d'Alejandro Miñoso, un mestre amb formació clàssica i contemporània que combina l'exigència tècnica amb un ambient proper i motivador. Les classes treballen la tècnica de base, la musicalitat, l'expressió corporal i la interpretació, preparant als alumnes tant per a l'escenari com per gaudir ballant.`,
+Farray's Center ofereix classes de Modern Jazz sota la direcció d'Alejandro Miñoso, un mestre amb formació clàssica i contemporània que combina l'exigència tècnica amb un ambient proper i motivador. Les classes treballen la tècnica de base, la musicalitat, l'expressió corporal i la interpretació, preparant als alumnes tant per a l'escenari com per gaudir ballant.
+
+### Beneficis científics de ballar Modern Jazz
+
+Estudis científics mostren que ballar (com el Modern Jazz) millora la coordinació, la flexibilitat i redueix de forma notable l'estrès, sent tan eficaç per al cos i la ment com molts entrenaments de gimnàs.
+
+**Una hora de dansa intensa pot cremar entre 300 i 800 calories**, similar a córrer a ritme moderat, però amb música, expressió i molta més diversió.
+
+Un famós estudi publicat al **New England Journal of Medicine** va demostrar que les persones que ballaven amb freqüència tenien fins a un **76% menys risc de desenvolupar demència**.
+
+Farray's International Dance Center està valorat prop del **5/5 a Google**, amb centenars de ressenyes que el situen entre els centres de dansa millor valorats de Barcelona.`,
 
   // Identify Section - Pain Points específics del Modern Jazz
   modernjazzIdentifyTitle: "T'identifiques amb alguna d'aquestes situacions?",
@@ -4693,6 +4703,9 @@ Farray's Center ofereix classes de Modern Jazz sota la direcció d'Alejandro Mi�
   modernjazzWhyChoose6Title: 'Gala anual + workshops potents',
   modernjazzWhyChoose6Desc:
     'Brilla en un teatre professional, participa en workshops internacionals i viu experiències que no trobaràs en cap altra escola.',
+  modernjazzWhyChoose7Title: 'Mestre cubà format a l\'ENA',
+  modernjazzWhyChoose7Desc:
+    'Alejandro Miñoso, mestre internacional cubà format a l\'ENA (Escola Nacional d\'Art de Cuba), ex solista de la companyia de Carlos Acosta.',
 
   // Logos Section
   modernjazzLogosTitle: "Has pogut veure'ns…",
@@ -4818,4 +4831,55 @@ Farray's Center ofereix classes de Modern Jazz sota la direcció d'Alejandro Mi�
   skipToSchedule: "Anar a l'horari",
   modernjazzCTAGroup: 'Accions de reserva',
   modernjazzIdentifyListLabel: 'Situacions amb les quals et podries identificar',
+
+  // ===== GEO OPTIMIZATION: HowTo Schema =====
+  modernjazzHowToName: 'Com començar a ballar Modern Jazz a Barcelona',
+  modernjazzHowToDesc:
+    "Guia pas a pas per començar les teves classes de Modern Jazz a Farray's Center. Des de triar el teu nivell fins a la teva primera classe.",
+  modernjazzHowToSupply1: 'Roba còmoda i elàstica',
+  modernjazzHowToSupply2: 'Sabatilles de jazz o mitjons antilliscants',
+  modernjazzHowToSupply3: "Ampolla d'aigua",
+  modernjazzHowToStep1Name: 'Tria el teu nivell',
+  modernjazzHowToStep1Text:
+    'Consulta els nostres horaris i tria entre nivell principiant, intermedi o avançat. Si mai has ballat, comença per principiant.',
+  modernjazzHowToStep2Name: 'Reserva la teva primera classe',
+  modernjazzHowToStep2Text:
+    "Contacta amb nosaltres per WhatsApp al +34 622 247 085 o correu a info@farrayscenter.com per reservar la teva classe de prova gratuïta.",
+  modernjazzHowToStep3Name: 'Prepara\'t per a la classe',
+  modernjazzHowToStep3Text:
+    "Vine amb roba còmoda que permeti moviment. Sabatilles de jazz ideals, però pots començar amb mitjons. Porta aigua.",
+  modernjazzHowToStep4Name: "Gaudeix de l'escalfament",
+  modernjazzHowToStep4Text:
+    "La classe comença amb exercicis d'escalfament i tècnica bàsica. El professor et guiarà pas a pas, adaptant-se al teu nivell.",
+  modernjazzHowToStep5Name: 'Practica la coreografia',
+  modernjazzHowToStep5Text:
+    "Després de la tècnica, aprendràs seqüències i coreografies. Diverteix-te, expressa't i connecta amb la música. Ja ets ballarí de Modern Jazz!",
+
+  // ===== GEO OPTIMIZATION: DefinedTerm Schema =====
+  modernjazzDefinedTermModernJazz:
+    "El Modern Jazz és un estil de dansa que combina la tècnica del ballet clàssic amb l'expressivitat del jazz i la dansa contemporània. Va néixer als EUA al segle XX i es caracteritza per moviments fluids, girs, salts i expressió emocional.",
+  modernjazzDefinedTermJazzDance:
+    "Jazz Dance és el gènere pare del Modern Jazz, originat en la cultura afroamericana. Inclou estils com Broadway Jazz, Lyrical Jazz i Funk Jazz. Es caracteritza per la seva musicalitat, aïllaments corporals i energia.",
+  modernjazzDefinedTermBroadway:
+    "Broadway Dance és l'estil de dansa teatral usat als musicals de Broadway. Combina jazz, ballet i teatre per explicar històries. Requereix tècnica, expressió facial i presència escènica.",
+  modernjazzDefinedTermTecnica:
+    "Tècnica de dansa es refereix al conjunt de fonaments físics i moviments específics d'un estil. En Modern Jazz inclou: pliés, tendus, girs (pirouettes), salts (jetés), contraccions i extensions.",
+  modernjazzDefinedTermMusicalidad:
+    'La musicalitat en dansa és la capacitat d\'interpretar i expressar la música a través del moviment. Inclou entendre el ritme, accents, dinàmiques i emocions de la música per ballar "amb" ella, no només "sobre" ella.',
+
+  // ===== GEO OPTIMIZATION: Event Schema =====
+  modernjazzEventName: "Classe de Modern Jazz a Barcelona - Farray's Center",
+  modernjazzEventDesc:
+    "Classe setmanal de Modern Jazz amb Alejandro Miñoso. Tècnica clàssica, expressió contemporània, coreografies de Broadway. Tots els nivells benvinguts.",
+
+  // ===== GEO OPTIMIZATION: Citable Statistics =====
+  modernjazzStatistics:
+    "Estudis científics mostren que ballar (com el Modern Jazz) millora la coordinació, la flexibilitat i redueix de forma notable l'estrès, sent tan eficaç per al cos i la ment com molts entrenaments de gimnàs.",
+  modernjazzStatisticsSource: 'Estudis científics en dansa i salut',
+  modernjazzCitableFact1:
+    "Una hora de dansa intensa pot cremar entre 300 i 800 calories, similar a córrer a ritme moderat, però amb música, expressió i molta més diversió.",
+  modernjazzCitableFact2:
+    "Un famós estudi publicat al New England Journal of Medicine va demostrar que les persones que ballaven amb freqüència tenien fins a un 76% menys risc de desenvolupar demència.",
+  modernjazzCitableFact3:
+    "Farray's International Dance Center està valorat prop del 5/5 a Google, amb centenars de ressenyes que el situen entre els centres de dansa millor valorats de Barcelona.",
 };
