@@ -1,4 +1,4 @@
-import { type JSX, useEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode, type ElementType } from 'react';
 
 interface AnimateOnScrollProps {
   children: ReactNode;
@@ -7,7 +7,7 @@ interface AnimateOnScrollProps {
   // Fix: Add style property to allow passing inline styles.
   style?: React.CSSProperties;
   // Allow rendering as different HTML elements for accessibility
-  as?: keyof JSX.IntrinsicElements;
+  as?: ElementType;
 }
 
 const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({

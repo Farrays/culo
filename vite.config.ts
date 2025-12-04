@@ -87,6 +87,7 @@ export default defineConfig({
           if (id.includes('/locales/fr.ts')) return 'i18n-fr';
           // Scheduler (React internals, often unused)
           if (id.includes('node_modules/scheduler')) return 'react-vendor';
+          return undefined;
         },
       },
     },
