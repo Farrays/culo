@@ -257,7 +257,7 @@ const AboutPage: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
               <AnimateOnScroll delay={100}>
-                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 text-center hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
+                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 text-center hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 h-full min-h-[120px]">
                   <div className="text-5xl md:text-6xl font-black text-primary-accent mb-4">
                     700m²
                   </div>
@@ -266,7 +266,7 @@ const AboutPage: React.FC = () => {
               </AnimateOnScroll>
 
               <AnimateOnScroll delay={200}>
-                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 text-center hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
+                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 text-center hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 h-full min-h-[120px]">
                   <div className="text-5xl md:text-6xl font-black text-primary-accent mb-4">
                     1500+
                   </div>
@@ -275,7 +275,7 @@ const AboutPage: React.FC = () => {
               </AnimateOnScroll>
 
               <AnimateOnScroll delay={300}>
-                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 text-center hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
+                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 text-center hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 h-full min-h-[120px]">
                   <div className="text-5xl md:text-6xl font-black text-primary-accent mb-4">
                     15.000+
                   </div>
@@ -378,7 +378,7 @@ const AboutPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {valuePillars.map((pillar, index) => (
                 <AnimateOnScroll key={pillar.id} delay={index * 100}>
-                  <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 h-full flex flex-col">
+                  <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 h-full min-h-[180px] flex flex-col">
                     <div className="mb-6 flex justify-center">
                       <div className="bg-primary-dark/30 p-4 rounded-2xl">
                         <Icon name={pillar.iconName} className="h-12 w-12 text-primary-accent" />

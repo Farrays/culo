@@ -59,15 +59,41 @@ export default defineConfig({
     // Optimize chunk splitting
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Vendor chunks
-          'react-vendor': ['react', 'react-dom'],
-          'router-vendor': ['react-router-dom', 'react-helmet-async'],
-          // Monitoring (lazy-loaded: Sentry loads via dynamic import)
-          'analytics': ['web-vitals'],
-          'sanitization': ['dompurify'],
+        // Better chunk naming for long-term caching
+        chunkFileNames: (chunkInfo) => {
+          // Stable names for translation chunks (locale files)
+          if (chunkInfo.name && /^(es|en|ca|fr)$/.test(chunkInfo.name)) {
+            return `assets/${chunkInfo.name}-[hash].js`;
+          }
+          return 'assets/[name]-[hash].js';
+        },
+        manualChunks: (id) => {
+          // Vendor chunks - core React
+          if (id.includes('node_modules/react-dom') || id.includes('node_modules/react/')) {
+            return 'react-vendor';
+          }
+          // Router and helmet
+          if (id.includes('node_modules/react-router') || id.includes('node_modules/react-helmet')) {
+            return 'router-vendor';
+          }
+          // Analytics (lazy-loaded)
+          if (id.includes('node_modules/web-vitals')) return 'analytics';
+          // Sanitization
+          if (id.includes('node_modules/dompurify')) return 'sanitization';
+          // i18n translations - separate chunk per locale for reduced initial load
+          if (id.includes('/locales/es.ts')) return 'i18n-es';
+          if (id.includes('/locales/en.ts')) return 'i18n-en';
+          if (id.includes('/locales/ca.ts')) return 'i18n-ca';
+          if (id.includes('/locales/fr.ts')) return 'i18n-fr';
+          // Scheduler (React internals, often unused)
+          if (id.includes('node_modules/scheduler')) return 'react-vendor';
+          return undefined;
         },
       },
+    },
+    // Module preload for faster loading
+    modulePreload: {
+      polyfill: true,
     },
   },
   css: {

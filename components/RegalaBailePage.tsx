@@ -220,7 +220,7 @@ const RegalaBailePage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {benefits.map((benefit, index) => (
                 <AnimateOnScroll key={index} delay={index * 100}>
-                  <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 hover:-translate-y-2 h-full">
+                  <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 hover:-translate-y-2 h-full min-h-[180px]">
                     <div className="bg-primary-dark/30 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                       <Icon name={benefit.iconName} className="w-8 h-8 text-primary-accent" />
                     </div>
@@ -250,7 +250,7 @@ const RegalaBailePage: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
               {occasions.map((occasion, index) => (
                 <AnimateOnScroll key={index} delay={index * 100}>
-                  <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl p-6 text-center hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 hover:-translate-y-2">
+                  <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl p-6 text-center hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 hover:-translate-y-2 min-h-[100px]">
                     <div className="bg-primary-dark/30 w-14 h-14 rounded-full flex items-center justify-center mb-4 mx-auto">
                       <Icon name={occasion.iconName} className="w-7 h-7 text-primary-accent" />
                     </div>
@@ -284,7 +284,7 @@ const RegalaBailePage: React.FC = () => {
                       <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-primary-accent to-primary-dark rounded-full flex items-center justify-center shadow-lg shadow-primary-accent/30">
                         <span className="text-3xl font-black text-white">{step}</span>
                       </div>
-                      <div className="flex-1 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-6 md:p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
+                      <div className="flex-1 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-6 md:p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 min-h-[120px]">
                         <h3 className="text-xl md:text-2xl font-bold text-neutral mb-3">
                           {t(`regalaBaile_step${step}_title`)}
                         </h3>
@@ -340,7 +340,7 @@ const RegalaBailePage: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               <AnimateOnScroll delay={100}>
-                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 h-full">
+                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 h-full min-h-[180px]">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="bg-primary-dark/30 w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Icon name="building" className="w-7 h-7 text-primary-accent" />
@@ -358,7 +358,7 @@ const RegalaBailePage: React.FC = () => {
               </AnimateOnScroll>
 
               <AnimateOnScroll delay={200}>
-                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 h-full">
+                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 h-full min-h-[180px]">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="bg-primary-dark/30 w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Icon name="gift" className="w-7 h-7 text-primary-accent" />

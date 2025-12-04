@@ -28,7 +28,7 @@ const Header: React.FC = () => {
 
     const debouncedScroll = debounce(handleScroll, 100);
 
-    window.addEventListener('scroll', debouncedScroll);
+    window.addEventListener('scroll', debouncedScroll, { passive: true });
     return () => window.removeEventListener('scroll', debouncedScroll);
   }, []);
 
@@ -109,13 +109,12 @@ const Header: React.FC = () => {
               textKey: 'navHeels',
               submenu: [
                 {
-                  path: `/${locale}/clases/femmology-sexy-style-en-barcelona`,
+                  path: `/${locale}/clases/femmology`,
                   textKey: 'navFemmology',
                 },
-                { path: `/${locale}/clases/clases-de-sexy-style`, textKey: 'navSexyStyle' },
+                { path: `/${locale}/clases/sexy-style-barcelona`, textKey: 'navSexyStyle' },
               ],
             },
-            { path: `/${locale}/clases/hip-hop-barcelona`, textKey: 'navHipHop' },
             {
               path: `/${locale}/clases/hip-hop-reggaeton-barcelona`,
               textKey: 'navHipHopReggaeton',

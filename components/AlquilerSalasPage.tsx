@@ -402,7 +402,7 @@ const AlquilerSalasPage: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
               {targetAudienceKeys.map((key, index) => (
                 <AnimateOnScroll key={index} delay={index * 100}>
-                  <div className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col p-6">
+                  <div className="group block relative h-full min-h-[100px] rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col p-6">
                     <div className="flex items-start gap-3">
                       <Icon
                         name="star"
@@ -440,7 +440,7 @@ const AlquilerSalasPage: React.FC = () => {
             <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
               {featuresData.map((feature, index) => (
                 <AnimateOnScroll key={index} delay={index * 100}>
-                  <div className="bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
+                  <div className="bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 h-full min-h-[80px]">
                     <div className="flex items-center gap-4">
                       <div className="bg-primary-dark/30 p-3 rounded-xl">
                         <Icon name={feature.icon} className="w-6 h-6 text-primary-accent" />
@@ -477,7 +477,7 @@ const AlquilerSalasPage: React.FC = () => {
               {benefitsData.map((benefit, index) => (
                 <div key={index} className="w-full sm:w-1/2 lg:w-1/3 p-4">
                   <AnimateOnScroll delay={index * 100} className="h-full">
-                    <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full flex flex-col">
+                    <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full min-h-[180px] flex flex-col">
                       <div className="mb-6">
                         <div className="bg-primary-dark/30 group-hover:bg-primary-accent/20 p-4 rounded-xl inline-block shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                           <Icon

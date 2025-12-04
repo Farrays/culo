@@ -14,7 +14,7 @@ const BackToTop: React.FC = () => {
 
     const debouncedToggle = debounce(toggleVisibility, 150); // 150ms debounce for better performance
 
-    window.addEventListener('scroll', debouncedToggle);
+    window.addEventListener('scroll', debouncedToggle, { passive: true });
 
     return () => {
       window.removeEventListener('scroll', debouncedToggle);

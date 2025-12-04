@@ -245,7 +245,8 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
               location.pathname.includes('/merchandising') ||
               location.pathname.includes('/estudio-grabacion') ||
               location.pathname.includes('/regala-baile') ||
-              location.pathname.includes('/clases-particulares')
+              location.pathname.includes('/clases-particulares') ||
+              location.pathname.includes('/instalaciones')
                 ? 'text-white'
                 : 'text-neutral/75 hover:text-white'
             }`}
@@ -295,6 +296,13 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
                 className="block px-4 py-3 text-sm font-medium text-neutral/90 hover:bg-white/10 hover:text-white transition-all duration-200"
               >
                 {t('headerMerchandising')}
+              </Link>
+              <Link
+                to={`/${locale}/instalaciones-escuela-baile-barcelona`}
+                onClick={() => setIsServicesDropdownOpen(false)}
+                className="block px-4 py-3 text-sm font-medium text-neutral/90 hover:bg-white/10 hover:text-white transition-all duration-200"
+              >
+                {t('navFacilities')}
               </Link>
             </div>
           )}

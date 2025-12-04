@@ -19,6 +19,7 @@ const routes = [
   { path: '', priority: '1.0', changefreq: 'weekly' },  // Home
   { path: 'clases/baile-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/dancehall-barcelona', priority: '0.8', changefreq: 'monthly' },
+  { path: 'clases/sexy-style-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/reggaeton-cubano-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/twerk-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/afrobeats-barcelona', priority: '0.8', changefreq: 'monthly' },
@@ -26,6 +27,8 @@ const routes = [
   { path: 'clases/danza-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/salsa-bachata-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/danzas-urbanas-barcelona', priority: '0.8', changefreq: 'monthly' },
+  { path: 'clases/sexy-style-barcelona', priority: '0.8', changefreq: 'monthly' },
+  { path: 'clases/modern-jazz-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/entrenamiento-bailarines-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases-particulares-baile', priority: '0.7', changefreq: 'monthly' },
   { path: 'sobre-nosotros', priority: '0.7', changefreq: 'monthly' },

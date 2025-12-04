@@ -31,7 +31,7 @@ const ANIMATION_DELAYS = {
 const FemmologyPage: React.FC = () => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
-  const pageUrl = `${baseUrl}/${locale}/clases/femmology-sexy-style-en-barcelona`;
+  const pageUrl = `${baseUrl}/${locale}/clases/femmology`;
 
   // Dynamic date for schemas (current year)
   const currentDate = new Date().toISOString().split('T')[0];
@@ -135,7 +135,7 @@ const FemmologyPage: React.FC = () => {
     { name: t('femBreadcrumbHeels'), url: `/${locale}/clases/heels-barcelona` },
     {
       name: t('femBreadcrumbCurrent'),
-      url: `/${locale}/clases/femmology-sexy-style-en-barcelona`,
+      url: `/${locale}/clases/femmology`,
       isActive: true,
     },
   ];
@@ -147,31 +147,11 @@ const FemmologyPage: React.FC = () => {
         <meta name="description" content={t('femMetaDescription')} />
         <link rel="canonical" href={pageUrl} />
         {/* Hreflang alternates for international SEO */}
-        <link
-          rel="alternate"
-          hrefLang="es"
-          href={`${baseUrl}/es/clases/femmology-sexy-style-en-barcelona`}
-        />
-        <link
-          rel="alternate"
-          hrefLang="en"
-          href={`${baseUrl}/en/clases/femmology-sexy-style-en-barcelona`}
-        />
-        <link
-          rel="alternate"
-          hrefLang="ca"
-          href={`${baseUrl}/ca/clases/femmology-sexy-style-en-barcelona`}
-        />
-        <link
-          rel="alternate"
-          hrefLang="fr"
-          href={`${baseUrl}/fr/clases/femmology-sexy-style-en-barcelona`}
-        />
-        <link
-          rel="alternate"
-          hrefLang="x-default"
-          href={`${baseUrl}/es/clases/femmology-sexy-style-en-barcelona`}
-        />
+        <link rel="alternate" hrefLang="es" href={`${baseUrl}/es/clases/femmology`} />
+        <link rel="alternate" hrefLang="en" href={`${baseUrl}/en/clases/femmology`} />
+        <link rel="alternate" hrefLang="ca" href={`${baseUrl}/ca/clases/femmology`} />
+        <link rel="alternate" hrefLang="fr" href={`${baseUrl}/fr/clases/femmology`} />
+        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/es/clases/femmology`} />
         <meta property="og:title" content={`${t('femPageTitle')} | Farray&apos;s Center`} />
         <meta property="og:description" content={t('femMetaDescription')} />
         <meta property="og:url" content={pageUrl} />
@@ -502,7 +482,7 @@ const FemmologyPage: React.FC = () => {
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
                   className="[perspective:1000px]"
                 >
-                  <div className="group relative h-full flex items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                  <div className="group relative h-full min-h-[100px] flex items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
                       <CheckIcon className="text-primary-accent" size="sm" />
                     </div>
@@ -562,7 +542,7 @@ const FemmologyPage: React.FC = () => {
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
                   className="[perspective:1000px]"
                 >
-                  <div className="group h-full p-5 sm:p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                  <div className="group h-full min-h-[180px] p-5 sm:p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                     <div className="text-5xl sm:text-6xl font-black text-primary-accent mb-4 holographic-text">
                       {num}
                     </div>
@@ -597,8 +577,8 @@ const FemmologyPage: React.FC = () => {
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
                   className="[perspective:1000px]"
                 >
-                  <div className="group h-full p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
-                    <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="group h-full min-h-[120px] p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                    <div className="flex items-start gap-3 sm:gap-4 h-full">
                       <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
                         <CheckCircleIcon className="w-6 h-6 text-primary-accent" />
                       </div>
@@ -807,7 +787,7 @@ const FemmologyPage: React.FC = () => {
                   key={testimonial.id}
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
                 >
-                  <div className="flex flex-col h-full p-4 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
+                  <div className="flex flex-col h-full min-h-[180px] p-4 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
                     <div className="mb-3">
                       <StarRating size="sm" label="5 estrellas" />
                     </div>

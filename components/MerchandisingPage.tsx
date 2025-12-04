@@ -268,7 +268,7 @@ const MerchandisingPage: React.FC = () => {
                     </div>
 
                     {/* Product Info */}
-                    <div className="flex flex-col flex-grow p-6">
+                    <div className="flex flex-col flex-grow min-h-[180px] p-6">
                       <h3 className="text-2xl font-bold text-neutral mb-3">
                         {product.name[locale]}
                       </h3>

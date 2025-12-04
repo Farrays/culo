@@ -49,6 +49,8 @@ const SexyReggaetonPage = lazy(() => import('./components/SexyReggaetonPage'));
 const ReggaetonCubanoPage = lazy(() => import('./components/ReggaetonCubanoPage'));
 const HeelsBarcelonaPage = lazy(() => import('./components/HeelsBarcelonaPage'));
 const FemmologyPage = lazy(() => import('./components/FemmologyPage'));
+const SexyStylePage = lazy(() => import('./components/SexyStylePage'));
+const ModernJazzPage = lazy(() => import('./components/ModernJazzPage'));
 
 // Valid locales
 const VALID_LOCALES: Locale[] = ['es', 'en', 'ca', 'fr'];
@@ -232,11 +234,36 @@ const AppContent: React.FC = () => {
             />
 
             <Route
-              path="/:locale/clases/femmology-sexy-style-en-barcelona"
+              path="/:locale/clases/femmology"
               element={
                 <>
                   <LocaleSync />
                   <FemmologyPage />
+                </>
+              }
+            />
+            {/* Redirect old Femmology URL to new one */}
+            <Route
+              path="/:locale/clases/femmology-sexy-style-en-barcelona"
+              element={<Navigate to={`/${locale}/clases/femmology`} replace />}
+            />
+
+            <Route
+              path="/:locale/clases/sexy-style-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <SexyStylePage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/clases/modern-jazz-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <ModernJazzPage />
                 </>
               }
             />

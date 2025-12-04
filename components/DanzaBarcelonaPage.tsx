@@ -408,7 +408,7 @@ const DanzaBarcelonaPage: React.FC = () => {
             {/* Additional Info Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto">
               <AnimateOnScroll delay={300}>
-                <div className="h-full bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
+                <div className="h-full min-h-[120px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
                   <h3 className="text-xl font-bold text-white mb-3">
                     {t('danzaBarcelona_whichStyle_beginner_title')}
                   </h3>
@@ -419,7 +419,7 @@ const DanzaBarcelonaPage: React.FC = () => {
               </AnimateOnScroll>
 
               <AnimateOnScroll delay={400}>
-                <div className="h-full bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
+                <div className="h-full min-h-[120px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
                   <h3 className="text-xl font-bold text-white mb-3">
                     {t('danzaBarcelona_whichStyle_adult_title')}
                   </h3>
@@ -430,7 +430,7 @@ const DanzaBarcelonaPage: React.FC = () => {
               </AnimateOnScroll>
 
               <AnimateOnScroll delay={500}>
-                <div className="h-full bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
+                <div className="h-full min-h-[120px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
                   <h3 className="text-xl font-bold text-white mb-3">
                     {t('danzaBarcelona_whichStyle_combine_title')}
                   </h3>
@@ -460,7 +460,7 @@ const DanzaBarcelonaPage: React.FC = () => {
               {valuePillars.map((pillar, index) => (
                 <div key={pillar.id} className="w-full sm:w-1/2 lg:w-1/3 p-4">
                   <AnimateOnScroll delay={index * 100} className="h-full">
-                    <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full flex flex-col">
+                    <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full min-h-[180px] flex flex-col">
                       <div className="mb-6">
                         <div className="bg-primary-dark/30 group-hover:bg-primary-accent/20 p-4 rounded-xl inline-block shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                           <Icon

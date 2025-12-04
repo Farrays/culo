@@ -13,6 +13,14 @@ import FAQSection from './FAQSection';
 import AnimatedCounter from './AnimatedCounter';
 import YouTubeEmbed from './YouTubeEmbed';
 import { LocalBusinessSchema, CourseSchema, AggregateReviewsSchema } from './SchemaMarkup';
+import {
+  CheckIcon,
+  CheckCircleIcon,
+  ClockIcon,
+  FlameIcon,
+  HeartIcon,
+  StarRating,
+} from './shared/Icons';
 
 const SexyReggaetonPage: React.FC = () => {
   const { t, locale } = useI18n();
@@ -108,30 +116,82 @@ const SexyReggaetonPage: React.FC = () => {
         <title>{t('sxrPageTitle')} | Farray&apos;s Center</title>
         <meta name="description" content={t('sxrMetaDescription')} />
         <link rel="canonical" href={pageUrl} />
+        {/* Preload LCP image for faster rendering */}
+        <link
+          rel="preload"
+          as="image"
+          type="image/webp"
+          href="/images/classes/sexy-reggaeton/img/clases-sexy-reggaeton-barcelona_960.webp"
+          imageSrcSet="/images/classes/sexy-reggaeton/img/clases-sexy-reggaeton-barcelona_640.webp 640w, /images/classes/sexy-reggaeton/img/clases-sexy-reggaeton-barcelona_960.webp 960w, /images/classes/sexy-reggaeton/img/clases-sexy-reggaeton-barcelona_1440.webp 1440w"
+          imageSizes="(max-width: 768px) 100vw, 50vw"
+        />
+        {/* Hreflang alternates for international SEO */}
+        <link
+          rel="alternate"
+          hrefLang="es"
+          href={`${baseUrl}/es/clases/sexy-reggaeton-barcelona`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href={`${baseUrl}/en/clases/sexy-reggaeton-barcelona`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="ca"
+          href={`${baseUrl}/ca/clases/sexy-reggaeton-barcelona`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="fr"
+          href={`${baseUrl}/fr/clases/sexy-reggaeton-barcelona`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`${baseUrl}/es/clases/sexy-reggaeton-barcelona`}
+        />
         <meta property="og:title" content={`${t('sxrPageTitle')} | Farray&apos;s Center`} />
         <meta property="og:description" content={t('sxrMetaDescription')} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${baseUrl}/images/og-sexy-reggaeton.jpg`} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta
+          property="og:image"
+          content={`${baseUrl}/images/classes/sexy-reggaeton/img/clases-sexy-reggaeton-barcelona_960.jpg`}
+        />
+        <meta property="og:image:width" content="960" />
+        <meta property="og:image:height" content="720" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${t('sxrPageTitle')} | Farray's Center`} />
+        <meta name="twitter:title" content={`${t('sxrPageTitle')} | Farray&apos;s Center`} />
         <meta name="twitter:description" content={t('sxrMetaDescription')} />
-        <meta name="twitter:image" content={`${baseUrl}/images/og-sexy-reggaeton.jpg`} />
+        <meta
+          name="twitter:image"
+          content={`${baseUrl}/images/classes/sexy-reggaeton/img/clases-sexy-reggaeton-barcelona_960.jpg`}
+        />
+        <meta property="og:image:alt" content={t('sxrOgImageAlt')} />
+        {/* VideoObject Schema */}
+        <script type="application/ld+json">{JSON.stringify(videoSchema)}</script>
+        {/* BreadcrumbList Schema */}
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        {/* Person Schema for Yasmina Fernández */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Yasmina Fernández',
+            jobTitle: 'Instructora de Sexy Reggaeton & Sexy Style',
+            description:
+              'Especialista en Sexy Reggaeton y Sexy Style con más de 8 años de experiencia. Energía, técnica y actitud empoderada.',
+            image: `${baseUrl}/images/teachers/img/profesora-yasmina-fernandez_640.jpg`,
+            worksFor: {
+              '@type': 'DanceSchool',
+              name: "Farray's International Dance Center",
+              url: baseUrl,
+            },
+            knowsAbout: ['Sexy Reggaeton', 'Sexy Style', 'Perreo', 'Body Roll', 'Sensual Dance'],
+          })}
+        </script>
       </Helmet>
-
-      {/* VideoObject Schema - Keep this for video SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
-      />
-
-      {/* BreadcrumbList Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
 
       {/* Schema Markup */}
       <LocalBusinessSchema
@@ -211,7 +271,8 @@ const SexyReggaetonPage: React.FC = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10">
                 <div className="w-full sm:w-auto">
                   <a
-                    href="#contact"
+                    href="#schedule"
+                    aria-label={t('sxrCTA1AriaLabel')}
                     className="block w-full sm:w-auto bg-primary-accent text-white font-bold text-lg py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center"
                   >
                     {t('sxrCTA1')}
@@ -220,7 +281,8 @@ const SexyReggaetonPage: React.FC = () => {
                 </div>
                 <div className="w-full sm:w-auto">
                   <a
-                    href="#trial"
+                    href="#schedule"
+                    aria-label={t('sxrCTA2AriaLabel')}
                     className="block w-full sm:w-auto border-2 border-neutral text-neutral font-bold text-lg py-5 px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center"
                   >
                     {t('sxrCTA2')}
@@ -236,15 +298,7 @@ const SexyReggaetonPage: React.FC = () => {
                   <AnimateOnScroll delay={0}>
                     <div className="text-center">
                       <div className="mb-2 flex justify-center">
-                        <svg
-                          className="w-10 h-10 text-primary-accent"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <circle cx="12" cy="12" r="10" strokeWidth="2" />
-                          <path strokeLinecap="round" strokeWidth="2" d="M12 6v6l4 2" />
-                        </svg>
+                        <ClockIcon className="w-10 h-10 text-primary-accent" size="lg" />
                       </div>
                       <AnimatedCounter
                         target={60}
@@ -260,13 +314,7 @@ const SexyReggaetonPage: React.FC = () => {
                   <AnimateOnScroll delay={100}>
                     <div className="text-center">
                       <div className="mb-2 flex justify-center">
-                        <svg
-                          className="w-10 h-10 text-primary-accent"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 2c1.5 2.5 3 5.5 3 8.5 0 3.5-2.5 6.5-6 6.5s-6-3-6-6.5c0-3 1.5-6 3-8.5 0 3 1.5 5 3 5s3-2 3-5zm0 15c2.21 0 4-1.79 4-4 0-1.5-1-3.5-2-5-.5 1.5-1.5 2.5-2 2.5s-1.5-1-2-2.5c-1 1.5-2 3.5-2 5 0 2.21 1.79 4 4 4z" />
-                        </svg>
+                        <FlameIcon className="w-10 h-10 text-primary-accent" size="lg" />
                       </div>
                       <div className="flex items-center justify-center gap-1">
                         <span className="text-3xl md:text-4xl font-black holographic-text">~</span>
@@ -285,13 +333,7 @@ const SexyReggaetonPage: React.FC = () => {
                   <AnimateOnScroll delay={200}>
                     <div className="text-center">
                       <div className="mb-2 flex justify-center">
-                        <svg
-                          className="w-10 h-10 text-primary-accent"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                        </svg>
+                        <HeartIcon className="w-10 h-10 text-primary-accent" size="lg" />
                       </div>
                       <AnimatedCounter
                         target={100}
@@ -344,10 +386,11 @@ const SexyReggaetonPage: React.FC = () => {
                       />
                       <img
                         src="/images/classes/sexy-reggaeton/img/clases-sexy-reggaeton-barcelona_960.jpg"
-                        alt="Clases de Sexy Reggaeton en Barcelona - Estudiantes bailando en la academia"
+                        alt={t('sxrImageAlt')}
                         width="960"
                         height="720"
-                        loading="lazy"
+                        loading="eager"
+                        fetchPriority="high"
                         className="w-full h-full object-cover"
                       />
                     </picture>
@@ -380,44 +423,16 @@ const SexyReggaetonPage: React.FC = () => {
             </AnimateOnScroll>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
-              {[1, 2, 3, 4, 5].map((num, index) => (
+              {[1, 2, 3, 4, 5, 6].map((num, index) => (
                 <AnimateOnScroll key={num} delay={index * 100} className="[perspective:1000px]">
-                  <div className="group relative h-full flex items-start gap-4 p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                  <div className="group relative h-full min-h-[100px] flex items-start gap-4 p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
-                      <svg
-                        className="w-5 h-5 text-primary-accent"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
+                      <CheckIcon className="text-primary-accent" size="sm" />
                     </div>
                     <p className="text-neutral/90 leading-relaxed">{t(`sxrIdentify${num}`)}</p>
                   </div>
                 </AnimateOnScroll>
               ))}
-              <AnimateOnScroll delay={500} className="[perspective:1000px]">
-                <div className="group relative h-full flex items-start gap-4 p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
-                    <svg
-                      className="w-5 h-5 text-primary-accent"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-neutral/90 leading-relaxed">{t('sxrIdentify6')}</p>
-                </div>
-              </AnimateOnScroll>
             </div>
           </div>
         </section>
@@ -464,7 +479,7 @@ const SexyReggaetonPage: React.FC = () => {
             </AnimateOnScroll>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
-              {[1, 2, 3, 4, 5].map((num, index) => (
+              {[1, 2, 3, 4, 5, 6].map((num, index) => (
                 <AnimateOnScroll key={num} delay={index * 100} className="[perspective:1000px]">
                   <div className="group h-full p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                     <div className="text-6xl font-black text-primary-accent mb-4 holographic-text">
@@ -477,15 +492,6 @@ const SexyReggaetonPage: React.FC = () => {
                   </div>
                 </AnimateOnScroll>
               ))}
-              <AnimateOnScroll delay={500} className="[perspective:1000px]">
-                <div className="group h-full p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
-                  <div className="text-6xl font-black text-primary-accent mb-4 holographic-text">
-                    6
-                  </div>
-                  <h3 className="text-xl font-bold text-neutral mb-3">{t('sxrTransform6Title')}</h3>
-                  <p className="text-neutral/90 leading-relaxed">{t('sxrTransform6Desc')}</p>
-                </div>
-              </AnimateOnScroll>
             </div>
           </div>
         </section>
@@ -508,20 +514,10 @@ const SexyReggaetonPage: React.FC = () => {
                   delay={index * 100}
                   className={`[perspective:1000px] ${index === arr.length - 1 ? 'lg:col-start-2' : ''}`}
                 >
-                  <div className="group h-full p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                  <div className="group h-full min-h-[120px] p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
-                        <svg
-                          className="w-6 h-6 text-primary-accent"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                        <CheckCircleIcon className="text-primary-accent" size="md" />
                       </div>
                       <div>
                         <h3 className="text-lg font-bold text-neutral mb-2">
@@ -546,7 +542,7 @@ const SexyReggaetonPage: React.FC = () => {
                     suffix="+"
                     className="text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm md:text-base text-neutral/90 font-semibold uppercase tracking-wide">
                     {t('yearsExperience')}
                   </p>
                 </div>
@@ -556,7 +552,7 @@ const SexyReggaetonPage: React.FC = () => {
                     suffix="+"
                     className="text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm md:text-base text-neutral/90 font-semibold uppercase tracking-wide">
                     {t('activeStudents')}
                   </p>
                 </div>
@@ -566,7 +562,7 @@ const SexyReggaetonPage: React.FC = () => {
                     suffix="+"
                     className="text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm md:text-base text-neutral/90 font-semibold uppercase tracking-wide">
                     {t('satisfiedStudents')}
                   </p>
                 </div>
@@ -709,16 +705,7 @@ const SexyReggaetonPage: React.FC = () => {
                 <div className="inline-block">
                   <div className="mb-4 text-3xl font-black text-neutral">{t('excellent')}</div>
                   <div className="flex items-center justify-center gap-1 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <svg
-                        key={i}
-                        className="w-8 h-8 text-yellow-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
+                    <StarRating count={5} size="lg" label="5 de 5 estrellas" />
                   </div>
                   <div className="text-sm text-neutral/70">
                     {t('basedOnReviews').replace('{count}', '505')}
@@ -731,18 +718,9 @@ const SexyReggaetonPage: React.FC = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
               {sxrTestimonials.map((testimonial, index) => (
                 <AnimateOnScroll key={testimonial.id} delay={index * 100}>
-                  <div className="flex flex-col h-full p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
-                    <div className="flex mb-3">
-                      {[...Array(5)].map((_, i) => (
-                        <svg
-                          key={i}
-                          className="w-5 h-5 text-yellow-400"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
+                  <div className="flex flex-col h-full min-h-[180px] p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
+                    <div className="mb-3">
+                      <StarRating count={5} size="sm" label="5 de 5 estrellas" />
                     </div>
                     <blockquote className="flex-grow text-neutral/90 mb-4">
                       <p className="text-sm leading-relaxed">
@@ -779,10 +757,7 @@ const SexyReggaetonPage: React.FC = () => {
             {/* Video centrado */}
             <div className="max-w-4xl mx-auto">
               <AnimateOnScroll delay={100}>
-                <YouTubeEmbed
-                  videoId="J5SI4u1SVsg"
-                  title="Clases de Sexy Reggaeton en Barcelona - Farray's Center"
-                />
+                <YouTubeEmbed videoId="J5SI4u1SVsg" title={t('sxrVideoTitle')} />
               </AnimateOnScroll>
             </div>
           </div>
@@ -833,7 +808,8 @@ const SexyReggaetonPage: React.FC = () => {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
                   <div className="w-full sm:w-auto">
                     <a
-                      href="#contact"
+                      href="#schedule"
+                      aria-label={t('sxrCTA1AriaLabel')}
                       className="block w-full sm:w-auto bg-primary-accent text-white font-bold text-lg py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center"
                     >
                       {t('sxrCTA1')}
@@ -844,7 +820,8 @@ const SexyReggaetonPage: React.FC = () => {
                   </div>
                   <div className="w-full sm:w-auto">
                     <a
-                      href="#trial"
+                      href="#schedule"
+                      aria-label={t('sxrCTA2AriaLabel')}
                       className="block w-full sm:w-auto border-2 border-neutral text-neutral font-bold text-lg py-5 px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center"
                     >
                       {t('sxrCTA2')}

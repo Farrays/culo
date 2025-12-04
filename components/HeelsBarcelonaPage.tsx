@@ -393,7 +393,7 @@ const HeelsBarcelonaPage: React.FC = () => {
             {/* Comparison Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               <AnimateOnScroll delay={100}>
-                <div className="h-full bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 flex flex-col">
+                <div className="h-full min-h-[280px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 flex flex-col">
                   <h3 className="text-2xl font-bold text-white mb-1">
                     {t('heelsBarcelona_whichStyle_femmology_title')}
                   </h3>
@@ -452,7 +452,7 @@ const HeelsBarcelonaPage: React.FC = () => {
               </AnimateOnScroll>
 
               <AnimateOnScroll delay={200}>
-                <div className="h-full bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 flex flex-col">
+                <div className="h-full min-h-[280px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 flex flex-col">
                   <h3 className="text-2xl font-bold text-white mb-1">
                     {t('heelsBarcelona_whichStyle_sexystyle_title')}
                   </h3>
@@ -633,7 +633,7 @@ const HeelsBarcelonaPage: React.FC = () => {
               {valuePillars.map((pillar, index) => (
                 <div key={pillar.id} className="w-full sm:w-1/2 lg:w-1/3 p-4">
                   <AnimateOnScroll delay={index * 100} className="h-full">
-                    <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full flex flex-col">
+                    <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full min-h-[180px] flex flex-col">
                       <div className="mb-6">
                         <div className="bg-primary-dark/30 group-hover:bg-primary-accent/20 p-4 rounded-xl inline-block shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                           <Icon

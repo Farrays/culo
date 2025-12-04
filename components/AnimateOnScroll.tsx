@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode, type ElementType } from 'react';
 
 interface AnimateOnScrollProps {
   children: ReactNode;
@@ -6,6 +6,8 @@ interface AnimateOnScrollProps {
   delay?: number; // in ms
   // Fix: Add style property to allow passing inline styles.
   style?: React.CSSProperties;
+  // Allow rendering as different HTML elements for accessibility
+  as?: ElementType;
 }
 
 const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
@@ -13,8 +15,9 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
   className = '',
   delay = 0,
   style,
+  as: Component = 'div',
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
@@ -68,20 +71,20 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
   // If reduced motion, render without animation classes
   if (prefersReducedMotion) {
     return (
-      <div ref={ref} className={className} style={style}>
+      <Component ref={ref as React.RefObject<never>} className={className} style={style}>
         {children}
-      </div>
+      </Component>
     );
   }
 
   return (
-    <div
-      ref={ref}
+    <Component
+      ref={ref as React.RefObject<never>}
       className={`transition-all duration-700 ease-out ${className} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       style={{ ...style, transitionDelay: `${delay}ms` }}
     >
       {children}
-    </div>
+    </Component>
   );
 };
 
