@@ -786,9 +786,22 @@ ${preloadHintsHtml}
     fs.mkdirSync(dir, { recursive: true });
   }
 
-  // NOTE: Non-blocking CSS pattern removed because CSP blocks inline event handlers
-  // The critical CSS inlined in <head> already handles above-the-fold styles
-  // Main CSS loads normally which is fine for performance
+  // Make main CSS non-blocking for better FCP/LCP
+  // Critical CSS already handles above-the-fold styles
+  // Using media="print" + onload pattern for deferred loading
+  // NOTE: CSP hash 'sha256-MhtPZXr7+LpJUY5qtMutB+qWfQtMaPccfe7QXtCcEYc=' allows the onload handler
+  if (criticalChunks.mainCss) {
+    const cssRegex = new RegExp(
+      `<link rel="stylesheet"([^>]*) href="/assets/${criticalChunks.mainCss.replace('.', '\\.')}"([^>]*)>`,
+      'g'
+    );
+    html = html.replace(cssRegex, (match) => {
+      return match.replace(
+        'rel="stylesheet"',
+        'rel="stylesheet" media="print" onload="this.media=\'all\'"'
+      ) + `\n    <noscript><link rel="stylesheet" href="/assets/${criticalChunks.mainCss}" /></noscript>`;
+    });
+  }
 
   // Save file
   fs.writeFileSync(filePath, html);
