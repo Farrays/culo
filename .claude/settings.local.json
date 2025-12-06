@@ -72,7 +72,8 @@
       "Bash(npx vite build:*)",
       "Bash(curl:*)",
       "Bash(node prerender.mjs:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []
