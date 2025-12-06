@@ -22,6 +22,7 @@ const routes = [
   { path: 'es/clases/femmology', lang: 'es', page: 'femmology' },
   { path: 'es/clases/sexy-style-barcelona', lang: 'es', page: 'sexyStyle' },
   { path: 'es/clases/modern-jazz-barcelona', lang: 'es', page: 'modernJazz' },
+  { path: 'es/clases/ballet-barcelona', lang: 'es', page: 'ballet' },
   { path: 'es/clases-particulares-baile', lang: 'es', page: 'clasesParticulares' },
   { path: 'es/sobre-nosotros', lang: 'es', page: 'about' },
   { path: 'es/yunaisy-farray', lang: 'es', page: 'yunaisy' },
@@ -45,6 +46,7 @@ const routes = [
   { path: 'ca/clases/femmology', lang: 'ca', page: 'femmology' },
   { path: 'ca/clases/sexy-style-barcelona', lang: 'ca', page: 'sexyStyle' },
   { path: 'ca/clases/modern-jazz-barcelona', lang: 'ca', page: 'modernJazz' },
+  { path: 'ca/clases/ballet-barcelona', lang: 'ca', page: 'ballet' },
   { path: 'ca/clases-particulares-baile', lang: 'ca', page: 'clasesParticulares' },
   { path: 'ca/sobre-nosotros', lang: 'ca', page: 'about' },
   { path: 'ca/yunaisy-farray', lang: 'ca', page: 'yunaisy' },
@@ -68,6 +70,7 @@ const routes = [
   { path: 'en/clases/femmology', lang: 'en', page: 'femmology' },
   { path: 'en/clases/sexy-style-barcelona', lang: 'en', page: 'sexyStyle' },
   { path: 'en/clases/modern-jazz-barcelona', lang: 'en', page: 'modernJazz' },
+  { path: 'en/clases/ballet-barcelona', lang: 'en', page: 'ballet' },
   { path: 'en/clases-particulares-baile', lang: 'en', page: 'clasesParticulares' },
   { path: 'en/sobre-nosotros', lang: 'en', page: 'about' },
   { path: 'en/yunaisy-farray', lang: 'en', page: 'yunaisy' },
@@ -91,6 +94,7 @@ const routes = [
   { path: 'fr/clases/femmology', lang: 'fr', page: 'femmology' },
   { path: 'fr/clases/sexy-style-barcelona', lang: 'fr', page: 'sexyStyle' },
   { path: 'fr/clases/modern-jazz-barcelona', lang: 'fr', page: 'modernJazz' },
+  { path: 'fr/clases/ballet-barcelona', lang: 'fr', page: 'ballet' },
   { path: 'fr/clases-particulares-baile', lang: 'fr', page: 'clasesParticulares' },
   { path: 'fr/sobre-nosotros', lang: 'fr', page: 'about' },
   { path: 'fr/yunaisy-farray', lang: 'fr', page: 'yunaisy' },
@@ -162,6 +166,10 @@ const metadata = {
     modernJazz: {
       title: 'Clases de Modern Jazz en Barcelona | Técnica y Expresión con Alejandro Miñoso | Farray\'s Center',
       description: 'Clases de Modern Jazz en Barcelona con Alejandro Miñoso. Técnica, musicalidad y expresión corporal. Desde principiante hasta avanzado. ¡Reserva tu clase de prueba!',
+    },
+    ballet: {
+      title: 'Clases de Ballet en Barcelona | Técnica Clásica y Elegancia | Farray\'s Center',
+      description: 'Clases de ballet clásico en Barcelona para adultos. Aprende técnica, postura y elegancia con maestros formados en la ENA. Academia CID-UNESCO entre Plaza España y Sants.',
     },
     clasesParticulares: {
       title: 'Clases Particulares de Baile en Barcelona | Personalizado y a Tu Ritmo | Farray\'s Center',
@@ -253,6 +261,10 @@ const metadata = {
       title: 'Classes de Modern Jazz a Barcelona | Tècnica i Expressió amb Alejandro Miñoso | Farray\'s Center',
       description: 'Classes de Modern Jazz a Barcelona amb Alejandro Miñoso. Tècnica, musicalitat i expressió corporal. Des de principiant fins a avançat. Reserva la teva classe de prova!',
     },
+    ballet: {
+      title: 'Classes de Ballet a Barcelona | Tècnica Clàssica i Elegància | Farray\'s Center',
+      description: "Classes de ballet clàssic a Barcelona per a adults. Aprèn tècnica, postura i elegància amb mestres formats a l'ENA. Acadèmia CID-UNESCO entre Plaça Espanya i Sants.",
+    },
     clasesParticulares: {
       title: 'Classes Particulars de Ball a Barcelona | Personalitzat i al Teu Ritme | Farray\'s Center',
       description: 'Classes particulars de ball a Barcelona 100% personalitzades. Professor exclusiu per a tu, horaris flexibles, tots els estils. Aprèn 3x més ràpid que en classes grupals. Bons disponibles.',
@@ -343,6 +355,10 @@ const metadata = {
       title: 'Modern Jazz Classes in Barcelona | Technique and Expression with Alejandro Miñoso | Farray\'s Center',
       description: 'Modern Jazz classes in Barcelona with Alejandro Miñoso. Technique, musicality and body expression. From beginner to advanced. Book your trial class!',
     },
+    ballet: {
+      title: 'Ballet Classes in Barcelona | Classical Technique and Elegance | Farray\'s Center',
+      description: 'Classical ballet classes in Barcelona for adults. Learn technique, posture and elegance with ENA-trained masters. CID-UNESCO Academy between Plaza España and Sants.',
+    },
     clasesParticulares: {
       title: 'Private Dance Classes in Barcelona | Personalized and At Your Pace | Farray\'s Center',
       description: 'Private dance classes in Barcelona with 100% dedicated teacher. Salsa, Bachata, Dancehall, Contemporary Dance. Personalized teaching, flexible schedules and guaranteed results. Reserve your class now!',
@@ -432,6 +448,10 @@ const metadata = {
     modernJazz: {
       title: 'Cours de Modern Jazz à Barcelone | Technique et Expression avec Alejandro Miñoso | Farray\'s Center',
       description: 'Cours de Modern Jazz à Barcelone avec Alejandro Miñoso. Technique, musicalité et expression corporelle. Du débutant à l\'avancé. Réservez votre cours d\'essai!',
+    },
+    ballet: {
+      title: 'Cours de Ballet à Barcelone | Technique Classique et Élégance | Farray\'s Center',
+      description: "Cours de ballet classique à Barcelone pour adultes. Apprenez la technique, la posture et l'élégance avec des maîtres formés à l'ENA. Académie CID-UNESCO entre Plaza España et Sants.",
     },
     clasesParticulares: {
       title: 'Cours Particuliers de Danse à Barcelone | Personnalisé et à Votre Rythme | Farray\'s Center',

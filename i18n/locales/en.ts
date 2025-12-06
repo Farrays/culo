@@ -21,6 +21,8 @@ export const en = {
   navHeels: 'Heels',
   navFemmology: 'Femmology',
   navSexyStyle: 'Sexy Style',
+  navBallet: 'Ballet',
+  navModernJazz: 'Modern Jazz',
   navPrepFisica: 'Training for Dancers',
   navClasesParticulares: 'Private Classes',
   navServices: 'Services',
@@ -4853,4 +4855,349 @@ Farray's International Dance Center is rated close to **5/5 on Google**, with hu
     'A famous study published in New England Journal of Medicine showed that people who danced frequently had up to 76% lower risk of developing dementia.',
   modernjazzCitableFact3:
     "Farray's International Dance Center is rated close to 5/5 on Google, with hundreds of reviews placing it among the best-rated dance centers in Barcelona.",
+
+  // ========================================
+  // BALLET PAGE - Ballet Classes in Barcelona
+  // ========================================
+
+  // ===== SEO Meta Tags =====
+  balletPageTitle: 'Ballet Classes in Barcelona',
+  balletMetaDescription:
+    'Classical ballet classes in Barcelona for adults. Learn technique, posture and elegance with ENA-trained teachers. CID-UNESCO academy between Plaza España and Sants. All levels.',
+
+  // ===== Breadcrumbs =====
+  balletBreadcrumbHome: 'Home',
+  balletBreadcrumbClasses: 'Dance Classes',
+  balletBreadcrumbDance: 'Classical Dance Classes',
+  balletBreadcrumbCurrent: 'Ballet Classes',
+
+  // ===== Hero Section =====
+  balletHeroTitle: 'Classical Ballet Classes in Barcelona (Cuban School)',
+  balletHeroSubtitle: 'Posture, strength and elegance with Cuban-trained teachers',
+  balletHeroDesc:
+    'Learn ballet with the Cuban methodology that trained legends like Carlos Acosta: rigor, musicality and expression to improve posture, lines and confidence – beginner or advanced.',
+  balletHeroLocation: 'CID-UNESCO member academy, between Plaza España and Sants.',
+
+  // ===== Hero Stats =====
+  balletTechniqueStat: '5',
+  balletEmpowerment: 'Base Positions',
+  balletConfidenceGuaranteed: 'Elegance guaranteed',
+  balletCaloriesStat: 'Calories Burned',
+  balletHistoryStat: 'Years of History',
+
+  // ===== CTAs =====
+  balletCTA1: 'Become a Member Now',
+  balletCTA1Subtext: 'Limited spots available this month',
+  balletCTA2: 'Book Your Trial Class',
+  balletCTA2Subtext: 'First class free',
+
+  // ===== What is Ballet Section =====
+  balletWhatIsTitle: 'What is Ballet and how does it transform lives?',
+  balletWhatIsP1:
+    'Classical ballet is more than a dance style; it is a discipline that strengthens your body and mind, and improves your overall well-being. Beyond training professional dancers, ballet offers accessible benefits for everyone, from improving posture and balance to enhancing concentration and memory.',
+  balletWhatIsP2:
+    'Since the late 17th century, Pierre Beauchamp established the five basic foot positions that still constitute the universal language of ballet today. Although born in Italy, it was in France where this technique took its definitive form, which is why we use terms like plié, tendu and jeté to name its most recognized movements.',
+  balletWhatIsP3:
+    "At Farray's, we fuse classical technique with the explosive power of the Cuban ballet school, which trained Carlos Acosta –considered for decades one of the best dancers in the world, compared to Nureyev and Baryshnikov for his aerial virtuosity–. This unique methodology brings athletic strength, expressiveness and musicality that enhance any dance, from hip hop and afrobeat to flamenco or contemporary dance, making ballet the essential technical foundation for complete dancers.",
+  balletWhatIsP4:
+    'Practicing ballet improves motor coordination, flexibility, muscular strength, balance and body awareness, facilitating the technical development of any dancer and promoting a healthy and disciplined lifestyle for those who simply seek well-being and bodily expression.',
+  balletWhatIsP5:
+    'Our training program, endorsed by CID-UNESCO, integrates this complete methodology so that each student, professional or amateur, gets the most out of their body and mind, achieving a transformation that goes far beyond the art of dance.',
+  balletWhatIsQuestionTitle: 'Do you think it is too late for you?',
+  balletWhatIsQuestionAnswer: 'It never is.',
+
+  // ===== Cultural History =====
+  balletCulturalShort:
+    'Ballet was born in the Italian Renaissance courts and perfected in France under Louis XIV, who founded the first formal school dedicated to professional dance in 1661. This discipline has withstood wars, revolutions and social changes because it offers something unique: the complete transformation of the human being through movement.',
+  balletCulturalFull: `### Origins of Ballet: From Courts to Stage
+
+Ballet began in the Italian courts of the 15th century, where nobility danced to celebrate weddings and political events. When Catherine de Medici married Henry II of France, she brought this tradition to the French court, marking the beginning of a new cultural era in Europe.
+
+### The French Golden Age
+
+In 1661, Louis XIV—known as "the Sun King" for his leading role in the Ballet de la Nuit—founded the Académie Royale de Danse, the first institution to formally codify and teach dance. His master, Pierre Beauchamp, established the five fundamental foot positions that remain the universal technical foundation of classical ballet.
+
+### The Technique That Changed Everything
+
+Why has ballet endured for over 300 years, while other dances disappear? Because its classical technique develops:
+
+- **Perfect body alignment**: every movement starts from a strong, balanced center
+- **Spatial awareness**: exact knowledge of every part of the body in space
+- **Deep muscle control**: strength from stabilizing muscles
+- **Muscle and mental memory**: sequences train both body and mind
+- **Grace under pressure**: the ability to make the difficult look easy
+
+### Cuban Excellence and Carlos Acosta
+
+As a continuation of this rich tradition, the Cuban ballet school has taken the art to new levels of strength, emotion and virtuosity. At Farray's we teach following this world-renowned methodology, which has trained great legends like Carlos Acosta, one of the most outstanding and internationally admired dancers. This school combines technical rigor, musicality and expression, providing a solid and exciting foundation that enhances any dance style.
+
+### Scientific Benefits of Ballet
+
+Studies published in journals like *Journal of Dance Medicine & Science* show that ballet:
+
+- Improves bone density and helps prevent osteoporosis
+- Increases flexibility and joint range of motion
+- Develops proprioception and body awareness
+- Reduces stress and anxiety
+- Improves posture and relieves back pain
+
+### Ballet Today: For Everyone Without Distinction
+
+The stigma that "ballet is for girls" has become obsolete. Male dancers like Roberto Bolle, Sergei Polunin and Carlos Acosta have shown that ballet requires extraordinary strength and athleticism. At Farray's, men and women of all ages discover that ballet is the best training for any dance style and also for personal well-being.
+
+### Ballet Vocabulary
+
+All ballet terms are in French, a legacy of its development at the court of Versailles:
+
+- **Plié**: bending the knees while keeping the back straight
+- **Tendu**: stretching the leg while keeping the toe on the floor
+- **Jeté**: jump from one leg to another
+- **Pirouette**: turn on one leg
+- **Arabesque**: position with one leg extended behind`,
+
+  // ===== Identification Section =====
+  balletIdentifyTitle: 'Do you identify with any of these situations?',
+  balletIdentify1: 'You have always wanted to do ballet but believed it was "too late" to start.',
+  balletIdentify2:
+    'Your posture has worsened over the years and you experience discomfort in your back or neck.',
+  balletIdentify3: 'You dance other styles but feel you lack a solid technical foundation.',
+  balletIdentify4:
+    'You are looking for a complete exercise that works your body and mind, beyond simple cardio.',
+  balletIdentify5:
+    'The idea of starting ballet classes as an adult without prior experience intimidates you.',
+  balletIdentify6:
+    'You want a practice that helps you develop discipline, elegance and self-control.',
+  balletIdentifyTransition:
+    'If you identify with at least two of these situations, ballet may be exactly what your body and mind need.',
+  balletIdentifyListLabel: 'Situations you might identify with',
+
+  // ===== Need to Enroll Section =====
+  balletNeedEnrollTitle: 'Why is today the best time to start dancing Ballet?',
+  balletIdentifyAgitate1:
+    'Every day that passes, your posture adapts to incorrect positions, causing chronic back and neck pain. Muscles shorten, you lose joint mobility and natural flexibility with age, and your technique in other styles stagnates without a solid classical foundation.',
+  balletIdentifySolution:
+    "Ballet with Cuban methodology (Carlos Acosta's training) is the only comprehensive workout that develops: posture, strength, flexibility, coordination, memory, spatial awareness, mental discipline and stage presence. There is no other training so complete.",
+  balletIdentifyClosing:
+    "At Farray's we have adults who started at 30, 40 and even 50 years old –with teachers trained at the Cuban school–. It is not too late. It is your moment.",
+
+  // ===== Transformation Section =====
+  balletTransformTitle: 'Imagine Your Before and After with Cuban Ballet Classes',
+  balletTransform1Title: 'From "too late" → Active dancer',
+  balletTransform1Desc:
+    "Before: You thought ballet was only for kids. After: Adults aged 30-50 at Farray's master pliés and pirouettes with Cuban school teachers. It's never too late!",
+  balletTransform2Title: 'From hunched posture → Straight and upright back',
+  balletTransform2Desc:
+    "Before: Chronic back and neck discomfort from poor posture. After: Perfect alignment with Beauchamp's 5 positions. Open shoulders, head high – people notice immediately.",
+  balletTransform3Title: 'From stiff → Flexible and mobile',
+  balletTransform3Desc:
+    'Before: Stiff joints, loss of mobility with age. After: Flexibility, long muscles, free joints. Overall well-being.',
+  balletTransform4Title: 'From "lacking technique" → Complete dancer',
+  balletTransform4Desc:
+    'Before: Hip hop/dancehall/contemporary/salsa stalled without classical alignment. After: Spatial awareness + deep muscle control. Your technique takes off with a solid foundation.',
+  balletTransform5Title: 'From intimidated → Confident in class',
+  balletTransform5Desc:
+    "Before: Fear of joining adult ballet classes with no experience. After: Friendly beginner groups at Farray's. Go from spectator to confident student.",
+  balletTransform6Title: 'From scattered → Disciplined and focused',
+  balletTransform6Desc:
+    'Before: Looking for mind+body exercise, not just cardio. After: Muscle memory, concentration and grace 24/7. Ballet trains brain and body simultaneously.',
+
+  // ===== Why Choose Section =====
+  balletTransformCTA: "Why choose Farray's Center for Ballet?",
+  balletWhyChoose1Title: 'Academy recognized by CID UNESCO',
+  balletWhyChoose1Desc:
+    'Our ballet program is part of the curriculum endorsed by the International Dance Council of UNESCO in Paris. Training with international standards.',
+  balletWhyChoose2Title: 'Unbeatable location',
+  balletWhyChoose2Desc:
+    '5 minutes from Plaza España and Sants. Metro Rocafort (L1), Entença (L2) and Tarragona (L3) and multiple bus lines. Easy to get there, easy to get back.',
+  balletWhyChoose3Title: 'Welcoming environment for adults',
+  balletWhyChoose3Desc:
+    'No child prodigies or toxic competitiveness here. Just adults like you who want to learn in a professional but friendly environment.',
+  balletWhyChoose4Title: 'Rooms with professional barre and mirrors',
+  balletWhyChoose4Desc:
+    'Technical dance floor, wooden barres at the correct height, full wall mirrors. The conditions ballet needs.',
+  balletWhyChoose5Title: 'Multidisciplinary academy',
+  balletWhyChoose5Desc:
+    'Complement your ballet with Modern Jazz, Contemporary or any of our +25 styles. All under one roof.',
+  balletWhyChoose6Title: 'Annual gala + masterclasses',
+  balletWhyChoose6Desc:
+    'Opportunity to perform at Teatre Condal and attend workshops with international choreographers.',
+  balletWhyChoose7Title: 'Teachers trained at the Cuban School',
+  balletWhyChoose7Desc:
+    'Daniel Sene and Alejandro Miñoso, trained at the Carlos Acosta School, a living legend of Ballet.',
+
+  // ===== Logos Section =====
+  balletLogosTitle: 'You may have seen us...',
+  balletLogosIntlFestivalsText: 'and at the best dance festivals in the world',
+
+  // ===== Teachers Section =====
+  balletTeachersTitle: 'Meet your Ballet teachers',
+  balletTeachersSubtitle: 'Classical technique, international experience',
+  balletTeacher1Specialty: 'Classical Ballet & Contemporary',
+  balletTeacher1Bio:
+    'Daniel Sene is a classical ballet specialist trained at the National Ballet School of Cuba, the same school where Carlos Acosta trained. His methodology combines the technical rigor of the classical school with an accessible approach for beginner and advanced adults.',
+  balletTeacher2Specialty: 'Ballet & Modern Jazz & Contemporary',
+  balletTeacher2Bio:
+    'Alejandro Miñoso, Cuban teacher trained at the ENA (National School of Art of Cuba), former soloist of the prestigious Carlos Acosta company. His impeccable technique and pedagogical ability make every student feel progress from the first class.',
+  balletTeachersClosing:
+    'Two teachers, two complementary approaches. Daniel for intermediate and advanced, Alejandro for beginners. The perfect combination for your ballet training.',
+
+  // ===== Schedule Section =====
+  balletScheduleTitle: 'Ballet class schedule',
+  balletScheduleSubtitle: 'Choose your level and start this week',
+
+  // ===== Video Section =====
+  balletVideoTitle: 'Discover our Ballet classes',
+  balletVideoDesc: "See what a real ballet class is like at Farray's Center",
+
+  // ===== Why Today Section =====
+  balletWhyTodayFullTitle: 'Why is today the best time to start Ballet?',
+  balletWhyToday1:
+    'Your body right now is in the best possible moment to start. Tomorrow will be one day later. Next week will be seven days later. Ballet rewards consistency, and consistency starts with the first step.',
+  balletWhyToday2:
+    'Adults who start ballet have an advantage children do not have: developed body awareness and intrinsic motivation. You know what you want and why you want it.',
+  balletWhyToday3:
+    'Every ballet class is an investment in your postural health for the next 30, 40, 50 years of your life. There is no better time than now.',
+  balletWhyTodayClosing1: "At Farray's we don't teach steps. We transform bodies and minds.",
+  balletWhyTodayClosing2:
+    'Your first class is free. No commitment. Just you, the barre and the music.',
+
+  // ===== Final CTA Section =====
+  balletFinalCTATitle: "Join Barcelona's most technical Ballet classes",
+  balletFinalCTASubtitle: 'Take the first step.',
+  balletFinalCTADesc: 'Book your spot now and discover the elegance within you.',
+  balletFinalCTAFunny:
+    "Spoiler: after a few weeks, you'll start correcting your friends' posture. It's inevitable.",
+
+  // ===== FAQ Section =====
+  balletFaqTitle: 'Frequently Asked Questions about our Ballet classes in Barcelona',
+
+  // FAQs
+  balletFaqQ1: 'What exactly is classical ballet?',
+  balletFaqA1:
+    'Classical ballet is a form of stage dance that originated in the Italian Renaissance courts and developed in France. It is characterized by its codified technique (the 5 foot positions created by Beauchamp), elegant and precise movements, and French vocabulary. It is the technical basis of all other dance forms.',
+
+  balletFaqQ2: 'Can I start ballet as an adult with no prior experience?',
+  balletFaqA2:
+    "Absolutely. At Farray's we have specific classes for adult beginners. You don't need prior flexibility or any dance experience. Our teachers specialize in teaching adults who start from scratch.",
+
+  balletFaqQ3: 'What clothes and footwear do I need for ballet classes?',
+  balletFaqA3:
+    'To start, fitted clothing that allows your posture to be seen (tights, fitted leggings) and ballet slippers (the classic ones). For your first class you can come with socks and fitted comfortable clothes. We will guide you on the appropriate equipment.',
+
+  balletFaqQ4: 'Is ballet good physical exercise?',
+  balletFaqA4:
+    'Excellent. Ballet works all muscle groups, especially core stabilizers and deep muscles. It improves flexibility, strength, balance and coordination. One class burns approximately 300-400 calories and tones without creating muscle bulk.',
+
+  balletFaqQ5: 'What is the difference between classical and neoclassical ballet?',
+  balletFaqA5:
+    'Classical ballet follows traditional rules established in the 17th-19th centuries (codified positions, tutu, pointe, narrative). Neoclassical, developed in the 20th century by choreographers like Balanchine, maintains classical technique but with greater freedom of movement, simpler costumes and more abstract choreography.',
+
+  balletFaqQ6: 'What is the difference between Classical Ballet and Lyrical Contemporary?',
+  balletFaqA6:
+    'Classical ballet is based on a codified technique with precise positions and movements, pointe work, turnout and a formal aesthetic. Lyrical contemporary combines that technical foundation with greater expressive freedom, fluid movements, floor work and emotional connection to the music. At our academy we offer both styles so you can explore whichever one connects best with you.',
+
+  balletFaqQ7: "Who are the ballet teachers at Farray's?",
+  balletFaqA7:
+    'Daniel Sene teaches Intermediate Ballet on Mondays at 8pm. Alejandro Miñoso, Cuban teacher trained at the ENA and former Carlos Acosta soloist, teaches Beginner Ballet on Thursdays at 11am. Both combine technical rigor with an accessible approach for adults.',
+
+  balletFaqQ8: 'Can I try a Ballet class before enrolling?',
+  balletFaqA8:
+    'Depending on the season, the trial class for residents may be free or have a symbolic welcome price. For tourists, it is paid. If you like it and decide to stay, the amount is deducted from your first payment.',
+
+  balletFaqQ9: 'What ballet levels do you have?',
+  balletFaqA9:
+    'We currently offer two levels: Beginners (Thursdays 11am with Alejandro) for those starting from zero or with little experience, and Intermediate (Mondays 8pm with Daniel) for those who already master basic positions and fundamental barre exercises.',
+
+  balletFaqQ10: 'What if I miss a class due to work or commitments?',
+  balletFaqA10:
+    'If you have a membership and cancel a class, you have 30 days to make it up. Everything is managed from our app, conveniently and without complications.',
+
+  balletFaqQ11: 'What kind of music is used in ballet classes?',
+  balletFaqA11:
+    'Mainly classical music: Tchaikovsky, Chopin, Delibes, Minkus... The great composers of the ballet repertoire. The music is specifically designed for each exercise: adagio for slow movements, allegro for jumps, etc.',
+
+  balletFaqQ12: 'Can I sign up at any time of year?',
+  balletFaqA12:
+    'Yes, enrollment is open all year. There is no "course" with a fixed start date. You can join whenever you want and follow the class pace.',
+
+  balletFaqQ13: 'Do you organize performances or galas?',
+  balletFaqA13:
+    'Yes, we hold an annual gala at one of the most important theaters in Barcelona where all students who wish can participate. It is voluntary but highly recommended: performing on a real stage is part of the dancer experience.',
+
+  balletFaqQ14: 'Do you have any special discounts?',
+  balletFaqA14:
+    'Yes. We offer discounts if you sign up for more than one course. Check the website or ask us directly for more details.',
+
+  balletFaqQ15: 'Where is the academy located?',
+  balletFaqA15:
+    'We are located at Calle Entença 100, Barcelona (08015), between Plaza España and Sants. You can call us at <a href="tel:+34622247085">+34 622 247 085</a>, email us at <a href="mailto:info@farrayscenter.com">info@farrayscenter.com</a> or check all the information at <a href="https://www.farrayscenter.com" target="_blank" rel="noopener">www.farrayscenter.com</a>.',
+
+  balletFaqQ16: 'Do I need a lot of flexibility to do ballet?',
+  balletFaqA16:
+    "You don't need prior flexibility. Flexibility develops progressively with practice. The important thing is to start; elasticity will come with time and consistency. Our teachers adapt exercises to each body.",
+
+  balletFaqQ17: 'What do you achieve in our Ballet classes in Barcelona?',
+  balletFaqA17:
+    'Improve your dance technique with our Ballet classes. Acquire body awareness, notions of space and movement dynamics. Improve your motor coordination, memory, balance, posture and increase the tone and extension of your muscles. Transform your body and stay fit thanks to the demanding physical work this discipline requires.',
+
+  balletFaqQ18: 'How does the Ballet course work and who is it designed for?',
+  balletFaqA18:
+    'Our ballet classes offer specific technique training and body awareness, plus flexibility work. Classical dance contributes to developing habits of discipline, stimulating love for study and correct use of movement. The methodology challenges physical conditioning with multiple movements, working all muscle groups harmoniously.',
+
+  // ===== Accessibility & Schema =====
+  balletImageAlt: "Ballet Classes in Barcelona - Farray's Center",
+  balletCourseSchemaName: "Ballet Classes in Barcelona - Farray's Center",
+  balletCourseSchemaDesc:
+    'Classical ballet course for adults in Barcelona. Barre, center, jumps and turns technique. Beginner and intermediate levels. CID-UNESCO academy.',
+  balletCTAGroup: 'Booking actions',
+
+  // ===== HowTo Schema =====
+  balletHowToName: 'How to start dancing Ballet in Barcelona',
+  balletHowToDesc:
+    "Step by step guide to starting your Ballet classes at Farray's Center. From choosing your level to your first class.",
+  balletHowToSupply1: 'Fitted clothing (tights or leggings)',
+  balletHowToSupply2: 'Ballet slippers or socks',
+  balletHowToSupply3: 'Water bottle',
+  balletHowToStep1Name: 'Choose your level',
+  balletHowToStep1Text:
+    'Beginners (no or little experience) or Intermediate (you master basic positions). If in doubt, start with beginners.',
+  balletHowToStep2Name: 'Book your first class',
+  balletHowToStep2Text:
+    'Contact via WhatsApp at +34 622 247 085 or email info@farrayscenter.com to book your free trial class.',
+  balletHowToStep3Name: 'Prepare for the class',
+  balletHowToStep3Text:
+    'Come in fitted clothes that show your posture. Ballet slippers ideal, but you can start with socks.',
+  balletHowToStep4Name: 'Enjoy the barre',
+  balletHowToStep4Text:
+    'Class starts at the barre with warm-up exercises and basic technique. The teacher will guide you step by step.',
+  balletHowToStep5Name: 'Practice in the center',
+  balletHowToStep5Text:
+    "After barre, we work in the center of the room: balances, turns and small sequences. You're now a ballet dancer!",
+
+  // ===== DefinedTerm Schema =====
+  balletDefinedTermBallet:
+    'Ballet is a form of stage dance that originated in the Italian Renaissance courts and developed in France. It is characterized by codified technique, elegant movements and French vocabulary.',
+  balletDefinedTermDanzaClasica:
+    'Classical dance is synonymous with ballet. It refers to the form of dance based on academic technique developed in the European royal academies since the 17th century.',
+  balletDefinedTermBarra:
+    'The ballet barre is the wooden support fixed to the wall or freestanding that dancers use to support themselves during warm-up and technique exercises.',
+  balletDefinedTermPosiciones:
+    'The 5 ballet positions were codified by Pierre Beauchamp in 1700. They are the basis of all classical ballet movements and define the placement of feet and arms.',
+  balletDefinedTermPlie:
+    'Plié (French for "to bend") is a fundamental ballet movement consisting of bending the knees while keeping the back straight and knees over the toes.',
+
+  // ===== Event Schema =====
+  balletEventName: "Ballet Class in Barcelona - Farray's Center",
+  balletEventDesc:
+    'Weekly Ballet classes with Daniel Sene (intermediate) and Alejandro Miñoso (beginners). Classical technique, barre, center and choreography. All levels welcome.',
+
+  // ===== Citable Statistics =====
+  balletStatistics:
+    'Scientific studies show that ballet improves bone density, posture, flexibility and reduces stress. It is one of the most complete exercises that exist.',
+  balletCitableFact1:
+    'A ballet class burns between 300 and 400 calories and tones all muscle groups, especially core, legs and glutes.',
+  balletCitableFact2:
+    'Studies published in Journal of Dance Medicine & Science show that ballet improves bone density and prevents osteoporosis.',
+  balletCitableFact3:
+    "Farray's International Dance Center is a CID-UNESCO academy with over 500 five-star Google reviews.",
 };

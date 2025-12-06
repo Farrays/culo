@@ -29,6 +29,7 @@ const routes = [
   { path: 'clases/danzas-urbanas-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/sexy-style-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/modern-jazz-barcelona', priority: '0.8', changefreq: 'monthly' },
+  { path: 'clases/ballet-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases/entrenamiento-bailarines-barcelona', priority: '0.8', changefreq: 'monthly' },
   { path: 'clases-particulares-baile', priority: '0.7', changefreq: 'monthly' },
   { path: 'sobre-nosotros', priority: '0.7', changefreq: 'monthly' },
