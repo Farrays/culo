@@ -398,11 +398,11 @@ const BalletPage: React.FC = () => {
       </nav>
 
       <main id="main-content" className="pt-20 md:pt-24" role="main">
-        {/* HERO Section */}
+        {/* 1. HERO Section */}
         <section
           id="ballet-hero"
           aria-labelledby="hero-title"
-          className="relative text-center py-32 md:py-40 overflow-hidden flex items-center justify-center min-h-[600px]"
+          className="relative text-center py-24 md:py-32 overflow-hidden flex items-center justify-center min-h-[600px]"
         >
           {/* Background - Elegant Rose/Pink tones for Ballet */}
           <div className="absolute inset-0 bg-black">
@@ -463,8 +463,8 @@ const BalletPage: React.FC = () => {
               </div>
 
               {/* Key Stats */}
-              <div className="mt-16">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
+              <div className="mt-12">
+                <div className="grid grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
                   {/* 60 Minutos */}
                   <AnimateOnScroll delay={0}>
                     <div className="text-center">
@@ -481,23 +481,8 @@ const BalletPage: React.FC = () => {
                     </div>
                   </AnimateOnScroll>
 
-                  {/* Técnica */}
-                  <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
-                    <div className="text-center">
-                      <div className="mb-2 flex justify-center">
-                        <FlameIcon className="w-10 h-10 text-primary-accent" />
-                      </div>
-                      <div className="text-4xl md:text-5xl font-black mb-1 holographic-text">
-                        {t('balletTechniqueStat')}
-                      </div>
-                      <div className="text-sm md:text-base text-neutral/90 font-semibold mt-1">
-                        {t('balletEmpowerment')}
-                      </div>
-                    </div>
-                  </AnimateOnScroll>
-
                   {/* ~400 Calorías */}
-                  <AnimateOnScroll delay={2 * ANIMATION_DELAYS.STAGGER_SMALL}>
+                  <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
                     <div className="text-center">
                       <div className="mb-2 flex justify-center">
                         <FlameIcon className="w-10 h-10 text-primary-accent" />
@@ -511,19 +496,17 @@ const BalletPage: React.FC = () => {
                     </div>
                   </AnimateOnScroll>
 
-                  {/* 300+ años de historia */}
-                  <AnimateOnScroll delay={3 * ANIMATION_DELAYS.STAGGER_SMALL}>
+                  {/* 100% técnica cubana */}
+                  <AnimateOnScroll delay={2 * ANIMATION_DELAYS.STAGGER_SMALL}>
                     <div className="text-center">
                       <div className="mb-2 flex justify-center">
                         <HeartIcon className="w-10 h-10 text-primary-accent" />
                       </div>
-                      <AnimatedCounter
-                        target={300}
-                        suffix="+"
-                        className="text-4xl md:text-5xl font-black mb-1 holographic-text"
-                      />
+                      <div className="text-4xl md:text-5xl font-black mb-1 holographic-text">
+                        100%
+                      </div>
                       <div className="text-sm md:text-base text-neutral/90 font-semibold">
-                        {t('balletHistoryStat')}
+                        {t('balletCubanTechnique')}
                       </div>
                     </div>
                   </AnimateOnScroll>
@@ -533,8 +516,8 @@ const BalletPage: React.FC = () => {
           </div>
         </section>
 
-        {/* What is Ballet Section */}
-        <section aria-labelledby="what-is-title" className="py-20 md:py-32 bg-primary-dark/10">
+        {/* 2. What is Ballet Section - Micro presentación */}
+        <section aria-labelledby="what-is-title" className="py-12 md:py-20 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -586,270 +569,19 @@ const BalletPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Cultural History - Expandable (with scientific benefits included) */}
-        <CulturalHistorySection
-          titleKey=""
-          shortDescKey="balletCulturalShort"
-          fullHistoryKey="balletCulturalFull"
-          readMoreText={t('readMore')}
-          readLessText={t('readLess')}
+        {/* 3. Schedule - Horarios */}
+        <ScheduleSection
+          titleKey="balletScheduleTitle"
+          subtitleKey="balletScheduleSubtitle"
+          schedules={schedules}
           t={t}
         />
 
-        {/* Identification Section - ¿Te identificas? */}
-        <section aria-labelledby="identify-title" className="pt-8 pb-16 md:pt-12 md:pb-24 bg-black">
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-16 max-w-4xl mx-auto">
-                <h2
-                  id="identify-title"
-                  className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text"
-                >
-                  {t('balletIdentifyTitle')}
-                </h2>
-              </div>
-            </AnimateOnScroll>
-
-            <ul
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-12 list-none"
-              role="list"
-              aria-label={t('balletIdentifyListLabel')}
-            >
-              {[1, 2, 3, 4, 5, 6].map((num, index) => (
-                <AnimateOnScroll
-                  key={num}
-                  as="li"
-                  delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
-                  className="group relative h-full min-h-[140px] flex items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [perspective:1000px] [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow motion-reduce:transform-none motion-reduce:transition-colors"
-                >
-                  <div
-                    className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300"
-                    aria-hidden="true"
-                  >
-                    <CheckIcon className="text-primary-accent" size="sm" />
-                  </div>
-                  <p className="text-neutral/90 leading-relaxed">{t(`balletIdentify${num}`)}</p>
-                </AnimateOnScroll>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* Necesitas apuntarte Section */}
-        <section className="py-20 md:py-32 bg-primary-dark/10">
-          <div className="container mx-auto px-6">
-            {/* Texto de transición pequeño */}
-            <AnimateOnScroll>
-              <div className="text-center mb-8">
-                <p className="text-sm text-neutral/75 italic max-w-2xl mx-auto">
-                  {t('balletIdentifyTransition')}
-                </p>
-              </div>
-            </AnimateOnScroll>
-
-            <AnimateOnScroll>
-              <div className="text-center mb-12 max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
-                  {t('balletNeedEnrollTitle')}
-                </h2>
-              </div>
-            </AnimateOnScroll>
-
-            <AnimateOnScroll>
-              <div className="max-w-3xl mx-auto text-center space-y-6">
-                <p className="text-xl font-semibold holographic-text">
-                  {t('balletIdentifyAgitate1')}
-                </p>
-                <p className="text-lg text-neutral/90">{t('balletIdentifySolution')}</p>
-                <p className="text-xl text-neutral/90 italic">{t('balletIdentifyClosing')}</p>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* Transformation Section - Benefits */}
-        <section aria-labelledby="transform-title" className="py-12 md:py-16 bg-primary-dark/10">
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-16 max-w-4xl mx-auto">
-                <h2
-                  id="transform-title"
-                  className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
-                >
-                  {t('balletTransformTitle')}
-                </h2>
-              </div>
-            </AnimateOnScroll>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto mb-12">
-              {[1, 2, 3, 4, 5, 6].map((num, index) => (
-                <AnimateOnScroll
-                  key={num}
-                  delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
-                  className="[perspective:1000px]"
-                >
-                  <div className="group h-full min-h-[220px] p-5 sm:p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
-                    <div className="text-5xl sm:text-6xl font-black text-primary-accent mb-4 holographic-text">
-                      {num}
-                    </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-neutral mb-3">
-                      {t(`balletTransform${num}Title`)}
-                    </h3>
-                    <p className="text-neutral/90 leading-relaxed text-sm sm:text-base">
-                      {t(`balletTransform${num}Desc`)}
-                    </p>
-                  </div>
-                </AnimateOnScroll>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Farray's Section */}
-        <section className="py-20 md:py-32 bg-black">
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-12 max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('balletTransformCTA')}
-                </h2>
-              </div>
-            </AnimateOnScroll>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-16">
-              {/* Orden: 1-UNESCO, 7-Maestros ENA, 3-Ambiente, 5-Multidisciplinar, 4-Instalaciones, 2-Ubicación, 6-Gala (centrada) */}
-              {[1, 7, 3, 5, 4, 2, 6].map((num, index) => (
-                <AnimateOnScroll
-                  key={num}
-                  delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
-                  className={`[perspective:1000px] ${index === 6 ? 'lg:col-start-2' : ''}`}
-                >
-                  <div className="group h-full min-h-[160px] p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
-                    <div className="flex items-start gap-3 sm:gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
-                        <CheckCircleIcon className="w-6 h-6 text-primary-accent" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-neutral mb-2">
-                          {t(`balletWhyChoose${num}Title`)}
-                        </h3>
-                        <p className="text-neutral/90 text-sm leading-relaxed">
-                          {t(`balletWhyChoose${num}Desc`)}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </AnimateOnScroll>
-              ))}
-            </div>
-
-            {/* Trust Bar - Stats */}
-            <AnimateOnScroll>
-              <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 max-w-5xl mx-auto">
-                <div className="text-center">
-                  <AnimatedCounter
-                    target={8}
-                    suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
-                  />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
-                    {t('yearsExperience')}
-                  </p>
-                </div>
-                <div className="text-center">
-                  <AnimatedCounter
-                    target={1500}
-                    suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
-                  />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
-                    {t('activeStudents')}
-                  </p>
-                </div>
-                <div className="text-center">
-                  <AnimatedCounter
-                    target={15000}
-                    suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
-                  />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
-                    {t('satisfiedStudents')}
-                  </p>
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* Logos Section - Nos has podido ver en */}
-        <section className="py-16 md:py-20 bg-primary-dark/10">
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-12 max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
-                  {t('balletLogosTitle')}
-                </h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-5xl mx-auto items-center mb-8">
-                  <div className="flex flex-col items-center gap-3 p-6 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105">
-                    <div className="w-20 h-20 flex items-center justify-center overflow-hidden rounded-lg">
-                      <img
-                        src="/images/cid-unesco-logo.webp"
-                        alt="CID UNESCO - Consejo Internacional de la Danza"
-                        loading="lazy"
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <div className="text-neutral/90 font-bold text-sm text-center">CID UNESCO</div>
-                  </div>
-                  <div className="flex flex-col items-center gap-3 p-6 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105">
-                    <div className="w-20 h-20 flex items-center justify-center overflow-hidden rounded-lg">
-                      <img
-                        src="/images/Street-Dance-2.webp"
-                        alt="Street Dance 2 - Película de danza urbana"
-                        loading="lazy"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="text-neutral/90 font-bold text-sm text-center">
-                      Street Dance 2
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-center gap-3 p-6 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105">
-                    <div className="w-20 h-20 flex items-center justify-center overflow-hidden rounded-lg">
-                      <img
-                        src="/images/the-dancer-espectaculo-baile-cuadrada.webp"
-                        alt="The Dancer - Espectáculo de baile"
-                        loading="lazy"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="text-neutral/90 font-bold text-sm text-center">The Dancer</div>
-                  </div>
-                  <div className="flex flex-col items-center gap-3 p-6 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105">
-                    <div className="w-20 h-20 flex items-center justify-center overflow-hidden rounded-lg">
-                      <img
-                        src="/images/telecinco-logo.webp"
-                        alt="Telecinco - Cadena de televisión española"
-                        loading="lazy"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="text-neutral/90 font-bold text-sm text-center">TV 5</div>
-                  </div>
-                </div>
-                <p className="text-4xl md:text-5xl font-black tracking-tighter holographic-text">
-                  {t('balletLogosIntlFestivalsText')}
-                </p>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* Teacher Section - Daniel Sene & Alejandro Miñoso */}
-        <section id="teachers" className="py-20 md:py-32 bg-black relative overflow-hidden">
+        {/* 4. Teacher Section - Profesores */}
+        <section id="teachers" className="py-12 md:py-20 bg-black relative overflow-hidden">
           <div className="container mx-auto px-6 relative z-10">
             <AnimateOnScroll>
-              <div className="text-center mb-16 max-w-4xl mx-auto">
+              <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text">
                   {t('balletTeachersTitle')}
                 </h2>
@@ -930,38 +662,290 @@ const BalletPage: React.FC = () => {
             </div>
 
             <AnimateOnScroll>
-              <p className="text-center text-lg text-neutral/90 mt-12 max-w-2xl mx-auto">
+              <p className="text-center text-lg text-neutral/90 mt-10 max-w-2xl mx-auto">
                 {t('balletTeachersClosing')}
               </p>
             </AnimateOnScroll>
           </div>
         </section>
 
-        {/* Schedule */}
-        <ScheduleSection
-          titleKey="balletScheduleTitle"
-          subtitleKey="balletScheduleSubtitle"
-          schedules={schedules}
-          t={t}
-        />
-
-        {/* Testimonials */}
-        <section
-          id="testimonials"
-          aria-labelledby="testimonials-title"
-          className="py-20 md:py-32 bg-black"
-        >
+        {/* 5. Identification Section - Puntos de dolor */}
+        <section aria-labelledby="identify-title" className="py-12 md:py-20 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-12 max-w-4xl mx-auto">
                 <h2
-                  id="testimonials-title"
+                  id="identify-title"
                   className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text"
+                >
+                  {t('balletIdentifyTitle')}
+                </h2>
+              </div>
+            </AnimateOnScroll>
+
+            <ul
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-10 list-none"
+              role="list"
+              aria-label={t('balletIdentifyListLabel')}
+            >
+              {[1, 2, 3, 4, 5, 6].map((num, index) => (
+                <AnimateOnScroll
+                  key={num}
+                  as="li"
+                  delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
+                  className="group relative h-full min-h-[140px] flex items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [perspective:1000px] [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow motion-reduce:transform-none motion-reduce:transition-colors"
+                >
+                  <div
+                    className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300"
+                    aria-hidden="true"
+                  >
+                    <CheckIcon className="text-primary-accent" size="sm" />
+                  </div>
+                  <p className="text-neutral/90 leading-relaxed">{t(`balletIdentify${num}`)}</p>
+                </AnimateOnScroll>
+              ))}
+            </ul>
+
+            {/* Texto de transición + Necesitas apuntarte */}
+            <AnimateOnScroll>
+              <div className="text-center mb-6">
+                <p className="text-sm text-neutral/75 italic max-w-2xl mx-auto">
+                  {t('balletIdentifyTransition')}
+                </p>
+              </div>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll>
+              <div className="text-center mb-8 max-w-4xl mx-auto">
+                <h3 className="text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-6 holographic-text">
+                  {t('balletNeedEnrollTitle')}
+                </h3>
+              </div>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll>
+              <div className="max-w-3xl mx-auto text-center space-y-4">
+                <p className="text-xl font-semibold holographic-text">
+                  {t('balletIdentifyAgitate1')}
+                </p>
+                <p className="text-lg text-neutral/90">{t('balletIdentifySolution')}</p>
+                <p className="text-xl text-neutral/90 italic">{t('balletIdentifyClosing')}</p>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* 6. Transformation Section - Imagina tu Antes y Después */}
+        <section aria-labelledby="transform-title" className="py-12 md:py-20 bg-black">
+          <div className="container mx-auto px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-12 max-w-4xl mx-auto">
+                <h2
+                  id="transform-title"
+                  className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                >
+                  {t('balletTransformTitle')}
+                </h2>
+              </div>
+            </AnimateOnScroll>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+              {[1, 2, 3, 4, 5, 6].map((num, index) => (
+                <AnimateOnScroll
+                  key={num}
+                  delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
+                  className="[perspective:1000px]"
+                >
+                  <div className="group h-full min-h-[220px] p-5 sm:p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                    <div className="text-5xl sm:text-6xl font-black text-primary-accent mb-4 holographic-text">
+                      {num}
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold text-neutral mb-3">
+                      {t(`balletTransform${num}Title`)}
+                    </h3>
+                    <p className="text-neutral/90 leading-relaxed text-sm sm:text-base">
+                      {t(`balletTransform${num}Desc`)}
+                    </p>
+                  </div>
+                </AnimateOnScroll>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 7. Why Choose Farray's + Logos Section - Autoridad */}
+        <section className="py-12 md:py-20 bg-primary-dark/10">
+          <div className="container mx-auto px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-10 max-w-4xl mx-auto">
+                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
+                  {t('balletTransformCTA')}
+                </h2>
+              </div>
+            </AnimateOnScroll>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-12">
+              {/* Orden: 1-UNESCO, 7-Maestros ENA, 3-Ambiente, 5-Multidisciplinar, 4-Instalaciones, 2-Ubicación, 6-Gala (centrada) */}
+              {[1, 7, 3, 5, 4, 2, 6].map((num, index) => (
+                <AnimateOnScroll
+                  key={num}
+                  delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
+                  className={`[perspective:1000px] ${index === 6 ? 'lg:col-start-2' : ''}`}
+                >
+                  <div className="group h-full min-h-[160px] p-4 sm:p-6 bg-black/30 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
+                        <CheckCircleIcon className="w-6 h-6 text-primary-accent" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-neutral mb-2">
+                          {t(`balletWhyChoose${num}Title`)}
+                        </h3>
+                        <p className="text-neutral/90 text-sm leading-relaxed">
+                          {t(`balletWhyChoose${num}Desc`)}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </AnimateOnScroll>
+              ))}
+            </div>
+
+            {/* Trust Bar - Stats */}
+            <AnimateOnScroll>
+              <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 max-w-5xl mx-auto mb-12">
+                <div className="text-center">
+                  <AnimatedCounter
+                    target={8}
+                    suffix="+"
+                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
+                  />
+                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                    {t('yearsExperience')}
+                  </p>
+                </div>
+                <div className="text-center">
+                  <AnimatedCounter
+                    target={1500}
+                    suffix="+"
+                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
+                  />
+                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                    {t('activeStudents')}
+                  </p>
+                </div>
+                <div className="text-center">
+                  <AnimatedCounter
+                    target={15000}
+                    suffix="+"
+                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
+                  />
+                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                    {t('satisfiedStudents')}
+                  </p>
+                </div>
+              </div>
+            </AnimateOnScroll>
+
+            {/* Logos - Nos has podido ver en */}
+            <AnimateOnScroll>
+              <div className="text-center max-w-4xl mx-auto">
+                <h3 className="text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-8 holographic-text">
+                  {t('balletLogosTitle')}
+                </h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto items-center mb-6">
+                  <div className="flex flex-col items-center gap-3 p-4 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105">
+                    <div className="w-16 h-16 flex items-center justify-center overflow-hidden rounded-lg">
+                      <img
+                        src="/images/cid-unesco-logo.webp"
+                        alt="CID UNESCO - Consejo Internacional de la Danza"
+                        loading="lazy"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div className="text-neutral/90 font-bold text-sm text-center">CID UNESCO</div>
+                  </div>
+                  <div className="flex flex-col items-center gap-3 p-4 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105">
+                    <div className="w-16 h-16 flex items-center justify-center overflow-hidden rounded-lg">
+                      <img
+                        src="/images/Street-Dance-2.webp"
+                        alt="Street Dance 2 - Película de danza urbana"
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="text-neutral/90 font-bold text-sm text-center">
+                      Street Dance 2
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center gap-3 p-4 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105">
+                    <div className="w-16 h-16 flex items-center justify-center overflow-hidden rounded-lg">
+                      <img
+                        src="/images/the-dancer-espectaculo-baile-cuadrada.webp"
+                        alt="The Dancer - Espectáculo de baile"
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="text-neutral/90 font-bold text-sm text-center">The Dancer</div>
+                  </div>
+                  <div className="flex flex-col items-center gap-3 p-4 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105">
+                    <div className="w-16 h-16 flex items-center justify-center overflow-hidden rounded-lg">
+                      <img
+                        src="/images/telecinco-logo.webp"
+                        alt="Telecinco - Cadena de televisión española"
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="text-neutral/90 font-bold text-sm text-center">TV 5</div>
+                  </div>
+                </div>
+                <p className="text-3xl md:text-4xl font-black tracking-tighter holographic-text">
+                  {t('balletLogosIntlFestivalsText')}
+                </p>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* 8. Why Today Section */}
+        <section className="py-12 md:py-20 bg-black">
+          <div className="container mx-auto px-6">
+            <AnimateOnScroll>
+              <div className="max-w-3xl mx-auto text-center space-y-5">
+                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-6 holographic-text">
+                  {t('balletWhyTodayFullTitle')}
+                </h2>
+                <p className="text-xl text-neutral/90">{t('balletWhyToday1')}</p>
+                <p className="text-xl text-neutral/90">{t('balletWhyToday2')}</p>
+                <p className="text-xl text-neutral/90">{t('balletWhyToday3')}</p>
+                <p className="text-2xl font-bold holographic-text mt-6">
+                  {t('balletWhyTodayClosing1')}
+                </p>
+                <p className="text-lg text-neutral/90 italic">{t('balletWhyTodayClosing2')}</p>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* 10. Testimonials */}
+        <section
+          id="testimonials"
+          aria-labelledby="testimonials-title"
+          className="py-12 md:py-20 bg-primary-dark/10"
+        >
+          <div className="container mx-auto px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-10 max-w-4xl mx-auto">
+                <h2
+                  id="testimonials-title"
+                  className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-6 holographic-text"
                 >
                   {t('testimonialsNotRequested')}
                 </h2>
                 <div className="inline-block">
-                  <div className="mb-4 text-3xl font-black text-neutral">{t('excellent')}</div>
+                  <div className="mb-3 text-3xl font-black text-neutral">{t('excellent')}</div>
                   <div className="flex items-center justify-center gap-1 mb-2">
                     <StarRating size="lg" />
                   </div>
@@ -973,7 +957,7 @@ const BalletPage: React.FC = () => {
               </div>
             </AnimateOnScroll>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
               {balletTestimonials.map((testimonial, index) => (
                 <AnimateOnScroll
                   key={testimonial.id}
@@ -1003,28 +987,8 @@ const BalletPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Why Today Section */}
-        <section className="py-20 md:py-32 bg-black">
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="max-w-3xl mx-auto text-center space-y-6">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
-                  {t('balletWhyTodayFullTitle')}
-                </h2>
-                <p className="text-xl text-neutral/90">{t('balletWhyToday1')}</p>
-                <p className="text-xl text-neutral/90">{t('balletWhyToday2')}</p>
-                <p className="text-xl text-neutral/90">{t('balletWhyToday3')}</p>
-                <p className="text-2xl font-bold holographic-text mt-8">
-                  {t('balletWhyTodayClosing1')}
-                </p>
-                <p className="text-lg text-neutral/90 italic">{t('balletWhyTodayClosing2')}</p>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* Final CTA Section */}
-        <section id="final-cta" className="relative py-12 sm:py-20 md:py-32 overflow-hidden">
+        {/* 11. Final CTA Section */}
+        <section id="final-cta" className="relative py-12 sm:py-16 md:py-24 overflow-hidden">
           {/* Background like Hero - Rose tones */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-rose-900/30 via-black to-black"></div>
@@ -1036,19 +1000,19 @@ const BalletPage: React.FC = () => {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
                   {t('balletFinalCTATitle')}
                 </h2>
-                <p className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 holographic-text">
+                <p className="text-xl sm:text-2xl font-bold mb-4 sm:mb-5 holographic-text">
                   {t('balletFinalCTASubtitle')}
                 </p>
-                <p className="text-lg sm:text-xl text-neutral/90 mb-6 sm:mb-8 leading-relaxed">
+                <p className="text-lg sm:text-xl text-neutral/90 mb-5 sm:mb-6 leading-relaxed">
                   {t('balletFinalCTADesc')}
                 </p>
-                <p className="text-base sm:text-lg text-neutral/90 mb-8 sm:mb-10 italic">
+                <p className="text-base sm:text-lg text-neutral/90 mb-6 sm:mb-8 italic">
                   {t('balletFinalCTAFunny')}
                 </p>
 
                 {/* CTA Final - Enhanced UX & A11y */}
                 <div
-                  className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8"
+                  className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
                   role="group"
                   aria-label={t('balletCTAGroup')}
                 >
@@ -1082,7 +1046,17 @@ const BalletPage: React.FC = () => {
           </div>
         </section>
 
-        {/* FAQ */}
+        {/* 12. Cultural History - Contenido profundo SEO */}
+        <CulturalHistorySection
+          titleKey="balletCulturalHistoryTitle"
+          shortDescKey="balletCulturalShort"
+          fullHistoryKey="balletCulturalFull"
+          readMoreText={t('readMore')}
+          readLessText={t('readLess')}
+          t={t}
+        />
+
+        {/* 13. FAQ */}
         <FAQSection title={t('balletFaqTitle')} faqs={balletFaqs} pageUrl={pageUrl} />
       </main>
     </>

@@ -4857,7 +4857,7 @@ Farray's International Dance Center est noté près de **5/5 sur Google**, avec 
   balletBreadcrumbCurrent: 'Cours de Ballet',
 
   // ===== Hero Section =====
-  balletHeroTitle: 'Cours de Ballet Classique à Barcelone (École Cubaine)',
+  balletHeroTitle: 'Cours de Ballet Classique à Barcelone',
   balletHeroSubtitle: 'Posture, force et élégance avec des maîtres formés à Cuba',
   balletHeroDesc:
     'Apprenez le ballet avec la méthodologie cubaine qui a formé des légendes comme Carlos Acosta : rigueur, musicalité et expression pour améliorer posture, lignes et confiance – débutant ou avancé.',
@@ -4869,12 +4869,13 @@ Farray's International Dance Center est noté près de **5/5 sur Google**, avec 
   balletConfidenceGuaranteed: 'Élégance garantie',
   balletCaloriesStat: 'Calories Brûlées',
   balletHistoryStat: "Ans d'Histoire",
+  balletCubanTechnique: 'Technique Cubaine',
 
   // ===== CTAs =====
   balletCTA1: 'Devenez Membre Maintenant',
   balletCTA1Subtext: 'Places limitées ce mois-ci',
   balletCTA2: "Réservez votre Cours d'Essai",
-  balletCTA2Subtext: 'Premier cours gratuit',
+  balletCTA2Subtext: 'Valable pour une durée limitée',
 
   // ===== What is Ballet Section =====
   balletWhatIsTitle: "Qu'est-ce que le Ballet et comment transforme-t-il des vies ?",
@@ -4892,6 +4893,7 @@ Farray's International Dance Center est noté près de **5/5 sur Google**, avec 
   balletWhatIsQuestionAnswer: "Il n'est jamais trop tard.",
 
   // ===== Cultural History =====
+  balletCulturalHistoryTitle: 'Voulez-vous en savoir plus sur le ballet ?',
   balletCulturalShort:
     "Le ballet est né dans les cours italiennes de la Renaissance et s'est perfectionné en France sous Louis XIV, qui a fondé en 1661 la première école formelle dédiée à la danse professionnelle. Cette discipline a résisté aux guerres, aux révolutions et aux changements sociaux car elle offre quelque chose d'unique : la transformation intégrale de l'être humain par le mouvement.",
   balletCulturalFull: `### Origines du Ballet : Des Cours à la Scène
@@ -5019,7 +5021,7 @@ Tous les termes du ballet sont en français, héritage de son développement à 
 
   // ===== Teachers Section =====
   balletTeachersTitle: 'Rencontrez vos professeurs de Ballet',
-  balletTeachersSubtitle: 'Technique classique, expérience internationale',
+  balletTeachersSubtitle: 'École Cubaine, expérience internationale',
   balletTeacher1Specialty: 'Ballet Classique & Contemporain',
   balletTeacher1Bio:
     "Daniel Sene est spécialiste du ballet classique formé à l'École Nationale de Ballet de Cuba, la même où Carlos Acosta s'est formé. Sa méthodologie combine la rigueur technique de l'école classique avec une approche accessible pour adultes débutants et avancés.",
@@ -5030,7 +5032,7 @@ Tous les termes du ballet sont en français, héritage de son développement à 
     "Deux maîtres, deux approches complémentaires. Daniel pour l'intermédiaire et avancé, Alejandro pour les débutants. La combinaison parfaite pour votre formation en ballet.",
 
   // ===== Schedule Section =====
-  balletScheduleTitle: 'Horaires des cours de Ballet',
+  balletScheduleTitle: 'Horaires de nos cours de Ballet',
   balletScheduleSubtitle: 'Choisissez votre niveau et commencez cette semaine',
 
   // ===== Video Section =====
@@ -5040,15 +5042,14 @@ Tous les termes du ballet sont en français, héritage de son développement à 
   // ===== Why Today Section =====
   balletWhyTodayFullTitle: "Pourquoi aujourd'hui est le meilleur moment pour commencer le Ballet ?",
   balletWhyToday1:
-    'Votre corps en ce moment est dans le meilleur état possible pour commencer. Demain sera un jour plus tard. La semaine prochaine sera sept jours plus tard. Le ballet récompense la constance, et la constance commence par le premier pas.',
+    'Parce que vous attendez toujours « le moment parfait » pour vous inscrire au ballet… mais la seule chose parfaite est de commencer aujourd\'hui.',
   balletWhyToday2:
-    "Les adultes qui commencent le ballet ont un avantage que les enfants n'ont pas : une conscience corporelle développée et une motivation intrinsèque. Vous savez ce que vous voulez et pourquoi vous le voulez.",
+    "Parce que vous n'êtes qu'à UN seul cours de ressentir tous les bienfaits du ballet et de vous sentir mieux qu'hier.",
   balletWhyToday3:
-    "Chaque cours de ballet est un investissement dans votre santé posturale pour les 30, 40, 50 prochaines années de votre vie. Il n'y a pas de meilleur moment que maintenant.",
-  balletWhyTodayClosing1:
-    "Chez Farray's, nous n'enseignons pas des pas. Nous transformons corps et esprits.",
+    "Parce que ce n'est pas une question de bien danser, mais de se sentir bien en dansant.",
+  balletWhyTodayClosing1: "Chez Farray's, nous ne vendons pas des cours. Nous créons des expériences.",
   balletWhyTodayClosing2:
-    'Votre premier cours est gratuit. Sans engagement. Juste vous, la barre et la musique.',
+    'Nous vous attendons avec des maîtres cubains de haut niveau, une atmosphère calme et exigeante à la fois, et une barre qui, cours après cours, va transformer votre corps.',
 
   // ===== Final CTA Section =====
   balletFinalCTATitle: 'Rejoignez les cours de Ballet les plus techniques de Barcelone',
