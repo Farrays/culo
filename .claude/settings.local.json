@@ -73,7 +73,8 @@
       "Bash(curl:*)",
       "Bash(node prerender.mjs:*)",
       "Bash(node:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(npm run lint:fix:*)"
     ],
     "deny": [],
     "ask": []
