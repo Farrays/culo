@@ -626,11 +626,11 @@ const criticalChunks = {
   reactVendor: assetFiles.find(f => f.startsWith('react-vendor-') && f.endsWith('.js')),
   routerVendor: assetFiles.find(f => f.startsWith('router-vendor-') && f.endsWith('.js')),
   mainCss: assetFiles.find(f => f.startsWith('style-') && f.endsWith('.css')),
-  // Locale-specific i18n chunks
-  es: assetFiles.find(f => f.startsWith('es-') && f.endsWith('.js')),
-  ca: assetFiles.find(f => f.startsWith('ca-') && f.endsWith('.js')),
-  en: assetFiles.find(f => f.startsWith('en-') && f.endsWith('.js')),
-  fr: assetFiles.find(f => f.startsWith('fr-') && f.endsWith('.js')),
+  // Locale-specific i18n chunks (named i18n-{locale}-*.js by vite.config.ts)
+  es: assetFiles.find(f => f.startsWith('i18n-es-') && f.endsWith('.js')),
+  ca: assetFiles.find(f => f.startsWith('i18n-ca-') && f.endsWith('.js')),
+  en: assetFiles.find(f => f.startsWith('i18n-en-') && f.endsWith('.js')),
+  fr: assetFiles.find(f => f.startsWith('i18n-fr-') && f.endsWith('.js')),
 };
 
 // Generate preload hints for critical assets (common to all pages)
