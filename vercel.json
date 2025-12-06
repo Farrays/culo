@@ -49,7 +49,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'sha256-lE663GA/AVh64NJNFLdYmeZ7ofg1KbcgSjiXS/ApOz8=' 'sha256-MhtPZXr7+LpJUY5qtMutB+qWfQtMaPccfe7QXtCcEYc=' https://www.googletagmanager.com https://www.google-analytics.com https://browser.sentry-cdn.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://*.sentry.io https://www.google-analytics.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self';"
+          "value": "default-src 'self'; script-src 'self' 'sha256-MhtPZXr7+LpJUY5qtMutB+qWfQtMaPccfe7QXtCcEYc=' 'sha256-rCzSmNCIl1NJWcHIEy6e0/vPauItKFYiBux17aVmE5E=' 'sha256-nLSiNfBCmVNw1A/3hLrEBVKH7Q5+lHqp2xUKBBXb8+A=' 'sha256-BalffTW4u/osO9GQA/t2ZTaYxty5CtvcccqT8ivwwIo=' 'sha256-A+vzvg9FqpPRh5i4moEMXeidCBdCGgbzBuXy/94sUzk=' https://www.googletagmanager.com https://www.google-analytics.com https://browser.sentry-cdn.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://*.sentry.io https://www.google-analytics.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self';"
         }
       ]
     },
