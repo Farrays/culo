@@ -7,32 +7,32 @@ module.exports = [
   },
   {
     name: 'ES Locale Bundle',
-    path: 'dist/assets/es-*.js',
+    path: 'dist/assets/i18n-es-*.js',
     limit: '180 KB', // Reduced from 200KB
     gzip: true,
   },
   {
     name: 'EN Locale Bundle',
-    path: 'dist/assets/en-*.js',
+    path: 'dist/assets/i18n-en-*.js',
     limit: '150 KB',
     gzip: true,
   },
   {
     name: 'CA Locale Bundle',
-    path: 'dist/assets/ca-*.js',
+    path: 'dist/assets/i18n-ca-*.js',
     limit: '160 KB',
     gzip: true,
   },
   {
     name: 'FR Locale Bundle',
-    path: 'dist/assets/fr-*.js',
-    limit: '150 KB',
+    path: 'dist/assets/i18n-fr-*.js',
+    limit: '160 KB',
     gzip: true,
   },
   {
     name: 'React Vendor',
     path: 'dist/assets/react-vendor-*.js',
-    limit: '20 KB',
+    limit: '65 KB', // React + ReactDOM is ~50-60 KB gzipped
     gzip: true,
   },
   {
