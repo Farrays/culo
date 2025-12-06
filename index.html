@@ -68,11 +68,10 @@
       @keyframes spin{to{transform:rotate(360deg)}}.animate-spin{animation:spin 1s linear infinite}
     </style>
 
-    <!-- Font CSS - NON-BLOCKING (critical @font-face already in critical.css) -->
-    <link rel="stylesheet" href="/fonts/fonts.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
+    <!-- Font CSS (critical @font-face already in critical.css above) -->
+    <link rel="stylesheet" href="/fonts/fonts.css">
 
-    <!-- Main CSS: Vite injects during build, prerender.mjs makes it non-blocking -->
+    <!-- Main CSS: Vite injects during build -->
 
 
     <!-- Prefetch next likely navigation (with locale for static hosting) -->
