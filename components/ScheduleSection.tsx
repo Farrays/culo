@@ -12,6 +12,7 @@ interface ClassSchedule {
 }
 
 interface ScheduleSectionProps {
+  id?: string;
   titleKey: string;
   subtitleKey: string;
   schedules: ClassSchedule[];

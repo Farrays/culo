@@ -5043,12 +5043,13 @@ Tous les termes du ballet sont en français, héritage de son développement à 
   // ===== Why Today Section =====
   balletWhyTodayFullTitle: "Pourquoi aujourd'hui est le meilleur moment pour commencer le Ballet ?",
   balletWhyToday1:
-    'Parce que vous attendez toujours « le moment parfait » pour vous inscrire au ballet… mais la seule chose parfaite est de commencer aujourd\'hui.',
+    "Parce que vous attendez toujours « le moment parfait » pour vous inscrire au ballet… mais la seule chose parfaite est de commencer aujourd'hui.",
   balletWhyToday2:
     "Parce que vous n'êtes qu'à UN seul cours de ressentir tous les bienfaits du ballet et de vous sentir mieux qu'hier.",
   balletWhyToday3:
     "Parce que ce n'est pas une question de bien danser, mais de se sentir bien en dansant.",
-  balletWhyTodayClosing1: "Chez Farray's, nous ne vendons pas des cours. Nous créons des expériences.",
+  balletWhyTodayClosing1:
+    "Chez Farray's, nous ne vendons pas des cours. Nous créons des expériences.",
   balletWhyTodayClosing2:
     'Nous vous attendons avec des maîtres cubains de haut niveau, une atmosphère calme et exigeante à la fois, et une barre qui, cours après cours, va transformer votre corps.',
 

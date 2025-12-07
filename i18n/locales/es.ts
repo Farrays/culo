@@ -5739,8 +5739,7 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
     'Porque sigues esperando "el momento perfecto" para apuntarte a ballet… pero lo único perfecto es empezar hoy.',
   balletWhyToday2:
     'Porque estás a tan solo UNA clase de notar todos los beneficios del ballet y sentirte mejor que ayer.',
-  balletWhyToday3:
-    'Porque esto no va de bailar bien, sino de sentirte bien bailando.',
+  balletWhyToday3: 'Porque esto no va de bailar bien, sino de sentirte bien bailando.',
   balletWhyTodayClosing1: "En Farray's no vendemos clases. Creamos experiencias.",
   balletWhyTodayClosing2:
     'Te esperamos con maestros cubanos de alto nivel, un ambiente tranquilo y exigente a la vez y una barra que, clase a clase, te va a cambiar el cuerpo.',

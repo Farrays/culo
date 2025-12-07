@@ -5058,8 +5058,7 @@ All ballet terms are in French, a legacy of its development at the court of Vers
     'Because you keep waiting for "the perfect moment" to sign up for ballet... but the only perfect thing is to start today.',
   balletWhyToday2:
     "Because you're just ONE class away from feeling all the benefits of ballet and feeling better than yesterday.",
-  balletWhyToday3:
-    "Because this isn't about dancing well, it's about feeling good while dancing.",
+  balletWhyToday3: "Because this isn't about dancing well, it's about feeling good while dancing.",
   balletWhyTodayClosing1: "At Farray's we don't sell classes. We create experiences.",
   balletWhyTodayClosing2:
     'We await you with high-level Cuban teachers, an atmosphere that is both calm and demanding, and a barre that, class by class, will change your body.',

@@ -102,6 +102,7 @@ export default [
       '*.config.js',
       '*.config.mjs',
       'vite.config.ts',
+      'scripts/',
     ],
   },
 ];

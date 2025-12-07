@@ -41,7 +41,7 @@ const log = {
   title: (msg) => console.log(`\n${colors.bright}${colors.cyan}${msg}${colors.reset}\n`),
 };
 
-// 📝 Plantilla de metadatos para nuevas clases
+// 📝 Plantilla de metadatos para nuevas clases (reservado para uso futuro)
 const classTemplates = {
   bachata: {
     pillar1: { title: 'Sensualidad', desc: 'Aprende a bailar con conexión y elegancia', icon: 'Heart' },

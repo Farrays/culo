@@ -5088,8 +5088,7 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
     'Perquè segueixes esperant "el moment perfecte" per apuntar-te a ballet… però l\'únic perfecte és començar avui.',
   balletWhyToday2:
     'Perquè estàs a tan sols UNA classe de notar tots els beneficis del ballet i sentir-te millor que ahir.',
-  balletWhyToday3:
-    'Perquè això no va de ballar bé, sinó de sentir-te bé ballant.',
+  balletWhyToday3: 'Perquè això no va de ballar bé, sinó de sentir-te bé ballant.',
   balletWhyTodayClosing1: "A Farray's no venem classes. Creem experiències.",
   balletWhyTodayClosing2:
     "T'esperem amb mestres cubans d'alt nivell, un ambient tranquil i exigent alhora i una barra que, classe a classe, et canviarà el cos.",

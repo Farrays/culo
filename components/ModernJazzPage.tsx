@@ -817,7 +817,11 @@ const ModernJazzPage: React.FC = () => {
 
             {/* Trust Bar - Stats */}
             <AnimateOnScroll>
-              <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 max-w-5xl mx-auto" role="list" aria-label={t('trustStats')}>
+              <div
+                className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 max-w-5xl mx-auto"
+                role="list"
+                aria-label={t('trustStats')}
+              >
                 <div className="text-center" role="listitem">
                   <AnimatedCounter
                     target={8}
@@ -993,7 +997,7 @@ const ModernJazzPage: React.FC = () => {
                 <div className="inline-block">
                   <div className="mb-4 text-3xl font-black text-neutral">{t('excellent')}</div>
                   <div className="flex items-center justify-center gap-1 mb-2">
-                    <StarRating size={8} />
+                    <StarRating size="xl" />
                   </div>
                   <div className="text-sm text-neutral/70">
                     {t('basedOnReviews').replace('{count}', '505')}
@@ -1011,7 +1015,7 @@ const ModernJazzPage: React.FC = () => {
                 >
                   <div className="flex flex-col h-full min-h-[200px] p-4 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
                     <div className="flex mb-3">
-                      <StarRating size={5} />
+                      <StarRating size="md" />
                     </div>
                     <blockquote className="flex-grow text-neutral/90 mb-4">
                       <p className="text-sm leading-relaxed">

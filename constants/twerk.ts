@@ -38,7 +38,7 @@ export const TWERK_TESTIMONIALS: Testimonial[] = [
     quote: {
       en: "Sandra and Isabel are incredible teachers. I came with zero dance experience and in just a few months I've gained so much confidence. The classes are super fun!",
       es: 'Sandra e Isabel son profesoras increíbles. Llegué sin experiencia en baile y en pocos meses he ganado mucha confianza. ¡Las clases son súper divertidas!',
-      ca: "Sandra i Isabel són professores increïbles. Vaig arribar sense experiència en ball i en pocs mesos he guanyat molta confiança. Les classes són súper divertides!",
+      ca: 'Sandra i Isabel són professores increïbles. Vaig arribar sense experiència en ball i en pocs mesos he guanyat molta confiança. Les classes són súper divertides!',
       fr: "Sandra et Isabel sont des professeures incroyables. Je suis arrivée sans expérience en danse et en quelques mois j'ai gagné beaucoup de confiance. Les cours sont super amusants !",
     },
   },

@@ -421,33 +421,47 @@ const DancehallPage: React.FC = () => {
 
             <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
               {/* Isabel López */}
-              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL} className="[perspective:1000px]">
+              <AnimateOnScroll
+                delay={ANIMATION_DELAYS.STAGGER_SMALL}
+                className="[perspective:1000px]"
+              >
                 <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-6 sm:p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                   <div className="flex flex-col items-center text-center">
                     <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-4 sm:mb-6 bg-gradient-to-br from-primary-accent/30 to-primary-dark/50 flex items-center justify-center">
                       <UserIcon className="w-16 h-16 sm:w-20 sm:h-20 text-primary-accent/60" />
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2">Isabel López</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2">
+                      Isabel López
+                    </h3>
                     <p className="text-primary-accent font-semibold mb-3 sm:mb-4">
                       {t('dhV3Teacher1Specialty')}
                     </p>
-                    <p className="text-neutral/90 leading-relaxed text-sm">{t('dhV3Teacher1Bio')}</p>
+                    <p className="text-neutral/90 leading-relaxed text-sm">
+                      {t('dhV3Teacher1Bio')}
+                    </p>
                   </div>
                 </div>
               </AnimateOnScroll>
 
               {/* Sandra Gómez */}
-              <AnimateOnScroll delay={2 * ANIMATION_DELAYS.STAGGER_SMALL} className="[perspective:1000px]">
+              <AnimateOnScroll
+                delay={2 * ANIMATION_DELAYS.STAGGER_SMALL}
+                className="[perspective:1000px]"
+              >
                 <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-6 sm:p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                   <div className="flex flex-col items-center text-center">
                     <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-4 sm:mb-6 bg-gradient-to-br from-primary-accent/30 to-primary-dark/50 flex items-center justify-center">
                       <UserIcon className="w-16 h-16 sm:w-20 sm:h-20 text-primary-accent/60" />
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2">Sandra Gómez</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2">
+                      Sandra Gómez
+                    </h3>
                     <p className="text-primary-accent font-semibold mb-3 sm:mb-4">
                       {t('dhV3Teacher2Specialty')}
                     </p>
-                    <p className="text-neutral/90 leading-relaxed text-sm">{t('dhV3Teacher2Bio')}</p>
+                    <p className="text-neutral/90 leading-relaxed text-sm">
+                      {t('dhV3Teacher2Bio')}
+                    </p>
                   </div>
                 </div>
               </AnimateOnScroll>
@@ -523,7 +537,9 @@ const DancehallPage: React.FC = () => {
                   {t('dhV3IdentifyAgitate1')}
                 </p>
                 <p className="text-base sm:text-lg text-neutral/90">{t('dhV3IdentifySolution')}</p>
-                <p className="text-lg sm:text-xl text-neutral/90 italic">{t('dhV3IdentifyClosing')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90 italic">
+                  {t('dhV3IdentifyClosing')}
+                </p>
               </div>
             </AnimateOnScroll>
           </div>
@@ -656,7 +672,9 @@ const DancehallPage: React.FC = () => {
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <div className="text-neutral/90 font-bold text-xs sm:text-sm text-center">CID UNESCO</div>
+                    <div className="text-neutral/90 font-bold text-xs sm:text-sm text-center">
+                      CID UNESCO
+                    </div>
                   </div>
                   <div className="flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105">
                     <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center overflow-hidden rounded-lg">
@@ -680,7 +698,9 @@ const DancehallPage: React.FC = () => {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="text-neutral/90 font-bold text-xs sm:text-sm text-center">The Dancer</div>
+                    <div className="text-neutral/90 font-bold text-xs sm:text-sm text-center">
+                      The Dancer
+                    </div>
                   </div>
                   <div className="flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105">
                     <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center overflow-hidden rounded-lg">
@@ -691,7 +711,9 @@ const DancehallPage: React.FC = () => {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="text-neutral/90 font-bold text-xs sm:text-sm text-center">TV 5</div>
+                    <div className="text-neutral/90 font-bold text-xs sm:text-sm text-center">
+                      TV 5
+                    </div>
                   </div>
                 </div>
                 <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter holographic-text">
@@ -716,7 +738,9 @@ const DancehallPage: React.FC = () => {
                 <p className="text-xl sm:text-2xl font-bold holographic-text mt-4 sm:mt-6">
                   {t('dhV3WhyTodayClosing1')}
                 </p>
-                <p className="text-base sm:text-lg text-neutral/90 italic">{t('dhV3WhyTodayClosing2')}</p>
+                <p className="text-base sm:text-lg text-neutral/90 italic">
+                  {t('dhV3WhyTodayClosing2')}
+                </p>
               </div>
             </AnimateOnScroll>
           </div>
@@ -784,7 +808,9 @@ const DancehallPage: React.FC = () => {
                   {t('testimonialsNotRequested')}
                 </h2>
                 <div className="inline-block">
-                  <div className="mb-2 sm:mb-3 text-2xl sm:text-3xl font-black text-neutral">{t('excellent')}</div>
+                  <div className="mb-2 sm:mb-3 text-2xl sm:text-3xl font-black text-neutral">
+                    {t('excellent')}
+                  </div>
                   <div className="flex items-center justify-center gap-1 mb-2">
                     <StarRating size="lg" />
                   </div>

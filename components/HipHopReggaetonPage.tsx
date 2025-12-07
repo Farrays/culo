@@ -261,11 +261,7 @@ const HipHopReggaetonPage: React.FC = () => {
               </div>
 
               {/* Key Stats */}
-              <div
-                className="mt-16"
-                role="list"
-                aria-label={t('classStats')}
-              >
+              <div className="mt-16" role="list" aria-label={t('classStats')}>
                 <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 max-w-4xl mx-auto">
                   {/* 60 Minutos */}
                   <AnimateOnScroll delay={0}>
@@ -406,12 +402,17 @@ const HipHopReggaetonPage: React.FC = () => {
                 >
                   {t('hhrTeachersTitle')}
                 </h2>
-                <p className="text-lg sm:text-xl text-neutral/70 mt-4">{t('hhrTeachersSubtitle')}</p>
+                <p className="text-lg sm:text-xl text-neutral/70 mt-4">
+                  {t('hhrTeachersSubtitle')}
+                </p>
               </div>
             </AnimateOnScroll>
 
             <div className="max-w-2xl mx-auto">
-              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL} className="[perspective:1000px]">
+              <AnimateOnScroll
+                delay={ANIMATION_DELAYS.STAGGER_SMALL}
+                className="[perspective:1000px]"
+              >
                 <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-6 sm:p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                   <div className="flex flex-col items-center text-center">
                     <div className="w-36 h-36 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6">
@@ -431,7 +432,9 @@ const HipHopReggaetonPage: React.FC = () => {
                         />
                       </picture>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2">Charlie Breezy</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2">
+                      Charlie Breezy
+                    </h3>
                     <p className="text-primary-accent font-semibold mb-4">
                       {t('hhrTeacher1Specialty')}
                     </p>
@@ -530,7 +533,9 @@ const HipHopReggaetonPage: React.FC = () => {
                   {t('hhrIdentifyAgitate1')}
                 </p>
                 <p className="text-base sm:text-lg text-neutral/90">{t('hhrIdentifySolution')}</p>
-                <p className="text-lg sm:text-xl text-neutral/90 italic">{t('hhrIdentifyClosing')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90 italic">
+                  {t('hhrIdentifyClosing')}
+                </p>
               </div>
             </AnimateOnScroll>
           </div>
@@ -758,7 +763,9 @@ const HipHopReggaetonPage: React.FC = () => {
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="text-neutral/90 font-bold text-xs sm:text-sm text-center">TV 5</div>
+                    <div className="text-neutral/90 font-bold text-xs sm:text-sm text-center">
+                      TV 5
+                    </div>
                   </div>
                 </div>
                 <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter holographic-text">
@@ -849,7 +856,7 @@ const HipHopReggaetonPage: React.FC = () => {
                     {t('excellent')}
                   </div>
                   <div className="flex items-center justify-center gap-1 mb-2">
-                    <StarRating size={8} />
+                    <StarRating size="xl" />
                   </div>
                   <div className="text-sm text-neutral/70">
                     {t('basedOnReviews').replace('{count}', '505')}
@@ -865,13 +872,16 @@ const HipHopReggaetonPage: React.FC = () => {
               aria-label={t('testimonialsNotRequested')}
             >
               {hhrTestimonials.map((testimonial, index) => (
-                <AnimateOnScroll key={testimonial.id} delay={index * ANIMATION_DELAYS.STAGGER_SMALL}>
+                <AnimateOnScroll
+                  key={testimonial.id}
+                  delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
+                >
                   <div
                     className="flex flex-col h-full min-h-[180px] p-4 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2"
                     role="listitem"
                   >
                     <div className="flex mb-3">
-                      <StarRating size={5} />
+                      <StarRating size="md" />
                     </div>
                     <blockquote className="flex-grow text-neutral/90 mb-4">
                       <p className="text-xs sm:text-sm leading-relaxed">

@@ -567,7 +567,10 @@ const SalsaBachataPage: React.FC = () => {
                   className="w-full sm:w-1/2 lg:w-1/3 p-2 sm:p-4"
                   role="listitem"
                 >
-                  <AnimateOnScroll delay={index * ANIMATION_DELAYS.STAGGER_SMALL} className="h-full">
+                  <AnimateOnScroll
+                    delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
+                    className="h-full"
+                  >
                     <div className="group p-6 sm:p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full min-h-[180px] flex flex-col">
                       <div className="mb-4 sm:mb-6">
                         <div className="bg-primary-dark/30 group-hover:bg-primary-accent/20 p-3 sm:p-4 rounded-xl inline-block shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
@@ -592,11 +595,7 @@ const SalsaBachataPage: React.FC = () => {
         </section>
 
         {/* Stats Widget Section */}
-        <section
-          id="stats"
-          aria-labelledby="stats-title"
-          className="py-8 md:py-12 bg-black"
-        >
+        <section id="stats" aria-labelledby="stats-title" className="py-8 md:py-12 bg-black">
           <h2 id="stats-title" className="sr-only">
             {t('trustStats')}
           </h2>
