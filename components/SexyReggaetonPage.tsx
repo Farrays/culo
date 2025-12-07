@@ -22,6 +22,11 @@ import {
   StarRating,
 } from './shared/Icons';
 
+const ANIMATION_DELAYS = {
+  STAGGER_SMALL: 100,
+  STAGGER_MEDIUM: 150,
+};
+
 const SexyReggaetonPage: React.FC = () => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
@@ -238,42 +243,60 @@ const SexyReggaetonPage: React.FC = () => {
         itemType="Course"
       />
 
-      <div className="pt-20 md:pt-24">
-        {/* HERO Section - Without background image (like home) */}
+      {/* Skip Links for Accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-accent focus:text-white focus:rounded-lg"
+      >
+        {t('skipToContent')}
+      </a>
+      <a
+        href="#sxr-schedule"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-48 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-accent focus:text-white focus:rounded-lg"
+      >
+        {t('skipToSchedule')}
+      </a>
+
+      <main role="main" id="main-content" className="pt-20 md:pt-24">
+        {/* HERO Section */}
         <section
           id="sxr-hero"
-          className="relative text-center py-32 md:py-40 overflow-hidden flex items-center justify-center min-h-[600px]"
+          aria-labelledby="sxr-hero-title"
+          className="relative text-center py-24 sm:py-32 md:py-40 overflow-hidden flex items-center justify-center min-h-[600px]"
         >
           {/* Background */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
-          <div className="relative z-20 container mx-auto px-6">
+          <div className="relative z-20 container mx-auto px-4 sm:px-6">
             {/* Breadcrumb with Microdata */}
             <Breadcrumb items={breadcrumbItems} textColor="text-neutral/75" />
 
             <AnimateOnScroll>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text">
+              <h1
+                id="sxr-hero-title"
+                className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text"
+              >
                 {t('sxrHeroTitle')}
               </h1>
-              <p className="text-3xl md:text-4xl font-bold mb-4 holographic-text">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 holographic-text">
                 {t('sxrHeroSubtitle')}
               </p>
-              <p className="max-w-4xl mx-auto text-xl md:text-2xl text-neutral/90 mt-8 mb-6 leading-relaxed">
+              <p className="max-w-4xl mx-auto text-lg sm:text-xl md:text-2xl text-neutral/90 mt-8 mb-6 leading-relaxed">
                 {t('sxrHeroDesc')}
               </p>
-              <p className="text-lg md:text-xl text-neutral/90 italic mb-12">
+              <p className="text-base sm:text-lg md:text-xl text-neutral/90 italic mb-12">
                 {t('sxrHeroLocation')}
               </p>
 
-              {/* CTA Buttons: Date de Alta + Prueba Clase */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10">
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-10">
                 <div className="w-full sm:w-auto">
                   <a
-                    href="#schedule"
+                    href="#sxr-schedule"
                     aria-label={t('sxrCTA1AriaLabel')}
-                    className="block w-full sm:w-auto bg-primary-accent text-white font-bold text-lg py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center"
+                    className="block w-full sm:w-auto bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                   >
                     {t('sxrCTA1')}
                   </a>
@@ -281,9 +304,9 @@ const SexyReggaetonPage: React.FC = () => {
                 </div>
                 <div className="w-full sm:w-auto">
                   <a
-                    href="#schedule"
+                    href="#sxr-schedule"
                     aria-label={t('sxrCTA2AriaLabel')}
-                    className="block w-full sm:w-auto border-2 border-neutral text-neutral font-bold text-lg py-5 px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center"
+                    className="block w-full sm:w-auto border-2 border-neutral text-neutral font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black active:scale-95 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                   >
                     {t('sxrCTA2')}
                   </a>
@@ -291,14 +314,13 @@ const SexyReggaetonPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Key Stats - Lo que obtienes en cada clase */}
-              <div className="mt-16">
+              {/* Key Stats */}
+              <div className="mt-16" role="list" aria-label={t('classStats')}>
                 <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 max-w-4xl mx-auto">
-                  {/* 60 Minutos */}
                   <AnimateOnScroll delay={0}>
-                    <div className="text-center">
+                    <div className="text-center" role="listitem">
                       <div className="mb-2 flex justify-center">
-                        <ClockIcon className="w-10 h-10 text-primary-accent" size="lg" />
+                        <ClockIcon className="w-10 h-10 text-primary-accent" />
                       </div>
                       <AnimatedCounter
                         target={60}
@@ -310,11 +332,10 @@ const SexyReggaetonPage: React.FC = () => {
                     </div>
                   </AnimateOnScroll>
 
-                  {/* ~500 Calorías */}
-                  <AnimateOnScroll delay={100}>
-                    <div className="text-center">
+                  <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
+                    <div className="text-center" role="listitem">
                       <div className="mb-2 flex justify-center">
-                        <FlameIcon className="w-10 h-10 text-primary-accent" size="lg" />
+                        <FlameIcon className="w-10 h-10 text-primary-accent" />
                       </div>
                       <div className="flex items-center justify-center gap-1">
                         <span className="text-3xl md:text-4xl font-black holographic-text">~</span>
@@ -329,11 +350,10 @@ const SexyReggaetonPage: React.FC = () => {
                     </div>
                   </AnimateOnScroll>
 
-                  {/* 100% Sensualidad */}
-                  <AnimateOnScroll delay={200}>
-                    <div className="text-center">
+                  <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 2}>
+                    <div className="text-center" role="listitem">
                       <div className="mb-2 flex justify-center">
-                        <HeartIcon className="w-10 h-10 text-primary-accent" size="lg" />
+                        <HeartIcon className="w-10 h-10 text-primary-accent" />
                       </div>
                       <AnimatedCounter
                         target={100}
@@ -352,23 +372,32 @@ const SexyReggaetonPage: React.FC = () => {
         </section>
 
         {/* What is Sexy Reggaeton Section */}
-        <section className="py-20 md:py-32 bg-primary-dark/10">
-          <div className="container mx-auto px-6">
+        <section
+          id="sxr-what-is"
+          aria-labelledby="sxr-what-is-title"
+          className="py-16 sm:py-20 md:py-32 bg-primary-dark/10"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 text-center holographic-text">
+                <h2
+                  id="sxr-what-is-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 text-center holographic-text"
+                >
                   {t('sxrWhatIsTitle')}
                 </h2>
                 <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div className="space-y-6 text-lg text-neutral/90 leading-relaxed">
-                    <p className="text-xl font-semibold holographic-text">{t('sxrWhatIsP1')}</p>
+                  <div className="space-y-6 text-base sm:text-lg text-neutral/90 leading-relaxed">
+                    <p className="text-lg sm:text-xl font-semibold holographic-text">
+                      {t('sxrWhatIsP1')}
+                    </p>
                     <p>{t('sxrWhatIsP2')}</p>
                     <p className="italic font-medium text-neutral">{t('sxrWhatIsP3')}</p>
                     <p>{t('sxrWhatIsP4')}</p>
-                    <p className="text-center text-2xl font-bold mt-8 holographic-text">
+                    <p className="text-center text-xl sm:text-2xl font-bold mt-8 holographic-text">
                       {t('sxrWhatIsQuestionTitle')}
                     </p>
-                    <p className="text-center text-xl font-semibold">
+                    <p className="text-center text-lg sm:text-xl font-semibold">
                       {t('sxrWhatIsQuestionAnswer')}
                     </p>
                   </div>
@@ -401,257 +430,39 @@ const SexyReggaetonPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Cultural History - Expandable (without title) */}
-        <CulturalHistorySection
-          titleKey=""
-          shortDescKey="sxrCulturalShort"
-          fullHistoryKey="sxrCulturalFull"
-          readMoreText={t('readMore')}
-          readLessText={t('readLess')}
+        {/* Schedule Section - Position 3 */}
+        <ScheduleSection
+          id="sxr-schedule"
+          titleKey="sxrScheduleTitle"
+          subtitleKey="sxrScheduleSubtitle"
+          schedules={schedules}
           t={t}
         />
 
-        {/* Identification Section - ¿Te identificas? */}
-        <section className="pt-8 pb-16 md:pt-12 md:pb-24 bg-black">
-          <div className="container mx-auto px-6">
+        {/* Teacher Section - Position 4 */}
+        <section
+          id="sxr-teachers"
+          aria-labelledby="sxr-teachers-title"
+          className="py-16 sm:py-20 md:py-32 bg-black relative overflow-hidden"
+        >
+          <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <AnimateOnScroll>
-              <div className="text-center mb-16 max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
-                  {t('sxrIdentifyTitle')}
-                </h2>
-              </div>
-            </AnimateOnScroll>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
-              {[1, 2, 3, 4, 5, 6].map((num, index) => (
-                <AnimateOnScroll key={num} delay={index * 100} className="[perspective:1000px]">
-                  <div className="group relative h-full min-h-[100px] flex items-start gap-4 p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
-                      <CheckIcon className="text-primary-accent" size="sm" />
-                    </div>
-                    <p className="text-neutral/90 leading-relaxed">{t(`sxrIdentify${num}`)}</p>
-                  </div>
-                </AnimateOnScroll>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Necesitas apuntarte Section */}
-        <section className="py-20 md:py-32 bg-primary-dark/10">
-          <div className="container mx-auto px-6">
-            {/* Texto de transición pequeño */}
-            <AnimateOnScroll>
-              <div className="text-center mb-8">
-                <p className="text-sm text-neutral/75 italic max-w-2xl mx-auto">
-                  {t('sxrIdentifyTransition')}
-                </p>
-              </div>
-            </AnimateOnScroll>
-
-            <AnimateOnScroll>
-              <div className="text-center mb-12 max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
-                  {t('sxrNeedEnrollTitle')}
-                </h2>
-              </div>
-            </AnimateOnScroll>
-
-            <AnimateOnScroll>
-              <div className="max-w-3xl mx-auto text-center space-y-6">
-                <p className="text-xl font-semibold holographic-text">{t('sxrIdentifyAgitate1')}</p>
-                <p className="text-lg text-neutral/90">{t('sxrIdentifySolution')}</p>
-                <p className="text-xl text-neutral/90 italic">{t('sxrIdentifyClosing')}</p>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* Transformation Section - Imagina tu antes y después */}
-        <section className="py-12 md:py-16 bg-primary-dark/10">
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-16 max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('sxrTransformTitle')}
-                </h2>
-              </div>
-            </AnimateOnScroll>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
-              {[1, 2, 3, 4, 5, 6].map((num, index) => (
-                <AnimateOnScroll key={num} delay={index * 100} className="[perspective:1000px]">
-                  <div className="group h-full p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
-                    <div className="text-6xl font-black text-primary-accent mb-4 holographic-text">
-                      {num}
-                    </div>
-                    <h3 className="text-xl font-bold text-neutral mb-3">
-                      {t(`sxrTransform${num}Title`)}
-                    </h3>
-                    <p className="text-neutral/90 leading-relaxed">{t(`sxrTransform${num}Desc`)}</p>
-                  </div>
-                </AnimateOnScroll>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Farray's Section */}
-        <section className="py-20 md:py-32 bg-black">
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-12 max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('sxrTransformCTA')}
-                </h2>
-              </div>
-            </AnimateOnScroll>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
-              {[1, 7, 2, 3, 4, 5, 6].map((num, index, arr) => (
-                <AnimateOnScroll
-                  key={num}
-                  delay={index * 100}
-                  className={`[perspective:1000px] ${index === arr.length - 1 ? 'lg:col-start-2' : ''}`}
+              <div className="text-center mb-12 sm:mb-16 max-w-4xl mx-auto">
+                <h2
+                  id="sxr-teachers-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text"
                 >
-                  <div className="group h-full min-h-[120px] p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
-                        <CheckCircleIcon className="text-primary-accent" size="md" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-bold text-neutral mb-2">
-                          {t(`sxrWhyChoose${num}Title`)}
-                        </h3>
-                        <p className="text-neutral/90 text-sm leading-relaxed">
-                          {t(`sxrWhyChoose${num}Desc`)}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </AnimateOnScroll>
-              ))}
-            </div>
-
-            {/* Trust Bar - Stats */}
-            <AnimateOnScroll>
-              <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 max-w-5xl mx-auto">
-                <div className="text-center">
-                  <AnimatedCounter
-                    target={8}
-                    suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
-                  />
-                  <p className="text-sm md:text-base text-neutral/90 font-semibold uppercase tracking-wide">
-                    {t('yearsExperience')}
-                  </p>
-                </div>
-                <div className="text-center">
-                  <AnimatedCounter
-                    target={1500}
-                    suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
-                  />
-                  <p className="text-sm md:text-base text-neutral/90 font-semibold uppercase tracking-wide">
-                    {t('activeStudents')}
-                  </p>
-                </div>
-                <div className="text-center">
-                  <AnimatedCounter
-                    target={15000}
-                    suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
-                  />
-                  <p className="text-sm md:text-base text-neutral/90 font-semibold uppercase tracking-wide">
-                    {t('satisfiedStudents')}
-                  </p>
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* Logos Section - Nos has podido ver en */}
-        <section className="py-16 md:py-20 bg-primary-dark/10">
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-12 max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
-                  {t('sxrLogosTitle')}
-                </h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-5xl mx-auto items-center mb-8">
-                  <div className="flex flex-col items-center gap-3 p-6 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105">
-                    <div className="w-20 h-20 flex items-center justify-center overflow-hidden rounded-lg">
-                      <img
-                        src="/images/cid-unesco-logo.webp"
-                        alt="CID UNESCO - Consejo Internacional de la Danza"
-                        loading="lazy"
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <div className="text-neutral/90 font-bold text-sm text-center">CID UNESCO</div>
-                  </div>
-                  <div className="flex flex-col items-center gap-3 p-6 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105">
-                    <div className="w-20 h-20 flex items-center justify-center overflow-hidden rounded-lg">
-                      <img
-                        src="/images/Street-Dance-2.webp"
-                        alt="Street Dance 2 - Película de danza urbana"
-                        loading="lazy"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="text-neutral/90 font-bold text-sm text-center">
-                      Street Dance 2
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-center gap-3 p-6 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105">
-                    <div className="w-20 h-20 flex items-center justify-center overflow-hidden rounded-lg">
-                      <img
-                        src="/images/the-dancer-espectaculo-baile-cuadrada.webp"
-                        alt="The Dancer - Espectáculo de baile"
-                        loading="lazy"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="text-neutral/90 font-bold text-sm text-center">The Dancer</div>
-                  </div>
-                  <div className="flex flex-col items-center gap-3 p-6 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105">
-                    <div className="w-20 h-20 flex items-center justify-center overflow-hidden rounded-lg">
-                      <img
-                        src="/images/telecinco-logo.webp"
-                        alt="Telecinco - Cadena de televisión española"
-                        loading="lazy"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="text-neutral/90 font-bold text-sm text-center">TV 5</div>
-                  </div>
-                </div>
-                <p className="text-4xl md:text-5xl font-black tracking-tighter holographic-text">
-                  {t('sxrLogosIntlFestivalsText')}
-                </p>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* Teacher Section - Yasmina Fernández */}
-        <section id="teachers" className="py-20 md:py-32 bg-black relative overflow-hidden">
-          <div className="container mx-auto px-6 relative z-10">
-            <AnimateOnScroll>
-              <div className="text-center mb-16 max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text">
                   {t('sxrTeachersTitle')}
                 </h2>
-                <p className="text-xl text-neutral/70 mt-4">{t('sxrTeachersSubtitle')}</p>
+                <p className="text-lg sm:text-xl text-neutral/70 mt-4">{t('sxrTeachersSubtitle')}</p>
               </div>
             </AnimateOnScroll>
 
             <div className="max-w-2xl mx-auto">
-              <AnimateOnScroll delay={100} className="[perspective:1000px]">
-                <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL} className="[perspective:1000px]">
+                <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-6 sm:p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6">
+                    <div className="w-36 h-36 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6">
                       <picture>
                         <source
                           srcSet="/images/teachers/img/profesora-yasmina-fernandez_320.webp 320w, /images/teachers/img/profesora-yasmina-fernandez_640.webp 640w"
@@ -668,44 +479,422 @@ const SexyReggaetonPage: React.FC = () => {
                         />
                       </picture>
                     </div>
-                    <h3 className="text-2xl font-bold text-neutral mb-2">Yasmina Fernández</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2">
+                      Yasmina Fernández
+                    </h3>
                     <p className="text-primary-accent font-semibold mb-4">
                       {t('sxrTeacher1Specialty')}
                     </p>
-                    <p className="text-neutral/90 leading-relaxed">{t('sxrTeacher1Bio')}</p>
+                    <p className="text-neutral/90 leading-relaxed text-sm sm:text-base">
+                      {t('sxrTeacher1Bio')}
+                    </p>
                   </div>
                 </div>
               </AnimateOnScroll>
             </div>
 
             <AnimateOnScroll>
-              <p className="text-center text-lg text-neutral/90 mt-12 max-w-2xl mx-auto">
+              <p className="text-center text-base sm:text-lg text-neutral/90 mt-12 max-w-2xl mx-auto">
                 {t('sxrTeachersClosing')}
               </p>
             </AnimateOnScroll>
           </div>
         </section>
 
-        {/* Schedule */}
-        <ScheduleSection
-          titleKey="sxrScheduleTitle"
-          subtitleKey="sxrScheduleSubtitle"
-          schedules={schedules}
-          t={t}
-        />
+        {/* Identification Section - Position 5 */}
+        <section
+          id="sxr-identify"
+          aria-labelledby="sxr-identify-title"
+          className="pt-8 pb-16 md:pt-12 md:pb-24 bg-black"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-12 sm:mb-16 max-w-4xl mx-auto">
+                <h2
+                  id="sxr-identify-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text"
+                >
+                  {t('sxrIdentifyTitle')}
+                </h2>
+              </div>
+            </AnimateOnScroll>
 
-        {/* Testimonials */}
-        <section id="testimonials" className="py-20 md:py-32 bg-black">
-          <div className="container mx-auto px-6">
+            <div
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-12"
+              role="list"
+              aria-label={t('sxrIdentifyTitle')}
+            >
+              {[1, 2, 3, 4, 5, 6].map((num, index) => (
+                <AnimateOnScroll
+                  key={num}
+                  delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
+                  className="[perspective:1000px]"
+                >
+                  <div
+                    className="group relative h-full min-h-[100px] flex items-start gap-4 p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow"
+                    role="listitem"
+                  >
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
+                      <CheckIcon className="w-5 h-5 text-primary-accent" />
+                    </div>
+                    <p className="text-neutral/90 leading-relaxed text-sm sm:text-base">
+                      {t(`sxrIdentify${num}`)}
+                    </p>
+                  </div>
+                </AnimateOnScroll>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Necesitas apuntarte Section */}
+        <section
+          id="sxr-need-enroll"
+          aria-labelledby="sxr-need-enroll-title"
+          className="py-16 sm:py-20 md:py-32 bg-primary-dark/10"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-8">
+                <p className="text-sm text-neutral/75 italic max-w-2xl mx-auto">
+                  {t('sxrIdentifyTransition')}
+                </p>
+              </div>
+            </AnimateOnScroll>
+
             <AnimateOnScroll>
               <div className="text-center mb-12 max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
+                <h2
+                  id="sxr-need-enroll-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text"
+                >
+                  {t('sxrNeedEnrollTitle')}
+                </h2>
+              </div>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll>
+              <div className="max-w-3xl mx-auto text-center space-y-6">
+                <p className="text-lg sm:text-xl font-semibold holographic-text">
+                  {t('sxrIdentifyAgitate1')}
+                </p>
+                <p className="text-base sm:text-lg text-neutral/90">{t('sxrIdentifySolution')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90 italic">{t('sxrIdentifyClosing')}</p>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* Transformation Section - Position 6 */}
+        <section
+          id="sxr-transformation"
+          aria-labelledby="sxr-transformation-title"
+          className="py-12 md:py-16 bg-primary-dark/10"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-12 sm:mb-16 max-w-4xl mx-auto">
+                <h2
+                  id="sxr-transformation-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                >
+                  {t('sxrTransformTitle')}
+                </h2>
+              </div>
+            </AnimateOnScroll>
+
+            <div
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mb-12"
+              role="list"
+              aria-label={t('sxrTransformTitle')}
+            >
+              {[1, 2, 3, 4, 5, 6].map((num, index) => (
+                <AnimateOnScroll
+                  key={num}
+                  delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
+                  className="[perspective:1000px]"
+                >
+                  <div
+                    className="group h-full min-h-[180px] p-6 sm:p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow"
+                    role="listitem"
+                  >
+                    <div className="text-5xl sm:text-6xl font-black text-primary-accent mb-4 holographic-text">
+                      {num}
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold text-neutral mb-3">
+                      {t(`sxrTransform${num}Title`)}
+                    </h3>
+                    <p className="text-neutral/90 leading-relaxed text-sm sm:text-base">
+                      {t(`sxrTransform${num}Desc`)}
+                    </p>
+                  </div>
+                </AnimateOnScroll>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Farray's Section - Position 7 */}
+        <section
+          id="sxr-why-choose"
+          aria-labelledby="sxr-why-choose-title"
+          className="py-16 sm:py-20 md:py-32 bg-black"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-12 max-w-4xl mx-auto">
+                <h2
+                  id="sxr-why-choose-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                >
+                  {t('sxrTransformCTA')}
+                </h2>
+              </div>
+            </AnimateOnScroll>
+
+            <div
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-16"
+              role="list"
+              aria-label={t('sxrTransformCTA')}
+            >
+              {[1, 7, 2, 3, 4, 5, 6].map((num, index, arr) => (
+                <AnimateOnScroll
+                  key={num}
+                  delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
+                  className={`[perspective:1000px] ${index === arr.length - 1 ? 'lg:col-start-2' : ''}`}
+                >
+                  <div
+                    className="group h-full min-h-[120px] p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow"
+                    role="listitem"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
+                        <CheckCircleIcon className="w-6 h-6 text-primary-accent" />
+                      </div>
+                      <div>
+                        <h3 className="text-base sm:text-lg font-bold text-neutral mb-2">
+                          {t(`sxrWhyChoose${num}Title`)}
+                        </h3>
+                        <p className="text-neutral/90 text-xs sm:text-sm leading-relaxed">
+                          {t(`sxrWhyChoose${num}Desc`)}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </AnimateOnScroll>
+              ))}
+            </div>
+
+            {/* Trust Bar - Stats */}
+            <AnimateOnScroll>
+              <div
+                className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 max-w-5xl mx-auto"
+                role="list"
+                aria-label={t('trustStats')}
+              >
+                <div className="text-center" role="listitem">
+                  <AnimatedCounter
+                    target={8}
+                    suffix="+"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
+                  />
+                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
+                    {t('yearsExperience')}
+                  </p>
+                </div>
+                <div className="text-center" role="listitem">
+                  <AnimatedCounter
+                    target={1500}
+                    suffix="+"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
+                  />
+                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
+                    {t('activeStudents')}
+                  </p>
+                </div>
+                <div className="text-center" role="listitem">
+                  <AnimatedCounter
+                    target={15000}
+                    suffix="+"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
+                  />
+                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
+                    {t('satisfiedStudents')}
+                  </p>
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* Logos Section - Position 8 */}
+        <section
+          id="sxr-logos"
+          aria-labelledby="sxr-logos-title"
+          className="py-12 sm:py-16 md:py-20 bg-primary-dark/10"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-12 max-w-4xl mx-auto">
+                <h2
+                  id="sxr-logos-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text"
+                >
+                  {t('sxrLogosTitle')}
+                </h2>
+                <div
+                  className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 md:gap-12 max-w-5xl mx-auto items-center mb-8"
+                  role="list"
+                  aria-label={t('sxrLogosTitle')}
+                >
+                  <div
+                    className="flex flex-col items-center gap-3 p-4 sm:p-6 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105"
+                    role="listitem"
+                  >
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center overflow-hidden rounded-lg">
+                      <img
+                        src="/images/cid-unesco-logo.webp"
+                        alt="CID UNESCO - Consejo Internacional de la Danza"
+                        loading="lazy"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div className="text-neutral/90 font-bold text-xs sm:text-sm text-center">
+                      CID UNESCO
+                    </div>
+                  </div>
+                  <div
+                    className="flex flex-col items-center gap-3 p-4 sm:p-6 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105"
+                    role="listitem"
+                  >
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center overflow-hidden rounded-lg">
+                      <img
+                        src="/images/Street-Dance-2.webp"
+                        alt="Street Dance 2 - Película de danza urbana"
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="text-neutral/90 font-bold text-xs sm:text-sm text-center">
+                      Street Dance 2
+                    </div>
+                  </div>
+                  <div
+                    className="flex flex-col items-center gap-3 p-4 sm:p-6 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105"
+                    role="listitem"
+                  >
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center overflow-hidden rounded-lg">
+                      <img
+                        src="/images/the-dancer-espectaculo-baile-cuadrada.webp"
+                        alt="The Dancer - Espectáculo de baile"
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="text-neutral/90 font-bold text-xs sm:text-sm text-center">
+                      The Dancer
+                    </div>
+                  </div>
+                  <div
+                    className="flex flex-col items-center gap-3 p-4 sm:p-6 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105"
+                    role="listitem"
+                  >
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center overflow-hidden rounded-lg">
+                      <img
+                        src="/images/telecinco-logo.webp"
+                        alt="Telecinco - Cadena de televisión española"
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="text-neutral/90 font-bold text-xs sm:text-sm text-center">TV 5</div>
+                  </div>
+                </div>
+                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter holographic-text">
+                  {t('sxrLogosIntlFestivalsText')}
+                </p>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* Why Today Section - Position 9 */}
+        <section
+          id="sxr-why-today"
+          aria-labelledby="sxr-why-today-title"
+          className="py-16 sm:py-20 md:py-32 bg-black"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="max-w-3xl mx-auto text-center space-y-6">
+                <h2
+                  id="sxr-why-today-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text"
+                >
+                  {t('sxrWhyTodayFullTitle')}
+                </h2>
+                <p className="text-lg sm:text-xl text-neutral/90">{t('sxrWhyToday1')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90">{t('sxrWhyToday2')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90">{t('sxrWhyToday3')}</p>
+                <p className="text-xl sm:text-2xl font-bold holographic-text mt-8">
+                  {t('sxrWhyTodayClosing1')}
+                </p>
+                <p className="text-base sm:text-lg text-neutral/90 italic">
+                  {t('sxrWhyTodayClosing2')}
+                </p>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* Video Section - Position 10 */}
+        <section
+          id="sxr-video"
+          aria-labelledby="sxr-video-title"
+          className="py-16 sm:py-20 md:py-32 bg-primary-dark/10"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-12 max-w-4xl mx-auto">
+                <h2
+                  id="sxr-video-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                >
+                  {t('sxrVideoTitle')}
+                </h2>
+                <p className="text-base sm:text-lg text-neutral/70">{t('sxrVideoDesc')}</p>
+              </div>
+            </AnimateOnScroll>
+
+            <div className="max-w-4xl mx-auto">
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
+                <YouTubeEmbed videoId="J5SI4u1SVsg" title={t('sxrVideoTitle')} />
+              </AnimateOnScroll>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials - Position 11 */}
+        <section
+          id="sxr-testimonials"
+          aria-labelledby="sxr-testimonials-title"
+          className="py-16 sm:py-20 md:py-32 bg-black"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-12 max-w-4xl mx-auto">
+                <h2
+                  id="sxr-testimonials-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text"
+                >
                   {t('testimonialsNotRequested')}
                 </h2>
                 <div className="inline-block">
-                  <div className="mb-4 text-3xl font-black text-neutral">{t('excellent')}</div>
+                  <div className="mb-4 text-2xl sm:text-3xl font-black text-neutral">
+                    {t('excellent')}
+                  </div>
                   <div className="flex items-center justify-center gap-1 mb-2">
-                    <StarRating count={5} size="lg" label="5 de 5 estrellas" />
+                    <StarRating size={8} />
                   </div>
                   <div className="text-sm text-neutral/70">
                     {t('basedOnReviews').replace('{count}', '505')}
@@ -715,15 +904,22 @@ const SexyReggaetonPage: React.FC = () => {
               </div>
             </AnimateOnScroll>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <div
+              className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto"
+              role="list"
+              aria-label={t('testimonialsNotRequested')}
+            >
               {sxrTestimonials.map((testimonial, index) => (
-                <AnimateOnScroll key={testimonial.id} delay={index * 100}>
-                  <div className="flex flex-col h-full min-h-[180px] p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
-                    <div className="mb-3">
-                      <StarRating count={5} size="sm" label="5 de 5 estrellas" />
+                <AnimateOnScroll key={testimonial.id} delay={index * ANIMATION_DELAYS.STAGGER_SMALL}>
+                  <div
+                    className="flex flex-col h-full min-h-[180px] p-4 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2"
+                    role="listitem"
+                  >
+                    <div className="flex mb-3">
+                      <StarRating size={5} />
                     </div>
                     <blockquote className="flex-grow text-neutral/90 mb-4">
-                      <p className="text-sm leading-relaxed">
+                      <p className="text-xs sm:text-sm leading-relaxed">
                         &ldquo;{testimonial.quote[locale]}&rdquo;
                       </p>
                     </blockquote>
@@ -742,75 +938,41 @@ const SexyReggaetonPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Video Section */}
-        <section id="video" className="py-20 md:py-32 bg-primary-dark/10">
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-12 max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('sxrVideoTitle')}
-                </h2>
-                <p className="text-lg text-neutral/70">{t('sxrVideoDesc')}</p>
-              </div>
-            </AnimateOnScroll>
-
-            {/* Video centrado */}
-            <div className="max-w-4xl mx-auto">
-              <AnimateOnScroll delay={100}>
-                <YouTubeEmbed videoId="J5SI4u1SVsg" title={t('sxrVideoTitle')} />
-              </AnimateOnScroll>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Today Section */}
-        <section className="py-20 md:py-32 bg-black">
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="max-w-3xl mx-auto text-center space-y-6">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
-                  {t('sxrWhyTodayFullTitle')}
-                </h2>
-                <p className="text-xl text-neutral/90">{t('sxrWhyToday1')}</p>
-                <p className="text-xl text-neutral/90">{t('sxrWhyToday2')}</p>
-                <p className="text-xl text-neutral/90">{t('sxrWhyToday3')}</p>
-                <p className="text-2xl font-bold holographic-text mt-8">
-                  {t('sxrWhyTodayClosing1')}
-                </p>
-                <p className="text-lg text-neutral/90 italic">{t('sxrWhyTodayClosing2')}</p>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* Final CTA Section */}
-        <section id="final-cta" className="relative py-20 md:py-32 overflow-hidden">
-          {/* Background like Hero */}
+        {/* Final CTA Section - Position 12 */}
+        <section
+          id="sxr-final-cta"
+          aria-labelledby="sxr-final-cta-title"
+          className="relative py-16 sm:py-20 md:py-32 overflow-hidden"
+        >
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
-          <div className="container mx-auto px-6 relative z-20">
+          <div className="container mx-auto px-4 sm:px-6 relative z-20">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
+                <h2
+                  id="sxr-final-cta-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                >
                   {t('sxrFinalCTATitle')}
                 </h2>
-                <p className="text-2xl font-bold mb-6 holographic-text">
+                <p className="text-xl sm:text-2xl font-bold mb-6 holographic-text">
                   {t('sxrFinalCTASubtitle')}
                 </p>
-                <p className="text-xl text-neutral/90 mb-8 leading-relaxed">
+                <p className="text-lg sm:text-xl text-neutral/90 mb-8 leading-relaxed">
                   {t('sxrFinalCTADesc')}
                 </p>
-                <p className="text-lg text-neutral/90 mb-10 italic">{t('sxrFinalCTAFunny')}</p>
+                <p className="text-base sm:text-lg text-neutral/90 mb-10 italic">
+                  {t('sxrFinalCTAFunny')}
+                </p>
 
-                {/* CTA Final: Date de Alta + Prueba Clase */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-8">
                   <div className="w-full sm:w-auto">
                     <a
-                      href="#schedule"
+                      href="#sxr-schedule"
                       aria-label={t('sxrCTA1AriaLabel')}
-                      className="block w-full sm:w-auto bg-primary-accent text-white font-bold text-lg py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center"
+                      className="block w-full sm:w-auto bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                     >
                       {t('sxrCTA1')}
                     </a>
@@ -820,9 +982,9 @@ const SexyReggaetonPage: React.FC = () => {
                   </div>
                   <div className="w-full sm:w-auto">
                     <a
-                      href="#schedule"
+                      href="#sxr-schedule"
                       aria-label={t('sxrCTA2AriaLabel')}
-                      className="block w-full sm:w-auto border-2 border-neutral text-neutral font-bold text-lg py-5 px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center"
+                      className="block w-full sm:w-auto border-2 border-neutral text-neutral font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black active:scale-95 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                     >
                       {t('sxrCTA2')}
                     </a>
@@ -836,9 +998,19 @@ const SexyReggaetonPage: React.FC = () => {
           </div>
         </section>
 
-        {/* FAQ */}
+        {/* Cultural History - Position 13 */}
+        <CulturalHistorySection
+          titleKey=""
+          shortDescKey="sxrCulturalShort"
+          fullHistoryKey="sxrCulturalFull"
+          readMoreText={t('readMore')}
+          readLessText={t('readLess')}
+          t={t}
+        />
+
+        {/* FAQ - Position 14 */}
         <FAQSection title={t('sxrFaqTitle')} faqs={sxrFaqs} pageUrl={pageUrl} />
-      </div>
+      </main>
     </>
   );
 };

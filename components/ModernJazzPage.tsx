@@ -589,15 +589,81 @@ const ModernJazzPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Cultural History - Expandable (with scientific benefits included) */}
-        <CulturalHistorySection
-          titleKey=""
-          shortDescKey="modernjazzCulturalShort"
-          fullHistoryKey="modernjazzCulturalFull"
-          readMoreText={t('readMore')}
-          readLessText={t('readLess')}
+        {/* Schedule Section - Position 3 */}
+        <ScheduleSection
+          id="schedule"
+          titleKey="modernjazzScheduleTitle"
+          subtitleKey="modernjazzScheduleSubtitle"
+          schedules={schedules}
           t={t}
         />
+
+        {/* Teacher Section - Position 4 */}
+        <section
+          id="teachers"
+          aria-labelledby="teachers-title"
+          className="py-16 sm:py-20 md:py-32 bg-black relative overflow-hidden"
+        >
+          <div className="container mx-auto px-4 sm:px-6 relative z-10">
+            <AnimateOnScroll>
+              <div className="text-center mb-12 sm:mb-16 max-w-4xl mx-auto">
+                <h2
+                  id="teachers-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text"
+                >
+                  {t('modernjazzTeachersTitle')}
+                </h2>
+                <p className="text-lg sm:text-xl text-neutral/70 mt-4">
+                  {t('modernjazzTeachersSubtitle')}
+                </p>
+              </div>
+            </AnimateOnScroll>
+
+            <div className="max-w-2xl mx-auto">
+              <AnimateOnScroll
+                delay={ANIMATION_DELAYS.STAGGER_SMALL}
+                className="[perspective:1000px]"
+              >
+                <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-6 sm:p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-36 h-36 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6">
+                      <picture>
+                        <source
+                          type="image/webp"
+                          srcSet="/images/teachers/img/profesor-alejandro-miñoso_320.webp 320w, /images/teachers/img/profesor-alejandro-miñoso_640.webp 640w"
+                          sizes="192px"
+                        />
+                        <img
+                          src="/images/teachers/img/profesor-alejandro-miñoso_320.jpg"
+                          srcSet="/images/teachers/img/profesor-alejandro-miñoso_320.jpg 320w, /images/teachers/img/profesor-alejandro-miñoso_640.jpg 640w"
+                          sizes="192px"
+                          alt="Alejandro Miñoso - Profesor de Modern Jazz en Barcelona"
+                          loading="lazy"
+                          className="w-full h-full object-cover"
+                        />
+                      </picture>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2">
+                      Alejandro Miñoso
+                    </h3>
+                    <p className="text-primary-accent font-semibold mb-4">
+                      {t('modernjazzTeacher1Specialty')}
+                    </p>
+                    <p className="text-neutral/90 leading-relaxed text-sm sm:text-base">
+                      {t('modernjazzTeacher1Bio')}
+                    </p>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+            </div>
+
+            <AnimateOnScroll>
+              <p className="text-center text-base sm:text-lg text-neutral/90 mt-12 max-w-2xl mx-auto">
+                {t('modernjazzTeachersClosing')}
+              </p>
+            </AnimateOnScroll>
+          </div>
+        </section>
 
         {/* Identification Section - ¿Te identificas? */}
         <section aria-labelledby="identify-title" className="pt-8 pb-16 md:pt-12 md:pb-24 bg-black">
@@ -751,34 +817,34 @@ const ModernJazzPage: React.FC = () => {
 
             {/* Trust Bar - Stats */}
             <AnimateOnScroll>
-              <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 max-w-5xl mx-auto">
-                <div className="text-center">
+              <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 max-w-5xl mx-auto" role="list" aria-label={t('trustStats')}>
+                <div className="text-center" role="listitem">
                   <AnimatedCounter
                     target={8}
                     suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
                     {t('yearsExperience')}
                   </p>
                 </div>
-                <div className="text-center">
+                <div className="text-center" role="listitem">
                   <AnimatedCounter
                     target={1500}
                     suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
                     {t('activeStudents')}
                   </p>
                 </div>
-                <div className="text-center">
+                <div className="text-center" role="listitem">
                   <AnimatedCounter
                     target={15000}
                     suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
                     {t('satisfiedStudents')}
                   </p>
                 </div>
@@ -851,67 +917,63 @@ const ModernJazzPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Teacher Section - Alejandro Miñoso */}
-        <section id="teachers" className="py-20 md:py-32 bg-black relative overflow-hidden">
-          <div className="container mx-auto px-6 relative z-10">
+        {/* WhyToday Section */}
+        <section
+          id="why-today"
+          aria-labelledby="why-today-title"
+          className="py-16 sm:py-20 md:py-32 bg-black"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-16 max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text">
-                  {t('modernjazzTeachersTitle')}
+              <div className="max-w-3xl mx-auto text-center space-y-6">
+                <h2
+                  id="why-today-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text"
+                >
+                  {t('modernjazzWhyTodayFullTitle')}
                 </h2>
-                <p className="text-xl text-neutral/70 mt-4">{t('modernjazzTeachersSubtitle')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90">{t('modernjazzWhyToday1')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90">{t('modernjazzWhyToday2')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90">{t('modernjazzWhyToday3')}</p>
+                <p className="text-xl sm:text-2xl font-bold holographic-text mt-8">
+                  {t('modernjazzWhyTodayClosing1')}
+                </p>
+                <p className="text-base sm:text-lg text-neutral/90 italic">
+                  {t('modernjazzWhyTodayClosing2')}
+                </p>
               </div>
-            </AnimateOnScroll>
-
-            <div className="max-w-2xl mx-auto">
-              <AnimateOnScroll
-                delay={ANIMATION_DELAYS.STAGGER_SMALL}
-                className="[perspective:1000px]"
-              >
-                <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6">
-                      <picture>
-                        <source
-                          type="image/webp"
-                          srcSet="/images/teachers/img/profesor-alejandro-miñoso_320.webp 320w, /images/teachers/img/profesor-alejandro-miñoso_640.webp 640w"
-                          sizes="192px"
-                        />
-                        <img
-                          src="/images/teachers/img/profesor-alejandro-miñoso_320.jpg"
-                          srcSet="/images/teachers/img/profesor-alejandro-miñoso_320.jpg 320w, /images/teachers/img/profesor-alejandro-miñoso_640.jpg 640w"
-                          sizes="192px"
-                          alt="Alejandro Miñoso - Profesor de Modern Jazz en Barcelona"
-                          loading="lazy"
-                          className="w-full h-full object-cover"
-                        />
-                      </picture>
-                    </div>
-                    <h3 className="text-2xl font-bold text-neutral mb-2">Alejandro Miñoso</h3>
-                    <p className="text-primary-accent font-semibold mb-4">
-                      {t('modernjazzTeacher1Specialty')}
-                    </p>
-                    <p className="text-neutral/90 leading-relaxed">{t('modernjazzTeacher1Bio')}</p>
-                  </div>
-                </div>
-              </AnimateOnScroll>
-            </div>
-
-            <AnimateOnScroll>
-              <p className="text-center text-lg text-neutral/90 mt-12 max-w-2xl mx-auto">
-                {t('modernjazzTeachersClosing')}
-              </p>
             </AnimateOnScroll>
           </div>
         </section>
 
-        {/* Schedule */}
-        <ScheduleSection
-          titleKey="modernjazzScheduleTitle"
-          subtitleKey="modernjazzScheduleSubtitle"
-          schedules={schedules}
-          t={t}
-        />
+        {/* Video Section - Only if video exists */}
+        {MODERN_JAZZ_VIDEO_ID && (
+          <section
+            id="video"
+            aria-labelledby="video-title"
+            className="py-16 sm:py-20 md:py-32 bg-primary-dark/10"
+          >
+            <div className="container mx-auto px-4 sm:px-6">
+              <AnimateOnScroll>
+                <div className="text-center mb-12 max-w-4xl mx-auto">
+                  <h2
+                    id="video-title"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                  >
+                    {t('modernjazzVideoTitle')}
+                  </h2>
+                  <p className="text-base sm:text-lg text-neutral/70">{t('modernjazzVideoDesc')}</p>
+                </div>
+              </AnimateOnScroll>
+
+              <div className="max-w-4xl mx-auto">
+                <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
+                  <YouTubeEmbed videoId={MODERN_JAZZ_VIDEO_ID} title={t('modernjazzVideoTitle')} />
+                </AnimateOnScroll>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Testimonials */}
         <section
@@ -931,7 +993,7 @@ const ModernJazzPage: React.FC = () => {
                 <div className="inline-block">
                   <div className="mb-4 text-3xl font-black text-neutral">{t('excellent')}</div>
                   <div className="flex items-center justify-center gap-1 mb-2">
-                    <StarRating size="lg" />
+                    <StarRating size={8} />
                   </div>
                   <div className="text-sm text-neutral/70">
                     {t('basedOnReviews').replace('{count}', '505')}
@@ -948,8 +1010,8 @@ const ModernJazzPage: React.FC = () => {
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
                 >
                   <div className="flex flex-col h-full min-h-[200px] p-4 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
-                    <div className="mb-3">
-                      <StarRating size="sm" label="5 estrellas" />
+                    <div className="flex mb-3">
+                      <StarRating size={5} />
                     </div>
                     <blockquote className="flex-grow text-neutral/90 mb-4">
                       <p className="text-sm leading-relaxed">
@@ -968,49 +1030,6 @@ const ModernJazzPage: React.FC = () => {
                 </AnimateOnScroll>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Video Section - Only if video exists */}
-        {MODERN_JAZZ_VIDEO_ID && (
-          <section id="video" className="py-20 md:py-32 bg-primary-dark/10">
-            <div className="container mx-auto px-6">
-              <AnimateOnScroll>
-                <div className="text-center mb-12 max-w-4xl mx-auto">
-                  <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                    {t('modernjazzVideoTitle')}
-                  </h2>
-                  <p className="text-lg text-neutral/70">{t('modernjazzVideoDesc')}</p>
-                </div>
-              </AnimateOnScroll>
-
-              {/* Video centrado */}
-              <div className="max-w-4xl mx-auto">
-                <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
-                  <YouTubeEmbed videoId={MODERN_JAZZ_VIDEO_ID} title={t('modernjazzVideoTitle')} />
-                </AnimateOnScroll>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Why Today Section */}
-        <section className="py-20 md:py-32 bg-black">
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="max-w-3xl mx-auto text-center space-y-6">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
-                  {t('modernjazzWhyTodayFullTitle')}
-                </h2>
-                <p className="text-xl text-neutral/90">{t('modernjazzWhyToday1')}</p>
-                <p className="text-xl text-neutral/90">{t('modernjazzWhyToday2')}</p>
-                <p className="text-xl text-neutral/90">{t('modernjazzWhyToday3')}</p>
-                <p className="text-2xl font-bold holographic-text mt-8">
-                  {t('modernjazzWhyTodayClosing1')}
-                </p>
-                <p className="text-lg text-neutral/90 italic">{t('modernjazzWhyTodayClosing2')}</p>
-              </div>
-            </AnimateOnScroll>
           </div>
         </section>
 
@@ -1072,6 +1091,17 @@ const ModernJazzPage: React.FC = () => {
             </AnimateOnScroll>
           </div>
         </section>
+
+        {/* Cultural History Section */}
+        <CulturalHistorySection
+          id="cultural-history"
+          titleKey=""
+          shortDescKey="modernjazzCulturalShort"
+          fullHistoryKey="modernjazzCulturalFull"
+          readMoreText={t('readMore')}
+          readLessText={t('readLess')}
+          t={t}
+        />
 
         {/* FAQ */}
         <FAQSection title={t('modernjazzFaqTitle')} faqs={modernJazzFaqs} pageUrl={pageUrl} />

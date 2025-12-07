@@ -2871,6 +2871,7 @@ export const en = {
   twerkWhatIsQuestionAnswer: 'Yes, it is.',
 
   // Cultural Section
+  twerkCulturalHistoryTitle: 'Want to know more about Twerk?',
   twerkCulturalShort:
     "Twerk didn't appear overnight. It was born from a mix of Afro-descendant influences: movements from traditional African dances such as 'baikoko mapouka', from New Orleans bounce culture and other urban styles that already worked a lot on the hips and the \"booty\".",
   twerkCulturalFull:

@@ -3511,6 +3511,7 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
   twerkWhatIsQuestionAnswer: 'Sí, lo es.',
 
   // Cultural Section
+  twerkCulturalHistoryTitle: '¿Quieres saber más sobre el Twerk?',
   twerkCulturalShort:
     'El Twerk no apareció de un día para otro. Nace de una mezcla de influencias afrodescendientes: movimientos de danzas tradicionales africanas tales como \'baikoko mapouka\', de la cultura bounce de Nueva Orleans y de otros estilos urbanos que ya trabajaban mucho la cadera y el "booty".',
   twerkCulturalFull:

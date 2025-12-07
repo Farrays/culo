@@ -11,6 +11,12 @@ import Icon, { type IconName } from './Icon';
 import type { ValuePillar } from '../types';
 import TestimonialsSection from './TestimonialsSection';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
+import { CheckIcon } from './shared/Icons';
+
+const ANIMATION_DELAYS = {
+  STAGGER_SMALL: 100,
+  STAGGER_MEDIUM: 150,
+};
 
 // Type extension for ValuePillar with icon names instead of components
 type ValuePillarWithIcon = Omit<ValuePillar, 'Icon'> & { iconName: IconName };
@@ -199,56 +205,62 @@ const HeelsBarcelonaPage: React.FC = () => {
         <script type="application/ld+json">{JSON.stringify(aggregateRatingSchema)}</script>
       </Helmet>
 
-      <main className="pt-20 md:pt-24">
+      {/* Skip Links for Accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-accent focus:text-white focus:rounded-lg"
+      >
+        {t('skipToContent')}
+      </a>
+      <a
+        href="#styles"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-48 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-accent focus:text-white focus:rounded-lg"
+      >
+        {t('skipToSchedule')}
+      </a>
+
+      <main role="main" id="main-content" className="pt-20 md:pt-24">
         {/* Hero Section */}
         <section
-          id="heels-barcelona-hero"
-          className="relative text-center py-32 md:py-40 overflow-hidden flex items-center justify-center min-h-[600px]"
+          id="heels-hero"
+          aria-labelledby="heels-hero-title"
+          className="relative text-center py-24 sm:py-32 md:py-40 overflow-hidden flex items-center justify-center min-h-[600px]"
         >
           {/* Background */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-pink-900/30 via-black to-black"></div>
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
-          <div className="relative z-20 container mx-auto px-6">
+          <div className="relative z-20 container mx-auto px-4 sm:px-6">
             {/* Breadcrumb with Microdata */}
             <Breadcrumb items={breadcrumbItems} textColor="text-neutral/90" />
 
             {/* H1 + Intro */}
             <AnimateOnScroll>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text">
+              <h1
+                id="heels-hero-title"
+                className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text"
+              >
                 {t('heelsBarcelona_h1')}
               </h1>
-              <p className="max-w-4xl mx-auto text-xl md:text-2xl text-neutral/90 mt-8 leading-relaxed">
+              <p className="max-w-4xl mx-auto text-lg sm:text-xl md:text-2xl text-neutral/90 mt-8 leading-relaxed">
                 {t('heelsBarcelona_intro')}
               </p>
             </AnimateOnScroll>
 
             {/* CTA Buttons */}
-            <AnimateOnScroll delay={200}>
+            <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 2}>
               <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   to={`/${locale}#enroll`}
-                  className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
+                  className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-base sm:text-lg py-4 px-8 sm:px-10 rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-accent-glow animate-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   {t('enrollNow')}
-                  <svg
-                    className="w-5 h-5 ml-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
+                  <CheckIcon className="w-5 h-5 ml-2" />
                 </Link>
                 <Link
                   to={`/${locale}#enroll`}
-                  className="inline-flex items-center justify-center bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white"
+                  className="inline-flex items-center justify-center bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-base sm:text-lg py-4 px-8 sm:px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   {t('heroCTA1')}
                 </Link>
@@ -258,13 +270,17 @@ const HeelsBarcelonaPage: React.FC = () => {
         </section>
 
         {/* What are Heels Classes Section - SEO CRITICAL */}
-        <section aria-labelledby="what-is-title" className="py-16 md:py-24 bg-black">
-          <div className="container mx-auto px-6">
+        <section
+          id="what-is-heels"
+          aria-labelledby="what-is-title"
+          className="py-12 sm:py-16 md:py-24 bg-black"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
                 <h2
                   id="what-is-title"
-                  className="text-3xl md:text-4xl font-black tracking-tighter mb-8 text-center holographic-text"
+                  className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter mb-8 text-center holographic-text"
                 >
                   {t('heelsBarcelona_whatIs_title')}
                 </h2>
@@ -272,24 +288,28 @@ const HeelsBarcelonaPage: React.FC = () => {
             </AnimateOnScroll>
 
             <div className="max-w-4xl mx-auto space-y-6 text-neutral/90 leading-relaxed">
-              <AnimateOnScroll delay={100}>
-                <p className="text-lg">{t('heelsBarcelona_whatIs_definition')}</p>
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
+                <p className="text-base sm:text-lg">{t('heelsBarcelona_whatIs_definition')}</p>
               </AnimateOnScroll>
 
-              <AnimateOnScroll delay={300}>
-                <h3 className="text-2xl font-bold text-white mt-8 mb-4">
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 3}>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mt-8 mb-4">
                   {t('heelsBarcelona_whatIs_benefits_title')}
                 </h3>
               </AnimateOnScroll>
 
-              <AnimateOnScroll delay={400}>
-                <ul className="list-disc list-inside space-y-2 text-lg">
-                  <li>{t('heelsBarcelona_whatIs_benefits_list1')}</li>
-                  <li>{t('heelsBarcelona_whatIs_benefits_list2')}</li>
-                  <li>{t('heelsBarcelona_whatIs_benefits_list3')}</li>
-                  <li>{t('heelsBarcelona_whatIs_benefits_list4')}</li>
-                  <li>{t('heelsBarcelona_whatIs_benefits_list5')}</li>
-                  <li>{t('heelsBarcelona_whatIs_benefits_list6')}</li>
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 4}>
+                <ul
+                  className="list-disc list-inside space-y-2 text-base sm:text-lg"
+                  role="list"
+                  aria-label={t('heelsBarcelona_whatIs_benefits_title')}
+                >
+                  <li role="listitem">{t('heelsBarcelona_whatIs_benefits_list1')}</li>
+                  <li role="listitem">{t('heelsBarcelona_whatIs_benefits_list2')}</li>
+                  <li role="listitem">{t('heelsBarcelona_whatIs_benefits_list3')}</li>
+                  <li role="listitem">{t('heelsBarcelona_whatIs_benefits_list4')}</li>
+                  <li role="listitem">{t('heelsBarcelona_whatIs_benefits_list5')}</li>
+                  <li role="listitem">{t('heelsBarcelona_whatIs_benefits_list6')}</li>
                 </ul>
               </AnimateOnScroll>
             </div>
@@ -297,34 +317,43 @@ const HeelsBarcelonaPage: React.FC = () => {
         </section>
 
         {/* Heels Styles Grid Section - 2 Styles */}
-        <section aria-labelledby="styles-title" className="py-12 md:py-20 bg-primary-dark/10">
-          <div className="container mx-auto px-6 text-center">
+        <section
+          id="styles"
+          aria-labelledby="styles-title"
+          className="py-12 md:py-20 bg-primary-dark/10"
+        >
+          <div className="container mx-auto px-4 sm:px-6 text-center">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
                 <h2
                   id="styles-title"
-                  className="text-4xl md:text-5xl font-black tracking-tighter mb-4 holographic-text"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter mb-4 holographic-text"
                 >
                   {t('heelsBarcelona_styles_title')}
                 </h2>
               </div>
             </AnimateOnScroll>
-            <AnimateOnScroll delay={200}>
-              <p className="max-w-3xl mx-auto text-lg text-neutral/90 mb-12">
+            <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 2}>
+              <p className="max-w-3xl mx-auto text-base sm:text-lg text-neutral/90 mb-12">
                 {t('heelsBarcelona_styles_description')}
               </p>
             </AnimateOnScroll>
 
             {/* Grid of 2 Heels Styles */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div
+              className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto"
+              role="list"
+              aria-label={t('heelsBarcelona_styles_title')}
+            >
               {HEELS_STYLES.map((style, index) => (
-                <AnimateOnScroll key={style.key} delay={index * 150}>
+                <AnimateOnScroll key={style.key} delay={index * ANIMATION_DELAYS.STAGGER_MEDIUM}>
                   <Link
                     to={`/${locale}${style.url}`}
-                    className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col"
+                    className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                    role="listitem"
                   >
                     {/* Background Image - Top half of card */}
-                    <div className="relative h-64 overflow-hidden flex-shrink-0">
+                    <div className="relative h-48 sm:h-64 overflow-hidden flex-shrink-0">
                       <div className="absolute inset-0 bg-gradient-to-br from-pink-600/40 to-purple-900/40"></div>
                       {/* Gradient overlay on image */}
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
@@ -332,38 +361,26 @@ const HeelsBarcelonaPage: React.FC = () => {
                       <div className="absolute inset-0 flex items-center justify-center">
                         <Icon
                           name="sparkles"
-                          className="w-24 h-24 text-white/30 group-hover:text-primary-accent/50 transition-colors duration-500"
+                          className="w-20 h-20 sm:w-24 sm:h-24 text-white/30 group-hover:text-primary-accent/50 transition-colors duration-500"
                         />
                       </div>
                     </div>
 
                     {/* Text Content - Always visible */}
-                    <div className="p-6 space-y-3 flex-grow flex flex-col">
-                      <h3 className="text-2xl font-bold text-white group-hover:text-primary-accent transition-colors duration-300">
+                    <div className="p-4 sm:p-6 space-y-3 flex-grow flex flex-col">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-primary-accent transition-colors duration-300">
                         {t(`heelsBarcelona_style_${style.key}_title`)}
                       </h3>
 
                       {/* SEO Text - Always visible */}
-                      <p className="text-neutral/90 text-sm leading-relaxed flex-grow">
+                      <p className="text-neutral/90 text-xs sm:text-sm leading-relaxed flex-grow">
                         {t(`heelsBarcelona_style_${style.key}_seo`)}
                       </p>
 
                       {/* CTA Link */}
                       <div className="pt-2 text-primary-accent font-bold text-sm flex items-center group-hover:translate-x-1 transition-transform duration-300">
                         {t('heelsBarcelona_viewMore')}
-                        <svg
-                          className="w-4 h-4 ml-1"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
+                        <CheckIcon className="w-4 h-4 ml-1" />
                       </div>
                     </div>
                   </Link>
@@ -374,224 +391,235 @@ const HeelsBarcelonaPage: React.FC = () => {
         </section>
 
         {/* Which Style to Choose Section */}
-        <section aria-labelledby="which-style-title" className="py-16 md:py-24 bg-black">
-          <div className="container mx-auto px-6">
+        <section
+          id="which-style"
+          aria-labelledby="which-style-title"
+          className="py-12 sm:py-16 md:py-24 bg-black"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
                 <h2
                   id="which-style-title"
-                  className="text-3xl md:text-4xl font-black tracking-tighter mb-6 text-center holographic-text"
+                  className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter mb-6 text-center holographic-text"
                 >
                   {t('heelsBarcelona_whichStyle_title')}
                 </h2>
-                <p className="max-w-3xl mx-auto text-center text-lg text-neutral/90 mb-12">
+                <p className="max-w-3xl mx-auto text-center text-base sm:text-lg text-neutral/90 mb-12">
                   {t('heelsBarcelona_whichStyle_intro')}
                 </p>
               </div>
             </AnimateOnScroll>
 
             {/* Comparison Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              <AnimateOnScroll delay={100}>
-                <div className="h-full min-h-[280px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 flex flex-col">
-                  <h3 className="text-2xl font-bold text-white mb-1">
+            <div
+              className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto"
+              role="list"
+              aria-label={t('heelsBarcelona_whichStyle_title')}
+            >
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
+                <div
+                  className="h-full min-h-[280px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 sm:p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 flex flex-col"
+                  role="listitem"
+                >
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">
                     {t('heelsBarcelona_whichStyle_femmology_title')}
                   </h3>
-                  <p className="text-primary-accent text-sm font-medium mb-3">
+                  <p className="text-primary-accent text-xs sm:text-sm font-medium mb-3">
                     {t('heelsBarcelona_whichStyle_femmology_subtitle')}
                   </p>
                   <p className="text-neutral/70 text-xs uppercase tracking-wide mb-4">
                     {t('heelsBarcelona_whichStyle_femmology_for')}
                   </p>
-                  <ul className="text-neutral/90 space-y-2 text-sm mb-6 flex-grow">
-                    <li className="flex items-start">
+                  <ul
+                    className="text-neutral/90 space-y-2 text-xs sm:text-sm mb-6 flex-grow"
+                    role="list"
+                    aria-label={t('heelsBarcelona_whichStyle_femmology_title')}
+                  >
+                    <li className="flex items-start" role="listitem">
                       <span className="text-primary-accent mr-2 mt-0.5">✓</span>
                       {t('heelsBarcelona_whichStyle_femmology_point1')}
                     </li>
-                    <li className="flex items-start">
+                    <li className="flex items-start" role="listitem">
                       <span className="text-primary-accent mr-2 mt-0.5">✓</span>
                       {t('heelsBarcelona_whichStyle_femmology_point2')}
                     </li>
-                    <li className="flex items-start">
+                    <li className="flex items-start" role="listitem">
                       <span className="text-primary-accent mr-2 mt-0.5">✓</span>
                       {t('heelsBarcelona_whichStyle_femmology_point3')}
                     </li>
-                    <li className="flex items-start">
+                    <li className="flex items-start" role="listitem">
                       <span className="text-primary-accent mr-2 mt-0.5">✓</span>
                       {t('heelsBarcelona_whichStyle_femmology_point4')}
                     </li>
-                    <li className="flex items-start">
+                    <li className="flex items-start" role="listitem">
                       <span className="text-primary-accent mr-2 mt-0.5">✓</span>
                       {t('heelsBarcelona_whichStyle_femmology_point5')}
                     </li>
-                    <li className="flex items-start">
+                    <li className="flex items-start" role="listitem">
                       <span className="text-primary-accent mr-2 mt-0.5">✓</span>
                       {t('heelsBarcelona_whichStyle_femmology_point6')}
                     </li>
                   </ul>
                   <Link
                     to={`/${locale}/clases/femmology-sexy-style-en-barcelona`}
-                    className="inline-flex items-center justify-center w-full bg-primary-accent text-white font-bold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-accent-glow"
+                    className="inline-flex items-center justify-center w-full bg-primary-accent text-white font-bold py-3 px-6 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-accent-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                   >
                     {t('heelsBarcelona_whichStyle_femmology_cta')}
-                    <svg
-                      className="w-4 h-4 ml-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
-                    </svg>
+                    <CheckIcon className="w-4 h-4 ml-2" />
                   </Link>
                 </div>
               </AnimateOnScroll>
 
-              <AnimateOnScroll delay={200}>
-                <div className="h-full min-h-[280px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 flex flex-col">
-                  <h3 className="text-2xl font-bold text-white mb-1">
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 2}>
+                <div
+                  className="h-full min-h-[280px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 sm:p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 flex flex-col"
+                  role="listitem"
+                >
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">
                     {t('heelsBarcelona_whichStyle_sexystyle_title')}
                   </h3>
-                  <p className="text-primary-accent text-sm font-medium mb-3">
+                  <p className="text-primary-accent text-xs sm:text-sm font-medium mb-3">
                     {t('heelsBarcelona_whichStyle_sexystyle_subtitle')}
                   </p>
                   <p className="text-neutral/70 text-xs uppercase tracking-wide mb-4">
                     {t('heelsBarcelona_whichStyle_sexystyle_for')}
                   </p>
-                  <ul className="text-neutral/90 space-y-2 text-sm mb-6 flex-grow">
-                    <li className="flex items-start">
+                  <ul
+                    className="text-neutral/90 space-y-2 text-xs sm:text-sm mb-6 flex-grow"
+                    role="list"
+                    aria-label={t('heelsBarcelona_whichStyle_sexystyle_title')}
+                  >
+                    <li className="flex items-start" role="listitem">
                       <span className="text-primary-accent mr-2 mt-0.5">✓</span>
                       {t('heelsBarcelona_whichStyle_sexystyle_point1')}
                     </li>
-                    <li className="flex items-start">
+                    <li className="flex items-start" role="listitem">
                       <span className="text-primary-accent mr-2 mt-0.5">✓</span>
                       {t('heelsBarcelona_whichStyle_sexystyle_point2')}
                     </li>
-                    <li className="flex items-start">
+                    <li className="flex items-start" role="listitem">
                       <span className="text-primary-accent mr-2 mt-0.5">✓</span>
                       {t('heelsBarcelona_whichStyle_sexystyle_point3')}
                     </li>
-                    <li className="flex items-start">
+                    <li className="flex items-start" role="listitem">
                       <span className="text-primary-accent mr-2 mt-0.5">✓</span>
                       {t('heelsBarcelona_whichStyle_sexystyle_point4')}
                     </li>
-                    <li className="flex items-start">
+                    <li className="flex items-start" role="listitem">
                       <span className="text-primary-accent mr-2 mt-0.5">✓</span>
                       {t('heelsBarcelona_whichStyle_sexystyle_point5')}
                     </li>
-                    <li className="flex items-start">
+                    <li className="flex items-start" role="listitem">
                       <span className="text-primary-accent mr-2 mt-0.5">✓</span>
                       {t('heelsBarcelona_whichStyle_sexystyle_point6')}
                     </li>
                   </ul>
                   <Link
                     to={`/${locale}/clases/clases-de-sexy-style`}
-                    className="inline-flex items-center justify-center w-full bg-transparent border-2 border-primary-accent text-primary-accent font-bold py-3 px-6 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white hover:scale-105"
+                    className="inline-flex items-center justify-center w-full bg-transparent border-2 border-primary-accent text-primary-accent font-bold py-3 px-6 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                   >
                     {t('heelsBarcelona_whichStyle_sexystyle_cta')}
-                    <svg
-                      className="w-4 h-4 ml-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
-                    </svg>
+                    <CheckIcon className="w-4 h-4 ml-2" />
                   </Link>
                 </div>
               </AnimateOnScroll>
             </div>
 
             {/* Comparison Table */}
-            <AnimateOnScroll delay={250}>
+            <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 2.5}>
               <div className="mt-12 max-w-4xl mx-auto overflow-x-auto">
-                <table className="w-full border-collapse">
+                <table
+                  className="w-full border-collapse"
+                  role="table"
+                  aria-label={t('heelsBarcelona_whichStyle_title')}
+                >
                   <thead>
                     <tr className="border-b border-primary-accent/30">
-                      <th className="py-4 px-4 text-left text-neutral/70 font-medium">
+                      <th
+                        className="py-3 sm:py-4 px-3 sm:px-4 text-left text-neutral/70 font-medium text-xs sm:text-sm"
+                        scope="col"
+                      >
                         {t('heelsBarcelona_table_aspect')}
                       </th>
-                      <th className="py-4 px-4 text-center text-primary-accent font-bold">
+                      <th
+                        className="py-3 sm:py-4 px-3 sm:px-4 text-center text-primary-accent font-bold text-xs sm:text-sm"
+                        scope="col"
+                      >
                         {t('heelsBarcelona_table_femmology')}
                       </th>
-                      <th className="py-4 px-4 text-center text-white font-bold">
+                      <th
+                        className="py-3 sm:py-4 px-3 sm:px-4 text-center text-white font-bold text-xs sm:text-sm"
+                        scope="col"
+                      >
                         {t('heelsBarcelona_table_sexystyle')}
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="text-sm">
+                  <tbody className="text-xs sm:text-sm">
                     <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                      <td className="py-3 px-4 text-neutral/90">
+                      <td className="py-3 px-3 sm:px-4 text-neutral/90">
                         {t('heelsBarcelona_table_heels')}
                       </td>
-                      <td className="py-3 px-4 text-center text-primary-accent font-medium">
+                      <td className="py-3 px-3 sm:px-4 text-center text-primary-accent font-medium">
                         {t('heelsBarcelona_table_heels_fem')}
                       </td>
-                      <td className="py-3 px-4 text-center text-neutral/90">
+                      <td className="py-3 px-3 sm:px-4 text-center text-neutral/90">
                         {t('heelsBarcelona_table_heels_sexy')}
                       </td>
                     </tr>
                     <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                      <td className="py-3 px-4 text-neutral/90">
+                      <td className="py-3 px-3 sm:px-4 text-neutral/90">
                         {t('heelsBarcelona_table_level')}
                       </td>
-                      <td className="py-3 px-4 text-center text-primary-accent font-medium">
+                      <td className="py-3 px-3 sm:px-4 text-center text-primary-accent font-medium">
                         {t('heelsBarcelona_table_level_fem')}
                       </td>
-                      <td className="py-3 px-4 text-center text-neutral/90">
+                      <td className="py-3 px-3 sm:px-4 text-center text-neutral/90">
                         {t('heelsBarcelona_table_level_sexy')}
                       </td>
                     </tr>
                     <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                      <td className="py-3 px-4 text-neutral/90">
+                      <td className="py-3 px-3 sm:px-4 text-neutral/90">
                         {t('heelsBarcelona_table_focus')}
                       </td>
-                      <td className="py-3 px-4 text-center text-primary-accent font-medium">
+                      <td className="py-3 px-3 sm:px-4 text-center text-primary-accent font-medium">
                         {t('heelsBarcelona_table_focus_fem')}
                       </td>
-                      <td className="py-3 px-4 text-center text-neutral/90">
+                      <td className="py-3 px-3 sm:px-4 text-center text-neutral/90">
                         {t('heelsBarcelona_table_focus_sexy')}
                       </td>
                     </tr>
                     <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                      <td className="py-3 px-4 text-neutral/90">
+                      <td className="py-3 px-3 sm:px-4 text-neutral/90">
                         {t('heelsBarcelona_table_emotional')}
                       </td>
-                      <td className="py-3 px-4 text-center text-primary-accent font-medium">
+                      <td className="py-3 px-3 sm:px-4 text-center text-primary-accent font-medium">
                         {t('heelsBarcelona_table_emotional_fem')}
                       </td>
-                      <td className="py-3 px-4 text-center text-neutral/90">
+                      <td className="py-3 px-3 sm:px-4 text-center text-neutral/90">
                         {t('heelsBarcelona_table_emotional_sexy')}
                       </td>
                     </tr>
                     <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                      <td className="py-3 px-4 text-neutral/90">
+                      <td className="py-3 px-3 sm:px-4 text-neutral/90">
                         {t('heelsBarcelona_table_teacher')}
                       </td>
-                      <td className="py-3 px-4 text-center text-primary-accent font-medium">
+                      <td className="py-3 px-3 sm:px-4 text-center text-primary-accent font-medium">
                         {t('heelsBarcelona_table_teacher_fem')}
                       </td>
-                      <td className="py-3 px-4 text-center text-neutral/90">
+                      <td className="py-3 px-3 sm:px-4 text-center text-neutral/90">
                         {t('heelsBarcelona_table_teacher_sexy')}
                       </td>
                     </tr>
                     <tr className="hover:bg-white/5 transition-colors">
-                      <td className="py-3 px-4 text-neutral/90">
+                      <td className="py-3 px-3 sm:px-4 text-neutral/90">
                         {t('heelsBarcelona_table_ideal')}
                       </td>
-                      <td className="py-3 px-4 text-center text-primary-accent font-medium">
+                      <td className="py-3 px-3 sm:px-4 text-center text-primary-accent font-medium">
                         {t('heelsBarcelona_table_ideal_fem')}
                       </td>
-                      <td className="py-3 px-4 text-center text-neutral/90">
+                      <td className="py-3 px-3 sm:px-4 text-center text-neutral/90">
                         {t('heelsBarcelona_table_ideal_sexy')}
                       </td>
                     </tr>
@@ -602,12 +630,12 @@ const HeelsBarcelonaPage: React.FC = () => {
 
             {/* Additional Info Card - Combine Styles */}
             <div className="mt-12 max-w-3xl mx-auto">
-              <AnimateOnScroll delay={300}>
-                <div className="bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 text-center">
-                  <h3 className="text-xl font-bold text-white mb-3">
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 3}>
+                <div className="bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 sm:p-8 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 text-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3">
                     {t('heelsBarcelona_whichStyle_combine_title')}
                   </h3>
-                  <p className="text-neutral/90 leading-relaxed">
+                  <p className="text-neutral/90 leading-relaxed text-sm sm:text-base">
                     {t('heelsBarcelona_whichStyle_combine_text')}
                   </p>
                 </div>
@@ -617,35 +645,47 @@ const HeelsBarcelonaPage: React.FC = () => {
         </section>
 
         {/* Why Study Heels at FIDC Section */}
-        <section aria-labelledby="why-title" className="py-20 md:py-32 bg-black">
-          <div className="container mx-auto px-6">
+        <section
+          id="why-fidc"
+          aria-labelledby="why-title"
+          className="py-16 sm:py-20 md:py-32 bg-black"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-16 max-w-3xl mx-auto">
+              <div className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
                 <h2
                   id="why-title"
-                  className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
                 >
                   {t('heelsBarcelona_why_title')}
                 </h2>
               </div>
             </AnimateOnScroll>
-            <div className="flex flex-wrap justify-center -m-4">
+            <div
+              className="flex flex-wrap justify-center -m-2 sm:-m-4"
+              role="list"
+              aria-label={t('heelsBarcelona_why_title')}
+            >
               {valuePillars.map((pillar, index) => (
-                <div key={pillar.id} className="w-full sm:w-1/2 lg:w-1/3 p-4">
-                  <AnimateOnScroll delay={index * 100} className="h-full">
-                    <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full min-h-[180px] flex flex-col">
-                      <div className="mb-6">
-                        <div className="bg-primary-dark/30 group-hover:bg-primary-accent/20 p-4 rounded-xl inline-block shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
+                <div
+                  key={pillar.id}
+                  className="w-full sm:w-1/2 lg:w-1/3 p-2 sm:p-4"
+                  role="listitem"
+                >
+                  <AnimateOnScroll delay={index * ANIMATION_DELAYS.STAGGER_SMALL} className="h-full">
+                    <div className="group p-6 sm:p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full min-h-[180px] flex flex-col">
+                      <div className="mb-4 sm:mb-6">
+                        <div className="bg-primary-dark/30 group-hover:bg-primary-accent/20 p-3 sm:p-4 rounded-xl inline-block shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                           <Icon
                             name={pillar.iconName}
-                            className="h-10 w-10 text-primary-accent transition-all duration-500 group-hover:scale-110"
+                            className="h-8 w-8 sm:h-10 sm:w-10 text-primary-accent transition-all duration-500 group-hover:scale-110"
                           />
                         </div>
                       </div>
-                      <h3 className="text-2xl font-bold mb-4 text-neutral group-hover:text-white transition-colors duration-300">
+                      <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-neutral group-hover:text-white transition-colors duration-300">
                         {t(pillar.titleKey)}
                       </h3>
-                      <p className="text-neutral/90 leading-relaxed flex-grow group-hover:text-neutral/90 transition-colors duration-300">
+                      <p className="text-neutral/90 text-sm sm:text-base leading-relaxed flex-grow group-hover:text-neutral/90 transition-colors duration-300">
                         {t(pillar.contentKey)}
                       </p>
                     </div>
@@ -657,37 +697,48 @@ const HeelsBarcelonaPage: React.FC = () => {
         </section>
 
         {/* Stats Widget Section */}
-        <section className="py-8 md:py-12 bg-black">
-          <div className="container mx-auto px-6">
+        <section
+          id="stats"
+          aria-labelledby="stats-title"
+          className="py-8 md:py-12 bg-black"
+        >
+          <h2 id="stats-title" className="sr-only">
+            {t('trustStats')}
+          </h2>
+          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
-              <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 max-w-5xl mx-auto">
-                <div className="text-center">
+              <div
+                className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 max-w-5xl mx-auto"
+                role="list"
+                aria-label={t('trustStats')}
+              >
+                <div className="text-center" role="listitem">
                   <AnimatedCounter
                     target={8}
                     suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
                     {t('yearsExperience')}
                   </p>
                 </div>
-                <div className="text-center">
+                <div className="text-center" role="listitem">
                   <AnimatedCounter
                     target={1500}
                     suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
                     {t('activeStudents')}
                   </p>
                 </div>
-                <div className="text-center">
+                <div className="text-center" role="listitem">
                   <AnimatedCounter
                     target={15000}
                     suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
                     {t('satisfiedStudents')}
                   </p>
                 </div>
@@ -710,51 +761,46 @@ const HeelsBarcelonaPage: React.FC = () => {
         />
 
         {/* Final CTA Section - Conversion Optimized */}
-        <section className="relative py-20 md:py-32 overflow-hidden">
+        <section
+          id="final-cta"
+          aria-labelledby="final-cta-title"
+          className="relative py-16 sm:py-20 md:py-32 overflow-hidden"
+        >
           {/* Background like Hero */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-pink-900/30 via-black to-black"></div>
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
-          <div className="relative z-20 container mx-auto px-6 text-center">
+          <div className="relative z-20 container mx-auto px-4 sm:px-6 text-center">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 holographic-text">
+                <h2
+                  id="final-cta-title"
+                  className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tighter mb-6 holographic-text"
+                >
                   {t('heelsBarcelona_cta_title')}
                 </h2>
-                <p className="max-w-2xl mx-auto text-xl text-neutral/90 mb-4">
+                <p className="max-w-2xl mx-auto text-lg sm:text-xl text-neutral/90 mb-4">
                   {t('heelsBarcelona_cta_subtitle')}
                 </p>
-                <p className="max-w-xl mx-auto text-lg text-neutral/75 mb-10">
+                <p className="max-w-xl mx-auto text-base sm:text-lg text-neutral/75 mb-10">
                   {t('heelsBarcelona_cta_description')}
                 </p>
               </div>
             </AnimateOnScroll>
 
-            <AnimateOnScroll delay={200}>
+            <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 2}>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   to={`/${locale}#enroll`}
-                  className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-xl py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-accent-glow animate-glow"
+                  className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-lg sm:text-xl py-4 sm:py-5 px-10 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-accent-glow animate-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   {t('enrollNow')}
-                  <svg
-                    className="w-6 h-6 ml-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
+                  <CheckIcon className="w-5 h-5 sm:w-6 sm:h-6 ml-2" />
                 </Link>
                 <Link
                   to={`/${locale}#enroll`}
-                  className="inline-flex items-center justify-center bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-xl py-5 px-12 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white"
+                  className="inline-flex items-center justify-center bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-lg sm:text-xl py-4 sm:py-5 px-10 sm:px-12 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   {t('heroCTA1')}
                 </Link>

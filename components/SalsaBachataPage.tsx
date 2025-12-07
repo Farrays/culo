@@ -12,6 +12,12 @@ import Icon, { type IconName } from './Icon';
 import type { ValuePillar } from '../types';
 import TestimonialsSection from './TestimonialsSection';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
+import { CheckIcon } from './shared/Icons';
+
+const ANIMATION_DELAYS = {
+  STAGGER_SMALL: 100,
+  STAGGER_MEDIUM: 150,
+};
 
 // Type extension for ValuePillar with icon names instead of components
 type ValuePillarWithIcon = Omit<ValuePillar, 'Icon'> & { iconName: IconName };
@@ -177,56 +183,62 @@ const SalsaBachataPage: React.FC = () => {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
-      <div className="pt-20 md:pt-24">
+      {/* Skip Links for Accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-accent focus:text-white focus:rounded-lg"
+      >
+        {t('skipToContent')}
+      </a>
+      <a
+        href="#styles"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-48 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-accent focus:text-white focus:rounded-lg"
+      >
+        {t('skipToSchedule')}
+      </a>
+
+      <main role="main" id="main-content" className="pt-20 md:pt-24">
         {/* Hero Section */}
         <section
-          id="salsa-bachata-barcelona-hero"
-          className="relative text-center py-32 md:py-40 overflow-hidden flex items-center justify-center min-h-[600px]"
+          id="salsa-bachata-hero"
+          aria-labelledby="salsa-bachata-hero-title"
+          className="relative text-center py-24 sm:py-32 md:py-40 overflow-hidden flex items-center justify-center min-h-[600px]"
         >
           {/* Background */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
-          <div className="relative z-20 container mx-auto px-6">
+          <div className="relative z-20 container mx-auto px-4 sm:px-6">
             {/* Breadcrumb with Microdata */}
             <Breadcrumb items={breadcrumbItems} textColor="text-neutral/75" />
 
             {/* H1 + Intro */}
             <AnimateOnScroll>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text">
+              <h1
+                id="salsa-bachata-hero-title"
+                className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text"
+              >
                 {t('salsaBachataBarcelona_h1')}
               </h1>
-              <p className="max-w-4xl mx-auto text-xl md:text-2xl text-neutral/90 mt-8 leading-relaxed">
+              <p className="max-w-4xl mx-auto text-lg sm:text-xl md:text-2xl text-neutral/90 mt-8 leading-relaxed">
                 {t('salsaBachataBarcelona_intro')}
               </p>
             </AnimateOnScroll>
 
             {/* CTA Buttons */}
-            <AnimateOnScroll delay={200}>
+            <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 2}>
               <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   to={`/${locale}#enroll`}
-                  className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
+                  className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-base sm:text-lg py-4 px-8 sm:px-10 rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-accent-glow animate-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   {t('enrollNow')}
-                  <svg
-                    className="w-5 h-5 ml-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
+                  <CheckIcon className="w-5 h-5 ml-2" />
                 </Link>
                 <Link
                   to={`/${locale}#enroll`}
-                  className="inline-flex items-center justify-center bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white"
+                  className="inline-flex items-center justify-center bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-base sm:text-lg py-4 px-8 sm:px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   {t('heroCTA1')}
                 </Link>
@@ -235,14 +247,18 @@ const SalsaBachataPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Point 1 - What is Salsa y Bachata Section */}
-        <section aria-labelledby="what-is-title" className="py-16 md:py-24 bg-black">
-          <div className="container mx-auto px-6">
+        {/* What is Salsa y Bachata Section */}
+        <section
+          id="what-is-salsa-bachata"
+          aria-labelledby="what-is-title"
+          className="py-12 sm:py-16 md:py-24 bg-black"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
                 <h2
                   id="what-is-title"
-                  className="text-4xl md:text-5xl font-black tracking-tighter mb-8 text-neutral text-center holographic-text"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter mb-8 text-neutral text-center holographic-text"
                 >
                   {t('salsaBachata_whatIs_title')}
                 </h2>
@@ -250,29 +266,29 @@ const SalsaBachataPage: React.FC = () => {
             </AnimateOnScroll>
 
             <div className="max-w-4xl mx-auto space-y-6">
-              <AnimateOnScroll delay={100}>
-                <p className="text-lg md:text-xl text-neutral/90 leading-relaxed">
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
+                <p className="text-base sm:text-lg md:text-xl text-neutral/90 leading-relaxed">
                   {t('salsaBachata_whatIs_salsa')}
                 </p>
               </AnimateOnScroll>
 
-              <AnimateOnScroll delay={200}>
-                <p className="text-lg md:text-xl text-neutral/90 leading-relaxed">
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 2}>
+                <p className="text-base sm:text-lg md:text-xl text-neutral/90 leading-relaxed">
                   {t('salsaBachata_whatIs_bachata')}
                 </p>
               </AnimateOnScroll>
 
-              <AnimateOnScroll delay={300}>
-                <h3 className="text-2xl md:text-3xl font-bold text-neutral mt-8 mb-4">
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 3}>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-neutral mt-8 mb-4">
                   {t('salsaBachata_whatIs_difference_title')}
                 </h3>
-                <p className="text-lg md:text-xl text-neutral/90 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-neutral/90 leading-relaxed">
                   {t('salsaBachata_whatIs_difference_text')}
                 </p>
               </AnimateOnScroll>
 
-              <AnimateOnScroll delay={400}>
-                <p className="text-lg md:text-xl text-neutral/90 leading-relaxed">
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 4}>
+                <p className="text-base sm:text-lg md:text-xl text-neutral/90 leading-relaxed">
                   {t('salsaBachata_whatIs_benefits')}
                 </p>
               </AnimateOnScroll>
@@ -281,34 +297,43 @@ const SalsaBachataPage: React.FC = () => {
         </section>
 
         {/* Dance Styles Grid Section */}
-        <section aria-labelledby="styles-title" className="py-12 md:py-20 bg-primary-dark/10">
-          <div className="container mx-auto px-6 text-center">
+        <section
+          id="styles"
+          aria-labelledby="styles-title"
+          className="py-12 md:py-20 bg-primary-dark/10"
+        >
+          <div className="container mx-auto px-4 sm:px-6 text-center">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
                 <h2
                   id="styles-title"
-                  className="text-4xl md:text-5xl font-black tracking-tighter mb-4 holographic-text"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter mb-4 holographic-text"
                 >
                   {t('salsaBachataBarcelona_styles_title')}
                 </h2>
               </div>
             </AnimateOnScroll>
-            <AnimateOnScroll delay={200}>
-              <p className="max-w-3xl mx-auto text-lg text-neutral/90 mb-12">
+            <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 2}>
+              <p className="max-w-3xl mx-auto text-base sm:text-lg text-neutral/90 mb-12">
                 {t('salsaBachataBarcelona_styles_description')}
               </p>
             </AnimateOnScroll>
 
             {/* Grid of Dance Styles */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+              role="list"
+              aria-label={t('salsaBachataBarcelona_styles_title')}
+            >
               {salsaBachataCategory.allStyles.map((style, index) => (
-                <AnimateOnScroll key={style.key} delay={index * 100}>
+                <AnimateOnScroll key={style.key} delay={index * ANIMATION_DELAYS.STAGGER_SMALL}>
                   <Link
                     to={`/${locale}${style.url}`}
-                    className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col"
+                    className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                    role="listitem"
                   >
                     {/* Image Section - Fixed Height */}
-                    <div className="relative h-48 overflow-hidden flex-shrink-0">
+                    <div className="relative h-40 sm:h-48 overflow-hidden flex-shrink-0">
                       <img
                         src={salsaBachataCategory.imageUrl}
                         alt={`${t(`danceClassesHub_style_${style.key}`)} - Clases en Barcelona`}
@@ -322,11 +347,11 @@ const SalsaBachataPage: React.FC = () => {
                     </div>
 
                     {/* Text Section - Always Visible, Flexible Height */}
-                    <div className="p-6 space-y-3 flex-grow flex flex-col">
-                      <h3 className="text-2xl font-bold text-white group-hover:text-primary-accent transition-colors duration-300">
+                    <div className="p-4 sm:p-6 space-y-3 flex-grow flex flex-col">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-primary-accent transition-colors duration-300">
                         {t(`danceClassesHub_style_${style.key}`)}
                       </h3>
-                      <p className="text-neutral/90 text-sm leading-relaxed flex-grow">
+                      <p className="text-neutral/90 text-xs sm:text-sm leading-relaxed flex-grow">
                         {t(`salsaBachata_style_${style.key}_seo`)}
                       </p>
                       <div className="text-primary-accent font-bold text-sm group-hover:translate-x-1 transition-transform duration-300">
@@ -340,82 +365,123 @@ const SalsaBachataPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Point 2 - Comparison Table Section */}
-        <section aria-labelledby="which-style-title" className="py-16 md:py-24 bg-black">
-          <div className="container mx-auto px-6">
+        {/* Comparison Table Section */}
+        <section
+          id="which-style"
+          aria-labelledby="which-style-title"
+          className="py-12 sm:py-16 md:py-24 bg-black"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
                 <h2
                   id="which-style-title"
-                  className="text-4xl md:text-5xl font-black tracking-tighter mb-6 text-neutral text-center holographic-text"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter mb-6 text-neutral text-center holographic-text"
                 >
                   {t('salsaBachata_whichStyle_title')}
                 </h2>
-                <p className="max-w-3xl mx-auto text-lg text-neutral/90 mb-12 text-center">
+                <p className="max-w-3xl mx-auto text-base sm:text-lg text-neutral/90 mb-12 text-center">
                   {t('salsaBachata_whichStyle_intro')}
                 </p>
               </div>
             </AnimateOnScroll>
 
             {/* Comparison Table */}
-            <AnimateOnScroll delay={200}>
+            <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 2}>
               <div className="overflow-x-auto mb-12">
-                <table className="w-full max-w-5xl mx-auto bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl overflow-hidden shadow-lg">
+                <table
+                  className="w-full max-w-5xl mx-auto bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl overflow-hidden shadow-lg"
+                  role="table"
+                  aria-label={t('salsaBachata_whichStyle_title')}
+                >
                   <thead>
                     <tr className="bg-primary-accent/20 text-white">
-                      <th className="py-4 px-6 text-left font-bold text-lg border-b border-primary-accent/30">
+                      <th
+                        className="py-3 sm:py-4 px-4 sm:px-6 text-left font-bold text-sm sm:text-lg border-b border-primary-accent/30"
+                        scope="col"
+                      >
                         {t('salsaBachata_whichStyle_tableHeader_goal')}
                       </th>
-                      <th className="py-4 px-6 text-left font-bold text-lg border-b border-primary-accent/30">
+                      <th
+                        className="py-3 sm:py-4 px-4 sm:px-6 text-left font-bold text-sm sm:text-lg border-b border-primary-accent/30"
+                        scope="col"
+                      >
                         {t('salsaBachata_whichStyle_tableHeader_style')}
                       </th>
-                      <th className="py-4 px-6 text-left font-bold text-lg border-b border-primary-accent/30">
+                      <th
+                        className="py-3 sm:py-4 px-4 sm:px-6 text-left font-bold text-sm sm:text-lg border-b border-primary-accent/30"
+                        scope="col"
+                      >
                         {t('salsaBachata_whichStyle_tableHeader_why')}
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="text-neutral/90">
+                  <tbody className="text-neutral/90 text-sm sm:text-base">
                     <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                      <td className="py-4 px-6">{t('salsaBachata_whichStyle_social_goal')}</td>
-                      <td className="py-4 px-6 font-semibold text-primary-accent">
+                      <td className="py-3 sm:py-4 px-4 sm:px-6">
+                        {t('salsaBachata_whichStyle_social_goal')}
+                      </td>
+                      <td className="py-3 sm:py-4 px-4 sm:px-6 font-semibold text-primary-accent">
                         {t('salsaBachata_whichStyle_social_style')}
                       </td>
-                      <td className="py-4 px-6">{t('salsaBachata_whichStyle_social_why')}</td>
+                      <td className="py-3 sm:py-4 px-4 sm:px-6">
+                        {t('salsaBachata_whichStyle_social_why')}
+                      </td>
                     </tr>
                     <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                      <td className="py-4 px-6">{t('salsaBachata_whichStyle_romantic_goal')}</td>
-                      <td className="py-4 px-6 font-semibold text-primary-accent">
+                      <td className="py-3 sm:py-4 px-4 sm:px-6">
+                        {t('salsaBachata_whichStyle_romantic_goal')}
+                      </td>
+                      <td className="py-3 sm:py-4 px-4 sm:px-6 font-semibold text-primary-accent">
                         {t('salsaBachata_whichStyle_romantic_style')}
                       </td>
-                      <td className="py-4 px-6">{t('salsaBachata_whichStyle_romantic_why')}</td>
+                      <td className="py-3 sm:py-4 px-4 sm:px-6">
+                        {t('salsaBachata_whichStyle_romantic_why')}
+                      </td>
                     </tr>
                     <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                      <td className="py-4 px-6">{t('salsaBachata_whichStyle_advanced_goal')}</td>
-                      <td className="py-4 px-6 font-semibold text-primary-accent">
+                      <td className="py-3 sm:py-4 px-4 sm:px-6">
+                        {t('salsaBachata_whichStyle_advanced_goal')}
+                      </td>
+                      <td className="py-3 sm:py-4 px-4 sm:px-6 font-semibold text-primary-accent">
                         {t('salsaBachata_whichStyle_advanced_style')}
                       </td>
-                      <td className="py-4 px-6">{t('salsaBachata_whichStyle_advanced_why')}</td>
+                      <td className="py-3 sm:py-4 px-4 sm:px-6">
+                        {t('salsaBachata_whichStyle_advanced_why')}
+                      </td>
                     </tr>
                     <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                      <td className="py-4 px-6">{t('salsaBachata_whichStyle_traditional_goal')}</td>
-                      <td className="py-4 px-6 font-semibold text-primary-accent">
+                      <td className="py-3 sm:py-4 px-4 sm:px-6">
+                        {t('salsaBachata_whichStyle_traditional_goal')}
+                      </td>
+                      <td className="py-3 sm:py-4 px-4 sm:px-6 font-semibold text-primary-accent">
                         {t('salsaBachata_whichStyle_traditional_style')}
                       </td>
-                      <td className="py-4 px-6">{t('salsaBachata_whichStyle_traditional_why')}</td>
+                      <td className="py-3 sm:py-4 px-4 sm:px-6">
+                        {t('salsaBachata_whichStyle_traditional_why')}
+                      </td>
                     </tr>
                     <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                      <td className="py-4 px-6">{t('salsaBachata_whichStyle_solo_goal')}</td>
-                      <td className="py-4 px-6 font-semibold text-primary-accent">
+                      <td className="py-3 sm:py-4 px-4 sm:px-6">
+                        {t('salsaBachata_whichStyle_solo_goal')}
+                      </td>
+                      <td className="py-3 sm:py-4 px-4 sm:px-6 font-semibold text-primary-accent">
                         {t('salsaBachata_whichStyle_solo_style')}
                       </td>
-                      <td className="py-4 px-6">{t('salsaBachata_whichStyle_solo_why')}</td>
+                      <td className="py-3 sm:py-4 px-4 sm:px-6">
+                        {t('salsaBachata_whichStyle_solo_why')}
+                      </td>
                     </tr>
                     <tr className="hover:bg-white/5 transition-colors">
-                      <td className="py-4 px-6">{t('salsaBachata_whichStyle_beginner_goal')}</td>
-                      <td className="py-4 px-6 font-semibold text-primary-accent">
+                      <td className="py-3 sm:py-4 px-4 sm:px-6">
+                        {t('salsaBachata_whichStyle_beginner_goal')}
+                      </td>
+                      <td className="py-3 sm:py-4 px-4 sm:px-6 font-semibold text-primary-accent">
                         {t('salsaBachata_whichStyle_beginner_style')}
                       </td>
-                      <td className="py-4 px-6">{t('salsaBachata_whichStyle_beginner_why')}</td>
+                      <td className="py-3 sm:py-4 px-4 sm:px-6">
+                        {t('salsaBachata_whichStyle_beginner_why')}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -423,35 +489,48 @@ const SalsaBachataPage: React.FC = () => {
             </AnimateOnScroll>
 
             {/* Info Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              <AnimateOnScroll delay={300}>
-                <div className="h-full min-h-[120px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
-                  <h3 className="text-xl font-bold text-white mb-3">
+            <div
+              className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto"
+              role="list"
+              aria-label={t('salsaBachata_whichStyle_title')}
+            >
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 3}>
+                <div
+                  className="h-full min-h-[120px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-4 sm:p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300"
+                  role="listitem"
+                >
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3">
                     {t('salsaBachata_whichStyle_beginner_title')}
                   </h3>
-                  <p className="text-neutral/90 text-sm leading-relaxed">
+                  <p className="text-neutral/90 text-xs sm:text-sm leading-relaxed">
                     {t('salsaBachata_whichStyle_beginner_text')}
                   </p>
                 </div>
               </AnimateOnScroll>
 
-              <AnimateOnScroll delay={400}>
-                <div className="h-full min-h-[120px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
-                  <h3 className="text-xl font-bold text-white mb-3">
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 4}>
+                <div
+                  className="h-full min-h-[120px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-4 sm:p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300"
+                  role="listitem"
+                >
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3">
                     {t('salsaBachata_whichStyle_adult_title')}
                   </h3>
-                  <p className="text-neutral/90 text-sm leading-relaxed">
+                  <p className="text-neutral/90 text-xs sm:text-sm leading-relaxed">
                     {t('salsaBachata_whichStyle_adult_text')}
                   </p>
                 </div>
               </AnimateOnScroll>
 
-              <AnimateOnScroll delay={500}>
-                <div className="h-full min-h-[120px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
-                  <h3 className="text-xl font-bold text-white mb-3">
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 5}>
+                <div
+                  className="h-full min-h-[120px] bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-4 sm:p-6 hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300"
+                  role="listitem"
+                >
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3">
                     {t('salsaBachata_whichStyle_combine_title')}
                   </h3>
-                  <p className="text-neutral/90 text-sm leading-relaxed">
+                  <p className="text-neutral/90 text-xs sm:text-sm leading-relaxed">
                     {t('salsaBachata_whichStyle_combine_text')}
                   </p>
                 </div>
@@ -461,35 +540,47 @@ const SalsaBachataPage: React.FC = () => {
         </section>
 
         {/* Why Study at FIDC Section */}
-        <section aria-labelledby="why-title" className="py-20 md:py-32 bg-black">
-          <div className="container mx-auto px-6">
+        <section
+          id="why-fidc"
+          aria-labelledby="why-title"
+          className="py-16 sm:py-20 md:py-32 bg-black"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-16 max-w-3xl mx-auto">
+              <div className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
                 <h2
                   id="why-title"
-                  className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
                 >
                   {t('salsaBachataBarcelona_why_title')}
                 </h2>
               </div>
             </AnimateOnScroll>
-            <div className="flex flex-wrap justify-center -m-4">
+            <div
+              className="flex flex-wrap justify-center -m-2 sm:-m-4"
+              role="list"
+              aria-label={t('salsaBachataBarcelona_why_title')}
+            >
               {valuePillars.map((pillar, index) => (
-                <div key={pillar.id} className="w-full sm:w-1/2 lg:w-1/3 p-4">
-                  <AnimateOnScroll delay={index * 100} className="h-full">
-                    <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full min-h-[180px] flex flex-col">
-                      <div className="mb-6">
-                        <div className="bg-primary-dark/30 group-hover:bg-primary-accent/20 p-4 rounded-xl inline-block shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
+                <div
+                  key={pillar.id}
+                  className="w-full sm:w-1/2 lg:w-1/3 p-2 sm:p-4"
+                  role="listitem"
+                >
+                  <AnimateOnScroll delay={index * ANIMATION_DELAYS.STAGGER_SMALL} className="h-full">
+                    <div className="group p-6 sm:p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full min-h-[180px] flex flex-col">
+                      <div className="mb-4 sm:mb-6">
+                        <div className="bg-primary-dark/30 group-hover:bg-primary-accent/20 p-3 sm:p-4 rounded-xl inline-block shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                           <Icon
                             name={pillar.iconName}
-                            className="h-10 w-10 text-primary-accent transition-all duration-500 group-hover:scale-110"
+                            className="h-8 w-8 sm:h-10 sm:w-10 text-primary-accent transition-all duration-500 group-hover:scale-110"
                           />
                         </div>
                       </div>
-                      <h3 className="text-2xl font-bold mb-4 text-neutral group-hover:text-white transition-colors duration-300">
+                      <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-neutral group-hover:text-white transition-colors duration-300">
                         {t(pillar.titleKey)}
                       </h3>
-                      <p className="text-neutral/90 leading-relaxed flex-grow group-hover:text-neutral/90 transition-colors duration-300">
+                      <p className="text-neutral/90 text-sm sm:text-base leading-relaxed flex-grow group-hover:text-neutral/90 transition-colors duration-300">
                         {t(pillar.contentKey)}
                       </p>
                     </div>
@@ -501,37 +592,48 @@ const SalsaBachataPage: React.FC = () => {
         </section>
 
         {/* Stats Widget Section */}
-        <section className="py-8 md:py-12 bg-black">
-          <div className="container mx-auto px-6">
+        <section
+          id="stats"
+          aria-labelledby="stats-title"
+          className="py-8 md:py-12 bg-black"
+        >
+          <h2 id="stats-title" className="sr-only">
+            {t('trustStats')}
+          </h2>
+          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
-              <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 max-w-5xl mx-auto">
-                <div className="text-center">
+              <div
+                className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 max-w-5xl mx-auto"
+                role="list"
+                aria-label={t('trustStats')}
+              >
+                <div className="text-center" role="listitem">
                   <AnimatedCounter
                     target={8}
                     suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
                     {t('yearsExperience')}
                   </p>
                 </div>
-                <div className="text-center">
+                <div className="text-center" role="listitem">
                   <AnimatedCounter
                     target={1500}
                     suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
                     {t('activeStudents')}
                   </p>
                 </div>
-                <div className="text-center">
+                <div className="text-center" role="listitem">
                   <AnimatedCounter
                     target={15000}
                     suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
                     {t('satisfiedStudents')}
                   </p>
                 </div>
@@ -554,51 +656,46 @@ const SalsaBachataPage: React.FC = () => {
         />
 
         {/* Final CTA Section - Conversion Optimized */}
-        <section className="relative py-20 md:py-32 overflow-hidden">
+        <section
+          id="final-cta"
+          aria-labelledby="final-cta-title"
+          className="relative py-16 sm:py-20 md:py-32 overflow-hidden"
+        >
           {/* Background with stars */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
-          <div className="relative z-20 container mx-auto px-6 text-center">
+          <div className="relative z-20 container mx-auto px-4 sm:px-6 text-center">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 holographic-text">
+                <h2
+                  id="final-cta-title"
+                  className="text-3xl sm:text-4xl md:text-6xl font-black tracking-tighter mb-6 holographic-text"
+                >
                   {t('salsaBachataCTA_title')}
                 </h2>
-                <p className="max-w-2xl mx-auto text-xl text-neutral/90 mb-4">
+                <p className="max-w-2xl mx-auto text-lg sm:text-xl text-neutral/90 mb-4">
                   {t('salsaBachataCTA_subtitle')}
                 </p>
-                <p className="max-w-xl mx-auto text-lg text-neutral/75 mb-10">
+                <p className="max-w-xl mx-auto text-base sm:text-lg text-neutral/75 mb-10">
                   {t('salsaBachataCTA_description')}
                 </p>
               </div>
             </AnimateOnScroll>
 
-            <AnimateOnScroll delay={200}>
+            <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 2}>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   to={`/${locale}#enroll`}
-                  className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-xl py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-accent-glow animate-glow"
+                  className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-lg sm:text-xl py-4 sm:py-5 px-10 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-accent-glow animate-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   {t('enrollNow')}
-                  <svg
-                    className="w-6 h-6 ml-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
+                  <CheckIcon className="w-5 h-5 sm:w-6 sm:h-6 ml-2" />
                 </Link>
                 <Link
                   to={`/${locale}#enroll`}
-                  className="inline-flex items-center justify-center bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-xl py-5 px-12 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white"
+                  className="inline-flex items-center justify-center bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-lg sm:text-xl py-4 sm:py-5 px-10 sm:px-12 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   {t('heroCTA1')}
                 </Link>
@@ -606,7 +703,7 @@ const SalsaBachataPage: React.FC = () => {
             </AnimateOnScroll>
           </div>
         </section>
-      </div>
+      </main>
     </>
   );
 };

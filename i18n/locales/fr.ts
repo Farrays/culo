@@ -2774,6 +2774,7 @@ export const fr = {
   twerkWhatIsQuestionAnswer: "Oui, ça l'est.",
 
   // Cultural Section
+  twerkCulturalHistoryTitle: 'Vous voulez en savoir plus sur le Twerk ?',
   twerkCulturalShort:
     "Le Twerk n'est pas apparu du jour au lendemain. Il est né d'un mélange d'influences afro-descendantes : des mouvements de danses traditionnelles africaines comme le 'baikoko mapouka', de la culture bounce de la Nouvelle-Orléans et d'autres styles urbains qui travaillaient déjà beaucoup les hanches et le \"booty\".",
   twerkCulturalFull:

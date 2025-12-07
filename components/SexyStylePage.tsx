@@ -309,12 +309,12 @@ const SexyStylePage: React.FC = () => {
         </a>
       </nav>
 
-      <div className="pt-20 md:pt-24">
+      <main role="main" id="main-content" className="pt-20 md:pt-24">
         {/* HERO Section */}
         <section
           id="sexy-style-hero"
           aria-labelledby="sexy-style-hero-title"
-          className="relative text-center py-32 md:py-40 overflow-hidden flex items-center justify-center min-h-[600px]"
+          className="relative text-center py-24 sm:py-32 md:py-40 overflow-hidden flex items-center justify-center min-h-[600px]"
         >
           {/* Background */}
           <div className="absolute inset-0 bg-black">
@@ -481,15 +481,81 @@ const SexyStylePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Cultural History - Expandable (without title) */}
-        <CulturalHistorySection
-          titleKey=""
-          shortDescKey="sexystyleCulturalShort"
-          fullHistoryKey="sexystyleCulturalFull"
-          readMoreText={t('readMore')}
-          readLessText={t('readLess')}
+        {/* Schedule Section - Position 3 */}
+        <ScheduleSection
+          id="schedule"
+          titleKey="sexystyleScheduleTitle"
+          subtitleKey="sexystyleScheduleSubtitle"
+          schedules={schedules}
           t={t}
         />
+
+        {/* Teacher Section - Position 4 */}
+        <section
+          id="teachers"
+          aria-labelledby="teachers-title"
+          className="py-16 sm:py-20 md:py-32 bg-black relative overflow-hidden"
+        >
+          <div className="container mx-auto px-4 sm:px-6 relative z-10">
+            <AnimateOnScroll>
+              <div className="text-center mb-12 sm:mb-16 max-w-4xl mx-auto">
+                <h2
+                  id="teachers-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text"
+                >
+                  {t('sexystyleTeachersTitle')}
+                </h2>
+                <p className="text-lg sm:text-xl text-neutral/70 mt-4">
+                  {t('sexystyleTeachersSubtitle')}
+                </p>
+              </div>
+            </AnimateOnScroll>
+
+            <div className="max-w-2xl mx-auto">
+              <AnimateOnScroll
+                delay={ANIMATION_DELAYS.STAGGER_SMALL}
+                className="[perspective:1000px]"
+              >
+                <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-6 sm:p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-36 h-36 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6">
+                      <picture>
+                        <source
+                          srcSet="/images/teachers/img/profesora-yasmina-fernandez_320.webp 320w, /images/teachers/img/profesora-yasmina-fernandez_640.webp 640w"
+                          sizes="192px"
+                          type="image/webp"
+                        />
+                        <img
+                          src="/images/teachers/img/profesora-yasmina-fernandez_640.jpg"
+                          alt="Yasmina Fernández - Instructora de Sexy Style"
+                          width="192"
+                          height="192"
+                          loading="lazy"
+                          className="w-full h-full object-cover"
+                        />
+                      </picture>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2">
+                      Yasmina Fernández
+                    </h3>
+                    <p className="text-primary-accent font-semibold mb-4">
+                      {t('sexystyleTeacher1Specialty')}
+                    </p>
+                    <p className="text-neutral/90 leading-relaxed text-sm sm:text-base">
+                      {t('sexystyleTeacher1Bio')}
+                    </p>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+            </div>
+
+            <AnimateOnScroll>
+              <p className="text-center text-base sm:text-lg text-neutral/90 mt-12 max-w-2xl mx-auto">
+                {t('sexystyleTeachersClosing')}
+              </p>
+            </AnimateOnScroll>
+          </div>
+        </section>
 
         {/* Identification Section - ¿Te identificas? */}
         <section
@@ -654,34 +720,34 @@ const SexyStylePage: React.FC = () => {
 
             {/* Trust Bar - Stats */}
             <AnimateOnScroll>
-              <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 max-w-5xl mx-auto">
-                <div className="text-center">
+              <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 max-w-5xl mx-auto" role="list" aria-label={t('trustStats')}>
+                <div className="text-center" role="listitem">
                   <AnimatedCounter
                     target={8}
                     suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
                     {t('yearsExperience')}
                   </p>
                 </div>
-                <div className="text-center">
+                <div className="text-center" role="listitem">
                   <AnimatedCounter
                     target={1500}
                     suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
                     {t('activeStudents')}
                   </p>
                 </div>
-                <div className="text-center">
+                <div className="text-center" role="listitem">
                   <AnimatedCounter
                     target={15000}
                     suffix="+"
-                    className="text-4xl md:text-5xl font-black mb-2 holographic-text"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
                     {t('satisfiedStudents')}
                   </p>
                 </div>
@@ -754,80 +820,81 @@ const SexyStylePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Teacher Section - Yasmina Fernández */}
-        <section id="teachers" className="py-20 md:py-32 bg-black relative overflow-hidden">
-          <div className="container mx-auto px-6 relative z-10">
+        {/* WhyToday Section */}
+        <section
+          id="why-today"
+          aria-labelledby="why-today-title"
+          className="py-16 sm:py-20 md:py-32 bg-black"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-16 max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text">
-                  {t('sexystyleTeachersTitle')}
+              <div className="max-w-3xl mx-auto text-center space-y-6">
+                <h2
+                  id="why-today-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text"
+                >
+                  {t('sexystyleWhyTodayFullTitle')}
                 </h2>
-                <p className="text-xl text-neutral/70 mt-4">{t('sexystyleTeachersSubtitle')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90">{t('sexystyleWhyToday1')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90">{t('sexystyleWhyToday2')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90">{t('sexystyleWhyToday3')}</p>
+                <p className="text-xl sm:text-2xl font-bold holographic-text mt-8">
+                  {t('sexystyleWhyTodayClosing1')}
+                </p>
+                <p className="text-base sm:text-lg text-neutral/90 italic">
+                  {t('sexystyleWhyTodayClosing2')}
+                </p>
               </div>
-            </AnimateOnScroll>
-
-            <div className="max-w-2xl mx-auto">
-              <AnimateOnScroll
-                delay={ANIMATION_DELAYS.STAGGER_SMALL}
-                className="[perspective:1000px]"
-              >
-                <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-6">
-                      <picture>
-                        <source
-                          srcSet="/images/teachers/img/profesora-yasmina-fernandez_320.webp 320w, /images/teachers/img/profesora-yasmina-fernandez_640.webp 640w"
-                          sizes="192px"
-                          type="image/webp"
-                        />
-                        <img
-                          src="/images/teachers/img/profesora-yasmina-fernandez_640.jpg"
-                          alt="Yasmina Fernández - Instructora de Sexy Style"
-                          width="192"
-                          height="192"
-                          loading="lazy"
-                          className="w-full h-full object-cover"
-                        />
-                      </picture>
-                    </div>
-                    <h3 className="text-2xl font-bold text-neutral mb-2">Yasmina Fernández</h3>
-                    <p className="text-primary-accent font-semibold mb-4">
-                      {t('sexystyleTeacher1Specialty')}
-                    </p>
-                    <p className="text-neutral/90 leading-relaxed">{t('sexystyleTeacher1Bio')}</p>
-                  </div>
-                </div>
-              </AnimateOnScroll>
-            </div>
-
-            <AnimateOnScroll>
-              <p className="text-center text-lg text-neutral/90 mt-12 max-w-2xl mx-auto">
-                {t('sexystyleTeachersClosing')}
-              </p>
             </AnimateOnScroll>
           </div>
         </section>
 
-        {/* Schedule */}
-        <ScheduleSection
-          titleKey="sexystyleScheduleTitle"
-          subtitleKey="sexystyleScheduleSubtitle"
-          schedules={schedules}
-          t={t}
-        />
-
-        {/* Testimonials */}
-        <section id="testimonials" className="py-20 md:py-32 bg-black">
-          <div className="container mx-auto px-6">
+        {/* Video Section */}
+        <section
+          id="video"
+          aria-labelledby="video-title"
+          className="py-16 sm:py-20 md:py-32 bg-primary-dark/10"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-12 max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
+                <h2
+                  id="video-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                >
+                  {t('sexystyleVideoTitle')}
+                </h2>
+                <p className="text-base sm:text-lg text-neutral/70">{t('sexystyleVideoDesc')}</p>
+              </div>
+            </AnimateOnScroll>
+
+            <div className="max-w-4xl mx-auto">
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
+                <YouTubeEmbed videoId={SEXY_STYLE_VIDEO_ID} title={t('sexystyleVideoTitle')} />
+              </AnimateOnScroll>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section
+          id="testimonials"
+          aria-labelledby="testimonials-title"
+          className="py-16 sm:py-20 md:py-32 bg-black"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-12 max-w-4xl mx-auto">
+                <h2
+                  id="testimonials-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text"
+                >
                   {t('testimonialsNotRequested')}
                 </h2>
                 <div className="inline-block">
                   <div className="mb-4 text-3xl font-black text-neutral">{t('excellent')}</div>
                   <div className="flex items-center justify-center gap-1 mb-2">
-                    <StarRating size="lg" />
+                    <StarRating size={8} />
                   </div>
                   <div className="text-sm text-neutral/70">
                     {t('basedOnReviews').replace('{count}', '505')}
@@ -844,8 +911,8 @@ const SexyStylePage: React.FC = () => {
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
                 >
                   <div className="flex flex-col h-full min-h-[200px] p-4 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
-                    <div className="mb-3">
-                      <StarRating size="sm" label="5 estrellas" />
+                    <div className="flex mb-3">
+                      <StarRating size={5} />
                     </div>
                     <blockquote className="flex-grow text-neutral/90 mb-4">
                       <p className="text-sm leading-relaxed">
@@ -867,49 +934,12 @@ const SexyStylePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Video Section */}
-        <section id="video" className="py-20 md:py-32 bg-primary-dark/10">
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-12 max-w-4xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('sexystyleVideoTitle')}
-                </h2>
-                <p className="text-lg text-neutral/70">{t('sexystyleVideoDesc')}</p>
-              </div>
-            </AnimateOnScroll>
-
-            {/* Video centrado */}
-            <div className="max-w-4xl mx-auto">
-              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
-                <YouTubeEmbed videoId={SEXY_STYLE_VIDEO_ID} title={t('sexystyleVideoTitle')} />
-              </AnimateOnScroll>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Today Section */}
-        <section className="py-20 md:py-32 bg-black">
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="max-w-3xl mx-auto text-center space-y-6">
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
-                  {t('sexystyleWhyTodayFullTitle')}
-                </h2>
-                <p className="text-xl text-neutral/90">{t('sexystyleWhyToday1')}</p>
-                <p className="text-xl text-neutral/90">{t('sexystyleWhyToday2')}</p>
-                <p className="text-xl text-neutral/90">{t('sexystyleWhyToday3')}</p>
-                <p className="text-2xl font-bold holographic-text mt-8">
-                  {t('sexystyleWhyTodayClosing1')}
-                </p>
-                <p className="text-lg text-neutral/90 italic">{t('sexystyleWhyTodayClosing2')}</p>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
         {/* Final CTA Section */}
-        <section id="final-cta" className="relative py-12 sm:py-20 md:py-32 overflow-hidden">
+        <section
+          id="final-cta"
+          aria-labelledby="final-cta-title"
+          className="relative py-12 sm:py-20 md:py-32 overflow-hidden"
+        >
           {/* Background like Hero */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-pink-900/30 via-black to-black"></div>
@@ -918,7 +948,10 @@ const SexyStylePage: React.FC = () => {
           <div className="container mx-auto px-4 sm:px-6 relative z-20">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
+                <h2
+                  id="final-cta-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                >
                   {t('sexystyleFinalCTATitle')}
                 </h2>
                 <p className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 holographic-text">
@@ -936,7 +969,7 @@ const SexyStylePage: React.FC = () => {
                   <div className="w-full sm:w-auto">
                     <a
                       href="#schedule"
-                      className="block w-full sm:w-auto bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center"
+                      className="block w-full sm:w-auto bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                     >
                       {t('sexystyleCTA1')}
                     </a>
@@ -947,7 +980,7 @@ const SexyStylePage: React.FC = () => {
                   <div className="w-full sm:w-auto">
                     <a
                       href="#schedule"
-                      className="block w-full sm:w-auto border-2 border-neutral text-neutral font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center"
+                      className="block w-full sm:w-auto border-2 border-neutral text-neutral font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black active:scale-95 text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                     >
                       {t('sexystyleCTA2')}
                     </a>
@@ -961,9 +994,19 @@ const SexyStylePage: React.FC = () => {
           </div>
         </section>
 
+        {/* Cultural History Section */}
+        <CulturalHistorySection
+          titleKey="sexystyleCulturalHistoryTitle"
+          shortDescKey="sexystyleCulturalShort"
+          fullHistoryKey="sexystyleCulturalFull"
+          readMoreText={t('readMore')}
+          readLessText={t('readLess')}
+          t={t}
+        />
+
         {/* FAQ */}
         <FAQSection title={t('sexystyleFaqTitle')} faqs={sexyStyleFaqs} pageUrl={pageUrl} />
-      </div>
+      </main>
     </>
   );
 };
