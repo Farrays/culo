@@ -5883,4 +5883,216 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
     'Estudios publicados en Journal of Dance Medicine & Science demuestran que el ballet mejora la densidad ósea y previene la osteoporosis.',
   balletCitableFact3:
     "Farray's International Dance Center es academia CID-UNESCO con más de 500 reseñas de 5 estrellas en Google.",
+
+  // ===== CONTEMPORÁNEO PAGE =====
+  // SEO & Meta
+  contemporaneoPageTitle: "Clases de Danza Contemporánea en Barcelona | Academia Farray's Center",
+  contemporaneoMetaDescription:
+    'Clases de danza contemporánea en Barcelona. Disciplina ecléctica y visceral. Técnica, expresión e improvisación. Todos los niveles. ¡Reserva tu clase de prueba!',
+
+  // Breadcrumb (4 niveles: Home > Clases > Danza > Current)
+  contemporaneoBreadcrumbHome: 'Inicio',
+  contemporaneoBreadcrumbClasses: 'Clases de Baile',
+  contemporaneoBreadcrumbUrban: 'Clases de Danza',
+  contemporaneoBreadcrumbCurrent: 'Danza Contemporánea',
+
+  // Hero
+  contemporaneoHeroTitle: 'Clases de Danza Contemporánea en Barcelona',
+  contemporaneoHeroSubtitle: 'Ecléctica, Visceral, en Constante Evolución',
+  contemporaneoHeroDesc:
+    "Acércate a esta disciplina única de la mano de Farray's International Dance Center Barcelona. Nuestro exclusivo método de enseñanza te ofrecerá un acercamiento multidisciplinar al baile contemporáneo.",
+  contemporaneoHeroLocation: 'Clases para todos los niveles, entre Plaza España y Sants',
+
+  // Stats
+  contemporaneoTechniqueStat: 'Técnica',
+  contemporaneoEmpowerment: 'Expresión',
+  contemporaneoConfidenceGuaranteed: 'Lenguaje propio garantizado',
+  contemporaneoCaloriesStat: 'Calorías Quemadas',
+  contemporaneoDanceStat: 'Danza',
+
+  // CTAs
+  contemporaneoCTA1: 'Hazte Socio Ahora',
+  contemporaneoCTA1Subtext: 'Quedan pocas plazas este mes',
+  contemporaneoCTA2: 'Reserva tu Clase de Prueba',
+  contemporaneoCTA2Subtext: 'Oferta por tiempo limitado',
+
+  // What Is Section
+  contemporaneoWhatIsTitle: '¿Qué es la Danza Contemporánea y por qué te va a transformar?',
+  contemporaneoWhatIsP1:
+    'La danza contemporánea es una disciplina ecléctica, visceral y en constante evolución. Trabajamos desde la técnica y la disciplina hasta la expresión de ideas y emociones.',
+  contemporaneoWhatIsP2:
+    'Además de formarte en las múltiples técnicas que integra el baile contemporáneo actual, te proporcionaremos las herramientas necesarias para que explores dentro de ti y adquieras tu propio lenguaje corporal.',
+  contemporaneoWhatIsP3:
+    '«Mediante la combinación de ejercicios guiados y libres, de coreografía e improvisación, trabajarás tus capacidades físicas y artísticas tanto a nivel individual como grupal»',
+  contemporaneoWhatIsP4:
+    'Profundizarás en tu técnica de danza, mejorarás de manera exponencial tu forma física y entrenarás mediante movimientos musculares intensos y a la vez armónicos.',
+  contemporaneoWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
+  contemporaneoWhatIsQuestionAnswer: 'Sí, absolutamente.',
+
+  // Cultural Section (con markdown ### para títulos holográficos)
+  contemporaneoCulturalShort:
+    'La danza contemporánea surge como una rebelión creativa contra las normas rígidas del ballet clásico, buscando una expresión más libre y conectada con las emociones humanas.',
+  contemporaneoCulturalFull:
+    '### Orígenes de la Danza Contemporánea\n\nLa danza contemporánea nació a principios del siglo XX como respuesta a la rigidez del ballet clásico. Pioneras como Isadora Duncan, Martha Graham y Merce Cunningham sentaron las bases de una nueva forma de entender el movimiento, donde la expresión personal y la conexión con las emociones eran fundamentales.\n\n### Evolución y Técnicas\n\nA lo largo del siglo XX, la danza contemporánea incorporó múltiples influencias: técnicas de suelo (Graham, Limón), release technique, contact improvisation y elementos de danzas étnicas. Hoy en día, es un estilo ecléctico que fusiona lo mejor de cada técnica.\n\n### El Contemporáneo Hoy\n\nEn la actualidad, la danza contemporánea es una de las disciplinas más demandadas en academias de todo el mundo. Su capacidad para combinar rigor técnico con libertad expresiva la convierte en una herramienta perfecta para el desarrollo personal y artístico.',
+
+  // Identify Section
+  contemporaneoIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
+  contemporaneoIdentify1: 'Te gusta trabajar tu cuerpo tanto a nivel físico como artístico',
+  contemporaneoIdentify2: 'Tienes inquietudes creativas y ganas de expresarte a través de la danza',
+  contemporaneoIdentify3: 'Buscas el equilibrio entre rigor técnico y expresión personal',
+  contemporaneoIdentify4: 'Quieres desarrollar tu propio lenguaje corporal',
+  contemporaneoIdentify5: 'Necesitas un espacio donde explorar y crear sin límites',
+  contemporaneoIdentify6: 'Buscas mejorar tu técnica mientras conectas con tus emociones',
+  contemporaneoIdentifyTransition:
+    'Si has dicho "sí" a alguno de estos puntos, ya sabes lo que necesitas.',
+  contemporaneoNeedEnrollTitle: 'Necesitas apuntarte a clases de Danza Contemporánea',
+  contemporaneoIdentifyAgitate1:
+    'Seguir esperando solo te aleja de descubrir tu potencial artístico y físico.',
+  contemporaneoIdentifySolution:
+    "En Farray's Center encontrarás un espacio pensado para que explores, crees y evoluciones sin presiones.",
+  contemporaneoIdentifyClosing: 'Déjate llevar por la libertad y la expresión del contemporáneo.',
+
+  // Transform Section (6 transformaciones)
+  contemporaneoTransformTitle: 'Imagina tu antes y después',
+  contemporaneoTransform1Title: 'Mejoras tu técnica de danza',
+  contemporaneoTransform1Desc:
+    'Cada clase te acerca más a dominar el movimiento con precisión y fluidez.',
+  contemporaneoTransform2Title: 'Desarrollas tu capacidad de improvisación',
+  contemporaneoTransform2Desc: 'Aprendes a moverte con libertad, escuchando tu cuerpo y la música.',
+  contemporaneoTransform3Title: 'Mejoras tu interpretación musical',
+  contemporaneoTransform3Desc: 'Conectas con la música de forma más profunda y expresiva.',
+  contemporaneoTransform4Title: 'Ejercitas coordinación y memoria',
+  contemporaneoTransform4Desc:
+    'Tu cuerpo y mente trabajan juntos, ganando agilidad mental y física.',
+  contemporaneoTransform5Title: 'Aumentas tu repertorio',
+  contemporaneoTransform5Desc: 'Dominas nuevas secuencias y estilos cada semana.',
+  contemporaneoTransform6Title: 'Mejoras tu forma física',
+  contemporaneoTransform6Desc: 'Entrenamientos intensos y armónicos que transforman tu cuerpo.',
+  contemporaneoTransformCTA:
+    "¿Por qué elegir Farray's Center para Danza Contemporánea en Barcelona?",
+
+  // Why Choose Section (7 items)
+  contemporaneoWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
+  contemporaneoWhyChoose1Desc:
+    'Dirigida por Yunaisy Farray, actriz de Street Dance 2 y una de las profesoras más reconocidas del mundo.',
+  contemporaneoWhyChoose2Title: 'Ubicación inmejorable',
+  contemporaneoWhyChoose2Desc:
+    'Calle Entença 100, entre Plaza España y Sants, a 5 minutos de Plaça Espanya. Metro, bus y tren en la puerta.',
+  contemporaneoWhyChoose3Title: 'Ambiente familiar con profesionalismo',
+  contemporaneoWhyChoose3Desc:
+    'Acogedor, inclusivo y sin juicios, pero con el rigor que necesitas para evolucionar de verdad.',
+  contemporaneoWhyChoose4Title: 'Instalaciones preparadas',
+  contemporaneoWhyChoose4Desc:
+    'Más de 700 m², salas amplias, espejos, sonido profesional, climatización y ventilación centralizada.',
+  contemporaneoWhyChoose5Title: 'Academia multidisciplinar',
+  contemporaneoWhyChoose5Desc:
+    'Más de 25 estilos para que nunca te aburras: urbanos, latinas, contemporáneo, técnica, stretching y más.',
+  contemporaneoWhyChoose6Title: 'Gala anual + workshops potentes',
+  contemporaneoWhyChoose6Desc:
+    'Brilla en un teatro profesional, participa en workshops internacionales y vive experiencias únicas.',
+  contemporaneoWhyChoose7Title: 'Profesores especializados en Contemporáneo',
+  contemporaneoWhyChoose7Desc:
+    'Alejandro Miñoso: experto en danza contemporánea con años de experiencia. Técnica, expresión y pasión en cada clase.',
+
+  // Logos Section
+  contemporaneoLogosTitle: 'Has podido vernos en…',
+  contemporaneoLogosIntlFestivalsText: 'y en los mejores festivales de danza de todo el mundo',
+
+  // Teachers Section
+  contemporaneoTeachersTitle: 'Conoce a tu instructor de Danza Contemporánea',
+  contemporaneoTeachersSubtitle: 'Experto en técnica contemporánea y expresión corporal',
+  contemporaneoTeacher1Specialty: 'Danza Contemporánea',
+  contemporaneoTeacher1Bio:
+    'Alejandro Miñoso es un bailarín profesional con amplia formación en técnicas contemporáneas. Su metodología combina el rigor técnico con la libertad expresiva, guiándote para que desarrolles tu propio lenguaje corporal mientras dominas los fundamentos de la danza contemporánea.',
+  contemporaneoTeachersClosing:
+    'Con Alejandro Miñoso no solo aprendes técnica contemporánea: descubres una nueva forma de expresarte y conectar con tu cuerpo.',
+
+  // Schedule Section
+  contemporaneoScheduleTitle: 'Horario de clases de Danza Contemporánea',
+  contemporaneoScheduleSubtitle: 'Varios niveles para que encuentres tu clase perfecta',
+
+  // Video Section
+  contemporaneoVideoTitle: 'Ven a descubrir nuestras clases de Contemporáneo',
+  contemporaneoVideoDesc:
+    "Mira cómo es una clase en Farray's Center: técnica, expresión y libertad de movimiento. ¡Te esperamos!",
+
+  // Why Today Section
+  contemporaneoWhyTodayFullTitle:
+    '¿Por qué hoy es el mejor momento para empezar Danza Contemporánea?',
+  contemporaneoWhyToday1:
+    'Porque siempre esperas "el momento perfecto" pero lo único perfecto es empezar hoy.',
+  contemporaneoWhyToday2:
+    'Porque estás a UNA clase de cambiar tu rutina y conectar con tu cuerpo de forma diferente.',
+  contemporaneoWhyToday3:
+    'Porque la danza contemporánea no tiene edad ni nivel previo: solo requiere ganas de explorar.',
+  contemporaneoWhyTodayClosing1: "En Farray's no vendemos clases. Creamos experiencias.",
+  contemporaneoWhyTodayClosing2:
+    'Te esperamos con música inspiradora, profes apasionados y un ambiente único en Barcelona.',
+
+  // Final CTA Section
+  contemporaneoFinalCTATitle: 'Únete a la comunidad de danza contemporánea más activa de Barcelona',
+  contemporaneoFinalCTASubtitle: 'Da el paso.',
+  contemporaneoFinalCTADesc: 'Reserva tu plaza ahora y déjate llevar por el fluir del movimiento.',
+  contemporaneoFinalCTAFunny: 'Las plazas vuelan más rápido que un salto contemporáneo.',
+
+  // FAQ Title
+  contemporaneoFaqTitle: 'Preguntas Frecuentes sobre Danza Contemporánea en Barcelona',
+
+  // 15 FAQs (optimizado para SEO)
+  contemporaneoFaqQ1: '¿Cómo funcionan las clases de Danza Contemporánea en Barcelona?',
+  contemporaneoFaqA1:
+    'Tras una primera parte técnica de calentamiento, se realizan ejercicios variados que se aplican en una secuencia en la última fase de la clase. Grupos reducidos y divididos por niveles.',
+  contemporaneoFaqQ2: '¿Puedo empezar desde cero si nunca he bailado contemporáneo?',
+  contemporaneoFaqA2:
+    'Este curso está pensado para formar a bailarines de todos los niveles, tengan o no experiencia previa en esta disciplina.',
+  contemporaneoFaqQ3: '¿Qué beneficios tiene la danza contemporánea?',
+  contemporaneoFaqA3:
+    'Mejora tu técnica de danza, tu capacidad de improvisación, tu interpretación musical, ejercita coordinación y memoria, aumenta tu repertorio y mejora tu forma física.',
+  contemporaneoFaqQ4: '¿Qué necesito traer a las clases?',
+  contemporaneoFaqA4:
+    'Ropa cómoda que permita movimiento. Para contemporáneo se suele bailar descalzo o con calcetines. Trae una botella de agua. Tenemos vestuarios con duchas.',
+  contemporaneoFaqQ5: '¿Qué niveles de contemporáneo tenéis?',
+  contemporaneoFaqA5:
+    'Ofrecemos clases en varios niveles: Principiante (sin experiencia), Básico, Intermedio y Avanzado. El profe te guiará al nivel que más te convenga.',
+  contemporaneoFaqQ6: '¿Puedo unirme a las clases en cualquier momento del año?',
+  contemporaneoFaqA6:
+    'Sí, nuestras clases funcionan con sistema abierto, así que puedes inscribirte cuando quieras. No hace falta esperar a principio de trimestre.',
+  contemporaneoFaqQ7: '¿Qué técnicas de contemporáneo enseñáis?',
+  contemporaneoFaqA7:
+    'Trabajamos múltiples técnicas: suelo, release, contact improvisation, y elementos de diversas escuelas. Un enfoque multidisciplinar para que desarrolles tu propio lenguaje.',
+  contemporaneoFaqQ8: '¿Puedo probar una clase antes de inscribirme?',
+  contemporaneoFaqA8:
+    'Por supuesto. Puedes reservar una clase de prueba para ver si es lo que buscas. Ven a probar y descubre cómo dejar fluir tu talento a través del baile.',
+  contemporaneoFaqQ9: '¿Y si falto a una clase por trabajo o compromisos?',
+  contemporaneoFaqA9:
+    'Las clases son recuperables, así que si faltas un día, puedes venir a la siguiente clase disponible en tu mismo nivel.',
+  contemporaneoFaqQ10: 'Si falto a una clase de contemporáneo, ¿puedo recuperarla con otro estilo?',
+  contemporaneoFaqA10:
+    "Sí. En Farray's puedes usar tu clase perdida en otro estilo (Modern Jazz, Ballet, Dancehall...), siempre que el nivel sea equivalente.",
+  contemporaneoFaqQ11: '¿Organizáis eventos o workshops especiales?',
+  contemporaneoFaqA11:
+    'Sí. Tenemos masterclasses con artistas invitados, showcases y nuestra gala anual donde puedes lucirte en un escenario profesional.',
+  contemporaneoFaqQ12: '¿Las clases son solo para mujeres o también para hombres?',
+  contemporaneoFaqA12:
+    'Nuestras clases son 100% inclusivas. Todos los géneros, edades y cuerpos son bienvenidos. Lo que importa son las ganas de bailar y expresarte.',
+  contemporaneoFaqQ13: '¿La danza contemporánea es buen ejercicio físico?',
+  contemporaneoFaqA13:
+    'La danza contemporánea es un entrenamiento completo con movimientos musculares intensos y a la vez armónicos. En una hora puedes quemar entre 300 y 500 calorías.',
+  contemporaneoFaqQ14:
+    '¿Dónde puedo encontrar clases de Danza Contemporánea cerca de Plaza España?',
+  contemporaneoFaqA14:
+    "Farray's Center está ubicado en Calle Entença 100, a solo 5 minutos de Plaza España y Estación de Sants. Puedes llegar en metro (L1, L3), bus o tren.",
+  contemporaneoFaqQ15: '¿Qué hago si tengo dudas o necesito más información?',
+  contemporaneoFaqA15:
+    'Si tienes alguna pregunta adicional o necesitas más información, puedes contactarnos:<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Dirección:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+
+  // Image alts
+  contemporaneoImage1Alt: "Clases de Danza Contemporánea en Barcelona - Farray's Center",
+  contemporaneoImage2Alt: 'Estudiantes practicando danza contemporánea',
+  contemporaneoImage3Alt: 'Alejandro Miñoso - Instructor de Danza Contemporánea',
+
+  // Course Schema (SEO)
+  contemporaneoCourseSchemaName: "Clases de Danza Contemporánea en Barcelona - Farray's Center",
+  contemporaneoCourseSchemaDesc:
+    'Aprende Danza Contemporánea con Alejandro Miñoso. Técnica, expresión e improvisación. Clases para todos los niveles en Barcelona.',
 };

@@ -52,6 +52,7 @@ const FemmologyPage = lazy(() => import('./components/FemmologyPage'));
 const SexyStylePage = lazy(() => import('./components/SexyStylePage'));
 const ModernJazzPage = lazy(() => import('./components/ModernJazzPage'));
 const BalletPage = lazy(() => import('./components/BalletPage'));
+const ContemporaneoPage = lazy(() => import('./components/ContemporaneoPage'));
 
 // Valid locales
 const VALID_LOCALES: Locale[] = ['es', 'en', 'ca', 'fr'];
@@ -275,6 +276,16 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <BalletPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/clases/contemporaneo-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <ContemporaneoPage />
                 </>
               }
             />
