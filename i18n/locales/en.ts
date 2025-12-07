@@ -2871,6 +2871,7 @@ export const en = {
   twerkWhatIsQuestionAnswer: 'Yes, it is.',
 
   // Cultural Section
+  twerkCulturalHistoryTitle: 'Want to know more about Twerk?',
   twerkCulturalShort:
     "Twerk didn't appear overnight. It was born from a mix of Afro-descendant influences: movements from traditional African dances such as 'baikoko mapouka', from New Orleans bounce culture and other urban styles that already worked a lot on the hips and the \"booty\".",
   twerkCulturalFull:
@@ -4872,7 +4873,7 @@ Farray's International Dance Center is rated close to **5/5 on Google**, with hu
   balletBreadcrumbCurrent: 'Ballet Classes',
 
   // ===== Hero Section =====
-  balletHeroTitle: 'Classical Ballet Classes in Barcelona (Cuban School)',
+  balletHeroTitle: 'Classical Ballet Classes in Barcelona',
   balletHeroSubtitle: 'Posture, strength and elegance with Cuban-trained teachers',
   balletHeroDesc:
     'Learn ballet with the Cuban methodology that trained legends like Carlos Acosta: rigor, musicality and expression to improve posture, lines and confidence – beginner or advanced.',
@@ -4884,12 +4885,13 @@ Farray's International Dance Center is rated close to **5/5 on Google**, with hu
   balletConfidenceGuaranteed: 'Elegance guaranteed',
   balletCaloriesStat: 'Calories Burned',
   balletHistoryStat: 'Years of History',
+  balletCubanTechnique: 'Cuban Technique',
 
   // ===== CTAs =====
   balletCTA1: 'Become a Member Now',
   balletCTA1Subtext: 'Limited spots available this month',
   balletCTA2: 'Book Your Trial Class',
-  balletCTA2Subtext: 'First class free',
+  balletCTA2Subtext: 'Valid for limited time',
 
   // ===== What is Ballet Section =====
   balletWhatIsTitle: 'What is Ballet and how does it transform lives?',
@@ -4907,6 +4909,7 @@ Farray's International Dance Center is rated close to **5/5 on Google**, with hu
   balletWhatIsQuestionAnswer: 'It never is.',
 
   // ===== Cultural History =====
+  balletCulturalHistoryTitle: 'Want to learn more about ballet?',
   balletCulturalShort:
     'Ballet was born in the Italian Renaissance courts and perfected in France under Louis XIV, who founded the first formal school dedicated to professional dance in 1661. This discipline has withstood wars, revolutions and social changes because it offers something unique: the complete transformation of the human being through movement.',
   balletCulturalFull: `### Origins of Ballet: From Courts to Stage
@@ -5031,7 +5034,7 @@ All ballet terms are in French, a legacy of its development at the court of Vers
 
   // ===== Teachers Section =====
   balletTeachersTitle: 'Meet your Ballet teachers',
-  balletTeachersSubtitle: 'Classical technique, international experience',
+  balletTeachersSubtitle: 'Cuban School, international experience',
   balletTeacher1Specialty: 'Classical Ballet & Contemporary',
   balletTeacher1Bio:
     'Daniel Sene is a classical ballet specialist trained at the National Ballet School of Cuba, the same school where Carlos Acosta trained. His methodology combines the technical rigor of the classical school with an accessible approach for beginner and advanced adults.',
@@ -5042,7 +5045,7 @@ All ballet terms are in French, a legacy of its development at the court of Vers
     'Two teachers, two complementary approaches. Daniel for intermediate and advanced, Alejandro for beginners. The perfect combination for your ballet training.',
 
   // ===== Schedule Section =====
-  balletScheduleTitle: 'Ballet class schedule',
+  balletScheduleTitle: 'Our Ballet class schedule',
   balletScheduleSubtitle: 'Choose your level and start this week',
 
   // ===== Video Section =====
@@ -5052,14 +5055,13 @@ All ballet terms are in French, a legacy of its development at the court of Vers
   // ===== Why Today Section =====
   balletWhyTodayFullTitle: 'Why is today the best time to start Ballet?',
   balletWhyToday1:
-    'Your body right now is in the best possible moment to start. Tomorrow will be one day later. Next week will be seven days later. Ballet rewards consistency, and consistency starts with the first step.',
+    'Because you keep waiting for "the perfect moment" to sign up for ballet... but the only perfect thing is to start today.',
   balletWhyToday2:
-    'Adults who start ballet have an advantage children do not have: developed body awareness and intrinsic motivation. You know what you want and why you want it.',
-  balletWhyToday3:
-    'Every ballet class is an investment in your postural health for the next 30, 40, 50 years of your life. There is no better time than now.',
-  balletWhyTodayClosing1: "At Farray's we don't teach steps. We transform bodies and minds.",
+    "Because you're just ONE class away from feeling all the benefits of ballet and feeling better than yesterday.",
+  balletWhyToday3: "Because this isn't about dancing well, it's about feeling good while dancing.",
+  balletWhyTodayClosing1: "At Farray's we don't sell classes. We create experiences.",
   balletWhyTodayClosing2:
-    'Your first class is free. No commitment. Just you, the barre and the music.',
+    'We await you with high-level Cuban teachers, an atmosphere that is both calm and demanding, and a barre that, class by class, will change your body.',
 
   // ===== Final CTA Section =====
   balletFinalCTATitle: "Join Barcelona's most technical Ballet classes",

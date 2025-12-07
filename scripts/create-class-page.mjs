@@ -41,7 +41,7 @@ const log = {
   title: (msg) => console.log(`\n${colors.bright}${colors.cyan}${msg}${colors.reset}\n`),
 };
 
-// 📝 Plantilla de metadatos para nuevas clases
+// 📝 Plantilla de metadatos para nuevas clases (reservado para uso futuro)
 const classTemplates = {
   bachata: {
     pillar1: { title: 'Sensualidad', desc: 'Aprende a bailar con conexión y elegancia', icon: 'Heart' },
@@ -121,27 +121,55 @@ async function getInteractiveInput() {
 
 // 📄 Generadores de contenido
 
-async function createPageComponent(className, componentName) {
-  log.info(`Creando componente ${componentName}.tsx...`);
+async function createPageComponent(className, componentName, instructor) {
+  log.info(`Creando componente ${componentName}Page.tsx (basado en TwerkPage 10/10)...`);
 
-  const template = await readFile(join(rootDir, 'components/DancehallPage.tsx'), 'utf-8');
+  // Usar TwerkPage como base (estructura 10/10 optimizada)
+  const template = await readFile(join(rootDir, 'components/TwerkPage.tsx'), 'utf-8');
 
-  // Reemplazos básicos
+  // Convert className to valid constant name (replace hyphens with underscores)
+  const constName = className.toUpperCase().replace(/-/g, '_');
+  const keyPrefix = className.replace(/-/g, '');
+
+  // Reemplazos básicos - usar regex case-insensitive donde sea necesario
   let newContent = template
-    .replace(/dancehall/g, className)
-    .replace(/Dancehall/g, componentName)
-    .replace(/DANCEHALL/g, className.toUpperCase());
+    // Reemplazar nombres de constantes (TWERK_ -> CLASSNAME_)
+    .replace(/TWERK_/g, `${constName}_`)
+    // Reemplazar keys i18n (twerk -> classname)
+    .replace(/twerk(?=[A-Z])/g, keyPrefix)
+    .replace(/'twerk/g, `'${keyPrefix}`)
+    // Reemplazar rutas URL
+    .replace(/twerk-barcelona/g, `${className}-barcelona`)
+    .replace(/\/twerk\//g, `/${className}/`)
+    // Reemplazar nombres de componente
+    .replace(/TwerkPage/g, `${componentName}Page`)
+    // Reemplazar imports de constants
+    .replace(/from '\.\.\/constants\/twerk'/g, `from '../constants/${className}'`)
+    // Reemplazar nombres en Schema
+    .replace(/Clases de Twerk/g, `Clases de ${componentName}`)
+    .replace(/clases de twerk/gi, `clases de ${componentName}`)
+    // Reemplazar og-image
+    .replace(/og-twerk\.jpg/g, `og-${className}.jpg`)
+    // Reemplazar nombres de variables locales
+    .replace(/twerkFaqs/g, `${keyPrefix}Faqs`)
+    .replace(/twerkTestimonials/g, `${keyPrefix}Testimonials`)
+    // Reemplazar YouTube video ID placeholder (mantener el ID de twerk como placeholder)
+    .replace(/7QCgHDiGHg8/g, '${' + constName + '_VIDEO_ID}');
 
-  // Actualizar iconos de pillars si hay plantilla
-  const classTemplate = classTemplates[className];
-  if (classTemplate) {
-    // Aquí se pueden hacer reemplazos más sofisticados de icons, FAQs, etc.
-    log.info(`Usando plantilla predefinida para ${className}`);
+  // Verificar que el componente usa el nuevo nombre
+  if (!newContent.includes(`const ${componentName}Page`)) {
+    newContent = newContent.replace(/const \w+Page: React\.FC/, `const ${componentName}Page: React.FC`);
+  }
+
+  // Asegurar export correcto
+  if (!newContent.includes(`export default ${componentName}Page`)) {
+    newContent = newContent.replace(/export default \w+Page/, `export default ${componentName}Page`);
   }
 
   const outputPath = join(rootDir, `components/${componentName}Page.tsx`);
   await writeFile(outputPath, newContent, 'utf-8');
-  log.success(`Creado: components/${componentName}Page.tsx`);
+  log.success(`Creado: components/${componentName}Page.tsx (estructura 10/10)`);
+  log.info(`   📐 Orden de secciones: Hero → What-Is → Schedule → Teachers → Identify → Transform → WhyChoose → Logos → WhyToday → Video → Testimonials → FinalCTA → CulturalHistory → FAQ`);
 
   return outputPath;
 }
@@ -628,11 +656,11 @@ async function generatePlaceholderImages(className, componentName) {
 }
 
 async function generateSummary(className, componentName) {
-  log.title('✅ ¡Página Generada con Éxito!');
+  log.title('✅ ¡Página Generada con Éxito! (Estructura 10/10)');
 
   console.log(`
 📦 ${colors.bright}Archivos creados:${colors.reset}
-   ${colors.green}✓${colors.reset} components/${componentName}Page.tsx
+   ${colors.green}✓${colors.reset} components/${componentName}Page.tsx ${colors.cyan}(basado en TwerkPage 10/10)${colors.reset}
    ${colors.green}✓${colors.reset} constants/${className}.ts ${colors.cyan}(15 FAQs + YouTube + Breadcrumbs)${colors.reset}
    ${colors.green}✓${colors.reset} public/images/classes/${className}/raw/
    ${colors.green}✓${colors.reset} public/images/classes/${className}/img/ ${colors.cyan}(con placeholders SVG)${colors.reset}
@@ -644,14 +672,29 @@ async function generateSummary(className, componentName) {
    ${colors.green}✓${colors.reset} scripts/update-sitemap.mjs
    ${colors.green}✓${colors.reset} sitemap.xml ${colors.cyan}(regenerado automáticamente!)${colors.reset}
 
-🎉 ${colors.bright}MEJORAS v2.0 implementadas:${colors.reset}
-   ${colors.cyan}1.${colors.reset} ${colors.bright}15 FAQs completas${colors.reset} (SEO optimizado, con contacto en FAQ15)
-   ${colors.cyan}2.${colors.reset} ${colors.bright}7 Why Choose items${colors.reset} (incluye card de profesores)
-   ${colors.cyan}3.${colors.reset} ${colors.bright}Cultural History${colors.reset} con markdown ### (títulos holográficos)
-   ${colors.cyan}4.${colors.reset} ${colors.bright}YouTube video${colors.reset} config en constants
-   ${colors.cyan}5.${colors.reset} ${colors.bright}Breadcrumbs 4 niveles${colors.reset} (Home > Clases > Urbanas > Current)
-   ${colors.cyan}6.${colors.reset} ${colors.bright}Contact info formateado${colors.reset} con emojis y links clicables
-   ${colors.cyan}7.${colors.reset} ${colors.bright}Course Schema SEO${colors.reset} optimizado
+🏆 ${colors.bright}ESTRUCTURA 10/10 (Orden AIDA optimizado):${colors.reset}
+   ${colors.cyan}1.${colors.reset}  Hero (con Skip Links + main role="main")
+   ${colors.cyan}2.${colors.reset}  What-Is Section
+   ${colors.cyan}3.${colors.reset}  ${colors.bright}Schedule Section${colors.reset} ← Posición estratégica
+   ${colors.cyan}4.${colors.reset}  ${colors.bright}Teachers Section${colors.reset} ← Credibilidad temprana
+   ${colors.cyan}5.${colors.reset}  Identification Section (¿Te identificas?)
+   ${colors.cyan}6.${colors.reset}  NeedEnroll + Transformation
+   ${colors.cyan}7.${colors.reset}  WhyChoose + Stats + Logos
+   ${colors.cyan}8.${colors.reset}  ${colors.bright}WhyToday Section${colors.reset} ← Urgencia
+   ${colors.cyan}9.${colors.reset}  ${colors.bright}Video Section${colors.reset} ← Social proof visual
+   ${colors.cyan}10.${colors.reset} Testimonials + FinalCTA
+   ${colors.cyan}11.${colors.reset} ${colors.bright}CulturalHistory${colors.reset} ← Antes del FAQ (SEO)
+   ${colors.cyan}12.${colors.reset} FAQ Section (15 FAQs)
+
+✨ ${colors.bright}MEJORAS DE ACCESIBILIDAD (A11y):${colors.reset}
+   ${colors.green}✓${colors.reset} Skip Links para navegación con teclado
+   ${colors.green}✓${colors.reset} <main role="main"> en lugar de <div>
+   ${colors.green}✓${colors.reset} aria-labelledby en todas las secciones
+   ${colors.green}✓${colors.reset} Breakpoints responsivos (sm:, md:, lg:)
+   ${colors.green}✓${colors.reset} focus-visible + active:scale-95 en CTAs
+   ${colors.green}✓${colors.reset} motion-reduce para usuarios sensibles
+   ${colors.green}✓${colors.reset} role="list" + aria-label en listas
+   ${colors.green}✓${colors.reset} StarRating con size={8} (números, no strings)
 
 🔧 ${colors.bright}Siguiente paso (TODO):${colors.reset}
 
@@ -738,7 +781,7 @@ async function main() {
     log.info(`Instructor: ${instructor} (${specialty})`);
 
     // Ejecutar pasos
-    await createPageComponent(className, componentName);
+    await createPageComponent(className, componentName, instructor);
     await updateAppRoutes(className, componentName);
     await createI18nKeys(className, componentName, instructor, specialty);
     await createImageStructure(className);

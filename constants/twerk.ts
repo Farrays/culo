@@ -21,9 +21,28 @@ export const TWERK_FAQS_CONFIG: FAQ[] = [
   { id: 'twerk-15', questionKey: 'twerkFaqQ15', answerKey: 'twerkFaqA15' },
 ];
 
-// Testimonials for Twerk page - uses Google reviews
-// Note: images are empty as we use InitialsAvatar for rendering
-export const TWERK_TESTIMONIALS: Testimonial[] = [...GOOGLE_REVIEWS_TESTIMONIALS];
+// Testimonials for Twerk page (4 testimonials: 3 Google reviews + 1 specific)
+export const TWERK_TESTIMONIALS: Testimonial[] = [
+  ...GOOGLE_REVIEWS_TESTIMONIALS,
+  {
+    id: 4,
+    name: 'Laura M.',
+    image: '',
+    rating: 5,
+    city: {
+      en: 'Barcelona, Spain',
+      es: 'Barcelona, España',
+      ca: 'Barcelona, Espanya',
+      fr: 'Barcelone, Espagne',
+    },
+    quote: {
+      en: "Sandra and Isabel are incredible teachers. I came with zero dance experience and in just a few months I've gained so much confidence. The classes are super fun!",
+      es: 'Sandra e Isabel son profesoras increíbles. Llegué sin experiencia en baile y en pocos meses he ganado mucha confianza. ¡Las clases son súper divertidas!',
+      ca: 'Sandra i Isabel són professores increïbles. Vaig arribar sense experiència en ball i en pocs mesos he guanyat molta confiança. Les classes són súper divertides!',
+      fr: "Sandra et Isabel sont des professeures incroyables. Je suis arrivée sans expérience en danse et en quelques mois j'ai gagné beaucoup de confiance. Les cours sont super amusants !",
+    },
+  },
+];
 
 // Course schema configuration
 export const TWERK_COURSE_CONFIG = {

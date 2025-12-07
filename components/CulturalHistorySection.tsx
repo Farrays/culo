@@ -3,6 +3,7 @@ import AnimateOnScroll from './AnimateOnScroll';
 import { ChevronDownIcon } from '../lib/icons';
 
 interface CulturalHistorySectionProps {
+  id?: string;
   titleKey: string;
   shortDescKey: string;
   fullHistoryKey: string;

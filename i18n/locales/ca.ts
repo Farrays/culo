@@ -2871,6 +2871,7 @@ export const ca = {
   twerkWhatIsQuestionAnswer: 'Sí, ho és.',
 
   // Cultural Section
+  twerkCulturalHistoryTitle: 'Vols saber més sobre el Twerk?',
   twerkCulturalShort:
     "El Twerk no va aparèixer d'un dia per l'altre. Neix d'una barreja d'influències afrodescendents: moviments de danses tradicionals africanes com el 'baikoko mapouka', de la cultura bounce de Nova Orleans i d'altres estils urbans que ja treballaven molt el maluc i el \"booty\".",
   twerkCulturalFull:
@@ -4901,7 +4902,7 @@ Farray's International Dance Center està valorat prop del **5/5 a Google**, amb
   balletBreadcrumbCurrent: 'Classes de Ballet',
 
   // ===== Hero Section =====
-  balletHeroTitle: 'Classes de Ballet Clàssic a Barcelona (Escola Cubana)',
+  balletHeroTitle: 'Classes de Ballet Clàssic a Barcelona',
   balletHeroSubtitle: 'Postura, força i elegància amb mestres formats a Cuba',
   balletHeroDesc:
     'Aprèn ballet amb la metodologia cubana que va formar llegendes com Carlos Acosta: rigor, musicalitat i expressió per millorar postura, línies i confiança – principiant o avançat.',
@@ -4913,12 +4914,13 @@ Farray's International Dance Center està valorat prop del **5/5 a Google**, amb
   balletConfidenceGuaranteed: 'Elegància garantida',
   balletCaloriesStat: 'Calories Cremades',
   balletHistoryStat: "Anys d'Història",
+  balletCubanTechnique: 'Tècnica Cubana',
 
   // ===== CTAs =====
   balletCTA1: 'Fes-te Soci Ara',
   balletCTA1Subtext: 'Queden poques places aquest mes',
   balletCTA2: 'Reserva la teva Classe de Prova',
-  balletCTA2Subtext: 'Primera classe gratuïta',
+  balletCTA2Subtext: 'Vàlid per temps limitat',
 
   // ===== What is Ballet Section =====
   balletWhatIsTitle: 'Què és el Ballet i com transforma vides?',
@@ -4936,6 +4938,7 @@ Farray's International Dance Center està valorat prop del **5/5 a Google**, amb
   balletWhatIsQuestionAnswer: 'Mai ho és.',
 
   // ===== Cultural History =====
+  balletCulturalHistoryTitle: 'Vols saber més sobre el ballet?',
   balletCulturalShort:
     "El ballet va néixer a les corts italianes del Renaixement i es va perfeccionar a França sota Lluís XIV, qui va fundar el 1661 la primera escola formal dedicada a la dansa professional. Aquesta disciplina ha resistit guerres, revolucions i canvis socials perquè ofereix quelcom únic: la transformació integral de l'ésser humà a través del moviment.",
   balletCulturalFull: `### Orígens del Ballet: De les Corts a l'Escenari
@@ -5061,7 +5064,7 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
 
   // ===== Teachers Section =====
   balletTeachersTitle: 'Coneix els teus professors de Ballet',
-  balletTeachersSubtitle: 'Tècnica clàssica, experiència internacional',
+  balletTeachersSubtitle: 'Escola Cubana, experiència internacional',
   balletTeacher1Specialty: 'Ballet Clàssic i Contemporani',
   balletTeacher1Bio:
     "Daniel Sene és especialista en ballet clàssic format a l'Escola Nacional de Ballet de Cuba, la mateixa on es va formar Carlos Acosta. La seva metodologia combina el rigor tècnic de l'escola clàssica amb un enfocament accessible per a adults principiants i avançats.",
@@ -5072,7 +5075,7 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
     'Dos mestres, dos enfocaments complementaris. Daniel per a intermedi i avançat, Alejandro per a principiants. La combinació perfecta per a la teva formació en ballet.',
 
   // ===== Schedule Section =====
-  balletScheduleTitle: 'Horari de classes de Ballet',
+  balletScheduleTitle: 'Horari de les nostres classes de Ballet',
   balletScheduleSubtitle: 'Tria el teu nivell i comença aquesta setmana',
 
   // ===== Video Section =====
@@ -5082,14 +5085,13 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
   // ===== Why Today Section =====
   balletWhyTodayFullTitle: 'Per què avui és el millor moment per començar Ballet?',
   balletWhyToday1:
-    'El teu cos ara mateix està en el millor moment possible per començar. Demà serà un dia més tard. La setmana que ve seran set dies més tard. El ballet recompensa la consistència, i la consistència comença amb el primer pas.',
+    'Perquè segueixes esperant "el moment perfecte" per apuntar-te a ballet… però l\'únic perfecte és començar avui.',
   balletWhyToday2:
-    'Els adults que comencen ballet tenen un avantatge que els nens no tenen: la consciència corporal desenvolupada i la motivació intrínseca. Saps el que vols i per què ho vols.',
-  balletWhyToday3:
-    'Cada classe de ballet és una inversió en la teva salut postural per als propers 30, 40, 50 anys de la teva vida. No hi ha millor moment que ara.',
-  balletWhyTodayClosing1: "A Farray's no ensenyem passos. Transformem cossos i ments.",
+    'Perquè estàs a tan sols UNA classe de notar tots els beneficis del ballet i sentir-te millor que ahir.',
+  balletWhyToday3: 'Perquè això no va de ballar bé, sinó de sentir-te bé ballant.',
+  balletWhyTodayClosing1: "A Farray's no venem classes. Creem experiències.",
   balletWhyTodayClosing2:
-    'La teva primera classe és gratuïta. Sense compromís. Només tu, la barra i la música.',
+    "T'esperem amb mestres cubans d'alt nivell, un ambient tranquil i exigent alhora i una barra que, classe a classe, et canviarà el cos.",
 
   // ===== Final CTA Section =====
   balletFinalCTATitle: 'Uneix-te a les classes de Ballet més tècniques de Barcelona',
