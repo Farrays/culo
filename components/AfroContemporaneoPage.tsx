@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
-import { TEST_PREVIEW_TESTIMONIALS, TEST_PREVIEW_FAQS_CONFIG, TEST_PREVIEW_SCHEDULE_KEYS } from '../constants/test-preview';
+import { AFRO_CONTEMPORANEO_TESTIMONIALS, AFRO_CONTEMPORANEO_FAQS_CONFIG, AFRO_CONTEMPORANEO_SCHEDULE_KEYS } from '../constants/afro-contemporaneo';
 import AnimateOnScroll from './AnimateOnScroll';
 import CulturalHistorySection from './CulturalHistorySection';
 import ScheduleSection from './ScheduleSection';
@@ -24,32 +24,32 @@ const ANIMATION_DELAYS = {
   STAGGER_MEDIUM: 150,
 };
 
-const TestPreviewPage: React.FC = () => {
+const AfroContemporaneoPage: React.FC = () => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
-  const pageUrl = `${baseUrl}/${locale}/clases/test-preview-barcelona`;
+  const pageUrl = `${baseUrl}/${locale}/clases/afro-contemporaneo-barcelona`;
 
   // Schedule data - traducir las keys dinámicamente
-  const schedules = TEST_PREVIEW_SCHEDULE_KEYS.map(schedule => ({
+  const schedules = AFRO_CONTEMPORANEO_SCHEDULE_KEYS.map(schedule => ({
     ...schedule,
     day: t(schedule.dayKey),
     level: t(schedule.levelKey),
-    note: 'note' in schedule ? schedule.note : undefined,
+    note: 'note' in schedule ? (schedule as { note?: string }).note : undefined,
   }));
 
   // FAQs - traducir las keys dinámicamente desde constants
-  const testpreviewFaqs = TEST_PREVIEW_FAQS_CONFIG.map(faq => ({
+  const afrocontemporaneoFaqs = AFRO_CONTEMPORANEO_FAQS_CONFIG.map(faq => ({
     id: faq.id,
     question: t(faq.questionKey),
     answer: t(faq.answerKey),
   }));
 
   // Testimonials - usar desde constants
-  const testpreviewTestimonials = TEST_PREVIEW_TESTIMONIALS;
+  const afrocontemporaneoTestimonials = AFRO_CONTEMPORANEO_TESTIMONIALS;
 
   // Schema Markup data for reviews
-  const reviewsSchemaData = testpreviewTestimonials.map(testimonial => ({
-    itemReviewed: { name: "Clases de TestPreview - Farray's Center", type: 'Course' },
+  const reviewsSchemaData = afrocontemporaneoTestimonials.map(testimonial => ({
+    itemReviewed: { name: "Clases de AfroContemporaneo - Farray's Center", type: 'Course' },
     author: testimonial.name,
     reviewRating: { ratingValue: testimonial.rating.toString(), bestRating: '5' },
     reviewBody: testimonial.quote[locale],
@@ -60,12 +60,12 @@ const TestPreviewPage: React.FC = () => {
   const videoSchema = {
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
-    name: t('testpreviewVideoTitle'),
-    description: t('testpreviewVideoDesc'),
-    thumbnailUrl: 'https://img.youtube.com/vi/${TEST_PREVIEW_VIDEO_ID}/maxresdefault.jpg',
+    name: t('afrocontemporaneoVideoTitle'),
+    description: t('afrocontemporaneoVideoDesc'),
+    thumbnailUrl: 'https://img.youtube.com/vi/${AFRO_CONTEMPORANEO_VIDEO_ID}/maxresdefault.jpg',
     uploadDate: '2025-01-01',
-    contentUrl: 'https://www.youtube.com/watch?v=${TEST_PREVIEW_VIDEO_ID}',
-    embedUrl: 'https://www.youtube.com/embed/${TEST_PREVIEW_VIDEO_ID}',
+    contentUrl: 'https://www.youtube.com/watch?v=${AFRO_CONTEMPORANEO_VIDEO_ID}',
+    embedUrl: 'https://www.youtube.com/embed/${AFRO_CONTEMPORANEO_VIDEO_ID}',
   };
 
   // BreadcrumbList Schema (JSON-LD)
@@ -76,25 +76,25 @@ const TestPreviewPage: React.FC = () => {
       {
         '@type': 'ListItem',
         position: 1,
-        name: t('testpreviewBreadcrumbHome'),
+        name: t('afrocontemporaneoBreadcrumbHome'),
         item: `${baseUrl}/${locale}`,
       },
       {
         '@type': 'ListItem',
         position: 2,
-        name: t('testpreviewBreadcrumbClasses'),
+        name: t('afrocontemporaneoBreadcrumbClasses'),
         item: `${baseUrl}/${locale}/clases`,
       },
       {
         '@type': 'ListItem',
         position: 3,
-        name: t('testpreviewBreadcrumbUrban'),
+        name: t('afrocontemporaneoBreadcrumbUrban'),
         item: `${baseUrl}/${locale}/clases/danzas-urbanas-barcelona`,
       },
       {
         '@type': 'ListItem',
         position: 4,
-        name: t('testpreviewBreadcrumbCurrent'),
+        name: t('afrocontemporaneoBreadcrumbCurrent'),
         item: pageUrl,
       },
     ],
@@ -102,12 +102,12 @@ const TestPreviewPage: React.FC = () => {
 
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [
-    { name: t('testpreviewBreadcrumbHome'), url: `/${locale}` },
-    { name: t('testpreviewBreadcrumbClasses'), url: `/${locale}/clases` },
-    { name: t('testpreviewBreadcrumbUrban'), url: `/${locale}/clases/danzas-urbanas-barcelona` },
+    { name: t('afrocontemporaneoBreadcrumbHome'), url: `/${locale}` },
+    { name: t('afrocontemporaneoBreadcrumbClasses'), url: `/${locale}/clases` },
+    { name: t('afrocontemporaneoBreadcrumbUrban'), url: `/${locale}/clases/danzas-urbanas-barcelona` },
     {
-      name: t('testpreviewBreadcrumbCurrent'),
-      url: `/${locale}/clases/test-preview-barcelona`,
+      name: t('afrocontemporaneoBreadcrumbCurrent'),
+      url: `/${locale}/clases/afro-contemporaneo-barcelona`,
       isActive: true,
     },
   ];
@@ -115,20 +115,20 @@ const TestPreviewPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>{t('testpreviewPageTitle')} | Farray&apos;s Center</title>
-        <meta name="description" content={t('testpreviewMetaDescription')} />
+        <title>{t('afrocontemporaneoPageTitle')} | Farray&apos;s Center</title>
+        <meta name="description" content={t('afrocontemporaneoMetaDescription')} />
         <link rel="canonical" href={pageUrl} />
-        <meta property="og:title" content={`${t('testpreviewPageTitle')} | Farray&apos;s Center`} />
-        <meta property="og:description" content={t('testpreviewMetaDescription')} />
+        <meta property="og:title" content={`${t('afrocontemporaneoPageTitle')} | Farray&apos;s Center`} />
+        <meta property="og:description" content={t('afrocontemporaneoMetaDescription')} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${baseUrl}/images/og-test-preview.jpg`} />
+        <meta property="og:image" content={`${baseUrl}/images/og-afro-contemporaneo.jpg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${t('testpreviewPageTitle')} | Farray's Center`} />
-        <meta name="twitter:description" content={t('testpreviewMetaDescription')} />
-        <meta name="twitter:image" content={`${baseUrl}/images/og-test-preview.jpg`} />
+        <meta name="twitter:title" content={`${t('afrocontemporaneoPageTitle')} | Farray's Center`} />
+        <meta name="twitter:description" content={t('afrocontemporaneoMetaDescription')} />
+        <meta name="twitter:image" content={`${baseUrl}/images/og-afro-contemporaneo.jpg`} />
       </Helmet>
 
       {/* VideoObject Schema */}
@@ -145,8 +145,8 @@ const TestPreviewPage: React.FC = () => {
 
       {/* Schema Markup */}
       <LocalBusinessSchema
-        name="Farray's International Dance Center - Clases de TestPreview"
-        description={t('testpreviewMetaDescription')}
+        name="Farray's International Dance Center - Clases de AfroContemporaneo"
+        description={t('afrocontemporaneoMetaDescription')}
         url={pageUrl}
         telephone="+34622247085"
         email="info@farrayscenter.com"
@@ -168,8 +168,8 @@ const TestPreviewPage: React.FC = () => {
       />
 
       <CourseSchema
-        name={t('testpreviewCourseSchemaName')}
-        description={t('testpreviewCourseSchemaDesc')}
+        name={t('afrocontemporaneoCourseSchemaName')}
+        description={t('afrocontemporaneoCourseSchemaDesc')}
         provider={{
           name: "Farray's International Dance Center",
           url: baseUrl,
@@ -184,7 +184,7 @@ const TestPreviewPage: React.FC = () => {
 
       <AggregateReviewsSchema
         reviews={reviewsSchemaData}
-        itemName="Clases de TestPreview en Barcelona - Farray's Center"
+        itemName="Clases de AfroContemporaneo en Barcelona - Farray's Center"
         itemType="Course"
       />
 
@@ -225,23 +225,23 @@ const TestPreviewPage: React.FC = () => {
                 id="hero-title"
                 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text"
               >
-                {t('testpreviewHeroTitle')}
+                {t('afrocontemporaneoHeroTitle')}
               </h1>
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 holographic-text">
-                {t('testpreviewHeroSubtitle')}
+                {t('afrocontemporaneoHeroSubtitle')}
               </p>
               <p className="max-w-4xl mx-auto text-lg sm:text-xl md:text-2xl text-neutral/90 mt-6 sm:mt-8 mb-4 sm:mb-6 leading-relaxed">
-                {t('testpreviewHeroDesc')}
+                {t('afrocontemporaneoHeroDesc')}
               </p>
               <p className="text-base sm:text-lg md:text-xl text-neutral/90 italic mb-8 sm:mb-12">
-                {t('testpreviewHeroLocation')}
+                {t('afrocontemporaneoHeroLocation')}
               </p>
 
               {/* CTA Buttons - Enhanced UX & A11y */}
               <div
                 className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-8 sm:mt-10"
                 role="group"
-                aria-label={t('testpreviewCTAGroup') || 'Opciones de inscripción'}
+                aria-label={t('afrocontemporaneoCTAGroup') || 'Opciones de inscripción'}
               >
                 <div className="w-full sm:w-auto">
                   <a
@@ -249,10 +249,10 @@ const TestPreviewPage: React.FC = () => {
                     aria-describedby="cta1-desc"
                     className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
                   >
-                    {t('testpreviewCTA1')}
+                    {t('afrocontemporaneoCTA1')}
                   </a>
                   <p id="cta1-desc" className="text-xs text-neutral/70 mt-2 text-center">
-                    {t('testpreviewCTA1Subtext')}
+                    {t('afrocontemporaneoCTA1Subtext')}
                   </p>
                 </div>
                 <div className="w-full sm:w-auto">
@@ -261,10 +261,10 @@ const TestPreviewPage: React.FC = () => {
                     aria-describedby="cta2-desc"
                     className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] border-2 border-neutral text-neutral font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
                   >
-                    {t('testpreviewCTA2')}
+                    {t('afrocontemporaneoCTA2')}
                   </a>
                   <p id="cta2-desc" className="text-xs text-neutral/70 mt-2 text-center">
-                    {t('testpreviewCTA2Subtext')}
+                    {t('afrocontemporaneoCTA2Subtext')}
                   </p>
                 </div>
               </div>
@@ -272,30 +272,29 @@ const TestPreviewPage: React.FC = () => {
               {/* Key Stats */}
               <div className="mt-12 sm:mt-16">
                 <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-12 max-w-4xl mx-auto">
-                  {/* 60 Minutos */}
+                  {/* 60-90 Minutos */}
                   <AnimateOnScroll delay={0}>
                     <div className="text-center">
                       <div className="mb-2 flex justify-center">
                         <ClockIcon className="w-8 h-8 sm:w-10 sm:h-10 text-primary-accent" />
                       </div>
-                      <AnimatedCounter
-                        target={60}
-                        className="text-3xl sm:text-4xl md:text-5xl font-black mb-1 holographic-text"
-                      />
+                      <div className="text-3xl sm:text-4xl md:text-5xl font-black mb-1 holographic-text">
+                        60-90
+                      </div>
                       <div className="text-xs sm:text-sm md:text-base text-neutral/90 font-semibold">
                         {t('classMinutes')}
                       </div>
                     </div>
                   </AnimateOnScroll>
 
-                  {/* ~600 Calorías */}
+                  {/* ~500 Calorías */}
                   <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
                     <div className="text-center">
                       <div className="mb-2 flex justify-center">
                         <FlameIcon className="w-8 h-8 sm:w-10 sm:h-10 text-primary-accent" />
                       </div>
                       <div className="text-3xl sm:text-4xl md:text-5xl font-black mb-1 holographic-text">
-                        ~<AnimatedCounter target={600} className="inline" />
+                        ~<AnimatedCounter target={500} className="inline" />
                       </div>
                       <div className="text-xs sm:text-sm md:text-base text-neutral/90 font-semibold">
                         {t('caloriesBurned')}
@@ -334,21 +333,21 @@ const TestPreviewPage: React.FC = () => {
                   id="what-is-title"
                   className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-6 sm:mb-8 text-center holographic-text"
                 >
-                  {t('testpreviewWhatIsTitle')}
+                  {t('afrocontemporaneoWhatIsTitle')}
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
                   <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-neutral/90 leading-relaxed">
                     <p className="text-lg sm:text-xl font-semibold holographic-text">
-                      {t('testpreviewWhatIsP1')}
+                      {t('afrocontemporaneoWhatIsP1')}
                     </p>
-                    <p>{t('testpreviewWhatIsP2')}</p>
-                    <p className="italic font-medium text-neutral">{t('testpreviewWhatIsP3')}</p>
-                    <p>{t('testpreviewWhatIsP4')}</p>
+                    <p>{t('afrocontemporaneoWhatIsP2')}</p>
+                    <p className="italic font-medium text-neutral">{t('afrocontemporaneoWhatIsP3')}</p>
+                    <p>{t('afrocontemporaneoWhatIsP4')}</p>
                     <p className="text-center text-xl sm:text-2xl font-bold mt-6 sm:mt-8 holographic-text">
-                      {t('testpreviewWhatIsQuestionTitle')}
+                      {t('afrocontemporaneoWhatIsQuestionTitle')}
                     </p>
                     <p className="text-center text-lg sm:text-xl font-semibold">
-                      {t('testpreviewWhatIsQuestionAnswer')}
+                      {t('afrocontemporaneoWhatIsQuestionAnswer')}
                     </p>
                   </div>
                   <div className="rounded-2xl overflow-hidden shadow-lg">
@@ -360,7 +359,7 @@ const TestPreviewPage: React.FC = () => {
                       />
                       <img
                         src="/images/classes/dancehall/img/dancehall-classes-barcelona-01_960.webp"
-                        alt="Clases de TestPreview en Barcelona - Estudiantes bailando en la academia"
+                        alt="Clases de AfroContemporaneo en Barcelona - Estudiantes bailando en la academia"
                         loading="lazy"
                         className="w-full h-full object-cover"
                       />
@@ -374,8 +373,8 @@ const TestPreviewPage: React.FC = () => {
 
         {/* 3. Schedule */}
         <ScheduleSection
-          titleKey="testpreviewScheduleTitle"
-          subtitleKey="testpreviewScheduleSubtitle"
+          titleKey="afrocontemporaneoScheduleTitle"
+          subtitleKey="afrocontemporaneoScheduleSubtitle"
           schedules={schedules}
           t={t}
         />
@@ -393,10 +392,10 @@ const TestPreviewPage: React.FC = () => {
                   id="teachers-title"
                   className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text"
                 >
-                  {t('testpreviewTeachersTitle')}
+                  {t('afrocontemporaneoTeachersTitle')}
                 </h2>
                 <p className="text-lg sm:text-xl text-neutral/70 mt-4">
-                  {t('testpreviewTeachersSubtitle')}
+                  {t('afrocontemporaneoTeachersSubtitle')}
                 </p>
               </div>
             </AnimateOnScroll>
@@ -430,10 +429,10 @@ const TestPreviewPage: React.FC = () => {
                       Isabel López
                     </h3>
                     <p className="text-primary-accent font-semibold mb-3 sm:mb-4">
-                      {t('testpreviewTeacher1Specialty')}
+                      {t('afrocontemporaneoTeacher1Specialty')}
                     </p>
                     <p className="text-neutral/90 leading-relaxed text-sm">
-                      {t('testpreviewTeacher1Bio')}
+                      {t('afrocontemporaneoTeacher1Bio')}
                     </p>
                   </div>
                 </div>
@@ -467,10 +466,10 @@ const TestPreviewPage: React.FC = () => {
                       Sandra Gómez
                     </h3>
                     <p className="text-primary-accent font-semibold mb-3 sm:mb-4">
-                      {t('testpreviewTeacher2Specialty')}
+                      {t('afrocontemporaneoTeacher2Specialty')}
                     </p>
                     <p className="text-neutral/90 leading-relaxed text-sm">
-                      {t('testpreviewTeacher2Bio')}
+                      {t('afrocontemporaneoTeacher2Bio')}
                     </p>
                   </div>
                 </div>
@@ -479,7 +478,7 @@ const TestPreviewPage: React.FC = () => {
 
             <AnimateOnScroll>
               <p className="text-center text-base sm:text-lg text-neutral/90 mt-8 sm:mt-10 max-w-2xl mx-auto">
-                {t('testpreviewTeachersClosing')}
+                {t('afrocontemporaneoTeachersClosing')}
               </p>
             </AnimateOnScroll>
           </div>
@@ -494,7 +493,7 @@ const TestPreviewPage: React.FC = () => {
                   id="identify-title"
                   className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-6 sm:mb-8 holographic-text"
                 >
-                  {t('testpreviewIdentifyTitle')}
+                  {t('afrocontemporaneoIdentifyTitle')}
                 </h2>
               </div>
             </AnimateOnScroll>
@@ -502,7 +501,7 @@ const TestPreviewPage: React.FC = () => {
             <ul
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-8 sm:mb-10 list-none"
               role="list"
-              aria-label={t('testpreviewIdentifyListLabel') || 'Situaciones con las que te identificas'}
+              aria-label={t('afrocontemporaneoIdentifyListLabel') || 'Situaciones con las que te identificas'}
             >
               {[1, 2, 3, 4, 5, 6].map((num, index) => (
                 <AnimateOnScroll
@@ -518,7 +517,7 @@ const TestPreviewPage: React.FC = () => {
                     >
                       <CheckIcon className="text-primary-accent" size="sm" />
                     </div>
-                    <p className="text-neutral/90 leading-relaxed">{t(`testpreviewIdentify${num}`)}</p>
+                    <p className="text-neutral/90 leading-relaxed">{t(`afrocontemporaneoIdentify${num}`)}</p>
                   </div>
                 </AnimateOnScroll>
               ))}
@@ -528,7 +527,7 @@ const TestPreviewPage: React.FC = () => {
             <AnimateOnScroll>
               <div className="text-center mb-4 sm:mb-6">
                 <p className="text-sm text-neutral/75 italic max-w-2xl mx-auto">
-                  {t('testpreviewIdentifyTransition')}
+                  {t('afrocontemporaneoIdentifyTransition')}
                 </p>
               </div>
             </AnimateOnScroll>
@@ -536,7 +535,7 @@ const TestPreviewPage: React.FC = () => {
             <AnimateOnScroll>
               <div className="text-center mb-6 sm:mb-8 max-w-4xl mx-auto">
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-4 sm:mb-6 holographic-text">
-                  {t('testpreviewNeedEnrollTitle')}
+                  {t('afrocontemporaneoNeedEnrollTitle')}
                 </h3>
               </div>
             </AnimateOnScroll>
@@ -544,11 +543,11 @@ const TestPreviewPage: React.FC = () => {
             <AnimateOnScroll>
               <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4">
                 <p className="text-lg sm:text-xl font-semibold holographic-text">
-                  {t('testpreviewIdentifyAgitate1')}
+                  {t('afrocontemporaneoIdentifyAgitate1')}
                 </p>
-                <p className="text-base sm:text-lg text-neutral/90">{t('testpreviewIdentifySolution')}</p>
+                <p className="text-base sm:text-lg text-neutral/90">{t('afrocontemporaneoIdentifySolution')}</p>
                 <p className="text-lg sm:text-xl text-neutral/90 italic">
-                  {t('testpreviewIdentifyClosing')}
+                  {t('afrocontemporaneoIdentifyClosing')}
                 </p>
               </div>
             </AnimateOnScroll>
@@ -564,7 +563,7 @@ const TestPreviewPage: React.FC = () => {
                   id="transform-title"
                   className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
                 >
-                  {t('testpreviewTransformTitle')}
+                  {t('afrocontemporaneoTransformTitle')}
                 </h2>
               </div>
             </AnimateOnScroll>
@@ -581,10 +580,10 @@ const TestPreviewPage: React.FC = () => {
                       {num}
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold text-neutral mb-2 sm:mb-3">
-                      {t(`testpreviewTransform${num}Title`)}
+                      {t(`afrocontemporaneoTransform${num}Title`)}
                     </h3>
                     <p className="text-neutral/90 leading-relaxed text-sm sm:text-base">
-                      {t(`testpreviewTransform${num}Desc`)}
+                      {t(`afrocontemporaneoTransform${num}Desc`)}
                     </p>
                   </div>
                 </AnimateOnScroll>
@@ -599,7 +598,7 @@ const TestPreviewPage: React.FC = () => {
             <AnimateOnScroll>
               <div className="text-center mb-8 sm:mb-10 max-w-4xl mx-auto">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('testpreviewTransformCTA')}
+                  {t('afrocontemporaneoTransformCTA')}
                 </h2>
               </div>
             </AnimateOnScroll>
@@ -618,10 +617,10 @@ const TestPreviewPage: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-base sm:text-lg font-bold text-neutral mb-2">
-                          {t(`testpreviewWhyChoose${num}Title`)}
+                          {t(`afrocontemporaneoWhyChoose${num}Title`)}
                         </h3>
                         <p className="text-neutral/90 text-sm leading-relaxed">
-                          {t(`testpreviewWhyChoose${num}Desc`)}
+                          {t(`afrocontemporaneoWhyChoose${num}Desc`)}
                         </p>
                       </div>
                     </div>
@@ -670,7 +669,7 @@ const TestPreviewPage: React.FC = () => {
             <AnimateOnScroll>
               <div className="text-center max-w-4xl mx-auto">
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-6 sm:mb-8 holographic-text">
-                  {t('testpreviewLogosTitle')}
+                  {t('afrocontemporaneoLogosTitle')}
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto items-center mb-4 sm:mb-6">
                   <div className="flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105">
@@ -727,7 +726,7 @@ const TestPreviewPage: React.FC = () => {
                   </div>
                 </div>
                 <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter holographic-text">
-                  {t('testpreviewLogosIntlFestivalsText')}
+                  {t('afrocontemporaneoLogosIntlFestivalsText')}
                 </p>
               </div>
             </AnimateOnScroll>
@@ -740,16 +739,16 @@ const TestPreviewPage: React.FC = () => {
             <AnimateOnScroll>
               <div className="max-w-3xl mx-auto text-center space-y-4 sm:space-y-5">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 sm:mb-6 holographic-text">
-                  {t('testpreviewWhyTodayFullTitle')}
+                  {t('afrocontemporaneoWhyTodayFullTitle')}
                 </h2>
-                <p className="text-lg sm:text-xl text-neutral/90">{t('testpreviewWhyToday1')}</p>
-                <p className="text-lg sm:text-xl text-neutral/90">{t('testpreviewWhyToday2')}</p>
-                <p className="text-lg sm:text-xl text-neutral/90">{t('testpreviewWhyToday3')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90">{t('afrocontemporaneoWhyToday1')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90">{t('afrocontemporaneoWhyToday2')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90">{t('afrocontemporaneoWhyToday3')}</p>
                 <p className="text-xl sm:text-2xl font-bold holographic-text mt-4 sm:mt-6">
-                  {t('testpreviewWhyTodayClosing1')}
+                  {t('afrocontemporaneoWhyTodayClosing1')}
                 </p>
                 <p className="text-base sm:text-lg text-neutral/90 italic">
-                  {t('testpreviewWhyTodayClosing2')}
+                  {t('afrocontemporaneoWhyTodayClosing2')}
                 </p>
               </div>
             </AnimateOnScroll>
@@ -762,17 +761,17 @@ const TestPreviewPage: React.FC = () => {
             <AnimateOnScroll>
               <div className="text-center mb-8 sm:mb-12 max-w-4xl mx-auto">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('testpreviewVideoTitle')}
+                  {t('afrocontemporaneoVideoTitle')}
                 </h2>
-                <p className="text-base sm:text-lg text-neutral/70">{t('testpreviewVideoDesc')}</p>
+                <p className="text-base sm:text-lg text-neutral/70">{t('afrocontemporaneoVideoDesc')}</p>
               </div>
             </AnimateOnScroll>
 
             <div className="max-w-4xl mx-auto">
               <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
                 <YouTubeEmbed
-                  videoId="${TEST_PREVIEW_VIDEO_ID}"
-                  title="Clases de TestPreview en Barcelona - Farray's Center"
+                  videoId="${AFRO_CONTEMPORANEO_VIDEO_ID}"
+                  title="Clases de AfroContemporaneo en Barcelona - Farray's Center"
                 />
               </AnimateOnScroll>
             </div>
@@ -810,7 +809,7 @@ const TestPreviewPage: React.FC = () => {
             </AnimateOnScroll>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
-              {testpreviewTestimonials.map((testimonial, index) => (
+              {afrocontemporaneoTestimonials.map((testimonial, index) => (
                 <AnimateOnScroll
                   key={testimonial.id}
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
@@ -850,23 +849,23 @@ const TestPreviewPage: React.FC = () => {
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('testpreviewFinalCTATitle')}
+                  {t('afrocontemporaneoFinalCTATitle')}
                 </h2>
                 <p className="text-xl sm:text-2xl font-bold mb-4 sm:mb-5 holographic-text">
-                  {t('testpreviewFinalCTASubtitle')}
+                  {t('afrocontemporaneoFinalCTASubtitle')}
                 </p>
                 <p className="text-lg sm:text-xl text-neutral/90 mb-5 sm:mb-6 leading-relaxed">
-                  {t('testpreviewFinalCTADesc')}
+                  {t('afrocontemporaneoFinalCTADesc')}
                 </p>
                 <p className="text-base sm:text-lg text-neutral/90 mb-6 sm:mb-8 italic">
-                  {t('testpreviewFinalCTAFunny')}
+                  {t('afrocontemporaneoFinalCTAFunny')}
                 </p>
 
                 {/* CTA Final - Enhanced UX & A11y */}
                 <div
                   className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
                   role="group"
-                  aria-label={t('testpreviewCTAGroup') || 'Opciones de inscripción'}
+                  aria-label={t('afrocontemporaneoCTAGroup') || 'Opciones de inscripción'}
                 >
                   <div className="w-full sm:w-auto">
                     <a
@@ -874,10 +873,10 @@ const TestPreviewPage: React.FC = () => {
                       aria-describedby="final-cta1-desc"
                       className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
                     >
-                      {t('testpreviewCTA1')}
+                      {t('afrocontemporaneoCTA1')}
                     </a>
                     <p id="final-cta1-desc" className="text-xs text-neutral/70 mt-2 text-center">
-                      {t('testpreviewCTA1Subtext')}
+                      {t('afrocontemporaneoCTA1Subtext')}
                     </p>
                   </div>
                   <div className="w-full sm:w-auto">
@@ -886,10 +885,10 @@ const TestPreviewPage: React.FC = () => {
                       aria-describedby="final-cta2-desc"
                       className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] border-2 border-neutral text-neutral font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
                     >
-                      {t('testpreviewCTA2')}
+                      {t('afrocontemporaneoCTA2')}
                     </a>
                     <p id="final-cta2-desc" className="text-xs text-neutral/70 mt-2 text-center">
-                      {t('testpreviewCTA2Subtext')}
+                      {t('afrocontemporaneoCTA2Subtext')}
                     </p>
                   </div>
                 </div>
@@ -900,19 +899,19 @@ const TestPreviewPage: React.FC = () => {
 
         {/* 12. Cultural History - Contenido profundo SEO */}
         <CulturalHistorySection
-          titleKey="testpreviewCulturalHistoryTitle"
-          shortDescKey="testpreviewCulturalShort"
-          fullHistoryKey="testpreviewCulturalFull"
+          titleKey="afrocontemporaneoCulturalHistoryTitle"
+          shortDescKey="afrocontemporaneoCulturalShort"
+          fullHistoryKey="afrocontemporaneoCulturalFull"
           readMoreText={t('readMore')}
           readLessText={t('readLess')}
           t={t}
         />
 
         {/* 13. FAQ */}
-        <FAQSection title={t('testpreviewFaqTitle')} faqs={testpreviewFaqs} pageUrl={pageUrl} />
+        <FAQSection title={t('afrocontemporaneoFaqTitle')} faqs={afrocontemporaneoFaqs} pageUrl={pageUrl} />
       </main>
     </>
   );
 };
 
-export default TestPreviewPage;
+export default AfroContemporaneoPage;
