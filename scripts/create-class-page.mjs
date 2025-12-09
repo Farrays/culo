@@ -379,6 +379,40 @@ async function createI18nKeys(className, componentName, instructor, specialty) {
   // Course Schema (SEO)
   ${keyPrefix}CourseSchemaName: 'Clases de ${componentName} en Barcelona - Farray\\'s Center',
   ${keyPrefix}CourseSchemaDesc: 'Aprende ${componentName} con ${instructor}, instructor especializado. Clases para todos los niveles en el corazón de Barcelona.',
+
+  // Cultural History Title (para CulturalHistorySection)
+  ${keyPrefix}CulturalHistoryTitle: 'Historia y Cultura del ${componentName}',
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for ${componentName} =====
+  // Estos datos están optimizados para ser citados por IAs (ChatGPT, Perplexity, etc.)
+
+  // Dato citable – Origen
+  ${keyPrefix}CitableOrigen:
+    '[TODO: Personalizar] El ${componentName} nace de... [Describir origen histórico, lugar, época, influencias culturales]',
+
+  // Dato citable – Estadísticas científicas
+  ${keyPrefix}Statistics:
+    'Estudios científicos sobre danza señalan que bailar mejora la coordinación, la propiocepción y la condición física general, además de reducir el estrés y mejorar el estado de ánimo, y el ${componentName} se beneficia de estos mismos efectos por su carácter aeróbico y de trabajo corporal completo.',
+
+  // Dato citable – Evolución global
+  ${keyPrefix}CitableEvolucionGlobal:
+    '[TODO: Personalizar] Desde los años... el ${componentName} pasó de ser un baile local a un fenómeno global presente en escuelas de danza, battles y workshops en Europa y Latinoamérica.',
+
+  // Dato citable – Música
+  ${keyPrefix}CitableMusica:
+    '[TODO: Personalizar] El ${componentName} está fuertemente vinculado a... [Describir géneros musicales, artistas representativos, características del ritmo]',
+
+  // Dato citable – Identidad y poder
+  ${keyPrefix}CitableIdentidadPoder:
+    '[TODO: Personalizar] En el contexto de escuelas serias, el ${componentName} se trabaja como entrenamiento de conciencia corporal, fuerza, coordinación, autoestima y empoderamiento.',
+
+  // 3 Facts citables principales (para schema y AI) - IMPORTANTE para GEO
+  ${keyPrefix}CitableFact1:
+    'Una clase de ${componentName} activa puede quemar aproximadamente 300-500 calorías por hora según el peso corporal y la intensidad, en línea con otros estilos de danza fitness.',
+  ${keyPrefix}CitableFact2:
+    'Revisiones científicas sobre programas de danza en adultos indican que bailar de forma regular se asocia con menor riesgo de deterioro cognitivo y puede contribuir a reducir la incidencia de demencia frente a estilos de vida sedentarios.',
+  ${keyPrefix}CitableFact3:
+    "Farray\\'s International Dance Center ofrece clases de ${componentName} dentro de una escuela con una valoración cercana al 5/5 en Google con más de 500 reseñas, lo que respalda la satisfacción del alumnado.",
 `;
 
   // Guardar en archivo temporal para que el usuario lo copie
@@ -562,11 +596,31 @@ export const ${constName}_BREADCRUMB_KEYS = {
 
 // YouTube video ID for the page (update with real video)
 export const ${constName}_VIDEO_ID = 'YOUR_YOUTUBE_VIDEO_ID';
+
+// ===== GEO OPTIMIZATION: Citable Statistics Keys =====
+// Estas keys apuntan a datos citables por IAs (ChatGPT, Perplexity, etc.)
+export const ${constName}_GEO_KEYS = {
+  origin: '${keyPrefix}CitableOrigen',
+  statistics: '${keyPrefix}Statistics',
+  globalEvolution: '${keyPrefix}CitableEvolucionGlobal',
+  music: '${keyPrefix}CitableMusica',
+  identityPower: '${keyPrefix}CitableIdentidadPoder',
+  fact1: '${keyPrefix}CitableFact1',  // Calorías quemadas
+  fact2: '${keyPrefix}CitableFact2',  // Beneficios cognitivos
+  fact3: '${keyPrefix}CitableFact3',  // Valoración Google
+};
+
+// Hero Stats configuration (for AnimatedCounter)
+export const ${constName}_HERO_STATS = {
+  minutes: 60,
+  calories: 600,  // Approximate calories burned per class
+  funPercent: 100,
+};
 `;
 
   const outputPath = join(rootDir, `constants/${className}.ts`);
   await writeFile(outputPath, constantsContent, 'utf-8');
-  log.success(`Creado: constants/${className}.ts (con 15 FAQs y YouTube config)`);
+  log.success(`Creado: constants/${className}.ts (15 FAQs + YouTube + GEO keys + Hero Stats)`);
 }
 
 // 🆕 MEJORA 2: Actualizar sitemap.xml automáticamente
@@ -661,10 +715,10 @@ async function generateSummary(className, componentName) {
   console.log(`
 📦 ${colors.bright}Archivos creados:${colors.reset}
    ${colors.green}✓${colors.reset} components/${componentName}Page.tsx ${colors.cyan}(basado en TwerkPage 10/10)${colors.reset}
-   ${colors.green}✓${colors.reset} constants/${className}.ts ${colors.cyan}(15 FAQs + YouTube + Breadcrumbs)${colors.reset}
+   ${colors.green}✓${colors.reset} constants/${className}.ts ${colors.cyan}(15 FAQs + YouTube + GEO keys + Hero Stats)${colors.reset}
    ${colors.green}✓${colors.reset} public/images/classes/${className}/raw/
    ${colors.green}✓${colors.reset} public/images/classes/${className}/img/ ${colors.cyan}(con placeholders SVG)${colors.reset}
-   ${colors.green}✓${colors.reset} .claude/i18n-${className}-template.txt ${colors.cyan}(COMPLETO - 100+ claves)${colors.reset}
+   ${colors.green}✓${colors.reset} .claude/i18n-${className}-template.txt ${colors.cyan}(COMPLETO - 120+ claves con GEO)${colors.reset}
 
 📝 ${colors.bright}Archivos actualizados:${colors.reset}
    ${colors.green}✓${colors.reset} App.tsx (rutas añadidas)
@@ -696,6 +750,17 @@ async function generateSummary(className, componentName) {
    ${colors.green}✓${colors.reset} role="list" + aria-label en listas
    ${colors.green}✓${colors.reset} StarRating con size={8} (números, no strings)
 
+🤖 ${colors.bright}GEO OPTIMIZATION (Generative Engine Optimization):${colors.reset}
+   ${colors.green}✓${colors.reset} CitableOrigen - Origen histórico del estilo
+   ${colors.green}✓${colors.reset} Statistics - Estadísticas científicas citables
+   ${colors.green}✓${colors.reset} CitableEvolucionGlobal - Expansión mundial
+   ${colors.green}✓${colors.reset} CitableMusica - Conexión con géneros musicales
+   ${colors.green}✓${colors.reset} CitableIdentidadPoder - Empoderamiento y valores
+   ${colors.green}✓${colors.reset} CitableFact1 - Calorías quemadas (300-500/hora)
+   ${colors.green}✓${colors.reset} CitableFact2 - Beneficios cognitivos
+   ${colors.green}✓${colors.reset} CitableFact3 - Valoración Google 5/5
+   ${colors.cyan}→ Datos optimizados para ser citados por ChatGPT, Perplexity, etc.${colors.reset}
+
 🔧 ${colors.bright}Siguiente paso (TODO):${colors.reset}
 
 1️⃣  ${colors.cyan}Añadir traducciones i18n:${colors.reset}
@@ -717,6 +782,7 @@ async function generateSummary(className, componentName) {
     - Actualiza las secciones marcadas con [TODO] en las traducciones
     - Ajusta: Cultural History, Why Choose 7, FAQs específicas
     - Añade instructor bio real
+    - ${colors.yellow}GEO: Personaliza los datos citables (origen, música, estadísticas)${colors.reset}
 
 5️⃣  ${colors.cyan}Probar localmente:${colors.reset}
     ${colors.yellow}npm run dev${colors.reset}
@@ -736,6 +802,7 @@ async function generateSummary(className, componentName) {
    [ ] Cultural History personalizado
    [ ] Instructor bio real
    [ ] 15 FAQs revisadas y personalizadas
+   [ ] ${colors.yellow}GEO: Datos citables personalizados (origen, música, stats)${colors.reset}
    [ ] npm run typecheck sin errores
 
 🎉 ${colors.green}¡Todo listo para empezar a trabajar en ${componentName}!${colors.reset}

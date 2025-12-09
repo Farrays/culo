@@ -53,6 +53,7 @@ const SexyStylePage = lazy(() => import('./components/SexyStylePage'));
 const ModernJazzPage = lazy(() => import('./components/ModernJazzPage'));
 const BalletPage = lazy(() => import('./components/BalletPage'));
 const ContemporaneoPage = lazy(() => import('./components/ContemporaneoPage'));
+const TestPreviewPage = lazy(() => import('./components/TestPreviewPage'));
 
 // Valid locales
 const VALID_LOCALES: Locale[] = ['es', 'en', 'ca', 'fr'];
