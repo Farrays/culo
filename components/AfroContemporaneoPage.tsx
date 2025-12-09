@@ -1,7 +1,11 @@
 import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
-import { AFRO_CONTEMPORANEO_TESTIMONIALS, AFRO_CONTEMPORANEO_FAQS_CONFIG, AFRO_CONTEMPORANEO_SCHEDULE_KEYS } from '../constants/afro-contemporaneo';
+import {
+  AFRO_CONTEMPORANEO_TESTIMONIALS,
+  AFRO_CONTEMPORANEO_FAQS_CONFIG,
+  AFRO_CONTEMPORANEO_SCHEDULE_KEYS,
+} from '../constants/afro-contemporaneo';
 import AnimateOnScroll from './AnimateOnScroll';
 import CulturalHistorySection from './CulturalHistorySection';
 import ScheduleSection from './ScheduleSection';
@@ -104,7 +108,10 @@ const AfroContemporaneoPage: React.FC = () => {
   const breadcrumbItems = [
     { name: t('afrocontemporaneoBreadcrumbHome'), url: `/${locale}` },
     { name: t('afrocontemporaneoBreadcrumbClasses'), url: `/${locale}/clases` },
-    { name: t('afrocontemporaneoBreadcrumbUrban'), url: `/${locale}/clases/danzas-urbanas-barcelona` },
+    {
+      name: t('afrocontemporaneoBreadcrumbUrban'),
+      url: `/${locale}/clases/danzas-urbanas-barcelona`,
+    },
     {
       name: t('afrocontemporaneoBreadcrumbCurrent'),
       url: `/${locale}/clases/afro-contemporaneo-barcelona`,
@@ -118,7 +125,10 @@ const AfroContemporaneoPage: React.FC = () => {
         <title>{t('afrocontemporaneoPageTitle')} | Farray&apos;s Center</title>
         <meta name="description" content={t('afrocontemporaneoMetaDescription')} />
         <link rel="canonical" href={pageUrl} />
-        <meta property="og:title" content={`${t('afrocontemporaneoPageTitle')} | Farray&apos;s Center`} />
+        <meta
+          property="og:title"
+          content={`${t('afrocontemporaneoPageTitle')} | Farray&apos;s Center`}
+        />
         <meta property="og:description" content={t('afrocontemporaneoMetaDescription')} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
@@ -126,7 +136,10 @@ const AfroContemporaneoPage: React.FC = () => {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${t('afrocontemporaneoPageTitle')} | Farray's Center`} />
+        <meta
+          name="twitter:title"
+          content={`${t('afrocontemporaneoPageTitle')} | Farray's Center`}
+        />
         <meta name="twitter:description" content={t('afrocontemporaneoMetaDescription')} />
         <meta name="twitter:image" content={`${baseUrl}/images/og-afro-contemporaneo.jpg`} />
       </Helmet>
@@ -341,7 +354,9 @@ const AfroContemporaneoPage: React.FC = () => {
                       {t('afrocontemporaneoWhatIsP1')}
                     </p>
                     <p>{t('afrocontemporaneoWhatIsP2')}</p>
-                    <p className="italic font-medium text-neutral">{t('afrocontemporaneoWhatIsP3')}</p>
+                    <p className="italic font-medium text-neutral">
+                      {t('afrocontemporaneoWhatIsP3')}
+                    </p>
                     <p>{t('afrocontemporaneoWhatIsP4')}</p>
                     <p className="text-center text-xl sm:text-2xl font-bold mt-6 sm:mt-8 holographic-text">
                       {t('afrocontemporaneoWhatIsQuestionTitle')}
@@ -501,7 +516,9 @@ const AfroContemporaneoPage: React.FC = () => {
             <ul
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-8 sm:mb-10 list-none"
               role="list"
-              aria-label={t('afrocontemporaneoIdentifyListLabel') || 'Situaciones con las que te identificas'}
+              aria-label={
+                t('afrocontemporaneoIdentifyListLabel') || 'Situaciones con las que te identificas'
+              }
             >
               {[1, 2, 3, 4, 5, 6].map((num, index) => (
                 <AnimateOnScroll
@@ -517,7 +534,9 @@ const AfroContemporaneoPage: React.FC = () => {
                     >
                       <CheckIcon className="text-primary-accent" size="sm" />
                     </div>
-                    <p className="text-neutral/90 leading-relaxed">{t(`afrocontemporaneoIdentify${num}`)}</p>
+                    <p className="text-neutral/90 leading-relaxed">
+                      {t(`afrocontemporaneoIdentify${num}`)}
+                    </p>
                   </div>
                 </AnimateOnScroll>
               ))}
@@ -545,7 +564,9 @@ const AfroContemporaneoPage: React.FC = () => {
                 <p className="text-lg sm:text-xl font-semibold holographic-text">
                   {t('afrocontemporaneoIdentifyAgitate1')}
                 </p>
-                <p className="text-base sm:text-lg text-neutral/90">{t('afrocontemporaneoIdentifySolution')}</p>
+                <p className="text-base sm:text-lg text-neutral/90">
+                  {t('afrocontemporaneoIdentifySolution')}
+                </p>
                 <p className="text-lg sm:text-xl text-neutral/90 italic">
                   {t('afrocontemporaneoIdentifyClosing')}
                 </p>
@@ -741,9 +762,15 @@ const AfroContemporaneoPage: React.FC = () => {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 sm:mb-6 holographic-text">
                   {t('afrocontemporaneoWhyTodayFullTitle')}
                 </h2>
-                <p className="text-lg sm:text-xl text-neutral/90">{t('afrocontemporaneoWhyToday1')}</p>
-                <p className="text-lg sm:text-xl text-neutral/90">{t('afrocontemporaneoWhyToday2')}</p>
-                <p className="text-lg sm:text-xl text-neutral/90">{t('afrocontemporaneoWhyToday3')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90">
+                  {t('afrocontemporaneoWhyToday1')}
+                </p>
+                <p className="text-lg sm:text-xl text-neutral/90">
+                  {t('afrocontemporaneoWhyToday2')}
+                </p>
+                <p className="text-lg sm:text-xl text-neutral/90">
+                  {t('afrocontemporaneoWhyToday3')}
+                </p>
                 <p className="text-xl sm:text-2xl font-bold holographic-text mt-4 sm:mt-6">
                   {t('afrocontemporaneoWhyTodayClosing1')}
                 </p>
@@ -763,7 +790,9 @@ const AfroContemporaneoPage: React.FC = () => {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
                   {t('afrocontemporaneoVideoTitle')}
                 </h2>
-                <p className="text-base sm:text-lg text-neutral/70">{t('afrocontemporaneoVideoDesc')}</p>
+                <p className="text-base sm:text-lg text-neutral/70">
+                  {t('afrocontemporaneoVideoDesc')}
+                </p>
               </div>
             </AnimateOnScroll>
 
@@ -908,7 +937,11 @@ const AfroContemporaneoPage: React.FC = () => {
         />
 
         {/* 13. FAQ */}
-        <FAQSection title={t('afrocontemporaneoFaqTitle')} faqs={afrocontemporaneoFaqs} pageUrl={pageUrl} />
+        <FAQSection
+          title={t('afrocontemporaneoFaqTitle')}
+          faqs={afrocontemporaneoFaqs}
+          pageUrl={pageUrl}
+        />
       </main>
     </>
   );

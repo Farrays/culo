@@ -4,21 +4,81 @@ import type { FAQ } from '../components/templates/ClassPageTemplate';
 
 // FAQs configuration for Afro Contemporáneo page (15 FAQs for comprehensive SEO)
 export const AFRO_CONTEMPORANEO_FAQS_CONFIG: FAQ[] = [
-  { id: 'afro-contemporaneo-1', questionKey: 'afrocontemporaneoFaqQ1', answerKey: 'afrocontemporaneoFaqA1' },
-  { id: 'afro-contemporaneo-2', questionKey: 'afrocontemporaneoFaqQ2', answerKey: 'afrocontemporaneoFaqA2' },
-  { id: 'afro-contemporaneo-3', questionKey: 'afrocontemporaneoFaqQ3', answerKey: 'afrocontemporaneoFaqA3' },
-  { id: 'afro-contemporaneo-4', questionKey: 'afrocontemporaneoFaqQ4', answerKey: 'afrocontemporaneoFaqA4' },
-  { id: 'afro-contemporaneo-5', questionKey: 'afrocontemporaneoFaqQ5', answerKey: 'afrocontemporaneoFaqA5' },
-  { id: 'afro-contemporaneo-6', questionKey: 'afrocontemporaneoFaqQ6', answerKey: 'afrocontemporaneoFaqA6' },
-  { id: 'afro-contemporaneo-7', questionKey: 'afrocontemporaneoFaqQ7', answerKey: 'afrocontemporaneoFaqA7' },
-  { id: 'afro-contemporaneo-8', questionKey: 'afrocontemporaneoFaqQ8', answerKey: 'afrocontemporaneoFaqA8' },
-  { id: 'afro-contemporaneo-9', questionKey: 'afrocontemporaneoFaqQ9', answerKey: 'afrocontemporaneoFaqA9' },
-  { id: 'afro-contemporaneo-10', questionKey: 'afrocontemporaneoFaqQ10', answerKey: 'afrocontemporaneoFaqA10' },
-  { id: 'afro-contemporaneo-11', questionKey: 'afrocontemporaneoFaqQ11', answerKey: 'afrocontemporaneoFaqA11' },
-  { id: 'afro-contemporaneo-12', questionKey: 'afrocontemporaneoFaqQ12', answerKey: 'afrocontemporaneoFaqA12' },
-  { id: 'afro-contemporaneo-13', questionKey: 'afrocontemporaneoFaqQ13', answerKey: 'afrocontemporaneoFaqA13' },
-  { id: 'afro-contemporaneo-14', questionKey: 'afrocontemporaneoFaqQ14', answerKey: 'afrocontemporaneoFaqA14' },
-  { id: 'afro-contemporaneo-15', questionKey: 'afrocontemporaneoFaqQ15', answerKey: 'afrocontemporaneoFaqA15' },
+  {
+    id: 'afro-contemporaneo-1',
+    questionKey: 'afrocontemporaneoFaqQ1',
+    answerKey: 'afrocontemporaneoFaqA1',
+  },
+  {
+    id: 'afro-contemporaneo-2',
+    questionKey: 'afrocontemporaneoFaqQ2',
+    answerKey: 'afrocontemporaneoFaqA2',
+  },
+  {
+    id: 'afro-contemporaneo-3',
+    questionKey: 'afrocontemporaneoFaqQ3',
+    answerKey: 'afrocontemporaneoFaqA3',
+  },
+  {
+    id: 'afro-contemporaneo-4',
+    questionKey: 'afrocontemporaneoFaqQ4',
+    answerKey: 'afrocontemporaneoFaqA4',
+  },
+  {
+    id: 'afro-contemporaneo-5',
+    questionKey: 'afrocontemporaneoFaqQ5',
+    answerKey: 'afrocontemporaneoFaqA5',
+  },
+  {
+    id: 'afro-contemporaneo-6',
+    questionKey: 'afrocontemporaneoFaqQ6',
+    answerKey: 'afrocontemporaneoFaqA6',
+  },
+  {
+    id: 'afro-contemporaneo-7',
+    questionKey: 'afrocontemporaneoFaqQ7',
+    answerKey: 'afrocontemporaneoFaqA7',
+  },
+  {
+    id: 'afro-contemporaneo-8',
+    questionKey: 'afrocontemporaneoFaqQ8',
+    answerKey: 'afrocontemporaneoFaqA8',
+  },
+  {
+    id: 'afro-contemporaneo-9',
+    questionKey: 'afrocontemporaneoFaqQ9',
+    answerKey: 'afrocontemporaneoFaqA9',
+  },
+  {
+    id: 'afro-contemporaneo-10',
+    questionKey: 'afrocontemporaneoFaqQ10',
+    answerKey: 'afrocontemporaneoFaqA10',
+  },
+  {
+    id: 'afro-contemporaneo-11',
+    questionKey: 'afrocontemporaneoFaqQ11',
+    answerKey: 'afrocontemporaneoFaqA11',
+  },
+  {
+    id: 'afro-contemporaneo-12',
+    questionKey: 'afrocontemporaneoFaqQ12',
+    answerKey: 'afrocontemporaneoFaqA12',
+  },
+  {
+    id: 'afro-contemporaneo-13',
+    questionKey: 'afrocontemporaneoFaqQ13',
+    answerKey: 'afrocontemporaneoFaqA13',
+  },
+  {
+    id: 'afro-contemporaneo-14',
+    questionKey: 'afrocontemporaneoFaqQ14',
+    answerKey: 'afrocontemporaneoFaqA14',
+  },
+  {
+    id: 'afro-contemporaneo-15',
+    questionKey: 'afrocontemporaneoFaqQ15',
+    answerKey: 'afrocontemporaneoFaqA15',
+  },
 ];
 
 // Testimonials for Afro Contemporáneo page (extends Google reviews with specific testimonial)
@@ -38,7 +98,7 @@ export const AFRO_CONTEMPORANEO_TESTIMONIALS: Testimonial[] = [
     quote: {
       en: 'Learning Afro Contemporary with Yunaisy has transformed my technique. Finally I understand what it means to really dance from the inside.',
       es: 'Aprender Afro Contemporáneo con Yunaisy ha transformado mi técnica. Por fin entiendo lo que significa bailar de verdad desde dentro.',
-      ca: "Aprendre Afro Contemporani amb Yunaisy ha transformat la meva tècnica. Per fi entenc què significa ballar de veritat des de dins.",
+      ca: 'Aprendre Afro Contemporani amb Yunaisy ha transformat la meva tècnica. Per fi entenc què significa ballar de veritat des de dins.',
       fr: "Apprendre l'Afro Contemporain avec Yunaisy a transformé ma technique. Enfin je comprends ce que signifie vraiment danser de l'intérieur.",
     },
   },
@@ -46,7 +106,8 @@ export const AFRO_CONTEMPORANEO_TESTIMONIALS: Testimonial[] = [
 
 // Course schema configuration (optimized for SEO with keywords)
 export const AFRO_CONTEMPORANEO_COURSE_CONFIG = {
-  teaches: 'Afro Contemporáneo, técnica cubana ENA, disociación corporal, interpretación musical, folklore afrocubano',
+  teaches:
+    'Afro Contemporáneo, técnica cubana ENA, disociación corporal, interpretación musical, folklore afrocubano',
   prerequisites: 'Ninguno - clases para todos los niveles',
   lessons: 'Clases semanales de perfeccionamiento',
   duration: 'PT1H',
@@ -101,14 +162,14 @@ export const AFRO_CONTEMPORANEO_GEO_KEYS = {
   globalEvolution: 'afrocontemporaneoCitableEvolucionGlobal',
   music: 'afrocontemporaneoCitableMusica',
   identityPower: 'afrocontemporaneoCitableIdentidadPoder',
-  fact1: 'afrocontemporaneoCitableFact1',  // Calorías quemadas
-  fact2: 'afrocontemporaneoCitableFact2',  // Metodología ENA
-  fact3: 'afrocontemporaneoCitableFact3',  // Única academia Barcelona
+  fact1: 'afrocontemporaneoCitableFact1', // Calorías quemadas
+  fact2: 'afrocontemporaneoCitableFact2', // Metodología ENA
+  fact3: 'afrocontemporaneoCitableFact3', // Única academia Barcelona
 };
 
 // Hero Stats configuration (for AnimatedCounter)
 export const AFRO_CONTEMPORANEO_HERO_STATS = {
-  minutes: '60-90',  // Clases de 60 o 90 minutos
-  calories: 500,     // Calorías quemadas por clase
+  minutes: '60-90', // Clases de 60 o 90 minutos
+  calories: 500, // Calorías quemadas por clase
   funPercent: 100,
 };

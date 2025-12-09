@@ -6223,7 +6223,8 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
   afrocontemporaneoCTA2Subtext: 'Descubre la técnica cubana',
 
   // What Is Section
-  afrocontemporaneoWhatIsTitle: '¿Qué es el Afro Contemporáneo y por qué es clave para el bailarín?',
+  afrocontemporaneoWhatIsTitle:
+    '¿Qué es el Afro Contemporáneo y por qué es clave para el bailarín?',
   afrocontemporaneoWhatIsP1:
     'El Afro Contemporáneo es una disciplina creada en Cuba y que se estudia en la ENA (Escuela Nacional de Arte de Cuba). Se considera como una síntesis entre la danza moderna universal y el folklore cubano, y es clave para mejorar todos los aspectos del bailarín.',
   afrocontemporaneoWhatIsP2:
@@ -6231,7 +6232,7 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
   afrocontemporaneoWhatIsP3:
     'El curso se compone de una parte técnica de calentamiento, seguida de una parte técnico-física compuesta por ejercicios variados que se aplicarán en una secuencia en la última fase de la clase.',
   afrocontemporaneoWhatIsP4:
-    'En Farray\'s tenemos diferentes niveles de enseñanza para que todos puedan tener acceso a esta magnífica disciplina que preparará tu cuerpo de una manera integral.',
+    "En Farray's tenemos diferentes niveles de enseñanza para que todos puedan tener acceso a esta magnífica disciplina que preparará tu cuerpo de una manera integral.",
   afrocontemporaneoWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
   afrocontemporaneoWhatIsQuestionAnswer: 'Si buscas elevar tu nivel técnico, lo es.',
 
@@ -6270,18 +6271,20 @@ Grandes compañías como Danza Contemporánea de Cuba han llevado esta disciplin
   // Identify Section
   afrocontemporaneoIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
   afrocontemporaneoIdentify1: 'Bailas otros estilos pero sientes que te falta base técnica sólida',
-  afrocontemporaneoIdentify2: 'Quieres mejorar tu interpretación musical y tu conexión con el ritmo',
+  afrocontemporaneoIdentify2:
+    'Quieres mejorar tu interpretación musical y tu conexión con el ritmo',
   afrocontemporaneoIdentify3: 'Buscas una disciplina que trabaje tu cuerpo de forma integral',
   afrocontemporaneoIdentify4: 'Te cuesta disociar las diferentes partes de tu cuerpo al bailar',
   afrocontemporaneoIdentify5: 'Aspiras a formarte profesionalmente en danza',
   afrocontemporaneoIdentify6: 'Quieres entrenar con metodología de conservatorio reconocida',
   afrocontemporaneoIdentifyTransition:
     'Si te identificas con alguno de estos puntos, el Afro Contemporáneo es exactamente lo que necesitas.',
-  afrocontemporaneoNeedEnrollTitle: 'Necesitas entrenar Afro Contemporáneo con metodología profesional',
+  afrocontemporaneoNeedEnrollTitle:
+    'Necesitas entrenar Afro Contemporáneo con metodología profesional',
   afrocontemporaneoIdentifyAgitate1:
     'Sin una base técnica sólida, tu evolución como bailarín se estanca. El Afro Contemporáneo es la disciplina que desarrolla todas las capacidades que otros estilos dan por supuestas.',
   afrocontemporaneoIdentifySolution:
-    'En Farray\'s Center aprenderás directamente de Yunaisy Farray, maestra del CID-UNESCO formada en la Escuela Nacional de Arte de Cuba, siguiendo la metodología original de la ENA.',
+    "En Farray's Center aprenderás directamente de Yunaisy Farray, maestra del CID-UNESCO formada en la Escuela Nacional de Arte de Cuba, siguiendo la metodología original de la ENA.",
   afrocontemporaneoIdentifyClosing:
     '¡No pierdas la oportunidad única de aprender Afro Contemporáneo siguiendo la técnica de la Escuela Nacional de Arte de Cuba!',
 
@@ -6305,7 +6308,7 @@ Grandes compañías como Danza Contemporánea de Cuba han llevado esta disciplin
   afrocontemporaneoTransform6Title: 'Formación profesional CID-UNESCO',
   afrocontemporaneoTransform6Desc:
     'Aprende en una academia reconocida internacionalmente. Si es tu caso, entiende cómo aplicar la técnica a nivel profesional.',
-  afrocontemporaneoTransformCTA: '¿Por qué elegir Farray\'s Center para Afro Contemporáneo?',
+  afrocontemporaneoTransformCTA: "¿Por qué elegir Farray's Center para Afro Contemporáneo?",
 
   // Why Choose Section (7 items)
   afrocontemporaneoWhyChoose1Title: 'Única academia con metodología ENA en Barcelona',
@@ -6350,10 +6353,11 @@ Grandes compañías como Danza Contemporánea de Cuba han llevado esta disciplin
   // Video Section
   afrocontemporaneoVideoTitle: 'Descubre nuestras clases de Afro Contemporáneo',
   afrocontemporaneoVideoDesc:
-    'Mira en este vídeo cómo son las clases de Afro Contemporánea en Farray\'s International Dance Center de Barcelona. No te lo pienses más y ven a probar una clase.',
+    "Mira en este vídeo cómo son las clases de Afro Contemporánea en Farray's International Dance Center de Barcelona. No te lo pienses más y ven a probar una clase.",
 
   // Why Today Section
-  afrocontemporaneoWhyTodayFullTitle: '¿Por qué hoy es el mejor momento para empezar Afro Contemporáneo?',
+  afrocontemporaneoWhyTodayFullTitle:
+    '¿Por qué hoy es el mejor momento para empezar Afro Contemporáneo?',
   afrocontemporaneoWhyToday1:
     'Porque cada día sin entrenar técnica es un día que tu cuerpo pierde capacidades que después cuesta recuperar.',
   afrocontemporaneoWhyToday2:
@@ -6361,7 +6365,7 @@ Grandes compañías como Danza Contemporánea de Cuba han llevado esta disciplin
   afrocontemporaneoWhyToday3:
     'Porque alucinarás en cómo mejora tu baile cuando tengas la base técnica que te falta.',
   afrocontemporaneoWhyTodayClosing1:
-    'En Farray\'s no vendemos clases. Formamos bailarines completos.',
+    "En Farray's no vendemos clases. Formamos bailarines completos.",
   afrocontemporaneoWhyTodayClosing2:
     'Te esperamos con la técnica de la Escuela Nacional de Arte de Cuba y la energía única de Yunaisy Farray.',
 
@@ -6428,7 +6432,8 @@ Grandes compañías como Danza Contemporánea de Cuba han llevado esta disciplin
   afrocontemporaneoFaqA13:
     'Es una disciplina que requiere trabajo físico intenso, pero las clases están estructuradas para que cada alumno trabaje a su nivel. La progresión es gradual y segura.',
 
-  afrocontemporaneoFaqQ14: '¿Dónde puedo encontrar clases de Afro Contemporáneo cerca de Plaza España?',
+  afrocontemporaneoFaqQ14:
+    '¿Dónde puedo encontrar clases de Afro Contemporáneo cerca de Plaza España?',
   afrocontemporaneoFaqA14:
     "Farray's Center está ubicado en Calle Entença 100, a solo 5 minutos de Plaza España y Estación de Sants. Somos la única academia en Barcelona que imparte Afro Contemporáneo con metodología ENA original.",
 
