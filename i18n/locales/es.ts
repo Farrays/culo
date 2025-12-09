@@ -802,38 +802,56 @@ export const es = {
   // Cultural History Section
   dancehallCulturalTitle: '¿Qué es el Dancehall? Mucho Más Que Un Baile',
   dancehallCulturalShort:
-    'El Dancehall es una danza tradicional jamaicana que nació en los años 70 y refleja una cultura con fuertes raíces en el reggae, referencias africanas y caribeñas, y la energía del hip-hop y otras danzas urbanas. Dancehall es mucho más que un baile; es una manera de andar, de hablar y de entender la vida; es una declaración de quién eres. Es expresión pura, ritmo, actitud y flow. En el dancehall no hay que ser bueno, hay que ser tú.',
+    '**El Dancehall nace en los guetos de Kingston (Jamaica) a finales de los 70 como evolución del reggae, impulsado por sound systems en streets y dancehalls, espacios comunitarios para bailar y liberar tensiones sociales.**',
   dancehallCulturalFull: `### Los Orígenes: Kingston, Jamaica (1970s-1980s)
 
-El Dancehall nació en los guetos de Kingston, Jamaica, a finales de los años 70. Surgió como una evolución natural del reggae, cuando los "sound systems" (sistemas de sonido móviles) empezaron a llevar la música a las calles y a los dancehalls (salas de baile).
+El Dancehall nació en los guetos de Kingston a finales de los años 70. Surgió como una evolución natural del reggae, cuando los sound systems (sistemas de sonido móviles) empezaron a llevar la música a las calles y a los dancehalls (salas de baile). El nombre "dancehall" proviene de esos espacios donde la comunidad se reunía para bailar, socializar y expresarse. Era el lugar donde las tensiones sociales se liberaban a través de la música y el movimiento.
 
-El nombre "dancehall" proviene literalmente de estos espacios donde la comunidad se reunía para bailar, socializar y expresarse. Era el lugar donde las tensiones sociales se liberaban a través de la música y el movimiento.
+### Las Leyendas: Bogle, Passa Passa y los Pioneros
 
-### Las Leyendas: Bogle, Passa Passa y Los Pioneros
+**Gerald "Bogle" Levy (1964-2005) es considerado el padre del Dancehall moderno.** Creó movimientos icónicos como **Bogle, Row Di Boat, Log On y Willie Bounce**, base del vocabulario Dancehall.
 
-Gerald "Bogle" Levy (1964-2005) es considerado el padre del dancehall moderno. Creó movimientos icónicos como el "Bogle", "Row Di Boat", "Log On" y "Willie Bounce" que se convirtieron en la base del vocabulario dancehall.
+**Passa Passa**, las sesiones legendarias de street dancehall en Tivoli Gardens (Kingston), fue el epicentro donde nacían nuevos pasos y se consagraban los bailarines.
 
-Passa Passa, las sesiones legendarias de street dancehall todos los miércoles en Tivoli Gardens, Kingston, se convirtieron en el epicentro donde nacían los nuevos pasos y se consagraban los bailarines.
+Otros pioneros como **Ding Dong, Keiva, John Hype** y crews como **Ravers Clavers** llevaron el Dancehall a nivel internacional en los 2000.
 
-Otros pioneers como Ding Dong, Keiva, John Hype y crews como Ravers Clavers llevaron el dancehall a nivel internacional en los 2000s.
+**"Gerald 'Bogle' Levy es el padre del Dancehall moderno con pasos icónicos como Bogle, Row Di Boat y Log On; Passa Passa en Tivoli Gardens (Kingston) fue el epicentro de street dancehall donde nacían tendencias."**
 
 ### La Expansión Global (2000s-Presente)
 
-En los años 2000, el dancehall explotó globalmente gracias a artistas como Sean Paul, Shaggy, Elephant Man y Beenie Man. Las redes sociales y YouTube permitieron que pasos como el "Dutty Wine", "Daggering" y "Nuh Linga" se viralizaran mundialmente.
+En los años 2000, el Dancehall explotó globalmente gracias a artistas como **Sean Paul, Shaggy, Elephant Man y Beenie Man**. Las redes sociales y YouTube popularizaron pasos como **Dutty Wine, Daggering y Nuh Linga**.
 
-Hoy, el dancehall es un fenómeno global con comunidades activas en Europa, África, Asia y América. Barcelona se ha convertido en uno de los epicentros europeos del dancehall auténtico.
+**Desde los 2000, artistas como Sean Paul y Elephant Man, junto a YouTube y redes, globalizaron el Dancehall con pasos como Dutty Wine y Daggering; hoy tiene comunidades fuertes en Europa (Barcelona como epicentro), África, Asia y América.**
 
-### La Música: Riddims y Cultura Soundsystem
+Hoy, el Dancehall es un fenómeno mundial con comunidades activas en Europa, África, Asia y América; Barcelona es uno de sus epicentros europeos.
 
-El dancehall se baila sobre "riddims" (ritmos instrumentales) que los productores crean y múltiples artistas vocalizan. Riddims legendarios como "Diwali", "Coolie Dance" o "Dump Truck" han definido épocas enteras.
+### La Música: Riddims y Cultura Sound System
 
-La cultura del sound system —con sus selectores, MCs y el famoso "rewind" cuando una canción es tan buena que se vuelve a poner desde el principio— es fundamental para entender el dancehall.
+**El Dancehall se baila sobre riddims (bases instrumentales) que los productores crean y múltiples artistas vocalizan.** Riddims legendarios como **Diwali, Coolie Dance o Dump Truck** definieron épocas enteras.
+
+**"El Dancehall se baila sobre riddims legendarios como Diwali o Coolie Dance, con cultura sound system de selectores, MCs y rewind; múltiples artistas vocalizan la misma base instrumental, definiendo épocas."**
+
+La cultura del sound system —con sus selectores, MCs y el famoso rewind cuando una canción es tan buena que se vuelve a poner desde el principio— es esencial para entender el Dancehall.
 
 ### Más Que Baile: Identidad y Resistencia
 
-El dancehall ha sido siempre una forma de resistencia cultural y expresión de identidad para las comunidades marginadas de Jamaica. Es la voz de los guetos, una celebración de la alegría a pesar de las dificultades.
+El Dancehall ha sido siempre una forma de resistencia cultural y expresión de identidad para las comunidades marginadas de Jamaica. Es la voz de los guetos, una celebración de la alegría a pesar de las dificultades.
 
-Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce" (homenaje a Willie Haggart), "Nuh Linga" (no te demores). Cada movimiento cuenta una historia.`,
+**"El Dancehall es resistencia cultural de guetos jamaicanos, con pasos cargados de significado como Log On ('conectarse') o Nuh Linga ('no te demores'), celebrando alegría e identidad pese a las dificultades."**
+
+Cada paso tiene un significado: **Log On** (conectarse), **Willie Bounce** (homenaje a Willie Haggart), **Nuh Linga** (no te demores). Cada movimiento cuenta una historia.
+
+### Dancehall en Farray's: técnica y comunidad
+
+En Farray's International Dance Center, el Dancehall se enseña con técnica, respeto y contexto histórico, priorizando la buena energía, la precisión de movimientos y un entorno profesional.
+
+**Estudios científicos sobre danza señalan que bailar mejora la coordinación, la propiocepción y la condición física general, además de reducir el estrés y mejorar el estado de ánimo, y el Dancehall se beneficia de estos efectos por su alta energía y trabajo corporal completo.**
+
+**Una clase de Dancehall activa puede quemar 300-480 calorías por hora según peso e intensidad, similar a otros bailes aeróbicos de alta demanda.**
+
+**Revisiones científicas asocian el baile regular con menor riesgo de deterioro cognitivo y demencia, destacando su valor como entrenamiento cerebral en estilos dinámicos como Dancehall.**
+
+**Farray's International Dance Center ofrece clases de Dancehall en una escuela valorada cerca del 5/5 en Google con cientos de reseñas positivas.**`,
   readMore: 'Leer Más Sobre la Historia y Cultura',
   readLess: 'Leer Menos',
   skipToContent: 'Saltar al contenido principal',
@@ -1015,6 +1033,39 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
   sessionItem3Desc:
     'Trabajamos la improvisación para estimular tus capacidades creativas para que puedas llevar tu baile a un nivel informal, sensual y atrevido.',
 
+  // ===== GEO OPTIMIZATION: Citable Statistics for Dancehall =====
+  // Dato citable – Origen
+  dancehallCitableOrigen:
+    'El Dancehall nace en los guetos de Kingston (Jamaica) a finales de los 70 como evolución del reggae, impulsado por sound systems en streets y dancehalls, espacios comunitarios para bailar y liberar tensiones sociales.',
+
+  // Dato citable – Leyendas
+  dancehallCitableLeyendas:
+    "Gerald 'Bogle' Levy es el padre del Dancehall moderno con pasos icónicos como Bogle, Row Di Boat y Log On; Passa Passa en Tivoli Gardens (Kingston) fue el epicentro de street dancehall donde nacían tendencias.",
+
+  // Dato citable – Expansión global
+  dancehallCitableExpansionGlobal:
+    'Desde los 2000, artistas como Sean Paul y Elephant Man, junto a YouTube y redes, globalizaron el Dancehall con pasos como Dutty Wine y Daggering; hoy tiene comunidades fuertes en Europa (Barcelona como epicentro), África, Asia y América.',
+
+  // Dato citable – Música
+  dancehallCitableMusica:
+    'El Dancehall se baila sobre riddims legendarios como Diwali o Coolie Dance, con cultura sound system de selectores, MCs y rewind; múltiples artistas vocalizan la misma base instrumental, definiendo épocas.',
+
+  // Dato citable – Identidad
+  dancehallCitableIdentidad:
+    "El Dancehall es resistencia cultural de guetos jamaicanos, con pasos cargados de significado como Log On ('conectarse') o Nuh Linga ('no te demores'), celebrando alegría e identidad pese a las dificultades.",
+
+  // Estadísticas científicas
+  dancehallStatistics:
+    'Estudios científicos sobre danza señalan que bailar mejora la coordinación, la propiocepción y la condición física general, además de reducir el estrés y mejorar el estado de ánimo, y el Dancehall se beneficia de estos efectos por su alta energía y trabajo corporal completo.',
+
+  // 3 Facts citables principales (para schema y AI)
+  dancehallCitableFact1:
+    'Una clase de Dancehall activa puede quemar 300-480 calorías por hora según peso e intensidad, similar a otros bailes aeróbicos de alta demanda.',
+  dancehallCitableFact2:
+    'Revisiones científicas asocian el baile regular con menor riesgo de deterioro cognitivo y demencia, destacando su valor como entrenamiento cerebral en estilos dinámicos como Dancehall.',
+  dancehallCitableFact3:
+    "Farray's International Dance Center ofrece clases de Dancehall en una escuela valorada cerca del 5/5 en Google con cientos de reseñas positivas.",
+
   // ===== DancehallPage (Clases de Dancehall Barcelona) =====
   dhV3PageTitle: "Clases de Dancehall en Barcelona | Academia Farray's Center",
   dhV3MetaDescription:
@@ -1050,9 +1101,9 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
 
   dhV3CulturalTitle: 'Historia y cultura del Dancehall',
   dhV3CulturalShort:
-    'El Dancehall nació en los guetos de Kingston a finales de los años 70 como una evolución natural del reggae.',
+    'El Dancehall nace en los guetos de Kingston (Jamaica) a finales de los 70 como evolución del reggae, impulsado por sound systems en streets y dancehalls, espacios comunitarios para bailar y liberar tensiones sociales.',
   dhV3CulturalFull:
-    '### Los orígenes: Kingston, Jamaica (1970s–1980s)\n\nEl Dancehall nació en los guetos de Kingston a finales de los años 70. Surgió como una evolución natural del reggae, cuando los sound systems (sistemas de sonido móviles) empezaron a llevar la música a las calles y a los dancehalls (salas de baile). El nombre "dancehall" proviene de esos espacios donde la comunidad se reunía para bailar, socializar y expresarse. Era el lugar donde las tensiones sociales se liberaban a través de la música y el movimiento.\n\n### Las leyendas: Bogle, Passa Passa y los pioneros\n\nGerald "Bogle" Levy (1964–2005) es considerado el padre del Dancehall moderno. Creó movimientos icónicos como Bogle, Row Di Boat, Log On y Willie Bounce, base del vocabulario Dancehall. Passa Passa, las sesiones legendarias de street dancehall en Tivoli Gardens (Kingston), fue el epicentro donde nacían nuevos pasos y se consagraban los bailarines. Otros pioneros como Ding Dong, Keiva, John Hype y crews como Ravers Clavers llevaron el Dancehall a nivel internacional en los 2000.\n\n### La expansión global (2000s–presente)\n\nEn los años 2000, el Dancehall explotó globalmente gracias a artistas como Sean Paul, Shaggy, Elephant Man y Beenie Man. Las redes sociales y YouTube popularizaron pasos como Dutty Wine, Daggering y Nuh Linga. Hoy, el Dancehall es un fenómeno mundial con comunidades activas en Europa, África, Asia y América; Barcelona es uno de sus epicentros europeos.\n\n### La música: Riddims y cultura Sound System\n\nEl Dancehall se baila sobre riddims (bases instrumentales) que los productores crean y múltiples artistas vocalizan. Riddims legendarios como Diwali, Coolie Dance o Dump Truck definieron épocas enteras. La cultura del sound system —con sus selectores, MCs y el famoso rewind cuando una canción es tan buena que se vuelve a poner desde el principio— es esencial para entender el Dancehall.\n\n### Más que baile: identidad y resistencia\n\nEl Dancehall ha sido siempre una forma de resistencia cultural y expresión de identidad para las comunidades marginadas de Jamaica. Es la voz de los guetos, una celebración de la alegría a pesar de las dificultades. Cada paso tiene un significado: Log On (conectarse), Willie Bounce (homenaje a Willie Haggart), Nuh Linga (no te demores). Cada movimiento cuenta una historia.',
+    '### Los orígenes: Kingston, Jamaica (1970s–1980s)\n\nEl Dancehall nació en los guetos de Kingston a finales de los años 70. Surgió como una evolución natural del reggae, cuando los sound systems (sistemas de sonido móviles) empezaron a llevar la música a las calles y a los dancehalls (salas de baile). El nombre "dancehall" proviene de esos espacios donde la comunidad se reunía para bailar, socializar y expresarse. Era el lugar donde las tensiones sociales se liberaban a través de la música y el movimiento.\n\n### Las leyendas: Bogle, Passa Passa y los pioneros\n\n**Gerald "Bogle" Levy (1964–2005) es considerado el padre del Dancehall moderno.** Creó movimientos icónicos como **Bogle, Row Di Boat, Log On y Willie Bounce**, base del vocabulario Dancehall.\n\n**Passa Passa**, las sesiones legendarias de street dancehall en Tivoli Gardens (Kingston), fue el epicentro donde nacían nuevos pasos y se consagraban los bailarines.\n\nOtros pioneros como **Ding Dong, Keiva, John Hype** y crews como **Ravers Clavers** llevaron el Dancehall a nivel internacional en los 2000.\n\n**"Gerald \'Bogle\' Levy es el padre del Dancehall moderno con pasos icónicos como Bogle, Row Di Boat y Log On; Passa Passa en Tivoli Gardens (Kingston) fue el epicentro de street dancehall donde nacían tendencias."**\n\n### La expansión global (2000s–presente)\n\nEn los años 2000, el Dancehall explotó globalmente gracias a artistas como **Sean Paul, Shaggy, Elephant Man y Beenie Man**. Las redes sociales y YouTube popularizaron pasos como **Dutty Wine, Daggering y Nuh Linga**.\n\n**Desde los 2000, artistas como Sean Paul y Elephant Man, junto a YouTube y redes, globalizaron el Dancehall con pasos como Dutty Wine y Daggering; hoy tiene comunidades fuertes en Europa (Barcelona como epicentro), África, Asia y América.**\n\nHoy, el Dancehall es un fenómeno mundial con comunidades activas en Europa, África, Asia y América; Barcelona es uno de sus epicentros europeos.\n\n### La música: Riddims y cultura Sound System\n\n**El Dancehall se baila sobre riddims (bases instrumentales) que los productores crean y múltiples artistas vocalizan.** Riddims legendarios como **Diwali, Coolie Dance o Dump Truck** definieron épocas enteras.\n\n**"El Dancehall se baila sobre riddims legendarios como Diwali o Coolie Dance, con cultura sound system de selectores, MCs y rewind; múltiples artistas vocalizan la misma base instrumental, definiendo épocas."**\n\nLa cultura del sound system —con sus selectores, MCs y el famoso rewind cuando una canción es tan buena que se vuelve a poner desde el principio— es esencial para entender el Dancehall.\n\n### Más que baile: identidad y resistencia\n\nEl Dancehall ha sido siempre una forma de resistencia cultural y expresión de identidad para las comunidades marginadas de Jamaica. Es la voz de los guetos, una celebración de la alegría a pesar de las dificultades.\n\n**"El Dancehall es resistencia cultural de guetos jamaicanos, con pasos cargados de significado como Log On (\'conectarse\') o Nuh Linga (\'no te demores\'), celebrando alegría e identidad pese a las dificultades."**\n\nCada paso tiene un significado: **Log On** (conectarse), **Willie Bounce** (homenaje a Willie Haggart), **Nuh Linga** (no te demores). Cada movimiento cuenta una historia.\n\n### Dancehall en Farray\'s: técnica y comunidad\n\nEn Farray\'s International Dance Center, el Dancehall se enseña con técnica, respeto y contexto histórico, priorizando la buena energía, la precisión de movimientos y un entorno profesional.\n\n**Estudios científicos sobre danza señalan que bailar mejora la coordinación, la propiocepción y la condición física general, además de reducir el estrés y mejorar el estado de ánimo, y el Dancehall se beneficia de estos efectos por su alta energía y trabajo corporal completo.**\n\n**Una clase de Dancehall activa puede quemar 300–480 calorías por hora según peso e intensidad, similar a otros bailes aeróbicos de alta demanda.**\n\n**Revisiones científicas asocian el baile regular con menor riesgo de deterioro cognitivo y demencia, destacando su valor como entrenamiento cerebral en estilos dinámicos como Dancehall.**\n\n**Farray\'s International Dance Center ofrece clases de Dancehall en una escuela valorada cerca del 5/5 en Google con cientos de reseñas positivas.**',
 
   dhV3IdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
   dhV3Identify1:
@@ -3513,9 +3564,9 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
   // Cultural Section
   twerkCulturalHistoryTitle: '¿Quieres saber más sobre el Twerk?',
   twerkCulturalShort:
-    'El Twerk no apareció de un día para otro. Nace de una mezcla de influencias afrodescendientes: movimientos de danzas tradicionales africanas tales como \'baikoko mapouka\', de la cultura bounce de Nueva Orleans y de otros estilos urbanos que ya trabajaban mucho la cadera y el "booty".',
+    'El Twerk contemporáneo nace de una mezcla de danzas afrodescendientes como la mapouka y otras danzas de África occidental, de tradiciones afrocaribeñas y de la cultura bounce de Nueva Orleans, donde a finales de los 80 y principios de los 90 se consolidó como estilo reconocible dentro del hip hop.',
   twerkCulturalFull:
-    '### Los orígenes: África, Caribe y el sur de EE. UU.\n\nAntes de que Instagram existiera y antes de que alguien le pusiera la etiqueta "twerk", ya había mujeres (y hombres) moviendo cadera y glúteos en danzas africanas y caribeñas. Muchos de los movimientos que hoy llamamos Twerk vienen de ritmos y danzas tradicionales de África occidental tales como \'baikoko mapouka\' y de la diáspora africana en el Caribe: movimientos de pelvis, vibraciones, aislamientos y trabajo de cadera ligados a rituales, celebraciones y fiestas populares.\n\nCon la llegada de estos pueblos a Estados Unidos, esa memoria corporal se mezcló con nuevas músicas y contextos. En el sur del país, especialmente en Nueva Orleans, esa mezcla explotó.\n\n### New Orleans Bounce: donde el Twerk toma nombre y actitud\n\nEl Twerk moderno tal y como lo conocemos está muy ligado al Bounce de Nueva Orleans, un subgénero del hip hop nacido a finales de los 80 y principios de los 90. En los clubs y block parties de la ciudad, el público —sobre todo mujeres negras— empezó a desarrollar un estilo de baile centrado en el trabajo de glúteos, piernas y pelvis, con mucha energía, resistencia y actitud.\n\nArtistas como DJ Jubilee, Big Freedia o Cheeky Blakk popularizaron no solo el sonido, sino también el movimiento. Ahí es donde el Twerk deja de ser "un paso más" y se convierte en un estilo propio: físico, explosivo y descaradamente libre.\n\n### De los clubs al mundo: expansión global del Twerk\n\nA partir de los 2000, con la fuerza de los videoclips y, más tarde, de YouTube, Instagram y TikTok, el Twerk se hace global. Aparece en videoclips de artistas mainstream, en giras de grandes estrellas del pop y en escenarios de medio mundo. Lo que antes era algo casi "local" de Nueva Orleans pasa a formar parte del vocabulario urbano internacional.\n\nEn Europa y Latinoamérica se cruza con otros estilos como el Dancehall, el Reggaeton y el Hip Hop, y empiezan a surgir escuelas, battles y workshops de Twerk por todas partes. Hoy en día, el Twerk ya no es "solo una moda": tiene técnica, escuelas, competiciones y pedagogía propia.\n\n### La música del Twerk: Bounce, Hip Hop, Trap y más\n\nAunque el Twerk nace muy pegado al Bounce, hoy se baila sobre una gran variedad de bases: Bounce de Nueva Orleans, Hip Hop y Trap, Dancehall y Afrobeats, Reggaeton y otros ritmos urbanos latinos. Lo importante no es solo el beat fuerte y marcado, sino la sensación de "bombeo" que permite trabajar rebotes, vibraciones y cambios de ritmo. Cada base invita a un tipo de energía distinto: más agresiva, más sensual o más festiva.\n\n### Mucho más que mover glúteos: cuerpo, identidad y poder\n\nReducir el Twerk a "mover el culo" es no entender absolutamente nada. El Twerk, tal y como lo trabajamos en escuelas serias como Farray\'s, tiene que ver con: conciencia corporal (aprender a aislar, controlar y proteger tu cuerpo), fortaleza física (piernas, core y glúteos fuertes; resistencia y coordinación), identidad y autoestima (reconciliarte con tu cuerpo, tu forma, tu ritmo y tu deseo), y empoderamiento (decidir tú cómo te mueves, cómo te muestras y qué historia cuenta tu baile).\n\nPara muchas mujeres (y también para muchos hombres), el Twerk es una manera de recuperar el control sobre su imagen y su cuerpo, en lugar de bailar "para gustar a otros". En Farray\'s International Dance Center, el Twerk se enseña con técnica, respeto y contexto: no es un circo para grabar vídeos "llamativos", sino una herramienta para ganar fuerza, seguridad y presencia escénica, en un entorno cuidado, profesional y humano.',
+    '### Los orígenes: África, Caribe y el sur de EE. UU.\n\nEl Twerk no apareció de un día para otro. Nace de una mezcla de influencias afrodescendientes: movimientos de danzas tradicionales africanas tales como "mapouka" (África occidental), de la cultura bounce de Nueva Orleans y de otros estilos urbanos que ya trabajaban mucho la cadera y el "booty".\n\nAntes de que Instagram existiera y antes de que alguien le pusiera la etiqueta "twerk", ya había mujeres (y hombres) moviendo cadera y glúteos en danzas africanas y caribeñas, ligadas a rituales, celebraciones y fiestas populares. Con la llegada de estos pueblos a Estados Unidos, esa memoria corporal se mezcló con nuevas músicas y contextos. En el sur del país, especialmente en Nueva Orleans, esa mezcla explotó.\n\n### New Orleans Bounce: donde el Twerk toma nombre y actitud\n\nEl Twerk moderno tal y como lo conocemos está muy ligado al **Bounce de Nueva Orleans**, un subgénero del hip hop nacido a finales de los 80 y principios de los 90. En los clubs y block parties de la ciudad, el público —sobre todo mujeres negras— empezó a desarrollar un estilo de baile centrado en el trabajo de glúteos, piernas y pelvis, con mucha energía, resistencia y actitud.\n\nArtistas como **DJ Jubilee, Big Freedia o Cheeky Blakk** ayudaron a popularizar ese sonido y esos movimientos. Ahí es donde el Twerk deja de ser "un paso más" y se convierte en un estilo propio: físico, explosivo y descaradamente libre.\n\n**Estudios científicos sobre danza señalan que bailar mejora la coordinación, la propiocepción y la condición física general, además de reducir el estrés y mejorar el estado de ánimo, y el Twerk se beneficia de estos mismos efectos por su carácter aeróbico y de fuerza en tren inferior.**\n\n### De los clubs al mundo: expansión global del Twerk\n\nA partir de los 2000, con la fuerza de los videoclips y, más tarde, de YouTube, Instagram y TikTok, el Twerk se hace global. Aparece en videoclips de artistas mainstream, en giras de grandes estrellas del pop y en escenarios de medio mundo.\n\n**Desde los años 2000, impulsado por videoclips y redes sociales, el Twerk pasó de ser un baile ligado a clubes y block parties del sur de Estados Unidos a un fenómeno global presente en videoclips mainstream, escuelas de danza, battles y workshops en Europa y Latinoamérica.**\n\nEn Europa y Latinoamérica se cruza con otros estilos como el Dancehall, el Reggaeton y el Hip Hop, y empiezan a surgir escuelas, battles y workshops de Twerk por todas partes. Hoy en día, el Twerk ya no es "solo una moda": tiene técnica, escuelas, competiciones y pedagogía propia.\n\n### La música del Twerk: Bounce, Hip Hop, Trap y más\n\n**Aunque el Twerk está fuertemente vinculado al bounce de Nueva Orleans, hoy se baila también sobre bases de hip hop, trap, dancehall, afrobeats, reggaeton y otros ritmos urbanos, siempre buscando un beat marcado y sensación de bombeo que facilite rebotes y cambios de ritmo.**\n\nCada base invita a un tipo de energía distinto: más agresiva, más sensual o más festiva.\n\n### Mucho más que mover glúteos: cuerpo, identidad y poder\n\nReducir el Twerk a "mover el culo" es no entender absolutamente nada. **En el contexto de escuelas serias, el Twerk se trabaja no solo como movimiento de glúteos, sino como entrenamiento de conciencia corporal, fuerza de piernas, core y glúteos, coordinación, autoestima y empoderamiento, ayudando al alumnado a reconciliarse con su cuerpo y decidir cómo quiere mostrarse.**\n\nEl Twerk, tal y como lo trabajamos en Farray\'s, tiene que ver con: **conciencia corporal** (aprender a aislar, controlar y proteger tu cuerpo), **fortaleza física** (piernas, core y glúteos fuertes; resistencia y coordinación), **identidad y autoestima** (reconciliarte con tu cuerpo, tu forma, tu ritmo y tu deseo), y **empoderamiento** (decidir tú cómo te mueves, cómo te muestras y qué historia cuenta tu baile).\n\n### Twerk en Farray\'s: técnica, contexto y comunidad\n\nEn Farray\'s International Dance Center, el Twerk se enseña con técnica, respeto y contexto: no es un circo para grabar vídeos "llamativos", sino una herramienta para ganar fuerza, seguridad y presencia escénica, en un entorno cuidado, profesional y humano.\n\n**Una clase de Twerk activa puede rondar un gasto aproximado de 300-500 calorías por hora según el peso corporal y la intensidad, en línea con otros estilos de danza fitness.**\n\n**Revisiones científicas sobre programas de danza en adultos indican que bailar de forma regular se asocia con menor riesgo de deterioro cognitivo y puede contribuir a reducir la incidencia de demencia, lo que respalda el valor del baile como entrenamiento para el cerebro.**\n\n**Farray\'s International Dance Center ofrece clases de Twerk dentro de una escuela con una valoración cercana al 5/5 en Google con cientos de reseñas, lo que respalda la satisfacción del alumnado y la calidad percibida de sus formaciones.**',
 
   // Identify Section
   twerkIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
@@ -3628,6 +3679,35 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
   twerkBreadcrumbUrban: 'Danzas Urbanas',
   twerkBreadcrumbCurrent: 'Clases de Twerk',
 
+  // ===== GEO OPTIMIZATION: Citable Statistics for Twerk =====
+  // Dato citable – Origen
+  twerkCitableOrigen:
+    'El Twerk contemporáneo nace de una mezcla de danzas afrodescendientes como la mapouka y otras danzas de África occidental, de tradiciones afrocaribeñas y de la cultura bounce de Nueva Orleans, donde a finales de los 80 y principios de los 90 se consolidó como estilo reconocible dentro del hip hop.',
+
+  // Dato citable – Estadísticas científicas
+  twerkStatistics:
+    'Estudios científicos sobre danza señalan que bailar mejora la coordinación, la propiocepción y la condición física general, además de reducir el estrés y mejorar el estado de ánimo, y el Twerk se beneficia de estos mismos efectos por su carácter aeróbico y de fuerza en tren inferior.',
+
+  // Dato citable – Evolución global
+  twerkCitableEvolucionGlobal:
+    'Desde los años 2000, impulsado por videoclips y redes sociales, el Twerk pasó de ser un baile ligado a clubes y block parties del sur de Estados Unidos a un fenómeno global presente en videoclips mainstream, escuelas de danza, battles y workshops en Europa y Latinoamérica.',
+
+  // Dato citable – Música
+  twerkCitableMusica:
+    'Aunque el Twerk está fuertemente vinculado al bounce de Nueva Orleans, hoy se baila también sobre bases de hip hop, trap, dancehall, afrobeats, reggaeton y otros ritmos urbanos, siempre buscando un beat marcado y sensación de bombeo que facilite rebotes y cambios de ritmo.',
+
+  // Dato citable – Identidad y poder
+  twerkCitableIdentidadPoder:
+    'En el contexto de escuelas serias, el Twerk se trabaja no solo como movimiento de glúteos, sino como entrenamiento de conciencia corporal, fuerza de piernas, core y glúteos, coordinación, autoestima y empoderamiento, ayudando al alumnado a reconciliarse con su cuerpo y decidir cómo quiere mostrarse.',
+
+  // 3 Facts citables principales (para schema y AI)
+  twerkCitableFact1:
+    'Una clase de Twerk activa, como forma de baile de alta intensidad, puede rondar un gasto aproximado de 300-500 calorías por hora según el peso corporal y la intensidad, en línea con otros estilos de danza fitness.',
+  twerkCitableFact2:
+    'Revisiones científicas sobre programas de danza en adultos indican que bailar de forma regular se asocia con menor riesgo de deterioro cognitivo y puede contribuir a reducir la incidencia de demencia frente a estilos de vida sedentarios, lo que respalda el valor del baile como entrenamiento para el cerebro.',
+  twerkCitableFact3:
+    "Farray's International Dance Center ofrece clases de Twerk dentro de una escuela con una valoración cercana al 5/5 en Google con cientos de reseñas, lo que respalda la satisfacción del alumnado y la calidad percibida de sus formaciones.",
+
   // ===== Afrobeat Page =====
   afroPageTitle: "Clases de Afrobeats y Afrodance en Barcelona | Academia Farray's Center",
   afroMetaDescription:
@@ -3672,34 +3752,53 @@ Los pasos tienen nombres con significado: "Log On" (conectarse), "Willie Bounce"
   // Cultural History
   afroCulturalTitle: 'Historia y cultura del Afrobeats y Afrodance',
   afroCulturalShort:
-    'Afrobeats (en plural) surge a finales de los 90 y principios de los 2000 entre Nigeria y Ghana. No es un único género, sino una corriente urbana que mezcla ritmos africanos con highlife, hip hop, R&B, dancehall y pop.',
+    'Afrobeats surge a finales de los 90 en Nigeria y Ghana como fusión urbana de ritmos africanos, highlife, hip hop, R&B y dancehall, creando percusión marcada y melodías globales.',
   afroCulturalFull: `### Orígenes: Lagos, Accra y la Nueva Ola Africana
 
 Afrobeats (en plural) surge a finales de los 90 y principios de los 2000 entre Nigeria y Ghana. No es un único género, sino una corriente urbana que mezcla ritmos africanos con highlife, hip hop, R&B, dancehall y pop. El resultado es un sonido reconocible: percusión marcada, bajos potentes, melodías pegadizas y estribillos inolvidables.
+
+**"Afrobeats surge a finales de los 90 en Nigeria y Ghana como fusión urbana de ritmos africanos, highlife, hip hop, R&B y dancehall, creando percusión marcada y melodías globales."**
 
 ### De Fela Kuti al Afrobeats Actual
 
 Antes de esta ola moderna, en los 60 y 70, Fela Kuti revolucionó la música nigeriana originando el Afrobeat (en singular): una fusión de jazz, funk, highlife y ritmos yoruba con mensajes de protesta social y política, canciones extensas y estructuras instrumentales inmersivas. Afrobeats actual toma elementos rítmicos del Afrobeat, pero los adapta a canciones más cortas, producción digital y una orientación al consumo internacional para radio y clubs.
 
+**"Del Afrobeat de Fela Kuti (60-70s, jazz-funk-protesta) al Afrobeats moderno: canciones cortas, producción digital y enfoque global, manteniendo ritmos yoruba y highlife nigerianos."**
+
 ### Del Sonido al Movimiento: Afrodance
 
 El auge musical de Afrobeats trajo consigo nuevas formas de baile: lo que hoy se define como Afrodance o danzas afro urbanas. Estos movimientos nacen en calles y clubs de Lagos, Accra o Johannesburgo, y algunos ejemplos virales han sido:
 
-• Azonto (Ghana): caderas, hombros y gestos cotidianos.
+• **Azonto** (Ghana): caderas, hombros y gestos cotidianos.
+• **Etighi, Shoki, Shaku Shaku, Zanku/Legwork** (Nigeria): trabajo intenso de pies, rebote de rodillas y brazos relajados.
 
-• Etighi, Shoki, Shaku Shaku, Zanku/Legwork (Nigeria): trabajo intenso de pies, rebote de rodillas y brazos relajados.
+Estas danzas se viralizan globalmente a través de YouTube, TikTok e Instagram. Además, desde Gabón ha surgido recientemente la **Ntcham o Tcham Bolo**, una expresión musical y de danza urbana originada en los barrios populares y las prisiones de Libreville.
 
-Estas danzas se viralizan globalmente a través de YouTube, TikTok e Instagram. Además, desde Gabón ha surgido recientemente la Ntcham o Tcham Bolo, una expresión musical y de danza urbana originada en los barrios populares y las prisiones de Libreville, que combina raíces afrobeat con sonidos locales y refleja la realidad y resiliencia de la juventud gabonesa.
+**"Afrodance incluye Azonto (Ghana: caderas-gestos), Shaku Shaku/Zanku (Nigeria: pies-rebote), y Ntcham (Gabón: raíces urbanas), viralizados por YouTube, TikTok e Instagram desde calles de Lagos y Accra."**
 
 ### Expansión Global: De Lagos a Barcelona
 
-Desde los 2000, artistas como Wizkid, Davido, Tiwa Savage y Burna Boy han llevado el Afrobeats fuera de África, colaborando con estrellas internacionales de pop y rap. Festivales, clubs y plataformas digitales han transformado este género en un símbolo de la nueva cultura africana, influyendo en música, baile, moda y actitud a nivel mundial.
+Desde los 2000, artistas como **Wizkid, Davido, Tiwa Savage y Burna Boy** han llevado el Afrobeats fuera de África, colaborando con estrellas internacionales de pop y rap. Festivales, clubs y plataformas digitales han transformado este género en un símbolo de la nueva cultura africana, influyendo en música, baile, moda y actitud a nivel mundial. En ciudades como Barcelona, la comunidad de Afrodance crece rápidamente.
 
-En ciudades como Barcelona, la comunidad de Afrodance crece rápidamente. Cada vez más personas buscan conectar con la energía y el flow característicos de estos bailes llenos de rebote, juego de pies y celebración colectiva.
+**"Artistas como Wizkid, Davido y Burna Boy globalizaron Afrobeats desde 2000s con colaboraciones pop/rap; influye en festivales, clubs y ciudades como Barcelona, símbolo de cultura africana moderna."**
 
 ### Más que una Moda: Identidad y Comunidad
 
-Aunque el Afrodance pueda verse mucho por redes, su raíz es profunda: es manifestación de orgullo, alegría, humor, sensualidad y sentimiento africano. Cada paso respira intención: juego, poder, disfrute. Afrobeats y Afrodance conectan con el instinto básico de moverse, compartir energía, y sentirse parte de una identidad global, aunque estés lejos de Lagos o Accra.`,
+Aunque el Afrodance pueda verse mucho por redes, su raíz es profunda: es manifestación de orgullo, alegría, humor, sensualidad y sentimiento africano. Cada paso respira intención: juego, poder, disfrute. Afrobeats y Afrodance conectan con el instinto básico de moverse, compartir energía, y sentirse parte de una identidad global, aunque estés lejos de Lagos o Accra.
+
+**"Afrobeats/Afrodance expresan orgullo africano, alegría, sensualidad y comunidad global; cada paso lleva intención de juego, poder y conexión, más allá de redes sociales."**
+
+### Afrobeats en Farray's: técnica y comunidad
+
+En Farray's International Dance Center, el Afrobeats se enseña con técnica, respeto y contexto cultural, priorizando el flow, rebote y energía colectiva en un entorno profesional.
+
+**Estudios científicos sobre danza señalan que bailar mejora la coordinación, la propiocepción y la condición física general, además de reducir el estrés y mejorar el estado de ánimo, y el Afrobeats se beneficia de estos efectos por su percusión marcada y trabajo de pies/caderas.**
+
+**Una clase de Afrobeats activa puede quemar 300–480 calorías por hora según peso e intensidad, similar a bailes aeróbicos con alto rebote y flow.**
+
+**Revisiones científicas asocian el baile regular con menor riesgo de deterioro cognitivo y demencia, destacando su valor cerebral en estilos dinámicos como Afrobeats.**
+
+**Farray's International Dance Center ofrece clases de Afrobeats en una escuela valorada cerca del 5/5 en Google con cientos de reseñas positivas.**`,
 
   // Identification
   afroIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
@@ -5883,4 +5982,497 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
     'Estudios publicados en Journal of Dance Medicine & Science demuestran que el ballet mejora la densidad ósea y previene la osteoporosis.',
   balletCitableFact3:
     "Farray's International Dance Center es academia CID-UNESCO con más de 500 reseñas de 5 estrellas en Google.",
+
+  // ===== CONTEMPORÁNEO PAGE =====
+  // SEO & Meta
+  contemporaneoPageTitle: "Clases de Danza Contemporánea en Barcelona | Academia Farray's Center",
+  contemporaneoMetaDescription:
+    'Clases de danza contemporánea en Barcelona. Disciplina ecléctica y visceral. Técnica, expresión e improvisación. Todos los niveles. ¡Reserva tu clase de prueba!',
+
+  // Breadcrumb (4 niveles: Home > Clases > Danza > Current)
+  contemporaneoBreadcrumbHome: 'Inicio',
+  contemporaneoBreadcrumbClasses: 'Clases de Baile',
+  contemporaneoBreadcrumbUrban: 'Clases de Danza',
+  contemporaneoBreadcrumbCurrent: 'Danza Contemporánea',
+
+  // Hero
+  contemporaneoHeroTitle: 'Clases de Danza Contemporánea en Barcelona',
+  contemporaneoHeroSubtitle: 'Ecléctica, Visceral, en Constante Evolución',
+  contemporaneoHeroDesc:
+    "Acércate a esta disciplina única de la mano de Farray's International Dance Center Barcelona. Nuestro exclusivo método de enseñanza te ofrecerá un acercamiento multidisciplinar al baile contemporáneo.",
+  contemporaneoHeroLocation: 'Clases para todos los niveles, entre Plaza España y Sants',
+
+  // Stats
+  contemporaneoTechniqueStat: 'Técnica',
+  contemporaneoEmpowerment: 'Expresión',
+  contemporaneoConfidenceGuaranteed: 'Lenguaje propio garantizado',
+  contemporaneoCaloriesStat: 'Calorías Quemadas',
+  contemporaneoDanceStat: 'Danza',
+
+  // CTAs
+  contemporaneoCTA1: 'Hazte Socio Ahora',
+  contemporaneoCTA1Subtext: 'Quedan pocas plazas este mes',
+  contemporaneoCTA2: 'Reserva tu Clase de Prueba',
+  contemporaneoCTA2Subtext: 'Oferta por tiempo limitado',
+
+  // What Is Section
+  contemporaneoWhatIsTitle: '¿Qué es la Danza Contemporánea y por qué te va a transformar?',
+  contemporaneoWhatIsP1:
+    'La danza contemporánea es una disciplina ecléctica, visceral y en constante evolución. Trabajamos desde la técnica y la disciplina hasta la expresión de ideas y emociones.',
+  contemporaneoWhatIsP2:
+    'Además de formarte en las múltiples técnicas que integra el baile contemporáneo actual, te proporcionaremos las herramientas necesarias para que explores dentro de ti y adquieras tu propio lenguaje corporal.',
+  contemporaneoWhatIsP3:
+    '«Mediante la combinación de ejercicios guiados y libres, de coreografía e improvisación, trabajarás tus capacidades físicas y artísticas tanto a nivel individual como grupal»',
+  contemporaneoWhatIsP4:
+    'Profundizarás en tu técnica de danza, mejorarás de manera exponencial tu forma física y entrenarás mediante movimientos musculares intensos y a la vez armónicos.',
+  contemporaneoWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
+  contemporaneoWhatIsQuestionAnswer: 'Sí, absolutamente.',
+
+  // Cultural Section (con markdown ### para títulos holográficos)
+  contemporaneoCulturalShort:
+    'La danza contemporánea surge como una rebelión creativa contra las normas rígidas del ballet clásico, buscando una expresión más libre y conectada con las emociones humanas.',
+  contemporaneoCulturalFull:
+    '### Orígenes de la Danza Contemporánea\n\nLa danza contemporánea nació a principios del siglo XX como respuesta a la rigidez del ballet clásico. Pioneras como Isadora Duncan, Martha Graham y Merce Cunningham sentaron las bases de una nueva forma de entender el movimiento, donde la expresión personal y la conexión con las emociones eran fundamentales.\n\n### Evolución y Técnicas\n\nA lo largo del siglo XX, la danza contemporánea incorporó múltiples influencias: técnicas de suelo (Graham, Limón), release technique, contact improvisation y elementos de danzas étnicas. Hoy en día, es un estilo ecléctico que fusiona lo mejor de cada técnica.\n\n### El Contemporáneo Hoy\n\nEn la actualidad, la danza contemporánea es una de las disciplinas más demandadas en academias de todo el mundo. Su capacidad para combinar rigor técnico con libertad expresiva la convierte en una herramienta perfecta para el desarrollo personal y artístico.',
+
+  // Identify Section
+  contemporaneoIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
+  contemporaneoIdentify1: 'Te gusta trabajar tu cuerpo tanto a nivel físico como artístico',
+  contemporaneoIdentify2: 'Tienes inquietudes creativas y ganas de expresarte a través de la danza',
+  contemporaneoIdentify3: 'Buscas el equilibrio entre rigor técnico y expresión personal',
+  contemporaneoIdentify4: 'Quieres desarrollar tu propio lenguaje corporal',
+  contemporaneoIdentify5: 'Necesitas un espacio donde explorar y crear sin límites',
+  contemporaneoIdentify6: 'Buscas mejorar tu técnica mientras conectas con tus emociones',
+  contemporaneoIdentifyTransition:
+    'Si has dicho "sí" a alguno de estos puntos, ya sabes lo que necesitas.',
+  contemporaneoNeedEnrollTitle: 'Necesitas apuntarte a clases de Danza Contemporánea',
+  contemporaneoIdentifyAgitate1:
+    'Seguir esperando solo te aleja de descubrir tu potencial artístico y físico.',
+  contemporaneoIdentifySolution:
+    "En Farray's Center encontrarás un espacio pensado para que explores, crees y evoluciones sin presiones.",
+  contemporaneoIdentifyClosing: 'Déjate llevar por la libertad y la expresión del contemporáneo.',
+
+  // Transform Section (6 transformaciones)
+  contemporaneoTransformTitle: 'Imagina tu antes y después',
+  contemporaneoTransform1Title: 'Mejoras tu técnica de danza',
+  contemporaneoTransform1Desc:
+    'Cada clase te acerca más a dominar el movimiento con precisión y fluidez.',
+  contemporaneoTransform2Title: 'Desarrollas tu capacidad de improvisación',
+  contemporaneoTransform2Desc: 'Aprendes a moverte con libertad, escuchando tu cuerpo y la música.',
+  contemporaneoTransform3Title: 'Mejoras tu interpretación musical',
+  contemporaneoTransform3Desc: 'Conectas con la música de forma más profunda y expresiva.',
+  contemporaneoTransform4Title: 'Ejercitas coordinación y memoria',
+  contemporaneoTransform4Desc:
+    'Tu cuerpo y mente trabajan juntos, ganando agilidad mental y física.',
+  contemporaneoTransform5Title: 'Aumentas tu repertorio',
+  contemporaneoTransform5Desc: 'Dominas nuevas secuencias y estilos cada semana.',
+  contemporaneoTransform6Title: 'Mejoras tu forma física',
+  contemporaneoTransform6Desc: 'Entrenamientos intensos y armónicos que transforman tu cuerpo.',
+  contemporaneoTransformCTA:
+    "¿Por qué elegir Farray's Center para Danza Contemporánea en Barcelona?",
+
+  // Why Choose Section (7 items)
+  contemporaneoWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
+  contemporaneoWhyChoose1Desc:
+    'Dirigida por Yunaisy Farray, actriz de Street Dance 2 y una de las profesoras más reconocidas del mundo.',
+  contemporaneoWhyChoose2Title: 'Ubicación inmejorable',
+  contemporaneoWhyChoose2Desc:
+    'Calle Entença 100, entre Plaza España y Sants, a 5 minutos de Plaça Espanya. Metro, bus y tren en la puerta.',
+  contemporaneoWhyChoose3Title: 'Ambiente familiar con profesionalismo',
+  contemporaneoWhyChoose3Desc:
+    'Acogedor, inclusivo y sin juicios, pero con el rigor que necesitas para evolucionar de verdad.',
+  contemporaneoWhyChoose4Title: 'Instalaciones preparadas',
+  contemporaneoWhyChoose4Desc:
+    'Más de 700 m², salas amplias, espejos, sonido profesional, climatización y ventilación centralizada.',
+  contemporaneoWhyChoose5Title: 'Academia multidisciplinar',
+  contemporaneoWhyChoose5Desc:
+    'Más de 25 estilos para que nunca te aburras: urbanos, latinas, contemporáneo, técnica, stretching y más.',
+  contemporaneoWhyChoose6Title: 'Gala anual + workshops potentes',
+  contemporaneoWhyChoose6Desc:
+    'Brilla en un teatro profesional, participa en workshops internacionales y vive experiencias únicas.',
+  contemporaneoWhyChoose7Title: 'Profesores especializados en Contemporáneo',
+  contemporaneoWhyChoose7Desc:
+    'Alejandro Miñoso: experto en danza contemporánea con años de experiencia. Técnica, expresión y pasión en cada clase.',
+
+  // Logos Section
+  contemporaneoLogosTitle: 'Has podido vernos en…',
+  contemporaneoLogosIntlFestivalsText: 'y en los mejores festivales de danza de todo el mundo',
+
+  // Teachers Section
+  contemporaneoTeachersTitle: 'Conoce a tu instructor de Danza Contemporánea',
+  contemporaneoTeachersSubtitle: 'Experto en técnica contemporánea y expresión corporal',
+  contemporaneoTeacher1Specialty: 'Danza Contemporánea',
+  contemporaneoTeacher1Bio:
+    'Alejandro Miñoso es un bailarín profesional con amplia formación en técnicas contemporáneas. Su metodología combina el rigor técnico con la libertad expresiva, guiándote para que desarrolles tu propio lenguaje corporal mientras dominas los fundamentos de la danza contemporánea.',
+  contemporaneoTeachersClosing:
+    'Con Alejandro Miñoso no solo aprendes técnica contemporánea: descubres una nueva forma de expresarte y conectar con tu cuerpo.',
+
+  // Schedule Section
+  contemporaneoScheduleTitle: 'Horario de clases de Danza Contemporánea',
+  contemporaneoScheduleSubtitle: 'Varios niveles para que encuentres tu clase perfecta',
+
+  // Video Section
+  contemporaneoVideoTitle: 'Ven a descubrir nuestras clases de Contemporáneo',
+  contemporaneoVideoDesc:
+    "Mira cómo es una clase en Farray's Center: técnica, expresión y libertad de movimiento. ¡Te esperamos!",
+
+  // Why Today Section
+  contemporaneoWhyTodayFullTitle:
+    '¿Por qué hoy es el mejor momento para empezar Danza Contemporánea?',
+  contemporaneoWhyToday1:
+    'Porque siempre esperas "el momento perfecto" pero lo único perfecto es empezar hoy.',
+  contemporaneoWhyToday2:
+    'Porque estás a UNA clase de cambiar tu rutina y conectar con tu cuerpo de forma diferente.',
+  contemporaneoWhyToday3:
+    'Porque la danza contemporánea no tiene edad ni nivel previo: solo requiere ganas de explorar.',
+  contemporaneoWhyTodayClosing1: "En Farray's no vendemos clases. Creamos experiencias.",
+  contemporaneoWhyTodayClosing2:
+    'Te esperamos con música inspiradora, profes apasionados y un ambiente único en Barcelona.',
+
+  // Final CTA Section
+  contemporaneoFinalCTATitle: 'Únete a la comunidad de danza contemporánea más activa de Barcelona',
+  contemporaneoFinalCTASubtitle: 'Da el paso.',
+  contemporaneoFinalCTADesc: 'Reserva tu plaza ahora y déjate llevar por el fluir del movimiento.',
+  contemporaneoFinalCTAFunny: 'Las plazas vuelan más rápido que un salto contemporáneo.',
+
+  // FAQ Title
+  contemporaneoFaqTitle: 'Preguntas Frecuentes sobre Danza Contemporánea en Barcelona',
+
+  // 15 FAQs (optimizado para SEO)
+  contemporaneoFaqQ1: '¿Cómo funcionan las clases de Danza Contemporánea en Barcelona?',
+  contemporaneoFaqA1:
+    'Tras una primera parte técnica de calentamiento, se realizan ejercicios variados que se aplican en una secuencia en la última fase de la clase. Grupos reducidos y divididos por niveles.',
+  contemporaneoFaqQ2: '¿Puedo empezar desde cero si nunca he bailado contemporáneo?',
+  contemporaneoFaqA2:
+    'Este curso está pensado para formar a bailarines de todos los niveles, tengan o no experiencia previa en esta disciplina.',
+  contemporaneoFaqQ3: '¿Qué beneficios tiene la danza contemporánea?',
+  contemporaneoFaqA3:
+    'Mejora tu técnica de danza, tu capacidad de improvisación, tu interpretación musical, ejercita coordinación y memoria, aumenta tu repertorio y mejora tu forma física.',
+  contemporaneoFaqQ4: '¿Qué necesito traer a las clases?',
+  contemporaneoFaqA4:
+    'Ropa cómoda que permita movimiento. Para contemporáneo se suele bailar descalzo o con calcetines. Trae una botella de agua. Tenemos vestuarios con duchas.',
+  contemporaneoFaqQ5: '¿Qué niveles de contemporáneo tenéis?',
+  contemporaneoFaqA5:
+    'Ofrecemos clases en varios niveles: Principiante (sin experiencia), Básico, Intermedio y Avanzado. El profe te guiará al nivel que más te convenga.',
+  contemporaneoFaqQ6: '¿Puedo unirme a las clases en cualquier momento del año?',
+  contemporaneoFaqA6:
+    'Sí, nuestras clases funcionan con sistema abierto, así que puedes inscribirte cuando quieras. No hace falta esperar a principio de trimestre.',
+  contemporaneoFaqQ7: '¿Qué técnicas de contemporáneo enseñáis?',
+  contemporaneoFaqA7:
+    'Trabajamos múltiples técnicas: suelo, release, contact improvisation, y elementos de diversas escuelas. Un enfoque multidisciplinar para que desarrolles tu propio lenguaje.',
+  contemporaneoFaqQ8: '¿Puedo probar una clase antes de inscribirme?',
+  contemporaneoFaqA8:
+    'Por supuesto. Puedes reservar una clase de prueba para ver si es lo que buscas. Ven a probar y descubre cómo dejar fluir tu talento a través del baile.',
+  contemporaneoFaqQ9: '¿Y si falto a una clase por trabajo o compromisos?',
+  contemporaneoFaqA9:
+    'Las clases son recuperables, así que si faltas un día, puedes venir a la siguiente clase disponible en tu mismo nivel.',
+  contemporaneoFaqQ10: 'Si falto a una clase de contemporáneo, ¿puedo recuperarla con otro estilo?',
+  contemporaneoFaqA10:
+    "Sí. En Farray's puedes usar tu clase perdida en otro estilo (Modern Jazz, Ballet, Dancehall...), siempre que el nivel sea equivalente.",
+  contemporaneoFaqQ11: '¿Organizáis eventos o workshops especiales?',
+  contemporaneoFaqA11:
+    'Sí. Tenemos masterclasses con artistas invitados, showcases y nuestra gala anual donde puedes lucirte en un escenario profesional.',
+  contemporaneoFaqQ12: '¿Las clases son solo para mujeres o también para hombres?',
+  contemporaneoFaqA12:
+    'Nuestras clases son 100% inclusivas. Todos los géneros, edades y cuerpos son bienvenidos. Lo que importa son las ganas de bailar y expresarte.',
+  contemporaneoFaqQ13: '¿La danza contemporánea es buen ejercicio físico?',
+  contemporaneoFaqA13:
+    'La danza contemporánea es un entrenamiento completo con movimientos musculares intensos y a la vez armónicos. En una hora puedes quemar entre 300 y 500 calorías.',
+  contemporaneoFaqQ14:
+    '¿Dónde puedo encontrar clases de Danza Contemporánea cerca de Plaza España?',
+  contemporaneoFaqA14:
+    "Farray's Center está ubicado en Calle Entença 100, a solo 5 minutos de Plaza España y Estación de Sants. Puedes llegar en metro (L1, L3), bus o tren.",
+  contemporaneoFaqQ15: '¿Qué hago si tengo dudas o necesito más información?',
+  contemporaneoFaqA15:
+    'Si tienes alguna pregunta adicional o necesitas más información, puedes contactarnos:<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Dirección:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+
+  // Image alts
+  contemporaneoImage1Alt: "Clases de Danza Contemporánea en Barcelona - Farray's Center",
+  contemporaneoImage2Alt: 'Estudiantes practicando danza contemporánea',
+  contemporaneoImage3Alt: 'Alejandro Miñoso - Instructor de Danza Contemporánea',
+
+  // Course Schema (SEO)
+  contemporaneoCourseSchemaName: "Clases de Danza Contemporánea en Barcelona - Farray's Center",
+  contemporaneoCourseSchemaDesc:
+    'Aprende Danza Contemporánea con Alejandro Miñoso. Técnica, expresión e improvisación. Clases para todos los niveles en Barcelona.',
+
+  // ===== AFRO CONTEMPORÁNEO PAGE =====
+  // SEO & Meta
+  afrocontemporaneoPageTitle:
+    'Clases de Afro Contemporáneo en Barcelona | Técnica Cubana ENA con Yunaisy Farray',
+  afrocontemporaneoMetaDescription:
+    'Aprende Afro Contemporáneo en Barcelona con Yunaisy Farray, maestra CID-UNESCO. Técnica de la Escuela Nacional de Arte de Cuba. Clases de perfeccionamiento técnico cerca de Plaza España.',
+
+  // Breadcrumb (4 niveles: Home > Clases > Técnica > Current)
+  afrocontemporaneoBreadcrumbHome: 'Inicio',
+  afrocontemporaneoBreadcrumbClasses: 'Clases de Baile',
+  afrocontemporaneoBreadcrumbUrban: 'Técnica de Danza',
+  afrocontemporaneoBreadcrumbCurrent: 'Afro Contemporáneo',
+
+  // Hero
+  afrocontemporaneoHeroTitle: 'Clases de Afro Contemporáneo en Barcelona',
+  afrocontemporaneoHeroSubtitle: 'Técnica Cubana de la Escuela Nacional de Arte',
+  afrocontemporaneoHeroDesc:
+    'Disciplina clave para el desarrollo integral del bailarín. Síntesis entre la danza moderna universal y el folklore cubano.',
+  afrocontemporaneoHeroLocation:
+    'Clases de perfeccionamiento técnico con Yunaisy Farray, maestra CID-UNESCO, entre Plaza España y Sants',
+
+  // CTAs
+  afrocontemporaneoCTA1: 'Hazte Miembro Ahora',
+  afrocontemporaneoCTA1Subtext: 'Formación profesional CID-UNESCO',
+  afrocontemporaneoCTA2: 'Reserva Tu Clase de Prueba',
+  afrocontemporaneoCTA2Subtext: 'Descubre la técnica cubana',
+
+  // What Is Section
+  afrocontemporaneoWhatIsTitle:
+    '¿Qué es el Afro Contemporáneo y por qué es clave para el bailarín?',
+  afrocontemporaneoWhatIsP1:
+    'El Afro Contemporáneo es una disciplina creada en Cuba y que se estudia en la ENA (Escuela Nacional de Arte de Cuba). Se considera como una síntesis entre la danza moderna universal y el folklore cubano, y es clave para mejorar todos los aspectos del bailarín.',
+  afrocontemporaneoWhatIsP2:
+    'Esta disciplina se integrará en nuestro plan curricular de formación profesional en danza avalado por el CID-UNESCO (Consejo Internacional de la Danza de la Unesco en París). Las clases son de entrenamiento y perfeccionamiento técnico orientadas a resaltar la calidad del bailarín.',
+  afrocontemporaneoWhatIsP3:
+    'El curso se compone de una parte técnica de calentamiento, seguida de una parte técnico-física compuesta por ejercicios variados que se aplicarán en una secuencia en la última fase de la clase.',
+  afrocontemporaneoWhatIsP4:
+    "En Farray's tenemos diferentes niveles de enseñanza para que todos puedan tener acceso a esta magnífica disciplina que preparará tu cuerpo de una manera integral.",
+  afrocontemporaneoWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
+  afrocontemporaneoWhatIsQuestionAnswer: 'Si buscas elevar tu nivel técnico, lo es.',
+
+  // Cultural Section
+  afrocontemporaneoCulturalHistoryTitle: 'Historia y Técnica del Afro Contemporáneo Cubano',
+  afrocontemporaneoCulturalShort:
+    'Disciplina creada en Cuba que fusiona la danza moderna universal con el folklore afrocubano, estudiada en la prestigiosa Escuela Nacional de Arte (ENA) y reconocida por el CID-UNESCO.',
+  afrocontemporaneoCulturalFull: `### Orígenes: La Escuela Nacional de Arte de Cuba
+
+El Afro Contemporáneo nace en Cuba como una evolución natural de la rica tradición dancística de la isla. La Escuela Nacional de Arte (ENA), fundada en 1962, desarrolló esta disciplina como síntesis perfecta entre las técnicas de danza moderna internacional y los ritmos y movimientos del folklore afrocubano.
+
+### La Fusión que Transformó la Danza
+
+Lo que hace único al Afro Contemporáneo es su capacidad de integrar:
+
+- **Técnica moderna**: Los principios de contracción-release de Martha Graham, la fluidez de José Limón y la espacialidad de Merce Cunningham
+- **Folklore cubano**: Los movimientos ondulantes de la Rumba, la energía de los Orishas yoruba, y la poliritmia característica de la música afrocaribeña
+- **Expresión corporal**: Una conexión profunda entre el movimiento y la música que va más allá de la técnica pura
+
+### La Metodología ENA en Barcelona
+
+Yunaisy Farray, formada directamente en la Escuela Nacional de Arte de Cuba, trae a Barcelona la metodología original perfeccionada durante décadas. Esta formación incluye:
+
+- **Calentamiento técnico estructurado**: Preparación específica del cuerpo para el trabajo de disociación
+- **Ejercicios técnico-físicos progresivos**: Trabajo de fuerza, flexibilidad y coordinación integrados
+- **Secuencias aplicadas**: Donde toda la técnica cobra sentido en movimiento continuo
+
+### Reconocimiento Internacional CID-UNESCO
+
+El Afro Contemporáneo impartido en Farray's International Dance Center forma parte del plan curricular de formación profesional en danza avalado por el CID-UNESCO (Consejo Internacional de la Danza). Este reconocimiento certifica la calidad y autenticidad de la enseñanza siguiendo los estándares internacionales más exigentes.
+
+### El Legado Vivo
+
+Grandes compañías como Danza Contemporánea de Cuba han llevado esta disciplina a escenarios de todo el mundo, demostrando que la fusión afro-contemporánea es una de las aportaciones más valiosas de Cuba a la danza mundial.`,
+
+  // Identify Section
+  afrocontemporaneoIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
+  afrocontemporaneoIdentify1: 'Bailas otros estilos pero sientes que te falta base técnica sólida',
+  afrocontemporaneoIdentify2:
+    'Quieres mejorar tu interpretación musical y tu conexión con el ritmo',
+  afrocontemporaneoIdentify3: 'Buscas una disciplina que trabaje tu cuerpo de forma integral',
+  afrocontemporaneoIdentify4: 'Te cuesta disociar las diferentes partes de tu cuerpo al bailar',
+  afrocontemporaneoIdentify5: 'Aspiras a formarte profesionalmente en danza',
+  afrocontemporaneoIdentify6: 'Quieres entrenar con metodología de conservatorio reconocida',
+  afrocontemporaneoIdentifyTransition:
+    'Si te identificas con alguno de estos puntos, el Afro Contemporáneo es exactamente lo que necesitas.',
+  afrocontemporaneoNeedEnrollTitle:
+    'Necesitas entrenar Afro Contemporáneo con metodología profesional',
+  afrocontemporaneoIdentifyAgitate1:
+    'Sin una base técnica sólida, tu evolución como bailarín se estanca. El Afro Contemporáneo es la disciplina que desarrolla todas las capacidades que otros estilos dan por supuestas.',
+  afrocontemporaneoIdentifySolution:
+    "En Farray's Center aprenderás directamente de Yunaisy Farray, maestra del CID-UNESCO formada en la Escuela Nacional de Arte de Cuba, siguiendo la metodología original de la ENA.",
+  afrocontemporaneoIdentifyClosing:
+    '¡No pierdas la oportunidad única de aprender Afro Contemporáneo siguiendo la técnica de la Escuela Nacional de Arte de Cuba!',
+
+  // Transform Section (6 transformaciones - basadas en beneficios reales)
+  afrocontemporaneoTransformTitle: '¿Qué consigues en nuestras clases de Afro Contemporáneo?',
+  afrocontemporaneoTransform1Title: 'Mejora tu técnica de danza',
+  afrocontemporaneoTransform1Desc:
+    'Perfecciona tu base técnica con metodología de conservatorio. Cada movimiento se trabaja con precisión y profundidad.',
+  afrocontemporaneoTransform2Title: 'Mejora tu interpretación musical',
+  afrocontemporaneoTransform2Desc:
+    'Desarrolla una conexión profunda con la música. Aprende a bailar "dentro" del ritmo, no solo encima de él.',
+  afrocontemporaneoTransform3Title: 'Aprende a disociar tu cuerpo',
+  afrocontemporaneoTransform3Desc:
+    'Domina el control independiente de cada parte del cuerpo: cabeza, torso, caderas, brazos y piernas en movimientos coordinados.',
+  afrocontemporaneoTransform4Title: 'Ejercita coordinación y memoria',
+  afrocontemporaneoTransform4Desc:
+    'Las secuencias complejas entrenan tu cerebro tanto como tu cuerpo. Memoria muscular y mental trabajando juntas.',
+  afrocontemporaneoTransform5Title: 'Mejora tu forma física',
+  afrocontemporaneoTransform5Desc:
+    'El exigente trabajo físico transforma tu cuerpo: equilibrio, tonicidad, extensión muscular y resistencia.',
+  afrocontemporaneoTransform6Title: 'Formación profesional CID-UNESCO',
+  afrocontemporaneoTransform6Desc:
+    'Aprende en una academia reconocida internacionalmente. Si es tu caso, entiende cómo aplicar la técnica a nivel profesional.',
+  afrocontemporaneoTransformCTA: "¿Por qué elegir Farray's Center para Afro Contemporáneo?",
+
+  // Why Choose Section (7 items)
+  afrocontemporaneoWhyChoose1Title: 'Única academia con metodología ENA en Barcelona',
+  afrocontemporaneoWhyChoose1Desc:
+    'Yunaisy Farray se formó directamente en la Escuela Nacional de Arte de Cuba. Trae la técnica original sin adaptaciones ni diluciones.',
+  afrocontemporaneoWhyChoose2Title: 'Maestra CID-UNESCO',
+  afrocontemporaneoWhyChoose2Desc:
+    'Yunaisy Farray es maestra reconocida por el Consejo Internacional de la Danza de la UNESCO en París. Formación con estándares internacionales.',
+  afrocontemporaneoWhyChoose3Title: 'Plan curricular profesional avalado',
+  afrocontemporaneoWhyChoose3Desc:
+    'El Afro Contemporáneo se integrará en nuestro plan de formación profesional en danza con aval CID-UNESCO.',
+  afrocontemporaneoWhyChoose4Title: 'Diferentes niveles de acceso',
+  afrocontemporaneoWhyChoose4Desc:
+    'Desde iniciación hasta nivel profesional. Cada alumno encuentra su lugar independientemente de su experiencia previa.',
+  afrocontemporaneoWhyChoose5Title: 'Metodología estructurada',
+  afrocontemporaneoWhyChoose5Desc:
+    'Calentamiento técnico + ejercicios técnico-físicos + secuencias aplicadas. Cada clase sigue la estructura de la ENA.',
+  afrocontemporaneoWhyChoose6Title: 'Instalaciones profesionales',
+  afrocontemporaneoWhyChoose6Desc:
+    'Más de 700 m² con salas amplias, espejos, sonido profesional y suelo técnico adecuado para el trabajo de danza.',
+  afrocontemporaneoWhyChoose7Title: 'Complemento perfecto para otros estilos',
+  afrocontemporaneoWhyChoose7Desc:
+    'El Afro Contemporáneo mejora cualquier estilo que bailes: urbanos, latinos, contemporáneo, flamenco... Es la base técnica universal.',
+
+  // Logos Section
+  afrocontemporaneoLogosTitle: 'Reconocimientos y apariciones',
+  afrocontemporaneoLogosIntlFestivalsText: 'y en los mejores festivales de danza de todo el mundo',
+
+  // Teachers Section
+  afrocontemporaneoTeachersTitle: 'Tu maestra de Afro Contemporáneo',
+  afrocontemporaneoTeachersSubtitle: 'Formación directa de la Escuela Nacional de Arte de Cuba',
+  afrocontemporaneoTeacher1Specialty: 'Técnica Afro Cubana - Maestra CID-UNESCO',
+  afrocontemporaneoTeacher1Bio:
+    'Yunaisy Farray se formó en la prestigiosa Escuela Nacional de Arte de Cuba (ENA), donde aprendió la técnica original del Afro Contemporáneo. Maestra reconocida por el CID-UNESCO (Consejo Internacional de la Danza de París), combina el rigor técnico de la escuela cubana con su experiencia internacional en Street Dance 2 y compañías de danza contemporánea. Su metodología mantiene la esencia de la ENA adaptada para bailarines de todos los niveles.',
+  afrocontemporaneoTeachersClosing:
+    'Con Yunaisy Farray no solo aprendes Afro Contemporáneo: accedes a la metodología original de la Escuela Nacional de Arte de Cuba con certificación internacional.',
+
+  // Schedule Section
+  afrocontemporaneoScheduleTitle: 'Horario de clases de Afro Contemporáneo',
+  afrocontemporaneoScheduleSubtitle: 'Clases de perfeccionamiento técnico para todos los niveles',
+
+  // Video Section
+  afrocontemporaneoVideoTitle: 'Descubre nuestras clases de Afro Contemporáneo',
+  afrocontemporaneoVideoDesc:
+    "Mira en este vídeo cómo son las clases de Afro Contemporánea en Farray's International Dance Center de Barcelona. No te lo pienses más y ven a probar una clase.",
+
+  // Why Today Section
+  afrocontemporaneoWhyTodayFullTitle:
+    '¿Por qué hoy es el mejor momento para empezar Afro Contemporáneo?',
+  afrocontemporaneoWhyToday1:
+    'Porque cada día sin entrenar técnica es un día que tu cuerpo pierde capacidades que después cuesta recuperar.',
+  afrocontemporaneoWhyToday2:
+    'Porque la oportunidad de aprender con metodología ENA original en Barcelona es única.',
+  afrocontemporaneoWhyToday3:
+    'Porque alucinarás en cómo mejora tu baile cuando tengas la base técnica que te falta.',
+  afrocontemporaneoWhyTodayClosing1:
+    "En Farray's no vendemos clases. Formamos bailarines completos.",
+  afrocontemporaneoWhyTodayClosing2:
+    'Te esperamos con la técnica de la Escuela Nacional de Arte de Cuba y la energía única de Yunaisy Farray.',
+
+  // Final CTA Section
+  afrocontemporaneoFinalCTATitle: 'Eleva tu nivel técnico con Afro Contemporáneo',
+  afrocontemporaneoFinalCTASubtitle: 'Formación profesional CID-UNESCO.',
+  afrocontemporaneoFinalCTADesc:
+    'Reserva tu plaza ahora y descubre por qué el Afro Contemporáneo es la disciplina clave para el desarrollo del bailarín.',
+  afrocontemporaneoFinalCTAFunny: 'No te arrepentirás.',
+
+  // FAQ Title
+  afrocontemporaneoFaqTitle: 'Preguntas Frecuentes sobre Afro Contemporáneo en Barcelona',
+
+  // 15 FAQs específicas para Afro Contemporáneo
+  afrocontemporaneoFaqQ1: '¿Qué es exactamente el Afro Contemporáneo?',
+  afrocontemporaneoFaqA1:
+    'El Afro Contemporáneo es una disciplina creada en Cuba que se estudia en la ENA (Escuela Nacional de Arte). Es una síntesis entre la danza moderna universal y el folklore cubano, diseñada para mejorar todos los aspectos técnicos del bailarín.',
+
+  afrocontemporaneoFaqQ2: '¿Necesito experiencia previa para empezar?',
+  afrocontemporaneoFaqA2:
+    'Tenemos diferentes niveles de enseñanza. Aunque es una disciplina técnica, ofrecemos clases de iniciación para que todos puedan acceder a esta magnífica disciplina.',
+
+  afrocontemporaneoFaqQ3: '¿Cómo es la estructura de una clase?',
+  afrocontemporaneoFaqA3:
+    'Cada clase se compone de tres partes: calentamiento técnico, ejercicios técnico-físicos variados, y una secuencia final donde se aplica todo lo trabajado.',
+
+  afrocontemporaneoFaqQ4: '¿Qué beneficios físicos tiene el Afro Contemporáneo?',
+  afrocontemporaneoFaqA4:
+    'Mejora el equilibrio, la tonicidad y extensión muscular, la coordinación, la disociación corporal, la memoria, la interpretación musical y la forma física general gracias al exigente trabajo físico.',
+
+  afrocontemporaneoFaqQ5: '¿Quién imparte las clases?',
+  afrocontemporaneoFaqA5:
+    'Las clases las imparte Yunaisy Farray, maestra del CID-UNESCO formada directamente en la Escuela Nacional de Arte de Cuba. Es una oportunidad única de aprender la técnica original.',
+
+  afrocontemporaneoFaqQ6: '¿El Afro Contemporáneo me ayudará a mejorar en otros estilos?',
+  afrocontemporaneoFaqA6:
+    'Absolutamente. El Afro Contemporáneo es clave para mejorar todos los aspectos del bailarín: técnica, musicalidad, disociación, coordinación. Potencia cualquier estilo que practiques.',
+
+  afrocontemporaneoFaqQ7: '¿Qué tiene de especial la metodología de la ENA?',
+  afrocontemporaneoFaqA7:
+    'La Escuela Nacional de Arte de Cuba desarrolló una metodología única que fusiona técnicas de danza moderna internacional con el folklore afrocubano. Es reconocida mundialmente por formar bailarines completos.',
+
+  afrocontemporaneoFaqQ8: '¿Puedo probar una clase antes de inscribirme?',
+  afrocontemporaneoFaqA8:
+    'Sí, puedes reservar una clase de prueba para ver si es lo que buscas. Preferimos que experimentes la energía del Afro Contemporáneo antes de decidir.',
+
+  afrocontemporaneoFaqQ9: '¿Qué ropa debo llevar a las clases?',
+  afrocontemporaneoFaqA9:
+    'Ropa cómoda que permita movimiento amplio (leggings o pantalón de danza, camiseta). Se trabaja descalzo o con calcetines de danza. Trae una botella de agua.',
+
+  afrocontemporaneoFaqQ10: '¿Qué significa que sea una formación avalada por el CID-UNESCO?',
+  afrocontemporaneoFaqA10:
+    'El CID-UNESCO (Consejo Internacional de la Danza) es el organismo oficial de la UNESCO para la danza. El aval significa que nuestra formación cumple los estándares internacionales más exigentes.',
+
+  afrocontemporaneoFaqQ11: '¿Es adecuado para aspirantes a profesionales de la danza?',
+  afrocontemporaneoFaqA11:
+    'Sí. El Afro Contemporáneo forma parte de nuestro plan curricular de formación profesional. Si aspiras a dedicarte profesionalmente, esta es la base técnica que necesitas.',
+
+  afrocontemporaneoFaqQ12: '¿Cuánto tiempo se tarda en notar mejoras?',
+  afrocontemporaneoFaqA12:
+    'Desde la primera clase notarás el trabajo técnico. En 2-3 meses de práctica regular verás mejoras significativas en tu técnica, coordinación y capacidad de disociación.',
+
+  afrocontemporaneoFaqQ13: '¿El Afro Contemporáneo es muy exigente físicamente?',
+  afrocontemporaneoFaqA13:
+    'Es una disciplina que requiere trabajo físico intenso, pero las clases están estructuradas para que cada alumno trabaje a su nivel. La progresión es gradual y segura.',
+
+  afrocontemporaneoFaqQ14:
+    '¿Dónde puedo encontrar clases de Afro Contemporáneo cerca de Plaza España?',
+  afrocontemporaneoFaqA14:
+    "Farray's Center está ubicado en Calle Entença 100, a solo 5 minutos de Plaza España y Estación de Sants. Somos la única academia en Barcelona que imparte Afro Contemporáneo con metodología ENA original.",
+
+  afrocontemporaneoFaqQ15: '¿Cómo puedo contactar para más información?',
+  afrocontemporaneoFaqA15:
+    'Si tienes alguna pregunta adicional o necesitas más información, puedes contactarnos:<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Dirección:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+
+  // Image alts
+  afrocontemporaneoImage1Alt: "Clases de Afro Contemporáneo en Barcelona - Farray's Center",
+  afrocontemporaneoImage2Alt: 'Estudiantes practicando técnica Afro Contemporánea',
+  afrocontemporaneoImage3Alt: 'Yunaisy Farray - Maestra de Afro Contemporáneo CID-UNESCO',
+
+  // Course Schema (SEO)
+  afrocontemporaneoCourseSchemaName: "Clases de Afro Contemporáneo en Barcelona - Farray's Center",
+  afrocontemporaneoCourseSchemaDesc:
+    'Aprende Afro Contemporáneo con Yunaisy Farray, maestra CID-UNESCO formada en la ENA Cuba. Técnica de perfeccionamiento para bailarines.',
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for Afro Contemporáneo =====
+  afrocontemporaneoCitableOrigen:
+    'El Afro Contemporáneo es una disciplina creada en Cuba y desarrollada en la Escuela Nacional de Arte (ENA), fundada en 1962. Representa la síntesis entre la danza moderna universal (técnicas de Graham, Limón, Cunningham) y el folklore afrocubano, fusionando rigor técnico con la expresividad de los ritmos yoruba y la poliritmia caribeña.',
+
+  afrocontemporaneoStatistics:
+    'Estudios sobre entrenamiento de danza técnica demuestran que disciplinas como el Afro Contemporáneo mejoran la propiocepción, la coordinación motora compleja, la memoria muscular y la capacidad de disociación corporal, además de los beneficios cardiovasculares y de flexibilidad propios de la danza.',
+
+  afrocontemporaneoCitableEvolucionGlobal:
+    'Desde su creación en la ENA cubana, el Afro Contemporáneo se ha extendido a academias y compañías de todo el mundo. Danza Contemporánea de Cuba ha llevado esta disciplina a escenarios internacionales, consolidándola como una de las aportaciones más valiosas de Cuba a la danza mundial.',
+
+  afrocontemporaneoCitableMusica:
+    'El Afro Contemporáneo se trabaja sobre música que fusiona ritmos afrocubanos (batá, rumba, son) con composiciones contemporáneas. La poliritmia característica exige al bailarín desarrollar una musicalidad compleja y una capacidad de interpretación que va más allá del simple conteo.',
+
+  afrocontemporaneoCitableIdentidadPoder:
+    'En academias con metodología profesional, el Afro Contemporáneo se trabaja como disciplina de perfeccionamiento técnico integral: desarrolla disociación corporal, coordinación avanzada, memoria coreográfica, interpretación musical y conciencia espacial, siendo clave para la formación de bailarines profesionales.',
+
+  afrocontemporaneoCitableFact1:
+    'Una clase de Afro Contemporáneo es un entrenamiento físico exigente que puede quemar entre 400-600 calorías por hora, trabajando simultáneamente fuerza, flexibilidad, coordinación y resistencia cardiovascular.',
+
+  afrocontemporaneoCitableFact2:
+    'La metodología de la Escuela Nacional de Arte de Cuba (ENA) para Afro Contemporáneo está reconocida internacionalmente por formar bailarines técnicamente completos, capaces de integrar múltiples estilos sobre una base sólida.',
+
+  afrocontemporaneoCitableFact3:
+    "Farray's International Dance Center es la única academia en Barcelona que imparte Afro Contemporáneo con metodología ENA original, impartido por Yunaisy Farray, maestra formada directamente en Cuba y certificada por el CID-UNESCO.",
 };
