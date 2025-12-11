@@ -1,0 +1,273 @@
+// ===== [STYLENAME] Page =====
+// Reemplazar [style] con el prefijo del estilo (ej: afrojazz, sexyStyle, reggaetonCubano)
+// Reemplazar [StyleName] con el nombre legible (ej: Afro Jazz, Sexy Style, Reggaetón Cubano)
+// Reemplazar [Categoría] con: Danzas Urbanas, Técnica, Latinas, etc.
+
+// Meta
+[style]PageTitle: 'Clases de [StyleName] en Barcelona | Farray\'s Center',
+[style]MetaDescription: 'Aprende [StyleName] en Barcelona con profesores especializados. Clases para todos los niveles cerca de Plaza España y Sants. ¡Reserva tu clase de prueba!',
+
+// Breadcrumb (4 niveles)
+[style]BreadcrumbHome: 'Inicio',
+[style]BreadcrumbClasses: 'Clases de Baile',
+[style]BreadcrumbCategory: '[Categoría]',
+[style]BreadcrumbCurrent: 'Clases de [StyleName]',
+
+// Hero
+[style]HeroTitle: 'Clases de [StyleName] en Barcelona',
+[style]HeroSubtitle: '[TODO: Subtítulo atractivo]',
+[style]HeroDesc: '[TODO: Descripción que enganche]',
+[style]HeroLocation: 'Clases desde nivel principiante hasta avanzado, entre Plaza España y Sants',
+
+// CTAs
+[style]CTA1: 'Hazte Socio Ahora',
+[style]CTA1Subtext: 'Quedan pocas plazas este mes',
+[style]CTA2: 'Reserva tu Clase de Prueba',
+[style]CTA2Subtext: 'Oferta por tiempo limitado',
+[style]CTAGroup: 'Opciones de inscripción',
+
+// What Is Section
+[style]WhatIsTitle: '¿Qué es [StyleName] y por qué te va a transformar?',
+[style]WhatIsP1: '[TODO: Párrafo 1 - Descripción del estilo]',
+[style]WhatIsP2: '[TODO: Párrafo 2 - Técnicas y metodología]',
+[style]WhatIsP3: '[TODO: Párrafo 3 - Beneficios]',
+[style]WhatIsP4: '[TODO: Párrafo 4 - Experiencia en Farray\'s]',
+[style]WhatIsQuestionTitle: '¿Te preguntas si es para ti?',
+[style]WhatIsQuestionAnswer: 'Sí, lo es.',
+
+// Schedule
+[style]ScheduleTitle: 'Horario de clases de [StyleName]',
+[style]ScheduleSubtitle: 'Varios niveles para que encuentres tu clase perfecta',
+
+// Levels (ajustar según niveles ofrecidos)
+[style]LevelBasicTitle: '[StyleName] Básico',
+[style]LevelBasicDesc: '[TODO: Descripción nivel básico]',
+[style]LevelIntermediateTitle: '[StyleName] Intermedio',
+[style]LevelIntermediateDesc: '[TODO: Descripción nivel intermedio]',
+[style]LevelAdvancedTitle: '[StyleName] Avanzado',
+[style]LevelAdvancedDesc: '[TODO: Descripción nivel avanzado]',
+
+// Teachers (ajustar número según profesores)
+[style]TeachersTitle: 'Conoce a tus profesores de [StyleName]',
+[style]TeachersSubtitle: 'Expertos con años de experiencia',
+[style]Teacher1Specialty: '[TODO: Especialidad profesor 1]',
+[style]Teacher1Bio: '[TODO: Bio profesor 1]',
+[style]Teacher2Specialty: '[TODO: Especialidad profesor 2]',
+[style]Teacher2Bio: '[TODO: Bio profesor 2]',
+[style]Teacher3Specialty: '[TODO: Especialidad profesor 3]',
+[style]Teacher3Bio: '[TODO: Bio profesor 3]',
+[style]TeachersClosing: '[TODO: Frase de cierre sobre profesores]',
+
+// Prepare Section
+[style]PrepareTitle: 'Prepara tu primera clase de [StyleName]',
+[style]PrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
+[style]PrepareWhatToBring: '¿Qué traer?',
+[style]PrepareItem1: 'Ropa cómoda que permita movimiento',
+[style]PrepareItem2: '[TODO: Calzado específico del estilo]',
+[style]PrepareItem3: 'Botella de agua',
+[style]PrepareItem4: 'Toalla pequeña',
+[style]PrepareItem5: 'Ganas de pasarlo bien',
+[style]PrepareBefore: 'Antes de llegar',
+[style]PrepareBeforeItem1: 'Llega 10-15 minutos antes',
+[style]PrepareBeforeItem2: 'Come algo ligero 1-2 horas antes',
+[style]PrepareBeforeItem3: 'Hidrátate bien durante el día',
+[style]PrepareAvoid: 'Evita',
+[style]PrepareAvoidItem1: 'Ropa muy ajustada que limite movimiento',
+[style]PrepareAvoidItem2: 'Comer justo antes de clase',
+[style]PrepareAvoidItem3: 'Joyas o accesorios que molesten',
+[style]PrepareTeacherTip: 'Consejo de [NombreProfesor]:',
+[style]PrepareTeacherQuote: '[TODO: Cita inspiradora del profesor]',
+
+// Comparison Table (ajustar estilos comparados según sea relevante)
+[style]CompareTitle: '¿Cómo se compara [StyleName] con otros estilos?',
+[style]CompareSubtitle: 'Encuentra el estilo que mejor se adapta a ti',
+[style]CompareCapacity: 'Capacidad',
+[style]Compare[Style1]: '[StyleName]',
+[style]Compare[Style2]: '[Estilo Comparado 2]',
+[style]Compare[Style3]: '[Estilo Comparado 3]',
+[style]Compare[Style4]: '[Estilo Comparado 4]',
+[style]CompareRow1: '[TODO: Aspecto 1]',
+[style]CompareRow2: '[TODO: Aspecto 2]',
+[style]CompareRow3: '[TODO: Aspecto 3]',
+[style]CompareRow4: '[TODO: Aspecto 4]',
+[style]CompareRow5: '[TODO: Aspecto 5]',
+[style]CompareRow6: '[TODO: Aspecto 6]',
+[style]CompareRow7: '[TODO: Aspecto 7]',
+[style]CompareRow8: '[TODO: Aspecto 8]',
+[style]CompareRow9: '[TODO: Aspecto 9]',
+[style]CompareRow10: '[TODO: Aspecto 10]',
+[style]CompareRow11: '[TODO: Aspecto 11]',
+[style]CompareMeaningTitle: '¿Qué significa esto para ti?',
+[style]CompareMeaning1Title: '[TODO: Beneficio 1]',
+[style]CompareMeaning1Desc: '[TODO: Descripción beneficio 1]',
+[style]CompareMeaning2Title: '[TODO: Beneficio 2]',
+[style]CompareMeaning2Desc: '[TODO: Descripción beneficio 2]',
+[style]CompareMeaning3Title: '[TODO: Beneficio 3]',
+[style]CompareMeaning3Desc: '[TODO: Descripción beneficio 3]',
+[style]CompareMeaning4Title: '[TODO: Beneficio 4]',
+[style]CompareMeaning4Desc: '[TODO: Descripción beneficio 4]',
+[style]CompareConclusion: '[TODO: Frase conclusión sobre el estilo]',
+
+// Identify Section
+[style]IdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
+[style]IdentifyListLabel: 'Lista de situaciones con las que te puedes identificar',
+[style]Identify1: '[TODO: Situación 1]',
+[style]Identify2: '[TODO: Situación 2]',
+[style]Identify3: '[TODO: Situación 3]',
+[style]Identify4: '[TODO: Situación 4]',
+[style]Identify5: '[TODO: Situación 5]',
+[style]Identify6: '[TODO: Situación 6]',
+[style]IdentifyTransition: 'Si has dicho "sí" a alguno de estos puntos, ya sabes lo que necesitas.',
+[style]NeedEnrollTitle: 'Necesitas apuntarte a clases de [StyleName]',
+[style]IdentifyAgitate1: '[TODO: Frase de agitación]',
+[style]IdentifySolution: 'En Farray\'s Center encontrarás un espacio pensado para ti.',
+[style]IdentifyClosing: '[TODO: Frase de cierre motivacional]',
+
+// Transform Section (6 transformaciones)
+[style]TransformTitle: 'Imagina tu antes y después',
+[style]Transform1Title: '[TODO: Transformación 1]',
+[style]Transform1Desc: '[TODO: Descripción 1]',
+[style]Transform2Title: '[TODO: Transformación 2]',
+[style]Transform2Desc: '[TODO: Descripción 2]',
+[style]Transform3Title: '[TODO: Transformación 3]',
+[style]Transform3Desc: '[TODO: Descripción 3]',
+[style]Transform4Title: '[TODO: Transformación 4]',
+[style]Transform4Desc: '[TODO: Descripción 4]',
+[style]Transform5Title: '[TODO: Transformación 5]',
+[style]Transform5Desc: '[TODO: Descripción 5]',
+[style]Transform6Title: '[TODO: Transformación 6]',
+[style]Transform6Desc: '[TODO: Descripción 6]',
+[style]TransformCTA: '¿Por qué elegir Farray\'s Center?',
+[style]TransformCTASubtitle: 'Tu academia de [StyleName] en Barcelona',
+
+// Why Choose Section (7 items)
+[style]WhyChoose1Title: 'Academia reconocida por el CID UNESCO',
+[style]WhyChoose1Desc: 'Dirigida por Yunaisy Farray, con reconocimiento internacional.',
+[style]WhyChoose2Title: 'Ubicación inmejorable',
+[style]WhyChoose2Desc: 'Calle Entença 100, entre Plaza España y Sants.',
+[style]WhyChoose3Title: 'Ambiente familiar y profesional',
+[style]WhyChoose3Desc: 'Acogedor, inclusivo, sin juicios pero con profesionalismo.',
+[style]WhyChoose4Title: 'Instalaciones de primer nivel',
+[style]WhyChoose4Desc: 'Más de 700 m², salas amplias, sonido profesional, climatización.',
+[style]WhyChoose5Title: 'Academia multidisciplinar',
+[style]WhyChoose5Desc: 'Más de 25 estilos para explorar y complementar.',
+[style]WhyChoose6Title: 'Gala anual + workshops',
+[style]WhyChoose6Desc: 'Brilla en escenario profesional y aprende de artistas internacionales.',
+[style]WhyChoose7Title: 'Profesores especializados en [StyleName]',
+[style]WhyChoose7Desc: '[TODO: Descripción de los profesores del estilo]',
+
+// Logos
+[style]LogosTitle: 'Has podido vernos en…',
+[style]LogosIntlFestivalsText: 'y en los mejores festivales de baile del mundo',
+
+// Video
+[style]VideoTitle: 'Descubre nuestras clases de [StyleName]',
+[style]VideoDesc: 'Mira cómo es una clase en Farray\'s: energía, técnica y buen rollo. ¡Te esperamos!',
+
+// Why Today
+[style]WhyTodayFullTitle: '¿Por qué hoy es el mejor momento para empezar a bailar [StyleName]?',
+[style]WhyToday1: 'Porque siempre esperas "el momento perfecto" pero lo único perfecto es empezar hoy.',
+[style]WhyToday2: 'Porque estás a UNA clase de cambiar tu rutina y sentirte mejor que ayer.',
+[style]WhyToday3: 'Porque no se trata de bailar bien, sino de sentirse bien bailando.',
+[style]WhyTodayClosing1: 'En Farray\'s no vendemos clases. Creamos experiencias.',
+[style]WhyTodayClosing2: 'Te esperamos con música, profes carismáticos y energía única en Barcelona.',
+
+// Final CTA
+[style]FinalCTATitle: 'Únete a la comunidad de [StyleName] más activa de Barcelona',
+[style]FinalCTASubtitle: 'Da el paso.',
+[style]FinalCTADesc: 'Reserva tu plaza ahora y no dejes que te lo cuenten.',
+[style]FinalCTAFunny: '[TODO: Frase graciosa sobre plazas limitadas]',
+
+// FAQ Title
+[style]FaqTitle: 'Preguntas Frecuentes sobre [StyleName] en Barcelona',
+
+// 15 FAQs (optimizadas para SEO)
+[style]FaqQ1: '¿Cómo funcionan las clases de [StyleName] en Barcelona?',
+[style]FaqA1: 'Trabajamos con grupos reducidos, divididos por niveles, para que puedas avanzar a tu ritmo. Cada clase dura 1 hora y combina calentamiento, técnica y coreografía.',
+[style]FaqQ2: '¿Puedo empezar desde cero si nunca he bailado [StyleName]?',
+[style]FaqA2: 'Absolutamente. El 80% de nuestros alumnos empiezan sin experiencia previa. Nuestra metodología está pensada para que te sientas cómodo desde el primer día.',
+[style]FaqQ3: '¿Qué pasa si no tengo buena coordinación?',
+[style]FaqA3: 'La coordinación se entrena. En nuestras clases desglosamos cada movimiento en pasos simples para que puedas asimilarlo de forma natural.',
+[style]FaqQ4: '¿Qué necesito traer a las clases de [StyleName]?',
+[style]FaqA4: '[TODO: Personalizar según estilo - ropa, calzado específico]',
+[style]FaqQ5: '¿Qué niveles de [StyleName] tenéis?',
+[style]FaqA5: '[TODO: Describir niveles disponibles]',
+[style]FaqQ6: '¿Puedo unirme a las clases en cualquier momento del año?',
+[style]FaqA6: 'Sí, nuestras clases funcionan con sistema abierto, así que puedes inscribirte cuando quieras. No hace falta esperar a principio de trimestre.',
+[style]FaqQ7: '¿Tenéis algún descuento especial?',
+[style]FaqA7: 'Sí. Tenemos bonos trimestrales y anuales con grandes ventajas, además de ofertas de lanzamiento para nuevos miembros.',
+[style]FaqQ8: '¿Puedo probar una clase antes de inscribirme?',
+[style]FaqA8: 'Por supuesto. Puedes reservar una clase de prueba para ver si es lo que buscas.',
+[style]FaqQ9: '¿Y si falto a una clase por trabajo o compromisos?',
+[style]FaqA9: 'Las clases son recuperables, así que si faltas un día, puedes venir a la siguiente clase disponible en tu mismo nivel.',
+[style]FaqQ10: 'Si falto a una clase de [StyleName], ¿puedo recuperarla haciendo otro estilo?',
+[style]FaqA10: 'Sí. En Farray\'s puedes usar tu clase perdida en otro estilo (Dancehall, Hip Hop, Bachata...), siempre que el nivel sea equivalente.',
+[style]FaqQ11: '¿Organizáis eventos o workshops especiales?',
+[style]FaqA11: 'Sí. Tenemos masterclasses con artistas invitados, battles, showcases y nuestra gala anual donde puedes lucirte en un escenario profesional.',
+[style]FaqQ12: '¿Las clases son solo para mujeres o también para hombres?',
+[style]FaqA12: 'Nuestras clases son 100% inclusivas. Todos los géneros, edades y cuerpos son bienvenidos.',
+[style]FaqQ13: '¿El [StyleName] es un buen ejercicio físico?',
+[style]FaqA13: '[TODO: Personalizar beneficios físicos del estilo]',
+[style]FaqQ14: '¿Dónde puedo encontrar clases de [StyleName] cerca de Plaza España?',
+[style]FaqA14: 'Farray\'s Center está ubicado en Calle Entença 100, a solo 5 minutos de Plaza España y Estación de Sants. Puedes llegar en metro (L1, L3), bus o tren.',
+[style]FaqQ15: '¿Qué hago si tengo dudas o necesito más información?',
+[style]FaqA15: 'Si tienes alguna pregunta adicional o necesitas más información, puedes contactarnos:<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Dirección:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+
+// Local SEO
+[style]NearbyTitle: 'Clases de [StyleName] cerca de ti',
+[style]NearbyDesc: 'Estamos en el corazón de Barcelona, accesibles desde cualquier punto de la ciudad y alrededores.',
+[style]NearbySearchText: '¿Buscas clases de [StyleName] cerca de...?',
+[style]NearbyMetro: 'Metro Hostafrancs (L1), Plaza España (L1, L3), Sants Estació (L3, L5, Renfe)',
+
+// Course Schema
+[style]CourseSchemaName: 'Clases de [StyleName] en Barcelona - Farray\'s Center',
+[style]CourseSchemaDesc: 'Aprende [StyleName] con profesores especializados. Clases para todos los niveles en el corazón de Barcelona.',
+
+// Cultural History
+[style]CulturalHistoryTitle: 'Historia y Cultura del [StyleName]',
+[style]CulturalShort: '[TODO: 1-2 frases introductorias sobre la historia]',
+[style]CulturalFull: `### Los Orígenes del [StyleName]
+
+[TODO: Contenido sobre orígenes - época, lugar, influencias]
+
+**"[TODO: Cita GEO-optimizada sobre orígenes]"**
+
+### Evolución y Expansión
+
+[TODO: Contenido sobre cómo evolucionó el estilo]
+
+**"[TODO: Cita GEO-optimizada sobre evolución]"**
+
+### Técnicas y Características
+
+[TODO: Contenido sobre técnicas específicas del estilo]
+
+**"[TODO: Cita GEO-optimizada sobre técnicas]"**
+
+### El [StyleName] en Barcelona
+
+[TODO: Contenido sobre el estilo en Barcelona/Farray's]
+
+**"[TODO: Cita GEO-optimizada sobre Farray's]"**
+
+### Beneficios del [StyleName]
+
+[TODO: Contenido sobre beneficios físicos y emocionales]
+
+**"[TODO: Cita GEO-optimizada sobre beneficios con estadísticas]"**`,
+
+// ===== GEO OPTIMIZATION: Citable Statistics =====
+// Datos optimizados para ser citados por IAs (ChatGPT, Perplexity, etc.)
+
+[style]CitableDefinicion: '[TODO: Definición oficial del estilo]',
+[style]CitableOrigen: '[TODO: Origen histórico con fechas y nombres específicos]',
+[style]CitableTecnicas: '[TODO: Técnicas principales del estilo]',
+[style]CitableMetodologia: '[TODO: Metodología de enseñanza en Farray\'s]',
+[style]Statistics: '[TODO: Estadísticas científicas sobre beneficios]',
+[style]CitableEvolucionGlobal: '[TODO: Expansión global del estilo]',
+[style]CitableMusica: '[TODO: Música asociada al estilo - géneros, artistas]',
+[style]CitableIdentidadPoder: '[TODO: Aspectos de identidad y empoderamiento]',
+[style]CitableFact1: '[TODO: Dato citable 1 - ej: calorías quemadas por hora]',
+[style]CitableFact2: '[TODO: Dato citable 2 - ej: beneficios cognitivos/físicos]',
+[style]CitableFact3: 'Farray\'s International Dance Center ofrece clases de [StyleName] con una valoración de 4.9/5 en Google con más de 500 reseñas, respaldando la satisfacción del alumnado.',
+[style]CitableLegado: '[TODO: Legado del estilo]',

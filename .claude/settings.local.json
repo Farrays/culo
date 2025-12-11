@@ -74,7 +74,11 @@
       "Bash(node prerender.mjs:*)",
       "Bash(node:*)",
       "Bash(grep:*)",
-      "Bash(npm run lint:fix:*)"
+      "Bash(npm run lint:fix:*)",
+      "Bash(for key in modernjazzCulturalTitle modernjazzPrepareAvoid modernjazzPrepareBefore modernjazzPrepareWhatToBring modernjazzPrepareTitle modernjazzPrepareSubtitle modernjazzPrepareTeacherTip modernjazzPrepareTeacherQuote)",
+      "Bash(do echo -n \"$key: \")",
+      "Bash(for key in modernjazzCompareMeaning1Title modernjazzCompareMeaning1Desc modernjazzCompareMeaning2Title modernjazzCompareMeaning2Desc modernjazzCompareMeaning3Title modernjazzCompareMeaning3Desc modernjazzCompareMeaning4Title modernjazzCompareMeaning4Desc modernjazzCompareRow1 modernjazzCompareRow2 modernjazzCompareRow3)",
+      "Bash(for key in afrojazzCompareMeaning1Title afrojazzCompareMeaning1Desc afrojazzCompareMeaning2Title afrojazzCompareMeaning2Desc afrojazzCompareMeaning3Title afrojazzCompareMeaning3Desc afrojazzCompareMeaning4Title afrojazzCompareMeaning4Desc afrojazzCompareRow1 afrojazzCompareRow2 afrojazzPrepareNeedItem1 afrojazzPrepareAvoidItem1 afrojazzCulturalTitle)"
     ],
     "deny": [],
     "ask": []

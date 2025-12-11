@@ -87,3 +87,39 @@ export const BALLET_BREADCRUMB_KEYS = {
 
 // YouTube video ID for the page (can be updated when a video is available)
 export const BALLET_VIDEO_ID = '';
+
+// Nearby neighborhoods for local SEO
+export const BALLET_NEARBY_AREAS = [
+  { name: 'Plaza España', time: '5 min andando' },
+  { name: 'Hostafrancs', time: '5 min andando' },
+  { name: 'Sants Estació', time: '10 min andando' },
+  { name: 'Les Corts', time: '15 min' },
+  { name: 'Eixample Esquerra', time: '15 min' },
+  { name: 'Poble Sec', time: '10 min' },
+  { name: 'Sant Antoni', time: '12 min' },
+  { name: "L'Hospitalet", time: '10 min' },
+];
+
+// ===== GEO OPTIMIZATION: Citable Statistics Keys =====
+// Estas keys apuntan a datos citables por IAs (ChatGPT, Perplexity, etc.)
+export const BALLET_GEO_KEYS = {
+  definicion: 'balletCitableDefinicion', // Definición oficial Ballet Clásico
+  origin: 'balletCitableOrigen', // Origen histórico (Italia, Francia, Rusia)
+  tecnicas: 'balletCitableTecnicas', // Técnicas principales (5 posiciones, barra, puntas)
+  metodologia: 'balletCitableMetodologia', // Metodología de enseñanza
+  statistics: 'balletStatistics', // Estadísticas generales
+  globalEvolution: 'balletCitableEvolucionGlobal', // Expansión mundial
+  expressionBody: 'balletCitableExpresionCorporal', // Expresión corporal y gracia
+  escuelaCubana: 'balletCitableEscuelaCubana', // Conexión con la Escuela Cubana
+  fact1: 'balletCitableFact1', // Calorías: 300-500/hora
+  fact2: 'balletCitableFact2', // Beneficios cognitivos de la danza
+  fact3: 'balletCitableFact3', // Farray's y la técnica cubana
+  legado: 'balletCitableLegado', // Legado artístico
+};
+
+// Hero Stats configuration (for AnimatedCounter)
+export const BALLET_HERO_STATS = {
+  minutes: '60', // Clases de 60 minutos
+  calories: 400, // Calorías quemadas por clase
+  techniquePercent: 100, // 100% Técnica Cubana
+};

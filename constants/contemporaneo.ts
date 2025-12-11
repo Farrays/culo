@@ -52,41 +52,123 @@ export const CONTEMPORANEO_COURSE_CONFIG = {
   duration: 'PT1H',
 };
 
-// Schedule data for Contemporaneo classes
+// Schedule data for Contemporaneo classes (Real schedules 2025)
+// Profesores: Daniel Sené y Alejandro Miñoso - Bailarines profesionales formados en la Escuela Cubana
 export const CONTEMPORANEO_SCHEDULE_KEYS = [
   {
     id: '1',
     dayKey: 'monday',
-    className: 'Contemporaneo Principiantes',
-    time: '19:00 - 20:00',
-    teacher: 'Alejandro Miñoso',
-    levelKey: 'beginnerLevel',
-  },
-  {
-    id: '2',
-    dayKey: 'wednesday',
-    className: 'Contemporaneo Básico',
-    time: '20:00 - 21:00',
+    className: 'Contemporáneo Lírico Básico',
+    time: '11:00 - 12:00',
     teacher: 'Alejandro Miñoso',
     levelKey: 'basicLevel',
   },
   {
+    id: '2',
+    dayKey: 'monday',
+    className: 'Contemporáneo Lírico Básico',
+    time: '19:00 - 20:00',
+    teacher: 'Daniel Sené',
+    levelKey: 'basicLevel',
+  },
+  {
     id: '3',
-    dayKey: 'thursday',
-    className: 'Contemporaneo Intermedio',
-    time: '20:00 - 21:00',
+    dayKey: 'wednesday',
+    className: 'Contemporáneo Suelo & Flow',
+    time: '11:00 - 12:00',
     teacher: 'Alejandro Miñoso',
-    levelKey: 'intermediateLevel',
+    levelKey: 'basicIntermediateLevel',
   },
   {
     id: '4',
-    dayKey: 'friday',
-    className: 'Contemporaneo Avanzado',
-    time: '21:00 - 22:00',
+    dayKey: 'wednesday',
+    className: 'Contemporáneo Suelo & Flow',
+    time: '18:00 - 19:00',
     teacher: 'Alejandro Miñoso',
-    levelKey: 'advancedLevel',
+    levelKey: 'basicIntermediateLevel',
+  },
+  {
+    id: '5',
+    dayKey: 'wednesday',
+    className: 'Contemporáneo Lírico Intermedio',
+    time: '20:00 - 21:00',
+    teacher: 'Daniel Sené',
+    levelKey: 'intermediateLevel',
+  },
+  {
+    id: '6',
+    dayKey: 'thursday',
+    className: 'Contemporáneo Lírico Básico',
+    time: '18:00 - 19:00',
+    teacher: 'Daniel Sené',
+    levelKey: 'basicLevel',
   },
 ];
+
+// Level descriptions for cards after schedule (3 types of classes)
+export const CONTEMPORANEO_LEVELS = [
+  {
+    id: 'lirico-basico',
+    levelKey: 'basicLevel',
+    titleKey: 'contemporaneoLevelLiricoBasicoTitle',
+    descKey: 'contemporaneoLevelLiricoBasicoDesc',
+    teachers: 'Daniel Sené, Alejandro Miñoso',
+    schedules: ['Lunes 11:00', 'Lunes 19:00', 'Jueves 18:00'],
+    color: 'blue',
+    icon: 'feather', // Lírico = suave, expresivo
+  },
+  {
+    id: 'lirico-intermedio',
+    levelKey: 'intermediateLevel',
+    titleKey: 'contemporaneoLevelLiricoIntermedioTitle',
+    descKey: 'contemporaneoLevelLiricoIntermedioDesc',
+    teachers: 'Daniel Sené',
+    schedules: ['Miércoles 20:00'],
+    color: 'purple',
+    icon: 'wind',
+  },
+  {
+    id: 'suelo-flow',
+    levelKey: 'basicIntermediateLevel',
+    titleKey: 'contemporaneoLevelSueloFlowTitle',
+    descKey: 'contemporaneoLevelSueloFlowDesc',
+    teachers: 'Alejandro Miñoso',
+    schedules: ['Miércoles 11:00', 'Miércoles 18:00'],
+    color: 'orange',
+    icon: 'ground', // Suelo = conexión con el piso
+  },
+];
+
+// Nearby neighborhoods for local SEO
+export const CONTEMPORANEO_NEARBY_AREAS = [
+  { name: 'Plaza España', time: '5 min andando' },
+  { name: 'Hostafrancs', time: '5 min andando' },
+  { name: 'Sants Estació', time: '10 min andando' },
+  { name: 'Les Corts', time: '15 min' },
+  { name: 'Eixample Esquerra', time: '15 min' },
+  { name: 'Poble Sec', time: '10 min' },
+  { name: 'Sant Antoni', time: '12 min' },
+  { name: "L'Hospitalet", time: '10 min' },
+];
+
+// Comparison table data (Contemporáneo vs Ballet vs Yoga vs Pilates)
+export const CONTEMPORANEO_COMPARISON_DATA = {
+  headers: [
+    'contemporaneoCompareFeature',
+    'contemporaneoCompareContemporaneo',
+    'contemporaneoCompareBallet',
+    'contemporaneoCompareYoga',
+    'contemporaneoComparePilates',
+  ],
+  rows: [
+    { featureKey: 'contemporaneoCompareExpression', values: ['high', 'medium', 'low', 'low'] },
+    { featureKey: 'contemporaneoCompareFloorwork', values: ['high', 'low', 'medium', 'medium'] },
+    { featureKey: 'contemporaneoCompareMusicality', values: ['high', 'high', 'low', 'low'] },
+    { featureKey: 'contemporaneoCompareImprovisation', values: ['high', 'low', 'low', 'none'] },
+    { featureKey: 'contemporaneoCompareFlexibility', values: ['high', 'high', 'high', 'medium'] },
+    { featureKey: 'contemporaneoCompareStrength', values: ['medium', 'high', 'medium', 'high'] },
+  ],
+};
 
 // Breadcrumb custom keys for Contemporaneo (4 levels: Home > Classes > Danza > Current)
 export const CONTEMPORANEO_BREADCRUMB_KEYS = {
@@ -98,3 +180,27 @@ export const CONTEMPORANEO_BREADCRUMB_KEYS = {
 
 // YouTube video ID for the page (update with real video)
 export const CONTEMPORANEO_VIDEO_ID = 'YOUR_YOUTUBE_VIDEO_ID';
+
+// ===== GEO OPTIMIZATION: Citable Statistics Keys =====
+// Estas keys apuntan a datos citables por IAs (ChatGPT, Perplexity, etc.)
+export const CONTEMPORANEO_GEO_KEYS = {
+  definicion: 'contemporaneoCitableDefinicion', // Definición oficial danza contemporánea
+  origin: 'contemporaneoCitableOrigen', // Origen histórico (Graham, Limón, Cunningham)
+  tecnicas: 'contemporaneoCitableTecnicas', // Técnicas principales (release, floor work)
+  metodologia: 'contemporaneoCitableMetodologia', // Metodología de enseñanza
+  statistics: 'contemporaneoStatistics', // Estadísticas generales
+  globalEvolution: 'contemporaneoCitableEvolucionGlobal', // Expansión mundial
+  expressionBody: 'contemporaneoCitableExpresionCorporal', // Expresión corporal
+  improvisation: 'contemporaneoCitableImprovisacion', // Improvisación
+  fact1: 'contemporaneoCitableFact1', // Calorías: 300-450/hora
+  fact2: 'contemporaneoCitableFact2', // Técnica de suelo y release
+  fact3: 'contemporaneoCitableFact3', // Farray's técnica cubana
+  legado: 'contemporaneoCitableLegado', // Legado artístico
+};
+
+// Hero Stats configuration (for AnimatedCounter)
+export const CONTEMPORANEO_HERO_STATS = {
+  minutes: '60', // Clases de 60 minutos
+  calories: 500, // Calorías quemadas por clase
+  techniquePercent: 100, // 100% Técnica de Danza
+};

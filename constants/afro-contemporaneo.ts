@@ -114,32 +114,57 @@ export const AFRO_CONTEMPORANEO_COURSE_CONFIG = {
 };
 
 // Schedule data for Afro Contemporáneo classes
-// TODO: Actualizar con horarios reales cuando estén disponibles
 export const AFRO_CONTEMPORANEO_SCHEDULE_KEYS = [
   {
     id: '1',
-    dayKey: 'wednesday',
-    className: 'Afro Contemporáneo Iniciación',
-    time: '19:00 - 20:00',
-    teacher: 'Yunaisy Farray',
-    levelKey: 'beginnerLevel',
+    dayKey: 'monday',
+    className: 'Afro Contemporáneo Básico',
+    time: '21:00 - 22:00',
+    teacher: 'Charlie Breezy',
+    levelKey: 'basicLevel',
   },
   {
     id: '2',
-    dayKey: 'wednesday',
-    className: 'Afro Contemporáneo Intermedio',
-    time: '20:00 - 21:00',
+    dayKey: 'tuesday',
+    className: 'Afro Contemporáneo Intermedio/Avanzado',
+    time: '19:00 - 20:30',
     teacher: 'Yunaisy Farray',
-    levelKey: 'intermediateLevel',
+    levelKey: 'intermediateAdvancedLevel',
+  },
+];
+
+// Level descriptions for cards after schedule
+export const AFRO_CONTEMPORANEO_LEVELS = [
+  {
+    id: 'basico',
+    levelKey: 'basicLevel',
+    titleKey: 'afrocontemporaneoLevelBasicTitle',
+    descKey: 'afrocontemporaneoLevelBasicDesc',
+    teacher: 'Charlie Breezy',
+    schedule: 'Lunes 21:00 - 22:00',
+    color: 'blue',
   },
   {
-    id: '3',
-    dayKey: 'saturday',
-    className: 'Afro Contemporáneo Todos los niveles',
-    time: '11:00 - 12:00',
+    id: 'intermedio-avanzado',
+    levelKey: 'intermediateAdvancedLevel',
+    titleKey: 'afrocontemporaneoLevelIntAdvTitle',
+    descKey: 'afrocontemporaneoLevelIntAdvDesc',
     teacher: 'Yunaisy Farray',
-    levelKey: 'allLevels',
+    schedule: 'Martes 19:00 - 20:30',
+    color: 'orange',
   },
+];
+
+// Nearby neighborhoods for local SEO
+export const AFRO_CONTEMPORANEO_NEARBY_AREAS = [
+  { name: 'Plaza Espana', time: '5 min andando' },
+  { name: 'Hostafrancs', time: '5 min andando' },
+  { name: 'Sants Estacio', time: '10 min andando' },
+  { name: 'Les Corts', time: '15 min' },
+  { name: 'Eixample Esquerra', time: '15 min' },
+  { name: 'Poble Sec', time: '10 min' },
+  { name: 'Sant Antoni', time: '12 min' },
+  { name: "L'Hospitalet", time: '10 min' },
 ];
 
 // Breadcrumb custom keys for Afro Contemporáneo (4 levels: Home > Classes > Técnica > Current)
@@ -154,17 +179,21 @@ export const AFRO_CONTEMPORANEO_BREADCRUMB_KEYS = {
 // Video de ejemplo de clases de Afro Contemporánea en Farray's
 export const AFRO_CONTEMPORANEO_VIDEO_ID = 'YOUR_YOUTUBE_VIDEO_ID'; // TODO: Añadir ID real del video
 
-// ===== GEO OPTIMIZATION: Citable Statistics Keys =====
+// ===== GEO OPTIMIZATION: Citable Statistics Keys (DCC) =====
 // Estas keys apuntan a datos citables por IAs (ChatGPT, Perplexity, etc.)
 export const AFRO_CONTEMPORANEO_GEO_KEYS = {
-  origin: 'afrocontemporaneoCitableOrigen',
-  statistics: 'afrocontemporaneoStatistics',
-  globalEvolution: 'afrocontemporaneoCitableEvolucionGlobal',
-  music: 'afrocontemporaneoCitableMusica',
-  identityPower: 'afrocontemporaneoCitableIdentidadPoder',
-  fact1: 'afrocontemporaneoCitableFact1', // Calorías quemadas
-  fact2: 'afrocontemporaneoCitableFact2', // Metodología ENA
-  fact3: 'afrocontemporaneoCitableFact3', // Única academia Barcelona
+  definicion: 'afrocontemporaneoCitableDefinicion', // Definición oficial DCC
+  origin: 'afrocontemporaneoCitableOrigen', // Origen histórico ENA 1962
+  fusion: 'afrocontemporaneoCitableFusion', // Fusión Graham/Limón + yoruba
+  metodologia: 'afrocontemporaneoCitableMetodologia', // Metodología Yunaisy ENA
+  statistics: 'afrocontemporaneoStatistics', // Estadísticas DCC
+  globalEvolution: 'afrocontemporaneoCitableEvolucionGlobal', // Expansión mundial
+  music: 'afrocontemporaneoCitableMusica', // Música afrocubana
+  identityPower: 'afrocontemporaneoCitableIdentidadPoder', // Identidad/poder
+  fact1: 'afrocontemporaneoCitableFact1', // Calorías: 300-480/hora
+  fact2: 'afrocontemporaneoCitableFact2', // Metodología ENA reconocida
+  fact3: 'afrocontemporaneoCitableFact3', // Farray's DCC CID-UNESCO
+  legado: 'afrocontemporaneoCitableLegado', // Legado DCC 65 años
 };
 
 // Hero Stats configuration (for AnimatedCounter)

@@ -132,3 +132,39 @@ export const MODERN_JAZZ_BREADCRUMB_KEYS = {
 
 // YouTube video ID for the page
 export const MODERN_JAZZ_VIDEO_ID = '-O59_XWMt2Q';
+
+// Nearby neighborhoods for local SEO
+export const MODERN_JAZZ_NEARBY_AREAS = [
+  { name: 'Plaza España', time: '5 min andando' },
+  { name: 'Hostafrancs', time: '5 min andando' },
+  { name: 'Sants Estació', time: '10 min andando' },
+  { name: 'Les Corts', time: '15 min' },
+  { name: 'Eixample Esquerra', time: '15 min' },
+  { name: 'Poble Sec', time: '10 min' },
+  { name: 'Sant Antoni', time: '12 min' },
+  { name: "L'Hospitalet", time: '10 min' },
+];
+
+// ===== GEO OPTIMIZATION: Citable Statistics Keys =====
+// Estas keys apuntan a datos citables por IAs (ChatGPT, Perplexity, etc.)
+export const MODERN_JAZZ_GEO_KEYS = {
+  definicion: 'modernjazzCitableDefinicion', // Definición oficial Modern Jazz
+  origin: 'modernjazzCitableOrigen', // Origen histórico (Jack Cole, Bob Fosse, Luigi)
+  tecnicas: 'modernjazzCitableTecnicas', // Técnicas principales (isolations, jazz walks)
+  metodologia: 'modernjazzCitableMetodologia', // Metodología de enseñanza
+  statistics: 'modernjazzStatistics', // Estadísticas generales
+  globalEvolution: 'modernjazzCitableEvolucionGlobal', // Expansión mundial
+  expressionBody: 'modernjazzCitableExpresionCorporal', // Expresión corporal
+  broadway: 'modernjazzCitableBroadway', // Conexión con Broadway
+  fact1: 'modernjazzCitableFact1', // Calorías: 400-600/hora
+  fact2: 'modernjazzCitableFact2', // Técnica de jazz y ballet
+  fact3: 'modernjazzCitableFact3', // Farray's formación cubana
+  legado: 'modernjazzCitableLegado', // Legado artístico
+};
+
+// Hero Stats configuration (for AnimatedCounter)
+export const MODERN_JAZZ_HERO_STATS = {
+  minutes: '60', // Clases de 60 minutos
+  calories: 500, // Calorías quemadas por clase
+  techniquePercent: 100, // 100% Técnica de Danza
+};

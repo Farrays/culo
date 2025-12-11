@@ -58,7 +58,7 @@ const CulturalHistorySection: React.FC<CulturalHistorySectionProps> = ({
   };
 
   return (
-    <section id="cultural-history" className="py-20 md:py-32 bg-black">
+    <section id="cultural-history" className="py-12 md:py-20 bg-black">
       <div className="container mx-auto px-6">
         <AnimateOnScroll>
           <div className="max-w-4xl mx-auto">
@@ -77,7 +77,7 @@ const CulturalHistorySection: React.FC<CulturalHistorySectionProps> = ({
             <div
               id="cultural-history-content"
               className={`overflow-hidden transition-all duration-500 ${
-                isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                isExpanded ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'
               }`}
               role="region"
               aria-labelledby="cultural-history-toggle"

@@ -14,6 +14,7 @@ import {
   MODERN_JAZZ_FAQS_CONFIG,
   MODERN_JAZZ_SCHEDULE_KEYS,
   MODERN_JAZZ_VIDEO_ID,
+  MODERN_JAZZ_NEARBY_AREAS,
 } from '../constants/modern-jazz';
 import AnimateOnScroll from './AnimateOnScroll';
 import CulturalHistorySection from './CulturalHistorySection';
@@ -30,6 +31,18 @@ import {
   DefinedTermSchema,
   EventSchema,
 } from './SchemaMarkup';
+
+// MapPinIcon for Local SEO section
+const MapPinIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+    />
+  </svg>
+);
 
 // Animation delay constants (in ms)
 const ANIMATION_DELAYS = {
@@ -444,9 +457,52 @@ const ModernJazzPage: React.FC = () => {
               <p className="max-w-4xl mx-auto text-xl md:text-2xl text-neutral/90 mt-8 mb-6 leading-relaxed speakable-intro">
                 {t('modernjazzHeroDesc')}
               </p>
-              <p className="text-lg md:text-xl text-neutral/90 italic mb-12">
+              <p className="text-lg md:text-xl text-neutral/90 italic mb-8">
                 {t('modernjazzHeroLocation')}
               </p>
+
+              {/* Social Proof */}
+              <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 mb-8 text-neutral/80">
+                <div className="flex items-center gap-2">
+                  <StarRating size="sm" />
+                  <span className="font-semibold">4.9/5</span>
+                  <span className="text-sm">(505+ reseñas)</span>
+                </div>
+                <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
+                <div className="flex items-center gap-2">
+                  <svg
+                    className="w-5 h-5 text-primary-accent"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"
+                    />
+                  </svg>
+                  <span>+15.000 alumnos formados</span>
+                </div>
+                <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
+                <div className="flex items-center gap-2">
+                  <svg
+                    className="w-5 h-5 text-primary-accent"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={1.5}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+                    />
+                  </svg>
+                  <span>8 años en Barcelona</span>
+                </div>
+              </div>
 
               {/* CTA Buttons - Enhanced UX & A11y */}
               <div
@@ -481,66 +537,50 @@ const ModernJazzPage: React.FC = () => {
               </div>
 
               {/* Key Stats */}
-              <div className="mt-16">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
+              <div className="mt-12 sm:mt-16">
+                <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-12 max-w-4xl mx-auto">
                   {/* 60 Minutos */}
                   <AnimateOnScroll delay={0}>
                     <div className="text-center">
                       <div className="mb-2 flex justify-center">
-                        <ClockIcon className="w-10 h-10 text-primary-accent" />
+                        <ClockIcon className="w-8 h-8 sm:w-10 sm:h-10 text-primary-accent" />
                       </div>
-                      <AnimatedCounter
-                        target={60}
-                        className="text-4xl md:text-5xl font-black mb-1 holographic-text"
-                      />
-                      <div className="text-sm md:text-base text-neutral/90 font-semibold">
+                      <div className="text-3xl sm:text-4xl md:text-5xl font-black mb-1 holographic-text">
+                        60
+                      </div>
+                      <div className="text-xs sm:text-sm md:text-base text-neutral/90 font-semibold">
                         {t('classMinutes')}
                       </div>
                     </div>
                   </AnimateOnScroll>
 
-                  {/* Técnica */}
+                  {/* ~500 Calorías */}
                   <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
                     <div className="text-center">
                       <div className="mb-2 flex justify-center">
-                        <FlameIcon className="w-10 h-10 text-primary-accent" />
+                        <FlameIcon className="w-8 h-8 sm:w-10 sm:h-10 text-primary-accent" />
                       </div>
-                      <div className="text-4xl md:text-5xl font-black mb-1 holographic-text">
-                        {t('modernjazzTechniqueStat')}
+                      <div className="text-3xl sm:text-4xl md:text-5xl font-black mb-1 holographic-text">
+                        ~500/h
                       </div>
-                      <div className="text-sm md:text-base text-neutral/90 font-semibold mt-1">
-                        {t('modernjazzEmpowerment')}
+                      <div className="text-xs sm:text-sm md:text-base text-neutral/90 font-semibold">
+                        {t('caloriesBurned')}
                       </div>
                     </div>
                   </AnimateOnScroll>
 
-                  {/* ~500 Calorías */}
+                  {/* 100% Técnica */}
                   <AnimateOnScroll delay={2 * ANIMATION_DELAYS.STAGGER_SMALL}>
                     <div className="text-center">
                       <div className="mb-2 flex justify-center">
-                        <FlameIcon className="w-10 h-10 text-primary-accent" />
-                      </div>
-                      <div className="text-4xl md:text-5xl font-black mb-1 holographic-text">
-                        ~<AnimatedCounter target={500} className="inline" />
-                      </div>
-                      <div className="text-sm md:text-base text-neutral/90 font-semibold">
-                        {t('modernjazzCaloriesStat')}
-                      </div>
-                    </div>
-                  </AnimateOnScroll>
-
-                  {/* 100% Danza */}
-                  <AnimateOnScroll delay={3 * ANIMATION_DELAYS.STAGGER_SMALL}>
-                    <div className="text-center">
-                      <div className="mb-2 flex justify-center">
-                        <HeartIcon className="w-10 h-10 text-primary-accent" />
+                        <HeartIcon className="w-8 h-8 sm:w-10 sm:h-10 text-primary-accent" />
                       </div>
                       <AnimatedCounter
                         target={100}
                         suffix="%"
-                        className="text-4xl md:text-5xl font-black mb-1 holographic-text"
+                        className="text-3xl sm:text-4xl md:text-5xl font-black mb-1 holographic-text"
                       />
-                      <div className="text-sm md:text-base text-neutral/90 font-semibold">
+                      <div className="text-xs sm:text-sm md:text-base text-neutral/90 font-semibold">
                         {t('modernjazzDanceStat')}
                       </div>
                     </div>
@@ -552,7 +592,7 @@ const ModernJazzPage: React.FC = () => {
         </section>
 
         {/* What is Modern Jazz Section */}
-        <section aria-labelledby="what-is-title" className="py-20 md:py-32 bg-primary-dark/10">
+        <section aria-labelledby="what-is-title" className="py-12 md:py-20 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -602,7 +642,7 @@ const ModernJazzPage: React.FC = () => {
         <section
           id="teachers"
           aria-labelledby="teachers-title"
-          className="py-16 sm:py-20 md:py-32 bg-black relative overflow-hidden"
+          className="py-12 md:py-20 bg-black relative overflow-hidden"
         >
           <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <AnimateOnScroll>
@@ -665,8 +705,235 @@ const ModernJazzPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Prepare Section - Prepara tu primera clase */}
+        <section className="py-14 md:py-20 bg-primary-dark/10">
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="max-w-5xl mx-auto">
+                <h3 className="text-2xl sm:text-3xl font-black tracking-tighter text-neutral mb-2 text-center holographic-text">
+                  {t('modernjazzPrepareTitle')}
+                </h3>
+                <p className="text-base text-neutral/70 mb-6 text-center">
+                  {t('modernjazzPrepareSubtitle')}
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+                  {/* Qué traer - primary-accent */}
+                  <div className="p-5 bg-primary-accent/10 rounded-2xl border border-primary-accent/30 hover:border-primary-accent/50 transition-all duration-300">
+                    <h4 className="text-base font-bold text-primary-accent mb-3 flex items-center gap-2">
+                      <span className="w-6 h-6 rounded-full bg-primary-accent/20 flex items-center justify-center text-sm">
+                        +
+                      </span>
+                      {t('modernjazzPrepareWhatToBring')}
+                    </h4>
+                    <ul className="space-y-2">
+                      {[1, 2, 3, 4, 5].map(num => (
+                        <li key={num} className="flex items-start gap-2 text-sm text-neutral/80">
+                          <CheckIcon className="w-4 h-4 text-primary-accent mt-0.5 flex-shrink-0" />
+                          <span>{t(`modernjazzPrepareItem${num}`)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Antes de llegar - primary-dark */}
+                  <div className="p-5 bg-primary-dark/15 rounded-2xl border border-primary-dark/30 hover:border-primary-dark/50 transition-all duration-300">
+                    <h4 className="text-base font-bold text-neutral mb-3 flex items-center gap-2">
+                      <ClockIcon className="w-5 h-5 text-primary-accent" />
+                      {t('modernjazzPrepareBefore')}
+                    </h4>
+                    <ul className="space-y-2">
+                      {[1, 2, 3].map(num => (
+                        <li key={num} className="flex items-start gap-2 text-sm text-neutral/80">
+                          <span className="w-4 h-4 rounded-full bg-primary-dark/30 flex items-center justify-center text-xs text-neutral mt-0.5 flex-shrink-0">
+                            -
+                          </span>
+                          <span>{t(`modernjazzPrepareBeforeItem${num}`)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Evita - neutral/muted */}
+                  <div className="p-5 bg-neutral/5 rounded-2xl border border-neutral/20 hover:border-neutral/40 transition-all duration-300 sm:col-span-2 lg:col-span-1">
+                    <h4 className="text-base font-bold text-neutral/70 mb-3 flex items-center gap-2">
+                      <span className="w-6 h-6 rounded-full bg-neutral/10 flex items-center justify-center text-sm">
+                        x
+                      </span>
+                      {t('modernjazzPrepareAvoid')}
+                    </h4>
+                    <ul className="space-y-2">
+                      {[1, 2, 3].map(num => (
+                        <li key={num} className="flex items-start gap-2 text-sm text-neutral/80">
+                          <span className="w-4 h-4 rounded-full bg-neutral/10 flex items-center justify-center text-xs text-neutral/60 mt-0.5 flex-shrink-0">
+                            x
+                          </span>
+                          <span>{t(`modernjazzPrepareAvoidItem${num}`)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Consejo del profesor */}
+                <div className="mt-6 p-5 bg-gradient-to-r from-primary-accent/10 via-primary-dark/10 to-primary-accent/10 rounded-2xl border border-primary-accent/30">
+                  <p className="text-sm font-bold text-primary-accent mb-2">
+                    {t('modernjazzPrepareTeacherTip')}
+                  </p>
+                  <blockquote className="text-neutral/90 italic leading-relaxed text-sm">
+                    &ldquo;{t('modernjazzPrepareTeacherQuote')}&rdquo;
+                  </blockquote>
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* Comparison Table - Modern Jazz vs Otras Disciplinas */}
+        <section className="py-12 md:py-20 bg-primary-dark/10">
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="max-w-5xl mx-auto">
+                <h3 className="text-2xl sm:text-3xl font-black tracking-tighter text-neutral mb-2 text-center holographic-text">
+                  {t('modernjazzCompareTitle')}
+                </h3>
+                <p className="text-base text-neutral/70 mb-6 text-center">
+                  {t('modernjazzCompareSubtitle')}
+                </p>
+
+                {/* Mobile: Cards view - 11 rows unified criteria */}
+                <div className="block lg:hidden space-y-4">
+                  {[
+                    { row: 1, jazz: 4, ballet: 5, lirico: 3, afro: 3 }, // Alineación postural clásica
+                    { row: 2, jazz: 4, ballet: 5, lirico: 3, afro: 4 }, // Técnica de pies y piernas
+                    { row: 3, jazz: 2, ballet: 1, lirico: 5, afro: 3 }, // Trabajo de suelo
+                    { row: 4, jazz: 3, ballet: 2, lirico: 3, afro: 5 }, // Trabajo de caderas y torso
+                    { row: 5, jazz: 3, ballet: 2, lirico: 3, afro: 5 }, // Disociación corporal
+                    { row: 6, jazz: 3, ballet: 2, lirico: 3, afro: 5 }, // Poliritmia / Musicalidad compleja
+                    { row: 7, jazz: 4, ballet: 3, lirico: 5, afro: 5 }, // Expresión emocional
+                    { row: 8, jazz: 4, ballet: 4, lirico: 5, afro: 4 }, // Fluidez y continuidad
+                    { row: 9, jazz: 3, ballet: 2, lirico: 4, afro: 5 }, // Conexión tierra (grounding)
+                    { row: 10, jazz: 4, ballet: 3, lirico: 3, afro: 5 }, // Exigencia cardiovascular
+                    { row: 11, jazz: 4, ballet: 5, lirico: 4, afro: 5 }, // Versatilidad para otros estilos
+                  ].map(item => (
+                    <div
+                      key={item.row}
+                      className="p-4 bg-black/30 rounded-xl border border-neutral/20"
+                    >
+                      <h4 className="font-bold text-neutral mb-3 text-sm">
+                        {t(`modernjazzCompareRow${item.row}`)}
+                      </h4>
+                      <div className="grid grid-cols-2 gap-2 text-xs">
+                        <div className="flex justify-between items-center p-2 bg-primary-accent/15 rounded-lg border border-primary-accent/30">
+                          <span className="text-primary-accent font-semibold">Modern Jazz</span>
+                          <span className="text-primary-accent/80">{'★'.repeat(item.jazz)}</span>
+                        </div>
+                        <div className="flex justify-between items-center p-2 bg-neutral/10 rounded-lg">
+                          <span className="text-neutral/70">Ballet</span>
+                          <span className="text-neutral/60">{'★'.repeat(item.ballet)}</span>
+                        </div>
+                        <div className="flex justify-between items-center p-2 bg-neutral/10 rounded-lg">
+                          <span className="text-neutral/70">Cont. Lírico</span>
+                          <span className="text-neutral/60">{'★'.repeat(item.lirico)}</span>
+                        </div>
+                        <div className="flex justify-between items-center p-2 bg-neutral/10 rounded-lg">
+                          <span className="text-neutral/70">Afro Cont.</span>
+                          <span className="text-neutral/60">{'★'.repeat(item.afro)}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Desktop: Table view */}
+                <div className="hidden lg:block overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-neutral/20">
+                        <th className="text-left py-3 px-2 text-neutral/70 font-semibold">
+                          {t('modernjazzCompareCapacity')}
+                        </th>
+                        <th className="text-center py-3 px-2 text-primary-accent font-bold bg-primary-accent/10 rounded-t-lg">
+                          Modern Jazz
+                        </th>
+                        <th className="text-center py-3 px-2 text-neutral/70 font-semibold">
+                          Ballet
+                        </th>
+                        <th className="text-center py-3 px-2 text-neutral/70 font-semibold">
+                          Cont. Lírico
+                        </th>
+                        <th className="text-center py-3 px-2 text-neutral/70 font-semibold">
+                          Afro Cont.
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { row: 1, jazz: 4, ballet: 5, lirico: 3, afro: 3 }, // Alineación postural clásica
+                        { row: 2, jazz: 4, ballet: 5, lirico: 3, afro: 4 }, // Técnica de pies y piernas
+                        { row: 3, jazz: 2, ballet: 1, lirico: 5, afro: 3 }, // Trabajo de suelo
+                        { row: 4, jazz: 3, ballet: 2, lirico: 3, afro: 5 }, // Trabajo de caderas y torso
+                        { row: 5, jazz: 3, ballet: 2, lirico: 3, afro: 5 }, // Disociación corporal
+                        { row: 6, jazz: 3, ballet: 2, lirico: 3, afro: 5 }, // Poliritmia / Musicalidad compleja
+                        { row: 7, jazz: 4, ballet: 3, lirico: 5, afro: 5 }, // Expresión emocional
+                        { row: 8, jazz: 4, ballet: 4, lirico: 5, afro: 4 }, // Fluidez y continuidad
+                        { row: 9, jazz: 3, ballet: 2, lirico: 4, afro: 5 }, // Conexión tierra (grounding)
+                        { row: 10, jazz: 4, ballet: 3, lirico: 3, afro: 5 }, // Exigencia cardiovascular
+                        { row: 11, jazz: 4, ballet: 5, lirico: 4, afro: 5 }, // Versatilidad para otros estilos
+                      ].map((item, idx) => (
+                        <tr
+                          key={item.row}
+                          className={`border-b border-neutral/10 ${idx % 2 === 0 ? 'bg-black/20' : ''}`}
+                        >
+                          <td className="py-3 px-2 text-neutral/80">
+                            {t(`modernjazzCompareRow${item.row}`)}
+                          </td>
+                          <td className="py-3 px-2 text-center bg-primary-accent/10 text-primary-accent/80">
+                            {'★'.repeat(item.jazz)}
+                          </td>
+                          <td className="py-3 px-2 text-center text-neutral/60">
+                            {'★'.repeat(item.ballet)}
+                          </td>
+                          <td className="py-3 px-2 text-center text-neutral/60">
+                            {'★'.repeat(item.lirico)}
+                          </td>
+                          <td className="py-3 px-2 text-center text-neutral/60">
+                            {'★'.repeat(item.afro)}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* What does this mean for you? */}
+                <div className="mt-8 p-5 bg-black/30 rounded-2xl border border-neutral/20">
+                  <h4 className="text-lg font-bold text-neutral mb-4">
+                    {t('modernjazzCompareMeaningTitle')}
+                  </h4>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {[1, 2, 3, 4].map(num => (
+                      <div key={num} className="space-y-1">
+                        <p className="text-sm font-semibold text-primary-accent">
+                          {t(`modernjazzCompareMeaning${num}Title`)}
+                        </p>
+                        <p className="text-sm text-neutral/70">
+                          {t(`modernjazzCompareMeaning${num}Desc`)}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="mt-4 text-sm font-semibold text-primary-accent italic text-center">
+                    {t('modernjazzCompareConclusion')}
+                  </p>
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
         {/* Identification Section - ¿Te identificas? */}
-        <section aria-labelledby="identify-title" className="pt-8 pb-16 md:pt-12 md:pb-24 bg-black">
+        <section aria-labelledby="identify-title" className="py-12 md:py-20 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-16 max-w-4xl mx-auto">
@@ -708,7 +975,7 @@ const ModernJazzPage: React.FC = () => {
         </section>
 
         {/* Necesitas apuntarte Section */}
-        <section className="py-20 md:py-32 bg-primary-dark/10">
+        <section className="py-12 md:py-20 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             {/* Texto de transición pequeño */}
             <AnimateOnScroll>
@@ -740,7 +1007,7 @@ const ModernJazzPage: React.FC = () => {
         </section>
 
         {/* Transformation Section - Benefits */}
-        <section aria-labelledby="transform-title" className="py-12 md:py-16 bg-primary-dark/10">
+        <section aria-labelledby="transform-title" className="py-12 md:py-20 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-16 max-w-4xl mx-auto">
@@ -778,7 +1045,7 @@ const ModernJazzPage: React.FC = () => {
         </section>
 
         {/* Why Choose Farray's Section */}
-        <section className="py-20 md:py-32 bg-black">
+        <section className="py-12 md:py-20 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-12 max-w-4xl mx-auto">
@@ -858,7 +1125,7 @@ const ModernJazzPage: React.FC = () => {
         </section>
 
         {/* Logos Section - Nos has podido ver en */}
-        <section className="py-16 md:py-20 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-12 max-w-4xl mx-auto">
@@ -925,7 +1192,7 @@ const ModernJazzPage: React.FC = () => {
         <section
           id="why-today"
           aria-labelledby="why-today-title"
-          className="py-16 sm:py-20 md:py-32 bg-black"
+          className="py-12 md:py-20 bg-black"
         >
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -955,7 +1222,7 @@ const ModernJazzPage: React.FC = () => {
           <section
             id="video"
             aria-labelledby="video-title"
-            className="py-16 sm:py-20 md:py-32 bg-primary-dark/10"
+            className="py-12 md:py-20 bg-primary-dark/10"
           >
             <div className="container mx-auto px-4 sm:px-6">
               <AnimateOnScroll>
@@ -983,7 +1250,7 @@ const ModernJazzPage: React.FC = () => {
         <section
           id="testimonials"
           aria-labelledby="testimonials-title"
-          className="py-20 md:py-32 bg-black"
+          className="py-12 md:py-20 bg-black"
         >
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
@@ -1007,8 +1274,8 @@ const ModernJazzPage: React.FC = () => {
               </div>
             </AnimateOnScroll>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 max-w-7xl mx-auto">
-              {modernJazzTestimonials.map((testimonial, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
+              {modernJazzTestimonials.slice(0, 4).map((testimonial, index) => (
                 <AnimateOnScroll
                   key={testimonial.id}
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
@@ -1038,7 +1305,7 @@ const ModernJazzPage: React.FC = () => {
         </section>
 
         {/* Final CTA Section */}
-        <section id="final-cta" className="relative py-12 sm:py-20 md:py-32 overflow-hidden">
+        <section id="final-cta" className="relative py-12 md:py-20 overflow-hidden">
           {/* Background like Hero - Indigo tones */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/30 via-black to-black"></div>
@@ -1099,7 +1366,7 @@ const ModernJazzPage: React.FC = () => {
         {/* Cultural History Section */}
         <CulturalHistorySection
           id="cultural-history"
-          titleKey=""
+          titleKey="modernjazzCulturalTitle"
           shortDescKey="modernjazzCulturalShort"
           fullHistoryKey="modernjazzCulturalFull"
           readMoreText={t('readMore')}
@@ -1109,6 +1376,34 @@ const ModernJazzPage: React.FC = () => {
 
         {/* FAQ */}
         <FAQSection title={t('modernjazzFaqTitle')} faqs={modernJazzFaqs} pageUrl={pageUrl} />
+
+        {/* Local SEO Section */}
+        <section className="py-10 md:py-14 bg-black">
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="max-w-4xl mx-auto p-6 bg-black/30 rounded-2xl border border-neutral/20">
+                <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-4">
+                  {t('modernjazzNearbyTitle')}
+                </h3>
+                <p className="text-neutral/80 mb-6">{t('modernjazzNearbyDesc')}</p>
+                <p className="text-neutral/90 font-semibold mb-4">
+                  {t('modernjazzNearbySearchText')}
+                </p>
+                <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
+                  {MODERN_JAZZ_NEARBY_AREAS.map((area, index) => (
+                    <div key={index} className="flex items-center gap-2 text-sm">
+                      <MapPinIcon className="w-4 h-4 text-primary-accent" />
+                      <span className="text-neutral/80">
+                        {area.name}: <span className="text-primary-accent">{area.time}</span>
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-neutral/70 text-sm mt-4">{t('modernjazzNearbyMetro')}</p>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
       </main>
     </>
   );
