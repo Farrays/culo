@@ -28,6 +28,8 @@ interface DesktopNavigationProps {
   locale: Locale;
   isClassesDropdownOpen: boolean;
   setIsClassesDropdownOpen: (open: boolean) => void;
+  isDanzaDropdownOpen: boolean;
+  setIsDanzaDropdownOpen: (open: boolean) => void;
   isUrbanDropdownOpen: boolean;
   setIsUrbanDropdownOpen: (open: boolean) => void;
   isHeelsDropdownOpen: boolean;
@@ -43,6 +45,8 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
   locale,
   isClassesDropdownOpen,
   setIsClassesDropdownOpen,
+  isDanzaDropdownOpen,
+  setIsDanzaDropdownOpen,
   isUrbanDropdownOpen,
   setIsUrbanDropdownOpen,
   isHeelsDropdownOpen,
@@ -114,116 +118,123 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
               role="menu"
               className="absolute top-full left-0 mt-2 bg-black/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl shadow-primary-accent/10 overflow-hidden min-w-[280px] animate-fadeIn z-50"
             >
-              {menuStructure.classes.submenu?.map(item => (
-                <div key={item.path}>
-                  {item.submenu ? (
-                    // Urban Dances with sub-submenu
-                    <div className="relative urban-dropdown">
-                      <div className="flex items-center justify-between px-4 py-3 text-sm font-medium text-neutral/90 hover:bg-white/10 hover:text-white transition-all duration-200">
-                        <Link
-                          to={item.path}
-                          className="flex-1"
-                          onClick={() => setIsClassesDropdownOpen(false)}
-                        >
-                          {t(item.textKey)}
-                        </Link>
-                        <button
-                          onClick={() => setIsUrbanDropdownOpen(!isUrbanDropdownOpen)}
-                          onKeyDown={e => {
-                            if (e.key === 'Enter' || e.key === ' ') {
-                              e.preventDefault();
-                              setIsUrbanDropdownOpen(!isUrbanDropdownOpen);
-                            } else if (e.key === 'Escape') {
-                              setIsUrbanDropdownOpen(false);
-                              setIsClassesDropdownOpen(false);
-                            }
-                          }}
-                          className="ml-2"
-                          aria-expanded={isUrbanDropdownOpen}
-                          aria-label={t('navDanzasUrbanas')}
-                        >
-                          <ChevronDownIcon
-                            className={`w-4 h-4 transition-transform duration-300 ${isUrbanDropdownOpen ? 'rotate-180' : ''}`}
-                          />
-                        </button>
-                      </div>
-                      {isUrbanDropdownOpen && (
-                        <div className="bg-black/80 border-t border-white/10">
-                          {item.submenu.map(subitem =>
-                            subitem.submenu ? (
-                              // Item with sub-submenu (e.g., Heels with Femmology & Sexy Style)
-                              <div key={subitem.path} className="relative heels-dropdown">
-                                <div className="flex items-center justify-between px-8 py-3 text-sm font-medium text-neutral/80 hover:bg-white/10 hover:text-white transition-all duration-200">
-                                  <Link
-                                    to={subitem.path}
-                                    className="flex-1"
-                                    onClick={() => {
-                                      setIsClassesDropdownOpen(false);
-                                      setIsUrbanDropdownOpen(false);
-                                      setIsHeelsDropdownOpen(false);
-                                    }}
-                                  >
-                                    {t(subitem.textKey)}
-                                  </Link>
-                                  <button
-                                    onClick={() => setIsHeelsDropdownOpen(!isHeelsDropdownOpen)}
-                                    className="ml-2"
-                                    aria-expanded={isHeelsDropdownOpen}
-                                  >
-                                    <ChevronDownIcon
-                                      className={`w-3 h-3 transition-transform duration-300 ${isHeelsDropdownOpen ? 'rotate-180' : ''}`}
-                                    />
-                                  </button>
-                                </div>
-                                {isHeelsDropdownOpen && (
-                                  <div className="bg-black/90 border-t border-white/5">
-                                    {subitem.submenu.map(subsubitem => (
-                                      <Link
-                                        key={subsubitem.path}
-                                        to={subsubitem.path}
-                                        onClick={() => {
-                                          setIsClassesDropdownOpen(false);
-                                          setIsUrbanDropdownOpen(false);
-                                          setIsHeelsDropdownOpen(false);
-                                        }}
-                                        className="block px-12 py-2 text-sm font-medium text-neutral/70 hover:bg-white/10 hover:text-white transition-all duration-200"
-                                      >
-                                        {t(subsubitem.textKey)}
-                                      </Link>
-                                    ))}
-                                  </div>
-                                )}
-                              </div>
-                            ) : (
-                              // Regular subitem
-                              <Link
-                                key={subitem.path}
-                                to={subitem.path}
-                                onClick={() => {
-                                  setIsClassesDropdownOpen(false);
-                                  setIsUrbanDropdownOpen(false);
-                                }}
-                                className="block px-8 py-3 text-sm font-medium text-neutral/80 hover:bg-white/10 hover:text-white transition-all duration-200"
-                              >
-                                {t(subitem.textKey)}
-                              </Link>
-                            )
-                          )}
+              {menuStructure.classes.submenu?.map(item => {
+                const isDanza = item.textKey === 'navDanza';
+                const isSubOpen = isDanza ? isDanzaDropdownOpen : isUrbanDropdownOpen;
+                const setIsSubOpen = isDanza ? setIsDanzaDropdownOpen : setIsUrbanDropdownOpen;
+                const dropdownClass = isDanza ? 'danza-dropdown' : 'urban-dropdown';
+
+                return (
+                  <div key={item.path}>
+                    {item.submenu ? (
+                      // Danza or Urban Dances with sub-submenu
+                      <div className={`relative ${dropdownClass}`}>
+                        <div className="flex items-center justify-between px-4 py-3 text-sm font-medium text-neutral/90 hover:bg-white/10 hover:text-white transition-all duration-200">
+                          <Link
+                            to={item.path}
+                            className="flex-1"
+                            onClick={() => setIsClassesDropdownOpen(false)}
+                          >
+                            {t(item.textKey)}
+                          </Link>
+                          <button
+                            onClick={() => setIsSubOpen(!isSubOpen)}
+                            onKeyDown={e => {
+                              if (e.key === 'Enter' || e.key === ' ') {
+                                e.preventDefault();
+                                setIsSubOpen(!isSubOpen);
+                              } else if (e.key === 'Escape') {
+                                setIsSubOpen(false);
+                                setIsClassesDropdownOpen(false);
+                              }
+                            }}
+                            className="ml-2"
+                            aria-expanded={isSubOpen}
+                            aria-label={t(item.textKey)}
+                          >
+                            <ChevronDownIcon
+                              className={`w-4 h-4 transition-transform duration-300 ${isSubOpen ? 'rotate-180' : ''}`}
+                            />
+                          </button>
                         </div>
-                      )}
-                    </div>
-                  ) : (
-                    // Regular submenu item
-                    <Link
-                      to={item.path}
-                      onClick={() => setIsClassesDropdownOpen(false)}
-                      className="block px-4 py-3 text-sm font-medium text-neutral/90 hover:bg-white/10 hover:text-white transition-all duration-200"
-                    >
-                      {t(item.textKey)}
-                    </Link>
-                  )}
-                </div>
-              ))}
+                        {isSubOpen && (
+                          <div className="bg-black/80 border-t border-white/10">
+                            {item.submenu.map(subitem =>
+                              subitem.submenu ? (
+                                // Item with sub-submenu (e.g., Heels with Femmology & Sexy Style)
+                                <div key={subitem.path} className="relative heels-dropdown">
+                                  <div className="flex items-center justify-between px-8 py-3 text-sm font-medium text-neutral/80 hover:bg-white/10 hover:text-white transition-all duration-200">
+                                    <Link
+                                      to={subitem.path}
+                                      className="flex-1"
+                                      onClick={() => {
+                                        setIsClassesDropdownOpen(false);
+                                        setIsSubOpen(false);
+                                        setIsHeelsDropdownOpen(false);
+                                      }}
+                                    >
+                                      {t(subitem.textKey)}
+                                    </Link>
+                                    <button
+                                      onClick={() => setIsHeelsDropdownOpen(!isHeelsDropdownOpen)}
+                                      className="ml-2"
+                                      aria-expanded={isHeelsDropdownOpen}
+                                    >
+                                      <ChevronDownIcon
+                                        className={`w-3 h-3 transition-transform duration-300 ${isHeelsDropdownOpen ? 'rotate-180' : ''}`}
+                                      />
+                                    </button>
+                                  </div>
+                                  {isHeelsDropdownOpen && (
+                                    <div className="bg-black/90 border-t border-white/5">
+                                      {subitem.submenu.map(subsubitem => (
+                                        <Link
+                                          key={subsubitem.path}
+                                          to={subsubitem.path}
+                                          onClick={() => {
+                                            setIsClassesDropdownOpen(false);
+                                            setIsSubOpen(false);
+                                            setIsHeelsDropdownOpen(false);
+                                          }}
+                                          className="block px-12 py-2 text-sm font-medium text-neutral/70 hover:bg-white/10 hover:text-white transition-all duration-200"
+                                        >
+                                          {t(subsubitem.textKey)}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  )}
+                                </div>
+                              ) : (
+                                // Regular subitem
+                                <Link
+                                  key={subitem.path}
+                                  to={subitem.path}
+                                  onClick={() => {
+                                    setIsClassesDropdownOpen(false);
+                                    setIsSubOpen(false);
+                                  }}
+                                  className="block px-8 py-3 text-sm font-medium text-neutral/80 hover:bg-white/10 hover:text-white transition-all duration-200"
+                                >
+                                  {t(subitem.textKey)}
+                                </Link>
+                              )
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      // Regular submenu item
+                      <Link
+                        to={item.path}
+                        onClick={() => setIsClassesDropdownOpen(false)}
+                        className="block px-4 py-3 text-sm font-medium text-neutral/90 hover:bg-white/10 hover:text-white transition-all duration-200"
+                      >
+                        {t(item.textKey)}
+                      </Link>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           )}
         </li>

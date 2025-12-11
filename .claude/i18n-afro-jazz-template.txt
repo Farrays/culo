@@ -1,0 +1,191 @@
+// ===== AfroJazz Page =====
+  afrojazzPageTitle: 'Clases de AfroJazz en Barcelona | Academia Farray\'s Center',
+  afrojazzMetaDescription: 'Aprende AfroJazz en Barcelona con instructores especializados. Clases de AfroJazz para todos los niveles cerca de Plaza España y Sants. ¡Reserva tu clase de prueba!',
+
+  // Breadcrumb (4 niveles: Home > Clases > Urbanas > Current)
+  afrojazzBreadcrumbHome: 'Inicio',
+  afrojazzBreadcrumbClasses: 'Clases de Baile',
+  afrojazzBreadcrumbUrban: 'Danzas Urbanas',
+  afrojazzBreadcrumbCurrent: 'Clases de AfroJazz',
+
+  // Hero
+  afrojazzHeroTitle: 'Clases de AfroJazz en Barcelona',
+  afrojazzHeroSubtitle: 'Descubre el ritmo y la pasión del AfroJazz',
+  afrojazzHeroDesc: 'Mucho más que un baile, una forma de expresión.',
+  afrojazzHeroLocation: 'Clases desde nivel principiante hasta avanzado, entre Plaza España y Sants',
+
+  // CTAs
+  afrojazzCTA1: 'Hazte Miembro Ahora',
+  afrojazzCTA1Subtext: 'Quedan pocas plazas este mes',
+  afrojazzCTA2: 'Reserva Tu Clase de Prueba',
+  afrojazzCTA2Subtext: 'Oferta por tiempo limitado',
+
+  // What Is Section
+  afrojazzWhatIsTitle: '¿Qué es AfroJazz y por qué está arrasando en Barcelona?',
+  afrojazzWhatIsP1: 'Descripción del AfroJazz: origen, características principales. [TODO: Personalizar]',
+  afrojazzWhatIsP2: 'Segunda descripción sobre el estilo y la cultura. [TODO: Personalizar]',
+  afrojazzWhatIsP3: 'Tercera descripción sobre qué se aprende. [TODO: Personalizar]',
+  afrojazzWhatIsP4: 'Cuarta descripción sobre los beneficios. [TODO: Personalizar]',
+  afrojazzWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
+  afrojazzWhatIsQuestionAnswer: 'Sí, lo es.',
+
+  // Cultural Section (con markdown ### para títulos holográficos)
+  afrojazzCulturalShort: 'Breve introducción a la historia del AfroJazz. [TODO: Personalizar - máx 2 frases]',
+  afrojazzCulturalFull: '### Sección 1: Orígenes\n\nContenido de la sección 1. [TODO]\n\n### Sección 2: Evolución\n\nContenido de la sección 2. [TODO]\n\n### Sección 3: El AfroJazz hoy\n\nContenido de la sección 3. [TODO]',
+
+  // Identify Section
+  afrojazzIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
+  afrojazzIdentify1: 'Quieres ponerte en forma pero el gimnasio te aburre',
+  afrojazzIdentify2: 'Buscas una actividad donde puedas liberar el estrés',
+  afrojazzIdentify3: 'Te encanta la música urbana y quieres bailar sin complejos',
+  afrojazzIdentify4: 'Quieres mejorar tu autoestima y conexión con tu cuerpo',
+  afrojazzIdentify5: 'Necesitas un espacio donde nadie te juzgue',
+  afrojazzIdentify6: 'Buscas una comunidad que te apoye e inspire',
+  afrojazzIdentifyTransition: 'Si has dicho "sí" a alguno de estos puntos, ya sabes lo que necesitas.',
+  afrojazzNeedEnrollTitle: 'Necesitas apuntarte a clases de AfroJazz en una academia de baile',
+  afrojazzIdentifyAgitate1: 'Seguir buscando excusas solo te aleja de la mejor versión de ti. [TODO: Personalizar]',
+  afrojazzIdentifySolution: 'En Farray\'s Center encontrarás un espacio pensado para que te sueltes, aprendas y crezcas sin presiones.',
+  afrojazzIdentifyClosing: 'Déjate llevar por la energía y el poder del AfroJazz.',
+
+  // Transform Section (6 transformaciones)
+  afrojazzTransformTitle: 'Imagina tu antes y después',
+  afrojazzTransform1Title: 'Recuperas energía e ilusión',
+  afrojazzTransform1Desc: 'Las clases te sacan de la rutina y te devuelven a la vida.',
+  afrojazzTransform2Title: 'Ganas seguridad sin darte cuenta',
+  afrojazzTransform2Desc: 'Te sueltas, te liberas y empiezas a quererte más.',
+  afrojazzTransform3Title: 'Te pones en forma sin aburrirte',
+  afrojazzTransform3Desc: 'Cada clase es diferente. Te diviertes mientras fortaleces tu cuerpo.',
+  afrojazzTransform4Title: 'Conoces a gente real',
+  afrojazzTransform4Desc: 'Nada forzado: buen rollo, comunidad y gente como tú.',
+  afrojazzTransform5Title: 'Conectas con la música urbana',
+  afrojazzTransform5Desc: 'Ritmo, flow y capacidad de improvisación.',
+  afrojazzTransform6Title: 'Aprendes movimientos nuevos cada semana',
+  afrojazzTransform6Desc: 'Más flow, más estilo, más tú.',
+  afrojazzTransformCTA: '¿Por qué elegir Farray\'s Center como academia de AfroJazz en Barcelona?',
+
+  // Why Choose Section (7 items - incluye profesores especializados)
+  afrojazzWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
+  afrojazzWhyChoose1Desc: 'Dirigida por Yunaisy Farray, actriz de Street Dance 2 y una de las profesoras más reconocidas del mundo.',
+  afrojazzWhyChoose2Title: 'Ubicación inmejorable',
+  afrojazzWhyChoose2Desc: 'Calle Entença 100, entre Plaza España y Sants, a 5 minutos de Plaça Espanya y Sants. Metro, bus y tren en la puerta.',
+  afrojazzWhyChoose3Title: 'Ambiente familiar, con el profesionalismo que necesitas',
+  afrojazzWhyChoose3Desc: 'Acogedor, inclusivo y sin juicios ni comparaciones, pero con el profesionalismo que necesitas para evolucionar de verdad.',
+  afrojazzWhyChoose4Title: 'Instalaciones realmente preparadas',
+  afrojazzWhyChoose4Desc: 'Más de 700 m², salas amplias, espejos, sonido profesional, climatización y ventilación centralizada.',
+  afrojazzWhyChoose5Title: 'Academia multidisciplinar',
+  afrojazzWhyChoose5Desc: 'Más de 25 estilos para que nunca te aburras: urbanos, latinas, contemporáneo, técnica, stretching y mucho más.',
+  afrojazzWhyChoose6Title: 'Gala anual + workshops potentes',
+  afrojazzWhyChoose6Desc: 'Brilla en un teatro profesional, participa en workshops internacionales y vive experiencias únicas.',
+  afrojazzWhyChoose7Title: 'Profesores especializados en AfroJazz',
+  afrojazzWhyChoose7Desc: 'Yunaisy Farray: experto en AfroJazz con años de experiencia. Técnica, flow y energía contagiosa en cada clase.',
+
+  // Logos Section
+  afrojazzLogosTitle: 'Has podido vernos en…',
+  afrojazzLogosIntlFestivalsText: 'y en los mejores festivales de baile de todo el mundo',
+
+  // Teachers Section
+  afrojazzTeachersTitle: 'Conoce a tu instructor de AfroJazz',
+  afrojazzTeachersSubtitle: 'Experto en AfroJazz con años de experiencia',
+  afrojazzTeacher1Specialty: 'Fusión Afro Contemporáneo + Jazz - Maestra CID-UNESCO',
+  afrojazzTeacher1Bio: 'Biografía del instructor. [TODO: Personalizar con experiencia y estilo]',
+  afrojazzTeachersClosing: 'Con Yunaisy Farray no solo aprendes a bailar AfroJazz: descubres una nueva forma de conectar con tu cuerpo y tu confianza.',
+
+  // Schedule Section
+  afrojazzScheduleTitle: 'Horario de clases de AfroJazz',
+  afrojazzScheduleSubtitle: 'Varios niveles para que encuentres tu clase perfecta',
+
+  // Video Section
+  afrojazzVideoTitle: 'Ven a descubrir nuestras clases de AfroJazz',
+  afrojazzVideoDesc: 'Mira cómo es una clase en Farray\'s Center: energía, técnica y buen rollo. ¡Te esperamos!',
+
+  // Why Today Section
+  afrojazzWhyTodayFullTitle: '¿Por qué hoy es el mejor momento para empezar a bailar AfroJazz con nosotros?',
+  afrojazzWhyToday1: 'Porque siempre esperas "el momento perfecto" pero lo único perfecto es empezar hoy.',
+  afrojazzWhyToday2: 'Porque estás a UNA clase de cambiar tu rutina y sentirte mejor que ayer.',
+  afrojazzWhyToday3: 'Porque no se trata de bailar bien, sino de sentirse bien bailando.',
+  afrojazzWhyTodayClosing1: 'En Farray\'s no vendemos clases. Creamos experiencias.',
+  afrojazzWhyTodayClosing2: 'Te esperamos con música pegadiza, profes carismáticos y una energía única en Barcelona.',
+
+  // Final CTA Section
+  afrojazzFinalCTATitle: 'Únete a la comunidad de AfroJazz más activa de Barcelona',
+  afrojazzFinalCTASubtitle: 'Da el paso.',
+  afrojazzFinalCTADesc: 'Reserva tu plaza ahora y no dejes que te lo cuenten… ni que te lo bailen.',
+  afrojazzFinalCTAFunny: 'Las plazas vuelan más rápido que un paso de AfroJazz un viernes por la noche.',
+
+  // FAQ Title
+  afrojazzFaqTitle: 'Preguntas Frecuentes sobre AfroJazz en Barcelona',
+
+  // 15 FAQs (optimizado para SEO - última FAQ con contacto)
+  afrojazzFaqQ1: '¿Cómo funcionan las clases de AfroJazz en Barcelona?',
+  afrojazzFaqA1: 'Trabajamos con grupos reducidos, divididos por niveles, para que puedas avanzar a tu ritmo. Cada clase dura 1 hora y combina calentamiento, técnica y coreografía.',
+  afrojazzFaqQ2: '¿Puedo empezar desde cero si nunca he bailado AfroJazz?',
+  afrojazzFaqA2: 'Absolutamente. El 80% de nuestros alumnos empiezan sin experiencia previa. Nuestra metodología está pensada para que te sientas cómodo desde el primer día.',
+  afrojazzFaqQ3: '¿Qué pasa si no tengo buena coordinación?',
+  afrojazzFaqA3: 'La coordinación se entrena. En nuestras clases desglosamos cada movimiento en pasos simples para que puedas asimilarlo de forma natural.',
+  afrojazzFaqQ4: '¿Qué necesito traer a las clases de AfroJazz?',
+  afrojazzFaqA4: 'Ropa cómoda que permita movimiento, zapatillas deportivas con buena suela, y trae una botella de agua. Tenemos vestuarios con duchas y wifi.',
+  afrojazzFaqQ5: '¿Qué niveles de AfroJazz tenéis?',
+  afrojazzFaqA5: 'Ofrecemos clases en varios niveles: Principiante (sin experiencia), Básico (ya has tocado algo), Intermedio y Avanzado. El profe te guiará al nivel que más te convenga.',
+  afrojazzFaqQ6: '¿Puedo unirme a las clases en cualquier momento del año?',
+  afrojazzFaqA6: 'Sí, nuestras clases funcionan con sistema abierto, así que puedes inscribirte cuando quieras. No hace falta esperar a principio de trimestre.',
+  afrojazzFaqQ7: '¿Tenéis algún descuento especial?',
+  afrojazzFaqA7: 'Sí. Tenemos bonos trimestrales y anuales con grandes ventajas, además de ofertas de lanzamiento para nuevos miembros.',
+  afrojazzFaqQ8: '¿Puedo probar una clase antes de inscribirme?',
+  afrojazzFaqA8: 'Por supuesto. Puedes reservar una clase de prueba para ver si es lo que buscas. Preferimos que descubras la energía del AfroJazz antes de decidir.',
+  afrojazzFaqQ9: '¿Y si falto a una clase por trabajo o compromisos?',
+  afrojazzFaqA9: 'Las clases son recuperables, así que si faltas un día, puedes venir a la siguiente clase disponible en tu mismo nivel.',
+  afrojazzFaqQ10: 'Si falto a una clase de AfroJazz, ¿puedo recuperarla haciendo otro estilo?',
+  afrojazzFaqA10: 'Sí. En Farray\'s puedes usar tu clase perdida en otro estilo (Dancehall, Hip Hop, Bachata...), siempre que el nivel sea equivalente.',
+  afrojazzFaqQ11: '¿Organizáis eventos o workshops especiales?',
+  afrojazzFaqA11: 'Sí. Tenemos masterclasses con artistas invitados, battles, showcases y nuestra gala anual donde puedes lucirte en un escenario profesional.',
+  afrojazzFaqQ12: '¿Las clases son solo para mujeres o también para hombres?',
+  afrojazzFaqA12: 'Nuestras clases son 100% inclusivas. Todos los géneros, edades y cuerpos son bienvenidos. Lo que importa es las ganas de bailar y mejorar.',
+  afrojazzFaqQ13: '¿El AfroJazz es un buen ejercicio físico?',
+  afrojazzFaqA13: 'El AfroJazz es un entrenamiento completo que trabaja especialmente piernas, core y coordinación. En una hora puedes quemar entre 400 y 600 calorías.',
+  afrojazzFaqQ14: '¿Dónde puedo encontrar clases de AfroJazz cerca de Plaza España?',
+  afrojazzFaqA14: 'Farray\'s Center está ubicado en Calle Entença 100, a solo 5 minutos de Plaza España y Estación de Sants. Puedes llegar en metro (L1, L3), bus o tren.',
+  afrojazzFaqQ15: '¿Qué hago si tengo dudas o necesito más información?',
+  afrojazzFaqA15: 'Si tienes alguna pregunta adicional o necesitas más información, puedes contactarnos:<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Dirección:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+
+  // Image alts
+  afrojazzImage1Alt: 'Clases de AfroJazz en Barcelona - Farray\'s Center',
+  afrojazzImage2Alt: 'Estudiantes practicando AfroJazz',
+  afrojazzImage3Alt: 'Yunaisy Farray - Instructor de AfroJazz',
+
+  // Course Schema (SEO)
+  afrojazzCourseSchemaName: 'Clases de AfroJazz en Barcelona - Farray\'s Center',
+  afrojazzCourseSchemaDesc: 'Aprende AfroJazz con Yunaisy Farray, instructor especializado. Clases para todos los niveles en el corazón de Barcelona.',
+
+  // Cultural History Title (para CulturalHistorySection)
+  afrojazzCulturalHistoryTitle: 'Historia y Cultura del AfroJazz',
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for AfroJazz =====
+  // Estos datos están optimizados para ser citados por IAs (ChatGPT, Perplexity, etc.)
+
+  // Dato citable – Origen
+  afrojazzCitableOrigen:
+    '[TODO: Personalizar] El AfroJazz nace de... [Describir origen histórico, lugar, época, influencias culturales]',
+
+  // Dato citable – Estadísticas científicas
+  afrojazzStatistics:
+    'Estudios científicos sobre danza señalan que bailar mejora la coordinación, la propiocepción y la condición física general, además de reducir el estrés y mejorar el estado de ánimo, y el AfroJazz se beneficia de estos mismos efectos por su carácter aeróbico y de trabajo corporal completo.',
+
+  // Dato citable – Evolución global
+  afrojazzCitableEvolucionGlobal:
+    '[TODO: Personalizar] Desde los años... el AfroJazz pasó de ser un baile local a un fenómeno global presente en escuelas de danza, battles y workshops en Europa y Latinoamérica.',
+
+  // Dato citable – Música
+  afrojazzCitableMusica:
+    '[TODO: Personalizar] El AfroJazz está fuertemente vinculado a... [Describir géneros musicales, artistas representativos, características del ritmo]',
+
+  // Dato citable – Identidad y poder
+  afrojazzCitableIdentidadPoder:
+    '[TODO: Personalizar] En el contexto de escuelas serias, el AfroJazz se trabaja como entrenamiento de conciencia corporal, fuerza, coordinación, autoestima y empoderamiento.',
+
+  // 3 Facts citables principales (para schema y AI) - IMPORTANTE para GEO
+  afrojazzCitableFact1:
+    'Una clase de AfroJazz activa puede quemar aproximadamente 300-500 calorías por hora según el peso corporal y la intensidad, en línea con otros estilos de danza fitness.',
+  afrojazzCitableFact2:
+    'Revisiones científicas sobre programas de danza en adultos indican que bailar de forma regular se asocia con menor riesgo de deterioro cognitivo y puede contribuir a reducir la incidencia de demencia frente a estilos de vida sedentarios.',
+  afrojazzCitableFact3:
+    "Farray\'s International Dance Center ofrece clases de AfroJazz dentro de una escuela con una valoración cercana al 5/5 en Google con más de 500 reseñas, lo que respalda la satisfacción del alumnado.",

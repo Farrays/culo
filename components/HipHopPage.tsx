@@ -2,11 +2,12 @@ import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
 import {
-  CONTEMPORANEO_TESTIMONIALS,
-  CONTEMPORANEO_FAQS_CONFIG,
-  CONTEMPORANEO_SCHEDULE_KEYS,
-  CONTEMPORANEO_NEARBY_AREAS,
-} from '../constants/contemporaneo';
+  HIPHOP_TESTIMONIALS,
+  HIPHOP_FAQS_CONFIG,
+  HIPHOP_SCHEDULE_KEYS,
+  HIPHOP_NEARBY_AREAS,
+  HIPHOP_VIDEO_ID,
+} from '../constants/hip-hop';
 import AnimateOnScroll from './AnimateOnScroll';
 import CulturalHistorySection from './CulturalHistorySection';
 import ScheduleSection from './ScheduleSection';
@@ -22,20 +23,9 @@ import {
   FlameIcon,
   StarIcon,
 } from './shared/Icons';
+import { CalendarDaysIcon } from '../lib/icons';
 
-// MapPinIcon for Local SEO section
-const MapPinIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-    />
-  </svg>
-);
-
-// UsersIcon for Social Proof
+// Simple inline icons
 const UsersIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
   <svg
     className={className}
@@ -52,8 +42,7 @@ const UsersIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) 
   </svg>
 );
 
-// CalendarIcon for Social Proof
-const CalendarIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
+const MapPinIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
   <svg
     className={className}
     fill="none"
@@ -61,10 +50,11 @@ const CalendarIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' 
     stroke="currentColor"
     strokeWidth={1.5}
   >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
-      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
+      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
     />
   </svg>
 );
@@ -75,32 +65,32 @@ const ANIMATION_DELAYS = {
   STAGGER_MEDIUM: 150,
 };
 
-const ContemporaneoPage: React.FC = () => {
+const HipHopPage: React.FC = () => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
-  const pageUrl = `${baseUrl}/${locale}/clases/contemporaneo-barcelona`;
+  const pageUrl = `${baseUrl}/${locale}/clases/hip-hop-barcelona`;
 
   // Schedule data - traducir las keys dinámicamente
-  const schedules = CONTEMPORANEO_SCHEDULE_KEYS.map(schedule => ({
+  const schedules = HIPHOP_SCHEDULE_KEYS.map(schedule => ({
     ...schedule,
     day: t(schedule.dayKey),
     level: t(schedule.levelKey),
-    note: 'note' in schedule ? (schedule.note as string | undefined) : undefined,
+    note: 'note' in schedule ? (schedule as { note?: string }).note : undefined,
   }));
 
   // FAQs - traducir las keys dinámicamente desde constants
-  const contemporaneoFaqs = CONTEMPORANEO_FAQS_CONFIG.map(faq => ({
+  const hiphopFaqs = HIPHOP_FAQS_CONFIG.map(faq => ({
     id: faq.id,
     question: t(faq.questionKey),
     answer: t(faq.answerKey),
   }));
 
   // Testimonials - usar desde constants
-  const contemporaneoTestimonials = CONTEMPORANEO_TESTIMONIALS;
+  const hiphopTestimonials = HIPHOP_TESTIMONIALS;
 
   // Schema Markup data for reviews
-  const reviewsSchemaData = contemporaneoTestimonials.map(testimonial => ({
-    itemReviewed: { name: "Clases de Contemporaneo - Farray's Center", type: 'Course' },
+  const reviewsSchemaData = hiphopTestimonials.map(testimonial => ({
+    itemReviewed: { name: "Clases de Hip Hop - Farray's Center", type: 'Course' },
     author: testimonial.name,
     reviewRating: { ratingValue: testimonial.rating.toString(), bestRating: '5' },
     reviewBody: testimonial.quote[locale],
@@ -111,12 +101,12 @@ const ContemporaneoPage: React.FC = () => {
   const videoSchema = {
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
-    name: t('contemporaneoVideoTitle'),
-    description: t('contemporaneoVideoDesc'),
-    thumbnailUrl: 'https://img.youtube.com/vi/${CONTEMPORANEO_VIDEO_ID}/maxresdefault.jpg',
+    name: t('hiphopVideoTitle'),
+    description: t('hiphopVideoDesc'),
+    thumbnailUrl: `https://img.youtube.com/vi/${HIPHOP_VIDEO_ID}/maxresdefault.jpg`,
     uploadDate: '2025-01-01',
-    contentUrl: 'https://www.youtube.com/watch?v=${CONTEMPORANEO_VIDEO_ID}',
-    embedUrl: 'https://www.youtube.com/embed/${CONTEMPORANEO_VIDEO_ID}',
+    contentUrl: `https://www.youtube.com/watch?v=${HIPHOP_VIDEO_ID}`,
+    embedUrl: `https://www.youtube.com/embed/${HIPHOP_VIDEO_ID}`,
   };
 
   // BreadcrumbList Schema (JSON-LD)
@@ -127,25 +117,25 @@ const ContemporaneoPage: React.FC = () => {
       {
         '@type': 'ListItem',
         position: 1,
-        name: t('contemporaneoBreadcrumbHome'),
+        name: t('hiphopBreadcrumbHome'),
         item: `${baseUrl}/${locale}`,
       },
       {
         '@type': 'ListItem',
         position: 2,
-        name: t('contemporaneoBreadcrumbClasses'),
+        name: t('hiphopBreadcrumbClasses'),
         item: `${baseUrl}/${locale}/clases`,
       },
       {
         '@type': 'ListItem',
         position: 3,
-        name: t('contemporaneoBreadcrumbUrban'),
+        name: t('hiphopBreadcrumbUrban'),
         item: `${baseUrl}/${locale}/clases/danzas-urbanas-barcelona`,
       },
       {
         '@type': 'ListItem',
         position: 4,
-        name: t('contemporaneoBreadcrumbCurrent'),
+        name: t('hiphopBreadcrumbCurrent'),
         item: pageUrl,
       },
     ],
@@ -153,12 +143,15 @@ const ContemporaneoPage: React.FC = () => {
 
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [
-    { name: t('contemporaneoBreadcrumbHome'), url: `/${locale}` },
-    { name: t('contemporaneoBreadcrumbClasses'), url: `/${locale}/clases/baile-barcelona` },
-    { name: t('contemporaneoBreadcrumbUrban'), url: `/${locale}/clases/danza-barcelona` },
+    { name: t('hiphopBreadcrumbHome'), url: `/${locale}` },
+    { name: t('hiphopBreadcrumbClasses'), url: `/${locale}/clases/baile-barcelona` },
     {
-      name: t('contemporaneoBreadcrumbCurrent'),
-      url: `/${locale}/clases/contemporaneo-barcelona`,
+      name: t('hiphopBreadcrumbUrban'),
+      url: `/${locale}/clases/danzas-urbanas-barcelona`,
+    },
+    {
+      name: t('hiphopBreadcrumbCurrent'),
+      url: `/${locale}/clases/hip-hop-barcelona`,
       isActive: true,
     },
   ];
@@ -166,23 +159,20 @@ const ContemporaneoPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>{t('contemporaneoPageTitle')} | Farray&apos;s Center</title>
-        <meta name="description" content={t('contemporaneoMetaDescription')} />
+        <title>{t('hiphopPageTitle')} | Farray&apos;s Center</title>
+        <meta name="description" content={t('hiphopMetaDescription')} />
         <link rel="canonical" href={pageUrl} />
-        <meta
-          property="og:title"
-          content={`${t('contemporaneoPageTitle')} | Farray&apos;s Center`}
-        />
-        <meta property="og:description" content={t('contemporaneoMetaDescription')} />
+        <meta property="og:title" content={`${t('hiphopPageTitle')} | Farray&apos;s Center`} />
+        <meta property="og:description" content={t('hiphopMetaDescription')} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${baseUrl}/images/og-contemporaneo.jpg`} />
+        <meta property="og:image" content={`${baseUrl}/images/og-hip-hop.jpg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${t('contemporaneoPageTitle')} | Farray's Center`} />
-        <meta name="twitter:description" content={t('contemporaneoMetaDescription')} />
-        <meta name="twitter:image" content={`${baseUrl}/images/og-contemporaneo.jpg`} />
+        <meta name="twitter:title" content={`${t('hiphopPageTitle')} | Farray's Center`} />
+        <meta name="twitter:description" content={t('hiphopMetaDescription')} />
+        <meta name="twitter:image" content={`${baseUrl}/images/og-hip-hop.jpg`} />
       </Helmet>
 
       {/* VideoObject Schema */}
@@ -199,8 +189,8 @@ const ContemporaneoPage: React.FC = () => {
 
       {/* Schema Markup */}
       <LocalBusinessSchema
-        name="Farray's International Dance Center - Clases de Contemporaneo"
-        description={t('contemporaneoMetaDescription')}
+        name="Farray's International Dance Center - Clases de Hip Hop"
+        description={t('hiphopMetaDescription')}
         url={pageUrl}
         telephone="+34622247085"
         email="info@farrayscenter.com"
@@ -222,23 +212,23 @@ const ContemporaneoPage: React.FC = () => {
       />
 
       <CourseSchema
-        name={t('contemporaneoCourseSchemaName')}
-        description={t('contemporaneoCourseSchemaDesc')}
+        name={t('hiphopCourseSchemaName')}
+        description={t('hiphopCourseSchemaDesc')}
         provider={{
           name: "Farray's International Dance Center",
           url: baseUrl,
         }}
-        educationalLevel="Beginner, Intermediate, Advanced"
-        teaches="Twerk jamaicano, técnica de danza urbana, musicalidad"
+        educationalLevel="All Levels"
+        teaches="Hip Hop, Breaking, Locking, Popping, Freestyle, Urban Dance"
         coursePrerequisites="Ninguno"
-        numberOfLessons="5 clases semanales"
+        numberOfLessons="1 clase semanal"
         timeRequired="PT1H"
         availableLanguage={['es', 'en', 'ca', 'fr']}
       />
 
       <AggregateReviewsSchema
         reviews={reviewsSchemaData}
-        itemName="Clases de Contemporaneo en Barcelona - Farray's Center"
+        itemName="Clases de Hip Hop en Barcelona - Farray's Center"
         itemType="Course"
       />
 
@@ -261,7 +251,7 @@ const ContemporaneoPage: React.FC = () => {
       <main id="main-content" className="pt-20 md:pt-24" role="main">
         {/* 1. HERO Section */}
         <section
-          id="twerk-hero"
+          id="hiphop-hero"
           aria-labelledby="hero-title"
           className="relative text-center py-24 md:py-32 overflow-hidden flex items-center justify-center min-h-[600px]"
         >
@@ -279,16 +269,16 @@ const ContemporaneoPage: React.FC = () => {
                 id="hero-title"
                 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text"
               >
-                {t('contemporaneoHeroTitle')}
+                {t('hiphopHeroTitle')}
               </h1>
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 holographic-text">
-                {t('contemporaneoHeroSubtitle')}
+                {t('hiphopHeroSubtitle')}
               </p>
               <p className="max-w-4xl mx-auto text-lg sm:text-xl md:text-2xl text-neutral/90 mt-6 sm:mt-8 mb-4 sm:mb-6 leading-relaxed">
-                {t('contemporaneoHeroDesc')}
+                {t('hiphopHeroDesc')}
               </p>
               <p className="text-base sm:text-lg md:text-xl text-neutral/90 italic mb-6">
-                {t('contemporaneoHeroLocation')}
+                {t('hiphopHeroLocation')}
               </p>
 
               {/* Social Proof */}
@@ -305,7 +295,7 @@ const ContemporaneoPage: React.FC = () => {
                 </div>
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
-                  <CalendarIcon className="w-5 h-5 text-primary-accent" />
+                  <CalendarDaysIcon className="w-5 h-5 text-primary-accent" />
                   <span>8 años en Barcelona</span>
                 </div>
               </div>
@@ -314,7 +304,7 @@ const ContemporaneoPage: React.FC = () => {
               <div
                 className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-8 sm:mt-10"
                 role="group"
-                aria-label={t('contemporaneoCTAGroup') || 'Opciones de inscripción'}
+                aria-label={t('hiphopCTAGroup') || 'Opciones de inscripción'}
               >
                 <div className="w-full sm:w-auto">
                   <a
@@ -322,10 +312,10 @@ const ContemporaneoPage: React.FC = () => {
                     aria-describedby="cta1-desc"
                     className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
                   >
-                    {t('contemporaneoCTA1')}
+                    {t('hiphopCTA1')}
                   </a>
                   <p id="cta1-desc" className="text-xs text-neutral/70 mt-2 text-center">
-                    {t('contemporaneoCTA1Subtext')}
+                    {t('hiphopCTA1Subtext')}
                   </p>
                 </div>
                 <div className="w-full sm:w-auto">
@@ -334,10 +324,10 @@ const ContemporaneoPage: React.FC = () => {
                     aria-describedby="cta2-desc"
                     className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] border-2 border-neutral text-neutral font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
                   >
-                    {t('contemporaneoCTA2')}
+                    {t('hiphopCTA2')}
                   </a>
                   <p id="cta2-desc" className="text-xs text-neutral/70 mt-2 text-center">
-                    {t('contemporaneoCTA2Subtext')}
+                    {t('hiphopCTA2Subtext')}
                   </p>
                 </div>
               </div>
@@ -345,22 +335,23 @@ const ContemporaneoPage: React.FC = () => {
               {/* Key Stats */}
               <div className="mt-12 sm:mt-16">
                 <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-12 max-w-4xl mx-auto">
-                  {/* 60-90 Minutos */}
+                  {/* 60 Minutos */}
                   <AnimateOnScroll delay={0}>
                     <div className="text-center">
                       <div className="mb-2 flex justify-center">
                         <ClockIcon className="w-8 h-8 sm:w-10 sm:h-10 text-primary-accent" />
                       </div>
-                      <div className="text-3xl sm:text-4xl md:text-5xl font-black mb-1 holographic-text">
-                        60-90
-                      </div>
+                      <AnimatedCounter
+                        target={60}
+                        className="text-3xl sm:text-4xl md:text-5xl font-black mb-1 holographic-text"
+                      />
                       <div className="text-xs sm:text-sm md:text-base text-neutral/90 font-semibold">
                         {t('classMinutes')}
                       </div>
                     </div>
                   </AnimateOnScroll>
 
-                  {/* ~500/h Calorías */}
+                  {/* ~500 Calorías */}
                   <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
                     <div className="text-center">
                       <div className="mb-2 flex justify-center">
@@ -375,7 +366,7 @@ const ContemporaneoPage: React.FC = () => {
                     </div>
                   </AnimateOnScroll>
 
-                  {/* 100% Técnica de Danza */}
+                  {/* 100% Flow */}
                   <AnimateOnScroll delay={2 * ANIMATION_DELAYS.STAGGER_SMALL}>
                     <div className="text-center">
                       <div className="mb-2 flex justify-center">
@@ -387,7 +378,7 @@ const ContemporaneoPage: React.FC = () => {
                         className="text-3xl sm:text-4xl md:text-5xl font-black mb-1 holographic-text"
                       />
                       <div className="text-xs sm:text-sm md:text-base text-neutral/90 font-semibold">
-                        {t('danceTechnique')}
+                        {t('flowGuaranteed')}
                       </div>
                     </div>
                   </AnimateOnScroll>
@@ -397,7 +388,7 @@ const ContemporaneoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 2. What is Twerk Section */}
+        {/* 2. What is Hip Hop Section */}
         <section aria-labelledby="what-is-title" className="py-12 md:py-20 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -406,37 +397,30 @@ const ContemporaneoPage: React.FC = () => {
                   id="what-is-title"
                   className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-6 sm:mb-8 text-center holographic-text"
                 >
-                  {t('contemporaneoWhatIsTitle')}
+                  {t('hiphopWhatIsTitle')}
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
                   <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-neutral/90 leading-relaxed">
                     <p className="text-lg sm:text-xl font-semibold holographic-text">
-                      {t('contemporaneoWhatIsP1')}
+                      {t('hiphopWhatIsP1')}
                     </p>
-                    <p>{t('contemporaneoWhatIsP2')}</p>
-                    <p className="italic font-medium text-neutral">{t('contemporaneoWhatIsP3')}</p>
-                    <p>{t('contemporaneoWhatIsP4')}</p>
+                    <p>{t('hiphopWhatIsP2')}</p>
+                    <p className="italic font-medium text-neutral">{t('hiphopWhatIsP3')}</p>
+                    <p>{t('hiphopWhatIsP4')}</p>
                     <p className="text-center text-xl sm:text-2xl font-bold mt-6 sm:mt-8 holographic-text">
-                      {t('contemporaneoWhatIsQuestionTitle')}
+                      {t('hiphopWhatIsQuestionTitle')}
                     </p>
                     <p className="text-center text-lg sm:text-xl font-semibold">
-                      {t('contemporaneoWhatIsQuestionAnswer')}
+                      {t('hiphopWhatIsQuestionAnswer')}
                     </p>
                   </div>
                   <div className="rounded-2xl overflow-hidden shadow-lg">
-                    <picture>
-                      <source
-                        type="image/webp"
-                        srcSet="/images/classes/dancehall/img/dancehall-classes-barcelona-01_480.webp 480w, /images/classes/dancehall/img/dancehall-classes-barcelona-01_960.webp 960w"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                      <img
-                        src="/images/classes/dancehall/img/dancehall-classes-barcelona-01_960.webp"
-                        alt="Clases de Contemporaneo en Barcelona - Estudiantes bailando en la academia"
-                        loading="lazy"
-                        className="w-full h-full object-cover"
-                      />
-                    </picture>
+                    <img
+                      src="/images/classes/hip-hop/img/hip-hop-clase-1.svg"
+                      alt="Clases de Hip Hop en Barcelona - Estudiantes bailando en la academia"
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </div>
@@ -446,57 +430,27 @@ const ContemporaneoPage: React.FC = () => {
 
         {/* 3. Schedule */}
         <ScheduleSection
-          titleKey="contemporaneoScheduleTitle"
-          subtitleKey="contemporaneoScheduleSubtitle"
+          titleKey="hiphopScheduleTitle"
+          subtitleKey="hiphopScheduleSubtitle"
           schedules={schedules}
           t={t}
         />
 
-        {/* 3b. Level Cards - Mismo diseño que AfroContemporaneo */}
+        {/* 3b. Level Cards */}
         <section className="py-14 md:py-20 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {/* Lírico Básico */}
+            <div className="max-w-2xl mx-auto">
+              {/* Open Level - Marcos Martínez */}
               <AnimateOnScroll delay={0}>
-                <div className="h-full p-6 bg-primary-dark/20 border border-primary-dark/40 rounded-2xl hover:border-primary-dark/60 transition-colors">
-                  <div className="inline-block px-3 py-1 bg-primary-dark/30 text-neutral text-sm font-semibold rounded-full mb-4">
-                    BÁSICO
-                  </div>
-                  <h3 className="text-xl font-bold text-neutral mb-3">
-                    {t('contemporaneoLevelLiricoBasicoTitle')}
-                  </h3>
-                  <p className="text-neutral/80 text-sm leading-relaxed">
-                    {t('contemporaneoLevelLiricoBasicoDesc')}
-                  </p>
-                </div>
-              </AnimateOnScroll>
-
-              {/* Lírico Intermedio */}
-              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
                 <div className="h-full p-6 bg-primary-accent/15 border border-primary-accent/30 rounded-2xl hover:border-primary-accent/50 transition-colors">
                   <div className="inline-block px-3 py-1 bg-primary-accent/20 text-primary-accent text-sm font-semibold rounded-full mb-4">
-                    INTERMEDIO
+                    OPEN LEVEL
                   </div>
                   <h3 className="text-xl font-bold text-neutral mb-3">
-                    {t('contemporaneoLevelLiricoIntermedioTitle')}
+                    {t('hiphopLevelOpenTitle')}
                   </h3>
                   <p className="text-neutral/80 text-sm leading-relaxed">
-                    {t('contemporaneoLevelLiricoIntermedioDesc')}
-                  </p>
-                </div>
-              </AnimateOnScroll>
-
-              {/* Suelo & Flow */}
-              <AnimateOnScroll delay={2 * ANIMATION_DELAYS.STAGGER_SMALL}>
-                <div className="h-full p-6 bg-primary-dark/20 border border-primary-dark/40 rounded-2xl hover:border-primary-dark/60 transition-colors">
-                  <div className="inline-block px-3 py-1 bg-primary-dark/30 text-neutral text-sm font-semibold rounded-full mb-4">
-                    BÁSICO/INTERMEDIO
-                  </div>
-                  <h3 className="text-xl font-bold text-neutral mb-3">
-                    {t('contemporaneoLevelSueloFlowTitle')}
-                  </h3>
-                  <p className="text-neutral/80 text-sm leading-relaxed">
-                    {t('contemporaneoLevelSueloFlowDesc')}
+                    {t('hiphopLevelOpenDesc')}
                   </p>
                 </div>
               </AnimateOnScroll>
@@ -504,11 +458,11 @@ const ContemporaneoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 5. Teachers Section */}
+        {/* 4. Teachers Section - Marcos Martínez */}
         <section
           id="teachers"
           aria-labelledby="teachers-title"
-          className="py-12 md:py-20 bg-primary-dark/10 relative overflow-hidden"
+          className="py-12 md:py-20 bg-black relative overflow-hidden"
         >
           <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <AnimateOnScroll>
@@ -517,82 +471,30 @@ const ContemporaneoPage: React.FC = () => {
                   id="teachers-title"
                   className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text"
                 >
-                  {t('contemporaneoTeachersTitle')}
+                  {t('hiphopTeachersTitle')}
                 </h2>
                 <p className="text-lg sm:text-xl text-neutral/70 mt-4">
-                  {t('contemporaneoTeachersSubtitle')}
+                  {t('hiphopTeachersSubtitle')}
                 </p>
               </div>
             </AnimateOnScroll>
 
-            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
-              {/* Daniel Sené */}
-              <AnimateOnScroll
-                delay={ANIMATION_DELAYS.STAGGER_SMALL}
-                className="[perspective:1000px]"
-              >
+            <div className="max-w-md mx-auto">
+              {/* Marcos Martínez - Profesor Principal */}
+              <AnimateOnScroll delay={0} className="[perspective:1000px]">
                 <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-6 sm:p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-4 sm:mb-6">
-                      <picture>
-                        <source
-                          type="image/webp"
-                          srcSet="/images/teachers/img/profesor-contemporaneo-daniel-sene_320.webp 320w, /images/teachers/img/profesor-contemporaneo-daniel-sene_640.webp 640w"
-                          sizes="160px"
-                        />
-                        <img
-                          src="/images/teachers/img/profesor-contemporaneo-daniel-sene_640.jpg"
-                          alt="Daniel Sené - Profesor de Danza Contemporánea en Barcelona"
-                          width="160"
-                          height="160"
-                          loading="lazy"
-                          className="w-full h-full object-cover"
-                        />
-                      </picture>
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2">Daniel Sené</h3>
-                    <p className="text-primary-accent font-semibold mb-3 sm:mb-4">
-                      {t('contemporaneoTeacher1Specialty')}
-                    </p>
-                    <p className="text-neutral/90 leading-relaxed text-sm">
-                      {t('contemporaneoTeacher1Bio')}
-                    </p>
-                  </div>
-                </div>
-              </AnimateOnScroll>
-
-              {/* Alejandro Miñoso */}
-              <AnimateOnScroll
-                delay={2 * ANIMATION_DELAYS.STAGGER_SMALL}
-                className="[perspective:1000px]"
-              >
-                <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-6 sm:p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-4 sm:mb-6">
-                      <picture>
-                        <source
-                          type="image/webp"
-                          srcSet="/images/teachers/img/profesor-contemporaneo-alejandro-minoso_320.webp 320w, /images/teachers/img/profesor-contemporaneo-alejandro-minoso_640.webp 640w"
-                          sizes="160px"
-                        />
-                        <img
-                          src="/images/teachers/img/profesor-contemporaneo-alejandro-minoso_640.jpg"
-                          alt="Alejandro Miñoso - Profesor de Danza Contemporánea en Barcelona"
-                          width="160"
-                          height="160"
-                          loading="lazy"
-                          className="w-full h-full object-cover"
-                        />
-                      </picture>
+                    <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-4 sm:mb-6 bg-gradient-to-br from-primary-accent/30 to-primary-dark/30 flex items-center justify-center">
+                      <span className="text-5xl sm:text-6xl font-black text-primary-accent">M</span>
                     </div>
                     <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2">
-                      Alejandro Miñoso
+                      Marcos Martínez
                     </h3>
                     <p className="text-primary-accent font-semibold mb-3 sm:mb-4">
-                      {t('contemporaneoTeacher2Specialty')}
+                      {t('hiphopTeacher1Specialty')}
                     </p>
                     <p className="text-neutral/90 leading-relaxed text-sm">
-                      {t('contemporaneoTeacher2Bio')}
+                      {t('hiphopTeacher1Bio')}
                     </p>
                   </div>
                 </div>
@@ -601,22 +503,22 @@ const ContemporaneoPage: React.FC = () => {
 
             <AnimateOnScroll>
               <p className="text-center text-base sm:text-lg text-neutral/90 mt-8 sm:mt-10 max-w-2xl mx-auto">
-                {t('contemporaneoTeachersClosing')}
+                {t('hiphopTeachersClosing')}
               </p>
             </AnimateOnScroll>
           </div>
         </section>
 
-        {/* 4b. Prepara tu primera clase - Mismo diseño que AfroContemporaneo */}
+        {/* 4b. Prepara tu primera clase - After Teachers */}
         <section className="py-14 md:py-20 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-5xl mx-auto">
                 <h3 className="text-2xl sm:text-3xl font-black tracking-tighter text-neutral mb-2 text-center holographic-text">
-                  {t('contemporaneoPrepareTitle')}
+                  {t('hiphopPrepareTitle')}
                 </h3>
                 <p className="text-base text-neutral/70 mb-6 text-center">
-                  {t('contemporaneoPrepareSubtitle')}
+                  {t('hiphopPrepareSubtitle')}
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
@@ -626,13 +528,13 @@ const ContemporaneoPage: React.FC = () => {
                       <span className="w-6 h-6 rounded-full bg-primary-accent/20 flex items-center justify-center text-sm">
                         +
                       </span>
-                      {t('contemporaneoPrepareWhatToBring')}
+                      {t('hiphopPrepareWhatToBring')}
                     </h4>
                     <ul className="space-y-2">
                       {[1, 2, 3, 4, 5].map(num => (
                         <li key={num} className="flex items-start gap-2 text-sm text-neutral/80">
                           <CheckIcon className="w-4 h-4 text-primary-accent mt-0.5 flex-shrink-0" />
-                          <span>{t(`contemporaneoPrepareItem${num}`)}</span>
+                          <span>{t(`hiphopPrepareItem${num}`)}</span>
                         </li>
                       ))}
                     </ul>
@@ -642,7 +544,7 @@ const ContemporaneoPage: React.FC = () => {
                   <div className="p-5 bg-primary-dark/15 rounded-2xl border border-primary-dark/30 hover:border-primary-dark/50 transition-all duration-300">
                     <h4 className="text-base font-bold text-neutral mb-3 flex items-center gap-2">
                       <ClockIcon className="w-5 h-5 text-primary-accent" />
-                      {t('contemporaneoPrepareBefore')}
+                      {t('hiphopPrepareBefore')}
                     </h4>
                     <ul className="space-y-2">
                       {[1, 2, 3].map(num => (
@@ -650,7 +552,7 @@ const ContemporaneoPage: React.FC = () => {
                           <span className="w-4 h-4 rounded-full bg-primary-dark/30 flex items-center justify-center text-xs text-neutral mt-0.5 flex-shrink-0">
                             -
                           </span>
-                          <span>{t(`contemporaneoPrepareBeforeItem${num}`)}</span>
+                          <span>{t(`hiphopPrepareBeforeItem${num}`)}</span>
                         </li>
                       ))}
                     </ul>
@@ -662,7 +564,7 @@ const ContemporaneoPage: React.FC = () => {
                       <span className="w-6 h-6 rounded-full bg-neutral/10 flex items-center justify-center text-sm">
                         x
                       </span>
-                      {t('contemporaneoPrepareAvoid')}
+                      {t('hiphopPrepareAvoid')}
                     </h4>
                     <ul className="space-y-2">
                       {[1, 2, 3].map(num => (
@@ -670,20 +572,20 @@ const ContemporaneoPage: React.FC = () => {
                           <span className="w-4 h-4 rounded-full bg-neutral/10 flex items-center justify-center text-xs text-neutral/60 mt-0.5 flex-shrink-0">
                             x
                           </span>
-                          <span>{t(`contemporaneoPrepareAvoidItem${num}`)}</span>
+                          <span>{t(`hiphopPrepareAvoidItem${num}`)}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
 
-                {/* Consejo del profesor */}
+                {/* Consejo de Marcos */}
                 <div className="mt-6 p-5 bg-gradient-to-r from-primary-accent/10 via-primary-dark/10 to-primary-accent/10 rounded-2xl border border-primary-accent/30">
                   <p className="text-sm font-bold text-primary-accent mb-2">
-                    {t('contemporaneoPrepareTeacherTip')}
+                    {t('hiphopPrepareTeacherTip')}
                   </p>
                   <blockquote className="text-neutral/90 italic leading-relaxed text-sm">
-                    &ldquo;{t('contemporaneoPrepareTeacherQuote')}&rdquo;
+                    &ldquo;{t('hiphopPrepareTeacherQuote')}&rdquo;
                   </blockquote>
                 </div>
               </div>
@@ -691,56 +593,56 @@ const ContemporaneoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 4c. Comparison Table - Mismo diseño que AfroContemporaneo */}
+        {/* 4c. Comparison Table - Hip Hop vs otros estilos urbanos */}
         <section className="py-14 md:py-20 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-5xl mx-auto">
                 <h3 className="text-2xl sm:text-3xl font-black tracking-tighter text-neutral mb-2 text-center holographic-text">
-                  {t('contemporaneoCompareTitle')}
+                  {t('hiphopCompareTitle')}
                 </h3>
                 <p className="text-base text-neutral/70 mb-6 text-center">
-                  {t('contemporaneoCompareSubtitle')}
+                  {t('hiphopCompareSubtitle')}
                 </p>
 
-                {/* Mobile: Cards view - 11 rows unified criteria */}
+                {/* Mobile: Cards view */}
                 <div className="block lg:hidden space-y-4">
                   {[
-                    { row: 1, lirico: 3, afro: 3, jazz: 4, ballet: 5 }, // Alineación postural clásica
-                    { row: 2, lirico: 3, afro: 4, jazz: 4, ballet: 5 }, // Técnica de pies y piernas
-                    { row: 3, lirico: 5, afro: 3, jazz: 2, ballet: 1 }, // Trabajo de suelo
-                    { row: 4, lirico: 3, afro: 5, jazz: 3, ballet: 2 }, // Trabajo de caderas y torso
-                    { row: 5, lirico: 3, afro: 5, jazz: 3, ballet: 2 }, // Disociación corporal
-                    { row: 6, lirico: 3, afro: 5, jazz: 3, ballet: 2 }, // Poliritmia / Musicalidad compleja
-                    { row: 7, lirico: 5, afro: 5, jazz: 4, ballet: 3 }, // Expresión emocional
-                    { row: 8, lirico: 5, afro: 4, jazz: 4, ballet: 4 }, // Fluidez y continuidad
-                    { row: 9, lirico: 4, afro: 5, jazz: 3, ballet: 2 }, // Conexión tierra (grounding)
-                    { row: 10, lirico: 3, afro: 5, jazz: 4, ballet: 3 }, // Exigencia cardiovascular
-                    { row: 11, lirico: 4, afro: 5, jazz: 4, ballet: 5 }, // Versatilidad para otros estilos
+                    { row: 1, hiphop: 5, breaking: 5, popping: 4, dancehall: 3 },
+                    { row: 2, hiphop: 5, breaking: 3, popping: 5, dancehall: 4 },
+                    { row: 3, hiphop: 4, breaking: 5, popping: 3, dancehall: 3 },
+                    { row: 4, hiphop: 5, breaking: 4, popping: 4, dancehall: 5 },
+                    { row: 5, hiphop: 4, breaking: 5, popping: 3, dancehall: 4 },
+                    { row: 6, hiphop: 5, breaking: 3, popping: 4, dancehall: 5 },
+                    { row: 7, hiphop: 5, breaking: 5, popping: 5, dancehall: 4 },
+                    { row: 8, hiphop: 5, breaking: 4, popping: 4, dancehall: 3 },
+                    { row: 9, hiphop: 5, breaking: 4, popping: 4, dancehall: 4 },
+                    { row: 10, hiphop: 5, breaking: 4, popping: 3, dancehall: 4 },
+                    { row: 11, hiphop: 5, breaking: 5, popping: 4, dancehall: 4 },
                   ].map(item => (
                     <div
                       key={item.row}
                       className="p-4 bg-black/30 rounded-xl border border-neutral/20"
                     >
                       <h4 className="font-bold text-neutral mb-3 text-sm">
-                        {t(`contemporaneoCompareRow${item.row}`)}
+                        {t(`hiphopCompareRow${item.row}`)}
                       </h4>
                       <div className="grid grid-cols-2 gap-2 text-xs">
                         <div className="flex justify-between items-center p-2 bg-primary-accent/15 rounded-lg border border-primary-accent/30">
-                          <span className="text-primary-accent font-semibold">Cont. Lírico</span>
-                          <span className="text-primary-accent/80">{'★'.repeat(item.lirico)}</span>
+                          <span className="text-primary-accent font-semibold">Hip Hop</span>
+                          <span className="text-primary-accent/80">{'*'.repeat(item.hiphop)}</span>
                         </div>
                         <div className="flex justify-between items-center p-2 bg-neutral/10 rounded-lg">
-                          <span className="text-neutral/70">Afro Cont.</span>
-                          <span className="text-neutral/60">{'★'.repeat(item.afro)}</span>
+                          <span className="text-neutral/70">Breaking</span>
+                          <span className="text-neutral/60">{'*'.repeat(item.breaking)}</span>
                         </div>
                         <div className="flex justify-between items-center p-2 bg-neutral/10 rounded-lg">
-                          <span className="text-neutral/70">Modern Jazz</span>
-                          <span className="text-neutral/60">{'★'.repeat(item.jazz)}</span>
+                          <span className="text-neutral/70">Popping</span>
+                          <span className="text-neutral/60">{'*'.repeat(item.popping)}</span>
                         </div>
                         <div className="flex justify-between items-center p-2 bg-neutral/10 rounded-lg">
-                          <span className="text-neutral/70">Ballet</span>
-                          <span className="text-neutral/60">{'★'.repeat(item.ballet)}</span>
+                          <span className="text-neutral/70">Dancehall</span>
+                          <span className="text-neutral/60">{'*'.repeat(item.dancehall)}</span>
                         </div>
                       </div>
                     </div>
@@ -753,54 +655,54 @@ const ContemporaneoPage: React.FC = () => {
                     <thead>
                       <tr className="border-b border-neutral/20">
                         <th className="text-left py-3 px-2 text-neutral/70 font-semibold">
-                          {t('contemporaneoCompareCapacity')}
+                          {t('hiphopCompareCapacity')}
                         </th>
                         <th className="text-center py-3 px-2 text-primary-accent font-bold bg-primary-accent/10 rounded-t-lg">
-                          {t('contemporaneoCompareLirico')}
+                          {t('hiphopCompareHipHop')}
                         </th>
                         <th className="text-center py-3 px-2 text-neutral/70 font-semibold">
-                          {t('contemporaneoCompareAfro')}
+                          {t('hiphopCompareBreaking')}
                         </th>
                         <th className="text-center py-3 px-2 text-neutral/70 font-semibold">
-                          {t('contemporaneoCompareJazz')}
+                          {t('hiphopComparePopping')}
                         </th>
                         <th className="text-center py-3 px-2 text-neutral/70 font-semibold">
-                          {t('contemporaneoCompareBallet')}
+                          {t('hiphopCompareDancehall')}
                         </th>
                       </tr>
                     </thead>
                     <tbody>
                       {[
-                        { row: 1, lirico: 3, afro: 3, jazz: 4, ballet: 5 }, // Alineación postural clásica
-                        { row: 2, lirico: 3, afro: 4, jazz: 4, ballet: 5 }, // Técnica de pies y piernas
-                        { row: 3, lirico: 5, afro: 3, jazz: 2, ballet: 1 }, // Trabajo de suelo
-                        { row: 4, lirico: 3, afro: 5, jazz: 3, ballet: 2 }, // Trabajo de caderas y torso
-                        { row: 5, lirico: 3, afro: 5, jazz: 3, ballet: 2 }, // Disociación corporal
-                        { row: 6, lirico: 3, afro: 5, jazz: 3, ballet: 2 }, // Poliritmia / Musicalidad compleja
-                        { row: 7, lirico: 5, afro: 5, jazz: 4, ballet: 3 }, // Expresión emocional
-                        { row: 8, lirico: 5, afro: 4, jazz: 4, ballet: 4 }, // Fluidez y continuidad
-                        { row: 9, lirico: 4, afro: 5, jazz: 3, ballet: 2 }, // Conexión tierra (grounding)
-                        { row: 10, lirico: 3, afro: 5, jazz: 4, ballet: 3 }, // Exigencia cardiovascular
-                        { row: 11, lirico: 4, afro: 5, jazz: 4, ballet: 5 }, // Versatilidad para otros estilos
+                        { row: 1, hiphop: 5, breaking: 5, popping: 4, dancehall: 3 },
+                        { row: 2, hiphop: 5, breaking: 3, popping: 5, dancehall: 4 },
+                        { row: 3, hiphop: 4, breaking: 5, popping: 3, dancehall: 3 },
+                        { row: 4, hiphop: 5, breaking: 4, popping: 4, dancehall: 5 },
+                        { row: 5, hiphop: 4, breaking: 5, popping: 3, dancehall: 4 },
+                        { row: 6, hiphop: 5, breaking: 3, popping: 4, dancehall: 5 },
+                        { row: 7, hiphop: 5, breaking: 5, popping: 5, dancehall: 4 },
+                        { row: 8, hiphop: 5, breaking: 4, popping: 4, dancehall: 3 },
+                        { row: 9, hiphop: 5, breaking: 4, popping: 4, dancehall: 4 },
+                        { row: 10, hiphop: 5, breaking: 4, popping: 3, dancehall: 4 },
+                        { row: 11, hiphop: 5, breaking: 5, popping: 4, dancehall: 4 },
                       ].map((item, idx) => (
                         <tr
                           key={item.row}
                           className={`border-b border-neutral/10 ${idx % 2 === 0 ? 'bg-black/20' : ''}`}
                         >
                           <td className="py-3 px-2 text-neutral/80">
-                            {t(`contemporaneoCompareRow${item.row}`)}
+                            {t(`hiphopCompareRow${item.row}`)}
                           </td>
                           <td className="py-3 px-2 text-center bg-primary-accent/10 text-primary-accent/80">
-                            {'★'.repeat(item.lirico)}
+                            {'*'.repeat(item.hiphop)}
                           </td>
                           <td className="py-3 px-2 text-center text-neutral/60">
-                            {'★'.repeat(item.afro)}
+                            {'*'.repeat(item.breaking)}
                           </td>
                           <td className="py-3 px-2 text-center text-neutral/60">
-                            {'★'.repeat(item.jazz)}
+                            {'*'.repeat(item.popping)}
                           </td>
                           <td className="py-3 px-2 text-center text-neutral/60">
-                            {'★'.repeat(item.ballet)}
+                            {'*'.repeat(item.dancehall)}
                           </td>
                         </tr>
                       ))}
@@ -811,22 +713,22 @@ const ContemporaneoPage: React.FC = () => {
                 {/* What does this mean for you? */}
                 <div className="mt-8 p-5 bg-black/30 rounded-2xl border border-neutral/20">
                   <h4 className="text-lg font-bold text-neutral mb-4">
-                    {t('contemporaneoCompareMeaningTitle')}
+                    {t('hiphopCompareMeaningTitle')}
                   </h4>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {[1, 2, 3, 4].map(num => (
                       <div key={num} className="space-y-1">
                         <p className="text-sm font-semibold text-primary-accent">
-                          {t(`contemporaneoCompareMeaning${num}Title`)}
+                          {t(`hiphopCompareMeaning${num}Title`)}
                         </p>
                         <p className="text-sm text-neutral/70">
-                          {t(`contemporaneoCompareMeaning${num}Desc`)}
+                          {t(`hiphopCompareMeaning${num}Desc`)}
                         </p>
                       </div>
                     ))}
                   </div>
                   <p className="mt-4 text-sm font-semibold text-primary-accent italic text-center">
-                    {t('contemporaneoCompareConclusion')}
+                    {t('hiphopCompareConclusion')}
                   </p>
                 </div>
               </div>
@@ -843,7 +745,7 @@ const ContemporaneoPage: React.FC = () => {
                   id="identify-title"
                   className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-6 sm:mb-8 holographic-text"
                 >
-                  {t('contemporaneoIdentifyTitle')}
+                  {t('hiphopIdentifyTitle')}
                 </h2>
               </div>
             </AnimateOnScroll>
@@ -851,9 +753,7 @@ const ContemporaneoPage: React.FC = () => {
             <ul
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-8 sm:mb-10 list-none"
               role="list"
-              aria-label={
-                t('contemporaneoIdentifyListLabel') || 'Situaciones con las que te identificas'
-              }
+              aria-label={t('hiphopIdentifyListLabel') || 'Situaciones con las que te identificas'}
             >
               {[1, 2, 3, 4, 5, 6].map((num, index) => (
                 <AnimateOnScroll
@@ -869,9 +769,7 @@ const ContemporaneoPage: React.FC = () => {
                     >
                       <CheckIcon className="text-primary-accent" size="sm" />
                     </div>
-                    <p className="text-neutral/90 leading-relaxed">
-                      {t(`contemporaneoIdentify${num}`)}
-                    </p>
+                    <p className="text-neutral/90 leading-relaxed">{t(`hiphopIdentify${num}`)}</p>
                   </div>
                 </AnimateOnScroll>
               ))}
@@ -881,7 +779,7 @@ const ContemporaneoPage: React.FC = () => {
             <AnimateOnScroll>
               <div className="text-center mb-4 sm:mb-6">
                 <p className="text-sm text-neutral/75 italic max-w-2xl mx-auto">
-                  {t('contemporaneoIdentifyTransition')}
+                  {t('hiphopIdentifyTransition')}
                 </p>
               </div>
             </AnimateOnScroll>
@@ -889,7 +787,7 @@ const ContemporaneoPage: React.FC = () => {
             <AnimateOnScroll>
               <div className="text-center mb-6 sm:mb-8 max-w-4xl mx-auto">
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-4 sm:mb-6 holographic-text">
-                  {t('contemporaneoNeedEnrollTitle')}
+                  {t('hiphopNeedEnrollTitle')}
                 </h3>
               </div>
             </AnimateOnScroll>
@@ -897,13 +795,13 @@ const ContemporaneoPage: React.FC = () => {
             <AnimateOnScroll>
               <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4">
                 <p className="text-lg sm:text-xl font-semibold holographic-text">
-                  {t('contemporaneoIdentifyAgitate1')}
+                  {t('hiphopIdentifyAgitate1')}
                 </p>
                 <p className="text-base sm:text-lg text-neutral/90">
-                  {t('contemporaneoIdentifySolution')}
+                  {t('hiphopIdentifySolution')}
                 </p>
                 <p className="text-lg sm:text-xl text-neutral/90 italic">
-                  {t('contemporaneoIdentifyClosing')}
+                  {t('hiphopIdentifyClosing')}
                 </p>
               </div>
             </AnimateOnScroll>
@@ -919,7 +817,7 @@ const ContemporaneoPage: React.FC = () => {
                   id="transform-title"
                   className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
                 >
-                  {t('contemporaneoTransformTitle')}
+                  {t('hiphopTransformTitle')}
                 </h2>
               </div>
             </AnimateOnScroll>
@@ -936,10 +834,10 @@ const ContemporaneoPage: React.FC = () => {
                       {num}
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold text-neutral mb-2 sm:mb-3">
-                      {t(`contemporaneoTransform${num}Title`)}
+                      {t(`hiphopTransform${num}Title`)}
                     </h3>
                     <p className="text-neutral/90 leading-relaxed text-sm sm:text-base">
-                      {t(`contemporaneoTransform${num}Desc`)}
+                      {t(`hiphopTransform${num}Desc`)}
                     </p>
                   </div>
                 </AnimateOnScroll>
@@ -949,17 +847,21 @@ const ContemporaneoPage: React.FC = () => {
         </section>
 
         {/* 7. Why Choose Farray's + Logos Section */}
-        <section className="py-12 md:py-20 bg-primary-dark/10">
+        <section className="py-16 md:py-24 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
+            {/* Why Choose Farray's Cards - FIRST */}
             <AnimateOnScroll>
-              <div className="text-center mb-8 sm:mb-10 max-w-4xl mx-auto">
+              <div className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('contemporaneoTransformCTA')}
+                  {t('hiphopTransformCTA')}
                 </h2>
+                <p className="text-lg sm:text-xl text-primary-accent font-semibold">
+                  {t('hiphopTransformCTASubtitle')}
+                </p>
               </div>
             </AnimateOnScroll>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-10 sm:mb-12">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-16 md:mb-20">
               {[1, 7, 2, 3, 4, 5, 6].map((num, index) => (
                 <AnimateOnScroll
                   key={num}
@@ -973,10 +875,10 @@ const ContemporaneoPage: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-base sm:text-lg font-bold text-neutral mb-2">
-                          {t(`contemporaneoWhyChoose${num}Title`)}
+                          {t(`hiphopWhyChoose${num}Title`)}
                         </h3>
                         <p className="text-neutral/90 text-sm leading-relaxed">
-                          {t(`contemporaneoWhyChoose${num}Desc`)}
+                          {t(`hiphopWhyChoose${num}Desc`)}
                         </p>
                       </div>
                     </div>
@@ -985,16 +887,16 @@ const ContemporaneoPage: React.FC = () => {
               ))}
             </div>
 
-            {/* Trust Bar - Stats */}
+            {/* Trust Bar - Stats AFTER Why Choose cards */}
             <AnimateOnScroll>
-              <div className="flex flex-col md:flex-row justify-center items-center gap-6 sm:gap-8 md:gap-16 max-w-5xl mx-auto mb-10 sm:mb-12">
+              <div className="flex flex-col md:flex-row justify-center items-center gap-8 sm:gap-12 md:gap-20 max-w-5xl mx-auto mb-16 md:mb-20">
                 <div className="text-center">
                   <AnimatedCounter
                     target={8}
                     suffix="+"
-                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
+                    className="text-4xl sm:text-5xl md:text-6xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-3xl sm:text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm sm:text-base text-neutral/80 font-semibold uppercase tracking-wide">
                     {t('yearsExperience')}
                   </p>
                 </div>
@@ -1002,9 +904,9 @@ const ContemporaneoPage: React.FC = () => {
                   <AnimatedCounter
                     target={1500}
                     suffix="+"
-                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
+                    className="text-4xl sm:text-5xl md:text-6xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-3xl sm:text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm sm:text-base text-neutral/80 font-semibold uppercase tracking-wide">
                     {t('activeStudents')}
                   </p>
                 </div>
@@ -1012,9 +914,9 @@ const ContemporaneoPage: React.FC = () => {
                   <AnimatedCounter
                     target={15000}
                     suffix="+"
-                    className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
+                    className="text-4xl sm:text-5xl md:text-6xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-3xl sm:text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm sm:text-base text-neutral/80 font-semibold uppercase tracking-wide">
                     {t('satisfiedStudents')}
                   </p>
                 </div>
@@ -1025,7 +927,7 @@ const ContemporaneoPage: React.FC = () => {
             <AnimateOnScroll>
               <div className="text-center max-w-4xl mx-auto">
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-6 sm:mb-8 holographic-text">
-                  {t('contemporaneoLogosTitle')}
+                  {t('hiphopLogosTitle')}
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto items-center mb-4 sm:mb-6">
                   <div className="flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105">
@@ -1082,7 +984,7 @@ const ContemporaneoPage: React.FC = () => {
                   </div>
                 </div>
                 <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter holographic-text">
-                  {t('contemporaneoLogosIntlFestivalsText')}
+                  {t('hiphopLogosIntlFestivalsText')}
                 </p>
               </div>
             </AnimateOnScroll>
@@ -1095,16 +997,16 @@ const ContemporaneoPage: React.FC = () => {
             <AnimateOnScroll>
               <div className="max-w-3xl mx-auto text-center space-y-4 sm:space-y-5">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 sm:mb-6 holographic-text">
-                  {t('contemporaneoWhyTodayFullTitle')}
+                  {t('hiphopWhyTodayFullTitle')}
                 </h2>
-                <p className="text-lg sm:text-xl text-neutral/90">{t('contemporaneoWhyToday1')}</p>
-                <p className="text-lg sm:text-xl text-neutral/90">{t('contemporaneoWhyToday2')}</p>
-                <p className="text-lg sm:text-xl text-neutral/90">{t('contemporaneoWhyToday3')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90">{t('hiphopWhyToday1')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90">{t('hiphopWhyToday2')}</p>
+                <p className="text-lg sm:text-xl text-neutral/90">{t('hiphopWhyToday3')}</p>
                 <p className="text-xl sm:text-2xl font-bold holographic-text mt-4 sm:mt-6">
-                  {t('contemporaneoWhyTodayClosing1')}
+                  {t('hiphopWhyTodayClosing1')}
                 </p>
                 <p className="text-base sm:text-lg text-neutral/90 italic">
-                  {t('contemporaneoWhyTodayClosing2')}
+                  {t('hiphopWhyTodayClosing2')}
                 </p>
               </div>
             </AnimateOnScroll>
@@ -1117,19 +1019,17 @@ const ContemporaneoPage: React.FC = () => {
             <AnimateOnScroll>
               <div className="text-center mb-8 sm:mb-12 max-w-4xl mx-auto">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('contemporaneoVideoTitle')}
+                  {t('hiphopVideoTitle')}
                 </h2>
-                <p className="text-base sm:text-lg text-neutral/70">
-                  {t('contemporaneoVideoDesc')}
-                </p>
+                <p className="text-base sm:text-lg text-neutral/70">{t('hiphopVideoDesc')}</p>
               </div>
             </AnimateOnScroll>
 
             <div className="max-w-4xl mx-auto">
               <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
                 <YouTubeEmbed
-                  videoId="${CONTEMPORANEO_VIDEO_ID}"
-                  title="Clases de Contemporaneo en Barcelona - Farray's Center"
+                  videoId={HIPHOP_VIDEO_ID}
+                  title="Clases de Hip Hop en Barcelona - Farray's Center"
                 />
               </AnimateOnScroll>
             </div>
@@ -1167,7 +1067,7 @@ const ContemporaneoPage: React.FC = () => {
             </AnimateOnScroll>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
-              {contemporaneoTestimonials.map((testimonial, index) => (
+              {hiphopTestimonials.map((testimonial, index) => (
                 <AnimateOnScroll
                   key={testimonial.id}
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
@@ -1196,8 +1096,18 @@ const ContemporaneoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 11. Final CTA Section */}
-        <section id="final-cta" className="relative py-12 sm:py-16 md:py-24 overflow-hidden">
+        {/* 11. Cultural History - Contenido profundo SEO (con citabilidad integrada) */}
+        <CulturalHistorySection
+          titleKey="hiphopCulturalHistoryTitle"
+          shortDescKey="hiphopCulturalShort"
+          fullHistoryKey="hiphopCulturalFull"
+          readMoreText={t('readMore')}
+          readLessText={t('readLess')}
+          t={t}
+        />
+
+        {/* 12. Final CTA Section */}
+        <section id="final-cta" className="relative py-16 md:py-24 overflow-hidden">
           {/* Background like Hero */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
@@ -1207,23 +1117,23 @@ const ContemporaneoPage: React.FC = () => {
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('contemporaneoFinalCTATitle')}
+                  {t('hiphopFinalCTATitle')}
                 </h2>
                 <p className="text-xl sm:text-2xl font-bold mb-4 sm:mb-5 holographic-text">
-                  {t('contemporaneoFinalCTASubtitle')}
+                  {t('hiphopFinalCTASubtitle')}
                 </p>
                 <p className="text-lg sm:text-xl text-neutral/90 mb-5 sm:mb-6 leading-relaxed">
-                  {t('contemporaneoFinalCTADesc')}
+                  {t('hiphopFinalCTADesc')}
                 </p>
                 <p className="text-base sm:text-lg text-neutral/90 mb-6 sm:mb-8 italic">
-                  {t('contemporaneoFinalCTAFunny')}
+                  {t('hiphopFinalCTAFunny')}
                 </p>
 
                 {/* CTA Final - Enhanced UX & A11y */}
                 <div
                   className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
                   role="group"
-                  aria-label={t('contemporaneoCTAGroup') || 'Opciones de inscripción'}
+                  aria-label={t('hiphopCTAGroup') || 'Opciones de inscripción'}
                 >
                   <div className="w-full sm:w-auto">
                     <a
@@ -1231,10 +1141,10 @@ const ContemporaneoPage: React.FC = () => {
                       aria-describedby="final-cta1-desc"
                       className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
                     >
-                      {t('contemporaneoCTA1')}
+                      {t('hiphopCTA1')}
                     </a>
                     <p id="final-cta1-desc" className="text-xs text-neutral/70 mt-2 text-center">
-                      {t('contemporaneoCTA1Subtext')}
+                      {t('hiphopCTA1Subtext')}
                     </p>
                   </div>
                   <div className="w-full sm:w-auto">
@@ -1243,10 +1153,10 @@ const ContemporaneoPage: React.FC = () => {
                       aria-describedby="final-cta2-desc"
                       className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] border-2 border-neutral text-neutral font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
                     >
-                      {t('contemporaneoCTA2')}
+                      {t('hiphopCTA2')}
                     </a>
                     <p id="final-cta2-desc" className="text-xs text-neutral/70 mt-2 text-center">
-                      {t('contemporaneoCTA2Subtext')}
+                      {t('hiphopCTA2Subtext')}
                     </p>
                   </div>
                 </div>
@@ -1255,33 +1165,21 @@ const ContemporaneoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 12. Cultural History - Contenido profundo SEO con citaciones GEO */}
-        <CulturalHistorySection
-          titleKey="contemporaneoCulturalHistoryTitle"
-          shortDescKey="contemporaneoCulturalShort"
-          fullHistoryKey="contemporaneoCulturalFull"
-          readMoreText={t('readMore')}
-          readLessText={t('readLess')}
-          t={t}
-        />
-
         {/* 13. FAQ */}
-        <FAQSection title={t('contemporaneoFaqTitle')} faqs={contemporaneoFaqs} pageUrl={pageUrl} />
+        <FAQSection title={t('hiphopFaqTitle')} faqs={hiphopFaqs} pageUrl={pageUrl} />
 
-        {/* 14. Local SEO Section - Al final de todo como AfroContemporaneo */}
+        {/* 14. Local SEO Section - Cerca de ti */}
         <section className="py-10 md:py-14 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto p-6 bg-black/30 rounded-2xl border border-neutral/20">
                 <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-4">
-                  {t('contemporaneoNearbyTitle')}
+                  {t('hiphopNearbyTitle')}
                 </h3>
-                <p className="text-neutral/80 mb-6">{t('contemporaneoNearbyDesc')}</p>
-                <p className="text-neutral/90 font-semibold mb-4">
-                  {t('contemporaneoNearbySearchText')}
-                </p>
+                <p className="text-neutral/80 mb-6">{t('hiphopNearbyDesc')}</p>
+                <p className="text-neutral/90 font-semibold mb-4">{t('hiphopNearbySearchText')}</p>
                 <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
-                  {CONTEMPORANEO_NEARBY_AREAS.map((area, index) => (
+                  {HIPHOP_NEARBY_AREAS.map((area, index) => (
                     <div key={index} className="flex items-center gap-2 text-sm">
                       <MapPinIcon className="w-4 h-4 text-primary-accent" />
                       <span className="text-neutral/80">
@@ -1290,7 +1188,7 @@ const ContemporaneoPage: React.FC = () => {
                     </div>
                   ))}
                 </div>
-                <p className="text-neutral/70 text-sm mt-4">{t('contemporaneoNearbyMetro')}</p>
+                <p className="text-neutral/70 text-sm mt-4">{t('hiphopNearbyMetro')}</p>
               </div>
             </AnimateOnScroll>
           </div>
@@ -1300,4 +1198,4 @@ const ContemporaneoPage: React.FC = () => {
   );
 };
 
-export default ContemporaneoPage;
+export default HipHopPage;

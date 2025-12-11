@@ -54,6 +54,9 @@ const ModernJazzPage = lazy(() => import('./components/ModernJazzPage'));
 const BalletPage = lazy(() => import('./components/BalletPage'));
 const ContemporaneoPage = lazy(() => import('./components/ContemporaneoPage'));
 const AfroContemporaneoPage = lazy(() => import('./components/AfroContemporaneoPage'));
+const AfroJazzPage = lazy(() => import('./components/AfroJazzPage'));
+const StretchingPage = lazy(() => import('./components/StretchingPage'));
+const HipHopPage = lazy(() => import('./components/HipHopPage'));
 
 // Valid locales
 const VALID_LOCALES: Locale[] = ['es', 'en', 'ca', 'fr'];
@@ -302,6 +305,16 @@ const AppContent: React.FC = () => {
             />
 
             <Route
+              path="/:locale/clases/afro-jazz"
+              element={
+                <>
+                  <LocaleSync />
+                  <AfroJazzPage />
+                </>
+              }
+            />
+
+            <Route
               path="/:locale/clases/salsa-bachata-barcelona"
               element={
                 <>
@@ -327,6 +340,26 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <PreparacionFisicaBailarinesPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/clases/stretching-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <StretchingPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/clases/hip-hop-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <HipHopPage />
                 </>
               }
             />

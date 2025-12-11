@@ -49,10 +49,10 @@ const FAQSection: React.FC<FAQSectionProps> = ({ title, faqs }) => {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
-      <section id="faq" className="pt-12 pb-20 md:pt-16 md:pb-32 bg-black">
+      <section id="faq" className="py-10 md:py-14 bg-black">
         <div className="container mx-auto px-6">
           <AnimateOnScroll>
-            <div className="text-center mb-16 max-w-3xl mx-auto">
+            <div className="text-center mb-8 max-w-3xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
                 {title}
               </h2>

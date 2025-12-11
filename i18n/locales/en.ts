@@ -23,6 +23,10 @@ export const en = {
   navSexyStyle: 'Sexy Style',
   navBallet: 'Ballet',
   navModernJazz: 'Modern Jazz',
+  navContemporaneo: 'Contemporary',
+  navAfroContemporaneo: 'Afro Contemporary',
+  navAfroJazz: 'Afro Jazz',
+  navStretching: 'Stretching',
   navPrepFisica: 'Training for Dancers',
   navClasesParticulares: 'Private Classes',
   navServices: 'Services',
@@ -676,6 +680,20 @@ export const en = {
   home_categories_otras_intro:
     'Travel the world through dance with Flamenco, Pole Dance, Aerial Silks, and more unique styles.',
 
+  // Stretching Category
+  home_categories_stretching_title: 'Stretching & Flexibility',
+  home_categories_stretching_image_alt: 'Stretching and flexibility class',
+  home_categories_stretching_bullets: 'Flexibility · Mobility · Relaxation · Recovery',
+  home_categories_stretching_intro:
+    'Improve your flexibility, joint mobility and muscle recovery. Stretching classes for dancers and general public looking to take care of their body.',
+
+  // All Classes Category
+  home_categories_todas_title: 'All Dance Classes',
+  home_categories_todas_image_alt: 'Dance classes in Barcelona',
+  home_categories_todas_bullets: '+25 Styles · All Levels · Farray Method® · Expert Teachers',
+  home_categories_todas_intro:
+    'Explore our complete catalog with over 25 dance styles. From classical ballet to urban dances, find the perfect class for you.',
+
   // ===== DANCE CLASSES HUB PAGE (/clases/baile-barcelona) =====
   // SEO Meta
   danceClassesHub_title: "Dance Classes in Barcelona | Category & Style Hub | Farray's",
@@ -777,6 +795,12 @@ export const en = {
   danceClassesHub_style_sevillanas: 'Sevillanas',
   danceClassesHub_style_telas_aereas: 'Aerial Silks & Hoop',
   danceClassesHub_style_acro_yoga: 'Acro Yoga',
+  danceClassesHub_style_salsa_bachata: 'Salsa & Bachata',
+  danceClassesHub_style_salsa_bachata_desc:
+    'Latin partner dances combining passion, rhythm and connection. Cuban salsa with authentic Caribbean flavor and Bachata with Dominican sensuality. Classes for all levels where you will learn technique, leading/following and musicality.',
+  danceClassesHub_style_entrenamiento: 'Training for Dancers',
+  danceClassesHub_style_entrenamiento_desc:
+    'Physical preparation specific for dancers. Strengthening, flexibility, endurance and injury prevention. The perfect complement to improve your performance in any dance style.',
 
   // Dance Style Descriptions
   danceClassesHub_style_afro_contemporaneo_desc:
@@ -4876,6 +4900,89 @@ Farray's International Dance Center is rated close to **5/5 on Google**, with hu
   modernjazzCitableFact3:
     "Farray's International Dance Center is rated close to 5/5 on Google, with hundreds of reviews placing it among the best-rated dance centers in Barcelona.",
 
+  // ===== Cultural Section Title =====
+  modernjazzCulturalTitle: 'History and Evolution of Modern Jazz',
+
+  // ===== Prepare Section =====
+  modernjazzPrepareTitle: 'Prepare for your first Modern Jazz class',
+  modernjazzPrepareSubtitle: 'Everything you need to know before coming',
+  modernjazzPrepareWhatToBring: 'What to bring:',
+  modernjazzPrepareItem1: 'Comfortable, fitted clothing (leggings, tights or dance pants)',
+  modernjazzPrepareItem2: 'T-shirt or top that shows body line',
+  modernjazzPrepareItem3: 'Water bottle (minimum 500ml) - you will need it',
+  modernjazzPrepareItem4: 'Small towel for sweat',
+  modernjazzPrepareItem5: 'Jazz shoes or dance socks (ask the teacher)',
+  modernjazzPrepareBefore: 'Before arriving:',
+  modernjazzPrepareBeforeItem1: 'Arrive 10-15 minutes early to change and settle in',
+  modernjazzPrepareBeforeItem2: 'Avoid heavy meals 2 hours before class',
+  modernjazzPrepareBeforeItem3: 'Stay well hydrated throughout the day',
+  modernjazzPrepareAvoid: 'Avoid:',
+  modernjazzPrepareAvoidItem1: 'Jewelry, rings, bracelets or accessories that could catch',
+  modernjazzPrepareAvoidItem2: 'Very loose clothing that hides your posture',
+  modernjazzPrepareAvoidItem3: 'Street shoes in the studio (changing rooms available)',
+  modernjazzPrepareTeacherTip: "Alejandro's tip:",
+  modernjazzPrepareTeacherQuote:
+    'In Modern Jazz, attitude is everything. Come ready to enjoy, try new things and express yourself. We build technique together, but you bring the energy.',
+
+  // ===== Comparison Table Section =====
+  modernjazzCompareTitle: 'Modern Jazz vs Other Disciplines: What is the difference?',
+  modernjazzCompareSubtitle:
+    'Each dance style develops different abilities. Here is how Modern Jazz compares with other styles we offer:',
+  modernjazzCompareCapacity: 'Capability',
+  modernjazzCompareRow1: 'Musicality and rhythm',
+  modernjazzCompareRow2: 'Energy and dynamism',
+  modernjazzCompareRow3: 'Classical technique base',
+  modernjazzCompareRow4: 'Emotional expression',
+  modernjazzCompareRow5: 'Postural alignment',
+  modernjazzCompareRow6: 'Movement versatility',
+  modernjazzCompareRow7: 'Control and precision',
+  modernjazzCompareRow8: 'Stage presence',
+  modernjazzCompareRow9: 'Flow and continuity',
+  modernjazzCompareRow10: 'Application to performances',
+  modernjazzCompareRow11: 'Cardiovascular demand',
+  modernjazzCompareMeaningTitle: 'What does this mean for you?',
+  modernjazzCompareMeaning1Title: 'If you come from Ballet:',
+  modernjazzCompareMeaning1Desc:
+    'You will discover a freedom of movement that complements your classical technique. Modern musicality and jazz energy will expand your expressiveness.',
+  modernjazzCompareMeaning2Title: 'If you come from Contemporary:',
+  modernjazzCompareMeaning2Desc:
+    'You will gain rhythmic precision and dynamism. Modern Jazz will give you tools for more energetic and defined movements.',
+  modernjazzCompareMeaning3Title: 'If you come from urban styles:',
+  modernjazzCompareMeaning3Desc:
+    'You will develop greater technique and body control. The jazz foundation will give you versatility for any dance style.',
+  modernjazzCompareMeaning4Title: 'If you are a beginner:',
+  modernjazzCompareMeaning4Desc:
+    'Modern Jazz is ideal for starting: it combines accessible technique with fun, and prepares you for any other style you want to explore.',
+  modernjazzCompareConclusion:
+    'Modern Jazz is the perfect bridge between classical technique and contemporary expression.',
+
+  // ===== Local SEO Section =====
+  modernjazzNearbyTitle: 'Modern Jazz near you in Barcelona',
+  modernjazzNearbyDesc:
+    'Our Modern Jazz classes are in the heart of Barcelona, accessible from anywhere in the city. CID-UNESCO recognized academy.',
+  modernjazzNearbySearchText:
+    'If you search "Modern Jazz classes near me" in Barcelona, we are at:',
+  modernjazzNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min walk, Entença (L5) - 5 min walk or Hostafrancs (L1) - 5 min walk',
+
+  // ===== Citable Content =====
+  modernjazzCitableDefinicion:
+    '**"Modern Jazz is the pedagogical denomination of American theatrical jazz, founded by Jack Cole in the 1940s. This revolutionary discipline fused classical ballet technique with syncopated jazz groove, systematized on Broadway and Hollywood."**',
+  modernjazzCitableOrigen:
+    '**"Modern Jazz was born in the United States in the mid-20th century, developed by pioneers like Jack Cole (considered the father of theatrical jazz), Bob Fosse (famous for his signature style of shoulders, hips and hats) and Luigi (Eugene Louis Faccuito), who systematized the technique after an accident that left him partially paralyzed."**',
+  modernjazzCitableTecnicas:
+    '**"Fundamental Modern Jazz techniques include: isolations (isolated movements of head, shoulders, ribcage and hips), contractions and releases, jazz walks, pirouettes, grand battements, ball changes, kicks and jumps like jetés and tour jetés."**',
+  modernjazzCitableMetodologia:
+    '**"At Farray\'s Center, Modern Jazz classes follow a methodology combining technical warm-up, center exercises (isolations, coordination), diagonals (turns, jumps, traveling) and final choreography. Alejandro Miñoso, trained at Cuba\'s National Art School, brings Cuban technique discipline with jazz expressiveness."**',
+  modernjazzCitableEvolucionGlobal:
+    '**"Modern Jazz evolved from Broadway and Hollywood shows of the 40s-60s to become a global style present in music videos, commercials, dance competitions and schools worldwide. Artists like Michael Jackson popularized jazz elements in pop culture."**',
+  modernjazzCitableExpresionCorporal:
+    '**"Unlike ballet, Modern Jazz allows greater personal expression freedom. Each dancer develops their own style within the technique, combining precision with personality, making it ideal for those seeking technique without rigidity."**',
+  modernjazzCitableBroadway:
+    '**"Broadway jazz, developed by choreographers like Bob Fosse, Jerome Robbins and Gwen Verdon, defined a theatrical style still present in musicals like Chicago, Cabaret, All That Jazz, and current productions like Hamilton and SIX."**',
+  modernjazzCitableLegado:
+    '**"The Modern Jazz legacy lives on in every pop music video, every Broadway musical and every dance school teaching jazz technique. It is the foundation of contemporary commercial dance and continues evolving with each new generation of dancers."**',
+
   // ========================================
   // BALLET PAGE - Ballet Classes in Barcelona
   // ========================================
@@ -4931,31 +5038,48 @@ Farray's International Dance Center is rated close to **5/5 on Google**, with hu
   balletCulturalHistoryTitle: 'Want to learn more about ballet?',
   balletCulturalShort:
     'Ballet was born in the Italian Renaissance courts and perfected in France under Louis XIV, who founded the first formal school dedicated to professional dance in 1661. This discipline has withstood wars, revolutions and social changes because it offers something unique: the complete transformation of the human being through movement.',
-  balletCulturalFull: `### Origins of Ballet: From Courts to Stage
+  balletCulturalFull: `### Definition of Classical Ballet
 
-Ballet began in the Italian courts of the 15th century, where nobility danced to celebrate weddings and political events. When Catherine de Medici married Henry II of France, she brought this tradition to the French court, marking the beginning of a new cultural era in Europe.
+**Classical ballet is a highly technical form of theatrical dance with French vocabulary based on fundamental principles such as turnout (external rotation of legs), the five positions codified by Pierre Beauchamp in 1700, and pointe work.** It is the foundation of almost all dance disciplines and requires years of systematic training.
+
+**"Classical Ballet: technical theatrical dance, French vocabulary, turnout, 5 positions (Beauchamp, 1700), pointe work."**
+
+### Origins of Ballet: From Courts to Stage
+
+**Ballet originated in the Italian Renaissance courts (15th century), was codified in France under Louis XIV who founded the Académie Royale de Danse in 1661, and reached its technical peak in Russia with Marius Petipa and Tchaikovsky's ballets** (Swan Lake, Sleeping Beauty, The Nutcracker).
+
+When Catherine de Medici married Henry II of France, she brought this tradition to the French court, marking the beginning of a new cultural era in Europe.
+
+**"Ballet (1661, Louis XIV): Académie Royale de Danse. Peak in Russia: Petipa + Tchaikovsky."**
 
 ### The French Golden Age
 
-In 1661, Louis XIV—known as "the Sun King" for his leading role in the Ballet de la Nuit—founded the Académie Royale de Danse, the first institution to formally codify and teach dance. His master, Pierre Beauchamp, established the five fundamental foot positions that remain the universal technical foundation of classical ballet.
+In 1661, Louis XIV—known as "the Sun King" for his leading role in the Ballet de la Nuit—founded the Académie Royale de Danse, the first institution to formally codify and teach dance. His master, **Pierre Beauchamp, established the five fundamental foot positions** that remain the universal technical foundation of classical ballet.
 
-### The Technique That Changed Everything
+### Fundamental Ballet Techniques
 
-Why has ballet endured for over 300 years, while other dances disappear? Because its classical technique develops:
+**Fundamental ballet techniques include: barre work (pliés, tendus, dégagés, battements), center work (adagio, pirouettes, allegro), jumps (petit allegro, grand allegro), and pointe work for advanced level.** The technique requires muscular control, flexibility and millimetric precision.
+
+Why has ballet endured for over 300 years? Because it develops:
 
 - **Perfect body alignment**: every movement starts from a strong, balanced center
 - **Spatial awareness**: exact knowledge of every part of the body in space
 - **Deep muscle control**: strength from stabilizing muscles
-- **Muscle and mental memory**: sequences train both body and mind
 - **Grace under pressure**: the ability to make the difficult look easy
 
-### Cuban Excellence and Carlos Acosta
+**"Ballet technique: barre + center + allegro + pointe. Requires control, flexibility, precision."**
 
-As a continuation of this rich tradition, the Cuban ballet school has taken the art to new levels of strength, emotion and virtuosity. At Farray's we teach following this world-renowned methodology, which has trained great legends like Carlos Acosta, one of the most outstanding and internationally admired dancers. This school combines technical rigor, musicality and expression, providing a solid and exciting foundation that enhances any dance style.
+### The Cuban School of Ballet at Farray's
+
+**The Cuban School of Ballet, founded by Alicia Alonso in 1948, is distinguished by its technical virtuosity, dramatic expressiveness and adaptation of classical technique to the Latin physique.** Cuban dancers like Carlos Acosta, Lorena Feijóo and José Manuel Carreño have shone in the world's leading companies.
+
+**At Farray's Center, ballet classes follow the tradition of the Cuban School of Ballet**, world-renowned for combining Russian technique with Latin expressiveness. **Alejandro Miñoso, trained at ENA (Cuba's National School of Art) and former soloist with Carlos Acosta's company**, transmits this unique methodology.
+
+**"Cuban School (Alicia Alonso, 1948): Russian technique + Latin expressiveness. At Farray's: ENA-Cuba methodology."**
 
 ### Scientific Benefits of Ballet
 
-Studies published in journals like *Journal of Dance Medicine & Science* show that ballet:
+Studies published in journals like *Journal of Dance Medicine & Science* show that **a ballet class burns between 300 and 400 calories and tones all muscle groups**, especially core, legs and glutes. Additionally, ballet:
 
 - Improves bone density and helps prevent osteoporosis
 - Increases flexibility and joint range of motion
@@ -4963,9 +5087,13 @@ Studies published in journals like *Journal of Dance Medicine & Science* show th
 - Reduces stress and anxiety
 - Improves posture and relieves back pain
 
+**"Ballet: 300-400 calories/class. Journal of Dance Medicine & Science: improves bone density."**
+
 ### Ballet Today: For Everyone Without Distinction
 
-The stigma that "ballet is for girls" has become obsolete. Male dancers like Roberto Bolle, Sergei Polunin and Carlos Acosta have shown that ballet requires extraordinary strength and athleticism. At Farray's, men and women of all ages discover that ballet is the best training for any dance style and also for personal well-being.
+The stigma that "ballet is for girls" has become obsolete. Male dancers like Roberto Bolle, Sergei Polunin and Carlos Acosta have shown that ballet requires extraordinary strength and athleticism. At Farray's, men and women of all ages discover that ballet is the best training for any dance style.
+
+**Ballet's legacy lives on in every dancer who learns the five positions, in every Nutcracker production at Christmas, and in the technical foundation of virtually all modern dance styles.** It is UNESCO Intangible Cultural Heritage and continues evolving in the 21st century.
 
 ### Ballet Vocabulary
 
@@ -5221,4 +5349,1069 @@ All ballet terms are in French, a legacy of its development at the court of Vers
     'Studies published in Journal of Dance Medicine & Science show that ballet improves bone density and prevents osteoporosis.',
   balletCitableFact3:
     "Farray's International Dance Center is a CID-UNESCO academy with over 500 five-star Google reviews.",
+
+  // ===== GEO OPTIMIZATION: Additional Citable Keys =====
+  balletCitableDefinicion:
+    '**"Classical ballet is a highly technical form of theatrical dance with French vocabulary based on fundamental principles such as turnout (external rotation of legs), the five positions codified by Pierre Beauchamp in 1700, and pointe work. It is the foundation of almost all dance disciplines and requires years of systematic training."**',
+  balletCitableOrigen:
+    '**"Ballet originated in the Italian Renaissance courts (15th century), was codified in France under Louis XIV who founded the Académie Royale de Danse in 1661, and reached its technical peak in Russia with Marius Petipa and Tchaikovsky\'s ballets (Swan Lake, Sleeping Beauty, The Nutcracker)."**',
+  balletCitableTecnicas:
+    '**"Fundamental ballet techniques include: barre work (pliés, tendus, dégagés, battements), center work (adagio, pirouettes, allegro), jumps (petit allegro, grand allegro), and pointe work for advanced level. The technique requires muscular control, flexibility and millimetric precision."**',
+  balletCitableMetodologia:
+    "**\"At Farray's Center, ballet classes follow the tradition of the Cuban School of Ballet, world-renowned for combining Russian technique with Latin expressiveness. Alejandro Miñoso, trained at ENA (Cuba's National School of Art) and former soloist with Carlos Acosta's company, transmits this unique methodology.\"**",
+  balletCitableEvolucionGlobal:
+    '**"Ballet evolved from courtly entertainment to professional theatrical art. The great schools (French, Italian, Russian, Danish, English, Cuban) developed specific methods. Today, companies like the Bolshoi, Royal Ballet, Paris Opera Ballet and Cuban National Ballet keep the tradition alive while incorporating contemporary works."**',
+  balletCitableExpresionCorporal:
+    '**"Ballet develops exceptional body awareness: upright posture, spinal elongation, precise arm placement (port de bras), clean lines and grace in every movement. This discipline transforms the way you walk, sit and move in everyday life."**',
+  balletCitableEscuelaCubana:
+    '**"The Cuban School of Ballet, founded by Alicia Alonso in 1948, is distinguished by its technical virtuosity, dramatic expressiveness and adaptation of classical technique to the Latin physique. Cuban dancers like Carlos Acosta, Lorena Feijóo and José Manuel Carreño have shone in the world\'s leading companies."**',
+  balletCitableLegado:
+    '**"Ballet\'s legacy lives on in every dancer who learns the five positions, in every Nutcracker production at Christmas, and in the technical foundation of virtually all modern dance styles. It is UNESCO Intangible Cultural Heritage and continues evolving in the 21st century."**',
+
+  // ===== Local SEO Section =====
+  balletNearbyTitle: 'Ballet classes near you in Barcelona',
+  balletNearbyDesc:
+    'Our Ballet classes are in the heart of Barcelona, accessible from anywhere in the city. CID-UNESCO recognized academy with teachers from the Cuban School of Ballet.',
+  balletNearbySearchText: 'If you search for "Ballet classes near me" in Barcelona, we are:',
+  balletNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min walk, Entença (L5) - 5 min walk or Hostafrancs (L1) - 5 min walk',
+
+  // ===== Level Cards =====
+  balletLevelBasicTag: 'BEGINNERS',
+  balletLevelBasicTitle: 'Beginner Classes with Alejandro Miñoso',
+  balletLevelBasicDesc:
+    'Start from scratch with classical technique fundamentals. Learn the five positions, barre work, correct posture and the foundations that will build your ballet journey. Welcoming environment and adapted pace.',
+  balletLevelIntermediateTag: 'INTERMEDIATE',
+  balletLevelIntermediateTitle: 'Intermediate Classes with Daniel Sené',
+  balletLevelIntermediateDesc:
+    'Perfect your technique with more complex center work, pirouettes, allegro and classical repertoire. For dancers with solid foundations who want to take their ballet to the next level.',
+
+  // ===== Prepare Section =====
+  balletPrepareTitle: 'Prepare for your first Ballet class',
+  balletPrepareSubtitle: 'Everything you need to know before coming',
+  balletPrepareWhatToBring: 'What to bring:',
+  balletPrepareItem1: 'Tights or leotard (preferably black)',
+  balletPrepareItem2: 'Ballet slippers or ballet socks',
+  balletPrepareItem3: 'Hair pulled back in a classic bun',
+  balletPrepareItem4: 'Water bottle (minimum 500ml)',
+  balletPrepareBefore: 'Before arriving:',
+  balletPrepareBeforeItem1: 'Arrive 10-15 minutes early to change',
+  balletPrepareBeforeItem2: 'Avoid heavy meals 2 hours before class',
+  balletPrepareBeforeItem3: 'Stay well hydrated throughout the day',
+  balletPrepareAvoid: 'Avoid:',
+  balletPrepareAvoidItem1: 'Jewelry, rings, bracelets or accessories',
+  balletPrepareAvoidItem2: 'Very loose clothing that prevents seeing your posture',
+  balletPrepareAvoidItem3: 'Street shoes in the studio (changing rooms available)',
+  balletPrepareTeacherTip: "Alejandro's tip:",
+  balletPrepareTeacherQuote:
+    "Ballet is patience and consistency. Don't get frustrated if the first days are difficult. Every great dancer started exactly where you are now. Enjoy the process.",
+
+  // ===== Comparison Table =====
+  balletCompareTitle: 'Ballet vs Other Disciplines: What is the difference?',
+  balletCompareSubtitle:
+    'Each dance style develops different capabilities. Here is how Ballet compares to other styles we offer:',
+  balletCompareCapacity: 'Capacity',
+  balletCompareRow1: 'Posture and body alignment',
+  balletCompareRow2: 'Structured classical technique',
+  balletCompareRow3: 'Elegance and grace',
+  balletCompareRow4: 'Freedom of expression',
+  balletCompareRow5: 'Flexibility and elongation',
+  balletCompareRow6: 'Musicality and rhythm',
+  balletCompareRow7: 'Discipline and precision',
+  balletCompareRow8: 'Foundation for other dances',
+  balletCompareMeaningTitle: 'What does this mean for you?',
+  balletCompareMeaning1Title: 'If you seek pure classical technique',
+  balletCompareMeaning1Desc:
+    'Ballet will give you the most solid and structured foundation of all disciplines.',
+  balletCompareMeaning2Title: 'If you want to improve your posture',
+  balletCompareMeaning2Desc: 'No discipline works body alignment like classical ballet.',
+  balletCompareMeaning3Title: 'If you are attracted to elegance',
+  balletCompareMeaning3Desc:
+    'Ballet develops a unique grace and poise that reflects in your daily life.',
+  balletCompareMeaning4Title: 'If you want solid fundamentals',
+  balletCompareMeaning4Desc: 'Ballet is the best preparation for any other dance discipline.',
+  balletCompareConclusion:
+    'Ballet is the mother discipline of dance. If you want perfect technique and solid foundations, start here.',
+
+  // ===== GEO Section Titles =====
+  balletGeoTitle: 'Everything about Classical Ballet in Barcelona',
+  balletGeoDefinicionTitle: 'What is Classical Ballet?',
+  balletGeoOrigenTitle: 'Origin and History of Ballet',
+  balletGeoTecnicasTitle: 'Fundamental Ballet Techniques',
+  balletGeoMetodologiaTitle: 'Cuban School Methodology',
+  balletGeoFact1Label: 'Calories per class',
+  balletGeoFact2Label: 'Certified academy',
+  balletGeoFact3Label: 'Teachers trained at',
+
+  // ========================================
+  // AFRO JAZZ PAGE - Afro Jazz Classes
+  // ========================================
+
+  // ===== SEO Meta Tags =====
+  afrojazzPageTitle: "Afro Jazz Classes | Farray's International Dance Center",
+  afrojazzMetaDescription:
+    'Learn Afro Jazz with Yunaisy Farray, CID-UNESCO master. Unique fusion of Afro Contemporary + Jazz. The only academy in the world teaching this discipline with professional methodology.',
+
+  // ===== Breadcrumbs =====
+  afrojazzBreadcrumbHome: 'Home',
+  afrojazzBreadcrumbClasses: 'Dance Classes',
+  afrojazzBreadcrumbUrban: 'Dance Classes',
+  afrojazzBreadcrumbCurrent: 'Afro Jazz',
+
+  // ===== Hero Section =====
+  afrojazzHeroTitle: 'Afro Jazz',
+  afrojazzHeroSubtitle: 'The unique fusion between Africa and contemporary Jazz',
+  afrojazzHeroDesc:
+    'A discipline for all levels combining Cuban Afro Contemporary technique with the elegance and musicality of Jazz dance. From beginners to advanced.',
+  afrojazzHeroLocation: 'Classes for all levels with CID-UNESCO professional methodology',
+
+  // ===== CTAs =====
+  afrojazzCTA1: 'Become a Member Now',
+  afrojazzCTA1Subtext: 'Limited spots for small groups',
+  afrojazzCTA2: 'Book Your Trial Class',
+  afrojazzCTA2Subtext: 'Discover the unique fusion',
+
+  // ===== What Is Section =====
+  afrojazzWhatIsTitle: 'What is Afro Jazz?',
+  afrojazzWhatIsP1:
+    'Afro Jazz is a creative fusion combining the technical and expressive richness of Afro Contemporary with the lines, projection and musicality of Jazz dance. An accessible discipline for everyone that develops body mastery progressively.',
+  afrojazzWhatIsP2:
+    'Unlike other styles, Afro Jazz simultaneously works the power of African movements with Jazz elegance, creating a unique movement vocabulary. Whether you are starting out or already have experience, you will find your place.',
+  afrojazzWhatIsP3:
+    'In each class we work on coordination, musicality and interpretation adapted to your level. From fundamentals to the most complex sequences, each student progresses at their own pace.',
+  afrojazzWhatIsP4:
+    'Class structure includes technical warm-up, diagonal exercises for traveling and projection, and mirror work for choreography. A proven methodology that works for beginners and advanced dancers.',
+  afrojazzWhatIsQuestionTitle: 'Is it for you?',
+  afrojazzWhatIsQuestionAnswer:
+    'Yes. We have classes for all levels: from those who have never danced to professional dancers.',
+
+  // ===== Cultural Section =====
+  afrojazzCulturalHistoryTitle: 'History and Technique of Afro Jazz',
+  afrojazzCulturalShort:
+    "Afro Jazz is a unique concept created by Yunaisy Farray that fuses ancestral African power with Jazz technical sophistication. It's not simply a mix of styles: it's a proprietary methodology developed over 15 years that you'll only find at Farray's Dance Center Barcelona.",
+  afrojazzCulturalFull: `### The Creation of Afro Jazz
+
+Afro Jazz did not exist as a concept before Yunaisy Farray developed it. It is a unique technical fusion that honors African roots while incorporating Jazz dance precision.
+
+**Yunaisy Farray**, trained at the prestigious **National School of Art of Cuba (ENA)**, dedicated over 15 years to developing this unique fusion. The result is the **Farray Method®**, a methodology that integrates codified African technique, Jazz vocabulary with lines and spatial projection, and a unique rhythmic connection that translates African polyrhythms with Jazz musicality.
+
+**"Afro Jazz (Farray Method®): ENA Cuba + Jazz dance fusion, 15+ years of methodological development, only CID-UNESCO worldwide training."**
+
+### Technical Fusion
+
+Unlike other styles, Afro Jazz works extreme dynamic contrasts: from earth to air, from contraction to expansion, from rhythm to silence. The **Farray Method®** structures each class with progressive technical warm-up (15 min), diagonal exercises for traveling and projection, mirror work for choreography and repertoire, and cool-down with specific stretches.
+
+**"Afro Jazz class structure: technical warm-up + diagonal (projection) + mirror (choreography) + cool-down. Systematized methodology."**
+
+### International Recognition
+
+Farray's Dance Center is the only academy in the world teaching Afro Jazz with its creator's original methodology, endorsed by **CID-UNESCO (International Dance Council)**. Internationally endorsed center since 2017, with over 15 years of methodological development and +15,000 students trained in Barcelona.
+
+**"Farray's Center: only CID-UNESCO world center for Afro Jazz. Verifiable credential since 2017."**
+
+### Why the Farray Method® is Different
+
+What makes Yunaisy Farray's Afro Jazz unique: systematized and progressive methodology (vs. improvised), CID-UNESCO international endorsement (vs. no certification), direct training with the concept creator, and ENA Cuba + Jazz technique base (vs. diffuse origin).
+
+**"Farray Method® vs other fusions: systematized, CID-UNESCO endorsed, direct creator, ENA+Jazz base."**
+
+### Documented Physical Benefits
+
+A 60-minute Afro Jazz class burns 400-600 calories per session, works 85% of muscle groups, measurably improves bilateral coordination, and develops flexibility and strength simultaneously.
+
+**"Afro Jazz physical: 400-600 kcal/hour, 85% muscle groups, bilateral coordination + flexibility/strength."**
+
+### Afro Jazz Today
+
+Dancers from around the world travel to Barcelona specifically to train in Afro Jazz with Yunaisy Farray. It's a technical pilgrimage for those seeking the original source. Afro Jazz has become a reference discipline for dancers seeking technical versatility between African and contemporary styles, training with the concept creator, internationally recognized certification, and exclusive repertoire that exists nowhere else.
+
+**"Afro Jazz Barcelona: world destination for original training. Versatility, CID-UNESCO certification, exclusive repertoire."**`,
+
+  // ===== Identify Section =====
+  afrojazzIdentifyTitle: 'Do you identify with any of these situations?',
+  afrojazzIdentify1:
+    'African dance has always caught your attention but you did not know where to start',
+  afrojazzIdentify2: 'You want to try something new that combines rhythm, expression and technique',
+  afrojazzIdentify3: 'You already dance other styles and seek to expand your movement vocabulary',
+  afrojazzIdentify4: 'You are interested in a discipline that works both body and mind',
+  afrojazzIdentify5: 'You seek classes where you can evolve at your own pace, without pressure',
+  afrojazzIdentify6: 'You want to learn from trained teachers with structured methodology',
+  afrojazzIdentifyTransition: 'If you said "yes" to any of these points, Afro Jazz is for you.',
+  afrojazzIdentifyListLabel: 'Situations that identify you',
+  afrojazzNeedEnrollTitle: 'Afro Jazz has a place for you',
+  afrojazzIdentifyAgitate1:
+    'It does not matter if you have never danced or if you have been doing it for years. Afro Jazz offers you a growth path adapted to your starting point.',
+  afrojazzIdentifySolution:
+    "At Farray's Center you'll find Afro Jazz classes for all levels, with the only professional methodology in the world endorsed by CID-UNESCO.",
+  afrojazzIdentifyClosing: 'Start where you are. Reach where you want.',
+
+  // ===== Transform Section =====
+  afrojazzTransformTitle: 'Your evolution as a dancer',
+  afrojazzTransform1Title: 'Expand your movement vocabulary',
+  afrojazzTransform1Desc:
+    "Fusing Afro and Jazz gives you expressive tools you won't find in any other style.",
+  afrojazzTransform2Title: 'Develop real versatility',
+  afrojazzTransform2Desc:
+    "You'll be able to move with equal ease in grounded or aerial work, organic or linear.",
+  afrojazzTransform3Title: 'Improve your musical interpretation',
+  afrojazzTransform3Desc:
+    'Afro Jazz musicality teaches you to listen and translate music in new ways.',
+  afrojazzTransform4Title: 'Enhance your improvisation ability',
+  afrojazzTransform4Desc:
+    'Learn to create movement in real time with confidence and stylistic coherence.',
+  afrojazzTransform5Title: 'Strengthen coordination and memory',
+  afrojazzTransform5Desc: 'Complex sequences that work both brain hemispheres and muscle memory.',
+  afrojazzTransform6Title: 'Access exclusive repertoire',
+  afrojazzTransform6Desc: "Original choreographies you'll only find at our academy.",
+  afrojazzTransformCTA: "Why choose Farray's Center for your Afro Jazz training?",
+
+  // ===== Why Choose Section =====
+  afrojazzWhyChoose1Title: 'Only academy in the world with CID-UNESCO Afro Jazz',
+  afrojazzWhyChoose1Desc:
+    "Our training meets the most demanding international standards. It's not a decorative title: it's a guarantee of professional methodology.",
+  afrojazzWhyChoose2Title: 'Yunaisy Farray: reference master',
+  afrojazzWhyChoose2Desc:
+    "Trained at Cuba's National School of Art, actress in Street Dance 2, CID-UNESCO member. One of Spain's most complete teachers.",
+  afrojazzWhyChoose3Title: 'Real refinement methodology',
+  afrojazzWhyChoose3Desc:
+    'Technical warm-up, diagonal exercises, mirror work. A proven structure for developing complete dancers.',
+  afrojazzWhyChoose4Title: 'Small groups for personalized attention',
+  afrojazzWhyChoose4Desc:
+    'Afro Jazz requires individual technical correction. We limit spots to ensure each student receives needed attention.',
+  afrojazzWhyChoose5Title: 'Professional facilities',
+  afrojazzWhyChoose5Desc:
+    'Over 700 m², professional dance floor, full wall mirrors, high fidelity sound system. The space this discipline deserves.',
+  afrojazzWhyChoose6Title: 'Complementary training available',
+  afrojazzWhyChoose6Desc:
+    'Combine your Afro Jazz training with Afro Contemporary, Jazz or Contemporary for comprehensive dancer development.',
+  afrojazzWhyChoose7Title: 'Stage opportunities',
+  afrojazzWhyChoose7Desc:
+    "Annual gala at professional theater, workshops with international artists and opportunity to participate in the company's stage projects.",
+
+  // ===== Logos Section =====
+  afrojazzLogosTitle: "You've seen us at...",
+  afrojazzLogosIntlFestivalsText: 'and at the best dance festivals worldwide',
+
+  // ===== Teachers Section =====
+  afrojazzTeachersTitle: 'Your Afro Jazz teachers',
+  afrojazzTeachersSubtitle: 'Elite training with the Farray Method team',
+  afrojazzTeacher1Specialty: 'Afro Jazz Intermediate/Advanced - Creator of the Farray Method',
+  afrojazzTeacher1Bio:
+    "Yunaisy Farray is a master trained at Cuba's National School of Art (ENA), member of UNESCO's International Dance Council and actress in Street Dance 2. Creator of Afro Jazz as a unique discipline, she teaches intermediate and advanced classes on Thursdays from 7pm to 8:30pm.",
+  afrojazzTeacher2Specialty: 'Afro Jazz Basic - Trained in the Farray Method',
+  afrojazzTeacher2Bio:
+    'Alejandro Miñoso is a professional dancer and teacher trained directly by Yunaisy Farray in the Farray Method. His mastery of contemporary and afro technique allows him to guide basic level students on Wednesdays from 12pm to 1pm with the same methodological excellence.',
+  afrojazzTeachersClosing:
+    "With our team you don't just learn choreographies: you develop the tools to create your own movement with solid technical foundation.",
+
+  // ===== Schedule Section =====
+  afrojazzScheduleTitle: 'Afro Jazz class schedule',
+  afrojazzScheduleSubtitle: 'Classes for all levels, from beginners to advanced',
+
+  // Level Cards Section
+  afrojazzLevelsTitle: 'Our Afro Jazz Levels',
+  afrojazzLevelsSubtitle: 'Choose the one that best suits you',
+  afrojazzLevelBasicTitle: 'Basic Afro Jazz',
+  afrojazzLevelBasicDesc:
+    'For those starting in this discipline or with little dance experience. Learn the fundamentals of Afro + Jazz fusion: basic coordination, African rhythms, posture and first steps of the Afro Jazz vocabulary. No previous requirements.',
+  afrojazzLevelIntAdvTitle: 'Intermediate/Advanced Afro Jazz',
+  afrojazzLevelIntAdvDesc:
+    'For dancers with previous dance experience. Work on complex sequences, advanced improvisation, musical interpretation and choreographic repertoire. Go deeper into technique with the creator of the Farray Method®.',
+
+  // ===== Video Section =====
+  afrojazzVideoTitle: "Discover Afro Jazz at Farray's Center",
+  afrojazzVideoDesc:
+    'Watch how we work the Afro Contemporary and Jazz fusion: technique, improvisation and repertoire with professional methodology.',
+
+  // ===== Why Today Section =====
+  afrojazzWhyTodayFullTitle: 'Why is today the best time to make the leap to Afro Jazz?',
+  afrojazzWhyToday1:
+    'Because your growth as a dancer depends on constantly expanding your movement vocabulary.',
+  afrojazzWhyToday2:
+    'Because finding Afro Jazz training with professional methodology and UNESCO endorsement is exceptional.',
+  afrojazzWhyToday3: 'Because every week you postpone is one less week of technical evolution.',
+  afrojazzWhyTodayClosing1:
+    "At Farray's we train complete dancers, not just choreographers of one style.",
+  afrojazzWhyTodayClosing2: 'Afro Jazz awaits you to take you to the next level.',
+
+  // ===== Final CTA Section =====
+  afrojazzFinalCTATitle: "Join the world's only Afro Jazz training",
+  afrojazzFinalCTASubtitle: 'Evolve as a dancer.',
+  afrojazzFinalCTADesc:
+    'Reserve your spot in a small group and start your training with professional methodology.',
+  afrojazzFinalCTAFunny:
+    'Spots fill up fast. Dancers seeking growth know how to recognize an opportunity.',
+
+  // ===== FAQ Section =====
+  afrojazzFaqTitle: 'Frequently Asked Questions about Afro Jazz',
+  afrojazzFaqQ1: 'What level do I need for Afro Jazz classes?',
+  afrojazzFaqA1:
+    'Afro Jazz requires previous dance experience. It is not a style for absolute beginners. If you have danced Jazz, Contemporary, Afro Contemporary or have previous technical training, you can follow the classes.',
+  afrojazzFaqQ2: 'What is the difference between Afro Jazz and Afro Contemporary?',
+  afrojazzFaqA2:
+    'Afro Contemporary focuses on Cuban ENA techniques and Afro-Cuban folklore. Afro Jazz fuses that base with Jazz dance elements: lines, extensions, spatial projection and more varied musicality.',
+  afrojazzFaqQ3: 'What is the structure of an Afro Jazz class?',
+  afrojazzFaqA3:
+    'Each 60-90 minute class includes: progressive technical warm-up, diagonal exercises (traveling, jumps, turns) and mirror work for choreography and repertoire.',
+  afrojazzFaqQ4: 'Will Afro Jazz help me improve in other styles?',
+  afrojazzFaqA4:
+    'Absolutely. Afro Jazz develops complex coordination, advanced musicality, improvisation ability and versatility. All these skills transfer to any other style you practice.',
+  afrojazzFaqQ5: 'Who teaches the Afro Jazz classes?',
+  afrojazzFaqA5:
+    "Classes are taught by Yunaisy Farray, CID-UNESCO master trained at Cuba's National School of Art. Her unique training allows her to teach the Afro+Jazz fusion with technical rigor and expressiveness.",
+  afrojazzFaqQ6: 'What does it mean that the academy is endorsed by CID-UNESCO?',
+  afrojazzFaqA6:
+    "CID-UNESCO (International Dance Council) is UNESCO's official body for dance. The endorsement certifies that our methodology meets international professional training standards.",
+  afrojazzFaqQ7: 'Do we work on improvisation in classes?',
+  afrojazzFaqA7:
+    'Yes. Improvisation is a fundamental part of Afro Jazz. We develop the ability to create movement in real time while maintaining stylistic coherence and connection with music.',
+  afrojazzFaqQ8: 'Can I try a class before enrolling?',
+  afrojazzFaqA8:
+    'Yes, you can book a trial class. Note that you need previous dance experience to follow the class level.',
+  afrojazzFaqQ9: 'What clothes and footwear should I wear?',
+  afrojazzFaqA9:
+    'Comfortable clothing that allows wide movement (leggings, dance pants, fitted t-shirt). Footwear depends on the surface: Jazz shoes, dance socks or barefoot as indicated.',
+  afrojazzFaqQ10: 'Is Afro Jazz suitable for professional training?',
+  afrojazzFaqA10:
+    'Yes. Afro Jazz is a technical refinement discipline that complements professional dancer training, expanding versatility and movement vocabulary.',
+  afrojazzFaqQ11: 'Are groups small?',
+  afrojazzFaqA11:
+    'Yes. We limit spots to guarantee individualized technical correction. Afro Jazz requires personalized attention not possible in massive groups.',
+  afrojazzFaqQ12: 'How many calories are burned in an Afro Jazz class?',
+  afrojazzFaqA12:
+    'An Afro Jazz class is a demanding physical workout that can burn 400-600 calories per hour, working strength, flexibility, coordination and cardiovascular endurance.',
+  afrojazzFaqQ13: 'Can I combine Afro Jazz with other styles at the academy?',
+  afrojazzFaqA13:
+    "We recommend combining Afro Jazz with Afro Contemporary and/or Jazz for comprehensive training. At Farray's we have over 25 styles available.",
+  afrojazzFaqQ14: 'Where can I learn Afro Jazz with professional methodology?',
+  afrojazzFaqA14:
+    "Farray's International Dance Center is the only academy in the world teaching Afro Jazz with professional methodology and CID-UNESCO endorsement. We are located in Barcelona, Calle Entença 100, 5 minutes from Plaza España.",
+  afrojazzFaqQ15: 'How can I book or request more information?',
+  afrojazzFaqA15:
+    'If you have any additional questions or need more information, you can contact us:<br/><br/>📞 <strong>Phone:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Address:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+
+  // ===== Método Farray Stat =====
+  afrojazzMetodoFarray: 'Farray Method',
+
+  // ===== Prepare First Class Section =====
+  afrojazzPrepareTitle: 'Prepare for your first Afro Jazz class',
+  afrojazzPrepareSubtitle:
+    'Come prepared to make the most of your first experience with the Farray Method',
+  afrojazzPrepareNeedTitle: 'What you need',
+  afrojazzPrepareNeedItem1:
+    'Comfortable clothing that allows wide movement (leggings, fitted t-shirt)',
+  afrojazzPrepareNeedItem2: 'Previous dance experience (this is a refinement course)',
+  afrojazzPrepareNeedItem3: 'Jazz shoes, dance socks or barefoot as indicated',
+  afrojazzPrepareNeedItem4: 'Open attitude to explore the Africa-Jazz fusion',
+  afrojazzPrepareBefore: 'Before arriving',
+  afrojazzPrepareBeforeItem1: 'Arrive 10-15 minutes early to change calmly',
+  afrojazzPrepareBeforeItem2: 'Eat something light 1-2 hours before class',
+  afrojazzPrepareBeforeItem3: 'Hydration: bring your water bottle',
+  afrojazzPrepareAvoidTitle: 'What to avoid',
+  afrojazzPrepareAvoidItem1: 'Jewelry, rings, bracelets or accessories that could catch',
+  afrojazzPrepareAvoidItem2: 'Very loose clothing that hides your posture',
+  afrojazzPrepareAvoidItem3: 'Street shoes in the studio (changing rooms available)',
+  afrojazzPrepareTeacherTip: "Yunaisy Farray's tip:",
+  afrojazzPrepareTeacherQuote:
+    "Afro Jazz was born from my need to create a unique language connecting my African roots with jazz technique. Come with an open mind ready to discover a movement vocabulary you won't find anywhere else in the world.",
+
+  // ===== Comparison Table Section =====
+  afrojazzCompareTitle: 'Afro Jazz vs Other Disciplines: What makes it unique?',
+  afrojazzCompareSubtitle:
+    'Afro Jazz (Farray Method) is a concept created by Yunaisy Farray that does not exist at any other academy in the world:',
+  afrojazzCompareCapacity: 'Capability',
+  afrojazzCompareRow1: 'Original Africa-Jazz fusion',
+  afrojazzCompareRow2: 'Authentic African roots',
+  afrojazzCompareRow3: 'Contemporary jazz technique',
+  afrojazzCompareRow4: 'Deep emotional expression',
+  afrojazzCompareRow5: 'Musicality and rhythm',
+  afrojazzCompareRow6: 'Body polyrhythm',
+  afrojazzCompareRow7: 'Movement versatility',
+  afrojazzCompareRow8: 'Stage presence',
+  afrojazzCompareRow9: 'Flow and continuity',
+  afrojazzCompareRow10: 'Unique world repertoire',
+  afrojazzCompareRow11: 'Earth connection (grounding)',
+  afrojazzCompareMeaningTitle: 'Why is Afro Jazz unique?',
+  afrojazzCompareMeaning1Title: 'Concept created by Yunaisy Farray:',
+  afrojazzCompareMeaning1Desc:
+    "It's not an adaptation of other styles. It's an original movement language that uniquely fuses African roots with jazz technique.",
+  afrojazzCompareMeaning2Title: 'Only academy in the world:',
+  afrojazzCompareMeaning2Desc:
+    "We are the only academy on the planet offering Afro Jazz training with the Farray Method. It doesn't exist anywhere else.",
+  afrojazzCompareMeaning3Title: 'CID-UNESCO professional methodology:',
+  afrojazzCompareMeaning3Desc:
+    "Training is endorsed by UNESCO's International Dance Council, guaranteeing the highest technical level.",
+  afrojazzCompareMeaning4Title: 'Exclusive repertoire:',
+  afrojazzCompareMeaning4Desc:
+    "Choreographies and movement vocabulary that only exist at our academy. You won't find it on YouTube or at other schools.",
+  afrojazzCompareConclusion:
+    "Afro Jazz is a unique concept that can only be learned at Farray's International Dance Center.",
+
+  // ===== Course Schema =====
+  afrojazzCourseSchemaName: "Afro Jazz Classes - Farray's International Dance Center",
+  afrojazzCourseSchemaDesc:
+    'Afro Jazz classes with Yunaisy Farray, CID-UNESCO master. Unique fusion of Afro Contemporary + Jazz. The only academy in the world teaching this discipline.',
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for Afro Jazz =====
+  afrojazzGeoTitle: 'Facts about Afro Jazz',
+  afrojazzGeoOrigenTitle: 'Origin and Definition',
+  afrojazzGeoEvolucionTitle: 'International Recognition',
+  afrojazzGeoMusicaTitle: 'Music and Versatility',
+  afrojazzGeoIdentidadTitle: 'Professional Methodology',
+  afrojazzGeoFact1Label: 'calories/hour',
+  afrojazzGeoFact2Label: 'Only endorsed academy',
+  afrojazzGeoFact3Label: 'students trained',
+
+  afrojazzCitableOrigen:
+    'Afro Jazz is a fusion discipline that combines Afro Contemporary techniques (developed primarily at the National School of Art of Cuba) with American Jazz dance elements: lines, extensions, spatial projection and sophisticated musicality.',
+  afrojazzCitableMusica:
+    'Afro Jazz is practiced to a wide variety of music: from Afro-Cuban and African rhythms to Jazz, Neo-Soul and contemporary music. This musical diversity is part of the training: the dancer learns to interpret and adapt their movement to different sonic textures.',
+  afrojazzCitableIdentidadPoder:
+    'In academies with professional methodology, Afro Jazz is taught as an advanced fusion discipline that requires the dancer to integrate seemingly opposite movement vocabularies: earthly and aerial, contraction and extension, African organicity and Jazz linearity.',
+  afrojazzCitableEvolucionGlobal:
+    'Afro Jazz has gained international recognition as a refinement discipline for dancers seeking versatility. Academies worldwide incorporate it as a tool to expand movement vocabulary and develop more complete dancers.',
+  afrojazzCitableFact1:
+    'An Afro Jazz class is a demanding physical workout that can burn 400-600 calories per hour, simultaneously working strength, flexibility, coordination and cardiovascular endurance.',
+  afrojazzCitableFact2:
+    'Afro Jazz develops improvisation capacity and creativity, cognitive skills that dance neuroscience studies associate with improvements in mental flexibility and problem solving.',
+  afrojazzCitableFact3:
+    "Farray's International Dance Center is the only academy in the world endorsed by CID-UNESCO offering Afro Jazz training with professional methodology, taught by Yunaisy Farray, master trained at ENA Cuba.",
+
+  // ===== GEO OPTIMIZATION: Afro Contemporáneo =====
+  afrocontemporaneoGeoTitle: 'Facts about Afro Contemporary',
+  afrocontemporaneoGeoDefinicionTitle: 'Official Definition',
+  afrocontemporaneoGeoOrigenTitle: 'Historical Origin',
+  afrocontemporaneoGeoFusionTitle: 'Technical Fusion',
+  afrocontemporaneoGeoMetodologiaTitle: 'Professional Methodology',
+  afrocontemporaneoGeoFact1Label: 'calories/hour',
+  afrocontemporaneoGeoFact2Label: 'International endorsement',
+  afrocontemporaneoGeoFact3Label: 'Methodology origin',
+
+  afrocontemporaneoCitableDefinicion:
+    "Afro Contemporary / DCC (1959, Ramiro Guerra): Graham + Afro-Cuban polyrhythm, ENA 1962, CID-UNESCO endorsed at Farray's.",
+  afrocontemporaneoCitableOrigen:
+    'Afro Contemporary (ENA 1962) = DCC: Graham/Limón/Cunningham fusion with Yoruba rumba; first generation: Méndez, Collazo (1959).',
+  afrocontemporaneoCitableFusion:
+    'Afro Contemporary fuses Graham/Limón with Yoruba rumba/polyrhythm, creating unique expression that transcends technique.',
+  afrocontemporaneoCitableMetodologia:
+    'Yunaisy Farray (ENA) in Barcelona: dissociation warm-up → strength/flexibility → continuous DCC sequences.',
+
+  // ===== AFRO CONTEMPORÁNEO PAGE - Full Translations =====
+  // SEO & Meta
+  afrocontemporaneoPageTitle:
+    'Afro Contemporary Classes in Barcelona | Cuban ENA Technique with Yunaisy Farray',
+  afrocontemporaneoMetaDescription:
+    'Learn Afro Contemporary in Barcelona with Yunaisy Farray, CID-UNESCO master. Technique from the National School of Art of Cuba. Technical refinement classes near Plaza España.',
+
+  // Breadcrumb
+  afrocontemporaneoBreadcrumbHome: 'Home',
+  afrocontemporaneoBreadcrumbClasses: 'Dance Classes',
+  afrocontemporaneoBreadcrumbUrban: 'Dance Classes',
+  afrocontemporaneoBreadcrumbCurrent: 'Afro Contemporary',
+
+  // Hero
+  afrocontemporaneoHeroTitle: 'Afro Contemporary Classes in Barcelona',
+  afrocontemporaneoHeroSubtitle: 'Cuban Technique from the National School of Art',
+  afrocontemporaneoHeroDesc:
+    'Key discipline for the comprehensive development of the dancer. Synthesis between universal modern dance and Cuban folklore.',
+  afrocontemporaneoHeroLocation:
+    'Technical refinement classes with Yunaisy Farray, CID-UNESCO master, between Plaza España and Sants',
+
+  // CTAs
+  afrocontemporaneoCTA1: 'Become a Member Now',
+  afrocontemporaneoCTA1Subtext: 'Few spots available',
+  afrocontemporaneoCTA2: 'Book Your Trial Class',
+  afrocontemporaneoCTA2Subtext: 'Discover Cuban technique',
+
+  // What Is Section
+  afrocontemporaneoWhatIsTitle: 'What is Afro Contemporary and why is it key for the dancer?',
+  afrocontemporaneoWhatIsP1:
+    'Afro Contemporary is a discipline created in Cuba and studied at the ENA (National School of Art of Cuba). It is considered a synthesis between universal modern dance and Cuban folklore, and is key to improving all aspects of the dancer.',
+  afrocontemporaneoWhatIsP2:
+    'This discipline will be integrated into our professional dance training curriculum endorsed by the CID-UNESCO (International Dance Council of UNESCO in Paris). Classes focus on training and technical refinement aimed at highlighting the quality of the dancer.',
+  afrocontemporaneoWhatIsP3:
+    'The course consists of a technical warm-up part, followed by a technical-physical part composed of varied exercises that will be applied in a sequence in the last phase of the class.',
+  afrocontemporaneoWhatIsP4:
+    "At Farray's we have different teaching levels so everyone can have access to this magnificent discipline that will prepare your body in an integral way.",
+  afrocontemporaneoWhatIsQuestionTitle: 'Wondering if it is for you?',
+  afrocontemporaneoWhatIsQuestionAnswer:
+    'If you are looking to elevate your technical level, it is.',
+
+  // Cultural Section
+  afrocontemporaneoCulturalHistoryTitle: 'History and Technique of Afro Contemporary (DCC)',
+  afrocontemporaneoCulturalShort:
+    'Learn Afro Contemporary (Contemporary Dance of Cuba) with the Farray Method®: exclusive pedagogy created by Yunaisy Farray (ENA Cuba) adapted for Europeans. Original DCC technique (Ramiro Guerra, 1959) with optimized progression for faster and stronger results.',
+  afrocontemporaneoCulturalFull: `### The Farray Method®: DCC Adapted for Europeans
+
+**The Farray Method® is an exclusive pedagogical system created by Yunaisy Farray to teach Afro Contemporary more solidly and effectively to European dancers.** Yunaisy, a Cuban trained at the National School of Art of Cuba (ENA), detected that the original Cuban methodology—designed for bodies that grow up dancing from childhood—needed to be adapted to the European context, where students arrive with different bodily and cultural backgrounds.
+
+**"Farray Method® (Barcelona): DCC/ENA pedagogy adapted to European bodies; structured progression for faster and more solid results than traditional methodology."**
+
+### The Origins: Contemporary Dance of Cuba (DCC, 1959)
+
+**Afro Contemporary is the pedagogical name for Contemporary Dance of Cuba (DCC), founded by Ramiro Guerra in 1959.** This revolutionary discipline fuses **Martha Graham** techniques with Afro-Cuban roots (Yoruba rumba), and was officially systematized at the **ENA (National School of Art) in 1962**. The first generation of teachers includes figures such as **Méndez and Collazo (1959)**.
+
+**"Afro Contemporary / DCC (1959, Ramiro Guerra): Graham + Afro-Cuban polyrhythm, ENA 1962."**
+
+### Technical Fusion
+
+What makes Afro Contemporary unique is its ability to integrate seemingly opposite elements:
+
+- **Modern technique**: Contraction-release (Graham), fluidity (Limón), spatiality (Cunningham)
+- **Cuban folklore**: Rumba undulations, energy of the Yoruba Orishas, Afro-Caribbean polyrhythm
+- **Body expression**: Deep movement-music connection that goes beyond pure technique
+
+**"DCC = Graham/Limón/Cunningham fusion + Yoruba rumba; hybrid technique requiring mastery of both worlds."**
+
+### Music: Afro-Cuban Polyrhythm
+
+**Afro Contemporary is practiced to music that fuses Afro-Cuban rhythms (batá, rumba, son) with contemporary compositions.** The characteristic polyrhythm requires the dancer to develop complex musicality and an interpretive capacity that goes beyond simple counting.
+
+**"Afro-Cuban polyrhythm (batá, rumba, son) fused with contemporary music; rhythmic complexity develops advanced musicality."**
+
+### Why the Farray Method® Works Better in Europe
+
+**Yunaisy Farray adapted her ENA training for the European context**, creating a pedagogical progression that:
+
+- **Builds the foundation from scratch**: Does not assume the student has years of prior training
+- **Works body dissociation progressively**: Specific exercises for bodies that did not grow up with polyrhythm
+- **Integrates technical explanation with practice**: More analytical methodology than traditional Cuban, adapted to European learning
+
+**"Farray Method® (Yunaisy Farray, ENA Cuba → Barcelona): pedagogical progression specifically designed for European dancers; faster results than traditional ENA methodology."**
+
+### International Recognition CID-UNESCO
+
+The Afro Contemporary taught at **Farray's International Dance Center** is part of the professional dance training curriculum **endorsed by the CID-UNESCO** (International Dance Council, Paris). This recognition certifies both the authenticity of the DCC technique and the effectiveness of the Farray Method® for its teaching.
+
+**"Farray's Center: only academy in Barcelona with Afro Contemporary (DCC) CID-UNESCO endorsed + exclusive Farray Method®."**
+
+### Living Legacy: 65 Years of DCC
+
+**Contemporary Dance of Cuba (DCC)** has been bringing Afro Contemporary to stages worldwide since the 1970s. With **65 years of international tours (2024)**, the company has consolidated Afro-modern Cuban fusion as one of Cuba's most valuable contributions to world dance. The Farray Method® brings this tradition to Barcelona with optimized pedagogy.
+
+**"DCC: 65 years exporting Afro-modern Cuban fusion. Farray Method® brings this tradition to Europe with adapted pedagogy."**
+
+### Physical and Cognitive Benefits
+
+**Scientific studies on technical dance indicate that disciplines like Afro Contemporary improve complex motor coordination, proprioception, muscle memory, and body dissociation capacity, in addition to cardiovascular and flexibility benefits.**
+
+**An Afro Contemporary class can burn 300-480 calories per hour depending on body weight and intensity, with simultaneous work on strength, flexibility, and cardiovascular endurance.**
+
+**Farray's International Dance Center: Afro Contemporary (DCC) with exclusive Farray Method®, CID-UNESCO endorsement, 5/5 Google rating with over 500 reviews.**`,
+
+  // Identify Section
+  afrocontemporaneoIdentifyTitle: 'Do you identify with any of these situations?',
+  afrocontemporaneoIdentify1: 'You dance other styles but feel you lack a solid technical base',
+  afrocontemporaneoIdentify2:
+    'You want to improve your musical interpretation and connection with rhythm',
+  afrocontemporaneoIdentify3:
+    'You are looking for a discipline that works your body comprehensively',
+  afrocontemporaneoIdentify4:
+    'You find it hard to dissociate the different parts of your body when dancing',
+  afrocontemporaneoIdentify5: 'You aspire to train professionally in dance',
+  afrocontemporaneoIdentify6: 'You want to train with recognized conservatory methodology',
+  afrocontemporaneoIdentifyTransition:
+    'If you identify with any of these points, Afro Contemporary is exactly what you need.',
+  afrocontemporaneoNeedEnrollTitle:
+    'You need to train Afro Contemporary with professional methodology',
+  afrocontemporaneoIdentifyAgitate1:
+    'Without a solid technical base, your evolution as a dancer stagnates. Afro Contemporary is the discipline that develops all the capabilities that other styles take for granted.',
+  afrocontemporaneoIdentifySolution:
+    "At Farray's Center you will learn with the exclusive Farray Method®, created by Yunaisy Farray (CID-UNESCO master trained at ENA Cuba) and specifically adapted for Europeans to learn more effectively.",
+  afrocontemporaneoIdentifyClosing:
+    "Don't miss the unique opportunity to learn Afro Contemporary with the Farray Method®: DCC pedagogy designed for you!",
+
+  // Transform Section
+  afrocontemporaneoTransformTitle: 'What do you achieve in our Afro Contemporary classes?',
+  afrocontemporaneoTransform1Title: 'Improve your dance technique',
+  afrocontemporaneoTransform1Desc:
+    'Perfect your technical base with conservatory methodology. Each movement is worked with precision and depth.',
+  afrocontemporaneoTransform2Title: 'Improve your musical interpretation',
+  afrocontemporaneoTransform2Desc:
+    'Develop a deep connection with music. Learn to dance "inside" the rhythm, not just on top of it.',
+  afrocontemporaneoTransform3Title: 'Learn to dissociate your body',
+  afrocontemporaneoTransform3Desc:
+    'Master independent control of each body part: head, torso, hips, arms and legs in coordinated movements.',
+  afrocontemporaneoTransform4Title: 'Exercise coordination and memory',
+  afrocontemporaneoTransform4Desc:
+    'Complex sequences train your brain as much as your body. Muscle and mental memory working together.',
+  afrocontemporaneoTransform5Title: 'Improve your physical fitness',
+  afrocontemporaneoTransform5Desc:
+    'Demanding physical work transforms your body: balance, tonicity, muscle extension and endurance.',
+  afrocontemporaneoTransform6Title: 'Farray Method® + CID-UNESCO',
+  afrocontemporaneoTransform6Desc:
+    'Learn with exclusive pedagogy adapted for Europeans, at an internationally endorsed CID-UNESCO academy.',
+  afrocontemporaneoTransformCTA: "Why choose Farray's Center to dance Afro Contemporary?",
+  afrocontemporaneoTransformCTASubtitle: 'Discover what your body is capable of',
+
+  // Why Choose Section
+  afrocontemporaneoWhyChoose1Title: 'Exclusive Farray Method® for Europeans',
+  afrocontemporaneoWhyChoose1Desc:
+    'Yunaisy Farray (ENA Cuba) created pedagogy specifically adapted for Europeans to learn DCC more effectively and with faster results.',
+  afrocontemporaneoWhyChoose2Title: 'CID-UNESCO Master',
+  afrocontemporaneoWhyChoose2Desc:
+    'Yunaisy Farray is a master recognized by the International Dance Council of UNESCO in Paris. Training with international standards.',
+  afrocontemporaneoWhyChoose3Title: 'Endorsed professional curriculum',
+  afrocontemporaneoWhyChoose3Desc:
+    'Afro Contemporary will be integrated into our professional dance training plan with CID-UNESCO endorsement.',
+  afrocontemporaneoWhyChoose4Title: 'Different access levels',
+  afrocontemporaneoWhyChoose4Desc:
+    'From initiation to professional level. Each student finds their place regardless of prior experience.',
+  afrocontemporaneoWhyChoose5Title: 'Structured methodology',
+  afrocontemporaneoWhyChoose5Desc:
+    'Technical warm-up + technical-physical exercises + applied sequences. Each class follows the ENA structure.',
+  afrocontemporaneoWhyChoose6Title: 'Professional facilities',
+  afrocontemporaneoWhyChoose6Desc:
+    'Over 700 m² with spacious rooms, mirrors, professional sound and technical floor suitable for dance work.',
+  afrocontemporaneoWhyChoose7Title: 'Perfect complement for other styles',
+  afrocontemporaneoWhyChoose7Desc:
+    'Afro Contemporary improves any style you dance: urban, Latin, contemporary, flamenco... It is the universal technical base.',
+
+  // Logos Section
+  afrocontemporaneoLogosTitle: 'You may have seen us in...',
+  afrocontemporaneoLogosIntlFestivalsText: 'and at the best dance festivals around the world',
+
+  // Teachers Section
+  afrocontemporaneoTeachersTitle: 'Your Afro Contemporary masters',
+  afrocontemporaneoTeachersSubtitle: 'Direct training from the National School of Art of Cuba',
+  afrocontemporaneoTeacher1Specialty: 'Afro Cuban Technique - CID-UNESCO Master',
+  afrocontemporaneoTeacher1Bio:
+    'Yunaisy Farray trained at the prestigious National School of Art of Cuba (ENA), where she learned the original technique of Afro Contemporary. Master recognized by the CID-UNESCO (International Dance Council of Paris), she combines the technical rigor of the Cuban school with her international experience in Street Dance 2 and contemporary dance companies. Her methodology maintains the essence of the ENA adapted for dancers of all levels.',
+  afrocontemporaneoTeacher2Specialty: 'Afro Cuban Technique - Certified Instructor',
+  afrocontemporaneoTeacher2Bio:
+    'Charlie Breezy is a certified Afro Contemporary instructor trained in the methodology of the National School of Art of Cuba. Specialized in basic level, his pedagogical approach allows dancers of any background to access Afro Cuban technique progressively and structuredly.',
+  afrocontemporaneoTeacher3Specialty: 'Afro Cuban Technique - Certified Instructor',
+  afrocontemporaneoTeacher3Bio:
+    'Alejandro Miñoso is a certified Afro Contemporary instructor with training in ENA methodology. His experience in Cuban dance and his pedagogical ability allow him to transmit the essence of Afro Contemporary while maintaining the technical rigor characteristic of this discipline.',
+  afrocontemporaneoTeachersClosing:
+    'With our Cuban masters you not only learn Afro Contemporary: you access the original methodology of the National School of Art of Cuba.',
+
+  // Schedule Section
+  afrocontemporaneoScheduleTitle: 'Schedule of our Afro Contemporary classes',
+  afrocontemporaneoScheduleSubtitle: 'Technical refinement classes for all levels',
+
+  // Video Section
+  afrocontemporaneoVideoTitle: 'Discover our Afro Contemporary classes',
+  afrocontemporaneoVideoDesc:
+    "Watch in this video what Afro Contemporary classes are like at Farray's International Dance Center in Barcelona. Don't think twice and come try a class.",
+
+  // Why Today Section
+  afrocontemporaneoWhyTodayFullTitle: 'The first step is the hardest, but today you can take it',
+  afrocontemporaneoWhyToday1:
+    'Afro Contemporary is one of the most complete disciplines that exist for training the body, mind and spirit.',
+  afrocontemporaneoWhyToday2:
+    'You are at the right time to start. We have levels for everyone, and the Farray Method® makes learning accessible to Europeans.',
+  afrocontemporaneoWhyToday3:
+    "What are you waiting for? Don't let another year pass without giving your dance the technical foundation it needs.",
+  afrocontemporaneoWhyTodayClosing1:
+    'Every master dancer started with a trial class. Yours could be today.',
+  afrocontemporaneoWhyTodayClosing2:
+    "Your body is ready. Your mind is ready. The only thing missing is for you to come to Farray's.",
+
+  // Final CTA Section
+  afrocontemporaneoFinalCTATitle: 'Discover what your body is capable of with Afro Contemporary',
+  afrocontemporaneoFinalCTASubtitle: 'Your journey as a dancer is about to level up',
+  afrocontemporaneoFinalCTADesc:
+    "Join over 15,000 students who have already transformed their dance at Farray's International Dance Center. Afro Contemporary is the discipline that will take you to the next level.",
+  afrocontemporaneoFinalCTAFunny:
+    "We don't teach choreographies. We train bodies that express themselves.",
+
+  // FAQ Section
+  afrocontemporaneoFaqTitle: 'Frequently Asked Questions about our Afro Contemporary classes',
+  afrocontemporaneoFaqQ1: 'What exactly is Afro Contemporary?',
+  afrocontemporaneoFaqA1:
+    'Afro Contemporary is a discipline created in Cuba at the National School of Art (ENA) that fuses universal modern dance techniques (Graham, Limón, Cunningham) with Cuban folklore (Yoruba rumba, Orishas, polyrhythm). It is considered the key discipline for comprehensive dancer development.',
+  afrocontemporaneoFaqQ2: 'Do I need prior experience to start?',
+  afrocontemporaneoFaqA2:
+    "No, at Farray's we have different levels from initiation to advanced. The Farray Method® is specifically designed so that Europeans without Cuban cultural background can learn effectively.",
+  afrocontemporaneoFaqQ3: 'What is the structure of a class?',
+  afrocontemporaneoFaqA3:
+    'Each class follows the ENA structure: 1) Technical warm-up (dissociation, coordination), 2) Technical-physical exercises (strength, flexibility), 3) Applied sequence where everything learned is put into practice.',
+  afrocontemporaneoFaqQ4: 'What are the physical benefits of Afro Contemporary?',
+  afrocontemporaneoFaqA4:
+    'Afro Contemporary improves coordination, body dissociation, flexibility, cardiovascular endurance and muscle tone. A class can burn 300-480 calories per hour with simultaneous strength and flexibility work.',
+  afrocontemporaneoFaqQ5: 'Who teaches the classes?',
+  afrocontemporaneoFaqA5:
+    'Classes are taught by Yunaisy Farray (master trained at ENA Cuba, CID-UNESCO recognized), Charlie Breezy and Alejandro Miñoso (certified instructors in Cuban methodology). All have direct training from the National School of Art of Cuba.',
+  afrocontemporaneoFaqQ6: 'Will Afro Contemporary help me improve in other styles?',
+  afrocontemporaneoFaqA6:
+    'Absolutely. Afro Contemporary is considered the universal technical base for dancers. Improves body dissociation, musicality and coordination that transfer directly to any other style: urban, Latin, contemporary, flamenco...',
+  afrocontemporaneoFaqQ7: 'What is special about ENA methodology?',
+  afrocontemporaneoFaqA7:
+    'The ENA methodology is the systematization of Afro Contemporary created by Ramiro Guerra in 1959 and perfected over 65 years. It is the official reference in the dance world, recognized by institutions like CID-UNESCO.',
+  afrocontemporaneoFaqQ8: 'Can I try a class before enrolling?',
+  afrocontemporaneoFaqA8:
+    'Yes, we offer trial classes so you can experience Afro Contemporary before committing. Contact us to book your trial class.',
+  afrocontemporaneoFaqQ9: 'What clothes should I wear to class?',
+  afrocontemporaneoFaqA9:
+    'Comfortable, fitted clothing that allows seeing the body line (leggings, tights, dance pants). Dance socks optional, you can go barefoot. Bring water bottle and small towel.',
+  afrocontemporaneoFaqQ10: 'What does it mean that it is CID-UNESCO endorsed training?',
+  afrocontemporaneoFaqA10:
+    "CID-UNESCO (International Dance Council, Paris) endorsement guarantees that Farray's training meets international quality standards. It certifies both the authenticity of the technique and the professional level of teaching.",
+  afrocontemporaneoFaqQ11: 'Is it suitable for aspiring dance professionals?',
+  afrocontemporaneoFaqA11:
+    "Absolutely. Afro Contemporary is integral to professional dance curricula worldwide. At Farray's we prepare students for professional dance with the same methodology used in conservatories and official academies.",
+  afrocontemporaneoFaqQ12: 'How long does it take to notice improvements?',
+  afrocontemporaneoFaqA12:
+    'With regular training (2-3 classes per week), students notice improvements in body dissociation and musicality in the first 4-6 weeks. Technical transformation is progressive and cumulative.',
+  afrocontemporaneoFaqQ13: 'Is Afro Contemporary very physically demanding?',
+  afrocontemporaneoFaqA13:
+    "Afro Contemporary is demanding but adaptable to each level. At Farray's we structure classes so that each student can progress at their own pace without risk of injury.",
+  afrocontemporaneoFaqQ14:
+    'What is the difference between Afro Contemporary and other contemporary styles?',
+  afrocontemporaneoFaqA14:
+    'Afro Contemporary (DCC) specifically fuses modern technique with Cuban folklore, including polyrhythm and body dissociation that do not exist in other contemporary styles (lyrical, floor, release...). It is a more comprehensive and technically demanding discipline.',
+  afrocontemporaneoFaqQ15: 'How can I contact for more information?',
+  afrocontemporaneoFaqA15:
+    'You can contact us via WhatsApp at +34 622 24 70 85, by email at info@farrayscenter.com, or visit us at Calle Entença 100, Barcelona. We are between Plaza España and Sants.',
+
+  // Alt texts
+  afrocontemporaneoImage1Alt: "Afro Contemporary classes in Barcelona - Farray's Center",
+  afrocontemporaneoImage2Alt: 'Students practicing Afro Contemporary technique',
+  afrocontemporaneoImage3Alt: 'Yunaisy Farray - Afro Contemporary Master CID-UNESCO',
+
+  // Course Schema
+  afrocontemporaneoCourseSchemaName: "Afro Contemporary Classes in Barcelona - Farray's Center",
+  afrocontemporaneoCourseSchemaDesc:
+    'Learn Afro Contemporary with Yunaisy Farray, CID-UNESCO master trained at ENA Cuba. Technical refinement technique for dancers.',
+
+  // Level cards
+  afrocontemporaneoLevelBasicTitle: 'Basic Afro Contemporary with Charlie Breezy',
+  afrocontemporaneoLevelBasicDesc:
+    'For those starting in this discipline. Charlie Breezy guides the fundamentals of Afro Contemporary: body dissociation, Afro-Cuban rhythms and connection with music. Learn the basics with a teacher who combines technique and contagious energy.',
+  afrocontemporaneoLevelIntAdvTitle: 'Intermediate/Advanced Afro Contemporary with Yunaisy Farray',
+  afrocontemporaneoLevelIntAdvDesc:
+    'For dancers with prior experience. Yunaisy Farray, master trained at ENA Cuba and recognized by CID-UNESCO, works advanced sequences, musical interpretation and technical refinement. 90-minute classes to deepen the discipline.',
+
+  // Prepare Section
+  afrocontemporaneoPrepareTitle: 'Prepare your first Afro Contemporary class',
+  afrocontemporaneoPrepareSubtitle: 'Everything you need to know before coming',
+  afrocontemporaneoPrepareWhatToBring: 'What to bring:',
+  afrocontemporaneoPrepareItem1: 'Comfortable, fitted clothing (leggings, tights or dance pants)',
+  afrocontemporaneoPrepareItem2: 'T-shirt or top that allows seeing the body line',
+  afrocontemporaneoPrepareItem3: 'Water bottle (minimum 500ml) - you will need it',
+  afrocontemporaneoPrepareItem4: 'Small towel for sweat',
+  afrocontemporaneoPrepareItem5: 'Dance socks (optional, you can go barefoot)',
+  afrocontemporaneoPrepareBefore: 'Before arriving:',
+  afrocontemporaneoPrepareBeforeItem1: 'Arrive 10-15 minutes early to change and get acclimated',
+  afrocontemporaneoPrepareBeforeItem2: 'Avoid heavy eating 2 hours before class',
+  afrocontemporaneoPrepareBeforeItem3: 'Hydrate well during the day',
+  afrocontemporaneoPrepareAvoid: 'Avoid:',
+  afrocontemporaneoPrepareAvoidItem1:
+    'Jewelry that could get tangled or injured (earrings, bracelets, rings)',
+  afrocontemporaneoPrepareAvoidItem2: 'Very loose clothing that prevents seeing your posture',
+  afrocontemporaneoPrepareAvoidItem3: 'Street shoes in the room (there are changing rooms)',
+  afrocontemporaneoPrepareTeacherTip: "Yunaisy's tip:",
+  afrocontemporaneoPrepareTeacherQuote:
+    'Come with an open mind and forget about doing it right. In Afro Contemporary, the process is what matters. Your body knows more than your mind thinks.',
+
+  // Compare Section
+  afrocontemporaneoCompareTitle: 'Afro Contemporary vs Other Disciplines: What is the difference?',
+  afrocontemporaneoCompareSubtitle:
+    'Discover what makes Afro Contemporary unique and how it compares with other contemporary styles',
+  afrocontemporaneoCompareCapacity: 'Capacity',
+  afrocontemporaneoCompareAfro: 'Afro Contemporary',
+  afrocontemporaneoCompareLyrical: 'Lyrical Contemporary',
+  afrocontemporaneoCompareFloor: 'Floor & Flow Contemporary',
+  afrocontemporaneoCompareBallet: 'Classical Ballet',
+  afrocontemporaneoCompareRow1: 'Body dissociation',
+  afrocontemporaneoCompareRow2: 'Polyrhythm / Complex musicality',
+  afrocontemporaneoCompareRow3: 'Floor work',
+  afrocontemporaneoCompareRow4: 'Emotional expression / Interpretation',
+  afrocontemporaneoCompareRow5: 'Fluidity and movement continuity',
+  afrocontemporaneoCompareRow6: 'Feet and leg technique',
+  afrocontemporaneoCompareRow7: 'Classical postural alignment',
+  afrocontemporaneoCompareRow8: 'Hip and torso work',
+  afrocontemporaneoCompareRow9: 'Earth connection (grounding)',
+  afrocontemporaneoCompareRow10: 'Versatility for other styles',
+  afrocontemporaneoCompareRow11: 'Cardiovascular demand',
+  afrocontemporaneoCompareMeaningTitle: 'What does this mean for you?',
+  afrocontemporaneoCompareMeaning1Title: 'If you come from Lyrical Contemporary:',
+  afrocontemporaneoCompareMeaning1Desc:
+    'Afro Contemporary will add body dissociation and polyrhythmic musicality that lyrical does not develop. Your emotional expression will gain a new technical dimension.',
+  afrocontemporaneoCompareMeaning2Title: 'If you come from Floor & Flow Contemporary:',
+  afrocontemporaneoCompareMeaning2Desc:
+    'You will learn to work standing with the same organic quality you have on the floor. The hip and torso work will complement your floor vocabulary.',
+  afrocontemporaneoCompareMeaning3Title: 'If you come from Ballet:',
+  afrocontemporaneoCompareMeaning3Desc:
+    'Afro Contemporary will give you the grounding and organic mobility that ballet does not develop. Your leg technique will be enriched with a new movement vocabulary.',
+  afrocontemporaneoCompareMeaning4Title: 'If you come from urban or Latin styles:',
+  afrocontemporaneoCompareMeaning4Desc:
+    'You will find a familiar connection with African rhythms, but with technical structure that will elevate your dance to another level.',
+  afrocontemporaneoCompareConclusion:
+    'Afro Contemporary is the ideal complement for any dancer who wants to expand their technical and expressive vocabulary.',
+
+  // Nearby Section
+  afrocontemporaneoNearbyTitle: 'Afro Contemporary near you in Barcelona',
+  afrocontemporaneoNearbyDesc:
+    "Farray's International Dance Center is located between Plaza España and Sants station, with excellent public transport connections.",
+  afrocontemporaneoNearbySearchText: 'Near these areas:',
+  afrocontemporaneoNearbyMetro:
+    'Metro Tarragona (L3) at 5 min walk. Metro Hostafrancs (L1) at 7 min walk.',
+
+  // ===== HIP HOP PAGE =====
+  hiphopPageTitle: 'Hip Hop Classes in Barcelona',
+  hiphopMetaDescription:
+    'Learn Hip Hop in Barcelona with Marcos Martínez, competition judge and international master. Open level classes on Thursdays. Breaking, locking, popping and freestyle. CID-UNESCO academy near Plaza España.',
+  hiphopBreadcrumbHome: 'Home',
+  hiphopBreadcrumbClasses: 'Dance Classes Barcelona',
+  hiphopBreadcrumbUrban: 'Urban Dance Classes',
+  hiphopBreadcrumbCurrent: 'Hip Hop Classes',
+  hiphopHeroTitle: 'Hip Hop Classes in Barcelona',
+  hiphopHeroSubtitle: 'Freestyle, Battles and Real Culture',
+  hiphopHeroDesc:
+    'Learn authentic Hip Hop with a national reference. Breaking, locking, popping, freestyle and all the flow from the original urban culture of the 70s.',
+  hiphopHeroLocation: 'Open level classes for all levels, between Plaza España and Sants',
+  hiphopCTA1: 'Become a Member Now',
+  hiphopCTA1Subtext: 'Limited spots available this month',
+  hiphopCTA2: 'Book Your Trial Class',
+  hiphopCTA2Subtext: 'Limited time offer',
+  hiphopCTAGroup: 'Enrollment options',
+  flowGuaranteed: 'Flow',
+  hiphopWhatIsTitle: 'What is Hip Hop and why will it transform you?',
+  hiphopWhatIsP1:
+    "Hip Hop is much more than a dance: it's a culture, a form of expression and an attitude towards life that was born in the Bronx of New York in the 70s.",
+  hiphopWhatIsP2:
+    'Hip hop dance includes a wide variety of styles, especially breakdance, locking and popping, which were developed by African Americans and Latinos. What differentiates hip hop dance from other types of dance is freestyle and battles — competitions held in a "cipher", a circle that naturally forms when the battle begins.',
+  hiphopWhatIsP3:
+    'The three elements — freestyle, battles and ciphers — are the essential components of authentic hip hop dance.',
+  hiphopWhatIsP4:
+    "At Farray's Center you will learn Hip Hop with Marcos Martínez, judge of international competitions and one of the references of Hip Hop in Spain. With more than 30 years of global existence, Hip Hop is part of the professional dance training curriculum endorsed by CID-UNESCO.",
+  hiphopWhatIsQuestionTitle: "Wondering if it's for you?",
+  hiphopWhatIsQuestionAnswer: 'If you feel the rhythm, you already are.',
+  hiphopScheduleTitle: 'Hip Hop Class Schedule',
+  hiphopScheduleSubtitle: 'Weekly open level class for all levels',
+  hiphopLevelOpenTitle: 'Hip Hop Urban Open Level',
+  hiphopLevelOpenDesc:
+    'Open class for all levels where you will work on technique, musicality, freestyle and improvisation. Each week we explore different styles and movements so you can develop your own flow and personal style. With Marcos Martínez on Thursdays from 8pm to 9pm.',
+  hiphopTeachersTitle: 'Meet your Hip Hop teacher',
+  hiphopTeachersSubtitle: 'A reference of Hip Hop in Spain',
+  hiphopTeacher1Specialty: 'Competition judge • International master',
+  hiphopTeacher1Bio:
+    'Marcos Martínez is one of the references of Hip Hop in Spain. With decades of experience as a dancer, teacher and judge of international competitions, he has trained generations of dancers and brings the essence of authentic Hip Hop to every class. His unique style combines old school technique with current trends, always respecting the roots of the culture.',
+  hiphopTeachersClosing:
+    'Learn from a master who has dedicated his life to Hip Hop and who transmits not only technique, but the culture and attitude that defines this style.',
+  hiphopPrepareTitle: 'Prepare for your first Hip Hop class',
+  hiphopPrepareSubtitle: 'Everything you need to know before coming',
+  hiphopPrepareWhatToBring: 'What to bring?',
+  hiphopPrepareItem1: 'Comfortable sports shoes (preferably with flat sole)',
+  hiphopPrepareItem2: 'Loose, comfortable clothing that allows movement',
+  hiphopPrepareItem3: 'Water bottle',
+  hiphopPrepareItem4: 'Small towel',
+  hiphopPrepareItem5: 'Desire to release your flow',
+  hiphopPrepareBefore: 'Before arriving',
+  hiphopPrepareBeforeItem1: 'Arrive 10-15 minutes early to warm up',
+  hiphopPrepareBeforeItem2: 'Eat something light 1-2 hours before',
+  hiphopPrepareBeforeItem3: 'Stay well hydrated throughout the day',
+  hiphopPrepareAvoid: 'Avoid',
+  hiphopPrepareAvoidItem1: 'Very tight clothing that limits movement',
+  hiphopPrepareAvoidItem2: 'Heeled or slippery-soled shoes',
+  hiphopPrepareAvoidItem3: 'Eating right before class',
+  hiphopPrepareTeacherTip: "Marcos' tip:",
+  hiphopPrepareTeacherQuote:
+    "Hip Hop is freedom. Don't worry about doing it perfect, worry about feeling it. Your personal style is what makes you unique.",
+  hiphopCompareTitle: 'How does Hip Hop compare to other urban styles?',
+  hiphopCompareSubtitle: 'Find the style that best suits you',
+  hiphopCompareCapacity: 'Aspect',
+  hiphopCompareHipHop: 'Hip Hop',
+  hiphopCompareBreaking: 'Breaking',
+  hiphopComparePopping: 'Popping',
+  hiphopCompareDancehall: 'Dancehall',
+  hiphopCompareRow1: 'Personal expression and own style',
+  hiphopCompareRow2: 'Musicality and interpretation',
+  hiphopCompareRow3: 'Floorwork',
+  hiphopCompareRow4: 'Groove and movement feeling',
+  hiphopCompareRow5: 'Acrobatics and power moves',
+  hiphopCompareRow6: 'Battle and cipher culture',
+  hiphopCompareRow7: 'Connection with historical roots',
+  hiphopCompareRow8: 'Style versatility',
+  hiphopCompareRow9: 'Improvisation (freestyle)',
+  hiphopCompareRow10: 'Accessibility for beginners',
+  hiphopCompareRow11: 'Active global community',
+  hiphopCompareMeaningTitle: 'What does this mean for you?',
+  hiphopCompareMeaning1Title: 'Total creative freedom',
+  hiphopCompareMeaning1Desc:
+    'Hip Hop gives you the tools to develop your own style. There are no limits or fixed rules.',
+  hiphopCompareMeaning2Title: 'Authentic culture',
+  hiphopCompareMeaning2Desc:
+    'You will learn the history and values behind each movement, connecting with a tradition of more than 50 years.',
+  hiphopCompareMeaning3Title: 'Real community',
+  hiphopCompareMeaning3Desc:
+    'You will become part of a global family of dancers who share the same passion and respect for the culture.',
+  hiphopCompareMeaning4Title: 'Visible results',
+  hiphopCompareMeaning4Desc:
+    'You will gain coordination, rhythm, confidence and a style that will represent you on any dance floor.',
+  hiphopCompareConclusion:
+    'Hip Hop is the most versatile and free style of urban dances. If you want to express yourself without limits, this is your path.',
+  hiphopIdentifyTitle: 'Do you identify with any of these situations?',
+  hiphopIdentifyListLabel: 'Situations you may identify with',
+  hiphopIdentify1:
+    "You've always wanted to learn Hip Hop but thought you had no rhythm or that it was only for young people.",
+  hiphopIdentify2:
+    'You love hip hop and rap music but never knew how to dance to it beyond moving your arms.',
+  hiphopIdentify3:
+    "You're looking for a way to express yourself and release stress without having to follow rigid choreographies.",
+  hiphopIdentify4:
+    "You want to gain confidence and ease in any social situation where there's music.",
+  hiphopIdentify5:
+    "You're attracted to authentic urban culture, not the commercial version you see in music videos.",
+  hiphopIdentify6:
+    "You need a physical activity that really motivates you and doesn't bore you like the gym.",
+  hiphopIdentifyTransition: 'If you\'ve said "yes" to any of these points, you know what you need.',
+  hiphopNeedEnrollTitle: 'You need to sign up for Hip Hop classes',
+  hiphopIdentifyAgitate1:
+    "If you don't take the step now, you'll keep watching dancer videos on Instagram wondering how they do it.",
+  hiphopIdentifySolution:
+    "At Farray's Center you will find a space where you can really learn, with a master who breathes Hip Hop and a community that welcomes you regardless of your level.",
+  hiphopIdentifyClosing:
+    'Feel the flow, free yourself, create your style. Hip Hop is waiting for you.',
+  hiphopTransformTitle: 'Imagine your before and after',
+  hiphopTransform1Title: 'From having no rhythm to feeling every beat',
+  hiphopTransform1Desc:
+    'You will develop a deep connection with music that will transform how you listen to and feel every song.',
+  hiphopTransform2Title: 'From moving stiffly to flowing naturally',
+  hiphopTransform2Desc:
+    'Your body will learn to move with groove and ease, without thinking, just feeling.',
+  hiphopTransform3Title: 'From copying to creating your own style',
+  hiphopTransform3Desc:
+    'Freestyle will give you the tools to express yourself in a unique and unrepeatable way.',
+  hiphopTransform4Title: 'From insecure to owning the floor',
+  hiphopTransform4Desc: 'The confidence you gain dancing translates to all areas of your life.',
+  hiphopTransform5Title: 'From alone to part of a family',
+  hiphopTransform5Desc:
+    'You will connect with a community of passionate people who share your same energy.',
+  hiphopTransform6Title: 'From spectator to protagonist',
+  hiphopTransform6Desc:
+    "You'll stop watching from outside to be the one who enters the cipher and captures all eyes.",
+  hiphopTransformCTA: "Why choose Farray's Center to learn Hip Hop?",
+  hiphopTransformCTASubtitle:
+    'The Hip Hop academy in Barcelona with the teacher who makes the difference',
+  hiphopWhyChoose1Title: 'Academy recognized by CID UNESCO',
+  hiphopWhyChoose1Desc:
+    'Led by Yunaisy Farray, with international recognition for our educational excellence.',
+  hiphopWhyChoose2Title: 'Unbeatable location',
+  hiphopWhyChoose2Desc:
+    'Calle Entença 100, 5 minutes from Plaza España and Sants. Easy access by metro and bus.',
+  hiphopWhyChoose3Title: 'Family and professional environment',
+  hiphopWhyChoose3Desc: 'A welcoming space where everyone is welcome, regardless of age or level.',
+  hiphopWhyChoose4Title: 'Top-level facilities',
+  hiphopWhyChoose4Desc:
+    'More than 700 m² with spacious rooms, professional floor and quality sound system.',
+  hiphopWhyChoose5Title: 'Multidisciplinary academy',
+  hiphopWhyChoose5Desc: 'More than 25 styles to complement your training and explore new horizons.',
+  hiphopWhyChoose6Title: 'Annual gala + workshops',
+  hiphopWhyChoose6Desc:
+    'Opportunities to shine on professional stages and learn from guest artists.',
+  hiphopWhyChoose7Title: 'National reference teacher',
+  hiphopWhyChoose7Desc:
+    'Marcos Martínez, competition judge and international master with decades of experience.',
+  hiphopLogosTitle: 'You may have seen us in…',
+  hiphopLogosIntlFestivalsText: 'and at the best dance festivals in the world',
+  hiphopVideoTitle: 'Discover our Hip Hop classes',
+  hiphopVideoDesc: "See what a class at Farray's is like: technique, freestyle and lots of flow.",
+  hiphopWhyTodayFullTitle: 'Why is today the best time to start?',
+  hiphopWhyToday1:
+    'Because every Thursday you let pass is one less opportunity to develop your style.',
+  hiphopWhyToday2:
+    'Because the only way to learn freestyle is by practicing it, and here you have the perfect space.',
+  hiphopWhyToday3: "Because Hip Hop is not about dancing well, it's about feeling good dancing.",
+  hiphopWhyTodayClosing1:
+    "At Farray's we don't sell classes. We create experiences that transform you.",
+  hiphopWhyTodayClosing2:
+    'We await you with powerful beats, a legendary teacher and cipher energy.',
+  hiphopFinalCTATitle: 'Join the Barcelona Hip Hop community',
+  hiphopFinalCTASubtitle: 'Take the step.',
+  hiphopFinalCTADesc: 'Book your spot now and start developing your own flow.',
+  hiphopFinalCTAFunny: 'Spots fly faster than a headspin in a battle.',
+  hiphopFaqTitle: 'Frequently Asked Questions about Hip Hop in Barcelona',
+  hiphopFaqQ1: 'How do Hip Hop classes work?',
+  hiphopFaqA1:
+    'Each one-hour class includes warm-up, base movement technique (grooves, bounces, rocks), musicality work, freestyle and improvisation exercises. Marcos adapts the content to the group, ensuring everyone progresses at their pace while maintaining the spirit of Hip Hop culture.',
+  hiphopFaqQ2: "Can I start from scratch if I've never danced?",
+  hiphopFaqA2:
+    "Absolutely. The class is open level, which means it's designed so anyone can participate without prior experience. Marcos will guide you from the basic fundamentals.",
+  hiphopFaqQ3: 'What Hip Hop styles are worked on in class?',
+  hiphopFaqA3:
+    'We work on the base of Hip Hop freestyle, with influences from old school, new school, locking, popping and social dances. The goal is for you to develop your own personal style by combining different elements.',
+  hiphopFaqQ4: 'What do I need to bring to Hip Hop classes?',
+  hiphopFaqA4:
+    'Comfortable sports shoes (preferably with flat sole), loose clothing that allows freedom of movement, water bottle and desire to release your flow. Avoid very tight clothing.',
+  hiphopFaqQ5: 'Do I need to know how to improvise to come?',
+  hiphopFaqA5:
+    "No. Freestyle is something that develops with practice. You'll start with simple exercises and gradually gain confidence to improvise.",
+  hiphopFaqQ6: 'How often are the classes?',
+  hiphopFaqA6:
+    'Hip Hop Urban classes with Marcos Martínez are on Thursdays from 8pm to 9pm. One hour weekly to develop your technique and style.',
+  hiphopFaqQ7: 'Can I join at any time of the year?',
+  hiphopFaqA7:
+    "Yes. Being open level classes, you can join whenever you want. There's no linear content that would make you feel lost.",
+  hiphopFaqQ8: 'Do you have any special discounts?',
+  hiphopFaqA8:
+    'Yes. We offer class packages and discounts for students, unemployed and people who combine several disciplines. Ask at reception for current offers.',
+  hiphopFaqQ9: 'Can I try a class before signing up?',
+  hiphopFaqA9:
+    "Of course. We offer a trial class so you can check out the atmosphere, meet Marcos and decide if it's what you're looking for. Contact us to book.",
+  hiphopFaqQ10: 'Are the classes choreographic or freestyle?',
+  hiphopFaqA10:
+    'We combine both approaches. We learn movements and combinations, but the emphasis is on developing your ability to improvise and create your own style.',
+  hiphopFaqQ11: 'Is Hip Hop suitable for any age?',
+  hiphopFaqA11:
+    'Yes. Hip Hop has no age. We have students from teenagers to adults over 50. What matters is attitude and willingness to learn.',
+  hiphopFaqQ12: 'Do you organize Hip Hop battles or events?',
+  hiphopFaqA12:
+    "Yes. We organize jams, ciphers and participate in events on the Barcelona Hip Hop scene. It's a great way to put what you've learned into practice.",
+  hiphopFaqQ13: 'What differentiates your classes from other schools?',
+  hiphopFaqA13:
+    "The main difference is the teacher: Marcos Martínez is a judge of international competitions and a reference of Hip Hop in Spain. Plus, we're a CID-UNESCO endorsed academy, which guarantees pedagogical quality.",
+  hiphopFaqQ14: 'Can I combine Hip Hop with other styles at the academy?',
+  hiphopFaqA14:
+    'Of course. Many students combine Hip Hop with Dancehall, Popping, Breaking or even more technical styles like Contemporary. Versatility makes you a better dancer.',
+  hiphopFaqQ15: 'Where is the academy and how can I contact you?',
+  hiphopFaqA15:
+    'We are at Calle Entença 100, 08015 Barcelona, between Plaza España and Sants. Metro: Hostafrancs (L1) or Plaza España (L1, L3). Contact: info@farrayscenter.com | WhatsApp: +34 622 247 085 | Tel: +34 932 890 356.',
+  hiphopNearbyTitle: 'Hip Hop classes near you',
+  hiphopNearbyDesc: 'We are in the heart of Barcelona, accessible from anywhere in the city.',
+  hiphopNearbySearchText: 'Looking for Hip Hop classes near...?',
+  hiphopNearbyMetro: 'Metro Hostafrancs (L1), Plaza España (L1, L3), Sants Estació (L3, L5, Renfe)',
+  hiphopCourseSchemaName: "Hip Hop Classes in Barcelona - Farray's Center",
+  hiphopCourseSchemaDesc:
+    'Learn Hip Hop with Marcos Martínez, competition judge and international master. Breaking, locking, popping and freestyle.',
+  hiphopCulturalHistoryTitle: 'History and Culture of Hip Hop',
+  hiphopCulturalShort:
+    'Hip Hop was born in the Bronx of New York in the early 70s, as a cultural expression of African American and Latino communities.',
+  hiphopCulturalFull: `### The Origins: The 70s Bronx
+
+Hip Hop emerged in the South Bronx of New York between 1973 and 1974, when DJ Kool Herc began isolating the "breaks" (instrumental sections) from funk and soul records, creating a new sound that invited dancing. **"Hip Hop was born as a creative response to marginalization, transforming streets into stages for artistic expression."**
+
+### The Foundational Elements
+
+Hip Hop culture is built on four fundamental pillars: DJing (turntablism), MCing (rap), Graffiti and B-boying/B-girling (breaking). **"The three elements of hip hop dance — freestyle, battles and ciphers — define the competitive and community essence of this culture."**
+
+Pioneer groups like **The Rock Steady Crew** (breaking), **The Lockers** (locking) and **Electric Boogaloos** (popping) established the technical and stylistic foundations that remain valid today.
+
+### From the Street to the World
+
+With more than 30 years of global development, Hip Hop has gone from block parties in the Bronx to becoming a planetary cultural phenomenon. **"Hip hop dance is practiced both on the street and in professional academies, always maintaining its spirit of freedom and self-expression."**
+
+### Hip Hop at Farray's Center
+
+At our academy, Hip Hop is part of the professional dance training curriculum endorsed by **CID-UNESCO (International Dance Council of UNESCO in Paris)**. **"Hip Hop is not just a dance style, it's a life philosophy that promotes creativity, respect and self-improvement."**
+
+Our teacher Marcos Martínez, judge of international competitions and reference of Hip Hop in Spain, transmits not only technique but the values and history that make this style unique.`,
+  hiphopCitableDefinicion:
+    'Hip Hop is an urban dance style born in the Bronx of New York in the 70s, characterized by freestyle, cipher battles, and techniques like breaking, locking and popping.',
+  hiphopCitableOrigen:
+    'Hip Hop dance was born between 1973-1974 in the South Bronx of New York, driven by DJ Kool Herc and developed by African American and Latino communities as a form of artistic expression.',
+  hiphopCitableTecnicas:
+    'The main Hip Hop techniques include: grooves and bounces (rhythmic base), social dances, toprock, footwork, freezes, power moves, and elements of locking, popping and breaking.',
+  hiphopCitableMetodologia:
+    "At Farray's Center, Hip Hop is taught respecting the roots of the culture: base technique, musicality, movement history and development of personal style through freestyle.",
+  hiphopStatistics:
+    'Hip Hop is practiced by more than 30 million people worldwide. A 60-minute class can burn between 400-600 calories while improving coordination, rhythm and body expression.',
+  hiphopCitableFact1:
+    'Breaking was included as an Olympic sport in Paris 2024, officially recognizing Hip Hop as an elite sports discipline.',
+  hiphopCitableFact2:
+    'Studies show that dancing hip hop improves memory, concentration and reduces stress levels by up to 70% after 8 weeks of regular practice.',
+  hiphopCitableFact3:
+    "Farray's International Dance Center is one of the few academies in Barcelona with teachers certified as judges of international Hip Hop competitions.",
 };

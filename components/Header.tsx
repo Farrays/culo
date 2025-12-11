@@ -16,6 +16,7 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const [isClassesDropdownOpen, setIsClassesDropdownOpen] = useState(false);
+  const [isDanzaDropdownOpen, setIsDanzaDropdownOpen] = useState(false);
   const [isUrbanDropdownOpen, setIsUrbanDropdownOpen] = useState(false);
   const [isHeelsDropdownOpen, setIsHeelsDropdownOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
@@ -41,6 +42,9 @@ const Header: React.FC = () => {
       }
       if (!target.closest('.classes-dropdown')) {
         setIsClassesDropdownOpen(false);
+      }
+      if (!target.closest('.danza-dropdown')) {
+        setIsDanzaDropdownOpen(false);
       }
       if (!target.closest('.urban-dropdown')) {
         setIsUrbanDropdownOpen(false);
@@ -100,7 +104,13 @@ const Header: React.FC = () => {
           path: `/${locale}/clases/danza-barcelona`,
           textKey: 'navDanza',
           submenu: [
+            {
+              path: `/${locale}/clases/afro-contemporaneo-barcelona`,
+              textKey: 'navAfroContemporaneo',
+            },
+            { path: `/${locale}/clases/afro-jazz`, textKey: 'navAfroJazz' },
             { path: `/${locale}/clases/ballet-barcelona`, textKey: 'navBallet' },
+            { path: `/${locale}/clases/contemporaneo-barcelona`, textKey: 'navContemporaneo' },
             { path: `/${locale}/clases/modern-jazz-barcelona`, textKey: 'navModernJazz' },
           ],
         },
@@ -122,6 +132,7 @@ const Header: React.FC = () => {
                 { path: `/${locale}/clases/sexy-style-barcelona`, textKey: 'navSexyStyle' },
               ],
             },
+            { path: `/${locale}/clases/hip-hop-barcelona`, textKey: 'navHipHop' },
             {
               path: `/${locale}/clases/hip-hop-reggaeton-barcelona`,
               textKey: 'navHipHopReggaeton',
@@ -133,6 +144,7 @@ const Header: React.FC = () => {
         },
         { path: `/${locale}/clases/salsa-bachata-barcelona`, textKey: 'navSalsaBachata' },
         { path: `/${locale}/clases/entrenamiento-bailarines-barcelona`, textKey: 'navPrepFisica' },
+        { path: `/${locale}/clases/stretching-barcelona`, textKey: 'navStretching' },
       ],
     },
   };
@@ -153,6 +165,8 @@ const Header: React.FC = () => {
             locale={locale}
             isClassesDropdownOpen={isClassesDropdownOpen}
             setIsClassesDropdownOpen={setIsClassesDropdownOpen}
+            isDanzaDropdownOpen={isDanzaDropdownOpen}
+            setIsDanzaDropdownOpen={setIsDanzaDropdownOpen}
             isUrbanDropdownOpen={isUrbanDropdownOpen}
             setIsUrbanDropdownOpen={setIsUrbanDropdownOpen}
             isHeelsDropdownOpen={isHeelsDropdownOpen}
