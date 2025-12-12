@@ -164,10 +164,7 @@ const SalsaCubanaPage: React.FC = () => {
         <title>{t('salsaCubanaPageTitle')} | Farray&apos;s Center</title>
         <meta name="description" content={t('salsaCubanaMetaDescription')} />
         <link rel="canonical" href={pageUrl} />
-        <meta
-          property="og:title"
-          content={`${t('salsaCubanaPageTitle')} | Farray&apos;s Center`}
-        />
+        <meta property="og:title" content={`${t('salsaCubanaPageTitle')} | Farray&apos;s Center`} />
         <meta property="og:description" content={t('salsaCubanaMetaDescription')} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
@@ -175,10 +172,7 @@ const SalsaCubanaPage: React.FC = () => {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content={`${t('salsaCubanaPageTitle')} | Farray's Center`}
-        />
+        <meta name="twitter:title" content={`${t('salsaCubanaPageTitle')} | Farray's Center`} />
         <meta name="twitter:description" content={t('salsaCubanaMetaDescription')} />
         <meta name="twitter:image" content={`${baseUrl}/images/og-salsa-cubana.jpg`} />
       </Helmet>
@@ -412,19 +406,29 @@ const SalsaCubanaPage: React.FC = () => {
                       {t('salsaCubanaWhatIsP1')}
                     </p>
                     <p>{t('salsaCubanaWhatIsP2')}</p>
-                    <p className="italic font-medium text-neutral">
-                      {t('salsaCubanaWhatIsP3')}
-                    </p>
+                    <p className="italic font-medium text-neutral">{t('salsaCubanaWhatIsP3')}</p>
                     <p>{t('salsaCubanaWhatIsP4')}</p>
                   </div>
                   <div className="rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-primary-accent/20 to-primary-dark/20 p-8 flex items-center justify-center min-h-[300px]">
                     <div className="text-center">
                       <div className="flex justify-center gap-4 mb-4">
-                        <svg className="w-16 h-16 text-primary-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                        <svg
+                          className="w-16 h-16 text-primary-accent"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={1}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                          />
                         </svg>
                       </div>
-                      <p className="text-neutral/80 text-sm italic">{t('salsaCubanaWhatIsImageAlt')}</p>
+                      <p className="text-neutral/80 text-sm italic">
+                        {t('salsaCubanaWhatIsImageAlt')}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -450,7 +454,9 @@ const SalsaCubanaPage: React.FC = () => {
 
                 <div className="space-y-6 text-lg text-neutral/90 leading-relaxed">
                   <p>{t('salsaCubanaProblemP1')}</p>
-                  <p className="text-2xl font-bold text-primary-accent">{t('salsaCubanaProblemP2')}</p>
+                  <p className="text-2xl font-bold text-primary-accent">
+                    {t('salsaCubanaProblemP2')}
+                  </p>
                   <p className="text-neutral/80">{t('salsaCubanaProblemP3')}</p>
 
                   <div className="my-8 p-6 bg-black/50 border-l-4 border-primary-accent rounded-r-xl">
@@ -537,11 +543,23 @@ const SalsaCubanaPage: React.FC = () => {
               <AnimateOnScroll delay={0}>
                 <div className="h-full p-6 bg-black/50 border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-300">
                   <div className="w-12 h-12 rounded-full bg-primary-accent/20 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-primary-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    <svg
+                      className="w-6 h-6 text-primary-accent"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                      />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-neutral mb-3">{t('salsaCubanaTechMenTitle')}</h3>
+                  <h3 className="text-xl font-bold text-neutral mb-3">
+                    {t('salsaCubanaTechMenTitle')}
+                  </h3>
                   <p className="text-neutral/80 text-sm mb-4">{t('salsaCubanaTechMenDesc')}</p>
                   <ul className="space-y-2 text-sm text-neutral/70">
                     <li className="flex items-start gap-2">
@@ -561,7 +579,9 @@ const SalsaCubanaPage: React.FC = () => {
                       <span>{t('salsaCubanaTechMenItem4')}</span>
                     </li>
                   </ul>
-                  <p className="mt-4 text-sm font-semibold text-primary-accent">{t('salsaCubanaTechMenResult')}</p>
+                  <p className="mt-4 text-sm font-semibold text-primary-accent">
+                    {t('salsaCubanaTechMenResult')}
+                  </p>
                 </div>
               </AnimateOnScroll>
 
@@ -569,11 +589,23 @@ const SalsaCubanaPage: React.FC = () => {
               <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_MEDIUM}>
                 <div className="h-full p-6 bg-black/50 border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-300">
                   <div className="w-12 h-12 rounded-full bg-primary-accent/20 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-primary-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    <svg
+                      className="w-6 h-6 text-primary-accent"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                      />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-neutral mb-3">{t('salsaCubanaTechWomenTitle')}</h3>
+                  <h3 className="text-xl font-bold text-neutral mb-3">
+                    {t('salsaCubanaTechWomenTitle')}
+                  </h3>
                   <p className="text-neutral/80 text-sm mb-4">{t('salsaCubanaTechWomenDesc')}</p>
                   <ul className="space-y-2 text-sm text-neutral/70">
                     <li className="flex items-start gap-2">
@@ -593,7 +625,9 @@ const SalsaCubanaPage: React.FC = () => {
                       <span>{t('salsaCubanaTechWomenItem4')}</span>
                     </li>
                   </ul>
-                  <p className="mt-4 text-sm font-semibold text-primary-accent">{t('salsaCubanaTechWomenResult')}</p>
+                  <p className="mt-4 text-sm font-semibold text-primary-accent">
+                    {t('salsaCubanaTechWomenResult')}
+                  </p>
                 </div>
               </AnimateOnScroll>
 
@@ -601,11 +635,23 @@ const SalsaCubanaPage: React.FC = () => {
               <AnimateOnScroll delay={2 * ANIMATION_DELAYS.STAGGER_MEDIUM}>
                 <div className="h-full p-6 bg-black/50 border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-300">
                   <div className="w-12 h-12 rounded-full bg-primary-accent/20 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-primary-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
+                    <svg
+                      className="w-6 h-6 text-primary-accent"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z"
+                      />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-neutral mb-3">{t('salsaCubanaTechMusicTitle')}</h3>
+                  <h3 className="text-xl font-bold text-neutral mb-3">
+                    {t('salsaCubanaTechMusicTitle')}
+                  </h3>
                   <p className="text-neutral/80 text-sm mb-4">{t('salsaCubanaTechMusicDesc')}</p>
                   <ul className="space-y-2 text-sm text-neutral/70">
                     <li className="flex items-start gap-2">
@@ -625,7 +671,9 @@ const SalsaCubanaPage: React.FC = () => {
                       <span>{t('salsaCubanaTechMusicItem4')}</span>
                     </li>
                   </ul>
-                  <p className="mt-4 text-sm font-semibold text-primary-accent">{t('salsaCubanaTechMusicResult')}</p>
+                  <p className="mt-4 text-sm font-semibold text-primary-accent">
+                    {t('salsaCubanaTechMusicResult')}
+                  </p>
                 </div>
               </AnimateOnScroll>
 
@@ -633,11 +681,23 @@ const SalsaCubanaPage: React.FC = () => {
               <AnimateOnScroll delay={3 * ANIMATION_DELAYS.STAGGER_MEDIUM}>
                 <div className="h-full p-6 bg-black/50 border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-300">
                   <div className="w-12 h-12 rounded-full bg-primary-accent/20 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-primary-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                    <svg
+                      className="w-6 h-6 text-primary-accent"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                      />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-neutral mb-3">{t('salsaCubanaBenefitsTitle')}</h3>
+                  <h3 className="text-xl font-bold text-neutral mb-3">
+                    {t('salsaCubanaBenefitsTitle')}
+                  </h3>
                   <p className="text-neutral/80 text-sm mb-4">{t('salsaCubanaBenefitsSubtitle')}</p>
                   <ul className="space-y-2 text-sm text-neutral/70">
                     <li className="flex items-start gap-2">
@@ -689,8 +749,18 @@ const SalsaCubanaPage: React.FC = () => {
               <AnimateOnScroll delay={0} className="[perspective:1000px]">
                 <div className="group h-full min-h-[180px] p-5 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)] hover:shadow-accent-glow">
                   <div className="w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center mb-3">
-                    <svg className="w-5 h-5 text-primary-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
+                    <svg
+                      className="w-5 h-5 text-primary-accent"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"
+                      />
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-neutral mb-2">
@@ -703,11 +773,24 @@ const SalsaCubanaPage: React.FC = () => {
               </AnimateOnScroll>
 
               {/* Pilar 2: Seguimiento Técnico */}
-              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL} className="[perspective:1000px]">
+              <AnimateOnScroll
+                delay={ANIMATION_DELAYS.STAGGER_SMALL}
+                className="[perspective:1000px]"
+              >
                 <div className="group h-full min-h-[180px] p-5 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)] hover:shadow-accent-glow">
                   <div className="w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center mb-3">
-                    <svg className="w-5 h-5 text-primary-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                    <svg
+                      className="w-5 h-5 text-primary-accent"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"
+                      />
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-neutral mb-2">
@@ -720,11 +803,24 @@ const SalsaCubanaPage: React.FC = () => {
               </AnimateOnScroll>
 
               {/* Pilar 3: Musicalidad */}
-              <AnimateOnScroll delay={2 * ANIMATION_DELAYS.STAGGER_SMALL} className="[perspective:1000px]">
+              <AnimateOnScroll
+                delay={2 * ANIMATION_DELAYS.STAGGER_SMALL}
+                className="[perspective:1000px]"
+              >
                 <div className="group h-full min-h-[180px] p-5 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)] hover:shadow-accent-glow">
                   <div className="w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center mb-3">
-                    <svg className="w-5 h-5 text-primary-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
+                    <svg
+                      className="w-5 h-5 text-primary-accent"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z"
+                      />
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-neutral mb-2">
@@ -737,11 +833,24 @@ const SalsaCubanaPage: React.FC = () => {
               </AnimateOnScroll>
 
               {/* Pilar 4: Conexión de Pareja */}
-              <AnimateOnScroll delay={3 * ANIMATION_DELAYS.STAGGER_SMALL} className="[perspective:1000px]">
+              <AnimateOnScroll
+                delay={3 * ANIMATION_DELAYS.STAGGER_SMALL}
+                className="[perspective:1000px]"
+              >
                 <div className="group h-full min-h-[180px] p-5 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)] hover:shadow-accent-glow">
                   <div className="w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center mb-3">
-                    <svg className="w-5 h-5 text-primary-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                    <svg
+                      className="w-5 h-5 text-primary-accent"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"
+                      />
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-neutral mb-2">
@@ -754,11 +863,24 @@ const SalsaCubanaPage: React.FC = () => {
               </AnimateOnScroll>
 
               {/* Pilar 5: Técnica Corporal */}
-              <AnimateOnScroll delay={4 * ANIMATION_DELAYS.STAGGER_SMALL} className="[perspective:1000px]">
+              <AnimateOnScroll
+                delay={4 * ANIMATION_DELAYS.STAGGER_SMALL}
+                className="[perspective:1000px]"
+              >
                 <div className="group h-full min-h-[180px] p-5 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)] hover:shadow-accent-glow">
                   <div className="w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center mb-3">
-                    <svg className="w-5 h-5 text-primary-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                    <svg
+                      className="w-5 h-5 text-primary-accent"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                      />
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-neutral mb-2">
@@ -771,11 +893,24 @@ const SalsaCubanaPage: React.FC = () => {
               </AnimateOnScroll>
 
               {/* Pilar 6: Cultura Cubana */}
-              <AnimateOnScroll delay={5 * ANIMATION_DELAYS.STAGGER_SMALL} className="[perspective:1000px]">
+              <AnimateOnScroll
+                delay={5 * ANIMATION_DELAYS.STAGGER_SMALL}
+                className="[perspective:1000px]"
+              >
                 <div className="group h-full min-h-[180px] p-5 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)] hover:shadow-accent-glow">
                   <div className="w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center mb-3">
-                    <svg className="w-5 h-5 text-primary-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                    <svg
+                      className="w-5 h-5 text-primary-accent"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"
+                      />
                     </svg>
                   </div>
                   <h3 className="text-lg font-bold text-neutral mb-2">
@@ -827,12 +962,8 @@ const SalsaCubanaPage: React.FC = () => {
                     <div className="inline-block px-3 py-1 text-sm font-semibold rounded-full mb-3 bg-primary-accent/20 text-primary-accent">
                       {level.duration}
                     </div>
-                    <h4 className="text-lg font-bold text-neutral mb-2">
-                      {t(level.titleKey)}
-                    </h4>
-                    <p className="text-neutral/80 text-sm leading-relaxed">
-                      {t(level.descKey)}
-                    </p>
+                    <h4 className="text-lg font-bold text-neutral mb-2">{t(level.titleKey)}</h4>
+                    <p className="text-neutral/80 text-sm leading-relaxed">{t(level.descKey)}</p>
                   </div>
                 </AnimateOnScroll>
               ))}
@@ -893,9 +1024,15 @@ const SalsaCubanaPage: React.FC = () => {
                       {t('salsaCubanaTeacher1Bio')}
                     </p>
                     <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                      <span className="px-3 py-1 bg-primary-accent/20 text-primary-accent text-sm rounded-full">CID-UNESCO</span>
-                      <span className="px-3 py-1 bg-primary-accent/20 text-primary-accent text-sm rounded-full">Método Farray</span>
-                      <span className="px-3 py-1 bg-primary-accent/20 text-primary-accent text-sm rounded-full">+25 años exp.</span>
+                      <span className="px-3 py-1 bg-primary-accent/20 text-primary-accent text-sm rounded-full">
+                        CID-UNESCO
+                      </span>
+                      <span className="px-3 py-1 bg-primary-accent/20 text-primary-accent text-sm rounded-full">
+                        Método Farray
+                      </span>
+                      <span className="px-3 py-1 bg-primary-accent/20 text-primary-accent text-sm rounded-full">
+                        +25 años exp.
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -910,8 +1047,18 @@ const SalsaCubanaPage: React.FC = () => {
                   <div className="flex flex-col items-center text-center">
                     <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary-dark/50 group-hover:border-primary-accent/50 transition-colors duration-300 mb-4 bg-primary-dark/30 flex items-center justify-center">
                       {/* Placeholder icon for Iroel */}
-                      <svg className="w-12 h-12 text-primary-accent/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                      <svg
+                        className="w-12 h-12 text-primary-accent/50"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={1.5}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                        />
                       </svg>
                     </div>
                     <h3 className="text-xl font-bold text-neutral mb-1">
@@ -1288,9 +1435,7 @@ const SalsaCubanaPage: React.FC = () => {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
                   {t('salsaCubanaVideoTitle')}
                 </h2>
-                <p className="text-base sm:text-lg text-neutral/70">
-                  {t('salsaCubanaVideoDesc')}
-                </p>
+                <p className="text-base sm:text-lg text-neutral/70">{t('salsaCubanaVideoDesc')}</p>
               </div>
             </AnimateOnScroll>
 
@@ -1443,11 +1588,7 @@ const SalsaCubanaPage: React.FC = () => {
         </section>
 
         {/* 13. FAQ */}
-        <FAQSection
-          title={t('salsaCubanaFaqTitle')}
-          faqs={salsaCubanaFaqs}
-          pageUrl={pageUrl}
-        />
+        <FAQSection title={t('salsaCubanaFaqTitle')} faqs={salsaCubanaFaqs} pageUrl={pageUrl} />
 
         {/* 14. Local SEO Section */}
         <section className="py-10 md:py-14 bg-black">

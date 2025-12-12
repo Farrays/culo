@@ -194,17 +194,13 @@ const LatinDanceComparisonTable: React.FC<LatinDanceComparisonTableProps> = ({
       <h3 className="text-2xl sm:text-3xl font-black tracking-tighter text-neutral mb-2 text-center holographic-text">
         {t('latinDanceCompareTitle')}
       </h3>
-      <p className="text-base text-neutral/70 mb-6 text-center">
-        {t('latinDanceCompareSubtitle')}
-      </p>
+      <p className="text-base text-neutral/70 mb-6 text-center">{t('latinDanceCompareSubtitle')}</p>
 
       {/* Mobile: Cards view - show only highlighted style vs 3 main alternatives */}
       <div className="block xl:hidden space-y-4">
         {comparisonData.map(item => {
           // Select 3 comparison styles (excluding the highlighted one)
-          const compareStyles = styleKeys
-            .filter(s => s !== highlightedStyle)
-            .slice(0, 3);
+          const compareStyles = styleKeys.filter(s => s !== highlightedStyle).slice(0, 3);
 
           return (
             <div key={item.row} className="p-4 bg-black/30 rounded-xl border border-neutral/20">

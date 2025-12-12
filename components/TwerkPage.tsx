@@ -1122,9 +1122,7 @@ const TwerkPage: React.FC = () => {
                   {t('twerkNearbyTitle')}
                 </h3>
                 <p className="text-neutral/80 mb-6">{t('twerkNearbyDesc')}</p>
-                <p className="text-neutral/90 font-semibold mb-4">
-                  {t('twerkNearbySearchText')}
-                </p>
+                <p className="text-neutral/90 font-semibold mb-4">{t('twerkNearbySearchText')}</p>
                 <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
                   {TWERK_NEARBY_AREAS.map((area, index) => (
                     <div key={index} className="flex items-center gap-2 text-sm">

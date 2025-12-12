@@ -969,7 +969,8 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   dancehallPrepareTitle: 'Prepara tu primera clase de Dancehall',
   dancehallPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
   dancehallPrepareWhatToBring: 'Qué traer:',
-  dancehallPrepareItem1: 'Ropa cómoda y que te permita moverte libremente (leggings, shorts, joggers)',
+  dancehallPrepareItem1:
+    'Ropa cómoda y que te permita moverte libremente (leggings, shorts, joggers)',
   dancehallPrepareItem2: 'Camiseta o top que no te limite los movimientos de brazos',
   dancehallPrepareItem3: 'Botella de agua (mínimo 500ml) - el Dancehall es intenso',
   dancehallPrepareItem4: 'Toalla pequeña para el sudor',
@@ -991,7 +992,8 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   dancehallNearbyDesc:
     "Somos la academia de referencia para clases de Dancehall en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnos de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en Dancehall jamaicano con metodología profesional.",
   dancehallNearbySearchText: 'Si buscas "Clases de Dancehall cerca de mi" en Barcelona, estamos a:',
-  dancehallNearbyMetro: 'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
+  dancehallNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
 
   // Schema Markup
   dancehallCourseSchemaName: 'Clases de Dancehall Jamaicano en Barcelona - Todos los Niveles',
@@ -3754,7 +3756,8 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   twerkNearbyDesc:
     "Somos la academia de referencia para clases de Twerk en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnas de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en Twerk con metodología profesional y ambiente seguro.",
   twerkNearbySearchText: 'Si buscas "Clases de Twerk cerca de mi" en Barcelona, estamos a:',
-  twerkNearbyMetro: 'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
+  twerkNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
 
   // Course Schema
   twerkCourseSchemaName: "Clases de Twerk y Twerking en Barcelona - Farray's Center",
@@ -4080,7 +4083,8 @@ En Farray's International Dance Center, el Afrobeats se enseña con técnica, re
   afroNearbyDesc:
     "Somos la academia de referencia para clases de Afrobeat en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnos de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en danza africana con profesores especializados.",
   afroNearbySearchText: 'Si buscas "Clases de Afrobeat cerca de mi" en Barcelona, estamos a:',
-  afroNearbyMetro: 'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
+  afroNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
 
   // Course Schema
   afroCourseSchemaName: 'Clases de Afrobeats y Afrodance en Barcelona',
@@ -4351,8 +4355,10 @@ Las últimas tendencias y estilos se fusionan en nuestras clases de forma variad
   hhrNearbyTitle: 'Clases de Hip Hop Reggaeton cerca de ti en Barcelona',
   hhrNearbyDesc:
     "Somos la academia de referencia para clases de Hip Hop y Reggaeton en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnos de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en baile urbano con metodología profesional.",
-  hhrNearbySearchText: 'Si buscas "Clases de Hip Hop Reggaeton cerca de mi" en Barcelona, estamos a:',
-  hhrNearbyMetro: 'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
+  hhrNearbySearchText:
+    'Si buscas "Clases de Hip Hop Reggaeton cerca de mi" en Barcelona, estamos a:',
+  hhrNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
 
   // Course Schema
   hhrCourseSchemaName: "Clases de Hip Hop Reggaeton en Barcelona - Farray's Center",
@@ -4639,7 +4645,8 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   sxrNearbyDesc:
     "Somos la academia de referencia para clases de Sexy Reggaeton en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnas de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en baile sensual con ambiente seguro y profesional.",
   sxrNearbySearchText: 'Si buscas "Clases de Sexy Reggaeton cerca de mi" en Barcelona, estamos a:',
-  sxrNearbyMetro: 'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
+  sxrNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
 
   // Course Schema
   sxrCourseSchemaName: "Clases de Sexy Reggaeton en Barcelona - Farray's Center",
@@ -4950,8 +4957,10 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
   rcbNearbyTitle: 'Clases de Reggaeton Cubano cerca de ti en Barcelona',
   rcbNearbyDesc:
     "Somos la academia de referencia para clases de Reggaeton Cubano en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnos de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en reparto y reggaeton auténtico cubano.",
-  rcbNearbySearchText: 'Si buscas "Clases de Reggaeton Cubano cerca de mi" en Barcelona, estamos a:',
-  rcbNearbyMetro: 'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
+  rcbNearbySearchText:
+    'Si buscas "Clases de Reggaeton Cubano cerca de mi" en Barcelona, estamos a:',
+  rcbNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
 
   // Course Schema
   rcbCourseSchemaName: "Clases de Reggaeton Cubano en Barcelona - Farray's Center",
@@ -4964,7 +4973,7 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
   rcbCitableOrigen:
     '**"El Reggaeton Cubano surgió a finales de los años 90 y principios de los 2000 en barrios como La Lisa, Marianao, Centro Habana y El Cerro. Artistas pioneros como Candyman, El Taiger, Chocolate MC y Osmani García popularizaron el género."**',
   rcbCitableReparto:
-    '**"El término \'Reparto\' proviene de los \'repartos\' o barrios populares de La Habana donde nació este estilo. Se caracteriza por ritmos más crudos, letras callejeras y una actitud rebelde que refleja la vida cotidiana de los barrios cubanos."**',
+    "**\"El término 'Reparto' proviene de los 'repartos' o barrios populares de La Habana donde nació este estilo. Se caracteriza por ritmos más crudos, letras callejeras y una actitud rebelde que refleja la vida cotidiana de los barrios cubanos.\"**",
   rcbCitableCaracteristicas:
     '**"El baile de Reggaeton Cubano se distingue por: improvisación constante, disociación corporal avanzada (caderas, pecho, hombros independientes), tembleque (vibración rápida de caderas), y movimientos de suelo inspirados en la rumba afrocubana."**',
   rcbCitableFact1:
@@ -5478,7 +5487,8 @@ Actualmente, Femmology se imparte exclusivamente en Farray's Center bajo la dire
   femNearbyDesc:
     "Somos la academia de referencia para clases de Femmology en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnas de Poble Sec, Sant Antoni y L'Hospitalet que buscan reconectar con su feminidad a través del movimiento.",
   femNearbySearchText: 'Si buscas "Clases de Femmology cerca de mi" en Barcelona, estamos a:',
-  femNearbyMetro: 'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
+  femNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
 
   // ===== Sexy Style Page =====
   sexystylePageTitle: 'Clases de Sexy Style en Barcelona | Aprende a Bailar con Sensualidad',
@@ -5773,8 +5783,10 @@ Hoy, el Sexy Style en Farray's se vive como un espacio de aprendizaje técnico y
   sexystyleNearbyTitle: 'Clases de Sexy Style cerca de ti en Barcelona',
   sexystyleNearbyDesc:
     "Somos la academia de referencia para clases de Sexy Style en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnas de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en baile sensual con metodología profesional y ambiente seguro.",
-  sexystyleNearbySearchText: 'Si buscas "Clases de Sexy Style cerca de mi" en Barcelona, estamos a:',
-  sexystyleNearbyMetro: 'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
+  sexystyleNearbySearchText:
+    'Si buscas "Clases de Sexy Style cerca de mi" en Barcelona, estamos a:',
+  sexystyleNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
 
   // ===== MODERN JAZZ PAGE =====
   // SEO & Meta
@@ -7840,8 +7852,7 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   afrojazzNearbyTitle: 'Afro Jazz cerca de ti en Barcelona',
   afrojazzNearbyDesc:
     'Somos la única academia del mundo que enseña Afro Jazz con metodología profesional y aval CID-UNESCO. En el corazón de Barcelona, entre Plaza España y Sants.',
-  afrojazzNearbySearchText:
-    'Si buscas "clases de Afro Jazz cerca de mí" en Barcelona, estamos a:',
+  afrojazzNearbySearchText: 'Si buscas "clases de Afro Jazz cerca de mí" en Barcelona, estamos a:',
   afrojazzNearbyMetro:
     'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando',
 
@@ -8597,7 +8608,8 @@ Nuestro profesor **Marcos Martínez**, juez de competiciones internacionales y r
   salsaCubanaTechWomenItem2: 'Técnica de brazos: elegancia y precisión en cada movimiento',
   salsaCubanaTechWomenItem3: 'Uso del peso corporal: fluidez y equilibrio natural',
   salsaCubanaTechWomenItem4: 'Reacción activa: interpretas la guía, no la sufres',
-  salsaCubanaTechWomenResult: 'El resultado: confianza en ti misma que se refleja automáticamente en tu baile.',
+  salsaCubanaTechWomenResult:
+    'El resultado: confianza en ti misma que se refleja automáticamente en tu baile.',
 
   // Musicality
   salsaCubanaTechMusicTitle: 'Musicalidad: El secreto que nadie te enseña',
@@ -8727,16 +8739,11 @@ Nuestro profesor **Marcos Martínez**, juez de competiciones internacionales y r
   salsaCubanaIdentifyListLabel: 'Perfiles ideales para el curso',
   salsaCubanaIdentify1:
     'Principiantes absolutos que quieren empezar con bases sólidas (no con vicios)',
-  salsaCubanaIdentify2:
-    'Bailarines estancados que sienten que hace tiempo no avanzan',
-  salsaCubanaIdentify3:
-    'Personas frustradas con el método tradicional de "memorizar figuras"',
-  salsaCubanaIdentify4:
-    'Quienes buscan calidad sobre cantidad de figuras',
-  salsaCubanaIdentify5:
-    'Curiosos exigentes que quieren entender el baile, no solo hacerlo',
-  salsaCubanaIdentify6:
-    'Los que buscan bailar socialmente con confianza en cualquier pista',
+  salsaCubanaIdentify2: 'Bailarines estancados que sienten que hace tiempo no avanzan',
+  salsaCubanaIdentify3: 'Personas frustradas con el método tradicional de "memorizar figuras"',
+  salsaCubanaIdentify4: 'Quienes buscan calidad sobre cantidad de figuras',
+  salsaCubanaIdentify5: 'Curiosos exigentes que quieren entender el baile, no solo hacerlo',
+  salsaCubanaIdentify6: 'Los que buscan bailar socialmente con confianza en cualquier pista',
   salsaCubanaIdentifyClosing:
     'Aquí incorporarás a tu baile nuevos conceptos y dinámicas que te harán pasar a otro nivel.',
 
@@ -8762,7 +8769,7 @@ Nuestro profesor **Marcos Martínez**, juez de competiciones internacionales y r
     'Conectarás con la alegría, el sabor y el espíritu de Cuba a través de su baile más emblemático.',
 
   // Why Choose Section
-  salsaCubanaWhyChooseTitle: '¿Por qué elegir Farray\'s?',
+  salsaCubanaWhyChooseTitle: "¿Por qué elegir Farray's?",
   salsaCubanaWhyChooseSubtitle: 'La diferencia de aprender con el método original',
   salsaCubanaWhyChoose1Title: 'Método Exclusivo',
   salsaCubanaWhyChoose1Desc:

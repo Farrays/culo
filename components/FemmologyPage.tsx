@@ -31,15 +31,35 @@ const ANIMATION_DELAYS = {
 
 // Local icons
 const UsersIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+  <svg
+    className={className}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={1.5}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"
+    />
   </svg>
 );
 
 const MapPinIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+  <svg
+    className={className}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={1.5}
+  >
     <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+    />
   </svg>
 );
 
@@ -530,9 +550,7 @@ const FemmologyPage: React.FC = () => {
                   <div className="inline-block px-3 py-1 bg-primary-dark/30 text-neutral text-sm font-semibold rounded-full mb-4">
                     BASICO
                   </div>
-                  <h3 className="text-xl font-bold text-neutral mb-3">
-                    {t('femLevelBasicTitle')}
-                  </h3>
+                  <h3 className="text-xl font-bold text-neutral mb-3">{t('femLevelBasicTitle')}</h3>
                   <p className="text-neutral/80 text-sm leading-relaxed">
                     {t('femLevelBasicDesc')}
                   </p>
@@ -629,12 +647,18 @@ const FemmologyPage: React.FC = () => {
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-5xl mx-auto">
-                <h3 className="text-2xl sm:text-3xl font-black tracking-tighter text-neutral mb-2 text-center holographic-text">{t('femPrepareTitle')}</h3>
-                <p className="text-base text-neutral/70 mb-6 text-center">{t('femPrepareSubtitle')}</p>
+                <h3 className="text-2xl sm:text-3xl font-black tracking-tighter text-neutral mb-2 text-center holographic-text">
+                  {t('femPrepareTitle')}
+                </h3>
+                <p className="text-base text-neutral/70 mb-6 text-center">
+                  {t('femPrepareSubtitle')}
+                </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
                   <div className="p-5 bg-primary-accent/10 rounded-2xl border border-primary-accent/30 hover:border-primary-accent/50 transition-all duration-300">
                     <h4 className="text-base font-bold text-primary-accent mb-3 flex items-center gap-2">
-                      <span className="w-6 h-6 rounded-full bg-primary-accent/20 flex items-center justify-center text-sm">+</span>
+                      <span className="w-6 h-6 rounded-full bg-primary-accent/20 flex items-center justify-center text-sm">
+                        +
+                      </span>
                       {t('femPrepareWhatToBring')}
                     </h4>
                     <ul className="space-y-2">
@@ -654,7 +678,9 @@ const FemmologyPage: React.FC = () => {
                     <ul className="space-y-2">
                       {[1, 2, 3].map(num => (
                         <li key={num} className="flex items-start gap-2 text-sm text-neutral/80">
-                          <span className="w-4 h-4 rounded-full bg-primary-dark/30 flex items-center justify-center text-xs text-neutral mt-0.5 flex-shrink-0">-</span>
+                          <span className="w-4 h-4 rounded-full bg-primary-dark/30 flex items-center justify-center text-xs text-neutral mt-0.5 flex-shrink-0">
+                            -
+                          </span>
                           <span>{t(`femPrepareBeforeItem${num}`)}</span>
                         </li>
                       ))}
@@ -662,13 +688,17 @@ const FemmologyPage: React.FC = () => {
                   </div>
                   <div className="p-5 bg-neutral/5 rounded-2xl border border-neutral/20 hover:border-neutral/40 transition-all duration-300 sm:col-span-2 lg:col-span-1">
                     <h4 className="text-base font-bold text-neutral/70 mb-3 flex items-center gap-2">
-                      <span className="w-6 h-6 rounded-full bg-neutral/10 flex items-center justify-center text-sm">x</span>
+                      <span className="w-6 h-6 rounded-full bg-neutral/10 flex items-center justify-center text-sm">
+                        x
+                      </span>
                       {t('femPrepareAvoid')}
                     </h4>
                     <ul className="space-y-2">
                       {[1, 2, 3].map(num => (
                         <li key={num} className="flex items-start gap-2 text-sm text-neutral/80">
-                          <span className="w-4 h-4 rounded-full bg-neutral/10 flex items-center justify-center text-xs text-neutral/60 mt-0.5 flex-shrink-0">x</span>
+                          <span className="w-4 h-4 rounded-full bg-neutral/10 flex items-center justify-center text-xs text-neutral/60 mt-0.5 flex-shrink-0">
+                            x
+                          </span>
                           <span>{t(`femPrepareAvoidItem${num}`)}</span>
                         </li>
                       ))}
@@ -676,8 +706,12 @@ const FemmologyPage: React.FC = () => {
                   </div>
                 </div>
                 <div className="mt-6 p-5 bg-gradient-to-r from-primary-accent/10 via-primary-dark/10 to-primary-accent/10 rounded-2xl border border-primary-accent/30">
-                  <p className="text-sm font-bold text-primary-accent mb-2">{t('femPrepareTeacherTip')}</p>
-                  <blockquote className="text-neutral/90 italic leading-relaxed text-sm">&ldquo;{t('femPrepareTeacherQuote')}&rdquo;</blockquote>
+                  <p className="text-sm font-bold text-primary-accent mb-2">
+                    {t('femPrepareTeacherTip')}
+                  </p>
+                  <blockquote className="text-neutral/90 italic leading-relaxed text-sm">
+                    &ldquo;{t('femPrepareTeacherQuote')}&rdquo;
+                  </blockquote>
                 </div>
               </div>
             </AnimateOnScroll>
@@ -1108,9 +1142,7 @@ const FemmologyPage: React.FC = () => {
                   {t('femNearbyTitle')}
                 </h3>
                 <p className="text-neutral/80 mb-6">{t('femNearbyDesc')}</p>
-                <p className="text-neutral/90 font-semibold mb-4">
-                  {t('femNearbySearchText')}
-                </p>
+                <p className="text-neutral/90 font-semibold mb-4">{t('femNearbySearchText')}</p>
                 <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
                   {FEM_NEARBY_AREAS.map((area, index) => (
                     <div key={index} className="flex items-center gap-2 text-sm">

@@ -3513,7 +3513,7 @@ The latest trends and styles merge in our classes in a varied, dynamic and fun w
   hhrCitableOrigenHipHop:
     '**"Hip-hop was born in the Bronx, New York in the 70s, as an artistic expression of African-American and Latino communities. DJ Kool Herc, Afrika Bambaataa and Grandmaster Flash are considered pioneers of the movement."**',
   hhrCitableOrigenReggaeton:
-    '**"Reggaeton emerged in Puerto Rico in the late 80s and early 90s, fusing Jamaican reggae (especially dancehall) with Latin rhythms, hip-hop and electronic music. Its characteristic dembow rhythm comes from Shabba Ranks\' \'Dem Bow\' track (1990)."**',
+    "**\"Reggaeton emerged in Puerto Rico in the late 80s and early 90s, fusing Jamaican reggae (especially dancehall) with Latin rhythms, hip-hop and electronic music. Its characteristic dembow rhythm comes from Shabba Ranks' 'Dem Bow' track (1990).\"**",
   hhrCitableFusion:
     '**"The hip-hop and reggaeton fusion combines technical elements from breaking, popping and locking with perreo movements, body rolls and sensual isolations, creating a versatile style for contemporary urban music."**',
   hhrCitableFact1:
@@ -3745,7 +3745,7 @@ Today, Cubatón has expanded internationally while maintaining its essence: impr
   rcbCitableOrigen:
     '**"Cuban Reggaeton emerged in the late 90s and early 2000s in neighborhoods like La Lisa, Marianao, Centro Habana and El Cerro. Pioneer artists like Candyman, El Taiger, Chocolate MC and Osmani García popularized the genre."**',
   rcbCitableReparto:
-    '**"The term \'Reparto\' comes from the \'repartos\' or popular neighborhoods of Havana where this style was born. It is characterized by rawer rhythms, street lyrics and a rebellious attitude that reflects the daily life of Cuban neighborhoods."**',
+    "**\"The term 'Reparto' comes from the 'repartos' or popular neighborhoods of Havana where this style was born. It is characterized by rawer rhythms, street lyrics and a rebellious attitude that reflects the daily life of Cuban neighborhoods.\"**",
   rcbCitableCaracteristicas:
     '**"Cuban Reggaeton dance is distinguished by: constant improvisation, advanced body dissociation (hips, chest, shoulders independent), tembleque (rapid hip vibration), and floor movements inspired by Afro-Cuban rumba."**',
   rcbCitableFact1:
@@ -5944,8 +5944,7 @@ Dancers from around the world travel to Barcelona specifically to train in Afro 
   afrojazzNearbyTitle: 'Afro Jazz near you in Barcelona',
   afrojazzNearbyDesc:
     'We are the only academy in the world teaching Afro Jazz with professional methodology and CID-UNESCO endorsement. In the heart of Barcelona, between Plaza España and Sants.',
-  afrojazzNearbySearchText:
-    'If you search "Afro Jazz classes near me" in Barcelona, we are:',
+  afrojazzNearbySearchText: 'If you search "Afro Jazz classes near me" in Barcelona, we are:',
   afrojazzNearbyMetro:
     'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min walk, Entença (L5) - 5 min walk or Hostafrancs (L1) - 5 min walk',
 
@@ -6061,18 +6060,21 @@ Works comprehensively: **flexibility, functional strength, coordination, proprio
     'Continuing to wait only distances you from discovering your artistic and physical potential.',
   contemporaneoIdentifySolution:
     "At Farray's Center you will find a space designed for you to explore, create and evolve without pressure.",
-  contemporaneoIdentifyClosing: 'Let yourself be carried away by the freedom and expression of contemporary.',
+  contemporaneoIdentifyClosing:
+    'Let yourself be carried away by the freedom and expression of contemporary.',
 
   // Transform Section
   contemporaneoTransformTitle: 'Imagine your before and after',
   contemporaneoTransform1Title: 'You improve your dance technique',
-  contemporaneoTransform1Desc: 'Each class brings you closer to mastering movement with precision and fluidity.',
+  contemporaneoTransform1Desc:
+    'Each class brings you closer to mastering movement with precision and fluidity.',
   contemporaneoTransform2Title: 'You develop your improvisation ability',
   contemporaneoTransform2Desc: 'You learn to move freely, listening to your body and the music.',
   contemporaneoTransform3Title: 'You improve your musical interpretation',
   contemporaneoTransform3Desc: 'You connect with music in a deeper and more expressive way.',
   contemporaneoTransform4Title: 'You exercise coordination and memory',
-  contemporaneoTransform4Desc: 'Your body and mind work together, gaining mental and physical agility.',
+  contemporaneoTransform4Desc:
+    'Your body and mind work together, gaining mental and physical agility.',
   contemporaneoTransform5Title: 'You expand your repertoire',
   contemporaneoTransform5Desc: 'You master new sequences and styles each week.',
   contemporaneoTransform6Title: 'You improve your physical fitness',
@@ -6081,19 +6083,26 @@ Works comprehensively: **flexibility, functional strength, coordination, proprio
 
   // Why Choose Section
   contemporaneoWhyChoose1Title: 'CID UNESCO recognized academy',
-  contemporaneoWhyChoose1Desc: "Directed by Yunaisy Farray, actress from Street Dance 2 and one of the world's most recognized teachers.",
+  contemporaneoWhyChoose1Desc:
+    "Directed by Yunaisy Farray, actress from Street Dance 2 and one of the world's most recognized teachers.",
   contemporaneoWhyChoose2Title: 'Unbeatable location',
-  contemporaneoWhyChoose2Desc: 'Calle Entença 100, between Plaza España and Sants, 5 minutes from Plaça Espanya. Metro, bus and train at the door.',
+  contemporaneoWhyChoose2Desc:
+    'Calle Entença 100, between Plaza España and Sants, 5 minutes from Plaça Espanya. Metro, bus and train at the door.',
   contemporaneoWhyChoose3Title: 'Family atmosphere with professionalism',
-  contemporaneoWhyChoose3Desc: 'Welcoming, inclusive and judgment-free, but with the rigor you need to truly evolve.',
+  contemporaneoWhyChoose3Desc:
+    'Welcoming, inclusive and judgment-free, but with the rigor you need to truly evolve.',
   contemporaneoWhyChoose4Title: 'Prepared facilities',
-  contemporaneoWhyChoose4Desc: 'Over 700 m², spacious rooms, mirrors, professional sound, centralized climate control and ventilation.',
+  contemporaneoWhyChoose4Desc:
+    'Over 700 m², spacious rooms, mirrors, professional sound, centralized climate control and ventilation.',
   contemporaneoWhyChoose5Title: 'Multidisciplinary academy',
-  contemporaneoWhyChoose5Desc: 'Over 25 styles so you never get bored: urban, Latin, contemporary, technique, stretching and more.',
+  contemporaneoWhyChoose5Desc:
+    'Over 25 styles so you never get bored: urban, Latin, contemporary, technique, stretching and more.',
   contemporaneoWhyChoose6Title: 'Annual gala + powerful workshops',
-  contemporaneoWhyChoose6Desc: 'Shine on a professional stage, participate in international workshops and live unique experiences.',
+  contemporaneoWhyChoose6Desc:
+    'Shine on a professional stage, participate in international workshops and live unique experiences.',
   contemporaneoWhyChoose7Title: 'Specialized Contemporary teachers',
-  contemporaneoWhyChoose7Desc: 'Alejandro Miñoso: contemporary dance expert with years of experience. Technique, expression and passion in every class.',
+  contemporaneoWhyChoose7Desc:
+    'Alejandro Miñoso: contemporary dance expert with years of experience. Technique, expression and passion in every class.',
 
   // Logos Section
   contemporaneoLogosTitle: 'You may have seen us in…',
@@ -6101,12 +6110,16 @@ Works comprehensively: **flexibility, functional strength, coordination, proprio
 
   // Teachers Section
   contemporaneoTeachersTitle: 'Your Contemporary Dance Masters',
-  contemporaneoTeachersSubtitle: 'Professional dancers trained in the Cuban School with international career',
+  contemporaneoTeachersSubtitle:
+    'Professional dancers trained in the Cuban School with international career',
   contemporaneoTeacher1Specialty: 'Lyrical Contemporary',
-  contemporaneoTeacher1Bio: 'Daniel Sené is a professional dancer with career training at the Cuban School. His methodology combines rigorous technique with lyrical expression, guiding you to develop your own body language while mastering the fundamentals of contemporary dance.',
+  contemporaneoTeacher1Bio:
+    'Daniel Sené is a professional dancer with career training at the Cuban School. His methodology combines rigorous technique with lyrical expression, guiding you to develop your own body language while mastering the fundamentals of contemporary dance.',
   contemporaneoTeacher2Specialty: 'Floor & Flow Contemporary',
-  contemporaneoTeacher2Bio: 'Alejandro Miñoso is a professional dancer trained in Cuba, specialized in floor techniques and floorwork. His approach connects movement with breath, teaching you to flow with your body and explore new movement possibilities.',
-  contemporaneoTeachersClosing: 'With Daniel and Alejandro you not only learn contemporary technique: you discover a new way to express yourself, connect with your body and develop your own movement language.',
+  contemporaneoTeacher2Bio:
+    'Alejandro Miñoso is a professional dancer trained in Cuba, specialized in floor techniques and floorwork. His approach connects movement with breath, teaching you to flow with your body and explore new movement possibilities.',
+  contemporaneoTeachersClosing:
+    'With Daniel and Alejandro you not only learn contemporary technique: you discover a new way to express yourself, connect with your body and develop your own movement language.',
 
   // Schedule Section
   contemporaneoScheduleTitle: 'Contemporary Dance class schedule',
@@ -6114,11 +6127,14 @@ Works comprehensively: **flexibility, functional strength, coordination, proprio
 
   // Level Cards Section
   contemporaneoLevelLiricoBasicoTitle: 'Basic Lyrical Contemporary',
-  contemporaneoLevelLiricoBasicoDesc: 'Ideal to start in contemporary dance. You will work on body expression, musicality and fluid movements. Accessible technique with focus on emotional connection with music.',
+  contemporaneoLevelLiricoBasicoDesc:
+    'Ideal to start in contemporary dance. You will work on body expression, musicality and fluid movements. Accessible technique with focus on emotional connection with music.',
   contemporaneoLevelLiricoIntermedioTitle: 'Intermediate Lyrical Contemporary',
-  contemporaneoLevelLiricoIntermedioDesc: 'Deepen your lyrical technique with more complex sequences, greater interpretive work and exploration of your own style. For students with previous experience.',
+  contemporaneoLevelLiricoIntermedioDesc:
+    'Deepen your lyrical technique with more complex sequences, greater interpretive work and exploration of your own style. For students with previous experience.',
   contemporaneoLevelSueloFlowTitle: 'Floor & Flow Contemporary',
-  contemporaneoLevelSueloFlowDesc: 'Floorwork, release and contact techniques. Learn to move fluidly between floor and air. Work on breathing, body weight and organic transitions.',
+  contemporaneoLevelSueloFlowDesc:
+    'Floorwork, release and contact techniques. Learn to move fluidly between floor and air. Work on breathing, body weight and organic transitions.',
 
   // Prepare Section
   contemporaneoPrepareTitle: 'Prepare for your first Contemporary class',
@@ -6138,11 +6154,13 @@ Works comprehensively: **flexibility, functional strength, coordination, proprio
   contemporaneoPrepareAvoidItem2: 'Very loose clothing that prevents seeing your posture',
   contemporaneoPrepareAvoidItem3: 'Street shoes in the studio (there are changing rooms)',
   contemporaneoPrepareTeacherTip: 'Advice from Daniel and Alejandro:',
-  contemporaneoPrepareTeacherQuote: '"In contemporary, the floor is your ally. Come without fear of falling, rolling, exploring. Movement is born from connection with the earth and the freedom to let go."',
+  contemporaneoPrepareTeacherQuote:
+    '"In contemporary, the floor is your ally. Come without fear of falling, rolling, exploring. Movement is born from connection with the earth and the freedom to let go."',
 
   // Comparison Table Section
   contemporaneoCompareTitle: 'Lyrical Contemporary vs Other Styles: What is the difference?',
-  contemporaneoCompareSubtitle: 'Discover what makes Lyrical Contemporary unique compared to other techniques',
+  contemporaneoCompareSubtitle:
+    'Discover what makes Lyrical Contemporary unique compared to other techniques',
   contemporaneoCompareCapacity: 'Capability',
   contemporaneoCompareLirico: 'Lyrical Cont.',
   contemporaneoCompareAfro: 'Afro Cont.',
@@ -6161,37 +6179,51 @@ Works comprehensively: **flexibility, functional strength, coordination, proprio
   contemporaneoCompareRow11: 'Versatility for other styles',
   contemporaneoCompareMeaningTitle: 'What does this mean for you?',
   contemporaneoCompareMeaning1Title: 'If you come from Ballet:',
-  contemporaneoCompareMeaning1Desc: 'Lyrical Contemporary will free your expression, add floorwork and connect you with music in a more organic and personal way.',
+  contemporaneoCompareMeaning1Desc:
+    'Lyrical Contemporary will free your expression, add floorwork and connect you with music in a more organic and personal way.',
   contemporaneoCompareMeaning2Title: 'If you come from Afro Contemporary:',
-  contemporaneoCompareMeaning2Desc: 'You will gain lyrical softness, movement continuity and a more introspective emotional connection that will complement your energy.',
+  contemporaneoCompareMeaning2Desc:
+    'You will gain lyrical softness, movement continuity and a more introspective emotional connection that will complement your energy.',
   contemporaneoCompareMeaning3Title: 'If you come from Modern Jazz:',
-  contemporaneoCompareMeaning3Desc: 'Lyrical Contemporary will deepen your emotional expression, add release and floorwork techniques that will elevate your versatility.',
+  contemporaneoCompareMeaning3Desc:
+    'Lyrical Contemporary will deepen your emotional expression, add release and floorwork techniques that will elevate your versatility.',
   contemporaneoCompareMeaning4Title: 'If it is your first time:',
-  contemporaneoCompareMeaning4Desc: 'Contemporary is perfect for starting - it works body, emotion and creativity without the rigidity of other classical techniques.',
-  contemporaneoCompareConclusion: 'Lyrical Contemporary is the perfect foundation because it develops musical sensitivity, expression and technique that enrich any other style.',
+  contemporaneoCompareMeaning4Desc:
+    'Contemporary is perfect for starting - it works body, emotion and creativity without the rigidity of other classical techniques.',
+  contemporaneoCompareConclusion:
+    'Lyrical Contemporary is the perfect foundation because it develops musical sensitivity, expression and technique that enrich any other style.',
 
   // Local SEO Section
   contemporaneoNearbyTitle: 'Contemporary near you in Barcelona',
-  contemporaneoNearbyDesc: "Farray's Center is in the heart of Barcelona, at Calle Entença 100. Accessible from anywhere in the city.",
-  contemporaneoNearbySearchText: 'If you search "contemporary classes near me" in Barcelona, we are at:',
-  contemporaneoNearbyMetro: 'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min walk, Entenza (L5) - 5 min walk or Hostafrancs (L1) - 5 min walk',
+  contemporaneoNearbyDesc:
+    "Farray's Center is in the heart of Barcelona, at Calle Entença 100. Accessible from anywhere in the city.",
+  contemporaneoNearbySearchText:
+    'If you search "contemporary classes near me" in Barcelona, we are at:',
+  contemporaneoNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min walk, Entenza (L5) - 5 min walk or Hostafrancs (L1) - 5 min walk',
 
   // Video Section
   contemporaneoVideoTitle: 'Come discover our Contemporary classes',
-  contemporaneoVideoDesc: "See what a class at Farray's Center is like: technique, expression and freedom of movement. We are waiting for you!",
+  contemporaneoVideoDesc:
+    "See what a class at Farray's Center is like: technique, expression and freedom of movement. We are waiting for you!",
 
   // Why Today Section
   contemporaneoWhyTodayFullTitle: 'Why is today the best time to start Contemporary Dance?',
-  contemporaneoWhyToday1: 'Because you always wait for "the perfect moment" but the only perfect thing is to start today.',
-  contemporaneoWhyToday2: 'Because you are ONE class away from changing your routine and connecting with your body differently.',
-  contemporaneoWhyToday3: 'Because contemporary dance has no age or previous level: it only requires a desire to explore.',
+  contemporaneoWhyToday1:
+    'Because you always wait for "the perfect moment" but the only perfect thing is to start today.',
+  contemporaneoWhyToday2:
+    'Because you are ONE class away from changing your routine and connecting with your body differently.',
+  contemporaneoWhyToday3:
+    'Because contemporary dance has no age or previous level: it only requires a desire to explore.',
   contemporaneoWhyTodayClosing1: "At Farray's we don't sell classes. We create experiences.",
-  contemporaneoWhyTodayClosing2: 'We are waiting for you with inspiring music, passionate teachers and a unique atmosphere in Barcelona.',
+  contemporaneoWhyTodayClosing2:
+    'We are waiting for you with inspiring music, passionate teachers and a unique atmosphere in Barcelona.',
 
   // Final CTA Section
   contemporaneoFinalCTATitle: 'Join the most active contemporary dance community in Barcelona',
   contemporaneoFinalCTASubtitle: 'Take the step.',
-  contemporaneoFinalCTADesc: 'Book your spot now and let yourself be carried by the flow of movement.',
+  contemporaneoFinalCTADesc:
+    'Book your spot now and let yourself be carried by the flow of movement.',
   contemporaneoFinalCTAFunny: 'Spots fly faster than a contemporary jump.',
 
   // FAQ Title
@@ -6199,35 +6231,50 @@ Works comprehensively: **flexibility, functional strength, coordination, proprio
 
   // 15 FAQs
   contemporaneoFaqQ1: 'How do Contemporary Dance classes work in Barcelona?',
-  contemporaneoFaqA1: 'After a technical warm-up part, varied exercises are performed that are applied in a sequence in the final phase of the class. Small groups divided by levels.',
+  contemporaneoFaqA1:
+    'After a technical warm-up part, varied exercises are performed that are applied in a sequence in the final phase of the class. Small groups divided by levels.',
   contemporaneoFaqQ2: 'Can I start from scratch if I have never danced contemporary?',
-  contemporaneoFaqA2: 'This course is designed to train dancers of all levels, whether or not they have previous experience in this discipline.',
+  contemporaneoFaqA2:
+    'This course is designed to train dancers of all levels, whether or not they have previous experience in this discipline.',
   contemporaneoFaqQ3: 'What are the benefits of contemporary dance?',
-  contemporaneoFaqA3: 'Improves your dance technique, your improvisation ability, your musical interpretation, exercises coordination and memory, expands your repertoire and improves your physical fitness.',
+  contemporaneoFaqA3:
+    'Improves your dance technique, your improvisation ability, your musical interpretation, exercises coordination and memory, expands your repertoire and improves your physical fitness.',
   contemporaneoFaqQ4: 'What do I need to bring to classes?',
-  contemporaneoFaqA4: 'Comfortable clothing that allows movement. For contemporary, dancing is usually done barefoot or in socks. Bring a water bottle. We have changing rooms with showers.',
+  contemporaneoFaqA4:
+    'Comfortable clothing that allows movement. For contemporary, dancing is usually done barefoot or in socks. Bring a water bottle. We have changing rooms with showers.',
   contemporaneoFaqQ5: 'What contemporary levels do you have?',
-  contemporaneoFaqA5: 'We offer classes at various levels: Beginner (no experience), Basic, Intermediate and Advanced. The teacher will guide you to the level that suits you best.',
+  contemporaneoFaqA5:
+    'We offer classes at various levels: Beginner (no experience), Basic, Intermediate and Advanced. The teacher will guide you to the level that suits you best.',
   contemporaneoFaqQ6: 'Can I join classes at any time of the year?',
-  contemporaneoFaqA6: 'Yes, our classes work with an open system, so you can register whenever you want. No need to wait for the beginning of the term.',
+  contemporaneoFaqA6:
+    'Yes, our classes work with an open system, so you can register whenever you want. No need to wait for the beginning of the term.',
   contemporaneoFaqQ7: 'What contemporary techniques do you teach?',
-  contemporaneoFaqA7: 'We work with multiple techniques: floor, release, contact improvisation, and elements from various schools. A multidisciplinary approach for you to develop your own language.',
+  contemporaneoFaqA7:
+    'We work with multiple techniques: floor, release, contact improvisation, and elements from various schools. A multidisciplinary approach for you to develop your own language.',
   contemporaneoFaqQ8: 'Can I try a class before signing up?',
-  contemporaneoFaqA8: 'Of course. You can book a trial class to see if it is what you are looking for. Come try and discover how to let your talent flow through dance.',
+  contemporaneoFaqA8:
+    'Of course. You can book a trial class to see if it is what you are looking for. Come try and discover how to let your talent flow through dance.',
   contemporaneoFaqQ9: 'What if I miss a class due to work or commitments?',
-  contemporaneoFaqA9: 'Classes are recoverable, so if you miss a day, you can come to the next available class at your same level.',
+  contemporaneoFaqA9:
+    'Classes are recoverable, so if you miss a day, you can come to the next available class at your same level.',
   contemporaneoFaqQ10: 'If I miss a contemporary class, can I make it up with another style?',
-  contemporaneoFaqA10: "Yes. At Farray's you can use your missed class in another style (Modern Jazz, Ballet, Dancehall...), as long as the level is equivalent.",
+  contemporaneoFaqA10:
+    "Yes. At Farray's you can use your missed class in another style (Modern Jazz, Ballet, Dancehall...), as long as the level is equivalent.",
   contemporaneoFaqQ11: 'Do you organize special events or workshops?',
-  contemporaneoFaqA11: 'Yes. We have masterclasses with guest artists, showcases and our annual gala where you can shine on a professional stage.',
+  contemporaneoFaqA11:
+    'Yes. We have masterclasses with guest artists, showcases and our annual gala where you can shine on a professional stage.',
   contemporaneoFaqQ12: 'Are classes only for women or also for men?',
-  contemporaneoFaqA12: 'Our classes are 100% inclusive. All genders, ages and bodies are welcome. What matters is the desire to dance and express yourself.',
+  contemporaneoFaqA12:
+    'Our classes are 100% inclusive. All genders, ages and bodies are welcome. What matters is the desire to dance and express yourself.',
   contemporaneoFaqQ13: 'Is contemporary dance good physical exercise?',
-  contemporaneoFaqA13: 'Contemporary dance is a complete workout with intense yet harmonious muscular movements. In one hour you can burn between 300 and 500 calories.',
+  contemporaneoFaqA13:
+    'Contemporary dance is a complete workout with intense yet harmonious muscular movements. In one hour you can burn between 300 and 500 calories.',
   contemporaneoFaqQ14: 'Where can I find Contemporary Dance classes near Plaza España?',
-  contemporaneoFaqA14: "Farray's Center is located at Calle Entença 100, just 5 minutes from Plaza España and Sants Station. You can arrive by metro (L1, L3), bus or train.",
+  contemporaneoFaqA14:
+    "Farray's Center is located at Calle Entença 100, just 5 minutes from Plaza España and Sants Station. You can arrive by metro (L1, L3), bus or train.",
   contemporaneoFaqQ15: 'What do I do if I have questions or need more information?',
-  contemporaneoFaqA15: 'If you have any additional questions or need more information, you can contact us:<br/><br/>📞 <strong>Phone:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Address:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+  contemporaneoFaqA15:
+    'If you have any additional questions or need more information, you can contact us:<br/><br/>📞 <strong>Phone:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Address:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
 
   // Image alts
   contemporaneoImage1Alt: "Contemporary Dance Classes in Barcelona - Farray's Center",
@@ -6236,7 +6283,8 @@ Works comprehensively: **flexibility, functional strength, coordination, proprio
 
   // Course Schema
   contemporaneoCourseSchemaName: "Contemporary Dance Classes in Barcelona - Farray's Center",
-  contemporaneoCourseSchemaDesc: 'Learn Contemporary Dance with Alejandro Miñoso. Technique, expression and improvisation. Classes for all levels in Barcelona.',
+  contemporaneoCourseSchemaDesc:
+    'Learn Contemporary Dance with Alejandro Miñoso. Technique, expression and improvisation. Classes for all levels in Barcelona.',
 
   // ===== GEO OPTIMIZATION: Citable Statistics for Contemporáneo =====
   contemporaneoCitableDefinicion:
@@ -6951,12 +6999,12 @@ Our teacher **Marcos Martínez**, judge of international competitions and refere
 
   // Problem Section
   salsaCubanaProblemTitle: 'The problem with how Cuban salsa is taught',
-  salsaCubanaProblemSubtitle: '(and why most people don\'t progress)',
+  salsaCubanaProblemSubtitle: "(and why most people don't progress)",
   salsaCubanaProblemP1:
     'You go to a Cuban salsa academy. They teach you figures: enchufla, dile que no, setenta, vacílala. You memorize them. You repeat them. You learn 20, 30, 50 figures.',
   salsaCubanaProblemP2: 'But when you arrive at a real party, something fails.',
   salsaCubanaProblemP3:
-    'You don\'t know when to use each figure. Your partner doesn\'t understand you. You feel stiff. You count "1, 2, 3... 5, 6, 7" in your head instead of feeling the music. And if you dance with someone who doesn\'t know the same figures as you, you freeze.',
+    "You don't know when to use each figure. Your partner doesn't understand you. You feel stiff. You count \"1, 2, 3... 5, 6, 7\" in your head instead of feeling the music. And if you dance with someone who doesn't know the same figures as you, you freeze.",
   salsaCubanaProblemConclusion: 'The problem: They taught you to repeat sequences, not to dance.',
   salsaCubanaProblemExplanation:
     'Most academies teach "social casino": loose figures you memorize and execute mechanically. It works in class, with your usual partner, with the song you already know. But it doesn\'t make you a dancer.',
@@ -7002,7 +7050,8 @@ Our teacher **Marcos Martínez**, judge of international competitions and refere
   salsaCubanaTechWomenItem2: 'Arm technique: elegance and precision in every movement',
   salsaCubanaTechWomenItem3: 'Body weight use: fluidity and natural balance',
   salsaCubanaTechWomenItem4: 'Active reaction: you interpret the lead, not suffer it',
-  salsaCubanaTechWomenResult: 'The result: self-confidence that automatically reflects in your dancing.',
+  salsaCubanaTechWomenResult:
+    'The result: self-confidence that automatically reflects in your dancing.',
   salsaCubanaTechMusicTitle: 'Musicality: The secret nobody teaches you',
   salsaCubanaTechMusicDesc:
     'Most academies teach you to count beats. We teach you to listen to the music.',
@@ -7025,7 +7074,7 @@ Our teacher **Marcos Martínez**, judge of international competitions and refere
   salsaCubanaWhatIsP1:
     'Dancing Cuban salsa is a non-verbal language between two people. It is synonymous with rhythm, musicality, coordination and connection with your partner.',
   salsaCubanaWhatIsP2:
-    'In the Farray Method® we prioritize learning to lead or interpret your partner\'s impulses correctly and to dance on the right beats of the music in a coordinated and elegant way.',
+    "In the Farray Method® we prioritize learning to lead or interpret your partner's impulses correctly and to dance on the right beats of the music in a coordinated and elegant way.",
   salsaCubanaWhatIsP3:
     'When you start introducing Cuban salsa "figures", your dancing will look more fluid, aesthetic and efficient.',
   salsaCubanaWhatIsP4:
@@ -7062,17 +7111,23 @@ Our teacher **Marcos Martínez**, judge of international competitions and refere
   salsaCubanaLevelsTitle: 'Progressive Level System',
   salsaCubanaLevelsSubtitle: 'A structured path for your evolution as a dancer',
   salsaCubanaLevel0Title: 'Level 0 - Initiation',
-  salsaCubanaLevel0Desc: 'For those who have never danced. Learn basic steps, fundamental rhythm and correct posture from scratch.',
+  salsaCubanaLevel0Desc:
+    'For those who have never danced. Learn basic steps, fundamental rhythm and correct posture from scratch.',
   salsaCubanaLevelBasic1Title: 'Basic I',
-  salsaCubanaLevelBasic1Desc: 'Consolidate the fundamentals, improve your coordination and start working on connection with your partner.',
+  salsaCubanaLevelBasic1Desc:
+    'Consolidate the fundamentals, improve your coordination and start working on connection with your partner.',
   salsaCubanaLevelBasic2Title: 'Basic II',
-  salsaCubanaLevelBasic2Desc: 'Introduce first figures, work on fluidity and develop your basic musicality.',
+  salsaCubanaLevelBasic2Desc:
+    'Introduce first figures, work on fluidity and develop your basic musicality.',
   salsaCubanaLevelBasic3Title: 'Basic III',
-  salsaCubanaLevelBasic3Desc: 'Perfect lead/follow technique, add complexity to figures and improve your personal style.',
+  salsaCubanaLevelBasic3Desc:
+    'Perfect lead/follow technique, add complexity to figures and improve your personal style.',
   salsaCubanaLevelIntermediateTitle: 'Intermediate',
-  salsaCubanaLevelIntermediateDesc: 'Complex figures, musical variations, improvisation and personal style development.',
+  salsaCubanaLevelIntermediateDesc:
+    'Complex figures, musical variations, improvisation and personal style development.',
   salsaCubanaLevelAdvancedTitle: 'Advanced',
-  salsaCubanaLevelAdvancedDesc: 'Complete technical mastery, complex choreographies, advanced musicality and performance preparation.',
+  salsaCubanaLevelAdvancedDesc:
+    'Complete technical mastery, complex choreographies, advanced musicality and performance preparation.',
   salsaCubanaTeachersTitle: 'Our Cuban Salsa Teachers',
   salsaCubanaTeachersSubtitle: 'Professional team certified in the Farray Method®',
   salsaCubanaTeacher1Specialty: 'Creator of the Farray Method® • CID-UNESCO Master',
@@ -7086,7 +7141,8 @@ Our teacher **Marcos Martínez**, judge of international competitions and refere
   salsaCubanaTeacher3Specialty: 'Cuban Salsa Teacher • Farray Method®',
   salsaCubanaTeacher3Bio:
     'Yasmina Fernández combines years of experience as a dancer and teacher with a clear and accessible methodology. Certified in the Farray Method®, she stands out for her ability to connect with students and make every step flow naturally.',
-  salsaCubanaTeachersClosing: 'Learn from a team of professionals who share the same methodology and passion for authentic Cuban salsa.',
+  salsaCubanaTeachersClosing:
+    'Learn from a team of professionals who share the same methodology and passion for authentic Cuban salsa.',
   salsaCubanaPrepareTitle: 'Prepare for Your First Class',
   salsaCubanaPrepareSubtitle: 'Everything you need to know for your first experience',
   salsaCubanaPrepareWhatToBring: 'What to bring',
@@ -7099,43 +7155,56 @@ Our teacher **Marcos Martínez**, judge of international competitions and refere
   salsaCubanaPrepareBeforeItem2: 'Come with an open mind to learn',
   salsaCubanaPrepareBeforeItem3: 'No need to bring a partner',
   salsaCubanaPrepareNote: 'Important note',
-  salsaCubanaPrepareNoteDesc: "Don't worry if you've never danced. Level 0 is designed specifically for absolute beginners. We rotate partners during class so everyone practices.",
+  salsaCubanaPrepareNoteDesc:
+    "Don't worry if you've never danced. Level 0 is designed specifically for absolute beginners. We rotate partners during class so everyone practices.",
   salsaCubanaPrepareTeacherTip: "Yunaisy's tip:",
-  salsaCubanaPrepareTeacherQuote: 'Cuban salsa is pure fun. Come wanting to have a great time and get infected by the Cuban spirit. The rest comes naturally.',
+  salsaCubanaPrepareTeacherQuote:
+    'Cuban salsa is pure fun. Come wanting to have a great time and get infected by the Cuban spirit. The rest comes naturally.',
   salsaCubanaIdentifyTitle: 'Who is the Farray Method® for?',
   salsaCubanaIdentifyListLabel: 'Ideal profiles for the course',
-  salsaCubanaIdentify1: 'Absolute beginners who want to start with solid foundations (not bad habits)',
-  salsaCubanaIdentify2: 'Stagnant dancers who feel they haven\'t progressed in a while',
+  salsaCubanaIdentify1:
+    'Absolute beginners who want to start with solid foundations (not bad habits)',
+  salsaCubanaIdentify2: "Stagnant dancers who feel they haven't progressed in a while",
   salsaCubanaIdentify3: 'People frustrated with the traditional "memorize figures" method',
   salsaCubanaIdentify4: 'Those who seek quality over quantity of figures',
   salsaCubanaIdentify5: 'Demanding curious minds who want to understand dance, not just do it',
   salsaCubanaIdentify6: 'Those looking to dance socially with confidence on any floor',
-  salsaCubanaIdentifyClosing: 'Here you will incorporate new concepts and dynamics into your dancing that will take you to another level.',
+  salsaCubanaIdentifyClosing:
+    'Here you will incorporate new concepts and dynamics into your dancing that will take you to another level.',
   salsaCubanaTransformTitle: 'What you will achieve with the Farray Method®',
   salsaCubanaTransform1Title: 'Dance on Time',
-  salsaCubanaTransform1Desc: "Master rhythm and musicality. You'll never get lost in the music or dance off-beat again.",
+  salsaCubanaTransform1Desc:
+    "Master rhythm and musicality. You'll never get lost in the music or dance off-beat again.",
   salsaCubanaTransform2Title: 'Lead/Follow with Elegance',
-  salsaCubanaTransform2Desc: 'Learn to communicate with your partner through dance in a technical, safe and elegant way.',
+  salsaCubanaTransform2Desc:
+    'Learn to communicate with your partner through dance in a technical, safe and elegant way.',
   salsaCubanaTransform3Title: 'Connect with the Music',
-  salsaCubanaTransform3Desc: 'Develop your musical ear and your ability to improvise and interpret.',
+  salsaCubanaTransform3Desc:
+    'Develop your musical ear and your ability to improvise and interpret.',
   salsaCubanaTransform4Title: 'Enjoy the Dance Floor',
   salsaCubanaTransform4Desc: 'Dance with confidence anywhere, enjoying every song to the fullest.',
   salsaCubanaTransform5Title: 'Burn Calories',
-  salsaCubanaTransform5Desc: 'Stay fit all year burning up to 400 calories per class while having fun.',
+  salsaCubanaTransform5Desc:
+    'Stay fit all year burning up to 400 calories per class while having fun.',
   salsaCubanaTransform6Title: 'Live Cuban Culture',
-  salsaCubanaTransform6Desc: 'Connect with the joy, flavor and spirit of Cuba through its most emblematic dance.',
+  salsaCubanaTransform6Desc:
+    'Connect with the joy, flavor and spirit of Cuba through its most emblematic dance.',
   salsaCubanaWhyChooseTitle: "Why choose Farray's?",
   salsaCubanaWhyChooseSubtitle: 'The difference of learning with the original method',
   salsaCubanaWhyChoose1Title: 'Exclusive Method',
-  salsaCubanaWhyChoose1Desc: 'The Farray Method® is unique in the world. Developed by Yunaisy Farray after decades of international experience.',
+  salsaCubanaWhyChoose1Desc:
+    'The Farray Method® is unique in the world. Developed by Yunaisy Farray after decades of international experience.',
   salsaCubanaWhyChoose2Title: 'CID-UNESCO Accreditation',
   salsaCubanaWhyChoose2Desc: 'Our academy is accredited by the UNESCO International Dance Council.',
   salsaCubanaWhyChoose3Title: 'Progressive System',
-  salsaCubanaWhyChoose3Desc: 'Structured levels from absolute beginner to advanced, with clear objectives at each stage.',
+  salsaCubanaWhyChoose3Desc:
+    'Structured levels from absolute beginner to advanced, with clear objectives at each stage.',
   salsaCubanaWhyChoose4Title: 'Cuban Authenticity',
-  salsaCubanaWhyChoose4Desc: 'Learn real Cuban salsa, with its flavor, its history and its authentic spirit.',
+  salsaCubanaWhyChoose4Desc:
+    'Learn real Cuban salsa, with its flavor, its history and its authentic spirit.',
   salsaCubanaWhyChoose5Title: 'Proven Results',
-  salsaCubanaWhyChoose5Desc: 'Thousands of students have transformed their dancing with our method in Finland, Italy, Germany and Spain.',
+  salsaCubanaWhyChoose5Desc:
+    'Thousands of students have transformed their dancing with our method in Finland, Italy, Germany and Spain.',
   salsaCubanaWhyChoose6Title: 'Unique Atmosphere',
   salsaCubanaWhyChoose6Desc: 'A vibrant community where fun and learning go hand in hand.',
   salsaCubanaLogosTitle: 'You may have seen us in',
@@ -7198,57 +7267,88 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
 **"The Farray Method® teaches specific techniques for clear, safe and elegant communication between dancers, respecting the essence of Cuban Casino."**`,
   salsaCubanaFinalCTATitle: "Don't think twice",
   salsaCubanaFinalCTASubtitle: 'Come try a class',
-  salsaCubanaFinalCTADesc: 'We have Cuban salsa classes for all levels (beginner, intermediate and advanced) and multiple schedules to fit your needs.',
+  salsaCubanaFinalCTADesc:
+    'We have Cuban salsa classes for all levels (beginner, intermediate and advanced) and multiple schedules to fit your needs.',
   salsaCubanaFinalCTAFunny: "You won't regret it. Cuban salsa is pure fun.",
   salsaCubanaFaqTitle: 'Frequently Asked Questions about Cuban Salsa',
   salsaCubanaFaqQ1: 'Do I need previous experience to start?',
-  salsaCubanaFaqA1: 'No, our Level 0 is designed specifically for absolute beginners. We start from scratch, teaching you basic steps, rhythm and correct posture.',
+  salsaCubanaFaqA1:
+    'No, our Level 0 is designed specifically for absolute beginners. We start from scratch, teaching you basic steps, rhythm and correct posture.',
   salsaCubanaFaqQ2: 'Do I need to bring a dance partner?',
-  salsaCubanaFaqA2: "No, it's not necessary. In class we constantly rotate partners so everyone practices with different people and levels. This also makes you a better dancer.",
+  salsaCubanaFaqA2:
+    "No, it's not necessary. In class we constantly rotate partners so everyone practices with different people and levels. This also makes you a better dancer.",
   salsaCubanaFaqQ3: "What's the difference between Cuban salsa and line salsa?",
-  salsaCubanaFaqA3: 'Cuban salsa (Casino) is danced in a circle with more relaxed and playful movements. Line salsa (LA/NY) is danced in a straight line with a more technical and acrobatic style. They are complementary styles.',
+  salsaCubanaFaqA3:
+    'Cuban salsa (Casino) is danced in a circle with more relaxed and playful movements. Line salsa (LA/NY) is danced in a straight line with a more technical and acrobatic style. They are complementary styles.',
   salsaCubanaFaqQ4: 'What is the Farray Method®?',
-  salsaCubanaFaqA4: "It's a unique teaching method created by Yunaisy Farray that prioritizes leading, following, musicality and partner connection before figures. It allows learning quickly and efficiently.",
+  salsaCubanaFaqA4:
+    "It's a unique teaching method created by Yunaisy Farray that prioritizes leading, following, musicality and partner connection before figures. It allows learning quickly and efficiently.",
   salsaCubanaFaqQ5: 'How long will it take me to dance at a party?',
-  salsaCubanaFaqA5: "With the Farray Method®, in 2-3 months of regular practice you can already enjoy dancing socially. In 6-12 months you'll notice significant progress in your technique and style.",
+  salsaCubanaFaqA5:
+    "With the Farray Method®, in 2-3 months of regular practice you can already enjoy dancing socially. In 6-12 months you'll notice significant progress in your technique and style.",
   salsaCubanaFaqQ6: 'What clothes should I wear?',
-  salsaCubanaFaqA6: 'Comfortable and light clothing. Sneakers or comfortable shoes. For women, heels with ankle support are recommended but not mandatory.',
+  salsaCubanaFaqA6:
+    'Comfortable and light clothing. Sneakers or comfortable shoes. For women, heels with ankle support are recommended but not mandatory.',
   salsaCubanaFaqQ7: 'Can I try a class before enrolling?',
-  salsaCubanaFaqA7: "Yes, we offer a first trial class with no commitment. Come meet us, try the Farray Method® and decide if it's for you.",
+  salsaCubanaFaqA7:
+    "Yes, we offer a first trial class with no commitment. Come meet us, try the Farray Method® and decide if it's for you.",
   salsaCubanaFaqQ8: 'What is Rueda de Casino?',
-  salsaCubanaFaqA8: 'It\'s a way of dancing Cuban salsa in a group, in a circle, where all couples execute synchronized figures following the instructions of a "singer". It\'s very fun and social.',
+  salsaCubanaFaqA8:
+    'It\'s a way of dancing Cuban salsa in a group, in a circle, where all couples execute synchronized figures following the instructions of a "singer". It\'s very fun and social.',
   salsaCubanaFaqQ9: 'Are classes only for adults?',
-  salsaCubanaFaqA9: 'Our regular Cuban salsa classes are for adults (18+). However, we organize specific workshops for teenagers and families.',
+  salsaCubanaFaqA9:
+    'Our regular Cuban salsa classes are for adults (18+). However, we organize specific workshops for teenagers and families.',
   salsaCubanaFaqQ10: 'How many people are there per class?',
-  salsaCubanaFaqA10: 'Our classes have a maximum of 20-24 people to ensure personalized attention and enough space to practice.',
+  salsaCubanaFaqA10:
+    'Our classes have a maximum of 20-24 people to ensure personalized attention and enough space to practice.',
   salsaCubanaFaqQ11: 'Are there showers at the academy?',
-  salsaCubanaFaqA11: 'Yes, we have changing rooms with showers so you can freshen up after class if needed.',
+  salsaCubanaFaqA11:
+    'Yes, we have changing rooms with showers so you can freshen up after class if needed.',
   salsaCubanaFaqQ12: 'How do I know what level is right for me?',
-  salsaCubanaFaqA12: "If you've never danced, start with Level 0. If you have experience, come to a trial class and we'll guide you to the most suitable level for you.",
+  salsaCubanaFaqA12:
+    "If you've never danced, start with Level 0. If you have experience, come to a trial class and we'll guide you to the most suitable level for you.",
   salsaCubanaFaqQ13: 'Do you organize outings to dance?',
-  salsaCubanaFaqA13: "Yes, we regularly organize outings to dance halls and events so you can practice what you've learned in a real and fun environment.",
+  salsaCubanaFaqA13:
+    "Yes, we regularly organize outings to dance halls and events so you can practice what you've learned in a real and fun environment.",
   salsaCubanaFaqQ14: 'Is Cuban salsa good for getting fit?',
-  salsaCubanaFaqA14: "Excellent. Dancing salsa burns between 300-400 calories per hour, improves coordination, memory and reduces stress. It's exercise disguised as fun.",
+  salsaCubanaFaqA14:
+    "Excellent. Dancing salsa burns between 300-400 calories per hour, improves coordination, memory and reduces stress. It's exercise disguised as fun.",
   salsaCubanaFaqQ15: 'What makes Yunaisy Farray special as a teacher?',
-  salsaCubanaFaqA15: 'Yunaisy is a CID-UNESCO member, has developed the only Farray Method® in the world, and has over 25 years of international experience training dancers in Cuba, Europe and Spain.',
+  salsaCubanaFaqA15:
+    'Yunaisy is a CID-UNESCO member, has developed the only Farray Method® in the world, and has over 25 years of international experience training dancers in Cuba, Europe and Spain.',
   salsaCubanaNearbyTitle: 'Cuban Salsa Classes near you in Barcelona',
-  salsaCubanaNearbyDesc: 'Our academy is located in the heart of Barcelona, easily accessible from all over the city.',
-  salsaCubanaNearbySearchText: "Looking for Cuban salsa classes near your neighborhood? We're just minutes from:",
+  salsaCubanaNearbyDesc:
+    'Our academy is located in the heart of Barcelona, easily accessible from all over the city.',
+  salsaCubanaNearbySearchText:
+    "Looking for Cuban salsa classes near your neighborhood? We're just minutes from:",
   salsaCubanaNearbyMetro: 'Metro: Hostafrancs (L1) or Tarragona (L3) 5-10 minutes walk',
   salsaCubanaCourseSchemaName: 'Cuban Salsa Course - Farray Method®',
-  salsaCubanaCourseSchemaDesc: 'Learn authentic Cuban salsa in Barcelona with the exclusive Farray Method®. Classes for all levels with CID-UNESCO certification.',
-  salsaCubanaCitableDefinicion: 'Cuban salsa, known as "Casino" in Cuba, is a partner dance style characterized by circular movements, inward turns and a close connection between dancers. It differs from line salsa by its more relaxed and playful character.',
-  salsaCubanaCitableOrigen: "Casino emerged in Havana, Cuba, during the 1950s in social clubs like the Casino Deportivo. It's a fusion of Cuban Son, Mambo, Cha-cha-chá and Afro-Cuban rhythms.",
-  salsaCubanaCitableMetodoFarray: 'The Farray Method® is a unique teaching system developed by Yunaisy Farray that prioritizes leading, following, musicality and partner connection before teaching complex figures.',
-  salsaCubanaCitableGuiaSeguimiento: 'In partner dancing, leading and following are fundamental skills. The Farray Method® teaches specific techniques so that communication between dancers is clear, safe and elegant.',
-  salsaCubanaCitableMusicalidad: 'Musicality in Cuban salsa involves dancing on the right beat (usually on 1 or 3), interpreting breaks, changes and accents of the music, and emotionally expressing the content of each song.',
-  salsaCubanaStatistics: 'According to fitness studies, dancing salsa burns between 300-400 calories per hour, improves motor coordination, strengthens memory and reduces stress and anxiety levels.',
-  salsaCubanaCitableEvolucionGlobal: 'From Cuba, salsa expanded globally from the 70s, developing different styles like line salsa (LA, NY) while Casino remained as the traditional Cuban style.',
-  salsaCubanaCitableRueda: 'Rueda de Casino is a group form of dancing Cuban salsa where multiple couples form a circle and execute synchronized figures under the direction of a "singer" or leader.',
-  salsaCubanaCitableFact1: 'Dancing Cuban salsa burns between 300-400 calories per hour, comparable to sports like moderate swimming or recreational cycling.',
-  salsaCubanaCitableFact2: 'The Farray Method® has trained more than 15,000 students in countries like Finland, Italy, Germany and Spain since its creation.',
-  salsaCubanaCitableFact3: "Farray's International Dance Center is an academy accredited by the CID-UNESCO, the UNESCO International Dance Council, guaranteeing international teaching standards.",
-  salsaCubanaCitableLegado: 'Cuban salsa represents the cultural legacy of Cuba, merging African and Spanish traditions in a dance that expresses joy, sensuality and human connection.',
+  salsaCubanaCourseSchemaDesc:
+    'Learn authentic Cuban salsa in Barcelona with the exclusive Farray Method®. Classes for all levels with CID-UNESCO certification.',
+  salsaCubanaCitableDefinicion:
+    'Cuban salsa, known as "Casino" in Cuba, is a partner dance style characterized by circular movements, inward turns and a close connection between dancers. It differs from line salsa by its more relaxed and playful character.',
+  salsaCubanaCitableOrigen:
+    "Casino emerged in Havana, Cuba, during the 1950s in social clubs like the Casino Deportivo. It's a fusion of Cuban Son, Mambo, Cha-cha-chá and Afro-Cuban rhythms.",
+  salsaCubanaCitableMetodoFarray:
+    'The Farray Method® is a unique teaching system developed by Yunaisy Farray that prioritizes leading, following, musicality and partner connection before teaching complex figures.',
+  salsaCubanaCitableGuiaSeguimiento:
+    'In partner dancing, leading and following are fundamental skills. The Farray Method® teaches specific techniques so that communication between dancers is clear, safe and elegant.',
+  salsaCubanaCitableMusicalidad:
+    'Musicality in Cuban salsa involves dancing on the right beat (usually on 1 or 3), interpreting breaks, changes and accents of the music, and emotionally expressing the content of each song.',
+  salsaCubanaStatistics:
+    'According to fitness studies, dancing salsa burns between 300-400 calories per hour, improves motor coordination, strengthens memory and reduces stress and anxiety levels.',
+  salsaCubanaCitableEvolucionGlobal:
+    'From Cuba, salsa expanded globally from the 70s, developing different styles like line salsa (LA, NY) while Casino remained as the traditional Cuban style.',
+  salsaCubanaCitableRueda:
+    'Rueda de Casino is a group form of dancing Cuban salsa where multiple couples form a circle and execute synchronized figures under the direction of a "singer" or leader.',
+  salsaCubanaCitableFact1:
+    'Dancing Cuban salsa burns between 300-400 calories per hour, comparable to sports like moderate swimming or recreational cycling.',
+  salsaCubanaCitableFact2:
+    'The Farray Method® has trained more than 15,000 students in countries like Finland, Italy, Germany and Spain since its creation.',
+  salsaCubanaCitableFact3:
+    "Farray's International Dance Center is an academy accredited by the CID-UNESCO, the UNESCO International Dance Council, guaranteeing international teaching standards.",
+  salsaCubanaCitableLegado:
+    'Cuban salsa represents the cultural legacy of Cuba, merging African and Spanish traditions in a dance that expresses joy, sensuality and human connection.',
 
   // ========== LATIN DANCE COMPARISON TABLE (Shared) ==========
   latinDanceCompareTitle: 'Latin Dance Comparison',
@@ -7282,100 +7382,146 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   // Meaning section - Salsa Cubana specific
   latinDanceCompareMeaningTitle: 'What does this mean for you?',
   latinDanceCompareMeaning1Title_salsaCubana: 'If you want to dance at parties and socials:',
-  latinDanceCompareMeaning1Desc_salsaCubana: 'Cuban Salsa is perfect. Maximum versatility to dance with anyone anywhere.',
+  latinDanceCompareMeaning1Desc_salsaCubana:
+    'Cuban Salsa is perfect. Maximum versatility to dance with anyone anywhere.',
   latinDanceCompareMeaning2Title_salsaCubana: 'If you seek authentic connection with your partner:',
-  latinDanceCompareMeaning2Desc_salsaCubana: 'The Farray Method® focuses precisely on lead and follow. You will learn to communicate without words.',
+  latinDanceCompareMeaning2Desc_salsaCubana:
+    'The Farray Method® focuses precisely on lead and follow. You will learn to communicate without words.',
   latinDanceCompareMeaning3Title_salsaCubana: 'If you are interested in Cuban culture:',
-  latinDanceCompareMeaning3Desc_salsaCubana: 'Cuban Salsa, Son and Folklore share roots. Starting with Cuban Salsa opens the doors to the entire Cuban universe.',
+  latinDanceCompareMeaning3Desc_salsaCubana:
+    'Cuban Salsa, Son and Folklore share roots. Starting with Cuban Salsa opens the doors to the entire Cuban universe.',
   latinDanceCompareMeaning4Title_salsaCubana: 'If you want a complete workout:',
-  latinDanceCompareMeaning4Desc_salsaCubana: 'Combine Cuban Salsa with Timba for an intense cardiovascular workout while having fun.',
-  latinDanceCompareConclusion_salsaCubana: 'Cuban Salsa is the perfect foundation to explore all Latin dances. With the Farray Method® you will master the fundamentals that will allow you to evolve into any style.',
+  latinDanceCompareMeaning4Desc_salsaCubana:
+    'Combine Cuban Salsa with Timba for an intense cardiovascular workout while having fun.',
+  latinDanceCompareConclusion_salsaCubana:
+    'Cuban Salsa is the perfect foundation to explore all Latin dances. With the Farray Method® you will master the fundamentals that will allow you to evolve into any style.',
 
   // Meaning section - Bachata specific
   latinDanceCompareMeaning1Title_bachata: 'If you are looking for a romantic and sensual dance:',
-  latinDanceCompareMeaning1Desc_bachata: 'Bachata excels in sensuality and close connection. Ideal for couples who want to dance together.',
+  latinDanceCompareMeaning1Desc_bachata:
+    'Bachata excels in sensuality and close connection. Ideal for couples who want to dance together.',
   latinDanceCompareMeaning2Title_bachata: 'If you prefer slower rhythms:',
-  latinDanceCompareMeaning2Desc_bachata: 'Bachata has a more relaxed tempo than Salsa, allowing you to enjoy each movement.',
+  latinDanceCompareMeaning2Desc_bachata:
+    'Bachata has a more relaxed tempo than Salsa, allowing you to enjoy each movement.',
   latinDanceCompareMeaning3Title_bachata: 'If you want social versatility:',
-  latinDanceCompareMeaning3Desc_bachata: 'Bachata is danced all over the world. Mastering it allows you to enjoy any Latin party.',
+  latinDanceCompareMeaning3Desc_bachata:
+    'Bachata is danced all over the world. Mastering it allows you to enjoy any Latin party.',
   latinDanceCompareMeaning4Title_bachata: 'If you like hip work:',
-  latinDanceCompareMeaning4Desc_bachata: 'Bachata especially develops hip movement and body expression.',
-  latinDanceCompareConclusion_bachata: 'Bachata is the perfect complement to Salsa. Together they form the ideal pair to enjoy any Latin party.',
+  latinDanceCompareMeaning4Desc_bachata:
+    'Bachata especially develops hip movement and body expression.',
+  latinDanceCompareConclusion_bachata:
+    'Bachata is the perfect complement to Salsa. Together they form the ideal pair to enjoy any Latin party.',
 
   // Meaning section - Timba specific
   latinDanceCompareMeaning1Title_timba: 'If you seek intensity and energy:',
-  latinDanceCompareMeaning1Desc_timba: 'Timba is the most dynamic and demanding style. Perfect for those who want a physical challenge.',
+  latinDanceCompareMeaning1Desc_timba:
+    'Timba is the most dynamic and demanding style. Perfect for those who want a physical challenge.',
   latinDanceCompareMeaning2Title_timba: 'If you are passionate about modern Cuban music:',
-  latinDanceCompareMeaning2Desc_timba: 'Timba was born from the fusion of Son with jazz, funk and Afro-Cuban music. It is pure Cuban energy.',
+  latinDanceCompareMeaning2Desc_timba:
+    'Timba was born from the fusion of Son with jazz, funk and Afro-Cuban music. It is pure Cuban energy.',
   latinDanceCompareMeaning3Title_timba: 'If you want to stand out on the dance floor:',
-  latinDanceCompareMeaning3Desc_timba: 'Timba allows a lot of improvisation and personal style. It is the style that attracts the most attention.',
+  latinDanceCompareMeaning3Desc_timba:
+    'Timba allows a lot of improvisation and personal style. It is the style that attracts the most attention.',
   latinDanceCompareMeaning4Title_timba: 'If you already dance salsa and want to evolve:',
-  latinDanceCompareMeaning4Desc_timba: 'Timba is the natural next level after mastering basic Cuban Salsa.',
-  latinDanceCompareConclusion_timba: 'Timba represents the most modern and energetic evolution of Cuban dances. It requires a good foundation in Cuban Salsa.',
+  latinDanceCompareMeaning4Desc_timba:
+    'Timba is the natural next level after mastering basic Cuban Salsa.',
+  latinDanceCompareConclusion_timba:
+    'Timba represents the most modern and energetic evolution of Cuban dances. It requires a good foundation in Cuban Salsa.',
 
   // Meaning section - Salsa Lady Style specific
   latinDanceCompareMeaning1Title_salsaLadyStyle: 'If you want to develop your own style:',
-  latinDanceCompareMeaning1Desc_salsaLadyStyle: 'Salsa Lady Style focuses on individual expression, spins and feminine body work.',
+  latinDanceCompareMeaning1Desc_salsaLadyStyle:
+    'Salsa Lady Style focuses on individual expression, spins and feminine body work.',
   latinDanceCompareMeaning2Title_salsaLadyStyle: 'If you dance salsa and want to shine more:',
-  latinDanceCompareMeaning2Desc_salsaLadyStyle: 'This style complements your partner dancing, adding elegance and presence to every step.',
+  latinDanceCompareMeaning2Desc_salsaLadyStyle:
+    'This style complements your partner dancing, adding elegance and presence to every step.',
   latinDanceCompareMeaning3Title_salsaLadyStyle: 'If you prefer dancing alone or in a group:',
-  latinDanceCompareMeaning3Desc_salsaLadyStyle: 'Lady Style is perfect for practicing without a partner and developing your individual technique.',
+  latinDanceCompareMeaning3Desc_salsaLadyStyle:
+    'Lady Style is perfect for practicing without a partner and developing your individual technique.',
   latinDanceCompareMeaning4Title_salsaLadyStyle: 'If you want to improve your spinning technique:',
-  latinDanceCompareMeaning4Desc_salsaLadyStyle: 'Spins and turns are the strong point of Lady Style. You will gain balance and control.',
-  latinDanceCompareConclusion_salsaLadyStyle: 'Salsa Lady Style is the ideal complement for any salsa dancer who wants to develop her presence and unique style.',
+  latinDanceCompareMeaning4Desc_salsaLadyStyle:
+    'Spins and turns are the strong point of Lady Style. You will gain balance and control.',
+  latinDanceCompareConclusion_salsaLadyStyle:
+    'Salsa Lady Style is the ideal complement for any salsa dancer who wants to develop her presence and unique style.',
 
   // Meaning section - Bachata Lady Style specific
-  latinDanceCompareMeaning1Title_bachataLadyStyle: 'If you want to express yourself with sensuality:',
-  latinDanceCompareMeaning1Desc_bachataLadyStyle: 'Bachata Lady Style maximizes sensuality and feminine body expression.',
+  latinDanceCompareMeaning1Title_bachataLadyStyle:
+    'If you want to express yourself with sensuality:',
+  latinDanceCompareMeaning1Desc_bachataLadyStyle:
+    'Bachata Lady Style maximizes sensuality and feminine body expression.',
   latinDanceCompareMeaning2Title_bachataLadyStyle: 'If you like undulating movement:',
-  latinDanceCompareMeaning2Desc_bachataLadyStyle: 'This style especially develops waves, body movement and hip work.',
+  latinDanceCompareMeaning2Desc_bachataLadyStyle:
+    'This style especially develops waves, body movement and hip work.',
   latinDanceCompareMeaning3Title_bachataLadyStyle: 'If you want confidence in yourself:',
-  latinDanceCompareMeaning3Desc_bachataLadyStyle: 'Bachata Lady Style helps you connect with your femininity and gain confidence while dancing.',
+  latinDanceCompareMeaning3Desc_bachataLadyStyle:
+    'Bachata Lady Style helps you connect with your femininity and gain confidence while dancing.',
   latinDanceCompareMeaning4Title_bachataLadyStyle: 'If you complement your partner bachata:',
-  latinDanceCompareMeaning4Desc_bachataLadyStyle: 'Add style and elegance to your follower role with women-specific techniques.',
-  latinDanceCompareConclusion_bachataLadyStyle: 'Bachata Lady Style is perfect for women who want to enhance their femininity and expression on the dance floor.',
+  latinDanceCompareMeaning4Desc_bachataLadyStyle:
+    'Add style and elegance to your follower role with women-specific techniques.',
+  latinDanceCompareConclusion_bachataLadyStyle:
+    'Bachata Lady Style is perfect for women who want to enhance their femininity and expression on the dance floor.',
 
   // Meaning section - Timba en Pareja specific
   latinDanceCompareMeaning1Title_timbaPareja: 'If you want the ultimate partner challenge:',
-  latinDanceCompareMeaning1Desc_timbaPareja: 'Partner Timba combines the intensity of Timba with partner dance connection.',
+  latinDanceCompareMeaning1Desc_timbaPareja:
+    'Partner Timba combines the intensity of Timba with partner dance connection.',
   latinDanceCompareMeaning2Title_timbaPareja: 'If you master Cuban Salsa:',
-  latinDanceCompareMeaning2Desc_timbaPareja: 'It is the natural next step. Take your partner dancing to the highest level of complexity.',
+  latinDanceCompareMeaning2Desc_timbaPareja:
+    'It is the natural next step. Take your partner dancing to the highest level of complexity.',
   latinDanceCompareMeaning3Title_timbaPareja: 'If you like to improvise with your partner:',
-  latinDanceCompareMeaning3Desc_timbaPareja: 'Partner Timba allows a lot of creativity and advanced non-verbal communication.',
+  latinDanceCompareMeaning3Desc_timbaPareja:
+    'Partner Timba allows a lot of creativity and advanced non-verbal communication.',
   latinDanceCompareMeaning4Title_timbaPareja: 'If you are looking for an intense workout:',
-  latinDanceCompareMeaning4Desc_timbaPareja: 'It is one of the most physically demanding styles. Pure cardio while dancing.',
-  latinDanceCompareConclusion_timbaPareja: 'Partner Timba is for advanced dancers who want to take their connection and technique to the highest level.',
+  latinDanceCompareMeaning4Desc_timbaPareja:
+    'It is one of the most physically demanding styles. Pure cardio while dancing.',
+  latinDanceCompareConclusion_timbaPareja:
+    'Partner Timba is for advanced dancers who want to take their connection and technique to the highest level.',
 
   // Meaning section - Folklore Cubano specific
   latinDanceCompareMeaning1Title_folkloreCubano: 'If you are fascinated by Afro-Cuban culture:',
-  latinDanceCompareMeaning1Desc_folkloreCubano: 'Cuban Folklore connects with the African roots of Cuba: the orishas, the drum beats, the tradition.',
+  latinDanceCompareMeaning1Desc_folkloreCubano:
+    'Cuban Folklore connects with the African roots of Cuba: the orishas, the drum beats, the tradition.',
   latinDanceCompareMeaning2Title_folkloreCubano: 'If you seek spiritual expression:',
-  latinDanceCompareMeaning2Desc_folkloreCubano: 'It is a dance with deep cultural and spiritual meaning, beyond entertainment.',
+  latinDanceCompareMeaning2Desc_folkloreCubano:
+    'It is a dance with deep cultural and spiritual meaning, beyond entertainment.',
   latinDanceCompareMeaning3Title_folkloreCubano: 'If you want to understand the origins:',
-  latinDanceCompareMeaning3Desc_folkloreCubano: 'Folklore is the root of all Cuban dances. Understanding it enriches any other style.',
+  latinDanceCompareMeaning3Desc_folkloreCubano:
+    'Folklore is the root of all Cuban dances. Understanding it enriches any other style.',
   latinDanceCompareMeaning4Title_folkloreCubano: 'If you like intense body work:',
-  latinDanceCompareMeaning4Desc_folkloreCubano: 'Folklore develops body dissociation, hip work and emotional expression.',
-  latinDanceCompareConclusion_folkloreCubano: 'Cuban Folklore is the deepest connection with Cuban culture and traditions. It is the soul of all Cuban dances.',
+  latinDanceCompareMeaning4Desc_folkloreCubano:
+    'Folklore develops body dissociation, hip work and emotional expression.',
+  latinDanceCompareConclusion_folkloreCubano:
+    'Cuban Folklore is the deepest connection with Cuban culture and traditions. It is the soul of all Cuban dances.',
 
   // Meaning section - Son Cubano specific
   latinDanceCompareMeaning1Title_sonCubano: 'If you like classic elegance:',
-  latinDanceCompareMeaning1Desc_sonCubano: 'Cuban Son is the father of Salsa. Elegant, musical and deeply Cuban.',
+  latinDanceCompareMeaning1Desc_sonCubano:
+    'Cuban Son is the father of Salsa. Elegant, musical and deeply Cuban.',
   latinDanceCompareMeaning2Title_sonCubano: 'If you value tradition:',
-  latinDanceCompareMeaning2Desc_sonCubano: 'Son is cultural heritage of Cuba. Dancing it connects you with more than 100 years of history.',
+  latinDanceCompareMeaning2Desc_sonCubano:
+    'Son is cultural heritage of Cuba. Dancing it connects you with more than 100 years of history.',
   latinDanceCompareMeaning3Title_sonCubano: 'If you want to improve your musicality:',
-  latinDanceCompareMeaning3Desc_sonCubano: 'Son deeply develops musical interpretation and sense of rhythm.',
+  latinDanceCompareMeaning3Desc_sonCubano:
+    'Son deeply develops musical interpretation and sense of rhythm.',
   latinDanceCompareMeaning4Title_sonCubano: 'If you prefer a slower rhythm:',
-  latinDanceCompareMeaning4Desc_sonCubano: 'Son is slower than modern Salsa, allowing you to savor each beat of the music.',
-  latinDanceCompareConclusion_sonCubano: 'Cuban Son is the elegant root of Salsa. Mastering it gives you a deep understanding of all Cuban music.',
+  latinDanceCompareMeaning4Desc_sonCubano:
+    'Son is slower than modern Salsa, allowing you to savor each beat of the music.',
+  latinDanceCompareConclusion_sonCubano:
+    'Cuban Son is the elegant root of Salsa. Mastering it gives you a deep understanding of all Cuban music.',
 
   // Meaning section - Salsa Lady Timba specific
   latinDanceCompareMeaning1Title_salsaLadyTimba: 'If you want the most powerful feminine style:',
-  latinDanceCompareMeaning1Desc_salsaLadyTimba: 'Lady Timba combines the intensity of Timba with Lady Style expression. Maximum energy and style.',
+  latinDanceCompareMeaning1Desc_salsaLadyTimba:
+    'Lady Timba combines the intensity of Timba with Lady Style expression. Maximum energy and style.',
   latinDanceCompareMeaning2Title_salsaLadyTimba: 'If you master Lady Style and want more:',
-  latinDanceCompareMeaning2Desc_salsaLadyTimba: 'It is the natural evolution of Salsa Lady Style towards a more dynamic and demanding level.',
+  latinDanceCompareMeaning2Desc_salsaLadyTimba:
+    'It is the natural evolution of Salsa Lady Style towards a more dynamic and demanding level.',
   latinDanceCompareMeaning3Title_salsaLadyTimba: 'If you like to improvise:',
-  latinDanceCompareMeaning3Desc_salsaLadyTimba: 'Lady Timba has the greatest freedom for improvisation and personal style.',
+  latinDanceCompareMeaning3Desc_salsaLadyTimba:
+    'Lady Timba has the greatest freedom for improvisation and personal style.',
   latinDanceCompareMeaning4Title_salsaLadyTimba: 'If you are looking for a complete workout:',
-  latinDanceCompareMeaning4Desc_salsaLadyTimba: 'It combines footwork technique, body work and cardio in a very complete style.',
-  latinDanceCompareConclusion_salsaLadyTimba: 'Salsa Lady Timba is the most advanced level of feminine style in Cuban dances. For dancers who want to stand out.',
+  latinDanceCompareMeaning4Desc_salsaLadyTimba:
+    'It combines footwork technique, body work and cardio in a very complete style.',
+  latinDanceCompareConclusion_salsaLadyTimba:
+    'Salsa Lady Timba is the most advanced level of feminine style in Cuban dances. For dancers who want to stand out.',
 };
