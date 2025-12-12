@@ -23,12 +23,39 @@ import {
   StarIcon,
   UserIcon,
 } from './shared/Icons';
+import { CalendarDaysIcon } from '../lib/icons';
 
 // Animation delay constants for consistent timing
 const ANIMATION_DELAYS = {
   STAGGER_SMALL: 100,
   STAGGER_MEDIUM: 150,
 };
+
+// Local icons
+const UsersIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+  </svg>
+);
+
+const MapPinIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+  </svg>
+);
+
+// Nearby areas for Local SEO
+const RCB_NEARBY_AREAS = [
+  { name: 'Plaza España', time: '5 min' },
+  { name: 'Hostafrancs', time: '5 min' },
+  { name: 'Sants Estació', time: '10 min' },
+  { name: 'Les Corts', time: '15 min' },
+  { name: 'Eixample Esquerra', time: '15 min' },
+  { name: 'Poble Sec', time: '10 min' },
+  { name: 'Sant Antoni', time: '12 min' },
+  { name: "L'Hospitalet", time: '10 min' },
+];
 
 const ReggaetonCubanoPage: React.FC = () => {
   const { t, locale } = useI18n();
@@ -238,9 +265,28 @@ const ReggaetonCubanoPage: React.FC = () => {
               <p className="max-w-4xl mx-auto text-lg sm:text-xl md:text-2xl text-neutral/90 mt-6 sm:mt-8 mb-4 sm:mb-6 leading-relaxed">
                 {t('rcbHeroDesc')}
               </p>
-              <p className="text-base sm:text-lg md:text-xl text-neutral/90 italic mb-8 sm:mb-12">
+              <p className="text-base sm:text-lg md:text-xl text-neutral/90 italic mb-6">
                 {t('rcbHeroLocation')}
               </p>
+
+              {/* Social Proof */}
+              <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 mb-8 text-neutral/80">
+                <div className="flex items-center gap-2">
+                  <StarRating size="sm" />
+                  <span className="font-semibold">4.9/5</span>
+                  <span className="text-sm">(505+ reseñas)</span>
+                </div>
+                <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
+                <div className="flex items-center gap-2">
+                  <UsersIcon className="w-5 h-5 text-primary-accent" />
+                  <span>+15.000 alumnos formados</span>
+                </div>
+                <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
+                <div className="flex items-center gap-2">
+                  <CalendarDaysIcon className="w-5 h-5 text-primary-accent" />
+                  <span>8 años en Barcelona</span>
+                </div>
+              </div>
 
               {/* CTA Buttons - Enhanced UX & A11y */}
               <div
@@ -385,11 +431,48 @@ const ReggaetonCubanoPage: React.FC = () => {
           t={t}
         />
 
-        {/* 4. Teachers Section */}
+        {/* Level Cards */}
+        <section className="py-14 md:py-20 bg-black">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {/* Básico */}
+              <AnimateOnScroll delay={0}>
+                <div className="h-full p-6 bg-primary-dark/20 border border-primary-dark/40 rounded-2xl hover:border-primary-dark/60 transition-colors">
+                  <div className="inline-block px-3 py-1 bg-primary-dark/30 text-neutral text-sm font-semibold rounded-full mb-4">
+                    BASICO
+                  </div>
+                  <h3 className="text-xl font-bold text-neutral mb-3">
+                    {t('rcbLevelBasicTitle')}
+                  </h3>
+                  <p className="text-neutral/80 text-sm leading-relaxed">
+                    {t('rcbLevelBasicDesc')}
+                  </p>
+                </div>
+              </AnimateOnScroll>
+
+              {/* Intermedio */}
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
+                <div className="h-full p-6 bg-primary-accent/15 border border-primary-accent/30 rounded-2xl hover:border-primary-accent/50 transition-colors">
+                  <div className="inline-block px-3 py-1 bg-primary-accent/20 text-primary-accent text-sm font-semibold rounded-full mb-4">
+                    INTERMEDIO
+                  </div>
+                  <h3 className="text-xl font-bold text-neutral mb-3">
+                    {t('rcbLevelIntermediateTitle')}
+                  </h3>
+                  <p className="text-neutral/80 text-sm leading-relaxed">
+                    {t('rcbLevelIntermediateDesc')}
+                  </p>
+                </div>
+              </AnimateOnScroll>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. Teachers Section */}
         <section
           id="teachers"
           aria-labelledby="teachers-title"
-          className="py-12 md:py-20 bg-black relative overflow-hidden"
+          className="py-12 md:py-20 bg-primary-dark/10 relative overflow-hidden"
         >
           {/* Cuba Flag Colors Background */}
           <div className="absolute inset-0 opacity-20" aria-hidden="true">
@@ -475,7 +558,67 @@ const ReggaetonCubanoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 5. Identification Section - Puntos de dolor + Necesitas apuntarte */}
+        {/* 6. Prepara tu primera clase */}
+        <section className="py-14 md:py-20 bg-black">
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="max-w-5xl mx-auto">
+                <h3 className="text-2xl sm:text-3xl font-black tracking-tighter text-neutral mb-2 text-center holographic-text">{t('rcbPrepareTitle')}</h3>
+                <p className="text-base text-neutral/70 mb-6 text-center">{t('rcbPrepareSubtitle')}</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+                  <div className="p-5 bg-primary-accent/10 rounded-2xl border border-primary-accent/30 hover:border-primary-accent/50 transition-all duration-300">
+                    <h4 className="text-base font-bold text-primary-accent mb-3 flex items-center gap-2">
+                      <span className="w-6 h-6 rounded-full bg-primary-accent/20 flex items-center justify-center text-sm">+</span>
+                      {t('rcbPrepareWhatToBring')}
+                    </h4>
+                    <ul className="space-y-2">
+                      {[1, 2, 3, 4, 5].map(num => (
+                        <li key={num} className="flex items-start gap-2 text-sm text-neutral/80">
+                          <CheckIcon className="w-4 h-4 text-primary-accent mt-0.5 flex-shrink-0" />
+                          <span>{t(`rcbPrepareItem${num}`)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="p-5 bg-primary-dark/15 rounded-2xl border border-primary-dark/30 hover:border-primary-dark/50 transition-all duration-300">
+                    <h4 className="text-base font-bold text-neutral mb-3 flex items-center gap-2">
+                      <ClockIcon className="w-5 h-5 text-primary-accent" />
+                      {t('rcbPrepareBefore')}
+                    </h4>
+                    <ul className="space-y-2">
+                      {[1, 2, 3].map(num => (
+                        <li key={num} className="flex items-start gap-2 text-sm text-neutral/80">
+                          <span className="w-4 h-4 rounded-full bg-primary-dark/30 flex items-center justify-center text-xs text-neutral mt-0.5 flex-shrink-0">-</span>
+                          <span>{t(`rcbPrepareBeforeItem${num}`)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="p-5 bg-neutral/5 rounded-2xl border border-neutral/20 hover:border-neutral/40 transition-all duration-300 sm:col-span-2 lg:col-span-1">
+                    <h4 className="text-base font-bold text-neutral/70 mb-3 flex items-center gap-2">
+                      <span className="w-6 h-6 rounded-full bg-neutral/10 flex items-center justify-center text-sm">x</span>
+                      {t('rcbPrepareAvoid')}
+                    </h4>
+                    <ul className="space-y-2">
+                      {[1, 2, 3].map(num => (
+                        <li key={num} className="flex items-start gap-2 text-sm text-neutral/80">
+                          <span className="w-4 h-4 rounded-full bg-neutral/10 flex items-center justify-center text-xs text-neutral/60 mt-0.5 flex-shrink-0">x</span>
+                          <span>{t(`rcbPrepareAvoidItem${num}`)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="mt-6 p-5 bg-gradient-to-r from-primary-accent/10 via-primary-dark/10 to-primary-accent/10 rounded-2xl border border-primary-accent/30">
+                  <p className="text-sm font-bold text-primary-accent mb-2">{t('rcbPrepareTeacherTip')}</p>
+                  <blockquote className="text-neutral/90 italic leading-relaxed text-sm">&ldquo;{t('rcbPrepareTeacherQuote')}&rdquo;</blockquote>
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* 7. Identification Section - Puntos de dolor + Necesitas apuntarte */}
         <section aria-labelledby="identify-title" className="py-12 md:py-20 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -545,7 +688,7 @@ const ReggaetonCubanoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 6. Transformation Section */}
+        {/* 8. Transformation Section */}
         <section aria-labelledby="transform-title" className="py-12 md:py-20 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -583,7 +726,7 @@ const ReggaetonCubanoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 7. Why Choose Farray's + Logos Section */}
+        {/* 9. Why Choose Farray's + Logos Section */}
         <section className="py-12 md:py-20 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -629,7 +772,7 @@ const ReggaetonCubanoPage: React.FC = () => {
                     suffix="+"
                     className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-lg sm:text-xl md:text-2xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm sm:text-base text-neutral/80 font-semibold uppercase tracking-wide">
                     {t('yearsExperience')}
                   </p>
                 </div>
@@ -639,7 +782,7 @@ const ReggaetonCubanoPage: React.FC = () => {
                     suffix="+"
                     className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-lg sm:text-xl md:text-2xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm sm:text-base text-neutral/80 font-semibold uppercase tracking-wide">
                     {t('activeStudents')}
                   </p>
                 </div>
@@ -649,7 +792,7 @@ const ReggaetonCubanoPage: React.FC = () => {
                     suffix="+"
                     className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-lg sm:text-xl md:text-2xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm sm:text-base text-neutral/80 font-semibold uppercase tracking-wide">
                     {t('satisfiedStudents')}
                   </p>
                 </div>
@@ -724,7 +867,7 @@ const ReggaetonCubanoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 8. Why Today Section */}
+        {/* 10. Why Today Section */}
         <section className="py-12 md:py-20 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -746,7 +889,7 @@ const ReggaetonCubanoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 9. Video Section */}
+        {/* 11. Video Section */}
         <section id="video" className="py-12 md:py-20 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -770,7 +913,7 @@ const ReggaetonCubanoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 10. Testimonials */}
+        {/* 12. Testimonials */}
         <section
           id="testimonials"
           aria-labelledby="testimonials-title"
@@ -830,7 +973,7 @@ const ReggaetonCubanoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 11. Final CTA Section */}
+        {/* 13. Final CTA Section */}
         <section id="final-cta" className="relative py-12 sm:py-16 md:py-24 overflow-hidden">
           {/* Background like Hero */}
           <div className="absolute inset-0 bg-black">
@@ -889,7 +1032,7 @@ const ReggaetonCubanoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 12. Cultural History - Contenido profundo SEO */}
+        {/* 14. Cultural History - Contenido profundo SEO */}
         <CulturalHistorySection
           titleKey=""
           shortDescKey="rcbCulturalShort"
@@ -899,8 +1042,36 @@ const ReggaetonCubanoPage: React.FC = () => {
           t={t}
         />
 
-        {/* 13. FAQ */}
+        {/* 14. FAQ */}
         <FAQSection title={t('rcbFaqTitle')} faqs={rcbFaqs} pageUrl={pageUrl} />
+
+        {/* 15. Local SEO Section - Cerca de ti */}
+        <section className="py-10 md:py-14 bg-black">
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="max-w-4xl mx-auto p-6 bg-black/30 rounded-2xl border border-neutral/20">
+                <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-4">
+                  {t('rcbNearbyTitle')}
+                </h3>
+                <p className="text-neutral/80 mb-6">{t('rcbNearbyDesc')}</p>
+                <p className="text-neutral/90 font-semibold mb-4">
+                  {t('rcbNearbySearchText')}
+                </p>
+                <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
+                  {RCB_NEARBY_AREAS.map((area, index) => (
+                    <div key={index} className="flex items-center gap-2 text-sm">
+                      <MapPinIcon className="w-4 h-4 text-primary-accent" />
+                      <span className="text-neutral/80">
+                        {area.name}: <span className="text-primary-accent">{area.time}</span>
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-neutral/70 text-sm mt-4">{t('rcbNearbyMetro')}</p>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
       </main>
     </>
   );

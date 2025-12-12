@@ -57,6 +57,7 @@ const AfroContemporaneoPage = lazy(() => import('./components/AfroContemporaneoP
 const AfroJazzPage = lazy(() => import('./components/AfroJazzPage'));
 const StretchingPage = lazy(() => import('./components/StretchingPage'));
 const HipHopPage = lazy(() => import('./components/HipHopPage'));
+const SalsaCubanaPage = lazy(() => import('./components/SalsaCubanaPage'));
 
 // Valid locales
 const VALID_LOCALES: Locale[] = ['es', 'en', 'ca', 'fr'];
@@ -320,6 +321,16 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <SalsaBachataPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/clases/salsa-cubana-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <SalsaCubanaPage />
                 </>
               }
             />

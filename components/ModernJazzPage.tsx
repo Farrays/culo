@@ -638,6 +638,27 @@ const ModernJazzPage: React.FC = () => {
           t={t}
         />
 
+        {/* Level Cards Section */}
+        <section className="py-14 md:py-20 bg-black">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="max-w-2xl mx-auto">
+              <AnimateOnScroll delay={0}>
+                <div className="h-full p-6 bg-primary-dark/20 border border-primary-dark/40 rounded-2xl hover:border-primary-dark/60 transition-colors">
+                  <div className="inline-block px-3 py-1 bg-primary-dark/30 text-neutral text-sm font-semibold rounded-full mb-4">
+                    BÁSICO
+                  </div>
+                  <h3 className="text-xl font-bold text-neutral mb-3">
+                    {t('modernjazzLevelBasicTitle')}
+                  </h3>
+                  <p className="text-neutral/80 text-sm leading-relaxed">
+                    {t('modernjazzLevelBasicDesc')}
+                  </p>
+                </div>
+              </AnimateOnScroll>
+            </div>
+          </div>
+        </section>
+
         {/* Teacher Section - Position 4 */}
         <section
           id="teachers"
@@ -1095,7 +1116,7 @@ const ModernJazzPage: React.FC = () => {
                     suffix="+"
                     className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm sm:text-base text-neutral/80 font-semibold uppercase tracking-wide">
                     {t('yearsExperience')}
                   </p>
                 </div>
@@ -1105,7 +1126,7 @@ const ModernJazzPage: React.FC = () => {
                     suffix="+"
                     className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm sm:text-base text-neutral/80 font-semibold uppercase tracking-wide">
                     {t('activeStudents')}
                   </p>
                 </div>
@@ -1115,7 +1136,7 @@ const ModernJazzPage: React.FC = () => {
                     suffix="+"
                     className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm sm:text-base text-neutral/80 font-semibold uppercase tracking-wide">
                     {t('satisfiedStudents')}
                   </p>
                 </div>

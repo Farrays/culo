@@ -502,7 +502,7 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
                     suffix="+"
                     className="text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm sm:text-base text-neutral/80 font-semibold uppercase tracking-wide">
                     {t('yearsExperience')}
                   </p>
                 </div>
@@ -512,7 +512,7 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
                     suffix="+"
                     className="text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm sm:text-base text-neutral/80 font-semibold uppercase tracking-wide">
                     {t('activeStudents')}
                   </p>
                 </div>
@@ -522,7 +522,7 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
                     suffix="+"
                     className="text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-4xl md:text-5xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm sm:text-base text-neutral/80 font-semibold uppercase tracking-wide">
                     {t('satisfiedStudents')}
                   </p>
                 </div>

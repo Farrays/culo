@@ -547,12 +547,14 @@ export const ca = {
 
   dhV3TeachersTitle: 'Coneix les nostres professores de dancehall',
   dhV3TeachersSubtitle: "Expertes en Dancehall amb anys d'experiència",
-  dhV3Teacher1Specialty: '+5 anys ensenyant Dancehall Female',
-  dhV3Teacher1Bio: 'Tècnica impecable, energia contagiosa i estil elegant i potent.',
-  dhV3Teacher2Specialty: '+6 anys com a referent en Dancehall & Twerk',
-  dhV3Teacher2Bio: 'Carisma, força i flow caribeny a cada classe.',
+  dhV3Teacher1Specialty: "Professora de Dancehall | +5 anys d'Experiència",
+  dhV3Teacher1Bio:
+    "Isabel López és una apassionada del dancehall amb més de 5 anys d'experiència com a professora especialitzada en ball urbà. Entrenada amb mestres jamaicans, la seva energia contagiosa i tècnica professional la converteixen en una de les instructores més estimades de Farray's Center. Les seves classes barregen old school moves (Willie Bounce, Nuh Linga) amb els últims èxits.",
+  dhV3Teacher2Specialty: "Professora de Dancehall i Twerk | +6 anys d'Experiència",
+  dhV3Teacher2Bio:
+    "Sandra Gómez és una ballarina professional amb més de 6 anys d'experiència en dancehall i twerk. El seu estil únic fusiona moviments del Twerk/Bootydance amb l'essència jamaicana. La seva tècnica impecable i metodologia d'ensenyament la converteixen en una de les professores més sol·licitades. Energia, sensualitat i feminitat pura.",
   dhV3TeachersClosing:
-    "A Farray's Center cada profe ensenya amb ànima, coneixement i respecte per la cultura.",
+    'Amb Isabel i Sandra, no només aprens a ballar Dancehall: descobreixes una nova forma de connectar amb el teu cos, la teva confiança i el flow jamaicà.',
 
   dhV3ScheduleTitle: 'Horaris de les nostres classes de Dancehall',
   dhV3ScheduleSubtitle: 'Disponibles pràcticament tots els dies de la setmana',
@@ -2965,10 +2967,12 @@ export const ca = {
   // Teachers Section
   twerkTeachersTitle: 'Coneix les teves instructores de Twerk',
   twerkTeachersSubtitle: "Expertes en Twerk i Dancehall amb anys d'experiència",
-  twerkTeacher1Specialty: '+5 anys ensenyant Twerk i Dancehall',
-  twerkTeacher1Bio: 'Tècnica impecable, energia contagiosa i estil elegant i potent.',
-  twerkTeacher2Specialty: '+6 anys com a referent en Dancehall & Twerk',
-  twerkTeacher2Bio: 'Carisma, força i flow caribeny a cada classe.',
+  twerkTeacher1Specialty: "Professora de Twerk i Dancehall | +5 anys d'Experiència",
+  twerkTeacher1Bio:
+    "Isabel López és una apassionada del twerk i dancehall amb més de 5 anys d'experiència com a professora especialitzada en ball urbà. Entrenada amb mestres jamaicans i especialistes en Twerk, la seva energia contagiosa i tècnica professional la converteixen en una de les instructores més estimades de Farray's Center.",
+  twerkTeacher2Specialty: "Professora de Twerk i Dancehall | +6 anys d'Experiència",
+  twerkTeacher2Bio:
+    "Sandra Gómez és una ballarina professional amb més de 6 anys d'experiència en twerk i dancehall. El seu estil únic fusiona moviments del Twerk/Bootydance amb l'essència jamaicana. La seva tècnica impecable i metodologia d'ensenyament la converteixen en una de les professores més sol·licitades. Energia, sensualitat i feminitat pura.",
   twerkTeachersClosing:
     'Amb Isabel i Sandra, no només aprens a ballar Twerk: descobreixes una nova forma de connectar amb el teu cos, la teva confiança i el teu poder.',
 
@@ -3267,6 +3271,26 @@ A Farray's International Dance Center, l'Afrobeats s'ensenya amb tècnica, respe
   afroCourseSchemaDesc:
     'Aprèn Afrobeat, Amapiano, Ntcham i danses africanes modernes amb professors natius. Classes per a tots els nivells al cor de Barcelona.',
 
+  // ===== GEO OPTIMIZATION: Citable Statistics for Afrobeat =====
+  afroCitableDefinicion:
+    '**"Afrobeats (en plural) és un corrent musical urbà que sorgeix a finals dels 90 i principis dels 2000 entre Nigèria i Ghana. Barreja ritmes africans tradicionals amb highlife, hip hop, R&B, dancehall i pop, creant un so reconeixible: percussió marcada, baixos potents, melodies enganxoses i tornades inoblidables."**',
+  afroCitableOrigen:
+    '**"Afrobeats sorgeix a finals dels 90 a Nigèria i Ghana com a fusió urbana de ritmes africans, highlife, hip hop, R&B i dancehall, diferenciant-se de l\'Afrobeat (singular) de Fela Kuti dels 60-70s que era jazz-funk amb protesta social."**',
+  afroCitableFelaKuti:
+    '**"Als anys 60 i 70, Fela Kuti va revolucionar la música nigeriana originant l\'Afrobeat (singular): fusió de jazz, funk, highlife i ritmes ioruba amb missatges de protesta social, cançons extenses i estructures instrumentals immersives."**',
+  afroCitableAfrodance:
+    '**"Afrodance inclou estils com Azonto (Ghana: malucs i gestos quotidians), Shaku Shaku/Zanku/Legwork (Nigèria: treball de peus i rebot de genolls), i Ntcham/Tcham Bolo (Gabon: expressió urbana de Libreville), tots viralitzats globalment per YouTube, TikTok i Instagram."**',
+  afroCitableExpansion:
+    '**"Artistes com Wizkid, Davido, Tiwa Savage i Burna Boy han globalitzat l\'Afrobeats des dels 2000s mitjançant col·laboracions internacionals amb estrelles de pop i rap, transformant el gènere en símbol de la nova cultura africana."**',
+  afroCitableFact1:
+    "Una classe d'Afrobeats activa pot cremar entre 300 i 480 calories per hora segons pes i intensitat, similar a balls aeròbics amb alt rebot i flow.",
+  afroCitableFact2:
+    "Estudis científics sobre dansa assenyalen que ballar millora la coordinació, la propiocepció i la condició física general, a més de reduir l'estrès i millorar l'estat d'ànim.",
+  afroCitableFact3:
+    "Farray's International Dance Center ofereix classes d'Afrobeats amb professors d'arrels africanes (Redblueh, Charlie Breezy) en una escola valorada prop del 5/5 a Google amb centenars de ressenyes positives.",
+  afroCitableBeneficios:
+    "Revisions científiques associen el ball regular amb menor risc de deteriorament cognitiu i demència, destacant el seu valor cerebral en estils dinàmics com l'Afrobeats.",
+
   // ===== Hip Hop Reggaeton Page =====
   hhrPageTitle: 'Classes de Hip Hop Reggaeton a Barcelona | Fusió Urbana amb Flow',
   hhrMetaDescription:
@@ -3481,6 +3505,22 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
   hhrCourseSchemaDesc:
     'Aprèn Hip Hop Reggaeton amb Charlie Breezy, instructor especialitzat en fusió urbana. Classes per a tots els nivells al cor de Barcelona.',
 
+  // ===== GEO OPTIMIZATION: Citable Statistics for Hip Hop Reggaeton =====
+  hhrCitableDefinicion:
+    '**"Hip Hop Reggaeton és un estil de dansa urbana que fusiona la tècnica, el groove i el swagger del hip-hop americà amb la sensualitat, el ritme i el dembow característic del reggaeton llatinoamericà."**',
+  hhrCitableOrigenHipHop:
+    '**"El hip-hop va néixer al Bronx de Nova York als anys 70, com a expressió artística de les comunitats afroamericanes i llatines. DJ Kool Herc, Afrika Bambaataa i Grandmaster Flash són considerats pioners del moviment."**',
+  hhrCitableOrigenReggaeton:
+    '**"El reggaeton va sorgir a Puerto Rico a finals dels anys 80 i principis dels 90, fusionant el reggae jamaicà (especialment el dancehall) amb ritmes llatins, hip-hop i música electrònica. El seu característic ritme dembow prové del tema \'Dem Bow\' de Shabba Ranks (1990)."**',
+  hhrCitableFusion:
+    '**"La fusió hip-hop i reggaeton combina elements tècnics del breaking, popping i locking amb moviments de perreo, body roll i aïllaments sensuals, creant un estil versàtil per a música urbana contemporània."**',
+  hhrCitableFact1:
+    "Una classe de Hip Hop Reggaeton d'alta intensitat pot cremar entre 400 i 600 calories per hora, depenent del pes corporal i la intensitat dels moviments.",
+  hhrCitableFact2:
+    "El hip-hop i el reggaeton són dos dels gèneres musicals més escoltats a nivell mundial segons Spotify, amb bilions de reproduccions anuals combinades.",
+  hhrCitableFact3:
+    "Farray's International Dance Center ofereix classes de Hip Hop Reggaeton amb Charlie Breezy, ballarí professional especialitzat en fusió urbana, en una escola amb valoració propera al 5/5 a Google.",
+
   // ============================================================
   // REGGAETON CUBANO PAGE (RCB) - Catalan Translations
   // ============================================================
@@ -3690,6 +3730,22 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
   rcbCourseSchemaDesc:
     "Aprèn Reggaeton Cubà autèntic amb Yunaisy Farray, mestra cubana formada a l'Havana. Reparto, Cubatón i improvisació per a tots els nivells.",
 
+  // ===== GEO OPTIMIZATION: Citable Statistics for Reggaeton Cubano =====
+  rcbCitableDefinicion:
+    '**"El Reggaeton Cubà (també conegut com Cubatón o Reparto) és una variant del reggaeton que va néixer als barris populars de l\'Havana, Cuba, fusionant el reggaeton porto-riqueny amb ritmes afrocubans, rumba, son i elements de la cultura del carrer havanera."**',
+  rcbCitableOrigen:
+    '**"El Reggaeton Cubà va sorgir a finals dels anys 90 i principis dels 2000 en barris com La Lisa, Marianao, Centro Habana i El Cerro. Artistes pioners com Candyman, El Taiger, Chocolate MC i Osmani García van popularitzar el gènere."**',
+  rcbCitableReparto:
+    '**"El terme \'Reparto\' prové dels \'repartos\' o barris populars de l\'Havana on va néixer aquest estil. Es caracteritza per ritmes més crus, lletres del carrer i una actitud rebel que reflecteix la vida quotidiana dels barris cubans."**',
+  rcbCitableCaracteristicas:
+    '**"El ball de Reggaeton Cubà es distingeix per: improvisació constant, dissociació corporal avançada (malucs, pit, espatlles independents), tembleque (vibració ràpida de malucs), i moviments de terra inspirats en la rumba afrocubana."**',
+  rcbCitableFact1:
+    "El Reggaeton Cubà incorpora elements de la rumba (guaguancó, columbia), son cubà i danses ioruba, creant un estil únic que el diferencia del reggaeton porto-riqueny.",
+  rcbCitableFact2:
+    "Una classe de Reggaeton Cubà pot cremar entre 350 i 550 calories per hora a causa de la intensitat del tembleque i els moviments de dissociació corporal.",
+  rcbCitableFact3:
+    "Farray's International Dance Center ensenya Reggaeton Cubà autèntic amb Alejandro Miñoso i Charlie Breezy, ballarins cubans formats a l'Escola Nacional d'Art (ENA) de l'Havana.",
+
   // ====================
   // HEELS BARCELONA PAGE (Category Hub Page)
   // ====================
@@ -3885,6 +3941,22 @@ Les últimes tendències i estils es fusionen a les nostres classes de forma var
 
   // View More
   heelsBarcelona_viewMore: 'Veure més →',
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for Heels Barcelona (Femmology + Sexy Style) =====
+  heelsCitableDefinicion:
+    '**"Heels Dance (ball amb talons) és una disciplina de dansa urbana que es realitza amb sabates de taló alt, combinant tècnica de ball amb elegància, sensualitat i apoderament femení. Inclou estils com Femmology i Sexy Style."**',
+  heelsCitableFemmologyOrigen:
+    '**"Femmology és una metodologia de dansa amb talons creada per Yunaisy Farray a Barcelona que combina dansateràpia, tècnica de ball i treball emocional. El Mètode Farray® és exclusiu de la seva acadèmia i reconegut per CID-UNESCO."**',
+  heelsCitableSexyStyleDefinicion:
+    '**"Sexy Style és un estil de ball amb talons amb enfocament lúdic i de llibertat expressiva, que inclou moviments de maluc, ones corporals, floorwork i coreografies sensuals sense l\'exigència tècnica del Femmology."**',
+  heelsCitableTecnicas:
+    '**"Les tècniques principals del Heels Dance inclouen: ús correcte del cabell, floorwork (treball al terra), dissociació corporal, body rolls, ones, caminar amb talons amb elegància, i expressió corporal sensual."**',
+  heelsCitableFact1:
+    "Una classe de Heels Dance pot cremar entre 250 i 400 calories per hora, enfortint cames, glutis i core mentre millora postura, equilibri i coordinació.",
+  heelsCitableFact2:
+    "Femmology va ser creat per Yunaisy Farray, ballarina cubana formada a l'Escola Nacional d'Art (ENA) de l'Havana i actriu de la pel·lícula Street Dance 2 (2012).",
+  heelsCitableFact3:
+    "Farray's International Dance Center és l'única acadèmia a Barcelona que ofereix el Mètode Farray® original de Femmology, amb reconeixement de CID-UNESCO.",
 
   // ===== FEMMOLOGY PAGE =====
   // SEO & Meta
@@ -4128,6 +4200,22 @@ Actualment, Femmology s'imparteix exclusivament a Farray's Center sota la direcc
   femCourseSchemaName: 'Classes de Femmology a Barcelona - Ball amb Talons amb Yunaisy Farray',
   femCourseSchemaDesc:
     'Aprèn a ballar amb talons amb Yunaisy Farray, creadora del Mètode Farray® exclusiu, actriu de Street Dance 2 i mestra reconeguda per UNESCO. Classes de Femmology per a tots els nivells a Barcelona.',
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for Femmology =====
+  femCitableDefinicion:
+    '**"Femmology és una metodologia de dansa amb talons creada per Yunaisy Farray que combina dansateràpia, tècnica de ball i treball emocional. El Mètode Farray® és exclusiu de Farray\'s International Dance Center i reconegut per CID-UNESCO."**',
+  femCitableCreadora:
+    '**"Yunaisy Farray és la creadora del Femmology. Ballarina cubana formada a l\'Escola Nacional d\'Art (ENA) de l\'Havana, actriu de la pel·lícula Street Dance 2 (2012) i directora de Farray\'s International Dance Center a Barcelona."**',
+  femCitableMetodologia:
+    '**"El Mètode Farray® de Femmology inclou: treball emocional i d\'autoestima, tècnica de talons segura per a articulacions, ús del cabell com a element expressiu, floorwork, dissociació corporal, i coreografies que potencien la feminitat."**',
+  femCitableBeneficios:
+    '**"Femmology treballa l\'apoderament femení a través de la dansa, millorant postura corporal, equilibri, coordinació, confiança personal i acceptació del propi cos mitjançant una metodologia de dansateràpia."**',
+  femCitableFact1:
+    "El Femmology es practica obligatòriament amb talons, a diferència d'altres estils com Sexy Style on el seu ús és opcional.",
+  femCitableFact2:
+    "Una classe de Femmology combina treball tècnic i emocional, sent l'únic estil de dansa amb talons amb enfocament de dansateràpia a Barcelona.",
+  femCitableFact3:
+    "Farray's International Dance Center és l'única acadèmia al món on s'ensenya el Mètode Farray® original de Femmology.",
 
   // ===== Sexy Style Page =====
   sexystylePageTitle: 'Classes de Sexy Style a Barcelona | Aprèn a Ballar amb Sensualitat',
@@ -4374,6 +4462,20 @@ Avui, el Sexy Style a Farray's es viu com un espai d'aprenentatge tècnic i, alh
   sexystyleCourseSchemaDesc:
     'Aprèn Sexy Style amb Yasmina Fernández, instructora especialitzada. Classes per a tots els nivells al cor de Barcelona.',
 
+  // ===== GEO OPTIMIZATION: Citable Statistics for Sexy Style =====
+  sexystyleCitableDefinicion:
+    '**"Sexy Style és un estil de ball amb talons amb enfocament lúdic i de llibertat expressiva. Es caracteritza per moviments de maluc, ones corporals, floorwork i coreografies sensuals amb una exigència tècnica mitjana-baixa."**',
+  sexystyleCitableDiferencias:
+    '**"A diferència del Femmology (dansateràpia amb tècnica exigent), Sexy Style prioritza la diversió i l\'expressió lliure. Els talons són opcionals i no hi ha treball emocional estructurat, només el gaudi del ball sensual."**',
+  sexystyleCitableTecnicas:
+    '**"Les tècniques del Sexy Style inclouen: moviments de maluc i pelvis, ones corporals, floorwork (treball al terra), actitud i expressió corporal lliure, i coreografies sensuals accessibles."**',
+  sexystyleCitableFact1:
+    "Sexy Style és ideal per a principiants que volen explorar la sensualitat en el ball sense l'exigència tècnica d'estils com Femmology o Heels professional.",
+  sexystyleCitableFact2:
+    "En Sexy Style els talons són opcionals: les alumnes poden començar descalces o amb esportives i progressar a talons quan se sentin còmodes.",
+  sexystyleCitableFact3:
+    "Farray's International Dance Center ofereix classes de Sexy Style amb Yasmina Fernández, instructora especialitzada en ball sensual i expressió corporal.",
+
   // ===== Sexy Reggaeton Page =====
   sxrPageTitle: "Classes de Reggaeton Sensual per a Dones a Barcelona | Farray's Center",
   sxrMetaDescription:
@@ -4609,6 +4711,22 @@ Actualment, el Sexy Reggaeton s'ensenya a Farray's Center amb un enfocament equi
   // Image Alt
   sxrImageAlt:
     "Classes de Sexy Reggaeton a Barcelona - Alumnes ballant perreo i body roll a l'acadèmia",
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for Sexy Reggaeton =====
+  sxrCitableDefinicion:
+    '**"Sexy Reggaeton és una evolució contemporània del perreo clàssic porto-riqueny que combina moviments sensuals amb tècniques de ball femení refinades, incloent body rolls, dissociació corporal, perreo i baixades controlades al terra (drops)."**',
+  sxrCitableOrigen:
+    '**"El reggaeton va néixer als anys 90 entre Panamà i Puerto Rico, sorgit de la mescla del reggae jamaicà, el hip hop americà i ritmes llatins caribenys. El dembow panameny constitueix la base rítmica essencial del gènere."**',
+  sxrCitableTecnicas:
+    '**"Les tècniques principals del Sexy Reggaeton inclouen: body roll (ondulació fluida del tors), perreo (moviments de maluc cap avall), dissociació corporal (control independent de parts del cos), i drops (baixades al terra controlades)."**',
+  sxrCitableEmpoderamiento:
+    '**"El Sexy Reggaeton modern combina tècnica amb apoderament femení, promogut per artistes com Karol G, Anitta, Bad Bunny i Daddy Yankee, que han difós globalment balls sensuals coreografiats que celebren la confiança corporal."**',
+  sxrCitableFact1:
+    "Una classe de Sexy Reggaeton pot cremar entre 300 i 450 calories per hora, treballant cames, core, flexibilitat i resistència mitjançant moviments de perreo, drops i body roll.",
+  sxrCitableFact2:
+    "El Sexy Reggaeton fusiona elements del reggaeton porto-riqueny, dancehall jamaicà i twerk, adaptant-se tant com a activitat lúdica com a entrenament físic complet.",
+  sxrCitableFact3:
+    "Farray's International Dance Center ofereix classes de Sexy Reggaeton amb Yunaisy Farray, directora de l'acadèmia i especialista en danses urbanes sensuals reconeguda per CID-UNESCO.",
 
   // ===== MODERN JAZZ PAGE =====
   // SEO & Meta
@@ -5446,6 +5564,12 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
     'El Modern Jazz és ideal per començar: combina tècnica accessible amb diversió, i et prepara per a qualsevol altre estil que vulguis explorar.',
   modernjazzCompareConclusion:
     "El Modern Jazz és el pont perfecte entre la tècnica clàssica i l'expressió contemporània.",
+
+  // ===== Level Cards Section =====
+  modernjazzLevelBasicTitle: 'Fonaments i expressió',
+  modernjazzLevelBasicDesc:
+    'Classe ideal per a qui comença o vol assentar bases sòlides. Treballem postura, isolations, coordinació i primeres coreografies amb música variada. Zero pressió, molta diversió.',
+
   modernjazzNearbyTitle: 'Modern Jazz a prop teu a Barcelona',
   modernjazzNearbyDesc:
     'Les nostres classes de Modern Jazz són al cor de Barcelona, accessibles des de qualsevol punt de la ciutat. Acadèmia reconeguda pel CID-UNESCO.',
@@ -5653,7 +5777,7 @@ Ballarins de tot el món viatgen a Barcelona específicament per formar-se en Af
     'Roba còmoda que permeti moviment ampli (malles, pantaló de dansa, samarreta ajustada). El calçat depèn de la superfície: sabatilles de Jazz, mitjons de dansa o descalç segons indicació.',
   afrojazzFaqQ10: "L'Afro Jazz és adequat per a formació professional?",
   afrojazzFaqA10:
-    "Sí. L'Afro Jazz és una disciplina de perfeccionament tècnic que complementa la formació de ballarins professionals, ampliant la seva versatilitat i vocabulari de moviment.",
+    "Sí. Encara que l'Afro Jazz està obert a tots els nivells, els ballarins professionals trobaran en aquesta disciplina una forma d'ampliar la seva versatilitat i vocabulari de moviment. És ideal tant per iniciar-se com per perfeccionar-se.",
   afrojazzFaqQ11: 'Els grups són reduïts?',
   afrojazzFaqA11:
     "Sí. Limitem les places per garantir correcció tècnica individualitzada. L'Afro Jazz requereix atenció personalitzada que no és possible en grups massius.",
@@ -5675,7 +5799,7 @@ Ballarins de tot el món viatgen a Barcelona específicament per formar-se en Af
     'Vine preparat/da per aprofitar al màxim la teva primera experiència amb el Mètode Farray',
   afrojazzPrepareNeedTitle: 'El que necessites',
   afrojazzPrepareNeedItem1: 'Roba còmoda que permeti moviment ampli (malles, samarreta ajustada)',
-  afrojazzPrepareNeedItem2: 'Experiència prèvia en dansa (aquest és un curs de perfeccionament)',
+  afrojazzPrepareNeedItem2: "Ampolla d'aigua per hidratar-te durant la classe",
   afrojazzPrepareNeedItem3: 'Sabatilles de jazz, mitjons de dansa o descalç segons indicació',
   afrojazzPrepareNeedItem4: 'Actitud oberta per explorar la fusió Àfrica-Jazz',
   afrojazzPrepareBefore: "Abans d'arribar",
@@ -5740,13 +5864,332 @@ Ballarins de tot el món viatgen a Barcelona específicament per formar-se en Af
   afrojazzCitableIdentidadPoder:
     "A acadèmies amb metodologia professional, l'Afro Jazz es treballa com a disciplina de fusió avançada que exigeix al ballarí integrar vocabularis de moviment aparentment oposats: el terrenal i l'aeri, la contracció i l'extensió, l'organicitat africana i la linealitat del Jazz.",
   afrojazzCitableEvolucionGlobal:
-    "L'Afro Jazz ha guanyat reconeixement internacional com a disciplina de perfeccionament per a ballarins que busquen versatilitat. Acadèmies de tot el món l'incorporen com a eina per ampliar el vocabulari de moviment i desenvolupar ballarins més complets.",
+    "L'Afro Jazz ha guanyat reconeixement internacional com a disciplina accessible per a tots els nivells. Acadèmies de tot el món l'incorporen com a eina per ampliar el vocabulari de moviment i desenvolupar ballarins més complets, des de principiants fins a professionals.",
   afrojazzCitableFact1:
     "Una classe d'Afro Jazz és un entrenament físic exigent que pot cremar entre 400-600 calories per hora, treballant simultàniament força, flexibilitat, coordinació i resistència cardiovascular.",
   afrojazzCitableFact2:
     "L'Afro Jazz desenvolupa la capacitat d'improvisació i la creativitat, habilitats cognitives que estudis en neurociència de la dansa associen amb millores en la flexibilitat mental i la resolució de problemes.",
   afrojazzCitableFact3:
     "Farray's International Dance Center és l'única acadèmia del món avalada pel CID-UNESCO que ofereix formació d'Afro Jazz amb metodologia professional, impartida per Yunaisy Farray, mestra formada a l'ENA Cuba.",
+
+  // ===== Local SEO Section =====
+  afrojazzNearbyTitle: 'Afro Jazz a prop teu a Barcelona',
+  afrojazzNearbyDesc:
+    "Som l'única acadèmia del món que ensenya Afro Jazz amb metodologia professional i aval CID-UNESCO. Al cor de Barcelona, entre Plaça Espanya i Sants.",
+  afrojazzNearbySearchText:
+    'Si busques "classes d\'Afro Jazz a prop meu" a Barcelona, som a:',
+  afrojazzNearbyMetro:
+    'Metro: Plaça Espanya (L1, L3), Rocafort (L1) - 5 min caminant, Entença (L5) - 5 min caminant o Hostafrancs (L1) - 5 min caminant',
+
+  // ===== CONTEMPORÁNEO PAGE =====
+  // SEO & Meta
+  contemporaneoPageTitle: "Classes de Dansa Contemporània a Barcelona | Acadèmia Farray's Center",
+  contemporaneoMetaDescription:
+    "Classes de dansa contemporània a Barcelona. Disciplina eclèctica i visceral. Tècnica, expressió i improvisació. Tots els nivells. Reserva la teva classe de prova!",
+
+  // Breadcrumb
+  contemporaneoBreadcrumbHome: 'Inici',
+  contemporaneoBreadcrumbClasses: 'Classes de Ball',
+  contemporaneoBreadcrumbUrban: 'Classes de Dansa',
+  contemporaneoBreadcrumbCurrent: 'Dansa Contemporània',
+
+  // Hero
+  contemporaneoHeroTitle: 'Classes de Dansa Contemporània a Barcelona',
+  contemporaneoHeroSubtitle: 'Eclèctica, Visceral, en Constant Evolució',
+  contemporaneoHeroDesc:
+    "Apropa't a aquesta disciplina única de la mà de Farray's International Dance Center Barcelona. El nostre exclusiu mètode d'ensenyament t'oferirà un acostament multidisciplinari al ball contemporani.",
+  contemporaneoHeroLocation: 'Classes per a tots els nivells, entre Plaça Espanya i Sants',
+
+  // CTAs
+  contemporaneoCTA1: "Fes-te Soci Ara",
+  contemporaneoCTA1Subtext: 'Queden poques places aquest mes',
+  contemporaneoCTA2: 'Reserva la teva Classe de Prova',
+  contemporaneoCTA2Subtext: 'Oferta per temps limitat',
+  contemporaneoCTAGroup: "Opcions d'inscripció",
+
+  // What Is Section
+  contemporaneoWhatIsTitle: 'Què és la Dansa Contemporània i per què et transformarà?',
+  contemporaneoWhatIsP1:
+    "La dansa contemporània és una disciplina eclèctica, visceral i en constant evolució. Treballem des de la tècnica i la disciplina fins a l'expressió d'idees i emocions.",
+  contemporaneoWhatIsP2:
+    "A més de formar-te en les múltiples tècniques que integra el ball contemporani actual, et proporcionarem les eines necessàries perquè exploris dins teu i adquireixis el teu propi llenguatge corporal.",
+  contemporaneoWhatIsP3:
+    '"Mitjançant la combinació d\'exercicis guiats i lliures, de coreografia i improvisació, treballaràs les teves capacitats físiques i artístiques tant a nivell individual com grupal"',
+  contemporaneoWhatIsP4:
+    "Aprofundiràs en la teva tècnica de dansa, milloraràs de manera exponencial la teva forma física i entrenaràs mitjançant moviments musculars intensos i alhora harmònics.",
+  contemporaneoWhatIsQuestionTitle: 'Et preguntes si és per a tu?',
+  contemporaneoWhatIsQuestionAnswer: 'Sí, absolutament.',
+
+  // Cultural Section
+  contemporaneoCulturalHistoryTitle: 'Història i Tècnica de la Dansa Contemporània',
+  contemporaneoCulturalShort:
+    "Aprèn Dansa Contemporània amb **professors especialistes formats a l'escola cubana de dansa (ENA i ENBC)**. Tècniques de Martha Graham, José Limón i Merce Cunningham fusionades amb expressivitat cubana i metodologia de conservatori.",
+  contemporaneoCulturalFull: `### Els orígens: dansa moderna americana (1900–1950)
+
+La dansa contemporània té les seves arrels en la dansa moderna americana de principis del segle XX. Pioneres com **Isadora Duncan (1877–1927)** van rebutjar les sabatilles de punta i el corsé del ballet clàssic, cercant moviment natural i connectat amb la terra. **Ruth St. Denis** i **Ted Shawn** van fundar el 1915 la **Denishawn School**, planter de la següent generació.
+
+**"Dansa moderna americana (1900–1950): Duncan, St. Denis, Shawn (Denishawn 1915) → ruptura ballet clàssic, moviment natural terra-cos."**
+
+### Les grans tècniques: Graham, Limón, Cunningham
+
+**Martha Graham (1894–1991)** va desenvolupar **contracció-release** (centre tors emocional), base fonamental de la formació contemporània.
+
+**José Limón (1908–1972)** va aportar **fall and recovery** (caiguda-recuperació), treballant amb la gravetat per a fluïdesa i musicalitat.
+
+**Merce Cunningham (1919–2009)** va separar dansa de música/narrativa, introduint atzar compositiu i independència tors-extremitats.
+
+**"Tècniques base contemporani: Graham (contracció-release), Limón (fall-recovery), Cunningham (atzar compositiu/abstracció)."**
+
+### Contemporani líric: tècnica i emoció
+
+El **contemporani líric** fusiona tècnica moderna amb connexió emocional/musical, mantenint narrativa i expressivitat. Línies àmplies, fluïdesa i profunda relació música-moviment el diferencien de l'abstracte pur.
+
+**"Contemporani líric: tècnica moderna + narrativa emocional + musicalitat. Estil demandat per equilibri tècnica-expressió."**
+
+### Floorwork i treball de terra
+
+El **Floorwork** distingeix la dansa contemporània: **release technique** (alliberar tensions), **contact improvisation** (anys 70) i moviment fluid a terra permeten lliscaments, rodades i transicions orgàniques. El terra és aliat, no límit.
+
+**"Floorwork: release + contact improvisation. Terra com a aliat creatiu/tècnic en contemporani."**
+
+### L'escola cubana de dansa contemporània
+
+Cuba crea des de 1959 la seva **escola pròpia** (Ramiro Guerra), integrant moderna americana, clàssica i folklòrica afrocubana. **ENA i ENBC** formen amb metodologia conservatori: barra clàssica, modernes, centre, folklore, creació escènica. Resultat: ballarins versàtils, potents, musicals.
+
+**"ENA/ENBC Cuba: formació integral (clàssica + moderna + folklòrica). Metodologia conservatori reconeguda mundialment."**
+
+### El contemporani a Farray's Center
+
+**Professors especialistes formats a l'escola cubana (ENA/ENBC)**, amb sòlida base tècnica de ballet i contemporani. Formació integral que combina clàssica, moderna i folklòrica per a resultats professionals.
+
+Modalitats:
+- **Contemporani Líric Bàsic**: fonaments per a principiants, musicalitat, expressió.
+- **Contemporani Líric Intermedi/Perfeccionament**: frasejats complexos, treball escènic avançat.
+- **Terra & Flow**: release, transicions, dinamisme contemporani.
+
+**"Farray's: contemporani amb especialistes escola cubana (ENA/ENBC). Líric bàsic-avançat + terra/flow/release."**
+
+### Beneficis físics i cognitius
+
+Treballa integralment: **flexibilitat, força funcional, coordinació, propiocepció, memòria muscular**. Floorwork enforteix core/mobilitat articular. Improvisació impulsa creativitat/concentració/ment-cos.
+
+**300-500 calories/hora** segons intensitat, més benestar emocional i antiestrès.
+
+**"Farray's Contemporani (especialistes ENA/ENBC): 300-500 cal/hora, flexibilitat/força/coordinació. Pla CID-UNESCO, 5/5 Google (500+ ressenyes)."**`,
+
+  // Identify Section
+  contemporaneoIdentifyTitle: "T'identifiques amb alguna d'aquestes situacions?",
+  contemporaneoIdentifyListLabel: "Llista de situacions amb les quals et pots identificar",
+  contemporaneoIdentify1: "T'agrada treballar el teu cos tant a nivell físic com artístic",
+  contemporaneoIdentify2: "Tens inquietuds creatives i ganes d'expressar-te a través de la dansa",
+  contemporaneoIdentify3: "Busques l'equilibri entre rigor tècnic i expressió personal",
+  contemporaneoIdentify4: 'Vols desenvolupar el teu propi llenguatge corporal',
+  contemporaneoIdentify5: 'Necessites un espai on explorar i crear sense límits',
+  contemporaneoIdentify6: 'Busques millorar la teva tècnica mentre connectes amb les teves emocions',
+  contemporaneoIdentifyTransition: 'Si has dit "sí" a algun d\'aquests punts, ja saps el que necessites.',
+  contemporaneoNeedEnrollTitle: "Necessites apuntar-te a classes de Dansa Contemporània",
+  contemporaneoIdentifyAgitate1: "Continuar esperant només t'allunya de descobrir el teu potencial artístic i físic.",
+  contemporaneoIdentifySolution: "A Farray's Center trobaràs un espai pensat perquè exploris, creïs i evolucionis sense pressions.",
+  contemporaneoIdentifyClosing: "Deixa't portar per la llibertat i l'expressió del contemporani.",
+
+  // Transform Section
+  contemporaneoTransformTitle: "Imagina el teu abans i després",
+  contemporaneoTransform1Title: 'Millores la teva tècnica de dansa',
+  contemporaneoTransform1Desc: "Cada classe t'apropa més a dominar el moviment amb precisió i fluïdesa.",
+  contemporaneoTransform2Title: "Desenvolupes la teva capacitat d'improvisació",
+  contemporaneoTransform2Desc: "Aprens a moure't amb llibertat, escoltant el teu cos i la música.",
+  contemporaneoTransform3Title: 'Millores la teva interpretació musical',
+  contemporaneoTransform3Desc: 'Connectes amb la música de forma més profunda i expressiva.',
+  contemporaneoTransform4Title: 'Exercites coordinació i memòria',
+  contemporaneoTransform4Desc: 'El teu cos i ment treballen junts, guanyant agilitat mental i física.',
+  contemporaneoTransform5Title: 'Augmentes el teu repertori',
+  contemporaneoTransform5Desc: 'Domines noves seqüències i estils cada setmana.',
+  contemporaneoTransform6Title: 'Millores la teva forma física',
+  contemporaneoTransform6Desc: 'Entrenaments intensos i harmònics que transformen el teu cos.',
+  contemporaneoTransformCTA: "Per què triar Farray's Center per a Dansa Contemporània a Barcelona?",
+
+  // Why Choose Section
+  contemporaneoWhyChoose1Title: 'Acadèmia reconeguda pel CID UNESCO',
+  contemporaneoWhyChoose1Desc: "Dirigida per Yunaisy Farray, actriu de Street Dance 2 i una de les professores més reconegudes del món.",
+  contemporaneoWhyChoose2Title: 'Ubicació immillorable',
+  contemporaneoWhyChoose2Desc: "Carrer Entença 100, entre Plaça Espanya i Sants, a 5 minuts de Plaça Espanya. Metro, bus i tren a la porta.",
+  contemporaneoWhyChoose3Title: 'Ambient familiar amb professionalisme',
+  contemporaneoWhyChoose3Desc: "Acollidor, inclusiu i sense judicis, però amb el rigor que necessites per evolucionar de veritat.",
+  contemporaneoWhyChoose4Title: 'Instal·lacions preparades',
+  contemporaneoWhyChoose4Desc: "Més de 700 m², sales àmplies, miralls, so professional, climatització i ventilació centralitzada.",
+  contemporaneoWhyChoose5Title: 'Acadèmia multidisciplinària',
+  contemporaneoWhyChoose5Desc: "Més de 25 estils perquè mai t'avorreixis: urbans, llatines, contemporani, tècnica, stretching i més.",
+  contemporaneoWhyChoose6Title: 'Gala anual + workshops potents',
+  contemporaneoWhyChoose6Desc: "Brilla en un teatre professional, participa en workshops internacionals i viu experiències úniques.",
+  contemporaneoWhyChoose7Title: 'Professors especialitzats en Contemporani',
+  contemporaneoWhyChoose7Desc: "Alejandro Miñoso: expert en dansa contemporània amb anys d'experiència. Tècnica, expressió i passió a cada classe.",
+
+  // Logos Section
+  contemporaneoLogosTitle: 'Ens has pogut veure a…',
+  contemporaneoLogosIntlFestivalsText: 'i als millors festivals de dansa de tot el món',
+
+  // Teachers Section
+  contemporaneoTeachersTitle: 'Els teus Mestres de Dansa Contemporània',
+  contemporaneoTeachersSubtitle: "Ballarins professionals formats a l'Escola Cubana amb carrera internacional",
+  contemporaneoTeacher1Specialty: 'Contemporani Líric',
+  contemporaneoTeacher1Bio: "Daniel Sené és ballarí professional amb formació de carrera a l'Escola Cubana. La seva metodologia combina la tècnica rigorosa amb l'expressió lírica, guiant-te perquè desenvolupis el teu propi llenguatge corporal mentre domines els fonaments de la dansa contemporània.",
+  contemporaneoTeacher2Specialty: 'Contemporani Terra & Flow',
+  contemporaneoTeacher2Bio: "Alejandro Miñoso és ballarí professional format a Cuba, especialitzat en tècniques de terra i floorwork. El seu enfocament connecta el moviment amb la respiració, ensenyant-te a fluir amb el teu cos i explorar noves possibilitats de moviment.",
+  contemporaneoTeachersClosing: "Amb Daniel i Alejandro no només aprens tècnica contemporània: descobreixes una nova forma d'expressar-te, connectar amb el teu cos i desenvolupar el teu propi llenguatge de moviment.",
+
+  // Schedule Section
+  contemporaneoScheduleTitle: 'Horari de classes de Dansa Contemporània',
+  contemporaneoScheduleSubtitle: 'Dos estils, múltiples horaris: troba la teva classe perfecta',
+
+  // Level Cards Section
+  contemporaneoLevelLiricoBasicoTitle: 'Contemporani Líric Bàsic',
+  contemporaneoLevelLiricoBasicoDesc: "Ideal per iniciar-te en la dansa contemporània. Treballaràs expressió corporal, musicalitat i moviments fluids. Tècnica accessible amb enfocament en la connexió emocional amb la música.",
+  contemporaneoLevelLiricoIntermedioTitle: 'Contemporani Líric Intermedi',
+  contemporaneoLevelLiricoIntermedioDesc: "Aprofundeix la teva tècnica lírica amb seqüències més complexes, major treball interpretatiu i exploració del teu propi estil. Per a alumnes amb base prèvia.",
+  contemporaneoLevelSueloFlowTitle: 'Contemporani Terra & Flow',
+  contemporaneoLevelSueloFlowDesc: "Tècniques de floorwork, release i contact. Aprèn a moure't amb fluïdesa entre el terra i l'aire. Treball de respiració, pes corporal i transicions orgàniques.",
+
+  // Prepare Section
+  contemporaneoPrepareTitle: 'Prepara la teva primera classe de Contemporani',
+  contemporaneoPrepareSubtitle: 'Tot el que necessites saber abans de venir',
+  contemporaneoPrepareWhatToBring: 'Què portar:',
+  contemporaneoPrepareItem1: 'Roba còmoda i flexible (leggings, malles o pantaló de dansa)',
+  contemporaneoPrepareItem2: 'Samarreta o top que permeti veure la línia del cos',
+  contemporaneoPrepareItem3: "Ampolla d'aigua (mínim 500ml) - la necessitaràs",
+  contemporaneoPrepareItem4: 'Tovallola petita per a la suor',
+  contemporaneoPrepareItem5: 'Mitjons de dansa o peus descalços (es treballa sense sabates)',
+  contemporaneoPrepareBefore: "Abans d'arribar:",
+  contemporaneoPrepareBeforeItem1: "Arriba 10-15 minuts abans per canviar-te i ambientar-te",
+  contemporaneoPrepareBeforeItem2: 'Evita menjar pesat 2 hores abans de classe',
+  contemporaneoPrepareBeforeItem3: "Hidrata't bé durant el dia",
+  contemporaneoPrepareAvoid: 'Evita:',
+  contemporaneoPrepareAvoidItem1: "Joies, anells, polseres o accessoris que puguin enganxar-se",
+  contemporaneoPrepareAvoidItem2: 'Roba molt folgada que impedeixi veure la teva postura',
+  contemporaneoPrepareAvoidItem3: 'Calçat de carrer a la sala (hi ha vestuaris)',
+  contemporaneoPrepareTeacherTip: 'Consell de Daniel i Alejandro:',
+  contemporaneoPrepareTeacherQuote: '"Al contemporani, el terra és el teu aliat. Vine sense por de caure, de rodar, d\'explorar. El moviment neix de la connexió amb la terra i la llibertat de deixar-se portar."',
+
+  // Comparison Table Section
+  contemporaneoCompareTitle: 'Contemporani Líric vs Altres Estils: Quina és la diferència?',
+  contemporaneoCompareSubtitle: 'Descobreix què fa únic al Contemporani Líric comparat amb altres tècniques',
+  contemporaneoCompareCapacity: 'Capacitat',
+  contemporaneoCompareLirico: 'Cont. Líric',
+  contemporaneoCompareAfro: 'Afro Cont.',
+  contemporaneoCompareJazz: 'Modern Jazz',
+  contemporaneoCompareBallet: 'Ballet',
+  contemporaneoCompareRow1: 'Alineació postural clàssica',
+  contemporaneoCompareRow2: 'Tècnica de peus i cames',
+  contemporaneoCompareRow3: 'Treball de terra',
+  contemporaneoCompareRow4: 'Treball de malucs i tors',
+  contemporaneoCompareRow5: 'Dissociació corporal',
+  contemporaneoCompareRow6: 'Polirítmia / Musicalitat complexa',
+  contemporaneoCompareRow7: 'Expressió emocional / Interpretació',
+  contemporaneoCompareRow8: 'Fluïdesa i continuïtat de moviment',
+  contemporaneoCompareRow9: 'Connexió terra (grounding)',
+  contemporaneoCompareRow10: 'Exigència cardiovascular',
+  contemporaneoCompareRow11: 'Versatilitat per a altres estils',
+  contemporaneoCompareMeaningTitle: 'Què significa això per a tu?',
+  contemporaneoCompareMeaning1Title: 'Si véns del Ballet:',
+  contemporaneoCompareMeaning1Desc: "El Contemporani Líric alliberarà la teva expressió, afegirà treball de terra i et connectarà amb la música d'una forma més orgànica i personal.",
+  contemporaneoCompareMeaning2Title: "Si véns de l'Afro Contemporani:",
+  contemporaneoCompareMeaning2Desc: "Guanyaràs suavitat lírica, continuïtat de moviment i una connexió emocional més introspectiva que complementarà la teva energia.",
+  contemporaneoCompareMeaning3Title: 'Si véns del Modern Jazz:',
+  contemporaneoCompareMeaning3Desc: "El Contemporani Líric aprofundirà la teva expressió emocional, afegirà tècniques de release i floorwork que elevaran la teva versatilitat.",
+  contemporaneoCompareMeaning4Title: 'Si és la teva primera vegada:',
+  contemporaneoCompareMeaning4Desc: "El Contemporani és perfecte per començar - treballa cos, emoció i creativitat sense la rigidesa d'altres tècniques clàssiques.",
+  contemporaneoCompareConclusion: "El Contemporani Líric és la base perfecta perquè desenvolupa sensibilitat musical, expressió i tècnica que enriqueixen qualsevol altre estil.",
+
+  // Local SEO Section
+  contemporaneoNearbyTitle: 'Contemporani a prop teu a Barcelona',
+  contemporaneoNearbyDesc: "Farray's Center està al cor de Barcelona, al Carrer Entença 100. Accessible des de qualsevol punt de la ciutat.",
+  contemporaneoNearbySearchText: 'Si busques "classes de contemporani a prop meu" a Barcelona, estem a:',
+  contemporaneoNearbyMetro: 'Metro: Plaça Espanya (L1, L3), Rocafort (L1) - 5 min caminant, Entença (L5) - 5 min caminant o Hostafrancs (L1) - 5 min caminant',
+
+  // Video Section
+  contemporaneoVideoTitle: 'Vine a descobrir les nostres classes de Contemporani',
+  contemporaneoVideoDesc: "Mira com és una classe a Farray's Center: tècnica, expressió i llibertat de moviment. T'esperem!",
+
+  // Why Today Section
+  contemporaneoWhyTodayFullTitle: 'Per què avui és el millor moment per començar Dansa Contemporània?',
+  contemporaneoWhyToday1: 'Perquè sempre esperes "el moment perfecte" però l\'únic perfecte és començar avui.',
+  contemporaneoWhyToday2: "Perquè estàs a UNA classe de canviar la teva rutina i connectar amb el teu cos de forma diferent.",
+  contemporaneoWhyToday3: "Perquè la dansa contemporània no té edat ni nivell previ: només requereix ganes d'explorar.",
+  contemporaneoWhyTodayClosing1: "A Farray's no venem classes. Creem experiències.",
+  contemporaneoWhyTodayClosing2: "T'esperem amb música inspiradora, profes apassionats i un ambient únic a Barcelona.",
+
+  // Final CTA Section
+  contemporaneoFinalCTATitle: 'Uneix-te a la comunitat de dansa contemporània més activa de Barcelona',
+  contemporaneoFinalCTASubtitle: 'Fes el pas.',
+  contemporaneoFinalCTADesc: "Reserva la teva plaça ara i deixa't portar pel fluir del moviment.",
+  contemporaneoFinalCTAFunny: 'Les places volen més ràpid que un salt contemporani.',
+
+  // FAQ Title
+  contemporaneoFaqTitle: 'Preguntes Freqüents sobre Dansa Contemporània a Barcelona',
+
+  // 15 FAQs
+  contemporaneoFaqQ1: 'Com funcionen les classes de Dansa Contemporània a Barcelona?',
+  contemporaneoFaqA1: "Després d'una primera part tècnica d'escalfament, es realitzen exercicis variats que s'apliquen en una seqüència a l'última fase de la classe. Grups reduïts i dividits per nivells.",
+  contemporaneoFaqQ2: 'Puc començar des de zero si mai he ballat contemporani?',
+  contemporaneoFaqA2: "Aquest curs està pensat per formar ballarins de tots els nivells, tinguin o no experiència prèvia en aquesta disciplina.",
+  contemporaneoFaqQ3: 'Quins beneficis té la dansa contemporània?',
+  contemporaneoFaqA3: "Millora la teva tècnica de dansa, la teva capacitat d'improvisació, la teva interpretació musical, exercita coordinació i memòria, augmenta el teu repertori i millora la teva forma física.",
+  contemporaneoFaqQ4: 'Què necessito portar a les classes?',
+  contemporaneoFaqA4: "Roba còmoda que permeti moviment. Per a contemporani es sol ballar descalç o amb mitjons. Porta una ampolla d'aigua. Tenim vestuaris amb dutxes.",
+  contemporaneoFaqQ5: 'Quins nivells de contemporani teniu?',
+  contemporaneoFaqA5: "Oferim classes en diversos nivells: Principiant (sense experiència), Bàsic, Intermedi i Avançat. El profe et guiarà al nivell que més et convingui.",
+  contemporaneoFaqQ6: "Puc unir-me a les classes en qualsevol moment de l'any?",
+  contemporaneoFaqA6: "Sí, les nostres classes funcionen amb sistema obert, així que pots inscriure't quan vulguis. No cal esperar a principi de trimestre.",
+  contemporaneoFaqQ7: 'Quines tècniques de contemporani ensenyeu?',
+  contemporaneoFaqA7: "Treballem múltiples tècniques: terra, release, contact improvisation, i elements de diverses escoles. Un enfocament multidisciplinari perquè desenvolupis el teu propi llenguatge.",
+  contemporaneoFaqQ8: "Puc provar una classe abans d'inscriure'm?",
+  contemporaneoFaqA8: "Per descomptat. Pots reservar una classe de prova per veure si és el que busques. Vine a provar i descobreix com deixar fluir el teu talent a través del ball.",
+  contemporaneoFaqQ9: 'I si falto a una classe per feina o compromisos?',
+  contemporaneoFaqA9: "Les classes són recuperables, així que si faltes un dia, pots venir a la següent classe disponible al teu mateix nivell.",
+  contemporaneoFaqQ10: 'Si falto a una classe de contemporani, puc recuperar-la amb un altre estil?',
+  contemporaneoFaqA10: "Sí. A Farray's pots usar la teva classe perduda en un altre estil (Modern Jazz, Ballet, Dancehall...), sempre que el nivell sigui equivalent.",
+  contemporaneoFaqQ11: 'Organitzeu esdeveniments o workshops especials?',
+  contemporaneoFaqA11: "Sí. Tenim masterclasses amb artistes convidats, showcases i la nostra gala anual on pots lluir-te en un escenari professional.",
+  contemporaneoFaqQ12: 'Les classes són només per a dones o també per a homes?',
+  contemporaneoFaqA12: "Les nostres classes són 100% inclusives. Tots els gèneres, edats i cossos són benvinguts. El que importa són les ganes de ballar i expressar-te.",
+  contemporaneoFaqQ13: 'La dansa contemporània és bon exercici físic?',
+  contemporaneoFaqA13: "La dansa contemporània és un entrenament complet amb moviments musculars intensos i alhora harmònics. En una hora pots cremar entre 300 i 500 calories.",
+  contemporaneoFaqQ14: 'On puc trobar classes de Dansa Contemporània a prop de Plaça Espanya?',
+  contemporaneoFaqA14: "Farray's Center està ubicat al Carrer Entença 100, a només 5 minuts de Plaça Espanya i Estació de Sants. Pots arribar en metro (L1, L3), bus o tren.",
+  contemporaneoFaqQ15: 'Què faig si tinc dubtes o necessito més informació?',
+  contemporaneoFaqA15: 'Si tens alguna pregunta addicional o necessites més informació, pots contactar-nos:<br/><br/>📞 <strong>Telèfon:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Adreça:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Carrer Entença 100, 08015 Barcelona</a>',
+
+  // Image alts
+  contemporaneoImage1Alt: "Classes de Dansa Contemporània a Barcelona - Farray's Center",
+  contemporaneoImage2Alt: 'Estudiants practicant dansa contemporània',
+  contemporaneoImage3Alt: 'Alejandro Miñoso - Instructor de Dansa Contemporània',
+
+  // Course Schema
+  contemporaneoCourseSchemaName: "Classes de Dansa Contemporània a Barcelona - Farray's Center",
+  contemporaneoCourseSchemaDesc: "Aprèn Dansa Contemporània amb Alejandro Miñoso. Tècnica, expressió i improvisació. Classes per a tots els nivells a Barcelona.",
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for Contemporáneo =====
+  contemporaneoCitableDefinicion:
+    '**"La dansa contemporània és una disciplina eclèctica que integra tècniques de Martha Graham (contracció-release), José Limón (fall and recovery) i Merce Cunningham (atzar compositiu). Es caracteritza pel treball de terra (floorwork), la improvisació, la connexió emocional amb la música i el desenvolupament d\'un llenguatge corporal propi."**',
+  contemporaneoCitableOrigen:
+    '**"La dansa contemporània té les seves arrels en la dansa moderna americana de principis del segle XX. Pioneres com Isadora Duncan (1877–1927) van rebutjar les sabatilles de punta del ballet clàssic cercant moviment natural. Ruth St. Denis i Ted Shawn van fundar la Denishawn School el 1915, planter de la següent generació de coreògrafs."**',
+  contemporaneoCitableTecnicas:
+    '**"Les tècniques fonamentals del contemporani inclouen: contracció-release (Graham), fall and recovery (Limón), release technique, contact improvisation (anys 70), floorwork i treball de terra. El contemporani líric afegeix connexió emocional i narrativa musical al moviment."**',
+  contemporaneoCitableMetodologia:
+    '**"A Farray\'s Center, les classes de Contemporani són impartides per professors especialistes formats a l\'Escola Cubana de Dansa (ENA i ENBC). La metodologia combina tècnica de conservatori amb expressivitat llatina, oferint tres modalitats: Líric Bàsic, Líric Intermedi i Terra & Flow."**',
+  contemporaneoCitableEvolucionGlobal:
+    '**"La dansa contemporània va evolucionar des de la ruptura amb el ballet clàssic fins a convertir-se en una disciplina global. Cuba va crear des de 1959 la seva pròpia escola (Ramiro Guerra), integrant moderna americana, clàssica i folklòrica afrocubana. ENA i ENBC formen ballarins versàtils amb metodologia de conservatori reconeguda mundialment."**',
+  contemporaneoCitableExpresionCorporal:
+    '**"El contemporani desenvolupa l\'expressió corporal a través d\'exercicis guiats i lliures, coreografia i improvisació. Es treballa tant a nivell individual com grupal, aprofundint en tècnica de dansa mentre s\'entrena amb moviments musculars intensos i harmònics."**',
+  contemporaneoCitableImprovisacion:
+    '**"La improvisació és element central del contemporani. Permet explorar el moviment sense estructura predefinida, desenvolupant creativitat, consciència corporal i la capacitat de respondre orgànicament a la música i l\'espai. És eina fonamental per trobar el llenguatge corporal propi."**',
+  contemporaneoCitableFact1:
+    'Una classe de dansa contemporània crema entre 300 i 500 calories per hora, combinant treball cardiovascular amb flexibilitat, força funcional i coordinació.',
+  contemporaneoCitableFact2:
+    "El floorwork (treball de terra) distingeix al contemporani d'altres disciplines: release technique, contact improvisation i transicions orgàniques entre terra i aire enforteixen core i mobilitat articular.",
+  contemporaneoCitableFact3:
+    "Farray's International Dance Center ofereix Contemporani amb professors formats a l'Escola Cubana (ENA/ENBC), avalat pel CID-UNESCO, amb més de 500 ressenyes de 5 estrelles a Google.",
+  contemporaneoCitableLegado:
+    '**"El llegat de la dansa contemporània perviu en la fusió de tècniques clàssiques i modernes, en la llibertat d\'explorar el moviment sense límits estructurals, i en la seva capacitat de transformar tant el cos com l\'expressió artística del ballarí. És disciplina fonamental per a qualsevol formació dancística integral."**',
 
   // ===== AFRO CONTEMPORÁNEO PAGE =====
   // SEO/Meta
@@ -6409,4 +6852,553 @@ L'Afro Contemporani impartit a **Farray's International Dance Center** forma par
     "Del Bronx al món: el Hip Hop és patrimoni cultural global. Competicions mundials (Juste Debout, Red Bull BC One) i presència a l'cultura pop.",
   hiphopCitableMetodologia:
     'Marcos Martínez (jutge internacional): fundació + groove + musicalitat → freestyle i estil personal. Metodologia progressiva per a tots els nivells.',
+
+  // ========== SALSA CUBANA PAGE ==========
+  // Navigation
+  navSalsaCubana: 'Salsa Cubana',
+
+  // Page SEO
+  salsaCubanaPageTitle: 'Classes de Salsa Cubana a Barcelona',
+  salsaCubanaMetaDescription:
+    "Aprèn a ballar salsa cubana a Barcelona amb el Mètode Farray®. Classes per a tots els nivells amb Yunaisy Farray, mestra CID-UNESCO. Guia, seguiment, musicalitat i connexió de parella.",
+
+  // Breadcrumb
+  salsaCubanaBreadcrumbHome: 'Inici',
+  salsaCubanaBreadcrumbClasses: 'Classes de Ball',
+  salsaCubanaBreadcrumbLatin: 'Salsa i Batxata',
+  salsaCubanaBreadcrumbCurrent: 'Salsa Cubana',
+
+  // Hero Section
+  salsaCubanaHeroTitle: 'Classes de Salsa Cubana a Barcelona',
+  salsaCubanaHeroSubtitle: 'Aprèn a ballar de veritat, no només a repetir figures',
+  salsaCubanaHeroDesc:
+    "Amb el Mètode Farray® aprendràs salsa cubana amb estil i elegància. Un sistema didàctic únic creat per Yunaisy Farray, mestra membre del CID-UNESCO, perquè aprenguis de forma ràpida, eficient i amb fonaments tècnics sòlids.",
+  salsaCubanaHeroLocation: 'Acadèmia membre del CID-UNESCO — Entre Plaça Espanya i Sants',
+  salsaCubanaCTAGroup: "Opcions d'inscripció",
+  salsaCubanaCTA1: "Fes-te Soci Ara",
+  salsaCubanaCTA1Subtext: 'Només queden 8 places per classe',
+  salsaCubanaCTA2: 'Reserva la teva Classe de Prova GRATIS',
+  salsaCubanaCTA2Subtext: 'Vàlid per temps limitat',
+
+  // Problem Section
+  salsaCubanaProblemTitle: "El problema de com s'ensenya salsa cubana",
+  salsaCubanaProblemSubtitle: '(i per què la majoria no progressa)',
+  salsaCubanaProblemP1:
+    "Vas a una acadèmia de salsa cubana. T'ensenyen figures: enchufla, dile que no, setenta, vacílala. Les memoritza. Les repeteixes. Aprens 20, 30, 50 figures.",
+  salsaCubanaProblemP2: 'Però quan arribes a una festa real, alguna cosa falla.',
+  salsaCubanaProblemP3:
+    'No saps quan posar cada figura. La teva parella no t\'entén. Et sents rígid. Comptes "1, 2, 3... 5, 6, 7" al teu cap en comptes de sentir la música. I si balles amb algú que no coneix les mateixes figures que tu, et bloqueges.',
+  salsaCubanaProblemConclusion: "El problema: T'han ensenyat a repetir seqüències, no a ballar.",
+  salsaCubanaProblemExplanation:
+    'La majoria d\'acadèmies ensenyen "casino social": figures soltes que memoritza i executes mecànicament. Funciona a classe, amb el teu company habitual, amb la cançó que ja coneixes. Però no et converteix en ballador.',
+  salsaCubanaProblemSolution: 'Aquest és el problema que el Mètode Farray® resol.',
+
+  // Comparison Table
+  salsaCubanaCompareTitle: 'Casino Social vs. Mètode Farray®',
+  salsaCubanaCompareSubtitle: 'La diferència fonamental en com ensenyem',
+  salsaCubanaCompareCol1: "El que fan altres acadèmies (Casino Social)",
+  salsaCubanaCompareCol2: "El que fem amb el Mètode Farray®",
+  salsaCubanaCompareRow1Col1: "T'ensenyen figures des del dia 1",
+  salsaCubanaCompareRow1Col2: "T'ensenyem fonaments tècnics primer",
+  salsaCubanaCompareRow2Col1: 'Memoritza seqüències',
+  salsaCubanaCompareRow2Col2: 'Desenvolupes comprensió del moviment',
+  salsaCubanaCompareRow3Col1: '"L\'home guia, la dona segueix"',
+  salsaCubanaCompareRow3Col2: 'Ambdós rols són tècnics i actius',
+  salsaCubanaCompareRow4Col1: 'Comptes "1, 2, 3... 5, 6, 7"',
+  salsaCubanaCompareRow4Col2: 'Desenvolupes musicalitat real',
+  salsaCubanaCompareRow5Col1: 'Funciona amb la teva parella de classe',
+  salsaCubanaCompareRow5Col2: 'Funciona amb qualsevol persona',
+  salsaCubanaCompareRow6Col1: 'Aprens 50 figures, en fas servir 5',
+  salsaCubanaCompareRow6Col2: 'Aprens principis que generen infinites figures',
+  salsaCubanaCompareRow7Col1: 'Ball rígid i mecànic',
+  salsaCubanaCompareRow7Col2: 'Ball fluid, elegant i natural',
+  salsaCubanaCompareRow8Col1: 'Estancament després de mesos',
+  salsaCubanaCompareRow8Col2: 'Progressió contínua amb bases sòlides',
+
+  // Technical Program Section
+  salsaCubanaTechProgramTitle: 'El programa tècnic del Mètode Farray®',
+  salsaCubanaTechProgramSubtitle: 'Un enfocament estructurat per a homes i dones',
+  salsaCubanaTechMenTitle: "Per a l'home: L'art de la guia",
+  salsaCubanaTechMenDesc:
+    "L'home perfecciona la seva guia, imprescindible per a un bon desenvolupament de les figures i moviments. El ball és un llenguatge. L'home ha d'aprendre a expressar-se correctament perquè la seva parella pugui interpretar els seus impulsos.",
+  salsaCubanaTechMenItem1: 'Tècnica d\'impulsos: clars, precisos, mai bruscos',
+  salsaCubanaTechMenItem2: 'Agafada correcta: segura però còmoda, sense risc de fer mal',
+  salsaCubanaTechMenItem3: 'Comunicació corporal: el teu cos parla abans que les teves mans',
+  salsaCubanaTechMenItem4: 'Timing musical: guiar EN la música, no sobre ella',
+  salsaCubanaTechMenResult: "El resultat: la teva parella t'entén sense esforç. Qualsevol parella.",
+  salsaCubanaTechWomenTitle: 'Per a la dona: Domini corporal, no "seguir" passivament',
+  salsaCubanaTechWomenDesc:
+    'En l\'estil cubà tradicional, la dona "simplement segueix". En el Mètode Farray®, això canvia radicalment. La dona adquireix un major domini del seu cos i consciència del seu rol en la parella. No segueix passivament — reacciona de manera tècnica i elegant.',
+  salsaCubanaTechWomenItem1: 'Tècnica de cames: base sòlida, girs controlats',
+  salsaCubanaTechWomenItem2: 'Tècnica de braços: elegància i precisió en cada moviment',
+  salsaCubanaTechWomenItem3: 'Ús del pes corporal: fluïdesa i equilibri natural',
+  salsaCubanaTechWomenItem4: 'Reacció activa: interpretes la guia, no la pateixes',
+  salsaCubanaTechWomenResult: 'El resultat: confiança en tu mateixa que es reflecteix automàticament en el teu ball.',
+  salsaCubanaTechMusicTitle: "Musicalitat: El secret que ningú t'ensenya",
+  salsaCubanaTechMusicDesc:
+    "La majoria d'acadèmies t'ensenyen a comptar temps. Nosaltres t'ensenyem a escoltar la música.",
+  salsaCubanaTechMusicItem1: 'Identificar el ritme i els accents',
+  salsaCubanaTechMusicItem2: 'Sentir quan "demana" un canvi la cançó',
+  salsaCubanaTechMusicItem3: "Improvisar dins l'estructura musical",
+  salsaCubanaTechMusicItem4: 'Ballar AMB la música, no SOBRE ella',
+  salsaCubanaTechMusicResult: 'Quan desenvolupes musicalitat real, les figures flueixen soles.',
+
+  // Benefits Section
+  salsaCubanaBenefitsTitle: 'Entrena el teu cos i la teva oïda',
+  salsaCubanaBenefitsSubtitle: 'Aprendràs de manera fàcil i divertida amb el nostre mètode',
+  salsaCubanaBenefit1: "Millora la teva capacitat d'improvisació i interpretació musical",
+  salsaCubanaBenefit2: 'Desenvolupa el teu ritme natural (sí, tothom en té)',
+  salsaCubanaBenefit3: 'Exercita la teva coordinació motora i memòria',
+  salsaCubanaBenefit4: "Mantén-te en forma tot l'any (~400 calories per classe)",
+  salsaCubanaBenefit5: 'Guanya confiança corporal que es trasllada a la teva vida diària',
+
+  // What Is Section - Bailar no es solo hacer figuras
+  salsaCubanaWhatIsTitle: 'Ballar Salsa Cubana no és només fer figures',
+  salsaCubanaWhatIsP1:
+    'Ballar salsa cubana és un llenguatge no verbal entre dues persones. És sinònim de ritme, musicalitat, coordinació i connexió amb la parella.',
+  salsaCubanaWhatIsP2:
+    'En el Mètode Farray® es prioritza que aprenguis a guiar o interpretar els impulsos de la teva parella correctament i a ballar en els temps correctes de la música de manera coordinada i elegant.',
+  salsaCubanaWhatIsP3:
+    "A l'hora de començar a introduir 'figures' de salsa cubana, el teu ball es veurà més fluid, estètic i eficient.",
+  salsaCubanaWhatIsP4:
+    'Amb la metodologia exclusiva de la nostra escola de ball aprendràs pas a pas tots els secrets per poder ballar socialment a les pistes de ball i gaudir al màxim sense importar el teu nivell de dansa actual.',
+  salsaCubanaWhatIsImageAlt: 'Parella ballant salsa cubana a Barcelona',
+
+  // Método Farray Section
+  salsaCubanaMetodoTitle: 'El Mètode Farray®',
+  salsaCubanaMetodoSubtitle:
+    'Un mètode exclusiu i revolucionari que promet transformar la forma de ballar salsa cubana a nivell global',
+  salsaCubanaMetodoPillar1Title: 'Guia Perfecta',
+  salsaCubanaMetodoPillar1Desc:
+    "L'home perfecciona la seva guia ja que és imprescindible per a un bon desenvolupament de les figures i moviments. Aprèn a expressar-te correctament perquè la teva parella pugui interpretar els teus impulsos.",
+  salsaCubanaMetodoPillar2Title: 'Seguiment Tècnic',
+  salsaCubanaMetodoPillar2Desc:
+    'La dona adquireix un major domini del seu cos i consciència del seu rol en la parella, reaccionant de manera tècnica i elegant a tots els impulsos executats.',
+  salsaCubanaMetodoPillar3Title: 'Musicalitat',
+  salsaCubanaMetodoPillar3Desc:
+    "Entrena la teva oïda i millora la teva capacitat d'improvisació i interpretació musical. Aprèn a identificar els temps i a ballar amb la música, no només a sobre d'ella.",
+  salsaCubanaMetodoPillar4Title: 'Connexió de Parella',
+  salsaCubanaMetodoPillar4Desc:
+    'Domina el llenguatge no verbal del ball. Aprèn a comunicar-te amb la teva parella a través del contacte, la tensió correcta i els impulsos precisos.',
+  salsaCubanaMetodoPillar5Title: 'Tècnica Corporal',
+  salsaCubanaMetodoPillar5Desc:
+    "Aprèn com utilitzar cames, braços i pes del cos per donar major efectivitat i estètica a tots els teus moviments.",
+  salsaCubanaMetodoPillar6Title: 'Cultura Cubana',
+  salsaCubanaMetodoPillar6Desc:
+    "Endinsa't en el món de la salsa cubana: la seva història, els seus veritables orígens, i donaràs un sentit i un sentiment a tots els passos que executis.",
+  salsaCubanaMetodoQuote:
+    "Aquest mètode que vaig posar en pràctica a Finlàndia, Itàlia i Alemanya segueix demostrant els seus excel·lents resultats permetent a molts estudiants assolir l'excel·lència en les seves performances.",
+
+  // Schedule Section
+  salsaCubanaScheduleTitle: 'Horaris de Classes',
+  salsaCubanaScheduleSubtitle: 'Classes tots els dies de la setmana per a tots els nivells',
+
+  // Level translations
+  level0: 'Nivell 0',
+  basicLevel1: 'Bàsic I',
+  basicLevel2_3: 'Bàsic II-III',
+
+  // Levels Section
+  salsaCubanaLevelsTitle: 'Sistema de Nivells Progressiu',
+  salsaCubanaLevelsSubtitle: 'Un camí estructurat per a la teva evolució com a ballador',
+  salsaCubanaLevel0Title: 'Nivell 0 - Iniciació',
+  salsaCubanaLevel0Desc:
+    'Per als que mai han ballat. Aprèn els passos bàsics, el ritme fonamental i la postura correcta des de zero.',
+  salsaCubanaLevelBasic1Title: 'Bàsic I',
+  salsaCubanaLevelBasic1Desc:
+    'Consolida els fonaments, millora la teva coordinació i comença a treballar la connexió amb la teva parella.',
+  salsaCubanaLevelBasic2Title: 'Bàsic II',
+  salsaCubanaLevelBasic2Desc:
+    'Introdueix les primeres figures, treballa la fluïdesa i desenvolupa la teva musicalitat bàsica.',
+  salsaCubanaLevelBasic3Title: 'Bàsic III',
+  salsaCubanaLevelBasic3Desc:
+    'Perfecciona la tècnica de guia/seguiment, afegeix complexitat a les figures i millora el teu estil personal.',
+  salsaCubanaLevelIntermediateTitle: 'Intermedi',
+  salsaCubanaLevelIntermediateDesc:
+    "Figures complexes, variacions musicals, improvisació i desenvolupament de l'estil propi.",
+  salsaCubanaLevelAdvancedTitle: 'Avançat',
+  salsaCubanaLevelAdvancedDesc:
+    'Domini tècnic complet, coreografies complexes, musicalitat avançada i preparació per a performances.',
+
+  // Teachers Section
+  salsaCubanaTeachersTitle: 'Els nostres Mestres de Salsa Cubana',
+  salsaCubanaTeachersSubtitle: 'Equip professional certificat amb el Mètode Farray®',
+  salsaCubanaTeacher1Specialty: 'Creadora del Mètode Farray® • Mestra CID-UNESCO',
+  salsaCubanaTeacher1Bio:
+    "Yunaisy Farray, icona mundial de la dansa cubana, ha desenvolupat el Mètode Farray® al llarg de més de 25 anys d'experiència internacional. Formada a Cuba, ha impartit classes i tallers a Finlàndia, Itàlia, Alemanya i Espanya, perfeccionant un sistema didàctic que permet a qualsevol persona aprendre a ballar salsa cubana de forma ràpida, eficient i amb estil autèntic.",
+  salsaCubanaTeacher2Name: 'Iroel Bastarreche',
+  salsaCubanaTeacher2Specialty: 'Professor de Salsa Cubana • Mètode Farray®',
+  salsaCubanaTeacher2Bio:
+    'Iroel Bastarreche és un ballarí i professor cubà amb una sòlida formació en casino i son cubà. Certificat en el Mètode Farray®, aporta autenticitat i passió caribenya a cada classe, transmetent l\'essència del ball social cubà amb tècnica depurada i carisma.',
+  salsaCubanaTeacher3Name: 'Yasmina Fernández',
+  salsaCubanaTeacher3Specialty: 'Professora de Salsa Cubana • Mètode Farray®',
+  salsaCubanaTeacher3Bio:
+    'Yasmina Fernández combina anys d\'experiència com a ballarina i professora amb una metodologia clara i accessible. Certificada en el Mètode Farray®, destaca per la seva capacitat de connectar amb els alumnes i fer que cada pas flueixi de forma natural.',
+  salsaCubanaTeachersClosing:
+    'Aprèn d\'un equip de professionals que comparteixen la mateixa metodologia i passió per l\'autèntica salsa cubana.',
+
+  // Prepare Section
+  salsaCubanaPrepareTitle: 'Prepara la teva Primera Classe',
+  salsaCubanaPrepareSubtitle: 'Tot el que necessites saber per a la teva primera experiència',
+  salsaCubanaPrepareWhatToBring: 'Què portar',
+  salsaCubanaPrepareItem1: 'Roba còmoda i lleugera',
+  salsaCubanaPrepareItem2: 'Bambes o sabates còmodes',
+  salsaCubanaPrepareItem3: 'Per a noies: sabates de taló amb subjecció al turmell (opcional)',
+  salsaCubanaPrepareItem4: "Canvi de roba i tovallola si vols dutxar-te",
+  salsaCubanaPrepareBefore: "Abans d'arribar",
+  salsaCubanaPrepareBeforeItem1: "Arriba 10 minuts abans per registrar-te",
+  salsaCubanaPrepareBeforeItem2: "Vine amb la ment oberta per aprendre",
+  salsaCubanaPrepareBeforeItem3: 'No necessites portar parella',
+  salsaCubanaPrepareNote: 'Nota important',
+  salsaCubanaPrepareNoteDesc:
+    "No et preocupis si mai has ballat. El Nivell 0 està dissenyat específicament per a principiants absoluts. Rotem les parelles durant la classe perquè tots practiquin.",
+  salsaCubanaPrepareTeacherTip: 'Consell de Yunaisy:',
+  salsaCubanaPrepareTeacherQuote:
+    "La salsa cubana és diversió pura. Vine amb ganes de passar-t'ho bé i de contagiar-te de l'esperit cubà. La resta ve sol.",
+
+  // Identification Section
+  salsaCubanaIdentifyTitle: 'Per a qui és el Mètode Farray®?',
+  salsaCubanaIdentifyListLabel: 'Perfils ideals per al curs',
+  salsaCubanaIdentify1:
+    'Per als que mai han ballat i volen començar amb una base sòlida des del principi.',
+  salsaCubanaIdentify2:
+    'Per als que vulguin aprendre més i superar-se, portant el seu ball al següent nivell.',
+  salsaCubanaIdentify3:
+    'Per als que senten que fa temps que no avancen en les seves classes de salsa.',
+  salsaCubanaIdentify4:
+    "Per als que volen aprendre l'estil autèntic cubà, no versions diluïdes.",
+  salsaCubanaIdentify5:
+    'Per a persones inquietes i obertes a aprendre conceptes nous i dinàmiques diferents.',
+  salsaCubanaIdentify6:
+    'Per als que busquen ballar socialment amb confiança i gaudir a qualsevol pista.',
+  salsaCubanaIdentifyClosing:
+    "Aquí incorporaràs al teu ball nous conceptes i dinàmiques que et faran passar a un altre nivell.",
+
+  // Transformation Section
+  salsaCubanaTransformTitle: 'Què aconseguiràs amb el Mètode Farray®',
+  salsaCubanaTransform1Title: 'Ballar a Temps',
+  salsaCubanaTransform1Desc:
+    'Dominaràs el ritme i la musicalitat. Mai més et perdràs en la música ni ballaràs fora de temps.',
+  salsaCubanaTransform2Title: 'Guiar/Seguir amb Elegància',
+  salsaCubanaTransform2Desc:
+    'Aprendràs a comunicar-te amb la teva parella a través del ball de forma tècnica, segura i elegant.',
+  salsaCubanaTransform3Title: 'Connectar amb la Música',
+  salsaCubanaTransform3Desc:
+    "Desenvoluparàs la teva oïda musical i la teva capacitat d'improvisació i interpretació.",
+  salsaCubanaTransform4Title: 'Gaudir a la Pista',
+  salsaCubanaTransform4Desc:
+    'Ballaràs amb confiança a qualsevol lloc, gaudint al màxim de cada cançó.',
+  salsaCubanaTransform5Title: 'Cremar Calories',
+  salsaCubanaTransform5Desc:
+    "Mantén-te en forma tot l'any cremant fins a 400 calories per classe mentre et diverteixes.",
+  salsaCubanaTransform6Title: 'Viure la Cultura Cubana',
+  salsaCubanaTransform6Desc:
+    "Connectaràs amb l'alegria, el sabor i l'esperit de Cuba a través del seu ball més emblemàtic.",
+
+  // Why Choose Section
+  salsaCubanaWhyChooseTitle: "Per què triar Farray's?",
+  salsaCubanaWhyChooseSubtitle: "La diferència d'aprendre amb el mètode original",
+  salsaCubanaWhyChoose1Title: 'Mètode Exclusiu',
+  salsaCubanaWhyChoose1Desc:
+    "El Mètode Farray® és únic al món. Desenvolupat per Yunaisy Farray després de dècades d'experiència internacional.",
+  salsaCubanaWhyChoose2Title: 'Acreditació CID-UNESCO',
+  salsaCubanaWhyChoose2Desc:
+    "La nostra acadèmia està acreditada pel Consell Internacional de la Dansa de la UNESCO.",
+  salsaCubanaWhyChoose3Title: 'Sistema Progressiu',
+  salsaCubanaWhyChoose3Desc:
+    "Nivells estructurats des de principiant absolut fins a avançat, amb objectius clars a cada etapa.",
+  salsaCubanaWhyChoose4Title: 'Autenticitat Cubana',
+  salsaCubanaWhyChoose4Desc:
+    "Aprèn la salsa cubana real, amb el seu sabor, la seva història i el seu esperit autèntic.",
+  salsaCubanaWhyChoose5Title: 'Resultats Provats',
+  salsaCubanaWhyChoose5Desc:
+    "Milers d'alumnes han transformat el seu ball amb el nostre mètode a Finlàndia, Itàlia, Alemanya i Espanya.",
+  salsaCubanaWhyChoose6Title: 'Ambient Únic',
+  salsaCubanaWhyChoose6Desc:
+    "Una comunitat vibrant on la diversió i l'aprenentatge van de la mà.",
+  salsaCubanaLogosTitle: "Ens has pogut veure a",
+  salsaCubanaLogosIntlText: "I a festivals internacionals d'arreu del món",
+
+  // Video Section
+  salsaCubanaVideoTitle: 'Mira Com Ballem',
+  salsaCubanaVideoDesc: 'Descobreix l\'ambient de les nostres classes de salsa cubana a Barcelona',
+
+  // Cultural History Section
+  salsaCubanaCulturalHistoryTitle: 'Història de la Salsa Cubana',
+  salsaCubanaCulturalShort:
+    'La salsa cubana, també coneguda com "Casino", va néixer a Cuba als anys 50 com a fusió del Son Cubà, el Mambo i altres ritmes afrocubans. A diferència de la salsa en línia, el Casino es balla en roda amb moviments circulars i canvis de parella.',
+  salsaCubanaCulturalFull: `### Orígens: El Casino i els Clubs Socials de L'Havana (1950s)
+
+**La salsa cubana, coneguda originalment com "Casino", va sorgir als clubs socials de L'Havana durant la dècada de 1950.** El nom prové del Casino Deportivo de L'Havana, on els joves de l'època van desenvolupar aquest estil únic ballant en "roda" (cercle) i intercanviant parelles al ritme del son cubà.
+
+**"El Casino va néixer al Casino Deportivo de L'Havana als anys 50, fusionant Son Cubà, Mambo, Cha-cha-chá i ritmes afrocubans en un estil de moviments circulars i girs cap a dins."**
+
+### Característiques Distintives del Casino
+
+A diferència de la salsa en línia (estils LA o NY), el Casino es caracteritza per:
+- **Moviments circulars** en lloc de desplaçament lineal
+- **Girs cap a dins** (al contrari de la salsa en línia)
+- **Connexió propera** amb la parella
+- **Estil més relaxat i juganera**
+- **Improvisació** basada en la comunicació entre ballarins
+
+**"El Casino es diferencia de la salsa en línia pels seus moviments circulars, girs cap a dins, connexió propera i caràcter més relaxat i juganera."**
+
+### La Rueda de Casino: Patrimoni Cultural
+
+**La Rueda de Casino és una forma grupal de ballar salsa cubana declarada Patrimoni Cultural de Cuba.** Múltiples parelles formen un cercle i executen figures sincronitzades sota la direcció d'un "cantant" o líder, que va cantant els noms de les figures perquè tots les executin a l'uníson.
+
+Aquesta forma col·lectiva de ballar reforça el sentit de comunitat i la musicalitat compartida, elements fonamentals de la cultura cubana.
+
+### La Música: Instrumentació i Ritmes
+
+La música de salsa cubana incorpora una rica instrumentació:
+- **Percussió**: congues, timbals, bongos, güiro, maraques, clau
+- **Secció rítmica**: piano, baix
+- **Metalls**: trompetes, trombons
+
+Els ritmes més ballats inclouen **timba, son cubà, salsa dura i casino tradicional**. La clau cubana (patró rítmic de 3-2 o 2-3) és el cor del ritme salser.
+
+### Musicalitat i Tècnica
+
+**La musicalitat en la salsa cubana implica ballar en el temps correcte (generalment en l'1 o el 3), interpretar els breaks, canvis i accents de la música, i expressar emocionalment el contingut de cada cançó.**
+
+La guia (lead) i el seguiment (follow) són habilitats fonamentals que permeten una comunicació clara, segura i elegant entre els ballarins.
+
+### Expansió Global
+
+**Des de Cuba, la salsa es va expandir globalment a partir dels anys 70, desenvolupant-se diferents estils regionals.** Nova York va desenvolupar la salsa "on 2" (Mambo), Los Angeles la salsa "on 1", mentre que el Casino es va mantenir com l'estil tradicional cubà, preservant els seus moviments circulars i la seva connexió amb les arrels afrocubanes.
+
+### Beneficis per a la Salut
+
+**Estudis de fitness indiquen que ballar salsa crema entre 300-400 calories per hora, millora la coordinació motora, enforteix la memòria i redueix els nivells d'estrès i ansietat.** El ball en parella a més desenvolupa habilitats socials i de comunicació no verbal.
+
+### El Mètode Farray®
+
+El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfocament pedagògic únic: **prioritza la guia, el seguiment, la musicalitat i la connexió de parella abans d'ensenyar figures complexes.** Aquest mètode ha format més de 15.000 alumnes en països com Finlàndia, Itàlia, Alemanya i Espanya.
+
+**"El Mètode Farray® ensenya tècniques específiques perquè la comunicació entre ballarins sigui clara, segura i elegant, respectant l'essència del Casino cubà."**`,
+
+  // Final CTA
+  salsaCubanaFinalCTATitle: 'No t\'ho pensis més',
+  salsaCubanaFinalCTASubtitle: 'Vine a provar una classe',
+  salsaCubanaFinalCTADesc:
+    'Tenim classes de salsa cubana per a tots els nivells (iniciació, intermedi i avançat) i múltiples horaris perquè et pugui anar bé.',
+  salsaCubanaFinalCTAFunny: 'No te\'n penediràs. La salsa cubana és pura diversió.',
+
+  // FAQ Section
+  salsaCubanaFaqTitle: 'Preguntes Freqüents sobre Salsa Cubana',
+  salsaCubanaFaqQ1: 'Necessito experiència prèvia per començar?',
+  salsaCubanaFaqA1:
+    'No, el nostre Nivell 0 està dissenyat específicament per a principiants absoluts. Comencem des de zero, ensenyant-te els passos bàsics, el ritme i la postura correcta.',
+  salsaCubanaFaqQ2: 'Necessito portar parella de ball?',
+  salsaCubanaFaqA2:
+    'No és necessari. A classe rotem les parelles constantment perquè tots practiquin amb diferents persones i nivells. Això a més et fa millor ballador/a.',
+  salsaCubanaFaqQ3: 'Quina diferència hi ha entre salsa cubana i salsa en línia?',
+  salsaCubanaFaqA3:
+    'La salsa cubana (Casino) es balla en cercle amb moviments més relaxats i juganers. La salsa en línia (LA/NY) es balla en una línia recta amb un estil més tècnic i acrobàtic. Són estils complementaris.',
+  salsaCubanaFaqQ4: 'Què és el Mètode Farray®?',
+  salsaCubanaFaqA4:
+    'És un mètode didàctic únic creat per Yunaisy Farray que prioritza la guia, el seguiment, la musicalitat i la connexió de parella abans de les figures. Permet aprendre de forma ràpida i eficient.',
+  salsaCubanaFaqQ5: 'Quant de temps trigaré a ballar a una festa?',
+  salsaCubanaFaqA5:
+    'Amb el Mètode Farray®, en 2-3 mesos de pràctica regular ja podràs gaudir ballant socialment. En 6-12 mesos notaràs un avanç significatiu en la teva tècnica i estil.',
+  salsaCubanaFaqQ6: 'Quina roba he de fer servir?',
+  salsaCubanaFaqA6:
+    'Roba còmoda i lleugera. Bambes o sabates còmodes. Per a les noies, sabates de taló amb subjecció al turmell són recomanables però no obligatòries.',
+  salsaCubanaFaqQ7: "Puc provar una classe abans d'inscriure'm?",
+  salsaCubanaFaqA7:
+    'Sí, oferim una primera classe de prova sense compromís. Vine a conèixer-nos, prova el Mètode Farray® i decideix si és per a tu.',
+  salsaCubanaFaqQ8: 'Què és la Rueda de Casino?',
+  salsaCubanaFaqA8:
+    "És una forma de ballar salsa cubana en grup, en cercle, on totes les parelles executen figures sincronitzades seguint les indicacions d'un 'cantant'. És molt divertida i social.",
+  salsaCubanaFaqQ9: 'Les classes són només per a adults?',
+  salsaCubanaFaqA9:
+    "Les nostres classes regulars de salsa cubana són per a adults (majors de 18 anys). Tot i això, organitzem tallers específics per a adolescents i famílies.",
+  salsaCubanaFaqQ10: 'Quantes persones hi ha per classe?',
+  salsaCubanaFaqA10:
+    'Les nostres classes tenen un màxim de 20-24 persones per garantir atenció personalitzada i suficient espai per practicar.',
+  salsaCubanaFaqQ11: "Hi ha dutxes a l'acadèmia?",
+  salsaCubanaFaqA11:
+    "Sí, disposem de vestidors amb dutxes perquè puguis refrescar-te després de classe si ho necessites.",
+  salsaCubanaFaqQ12: 'Com sé quin nivell em correspon?',
+  salsaCubanaFaqA12:
+    "Si mai has ballat, comença pel Nivell 0. Si ja tens experiència, vine a una classe de prova i t'orientarem sobre el nivell més adequat per a tu.",
+  salsaCubanaFaqQ13: 'Organitzeu sortides a ballar?',
+  salsaCubanaFaqA13:
+    'Sí, organitzem regularment sortides a sales de ball i esdeveniments perquè puguis practicar el que has après en un ambient real i divertit.',
+  salsaCubanaFaqQ14: 'La salsa cubana és bona per posar-se en forma?',
+  salsaCubanaFaqA14:
+    "Excel·lent. Ballar salsa crema entre 300-400 calories per hora, millora la coordinació, la memòria i redueix l'estrès. És exercici disfressat de diversió.",
+  salsaCubanaFaqQ15: 'Què fa especial a Yunaisy Farray com a mestra?',
+  salsaCubanaFaqA15:
+    "Yunaisy és membre del CID-UNESCO, ha desenvolupat l'únic Mètode Farray® al món, i té més de 25 anys d'experiència internacional formant ballarins a Cuba, Europa i Espanya.",
+
+  // Local SEO Section
+  salsaCubanaNearbyTitle: 'Classes de Salsa Cubana a prop teu a Barcelona',
+  salsaCubanaNearbyDesc:
+    "La nostra acadèmia està ubicada al cor de Barcelona, fàcilment accessible des de tota la ciutat.",
+  salsaCubanaNearbySearchText:
+    "Busques classes de salsa cubana a prop del teu barri? Som a pocs minuts de:",
+  salsaCubanaNearbyMetro: 'Metro: Hostafrancs (L1) o Tarragona (L3) a 5-10 minuts caminant',
+
+  // Course Schema
+  salsaCubanaCourseSchemaName: 'Curs de Salsa Cubana - Mètode Farray®',
+  salsaCubanaCourseSchemaDesc:
+    'Aprèn salsa cubana autèntica a Barcelona amb l\'exclusiu Mètode Farray®. Classes per a tots els nivells amb certificació CID-UNESCO.',
+
+  // GEO Citable Content
+  salsaCubanaCitableDefinicion:
+    'La salsa cubana, coneguda com "Casino" a Cuba, és un estil de ball en parella caracteritzat per moviments circulars, girs cap a dins i una connexió propera entre ballarins. Es diferencia de la salsa en línia pel seu caràcter més relaxat i juganer.',
+  salsaCubanaCitableOrigen:
+    "El Casino va sorgir a L'Havana, Cuba, durant la dècada de 1950 en clubs socials com el Casino Deportivo. És una fusió del Son Cubà, Mambo, Cha-cha-chá i ritmes afrocubans.",
+  salsaCubanaCitableMetodoFarray:
+    'El Mètode Farray® és un sistema didàctic únic desenvolupat per Yunaisy Farray que prioritza la guia, el seguiment, la musicalitat i la connexió de parella abans d\'ensenyar figures complexes.',
+  salsaCubanaCitableGuiaSeguimiento:
+    "En el ball de parella, la guia (lead) i el seguiment (follow) són habilitats fonamentals. El Mètode Farray® ensenya tècniques específiques perquè la comunicació entre ballarins sigui clara, segura i elegant.",
+  salsaCubanaCitableMusicalidad:
+    "La musicalitat en la salsa cubana implica ballar en el temps correcte (generalment en l'1 o el 3), interpretar els breaks, canvis i accents de la música, i expressar emocionalment el contingut de cada cançó.",
+  salsaCubanaStatistics:
+    "Segons estudis de fitness, ballar salsa crema entre 300-400 calories per hora, millora la coordinació motora, enforteix la memòria i redueix els nivells d'estrès i ansietat.",
+  salsaCubanaCitableEvolucionGlobal:
+    "Des de Cuba, la salsa es va expandir globalment a partir dels anys 70, desenvolupant-se diferents estils com la salsa en línia (LA, NY) i mantenint-se el Casino com l'estil tradicional cubà.",
+  salsaCubanaCitableRueda:
+    "La Rueda de Casino és una forma grupal de ballar salsa cubana on múltiples parelles formen un cercle i executen figures sincronitzades sota la direcció d'un 'cantant' o líder.",
+  salsaCubanaCitableFact1:
+    'Ballar salsa cubana crema entre 300-400 calories per hora, sent comparable a esports com natació moderada o ciclisme recreatiu.',
+  salsaCubanaCitableFact2:
+    "El Mètode Farray® ha format més de 15.000 alumnes en països com Finlàndia, Itàlia, Alemanya i Espanya des de la seva creació.",
+  salsaCubanaCitableFact3:
+    "Farray's International Dance Center és una acadèmia acreditada pel CID-UNESCO, el Consell Internacional de la Dansa de la UNESCO, garantint estàndards internacionals d'ensenyament.",
+  salsaCubanaCitableLegado:
+    "La salsa cubana representa el llegat cultural de Cuba, fusionant tradicions africanes i espanyoles en un ball que expressa alegria, sensualitat i connexió humana.",
+
+  // ========== LATIN DANCE COMPARISON TABLE (Shared) ==========
+  latinDanceCompareTitle: 'Comparativa de Balls Llatins',
+  latinDanceCompareSubtitle: "Descobreix les diferències entre els estils de ball llatí que ensenyem",
+  latinDanceCompareCapacity: 'Característica',
+
+  // Column headers (style names)
+  latinDanceCompare_salsaCubana: 'Salsa Cubana',
+  latinDanceCompare_bachata: 'Bachata',
+  latinDanceCompare_timba: 'Timba',
+  latinDanceCompare_salsaLadyStyle: 'Salsa Lady Style',
+  latinDanceCompare_bachataLadyStyle: 'Bachata Lady Style',
+  latinDanceCompare_timbaPareja: 'Timba en Parella',
+  latinDanceCompare_folkloreCubano: 'Folklore Cubà',
+  latinDanceCompare_sonCubano: 'Son Cubà',
+  latinDanceCompare_salsaLadyTimba: 'Lady Timba',
+
+  // Row labels (characteristics)
+  latinDanceCompareRow1: 'Musicalitat / Interpretació',
+  latinDanceCompareRow2: 'Connexió de parella',
+  latinDanceCompareRow3: 'Treball de malucs',
+  latinDanceCompareRow4: 'Girs i voltes',
+  latinDanceCompareRow5: 'Expressió corporal',
+  latinDanceCompareRow6: 'Tècnica de peus (footwork)',
+  latinDanceCompareRow7: 'Estil lliure / Improvisació',
+  latinDanceCompareRow8: 'Folklore / Tradició cultural',
+  latinDanceCompareRow9: 'Sensualitat',
+  latinDanceCompareRow10: 'Exigència física / Cardio',
+  latinDanceCompareRow11: 'Versatilitat per a ball social',
+
+  // Meaning section - Salsa Cubana specific
+  latinDanceCompareMeaningTitle: 'Què significa això per a tu?',
+  latinDanceCompareMeaning1Title_salsaCubana: 'Si vols ballar a festes i socials:',
+  latinDanceCompareMeaning1Desc_salsaCubana: 'La Salsa Cubana és perfecta. Màxima versatilitat per ballar amb qualsevol persona a qualsevol lloc.',
+  latinDanceCompareMeaning2Title_salsaCubana: 'Si busques connexió autèntica amb la teva parella:',
+  latinDanceCompareMeaning2Desc_salsaCubana: 'El Mètode Farray® se centra precisament en la guia i seguiment. Aprendràs a comunicar-te sense paraules.',
+  latinDanceCompareMeaning3Title_salsaCubana: "Si t'interessa la cultura cubana:",
+  latinDanceCompareMeaning3Desc_salsaCubana: "Salsa Cubana, Son i Folklore comparteixen arrels. Començar per Salsa Cubana t'obre les portes a tot l'univers cubà.",
+  latinDanceCompareMeaning4Title_salsaCubana: 'Si vols un exercici complet:',
+  latinDanceCompareMeaning4Desc_salsaCubana: "Combina Salsa Cubana amb Timba per a un entrenament cardiovascular intens mentre et diverteixes.",
+  latinDanceCompareConclusion_salsaCubana: "La Salsa Cubana és la base perfecta per explorar tots els balls llatins. Amb el Mètode Farray® dominaràs els fonaments que et permetran evolucionar cap a qualsevol estil.",
+
+  // Meaning section - Bachata specific
+  latinDanceCompareMeaning1Title_bachata: 'Si busques un ball romàntic i sensual:',
+  latinDanceCompareMeaning1Desc_bachata: 'La Bachata destaca en sensualitat i connexió propera. Ideal per a parelles que volen ballar juntes.',
+  latinDanceCompareMeaning2Title_bachata: 'Si prefereixes ritmes més lents:',
+  latinDanceCompareMeaning2Desc_bachata: 'La Bachata té un tempo més relaxat que la Salsa, permetent-te gaudir de cada moviment.',
+  latinDanceCompareMeaning3Title_bachata: 'Si vols versatilitat social:',
+  latinDanceCompareMeaning3Desc_bachata: 'La Bachata es balla a tot el món. Dominar-la et permet gaudir a qualsevol festa llatina.',
+  latinDanceCompareMeaning4Title_bachata: "Si t'agrada el treball de malucs:",
+  latinDanceCompareMeaning4Desc_bachata: "La Bachata desenvolupa especialment el moviment de malucs i l'expressió corporal.",
+  latinDanceCompareConclusion_bachata: 'La Bachata és el complement perfecte de la Salsa. Juntes formen la parella ideal per gaudir de qualsevol festa llatina.',
+
+  // Meaning section - Timba specific
+  latinDanceCompareMeaning1Title_timba: 'Si busques intensitat i energia:',
+  latinDanceCompareMeaning1Desc_timba: "La Timba és l'estil més dinàmic i exigent. Perfecta per als qui volen un repte físic.",
+  latinDanceCompareMeaning2Title_timba: "Si t'apassiona la música cubana moderna:",
+  latinDanceCompareMeaning2Desc_timba: 'La Timba va néixer de la fusió del Son amb jazz, funk i música afrocubana. És pura energia cubana.',
+  latinDanceCompareMeaning3Title_timba: 'Si vols destacar a la pista:',
+  latinDanceCompareMeaning3Desc_timba: "La Timba permet molta improvisació i estil personal. És l'estil que més crida l'atenció.",
+  latinDanceCompareMeaning4Title_timba: 'Si ja balles salsa i vols evolucionar:',
+  latinDanceCompareMeaning4Desc_timba: 'La Timba és el següent nivell natural després de dominar la Salsa Cubana bàsica.',
+  latinDanceCompareConclusion_timba: "La Timba representa l'evolució més moderna i energètica dels balls cubans. Requereix una bona base de Salsa Cubana.",
+
+  // Meaning section - Salsa Lady Style specific
+  latinDanceCompareMeaning1Title_salsaLadyStyle: 'Si vols desenvolupar el teu propi estil:',
+  latinDanceCompareMeaning1Desc_salsaLadyStyle: "Salsa Lady Style se centra en l'expressió individual, els girs i el treball corporal femení.",
+  latinDanceCompareMeaning2Title_salsaLadyStyle: 'Si balles salsa i vols brillar més:',
+  latinDanceCompareMeaning2Desc_salsaLadyStyle: 'Aquest estil complementa el teu ball en parella, afegint elegància i presència a cada pas.',
+  latinDanceCompareMeaning3Title_salsaLadyStyle: 'Si prefereixes ballar sola o en grup:',
+  latinDanceCompareMeaning3Desc_salsaLadyStyle: 'Lady Style és perfecte per practicar sense parella i desenvolupar la teva tècnica individual.',
+  latinDanceCompareMeaning4Title_salsaLadyStyle: 'Si vols millorar la teva tècnica de girs:',
+  latinDanceCompareMeaning4Desc_salsaLadyStyle: 'Els girs i voltes són el punt fort del Lady Style. Guanyaràs equilibri i control.',
+  latinDanceCompareConclusion_salsaLadyStyle: 'Salsa Lady Style és el complement ideal per a qualsevol ballarina de salsa que vulgui desenvolupar la seva presència i estil únic.',
+
+  // Meaning section - Bachata Lady Style specific
+  latinDanceCompareMeaning1Title_bachataLadyStyle: 'Si vols expressar-te amb sensualitat:',
+  latinDanceCompareMeaning1Desc_bachataLadyStyle: "Bachata Lady Style potencia la sensualitat i l'expressió corporal femenina al màxim.",
+  latinDanceCompareMeaning2Title_bachataLadyStyle: "Si t'agrada el moviment ondulant:",
+  latinDanceCompareMeaning2Desc_bachataLadyStyle: 'Aquest estil desenvolupa especialment les ones, el body movement i el treball de malucs.',
+  latinDanceCompareMeaning3Title_bachataLadyStyle: 'Si vols confiança en tu mateixa:',
+  latinDanceCompareMeaning3Desc_bachataLadyStyle: "Bachata Lady Style t'ajuda a connectar amb la teva feminitat i guanyar seguretat al ballar.",
+  latinDanceCompareMeaning4Title_bachataLadyStyle: 'Si complementes la teva bachata en parella:',
+  latinDanceCompareMeaning4Desc_bachataLadyStyle: 'Afegeix estil i elegància al teu rol de seguidora amb tècniques específiques per a dones.',
+  latinDanceCompareConclusion_bachataLadyStyle: 'Bachata Lady Style és perfecte per a dones que volen potenciar la seva feminitat i expressió a la pista de ball.',
+
+  // Meaning section - Timba en Pareja specific
+  latinDanceCompareMeaning1Title_timbaPareja: 'Si vols el màxim desafiament en parella:',
+  latinDanceCompareMeaning1Desc_timbaPareja: 'Timba en Parella combina la intensitat de la Timba amb la connexió del ball de parella.',
+  latinDanceCompareMeaning2Title_timbaPareja: 'Si domines la Salsa Cubana:',
+  latinDanceCompareMeaning2Desc_timbaPareja: 'És el següent pas natural. Porta el teu ball en parella al nivell més alt de complexitat.',
+  latinDanceCompareMeaning3Title_timbaPareja: "Si t'agrada improvisar amb la teva parella:",
+  latinDanceCompareMeaning3Desc_timbaPareja: 'La Timba en Parella permet molta creativitat i comunicació no verbal avançada.',
+  latinDanceCompareMeaning4Title_timbaPareja: 'Si busques un entrenament intens:',
+  latinDanceCompareMeaning4Desc_timbaPareja: 'És un dels estils més exigents físicament. Cardio pur mentre balles.',
+  latinDanceCompareConclusion_timbaPareja: 'Timba en Parella és per a balladors avançats que volen portar la seva connexió i tècnica al màxim nivell.',
+
+  // Meaning section - Folklore Cubano specific
+  latinDanceCompareMeaning1Title_folkloreCubano: 'Si et fascina la cultura afrocubana:',
+  latinDanceCompareMeaning1Desc_folkloreCubano: 'El Folklore Cubà connecta amb les arrels africanes de Cuba: els orixàs, els tocs de tambor, la tradició.',
+  latinDanceCompareMeaning2Title_folkloreCubano: 'Si busques expressió espiritual:',
+  latinDanceCompareMeaning2Desc_folkloreCubano: "És un ball amb profund significat cultural i espiritual, més enllà de l'entreteniment.",
+  latinDanceCompareMeaning3Title_folkloreCubano: 'Si vols entendre els orígens:',
+  latinDanceCompareMeaning3Desc_folkloreCubano: "El Folklore és l'arrel de tots els balls cubans. Entendre'l enriqueix qualsevol altre estil.",
+  latinDanceCompareMeaning4Title_folkloreCubano: "Si t'agrada el treball corporal intens:",
+  latinDanceCompareMeaning4Desc_folkloreCubano: "El Folklore desenvolupa la dissociació corporal, el treball de malucs i l'expressió emocional.",
+  latinDanceCompareConclusion_folkloreCubano: "El Folklore Cubà és la connexió més profunda amb la cultura i tradicions de Cuba. És l'ànima de tots els balls cubans.",
+
+  // Meaning section - Son Cubano specific
+  latinDanceCompareMeaning1Title_sonCubano: "Si t'agrada l'elegància clàssica:",
+  latinDanceCompareMeaning1Desc_sonCubano: 'El Son Cubà és el pare de la Salsa. Elegant, musical i profundament cubà.',
+  latinDanceCompareMeaning2Title_sonCubano: 'Si valores la tradició:',
+  latinDanceCompareMeaning2Desc_sonCubano: "El Son és patrimoni cultural de Cuba. Ballar-lo és connectar amb més de 100 anys d'història.",
+  latinDanceCompareMeaning3Title_sonCubano: 'Si vols millorar la teva musicalitat:',
+  latinDanceCompareMeaning3Desc_sonCubano: "El Son desenvolupa profundament la interpretació musical i el sentit del ritme.",
+  latinDanceCompareMeaning4Title_sonCubano: 'Si prefereixes un ritme més pausat:',
+  latinDanceCompareMeaning4Desc_sonCubano: 'El Son és més lent que la Salsa moderna, permetent assaborir cada temps de la música.',
+  latinDanceCompareConclusion_sonCubano: "El Son Cubà és l'arrel elegant de la Salsa. Dominar-lo et dona una comprensió profunda de tota la música cubana.",
+
+  // Meaning section - Salsa Lady Timba specific
+  latinDanceCompareMeaning1Title_salsaLadyTimba: "Si vols l'estil femení més potent:",
+  latinDanceCompareMeaning1Desc_salsaLadyTimba: "Lady Timba combina la intensitat de la Timba amb l'expressió del Lady Style. Màxima energia i estil.",
+  latinDanceCompareMeaning2Title_salsaLadyTimba: 'Si domines Lady Style i vols més:',
+  latinDanceCompareMeaning2Desc_salsaLadyTimba: "És l'evolució natural del Salsa Lady Style cap a un nivell més dinàmic i exigent.",
+  latinDanceCompareMeaning3Title_salsaLadyTimba: "Si t'agrada improvisar:",
+  latinDanceCompareMeaning3Desc_salsaLadyTimba: "Lady Timba té la major llibertat per a la improvisació i l'estil personal.",
+  latinDanceCompareMeaning4Title_salsaLadyTimba: 'Si busques un entrenament complet:',
+  latinDanceCompareMeaning4Desc_salsaLadyTimba: 'Combina tècnica de peus, treball corporal i cardio en un estil molt complet.',
+  latinDanceCompareConclusion_salsaLadyTimba: "Salsa Lady Timba és el nivell més avançat de l'estil femení en balls cubans. Per a balladores que volen destacar.",
 };
