@@ -22,6 +22,36 @@ import {
   StarIcon,
 } from './shared/Icons';
 
+// Local icons
+const MapPinIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
+  <svg
+    className={className}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={1.5}
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+    />
+  </svg>
+);
+
+// Nearby areas for Local SEO
+const AFROJAZZ_NEARBY_AREAS = [
+  { name: 'Plaza España', time: '5 min' },
+  { name: 'Hostafrancs', time: '5 min' },
+  { name: 'Sants Estació', time: '10 min' },
+  { name: 'Les Corts', time: '15 min' },
+  { name: 'Eixample Esquerra', time: '15 min' },
+  { name: 'Poble Sec', time: '10 min' },
+  { name: 'Sant Antoni', time: '12 min' },
+  { name: "L'Hospitalet", time: '10 min' },
+];
+
 // Animation delay constants for consistent UX
 const ANIMATION_DELAYS = {
   STAGGER_SMALL: 100,
@@ -429,17 +459,6 @@ const AfroJazzPage: React.FC = () => {
         {/* 3b. Level Cards */}
         <section className="py-14 md:py-20 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-8 sm:mb-10 max-w-4xl mx-auto">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-3 holographic-text">
-                  {t('afrojazzLevelsTitle')}
-                </h2>
-                <p className="text-base sm:text-lg text-neutral/70">
-                  {t('afrojazzLevelsSubtitle')}
-                </p>
-              </div>
-            </AnimateOnScroll>
-
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {/* Básico */}
               <AnimateOnScroll delay={0}>
@@ -966,7 +985,7 @@ const AfroJazzPage: React.FC = () => {
                     suffix="+"
                     className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm sm:text-base text-neutral/80 font-semibold uppercase tracking-wide">
                     {t('yearsExperience')}
                   </p>
                 </div>
@@ -976,7 +995,7 @@ const AfroJazzPage: React.FC = () => {
                     suffix="+"
                     className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm sm:text-base text-neutral/80 font-semibold uppercase tracking-wide">
                     {t('activeStudents')}
                   </p>
                 </div>
@@ -986,7 +1005,7 @@ const AfroJazzPage: React.FC = () => {
                     suffix="+"
                     className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 holographic-text"
                   />
-                  <p className="text-base sm:text-lg md:text-xl text-neutral/90 font-bold uppercase tracking-wide">
+                  <p className="text-sm sm:text-base text-neutral/80 font-semibold uppercase tracking-wide">
                     {t('satisfiedStudents')}
                   </p>
                 </div>
@@ -1225,78 +1244,7 @@ const AfroJazzPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 12. GEO Optimization - Estadísticas Citables para IAs */}
-        <section className="py-12 md:py-20 bg-primary-dark/10">
-          <div className="container mx-auto px-4 sm:px-6">
-            <AnimateOnScroll>
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-2xl sm:text-3xl font-black tracking-tighter text-neutral mb-6 text-center holographic-text">
-                  {t('afrojazzGeoTitle')}
-                </h2>
-
-                <div className="space-y-6">
-                  {/* Origen */}
-                  <div className="p-5 bg-black/30 rounded-2xl border border-primary-dark/30">
-                    <h3 className="text-lg font-bold text-primary-accent mb-2">
-                      {t('afrojazzGeoOrigenTitle')}
-                    </h3>
-                    <p className="text-neutral/90 text-sm leading-relaxed">
-                      {t('afrojazzCitableOrigen')}
-                    </p>
-                  </div>
-
-                  {/* Evolución Global */}
-                  <div className="p-5 bg-black/30 rounded-2xl border border-primary-dark/30">
-                    <h3 className="text-lg font-bold text-primary-accent mb-2">
-                      {t('afrojazzGeoEvolucionTitle')}
-                    </h3>
-                    <p className="text-neutral/90 text-sm leading-relaxed">
-                      {t('afrojazzCitableEvolucionGlobal')}
-                    </p>
-                  </div>
-
-                  {/* Música */}
-                  <div className="p-5 bg-black/30 rounded-2xl border border-primary-dark/30">
-                    <h3 className="text-lg font-bold text-primary-accent mb-2">
-                      {t('afrojazzGeoMusicaTitle')}
-                    </h3>
-                    <p className="text-neutral/90 text-sm leading-relaxed">
-                      {t('afrojazzCitableMusica')}
-                    </p>
-                  </div>
-
-                  {/* Facts Grid */}
-                  <div className="grid sm:grid-cols-3 gap-4">
-                    <div className="p-4 bg-primary-accent/10 rounded-xl border border-primary-accent/30 text-center">
-                      <div className="text-2xl font-black text-primary-accent mb-1">400-600</div>
-                      <p className="text-xs text-neutral/80">{t('afrojazzGeoFact1Label')}</p>
-                    </div>
-                    <div className="p-4 bg-primary-accent/10 rounded-xl border border-primary-accent/30 text-center">
-                      <div className="text-2xl font-black text-primary-accent mb-1">CID-UNESCO</div>
-                      <p className="text-xs text-neutral/80">{t('afrojazzGeoFact2Label')}</p>
-                    </div>
-                    <div className="p-4 bg-primary-accent/10 rounded-xl border border-primary-accent/30 text-center">
-                      <div className="text-2xl font-black text-primary-accent mb-1">+15.000</div>
-                      <p className="text-xs text-neutral/80">{t('afrojazzGeoFact3Label')}</p>
-                    </div>
-                  </div>
-
-                  {/* Identidad y Poder */}
-                  <div className="p-5 bg-gradient-to-r from-primary-accent/10 via-primary-dark/10 to-primary-accent/10 rounded-2xl border border-primary-accent/30">
-                    <h3 className="text-lg font-bold text-primary-accent mb-2">
-                      {t('afrojazzGeoIdentidadTitle')}
-                    </h3>
-                    <p className="text-neutral/90 text-sm leading-relaxed">
-                      {t('afrojazzCitableIdentidadPoder')}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* 13. Cultural History - Contenido profundo SEO */}
+        {/* 12. Cultural History - Contenido profundo SEO */}
         <CulturalHistorySection
           titleKey="afrojazzCulturalHistoryTitle"
           shortDescKey="afrojazzCulturalShort"
@@ -1308,6 +1256,34 @@ const AfroJazzPage: React.FC = () => {
 
         {/* 13. FAQ */}
         <FAQSection title={t('afrojazzFaqTitle')} faqs={afrojazzFaqs} pageUrl={pageUrl} />
+
+        {/* 14. Local SEO Section - Cerca de ti */}
+        <section className="py-10 md:py-14 bg-black">
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="max-w-4xl mx-auto p-6 bg-black/30 rounded-2xl border border-neutral/20">
+                <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-4">
+                  {t('afrojazzNearbyTitle')}
+                </h3>
+                <p className="text-neutral/80 mb-6">{t('afrojazzNearbyDesc')}</p>
+                <p className="text-neutral/90 font-semibold mb-4">
+                  {t('afrojazzNearbySearchText')}
+                </p>
+                <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
+                  {AFROJAZZ_NEARBY_AREAS.map((area, index) => (
+                    <div key={index} className="flex items-center gap-2 text-sm">
+                      <MapPinIcon className="w-4 h-4 text-primary-accent" />
+                      <span className="text-neutral/80">
+                        {area.name}: <span className="text-primary-accent">{area.time}</span>
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-neutral/70 text-sm mt-4">{t('afrojazzNearbyMetro')}</p>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
       </main>
     </>
   );

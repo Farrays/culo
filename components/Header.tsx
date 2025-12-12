@@ -143,6 +143,7 @@ const Header: React.FC = () => {
           ],
         },
         { path: `/${locale}/clases/salsa-bachata-barcelona`, textKey: 'navSalsaBachata' },
+        { path: `/${locale}/clases/salsa-cubana-barcelona`, textKey: 'navSalsaCubana' },
         { path: `/${locale}/clases/entrenamiento-bailarines-barcelona`, textKey: 'navPrepFisica' },
         { path: `/${locale}/clases/stretching-barcelona`, textKey: 'navStretching' },
       ],

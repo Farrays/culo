@@ -965,6 +965,36 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   dancehallFinalCTADesc:
     "Porque cada día que no te mueves, tu cuerpo te pide un poco más. Porque estás solo a una clase de cambiar tu rutina. En Farray's no vendemos clases. Creamos experiencias. Te esperamos con música cañera, profesoras con duende y una energía que no encontrarás en ningún otro lugar de Barcelona.",
 
+  // ===== Prepara tu Primera Clase de Dancehall =====
+  dancehallPrepareTitle: 'Prepara tu primera clase de Dancehall',
+  dancehallPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
+  dancehallPrepareWhatToBring: 'Qué traer:',
+  dancehallPrepareItem1:
+    'Ropa cómoda y que te permita moverte libremente (leggings, shorts, joggers)',
+  dancehallPrepareItem2: 'Camiseta o top que no te limite los movimientos de brazos',
+  dancehallPrepareItem3: 'Botella de agua (mínimo 500ml) - el Dancehall es intenso',
+  dancehallPrepareItem4: 'Toalla pequeña para el sudor',
+  dancehallPrepareItem5: 'Zapatillas deportivas cómodas con buena amortiguación',
+  dancehallPrepareBefore: 'Antes de llegar:',
+  dancehallPrepareBeforeItem1: 'Llega 10-15 minutos antes para cambiarte y ambientarte',
+  dancehallPrepareBeforeItem2: 'Evita comer pesado 2 horas antes de clase',
+  dancehallPrepareBeforeItem3: 'Hidrátate bien durante el día',
+  dancehallPrepareAvoid: 'Evita:',
+  dancehallPrepareAvoidItem1: 'Joyas, anillos, pulseras o accesorios que puedan engancharse',
+  dancehallPrepareAvoidItem2: 'Ropa muy ajustada que impida el movimiento de caderas',
+  dancehallPrepareAvoidItem3: 'Calzado de calle en la sala (hay vestuarios)',
+  dancehallPrepareTeacherTip: 'Consejo de la profe:',
+  dancehallPrepareTeacherQuote:
+    'No te preocupes si al principio no te salen los pasos. El Dancehall es sentimiento primero, técnica después. Ven con actitud positiva y ganas de pasarlo bien.',
+
+  // Local SEO - Dancehall
+  dancehallNearbyTitle: 'Clases de Dancehall cerca de ti en Barcelona',
+  dancehallNearbyDesc:
+    "Somos la academia de referencia para clases de Dancehall en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnos de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en Dancehall jamaicano con metodología profesional.",
+  dancehallNearbySearchText: 'Si buscas "Clases de Dancehall cerca de mi" en Barcelona, estamos a:',
+  dancehallNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
+
   // Schema Markup
   dancehallCourseSchemaName: 'Clases de Dancehall Jamaicano en Barcelona - Todos los Niveles',
   dancehallCourseSchemaDesc:
@@ -1189,12 +1219,14 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   dhV3TeachersTitle: 'Conoce a nuestras profesoras de dancehall',
   dhV3TeachersSubtitle: 'Expertas en Dancehall con años de experiencia',
-  dhV3Teacher1Specialty: '+5 años enseñando Dancehall Female',
-  dhV3Teacher1Bio: 'Técnica impecable, energía contagiosa y estilo elegante y potente.',
-  dhV3Teacher2Specialty: '+6 años como referente en Dancehall & Twerk',
-  dhV3Teacher2Bio: 'Carisma, fuerza y flow caribeño en cada clase.',
+  dhV3Teacher1Specialty: 'Profesora de Dancehall | +5 años de Experiencia',
+  dhV3Teacher1Bio:
+    "Isabel López es una apasionada del dancehall con más de 5 años de experiencia como profesora especializada en baile urbano. Entrenada con maestros jamaicanos, su energía contagiosa y técnica profesional la convierten en una de las instructoras más queridas de Farray's Center. Sus clases mezclan old school moves (Willie Bounce, Nuh Linga) con los últimos hits.",
+  dhV3Teacher2Specialty: 'Profesora de Dancehall y Twerk | +6 años de Experiencia',
+  dhV3Teacher2Bio:
+    'Sandra Gómez es una bailarina profesional con más de 6 años de experiencia en dancehall y twerk. Su estilo único fusiona movimientos del Twerk/Bootydance con la esencia jamaicana. Su técnica impecable y metodología de enseñanza la convierten en una de las profesoras más solicitadas. Energía, sensualidad y feminidad pura.',
   dhV3TeachersClosing:
-    "En Farray's Center cada profe enseña con alma, conocimiento y respeto por la cultura.",
+    'Con Isabel y Sandra, no solo aprendes a bailar Dancehall: descubres una nueva forma de conectar con tu cuerpo, tu confianza y el flow jamaicano.',
 
   dhV3ScheduleTitle: 'Horarios de nuestras clases de Dancehall',
   dhV3ScheduleSubtitle: 'Disponibles prácticamente todos los días de la semana',
@@ -3491,6 +3523,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   twerkClassesTitle: 'Nuestras Clases de Twerk',
   twerkClassesSubtitle: 'Clases para todos los niveles',
 
+  twerkLevelsTitle: 'Nuestros Niveles de Twerk',
   twerkLevelBeginnerTitle: 'Principiante',
   twerkLevelBeginnerDesc:
     'Ideal para quienes empiezan desde cero. Aprende los fundamentos del Twerk y movimientos básicos de cadera.',
@@ -3658,10 +3691,12 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // Teachers Section
   twerkTeachersTitle: 'Conoce a tus instructoras de Twerk',
   twerkTeachersSubtitle: 'Expertas en Twerk y Dancehall con años de experiencia',
-  twerkTeacher1Specialty: '+5 años enseñando Twerk y Dancehall',
-  twerkTeacher1Bio: 'Técnica impecable, energía contagiosa y estilo elegante y potente.',
-  twerkTeacher2Specialty: '+6 años como referente en Dancehall & Twerk',
-  twerkTeacher2Bio: 'Carisma, fuerza y flow caribeño en cada clase.',
+  twerkTeacher1Specialty: 'Profesora de Twerk y Dancehall | +5 años de Experiencia',
+  twerkTeacher1Bio:
+    "Isabel López es una apasionada del twerk y dancehall con más de 5 años de experiencia como profesora especializada en baile urbano. Entrenada con maestros jamaicanos y especialistas en Twerk, su energía contagiosa y técnica profesional la convierten en una de las instructoras más queridas de Farray's Center.",
+  twerkTeacher2Specialty: 'Profesora de Twerk y Dancehall | +6 años de Experiencia',
+  twerkTeacher2Bio:
+    'Sandra Gómez es una bailarina profesional con más de 6 años de experiencia en twerk y dancehall. Su estilo único fusiona movimientos del Twerk/Bootydance con la esencia jamaicana. Su técnica impecable y metodología de enseñanza la convierten en una de las profesoras más solicitadas. Energía, sensualidad y feminidad pura.',
   twerkTeachersClosing:
     'Con Isabel y Sandra, no solo aprendes a bailar Twerk: descubres una nueva forma de conectar con tu cuerpo, tu confianza y tu poder.',
 
@@ -3694,6 +3729,35 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   // FAQ Title
   twerkFaqTitle: 'Preguntas Frecuentes sobre el Twerking Dance en Barcelona',
+
+  // ===== Prepara tu Primera Clase de Twerk =====
+  twerkPrepareTitle: 'Prepara tu primera clase de Twerk',
+  twerkPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
+  twerkPrepareWhatToBring: 'Qué traer:',
+  twerkPrepareItem1: 'Leggings o shorts cortos que permitan ver el movimiento de glúteos',
+  twerkPrepareItem2: 'Top deportivo o camiseta cómoda',
+  twerkPrepareItem3: 'Botella de agua (mínimo 500ml) - el Twerk es intenso',
+  twerkPrepareItem4: 'Toalla pequeña para el sudor',
+  twerkPrepareItem5: 'Calcetines antideslizantes o zapatillas ligeras',
+  twerkPrepareBefore: 'Antes de llegar:',
+  twerkPrepareBeforeItem1: 'Llega 10-15 minutos antes para cambiarte y calentar',
+  twerkPrepareBeforeItem2: 'Evita comer pesado 2 horas antes de clase',
+  twerkPrepareBeforeItem3: 'Hidrátate bien durante el día - trabajarás mucho',
+  twerkPrepareAvoid: 'Evita:',
+  twerkPrepareAvoidItem1: 'Joyas, anillos, pulseras o accesorios que puedan molestarte',
+  twerkPrepareAvoidItem2: 'Pantalones anchos que impidan ver tu técnica',
+  twerkPrepareAvoidItem3: 'Calzado de calle en la sala (hay vestuarios)',
+  twerkPrepareTeacherTip: 'Consejo de la profe:',
+  twerkPrepareTeacherQuote:
+    'El Twerk es para TODOS los cuerpos. No importa tu forma, tu peso o tu experiencia. Lo importante es que vengas con ganas de moverte, reírte y descubrir tu poder.',
+
+  // ===== Local SEO - Cerca de ti =====
+  twerkNearbyTitle: 'Clases de Twerk cerca de ti en Barcelona',
+  twerkNearbyDesc:
+    "Somos la academia de referencia para clases de Twerk en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnas de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en Twerk con metodología profesional y ambiente seguro.",
+  twerkNearbySearchText: 'Si buscas "Clases de Twerk cerca de mi" en Barcelona, estamos a:',
+  twerkNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
 
   // Course Schema
   twerkCourseSchemaName: "Clases de Twerk y Twerking en Barcelona - Farray's Center",
@@ -3984,10 +4048,68 @@ En Farray's International Dance Center, el Afrobeats se enseña con técnica, re
   afroFinalCTADesc: 'Reserva tu plaza ahora y no dejes que te lo cuenten… ni que te lo bailen.',
   afroFinalCTAFunny: '¡Las plazas vuelan más rápido que un «Shaku Shaku» en viernes por la noche!',
 
+  // ===== Niveles de Afrobeat =====
+  afroLevelsTitle: 'Nuestros Niveles de Afrobeat',
+  afroLevelBasicTitle: 'Afrobeat Básico',
+  afroLevelBasicDesc:
+    'Ideal para principiantes. Aprenderás los fundamentos del Afrobeats: rebote, flow, pasos básicos de Azonto, Shaku Shaku y actitud africana. Sin experiencia previa necesaria.',
+  afroLevelIntermediateTitle: 'Afrobeat Intermedio',
+  afroLevelIntermediateDesc:
+    'Para quienes ya dominan lo básico. Trabajamos coreografías más complejas, combinaciones de estilos (Ntcham, Amapiano, Legwork) y musicalidad avanzada.',
+
+  // ===== Prepara tu Primera Clase de Afrobeat =====
+  afroPrepareTitle: 'Prepara tu primera clase de Afrobeat',
+  afroPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
+  afroPrepareWhatToBring: 'Qué traer:',
+  afroPrepareItem1: 'Ropa cómoda y suelta que te permita moverte con libertad',
+  afroPrepareItem2: 'Zapatillas deportivas con buena amortiguación (mucho rebote)',
+  afroPrepareItem3: 'Botella de agua (mínimo 500ml) - el Afrobeat es muy energético',
+  afroPrepareItem4: 'Toalla pequeña para el sudor',
+  afroPrepareItem5: 'Actitud positiva y ganas de pasarlo bien',
+  afroPrepareBefore: 'Antes de llegar:',
+  afroPrepareBeforeItem1: 'Llega 10-15 minutos antes para cambiarte y ambientarte',
+  afroPrepareBeforeItem2: 'Evita comer pesado 2 horas antes de clase',
+  afroPrepareBeforeItem3: 'Hidrátate bien durante el día - sudarás mucho',
+  afroPrepareAvoid: 'Evita:',
+  afroPrepareAvoidItem1: 'Joyas, anillos, pulseras que puedan engancharse o molestarte',
+  afroPrepareAvoidItem2: 'Ropa muy ajustada que limite el movimiento de brazos y piernas',
+  afroPrepareAvoidItem3: 'Calzado de calle en la sala (hay vestuarios)',
+  afroPrepareTeacherTip: 'Consejo del profe:',
+  afroPrepareTeacherQuote:
+    'El Afrobeat es alegría pura. No vengas a hacer pasos perfectos, ven a sentir la música y dejarte llevar. La energía africana se contagia cuando te sueltas.',
+
+  // Local SEO - Afrobeat
+  afroNearbyTitle: 'Clases de Afrobeat cerca de ti en Barcelona',
+  afroNearbyDesc:
+    "Somos la academia de referencia para clases de Afrobeat en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnos de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en danza africana con profesores especializados.",
+  afroNearbySearchText: 'Si buscas "Clases de Afrobeat cerca de mi" en Barcelona, estamos a:',
+  afroNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
+
   // Course Schema
   afroCourseSchemaName: 'Clases de Afrobeats y Afrodance en Barcelona',
   afroCourseSchemaDesc:
     'Aprende Afrobeats, Amapiano, Ntcham y danzas africanas modernas con profesores nativos. Clases para todos los niveles en el corazón de Barcelona.',
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for Afrobeat =====
+  afroCitableDefinicion:
+    '**"Afrobeats (en plural) es una corriente musical urbana que surge a finales de los 90 y principios de los 2000 entre Nigeria y Ghana. Mezcla ritmos africanos tradicionales con highlife, hip hop, R&B, dancehall y pop, creando un sonido reconocible: percusión marcada, bajos potentes, melodías pegadizas y estribillos inolvidables."**',
+  afroCitableOrigen:
+    '**"Afrobeats surge a finales de los 90 en Nigeria y Ghana como fusión urbana de ritmos africanos, highlife, hip hop, R&B y dancehall, diferenciándose del Afrobeat (singular) de Fela Kuti de los 60-70s que era jazz-funk con protesta social."**',
+  afroCitableFelaKuti:
+    '**"En los años 60 y 70, Fela Kuti revolucionó la música nigeriana originando el Afrobeat (singular): fusión de jazz, funk, highlife y ritmos yoruba con mensajes de protesta social, canciones extensas y estructuras instrumentales inmersivas."**',
+  afroCitableAfrodance:
+    '**"Afrodance incluye estilos como Azonto (Ghana: caderas y gestos cotidianos), Shaku Shaku/Zanku/Legwork (Nigeria: trabajo de pies y rebote de rodillas), y Ntcham/Tcham Bolo (Gabón: expresión urbana de Libreville), todos viralizados globalmente por YouTube, TikTok e Instagram."**',
+  afroCitableExpansion:
+    '**"Artistas como Wizkid, Davido, Tiwa Savage y Burna Boy han globalizado el Afrobeats desde los 2000s mediante colaboraciones internacionales con estrellas de pop y rap, transformando el género en símbolo de la nueva cultura africana."**',
+  afroCitableFact1:
+    'Una clase de Afrobeats activa puede quemar entre 300 y 480 calorías por hora según peso e intensidad, similar a bailes aeróbicos con alto rebote y flow.',
+  afroCitableFact2:
+    'Estudios científicos sobre danza señalan que bailar mejora la coordinación, la propiocepción y la condición física general, además de reducir el estrés y mejorar el estado de ánimo.',
+  afroCitableFact3:
+    "Farray's International Dance Center ofrece clases de Afrobeats con profesores de raíces africanas (Redblueh, Charlie Breezy) en una escuela valorada cerca del 5/5 en Google con cientos de reseñas positivas.",
+  afroCitableBeneficios:
+    'Revisiones científicas asocian el baile regular con menor riesgo de deterioro cognitivo y demencia, destacando su valor cerebral en estilos dinámicos como Afrobeats.',
 
   // ===== Hip Hop Reggaeton Page =====
   hhrPageTitle: 'Clases de Hip Hop Reggaeton en Barcelona | Fusión Urbana con Flow',
@@ -4199,10 +4321,65 @@ Las últimas tendencias y estilos se fusionan en nuestras clases de forma variad
   hhrFaqA15:
     'Si tienes alguna pregunta adicional o necesitas más información, puedes contactarnos:<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Dirección:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
 
+  // ===== Niveles de Hip Hop Reggaeton =====
+  hhrLevelsTitle: 'Nuestros Niveles de Hip Hop Reggaeton',
+  hhrLevelBasicTitle: 'Hip Hop Reggaeton Básico',
+  hhrLevelBasicDesc:
+    'Para principiantes. Aprenderás los fundamentos: groove, bounce, pasos básicos de hip-hop y reggaeton, actitud y musicalidad. Sin experiencia previa necesaria.',
+  hhrLevelIntermediateTitle: 'Hip Hop Reggaeton Intermedio',
+  hhrLevelIntermediateDesc:
+    'Para quienes dominan lo básico. Coreografías estilo videoclip, combinaciones más complejas, improvisación y desarrollo de estilo propio.',
+
+  // ===== Prepara tu Primera Clase de Hip Hop Reggaeton =====
+  hhrPrepareTitle: 'Prepara tu primera clase de Hip Hop Reggaeton',
+  hhrPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
+  hhrPrepareWhatToBring: 'Qué traer:',
+  hhrPrepareItem1: 'Ropa urbana cómoda (joggers, pantalones anchos, camiseta holgada)',
+  hhrPrepareItem2: 'Zapatillas deportivas con buena suela (estilo sneakers)',
+  hhrPrepareItem3: 'Botella de agua (mínimo 500ml) - sudarás bastante',
+  hhrPrepareItem4: 'Toalla pequeña para el sudor',
+  hhrPrepareItem5: 'Gorra o accesorios si te gusta el estilo (opcional)',
+  hhrPrepareBefore: 'Antes de llegar:',
+  hhrPrepareBeforeItem1: 'Llega 10-15 minutos antes para cambiarte y calentar',
+  hhrPrepareBeforeItem2: 'Evita comer pesado 2 horas antes de clase',
+  hhrPrepareBeforeItem3: 'Escucha algo de música urbana para venir con energía',
+  hhrPrepareAvoid: 'Evita:',
+  hhrPrepareAvoidItem1: 'Joyas grandes o cadenas que puedan molestarte',
+  hhrPrepareAvoidItem2: 'Ropa muy ajustada que limite tu movimiento',
+  hhrPrepareAvoidItem3: 'Calzado de calle en la sala (hay vestuarios)',
+  hhrPrepareTeacherTip: 'Consejo de Charlie Breezy:',
+  hhrPrepareTeacherQuote:
+    'El Hip Hop Reggaeton es actitud. No te preocupes si no te sale perfecto al principio, lo importante es que vengas con ganas de moverte y pasarlo bien. El flow viene solo.',
+
+  // Local SEO - Hip Hop Reggaeton
+  hhrNearbyTitle: 'Clases de Hip Hop Reggaeton cerca de ti en Barcelona',
+  hhrNearbyDesc:
+    "Somos la academia de referencia para clases de Hip Hop y Reggaeton en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnos de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en baile urbano con metodología profesional.",
+  hhrNearbySearchText:
+    'Si buscas "Clases de Hip Hop Reggaeton cerca de mi" en Barcelona, estamos a:',
+  hhrNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
+
   // Course Schema
   hhrCourseSchemaName: "Clases de Hip Hop Reggaeton en Barcelona - Farray's Center",
   hhrCourseSchemaDesc:
     'Aprende Hip Hop Reggaeton con Charlie Breezy, instructor especializado en fusión urbana. Clases para todos los niveles en el corazón de Barcelona.',
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for Hip Hop Reggaeton =====
+  hhrCitableDefinicion:
+    '**"Hip Hop Reggaeton es un estilo de danza urbana que fusiona la técnica, el groove y el swagger del hip-hop estadounidense con la sensualidad, el ritmo y el dembow característico del reggaeton latinoamericano."**',
+  hhrCitableOrigenHipHop:
+    '**"El hip-hop nació en el Bronx de Nueva York en los años 70, como expresión artística de las comunidades afroamericanas y latinas. DJ Kool Herc, Afrika Bambaataa y Grandmaster Flash son considerados pioneros del movimiento."**',
+  hhrCitableOrigenReggaeton:
+    '**"El reggaeton surgió en Puerto Rico a finales de los años 80 y principios de los 90, fusionando el reggae jamaicano (especialmente el dancehall) con ritmos latinos, hip-hop y música electrónica. Su característico ritmo dembow proviene del tema \'Dem Bow\' de Shabba Ranks (1990)."**',
+  hhrCitableFusion:
+    '**"La fusión hip-hop y reggaeton combina elementos técnicos del breaking, popping y locking con movimientos de perreo, body roll y aislaciones sensuales, creando un estilo versátil para música urbana contemporánea."**',
+  hhrCitableFact1:
+    'Una clase de Hip Hop Reggaeton de alta intensidad puede quemar entre 400 y 600 calorías por hora, dependiendo del peso corporal y la intensidad de los movimientos.',
+  hhrCitableFact2:
+    'El hip-hop y el reggaeton son dos de los géneros musicales más escuchados a nivel mundial según Spotify, con billones de reproducciones anuales combinadas.',
+  hhrCitableFact3:
+    "Farray's International Dance Center ofrece clases de Hip Hop Reggaeton con Charlie Breezy, bailarín profesional especializado en fusión urbana, en una escuela con valoración cercana al 5/5 en Google.",
 
   // ===== Sexy Reggaeton Page =====
   sxrPageTitle: "Clases de Reggaeton Sensual para Mujeres en Barcelona | Farray's Center",
@@ -4433,6 +4610,44 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   sxrFaqA15:
     "Farray's Center está ubicado en Calle Entença 100, 08015 Barcelona, a solo 5 minutos de Plaza España y Estación de Sants. Contamos con profesoras con amplia experiencia en reggaeton sensual y un ambiente seguro y familiar para todos los niveles.",
 
+  // ===== Niveles de Sexy Reggaeton =====
+  sxrLevelsTitle: 'Nuestros Niveles de Sexy Reggaeton',
+  sxrLevelBasicTitle: 'Sexy Reggaeton Básico',
+  sxrLevelBasicDesc:
+    'Para principiantes. Aprenderás los fundamentos: body roll, perreo básico, movimientos de cadera y sensualidad. Sin experiencia previa necesaria. Ambiente seguro y sin juicios.',
+  sxrLevelIntermediateTitle: 'Sexy Reggaeton Intermedio',
+  sxrLevelIntermediateDesc:
+    'Para quienes dominan lo básico. Coreografías más sensuales, drops al suelo, combinaciones avanzadas y desarrollo de tu propio estilo.',
+
+  // ===== Prepara tu Primera Clase de Sexy Reggaeton =====
+  sxrPrepareTitle: 'Prepara tu primera clase de Sexy Reggaeton',
+  sxrPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
+  sxrPrepareWhatToBring: 'Qué traer:',
+  sxrPrepareItem1: 'Leggings o shorts cómodos que permitan ver tu movimiento',
+  sxrPrepareItem2: 'Top deportivo o camiseta ajustada',
+  sxrPrepareItem3: 'Botella de agua (mínimo 500ml)',
+  sxrPrepareItem4: 'Toalla pequeña para el sudor',
+  sxrPrepareItem5: 'Rodilleras si tienes rodillas sensibles (opcional, para floorwork)',
+  sxrPrepareBefore: 'Antes de llegar:',
+  sxrPrepareBeforeItem1: 'Llega 10-15 minutos antes para cambiarte y relajarte',
+  sxrPrepareBeforeItem2: 'Evita comer pesado 2 horas antes de clase',
+  sxrPrepareBeforeItem3: 'Ven con la mente abierta y ganas de disfrutar',
+  sxrPrepareAvoid: 'Evita:',
+  sxrPrepareAvoidItem1: 'Joyas que puedan molestarte o engancharse',
+  sxrPrepareAvoidItem2: 'Ropa muy holgada que impida ver tu técnica',
+  sxrPrepareAvoidItem3: 'Calzado de calle en la sala (hay vestuarios)',
+  sxrPrepareTeacherTip: 'Consejo de la profe:',
+  sxrPrepareTeacherQuote:
+    'El Sexy Reggaeton es para todas. No importa tu cuerpo, tu experiencia o tu edad. Aquí celebramos la sensualidad de cada mujer. Ven a descubrirte.',
+
+  // Local SEO - Sexy Reggaeton
+  sxrNearbyTitle: 'Clases de Sexy Reggaeton cerca de ti en Barcelona',
+  sxrNearbyDesc:
+    "Somos la academia de referencia para clases de Sexy Reggaeton en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnas de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en baile sensual con ambiente seguro y profesional.",
+  sxrNearbySearchText: 'Si buscas "Clases de Sexy Reggaeton cerca de mi" en Barcelona, estamos a:',
+  sxrNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
+
   // Course Schema
   sxrCourseSchemaName: "Clases de Sexy Reggaeton en Barcelona - Farray's Center",
   sxrCourseSchemaDesc:
@@ -4441,6 +4656,22 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   // Image Alt
   sxrImageAlt:
     'Clases de Sexy Reggaeton en Barcelona - Estudiantes bailando perreo y body roll en la academia',
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for Sexy Reggaeton =====
+  sxrCitableDefinicion:
+    '**"Sexy Reggaeton es una evolución contemporánea del perreo clásico puertorriqueño que combina movimientos sensuales con técnicas de baile femenino refinadas, incluyendo body rolls, disociación corporal, perreo y bajadas controladas al suelo (drops)."**',
+  sxrCitableOrigen:
+    '**"El reggaeton nació en los años 90 entre Panamá y Puerto Rico, surgido de la mezcla del reggae jamaicano, el hip hop estadounidense y ritmos latinos caribeños. El dembow panameño constituye la base rítmica esencial del género."**',
+  sxrCitableTecnicas:
+    '**"Las técnicas principales del Sexy Reggaeton incluyen: body roll (ondulación fluida del torso), perreo (movimientos de cadera hacia abajo), disociación corporal (control independiente de partes del cuerpo), y drops (bajadas al suelo controladas)."**',
+  sxrCitableEmpoderamiento:
+    '**"El Sexy Reggaeton moderno combina técnica con empoderamiento femenino, promovido por artistas como Karol G, Anitta, Bad Bunny y Daddy Yankee, que han difundido globalmente bailes sensuales coreografiados que celebran la confianza corporal."**',
+  sxrCitableFact1:
+    'Una clase de Sexy Reggaeton puede quemar entre 300 y 450 calorías por hora, trabajando piernas, core, flexibilidad y resistencia mediante movimientos de perreo, drops y body roll.',
+  sxrCitableFact2:
+    'El Sexy Reggaeton fusiona elementos del reggaeton puertorriqueño, dancehall jamaicano y twerk, adaptándose tanto como actividad lúdica como entrenamiento físico completo.',
+  sxrCitableFact3:
+    "Farray's International Dance Center ofrece clases de Sexy Reggaeton con Yunaisy Farray, directora de la academia y especialista en danzas urbanas sensuales reconocida por CID-UNESCO.",
 
   // ===== REGGAETON CUBANO / REPARTO PAGE =====
   // SEO & Meta
@@ -4487,8 +4718,48 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   // Cultural History Section
   rcbCulturalShort:
     'El reggaeton cubano tiene sus raíces en los barrios de La Habana, donde la fusión del reggae jamaicano con ritmos afrocubanos creó un estilo único y callejero.',
-  rcbCulturalFull:
-    '### Orígenes en las calles de Cuba\n\nEl reggaeton cubano nació en los años 90 en los barrios populares de La Habana, como resultado de la fusión entre el reggae jamaicano que llegaba por radio y los ritmos afrocubanos tradicionales. A diferencia del reggaeton puertorriqueño más comercial, el cubano mantuvo su esencia callejera y su énfasis en la improvisación.\n\n### El Reparto: el estilo de los barrios\n\nEl término "Reparto" viene de los barrios (repartos) donde nació este estilo. Es un reggaeton más crudo, con movimientos más exagerados y una conexión más directa con la música. Los bailarines de reparto son reconocidos por su capacidad de improvisación y su dominio de la disociación corporal.\n\n### El Cubatón hoy\n\nHoy, el Cubatón se ha expandido internacionalmente, pero mantiene su esencia: la improvisación, el sabor y esa energía única que solo viene de Cuba. Artistas como Chocolate MC, El Chacal y Jacob Forever han llevado el sonido cubano al mundo, y con él, su forma de bailar.',
+  rcbCulturalFull: `### Orígenes: Los Barrios de La Habana (1990s-2000s)
+
+**El Reggaeton Cubano (también conocido como Cubatón o Reparto) surgió a finales de los años 90 y principios de los 2000 en barrios populares de La Habana como La Lisa, Marianao, Centro Habana y El Cerro.** Nació como fusión del reggaeton puertorriqueño que llegaba por radio con los ritmos afrocubanos tradicionales: rumba, son cubano y elementos yoruba.
+
+**"El Reggaeton Cubano fusiona reggaeton puertorriqueño con rumba, son y ritmos yoruba, creando un estilo único nacido en los barrios de La Habana."**
+
+### Artistas Pioneros
+
+**Artistas como Candyman, El Taiger, Chocolate MC, Osmani García y El Chacal popularizaron el género** y definieron su sonido característico: bases de dembow combinadas con percusión afrocubana, letras callejeras y una actitud rebelde que refleja la vida cotidiana de los barrios cubanos.
+
+### El Reparto: El Estilo de los Barrios
+
+**El término "Reparto" proviene de los "repartos" o barrios populares de La Habana donde nació este estilo.** Se caracteriza por ritmos más crudos que el reggaeton comercial, con una conexión más directa y visceral con la música. Los bailarines de Reparto son reconocidos mundialmente por su capacidad de improvisación y su dominio técnico.
+
+**"El Reparto se caracteriza por ritmos crudos, letras callejeras y una actitud rebelde que refleja la vida de los barrios cubanos."**
+
+### Técnicas Distintivas del Baile
+
+El baile de Reggaeton Cubano se distingue por elementos técnicos únicos:
+- **Improvisación constante**: respuesta instantánea a los cambios de la música
+- **Disociación corporal avanzada**: caderas, pecho y hombros moviéndose independientemente
+- **Tembleque**: vibración rápida y controlada de caderas, técnica exclusiva cubana
+- **Movimientos de suelo**: inspirados en la rumba afrocubana (guaguancó, columbia)
+- **Perreo cubano**: variante más técnica y rítmica que el puertorriqueño
+
+**"El baile de Reggaeton Cubano se distingue por improvisación, disociación corporal, tembleque y movimientos de suelo inspirados en la rumba afrocubana."**
+
+### Influencias Afrocubanas
+
+**El Reggaeton Cubano incorpora elementos de la rumba (guaguancó, columbia), son cubano y danzas yoruba, creando un estilo único que lo diferencia del reggaeton puertorriqueño.** Esta fusión de tradiciones africanas y caribeñas le da su sabor característico y su riqueza de movimientos.
+
+### El Cubatón Hoy: Expansión Internacional
+
+Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia: la improvisación, el sabor y esa energía única que solo viene de Cuba. Artistas como **El Taiger, Jacob Forever y Chocolate MC** han llevado el sonido cubano al mundo, y con él, su forma de bailar.
+
+### Beneficios para la Salud
+
+**Una clase de Reggaeton Cubano puede quemar entre 350 y 550 calorías por hora** debido a la intensidad del tembleque y los movimientos de disociación corporal. Además, mejora la coordinación, la flexibilidad de cadera y la conexión rítmica.
+
+### Reggaeton Cubano en Farray's Center
+
+**Farray's International Dance Center enseña Reggaeton Cubano auténtico con profesores cubanos formados en la Escuela Nacional de Arte (ENA) de La Habana.** Las clases mantienen la esencia callejera del estilo mientras ofrecen una progresión técnica estructurada para todos los niveles.`,
 
   // Identify Section - Pain Points específicos de Reggaeton Cubano
   rcbIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
@@ -4652,10 +4923,65 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   rcbFaqA15:
     'Estamos en Calle Entença 100, 08015 Barcelona (a 5 min de Plaza España y Sants).<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
 
+  // ===== Niveles de Reggaeton Cubano =====
+  rcbLevelsTitle: 'Nuestros Niveles de Reggaeton Cubano',
+  rcbLevelBasicTitle: 'Reggaeton Cubano Básico',
+  rcbLevelBasicDesc:
+    'Para principiantes. Aprenderás los fundamentos: disociación corporal, tembleque básico, pasos de Reparto y actitud cubana. Sin experiencia previa necesaria.',
+  rcbLevelIntermediateTitle: 'Reggaeton Cubano Intermedio',
+  rcbLevelIntermediateDesc:
+    'Para quienes dominan lo básico. Improvisación avanzada, tembleque y disociación complejos, movimientos de suelo y desarrollo de estilo propio cubano.',
+
+  // ===== Prepara tu Primera Clase de Reggaeton Cubano =====
+  rcbPrepareTitle: 'Prepara tu primera clase de Reggaeton Cubano',
+  rcbPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
+  rcbPrepareWhatToBring: 'Qué traer:',
+  rcbPrepareItem1: 'Ropa cómoda que permita movimiento libre de caderas',
+  rcbPrepareItem2: 'Zapatillas deportivas con buena amortiguación',
+  rcbPrepareItem3: 'Botella de agua (mínimo 500ml) - sudarás mucho',
+  rcbPrepareItem4: 'Toalla pequeña para el sudor',
+  rcbPrepareItem5: 'Actitud abierta a la improvisación',
+  rcbPrepareBefore: 'Antes de llegar:',
+  rcbPrepareBeforeItem1: 'Llega 10-15 minutos antes para cambiarte y calentar',
+  rcbPrepareBeforeItem2: 'Evita comer pesado 2 horas antes de clase',
+  rcbPrepareBeforeItem3: 'Escucha algo de reggaeton cubano para venir con energía',
+  rcbPrepareAvoid: 'Evita:',
+  rcbPrepareAvoidItem1: 'Joyas o accesorios que puedan molestarte',
+  rcbPrepareAvoidItem2: 'Ropa muy ajustada que limite el movimiento de caderas',
+  rcbPrepareAvoidItem3: 'Calzado de calle en la sala (hay vestuarios)',
+  rcbPrepareTeacherTip: 'Consejo del profe:',
+  rcbPrepareTeacherQuote:
+    'El Reggaeton Cubano es puro sentimiento. No vengas a copiar pasos, ven a sentir la música y dejar que tu cuerpo improvise. Eso es lo que nos hace únicos los cubanos.',
+
+  // Local SEO - Reggaeton Cubano
+  rcbNearbyTitle: 'Clases de Reggaeton Cubano cerca de ti en Barcelona',
+  rcbNearbyDesc:
+    "Somos la academia de referencia para clases de Reggaeton Cubano en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnos de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en reparto y reggaeton auténtico cubano.",
+  rcbNearbySearchText:
+    'Si buscas "Clases de Reggaeton Cubano cerca de mi" en Barcelona, estamos a:',
+  rcbNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
+
   // Course Schema
   rcbCourseSchemaName: "Clases de Reggaeton Cubano en Barcelona - Farray's Center",
   rcbCourseSchemaDesc:
     'Aprende Reggaeton Cubano auténtico con Yunaisy Farray, maestra cubana y actriz de Street Dance 2. Clases de Reparto, Cubatón e improvisación para todos los niveles en Barcelona.',
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for Reggaeton Cubano =====
+  rcbCitableDefinicion:
+    '**"El Reggaeton Cubano (también conocido como Cubatón o Reparto) es una variante del reggaeton que nació en los barrios populares de La Habana, Cuba, fusionando el reggaeton puertorriqueño con ritmos afrocubanos, rumba, son y elementos de la cultura callejera habanera."**',
+  rcbCitableOrigen:
+    '**"El Reggaeton Cubano surgió a finales de los años 90 y principios de los 2000 en barrios como La Lisa, Marianao, Centro Habana y El Cerro. Artistas pioneros como Candyman, El Taiger, Chocolate MC y Osmani García popularizaron el género."**',
+  rcbCitableReparto:
+    "**\"El término 'Reparto' proviene de los 'repartos' o barrios populares de La Habana donde nació este estilo. Se caracteriza por ritmos más crudos, letras callejeras y una actitud rebelde que refleja la vida cotidiana de los barrios cubanos.\"**",
+  rcbCitableCaracteristicas:
+    '**"El baile de Reggaeton Cubano se distingue por: improvisación constante, disociación corporal avanzada (caderas, pecho, hombros independientes), tembleque (vibración rápida de caderas), y movimientos de suelo inspirados en la rumba afrocubana."**',
+  rcbCitableFact1:
+    'El Reggaeton Cubano incorpora elementos de la rumba (guaguancó, columbia), son cubano y danzas yoruba, creando un estilo único que lo diferencia del reggaeton puertorriqueño.',
+  rcbCitableFact2:
+    'Una clase de Reggaeton Cubano puede quemar entre 350 y 550 calorías por hora debido a la intensidad del tembleque y los movimientos de disociación corporal.',
+  rcbCitableFact3:
+    "Farray's International Dance Center enseña Reggaeton Cubano auténtico con Alejandro Miñoso y Charlie Breezy, bailarines cubanos formados en la Escuela Nacional de Arte (ENA) de La Habana.",
 
   // ====================
   // HEELS BARCELONA PAGE (Category Hub Page)
@@ -4850,6 +5176,22 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
 
   // View More
   heelsBarcelona_viewMore: 'Ver más →',
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for Heels Barcelona (Femmology + Sexy Style) =====
+  heelsCitableDefinicion:
+    '**"Heels Dance (baile en tacones) es una disciplina de danza urbana que se realiza con zapatos de tacón alto, combinando técnica de baile con elegancia, sensualidad y empoderamiento femenino. Incluye estilos como Femmology y Sexy Style."**',
+  heelsCitableFemmologyOrigen:
+    '**"Femmology es una metodología de danza en tacones creada por Yunaisy Farray en Barcelona que combina danzaterapia, técnica de baile y trabajo emocional. El Método Farray® es exclusivo de su academia y reconocido por CID-UNESCO."**',
+  heelsCitableSexyStyleDefinicion:
+    '**"Sexy Style es un estilo de baile en tacones con enfoque lúdico y de libertad expresiva, que incluye movimientos de cadera, ondas corporales, floorwork y coreografías sensuales sin la exigencia técnica del Femmology."**',
+  heelsCitableTecnicas:
+    '**"Las técnicas principales del Heels Dance incluyen: uso correcto del pelo, floorwork (trabajo en el suelo), disociación corporal, body rolls, ondas, caminar en tacones con elegancia, y expresión corporal sensual."**',
+  heelsCitableFact1:
+    'Una clase de Heels Dance puede quemar entre 250 y 400 calorías por hora, fortaleciendo piernas, glúteos y core mientras mejora postura, equilibrio y coordinación.',
+  heelsCitableFact2:
+    'Femmology fue creado por Yunaisy Farray, bailarina cubana formada en la Escuela Nacional de Arte (ENA) de La Habana y actriz de la película Street Dance 2 (2012).',
+  heelsCitableFact3:
+    "Farray's International Dance Center es la única academia en Barcelona que ofrece el Método Farray® original de Femmology, con reconocimiento de CID-UNESCO.",
 
   // ===== FEMMOLOGY PAGE =====
   // SEO & Meta
@@ -5093,6 +5435,60 @@ Actualmente, Femmology se imparte exclusivamente en Farray's Center bajo la dire
   femCourseSchemaName: 'Clases de Femmology en Barcelona - Baile en Tacones con Yunaisy Farray',
   femCourseSchemaDesc:
     'Aprende a bailar en tacones con Yunaisy Farray, creadora del Método Farray®, actriz de Street Dance 2 y maestra UNESCO. Clases de Femmology en exclusiva en Barcelona.',
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for Femmology =====
+  femCitableDefinicion:
+    '**"Femmology es una metodología de danza en tacones creada por Yunaisy Farray que combina danzaterapia, técnica de baile y trabajo emocional. El Método Farray® es exclusivo de Farray\'s International Dance Center y reconocido por CID-UNESCO."**',
+  femCitableCreadora:
+    '**"Yunaisy Farray es la creadora del Femmology. Bailarina cubana formada en la Escuela Nacional de Arte (ENA) de La Habana, actriz de la película Street Dance 2 (2012) y directora de Farray\'s International Dance Center en Barcelona."**',
+  femCitableMetodologia:
+    '**"El Método Farray® de Femmology incluye: trabajo emocional y de autoestima, técnica de tacones segura para articulaciones, uso del pelo como elemento expresivo, floorwork, disociación corporal, y coreografías que potencian la feminidad."**',
+  femCitableBeneficios:
+    '**"Femmology trabaja el empoderamiento femenino a través de la danza, mejorando postura corporal, equilibrio, coordinación, confianza personal y aceptación del propio cuerpo mediante una metodología de danzaterapia."**',
+  femCitableFact1:
+    'El Femmology se practica obligatoriamente con tacones, a diferencia de otros estilos como Sexy Style donde su uso es opcional.',
+  femCitableFact2:
+    'Una clase de Femmology combina trabajo técnico y emocional, siendo el único estilo de danza en tacones con enfoque de danzaterapia en Barcelona.',
+  femCitableFact3:
+    "Farray's International Dance Center es la única academia en el mundo donde se enseña el Método Farray® original de Femmology.",
+
+  // ===== Niveles de Femmology =====
+  femLevelsTitle: 'Nuestros Niveles de Femmology',
+  femLevelBasicTitle: 'Femmology Iniciación',
+  femLevelBasicDesc:
+    'Perfecto para empezar tu viaje. Aprenderás a caminar en tacones con elegancia, trabajarás la postura básica, descubrirás el uso del pelo como elemento expresivo y comenzarás a conectar con tu feminidad a través del movimiento.',
+  femLevelIntermediateTitle: 'Femmology Avanzado',
+  femLevelIntermediateDesc:
+    'Para quienes ya dominan los fundamentos. Coreografías más complejas, floorwork avanzado, disociación corporal refinada, trabajo emocional más profundo y técnica de tacones de alto nivel.',
+
+  // ===== Prepara tu Primera Clase de Femmology =====
+  femPrepareTitle: 'Prepara tu primera clase de Femmology',
+  femPrepareSubtitle: 'Todo lo que necesitas saber antes de tu transformación',
+  femPrepareWhatToBring: 'Qué traer:',
+  femPrepareItem1: 'Tacones con tira en el tobillo (7-10 cm recomendado para principiantes)',
+  femPrepareItem2: 'Ropa cómoda y ajustada que te permita ver tu cuerpo en el espejo',
+  femPrepareItem3: 'Rodilleras si tus rodillas son sensibles (habrá trabajo de suelo)',
+  femPrepareItem4: 'Botella de agua y toalla pequeña',
+  femPrepareItem5: 'Mente abierta y ganas de descubrirte',
+  femPrepareBefore: 'Antes de llegar:',
+  femPrepareBeforeItem1: 'Llega 15 minutos antes para cambiarte y prepararte mentalmente',
+  femPrepareBeforeItem2: 'Evita comer pesado 2 horas antes de clase',
+  femPrepareBeforeItem3: 'Si es tu primera vez en tacones, practica caminar un poco en casa',
+  femPrepareAvoid: 'Evita:',
+  femPrepareAvoidItem1: 'Joyas, anillos o pulseras que puedan engancharse o molestarte',
+  femPrepareAvoidItem2: 'Ropa muy suelta que no te permita ver tus movimientos',
+  femPrepareAvoidItem3: 'Vergüenza o miedo: este es un espacio seguro y sin juicios',
+  femPrepareTeacherTip: 'Consejo de Yunaisy:',
+  femPrepareTeacherQuote:
+    'Femmology no se trata de ser perfecta, se trata de ser auténtica. Ven como eres, con tus miedos y tus ganas. Aquí no juzgamos, aquí nos transformamos. Para que te quieras cada día más, hermosa mujer.',
+
+  // Local SEO - Femmology
+  femNearbyTitle: 'Clases de Femmology cerca de ti en Barcelona',
+  femNearbyDesc:
+    "Somos la academia de referencia para clases de Femmology en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnas de Poble Sec, Sant Antoni y L'Hospitalet que buscan reconectar con su feminidad a través del movimiento.",
+  femNearbySearchText: 'Si buscas "Clases de Femmology cerca de mi" en Barcelona, estamos a:',
+  femNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
 
   // ===== Sexy Style Page =====
   sexystylePageTitle: 'Clases de Sexy Style en Barcelona | Aprende a Bailar con Sensualidad',
@@ -5338,6 +5734,59 @@ Hoy, el Sexy Style en Farray's se vive como un espacio de aprendizaje técnico y
   sexystyleCourseSchemaName: "Clases de Sexy Style en Barcelona - Farray's Center",
   sexystyleCourseSchemaDesc:
     'Aprende Sexy Style con Yasmina Fernández, instructora especializada. Clases para todos los niveles en el corazón de Barcelona.',
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for Sexy Style =====
+  sexystyleCitableDefinicion:
+    '**"Sexy Style es un estilo de baile en tacones con enfoque lúdico y de libertad expresiva. Se caracteriza por movimientos de cadera, ondas corporales, floorwork y coreografías sensuales con una exigencia técnica media-baja."**',
+  sexystyleCitableDiferencias:
+    '**"A diferencia del Femmology (danzaterapia con técnica exigente), Sexy Style prioriza la diversión y la expresión libre. Los tacones son opcionales y no hay trabajo emocional estructurado, solo el disfrute del baile sensual."**',
+  sexystyleCitableTecnicas:
+    '**"Las técnicas del Sexy Style incluyen: movimientos de cadera y pelvis, ondas corporales, floorwork (trabajo en el suelo), actitud y expresión corporal libre, y coreografías sensuales accesibles."**',
+  sexystyleCitableFact1:
+    'Sexy Style es ideal para principiantes que quieren explorar la sensualidad en el baile sin la exigencia técnica de estilos como Femmology o Heels profesional.',
+  sexystyleCitableFact2:
+    'En Sexy Style los tacones son opcionales: las alumnas pueden empezar descalzas o con zapatillas y progresar a tacones cuando se sientan cómodas.',
+  sexystyleCitableFact3:
+    "Farray's International Dance Center ofrece clases de Sexy Style con Yasmina Fernández, instructora especializada en baile sensual y expresión corporal.",
+
+  // ===== Niveles de Sexy Style =====
+  sexystyleLevelsTitle: 'Nuestros Niveles de Sexy Style',
+  sexystyleLevelBasicTitle: 'Sexy Style Principiante',
+  sexystyleLevelBasicDesc:
+    'Ideal para empezar sin presión. Aprenderás los movimientos básicos de cadera, ondas corporales y actitud. Los tacones son opcionales: puedes venir con zapatillas y progresar a tu ritmo.',
+  sexystyleLevelIntermediateTitle: 'Sexy Style Intermedio',
+  sexystyleLevelIntermediateDesc:
+    'Para quienes ya se sienten cómodas con los fundamentos. Coreografías más elaboradas, floorwork, transiciones fluidas y trabajo de actitud y presencia escénica.',
+
+  // ===== Prepara tu Primera Clase de Sexy Style =====
+  sexystylePrepareTitle: 'Prepara tu primera clase de Sexy Style',
+  sexystylePrepareSubtitle: 'Todo lo que necesitas para tu primera experiencia',
+  sexystylePrepareWhatToBring: 'Qué traer:',
+  sexystylePrepareItem1: 'Ropa cómoda y ajustada: leggings o shorts, top o camiseta',
+  sexystylePrepareItem2: 'Zapatillas deportivas o tacones (los tacones son opcionales)',
+  sexystylePrepareItem3: 'Rodilleras si tienes rodillas sensibles (habrá floorwork)',
+  sexystylePrepareItem4: 'Botella de agua y toalla pequeña',
+  sexystylePrepareItem5: 'Ganas de pasarlo bien y soltarte',
+  sexystylePrepareBefore: 'Antes de llegar:',
+  sexystylePrepareBeforeItem1: 'Llega 10-15 minutos antes para cambiarte tranquilamente',
+  sexystylePrepareBeforeItem2: 'Evita comer pesado 2 horas antes de clase',
+  sexystylePrepareBeforeItem3: 'Pon música que te haga sentir bien en el camino',
+  sexystylePrepareAvoid: 'Evita:',
+  sexystylePrepareAvoidItem1: 'Joyas o accesorios que puedan molestarte al moverte',
+  sexystylePrepareAvoidItem2: 'Ropa muy suelta que no te permita ver tu cuerpo en el espejo',
+  sexystylePrepareAvoidItem3: 'Compararte con las demás: cada cuerpo tiene su propio flow',
+  sexystylePrepareTeacherTip: 'Consejo de Yasmina:',
+  sexystylePrepareTeacherQuote:
+    'Lo más importante es que vengas con ganas de disfrutar. No importa si nunca has bailado o si crees que no eres sexy. Aquí todas nos soltamos, nos reímos y salimos sintiéndonos más poderosas. ¡Te espero!',
+
+  // Local SEO - Sexy Style
+  sexystyleNearbyTitle: 'Clases de Sexy Style cerca de ti en Barcelona',
+  sexystyleNearbyDesc:
+    "Somos la academia de referencia para clases de Sexy Style en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnas de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en baile sensual con metodología profesional y ambiente seguro.",
+  sexystyleNearbySearchText:
+    'Si buscas "Clases de Sexy Style cerca de mi" en Barcelona, estamos a:',
+  sexystyleNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
 
   // ===== MODERN JAZZ PAGE =====
   // SEO & Meta
@@ -5758,6 +6207,11 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
     'El Modern Jazz es ideal para empezar: combina técnica accesible con diversión, y te prepara para cualquier otro estilo que quieras explorar.',
   modernjazzCompareConclusion:
     'El Modern Jazz es el puente perfecto entre la técnica clásica y la expresión contemporánea.',
+
+  // ===== Level Cards Section =====
+  modernjazzLevelBasicTitle: 'Fundamentos y expresión',
+  modernjazzLevelBasicDesc:
+    'Clase ideal para quien empieza o quiere asentar bases sólidas. Trabajamos postura, isolations, coordinación y primeras coreografías con música variada. Cero presión, mucho disfrute.',
 
   // ===== Local SEO Section =====
   modernjazzNearbyTitle: 'Modern Jazz cerca de ti en Barcelona',
@@ -6582,6 +7036,30 @@ Trabaja integralmente: **flexibilidad, fuerza funcional, coordinación, propioce
   contemporaneoCourseSchemaDesc:
     'Aprende Danza Contemporánea con Alejandro Miñoso. Técnica, expresión e improvisación. Clases para todos los niveles en Barcelona.',
 
+  // ===== GEO OPTIMIZATION: Citable Statistics for Contemporáneo =====
+  contemporaneoCitableDefinicion:
+    '**"La danza contemporánea es una disciplina ecléctica que integra técnicas de Martha Graham (contracción-release), José Limón (fall and recovery) y Merce Cunningham (azar compositivo). Se caracteriza por el trabajo de suelo (floorwork), la improvisación, la conexión emocional con la música y el desarrollo de un lenguaje corporal propio."**',
+  contemporaneoCitableOrigen:
+    '**"La danza contemporánea tiene sus raíces en la danza moderna americana de principios del siglo XX. Pioneras como Isadora Duncan (1877–1927) rechazaron las zapatillas de punta del ballet clásico buscando movimiento natural. Ruth St. Denis y Ted Shawn fundaron la Denishawn School en 1915, semillero de la siguiente generación de coreógrafos."**',
+  contemporaneoCitableTecnicas:
+    '**"Las técnicas fundamentales del contemporáneo incluyen: contracción-release (Graham), fall and recovery (Limón), release technique, contact improvisation (años 70), floorwork y trabajo de suelo. El contemporáneo lírico añade conexión emocional y narrativa musical al movimiento."**',
+  contemporaneoCitableMetodologia:
+    '**"En Farray\'s Center, las clases de Contemporáneo son impartidas por profesores especialistas formados en la Escuela Cubana de Danza (ENA y ENBC). La metodología combina técnica de conservatorio con expresividad latina, ofreciendo tres modalidades: Lírico Básico, Lírico Intermedio y Suelo & Flow."**',
+  contemporaneoCitableEvolucionGlobal:
+    '**"La danza contemporánea evolucionó desde la ruptura con el ballet clásico hasta convertirse en una disciplina global. Cuba creó desde 1959 su propia escuela (Ramiro Guerra), integrando moderna americana, clásica y folclórica afrocubana. ENA y ENBC forman bailarines versátiles con metodología de conservatorio reconocida mundialmente."**',
+  contemporaneoCitableExpresionCorporal:
+    '**"El contemporáneo desarrolla la expresión corporal a través de ejercicios guiados y libres, coreografía e improvisación. Se trabaja tanto a nivel individual como grupal, profundizando en técnica de danza mientras se entrena con movimientos musculares intensos y armónicos."**',
+  contemporaneoCitableImprovisacion:
+    '**"La improvisación es elemento central del contemporáneo. Permite explorar el movimiento sin estructura predefinida, desarrollando creatividad, conciencia corporal y la capacidad de responder orgánicamente a la música y al espacio. Es herramienta fundamental para encontrar el lenguaje corporal propio."**',
+  contemporaneoCitableFact1:
+    'Una clase de danza contemporánea quema entre 300 y 500 calorías por hora, combinando trabajo cardiovascular con flexibilidad, fuerza funcional y coordinación.',
+  contemporaneoCitableFact2:
+    'El floorwork (trabajo de suelo) distingue al contemporáneo de otras disciplinas: release technique, contact improvisation y transiciones orgánicas entre suelo y aire fortalecen core y movilidad articular.',
+  contemporaneoCitableFact3:
+    "Farray's International Dance Center ofrece Contemporáneo con profesores formados en la Escuela Cubana (ENA/ENBC), avalado por el CID-UNESCO, con más de 500 reseñas de 5 estrellas en Google.",
+  contemporaneoCitableLegado:
+    '**"El legado de la danza contemporánea pervive en la fusión de técnicas clásicas y modernas, en la libertad de explorar el movimiento sin límites estructurales, y en su capacidad de transformar tanto el cuerpo como la expresión artística del bailarín. Es disciplina fundamental para cualquier formación dancística integral."**',
+
   // ===== AFRO CONTEMPORÁNEO PAGE =====
   // SEO & Meta
   afrocontemporaneoPageTitle:
@@ -7244,7 +7722,7 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
 
   afrojazzFaqQ10: '¿El Afro Jazz es adecuado para formación profesional?',
   afrojazzFaqA10:
-    'Sí. El Afro Jazz es una disciplina de perfeccionamiento técnico que complementa la formación de bailarines profesionales, ampliando su versatilidad y vocabulario de movimiento.',
+    'Sí. Aunque el Afro Jazz está abierto a todos los niveles, los bailarines profesionales encontrarán en esta disciplina una forma de ampliar su versatilidad y vocabulario de movimiento. Es ideal tanto para iniciarse como para perfeccionarse.',
 
   afrojazzFaqQ11: '¿Los grupos son reducidos?',
   afrojazzFaqA11:
@@ -7276,7 +7754,7 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   afrojazzPrepareNeedTitle: 'Lo que necesitas',
   afrojazzPrepareNeedItem1:
     'Ropa cómoda que permita movimiento amplio (leggings, camiseta ajustada)',
-  afrojazzPrepareNeedItem2: 'Experiencia previa en danza (este es un curso de perfeccionamiento)',
+  afrojazzPrepareNeedItem2: 'Botella de agua para hidratarte durante la clase',
   afrojazzPrepareNeedItem3: 'Zapatillas de jazz, calcetines de danza o descalzo según indicación',
   afrojazzPrepareNeedItem4: 'Actitud abierta para explorar la fusión África-Jazz',
   afrojazzPrepareBefore: 'Antes de llegar',
@@ -7353,7 +7831,7 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
     'Estudios sobre entrenamiento de danza técnica demuestran que disciplinas de fusión como el Afro Jazz desarrollan coordinación motora compleja, mejoran la neuroplasticidad por el aprendizaje de vocabularios de movimiento diversos, y potencian la capacidad de improvisación y creatividad.',
 
   afrojazzCitableEvolucionGlobal:
-    'El Afro Jazz ha ganado reconocimiento internacional como disciplina de perfeccionamiento para bailarines que buscan versatilidad. Academias de todo el mundo lo incorporan como herramienta para ampliar el vocabulario de movimiento y desarrollar bailarines más completos.',
+    'El Afro Jazz ha ganado reconocimiento internacional como disciplina accesible para todos los niveles. Academias de todo el mundo lo incorporan como herramienta para ampliar el vocabulario de movimiento y desarrollar bailarines más completos, desde principiantes hasta profesionales.',
 
   afrojazzCitableMusica:
     'El Afro Jazz se trabaja sobre una variedad musical amplia: desde ritmos afrocubanos y africanos hasta Jazz, Neo-Soul y música contemporánea. Esta diversidad musical es parte del entrenamiento: el bailarín aprende a interpretar y adaptar su movimiento a diferentes texturas sonoras.',
@@ -7369,6 +7847,14 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
 
   afrojazzCitableFact3:
     "Farray's International Dance Center es la única academia del mundo avalada por el CID-UNESCO que ofrece formación de Afro Jazz con metodología profesional, impartida por Yunaisy Farray, maestra formada en la ENA Cuba.",
+
+  // ===== Local SEO Section =====
+  afrojazzNearbyTitle: 'Afro Jazz cerca de ti en Barcelona',
+  afrojazzNearbyDesc:
+    'Somos la única academia del mundo que enseña Afro Jazz con metodología profesional y aval CID-UNESCO. En el corazón de Barcelona, entre Plaza España y Sants.',
+  afrojazzNearbySearchText: 'Si buscas "clases de Afro Jazz cerca de mí" en Barcelona, estamos a:',
+  afrojazzNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando',
 
   // ===== STRETCHING BARCELONA PAGE =====
   // Meta & SEO
@@ -7971,25 +8457,54 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   hiphopCulturalHistoryTitle: 'Historia y Cultura del Hip Hop',
   hiphopCulturalShort:
     'El Hip Hop nació en el Bronx de Nueva York a principios de los años 70, como expresión cultural de comunidades afroamericanas y latinas.',
-  hiphopCulturalFull: `### Los Orígenes: El Bronx de los 70
+  hiphopCulturalFull: `### Los Orígenes: El South Bronx de Nueva York (1973-1974)
 
-El Hip Hop emergió en el South Bronx de Nueva York entre 1973 y 1974, cuando DJ Kool Herc empezó a aislar los "breaks" (secciones instrumentales) de los discos de funk y soul, creando un nuevo sonido que invitaba al baile. **"El Hip Hop nació como respuesta creativa a la marginación, transformando las calles en escenarios de expresión artística."**
+**El Hip Hop emergió en el South Bronx de Nueva York entre 1973 y 1974, cuando DJ Kool Herc empezó a aislar los "breaks" (secciones instrumentales) de los discos de funk y soul**, creando un nuevo sonido que invitaba al baile. Las comunidades afroamericanas y latinas del Bronx transformaron las calles en escenarios de expresión artística.
 
-### Los Elementos Fundacionales
+**"El Hip Hop dance nació entre 1973-1974 en el South Bronx de Nueva York, impulsado por DJ Kool Herc y desarrollado por comunidades afroamericanas y latinas como forma de expresión artística."**
 
-La cultura Hip Hop se construye sobre cuatro pilares fundamentales: DJing (turntablism), MCing (rap), Graffiti y B-boying/B-girling (breaking). **"Los tres elementos de la danza hip hop — freestyle, batallas y ciphers — definen la esencia competitiva y comunitaria de esta cultura."**
+### Los Cuatro Pilares Fundacionales
 
-Grupos pioneros como **The Rock Steady Crew** (breaking), **The Lockers** (locking) y **Electric Boogaloos** (popping) establecieron las bases técnicas y estilísticas que siguen vigentes hoy.
+La cultura Hip Hop se construye sobre **cuatro pilares fundamentales**:
+- **DJing** (turntablism): manipulación de discos y creación de breaks
+- **MCing** (rap): expresión lírica y rimas
+- **Graffiti**: arte visual urbano
+- **B-boying/B-girling** (breaking): danza
 
-### De la Calle al Mundo
+**"Los elementos de la danza hip hop — freestyle, batallas y ciphers — definen la esencia competitiva y comunitaria de esta cultura."**
 
-Con más de 30 años de desarrollo global, el Hip Hop ha pasado de los block parties del Bronx a ser un fenómeno cultural planetario. **"La danza hip hop se practica tanto en la calle como en academias profesionales, manteniendo siempre su espíritu de libertad y autoexpresión."**
+### Grupos Pioneros
+
+Grupos que establecieron las bases técnicas y estilísticas vigentes hoy:
+- **The Rock Steady Crew** (1977): pioneros del breaking
+- **The Lockers** (1973): creadores del locking con Don Campbell
+- **Electric Boogaloos** (1977): innovadores del popping con Boogaloo Sam
+
+### Técnicas Principales del Hip Hop
+
+**Las técnicas principales incluyen: grooves y bounces (base rítmica), social dances, toprock, footwork, freezes, power moves, y elementos de locking, popping y breaking.** Cada estilo tiene su vocabulario y su historia específica.
+
+### El Breaking: Disciplina Olímpica
+
+**El breaking fue incluido como deporte olímpico en los Juegos de París 2024**, reconociendo oficialmente al Hip Hop como disciplina deportiva de élite. Este hito histórico valida décadas de desarrollo técnico y artístico.
+
+### De la Calle al Mundo: Expansión Global
+
+Con más de **50 años de desarrollo global**, el Hip Hop ha pasado de los block parties del Bronx a ser un fenómeno cultural planetario. **El Hip Hop es practicado por más de 30 millones de personas en todo el mundo.**
+
+**"La danza hip hop se practica tanto en la calle como en academias profesionales, manteniendo siempre su espíritu de libertad y autoexpresión."**
+
+### Beneficios para la Salud
+
+**Una clase de Hip Hop de 60 minutos puede quemar entre 400-600 calorías** mientras mejora la coordinación, el ritmo y la expresión corporal. **Estudios demuestran que bailar hip hop mejora la memoria, la concentración y reduce los niveles de estrés.**
 
 ### El Hip Hop en Farray's Center
 
-En nuestra academia, el Hip Hop forma parte del plan curricular de formación profesional en danza avalado por el **CID-UNESCO (Consejo Internacional de la Danza de la UNESCO en París)**. **"El Hip Hop no es solo un estilo de baile, es una filosofía de vida que promueve la creatividad, el respeto y la superación personal."**
+En nuestra academia, el Hip Hop forma parte del plan curricular de formación profesional en danza avalado por el **CID-UNESCO (Consejo Internacional de la Danza de la UNESCO en París)**. La metodología respeta las raíces de la cultura: técnica base, musicalidad, historia del movimiento y desarrollo del estilo personal a través del freestyle.
 
-Nuestro profesor Marcos Martínez, juez de competiciones internacionales y referente del Hip Hop en España, transmite no solo técnica sino los valores y la historia que hacen de este estilo algo único.`,
+**"El Hip Hop no es solo un estilo de baile, es una filosofía de vida que promueve la creatividad, el respeto y la superación personal."**
+
+Nuestro profesor **Marcos Martínez**, juez de competiciones internacionales y referente del Hip Hop en España, transmite no solo técnica sino los valores y la historia que hacen de este estilo algo único.`,
 
   // GEO Optimization Keys
   hiphopCitableDefinicion:
@@ -8008,4 +8523,601 @@ Nuestro profesor Marcos Martínez, juez de competiciones internacionales y refer
     'Estudios demuestran que bailar hip hop mejora la memoria, la concentración y reduce los niveles de estrés hasta un 70% tras 8 semanas de práctica regular.',
   hiphopCitableFact3:
     "Farray's International Dance Center es una de las pocas academias en Barcelona con profesores certificados como jueces de competiciones internacionales de Hip Hop.",
+
+  // ========== SALSA CUBANA PAGE ==========
+  // Navigation
+  navSalsaCubana: 'Salsa Cubana',
+
+  // Page SEO
+  salsaCubanaPageTitle: 'Clases de Salsa Cubana en Barcelona',
+  salsaCubanaMetaDescription:
+    'Aprende a bailar salsa cubana en Barcelona con el Método Farray®. Clases para todos los niveles con Yunaisy Farray, maestra CID-UNESCO. Guía, seguimiento, musicalidad y conexión de pareja.',
+
+  // Breadcrumb
+  salsaCubanaBreadcrumbHome: 'Inicio',
+  salsaCubanaBreadcrumbClasses: 'Clases de Baile',
+  salsaCubanaBreadcrumbLatin: 'Salsa y Bachata',
+  salsaCubanaBreadcrumbCurrent: 'Salsa Cubana',
+
+  // Hero Section
+  salsaCubanaHeroTitle: 'Clases de Salsa Cubana en Barcelona',
+  salsaCubanaHeroSubtitle: 'Aprende a bailar de verdad, no solo a repetir figuras',
+  salsaCubanaHeroDesc:
+    'Con el Método Farray® aprenderás salsa cubana con estilo y elegancia. Un sistema didáctico único creado por Yunaisy Farray, maestra miembro del CID-UNESCO, para que aprendas de forma rápida, eficiente y con fundamentos técnicos sólidos.',
+  salsaCubanaHeroLocation: 'Academia miembro del CID-UNESCO — Entre Plaza España y Sants',
+  salsaCubanaCTAGroup: 'Opciones de inscripción',
+  salsaCubanaCTA1: 'Hazte Socio Ahora',
+  salsaCubanaCTA1Subtext: 'Quedan solo 8 plazas por clase',
+  salsaCubanaCTA2: 'Reserva tu Clase de Prueba GRATIS',
+  salsaCubanaCTA2Subtext: 'Válido por tiempo limitado',
+
+  // Problem Section - El problema de cómo se enseña salsa
+  salsaCubanaProblemTitle: 'El problema de cómo se enseña salsa cubana',
+  salsaCubanaProblemSubtitle: '(y por qué la mayoría no progresa)',
+  salsaCubanaProblemP1:
+    'Vas a una academia de salsa cubana. Te enseñan figuras: enchufla, dile que no, setenta, vacílala. Las memorizas. Las repites. Aprendes 20, 30, 50 figuras.',
+  salsaCubanaProblemP2: 'Pero cuando llegas a una fiesta real, algo falla.',
+  salsaCubanaProblemP3:
+    'No sabes cuándo meter cada figura. Tu pareja no te entiende. Te sientes rígido. Cuentas "1, 2, 3... 5, 6, 7" en tu cabeza en vez de sentir la música. Y si bailas con alguien que no conoce las mismas figuras que tú, te bloqueas.',
+  salsaCubanaProblemConclusion: 'El problema: Te enseñaron a repetir secuencias, no a bailar.',
+  salsaCubanaProblemExplanation:
+    'La mayoría de academias enseñan "casino social": figuras sueltas que memorizas y ejecutas mecánicamente. Funciona en clase, con tu compañero habitual, con la canción que ya conoces. Pero no te convierte en bailarín.',
+  salsaCubanaProblemSolution: 'Este es el problema que el Método Farray® resuelve.',
+
+  // Comparison Table - Casino Social vs Método Farray
+  salsaCubanaCompareTitle: 'Casino Social vs. Método Farray®',
+  salsaCubanaCompareSubtitle: 'La diferencia fundamental en cómo enseñamos',
+  salsaCubanaCompareCol1: 'Lo que hacen otras academias (Casino Social)',
+  salsaCubanaCompareCol2: 'Lo que hacemos con el Método Farray®',
+  salsaCubanaCompareRow1Col1: 'Te enseñan figuras desde el día 1',
+  salsaCubanaCompareRow1Col2: 'Te enseñamos fundamentos técnicos primero',
+  salsaCubanaCompareRow2Col1: 'Memorizas secuencias',
+  salsaCubanaCompareRow2Col2: 'Desarrollas comprensión del movimiento',
+  salsaCubanaCompareRow3Col1: '"El hombre guía, la mujer sigue"',
+  salsaCubanaCompareRow3Col2: 'Ambos roles son técnicos y activos',
+  salsaCubanaCompareRow4Col1: 'Cuentas "1, 2, 3... 5, 6, 7"',
+  salsaCubanaCompareRow4Col2: 'Desarrollas musicalidad real',
+  salsaCubanaCompareRow5Col1: 'Funciona con tu pareja de clase',
+  salsaCubanaCompareRow5Col2: 'Funciona con cualquier persona',
+  salsaCubanaCompareRow6Col1: 'Aprendes 50 figuras, usas 5',
+  salsaCubanaCompareRow6Col2: 'Aprendes principios que generan infinitas figuras',
+  salsaCubanaCompareRow7Col1: 'Baile rígido y mecánico',
+  salsaCubanaCompareRow7Col2: 'Baile fluido, elegante y natural',
+  salsaCubanaCompareRow8Col1: 'Estancamiento después de meses',
+  salsaCubanaCompareRow8Col2: 'Progresión continua con bases sólidas',
+
+  // Technical Program Section
+  salsaCubanaTechProgramTitle: 'El programa técnico del Método Farray®',
+  salsaCubanaTechProgramSubtitle: 'Un enfoque estructurado para hombres y mujeres',
+
+  // For Men
+  salsaCubanaTechMenTitle: 'Para el hombre: El arte de la guía',
+  salsaCubanaTechMenDesc:
+    'El hombre perfecciona su guía, imprescindible para un buen desarrollo de las figuras y movimientos. El baile es un lenguaje. El hombre debe aprender a expresarse correctamente para que su pareja pueda interpretar sus impulsos.',
+  salsaCubanaTechMenItem1: 'Técnica de impulsos: claros, precisos, nunca bruscos',
+  salsaCubanaTechMenItem2: 'Agarre correcto: seguro pero cómodo, sin riesgo de hacer daño',
+  salsaCubanaTechMenItem3: 'Comunicación corporal: tu cuerpo habla antes que tus manos',
+  salsaCubanaTechMenItem4: 'Timing musical: guiar EN la música, no sobre ella',
+  salsaCubanaTechMenResult: 'El resultado: tu pareja te entiende sin esfuerzo. Cualquier pareja.',
+
+  // For Women
+  salsaCubanaTechWomenTitle: 'Para la mujer: Dominio corporal, no "seguir" pasivamente',
+  salsaCubanaTechWomenDesc:
+    'En el estilo cubano tradicional, la mujer "simplemente sigue". En el Método Farray®, esto cambia radicalmente. La mujer adquiere un mayor dominio de su cuerpo y conciencia de su rol en la pareja. No sigue pasivamente — reacciona de manera técnica y elegante.',
+  salsaCubanaTechWomenItem1: 'Técnica de piernas: base sólida, giros controlados',
+  salsaCubanaTechWomenItem2: 'Técnica de brazos: elegancia y precisión en cada movimiento',
+  salsaCubanaTechWomenItem3: 'Uso del peso corporal: fluidez y equilibrio natural',
+  salsaCubanaTechWomenItem4: 'Reacción activa: interpretas la guía, no la sufres',
+  salsaCubanaTechWomenResult:
+    'El resultado: confianza en ti misma que se refleja automáticamente en tu baile.',
+
+  // Musicality
+  salsaCubanaTechMusicTitle: 'Musicalidad: El secreto que nadie te enseña',
+  salsaCubanaTechMusicDesc:
+    'La mayoría de academias te enseñan a contar tiempos. Nosotros te enseñamos a escuchar la música.',
+  salsaCubanaTechMusicItem1: 'Identificar el ritmo y los acentos',
+  salsaCubanaTechMusicItem2: 'Sentir cuándo "pide" un cambio la canción',
+  salsaCubanaTechMusicItem3: 'Improvisar dentro de la estructura musical',
+  salsaCubanaTechMusicItem4: 'Bailar CON la música, no SOBRE ella',
+  salsaCubanaTechMusicResult: 'Cuando desarrollas musicalidad real, las figuras fluyen solas.',
+
+  // Benefits Section
+  salsaCubanaBenefitsTitle: 'Entrena tu cuerpo y tu oído',
+  salsaCubanaBenefitsSubtitle: 'Aprenderás de manera fácil y divertida con nuestro método',
+  salsaCubanaBenefit1: 'Mejora tu capacidad de improvisación e interpretación musical',
+  salsaCubanaBenefit2: 'Desarrolla tu ritmo natural (sí, todos lo tienen)',
+  salsaCubanaBenefit3: 'Ejercita tu coordinación motora y memoria',
+  salsaCubanaBenefit4: 'Mantente en forma todo el año (~400 calorías por clase)',
+  salsaCubanaBenefit5: 'Gana confianza corporal que se traslada a tu vida diaria',
+
+  // What Is Section - Bailar no es solo hacer figuras
+  salsaCubanaWhatIsTitle: 'Bailar Salsa Cubana no es solo hacer figuras',
+  salsaCubanaWhatIsP1:
+    'Bailar salsa cubana es un lenguaje no verbal entre dos personas. Es sinónimo de ritmo, musicalidad, coordinación y conexión con la pareja.',
+  salsaCubanaWhatIsP2:
+    'En el Método Farray® se da prioridad a que aprendas a guiar o interpretar los impulsos de tu pareja correctamente y a bailar en los tiempos correctos de la música de manera coordinada y elegante.',
+  salsaCubanaWhatIsP3:
+    'A la hora de empezar a introducir "figuras" de salsa cubana, tu baile se verá más fluido, estético y eficiente.',
+  salsaCubanaWhatIsP4:
+    'Con la metodología exclusiva de nuestra escuela de baile aprenderás paso a paso todos los secretos para poder bailar socialmente en las pistas de baile y disfrutar al máximo sin importar tu nivel de danza actual.',
+  salsaCubanaWhatIsImageAlt: 'Pareja bailando salsa cubana en Barcelona',
+
+  // Método Farray Section
+  salsaCubanaMetodoTitle: 'El Método Farray®',
+  salsaCubanaMetodoSubtitle:
+    'Un método exclusivo y revolucionario que promete transformar la forma de bailar salsa cubana a nivel global',
+  salsaCubanaMetodoPillar1Title: 'Guía Perfecta',
+  salsaCubanaMetodoPillar1Desc:
+    'El hombre perfecciona su guía pues es imprescindible para un buen desarrollo de las figuras y movimientos. Aprende a expresarte correctamente para que tu pareja pueda interpretar tus impulsos.',
+  salsaCubanaMetodoPillar2Title: 'Seguimiento Técnico',
+  salsaCubanaMetodoPillar2Desc:
+    'La mujer adquiere un mayor dominio de su cuerpo y conciencia de su rol en la pareja, reaccionando de manera técnica y elegante a todos los impulsos ejecutados.',
+  salsaCubanaMetodoPillar3Title: 'Musicalidad',
+  salsaCubanaMetodoPillar3Desc:
+    'Entrena tu oído y mejora tu capacidad de improvisación e interpretación musical. Aprende a identificar los tiempos y a bailar con la música, no solo encima de ella.',
+  salsaCubanaMetodoPillar4Title: 'Conexión de Pareja',
+  salsaCubanaMetodoPillar4Desc:
+    'Domina el lenguaje no verbal del baile. Aprende a comunicarte con tu pareja a través del contacto, la tensión correcta y los impulsos precisos.',
+  salsaCubanaMetodoPillar5Title: 'Técnica Corporal',
+  salsaCubanaMetodoPillar5Desc:
+    'Aprende cómo utilizar piernas, brazos y peso del cuerpo para dar mayor efectividad y estética a todos tus movimientos.',
+  salsaCubanaMetodoPillar6Title: 'Cultura Cubana',
+  salsaCubanaMetodoPillar6Desc:
+    'Adéntrate en el mundo de la salsa cubana: su historia, sus verdaderos orígenes, y darás un sentido y un sentimiento a todos los pasos que ejecutes.',
+  salsaCubanaMetodoQuote:
+    'Este método que puse en práctica en Finlandia, Italia y Alemania sigue demostrando sus excelentes resultados permitiendo a muchos estudiantes alcanzar la excelencia en sus performances.',
+
+  // Schedule Section
+  salsaCubanaScheduleTitle: 'Horarios de Clases',
+  salsaCubanaScheduleSubtitle: 'Clases todos los días de la semana para todos los niveles',
+
+  // Level translations
+  level0: 'Nivel 0',
+  basicLevel1: 'Básico I',
+  basicLevel2_3: 'Básico II-III',
+
+  // Levels Section
+  salsaCubanaLevelsTitle: 'Sistema de Niveles Progresivo',
+  salsaCubanaLevelsSubtitle: 'Un camino estructurado para tu evolución como bailarín',
+  salsaCubanaLevel0Title: 'Nivel 0 - Iniciación',
+  salsaCubanaLevel0Desc:
+    'Para los que nunca han bailado. Aprende los pasos básicos, el ritmo fundamental y la postura correcta desde cero.',
+  salsaCubanaLevelBasic1Title: 'Básico I',
+  salsaCubanaLevelBasic1Desc:
+    'Consolida los fundamentos, mejora tu coordinación y empieza a trabajar la conexión con tu pareja.',
+  salsaCubanaLevelBasic2Title: 'Básico II',
+  salsaCubanaLevelBasic2Desc:
+    'Introduce las primeras figuras, trabaja la fluidez y desarrolla tu musicalidad básica.',
+  salsaCubanaLevelBasic3Title: 'Básico III',
+  salsaCubanaLevelBasic3Desc:
+    'Perfecciona la técnica de guía/seguimiento, añade complejidad a las figuras y mejora tu estilo personal.',
+  salsaCubanaLevelIntermediateTitle: 'Intermedio',
+  salsaCubanaLevelIntermediateDesc:
+    'Figuras complejas, variaciones musicales, improvisación y desarrollo del estilo propio.',
+  salsaCubanaLevelAdvancedTitle: 'Avanzado',
+  salsaCubanaLevelAdvancedDesc:
+    'Dominio técnico completo, coreografías complejas, musicalidad avanzada y preparación para performances.',
+
+  // Teachers Section
+  salsaCubanaTeachersTitle: 'Nuestros Maestros de Salsa Cubana',
+  salsaCubanaTeachersSubtitle: 'Equipo profesional certificado con el Método Farray®',
+  salsaCubanaTeacher1Specialty: 'Creadora del Método Farray® • Maestra CID-UNESCO',
+  salsaCubanaTeacher1Bio:
+    'Yunaisy Farray, icono mundial de la danza cubana, ha desarrollado el Método Farray® a lo largo de más de 25 años de experiencia internacional. Formada en Cuba, ha impartido clases y talleres en Finlandia, Italia, Alemania y España, perfeccionando un sistema didáctico que permite a cualquier persona aprender a bailar salsa cubana de forma rápida, eficiente y con estilo auténtico.',
+  salsaCubanaTeacher2Name: 'Iroel Bastarreche',
+  salsaCubanaTeacher2Specialty: 'Profesor de Salsa Cubana • Método Farray®',
+  salsaCubanaTeacher2Bio:
+    'Iroel Bastarreche es un bailarín y profesor cubano con una sólida formación en casino y son cubano. Certificado en el Método Farray®, aporta autenticidad y pasión caribeña a cada clase, transmitiendo la esencia del baile social cubano con técnica depurada y carisma.',
+  salsaCubanaTeacher3Name: 'Yasmina Fernández',
+  salsaCubanaTeacher3Specialty: 'Profesora de Salsa Cubana • Método Farray®',
+  salsaCubanaTeacher3Bio:
+    'Yasmina Fernández combina años de experiencia como bailarina y profesora con una metodología clara y accesible. Certificada en el Método Farray®, destaca por su capacidad de conectar con los alumnos y hacer que cada paso fluya de forma natural.',
+  salsaCubanaTeachersClosing:
+    'Aprende de un equipo de profesionales que comparten la misma metodología y pasión por la auténtica salsa cubana.',
+
+  // Prepare Section
+  salsaCubanaPrepareTitle: 'Prepara tu Primera Clase',
+  salsaCubanaPrepareSubtitle: 'Todo lo que necesitas saber para tu primera experiencia',
+  salsaCubanaPrepareWhatToBring: 'Qué traer',
+  salsaCubanaPrepareItem1: 'Ropa cómoda y ligera',
+  salsaCubanaPrepareItem2: 'Bambas o zapatos cómodos',
+  salsaCubanaPrepareItem3: 'Para chicas: zapatos de tacón con sujeción en el tobillo (opcional)',
+  salsaCubanaPrepareItem4: 'Cambio de ropa y toalla si quieres ducharte',
+  salsaCubanaPrepareBefore: 'Antes de llegar',
+  salsaCubanaPrepareBeforeItem1: 'Llega 10 minutos antes para registrarte',
+  salsaCubanaPrepareBeforeItem2: 'Ven con la mente abierta a aprender',
+  salsaCubanaPrepareBeforeItem3: 'No necesitas traer pareja',
+  salsaCubanaPrepareNote: 'Nota importante',
+  salsaCubanaPrepareNoteDesc:
+    'No te preocupes si nunca has bailado. El Nivel 0 está diseñado específicamente para principiantes absolutos. Rotamos las parejas durante la clase para que todos practiquen.',
+  salsaCubanaPrepareTeacherTip: 'Consejo de Yunaisy:',
+  salsaCubanaPrepareTeacherQuote:
+    'La salsa cubana es diversión pura. Ven con ganas de pasártelo bien y de contagiarte del espíritu cubano. El resto viene solo.',
+
+  // Identification Section
+  salsaCubanaIdentifyTitle: '¿Para quién está pensado el Método Farray®?',
+  salsaCubanaIdentifyListLabel: 'Perfiles ideales para el curso',
+  salsaCubanaIdentify1:
+    'Principiantes absolutos que quieren empezar con bases sólidas (no con vicios)',
+  salsaCubanaIdentify2: 'Bailarines estancados que sienten que hace tiempo no avanzan',
+  salsaCubanaIdentify3: 'Personas frustradas con el método tradicional de "memorizar figuras"',
+  salsaCubanaIdentify4: 'Quienes buscan calidad sobre cantidad de figuras',
+  salsaCubanaIdentify5: 'Curiosos exigentes que quieren entender el baile, no solo hacerlo',
+  salsaCubanaIdentify6: 'Los que buscan bailar socialmente con confianza en cualquier pista',
+  salsaCubanaIdentifyClosing:
+    'Aquí incorporarás a tu baile nuevos conceptos y dinámicas que te harán pasar a otro nivel.',
+
+  // Transformation Section
+  salsaCubanaTransformTitle: 'Qué conseguirás con el Método Farray®',
+  salsaCubanaTransform1Title: 'Bailar a Tiempo',
+  salsaCubanaTransform1Desc:
+    'Dominarás el ritmo y la musicalidad. Nunca más te perderás en la música ni bailarás fuera de tiempo.',
+  salsaCubanaTransform2Title: 'Guiar/Seguir con Elegancia',
+  salsaCubanaTransform2Desc:
+    'Aprenderás a comunicarte con tu pareja a través del baile de forma técnica, segura y elegante.',
+  salsaCubanaTransform3Title: 'Conectar con la Música',
+  salsaCubanaTransform3Desc:
+    'Desarrollarás tu oído musical y tu capacidad de improvisación e interpretación.',
+  salsaCubanaTransform4Title: 'Disfrutar en la Pista',
+  salsaCubanaTransform4Desc:
+    'Bailarás con confianza en cualquier lugar, disfrutando al máximo de cada canción.',
+  salsaCubanaTransform5Title: 'Quemar Calorías',
+  salsaCubanaTransform5Desc:
+    'Mantente en forma todo el año quemando hasta 400 calorías por clase mientras te diviertes.',
+  salsaCubanaTransform6Title: 'Vivir la Cultura Cubana',
+  salsaCubanaTransform6Desc:
+    'Conectarás con la alegría, el sabor y el espíritu de Cuba a través de su baile más emblemático.',
+
+  // Why Choose Section
+  salsaCubanaWhyChooseTitle: "¿Por qué elegir Farray's?",
+  salsaCubanaWhyChooseSubtitle: 'La diferencia de aprender con el método original',
+  salsaCubanaWhyChoose1Title: 'Método Exclusivo',
+  salsaCubanaWhyChoose1Desc:
+    'El Método Farray® es único en el mundo. Desarrollado por Yunaisy Farray tras décadas de experiencia internacional.',
+  salsaCubanaWhyChoose2Title: 'Acreditación CID-UNESCO',
+  salsaCubanaWhyChoose2Desc:
+    'Nuestra academia está acreditada por el Consejo Internacional de la Danza de la UNESCO.',
+  salsaCubanaWhyChoose3Title: 'Sistema Progresivo',
+  salsaCubanaWhyChoose3Desc:
+    'Niveles estructurados desde principiante absoluto hasta avanzado, con objetivos claros en cada etapa.',
+  salsaCubanaWhyChoose4Title: 'Autenticidad Cubana',
+  salsaCubanaWhyChoose4Desc:
+    'Aprende la salsa cubana real, con su sabor, su historia y su espíritu auténtico.',
+  salsaCubanaWhyChoose5Title: 'Resultados Probados',
+  salsaCubanaWhyChoose5Desc:
+    'Miles de alumnos han transformado su baile con nuestro método en Finlandia, Italia, Alemania y España.',
+  salsaCubanaWhyChoose6Title: 'Ambiente Único',
+  salsaCubanaWhyChoose6Desc:
+    'Una comunidad vibrante donde la diversión y el aprendizaje van de la mano.',
+  salsaCubanaLogosTitle: 'Nos has podido ver en',
+  salsaCubanaLogosIntlText: 'Y en festivales internacionales de todo el mundo',
+
+  // Video Section
+  salsaCubanaVideoTitle: 'Mira Cómo Bailamos',
+  salsaCubanaVideoDesc: 'Descubre el ambiente de nuestras clases de salsa cubana en Barcelona',
+
+  // Cultural History Section
+  salsaCubanaCulturalHistoryTitle: 'Historia de la Salsa Cubana',
+  salsaCubanaCulturalShort:
+    'La salsa cubana, también conocida como "Casino", nació en Cuba en los años 50 como fusión del Son Cubano, el Mambo y otros ritmos afrocubanos. A diferencia de la salsa en línea, el Casino se baila en rueda con movimientos circulares y cambios de pareja.',
+  salsaCubanaCulturalFull: `### Orígenes: El Casino y los Clubes Sociales de La Habana (1950s)
+
+**La salsa cubana, conocida originalmente como "Casino", surgió en los clubes sociales de La Habana durante la década de 1950.** El nombre proviene del Casino Deportivo de La Habana, donde los jóvenes de la época desarrollaron este estilo único bailando en "rueda" (círculo) e intercambiando parejas al ritmo del son cubano.
+
+**"El Casino nació en el Casino Deportivo de La Habana en los años 50, fusionando Son Cubano, Mambo, Cha-cha-chá y ritmos afrocubanos en un estilo de movimientos circulares y giros hacia adentro."**
+
+### Características Distintivas del Casino
+
+A diferencia de la salsa en línea (estilos LA o NY), el Casino se caracteriza por:
+- **Movimientos circulares** en lugar de desplazamiento lineal
+- **Giros hacia adentro** (al contrario de la salsa en línea)
+- **Conexión cercana** con la pareja
+- **Estilo más relajado y juguetón**
+- **Improvisación** basada en la comunicación entre bailarines
+
+**"El Casino se diferencia de la salsa en línea por sus movimientos circulares, giros hacia adentro, conexión cercana y carácter más relajado y juguetón."**
+
+### La Rueda de Casino: Patrimonio Cultural
+
+**La Rueda de Casino es una forma grupal de bailar salsa cubana declarada Patrimonio Cultural de Cuba.** Múltiples parejas forman un círculo y ejecutan figuras sincronizadas bajo la dirección de un "cantante" o líder, que va cantando los nombres de las figuras para que todos las ejecuten al unísono.
+
+Esta forma colectiva de bailar refuerza el sentido de comunidad y la musicalidad compartida, elementos fundamentales de la cultura cubana.
+
+### La Música: Instrumentación y Ritmos
+
+La música de salsa cubana incorpora una rica instrumentación:
+- **Percusión**: congas, timbales, bongos, güiro, maracas, clave
+- **Sección rítmica**: piano, bajo
+- **Metales**: trompetas, trombones
+
+Los ritmos más bailados incluyen **timba, son cubano, salsa dura y casino tradicional**. La clave cubana (patrón rítmico de 3-2 o 2-3) es el corazón del ritmo salsero.
+
+### Musicalidad y Técnica
+
+**La musicalidad en la salsa cubana implica bailar en el tiempo correcto (generalmente en el 1 o el 3), interpretar los breaks, cambios y acentos de la música, y expresar emocionalmente el contenido de cada canción.**
+
+La guía (lead) y el seguimiento (follow) son habilidades fundamentales que permiten una comunicación clara, segura y elegante entre los bailarines.
+
+### Expansión Global
+
+**Desde Cuba, la salsa se expandió globalmente a partir de los años 70, desarrollándose diferentes estilos regionales.** Nueva York desarrolló la salsa "on 2" (Mambo), Los Ángeles la salsa "on 1", mientras que el Casino se mantuvo como el estilo tradicional cubano, preservando sus movimientos circulares y su conexión con las raíces afrocubanas.
+
+### Beneficios para la Salud
+
+**Estudios de fitness indican que bailar salsa quema entre 300-400 calorías por hora, mejora la coordinación motora, fortalece la memoria y reduce los niveles de estrés y ansiedad.** El baile en pareja además desarrolla habilidades sociales y de comunicación no verbal.
+
+### El Método Farray®
+
+El Método Farray® rescata y enseña esta tradición auténtica con un enfoque pedagógico único: **prioriza la guía, el seguimiento, la musicalidad y la conexión de pareja antes de enseñar figuras complejas.** Este método ha formado a más de 15.000 alumnos en países como Finlandia, Italia, Alemania y España.
+
+**"El Método Farray® enseña técnicas específicas para que la comunicación entre bailarines sea clara, segura y elegante, respetando la esencia del Casino cubano."**`,
+
+  // Final CTA
+  salsaCubanaFinalCTATitle: 'No te lo pienses más',
+  salsaCubanaFinalCTASubtitle: 'Ven a probar una clase',
+  salsaCubanaFinalCTADesc:
+    'Tenemos clases de salsa cubana para todos los niveles (iniciación, intermedio y avanzado) y múltiples horarios para que te pueda ir bien.',
+  salsaCubanaFinalCTAFunny: 'No te arrepentirás. La salsa cubana es pura diversión.',
+
+  // FAQ Section
+  salsaCubanaFaqTitle: 'Preguntas Frecuentes sobre Salsa Cubana',
+  salsaCubanaFaqQ1: '¿Necesito experiencia previa para empezar?',
+  salsaCubanaFaqA1:
+    'No, nuestro Nivel 0 está diseñado específicamente para principiantes absolutos. Empezamos desde cero, enseñándote los pasos básicos, el ritmo y la postura correcta.',
+  salsaCubanaFaqQ2: '¿Necesito traer pareja de baile?',
+  salsaCubanaFaqA2:
+    'No es necesario. En clase rotamos las parejas constantemente para que todos practiquen con diferentes personas y niveles. Esto además te hace mejor bailarín/a.',
+  salsaCubanaFaqQ3: '¿Qué diferencia hay entre salsa cubana y salsa en línea?',
+  salsaCubanaFaqA3:
+    'La salsa cubana (Casino) se baila en círculo con movimientos más relajados y juguetones. La salsa en línea (LA/NY) se baila en una línea recta con un estilo más técnico y acrobático. Son estilos complementarios.',
+  salsaCubanaFaqQ4: '¿Qué es el Método Farray®?',
+  salsaCubanaFaqA4:
+    'Es un método didáctico único creado por Yunaisy Farray que prioriza la guía, el seguimiento, la musicalidad y la conexión de pareja antes de las figuras. Permite aprender de forma rápida y eficiente.',
+  salsaCubanaFaqQ5: '¿Cuánto tiempo tardaré en bailar en una fiesta?',
+  salsaCubanaFaqA5:
+    'Con el Método Farray®, en 2-3 meses de práctica regular ya podrás disfrutar bailando socialmente. En 6-12 meses notarás un avance significativo en tu técnica y estilo.',
+  salsaCubanaFaqQ6: '¿Qué ropa debo usar?',
+  salsaCubanaFaqA6:
+    'Ropa cómoda y ligera. Bambas o zapatos cómodos. Para las chicas, zapatos de tacón con sujeción en el tobillo son recomendables pero no obligatorios.',
+  salsaCubanaFaqQ7: '¿Puedo probar una clase antes de inscribirme?',
+  salsaCubanaFaqA7:
+    'Sí, ofrecemos una primera clase de prueba sin compromiso. Ven a conocernos, prueba el Método Farray® y decide si es para ti.',
+  salsaCubanaFaqQ8: '¿Qué es la Rueda de Casino?',
+  salsaCubanaFaqA8:
+    'Es una forma de bailar salsa cubana en grupo, en círculo, donde todas las parejas ejecutan figuras sincronizadas siguiendo las indicaciones de un "cantante". Es muy divertida y social.',
+  salsaCubanaFaqQ9: '¿Las clases son solo para adultos?',
+  salsaCubanaFaqA9:
+    'Nuestras clases regulares de salsa cubana son para adultos (mayores de 18 años). Sin embargo, organizamos talleres específicos para adolescentes y familias.',
+  salsaCubanaFaqQ10: '¿Cuántas personas hay por clase?',
+  salsaCubanaFaqA10:
+    'Nuestras clases tienen un máximo de 20-24 personas para garantizar atención personalizada y suficiente espacio para practicar.',
+  salsaCubanaFaqQ11: '¿Hay duchas en la academia?',
+  salsaCubanaFaqA11:
+    'Sí, disponemos de vestuarios con duchas para que puedas refrescarte después de clase si lo necesitas.',
+  salsaCubanaFaqQ12: '¿Cómo sé qué nivel me corresponde?',
+  salsaCubanaFaqA12:
+    'Si nunca has bailado, empieza por Nivel 0. Si ya tienes experiencia, ven a una clase de prueba y te orientaremos sobre el nivel más adecuado para ti.',
+  salsaCubanaFaqQ13: '¿Organizáis salidas a bailar?',
+  salsaCubanaFaqA13:
+    'Sí, organizamos regularmente salidas a salas de baile y eventos para que puedas practicar lo aprendido en un ambiente real y divertido.',
+  salsaCubanaFaqQ14: '¿La salsa cubana es buena para ponerse en forma?',
+  salsaCubanaFaqA14:
+    'Excelente. Bailar salsa quema entre 300-400 calorías por hora, mejora la coordinación, la memoria y reduce el estrés. Es ejercicio disfrazado de diversión.',
+  salsaCubanaFaqQ15: '¿Qué hace especial a Yunaisy Farray como maestra?',
+  salsaCubanaFaqA15:
+    'Yunaisy es miembro del CID-UNESCO, ha desarrollado el único Método Farray® en el mundo, y tiene más de 25 años de experiencia internacional formando bailarines en Cuba, Europa y España.',
+
+  // Local SEO Section
+  salsaCubanaNearbyTitle: 'Clases de Salsa Cubana cerca de ti en Barcelona',
+  salsaCubanaNearbyDesc:
+    'Nuestra academia está ubicada en el corazón de Barcelona, fácilmente accesible desde toda la ciudad.',
+  salsaCubanaNearbySearchText:
+    '¿Buscas clases de salsa cubana cerca de tu barrio? Estamos a pocos minutos de:',
+  salsaCubanaNearbyMetro: 'Metro: Hostafrancs (L1) o Tarragona (L3) a 5-10 minutos andando',
+
+  // Course Schema
+  salsaCubanaCourseSchemaName: 'Curso de Salsa Cubana - Método Farray®',
+  salsaCubanaCourseSchemaDesc:
+    'Aprende salsa cubana auténtica en Barcelona con el exclusivo Método Farray®. Clases para todos los niveles con certificación CID-UNESCO.',
+
+  // GEO Citable Content
+  salsaCubanaCitableDefinicion:
+    'La salsa cubana, conocida como "Casino" en Cuba, es un estilo de baile en pareja caracterizado por movimientos circulares, giros hacia adentro y una conexión cercana entre bailarines. Se diferencia de la salsa en línea por su carácter más relajado y juguetón.',
+  salsaCubanaCitableOrigen:
+    'El Casino surgió en La Habana, Cuba, durante la década de 1950 en clubes sociales como el Casino Deportivo. Es una fusión del Son Cubano, Mambo, Cha-cha-chá y ritmos afrocubanos.',
+  salsaCubanaCitableMetodoFarray:
+    'El Método Farray® es un sistema didáctico único desarrollado por Yunaisy Farray que prioriza la guía, el seguimiento, la musicalidad y la conexión de pareja antes de enseñar figuras complejas.',
+  salsaCubanaCitableGuiaSeguimiento:
+    'En el baile de pareja, la guía (lead) y el seguimiento (follow) son habilidades fundamentales. El Método Farray® enseña técnicas específicas para que la comunicación entre bailarines sea clara, segura y elegante.',
+  salsaCubanaCitableMusicalidad:
+    'La musicalidad en la salsa cubana implica bailar en el tiempo correcto (generalmente en el 1 o el 3), interpretar los breaks, cambios y acentos de la música, y expresar emocionalmente el contenido de cada canción.',
+  salsaCubanaStatistics:
+    'Según estudios de fitness, bailar salsa quema entre 300-400 calorías por hora, mejora la coordinación motora, fortalece la memoria y reduce los niveles de estrés y ansiedad.',
+  salsaCubanaCitableEvolucionGlobal:
+    'Desde Cuba, la salsa se expandió globalmente a partir de los años 70, desarrollándose diferentes estilos como la salsa en línea (LA, NY) y manteniéndose el Casino como el estilo tradicional cubano.',
+  salsaCubanaCitableRueda:
+    'La Rueda de Casino es una forma grupal de bailar salsa cubana donde múltiples parejas forman un círculo y ejecutan figuras sincronizadas bajo la dirección de un "cantante" o líder.',
+  salsaCubanaCitableFact1:
+    'Bailar salsa cubana quema entre 300-400 calorías por hora, siendo comparable a deportes como natación moderada o ciclismo recreativo.',
+  salsaCubanaCitableFact2:
+    'El Método Farray® ha formado a más de 15.000 alumnos en países como Finlandia, Italia, Alemania y España desde su creación.',
+  salsaCubanaCitableFact3:
+    "Farray's International Dance Center es una academia acreditada por el CID-UNESCO, el Consejo Internacional de la Danza de la UNESCO, garantizando estándares internacionales de enseñanza.",
+  salsaCubanaCitableLegado:
+    'La salsa cubana representa el legado cultural de Cuba, fusionando tradiciones africanas y españolas en un baile que expresa alegría, sensualidad y conexión humana.',
+
+  // ========== LATIN DANCE COMPARISON TABLE (Shared) ==========
+  latinDanceCompareTitle: 'Comparativa de Bailes Latinos',
+  latinDanceCompareSubtitle:
+    'Descubre las diferencias entre los estilos de baile latino que enseñamos',
+  latinDanceCompareCapacity: 'Característica',
+
+  // Column headers (style names)
+  latinDanceCompare_salsaCubana: 'Salsa Cubana',
+  latinDanceCompare_bachata: 'Bachata',
+  latinDanceCompare_timba: 'Timba',
+  latinDanceCompare_salsaLadyStyle: 'Salsa Lady Style',
+  latinDanceCompare_bachataLadyStyle: 'Bachata Lady Style',
+  latinDanceCompare_timbaPareja: 'Timba en Pareja',
+  latinDanceCompare_folkloreCubano: 'Folklore Cubano',
+  latinDanceCompare_sonCubano: 'Son Cubano',
+  latinDanceCompare_salsaLadyTimba: 'Lady Timba',
+
+  // Row labels (characteristics)
+  latinDanceCompareRow1: 'Musicalidad / Interpretación',
+  latinDanceCompareRow2: 'Conexión de pareja',
+  latinDanceCompareRow3: 'Trabajo de caderas',
+  latinDanceCompareRow4: 'Giros y vueltas',
+  latinDanceCompareRow5: 'Expresión corporal',
+  latinDanceCompareRow6: 'Técnica de pies (footwork)',
+  latinDanceCompareRow7: 'Estilo libre / Improvisación',
+  latinDanceCompareRow8: 'Folklore / Tradición cultural',
+  latinDanceCompareRow9: 'Sensualidad',
+  latinDanceCompareRow10: 'Exigencia física / Cardio',
+  latinDanceCompareRow11: 'Versatilidad para baile social',
+
+  // Meaning section - Salsa Cubana specific
+  latinDanceCompareMeaningTitle: '¿Qué significa esto para ti?',
+  latinDanceCompareMeaning1Title_salsaCubana: 'Si quieres bailar en fiestas y sociales:',
+  latinDanceCompareMeaning1Desc_salsaCubana:
+    'La Salsa Cubana es perfecta. Máxima versatilidad para bailar con cualquier persona en cualquier lugar.',
+  latinDanceCompareMeaning2Title_salsaCubana: 'Si buscas conexión auténtica con tu pareja:',
+  latinDanceCompareMeaning2Desc_salsaCubana:
+    'El Método Farray® se centra precisamente en la guía y seguimiento. Aprenderás a comunicarte sin palabras.',
+  latinDanceCompareMeaning3Title_salsaCubana: 'Si te interesa la cultura cubana:',
+  latinDanceCompareMeaning3Desc_salsaCubana:
+    'Salsa Cubana, Son y Folklore comparten raíces. Empezar por Salsa Cubana te abre las puertas a todo el universo cubano.',
+  latinDanceCompareMeaning4Title_salsaCubana: 'Si quieres un ejercicio completo:',
+  latinDanceCompareMeaning4Desc_salsaCubana:
+    'Combina Salsa Cubana con Timba para un entrenamiento cardiovascular intenso mientras te diviertes.',
+  latinDanceCompareConclusion_salsaCubana:
+    'La Salsa Cubana es la base perfecta para explorar todos los bailes latinos. Con el Método Farray® dominarás los fundamentos que te permitirán evolucionar hacia cualquier estilo.',
+
+  // Meaning section - Bachata specific
+  latinDanceCompareMeaning1Title_bachata: 'Si buscas un baile romántico y sensual:',
+  latinDanceCompareMeaning1Desc_bachata:
+    'La Bachata destaca en sensualidad y conexión cercana. Ideal para parejas que quieren bailar juntos.',
+  latinDanceCompareMeaning2Title_bachata: 'Si prefieres ritmos más lentos:',
+  latinDanceCompareMeaning2Desc_bachata:
+    'La Bachata tiene un tempo más relajado que la Salsa, permitiéndote disfrutar cada movimiento.',
+  latinDanceCompareMeaning3Title_bachata: 'Si quieres versatilidad social:',
+  latinDanceCompareMeaning3Desc_bachata:
+    'La Bachata se baila en todo el mundo. Dominarla te permite disfrutar en cualquier fiesta latina.',
+  latinDanceCompareMeaning4Title_bachata: 'Si te gusta el trabajo de caderas:',
+  latinDanceCompareMeaning4Desc_bachata:
+    'La Bachata desarrolla especialmente el movimiento de caderas y la expresión corporal.',
+  latinDanceCompareConclusion_bachata:
+    'La Bachata es el complemento perfecto de la Salsa. Juntas forman la pareja ideal para disfrutar de cualquier fiesta latina.',
+
+  // Meaning section - Timba specific
+  latinDanceCompareMeaning1Title_timba: 'Si buscas intensidad y energía:',
+  latinDanceCompareMeaning1Desc_timba:
+    'La Timba es el estilo más dinámico y exigente. Perfecta para quienes quieren un reto físico.',
+  latinDanceCompareMeaning2Title_timba: 'Si te apasiona la música cubana moderna:',
+  latinDanceCompareMeaning2Desc_timba:
+    'La Timba nació de la fusión del Son con jazz, funk y música afrocubana. Es pura energía cubana.',
+  latinDanceCompareMeaning3Title_timba: 'Si quieres destacar en la pista:',
+  latinDanceCompareMeaning3Desc_timba:
+    'La Timba permite mucha improvisación y estilo personal. Es el estilo que más llama la atención.',
+  latinDanceCompareMeaning4Title_timba: 'Si ya bailas salsa y quieres evolucionar:',
+  latinDanceCompareMeaning4Desc_timba:
+    'La Timba es el siguiente nivel natural después de dominar la Salsa Cubana básica.',
+  latinDanceCompareConclusion_timba:
+    'La Timba representa la evolución más moderna y energética de los bailes cubanos. Requiere una buena base de Salsa Cubana.',
+
+  // Meaning section - Salsa Lady Style specific
+  latinDanceCompareMeaning1Title_salsaLadyStyle: 'Si quieres desarrollar tu estilo propio:',
+  latinDanceCompareMeaning1Desc_salsaLadyStyle:
+    'Salsa Lady Style se centra en la expresión individual, los giros y el trabajo corporal femenino.',
+  latinDanceCompareMeaning2Title_salsaLadyStyle: 'Si bailas salsa y quieres brillar más:',
+  latinDanceCompareMeaning2Desc_salsaLadyStyle:
+    'Este estilo complementa tu baile en pareja, añadiendo elegancia y presencia en cada paso.',
+  latinDanceCompareMeaning3Title_salsaLadyStyle: 'Si prefieres bailar sola o en grupo:',
+  latinDanceCompareMeaning3Desc_salsaLadyStyle:
+    'Lady Style es perfecto para practicar sin pareja y desarrollar tu técnica individual.',
+  latinDanceCompareMeaning4Title_salsaLadyStyle: 'Si quieres mejorar tu técnica de giros:',
+  latinDanceCompareMeaning4Desc_salsaLadyStyle:
+    'Los giros y vueltas son el punto fuerte del Lady Style. Ganarás equilibrio y control.',
+  latinDanceCompareConclusion_salsaLadyStyle:
+    'Salsa Lady Style es el complemento ideal para cualquier bailarina de salsa que quiera desarrollar su presencia y estilo único.',
+
+  // Meaning section - Bachata Lady Style specific
+  latinDanceCompareMeaning1Title_bachataLadyStyle: 'Si quieres expresarte con sensualidad:',
+  latinDanceCompareMeaning1Desc_bachataLadyStyle:
+    'Bachata Lady Style potencia la sensualidad y la expresión corporal femenina al máximo.',
+  latinDanceCompareMeaning2Title_bachataLadyStyle: 'Si te gusta el movimiento ondulante:',
+  latinDanceCompareMeaning2Desc_bachataLadyStyle:
+    'Este estilo desarrolla especialmente las ondas, el body movement y el trabajo de caderas.',
+  latinDanceCompareMeaning3Title_bachataLadyStyle: 'Si quieres confianza en ti misma:',
+  latinDanceCompareMeaning3Desc_bachataLadyStyle:
+    'Bachata Lady Style te ayuda a conectar con tu feminidad y ganar seguridad al bailar.',
+  latinDanceCompareMeaning4Title_bachataLadyStyle: 'Si complementas tu bachata en pareja:',
+  latinDanceCompareMeaning4Desc_bachataLadyStyle:
+    'Añade estilo y elegancia a tu rol de seguidora con técnicas específicas para mujeres.',
+  latinDanceCompareConclusion_bachataLadyStyle:
+    'Bachata Lady Style es perfecto para mujeres que quieren potenciar su feminidad y expresión en la pista de baile.',
+
+  // Meaning section - Timba en Pareja specific
+  latinDanceCompareMeaning1Title_timbaPareja: 'Si quieres el máximo desafío en pareja:',
+  latinDanceCompareMeaning1Desc_timbaPareja:
+    'Timba en Pareja combina la intensidad de la Timba con la conexión del baile de pareja.',
+  latinDanceCompareMeaning2Title_timbaPareja: 'Si dominas la Salsa Cubana:',
+  latinDanceCompareMeaning2Desc_timbaPareja:
+    'Es el siguiente paso natural. Lleva tu baile en pareja al nivel más alto de complejidad.',
+  latinDanceCompareMeaning3Title_timbaPareja: 'Si te gusta improvisar con tu pareja:',
+  latinDanceCompareMeaning3Desc_timbaPareja:
+    'La Timba en Pareja permite mucha creatividad y comunicación no verbal avanzada.',
+  latinDanceCompareMeaning4Title_timbaPareja: 'Si buscas un entrenamiento intenso:',
+  latinDanceCompareMeaning4Desc_timbaPareja:
+    'Es uno de los estilos más exigentes físicamente. Cardio puro mientras bailas.',
+  latinDanceCompareConclusion_timbaPareja:
+    'Timba en Pareja es para bailarines avanzados que quieren llevar su conexión y técnica al máximo nivel.',
+
+  // Meaning section - Folklore Cubano specific
+  latinDanceCompareMeaning1Title_folkloreCubano: 'Si te fascina la cultura afrocubana:',
+  latinDanceCompareMeaning1Desc_folkloreCubano:
+    'El Folklore Cubano conecta con las raíces africanas de Cuba: los orishas, los toques de tambor, la tradición.',
+  latinDanceCompareMeaning2Title_folkloreCubano: 'Si buscas expresión espiritual:',
+  latinDanceCompareMeaning2Desc_folkloreCubano:
+    'Es un baile con profundo significado cultural y espiritual, más allá del entretenimiento.',
+  latinDanceCompareMeaning3Title_folkloreCubano: 'Si quieres entender los orígenes:',
+  latinDanceCompareMeaning3Desc_folkloreCubano:
+    'El Folklore es la raíz de todos los bailes cubanos. Entenderlo enriquece cualquier otro estilo.',
+  latinDanceCompareMeaning4Title_folkloreCubano: 'Si te gusta el trabajo corporal intenso:',
+  latinDanceCompareMeaning4Desc_folkloreCubano:
+    'El Folklore desarrolla la disociación corporal, el trabajo de caderas y la expresión emocional.',
+  latinDanceCompareConclusion_folkloreCubano:
+    'El Folklore Cubano es la conexión más profunda con la cultura y tradiciones de Cuba. Es el alma de todos los bailes cubanos.',
+
+  // Meaning section - Son Cubano specific
+  latinDanceCompareMeaning1Title_sonCubano: 'Si te gusta la elegancia clásica:',
+  latinDanceCompareMeaning1Desc_sonCubano:
+    'El Son Cubano es el padre de la Salsa. Elegante, musical y profundamente cubano.',
+  latinDanceCompareMeaning2Title_sonCubano: 'Si valoras la tradición:',
+  latinDanceCompareMeaning2Desc_sonCubano:
+    'El Son es patrimonio cultural de Cuba. Bailarlo es conectar con más de 100 años de historia.',
+  latinDanceCompareMeaning3Title_sonCubano: 'Si quieres mejorar tu musicalidad:',
+  latinDanceCompareMeaning3Desc_sonCubano:
+    'El Son desarrolla profundamente la interpretación musical y el sentido del ritmo.',
+  latinDanceCompareMeaning4Title_sonCubano: 'Si prefieres un ritmo más pausado:',
+  latinDanceCompareMeaning4Desc_sonCubano:
+    'El Son es más lento que la Salsa moderna, permitiendo saborear cada tiempo de la música.',
+  latinDanceCompareConclusion_sonCubano:
+    'El Son Cubano es la raíz elegante de la Salsa. Dominarlo te da una comprensión profunda de toda la música cubana.',
+
+  // Meaning section - Salsa Lady Timba specific
+  latinDanceCompareMeaning1Title_salsaLadyTimba: 'Si quieres el estilo femenino más potente:',
+  latinDanceCompareMeaning1Desc_salsaLadyTimba:
+    'Lady Timba combina la intensidad de la Timba con la expresión del Lady Style. Máxima energía y estilo.',
+  latinDanceCompareMeaning2Title_salsaLadyTimba: 'Si dominas Lady Style y quieres más:',
+  latinDanceCompareMeaning2Desc_salsaLadyTimba:
+    'Es la evolución natural del Salsa Lady Style hacia un nivel más dinámico y exigente.',
+  latinDanceCompareMeaning3Title_salsaLadyTimba: 'Si te gusta improvisar:',
+  latinDanceCompareMeaning3Desc_salsaLadyTimba:
+    'Lady Timba tiene la mayor libertad para la improvisación y el estilo personal.',
+  latinDanceCompareMeaning4Title_salsaLadyTimba: 'Si buscas un entrenamiento completo:',
+  latinDanceCompareMeaning4Desc_salsaLadyTimba:
+    'Combina técnica de pies, trabajo corporal y cardio en un estilo muy completo.',
+  latinDanceCompareConclusion_salsaLadyTimba:
+    'Salsa Lady Timba es el nivel más avanzado del estilo femenino en bailes cubanos. Para bailarinas que quieren destacar.',
 };
