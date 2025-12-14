@@ -64,11 +64,6 @@ interface TrainingActivity {
 
 const trainingActivities: TrainingActivity[] = [
   {
-    key: 'stretching',
-    imageUrl:
-      'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop&q=80&auto=format',
-  },
-  {
     key: 'body_conditioning',
     imageUrl:
       'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop&q=80&auto=format',

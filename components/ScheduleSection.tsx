@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import AnimateOnScroll from './AnimateOnScroll';
 
 interface ClassSchedule {
@@ -19,12 +19,12 @@ interface ScheduleSectionProps {
   t: (_key: string) => string;
 }
 
-const ScheduleSection: React.FC<ScheduleSectionProps> = ({
+const ScheduleSection: React.FC<ScheduleSectionProps> = memo(function ScheduleSection({
   titleKey,
   subtitleKey,
   schedules,
   t,
-}) => {
+}) {
   return (
     <section id="schedule" className="py-12 md:py-16 bg-primary-dark/10">
       <div className="container mx-auto px-6">
@@ -70,6 +70,6 @@ const ScheduleSection: React.FC<ScheduleSectionProps> = ({
       </div>
     </section>
   );
-};
+});
 
 export default ScheduleSection;

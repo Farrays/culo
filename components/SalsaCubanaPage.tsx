@@ -8,11 +8,15 @@ import {
   SALSA_CUBANA_NEARBY_AREAS,
   SALSA_CUBANA_VIDEO_ID,
   SALSA_CUBANA_LEVELS,
+  SALSA_CUBANA_PREPARE_CONFIG,
 } from '../constants/salsa-cubana';
+import { ANIMATION_DELAYS } from '../constants/shared';
 import AnimateOnScroll from './AnimateOnScroll';
 import CulturalHistorySection from './CulturalHistorySection';
 import ScheduleSection from './ScheduleSection';
 import FAQSection from './FAQSection';
+import LevelCardsSection from './shared/LevelCardsSection';
+import PrepareClassSection from './shared/PrepareClassSection';
 import AnimatedCounter from './AnimatedCounter';
 import YouTubeEmbed from './YouTubeEmbed';
 import { LocalBusinessSchema, CourseSchema, AggregateReviewsSchema } from './SchemaMarkup';
@@ -23,49 +27,10 @@ import {
   ClockIcon,
   FlameIcon,
   StarIcon,
-} from './shared/Icons';
+  CalendarDaysIcon,
+} from '../lib/icons';
 import LatinDanceComparisonTable from './shared/LatinDanceComparisonTable';
-import { CalendarDaysIcon } from '../lib/icons';
-
-// Simple inline icons
-const UsersIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
-  <svg
-    className={className}
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={1.5}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"
-    />
-  </svg>
-);
-
-const MapPinIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
-  <svg
-    className={className}
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={1.5}
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-    />
-  </svg>
-);
-
-// Animation delay constants for consistent UX
-const ANIMATION_DELAYS = {
-  STAGGER_SMALL: 100,
-  STAGGER_MEDIUM: 150,
-};
+import { UsersIcon, MapPinIcon } from './shared/CommonIcons';
 
 const SalsaCubanaPage: React.FC = () => {
   const { t, locale } = useI18n();
@@ -96,7 +61,7 @@ const SalsaCubanaPage: React.FC = () => {
     author: testimonial.name,
     reviewRating: { ratingValue: testimonial.rating.toString(), bestRating: '5' },
     reviewBody: testimonial.quote[locale],
-    datePublished: '2025-01-01',
+    datePublished: new Date().toISOString().split('T')[0],
   }));
 
   // VideoObject Schema
@@ -273,6 +238,10 @@ const SalsaCubanaPage: React.FC = () => {
               >
                 {t('salsaCubanaHeroTitle')}
               </h1>
+              {/* Línea emocional - Océano Azul */}
+              <p className="text-xl sm:text-2xl md:text-3xl text-neutral/90 mb-3">
+                {t('salsaCubanaHeroEmotional')}
+              </p>
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 holographic-text">
                 {t('salsaCubanaHeroSubtitle')}
               </p>
@@ -359,7 +328,7 @@ const SalsaCubanaPage: React.FC = () => {
                         <FlameIcon className="w-8 h-8 sm:w-10 sm:h-10 text-primary-accent" />
                       </div>
                       <div className="text-3xl sm:text-4xl md:text-5xl font-black mb-1 holographic-text">
-                        ~400/h
+                        ~400
                       </div>
                       <div className="text-xs sm:text-sm md:text-base text-neutral/90 font-semibold">
                         {t('caloriesBurned')}
@@ -406,8 +375,14 @@ const SalsaCubanaPage: React.FC = () => {
                       {t('salsaCubanaWhatIsP1')}
                     </p>
                     <p>{t('salsaCubanaWhatIsP2')}</p>
-                    <p className="italic font-medium text-neutral">{t('salsaCubanaWhatIsP3')}</p>
+                    <p>{t('salsaCubanaWhatIsP3')}</p>
                     <p>{t('salsaCubanaWhatIsP4')}</p>
+                    <p className="text-center text-xl sm:text-2xl font-bold mt-6 sm:mt-8 holographic-text">
+                      {t('salsaCubanaWhatIsQuestionTitle')}
+                    </p>
+                    <p className="text-center text-lg sm:text-xl font-semibold">
+                      {t('salsaCubanaWhatIsQuestionAnswer')}
+                    </p>
                   </div>
                   <div className="rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-primary-accent/20 to-primary-dark/20 p-8 flex items-center justify-center min-h-[300px]">
                     <div className="text-center">
@@ -436,6 +411,203 @@ const SalsaCubanaPage: React.FC = () => {
             </AnimateOnScroll>
           </div>
         </section>
+
+        {/* 2b. Schedule */}
+        <ScheduleSection
+          titleKey="salsaCubanaScheduleTitle"
+          subtitleKey="salsaCubanaScheduleSubtitle"
+          schedules={schedules}
+          t={t}
+        />
+
+        {/* 2c. Level Cards - Sistema progresivo */}
+        <LevelCardsSection titleKey="salsaCubanaLevelsTitle" levels={SALSA_CUBANA_LEVELS} />
+
+        {/* 2d. Teachers Section - Yunaisy Farray */}
+        <section
+          id="teachers"
+          aria-labelledby="teachers-title"
+          className="py-12 md:py-20 bg-primary-dark/10 relative overflow-hidden"
+        >
+          <div className="container mx-auto px-4 sm:px-6 relative z-10">
+            <AnimateOnScroll>
+              <div className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto">
+                <h2
+                  id="teachers-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text"
+                >
+                  {t('salsaCubanaTeachersTitle')}
+                </h2>
+                <p className="text-lg sm:text-xl text-neutral/70 mt-4">
+                  {t('salsaCubanaTeachersSubtitle')}
+                </p>
+              </div>
+            </AnimateOnScroll>
+
+            {/* Yunaisy Farray - Featured Teacher Card */}
+            <AnimateOnScroll className="max-w-4xl mx-auto mb-8">
+              <div className="group bg-black/70 backdrop-blur-md border border-primary-accent/50 hover:border-primary-accent rounded-2xl shadow-lg p-8 transition-all duration-500 hover:shadow-accent-glow">
+                <div className="flex flex-col md:flex-row items-center gap-8">
+                  <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 flex-shrink-0">
+                    <picture>
+                      <source
+                        type="image/webp"
+                        srcSet="/images/teachers/img/yunaisy-farray-directora_320.webp 320w, /images/teachers/img/yunaisy-farray-directora_640.webp 640w"
+                        sizes="192px"
+                      />
+                      <img
+                        src="/images/teachers/img/yunaisy-farray-directora_640.jpg"
+                        alt="Yunaisy Farray - Creadora del Método Farray, Maestra CID-UNESCO"
+                        width="192"
+                        height="192"
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                    </picture>
+                  </div>
+                  <div className="text-center md:text-left">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-neutral mb-2">
+                      Yunaisy Farray
+                    </h3>
+                    <p className="text-primary-accent font-semibold mb-4 text-lg">
+                      {t('salsaCubanaTeacher1Specialty')}
+                    </p>
+                    <p className="text-neutral/90 leading-relaxed mb-4">
+                      {t('salsaCubanaTeacher1Bio')}
+                    </p>
+                    <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                      <span className="px-3 py-1 bg-primary-accent/20 text-primary-accent text-sm rounded-full">
+                        CID-UNESCO
+                      </span>
+                      <span className="px-3 py-1 bg-primary-accent/20 text-primary-accent text-sm rounded-full">
+                        Método Farray
+                      </span>
+                      <span className="px-3 py-1 bg-primary-accent/20 text-primary-accent text-sm rounded-full">
+                        +25 años exp.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </AnimateOnScroll>
+
+            {/* Additional Teachers Grid */}
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {/* Iroel Bastarreche */}
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_MEDIUM}>
+                <div className="group h-full bg-black/50 backdrop-blur-md border border-primary-dark/40 hover:border-primary-accent/50 rounded-2xl p-6 transition-all duration-300">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary-dark/50 group-hover:border-primary-accent/50 transition-colors duration-300 mb-4 bg-primary-dark/30 flex items-center justify-center">
+                      {/* Placeholder icon for Iroel */}
+                      <svg
+                        className="w-12 h-12 text-primary-accent/50"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={1.5}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-neutral mb-1">
+                      {t('salsaCubanaTeacher2Name')}
+                    </h3>
+                    <p className="text-primary-accent font-semibold mb-3 text-sm">
+                      {t('salsaCubanaTeacher2Specialty')}
+                    </p>
+                    <p className="text-neutral/80 text-sm leading-relaxed">
+                      {t('salsaCubanaTeacher2Bio')}
+                    </p>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+
+              {/* Yasmina Fernández */}
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_MEDIUM * 2}>
+                <div className="group h-full bg-black/50 backdrop-blur-md border border-primary-dark/40 hover:border-primary-accent/50 rounded-2xl p-6 transition-all duration-300">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary-dark/50 group-hover:border-primary-accent/50 transition-colors duration-300 mb-4">
+                      <picture>
+                        <source
+                          type="image/webp"
+                          srcSet="/images/teachers/img/profesora-yasmina-fernandez_320.webp 320w, /images/teachers/img/profesora-yasmina-fernandez_640.webp 640w"
+                          sizes="96px"
+                        />
+                        <img
+                          src="/images/teachers/img/profesora-yasmina-fernandez_320.jpg"
+                          alt="Yasmina Fernández - Profesora de Salsa Cubana"
+                          width="96"
+                          height="96"
+                          loading="lazy"
+                          className="w-full h-full object-cover"
+                        />
+                      </picture>
+                    </div>
+                    <h3 className="text-xl font-bold text-neutral mb-1">
+                      {t('salsaCubanaTeacher3Name')}
+                    </h3>
+                    <p className="text-primary-accent font-semibold mb-3 text-sm">
+                      {t('salsaCubanaTeacher3Specialty')}
+                    </p>
+                    <p className="text-neutral/80 text-sm leading-relaxed">
+                      {t('salsaCubanaTeacher3Bio')}
+                    </p>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+
+              {/* Lia Valdes */}
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_MEDIUM * 3}>
+                <div className="group h-full bg-black/50 backdrop-blur-md border border-primary-dark/40 hover:border-primary-accent/50 rounded-2xl p-6 transition-all duration-300">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary-dark/50 group-hover:border-primary-accent/50 transition-colors duration-300 mb-4 bg-primary-dark/30 flex items-center justify-center">
+                      {/* Placeholder icon for Lia */}
+                      <svg
+                        className="w-12 h-12 text-primary-accent/50"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={1.5}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-neutral mb-1">
+                      {t('salsaCubanaTeacher4Name')}
+                    </h3>
+                    <p className="text-primary-accent font-semibold mb-3 text-sm">
+                      {t('salsaCubanaTeacher4Specialty')}
+                    </p>
+                    <p className="text-neutral/80 text-sm leading-relaxed">
+                      {t('salsaCubanaTeacher4Bio')}
+                    </p>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+            </div>
+
+            <AnimateOnScroll>
+              <p className="text-center text-base sm:text-lg text-neutral/90 mt-8 sm:mt-10 max-w-2xl mx-auto">
+                {t('salsaCubanaTeachersClosing')}
+              </p>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* 2e. Prepara tu primera clase - VIP Style */}
+        <PrepareClassSection
+          titleKey="salsaCubanaPrepareTitle"
+          subtitleKey="salsaCubanaPrepareSubtitle"
+          config={SALSA_CUBANA_PREPARE_CONFIG}
+        />
 
         {/* 3. El Problema - PAS Framework */}
         <section aria-labelledby="problem-title" className="py-14 md:py-20 bg-black">
@@ -935,266 +1107,7 @@ const SalsaCubanaPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 4. Schedule */}
-        <ScheduleSection
-          titleKey="salsaCubanaScheduleTitle"
-          subtitleKey="salsaCubanaScheduleSubtitle"
-          schedules={schedules}
-          t={t}
-        />
-
-        {/* 4b. Level Cards - Sistema progresivo */}
-        <section className="py-14 md:py-20 bg-black">
-          <div className="container mx-auto px-4 sm:px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-8 max-w-4xl mx-auto">
-                <h3 className="text-2xl sm:text-3xl font-black tracking-tighter text-neutral mb-2 holographic-text">
-                  {t('salsaCubanaLevelsTitle')}
-                </h3>
-                <p className="text-neutral/70">{t('salsaCubanaLevelsSubtitle')}</p>
-              </div>
-            </AnimateOnScroll>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-              {SALSA_CUBANA_LEVELS.map((level, index) => (
-                <AnimateOnScroll key={level.id} delay={index * ANIMATION_DELAYS.STAGGER_SMALL}>
-                  <div className="h-full p-5 rounded-2xl border transition-colors bg-black/50 border-primary-dark/40 hover:border-primary-accent/50">
-                    <div className="inline-block px-3 py-1 text-sm font-semibold rounded-full mb-3 bg-primary-accent/20 text-primary-accent">
-                      {level.duration}
-                    </div>
-                    <h4 className="text-lg font-bold text-neutral mb-2">{t(level.titleKey)}</h4>
-                    <p className="text-neutral/80 text-sm leading-relaxed">{t(level.descKey)}</p>
-                  </div>
-                </AnimateOnScroll>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 5. Teachers Section - Yunaisy Farray */}
-        <section
-          id="teachers"
-          aria-labelledby="teachers-title"
-          className="py-12 md:py-20 bg-primary-dark/10 relative overflow-hidden"
-        >
-          <div className="container mx-auto px-4 sm:px-6 relative z-10">
-            <AnimateOnScroll>
-              <div className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto">
-                <h2
-                  id="teachers-title"
-                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text"
-                >
-                  {t('salsaCubanaTeachersTitle')}
-                </h2>
-                <p className="text-lg sm:text-xl text-neutral/70 mt-4">
-                  {t('salsaCubanaTeachersSubtitle')}
-                </p>
-              </div>
-            </AnimateOnScroll>
-
-            {/* Yunaisy Farray - Featured Teacher Card */}
-            <AnimateOnScroll className="max-w-4xl mx-auto mb-8">
-              <div className="group bg-black/70 backdrop-blur-md border border-primary-accent/50 hover:border-primary-accent rounded-2xl shadow-lg p-8 transition-all duration-500 hover:shadow-accent-glow">
-                <div className="flex flex-col md:flex-row items-center gap-8">
-                  <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 flex-shrink-0">
-                    <picture>
-                      <source
-                        type="image/webp"
-                        srcSet="/images/teachers/img/yunaisy-farray-directora_320.webp 320w, /images/teachers/img/yunaisy-farray-directora_640.webp 640w"
-                        sizes="192px"
-                      />
-                      <img
-                        src="/images/teachers/img/yunaisy-farray-directora_640.jpg"
-                        alt="Yunaisy Farray - Creadora del Método Farray, Maestra CID-UNESCO"
-                        width="192"
-                        height="192"
-                        loading="lazy"
-                        className="w-full h-full object-cover"
-                      />
-                    </picture>
-                  </div>
-                  <div className="text-center md:text-left">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-neutral mb-2">
-                      Yunaisy Farray
-                    </h3>
-                    <p className="text-primary-accent font-semibold mb-4 text-lg">
-                      {t('salsaCubanaTeacher1Specialty')}
-                    </p>
-                    <p className="text-neutral/90 leading-relaxed mb-4">
-                      {t('salsaCubanaTeacher1Bio')}
-                    </p>
-                    <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                      <span className="px-3 py-1 bg-primary-accent/20 text-primary-accent text-sm rounded-full">
-                        CID-UNESCO
-                      </span>
-                      <span className="px-3 py-1 bg-primary-accent/20 text-primary-accent text-sm rounded-full">
-                        Método Farray
-                      </span>
-                      <span className="px-3 py-1 bg-primary-accent/20 text-primary-accent text-sm rounded-full">
-                        +25 años exp.
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </AnimateOnScroll>
-
-            {/* Additional Teachers Grid */}
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {/* Iroel Bastarreche */}
-              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_MEDIUM}>
-                <div className="group h-full bg-black/50 backdrop-blur-md border border-primary-dark/40 hover:border-primary-accent/50 rounded-2xl p-6 transition-all duration-300">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary-dark/50 group-hover:border-primary-accent/50 transition-colors duration-300 mb-4 bg-primary-dark/30 flex items-center justify-center">
-                      {/* Placeholder icon for Iroel */}
-                      <svg
-                        className="w-12 h-12 text-primary-accent/50"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={1.5}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-                        />
-                      </svg>
-                    </div>
-                    <h3 className="text-xl font-bold text-neutral mb-1">
-                      {t('salsaCubanaTeacher2Name')}
-                    </h3>
-                    <p className="text-primary-accent font-semibold mb-3 text-sm">
-                      {t('salsaCubanaTeacher2Specialty')}
-                    </p>
-                    <p className="text-neutral/80 text-sm leading-relaxed">
-                      {t('salsaCubanaTeacher2Bio')}
-                    </p>
-                  </div>
-                </div>
-              </AnimateOnScroll>
-
-              {/* Yasmina Fernández */}
-              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_MEDIUM * 2}>
-                <div className="group h-full bg-black/50 backdrop-blur-md border border-primary-dark/40 hover:border-primary-accent/50 rounded-2xl p-6 transition-all duration-300">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary-dark/50 group-hover:border-primary-accent/50 transition-colors duration-300 mb-4">
-                      <picture>
-                        <source
-                          type="image/webp"
-                          srcSet="/images/teachers/img/profesora-yasmina-fernandez_320.webp 320w, /images/teachers/img/profesora-yasmina-fernandez_640.webp 640w"
-                          sizes="96px"
-                        />
-                        <img
-                          src="/images/teachers/img/profesora-yasmina-fernandez_320.jpg"
-                          alt="Yasmina Fernández - Profesora de Salsa Cubana"
-                          width="96"
-                          height="96"
-                          loading="lazy"
-                          className="w-full h-full object-cover"
-                        />
-                      </picture>
-                    </div>
-                    <h3 className="text-xl font-bold text-neutral mb-1">
-                      {t('salsaCubanaTeacher3Name')}
-                    </h3>
-                    <p className="text-primary-accent font-semibold mb-3 text-sm">
-                      {t('salsaCubanaTeacher3Specialty')}
-                    </p>
-                    <p className="text-neutral/80 text-sm leading-relaxed">
-                      {t('salsaCubanaTeacher3Bio')}
-                    </p>
-                  </div>
-                </div>
-              </AnimateOnScroll>
-            </div>
-
-            <AnimateOnScroll>
-              <p className="text-center text-base sm:text-lg text-neutral/90 mt-8 sm:mt-10 max-w-2xl mx-auto">
-                {t('salsaCubanaTeachersClosing')}
-              </p>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* 5b. Prepara tu primera clase */}
-        <section className="py-14 md:py-20 bg-black">
-          <div className="container mx-auto px-4 sm:px-6">
-            <AnimateOnScroll>
-              <div className="max-w-5xl mx-auto">
-                <h3 className="text-2xl sm:text-3xl font-black tracking-tighter text-neutral mb-2 text-center holographic-text">
-                  {t('salsaCubanaPrepareTitle')}
-                </h3>
-                <p className="text-base text-neutral/70 mb-6 text-center">
-                  {t('salsaCubanaPrepareSubtitle')}
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-                  {/* Que traer */}
-                  <div className="p-5 bg-primary-accent/10 rounded-2xl border border-primary-accent/30 hover:border-primary-accent/50 transition-all duration-300">
-                    <h4 className="text-base font-bold text-primary-accent mb-3 flex items-center gap-2">
-                      <span className="w-6 h-6 rounded-full bg-primary-accent/20 flex items-center justify-center text-sm">
-                        +
-                      </span>
-                      {t('salsaCubanaPrepareWhatToBring')}
-                    </h4>
-                    <ul className="space-y-2">
-                      {[1, 2, 3, 4].map(num => (
-                        <li key={num} className="flex items-start gap-2 text-sm text-neutral/80">
-                          <CheckIcon className="w-4 h-4 text-primary-accent mt-0.5 flex-shrink-0" />
-                          <span>{t(`salsaCubanaPrepareItem${num}`)}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Antes de llegar */}
-                  <div className="p-5 bg-primary-dark/15 rounded-2xl border border-primary-dark/30 hover:border-primary-dark/50 transition-all duration-300">
-                    <h4 className="text-base font-bold text-neutral mb-3 flex items-center gap-2">
-                      <ClockIcon className="w-5 h-5 text-primary-accent" />
-                      {t('salsaCubanaPrepareBefore')}
-                    </h4>
-                    <ul className="space-y-2">
-                      {[1, 2, 3].map(num => (
-                        <li key={num} className="flex items-start gap-2 text-sm text-neutral/80">
-                          <span className="w-4 h-4 rounded-full bg-primary-dark/30 flex items-center justify-center text-xs text-neutral mt-0.5 flex-shrink-0">
-                            -
-                          </span>
-                          <span>{t(`salsaCubanaPrepareBeforeItem${num}`)}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Nota especial */}
-                  <div className="p-5 bg-neutral/5 rounded-2xl border border-neutral/20 hover:border-neutral/40 transition-all duration-300 sm:col-span-2 lg:col-span-1">
-                    <h4 className="text-base font-bold text-neutral/70 mb-3 flex items-center gap-2">
-                      <span className="w-6 h-6 rounded-full bg-neutral/10 flex items-center justify-center text-sm">
-                        💡
-                      </span>
-                      {t('salsaCubanaPrepareNote')}
-                    </h4>
-                    <p className="text-sm text-neutral/80 leading-relaxed">
-                      {t('salsaCubanaPrepareNoteDesc')}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Consejo de Yunaisy */}
-                <div className="mt-6 p-5 bg-gradient-to-r from-primary-accent/10 via-primary-dark/10 to-primary-accent/10 rounded-2xl border border-primary-accent/30">
-                  <p className="text-sm font-bold text-primary-accent mb-2">
-                    {t('salsaCubanaPrepareTeacherTip')}
-                  </p>
-                  <blockquote className="text-neutral/90 italic leading-relaxed text-sm">
-                    &ldquo;{t('salsaCubanaPrepareTeacherQuote')}&rdquo;
-                  </blockquote>
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* 6. Para quién es este método - Identification */}
+        {/* 6. Para quién es este método - Identification (Dos Océanos) */}
         <section aria-labelledby="identify-title" className="py-12 md:py-20 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -1208,37 +1121,88 @@ const SalsaCubanaPage: React.FC = () => {
               </div>
             </AnimateOnScroll>
 
-            <ul
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-8 sm:mb-10 list-none"
-              role="list"
-              aria-label={t('salsaCubanaIdentifyListLabel') || 'Perfiles ideales para el curso'}
-            >
-              {[1, 2, 3, 4, 5, 6].map((num, index) => (
-                <AnimateOnScroll
-                  key={num}
-                  as="li"
-                  delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
-                  className="[perspective:1000px]"
-                >
-                  <div className="group relative h-full min-h-[100px] flex items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)] hover:shadow-accent-glow">
-                    <div
-                      className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300"
-                      aria-hidden="true"
-                    >
-                      <CheckIcon className="text-primary-accent" size="sm" />
+            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-8 sm:mb-10">
+              {/* Columna 1: Océano Azul - Buscando algo más que baile */}
+              <AnimateOnScroll delay={0}>
+                <div className="h-full p-6 sm:p-8 bg-black/50 border border-primary-accent/30 rounded-2xl">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center">
+                      <svg
+                        className="w-5 h-5 text-primary-accent"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={1.5}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                        />
+                      </svg>
                     </div>
-                    <p className="text-neutral/90 leading-relaxed">
-                      {t(`salsaCubanaIdentify${num}`)}
-                    </p>
+                    <h3 className="text-xl font-bold text-primary-accent">
+                      {t('salsaCubanaIdentifyBlueOceanTitle')}
+                    </h3>
                   </div>
-                </AnimateOnScroll>
-              ))}
-            </ul>
+                  <ul className="space-y-3" role="list">
+                    {[1, 2, 3, 4, 5, 6].map(num => (
+                      <li key={num} className="flex items-start gap-3">
+                        <CheckIcon className="w-5 h-5 text-primary-accent flex-shrink-0 mt-0.5" />
+                        <span className="text-neutral/90 leading-relaxed">
+                          {t(`salsaCubanaIdentifyBlue${num}`)}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </AnimateOnScroll>
+
+              {/* Columna 2: Océano Rojo - Del mundo del baile */}
+              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_MEDIUM}>
+                <div className="h-full p-6 sm:p-8 bg-black/50 border border-neutral/30 rounded-2xl">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-full bg-neutral/20 flex items-center justify-center">
+                      <svg
+                        className="w-5 h-5 text-neutral"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={1.5}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-bold text-neutral">
+                      {t('salsaCubanaIdentifyRedOceanTitle')}
+                    </h3>
+                  </div>
+                  <ul className="space-y-3" role="list">
+                    {[1, 2, 3, 4, 5, 6].map(num => (
+                      <li key={num} className="flex items-start gap-3">
+                        <CheckIcon className="w-5 h-5 text-neutral/70 flex-shrink-0 mt-0.5" />
+                        <span className="text-neutral/90 leading-relaxed">
+                          {t(`salsaCubanaIdentifyRed${num}`)}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </AnimateOnScroll>
+            </div>
 
             <AnimateOnScroll>
               <div className="text-center max-w-3xl mx-auto">
-                <p className="text-xl sm:text-2xl font-bold holographic-text mb-4">
-                  {t('salsaCubanaIdentifyClosing')}
+                <p className="text-lg text-neutral/70 mb-2">{t('salsaCubanaIdentifyClose1')}</p>
+                <p className="text-xl font-bold text-neutral mb-2">
+                  {t('salsaCubanaIdentifyClose2')}
+                </p>
+                <p className="text-lg text-primary-accent font-semibold">
+                  {t('salsaCubanaIdentifyClose3')}
                 </p>
               </div>
             </AnimateOnScroll>
@@ -1280,6 +1244,15 @@ const SalsaCubanaPage: React.FC = () => {
                 </AnimateOnScroll>
               ))}
             </div>
+
+            {/* Texto de cierre movido desde Para quién */}
+            <AnimateOnScroll>
+              <div className="text-center max-w-3xl mx-auto mt-12">
+                <p className="text-xl sm:text-2xl font-bold holographic-text">
+                  {t('salsaCubanaIdentifyClosing')}
+                </p>
+              </div>
+            </AnimateOnScroll>
           </div>
         </section>
 
@@ -1538,17 +1511,33 @@ const SalsaCubanaPage: React.FC = () => {
           <div className="container mx-auto px-4 sm:px-6 relative z-20">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-6 holographic-text">
                   {t('salsaCubanaFinalCTATitle')}
                 </h2>
-                <p className="text-xl sm:text-2xl font-bold mb-4 sm:mb-5 holographic-text">
-                  {t('salsaCubanaFinalCTASubtitle')}
+
+                {/* Copy Emocional - Océano Azul */}
+                <div className="mb-8 space-y-2 text-lg sm:text-xl text-neutral/80">
+                  <p>{t('salsaCubanaFinalCTAEmotional1')}</p>
+                  <p>{t('salsaCubanaFinalCTAEmotional2')}</p>
+                  <p>{t('salsaCubanaFinalCTAEmotional3')}</p>
+                  <p>{t('salsaCubanaFinalCTAEmotional4')}</p>
+                </div>
+                <p className="text-xl sm:text-2xl font-bold mb-8 holographic-text">
+                  {t('salsaCubanaFinalCTAEmotionalClose')}
                 </p>
-                <p className="text-lg sm:text-xl text-neutral/90 mb-5 sm:mb-6 leading-relaxed">
-                  {t('salsaCubanaFinalCTADesc')}
+
+                {/* Separador visual */}
+                <div className="w-24 h-px bg-primary-accent/50 mx-auto mb-8"></div>
+
+                {/* Copy Técnico - Océano Rojo */}
+                <p className="text-lg sm:text-xl text-neutral/90 mb-3">
+                  {t('salsaCubanaFinalCTATechnical1')}
                 </p>
-                <p className="text-base sm:text-lg text-neutral/90 mb-6 sm:mb-8 italic">
-                  {t('salsaCubanaFinalCTAFunny')}
+                <p className="text-lg sm:text-xl text-neutral/90 mb-3">
+                  {t('salsaCubanaFinalCTATechnical2')}
+                </p>
+                <p className="text-base sm:text-lg text-neutral/80 mb-6 sm:mb-8 italic">
+                  {t('salsaCubanaFinalCTATechnical3')}
                 </p>
 
                 {/* Final CTAs */}

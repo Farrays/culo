@@ -105,39 +105,46 @@ export const CONTEMPORANEO_SCHEDULE_KEYS = [
   },
 ];
 
-// Level descriptions for cards after schedule (3 types of classes)
+// Level descriptions for cards - 3 levels
 export const CONTEMPORANEO_LEVELS = [
   {
     id: 'lirico-basico',
     levelKey: 'basicLevel',
     titleKey: 'contemporaneoLevelLiricoBasicoTitle',
     descKey: 'contemporaneoLevelLiricoBasicoDesc',
-    teachers: 'Daniel Sené, Alejandro Miñoso',
-    schedules: ['Lunes 11:00', 'Lunes 19:00', 'Jueves 18:00'],
-    color: 'blue',
-    icon: 'feather', // Lírico = suave, expresivo
+    duration: '0-6 meses',
+    color: 'primary-dark' as const,
   },
   {
     id: 'lirico-intermedio',
     levelKey: 'intermediateLevel',
     titleKey: 'contemporaneoLevelLiricoIntermedioTitle',
     descKey: 'contemporaneoLevelLiricoIntermedioDesc',
-    teachers: 'Daniel Sené',
-    schedules: ['Miércoles 20:00'],
-    color: 'purple',
-    icon: 'wind',
+    duration: '6-12 meses',
+    color: 'primary-accent-light' as const,
   },
   {
     id: 'suelo-flow',
     levelKey: 'basicIntermediateLevel',
     titleKey: 'contemporaneoLevelSueloFlowTitle',
     descKey: 'contemporaneoLevelSueloFlowDesc',
-    teachers: 'Alejandro Miñoso',
-    schedules: ['Miércoles 11:00', 'Miércoles 18:00'],
-    color: 'orange',
-    icon: 'ground', // Suelo = conexión con el piso
+    duration: '+12 meses',
+    color: 'primary-accent' as const,
   },
 ];
+
+// Prepare class configuration
+export const CONTEMPORANEO_PREPARE_CONFIG = {
+  prefix: 'contemporaneoPrepare',
+  whatToBringCount: 5,
+  beforeCount: 3,
+  avoidCount: 3,
+  teacher: {
+    name: 'Daniel Sené',
+    credential: 'Especialista en Contemporáneo',
+    image: undefined,
+  },
+};
 
 // Nearby neighborhoods for local SEO
 export const CONTEMPORANEO_NEARBY_AREAS = [

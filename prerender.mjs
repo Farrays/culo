@@ -11,6 +11,8 @@ const routes = [
   { path: 'es/clases/baile-barcelona', lang: 'es', page: 'classes' },
   { path: 'es/clases/danza-barcelona', lang: 'es', page: 'danza' },
   { path: 'es/clases/salsa-bachata-barcelona', lang: 'es', page: 'salsaBachata' },
+  { path: 'es/clases/salsa-cubana-barcelona', lang: 'es', page: 'salsaCubana' },
+  { path: 'es/clases/salsa-lady-style-barcelona', lang: 'es', page: 'salsaLadyStyle' },
   { path: 'es/clases/danzas-urbanas-barcelona', lang: 'es', page: 'danzasUrbanas' },
   { path: 'es/clases/dancehall-barcelona', lang: 'es', page: 'dancehall' },
   { path: 'es/clases/twerk-barcelona', lang: 'es', page: 'twerk' },
@@ -35,6 +37,8 @@ const routes = [
   { path: 'ca/clases/baile-barcelona', lang: 'ca', page: 'classes' },
   { path: 'ca/clases/danza-barcelona', lang: 'ca', page: 'danza' },
   { path: 'ca/clases/salsa-bachata-barcelona', lang: 'ca', page: 'salsaBachata' },
+  { path: 'ca/clases/salsa-cubana-barcelona', lang: 'ca', page: 'salsaCubana' },
+  { path: 'ca/clases/salsa-lady-style-barcelona', lang: 'ca', page: 'salsaLadyStyle' },
   { path: 'ca/clases/danzas-urbanas-barcelona', lang: 'ca', page: 'danzasUrbanas' },
   { path: 'ca/clases/dancehall-barcelona', lang: 'ca', page: 'dancehall' },
   { path: 'ca/clases/twerk-barcelona', lang: 'ca', page: 'twerk' },
@@ -59,6 +63,8 @@ const routes = [
   { path: 'en/clases/baile-barcelona', lang: 'en', page: 'classes' },
   { path: 'en/clases/danza-barcelona', lang: 'en', page: 'danza' },
   { path: 'en/clases/salsa-bachata-barcelona', lang: 'en', page: 'salsaBachata' },
+  { path: 'en/clases/salsa-cubana-barcelona', lang: 'en', page: 'salsaCubana' },
+  { path: 'en/clases/salsa-lady-style-barcelona', lang: 'en', page: 'salsaLadyStyle' },
   { path: 'en/clases/danzas-urbanas-barcelona', lang: 'en', page: 'danzasUrbanas' },
   { path: 'en/clases/dancehall-barcelona', lang: 'en', page: 'dancehall' },
   { path: 'en/clases/twerk-barcelona', lang: 'en', page: 'twerk' },
@@ -83,6 +89,8 @@ const routes = [
   { path: 'fr/clases/baile-barcelona', lang: 'fr', page: 'classes' },
   { path: 'fr/clases/danza-barcelona', lang: 'fr', page: 'danza' },
   { path: 'fr/clases/salsa-bachata-barcelona', lang: 'fr', page: 'salsaBachata' },
+  { path: 'fr/clases/salsa-cubana-barcelona', lang: 'fr', page: 'salsaCubana' },
+  { path: 'fr/clases/salsa-lady-style-barcelona', lang: 'fr', page: 'salsaLadyStyle' },
   { path: 'fr/clases/danzas-urbanas-barcelona', lang: 'fr', page: 'danzasUrbanas' },
   { path: 'fr/clases/dancehall-barcelona', lang: 'fr', page: 'dancehall' },
   { path: 'fr/clases/twerk-barcelona', lang: 'fr', page: 'twerk' },
@@ -122,6 +130,14 @@ const metadata = {
     salsaBachata: {
       title: 'Clases de Salsa y Bachata en Barcelona | Salsa Cubana, Bachata Sensual y más | Farray\'s Center',
       description: 'Aprende a bailar Salsa Cubana, Bachata Sensual y Dominicana, Timba, Son y más en Barcelona. Escuela fundada por maestros cubanos con experiencia en las mejores academias de La Habana. Reserva tu clase de prueba.',
+    },
+    salsaCubana: {
+      title: 'Clases de Salsa Cubana en Barcelona | Casino, Rueda y Son | Farray\'s Center',
+      description: 'Aprende Salsa Cubana auténtica en Barcelona con maestros cubanos. Clases de Casino, Rueda de Casino y Son Cubano. Método Farray® con técnica de La Habana. ¡Reserva tu clase de prueba!',
+    },
+    salsaLadyStyle: {
+      title: 'Clases de Salsa Lady Style en Barcelona | Estilo Femenino y Elegancia | Farray\'s Center',
+      description: 'Clases de Salsa Lady Style en Barcelona con Yunaisy Farray. Desarrolla tu feminidad, elegancia y estilo personal bailando salsa. Método Farray® reconocido por CID-UNESCO. ¡Reserva tu clase!',
     },
     danzasUrbanas: {
       title: 'Clases de Danzas Urbanas en Barcelona | Hip Hop, Dancehall, K-Pop y Reggaeton | Farray\'s Center',
@@ -217,6 +233,14 @@ const metadata = {
       title: 'Classes de Salsa i Bachata a Barcelona | Salsa Cubana, Bachata Sensual i més | Farray\'s Center',
       description: 'Aprèn a ballar Salsa Cubana, Bachata Sensual i Dominicana, Timba, Son i més a Barcelona. Escola fundada per mestres cubans amb experiència en les millors acadèmies de L\'Havana. Reserva la teva classe de prova.',
     },
+    salsaCubana: {
+      title: 'Classes de Salsa Cubana a Barcelona | Casino, Rueda i Son | Farray\'s Center',
+      description: 'Aprèn Salsa Cubana autèntica a Barcelona amb mestres cubans. Classes de Casino, Rueda de Casino i Son Cubà. Mètode Farray® amb tècnica de L\'Havana. Reserva la teva classe de prova!',
+    },
+    salsaLadyStyle: {
+      title: 'Classes de Salsa Lady Style a Barcelona | Estil Femení i Elegància | Farray\'s Center',
+      description: 'Classes de Salsa Lady Style a Barcelona amb Yunaisy Farray. Desenvolupa la teva feminitat, elegància i estil personal ballant salsa. Mètode Farray® reconegut per CID-UNESCO. Reserva la teva classe!',
+    },
     danzasUrbanas: {
       title: 'Classes de Danses Urbanes a Barcelona | Hip Hop, Dancehall, K-Pop i Reggaeton | Farray\'s Center',
       description: 'Descobreix les nostres classes de danses urbanes a Barcelona: Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat i més. Acadèmia de referència en estils urbans. Prova una classe gratis.',
@@ -311,6 +335,14 @@ const metadata = {
       title: 'Salsa and Bachata Classes in Barcelona | Cuban Salsa, Sensual Bachata & more | Farray\'s Center',
       description: 'Learn to dance Cuban Salsa, Sensual and Dominican Bachata, Timba, Son and more in Barcelona. School founded by Cuban masters with experience in Havana\'s best academies. Book your trial class.',
     },
+    salsaCubana: {
+      title: 'Cuban Salsa Classes in Barcelona | Casino, Rueda & Son | Farray\'s Center',
+      description: 'Learn authentic Cuban Salsa in Barcelona with Cuban masters. Casino, Rueda de Casino and Son Cubano classes. Farray Method® with Havana technique. Book your trial class!',
+    },
+    salsaLadyStyle: {
+      title: 'Salsa Lady Style Classes in Barcelona | Feminine Style & Elegance | Farray\'s Center',
+      description: 'Salsa Lady Style classes in Barcelona with Yunaisy Farray. Develop your femininity, elegance and personal style dancing salsa. Farray Method® recognized by CID-UNESCO. Book your class!',
+    },
     danzasUrbanas: {
       title: 'Urban Dance Classes in Barcelona | Hip Hop, Dancehall, K-Pop & Reggaeton | Farray\'s Center',
       description: 'Discover our urban dance classes in Barcelona: Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat and more. Leading academy for urban styles. Try a free class.',
@@ -404,6 +436,14 @@ const metadata = {
     salsaBachata: {
       title: 'Cours de Salsa et Bachata à Barcelone | Salsa Cubaine, Bachata Sensuelle et plus | Farray\'s Center',
       description: 'Apprenez à danser la Salsa Cubaine, la Bachata Sensuelle et Dominicaine, la Timba, le Son et plus à Barcelone. École fondée par des maîtres cubains avec expérience dans les meilleures académies de La Havane. Réservez votre cours d\'essai.',
+    },
+    salsaCubana: {
+      title: 'Cours de Salsa Cubaine à Barcelone | Casino, Rueda et Son | Farray\'s Center',
+      description: 'Apprenez la Salsa Cubaine authentique à Barcelone avec des maîtres cubains. Cours de Casino, Rueda de Casino et Son Cubain. Méthode Farray® avec technique de La Havane. Réservez votre cours d\'essai!',
+    },
+    salsaLadyStyle: {
+      title: 'Cours de Salsa Lady Style à Barcelone | Style Féminin et Élégance | Farray\'s Center',
+      description: 'Cours de Salsa Lady Style à Barcelone avec Yunaisy Farray. Développez votre féminité, élégance et style personnel en dansant la salsa. Méthode Farray® reconnue par CID-UNESCO. Réservez votre cours!',
     },
     danzasUrbanas: {
       title: 'Cours de Danses Urbaines à Barcelone | Hip Hop, Dancehall, K-Pop et Reggaeton | Farray\'s Center',
@@ -542,6 +582,26 @@ const initialContent = {
         </p>
       </main>
     `,
+    salsaCubana: `
+      <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12">
+        <h1 class="text-4xl sm:text-5xl font-bold text-neutral mb-8 text-center holographic-text">
+          Clases de Salsa Cubana en Barcelona
+        </h1>
+        <p class="text-lg text-neutral/80 max-w-3xl mx-auto mb-12 text-center">
+          Aprende Salsa Cubana auténtica con maestros cubanos. Casino, Rueda de Casino y Son Cubano. Técnica de La Habana con el Método Farray®.
+        </p>
+      </main>
+    `,
+    salsaLadyStyle: `
+      <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12">
+        <h1 class="text-4xl sm:text-5xl font-bold text-neutral mb-8 text-center holographic-text">
+          Clases de Salsa Lady Style en Barcelona
+        </h1>
+        <p class="text-lg text-neutral/80 max-w-3xl mx-auto mb-12 text-center">
+          Desarrolla tu feminidad, elegancia y estilo personal bailando salsa. Clases con Yunaisy Farray y el Método Farray® reconocido por CID-UNESCO.
+        </p>
+      </main>
+    `,
     danzasUrbanas: `
       <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12">
         <h1 class="text-4xl sm:text-5xl font-bold text-neutral mb-8 text-center holographic-text">
@@ -579,6 +639,8 @@ const initialContent = {
     classes: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Les nostres Classes</h1><p>Classes de Dancehall i ball urbà per a tots els nivells.</p></main>`,
     danza: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Dansa a Barcelona</h1><p>Explora la tècnica, elegància i expressió de la dansa clàssica i contemporània. Ballet Clàssic Cubà, Dansa Contemporània, Modern Jazz i més. Acadèmia reconeguda per CID-UNESCO.</p></main>`,
     salsaBachata: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Salsa i Bachata a Barcelona</h1><p>Descobreix la passió, el ritme i la connexió del ball llatí. Salsa Cubana, Bachata Sensual i Dominicana, Timba, Son Cubà i més. Professors formats a L'Havana.</p></main>`,
+    salsaCubana: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Salsa Cubana a Barcelona</h1><p>Aprèn Salsa Cubana autèntica amb mestres cubans. Casino, Rueda de Casino i Son Cubà. Tècnica de L'Havana amb el Mètode Farray®.</p></main>`,
+    salsaLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Salsa Lady Style a Barcelona</h1><p>Desenvolupa la teva feminitat, elegància i estil personal ballant salsa. Classes amb Yunaisy Farray i el Mètode Farray® reconegut per CID-UNESCO.</p></main>`,
     danzasUrbanas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Danses Urbanes a Barcelona</h1><p>Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat i més. Aprèn amb professors formats a Kingston, Seül, Nova York i L'Havana.</p></main>`,
     dancehall: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Dancehall a Barcelona</h1><p>Descobreix l'autèntic Dancehall de Jamaica a Barcelona. Energia, cultura i ritme a cada classe.</p></main>`,
     clasesParticulares: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes Particulars de Ball a Barcelona</h1><p>Aprèn al teu ritme amb un professor dedicat 100% a tu. Horaris flexibles, tots els estils de ball, progrés 3x més ràpid. La teva dansa, les teves regles.</p></main>`,
@@ -588,6 +650,8 @@ const initialContent = {
     classes: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Our Classes</h1><p>Dancehall and urban dance classes for all levels.</p></main>`,
     danza: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Classes in Barcelona</h1><p>Explore the technique, elegance and expression of classical and contemporary dance. Cuban Classical Ballet, Contemporary Dance, Modern Jazz and more. CID-UNESCO accredited academy.</p></main>`,
     salsaBachata: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Salsa and Bachata Classes in Barcelona</h1><p>Discover the passion, rhythm and connection of Latin dance. Cuban Salsa, Sensual and Dominican Bachata, Timba, Son and more. Teachers trained in Havana.</p></main>`,
+    salsaCubana: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cuban Salsa Classes in Barcelona</h1><p>Learn authentic Cuban Salsa with Cuban masters. Casino, Rueda de Casino and Son Cubano. Havana technique with the Farray Method®.</p></main>`,
+    salsaLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Salsa Lady Style Classes in Barcelona</h1><p>Develop your femininity, elegance and personal style dancing salsa. Classes with Yunaisy Farray and the Farray Method® recognized by CID-UNESCO.</p></main>`,
     danzasUrbanas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Urban Dance Classes in Barcelona</h1><p>Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat and more. Learn with teachers trained in Kingston, Seoul, New York and Havana.</p></main>`,
     dancehall: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dancehall Classes in Barcelona</h1><p>Discover authentic Dancehall from Jamaica in Barcelona. Energy, culture and rhythm in every class.</p></main>`,
     clasesParticulares: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Private Dance Classes in Barcelona</h1><p>Learn at your pace with a teacher 100% dedicated to you. Flexible schedules, all dance styles, 3x faster progress. Your dance, your rules.</p></main>`,
@@ -597,6 +661,8 @@ const initialContent = {
     classes: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Nos Cours</h1><p>Cours de Dancehall et danse urbaine pour tous les niveaux.</p></main>`,
     danza: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Danse à Barcelone</h1><p>Explorez la technique, l'élégance et l'expression de la danse classique et contemporaine. Ballet Classique Cubain, Danse Contemporaine, Modern Jazz et plus. Académie accréditée par CID-UNESCO.</p></main>`,
     salsaBachata: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Salsa et Bachata à Barcelone</h1><p>Découvrez la passion, le rythme et la connexion de la danse latine. Salsa Cubaine, Bachata Sensuelle et Dominicaine, Timba, Son et plus. Professeurs formés à La Havane.</p></main>`,
+    salsaCubana: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Salsa Cubaine à Barcelone</h1><p>Apprenez la Salsa Cubaine authentique avec des maîtres cubains. Casino, Rueda de Casino et Son Cubain. Technique de La Havane avec la Méthode Farray®.</p></main>`,
+    salsaLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Salsa Lady Style à Barcelone</h1><p>Développez votre féminité, élégance et style personnel en dansant la salsa. Cours avec Yunaisy Farray et la Méthode Farray® reconnue par CID-UNESCO.</p></main>`,
     danzasUrbanas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Danses Urbaines à Barcelone</h1><p>Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat et plus. Apprenez avec des professeurs formés à Kingston, Séoul, New York et La Havane.</p></main>`,
     dancehall: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Dancehall à Barcelone</h1><p>Découvrez le véritable Dancehall de Jamaïque à Barcelone. Énergie, culture et rythme à chaque cours.</p></main>`,
     clasesParticulares: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours Particuliers de Danse à Barcelone</h1><p>Apprenez à votre rythme avec un professeur 100% dédié à vous. Horaires flexibles, tous les styles de danse, progrès 3x plus rapide. Votre danse, vos règles.</p></main>`,
@@ -684,6 +750,10 @@ routes.forEach(route => {
     pagePath = 'clases/danza-barcelona';
   } else if (page === 'salsaBachata') {
     pagePath = 'clases/salsa-bachata-barcelona';
+  } else if (page === 'salsaCubana') {
+    pagePath = 'clases/salsa-cubana-barcelona';
+  } else if (page === 'salsaLadyStyle') {
+    pagePath = 'clases/salsa-lady-style-barcelona';
   } else if (page === 'danzasUrbanas') {
     pagePath = 'clases/danzas-urbanas-barcelona';
   } else if (page === 'dancehall') {

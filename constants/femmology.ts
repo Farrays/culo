@@ -100,3 +100,44 @@ export const FEMMOLOGY_BREADCRUMB_KEYS = {
 
 // YouTube video ID for the page (Yunaisy Farray showcase)
 export const FEMMOLOGY_VIDEO_ID = 'dQw4w9WgXcQ'; // Placeholder - replace with actual video
+
+// Level descriptions for cards - 3 levels
+export const FEMMOLOGY_LEVELS = [
+  {
+    id: 'basico',
+    levelKey: 'basicLevel',
+    titleKey: 'femLevelBasicTitle',
+    descKey: 'femLevelBasicDesc',
+    duration: '0-3 meses',
+    color: 'primary-dark' as const,
+  },
+  {
+    id: 'intermedio',
+    levelKey: 'intermediateLevel',
+    titleKey: 'femLevelInterTitle',
+    descKey: 'femLevelInterDesc',
+    duration: '3-9 meses',
+    color: 'primary-accent-light' as const,
+  },
+  {
+    id: 'avanzado',
+    levelKey: 'advancedLevel',
+    titleKey: 'femLevelAdvancedTitle',
+    descKey: 'femLevelAdvancedDesc',
+    duration: '+9 meses',
+    color: 'primary-accent' as const,
+  },
+];
+
+// Prepare class configuration
+export const FEMMOLOGY_PREPARE_CONFIG = {
+  prefix: 'femPrepare',
+  whatToBringCount: 5,
+  beforeCount: 3,
+  avoidCount: 3,
+  teacher: {
+    name: 'Yunaisy Farray',
+    credential: 'Creadora de Femmology',
+    image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
+  },
+};

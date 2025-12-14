@@ -71,6 +71,7 @@ const Footer: React.FC = () => {
                 alt="Farray's International Dance Center"
                 width="256"
                 height="256"
+                loading="lazy"
                 className="w-32 h-32 md:w-40 md:h-40 opacity-70"
               />
             </picture>

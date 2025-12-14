@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useI18n } from '../hooks/useI18n';
 import AnimateOnScroll from './AnimateOnScroll';
 import type { Testimonial } from '../types';
@@ -8,7 +8,10 @@ interface TestimonialsSectionProps {
   testimonials: Testimonial[];
 }
 
-const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ titleKey, testimonials }) => {
+const TestimonialsSection: React.FC<TestimonialsSectionProps> = memo(function TestimonialsSection({
+  titleKey,
+  testimonials,
+}) {
   const { t, locale } = useI18n();
 
   return (
@@ -77,6 +80,6 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ titleKey, tes
       </div>
     </section>
   );
-};
+});
 
 export default TestimonialsSection;

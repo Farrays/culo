@@ -104,3 +104,44 @@ export const DANCEHALL_BREADCRUMB_KEYS = {
   urban: 'dhV3BreadcrumbUrban',
   current: 'dhV3BreadcrumbCurrent',
 };
+
+// Level descriptions for cards - 3 levels for Dancehall
+export const DANCEHALL_LEVELS = [
+  {
+    id: 'principiante',
+    levelKey: 'beginnerLevel',
+    titleKey: 'dancehallLevelBeginnerTitle',
+    descKey: 'dancehallLevelBeginnerDesc',
+    duration: '0-3 meses',
+    color: 'primary-dark' as const,
+  },
+  {
+    id: 'intermedio',
+    levelKey: 'intermediateLevel',
+    titleKey: 'dancehallLevelInterTitle',
+    descKey: 'dancehallLevelInterDesc',
+    duration: '3-9 meses',
+    color: 'primary-accent-light' as const,
+  },
+  {
+    id: 'avanzado',
+    levelKey: 'advancedLevel',
+    titleKey: 'dancehallLevelAdvancedTitle',
+    descKey: 'dancehallLevelAdvancedDesc',
+    duration: '+9 meses',
+    color: 'primary-accent' as const,
+  },
+];
+
+// Prepare class configuration
+export const DANCEHALL_PREPARE_CONFIG = {
+  prefix: 'dancehallPrepare',
+  whatToBringCount: 5,
+  beforeCount: 3,
+  avoidCount: 3,
+  teacher: {
+    name: 'Isabel López',
+    credential: 'Especialista en Dancehall',
+    image: undefined, // Will use initials avatar
+  },
+};

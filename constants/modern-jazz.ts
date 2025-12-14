@@ -168,3 +168,28 @@ export const MODERN_JAZZ_HERO_STATS = {
   calories: 500, // Calorías quemadas por clase
   techniquePercent: 100, // 100% Técnica de Danza
 };
+
+// Level descriptions for cards - 1 level (Básico)
+export const MODERN_JAZZ_LEVELS = [
+  {
+    id: 'basico',
+    levelKey: 'basicLevel',
+    titleKey: 'modernjazzLevelBasicTitle',
+    descKey: 'modernjazzLevelBasicDesc',
+    duration: 'Todos los niveles',
+    color: 'primary-accent' as const,
+  },
+];
+
+// Prepare class configuration
+export const MODERN_JAZZ_PREPARE_CONFIG = {
+  prefix: 'modernjazzPrepare',
+  whatToBringCount: 5,
+  beforeCount: 3,
+  avoidCount: 3,
+  teacher: {
+    name: 'Alejandro Miñoso',
+    credential: 'Profesor de Modern Jazz',
+    image: undefined,
+  },
+};

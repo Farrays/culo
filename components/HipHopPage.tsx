@@ -7,7 +7,12 @@ import {
   HIPHOP_SCHEDULE_KEYS,
   HIPHOP_NEARBY_AREAS,
   HIPHOP_VIDEO_ID,
+  HIPHOP_LEVELS,
+  HIPHOP_PREPARE_CONFIG,
 } from '../constants/hip-hop';
+import LevelCardsSection from './shared/LevelCardsSection';
+import PrepareClassSection from './shared/PrepareClassSection';
+import { ANIMATION_DELAYS } from '../constants/shared';
 import AnimateOnScroll from './AnimateOnScroll';
 import CulturalHistorySection from './CulturalHistorySection';
 import ScheduleSection from './ScheduleSection';
@@ -22,48 +27,9 @@ import {
   ClockIcon,
   FlameIcon,
   StarIcon,
-} from './shared/Icons';
-import { CalendarDaysIcon } from '../lib/icons';
-
-// Simple inline icons
-const UsersIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
-  <svg
-    className={className}
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={1.5}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"
-    />
-  </svg>
-);
-
-const MapPinIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
-  <svg
-    className={className}
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={1.5}
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-    />
-  </svg>
-);
-
-// Animation delay constants for consistent UX
-const ANIMATION_DELAYS = {
-  STAGGER_SMALL: 100,
-  STAGGER_MEDIUM: 150,
-};
+  CalendarDaysIcon,
+} from '../lib/icons';
+import { UsersIcon, MapPinIcon } from './shared/CommonIcons';
 
 const HipHopPage: React.FC = () => {
   const { t, locale } = useI18n();
@@ -94,7 +60,7 @@ const HipHopPage: React.FC = () => {
     author: testimonial.name,
     reviewRating: { ratingValue: testimonial.rating.toString(), bestRating: '5' },
     reviewBody: testimonial.quote[locale],
-    datePublished: '2025-01-01',
+    datePublished: new Date().toISOString().split('T')[0],
   }));
 
   // VideoObject Schema
@@ -436,27 +402,8 @@ const HipHopPage: React.FC = () => {
           t={t}
         />
 
-        {/* 3b. Level Cards */}
-        <section className="py-14 md:py-20 bg-black">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="max-w-2xl mx-auto">
-              {/* Open Level - Marcos Martínez */}
-              <AnimateOnScroll delay={0}>
-                <div className="h-full p-6 bg-primary-accent/15 border border-primary-accent/30 rounded-2xl hover:border-primary-accent/50 transition-colors">
-                  <div className="inline-block px-3 py-1 bg-primary-accent/20 text-primary-accent text-sm font-semibold rounded-full mb-4">
-                    OPEN LEVEL
-                  </div>
-                  <h3 className="text-xl font-bold text-neutral mb-3">
-                    {t('hiphopLevelOpenTitle')}
-                  </h3>
-                  <p className="text-neutral/80 text-sm leading-relaxed">
-                    {t('hiphopLevelOpenDesc')}
-                  </p>
-                </div>
-              </AnimateOnScroll>
-            </div>
-          </div>
-        </section>
+        {/* 3b. Level Cards - Using shared component */}
+        <LevelCardsSection titleKey="hiphopLevelsTitle" levels={HIPHOP_LEVELS} />
 
         {/* 4. Teachers Section - Marcos Martínez */}
         <section
@@ -509,89 +456,12 @@ const HipHopPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 4b. Prepara tu primera clase - After Teachers */}
-        <section className="py-14 md:py-20 bg-black">
-          <div className="container mx-auto px-4 sm:px-6">
-            <AnimateOnScroll>
-              <div className="max-w-5xl mx-auto">
-                <h3 className="text-2xl sm:text-3xl font-black tracking-tighter text-neutral mb-2 text-center holographic-text">
-                  {t('hiphopPrepareTitle')}
-                </h3>
-                <p className="text-base text-neutral/70 mb-6 text-center">
-                  {t('hiphopPrepareSubtitle')}
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-                  {/* Que traer - primary-accent */}
-                  <div className="p-5 bg-primary-accent/10 rounded-2xl border border-primary-accent/30 hover:border-primary-accent/50 transition-all duration-300">
-                    <h4 className="text-base font-bold text-primary-accent mb-3 flex items-center gap-2">
-                      <span className="w-6 h-6 rounded-full bg-primary-accent/20 flex items-center justify-center text-sm">
-                        +
-                      </span>
-                      {t('hiphopPrepareWhatToBring')}
-                    </h4>
-                    <ul className="space-y-2">
-                      {[1, 2, 3, 4, 5].map(num => (
-                        <li key={num} className="flex items-start gap-2 text-sm text-neutral/80">
-                          <CheckIcon className="w-4 h-4 text-primary-accent mt-0.5 flex-shrink-0" />
-                          <span>{t(`hiphopPrepareItem${num}`)}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Antes de llegar - primary-dark */}
-                  <div className="p-5 bg-primary-dark/15 rounded-2xl border border-primary-dark/30 hover:border-primary-dark/50 transition-all duration-300">
-                    <h4 className="text-base font-bold text-neutral mb-3 flex items-center gap-2">
-                      <ClockIcon className="w-5 h-5 text-primary-accent" />
-                      {t('hiphopPrepareBefore')}
-                    </h4>
-                    <ul className="space-y-2">
-                      {[1, 2, 3].map(num => (
-                        <li key={num} className="flex items-start gap-2 text-sm text-neutral/80">
-                          <span className="w-4 h-4 rounded-full bg-primary-dark/30 flex items-center justify-center text-xs text-neutral mt-0.5 flex-shrink-0">
-                            -
-                          </span>
-                          <span>{t(`hiphopPrepareBeforeItem${num}`)}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Evita - neutral/muted */}
-                  <div className="p-5 bg-neutral/5 rounded-2xl border border-neutral/20 hover:border-neutral/40 transition-all duration-300 sm:col-span-2 lg:col-span-1">
-                    <h4 className="text-base font-bold text-neutral/70 mb-3 flex items-center gap-2">
-                      <span className="w-6 h-6 rounded-full bg-neutral/10 flex items-center justify-center text-sm">
-                        x
-                      </span>
-                      {t('hiphopPrepareAvoid')}
-                    </h4>
-                    <ul className="space-y-2">
-                      {[1, 2, 3].map(num => (
-                        <li key={num} className="flex items-start gap-2 text-sm text-neutral/80">
-                          <span className="w-4 h-4 rounded-full bg-neutral/10 flex items-center justify-center text-xs text-neutral/60 mt-0.5 flex-shrink-0">
-                            x
-                          </span>
-                          <span>{t(`hiphopPrepareAvoidItem${num}`)}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Consejo de Marcos */}
-                <div className="mt-6 p-5 bg-gradient-to-r from-primary-accent/10 via-primary-dark/10 to-primary-accent/10 rounded-2xl border border-primary-accent/30">
-                  <p className="text-sm font-bold text-primary-accent mb-2">
-                    {t('hiphopPrepareTeacherTip')}
-                  </p>
-                  <blockquote className="text-neutral/90 italic leading-relaxed text-sm">
-                    &ldquo;{t('hiphopPrepareTeacherQuote')}&rdquo;
-                  </blockquote>
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
+        {/* 4b. Prepara tu primera clase - Using shared component */}
+        <PrepareClassSection
+          titleKey="hiphopPrepareTitle"
+          subtitleKey="hiphopPrepareSubtitle"
+          config={HIPHOP_PREPARE_CONFIG}
+        />
 
         {/* 4c. Comparison Table - Hip Hop vs otros estilos urbanos */}
         <section className="py-14 md:py-20 bg-primary-dark/10">

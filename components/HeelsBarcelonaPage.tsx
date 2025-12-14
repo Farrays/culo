@@ -11,7 +11,7 @@ import Icon, { type IconName } from './Icon';
 import type { ValuePillar } from '../types';
 import TestimonialsSection from './TestimonialsSection';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
-import { CheckIcon } from './shared/Icons';
+import { CheckIcon } from '../lib/icons';
 
 const ANIMATION_DELAYS = {
   STAGGER_SMALL: 100,

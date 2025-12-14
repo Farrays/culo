@@ -81,9 +81,11 @@ export const SALSA_CUBANA_FAQS_CONFIG: FAQ[] = [
   },
 ];
 
-// Testimonials for Salsa Cubana page (extends Google reviews with specific testimonial)
+// Testimonials for Salsa Cubana page (extends Google reviews with specific testimonials)
+// Incluye testimonios técnicos (Océano Rojo) y emocionales (Océano Azul)
 export const SALSA_CUBANA_TESTIMONIALS: Testimonial[] = [
   ...GOOGLE_REVIEWS_TESTIMONIALS,
+  // Testimonio técnico - Océano Rojo
   {
     id: 4,
     name: 'Carlos M.',
@@ -100,6 +102,79 @@ export const SALSA_CUBANA_TESTIMONIALS: Testimonial[] = [
       es: 'El Método Farray transformó mi baile por completo. Ahora guío con confianza y bailo a tiempo. Después de años estancado en otras escuelas, aquí por fin entendí lo que es la salsa cubana de verdad.',
       ca: "El Mètode Farray va transformar el meu ball completament. Ara guio amb confiança i ballo a temps. Després d'anys estancat en altres escoles, aquí per fi vaig entendre què és la salsa cubana de veritat.",
       fr: "La Méthode Farray a complètement transformé ma danse. Maintenant je guide avec confiance et je danse en rythme. Après des années de stagnation dans d'autres écoles, j'ai enfin compris ce qu'est vraiment la salsa cubaine.",
+    },
+  },
+  // Testimonios emocionales - Océano Azul
+  {
+    id: 5,
+    name: 'Laura T.',
+    image: '',
+    rating: 5,
+    city: {
+      en: 'Barcelona, Spain',
+      es: 'Barcelona, España',
+      ca: 'Barcelona, Espanya',
+      fr: 'Barcelone, Espagne',
+    },
+    quote: {
+      en: "I came looking for an activity to disconnect from work. I'm taking home friends, confidence and a new passion. It's the best thing I've done for myself in years.",
+      es: 'Vine buscando una actividad para desconectar del trabajo. Me llevo amigos, confianza y una pasión nueva. Es lo mejor que he hecho por mí en años.',
+      ca: "Vaig venir buscant una activitat per desconnectar de la feina. M'emporto amics, confiança i una passió nova. És el millor que he fet per mi en anys.",
+      fr: "Je suis venue chercher une activité pour déconnecter du travail. J'emporte des amis, de la confiance et une nouvelle passion. C'est la meilleure chose que j'ai faite pour moi depuis des années.",
+    },
+  },
+  {
+    id: 6,
+    name: 'David y Maria',
+    image: '',
+    rating: 5,
+    city: {
+      en: 'Barcelona, Spain',
+      es: 'Barcelona, España',
+      ca: 'Barcelona, Espanya',
+      fr: 'Barcelone, Espagne',
+    },
+    quote: {
+      en: "We'd spent years not doing anything together except watching TV series. Salsa brought back the laughter and the eye contact. Thank you Farray's.",
+      es: "Llevábamos años sin hacer nada juntos que no fuera ver series. La salsa nos devolvió las risas y las miradas. Gracias Farray's.",
+      ca: "Portàvem anys sense fer res junts que no fos veure sèries. La salsa ens va tornar els riures i les mirades. Gràcies Farray's.",
+      fr: "Nous passions des années sans rien faire ensemble à part regarder des séries. La salsa nous a redonné les rires et les regards. Merci Farray's.",
+    },
+  },
+  {
+    id: 7,
+    name: 'Jordi P.',
+    image: '',
+    rating: 5,
+    city: {
+      en: 'Barcelona, Spain',
+      es: 'Barcelona, España',
+      ca: 'Barcelona, Espanya',
+      fr: 'Barcelone, Espagne',
+    },
+    quote: {
+      en: 'I always said I had two left feet. In 3 months I was dancing at my first party. Level 0 is pure magic.',
+      es: 'Siempre dije que tenía dos pies izquierdos. En 3 meses estaba bailando en mi primera fiesta. El Nivel 0 es magia pura.',
+      ca: 'Sempre vaig dir que tenia dos peus esquerres. En 3 mesos estava ballant a la meva primera festa. El Nivell 0 és màgia pura.',
+      fr: "J'ai toujours dit que j'avais deux pieds gauches. En 3 mois, je dansais à ma première fête. Le Niveau 0, c'est de la magie pure.",
+    },
+  },
+  {
+    id: 8,
+    name: 'Sandra M.',
+    image: '',
+    rating: 5,
+    city: {
+      en: 'Barcelona, Spain',
+      es: 'Barcelona, España',
+      ca: 'Barcelona, Espanya',
+      fr: 'Barcelone, Espagne',
+    },
+    quote: {
+      en: "I met my current partner here. But even if that hadn't happened, it would have been worth it just for what I learned and the people I met.",
+      es: 'Conocí a mi actual pareja aquí. Pero aunque no hubiera pasado eso, habría valido la pena solo por lo que aprendí y la gente que conocí.',
+      ca: 'Vaig conèixer la meva parella actual aquí. Però encara que no hagués passat això, hauria valgut la pena només pel que vaig aprendre i la gent que vaig conèixer.',
+      fr: "J'ai rencontré mon partenaire actuel ici. Mais même si cela n'était pas arrivé, ça aurait valu la peine rien que pour ce que j'ai appris et les gens que j'ai rencontrés.",
     },
   },
 ];
@@ -157,39 +232,23 @@ export const SALSA_CUBANA_SCHEDULE_KEYS = [
   },
 ];
 
-// Level descriptions for cards after schedule - Sistema progresivo Método Farray
+// Level descriptions for cards after schedule - Sistema progresivo Método Farray (simplified to 4 levels)
 export const SALSA_CUBANA_LEVELS = [
   {
     id: 'nivel-0',
-    levelKey: 'level0',
+    levelKey: 'beginnerLevel',
     titleKey: 'salsaCubanaLevel0Title',
     descKey: 'salsaCubanaLevel0Desc',
     duration: '0-2 meses',
-    color: 'green',
+    color: 'primary-dark' as const,
   },
   {
-    id: 'basico-1',
-    levelKey: 'basicLevel1',
-    titleKey: 'salsaCubanaLevelBasic1Title',
-    descKey: 'salsaCubanaLevelBasic1Desc',
-    duration: '2-4 meses',
-    color: 'blue',
-  },
-  {
-    id: 'basico-2',
-    levelKey: 'basicLevel2',
-    titleKey: 'salsaCubanaLevelBasic2Title',
-    descKey: 'salsaCubanaLevelBasic2Desc',
-    duration: '4-7 meses',
-    color: 'blue',
-  },
-  {
-    id: 'basico-3',
-    levelKey: 'basicLevel3',
-    titleKey: 'salsaCubanaLevelBasic3Title',
-    descKey: 'salsaCubanaLevelBasic3Desc',
-    duration: '7-12 meses',
-    color: 'blue',
+    id: 'basico',
+    levelKey: 'basicLevel',
+    titleKey: 'salsaCubanaLevelBasicTitle',
+    descKey: 'salsaCubanaLevelBasicDesc',
+    duration: '2-12 meses',
+    color: 'primary-dark-mid' as const,
   },
   {
     id: 'intermedio',
@@ -197,7 +256,7 @@ export const SALSA_CUBANA_LEVELS = [
     titleKey: 'salsaCubanaLevelIntermediateTitle',
     descKey: 'salsaCubanaLevelIntermediateDesc',
     duration: '12-24 meses',
-    color: 'orange',
+    color: 'primary-accent-light' as const,
   },
   {
     id: 'avanzado',
@@ -205,9 +264,22 @@ export const SALSA_CUBANA_LEVELS = [
     titleKey: 'salsaCubanaLevelAdvancedTitle',
     descKey: 'salsaCubanaLevelAdvancedDesc',
     duration: '+24 meses',
-    color: 'red',
+    color: 'primary-accent' as const,
   },
 ];
+
+// Prepare class configuration
+export const SALSA_CUBANA_PREPARE_CONFIG = {
+  prefix: 'salsaCubanaPrepare',
+  whatToBringCount: 5,
+  beforeCount: 3,
+  avoidCount: 3,
+  teacher: {
+    name: 'Yunaisy Farray',
+    credential: "Directora de Farray's Center",
+    image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
+  },
+};
 
 // Nearby neighborhoods for local SEO
 export const SALSA_CUBANA_NEARBY_AREAS = [

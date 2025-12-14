@@ -117,3 +117,44 @@ export const SEXY_STYLE_BREADCRUMB_KEYS = {
 
 // YouTube video ID for the page
 export const SEXY_STYLE_VIDEO_ID = '516fMKBEIKw';
+
+// Level descriptions for cards - 3 levels
+export const SEXY_STYLE_LEVELS = [
+  {
+    id: 'principiante',
+    levelKey: 'beginnerLevel',
+    titleKey: 'sexystyleLevelBeginnerTitle',
+    descKey: 'sexystyleLevelBeginnerDesc',
+    duration: '0-3 meses',
+    color: 'primary-dark' as const,
+  },
+  {
+    id: 'intermedio',
+    levelKey: 'intermediateLevel',
+    titleKey: 'sexystyleLevelInterTitle',
+    descKey: 'sexystyleLevelInterDesc',
+    duration: '3-9 meses',
+    color: 'primary-accent-light' as const,
+  },
+  {
+    id: 'avanzado',
+    levelKey: 'advancedLevel',
+    titleKey: 'sexystyleLevelAdvancedTitle',
+    descKey: 'sexystyleLevelAdvancedDesc',
+    duration: '+9 meses',
+    color: 'primary-accent' as const,
+  },
+];
+
+// Prepare class configuration
+export const SEXY_STYLE_PREPARE_CONFIG = {
+  prefix: 'sexystylePrepare',
+  whatToBringCount: 5,
+  beforeCount: 3,
+  avoidCount: 3,
+  teacher: {
+    name: 'Yasmina Fernández',
+    credential: 'Especialista en Sexy Style',
+    image: undefined,
+  },
+};

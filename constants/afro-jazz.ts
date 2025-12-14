@@ -103,3 +103,36 @@ export const AFRO_JAZZ_HERO_STATS = {
   calories: 500, // Calorías quemadas por clase
   funPercent: 100,
 };
+
+// Level descriptions for cards - 2 levels
+export const AFRO_JAZZ_LEVELS = [
+  {
+    id: 'basico',
+    levelKey: 'basicLevel',
+    titleKey: 'afrojazzLevelBasicTitle',
+    descKey: 'afrojazzLevelBasicDesc',
+    duration: '0-6 meses',
+    color: 'primary-dark' as const,
+  },
+  {
+    id: 'intermedio-avanzado',
+    levelKey: 'intermediateAdvancedLevel',
+    titleKey: 'afrojazzLevelIntAdvTitle',
+    descKey: 'afrojazzLevelIntAdvDesc',
+    duration: '+6 meses',
+    color: 'primary-accent' as const,
+  },
+];
+
+// Prepare class configuration
+export const AFRO_JAZZ_PREPARE_CONFIG = {
+  prefix: 'afrojazzPrepare',
+  whatToBringCount: 5,
+  beforeCount: 3,
+  avoidCount: 3,
+  teacher: {
+    name: 'Yunaisy Farray',
+    credential: 'Creadora de Afro Jazz Fusión',
+    image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
+  },
+};

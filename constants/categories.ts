@@ -29,12 +29,6 @@ export const CATEGORIES: Category[] = [
       'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&q=80', // Fitness workout
   },
   {
-    key: 'stretching',
-    pillarSlug: '/clases/stretching-barcelona',
-    imageUrl:
-      'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800&h=600&fit=crop&q=80', // Stretching
-  },
-  {
     key: 'todas',
     pillarSlug: '/clases/baile-barcelona',
     imageUrl:
