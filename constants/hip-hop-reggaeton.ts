@@ -106,3 +106,44 @@ export const HIP_HOP_REGGAETON_BREADCRUMB_KEYS = {
 
 // YouTube video ID for the page
 export const HIP_HOP_REGGAETON_VIDEO_ID = 'VdEJ1Z-pJzY';
+
+// Level descriptions for cards - 3 levels
+export const HIP_HOP_REGGAETON_LEVELS = [
+  {
+    id: 'principiante',
+    levelKey: 'beginnerLevel',
+    titleKey: 'hhrLevelBeginnerTitle',
+    descKey: 'hhrLevelBeginnerDesc',
+    duration: '0-3 meses',
+    color: 'primary-dark' as const,
+  },
+  {
+    id: 'intermedio',
+    levelKey: 'intermediateLevel',
+    titleKey: 'hhrLevelInterTitle',
+    descKey: 'hhrLevelInterDesc',
+    duration: '3-9 meses',
+    color: 'primary-accent-light' as const,
+  },
+  {
+    id: 'avanzado',
+    levelKey: 'advancedLevel',
+    titleKey: 'hhrLevelAdvancedTitle',
+    descKey: 'hhrLevelAdvancedDesc',
+    duration: '+9 meses',
+    color: 'primary-accent' as const,
+  },
+];
+
+// Prepare class configuration
+export const HIP_HOP_REGGAETON_PREPARE_CONFIG = {
+  prefix: 'hhrPrepare',
+  whatToBringCount: 5,
+  beforeCount: 3,
+  avoidCount: 3,
+  teacher: {
+    name: 'Charlie Breezy',
+    credential: 'Especialista en Hip Hop Reggaeton',
+    image: '/images/teachers/img/profesor-hip-hop-charlie-breezy_320.webp',
+  },
+};

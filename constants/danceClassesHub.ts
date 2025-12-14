@@ -38,7 +38,6 @@ export const HUB_CATEGORIES: HubCategory[] = [
       { key: 'ballet_clasico', url: '/clases/ballet-barcelona' },
       { key: 'danza_contemporanea', url: '/clases/contemporaneo-barcelona' },
       { key: 'modern_jazz', url: '/clases/modern-jazz-barcelona' },
-      { key: 'stretching', url: '/clases/stretching-barcelona' },
     ],
   },
 
@@ -93,14 +92,8 @@ export const HUB_CATEGORIES: HubCategory[] = [
     pillarUrl: '/clases/entrenamiento-bailarines-barcelona',
     imageUrl:
       'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop&q=80&auto=format',
-    featuredStyles: [
-      { key: 'entrenamiento', url: '/clases/entrenamiento-bailarines-barcelona' },
-      { key: 'stretching', url: '/clases/stretching-barcelona' },
-    ],
-    allStyles: [
-      { key: 'entrenamiento', url: '/clases/entrenamiento-bailarines-barcelona' },
-      { key: 'stretching', url: '/clases/stretching-barcelona' },
-    ],
+    featuredStyles: [{ key: 'entrenamiento', url: '/clases/entrenamiento-bailarines-barcelona' }],
+    allStyles: [{ key: 'entrenamiento', url: '/clases/entrenamiento-bailarines-barcelona' }],
   },
 ];
 
@@ -128,5 +121,4 @@ export const FEATURED_STYLES: StyleLink[] = [
   { key: 'salsa_bachata', url: '/clases/salsa-bachata-barcelona' },
   // Fitness
   { key: 'entrenamiento', url: '/clases/entrenamiento-bailarines-barcelona' },
-  { key: 'stretching', url: '/clases/stretching-barcelona' },
 ];

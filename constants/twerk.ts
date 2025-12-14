@@ -95,3 +95,44 @@ export const TWERK_BREADCRUMB_KEYS = {
   classes: 'twerkBreadcrumbClasses',
   current: 'twerkBreadcrumbCurrent',
 };
+
+// Level descriptions for cards - 3 levels for Twerk
+export const TWERK_LEVELS = [
+  {
+    id: 'principiante',
+    levelKey: 'beginnerLevel',
+    titleKey: 'twerkLevelBeginnerTitle',
+    descKey: 'twerkLevelBeginnerDesc',
+    duration: '0-3 meses',
+    color: 'primary-dark' as const,
+  },
+  {
+    id: 'intermedio',
+    levelKey: 'intermediateLevel',
+    titleKey: 'twerkLevelInterTitle',
+    descKey: 'twerkLevelInterDesc',
+    duration: '3-9 meses',
+    color: 'primary-accent-light' as const,
+  },
+  {
+    id: 'avanzado',
+    levelKey: 'advancedLevel',
+    titleKey: 'twerkLevelAdvancedTitle',
+    descKey: 'twerkLevelAdvancedDesc',
+    duration: '+9 meses',
+    color: 'primary-accent' as const,
+  },
+];
+
+// Prepare class configuration
+export const TWERK_PREPARE_CONFIG = {
+  prefix: 'twerkPrepare',
+  whatToBringCount: 5,
+  beforeCount: 3,
+  avoidCount: 3,
+  teacher: {
+    name: 'Sandra Gómez',
+    credential: 'Especialista en Twerk',
+    image: '/images/teachers/img/profesora-twerk-dancehall-sandra-gomez_320.webp',
+  },
+};

@@ -4,11 +4,51 @@ interface AnimateOnScrollProps {
   children: ReactNode;
   className?: string;
   delay?: number; // in ms
-  // Fix: Add style property to allow passing inline styles.
   style?: React.CSSProperties;
-  // Allow rendering as different HTML elements for accessibility
   as?: ElementType;
 }
+
+// Singleton IntersectionObserver for better performance
+// Instead of creating one observer per element, we use a single shared observer
+type ObserverCallback = (isIntersecting: boolean) => void;
+const observerCallbacks = new Map<Element, ObserverCallback>();
+
+let sharedObserver: IntersectionObserver | null = null;
+
+const getSharedObserver = (): IntersectionObserver => {
+  if (!sharedObserver) {
+    sharedObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          const callback = observerCallbacks.get(entry.target);
+          if (callback) {
+            callback(entry.isIntersecting);
+            if (entry.isIntersecting) {
+              // Once visible, unobserve and remove callback
+              sharedObserver?.unobserve(entry.target);
+              observerCallbacks.delete(entry.target);
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+      }
+    );
+  }
+  return sharedObserver;
+};
+
+const observeElement = (element: Element, callback: ObserverCallback): void => {
+  observerCallbacks.set(element, callback);
+  getSharedObserver().observe(element);
+};
+
+const unobserveElement = (element: Element): void => {
+  observerCallbacks.delete(element);
+  sharedObserver?.unobserve(element);
+};
 
 const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
   children,
@@ -26,7 +66,6 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     setPrefersReducedMotion(mediaQuery.matches);
 
-    // eslint-disable-next-line no-undef -- MediaQueryListEvent is a valid DOM type
     const handleChange = (e: MediaQueryListEvent): void => {
       setPrefersReducedMotion(e.matches);
     };
@@ -42,28 +81,19 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
       return;
     }
 
-    const observer = new IntersectionObserver(
-      entries => {
-        const entry = entries[0];
-        if (entry && entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      {
-        threshold: 0.1, // Trigger when 10% of the element is visible
-        rootMargin: '0px 0px -50px 0px', // Start animation a bit sooner
-      }
-    );
-
     const currentRef = ref.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
+    if (!currentRef) return;
+
+    // Use the shared observer instead of creating a new one
+    observeElement(currentRef, (isIntersecting: boolean) => {
+      if (isIntersecting) {
+        setIsVisible(true);
+      }
+    });
 
     return () => {
       if (currentRef) {
-        observer.unobserve(currentRef);
+        unobserveElement(currentRef);
       }
     };
   }, [prefersReducedMotion]);

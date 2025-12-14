@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, memo, useMemo, useCallback } from 'react';
 import { Helmet } from 'react-helmet-async';
 import DOMPurify from 'dompurify';
 import AnimateOnScroll from './AnimateOnScroll';
@@ -16,32 +16,37 @@ interface FAQSectionProps {
   pageUrl: string;
 }
 
-const FAQSection: React.FC<FAQSectionProps> = ({ title, faqs }) => {
+const FAQSection: React.FC<FAQSectionProps> = memo(function FAQSection({ title, faqs }) {
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
 
-  const toggleItem = (id: string) => {
-    const newOpenItems = new Set(openItems);
-    if (newOpenItems.has(id)) {
-      newOpenItems.delete(id);
-    } else {
-      newOpenItems.add(id);
-    }
-    setOpenItems(newOpenItems);
-  };
+  const toggleItem = useCallback((id: string) => {
+    setOpenItems(prev => {
+      const newOpenItems = new Set(prev);
+      if (newOpenItems.has(id)) {
+        newOpenItems.delete(id);
+      } else {
+        newOpenItems.add(id);
+      }
+      return newOpenItems;
+    });
+  }, []);
 
-  // Generate FAQ Schema for Google SGE
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map(faq => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  };
+  // Generate FAQ Schema for Google SGE - memoized to prevent re-computation
+  const faqSchema = useMemo(
+    () => ({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(faq => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    }),
+    [faqs]
+  );
 
   return (
     <>
@@ -102,6 +107,6 @@ const FAQSection: React.FC<FAQSectionProps> = ({ title, faqs }) => {
       </section>
     </>
   );
-};
+});
 
 export default FAQSection;

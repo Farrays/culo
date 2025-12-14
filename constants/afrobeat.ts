@@ -80,3 +80,36 @@ export const AFROBEAT_BREADCRUMB_KEYS = {
   urban: 'afroBreadcrumbUrban',
   current: 'afroBreadcrumbCurrent',
 };
+
+// Level descriptions for cards - 2 levels for Afrobeat
+export const AFROBEAT_LEVELS = [
+  {
+    id: 'basico',
+    levelKey: 'basicLevel',
+    titleKey: 'afroLevelBasicTitle',
+    descKey: 'afroLevelBasicDesc',
+    duration: '0-6 meses',
+    color: 'primary-dark' as const,
+  },
+  {
+    id: 'intermedio',
+    levelKey: 'intermediateLevel',
+    titleKey: 'afroLevelIntermediateTitle',
+    descKey: 'afroLevelIntermediateDesc',
+    duration: '+6 meses',
+    color: 'primary-accent' as const,
+  },
+];
+
+// Prepare class configuration
+export const AFROBEAT_PREPARE_CONFIG = {
+  prefix: 'afroPrepare',
+  whatToBringCount: 5,
+  beforeCount: 3,
+  avoidCount: 3,
+  teacher: {
+    name: 'Redblueh',
+    credential: 'Especialista en Afrobeats',
+    image: '/images/teachers/img/profesor-afrobeats-redblueh_320.webp',
+  },
+};

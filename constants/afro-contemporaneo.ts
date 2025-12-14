@@ -133,27 +133,38 @@ export const AFRO_CONTEMPORANEO_SCHEDULE_KEYS = [
   },
 ];
 
-// Level descriptions for cards after schedule
+// Level descriptions for cards - 2 levels
 export const AFRO_CONTEMPORANEO_LEVELS = [
   {
     id: 'basico',
     levelKey: 'basicLevel',
     titleKey: 'afrocontemporaneoLevelBasicTitle',
     descKey: 'afrocontemporaneoLevelBasicDesc',
-    teacher: 'Charlie Breezy',
-    schedule: 'Lunes 21:00 - 22:00',
-    color: 'blue',
+    duration: '0-6 meses',
+    color: 'primary-dark' as const,
   },
   {
     id: 'intermedio-avanzado',
     levelKey: 'intermediateAdvancedLevel',
     titleKey: 'afrocontemporaneoLevelIntAdvTitle',
     descKey: 'afrocontemporaneoLevelIntAdvDesc',
-    teacher: 'Yunaisy Farray',
-    schedule: 'Martes 19:00 - 20:30',
-    color: 'orange',
+    duration: '+6 meses',
+    color: 'primary-accent' as const,
   },
 ];
+
+// Prepare class configuration
+export const AFRO_CONTEMPORANEO_PREPARE_CONFIG = {
+  prefix: 'afrocontemporaneoPrepare',
+  whatToBringCount: 5,
+  beforeCount: 3,
+  avoidCount: 3,
+  teacher: {
+    name: 'Yunaisy Farray',
+    credential: "Directora de Farray's Center",
+    image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
+  },
+};
 
 // Nearby neighborhoods for local SEO
 export const AFRO_CONTEMPORANEO_NEARBY_AREAS = [

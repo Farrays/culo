@@ -15,15 +15,18 @@ const browserGlobals = {
   HTMLElement: 'readonly',
   HTMLDivElement: 'readonly',
   HTMLImageElement: 'readonly',
+  HTMLButtonElement: 'readonly',
   IntersectionObserver: 'readonly',
   Image: 'readonly',
   requestAnimationFrame: 'readonly',
   MouseEvent: 'readonly',
+  MediaQueryListEvent: 'readonly',
   SVGSVGElement: 'readonly',
   localStorage: 'readonly',
   sessionStorage: 'readonly',
   fetch: 'readonly',
   React: 'readonly',
+  Element: 'readonly',
 };
 
 // Node globals (for scripts and tests)

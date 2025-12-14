@@ -2,60 +2,53 @@ import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
 import {
-  REGGAETON_CUBANO_TESTIMONIALS,
-  REGGAETON_CUBANO_FAQS_CONFIG,
-  REGGAETON_CUBANO_SCHEDULE_KEYS,
-  REGGAETON_CUBANO_VIDEO_ID,
-  REGGAETON_CUBANO_LEVELS,
-  REGGAETON_CUBANO_PREPARE_CONFIG,
-} from '../constants/reggaeton-cubano';
-import LevelCardsSection from './shared/LevelCardsSection';
-import PrepareClassSection from './shared/PrepareClassSection';
-import { ANIMATION_DELAYS, BARCELONA_NEARBY_AREAS } from '../constants/shared';
+  SALSA_LADY_STYLE_TESTIMONIALS,
+  SALSA_LADY_STYLE_FAQS_CONFIG,
+  SALSA_LADY_STYLE_SCHEDULE_KEYS,
+  SALSA_LADY_STYLE_NEARBY_AREAS,
+  SALSA_LADY_STYLE_VIDEO_ID,
+  SALSA_LADY_STYLE_LEVELS,
+  SALSA_LADY_COMPARISON_DATA,
+  SALSA_LADY_STYLE_PREPARE_CONFIG,
+} from '../constants/salsa-lady-style';
+import { ANIMATION_DELAYS } from '../constants/shared';
 import AnimateOnScroll from './AnimateOnScroll';
 import CulturalHistorySection from './CulturalHistorySection';
 import ScheduleSection from './ScheduleSection';
 import FAQSection from './FAQSection';
+import LevelCardsSection from './shared/LevelCardsSection';
+import PrepareClassSection from './shared/PrepareClassSection';
 import AnimatedCounter from './AnimatedCounter';
 import YouTubeEmbed from './YouTubeEmbed';
 import { LocalBusinessSchema, CourseSchema, AggregateReviewsSchema } from './SchemaMarkup';
-import {
-  StarRating,
-  CheckIcon,
-  CheckCircleIcon,
-  ClockIcon,
-  FlameIcon,
-  StarIcon,
-  UserIcon,
-  CalendarDaysIcon,
-} from '../lib/icons';
+import { StarRating, CheckIcon, CheckCircleIcon, CalendarDaysIcon } from '../lib/icons';
 import { UsersIcon, MapPinIcon } from './shared/CommonIcons';
 
-const ReggaetonCubanoPage: React.FC = () => {
+const SalsaLadyStylePage: React.FC = () => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
-  const pageUrl = `${baseUrl}/${locale}/clases/reggaeton-cubano-barcelona`;
+  const pageUrl = `${baseUrl}/${locale}/clases/salsa-lady-style-barcelona`;
 
-  // Schedule data - traducir las keys dinámicamente
-  const schedules = REGGAETON_CUBANO_SCHEDULE_KEYS.map(schedule => ({
+  // Schedule data
+  const schedules = SALSA_LADY_STYLE_SCHEDULE_KEYS.map(schedule => ({
     ...schedule,
     day: t(schedule.dayKey),
     level: t(schedule.levelKey),
   }));
 
-  // FAQs - traducir las keys dinámicamente desde constants
-  const rcbFaqs = REGGAETON_CUBANO_FAQS_CONFIG.map(faq => ({
+  // FAQs
+  const salsaLadyFaqs = SALSA_LADY_STYLE_FAQS_CONFIG.map(faq => ({
     id: faq.id,
     question: t(faq.questionKey),
     answer: t(faq.answerKey),
   }));
 
-  // Testimonials - usar desde constants
-  const rcbTestimonials = REGGAETON_CUBANO_TESTIMONIALS;
+  // Testimonials
+  const salsaLadyTestimonials = SALSA_LADY_STYLE_TESTIMONIALS;
 
   // Schema Markup data for reviews
-  const reviewsSchemaData = rcbTestimonials.map(testimonial => ({
-    itemReviewed: { name: "Clases de Reggaeton Cubano - Farray's Center", type: 'Course' },
+  const reviewsSchemaData = salsaLadyTestimonials.map(testimonial => ({
+    itemReviewed: { name: "Clases de Salsa Lady Style - Farray's Center", type: 'Course' },
     author: testimonial.name,
     reviewRating: { ratingValue: testimonial.rating.toString(), bestRating: '5' },
     reviewBody: testimonial.quote[locale],
@@ -66,15 +59,15 @@ const ReggaetonCubanoPage: React.FC = () => {
   const videoSchema = {
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
-    name: t('rcbVideoTitle'),
-    description: t('rcbVideoDesc'),
-    thumbnailUrl: `https://img.youtube.com/vi/${REGGAETON_CUBANO_VIDEO_ID}/maxresdefault.jpg`,
+    name: t('salsaLadyVideoTitle'),
+    description: t('salsaLadyVideoDesc'),
+    thumbnailUrl: `https://img.youtube.com/vi/${SALSA_LADY_STYLE_VIDEO_ID}/maxresdefault.jpg`,
     uploadDate: '2025-01-01',
-    contentUrl: `https://www.youtube.com/watch?v=${REGGAETON_CUBANO_VIDEO_ID}`,
-    embedUrl: `https://www.youtube.com/embed/${REGGAETON_CUBANO_VIDEO_ID}`,
+    contentUrl: `https://www.youtube.com/watch?v=${SALSA_LADY_STYLE_VIDEO_ID}`,
+    embedUrl: `https://www.youtube.com/embed/${SALSA_LADY_STYLE_VIDEO_ID}`,
   };
 
-  // BreadcrumbList Schema (JSON-LD)
+  // BreadcrumbList Schema
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -82,38 +75,41 @@ const ReggaetonCubanoPage: React.FC = () => {
       {
         '@type': 'ListItem',
         position: 1,
-        name: t('rcbBreadcrumbHome'),
+        name: t('salsaLadyBreadcrumbHome'),
         item: `${baseUrl}/${locale}`,
       },
       {
         '@type': 'ListItem',
         position: 2,
-        name: t('rcbBreadcrumbClasses'),
+        name: t('salsaLadyBreadcrumbClasses'),
         item: `${baseUrl}/${locale}/clases`,
       },
       {
         '@type': 'ListItem',
         position: 3,
-        name: t('rcbBreadcrumbUrban'),
-        item: `${baseUrl}/${locale}/clases/danzas-urbanas-barcelona`,
+        name: t('salsaLadyBreadcrumbLatin'),
+        item: `${baseUrl}/${locale}/clases/salsa-bachata-barcelona`,
       },
       {
         '@type': 'ListItem',
         position: 4,
-        name: t('rcbBreadcrumbCurrent'),
+        name: t('salsaLadyBreadcrumbCurrent'),
         item: pageUrl,
       },
     ],
   };
 
-  // Breadcrumb items for visual navigation with microdata
+  // Breadcrumb items for visual navigation
   const breadcrumbItems = [
-    { name: t('rcbBreadcrumbHome'), url: `/${locale}` },
-    { name: t('rcbBreadcrumbClasses'), url: `/${locale}/clases` },
-    { name: t('rcbBreadcrumbUrban'), url: `/${locale}/clases/danzas-urbanas-barcelona` },
+    { name: t('salsaLadyBreadcrumbHome'), url: `/${locale}` },
+    { name: t('salsaLadyBreadcrumbClasses'), url: `/${locale}/clases/baile-barcelona` },
     {
-      name: t('rcbBreadcrumbCurrent'),
-      url: `/${locale}/clases/reggaeton-cubano-barcelona`,
+      name: t('salsaLadyBreadcrumbLatin'),
+      url: `/${locale}/clases/salsa-bachata-barcelona`,
+    },
+    {
+      name: t('salsaLadyBreadcrumbCurrent'),
+      url: `/${locale}/clases/salsa-lady-style-barcelona`,
       isActive: true,
     },
   ];
@@ -121,20 +117,20 @@ const ReggaetonCubanoPage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>{t('rcbPageTitle')} | Farray&apos;s Center</title>
-        <meta name="description" content={t('rcbMetaDescription')} />
+        <title>{t('salsaLadyPageTitle')} | Farray&apos;s Center</title>
+        <meta name="description" content={t('salsaLadyMetaDescription')} />
         <link rel="canonical" href={pageUrl} />
-        <meta property="og:title" content={`${t('rcbPageTitle')} | Farray&apos;s Center`} />
-        <meta property="og:description" content={t('rcbMetaDescription')} />
+        <meta property="og:title" content={`${t('salsaLadyPageTitle')} | Farray&apos;s Center`} />
+        <meta property="og:description" content={t('salsaLadyMetaDescription')} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${baseUrl}/images/og-reggaeton-cubano.jpg`} />
+        <meta property="og:image" content={`${baseUrl}/images/og-salsa-lady-style.jpg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${t('rcbPageTitle')} | Farray's Center`} />
-        <meta name="twitter:description" content={t('rcbMetaDescription')} />
-        <meta name="twitter:image" content={`${baseUrl}/images/og-reggaeton-cubano.jpg`} />
+        <meta name="twitter:title" content={`${t('salsaLadyPageTitle')} | Farray's Center`} />
+        <meta name="twitter:description" content={t('salsaLadyMetaDescription')} />
+        <meta name="twitter:image" content={`${baseUrl}/images/og-salsa-lady-style.jpg`} />
       </Helmet>
 
       {/* VideoObject Schema */}
@@ -151,79 +147,49 @@ const ReggaetonCubanoPage: React.FC = () => {
 
       {/* Schema Markup */}
       <LocalBusinessSchema
-        name="Farray's International Dance Center - Clases de Reggaeton Cubano"
-        description={t('rcbMetaDescription')}
+        name="Farray's International Dance Center - Clases de Salsa Lady Style"
+        description={t('salsaLadyMetaDescription')}
         url={pageUrl}
         telephone="+34622247085"
         email="info@farrayscenter.com"
         address={{
-          streetAddress: 'Calle Entença 100',
+          streetAddress: 'Calle Entenca 100',
           addressLocality: 'Barcelona',
           postalCode: '08015',
           addressCountry: 'ES',
         }}
-        geo={{
-          latitude: '41.3751',
-          longitude: '2.1482',
-        }}
+        geo={{ latitude: '41.3784', longitude: '2.1456' }}
         priceRange="€€"
-        aggregateRating={{
-          ratingValue: '5',
-          reviewCount: '505',
-        }}
       />
-
       <CourseSchema
-        name={t('rcbCourseSchemaName')}
-        description={t('rcbCourseSchemaDesc')}
+        name="Clases de Salsa Lady Style Barcelona - Método Farray"
+        description={t('salsaLadyCourseSchemaDesc')}
         provider={{
           name: "Farray's International Dance Center",
-          url: baseUrl,
+          url: pageUrl,
         }}
-        educationalLevel="Beginner, Intermediate, Advanced"
-        teaches="Reggaeton Cubano, Reparto, Cubatón, disociación corporal, improvisación"
-        coursePrerequisites="Ninguno"
-        numberOfLessons="3 clases semanales"
-        timeRequired="PT1H"
-        availableLanguage={['es', 'en', 'ca', 'fr']}
       />
-
       <AggregateReviewsSchema
-        reviews={reviewsSchemaData}
-        itemName="Clases de Reggaeton Cubano en Barcelona - Farray's Center"
+        itemName="Clases de Salsa Lady Style - Farray's Center"
         itemType="Course"
+        reviews={reviewsSchemaData}
       />
 
-      {/* Skip Links for Accessibility */}
-      <nav aria-label="Skip links" className="sr-only focus-within:not-sr-only">
-        <a
-          href="#main-content"
-          className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-4 focus-visible:left-4 focus-visible:z-[100] focus-visible:bg-primary-accent focus-visible:text-white focus-visible:px-4 focus-visible:py-2 focus-visible:rounded-lg focus-visible:font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-        >
-          {t('skipToMain')}
-        </a>
-        <a
-          href="#schedule"
-          className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:top-4 focus-visible:left-48 focus-visible:z-[100] focus-visible:bg-primary-accent focus-visible:text-white focus-visible:px-4 focus-visible:py-2 focus-visible:rounded-lg focus-visible:font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-        >
-          {t('skipToSchedule')}
-        </a>
-      </nav>
-
-      <main id="main-content" className="pt-20 md:pt-24" role="main">
-        {/* 1. HERO Section */}
+      <main className="bg-black text-neutral min-h-screen pt-20 md:pt-24">
+        {/* 1. Hero Section */}
         <section
-          id="rcb-hero"
+          id="hero"
           aria-labelledby="hero-title"
-          className="relative text-center py-24 md:py-32 overflow-hidden flex items-center justify-center min-h-[600px]"
+          className="relative min-h-[600px] flex items-center justify-center overflow-hidden py-24 md:py-32"
         >
-          {/* Background */}
+          {/* Background - Same as TwerkPage with stardust texture */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
             <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-20"></div>
           </div>
-          <div className="relative z-20 container mx-auto px-4 sm:px-6">
-            {/* Breadcrumb with Microdata */}
+
+          <div className="relative z-20 container mx-auto px-4 sm:px-6 text-center">
+            {/* Breadcrumb inside hero like other pages */}
             <Breadcrumb items={breadcrumbItems} textColor="text-neutral/75" />
 
             <AnimateOnScroll>
@@ -231,16 +197,16 @@ const ReggaetonCubanoPage: React.FC = () => {
                 id="hero-title"
                 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text"
               >
-                {t('rcbHeroTitle')}
+                {t('salsaLadyHeroTitle')}
               </h1>
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 holographic-text">
-                {t('rcbHeroSubtitle')}
+                {t('salsaLadyHeroSubtitle')}
               </p>
               <p className="max-w-4xl mx-auto text-lg sm:text-xl md:text-2xl text-neutral/90 mt-6 sm:mt-8 mb-4 sm:mb-6 leading-relaxed">
-                {t('rcbHeroDesc')}
+                {t('salsaLadyHeroDesc')}
               </p>
               <p className="text-base sm:text-lg md:text-xl text-neutral/90 italic mb-6">
-                {t('rcbHeroLocation')}
+                {t('salsaLadyHeroLocation')}
               </p>
 
               {/* Social Proof */}
@@ -253,7 +219,7 @@ const ReggaetonCubanoPage: React.FC = () => {
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
                   <UsersIcon className="w-5 h-5 text-primary-accent" />
-                  <span>+15.000 alumnos formados</span>
+                  <span>+15.000 alumnas formadas</span>
                 </div>
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
@@ -262,134 +228,91 @@ const ReggaetonCubanoPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* CTA Buttons - Enhanced UX & A11y */}
+              {/* CTA Buttons - Enhanced like TwerkPage */}
               <div
                 className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-8 sm:mt-10"
                 role="group"
-                aria-label={t('rcbCTAGroup') || 'Opciones de inscripción'}
+                aria-label="Opciones de inscripción"
               >
                 <div className="w-full sm:w-auto">
                   <a
-                    href="#schedule"
+                    href="#contact"
                     aria-describedby="cta1-desc"
-                    className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
+                    className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95"
                   >
-                    {t('rcbCTA1')}
+                    {t('salsaLadyCTA1')}
                   </a>
                   <p id="cta1-desc" className="text-xs text-neutral/70 mt-2 text-center">
-                    {t('rcbCTA1Subtext')}
+                    {t('salsaLadyCTA1Subtext')}
                   </p>
                 </div>
                 <div className="w-full sm:w-auto">
                   <a
                     href="#schedule"
                     aria-describedby="cta2-desc"
-                    className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] border-2 border-neutral text-neutral font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
+                    className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] border-2 border-neutral text-neutral font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95"
                   >
-                    {t('rcbCTA2')}
+                    {t('salsaLadyCTA2')}
                   </a>
                   <p id="cta2-desc" className="text-xs text-neutral/70 mt-2 text-center">
-                    {t('rcbCTA2Subtext')}
+                    {t('salsaLadyCTA2Subtext')}
                   </p>
                 </div>
               </div>
-
-              {/* Key Stats */}
-              <div className="mt-12 sm:mt-16">
-                <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-12 max-w-4xl mx-auto">
-                  {/* 60 Minutos */}
-                  <AnimateOnScroll delay={0}>
-                    <div className="text-center">
-                      <div className="mb-2 flex justify-center">
-                        <ClockIcon className="w-8 h-8 sm:w-10 sm:h-10 text-primary-accent" />
-                      </div>
-                      <AnimatedCounter
-                        target={60}
-                        className="text-3xl sm:text-4xl md:text-5xl font-black mb-1 holographic-text"
-                      />
-                      <div className="text-xs sm:text-sm md:text-base text-neutral/90 font-semibold">
-                        {t('classMinutes')}
-                      </div>
-                    </div>
-                  </AnimateOnScroll>
-
-                  {/* ~500 Calorías */}
-                  <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
-                    <div className="text-center">
-                      <div className="mb-2 flex justify-center">
-                        <FlameIcon className="w-8 h-8 sm:w-10 sm:h-10 text-primary-accent" />
-                      </div>
-                      <div className="text-3xl sm:text-4xl md:text-5xl font-black mb-1 holographic-text">
-                        ~<AnimatedCounter target={500} className="inline" />
-                      </div>
-                      <div className="text-xs sm:text-sm md:text-base text-neutral/90 font-semibold">
-                        {t('caloriesBurned')}
-                      </div>
-                    </div>
-                  </AnimateOnScroll>
-
-                  {/* 100% Sabor Cubano */}
-                  <AnimateOnScroll delay={2 * ANIMATION_DELAYS.STAGGER_SMALL}>
-                    <div className="text-center">
-                      <div className="mb-2 flex justify-center">
-                        <StarIcon className="w-8 h-8 sm:w-10 sm:h-10 text-primary-accent" />
-                      </div>
-                      <AnimatedCounter
-                        target={100}
-                        suffix="%"
-                        className="text-3xl sm:text-4xl md:text-5xl font-black mb-1 holographic-text"
-                      />
-                      <div className="text-xs sm:text-sm md:text-base text-neutral/90 font-semibold">
-                        {t('rcbAuthenticGuaranteed')}
-                      </div>
-                    </div>
-                  </AnimateOnScroll>
-                </div>
-              </div>
             </AnimateOnScroll>
           </div>
         </section>
 
-        {/* 2. What is Reggaeton Cubano Section */}
-        <section aria-labelledby="what-is-title" className="py-12 md:py-20 bg-primary-dark/10">
-          <div className="container mx-auto px-4 sm:px-6">
+        {/* 2. What is Salsa Lady Style Section - Enhanced with better contrast */}
+        <section className="py-16 md:py-24 bg-gradient-to-b from-primary-dark/20 via-black to-black relative overflow-hidden">
+          {/* Decorative background elements */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-accent/10 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-primary-dark/15 via-transparent to-transparent"></div>
+
+          <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <AnimateOnScroll>
-              <div className="max-w-4xl mx-auto">
-                <h2
-                  id="what-is-title"
-                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-6 sm:mb-8 text-center holographic-text"
-                >
-                  {t('rcbWhatIsTitle')}
+              <div className="max-w-4xl mx-auto text-center">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-6 holographic-text">
+                  {t('salsaLadyWhatIsTitle')}
                 </h2>
-                <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
-                  <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-neutral/90 leading-relaxed">
-                    <p className="text-lg sm:text-xl font-semibold holographic-text">
-                      {t('rcbWhatIsP1')}
-                    </p>
-                    <p>{t('rcbWhatIsP2')}</p>
-                    <p className="italic font-medium text-neutral">{t('rcbWhatIsP3')}</p>
-                    <p>{t('rcbWhatIsP4')}</p>
-                    <p className="text-center text-xl sm:text-2xl font-bold mt-6 sm:mt-8 holographic-text">
-                      {t('rcbWhatIsQuestionTitle')}
-                    </p>
-                    <p className="text-center text-lg sm:text-xl font-semibold">
-                      {t('rcbWhatIsQuestionAnswer')}
-                    </p>
-                  </div>
-                  <div className="rounded-2xl overflow-hidden shadow-lg">
-                    <picture>
-                      <source
-                        type="image/webp"
-                        srcSet="/images/classes/reggaeton-cubano/img/clases-reggaeton-cubano-barcelona_640.webp 640w, /images/classes/reggaeton-cubano/img/clases-reggaeton-cubano-barcelona_960.webp 960w"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                      <img
-                        src="/images/classes/reggaeton-cubano/img/clases-reggaeton-cubano-barcelona_960.jpg"
-                        alt="Clases de Reggaeton Cubano en Barcelona - Estudiantes bailando en la academia"
-                        loading="lazy"
-                        className="w-full h-full object-cover"
-                      />
-                    </picture>
+                <p className="text-lg sm:text-xl text-neutral/90 leading-relaxed mb-12">
+                  {t('salsaLadyWhatIsDesc')}
+                </p>
+
+                {/* Premium 3D Quote Card - Enhanced */}
+                <div className="[perspective:1200px] max-w-3xl mx-auto">
+                  <div className="group relative p-8 sm:p-10 bg-gradient-to-br from-primary-accent/20 via-black/80 to-primary-dark/25 backdrop-blur-xl rounded-3xl border border-primary-accent/50 shadow-2xl shadow-primary-accent/20 transition-all duration-700 [transform-style:preserve-3d] hover:[transform:rotateY(-3deg)_rotateX(2deg)_translateY(-8px)] hover:shadow-accent-glow hover:border-primary-accent/70">
+                    {/* Decorative elements */}
+                    <div className="absolute -top-4 -left-4 w-10 h-10 border-t-3 border-l-3 border-primary-accent/70 rounded-tl-xl"></div>
+                    <div className="absolute -bottom-4 -right-4 w-10 h-10 border-b-3 border-r-3 border-primary-accent/70 rounded-br-xl"></div>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                      <span className="text-6xl text-primary-accent/50">&ldquo;</span>
+                    </div>
+
+                    <blockquote className="relative z-10">
+                      <p className="text-neutral text-lg sm:text-xl md:text-2xl italic leading-relaxed font-light">
+                        {t('salsaLadyWhatIsQuote')}
+                      </p>
+                    </blockquote>
+
+                    <div className="mt-8 pt-6 border-t border-primary-accent/30 flex items-center justify-center gap-4">
+                      <div className="w-14 h-14 rounded-full overflow-hidden border-3 border-primary-accent/60 shadow-lg shadow-primary-accent/20">
+                        <img
+                          src="/images/teachers/yunaisy-farray_256.webp"
+                          alt="Yunaisy Farray"
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="text-left">
+                        <cite className="not-italic font-bold text-neutral text-lg">
+                          Yunaisy Farray
+                        </cite>
+                        <p className="text-primary-accent text-sm font-medium">
+                          {t('salsaLadyTeacherCredential')}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -397,28 +320,24 @@ const ReggaetonCubanoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 3. Schedule */}
+        {/* 3. Schedule Section */}
         <ScheduleSection
-          titleKey="rcbScheduleTitle"
-          subtitleKey="rcbScheduleSubtitle"
+          id="schedule"
+          titleKey="salsaLadyScheduleTitle"
+          subtitleKey="salsaLadyScheduleSubtitle"
           schedules={schedules}
           t={t}
         />
 
-        {/* Level Cards - Using shared component */}
-        <LevelCardsSection titleKey="rcbLevelsTitle" levels={REGGAETON_CUBANO_LEVELS} />
+        {/* 4. Level Cards Section - Premium 3D */}
+        <LevelCardsSection titleKey="salsaLadyLevelsTitle" levels={SALSA_LADY_STYLE_LEVELS} />
 
-        {/* 5. Teachers Section */}
+        {/* 5. Teachers Section - Like TwerkPage */}
         <section
           id="teachers"
           aria-labelledby="teachers-title"
           className="py-12 md:py-20 bg-primary-dark/10 relative overflow-hidden"
         >
-          {/* Cuba Flag Colors Background */}
-          <div className="absolute inset-0 opacity-20" aria-hidden="true">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/30 via-red-600/20 to-blue-600/30"></div>
-          </div>
-
           <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <AnimateOnScroll>
               <div className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto">
@@ -426,16 +345,16 @@ const ReggaetonCubanoPage: React.FC = () => {
                   id="teachers-title"
                   className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text"
                 >
-                  {t('rcbTeachersTitle')}
+                  {t('salsaLadyTeachersTitle')}
                 </h2>
                 <p className="text-lg sm:text-xl text-neutral/70 mt-4">
-                  {t('rcbTeachersSubtitle')}
+                  {t('salsaLadyTeachersSubtitle')}
                 </p>
               </div>
             </AnimateOnScroll>
 
             <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
-              {/* Charlie Breezy */}
+              {/* Yunaisy Farray */}
               <AnimateOnScroll
                 delay={ANIMATION_DELAYS.STAGGER_SMALL}
                 className="[perspective:1000px]"
@@ -445,46 +364,52 @@ const ReggaetonCubanoPage: React.FC = () => {
                     <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-4 sm:mb-6">
                       <picture>
                         <source
-                          srcSet="/images/teachers/img/profesor-charlie-breezy_320.webp 320w, /images/teachers/img/profesor-charlie-breezy_640.webp 640w"
-                          sizes="160px"
                           type="image/webp"
+                          srcSet="/images/teachers/yunaisy-farray_256.webp 1x, /images/teachers/yunaisy-farray_512.webp 2x"
                         />
                         <img
-                          src="/images/teachers/img/profesor-charlie-breezy_640.jpg"
-                          alt="Charlie Breezy - Profesor de Reggaeton Cubano y Reparto"
+                          src="/images/teachers/yunaisy-farray_256.png"
+                          srcSet="/images/teachers/yunaisy-farray_256.png 1x, /images/teachers/yunaisy-farray_512.png 2x"
+                          alt="Yunaisy Farray - Maestra de Salsa Lady Style y creadora del Método Farray®"
+                          width="160"
+                          height="160"
                           loading="lazy"
                           className="w-full h-full object-cover"
                         />
                       </picture>
                     </div>
                     <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2">
-                      {t('rcbTeacher1Name')}
+                      Yunaisy Farray
                     </h3>
                     <p className="text-primary-accent font-semibold mb-3 sm:mb-4">
-                      {t('rcbTeacher1Specialty')}
+                      {t('salsaLadyTeacherCredential')}
                     </p>
-                    <p className="text-neutral/90 leading-relaxed text-sm">{t('rcbTeacher1Bio')}</p>
+                    <p className="text-neutral/90 leading-relaxed text-sm">
+                      {t('salsaLadyTeacherBio')}
+                    </p>
                   </div>
                 </div>
               </AnimateOnScroll>
 
-              {/* Alejandro Miñoso */}
+              {/* Lia Valdes */}
               <AnimateOnScroll
                 delay={2 * ANIMATION_DELAYS.STAGGER_SMALL}
                 className="[perspective:1000px]"
               >
                 <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-6 sm:p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-4 sm:mb-6 bg-gradient-to-br from-primary-accent/30 to-primary-dark/50 flex items-center justify-center">
-                      <UserIcon className="w-16 h-16 sm:w-20 sm:h-20 text-primary-accent/60" />
+                    <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-4 sm:mb-6 bg-primary-dark/30 flex items-center justify-center">
+                      <span className="text-4xl font-black text-primary-accent/50">LV</span>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2">
-                      {t('rcbTeacher2Name')}
-                    </h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2">Lia Valdes</h3>
                     <p className="text-primary-accent font-semibold mb-3 sm:mb-4">
-                      {t('rcbTeacher2Specialty')}
+                      Maestra y Artista Internacional Cubana
                     </p>
-                    <p className="text-neutral/90 leading-relaxed text-sm">{t('rcbTeacher2Bio')}</p>
+                    <p className="text-neutral/90 leading-relaxed text-sm">
+                      Con más de 20 años de carrera artística, formada en la Escuela Nacional de
+                      Arte de Cuba (ENA). Referente mundial en Cabaret y Lady Style, ha llevado su
+                      arte a escenarios internacionales.
+                    </p>
                   </div>
                 </div>
               </AnimateOnScroll>
@@ -492,21 +417,123 @@ const ReggaetonCubanoPage: React.FC = () => {
 
             <AnimateOnScroll>
               <p className="text-center text-base sm:text-lg text-neutral/90 mt-8 sm:mt-10 max-w-2xl mx-auto">
-                {t('rcbTeachersClosing')}
+                {t('salsaLadyTeachersClosing')}
               </p>
             </AnimateOnScroll>
           </div>
         </section>
 
-        {/* 6. Prepara tu primera clase - Using shared component */}
+        {/* 7. Prepare Section - VIP Style like SalsaCubana */}
         <PrepareClassSection
-          titleKey="rcbPrepareTitle"
-          subtitleKey="rcbPrepareSubtitle"
-          config={REGGAETON_CUBANO_PREPARE_CONFIG}
+          titleKey="salsaLadyPrepareTitle"
+          subtitleKey="salsaLadyPrepareSubtitle"
+          config={SALSA_LADY_STYLE_PREPARE_CONFIG}
         />
 
-        {/* 7. Identification Section - Puntos de dolor + Necesitas apuntarte */}
-        <section aria-labelledby="identify-title" className="py-12 md:py-20 bg-primary-dark/10">
+        {/* 8. Comparison Table Section */}
+        <section className="py-14 md:py-20 bg-primary-dark/10">
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="max-w-5xl mx-auto">
+                <h3 className="text-2xl sm:text-3xl font-black tracking-tighter text-neutral mb-2 text-center holographic-text">
+                  {t('salsaLadyCompareTitle')}
+                </h3>
+                <p className="text-base text-neutral/70 mb-6 text-center">
+                  {t('salsaLadyCompareSubtitle')}
+                </p>
+
+                {/* Mobile: Cards view */}
+                <div className="block lg:hidden space-y-4">
+                  {SALSA_LADY_COMPARISON_DATA.rows.map((row, rowIdx) => (
+                    <div
+                      key={rowIdx}
+                      className="p-4 bg-black/30 rounded-xl border border-neutral/20"
+                    >
+                      <h4 className="font-bold text-neutral mb-3 text-sm">{t(row.rowKey)}</h4>
+                      <div className="grid grid-cols-2 gap-2 text-xs">
+                        {SALSA_LADY_COMPARISON_DATA.styles.map((style, styleIdx) => (
+                          <div
+                            key={style.key}
+                            className={`flex justify-between items-center p-2 rounded-lg ${
+                              styleIdx === 1
+                                ? 'bg-primary-accent/15 border border-primary-accent/30'
+                                : 'bg-neutral/10'
+                            }`}
+                          >
+                            <span
+                              className={
+                                styleIdx === 1
+                                  ? 'text-primary-accent font-semibold'
+                                  : 'text-neutral/70'
+                              }
+                            >
+                              {t(style.nameKey)}
+                            </span>
+                            <span
+                              className={
+                                styleIdx === 1 ? 'text-primary-accent/80' : 'text-neutral/60'
+                              }
+                            >
+                              {'★'.repeat(row.values[styleIdx] ?? 0)}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Desktop: Table view */}
+                <div className="hidden lg:block overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-neutral/20">
+                        <th className="text-left py-3 px-2 text-neutral/70 font-semibold">
+                          {t('salsaLadyCompareFeature')}
+                        </th>
+                        {SALSA_LADY_COMPARISON_DATA.styles.map((style, idx) => (
+                          <th
+                            key={style.key}
+                            className={`text-center py-3 px-2 font-semibold ${
+                              idx === 1 ? 'text-primary-accent' : 'text-neutral/70'
+                            }`}
+                          >
+                            {t(style.nameKey)}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {SALSA_LADY_COMPARISON_DATA.rows.map((row, rowIdx) => (
+                        <tr
+                          key={rowIdx}
+                          className={`border-b border-neutral/10 ${rowIdx % 2 === 0 ? 'bg-black/20' : ''}`}
+                        >
+                          <td className="py-3 px-2 text-neutral/80">{t(row.rowKey)}</td>
+                          {row.values.map((value, styleIdx) => (
+                            <td
+                              key={styleIdx}
+                              className={`py-3 px-2 text-center ${
+                                styleIdx === 1
+                                  ? 'bg-primary-accent/10 text-primary-accent/80'
+                                  : 'text-neutral/60'
+                              }`}
+                            >
+                              {'★'.repeat(value)}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* 9. Identification Section - Puntos de dolor */}
+        <section aria-labelledby="identify-title" className="py-12 md:py-20 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto">
@@ -514,7 +541,7 @@ const ReggaetonCubanoPage: React.FC = () => {
                   id="identify-title"
                   className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-6 sm:mb-8 holographic-text"
                 >
-                  {t('rcbIdentifyTitle')}
+                  {t('salsaLadyIdentifyTitle')}
                 </h2>
               </div>
             </AnimateOnScroll>
@@ -522,7 +549,6 @@ const ReggaetonCubanoPage: React.FC = () => {
             <ul
               className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-8 sm:mb-10 list-none"
               role="list"
-              aria-label={t('rcbIdentifyListLabel') || 'Situaciones con las que te identificas'}
             >
               {[1, 2, 3, 4, 5, 6].map((num, index) => (
                 <AnimateOnScroll
@@ -538,25 +564,28 @@ const ReggaetonCubanoPage: React.FC = () => {
                     >
                       <CheckIcon className="text-primary-accent" size="sm" />
                     </div>
-                    <p className="text-neutral/90 leading-relaxed">{t(`rcbIdentify${num}`)}</p>
+                    <p className="text-neutral/90 leading-relaxed">
+                      {t(`salsaLadyIdentify${num}`)}
+                    </p>
                   </div>
                 </AnimateOnScroll>
               ))}
             </ul>
 
-            {/* Texto de transición + Necesitas apuntarte */}
+            {/* Transition text */}
             <AnimateOnScroll>
               <div className="text-center mb-4 sm:mb-6">
                 <p className="text-sm text-neutral/75 italic max-w-2xl mx-auto">
-                  {t('rcbIdentifyTransition')}
+                  {t('salsaLadyIdentifyTransition')}
                 </p>
               </div>
             </AnimateOnScroll>
 
+            {/* Need Enroll */}
             <AnimateOnScroll>
               <div className="text-center mb-6 sm:mb-8 max-w-4xl mx-auto">
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-4 sm:mb-6 holographic-text">
-                  {t('rcbNeedEnrollTitle')}
+                  {t('salsaLadyNeedEnrollTitle')}
                 </h3>
               </div>
             </AnimateOnScroll>
@@ -564,19 +593,21 @@ const ReggaetonCubanoPage: React.FC = () => {
             <AnimateOnScroll>
               <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4">
                 <p className="text-lg sm:text-xl font-semibold holographic-text">
-                  {t('rcbIdentifyAgitate1')}
+                  {t('salsaLadyIdentifyAgitate1')}
                 </p>
-                <p className="text-base sm:text-lg text-neutral/90">{t('rcbIdentifySolution')}</p>
+                <p className="text-base sm:text-lg text-neutral/90">
+                  {t('salsaLadyIdentifySolution')}
+                </p>
                 <p className="text-lg sm:text-xl text-neutral/90 italic">
-                  {t('rcbIdentifyClosing')}
+                  {t('salsaLadyIdentifyClosing')}
                 </p>
               </div>
             </AnimateOnScroll>
           </div>
         </section>
 
-        {/* 8. Transformation Section */}
-        <section aria-labelledby="transform-title" className="py-12 md:py-20 bg-black">
+        {/* 10. Transformation Section */}
+        <section aria-labelledby="transform-title" className="py-12 md:py-20 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto">
@@ -584,7 +615,7 @@ const ReggaetonCubanoPage: React.FC = () => {
                   id="transform-title"
                   className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
                 >
-                  {t('rcbTransformTitle')}
+                  {t('salsaLadyTransformTitle')}
                 </h2>
               </div>
             </AnimateOnScroll>
@@ -601,10 +632,10 @@ const ReggaetonCubanoPage: React.FC = () => {
                       {num}
                     </div>
                     <h3 className="text-lg sm:text-xl font-bold text-neutral mb-2 sm:mb-3">
-                      {t(`rcbTransform${num}Title`)}
+                      {t(`salsaLadyTransform${num}Title`)}
                     </h3>
                     <p className="text-neutral/90 leading-relaxed text-sm sm:text-base">
-                      {t(`rcbTransform${num}Desc`)}
+                      {t(`salsaLadyTransform${num}Desc`)}
                     </p>
                   </div>
                 </AnimateOnScroll>
@@ -613,19 +644,19 @@ const ReggaetonCubanoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 9. Why Choose Farray's + Logos Section */}
-        <section className="py-12 md:py-20 bg-primary-dark/10">
+        {/* 11. Why Choose + Stats + Logos Section */}
+        <section className="py-12 md:py-20 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-8 sm:mb-10 max-w-4xl mx-auto">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('rcbTransformCTA')}
+                  {t('salsaLadyWhyChooseTitle')}
                 </h2>
               </div>
             </AnimateOnScroll>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-10 sm:mb-12">
-              {[1, 7, 2, 3, 4, 5, 6].map((num, index) => (
+              {[1, 2, 3, 4, 5, 6, 7].map((num, index) => (
                 <AnimateOnScroll
                   key={num}
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
@@ -638,10 +669,10 @@ const ReggaetonCubanoPage: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-base sm:text-lg font-bold text-neutral mb-2">
-                          {t(`rcbWhyChoose${num}Title`)}
+                          {t(`salsaLadyWhyChoose${num}Title`)}
                         </h3>
                         <p className="text-neutral/90 text-sm leading-relaxed">
-                          {t(`rcbWhyChoose${num}Desc`)}
+                          {t(`salsaLadyWhyChoose${num}Desc`)}
                         </p>
                       </div>
                     </div>
@@ -690,7 +721,7 @@ const ReggaetonCubanoPage: React.FC = () => {
             <AnimateOnScroll>
               <div className="text-center max-w-4xl mx-auto">
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-6 sm:mb-8 holographic-text">
-                  {t('rcbLogosTitle')}
+                  {t('salsaLadyLogosTitle')}
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto items-center mb-4 sm:mb-6">
                   <div className="flex flex-col items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-black/30 backdrop-blur-sm rounded-xl border border-primary-accent/20 hover:border-primary-accent transition-all duration-300 hover:scale-105">
@@ -747,65 +778,40 @@ const ReggaetonCubanoPage: React.FC = () => {
                   </div>
                 </div>
                 <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter holographic-text">
-                  {t('rcbLogosIntlFestivalsText')}
+                  {t('salsaLadyLogosIntlFestivalsText')}
                 </p>
               </div>
             </AnimateOnScroll>
           </div>
         </section>
 
-        {/* 10. Why Today Section */}
-        <section className="py-12 md:py-20 bg-black">
+        {/* 12. Video Section */}
+        <section className="py-16 md:py-24 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
-              <div className="max-w-3xl mx-auto text-center space-y-4 sm:space-y-5">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 sm:mb-6 holographic-text">
-                  {t('rcbWhyTodayFullTitle')}
+              <div className="text-center mb-10">
+                <h2 className="text-3xl sm:text-4xl font-black tracking-tighter text-neutral mb-4 holographic-text">
+                  {t('salsaLadyVideoTitle')}
                 </h2>
-                <p className="text-lg sm:text-xl text-neutral/90">{t('rcbWhyToday1')}</p>
-                <p className="text-lg sm:text-xl text-neutral/90">{t('rcbWhyToday2')}</p>
-                <p className="text-lg sm:text-xl text-neutral/90">{t('rcbWhyToday3')}</p>
-                <p className="text-xl sm:text-2xl font-bold holographic-text mt-4 sm:mt-6">
-                  {t('rcbWhyTodayClosing1')}
-                </p>
-                <p className="text-base sm:text-lg text-neutral/90 italic">
-                  {t('rcbWhyTodayClosing2')}
+                <p className="text-lg text-neutral/70 max-w-2xl mx-auto">
+                  {t('salsaLadyVideoDesc')}
                 </p>
               </div>
             </AnimateOnScroll>
-          </div>
-        </section>
 
-        {/* 11. Video Section */}
-        <section id="video" className="py-12 md:py-20 bg-primary-dark/10">
-          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-8 sm:mb-12 max-w-4xl mx-auto">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('rcbVideoTitle')}
-                </h2>
-                <p className="text-base sm:text-lg text-neutral/70">{t('rcbVideoDesc')}</p>
-              </div>
-            </AnimateOnScroll>
-
-            {/* Video centrado */}
-            <div className="max-w-4xl mx-auto">
-              <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
+              <div className="max-w-4xl mx-auto">
                 <YouTubeEmbed
-                  videoId={REGGAETON_CUBANO_VIDEO_ID}
-                  title="Clases de Reggaeton Cubano en Barcelona - Farray's Center"
+                  videoId={SALSA_LADY_STYLE_VIDEO_ID}
+                  title={t('salsaLadyVideoTitle')}
                 />
-              </AnimateOnScroll>
-            </div>
+              </div>
+            </AnimateOnScroll>
           </div>
         </section>
 
-        {/* 12. Testimonials */}
-        <section
-          id="testimonials"
-          aria-labelledby="testimonials-title"
-          className="py-12 md:py-20 bg-black"
-        >
+        {/* 13. Testimonials - Same style as TwerkPage */}
+        <section aria-labelledby="testimonials-title" className="py-16 md:py-24 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-8 sm:mb-10 max-w-4xl mx-auto">
@@ -831,7 +837,7 @@ const ReggaetonCubanoPage: React.FC = () => {
             </AnimateOnScroll>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
-              {rcbTestimonials.map((testimonial, index) => (
+              {salsaLadyTestimonials.map((testimonial, index) => (
                 <AnimateOnScroll
                   key={testimonial.id}
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
@@ -860,90 +866,33 @@ const ReggaetonCubanoPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 13. Final CTA Section */}
-        <section id="final-cta" className="relative py-12 sm:py-16 md:py-24 overflow-hidden">
-          {/* Background like Hero */}
-          <div className="absolute inset-0 bg-black">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-20"></div>
-          </div>
-          <div className="container mx-auto px-4 sm:px-6 relative z-20">
-            <AnimateOnScroll>
-              <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('rcbFinalCTATitle')}
-                </h2>
-                <p className="text-xl sm:text-2xl font-bold mb-4 sm:mb-5 holographic-text">
-                  {t('rcbFinalCTASubtitle')}
-                </p>
-                <p className="text-lg sm:text-xl text-neutral/90 mb-5 sm:mb-6 leading-relaxed">
-                  {t('rcbFinalCTADesc')}
-                </p>
-                <p className="text-base sm:text-lg text-neutral/90 mb-6 sm:mb-8 italic">
-                  {t('rcbFinalCTAFunny')}
-                </p>
-
-                {/* CTA Final - Enhanced UX & A11y */}
-                <div
-                  className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
-                  role="group"
-                  aria-label={t('rcbCTAGroup') || 'Opciones de inscripción'}
-                >
-                  <div className="w-full sm:w-auto">
-                    <a
-                      href="#schedule"
-                      aria-describedby="final-cta1-desc"
-                      className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
-                    >
-                      {t('rcbCTA1')}
-                    </a>
-                    <p id="final-cta1-desc" className="text-xs text-neutral/70 mt-2 text-center">
-                      {t('rcbCTA1Subtext')}
-                    </p>
-                  </div>
-                  <div className="w-full sm:w-auto">
-                    <a
-                      href="#schedule"
-                      aria-describedby="final-cta2-desc"
-                      className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] border-2 border-neutral text-neutral font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
-                    >
-                      {t('rcbCTA2')}
-                    </a>
-                    <p id="final-cta2-desc" className="text-xs text-neutral/70 mt-2 text-center">
-                      {t('rcbCTA2Subtext')}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* 14. Cultural History - Contenido profundo SEO */}
+        {/* 14. Cultural History Section */}
         <CulturalHistorySection
-          titleKey=""
-          shortDescKey="rcbCulturalShort"
-          fullHistoryKey="rcbCulturalFull"
+          titleKey="salsaLadyCulturalTitle"
+          shortDescKey="salsaLadyCulturalShort"
+          fullHistoryKey="salsaLadyCulturalFull"
           readMoreText={t('readMore')}
           readLessText={t('readLess')}
           t={t}
         />
 
-        {/* 14. FAQ */}
-        <FAQSection title={t('rcbFaqTitle')} faqs={rcbFaqs} pageUrl={pageUrl} />
+        {/* 15. FAQ Section */}
+        <FAQSection title={t('salsaLadyFaqTitle')} faqs={salsaLadyFaqs} pageUrl={pageUrl} />
 
-        {/* 15. Local SEO Section - Cerca de ti */}
+        {/* 16. Local SEO Section */}
         <section className="py-10 md:py-14 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto p-6 bg-black/30 rounded-2xl border border-neutral/20">
                 <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-4">
-                  {t('rcbNearbyTitle')}
+                  {t('salsaLadyNearbyTitle')}
                 </h3>
-                <p className="text-neutral/80 mb-6">{t('rcbNearbyDesc')}</p>
-                <p className="text-neutral/90 font-semibold mb-4">{t('rcbNearbySearchText')}</p>
+                <p className="text-neutral/80 mb-6">{t('salsaLadyNearbyDesc')}</p>
+                <p className="text-neutral/90 font-semibold mb-4">
+                  {t('salsaLadyNearbySearchText')}
+                </p>
                 <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
-                  {BARCELONA_NEARBY_AREAS.map((area, index) => (
+                  {SALSA_LADY_STYLE_NEARBY_AREAS.map((area, index) => (
                     <div key={index} className="flex items-center gap-2 text-sm">
                       <MapPinIcon className="w-4 h-4 text-primary-accent" />
                       <span className="text-neutral/80">
@@ -952,7 +901,60 @@ const ReggaetonCubanoPage: React.FC = () => {
                     </div>
                   ))}
                 </div>
-                <p className="text-neutral/70 text-sm mt-4">{t('rcbNearbyMetro')}</p>
+                <p className="text-neutral/70 text-sm mt-4">{t('salsaLadyNearbyMetro')}</p>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* 17. Final CTA Section */}
+        <section
+          id="contact"
+          className="py-16 md:py-24 bg-gradient-to-br from-primary-accent/20 via-black to-primary-dark/20"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="max-w-3xl mx-auto text-center">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-6 holographic-text">
+                  {t('salsaLadyFinalCTATitle')}
+                </h2>
+                <p className="text-xl text-neutral/80 mb-8 leading-relaxed whitespace-pre-line">
+                  {t('salsaLadyFinalCTADesc')}
+                </p>
+
+                {/* CTA Buttons - Same structure as hero */}
+                <div
+                  className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-8"
+                  role="group"
+                  aria-label="Opciones de inscripción"
+                >
+                  <div className="w-full sm:w-auto">
+                    <a
+                      href="https://wa.me/34622247085"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-describedby="final-cta1-desc"
+                      className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95"
+                    >
+                      {t('salsaLadyFinalCTA1')}
+                    </a>
+                    <p id="final-cta1-desc" className="text-xs text-neutral/70 mt-2 text-center">
+                      {t('salsaLadyFinalCTA1Subtext')}
+                    </p>
+                  </div>
+                  <div className="w-full sm:w-auto">
+                    <a
+                      href="#schedule"
+                      aria-describedby="final-cta2-desc"
+                      className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] border-2 border-neutral text-neutral font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95"
+                    >
+                      {t('salsaLadyFinalCTA2')}
+                    </a>
+                    <p id="final-cta2-desc" className="text-xs text-neutral/70 mt-2 text-center">
+                      {t('salsaLadyFinalCTA2Subtext')}
+                    </p>
+                  </div>
+                </div>
               </div>
             </AnimateOnScroll>
           </div>
@@ -962,4 +964,4 @@ const ReggaetonCubanoPage: React.FC = () => {
   );
 };
 
-export default ReggaetonCubanoPage;
+export default SalsaLadyStylePage;

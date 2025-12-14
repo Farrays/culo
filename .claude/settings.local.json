@@ -79,7 +79,11 @@
       "Bash(do echo -n \"$key: \")",
       "Bash(for key in modernjazzCompareMeaning1Title modernjazzCompareMeaning1Desc modernjazzCompareMeaning2Title modernjazzCompareMeaning2Desc modernjazzCompareMeaning3Title modernjazzCompareMeaning3Desc modernjazzCompareMeaning4Title modernjazzCompareMeaning4Desc modernjazzCompareRow1 modernjazzCompareRow2 modernjazzCompareRow3)",
       "Bash(for key in afrojazzCompareMeaning1Title afrojazzCompareMeaning1Desc afrojazzCompareMeaning2Title afrojazzCompareMeaning2Desc afrojazzCompareMeaning3Title afrojazzCompareMeaning3Desc afrojazzCompareMeaning4Title afrojazzCompareMeaning4Desc afrojazzCompareRow1 afrojazzCompareRow2 afrojazzPrepareNeedItem1 afrojazzPrepareAvoidItem1 afrojazzCulturalTitle)",
-      "Bash(xargs:*)"
+      "Bash(xargs:*)",
+      "Bash(rmdir:*)",
+      "Bash(for f in AfrobeatPage.tsx HipHopPage.tsx AfroContemporaneoPage.tsx HipHopReggaetonPage.tsx ReggaetonCubanoPage.tsx SalsaCubanaPage.tsx SalsaLadyStylePage.tsx SexyReggaetonPage.tsx StretchingPage.tsx)",
+      "Bash(do sed -i \"/^import { CalendarDaysIcon } from ''..\\/lib\\/icons'';$/d\" \"$f\")",
+      "Bash(findstr:*)"
     ],
     "deny": [],
     "ask": []

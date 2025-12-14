@@ -64,18 +64,30 @@ export const HIPHOP_SCHEDULE_KEYS = [
   },
 ];
 
-// Level descriptions
+// Level descriptions for cards - 1 level (Open Level)
 export const HIPHOP_LEVELS = [
   {
     id: 'open',
-    levelKey: 'allLevels',
+    levelKey: 'openLevel',
     titleKey: 'hiphopLevelOpenTitle',
     descKey: 'hiphopLevelOpenDesc',
-    teacher: 'Marcos Martínez',
-    schedule: 'Jueves 20:00 - 21:00',
-    color: 'purple',
+    duration: 'Todos los niveles',
+    color: 'primary-accent' as const,
   },
 ];
+
+// Prepare class configuration
+export const HIPHOP_PREPARE_CONFIG = {
+  prefix: 'hiphopPrepare',
+  whatToBringCount: 5,
+  beforeCount: 3,
+  avoidCount: 3,
+  teacher: {
+    name: 'Marcos Martínez',
+    credential: 'Juez Internacional Hip Hop',
+    image: undefined,
+  },
+};
 
 // Breadcrumb custom keys for Hip Hop (4 niveles)
 export const HIPHOP_BREADCRUMB_KEYS = {

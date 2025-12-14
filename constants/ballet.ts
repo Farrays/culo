@@ -123,3 +123,36 @@ export const BALLET_HERO_STATS = {
   calories: 400, // Calorías quemadas por clase
   techniquePercent: 100, // 100% Técnica Cubana
 };
+
+// Level descriptions for cards - 2 levels
+export const BALLET_LEVELS = [
+  {
+    id: 'principiantes',
+    levelKey: 'basicLevel',
+    titleKey: 'balletLevelBasicTitle',
+    descKey: 'balletLevelBasicDesc',
+    duration: '0-6 meses',
+    color: 'primary-dark' as const,
+  },
+  {
+    id: 'intermedio',
+    levelKey: 'intermediateLevel',
+    titleKey: 'balletLevelIntermediateTitle',
+    descKey: 'balletLevelIntermediateDesc',
+    duration: '+6 meses',
+    color: 'primary-accent' as const,
+  },
+];
+
+// Prepare class configuration
+export const BALLET_PREPARE_CONFIG = {
+  prefix: 'balletPrepare',
+  whatToBringCount: 5,
+  beforeCount: 3,
+  avoidCount: 3,
+  teacher: {
+    name: 'Daniel Sené',
+    credential: 'Profesor de Ballet',
+    image: undefined,
+  },
+};

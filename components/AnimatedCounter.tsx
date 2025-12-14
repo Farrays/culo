@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, memo } from 'react';
 
 interface AnimatedCounterProps {
   target: number;
@@ -7,12 +7,12 @@ interface AnimatedCounterProps {
   className?: string;
 }
 
-const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
+const AnimatedCounter: React.FC<AnimatedCounterProps> = memo(function AnimatedCounter({
   target,
   duration = 2000,
   suffix = '',
   className = '',
-}) => {
+}) {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
@@ -68,6 +68,6 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
       {suffix}
     </div>
   );
-};
+});
 
 export default AnimatedCounter;

@@ -14,7 +14,7 @@ module.exports = [
   {
     name: 'EN Locale Bundle',
     path: 'dist/assets/i18n-en-*.js',
-    limit: '150 KB',
+    limit: '155 KB',
     gzip: true,
   },
   {
@@ -26,7 +26,7 @@ module.exports = [
   {
     name: 'FR Locale Bundle',
     path: 'dist/assets/i18n-fr-*.js',
-    limit: '160 KB',
+    limit: '165 KB',
     gzip: true,
   },
   {

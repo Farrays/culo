@@ -415,6 +415,13 @@ interface StarRatingProps {
   label?: string;
 }
 
+// PlayIcon - solid filled play button (used in video overlays)
+export const PlayIcon: React.FC<IconProps> = ({ className = 'w-6 h-6' }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
+  </svg>
+);
+
 export const StarRating: React.FC<StarRatingProps> = ({
   count = 5,
   size = 'md',

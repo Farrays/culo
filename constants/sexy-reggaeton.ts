@@ -114,3 +114,36 @@ export const SEXY_REGGAETON_BREADCRUMB_KEYS = {
 
 // YouTube video ID for the page
 export const SEXY_REGGAETON_VIDEO_ID = 'J5SI4u1SVsg';
+
+// Level descriptions for cards - 2 levels for Sexy Reggaeton
+export const SEXY_REGGAETON_LEVELS = [
+  {
+    id: 'basico',
+    levelKey: 'basicLevel',
+    titleKey: 'sxrLevelBasicTitle',
+    descKey: 'sxrLevelBasicDesc',
+    duration: '0-6 meses',
+    color: 'primary-dark' as const,
+  },
+  {
+    id: 'intermedio',
+    levelKey: 'intermediateLevel',
+    titleKey: 'sxrLevelIntermediateTitle',
+    descKey: 'sxrLevelIntermediateDesc',
+    duration: '+6 meses',
+    color: 'primary-accent' as const,
+  },
+];
+
+// Prepare class configuration
+export const SEXY_REGGAETON_PREPARE_CONFIG = {
+  prefix: 'sxrPrepare',
+  whatToBringCount: 5,
+  beforeCount: 3,
+  avoidCount: 3,
+  teacher: {
+    name: 'Yasmina Fernández',
+    credential: 'Especialista en Sexy Reggaeton',
+    image: undefined,
+  },
+};

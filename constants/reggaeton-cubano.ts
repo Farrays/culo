@@ -82,3 +82,44 @@ export const REGGAETON_CUBANO_BREADCRUMB_KEYS = {
 
 // YouTube video ID for the page
 export const REGGAETON_CUBANO_VIDEO_ID = 'YOUR_YOUTUBE_VIDEO_ID';
+
+// Level descriptions for cards - 3 levels
+export const REGGAETON_CUBANO_LEVELS = [
+  {
+    id: 'principiante',
+    levelKey: 'beginnerLevel',
+    titleKey: 'rcbLevelBeginnerTitle',
+    descKey: 'rcbLevelBeginnerDesc',
+    duration: '0-3 meses',
+    color: 'primary-dark' as const,
+  },
+  {
+    id: 'intermedio',
+    levelKey: 'intermediateLevel',
+    titleKey: 'rcbLevelInterTitle',
+    descKey: 'rcbLevelInterDesc',
+    duration: '3-9 meses',
+    color: 'primary-accent-light' as const,
+  },
+  {
+    id: 'avanzado',
+    levelKey: 'advancedLevel',
+    titleKey: 'rcbLevelAdvancedTitle',
+    descKey: 'rcbLevelAdvancedDesc',
+    duration: '+9 meses',
+    color: 'primary-accent' as const,
+  },
+];
+
+// Prepare class configuration
+export const REGGAETON_CUBANO_PREPARE_CONFIG = {
+  prefix: 'rcbPrepare',
+  whatToBringCount: 5,
+  beforeCount: 3,
+  avoidCount: 3,
+  teacher: {
+    name: 'Charlie Breezy',
+    credential: 'Especialista en Reggaeton Cubano',
+    image: '/images/teachers/img/profesor-hip-hop-charlie-breezy_320.webp',
+  },
+};

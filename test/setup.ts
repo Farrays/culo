@@ -3,7 +3,6 @@ import '@testing-library/jest-dom/vitest';
 
 // Mock IntersectionObserver - proper implementation
 class MockIntersectionObserver {
-  // eslint-disable-next-line no-undef
   readonly root: Element | null = null;
   readonly rootMargin: string = '';
   readonly thresholds: ReadonlyArray<number> = [];

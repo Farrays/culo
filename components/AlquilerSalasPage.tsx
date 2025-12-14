@@ -116,6 +116,7 @@ const RoomGallery: React.FC<{ images: string[]; roomName: string; t: (key: strin
         alt={`${roomName} - Foto ${currentIndex + 1}`}
         width="1200"
         height="800"
+        loading="lazy"
         className="w-full h-full object-cover select-none"
         draggable={false}
       />

@@ -8,18 +8,23 @@ import {
   ClockIcon,
   FlameIcon,
   HeartIcon,
-} from './shared/Icons';
+} from '../lib/icons';
 import {
   MODERN_JAZZ_TESTIMONIALS,
   MODERN_JAZZ_FAQS_CONFIG,
   MODERN_JAZZ_SCHEDULE_KEYS,
   MODERN_JAZZ_VIDEO_ID,
   MODERN_JAZZ_NEARBY_AREAS,
+  MODERN_JAZZ_LEVELS,
+  MODERN_JAZZ_PREPARE_CONFIG,
 } from '../constants/modern-jazz';
+import { ANIMATION_DELAYS } from '../constants/shared';
 import AnimateOnScroll from './AnimateOnScroll';
 import CulturalHistorySection from './CulturalHistorySection';
 import ScheduleSection from './ScheduleSection';
 import FAQSection from './FAQSection';
+import LevelCardsSection from './shared/LevelCardsSection';
+import PrepareClassSection from './shared/PrepareClassSection';
 import AnimatedCounter from './AnimatedCounter';
 import YouTubeEmbed from './YouTubeEmbed';
 import {
@@ -31,24 +36,7 @@ import {
   DefinedTermSchema,
   EventSchema,
 } from './SchemaMarkup';
-
-// MapPinIcon for Local SEO section
-const MapPinIcon: React.FC<{ className?: string }> = ({ className = 'w-5 h-5' }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-    />
-  </svg>
-);
-
-// Animation delay constants (in ms)
-const ANIMATION_DELAYS = {
-  STAGGER_SMALL: 100,
-  STAGGER_MEDIUM: 150,
-} as const;
+import { MapPinIcon } from './shared/CommonIcons';
 
 const ModernJazzPage: React.FC = () => {
   const { t, locale } = useI18n();
@@ -639,25 +627,7 @@ const ModernJazzPage: React.FC = () => {
         />
 
         {/* Level Cards Section */}
-        <section className="py-14 md:py-20 bg-black">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="max-w-2xl mx-auto">
-              <AnimateOnScroll delay={0}>
-                <div className="h-full p-6 bg-primary-dark/20 border border-primary-dark/40 rounded-2xl hover:border-primary-dark/60 transition-colors">
-                  <div className="inline-block px-3 py-1 bg-primary-dark/30 text-neutral text-sm font-semibold rounded-full mb-4">
-                    BÁSICO
-                  </div>
-                  <h3 className="text-xl font-bold text-neutral mb-3">
-                    {t('modernjazzLevelBasicTitle')}
-                  </h3>
-                  <p className="text-neutral/80 text-sm leading-relaxed">
-                    {t('modernjazzLevelBasicDesc')}
-                  </p>
-                </div>
-              </AnimateOnScroll>
-            </div>
-          </div>
-        </section>
+        <LevelCardsSection titleKey="modernjazzLevelsTitle" levels={MODERN_JAZZ_LEVELS} />
 
         {/* Teacher Section - Position 4 */}
         <section
@@ -727,88 +697,11 @@ const ModernJazzPage: React.FC = () => {
         </section>
 
         {/* Prepare Section - Prepara tu primera clase */}
-        <section className="py-14 md:py-20 bg-primary-dark/10">
-          <div className="container mx-auto px-4 sm:px-6">
-            <AnimateOnScroll>
-              <div className="max-w-5xl mx-auto">
-                <h3 className="text-2xl sm:text-3xl font-black tracking-tighter text-neutral mb-2 text-center holographic-text">
-                  {t('modernjazzPrepareTitle')}
-                </h3>
-                <p className="text-base text-neutral/70 mb-6 text-center">
-                  {t('modernjazzPrepareSubtitle')}
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-                  {/* Qué traer - primary-accent */}
-                  <div className="p-5 bg-primary-accent/10 rounded-2xl border border-primary-accent/30 hover:border-primary-accent/50 transition-all duration-300">
-                    <h4 className="text-base font-bold text-primary-accent mb-3 flex items-center gap-2">
-                      <span className="w-6 h-6 rounded-full bg-primary-accent/20 flex items-center justify-center text-sm">
-                        +
-                      </span>
-                      {t('modernjazzPrepareWhatToBring')}
-                    </h4>
-                    <ul className="space-y-2">
-                      {[1, 2, 3, 4, 5].map(num => (
-                        <li key={num} className="flex items-start gap-2 text-sm text-neutral/80">
-                          <CheckIcon className="w-4 h-4 text-primary-accent mt-0.5 flex-shrink-0" />
-                          <span>{t(`modernjazzPrepareItem${num}`)}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Antes de llegar - primary-dark */}
-                  <div className="p-5 bg-primary-dark/15 rounded-2xl border border-primary-dark/30 hover:border-primary-dark/50 transition-all duration-300">
-                    <h4 className="text-base font-bold text-neutral mb-3 flex items-center gap-2">
-                      <ClockIcon className="w-5 h-5 text-primary-accent" />
-                      {t('modernjazzPrepareBefore')}
-                    </h4>
-                    <ul className="space-y-2">
-                      {[1, 2, 3].map(num => (
-                        <li key={num} className="flex items-start gap-2 text-sm text-neutral/80">
-                          <span className="w-4 h-4 rounded-full bg-primary-dark/30 flex items-center justify-center text-xs text-neutral mt-0.5 flex-shrink-0">
-                            -
-                          </span>
-                          <span>{t(`modernjazzPrepareBeforeItem${num}`)}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Evita - neutral/muted */}
-                  <div className="p-5 bg-neutral/5 rounded-2xl border border-neutral/20 hover:border-neutral/40 transition-all duration-300 sm:col-span-2 lg:col-span-1">
-                    <h4 className="text-base font-bold text-neutral/70 mb-3 flex items-center gap-2">
-                      <span className="w-6 h-6 rounded-full bg-neutral/10 flex items-center justify-center text-sm">
-                        x
-                      </span>
-                      {t('modernjazzPrepareAvoid')}
-                    </h4>
-                    <ul className="space-y-2">
-                      {[1, 2, 3].map(num => (
-                        <li key={num} className="flex items-start gap-2 text-sm text-neutral/80">
-                          <span className="w-4 h-4 rounded-full bg-neutral/10 flex items-center justify-center text-xs text-neutral/60 mt-0.5 flex-shrink-0">
-                            x
-                          </span>
-                          <span>{t(`modernjazzPrepareAvoidItem${num}`)}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Consejo del profesor */}
-                <div className="mt-6 p-5 bg-gradient-to-r from-primary-accent/10 via-primary-dark/10 to-primary-accent/10 rounded-2xl border border-primary-accent/30">
-                  <p className="text-sm font-bold text-primary-accent mb-2">
-                    {t('modernjazzPrepareTeacherTip')}
-                  </p>
-                  <blockquote className="text-neutral/90 italic leading-relaxed text-sm">
-                    &ldquo;{t('modernjazzPrepareTeacherQuote')}&rdquo;
-                  </blockquote>
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
+        <PrepareClassSection
+          titleKey="modernjazzPrepareTitle"
+          subtitleKey="modernjazzPrepareSubtitle"
+          config={MODERN_JAZZ_PREPARE_CONFIG}
+        />
 
         {/* Comparison Table - Modern Jazz vs Otras Disciplinas */}
         <section className="py-12 md:py-20 bg-primary-dark/10">
