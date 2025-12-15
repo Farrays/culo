@@ -83,7 +83,11 @@
       "Bash(rmdir:*)",
       "Bash(for f in AfrobeatPage.tsx HipHopPage.tsx AfroContemporaneoPage.tsx HipHopReggaetonPage.tsx ReggaetonCubanoPage.tsx SalsaCubanaPage.tsx SalsaLadyStylePage.tsx SexyReggaetonPage.tsx StretchingPage.tsx)",
       "Bash(do sed -i \"/^import { CalendarDaysIcon } from ''..\\/lib\\/icons'';$/d\" \"$f\")",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(npm run size:*)",
+      "Bash(npx storybook@latest init:*)",
+      "Bash(npm run build-storybook:*)",
+      "Bash(npx husky init)"
     ],
     "deny": [],
     "ask": []

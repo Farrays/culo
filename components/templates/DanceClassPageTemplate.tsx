@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../../hooks/useI18n';
+import { SUPPORTED_LOCALES } from '../../types';
 import Breadcrumb from '../shared/Breadcrumb';
 import { StarRating, CheckCircleIcon, ClockIcon, FlameIcon } from '../../lib/icons';
 import { UsersIcon, MapPinIcon } from '../shared/CommonIcons';
@@ -78,7 +79,7 @@ export interface DanceClassPageConfig {
   testimonials: Testimonial[];
   scheduleKeys: ScheduleItem[];
   levels?: LevelItem[];
-  nearbyAreas?: typeof BARCELONA_NEARBY_AREAS;
+  nearbyAreas?: ReadonlyArray<{ readonly name: string; readonly time: string }>;
 
   // Teachers
   teachers: TeacherInfo[];
@@ -278,7 +279,7 @@ const DanceClassPageTemplate: React.FC<DanceClassPageConfig> = ({
         coursePrerequisites={courseConfig?.prerequisites || 'Ninguno'}
         numberOfLessons={courseConfig?.lessons || 'Clases semanales'}
         timeRequired={courseConfig?.duration || 'PT1H'}
-        availableLanguage={['es', 'en', 'ca', 'fr']}
+        availableLanguage={SUPPORTED_LOCALES}
       />
 
       <AggregateReviewsSchema

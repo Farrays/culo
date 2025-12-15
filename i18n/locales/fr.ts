@@ -203,8 +203,10 @@ export const fr = {
   // FinalCTA
   finalCtaTitle:
     "Nous ne promettons pas d'être la 'meilleure école de danse de Barcelone'. Nous promettons quelque chose de mieux : des résultats.",
-  finalCtaSubtitle:
-    "Des personnes normales qui dansent incroyablement aujourd'hui ont commencé comme vous : en hésitant. La différence, c'est qu'elles ont fait le premier pas. 👉 Faites-le aussi. Inscrivez-vous aujourd'hui.",
+  finalCtaSubtitleLine1:
+    "Des personnes normales qui dansent incroyablement aujourd'hui ont commencé comme vous : en hésitant.",
+  finalCtaSubtitleLine2: "La différence, c'est qu'elles ont fait le premier pas.",
+  finalCtaSubtitleLine3: "Faites-le aussi. Inscrivez-vous aujourd'hui.",
   finalCtaButton1: 'Devenez Membre Maintenant',
   finalCtaButton2: "Réservez votre Cours d'Essai",
   // Footer
@@ -2255,6 +2257,9 @@ export const fr = {
   faq_cta_login: 'Mon Compte',
 
   // Servicios Baile Page
+  serviciosBaile_pageTitle: "Services de Danse Barcelone | Location, Cours, Événements | Farray's",
+  serviciosBaile_metaDescription:
+    "Services de danse à Barcelone : location de salles, cours particuliers, événements d'entreprise, studio d'enregistrement et plus. Farray's International Dance Center.",
   serviciosBaile_breadcrumb_home: 'Accueil',
   serviciosBaile_breadcrumb_current: 'Services de Danse',
   serviciosBaile_h1: 'Services de Danse à Barcelone',
@@ -2525,7 +2530,7 @@ export const fr = {
   roomRental_intro_p2:
     "Vous pouvez louer à l'heure, pour des jours ponctuels ou de manière récurrente, avec des tarifs spéciaux pour les compagnies, professeurs et écoles.",
   roomRental_intro_p3:
-    '👉 Répétitions, cours, ateliers, événements hybrides et tournages... tout dans le même espace.',
+    'Répétitions, cours, ateliers, événements hybrides et tournages... tout dans le même espace.',
 
   roomRental_forWhom_title: 'Pour Qui est la Location de Salles?',
   roomRental_forWhom_item1: 'Répétitions de compagnies et groupes chorégraphiques',
@@ -2621,7 +2626,7 @@ export const fr = {
   roomRental_discounts_item2:
     'Pour locations régulières à long terme (compagnies, professeurs, écoles, projets continus)',
   roomRental_discounts_footer:
-    "👉 Dites-nous ce dont vous avez besoin (jour, horaire, type d'activité, nombre de personnes) et nous vous préparons un devis sur mesure.",
+    "Dites-nous ce dont vous avez besoin (jour, horaire, type d'activité, nombre de personnes) et nous vous préparons un devis sur mesure.",
 
   roomRental_cta_title: 'Vous Voulez Louer une Salle de Danse à Barcelone?',
   roomRental_cta_subtitle:
@@ -2757,7 +2762,7 @@ export const fr = {
   twerkFaqQ15:
     "Que faire si j'ai des questions sur les cours de Twerk ou besoin de plus d'informations ?",
   twerkFaqA15:
-    'Si vous avez des questions supplémentaires ou besoin de plus d\'informations, vous pouvez nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+    'Si vous avez des questions supplémentaires ou besoin de plus d\'informations, vous pouvez nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/><strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
 
   twerkImage1Alt: "Cours de Twerk à Barcelone - Farray's Center",
   twerkImage2Alt: 'Étudiants pratiquant le Twerk avec Sandra Gómez',
@@ -3157,7 +3162,7 @@ Chez Farray's International Dance Center, l'Afrobeats est enseigné avec techniq
     "Farray's Center est situé Calle Entença 100, Barcelone, à seulement 5 minutes de Plaza España et de la Gare de Sants. Nous avons des professeurs expérimentés et une ambiance familiale pour tous les niveaux.",
   afroFaqQ15: "Que faire si j'ai des questions ou besoin de plus d'informations ?",
   afroFaqA15:
-    'Si tu as des questions supplémentaires ou besoin de plus d\'informations, tu peux nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelone</a>',
+    'Si tu as des questions supplémentaires ou besoin de plus d\'informations, tu peux nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/><strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelone</a>',
 
   // Final CTA
   afroFinalCTATitle: 'Rejoins la communauté Afrobeats la plus active de Barcelone',
@@ -3408,7 +3413,7 @@ Les dernières tendances et styles fusionnent dans nos cours de manière variée
     "Farray's Center est situé au Calle Entença 100, 08015 Barcelone, à seulement 5 minutes de Plaza España et de la Gare de Sants. Nous avons des professeurs avec une grande expérience et une ambiance familiale pour tous les niveaux.",
   hhrFaqQ15: "Que faire si j'ai des questions ou besoin de plus d'informations ?",
   hhrFaqA15:
-    'Si tu as des questions supplémentaires ou besoin de plus d\'informations, tu peux nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+    'Si tu as des questions supplémentaires ou besoin de plus d\'informations, tu peux nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/><strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
 
   // Course Schema
   hhrCourseSchemaName: "Cours de Hip Hop Reggaeton à Barcelone - Farray's Center",
@@ -3636,7 +3641,7 @@ Les dernières tendances et styles fusionnent dans nos cours de manière variée
     "Nous sommes la seule académie à Barcelone avec des professeurs cubains authentiques, la reconnaissance du CID UNESCO et une ambiance familiale qui maintient l'essence des quartiers de La Havane.",
   rcbFaqQ15: "Comment puis-je vous contacter pour plus d'informations ?",
   rcbFaqA15:
-    'Pour plus d\'informations tu peux nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+    'Pour plus d\'informations tu peux nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/><strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
 
   // Course Schema
   rcbCourseSchemaName: "Cours de Reggaeton Cubain à Barcelone - Farray's Center",
@@ -4376,7 +4381,7 @@ Aujourd'hui, le Sexy Style chez Farray's se vit comme un espace d'apprentissage 
 
   sexystyleFaqQ15: 'Où puis-je trouver des cours de Sexy Style près de Plaza España à Barcelone ?',
   sexystyleFaqA15:
-    'Farray\'s Center est à seulement 5 minutes à pied de Plaza España, au Calle Entença 100, 08015 Barcelone. Nous sommes l\'académie de référence en Sexy Style dans la zone, avec connexion directe par métro (L1, L3), bus et train depuis Sants Station.<br/><br/>📍 <strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelone</a><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+    'Farray\'s Center est à seulement 5 minutes à pied de Plaza España, au Calle Entença 100, 08015 Barcelone. Nous sommes l\'académie de référence en Sexy Style dans la zone, avec connexion directe par métro (L1, L3), bus et train depuis Sants Station.<br/><br/><strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelone</a><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
 
   // Image alts
   sexystyleImageAlt: "Cours de Sexy Style à Barcelone - Farray's Center",
@@ -4915,7 +4920,7 @@ Farray's International Dance Center est noté près de **5/5 sur Google**, avec 
   modernjazzFaqQ15:
     'Où puis-je trouver des cours de Modern Jazz près de Plaza España à Barcelone ?',
   modernjazzFaqA15:
-    'Farray\'s Center est à seulement 5 minutes à pied de Plaza España, au Calle Entença 100, 08015 Barcelone. Nous sommes une référence en Modern Jazz dans la zone, avec connexion directe par métro (L1, L3), bus et train depuis Sants Station.<br/><br/>📍 <strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelone</a><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+    'Farray\'s Center est à seulement 5 minutes à pied de Plaza España, au Calle Entença 100, 08015 Barcelone. Nous sommes une référence en Modern Jazz dans la zone, avec connexion directe par métro (L1, L3), bus et train depuis Sants Station.<br/><br/><strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelone</a><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
 
   modernjazzFaqQ16: "Qu'obtenez-vous dans notre cours de Modern Jazz à Barcelone ?",
   modernjazzFaqA16:
@@ -6181,7 +6186,7 @@ Travaille intégralement : **flexibilité, force fonctionnelle, coordination, pr
     "Farray's Center est situé Calle Entença 100, à seulement 5 minutes de Plaza España et de la Gare de Sants. Vous pouvez arriver en métro (L1, L3), bus ou train.",
   contemporaneoFaqQ15: "Que faire si j'ai des questions ou besoin de plus d'informations ?",
   contemporaneoFaqA15:
-    'Si vous avez des questions supplémentaires ou besoin de plus d\'informations, vous pouvez nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+    'Si vous avez des questions supplémentaires ou besoin de plus d\'informations, vous pouvez nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/><strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
 
   // Image alts
   contemporaneoImage1Alt: "Cours de Danse Contemporaine à Barcelone - Farray's Center",
@@ -6507,7 +6512,7 @@ L'Afro Contemporain enseigné au **Farray's International Dance Center** fait pa
 
   afrocontemporaneoFaqQ15: "Comment puis-je contacter pour plus d'informations ?",
   afrocontemporaneoFaqA15:
-    'Si vous avez des questions supplémentaires ou avez besoin de plus d\'informations, vous pouvez nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+    'Si vous avez des questions supplémentaires ou avez besoin de plus d\'informations, vous pouvez nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/><strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
 
   // Image alts
   afrocontemporaneoImage1Alt: "Cours d'Afro Contemporain à Barcelone - Farray's Center",
@@ -6798,7 +6803,7 @@ L'Afro Contemporain enseigné au **Farray's International Dance Center** fait pa
     "Farray's Center est situé Calle Entença 100, à 5 minutes de Plaza España et de la gare de Sants. Nous sommes l'une des rares académies à Barcelone avec un juge international de Hip Hop dans le corps enseignant.",
   hiphopFaqQ15: "Comment puis-je contacter pour plus d'informations ?",
   hiphopFaqA15:
-    'Vous pouvez nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/>📍 <strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
+    'Vous pouvez nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/><strong>Adresse :</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
 
   // Image alts
   hiphopImage1Alt: "Cours de Hip Hop à Barcelone - Farray's Center",
@@ -7934,4 +7939,123 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   salsaLadyTransform6Desc:
     'De copier les autres à avoir votre propre signature personnelle qui vous rend unique et reconnaissable.',
   salsaLadyTransformCTA: 'Pourquoi nous choisir ?',
+
+  // ===== ADDITIONAL FR.TS TRANSLATIONS =====
+  home_categories_danza_bullets:
+    'Technique classique et contemporaine, Ballet, Jazz, Afro Contemporain, Du débutant à avancé',
+  home_categories_danza_styles_afro_contemporaneo:
+    'Fusion unique de mouvements afro-caribéens avec technique contemporaine',
+  home_categories_danza_styles_afro_jazz:
+    'Jazz aux racines afro-caribéennes et technique cubaine qui vous fait vibrer',
+  home_categories_danza_styles_ballet:
+    'Ballet classique avec méthodologie cubaine reconnue internationalement',
+  home_categories_danza_styles_contemporaneo:
+    'Technique lyrique, travail au sol, improvisation et flow contemporain',
+  home_categories_danza_styles_modern_jazz:
+    'Jazz moderne avec dynamisme, technique propre et personnalité scénique vibrante',
+  home_categories_salsa_bullets:
+    'Salsa Cubaine, Bachata, Son, Timba, Lady Style, Mens Style, Du débutant à avancé',
+  home_categories_salsa_styles_bachata:
+    'Danse sensuelle caribéenne qui vous connecte à votre partenaire',
+  home_categories_salsa_styles_lady_style:
+    'Technique féminine individuelle: tours, travail des bras, attitude féminine',
+  home_categories_salsa_styles_salsa_cubana:
+    'Salsa cubaine authentique avec saveur circulaire, joyeuse et sociale',
+  home_categories_salsa_styles_son_cubano:
+    'Le père de la salsa: élégant, classique et plein de tradition',
+  home_categories_salsa_styles_timba:
+    "Salsa cubaine moderne: rapide, énergique et pleine d'attitude explosive",
+  home_categories_urbano_styles_afrobeat:
+    'Énergie africaine pure avec rythmes du Ghana et du Nigeria',
+  home_categories_urbano_styles_dancehall:
+    'Le style urbain le plus énergique né à Kingston, Jamaïque',
+  home_categories_urbano_styles_heels:
+    'Technique féminine en talons fusionnant sensualité et élégance',
+  home_categories_urbano_styles_hip_hop:
+    'La base de toutes les danses urbaines née dans le Bronx, New York',
+  home_categories_urbano_styles_reggaeton:
+    'Reggaeton authentique de La Havane: flow cubain et saveur caribéenne',
+  home_categories_urbano_styles_twerk:
+    'Renforcez et tonifiez les fessiers avec vraie technique de twerk',
+  howItWorksTitle: 'Comment Fonctionnent Nos Cours de Dancehall à Barcelone?',
+  howItWorksIntro:
+    'Dans nos cours de Dancehall à Barcelone, nous enseignons généralement une séquence chorégraphiée, mais en pratique le Dancehall est une danse improvisée.',
+  howItWorksPillar1Title: 'Niveaux pour TOUS',
+  howItWorksPillar1Desc:
+    "De l'initiation à avancé. Chaque élève trouve son espace pour grandir à son rythme, avec des cours adaptés à chaque niveau d'expérience.",
+  howItWorksPillar2Title: 'Méthodologie CLAIRE',
+  howItWorksPillar2Desc:
+    "Contenu structuré pour faciliter l'apprentissage. Nous suivons un système progressif qui vous permet d'avancer avec confiance et solidité.",
+  howItWorksPillar3Title: 'Style AUTHENTIQUE',
+  howItWorksPillar3Desc:
+    "Nous respectons les racines et apportons l'essence jamaïcaine à chaque cours. Vous connaîtrez le véritable esprit du Dancehall.",
+  sessionStructureTitle: 'CHAQUE SESSION DURE 1 HEURE ET COMPREND:',
+  sessionItem1Title: 'Échauffement',
+  sessionItem1Desc:
+    'Préparez votre corps avec des exercices spécifiques pour éviter les blessures et améliorer votre technique.',
+  sessionItem2Title: 'Chorégraphie',
+  sessionItem2Desc:
+    'Apprenez des séquences dynamiques combinant pas traditionnels et modernes du Dancehall.',
+  sessionItem3Title: 'Improvisation',
+  sessionItem3Desc:
+    "Nous travaillons l'improvisation pour stimuler vos capacités créatives afin que vous puissiez amener votre danse à un niveau informel, sensuel et audacieux.",
+  advancedLevelDesc:
+    'Conçu pour ceux qui veulent porter leur niveau au maximum et leur style au niveau supérieur.',
+  basedOn: 'basé sur',
+  basicIntermediateLevel: 'Basique/Intermédiaire',
+  beginnerLevelDesc:
+    'Idéal pour les étudiants qui veulent commencer à zéro, apprenant pas à pas avec bonne humeur.',
+  choreographyDesc:
+    'Apprenez des séquences dynamiques combinant pas traditionnels et modernes du Dancehall.',
+  choreographyTitle: 'Chorégraphie',
+  danceTechnique: 'Technique de Danse',
+  improvisationDesc:
+    "Nous travaillons l'improvisation pour stimuler vos capacités créatives et amener votre danse à un niveau informel, sensuel et audacieux.",
+  improvisationTitle: 'Improvisation',
+  intermediateLevelDesc:
+    'Pour les étudiants qui veulent améliorer technique, coordination et expression avec des pas plus complexes.',
+  reviews: 'avis',
+  thankYouForLove: "Merci pour Tant d'Amour",
+  trialClassCTA: 'Essayez un Cours Gratuit',
+  warmupDesc:
+    'Préparez votre corps avec des exercices spécifiques pour éviter les blessures et améliorer votre technique.',
+  warmupTitle: 'Échauffement',
+  whatsappCTA: 'Écrivez-nous sur WhatsApp',
+  facilitiesPageTitle:
+    "Installations de Danse à Barcelone | Studios Professionnels | Farray's Center",
+  facilitiesMetaDescription:
+    'Découvrez nos installations de danse professionnelles de 700m² à Barcelone. 3 studios avec planchers flottants, vestiaires, climatisation. 5 min de Plaça Espanya.',
+  facilitiesH1: 'Nos Installations de Danse à Barcelone',
+  facilitiesIntro:
+    "Chez Farray's International Dance Center, nous avons créé un espace conçu par et pour les danseurs. 700 m² d'installations de première classe au cœur de Barcelone, entre Plaça Espanya et la gare de Sants.",
+  facilitiesRoom1Title: 'Studio 1 - Salle Principale',
+  facilitiesRoom1Desc:
+    'Notre plus grand studio (150m²) avec plancher flottant professionnel, miroirs complets, climatisation et système de son professionnel. Parfait pour grands groupes, workshops et événements.',
+  facilitiesRoom2Title: 'Studio 2 - Salle Polyvalente',
+  facilitiesRoom2Desc:
+    'Studio polyvalent (80m²) idéal pour cours réguliers, cours privés et répétitions de petits groupes. Équipé de miroirs, sol professionnel et climatisation.',
+  facilitiesRoom3Title: 'Studio 3 - Salle Intime',
+  facilitiesRoom3Desc:
+    "Studio confortable (50m²) parfait pour cours privés, petits workshops et sessions d'enregistrement. Équipement complet avec atmosphère intime.",
+  facilitiesAmenities: 'Équipements Généraux',
+  facilitiesAmenity1: 'Vestiaires avec casiers',
+  facilitiesAmenity2: 'Douches chaudes',
+  facilitiesAmenity3: 'Climatisation dans tous les studios',
+  facilitiesAmenity4: 'Systèmes de son professionnels',
+  facilitiesAmenity5: 'Miroirs pleine paroi',
+  facilitiesAmenity6: 'Planchers flottants professionnels',
+  facilitiesAmenity7: 'Espace détente avec distributeurs',
+  facilitiesAmenity8: 'WiFi gratuit',
+  facilitiesLocation: 'Emplacement Privilégié',
+  facilitiesLocationDesc:
+    'Nous sommes situés au Carrer Entença 100, Barcelone. À seulement 5 minutes à pied de Plaça Espanya (L1, L3) et de la gare de Sants. Accès facile en métro, bus, train et voiture avec parking proche.',
+  contemporaneoTechniqueStat: 'Technique',
+  contemporaneoEmpowerment: 'Expression',
+  contemporaneoConfidenceGuaranteed: 'Langage propre garanti',
+  contemporaneoCaloriesStat: 'Calories Brûlées',
+  contemporaneoDanceStat: 'Danse',
+  contemporaneoLevelsTitle: 'Quel type de Contemporain vous convient?',
+  contemporaneoLevelsSubtitle: 'Trois modalités pour différents objectifs et sensibilités',
+  danceClassesHub_cta_member: 'Devenez Membre Maintenant',
+  danceClassesHub_cta_trial: "Réservez Votre Cours d'Essai",
 };

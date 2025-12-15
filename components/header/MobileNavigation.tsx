@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
 import { GlobeIcon, ChevronDownIcon } from '../../lib/icons';
 import type { Locale } from '../../types';
+import { SUPPORTED_LOCALES } from '../../types';
 
 interface SubSubMenuItem {
   path: string;
@@ -443,7 +444,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
               </span>
             </div>
             <div className="grid grid-cols-4 gap-1 p-2">
-              {(['es', 'ca', 'en', 'fr'] as Locale[]).map(lang => (
+              {SUPPORTED_LOCALES.map(lang => (
                 <button
                   key={lang}
                   onClick={() => {

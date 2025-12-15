@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
 import { debounce } from '../utils/debounce';
@@ -7,6 +7,40 @@ import DesktopNavigation from './header/DesktopNavigation';
 import MobileNavigation from './header/MobileNavigation';
 import LanguageSelector from './header/LanguageSelector';
 import type { Locale } from '../types';
+import { SUPPORTED_LOCALES } from '../types';
+
+export type DropdownKey =
+  | 'lang'
+  | 'classes'
+  | 'danza'
+  | 'urban'
+  | 'heels'
+  | 'salsa'
+  | 'services'
+  | 'aboutUs';
+
+const DROPDOWN_CLASS_MAP: Record<DropdownKey, string> = {
+  lang: '.language-dropdown',
+  classes: '.classes-dropdown',
+  danza: '.danza-dropdown',
+  urban: '.urban-dropdown',
+  heels: '.heels-dropdown',
+  salsa: '.salsa-dropdown',
+  services: '.services-dropdown',
+  aboutUs: '.aboutus-dropdown',
+};
+
+// Define parent-child relationships for nested dropdowns
+const NESTED_DROPDOWNS: Record<DropdownKey, DropdownKey[]> = {
+  classes: ['danza', 'urban', 'salsa', 'heels'],
+  danza: [],
+  urban: ['heels'],
+  heels: [],
+  salsa: [],
+  services: [],
+  aboutUs: [],
+  lang: [],
+};
 
 const Header: React.FC = () => {
   const { t, locale } = useI18n();
@@ -14,13 +48,52 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
-  const [isClassesDropdownOpen, setIsClassesDropdownOpen] = useState(false);
-  const [isDanzaDropdownOpen, setIsDanzaDropdownOpen] = useState(false);
-  const [isUrbanDropdownOpen, setIsUrbanDropdownOpen] = useState(false);
-  const [isHeelsDropdownOpen, setIsHeelsDropdownOpen] = useState(false);
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const [isAboutUsDropdownOpen, setIsAboutUsDropdownOpen] = useState(false);
+  const [openDropdowns, setOpenDropdowns] = useState<Set<DropdownKey>>(new Set());
+
+  const toggleDropdown = useCallback((key: DropdownKey) => {
+    setOpenDropdowns(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(key)) {
+        // Close this dropdown and all its children
+        newSet.delete(key);
+        NESTED_DROPDOWNS[key].forEach(child => newSet.delete(child));
+      } else {
+        // Close sibling dropdowns (same level) but keep parent open
+        const isSubDropdown = ['danza', 'urban', 'salsa', 'heels'].includes(key);
+        if (!isSubDropdown) {
+          // Top-level dropdown: close all others
+          newSet.clear();
+        } else if (key === 'heels') {
+          // heels is child of urban, keep urban and classes open
+        } else {
+          // Sub-dropdown: close siblings but keep 'classes' open
+          ['danza', 'urban', 'salsa'].forEach(sibling => {
+            if (sibling !== key) {
+              newSet.delete(sibling as DropdownKey);
+              // Also close heels if closing urban
+              if (sibling === 'urban') newSet.delete('heels');
+            }
+          });
+        }
+        newSet.add(key);
+      }
+      return newSet;
+    });
+  }, []);
+
+  const closeDropdown = useCallback((key: DropdownKey) => {
+    setOpenDropdowns(prev => {
+      const newSet = new Set(prev);
+      newSet.delete(key);
+      return newSet;
+    });
+  }, []);
+
+  const closeAllDropdowns = useCallback(() => {
+    setOpenDropdowns(new Set());
+  }, []);
+
+  const isDropdownOpen = useCallback((key: DropdownKey) => openDropdowns.has(key), [openDropdowns]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,35 +110,33 @@ const Header: React.FC = () => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if (!target.closest('.language-dropdown')) {
-        setIsLangDropdownOpen(false);
-      }
-      if (!target.closest('.classes-dropdown')) {
-        setIsClassesDropdownOpen(false);
-      }
-      if (!target.closest('.danza-dropdown')) {
-        setIsDanzaDropdownOpen(false);
-      }
-      if (!target.closest('.urban-dropdown')) {
-        setIsUrbanDropdownOpen(false);
-      }
-      if (!target.closest('.heels-dropdown')) {
-        setIsHeelsDropdownOpen(false);
-      }
-      if (!target.closest('.services-dropdown')) {
-        setIsServicesDropdownOpen(false);
-      }
-      if (!target.closest('.aboutus-dropdown')) {
-        setIsAboutUsDropdownOpen(false);
+
+      if (openDropdowns.size > 0) {
+        // Check if click is inside any open dropdown
+        let isInsideAnyDropdown = false;
+        openDropdowns.forEach(key => {
+          const dropdownClass = DROPDOWN_CLASS_MAP[key];
+          if (target.closest(dropdownClass)) {
+            isInsideAnyDropdown = true;
+          }
+        });
+
+        if (!isInsideAnyDropdown) {
+          setOpenDropdowns(new Set());
+        }
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  }, [openDropdowns]);
 
   const getCurrentPath = (): string => {
     const pathParts = location.pathname.split('/').filter(Boolean);
-    if (pathParts.length > 0 && pathParts[0] && ['es', 'en', 'ca', 'fr'].includes(pathParts[0])) {
+    if (
+      pathParts.length > 0 &&
+      pathParts[0] &&
+      (SUPPORTED_LOCALES as readonly string[]).includes(pathParts[0])
+    ) {
       pathParts.shift();
     }
     const path = pathParts.length > 0 ? `/${pathParts.join('/')}` : '/';
@@ -78,7 +149,7 @@ const Header: React.FC = () => {
     const currentPath = getCurrentPath();
     const newPath = `/${lang}${currentPath === '/' ? '' : currentPath}`;
     navigate(newPath);
-    setIsLangDropdownOpen(false);
+    closeDropdown('lang');
   };
 
   const languageNames: Record<Locale, string> = {
@@ -142,9 +213,14 @@ const Header: React.FC = () => {
             { path: `/${locale}/clases/twerk-barcelona`, textKey: 'navTwerk' },
           ],
         },
-        { path: `/${locale}/clases/salsa-bachata-barcelona`, textKey: 'navSalsaBachata' },
-        { path: `/${locale}/clases/salsa-cubana-barcelona`, textKey: 'navSalsaCubana' },
-        { path: `/${locale}/clases/salsa-lady-style-barcelona`, textKey: 'navSalsaLadyStyle' },
+        {
+          path: `/${locale}/clases/salsa-bachata-barcelona`,
+          textKey: 'navSalsaBachata',
+          submenu: [
+            { path: `/${locale}/clases/salsa-cubana-barcelona`, textKey: 'navSalsaCubana' },
+            { path: `/${locale}/clases/salsa-lady-style-barcelona`, textKey: 'navSalsaLadyStyle' },
+          ],
+        },
         { path: `/${locale}/clases/entrenamiento-bailarines-barcelona`, textKey: 'navPrepFisica' },
       ],
     },
@@ -164,18 +240,9 @@ const Header: React.FC = () => {
           <DesktopNavigation
             menuStructure={menuStructure}
             locale={locale}
-            isClassesDropdownOpen={isClassesDropdownOpen}
-            setIsClassesDropdownOpen={setIsClassesDropdownOpen}
-            isDanzaDropdownOpen={isDanzaDropdownOpen}
-            setIsDanzaDropdownOpen={setIsDanzaDropdownOpen}
-            isUrbanDropdownOpen={isUrbanDropdownOpen}
-            setIsUrbanDropdownOpen={setIsUrbanDropdownOpen}
-            isHeelsDropdownOpen={isHeelsDropdownOpen}
-            setIsHeelsDropdownOpen={setIsHeelsDropdownOpen}
-            isServicesDropdownOpen={isServicesDropdownOpen}
-            setIsServicesDropdownOpen={setIsServicesDropdownOpen}
-            isAboutUsDropdownOpen={isAboutUsDropdownOpen}
-            setIsAboutUsDropdownOpen={setIsAboutUsDropdownOpen}
+            isDropdownOpen={isDropdownOpen}
+            toggleDropdown={toggleDropdown}
+            closeAllDropdowns={closeAllDropdowns}
           />
 
           {/* Centered Logo */}
@@ -221,8 +288,8 @@ const Header: React.FC = () => {
             {/* Language Selector */}
             <LanguageSelector
               locale={locale}
-              isLangDropdownOpen={isLangDropdownOpen}
-              setIsLangDropdownOpen={setIsLangDropdownOpen}
+              isOpen={isDropdownOpen('lang')}
+              onToggle={() => toggleDropdown('lang')}
               handleLanguageChange={handleLanguageChange}
               languageNames={languageNames}
             />

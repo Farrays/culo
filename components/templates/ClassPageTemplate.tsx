@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../../hooks/useI18n';
+import { SUPPORTED_LOCALES } from '../../types';
 import { LocalBusinessSchema, CourseSchema, AggregateReviewsSchema } from '../SchemaMarkup';
 import FAQSection from '../FAQSection';
 import TestimonialsSection from '../TestimonialsSection';
@@ -210,7 +211,7 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
         coursePrerequisites={courseSchemaConfig?.prerequisites || 'Ninguno'}
         numberOfLessons={courseSchemaConfig?.lessons || 'Clases semanales'}
         timeRequired={courseSchemaConfig?.duration || 'PT1H'}
-        availableLanguage={['es', 'en', 'ca', 'fr']}
+        availableLanguage={SUPPORTED_LOCALES}
       />
 
       {/* AggregateReviews Schema */}

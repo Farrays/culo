@@ -4,18 +4,53 @@ import DOMPurify from 'dompurify';
 import AnimateOnScroll from './AnimateOnScroll';
 import { ChevronDownIcon } from '../lib/icons';
 
+/**
+ * Single FAQ item structure.
+ */
 interface FAQ {
+  /** Unique identifier for the FAQ item */
   id: string;
+  /** The question text */
   question: string;
+  /** The answer text (supports HTML) */
   answer: string;
 }
 
+/**
+ * Props for the FAQSection component.
+ */
 interface FAQSectionProps {
+  /** Section title displayed above the FAQs */
   title: string;
+  /** Array of FAQ items to display */
   faqs: FAQ[];
+  /** Page URL for schema markup */
   pageUrl: string;
 }
 
+/**
+ * Accessible FAQ accordion section with Schema.org markup for SEO.
+ * Automatically generates FAQPage structured data for Google SGE/rich results.
+ * Answers support HTML content (sanitized with DOMPurify).
+ *
+ * @param title - Section heading
+ * @param faqs - Array of FAQ objects with id, question, and answer
+ * @param pageUrl - Current page URL for schema
+ *
+ * @example
+ * ```tsx
+ * const faqs = [
+ *   { id: '1', question: '¿Necesito experiencia?', answer: 'No, tenemos clases para todos los niveles.' },
+ *   { id: '2', question: '¿Qué debo llevar?', answer: 'Ropa cómoda y <strong>zapatillas</strong>.' },
+ * ];
+ *
+ * <FAQSection
+ *   title="Preguntas Frecuentes"
+ *   faqs={faqs}
+ *   pageUrl="https://example.com/clases"
+ * />
+ * ```
+ */
 const FAQSection: React.FC<FAQSectionProps> = memo(function FAQSection({ title, faqs }) {
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
 

@@ -10,6 +10,7 @@ import FAQSection from './FAQSection';
 import AnimatedCounter from './AnimatedCounter';
 import Icon, { type IconName } from './Icon';
 import type { ValuePillar } from '../types';
+import { SUPPORTED_LOCALES } from '../types';
 import TestimonialsSection from './TestimonialsSection';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 import { CheckIcon } from '../lib/icons';
@@ -157,7 +158,7 @@ const SalsaBachataPage: React.FC = () => {
         }}
         educationalLevel="Beginner to Advanced"
         teaches="Salsa Cubana, Salsa on2, Bachata Sensual, Bachata Dominicana"
-        availableLanguage={['es', 'ca', 'en', 'fr']}
+        availableLanguage={SUPPORTED_LOCALES}
       />
       <LocalBusinessSchema
         name="Farray's International Dance Center"
@@ -178,6 +179,7 @@ const SalsaBachataPage: React.FC = () => {
         priceRange="€€"
       />
       <Helmet>
+        <title>{t('salsaBachataBarcelona_title')} | Farray&apos;s Center</title>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

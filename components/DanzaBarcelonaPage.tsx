@@ -10,6 +10,7 @@ import FAQSection from './FAQSection';
 import AnimatedCounter from './AnimatedCounter';
 import Icon, { type IconName } from './Icon';
 import type { ValuePillar } from '../types';
+import { SUPPORTED_LOCALES } from '../types';
 import TestimonialsSection from './TestimonialsSection';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 
@@ -153,7 +154,7 @@ const DanzaBarcelonaPage: React.FC = () => {
         }}
         educationalLevel="Beginner to Advanced"
         teaches="Contemporary Dance, Modern Dance, Ballet"
-        availableLanguage={['es', 'ca', 'en', 'fr']}
+        availableLanguage={SUPPORTED_LOCALES}
       />
       <LocalBusinessSchema
         name="Farray's International Dance Center"
@@ -174,6 +175,7 @@ const DanzaBarcelonaPage: React.FC = () => {
         priceRange="€€"
       />
       <Helmet>
+        <title>{t('danzaBarcelona_title')} | Farray&apos;s Center</title>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

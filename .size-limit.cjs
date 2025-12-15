@@ -14,19 +14,19 @@ module.exports = [
   {
     name: 'EN Locale Bundle',
     path: 'dist/assets/i18n-en-*.js',
-    limit: '155 KB',
+    limit: '175 KB', // Adjusted after adding Lady Style translations
     gzip: true,
   },
   {
     name: 'CA Locale Bundle',
     path: 'dist/assets/i18n-ca-*.js',
-    limit: '160 KB',
+    limit: '190 KB', // Adjusted after adding Lady Style translations
     gzip: true,
   },
   {
     name: 'FR Locale Bundle',
     path: 'dist/assets/i18n-fr-*.js',
-    limit: '165 KB',
+    limit: '195 KB', // Increased after adding 737 missing translations
     gzip: true,
   },
   {

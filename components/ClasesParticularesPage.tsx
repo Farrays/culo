@@ -263,6 +263,7 @@ const ClasesParticularesPage: React.FC = () => {
   return (
     <>
       <Helmet>
+        <title>{t('particularesPage_title')} | Farray&apos;s Center</title>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

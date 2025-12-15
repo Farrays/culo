@@ -1,6 +1,9 @@
 import type * as React from 'react';
 
 export type Locale = 'en' | 'es' | 'ca' | 'fr';
+
+/** Supported locales array - use this instead of hardcoding ['es', 'en', 'ca', 'fr'] */
+export const SUPPORTED_LOCALES: readonly Locale[] = ['es', 'en', 'ca', 'fr'] as const;
 export type Page = 'home' | 'classes' | 'dancehall';
 
 export interface ClassInfo {

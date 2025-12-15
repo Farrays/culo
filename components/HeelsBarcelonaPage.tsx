@@ -9,6 +9,7 @@ import FAQSection from './FAQSection';
 import AnimatedCounter from './AnimatedCounter';
 import Icon, { type IconName } from './Icon';
 import type { ValuePillar } from '../types';
+import { SUPPORTED_LOCALES } from '../types';
 import TestimonialsSection from './TestimonialsSection';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 import { CheckIcon } from '../lib/icons';
@@ -178,7 +179,7 @@ const HeelsBarcelonaPage: React.FC = () => {
         }}
         educationalLevel="Beginner to Advanced"
         teaches="High Heels Dance, Femmology, Sexy Style, Sensuality, Femininity"
-        availableLanguage={['es', 'ca', 'en', 'fr']}
+        availableLanguage={SUPPORTED_LOCALES}
       />
       <LocalBusinessSchema
         name="Farray's International Dance Center"
@@ -199,6 +200,7 @@ const HeelsBarcelonaPage: React.FC = () => {
         priceRange="€€"
       />
       <Helmet>
+        <title>{t('heelsBarcelona_title')}</title>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

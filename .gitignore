@@ -27,3 +27,6 @@ public/images/**/raw/
 public/images/teachers/raw/
 .lighthouseci/
 .claude/settings.local.json
+
+*storybook.log
+storybook-static

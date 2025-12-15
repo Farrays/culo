@@ -136,6 +136,7 @@ const RegalaBailePage: React.FC = () => {
   return (
     <>
       <Helmet>
+        <title>{t('regalaBaile_page_title')} | Farray&apos;s Center</title>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(productSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
