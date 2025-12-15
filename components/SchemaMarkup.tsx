@@ -4,6 +4,7 @@
  * to help search engines understand page content.
  *
  * Available schemas:
+ * - OrganizationSchema - Global organization info (use once at app level)
  * - LocalBusinessSchema - Dance school business info
  * - CourseSchema - Dance class/course details
  * - ReviewSchema - Individual review
@@ -31,6 +32,90 @@
  */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+
+/**
+ * Global Organization Schema - renders once at app level.
+ * Provides search engines with core information about the organization.
+ * This should be included in App.tsx or the main layout component.
+ */
+export const OrganizationSchema: React.FC = () => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': 'https://www.farrayscenter.com/#organization',
+    name: "Farray's International Dance Center",
+    alternateName: ['FIDC', "Farray's Dance Center", 'Farrays Center'],
+    url: 'https://www.farrayscenter.com',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://www.farrayscenter.com/images/logo-fidc.png',
+      width: '512',
+      height: '512',
+    },
+    image: 'https://www.farrayscenter.com/images/og-home.jpg',
+    description:
+      'Escuela de baile en Barcelona especializada en Dancehall, Twerk, Afrobeats, Reggaeton, Hip Hop, Heels y más. Clases para todos los niveles con los mejores profesores.',
+    foundingDate: '2015',
+    founder: {
+      '@type': 'Person',
+      name: 'Yunaisy Farray',
+      jobTitle: 'Directora y Fundadora',
+      url: 'https://www.farrayscenter.com/es/yunaisy-farray',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Carrer de Pallars, 85',
+      addressLocality: 'Barcelona',
+      postalCode: '08018',
+      addressRegion: 'Cataluña',
+      addressCountry: 'ES',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '41.3980',
+      longitude: '2.1920',
+    },
+    telephone: '+34 644 55 06 20',
+    email: 'info@farrayscenter.com',
+    sameAs: [
+      'https://www.instagram.com/farrays_international_dance/',
+      'https://www.facebook.com/farraysinternationaldancecenter',
+      'https://www.youtube.com/@FarraysDanceCenter',
+      'https://www.tiktok.com/@farraysdancecenter',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+34 644 55 06 20',
+      contactType: 'customer service',
+      availableLanguage: ['Spanish', 'Catalan', 'English', 'French'],
+      areaServed: 'ES',
+    },
+    areaServed: {
+      '@type': 'City',
+      name: 'Barcelona',
+      '@id': 'https://www.wikidata.org/wiki/Q1492',
+    },
+    knowsAbout: [
+      'Dancehall',
+      'Twerk',
+      'Afrobeats',
+      'Hip Hop',
+      'Reggaeton',
+      'Heels Dance',
+      'Salsa Cubana',
+      'Ballet',
+      'Contemporary Dance',
+      'Modern Jazz',
+    ],
+    slogan: 'Dance Your Dreams',
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};
 
 /**
  * Props for LocalBusinessSchema - Dance school business information.
@@ -380,6 +465,35 @@ export const EventSchema: React.FC<EventSchemaProps> = props => {
     eventStatus: props.eventStatus || 'https://schema.org/EventScheduled',
     eventAttendanceMode:
       props.eventAttendanceMode || 'https://schema.org/OfflineEventAttendanceMode',
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};
+
+// FAQPage Schema for FAQ sections (helps with rich snippets in search results)
+interface FAQPageSchemaProps {
+  faqs: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
+
+export const FAQPageSchema: React.FC<FAQPageSchemaProps> = ({ faqs }) => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
   };
 
   return (

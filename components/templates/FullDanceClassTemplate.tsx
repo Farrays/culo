@@ -31,6 +31,7 @@ import {
   SpeakableSchema,
   DefinedTermSchema,
   EventSchema,
+  FAQPageSchema,
 } from '../SchemaMarkup';
 import {
   ANIMATION_DELAYS,
@@ -578,6 +579,14 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         reviews={reviewsSchemaData}
         itemName={`${t(`${config.styleKey}PageTitle`)} - Farray's Center`}
         itemType="Course"
+      />
+
+      {/* FAQPage Schema for rich snippets in search results */}
+      <FAQPageSchema
+        faqs={config.faqsConfig.map(faq => ({
+          question: t(faq.questionKey),
+          answer: t(faq.answerKey),
+        }))}
       />
 
       {config.howToSchema?.enabled && (
