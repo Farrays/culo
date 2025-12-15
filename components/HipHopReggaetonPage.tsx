@@ -5,8 +5,8 @@
 import FullDanceClassTemplate from './templates/FullDanceClassTemplate';
 import { HIP_HOP_REGGAETON_PAGE_CONFIG } from '../constants/hip-hop-reggaeton-config';
 
-const HipHopReggaetonPageNew: React.FC = () => {
+const HipHopReggaetonPage: React.FC = () => {
   return <FullDanceClassTemplate config={HIP_HOP_REGGAETON_PAGE_CONFIG} />;
 };
 
-export default HipHopReggaetonPageNew;
+export default HipHopReggaetonPage;

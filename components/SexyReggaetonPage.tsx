@@ -5,8 +5,8 @@
 import FullDanceClassTemplate from './templates/FullDanceClassTemplate';
 import { SEXY_REGGAETON_PAGE_CONFIG } from '../constants/sexy-reggaeton-config';
 
-const SexyReggaetonPageNew: React.FC = () => {
+const SexyReggaetonPage: React.FC = () => {
   return <FullDanceClassTemplate config={SEXY_REGGAETON_PAGE_CONFIG} />;
 };
 
-export default SexyReggaetonPageNew;
+export default SexyReggaetonPage;

@@ -5,8 +5,8 @@
 import FullDanceClassTemplate from './templates/FullDanceClassTemplate';
 import { MODERN_JAZZ_PAGE_CONFIG } from '../constants/modern-jazz-config';
 
-const ModernJazzPageNew: React.FC = () => {
+const ModernJazzPage: React.FC = () => {
   return <FullDanceClassTemplate config={MODERN_JAZZ_PAGE_CONFIG} />;
 };
 
-export default ModernJazzPageNew;
+export default ModernJazzPage;

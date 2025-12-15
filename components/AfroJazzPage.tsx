@@ -5,8 +5,8 @@
 import FullDanceClassTemplate from './templates/FullDanceClassTemplate';
 import { AFRO_JAZZ_PAGE_CONFIG } from '../constants/afro-jazz-config';
 
-const AfroJazzPageNew: React.FC = () => {
+const AfroJazzPage: React.FC = () => {
   return <FullDanceClassTemplate config={AFRO_JAZZ_PAGE_CONFIG} />;
 };
 
-export default AfroJazzPageNew;
+export default AfroJazzPage;

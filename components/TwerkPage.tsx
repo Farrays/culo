@@ -5,8 +5,8 @@
 import FullDanceClassTemplate from './templates/FullDanceClassTemplate';
 import { TWERK_PAGE_CONFIG } from '../constants/twerk-config';
 
-const TwerkPageNew: React.FC = () => {
+const TwerkPage: React.FC = () => {
   return <FullDanceClassTemplate config={TWERK_PAGE_CONFIG} />;
 };
 
-export default TwerkPageNew;
+export default TwerkPage;

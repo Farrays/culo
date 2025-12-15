@@ -5,8 +5,8 @@
 import FullDanceClassTemplate from './templates/FullDanceClassTemplate';
 import { CONTEMPORANEO_PAGE_CONFIG } from '../constants/contemporaneo-config';
 
-const ContemporaneoPageNew: React.FC = () => {
+const ContemporaneoPage: React.FC = () => {
   return <FullDanceClassTemplate config={CONTEMPORANEO_PAGE_CONFIG} />;
 };
 
-export default ContemporaneoPageNew;
+export default ContemporaneoPage;

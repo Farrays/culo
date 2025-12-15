@@ -5,8 +5,8 @@
 import FullDanceClassTemplate from './templates/FullDanceClassTemplate';
 import { REGGAETON_CUBANO_PAGE_CONFIG } from '../constants/reggaeton-cubano-config';
 
-const ReggaetonCubanoPageNew: React.FC = () => {
+const ReggaetonCubanoPage: React.FC = () => {
   return <FullDanceClassTemplate config={REGGAETON_CUBANO_PAGE_CONFIG} />;
 };
 
-export default ReggaetonCubanoPageNew;
+export default ReggaetonCubanoPage;

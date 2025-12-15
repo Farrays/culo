@@ -5,8 +5,8 @@
 import FullDanceClassTemplate from './templates/FullDanceClassTemplate';
 import { FEMMOLOGY_PAGE_CONFIG } from '../constants/femmology-config';
 
-const FemmologyPageNew: React.FC = () => {
+const FemmologyPage: React.FC = () => {
   return <FullDanceClassTemplate config={FEMMOLOGY_PAGE_CONFIG} />;
 };
 
-export default FemmologyPageNew;
+export default FemmologyPage;

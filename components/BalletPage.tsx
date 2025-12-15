@@ -5,8 +5,8 @@
 import FullDanceClassTemplate from './templates/FullDanceClassTemplate';
 import { BALLET_PAGE_CONFIG } from '../constants/ballet-config';
 
-const BalletPageNew: React.FC = () => {
+const BalletPage: React.FC = () => {
   return <FullDanceClassTemplate config={BALLET_PAGE_CONFIG} />;
 };
 
-export default BalletPageNew;
+export default BalletPage;

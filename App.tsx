@@ -43,25 +43,25 @@ const ServiciosBailePage = lazy(() => import('./components/ServiciosBailePage'))
 const EstudioGrabacionPage = lazy(() => import('./components/EstudioGrabacionPage'));
 const FacilitiesPage = lazy(() => import('./components/FacilitiesPage'));
 const HeelsBarcelonaPage = lazy(() => import('./components/HeelsBarcelonaPage'));
-const SalsaLadyStylePage = lazy(() => import('./components/SalsaLadyStylePageNew'));
+const SalsaLadyStylePage = lazy(() => import('./components/SalsaLadyStylePage'));
 
-// ===== NEW PAGES USING UNIFIED TEMPLATE =====
+// ===== DANCE CLASS PAGES USING UNIFIED TEMPLATE =====
 // Migrated from ~900 lines each to ~15 lines using FullDanceClassTemplate
-const DancehallPage = lazy(() => import('./components/DancehallPageNew'));
-const TwerkPage = lazy(() => import('./components/TwerkPageNew'));
-const AfrobeatPage = lazy(() => import('./components/AfrobeatPageNew'));
-const HipHopReggaetonPage = lazy(() => import('./components/HipHopReggaetonPageNew'));
-const SexyReggaetonPage = lazy(() => import('./components/SexyReggaetonPageNew'));
-const ReggaetonCubanoPage = lazy(() => import('./components/ReggaetonCubanoPageNew'));
-const FemmologyPage = lazy(() => import('./components/FemmologyPageNew'));
-const SexyStylePage = lazy(() => import('./components/SexyStylePageNew'));
-const ModernJazzPage = lazy(() => import('./components/ModernJazzPageNew'));
-const BalletPage = lazy(() => import('./components/BalletPageNew'));
-const ContemporaneoPage = lazy(() => import('./components/ContemporaneoPageNew'));
-const AfroContemporaneoPage = lazy(() => import('./components/AfroContemporaneoPageNew'));
-const AfroJazzPage = lazy(() => import('./components/AfroJazzPageNew'));
-const HipHopPage = lazy(() => import('./components/HipHopPageNew'));
-const SalsaCubanaPage = lazy(() => import('./components/SalsaCubanaPageNew'));
+const DancehallPage = lazy(() => import('./components/DancehallPage'));
+const TwerkPage = lazy(() => import('./components/TwerkPage'));
+const AfrobeatPage = lazy(() => import('./components/AfrobeatPage'));
+const HipHopReggaetonPage = lazy(() => import('./components/HipHopReggaetonPage'));
+const SexyReggaetonPage = lazy(() => import('./components/SexyReggaetonPage'));
+const ReggaetonCubanoPage = lazy(() => import('./components/ReggaetonCubanoPage'));
+const FemmologyPage = lazy(() => import('./components/FemmologyPage'));
+const SexyStylePage = lazy(() => import('./components/SexyStylePage'));
+const ModernJazzPage = lazy(() => import('./components/ModernJazzPage'));
+const BalletPage = lazy(() => import('./components/BalletPage'));
+const ContemporaneoPage = lazy(() => import('./components/ContemporaneoPage'));
+const AfroContemporaneoPage = lazy(() => import('./components/AfroContemporaneoPage'));
+const AfroJazzPage = lazy(() => import('./components/AfroJazzPage'));
+const HipHopPage = lazy(() => import('./components/HipHopPage'));
+const SalsaCubanaPage = lazy(() => import('./components/SalsaCubanaPage'));
 
 // Valid locales - use centralized constant from types.ts
 const VALID_LOCALES = SUPPORTED_LOCALES;

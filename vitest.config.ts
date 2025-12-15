@@ -31,7 +31,6 @@ export default defineConfig({
         'constants/*.ts',
         // Exclude the page files (migrated to templates)
         'components/*Page.tsx',
-        'components/*PageNew.tsx',
         // Exclude complex templates (integration-tested via pages)
         'components/templates/**',
         // Exclude large navigation components (complex state)

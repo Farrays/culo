@@ -5,8 +5,8 @@
 import FullDanceClassTemplate from './templates/FullDanceClassTemplate';
 import { AFRO_CONTEMPORANEO_PAGE_CONFIG } from '../constants/afro-contemporaneo-config';
 
-const AfroContemporaneoPageNew: React.FC = () => {
+const AfroContemporaneoPage: React.FC = () => {
   return <FullDanceClassTemplate config={AFRO_CONTEMPORANEO_PAGE_CONFIG} />;
 };
 
-export default AfroContemporaneoPageNew;
+export default AfroContemporaneoPage;
