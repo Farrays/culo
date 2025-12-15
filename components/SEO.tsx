@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
+import { OrganizationSchema } from './SchemaMarkup';
 
 /**
  * Global SEO component that manages meta tags, Open Graph, and hreflang.
@@ -34,6 +35,7 @@ import { useI18n } from '../hooks/useI18n';
  */
 const PATH_TO_PAGE: ReadonlyArray<readonly [string, string]> = [
   // Dance class pages (specific styles first - longer paths)
+  ['/clases/folklore-cubano', 'folkloreCubano'],
   ['/clases/salsa-cubana-barcelona', 'salsaCubana'],
   ['/clases/salsa-lady-style-barcelona', 'salsaLadyStyle'],
   ['/clases/salsa-bachata-barcelona', 'salsaBachata'],
@@ -106,6 +108,7 @@ const SEO: React.FC = () => {
     salsaBachata: 'clases/salsa-bachata-barcelona',
     salsaCubana: 'clases/salsa-cubana-barcelona',
     salsaLadyStyle: 'clases/salsa-lady-style-barcelona',
+    folkloreCubano: 'clases/folklore-cubano',
     danzasUrbanas: 'clases/danzas-urbanas-barcelona',
     dancehall: 'clases/dancehall-barcelona',
     twerk: 'clases/twerk-barcelona',
@@ -348,43 +351,63 @@ const SEO: React.FC = () => {
   };
 
   return (
-    <Helmet>
-      {/* Basic meta tags */}
-      <html lang={locale} />
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <link rel="canonical" href={currentUrl} />
+    <>
+      {/* Global Organization Schema - renders once for all pages */}
+      <OrganizationSchema />
+      <Helmet>
+        {/* Basic meta tags */}
+        <html lang={locale} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={currentUrl} />
 
-      {/* hreflang alternates - bidirectional */}
-      <link rel="alternate" hrefLang="es" href={`${baseUrl}/es${pagePath ? `/${pagePath}` : ''}`} />
-      <link rel="alternate" hrefLang="ca" href={`${baseUrl}/ca${pagePath ? `/${pagePath}` : ''}`} />
-      <link rel="alternate" hrefLang="en" href={`${baseUrl}/en${pagePath ? `/${pagePath}` : ''}`} />
-      <link rel="alternate" hrefLang="fr" href={`${baseUrl}/fr${pagePath ? `/${pagePath}` : ''}`} />
-      <link
-        rel="alternate"
-        hrefLang="x-default"
-        href={`${baseUrl}/es${pagePath ? `/${pagePath}` : ''}`}
-      />
+        {/* hreflang alternates - bidirectional */}
+        <link
+          rel="alternate"
+          hrefLang="es"
+          href={`${baseUrl}/es${pagePath ? `/${pagePath}` : ''}`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="ca"
+          href={`${baseUrl}/ca${pagePath ? `/${pagePath}` : ''}`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href={`${baseUrl}/en${pagePath ? `/${pagePath}` : ''}`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="fr"
+          href={`${baseUrl}/fr${pagePath ? `/${pagePath}` : ''}`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`${baseUrl}/es${pagePath ? `/${pagePath}` : ''}`}
+        />
 
-      {/* Open Graph */}
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={currentUrl} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
-      <meta property="og:locale" content={ogLocaleMap[locale]} />
-      <meta property="og:site_name" content="Farray's International Dance Center" />
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={currentUrl} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
+        <meta property="og:locale" content={ogLocaleMap[locale]} />
+        <meta property="og:site_name" content="Farray's International Dance Center" />
 
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content={currentUrl} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={currentUrl} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image} />
 
-      {/* Additional SEO */}
-      <meta name="robots" content="index, follow" />
-    </Helmet>
+        {/* Additional SEO */}
+        <meta name="robots" content="index, follow" />
+      </Helmet>
+    </>
   );
 };
 

@@ -50,7 +50,7 @@ export const MODERN_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
     minutes: 60,
     calories: 500,
     funPercent: 100,
-    gradientColor: 'primary',
+    gradientColor: 'emerald',
   },
 
   // === SECTION TOGGLES ===

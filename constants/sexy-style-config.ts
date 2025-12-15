@@ -49,7 +49,7 @@ export const SEXY_STYLE_PAGE_CONFIG: FullDanceClassConfig = {
     minutes: 60,
     calories: 450,
     funPercent: 100,
-    gradientColor: 'primary',
+    gradientColor: 'rose',
   },
 
   // === SECTION TOGGLES ===

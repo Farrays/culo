@@ -49,7 +49,7 @@ export const FEMMOLOGY_PAGE_CONFIG: FullDanceClassConfig = {
     minutes: 60,
     calories: 400,
     funPercent: 100,
-    gradientColor: 'primary',
+    gradientColor: 'rose',
   },
 
   // === SECTION TOGGLES ===

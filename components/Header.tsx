@@ -219,6 +219,7 @@ const Header: React.FC = () => {
           submenu: [
             { path: `/${locale}/clases/salsa-cubana-barcelona`, textKey: 'navSalsaCubana' },
             { path: `/${locale}/clases/salsa-lady-style-barcelona`, textKey: 'navSalsaLadyStyle' },
+            { path: `/${locale}/clases/folklore-cubano`, textKey: 'navFolkloreCubano' },
           ],
         },
         { path: `/${locale}/clases/entrenamiento-bailarines-barcelona`, textKey: 'navPrepFisica' },

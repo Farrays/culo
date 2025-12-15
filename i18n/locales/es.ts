@@ -326,6 +326,13 @@ export const es = {
   dancehallLevelAdvancedTitle: 'Dancehall Pro (Nivel 3)',
   dancehallLevelAdvancedDesc:
     'Una clase intensiva para bailarines avanzados que buscan perfeccionar su técnica, habilidades escénicas y profundizar en rutinas complejas de nivel profesional.',
+  // New Dancehall levels (Principiante, Básico, Intermedio/Avanzado)
+  dancehallLevelBasicTitle: 'Dancehall Básico',
+  dancehallLevelBasicDesc:
+    'Para quienes ya dominan los fundamentos. Profundizamos en la técnica, añadimos más variaciones de pasos y trabajamos coreografías completas con mayor fluidez.',
+  dancehallLevelInterAdvTitle: 'Dancehall Intermedio/Avanzado',
+  dancehallLevelInterAdvDesc:
+    'Nivel intensivo para bailarines con experiencia. Coreografías complejas, trabajo de estilo personal, expresión artística y preparación para actuaciones.',
   dancehallInstructorTitle: 'Conoce a Tu Gurú del Dancehall',
   dancehallInstructorName: "Isabella 'Izzy' King",
   dancehallInstructorSpecialty: 'Especialista en Dancehall y Afro-Fusión',
@@ -918,6 +925,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   intermediateLevel: 'Intermedio',
   intermediateAdvancedLevel: 'Intermedio/Avanzado',
   advancedLevel: 'Avanzado',
+  allLevelsLevel: 'Todos los niveles',
   beginnerLevelDesc:
     'Ideal para estudiantes que quieren empezar desde cero, aprender paso a paso con buen rollo.',
   intermediateLevelDesc:
@@ -1295,6 +1303,75 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   dhV3FaqQ15: '¿Dónde está la academia y cómo puedo contactar?',
   dhV3FaqA15:
     'Estamos en Calle Entença 100, 08015 Barcelona (a 5 min de Plaza España y Sants).<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+
+  // ===== DANCEHALL - WHY US COMPARISON =====
+  dhV3CompareTitle: "¿Por qué aprender Dancehall en Farray's y no en otra academia de Barcelona?",
+  dhV3CompareSubtitle: 'La diferencia no es marketing. Son hechos.',
+  dhV3CompareColOthers: 'Otras academias',
+  dhV3CompareColFarrays: "Farray's Center",
+
+  // Row 1 - Formación de profesores
+  dhV3CompareRow1Label: 'Formación de profesores',
+  dhV3CompareRow1Others: 'Cursos online o de fin de semana',
+  dhV3CompareRow1Farrays: 'Formadas en Jamaica + Método Farray®',
+
+  // Row 2 - Método de enseñanza
+  dhV3CompareRow2Label: 'Método de enseñanza',
+  dhV3CompareRow2Others: 'Copias la coreografía del mes',
+  dhV3CompareRow2Farrays: 'Técnica + fundamentos + progresión real',
+
+  // Row 3 - Niveles
+  dhV3CompareRow3Label: 'Separación por niveles',
+  dhV3CompareRow3Others: '"Open level" - todos mezclados',
+  dhV3CompareRow3Farrays: 'Iniciación, Intermedio y Avanzado reales',
+
+  // Row 4 - Frecuencia
+  dhV3CompareRow4Label: 'Clases de Dancehall por semana',
+  dhV3CompareRow4Others: '1-2 clases',
+  dhV3CompareRow4Farrays: '5 clases diferentes para elegir',
+
+  // Row 5 - Instalaciones
+  dhV3CompareRow5Label: 'Instalaciones',
+  dhV3CompareRow5Others: 'Locales pequeños o compartidos',
+  dhV3CompareRow5Farrays: '700m² con suelo profesional y climatización',
+
+  // Row 6 - Compromiso
+  dhV3CompareRow6Label: 'Permanencia mínima',
+  dhV3CompareRow6Others: 'Contratos de 3 a 12 meses',
+  dhV3CompareRow6Farrays: 'Mes a mes, te vas cuando quieras',
+
+  // Row 7 - Reconocimiento
+  dhV3CompareRow7Label: 'Reconocimiento oficial',
+  dhV3CompareRow7Others: 'Ninguno',
+  dhV3CompareRow7Farrays: 'Academia acreditada por CID-UNESCO',
+
+  // Row 8 - Comunidad
+  dhV3CompareRow8Label: 'Comunidad y eventos',
+  dhV3CompareRow8Others: 'Vas a clase y te vas',
+  dhV3CompareRow8Farrays: 'Prácticas libres, eventos, familia real',
+
+  // Meaning cards
+  dhV3CompareMeaningTitle: '¿Qué significa esto para ti?',
+
+  dhV3CompareMeaning1Title: 'Si nunca has bailado Dancehall:',
+  dhV3CompareMeaning1Desc:
+    'Empezarás con fundamentos reales, no copiando pasos que no entiendes. En 3 meses notarás la diferencia.',
+
+  dhV3CompareMeaning2Title: 'Si ya has probado otras academias:',
+  dhV3CompareMeaning2Desc:
+    'Por fin entenderás el "por qué" de cada movimiento. No era tu culpa no progresar — era el método.',
+
+  dhV3CompareMeaning3Title: 'Si quieres flexibilidad:',
+  dhV3CompareMeaning3Desc:
+    '5 clases por semana significa que entrenas cuando TÚ puedas. Y si un mes no puedes venir, no pasa nada.',
+
+  dhV3CompareMeaning4Title: 'Si buscas comunidad:',
+  dhV3CompareMeaning4Desc:
+    'Aquí no eres un número. Conocerás gente, irás a prácticas, y tendrás una familia de baile real.',
+
+  // CTA
+  dhV3CompareCTA: 'Compruébalo: primera clase de prueba',
+  dhV3CompareNote: 'Sin permanencia. Sin trucos. Sin presión.',
 
   dhV3FinalCTATitle: 'Únete a la comunidad de Dancehall más activa de Barcelona',
   dhV3FinalCTASubtitle: 'Da el paso.',
@@ -2390,7 +2467,8 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
     'En 2015 crea "Ladies Revolution", un evento dedicado a la mujer que tiene impacto mundial, no solo a nivel artístico sino también social. En 2016 funda la D&Y Dance Company (2016–2020), una compañía que transforma el concepto de las compañías de baile cubano en España. Muchos de los bailarines que se han formado con ella en esta etapa son hoy profesores en otras escuelas y referentes en el sector. Es también la creadora de la compañía femenina Farray\'s Ladies Project, con un impacto nacional e internacional, que impulsa una visión poderosa, técnica y respetuosa de la feminidad sobre el escenario.',
   yunaisyFarray_barcelona_p5:
     "El 12 de febrero de 2017, Yunaisy cumple uno de sus sueños: inaugura, en el corazón de Barcelona, Farray's Center, que poco después se convierte en Farray's International Dance Center: un centro global de 700m² donde conviven disciplinas como contemporáneo, ballet, salsa, reggaetón, hip-hop, heels, danza, stretching, preparación física, acrobacias… y un enfoque profundo de cuidado del cuerpo y la mente.",
-  yunaisyFarray_barcelona_p6: '',
+  yunaisyFarray_barcelona_p6:
+    "Hoy, Farray's International Dance Center es mucho más que una escuela: es un espacio donde cada persona puede descubrir su propia forma de bailar y expresarse.",
 
   yunaisyFarray_method_title: 'El Método Farray: técnica, cuerpo y resultados reales',
   yunaisyFarray_method_p1:
@@ -8188,6 +8266,7 @@ Nuestro profesor **Marcos Martínez**, juez de competiciones internacionales y r
   // Navigation
   navSalsaCubana: 'Salsa Cubana',
   navSalsaLadyStyle: 'Salsa Lady Style',
+  navFolkloreCubano: 'Folklore Cubano',
 
   // Page SEO
   salsaCubanaPageTitle: 'Clases de Salsa Cubana en Barcelona',
@@ -8357,7 +8436,7 @@ Nuestro profesor **Marcos Martínez**, juez de competiciones internacionales y r
   // Método Farray Section
   salsaCubanaMetodoTitle: 'El Método Farray®',
   salsaCubanaMetodoSubtitle:
-    'Un método exclusivo y revolucionario que promete transformar la forma de bailar salsa cubana a nivel global',
+    'Un enfoque estructurado para hombres y mujeres, tanto principiantes como avanzados',
   salsaCubanaMetodoPillar1Title: 'Guía Perfecta',
   salsaCubanaMetodoPillar1Desc:
     'El hombre perfecciona su guía pues es imprescindible para un buen desarrollo de las figuras y movimientos. Aprende a expresarte correctamente para que tu pareja pueda interpretar tus impulsos.',
@@ -8403,6 +8482,10 @@ Nuestro profesor **Marcos Martínez**, juez de competiciones internacionales y r
   salsaCubanaLevelBasic3Title: 'Básico III',
   salsaCubanaLevelBasic3Desc:
     'Perfecciona la técnica de guía/seguimiento, añade complejidad a las figuras y mejora tu estilo personal.',
+  // Combined Basic Level (for 4-card display)
+  salsaCubanaLevelBasicTitle: 'Básico I, II y III',
+  salsaCubanaLevelBasicDesc:
+    'Consolida los fundamentos, introduce las primeras figuras, trabaja la fluidez y perfecciona la técnica de guía/seguimiento.',
   salsaCubanaLevelIntermediateTitle: 'Intermedio',
   salsaCubanaLevelIntermediateDesc:
     'Figuras complejas, variaciones musicales, improvisación y desarrollo del estilo propio.',
@@ -8502,26 +8585,30 @@ Nuestro profesor **Marcos Martínez**, juez de competiciones internacionales y r
     'Conectarás con la alegría, el sabor y el espíritu de Cuba a través de su baile más emblemático.',
 
   // Why Choose Section
-  salsaCubanaWhyChooseTitle: "¿Por qué elegir Farray's para aprender a bailar Salsa?",
-  salsaCubanaWhyChooseSubtitle: '',
-  salsaCubanaWhyChoose1Title: 'Método Exclusivo',
+  salsaCubanaWhyChooseTitle: "¿Por qué elegir Farray's para aprender a bailar Salsa Cubana?",
+  salsaCubanaWhyChooseSubtitle:
+    "En Barcelona existen muchas escuelas de salsa, pero pocas con profesores cubanos especializados. En Farray's International Dance Center llevamos más de 8 años enseñando la auténtica Salsa Cubana con el exclusivo Método Farray®.",
+  salsaCubanaWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
   salsaCubanaWhyChoose1Desc:
-    'El Método Farray® es único en el mundo. Desarrollado por Yunaisy Farray tras décadas de experiencia internacional.',
-  salsaCubanaWhyChoose2Title: 'Acreditación CID-UNESCO',
+    'Dirigida por Yunaisy Farray, actriz de Street Dance 2 y creadora del Método Farray®. Una de las maestras cubanas más reconocidas internacionalmente.',
+  salsaCubanaWhyChoose2Title: 'Profesores cubanos especializados',
   salsaCubanaWhyChoose2Desc:
-    'Nuestra academia está acreditada por el Consejo Internacional de la Danza de la UNESCO.',
-  salsaCubanaWhyChoose3Title: 'Sistema Progresivo',
+    'Equipo de maestros formados en Cuba y certificados en el Método Farray®. Salsa cubana real, con sabor auténtico y técnica depurada.',
+  salsaCubanaWhyChoose3Title: 'Ubicación inmejorable',
   salsaCubanaWhyChoose3Desc:
-    'Niveles estructurados desde principiante absoluto hasta avanzado, con objetivos claros en cada etapa.',
-  salsaCubanaWhyChoose4Title: 'Autenticidad Cubana',
+    'Calle Entença 100, entre Plaza España y Sants, a 5 minutos de Plaça Espanya. Metro, buses y tren a la puerta. Fácil llegar. Fácil volver.',
+  salsaCubanaWhyChoose4Title: 'Ambiente familiar, con la profesionalidad que necesitas',
   salsaCubanaWhyChoose4Desc:
-    'Aprende la salsa cubana real de la mano de maestros cubanos. Con su sabor, su historia y su espíritu auténtico.',
-  salsaCubanaWhyChoose5Title: 'Resultados Probados',
+    'Cercano, inclusivo y sin juicios. Un lugar donde rotamos las parejas para que todos practiquen, pero con la profesionalidad para que evoluciones de verdad.',
+  salsaCubanaWhyChoose5Title: 'Instalaciones preparadas de verdad',
   salsaCubanaWhyChoose5Desc:
-    'Miles de alumnos han transformado su baile con nuestro método en Finlandia, Italia, Alemania y España.',
-  salsaCubanaWhyChoose6Title: 'Ambiente Único',
+    'Más de 700 m², salas amplias, espejos, sonido profesional, aire acondicionado y ventilación centralizada para entrenar a gusto todo el año.',
+  salsaCubanaWhyChoose6Title: 'Sistema de niveles progresivo',
   salsaCubanaWhyChoose6Desc:
-    'Una comunidad vibrante donde la diversión y el aprendizaje van de la mano.',
+    'Desde el Nivel 0 (nunca has bailado) hasta Avanzado. Objetivos claros en cada etapa y promoción cuando estés preparado, no por tiempo.',
+  salsaCubanaWhyChoose7Title: 'Gala anual + fiestas salseras',
+  salsaCubanaWhyChoose7Desc:
+    'Brilla en un teatro profesional, disfruta de nuestras fiestas temáticas y vive experiencias que no encontrarás en ninguna otra escuela de Barcelona.',
   salsaCubanaLogosTitle: 'Has podido vernos en',
   salsaCubanaLogosIntlText: 'Y en festivales internacionales de todo el mundo',
 
@@ -9252,4 +9339,294 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
   salsaLadyTransform6Title: 'Estilo Propio',
   salsaLadyTransform6Desc: 'De copiar a otras bailarinas a desarrollar tu sello personal único.',
   salsaLadyTransformCTA: '¿Por qué elegirnos?',
+
+  // ===== FOLKLORE CUBANO PAGE =====
+  folklorePageTitle: "Clases de Folklore Cubano en Barcelona | Academia Farray's Center",
+  folkloreMetaDescription:
+    'Aprende Folklore Cubano auténtico en Barcelona. Danzas a los Orishas, Yoruba, Rumba y más. Maestros cubanos especializados. Entre Plaza España y Sants. ¡Prueba gratis!',
+  folkloreCourseSchemaName: 'Clases de Folklore Cubano en Barcelona',
+  folkloreCourseSchemaDesc:
+    'Aprende las danzas tradicionales cubanas a los Orishas con maestros formados en la Escuela Nacional de Arte de Cuba. Clases para todos los niveles.',
+  folkloreCourseTeaches:
+    'Folklore Cubano, danzas a los Orishas, Yoruba, Congo, Rumba Cubana, expresión corporal afrocubana',
+
+  // Breadcrumb
+  folkloreBreadcrumbHome: 'Inicio',
+  folkloreBreadcrumbClasses: 'Clases de Baile Barcelona',
+  folkloreBreadcrumbCategory: 'Salsa y Bachata',
+  folkloreBreadcrumbCurrent: 'Folklore Cubano',
+
+  // Hero Section
+  folkloreHeroTitle: 'Clases de Folklore Cubano en Barcelona',
+  folkloreHeroSubtitle: 'La Raíz de la Salsa Cubana',
+  folkloreHeroDesc:
+    'Descubre los orígenes de la salsa cubana a través de las danzas rituales a los Orishas.',
+  folkloreHeroLocation:
+    'Academia miembro del CID-UNESCO | Clases con maestros cubanos, entre Plaza España y Sants',
+  folkloreHeroStudents: '+500 alumnos formados en Folklore Cubano',
+
+  // CTAs
+  folkloreCTA1: 'Hazte Socio Ahora',
+  folkloreCTA1Subtext: 'Plazas limitadas',
+  folkloreCTA2: 'Reserva tu Clase de Prueba',
+  folkloreCTA2Subtext: 'Sin compromiso',
+  folkloreCTAGroup: 'Opciones de inscripción',
+
+  // What Is Section
+  folkloreWhatIsTitle: '¿Qué es el Folklore Cubano y por qué deberías aprenderlo?',
+  folkloreWhatIsP1:
+    'Si quieres sacar el máximo partido a la salsa cubana y al resto de ritmos latinos, a la vez que trabajas tu expresión corporal, debes comenzar por sus orígenes: la raíz, la base de la salsa, que es la percusión.',
+  folkloreWhatIsP2:
+    'Los tres tambores batá son el origen de la fuerza y de la expresión del movimiento de la vieja África, que se han mantenido apenas alteradas en su viaje hacia Cuba.',
+  folkloreWhatIsP3:
+    'El Folklore Cubano es el conjunto de tradiciones populares transmitidas oralmente, incluyendo danzas rituales, música, leyendas y prácticas culturales con fuerte énfasis en raíces afrodescendientes.',
+  folkloreWhatIsP4:
+    "En Farray's International Dance Center aprenderás no solo a bailar sino el origen de todos los movimientos de la salsa cubana, de la mano de maestros cubanos especializados.",
+  folkloreWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
+  folkloreWhatIsQuestionAnswer: 'Si buscas la esencia más profunda del baile cubano, sí lo es.',
+
+  // Cultural History Section
+  folkloreCulturalHistoryTitle: 'Historia y Origen del Folklore Cubano',
+  folkloreCulturalShort:
+    'El Folklore Cubano se define como el conjunto de tradiciones populares transmitidas oralmente, incluyendo danzas rituales, música, leyendas ("Patakíes") y prácticas culturales de la población cubana, con fuerte énfasis en raíces afrodescendientes adaptadas al contexto insular.',
+  folkloreCulturalFull:
+    "### Influencias culturales\nDesde el siglo XVI, el folklore cubano surge del sincretismo entre esclavos africanos (Yoruba, Congo, Arará), colonizadores españoles (romance, contradanza) y aportes caribeños menores (haitiano, jamaicano), con huella aborigen casi inexistente. Las condiciones socioeconómicas de las plantaciones transformaron cultos africanos en expresiones como Santería y Palo, donde danzas rituales preservan polirritmía y gestualidad ancestral.\n### Evolución histórica\nEn el siglo XIX, sociedades secretas y cabildos africanos mantuvieron danzas como Yoruba y Abakuá en contextos religiosos. A inicios del XX, la Sociedad de Folklore Cubano (1923-1930) inicia su estudio sistemático, mientras grupos como Los Muñequitos de Matanzas profesionalizan la rumba. Post-1959, instituciones como la Escuela Nacional de Arte codifican estas formas para escenario.\n### Manifestaciones principales\nEl folklore tradicional incluye:\n**Yoruba:** Danzas a Orishas (Eleguá, Yemayá, Obatalá, Ochún, Changó).\n**Congo/Bantu:** Palo, Makuta, Garabato.\n**Abakuá:** Efo, Efi.\n**Arará:** Afra, Gun, Jebbioso.\n**Iyesá:** Danzas Iyesá.\n**Rumba:** Guaguancó, Yambú, Columbia (variantes con machetes, pañuelo).\n### Influencia en bailes populares\nRitmos y movimientos folklóricos nutren géneros seculares como Conga, Comparsa, Son Montuno (Changüí, Sucu-sucu), Danzón y Casino, base de la salsa cubana moderna, fusionando percusión batá con estructuras bailables.\n### Folklore en Farray's Center Barcelona\nFarray's International Dance Center ofrece clases de Folklore Cubano con maestros cubanos especializados, conectando raíces Yoruba y Congolesas para elevar expresión corporal en salsa y ritmos latinos en Barcelona.",
+
+  // Identification Section
+  folkloreIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
+  folkloreIdentify1:
+    'Bailas salsa cubana pero sientes que te falta profundidad y conexión con la música.',
+  folkloreIdentify2:
+    'Quieres entender el origen de los movimientos que haces en salsa y otros ritmos latinos.',
+  folkloreIdentify3: 'Te atrae la cultura afrocubana y quieres explorarla a través del baile.',
+  folkloreIdentify4: 'Buscas mejorar tu expresión corporal y tu interpretación musical.',
+  folkloreIdentify5: 'Quieres conocer los Orishas y las danzas rituales de la Santería cubana.',
+  folkloreIdentify6:
+    'Necesitas un entrenamiento físico completo que también trabaje tu coordinación y memoria.',
+  folkloreIdentifyTransition:
+    'Si has dicho "sí" a alguno de estos puntos, el Folklore Cubano es tu camino.',
+  folkloreIdentifyAgitate1:
+    '¿Cuánto tiempo más vas a bailar salsa sin conocer su verdadera esencia?',
+  folkloreIdentifySolution:
+    'Nuestros maestros cubanos te guiarán paso a paso en las danzas a los Orishas, rumba y más manifestaciones del folklore, conectándote con la raíz de toda la música afrocubana.',
+  folkloreIdentifyClosing: 'Sumérgete en la esencia más profunda del baile cubano en Barcelona.',
+
+  // Need Enroll Section
+  folkloreNeedEnrollTitle: 'Necesitas apuntarte a clases de Folklore Cubano',
+
+  // Transformation Section
+  folkloreTransformTitle: '¿Qué consigues con nuestras clases de Folklore Cubano?',
+  folkloreTransform1Title: 'Conoce los orígenes de la salsa',
+  folkloreTransform1Desc:
+    'Entenderás de dónde vienen los movimientos de la salsa cubana y podrás bailar con más autenticidad.',
+  folkloreTransform2Title: 'Mejora tu interpretación musical',
+  folkloreTransform2Desc:
+    'Aprenderás a escuchar y responder a la percusión de los tambores batá como un bailarín cubano.',
+  folkloreTransform3Title: 'Mejora tu acuidad auditiva',
+  folkloreTransform3Desc:
+    'Desarrollarás la capacidad de distinguir los diferentes toques y ritmos afrocubanos.',
+  folkloreTransform4Title: 'Aprende a disociar tu cuerpo',
+  folkloreTransform4Desc:
+    'Dominarás la técnica de mover diferentes partes del cuerpo de forma independiente.',
+  folkloreTransform5Title: 'Ejercita tu coordinación y memoria',
+  folkloreTransform5Desc:
+    'Cada Orisha tiene sus propios movimientos característicos que memorizarás y perfeccionarás.',
+  folkloreTransform6Title: 'Mejora tu forma física',
+  folkloreTransform6Desc:
+    'El trabajo físico exigente del folklore te mantendrá en forma todo el año.',
+  folkloreTransformCTA: "¿Por qué elegir Farray's Center para aprender Folklore Cubano?",
+
+  // Why Choose Section
+  folkloreWhyChoose1Title: 'Maestros cubanos especializados',
+  folkloreWhyChoose1Desc:
+    'Aprende con profesores formados en la Escuela Nacional de Arte de Cuba, con conocimiento profundo de las raíces folklóricas.',
+  folkloreWhyChoose2Title: 'Método Farray® exclusivo',
+  folkloreWhyChoose2Desc:
+    'Sistema de enseñanza único que conecta el folklore con la salsa cubana para una comprensión integral del baile.',
+  folkloreWhyChoose3Title: 'Academia CID-UNESCO',
+  folkloreWhyChoose3Desc:
+    'Centro reconocido internacionalmente, dirigido por Yunaisy Farray, referente mundial de la danza cubana.',
+  folkloreWhyChoose4Title: 'Ubicación privilegiada',
+  folkloreWhyChoose4Desc:
+    'A solo 5 minutos de Plaza España y Estación de Sants. Fácil acceso en metro, bus y tren.',
+  folkloreWhyChoose5Title: 'Instalaciones profesionales',
+  folkloreWhyChoose5Desc:
+    '700 m² con suelo profesional, sonido de calidad y climatización para entrenar cómodamente.',
+  folkloreWhyChoose6Title: 'Todos los niveles bienvenidos',
+  folkloreWhyChoose6Desc:
+    'No necesitas experiencia previa. Nuestro método se adapta a tu nivel desde el primer día.',
+  folkloreWhyChoose7Title: 'Eventos y workshops',
+  folkloreWhyChoose7Desc:
+    'Participa en nuestra gala anual, workshops con maestros internacionales y actividades culturales.',
+
+  // Why Today Section
+  folkloreWhyTodayFullTitle:
+    '¿Por qué hoy es el mejor momento para empezar a aprender Folklore Cubano?',
+  folkloreWhyToday1:
+    'Porque cada día que bailas salsa sin conocer su raíz es un día sin entender la verdadera esencia.',
+  folkloreWhyToday2:
+    'Porque el folklore te dará herramientas que transformarán tu forma de bailar cualquier ritmo latino.',
+  folkloreWhyToday3:
+    'Porque conectar con la cultura de los Orishas enriquecerá no solo tu baile, sino tu vida.',
+  folkloreWhyTodayClosing1:
+    "En Farray's no solo enseñamos pasos. Transmitimos cultura, historia y tradición.",
+  folkloreWhyTodayClosing2:
+    'Te esperamos con los tambores batá, maestros apasionados y la energía de Cuba.',
+
+  // Logos Section
+  folkloreLogosTitle: 'Has podido vernos en…',
+  folkloreLogosIntlFestivalsText: 'y en los mejores festivales de danza del mundo',
+
+  // Teachers Section
+  folkloreTeachersTitle: 'Conoce a tu maestra de Folklore Cubano',
+  folkloreTeachersSubtitle:
+    'Referente internacional en danzas afrocubanas con más de 25 años de experiencia',
+  folkloreTeacher1Specialty:
+    'Maestra Internacional de Danzas Afrocubanas | ISA Cuba | +25 años de experiencia',
+  folkloreTeacher1Bio:
+    'Grechén Mendez es una maestra internacional de referencia en el mundo de las danzas afrocubanas. Con más de 25 años dedicados a la enseñanza del folklore cubano, se formó en el prestigioso Instituto Superior de Arte de Cuba (ISA), la máxima institución artística del país. Su dominio de las danzas a los Orishas, la rumba y todas las manifestaciones del patrimonio afrocubano la convierten en una autoridad reconocida a nivel mundial. Ha formado a bailarines profesionales en Cuba, Europa y América, transmitiendo no solo la técnica sino el profundo significado espiritual y cultural de cada movimiento.',
+  folkloreTeachersClosing:
+    'Con la maestra Grechén Mendez, accedes al conocimiento más auténtico del folklore cubano. Su metodología, perfeccionada durante décadas, te llevará desde los fundamentos hasta la expresión más profunda de la danza afrocubana.',
+
+  // Schedule Section
+  folkloreScheduleTitle: 'Horarios de nuestras clases de Folklore Cubano',
+  folkloreScheduleSubtitle: 'Clases semanales con maestros cubanos especializados',
+  folkloreLevelsTitle: 'Niveles y Progresión',
+
+  // Level Cards
+  folkloreLevelBeginnerTitle: 'Iniciación',
+  folkloreLevelBeginnerDesc:
+    'Introducción a los Orishas principales, movimientos básicos y comprensión de la percusión batá. Perfecto para empezar desde cero.',
+  folkloreLevelInterTitle: 'Intermedio',
+  folkloreLevelInterDesc:
+    'Profundización en las danzas de cada Orisha, trabajo de expresión corporal y coreografías más complejas.',
+  folkloreLevelAdvancedTitle: 'Avanzado',
+  folkloreLevelAdvancedDesc:
+    'Dominio técnico, improvisación, rumba avanzada y preparación para presentaciones escénicas.',
+  folkloreLevelOpenTitle: 'Nivel Abierto',
+  folkloreLevelOpenDesc:
+    'Clase abierta para todos los niveles. Aprende las danzas a los Orishas, movimientos tradicionales afrocubanos y la conexión con la percusión batá en un ambiente inclusivo donde cada alumno avanza a su ritmo.',
+
+  // Prepare Class Section
+  folklorePrepareTitle: 'Cómo prepararte para tu clase de Folklore Cubano',
+  folklorePrepareSubtitle: 'Consejos de nuestra maestra Grechén Mendez',
+  folklorePrepareWhatToBring: 'Qué traer a clase',
+  folklorePrepareItem1: 'Ropa cómoda y ligera que permita libertad de movimiento',
+  folklorePrepareItem2: 'Zapatillas limpias de uso exclusivo en estudio (o pies descalzos)',
+  folklorePrepareItem3: 'Toalla pequeña para secarte el sudor',
+  folklorePrepareItem4: 'Botella de agua para hidratarte',
+  folklorePrepareItem5: 'Actitud abierta y ganas de conectar con la cultura cubana',
+  folklorePrepareBefore: 'Antes de la clase',
+  folklorePrepareBeforeItem1: 'Come algo ligero 1-2 horas antes, nunca con el estómago lleno',
+  folklorePrepareBeforeItem2: 'Hidrátate bien durante el día',
+  folklorePrepareBeforeItem3: 'Llega 5-10 minutos antes para cambiarte y prepararte mentalmente',
+  folklorePrepareAvoid: 'Qué evitar',
+  folklorePrepareAvoidItem1: 'Joyas grandes que puedan molestarte o engancharse',
+  folklorePrepareAvoidItem2: 'Ropa muy ajustada que limite tus movimientos',
+  folklorePrepareAvoidItem3: 'Llegar con el estómago muy lleno',
+  folklorePrepareTeacherTip: 'Consejo de la maestra',
+  folklorePrepareTeacherQuote:
+    'El folklore cubano se baila con el corazón abierto. Ven dispuesto a sentir la música y conectar con la energía de los Orishas. No importa si no sabes nada, lo importante es tu actitud.',
+
+  // Video Section
+  folkloreVideoTitle: 'Descubre nuestras clases de Folklore Cubano',
+  folkloreVideoDesc:
+    'Vive la experiencia de aprender las danzas a los Orishas con maestros cubanos auténticos.',
+
+  // Testimonials Section
+  folkloreTestimonialsTitle: 'Lo que dicen nuestros alumnos',
+
+  // Final CTA Section
+  folkloreFinalCTATitle: 'Sumérgete en la esencia del baile cubano',
+  folkloreFinalCTASubtitle: 'La raíz de la salsa te espera.',
+  folkloreFinalCTADesc:
+    'Reserva tu clase de prueba y descubre por qué el Folklore Cubano transformará tu forma de bailar.',
+  folkloreFinalCTAFunny: 'Los Orishas ya saben que vienes. Solo falta que des el primer paso.',
+
+  // Nearby Areas Section
+  folkloreNearbyTitle: 'Academia de Folklore Cubano en el corazón de Barcelona',
+  folkloreNearbyDesc:
+    'Nuestra academia está estratégicamente ubicada entre Plaza España y Estación de Sants, con excelente conexión de transporte público.',
+  folkloreNearbySearchText:
+    '¿Buscas clases de Folklore Cubano cerca de ti? Mira qué fácil es llegar:',
+  folkloreNearbyMetro: 'Metro L1 y L3 (Espanya), L3 y L5 (Sants Estació). FGC y Rodalies a 3 min.',
+
+  // FAQ Section
+  folkloreFaqTitle: 'Preguntas frecuentes sobre Folklore Cubano en Barcelona',
+  folkloreFaqQ1: '¿Qué es el Folklore Cubano exactamente?',
+  folkloreFaqA1:
+    'El Folklore Cubano es el conjunto de danzas tradicionales de Cuba con raíces africanas. Incluye las danzas rituales a los Orishas (Santería), danzas de origen Yoruba, Congo, Arará, así como la Rumba en sus diferentes variantes (Guaguancó, Yambú, Columbia). Es la base de donde surge toda la salsa cubana.',
+  folkloreFaqQ2: '¿Necesito experiencia previa para aprender Folklore Cubano?',
+  folkloreFaqA2:
+    'No necesitas ninguna experiencia previa. Nuestras clases están diseñadas para acoger a todos los niveles, desde principiantes absolutos hasta bailarines avanzados que quieren profundizar en las raíces.',
+  folkloreFaqQ3: '¿El Folklore Cubano tiene relación con la religión?',
+  folkloreFaqA3:
+    'El folklore cubano tiene su origen en las tradiciones religiosas afrocubanas (Santería, Palo, etc.), pero en nuestras clases lo enseñamos como disciplina artística y cultural. Aprendes los movimientos y su significado histórico-cultural, sin ningún componente religioso obligatorio.',
+  folkloreFaqQ4: '¿Quiénes son los Orishas y qué danzas aprenderé?',
+  folkloreFaqA4:
+    'Los Orishas son las deidades de la religión Yoruba sincretizada en Cuba. Cada uno tiene su propia danza característica: Eleguá (el mensajero), Ochún (la sensualidad), Yemayá (el mar), Changó (el fuego), Obatalá (la paz), entre otros. Aprenderás los movimientos específicos de cada uno.',
+  folkloreFaqQ5: '¿Cómo me ayudará el Folklore a bailar mejor salsa?',
+  folkloreFaqA5:
+    'El folklore es la raíz de la salsa cubana. Al aprender folklore desarrollarás mejor interpretación musical, expresión corporal más auténtica, disociación corporal y comprensión profunda de la percusión. Todo esto se traduce directamente en un baile de salsa más rico y auténtico.',
+  folkloreFaqQ6: '¿Qué ropa necesito para las clases?',
+  folkloreFaqA6:
+    'Ropa cómoda y ligera que permita libertad de movimiento, especialmente en caderas y torso. Puedes usar zapatillas limpias de estudio o bailar descalzo si lo prefieres. Trae toalla y agua porque es un entrenamiento intenso.',
+  folkloreFaqQ7: '¿Hay clases para hombres o solo para mujeres?',
+  folkloreFaqA7:
+    'El folklore cubano es para todos. De hecho, muchas danzas a los Orishas tienen versiones masculinas muy potentes (como Changó u Ogún). Hombres y mujeres son bienvenidos en todas nuestras clases.',
+  folkloreFaqQ8: '¿Puedo probar una clase antes de inscribirme?',
+  folkloreFaqA8:
+    'Sí. Ofrecemos clase de prueba para que experimentes nuestra metodología sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en esta página.',
+  folkloreFaqQ9: '¿Hacéis eventos o presentaciones de folklore?',
+  folkloreFaqA9:
+    'Sí. Organizamos nuestra gala anual donde los alumnos pueden mostrar lo aprendido en un teatro profesional. También realizamos workshops con maestros invitados y participamos en eventos culturales de la ciudad.',
+  folkloreFaqQ10: '¿Dónde está la academia y cómo contacto?',
+  folkloreFaqA10:
+    'Estamos en Calle Entença 100, 08015 Barcelona (a 5 min de Plaza España y Sants).<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+
+  // Why Us Comparison Section
+  folkloreCompareTitle:
+    "¿Por qué aprender Folklore Cubano en Farray's y no en otra academia de Barcelona?",
+  folkloreCompareSubtitle: 'La diferencia está en las raíces.',
+  folkloreCompareColOthers: 'Otras academias',
+  folkloreCompareColFarrays: "Farray's Center",
+  folkloreCompareRow1Label: 'Formación de profesores',
+  folkloreCompareRow1Others: 'Bailarines sin formación especializada',
+  folkloreCompareRow1Farrays: 'Maestros de la Escuela Nacional de Arte de Cuba',
+  folkloreCompareRow2Label: 'Método de enseñanza',
+  folkloreCompareRow2Others: 'Pasos sueltos sin contexto cultural',
+  folkloreCompareRow2Farrays: 'Método Farray® con historia y significado',
+  folkloreCompareRow3Label: 'Conocimiento de Orishas',
+  folkloreCompareRow3Others: 'Superficial o inexistente',
+  folkloreCompareRow3Farrays: 'Profundo y respetuoso con la tradición',
+  folkloreCompareRow4Label: 'Conexión con salsa',
+  folkloreCompareRow4Others: 'Folklore aislado del resto',
+  folkloreCompareRow4Farrays: 'Integración total con salsa cubana',
+  folkloreCompareRow5Label: 'Instalaciones',
+  folkloreCompareRow5Others: 'Locales pequeños o improvisados',
+  folkloreCompareRow5Farrays: '700m² con suelo profesional',
+  folkloreCompareRow6Label: 'Permanencia',
+  folkloreCompareRow6Others: 'Contratos largos',
+  folkloreCompareRow6Farrays: 'Mes a mes, sin permanencia',
+  folkloreCompareRow7Label: 'Reconocimiento',
+  folkloreCompareRow7Others: 'Ninguno',
+  folkloreCompareRow7Farrays: 'Academia CID-UNESCO',
+  folkloreCompareRow8Label: 'Eventos',
+  folkloreCompareRow8Others: 'Pocas oportunidades',
+  folkloreCompareRow8Farrays: 'Gala anual + workshops internacionales',
+  folkloreCompareMeaningTitle: '¿Qué significa esto para ti?',
+  folkloreCompareMeaning1Title: 'Si nunca has hecho folklore:',
+  folkloreCompareMeaning1Desc:
+    'Aprenderás desde la base con maestros que conocen cada detalle de la tradición cubana.',
+  folkloreCompareMeaning2Title: 'Si ya bailas salsa:',
+  folkloreCompareMeaning2Desc:
+    'Entenderás de dónde vienen los movimientos y tu salsa ganará autenticidad inmediatamente.',
+  folkloreCompareMeaning3Title: 'Si buscas cultura:',
+  folkloreCompareMeaning3Desc:
+    'No solo bailarás, sino que comprenderás el significado de cada Orisha y su danza.',
+  folkloreCompareMeaning4Title: 'Si quieres comunidad:',
+  folkloreCompareMeaning4Desc:
+    'Formarás parte de una familia que comparte pasión por la cultura cubana.',
+  folkloreCompareCTA: 'Prueba la diferencia: primera clase',
+  folkloreCompareNote: 'Sin permanencia. Sin presión. Solo baile auténtico.',
 };

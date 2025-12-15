@@ -1,0 +1,148 @@
+/**
+ * Folklore Cubano Page Configuration
+ *
+ * This file contains all the configuration needed for the FullDanceClassTemplate
+ * to render the complete Folklore Cubano page.
+ */
+import {
+  FOLKLORE_CUBANO_TESTIMONIALS,
+  FOLKLORE_CUBANO_FAQS_CONFIG,
+  FOLKLORE_CUBANO_SCHEDULE_KEYS,
+  FOLKLORE_CUBANO_LEVELS,
+  FOLKLORE_CUBANO_PREPARE_CONFIG,
+} from './folklore-cubano';
+import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
+
+export const FOLKLORE_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
+  // === IDENTIFICATION ===
+  styleKey: 'folklore',
+  stylePath: 'folklore-cubano',
+
+  // === REQUIRED DATA ===
+  faqsConfig: FOLKLORE_CUBANO_FAQS_CONFIG,
+  testimonials: FOLKLORE_CUBANO_TESTIMONIALS,
+  scheduleKeys: FOLKLORE_CUBANO_SCHEDULE_KEYS,
+
+  // Teachers
+  teachers: [
+    {
+      name: 'Grechén Mendez',
+      specialtyKey: 'folkloreTeacher1Specialty',
+      bioKey: 'folkloreTeacher1Bio',
+      // No image - will use initials avatar
+    },
+  ],
+
+  // Breadcrumb (4 levels: Home > Classes > Salsa/Bachata > Folklore Cubano)
+  breadcrumbConfig: {
+    homeKey: 'folkloreBreadcrumbHome',
+    classesKey: 'folkloreBreadcrumbClasses',
+    categoryKey: 'folkloreBreadcrumbCategory',
+    categoryUrl: '/clases/salsa-bachata-barcelona',
+    currentKey: 'folkloreBreadcrumbCurrent',
+  },
+
+  // === OPTIONAL DATA ===
+  levels: FOLKLORE_CUBANO_LEVELS,
+  prepareConfig: FOLKLORE_CUBANO_PREPARE_CONFIG,
+
+  // === HERO CONFIG ===
+  hero: {
+    minutes: 60,
+    calories: 450,
+    funPercent: 100,
+    gradientColor: 'amber',
+  },
+
+  // === SECTION TOGGLES ===
+  whatIsSection: {
+    enabled: true,
+    paragraphCount: 4,
+    hasQuestionAnswer: true,
+  },
+
+  identificationSection: {
+    enabled: true,
+    itemCount: 6,
+    hasTransition: true,
+    hasNeedEnroll: true,
+  },
+
+  transformationSection: {
+    enabled: true,
+    itemCount: 6,
+  },
+
+  whyChooseSection: {
+    enabled: false,
+    itemOrder: [1, 2, 3, 4, 5, 6, 7],
+  },
+
+  whyTodaySection: {
+    enabled: true,
+    paragraphCount: 3,
+  },
+
+  // Why Us vs Others Comparison Table - DISABLED (redundant with other sections)
+  whyUsComparison: {
+    enabled: false,
+    rowCount: 8,
+    meaningCount: 4,
+    showCTA: true,
+  },
+
+  videoSection: {
+    enabled: false, // No video yet
+  },
+
+  logosSection: {
+    enabled: true,
+    // Uses default logos (UNESCO, Street Dance 2, The Dancer, Telecinco)
+  },
+
+  nearbySection: {
+    enabled: true,
+    keyPrefix: 'folklore',
+  },
+
+  // Disable testimonials and FAQ sections
+  testimonialsSection: {
+    enabled: false,
+  },
+  faqSection: {
+    enabled: false,
+  },
+
+  culturalHistory: {
+    enabled: true,
+    titleKey: 'folkloreCulturalHistoryTitle',
+    shortDescKey: 'folkloreCulturalShort',
+    fullHistoryKey: 'folkloreCulturalFull',
+  },
+
+  // === SCHEMA MARKUP ===
+  courseConfig: {
+    teaches: 'Folklore Cubano, danzas a los Orishas, Yoruba, rumba cubana, expresión corporal',
+    prerequisites: 'Ninguno',
+    lessons: '2 clases semanales',
+    duration: 'PT1H',
+  },
+
+  // Person schemas for teachers (for rich snippets)
+  personSchemas: [
+    {
+      name: 'Grechén Mendez',
+      jobTitle: 'Maestra Internacional de Danzas Afrocubanas',
+      description:
+        'Maestra internacional de referencia en danzas afrocubanas con más de 25 años de experiencia. Formada en el Instituto Superior de Arte de Cuba (ISA), especializada en Folklore Cubano, danzas a los Orishas y ritmos afrocubanos.',
+      knowsAbout: [
+        'Folklore Cubano',
+        'Danzas Yoruba',
+        'Orishas',
+        'Rumba Cubana',
+        'Afrocubano',
+        'Danzas Afrocubanas',
+      ],
+    },
+  ],
+};

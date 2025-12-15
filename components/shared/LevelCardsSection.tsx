@@ -8,7 +8,7 @@ export interface LevelConfig {
   titleKey: string; // Translation key for title
   descKey: string; // Translation key for description
   duration: string; // Duration text (e.g., "0-3 meses")
-  color: 'primary-dark' | 'primary-dark-mid' | 'primary-accent-light' | 'primary-accent'; // Color theme progression
+  color: 'primary-dark' | 'primary-dark-mid' | 'primary-accent-light' | 'primary-accent' | 'amber'; // Color theme progression
 }
 
 interface LevelCardsSectionProps {
@@ -36,6 +36,16 @@ const LevelCardsSection: React.FC<LevelCardsSectionProps> = ({
     const isFirst = index === 0;
     const isSecond = index === 1;
     const isThird = index === 2;
+
+    // For 1 level (single open level): use primary-accent styling (same as theme)
+    if (total === 1) {
+      return {
+        card: 'bg-gradient-to-br from-primary-accent/25 via-black/60 to-primary-accent/10 border border-primary-accent/50 hover:border-primary-accent/80',
+        badge: 'bg-primary-accent/30 text-primary-accent border border-primary-accent/40',
+        glow: 'bg-primary-accent/25',
+        duration: 'text-primary-accent',
+      };
+    }
 
     // For 2 levels: primary-dark → primary-accent
     if (total === 2) {
@@ -125,12 +135,14 @@ const LevelCardsSection: React.FC<LevelCardsSectionProps> = ({
       basicLevel: 'BÁSICO',
       intermediateLevel: 'INTERMEDIO',
       advancedLevel: 'AVANZADO',
+      allLevelsLevel: 'TODOS LOS NIVELES',
     };
     return badgeMap[levelKey] || levelKey.toUpperCase();
   };
 
   // Determine grid columns based on number of levels
   const getGridCols = (count: number): string => {
+    if (count === 1) return 'max-w-md mx-auto'; // Center single card
     if (count === 2) return 'md:grid-cols-2 max-w-4xl';
     if (count === 3) return 'sm:grid-cols-2 lg:grid-cols-3 max-w-6xl';
     if (count === 4) return 'sm:grid-cols-2 lg:grid-cols-4 max-w-6xl';
