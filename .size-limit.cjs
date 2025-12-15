@@ -8,25 +8,25 @@ module.exports = [
   {
     name: 'ES Locale Bundle',
     path: 'dist/assets/i18n-es-*.js',
-    limit: '180 KB', // Reduced from 200KB
+    limit: '190 KB', // Increased after adding Folklore Cubano translations
     gzip: true,
   },
   {
     name: 'EN Locale Bundle',
     path: 'dist/assets/i18n-en-*.js',
-    limit: '175 KB', // Adjusted after adding Lady Style translations
+    limit: '180 KB', // Increased after adding Folklore Cubano translations
     gzip: true,
   },
   {
     name: 'CA Locale Bundle',
     path: 'dist/assets/i18n-ca-*.js',
-    limit: '190 KB', // Adjusted after adding Lady Style translations
+    limit: '195 KB', // Increased after adding Folklore Cubano translations
     gzip: true,
   },
   {
     name: 'FR Locale Bundle',
     path: 'dist/assets/i18n-fr-*.js',
-    limit: '195 KB', // Increased after adding 737 missing translations
+    limit: '200 KB', // Increased after adding Folklore Cubano translations
     gzip: true,
   },
   {
