@@ -25,7 +25,7 @@ jobs:
           cache: 'npm'
       
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Run TypeScript type checking
         run: npm run typecheck
@@ -44,7 +44,7 @@ jobs:
           cache: 'npm'
       
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Run ESLint
         run: npm run lint
@@ -63,7 +63,7 @@ jobs:
           cache: 'npm'
       
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Run tests
         run: npm run test:run
@@ -94,7 +94,7 @@ jobs:
           cache: 'npm'
       
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Build project
         run: npm run build
@@ -200,7 +200,7 @@ jobs:
           cache: 'npm'
       
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Download build artifacts
         uses: actions/download-artifact@v4
@@ -234,6 +234,9 @@ jobs:
           node-version: '20'
           cache: 'npm'
       
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
       - name: Audit dependencies (BLOCKING for moderate+)
         run: npm audit --audit-level=moderate
         # Removed continue-on-error to make it blocking
