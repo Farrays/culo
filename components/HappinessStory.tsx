@@ -18,7 +18,7 @@ const HappinessStory: React.FC = () => {
 
         {/* Second line: Large holographic text */}
         <AnimateOnScroll delay={200}>
-          <p className="text-3xl md:text-4xl holographic-text animate-glow mb-8 leading-relaxed">
+          <p className="text-3xl md:text-4xl holographic-text mb-8 leading-relaxed">
             {t('happinessStoryLine2')}
           </p>
         </AnimateOnScroll>
@@ -38,9 +38,9 @@ const HappinessStory: React.FC = () => {
           </p>
         </AnimateOnScroll>
 
-        {/* Fifth line: Holographic color, slightly larger */}
+        {/* Fifth line: Holographic color, larger */}
         <AnimateOnScroll delay={500}>
-          <p className="text-xl md:text-2xl holographic-text animate-glow mb-8 leading-relaxed">
+          <p className="text-2xl md:text-3xl holographic-text mb-8 leading-relaxed font-bold">
             {t('happinessStoryLine5')}
           </p>
         </AnimateOnScroll>
@@ -48,11 +48,19 @@ const HappinessStory: React.FC = () => {
         {/* Main narrative paragraphs */}
         <AnimateOnScroll delay={600}>
           <div className="space-y-6 text-lg md:text-xl text-neutral/90 leading-relaxed">
-            <p>
-              {t('happinessStoryPara1Part1')}{' '}
-              <span className="font-bold">{t('happinessStoryPara1Part2')}</span>
-            </p>
+            <p>{t('happinessStoryPara1Part1')}</p>
+          </div>
+        </AnimateOnScroll>
 
+        {/* Standalone holographic statement */}
+        <AnimateOnScroll delay={650}>
+          <p className="my-8 text-2xl md:text-3xl font-bold holographic-text leading-relaxed">
+            {t('happinessStoryPara1Part2')}
+          </p>
+        </AnimateOnScroll>
+
+        <AnimateOnScroll delay={700}>
+          <div className="space-y-6 text-lg md:text-xl text-neutral/90 leading-relaxed">
             <p>{t('happinessStoryPara2')}</p>
 
             <p>
@@ -67,13 +75,11 @@ const HappinessStory: React.FC = () => {
           </div>
         </AnimateOnScroll>
 
-        {/* Final powerful statement with special visual effect */}
+        {/* Final powerful statement */}
         <AnimateOnScroll delay={800}>
-          <div className="mt-8 pt-6 border-t-2 border-primary-accent/30">
-            <p className="text-2xl md:text-3xl font-bold holographic-text animate-glow leading-relaxed">
-              {t('happinessStoryPara4')}
-            </p>
-          </div>
+          <p className="mt-10 text-3xl md:text-4xl font-bold holographic-text leading-relaxed">
+            {t('happinessStoryPara4')}
+          </p>
         </AnimateOnScroll>
       </div>
     </section>

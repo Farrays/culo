@@ -110,6 +110,7 @@ const AboutPage: React.FC = () => {
   return (
     <>
       <Helmet>
+        <title>{t('about_page_title')} | Farray&apos;s Center</title>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
       </Helmet>

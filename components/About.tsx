@@ -2,55 +2,12 @@ import React from 'react';
 import { useI18n } from '../hooks/useI18n';
 import AnimateOnScroll from './AnimateOnScroll';
 import MethodInfographic from './MethodInfographic';
-import VideoWithSchema from './VideoWithSchema';
-import { imageUrls } from '../utils/imageConfig';
 
 const About: React.FC = () => {
   const { t } = useI18n();
 
   return (
     <section id="about" className="relative py-20 md:py-32 bg-black overflow-hidden">
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <VideoWithSchema
-          name="Yunaisy Farray Performance at Farray's International Dance Center"
-          description="World-renowned dancer Yunaisy Farray performing at her international dance center in Barcelona, showcasing the exclusive Farray Method®"
-          thumbnailUrl={imageUrls.videoPosters.yunaisyPerformance}
-          uploadDate="2024-01-15"
-          duration="PT45S"
-          contentUrl="https://www.farrayscenter.com/videos/yunaisy-farray-performance.mp4"
-          className="absolute top-0 left-0 w-full h-full object-cover"
-          poster={imageUrls.videoPosters.yunaisyPerformance}
-          src="/videos/yunaisy-farray-performance.mp4"
-          title="Performance by Yunaisy Farray"
-        >
-          <track
-            kind="captions"
-            src="/videos/captions/captions_en.vtt"
-            srcLang="en"
-            label="English"
-          />
-          <track
-            kind="captions"
-            src="/videos/captions/captions_es.vtt"
-            srcLang="es"
-            label="Español"
-          />
-          <track
-            kind="captions"
-            src="/videos/captions/captions_ca.vtt"
-            srcLang="ca"
-            label="Català"
-          />
-          <track
-            kind="captions"
-            src="/videos/captions/captions_fr.vtt"
-            srcLang="fr"
-            label="Français"
-          />
-        </VideoWithSchema>
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black"></div>
-      </div>
-
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">

@@ -89,6 +89,7 @@ const DanceClassesPage: React.FC = () => {
       {/* SEO metadata (title, description, og, hreflang) is handled by the global SEO.tsx component */}
       {/* Page-specific Schema Markup */}
       <Helmet>
+        <title>{t('danceClassesHub_h1')} | Farray&apos;s Center</title>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

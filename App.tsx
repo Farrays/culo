@@ -12,6 +12,7 @@ import {
 import { HelmetProvider } from 'react-helmet-async';
 import { I18nProvider, useI18n } from './hooks/useI18n';
 import type { Locale } from './types';
+import { SUPPORTED_LOCALES } from './types';
 import ErrorBoundary from './components/ErrorBoundary';
 import SEO from './components/SEO';
 import Header from './components/Header';
@@ -24,7 +25,6 @@ import BackToTop from './components/BackToTop';
 
 // Code splitting: Lazy load secondary pages to reduce initial bundle size
 const DanceClassesPage = lazy(() => import('./components/DanceClassesPage'));
-const DancehallPage = lazy(() => import('./components/DancehallPage'));
 const DanzaBarcelonaPage = lazy(() => import('./components/DanzaBarcelonaPage'));
 const DanzasUrbanasBarcelonaPage = lazy(() => import('./components/DanzasUrbanasBarcelonaPage'));
 const PreparacionFisicaBailarinesPage = lazy(
@@ -42,25 +42,29 @@ const AlquilerSalasPage = lazy(() => import('./components/AlquilerSalasPage'));
 const ServiciosBailePage = lazy(() => import('./components/ServiciosBailePage'));
 const EstudioGrabacionPage = lazy(() => import('./components/EstudioGrabacionPage'));
 const FacilitiesPage = lazy(() => import('./components/FacilitiesPage'));
-const TwerkPage = lazy(() => import('./components/TwerkPage'));
-const AfrobeatPage = lazy(() => import('./components/AfrobeatPage'));
-const HipHopReggaetonPage = lazy(() => import('./components/HipHopReggaetonPage'));
-const SexyReggaetonPage = lazy(() => import('./components/SexyReggaetonPage'));
-const ReggaetonCubanoPage = lazy(() => import('./components/ReggaetonCubanoPage'));
 const HeelsBarcelonaPage = lazy(() => import('./components/HeelsBarcelonaPage'));
-const FemmologyPage = lazy(() => import('./components/FemmologyPage'));
-const SexyStylePage = lazy(() => import('./components/SexyStylePage'));
-const ModernJazzPage = lazy(() => import('./components/ModernJazzPage'));
-const BalletPage = lazy(() => import('./components/BalletPage'));
-const ContemporaneoPage = lazy(() => import('./components/ContemporaneoPage'));
-const AfroContemporaneoPage = lazy(() => import('./components/AfroContemporaneoPage'));
-const AfroJazzPage = lazy(() => import('./components/AfroJazzPage'));
-const HipHopPage = lazy(() => import('./components/HipHopPage'));
-const SalsaCubanaPage = lazy(() => import('./components/SalsaCubanaPage'));
-const SalsaLadyStylePage = lazy(() => import('./components/SalsaLadyStylePage'));
+const SalsaLadyStylePage = lazy(() => import('./components/SalsaLadyStylePageNew'));
 
-// Valid locales
-const VALID_LOCALES: Locale[] = ['es', 'en', 'ca', 'fr'];
+// ===== NEW PAGES USING UNIFIED TEMPLATE =====
+// Migrated from ~900 lines each to ~15 lines using FullDanceClassTemplate
+const DancehallPage = lazy(() => import('./components/DancehallPageNew'));
+const TwerkPage = lazy(() => import('./components/TwerkPageNew'));
+const AfrobeatPage = lazy(() => import('./components/AfrobeatPageNew'));
+const HipHopReggaetonPage = lazy(() => import('./components/HipHopReggaetonPageNew'));
+const SexyReggaetonPage = lazy(() => import('./components/SexyReggaetonPageNew'));
+const ReggaetonCubanoPage = lazy(() => import('./components/ReggaetonCubanoPageNew'));
+const FemmologyPage = lazy(() => import('./components/FemmologyPageNew'));
+const SexyStylePage = lazy(() => import('./components/SexyStylePageNew'));
+const ModernJazzPage = lazy(() => import('./components/ModernJazzPageNew'));
+const BalletPage = lazy(() => import('./components/BalletPageNew'));
+const ContemporaneoPage = lazy(() => import('./components/ContemporaneoPageNew'));
+const AfroContemporaneoPage = lazy(() => import('./components/AfroContemporaneoPageNew'));
+const AfroJazzPage = lazy(() => import('./components/AfroJazzPageNew'));
+const HipHopPage = lazy(() => import('./components/HipHopPageNew'));
+const SalsaCubanaPage = lazy(() => import('./components/SalsaCubanaPageNew'));
+
+// Valid locales - use centralized constant from types.ts
+const VALID_LOCALES = SUPPORTED_LOCALES;
 
 const ScrollToTop: React.FC = () => {
   const location = useLocation();

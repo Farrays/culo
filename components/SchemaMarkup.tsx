@@ -1,6 +1,40 @@
+/**
+ * Schema.org structured data components for SEO.
+ * These components inject JSON-LD scripts into the page head
+ * to help search engines understand page content.
+ *
+ * Available schemas:
+ * - LocalBusinessSchema - Dance school business info
+ * - CourseSchema - Dance class/course details
+ * - ReviewSchema - Individual review
+ * - AggregateReviewsSchema - Multiple reviews with average
+ * - HowToSchema - Step-by-step guides
+ * - SpeakableSchema - Voice search optimization
+ * - DefinedTermSchema - Dance terminology definitions
+ * - EventSchema - Dance events/workshops
+ *
+ * @see https://schema.org/
+ * @see https://developers.google.com/search/docs/appearance/structured-data
+ *
+ * @example
+ * ```tsx
+ * <LocalBusinessSchema
+ *   name="Farray's International Dance Center"
+ *   description="Escuela de baile en Barcelona"
+ *   url="https://farrays.com"
+ *   telephone="+34 123 456 789"
+ *   email="info@farrays.com"
+ *   address={{ streetAddress: "C/ Example", addressLocality: "Barcelona", postalCode: "08001", addressCountry: "ES" }}
+ *   geo={{ latitude: "41.3851", longitude: "2.1734" }}
+ * />
+ * ```
+ */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
+/**
+ * Props for LocalBusinessSchema - Dance school business information.
+ */
 interface LocalBusinessSchemaProps {
   name: string;
   description: string;
@@ -25,6 +59,9 @@ interface LocalBusinessSchemaProps {
   openingHours?: string[];
 }
 
+/**
+ * Props for CourseSchema - Dance class/course information.
+ */
 interface CourseSchemaProps {
   name: string;
   description: string;
@@ -37,9 +74,12 @@ interface CourseSchemaProps {
   coursePrerequisites?: string;
   numberOfLessons?: string;
   timeRequired?: string;
-  availableLanguage?: string[];
+  availableLanguage?: readonly string[];
 }
 
+/**
+ * Props for ReviewSchema - Individual review.
+ */
 interface ReviewSchemaProps {
   itemReviewed: {
     name: string;

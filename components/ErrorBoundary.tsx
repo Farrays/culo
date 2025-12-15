@@ -1,4 +1,5 @@
 import { Component, ErrorInfo, ReactNode } from 'react';
+import { captureException } from '../utils/sentry';
 
 interface Props {
   children: ReactNode;
@@ -21,8 +22,8 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   public override componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
-    console.error('ErrorBoundary caught an error:', error, errorInfo);
-    // Note: Error tracking service (Sentry) can be integrated here in production
+    // In production: send to Sentry, in development: log to console
+    captureException(error, { componentStack: errorInfo.componentStack });
   }
 
   public override render(): ReactNode {

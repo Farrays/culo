@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState, type ReactNode, type ElementType } from 'react';
 
+/**
+ * Props for the AnimateOnScroll component.
+ */
 interface AnimateOnScrollProps {
   children: ReactNode;
   className?: string;
@@ -50,6 +53,28 @@ const unobserveElement = (element: Element): void => {
   sharedObserver?.unobserve(element);
 };
 
+/**
+ * Animates elements when they enter the viewport using a fade-up effect.
+ * Uses a singleton IntersectionObserver for optimal performance.
+ * Respects user's reduced motion preferences.
+ *
+ * @param children - Elements to animate
+ * @param className - Additional CSS classes
+ * @param delay - Delay in ms before starting animation (default: 0)
+ * @param style - Inline styles to apply
+ * @param as - HTML element type to render (default: 'div')
+ *
+ * @example
+ * ```tsx
+ * <AnimateOnScroll delay={200}>
+ *   <Card>Content appears with fade-up animation</Card>
+ * </AnimateOnScroll>
+ *
+ * <AnimateOnScroll as="section" className="my-section">
+ *   <h2>Section Title</h2>
+ * </AnimateOnScroll>
+ * ```
+ */
 const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
   children,
   className = '',
