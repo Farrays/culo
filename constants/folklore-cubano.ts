@@ -13,6 +13,11 @@ export const FOLKLORE_CUBANO_FAQS_CONFIG: FAQ[] = [
   { id: 'folklore-8', questionKey: 'folkloreFaqQ8', answerKey: 'folkloreFaqA8' },
   { id: 'folklore-9', questionKey: 'folkloreFaqQ9', answerKey: 'folkloreFaqA9' },
   { id: 'folklore-10', questionKey: 'folkloreFaqQ10', answerKey: 'folkloreFaqA10' },
+  // SEO FAQs for Afro Cubano, Afro Barcelona, Danzas Africanas keywords
+  { id: 'folklore-11', questionKey: 'folkloreFaqQ11', answerKey: 'folkloreFaqA11' },
+  { id: 'folklore-12', questionKey: 'folkloreFaqQ12', answerKey: 'folkloreFaqA12' },
+  { id: 'folklore-13', questionKey: 'folkloreFaqQ13', answerKey: 'folkloreFaqA13' },
+  { id: 'folklore-14', questionKey: 'folkloreFaqQ14', answerKey: 'folkloreFaqA14' },
 ];
 
 // Testimonials for Folklore Cubano page - only 3 specific testimonials

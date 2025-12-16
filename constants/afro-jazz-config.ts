@@ -112,6 +112,12 @@ export const AFRO_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'afrojazzCulturalFull',
   },
 
+  // === ARTISTIC DANCE COMPARISON TABLE ===
+  artisticDanceComparison: {
+    enabled: true,
+    highlightedStyle: 'afrojazz',
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches: 'Afro Jazz, fusión Afro Contemporáneo + Jazz, técnica ENA, improvisación',

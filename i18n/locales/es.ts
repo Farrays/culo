@@ -5895,6 +5895,7 @@ Hoy, el Sexy Style en Farray's se vive como un espacio de aprendizaje técnico y
   modernjazzWhatIsQuestionAnswer: 'Sí, lo es.',
 
   // Cultural Section - GEO Optimized with Método Farray®
+  modernjazzCulturalHistoryTitle: 'Historia y Evolución del Modern Jazz',
   modernjazzCulturalTitle: 'Historia y Evolución del Modern Jazz',
   modernjazzCulturalShort:
     'Aprende Modern Jazz con el Método Farray®: pedagogía exclusiva creada para un aprendizaje sólido, eficaz y divertido. Técnica original americana (Jack Cole, 1940s) con progresión optimizada que une técnica precisa con placer de bailar.',
@@ -6032,7 +6033,7 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
     'Con Alejandro aprenderás técnica sólida mientras descubres tu propia forma de expresarte.',
 
   // Schedule Section
-  modernjazzScheduleTitle: 'Horario de clases de Modern Jazz',
+  modernjazzScheduleTitle: 'Horario de nuestras clases de Modern Jazz',
   modernjazzScheduleSubtitle: 'Clases con Alejandro Miñoso',
 
   // Video Section
@@ -6269,6 +6270,7 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
     'El Modern Jazz es el puente perfecto entre la técnica clásica y la expresión contemporánea.',
 
   // ===== Level Cards Section =====
+  modernjazzLevelsTitle: 'Niveles de Modern Jazz',
   modernjazzLevelBasicTitle: 'Fundamentos y expresión',
   modernjazzLevelBasicDesc:
     'Clase ideal para quien empieza o quiere asentar bases sólidas. Trabajamos postura, isolations, coordinación y primeras coreografías con música variada. Cero presión, mucho disfrute.',
@@ -6677,12 +6679,13 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
     'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando',
 
   // ===== Level Cards =====
+  balletLevelsTitle: 'Niveles de Ballet',
   balletLevelBasicTag: 'PRINCIPIANTES',
-  balletLevelBasicTitle: 'Clases para Principiantes con Alejandro Miñoso',
+  balletLevelBasicTitle: 'Nivel Principiante',
   balletLevelBasicDesc:
     'Comienza desde cero con las bases de la técnica clásica. Aprende las cinco posiciones, trabajo de barra, postura correcta y los fundamentos que construirán tu camino en el ballet. Ambiente acogedor y ritmo adaptado.',
   balletLevelIntermediateTag: 'INTERMEDIO',
-  balletLevelIntermediateTitle: 'Clases Intermedias con Daniel Sené',
+  balletLevelIntermediateTitle: 'Nivel Intermedio',
   balletLevelIntermediateDesc:
     'Perfecciona tu técnica con trabajo de centro más complejo, pirouettes, allegro y repertorio clásico. Para bailarines con bases sólidas que quieren llevar su ballet al siguiente nivel.',
 
@@ -6702,7 +6705,7 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
   balletPrepareAvoidItem1: 'Joyas, anillos, pulseras o accesorios',
   balletPrepareAvoidItem2: 'Ropa muy suelta que impida ver tu postura',
   balletPrepareAvoidItem3: 'Calzado de calle en la sala (hay vestuarios)',
-  balletPrepareTeacherTip: 'Consejo de Alejandro:',
+  balletPrepareTeacherTip: 'Consejo de Daniel:',
   balletPrepareTeacherQuote:
     'El ballet es paciencia y constancia. No te frustres si los primeros días te cuesta. Cada gran bailarín empezó exactamente donde tú estás ahora. Disfruta el proceso.',
 
@@ -6934,16 +6937,19 @@ Trabaja integralmente: **flexibilidad, fuerza funcional, coordinación, propioce
 
   // Level Cards Section
   contemporaneoLevelsTitle: '¿Qué tipo de Contemporáneo va contigo?',
-  contemporaneoLevelsSubtitle: 'Tres modalidades para diferentes objetivos y sensibilidades',
-  contemporaneoLevelLiricoBasicoTitle: 'Contemporáneo Lírico Básico',
+  contemporaneoLevelsSubtitle: 'Cuatro modalidades para diferentes objetivos y sensibilidades',
+  contemporaneoLevelPrincipianteTitle: 'Lírico Principiantes',
+  contemporaneoLevelPrincipianteDesc:
+    'Primera toma de contacto con la danza contemporánea. Movimiento fluido, expresión emocional y conexión con la música. Sin requisitos previos.',
+  contemporaneoLevelLiricoBasicoTitle: 'Lírico Básico',
   contemporaneoLevelLiricoBasicoDesc:
-    'Ideal para iniciarte en la danza contemporánea. Trabajarás expresión corporal, musicalidad y movimientos fluidos. Técnica accesible con enfoque en la conexión emocional con la música.',
-  contemporaneoLevelLiricoIntermedioTitle: 'Contemporáneo Lírico Intermedio',
+    'Continúa desarrollando tu técnica lírica con secuencias más elaboradas. Para alumnos que ya han tomado clases de contemporáneo o tienen bases de ballet/danza.',
+  contemporaneoLevelLiricoIntermedioTitle: 'Lírico Intermedio',
   contemporaneoLevelLiricoIntermedioDesc:
-    'Profundiza tu técnica lírica con secuencias más complejas, mayor trabajo interpretativo y exploración de tu propio estilo. Para alumnos con base previa.',
-  contemporaneoLevelSueloFlowTitle: 'Contemporáneo Suelo & Flow',
+    'Secuencias complejas, trabajo interpretativo y desarrollo de tu estilo personal. Requisito: al menos 1 año de clases de contemporáneo o bases sólidas de danza.',
+  contemporaneoLevelSueloFlowTitle: 'Suelo & Flow',
   contemporaneoLevelSueloFlowDesc:
-    'Técnicas de floorwork, release y contact. Aprende a moverte con fluidez entre el suelo y el aire. Trabajo de respiración, peso corporal y transiciones orgánicas.',
+    'Floorwork, release y transiciones orgánicas entre suelo y aire. Clase exigente físicamente. Requisito: bases técnicas de contemporáneo, ballet o experiencia en danza.',
 
   // Prepare Section - Mismo diseño que AfroContemporaneo
   contemporaneoPrepareTitle: 'Prepara tu primera clase de Contemporáneo',
@@ -7470,13 +7476,16 @@ El Afro Contemporáneo impartido en **Farray's International Dance Center** form
   afrocontemporaneoCitableLegado:
     'DCC exporta Afro Contemporáneo (ENA) mundialmente desde 1970s; 65 años de giras consolidan fusión cubana.',
 
+  // Level cards section
+  afrocontemporaneoLevelsTitle: 'Niveles de Afro Contemporáneo',
+
   // Level cards descriptions
-  afrocontemporaneoLevelBasicTitle: 'Afro Contemporaneo Basico con Charlie Breezy',
+  afrocontemporaneoLevelBasicTitle: 'Nivel Básico',
   afrocontemporaneoLevelBasicDesc:
-    'Para quienes se inician en esta disciplina. Charlie Breezy guia los fundamentos del Afro Contemporaneo: disociacion corporal, ritmos afrocubanos y conexion con la musica. Aprende las bases con un profesor que combina tecnica y energia contagiosa.',
-  afrocontemporaneoLevelIntAdvTitle: 'Afro Contemporaneo Intermedio/Avanzado con Yunaisy Farray',
+    'Para quienes se inician en esta disciplina. Aprenderás los fundamentos del Afro Contemporáneo: disociación corporal, ritmos afrocubanos y conexión con la música. Sin experiencia previa requerida.',
+  afrocontemporaneoLevelIntAdvTitle: 'Nivel Intermedio / Avanzado',
   afrocontemporaneoLevelIntAdvDesc:
-    'Para bailarines con experiencia previa. Yunaisy Farray, maestra formada en la ENA Cuba y reconocida por el CID-UNESCO, trabaja secuencias avanzadas, interpretacion musical y perfeccionamiento tecnico. Clases de 90 minutos para profundizar en la disciplina.',
+    'Requiere mínimo 1 año de experiencia en danza o bases técnicas importantes (ballet, contemporáneo, jazz). Secuencias avanzadas, interpretación musical y perfeccionamiento técnico. Clases de 90 minutos.',
 
   // Prepara tu primera clase Section
   afrocontemporaneoPrepareTitle: 'Prepara tu primera clase de Afro Contemporaneo',
@@ -9029,8 +9038,19 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
   salsaLadyTeacher1Specialty: 'Lady Style, Técnica Femenina y Método Farray®',
   salsaLadyTeacher1Bio:
     'Yunaisy Farray es directora de la academia, miembro del CID-UNESCO y creadora del exclusivo Método Farray®. Formada en la Escuela Nacional de Arte de Cuba (ENA), ha desarrollado una metodología única para la enseñanza del estilo femenino que combina la técnica clásica cubana con expresión contemporánea. Su enfoque en la feminidad, elegancia y musicalidad ha transformado a miles de alumnas.',
+
+  // Teacher 2 - Lia Valdes
+  salsaLadyTeacher2Specialty: 'Maestra y Artista Internacional Cubana',
+  salsaLadyTeacher2Bio:
+    'Con más de 20 años de carrera artística, formada en la Escuela Nacional de Arte de Cuba (ENA). Lia Valdes es referente mundial en Cabaret y Lady Style, aportando elegancia escénica y técnica impecable a cada clase.',
+
+  // Teacher 3 - Yasmina Fernández
+  salsaLadyTeacher3Specialty: 'Instructora de Lady Style | Especialista en Técnica Femenina',
+  salsaLadyTeacher3Bio:
+    'Yasmina Fernández es una apasionada instructora de Lady Style formada en el Método Farray®. Con años de experiencia en la enseñanza de la técnica femenina, destaca por su capacidad de conectar con las alumnas y transmitir la elegancia y sensualidad del baile latino.',
+
   salsaLadyTeachersClosing:
-    'Con Yunaisy no solo aprenderás a bailar: descubrirás tu propia forma de expresar feminidad a través del movimiento.',
+    'Con nuestras maestras descubrirás tu propia forma de expresar feminidad a través del movimiento.',
 
   // Prepare Section
   salsaLadyPrepareTitle: 'Prepara tu primera clase de Salsa Lady Style',
@@ -9288,6 +9308,14 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
   salsaLadyLogosTitle: 'Has podido vernos en…',
   salsaLadyLogosIntlFestivalsText: 'y en los mejores festivales de baile de todo el mundo',
 
+  // Tacones en Salsa Section (before Cultural History)
+  salsaLadyTaconesTitle: 'Tacones en la Salsa: Tu Mejor Aliado',
+  salsaLadyTaconesDesc:
+    'El dominio de los tacones transforma completamente tu baile. En nuestras clases de Lady Style, los tacones no son solo un accesorio, son una herramienta para desarrollar elegancia, postura y presencia escénica.',
+  salsaLadyTaconesBenefit1: 'Postura perfecta',
+  salsaLadyTaconesBenefit2: 'Elegancia natural',
+  salsaLadyTaconesBenefit3: 'Confianza al bailar',
+
   // Why Today Section
   salsaLadyWhyTodayFullTitle: '¿Por qué hoy es el mejor momento para empezar Lady Style?',
   salsaLadyWhyToday1:
@@ -9340,6 +9368,239 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
   salsaLadyTransform6Desc: 'De copiar a otras bailarinas a desarrollar tu sello personal único.',
   salsaLadyTransformCTA: '¿Por qué elegirnos?',
 
+  // ===== SALSA LADY STYLE V2 PAGE (Persuasive Version) =====
+  salsaLadyV2PageTitle: 'Clases de Salsa Lady Style en Barcelona | Método Farray®',
+  salsaLadyV2MetaDescription:
+    'Domina el Lady Style con el Método Farray®. Técnica de brazos, caderas, giros y tacones. Maestras cubanas de la ENA. El único sistema estructurado de Barcelona.',
+
+  // Hero V2
+  salsaLadyV2HeroTitle: 'Salsa Lady Style',
+  salsaLadyV2HeroSubtitle: 'El Método que Transforma tu Baile',
+  salsaLadyV2HeroDesc:
+    'Deja de improvisar en los shines. Aprende técnica femenina real con el único sistema estructurado de Lady Style en Barcelona.',
+  salsaLadyV2CTA1: 'Reserva tu Clase de Prueba',
+  salsaLadyV2CTA2: 'Ver el Método Farray®',
+
+  // Problema-Agitación Section
+  salsaLadyV2ProblemTitle: 'El techo de cristal del Lady Style',
+  salsaLadyV2ProblemP1: 'Llevas meses (o años) bailando salsa.',
+  salsaLadyV2ProblemP2: 'Tu follow es correcto. Entiendes la guía. No te pierdes en la música.',
+  salsaLadyV2ProblemP3: 'Pero cuando tu pareja te suelta para un shine...',
+  salsaLadyV2ProblemTrigger: '¿Qué pasa entonces?',
+  salsaLadyV2Pain1: 'No sabes qué hacer con los brazos',
+  salsaLadyV2Pain2: 'Tus caderas se bloquean',
+  salsaLadyV2Pain3: 'Haces "algo" pero no sabes si está bien',
+  salsaLadyV2Pain4: 'Ves a otras bailarinas brillar y piensas: "¿cómo lo hacen?"',
+  salsaLadyV2ProblemNotYou: 'El problema no eres tú.',
+  salsaLadyV2ProblemRealCause: 'El problema es que nadie te enseñó técnica femenina de verdad.',
+
+  // Diagnóstico Section
+  salsaLadyV2DiagnosisTitle: 'Por qué tu Lady Style no progresa',
+  salsaLadyV2DiagnosisSubtitle: '(Y por qué no es culpa tuya)',
+  salsaLadyV2DiagnosisIntro:
+    'La mayoría de academias NO tienen un sistema de Lady Style estructurado.',
+  salsaLadyV2DiagnosisOthersTitle: 'Lo que hacen otras academias:',
+  salsaLadyV2DiagnosisBad1: 'Clases sueltas sin progresión lógica',
+  salsaLadyV2DiagnosisBad2: 'Profesoras que enseñan "lo que aprendieron" sin metodología',
+  salsaLadyV2DiagnosisBad3: 'Mezclan principiantes con avanzadas en la misma clase',
+  salsaLadyV2DiagnosisBad4: 'Copian coreografías de YouTube sin enseñar técnica base',
+  salsaLadyV2DiagnosisBad5: 'Ignoran la musicalidad y la expresión',
+  salsaLadyV2DiagnosisBad6: 'No hay niveles claros ni objetivos definidos',
+  salsaLadyV2DiagnosisResult:
+    'El resultado: llevas meses y sigues haciendo los mismos movimientos básicos.',
+  salsaLadyV2DiagnosisFarrayTitle:
+    "En Farray's es diferente. El Método Farray® es el único sistema de Lady Style en Barcelona con:",
+  salsaLadyV2DiagnosisGood1: 'Estructura didáctica probada',
+  salsaLadyV2DiagnosisGood2: 'Niveles claros con objetivos específicos',
+  salsaLadyV2DiagnosisGood3: 'Progresión técnica medible',
+  salsaLadyV2DiagnosisGood4: 'Maestra cubana formada en la ENA',
+
+  // Educativa - Qué es Lady Style
+  salsaLadyV2WhatIsTitle: '¿Qué es el Salsa Lady Style y por qué transformará tu baile?',
+  salsaLadyV2WhatIsDesc:
+    'El Salsa Lady Style es la disciplina que desarrolla tu técnica femenina dentro del baile de salsa. A diferencia de las clases en pareja, el Lady Style se enfoca 100% en ti.',
+  salsaLadyV2Focus1: 'Tu elegancia',
+  salsaLadyV2Focus2: 'Tu braceo',
+  salsaLadyV2Focus3: 'Tu forma de caminar',
+  salsaLadyV2Focus4: 'Tus giros',
+  salsaLadyV2Focus5: 'Tu presencia escénica',
+  salsaLadyV2Focus6: 'Tu interpretación musical',
+  salsaLadyV2Quote:
+    'No se trata solo de pasos. Se trata de cómo te mueves, cómo ocupas el espacio y cómo transmites feminidad en cada movimiento.',
+
+  // 6 Pilares del Método Farray para Lady Style
+  salsaLadyV2PillarsTitle: 'El Método Farray®: Los 6 Pilares del Lady Style',
+  salsaLadyV2PillarsSubtitle:
+    'El sistema completo que desarrolla cada aspecto de tu técnica femenina',
+
+  // Pilar 1: Técnica de Braceo
+  salsaLadyV2Pillar1Title: 'Técnica de Braceo',
+  salsaLadyV2Pillar1Subtitle: 'El arte de los brazos expresivos',
+  salsaLadyV2Pillar1Desc:
+    'Aprende a usar tus brazos como extensión de tu cuerpo, creando líneas elegantes y movimientos fluidos que complementan cada paso.',
+  salsaLadyV2Pillar1Item1: 'Líneas elegantes y definidas',
+  salsaLadyV2Pillar1Item2: 'Coordinación brazos-cuerpo',
+  salsaLadyV2Pillar1Item3: 'Port de bras con técnica cubana',
+  salsaLadyV2Pillar1Result: 'De brazos rígidos a extensiones que hipnotizan.',
+
+  // Pilar 2: Control de Caderas
+  salsaLadyV2Pillar2Title: 'Control de Caderas',
+  salsaLadyV2Pillar2Subtitle: 'Movimiento con intención',
+  salsaLadyV2Pillar2Desc:
+    'Domina el movimiento hipnótico de caderas con técnica cubana auténtica. Cada movimiento tiene propósito y transmite feminidad.',
+  salsaLadyV2Pillar2Item1: 'Disociación y aislación',
+  salsaLadyV2Pillar2Item2: 'Ochos y movimientos circulares',
+  salsaLadyV2Pillar2Item3: 'Ondulaciones controladas',
+  salsaLadyV2Pillar2Result: 'De caderas bloqueadas a movimiento sensual y controlado.',
+
+  // Pilar 3: Giros con Elegancia
+  salsaLadyV2Pillar3Title: 'Giros con Elegancia',
+  salsaLadyV2Pillar3Subtitle: 'Equilibrio y fluidez',
+  salsaLadyV2Pillar3Desc:
+    'Técnica de giros que combina equilibrio, gracia y control. Desde simples hasta múltiples, siempre con elegancia.',
+  salsaLadyV2Pillar3Item1: 'Preparación, spot y entrada',
+  salsaLadyV2Pillar3Item2: 'Control del centro',
+  salsaLadyV2Pillar3Item3: 'Giros múltiples con estilo',
+  salsaLadyV2Pillar3Result: 'De giros tambaleantes a vueltas limpias y elegantes.',
+
+  // Pilar 4: Dominio de Tacones
+  salsaLadyV2Pillar4Title: 'Dominio de Tacones',
+  salsaLadyV2Pillar4Subtitle: 'Seguridad y estilo',
+  salsaLadyV2Pillar4Desc:
+    'Aprende a caminar, bailar y girar con tacones como una profesional. Confianza en cada paso.',
+  salsaLadyV2Pillar4Item1: 'Caminar con elegancia sobre stilettos',
+  salsaLadyV2Pillar4Item2: 'Estabilidad y equilibrio',
+  salsaLadyV2Pillar4Item3: 'Juego de talón y punta',
+  salsaLadyV2Pillar4Result: 'De inseguridad a dominio total sobre los tacones.',
+
+  // Pilar 5: Musicalidad
+  salsaLadyV2Pillar5Title: 'Musicalidad',
+  salsaLadyV2Pillar5Subtitle: 'Interpretar la música',
+  salsaLadyV2Pillar5Desc:
+    'Entiende la música latina en profundidad: clave, tiempos, acentos. Tu cuerpo se convierte en instrumento.',
+  salsaLadyV2Pillar5Item1: 'Identificar acentos y cambios',
+  salsaLadyV2Pillar5Item2: 'Interpretar la música con el cuerpo',
+  salsaLadyV2Pillar5Item3: 'Jugar con la velocidad y dinámica',
+  salsaLadyV2Pillar5Result: 'De ejecutar pasos a interpretar canciones.',
+
+  // Pilar 6: Presencia Escénica
+  salsaLadyV2Pillar6Title: 'Presencia Escénica',
+  salsaLadyV2Pillar6Subtitle: 'Actitud y confianza',
+  salsaLadyV2Pillar6Desc:
+    'Desarrolla tu propia personalidad en el baile. Actitud, mirada y confianza que cautivan.',
+  salsaLadyV2Pillar6Item1: 'Proyección de energía',
+  salsaLadyV2Pillar6Item2: 'Uso de la mirada',
+  salsaLadyV2Pillar6Item3: 'Actitud y confianza en ti misma',
+  salsaLadyV2Pillar6Result: 'De bailar "hacia dentro" a brillar hacia fuera.',
+
+  // Bloque Persuasivo
+  salsaLadyV2PersuasiveBlockTitle: '¿Por qué el Método Farray es diferente?',
+
+  // Tabla Comparativa Destructiva
+  salsaLadyV2CompareTitle: 'Lady Style tradicional vs. Método Farray®',
+  salsaLadyV2CompareAspect: 'Aspecto',
+  salsaLadyV2CompareOthers: 'Otras academias',
+  salsaLadyV2CompareFarray: 'Método Farray®',
+  salsaLadyV2CompareRow1Label: 'Sistema de enseñanza',
+  salsaLadyV2CompareRow1Others: 'Clases sueltas sin estructura',
+  salsaLadyV2CompareRow1Farray: 'Sistema progresivo de 3 niveles',
+  salsaLadyV2CompareRow2Label: 'Formación del profesorado',
+  salsaLadyV2CompareRow2Others: 'Profesoras que enseñan "de oído"',
+  salsaLadyV2CompareRow2Farray: 'Maestra cubana formada en ENA Cuba',
+  salsaLadyV2CompareRow3Label: 'Grupos',
+  salsaLadyV2CompareRow3Others: 'Mezclan todos los niveles',
+  salsaLadyV2CompareRow3Farray: 'Grupos separados por nivel técnico',
+  salsaLadyV2CompareRow4Label: 'Contenido',
+  salsaLadyV2CompareRow4Others: 'Copian coreografías de YouTube',
+  salsaLadyV2CompareRow4Farray: 'Técnica base antes de coreografías',
+  salsaLadyV2CompareRow5Label: 'Musicalidad',
+  salsaLadyV2CompareRow5Others: 'Solo movimientos, sin musicalidad',
+  salsaLadyV2CompareRow5Farray: 'Interpretación musical integrada',
+  salsaLadyV2CompareRow6Label: 'Estilo',
+  salsaLadyV2CompareRow6Others: 'Estilo genérico "internacional"',
+  salsaLadyV2CompareRow6Farray: 'Autenticidad cubana en cada clase',
+  salsaLadyV2CompareRow7Label: 'Progresión',
+  salsaLadyV2CompareRow7Others: 'Sin progresión clara',
+  salsaLadyV2CompareRow7Farray: 'Objetivos definidos por nivel',
+  salsaLadyV2CompareRow8Label: 'Requisitos',
+  salsaLadyV2CompareRow8Others: 'Apta para cualquiera',
+  salsaLadyV2CompareRow8Farray: 'Requisito: base de salsa cubana',
+
+  // ¿Para quién es?
+  salsaLadyV2ForWhoTitle: '¿Es el Lady Style Farray® para ti?',
+  salsaLadyV2ForYesTitle: 'SÍ es para ti si:',
+  salsaLadyV2ForYes1: 'Ya bailas salsa (cubana o en línea) y tienes base técnica',
+  salsaLadyV2ForYes2: 'Quieres desarrollar tu estilo propio para brillar en la pista',
+  salsaLadyV2ForYes3: 'Sientes que tu técnica de brazos/caderas es mejorable',
+  salsaLadyV2ForYes4: 'Cuando te sueltan no sabes qué hacer',
+  salsaLadyV2ForYes5: 'Quieres aprender técnica de tacones con metodología',
+  salsaLadyV2ForYes6: 'Estás estancada en tu academia actual',
+  salsaLadyV2ForYes7: 'Buscas un sistema progresivo, no clases sueltas',
+  salsaLadyV2ForYes8: 'Quieres prepararte para performances/competiciones',
+  salsaLadyV2ForNoTitle: 'NO es para ti si:',
+  salsaLadyV2ForNo1: 'Nunca has bailado salsa (empieza por Salsa Cubana Nivel 0)',
+  salsaLadyV2ForNo2: 'Buscas clases de fitness sin técnica real',
+  salsaLadyV2ForNo3: 'Quieres resultados sin esfuerzo ni práctica',
+  salsaLadyV2ForNo4: 'Prefieres clases donde mezclan todos los niveles',
+  salsaLadyV2ForWhoCTA: 'Si has dicho "sí" a 3 o más puntos, el Lady Style Farray® es para ti.',
+
+  // Transformación Antes/Después
+  salsaLadyV2TransformTitle: 'Tu Antes y Después con Lady Style Farray®',
+  salsaLadyV2TransformAspect: 'Aspecto',
+  salsaLadyV2TransformBefore: 'ANTES',
+  salsaLadyV2TransformAfter: 'DESPUÉS',
+  salsaLadyV2TransformbrazosLabel: 'Brazos',
+  salsaLadyV2TransformbrazosBefore: 'Rígidos, sin saber qué hacer',
+  salsaLadyV2TransformbrazosAfter: 'Fluidos, elegantes, expresivos',
+  salsaLadyV2TransformcaderasLabel: 'Caderas',
+  salsaLadyV2TransformcaderasBefore: 'Bloqueadas o descontroladas',
+  salsaLadyV2TransformcaderasAfter: 'Movimiento sensual y controlado',
+  salsaLadyV2TransformgirosLabel: 'Giros',
+  salsaLadyV2TransformgirosBefore: 'Tambaleantes, sin equilibrio',
+  salsaLadyV2TransformgirosAfter: 'Limpios, múltiples, con estilo',
+  salsaLadyV2TransformtaconesLabel: 'Tacones',
+  salsaLadyV2TransformtaconesBefore: 'Inseguridad, tropiezos',
+  salsaLadyV2TransformtaconesAfter: 'Dominio total, elegancia',
+  salsaLadyV2TransformshinesLabel: 'Shines',
+  salsaLadyV2TransformshinesBefore: '"¿Qué hago?"',
+  salsaLadyV2TransformshinesAfter: '"Mira cómo brillo"',
+  salsaLadyV2TransformconfianzaLabel: 'Confianza',
+  salsaLadyV2TransformconfianzaBefore: 'Dudas sobre tu baile',
+  salsaLadyV2TransformconfianzaAfter: 'Seguridad cuando suena la salsa',
+  salsaLadyV2TransformestiloLabel: 'Estilo',
+  salsaLadyV2TransformestiloBefore: 'Copiar a otras',
+  salsaLadyV2TransformestiloAfter: 'Tu sello personal único',
+
+  // Final CTA V2
+  salsaLadyV2FinalCTATitle: '¿Lista para brillar en la pista?',
+  salsaLadyV2FinalCTADesc:
+    'Tu transformación comienza con una sola clase. El Método Farray® te espera.',
+  salsaLadyV2FinalCTA1: 'Reservar por WhatsApp',
+  salsaLadyV2FinalCTA2: 'Ver Horarios',
+
+  // ===== SALSA LADY STYLE V2 - WHY FARRAY'S SECTION =====
+  salsaLadyV2WhyFarrayTitle: "¿Por qué elegir Farray's para aprender Lady Style?",
+  salsaLadyV2WhyFarraySubtitle:
+    'No todas las academias son iguales. Esto es lo que nos hace diferentes.',
+  salsaLadyV2WhyFarray1Title: 'Maestra Cubana Formada en la ENA',
+  salsaLadyV2WhyFarray1Desc:
+    'Yunaisy Farray se formó en la Escuela Nacional de Arte de Cuba. Técnica cubana auténtica, no imitaciones.',
+  salsaLadyV2WhyFarray2Title: 'Sistema Progresivo por Niveles',
+  salsaLadyV2WhyFarray2Desc:
+    'Principiante, Básico, Intermedio y Avanzado. Cada nivel con objetivos claros y evaluación de progreso.',
+  salsaLadyV2WhyFarray3Title: 'Grupos Reducidos',
+  salsaLadyV2WhyFarray3Desc:
+    'Máximo 15 alumnas por clase para atención personalizada. Tu profesora te conoce por tu nombre.',
+  salsaLadyV2WhyFarray4Title: 'Metodología Propia',
+  salsaLadyV2WhyFarray4Desc:
+    'El Método Farray no es improvisado: es un sistema probado durante 8+ años con miles de alumnas.',
+  salsaLadyV2WhyFarray5Title: 'Aval CID-UNESCO',
+  salsaLadyV2WhyFarray5Desc:
+    'Somos academia acreditada por el Consejo Internacional de la Danza. Tu formación tiene reconocimiento internacional.',
+  salsaLadyV2WhyFarray6Title: 'Comunidad Real',
+  salsaLadyV2WhyFarray6Desc:
+    'No eres un número. Eventos, quedadas, workshops exclusivos. Aquí se crean amistades de verdad.',
+
   // ===== FOLKLORE CUBANO PAGE =====
   folklorePageTitle: "Clases de Folklore Cubano en Barcelona | Academia Farray's Center",
   folkloreMetaDescription:
@@ -9363,7 +9624,7 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
     'Descubre los orígenes de la salsa cubana a través de las danzas rituales a los Orishas.',
   folkloreHeroLocation:
     'Academia miembro del CID-UNESCO | Clases con maestros cubanos, entre Plaza España y Sants',
-  folkloreHeroStudents: '+500 alumnos formados en Folklore Cubano',
+  folkloreHeroStudents: '+15.000 alumnos formados',
 
   // CTAs
   folkloreCTA1: 'Hazte Socio Ahora',
@@ -9390,7 +9651,7 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
   folkloreCulturalShort:
     'El Folklore Cubano se define como el conjunto de tradiciones populares transmitidas oralmente, incluyendo danzas rituales, música, leyendas ("Patakíes") y prácticas culturales de la población cubana, con fuerte énfasis en raíces afrodescendientes adaptadas al contexto insular.',
   folkloreCulturalFull:
-    "### Influencias culturales\nDesde el siglo XVI, el folklore cubano surge del sincretismo entre esclavos africanos (Yoruba, Congo, Arará), colonizadores españoles (romance, contradanza) y aportes caribeños menores (haitiano, jamaicano), con huella aborigen casi inexistente. Las condiciones socioeconómicas de las plantaciones transformaron cultos africanos en expresiones como Santería y Palo, donde danzas rituales preservan polirritmía y gestualidad ancestral.\n### Evolución histórica\nEn el siglo XIX, sociedades secretas y cabildos africanos mantuvieron danzas como Yoruba y Abakuá en contextos religiosos. A inicios del XX, la Sociedad de Folklore Cubano (1923-1930) inicia su estudio sistemático, mientras grupos como Los Muñequitos de Matanzas profesionalizan la rumba. Post-1959, instituciones como la Escuela Nacional de Arte codifican estas formas para escenario.\n### Manifestaciones principales\nEl folklore tradicional incluye:\n**Yoruba:** Danzas a Orishas (Eleguá, Yemayá, Obatalá, Ochún, Changó).\n**Congo/Bantu:** Palo, Makuta, Garabato.\n**Abakuá:** Efo, Efi.\n**Arará:** Afra, Gun, Jebbioso.\n**Iyesá:** Danzas Iyesá.\n**Rumba:** Guaguancó, Yambú, Columbia (variantes con machetes, pañuelo).\n### Influencia en bailes populares\nRitmos y movimientos folklóricos nutren géneros seculares como Conga, Comparsa, Son Montuno (Changüí, Sucu-sucu), Danzón y Casino, base de la salsa cubana moderna, fusionando percusión batá con estructuras bailables.\n### Folklore en Farray's Center Barcelona\nFarray's International Dance Center ofrece clases de Folklore Cubano con maestros cubanos especializados, conectando raíces Yoruba y Congolesas para elevar expresión corporal en salsa y ritmos latinos en Barcelona.",
+    '### Influencias culturales\nDesde el siglo XVI, el folklore cubano surge del sincretismo entre esclavos africanos (Yoruba, Congo, Arará), colonizadores españoles (romance, contradanza) y aportes caribeños menores (haitiano, jamaicano), con huella aborigen casi inexistente. Las condiciones socioeconómicas de las plantaciones transformaron cultos africanos en expresiones como Santería y Palo, donde danzas rituales preservan polirritmía y gestualidad ancestral.\n### ¿Qué es el Afro Cubano?\nEl **Afro Cubano** (también llamado "Afro" o "danzas afrocubanas") es el término que engloba todas las expresiones dancísticas de Cuba con raíz africana. Cuando buscas **clases de Afro en Barcelona** o **danzas africanas**, el Afro Cubano es la disciplina que conecta África con el Caribe. A diferencia de las danzas africanas puras (Sabar senegalés, Coupé Décalé), el Afro Cubano fusiona movimientos Yoruba, Congo y Bantú con la musicalidad caribeña, creando un estilo único que es la base de la salsa cubana.\n### Evolución histórica\nEn el siglo XIX, sociedades secretas y cabildos africanos mantuvieron danzas como Yoruba y Abakuá en contextos religiosos. A inicios del XX, la Sociedad de Folklore Cubano (1923-1930) inicia su estudio sistemático, mientras grupos como Los Muñequitos de Matanzas profesionalizan la rumba. Post-1959, instituciones como la Escuela Nacional de Arte codifican estas formas para escenario.\n### Manifestaciones principales\nEl folklore tradicional incluye:\n**Yoruba:** Danzas a Orishas (Eleguá, Yemayá, Obatalá, Ochún, Changó).\n**Congo/Bantu:** Palo, Makuta, Garabato.\n**Abakuá:** Efo, Efi.\n**Arará:** Afra, Gun, Jebbioso.\n**Iyesá:** Danzas Iyesá.\n**Haitiano:** Vudú, Sabone, Fey, Congo Laye, Gagá, Tumba Francesa, Merengue haitiano, Ibbo, Menua.\n**Jamaicano:** Banana, Brown, Mangú, Chulo, Cinta, Limbo.\n**Rumba:** Guaguancó, Yambú y Columbia. La Columbia incluye: Columbia tradicional, Jiribilla, y variantes con objetos (machetes, cuchillos, bastón, plato con vela, pañuelo, entre otros).\n### Influencia en bailes populares\nRitmos y movimientos folklóricos nutren géneros seculares como Conga, Comparsa, Son Montuno (Changüí, Sucu-sucu), Danzón y Casino, base de la salsa cubana moderna, fusionando percusión batá con estructuras bailables.\n### Clases de Afro Cubano en Barcelona\nFarray\'s International Dance Center es la academia de referencia para aprender **Afro Cubano en Barcelona**. Nuestros maestros cubanos especializados te conectan con las raíces Yoruba y Congolesas, elevando tu expresión corporal en salsa y ritmos latinos. Si buscas **clases de Afro**, **danzas africanas** o **Afro Cubano en Barcelona**, aquí encontrarás la formación más auténtica.',
 
   // Identification Section
   folkloreIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
@@ -9583,6 +9844,19 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
   folkloreFaqQ10: '¿Dónde está la academia y cómo contacto?',
   folkloreFaqA10:
     'Estamos en Calle Entença 100, 08015 Barcelona (a 5 min de Plaza España y Sants).<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+  // SEO FAQs for Afro Cubano, Afro Barcelona, Danzas Africanas
+  folkloreFaqQ11: '¿Qué es el Afro Cubano y en qué se diferencia del Folklore Cubano?',
+  folkloreFaqA11:
+    'El Afro Cubano es el término que engloba todas las danzas cubanas con raíz africana. El Folklore Cubano incluye el Afro Cubano más otras expresiones como la Rumba y danzas de Comparsa. En nuestras clases de Folklore aprenderás ambas vertientes: las danzas Afro a los Orishas (Eleguá, Changó, Yemayá, Ochún) y las manifestaciones más festivas como la Rumba.',
+  folkloreFaqQ12: '¿Puedo aprender danzas africanas en Barcelona con vosotros?',
+  folkloreFaqA12:
+    'Sí. El Afro Cubano es la forma más auténtica de conectar con las danzas africanas en Barcelona. Nuestros movimientos provienen directamente de las tradiciones Yoruba, Congo y Bantú que llegaron a Cuba con los esclavos africanos. Si buscas clases de danzas africanas, el Afro Cubano te ofrece esa conexión con raíces auténticas más la riqueza rítmica del Caribe.',
+  folkloreFaqQ13: '¿Cuál es la diferencia entre Afro Cubano y Afrobeat o Afro Contemporáneo?',
+  folkloreFaqA13:
+    "El Afro Cubano se basa en danzas rituales Yoruba y Congo adaptadas en Cuba (siglos XVI-XIX). El Afrobeat es un género musical nigeriano de los años 70 con su propia danza. El Afro Contemporáneo fusiona técnicas africanas con danza contemporánea moderna. En Farray's ofrecemos las tres disciplinas, pero el Afro Cubano es el que conecta con las raíces más antiguas y la salsa.",
+  folkloreFaqQ14: '¿Las clases de Afro Cubano sirven para mejorar en otros estilos?',
+  folkloreFaqA14:
+    'Absolutamente. El Afro Cubano es la base de la salsa cubana, el son, la timba y muchos ritmos latinos. Al aprender la gestualidad de los Orishas, la polirritmia de los tambores batá y la disociación corporal africana, tu baile en cualquier estilo latino mejorará notablemente. Muchos bailarines de salsa vienen a nuestras clases de Afro para profundizar.',
 
   // Why Us Comparison Section
   folkloreCompareTitle:
@@ -9629,4 +9903,241 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
     'Formarás parte de una familia que comparte pasión por la cultura cubana.',
   folkloreCompareCTA: 'Prueba la diferencia: primera clase',
   folkloreCompareNote: 'Sin permanencia. Sin presión. Solo baile auténtico.',
+
+  // =====================================================================
+  // TIMBA PAGE - Unified page for Timba en Pareja + Lady Timba
+  // =====================================================================
+
+  // === META & SEO ===
+  timbaPageTitle: 'Clases de Timba en Barcelona',
+  timbaMetaDescription:
+    "Clases de Timba en Barcelona: Timba en Pareja y Lady Timba con maestros cubanos. Aprende a bailar cuando te sueltan en la salsa. Farray's Center, academia CID-UNESCO.",
+  timbaCourseSchemaName: 'Curso de Timba Cubana en Barcelona',
+  timbaCourseSchemaDesc:
+    'Clases de Timba con maestros cubanos profesionales. Timba en pareja y Lady Timba para mujeres. Aprende interpretación musical y despelote cubano.',
+
+  // === BREADCRUMB ===
+  timbaBreadcrumbHome: 'Inicio',
+  timbaBreadcrumbClasses: 'Clases de Baile',
+  timbaBreadcrumbLatin: 'Salsa y Bachata',
+  timbaBreadcrumbCurrent: 'Timba',
+
+  // === HERO SECTION ===
+  timbaHeroTitle: 'TIMBA EN BARCELONA',
+  timbaHeroSubtitle: '¿Qué hacer cuando te sueltan en la salsa?',
+  timbaHeroDesc:
+    'La Timba es la respuesta. Aprende a interpretar la música cubana moderna con libertad, estilo y sabor. Clases para parejas y estilo femenino Lady Timba.',
+  timbaHeroLocation: 'Plaza España, Barcelona · Metro L1/L3',
+  timbaHeroStudents: '+15.000 alumnos formados',
+  timbaCTAGroup: 'Opciones de inscripción a Timba',
+  timbaCTA1: 'Hazte Socio Ahora',
+  timbaCTA1Subtext: 'Plazas limitadas',
+  timbaCTA2: 'Reserva tu Clase de Prueba',
+  timbaCTA2Subtext: 'Sin compromiso',
+
+  // === WHAT IS TIMBA SECTION ===
+  timbaWhatIsTitle: '¿Qué es la Timba Cubana?',
+  timbaWhatIsP1:
+    'La Timba es la música bailable que suena hoy en día en Cuba. Es el resultado de la evolución natural de la música cubana para adaptarse a cómo baila la juventud cubana actual.',
+  timbaWhatIsP2:
+    'La Timba fusiona los ritmos tradicionales cubanos —música Yorúba, Rumba y Son— con la musicalidad de ritmos modernos como Hip Hop, R&B, Reggae y Funky. Es libertad de interpretación musical, es estilo propio, es sabor cubano del siglo XXI.',
+  timbaWhatIsP3:
+    '"La Timba identifica un estilo, la libertad de interpretación musical y las nuevas tendencias musicales cubanas."',
+  timbaWhatIsP4:
+    'En nuestras clases de Timba aprenderás a aplicar los diferentes pasos en los momentos correctos de la música, a disociar las diferentes partes de tu cuerpo y a sentir la música cubana como nunca antes.',
+  timbaWhatIsP5:
+    'Ofrecemos dos modalidades: Timba en Pareja para cuando bailas casino y te sueltan, y Lady Timba para mujeres que quieren desarrollar su estilo femenino y su despelote.',
+  timbaWhatIsQuestionTitle: '¿Bailas salsa cubana y te quedas en blanco cuando te sueltan?',
+  timbaWhatIsQuestionAnswer:
+    'La Timba es tu solución. Nunca más te sentirás perdida/o en la pista.',
+
+  // === SCHEDULE SECTION ===
+  timbaScheduleTitle: 'Horarios de nuestras clases de Timba',
+  timbaScheduleSubtitle: '3 clases semanales · 2 modalidades · 3 maestros cubanos',
+
+  // === LEVELS SECTION ===
+  timbaLevelsTitle: 'Niveles de Timba',
+  timbaLevelBasicTitle: 'Lady Timba Básico',
+  timbaLevelBasicDesc:
+    'Para mujeres con nivel básico de salsa cubana. Aprende los fundamentos del estilo femenino, movimientos de cuerpo y cómo interpretar la música cuando bailas sola.',
+  timbaLevelIntermediateTitle: 'Timba Intermedio-Avanzado',
+  timbaLevelIntermediateDesc:
+    'Para bailarines con mínimo 1 año de salsa cubana. Domina la improvisación, el despelote, y multiplica tus recursos para cuando te sueltan en el baile.',
+
+  // === TEACHERS SECTION ===
+  timbaTeachersTitle: 'Tus Maestros de Timba',
+  timbaTeachersSubtitle: 'Aprende con bailarines profesionales cubanos',
+  timbaTeacher1Specialty: 'Directora · Lady Timba Intermedio-Avanzado',
+  timbaTeacher1Bio:
+    'Yunaisy Farray es la creadora del Método Farray y miembro del CID-UNESCO. Especialista en Lady Timba, te enseñará a sacar tu lado más sexy y femenino con técnica cubana auténtica.',
+  timbaTeacher2Specialty: 'Maestra de Timba en Pareja',
+  timbaTeacher2Bio:
+    'Grechén Mendez es bailarina profesional cubana formada en la ISA. Experta en Timba en pareja, te enseñará a interpretar la música con tu pareja y a improvisar con estilo.',
+  timbaTeacher3Specialty: 'Profesora de Lady Timba Básico',
+  timbaTeacher3Bio:
+    'Lia Valdés te introducirá al mundo del Lady Timba con paciencia y técnica. Perfecta para dar tus primeros pasos en el estilo femenino cubano.',
+  timbaTeachersClosing:
+    'Tres maestros cubanos, tres estilos complementarios. Aprende Timba con quienes la viven desde la cuna.',
+
+  // === PREPARE CLASS SECTION ===
+  timbaPrepareTitle: '¿Cómo Prepararte para tu Clase de Timba?',
+  timbaPrepareSubtitle: 'Consejos de Yunaisy Farray',
+  timbaPrepareWhatToBring: 'Qué traer',
+  timbaPrepareItem1: 'Ropa cómoda que te permita moverte con libertad',
+  timbaPrepareItem2: 'Zapatillas de baile o calcetines (no zapatos de calle)',
+  timbaPrepareItem3: 'Botella de agua',
+  timbaPrepareItem4: 'Ganas de soltar el cuerpo y divertirte',
+  timbaPrepareNeedItem1: 'Ropa cómoda que te permita moverte con libertad',
+  timbaPrepareNeedItem2: 'Zapatillas de baile o calcetines (no zapatos de calle)',
+  timbaPrepareNeedItem3: 'Botella de agua',
+  timbaPrepareNeedItem4: 'Ganas de soltar el cuerpo y divertirte',
+  timbaPrepareBefore: 'Antes de venir',
+  timbaPrepareBeforeItem1: 'Escucha algo de Timba cubana para familiarizarte con el ritmo',
+  timbaPrepareBeforeItem2: 'Ven con la mente abierta a experimentar',
+  timbaPrepareBeforeItem3: 'No hace falta venir con pareja (excepto clase de martes)',
+  timbaPrepareAvoid: 'Evita',
+  timbaPrepareAvoidItem1: 'Ropa muy ajustada que limite el movimiento',
+  timbaPrepareAvoidItem2: 'Venir con el estómago muy lleno',
+  timbaPrepareAvoidItem3: 'Compararte con los demás, cada uno tiene su ritmo',
+  timbaPrepareTeacherTip: 'Consejo de la maestra',
+  timbaPrepareTeacherQuote:
+    '"La Timba es libertad. No vengas pensando en pasos perfectos, ven pensando en expresarte. Tu cuerpo ya sabe bailar, solo necesita permiso."',
+
+  // === IDENTIFICATION SECTION (Who is this for?) ===
+  timbaIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
+  timbaIdentify1:
+    'Bailas salsa cubana pero cuando tu pareja te suelta, te quedas sin saber qué hacer',
+  timbaIdentify2: 'Quieres tener más recursos y pasos para improvisar en la pista',
+  timbaIdentify3: 'Te gustaría sentirte más sexy y femenina cuando bailas (Lady Timba)',
+  timbaIdentify4: 'Llevas tiempo bailando pero sientes que te falta "sabor cubano"',
+  timbaIdentify5: 'Quieres entender mejor la música cubana moderna y sus diferentes partes',
+  timbaIdentify6: 'Buscas clases con maestros cubanos auténticos, no imitadores',
+  timbaIdentifyTransition: 'Si has dicho "sí" a alguna de estas, la Timba es para ti.',
+  timbaNeedEnrollTitle: '¿Por qué deberías apuntarte hoy?',
+  timbaIdentifyAgitate1:
+    'Cada fiesta que pasa sin saber qué hacer cuando te sueltan es una oportunidad perdida de disfrutar al máximo.',
+  timbaIdentifySolution:
+    'Con la Timba, transformarás esos momentos incómodos en tus momentos favoritos de la noche. Tendrás tantos recursos que desearás que te suelten más.',
+  timbaIdentifyClosing:
+    'No esperes más. Cada semana que pasa es una semana menos disfrutando de tu baile al 100%.',
+
+  // === TRANSFORMATION SECTION (What will you achieve?) ===
+  timbaTransformTitle: '¿Qué conseguirás en nuestras clases de Timba?',
+  timbaTransform1Title: 'Improvisación Total',
+  timbaTransform1Desc:
+    'Nunca más te quedarás en blanco. Tendrás un arsenal infinito de movimientos para cualquier momento de la música.',
+  timbaTransform2Title: 'Interpretación Musical',
+  timbaTransform2Desc:
+    'Aprenderás a escuchar los diferentes instrumentos y a bailar cada parte de la música con el paso adecuado.',
+  timbaTransform3Title: 'Estilo Propio',
+  timbaTransform3Desc:
+    'Desarrollarás tu manera única de bailar, fusionando técnica cubana con tu personalidad.',
+  timbaTransform4Title: 'Disociación Corporal',
+  timbaTransform4Desc:
+    'Tu cuerpo aprenderá a mover diferentes partes de forma independiente, multiplicando tus posibilidades expresivas.',
+  timbaTransform5Title: 'Confianza en la Pista',
+  timbaTransform5Desc:
+    'Te sentirás segura/o bailando sola/o o con pareja. La pista será tu territorio.',
+  timbaTransform6Title: 'Sabor Cubano Auténtico',
+  timbaTransform6Desc:
+    'Aprenderás de maestros cubanos que llevan la Timba en la sangre. No es imitación, es transmisión directa.',
+
+  // === WHY CHOOSE FARRAYS SECTION ===
+  timbaTransformCTA: "¿Por qué elegir Farray's para aprender Timba?",
+  timbaWhyChoose1Title: 'Maestros 100% Cubanos',
+  timbaWhyChoose1Desc:
+    'Yunaisy, Grechén y Lia son cubanas de nacimiento. No aprenderás una versión europea de la Timba, sino la auténtica.',
+  timbaWhyChoose2Title: '3 Clases Semanales',
+  timbaWhyChoose2Desc:
+    'Timba en Pareja, Lady Timba Intermedio y Lady Timba Básico. Encuentra la que mejor se adapta a ti.',
+  timbaWhyChoose3Title: 'Método Progresivo',
+  timbaWhyChoose3Desc:
+    'Empieza en Lady Timba Básico y progresa hasta el nivel avanzado con una metodología clara y efectiva.',
+  timbaWhyChoose4Title: 'Conexión con Salsa',
+  timbaWhyChoose4Desc:
+    'Lo que aprendes en Timba mejora directamente tu salsa cubana. Son dos caras de la misma moneda.',
+  timbaWhyChoose5Title: 'Ambiente Familiar',
+  timbaWhyChoose5Desc:
+    'Una comunidad donde te sentirás acogida/o desde el primer día. Aquí no juzgamos, celebramos.',
+  timbaWhyChoose6Title: 'Sin Permanencia',
+  timbaWhyChoose6Desc:
+    'Paga mes a mes. Si un mes no puedes venir, no pasa nada. Flexibilidad total.',
+  timbaWhyChoose7Title: 'Academia CID-UNESCO',
+  timbaWhyChoose7Desc:
+    'Reconocimiento internacional que avala la calidad de nuestra enseñanza y metodología.',
+  timbaLogosTitle: 'Aprende con profesionales reconocidos',
+  timbaLogosIntlFestivalsText: '+ Festivales internacionales de salsa',
+
+  // === WHY TODAY SECTION ===
+  timbaWhyTodayFullTitle: '¿Por qué empezar hoy y no "el mes que viene"?',
+  timbaWhyToday1:
+    'La Timba no es solo un estilo de baile, es una forma de vivir la música cubana. Cada día que pasa sin aprenderla es un día menos disfrutando de la salsa al máximo nivel.',
+  timbaWhyToday2:
+    'Los grupos son reducidos para garantizar atención personalizada. Las plazas se llenan rápido, especialmente en Lady Timba con Yunaisy.',
+  timbaWhyToday3:
+    'No necesitas ser experta/o en salsa para empezar. Si llevas al menos un año bailando, ya tienes la base suficiente.',
+  timbaWhyTodayClosing1: 'Tu próxima fiesta puede ser completamente diferente.',
+  timbaWhyTodayClosing2:
+    'Imagínate bailando con confianza, sabiendo exactamente qué hacer en cada momento de la música...',
+
+  // === CULTURAL HISTORY SECTION ===
+  timbaCulturalHistoryTitle: 'Historia y Orígenes de la Timba Cubana',
+  timbaCulturalShort:
+    'La Timba nació en Cuba en los años 80-90 como evolución del Son y la Salsa, fusionando ritmos tradicionales africanos con géneros modernos.',
+  timbaCulturalFull:
+    '## Los Orígenes de la Timba\n\nLa Timba surgió en La Habana durante los años 80 y alcanzó su máxima expresión en los 90. Es el resultado de la evolución natural de la música cubana, cuando los jóvenes músicos cubanos comenzaron a fusionar el Son tradicional con influencias del funk, hip hop, rock y jazz.\n\n## ¿Por qué se llama "Timba"?\n\nEl término "Timba" tiene raíces en el argot cubano. Algunos lo relacionan con "timbales" (instrumento de percusión), otros con expresiones populares cubanas. Lo que todos coinciden es que representa algo intenso, callejero y auténtico.\n\n## Las Bandas que Definieron el Género\n\nGrupos como **Los Van Van**, **NG La Banda**, **La Charanga Habanera**, **Manolín "El Médico de la Salsa"** y **Paulito FG** fueron los pioneros que definieron el sonido de la Timba. Su música se caracteriza por:\n\n- **Cambios de ritmo** constantes (de suave a explosivo)\n- **El "despelote"** - secciones donde el ritmo se intensifica\n- **Letras urbanas** que hablan de la vida cotidiana cubana\n- **Improvisación** tanto musical como en el baile\n\n## La Timba como Baile\n\nMusicalmente, la Timba exige un baile diferente. Los bailarines desarrollaron movimientos más sueltos, sensuales y expresivos para responder a los cambios de la música. Así nació el estilo de baile Timba, con su característico "despelote" y la libertad de movimiento individual.\n\n## Lady Timba: El Estilo Femenino\n\nEl Lady Timba o "Timba para mujeres" se centra en desarrollar el estilo femenino dentro de este género. Enfatiza los movimientos de cadera, la sensualidad y la expresión corporal, permitiendo a las mujeres lucirse cuando bailan solas o cuando las "sueltan" en el baile de pareja.\n\n## La Timba Hoy\n\nLa Timba sigue evolucionando en Cuba y en el mundo. En Barcelona, academias como Farray\'s Center mantienen viva esta tradición con maestros cubanos que transmiten no solo los pasos, sino el sentimiento y la cultura detrás de cada movimiento.',
+
+  // === FAQ SECTION ===
+  timbaFaqTitle: 'Preguntas Frecuentes sobre Timba',
+  timbaFaqQ1: '¿Qué nivel de salsa necesito para empezar Timba?',
+  timbaFaqA1:
+    'Para Lady Timba Básico (viernes) recomendamos al menos 6 meses de salsa cubana. Para Timba en Pareja (martes) y Lady Timba Intermedio (jueves), recomendamos mínimo 1 año de experiencia en salsa cubana.',
+  timbaFaqQ2: '¿Cuál es la diferencia entre Timba en Pareja y Lady Timba?',
+  timbaFaqA2:
+    'La Timba en Pareja (martes) trabaja la interpretación musical cuando bailas con alguien y te sueltan momentáneamente. Lady Timba (jueves y viernes) está enfocada exclusivamente en el estilo femenino y es solo para mujeres.',
+  timbaFaqQ3: '¿Puedo venir sin pareja a la clase de Timba en Pareja?',
+  timbaFaqA3:
+    'Para la clase de Timba en Pareja de los martes, sí es recomendable venir con pareja ya que se trabajan ejercicios de conexión. Para Lady Timba no necesitas pareja, es individual.',
+  timbaFaqQ4: '¿Qué es el "despelote" que mencionan tanto?',
+  timbaFaqA4:
+    'El "despelote" es el momento en la música Timba donde el ritmo se intensifica y los bailarines se "sueltan" a improvisar con movimientos más libres y expresivos. Es el momento más divertido de la Timba.',
+  timbaFaqQ5: '¿Qué ropa debo llevar a clase de Timba?',
+  timbaFaqA5:
+    'Ropa cómoda que te permita moverte con libertad. Para Lady Timba, muchas alumnas vienen con ropa que les hace sentir femeninas (faldas, vestidos). Calzado: zapatillas de baile o calcetines.',
+  timbaFaqQ6: '¿La Timba me ayudará a mejorar mi salsa cubana?',
+  timbaFaqA6:
+    'Absolutamente. La Timba y la salsa cubana van de la mano. Lo que aprendes en Timba (interpretación musical, improvisación, despelote) mejora directamente tu baile en pareja.',
+  timbaFaqQ7: '¿Cuánto cuesta la clase de prueba?',
+  timbaFaqA7:
+    'La clase de prueba cuesta 10€. Si te apuntas ese mismo día, se te descuenta del primer mes.',
+  timbaFaqQ8: '¿Hay contrato o permanencia mínima?',
+  timbaFaqA8:
+    "No. En Farray's trabajamos mes a mes, sin contratos ni permanencias. Pagas solo los meses que vienes.",
+  timbaFaqQ9: '¿Puedo probar las tres clases de Timba antes de decidir?',
+  timbaFaqA9:
+    'Sí, puedes probar cada clase pagando 10€ por cada una. Así puedes ver cuál se adapta mejor a tu nivel y gustos.',
+  timbaFaqQ10: '¿Las clases de Timba son solo para mujeres?',
+  timbaFaqA10:
+    'Lady Timba (jueves y viernes) es exclusivamente para mujeres. Timba en Pareja (martes) es mixta y pueden venir tanto hombres como mujeres.',
+  timbaFaqQ11: '¿Qué música se usa en las clases de Timba?',
+  timbaFaqA11:
+    "Usamos Timba cubana auténtica: Los Van Van, NG La Banda, La Charanga Habanera, Havana D'Primera, Maykel Blanco y más. Música que se baila en las fiestas de salsa cubana.",
+  timbaFaqQ12: '¿Puedo empezar en Lady Timba Intermedio si nunca he hecho Lady Timba?',
+  timbaFaqA12:
+    'Si tienes buen nivel de salsa cubana (+2 años), puedes empezar directamente en el nivel intermedio. Si tienes dudas, ven a probar una clase y Yunaisy te orientará.',
+
+  // === NEARBY AREAS SECTION (Local SEO) ===
+  timbaNearbyTitle: 'Clases de Timba cerca de ti en Barcelona',
+  timbaNearbyDesc:
+    "Farray's Center está en Plaza España, perfectamente comunicado por metro (L1 y L3) y autobús. Alumnos de toda Barcelona vienen a aprender Timba con nosotros.",
+  timbaNearbySearchText: '¿Buscas "clases de Timba cerca de mí"? Mira lo fácil que es llegar:',
+  timbaNearbyMetro: 'Metro: Plaza España (L1, L3) · Hostafrancs (L1) · Tarragona (L3)',
+
+  // === FINAL CTA SECTION ===
+  timbaFinalCTATitle: '¿Lista/o para transformar tu forma de bailar?',
+  timbaFinalCTASubtitle: 'Tu primera clase de Timba te espera',
+  timbaFinalCTADesc:
+    'No importa si nunca has hecho Timba. Lo que importa es que quieres mejorar, disfrutar más y sentirte libre en la pista. Nuestros maestros cubanos te guiarán paso a paso.',
+  timbaFinalCTAFunny:
+    '"Antes me quedaba como estatua cuando me soltaban. Ahora deseo que me suelten." — Alumna anónima 😄',
 };

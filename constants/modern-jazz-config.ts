@@ -116,6 +116,12 @@ export const MODERN_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'modernjazzCulturalFull',
   },
 
+  // === ARTISTIC DANCE COMPARISON TABLE ===
+  artisticDanceComparison: {
+    enabled: true,
+    highlightedStyle: 'modernjazz',
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches: 'Modern Jazz, técnica de danza, musicalidad, expresión corporal, giros, saltos',

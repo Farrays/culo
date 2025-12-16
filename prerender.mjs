@@ -14,6 +14,7 @@ const routes = [
   { path: 'es/clases/salsa-cubana-barcelona', lang: 'es', page: 'salsaCubana' },
   { path: 'es/clases/salsa-lady-style-barcelona', lang: 'es', page: 'salsaLadyStyle' },
   { path: 'es/clases/folklore-cubano', lang: 'es', page: 'folkloreCubano' },
+  { path: 'es/clases/timba-barcelona', lang: 'es', page: 'timba' },
   { path: 'es/clases/danzas-urbanas-barcelona', lang: 'es', page: 'danzasUrbanas' },
   { path: 'es/clases/dancehall-barcelona', lang: 'es', page: 'dancehall' },
   { path: 'es/clases/twerk-barcelona', lang: 'es', page: 'twerk' },
@@ -41,6 +42,7 @@ const routes = [
   { path: 'ca/clases/salsa-cubana-barcelona', lang: 'ca', page: 'salsaCubana' },
   { path: 'ca/clases/salsa-lady-style-barcelona', lang: 'ca', page: 'salsaLadyStyle' },
   { path: 'ca/clases/folklore-cubano', lang: 'ca', page: 'folkloreCubano' },
+  { path: 'ca/clases/timba-barcelona', lang: 'ca', page: 'timba' },
   { path: 'ca/clases/danzas-urbanas-barcelona', lang: 'ca', page: 'danzasUrbanas' },
   { path: 'ca/clases/dancehall-barcelona', lang: 'ca', page: 'dancehall' },
   { path: 'ca/clases/twerk-barcelona', lang: 'ca', page: 'twerk' },
@@ -68,6 +70,7 @@ const routes = [
   { path: 'en/clases/salsa-cubana-barcelona', lang: 'en', page: 'salsaCubana' },
   { path: 'en/clases/salsa-lady-style-barcelona', lang: 'en', page: 'salsaLadyStyle' },
   { path: 'en/clases/folklore-cubano', lang: 'en', page: 'folkloreCubano' },
+  { path: 'en/clases/timba-barcelona', lang: 'en', page: 'timba' },
   { path: 'en/clases/danzas-urbanas-barcelona', lang: 'en', page: 'danzasUrbanas' },
   { path: 'en/clases/dancehall-barcelona', lang: 'en', page: 'dancehall' },
   { path: 'en/clases/twerk-barcelona', lang: 'en', page: 'twerk' },
@@ -95,6 +98,7 @@ const routes = [
   { path: 'fr/clases/salsa-cubana-barcelona', lang: 'fr', page: 'salsaCubana' },
   { path: 'fr/clases/salsa-lady-style-barcelona', lang: 'fr', page: 'salsaLadyStyle' },
   { path: 'fr/clases/folklore-cubano', lang: 'fr', page: 'folkloreCubano' },
+  { path: 'fr/clases/timba-barcelona', lang: 'fr', page: 'timba' },
   { path: 'fr/clases/danzas-urbanas-barcelona', lang: 'fr', page: 'danzasUrbanas' },
   { path: 'fr/clases/dancehall-barcelona', lang: 'fr', page: 'dancehall' },
   { path: 'fr/clases/twerk-barcelona', lang: 'fr', page: 'twerk' },
@@ -146,6 +150,10 @@ const metadata = {
     folkloreCubano: {
       title: 'Clases de Folklore Cubano en Barcelona | Danzas a los Orishas | Farray\'s Center',
       description: 'Aprende Folklore Cubano auténtico en Barcelona. Danzas a los Orishas, Yoruba, Rumba y más. Maestros cubanos especializados. Entre Plaza España y Sants. ¡Prueba gratis!',
+    },
+    timba: {
+      title: 'Clases de Timba en Barcelona | Lady Timba y Timba en Pareja | Farray\'s Center',
+      description: 'Aprende Timba Cubana en Barcelona con maestros cubanos. Lady Timba con Yunaisy Farray y Timba en Pareja con Grechén Mendez. Despelote, improvisación y sabor cubano. ¡Reserva tu clase!',
     },
     danzasUrbanas: {
       title: 'Clases de Danzas Urbanas en Barcelona | Hip Hop, Dancehall, K-Pop y Reggaeton | Farray\'s Center',
@@ -253,6 +261,10 @@ const metadata = {
       title: 'Classes de Folklore Cubà a Barcelona | Danses als Orixàs | Farray\'s Center',
       description: 'Aprèn Folklore Cubà autèntic a Barcelona. Danses als Orixàs, Yoruba, Rumba i més. Mestres cubans especialitzats. Entre Plaça Espanya i Sants. Prova gratuïta!',
     },
+    timba: {
+      title: 'Classes de Timba a Barcelona | Lady Timba i Timba en Parella | Farray\'s Center',
+      description: 'Aprèn Timba Cubana a Barcelona amb mestres cubans. Lady Timba amb Yunaisy Farray i Timba en Parella amb Grechén Mendez. Despelote, improvisació i sabor cubà. Reserva la teva classe!',
+    },
     danzasUrbanas: {
       title: 'Classes de Danses Urbanes a Barcelona | Hip Hop, Dancehall, K-Pop i Reggaeton | Farray\'s Center',
       description: 'Descobreix les nostres classes de danses urbanes a Barcelona: Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat i més. Acadèmia de referència en estils urbans. Prova una classe gratis.',
@@ -359,6 +371,10 @@ const metadata = {
       title: 'Cuban Folklore Classes in Barcelona | Dances to the Orishas | Farray\'s Center',
       description: 'Learn authentic Cuban Folklore in Barcelona. Dances to the Orishas, Yoruba, Rumba and more. Specialized Cuban masters. Between Plaza España and Sants. Free trial!',
     },
+    timba: {
+      title: 'Timba Classes in Barcelona | Lady Timba & Partner Timba | Farray\'s Center',
+      description: 'Learn Cuban Timba in Barcelona with Cuban masters. Lady Timba with Yunaisy Farray and Partner Timba with Grechén Mendez. Despelote, improvisation and Cuban flavor. Book your class!',
+    },
     danzasUrbanas: {
       title: 'Urban Dance Classes in Barcelona | Hip Hop, Dancehall, K-Pop & Reggaeton | Farray\'s Center',
       description: 'Discover our urban dance classes in Barcelona: Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat and more. Leading academy for urban styles. Try a free class.',
@@ -464,6 +480,10 @@ const metadata = {
     folkloreCubano: {
       title: 'Cours de Folklore Cubain à Barcelone | Danses aux Orishas | Farray\'s Center',
       description: 'Apprenez le Folklore Cubain authentique à Barcelone. Danses aux Orishas, Yoruba, Rumba et plus. Maîtres cubains spécialisés. Entre Plaza España et Sants. Essai gratuit!',
+    },
+    timba: {
+      title: 'Cours de Timba à Barcelone | Lady Timba et Timba en Couple | Farray\'s Center',
+      description: 'Apprenez la Timba Cubaine à Barcelone avec des maîtres cubains. Lady Timba avec Yunaisy Farray et Timba en Couple avec Grechén Mendez. Despelote, improvisation et saveur cubaine. Réservez votre cours!',
     },
     danzasUrbanas: {
       title: 'Cours de Danses Urbaines à Barcelone | Hip Hop, Dancehall, K-Pop et Reggaeton | Farray\'s Center',
@@ -632,6 +652,16 @@ const initialContent = {
         </p>
       </main>
     `,
+    timba: `
+      <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12">
+        <h1 class="text-4xl sm:text-5xl font-bold text-neutral mb-8 text-center holographic-text">
+          Clases de Timba en Barcelona
+        </h1>
+        <p class="text-lg text-neutral/80 max-w-3xl mx-auto mb-12 text-center">
+          Lady Timba y Timba en Pareja con maestros cubanos. Despelote, improvisación, interpretación musical y sabor cubano auténtico.
+        </p>
+      </main>
+    `,
     danzasUrbanas: `
       <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12">
         <h1 class="text-4xl sm:text-5xl font-bold text-neutral mb-8 text-center holographic-text">
@@ -672,6 +702,7 @@ const initialContent = {
     salsaCubana: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Salsa Cubana a Barcelona</h1><p>Aprèn Salsa Cubana autèntica amb mestres cubans. Casino, Rueda de Casino i Son Cubà. Tècnica de L'Havana amb el Mètode Farray®.</p></main>`,
     salsaLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Salsa Lady Style a Barcelona</h1><p>Desenvolupa la teva feminitat, elegància i estil personal ballant salsa. Classes amb Yunaisy Farray i el Mètode Farray® reconegut per CID-UNESCO.</p></main>`,
     folkloreCubano: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Folklore Cubà a Barcelona</h1><p>Aprèn les danses afrocubanes als Orixàs: Eleguá, Yemayá, Changó, Ochún. Arrels yoruba, congo i arará amb mestres cubans especialitzats.</p></main>`,
+    timba: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Timba a Barcelona</h1><p>Lady Timba i Timba en Parella amb mestres cubans. Despelote, improvisació, interpretació musical i sabor cubà autèntic.</p></main>`,
     danzasUrbanas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Danses Urbanes a Barcelona</h1><p>Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat i més. Aprèn amb professors formats a Kingston, Seül, Nova York i L'Havana.</p></main>`,
     dancehall: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Dancehall a Barcelona</h1><p>Descobreix l'autèntic Dancehall de Jamaica a Barcelona. Energia, cultura i ritme a cada classe.</p></main>`,
     clasesParticulares: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes Particulars de Ball a Barcelona</h1><p>Aprèn al teu ritme amb un professor dedicat 100% a tu. Horaris flexibles, tots els estils de ball, progrés 3x més ràpid. La teva dansa, les teves regles.</p></main>`,
@@ -684,6 +715,7 @@ const initialContent = {
     salsaCubana: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cuban Salsa Classes in Barcelona</h1><p>Learn authentic Cuban Salsa with Cuban masters. Casino, Rueda de Casino and Son Cubano. Havana technique with the Farray Method®.</p></main>`,
     salsaLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Salsa Lady Style Classes in Barcelona</h1><p>Develop your femininity, elegance and personal style dancing salsa. Classes with Yunaisy Farray and the Farray Method® recognized by CID-UNESCO.</p></main>`,
     folkloreCubano: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cuban Folklore Classes in Barcelona</h1><p>Learn Afro-Cuban dances to the Orishas: Eleguá, Yemayá, Changó, Ochún. Yoruba, Congo and Arará roots with specialized Cuban masters.</p></main>`,
+    timba: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Timba Classes in Barcelona</h1><p>Lady Timba and Partner Timba with Cuban masters. Despelote, improvisation, musical interpretation and authentic Cuban flavor.</p></main>`,
     danzasUrbanas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Urban Dance Classes in Barcelona</h1><p>Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat and more. Learn with teachers trained in Kingston, Seoul, New York and Havana.</p></main>`,
     dancehall: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dancehall Classes in Barcelona</h1><p>Discover authentic Dancehall from Jamaica in Barcelona. Energy, culture and rhythm in every class.</p></main>`,
     clasesParticulares: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Private Dance Classes in Barcelona</h1><p>Learn at your pace with a teacher 100% dedicated to you. Flexible schedules, all dance styles, 3x faster progress. Your dance, your rules.</p></main>`,
@@ -696,6 +728,7 @@ const initialContent = {
     salsaCubana: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Salsa Cubaine à Barcelone</h1><p>Apprenez la Salsa Cubaine authentique avec des maîtres cubains. Casino, Rueda de Casino et Son Cubain. Technique de La Havane avec la Méthode Farray®.</p></main>`,
     salsaLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Salsa Lady Style à Barcelone</h1><p>Développez votre féminité, élégance et style personnel en dansant la salsa. Cours avec Yunaisy Farray et la Méthode Farray® reconnue par CID-UNESCO.</p></main>`,
     folkloreCubano: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Folklore Cubain à Barcelone</h1><p>Apprenez les danses afro-cubaines aux Orishas: Eleguá, Yemayá, Changó, Ochún. Racines yoruba, congo et arará avec des maîtres cubains spécialisés.</p></main>`,
+    timba: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Timba à Barcelone</h1><p>Lady Timba et Timba en Couple avec des maîtres cubains. Despelote, improvisation, interprétation musicale et saveur cubaine authentique.</p></main>`,
     danzasUrbanas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Danses Urbaines à Barcelone</h1><p>Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat et plus. Apprenez avec des professeurs formés à Kingston, Séoul, New York et La Havane.</p></main>`,
     dancehall: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Dancehall à Barcelone</h1><p>Découvrez le véritable Dancehall de Jamaïque à Barcelone. Énergie, culture et rythme à chaque cours.</p></main>`,
     clasesParticulares: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours Particuliers de Danse à Barcelone</h1><p>Apprenez à votre rythme avec un professeur 100% dédié à vous. Horaires flexibles, tous les styles de danse, progrès 3x plus rapide. Votre danse, vos règles.</p></main>`,
@@ -789,6 +822,8 @@ routes.forEach(route => {
     pagePath = 'clases/salsa-lady-style-barcelona';
   } else if (page === 'folkloreCubano') {
     pagePath = 'clases/folklore-cubano';
+  } else if (page === 'timba') {
+    pagePath = 'clases/timba-barcelona';
   } else if (page === 'danzasUrbanas') {
     pagePath = 'clases/danzas-urbanas-barcelona';
   } else if (page === 'dancehall') {

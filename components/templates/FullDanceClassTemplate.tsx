@@ -25,6 +25,12 @@ import PrepareClassSection, { type PrepareConfig } from '../shared/PrepareClassS
 import WhyUsComparisonSection, {
   type WhyUsComparisonConfig,
 } from '../shared/WhyUsComparisonSection';
+import LatinDanceComparisonTable, {
+  type LatinDanceStyle,
+} from '../shared/LatinDanceComparisonTable';
+import ArtisticDanceComparisonTable, {
+  type ArtisticDanceStyle,
+} from '../shared/ArtisticDanceComparisonTable';
 import YouTubeEmbed from '../YouTubeEmbed';
 import {
   LocalBusinessSchema,
@@ -214,6 +220,18 @@ export interface FullDanceClassConfig {
   nearbySection?: NearbyAreasConfig;
   testimonialsSection?: { enabled: boolean };
   faqSection?: { enabled: boolean };
+
+  // === LATIN DANCE COMPARISON TABLE (for Latin styles like Salsa, Bachata, etc.) ===
+  latinDanceComparison?: {
+    enabled: boolean;
+    highlightedStyle: LatinDanceStyle;
+  };
+
+  // === ARTISTIC DANCE COMPARISON TABLE (for Contemporáneo, Jazz, Ballet, Afro Jazz, etc.) ===
+  artisticDanceComparison?: {
+    enabled: boolean;
+    highlightedStyle: ArtisticDanceStyle;
+  };
 
   // === CULTURAL HISTORY ===
   culturalHistory?: {
@@ -930,7 +948,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
             </AnimateOnScroll>
 
             <div
-              className={`grid ${config.teachers.length > 1 ? 'md:grid-cols-2' : ''} gap-6 sm:gap-8 max-w-4xl mx-auto`}
+              className={`grid ${config.teachers.length === 1 ? '' : config.teachers.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'} gap-6 sm:gap-8 max-w-5xl mx-auto`}
             >
               {config.teachers.map((teacher, index) => (
                 <TeacherCard key={teacher.name} teacher={teacher} index={index} t={t} />
@@ -1313,6 +1331,32 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
             readLessText={t('readLess')}
             t={t}
           />
+        )}
+
+        {/* ===== 11b. LATIN DANCE COMPARISON TABLE (for Latin styles) ===== */}
+        {config.latinDanceComparison?.enabled && (
+          <section className="py-14 md:py-20 bg-black">
+            <div className="container mx-auto px-4 sm:px-6">
+              <AnimateOnScroll>
+                <LatinDanceComparisonTable
+                  highlightedStyle={config.latinDanceComparison.highlightedStyle}
+                />
+              </AnimateOnScroll>
+            </div>
+          </section>
+        )}
+
+        {/* ===== 11c. ARTISTIC DANCE COMPARISON TABLE (for Contemporary, Jazz, Ballet, etc.) ===== */}
+        {config.artisticDanceComparison?.enabled && (
+          <section className="py-14 md:py-20 bg-black">
+            <div className="container mx-auto px-4 sm:px-6">
+              <AnimateOnScroll>
+                <ArtisticDanceComparisonTable
+                  highlightedStyle={config.artisticDanceComparison.highlightedStyle}
+                />
+              </AnimateOnScroll>
+            </div>
+          </section>
         )}
 
         {/* ===== 12. FAQ SECTION (resolve objections) ===== */}

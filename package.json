@@ -39,7 +39,10 @@
   "overrides": {
     "body-parser": "^2.2.1",
     "express": "^5.1.0",
-    "tmp": "^0.2.5"
+    "tmp": "^0.2.5",
+    "react-helmet-async": {
+      "react": "$react"
+    }
   },
   "devDependencies": {
     "@axe-core/react": "^4.11.0",

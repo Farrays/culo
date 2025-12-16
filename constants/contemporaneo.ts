@@ -105,22 +105,30 @@ export const CONTEMPORANEO_SCHEDULE_KEYS = [
   },
 ];
 
-// Level descriptions for cards - 3 levels
+// Level descriptions for cards - 4 levels
 export const CONTEMPORANEO_LEVELS = [
+  {
+    id: 'lirico-principiante',
+    levelKey: 'beginnerLevel',
+    titleKey: 'contemporaneoLevelPrincipianteTitle',
+    descKey: 'contemporaneoLevelPrincipianteDesc',
+    duration: 'Sin requisitos',
+    color: 'primary-dark' as const,
+  },
   {
     id: 'lirico-basico',
     levelKey: 'basicLevel',
     titleKey: 'contemporaneoLevelLiricoBasicoTitle',
     descKey: 'contemporaneoLevelLiricoBasicoDesc',
-    duration: '0-6 meses',
-    color: 'primary-dark' as const,
+    duration: 'Algo de experiencia',
+    color: 'primary-dark-mid' as const,
   },
   {
     id: 'lirico-intermedio',
     levelKey: 'intermediateLevel',
     titleKey: 'contemporaneoLevelLiricoIntermedioTitle',
     descKey: 'contemporaneoLevelLiricoIntermedioDesc',
-    duration: '6-12 meses',
+    duration: '+1 año experiencia',
     color: 'primary-accent-light' as const,
   },
   {
@@ -128,7 +136,7 @@ export const CONTEMPORANEO_LEVELS = [
     levelKey: 'basicIntermediateLevel',
     titleKey: 'contemporaneoLevelSueloFlowTitle',
     descKey: 'contemporaneoLevelSueloFlowDesc',
-    duration: '+12 meses',
+    duration: 'Bases técnicas',
     color: 'primary-accent' as const,
   },
 ];

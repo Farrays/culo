@@ -133,7 +133,9 @@ const LevelCardsSection: React.FC<LevelCardsSectionProps> = ({
     const badgeMap: Record<string, string> = {
       beginnerLevel: 'PRINCIPIANTE',
       basicLevel: 'BÁSICO',
+      basicIntermediateLevel: 'BÁSICO / INTERMEDIO',
       intermediateLevel: 'INTERMEDIO',
+      intermediateAdvancedLevel: 'INTERMEDIO / AVANZADO',
       advancedLevel: 'AVANZADO',
       allLevelsLevel: 'TODOS LOS NIVELES',
     };

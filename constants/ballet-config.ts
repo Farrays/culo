@@ -113,6 +113,12 @@ export const BALLET_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'balletCulturalFull',
   },
 
+  // === ARTISTIC DANCE COMPARISON TABLE ===
+  artisticDanceComparison: {
+    enabled: true,
+    highlightedStyle: 'ballet',
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches:

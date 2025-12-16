@@ -115,6 +115,12 @@ export const AFRO_CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'afrocontemporaneoCulturalFull',
   },
 
+  // === ARTISTIC DANCE COMPARISON TABLE ===
+  artisticDanceComparison: {
+    enabled: true,
+    highlightedStyle: 'afrocontemporaneo',
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches: 'Afro Contemporáneo, técnica cubana ENA, disociación corporal, folklore afrocubano',

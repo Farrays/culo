@@ -113,6 +113,12 @@ export const CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'contemporaneoCulturalFull',
   },
 
+  // === ARTISTIC DANCE COMPARISON TABLE ===
+  artisticDanceComparison: {
+    enabled: true,
+    highlightedStyle: 'contemporaneo',
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches: 'Danza Contemporánea, técnica de suelo, release, improvisación, expresión corporal',
