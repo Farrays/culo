@@ -139,7 +139,7 @@ export const BALLET_LEVELS = [
     levelKey: 'intermediateLevel',
     titleKey: 'balletLevelIntermediateTitle',
     descKey: 'balletLevelIntermediateDesc',
-    duration: '+6 meses',
+    duration: '+12 meses',
     color: 'primary-accent' as const,
   },
 ];

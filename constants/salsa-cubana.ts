@@ -1,4 +1,3 @@
-import { GOOGLE_REVIEWS_TESTIMONIALS } from './testimonials';
 import type { Testimonial } from '../types';
 import type { FAQ } from '../components/templates/ClassPageTemplate';
 
@@ -81,13 +80,31 @@ export const SALSA_CUBANA_FAQS_CONFIG: FAQ[] = [
   },
 ];
 
-// Testimonials for Salsa Cubana page (extends Google reviews with specific testimonials)
+// Testimonials for Salsa Cubana page (4 testimonials for 4-column grid)
 // Incluye testimonios técnicos (Océano Rojo) y emocionales (Océano Azul)
 export const SALSA_CUBANA_TESTIMONIALS: Testimonial[] = [
-  ...GOOGLE_REVIEWS_TESTIMONIALS,
+  // Testimonio de Google Reviews
+  {
+    id: 1,
+    name: 'Ana Cid',
+    image: '',
+    rating: 5,
+    city: {
+      en: 'Barcelona, Spain',
+      es: 'Barcelona, España',
+      ca: 'Barcelona, Espanya',
+      fr: 'Barcelone, Espagne',
+    },
+    quote: {
+      en: '5 stars and because there are no more. Spectacular, from the minute you step into reception, to the teachers, the quality and the good vibes.',
+      es: '5 estrellas y porque no hay más. Espectacular, desde el minuto en el que pisas recepción, hasta los profesores, la calidad y el buen rollo.',
+      ca: "5 estrelles i perquè no n'hi ha més. Espectacular, des del minut en què trepitges recepció, fins als professors, la qualitat i el bon rotllo.",
+      fr: "5 étoiles et parce qu'il n'y en a pas plus. Spectaculaire, dès la minute où vous entrez à la réception, jusqu'aux professeurs, la qualité et la bonne ambiance.",
+    },
+  },
   // Testimonio técnico - Océano Rojo
   {
-    id: 4,
+    id: 2,
     name: 'Carlos M.',
     image: '',
     rating: 5,
@@ -104,27 +121,9 @@ export const SALSA_CUBANA_TESTIMONIALS: Testimonial[] = [
       fr: "La Méthode Farray a complètement transformé ma danse. Maintenant je guide avec confiance et je danse en rythme. Après des années de stagnation dans d'autres écoles, j'ai enfin compris ce qu'est vraiment la salsa cubaine.",
     },
   },
-  // Testimonios emocionales - Océano Azul
+  // Testimonio emocional - Océano Azul (pareja)
   {
-    id: 5,
-    name: 'Laura T.',
-    image: '',
-    rating: 5,
-    city: {
-      en: 'Barcelona, Spain',
-      es: 'Barcelona, España',
-      ca: 'Barcelona, Espanya',
-      fr: 'Barcelone, Espagne',
-    },
-    quote: {
-      en: "I came looking for an activity to disconnect from work. I'm taking home friends, confidence and a new passion. It's the best thing I've done for myself in years.",
-      es: 'Vine buscando una actividad para desconectar del trabajo. Me llevo amigos, confianza y una pasión nueva. Es lo mejor que he hecho por mí en años.',
-      ca: "Vaig venir buscant una activitat per desconnectar de la feina. M'emporto amics, confiança i una passió nova. És el millor que he fet per mi en anys.",
-      fr: "Je suis venue chercher une activité pour déconnecter du travail. J'emporte des amis, de la confiance et une nouvelle passion. C'est la meilleure chose que j'ai faite pour moi depuis des années.",
-    },
-  },
-  {
-    id: 6,
+    id: 3,
     name: 'David y Maria',
     image: '',
     rating: 5,
@@ -141,8 +140,9 @@ export const SALSA_CUBANA_TESTIMONIALS: Testimonial[] = [
       fr: "Nous passions des années sans rien faire ensemble à part regarder des séries. La salsa nous a redonné les rires et les regards. Merci Farray's.",
     },
   },
+  // Testimonio principiante - Nivel 0
   {
-    id: 7,
+    id: 4,
     name: 'Jordi P.',
     image: '',
     rating: 5,
@@ -157,24 +157,6 @@ export const SALSA_CUBANA_TESTIMONIALS: Testimonial[] = [
       es: 'Siempre dije que tenía dos pies izquierdos. En 3 meses estaba bailando en mi primera fiesta. El Nivel 0 es magia pura.',
       ca: 'Sempre vaig dir que tenia dos peus esquerres. En 3 mesos estava ballant a la meva primera festa. El Nivell 0 és màgia pura.',
       fr: "J'ai toujours dit que j'avais deux pieds gauches. En 3 mois, je dansais à ma première fête. Le Niveau 0, c'est de la magie pure.",
-    },
-  },
-  {
-    id: 8,
-    name: 'Sandra M.',
-    image: '',
-    rating: 5,
-    city: {
-      en: 'Barcelona, Spain',
-      es: 'Barcelona, España',
-      ca: 'Barcelona, Espanya',
-      fr: 'Barcelone, Espagne',
-    },
-    quote: {
-      en: "I met my current partner here. But even if that hadn't happened, it would have been worth it just for what I learned and the people I met.",
-      es: 'Conocí a mi actual pareja aquí. Pero aunque no hubiera pasado eso, habría valido la pena solo por lo que aprendí y la gente que conocí.',
-      ca: 'Vaig conèixer la meva parella actual aquí. Però encara que no hagués passat això, hauria valgut la pena només pel que vaig aprendre i la gent que vaig conèixer.',
-      fr: "J'ai rencontré mon partenaire actuel ici. Mais même si cela n'était pas arrivé, ça aurait valu la peine rien que pour ce que j'ai appris et les gens que j'ai rencontrés.",
     },
   },
 ];

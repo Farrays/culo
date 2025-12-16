@@ -62,7 +62,7 @@ export const SALSA_LADY_STYLE_PAGE_CONFIG: FullDanceClassConfig = {
     minutes: 60,
     calories: 350,
     funPercent: 100,
-    gradientColor: 'primary',
+    gradientColor: 'amber',
   },
 
   // === SECTION TOGGLES ===

@@ -54,7 +54,7 @@ export const BALLET_PAGE_CONFIG: FullDanceClassConfig = {
     minutes: 60,
     calories: 400,
     funPercent: 100,
-    gradientColor: 'primary',
+    gradientColor: 'emerald',
   },
 
   // === SECTION TOGGLES ===
@@ -111,6 +111,12 @@ export const BALLET_PAGE_CONFIG: FullDanceClassConfig = {
     titleKey: 'balletCulturalHistoryTitle',
     shortDescKey: 'balletCulturalShort',
     fullHistoryKey: 'balletCulturalFull',
+  },
+
+  // === ARTISTIC DANCE COMPARISON TABLE ===
+  artisticDanceComparison: {
+    enabled: true,
+    highlightedStyle: 'ballet',
   },
 
   // === SCHEMA MARKUP ===

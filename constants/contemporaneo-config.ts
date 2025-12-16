@@ -54,7 +54,7 @@ export const CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
     minutes: 60,
     calories: 500,
     funPercent: 100,
-    gradientColor: 'primary',
+    gradientColor: 'emerald',
   },
 
   // === SECTION TOGGLES ===
@@ -111,6 +111,12 @@ export const CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
     titleKey: 'contemporaneoCulturalHistoryTitle',
     shortDescKey: 'contemporaneoCulturalShort',
     fullHistoryKey: 'contemporaneoCulturalFull',
+  },
+
+  // === ARTISTIC DANCE COMPARISON TABLE ===
+  artisticDanceComparison: {
+    enabled: true,
+    highlightedStyle: 'contemporaneo',
   },
 
   // === SCHEMA MARKUP ===

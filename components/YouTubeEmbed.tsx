@@ -158,6 +158,13 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
 
     return () => {
       isMounted = false;
+
+      // Remover callback del array global para evitar memory leak
+      const w = window as unknown as { ytCallbacks?: (() => void)[] };
+      if (w.ytCallbacks) {
+        w.ytCallbacks = w.ytCallbacks.filter(cb => cb !== initPlayer);
+      }
+
       if (playerRef.current) {
         playerRef.current.destroy();
         playerRef.current = null;

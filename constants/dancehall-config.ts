@@ -57,7 +57,7 @@ export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
     minutes: 60,
     calories: 500,
     funPercent: 100,
-    gradientColor: 'primary',
+    gradientColor: 'rose',
   },
 
   // === SECTION TOGGLES ===
@@ -93,6 +93,14 @@ export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
   whyTodaySection: {
     enabled: true,
     paragraphCount: 3,
+  },
+
+  // Why Us vs Others Comparison Table - DISABLED (redundant with other sections)
+  whyUsComparison: {
+    enabled: false,
+    rowCount: 8,
+    meaningCount: 4,
+    showCTA: true,
   },
 
   videoSection: {

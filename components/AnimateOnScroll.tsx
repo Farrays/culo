@@ -1,4 +1,8 @@
-import { useEffect, useRef, useState, type ReactNode, type ElementType } from 'react';
+import { useEffect, useState, type ReactNode, type ElementType } from 'react';
+import {
+  useSharedIntersectionObserver,
+  OBSERVER_CONFIGS,
+} from '../hooks/useSharedIntersectionObserver';
 
 /**
  * Props for the AnimateOnScroll component.
@@ -10,48 +14,6 @@ interface AnimateOnScrollProps {
   style?: React.CSSProperties;
   as?: ElementType;
 }
-
-// Singleton IntersectionObserver for better performance
-// Instead of creating one observer per element, we use a single shared observer
-type ObserverCallback = (isIntersecting: boolean) => void;
-const observerCallbacks = new Map<Element, ObserverCallback>();
-
-let sharedObserver: IntersectionObserver | null = null;
-
-const getSharedObserver = (): IntersectionObserver => {
-  if (!sharedObserver) {
-    sharedObserver = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          const callback = observerCallbacks.get(entry.target);
-          if (callback) {
-            callback(entry.isIntersecting);
-            if (entry.isIntersecting) {
-              // Once visible, unobserve and remove callback
-              sharedObserver?.unobserve(entry.target);
-              observerCallbacks.delete(entry.target);
-            }
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px',
-      }
-    );
-  }
-  return sharedObserver;
-};
-
-const observeElement = (element: Element, callback: ObserverCallback): void => {
-  observerCallbacks.set(element, callback);
-  getSharedObserver().observe(element);
-};
-
-const unobserveElement = (element: Element): void => {
-  observerCallbacks.delete(element);
-  sharedObserver?.unobserve(element);
-};
 
 /**
  * Animates elements when they enter the viewport using a fade-up effect.
@@ -82,8 +44,7 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
   style,
   as: Component = 'div',
 }) => {
-  const ref = useRef<HTMLElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [ref, isVisible] = useSharedIntersectionObserver<HTMLElement>(OBSERVER_CONFIGS.animation);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   // Check for reduced motion preference
@@ -98,30 +59,6 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
     mediaQuery.addEventListener('change', handleChange);
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
-
-  useEffect(() => {
-    // If user prefers reduced motion, show content immediately
-    if (prefersReducedMotion) {
-      setIsVisible(true);
-      return;
-    }
-
-    const currentRef = ref.current;
-    if (!currentRef) return;
-
-    // Use the shared observer instead of creating a new one
-    observeElement(currentRef, (isIntersecting: boolean) => {
-      if (isIntersecting) {
-        setIsVisible(true);
-      }
-    });
-
-    return () => {
-      if (currentRef) {
-        unobserveElement(currentRef);
-      }
-    };
-  }, [prefersReducedMotion]);
 
   // If reduced motion, render without animation classes
   if (prefersReducedMotion) {

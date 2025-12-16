@@ -44,10 +44,24 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = memo(function Te
           </div>
         </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div
+          className={`grid gap-6 sm:gap-8 mx-auto ${
+            testimonials.length === 1
+              ? 'grid-cols-1 max-w-lg'
+              : testimonials.length === 2
+                ? 'grid-cols-1 sm:grid-cols-2 max-w-3xl'
+                : testimonials.length === 3
+                  ? 'grid-cols-1 md:grid-cols-3 max-w-5xl'
+                  : testimonials.length === 4
+                    ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl'
+                    : testimonials.length === 5
+                      ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl'
+                      : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl'
+          }`}
+        >
           {testimonials.map((testimonial, index) => (
             <AnimateOnScroll key={testimonial.id} delay={index * 100}>
-              <div className="flex flex-col h-full min-h-[200px] p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
+              <div className="flex flex-col h-full min-h-[180px] p-5 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
                 <div className="flex mb-3">
                   {[...Array(5)].map((_, i) => (
                     <svg

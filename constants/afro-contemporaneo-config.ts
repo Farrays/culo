@@ -56,7 +56,7 @@ export const AFRO_CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
     minutes: 60,
     calories: 500,
     funPercent: 100,
-    gradientColor: 'primary',
+    gradientColor: 'emerald',
   },
 
   // === SECTION TOGGLES ===
@@ -113,6 +113,12 @@ export const AFRO_CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
     titleKey: 'afrocontemporaneoCulturalHistoryTitle',
     shortDescKey: 'afrocontemporaneoCulturalShort',
     fullHistoryKey: 'afrocontemporaneoCulturalFull',
+  },
+
+  // === ARTISTIC DANCE COMPARISON TABLE ===
+  artisticDanceComparison: {
+    enabled: true,
+    highlightedStyle: 'afrocontemporaneo',
   },
 
   // === SCHEMA MARKUP ===

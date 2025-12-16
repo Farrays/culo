@@ -325,6 +325,13 @@ export const en = {
   dancehallLevelAdvancedTitle: 'Dancehall Pro (Lvl 3)',
   dancehallLevelAdvancedDesc:
     'An intensive class for advanced dancers looking to perfect their technique, performance skills, and delve into complex, professional-level routines.',
+  // New Dancehall levels (Beginner, Basic, Intermediate/Advanced)
+  dancehallLevelBasicTitle: 'Dancehall Basic',
+  dancehallLevelBasicDesc:
+    'For those who have mastered the fundamentals. We deepen technique, add more step variations and work on complete choreographies with greater fluidity.',
+  dancehallLevelInterAdvTitle: 'Dancehall Intermediate/Advanced',
+  dancehallLevelInterAdvDesc:
+    'Intensive level for experienced dancers. Complex choreographies, personal style development, artistic expression and performance preparation.',
   dancehallInstructorTitle: 'Meet Your Dancehall Guru',
   dancehallInstructorName: "Isabella 'Izzy' King",
   dancehallInstructorSpecialty: 'Dancehall & Afro-Fusion Specialist',
@@ -471,6 +478,7 @@ export const en = {
   intermediateLevel: 'Intermediate',
   intermediateAdvancedLevel: 'Intermediate/Advanced',
   advancedLevel: 'Advanced',
+  allLevelsLevel: 'All levels',
 
   // Testimonials
   testimonialsNotRequested: 'Unsolicited Testimonials from Our Students',
@@ -2543,7 +2551,8 @@ export const en = {
     'In parallel with her work as an international teacher, she performs with her company in multiple events, appearing in venues such as the Palau Sant Jordi, the Teatre Apolo, the Casino de Barcelona, the Círculo Ecuestre de Barcelona, and many others. In 2016, she founded the D&Y Dance Company (2016–2020), achieving great success with her first show "Roots & Passion".',
   yunaisyFarray_barcelona_p5:
     "On February 12, 2017, Yunaisy fulfills one of her dreams: she opens, in the heart of Barcelona, Farray's Center, which soon becomes Farray's International Dance Center: a global center of 700m² where disciplines such as contemporary, ballet, salsa, reggaeton, hip-hop, heels, dance, stretching, physical training, acrobatics... and a deep focus on body and mind care coexist.",
-  yunaisyFarray_barcelona_p6: '',
+  yunaisyFarray_barcelona_p6:
+    "Today, Farray's International Dance Center is much more than a school: it's a space where everyone can discover their own way of dancing and expressing themselves.",
 
   yunaisyFarray_method_title: 'The Farray Method: technique, body, and real results',
   yunaisyFarray_method_p1:
@@ -4880,7 +4889,7 @@ Farray's International Dance Center is rated close to **5/5 on Google**, with hu
     "With Alejandro you'll learn solid technique while discovering your own way of expressing yourself.",
 
   // Schedule Section
-  modernjazzScheduleTitle: 'Modern Jazz class schedule',
+  modernjazzScheduleTitle: 'Our Modern Jazz class schedule',
   modernjazzScheduleSubtitle: 'Classes with Alejandro Miñoso',
 
   // Video Section
@@ -5043,6 +5052,7 @@ Farray's International Dance Center is rated close to **5/5 on Google**, with hu
     "Farray's International Dance Center is rated close to 5/5 on Google, with hundreds of reviews placing it among the best-rated dance centers in Barcelona.",
 
   // ===== Cultural Section Title =====
+  modernjazzCulturalHistoryTitle: 'History and Evolution of Modern Jazz',
   modernjazzCulturalTitle: 'History and Evolution of Modern Jazz',
 
   // ===== Prepare Section =====
@@ -5099,6 +5109,7 @@ Farray's International Dance Center is rated close to **5/5 on Google**, with hu
     'Modern Jazz is the perfect bridge between classical technique and contemporary expression.',
 
   // ===== Level Cards Section =====
+  modernjazzLevelsTitle: 'Modern Jazz Levels',
   modernjazzLevelBasicTitle: 'Fundamentals and expression',
   modernjazzLevelBasicDesc:
     'Ideal class for beginners or those who want to build solid foundations. We work on posture, isolations, coordination and first choreographies with varied music. Zero pressure, lots of fun.',
@@ -5524,12 +5535,13 @@ All ballet terms are in French, a legacy of its development at the court of Vers
     'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min walk, Entença (L5) - 5 min walk or Hostafrancs (L1) - 5 min walk',
 
   // ===== Level Cards =====
+  balletLevelsTitle: 'Ballet Levels',
   balletLevelBasicTag: 'BEGINNERS',
-  balletLevelBasicTitle: 'Beginner Classes with Alejandro Miñoso',
+  balletLevelBasicTitle: 'Beginner Level',
   balletLevelBasicDesc:
     'Start from scratch with classical technique fundamentals. Learn the five positions, barre work, correct posture and the foundations that will build your ballet journey. Welcoming environment and adapted pace.',
   balletLevelIntermediateTag: 'INTERMEDIATE',
-  balletLevelIntermediateTitle: 'Intermediate Classes with Daniel Sené',
+  balletLevelIntermediateTitle: 'Intermediate Level',
   balletLevelIntermediateDesc:
     'Perfect your technique with more complex center work, pirouettes, allegro and classical repertoire. For dancers with solid foundations who want to take their ballet to the next level.',
 
@@ -5549,7 +5561,7 @@ All ballet terms are in French, a legacy of its development at the court of Vers
   balletPrepareAvoidItem1: 'Jewelry, rings, bracelets or accessories',
   balletPrepareAvoidItem2: 'Very loose clothing that prevents seeing your posture',
   balletPrepareAvoidItem3: 'Street shoes in the studio (changing rooms available)',
-  balletPrepareTeacherTip: "Alejandro's tip:",
+  balletPrepareTeacherTip: "Daniel's tip:",
   balletPrepareTeacherQuote:
     "Ballet is patience and consistency. Don't get frustrated if the first days are difficult. Every great dancer started exactly where you are now. Enjoy the process.",
 
@@ -6110,15 +6122,18 @@ Works comprehensively: **flexibility, functional strength, coordination, proprio
   contemporaneoScheduleSubtitle: 'Two styles, multiple schedules: find your perfect class',
 
   // Level Cards Section
-  contemporaneoLevelLiricoBasicoTitle: 'Basic Lyrical Contemporary',
+  contemporaneoLevelPrincipianteTitle: 'Lyrical Beginners',
+  contemporaneoLevelPrincipianteDesc:
+    'First contact with contemporary dance. Fluid movement, emotional expression and connection with music. No previous requirements.',
+  contemporaneoLevelLiricoBasicoTitle: 'Lyrical Basic',
   contemporaneoLevelLiricoBasicoDesc:
-    'Ideal to start in contemporary dance. You will work on body expression, musicality and fluid movements. Accessible technique with focus on emotional connection with music.',
-  contemporaneoLevelLiricoIntermedioTitle: 'Intermediate Lyrical Contemporary',
+    'Continue developing your lyrical technique with more elaborate sequences. For students who have taken contemporary classes or have ballet/dance foundation.',
+  contemporaneoLevelLiricoIntermedioTitle: 'Lyrical Intermediate',
   contemporaneoLevelLiricoIntermedioDesc:
-    'Deepen your lyrical technique with more complex sequences, greater interpretive work and exploration of your own style. For students with previous experience.',
-  contemporaneoLevelSueloFlowTitle: 'Floor & Flow Contemporary',
+    'Complex sequences, interpretive work and development of your personal style. Requirement: at least 1 year of contemporary classes or solid dance foundation.',
+  contemporaneoLevelSueloFlowTitle: 'Floor & Flow',
   contemporaneoLevelSueloFlowDesc:
-    'Floorwork, release and contact techniques. Learn to move fluidly between floor and air. Work on breathing, body weight and organic transitions.',
+    'Floorwork, release and organic transitions between floor and air. Physically demanding class. Requirement: contemporary, ballet or dance experience.',
 
   // Prepare Section
   contemporaneoPrepareTitle: 'Prepare for your first Contemporary class',
@@ -6592,13 +6607,16 @@ The Afro Contemporary taught at **Farray's International Dance Center** is part 
   afrocontemporaneoCourseSchemaDesc:
     'Learn Afro Contemporary with Yunaisy Farray, CID-UNESCO master trained at ENA Cuba. Technical refinement technique for dancers.',
 
+  // Level cards section
+  afrocontemporaneoLevelsTitle: 'Afro Contemporary Levels',
+
   // Level cards
-  afrocontemporaneoLevelBasicTitle: 'Basic Afro Contemporary with Charlie Breezy',
+  afrocontemporaneoLevelBasicTitle: 'Basic Level',
   afrocontemporaneoLevelBasicDesc:
-    'For those starting in this discipline. Charlie Breezy guides the fundamentals of Afro Contemporary: body dissociation, Afro-Cuban rhythms and connection with music. Learn the basics with a teacher who combines technique and contagious energy.',
-  afrocontemporaneoLevelIntAdvTitle: 'Intermediate/Advanced Afro Contemporary with Yunaisy Farray',
+    'For those starting in this discipline. Learn the fundamentals of Afro Contemporary: body dissociation, Afro-Cuban rhythms and connection with music. No prior experience required.',
+  afrocontemporaneoLevelIntAdvTitle: 'Intermediate / Advanced Level',
   afrocontemporaneoLevelIntAdvDesc:
-    'For dancers with prior experience. Yunaisy Farray, master trained at ENA Cuba and recognized by CID-UNESCO, works advanced sequences, musical interpretation and technical refinement. 90-minute classes to deepen the discipline.',
+    'Requires minimum 1 year of dance experience or solid technical foundation (ballet, contemporary, jazz). Advanced sequences, musical interpretation and technical refinement. 90-minute classes.',
 
   // Prepare Section
   afrocontemporaneoPrepareTitle: 'Prepare your first Afro Contemporary class',
@@ -6964,6 +6982,7 @@ Our teacher **Marcos Martínez**, judge of international competitions and refere
   // ========== SALSA CUBANA PAGE ==========
   navSalsaCubana: 'Cuban Salsa',
   navSalsaLadyStyle: 'Salsa Lady Style',
+  navFolkloreCubano: 'Cuban Folklore',
   salsaCubanaPageTitle: 'Cuban Salsa Classes in Barcelona',
   salsaCubanaMetaDescription:
     'Learn Cuban salsa in Barcelona with the Farray Method®. Classes for all levels with Yunaisy Farray, CID-UNESCO master. Leading, following, musicality and partner connection.',
@@ -7864,6 +7883,14 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   salsaLadyLogosTitle: 'You may have seen us in...',
   salsaLadyLogosIntlFestivalsText: 'and at the best dance festivals around the world',
 
+  // Tacones en Salsa Section (before Cultural History)
+  salsaLadyTaconesTitle: 'Heels in Salsa: Your Best Ally',
+  salsaLadyTaconesDesc:
+    'Mastering heels completely transforms your dance. In our Lady Style classes, heels are not just an accessory, they are a tool to develop elegance, posture and stage presence.',
+  salsaLadyTaconesBenefit1: 'Perfect posture',
+  salsaLadyTaconesBenefit2: 'Natural elegance',
+  salsaLadyTaconesBenefit3: 'Confidence when dancing',
+
   // Why Today Section
   salsaLadyWhyTodayFullTitle: 'Why is today the best time to start Lady Style?',
   salsaLadyWhyToday1:
@@ -8055,7 +8082,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   contemporaneoCaloriesStat: 'Calories Burned',
   contemporaneoDanceStat: 'Dance',
   contemporaneoLevelsTitle: 'What type of Contemporary suits you?',
-  contemporaneoLevelsSubtitle: 'Three modalities for different objectives and sensibilities',
+  contemporaneoLevelsSubtitle: 'Four modalities for different objectives and sensibilities',
 
   // ===== DANCE STYLE PAGES TRANSLATIONS =====
   twerkLevelsTitle: 'Our Twerk Levels',
@@ -8451,4 +8478,855 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   salsaLadyTeacherTitle: 'Your Salsa Lady Style master',
   salsaLadyTeacherSubtitle: 'Learn with one of the best dance masters in Europe',
   salsaLadyCompareFeature: 'Feature',
+
+  // === AUTO-ADDED TRANSLATIONS ===
+  dancehallPageTitleV2:
+    "Dancehall Classes in Barcelona | Authentic Jamaican Dancehall | Farray's Center",
+  dancehallCulturalFull:
+    "### The Origins: Kingston, Jamaica (1970s-1980s)\n\nDancehall was born in the ghettos of Kingston in the late 1970s. It emerged as a natural evolution of reggae when sound systems (mobile sound systems) started bringing music to the streets and dancehalls (dance halls). The name \"dancehall\" comes from those spaces where the community gathered to dance, socialize, and express themselves. It was the place where social tensions were released through music and movement.\n\n### The Legends: Bogle, Passa Passa, and the Pioneers\n\n**Gerald \"Bogle\" Levy (1964-2005) is considered the father of modern Dancehall.** He created iconic moves like **Bogle, Row Di Boat, Log On, and Willie Bounce**, the foundation of Dancehall vocabulary.\n\n**Passa Passa**, the legendary street dancehall sessions in Tivoli Gardens (Kingston), was the epicenter where new steps were born and dancers were consecrated.\n\nOther pioneers like **Ding Dong, Keiva, John Hype** and crews like **Ravers Clavers** took Dancehall to an international level in the 2000s.\n\n### The Global Expansion (2000s-Present)\n\nIn the 2000s, Dancehall exploded globally thanks to artists like **Sean Paul, Shaggy, Elephant Man, and Beenie Man**. Social media and YouTube popularized moves like **Dutty Wine, Daggering, and Nuh Linga**.\n\nToday, Dancehall is a worldwide phenomenon with active communities in Europe, Africa, Asia, and America; Barcelona is one of its European epicenters.\n\n### The Music: Riddims and Sound System Culture\n\n**Dancehall is danced to riddims (instrumental tracks) that producers create and multiple artists vocalize.** Legendary riddims like **Diwali, Coolie Dance, or Dump Truck** defined entire eras.\n\nThe sound system culture—with its selectors, MCs, and the famous rewind when a song is so good it gets played again from the beginning—is essential to understanding Dancehall.\n\n### More Than Dance: Identity and Resistance\n\nDancehall has always been a form of cultural resistance and identity expression for Jamaica's marginalized communities. It's the voice of the ghettos, a celebration of joy despite difficulties.\n\nEach step has meaning: **Log On** (connect), **Willie Bounce** (tribute to Willie Haggart), **Nuh Linga** (don't linger). Every movement tells a story.\n\n### Dancehall at Farray's: technique and community\n\nAt Farray's International Dance Center, Dancehall is taught with technique, respect, and historical context, prioritizing good energy, movement precision, and a professional environment.",
+  dancehallCourseSchemaName: 'Jamaican Dancehall Classes in Barcelona - All Levels',
+  dancehallCourseSchemaDesc:
+    "Learn authentic Dancehall in Barcelona with the exclusive method of Farray's International Dance Center. Classes for beginners, intermediate, and advanced with expert instructors trained in Jamaica.",
+  dancehallCommunityFunny:
+    "Spots fly faster than a 'Dutty Wine' on Friday night! Let yourself be seduced by the energy and feeling of Dancehall.",
+  dancehallFaqQ8: "What if I don't have good coordination?",
+  dancehallFaqA8:
+    "Don't worry, coordination develops with practice. Our teachers will guide you step by step and the atmosphere is very welcoming. The important thing is to be consistent and enjoy the process!",
+  dancehallFaqQ9: 'What Dancehall styles do we teach at our Barcelona school?',
+  dancehallFaqA9:
+    'Different styles for different tastes: DANCEHALL FEMALE - The traditional Jamaican style with authentic movements. Sensuality, attitude, and flow. DANCEHALL TWERK - Uses many Twerk/Bootydance movements. Energy, sensuality, and pure femininity.',
+  dancehallFaqQ10: 'What Dancehall levels do we have at our Barcelona school?',
+  dancehallFaqA10:
+    'DIFFERENT LEVELS SO NO ONE MISSES OUT: Dancehall Beginners - Ideal for students who want to start from scratch, learning step by step in a good vibe. Dancehall Basic - Ideal for students with some experience in Dancehall or other urban dances. Dancehall Intermediate - For students who want to improve technique, coordination, and expression with more complex steps and musicality. Dancehall Advanced - Designed for those who want to take their level to the maximum.',
+  dancehallFaqQ11: 'Can I join at any time of the year?',
+  dancehallFaqA11:
+    "Yes! You can start whenever you want. Check our calendar for upcoming available classes. If you have questions about level or group, write to us and we'll guide you.",
+  dancehallFaqQ12: 'Do you have any special discounts?',
+  dancehallFaqA12:
+    'Yes, we offer discounts if you sign up for more than one course. Check our website or ask us directly for more details.',
+  dancehallFaqQ13: 'What if I miss a class due to work or commitments?',
+  dancehallFaqA13:
+    "If you have a membership and cancel a class, you have 30 days to make it up from the date of the canceled class. If you have an hour package, you manage your classes flexibly and just need to cancel and rebook for another day before the expiration period ends. All management is done exclusively through the academy's digital app.",
+  dancehallFaqQ14:
+    'If I miss a class, do I have to make it up in the same style, or can I do a different one?',
+  dancehallFaqA14:
+    "You can make up your canceled class in a different style, as long as you respect the class level and manage the recovery through the school's app.",
+  dancehallFaqQ15: 'What makes Dancehall different from other urban dance styles?',
+  dancehallFaqA15:
+    "Dancehall is a style originating from Jamaica, with lots of energy, characteristic steps, and its own culture. It combines energetic and sensual movements with reggae and hip-hop rhythms, making it unique. It differs in its musicality and movements. It's a style that allows improvisation and creativity, ideal for those looking for more than choreographed steps.",
+  dancehallCitableOrigen:
+    'Dancehall was born in the ghettos of Kingston (Jamaica) in the late 70s as an evolution of reggae, driven by sound systems on streets and dancehalls, community spaces for dancing and releasing social tensions.',
+  dancehallCitableLeyendas:
+    "Gerald 'Bogle' Levy is the father of modern Dancehall with iconic steps like Bogle, Row Di Boat, and Log On; Passa Passa in Tivoli Gardens (Kingston) was the epicenter of street dancehall where trends were born.",
+  dancehallCitableExpansionGlobal:
+    'Since the 2000s, artists like Sean Paul and Elephant Man, along with YouTube and social media, globalized Dancehall with moves like Dutty Wine and Daggering; today it has strong communities in Europe (Barcelona as epicenter), Africa, Asia, and America.',
+  dancehallCitableMusica:
+    'Dancehall is danced to legendary riddims like Diwali or Coolie Dance, with sound system culture of selectors, MCs, and rewind; multiple artists vocalize the same instrumental base, defining eras.',
+  dancehallCitableIdentidad:
+    "Dancehall is cultural resistance from Jamaican ghettos, with meaningful steps like Log On ('connect') or Nuh Linga ('don't linger'), celebrating joy and identity despite difficulties.",
+  dancehallCitableFact1:
+    'An active Dancehall class can burn 300-480 calories per hour depending on weight and intensity, similar to other high-demand aerobic dances.',
+  dancehallCitableFact2:
+    'Scientific reviews associate regular dancing with lower risk of cognitive decline and dementia, highlighting its value as brain training in dynamic styles like Dancehall.',
+  dancehallCitableFact3:
+    "Farray's International Dance Center offers Dancehall classes in a school rated close to 5/5 on Google with hundreds of positive reviews.",
+  home_categories_urbano_styles_femmology_heels: 'Femmology Heels',
+  home_categories_urbano_styles_hip_hop_reggaeton: 'Hip Hop Reggaeton',
+  home_categories_urbano_styles_reggaeton_cubano: 'Cuban Reggaeton (Reparto)',
+  home_categories_urbano_styles_sexy_reggaeton: 'Sexy Reggaeton',
+  home_categories_urbano_styles_sexy_style: 'Sexy Style',
+  home_categories_urbano_styles_commercial_dance: 'Commercial Dance',
+  home_categories_urbano_styles_kpop: 'K-Pop',
+  home_categories_salsa_bachata_bullets:
+    'Salsa, Bachata, Timba and more, Dance solo or with a partner, Groups for all levels',
+  home_categories_salsa_bachata_styles_bachata: 'Bachata',
+  home_categories_salsa_bachata_styles_folklore_cubano: 'Cuban Folklore',
+  home_categories_salsa_bachata_styles_salsa_cubana: 'Cuban Salsa',
+  home_categories_salsa_bachata_styles_salsa_lady_style: 'Salsa Lady Style',
+  home_categories_salsa_bachata_styles_salsa_lady_timba: 'Salsa Lady Timba',
+  home_categories_salsa_bachata_styles_timba_cubana: 'Cuban Timba',
+  home_categories_salsa_bachata_styles_son_cubano: 'Cuban Son',
+  home_categories_salsa_bachata_styles_men_style_salsa: 'Men Style Salsa',
+  home_categories_danza_styles_ballet_clasico: 'Classical Ballet (Cuban School)',
+  home_categories_danza_styles_bum_bum_gluteos: 'Bum Bum Amazing Glutes',
+  home_categories_fitness_bullets:
+    'Tone up dancing, Bum Bum, Pilates, Dance Barre, Fun and effective classes',
+  home_categories_fitness_styles_bum_bum_gluteos: 'Bum Bum Amazing Glutes',
+  home_categories_fitness_styles_bum_bum_fit: 'Bum Bum Fit Body',
+  home_categories_fitness_styles_body_conditioning: 'Body Conditioning',
+  home_categories_fitness_styles_dance_barre: 'Dance Barre',
+  home_categories_fitness_styles_pilates: 'Pilates',
+  home_categories_mananas_bullets: 'Start the day dancing, Flexible morning schedule, Small groups',
+  home_categories_mananas_styles_afro_jazz: 'Afro Jazz (Cuban Technique)',
+  home_categories_mananas_styles_contemporaneo: 'Lyric & Floor Contemporary',
+  home_categories_mananas_styles_sexy_reggaeton: 'Sexy Reggaeton',
+  home_categories_mananas_styles_sexy_style: 'Sexy Style',
+  home_categories_mananas_styles_otras_danzas: 'World and Exotic Dances',
+  home_categories_otras_bullets:
+    'Kizomba, Flamenco, Aerial Silks..., New groups coming soon, Join the waiting list',
+  home_categories_otras_styles_kizomba: 'Kizomba',
+  home_categories_otras_styles_semba: 'Semba',
+  home_categories_otras_styles_kompa: 'Kompa',
+  home_categories_otras_styles_flamenco: 'Flamenco',
+  home_categories_otras_styles_sevillanas: 'Sevillanas',
+  home_categories_otras_styles_telas_aereas: 'Aerial Silks and Hoop',
+  home_categories_otras_styles_acro_yoga: 'Acro Yoga',
+  contact_breadcrumb_home: 'Home',
+  contact_breadcrumb_current: 'Contact',
+  merchandising_breadcrumb_home: 'Home',
+  merchandising_breadcrumb_current: 'Merchandising',
+  particularesPage_particulares_feature1: 'Maximum exclusivity and privacy',
+  particularesPage_particulares_feature2: 'Learn 3x faster than in group classes',
+  particularesPage_particulares_feature3: 'Teacher 100% dedicated to you',
+  particularesPage_particulares_feature4: 'Flexible schedules adapted to your agenda',
+  particularesPage_particulares_feature5: 'Online classes available',
+  particularesPage_particulares_feature6: 'Home classes available',
+  particularesPage_particulares_feature7: 'Discounted packages available',
+  particularesPage_premium_feature1: 'Private group with friends or family',
+  particularesPage_premium_feature2: 'Learn faster than in regular courses',
+  particularesPage_premium_feature3: 'Affordable monthly price (€60/month)',
+  particularesPage_premium_feature4: 'Schedules agreed among the group',
+  particularesPage_premium_feature5: 'Online classes available',
+  particularesPage_premium_feature6: 'Home classes available',
+  particularesPage_benefitsSubtitle:
+    'Discover the advantages that only private classes can offer you',
+  particularesPage_particulares_desc:
+    '100% exclusive attention dedicated to you. Perfect for those seeking maximum progress in the shortest time possible, with total privacy and ultra-flexible schedules. Ideal for absolute beginners, advanced dancers looking to perfect themselves, or anyone who values efficiency and personalization.',
+  particularesPage_premium_desc:
+    'Combines the best of both worlds: accelerated learning with the energy of a small, private group. Perfect for friends, couples, or families who want to learn together, share costs, and maintain an intimate atmosphere. More economical than individual private lessons, but with much more personalized attention than regular group classes.',
+  particularesPage_pack_regular_feature5: 'Teaching adapted to your level',
+  faq_breadcrumb_home: 'Home',
+  faq_breadcrumb_current: 'FAQ',
+  roomRental_room2_holiday_companies: 'Companies / rehearsals',
+  roomRental_room2_holiday_companies_price: '€45/hour',
+  roomRental_room2_holiday_events: 'Classes / events',
+  roomRental_room2_holiday_events_price: '€55/hour',
+  roomRental_room2_condition: 'Weekends and holidays: minimum 3 hours rental',
+  facilitiesHeroTitle: 'Facilities - Dance School in Barcelona',
+  facilitiesHeroSubtitle: 'Over 700 m² dedicated to dance in the heart of Barcelona',
+  facilitiesHeroDesc:
+    "Farray's International Dance Center is a dance school in Barcelona with over 700 m² of facilities specifically designed for dance, physical training, and artistic creation.",
+  facilitiesHeroLocation: 'Calle Entença 100, Barcelona - Between Plaza España and Sants',
+  facilitiesCTA1: 'Book your class',
+  facilitiesCTA1Subtext: 'Try our facilities',
+  facilitiesCTA2: 'Rent a room',
+  facilitiesCTA2Subtext: 'For rehearsals or events',
+  facilitiesStatSpace: '700 m² of space',
+  facilitiesStatRooms: '4 rooms',
+  facilitiesStatProfessional: 'Professional',
+  facilitiesIntroTitle: 'A space designed for dance',
+  facilitiesIntroP1:
+    'Our facilities are the result of years of experience and deep knowledge of what a dancer needs. Every detail has been thought to optimize your practice and learning.',
+  facilitiesIntroP2:
+    'From professional flooring to acoustic systems, lighting, and ventilation: everything is designed so you can focus on what really matters: dancing.',
+  facilitiesRoomsTitle: 'Our Rooms',
+  facilitiesRoomsSubtitle: '4 rooms equipped for all types of dance',
+  facilitiesRoom1Size: '120 m²',
+  facilitiesRoom1Floor: 'Professional ballet floor',
+  facilitiesRoom2Size: '80 m²',
+  facilitiesRoom2Floor: 'Professional dance floor',
+  facilitiesRoom3Size: '60 m²',
+  facilitiesRoom3Floor: 'Professional dance floor',
+  facilitiesRoom4Title: 'Room 4 (Multipurpose)',
+  facilitiesRoom4Size: '50 m²',
+  facilitiesRoom4Floor: 'Yoga and Pilates floor',
+  facilitiesRoom4Desc: 'Space adapted for yoga, pilates, stretching and floor work.',
+  facilitiesActivitiesTitle: 'Ideal for:',
+  facilitiesActivity1: 'Dance classes (all styles)',
+  facilitiesActivity2: 'Private rehearsals',
+  facilitiesActivity3: 'Company auditions',
+  facilitiesActivity4: 'Photo and video shoots',
+  facilitiesActivity5: 'Workshops and masterclasses',
+  facilitiesActivity6: 'Private events',
+  facilitiesAmenitiesTitle: 'Amenities',
+  facilitiesAmenitiesSubtitle: 'Everything you need for your comfort',
+  facilitiesAm1Title: 'Changing rooms',
+  facilitiesAm1Desc: 'Spacious changing rooms with lockers and showers',
+  facilitiesAm2Title: 'Lounge area',
+  facilitiesAm2Desc: 'Rest area with comfortable seating',
+  facilitiesAm3Title: 'Free WiFi',
+  facilitiesAm3Desc: 'High-speed connection throughout the center',
+  facilitiesEquipmentTitle: 'Professional Equipment',
+  facilitiesEquipmentSubtitle: 'Top quality tools for your practice',
+  facilitiesEq1Title: 'Full mirrors',
+  facilitiesEq1Desc: 'Full-height mirrors in all rooms',
+  facilitiesEq2Title: 'Professional sound',
+  facilitiesEq2Desc: 'High-fidelity sound systems',
+  facilitiesEq3Title: 'Dance barres',
+  facilitiesEq3Desc: 'Fixed and mobile barres for ballet',
+  facilitiesEq4Title: 'Air conditioning',
+  facilitiesEq4Desc: 'Temperature control in all rooms',
+  facilitiesEq5Title: 'Professional flooring',
+  facilitiesEq5Desc: 'Sprung floors suitable for dance',
+  facilitiesEq6Title: 'LED lighting',
+  facilitiesEq6Desc: 'Adjustable lighting for each activity',
+  facilitiesTrustTitle: 'Trusted by',
+  facilitiesWhyTitle: 'Why choose our facilities?',
+  facilitiesWhy1Title: 'Strategic location',
+  facilitiesWhy1Desc: '5 minutes from Plaza España and Sants, excellent metro and bus connections',
+  facilitiesWhy2Title: 'Extended hours',
+  facilitiesWhy2Desc: 'Open from 9am to 10pm, 7 days a week',
+  facilitiesWhy3Title: 'Professional team',
+  facilitiesWhy3Desc: 'Staff trained to assist you in everything you need',
+  facilitiesWhy4Title: 'Flexible prices',
+  facilitiesWhy4Desc: 'Competitive rates with discounts for regular rentals',
+  facilitiesWhy5Title: 'Premium maintenance',
+  facilitiesWhy5Desc: 'Daily cleaning and constant maintenance of all equipment',
+  facilitiesWhy6Title: 'Certified security',
+  facilitiesWhy6Desc: 'Fire systems, emergency exits and compliance with all regulations',
+  facilitiesCTATitle: 'Ready to dance?',
+  facilitiesCTAP1: 'Discover for yourself why hundreds of students choose our facilities.',
+  facilitiesCTAP2: 'Book your trial class or visit our facilities.',
+  facilitiesFaqTitle: 'Frequently Asked Questions',
+  facilitiesFaqQ1: 'Can I rent a room for private rehearsals?',
+  facilitiesFaqA1:
+    'Yes, all our rooms are available for rent by the hour. Contact us to check availability and prices.',
+  facilitiesFaqQ2: 'Do you have parking?',
+  facilitiesFaqA2:
+    "We don't have our own parking, but there are several public parkings nearby and good public transport connections.",
+  facilitiesFaqQ3: 'Can I visit the facilities before signing up?',
+  facilitiesFaqA3:
+    'Of course! You can visit us during opening hours or book a trial class to get to know our spaces.',
+  facilitiesFaqQ4: 'Do you have equipment for photoshoots?',
+  facilitiesFaqA4:
+    'We have professional lighting and neutral backgrounds. For specific needs, contact us in advance.',
+  facilitiesFaqQ5: 'Is the center accessible?',
+  facilitiesFaqA5: 'Yes, our facilities are accessible with elevator and adapted spaces.',
+  facilitiesFaqQ6: 'Can I bring my own equipment?',
+  facilitiesFaqA6:
+    'Yes, you can bring your own music equipment, cameras, or any material you need. Consult with us beforehand for special equipment.',
+  facilitiesFaqQ7: 'What forms of payment do you accept?',
+  facilitiesFaqA7: 'We accept cash, card, bank transfer, and online payments through our app.',
+  facilitiesBreadcrumbHome: 'Home',
+  facilitiesBreadcrumbCurrent: 'Facilities',
+  twerkCitableOrigen:
+    'Twerk originates from traditional African dances, with roots in Mapouka from Ivory Coast and influences from New Orleans bounce since the 90s.',
+  twerkCitableEvolucionGlobal:
+    'Twerk gained worldwide popularity from the 2010s thanks to artists like Major Lazer, Diplo, and its viral expansion on social media and YouTube.',
+  twerkCitableMusica:
+    'Twerk is danced to bass-heavy rhythms like bounce, trap, reggaeton, and dancehall, focusing on isolation of glutes, hips, and core.',
+  twerkCitableIdentidadPoder:
+    'Twerk is body empowerment and self-expression, celebrating femininity and body confidence in all its forms.',
+  twerkCitableFact1:
+    'An active Twerk class can burn 300-500 calories per hour depending on intensity, toning glutes, thighs, and core.',
+  twerkCitableFact2:
+    'Twerk strengthens the pelvic floor and improves hip flexibility, beneficial for posture and physical well-being.',
+  twerkCitableFact3:
+    "Farray's International Dance Center offers Twerk classes with expert teachers in a professional and safe environment.",
+  balletCompareRow9: 'Flexibility and stretching',
+  balletCompareRow10: 'Artistic expression',
+  balletCompareRow11: 'Historical tradition',
+  afrocontemporaneoStatistics:
+    'Scientific studies on dance indicate that Afro-Contemporary improves coordination, body awareness, and overall fitness while reducing stress.',
+  afrocontemporaneoCitableEvolucionGlobal:
+    'Afro-Contemporary fuses traditional African dance techniques with contemporary dance, creating a powerful and expressive form of movement.',
+  afrocontemporaneoCitableMusica:
+    'Afro-Contemporary is danced to a mix of African rhythms, contemporary music, and world music, allowing emotional and physical expression.',
+  afrocontemporaneoCitableIdentidadPoder:
+    'Afro-Contemporary celebrates African heritage while embracing contemporary dance innovation, creating a unique artistic language.',
+  afrocontemporaneoCitableFact1:
+    'An Afro-Contemporary class combines cardio, strength, and flexibility training in one dynamic session.',
+  afrocontemporaneoCitableFact2:
+    'Studies show that expressive dance forms like Afro-Contemporary significantly reduce stress and improve mental well-being.',
+  afrocontemporaneoCitableFact3:
+    "Farray's offers Afro-Contemporary classes with teachers trained in both African dance traditions and contemporary techniques.",
+  afrocontemporaneoCitableLegado:
+    'Afro-Contemporary honors the legacy of African dance masters while creating new movement vocabularies for contemporary expression.',
+  afrocontemporaneoCompareLirico: 'Afro Lyric Contemporary',
+  afrocontemporaneoCompareJazz: 'Afro Jazz',
+  afrojazzImage1Alt: "Afro Jazz dance class at Farray's Barcelona",
+  afrojazzImage2Alt: 'Student practicing Afro Jazz technique',
+  afrojazzImage3Alt: 'Afro Jazz group class with professional instructor',
+  afrojazzStatistics:
+    'Scientific studies on dance indicate that Afro Jazz improves coordination, rhythm, and cardiovascular fitness while providing stress relief.',
+  salsaCubanaHeroEmotional: 'Feel the rhythm of Cuba in every step',
+  salsaCubanaBlueOcean1P3:
+    'Our method goes beyond steps: we teach you to feel the music, understand the culture, and express yourself authentically.',
+  salsaCubanaBlueOcean1P4: 'This is what sets us apart from any other salsa school.',
+  salsaCubanaBlueOcean2P2:
+    'We use progressive methodology that ensures real results from the first class.',
+  salsaCubanaBlueOcean2P3:
+    'Each level builds on the previous one, creating solid and lasting foundations.',
+  salsaCubanaBlueOcean2P4: "You'll notice your progress class after class.",
+  salsaCubanaBlueOcean3P2:
+    'Our teachers are professionally trained dancers with years of experience.',
+  salsaCubanaBlueOcean3P3: "They know how to adapt to each student's pace and needs.",
+  salsaCubanaBlueOcean3P4:
+    "You'll learn with the best in an environment that motivates you to improve.",
+  salsaCubanaBlueOcean4Quotes: 'What our students say',
+  salsaCubanaBlueOcean4P1:
+    'Hundreds of students have transformed their way of dancing with our method.',
+  salsaCubanaBlueOcean4P2: 'Join our community and experience it for yourself.',
+  salsaCubanaBlueOcean4P3: 'Your transformation starts with a single step.',
+  salsaCubanaBlueOceanClose1: 'Ready to start your salsa journey?',
+  salsaCubanaBlueOceanClose2: 'Book your trial class today',
+  salsaCubanaBlueOceanClose3: "And discover why we're Barcelona's reference in Cuban Salsa",
+  salsaCubanaTeacher4Bio:
+    'Expert instructor with extensive experience in Cuban salsa and Caribbean rhythms.',
+  salsaCubanaIdentifyBlueOceanTitle: 'What makes our salsa classes unique?',
+  salsaCubanaIdentifyBlue1: 'Authentic Cuban technique directly from Havana',
+  salsaCubanaIdentifyBlue2: 'Exclusive methodology developed over 20+ years',
+  salsaCubanaIdentifyBlue3: 'Teachers trained in Cuba with professional certifications',
+  salsaCubanaIdentifyBlue4: 'Small groups for personalized attention',
+  salsaCubanaIdentifyBlue5: 'Complete cultural immersion beyond just steps',
+  salsaCubanaIdentifyBlue6: 'Vibrant community of passionate dancers',
+  salsaCubanaIdentifyRedOceanTitle: 'What to avoid in a salsa school:',
+  salsaCubanaIdentifyRed1: 'Generic methods without cultural foundation',
+  salsaCubanaIdentifyRed2: 'Overcrowded classes with no individual attention',
+  salsaCubanaIdentifyRed3: 'Teachers without professional training',
+  salsaCubanaIdentifyRed4: 'Focus only on figures, ignoring musicality',
+  salsaCubanaIdentifyRed5: 'Cold environment without sense of community',
+  salsaCubanaIdentifyRed6: "Rigid schedules that don't adapt to students",
+  salsaCubanaIdentifyClose1: "At Farray's, we've eliminated everything that doesn't work",
+  salsaCubanaIdentifyClose2: 'And maximized everything that guarantees your progress',
+  salsaCubanaIdentifyClose3: 'The result: the most complete salsa experience in Barcelona',
+  salsaCubanaFinalCTAEmotional1: 'Imagine feeling the music in every movement',
+  salsaCubanaFinalCTAEmotional2: 'Dancing with confidence and natural style',
+  salsaCubanaFinalCTAEmotional3: 'Being part of a community that shares your passion',
+  salsaCubanaFinalCTAEmotional4: "All of this is possible at Farray's",
+  salsaCubanaFinalCTAEmotionalClose: 'Your transformation starts today',
+  salsaCubanaFinalCTATechnical1: 'Cuban technique certified by CID-UNESCO',
+  salsaCubanaFinalCTATechnical2: 'Progressive system with measurable results',
+  salsaCubanaFinalCTATechnical3: 'Flexible schedules and affordable prices',
+  salsaLadyTeacherCredential: 'CID-UNESCO Certified Dance Instructor',
+  salsaLadyTeacherBio:
+    'Specialized instructor in Salsa Lady Style with years of experience in Cuban dance techniques and feminine expression.',
+
+  // ===== FOLKLORE CUBANO PAGE =====
+  folklorePageTitle: "Cuban Folklore Classes in Barcelona | Farray's Academy",
+  folkloreMetaDescription:
+    'Learn authentic Cuban Folklore in Barcelona. Dances to the Orishas, Yoruba, Rumba and more. Specialized Cuban masters. Between Plaza España and Sants. Free trial!',
+  folkloreCourseSchemaName: 'Cuban Folklore Classes in Barcelona',
+  folkloreCourseSchemaDesc:
+    'Learn traditional Cuban dances to the Orishas with masters trained at the National School of Art of Cuba. Classes for all levels.',
+  folkloreCourseTeaches:
+    'Cuban Folklore, dances to the Orishas, Yoruba, Congo, Cuban Rumba, Afro-Cuban body expression',
+
+  // Breadcrumb
+  folkloreBreadcrumbHome: 'Home',
+  folkloreBreadcrumbClasses: 'Dance Classes Barcelona',
+  folkloreBreadcrumbCategory: 'Salsa and Bachata',
+  folkloreBreadcrumbCurrent: 'Cuban Folklore',
+
+  // Hero Section
+  folkloreHeroTitle: 'Cuban Folklore Classes in Barcelona',
+  folkloreHeroSubtitle: 'The Root of Cuban Salsa',
+  folkloreHeroDesc: 'Discover the origins of Cuban salsa through ritual dances to the Orishas.',
+  folkloreHeroLocation:
+    'CID-UNESCO member academy | Classes with Cuban masters, between Plaza España and Sants',
+  folkloreHeroStudents: '+15,000 students trained',
+
+  // CTAs
+  folkloreCTA1: 'Become a Member Now',
+  folkloreCTA1Subtext: 'Limited spots',
+  folkloreCTA2: 'Book Your Trial Class',
+  folkloreCTA2Subtext: 'No commitment',
+  folkloreCTAGroup: 'Enrollment options',
+
+  // What Is Section
+  folkloreWhatIsTitle: 'What is Cuban Folklore and why should you learn it?',
+  folkloreWhatIsP1:
+    'If you want to get the most out of Cuban salsa and other Latin rhythms, while working on your body expression, you must start with its origins: the root, the foundation of salsa, which is percussion.',
+  folkloreWhatIsP2:
+    'The three batá drums are the origin of the strength and expression of movement from old Africa, which have remained barely altered on their journey to Cuba.',
+  folkloreWhatIsP3:
+    'Cuban Folklore is the set of popular traditions transmitted orally, including ritual dances, music, legends, and cultural practices with strong emphasis on African roots.',
+  folkloreWhatIsP4:
+    "At Farray's International Dance Center you will learn not only how to dance but the origin of all Cuban salsa movements, guided by specialized Cuban masters.",
+  folkloreWhatIsQuestionTitle: 'Are you wondering if this is for you?',
+  folkloreWhatIsQuestionAnswer: 'If you seek the deepest essence of Cuban dance, yes it is.',
+
+  // Cultural History Section
+  folkloreCulturalHistoryTitle: 'History and Origin of Cuban Folklore',
+  folkloreCulturalShort:
+    'Cuban Folklore is defined as the set of popular traditions transmitted orally, including ritual dances, music, legends ("Patakíes"), and cultural practices of the Cuban population, with strong emphasis on African-descendant roots adapted to the island context.',
+  folkloreCulturalFull:
+    '### Cultural influences\nSince the 16th century, Cuban folklore emerged from syncretism between African slaves (Yoruba, Congo, Arará), Spanish colonizers (romance, contradanza), and minor Caribbean contributions (Haitian, Jamaican), with almost non-existent aboriginal influence. Plantation socioeconomic conditions transformed African cults into expressions like Santería and Palo, where ritual dances preserve polyrhythm and ancestral gestures.\n### What is Afro Cuban?\n**Afro Cuban** (also called "Afro" or "Afro-Cuban dances") is the term that encompasses all Cuban dance expressions with African roots. When you search for **Afro classes in Barcelona** or **African dances**, Afro Cuban is the discipline that connects Africa with the Caribbean. Unlike pure African dances (Senegalese Sabar, Coupé Décalé), Afro Cuban fuses Yoruba, Congo, and Bantu movements with Caribbean musicality, creating a unique style that is the foundation of Cuban salsa.\n### Historical evolution\nIn the 19th century, secret societies and African cabildos maintained dances like Yoruba and Abakuá in religious contexts. In the early 20th century, the Cuban Folklore Society (1923-1930) initiated systematic study, while groups like Los Muñequitos de Matanzas professionalized rumba. Post-1959, institutions like the National School of Art codified these forms for stage.\n### Main manifestations\nTraditional folklore includes:\n**Yoruba:** Dances to Orishas (Eleguá, Yemayá, Obatalá, Ochún, Changó).\n**Congo/Bantu:** Palo, Makuta, Garabato.\n**Abakuá:** Efo, Efi.\n**Arará:** Afra, Gun, Jebbioso.\n**Iyesá:** Iyesá Dances.\n**Haitian:** Voodoo, Sabone, Fey, Congo Laye, Gagá, Tumba Francesa, Haitian Merengue, Ibbo, Menua.\n**Jamaican:** Banana, Brown, Mangú, Chulo, Cinta, Limbo.\n**Rumba:** Guaguancó, Yambú, and Columbia. Columbia includes: traditional Columbia, Jiribilla, and variants with objects (machetes, knives, cane, plate with candle, scarf, among others).\n### Influence on popular dances\nFolkloric rhythms and movements nourish secular genres like Conga, Comparsa, Son Montuno (Changüí, Sucu-sucu), Danzón, and Casino, the basis of modern Cuban salsa, fusing batá percussion with danceable structures.\n### Afro Cuban Classes in Barcelona\nFarray\'s International Dance Center is the reference academy for learning **Afro Cuban in Barcelona**. Our specialized Cuban masters connect you with Yoruba and Congolese roots, elevating your body expression in salsa and Latin rhythms. If you\'re looking for **Afro classes**, **African dances**, or **Afro Cuban in Barcelona**, here you\'ll find the most authentic training.',
+
+  // Identification Section
+  folkloreIdentifyTitle: 'Do you identify with any of these situations?',
+  folkloreIdentify1: 'You dance Cuban salsa but feel you lack depth and connection with the music.',
+  folkloreIdentify2:
+    'You want to understand the origin of the movements you do in salsa and other Latin rhythms.',
+  folkloreIdentify3: "You're attracted to Afro-Cuban culture and want to explore it through dance.",
+  folkloreIdentify4: 'You want to improve your body expression and musical interpretation.',
+  folkloreIdentify5: 'You want to learn about the Orishas and the ritual dances of Cuban Santería.',
+  folkloreIdentify6:
+    'You need a complete physical workout that also develops your coordination and memory.',
+  folkloreIdentifyTransition:
+    'If you said "yes" to any of these points, Cuban Folklore is your path.',
+  folkloreIdentifyAgitate1:
+    'How much longer will you dance salsa without knowing its true essence?',
+  folkloreIdentifySolution:
+    'Our Cuban masters will guide you step by step through the dances to the Orishas, rumba, and more folkloric manifestations, connecting you with the root of all Afro-Cuban music.',
+  folkloreIdentifyClosing: 'Immerse yourself in the deepest essence of Cuban dance in Barcelona.',
+
+  // Need Enroll Section
+  folkloreNeedEnrollTitle: 'You need to enroll in Cuban Folklore classes',
+
+  // Transformation Section
+  folkloreTransformTitle: 'What do you get from our Cuban Folklore classes?',
+  folkloreTransform1Title: 'Learn the origins of salsa',
+  folkloreTransform1Desc:
+    'You will understand where Cuban salsa movements come from and be able to dance with more authenticity.',
+  folkloreTransform2Title: 'Improve your musical interpretation',
+  folkloreTransform2Desc:
+    'You will learn to listen and respond to batá drum percussion like a Cuban dancer.',
+  folkloreTransform3Title: 'Improve your hearing acuity',
+  folkloreTransform3Desc:
+    'You will develop the ability to distinguish different Afro-Cuban beats and rhythms.',
+  folkloreTransform4Title: 'Learn to isolate your body',
+  folkloreTransform4Desc:
+    'You will master the technique of moving different body parts independently.',
+  folkloreTransform5Title: 'Exercise your coordination and memory',
+  folkloreTransform5Desc:
+    'Each Orisha has their own characteristic movements that you will memorize and perfect.',
+  folkloreTransform6Title: 'Improve your fitness',
+  folkloreTransform6Desc:
+    'The demanding physical work of folklore will keep you fit all year round.',
+  folkloreTransformCTA: "Why choose Farray's Center to learn Cuban Folklore?",
+
+  // Why Choose Section
+  folkloreWhyChoose1Title: 'Specialized Cuban masters',
+  folkloreWhyChoose1Desc:
+    'Learn from teachers trained at the National School of Art of Cuba, with deep knowledge of folkloric roots.',
+  folkloreWhyChoose2Title: 'Exclusive Farray® Method',
+  folkloreWhyChoose2Desc:
+    'Unique teaching system that connects folklore with Cuban salsa for comprehensive understanding of dance.',
+  folkloreWhyChoose3Title: 'CID-UNESCO Academy',
+  folkloreWhyChoose3Desc:
+    'Internationally recognized center, directed by Yunaisy Farray, world reference in Cuban dance.',
+  folkloreWhyChoose4Title: 'Privileged location',
+  folkloreWhyChoose4Desc:
+    'Just 5 minutes from Plaza España and Sants Station. Easy access by metro, bus, and train.',
+  folkloreWhyChoose5Title: 'Professional facilities',
+  folkloreWhyChoose5Desc:
+    '700 m² with professional flooring, quality sound, and climate control for comfortable training.',
+  folkloreWhyChoose6Title: 'All levels welcome',
+  folkloreWhyChoose6Desc:
+    'No prior experience needed. Our method adapts to your level from day one.',
+  folkloreWhyChoose7Title: 'Events and workshops',
+  folkloreWhyChoose7Desc:
+    'Participate in our annual gala, workshops with international masters, and cultural activities.',
+
+  // Why Today Section
+  folkloreWhyTodayFullTitle: 'Why is today the best time to start learning Cuban Folklore?',
+  folkloreWhyToday1:
+    'Because every day you dance salsa without knowing its root is a day without understanding the true essence.',
+  folkloreWhyToday2:
+    'Because folklore will give you tools that will transform how you dance any Latin rhythm.',
+  folkloreWhyToday3:
+    'Because connecting with the culture of the Orishas will enrich not only your dance, but your life.',
+  folkloreWhyTodayClosing1:
+    "At Farray's we don't just teach steps. We transmit culture, history, and tradition.",
+  folkloreWhyTodayClosing2:
+    'We await you with batá drums, passionate masters, and the energy of Cuba.',
+
+  // Logos Section
+  folkloreLogosTitle: "You've seen us on...",
+  folkloreLogosIntlFestivalsText: "and at the world's best dance festivals",
+
+  // Teachers Section
+  folkloreTeachersTitle: 'Meet your Cuban Folklore teacher',
+  folkloreTeachersSubtitle:
+    'International reference in Afro-Cuban dances with over 25 years of experience',
+  folkloreTeacher1Specialty:
+    'International Master of Afro-Cuban Dances | ISA Cuba | +25 years of experience',
+  folkloreTeacher1Bio:
+    "Grechén Mendez is an internationally renowned master in the world of Afro-Cuban dances. With over 25 years dedicated to teaching Cuban folklore, she trained at the prestigious Higher Institute of Art of Cuba (ISA), the country's highest artistic institution. Her mastery of dances to the Orishas, rumba, and all manifestations of Afro-Cuban heritage makes her a recognized authority worldwide. She has trained professional dancers in Cuba, Europe, and the Americas, transmitting not only the technique but the deep spiritual and cultural meaning of each movement.",
+  folkloreTeachersClosing:
+    'With master Grechén Mendez, you access the most authentic knowledge of Cuban folklore. Her methodology, perfected over decades, will take you from the fundamentals to the deepest expression of Afro-Cuban dance.',
+
+  // Schedule Section
+  folkloreScheduleTitle: 'Cuban Folklore class schedules',
+  folkloreScheduleSubtitle: 'Weekly classes with specialized Cuban masters',
+  folkloreLevelsTitle: 'Levels and Progression',
+
+  // Level Cards
+  folkloreLevelBeginnerTitle: 'Beginner',
+  folkloreLevelBeginnerDesc:
+    'Introduction to the main Orishas, basic movements, and understanding of batá percussion. Perfect to start from scratch.',
+  folkloreLevelInterTitle: 'Intermediate',
+  folkloreLevelInterDesc:
+    "Deepening in each Orisha's dances, body expression work, and more complex choreographies.",
+  folkloreLevelAdvancedTitle: 'Advanced',
+  folkloreLevelAdvancedDesc:
+    'Technical mastery, improvisation, advanced rumba, and preparation for stage performances.',
+  folkloreLevelOpenTitle: 'Open Level',
+  folkloreLevelOpenDesc:
+    'Open class for all levels. Learn Orisha dances, traditional Afro-Cuban movements, and the connection with batá percussion in an inclusive environment where each student progresses at their own pace.',
+
+  // Prepare Class Section
+  folklorePrepareTitle: 'How to prepare for your Cuban Folklore class',
+  folklorePrepareSubtitle: 'Tips from our master Grechén Mendez',
+  folklorePrepareWhatToBring: 'What to bring to class',
+  folklorePrepareItem1: 'Comfortable, light clothing that allows freedom of movement',
+  folklorePrepareItem2: 'Clean shoes for studio use only (or barefoot)',
+  folklorePrepareItem3: 'Small towel to dry off sweat',
+  folklorePrepareItem4: 'Water bottle to stay hydrated',
+  folklorePrepareItem5: 'Open attitude and willingness to connect with Cuban culture',
+  folklorePrepareBefore: 'Before class',
+  folklorePrepareBeforeItem1: 'Eat something light 1-2 hours before, never on a full stomach',
+  folklorePrepareBeforeItem2: 'Hydrate well throughout the day',
+  folklorePrepareBeforeItem3: 'Arrive 5-10 minutes early to change and mentally prepare',
+  folklorePrepareAvoid: 'What to avoid',
+  folklorePrepareAvoidItem1: 'Large jewelry that may bother you or get caught',
+  folklorePrepareAvoidItem2: 'Very tight clothing that limits your movements',
+  folklorePrepareAvoidItem3: 'Arriving with a very full stomach',
+  folklorePrepareTeacherTip: "Teacher's tip",
+  folklorePrepareTeacherQuote:
+    "Cuban folklore is danced with an open heart. Come ready to feel the music and connect with the energy of the Orishas. It doesn't matter if you don't know anything, what matters is your attitude.",
+
+  // Video Section
+  folkloreVideoTitle: 'Discover our Cuban Folklore classes',
+  folkloreVideoDesc: 'Experience learning dances to the Orishas with authentic Cuban masters.',
+
+  // Testimonials Section
+  folkloreTestimonialsTitle: 'What our students say',
+
+  // Final CTA Section
+  folkloreFinalCTATitle: 'Immerse yourself in the essence of Cuban dance',
+  folkloreFinalCTASubtitle: 'The root of salsa awaits you.',
+  folkloreFinalCTADesc:
+    'Book your trial class and discover why Cuban Folklore will transform the way you dance.',
+  folkloreFinalCTAFunny:
+    'The Orishas already know you are coming. All that is left is for you to take the first step.',
+
+  // Nearby Areas Section
+  folkloreNearbyTitle: 'Cuban Folklore Academy in the heart of Barcelona',
+  folkloreNearbyDesc:
+    'Our academy is strategically located between Plaza España and Sants Station, with excellent public transport connections.',
+  folkloreNearbySearchText:
+    'Looking for Cuban Folklore classes near you? See how easy it is to get here:',
+  folkloreNearbyMetro:
+    'Metro L1 and L3 (Espanya), L3 and L5 (Sants Estació). FGC and Rodalies 3 min away.',
+
+  // FAQ Section
+  folkloreFaqTitle: 'Frequently asked questions about Cuban Folklore in Barcelona',
+  folkloreFaqQ1: 'What exactly is Cuban Folklore?',
+  folkloreFaqA1:
+    'Cuban Folklore is the set of traditional Cuban dances with African roots. It includes ritual dances to the Orishas (Santería), dances of Yoruba, Congo, Arará origin, as well as Rumba in its different variants (Guaguancó, Yambú, Columbia). It is the foundation from which all Cuban salsa emerges.',
+  folkloreFaqQ2: 'Do I need prior experience to learn Cuban Folklore?',
+  folkloreFaqA2:
+    'You do not need any prior experience. Our classes are designed to welcome all levels, from absolute beginners to advanced dancers who want to deepen their roots.',
+  folkloreFaqQ3: 'Is Cuban Folklore related to religion?',
+  folkloreFaqA3:
+    'Cuban folklore has its origin in Afro-Cuban religious traditions (Santería, Palo, etc.), but in our classes, we teach it as an artistic and cultural discipline. You learn the movements and their historical-cultural meaning, without any mandatory religious component.',
+  folkloreFaqQ4: 'Who are the Orishas and what dances will I learn?',
+  folkloreFaqA4:
+    'The Orishas are the deities of the Yoruba religion syncretized in Cuba. Each one has their own characteristic dance: Eleguá (the messenger), Ochún (sensuality), Yemayá (the sea), Changó (fire), Obatalá (peace), among others. You will learn the specific movements of each one.',
+  folkloreFaqQ5: 'How will Folklore help me dance salsa better?',
+  folkloreFaqA5:
+    'Folklore is the root of Cuban salsa. By learning folklore, you will develop better musical interpretation, more authentic body expression, body isolation, and deep understanding of percussion. All of this translates directly into richer and more authentic salsa dancing.',
+  folkloreFaqQ6: 'What clothes do I need for classes?',
+  folkloreFaqA6:
+    'Comfortable, light clothing that allows freedom of movement, especially in hips and torso. You can use clean studio shoes or dance barefoot if you prefer. Bring a towel and water because it is intense training.',
+  folkloreFaqQ7: 'Are there classes for men or only for women?',
+  folkloreFaqA7:
+    'Cuban folklore is for everyone. In fact, many dances to the Orishas have very powerful masculine versions (like Changó or Ogún). Men and women are welcome in all our classes.',
+  folkloreFaqQ8: 'Can I try a class before enrolling?',
+  folkloreFaqA8:
+    'Yes. We offer a trial class so you can experience our methodology without commitment. Book your spot by clicking the "Book Your Trial Class" button on this page.',
+  folkloreFaqQ9: 'Do you organize folklore events or performances?',
+  folkloreFaqA9:
+    "Yes. We organize our annual gala where students can showcase what they've learned in a professional theater. We also hold workshops with guest masters and participate in cultural events in the city.",
+  folkloreFaqQ10: 'Where is the academy and how do I contact you?',
+  folkloreFaqA10:
+    'We are at Calle Entença 100, 08015 Barcelona (5 min from Plaza España and Sants).<br/><br/>📞 <strong>Phone:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+  // SEO FAQs for Afro Cuban, Afro Barcelona, African Dances
+  folkloreFaqQ11: 'What is Afro Cuban and how does it differ from Cuban Folklore?',
+  folkloreFaqA11:
+    'Afro Cuban is the term that encompasses all Cuban dances with African roots. Cuban Folklore includes Afro Cuban plus other expressions like Rumba and Comparsa dances. In our Folklore classes you will learn both aspects: the Afro dances to the Orishas (Eleguá, Changó, Yemayá, Ochún) and the more festive manifestations like Rumba.',
+  folkloreFaqQ12: 'Can I learn African dances in Barcelona with you?',
+  folkloreFaqA12:
+    'Yes. Afro Cuban is the most authentic way to connect with African dances in Barcelona. Our movements come directly from Yoruba, Congo, and Bantu traditions that arrived in Cuba with African slaves. If you are looking for African dance classes, Afro Cuban offers that connection with authentic roots plus the rhythmic richness of the Caribbean.',
+  folkloreFaqQ13: 'What is the difference between Afro Cuban and Afrobeat or Afro Contemporary?',
+  folkloreFaqA13:
+    "Afro Cuban is based on Yoruba and Congo ritual dances adapted in Cuba (16th-19th centuries). Afrobeat is a Nigerian musical genre from the 70s with its own dance. Afro Contemporary fuses African techniques with modern contemporary dance. At Farray's we offer all three disciplines, but Afro Cuban is the one that connects with the oldest roots and salsa.",
+  folkloreFaqQ14: 'Will Afro Cuban classes help me improve in other styles?',
+  folkloreFaqA14:
+    'Absolutely. Afro Cuban is the foundation of Cuban salsa, son, timba, and many Latin rhythms. By learning the gestures of the Orishas, the polyrhythm of batá drums, and African body dissociation, your dancing in any Latin style will improve significantly. Many salsa dancers come to our Afro classes to deepen their practice.',
+
+  // Why Us Comparison Section
+  folkloreCompareTitle:
+    "Why learn Cuban Folklore at Farray's and not at another Barcelona academy?",
+  folkloreCompareSubtitle: 'The difference is in the roots.',
+  folkloreCompareColOthers: 'Other academies',
+  folkloreCompareColFarrays: "Farray's Center",
+  folkloreCompareRow1Label: 'Teacher training',
+  folkloreCompareRow1Others: 'Dancers without specialized training',
+  folkloreCompareRow1Farrays: 'Masters from the National School of Art of Cuba',
+  folkloreCompareRow2Label: 'Teaching method',
+  folkloreCompareRow2Others: 'Loose steps without cultural context',
+  folkloreCompareRow2Farrays: 'Farray® Method with history and meaning',
+  folkloreCompareRow3Label: 'Knowledge of Orishas',
+  folkloreCompareRow3Others: 'Superficial or nonexistent',
+  folkloreCompareRow3Farrays: 'Deep and respectful of tradition',
+  folkloreCompareRow4Label: 'Connection with salsa',
+  folkloreCompareRow4Others: 'Folklore isolated from the rest',
+  folkloreCompareRow4Farrays: 'Total integration with Cuban salsa',
+  folkloreCompareRow5Label: 'Facilities',
+  folkloreCompareRow5Others: 'Small or improvised spaces',
+  folkloreCompareRow5Farrays: '700m² with professional flooring',
+  folkloreCompareRow6Label: 'Commitment',
+  folkloreCompareRow6Others: 'Long contracts',
+  folkloreCompareRow6Farrays: 'Month to month, no commitment',
+  folkloreCompareRow7Label: 'Recognition',
+  folkloreCompareRow7Others: 'None',
+  folkloreCompareRow7Farrays: 'CID-UNESCO Academy',
+  folkloreCompareRow8Label: 'Events',
+  folkloreCompareRow8Others: 'Few opportunities',
+  folkloreCompareRow8Farrays: 'Annual gala + international workshops',
+  folkloreCompareMeaningTitle: 'What does this mean for you?',
+  folkloreCompareMeaning1Title: 'If you have never done folklore:',
+  folkloreCompareMeaning1Desc:
+    'You will learn from the ground up with masters who know every detail of Cuban tradition.',
+  folkloreCompareMeaning2Title: 'If you already dance salsa:',
+  folkloreCompareMeaning2Desc:
+    'You will understand where the movements come from and your salsa will gain authenticity immediately.',
+  folkloreCompareMeaning3Title: 'If you seek culture:',
+  folkloreCompareMeaning3Desc:
+    'You will not only dance but understand the meaning of each Orisha and their dance.',
+  folkloreCompareMeaning4Title: 'If you want community:',
+  folkloreCompareMeaning4Desc:
+    'You will become part of a family that shares a passion for Cuban culture.',
+  folkloreCompareCTA: 'Try the difference: first class',
+  folkloreCompareNote: 'No commitment. No pressure. Just authentic dance.',
+
+  // =====================================================================
+  // TIMBA PAGE - Unified page for Timba en Pareja + Lady Timba
+  // =====================================================================
+
+  // === META & SEO ===
+  timbaPageTitle: 'Timba Classes in Barcelona',
+  timbaMetaDescription:
+    "Timba classes in Barcelona: Partner Timba and Lady Timba with Cuban teachers. Learn to dance when they let you go in salsa. Farray's Center, CID-UNESCO academy.",
+  timbaCourseSchemaName: 'Cuban Timba Course in Barcelona',
+  timbaCourseSchemaDesc:
+    'Timba classes with professional Cuban teachers. Partner Timba and Lady Timba for women. Learn musical interpretation and Cuban despelote.',
+
+  // === BREADCRUMB ===
+  timbaBreadcrumbHome: 'Home',
+  timbaBreadcrumbClasses: 'Dance Classes',
+  timbaBreadcrumbLatin: 'Salsa & Bachata',
+  timbaBreadcrumbCurrent: 'Timba',
+
+  // === HERO SECTION ===
+  timbaHeroTitle: 'TIMBA IN BARCELONA',
+  timbaHeroSubtitle: 'What do you do when they let you go in salsa?',
+  timbaHeroDesc:
+    'Timba is the answer. Learn to interpret modern Cuban music with freedom, style and flavor. Classes for couples and Lady Timba feminine style.',
+  timbaHeroLocation: 'Plaza España, Barcelona · Metro L1/L3',
+  timbaHeroStudents: '+15,000 students trained',
+  timbaCTAGroup: 'Timba enrollment options',
+  timbaCTA1: 'Become a Member Now',
+  timbaCTA1Subtext: 'Limited spots',
+  timbaCTA2: 'Book Your Trial Class',
+  timbaCTA2Subtext: 'No commitment',
+
+  // === WHAT IS TIMBA SECTION ===
+  timbaWhatIsTitle: 'What is Cuban Timba?',
+  timbaWhatIsP1:
+    'Timba is the dance music that plays in Cuba today. It is the result of the natural evolution of Cuban music adapting to how Cuban youth dance today.',
+  timbaWhatIsP2:
+    'Timba fuses traditional Cuban rhythms—Yorúba music, Rumba and Son—with the musicality of modern genres like Hip Hop, R&B, Reggae and Funky. It is freedom of musical interpretation, personal style, 21st century Cuban flavor.',
+  timbaWhatIsP3:
+    '"Timba identifies a style, the freedom of musical interpretation and the new Cuban musical trends."',
+  timbaWhatIsP4:
+    'In our Timba classes you will learn to apply different steps at the right moments in the music, to dissociate different parts of your body and to feel Cuban music like never before.',
+  timbaWhatIsP5:
+    'We offer two modalities: Partner Timba for when you dance casino and they let you go, and Lady Timba for women who want to develop their feminine style and despelote.',
+  timbaWhatIsQuestionTitle: 'Do you dance Cuban salsa and go blank when they let you go?',
+  timbaWhatIsQuestionAnswer:
+    'Timba is your solution. You will never feel lost on the dance floor again.',
+
+  // === SCHEDULE SECTION ===
+  timbaScheduleTitle: 'Our Timba Class Schedules',
+  timbaScheduleSubtitle: '3 weekly classes · 2 modalities · 3 Cuban teachers',
+
+  // === LEVELS SECTION ===
+  timbaLevelsTitle: 'Timba Levels',
+  timbaLevelBasicTitle: 'Basic Lady Timba',
+  timbaLevelBasicDesc:
+    'For women with basic Cuban salsa level. Learn the fundamentals of feminine style, body movements and how to interpret the music when you dance alone.',
+  timbaLevelIntermediateTitle: 'Intermediate-Advanced Timba',
+  timbaLevelIntermediateDesc:
+    'For dancers with at least 1 year of Cuban salsa. Master improvisation, despelote, and multiply your resources for when they let you go in the dance.',
+
+  // === TEACHERS SECTION ===
+  timbaTeachersTitle: 'Your Timba Teachers',
+  timbaTeachersSubtitle: 'Learn from professional Cuban dancers',
+  timbaTeacher1Specialty: 'Director · Intermediate-Advanced Lady Timba',
+  timbaTeacher1Bio:
+    'Yunaisy Farray is the creator of the Farray Method and CID-UNESCO member. Lady Timba specialist, she will teach you to bring out your sexiest and most feminine side with authentic Cuban technique.',
+  timbaTeacher2Specialty: 'Partner Timba Teacher',
+  timbaTeacher2Bio:
+    'Grechén Mendez is a professional Cuban dancer trained at ISA. Expert in Partner Timba, she will teach you to interpret the music with your partner and improvise with style.',
+  timbaTeacher3Specialty: 'Basic Lady Timba Teacher',
+  timbaTeacher3Bio:
+    'Lia Valdés will introduce you to the world of Lady Timba with patience and technique. Perfect for taking your first steps in Cuban feminine style.',
+  timbaTeachersClosing:
+    'Three Cuban teachers, three complementary styles. Learn Timba from those who have lived it since the cradle.',
+
+  // === PREPARE CLASS SECTION ===
+  timbaPrepareTitle: 'How to Prepare for Your Timba Class?',
+  timbaPrepareSubtitle: 'Tips from Yunaisy Farray',
+  timbaPrepareWhatToBring: 'What to bring',
+  timbaPrepareItem1: 'Comfortable clothes that allow you to move freely',
+  timbaPrepareItem2: 'Dance shoes or socks (no street shoes)',
+  timbaPrepareItem3: 'Water bottle',
+  timbaPrepareItem4: 'Willingness to let loose and have fun',
+  timbaPrepareNeedItem1: 'Comfortable clothes that allow you to move freely',
+  timbaPrepareNeedItem2: 'Dance shoes or socks (no street shoes)',
+  timbaPrepareNeedItem3: 'Water bottle',
+  timbaPrepareNeedItem4: 'Willingness to let loose and have fun',
+  timbaPrepareBefore: 'Before coming',
+  timbaPrepareBeforeItem1: 'Listen to some Cuban Timba to familiarize yourself with the rhythm',
+  timbaPrepareBeforeItem2: 'Come with an open mind to experiment',
+  timbaPrepareBeforeItem3: 'No need to come with a partner (except Tuesday class)',
+  timbaPrepareAvoid: 'Avoid',
+  timbaPrepareAvoidItem1: 'Very tight clothes that limit movement',
+  timbaPrepareAvoidItem2: 'Coming with a very full stomach',
+  timbaPrepareAvoidItem3: 'Comparing yourself to others, everyone has their own rhythm',
+  timbaPrepareTeacherTip: 'Teacher tip',
+  timbaPrepareTeacherQuote:
+    '"Timba is freedom. Don\'t come thinking about perfect steps, come thinking about expressing yourself. Your body already knows how to dance, it just needs permission."',
+
+  // === IDENTIFICATION SECTION (Who is this for?) ===
+  timbaIdentifyTitle: 'Do you identify with any of these situations?',
+  timbaIdentify1:
+    "You dance Cuban salsa but when your partner lets you go, you don't know what to do",
+  timbaIdentify2: 'You want more resources and steps to improvise on the dance floor',
+  timbaIdentify3: 'You would like to feel sexier and more feminine when you dance (Lady Timba)',
+  timbaIdentify4: 'You have been dancing for a while but feel you lack "Cuban flavor"',
+  timbaIdentify5: 'You want to better understand modern Cuban music and its different parts',
+  timbaIdentify6: 'You are looking for classes with authentic Cuban teachers, not imitators',
+  timbaIdentifyTransition: 'If you said "yes" to any of these, Timba is for you.',
+  timbaNeedEnrollTitle: 'Why should you sign up today?',
+  timbaIdentifyAgitate1:
+    'Every party that passes without knowing what to do when they let you go is a missed opportunity to enjoy to the fullest.',
+  timbaIdentifySolution:
+    'With Timba, you will transform those awkward moments into your favorite moments of the night. You will have so many resources that you will wish they let you go more often.',
+  timbaIdentifyClosing:
+    "Don't wait any longer. Every week that passes is one less week enjoying your dancing at 100%.",
+
+  // === TRANSFORMATION SECTION (What will you achieve?) ===
+  timbaTransformTitle: 'What will you achieve in our Timba classes?',
+  timbaTransform1Title: 'Total Improvisation',
+  timbaTransform1Desc:
+    'You will never go blank again. You will have an infinite arsenal of movements for any moment in the music.',
+  timbaTransform2Title: 'Musical Interpretation',
+  timbaTransform2Desc:
+    'You will learn to listen to different instruments and dance each part of the music with the right step.',
+  timbaTransform3Title: 'Personal Style',
+  timbaTransform3Desc:
+    'You will develop your unique way of dancing, fusing Cuban technique with your personality.',
+  timbaTransform4Title: 'Body Dissociation',
+  timbaTransform4Desc:
+    'Your body will learn to move different parts independently, multiplying your expressive possibilities.',
+  timbaTransform5Title: 'Confidence on the Floor',
+  timbaTransform5Desc:
+    'You will feel confident dancing alone or with a partner. The dance floor will be your territory.',
+  timbaTransform6Title: 'Authentic Cuban Flavor',
+  timbaTransform6Desc:
+    "You will learn from Cuban teachers who have Timba in their blood. It's not imitation, it's direct transmission.",
+
+  // === WHY CHOOSE FARRAYS SECTION ===
+  timbaTransformCTA: "Why choose Farray's to learn Timba?",
+  timbaWhyChoose1Title: '100% Cuban Teachers',
+  timbaWhyChoose1Desc:
+    "Yunaisy, Grechén and Lia are Cuban by birth. You won't learn a European version of Timba, but the authentic one.",
+  timbaWhyChoose2Title: '3 Weekly Classes',
+  timbaWhyChoose2Desc:
+    'Partner Timba, Intermediate Lady Timba and Basic Lady Timba. Find the one that suits you best.',
+  timbaWhyChoose3Title: 'Progressive Method',
+  timbaWhyChoose3Desc:
+    'Start in Basic Lady Timba and progress to advanced level with a clear and effective methodology.',
+  timbaWhyChoose4Title: 'Connection with Salsa',
+  timbaWhyChoose4Desc:
+    'What you learn in Timba directly improves your Cuban salsa. They are two sides of the same coin.',
+  timbaWhyChoose5Title: 'Family Environment',
+  timbaWhyChoose5Desc:
+    "A community where you will feel welcome from day one. Here we don't judge, we celebrate.",
+  timbaWhyChoose6Title: 'No Commitment',
+  timbaWhyChoose6Desc:
+    "Pay month to month. If you can't come one month, no problem. Total flexibility.",
+  timbaWhyChoose7Title: 'CID-UNESCO Academy',
+  timbaWhyChoose7Desc:
+    'International recognition that endorses the quality of our teaching and methodology.',
+  timbaLogosTitle: 'Learn from recognized professionals',
+  timbaLogosIntlFestivalsText: '+ International salsa festivals',
+
+  // === WHY TODAY SECTION ===
+  timbaWhyTodayFullTitle: 'Why start today and not "next month"?',
+  timbaWhyToday1:
+    "Timba is not just a dance style, it's a way of living Cuban music. Every day that passes without learning it is one less day enjoying salsa at the highest level.",
+  timbaWhyToday2:
+    'Groups are small to ensure personalized attention. Spots fill up fast, especially in Lady Timba with Yunaisy.',
+  timbaWhyToday3:
+    "You don't need to be an expert in salsa to start. If you have been dancing for at least a year, you have enough foundation.",
+  timbaWhyTodayClosing1: 'Your next party could be completely different.',
+  timbaWhyTodayClosing2:
+    'Imagine yourself dancing with confidence, knowing exactly what to do at every moment in the music...',
+
+  // === CULTURAL HISTORY SECTION ===
+  timbaCulturalHistoryTitle: 'History and Origins of Cuban Timba',
+  timbaCulturalShort:
+    'Timba was born in Cuba in the 80s-90s as an evolution of Son and Salsa, fusing traditional African rhythms with modern genres.',
+  timbaCulturalFull:
+    '## The Origins of Timba\n\nTimba emerged in Havana during the 80s and reached its peak expression in the 90s. It is the result of the natural evolution of Cuban music, when young Cuban musicians began fusing traditional Son with influences from funk, hip hop, rock and jazz.\n\n## Why is it called "Timba"?\n\nThe term "Timba" has roots in Cuban slang. Some relate it to "timbales" (percussion instrument), others to popular Cuban expressions. What everyone agrees on is that it represents something intense, street-wise and authentic.\n\n## The Bands that Defined the Genre\n\nGroups like **Los Van Van**, **NG La Banda**, **La Charanga Habanera**, **Manolín "El Médico de la Salsa"** and **Paulito FG** were the pioneers who defined the Timba sound. Their music is characterized by:\n\n- **Constant rhythm changes** (from soft to explosive)\n- **The "despelote"** - sections where the rhythm intensifies\n- **Urban lyrics** that talk about everyday Cuban life\n- **Improvisation** both musical and in dance\n\n## Timba as Dance\n\nMusically, Timba demands a different dance. Dancers developed looser, more sensual and expressive movements to respond to the changes in the music. This is how the Timba dance style was born, with its characteristic "despelote" and freedom of individual movement.\n\n## Lady Timba: The Feminine Style\n\nLady Timba or "Timba for women" focuses on developing the feminine style within this genre. It emphasizes hip movements, sensuality and body expression, allowing women to shine when they dance alone or when they are "let go" in partner dancing.\n\n## Timba Today\n\nTimba continues to evolve in Cuba and around the world. In Barcelona, academies like Farray\'s Center keep this tradition alive with Cuban teachers who transmit not just the steps, but the feeling and culture behind each movement.',
+
+  // === FAQ SECTION ===
+  timbaFaqTitle: 'Frequently Asked Questions about Timba',
+  timbaFaqQ1: 'What level of salsa do I need to start Timba?',
+  timbaFaqA1:
+    'For Basic Lady Timba (Friday) we recommend at least 6 months of Cuban salsa. For Partner Timba (Tuesday) and Intermediate Lady Timba (Thursday), we recommend at least 1 year of Cuban salsa experience.',
+  timbaFaqQ2: 'What is the difference between Partner Timba and Lady Timba?',
+  timbaFaqA2:
+    'Partner Timba (Tuesday) works on musical interpretation when you dance with someone and they momentarily let you go. Lady Timba (Thursday and Friday) is focused exclusively on feminine style and is only for women.',
+  timbaFaqQ3: 'Can I come without a partner to the Partner Timba class?',
+  timbaFaqA3:
+    "For the Tuesday Partner Timba class, it is recommended to come with a partner as connection exercises are worked on. For Lady Timba you don't need a partner, it's individual.",
+  timbaFaqQ4: 'What is the "despelote" they mention so much?',
+  timbaFaqA4:
+    'The "despelote" is the moment in Timba music where the rhythm intensifies and dancers "let loose" to improvise with freer and more expressive movements. It\'s the most fun part of Timba.',
+  timbaFaqQ5: 'What clothes should I wear to Timba class?',
+  timbaFaqA5:
+    'Comfortable clothes that allow you to move freely. For Lady Timba, many students come in clothes that make them feel feminine (skirts, dresses). Footwear: dance shoes or socks.',
+  timbaFaqQ6: 'Will Timba help me improve my Cuban salsa?',
+  timbaFaqA6:
+    'Absolutely. Timba and Cuban salsa go hand in hand. What you learn in Timba (musical interpretation, improvisation, despelote) directly improves your partner dancing.',
+  timbaFaqQ7: 'How much does the trial class cost?',
+  timbaFaqA7:
+    'The trial class costs €10. If you sign up that same day, it is deducted from the first month.',
+  timbaFaqQ8: 'Is there a contract or minimum commitment?',
+  timbaFaqA8:
+    "No. At Farray's we work month to month, without contracts or commitments. You only pay for the months you come.",
+  timbaFaqQ9: 'Can I try all three Timba classes before deciding?',
+  timbaFaqA9:
+    'Yes, you can try each class paying €10 for each. This way you can see which one best suits your level and preferences.',
+  timbaFaqQ10: 'Are Timba classes only for women?',
+  timbaFaqA10:
+    'Lady Timba (Thursday and Friday) is exclusively for women. Partner Timba (Tuesday) is mixed and both men and women can attend.',
+  timbaFaqQ11: 'What music is used in Timba classes?',
+  timbaFaqA11:
+    "We use authentic Cuban Timba: Los Van Van, NG La Banda, La Charanga Habanera, Havana D'Primera, Maykel Blanco and more. Music that is danced at Cuban salsa parties.",
+  timbaFaqQ12: 'Can I start in Intermediate Lady Timba if I have never done Lady Timba?',
+  timbaFaqA12:
+    'If you have a good level of Cuban salsa (+2 years), you can start directly at the intermediate level. If you have doubts, come try a class and Yunaisy will guide you.',
+
+  // === NEARBY AREAS SECTION (Local SEO) ===
+  timbaNearbyTitle: 'Timba classes near you in Barcelona',
+  timbaNearbyDesc:
+    "Farray's Center is at Plaza España, perfectly connected by metro (L1 and L3) and bus. Students from all over Barcelona come to learn Timba with us.",
+  timbaNearbySearchText: 'Looking for "Timba classes near me"? See how easy it is to get here:',
+  timbaNearbyMetro: 'Metro: Plaza España (L1, L3) · Hostafrancs (L1) · Tarragona (L3)',
+
+  // === FINAL CTA SECTION ===
+  timbaFinalCTATitle: 'Ready to transform the way you dance?',
+  timbaFinalCTASubtitle: 'Your first Timba class awaits',
+  timbaFinalCTADesc:
+    "It doesn't matter if you have never done Timba. What matters is that you want to improve, enjoy more and feel free on the dance floor. Our Cuban teachers will guide you step by step.",
+  timbaFinalCTAFunny:
+    '"Before I would freeze like a statue when they let me go. Now I wish they would let me go." — Anonymous student 😄',
 };
