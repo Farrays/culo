@@ -58,111 +58,129 @@ const PrepareClassSection: React.FC<PrepareClassSectionProps> = ({
               <p className="text-lg text-neutral/70 max-w-2xl mx-auto">{t(subtitleKey)}</p>
             </div>
 
-            {/* Cards Grid con efecto glass */}
+            {/* Cards Grid con efecto glass y 3D */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
               {/* Qué traer - Card */}
-              <AnimateOnScroll delay={0}>
-                <div className="h-full p-6 sm:p-8 bg-black/60 backdrop-blur-xl border border-primary-accent/40 rounded-2xl">
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-accent/30 to-primary-accent/10 flex items-center justify-center">
-                      <svg
-                        className="w-6 h-6 text-primary-accent"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={1.5}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-                        />
-                      </svg>
+              <AnimateOnScroll delay={0} className="[perspective:1000px]">
+                <div className="group h-full p-6 sm:p-8 bg-black/60 backdrop-blur-xl border border-primary-accent/40 rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.75rem)_rotateY(5deg)_rotateX(2deg)] hover:shadow-accent-glow relative overflow-hidden">
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl bg-primary-accent/20"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-accent/30 to-primary-accent/10 flex items-center justify-center">
+                        <svg
+                          className="w-6 h-6 text-primary-accent"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={1.5}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                          />
+                        </svg>
+                      </div>
+                      <h4 className="text-xl font-bold text-neutral">
+                        {t(`${prefix}WhatToBring`)}
+                      </h4>
                     </div>
-                    <h4 className="text-xl font-bold text-neutral">{t(`${prefix}WhatToBring`)}</h4>
+                    <ul className="space-y-3">
+                      {Array.from({ length: whatToBringCount }, (_, i) => i + 1).map(num => (
+                        <li key={num} className="flex items-start gap-3 text-neutral/80">
+                          <div className="w-5 h-5 rounded-full bg-primary-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <CheckIcon className="w-3 h-3 text-primary-accent" />
+                          </div>
+                          <span className="text-sm leading-relaxed">
+                            {t(`${prefix}Item${num}`)}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="space-y-3">
-                    {Array.from({ length: whatToBringCount }, (_, i) => i + 1).map(num => (
-                      <li key={num} className="flex items-start gap-3 text-neutral/80">
-                        <div className="w-5 h-5 rounded-full bg-primary-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <CheckIcon className="w-3 h-3 text-primary-accent" />
-                        </div>
-                        <span className="text-sm leading-relaxed">{t(`${prefix}Item${num}`)}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </AnimateOnScroll>
 
               {/* Antes de llegar - Card */}
-              <AnimateOnScroll delay={100}>
-                <div className="h-full p-6 sm:p-8 bg-black/60 backdrop-blur-xl border border-primary-dark/50 rounded-2xl transition-all duration-300 hover:border-primary-accent/30">
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-dark/50 to-primary-dark/20 flex items-center justify-center">
-                      <ClockIcon className="w-6 h-6 text-primary-accent" />
+              <AnimateOnScroll delay={100} className="[perspective:1000px]">
+                <div className="group h-full p-6 sm:p-8 bg-black/60 backdrop-blur-xl border border-primary-dark/50 rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.75rem)_rotateY(5deg)_rotateX(2deg)] hover:shadow-accent-glow hover:border-primary-accent/30 relative overflow-hidden">
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl bg-primary-dark/25"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-dark/50 to-primary-dark/20 flex items-center justify-center">
+                        <ClockIcon className="w-6 h-6 text-primary-accent" />
+                      </div>
+                      <h4 className="text-xl font-bold text-neutral">{t(`${prefix}Before`)}</h4>
                     </div>
-                    <h4 className="text-xl font-bold text-neutral">{t(`${prefix}Before`)}</h4>
+                    <ul className="space-y-3">
+                      {Array.from({ length: beforeCount }, (_, i) => i + 1).map(num => (
+                        <li key={num} className="flex items-start gap-3 text-neutral/80">
+                          <div className="w-5 h-5 rounded-full bg-primary-dark/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span className="text-xs text-neutral font-bold">{num}</span>
+                          </div>
+                          <span className="text-sm leading-relaxed">
+                            {t(`${prefix}BeforeItem${num}`)}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="space-y-3">
-                    {Array.from({ length: beforeCount }, (_, i) => i + 1).map(num => (
-                      <li key={num} className="flex items-start gap-3 text-neutral/80">
-                        <div className="w-5 h-5 rounded-full bg-primary-dark/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <span className="text-xs text-neutral font-bold">{num}</span>
-                        </div>
-                        <span className="text-sm leading-relaxed">
-                          {t(`${prefix}BeforeItem${num}`)}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </AnimateOnScroll>
 
               {/* Evita - Card */}
-              <AnimateOnScroll delay={200}>
-                <div className="h-full p-6 sm:p-8 bg-black/60 backdrop-blur-xl border border-neutral/30 rounded-2xl transition-all duration-300 hover:border-primary-accent/30">
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-neutral/20 to-neutral/5 flex items-center justify-center">
-                      <svg
-                        className="w-6 h-6 text-primary-accent"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={1.5}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
-                        />
-                      </svg>
+              <AnimateOnScroll delay={200} className="[perspective:1000px]">
+                <div className="group h-full p-6 sm:p-8 bg-black/60 backdrop-blur-xl border border-neutral/30 rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.75rem)_rotateY(5deg)_rotateX(2deg)] hover:shadow-accent-glow hover:border-primary-accent/30 relative overflow-hidden">
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl bg-neutral/15"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-neutral/20 to-neutral/5 flex items-center justify-center">
+                        <svg
+                          className="w-6 h-6 text-primary-accent"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={1.5}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
+                          />
+                        </svg>
+                      </div>
+                      <h4 className="text-xl font-bold text-neutral">{t(`${prefix}Avoid`)}</h4>
                     </div>
-                    <h4 className="text-xl font-bold text-neutral">{t(`${prefix}Avoid`)}</h4>
+                    <ul className="space-y-3">
+                      {Array.from({ length: avoidCount }, (_, i) => i + 1).map(num => (
+                        <li key={num} className="flex items-start gap-3 text-neutral/80">
+                          <div className="w-5 h-5 rounded-full bg-neutral/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span className="text-xs text-neutral/60">✕</span>
+                          </div>
+                          <span className="text-sm leading-relaxed">
+                            {t(`${prefix}AvoidItem${num}`)}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="space-y-3">
-                    {Array.from({ length: avoidCount }, (_, i) => i + 1).map(num => (
-                      <li key={num} className="flex items-start gap-3 text-neutral/80">
-                        <div className="w-5 h-5 rounded-full bg-neutral/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <span className="text-xs text-neutral/60">✕</span>
-                        </div>
-                        <span className="text-sm leading-relaxed">
-                          {t(`${prefix}AvoidItem${num}`)}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </AnimateOnScroll>
             </div>
 
-            {/* Quote del profesor - Premium Style */}
-            <AnimateOnScroll delay={300}>
-              <div className="relative p-8 sm:p-10 bg-gradient-to-r from-primary-accent/15 via-black/80 to-primary-accent/15 backdrop-blur-xl rounded-3xl border border-primary-accent/30 overflow-hidden">
+            {/* Quote del profesor - Premium Style con 3D */}
+            <AnimateOnScroll delay={300} className="[perspective:1000px]">
+              <div className="group relative p-8 sm:p-10 bg-gradient-to-r from-primary-accent/15 via-black/80 to-primary-accent/15 backdrop-blur-xl rounded-3xl border border-primary-accent/30 overflow-hidden transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.75rem)_rotateY(3deg)_rotateX(2deg)] hover:shadow-accent-glow hover:border-primary-accent/50">
+                {/* Glow effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl blur-xl bg-primary-accent/15"></div>
                 {/* Decorative elements */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary-accent/10 rounded-full blur-2xl"></div>
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-primary-dark/20 rounded-full blur-2xl"></div>
 
-                <div className="relative flex flex-col md:flex-row items-center gap-6">
+                <div className="relative z-10 flex flex-col md:flex-row items-center gap-6">
                   {/* Avatar del profesor */}
                   <div className="flex-shrink-0">
                     <div className="w-20 h-20 rounded-full overflow-hidden border-3 border-primary-accent/50 shadow-accent-glow">

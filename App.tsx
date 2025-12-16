@@ -44,6 +44,7 @@ const EstudioGrabacionPage = lazy(() => import('./components/EstudioGrabacionPag
 const FacilitiesPage = lazy(() => import('./components/FacilitiesPage'));
 const HeelsBarcelonaPage = lazy(() => import('./components/HeelsBarcelonaPage'));
 const SalsaLadyStylePage = lazy(() => import('./components/SalsaLadyStylePage'));
+const SalsaLadyStylePageV2 = lazy(() => import('./components/SalsaLadyStylePageV2'));
 
 // ===== DANCE CLASS PAGES USING UNIFIED TEMPLATE =====
 // Migrated from ~900 lines each to ~15 lines using FullDanceClassTemplate
@@ -63,6 +64,7 @@ const AfroJazzPage = lazy(() => import('./components/AfroJazzPage'));
 const HipHopPage = lazy(() => import('./components/HipHopPage'));
 const SalsaCubanaPage = lazy(() => import('./components/SalsaCubanaPage'));
 const FolkloreCubanoPage = lazy(() => import('./components/FolkloreCubanoPage'));
+const TimbaPage = lazy(() => import('./components/TimbaPage'));
 
 // Valid locales - use centralized constant from types.ts
 const VALID_LOCALES = SUPPORTED_LOCALES;
@@ -350,12 +352,33 @@ const AppContent: React.FC = () => {
               }
             />
 
+            {/* V2 Alternative - for A/B testing comparison */}
+            <Route
+              path="/:locale/clases/salsa-lady-style-v2"
+              element={
+                <>
+                  <LocaleSync />
+                  <SalsaLadyStylePageV2 />
+                </>
+              }
+            />
+
             <Route
               path="/:locale/clases/folklore-cubano"
               element={
                 <>
                   <LocaleSync />
                   <FolkloreCubanoPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/clases/timba-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <TimbaPage />
                 </>
               }
             />

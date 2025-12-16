@@ -4879,7 +4879,7 @@ Farray's International Dance Center està valorat prop del **5/5 a Google**, amb
     "Amb Alejandro aprendràs tècnica sòlida mentre descobreixes la teva pròpia forma d'expressar-te.",
 
   // Schedule Section
-  modernjazzScheduleTitle: 'Horari de classes de Modern Jazz',
+  modernjazzScheduleTitle: 'Horari de les nostres classes de Modern Jazz',
   modernjazzScheduleSubtitle: 'Classes amb Alejandro Miñoso',
 
   // Video Section
@@ -5436,12 +5436,13 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
     'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min caminant, Entença (L5) - 5 min caminant o Hostafrancs (L1) - 5 min caminant',
 
   // ===== Level Cards =====
+  balletLevelsTitle: 'Nivells de Ballet',
   balletLevelBasicTag: 'PRINCIPIANTS',
-  balletLevelBasicTitle: 'Classes per a Principiants amb Alejandro Miñoso',
+  balletLevelBasicTitle: 'Nivell Principiant',
   balletLevelBasicDesc:
     'Comença des de zero amb les bases de la tècnica clàssica. Aprèn les cinc posicions, treball de barra, postura correcta i els fonaments que construiran el teu camí en el ballet. Ambient acollidor i ritme adaptat.',
   balletLevelIntermediateTag: 'INTERMEDI',
-  balletLevelIntermediateTitle: 'Classes Intermèdies amb Daniel Sené',
+  balletLevelIntermediateTitle: 'Nivell Intermedi',
   balletLevelIntermediateDesc:
     'Perfecciona la teva tècnica amb treball de centre més complex, pirouettes, allegro i repertori clàssic. Per a ballarins amb bases sòlides que volen portar el seu ballet al següent nivell.',
 
@@ -5461,7 +5462,7 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
   balletPrepareAvoidItem1: 'Joies, anells, polseres o accessoris',
   balletPrepareAvoidItem2: 'Roba molt ampla que impedeixi veure la teva postura',
   balletPrepareAvoidItem3: 'Calçat de carrer a la sala (hi ha vestuaris)',
-  balletPrepareTeacherTip: "Consell d'Alejandro:",
+  balletPrepareTeacherTip: 'Consell de Daniel:',
   balletPrepareTeacherQuote:
     'El ballet és paciència i constància. No et frustris si els primers dies et costa. Cada gran ballarí va començar exactament on tu estàs ara. Gaudeix del procés.',
 
@@ -5507,6 +5508,7 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
   // MODERN JAZZ - Traduccions addicionals
   // ========================================
 
+  modernjazzCulturalHistoryTitle: 'Història i Evolució del Modern Jazz',
   modernjazzCulturalTitle: 'Història i Evolució del Modern Jazz',
   modernjazzPrepareTitle: 'Prepara la teva primera classe de Modern Jazz',
   modernjazzPrepareSubtitle: 'Tot el que necessites saber abans de venir',
@@ -5559,6 +5561,7 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
     "El Modern Jazz és el pont perfecte entre la tècnica clàssica i l'expressió contemporània.",
 
   // ===== Level Cards Section =====
+  modernjazzLevelsTitle: 'Nivells de Modern Jazz',
   modernjazzLevelBasicTitle: 'Fonaments i expressió',
   modernjazzLevelBasicDesc:
     'Classe ideal per a qui comença o vol assentar bases sòlides. Treballem postura, isolations, coordinació i primeres coreografies amb música variada. Zero pressió, molta diversió.',
@@ -6051,15 +6054,18 @@ Treballa integralment: **flexibilitat, força funcional, coordinació, propiocep
   contemporaneoScheduleSubtitle: 'Dos estils, múltiples horaris: troba la teva classe perfecta',
 
   // Level Cards Section
-  contemporaneoLevelLiricoBasicoTitle: 'Contemporani Líric Bàsic',
+  contemporaneoLevelPrincipianteTitle: 'Líric Principiants',
+  contemporaneoLevelPrincipianteDesc:
+    'Primera presa de contacte amb la dansa contemporània. Moviment fluid, expressió emocional i connexió amb la música. Sense requisits previs.',
+  contemporaneoLevelLiricoBasicoTitle: 'Líric Bàsic',
   contemporaneoLevelLiricoBasicoDesc:
-    'Ideal per iniciar-te en la dansa contemporània. Treballaràs expressió corporal, musicalitat i moviments fluids. Tècnica accessible amb enfocament en la connexió emocional amb la música.',
-  contemporaneoLevelLiricoIntermedioTitle: 'Contemporani Líric Intermedi',
+    'Continua desenvolupant la teva tècnica lírica amb seqüències més elaborades. Per a alumnes que ja han fet classes de contemporani o tenen bases de ballet/dansa.',
+  contemporaneoLevelLiricoIntermedioTitle: 'Líric Intermedi',
   contemporaneoLevelLiricoIntermedioDesc:
-    'Aprofundeix la teva tècnica lírica amb seqüències més complexes, major treball interpretatiu i exploració del teu propi estil. Per a alumnes amb base prèvia.',
-  contemporaneoLevelSueloFlowTitle: 'Contemporani Terra & Flow',
+    'Seqüències complexes, treball interpretatiu i desenvolupament del teu estil personal. Requisit: almenys 1 any de classes de contemporani o bases sòlides de dansa.',
+  contemporaneoLevelSueloFlowTitle: 'Terra & Flow',
   contemporaneoLevelSueloFlowDesc:
-    "Tècniques de floorwork, release i contact. Aprèn a moure't amb fluïdesa entre el terra i l'aire. Treball de respiració, pes corporal i transicions orgàniques.",
+    'Floorwork, release i transicions orgàniques entre terra i aire. Classe exigent físicament. Requisit: bases tècniques de contemporani, ballet o experiència en dansa.',
 
   // Prepare Section
   contemporaneoPrepareTitle: 'Prepara la teva primera classe de Contemporani',
@@ -6528,13 +6534,16 @@ L'Afro Contemporani impartit a **Farray's International Dance Center** forma par
   afrocontemporaneoCourseSchemaDesc:
     "Aprèn Afro Contemporani amb Yunaisy Farray, mestra CID-UNESCO formada a l'ENA Cuba. Tècnica de perfeccionament per a ballarins.",
 
+  // Level cards section
+  afrocontemporaneoLevelsTitle: "Nivells d'Afro Contemporani",
+
   // Level cards descriptions
-  afrocontemporaneoLevelBasicTitle: 'Afro Contemporani Bàsic amb Charlie Breezy',
+  afrocontemporaneoLevelBasicTitle: 'Nivell Bàsic',
   afrocontemporaneoLevelBasicDesc:
-    "Per als qui s'inicien en aquesta disciplina. Charlie Breezy guia els fonaments de l'Afro Contemporani: dissociació corporal, ritmes afrocubans i connexió amb la música. Aprèn les bases amb un professor que combina tècnica i energia contagiosa.",
-  afrocontemporaneoLevelIntAdvTitle: 'Afro Contemporani Intermedi/Avançat amb Yunaisy Farray',
+    "Per als qui s'inicien en aquesta disciplina. Aprendràs els fonaments de l'Afro Contemporani: dissociació corporal, ritmes afrocubans i connexió amb la música. Sense experiència prèvia requerida.",
+  afrocontemporaneoLevelIntAdvTitle: 'Nivell Intermedi / Avançat',
   afrocontemporaneoLevelIntAdvDesc:
-    "Per a ballarins amb experiència prèvia. Yunaisy Farray, mestra formada a l'ENA Cuba i reconeguda pel CID-UNESCO, treballa seqüències avançades, interpretació musical i perfeccionament tècnic. Classes de 90 minuts per aprofundir en la disciplina.",
+    "Requereix mínim 1 any d'experiència en dansa o bases tècniques importants (ballet, contemporani, jazz). Seqüències avançades, interpretació musical i perfeccionament tècnic. Classes de 90 minuts.",
 
   // Prepara tu primera clase Section
   afrocontemporaneoPrepareTitle: "Prepara la teva primera classe d'Afro Contemporani",
@@ -7845,6 +7854,14 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   salsaLadyLogosTitle: "Has pogut veure'ns a…",
   salsaLadyLogosIntlFestivalsText: 'i als millors festivals de ball de tot el món',
 
+  // Tacones en Salsa Section (before Cultural History)
+  salsaLadyTaconesTitle: 'Talons a la Salsa: El Teu Millor Aliat',
+  salsaLadyTaconesDesc:
+    'El domini dels talons transforma completament el teu ball. A les nostres classes de Lady Style, els talons no són només un accessori, són una eina per desenvolupar elegància, postura i presència escènica.',
+  salsaLadyTaconesBenefit1: 'Postura perfecta',
+  salsaLadyTaconesBenefit2: 'Elegància natural',
+  salsaLadyTaconesBenefit3: 'Confiança al ballar',
+
   // Why Today Section
   salsaLadyWhyTodayFullTitle: 'Per què avui és el millor moment per començar Lady Style?',
   salsaLadyWhyToday1:
@@ -8025,7 +8042,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   contemporaneoCaloriesStat: 'Calories Cremades',
   contemporaneoDanceStat: 'Dansa',
   contemporaneoLevelsTitle: 'Quin tipus de Contemporani va amb tu?',
-  contemporaneoLevelsSubtitle: 'Tres modalitats per a diferents objectius i sensibilitats',
+  contemporaneoLevelsSubtitle: 'Quatre modalitats per a diferents objectius i sensibilitats',
   danceClassesHub_cta_member: 'Fes-te Soci Ara',
   danceClassesHub_cta_trial: 'Reserva la Teva Classe de Prova',
 
@@ -8947,7 +8964,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
     'Descobreix els orígens de la salsa cubana a través de les danses rituals als Orixàs.',
   folkloreHeroLocation:
     'Acadèmia membre del CID-UNESCO | Classes amb mestres cubans, entre Plaça Espanya i Sants',
-  folkloreHeroStudents: '+500 alumnes formats en Folklore Cubà',
+  folkloreHeroStudents: '+15.000 alumnes formats',
 
   // CTAs
   folkloreCTA1: 'Fes-te Soci Ara',
@@ -8974,7 +8991,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   folkloreCulturalShort:
     'El Folklore Cubà es defineix com el conjunt de tradicions populars transmeses oralment, incloent danses rituals, música, llegendes ("Patakíes") i pràctiques culturals de la població cubana, amb fort èmfasi en arrels afrodescendents adaptades al context insular.',
   folkloreCulturalFull:
-    "### Influències culturals\nDes del segle XVI, el folklore cubà sorgeix del sincretisme entre esclaus africans (Yoruba, Congo, Arará), colonitzadors espanyols (romanç, contradansa) i aportacions caribenyes menors (haitià, jamaicà), amb empremta aborigen gairebé inexistent. Les condicions socioeconòmiques de les plantacions van transformar cultes africans en expressions com Santeria i Palo, on danses rituals preserven polirrítmia i gestualitat ancestral.\n### Evolució històrica\nAl segle XIX, societats secretes i cabildos africans van mantenir danses com Yoruba i Abakuá en contextos religiosos. A inicis del XX, la Societat de Folklore Cubà (1923-1930) inicia el seu estudi sistemàtic, mentre grups com Los Muñequitos de Matanzas professionalitzen la rumba. Post-1959, institucions com l'Escola Nacional d'Art codifiquen aquestes formes per a escenari.\n### Manifestacions principals\nEl folklore tradicional inclou:\n**Yoruba:** Danses als Orixàs (Eleguá, Yemayá, Obatalá, Ochún, Changó).\n**Congo/Bantu:** Palo, Makuta, Garabato.\n**Abakuá:** Efo, Efi.\n**Arará:** Afra, Gun, Jebbioso.\n**Iyesá:** Danses Iyesá.\n**Rumba:** Guaguancó, Yambú, Columbia (variants amb matxets, mocador).\n### Influència en balls populars\nRitmes i moviments folklòrics nodreixen gèneres seculars com Conga, Comparsa, Son Montuno (Changüí, Sucu-sucu), Danzón i Casino, base de la salsa cubana moderna, fusionant percussió batá amb estructures ballables.\n### Folklore a Farray's Center Barcelona\nFarray's International Dance Center ofereix classes de Folklore Cubà amb mestres cubans especialitzats, connectant arrels Yoruba i Congoleses per elevar expressió corporal en salsa i ritmes llatins a Barcelona.",
+    "### Influències culturals\nDes del segle XVI, el folklore cubà sorgeix del sincretisme entre esclaus africans (Yoruba, Congo, Arará), colonitzadors espanyols (romanç, contradansa) i aportacions caribenyes menors (haitià, jamaicà), amb empremta aborigen gairebé inexistent. Les condicions socioeconòmiques de les plantacions van transformar cultes africans en expressions com Santeria i Palo, on danses rituals preserven polirrítmia i gestualitat ancestral.\n### Què és l'Afro Cubà?\nL'**Afro Cubà** (també anomenat \"Afro\" o \"danses afrocubanes\") és el terme que engloba totes les expressions dancístiques de Cuba amb arrel africana. Quan busques **classes d'Afro a Barcelona** o **danses africanes**, l'Afro Cubà és la disciplina que connecta Àfrica amb el Carib. A diferència de les danses africanes pures (Sabar senegalès, Coupé Décalé), l'Afro Cubà fusiona moviments Yoruba, Congo i Bantú amb la musicalitat caribenca, creant un estil únic que és la base de la salsa cubana.\n### Evolució històrica\nAl segle XIX, societats secretes i cabildos africans van mantenir danses com Yoruba i Abakuá en contextos religiosos. A inicis del XX, la Societat de Folklore Cubà (1923-1930) inicia el seu estudi sistemàtic, mentre grups com Los Muñequitos de Matanzas professionalitzen la rumba. Post-1959, institucions com l'Escola Nacional d'Art codifiquen aquestes formes per a escenari.\n### Manifestacions principals\nEl folklore tradicional inclou:\n**Yoruba:** Danses als Orixàs (Eleguá, Yemayá, Obatalá, Ochún, Changó).\n**Congo/Bantu:** Palo, Makuta, Garabato.\n**Abakuá:** Efo, Efi.\n**Arará:** Afra, Gun, Jebbioso.\n**Iyesá:** Danses Iyesá.\n**Haitià:** Vudú, Sabone, Fey, Congo Laye, Gagá, Tumba Francesa, Merengue haitià, Ibbo, Menua.\n**Jamaicà:** Banana, Brown, Mangú, Chulo, Cinta, Limbo.\n**Rumba:** Guaguancó, Yambú i Columbia. La Columbia inclou: Columbia tradicional, Jiribilla, i variants amb objectes (matxets, ganivets, bastó, plat amb espelma, mocador, entre altres).\n### Influència en balls populars\nRitmes i moviments folklòrics nodreixen gèneres seculars com Conga, Comparsa, Son Montuno (Changüí, Sucu-sucu), Danzón i Casino, base de la salsa cubana moderna, fusionant percussió batá amb estructures ballables.\n### Classes d'Afro Cubà a Barcelona\nFarray's International Dance Center és l'acadèmia de referència per aprendre **Afro Cubà a Barcelona**. Els nostres mestres cubans especialitzats et connecten amb les arrels Yoruba i Congoleses, elevant la teva expressió corporal en salsa i ritmes llatins. Si busques **classes d'Afro**, **danses africanes** o **Afro Cubà a Barcelona**, aquí trobaràs la formació més autèntica.",
 
   // Identification Section
   folkloreIdentifyTitle: "T'identifiques amb alguna d'aquestes situacions?",
@@ -9166,6 +9183,19 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   folkloreFaqQ10: "On és l'acadèmia i com contacto?",
   folkloreFaqA10:
     'Som al Carrer Entença 100, 08015 Barcelona (a 5 min de Plaça Espanya i Sants).<br/><br/>📞 <strong>Telèfon:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+  // SEO FAQs per Afro Cubà, Afro Barcelona, Danses Africanes
+  folkloreFaqQ11: "Què és l'Afro Cubà i en què es diferencia del Folklore Cubà?",
+  folkloreFaqA11:
+    "L'Afro Cubà és el component més antic i profund del Folklore Cubà: les danses i ritmes portats d'Àfrica pels esclaus i preservats a través dels segles en la religió Yoruba. A les nostres classes de Folklore Cubà treballem específicament aquest patrimoni afrocubà, aprenent les danses dels Orixàs (Yemayá, Changó, Ochún, Elegguá...) amb el seu significat ritual i moviments originals. Si busques <strong>classes d'Afro Cubà a Barcelona</strong>, aquí tens l'autèntica tradició ensenyada per mestres cubans.",
+  folkloreFaqQ12: 'Puc aprendre danses africanes a Barcelona amb vosaltres?',
+  folkloreFaqA12:
+    "Sí, però amb un matís important: ensenyem <strong>danses afrocubanes</strong> —la branca africana que va arrelar i evolucionar a Cuba—. Si busques <strong>classes de danses africanes a Barcelona</strong> amb arrels autèntiques, el nostre Folklore Cubà et connectarà amb els ritmes Yoruba, Congo i Arará que van sobreviure a l'illa. A més, oferim Afrobeat, Afro-Contemporani i Afro-Jazz si t'interessen altres expressions de la diàspora africana.",
+  folkloreFaqQ13: "Quina diferència hi ha entre l'Afro Cubà i l'Afrobeat o l'Afro Contemporani?",
+  folkloreFaqA13:
+    "L'<strong>Afro Cubà</strong> (Folklore Cubà) és tradicional i ritual: danses dels Orixàs, rumba, música de batà. L'<strong>Afrobeat</strong> és modern i urbà: nascut a Nigèria amb Fela Kuti, barreja funk, jazz i ritmes africans contemporanis. L'<strong>Afro Contemporani</strong> fusiona tècnica de dansa contemporània amb moviments d'arrel africana. A Farray's oferim els tres estils perquè puguis explorar diferents facetes de la riquesa africana.",
+  folkloreFaqQ14: "Les classes d'Afro Cubà serveixen per millorar en altres estils?",
+  folkloreFaqA14:
+    'Absolutament. Estudiar <strong>Afro Cubà a Barcelona</strong> millora la teva comprensió de la salsa cubana (que té arrels directes en aquests ritmes), et dóna més sabor i connexió amb la música, i desenvolupa una qualitat de moviment orgànica que beneficia qualsevol estil llatí o urbà. Molts alumnes de salsa descobreixen que el folklore transforma completament el seu ball.',
 
   // Why Us Comparison Section
   folkloreCompareTitle:
@@ -9212,4 +9242,240 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
     "Formaràs part d'una família que comparteix passió per la cultura cubana.",
   folkloreCompareCTA: 'Prova la diferència: primera classe',
   folkloreCompareNote: 'Sense permanència. Sense pressió. Només ball autèntic.',
+
+  // =====================================================================
+  // TIMBA PAGE - Unified page for Timba en Pareja + Lady Timba
+  // =====================================================================
+
+  // === META & SEO ===
+  timbaPageTitle: 'Classes de Timba a Barcelona',
+  timbaMetaDescription:
+    "Classes de Timba a Barcelona: Timba en Parella i Lady Timba amb mestres cubans. Aprèn a ballar quan et deixen anar a la salsa. Farray's Center, acadèmia CID-UNESCO.",
+  timbaCourseSchemaName: 'Curs de Timba Cubana a Barcelona',
+  timbaCourseSchemaDesc:
+    'Classes de Timba amb mestres cubans professionals. Timba en parella i Lady Timba per a dones. Aprèn interpretació musical i despelote cubà.',
+
+  // === BREADCRUMB ===
+  timbaBreadcrumbHome: 'Inici',
+  timbaBreadcrumbClasses: 'Classes de Ball',
+  timbaBreadcrumbLatin: 'Salsa i Batxata',
+  timbaBreadcrumbCurrent: 'Timba',
+
+  // === HERO SECTION ===
+  timbaHeroTitle: 'TIMBA A BARCELONA',
+  timbaHeroSubtitle: 'Què fas quan et deixen anar a la salsa?',
+  timbaHeroDesc:
+    'La Timba és la resposta. Aprèn a interpretar la música cubana moderna amb llibertat, estil i sabor. Classes per a parelles i estil femení Lady Timba.',
+  timbaHeroLocation: 'Plaça Espanya, Barcelona · Metro L1/L3',
+  timbaHeroStudents: '+15.000 alumnes formats',
+  timbaCTAGroup: "Opcions d'inscripció a Timba",
+  timbaCTA1: 'Fes-te Soci Ara',
+  timbaCTA1Subtext: 'Places limitades',
+  timbaCTA2: 'Reserva la teva Classe de Prova',
+  timbaCTA2Subtext: 'Sense compromís',
+
+  // === WHAT IS TIMBA SECTION ===
+  timbaWhatIsTitle: 'Què és la Timba Cubana?',
+  timbaWhatIsP1:
+    "La Timba és la música ballable que sona avui dia a Cuba. És el resultat de l'evolució natural de la música cubana per adaptar-se a com balla la joventut cubana actual.",
+  timbaWhatIsP2:
+    "La Timba fusiona els ritmes tradicionals cubans —música Yorúba, Rumba i Son— amb la musicalitat de ritmes moderns com Hip Hop, R&B, Reggae i Funky. És llibertat d'interpretació musical, és estil propi, és sabor cubà del segle XXI.",
+  timbaWhatIsP3:
+    '"La Timba identifica un estil, la llibertat d\'interpretació musical i les noves tendències musicals cubanes."',
+  timbaWhatIsP4:
+    'A les nostres classes de Timba aprendràs a aplicar els diferents passos en els moments correctes de la música, a dissociar les diferents parts del teu cos i a sentir la música cubana com mai abans.',
+  timbaWhatIsP5:
+    'Oferim dues modalitats: Timba en Parella per quan balles casino i et deixen anar, i Lady Timba per a dones que volen desenvolupar el seu estil femení i el seu despelote.',
+  timbaWhatIsQuestionTitle: 'Balles salsa cubana i et quedes en blanc quan et deixen anar?',
+  timbaWhatIsQuestionAnswer:
+    'La Timba és la teva solució. Mai més et sentiràs perduda/perdut a la pista.',
+
+  // === SCHEDULE SECTION ===
+  timbaScheduleTitle: 'Horaris de les nostres classes de Timba',
+  timbaScheduleSubtitle: '3 classes setmanals · 2 modalitats · 3 mestres cubans',
+
+  // === LEVELS SECTION ===
+  timbaLevelsTitle: 'Nivells de Timba',
+  timbaLevelBasicTitle: 'Lady Timba Bàsic',
+  timbaLevelBasicDesc:
+    "Per a dones amb nivell bàsic de salsa cubana. Aprèn els fonaments de l'estil femení, moviments de cos i com interpretar la música quan balles sola.",
+  timbaLevelIntermediateTitle: 'Timba Intermedi-Avançat',
+  timbaLevelIntermediateDesc:
+    'Per a ballarins amb mínim 1 any de salsa cubana. Domina la improvisació, el despelote, i multiplica els teus recursos per quan et deixen anar al ball.',
+
+  // === TEACHERS SECTION ===
+  timbaTeachersTitle: 'Els Teus Mestres de Timba',
+  timbaTeachersSubtitle: 'Aprèn amb ballarins professionals cubans',
+  timbaTeacher1Specialty: 'Directora · Lady Timba Intermedi-Avançat',
+  timbaTeacher1Bio:
+    "Yunaisy Farray és la creadora del Mètode Farray i membre del CID-UNESCO. Especialista en Lady Timba, t'ensenyarà a treure el teu costat més sexy i femení amb tècnica cubana autèntica.",
+  timbaTeacher2Specialty: 'Mestra de Timba en Parella',
+  timbaTeacher2Bio:
+    "Grechén Mendez és ballarina professional cubana formada a l'ISA. Experta en Timba en parella, t'ensenyarà a interpretar la música amb la teva parella i a improvisar amb estil.",
+  timbaTeacher3Specialty: 'Professora de Lady Timba Bàsic',
+  timbaTeacher3Bio:
+    "Lia Valdés t'introduirà al món del Lady Timba amb paciència i tècnica. Perfecta per fer els teus primers passos en l'estil femení cubà.",
+  timbaTeachersClosing:
+    'Tres mestres cubans, tres estils complementaris. Aprèn Timba amb qui la viuen des del bressol.',
+
+  // === PREPARE CLASS SECTION ===
+  timbaPrepareTitle: 'Com Preparar-te per a la teva Classe de Timba?',
+  timbaPrepareSubtitle: 'Consells de Yunaisy Farray',
+  timbaPrepareWhatToBring: 'Què portar',
+  timbaPrepareItem1: 'Roba còmoda que et permeti moure amb llibertat',
+  timbaPrepareItem2: 'Sabatilles de ball o mitjons (no sabates de carrer)',
+  timbaPrepareItem3: "Ampolla d'aigua",
+  timbaPrepareItem4: 'Ganes de deixar anar el cos i divertir-te',
+  timbaPrepareNeedItem1: 'Roba còmoda que et permeti moure amb llibertat',
+  timbaPrepareNeedItem2: 'Sabatilles de ball o mitjons (no sabates de carrer)',
+  timbaPrepareNeedItem3: "Ampolla d'aigua",
+  timbaPrepareNeedItem4: 'Ganes de deixar anar el cos i divertir-te',
+  timbaPrepareBefore: 'Abans de venir',
+  timbaPrepareBeforeItem1: 'Escolta una mica de Timba cubana per familiaritzar-te amb el ritme',
+  timbaPrepareBeforeItem2: 'Vine amb la ment oberta a experimentar',
+  timbaPrepareBeforeItem3: 'No cal venir amb parella (excepte classe de dimarts)',
+  timbaPrepareAvoid: 'Evita',
+  timbaPrepareAvoidItem1: 'Roba molt ajustada que limiti el moviment',
+  timbaPrepareAvoidItem2: "Venir amb l'estómac molt ple",
+  timbaPrepareAvoidItem3: 'Comparar-te amb els altres, cadascú té el seu ritme',
+  timbaPrepareTeacherTip: 'Consell de la mestra',
+  timbaPrepareTeacherQuote:
+    '"La Timba és llibertat. No vinguis pensant en passos perfectes, vine pensant en expressar-te. El teu cos ja sap ballar, només necessita permís."',
+
+  // === IDENTIFICATION SECTION ===
+  timbaIdentifyTitle: "T'identifiques amb alguna d'aquestes situacions?",
+  timbaIdentify1:
+    'Balles salsa cubana però quan la teva parella et deixa anar, et quedes sense saber què fer',
+  timbaIdentify2: 'Vols tenir més recursos i passos per improvisar a la pista',
+  timbaIdentify3: "T'agradaria sentir-te més sexy i femenina quan balles (Lady Timba)",
+  timbaIdentify4: 'Portes temps ballant però sents que et falta "sabor cubà"',
+  timbaIdentify5: 'Vols entendre millor la música cubana moderna i les seves diferents parts',
+  timbaIdentify6: 'Busques classes amb mestres cubans autèntics, no imitadors',
+  timbaIdentifyTransition: 'Si has dit "sí" a alguna d\'aquestes, la Timba és per a tu.',
+  timbaNeedEnrollTitle: "Per què hauries d'apuntar-te avui?",
+  timbaIdentifyAgitate1:
+    'Cada festa que passa sense saber què fer quan et deixen anar és una oportunitat perduda de gaudir al màxim.',
+  timbaIdentifySolution:
+    'Amb la Timba, transformaràs aquests moments incòmodes en els teus moments preferits de la nit. Tindràs tants recursos que desitjaràs que et deixin anar més.',
+  timbaIdentifyClosing:
+    'No esperis més. Cada setmana que passa és una setmana menys gaudint del teu ball al 100%.',
+
+  // === TRANSFORMATION SECTION ===
+  timbaTransformTitle: 'Què aconseguiràs a les nostres classes de Timba?',
+  timbaTransform1Title: 'Improvisació Total',
+  timbaTransform1Desc:
+    'Mai més et quedaràs en blanc. Tindràs un arsenal infinit de moviments per a qualsevol moment de la música.',
+  timbaTransform2Title: 'Interpretació Musical',
+  timbaTransform2Desc:
+    'Aprendràs a escoltar els diferents instruments i a ballar cada part de la música amb el pas adequat.',
+  timbaTransform3Title: 'Estil Propi',
+  timbaTransform3Desc:
+    'Desenvoluparàs la teva manera única de ballar, fusionant tècnica cubana amb la teva personalitat.',
+  timbaTransform4Title: 'Dissociació Corporal',
+  timbaTransform4Desc:
+    'El teu cos aprendrà a moure diferents parts de forma independent, multiplicant les teves possibilitats expressives.',
+  timbaTransform5Title: 'Confiança a la Pista',
+  timbaTransform5Desc:
+    'Et sentiràs segura/segur ballant sola/sol o amb parella. La pista serà el teu territori.',
+  timbaTransform6Title: 'Sabor Cubà Autèntic',
+  timbaTransform6Desc:
+    'Aprendràs de mestres cubans que porten la Timba a la sang. No és imitació, és transmissió directa.',
+
+  // === WHY CHOOSE FARRAYS SECTION ===
+  timbaTransformCTA: "Per què triar Farray's per aprendre Timba?",
+  timbaWhyChoose1Title: 'Mestres 100% Cubans',
+  timbaWhyChoose1Desc:
+    "Yunaisy, Grechén i Lia són cubanes de naixement. No aprendràs una versió europea de la Timba, sinó l'autèntica.",
+  timbaWhyChoose2Title: '3 Classes Setmanals',
+  timbaWhyChoose2Desc:
+    "Timba en Parella, Lady Timba Intermedi i Lady Timba Bàsic. Troba la que millor s'adapti a tu.",
+  timbaWhyChoose3Title: 'Mètode Progressiu',
+  timbaWhyChoose3Desc:
+    'Comença a Lady Timba Bàsic i progressa fins al nivell avançat amb una metodologia clara i efectiva.',
+  timbaWhyChoose4Title: 'Connexió amb Salsa',
+  timbaWhyChoose4Desc:
+    'El que aprens a Timba millora directament la teva salsa cubana. Són dues cares de la mateixa moneda.',
+  timbaWhyChoose5Title: 'Ambient Familiar',
+  timbaWhyChoose5Desc:
+    'Una comunitat on et sentiràs acollida/acollit des del primer dia. Aquí no jutgem, celebrem.',
+  timbaWhyChoose6Title: 'Sense Permanència',
+  timbaWhyChoose6Desc: 'Paga mes a mes. Si un mes no pots venir, no passa res. Flexibilitat total.',
+  timbaWhyChoose7Title: 'Acadèmia CID-UNESCO',
+  timbaWhyChoose7Desc:
+    'Reconeixement internacional que avala la qualitat del nostre ensenyament i metodologia.',
+  timbaLogosTitle: 'Aprèn amb professionals reconeguts',
+  timbaLogosIntlFestivalsText: '+ Festivals internacionals de salsa',
+
+  // === WHY TODAY SECTION ===
+  timbaWhyTodayFullTitle: 'Per què començar avui i no "el mes que ve"?',
+  timbaWhyToday1:
+    'La Timba no és només un estil de ball, és una forma de viure la música cubana. Cada dia que passa sense aprendre-la és un dia menys gaudint de la salsa al màxim nivell.',
+  timbaWhyToday2:
+    "Els grups són reduïts per garantir atenció personalitzada. Les places s'omplen ràpid, especialment a Lady Timba amb Yunaisy.",
+  timbaWhyToday3:
+    'No necessites ser experta/expert en salsa per començar. Si portes almenys un any ballant, ja tens la base suficient.',
+  timbaWhyTodayClosing1: 'La teva propera festa pot ser completament diferent.',
+  timbaWhyTodayClosing2:
+    "Imagina't ballant amb confiança, sabent exactament què fer en cada moment de la música...",
+
+  // === CULTURAL HISTORY SECTION ===
+  timbaCulturalHistoryTitle: 'Història i Orígens de la Timba Cubana',
+  timbaCulturalShort:
+    'La Timba va néixer a Cuba als anys 80-90 com a evolució del Son i la Salsa, fusionant ritmes tradicionals africans amb gèneres moderns.',
+  timbaCulturalFull:
+    '## Els Orígens de la Timba\n\nLa Timba va sorgir a l\'Havana durant els anys 80 i va assolir la seva màxima expressió als 90. És el resultat de l\'evolució natural de la música cubana, quan els joves músics cubans van començar a fusionar el Son tradicional amb influències del funk, hip hop, rock i jazz.\n\n## Per què s\'anomena "Timba"?\n\nEl terme "Timba" té arrels en l\'argot cubà. Alguns el relacionen amb "timbals" (instrument de percussió), altres amb expressions populars cubanes. El que tots coincideixen és que representa alguna cosa intensa, de carrer i autèntica.\n\n## Les Bandes que van Definir el Gènere\n\nGrups com **Los Van Van**, **NG La Banda**, **La Charanga Habanera**, **Manolín "El Médico de la Salsa"** i **Paulito FG** van ser els pioners que van definir el so de la Timba.',
+
+  // === FAQ SECTION ===
+  timbaFaqTitle: 'Preguntes Freqüents sobre Timba',
+  timbaFaqQ1: 'Quin nivell de salsa necessito per començar Timba?',
+  timbaFaqA1:
+    "Per a Lady Timba Bàsic (divendres) recomanem almenys 6 mesos de salsa cubana. Per a Timba en Parella (dimarts) i Lady Timba Intermedi (dijous), recomanem mínim 1 any d'experiència en salsa cubana.",
+  timbaFaqQ2: 'Quina és la diferència entre Timba en Parella i Lady Timba?',
+  timbaFaqA2:
+    "La Timba en Parella (dimarts) treballa la interpretació musical quan balles amb algú i et deixen anar momentàniament. Lady Timba (dijous i divendres) està enfocada exclusivament a l'estil femení i és només per a dones.",
+  timbaFaqQ3: 'Puc venir sense parella a la classe de Timba en Parella?',
+  timbaFaqA3:
+    'Per a la classe de Timba en Parella dels dimarts, sí és recomanable venir amb parella ja que es treballen exercicis de connexió. Per a Lady Timba no necessites parella, és individual.',
+  timbaFaqQ4: 'Què és el "despelote" que mencionen tant?',
+  timbaFaqA4:
+    'El "despelote" és el moment a la música Timba on el ritme s\'intensifica i els ballarins es "deixen anar" a improvisar amb moviments més lliures i expressius. És el moment més divertit de la Timba.',
+  timbaFaqQ5: 'Quina roba he de portar a classe de Timba?',
+  timbaFaqA5:
+    'Roba còmoda que et permeti moure amb llibertat. Per a Lady Timba, moltes alumnes venen amb roba que les fa sentir femenines (faldilles, vestits). Calçat: sabatilles de ball o mitjons.',
+  timbaFaqQ6: "La Timba m'ajudarà a millorar la meva salsa cubana?",
+  timbaFaqA6:
+    'Absolutament. La Timba i la salsa cubana van de la mà. El que aprens a Timba (interpretació musical, improvisació, despelote) millora directament el teu ball en parella.',
+  timbaFaqQ7: 'Quant costa la classe de prova?',
+  timbaFaqA7:
+    "La classe de prova costa 10€. Si t'apuntes aquell mateix dia, es descompta del primer mes.",
+  timbaFaqQ8: 'Hi ha contracte o permanència mínima?',
+  timbaFaqA8:
+    "No. A Farray's treballem mes a mes, sense contractes ni permanències. Pagues només els mesos que véns.",
+  timbaFaqQ9: 'Puc provar les tres classes de Timba abans de decidir?',
+  timbaFaqA9:
+    "Sí, pots provar cada classe pagant 10€ per cadascuna. Així pots veure quina s'adapta millor al teu nivell i gustos.",
+  timbaFaqQ10: 'Les classes de Timba són només per a dones?',
+  timbaFaqA10:
+    'Lady Timba (dijous i divendres) és exclusivament per a dones. Timba en Parella (dimarts) és mixta i poden venir tant homes com dones.',
+  timbaFaqQ11: 'Quina música es fa servir a les classes de Timba?',
+  timbaFaqA11:
+    "Fem servir Timba cubana autèntica: Los Van Van, NG La Banda, La Charanga Habanera, Havana D'Primera, Maykel Blanco i més. Música que es balla a les festes de salsa cubana.",
+  timbaFaqQ12: 'Puc començar a Lady Timba Intermedi si mai he fet Lady Timba?',
+  timbaFaqA12:
+    "Si tens bon nivell de salsa cubana (+2 anys), pots començar directament al nivell intermedi. Si tens dubtes, vine a provar una classe i Yunaisy t'orientarà.",
+
+  // === NEARBY AREAS SECTION ===
+  timbaNearbyTitle: 'Classes de Timba a prop teu a Barcelona',
+  timbaNearbyDesc:
+    "Farray's Center està a Plaça Espanya, perfectament comunicat per metro (L1 i L3) i autobús. Alumnes de tot Barcelona vénen a aprendre Timba amb nosaltres.",
+  timbaNearbySearchText: 'Busques "classes de Timba a prop meu"? Mira com és de fàcil arribar:',
+  timbaNearbyMetro: 'Metro: Plaça Espanya (L1, L3) · Hostafrancs (L1) · Tarragona (L3)',
+
+  // === FINAL CTA SECTION ===
+  timbaFinalCTATitle: 'Preparada/preparat per transformar la teva forma de ballar?',
+  timbaFinalCTASubtitle: "La teva primera classe de Timba t'espera",
+  timbaFinalCTADesc:
+    'No importa si mai has fet Timba. El que importa és que vols millorar, gaudir més i sentir-te lliure a la pista. Els nostres mestres cubans et guiaran pas a pas.',
+  timbaFinalCTAFunny:
+    '"Abans em quedava com una estàtua quan em deixaven anar. Ara desitjo que em deixin anar." — Alumna anònima 😄',
 };

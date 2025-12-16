@@ -24,6 +24,118 @@ import { LocalBusinessSchema, CourseSchema, AggregateReviewsSchema } from './Sch
 import { StarRating, CheckIcon, CheckCircleIcon, CalendarDaysIcon } from '../lib/icons';
 import { UsersIcon, MapPinIcon } from './shared/CommonIcons';
 
+// Pillar icons for 6 Pilares section
+const PillarIcon: React.FC<{ type: string; className?: string }> = ({ type, className = '' }) => {
+  const icons: Record<string, React.ReactElement> = {
+    braceo: (
+      <svg
+        className={className}
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={1.5}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"
+        />
+      </svg>
+    ),
+    caderas: (
+      <svg
+        className={className}
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={1.5}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+        />
+      </svg>
+    ),
+    giros: (
+      <svg
+        className={className}
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={1.5}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
+        />
+      </svg>
+    ),
+    tacones: (
+      <svg
+        className={className}
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={1.5}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"
+        />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z"
+        />
+      </svg>
+    ),
+    musicalidad: (
+      <svg
+        className={className}
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={1.5}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z"
+        />
+      </svg>
+    ),
+    presencia: (
+      <svg
+        className={className}
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={1.5}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"
+        />
+      </svg>
+    ),
+  };
+  return icons[type] || null;
+};
+
+// 6 Technical Pillars configuration
+const TECHNICAL_PILLARS = [
+  { id: 'braceo', icon: 'braceo' },
+  { id: 'caderas', icon: 'caderas' },
+  { id: 'giros', icon: 'giros' },
+  { id: 'tacones', icon: 'tacones' },
+  { id: 'musicalidad', icon: 'musicalidad' },
+  { id: 'presencia', icon: 'presencia' },
+];
+
 const SalsaLadyStylePage: React.FC = () => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
@@ -176,55 +288,52 @@ const SalsaLadyStylePage: React.FC = () => {
       />
 
       <main className="bg-black text-neutral min-h-screen pt-20 md:pt-24">
-        {/* 1. Hero Section */}
+        {/* 1. Hero Section - Mobile-first responsive */}
         <section
           id="hero"
           aria-labelledby="hero-title"
-          className="relative min-h-[600px] flex items-center justify-center overflow-hidden py-24 md:py-32"
+          className="relative min-h-[90vh] sm:min-h-[600px] flex items-center justify-center overflow-hidden py-16 sm:py-24 md:py-32"
         >
-          {/* Background - Same as TwerkPage with stardust texture */}
+          {/* Background with stardust texture */}
           <div className="absolute inset-0 bg-black">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/40 via-black to-black"></div>
             <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-20"></div>
           </div>
 
           <div className="relative z-20 container mx-auto px-4 sm:px-6 text-center">
-            {/* Breadcrumb inside hero like other pages */}
+            {/* Breadcrumb inside hero */}
             <Breadcrumb items={breadcrumbItems} textColor="text-neutral/75" />
 
             <AnimateOnScroll>
               <h1
                 id="hero-title"
-                className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text"
+                className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-4 sm:mb-6 holographic-text"
               >
                 {t('salsaLadyHeroTitle')}
               </h1>
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 holographic-text">
+              <p className="text-xl sm:text-3xl md:text-4xl font-bold mb-4 holographic-text">
                 {t('salsaLadyHeroSubtitle')}
               </p>
-              <p className="max-w-4xl mx-auto text-lg sm:text-xl md:text-2xl text-neutral/90 mt-6 sm:mt-8 mb-4 sm:mb-6 leading-relaxed">
+              <p className="max-w-4xl mx-auto text-base sm:text-xl md:text-2xl text-neutral/90 mt-4 sm:mt-8 mb-6 leading-relaxed px-2">
                 {t('salsaLadyHeroDesc')}
               </p>
-              <p className="text-base sm:text-lg md:text-xl text-neutral/90 italic mb-6">
-                {t('salsaLadyHeroLocation')}
-              </p>
 
-              {/* Social Proof */}
-              <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 mb-8 text-neutral/80">
+              {/* Social Proof - Mobile optimized */}
+              <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-8 mb-6 sm:mb-8 text-neutral/80">
                 <div className="flex items-center gap-2">
                   <StarRating size="sm" />
                   <span className="font-semibold">4.9/5</span>
-                  <span className="text-sm">(505+ reseñas)</span>
+                  <span className="text-sm">(505+ resenas)</span>
                 </div>
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
                   <UsersIcon className="w-5 h-5 text-primary-accent" />
-                  <span>+15.000 alumnas formadas</span>
+                  <span className="text-sm sm:text-base">+15.000 estudiantes formados</span>
                 </div>
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
                   <CalendarDaysIcon className="w-5 h-5 text-primary-accent" />
-                  <span>8 años en Barcelona</span>
+                  <span className="text-sm sm:text-base">8 años en Barcelona</span>
                 </div>
               </div>
 
@@ -348,43 +457,34 @@ const SalsaLadyStylePage: React.FC = () => {
                   {t('salsaLadyTeachersTitle')}
                 </h2>
                 <p className="text-lg sm:text-xl text-neutral/70 mt-4">
-                  {t('salsaLadyTeachersSubtitle')}
+                  Aprende de algunas de las mejores maestras de baile de Europa
                 </p>
               </div>
             </AnimateOnScroll>
 
-            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
               {/* Yunaisy Farray */}
               <AnimateOnScroll
                 delay={ANIMATION_DELAYS.STAGGER_SMALL}
                 className="[perspective:1000px]"
               >
-                <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-6 sm:p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-5 sm:p-6 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)_rotateY(3deg)] hover:shadow-accent-glow">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-4 sm:mb-6">
-                      <picture>
-                        <source
-                          type="image/webp"
-                          srcSet="/images/teachers/yunaisy-farray_256.webp 1x, /images/teachers/yunaisy-farray_512.webp 2x"
-                        />
-                        <img
-                          src="/images/teachers/yunaisy-farray_256.png"
-                          srcSet="/images/teachers/yunaisy-farray_256.png 1x, /images/teachers/yunaisy-farray_512.png 2x"
-                          alt="Yunaisy Farray - Maestra de Salsa Lady Style y creadora del Método Farray®"
-                          width="160"
-                          height="160"
-                          loading="lazy"
-                          className="w-full h-full object-cover"
-                        />
-                      </picture>
+                    <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-3 sm:mb-4">
+                      <img
+                        src="/images/teachers/img/yunaisy-farray-directora_320.webp"
+                        alt="Yunaisy Farray - Maestra de Salsa Lady Style y creadora del Metodo Farray"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2">
+                    <h3 className="text-lg sm:text-xl font-bold text-neutral mb-1 sm:mb-2">
                       Yunaisy Farray
                     </h3>
-                    <p className="text-primary-accent font-semibold mb-3 sm:mb-4">
+                    <p className="text-primary-accent font-semibold text-sm sm:text-base mb-2 sm:mb-3">
                       {t('salsaLadyTeacherCredential')}
                     </p>
-                    <p className="text-neutral/90 leading-relaxed text-sm">
+                    <p className="text-neutral/90 leading-relaxed text-xs sm:text-sm">
                       {t('salsaLadyTeacherBio')}
                     </p>
                   </div>
@@ -396,19 +496,50 @@ const SalsaLadyStylePage: React.FC = () => {
                 delay={2 * ANIMATION_DELAYS.STAGGER_SMALL}
                 className="[perspective:1000px]"
               >
-                <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-6 sm:p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
+                <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-5 sm:p-6 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)_rotateY(3deg)] hover:shadow-accent-glow">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-4 sm:mb-6 bg-primary-dark/30 flex items-center justify-center">
-                      <span className="text-4xl font-black text-primary-accent/50">LV</span>
+                    <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-3 sm:mb-4 bg-primary-dark/30 flex items-center justify-center">
+                      <span className="text-3xl sm:text-4xl font-black text-primary-accent/50">
+                        LV
+                      </span>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2">Lia Valdes</h3>
-                    <p className="text-primary-accent font-semibold mb-3 sm:mb-4">
+                    <h3 className="text-lg sm:text-xl font-bold text-neutral mb-1 sm:mb-2">
+                      Lia Valdes
+                    </h3>
+                    <p className="text-primary-accent font-semibold text-sm sm:text-base mb-2 sm:mb-3">
                       Maestra y Artista Internacional Cubana
                     </p>
-                    <p className="text-neutral/90 leading-relaxed text-sm">
-                      Con más de 20 años de carrera artística, formada en la Escuela Nacional de
-                      Arte de Cuba (ENA). Referente mundial en Cabaret y Lady Style, ha llevado su
-                      arte a escenarios internacionales.
+                    <p className="text-neutral/90 leading-relaxed text-xs sm:text-sm">
+                      Con mas de 20 anos de carrera artistica, formada en la Escuela Nacional de
+                      Arte de Cuba (ENA). Referente mundial en Cabaret y Lady Style.
+                    </p>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+
+              {/* Yasmina Fernandez */}
+              <AnimateOnScroll
+                delay={3 * ANIMATION_DELAYS.STAGGER_SMALL}
+                className="[perspective:1000px]"
+              >
+                <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-5 sm:p-6 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)_rotateY(3deg)] hover:shadow-accent-glow">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-3 sm:mb-4">
+                      <img
+                        src="/images/teachers/img/profesora-yasmina-fernandez_320.webp"
+                        alt="Yasmina Fernandez - Profesora de Salsa Lady Style"
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold text-neutral mb-1 sm:mb-2">
+                      Yasmina Fernandez
+                    </h3>
+                    <p className="text-primary-accent font-semibold text-sm sm:text-base mb-2 sm:mb-3">
+                      {t('salsaLadyTeacher3Specialty')}
+                    </p>
+                    <p className="text-neutral/90 leading-relaxed text-xs sm:text-sm">
+                      {t('salsaLadyTeacher3Bio')}
                     </p>
                   </div>
                 </div>
@@ -429,108 +560,6 @@ const SalsaLadyStylePage: React.FC = () => {
           subtitleKey="salsaLadyPrepareSubtitle"
           config={SALSA_LADY_STYLE_PREPARE_CONFIG}
         />
-
-        {/* 8. Comparison Table Section */}
-        <section className="py-14 md:py-20 bg-primary-dark/10">
-          <div className="container mx-auto px-4 sm:px-6">
-            <AnimateOnScroll>
-              <div className="max-w-5xl mx-auto">
-                <h3 className="text-2xl sm:text-3xl font-black tracking-tighter text-neutral mb-2 text-center holographic-text">
-                  {t('salsaLadyCompareTitle')}
-                </h3>
-                <p className="text-base text-neutral/70 mb-6 text-center">
-                  {t('salsaLadyCompareSubtitle')}
-                </p>
-
-                {/* Mobile: Cards view */}
-                <div className="block lg:hidden space-y-4">
-                  {SALSA_LADY_COMPARISON_DATA.rows.map((row, rowIdx) => (
-                    <div
-                      key={rowIdx}
-                      className="p-4 bg-black/30 rounded-xl border border-neutral/20"
-                    >
-                      <h4 className="font-bold text-neutral mb-3 text-sm">{t(row.rowKey)}</h4>
-                      <div className="grid grid-cols-2 gap-2 text-xs">
-                        {SALSA_LADY_COMPARISON_DATA.styles.map((style, styleIdx) => (
-                          <div
-                            key={style.key}
-                            className={`flex justify-between items-center p-2 rounded-lg ${
-                              styleIdx === 1
-                                ? 'bg-primary-accent/15 border border-primary-accent/30'
-                                : 'bg-neutral/10'
-                            }`}
-                          >
-                            <span
-                              className={
-                                styleIdx === 1
-                                  ? 'text-primary-accent font-semibold'
-                                  : 'text-neutral/70'
-                              }
-                            >
-                              {t(style.nameKey)}
-                            </span>
-                            <span
-                              className={
-                                styleIdx === 1 ? 'text-primary-accent/80' : 'text-neutral/60'
-                              }
-                            >
-                              {'★'.repeat(row.values[styleIdx] ?? 0)}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Desktop: Table view */}
-                <div className="hidden lg:block overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="border-b border-neutral/20">
-                        <th className="text-left py-3 px-2 text-neutral/70 font-semibold">
-                          {t('salsaLadyCompareFeature')}
-                        </th>
-                        {SALSA_LADY_COMPARISON_DATA.styles.map((style, idx) => (
-                          <th
-                            key={style.key}
-                            className={`text-center py-3 px-2 font-semibold ${
-                              idx === 1 ? 'text-primary-accent' : 'text-neutral/70'
-                            }`}
-                          >
-                            {t(style.nameKey)}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {SALSA_LADY_COMPARISON_DATA.rows.map((row, rowIdx) => (
-                        <tr
-                          key={rowIdx}
-                          className={`border-b border-neutral/10 ${rowIdx % 2 === 0 ? 'bg-black/20' : ''}`}
-                        >
-                          <td className="py-3 px-2 text-neutral/80">{t(row.rowKey)}</td>
-                          {row.values.map((value, styleIdx) => (
-                            <td
-                              key={styleIdx}
-                              className={`py-3 px-2 text-center ${
-                                styleIdx === 1
-                                  ? 'bg-primary-accent/10 text-primary-accent/80'
-                                  : 'text-neutral/60'
-                              }`}
-                            >
-                              {'★'.repeat(value)}
-                            </td>
-                          ))}
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
 
         {/* 9. Identification Section - Puntos de dolor */}
         <section aria-labelledby="identify-title" className="py-12 md:py-20 bg-black">
@@ -585,16 +614,13 @@ const SalsaLadyStylePage: React.FC = () => {
             <AnimateOnScroll>
               <div className="text-center mb-6 sm:mb-8 max-w-4xl mx-auto">
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-4 sm:mb-6 holographic-text">
-                  {t('salsaLadyNeedEnrollTitle')}
+                  Necesitas Aprender a bailar Lady Style con el Metodo Farray
                 </h3>
               </div>
             </AnimateOnScroll>
 
             <AnimateOnScroll>
               <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4">
-                <p className="text-lg sm:text-xl font-semibold holographic-text">
-                  {t('salsaLadyIdentifyAgitate1')}
-                </p>
                 <p className="text-base sm:text-lg text-neutral/90">
                   {t('salsaLadyIdentifySolution')}
                 </p>
@@ -606,37 +632,73 @@ const SalsaLadyStylePage: React.FC = () => {
           </div>
         </section>
 
-        {/* 10. Transformation Section */}
-        <section aria-labelledby="transform-title" className="py-12 md:py-20 bg-primary-dark/10">
+        {/* 10. El Metodo Farray - 6 Pilares del Lady Style */}
+        <section
+          id="pillars"
+          aria-labelledby="pillars-title"
+          className="py-12 sm:py-16 md:py-24 bg-primary-dark/10"
+        >
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto">
+              <div className="text-center mb-8 sm:mb-12">
                 <h2
-                  id="transform-title"
-                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                  id="pillars-title"
+                  className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-3 sm:mb-4 holographic-text"
                 >
-                  {t('salsaLadyTransformTitle')}
+                  El Metodo Farray®: Los 6 Pilares del Lady Style
                 </h2>
+                <p className="text-sm sm:text-lg text-neutral/70 max-w-2xl mx-auto">
+                  El sistema completo que desarrolla cada aspecto de tu tecnica femenina
+                </p>
               </div>
             </AnimateOnScroll>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
-              {[1, 2, 3, 4, 5, 6].map((num, index) => (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
+              {TECHNICAL_PILLARS.map((pillar, index) => (
                 <AnimateOnScroll
-                  key={num}
+                  key={pillar.id}
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
                   className="[perspective:1000px]"
                 >
-                  <div className="group h-full min-h-[200px] sm:min-h-[220px] p-5 sm:p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
-                    <div className="text-5xl sm:text-6xl font-black text-primary-accent mb-3 sm:mb-4 holographic-text">
-                      {num}
+                  <div className="group h-full p-5 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.75rem)_rotateY(5deg)_rotateX(2deg)] hover:shadow-accent-glow relative overflow-hidden">
+                    {/* Glow effect */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl bg-primary-accent/20"></div>
+                    <div className="relative z-10">
+                      <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors">
+                          <PillarIcon
+                            type={pillar.icon}
+                            className="w-5 h-5 sm:w-6 sm:h-6 text-primary-accent"
+                          />
+                        </div>
+                        <div className="text-2xl sm:text-3xl font-black text-primary-accent/50">
+                          {index + 1}
+                        </div>
+                      </div>
+                      <h3 className="text-lg sm:text-xl font-bold text-neutral mb-1 sm:mb-2">
+                        {t(`salsaLadyV2Pillar${index + 1}Title`)}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-primary-accent italic mb-2 sm:mb-3">
+                        {t(`salsaLadyV2Pillar${index + 1}Subtitle`)}
+                      </p>
+                      <p className="text-neutral/80 text-xs sm:text-sm mb-3 sm:mb-4">
+                        {t(`salsaLadyV2Pillar${index + 1}Desc`)}
+                      </p>
+                      <ul className="space-y-1.5 sm:space-y-2">
+                        {[1, 2, 3].map(item => (
+                          <li
+                            key={item}
+                            className="flex items-start gap-2 text-xs sm:text-sm text-neutral/70"
+                          >
+                            <span className="text-primary-accent mt-0.5">-</span>
+                            {t(`salsaLadyV2Pillar${index + 1}Item${item}`)}
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-primary-accent italic">
+                        {t(`salsaLadyV2Pillar${index + 1}Result`)}
+                      </p>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-neutral mb-2 sm:mb-3">
-                      {t(`salsaLadyTransform${num}Title`)}
-                    </h3>
-                    <p className="text-neutral/90 leading-relaxed text-sm sm:text-base">
-                      {t(`salsaLadyTransform${num}Desc`)}
-                    </p>
                   </div>
                 </AnimateOnScroll>
               ))}
@@ -644,8 +706,244 @@ const SalsaLadyStylePage: React.FC = () => {
           </div>
         </section>
 
+        {/* 10b. Comparison Table - Lady Style tradicional vs Metodo Farray */}
+        <section className="py-12 sm:py-16 md:py-24 bg-primary-dark/10">
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-6 sm:mb-10">
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-3 sm:mb-4 holographic-text">
+                  {t('salsaLadyV2CompareTitle')}
+                </h2>
+              </div>
+
+              <div className="w-full flex justify-center">
+                <div className="w-full max-w-5xl overflow-x-auto">
+                  <table className="w-full text-xs sm:text-sm min-w-[500px] mx-auto">
+                    <thead>
+                      <tr className="border-b border-neutral/20">
+                        <th className="text-left py-3 sm:py-4 px-3 sm:px-4 text-neutral/70 font-semibold">
+                          {t('salsaLadyV2CompareAspect')}
+                        </th>
+                        <th className="text-center py-3 sm:py-4 px-3 sm:px-4 text-red-400 font-semibold">
+                          {t('salsaLadyV2CompareOthers')}
+                        </th>
+                        <th className="text-center py-3 sm:py-4 px-3 sm:px-4 text-primary-accent font-semibold">
+                          {t('salsaLadyV2CompareFarray')}
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[1, 2, 3, 4, 5, 6, 7, 8].map((rowId, idx) => (
+                        <tr
+                          key={rowId}
+                          className={`border-b border-neutral/10 ${idx % 2 === 0 ? 'bg-black/20' : ''}`}
+                        >
+                          <td className="py-3 sm:py-4 px-3 sm:px-4 text-neutral/90 font-medium">
+                            {t(`salsaLadyV2CompareRow${rowId}Label`)}
+                          </td>
+                          <td className="py-3 sm:py-4 px-3 sm:px-4 text-center">
+                            <span className="inline-flex items-center gap-1 text-red-400/70">
+                              <svg
+                                className="w-3 h-3 sm:w-4 sm:h-4"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={2}
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M6 18L18 6M6 6l12 12"
+                                />
+                              </svg>
+                              <span className="hidden sm:inline">
+                                {t(`salsaLadyV2CompareRow${rowId}Others`)}
+                              </span>
+                            </span>
+                          </td>
+                          <td className="py-3 sm:py-4 px-3 sm:px-4 text-center bg-primary-accent/10">
+                            <span className="inline-flex items-center gap-1 text-primary-accent">
+                              <svg
+                                className="w-3 h-3 sm:w-4 sm:h-4"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={2}
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M5 13l4 4L19 7"
+                                />
+                              </svg>
+                              <span className="hidden sm:inline">
+                                {t(`salsaLadyV2CompareRow${rowId}Farray`)}
+                              </span>
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* 10c. Para Quien Es / No Es - Premium 3D Cards */}
+        <section className="py-14 sm:py-20 md:py-28 bg-black relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-accent/5 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-dark/10 rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="container mx-auto px-4 sm:px-6 relative z-10">
+            <AnimateOnScroll>
+              <div className="text-center mb-10 sm:mb-14">
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text">
+                  {t('salsaLadyV2ForWhoTitle')}
+                </h2>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6 sm:gap-10 max-w-5xl mx-auto [perspective:1200px]">
+                {/* SI es para ti - Premium 3D card */}
+                <div className="relative group [perspective:1000px]">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-accent/30 to-primary-accent/10 rounded-2xl blur opacity-50 group-hover:opacity-90 transition-opacity duration-500"></div>
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl bg-primary-accent/20"></div>
+                  <div className="relative p-6 sm:p-8 bg-black/90 backdrop-blur-sm rounded-2xl border border-primary-accent/20 [transform-style:preserve-3d] transition-all duration-500 group-hover:[transform:translateY(-0.75rem)_rotateX(2deg)_rotateY(5deg)] group-hover:border-primary-accent/50 group-hover:shadow-accent-glow">
+                    <h3 className="text-xl sm:text-2xl font-bold text-primary-accent mb-6 sm:mb-8 tracking-tight [transform:translateZ(25px)]">
+                      {t('salsaLadyV2ForYesTitle')}
+                    </h3>
+                    <ul className="space-y-3 sm:space-y-4 [transform:translateZ(15px)]">
+                      {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
+                        <li key={num} className="flex items-start gap-3">
+                          <span className="flex-shrink-0 w-5 h-5 rounded-full bg-primary-accent/20 flex items-center justify-center mt-0.5">
+                            <CheckIcon className="text-primary-accent" size="sm" />
+                          </span>
+                          <span className="text-neutral/80 text-sm sm:text-base leading-relaxed">
+                            {t(`salsaLadyV2ForYes${num}`)}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* NO es para ti - Subtle card con 3D */}
+                <div className="relative group [perspective:1000px]">
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl bg-neutral/10"></div>
+                  <div className="relative p-6 sm:p-8 bg-neutral/5 backdrop-blur-sm rounded-2xl border border-neutral/10 [transform-style:preserve-3d] transition-all duration-500 group-hover:[transform:translateY(-0.75rem)_rotateX(2deg)_rotateY(-5deg)] group-hover:border-neutral/30 group-hover:shadow-lg">
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral/50 mb-6 sm:mb-8 tracking-tight">
+                      {t('salsaLadyV2ForNoTitle')}
+                    </h3>
+                    <ul className="space-y-3 sm:space-y-4">
+                      {[1, 2, 3, 4].map(num => (
+                        <li key={num} className="flex items-start gap-3">
+                          <span className="flex-shrink-0 w-5 h-5 rounded-full bg-neutral/10 flex items-center justify-center mt-0.5">
+                            <svg
+                              className="w-3 h-3 text-neutral/40"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                              strokeWidth={2}
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M6 18L18 6M6 6l12 12"
+                              />
+                            </svg>
+                          </span>
+                          <span className="text-neutral/50 text-sm sm:text-base leading-relaxed">
+                            {t(`salsaLadyV2ForNo${num}`)}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA */}
+              <div className="text-center mt-12 sm:mt-16">
+                <p className="text-base sm:text-lg text-neutral/70 mb-6 sm:mb-8 max-w-xl mx-auto">
+                  {t('salsaLadyV2ForWhoCTA')}
+                </p>
+                <a
+                  href="#schedule"
+                  className="inline-block bg-primary-accent text-white font-bold text-base sm:text-lg py-4 px-10 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
+                >
+                  {t('salsaLadyCTA1')}
+                </a>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* 10d. Tu Antes y Despues - Transformation Table */}
+        <section className="py-12 sm:py-16 md:py-24 bg-primary-dark/10">
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-6 sm:mb-10">
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-3 sm:mb-4 holographic-text">
+                  {t('salsaLadyV2TransformTitle')}
+                </h2>
+              </div>
+
+              <div className="w-full flex justify-center">
+                <div className="w-full max-w-4xl overflow-x-auto">
+                  <table className="w-full text-xs sm:text-sm min-w-[400px] mx-auto">
+                    <thead>
+                      <tr className="border-b border-neutral/20">
+                        <th className="text-left py-3 px-3 sm:px-4 text-neutral/70 font-semibold">
+                          {t('salsaLadyV2TransformAspect')}
+                        </th>
+                        <th className="text-center py-3 px-3 sm:px-4 text-red-400/70 font-semibold">
+                          {t('salsaLadyV2TransformBefore')}
+                        </th>
+                        <th className="text-center py-3 px-3 sm:px-4 text-primary-accent font-semibold">
+                          {t('salsaLadyV2TransformAfter')}
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        'brazos',
+                        'caderas',
+                        'giros',
+                        'tacones',
+                        'shines',
+                        'confianza',
+                        'estilo',
+                      ].map((item, idx) => (
+                        <tr
+                          key={item}
+                          className={`border-b border-neutral/10 ${idx % 2 === 0 ? 'bg-black/20' : ''}`}
+                        >
+                          <td className="py-3 px-3 sm:px-4 text-neutral/90 font-medium capitalize">
+                            {t(`salsaLadyV2Transform${item}Label`)}
+                          </td>
+                          <td className="py-3 px-3 sm:px-4 text-center text-red-400/60 text-xs sm:text-sm">
+                            {t(`salsaLadyV2Transform${item}Before`)}
+                          </td>
+                          <td className="py-3 px-3 sm:px-4 text-center text-primary-accent bg-primary-accent/10 text-xs sm:text-sm">
+                            {t(`salsaLadyV2Transform${item}After`)}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
         {/* 11. Why Choose + Stats + Logos Section */}
-        <section className="py-12 md:py-20 bg-black">
+        <section className="py-12 md:py-20 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-8 sm:mb-10 max-w-4xl mx-auto">
@@ -863,6 +1161,108 @@ const SalsaLadyStylePage: React.FC = () => {
                 </AnimateOnScroll>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* 13b. Salsa Lady Style vs otros estilos - Comparison Table */}
+        <section className="py-14 md:py-20 bg-primary-dark/10">
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="max-w-5xl mx-auto">
+                <h3 className="text-2xl sm:text-3xl font-black tracking-tighter text-neutral mb-2 text-center holographic-text">
+                  {t('salsaLadyCompareTitle')}
+                </h3>
+                <p className="text-base text-neutral/70 mb-6 text-center">
+                  {t('salsaLadyCompareSubtitle')}
+                </p>
+
+                {/* Mobile: Cards view */}
+                <div className="block lg:hidden space-y-4">
+                  {SALSA_LADY_COMPARISON_DATA.rows.map((row, rowIdx) => (
+                    <div
+                      key={rowIdx}
+                      className="p-4 bg-black/30 rounded-xl border border-neutral/20"
+                    >
+                      <h4 className="font-bold text-neutral mb-3 text-sm">{t(row.rowKey)}</h4>
+                      <div className="grid grid-cols-2 gap-2 text-xs">
+                        {SALSA_LADY_COMPARISON_DATA.styles.map((style, styleIdx) => (
+                          <div
+                            key={style.key}
+                            className={`flex justify-between items-center p-2 rounded-lg ${
+                              styleIdx === 1
+                                ? 'bg-primary-accent/15 border border-primary-accent/30'
+                                : 'bg-neutral/10'
+                            }`}
+                          >
+                            <span
+                              className={
+                                styleIdx === 1
+                                  ? 'text-primary-accent font-semibold'
+                                  : 'text-neutral/70'
+                              }
+                            >
+                              {t(style.nameKey)}
+                            </span>
+                            <span
+                              className={
+                                styleIdx === 1 ? 'text-primary-accent/80' : 'text-neutral/60'
+                              }
+                            >
+                              {'★'.repeat(row.values[styleIdx] ?? 0)}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Desktop: Table view */}
+                <div className="hidden lg:block overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-neutral/20">
+                        <th className="text-left py-3 px-2 text-neutral/70 font-semibold">
+                          {t('salsaLadyCompareFeature')}
+                        </th>
+                        {SALSA_LADY_COMPARISON_DATA.styles.map((style, idx) => (
+                          <th
+                            key={style.key}
+                            className={`text-center py-3 px-2 font-semibold ${
+                              idx === 1 ? 'text-primary-accent' : 'text-neutral/70'
+                            }`}
+                          >
+                            {t(style.nameKey)}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {SALSA_LADY_COMPARISON_DATA.rows.map((row, rowIdx) => (
+                        <tr
+                          key={rowIdx}
+                          className={`border-b border-neutral/10 ${rowIdx % 2 === 0 ? 'bg-black/20' : ''}`}
+                        >
+                          <td className="py-3 px-2 text-neutral/80">{t(row.rowKey)}</td>
+                          {row.values.map((value, styleIdx) => (
+                            <td
+                              key={styleIdx}
+                              className={`py-3 px-2 text-center ${
+                                styleIdx === 1
+                                  ? 'bg-primary-accent/10 text-primary-accent/80'
+                                  : 'text-neutral/60'
+                              }`}
+                            >
+                              {'★'.repeat(value)}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </AnimateOnScroll>
           </div>
         </section>
 

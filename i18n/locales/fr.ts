@@ -4835,7 +4835,7 @@ Farray's International Dance Center est noté près de **5/5 sur Google**, avec 
     'Avec Alejandro, vous apprendrez une technique solide tout en découvrant votre propre façon de vous exprimer.',
 
   // Schedule Section
-  modernjazzScheduleTitle: 'Horaires des cours de Modern Jazz',
+  modernjazzScheduleTitle: 'Horaires de nos cours de Modern Jazz',
   modernjazzScheduleSubtitle: 'Cours avec Alejandro Miñoso',
 
   // Video Section
@@ -5403,12 +5403,13 @@ Tous les termes du ballet sont en français, héritage de son développement à 
     'Métro : Plaza España (L1, L3), Rocafort (L1) - 5 min à pied, Entença (L5) - 5 min à pied ou Hostafrancs (L1) - 5 min à pied',
 
   // ===== Level Cards =====
+  balletLevelsTitle: 'Niveaux de Ballet',
   balletLevelBasicTag: 'DÉBUTANTS',
-  balletLevelBasicTitle: 'Cours pour Débutants avec Alejandro Miñoso',
+  balletLevelBasicTitle: 'Niveau Débutant',
   balletLevelBasicDesc:
     'Commencez de zéro avec les bases de la technique classique. Apprenez les cinq positions, le travail à la barre, la posture correcte et les fondamentaux qui construiront votre parcours en ballet. Ambiance accueillante et rythme adapté.',
   balletLevelIntermediateTag: 'INTERMÉDIAIRE',
-  balletLevelIntermediateTitle: 'Cours Intermédiaires avec Daniel Sené',
+  balletLevelIntermediateTitle: 'Niveau Intermédiaire',
   balletLevelIntermediateDesc:
     'Perfectionnez votre technique avec un travail au centre plus complexe, pirouettes, allegro et répertoire classique. Pour les danseurs avec des bases solides qui veulent amener leur ballet au niveau supérieur.',
 
@@ -5428,7 +5429,7 @@ Tous les termes du ballet sont en français, héritage de son développement à 
   balletPrepareAvoidItem1: 'Bijoux, bagues, bracelets ou accessoires',
   balletPrepareAvoidItem2: 'Vêtements très amples qui empêchent de voir votre posture',
   balletPrepareAvoidItem3: 'Chaussures de ville dans la salle (vestiaires disponibles)',
-  balletPrepareTeacherTip: "Conseil d'Alejandro :",
+  balletPrepareTeacherTip: 'Conseil de Daniel :',
   balletPrepareTeacherQuote:
     'Le ballet est patience et constance. Ne vous frustrez pas si les premiers jours sont difficiles. Chaque grand danseur a commencé exactement où vous êtes maintenant. Profitez du processus.',
 
@@ -5475,6 +5476,7 @@ Tous les termes du ballet sont en français, héritage de son développement à 
   // MODERN JAZZ - Traductions supplémentaires
   // ========================================
 
+  modernjazzCulturalHistoryTitle: 'Histoire et Évolution du Modern Jazz',
   modernjazzCulturalTitle: 'Histoire et Évolution du Modern Jazz',
   modernjazzPrepareTitle: 'Préparez votre premier cours de Modern Jazz',
   modernjazzPrepareSubtitle: 'Tout ce que vous devez savoir avant de venir',
@@ -5528,6 +5530,7 @@ Tous les termes du ballet sont en français, héritage de son développement à 
     "Le Modern Jazz est le pont parfait entre la technique classique et l'expression contemporaine.",
 
   // ===== Level Cards Section =====
+  modernjazzLevelsTitle: 'Niveaux de Modern Jazz',
   modernjazzLevelBasicTitle: 'Fondamentaux et expression',
   modernjazzLevelBasicDesc:
     'Cours idéal pour débutants ou ceux qui veulent construire des bases solides. Nous travaillons la posture, les isolations, la coordination et les premières chorégraphies avec une musique variée. Zéro pression, beaucoup de plaisir.',
@@ -6039,15 +6042,18 @@ Travaille intégralement : **flexibilité, force fonctionnelle, coordination, pr
   contemporaneoScheduleSubtitle: 'Deux styles, multiples horaires : trouvez votre cours parfait',
 
   // Level Cards Section
-  contemporaneoLevelLiricoBasicoTitle: 'Contemporain Lyrique Débutant',
+  contemporaneoLevelPrincipianteTitle: 'Lyrique Débutants',
+  contemporaneoLevelPrincipianteDesc:
+    'Premier contact avec la danse contemporaine. Mouvement fluide, expression émotionnelle et connexion avec la musique. Sans prérequis.',
+  contemporaneoLevelLiricoBasicoTitle: 'Lyrique Basique',
   contemporaneoLevelLiricoBasicoDesc:
-    "Idéal pour débuter en danse contemporaine. Vous travaillerez l'expression corporelle, la musicalité et les mouvements fluides. Technique accessible avec focus sur la connexion émotionnelle avec la musique.",
-  contemporaneoLevelLiricoIntermedioTitle: 'Contemporain Lyrique Intermédiaire',
+    'Continuez à développer votre technique lyrique avec des séquences plus élaborées. Pour les élèves ayant déjà pris des cours de contemporain ou ayant des bases de ballet/danse.',
+  contemporaneoLevelLiricoIntermedioTitle: 'Lyrique Intermédiaire',
   contemporaneoLevelLiricoIntermedioDesc:
-    'Approfondissez votre technique lyrique avec des séquences plus complexes, plus de travail interprétatif et exploration de votre propre style. Pour élèves avec base préalable.',
-  contemporaneoLevelSueloFlowTitle: 'Contemporain Sol & Flow',
+    'Séquences complexes, travail interprétatif et développement de votre style personnel. Prérequis : au moins 1 an de cours de contemporain ou bases solides de danse.',
+  contemporaneoLevelSueloFlowTitle: 'Sol & Flow',
   contemporaneoLevelSueloFlowDesc:
-    "Techniques de floorwork, release et contact. Apprenez à bouger avec fluidité entre le sol et l'air. Travail de respiration, poids corporel et transitions organiques.",
+    'Floorwork, release et transitions organiques entre sol et air. Cours physiquement exigeant. Prérequis : bases techniques de contemporain, ballet ou expérience en danse.',
 
   // Prepare Section
   contemporaneoPrepareTitle: 'Préparez votre premier cours de Contemporain',
@@ -6532,13 +6538,16 @@ L'Afro Contemporain enseigné au **Farray's International Dance Center** fait pa
   afrocontemporaneoCourseSchemaDesc:
     "Apprenez l'Afro Contemporain avec Yunaisy Farray, maître CID-UNESCO formée à l'ENA Cuba. Technique de perfectionnement pour danseurs.",
 
+  // Level cards section
+  afrocontemporaneoLevelsTitle: "Niveaux d'Afro Contemporain",
+
   // Level cards descriptions
-  afrocontemporaneoLevelBasicTitle: 'Afro Contemporain Basique avec Charlie Breezy',
+  afrocontemporaneoLevelBasicTitle: 'Niveau Basique',
   afrocontemporaneoLevelBasicDesc:
-    "Pour ceux qui s'initient à cette discipline. Charlie Breezy guide les fondamentaux de l'Afro Contemporain : dissociation corporelle, rythmes afro-cubains et connexion avec la musique. Apprenez les bases avec un professeur qui combine technique et énergie contagieuse.",
-  afrocontemporaneoLevelIntAdvTitle: 'Afro Contemporain Intermédiaire/Avancé avec Yunaisy Farray',
+    "Pour ceux qui s'initient à cette discipline. Apprenez les fondamentaux de l'Afro Contemporain : dissociation corporelle, rythmes afro-cubains et connexion avec la musique. Aucune expérience préalable requise.",
+  afrocontemporaneoLevelIntAdvTitle: 'Niveau Intermédiaire / Avancé',
   afrocontemporaneoLevelIntAdvDesc:
-    "Pour les danseurs avec expérience préalable. Yunaisy Farray, maître formée à l'ENA Cuba et reconnue par le CID-UNESCO, travaille des séquences avancées, l'interprétation musicale et le perfectionnement technique. Cours de 90 minutes pour approfondir la discipline.",
+    "Nécessite minimum 1 an d'expérience en danse ou des bases techniques solides (ballet, contemporain, jazz). Séquences avancées, interprétation musicale et perfectionnement technique. Cours de 90 minutes.",
 
   // Préparez votre premier cours Section
   afrocontemporaneoPrepareTitle: "Préparez votre premier cours d'Afro Contemporain",
@@ -7874,6 +7883,14 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   salsaLadyLogosTitle: 'Vous avez pu nous voir dans...',
   salsaLadyLogosIntlFestivalsText: 'et dans les meilleurs festivals de danse du monde entier',
 
+  // Tacones en Salsa Section (before Cultural History)
+  salsaLadyTaconesTitle: 'Les Talons en Salsa : Votre Meilleur Allié',
+  salsaLadyTaconesDesc:
+    "La maîtrise des talons transforme complètement votre danse. Dans nos cours de Lady Style, les talons ne sont pas qu'un accessoire, ce sont un outil pour développer l'élégance, la posture et la présence scénique.",
+  salsaLadyTaconesBenefit1: 'Posture parfaite',
+  salsaLadyTaconesBenefit2: 'Élégance naturelle',
+  salsaLadyTaconesBenefit3: 'Confiance en dansant',
+
   // Why Today Section
   salsaLadyWhyTodayFullTitle:
     "Pourquoi aujourd'hui est le meilleur moment pour commencer le Lady Style ?",
@@ -8063,8 +8080,8 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   contemporaneoConfidenceGuaranteed: 'Langage propre garanti',
   contemporaneoCaloriesStat: 'Calories Brûlées',
   contemporaneoDanceStat: 'Danse',
-  contemporaneoLevelsTitle: 'Quel type de Contemporain vous convient?',
-  contemporaneoLevelsSubtitle: 'Trois modalités pour différents objectifs et sensibilités',
+  contemporaneoLevelsTitle: 'Quel type de Contemporain vous convient ?',
+  contemporaneoLevelsSubtitle: 'Quatre modalités pour différents objectifs et sensibilités',
   danceClassesHub_cta_member: 'Devenez Membre Maintenant',
   danceClassesHub_cta_trial: "Réservez Votre Cours d'Essai",
 
@@ -9080,7 +9097,7 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
     'Découvrez les origines de la salsa cubaine à travers les danses rituelles aux Orishas.',
   folkloreHeroLocation:
     'Académie membre du CID-UNESCO | Cours avec des maîtres cubains, entre Plaza España et Sants',
-  folkloreHeroStudents: '+500 élèves formés en Folklore Cubain',
+  folkloreHeroStudents: '+15 000 élèves formés',
 
   // CTAs
   folkloreCTA1: 'Devenez Membre Maintenant',
@@ -9108,7 +9125,7 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   folkloreCulturalShort:
     'Le Folklore Cubain se définit comme l\'ensemble des traditions populaires transmises oralement, incluant les danses rituelles, la musique, les légendes ("Patakíes") et les pratiques culturelles de la population cubaine, avec un fort accent sur les racines afro-descendantes adaptées au contexte insulaire.',
   folkloreCulturalFull:
-    "### Influences culturelles\nDepuis le XVIe siècle, le folklore cubain émerge du syncrétisme entre les esclaves africains (Yoruba, Congo, Arará), les colonisateurs espagnols (romance, contradanza) et les contributions caribéennes mineures (haïtien, jamaïcain), avec une empreinte aborigène quasi inexistante. Les conditions socio-économiques des plantations ont transformé les cultes africains en expressions comme la Santería et le Palo, où les danses rituelles préservent la polyrythmie et la gestuelle ancestrale.\n### Évolution historique\nAu XIXe siècle, les sociétés secrètes et les cabildos africains ont maintenu des danses comme Yoruba et Abakuá dans des contextes religieux. Au début du XXe siècle, la Société de Folklore Cubain (1923-1930) initie son étude systématique, tandis que des groupes comme Los Muñequitos de Matanzas professionnalisent la rumba. Après 1959, des institutions comme l'École Nationale d'Art codifient ces formes pour la scène.\n### Manifestations principales\nLe folklore traditionnel comprend :\n**Yoruba:** Danses aux Orishas (Eleguá, Yemayá, Obatalá, Ochún, Changó).\n**Congo/Bantu:** Palo, Makuta, Garabato.\n**Abakuá:** Efo, Efi.\n**Arará:** Afra, Gun, Jebbioso.\n**Iyesá:** Danses Iyesá.\n**Rumba:** Guaguancó, Yambú, Columbia (variantes avec machettes, foulard).\n### Influence sur les danses populaires\nLes rythmes et mouvements folkloriques nourrissent des genres séculiers comme Conga, Comparsa, Son Montuno (Changüí, Sucu-sucu), Danzón et Casino, base de la salsa cubaine moderne, fusionnant la percussion batá avec des structures dansables.\n### Folklore chez Farray's Center Barcelone\nFarray's International Dance Center propose des cours de Folklore Cubain avec des maîtres cubains spécialisés, connectant les racines Yoruba et Congolaises pour élever l'expression corporelle en salsa et rythmes latins à Barcelone.",
+    "### Influences culturelles\nDepuis le XVIe siècle, le folklore cubain émerge du syncrétisme entre les esclaves africains (Yoruba, Congo, Arará), les colonisateurs espagnols (romance, contradanza) et les contributions caribéennes mineures (haïtien, jamaïcain), avec une empreinte aborigène quasi inexistante. Les conditions socio-économiques des plantations ont transformé les cultes africains en expressions comme la Santería et le Palo, où les danses rituelles préservent la polyrythmie et la gestuelle ancestrale.\n### Évolution historique\nAu XIXe siècle, les sociétés secrètes et les cabildos africains ont maintenu des danses comme Yoruba et Abakuá dans des contextes religieux. Au début du XXe siècle, la Société de Folklore Cubain (1923-1930) initie son étude systématique, tandis que des groupes comme Los Muñequitos de Matanzas professionnalisent la rumba. Après 1959, des institutions comme l'École Nationale d'Art codifient ces formes pour la scène.\n### Qu'est-ce que l'Afro Cubain ?\nLorsque nous parlons d'**Afro Cubain** ou de **danses afro-cubaines**, nous faisons référence à la composante africaine du folklore cubain : les danses et rythmes apportés d'Afrique par les esclaves et préservés à travers les siècles dans la religion Yoruba (Santería), le Palo Congo et d'autres traditions. Si vous recherchez des **cours de danses africaines à Barcelone** avec des racines authentiques, l'Afro Cubain vous connecte directement avec les mouvements originaux des Orishas, les polyrythmes du tambour batá et une expressivité corporelle qui remonte des siècles. C'est la « danse afro » avec pedigree historique.\n### Manifestations principales\nLe folklore traditionnel comprend :\n**Yoruba:** Danses aux Orishas (Eleguá, Yemayá, Obatalá, Ochún, Changó).\n**Congo/Bantu:** Palo, Makuta, Garabato.\n**Abakuá:** Efo, Efi.\n**Arará:** Afra, Gun, Jebbioso.\n**Iyesá:** Danses Iyesá.\n**Haïtien:** Vaudou, Sabone, Fey, Congo Laye, Gagá, Tumba Francesa, Merengue haïtien, Ibbo, Menua.\n**Jamaïcain:** Banana, Brown, Mangú, Chulo, Cinta, Limbo.\n**Rumba:** Guaguancó, Yambú et Columbia. La Columbia comprend : Columbia traditionnelle, Jiribilla, et variantes avec objets (machettes, couteaux, canne, assiette avec bougie, foulard, entre autres).\n### Influence sur les danses populaires\nLes rythmes et mouvements folkloriques nourrissent des genres séculiers comme Conga, Comparsa, Son Montuno (Changüí, Sucu-sucu), Danzón et Casino, base de la salsa cubaine moderne, fusionnant la percussion batá avec des structures dansables.\n### Cours d'Afro Cubain et Folklore à Barcelone\nFarray's International Dance Center propose des **cours d'Afro Cubain à Barcelone** avec des maîtres cubains spécialisés dans les danses rituelles des Orishas. Si vous recherchez des **danses africaines** avec une tradition authentique, notre Folklore Cubain est le pont entre l'Afrique ancestrale et les rythmes latins modernes. Apprenez les racines pour danser avec l'âme.",
 
   // Identification Section
   folkloreIdentifyTitle: "Vous identifiez-vous à l'une de ces situations ?",
@@ -9309,6 +9326,20 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   folkloreFaqQ10: "Où est l'académie et comment vous contacter ?",
   folkloreFaqA10:
     'Nous sommes au Calle Entença 100, 08015 Barcelone (à 5 min de Plaza España et Sants).<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+  // SEO FAQs pour Afro Cubain, Afro Barcelone, Danses Africaines
+  folkloreFaqQ11: "Qu'est-ce que l'Afro Cubain et en quoi diffère-t-il du Folklore Cubain ?",
+  folkloreFaqA11:
+    "L'Afro Cubain est la composante la plus ancienne et profonde du Folklore Cubain : les danses et rythmes apportés d'Afrique par les esclaves et préservés à travers les siècles dans la religion Yoruba. Dans nos cours de Folklore Cubain, nous travaillons spécifiquement ce patrimoine afro-cubain, apprenant les danses des Orishas (Yemayá, Changó, Ochún, Elegguá...) avec leur signification rituelle et mouvements originaux. Si vous cherchez des <strong>cours d'Afro Cubain à Barcelone</strong>, vous trouverez ici l'authentique tradition enseignée par des maîtres cubains.",
+  folkloreFaqQ12: 'Puis-je apprendre des danses africaines à Barcelone avec vous ?',
+  folkloreFaqA12:
+    "Oui, mais avec une nuance importante : nous enseignons les <strong>danses afro-cubaines</strong> —la branche africaine qui s'est enracinée et a évolué à Cuba—. Si vous cherchez des <strong>cours de danses africaines à Barcelone</strong> avec des racines authentiques, notre Folklore Cubain vous connectera aux rythmes Yoruba, Congo et Arará qui ont survécu sur l'île. De plus, nous proposons Afrobeat, Afro-Contemporain et Afro-Jazz si vous vous intéressez à d'autres expressions de la diaspora africaine.",
+  folkloreFaqQ13:
+    "Quelle est la différence entre l'Afro Cubain et l'Afrobeat ou l'Afro Contemporain ?",
+  folkloreFaqA13:
+    "L'<strong>Afro Cubain</strong> (Folklore Cubain) est traditionnel et rituel : danses des Orishas, rumba, musique de batá. L'<strong>Afrobeat</strong> est moderne et urbain : né au Nigeria avec Fela Kuti, mélange funk, jazz et rythmes africains contemporains. L'<strong>Afro Contemporain</strong> fusionne technique de danse contemporaine avec mouvements d'origine africaine. Chez Farray's nous proposons les trois styles pour que vous puissiez explorer différentes facettes de la richesse africaine.",
+  folkloreFaqQ14: "Les cours d'Afro Cubain servent-ils à s'améliorer dans d'autres styles ?",
+  folkloreFaqA14:
+    "Absolument. Étudier l'<strong>Afro Cubain à Barcelone</strong> améliore votre compréhension de la salsa cubaine (qui a des racines directes dans ces rythmes), vous donne plus de saveur et de connexion avec la musique, et développe une qualité de mouvement organique qui bénéficie à tout style latin ou urbain. Beaucoup d'élèves de salsa découvrent que le folklore transforme complètement leur danse.",
 
   // Why Us Comparison Section
   folkloreCompareTitle:
@@ -9355,4 +9386,246 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
     "Vous ferez partie d'une famille qui partage la passion pour la culture cubaine.",
   folkloreCompareCTA: 'Essayez la différence : premier cours',
   folkloreCompareNote: 'Sans engagement. Sans pression. Juste de la danse authentique.',
+
+  // =====================================================================
+  // TIMBA PAGE - Unified page for Timba en Pareja + Lady Timba
+  // =====================================================================
+
+  // === META & SEO ===
+  timbaPageTitle: 'Cours de Timba à Barcelone',
+  timbaMetaDescription:
+    "Cours de Timba à Barcelone : Timba en Couple et Lady Timba avec des professeurs cubains. Apprenez à danser quand on vous lâche en salsa. Farray's Center, académie CID-UNESCO.",
+  timbaCourseSchemaName: 'Cours de Timba Cubaine à Barcelone',
+  timbaCourseSchemaDesc:
+    "Cours de Timba avec des professeurs cubains professionnels. Timba en couple et Lady Timba pour femmes. Apprenez l'interprétation musicale et le despelote cubain.",
+
+  // === BREADCRUMB ===
+  timbaBreadcrumbHome: 'Accueil',
+  timbaBreadcrumbClasses: 'Cours de Danse',
+  timbaBreadcrumbLatin: 'Salsa et Bachata',
+  timbaBreadcrumbCurrent: 'Timba',
+
+  // === HERO SECTION ===
+  timbaHeroTitle: 'TIMBA À BARCELONE',
+  timbaHeroSubtitle: 'Que faites-vous quand on vous lâche en salsa ?',
+  timbaHeroDesc:
+    'La Timba est la réponse. Apprenez à interpréter la musique cubaine moderne avec liberté, style et saveur. Cours pour couples et style féminin Lady Timba.',
+  timbaHeroLocation: 'Plaza España, Barcelone · Métro L1/L3',
+  timbaHeroStudents: '+15 000 élèves formés',
+  timbaCTAGroup: "Options d'inscription à la Timba",
+  timbaCTA1: 'Devenez Membre Maintenant',
+  timbaCTA1Subtext: 'Places limitées',
+  timbaCTA2: "Réservez votre Cours d'Essai",
+  timbaCTA2Subtext: 'Sans engagement',
+
+  // === WHAT IS TIMBA SECTION ===
+  timbaWhatIsTitle: "Qu'est-ce que la Timba Cubaine ?",
+  timbaWhatIsP1:
+    "La Timba est la musique dansante qui se joue aujourd'hui à Cuba. C'est le résultat de l'évolution naturelle de la musique cubaine pour s'adapter à la façon dont la jeunesse cubaine danse aujourd'hui.",
+  timbaWhatIsP2:
+    "La Timba fusionne les rythmes traditionnels cubains —musique Yorúba, Rumba et Son— avec la musicalité des genres modernes comme le Hip Hop, R&B, Reggae et Funky. C'est la liberté d'interprétation musicale, c'est un style propre, c'est la saveur cubaine du XXIe siècle.",
+  timbaWhatIsP3:
+    '"La Timba identifie un style, la liberté d\'interprétation musicale et les nouvelles tendances musicales cubaines."',
+  timbaWhatIsP4:
+    'Dans nos cours de Timba, vous apprendrez à appliquer les différents pas aux bons moments de la musique, à dissocier les différentes parties de votre corps et à ressentir la musique cubaine comme jamais auparavant.',
+  timbaWhatIsP5:
+    "Nous offrons deux modalités : Timba en Couple pour quand vous dansez le casino et qu'on vous lâche, et Lady Timba pour les femmes qui veulent développer leur style féminin et leur despelote.",
+  timbaWhatIsQuestionTitle: 'Vous dansez la salsa cubaine et vous bloquez quand on vous lâche ?',
+  timbaWhatIsQuestionAnswer:
+    'La Timba est votre solution. Vous ne vous sentirez plus jamais perdu(e) sur la piste.',
+
+  // === SCHEDULE SECTION ===
+  timbaScheduleTitle: 'Horaires de nos cours de Timba',
+  timbaScheduleSubtitle: '3 cours hebdomadaires · 2 modalités · 3 professeurs cubains',
+
+  // === LEVELS SECTION ===
+  timbaLevelsTitle: 'Niveaux de Timba',
+  timbaLevelBasicTitle: 'Lady Timba Basique',
+  timbaLevelBasicDesc:
+    'Pour les femmes avec un niveau basique de salsa cubaine. Apprenez les bases du style féminin, les mouvements du corps et comment interpréter la musique quand vous dansez seule.',
+  timbaLevelIntermediateTitle: 'Timba Intermédiaire-Avancé',
+  timbaLevelIntermediateDesc:
+    "Pour les danseurs avec au moins 1 an de salsa cubaine. Maîtrisez l'improvisation, le despelote, et multipliez vos ressources pour quand on vous lâche dans la danse.",
+
+  // === TEACHERS SECTION ===
+  timbaTeachersTitle: 'Vos Professeurs de Timba',
+  timbaTeachersSubtitle: 'Apprenez avec des danseurs professionnels cubains',
+  timbaTeacher1Specialty: 'Directrice · Lady Timba Intermédiaire-Avancé',
+  timbaTeacher1Bio:
+    'Yunaisy Farray est la créatrice de la Méthode Farray et membre du CID-UNESCO. Spécialiste en Lady Timba, elle vous apprendra à révéler votre côté le plus sexy et féminin avec une technique cubaine authentique.',
+  timbaTeacher2Specialty: 'Professeure de Timba en Couple',
+  timbaTeacher2Bio:
+    "Grechén Mendez est une danseuse professionnelle cubaine formée à l'ISA. Experte en Timba en couple, elle vous apprendra à interpréter la musique avec votre partenaire et à improviser avec style.",
+  timbaTeacher3Specialty: 'Professeure de Lady Timba Basique',
+  timbaTeacher3Bio:
+    'Lia Valdés vous introduira au monde du Lady Timba avec patience et technique. Parfait pour faire vos premiers pas dans le style féminin cubain.',
+  timbaTeachersClosing:
+    'Trois professeurs cubains, trois styles complémentaires. Apprenez la Timba avec ceux qui la vivent depuis le berceau.',
+
+  // === PREPARE CLASS SECTION ===
+  timbaPrepareTitle: 'Comment vous Préparer pour votre Cours de Timba ?',
+  timbaPrepareSubtitle: 'Conseils de Yunaisy Farray',
+  timbaPrepareWhatToBring: 'Quoi apporter',
+  timbaPrepareItem1: 'Vêtements confortables qui vous permettent de bouger librement',
+  timbaPrepareItem2: 'Chaussures de danse ou chaussettes (pas de chaussures de ville)',
+  timbaPrepareItem3: "Bouteille d'eau",
+  timbaPrepareItem4: 'Envie de vous lâcher et de vous amuser',
+  timbaPrepareNeedItem1: 'Vêtements confortables qui vous permettent de bouger librement',
+  timbaPrepareNeedItem2: 'Chaussures de danse ou chaussettes (pas de chaussures de ville)',
+  timbaPrepareNeedItem3: "Bouteille d'eau",
+  timbaPrepareNeedItem4: 'Envie de vous lâcher et de vous amuser',
+  timbaPrepareBefore: 'Avant de venir',
+  timbaPrepareBeforeItem1: 'Écoutez de la Timba cubaine pour vous familiariser avec le rythme',
+  timbaPrepareBeforeItem2: "Venez avec l'esprit ouvert à l'expérimentation",
+  timbaPrepareBeforeItem3: 'Pas besoin de venir avec un partenaire (sauf cours du mardi)',
+  timbaPrepareAvoid: 'Évitez',
+  timbaPrepareAvoidItem1: 'Vêtements très serrés qui limitent le mouvement',
+  timbaPrepareAvoidItem2: "Venir l'estomac très plein",
+  timbaPrepareAvoidItem3: 'Vous comparer aux autres, chacun a son rythme',
+  timbaPrepareTeacherTip: 'Conseil de la professeure',
+  timbaPrepareTeacherQuote:
+    '"La Timba c\'est la liberté. Ne venez pas en pensant aux pas parfaits, venez en pensant à vous exprimer. Votre corps sait déjà danser, il a juste besoin de permission."',
+
+  // === IDENTIFICATION SECTION ===
+  timbaIdentifyTitle: "Vous identifiez-vous à l'une de ces situations ?",
+  timbaIdentify1:
+    'Vous dansez la salsa cubaine mais quand votre partenaire vous lâche, vous ne savez pas quoi faire',
+  timbaIdentify2: 'Vous voulez plus de ressources et de pas pour improviser sur la piste',
+  timbaIdentify3: 'Vous aimeriez vous sentir plus sexy et féminine quand vous dansez (Lady Timba)',
+  timbaIdentify4: 'Vous dansez depuis un moment mais sentez qu\'il vous manque la "saveur cubaine"',
+  timbaIdentify5:
+    'Vous voulez mieux comprendre la musique cubaine moderne et ses différentes parties',
+  timbaIdentify6:
+    'Vous cherchez des cours avec des professeurs cubains authentiques, pas des imitateurs',
+  timbaIdentifyTransition:
+    'Si vous avez dit "oui" à l\'une de ces situations, la Timba est pour vous.',
+  timbaNeedEnrollTitle: "Pourquoi devriez-vous vous inscrire aujourd'hui ?",
+  timbaIdentifyAgitate1:
+    'Chaque fête qui passe sans savoir quoi faire quand on vous lâche est une opportunité manquée de profiter au maximum.',
+  timbaIdentifySolution:
+    "Avec la Timba, vous transformerez ces moments gênants en vos moments préférés de la soirée. Vous aurez tellement de ressources que vous souhaiterez qu'on vous lâche plus souvent.",
+  timbaIdentifyClosing:
+    "N'attendez plus. Chaque semaine qui passe est une semaine de moins à profiter de votre danse à 100%.",
+
+  // === TRANSFORMATION SECTION ===
+  timbaTransformTitle: "Qu'obtiendrez-vous dans nos cours de Timba ?",
+  timbaTransform1Title: 'Improvisation Totale',
+  timbaTransform1Desc:
+    'Vous ne resterez plus jamais bloqué(e). Vous aurez un arsenal infini de mouvements pour chaque moment de la musique.',
+  timbaTransform2Title: 'Interprétation Musicale',
+  timbaTransform2Desc:
+    'Vous apprendrez à écouter les différents instruments et à danser chaque partie de la musique avec le bon pas.',
+  timbaTransform3Title: 'Style Personnel',
+  timbaTransform3Desc:
+    'Vous développerez votre façon unique de danser, fusionnant technique cubaine et votre personnalité.',
+  timbaTransform4Title: 'Dissociation Corporelle',
+  timbaTransform4Desc:
+    'Votre corps apprendra à bouger différentes parties de façon indépendante, multipliant vos possibilités expressives.',
+  timbaTransform5Title: 'Confiance sur la Piste',
+  timbaTransform5Desc:
+    'Vous vous sentirez confiant(e) en dansant seul(e) ou avec un partenaire. La piste sera votre territoire.',
+  timbaTransform6Title: 'Saveur Cubaine Authentique',
+  timbaTransform6Desc:
+    "Vous apprendrez de professeurs cubains qui ont la Timba dans le sang. Ce n'est pas de l'imitation, c'est une transmission directe.",
+
+  // === WHY CHOOSE FARRAYS SECTION ===
+  timbaTransformCTA: "Pourquoi choisir Farray's pour apprendre la Timba ?",
+  timbaWhyChoose1Title: 'Professeurs 100% Cubains',
+  timbaWhyChoose1Desc:
+    "Yunaisy, Grechén et Lia sont cubaines de naissance. Vous n'apprendrez pas une version européenne de la Timba, mais l'authentique.",
+  timbaWhyChoose2Title: '3 Cours Hebdomadaires',
+  timbaWhyChoose2Desc:
+    'Timba en Couple, Lady Timba Intermédiaire et Lady Timba Basique. Trouvez celui qui vous convient le mieux.',
+  timbaWhyChoose3Title: 'Méthode Progressive',
+  timbaWhyChoose3Desc:
+    "Commencez en Lady Timba Basique et progressez jusqu'au niveau avancé avec une méthodologie claire et efficace.",
+  timbaWhyChoose4Title: 'Connexion avec la Salsa',
+  timbaWhyChoose4Desc:
+    'Ce que vous apprenez en Timba améliore directement votre salsa cubaine. Ce sont les deux faces de la même pièce.',
+  timbaWhyChoose5Title: 'Ambiance Familiale',
+  timbaWhyChoose5Desc:
+    'Une communauté où vous vous sentirez accueilli(e) dès le premier jour. Ici on ne juge pas, on célèbre.',
+  timbaWhyChoose6Title: 'Sans Engagement',
+  timbaWhyChoose6Desc:
+    'Payez au mois. Si vous ne pouvez pas venir un mois, pas de problème. Flexibilité totale.',
+  timbaWhyChoose7Title: 'Académie CID-UNESCO',
+  timbaWhyChoose7Desc:
+    'Reconnaissance internationale qui valide la qualité de notre enseignement et méthodologie.',
+  timbaLogosTitle: 'Apprenez avec des professionnels reconnus',
+  timbaLogosIntlFestivalsText: '+ Festivals internationaux de salsa',
+
+  // === WHY TODAY SECTION ===
+  timbaWhyTodayFullTitle: 'Pourquoi commencer aujourd\'hui et pas "le mois prochain" ?',
+  timbaWhyToday1:
+    "La Timba n'est pas qu'un style de danse, c'est une façon de vivre la musique cubaine. Chaque jour qui passe sans l'apprendre est un jour de moins à profiter de la salsa au plus haut niveau.",
+  timbaWhyToday2:
+    'Les groupes sont réduits pour garantir une attention personnalisée. Les places se remplissent vite, surtout en Lady Timba avec Yunaisy.',
+  timbaWhyToday3:
+    "Vous n'avez pas besoin d'être expert(e) en salsa pour commencer. Si vous dansez depuis au moins un an, vous avez la base suffisante.",
+  timbaWhyTodayClosing1: 'Votre prochaine fête pourrait être complètement différente.',
+  timbaWhyTodayClosing2:
+    'Imaginez-vous danser avec confiance, sachant exactement quoi faire à chaque moment de la musique...',
+
+  // === CULTURAL HISTORY SECTION ===
+  timbaCulturalHistoryTitle: 'Histoire et Origines de la Timba Cubaine',
+  timbaCulturalShort:
+    'La Timba est née à Cuba dans les années 80-90 comme évolution du Son et de la Salsa, fusionnant les rythmes traditionnels africains avec les genres modernes.',
+  timbaCulturalFull:
+    "## Les Origines de la Timba\n\nLa Timba a émergé à La Havane dans les années 80 et a atteint son expression maximale dans les années 90. C'est le résultat de l'évolution naturelle de la musique cubaine, quand les jeunes musiciens cubains ont commencé à fusionner le Son traditionnel avec des influences du funk, hip hop, rock et jazz.\n\n## Pourquoi s'appelle-t-elle \"Timba\" ?\n\nLe terme \"Timba\" a des racines dans l'argot cubain. Certains le relient aux \"timbales\" (instrument de percussion), d'autres aux expressions populaires cubaines. Ce sur quoi tout le monde s'accorde, c'est qu'il représente quelque chose d'intense, de rue et d'authentique.\n\n## Les Groupes qui ont Défini le Genre\n\nDes groupes comme **Los Van Van**, **NG La Banda**, **La Charanga Habanera**, **Manolín \"El Médico de la Salsa\"** et **Paulito FG** ont été les pionniers qui ont défini le son de la Timba.",
+
+  // === FAQ SECTION ===
+  timbaFaqTitle: 'Questions Fréquentes sur la Timba',
+  timbaFaqQ1: 'Quel niveau de salsa ai-je besoin pour commencer la Timba ?',
+  timbaFaqA1:
+    "Pour Lady Timba Basique (vendredi) nous recommandons au moins 6 mois de salsa cubaine. Pour Timba en Couple (mardi) et Lady Timba Intermédiaire (jeudi), nous recommandons minimum 1 an d'expérience en salsa cubaine.",
+  timbaFaqQ2: 'Quelle est la différence entre Timba en Couple et Lady Timba ?',
+  timbaFaqA2:
+    "La Timba en Couple (mardi) travaille l'interprétation musicale quand vous dansez avec quelqu'un et qu'on vous lâche momentanément. Lady Timba (jeudi et vendredi) est axé exclusivement sur le style féminin et est réservé aux femmes.",
+  timbaFaqQ3: 'Puis-je venir sans partenaire au cours de Timba en Couple ?',
+  timbaFaqA3:
+    "Pour le cours de Timba en Couple du mardi, il est recommandé de venir avec un partenaire car on travaille des exercices de connexion. Pour Lady Timba vous n'avez pas besoin de partenaire, c'est individuel.",
+  timbaFaqQ4: 'Qu\'est-ce que le "despelote" dont on parle tant ?',
+  timbaFaqA4:
+    'Le "despelote" est le moment dans la musique Timba où le rythme s\'intensifie et les danseurs "se lâchent" pour improviser avec des mouvements plus libres et expressifs. C\'est le moment le plus amusant de la Timba.',
+  timbaFaqQ5: 'Quels vêtements dois-je porter au cours de Timba ?',
+  timbaFaqA5:
+    "Vêtements confortables qui vous permettent de bouger librement. Pour Lady Timba, beaucoup d'élèves viennent avec des vêtements qui les font se sentir féminines (jupes, robes). Chaussures : chaussures de danse ou chaussettes.",
+  timbaFaqQ6: "La Timba m'aidera-t-elle à améliorer ma salsa cubaine ?",
+  timbaFaqA6:
+    'Absolument. La Timba et la salsa cubaine vont de pair. Ce que vous apprenez en Timba (interprétation musicale, improvisation, despelote) améliore directement votre danse en couple.',
+  timbaFaqQ7: "Combien coûte le cours d'essai ?",
+  timbaFaqA7:
+    "Le cours d'essai coûte 10€. Si vous vous inscrivez le même jour, il est déduit du premier mois.",
+  timbaFaqQ8: 'Y a-t-il un contrat ou un engagement minimum ?',
+  timbaFaqA8:
+    "Non. Chez Farray's nous travaillons au mois, sans contrats ni engagements. Vous payez uniquement les mois où vous venez.",
+  timbaFaqQ9: 'Puis-je essayer les trois cours de Timba avant de décider ?',
+  timbaFaqA9:
+    "Oui, vous pouvez essayer chaque cours en payant 10€ pour chacun. Ainsi vous pouvez voir lequel s'adapte le mieux à votre niveau et vos goûts.",
+  timbaFaqQ10: 'Les cours de Timba sont-ils réservés aux femmes ?',
+  timbaFaqA10:
+    'Lady Timba (jeudi et vendredi) est exclusivement pour les femmes. Timba en Couple (mardi) est mixte et les hommes comme les femmes peuvent y participer.',
+  timbaFaqQ11: 'Quelle musique utilise-t-on dans les cours de Timba ?',
+  timbaFaqA11:
+    "Nous utilisons de la Timba cubaine authentique : Los Van Van, NG La Banda, La Charanga Habanera, Havana D'Primera, Maykel Blanco et plus. De la musique qu'on danse dans les fêtes de salsa cubaine.",
+  timbaFaqQ12:
+    "Puis-je commencer en Lady Timba Intermédiaire si je n'ai jamais fait de Lady Timba ?",
+  timbaFaqA12:
+    'Si vous avez un bon niveau de salsa cubaine (+2 ans), vous pouvez commencer directement au niveau intermédiaire. Si vous avez des doutes, venez essayer un cours et Yunaisy vous guidera.',
+
+  // === NEARBY AREAS SECTION ===
+  timbaNearbyTitle: 'Cours de Timba près de chez vous à Barcelone',
+  timbaNearbyDesc:
+    "Farray's Center est à Plaza España, parfaitement desservi par le métro (L1 et L3) et le bus. Des élèves de tout Barcelone viennent apprendre la Timba avec nous.",
+  timbaNearbySearchText:
+    'Vous cherchez "cours de Timba près de moi" ? Voyez comme c\'est facile d\'arriver :',
+  timbaNearbyMetro: 'Métro : Plaza España (L1, L3) · Hostafrancs (L1) · Tarragona (L3)',
+
+  // === FINAL CTA SECTION ===
+  timbaFinalCTATitle: 'Prêt(e) à transformer votre façon de danser ?',
+  timbaFinalCTASubtitle: 'Votre premier cours de Timba vous attend',
+  timbaFinalCTADesc:
+    "Peu importe si vous n'avez jamais fait de Timba. Ce qui compte, c'est que vous voulez vous améliorer, profiter davantage et vous sentir libre sur la piste. Nos professeurs cubains vous guideront pas à pas.",
+  timbaFinalCTAFunny:
+    '"Avant je restais comme une statue quand on me lâchait. Maintenant je souhaite qu\'on me lâche." — Élève anonyme 😄',
 };
