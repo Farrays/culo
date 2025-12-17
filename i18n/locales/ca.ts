@@ -199,6 +199,18 @@ export const ca = {
     "Amb la gràcia i precisió perfeccionades a les millors companyies d'Europa, l'Elena guia els estudiants a trobar la seva veu expressiva a través de tècniques clàssiques i modernes.",
   // Testimonials
   testimonialsTitle: 'Testimonis No Sol·licitats dels Nostres Estudiants',
+  // Video Testimonials Section
+  videoTestimonialsTitle: "Viu l'Ambient Farray's",
+  videoTestimonialsSubtitle: 'Moments reals de la nostra acadèmia. Sense filtres, sense guions.',
+  videoTestimonialsCTA: 'Segueix-nos a Instagram',
+  videoTestimonial1Title: 'Així es viu una classe',
+  videoTestimonial2Title: 'Energia pura',
+  videoTestimonial3Title: 'La nostra comunitat',
+  videoTestimonial4Title: 'El mètode en acció',
+  videoTestimonial5Title: 'Transformació real',
+  videoModalLoading: 'Carregant vídeo...',
+  videoModalClose: 'Tancar vídeo',
+  videoModalCloseHint: 'Prem ESC o fora del vídeo per tancar',
   // FinalCTA
   finalCtaTitle:
     "No et prometem ser la 'millor escola de ball de Barcelona'. Et prometem alguna cosa millor: resultats.",
@@ -7293,10 +7305,11 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   // Local SEO Section
   salsaCubanaNearbyTitle: 'Classes de Salsa Cubana a prop teu a Barcelona',
   salsaCubanaNearbyDesc:
-    'La nostra acadèmia està ubicada al cor de Barcelona, fàcilment accessible des de tota la ciutat.',
+    "La nostra acadèmia està ubicada al cor de Barcelona, fàcilment accessible des de tota la ciutat. Som l'acadèmia de referència per a classes de Salsa a la zona de Plaça Espanya, Sants, Hostafrancs, Les Corts i Eixample Esquerra. També rebem alumnes de Poble Sec, Sant Antoni i L'Hospitalet que busquen formació en balls llatins amb metodologia professional.",
   salsaCubanaNearbySearchText:
     'Busques classes de salsa cubana a prop del teu barri? Som a pocs minuts de:',
-  salsaCubanaNearbyMetro: 'Metro: Hostafrancs (L1) o Tarragona (L3) a 5-10 minuts caminant',
+  salsaCubanaNearbyMetro:
+    'Metro: Plaça Espanya (L1, L3), Rocafort (L1) - 5 min caminant, Entença (L5) - 5 min caminant o Hostafrancs (L1) - 5 min caminant.',
 
   // Course Schema
   salsaCubanaCourseSchemaName: 'Curs de Salsa Cubana - Mètode Farray®',
@@ -8542,8 +8555,20 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
     'Para principiantes. Aprenderás los fundamentos: groove, bounce, pasos básicos de hip-hop y reggaeton, actitud y musicalidad. Sin experiencia previa necesaria.',
   hhrLevelIntermediateTitle: 'Hip Hop Reggaeton Intermedio',
   hhrLevelIntermediateDesc:
-    'Para quienes dominan lo básico. Coreografías estilo videoclip, combinaciones más complejas, improvisación y desarrollo de estilo propio.',
-  hhrPrepareTitle: 'Prepara tu primera clase de Hip Hop Reggaeton',
+    "Per a qui domina el bàsic. Coreografies estil videoclip, combinacions més complexes, improvisació i desenvolupament d'estil propi.",
+
+  // Keys per LevelCardsSection (usades pel template)
+  hhrLevelBeginnerTitle: 'Hip Hop Reggaeton Principiant',
+  hhrLevelBeginnerDesc:
+    "El teu primer contacte amb el Hip Hop Reggaeton. Aprendràs groove bàsic, bounce, coordinació i els fonaments de l'estil urbà. Perfecte si mai has ballat.",
+  hhrLevelInterTitle: 'Hip Hop Reggaeton Intermedi',
+  hhrLevelInterDesc:
+    'Ja domines el bàsic i vols més. Coreografies estil videoclip, combinacions més complexes, improvisació i desenvolupament del teu propi estil.',
+  hhrLevelAdvancedTitle: 'Hip Hop Reggaeton Avançat',
+  hhrLevelAdvancedDesc:
+    'Per a ballarins experimentats. Coreografies intensives, tècnica avançada, freestyle i preparació per a shows o competicions.',
+
+  hhrPrepareTitle: 'Prepara la teva primera classe de Hip Hop Reggaeton',
   hhrPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
   hhrPrepareWhatToBring: 'Qué traer:',
   hhrPrepareItem1: 'Ropa urbana cómoda (joggers, pantalones anchos, camiseta holgada)',
@@ -9266,7 +9291,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   timbaHeroSubtitle: 'Què fas quan et deixen anar a la salsa?',
   timbaHeroDesc:
     'La Timba és la resposta. Aprèn a interpretar la música cubana moderna amb llibertat, estil i sabor. Classes per a parelles i estil femení Lady Timba.',
-  timbaHeroLocation: 'Plaça Espanya, Barcelona · Metro L1/L3',
+  timbaHeroLocation: 'Entre Plaça Espanya i Sants Estació',
   timbaHeroStudents: '+15.000 alumnes formats',
   timbaCTAGroup: "Opcions d'inscripció a Timba",
   timbaCTA1: 'Fes-te Soci Ara',
@@ -9478,4 +9503,80 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
     'No importa si mai has fet Timba. El que importa és que vols millorar, gaudir més i sentir-te lliure a la pista. Els nostres mestres cubans et guiaran pas a pas.',
   timbaFinalCTAFunny:
     '"Abans em quedava com una estàtua quan em deixaven anar. Ara desitjo que em deixin anar." — Alumna anònima 😄',
+
+  // ============================================================
+  // CALENDAR / CALENDARI
+  // ============================================================
+
+  // Widget (Home)
+  calendar_widget_title: 'Calendari Acadèmic',
+  calendar_widget_subtitle: 'Consulta les dates importants: vacances, festius, esdeveniments i més',
+  calendar_view_full: 'Veure calendari complet',
+
+  // Page
+  calendar_page_title: 'Calendari Acadèmic 2025-2026',
+  calendar_page_description:
+    'Calendari acadèmic de FIDC Barcelona: vacances, festius, esdeveniments, gales i dates importants del curs 2025-2026.',
+  calendar_page_heading: 'Calendari Acadèmic',
+  calendar_page_subheading:
+    'Totes les dates importants del curs perquè organitzis el teu any de ball',
+
+  // Filters
+  calendar_filter_all: 'Tots',
+  calendar_type_vacation: 'Vacances',
+  calendar_type_holiday: 'Festius',
+  calendar_type_event: 'Esdeveniments',
+  calendar_type_workshop: 'Workshops',
+  calendar_type_info: 'Informació',
+
+  // Event cards
+  calendar_no_classes: 'No hi ha classes',
+  calendar_add_to_calendar: 'Afegir al meu calendari',
+  calendar_happening_now: 'Ara',
+  calendar_coming_soon: 'Properament',
+  calendar_no_events: "No hi ha esdeveniments d'aquest tipus programats",
+
+  // CTA
+  calendar_cta_title: 'Preparat per començar a ballar amb nosaltres?',
+  calendar_cta_subtitle: 'Planifica el teu any de ball amb nosaltres',
+  calendar_cta_line2: '+ 25 Estils diferents · Abonaments flexibles · Ambient únic',
+  calendar_cta_line3: 'El teu moment és ara!',
+  calendar_cta_button1: 'Veure Horaris i Preus',
+  calendar_cta_button1_subtext: 'Tria el teu estil favorit',
+  calendar_cta_button2: 'Contactar',
+  calendar_cta_button2_subtext: "Dubtes? T'ajudem",
+
+  // Event titles and descriptions
+  calendar_event_christmas_vacation: 'Vacances de Nadal',
+  calendar_event_christmas_vacation_desc:
+    'Període de descans nadalenc. Les classes es reprenen el 7 de gener. Bones festes!',
+
+  calendar_event_three_kings: 'Festiu: Dia de Reis',
+  calendar_event_three_kings_desc: "Dia festiu a Espanya. L'acadèmia roman tancada.",
+
+  calendar_event_easter_vacation: 'Vacances de Setmana Santa',
+  calendar_event_easter_vacation_desc:
+    "Període de descans de Setmana Santa. Les classes es reprenen el 7 d'abril.",
+
+  calendar_event_labor_day: 'Festiu: Dia del Treballador',
+  calendar_event_labor_day_desc: "Dia festiu internacional. L'acadèmia roman tancada.",
+
+  calendar_event_san_juan: 'Festiu: Sant Joan',
+  calendar_event_san_juan_desc:
+    "Festa de Sant Joan. L'acadèmia roman tancada. Gaudeix de la revetlla!",
+
+  calendar_event_end_year_gala: 'Gala de Fi de Curs',
+  calendar_event_end_year_gala_desc:
+    "L'esdeveniment més esperat de l'any! Tots els alumnes mostren el que han après en un espectacle únic. Familiars i amics benvinguts.",
+
+  calendar_event_summer_vacation: "Vacances d'Estiu",
+  calendar_event_summer_vacation_desc:
+    'Període de descans estival. Ens veiem al setembre amb més energia que mai!',
+
+  calendar_event_course_start: 'Inici del Curs 2026-2027',
+  calendar_event_course_start_desc:
+    "Arrenca el nou curs! Nous grups, nous horaris i moltes ganes de ballar. T'apuntes?",
+
+  // Navigation
+  navCalendar: 'Calendari',
 };

@@ -45,6 +45,7 @@ const FacilitiesPage = lazy(() => import('./components/FacilitiesPage'));
 const HeelsBarcelonaPage = lazy(() => import('./components/HeelsBarcelonaPage'));
 const SalsaLadyStylePage = lazy(() => import('./components/SalsaLadyStylePage'));
 const SalsaLadyStylePageV2 = lazy(() => import('./components/SalsaLadyStylePageV2'));
+const BachataLadyStylePage = lazy(() => import('./components/BachataLadyStylePage'));
 
 // ===== DANCE CLASS PAGES USING UNIFIED TEMPLATE =====
 // Migrated from ~900 lines each to ~15 lines using FullDanceClassTemplate
@@ -65,6 +66,10 @@ const HipHopPage = lazy(() => import('./components/HipHopPage'));
 const SalsaCubanaPage = lazy(() => import('./components/SalsaCubanaPage'));
 const FolkloreCubanoPage = lazy(() => import('./components/FolkloreCubanoPage'));
 const TimbaPage = lazy(() => import('./components/TimbaPage'));
+const StretchingPage = lazy(() => import('./components/StretchingPage'));
+const BumBumPage = lazy(() => import('./components/BumBumPage'));
+const CalendarPage = lazy(() => import('./components/CalendarPage'));
+const PreciosPage = lazy(() => import('./components/PreciosPage'));
 
 // Valid locales - use centralized constant from types.ts
 const VALID_LOCALES = SUPPORTED_LOCALES;
@@ -364,6 +369,16 @@ const AppContent: React.FC = () => {
             />
 
             <Route
+              path="/:locale/clases/bachata-lady-style-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <BachataLadyStylePage />
+                </>
+              }
+            />
+
+            <Route
               path="/:locale/clases/folklore-cubano"
               element={
                 <>
@@ -399,6 +414,26 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <PreparacionFisicaBailarinesPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/clases/stretching-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <StretchingPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/clases/ejercicios-gluteos-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <BumBumPage />
                 </>
               }
             />
@@ -519,6 +554,26 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <FacilitiesPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/calendario"
+              element={
+                <>
+                  <LocaleSync />
+                  <CalendarPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/precios-clases-baile-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <PreciosPage />
                 </>
               }
             />

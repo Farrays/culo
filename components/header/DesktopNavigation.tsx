@@ -117,6 +117,8 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
         return 'urban';
       case 'navSalsaBachata':
         return 'salsa';
+      case 'navPrepFisica':
+        return 'prepfisica';
       default:
         return 'classes';
     }
@@ -131,6 +133,8 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
         return 'urban-dropdown';
       case 'navSalsaBachata':
         return 'salsa-dropdown';
+      case 'navPrepFisica':
+        return 'prepfisica-dropdown';
       default:
         return '';
     }

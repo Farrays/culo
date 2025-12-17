@@ -16,6 +16,7 @@ export type DropdownKey =
   | 'urban'
   | 'heels'
   | 'salsa'
+  | 'prepfisica'
   | 'services'
   | 'aboutUs';
 
@@ -26,17 +27,19 @@ const DROPDOWN_CLASS_MAP: Record<DropdownKey, string> = {
   urban: '.urban-dropdown',
   heels: '.heels-dropdown',
   salsa: '.salsa-dropdown',
+  prepfisica: '.prepfisica-dropdown',
   services: '.services-dropdown',
   aboutUs: '.aboutus-dropdown',
 };
 
 // Define parent-child relationships for nested dropdowns
 const NESTED_DROPDOWNS: Record<DropdownKey, DropdownKey[]> = {
-  classes: ['danza', 'urban', 'salsa', 'heels'],
+  classes: ['danza', 'urban', 'salsa', 'heels', 'prepfisica'],
   danza: [],
   urban: ['heels'],
   heels: [],
   salsa: [],
+  prepfisica: [],
   services: [],
   aboutUs: [],
   lang: [],
@@ -59,7 +62,7 @@ const Header: React.FC = () => {
         NESTED_DROPDOWNS[key].forEach(child => newSet.delete(child));
       } else {
         // Close sibling dropdowns (same level) but keep parent open
-        const isSubDropdown = ['danza', 'urban', 'salsa', 'heels'].includes(key);
+        const isSubDropdown = ['danza', 'urban', 'salsa', 'heels', 'prepfisica'].includes(key);
         if (!isSubDropdown) {
           // Top-level dropdown: close all others
           newSet.clear();
@@ -67,7 +70,7 @@ const Header: React.FC = () => {
           // heels is child of urban, keep urban and classes open
         } else {
           // Sub-dropdown: close siblings but keep 'classes' open
-          ['danza', 'urban', 'salsa'].forEach(sibling => {
+          ['danza', 'urban', 'salsa', 'prepfisica'].forEach(sibling => {
             if (sibling !== key) {
               newSet.delete(sibling as DropdownKey);
               // Also close heels if closing urban
@@ -219,10 +222,22 @@ const Header: React.FC = () => {
           submenu: [
             { path: `/${locale}/clases/salsa-cubana-barcelona`, textKey: 'navSalsaCubana' },
             { path: `/${locale}/clases/salsa-lady-style-barcelona`, textKey: 'navSalsaLadyStyle' },
+            {
+              path: `/${locale}/clases/bachata-lady-style-barcelona`,
+              textKey: 'navBachataLadyStyle',
+            },
+            { path: `/${locale}/clases/timba-barcelona`, textKey: 'navTimba' },
             { path: `/${locale}/clases/folklore-cubano`, textKey: 'navFolkloreCubano' },
           ],
         },
-        { path: `/${locale}/clases/entrenamiento-bailarines-barcelona`, textKey: 'navPrepFisica' },
+        {
+          path: `/${locale}/clases/entrenamiento-bailarines-barcelona`,
+          textKey: 'navPrepFisica',
+          submenu: [
+            { path: `/${locale}/clases/stretching-barcelona`, textKey: 'navStretching' },
+            { path: `/${locale}/clases/ejercicios-gluteos-barcelona`, textKey: 'navBumBum' },
+          ],
+        },
       ],
     },
   };
@@ -270,6 +285,22 @@ const Header: React.FC = () => {
 
           {/* Right Actions */}
           <div className="hidden md:flex items-center space-x-6 flex-1 justify-end">
+            {/* Pricing Link */}
+            <Link
+              to={`/${locale}/precios-clases-baile-barcelona`}
+              className="transition-colors duration-300 text-sm font-medium text-neutral/75 hover:text-white"
+            >
+              {t('navPricing')}
+            </Link>
+
+            {/* Calendar Link */}
+            <Link
+              to={`/${locale}/calendario`}
+              className="transition-colors duration-300 text-sm font-medium text-neutral/75 hover:text-white"
+            >
+              {t('navCalendar')}
+            </Link>
+
             {/* Contact Link */}
             <Link
               to={`/${locale}/contacto`}

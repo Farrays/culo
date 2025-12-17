@@ -1298,7 +1298,38 @@ const SalsaCubanaPage: React.FC = () => {
           </div>
         </section>
 
-        {/* 12. Final CTA Section */}
+        {/* 12. FAQ */}
+        <FAQSection title={t('salsaCubanaFaqTitle')} faqs={salsaCubanaFaqs} pageUrl={pageUrl} />
+
+        {/* 13. Local SEO Section */}
+        <section className="py-10 md:py-14 bg-black">
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="max-w-4xl mx-auto p-6 bg-black/30 rounded-2xl border border-neutral/20">
+                <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-4">
+                  {t('salsaCubanaNearbyTitle')}
+                </h3>
+                <p className="text-neutral/80 mb-6">{t('salsaCubanaNearbyDesc')}</p>
+                <p className="text-neutral/90 font-semibold mb-4">
+                  {t('salsaCubanaNearbySearchText')}
+                </p>
+                <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
+                  {SALSA_CUBANA_NEARBY_AREAS.map((area, index) => (
+                    <div key={index} className="flex items-center gap-2 text-sm">
+                      <MapPinIcon className="w-4 h-4 text-primary-accent" />
+                      <span className="text-neutral/80">
+                        {area.name}: <span className="text-primary-accent">{area.time}</span>
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-neutral/70 text-sm mt-4">{t('salsaCubanaNearbyMetro')}</p>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* 14. Final CTA Section */}
         <section id="final-cta" className="relative py-16 md:py-24 overflow-hidden">
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
@@ -1367,37 +1398,6 @@ const SalsaCubanaPage: React.FC = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* 13. FAQ */}
-        <FAQSection title={t('salsaCubanaFaqTitle')} faqs={salsaCubanaFaqs} pageUrl={pageUrl} />
-
-        {/* 14. Local SEO Section */}
-        <section className="py-10 md:py-14 bg-black">
-          <div className="container mx-auto px-4 sm:px-6">
-            <AnimateOnScroll>
-              <div className="max-w-4xl mx-auto p-6 bg-black/30 rounded-2xl border border-neutral/20">
-                <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-4">
-                  {t('salsaCubanaNearbyTitle')}
-                </h3>
-                <p className="text-neutral/80 mb-6">{t('salsaCubanaNearbyDesc')}</p>
-                <p className="text-neutral/90 font-semibold mb-4">
-                  {t('salsaCubanaNearbySearchText')}
-                </p>
-                <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
-                  {SALSA_CUBANA_NEARBY_AREAS.map((area, index) => (
-                    <div key={index} className="flex items-center gap-2 text-sm">
-                      <MapPinIcon className="w-4 h-4 text-primary-accent" />
-                      <span className="text-neutral/80">
-                        {area.name}: <span className="text-primary-accent">{area.time}</span>
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <p className="text-neutral/70 text-sm mt-4">{t('salsaCubanaNearbyMetro')}</p>
               </div>
             </AnimateOnScroll>
           </div>

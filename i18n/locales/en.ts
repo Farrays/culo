@@ -199,6 +199,18 @@ export const en = {
     "With grace and precision honed in Europe's top companies, Elena guides students to find their expressive voice through classical and modern techniques.",
   // Testimonials
   testimonialsTitle: 'Unsolicited Testimonials from Our Students',
+  // Video Testimonials Section
+  videoTestimonialsTitle: "Experience the Farray's Vibe",
+  videoTestimonialsSubtitle: 'Real moments from our academy. No filters, no scripts.',
+  videoTestimonialsCTA: 'Follow us on Instagram',
+  videoTestimonial1Title: 'This is how a class feels',
+  videoTestimonial2Title: 'Pure energy',
+  videoTestimonial3Title: 'Our community',
+  videoTestimonial4Title: 'The method in action',
+  videoTestimonial5Title: 'Real transformation',
+  videoModalLoading: 'Loading video...',
+  videoModalClose: 'Close video',
+  videoModalCloseHint: 'Press ESC or click outside to close',
   // FinalCTA
   finalCtaTitle:
     "We don't promise to be the 'best dance school in Barcelona'. We promise something better: results.",
@@ -7322,10 +7334,11 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
     'Yunaisy is a CID-UNESCO member, has developed the only Farray Method® in the world, and has over 25 years of international experience training dancers in Cuba, Europe and Spain.',
   salsaCubanaNearbyTitle: 'Cuban Salsa Classes near you in Barcelona',
   salsaCubanaNearbyDesc:
-    'Our academy is located in the heart of Barcelona, easily accessible from all over the city.',
+    "Our academy is located in the heart of Barcelona, easily accessible from all over the city. We are the reference academy for Salsa classes in the Plaza España, Sants, Hostafrancs, Les Corts and Eixample Esquerra areas. We also welcome students from Poble Sec, Sant Antoni and L'Hospitalet looking for Latin dance training with professional methodology.",
   salsaCubanaNearbySearchText:
     "Looking for Cuban salsa classes near your neighborhood? We're just minutes from:",
-  salsaCubanaNearbyMetro: 'Metro: Hostafrancs (L1) or Tarragona (L3) 5-10 minutes walk',
+  salsaCubanaNearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min walk, Entença (L5) - 5 min walk or Hostafrancs (L1) - 5 min walk.',
   salsaCubanaCourseSchemaName: 'Cuban Salsa Course - Farray Method®',
   salsaCubanaCourseSchemaDesc:
     'Learn authentic Cuban salsa in Barcelona with the exclusive Farray Method®. Classes for all levels with CID-UNESCO certification.',
@@ -8184,6 +8197,18 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   hhrLevelIntermediateTitle: 'Intermediate Hip Hop Reggaeton',
   hhrLevelIntermediateDesc:
     'For those who master the basics. Music video style choreographies, more complex combinations, improvisation and personal style development.',
+
+  // Keys for LevelCardsSection (used by template)
+  hhrLevelBeginnerTitle: 'Hip Hop Reggaeton Beginner',
+  hhrLevelBeginnerDesc:
+    'Your first contact with Hip Hop Reggaeton. You will learn basic groove, bounce, coordination and urban style fundamentals. Perfect if you have never danced.',
+  hhrLevelInterTitle: 'Hip Hop Reggaeton Intermediate',
+  hhrLevelInterDesc:
+    'You master the basics and want more. Music video style choreographies, more complex combinations, improvisation and developing your own style.',
+  hhrLevelAdvancedTitle: 'Hip Hop Reggaeton Advanced',
+  hhrLevelAdvancedDesc:
+    'For experienced dancers. Intensive choreographies, advanced technique, freestyle and preparation for shows or competitions.',
+
   hhrPrepareTitle: 'Prepare for your first Hip Hop Reggaeton class',
   hhrPrepareSubtitle: 'Everything you need to know before coming',
   hhrPrepareWhatToBring: 'What to bring:',
@@ -9116,7 +9141,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   timbaHeroSubtitle: 'What do you do when they let you go in salsa?',
   timbaHeroDesc:
     'Timba is the answer. Learn to interpret modern Cuban music with freedom, style and flavor. Classes for couples and Lady Timba feminine style.',
-  timbaHeroLocation: 'Plaza España, Barcelona · Metro L1/L3',
+  timbaHeroLocation: 'Between Plaza España and Sants Station',
   timbaHeroStudents: '+15,000 students trained',
   timbaCTAGroup: 'Timba enrollment options',
   timbaCTA1: 'Become a Member Now',
@@ -9329,4 +9354,79 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
     "It doesn't matter if you have never done Timba. What matters is that you want to improve, enjoy more and feel free on the dance floor. Our Cuban teachers will guide you step by step.",
   timbaFinalCTAFunny:
     '"Before I would freeze like a statue when they let me go. Now I wish they would let me go." — Anonymous student 😄',
+
+  // ============================================================
+  // CALENDAR / CALENDARIO
+  // ============================================================
+
+  // Widget (Home)
+  calendar_widget_title: 'Academic Calendar',
+  calendar_widget_subtitle: 'Check important dates: holidays, breaks, events and more',
+  calendar_view_full: 'View full calendar',
+
+  // Page
+  calendar_page_title: 'Academic Calendar 2025-2026',
+  calendar_page_description:
+    'FIDC Barcelona academic calendar: holidays, breaks, events, galas and important dates for the 2025-2026 school year.',
+  calendar_page_heading: 'Academic Calendar',
+  calendar_page_subheading:
+    'All important dates for the school year to help you plan your dance journey',
+
+  // Filters
+  calendar_filter_all: 'All',
+  calendar_type_vacation: 'Holidays',
+  calendar_type_holiday: 'Bank Holidays',
+  calendar_type_event: 'Events',
+  calendar_type_workshop: 'Workshops',
+  calendar_type_info: 'Information',
+
+  // Event cards
+  calendar_no_classes: 'No classes',
+  calendar_add_to_calendar: 'Add to my calendar',
+  calendar_happening_now: 'Now',
+  calendar_coming_soon: 'Coming soon',
+  calendar_no_events: 'No events of this type scheduled',
+
+  // CTA
+  calendar_cta_title: 'Ready to start dancing with us?',
+  calendar_cta_subtitle: 'Plan your dance year with us',
+  calendar_cta_line2: '+ 25 Different styles · Flexible passes · Unique atmosphere',
+  calendar_cta_line3: 'Your moment is now!',
+  calendar_cta_button1: 'See Schedule & Prices',
+  calendar_cta_button1_subtext: 'Choose your favourite style',
+  calendar_cta_button2: 'Contact',
+  calendar_cta_button2_subtext: 'Questions? We help you',
+
+  // Event titles and descriptions
+  calendar_event_christmas_vacation: 'Christmas Holidays',
+  calendar_event_christmas_vacation_desc:
+    'Christmas break period. Classes resume on January 7th. Happy holidays!',
+
+  calendar_event_three_kings: 'Bank Holiday: Three Kings Day',
+  calendar_event_three_kings_desc: 'Public holiday in Spain. The academy is closed.',
+
+  calendar_event_easter_vacation: 'Easter Holidays',
+  calendar_event_easter_vacation_desc: 'Easter break period. Classes resume on April 7th.',
+
+  calendar_event_labor_day: 'Bank Holiday: Labour Day',
+  calendar_event_labor_day_desc: 'International public holiday. The academy is closed.',
+
+  calendar_event_san_juan: "Bank Holiday: St. John's Day",
+  calendar_event_san_juan_desc:
+    "St. John's festival. The academy is closed. Enjoy the celebrations!",
+
+  calendar_event_end_year_gala: 'End of Year Gala',
+  calendar_event_end_year_gala_desc:
+    'The most anticipated event of the year! All students showcase what they have learned in a unique show. Family and friends welcome.',
+
+  calendar_event_summer_vacation: 'Summer Holidays',
+  calendar_event_summer_vacation_desc:
+    'Summer break period. See you in September with more energy than ever!',
+
+  calendar_event_course_start: 'Start of School Year 2026-2027',
+  calendar_event_course_start_desc:
+    'The new school year begins! New groups, new schedules and lots of desire to dance. Will you join us?',
+
+  // Navigation
+  navCalendar: 'Calendar',
 };

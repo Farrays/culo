@@ -200,6 +200,18 @@ export const fr = {
     'Avec la grâce et la précision affinées dans les plus grandes compagnies européennes, Elena guide les élèves à trouver leur voix expressive à travers les techniques classiques et modernes.',
   // Testimonials
   testimonialsTitle: 'Témoignages Non Sollicités de Nos Étudiants',
+  // Video Testimonials Section
+  videoTestimonialsTitle: "Vivez l'Ambiance Farray's",
+  videoTestimonialsSubtitle: 'Moments réels de notre académie. Sans filtres, sans scénario.',
+  videoTestimonialsCTA: 'Suivez-nous sur Instagram',
+  videoTestimonial1Title: 'Voici comment se vit un cours',
+  videoTestimonial2Title: 'Énergie pure',
+  videoTestimonial3Title: 'Notre communauté',
+  videoTestimonial4Title: 'La méthode en action',
+  videoTestimonial5Title: 'Transformation réelle',
+  videoModalLoading: 'Chargement de la vidéo...',
+  videoModalClose: 'Fermer la vidéo',
+  videoModalCloseHint: 'Appuyez sur ESC ou en dehors de la vidéo pour fermer',
   // FinalCTA
   finalCtaTitle:
     "Nous ne promettons pas d'être la 'meilleure école de danse de Barcelone'. Nous promettons quelque chose de mieux : des résultats.",
@@ -7314,10 +7326,11 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   // Local SEO Section
   salsaCubanaNearbyTitle: 'Cours de Salsa Cubaine près de chez vous à Barcelone',
   salsaCubanaNearbyDesc:
-    'Notre académie est située au cœur de Barcelone, facilement accessible depuis toute la ville.',
+    "Notre académie est située au cœur de Barcelone, facilement accessible depuis toute la ville. Nous sommes l'académie de référence pour les cours de Salsa dans la zone de Plaza España, Sants, Hostafrancs, Les Corts et Eixample Esquerra. Nous accueillons également des élèves de Poble Sec, Sant Antoni et L'Hospitalet à la recherche d'une formation en danses latines avec une méthodologie professionnelle.",
   salsaCubanaNearbySearchText:
     'Vous cherchez des cours de salsa cubaine près de votre quartier ? Nous sommes à quelques minutes de :',
-  salsaCubanaNearbyMetro: 'Métro : Hostafrancs (L1) ou Tarragona (L3) à 5-10 minutes à pied',
+  salsaCubanaNearbyMetro:
+    'Métro : Plaza España (L1, L3), Rocafort (L1) - 5 min à pied, Entença (L5) - 5 min à pied ou Hostafrancs (L1) - 5 min à pied.',
 
   // Course Schema
   salsaCubanaCourseSchemaName: 'Cours de Salsa Cubaine - Méthode Farray®',
@@ -8675,8 +8688,20 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
     'Para principiantes. Aprenderás los fundamentos: groove, bounce, pasos básicos de hip-hop y reggaeton, actitud y musicalidad. Sin experiencia previa necesaria.',
   hhrLevelIntermediateTitle: 'Hip Hop Reggaeton Intermedio',
   hhrLevelIntermediateDesc:
-    'Para quienes dominan lo básico. Coreografías estilo videoclip, combinaciones más complejas, improvisación y desarrollo de estilo propio.',
-  hhrPrepareTitle: 'Prepara tu primera clase de Hip Hop Reggaeton',
+    'Pour ceux qui maîtrisent les bases. Chorégraphies style clip vidéo, combinaisons plus complexes, improvisation et développement de style personnel.',
+
+  // Keys pour LevelCardsSection (utilisées par le template)
+  hhrLevelBeginnerTitle: 'Hip Hop Reggaeton Débutant',
+  hhrLevelBeginnerDesc:
+    "Votre premier contact avec le Hip Hop Reggaeton. Vous apprendrez le groove basique, bounce, coordination et les fondamentaux du style urbain. Parfait si vous n'avez jamais dansé.",
+  hhrLevelInterTitle: 'Hip Hop Reggaeton Intermédiaire',
+  hhrLevelInterDesc:
+    'Vous maîtrisez les bases et voulez plus. Chorégraphies style clip vidéo, combinaisons plus complexes, improvisation et développement de votre propre style.',
+  hhrLevelAdvancedTitle: 'Hip Hop Reggaeton Avancé',
+  hhrLevelAdvancedDesc:
+    'Pour danseurs expérimentés. Chorégraphies intensives, technique avancée, freestyle et préparation pour shows ou compétitions.',
+
+  hhrPrepareTitle: 'Prépare ton premier cours de Hip Hop Reggaeton',
   hhrPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
   hhrPrepareWhatToBring: 'Qué traer:',
   hhrPrepareItem1: 'Ropa urbana cómoda (joggers, pantalones anchos, camiseta holgada)',
@@ -9410,7 +9435,7 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   timbaHeroSubtitle: 'Que faites-vous quand on vous lâche en salsa ?',
   timbaHeroDesc:
     'La Timba est la réponse. Apprenez à interpréter la musique cubaine moderne avec liberté, style et saveur. Cours pour couples et style féminin Lady Timba.',
-  timbaHeroLocation: 'Plaza España, Barcelone · Métro L1/L3',
+  timbaHeroLocation: 'Entre Plaza España et Sants Estación',
   timbaHeroStudents: '+15 000 élèves formés',
   timbaCTAGroup: "Options d'inscription à la Timba",
   timbaCTA1: 'Devenez Membre Maintenant',
@@ -9628,4 +9653,81 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
     "Peu importe si vous n'avez jamais fait de Timba. Ce qui compte, c'est que vous voulez vous améliorer, profiter davantage et vous sentir libre sur la piste. Nos professeurs cubains vous guideront pas à pas.",
   timbaFinalCTAFunny:
     '"Avant je restais comme une statue quand on me lâchait. Maintenant je souhaite qu\'on me lâche." — Élève anonyme 😄',
+
+  // ============================================================
+  // CALENDAR / CALENDRIER
+  // ============================================================
+
+  // Widget (Home)
+  calendar_widget_title: 'Calendrier Académique',
+  calendar_widget_subtitle:
+    'Consultez les dates importantes : vacances, jours fériés, événements et plus',
+  calendar_view_full: 'Voir le calendrier complet',
+
+  // Page
+  calendar_page_title: 'Calendrier Académique 2025-2026',
+  calendar_page_description:
+    "Calendrier académique de FIDC Barcelone : vacances, jours fériés, événements, galas et dates importantes de l'année scolaire 2025-2026.",
+  calendar_page_heading: 'Calendrier Académique',
+  calendar_page_subheading:
+    "Toutes les dates importantes de l'année pour organiser votre année de danse",
+
+  // Filters
+  calendar_filter_all: 'Tous',
+  calendar_type_vacation: 'Vacances',
+  calendar_type_holiday: 'Jours fériés',
+  calendar_type_event: 'Événements',
+  calendar_type_workshop: 'Ateliers',
+  calendar_type_info: 'Information',
+
+  // Event cards
+  calendar_no_classes: 'Pas de cours',
+  calendar_add_to_calendar: 'Ajouter à mon calendrier',
+  calendar_happening_now: 'Maintenant',
+  calendar_coming_soon: 'Bientôt',
+  calendar_no_events: 'Aucun événement de ce type programmé',
+
+  // CTA
+  calendar_cta_title: 'Prêt(e) à commencer à danser avec nous ?',
+  calendar_cta_subtitle: 'Planifiez votre année de danse avec nous',
+  calendar_cta_line2: '+ 25 Styles différents · Forfaits flexibles · Ambiance unique',
+  calendar_cta_line3: "C'est maintenant votre moment !",
+  calendar_cta_button1: 'Voir Horaires et Tarifs',
+  calendar_cta_button1_subtext: 'Choisissez votre style préféré',
+  calendar_cta_button2: 'Contacter',
+  calendar_cta_button2_subtext: 'Des questions ? On vous aide',
+
+  // Event titles and descriptions
+  calendar_event_christmas_vacation: 'Vacances de Noël',
+  calendar_event_christmas_vacation_desc:
+    'Période de repos de Noël. Les cours reprennent le 7 janvier. Joyeuses fêtes !',
+
+  calendar_event_three_kings: 'Jour férié : Épiphanie',
+  calendar_event_three_kings_desc: "Jour férié en Espagne. L'académie est fermée.",
+
+  calendar_event_easter_vacation: 'Vacances de Pâques',
+  calendar_event_easter_vacation_desc:
+    'Période de repos de Pâques. Les cours reprennent le 7 avril.',
+
+  calendar_event_labor_day: 'Jour férié : Fête du Travail',
+  calendar_event_labor_day_desc: "Jour férié international. L'académie est fermée.",
+
+  calendar_event_san_juan: 'Jour férié : Saint-Jean',
+  calendar_event_san_juan_desc:
+    "Fête de la Saint-Jean. L'académie est fermée. Profitez des festivités !",
+
+  calendar_event_end_year_gala: "Gala de Fin d'Année",
+  calendar_event_end_year_gala_desc:
+    "L'événement le plus attendu de l'année ! Tous les élèves montrent ce qu'ils ont appris dans un spectacle unique. Famille et amis bienvenus.",
+
+  calendar_event_summer_vacation: "Vacances d'Été",
+  calendar_event_summer_vacation_desc:
+    "Période de repos estival. On se retrouve en septembre avec plus d'énergie que jamais !",
+
+  calendar_event_course_start: "Début de l'Année Scolaire 2026-2027",
+  calendar_event_course_start_desc:
+    "La nouvelle année commence ! Nouveaux groupes, nouveaux horaires et beaucoup d'envie de danser. Vous vous inscrivez ?",
+
+  // Navigation
+  navCalendar: 'Calendrier',
 };
