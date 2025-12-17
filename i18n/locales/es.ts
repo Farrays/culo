@@ -11340,7 +11340,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricing_badge_no_permanence: 'Sin permanencia',
   pricing_badge_cancel_anytime: 'Cancela cuando quieras',
   pricing_badge_first_class_free: 'Reserva sin compromiso',
-  pricing_hero_cta: 'Ver Cuotas',
+  pricing_hero_cta: 'Hazte Socio Ahora',
 
   // Free Trial Section
   pricing_trial_title: '¿Primera vez? Reserva tu clase de prueba',
@@ -11493,7 +11493,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricing_faq_title: 'Preguntas Frecuentes sobre Cuotas',
   pricing_faq1_q: '¿Cuánto cuesta la cuota de inscripción y qué incluye?',
   pricing_faq1_a:
-    "La cuota de inscripción es de 60€ (pago único). Esta cuota te garantiza el acceso al sistema, tu plaza fija en el horario, y todas las ventajas exclusivas de socio de Farray's: seguro de accidentes, entrada prioritaria a eventos y actividades internas, programa de referidos (2 participaciones puntuales por amigo), descuentos en merchandising y fiestas, y todos los beneficios de formar parte de nuestra comunidad de +10.000 bailarines. A veces tenemos promociones donde la bonificamos.",
+    "La cuota de inscripción es de 60€ el primer año y 20€/año de renovación para todos los socios. Esta cuota te garantiza el acceso al sistema, tu plaza fija en el horario, y todas las ventajas exclusivas de socio de Farray's: seguro de accidentes, entrada prioritaria a eventos y actividades internas, programa de referidos (2 participaciones puntuales por amigo), descuentos en merchandising y fiestas, y todos los beneficios de formar parte de nuestra comunidad de +10.000 bailarines. A veces tenemos promociones donde la bonificamos.",
   pricing_faq2_q: '¿Puedo probar una clase antes de inscribirme?',
   pricing_faq2_a:
     'Sí, puedes reservar tu primera clase sin compromiso para conocernos. Si decides hacerte socio después, te aplicamos la cuota de inscripción normal.',
@@ -11502,7 +11502,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
     'No, no hay permanencia obligatoria. Puedes cancelar tu cuota mensual cuando quieras, solicitándolo a través del formulario de contacto de la web con un mínimo de 15 días de antelación del siguiente cobro.',
   pricing_faq4_q: '¿Puedo cambiar de plan o de estilo cada mes?',
   pricing_faq4_a:
-    'Sí, puedes cambiar tu cuota mensual y elegir entre +25 estilos de baile diferentes cada mes. Solo avísanos antes del día 25 del mes anterior.',
+    'Sí, puedes cambiar tu cuota mensual y elegir entre +25 estilos de baile diferentes cada mes. Solo avísanos 15 días antes del siguiente cobro.',
   pricing_faq5_q: '¿Qué incluyen las clases Premium con Yunaisy Farray?',
   pricing_faq5_a:
     'Las clases Premium son impartidas por Yunaisy Farray, nuestra fundadora y maestra internacional reconocida por CID-UNESCO. Tienen un suplemento de +5€/mes sobre la cuota regular. La experiencia y metodología es única.',
@@ -11538,7 +11538,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricing_cta_emotional_close: 'Ese momento puede ser esta semana.',
   pricing_cta_technical1: 'Sin permanencia. Cancela cuando quieras. Empieza cuando quieras.',
   pricing_cta_technical2: 'Más de 15.000 socios han confiado en nosotros desde 2017.',
-  pricing_cta_primary: 'Reservar Mi Primera Clase',
+  pricing_cta_primary: 'Reservar Clase De Prueba',
   pricing_cta_primary_subtext: 'Sin compromiso de permanencia',
   pricing_cta_secondary: 'Contactar para Más Info',
   pricing_cta_secondary_subtext: 'Resolvemos tus dudas',
