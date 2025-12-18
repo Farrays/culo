@@ -11599,21 +11599,21 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
     'Centro de referencia en Barcelona desde 2017 · Reconocido por CID-UNESCO · +25 estilos de baile',
 
   // How It Works
-  pricingV2_howItWorks_title: "Como funcionan las cuotas en Farray's Center",
+  pricingV2_howItWorks_title: "Cómo funcionan las cuotas en Farray's Center",
   pricingV2_howItWorks_text:
-    "En Farray's Center no pagas clases sueltas sin contexto. Eliges una forma de participacion segun tu disponibilidad y tus objetivos.",
+    "En Farray's Center no pagas clases sueltas sin contexto. Eliges una forma de participación según tu disponibilidad y tus objetivos.",
   pricingV2_howItWorks_point1: 'Puedes empezar desde cero',
   pricingV2_howItWorks_point2: 'No necesitas venir en pareja',
   pricingV2_howItWorks_point3: 'Puedes cambiar de modalidad',
   pricingV2_howItWorks_point4: 'Te ayudamos a elegir bien',
 
   // Participation Cards
-  pricingV2_participate_title: 'Elige como te gustaria empezar',
+  pricingV2_participate_title: 'Elige cómo te gustaría empezar',
   pricingV2_participate_subtitle:
     'Tres formas de ser socio de nuestro centro adaptadas a tu estilo de vida',
 
   // Card Regular
-  pricingV2_card_regular_title: 'Participacion Regular',
+  pricingV2_card_regular_title: 'Participación Regular',
   pricingV2_card_regular_desc:
     'Ideal si quieres bailar cada semana, progresar y formar parte de una comunidad activa.',
   pricingV2_card_regular_include1: 'Acceso a actividades semanales',
@@ -11623,7 +11623,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricingV2_card_regular_cta: 'Ver cuotas y horarios',
 
   // Card Flexible
-  pricingV2_card_flexible_title: 'Participacion Flexible',
+  pricingV2_card_flexible_title: 'Participación Flexible',
   pricingV2_card_flexible_desc:
     'Para horarios variables o si no puedes comprometerte todas las semanas.',
   pricingV2_card_flexible_include1: 'Paquetes de actividades',
@@ -11632,7 +11632,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricingV2_card_flexible_cta: 'Ver opciones flexibles',
 
   // Card Puntual
-  pricingV2_card_puntual_title: 'Participacion Puntual',
+  pricingV2_card_puntual_title: 'Participación Puntual',
   pricingV2_card_puntual_desc: 'Opciones limitadas para venir de forma puntual o en eventos.',
   pricingV2_card_puntual_include1: 'Actividades puntuales',
   pricingV2_card_puntual_include2: 'Jornadas de puertas abiertas',
@@ -11643,12 +11643,12 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricingV2_price_from: 'Desde',
 
   // Enrollment
-  pricingV2_enrollment_title: 'Cuota de Inscripcion',
+  pricingV2_enrollment_title: 'Cuota de Inscripción',
   pricingV2_enrollment_desc:
-    'Para formar parte de nuestro centro es necesaria una cuota anual de inscripcion.',
+    'Para formar parte de nuestro centro es necesaria una cuota anual de inscripción.',
 
   // Why Not All Prices
-  pricingV2_whyNotAll_title: 'Por que no ves una tabla infinita de precios',
+  pricingV2_whyNotAll_title: 'Por qué no ves una tabla infinita de precios',
   pricingV2_whyNotAll_text1: 'Porque queremos que elijas bien.',
   pricingV2_whyNotAll_depends: 'Las cuotas y horarios dependen de:',
   pricingV2_whyNotAll_dep1: 'Tu disponibilidad',
@@ -11656,22 +11656,22 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricingV2_whyNotAll_dep3: 'El tipo de actividad',
   pricingV2_whyNotAll_dep4: 'La modalidad que elijas',
   pricingV2_whyNotAll_text2:
-    'Por eso, toda la informacion se envia de forma automatica y clara por email.',
-  pricingV2_whyNotAll_cta: 'Recibir guia completa de precios',
+    'Por eso, toda la información se envía de forma automática y clara por email.',
+  pricingV2_whyNotAll_cta: 'Recibir guía completa de precios',
 
   // Benefits
-  pricingV2_benefits_title: 'Por que nuestros socios se quedan',
+  pricingV2_benefits_title: 'Por qué nuestros socios se quedan',
 
   // Final CTA
   pricingV2_finalCta_title: "Descubre si Farray's Center es para ti",
   pricingV2_finalCta_text:
-    'Dejanos tu email y te enviamos toda la informacion para empezar sin compromiso.',
+    'Déjanos tu email y te enviamos toda la información para empezar sin compromiso.',
   pricingV2_finalCta_button: 'Recibir precios y horarios',
-  pricingV2_finalCta_privacy: 'Informacion enviada automaticamente. Sin spam.',
+  pricingV2_finalCta_privacy: 'Información enviada automáticamente. Sin spam.',
 
   // Footer Legal
   pricingV2_footer_legal:
-    'La informacion mostrada es orientativa. La inscripcion como socio y la participacion en actividades deportivas se realiza exclusivamente con Club Esportiu Farray Barcelona, de acuerdo con su normativa interna.',
+    'La información mostrada es orientativa. La inscripción como socio y la participación en actividades deportivas se realiza exclusivamente con Club Esportiu Farray Barcelona, de acuerdo con su normativa interna.',
 
   // ============================================================================
   // LEAD CAPTURE MODAL
