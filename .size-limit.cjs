@@ -8,25 +8,25 @@ module.exports = [
   {
     name: 'ES Locale Bundle',
     path: 'dist/assets/i18n-es-*.js',
-    limit: '200 KB', // Increased after adding Timba + Salsa Lady Style translations
+    limit: '220 KB', // Increased after adding Bachata Lady Style translations
     gzip: true,
   },
   {
     name: 'EN Locale Bundle',
     path: 'dist/assets/i18n-en-*.js',
-    limit: '185 KB', // Increased after adding Timba translations
+    limit: '205 KB', // Increased after adding Bachata Lady Style translations
     gzip: true,
   },
   {
     name: 'CA Locale Bundle',
     path: 'dist/assets/i18n-ca-*.js',
-    limit: '200 KB', // Increased after adding Timba translations
+    limit: '220 KB', // Increased after adding Bachata Lady Style translations
     gzip: true,
   },
   {
     name: 'FR Locale Bundle',
     path: 'dist/assets/i18n-fr-*.js',
-    limit: '210 KB', // Increased after adding Timba translations
+    limit: '230 KB', // Increased after adding Bachata Lady Style translations
     gzip: true,
   },
   {
