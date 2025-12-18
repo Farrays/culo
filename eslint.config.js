@@ -96,6 +96,12 @@ export default [js.configs.recommended, {
     },
   },
 }, {
+  // Disable no-useless-escape for i18n files (apostrophes in translations)
+  files: ['i18n/locales/*.ts'],
+  rules: {
+    'no-useless-escape': 'off',
+  },
+}, {
   ignores: [
     'node_modules/',
     'dist/',

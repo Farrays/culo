@@ -40,6 +40,9 @@
     "body-parser": "^2.2.1",
     "express": "^5.1.0",
     "tmp": "^0.2.5",
+    "esbuild": "^0.25.0",
+    "path-to-regexp": "^8.0.0",
+    "undici": "^6.0.0",
     "react-helmet-async": {
       "react": "$react"
     }
@@ -66,6 +69,7 @@
     "@types/react-dom": "^19.2.2",
     "@typescript-eslint/eslint-plugin": "^8.46.3",
     "@typescript-eslint/parser": "^8.46.3",
+    "@vercel/node": "^5.5.15",
     "@vitejs/plugin-react": "^5.1.0",
     "@vitest/browser": "^3.2.4",
     "@vitest/coverage-v8": "^3.2.4",

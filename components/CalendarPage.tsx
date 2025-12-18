@@ -295,7 +295,7 @@ const TimelineEvent: React.FC<{
                 document.body.removeChild(link);
                 window.URL.revokeObjectURL(url);
               }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium holographic-text bg-neutral/5 hover:bg-primary-accent/10 border border-neutral/20 hover:border-primary-accent/50 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-neutral bg-neutral/5 hover:bg-primary-accent/10 border border-neutral/20 hover:border-primary-accent/50 transition-all duration-300"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path

@@ -70,6 +70,7 @@ const StretchingPage = lazy(() => import('./components/StretchingPage'));
 const BumBumPage = lazy(() => import('./components/BumBumPage'));
 const CalendarPage = lazy(() => import('./components/CalendarPage'));
 const PreciosPage = lazy(() => import('./components/PreciosPage'));
+const PreciosPageV2 = lazy(() => import('./components/PreciosPageV2'));
 
 // Valid locales - use centralized constant from types.ts
 const VALID_LOCALES = SUPPORTED_LOCALES;
@@ -574,6 +575,17 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <PreciosPage />
+                </>
+              }
+            />
+
+            {/* V2 Precios - Lead Capture Version for A/B testing */}
+            <Route
+              path="/:locale/precios-v2"
+              element={
+                <>
+                  <LocaleSync />
+                  <PreciosPageV2 />
                 </>
               }
             />
