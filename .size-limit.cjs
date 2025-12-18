@@ -8,7 +8,7 @@ module.exports = [
   {
     name: 'ES Locale Bundle',
     path: 'dist/assets/i18n-es-*.js',
-    limit: '220 KB', // Increased after adding Bachata Lady Style translations
+    limit: '222 KB', // Increased after adding PreciosPageV2 + LeadCaptureModal translations
     gzip: true,
   },
   {
