@@ -40,6 +40,9 @@
     "body-parser": "^2.2.1",
     "express": "^5.1.0",
     "tmp": "^0.2.5",
+    "esbuild": "^0.25.0",
+    "path-to-regexp": "^8.0.0",
+    "undici": "^6.0.0",
     "react-helmet-async": {
       "react": "$react"
     }
