@@ -1,162 +1,513 @@
 /**
- * Salsa Lady Style Page Configuration
+ * Salsa Lady Style Page Configuration for LadyStyleTemplate
  *
- * This file contains all the configuration needed for the FullDanceClassTemplate
- * to render the complete Salsa Lady Style page. Migrating from 967 lines to ~120 lines of config.
+ * This file contains all the configuration needed for the LadyStyleTemplate
+ * to render the complete Salsa Lady Style page.
  */
-import {
-  SALSA_LADY_STYLE_TESTIMONIALS,
-  SALSA_LADY_STYLE_FAQS_CONFIG,
-  SALSA_LADY_STYLE_SCHEDULE_KEYS,
-  SALSA_LADY_STYLE_LEVELS,
-  SALSA_LADY_STYLE_PREPARE_CONFIG,
-  SALSA_LADY_COMPARISON_DATA,
-  SALSA_LADY_STYLE_VIDEO_ID,
-  SALSA_LADY_STYLE_COURSE_CONFIG,
-} from './salsa-lady-style';
-import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
+import type { LadyStyleTemplateConfig } from '../components/templates/LadyStyleTemplate';
+import { GOOGLE_REVIEWS_TESTIMONIALS } from './testimonials';
+import type { Testimonial } from '../types';
 
-export const SALSA_LADY_STYLE_PAGE_CONFIG: FullDanceClassConfig = {
-  // === IDENTIFICATION ===
-  styleKey: 'salsaLady',
-  stylePath: 'salsa-lady-style-barcelona',
+// Testimonials for Salsa Lady Style page
+const SALSA_LADY_STYLE_TESTIMONIALS: Testimonial[] = [
+  ...GOOGLE_REVIEWS_TESTIMONIALS,
+  {
+    id: 4,
+    name: 'Laura G.',
+    image: '',
+    rating: 5,
+    city: {
+      en: 'Barcelona, Spain',
+      es: 'Barcelona, España',
+      ca: 'Barcelona, Espanya',
+      fr: 'Barcelone, Espagne',
+    },
+    quote: {
+      en: 'The Lady Style classes with Yunaisy transformed my way of dancing completely. Now I feel elegant, confident and my movements have a feminine quality I never thought possible. The Farray Method is unique.',
+      es: 'Las clases de Lady Style con Yunaisy transformaron mi forma de bailar por completo. Ahora me siento elegante, segura y mis movimientos tienen una calidad femenina que nunca pensé posible. El Método Farray es único.',
+      ca: 'Les classes de Lady Style amb Yunaisy van transformar la meva forma de ballar completament. Ara em sento elegant, segura i els meus moviments tenen una qualitat femenina que mai vaig pensar possible. El Mètode Farray és únic.',
+      fr: "Les cours de Lady Style avec Yunaisy ont complètement transformé ma façon de danser. Maintenant je me sens élégante, confiante et mes mouvements ont une qualité féminine que je n'aurais jamais cru possible. La Méthode Farray est unique.",
+    },
+  },
+];
 
-  // === REQUIRED DATA ===
-  faqsConfig: SALSA_LADY_STYLE_FAQS_CONFIG,
-  testimonials: SALSA_LADY_STYLE_TESTIMONIALS,
-  scheduleKeys: SALSA_LADY_STYLE_SCHEDULE_KEYS,
+// Style comparison data
+const SALSA_LADY_COMPARISON_DATA = {
+  styles: [
+    { key: 'salsaCubanaPareja', nameKey: 'salsaLadyCompareSalsaPareja' },
+    { key: 'salsaLadyTimba', nameKey: 'salsaLadyCompareSalsaLady' },
+    { key: 'bachataLadyStyle', nameKey: 'salsaLadyCompareBachataLady' },
+    { key: 'timba', nameKey: 'salsaLadyCompareTimba' },
+  ],
+  rows: [
+    { rowKey: 'salsaLadyCompareRow1', values: [3, 5, 4, 3] },
+    { rowKey: 'salsaLadyCompareRow2', values: [3, 5, 3, 4] },
+    { rowKey: 'salsaLadyCompareRow3', values: [2, 5, 5, 2] },
+    { rowKey: 'salsaLadyCompareRow4', values: [4, 5, 4, 5] },
+    { rowKey: 'salsaLadyCompareRow5', values: [5, 3, 2, 5] },
+    { rowKey: 'salsaLadyCompareRow6', values: [3, 5, 4, 4] },
+    { rowKey: 'salsaLadyCompareRow7', values: [4, 4, 3, 5] },
+    { rowKey: 'salsaLadyCompareRow8', values: [3, 5, 4, 3] },
+  ],
+};
+
+export const SALSA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
+  // SEO
+  pageSlug: 'salsa-lady-style-barcelona',
+  pageTitleKey: 'salsaLadyPageTitle',
+  metaDescriptionKey: 'salsaLadyMetaDescription',
+  ogImage: '/images/og-salsa-lady-style.jpg',
+  courseSchemaDescKey: 'salsaLadyCourseSchemaDesc',
+
+  // Breadcrumb
+  breadcrumb: {
+    homeKey: 'salsaLadyBreadcrumbHome',
+    classesKey: 'salsaLadyBreadcrumbClasses',
+    parentKey: 'salsaLadyBreadcrumbLatin',
+    parentUrl: '/clases/salsa-bachata-barcelona',
+    currentKey: 'salsaLadyBreadcrumbCurrent',
+  },
+
+  // Hero
+  hero: {
+    titleKey: 'salsaLadyHeroTitle',
+    subtitleKey: 'salsaLadyHeroSubtitle',
+    descKey: 'salsaLadyHeroDesc',
+    cta1Key: 'salsaLadyCTA1',
+    cta1SubtextKey: 'salsaLadyCTA1Subtext',
+    cta2Key: 'salsaLadyCTA2',
+    cta2SubtextKey: 'salsaLadyCTA2Subtext',
+    stats: {
+      rating: '4.9/5',
+      reviewCount: '505+ reseñas',
+      students: '+15.000 estudiantes formados',
+      yearsText: '8 años en Barcelona',
+    },
+  },
+
+  // What is section
+  whatIs: {
+    titleKey: 'salsaLadyWhatIsTitle',
+    descKey: 'salsaLadyWhatIsDesc',
+    quoteKey: 'salsaLadyWhatIsQuote',
+    quoteAuthor: {
+      name: 'Yunaisy Farray',
+      credentialKey: 'salsaLadyTeacherCredential',
+      image: '/images/teachers/yunaisy-farray_256.webp',
+    },
+  },
+
+  // Schedule
+  schedules: [
+    {
+      id: '1',
+      dayKey: 'monday',
+      className: 'Salsa Lady Style Básico',
+      time: '19:00 - 20:00',
+      teacher: 'Yunaisy Farray',
+      levelKey: 'basicLevel',
+    },
+    {
+      id: '2',
+      dayKey: 'wednesday',
+      className: 'Salsa Lady Style Intermedio',
+      time: '19:00 - 20:00',
+      teacher: 'Yunaisy Farray',
+      levelKey: 'intermediateLevel',
+    },
+    {
+      id: '3',
+      dayKey: 'friday',
+      className: 'Salsa Lady Style Avanzado',
+      time: '19:00 - 20:00',
+      teacher: 'Yunaisy Farray',
+      levelKey: 'advancedLevel',
+    },
+  ],
+  scheduleTitleKey: 'salsaLadyScheduleTitle',
+  scheduleSubtitleKey: 'salsaLadyScheduleSubtitle',
+
+  // Levels
+  levels: [
+    {
+      id: 'principiante',
+      levelKey: 'beginnerLevel',
+      titleKey: 'salsaLadyLevelBeginnerTitle',
+      descKey: 'salsaLadyLevelBeginnerDesc',
+      duration: '0-3 meses',
+      color: 'primary-dark',
+    },
+    {
+      id: 'basico',
+      levelKey: 'basicLevel',
+      titleKey: 'salsaLadyLevelBasicTitle',
+      descKey: 'salsaLadyLevelBasicDesc',
+      duration: '3-6 meses',
+      color: 'primary-dark-mid',
+    },
+    {
+      id: 'intermedio',
+      levelKey: 'intermediateLevel',
+      titleKey: 'salsaLadyLevelIntermediateTitle',
+      descKey: 'salsaLadyLevelIntermediateDesc',
+      duration: '6-12 meses',
+      color: 'primary-accent-light',
+    },
+    {
+      id: 'avanzado',
+      levelKey: 'advancedLevel',
+      titleKey: 'salsaLadyLevelAdvancedTitle',
+      descKey: 'salsaLadyLevelAdvancedDesc',
+      duration: '+12 meses',
+      color: 'primary-accent',
+    },
+  ],
+  levelsTitleKey: 'salsaLadyLevelsTitle',
 
   // Teachers
   teachers: [
     {
       name: 'Yunaisy Farray',
-      specialtyKey: 'salsaLadyTeacherCredential',
-      bioKey: 'salsaLadyTeacherBio',
-      image: '/images/teachers/yunaisy-farray_256.webp',
-      imageSrcSet:
-        '/images/teachers/yunaisy-farray_256.webp 1x, /images/teachers/yunaisy-farray_512.webp 2x',
+      specialty: 'salsaLadyTeacherCredential',
+      bio: 'salsaLadyTeacherBio',
+      image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
     },
     {
       name: 'Lia Valdes',
-      specialtyKey: 'salsaLadyTeacher2Specialty',
-      bioKey: 'salsaLadyTeacher2Bio',
-      // No image - will use initials avatar "LV"
+      specialty: 'salsaLadyTeacher2Specialty',
+      bio: 'salsaLadyTeacher2Bio',
+      image: undefined, // Will show initials
+    },
+    {
+      name: 'Yasmina Fernandez',
+      specialty: 'salsaLadyTeacher3Specialty',
+      bio: 'salsaLadyTeacher3Bio',
+      image: '/images/teachers/img/profesora-yasmina-fernandez_320.webp',
     },
   ],
+  teachersTitleKey: 'salsaLadyTeachersTitle',
+  teachersSubtitleKey: 'salsaLadyTeachersSubtitle',
+  teachersClosingKey: 'salsaLadyTeachersClosing',
 
-  // Breadcrumb (4 levels: Home > Classes > Salsa/Bachata > Lady Style)
-  breadcrumbConfig: {
-    homeKey: 'salsaLadyBreadcrumbHome',
-    classesKey: 'salsaLadyBreadcrumbClasses',
-    categoryKey: 'salsaLadyBreadcrumbLatin',
-    categoryUrl: '/clases/salsa-bachata-barcelona',
-    currentKey: 'salsaLadyBreadcrumbCurrent',
+  // Prepare
+  prepareConfig: {
+    prefix: 'salsaLadyPrepare',
+    whatToBringCount: 5,
+    beforeCount: 3,
+    avoidCount: 3,
+    teacher: {
+      name: 'Yunaisy Farray',
+      credential: "Directora de Farray's Center",
+      image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
+    },
+  },
+  prepareTitleKey: 'salsaLadyPrepareTitle',
+  prepareSubtitleKey: 'salsaLadyPrepareSubtitle',
+
+  // Identification
+  identify: {
+    titleKey: 'salsaLadyIdentifyTitle',
+    count: 6,
+    prefixKey: 'salsaLadyIdentify',
+    transitionKey: 'salsaLadyIdentifyTransition',
+    needTitleKey: 'salsaLadyIdentifyNeedTitle',
+    solutionKey: 'salsaLadyIdentifySolution',
+    closingKey: 'salsaLadyIdentifyClosing',
   },
 
-  // === OPTIONAL DATA ===
-  levels: SALSA_LADY_STYLE_LEVELS,
-  prepareConfig: SALSA_LADY_STYLE_PREPARE_CONFIG,
+  // Pillars
+  pillars: [
+    {
+      id: 'braceo',
+      icon: 'braceo',
+      titleKey: 'salsaLadyV2Pillar1Title',
+      subtitleKey: 'salsaLadyV2Pillar1Subtitle',
+      descKey: 'salsaLadyV2Pillar1Desc',
+      itemKeys: ['salsaLadyV2Pillar1Item1', 'salsaLadyV2Pillar1Item2', 'salsaLadyV2Pillar1Item3'],
+      resultKey: 'salsaLadyV2Pillar1Result',
+    },
+    {
+      id: 'caderas',
+      icon: 'caderas',
+      titleKey: 'salsaLadyV2Pillar2Title',
+      subtitleKey: 'salsaLadyV2Pillar2Subtitle',
+      descKey: 'salsaLadyV2Pillar2Desc',
+      itemKeys: ['salsaLadyV2Pillar2Item1', 'salsaLadyV2Pillar2Item2', 'salsaLadyV2Pillar2Item3'],
+      resultKey: 'salsaLadyV2Pillar2Result',
+    },
+    {
+      id: 'giros',
+      icon: 'giros',
+      titleKey: 'salsaLadyV2Pillar3Title',
+      subtitleKey: 'salsaLadyV2Pillar3Subtitle',
+      descKey: 'salsaLadyV2Pillar3Desc',
+      itemKeys: ['salsaLadyV2Pillar3Item1', 'salsaLadyV2Pillar3Item2', 'salsaLadyV2Pillar3Item3'],
+      resultKey: 'salsaLadyV2Pillar3Result',
+    },
+    {
+      id: 'tacones',
+      icon: 'tacones',
+      titleKey: 'salsaLadyV2Pillar4Title',
+      subtitleKey: 'salsaLadyV2Pillar4Subtitle',
+      descKey: 'salsaLadyV2Pillar4Desc',
+      itemKeys: ['salsaLadyV2Pillar4Item1', 'salsaLadyV2Pillar4Item2', 'salsaLadyV2Pillar4Item3'],
+      resultKey: 'salsaLadyV2Pillar4Result',
+    },
+    {
+      id: 'musicalidad',
+      icon: 'musicalidad',
+      titleKey: 'salsaLadyV2Pillar5Title',
+      subtitleKey: 'salsaLadyV2Pillar5Subtitle',
+      descKey: 'salsaLadyV2Pillar5Desc',
+      itemKeys: ['salsaLadyV2Pillar5Item1', 'salsaLadyV2Pillar5Item2', 'salsaLadyV2Pillar5Item3'],
+      resultKey: 'salsaLadyV2Pillar5Result',
+    },
+    {
+      id: 'presencia',
+      icon: 'presencia',
+      titleKey: 'salsaLadyV2Pillar6Title',
+      subtitleKey: 'salsaLadyV2Pillar6Subtitle',
+      descKey: 'salsaLadyV2Pillar6Desc',
+      itemKeys: ['salsaLadyV2Pillar6Item1', 'salsaLadyV2Pillar6Item2', 'salsaLadyV2Pillar6Item3'],
+      resultKey: 'salsaLadyV2Pillar6Result',
+    },
+  ],
+  pillarsSectionTitleKey: 'salsaLadyV2PillarsSectionTitle',
+  pillarsSectionSubtitleKey: 'salsaLadyV2PillarsSectionSubtitle',
 
-  // === HERO CONFIG ===
-  hero: {
-    minutes: 60,
-    calories: 350,
-    funPercent: 100,
-    gradientColor: 'amber',
-  },
-
-  // === SECTION TOGGLES ===
-  whatIsSection: {
-    enabled: true,
-    paragraphCount: 1,
-    hasQuestionAnswer: false,
-    // No image for this section - uses quote style
-  },
-
-  identificationSection: {
-    enabled: true,
-    itemCount: 6,
-    hasTransition: true,
-    hasNeedEnroll: true,
-  },
-
-  transformationSection: {
-    enabled: true,
-    itemCount: 6,
-  },
-
-  whyChooseSection: {
-    enabled: true,
-    itemOrder: [1, 2, 3, 4, 5, 6, 7],
-  },
-
-  whyTodaySection: {
-    enabled: false, // Salsa Lady Style doesn't have this section
-  },
-
-  videoSection: {
-    enabled: true,
-    videos: [
+  // Comparison
+  comparison: {
+    titleKey: 'salsaLadyV2CompareTitle',
+    aspectKey: 'salsaLadyV2CompareAspect',
+    othersColumnKey: 'salsaLadyV2CompareOthers',
+    methodColumnKey: 'salsaLadyV2CompareFarray',
+    rows: [
       {
-        videoId: SALSA_LADY_STYLE_VIDEO_ID,
-        title: 'Salsa Lady Style con Yunaisy Farray',
+        labelKey: 'salsaLadyV2CompareRow1Label',
+        othersKey: 'salsaLadyV2CompareRow1Others',
+        methodKey: 'salsaLadyV2CompareRow1Farray',
+      },
+      {
+        labelKey: 'salsaLadyV2CompareRow2Label',
+        othersKey: 'salsaLadyV2CompareRow2Others',
+        methodKey: 'salsaLadyV2CompareRow2Farray',
+      },
+      {
+        labelKey: 'salsaLadyV2CompareRow3Label',
+        othersKey: 'salsaLadyV2CompareRow3Others',
+        methodKey: 'salsaLadyV2CompareRow3Farray',
+      },
+      {
+        labelKey: 'salsaLadyV2CompareRow4Label',
+        othersKey: 'salsaLadyV2CompareRow4Others',
+        methodKey: 'salsaLadyV2CompareRow4Farray',
+      },
+      {
+        labelKey: 'salsaLadyV2CompareRow5Label',
+        othersKey: 'salsaLadyV2CompareRow5Others',
+        methodKey: 'salsaLadyV2CompareRow5Farray',
+      },
+      {
+        labelKey: 'salsaLadyV2CompareRow6Label',
+        othersKey: 'salsaLadyV2CompareRow6Others',
+        methodKey: 'salsaLadyV2CompareRow6Farray',
+      },
+      {
+        labelKey: 'salsaLadyV2CompareRow7Label',
+        othersKey: 'salsaLadyV2CompareRow7Others',
+        methodKey: 'salsaLadyV2CompareRow7Farray',
+      },
+      {
+        labelKey: 'salsaLadyV2CompareRow8Label',
+        othersKey: 'salsaLadyV2CompareRow8Others',
+        methodKey: 'salsaLadyV2CompareRow8Farray',
       },
     ],
   },
 
-  logosSection: {
-    enabled: true,
-    // Uses default logos (UNESCO, Street Dance 2, The Dancer, Telecinco)
+  // For who
+  forWho: {
+    titleKey: 'salsaLadyV2ForWhoTitle',
+    yesTitle: 'salsaLadyV2ForYesTitle',
+    yesPrefixKey: 'salsaLadyV2ForYes',
+    yesCount: 8,
+    noTitle: 'salsaLadyV2ForNoTitle',
+    noPrefixKey: 'salsaLadyV2ForNo',
+    noCount: 4,
+    ctaTextKey: 'salsaLadyV2ForWhoCTA',
   },
 
-  // Comparison table for Salsa styles
-  comparisonTable: {
-    enabled: true,
-    columns: SALSA_LADY_COMPARISON_DATA.styles.map(s => s.nameKey),
-    rows: SALSA_LADY_COMPARISON_DATA.rows.map(r => ({
-      rowKey: r.rowKey,
-      values: r.values,
-    })),
-    meaningCount: 0, // No meaning section for comparison
+  // Transformation
+  transformation: {
+    titleKey: 'salsaLadyV2TransformTitle',
+    aspectKey: 'salsaLadyV2TransformAspect',
+    beforeKey: 'salsaLadyV2TransformBefore',
+    afterKey: 'salsaLadyV2TransformAfter',
+    rows: [
+      {
+        id: 'brazos',
+        labelKey: 'salsaLadyV2TransformbrazosLabel',
+        beforeKey: 'salsaLadyV2TransformbrazosBefore',
+        afterKey: 'salsaLadyV2TransformbrazosAfter',
+      },
+      {
+        id: 'caderas',
+        labelKey: 'salsaLadyV2TransformcaderasLabel',
+        beforeKey: 'salsaLadyV2TransformcaderasBefore',
+        afterKey: 'salsaLadyV2TransformcaderasAfter',
+      },
+      {
+        id: 'giros',
+        labelKey: 'salsaLadyV2TransformgirosLabel',
+        beforeKey: 'salsaLadyV2TransformgirosBefore',
+        afterKey: 'salsaLadyV2TransformgirosAfter',
+      },
+      {
+        id: 'tacones',
+        labelKey: 'salsaLadyV2TransformtaconesLabel',
+        beforeKey: 'salsaLadyV2TransformtaconesBefore',
+        afterKey: 'salsaLadyV2TransformtaconesAfter',
+      },
+      {
+        id: 'shines',
+        labelKey: 'salsaLadyV2TransformshinesLabel',
+        beforeKey: 'salsaLadyV2TransformshinesBefore',
+        afterKey: 'salsaLadyV2TransformshinesAfter',
+      },
+      {
+        id: 'confianza',
+        labelKey: 'salsaLadyV2TransformconfianzaLabel',
+        beforeKey: 'salsaLadyV2TransformconfianzaBefore',
+        afterKey: 'salsaLadyV2TransformconfianzaAfter',
+      },
+      {
+        id: 'estilo',
+        labelKey: 'salsaLadyV2TransformestiloLabel',
+        beforeKey: 'salsaLadyV2TransformestiloBefore',
+        afterKey: 'salsaLadyV2TransformestiloAfter',
+      },
+    ],
   },
 
-  nearbySection: {
-    enabled: true,
-    keyPrefix: 'salsaLady',
+  // Why choose
+  whyChoose: {
+    titleKey: 'salsaLadyWhyChooseTitle',
+    items: [
+      { titleKey: 'salsaLadyWhyChoose1Title', descKey: 'salsaLadyWhyChoose1Desc' },
+      { titleKey: 'salsaLadyWhyChoose2Title', descKey: 'salsaLadyWhyChoose2Desc' },
+      { titleKey: 'salsaLadyWhyChoose3Title', descKey: 'salsaLadyWhyChoose3Desc' },
+      { titleKey: 'salsaLadyWhyChoose4Title', descKey: 'salsaLadyWhyChoose4Desc' },
+      { titleKey: 'salsaLadyWhyChoose5Title', descKey: 'salsaLadyWhyChoose5Desc' },
+      { titleKey: 'salsaLadyWhyChoose6Title', descKey: 'salsaLadyWhyChoose6Desc' },
+      { titleKey: 'salsaLadyWhyChoose7Title', descKey: 'salsaLadyWhyChoose7Desc' },
+    ],
   },
 
-  culturalHistory: {
-    enabled: true,
+  // Stats
+  stats: {
+    years: 8,
+    activeStudents: 1500,
+    totalStudents: 15000,
+  },
+
+  // Logos
+  logos: {
+    titleKey: 'salsaLadyLogosTitle',
+    items: [
+      {
+        src: '/images/cid-unesco-logo.webp',
+        alt: 'CID UNESCO - Consejo Internacional de la Danza',
+        name: 'CID UNESCO',
+      },
+      {
+        src: '/images/Street-Dance-2.webp',
+        alt: 'Street Dance 2 - Película de danza urbana',
+        name: 'Street Dance 2',
+      },
+      {
+        src: '/images/the-dancer-espectaculo-baile-cuadrada.webp',
+        alt: 'The Dancer - Espectáculo de baile',
+        name: 'The Dancer',
+      },
+      {
+        src: '/images/telecinco-logo.webp',
+        alt: 'Telecinco - Cadena de televisión española',
+        name: 'TV 5',
+      },
+    ],
+    festivalTextKey: 'salsaLadyLogosIntlFestivalsText',
+  },
+
+  // Video
+  video: {
+    id: 'C5sQnx-uNhI',
+    titleKey: 'salsaLadyVideoTitle',
+    descKey: 'salsaLadyVideoDesc',
+  },
+
+  // Testimonials
+  testimonials: SALSA_LADY_STYLE_TESTIMONIALS,
+
+  // Style comparison
+  styleComparison: {
+    titleKey: 'salsaLadyCompareTitle',
+    subtitleKey: 'salsaLadyCompareSubtitle',
+    featureKey: 'salsaLadyCompareFeature',
+    data: SALSA_LADY_COMPARISON_DATA,
+  },
+
+  // Cultural history
+  cultural: {
     titleKey: 'salsaLadyCulturalTitle',
     shortDescKey: 'salsaLadyCulturalShort',
     fullHistoryKey: 'salsaLadyCulturalFull',
   },
 
-  // === SCHEMA MARKUP ===
-  courseConfig: SALSA_LADY_STYLE_COURSE_CONFIG,
+  // FAQs
+  faqs: [
+    { id: 'salsa-lady-1', questionKey: 'salsaLadyFaqQ1', answerKey: 'salsaLadyFaqA1' },
+    { id: 'salsa-lady-2', questionKey: 'salsaLadyFaqQ2', answerKey: 'salsaLadyFaqA2' },
+    { id: 'salsa-lady-3', questionKey: 'salsaLadyFaqQ3', answerKey: 'salsaLadyFaqA3' },
+    { id: 'salsa-lady-4', questionKey: 'salsaLadyFaqQ4', answerKey: 'salsaLadyFaqA4' },
+    { id: 'salsa-lady-5', questionKey: 'salsaLadyFaqQ5', answerKey: 'salsaLadyFaqA5' },
+    { id: 'salsa-lady-6', questionKey: 'salsaLadyFaqQ6', answerKey: 'salsaLadyFaqA6' },
+    { id: 'salsa-lady-7', questionKey: 'salsaLadyFaqQ7', answerKey: 'salsaLadyFaqA7' },
+    { id: 'salsa-lady-8', questionKey: 'salsaLadyFaqQ8', answerKey: 'salsaLadyFaqA8' },
+    { id: 'salsa-lady-9', questionKey: 'salsaLadyFaqQ9', answerKey: 'salsaLadyFaqA9' },
+    { id: 'salsa-lady-10', questionKey: 'salsaLadyFaqQ10', answerKey: 'salsaLadyFaqA10' },
+    { id: 'salsa-lady-11', questionKey: 'salsaLadyFaqQ11', answerKey: 'salsaLadyFaqA11' },
+    { id: 'salsa-lady-12', questionKey: 'salsaLadyFaqQ12', answerKey: 'salsaLadyFaqA12' },
+    { id: 'salsa-lady-13', questionKey: 'salsaLadyFaqQ13', answerKey: 'salsaLadyFaqA13' },
+    { id: 'salsa-lady-14', questionKey: 'salsaLadyFaqQ14', answerKey: 'salsaLadyFaqA14' },
+    { id: 'salsa-lady-15', questionKey: 'salsaLadyFaqQ15', answerKey: 'salsaLadyFaqA15' },
+  ],
+  faqTitleKey: 'salsaLadyFaqTitle',
 
-  videoSchema: {
-    titleKey: 'salsaLadyVideoTitle',
-    descKey: 'salsaLadyVideoDesc',
-    thumbnailUrl: `https://img.youtube.com/vi/${SALSA_LADY_STYLE_VIDEO_ID}/maxresdefault.jpg`,
-    videoId: SALSA_LADY_STYLE_VIDEO_ID,
+  // Nearby areas
+  nearby: {
+    titleKey: 'salsaLadyNearbyTitle',
+    descKey: 'salsaLadyNearbyDesc',
+    searchTextKey: 'salsaLadyNearbySearchText',
+    metroKey: 'salsaLadyNearbyMetro',
+    areas: [
+      { name: 'Plaza España', time: '5 min' },
+      { name: 'Hostafrancs', time: '5 min' },
+      { name: 'Sants Estació', time: '10 min' },
+      { name: 'Les Corts', time: '15 min' },
+      { name: 'Eixample Esquerra', time: '15 min' },
+      { name: 'Poble Sec', time: '10 min' },
+      { name: 'Sant Antoni', time: '12 min' },
+      { name: "L'Hospitalet", time: '10 min' },
+    ],
   },
 
-  // Person schemas for teachers
-  personSchemas: [
-    {
-      name: 'Yunaisy Farray',
-      jobTitle: 'Creadora del Método Farray®',
-      description:
-        "Fundadora y directora de Farray's International Dance Center. Creadora del revolucionario Método Farray para Salsa Lady Style.",
-      knowsAbout: ['Salsa Lady Style', 'Método Farray', 'Salsa Cubana', 'Timba', 'Cabaret'],
-    },
-    {
-      name: 'Lia Valdes',
-      jobTitle: 'Maestra y Artista Internacional Cubana',
-      description:
-        'Con más de 20 años de carrera artística, formada en la Escuela Nacional de Arte de Cuba (ENA). Referente mundial en Cabaret y Lady Style.',
-      knowsAbout: ['Cabaret', 'Lady Style', 'Cuban Dance', 'Salsa', 'Latin Dance'],
-    },
-  ],
+  // Final CTA
+  finalCta: {
+    titleKey: 'salsaLadyFinalCTATitle',
+    descKey: 'salsaLadyFinalCTADesc',
+    cta1Key: 'salsaLadyFinalCTA1',
+    cta1SubtextKey: 'salsaLadyFinalCTA1Subtext',
+    cta2Key: 'salsaLadyFinalCTA2',
+    cta2SubtextKey: 'salsaLadyFinalCTA2Subtext',
+  },
 };

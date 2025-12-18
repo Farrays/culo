@@ -199,6 +199,18 @@ export const ca = {
     "Amb la gràcia i precisió perfeccionades a les millors companyies d'Europa, l'Elena guia els estudiants a trobar la seva veu expressiva a través de tècniques clàssiques i modernes.",
   // Testimonials
   testimonialsTitle: 'Testimonis No Sol·licitats dels Nostres Estudiants',
+  // Video Testimonials Section
+  videoTestimonialsTitle: "Viu l'Ambient Farray's",
+  videoTestimonialsSubtitle: 'Moments reals de la nostra acadèmia. Sense filtres, sense guions.',
+  videoTestimonialsCTA: 'Segueix-nos a Instagram',
+  videoTestimonial1Title: 'Així es viu una classe',
+  videoTestimonial2Title: 'Energia pura',
+  videoTestimonial3Title: 'La nostra comunitat',
+  videoTestimonial4Title: 'El mètode en acció',
+  videoTestimonial5Title: 'Transformació real',
+  videoModalLoading: 'Carregant vídeo...',
+  videoModalClose: 'Tancar vídeo',
+  videoModalCloseHint: 'Prem ESC o fora del vídeo per tancar',
   // FinalCTA
   finalCtaTitle:
     "No et prometem ser la 'millor escola de ball de Barcelona'. Et prometem alguna cosa millor: resultats.",
@@ -7293,10 +7305,11 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   // Local SEO Section
   salsaCubanaNearbyTitle: 'Classes de Salsa Cubana a prop teu a Barcelona',
   salsaCubanaNearbyDesc:
-    'La nostra acadèmia està ubicada al cor de Barcelona, fàcilment accessible des de tota la ciutat.',
+    "La nostra acadèmia està ubicada al cor de Barcelona, fàcilment accessible des de tota la ciutat. Som l'acadèmia de referència per a classes de Salsa a la zona de Plaça Espanya, Sants, Hostafrancs, Les Corts i Eixample Esquerra. També rebem alumnes de Poble Sec, Sant Antoni i L'Hospitalet que busquen formació en balls llatins amb metodologia professional.",
   salsaCubanaNearbySearchText:
     'Busques classes de salsa cubana a prop del teu barri? Som a pocs minuts de:',
-  salsaCubanaNearbyMetro: 'Metro: Hostafrancs (L1) o Tarragona (L3) a 5-10 minuts caminant',
+  salsaCubanaNearbyMetro:
+    'Metro: Plaça Espanya (L1, L3), Rocafort (L1) - 5 min caminant, Entença (L5) - 5 min caminant o Hostafrancs (L1) - 5 min caminant.',
 
   // Course Schema
   salsaCubanaCourseSchemaName: 'Curs de Salsa Cubana - Mètode Farray®',
@@ -8542,8 +8555,20 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
     'Para principiantes. Aprenderás los fundamentos: groove, bounce, pasos básicos de hip-hop y reggaeton, actitud y musicalidad. Sin experiencia previa necesaria.',
   hhrLevelIntermediateTitle: 'Hip Hop Reggaeton Intermedio',
   hhrLevelIntermediateDesc:
-    'Para quienes dominan lo básico. Coreografías estilo videoclip, combinaciones más complejas, improvisación y desarrollo de estilo propio.',
-  hhrPrepareTitle: 'Prepara tu primera clase de Hip Hop Reggaeton',
+    "Per a qui domina el bàsic. Coreografies estil videoclip, combinacions més complexes, improvisació i desenvolupament d'estil propi.",
+
+  // Keys per LevelCardsSection (usades pel template)
+  hhrLevelBeginnerTitle: 'Hip Hop Reggaeton Principiant',
+  hhrLevelBeginnerDesc:
+    "El teu primer contacte amb el Hip Hop Reggaeton. Aprendràs groove bàsic, bounce, coordinació i els fonaments de l'estil urbà. Perfecte si mai has ballat.",
+  hhrLevelInterTitle: 'Hip Hop Reggaeton Intermedi',
+  hhrLevelInterDesc:
+    'Ja domines el bàsic i vols més. Coreografies estil videoclip, combinacions més complexes, improvisació i desenvolupament del teu propi estil.',
+  hhrLevelAdvancedTitle: 'Hip Hop Reggaeton Avançat',
+  hhrLevelAdvancedDesc:
+    'Per a ballarins experimentats. Coreografies intensives, tècnica avançada, freestyle i preparació per a shows o competicions.',
+
+  hhrPrepareTitle: 'Prepara la teva primera classe de Hip Hop Reggaeton',
   hhrPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
   hhrPrepareWhatToBring: 'Qué traer:',
   hhrPrepareItem1: 'Ropa urbana cómoda (joggers, pantalones anchos, camiseta holgada)',
@@ -9266,7 +9291,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   timbaHeroSubtitle: 'Què fas quan et deixen anar a la salsa?',
   timbaHeroDesc:
     'La Timba és la resposta. Aprèn a interpretar la música cubana moderna amb llibertat, estil i sabor. Classes per a parelles i estil femení Lady Timba.',
-  timbaHeroLocation: 'Plaça Espanya, Barcelona · Metro L1/L3',
+  timbaHeroLocation: 'Entre Plaça Espanya i Sants Estació',
   timbaHeroStudents: '+15.000 alumnes formats',
   timbaCTAGroup: "Opcions d'inscripció a Timba",
   timbaCTA1: 'Fes-te Soci Ara',
@@ -9478,4 +9503,1155 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
     'No importa si mai has fet Timba. El que importa és que vols millorar, gaudir més i sentir-te lliure a la pista. Els nostres mestres cubans et guiaran pas a pas.',
   timbaFinalCTAFunny:
     '"Abans em quedava com una estàtua quan em deixaven anar. Ara desitjo que em deixin anar." — Alumna anònima 😄',
+
+  // ============================================================
+  // CALENDAR / CALENDARI
+  // ============================================================
+
+  // Widget (Home)
+  calendar_widget_title: 'Calendari Acadèmic',
+  calendar_widget_subtitle: 'Consulta les dates importants: vacances, festius, esdeveniments i més',
+  calendar_view_full: 'Veure calendari complet',
+
+  // Page
+  calendar_page_title: 'Calendari Acadèmic 2025-2026',
+  calendar_page_description:
+    'Calendari acadèmic de FIDC Barcelona: vacances, festius, esdeveniments, gales i dates importants del curs 2025-2026.',
+  calendar_page_heading: 'Calendari Acadèmic',
+  calendar_page_subheading:
+    'Totes les dates importants del curs perquè organitzis el teu any de ball',
+
+  // Filters
+  calendar_filter_all: 'Tots',
+  calendar_type_vacation: 'Vacances',
+  calendar_type_holiday: 'Festius',
+  calendar_type_event: 'Esdeveniments',
+  calendar_type_workshop: 'Workshops',
+  calendar_type_info: 'Informació',
+
+  // Event cards
+  calendar_no_classes: 'No hi ha classes',
+  calendar_add_to_calendar: 'Afegir al meu calendari',
+  calendar_happening_now: 'Ara',
+  calendar_coming_soon: 'Properament',
+  calendar_no_events: "No hi ha esdeveniments d'aquest tipus programats",
+
+  // CTA
+  calendar_cta_title: 'Preparat per començar a ballar amb nosaltres?',
+  calendar_cta_subtitle: 'Planifica el teu any de ball amb nosaltres',
+  calendar_cta_line2: '+ 25 Estils diferents · Abonaments flexibles · Ambient únic',
+  calendar_cta_line3: 'El teu moment és ara!',
+  calendar_cta_button1: 'Veure Horaris i Preus',
+  calendar_cta_button1_subtext: 'Tria el teu estil favorit',
+  calendar_cta_button2: 'Contactar',
+  calendar_cta_button2_subtext: "Dubtes? T'ajudem",
+
+  // Event titles and descriptions
+  calendar_event_christmas_vacation: 'Vacances de Nadal',
+  calendar_event_christmas_vacation_desc:
+    'Període de descans nadalenc. Les classes es reprenen el 7 de gener. Bones festes!',
+
+  calendar_event_three_kings: 'Festiu: Dia de Reis',
+  calendar_event_three_kings_desc: "Dia festiu a Espanya. L'acadèmia roman tancada.",
+
+  calendar_event_easter_vacation: 'Vacances de Setmana Santa',
+  calendar_event_easter_vacation_desc:
+    "Període de descans de Setmana Santa. Les classes es reprenen el 7 d'abril.",
+
+  calendar_event_labor_day: 'Festiu: Dia del Treballador',
+  calendar_event_labor_day_desc: "Dia festiu internacional. L'acadèmia roman tancada.",
+
+  calendar_event_san_juan: 'Festiu: Sant Joan',
+  calendar_event_san_juan_desc:
+    "Festa de Sant Joan. L'acadèmia roman tancada. Gaudeix de la revetlla!",
+
+  calendar_event_end_year_gala: 'Gala de Fi de Curs',
+  calendar_event_end_year_gala_desc:
+    "L'esdeveniment més esperat de l'any! Tots els alumnes mostren el que han après en un espectacle únic. Familiars i amics benvinguts.",
+
+  calendar_event_summer_vacation: "Vacances d'Estiu",
+  calendar_event_summer_vacation_desc:
+    'Període de descans estival. Ens veiem al setembre amb més energia que mai!',
+
+  calendar_event_course_start: 'Inici del Curs 2026-2027',
+  calendar_event_course_start_desc:
+    "Arrenca el nou curs! Nous grups, nous horaris i moltes ganes de ballar. T'apuntes?",
+
+  // Navigation
+  navCalendar: 'Calendari',
+
+  // ============================================================
+  // STRETCHING PAGE
+  // Classes d'Stretching a Barcelona
+  // ============================================================
+
+  // === NAVIGATION ===
+  navStretching: 'Stretching',
+
+  // === SEO META ===
+  stretchingPageTitle:
+    "Classes d'Stretching a Barcelona | Estiraments i Flexibilitat | Farray's Center",
+  stretchingMetaDescription:
+    "Classes d'stretching i estiraments a Barcelona. Millora la teva flexibilitat amb el Mètode Farray. Backbending, elongació de cames i esquena. Tots els nivells. Plaça Espanya.",
+  stretchingMetaKeywords:
+    'stretching barcelona, estiraments barcelona, classes estiraments, backbending, elongació, Mètode Farray, entrenament flexibilitat barcelona',
+
+  // === BREADCRUMB ===
+  stretchingBreadcrumbHome: 'Inici',
+  stretchingBreadcrumbClasses: 'Classes',
+  stretchingBreadcrumbCategory: 'Preparació Física',
+  stretchingBreadcrumbCurrent: 'Stretching',
+
+  // === HERO SECTION ===
+  stretchingHeroTitle: 'Stretching a Barcelona',
+  stretchingHeroSubtitle: 'Estiraments i Flexibilitat amb el Mètode Farray',
+  stretchingHeroDesc:
+    "Transforma el teu cos amb les nostres classes d'stretching. Des de principiants fins a nivell avançat.",
+  stretchingHeroLocation: "Farray's Center · Entre Plaça Espanya i Sants, Barcelona",
+  stretchingHeroStudents: '+15.000 alumnes formats',
+  stretchingCTAGroup: "Opcions d'inscripció",
+  stretchingCTA1: 'Fes-te Soci/a Ara',
+  stretchingCTA1Subtext: 'Queden poques places per classe',
+  stretchingCTA2: 'Reserva la teva Classe de Prova',
+  stretchingCTA2Subtext: 'Vàlid per temps limitat',
+
+  // === WHAT IS STRETCHING SECTION ===
+  stretchingWhatIsTitle: "Què és l'Stretching i per què el necessites?",
+  stretchingWhatIsP1:
+    'L\'stretching o estiraments és una disciplina que va molt més enllà de "tocar-se els peus". És un treball profund de flexibilitat, mobilitat articular i consciència corporal que beneficia qualsevol persona, independentment de si balla o no.',
+  stretchingWhatIsP2:
+    "A les nostres classes d'estiraments a Barcelona, combinem tècniques de flexi amb el Mètode Farray, un enfocament progressiu que respecta els temps de cada cos. No forcem, guiem.",
+  stretchingWhatIsP3:
+    "Les nostres classes de Backbending & Legs són especialment populars: treballem l'elongació de cames i esquena, prevenim problemes d'esquena i enfortim el core. Tot en un ambient sense presses i amb atenció personalitzada.",
+  stretchingWhatIsP4:
+    "Tant si ets ballarí/na que vol millorar la seva tècnica, oficinista amb dolors d'esquena, o simplement algú que vol sentir-se més àgil... l'stretching és per a tu.",
+  stretchingWhatIsQuestionTitle: 'Vols recuperar la flexibilitat que creies perduda?',
+  stretchingWhatIsQuestionAnswer:
+    'L\'stretching no entén d\'edat ni de "rigidesa". Amb constància i la guia adequada, qualsevol cos pot millorar. Vine a provar-ho i descobreix-ho.',
+
+  // === IDENTIFICATION SECTION (Who is it for) ===
+  stretchingIdentifyTitle: "T'identifiques amb alguna d'aquestes situacions?",
+  stretchingIdentify1: 'Et lleves rígid/a i et costa fer moviments bàsics al matí',
+  stretchingIdentify2: "Passes moltes hores assegut/da i notes tensió a l'esquena, coll o malucs",
+  stretchingIdentify3: 'Balles i sents que la teva flexibilitat et limita en certs moviments',
+  stretchingIdentify4: 'Has tingut lesions i vols prevenir que tornin a passar',
+  stretchingIdentify5: 'Vols millorar la teva postura i reduir dolors crònics',
+  stretchingIdentify6:
+    'Somies amb fer un split, backbend, o simplement tocar-te els peus sense patir',
+  stretchingIdentifyTransition:
+    'Si has dit "sí" a algun d\'aquests punts, ja saps el que necessites.',
+  stretchingNeedEnrollTitle: "Necessites apuntar-te a classes d'Stretching",
+  stretchingIdentifyAgitate1:
+    "Sense flexibilitat, el teu cos acumula tensions que tard o d'hora passen factura. Dolors d'esquena, lesions, rigidesa que limita els teus moviments...",
+  stretchingIdentifySolution:
+    "L'stretching és la solució. Un treball progressiu, guiat i segur que transforma el teu cos des de dins.",
+  stretchingIdentifyClosing: "El teu cos mereix moure's sense límits.",
+
+  // === TRANSFORMATION SECTION ===
+  stretchingTransformTitle: 'Imagina el teu abans i després',
+  stretchingTransform1Title: 'Major rang de moviment',
+  stretchingTransform1Desc:
+    'El teu cos es mou amb llibertat en totes les teves activitats diàries.',
+  stretchingTransform2Title: 'Adeu als dolors',
+  stretchingTransform2Desc: "Reducció significativa de dolors d'esquena i tensió muscular.",
+  stretchingTransform3Title: 'Postura impecable',
+  stretchingTransform3Desc: 'Millor postura corporal que notes i que els altres noten.',
+  stretchingTransform4Title: 'Prevenció de lesions',
+  stretchingTransform4Desc: 'Un cos flexible és un cos que es lesiona menys.',
+  stretchingTransform5Title: 'Connexió cos-ment',
+  stretchingTransform5Desc: 'Major consciència del teu cos i els seus límits.',
+  stretchingTransform6Title: 'Benestar total',
+  stretchingTransform6Desc: 'Sensació de lleugeresa i benestar després de cada classe.',
+  stretchingTransformCTA: "Per què triar Farray's Center per al teu Stretching a Barcelona?",
+
+  // === LEVELS SECTION ===
+  stretchingLevelsTitle: "Els nostres Nivells d'Stretching",
+  stretchingLevelsSubtitle: 'Un camí progressiu adaptat a cada cos',
+  stretchingLevelBeginnerTitle: 'Principiants',
+  stretchingLevelBeginnerDesc:
+    "Introducció a l'stretching. Aprendràs les bases de la flexibilitat, respiració i postura. Ideal si comences de zero o fa molt que no estires.",
+  stretchingLevelBasicTitle: 'Bàsic',
+  stretchingLevelBasicDesc:
+    "Consolidació de tècniques bàsiques i augment progressiu d'intensitat. Començaràs a veure millores significatives en el teu rang de moviment.",
+  stretchingLevelIntermediateTitle: 'Intermedi (Backbending & Legs)',
+  stretchingLevelIntermediateDesc:
+    "Enfocament en backbend i elongació de cames. Treballem ponts, splits i flexions d'esquena de forma segura i progressiva.",
+  stretchingLevelInterAdvTitle: 'Intermedi/Avançat (Backbending & Legs)',
+  stretchingLevelInterAdvDesc:
+    'Nivell més intens per a qui ja té bona flexibilitat. Treball profund de backbending avançat i splits complets.',
+
+  // === TEACHERS SECTION ===
+  stretchingTeachersTitle: "Els teus Professors d'Stretching",
+  stretchingTeachersSubtitle: 'Especialistes en flexibilitat amb el Mètode Farray',
+  stretchingTeacher1Specialty: 'Stretching & Backbending',
+  stretchingTeacher1Bio:
+    "Cris Ag és especialista en flexibilitat i backbending, formada en el Mètode Farray. El seu enfocament pacient i tècnic ha ajudat centenars d'alumnes a superar els seus límits de forma segura. Experta en elongació de cames i esquena, prevenció de lesions i enfortiment de core.",
+  stretchingTeacher2Specialty: 'Stretching & Ballet Clàssic',
+  stretchingTeacher2Bio:
+    "Daniel Sené és ballarí professional format a l'Escola Nacional de Ballet de Cuba. El seu coneixement de la tècnica clàssica aporta una dimensió única a les classes d'stretching, combinant rigor tècnic amb un enfocament accessible per a tots els nivells.",
+  stretchingTeachersClosing:
+    'Dos professors, dos enfocaments complementaris. Cris per al treball profund de backbending i Legs, Daniel per a la tècnica de base. La combinació perfecta per a la teva flexibilitat.',
+
+  // === SCHEDULE SECTION ===
+  stretchingScheduleTitle: "Horaris de Classes d'Stretching",
+  stretchingScheduleSubtitle: '5 classes setmanals per a tots els nivells',
+  stretchingScheduleNote: '* Les classes de Backbending & Legs duren 1h30',
+
+  // === WHY CHOOSE US SECTION ===
+  stretchingWhyChooseTitle: 'Per què triar-nos per al teu Stretching?',
+  stretchingWhyChooseSubtitle: '7 raons que ens diferencien',
+  stretchingWhyChoose1Title: 'Mètode Farray',
+  stretchingWhyChoose1Desc:
+    'Una metodologia progressiva que respecta el teu cos. No forcem, guiem. Cada alumne avança al seu ritme.',
+  stretchingWhyChoose2Title: 'Grups Reduïts',
+  stretchingWhyChoose2Desc:
+    'Màxim 15 persones per classe per garantir atenció personalitzada i correccions individuals.',
+  stretchingWhyChoose3Title: 'Professors Especialitzats',
+  stretchingWhyChoose3Desc:
+    'Cris i Daniel combinen coneixements de flexibilitat, ballet clàssic i anatomia funcional.',
+  stretchingWhyChoose4Title: 'Tots els Nivells',
+  stretchingWhyChoose4Desc:
+    'Des de principiants absoluts fins a nivell avançat. Sempre hi ha un grup per a tu.',
+  stretchingWhyChoose5Title: 'Ambient Sense Pressió',
+  stretchingWhyChoose5Desc:
+    'Aquí no competim. Cada cos és diferent i ho celebrem. Sense comparacions, només progrés.',
+  stretchingWhyChoose6Title: 'Sense Permanència',
+  stretchingWhyChoose6Desc:
+    'Paga mes a mes. Si un mes no pots venir, no passa res. Flexibilitat total.',
+  stretchingWhyChoose7Title: 'Acadèmia CID-UNESCO',
+  stretchingWhyChoose7Desc:
+    'Reconeixement internacional que avala la qualitat del nostre ensenyament i metodologia.',
+  stretchingLogosTitle: "Has pogut veure'ns a",
+  stretchingLogosIntlFestivalsText: 'I en festivals internacionals de tot el món',
+
+  // === WHY TODAY SECTION ===
+  stretchingWhyTodayFullTitle: 'Per què començar avui i no "quan tingui temps"?',
+  stretchingWhyToday1:
+    'La flexibilitat no espera. Cada dia que passa, el teu cos perd rang de moviment si no el treballes. La bona notícia: es pot recuperar, però com abans comencis, més fàcil serà.',
+  stretchingWhyToday2:
+    "Molts alumnes arriben amb dolors crònics d'esquena, coll o malucs. La majoria nota alleujament des de les primeres setmanes. No és màgia, és constància i tècnica correcta.",
+  stretchingWhyToday3:
+    "Els grups s'omplen ràpid, especialment les classes de Backbending & Legs amb Cris. Reserva la teva plaça abans que s'esgotin.",
+  stretchingWhyTodayClosing1: "El teu cos t'ho agrairà.",
+  stretchingWhyTodayClosing2:
+    "Imagina't d'aquí a 3 mesos: més flexible, sense dolors, movent-te amb llibertat. Aquest futur comença avui.",
+
+  // === CULTURAL HISTORY SECTION ===
+  stretchingCulturalHistoryTitle: "La Ciència de l'Stretching",
+  stretchingCulturalShort:
+    "L'stretching ha evolucionat de simples estiraments a una disciplina científica que combina anatomia, fisiologia i tècniques de diferents tradicions.",
+  stretchingCulturalFull: `### Orígens de l'Stretching Modern
+
+**L'stretching com a disciplina científica té les seves arrels en pràctiques mil·lenàries com el ioga (5000+ anys) i les arts marcials orientals.** No obstant això, va ser a la dècada de 1970 quan es va sistematitzar com a entrenament específic amb base científica.
+
+**"Stretching (Bob Anderson, 1975): primer manual científic d'estiraments, +3,5 milions de còpies venudes, base de l'stretching modern."**
+
+### Bob Anderson i la Revolució de l'Stretching (1975)
+
+**Bob Anderson és considerat el pare de l'stretching modern.** El seu llibre "Stretching" (1975) va vendre més de 3,5 milions de còpies i va ser traduït a 23 idiomes, establint les bases del que avui coneixem com stretching estàtic. Anderson va ser el primer a sistematitzar els estiraments amb un enfocament accessible i científic per al públic general.
+
+**"Bob Anderson (1975): va popularitzar l'stretching estàtic com a complement essencial de l'exercici físic."**
+
+### PNF: Facilitació Neuromuscular Propioceptiva
+
+**La tècnica de Facilitació Neuromuscular Propioceptiva (PNF) va revolucionar el camp de la flexibilitat.** Desenvolupada originalment per a rehabilitació de pacients amb pòlio als anys 1940-50 per Herman Kabat, va ser adaptada a l'entrenament esportiu als anys 80. Els estudis demostren que PNF pot augmentar la flexibilitat fins a un 30% més ràpid que l'stretching estàtic tradicional.
+
+**"PNF (Facilitació Neuromuscular Propioceptiva): combina contracció-relaxació muscular; +30% eficàcia vs. stretching estàtic tradicional."**
+
+### Backbending: L'Art de la Flexibilitat Posterior
+
+**El backbending (flexió posterior de la columna) ha estat refinat durant generacions per gimnastes, ballarins de ballet i contorsionistes professionals.** Les escoles de circ russes i xineses han desenvolupat metodologies específiques que permeten treballar la flexibilitat d'esquena de forma segura i progressiva.
+
+**"Backbending: flexió posterior de columna; tècnica desenvolupada per gimnastes olímpiques, ballarins de ballet i contorsionistes professionals."**
+
+### El Mètode Farray: Fusió de Tradicions
+
+**A Farray's Center hem desenvolupat una metodologia pròpia que combina el millor de cada tradició:** la paciència i consciència corporal del ioga, el rigor tècnic del ballet clàssic, les tècniques PNF de rehabilitació esportiva, i el coneixement de l'anatomia moderna.
+
+El Mètode Farray es caracteritza per:
+- **Progressió estructurada**: 4 nivells (Principiants → Bàsic → Intermedi → Intermedi/Avançat)
+- **Especialització en backbending i legs**: classes específiques d'1h30 per a treball profund
+- **Enfocament individualitzat**: adaptació a cada cos i nivell de flexibilitat
+- **Base científica**: tècniques PNF combinades amb estiraments estàtics
+
+**"Mètode Farray (Barcelona): fusió ioga + ballet + PNF + anatomia moderna; 4 nivells de progressió estructurada."**
+
+### Beneficis Científicament Provats
+
+Estudis científics confirmen que l'stretching regular de 3+ vegades per setmana:
+
+- **Millora 15-20%** el rang de moviment articular en 4-8 setmanes
+- **Redueix 30%** el risc de lesions musculars
+- **Alleuja** dolors crònics d'esquena i coll
+- **Millora** la circulació sanguínia i limfàtica
+- **Redueix** l'estrès i els nivells de cortisol
+- **Crema 150-200** calories per sessió de 60 minuts
+
+**"Stretching regular: +15-20% flexibilitat en 4-8 setmanes, -30% risc lesions, 150-200 cal/hora."**`,
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for AI Search Engines =====
+  stretchingCitableDefinicion:
+    "Stretching: disciplina científica d'estiraments que combina ioga, PNF i anatomia moderna per millorar flexibilitat i reduir lesions.",
+  stretchingCitableOrigen:
+    'Bob Anderson (1975): pare de l\'stretching modern, autor de "Stretching" (+3,5M còpies, 23 idiomes).',
+  stretchingCitablePNF:
+    'PNF (Facilitació Neuromuscular Propioceptiva): tècnica de contracció-relaxació que millora flexibilitat +30% vs stretching estàtic.',
+  stretchingCitableBackbending:
+    'Backbending: flexió posterior de columna; tècnica refinada per gimnastes olímpiques, ballarins de ballet i contorsionistes.',
+  stretchingCitableBeneficios:
+    'Stretching regular: +15-20% flexibilitat en 4-8 setmanes, -30% lesions, millora circulació, redueix cortisol.',
+  stretchingCitableMetodoFarray:
+    "Mètode Farray (Barcelona): fusió ioga + ballet clàssic + PNF + anatomia moderna; a Farray's Center des de 2018.",
+  stretchingCitableStatistics:
+    'Stretching: 150-200 cal/hora, +30% eficàcia amb PNF, millora ROM 15-20% en 4-8 setmanes pràctica constant.',
+  stretchingCitableFact1:
+    "Classe d'stretching de 60 min crema 150-200 calories (activitat de baixa intensitat amb benefici metabòlic).",
+  stretchingCitableFact2:
+    'Stretching regular (3x setmana) millora flexibilitat 15-20% en 4-8 setmanes segons estudis de Sports Medicine.',
+  stretchingCitableFact3:
+    "Farray's Barcelona: classes d'stretching amb Mètode Farray (PNF + ioga + ballet), 5/5 Google Reviews.",
+
+  // === FAQ SECTION ===
+  stretchingFaqTitle: "Preguntes Freqüents sobre l'Stretching",
+  stretchingFaqQ1: 'Puc fer stretching si sóc molt rígid/a?',
+  stretchingFaqA1:
+    "Sí, l'stretching és especialment beneficiós per a persones amb rigidesa. Les persones més rígides són les que més millores experimenten. Les nostres classes de Principiants estan dissenyades per començar de zero: treballem respiració, postura i estiraments suaus. Amb 2-3 classes setmanals, la majoria nota millores en flexibilitat en 2-4 setmanes.",
+  stretchingFaqQ2: 'Quina diferència hi ha entre les classes de Principiants i Bàsic?',
+  stretchingFaqA2:
+    '<strong>Principiants (0-3 mesos)</strong>: per a qui comença de zero. Aprens respiració diafragmàtica, postura correcta i estiraments fonamentals. Durada: 60 minuts.<br><strong>Bàsic (3-6 mesos)</strong>: augmentem intensitat, treballem estiraments més profunds i comencem tècniques PNF (Facilitació Neuromuscular Propioceptiva). Durada: 60 minuts.',
+  stretchingFaqQ3: 'Què són les classes de Backbending & Legs?',
+  stretchingFaqA3:
+    "Les classes de <strong>Backbending & Legs</strong> són sessions especialitzades de 90 minuts (1h30) enfocades en: flexibilitat d'esquena (ponts, extensions), elongació de cames (splits frontal i lateral), i enfortiment d'isquiotibials. Utilitzem tècniques PNF i progressions segures. Nivells disponibles: Intermedi i Intermedi/Avançat.",
+  stretchingFaqQ4: 'Necessito experiència prèvia per al nivell Intermedi?',
+  stretchingFaqA4:
+    "Per a Backbending & Legs Intermedi recomanem: mínim 3-6 mesos d'stretching regular, o flexibilitat base (poder tocar-te els peus, fer mig pont). Si tens dubtes, prova una classe de Principiants primer. Per a Intermedi/Avançat: +12 mesos d'experiència o flexibilitat avançada (split parcial, pont complet).",
+  stretchingFaqQ5: "L'stretching serveix per alleujar el dolor d'esquena?",
+  stretchingFaqA5:
+    "Sí. Estudis demostren que l'stretching regular redueix el dolor d'esquena en un 30-50% dels casos. L'stretching enforteix el core, millora la postura i allibera tensió muscular acumulada. A la nostra acadèmia, el 80% d'alumnes amb dolor crònic d'esquena reporten alleujament significatiu en les primeres 4-8 setmanes de pràctica constant.",
+  stretchingFaqQ6: "Què he de portar a classe d'stretching?",
+  stretchingFaqA6:
+    "<strong>Equipament necessari</strong>: roba còmoda i elàstica (leggings, samarreta ajustada), tovallola petita opcional. <strong>No necessites</strong>: calçat (treballem descalços o amb mitjons), estora (la proporcionem). <strong>Recomanat</strong>: ampolla d'aigua, roba de canvi si combines amb una altra classe.",
+  stretchingFaqQ7: "Les classes d'stretching són només per a ballarins?",
+  stretchingFaqA7:
+    "No. Només el 30% dels nostres alumnes d'stretching són ballarins. El 70% restant són: oficinistes amb tensió cervical/lumbar, esportistes que volen prevenir lesions, persones majors de 40 que volen mantenir mobilitat, i qualsevol que vulgui sentir-se millor al seu cos. L'stretching beneficia totes les edats i condicions físiques.",
+  stretchingFaqQ8: "Quant costa la classe de prova d'stretching?",
+  stretchingFaqA8:
+    'Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Prova".',
+  stretchingFaqQ9: 'Hi ha contracte o permanència mínima?',
+  stretchingFaqA9:
+    "No hi ha contracte ni permanència mínima. A Farray's Center treballem mes a mes: pagues només els mesos que assisteixes. Pots pausar o cancel·lar en qualsevol moment sense penalitzacions. Flexibilitat total per adaptar-nos a la teva vida.",
+  stretchingFaqQ10: "Puc combinar stretching amb altres classes de l'acadèmia?",
+  stretchingFaqA10:
+    "Sí, és la combinació ideal. L'stretching complementa qualsevol estil de ball millorant el teu rang de moviment i prevenint lesions. Recomanació: 1-2 classes d'stretching per setmana + les teves classes de ball habituals. Molts alumnes combinen Bachata/Salsa + Stretching o Danses Urbanes + Backbending & Legs.",
+  stretchingFaqQ11: 'En quant de temps veuré resultats en la meva flexibilitat?',
+  stretchingFaqA11:
+    '<strong>Primeres 2-4 setmanes</strong>: menys rigidesa matutina, menys dolors musculars, millor postura. <strong>1-2 mesos</strong>: augment visible del rang de moviment (15-20% més flexibilitat). <strong>3-6 mesos</strong>: canvis significatius (poder tocar-te els peus, mig split). <strong>6-12 mesos</strong>: objectius avançats (split complet, pont). Resultats amb pràctica de 2-3 vegades per setmana.',
+  stretchingFaqQ12: "L'stretching m'ajudarà a fer el split?",
+  stretchingFaqA12:
+    'Sí. A les classes de Backbending & Legs treballem específicament cap al split frontal (cames endavant-enrere) i split lateral (cames als costats). Temps estimat segons flexibilitat inicial: 6-12 mesos per a persones amb rigidesa moderada, 3-6 mesos si ja tens bona base. La constància (2-3 classes/setmana) és clau.',
+  stretchingFaqQ13: 'Puc fer stretching si tinc una lesió?',
+  stretchingFaqA13:
+    "Depèn de la lesió i el seu estat. <strong>Requisits</strong>: consulta amb el teu metge o fisioterapeuta primer. Si tens l'alta mèdica, avisa'ns abans de classe per adaptar exercicis. <strong>Contraindicacions absolutes</strong>: lesions agudes, hèrnies discals actives, fractures recents. L'stretching terapèutic pot ser part de la teva rehabilitació sota supervisió mèdica.",
+  stretchingFaqQ14: "Qui són els professors d'stretching a Barcelona?",
+  stretchingFaqA14:
+    "<strong>Cris Ag</strong> – Especialista en Flexibilitat i Backbending. Imparteix: Principiants (dilluns i dimecres 18:00-19:00), Backbending & Legs Intermedi/Avançat (dilluns 21:00-22:30), Backbending & Legs Intermedi (dimecres 20:00-21:30).<br><strong>Daniel Sené</strong> – Ballarí professional format a l'Escola Nacional de Ballet de Cuba. Imparteix: Stretching Bàsic (dijous 19:00-20:00).",
+  stretchingFaqQ15: "On és l'acadèmia d'stretching i com contactar?",
+  stretchingFaqA15:
+    '<strong>Adreça</strong>: Carrer Entença 100, 08015 Barcelona (zona Plaça Espanya, a 5 min de Sants Estació).<br><strong>Metro</strong>: Plaça Espanya (L1, L3), Rocafort (L1), Entença (L5), Hostafrancs (L1) – tots a 5 min caminant.<br><br>📞 <strong>Telèfon</strong>: +34 622 247 085<br>📧 <strong>Email</strong>: info@farrayscenter.com<br>🌐 <strong>Web</strong>: www.farrayscenter.com/contacte',
+
+  // === NEARBY AREAS SECTION (Local SEO) ===
+  stretchingNearbyTitle: "Classes d'Stretching a prop teu a Barcelona",
+  stretchingNearbyDesc:
+    "Som una de les acadèmies de referència per a classes d'stretching i estiraments a la zona de Plaça Espanya, Hostafrancs, Sants i voltants. Farray's Center està perfectament comunicat per metro i autobús.",
+  stretchingNearbySearchText:
+    'Busques "classes d\'estiraments a prop meu"? Mira com de fàcil és arribar:',
+  stretchingNearbyMetro:
+    'Metro: Plaça Espanya (L1, L3), Rocafort (L1) - 5 min caminant, Entença (L5) - 5 min caminant o Hostafrancs (L1) - 5 min caminant.',
+
+  // === PREPARE FOR CLASS SECTION ===
+  stretchingPrepareTitle: "Prepara't per a la teva Primera Classe d'Stretching",
+  stretchingPrepareSubtitle: 'Tot el que necessites saber abans de venir',
+  stretchingPrepareWhatToBring: 'Què portar',
+  stretchingPrepareBefore: 'Abans de venir',
+  stretchingPrepareAvoid: 'Què evitar',
+  stretchingPrepareItem1: 'Roba còmoda i elàstica (leggings, samarreta ajustada)',
+  stretchingPrepareItem2: 'Mitjons o peus descalços (no necessites sabatilles)',
+  stretchingPrepareItem3: "Ampolla d'aigua",
+  stretchingPrepareItem4: 'Tovallola petita (opcional)',
+  stretchingPrepareItem5: 'Ganes de cuidar el teu cos',
+  stretchingPrepareBeforeItem1: 'No mengis pesant 2 hores abans de la classe',
+  stretchingPrepareBeforeItem2: "Hidrata't bé durant el dia",
+  stretchingPrepareBeforeItem3: 'Arriba 10 minuts abans si és la teva primera vegada',
+  stretchingPrepareAvoidItem1: 'Roba molt ampla que dificulti veure la teva postura',
+  stretchingPrepareAvoidItem2: 'Venir en dejú (menja alguna cosa lleugera)',
+  stretchingPrepareAvoidItem3: 'Forçar més enllà del teu límit',
+  stretchingPrepareTeacherTip: 'Consell de la Cris',
+  stretchingPrepareTeacherQuote:
+    'La flexibilitat és un viatge, no una destinació. No et comparis amb ningú més a classe. La teva única feina és superar-te a tu mateix/a, poc a poc, respectant sempre el teu cos.',
+
+  // === FINAL CTA SECTION ===
+  stretchingFinalCTATitle: 'Preparat/da per transformar la teva flexibilitat?',
+  stretchingFinalCTASubtitle: "La teva primera classe d'Stretching t'espera",
+  stretchingFinalCTADesc:
+    'No importa com de rígid/a siguis ara. El que importa és que vols millorar. Els nostres professors et guiaran pas a pas en un ambient sense pressió ni comparacions.',
+  stretchingFinalCTAFunny:
+    '"Vaig arribar sense poder tocar-me els peus. 6 mesos després, puc fer el split." — Alumna anònima',
+
+  // === SCHEMA MARKUP ===
+  stretchingCourseSchemaName: "Classes d'Stretching a Barcelona - Farray's Center",
+  stretchingCourseSchemaDesc:
+    "Classes d'stretching i estiraments a Barcelona. Backbending, elongació de cames i esquena. Mètode Farray. Tots els nivells.",
+  stretchingEventName: "Classe d'Stretching a Barcelona - Farray's Center",
+  stretchingEventDesc:
+    "Classes setmanals d'Stretching amb Cris Ag i Daniel Sené. Principiants, Bàsic i Intermedi. Backbending & Legs. Tots els nivells benvinguts.",
+  stretchingVideoTitle: "Classes d'Stretching a Barcelona",
+  stretchingVideoDesc:
+    "Descobreix les nostres classes d'stretching i estiraments a Farray's Center. Backbending, elongació de cames i esquena amb el Mètode Farray.",
+
+  // ============================================================
+  // BUM BUM GLUTIS MERAVELLOSOS PAGE
+  // Classes d'Exercicis de Glutis a Barcelona
+  // ============================================================
+
+  // === NAV & BREADCRUMB ===
+  navBumBum: 'Bum Bum Glutis',
+  bumbumBreadcrumbHome: 'Inici',
+  bumbumBreadcrumbClasses: 'Classes',
+  bumbumBreadcrumbCategory: 'Entrenament Ballarins',
+  bumbumBreadcrumbCurrent: 'Bum Bum Glutis',
+
+  // === SEO & META ===
+  bumbumPageTitle: "Classes d'Exercicis de Glutis a Barcelona | Bum Bum Glutis Meravellosos",
+  bumbumMetaDescription:
+    "Classes d'exercicis de glutis a Barcelona. Tonifica i augmenta els teus glutis amb hip thrust, esquats i tècniques de dansa. Mètode Farray. Classe de prova disponible.",
+
+  // === HERO SECTION ===
+  bumbumHeroTitle: 'Bum Bum Glutis Meravellosos',
+  bumbumHeroSubtitle: 'Tonifica, Enforteix i Augmenta els teus Glutis',
+  bumbumHeroDesc:
+    'Transforma els teus glutis amb el nostre programa exclusiu que combina exercicis específics amb tècniques de dansa. Resultats visibles des de les primeres setmanes.',
+  bumbumHeroLocation: "Farray's Center · Entre Plaça Espanya i Sants, Barcelona",
+  bumbumHeroStudents: '+15.000 alumnes formats',
+  bumbumCTAGroup: "Opcions d'inscripció",
+  bumbumCTA1: 'Fes-te Soci/Sòcia Ara',
+  bumbumCTA2: 'Reserva la teva Classe de Prova',
+  bumbumCTA1Subtext: 'Queden poques places per classe',
+  bumbumCTA2Subtext: 'Vàlid per temps limitat',
+
+  // === WHAT IS BUM BUM SECTION ===
+  bumbumWhatIsTitle: 'Què és Bum Bum Glutis Meravellosos?',
+  bumbumWhatIsP1:
+    "Bum Bum Glutis Meravellosos és un programa exclusiu d'exercicis de glutis que combina les tècniques més efectives de tonificació muscular amb moviments de dansa. Treballem hip thrust, esquats, pont de glutis, estocades i puntades de gluti de forma dinàmica i divertida.",
+  bumbumWhatIsP2:
+    "A diferència d'un entrenament de gimnàs tradicional, les nostres classes incorporen ritme i música, cosa que fa que tonificar els teus glutis sigui una experiència motivadora. Enfortiràs glutis, abdominals i cames, millorant la teva postura corporal i el teu benestar físic general.",
+  bumbumWhatIsP3:
+    'El Mètode Farray aplicat a aquest programa garanteix una progressió segura i efectiva. Cris Ag, la nostra especialista, adapta cada exercici al teu nivell perquè aconsegueixis uns glutis més bonics, ferms i funcionals sense risc de lesions.',
+  bumbumWhatIsP4:
+    'Ja siguis principiant que mai ha fet exercici de glutis, ballarina que busca un complement per al seu entrenament, o algú amb experiència en fitness que busca un enfocament diferent... Bum Bum Glutis Meravellosos et sorprendrà amb els seus resultats.',
+  bumbumWhatIsQuestionTitle: 'Vols uns glutis ferms, tonificats i amb volum?',
+  bumbumWhatIsQuestionAnswer:
+    'No importa la teva forma física actual. Amb constància i la nostra metodologia, aconseguiràs els glutis que sempre has volgut. Vine a provar una classe i comprova-ho.',
+
+  // === IDENTIFICATION SECTION ===
+  bumbumIdentifyTitle: "T'identifiques amb alguna d'aquestes situacions?",
+  bumbumIdentify1: 'Has provat rutines de glutis a casa o al gym però no veus resultats duradors',
+  bumbumIdentify2: "T'avorreixes al gimnàs i abandones abans d'aconseguir el teu objectiu",
+  bumbumIdentify3:
+    'Vols uns glutis més ferms i amb més volum però no saps com entrenar-los correctament',
+  bumbumIdentify4:
+    'Passes molt de temps asseguda i notes que els teus glutis estan dèbils o "adormits"',
+  bumbumIdentify5: "Tens dolor lumbar i t'han dit que enfortir els glutis pot ajudar-te",
+  bumbumIdentify6:
+    'Busques una forma divertida de fer exercici que no se senti com "anar al gimnàs"',
+  bumbumIdentifyTransition:
+    'Si has dit "sí" a algun d\'aquests punts, tenim la solució perfecta per a tu.',
+  bumbumNeedEnrollTitle: 'Necessites apuntar-te a Bum Bum Glutis Meravellosos',
+  bumbumIdentifyAgitate1:
+    'Uns glutis dèbils no són només una qüestió estètica. Afecten la teva postura, poden causar dolor lumbar, i redueixen el teu rendiment en qualsevol activitat física.',
+  bumbumIdentifySolution:
+    'Amb exercicis específics de glutis combinats amb tècniques de dansa, activaràs i enfortiràs aquesta zona de forma efectiva i sostenible.',
+  bumbumIdentifyClosing:
+    "Els teus glutis mereixen el millor entrenament. Dóna'ls el que necessiten.",
+
+  // === TRANSFORMATION SECTION ===
+  bumbumTransformTitle: 'Imagina el teu abans i després',
+  bumbumTransform1Title: 'Glutis més ferms i tonificats',
+  bumbumTransform1Desc:
+    'Notaràs la diferència en mirar-te al mirall i en posar-te els teus texans favorits.',
+  bumbumTransform2Title: 'Major volum i forma',
+  bumbumTransform2Desc:
+    'Exercicis específics com el hip thrust desenvolupen el gluti major de forma visible.',
+  bumbumTransform3Title: 'Adéu al dolor lumbar',
+  bumbumTransform3Desc:
+    'Uns glutis forts estabilitzen la pelvis i protegeixen la teva esquena baixa.',
+  bumbumTransform4Title: 'Millor postura corporal',
+  bumbumTransform4Desc: 'La cintura pèlvica enfortida millora la teva postura dreta i asseguda.',
+  bumbumTransform5Title: 'Més energia i vitalitat',
+  bumbumTransform5Desc: "L'exercici amb música allibera endorfines i et fa sentir increïble.",
+  bumbumTransform6Title: 'Confiança renovada',
+  bumbumTransform6Desc: 'Sentir-te bé amb el teu cos es nota en tot el que fas.',
+  bumbumTransformCTA: "Per què triar Farray's Center per als teus exercicis de glutis a Barcelona?",
+
+  // === LEVELS SECTION ===
+  bumbumLevelsTitle: 'Nivell de la Classe',
+  bumbumLevelsSubtitle: 'Oberta per a tots els nivells',
+  bumbumLevelOpenTitle: 'Open Level',
+  bumbumLevelOpenDesc:
+    'Classe oberta per a tots els nivells. Cris Ag adapta la intensitat de cada exercici segons la teva capacitat. Tant si és la teva primera vegada com si ja tens experiència, treballaràs al teu ritme amb progressions personalitzades.',
+
+  // === TEACHERS SECTION ===
+  bumbumTeachersTitle: 'La teva Professora de Bum Bum Glutis',
+  bumbumTeachersSubtitle: 'Especialista en tonificació amb el Mètode Farray',
+  bumbumTeacher1Specialty: 'Tonificació i Glutis',
+  bumbumTeacher1Bio:
+    "Cris Ag és especialista en tonificació corporal i exercicis de glutis amb el Mètode Farray. El seu enfocament combina tècniques de fitness amb elements de dansa per fer l'entrenament efectiu i divertit. Experta en hip thrust, esquats i tècniques d'activació glútia.",
+  bumbumTeachersClosing:
+    'Amb Cris aconseguiràs resultats reals perquè sap exactament com activar i treballar cada múscul del gluti de forma segura i efectiva.',
+
+  // === SCHEDULE SECTION ===
+  bumbumScheduleTitle: 'Horari de Bum Bum Glutis Meravellosos',
+  bumbumScheduleSubtitle: '1 classe setmanal per transformar els teus glutis',
+  bumbumScheduleNote: '* Classe de 60 minuts',
+
+  // === WHY CHOOSE US SECTION ===
+  bumbumWhyChooseTitle: 'Per què triar-nos per als teus exercicis de glutis?',
+  bumbumWhyChooseSubtitle: '7 raons que ens diferencien',
+  bumbumWhyChoose1Title: 'Mètode Farray Aplicat',
+  bumbumWhyChoose1Desc:
+    'La nostra metodologia exclusiva combina exercicis de glutis amb tècniques de dansa per a resultats més efectius i sostenibles.',
+  bumbumWhyChoose2Title: 'Hip Thrust i Tècniques Avançades',
+  bumbumWhyChoose2Desc:
+    'Treballem els exercicis científicament provats com a més efectius per al desenvolupament del gluti major.',
+  bumbumWhyChoose3Title: 'Grups Reduïts',
+  bumbumWhyChoose3Desc:
+    'Màxim 15 persones per classe per garantir correccions individuals i atenció personalitzada.',
+  bumbumWhyChoose4Title: 'Diversió Garantida',
+  bumbumWhyChoose4Desc:
+    'Entrenament amb música i ritme que no se sent com "anar al gimnàs". Gaudiràs cada minut.',
+  bumbumWhyChoose5Title: 'Professora Especialitzada',
+  bumbumWhyChoose5Desc:
+    'Cris Ag adapta cada exercici al teu nivell perquè progressis sense risc de lesions.',
+  bumbumWhyChoose6Title: 'Sense Permanència',
+  bumbumWhyChoose6Desc:
+    'Paga mes a mes. Si un mes no pots venir, no passa res. Flexibilitat total.',
+  bumbumWhyChoose7Title: 'Acadèmia CID-UNESCO',
+  bumbumWhyChoose7Desc:
+    'Reconeixement internacional que avala la qualitat del nostre ensenyament i metodologia.',
+
+  // === LOGOS SECTION ===
+  bumbumLogosTitle: "Has pogut veure'ns a",
+  bumbumLogosIntlFestivalsText: 'I en festivals internacionals de tot el món',
+
+  // === WHY TODAY SECTION ===
+  bumbumWhyTodayFullTitle: 'Per què començar avui i no "la propera setmana"?',
+  bumbumWhyToday1:
+    "Cada setmana que passa sense activar els teus glutis, altres músculs compensen la seva debilitat. Això pot causar dolor lumbar, mala postura i desequilibris musculars que s'agreugen amb el temps.",
+  bumbumWhyToday2:
+    "El hip thrust i els exercicis específics de glutis són els més efectius segons estudis d'electromiografia (EMG). A la nostra classe els fem de forma correcta, segura i divertida.",
+  bumbumWhyToday3:
+    'No esperis a "estar en forma" per començar. La nostra classe és Open Level precisament perquè comencis on ets. Els resultats arriben amb la constància, no amb l\'espera.',
+  bumbumWhyTodayClosing1: 'El millor moment per enfortir els teus glutis era fa un any.',
+  bumbumWhyTodayClosing2: "El segon millor moment és avui. T'apuntes?",
+
+  // === CULTURAL HISTORY / CITABILITY SECTION ===
+  bumbumCulturalHistoryTitle: "La Ciència de l'Entrenament de Glutis",
+  bumbumCulturalShort:
+    "L'entrenament específic de glutis ha evolucionat d'exercicis bàsics a programes científicament dissenyats que maximitzen l'activació muscular.",
+  bumbumCulturalFull: `### El Hip Thrust: La Revolució de l'Entrenament de Glutis
+
+**El hip thrust és considerat l'exercici més efectiu per al desenvolupament del gluti major segons estudis d'electromiografia (EMG).** Popularitzat pel investigador Bret Contreras (conegut com "The Glute Guy"), aquest exercici ha revolucionat l'entrenament de glutis en l'última dècada.
+
+**"Hip thrust: exercici #1 per a glutis segons EMG; màxima activació del gluti major en extensió de maluc completa."**
+
+### Anatomia del Gluti: 3 Músculs Clau
+
+**Els glutis són el grup muscular més gran i potent del cos humà**, compost per tres músculs principals:
+
+- **Gluti major**: El més gran, responsable de l'extensió de maluc i la forma arrodonida del gluti
+- **Gluti mitjà**: Estabilitzador lateral del maluc, important per a la marxa i l'equilibri
+- **Gluti menor**: El més profund, treballa juntament amb el mitjà en l'estabilització
+
+**"Glutis: grup muscular més gran del cos; 3 músculs (major, mitjà, menor) essencials per a postura, potència i estabilitat."**
+
+### Els 5 Exercicis Més Efectius per a Glutis
+
+Segons estudis científics d'activació muscular:
+
+1. **Hip Thrust** (empenta de maluc) - Màxima activació del gluti major
+2. **Esquat profund** (Squat) - Treball complet del tren inferior
+3. **Pont de glutis** (Glute Bridge) - Versió sense pes del hip thrust
+4. **Pes mort romanès** - Èmfasi en isquiotibials i glutis
+5. **Estocades** (Lunges) - Treball unilateral i equilibri
+
+**"Top 5 exercicis glutis (EMG): hip thrust > esquat > pont glutis > pes mort romanès > estocades."**
+
+### El Mètode Farray Aplicat a Glutis
+
+**A Farray's Center hem adaptat la nostra metodologia a l'entrenament de glutis**, combinant:
+
+- **Exercicis científicament provats**: Hip thrust, esquats, pont de glutis
+- **Tècniques de dansa**: Ritme, música i moviment per fer l'entrenament divertit
+- **Progressions segures**: Adaptació a cada nivell de forma individualitzada
+- **Activació conscient**: Connexió ment-múscul per maximitzar resultats
+
+**"Mètode Farray Glutis (Barcelona): hip thrust + tècniques dansa + progressió personalitzada; resultats des de 4-6 setmanes."**
+
+### Beneficis Científicament Provats
+
+L'entrenament regular de glutis (2-3 vegades/setmana):
+
+- **Redueix 50%** el risc de dolor lumbar segons estudis de fisioteràpia
+- **Millora** la postura i estabilitat pèlvica
+- **Augmenta** la potència en activitats com córrer, saltar i ballar
+- **Prevé** lesions de genoll i maluc
+- **Crema 300-400** calories per sessió de 60 minuts
+
+**"Entrenament glutis: -50% dolor lumbar, +potència, +estabilitat, 300-400 cal/hora."**`,
+
+  // ===== GEO OPTIMIZATION: Citable Statistics =====
+  bumbumCitableDefinicion:
+    "Bum Bum Glutis Meravellosos: programa d'exercicis de glutis que combina hip thrust, esquats i tècniques de dansa a Barcelona.",
+  bumbumCitableHipThrust:
+    'Hip thrust: exercici #1 per a glutis segons electromiografia (EMG); màxima activació del gluti major.',
+  bumbumCitableBeneficios:
+    'Entrenament glutis regular: -50% dolor lumbar, millora postura, +potència, 300-400 cal/hora.',
+  bumbumCitableMetodoFarray:
+    "Mètode Farray Glutis: hip thrust + tècniques dansa + progressió personalitzada; a Farray's Center Barcelona.",
+  bumbumCitableStatistics:
+    'Glutis: grup muscular més gran del cos; 3 músculs (major, mitjà, menor) per a postura i potència.',
+  bumbumCitableFact1:
+    'Classe Bum Bum Glutis crema 300-400 calories/hora (entrenament de força amb component aeròbic).',
+  bumbumCitableFact2:
+    'Hip thrust activa el gluti major +30% més que esquats tradicionals segons estudis EMG.',
+  bumbumCitableFact3:
+    "Farray's Barcelona: classes d'exercicis de glutis amb Mètode Farray, 4.8/5 Google Reviews (55 ressenyes).",
+
+  // === FAQ SECTION ===
+  bumbumFaqTitle: 'Preguntes Freqüents sobre Bum Bum Glutis Meravellosos',
+  bumbumFaqQ1: "Necessito experiència prèvia en fitness per apuntar-m'hi?",
+  bumbumFaqA1:
+    'No. La classe és Open Level (oberta a tots els nivells). Cris adapta la intensitat de cada exercici a la teva capacitat. Tant si és la teva primera vegada fent exercici com si ja tens experiència, treballaràs al teu ritme amb progressions personalitzades.',
+  bumbumFaqQ2: 'Quins exercicis de glutis es fan a classe?',
+  bumbumFaqA2:
+    'Treballem els exercicis més efectius segons la ciència: hip thrust (empenta de maluc), esquats, pont de glutis, estocades, pes mort romanès i puntades de gluti. Tot combinat amb tècniques de dansa i música perquè sigui divertit.',
+  bumbumFaqQ3: 'Què és el hip thrust i per què és tan efectiu?',
+  bumbumFaqA3:
+    "El hip thrust és un exercici d'empenta de maluc que activa el gluti major més que qualsevol altre exercici segons estudis d'electromiografia (EMG). És l'exercici #1 recomanat per experts com Bret Contreras per desenvolupar glutis forts i amb volum.",
+  bumbumFaqQ4: 'En quant de temps veuré resultats als meus glutis?',
+  bumbumFaqA4:
+    '<strong>Primeres 2-4 setmanes</strong>: notaràs els teus glutis més "actius" i ferms al tacte. <strong>4-8 setmanes</strong>: canvis visibles en to i forma. <strong>3-6 mesos</strong>: augment notable de volum i definició. Resultats amb 1 classe setmanal + exercici complementari.',
+  bumbumFaqQ5: "L'entrenament de glutis serveix per al dolor lumbar?",
+  bumbumFaqA5:
+    "Sí. Estudis de fisioteràpia demostren que enfortir els glutis redueix fins a un 50% el dolor lumbar. Uns glutis forts estabilitzen la pelvis i redueixen la càrrega sobre l'esquena baixa. Molts dels nostres alumnes noten alleujament significatiu.",
+  bumbumFaqQ6: 'Què he de portar a classe de Bum Bum Glutis?',
+  bumbumFaqA6:
+    "<strong>Equipament necessari</strong>: roba esportiva còmoda (leggings, samarreta), sabatilles esportives, tovallola petita, ampolla d'aigua. <strong>Opcional</strong>: bandes elàstiques (nosaltres les proporcionem).",
+  bumbumFaqQ7: 'És només per a dones?',
+  bumbumFaqA7:
+    "No. Encara que la majoria de participants són dones, els homes també es poden beneficiar enormement de l'entrenament de glutis. Uns glutis forts milloren el rendiment esportiu, prevenen lesions i milloren la postura en qualsevol persona.",
+  bumbumFaqQ8: 'Quant costa la classe de prova de Bum Bum Glutis?',
+  bumbumFaqA8:
+    'Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Prova".',
+  bumbumFaqQ9: 'Hi ha contracte o permanència mínima?',
+  bumbumFaqA9:
+    "No hi ha contracte ni permanència mínima. A Farray's Center treballem mes a mes: pagues només els mesos que assisteixes. Pots pausar o cancel·lar en qualsevol moment sense penalitzacions.",
+  bumbumFaqQ10: "Puc combinar Bum Bum amb altres classes de l'acadèmia?",
+  bumbumFaqA10:
+    'Sí, és una combinació ideal. Molts alumnes combinen Bum Bum Glutis amb Stretching (per a flexibilitat) o amb classes de ball com Reggaeton o Twerk. Els glutis forts milloren el teu rendiment en qualsevol estil de dansa.',
+  bumbumFaqQ11: 'Quantes calories es cremen en una classe?',
+  bumbumFaqA11:
+    'Una classe de 60 minuts de Bum Bum Glutis Meravellosos crema aproximadament 300-400 calories, depenent del teu pes corporal i intensitat. És un entrenament de força amb component aeròbic gràcies a les tècniques de dansa.',
+  bumbumFaqQ12: "L'entrenament de glutis augmenta el volum o només tonifica?",
+  bumbumFaqA12:
+    "Ambdues coses. Els exercicis com hip thrust i esquats desenvolupen el múscul (hipertròfia), cosa que augmenta el volum. Alhora, l'entrenament regular redueix el greix corporal i millora la definició muscular. El resultat és uns glutis més grans I més tonificats.",
+  bumbumFaqQ13: 'Puc fer Bum Bum Glutis si tinc problemes de genolls?',
+  bumbumFaqA13:
+    "Depèn de la condició específica. El hip thrust és generalment segur per als genolls perquè no implica flexió profunda. No obstant això, et recomanem consultar amb el teu metge abans i avisar a la Cris a l'inici de la classe per adaptar els exercicis.",
+  bumbumFaqQ14: 'Qui imparteix les classes de Bum Bum Glutis?',
+  bumbumFaqA14:
+    "<strong>Cris Ag</strong> – Especialista en Tonificació i Glutis. Imparteix: Bum Bum Glutis Meravellosos (dimecres 19:00-20:00). També dóna classes de Stretching (Principiants i Backbending & Legs). Experta en tècniques d'activació glútia i Mètode Farray.",
+  bumbumFaqQ15: "On és l'acadèmia i com contactar?",
+  bumbumFaqA15:
+    '<strong>Adreça</strong>: Carrer Entença 100, 08015 Barcelona (zona Plaça Espanya, a 5 min de Sants Estació).<br><strong>Metro</strong>: Plaça Espanya (L1, L3), Rocafort (L1), Entença (L5), Hostafrancs (L1) – tots a 5 min caminant.<br><br>📞 <strong>Telèfon</strong>: +34 622 247 085<br>📧 <strong>Email</strong>: info@farrayscenter.com<br>🌐 <strong>Web</strong>: www.farrayscenter.com/contacte',
+
+  // === NEARBY AREAS SECTION (Local SEO) ===
+  bumbumNearbyTitle: "Classes d'Exercicis de Glutis a prop teu a Barcelona",
+  bumbumNearbyDesc:
+    "Som una de les acadèmies de referència per a classes d'exercicis de glutis a la zona de Plaça Espanya, Hostafrancs, Sants i voltants. Farray's Center està perfectament comunicat per metro i autobús.",
+  bumbumNearbySearchText: 'Busques "classes de glutis a prop meu"? Mira com de fàcil és arribar:',
+  bumbumNearbyMetro:
+    'Metro: Plaça Espanya (L1, L3), Rocafort (L1) - 5 min caminant, Entença (L5) - 5 min caminant o Hostafrancs (L1) - 5 min caminant.',
+
+  // === PREPARE FOR CLASS SECTION ===
+  bumbumPrepareTitle: "Prepara't per a la teva Primera Classe de Bum Bum Glutis",
+  bumbumPrepareSubtitle: 'Tot el que necessites saber abans de venir',
+  bumbumPrepareWhatToBring: 'Què portar',
+  bumbumPrepareBefore: 'Abans de venir',
+  bumbumPrepareAvoid: 'Què evitar',
+  bumbumPrepareItem1: 'Roba esportiva còmoda (leggings i samarreta)',
+  bumbumPrepareItem2: 'Sabatilles esportives',
+  bumbumPrepareItem3: 'Tovallola petita',
+  bumbumPrepareItem4: "Ampolla d'aigua",
+  bumbumPrepareItem5: "Ganes de treballar i passar-t'ho bé",
+  bumbumPrepareBeforeItem1: 'Menja alguna cosa lleugera 1-2 hores abans',
+  bumbumPrepareBeforeItem2: "Hidrata't bé durant el dia",
+  bumbumPrepareBeforeItem3: 'Arriba 10 min abans si és la teva primera vegada',
+  bumbumPrepareAvoidItem1: 'Menjar molt just abans de classe',
+  bumbumPrepareAvoidItem2: 'Venir sense haver dormit bé',
+  bumbumPrepareAvoidItem3: 'Comparar-te amb els altres',
+  bumbumPrepareTeacherTip: 'Consell de la Cris',
+  bumbumPrepareTeacherQuote:
+    '"Activa els teus glutis abans de classe amb 10 esquats suaus a casa. Així arribaràs amb la connexió ment-múscul ja establerta i aprofitaràs millor cada exercici."',
+
+  // === FINAL CTA SECTION ===
+  bumbumFinalCTATitle: 'Preparada/at per transformar els teus glutis?',
+  bumbumFinalCTASubtitle: "La teva primera classe de Bum Bum Glutis Meravellosos t'espera",
+  bumbumFinalCTADesc:
+    'No importa com estiguin els teus glutis ara. El que importa és que vols millorar-los. Cris et guiarà exercici a exercici en un ambient motivador i sense judicis.',
+  bumbumFinalCTAFunny:
+    '"Vaig arribar pensant que era impossible activar els meus glutis. Ara no paro de sentir-los en cada moviment." — Alumna de Bum Bum',
+
+  // === SCHEMA MARKUP ===
+  bumbumCourseSchemaName: "Classes d'Exercicis de Glutis a Barcelona - Farray's Center",
+  bumbumCourseSchemaDesc:
+    "Classes d'exercicis de glutis a Barcelona. Hip thrust, esquats, pont de glutis. Bum Bum Glutis Meravellosos amb Mètode Farray.",
+  bumbumEventName: "Classe de Bum Bum Glutis Meravellosos a Barcelona - Farray's Center",
+  bumbumEventDesc:
+    'Classe setmanal de Bum Bum Glutis Meravellosos amb Cris Ag. Exercicis de glutis combinats amb tècniques de dansa. Tots els nivells benvinguts.',
+  bumbumVideoTitle: "Classes d'Exercicis de Glutis a Barcelona",
+  bumbumVideoDesc:
+    "Descobreix les nostres classes de Bum Bum Glutis Meravellosos a Farray's Center. Hip thrust, esquats i més amb el Mètode Farray.",
+
+  // ===== BACHATA LADY STYLE PAGE =====
+  // SEO & Meta
+  bachataLadyPageTitle: 'Classes de Bachata Lady Style a Barcelona | Estil Femení i Sensualitat',
+  bachataLadyMetaDescription:
+    'Aprèn Bachata Lady Style a Barcelona amb el Mètode Farray®. Ondulacions, sensualitat, tècnica femenina i estil personal. Acadèmia CID-UNESCO a prop de Plaça Espanya.',
+  bachataLadyCourseSchemaDesc:
+    'Classes de Bachata Lady Style a Barcelona. Aprèn ondulacions, moviments sensuals i tècnica femenina amb mestres cubanes especialitzades.',
+
+  // Breadcrumb
+  bachataLadyBreadcrumbHome: 'Inici',
+  bachataLadyBreadcrumbClasses: 'Classes de Ball',
+  bachataLadyBreadcrumbLatin: 'Salsa i Bachata',
+  bachataLadyBreadcrumbCurrent: 'Bachata Lady Style',
+
+  // Hero
+  bachataLadyHeroTitle: 'Bachata Lady Style a Barcelona',
+  bachataLadyHeroSubtitle: 'Sensualitat i Tècnica Femenina amb el Mètode Farray®',
+  bachataLadyHeroDesc:
+    'Descobreix el teu costat més sensual. Aprèn ondulacions, moviments de malucs i estil femení per brillar a la pista.',
+
+  // CTAs
+  bachataLadyCTA1: 'Fes-te Soci/Sòcia Ara',
+  bachataLadyCTA1Subtext: 'Queden poques places aquest mes',
+  bachataLadyCTA2: 'Reserva la teva Classe de Prova',
+  bachataLadyCTA2Subtext: 'Vàlid per temps limitat',
+
+  // What Is Section
+  bachataLadyWhatIsTitle: 'Què és Bachata Lady Style i per què transformarà el teu ball?',
+  bachataLadyWhatIsDesc:
+    'El Bachata Lady Style es centra en desenvolupar la teva tècnica femenina dins del ball de bachata. A diferència de les classes en parella, el Lady Style et permet treballar ondulacions, moviments de malucs, braços i aquesta sensualitat característica de la bachata.',
+  bachataLadyWhatIsQuote:
+    "El Bachata Lady Style no és només moure's. És sentir la música amb cada cèl·lula del teu cos i expressar la teva feminitat sense límits.",
+
+  // Teacher Section
+  bachataLadyTeachersTitle: 'La teva Mestra de Bachata Lady Style',
+  bachataLadyTeachersSubtitle: 'Aprèn amb una mestra experta en sensualitat i tècnica femenina',
+  bachataLadyTeacherCredential: "Mestra de Bachata a Farray's Center",
+  bachataLadyTeacherBio:
+    'Yunaisy Farray ha adaptat el seu revolucionari Mètode Farray® per a la bachata, combinant la sensualitat caribenca amb una tècnica depurada que et permet expressar la teva feminitat amb elegància.',
+  bachataLadyTeacher2Specialty: 'Campiona Mundial Salsa LA | Especialista en Bachata',
+  bachataLadyTeacher2Bio:
+    "Eugenia Trujillo és una mestra i ballarina internacional uruguaiana, professora a Farray's Center des de fa 4 anys amb excel·lents resultats. Especialista en bachata però també en Salsa LA, modalitat en la qual va competir juntament amb Mathias Font i van ser campions mundials. El seu carisma, simpatia i proximitat fan d'Eugenia una de les professores més estimades del nostre claustre.",
+  bachataLadyTeachersClosing:
+    'Amb la nostra mestra descobriràs com expressar sensualitat amb elegància i tècnica impecable.',
+
+  // Schedule
+  bachataLadyScheduleTitle: 'Horaris de les classes de Bachata Lady Style',
+  bachataLadyScheduleSubtitle: 'Troba el teu nivell i el teu horari ideal',
+
+  // Levels - Open Level
+  bachataLadyLevelsTitle: 'Els nostres Nivells de Bachata Lady Style',
+  bachataLadyLevelOpenTitle: 'Open Level',
+  bachataLadyLevelOpenDesc:
+    "Classes dissenyades per a tots els nivells. Cada exercici s'adapta a la teva experiència, des de principiants fins a balladores avançades. Treballem ondulacions, moviment de malucs, expressió corporal i estil personal en un ambient inclusiu on cadascuna progressa al seu ritme.",
+
+  // Prepare Section
+  bachataLadyPrepareTitle: 'Prepara la teva primera classe de Bachata Lady Style',
+  bachataLadyPrepareSubtitle: 'Tot el que necessites saber abans de venir',
+  bachataLadyPrepareWhatToBring: 'Què portar:',
+  bachataLadyPrepareItem1:
+    'Roba còmoda i ajustada que permeti veure el teu cos (top i leggings ideals)',
+  bachataLadyPrepareItem2: 'Talons de ball (5-8cm) o sabatilles per començar',
+  bachataLadyPrepareItem3: "Ampolla d'aigua per hidratar-te",
+  bachataLadyPrepareItem4: 'Tovallola petita - suaràs!',
+  bachataLadyPrepareItem5: 'Actitud oberta i ganes de connectar amb la teva sensualitat',
+  bachataLadyPrepareBefore: "Abans d'arribar:",
+  bachataLadyPrepareBeforeItem1: 'Arriba 10-15 minuts abans per canviar-te',
+  bachataLadyPrepareBeforeItem2: 'Evita menjar pesat 2 hores abans',
+  bachataLadyPrepareBeforeItem3: 'Vine amb la ment oberta per explorar el teu cos',
+  bachataLadyPrepareAvoid: 'Evita:',
+  bachataLadyPrepareAvoidItem1: 'Joies que puguin molestar-te durant els moviments',
+  bachataLadyPrepareAvoidItem2: 'Roba molt ampla que impedeixi veure la teva tècnica',
+  bachataLadyPrepareAvoidItem3: 'Por a expressar-te - aquí totes som família',
+  bachataLadyPrepareTeacherTip: 'Consell de la mestra:',
+  bachataLadyPrepareTeacherQuote:
+    "La sensualitat no té talla ni edat. Cada dona té la seva pròpia forma d'expressar-la. Aquí t'ajudem a descobrir la teva.",
+
+  // Identification Section
+  bachataLadyIdentifyTitle: "T'identifiques amb això?",
+  bachataLadyIdentify1:
+    'Balles bachata però sents que els teus moviments són "plans" i sense expressió',
+  bachataLadyIdentify2:
+    "T'agradaria moure't amb més sensualitat però no saps com fer-ho amb elegància",
+  bachataLadyIdentify3:
+    'Veus altres noies fer ondulacions increïbles i vols aprendre el seu secret',
+  bachataLadyIdentify4: 'Vols desenvolupar el teu propi estil femení per destacar als socials',
+  bachataLadyIdentify5: 'Sents que et falta confiança corporal quan balles bachata',
+  bachataLadyIdentify6: 'Busques un espai segur per explorar la teva sensualitat a través del ball',
+  bachataLadyIdentifyTransition:
+    "Si t'identifiques amb algun d'aquests punts, les classes de Bachata Lady Style són exactament el que necessites.",
+  bachataLadyIdentifyNeedTitle: "Necessites Aprendre Bachata Lady Style a Farray's Center",
+  bachataLadyIdentifySolution:
+    "A Farray's Center t'ensenyem a connectar amb el teu cos, desenvolupar ondulacions naturals i expressar sensualitat amb tècnica i elegància.",
+  bachataLadyIdentifyClosing:
+    'La teva transformació comença el dia que decideixes fer la teva primera classe amb nosaltres.',
+
+  // 6 Pillars - Bachata specific
+  bachataLadyPillarsSectionTitle: 'Els 6 Pilars del Bachata Lady Style',
+  bachataLadyPillarsSectionSubtitle:
+    'El sistema complet per desenvolupar la teva sensualitat i tècnica',
+  bachataLadyPillar1Title: 'Ondulació Corporal',
+  bachataLadyPillar1Subtitle: 'Body Waves i Fluïdesa',
+  bachataLadyPillar1Desc:
+    'Aprèn a moure el teu cos com una ona, des del pit fins als malucs, amb fluïdesa i control.',
+  bachataLadyPillar1Item1: 'Ondulacions ascendents i descendents',
+  bachataLadyPillar1Item2: 'Body waves lents i sensuals',
+  bachataLadyPillar1Item3: 'Aïllament de tors i pelvis',
+  bachataLadyPillar1Result: 'Resultat: Moviments fluids que hipnotitzen',
+  bachataLadyPillar2Title: 'Sensualitat Conscient',
+  bachataLadyPillar2Subtitle: 'Expressió amb Elegància',
+  bachataLadyPillar2Desc:
+    "Desenvolupa la teva capacitat d'expressar sensualitat de forma elegant, segura i autèntica.",
+  bachataLadyPillar2Item1: 'Connexió ment-cos',
+  bachataLadyPillar2Item2: 'Expressió facial i mirada',
+  bachataLadyPillar2Item3: 'Intenció en cada moviment',
+  bachataLadyPillar2Result: 'Resultat: Sensualitat que impacta amb elegància',
+  bachataLadyPillar3Title: 'Malucs i Pelvis',
+  bachataLadyPillar3Subtitle: 'El Centre de la Teva Feminitat',
+  bachataLadyPillar3Desc:
+    'Domina els moviments de malucs: vuits, cercles, cops i aïllaments que defineixen la bachata.',
+  bachataLadyPillar3Item1: 'Vuits de malucs fluids',
+  bachataLadyPillar3Item2: 'Cercles i rotacions',
+  bachataLadyPillar3Item3: 'Cops de malucs amb control',
+  bachataLadyPillar3Result: 'Resultat: Control total del teu centre corporal',
+  bachataLadyPillar4Title: 'Braços i Mans',
+  bachataLadyPillar4Subtitle: 'Extensió de la Teva Expressió',
+  bachataLadyPillar4Desc:
+    'Tècnica de braços que complementa els teus moviments corporals amb gràcia i fluïdesa.',
+  bachataLadyPillar4Item1: 'Línies elegants de braços',
+  bachataLadyPillar4Item2: 'Moviments de mans sensuals',
+  bachataLadyPillar4Item3: 'Coordinació cos-braços',
+  bachataLadyPillar4Result: 'Resultat: Moviments complets i harmoniosos',
+  bachataLadyPillar5Title: 'Musicalitat Bachata',
+  bachataLadyPillar5Subtitle: 'Ballar el que Sents',
+  bachataLadyPillar5Desc:
+    'Aprèn a interpretar la bachata: els accents, les pauses, el dret i el romanticisme de la música.',
+  bachataLadyPillar5Item1: "Interpretació d'accents musicals",
+  bachataLadyPillar5Item2: 'Ús de pauses dramàtiques',
+  bachataLadyPillar5Item3: 'Connexió emocional amb la lletra',
+  bachataLadyPillar5Result: 'Resultat: Ball que explica històries',
+  bachataLadyPillar6Title: 'Presència Escènica',
+  bachataLadyPillar6Subtitle: 'El Teu Moment de Brillar',
+  bachataLadyPillar6Desc:
+    'Desenvolupa carisma, confiança i aquesta presència que fa que tothom vulgui mirar-te.',
+  bachataLadyPillar6Item1: 'Projecció i carisma',
+  bachataLadyPillar6Item2: 'Confiança corporal',
+  bachataLadyPillar6Item3: "Domini de l'espai",
+  bachataLadyPillar6Result: 'Resultat: Presència magnètica a la pista',
+
+  // Comparison Table
+  bachataLadyCompareTitle: 'Bachata Lady Style Mètode Farray® vs Altres Acadèmies',
+  bachataLadyCompareAspect: 'Aspecte',
+  bachataLadyCompareOthers: 'Altres acadèmies',
+  bachataLadyCompareFarray: 'Mètode Farray',
+  bachataLadyCompareRow1Label: 'Ondulacions',
+  bachataLadyCompareRow1Others: 'Repetir sense entendre',
+  bachataLadyCompareRow1Farray: 'Tècnica progressiva pas a pas',
+  bachataLadyCompareRow2Label: 'Sensualitat',
+  bachataLadyCompareRow2Others: 'Imitar moviments',
+  bachataLadyCompareRow2Farray: 'Expressió autèntica des de dins',
+  bachataLadyCompareRow3Label: 'Format',
+  bachataLadyCompareRow3Others: 'Sense estructura clara',
+  bachataLadyCompareRow3Farray: 'Open Level adaptat a cada alumna',
+  bachataLadyCompareRow4Label: 'Grups',
+  bachataLadyCompareRow4Others: 'Massificats',
+  bachataLadyCompareRow4Farray: 'Reduïts per atenció personal',
+  bachataLadyCompareRow5Label: 'Metodologia',
+  bachataLadyCompareRow5Others: 'Improvisada',
+  bachataLadyCompareRow5Farray: 'Sistema provat 8+ anys',
+  bachataLadyCompareRow6Label: 'Professores',
+  bachataLadyCompareRow6Others: 'Variables',
+  bachataLadyCompareRow6Farray: 'Formades en Mètode Farray',
+  bachataLadyCompareRow7Label: 'Instal·lacions',
+  bachataLadyCompareRow7Others: 'Bàsiques',
+  bachataLadyCompareRow7Farray: '700m² professionals',
+  bachataLadyCompareRow8Label: 'Reconeixement',
+  bachataLadyCompareRow8Others: 'Sense aval',
+  bachataLadyCompareRow8Farray: 'Certificada CID-UNESCO',
+
+  // For Who Section
+  bachataLadyForWhoTitle: 'És per a tu el Bachata Lady Style?',
+  bachataLadyForYesTitle: 'SÍ és per a tu si...',
+  bachataLadyForYes1: "Vols aprendre a moure't amb sensualitat i elegància",
+  bachataLadyForYes2: 'Busques desenvolupar ondulacions naturals i fluides',
+  bachataLadyForYes3: 'Vols connectar més profundament amb la teva feminitat',
+  bachataLadyForYes4: 'Vols complementar les teves classes de bachata en parella',
+  bachataLadyForYes5: 'Busques guanyar confiança en la teva expressió corporal',
+  bachataLadyForYes6: "T'agrada un espai segur per explorar la teva sensualitat",
+  bachataLadyForYes7: 'Vols destacar als socials amb un estil únic',
+  bachataLadyForYes8: "Valores la tècnica tant com l'expressió",
+  bachataLadyForNoTitle: 'NO és per a tu si...',
+  bachataLadyForNo1: 'Busques resultats immediats sense pràctica',
+  bachataLadyForNo2: 'No estàs disposada a sortir de la teva zona de confort',
+  bachataLadyForNo3: 'Prefereixis classes massificades sense atenció personal',
+  bachataLadyForNo4: "No t'interessa desenvolupar tècnica, només passos",
+  bachataLadyForWhoCTA:
+    'Preparada per descobrir el teu costat més sensual? Reserva la teva plaça ara.',
+
+  // Transformation Table
+  bachataLadyTransformTitle: 'El teu Abans i Després amb Bachata Lady Style',
+  bachataLadyTransformAspect: 'Aspecte',
+  bachataLadyTransformBefore: 'Abans',
+  bachataLadyTransformAfter: 'Després del Mètode Farray',
+  bachataLadyTransformondulacionesLabel: 'Ondulacions',
+  bachataLadyTransformondulacionesBefore: 'Rígides o inexistents',
+  bachataLadyTransformondulacionesAfter: 'Fluides i naturals',
+  bachataLadyTransformcaderasLabel: 'Malucs',
+  bachataLadyTransformcaderasBefore: 'Moviments bàsics',
+  bachataLadyTransformcaderasAfter: 'Control total i varietat',
+  bachataLadyTransformbrazosLabel: 'Braços',
+  bachataLadyTransformbrazosBefore: 'Sense saber què fer',
+  bachataLadyTransformbrazosAfter: 'Elegants i expressius',
+  bachataLadyTransformsensualidadLabel: 'Sensualitat',
+  bachataLadyTransformsensualidadBefore: 'Vergonya o exageració',
+  bachataLadyTransformsensualidadAfter: 'Natural i amb elegància',
+  bachataLadyTransformgirosLabel: 'Girs',
+  bachataLadyTransformgirosBefore: 'Desequilibrada',
+  bachataLadyTransformgirosAfter: 'Controlats i estilitzats',
+  bachataLadyTransformconfianzaLabel: 'Confiança',
+  bachataLadyTransformconfianzaBefore: 'Tímida a la pista',
+  bachataLadyTransformconfianzaAfter: 'Segura i magnètica',
+  bachataLadyTransformestiloLabel: 'Estil',
+  bachataLadyTransformestiloBefore: 'Copiant altres',
+  bachataLadyTransformestiloAfter: 'El teu propi segell personal',
+
+  // Why Choose Section
+  bachataLadyWhyChooseTitle: "Per què triar Farray's per aprendre Bachata Lady Style?",
+  bachataLadyWhyChoose1Title: 'Mètode Farray® adaptat',
+  bachataLadyWhyChoose1Desc:
+    'Metodologia única per a bachata que prioritza ondulacions, sensualitat i expressió femenina.',
+  bachataLadyWhyChoose2Title: 'Mestres especialitzades',
+  bachataLadyWhyChoose2Desc:
+    'Aprèn amb professores formades específicament en tècnica femenina de bachata.',
+  bachataLadyWhyChoose3Title: 'Acadèmia certificada CID-UNESCO',
+  bachataLadyWhyChoose3Desc: "L'única acadèmia de Lady Style a Barcelona avalada per la UNESCO.",
+  bachataLadyWhyChoose4Title: 'Instal·lacions premium',
+  bachataLadyWhyChoose4Desc:
+    'Més de 700 m², sales amb miralls, so professional i climatització perfecta.',
+  bachataLadyWhyChoose5Title: 'Grups reduïts',
+  bachataLadyWhyChoose5Desc: 'Atenció personalitzada perquè desenvolupis el teu estil únic.',
+  bachataLadyWhyChoose6Title: 'Ubicació cèntrica',
+  bachataLadyWhyChoose6Desc: 'Carrer Entença 100, a 5 minuts de Plaça Espanya i Sants.',
+  bachataLadyWhyChoose7Title: 'Showcases i esdeveniments',
+  bachataLadyWhyChoose7Desc: 'Oportunitat de mostrar la teva evolució en escenaris professionals.',
+
+  // Logos Section
+  bachataLadyLogosTitle: 'Ens has pogut veure a...',
+  bachataLadyLogosIntlFestivalsText: 'i en festivals internacionals de bachata i salsa',
+
+  // Video Section
+  bachataLadyVideoTitle: 'Mira les nostres classes de Bachata Lady Style',
+  bachataLadyVideoDesc:
+    'Observa com és una classe de Bachata Lady Style. Ondulacions, sensualitat i tècnica impecable.',
+
+  // Style Comparison
+  bachataLadyStyleCompareTitle: 'Bachata Lady Style vs altres estils',
+  bachataLadyStyleCompareSubtitle: 'Descobreix què fa únic el Bachata Lady Style',
+  bachataLadyStyleCompareFeature: 'Característica',
+  bachataLadyCompareBachataSensual: 'Bachata Sensual',
+  bachataLadyCompareBachataLady: 'Bachata Lady Style',
+  bachataLadyCompareSalsaLady: 'Salsa Lady Style',
+  bachataLadyCompareBachataModerna: 'Bachata Fusió',
+  // Style comparison rows (feature names)
+  bachataLadyCompareRow1: 'Ondulacions corporals',
+  bachataLadyCompareRow2: 'Moviments de malucs',
+  bachataLadyCompareRow3: 'Ús de talons',
+  bachataLadyCompareRow4: 'Musicalitat',
+  bachataLadyCompareRow5: 'Connexió en parella',
+  bachataLadyCompareRow6: 'Sensualitat',
+  bachataLadyCompareRow7: 'Ritme i velocitat',
+  bachataLadyCompareRow8: 'Elegància i estil',
+
+  // Cultural History
+  bachataLadyCulturalTitle: 'Història i Origen del Bachata Lady Style',
+  bachataLadyCulturalShort:
+    'El bachata lady style no té un "naixement oficial" com a gènere històric, però avui s\'utilitza a les acadèmies per anomenar el treball d\'estil femení dins de la bachata moderna, igual que passa amb el lady style a la salsa o kizomba.',
+  bachataLadyCulturalFull: `### L'Evolució del Bachata Lady Style
+
+El bachata lady style es recolza en l'evolució de la bachata des de les seves arrels tradicionals a la República Dominicana fins a la bachata urbana i sensual actual, on el protagonisme de la ballarina creix amb l'ús d'adornaments, dissociacions i expressió corporal.
+
+**"Bachata Lady Style: línia de treball tècnic i expressiu que desenvolupa l'estil femení dins de la bachata moderna, centrat en braçat, ondulacions, malucs i presència escènica."**
+
+### Història i Origen de la Bachata
+
+La bachata neix a la República Dominicana a mitjans del segle XX com a música popular de guitarra, influïda pel bolero, el son i altres gèneres caribenys. Durant dècades es va associar a ambients humils i bars de perifèria, fins que als anys 80-90 es professionalitza i comença la seva expansió internacional gràcies a artistes com Juan Luis Guerra i a la indústria llatina.
+
+**"La bachata neix a la República Dominicana (mitjans segle XX): música popular de guitarra influïda per bolero, son i gèneres caribenys. Expansió internacional anys 80-90 amb Juan Luis Guerra."**
+
+### De la Bachata Tradicional a la Bachata Urbana
+
+Amb la difusió global de la bachata des dels 2000, sorgeixen nous estils escènics i urbans (bachata moderna, urbana i sensual), que incorporen influències de ballroom, jazz, contemporani i danses urbanes. En aquest context apareixen les classes específiques de "ladies styling / lady style", on les dones treballen girs, ondulacions, línies i actitud sobre la base de la bachata, tant en parella com en solo.
+
+**"El Bachata Lady Style sorgeix als anys 2010s amb la globalització de la bachata sensual, quan les ballarines busquen espais per desenvolupar tècnica femenina de forma independent."**
+
+### Què és el Bachata Lady Style?
+
+Bachata lady style és la línia de treball tècnic i expressiu que desenvolupa l'estil femení dins de la bachata moderna. Es centra en l'ús de braços (arm styling), dissociació de tors i malucs, control del pes, caminat amb presència i gestualitat femenina, perquè la ballarina pugui lluir-se en moments solta o en shines dins del ball de parella.
+
+**"Bachata Lady Style: arm styling (braçat elegant), body movement (ones i rolls), treball de malucs (vuits, marcatges), girs amb spotting, i presència escènica."**
+
+### Elements Tècnics del Bachata Lady Style
+
+A les classes de bachata lady style es treballen eixos com:
+
+**Braçat:** línies elegants, fluïdesa i coordinació amb el tors.
+
+**Body movement:** ones, rolls, inclinacions i canvis de nivell.
+
+**Malucs:** moviments laterals, vuits i marcatges suaus o accentuats.
+
+**Girs:** tècnica neta, spotting i equilibri.
+
+**Presència escènica:** mirada, actitud, musicalitat i connexió amb la lletra.
+
+**"Una classe activa de Bachata Lady Style pot cremar 250-400 calories per hora depenent de la intensitat i l'ús de talons."**
+
+### Lady Style i Empoderament Femení
+
+Igual que a la salsa lady style, el bachata lady style s'ha convertit en una eina d'empoderament femení a escoles de ball de tot el món. Ofereix a les dones un espai per treballar autoestima, sensualitat i seguretat en el seu moviment, més enllà del rol tradicional de seguidora.
+
+**"El Bachata Lady Style s'ha convertit en eina d'empoderament femení, oferint espai per treballar autoestima, sensualitat i seguretat corporal."**
+
+### Bachata Lady Style a Barcelona
+
+A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d'acadèmies especialitzades en ritmes llatins, on es combinen tècnica de bachata moderna amb bases de jazz, contemporani o urbà per refinar l'estil. En aquest context, escoles com Farray's International Dance Center integren el treball de lady style dins del seu enfocament global de dansa llatina i urbana, posant èmfasi en musicalitat, tècnica i personalitat pròpia de cada ballarina.
+
+**"Farray's International Dance Center: Bachata Lady Style amb metodologia pròpia, grups reduïts, valoració 4.9/5 a Google amb més de 500 ressenyes."**`,
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for Bachata Lady Style =====
+
+  // Dato citable - Definició oficial
+  bachataLadyCitableDefinicion:
+    "Bachata Lady Style: línia de treball tècnic i expressiu que desenvolupa l'estil femení dins de la bachata moderna, centrat en braçat, ondulacions, malucs i presència escènica.",
+
+  // Dato citable - Origen històric
+  bachataLadyCitableOrigen:
+    'El Bachata Lady Style sorgeix als anys 2010s amb la globalització de la bachata sensual, quan les ballarines busquen espais per desenvolupar tècnica femenina de forma independent.',
+
+  // Dato citable - Tècniques principals
+  bachataLadyCitableTecnicas:
+    'Tècniques principals del Bachata Lady Style: arm styling (braçat elegant), body movement (ones i rolls), treball de malucs (vuits, marcatges), girs amb spotting, i presència escènica.',
+
+  // Dato citable - Metodologia
+  bachataLadyCitableMetodologia:
+    "Farray's International Dance Center ofereix Bachata Lady Style amb metodologia pròpia: tècnica progressiva, grups reduïts, i enfocament en expressió autèntica sobre imitació.",
+
+  // Dato citable - Evolució global
+  bachataLadyCitableEvolucionGlobal:
+    "El Bachata Lady Style s'ha expandit globalment des dels 2010s, amb comunitats fortes a Europa (Barcelona com a epicentre), Amèrica Llatina i els Estats Units.",
+
+  // Dato citable - Música
+  bachataLadyCitableMusica:
+    'El Bachata Lady Style es treballa sobre bachata sensual, bachata moderna i bachata urbana, permetent expressió corporal sobre música romàntica i contemporània.',
+
+  // Dato citable - Empoderament
+  bachataLadyCitableEmpoderamiento:
+    "El Bachata Lady Style s'ha convertit en eina d'empoderament femení, oferint espai per treballar autoestima, sensualitat i seguretat corporal.",
+
+  // 3 Facts citables principals (per schema i AI)
+  bachataLadyCitableFact1:
+    "Una classe activa de Bachata Lady Style pot cremar 250-400 calories per hora depenent de la intensitat i l'ús de talons.",
+
+  bachataLadyCitableFact2:
+    "El treball d'ondulacions i dissociació corporal del Bachata Lady Style millora la coordinació, flexibilitat i consciència corporal.",
+
+  bachataLadyCitableFact3:
+    "Farray's International Dance Center ofereix classes de Bachata Lady Style amb valoració 4.9/5 a Google amb més de 500 ressenyes.",
+
+  // FAQs
+  bachataLadyFaqTitle: 'Preguntes Freqüents sobre Bachata Lady Style',
+  bachataLadyFaqQ1: 'Què és exactament el Bachata Lady Style?',
+  bachataLadyFaqA1:
+    'El Bachata Lady Style (o "estil noia") és una disciplina de ball que es centra en el desenvolupament de la tècnica femenina dins de la bachata: ondulacions, sensualitat, treball de malucs, elegància i expressió corporal. Es practica principalment de forma individual o en grup, sense parella.',
+  bachataLadyFaqQ2: 'Necessito saber ballar bachata per començar Lady Style?',
+  bachataLadyFaqA2:
+    "Sí, recomanem tenir almenys 3 mesos d'experiència en classes de bachata en parella abans de començar Bachata Lady Style. Això et permet tenir la base rítmica i corporal necessària per aprofitar al màxim les classes de tècnica femenina.",
+  bachataLadyFaqQ3: 'Les classes són només per a dones?',
+  bachataLadyFaqA3:
+    "El Lady Style tradicionalment es centra en l'expressió femenina, però les nostres classes estan obertes a totes les persones que vulguin desenvolupar aquest estil de ball.",
+  bachataLadyFaqQ4: 'Necessito talons per a les classes?',
+  bachataLadyFaqA4:
+    'Per a principiants, pots començar amb sabatilles esportives. A mesura que avances, recomanem talons de ball (3-7cm). Tenim classes específiques de tècnica de talons.',
+  bachataLadyFaqQ5: 'Quina diferència hi ha entre Lady Style i Ladies Styling?',
+  bachataLadyFaqA5:
+    'Són termes intercanviables. "Lady Style", "Ladies Styling", "Estil Noia" o "Tècnica Femenina" es refereixen a la mateixa disciplina: el desenvolupament de l\'expressió femenina en el ball de bachata.',
+  bachataLadyFaqQ6: 'Quant de temps necessito per veure resultats?',
+  bachataLadyFaqA6:
+    'Des de la primera classe notaràs canvis en la teva postura i consciència corporal. En 2-3 mesos de pràctica regular, veuràs una transformació significativa en el teu estil i confiança.',
+  bachataLadyFaqQ7: "Puc provar una classe abans d'inscriure'm?",
+  bachataLadyFaqA7:
+    'Segons la temporada, la classe de prova pot ser gratuïta o tenir un preu simbòlic. La idea és que puguis experimentar el Mètode Farray® sense compromís.',
+  bachataLadyFaqQ8: 'Quina roba he de portar?',
+  bachataLadyFaqA8:
+    "Roba còmoda que permeti moviment. Moltes alumnes prefereixen vestits o faldilles per practicar girs i ondulacions, però no és obligatori. L'important és sentir-te còmoda.",
+  bachataLadyFaqQ9: "El Lady Style m'ajudarà a ballar millor en parella?",
+  bachataLadyFaqA9:
+    'Absolutament! El Lady Style desenvolupa la teva tècnica, elegància i presència. Aquestes habilitats es transfereixen directament al teu ball en parella, fent-te una millor seguidora i més expressiva.',
+  bachataLadyFaqQ10: 'Feu actuacions o showcases?',
+  bachataLadyFaqA10:
+    'Sí. Tenim una gala anual on les alumnes poden mostrar la seva evolució en un escenari professional. També organitzem showcases i participem en esdeveniments.',
+  bachataLadyFaqQ11: 'Qui és Yunaisy Farray?',
+  bachataLadyFaqA11:
+    "Yunaisy Farray és una ballarina i mestra cubana, membre del CID-UNESCO, formada a l'Escola Nacional d'Art de Cuba. És la creadora del Mètode Farray® i directora de l'acadèmia.",
+  bachataLadyFaqQ12: 'Què és el Mètode Farray®?',
+  bachataLadyFaqA12:
+    "És un sistema exclusiu d'ensenyament desenvolupat per Yunaisy Farray que prioritza l'expressió femenina, l'elegància i la musicalitat abans de les figures complexes. Garanteix resultats ràpids i sòlids.",
+  bachataLadyFaqQ13: 'I si falto a una classe?',
+  bachataLadyFaqA13:
+    "Si tens membresía, disposes de 30 dies per recuperar classes cancel·lades. Amb abonament d'hores, gestiones les teves classes de forma flexible des de l'app de l'acadèmia.",
+  bachataLadyFaqQ14: 'Quantes calories es cremen en una classe?',
+  bachataLadyFaqA14:
+    'Una classe de Lady Style crema entre 300-400 calories per hora, combinant treball cardiovascular amb tonificació de cames, glutis i core.',
+  bachataLadyFaqQ15: "On és l'acadèmia i com puc contactar?",
+  bachataLadyFaqA15:
+    'Som al Carrer Entença 100, 08015 Barcelona (a 5 min de Plaça Espanya i Sants).<br><br>📞 Telèfon: +34 622 247 085<br>📧 Email: info@farrayscenter.com<br>🌐 Web: www.farrayscenter.com/contacto',
+
+  // Nearby Areas
+  bachataLadyNearbyTitle: 'Classes de Bachata Lady Style a prop teu',
+  bachataLadyNearbyDesc:
+    "Som una de les acadèmies de referència per a classes de Bachata Lady Style a la zona de Plaça Espanya, Sants, Hostafrancs, Les Corts i Eixample Esquerre. També rebem alumnes de Poble Sec, Sant Antoni i L'Hospitalet que busquen formació en bachata amb metodologia professional.",
+  bachataLadyNearbySearchText: 'Si busques classes de bachata lady style a Barcelona, estàs a:',
+  bachataLadyNearbyMetro:
+    'Metro: Plaça Espanya (L1, L3), Rocafort (L1) - 5 min caminant, Entença (L5) - 5 min caminant o Hostafrancs (L1) - 5 min caminant.',
+
+  // Final CTA
+  bachataLadyFinalCTATitle: "La teva primera classe de Bachata Lady Style t'espera",
+  bachataLadyFinalCTADesc:
+    'No importa si véns a desconnectar de la feina. A conèixer gent nova. A reconnectar amb la teva feminitat. A demostrar que SÍ pots ballar de forma elegant.\n\nEl que importa és que facis el primer pas.\n\nAmb el Mètode Farray® no aprendràs "trucs". Aprendràs a ballar amb fonament. Amb tècnica. Amb estil. I el més important: gaudint cada minut.',
+  bachataLadyFinalCTA1: 'Fes-te Sòcia Ara',
+  bachataLadyFinalCTA1Subtext: 'Queden poques places aquest mes',
+  bachataLadyFinalCTA2: 'Reserva la teva Classe de Prova',
+  bachataLadyFinalCTA2Subtext: 'Vàlid per temps limitat',
 };

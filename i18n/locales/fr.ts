@@ -200,6 +200,18 @@ export const fr = {
     'Avec la grâce et la précision affinées dans les plus grandes compagnies européennes, Elena guide les élèves à trouver leur voix expressive à travers les techniques classiques et modernes.',
   // Testimonials
   testimonialsTitle: 'Témoignages Non Sollicités de Nos Étudiants',
+  // Video Testimonials Section
+  videoTestimonialsTitle: "Vivez l'Ambiance Farray's",
+  videoTestimonialsSubtitle: 'Moments réels de notre académie. Sans filtres, sans scénario.',
+  videoTestimonialsCTA: 'Suivez-nous sur Instagram',
+  videoTestimonial1Title: 'Voici comment se vit un cours',
+  videoTestimonial2Title: 'Énergie pure',
+  videoTestimonial3Title: 'Notre communauté',
+  videoTestimonial4Title: 'La méthode en action',
+  videoTestimonial5Title: 'Transformation réelle',
+  videoModalLoading: 'Chargement de la vidéo...',
+  videoModalClose: 'Fermer la vidéo',
+  videoModalCloseHint: 'Appuyez sur ESC ou en dehors de la vidéo pour fermer',
   // FinalCTA
   finalCtaTitle:
     "Nous ne promettons pas d'être la 'meilleure école de danse de Barcelone'. Nous promettons quelque chose de mieux : des résultats.",
@@ -7314,10 +7326,11 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   // Local SEO Section
   salsaCubanaNearbyTitle: 'Cours de Salsa Cubaine près de chez vous à Barcelone',
   salsaCubanaNearbyDesc:
-    'Notre académie est située au cœur de Barcelone, facilement accessible depuis toute la ville.',
+    "Notre académie est située au cœur de Barcelone, facilement accessible depuis toute la ville. Nous sommes l'académie de référence pour les cours de Salsa dans la zone de Plaza España, Sants, Hostafrancs, Les Corts et Eixample Esquerra. Nous accueillons également des élèves de Poble Sec, Sant Antoni et L'Hospitalet à la recherche d'une formation en danses latines avec une méthodologie professionnelle.",
   salsaCubanaNearbySearchText:
     'Vous cherchez des cours de salsa cubaine près de votre quartier ? Nous sommes à quelques minutes de :',
-  salsaCubanaNearbyMetro: 'Métro : Hostafrancs (L1) ou Tarragona (L3) à 5-10 minutes à pied',
+  salsaCubanaNearbyMetro:
+    'Métro : Plaza España (L1, L3), Rocafort (L1) - 5 min à pied, Entença (L5) - 5 min à pied ou Hostafrancs (L1) - 5 min à pied.',
 
   // Course Schema
   salsaCubanaCourseSchemaName: 'Cours de Salsa Cubaine - Méthode Farray®',
@@ -8675,8 +8688,20 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
     'Para principiantes. Aprenderás los fundamentos: groove, bounce, pasos básicos de hip-hop y reggaeton, actitud y musicalidad. Sin experiencia previa necesaria.',
   hhrLevelIntermediateTitle: 'Hip Hop Reggaeton Intermedio',
   hhrLevelIntermediateDesc:
-    'Para quienes dominan lo básico. Coreografías estilo videoclip, combinaciones más complejas, improvisación y desarrollo de estilo propio.',
-  hhrPrepareTitle: 'Prepara tu primera clase de Hip Hop Reggaeton',
+    'Pour ceux qui maîtrisent les bases. Chorégraphies style clip vidéo, combinaisons plus complexes, improvisation et développement de style personnel.',
+
+  // Keys pour LevelCardsSection (utilisées par le template)
+  hhrLevelBeginnerTitle: 'Hip Hop Reggaeton Débutant',
+  hhrLevelBeginnerDesc:
+    "Votre premier contact avec le Hip Hop Reggaeton. Vous apprendrez le groove basique, bounce, coordination et les fondamentaux du style urbain. Parfait si vous n'avez jamais dansé.",
+  hhrLevelInterTitle: 'Hip Hop Reggaeton Intermédiaire',
+  hhrLevelInterDesc:
+    'Vous maîtrisez les bases et voulez plus. Chorégraphies style clip vidéo, combinaisons plus complexes, improvisation et développement de votre propre style.',
+  hhrLevelAdvancedTitle: 'Hip Hop Reggaeton Avancé',
+  hhrLevelAdvancedDesc:
+    'Pour danseurs expérimentés. Chorégraphies intensives, technique avancée, freestyle et préparation pour shows ou compétitions.',
+
+  hhrPrepareTitle: 'Prépare ton premier cours de Hip Hop Reggaeton',
   hhrPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
   hhrPrepareWhatToBring: 'Qué traer:',
   hhrPrepareItem1: 'Ropa urbana cómoda (joggers, pantalones anchos, camiseta holgada)',
@@ -9410,7 +9435,7 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   timbaHeroSubtitle: 'Que faites-vous quand on vous lâche en salsa ?',
   timbaHeroDesc:
     'La Timba est la réponse. Apprenez à interpréter la musique cubaine moderne avec liberté, style et saveur. Cours pour couples et style féminin Lady Timba.',
-  timbaHeroLocation: 'Plaza España, Barcelone · Métro L1/L3',
+  timbaHeroLocation: 'Entre Plaza España et Sants Estación',
   timbaHeroStudents: '+15 000 élèves formés',
   timbaCTAGroup: "Options d'inscription à la Timba",
   timbaCTA1: 'Devenez Membre Maintenant',
@@ -9628,4 +9653,1169 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
     "Peu importe si vous n'avez jamais fait de Timba. Ce qui compte, c'est que vous voulez vous améliorer, profiter davantage et vous sentir libre sur la piste. Nos professeurs cubains vous guideront pas à pas.",
   timbaFinalCTAFunny:
     '"Avant je restais comme une statue quand on me lâchait. Maintenant je souhaite qu\'on me lâche." — Élève anonyme 😄',
+
+  // ============================================================
+  // CALENDAR / CALENDRIER
+  // ============================================================
+
+  // Widget (Home)
+  calendar_widget_title: 'Calendrier Académique',
+  calendar_widget_subtitle:
+    'Consultez les dates importantes : vacances, jours fériés, événements et plus',
+  calendar_view_full: 'Voir le calendrier complet',
+
+  // Page
+  calendar_page_title: 'Calendrier Académique 2025-2026',
+  calendar_page_description:
+    "Calendrier académique de FIDC Barcelone : vacances, jours fériés, événements, galas et dates importantes de l'année scolaire 2025-2026.",
+  calendar_page_heading: 'Calendrier Académique',
+  calendar_page_subheading:
+    "Toutes les dates importantes de l'année pour organiser votre année de danse",
+
+  // Filters
+  calendar_filter_all: 'Tous',
+  calendar_type_vacation: 'Vacances',
+  calendar_type_holiday: 'Jours fériés',
+  calendar_type_event: 'Événements',
+  calendar_type_workshop: 'Ateliers',
+  calendar_type_info: 'Information',
+
+  // Event cards
+  calendar_no_classes: 'Pas de cours',
+  calendar_add_to_calendar: 'Ajouter à mon calendrier',
+  calendar_happening_now: 'Maintenant',
+  calendar_coming_soon: 'Bientôt',
+  calendar_no_events: 'Aucun événement de ce type programmé',
+
+  // CTA
+  calendar_cta_title: 'Prêt(e) à commencer à danser avec nous ?',
+  calendar_cta_subtitle: 'Planifiez votre année de danse avec nous',
+  calendar_cta_line2: '+ 25 Styles différents · Forfaits flexibles · Ambiance unique',
+  calendar_cta_line3: "C'est maintenant votre moment !",
+  calendar_cta_button1: 'Voir Horaires et Tarifs',
+  calendar_cta_button1_subtext: 'Choisissez votre style préféré',
+  calendar_cta_button2: 'Contacter',
+  calendar_cta_button2_subtext: 'Des questions ? On vous aide',
+
+  // Event titles and descriptions
+  calendar_event_christmas_vacation: 'Vacances de Noël',
+  calendar_event_christmas_vacation_desc:
+    'Période de repos de Noël. Les cours reprennent le 7 janvier. Joyeuses fêtes !',
+
+  calendar_event_three_kings: 'Jour férié : Épiphanie',
+  calendar_event_three_kings_desc: "Jour férié en Espagne. L'académie est fermée.",
+
+  calendar_event_easter_vacation: 'Vacances de Pâques',
+  calendar_event_easter_vacation_desc:
+    'Période de repos de Pâques. Les cours reprennent le 7 avril.',
+
+  calendar_event_labor_day: 'Jour férié : Fête du Travail',
+  calendar_event_labor_day_desc: "Jour férié international. L'académie est fermée.",
+
+  calendar_event_san_juan: 'Jour férié : Saint-Jean',
+  calendar_event_san_juan_desc:
+    "Fête de la Saint-Jean. L'académie est fermée. Profitez des festivités !",
+
+  calendar_event_end_year_gala: "Gala de Fin d'Année",
+  calendar_event_end_year_gala_desc:
+    "L'événement le plus attendu de l'année ! Tous les élèves montrent ce qu'ils ont appris dans un spectacle unique. Famille et amis bienvenus.",
+
+  calendar_event_summer_vacation: "Vacances d'Été",
+  calendar_event_summer_vacation_desc:
+    "Période de repos estival. On se retrouve en septembre avec plus d'énergie que jamais !",
+
+  calendar_event_course_start: "Début de l'Année Scolaire 2026-2027",
+  calendar_event_course_start_desc:
+    "La nouvelle année commence ! Nouveaux groupes, nouveaux horaires et beaucoup d'envie de danser. Vous vous inscrivez ?",
+
+  // Navigation
+  navCalendar: 'Calendrier',
+
+  // ============================================================
+  // STRETCHING PAGE
+  // Cours de Stretching à Barcelone
+  // ============================================================
+
+  // === NAVIGATION ===
+  navStretching: 'Stretching',
+
+  // === SEO META ===
+  stretchingPageTitle:
+    "Cours de Stretching à Barcelone | Étirements et Flexibilité | Farray's Center",
+  stretchingMetaDescription:
+    'Cours de stretching et étirements à Barcelone. Améliorez votre flexibilité avec la Méthode Farray. Backbending, élongation des jambes et du dos. Tous niveaux. Plaza España.',
+  stretchingMetaKeywords:
+    'stretching barcelone, étirements barcelone, cours étirements, backbending, élongation, Méthode Farray, entraînement flexibilité barcelone',
+
+  // === BREADCRUMB ===
+  stretchingBreadcrumbHome: 'Accueil',
+  stretchingBreadcrumbClasses: 'Cours',
+  stretchingBreadcrumbCategory: 'Préparation Physique',
+  stretchingBreadcrumbCurrent: 'Stretching',
+
+  // === HERO SECTION ===
+  stretchingHeroTitle: 'Stretching à Barcelone',
+  stretchingHeroSubtitle: 'Étirements et Flexibilité avec la Méthode Farray',
+  stretchingHeroDesc:
+    'Transformez votre corps avec nos cours de stretching. Des débutants au niveau avancé.',
+  stretchingHeroLocation: "Farray's Center · Entre Plaza España et Sants, Barcelone",
+  stretchingHeroStudents: '+15 000 élèves formés',
+  stretchingCTAGroup: "Options d'inscription",
+  stretchingCTA1: 'Devenez Membre Maintenant',
+  stretchingCTA1Subtext: 'Places limitées par cours',
+  stretchingCTA2: "Réservez votre Cours d'Essai",
+  stretchingCTA2Subtext: 'Disponible pour une durée limitée',
+
+  // === WHAT IS STRETCHING SECTION ===
+  stretchingWhatIsTitle: "Qu'est-ce que le Stretching et pourquoi en avez-vous besoin ?",
+  stretchingWhatIsP1:
+    'Le stretching est une discipline qui va bien au-delà de "toucher ses pieds". C\'est un travail profond de flexibilité, de mobilité articulaire et de conscience corporelle qui bénéficie à tous, qu\'on danse ou non.',
+  stretchingWhatIsP2:
+    "Dans nos cours d'étirements à Barcelone, nous combinons des techniques de flexibilité avec la Méthode Farray, une approche progressive qui respecte les temps de chaque corps. Nous ne forçons pas, nous guidons.",
+  stretchingWhatIsP3:
+    "Nos cours de Backbending & Legs sont particulièrement populaires : nous travaillons l'élongation des jambes et du dos, prévenons les problèmes de dos et renforçons le core. Le tout dans une ambiance détendue avec une attention personnalisée.",
+  stretchingWhatIsP4:
+    "Que vous soyez danseur/se voulant améliorer votre technique, employé de bureau avec des douleurs dorsales, ou simplement quelqu'un qui veut se sentir plus agile... le stretching est pour vous.",
+  stretchingWhatIsQuestionTitle: 'Vous voulez retrouver la flexibilité que vous pensiez perdue ?',
+  stretchingWhatIsQuestionAnswer:
+    'Le stretching ne connaît ni l\'âge ni la "raideur". Avec de la constance et un bon accompagnement, tout corps peut s\'améliorer. Venez essayer et découvrez.',
+
+  // === IDENTIFICATION SECTION (Who is it for) ===
+  stretchingIdentifyTitle: 'Vous vous reconnaissez dans ces situations ?',
+  stretchingIdentify1:
+    'Vous vous réveillez raide et avez du mal à faire des mouvements basiques le matin',
+  stretchingIdentify2:
+    'Vous passez de nombreuses heures assis et ressentez des tensions dans le dos, le cou ou les hanches',
+  stretchingIdentify3:
+    'Vous dansez et sentez que votre flexibilité vous limite dans certains mouvements',
+  stretchingIdentify4: "Vous avez eu des blessures et voulez éviter qu'elles ne se reproduisent",
+  stretchingIdentify5: 'Vous voulez améliorer votre posture et réduire les douleurs chroniques',
+  stretchingIdentify6:
+    'Vous rêvez de faire un split, un backbend, ou simplement de toucher vos pieds sans souffrir',
+  stretchingIdentifyTransition:
+    'Si vous avez dit "oui" à l\'un de ces points, vous savez déjà ce dont vous avez besoin.',
+  stretchingNeedEnrollTitle: 'Vous devez vous inscrire aux cours de Stretching',
+  stretchingIdentifyAgitate1:
+    'Sans flexibilité, votre corps accumule des tensions qui tôt ou tard se font payer. Douleurs dorsales, blessures, raideur qui limite vos mouvements...',
+  stretchingIdentifySolution:
+    "Le stretching est la solution. Un travail progressif, guidé et sûr qui transforme votre corps de l'intérieur.",
+  stretchingIdentifyClosing: 'Votre corps mérite de bouger sans limites.',
+
+  // === TRANSFORMATION SECTION ===
+  stretchingTransformTitle: 'Imaginez votre avant et après',
+  stretchingTransform1Title: 'Plus grande amplitude de mouvement',
+  stretchingTransform1Desc: 'Votre corps bouge librement dans toutes vos activités quotidiennes.',
+  stretchingTransform2Title: 'Adieu aux douleurs',
+  stretchingTransform2Desc:
+    'Réduction significative des douleurs dorsales et des tensions musculaires.',
+  stretchingTransform3Title: 'Posture impeccable',
+  stretchingTransform3Desc: 'Meilleure posture corporelle que vous et les autres remarquez.',
+  stretchingTransform4Title: 'Prévention des blessures',
+  stretchingTransform4Desc: 'Un corps flexible est un corps qui se blesse moins.',
+  stretchingTransform5Title: 'Connexion corps-esprit',
+  stretchingTransform5Desc: 'Plus grande conscience de votre corps et de ses limites.',
+  stretchingTransform6Title: 'Bien-être total',
+  stretchingTransform6Desc: 'Sensation de légèreté et de bien-être après chaque cours.',
+  stretchingTransformCTA: "Pourquoi choisir Farray's Center pour votre Stretching à Barcelone ?",
+
+  // === LEVELS SECTION ===
+  stretchingLevelsTitle: 'Nos Niveaux de Stretching',
+  stretchingLevelsSubtitle: 'Un parcours progressif adapté à chaque corps',
+  stretchingLevelBeginnerTitle: 'Débutants',
+  stretchingLevelBeginnerDesc:
+    "Introduction au stretching. Vous apprendrez les bases de la flexibilité, de la respiration et de la posture. Idéal si vous partez de zéro ou n'avez pas étiré depuis longtemps.",
+  stretchingLevelBasicTitle: 'Basique',
+  stretchingLevelBasicDesc:
+    "Consolidation des techniques de base et augmentation progressive de l'intensité. Vous commencerez à voir des améliorations significatives dans votre amplitude de mouvement.",
+  stretchingLevelIntermediateTitle: 'Intermédiaire (Backbending & Legs)',
+  stretchingLevelIntermediateDesc:
+    "Focus sur le backbend et l'élongation des jambes. Nous travaillons les ponts, splits et flexions du dos de manière sûre et progressive.",
+  stretchingLevelInterAdvTitle: 'Intermédiaire/Avancé (Backbending & Legs)',
+  stretchingLevelInterAdvDesc:
+    'Niveau plus intense pour ceux qui ont déjà une bonne flexibilité. Travail profond du backbending avancé et des splits complets.',
+
+  // === TEACHERS SECTION ===
+  stretchingTeachersTitle: 'Vos Professeurs de Stretching',
+  stretchingTeachersSubtitle: 'Spécialistes de la flexibilité avec la Méthode Farray',
+  stretchingTeacher1Specialty: 'Stretching & Backbending',
+  stretchingTeacher1Bio:
+    "Cris Ag est spécialiste de la flexibilité et du backbending, formée à la Méthode Farray. Son approche patiente et technique a aidé des centaines d'élèves à dépasser leurs limites en toute sécurité. Experte en élongation des jambes et du dos, prévention des blessures et renforcement du core.",
+  stretchingTeacher2Specialty: 'Stretching & Ballet Classique',
+  stretchingTeacher2Bio:
+    "Daniel Sené est danseur professionnel formé à l'École Nationale de Ballet de Cuba. Sa connaissance de la technique classique apporte une dimension unique aux cours de stretching, combinant rigueur technique et approche accessible pour tous les niveaux.",
+  stretchingTeachersClosing:
+    'Deux professeurs, deux approches complémentaires. Cris pour le travail profond de backbending et Legs, Daniel pour la technique de base. La combinaison parfaite pour votre flexibilité.',
+
+  // === SCHEDULE SECTION ===
+  stretchingScheduleTitle: 'Horaires des Cours de Stretching',
+  stretchingScheduleSubtitle: '5 cours hebdomadaires pour tous les niveaux',
+  stretchingScheduleNote: '* Les cours de Backbending & Legs durent 1h30',
+
+  // === WHY CHOOSE US SECTION ===
+  stretchingWhyChooseTitle: 'Pourquoi nous choisir pour votre Stretching ?',
+  stretchingWhyChooseSubtitle: '7 raisons qui nous différencient',
+  stretchingWhyChoose1Title: 'Méthode Farray',
+  stretchingWhyChoose1Desc:
+    'Une méthodologie progressive qui respecte votre corps. Nous ne forçons pas, nous guidons. Chaque élève avance à son rythme.',
+  stretchingWhyChoose2Title: 'Groupes Réduits',
+  stretchingWhyChoose2Desc:
+    'Maximum 15 personnes par cours pour garantir une attention personnalisée et des corrections individuelles.',
+  stretchingWhyChoose3Title: 'Professeurs Spécialisés',
+  stretchingWhyChoose3Desc:
+    'Cris et Daniel combinent des connaissances en flexibilité, ballet classique et anatomie fonctionnelle.',
+  stretchingWhyChoose4Title: 'Tous les Niveaux',
+  stretchingWhyChoose4Desc:
+    'Des débutants absolus au niveau avancé. Il y a toujours un groupe pour vous.',
+  stretchingWhyChoose5Title: 'Ambiance Sans Pression',
+  stretchingWhyChoose5Desc:
+    'On ne fait pas de compétition ici. Chaque corps est différent et nous le célébrons. Pas de comparaisons, juste du progrès.',
+  stretchingWhyChoose6Title: 'Sans Engagement',
+  stretchingWhyChoose6Desc:
+    'Payez au mois. Si vous ne pouvez pas venir un mois, pas de problème. Flexibilité totale.',
+  stretchingWhyChoose7Title: 'Académie CID-UNESCO',
+  stretchingWhyChoose7Desc:
+    'Reconnaissance internationale qui garantit la qualité de notre enseignement et méthodologie.',
+  stretchingLogosTitle: 'Vous avez pu nous voir dans',
+  stretchingLogosIntlFestivalsText: 'Et dans des festivals internationaux du monde entier',
+
+  // === WHY TODAY SECTION ===
+  stretchingWhyTodayFullTitle: 'Pourquoi commencer aujourd\'hui et pas "quand j\'aurai le temps" ?',
+  stretchingWhyToday1:
+    "La flexibilité n'attend pas. Chaque jour qui passe, votre corps perd de l'amplitude de mouvement si vous ne travaillez pas dessus. La bonne nouvelle : on peut la récupérer, mais plus vous commencez tôt, plus ce sera facile.",
+  stretchingWhyToday2:
+    "De nombreux élèves arrivent avec des douleurs chroniques au dos, au cou ou aux hanches. La plupart ressentent un soulagement dès les premières semaines. Ce n'est pas de la magie, c'est de la constance et une technique correcte.",
+  stretchingWhyToday3:
+    "Les groupes se remplissent vite, surtout les cours de Backbending & Legs avec Cris. Réservez votre place avant qu'il n'y en ait plus.",
+  stretchingWhyTodayClosing1: 'Votre corps vous remerciera.',
+  stretchingWhyTodayClosing2:
+    "Imaginez-vous dans 3 mois : plus flexible, sans douleurs, bougeant librement. Cet avenir commence aujourd'hui.",
+
+  // === CULTURAL HISTORY SECTION ===
+  stretchingCulturalHistoryTitle: 'La Science du Stretching',
+  stretchingCulturalShort:
+    'Le stretching a évolué de simples étirements à une discipline scientifique qui combine anatomie, physiologie et techniques de différentes traditions.',
+  stretchingCulturalFull: `### Origines du Stretching Moderne
+
+**Le stretching en tant que discipline scientifique trouve ses racines dans des pratiques millénaires comme le yoga (5000+ ans) et les arts martiaux orientaux.** Cependant, c'est dans les années 1970 qu'il a été systématisé comme entraînement spécifique avec une base scientifique.
+
+**"Stretching (Bob Anderson, 1975) : premier manuel scientifique d'étirements, +3,5 millions d'exemplaires vendus, base du stretching moderne."**
+
+### Bob Anderson et la Révolution du Stretching (1975)
+
+**Bob Anderson est considéré comme le père du stretching moderne.** Son livre "Stretching" (1975) s'est vendu à plus de 3,5 millions d'exemplaires et a été traduit en 23 langues, établissant les bases de ce que nous connaissons aujourd'hui comme le stretching statique. Anderson a été le premier à systématiser les étirements avec une approche accessible et scientifique pour le grand public.
+
+**"Bob Anderson (1975) : a popularisé le stretching statique comme complément essentiel de l'exercice physique."**
+
+### PNF : Facilitation Neuromusculaire Proprioceptive
+
+**La technique de Facilitation Neuromusculaire Proprioceptive (PNF) a révolutionné le domaine de la flexibilité.** Développée à l'origine pour la rééducation des patients atteints de polio dans les années 1940-50 par Herman Kabat, elle a été adaptée à l'entraînement sportif dans les années 80. Les études montrent que la PNF peut augmenter la flexibilité jusqu'à 30% plus rapidement que le stretching statique traditionnel.
+
+**"PNF (Facilitation Neuromusculaire Proprioceptive) : combine contraction-relaxation musculaire ; +30% d'efficacité vs. stretching statique traditionnel."**
+
+### Backbending : L'Art de la Flexibilité Postérieure
+
+**Le backbending (flexion postérieure de la colonne) a été raffiné pendant des générations par des gymnastes, danseurs de ballet et contorsionnistes professionnels.** Les écoles de cirque russes et chinoises ont développé des méthodologies spécifiques permettant de travailler la flexibilité du dos de manière sûre et progressive.
+
+**"Backbending : flexion postérieure de la colonne ; technique développée par des gymnastes olympiques, danseurs de ballet et contorsionnistes professionnels."**
+
+### La Méthode Farray : Fusion des Traditions
+
+**Chez Farray's Center, nous avons développé notre propre méthodologie qui combine le meilleur de chaque tradition :** la patience et la conscience corporelle du yoga, la rigueur technique du ballet classique, les techniques PNF de rééducation sportive, et la connaissance de l'anatomie moderne.
+
+La Méthode Farray se caractérise par :
+- **Progression structurée** : 4 niveaux (Débutants → Basique → Intermédiaire → Intermédiaire/Avancé)
+- **Spécialisation en backbending et legs** : cours spécifiques d'1h30 pour un travail approfondi
+- **Approche individualisée** : adaptation à chaque corps et niveau de flexibilité
+- **Base scientifique** : techniques PNF combinées avec des étirements statiques
+
+**"Méthode Farray (Barcelone) : fusion yoga + ballet + PNF + anatomie moderne ; 4 niveaux de progression structurée."**
+
+### Bénéfices Scientifiquement Prouvés
+
+Les études scientifiques confirment qu'un stretching régulier de 3+ fois par semaine :
+
+- **Améliore de 15-20%** l'amplitude de mouvement articulaire en 4-8 semaines
+- **Réduit de 30%** le risque de blessures musculaires
+- **Soulage** les douleurs chroniques du dos et du cou
+- **Améliore** la circulation sanguine et lymphatique
+- **Réduit** le stress et les niveaux de cortisol
+- **Brûle 150-200** calories par séance de 60 minutes
+
+**"Stretching régulier : +15-20% de flexibilité en 4-8 semaines, -30% de risque de blessures, 150-200 cal/heure."**`,
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for AI Search Engines =====
+  stretchingCitableDefinicion:
+    "Stretching : discipline scientifique d'étirements qui combine yoga, PNF et anatomie moderne pour améliorer la flexibilité et réduire les blessures.",
+  stretchingCitableOrigen:
+    'Bob Anderson (1975) : père du stretching moderne, auteur de "Stretching" (+3,5M exemplaires, 23 langues).',
+  stretchingCitablePNF:
+    'PNF (Facilitation Neuromusculaire Proprioceptive) : technique de contraction-relaxation qui améliore la flexibilité +30% vs stretching statique.',
+  stretchingCitableBackbending:
+    'Backbending : flexion postérieure de la colonne ; technique raffinée par des gymnastes olympiques, danseurs de ballet et contorsionnistes.',
+  stretchingCitableBeneficios:
+    'Stretching régulier : +15-20% de flexibilité en 4-8 semaines, -30% de blessures, améliore la circulation, réduit le cortisol.',
+  stretchingCitableMetodoFarray:
+    "Méthode Farray (Barcelone) : fusion yoga + ballet classique + PNF + anatomie moderne ; chez Farray's Center depuis 2018.",
+  stretchingCitableStatistics:
+    "Stretching : 150-200 cal/heure, +30% d'efficacité avec PNF, améliore l'amplitude de mouvement 15-20% en 4-8 semaines de pratique régulière.",
+  stretchingCitableFact1:
+    'Cours de stretching de 60 min brûle 150-200 calories (activité de faible intensité avec bénéfice métabolique).',
+  stretchingCitableFact2:
+    'Stretching régulier (3x semaine) améliore la flexibilité 15-20% en 4-8 semaines selon les études de Sports Medicine.',
+  stretchingCitableFact3:
+    "Farray's Barcelone : cours de stretching avec la Méthode Farray (PNF + yoga + ballet), 5/5 Google Reviews.",
+
+  // === FAQ SECTION ===
+  stretchingFaqTitle: 'Questions Fréquentes sur le Stretching',
+  stretchingFaqQ1: 'Puis-je faire du stretching si je suis très raide ?',
+  stretchingFaqA1:
+    "Oui, le stretching est particulièrement bénéfique pour les personnes raides. Les personnes les plus raides sont celles qui constatent le plus d'améliorations. Nos cours Débutants sont conçus pour partir de zéro : nous travaillons la respiration, la posture et des étirements doux. Avec 2-3 cours par semaine, la plupart constatent des améliorations de flexibilité en 2-4 semaines.",
+  stretchingFaqQ2: 'Quelle est la différence entre les cours Débutants et Basique ?',
+  stretchingFaqA2:
+    "<strong>Débutants (0-3 mois)</strong> : pour ceux qui partent de zéro. Vous apprenez la respiration diaphragmatique, la posture correcte et les étirements fondamentaux. Durée : 60 minutes.<br><strong>Basique (3-6 mois)</strong> : nous augmentons l'intensité, travaillons des étirements plus profonds et commençons les techniques PNF (Facilitation Neuromusculaire Proprioceptive). Durée : 60 minutes.",
+  stretchingFaqQ3: 'Que sont les cours de Backbending & Legs ?',
+  stretchingFaqA3:
+    "Les cours de <strong>Backbending & Legs</strong> sont des séances spécialisées de 90 minutes (1h30) focalisées sur : la flexibilité du dos (ponts, extensions), l'élongation des jambes (splits frontal et latéral), et le renforcement des ischio-jambiers. Nous utilisons des techniques PNF et des progressions sûres. Niveaux disponibles : Intermédiaire et Intermédiaire/Avancé.",
+  stretchingFaqQ4: "Ai-je besoin d'expérience préalable pour le niveau Intermédiaire ?",
+  stretchingFaqA4:
+    "Pour Backbending & Legs Intermédiaire nous recommandons : minimum 3-6 mois de stretching régulier, ou une flexibilité de base (pouvoir toucher vos pieds, faire un demi-pont). En cas de doute, essayez d'abord un cours Débutants. Pour Intermédiaire/Avancé : +12 mois d'expérience ou flexibilité avancée (split partiel, pont complet).",
+  stretchingFaqQ5: 'Le stretching aide-t-il à soulager le mal de dos ?',
+  stretchingFaqA5:
+    'Oui. Les études montrent que le stretching régulier réduit le mal de dos dans 30-50% des cas. Le stretching renforce le core, améliore la posture et libère les tensions musculaires accumulées. Dans notre académie, 80% des élèves avec des douleurs dorsales chroniques rapportent un soulagement significatif dans les 4-8 premières semaines de pratique régulière.',
+  stretchingFaqQ6: 'Que dois-je apporter au cours de stretching ?',
+  stretchingFaqA6:
+    "<strong>Équipement nécessaire</strong> : vêtements confortables et élastiques (leggings, t-shirt ajusté), petite serviette optionnelle. <strong>Pas besoin de</strong> : chaussures (nous travaillons pieds nus ou en chaussettes), tapis (nous le fournissons). <strong>Recommandé</strong> : bouteille d'eau, vêtements de rechange si vous combinez avec un autre cours.",
+  stretchingFaqQ7: 'Les cours de stretching sont-ils uniquement pour les danseurs ?',
+  stretchingFaqA7:
+    'Non. Seulement 30% de nos élèves de stretching sont des danseurs. Les 70% restants sont : des employés de bureau avec des tensions cervicales/lombaires, des sportifs qui veulent prévenir les blessures, des personnes de plus de 40 ans qui veulent maintenir leur mobilité, et tous ceux qui veulent se sentir mieux dans leur corps. Le stretching bénéficie à tous les âges et conditions physiques.',
+  stretchingFaqQ8: "Combien coûte le cours d'essai de stretching ?",
+  stretchingFaqA8:
+    "Selon la saison, le cours d'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L'idée est que vous puissiez essayer l'expérience sans engagement. Réservez votre place en cliquant sur le bouton \"Réservez votre Cours d'Essai\".",
+  stretchingFaqQ9: 'Y a-t-il un contrat ou engagement minimum ?',
+  stretchingFaqA9:
+    "Il n'y a pas de contrat ni d'engagement minimum. Chez Farray's Center nous fonctionnons au mois : vous ne payez que les mois où vous venez. Vous pouvez suspendre ou annuler à tout moment sans pénalités. Flexibilité totale pour s'adapter à votre vie.",
+  stretchingFaqQ10: "Puis-je combiner le stretching avec d'autres cours de l'académie ?",
+  stretchingFaqA10:
+    "Oui, c'est la combinaison idéale. Le stretching complète tout style de danse en améliorant votre amplitude de mouvement et en prévenant les blessures. Recommandation : 1-2 cours de stretching par semaine + vos cours de danse habituels. Beaucoup d'élèves combinent Bachata/Salsa + Stretching ou Danses Urbaines + Backbending & Legs.",
+  stretchingFaqQ11: 'Combien de temps avant de voir des résultats dans ma flexibilité ?',
+  stretchingFaqA11:
+    "<strong>Premières 2-4 semaines</strong> : moins de raideur matinale, moins de douleurs musculaires, meilleure posture. <strong>1-2 mois</strong> : augmentation visible de l'amplitude de mouvement (15-20% plus de flexibilité). <strong>3-6 mois</strong> : changements significatifs (pouvoir toucher vos pieds, demi-split). <strong>6-12 mois</strong> : objectifs avancés (split complet, pont). Résultats avec une pratique de 2-3 fois par semaine.",
+  stretchingFaqQ12: "Le stretching m'aidera-t-il à faire le split ?",
+  stretchingFaqA12:
+    'Oui. Dans les cours de Backbending & Legs nous travaillons spécifiquement vers le split frontal (jambes avant-arrière) et le split latéral (jambes sur les côtés). Temps estimé selon la flexibilité initiale : 6-12 mois pour les personnes avec une raideur modérée, 3-6 mois si vous avez déjà une bonne base. La constance (2-3 cours/semaine) est la clé.',
+  stretchingFaqQ13: "Puis-je faire du stretching si j'ai une blessure ?",
+  stretchingFaqA13:
+    "Cela dépend de la blessure et de son état. <strong>Prérequis</strong> : consultez d'abord votre médecin ou kinésithérapeute. Si vous avez l'autorisation médicale, prévenez-nous avant le cours pour adapter les exercices. <strong>Contre-indications absolues</strong> : blessures aiguës, hernies discales actives, fractures récentes. Le stretching thérapeutique peut faire partie de votre rééducation sous supervision médicale.",
+  stretchingFaqQ14: 'Qui sont les professeurs de stretching à Barcelone ?',
+  stretchingFaqA14:
+    "<strong>Cris Ag</strong> – Spécialiste en Flexibilité et Backbending. Enseigne : Débutants (lundi et mercredi 18:00-19:00), Backbending & Legs Intermédiaire/Avancé (lundi 21:00-22:30), Backbending & Legs Intermédiaire (mercredi 20:00-21:30).<br><strong>Daniel Sené</strong> – Danseur professionnel formé à l'École Nationale de Ballet de Cuba. Enseigne : Stretching Basique (jeudi 19:00-20:00).",
+  stretchingFaqQ15: "Où est l'académie de stretching et comment contacter ?",
+  stretchingFaqA15:
+    '<strong>Adresse</strong> : Calle Entença 100, 08015 Barcelone (zone Plaza España, à 5 min de la gare de Sants).<br><strong>Métro</strong> : Plaza España (L1, L3), Rocafort (L1), Entença (L5), Hostafrancs (L1) – tous à 5 min à pied.<br><br>📞 <strong>Téléphone</strong> : +34 622 247 085<br>📧 <strong>Email</strong> : info@farrayscenter.com<br>🌐 <strong>Web</strong> : www.farrayscenter.com/contact',
+
+  // === NEARBY AREAS SECTION (Local SEO) ===
+  stretchingNearbyTitle: 'Cours de Stretching Près de Chez Vous à Barcelone',
+  stretchingNearbyDesc:
+    "Nous sommes l'une des académies de référence pour les cours de stretching et d'étirements dans la zone de Plaza España, Hostafrancs, Sants et environs. Farray's Center est parfaitement desservi par le métro et le bus.",
+  stretchingNearbySearchText:
+    'Vous cherchez "cours d\'étirements près de chez moi" ? Voyez comme il est facile d\'y arriver :',
+  stretchingNearbyMetro:
+    'Métro : Plaza España (L1, L3), Rocafort (L1) - 5 min à pied, Entença (L5) - 5 min à pied ou Hostafrancs (L1) - 5 min à pied.',
+
+  // === PREPARE FOR CLASS SECTION ===
+  stretchingPrepareTitle: 'Préparez-vous pour votre Premier Cours de Stretching',
+  stretchingPrepareSubtitle: 'Tout ce que vous devez savoir avant de venir',
+  stretchingPrepareWhatToBring: 'Quoi apporter',
+  stretchingPrepareBefore: 'Avant de venir',
+  stretchingPrepareAvoid: 'À éviter',
+  stretchingPrepareItem1: 'Vêtements confortables et élastiques (leggings, t-shirt ajusté)',
+  stretchingPrepareItem2: 'Chaussettes ou pieds nus (pas besoin de baskets)',
+  stretchingPrepareItem3: "Bouteille d'eau",
+  stretchingPrepareItem4: 'Petite serviette (optionnel)',
+  stretchingPrepareItem5: 'Envie de prendre soin de votre corps',
+  stretchingPrepareBeforeItem1: 'Ne mangez pas lourd 2 heures avant le cours',
+  stretchingPrepareBeforeItem2: 'Restez bien hydraté tout au long de la journée',
+  stretchingPrepareBeforeItem3: "Arrivez 10 minutes en avance si c'est votre première fois",
+  stretchingPrepareAvoidItem1: 'Vêtements très amples qui rendent difficile de voir votre posture',
+  stretchingPrepareAvoidItem2: 'Venir à jeun (mangez quelque chose de léger)',
+  stretchingPrepareAvoidItem3: 'Forcer au-delà de vos limites',
+  stretchingPrepareTeacherTip: 'Conseil de Cris',
+  stretchingPrepareTeacherQuote:
+    "La flexibilité est un voyage, pas une destination. Ne vous comparez à personne d'autre en cours. Votre seul travail est de vous surpasser, petit à petit, en respectant toujours votre corps.",
+
+  // === FINAL CTA SECTION ===
+  stretchingFinalCTATitle: 'Prêt(e) à transformer votre flexibilité ?',
+  stretchingFinalCTASubtitle: 'Votre premier cours de Stretching vous attend',
+  stretchingFinalCTADesc:
+    "Peu importe à quel point vous êtes raide maintenant. Ce qui compte, c'est que vous voulez vous améliorer. Nos professeurs vous guideront pas à pas dans un environnement sans pression ni comparaisons.",
+  stretchingFinalCTAFunny:
+    '"Je suis arrivée sans pouvoir toucher mes pieds. 6 mois plus tard, je peux faire le split." — Élève anonyme',
+
+  // === SCHEMA MARKUP ===
+  stretchingCourseSchemaName: "Cours de Stretching à Barcelone - Farray's Center",
+  stretchingCourseSchemaDesc:
+    "Cours de stretching et d'étirements à Barcelone. Backbending, élongation des jambes et du dos. Méthode Farray. Tous niveaux.",
+  stretchingEventName: "Cours de Stretching à Barcelone - Farray's Center",
+  stretchingEventDesc:
+    'Cours hebdomadaires de Stretching avec Cris Ag et Daniel Sené. Débutants, Basique et Intermédiaire. Backbending & Legs. Tous niveaux bienvenus.',
+  stretchingVideoTitle: 'Cours de Stretching à Barcelone',
+  stretchingVideoDesc:
+    "Découvrez nos cours de stretching et d'étirements chez Farray's Center. Backbending, élongation des jambes et du dos avec la Méthode Farray.",
+
+  // ============================================================
+  // BUM BUM FESSIERS MERVEILLEUX PAGE
+  // Cours d'Exercices de Fessiers à Barcelone
+  // ============================================================
+
+  // === NAV & BREADCRUMB ===
+  navBumBum: 'Bum Bum Fessiers',
+  bumbumBreadcrumbHome: 'Accueil',
+  bumbumBreadcrumbClasses: 'Cours',
+  bumbumBreadcrumbCategory: 'Entraînement Danseurs',
+  bumbumBreadcrumbCurrent: 'Bum Bum Fessiers',
+
+  // === SEO & META ===
+  bumbumPageTitle: "Cours d'Exercices de Fessiers à Barcelone | Bum Bum Fessiers Merveilleux",
+  bumbumMetaDescription:
+    "Cours d'exercices de fessiers à Barcelone. Tonifiez et développez vos fessiers avec hip thrust, squats et techniques de danse. Méthode Farray. Cours d'essai disponible.",
+
+  // === HERO SECTION ===
+  bumbumHeroTitle: 'Bum Bum Fessiers Merveilleux',
+  bumbumHeroSubtitle: 'Tonifiez, Renforcez et Développez vos Fessiers',
+  bumbumHeroDesc:
+    'Transformez vos fessiers avec notre programme exclusif combinant exercices spécifiques et techniques de danse. Résultats visibles dès les premières semaines.',
+  bumbumHeroLocation: "Farray's Center · Entre Plaza España et Sants, Barcelone",
+  bumbumHeroStudents: '+15 000 élèves formés',
+  bumbumCTAGroup: "Options d'inscription",
+  bumbumCTA1: 'Devenez Membre Maintenant',
+  bumbumCTA1Subtext: 'Places limitées par cours',
+  bumbumCTA2: "Réservez votre Cours d'Essai",
+  bumbumCTA2Subtext: 'Valable pour un temps limité',
+
+  // === WHAT IS BUM BUM SECTION ===
+  bumbumWhatIsTitle: "Qu'est-ce que Bum Bum Fessiers Merveilleux ?",
+  bumbumWhatIsP1:
+    "Bum Bum Fessiers Merveilleux est un programme exclusif d'exercices de fessiers qui combine les techniques de tonification musculaire les plus efficaces avec des mouvements de danse. Nous travaillons hip thrust, squats, pont fessier, fentes et kicks fessiers de manière dynamique et amusante.",
+  bumbumWhatIsP2:
+    'Contrairement à un entraînement de gym traditionnel, nos cours intègrent rythme et musique, faisant de la tonification de vos fessiers une expérience motivante. Vous renforcerez fessiers, abdominaux et jambes, tout en améliorant votre posture et votre bien-être physique général.',
+  bumbumWhatIsP3:
+    'La Méthode Farray appliquée à ce programme garantit une progression sûre et efficace. Cris Ag, notre spécialiste, adapte chaque exercice à votre niveau pour que vous obteniez des fessiers plus beaux, fermes et fonctionnels sans risque de blessure.',
+  bumbumWhatIsP4:
+    "Que vous soyez débutante n'ayant jamais fait d'exercices de fessiers, danseuse cherchant un complément à votre entraînement, ou quelqu'un avec de l'expérience fitness cherchant une approche différente... Bum Bum Fessiers Merveilleux vous surprendra par ses résultats.",
+  bumbumWhatIsQuestionTitle: 'Vous voulez des fessiers fermes, toniques et avec du volume ?',
+  bumbumWhatIsQuestionAnswer:
+    "Votre forme physique actuelle n'a pas d'importance. Avec de la constance et notre méthodologie, vous obtiendrez les fessiers dont vous avez toujours rêvé. Venez essayer un cours et constatez par vous-même.",
+
+  // === IDENTIFICATION SECTION ===
+  bumbumIdentifyTitle: 'Vous reconnaissez-vous dans ces situations ?',
+  bumbumIdentify1:
+    'Vous avez essayé des routines de fessiers à la maison ou à la gym mais vous ne voyez pas de résultats durables',
+  bumbumIdentify2: "Vous vous ennuyez à la gym et abandonnez avant d'atteindre votre objectif",
+  bumbumIdentify3:
+    'Vous voulez des fessiers plus fermes et plus volumineux mais ne savez pas comment les entraîner correctement',
+  bumbumIdentify4:
+    'Vous passez beaucoup de temps assise et remarquez que vos fessiers sont faibles ou "endormis"',
+  bumbumIdentify5:
+    'Vous avez des douleurs lombaires et on vous a dit que renforcer les fessiers peut aider',
+  bumbumIdentify6:
+    'Vous cherchez une façon amusante de faire de l\'exercice qui ne ressemble pas à "aller à la gym"',
+  bumbumIdentifyTransition:
+    'Si vous avez dit "oui" à l\'un de ces points, nous avons la solution parfaite pour vous.',
+  bumbumNeedEnrollTitle: 'Vous devez vous inscrire à Bum Bum Fessiers Merveilleux',
+  bumbumIdentifyAgitate1:
+    "Des fessiers faibles ne sont pas qu'une question esthétique. Ils affectent votre posture, peuvent causer des douleurs lombaires et réduisent vos performances dans toute activité physique.",
+  bumbumIdentifySolution:
+    'Avec des exercices de fessiers spécifiques combinés à des techniques de danse, vous activerez et renforcerez cette zone de manière efficace et durable.',
+  bumbumIdentifyClosing:
+    'Vos fessiers méritent le meilleur entraînement. Donnez-leur ce dont ils ont besoin.',
+
+  // === TRANSFORMATION SECTION ===
+  bumbumTransformTitle: 'Imaginez votre avant et après',
+  bumbumTransform1Title: 'Fessiers plus fermes et toniques',
+  bumbumTransform1Desc:
+    'Vous remarquerez la différence en vous regardant dans le miroir et en enfilant votre jean préféré.',
+  bumbumTransform2Title: 'Plus de volume et de forme',
+  bumbumTransform2Desc:
+    'Les exercices spécifiques comme le hip thrust développent visiblement le grand fessier.',
+  bumbumTransform3Title: 'Adieu les douleurs lombaires',
+  bumbumTransform3Desc: 'Des fessiers forts stabilisent le bassin et protègent votre bas du dos.',
+  bumbumTransform4Title: 'Meilleure posture corporelle',
+  bumbumTransform4Desc: 'Une ceinture pelvienne renforcée améliore votre posture debout et assise.',
+  bumbumTransform5Title: "Plus d'énergie et de vitalité",
+  bumbumTransform5Desc:
+    "L'exercice avec de la musique libère des endorphines et vous fait vous sentir incroyable.",
+  bumbumTransform6Title: 'Confiance renouvelée',
+  bumbumTransform6Desc: 'Se sentir bien dans son corps se voit dans tout ce que vous faites.',
+  bumbumTransformCTA:
+    "Pourquoi choisir Farray's Center pour vos exercices de fessiers à Barcelone ?",
+
+  // === LEVELS SECTION ===
+  bumbumLevelsTitle: 'Niveau du Cours',
+  bumbumLevelsSubtitle: 'Ouvert à tous les niveaux',
+  bumbumLevelOpenTitle: 'Open Level',
+  bumbumLevelOpenDesc:
+    "Cours ouvert à tous les niveaux. Cris Ag adapte l'intensité de chaque exercice selon votre capacité. Que ce soit votre première fois ou que vous ayez déjà de l'expérience, vous travaillerez à votre rythme avec des progressions personnalisées.",
+
+  // === TEACHERS SECTION ===
+  bumbumTeachersTitle: 'Votre Professeure de Bum Bum Fessiers',
+  bumbumTeachersSubtitle: 'Spécialiste en tonification avec la Méthode Farray',
+  bumbumTeacher1Specialty: 'Tonification et Fessiers',
+  bumbumTeacher1Bio:
+    "Cris Ag est spécialiste en tonification corporelle et exercices de fessiers avec la Méthode Farray. Son approche combine techniques de fitness avec éléments de danse pour rendre l'entraînement efficace et amusant. Experte en hip thrust, squats et techniques d'activation des fessiers.",
+  bumbumTeachersClosing:
+    'Avec Cris, vous obtiendrez des résultats réels car elle sait exactement comment activer et travailler chaque muscle fessier de manière sûre et efficace.',
+
+  // === SCHEDULE SECTION ===
+  bumbumScheduleTitle: 'Horaires de Bum Bum Fessiers Merveilleux',
+  bumbumScheduleSubtitle: '1 cours par semaine pour transformer vos fessiers',
+  bumbumScheduleNote: '* Cours de 60 minutes',
+
+  // === WHY CHOOSE US SECTION ===
+  bumbumWhyChooseTitle: 'Pourquoi nous choisir pour vos exercices de fessiers ?',
+  bumbumWhyChooseSubtitle: '7 raisons qui nous différencient',
+  bumbumWhyChoose1Title: 'Méthode Farray Appliquée',
+  bumbumWhyChoose1Desc:
+    'Notre méthodologie exclusive combine exercices de fessiers et techniques de danse pour des résultats plus efficaces et durables.',
+  bumbumWhyChoose2Title: 'Hip Thrust et Techniques Avancées',
+  bumbumWhyChoose2Desc:
+    'Nous travaillons les exercices scientifiquement prouvés comme les plus efficaces pour le développement du grand fessier.',
+  bumbumWhyChoose3Title: 'Groupes Réduits',
+  bumbumWhyChoose3Desc:
+    'Maximum 15 personnes par cours pour garantir des corrections individuelles et une attention personnalisée.',
+  bumbumWhyChoose4Title: 'Amusement Garanti',
+  bumbumWhyChoose4Desc:
+    'Entraînement avec musique et rythme qui ne ressemble pas à "aller à la gym". Vous apprécierez chaque minute.',
+  bumbumWhyChoose5Title: 'Professeure Spécialisée',
+  bumbumWhyChoose5Desc:
+    'Cris Ag adapte chaque exercice à votre niveau pour que vous progressiez sans risque de blessure.',
+  bumbumWhyChoose6Title: 'Sans Engagement',
+  bumbumWhyChoose6Desc:
+    'Payez au mois. Si vous ne pouvez pas venir un mois, pas de problème. Flexibilité totale.',
+  bumbumWhyChoose7Title: 'Académie CID-UNESCO',
+  bumbumWhyChoose7Desc:
+    'Reconnaissance internationale qui garantit la qualité de notre enseignement et méthodologie.',
+
+  // === LOGOS SECTION ===
+  bumbumLogosTitle: 'Vous avez pu nous voir dans',
+  bumbumLogosIntlFestivalsText: 'Et dans des festivals internationaux du monde entier',
+
+  // === WHY TODAY SECTION ===
+  bumbumWhyTodayFullTitle: 'Pourquoi commencer aujourd\'hui et pas "la semaine prochaine" ?',
+  bumbumWhyToday1:
+    "Chaque semaine qui passe sans activer vos fessiers, d'autres muscles compensent leur faiblesse. Cela peut causer des douleurs lombaires, une mauvaise posture et des déséquilibres musculaires qui s'aggravent avec le temps.",
+  bumbumWhyToday2:
+    "Le hip thrust et les exercices spécifiques de fessiers sont les plus efficaces selon les études d'électromyographie (EMG). Dans notre cours, nous les faisons correctement, en sécurité et de façon amusante.",
+  bumbumWhyToday3:
+    "N'attendez pas d'\"être en forme\" pour commencer. Notre cours est Open Level précisément pour que vous commenciez là où vous êtes. Les résultats viennent avec la constance, pas avec l'attente.",
+  bumbumWhyTodayClosing1: 'Le meilleur moment pour renforcer vos fessiers était il y a un an.',
+  bumbumWhyTodayClosing2: "Le deuxième meilleur moment, c'est aujourd'hui. Vous vous inscrivez ?",
+
+  // === CULTURAL HISTORY / CITABILITY SECTION ===
+  bumbumCulturalHistoryTitle: "La Science de l'Entraînement des Fessiers",
+  bumbumCulturalShort:
+    "L'entraînement spécifique des fessiers a évolué d'exercices basiques à des programmes scientifiquement conçus qui maximisent l'activation musculaire.",
+  bumbumCulturalFull: `### Le Hip Thrust : La Révolution de l'Entraînement des Fessiers
+
+**Le hip thrust est considéré comme l'exercice le plus efficace pour le développement du grand fessier selon les études d'électromyographie (EMG).** Popularisé par le chercheur Bret Contreras (connu comme "The Glute Guy"), cet exercice a révolutionné l'entraînement des fessiers dans la dernière décennie.
+
+**"Hip thrust : exercice #1 pour les fessiers selon EMG ; activation maximale du grand fessier en extension de hanche complète."**
+
+### Anatomie du Fessier : 3 Muscles Clés
+
+**Les fessiers sont le groupe musculaire le plus grand et le plus puissant du corps humain**, composé de trois muscles principaux :
+
+- **Grand fessier** : Le plus grand, responsable de l'extension de hanche et de la forme arrondie du fessier
+- **Moyen fessier** : Stabilisateur latéral de la hanche, important pour la marche et l'équilibre
+- **Petit fessier** : Le plus profond, travaille avec le moyen pour la stabilisation
+
+**"Fessiers : groupe musculaire le plus grand du corps ; 3 muscles (grand, moyen, petit) essentiels pour la posture, la puissance et la stabilité."**
+
+### Les 5 Exercices les Plus Efficaces pour les Fessiers
+
+Selon les études scientifiques d'activation musculaire :
+
+1. **Hip Thrust** (poussée de hanche) - Activation maximale du grand fessier
+2. **Squat profond** - Travail complet du bas du corps
+3. **Pont fessier** (Glute Bridge) - Version sans poids du hip thrust
+4. **Soulevé de terre roumain** - Accent sur ischio-jambiers et fessiers
+5. **Fentes** (Lunges) - Travail unilatéral et équilibre
+
+**"Top 5 exercices fessiers (EMG) : hip thrust > squat > pont fessier > soulevé de terre roumain > fentes."**
+
+### La Méthode Farray Appliquée aux Fessiers
+
+**Chez Farray's Center, nous avons adapté notre méthodologie à l'entraînement des fessiers**, combinant :
+
+- **Exercices scientifiquement prouvés** : Hip thrust, squats, pont fessier
+- **Techniques de danse** : Rythme, musique et mouvement pour rendre l'entraînement amusant
+- **Progressions sûres** : Adaptation à chaque niveau de manière individualisée
+- **Activation consciente** : Connexion esprit-muscle pour maximiser les résultats
+
+**"Méthode Farray Fessiers (Barcelone) : hip thrust + techniques de danse + progression personnalisée ; résultats dès 4-6 semaines."**
+
+### Bénéfices Scientifiquement Prouvés
+
+L'entraînement régulier des fessiers (2-3 fois/semaine) :
+
+- **Réduit de 50%** le risque de douleur lombaire selon les études de kinésithérapie
+- **Améliore** la posture et la stabilité pelvienne
+- **Augmente** la puissance dans des activités comme courir, sauter et danser
+- **Prévient** les blessures du genou et de la hanche
+- **Brûle 300-400** calories par séance de 60 minutes
+
+**"Entraînement fessiers : -50% douleur lombaire, +puissance, +stabilité, 300-400 cal/heure."**`,
+
+  // ===== GEO OPTIMIZATION: Citable Statistics =====
+  bumbumCitableDefinicion:
+    "Bum Bum Fessiers Merveilleux : programme d'exercices de fessiers combinant hip thrust, squats et techniques de danse à Barcelone.",
+  bumbumCitableHipThrust:
+    "Hip thrust : exercice #1 pour les fessiers selon l'électromyographie (EMG) ; activation maximale du grand fessier.",
+  bumbumCitableBeneficios:
+    'Entraînement régulier des fessiers : -50% douleur lombaire, meilleure posture, +puissance, 300-400 cal/heure.',
+  bumbumCitableMetodoFarray:
+    "Méthode Farray Fessiers : hip thrust + techniques de danse + progression personnalisée ; chez Farray's Center Barcelone.",
+  bumbumCitableStatistics:
+    'Fessiers : groupe musculaire le plus grand du corps ; 3 muscles (grand, moyen, petit) pour la posture et la puissance.',
+  bumbumCitableFact1:
+    'Le cours Bum Bum Fessiers brûle 300-400 calories/heure (entraînement de force avec composante aérobie).',
+  bumbumCitableFact2:
+    'Le hip thrust active le grand fessier +30% de plus que les squats traditionnels selon les études EMG.',
+  bumbumCitableFact3:
+    "Farray's Barcelone : cours d'exercices de fessiers avec Méthode Farray, 4.8/5 Google Reviews (55 avis).",
+
+  // === FAQ SECTION ===
+  bumbumFaqTitle: 'Questions Fréquentes sur Bum Bum Fessiers Merveilleux',
+  bumbumFaqQ1: "Ai-je besoin d'une expérience préalable en fitness pour m'inscrire ?",
+  bumbumFaqA1:
+    "Non. Le cours est Open Level (ouvert à tous les niveaux). Cris adapte l'intensité de chaque exercice à votre capacité. Que ce soit votre première fois ou que vous ayez déjà de l'expérience, vous travaillerez à votre rythme avec des progressions personnalisées.",
+  bumbumFaqQ2: 'Quels exercices de fessiers fait-on en cours ?',
+  bumbumFaqA2:
+    'Nous travaillons les exercices les plus efficaces selon la science : hip thrust (poussée de hanche), squats, pont fessier, fentes, soulevé de terre roumain et kicks fessiers. Le tout combiné avec des techniques de danse et de la musique pour que ce soit amusant.',
+  bumbumFaqQ3: "Qu'est-ce que le hip thrust et pourquoi est-il si efficace ?",
+  bumbumFaqA3:
+    "Le hip thrust est un exercice de poussée de hanche qui active le grand fessier plus que tout autre exercice selon les études d'électromyographie (EMG). C'est l'exercice #1 recommandé par des experts comme Bret Contreras pour développer des fessiers forts et volumineux.",
+  bumbumFaqQ4: 'En combien de temps verrai-je des résultats sur mes fessiers ?',
+  bumbumFaqA4:
+    '<strong>Premières 2-4 semaines</strong> : vous sentirez vos fessiers plus "actifs" et fermes au toucher. <strong>4-8 semaines</strong> : changements visibles en tonus et forme. <strong>3-6 mois</strong> : augmentation notable du volume et de la définition. Résultats avec 1 cours par semaine + exercice complémentaire.',
+  bumbumFaqQ5: "L'entraînement des fessiers aide-t-il contre les douleurs lombaires ?",
+  bumbumFaqA5:
+    "Oui. Les études de kinésithérapie montrent que renforcer les fessiers réduit jusqu'à 50% les douleurs lombaires. Des fessiers forts stabilisent le bassin et réduisent la charge sur le bas du dos. Beaucoup de nos élèves remarquent un soulagement significatif.",
+  bumbumFaqQ6: 'Que dois-je apporter au cours de Bum Bum Fessiers ?',
+  bumbumFaqA6:
+    "<strong>Équipement nécessaire</strong> : vêtements de sport confortables (leggings, t-shirt), chaussures de sport, petite serviette, bouteille d'eau. <strong>Optionnel</strong> : bandes élastiques (nous les fournissons).",
+  bumbumFaqQ7: "C'est uniquement pour les femmes ?",
+  bumbumFaqA7:
+    "Non. Bien que la majorité des participants soient des femmes, les hommes peuvent également bénéficier énormément de l'entraînement des fessiers. Des fessiers forts améliorent les performances sportives, préviennent les blessures et améliorent la posture chez tout le monde.",
+  bumbumFaqQ8: "Combien coûte le cours d'essai de Bum Bum Fessiers ?",
+  bumbumFaqA8:
+    "Selon la saison, le cours d'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L'idée est que vous puissiez tester l'expérience sans engagement. Réservez votre place en cliquant sur le bouton \"Réservez votre Cours d'Essai\".",
+  bumbumFaqQ9: 'Y a-t-il un contrat ou engagement minimum ?',
+  bumbumFaqA9:
+    "Il n'y a pas de contrat ni d'engagement minimum. Chez Farray's Center, nous fonctionnons au mois : vous ne payez que les mois où vous venez. Vous pouvez mettre en pause ou annuler à tout moment sans pénalités.",
+  bumbumFaqQ10: "Puis-je combiner Bum Bum avec d'autres cours de l'académie ?",
+  bumbumFaqA10:
+    "Oui, c'est une combinaison idéale. Beaucoup d'élèves combinent Bum Bum Fessiers avec Stretching (pour la flexibilité) ou avec des cours de danse comme Reggaeton ou Twerk. Des fessiers forts améliorent vos performances dans tous les styles de danse.",
+  bumbumFaqQ11: 'Combien de calories brûle-t-on dans un cours ?',
+  bumbumFaqA11:
+    "Un cours de 60 minutes de Bum Bum Fessiers Merveilleux brûle environ 300-400 calories, selon votre poids corporel et intensité. C'est un entraînement de force avec composante aérobie grâce aux techniques de danse.",
+  bumbumFaqQ12: "L'entraînement des fessiers augmente le volume ou tonifie seulement ?",
+  bumbumFaqA12:
+    "Les deux. Des exercices comme le hip thrust et les squats développent le muscle (hypertrophie), ce qui augmente le volume. En même temps, l'entraînement régulier réduit la graisse corporelle et améliore la définition musculaire. Le résultat : des fessiers plus gros ET plus toniques.",
+  bumbumFaqQ13: "Puis-je faire Bum Bum Fessiers si j'ai des problèmes de genoux ?",
+  bumbumFaqA13:
+    "Cela dépend de la condition spécifique. Le hip thrust est généralement sûr pour les genoux car il n'implique pas de flexion profonde. Cependant, nous recommandons de consulter votre médecin d'abord et d'avertir Cris au début du cours pour adapter les exercices.",
+  bumbumFaqQ14: 'Qui donne les cours de Bum Bum Fessiers ?',
+  bumbumFaqA14:
+    "<strong>Cris Ag</strong> – Spécialiste en Tonification et Fessiers. Enseigne : Bum Bum Fessiers Merveilleux (mercredi 19:00-20:00). Donne également des cours de Stretching (Débutants et Backbending & Legs). Experte en techniques d'activation des fessiers et Méthode Farray.",
+  bumbumFaqQ15: "Où est l'académie et comment contacter ?",
+  bumbumFaqA15:
+    '<strong>Adresse</strong> : Calle Entença 100, 08015 Barcelone (zone Plaza España, à 5 min de la gare de Sants).<br><strong>Métro</strong> : Plaza España (L1, L3), Rocafort (L1), Entença (L5), Hostafrancs (L1) – tous à 5 min à pied.<br><br>📞 <strong>Téléphone</strong> : +34 622 247 085<br>📧 <strong>Email</strong> : info@farrayscenter.com<br>🌐 <strong>Web</strong> : www.farrayscenter.com/contact',
+
+  // === NEARBY AREAS SECTION (Local SEO) ===
+  bumbumNearbyTitle: "Cours d'Exercices de Fessiers Près de Chez Vous à Barcelone",
+  bumbumNearbyDesc:
+    "Nous sommes l'une des académies de référence pour les cours d'exercices de fessiers dans la zone de Plaza España, Hostafrancs, Sants et environs. Farray's Center est parfaitement desservi par le métro et le bus.",
+  bumbumNearbySearchText:
+    'Vous cherchez "cours de fessiers près de chez moi" ? Voyez comme il est facile d\'y arriver :',
+  bumbumNearbyMetro:
+    'Métro : Plaza España (L1, L3), Rocafort (L1) - 5 min à pied, Entença (L5) - 5 min à pied ou Hostafrancs (L1) - 5 min à pied.',
+
+  // === PREPARE FOR CLASS SECTION ===
+  bumbumPrepareTitle: 'Préparez-vous pour votre Premier Cours de Bum Bum Fessiers',
+  bumbumPrepareSubtitle: 'Tout ce que vous devez savoir avant de venir',
+  bumbumPrepareWhatToBring: 'Quoi apporter',
+  bumbumPrepareBefore: 'Avant de venir',
+  bumbumPrepareAvoid: 'À éviter',
+  bumbumPrepareItem1: 'Vêtements de sport confortables (leggings et t-shirt)',
+  bumbumPrepareItem2: 'Chaussures de sport',
+  bumbumPrepareItem3: 'Petite serviette',
+  bumbumPrepareItem4: "Bouteille d'eau",
+  bumbumPrepareItem5: "Envie de travailler et de s'amuser",
+  bumbumPrepareBeforeItem1: 'Mangez quelque chose de léger 1-2 heures avant',
+  bumbumPrepareBeforeItem2: 'Restez bien hydraté tout au long de la journée',
+  bumbumPrepareBeforeItem3: "Arrivez 10 min en avance si c'est votre première fois",
+  bumbumPrepareAvoidItem1: 'Manger beaucoup juste avant le cours',
+  bumbumPrepareAvoidItem2: 'Venir sans avoir bien dormi',
+  bumbumPrepareAvoidItem3: 'Vous comparer aux autres',
+  bumbumPrepareTeacherTip: 'Conseil de Cris',
+  bumbumPrepareTeacherQuote:
+    '"Activez vos fessiers avant le cours avec 10 squats légers chez vous. Ainsi vous arriverez avec la connexion esprit-muscle déjà établie et profiterez mieux de chaque exercice."',
+
+  // === FINAL CTA SECTION ===
+  bumbumFinalCTATitle: 'Prêt(e) à transformer vos fessiers ?',
+  bumbumFinalCTASubtitle: 'Votre premier cours de Bum Bum Fessiers Merveilleux vous attend',
+  bumbumFinalCTADesc:
+    "Peu importe l'état de vos fessiers maintenant. Ce qui compte, c'est que vous voulez les améliorer. Cris vous guidera exercice par exercice dans une ambiance motivante et sans jugement.",
+  bumbumFinalCTAFunny:
+    "\"Je suis arrivée en pensant qu'il était impossible d'activer mes fessiers. Maintenant je n'arrête pas de les sentir à chaque mouvement.\" — Élève de Bum Bum",
+
+  // === SCHEMA MARKUP ===
+  bumbumCourseSchemaName: "Cours d'Exercices de Fessiers à Barcelone - Farray's Center",
+  bumbumCourseSchemaDesc:
+    "Cours d'exercices de fessiers à Barcelone. Hip thrust, squats, pont fessier. Bum Bum Fessiers Merveilleux avec Méthode Farray.",
+  bumbumEventName: "Cours de Bum Bum Fessiers Merveilleux à Barcelone - Farray's Center",
+  bumbumEventDesc:
+    'Cours hebdomadaire de Bum Bum Fessiers Merveilleux avec Cris Ag. Exercices de fessiers combinés avec techniques de danse. Tous niveaux bienvenus.',
+  bumbumVideoTitle: "Cours d'Exercices de Fessiers à Barcelone",
+  bumbumVideoDesc:
+    "Découvrez nos cours de Bum Bum Fessiers Merveilleux chez Farray's Center. Hip thrust, squats et plus avec la Méthode Farray.",
+
+  // ===== BACHATA LADY STYLE PAGE =====
+  // SEO & Meta
+  bachataLadyPageTitle: 'Cours de Bachata Lady Style à Barcelone | Style Féminin et Sensualité',
+  bachataLadyMetaDescription:
+    'Apprenez le Bachata Lady Style à Barcelone avec la Méthode Farray®. Ondulations, sensualité, technique féminine et style personnel. Académie CID-UNESCO près de Plaza España.',
+  bachataLadyCourseSchemaDesc:
+    'Cours de Bachata Lady Style à Barcelone. Apprenez ondulations, mouvements sensuels et technique féminine avec des instructrices cubaines spécialisées.',
+
+  // Breadcrumb
+  bachataLadyBreadcrumbHome: 'Accueil',
+  bachataLadyBreadcrumbClasses: 'Cours de Danse',
+  bachataLadyBreadcrumbLatin: 'Salsa et Bachata',
+  bachataLadyBreadcrumbCurrent: 'Bachata Lady Style',
+
+  // Hero
+  bachataLadyHeroTitle: 'Bachata Lady Style à Barcelone',
+  bachataLadyHeroSubtitle: 'Sensualité et Technique Féminine avec la Méthode Farray®',
+  bachataLadyHeroDesc:
+    'Découvrez votre côté le plus sensuel. Apprenez ondulations, mouvements de hanches et style féminin pour briller sur la piste.',
+
+  // CTAs
+  bachataLadyCTA1: 'Devenez Membre Maintenant',
+  bachataLadyCTA1Subtext: 'Places limitées ce mois-ci',
+  bachataLadyCTA2: "Réservez votre Cours d'Essai",
+  bachataLadyCTA2Subtext: 'Valable pour un temps limité',
+
+  // What Is Section
+  bachataLadyWhatIsTitle:
+    "Qu'est-ce que le Bachata Lady Style et pourquoi transformera-t-il votre danse ?",
+  bachataLadyWhatIsDesc:
+    'Le Bachata Lady Style se concentre sur le développement de votre technique féminine au sein de la danse bachata. Contrairement aux cours en couple, le Lady Style vous permet de travailler ondulations, mouvements de hanches, bras et cette sensualité caractéristique de la bachata.',
+  bachataLadyWhatIsQuote:
+    "Le Bachata Lady Style n'est pas juste bouger. C'est ressentir la musique avec chaque cellule de votre corps et exprimer votre féminité sans limites.",
+
+  // Teacher Section
+  bachataLadyTeachersTitle: 'Votre Professeure de Bachata Lady Style',
+  bachataLadyTeachersSubtitle:
+    'Apprenez avec une professeure experte en sensualité et technique féminine',
+  bachataLadyTeacherCredential: "Professeure de Bachata chez Farray's Center",
+  bachataLadyTeacherBio:
+    "Yunaisy Farray a adapté sa révolutionnaire Méthode Farray® pour la bachata, combinant la sensualité caribéenne avec une technique raffinée qui vous permet d'exprimer votre féminité avec élégance.",
+  bachataLadyTeacher2Specialty: 'Championne du Monde Salsa LA | Spécialiste Bachata',
+  bachataLadyTeacher2Bio:
+    "Eugenia Trujillo est une professeure et danseuse internationale uruguayenne, enseignant chez Farray's Center depuis 4 ans avec d'excellents résultats. Spécialiste de bachata mais aussi de Salsa LA, modalité dans laquelle elle a concouru avec Mathias Font pour devenir champions du monde. Son charisme, sa sympathie et sa proximité font d'Eugenia l'une des professeures les plus appréciées de notre équipe.",
+  bachataLadyTeachersClosing:
+    'Avec notre professeure vous découvrirez comment exprimer la sensualité avec élégance et technique impeccable.',
+
+  // Schedule
+  bachataLadyScheduleTitle: 'Horaires des cours de Bachata Lady Style',
+  bachataLadyScheduleSubtitle: 'Trouvez votre niveau et votre horaire idéal',
+
+  // Levels - Open Level
+  bachataLadyLevelsTitle: 'Nos Niveaux de Bachata Lady Style',
+  bachataLadyLevelOpenTitle: 'Open Level',
+  bachataLadyLevelOpenDesc:
+    "Cours conçus pour tous les niveaux. Chaque exercice s'adapte à votre expérience, des débutantes aux danseuses avancées. Nous travaillons ondulations, mouvement de hanches, expression corporelle et style personnel dans un environnement inclusif où chacune progresse à son rythme.",
+
+  // Prepare Section
+  bachataLadyPrepareTitle: 'Préparez votre premier cours de Bachata Lady Style',
+  bachataLadyPrepareSubtitle: 'Tout ce que vous devez savoir avant de venir',
+  bachataLadyPrepareWhatToBring: 'Quoi apporter :',
+  bachataLadyPrepareItem1:
+    'Vêtements confortables et ajustés qui permettent de voir votre corps (top et leggings idéaux)',
+  bachataLadyPrepareItem2: 'Talons de danse (5-8cm) ou baskets pour commencer',
+  bachataLadyPrepareItem3: "Bouteille d'eau pour vous hydrater",
+  bachataLadyPrepareItem4: 'Petite serviette - vous allez transpirer !',
+  bachataLadyPrepareItem5: 'Attitude ouverte et envie de connecter avec votre sensualité',
+  bachataLadyPrepareBefore: "Avant d'arriver :",
+  bachataLadyPrepareBeforeItem1: 'Arrivez 10-15 minutes en avance pour vous changer',
+  bachataLadyPrepareBeforeItem2: 'Évitez les repas lourds 2 heures avant',
+  bachataLadyPrepareBeforeItem3: "Venez avec l'esprit ouvert pour explorer votre corps",
+  bachataLadyPrepareAvoid: 'Évitez :',
+  bachataLadyPrepareAvoidItem1: 'Les bijoux qui pourraient vous gêner pendant les mouvements',
+  bachataLadyPrepareAvoidItem2: 'Les vêtements très amples qui empêchent de voir votre technique',
+  bachataLadyPrepareAvoidItem3: 'La peur de vous exprimer - ici nous sommes toutes une famille',
+  bachataLadyPrepareTeacherTip: 'Conseil de la professeure :',
+  bachataLadyPrepareTeacherQuote:
+    "La sensualité n'a pas de taille ni d'âge. Chaque femme a sa propre façon de l'exprimer. Ici nous vous aidons à découvrir la vôtre.",
+
+  // Identification Section
+  bachataLadyIdentifyTitle: 'Vous reconnaissez-vous ?',
+  bachataLadyIdentify1:
+    'Vous dansez la bachata mais sentez que vos mouvements sont "plats" et sans expression',
+  bachataLadyIdentify2:
+    'Vous aimeriez bouger avec plus de sensualité mais ne savez pas comment le faire avec élégance',
+  bachataLadyIdentify3:
+    "Vous voyez d'autres femmes faire des ondulations incroyables et voulez apprendre leur secret",
+  bachataLadyIdentify4:
+    'Vous voulez développer votre propre style féminin pour vous démarquer dans les soirées',
+  bachataLadyIdentify5:
+    'Vous sentez que vous manquez de confiance corporelle quand vous dansez la bachata',
+  bachataLadyIdentify6:
+    'Vous cherchez un espace sûr pour explorer votre sensualité à travers la danse',
+  bachataLadyIdentifyTransition:
+    "Si vous vous reconnaissez dans l'un de ces points, les cours de Bachata Lady Style sont exactement ce qu'il vous faut.",
+  bachataLadyIdentifyNeedTitle: "Vous Devez Apprendre le Bachata Lady Style chez Farray's Center",
+  bachataLadyIdentifySolution:
+    "Chez Farray's Center nous vous apprenons à connecter avec votre corps, développer des ondulations naturelles et exprimer la sensualité avec technique et élégance.",
+  bachataLadyIdentifyClosing:
+    'Votre transformation commence le jour où vous décidez de prendre votre premier cours avec nous.',
+
+  // 6 Pillars - Bachata specific
+  bachataLadyPillarsSectionTitle: 'Les 6 Piliers du Bachata Lady Style',
+  bachataLadyPillarsSectionSubtitle:
+    'Le système complet pour développer votre sensualité et technique',
+  bachataLadyPillar1Title: 'Ondulation Corporelle',
+  bachataLadyPillar1Subtitle: 'Body Waves et Fluidité',
+  bachataLadyPillar1Desc:
+    'Apprenez à bouger votre corps comme une vague, de la poitrine aux hanches, avec fluidité et contrôle.',
+  bachataLadyPillar1Item1: 'Ondulations ascendantes et descendantes',
+  bachataLadyPillar1Item2: 'Body waves lents et sensuels',
+  bachataLadyPillar1Item3: 'Isolation du torse et du bassin',
+  bachataLadyPillar1Result: 'Résultat : Mouvements fluides qui hypnotisent',
+  bachataLadyPillar2Title: 'Sensualité Consciente',
+  bachataLadyPillar2Subtitle: 'Expression avec Élégance',
+  bachataLadyPillar2Desc:
+    'Développez votre capacité à exprimer la sensualité de façon élégante, confiante et authentique.',
+  bachataLadyPillar2Item1: 'Connexion esprit-corps',
+  bachataLadyPillar2Item2: 'Expression faciale et regard',
+  bachataLadyPillar2Item3: 'Intention dans chaque mouvement',
+  bachataLadyPillar2Result: 'Résultat : Sensualité qui impacte avec élégance',
+  bachataLadyPillar3Title: 'Hanches et Bassin',
+  bachataLadyPillar3Subtitle: 'Le Centre de Votre Féminité',
+  bachataLadyPillar3Desc:
+    'Maîtrisez les mouvements de hanches : huit, cercles, pops et isolations qui définissent la bachata.',
+  bachataLadyPillar3Item1: 'Huit de hanches fluides',
+  bachataLadyPillar3Item2: 'Cercles et rotations',
+  bachataLadyPillar3Item3: 'Pops de hanches contrôlés',
+  bachataLadyPillar3Result: 'Résultat : Contrôle total de votre centre corporel',
+  bachataLadyPillar4Title: 'Bras et Mains',
+  bachataLadyPillar4Subtitle: 'Extension de Votre Expression',
+  bachataLadyPillar4Desc:
+    'Technique de bras qui complète vos mouvements corporels avec grâce et fluidité.',
+  bachataLadyPillar4Item1: 'Lignes élégantes de bras',
+  bachataLadyPillar4Item2: 'Mouvements de mains sensuels',
+  bachataLadyPillar4Item3: 'Coordination corps-bras',
+  bachataLadyPillar4Result: 'Résultat : Mouvements complets et harmonieux',
+  bachataLadyPillar5Title: 'Musicalité Bachata',
+  bachataLadyPillar5Subtitle: 'Danser ce que Vous Ressentez',
+  bachataLadyPillar5Desc:
+    'Apprenez à interpréter la bachata : les accents, les pauses, les rythmes et la romance de la musique.',
+  bachataLadyPillar5Item1: 'Interprétation des accents musicaux',
+  bachataLadyPillar5Item2: 'Utilisation de pauses dramatiques',
+  bachataLadyPillar5Item3: 'Connexion émotionnelle avec les paroles',
+  bachataLadyPillar5Result: 'Résultat : Danse qui raconte des histoires',
+  bachataLadyPillar6Title: 'Présence Scénique',
+  bachataLadyPillar6Subtitle: 'Votre Moment de Briller',
+  bachataLadyPillar6Desc:
+    'Développez charisme, confiance et cette présence qui fait que tout le monde veut vous regarder.',
+  bachataLadyPillar6Item1: 'Projection et charisme',
+  bachataLadyPillar6Item2: 'Confiance corporelle',
+  bachataLadyPillar6Item3: "Maîtrise de l'espace",
+  bachataLadyPillar6Result: 'Résultat : Présence magnétique sur la piste',
+
+  // Comparison Table
+  bachataLadyCompareTitle: 'Bachata Lady Style Méthode Farray® vs Autres Académies',
+  bachataLadyCompareAspect: 'Aspect',
+  bachataLadyCompareOthers: 'Autres académies',
+  bachataLadyCompareFarray: 'Méthode Farray',
+  bachataLadyCompareRow1Label: 'Ondulations',
+  bachataLadyCompareRow1Others: 'Répéter sans comprendre',
+  bachataLadyCompareRow1Farray: 'Technique progressive étape par étape',
+  bachataLadyCompareRow2Label: 'Sensualité',
+  bachataLadyCompareRow2Others: 'Imiter les mouvements',
+  bachataLadyCompareRow2Farray: "Expression authentique de l'intérieur",
+  bachataLadyCompareRow3Label: 'Format',
+  bachataLadyCompareRow3Others: 'Sans structure claire',
+  bachataLadyCompareRow3Farray: 'Open Level adapté à chaque élève',
+  bachataLadyCompareRow4Label: 'Groupes',
+  bachataLadyCompareRow4Others: 'Surchargés',
+  bachataLadyCompareRow4Farray: 'Réduits pour attention personnelle',
+  bachataLadyCompareRow5Label: 'Méthodologie',
+  bachataLadyCompareRow5Others: 'Improvisée',
+  bachataLadyCompareRow5Farray: 'Système éprouvé 8+ ans',
+  bachataLadyCompareRow6Label: 'Professeures',
+  bachataLadyCompareRow6Others: 'Variables',
+  bachataLadyCompareRow6Farray: 'Formées à la Méthode Farray',
+  bachataLadyCompareRow7Label: 'Installations',
+  bachataLadyCompareRow7Others: 'Basiques',
+  bachataLadyCompareRow7Farray: '700m² professionnels',
+  bachataLadyCompareRow8Label: 'Reconnaissance',
+  bachataLadyCompareRow8Others: 'Sans aval',
+  bachataLadyCompareRow8Farray: 'Certifiée CID-UNESCO',
+
+  // For Who Section
+  bachataLadyForWhoTitle: 'Le Bachata Lady Style est-il pour vous ?',
+  bachataLadyForYesTitle: "OUI c'est pour vous si...",
+  bachataLadyForYes1: 'Vous voulez apprendre à bouger avec sensualité et élégance',
+  bachataLadyForYes2: 'Vous cherchez à développer des ondulations naturelles et fluides',
+  bachataLadyForYes3: 'Vous voulez connecter plus profondément avec votre féminité',
+  bachataLadyForYes4: 'Vous voulez compléter vos cours de bachata en couple',
+  bachataLadyForYes5: 'Vous cherchez à gagner confiance dans votre expression corporelle',
+  bachataLadyForYes6: 'Vous voulez un espace sûr pour explorer votre sensualité',
+  bachataLadyForYes7: 'Vous voulez vous démarquer dans les soirées avec un style unique',
+  bachataLadyForYes8: "Vous valorisez la technique autant que l'expression",
+  bachataLadyForNoTitle: "NON ce n'est PAS pour vous si...",
+  bachataLadyForNo1: 'Vous cherchez des résultats immédiats sans pratique',
+  bachataLadyForNo2: "Vous n'êtes pas prête à sortir de votre zone de confort",
+  bachataLadyForNo3: 'Vous préférez des cours bondés sans attention personnelle',
+  bachataLadyForNo4: 'Développer la technique ne vous intéresse pas, juste les pas',
+  bachataLadyForWhoCTA: 'Prête à découvrir votre côté sensuel ? Réservez votre place maintenant.',
+
+  // Transformation Table
+  bachataLadyTransformTitle: 'Votre Avant et Après avec le Bachata Lady Style',
+  bachataLadyTransformAspect: 'Aspect',
+  bachataLadyTransformBefore: 'Avant',
+  bachataLadyTransformAfter: 'Après la Méthode Farray',
+  bachataLadyTransformondulacionesLabel: 'Ondulations',
+  bachataLadyTransformondulacionesBefore: 'Rigides ou inexistantes',
+  bachataLadyTransformondulacionesAfter: 'Fluides et naturelles',
+  bachataLadyTransformcaderasLabel: 'Hanches',
+  bachataLadyTransformcaderasBefore: 'Mouvements basiques',
+  bachataLadyTransformcaderasAfter: 'Contrôle total et variété',
+  bachataLadyTransformbrazosLabel: 'Bras',
+  bachataLadyTransformbrazosBefore: 'Sans savoir quoi faire',
+  bachataLadyTransformbrazosAfter: 'Élégants et expressifs',
+  bachataLadyTransformsensualidadLabel: 'Sensualité',
+  bachataLadyTransformsensualidadBefore: 'Gêne ou exagération',
+  bachataLadyTransformsensualidadAfter: 'Naturelle et élégante',
+  bachataLadyTransformgirosLabel: 'Tours',
+  bachataLadyTransformgirosBefore: 'Déséquilibrée',
+  bachataLadyTransformgirosAfter: 'Contrôlés et stylisés',
+  bachataLadyTransformconfianzaLabel: 'Confiance',
+  bachataLadyTransformconfianzaBefore: 'Timide sur la piste',
+  bachataLadyTransformconfianzaAfter: 'Sûre et magnétique',
+  bachataLadyTransformestiloLabel: 'Style',
+  bachataLadyTransformestiloBefore: 'Copiant les autres',
+  bachataLadyTransformestiloAfter: 'Votre propre signature personnelle',
+
+  // Why Choose Section
+  bachataLadyWhyChooseTitle: "Pourquoi choisir Farray's pour apprendre le Bachata Lady Style ?",
+  bachataLadyWhyChoose1Title: 'Méthode Farray® adaptée',
+  bachataLadyWhyChoose1Desc:
+    'Méthodologie unique pour la bachata qui priorise ondulations, sensualité et expression féminine.',
+  bachataLadyWhyChoose2Title: 'Professeures spécialisées',
+  bachataLadyWhyChoose2Desc:
+    'Apprenez avec des professeures formées spécifiquement en technique féminine de bachata.',
+  bachataLadyWhyChoose3Title: 'Académie certifiée CID-UNESCO',
+  bachataLadyWhyChoose3Desc: "La seule académie de Lady Style à Barcelone avalisée par l'UNESCO.",
+  bachataLadyWhyChoose4Title: 'Installations premium',
+  bachataLadyWhyChoose4Desc:
+    'Plus de 700 m², salles avec miroirs, son professionnel et climatisation parfaite.',
+  bachataLadyWhyChoose5Title: 'Groupes réduits',
+  bachataLadyWhyChoose5Desc: 'Attention personnalisée pour développer votre style unique.',
+  bachataLadyWhyChoose6Title: 'Emplacement central',
+  bachataLadyWhyChoose6Desc: 'Calle Entença 100, à 5 minutes de Plaza España et Sants.',
+  bachataLadyWhyChoose7Title: 'Showcases et événements',
+  bachataLadyWhyChoose7Desc:
+    'Opportunité de montrer votre évolution sur des scènes professionnelles.',
+
+  // Logos Section
+  bachataLadyLogosTitle: 'Vous avez pu nous voir sur...',
+  bachataLadyLogosIntlFestivalsText: 'et dans des festivals internationaux de bachata et salsa',
+
+  // Video Section
+  bachataLadyVideoTitle: 'Regardez nos cours de Bachata Lady Style',
+  bachataLadyVideoDesc:
+    'Découvrez à quoi ressemble un cours de Bachata Lady Style. Ondulations, sensualité et technique impeccable.',
+
+  // Style Comparison
+  bachataLadyStyleCompareTitle: 'Bachata Lady Style vs autres styles',
+  bachataLadyStyleCompareSubtitle: 'Découvrez ce qui rend le Bachata Lady Style unique',
+  bachataLadyStyleCompareFeature: 'Caractéristique',
+  bachataLadyCompareBachataSensual: 'Bachata Sensual',
+  bachataLadyCompareBachataLady: 'Bachata Lady Style',
+  bachataLadyCompareSalsaLady: 'Salsa Lady Style',
+  bachataLadyCompareBachataModerna: 'Bachata Fusion',
+  // Style comparison rows (feature names)
+  bachataLadyCompareRow1: 'Ondulations corporelles',
+  bachataLadyCompareRow2: 'Mouvements de hanches',
+  bachataLadyCompareRow3: 'Utilisation de talons',
+  bachataLadyCompareRow4: 'Musicalité',
+  bachataLadyCompareRow5: 'Connexion en couple',
+  bachataLadyCompareRow6: 'Sensualité',
+  bachataLadyCompareRow7: 'Rythme et vitesse',
+  bachataLadyCompareRow8: 'Élégance et style',
+
+  // Cultural History
+  bachataLadyCulturalTitle: 'Histoire et Origine du Bachata Lady Style',
+  bachataLadyCulturalShort:
+    'Le bachata lady style n\'a pas de "naissance officielle" en tant que genre historique, mais aujourd\'hui il est utilisé dans les académies pour désigner le travail de style féminin au sein de la bachata moderne, tout comme le lady style en salsa ou kizomba.',
+  bachataLadyCulturalFull: `### L'Évolution du Bachata Lady Style
+
+Le bachata lady style s'appuie sur l'évolution de la bachata depuis ses racines traditionnelles en République Dominicaine jusqu'à la bachata urbaine et sensuelle actuelle, où l'importance de la danseuse grandit avec l'utilisation d'ornements, de dissociations et d'expression corporelle.
+
+**"Bachata Lady Style : ligne de travail technique et expressif qui développe le style féminin au sein de la bachata moderne, centré sur le travail des bras, ondulations, hanches et présence scénique."**
+
+### Histoire et Origine de la Bachata
+
+La bachata naît en République Dominicaine au milieu du XXe siècle comme musique populaire de guitare, influencée par le boléro, le son et d'autres genres caribéens. Pendant des décennies, elle était associée aux environnements modestes et aux bars de banlieue, jusqu'aux années 80-90 où elle se professionnalise et commence son expansion internationale grâce à des artistes comme Juan Luis Guerra et l'industrie latine.
+
+**"La bachata naît en République Dominicaine (milieu du XXe siècle) : musique populaire de guitare influencée par le boléro, le son et les genres caribéens. Expansion internationale dans les années 80-90 avec Juan Luis Guerra."**
+
+### De la Bachata Traditionnelle à la Bachata Urbaine
+
+Avec la diffusion mondiale de la bachata depuis les années 2000, de nouveaux styles scéniques et urbains émergent (bachata moderne, urbaine et sensuelle), incorporant des influences du ballroom, jazz, contemporain et danses urbaines. Dans ce contexte apparaissent les cours spécifiques de "ladies styling / lady style", où les femmes travaillent tours, ondulations, lignes et attitude sur la base de la bachata, en couple comme en solo.
+
+**"Le Bachata Lady Style émerge dans les années 2010 avec la globalisation de la bachata sensuelle, quand les danseuses cherchent des espaces pour développer leur technique féminine de façon indépendante."**
+
+### Qu'est-ce que le Bachata Lady Style ?
+
+Le Bachata lady style est la ligne de travail technique et expressif qui développe le style féminin au sein de la bachata moderne. Il se concentre sur l'utilisation des bras (arm styling), dissociation du torse et des hanches, contrôle du poids, marche avec présence et gestuelle féminine, pour que la danseuse puisse briller dans les moments solo ou shines au sein de la danse en couple.
+
+**"Bachata Lady Style : arm styling (travail de bras élégant), body movement (vagues et rolls), travail des hanches (huit, marquages), tours avec spotting, et présence scénique."**
+
+### Éléments Techniques du Bachata Lady Style
+
+Dans les cours de bachata lady style nous travaillons des axes comme :
+
+**Travail des bras :** lignes élégantes, fluidité et coordination avec le torse.
+
+**Body movement :** vagues, rolls, inclinaisons et changements de niveau.
+
+**Hanches :** mouvements latéraux, huit et marquages doux ou accentués.
+
+**Tours :** technique propre, spotting et équilibre.
+
+**Présence scénique :** regard, attitude, musicalité et connexion avec les paroles.
+
+**"Un cours actif de Bachata Lady Style peut brûler 250-400 calories par heure selon l'intensité et l'utilisation de talons."**
+
+### Lady Style et Empowerment Féminin
+
+Comme le salsa lady style, le bachata lady style est devenu un outil d'empowerment féminin dans les écoles de danse du monde entier. Il offre aux femmes un espace pour travailler l'estime de soi, la sensualité et la confiance dans leur mouvement, au-delà du rôle traditionnel de suiveuse.
+
+**"Le Bachata Lady Style est devenu un outil d'empowerment féminin, offrant un espace pour travailler l'estime de soi, la sensualité et la confiance corporelle."**
+
+### Bachata Lady Style à Barcelone
+
+Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre habituelle des académies spécialisées dans les rythmes latins, où la technique de bachata moderne est combinée avec des bases de jazz, contemporain ou urbain pour affiner le style. Dans ce contexte, des écoles comme Farray's International Dance Center intègrent le travail de lady style dans leur approche globale de la danse latine et urbaine, mettant l'accent sur la musicalité, la technique et la personnalité propre de chaque danseuse.
+
+**"Farray's International Dance Center : Bachata Lady Style avec méthodologie propre, groupes réduits, note 4.9/5 sur Google avec plus de 500 avis."**`,
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for Bachata Lady Style =====
+
+  // Donnée citable - Définition officielle
+  bachataLadyCitableDefinicion:
+    'Bachata Lady Style : ligne de travail technique et expressif qui développe le style féminin au sein de la bachata moderne, centré sur le travail des bras, ondulations, hanches et présence scénique.',
+
+  // Donnée citable - Origine historique
+  bachataLadyCitableOrigen:
+    'Le Bachata Lady Style émerge dans les années 2010 avec la globalisation de la bachata sensuelle, quand les danseuses cherchent des espaces pour développer leur technique féminine de façon indépendante.',
+
+  // Donnée citable - Techniques principales
+  bachataLadyCitableTecnicas:
+    'Techniques principales du Bachata Lady Style : arm styling (travail de bras élégant), body movement (vagues et rolls), travail des hanches (huit, marquages), tours avec spotting, et présence scénique.',
+
+  // Donnée citable - Méthodologie
+  bachataLadyCitableMetodologia:
+    "Farray's International Dance Center propose le Bachata Lady Style avec méthodologie propre : technique progressive, groupes réduits, et focus sur l'expression authentique plutôt que l'imitation.",
+
+  // Donnée citable - Évolution globale
+  bachataLadyCitableEvolucionGlobal:
+    "Le Bachata Lady Style s'est étendu mondialement depuis les années 2010, avec des communautés fortes en Europe (Barcelone comme épicentre), Amérique Latine et États-Unis.",
+
+  // Donnée citable - Musique
+  bachataLadyCitableMusica:
+    "Le Bachata Lady Style se travaille sur bachata sensuelle, bachata moderne et bachata urbaine, permettant l'expression corporelle sur musique romantique et contemporaine.",
+
+  // Donnée citable - Empowerment
+  bachataLadyCitableEmpoderamiento:
+    "Le Bachata Lady Style est devenu un outil d'empowerment féminin, offrant un espace pour travailler l'estime de soi, la sensualité et la confiance corporelle.",
+
+  // 3 Facts citables principaux (pour schema et AI)
+  bachataLadyCitableFact1:
+    "Un cours actif de Bachata Lady Style peut brûler 250-400 calories par heure selon l'intensité et l'utilisation de talons.",
+
+  bachataLadyCitableFact2:
+    "Le travail d'ondulations et de dissociation corporelle du Bachata Lady Style améliore la coordination, flexibilité et conscience corporelle.",
+
+  bachataLadyCitableFact3:
+    "Farray's International Dance Center propose des cours de Bachata Lady Style avec une note de 4.9/5 sur Google avec plus de 500 avis.",
+
+  // FAQs
+  bachataLadyFaqTitle: 'Questions Fréquentes sur le Bachata Lady Style',
+  bachataLadyFaqQ1: "Qu'est-ce exactement que le Bachata Lady Style ?",
+  bachataLadyFaqA1:
+    'Le Bachata Lady Style (ou "style dame") est une discipline de danse qui se concentre sur le développement de la technique féminine au sein de la bachata : ondulations, sensualité, travail des hanches, élégance et expression corporelle. Il se pratique principalement de façon individuelle ou en groupe, sans partenaire.',
+  bachataLadyFaqQ2: 'Dois-je savoir danser la bachata pour commencer le Lady Style ?',
+  bachataLadyFaqA2:
+    "Oui, nous recommandons d'avoir au moins 3 mois d'expérience en cours de bachata en couple avant de commencer le Bachata Lady Style. Cela vous permet d'avoir la base rythmique et corporelle nécessaire pour profiter au maximum des cours de technique féminine.",
+  bachataLadyFaqQ3: 'Les cours sont-ils uniquement pour les femmes ?',
+  bachataLadyFaqA3:
+    "Le Lady Style se concentre traditionnellement sur l'expression féminine, mais nos cours sont ouverts à toutes les personnes qui veulent développer ce style de danse.",
+  bachataLadyFaqQ4: 'Ai-je besoin de talons pour les cours ?',
+  bachataLadyFaqA4:
+    'Pour les débutantes, vous pouvez commencer avec des baskets. À mesure que vous progressez, nous recommandons des talons de danse (3-7cm). Nous avons des cours spécifiques de technique en talons.',
+  bachataLadyFaqQ5: 'Quelle est la différence entre Lady Style et Ladies Styling ?',
+  bachataLadyFaqA5:
+    'Ce sont des termes interchangeables. "Lady Style", "Ladies Styling", "Style Féminin" ou "Technique Féminine" désignent tous la même discipline : le développement de l\'expression féminine dans la danse bachata.',
+  bachataLadyFaqQ6: 'Combien de temps faut-il pour voir des résultats ?',
+  bachataLadyFaqA6:
+    'Dès le premier cours vous remarquerez des changements dans votre posture et conscience corporelle. En 2-3 mois de pratique régulière, vous verrez une transformation significative dans votre style et confiance.',
+  bachataLadyFaqQ7: "Puis-je essayer un cours avant de m'inscrire ?",
+  bachataLadyFaqA7:
+    "Selon la saison, le cours d'essai peut être gratuit ou avoir un prix symbolique. L'idée est que vous puissiez expérimenter la Méthode Farray® sans engagement.",
+  bachataLadyFaqQ8: 'Quels vêtements dois-je porter ?',
+  bachataLadyFaqA8:
+    "Des vêtements confortables qui permettent le mouvement. Beaucoup d'élèves préfèrent des robes ou jupes pour pratiquer tours et ondulations, mais ce n'est pas obligatoire. L'important est de vous sentir à l'aise.",
+  bachataLadyFaqQ9: "Le Lady Style m'aidera-t-il à mieux danser en couple ?",
+  bachataLadyFaqA9:
+    'Absolument ! Le Lady Style développe votre technique, élégance et présence. Ces compétences se transfèrent directement à votre danse en couple, faisant de vous une meilleure suiveuse et plus expressive.',
+  bachataLadyFaqQ10: 'Faites-vous des spectacles ou showcases ?',
+  bachataLadyFaqA10:
+    'Oui. Nous avons un gala annuel où les élèves peuvent montrer leur évolution sur une scène professionnelle. Nous organisons aussi des showcases et participons à des événements.',
+  bachataLadyFaqQ11: 'Qui est Yunaisy Farray ?',
+  bachataLadyFaqA11:
+    "Yunaisy Farray est une danseuse et professeure cubaine, membre du CID-UNESCO, formée à l'École Nationale d'Art de Cuba. Elle est la créatrice de la Méthode Farray® et directrice de l'académie.",
+  bachataLadyFaqQ12: "Qu'est-ce que la Méthode Farray® ?",
+  bachataLadyFaqA12:
+    "C'est un système d'enseignement exclusif développé par Yunaisy Farray qui priorise l'expression féminine, l'élégance et la musicalité avant les figures complexes. Il garantit des résultats rapides et solides.",
+  bachataLadyFaqQ13: 'Et si je manque un cours ?',
+  bachataLadyFaqA13:
+    "Si vous avez un abonnement, vous avez 30 jours pour rattraper les cours annulés. Avec un forfait d'heures, vous gérez vos cours de façon flexible depuis l'app de l'académie.",
+  bachataLadyFaqQ14: 'Combien de calories brûle-t-on dans un cours ?',
+  bachataLadyFaqA14:
+    'Un cours de Lady Style brûle entre 300-400 calories par heure, combinant travail cardiovasculaire avec tonification des jambes, fessiers et abdominaux.',
+  bachataLadyFaqQ15: "Où est l'académie et comment puis-je vous contacter ?",
+  bachataLadyFaqA15:
+    'Nous sommes au Calle Entença 100, 08015 Barcelone (à 5 min de Plaza España et Sants).<br><br>📞 Téléphone : +34 622 247 085<br>📧 Email : info@farrayscenter.com<br>🌐 Web : www.farrayscenter.com/contacto',
+
+  // Nearby Areas
+  bachataLadyNearbyTitle: 'Cours de Bachata Lady Style près de chez vous',
+  bachataLadyNearbyDesc:
+    "Nous sommes l'une des académies de référence pour les cours de Bachata Lady Style dans la zone de Plaza España, Sants, Hostafrancs, Les Corts et Eixample Esquerra. Nous accueillons aussi des élèves de Poble Sec, Sant Antoni et L'Hospitalet cherchant une formation en bachata avec méthodologie professionnelle.",
+  bachataLadyNearbySearchText:
+    'Si vous cherchez des cours de bachata lady style à Barcelone, vous êtes à :',
+  bachataLadyNearbyMetro:
+    'Métro : Plaza España (L1, L3), Rocafort (L1) - 5 min à pied, Entença (L5) - 5 min à pied ou Hostafrancs (L1) - 5 min à pied.',
+
+  // Final CTA
+  bachataLadyFinalCTATitle: 'Votre premier cours de Bachata Lady Style vous attend',
+  bachataLadyFinalCTADesc:
+    'Peu importe si vous venez pour vous déconnecter du travail. Pour rencontrer de nouvelles personnes. Pour reconnecter avec votre féminité. Pour prouver que OUI vous pouvez danser avec élégance.\n\nCe qui compte c\'est que vous fassiez le premier pas.\n\nAvec la Méthode Farray® vous n\'apprendrez pas des "trucs". Vous apprendrez à danser avec des fondations. Avec technique. Avec style. Et le plus important : en profitant de chaque minute.',
+  bachataLadyFinalCTA1: 'Devenez Membre Maintenant',
+  bachataLadyFinalCTA1Subtext: 'Places limitées ce mois-ci',
+  bachataLadyFinalCTA2: "Réservez votre Cours d'Essai",
+  bachataLadyFinalCTA2Subtext: 'Valable pour un temps limité',
 };

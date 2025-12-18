@@ -38,7 +38,55 @@
 
   .holographic-text {
     color: white;
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #c82260, 0 0 30px #c82260, 0 0 40px #c82260, 0 0 55px #c82260, 0 0 75px #c82260;
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #c82260,
+      0 0 30px #c82260,
+      0 0 40px #c82260,
+      0 0 55px #c82260,
+      0 0 75px #c82260;
+  }
+
+  /* Calendar event glow effects */
+  .glow-rose {
+    color: #fda4af;
+    text-shadow:
+      0 0 5px #fda4af,
+      0 0 10px #fb7185,
+      0 0 20px #f43f5e,
+      0 0 30px #e11d48,
+      0 0 40px #be123c;
+  }
+
+  .glow-violet {
+    color: #c4b5fd;
+    text-shadow:
+      0 0 5px #c4b5fd,
+      0 0 10px #a78bfa,
+      0 0 20px #8b5cf6,
+      0 0 30px #7c3aed,
+      0 0 40px #6d28d9;
+  }
+
+  .glow-emerald {
+    color: #6ee7b7;
+    text-shadow:
+      0 0 5px #6ee7b7,
+      0 0 10px #34d399,
+      0 0 20px #10b981,
+      0 0 30px #059669,
+      0 0 40px #047857;
+  }
+
+  .glow-cyan {
+    color: #67e8f9;
+    text-shadow:
+      0 0 5px #67e8f9,
+      0 0 10px #22d3ee,
+      0 0 20px #06b6d4,
+      0 0 30px #0891b2,
+      0 0 40px #0e7490;
   }
 
   /* Accessibility: Focus-visible styles for keyboard navigation */
@@ -54,7 +102,7 @@
 
   button:focus-visible,
   a:focus-visible,
-  [role="button"]:focus-visible {
+  [role='button']:focus-visible {
     outline: 2px solid #c82260;
     outline-offset: 2px;
   }
@@ -69,7 +117,9 @@
 
   /* Accessibility: Reduce motion */
   @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;

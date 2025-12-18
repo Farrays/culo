@@ -1209,7 +1209,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                               height="64"
                               loading="lazy"
                               decoding="async"
-                              className="w-full h-full object-contain"
+                              className="w-full h-full object-cover"
                             />
                           </div>
                           <div className="text-neutral/90 font-bold text-xs sm:text-sm text-center">
