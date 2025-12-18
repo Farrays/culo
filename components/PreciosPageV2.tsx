@@ -844,7 +844,9 @@ const PreciosPageV2: React.FC = () => {
                         ))}
                       </div>
                       <blockquote className="flex-grow text-neutral/90 mb-4">
-                        <p className="text-sm leading-relaxed">&ldquo;{t(testimonial.quote)}&rdquo;</p>
+                        <p className="text-sm leading-relaxed">
+                          &ldquo;{t(testimonial.quote)}&rdquo;
+                        </p>
                       </blockquote>
                       <div className="flex items-center gap-3 mt-auto pt-3 border-t border-primary-dark/30">
                         <div>

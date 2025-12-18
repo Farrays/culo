@@ -302,7 +302,6 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
 
       // En desarrollo local, simular exito (la API solo funciona en Vercel)
       if (import.meta.env.DEV) {
-        // eslint-disable-next-line no-console
         console.warn('[DEV] Lead form data:', payload);
         await new Promise(resolve => window.setTimeout(resolve, 1000)); // Simular delay
         setStatus('success');

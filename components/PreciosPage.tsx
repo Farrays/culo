@@ -380,7 +380,7 @@ const PreciosPage: React.FC = () => {
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
                   <UserIcon className="w-5 h-5 text-primary-accent" />
-                  <span>+15.000 socios formados</span>
+                  <span>+15.000 socios</span>
                 </div>
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
@@ -470,10 +470,9 @@ const PreciosPage: React.FC = () => {
                       </ul>
                     </div>
                     <div className="text-center">
-                      <p className="text-6xl md:text-7xl font-black holographic-text mb-2">
+                      <p className="text-6xl md:text-7xl font-black holographic-text">
                         {formatPrice(ENROLLMENT_FEE.price)}
                       </p>
-                      <p className="text-neutral/70">{t('pricing_enrollment_once')}</p>
                     </div>
                   </div>
                 </div>
