@@ -41,7 +41,7 @@ export const es = {
   headerLanguage: 'Idioma',
   navFacilities: 'Instalaciones',
   breadcrumb_services: 'Servicios de Baile',
-  enrollNow: 'Hazte Socio Ahora',
+  enrollNow: 'Descubre Cómo Empezar',
   // Hero
   heroTitle1: 'Tu Escuela de Baile en Barcelona',
   heroTitle2: 'Clases de Danza, Salsa, Bachata, Danza Urbana, y Más',
@@ -84,7 +84,7 @@ export const es = {
   happinessStoryPara4:
     'Un lugar que no copiamos de ningún sitio. Un lugar que no existía… hasta que lo construimos.',
   // About
-  aboutTitle: "Yunaisy Farray: El Alma de Farray's Center",
+  aboutTitle: "Yunaisy Farray: El Alma de Farray\'s Center",
   aboutSubtitle: 'Arte, Rigor y Pasión',
   aboutBio:
     'Con más de dos décadas como artista global y maestra educadora, Yunaisy Farray se ha consolidado como un referente internacional de la danza. Su formación en la prestigiosa Escuela Nacional de Arte de Cuba (ENA) le inculcó una fusión única de disciplina rusa y los ritmos y el sabor de los bailarines afrodescendientes. Ha participado en la taquillera película “Street Dance 2” y cautivó a millones en las finales de “Got Talent”. Además, ha colaborado en diferentes programas de televisión, como “The Dancer”, y cuenta con innumerables participaciones en diversos ámbitos del espectáculo.\n\nComo miembro del CID‑UNESCO y creadora del exclusivo Método Farray®, Yunaisy dirige una escuela que combina rigor, creatividad y resultados rápidos en un ambiente familiar e inclusivo.\n\nSu experiencia transforma cada clase en un viaje cultural y emocional, garantizando una formación de élite para bailarines de todos los niveles.',
@@ -184,7 +184,7 @@ export const es = {
   serviceEventsCTA: 'Descubre Nuestros Eventos',
   serviceMerchandisingTitle: 'Merchandising de la Academia',
   serviceMerchandisingDesc:
-    "Productos exclusivos de Farray's Center. Ropa, accesorios y artículos de baile con el sello de calidad de nuestra academia.",
+    "Productos exclusivos de Farray\'s Center. Ropa, accesorios y artículos de baile con el sello de calidad de nuestra academia.",
   serviceMerchandisingCTA: 'Ver Productos',
   // Teachers
   teachersTitle: 'Conoce a Nuestros Profesores',
@@ -256,7 +256,7 @@ export const es = {
   instagramTitle: 'Únete a Nuestra Comunidad en Instagram',
   instagramHandle: '@farrays_centerbcn',
   // HowToGetHere
-  howToGetHereTitle: "Cómo Llegar a Farray's Center",
+  howToGetHereTitle: "Cómo Llegar a Farray\'s Center",
   howToGetHereIntro:
     'Encuéntranos en el corazón del Eixample Esquerra de Barcelona, perfectamente conectados con toda la ciudad.',
   metroTitle: 'Metro',
@@ -408,7 +408,7 @@ export const es = {
     'Ropa cómoda y deportiva que te permita moverte libremente. Muchos estudiantes usan pantalones deportivos o leggings y una camiseta. Para el calzado, zapatillas deportivas limpias con buena suela son ideales. Trae una botella de agua porque ¡vas a sudar! Opcional: una toalla pequeña y tu mejor actitud.',
 
   // Classes FAQ
-  classesFaqQ1: "¿Cuántos estilos de baile enseñan en Farray's Center?",
+  classesFaqQ1: "¿Cuántos estilos de baile enseñan en Farray\'s Center?",
   classesFaqA1:
     'Ofrecemos formación en más de 25 estilos diferentes de baile. Nuestro catálogo incluye bailes latinos (salsa, bachata, kizomba), danza urbana (hip hop, dancehall, afrobeats, reggaeton), estilos clásicos (ballet, contemporáneo, jazz), y especializaciones como preparación física para bailarines. Esta variedad te permite explorar diferentes estilos y encontrar los que más resuenan contigo, o especializarte en uno mientras complementas con otros.',
   classesFaqQ2: '¿Puedo tomar clases de diferentes estilos al mismo tiempo?',
@@ -423,7 +423,7 @@ export const es = {
   classesFaqQ5: '¿Ofrecen clases privadas o solo grupales?',
   classesFaqA5:
     'Ofrecemos ambas opciones. Las clases grupales son excelentes para aprender en comunidad, hacer amigos y beneficiarte de la energía del grupo. Las clases privadas son ideales si buscas atención personalizada, tienes objetivos específicos (como prepararte para una presentación o boda), o prefieres un horario más flexible. Muchos estudiantes combinan ambas: clases grupales regulares complementadas con sesiones privadas ocasionales para trabajar aspectos específicos.',
-  classesFaqQ6: "¿Dónde está ubicado Farray's Center y cómo llego?",
+  classesFaqQ6: "¿Dónde está ubicado Farray\'s Center y cómo llego?",
   classesFaqA6:
     'Estamos ubicados en Calle Entença 100, Barcelona 08015, en el barrio de Sants. Llegamos fácilmente en metro (L3/L5 - Sants Estació, L1 - Hostafrancs), autobús (líneas 27, 43, 78, 109, H10) o Renfe Cercanías (Estación de Sants). El estudio está a solo 5-7 minutos caminando desde la estación de Sants. También hay estacionamiento público cercano si vienes en coche.',
   classesFaqQ7: '¿Cuáles son los horarios de las clases?',
@@ -761,7 +761,7 @@ export const es = {
   // Testimonials - Dance Classes Hub Barcelona
   danceClassesHub_testimonials_title: 'Testimonios No Solicitados de Nuestros Estudiantes',
   danceClassesHub_testimonials_intro:
-    "Estudiantes de todos los estilos de baile —desde salsa y bachata hasta hip hop, ballet y danza contemporánea— comparten su experiencia auténtica en Farray's Center Barcelona. Sin filtros, sin guiones. Solo historias reales de transformación.",
+    "Estudiantes de todos los estilos de baile —desde salsa y bachata hasta hip hop, ballet y danza contemporánea— comparten su experiencia auténtica en Farray\'s Center Barcelona. Sin filtros, sin guiones. Solo historias reales de transformación.",
 
   // FAQ - Location question
   classesFaqQ9: '¿Dónde están ubicadas las clases de baile en Barcelona?',
@@ -772,7 +772,7 @@ export const es = {
   dancehallImage1Alt:
     "Clases de Dancehall en Barcelona - Estudiantes bailando en Farray's International Dance Center",
   dancehallImage2Alt:
-    "Estudiantes disfrutando de clases de Dancehall en Barcelona - Ambiente energético en Farray's Center",
+    "Estudiantes disfrutando de clases de Dancehall en Barcelona - Ambiente energético en Farray\'s Center",
   dancehallImage3Alt:
     "Grupo de estudiantes bailando Dancehall en Barcelona - Academia de danza urbana Farray's",
 
@@ -782,14 +782,14 @@ export const es = {
 
   // SEO Meta
   dancehallPageTitleV2:
-    "Clases de Dancehall en Barcelona | Puro Dancehall Jamaicano | Farray's Center",
+    "Clases de Dancehall en Barcelona | Puro Dancehall Jamaicano | Farray\'s Center",
   dancehallMetaDescription:
     'Aprende Dancehall auténtico en Barcelona con profesoras expertas. Desde principiantes hasta avanzado. Más que baile: energía, cultura y transformación. Prueba 1 clase gratis.',
 
   // Hero Section
   dancehallHeroTitleV2: 'Clases de Dancehall en Barcelona',
   dancehallHeroSubtitleV2:
-    "Puro Dancehall Jamaicano en Farray's Center. Mucho más que baile, una forma de vivir. Viaja a Jamaica sin salir de Barcelona | Clases desde iniciación hasta avanzado, entre Plaza España y Sants.",
+    "Puro Dancehall Jamaicano en Farray\'s Center. Mucho más que baile, una forma de vivir. Viaja a Jamaica sin salir de Barcelona | Clases desde iniciación hasta avanzado, entre Plaza España y Sants.",
   dancehallCTA1: 'Date de Alta Ahora',
   dancehallCTA2: 'Ver Horarios',
   dancehallUrgency: 'Solo quedan 3 plazas este mes',
@@ -958,7 +958,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   dancehallTeachersSubtitle: 'Increíbles Profesionales, Mejores Personas',
   dancehallTeacher1Specialty: 'Profesora de Dancehall | +5 años de Experiencia',
   dancehallTeacher1Bio:
-    "Isabel López es una apasionada del dancehall con más de 5 años de experiencia como profesora especializada en baile urbano y reggaeton. Entrenada con maestros jamaicanos, su energía contagiosa y técnica profesional la convierten en una de las instructoras más queridas de Farray's Center. Sus clases mezclan old school moves (Willie Bounce, Nuh Linga) con los últimos hits.",
+    "Isabel López es una apasionada del dancehall con más de 5 años de experiencia como profesora especializada en baile urbano y reggaeton. Entrenada con maestros jamaicanos, su energía contagiosa y técnica profesional la convierten en una de las instructoras más queridas de Farray\'s Center. Sus clases mezclan old school moves (Willie Bounce, Nuh Linga) con los últimos hits.",
   dancehallTeacher2Specialty: 'Profesora de Dancehall y Twerk | +6 años de Experiencia',
   dancehallTeacher2Bio:
     'Sandra Gómez es una bailarina profesional con más de 6 años de experiencia en dancehall y twerk. Su estilo único fusiona movimientos del Twerk/Bootydance con la esencia jamaicana. Su técnica impecable y metodología de enseñanza la convierten en una de las profesoras más solicitadas. Energía, sensualidad y feminidad pura.',
@@ -971,7 +971,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   dancehallFaqTitle: 'Preguntas Frecuentes Sobre Nuestra Escuela de Dancehall en Barcelona',
   dancehallFaqQ5: '¿Dónde puedo encontrar clases de Dancehall cerca de Plaza España en Barcelona?',
   dancehallFaqA5:
-    "Farray's Center está ubicado en Calle Entença 100, Barcelona, a solo 5 minutos de Plaza España y Estación de Sants. Contamos con profesoras con amplia experiencia y un ambiente familiar para todos los niveles.",
+    "Farray\'s Center está ubicado en Calle Entença 100, Barcelona, a solo 5 minutos de Plaza España y Estación de Sants. Contamos con profesoras con amplia experiencia y un ambiente familiar para todos los niveles.",
   dancehallFaqQ6: '¿Organizáis eventos o talleres especiales de Dancehall?',
   dancehallFaqA6:
     'Sí, organizamos workshops, masterclasses y eventos sociales durante el año. Síguenos en redes o consulta nuestra web para estar al día. También participamos en los mejores festivales de danza de todo el mundo.',
@@ -1128,7 +1128,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
     "Farray's International Dance Center ofrece clases de Dancehall en una escuela valorada cerca del 5/5 en Google con cientos de reseñas positivas.",
 
   // ===== DancehallPage (Clases de Dancehall Barcelona) =====
-  dhV3PageTitle: "Clases de Dancehall en Barcelona | Academia Farray's Center",
+  dhV3PageTitle: "Clases de Dancehall en Barcelona | Academia Farray\'s Center",
   dhV3MetaDescription:
     'Aprende Dancehall jamaicano auténtico en Barcelona. Clases desde iniciación hasta avanzado. Profesoras expertas. Entre Plaza España y Sants. ¡Prueba gratis!',
 
@@ -1138,7 +1138,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   dhV3BreadcrumbCurrent: 'Clases de Dancehall',
 
   dhV3HeroTitle: 'Clases de Dancehall en Barcelona',
-  dhV3HeroSubtitle: "Puro Dancehall Jamaicano en Farray's Center",
+  dhV3HeroSubtitle: "Puro Dancehall Jamaicano en Farray\'s Center",
   dhV3HeroDesc: 'Mucho más que baile, una forma de vivir.',
   dhV3HeroLocation:
     'Viaja a Jamaica sin salir de Barcelona | Clases desde iniciación hasta avanzado, entre Plaza España y Sants',
@@ -1202,12 +1202,12 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   dhV3Transform6Title: 'Aprendes movimientos nuevos cada semana',
   dhV3Transform6Desc: 'Más flow, más estilo, más tú.',
   dhV3TransformClosing1:
-    "Decenas de personas ya lo viven cada semana en nuestras clases de Dancehall en Farray's Center, a solo 5 minutos de Plaza España y Estación de Sants. Y cuando salen… ya no son los mismos.",
+    "Decenas de personas ya lo viven cada semana en nuestras clases de Dancehall en Farray\'s Center, a solo 5 minutos de Plaza España y Estación de Sants. Y cuando salen… ya no son los mismos.",
   dhV3TransformClosing2:
     'Si todavía no bailas Dancehall, estás perdiendo una oportunidad de mejorar tu vida. ¡Nosotros te ayudamos!',
-  dhV3TransformCTA: "¿Por qué elegir Farray's Center como tu academia de Dancehall en Barcelona?",
+  dhV3TransformCTA: "¿Por qué elegir Farray\'s Center como tu academia de Dancehall en Barcelona?",
 
-  dhV3WhyChooseTitle: "¿Por qué elegir Farray's Center?",
+  dhV3WhyChooseTitle: "¿Por qué elegir Farray\'s Center?",
   dhV3WhyChooseSubtitle:
     "En Barcelona existen muchas escuelas de Dancehall, pero pocas con verdadera trayectoria. En Farray's International Dance Center llevamos más de 8 años enseñando Dancehall auténtico.",
   dhV3WhyChoose1Title: 'Academia reconocida por el CID UNESCO',
@@ -1240,7 +1240,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   dhV3TeachersSubtitle: 'Expertas en Dancehall con años de experiencia',
   dhV3Teacher1Specialty: 'Profesora de Dancehall | +5 años de Experiencia',
   dhV3Teacher1Bio:
-    "Isabel López es una apasionada del dancehall con más de 5 años de experiencia como profesora especializada en baile urbano. Entrenada con maestros jamaicanos, su energía contagiosa y técnica profesional la convierten en una de las instructoras más queridas de Farray's Center. Sus clases mezclan old school moves (Willie Bounce, Nuh Linga) con los últimos hits.",
+    "Isabel López es una apasionada del dancehall con más de 5 años de experiencia como profesora especializada en baile urbano. Entrenada con maestros jamaicanos, su energía contagiosa y técnica profesional la convierten en una de las instructoras más queridas de Farray\'s Center. Sus clases mezclan old school moves (Willie Bounce, Nuh Linga) con los últimos hits.",
   dhV3Teacher2Specialty: 'Profesora de Dancehall y Twerk | +6 años de Experiencia',
   dhV3Teacher2Bio:
     'Sandra Gómez es una bailarina profesional con más de 6 años de experiencia en dancehall y twerk. Su estilo único fusiona movimientos del Twerk/Bootydance con la esencia jamaicana. Su técnica impecable y metodología de enseñanza la convierten en una de las profesoras más solicitadas. Energía, sensualidad y feminidad pura.',
@@ -1321,7 +1321,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   dhV3CompareTitle: "¿Por qué aprender Dancehall en Farray's y no en otra academia de Barcelona?",
   dhV3CompareSubtitle: 'La diferencia no es marketing. Son hechos.',
   dhV3CompareColOthers: 'Otras academias',
-  dhV3CompareColFarrays: "Farray's Center",
+  dhV3CompareColFarrays: "Farray\'s Center",
 
   // Row 1 - Formación de profesores
   dhV3CompareRow1Label: 'Formación de profesores',
@@ -1516,7 +1516,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // DANZA BARCELONA PAGE (Category Pillar Page)
   // ====================
   danzaBarcelona_title:
-    "Clases de Danza en Barcelona | Ballet, Contemporáneo y Jazz | Farray's Center",
+    "Clases de Danza en Barcelona | Ballet, Contemporáneo y Jazz | Farray\'s Center",
   danzaBarcelona_description:
     'Descubre nuestras clases de danza en Barcelona: Ballet Clásico Cubano, Danza Contemporánea, Modern Jazz, Afro Jazz y más. Academia reconocida por CID-UNESCO. Reserva tu clase de prueba.',
   danzaBarcelona_breadcrumb_home: 'Inicio',
@@ -1524,14 +1524,14 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   danzaBarcelona_breadcrumb_current: 'Clases de Danza en Barcelona',
   danzaBarcelona_h1: 'Clases de Danza en Barcelona',
   danzaBarcelona_intro:
-    "Explora la técnica, elegancia y expresión de la danza clásica y contemporánea en Barcelona. En Farray's Center ofrecemos formación de élite en Ballet Clásico (Escuela Cubana), Danza Contemporánea, Modern Jazz, Afro Jazz y Afro Contemporáneo con el exclusivo Método Farray® creado por Yunaisy Farray y profesores graduados de la Escuela Nacional de Arte de Cuba.",
+    "Explora la técnica, elegancia y expresión de la danza clásica y contemporánea en Barcelona. En Farray\'s Center ofrecemos formación de élite en Ballet Clásico (Escuela Cubana), Danza Contemporánea, Modern Jazz, Afro Jazz y Afro Contemporáneo con el exclusivo Método Farray® creado por Yunaisy Farray y profesores graduados de la Escuela Nacional de Arte de Cuba.",
 
   // What is Dance Section (Point 1 - SEO CRITICAL)
   danzaBarcelona_whatIs_title: '¿Qué es la Danza Clásica y Contemporánea?',
   danzaBarcelona_whatIs_definition:
     'La danza clásica y contemporánea son disciplinas artísticas que combinan técnica, expresión corporal y arte escénico. El Ballet Clásico es la base técnica de todas las danzas: postura, alineación, colocación, turnout, extensión, control y vocabulario universal de pasos. La Danza Contemporánea nace como evolución del ballet clásico y la danza moderna, incorporando movimientos de suelo, fluidez, peso, gravedad y expresión emocional sin límites académicos.',
   danzaBarcelona_whatIs_schools:
-    "Existen diferentes escuelas de ballet clásico: la Escuela Rusa (Vaganova), la Escuela Francesa (Cecchetti), la Escuela Italiana, la Escuela Inglesa (Royal Academy of Dance) y la Escuela Cubana. En Farray's Center enseñamos la Escuela Cubana de Ballet, reconocida mundialmente por combinar el rigor técnico ruso con la musicalidad, expresividad y fuerza física caribeña.",
+    "Existen diferentes escuelas de ballet clásico: la Escuela Rusa (Vaganova), la Escuela Francesa (Cecchetti), la Escuela Italiana, la Escuela Inglesa (Royal Academy of Dance) y la Escuela Cubana. En Farray\'s Center enseñamos la Escuela Cubana de Ballet, reconocida mundialmente por combinar el rigor técnico ruso con la musicalidad, expresividad y fuerza física caribeña.",
   danzaBarcelona_whatIs_contemporary_title: '¿Qué es la Danza Contemporánea?',
   danzaBarcelona_whatIs_contemporary_text:
     'La Danza Contemporánea es un estilo libre que fusiona ballet clásico, danza moderna, técnicas de suelo (floor work), release, contact improvisation y expresión emocional. Permite explorar movimientos orgánicos, peso del cuerpo, caídas controladas, improvisación y narrativa personal. Es perfecta para quienes buscan libertad expresiva con base técnica.',
@@ -1601,7 +1601,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   danzaBarcelona_whichStyle_combine_text:
     'Absolutamente. De hecho, lo recomendamos. Combinar Ballet Clásico y Danza Contemporánea o Modern Jazz y Afro Jazz te da versatilidad técnica. Muchos bailarines entrenan múltiples disciplinas para ser más completos.',
 
-  danzaBarcelona_why_title: "¿Por qué estudiar danza en Farray's Center?",
+  danzaBarcelona_why_title: "¿Por qué estudiar danza en Farray\'s Center?",
   danzaBarcelona_why_reason1_title: 'Escuela Cubana de Ballet',
   danzaBarcelona_why_reason1_desc:
     'Formación con la prestigiosa metodología cubana, reconocida mundialmente por su rigor, disciplina y resultados excepcionales.',
@@ -1637,7 +1637,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // FAQ - Danza Barcelona
   danzaBarcelona_faq_title: 'Preguntas frecuentes sobre nuestras clases de danza en Barcelona',
 
-  danzaFaqQ1: "¿Qué estilos de danza enseñan en Farray's Center Barcelona?",
+  danzaFaqQ1: "¿Qué estilos de danza enseñan en Farray\'s Center Barcelona?",
   danzaFaqA1:
     'Enseñamos Ballet Clásico (Escuela Cubana), Danza Contemporánea (Lírico y Suelo & Flow), Modern Jazz, Afro Jazz (Técnica Cubana) y Afro Contemporáneo (Técnica Cubana). También ofrecemos Stretching específico para bailarines.',
 
@@ -1688,13 +1688,13 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // Testimonials - Danza Barcelona
   danzaBarcelona_testimonials_title: 'Testimonios No Solicitados de Nuestros Estudiantes',
   danzaBarcelona_testimonials_intro:
-    "Estudiantes de ballet clásico, danza contemporánea, jazz y afro contemporáneo comparten su experiencia auténtica en Farray's Center Barcelona. Sin filtros, sin guiones. Solo historias reales de transformación.",
+    "Estudiantes de ballet clásico, danza contemporánea, jazz y afro contemporáneo comparten su experiencia auténtica en Farray\'s Center Barcelona. Sin filtros, sin guiones. Solo historias reales de transformación.",
 
   // ==========================================
   // SALSA Y BACHATA BARCELONA PAGE
   // ==========================================
   salsaBachataBarcelona_title:
-    "Clases de Salsa y Bachata en Barcelona | Salsa Cubana, Bachata Sensual y más | Farray's Center",
+    "Clases de Salsa y Bachata en Barcelona | Salsa Cubana, Bachata Sensual y más | Farray\'s Center",
   salsaBachataBarcelona_description:
     'Aprende a bailar Salsa Cubana, Bachata Sensual y Dominicana, Timba, Son y más en Barcelona. Escuela fundada por maestros cubanos con experiencia en las mejores academias de La Habana. Reserva tu clase de prueba.',
   salsaBachataBarcelona_breadcrumb_home: 'Inicio',
@@ -1703,7 +1703,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   salsaBachataBarcelona_breadcrumb_current: 'Clases de Salsa y Bachata en Barcelona',
   salsaBachataBarcelona_h1: 'Clases de Salsa y Bachata en Barcelona',
   salsaBachataBarcelona_intro:
-    "En Farray's Center no solo aprendes coreografías: aprendes a bailar de verdad. Enseñamos Salsa Cubana, Bachata, Timba, Lady Style y Folklore desde la raíz, con musicalidad, técnica y propiedad corporal. Con el exclusivo Método Farray® creado por Yunaisy Farray y profesores cubanos formados en La Habana con trayectoria internacional, te enseñamos a entender el movimiento, dominar tu estilo y bailar con calidad, presencia y sentido. Si buscas avanzar de verdad este es tu lugar.",
+    "En Farray\'s Center no solo aprendes coreografías: aprendes a bailar de verdad. Enseñamos Salsa Cubana, Bachata, Timba, Lady Style y Folklore desde la raíz, con musicalidad, técnica y propiedad corporal. Con el exclusivo Método Farray® creado por Yunaisy Farray y profesores cubanos formados en La Habana con trayectoria internacional, te enseñamos a entender el movimiento, dominar tu estilo y bailar con calidad, presencia y sentido. Si buscas avanzar de verdad este es tu lugar.",
 
   salsaBachataBarcelona_styles_title: 'Estilos de Salsa y Bachata que Ofrecemos',
   salsaBachataBarcelona_styles_description:
@@ -1728,9 +1728,9 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   salsaBachataBarcelona_faq_title: 'Preguntas Frecuentes sobre nuestra academia Salsa y Bachata',
 
   // FAQs optimizadas para AI search engines (10 preguntas)
-  salsaBachataFaqQ1: "¿Qué estilos de salsa y bachata se enseñan en Farray's Center Barcelona?",
+  salsaBachataFaqQ1: "¿Qué estilos de salsa y bachata se enseñan en Farray\'s Center Barcelona?",
   salsaBachataFaqA1:
-    "En Farray's Center enseñamos Salsa Cubana, Bachata Sensual, Bachata Lady Style, Timba Cubana, Son Cubano, Salsa Lady Style, Salsa Lady Timba, Men Style y Folklore Cubano. Nuestros profesores son graduados de la Escuela Nacional de Arte de Cuba y tienen experiencia en las mejores academias de La Habana, garantizando autenticidad y calidad en cada clase.",
+    "En Farray\'s Center enseñamos Salsa Cubana, Bachata Sensual, Bachata Lady Style, Timba Cubana, Son Cubano, Salsa Lady Style, Salsa Lady Timba, Men Style y Folklore Cubano. Nuestros profesores son graduados de la Escuela Nacional de Arte de Cuba y tienen experiencia en las mejores academias de La Habana, garantizando autenticidad y calidad en cada clase.",
 
   salsaBachataFaqQ2: '¿Necesito venir con pareja para las clases de salsa o bachata?',
   salsaBachataFaqA2:
@@ -1778,7 +1778,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // Testimonials - Salsa y Bachata Barcelona
   salsaBachataBarcelona_testimonials_title: 'Testimonios No Solicitados de Nuestros Estudiantes',
   salsaBachataBarcelona_testimonials_intro:
-    "Estudiantes de salsa cubana, bachata sensual, timba y folklore cubano comparten su experiencia auténtica en Farray's Center Barcelona. Sin filtros, sin guiones. Solo historias reales de transformación bailando ritmos latinos.",
+    "Estudiantes de salsa cubana, bachata sensual, timba y folklore cubano comparten su experiencia auténtica en Farray\'s Center Barcelona. Sin filtros, sin guiones. Solo historias reales de transformación bailando ritmos latinos.",
 
   // Point 1 - What is Salsa y Bachata Section
   salsaBachata_whatIs_title: '¿Qué es la Salsa Cubana y la Bachata?',
@@ -1870,13 +1870,13 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   danzasUrbanas_title:
     'Danzas Urbanas en Barcelona | Guía de Estilos: Dancehall, Twerk, Afrobeats, Hip Hop...',
   danzasUrbanas_description:
-    "¿Qué estilo de danza urbana va contigo? Descubre Dancehall, Twerk, Afrobeats, Hip Hop Reggaeton y Sexy Reggaeton en Barcelona. Compara estilos, niveles y profesores. Academia Farray's Center.",
+    "¿Qué estilo de danza urbana va contigo? Descubre Dancehall, Twerk, Afrobeats, Hip Hop Reggaeton y Sexy Reggaeton en Barcelona. Compara estilos, niveles y profesores. Academia Farray\'s Center.",
   danzasUrbanas_breadcrumb_home: 'Inicio',
   danzasUrbanas_breadcrumb_classes: 'Clases de Baile en Barcelona',
   danzasUrbanas_breadcrumb_current: 'Danzas Urbanas',
   danzasUrbanas_h1: 'Danzas Urbanas en Barcelona: Encuentra tu Estilo',
   danzasUrbanas_intro:
-    "En Farray's Center entrenas Dancehall, Hip Hop, Twerk, Reggaetón, Heels y más con el exclusivo Método Farray® creado por Yunaisy Farray (bailarina de Street Dance 2) y profesores especialistas que te enseñan desde la base: musicalidad, coordinación, energía, presencia… y Flow, mucho flow. Ponte en forma, libera estrés y disfruta de una actividad deportiva que NO aburre: cada clase es diferente, dinámica y llena de buen rollo.",
+    "En Farray\'s Center entrenas Dancehall, Hip Hop, Twerk, Reggaetón, Heels y más con el exclusivo Método Farray® creado por Yunaisy Farray (bailarina de Street Dance 2) y profesores especialistas que te enseñan desde la base: musicalidad, coordinación, energía, presencia… y Flow, mucho flow. Ponte en forma, libera estrés y disfruta de una actividad deportiva que NO aburre: cada clase es diferente, dinámica y llena de buen rollo.",
 
   // What is Urban Dance Section
   danzasUrbanas_whatIs_title: '¿Qué son las Danzas Urbanas?',
@@ -2017,7 +2017,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   danzasUrbanas_faq_title:
     'Preguntas frecuentes sobre nuestras clases de danzas urbanas en Barcelona',
 
-  urbanFaqQ1: "¿Qué estilos de danzas urbanas enseñan en Farray's Center Barcelona?",
+  urbanFaqQ1: "¿Qué estilos de danzas urbanas enseñan en Farray\'s Center Barcelona?",
   urbanFaqA1:
     'Tenemos 11 estilos urbanos: Hip Hop (Old School y New Style), Dancehall jamaicano, K-Pop, Reggaeton Cubano, Sexy Reggaeton, Twerk, Afrobeat, Femmology Heels, Commercial Dance, Sexy Style e Hip Hop Reggaeton. Cada estilo con clases específicas por niveles.',
 
@@ -2025,7 +2025,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   urbanFaqA2:
     'No. Tenemos grupos para principiantes absolutos que nunca han bailado urbano. Cada estilo tiene niveles desde iniciación hasta avanzado. Aprenderás los fundamentos paso a paso con profesores especializados.',
 
-  urbanFaqQ3: "¿Qué diferencia tiene el Dancehall de Farray's Center de otras escuelas?",
+  urbanFaqQ3: "¿Qué diferencia tiene el Dancehall de Farray\'s Center de otras escuelas?",
   urbanFaqA3:
     'Enseñamos Dancehall jamaicano tal como se baila en Kingston, con los steps que marcan tendencia en la escena mundial: Wacky Dip, Willy Bounce, Log On, Nuh Linga. Aprendes el vocabulario original con el flow caribeño real, no adaptaciones. Formación directa de la fuente.',
 
@@ -2068,13 +2068,13 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // Testimonials - Danzas Urbanas Barcelona
   danzasUrbanas_testimonials_title: 'Testimonios No Solicitados de Nuestros Estudiantes',
   danzasUrbanas_testimonials_intro:
-    "Estudiantes de hip hop, dancehall, reggaeton, k-pop, twerk y heels comparten su experiencia auténtica en Farray's Center Barcelona. Sin filtros, sin guiones. Solo historias reales de transformación bailando danzas urbanas.",
+    "Estudiantes de hip hop, dancehall, reggaeton, k-pop, twerk y heels comparten su experiencia auténtica en Farray\'s Center Barcelona. Sin filtros, sin guiones. Solo historias reales de transformación bailando danzas urbanas.",
 
   // ==========================================
   // PREPARACIÓN FÍSICA BAILARINES BARCELONA PAGE
   // ==========================================
   prepFisica_title:
-    "Entrenamiento para Bailarines en Barcelona | Entrenamiento Especializado | Farray's Center",
+    "Entrenamiento para Bailarines en Barcelona | Entrenamiento Especializado | Farray\'s Center",
   prepFisica_description:
     'Entrenamiento para bailarines específico en Barcelona. Fuerza, flexibilidad, prevención de lesiones y mejora del rendimiento. Entrenamiento adaptado a las necesidades del bailarín profesional.',
   prepFisica_breadcrumb_home: 'Inicio',
@@ -2082,7 +2082,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   prepFisica_breadcrumb_current: 'Entrenamiento para Bailarines',
   prepFisica_h1: 'Entrenamiento para Bailarines en Barcelona',
   prepFisica_intro:
-    "En Farray's Center entrenamos tu cuerpo con un enfoque 100% diseñado para bailarines. No es gimnasio convencional: es entrenamiento específico que mejora tu rendimiento en clase, previene lesiones, aumenta tu fuerza funcional, amplía tu rango de movimiento y optimiza tu resistencia. Entrena con el exclusivo Método Farray® creado por Yunaisy Farray (bailarina de Street Dance 2) y profesores especializados que entienden las demandas reales de la danza y llevan tu físico al siguiente nivel.",
+    "En Farray\'s Center entrenamos tu cuerpo con un enfoque 100% diseñado para bailarines. No es gimnasio convencional: es entrenamiento específico que mejora tu rendimiento en clase, previene lesiones, aumenta tu fuerza funcional, amplía tu rango de movimiento y optimiza tu resistencia. Entrena con el exclusivo Método Farray® creado por Yunaisy Farray (bailarina de Street Dance 2) y profesores especializados que entienden las demandas reales de la danza y llevan tu físico al siguiente nivel.",
 
   prepFisica_activities_title: 'Actividades de Entrenamiento para Bailarines que Ofrecemos',
   prepFisica_activities_description:
@@ -2172,7 +2172,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   prepFisica_whichActivity_combine_text:
     'Absolutamente sí. De hecho, lo recomendamos. La combinación ideal: 2-3 sesiones de danza + 1-2 sesiones de preparación física por semana. Alterna fuerza (Body Conditioning) con flexibilidad (Stretching/Yoga) para desarrollo equilibrado.',
 
-  prepFisica_why_title: "Por qué entrenar danza en Farray's Center",
+  prepFisica_why_title: "Por qué entrenar danza en Farray\'s Center",
 
   // Why pillars
   prepFisica_why_farray_method_title: 'Método Farray®',
@@ -2257,7 +2257,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // Testimonials - Preparación Física Bailarines
   prepFisica_testimonials_title: 'Testimonios No Solicitados de Nuestros Estudiantes',
   prepFisica_testimonials_intro:
-    "Bailarines que están mejorando su rendimiento con nuestro entrenamiento especializado comparten su experiencia auténtica en Farray's Center Barcelona. Sin filtros, sin guiones. Solo historias reales de transformación física y técnica.",
+    "Bailarines que están mejorando su rendimiento con nuestro entrenamiento especializado comparten su experiencia auténtica en Farray\'s Center Barcelona. Sin filtros, sin guiones. Solo historias reales de transformación física y técnica.",
 
   // About Page (Sobre Nosotros)
   about_page_title: 'Sobre Nosotros',
@@ -2290,7 +2290,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   about_vision_p2:
     'Yunaisy se propuso crear un espacio que no solo ofrezca clases de muchos tipos de danza, sino que reúna una multitud de disciplinas con un fin común: nutrir y cuidar el cuerpo y el alma de todas las personas que acudan a él.',
   about_vision_p3:
-    "Después de dos años recorriendo incansablemente cada rincón de la Ciudad Condal en busca de un lugar que pudiera albergar un proyecto de tal envergadura, en 2017 el local ideal para Farray's Center pasa de ser un sueño a convertirse en realidad.",
+    "Después de dos años recorriendo incansablemente cada rincón de la Ciudad Condal en busca de un lugar que pudiera albergar un proyecto de tal envergadura, en 2017 el local ideal para Farray\'s Center pasa de ser un sueño a convertirse en realidad.",
 
   // Today's Farray's Section
   about_today_title: "Farray's Hoy",
@@ -2307,7 +2307,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   about_mission_p1:
     'Este centro persigue, como objetivos principales, por un lado, fomentar el deporte y el movimiento a través de la danza y proporcionar servicios que permitan un cuidado completo del cuerpo y del alma y, por otro, generar oportunidades y hacer realidad los sueños de quienes aspiran a bailar, crecer y expresarse.',
   about_mission_p2:
-    "Participar en competiciones y formar bailarines y artistas de nivel mundial de todas las edades es una de las prioridades de Farray's Center, pero también lo es acompañar a personas que simplemente quieren mejorar su salud física y mental a través de la danza.",
+    "Participar en competiciones y formar bailarines y artistas de nivel mundial de todas las edades es una de las prioridades de Farray\'s Center, pero también lo es acompañar a personas que simplemente quieren mejorar su salud física y mental a través de la danza.",
   about_mission_highlight:
     'La danza es mucho más que una disciplina o un arte, es la manera que tenemos las personas de conectar con nuestro cuerpo, de reencontrarnos con los sentimientos más profundos y con la verdadera esencia de nuestro ser.',
 
@@ -2321,7 +2321,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // Values Section
   about_values_title: 'Nuestros Valores',
   about_values_intro:
-    "Los principios que guían cada decisión, cada clase y cada momento en Farray's Center",
+    "Los principios que guían cada decisión, cada clase y cada momento en Farray\'s Center",
 
   about_value_love_title: 'Amor por la Danza',
   about_value_love_content:
@@ -2356,7 +2356,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   about_final_cta_title: 'Únete a Nuestra Historia',
   about_final_cta_subtitle: 'Forma parte del sueño que cambió la danza en Barcelona',
   about_final_cta_description:
-    "Más de 15.000 personas ya han pasado por Farray's Center. Descubre por qué somos diferentes.",
+    "Más de 15.000 personas ya han pasado por Farray\'s Center. Descubre por qué somos diferentes.",
 
   // Contact Page
   contact_page_title: 'Contacto',
@@ -2419,7 +2419,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   merchandising_add_to_cart: 'Comprar',
   merchandising_info_title: '¿Quieres Comprar Nuestros Productos?',
   merchandising_info_text:
-    "Visítanos en la recepción de Farray's Center o contáctanos para realizar tu pedido. Todos nuestros productos están disponibles para estudiantes y fans de la escuela.",
+    "Visítanos en la recepción de Farray\'s Center o contáctanos para realizar tu pedido. Todos nuestros productos están disponibles para estudiantes y fans de la escuela.",
   merchandising_contact_us: 'Contáctanos',
 
   // 404 Not Found Page
@@ -2479,7 +2479,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   yunaisyFarray_barcelona_p4:
     'En 2015 crea "Ladies Revolution", un evento dedicado a la mujer que tiene impacto mundial, no solo a nivel artístico sino también social. En 2016 funda la D&Y Dance Company (2016–2020), una compañía que transforma el concepto de las compañías de baile cubano en España. Muchos de los bailarines que se han formado con ella en esta etapa son hoy profesores en otras escuelas y referentes en el sector. Es también la creadora de la compañía femenina Farray\'s Ladies Project, con un impacto nacional e internacional, que impulsa una visión poderosa, técnica y respetuosa de la feminidad sobre el escenario.',
   yunaisyFarray_barcelona_p5:
-    "El 12 de febrero de 2017, Yunaisy cumple uno de sus sueños: inaugura, en el corazón de Barcelona, Farray's Center, que poco después se convierte en Farray's International Dance Center: un centro global de 700m² donde conviven disciplinas como contemporáneo, ballet, salsa, reggaetón, hip-hop, heels, danza, stretching, preparación física, acrobacias… y un enfoque profundo de cuidado del cuerpo y la mente.",
+    "El 12 de febrero de 2017, Yunaisy cumple uno de sus sueños: inaugura, en el corazón de Barcelona, Farray\'s Center, que poco después se convierte en Farray's International Dance Center: un centro global de 700m² donde conviven disciplinas como contemporáneo, ballet, salsa, reggaetón, hip-hop, heels, danza, stretching, preparación física, acrobacias… y un enfoque profundo de cuidado del cuerpo y la mente.",
   yunaisyFarray_barcelona_p6:
     "Hoy, Farray's International Dance Center es mucho más que una escuela: es un espacio donde cada persona puede descubrir su propia forma de bailar y expresarse.",
 
@@ -2517,7 +2517,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   yunaisyFarray_social_point1:
     "Farray's Solidario, durante la pandemia: una semana de clases online gratuitas, donde las donaciones se destinaron al Hospital de Igualada y a la asociación de personas sin techo de Madrid.",
   yunaisyFarray_social_point2:
-    "Recogidas de ropa y comida para Ucrania y para África, movilizando a toda la comunidad de Farray's Center.",
+    "Recogidas de ropa y comida para Ucrania y para África, movilizando a toda la comunidad de Farray\'s Center.",
   yunaisyFarray_social_point3:
     'Campañas de recogida de alimentos y suministros destinados a protectoras de animales.',
   yunaisyFarray_social_point4:
@@ -2544,7 +2544,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   // ==================== REGALA BAILE PAGE ====================
   regalaBaile_page_title:
-    "Regala Baile - Tarjeta Regalo Clases de Baile Barcelona | Farray's Center",
+    "Regala Baile - Tarjeta Regalo Clases de Baile Barcelona | Farray\'s Center",
   regalaBaile_meta_description:
     'Tarjeta regalo para clases de baile en Barcelona. El regalo perfecto para cumpleaños y ocasiones especiales. Salsa, bachata, dancehall y más.',
   regalaBaile_breadcrumb_home: 'Inicio',
@@ -2565,7 +2565,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
     'Bailar aumenta la autoestima, mejora la postura y la presencia. Tu ser querido descubrirá una versión más segura y radiante de sí mismo.',
   regalaBaile_benefit3_title: 'Regala Conexiones',
   regalaBaile_benefit3_desc:
-    "En Farray's Center se crean amistades auténticas. Regala la oportunidad de conocer gente increíble que comparte la misma pasión por el baile.",
+    "En Farray\'s Center se crean amistades auténticas. Regala la oportunidad de conocer gente increíble que comparte la misma pasión por el baile.",
   regalaBaile_benefit4_title: 'Regala una Experiencia Única',
   regalaBaile_benefit4_desc:
     'No es un objeto que quedará olvidado. Es una experiencia que se recordará para siempre, con profesores de talla mundial y el Método Farray reconocido internacionalmente.',
@@ -2599,7 +2599,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   regalaBaile_occasion6: 'Porque Sí',
   regalaBaile_quote:
     'El mejor regalo que me han hecho nunca. No solo aprendí a bailar, encontré una familia y descubrí una versión de mí que no conocía. Gracias por este regalo que cambió mi vida.',
-  regalaBaile_quote_author: "Alumna de Farray's Center",
+  regalaBaile_quote_author: "Alumna de Farray\'s Center",
   regalaBaile_faq_title: 'Preguntas Frecuentes sobre Tarjetas Regalo',
   regalaBaile_faq1_q: '¿Tienen fecha de caducidad las tarjetas regalo?',
   regalaBaile_faq1_a:
@@ -2710,7 +2710,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   // ==================== CLASES PARTICULARES PAGE ====================
   particularesPage_title:
-    "Clases Particulares de Baile en Barcelona | Personalizado y a Tu Ritmo | Farray's Center",
+    "Clases Particulares de Baile en Barcelona | Personalizado y a Tu Ritmo | Farray\'s Center",
   particularesPage_description:
     'Clases particulares de baile en Barcelona 100% personalizadas. Profesor exclusivo, horarios flexibles, todos los estilos. Aprende 3x más rápido.',
   particularesPage_breadcrumb_home: 'Inicio',
@@ -2858,7 +2858,8 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
     'Combina lo mejor de ambos mundos: aprendizaje acelerado con la energía de un grupo pequeño y privado. Perfecto para amigos, parejas o familias que quieren aprender juntos, compartir costos y mantener un ambiente íntimo. Más económico que clases particulares individuales, pero con atención mucho más personalizada que clases grupales regulares.',
 
   // Why Choose Section
-  particularesPage_whyChoose_title: "¿Por Qué Elegir Farray's Center Para Tus Clases Particulares?",
+  particularesPage_whyChoose_title:
+    "¿Por Qué Elegir Farray\'s Center Para Tus Clases Particulares?",
   particularesPage_whyChoose_p1:
     'Con más de 8 años de experiencia formando bailarines profesionales y aficionados, Farray\'s International Dance Center es la academia de baile de referencia en Barcelona. Nuestro equipo de profesores está integrado por bailarines profesionales activos, muchos de ellos con carreras internacionales, que dominan el revolucionario "Método Farray®": una metodología única que combina técnica clásica, creatividad contemporánea y pedagogía moderna para acelerar tu aprendizaje.',
   particularesPage_whyChoose_p2:
@@ -2912,12 +2913,12 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // FAQ Page
   faq_page_title: 'Preguntas Frecuentes',
   faq_page_description:
-    "Encuentra respuestas a las preguntas más frecuentes sobre reservas, gestión de cuenta, pagos y otros temas relacionados con Farray's Center.",
+    "Encuentra respuestas a las preguntas más frecuentes sobre reservas, gestión de cuenta, pagos y otros temas relacionados con Farray\'s Center.",
   faq_breadcrumb_home: 'Inicio',
   faq_breadcrumb_current: 'Preguntas Frecuentes',
   faq_hero_title: 'Preguntas Frecuentes',
   faq_hero_subtitle:
-    "Todo lo que necesitas saber sobre reservas, gestión de cuenta y pagos en Farray's Center",
+    "Todo lo que necesitas saber sobre reservas, gestión de cuenta y pagos en Farray\'s Center",
 
   // FAQ Categories
   faq_category_reservas_title: 'Reservas y Altas',
@@ -3020,19 +3021,19 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   // FAQ - Otras Cuestiones
   faq_otras_1_q:
-    "Y si nunca he bailado, ¿las clases de baile de Farray's Center también son para mí?",
+    "Y si nunca he bailado, ¿las clases de baile de Farray\'s Center también son para mí?",
   faq_otras_1_a:
     '<p>Si nunca has bailado, por supuesto que tenemos clases para ti. Más del 30% de nuestras clases están recomendadas para estudiantes principiantes.</p><p class="mt-3">En nuestras clases aprenderás a bailar desde cero y te ayudaremos a crear las bases para que tu aprendizaje sea sólido y eficaz.</p>',
 
   faq_otras_2_q: 'Ya sé bailar, ¿me puedo apuntar a vuestras clases?',
   faq_otras_2_a:
-    "<p>Por supuesto que sí. Si sientes que tu forma de bailar no evoluciona, quieres mejorar y no sabes dónde ir o simplemente necesitas cambiar de aires, Farray's Center es tu lugar.</p>",
+    "<p>Por supuesto que sí. Si sientes que tu forma de bailar no evoluciona, quieres mejorar y no sabes dónde ir o simplemente necesitas cambiar de aires, Farray\'s Center es tu lugar.</p>",
 
-  faq_otras_3_q: "¿Cómo funcionan los cursos en Farray's Center?",
+  faq_otras_3_q: "¿Cómo funcionan los cursos en Farray\'s Center?",
   faq_otras_3_a:
     '<p>Los cursos se imparten presencialmente de lunes a viernes de 18h a 23h. Tenemos más de 25 estilos diferentes distribuidos en más de 100 horas a la semana.</p><p class="mt-3">El curso 2025-2026 empieza el 1 de septiembre de 2025 y termina el 28 de julio de 2026.</p><p class="mt-3">Si puedes asistir con regularidad, te recomendamos las cuotas mensuales, trimestrales, semestrales o anuales. Con estas cuotas, cada semana, tienes que venir siempre a las clases a las cuales te diste de alta. Puedes hacer dos cursos diferentes, por ejemplo, pero debes asistir siempre a las mismas clases; mismo día y misma hora.</p><p class="mt-3">Si necesitas flexibilidad de horarios, sea porque trabajas por turnos o tu rutina no te permite venir de forma regular, tenemos abonos de horas en que solo usas las clases que reserves y puedes reservar diferentes estilos a tu antojo (siempre y cuando haya plaza), desde la aplicación de la academia.</p><p class="mt-3">Se debe abonar una cuota de inscripción de 60 € para darse de alta. Para los cursos de los años siguientes, si sigues en la academia, solo tendrás que abonar 20 euros de renovación de matrícula que se cobra de forma automática en la cuenta el día 1 de agosto.</p><p class="mt-3">Las clases normalmente tienen 1 hora de duración. No obstante, existen algunas clases que duran 1,5 horas.</p>',
 
-  faq_otras_4_q: "¿Cómo llego a Farray's Center?",
+  faq_otras_4_q: "¿Cómo llego a Farray\'s Center?",
   faq_otras_4_a:
     '<p>Estamos en la Calle Entença nº 100 en Barcelona, muy cerquita de Plaza España y estación de Sants.</p><p class="mt-3"><strong>Metro 🚇️</strong></p><ul class="mt-2 ml-6 space-y-1 list-disc"><li>Entença</li><li>Rocafort</li></ul><p class="mt-3"><strong>Tren 🚇️</strong></p><ul class="mt-2 ml-6 space-y-1 list-disc"><li>Barcelona Sants</li><li>Plaza España</li></ul><p class="mt-3"><strong>Bus 🚌</strong></p><ul class="mt-2 ml-6 space-y-1 list-disc"><li>Parada 59: Entença</li><li>Plaza España</li></ul><p class="mt-3"><strong>Coche 🚗</strong></p><ul class="mt-2 ml-6 space-y-1 list-disc"><li>🅿 Parking gratuito en zona verde, azul y zona de cargas y descargas a partir de las 20:00h</li><li>🅿 Parking gratuito en el tercer carril de Entença a partir de las 21:00h</li><li>🅿 Parking de pago justo delante de la academia. Descuento del 10% por ser estudiante</li></ul><p class="mt-3"><strong>Bicicleta y patinetes 🚲︎ 🛴</strong></p><ul class="mt-2 ml-6 space-y-1 list-disc"><li>🅿 Bicing Barcelona – Parada: Calle Villamarí nº 61</li><li>🅿 Aparca tu bicicleta o patinete en la entrada de la academia. Recuerda traer candado.</li></ul>',
 
@@ -3119,7 +3120,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   estudioGrabacion_stat4_label: 'años de experiencia',
 
   // Benefits Section
-  estudioGrabacion_benefits_title: "Por Qué Elegir Farray's Center",
+  estudioGrabacion_benefits_title: "Por Qué Elegir Farray\'s Center",
   estudioGrabacion_benefits_subtitle: 'Ventajas que marcan la diferencia en tu producción',
 
   estudioGrabacion_benefit1_title: 'Espacios Versátiles',
@@ -3262,7 +3263,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   roomRental_features_footer:
     'Todo dentro de un centro especializado en danza y baile, con ambiente profesional, seguro y respetuoso.',
 
-  roomRental_whyFarrays_title: "¿Por Qué Alquilar Salas de Baile en Farray's Center?",
+  roomRental_whyFarrays_title: "¿Por Qué Alquilar Salas de Baile en Farray\'s Center?",
   roomRental_whyFarrays_item1_title: 'Ubicación inmejorable',
   roomRental_whyFarrays_item1_desc:
     'Calle Entença 100, a 5 minutos de Plaza España y Estación de Sants, con metro, bus y tren muy cerca.',
@@ -3539,11 +3540,11 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // FAQ Section
   facilitiesFaqTitle: 'Preguntas Frecuentes sobre las Instalaciones de nuestra academia de baile',
 
-  facilitiesFaqQ1: "¿Dónde están ubicadas las instalaciones de Farray's Center?",
+  facilitiesFaqQ1: "¿Dónde están ubicadas las instalaciones de Farray\'s Center?",
   facilitiesFaqA1:
     'Estamos en Calle Entença 100, Barcelona, entre Plaza España y Estación de Sants. Acceso fácil en metro (Entença L5, Rocafort L1, Tarragona L3), tren (Sants) y autobús. A 5 minutos caminando de Plaza España.',
 
-  facilitiesFaqQ2: "¿Cuántas salas de baile tiene Farray's Center?",
+  facilitiesFaqQ2: "¿Cuántas salas de baile tiene Farray\'s Center?",
   facilitiesFaqA2:
     'Tenemos 4 salas profesionales: una sala principal de 120 m² con linóleo, una sala de ballet de 80 m² con linóleo, una sala de latinos y urbanos de 80 m² con parquet, y una sala de fitness de 40 m² con parquet.',
 
@@ -3572,7 +3573,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   facilitiesBreadcrumbCurrent: 'Instalaciones',
 
   // ===== Twerk Page =====
-  twerkPageTitle: "Clases de Twerk en Barcelona | Farray's Center",
+  twerkPageTitle: "Clases de Twerk en Barcelona | Farray\'s Center",
   twerkMetaDescription:
     'Aprende Twerk y Perreo en Barcelona con Sandra Gómez. Clases de baile urbano para todos los niveles. ¡Libera tu energía y confianza!',
 
@@ -3584,7 +3585,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   twerkAboutDesc1:
     'El Twerk es un estilo de baile urbano que combina movimientos de cadera, ritmo intenso y actitud. Originado en Nueva Orleans y popularizado mundialmente, este baile te permite expresar tu energía, mejorar tu condición física y desarrollar confianza en ti misma.',
   twerkAboutDesc2:
-    "En Farray's Center, nuestras clases de Twerk van más allá del baile: trabajamos técnica, control corporal, resistencia y actitud. Un espacio seguro donde todas pueden aprender, disfrutar y sentirse empoderadas.",
+    "En Farray\'s Center, nuestras clases de Twerk van más allá del baile: trabajamos técnica, control corporal, resistencia y actitud. Un espacio seguro donde todas pueden aprender, disfrutar y sentirse empoderadas.",
 
   twerkPillar1Title: 'Técnica',
   twerkPillar1Desc: 'Aprende los movimientos fundamentales y control de cadera',
@@ -3662,12 +3663,12 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
     'Sí, el Twerking es un excelente ejercicio cardiovascular que trabaja glúteos, core, piernas y resistencia. Es divertido y quemas calorías mientras aprendes a bailar Twerk. Cada sesión de Twerk dance fortalece tu cuerpo de forma integral.',
   twerkFaqQ14: '¿Dónde puedo encontrar clases de Twerk cerca de Plaza España en Barcelona?',
   twerkFaqA14:
-    "Farray's Center está ubicado en Calle Entença 100, 08015 Barcelona, a solo 5 minutos de Plaza España y Estación de Sants. Contamos con profesoras especializadas en Twerking con amplia experiencia y un ambiente familiar para todos los niveles de Twerk.",
+    "Farray\'s Center está ubicado en Calle Entença 100, 08015 Barcelona, a solo 5 minutos de Plaza España y Estación de Sants. Contamos con profesoras especializadas en Twerking con amplia experiencia y un ambiente familiar para todos los niveles de Twerk.",
   twerkFaqQ15: '¿Qué hago si tengo dudas sobre las clases de Twerk o necesito más información?',
   twerkFaqA15:
     'Si tienes alguna pregunta adicional o necesitas más información, puedes contactarnos:<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/><strong>Dirección:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
 
-  twerkImage1Alt: "Clases de Twerk en Barcelona - Farray's Center",
+  twerkImage1Alt: "Clases de Twerk en Barcelona - Farray\'s Center",
   twerkImage2Alt: 'Estudiantes practicando Twerk con Sandra Gómez',
   twerkImage3Alt: 'Sandra Gómez - Instructora de Twerk y Perreo',
 
@@ -3688,7 +3689,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   twerkWhatIsP2:
     'En Barcelona, el Twerk ha explotado como una forma de fitness, empoderamiento femenino y conexión con la música urbana. No es solo mover las caderas: es técnica, control, musicalidad y actitud. Es sudor, risas y liberación.',
   twerkWhatIsP3:
-    "Las clases de Twerk en Farray's Center combinan técnica profesional con un ambiente libre de juicios, donde todas pueden aprender, crecer y brillar sin importar su nivel o experiencia previa.",
+    "Las clases de Twerk en Farray\'s Center combinan técnica profesional con un ambiente libre de juicios, donde todas pueden aprender, crecer y brillar sin importar su nivel o experiencia previa.",
   twerkWhatIsP4:
     'Desde movimientos básicos de aislamiento hasta coreografías completas, cada clase te empuja a descubrir una versión más segura, fuerte y libre de ti misma.',
   twerkWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
@@ -3714,7 +3715,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   twerkIdentifyAgitate1:
     'Seguir buscando excusas solo te aleja de la mejor versión de ti misma. Cada semana que pasa sin hacer nada es una oportunidad perdida de sentirte más fuerte, segura y libre. El miedo al "qué dirán" o el "no soy buena bailando" solo son barreras mentales que se rompen desde la primera clase.',
   twerkIdentifySolution:
-    "En Farray's Center, encontrarás un espacio diseñado para que te sueltes, aprendas y crezcas sin presión. No se trata de ser perfecta, sino de ser tú misma y disfrutar del proceso.",
+    "En Farray\'s Center, encontrarás un espacio diseñado para que te sueltes, aprendas y crezcas sin presión. No se trata de ser perfecta, sino de ser tú misma y disfrutar del proceso.",
   twerkIdentifyClosing: 'Déjate seducir por la energía y el power del Twerk.',
 
   // Transform Section
@@ -3732,7 +3733,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   twerkTransform5Desc: 'Ritmo, flow y capacidad de improvisación.',
   twerkTransform6Title: 'Aprendes movimientos nuevos cada semana',
   twerkTransform6Desc: 'Más flow, más estilo, más tú.',
-  twerkTransformCTA: "¿Por qué elegir Farray's Center como tu academia de Twerk en Barcelona?",
+  twerkTransformCTA: "¿Por qué elegir Farray\'s Center como tu academia de Twerk en Barcelona?",
 
   // Why Choose Section
   twerkWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
@@ -3766,7 +3767,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   twerkTeachersSubtitle: 'Expertas en Twerk y Dancehall con años de experiencia',
   twerkTeacher1Specialty: 'Profesora de Twerk y Dancehall | +5 años de Experiencia',
   twerkTeacher1Bio:
-    "Isabel López es una apasionada del twerk y dancehall con más de 5 años de experiencia como profesora especializada en baile urbano. Entrenada con maestros jamaicanos y especialistas en Twerk, su energía contagiosa y técnica profesional la convierten en una de las instructoras más queridas de Farray's Center.",
+    "Isabel López es una apasionada del twerk y dancehall con más de 5 años de experiencia como profesora especializada en baile urbano. Entrenada con maestros jamaicanos y especialistas en Twerk, su energía contagiosa y técnica profesional la convierten en una de las instructoras más queridas de Farray\'s Center.",
   twerkTeacher2Specialty: 'Profesora de Twerk y Dancehall | +6 años de Experiencia',
   twerkTeacher2Bio:
     'Sandra Gómez es una bailarina profesional con más de 6 años de experiencia en twerk y dancehall. Su estilo único fusiona movimientos del Twerk/Bootydance con la esencia jamaicana. Su técnica impecable y metodología de enseñanza la convierten en una de las profesoras más solicitadas. Energía, sensualidad y feminidad pura.',
@@ -3780,7 +3781,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // Video Section
   twerkVideoTitle: 'Ven a descubrir nuestras clases de Twerk',
   twerkVideoDesc:
-    "Mira cómo es una clase en Farray's Center: energía, técnica y buen rollo. ¡Te esperamos!",
+    "Mira cómo es una clase en Farray\'s Center: energía, técnica y buen rollo. ¡Te esperamos!",
 
   // Why Today Section
   twerkWhyTodayFullTitle:
@@ -3833,7 +3834,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
     'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
 
   // Course Schema
-  twerkCourseSchemaName: "Clases de Twerk y Twerking en Barcelona - Farray's Center",
+  twerkCourseSchemaName: "Clases de Twerk y Twerking en Barcelona - Farray\'s Center",
   twerkCourseSchemaDesc:
     'Aprende Twerk, Twerking y Perreo con instructoras especializadas Isabel López y Sandra Gómez. Clases de Twerk dance para todos los niveles en el corazón de Barcelona.',
 
@@ -3873,7 +3874,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
     "Farray's International Dance Center ofrece clases de Twerk dentro de una escuela con una valoración cercana al 5/5 en Google con cientos de reseñas, lo que respalda la satisfacción del alumnado y la calidad percibida de sus formaciones.",
 
   // ===== Afrobeat Page =====
-  afroPageTitle: "Clases de Afrobeats y Afrodance en Barcelona | Academia Farray's Center",
+  afroPageTitle: "Clases de Afrobeats y Afrodance en Barcelona | Academia Farray\'s Center",
   afroMetaDescription:
     'Aprende Afrobeats y Afrodance en Barcelona con profesores nativos de África. Clases de Amapiano, Ntcham y danzas africanas modernas para todos los niveles en el corazón de Barcelona, cerca de Plaza España y Sants.',
 
@@ -4005,7 +4006,7 @@ En Farray's International Dance Center, el Afrobeats se enseña con técnica, re
   afroTransform6Title: 'Aprendes movimientos nuevos cada semana',
   afroTransform6Desc: 'Más flow, más estilo africano, más tú.',
 
-  afroTransformCTA: "¿Por qué elegir Farray's Center como tu academia de Afrobeats en Barcelona?",
+  afroTransformCTA: "¿Por qué elegir Farray\'s Center como tu academia de Afrobeats en Barcelona?",
 
   // Why Choose
   afroWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
@@ -4110,7 +4111,7 @@ En Farray's International Dance Center, el Afrobeats se enseña con técnica, re
     'El Afrobeats es un estilo originario de África, que fusiona ritmos tradicionales con influencias de hip-hop y R&B. Se caracteriza por movimientos fluidos y expresivos, reflejando la cultura africana. Su musicalidad y energía lo hacen único, permitiendo a los bailarines improvisar y conectar emocionalmente con la música.',
   afroFaqQ14: '¿Dónde puedo encontrar clases de Afrobeats cerca de Plaza España en Barcelona?',
   afroFaqA14:
-    "Farray's Center está ubicado en Calle Entença 100, Barcelona, a solo 5 minutos de Plaza España y Estación de Sants. Contamos con profesores con amplia experiencia y un ambiente familiar para todos los niveles.",
+    "Farray\'s Center está ubicado en Calle Entença 100, Barcelona, a solo 5 minutos de Plaza España y Estación de Sants. Contamos con profesores con amplia experiencia y un ambiente familiar para todos los niveles.",
   afroFaqQ15: '¿Qué hago si tengo dudas o necesito más información?',
   afroFaqA15:
     'Si tienes alguna pregunta adicional o necesitas más información, puedes contactarnos:<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/><strong>Dirección:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
@@ -4282,7 +4283,7 @@ Las últimas tendencias y estilos se fusionan en nuestras clases de forma variad
   hhrTransform6Title: 'Creas tu estilo propio y único',
   hhrTransform6Desc: 'Más creatividad, más flow, más tú.',
   hhrTransformCTA:
-    "¿Por qué elegir Farray's Center como academia de Hip Hop Reggaeton en Barcelona?",
+    "¿Por qué elegir Farray\'s Center como academia de Hip Hop Reggaeton en Barcelona?",
 
   // Why Choose Section
   hhrWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
@@ -4327,7 +4328,7 @@ Las últimas tendencias y estilos se fusionan en nuestras clases de forma variad
   // Video Section
   hhrVideoTitle: 'Ven a descubrir nuestras clases de Hip Hop Reggaeton',
   hhrVideoDesc:
-    "Mira cómo es una clase en Farray's Center: fusión, flow y buen rollo. ¡Te esperamos!",
+    "Mira cómo es una clase en Farray\'s Center: fusión, flow y buen rollo. ¡Te esperamos!",
 
   // Why Today Section
   hhrWhyTodayFullTitle: '¿Por qué hoy es el mejor momento para empezar a bailar Hip Hop Reggaeton?',
@@ -4389,7 +4390,7 @@ Las últimas tendencias y estilos se fusionan en nuestras clases de forma variad
     'El Hip Hop Reggaeton es una fusión exclusiva de nuestra escuela que combina la técnica y el swagger del hip-hop americano con la sensualidad y el ritmo del reggaeton latino. Es un estilo moderno, informal y explosivo que te permite expresar tu personalidad única, ideal si buscas algo más que pasos coreografiados.',
   hhrFaqQ14: '¿Dónde puedo encontrar clases de Hip Hop Reggaeton cerca de Plaza España?',
   hhrFaqA14:
-    "Farray's Center está ubicado en Calle Entença 100, 08015 Barcelona, a solo 5 minutos de Plaza España y Estación de Sants. Contamos con profesores con amplia experiencia y un ambiente familiar para todos los niveles.",
+    "Farray\'s Center está ubicado en Calle Entença 100, 08015 Barcelona, a solo 5 minutos de Plaza España y Estación de Sants. Contamos con profesores con amplia experiencia y un ambiente familiar para todos los niveles.",
   hhrFaqQ15: '¿Qué hago si tengo dudas o necesito más información?',
   hhrFaqA15:
     'Si tienes alguna pregunta adicional o necesitas más información, puedes contactarnos:<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/><strong>Dirección:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
@@ -4445,7 +4446,7 @@ Las últimas tendencias y estilos se fusionan en nuestras clases de forma variad
     'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
 
   // Course Schema
-  hhrCourseSchemaName: "Clases de Hip Hop Reggaeton en Barcelona - Farray's Center",
+  hhrCourseSchemaName: "Clases de Hip Hop Reggaeton en Barcelona - Farray\'s Center",
   hhrCourseSchemaDesc:
     'Aprende Hip Hop Reggaeton con Charlie Breezy, instructor especializado en fusión urbana. Clases para todos los niveles en el corazón de Barcelona.',
 
@@ -4466,7 +4467,7 @@ Las últimas tendencias y estilos se fusionan en nuestras clases de forma variad
     "Farray's International Dance Center ofrece clases de Hip Hop Reggaeton con Charlie Breezy, bailarín profesional especializado en fusión urbana, en una escuela con valoración cercana al 5/5 en Google.",
 
   // ===== Sexy Reggaeton Page =====
-  sxrPageTitle: "Clases de Reggaeton Sensual para Mujeres en Barcelona | Farray's Center",
+  sxrPageTitle: "Clases de Reggaeton Sensual para Mujeres en Barcelona | Farray\'s Center",
   sxrMetaDescription:
     'Clases de reggaeton sensual y perreo para mujeres en Barcelona. Empoderamiento femenino, body roll y confianza corporal. Ambiente seguro y sin juicios. ¡Reserva tu clase de prueba!',
 
@@ -4490,7 +4491,7 @@ Las últimas tendencias y estilos se fusionan en nuestras clases de forma variad
   sxrCTA2Subtext: 'Oferta por tiempo limitado',
   sxrCTA1AriaLabel: 'Ver horario de clases de Sexy Reggaeton y darte de alta',
   sxrCTA2AriaLabel: 'Reservar una clase de prueba de Sexy Reggaeton',
-  sxrOgImageAlt: "Clases de Sexy Reggaeton en Barcelona - Farray's Center",
+  sxrOgImageAlt: "Clases de Sexy Reggaeton en Barcelona - Farray\'s Center",
 
   // Stat
   sxrSensualityGuaranteed: 'Sensualidad garantizada',
@@ -4532,7 +4533,7 @@ Estas técnicas trabajan piernas, core, flexibilidad y resistencia, implicando u
 
 Artistas como Bad Bunny, Karol G, Daddy Yankee y Anitta han difundido a nivel global una imagen de reggaeton con bailes sensuales coreografiados que refuerzan el empoderamiento y la celebración de la sexualidad libre.
 
-Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equilibrado entre técnica, actitud y diversión, buscando que quienes lo practican se sientan seguras y confiadas, más allá de la mera ejecución de movimientos.`,
+Actualmente, el Sexy Reggaeton se enseña en Farray\'s Center con un enfoque equilibrado entre técnica, actitud y diversión, buscando que quienes lo practican se sientan seguras y confiadas, más allá de la mera ejecución de movimientos.`,
 
   // Identify Section
   sxrIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
@@ -4554,7 +4555,7 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   sxrIdentifyAgitate1:
     'Seguir esperando el "momento perfecto" solo te aleja de la versión más sexy y empoderada de ti misma. Cada día que pasa es un día menos bailando.',
   sxrIdentifySolution:
-    "En Farray's Center encontrarás un espacio seguro, sin juicios, donde aprenderás a mover tu cuerpo con confianza y actitud. Profesoras que te guían paso a paso, música que te hace vibrar y compañeras que te animan.",
+    "En Farray\'s Center encontrarás un espacio seguro, sin juicios, donde aprenderás a mover tu cuerpo con confianza y actitud. Profesoras que te guían paso a paso, música que te hace vibrar y compañeras que te animan.",
   sxrIdentifyClosing:
     'Tu cuerpo ya tiene todo lo que necesita. Solo falta que le des permiso para soltarse.',
 
@@ -4578,7 +4579,7 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   sxrTransform6Title: 'De espectadora a protagonista',
   sxrTransform6Desc:
     'Participas en coreografías inspiradas en las "peleas de pista" y te sientes capaz de robarte todas las miradas.',
-  sxrTransformCTA: "¿Por qué elegir Farray's Center como academia de Sexy Reggaeton en Barcelona?",
+  sxrTransformCTA: "¿Por qué elegir Farray\'s Center como academia de Sexy Reggaeton en Barcelona?",
 
   // Why Choose Section
   sxrWhyChoose1Title: 'Academia multidisciplinar',
@@ -4623,7 +4624,7 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
   // Video Section
   sxrVideoTitle: 'Ven a descubrir nuestras clases de Sexy Reggaeton',
   sxrVideoDesc:
-    "Mira cómo es una clase en Farray's Center: energía, técnica, sensualidad y buen rollo. ¡Te esperamos!",
+    "Mira cómo es una clase en Farray\'s Center: energía, técnica, sensualidad y buen rollo. ¡Te esperamos!",
 
   // Why Today Section
   sxrWhyTodayFullTitle: '¿Por qué hoy es el mejor momento para empezar a bailar Sexy Reggaeton?',
@@ -4692,7 +4693,7 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
     'El Sexy Reggaeton o reggaeton sensual es un estilo que combina la energía del reggaeton con movimientos sensuales como el perreo, body roll y disociación corporal. A diferencia de otros estilos urbanos, se enfoca en la conexión con tu cuerpo, la actitud y la feminidad. Es ideal si buscas empoderarte, ganar confianza y expresar tu sensualidad bailando.',
   sxrFaqQ15: '¿Dónde puedo encontrar clases de Sexy Reggaeton cerca de Plaza España en Barcelona?',
   sxrFaqA15:
-    "Farray's Center está ubicado en Calle Entença 100, 08015 Barcelona, a solo 5 minutos de Plaza España y Estación de Sants. Contamos con profesoras con amplia experiencia en reggaeton sensual y un ambiente seguro y familiar para todos los niveles.",
+    "Farray\'s Center está ubicado en Calle Entença 100, 08015 Barcelona, a solo 5 minutos de Plaza España y Estación de Sants. Contamos con profesoras con amplia experiencia en reggaeton sensual y un ambiente seguro y familiar para todos los niveles.",
 
   // ===== Niveles de Sexy Reggaeton =====
   sxrLevelsTitle: 'Nuestros Niveles de Sexy Reggaeton',
@@ -4733,7 +4734,7 @@ Actualmente, el Sexy Reggaeton se enseña en Farray's Center con un enfoque equi
     'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
 
   // Course Schema
-  sxrCourseSchemaName: "Clases de Sexy Reggaeton en Barcelona - Farray's Center",
+  sxrCourseSchemaName: "Clases de Sexy Reggaeton en Barcelona - Farray\'s Center",
   sxrCourseSchemaDesc:
     'Aprende Sexy Reggaeton con Yunaisy Farray, experta en danzas urbanas sensuales. Clases de perreo, body roll y sensualidad para todos los niveles en el corazón de Barcelona.',
 
@@ -4841,7 +4842,7 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
 
 **Una clase de Reggaeton Cubano puede quemar entre 350 y 550 calorías por hora** debido a la intensidad del tembleque y los movimientos de disociación corporal. Además, mejora la coordinación, la flexibilidad de cadera y la conexión rítmica.
 
-### Reggaeton Cubano en Farray's Center
+### Reggaeton Cubano en Farray\'s Center
 
 **Farray's International Dance Center enseña Reggaeton Cubano auténtico con profesores cubanos formados en la Escuela Nacional de Arte (ENA) de La Habana.** Las clases mantienen la esencia callejera del estilo mientras ofrecen una progresión técnica estructurada para todos los niveles.`,
 
@@ -4863,7 +4864,7 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
   rcbIdentifyAgitate1:
     'Seguir bailando el mismo reggaeton comercial de siempre te mantiene en tu zona de confort. Nunca desarrollarás tu propio estilo ni esa libertad que ves en los bailarines cubanos.',
   rcbIdentifySolution:
-    "En Farray's Center aprenderás con Alejandro Miñoso y Charlie Breezy, cubanos de nacimiento. No te enseñarán coreografías: te enseñarán a BAILAR con sentimiento.",
+    "En Farray\'s Center aprenderás con Alejandro Miñoso y Charlie Breezy, cubanos de nacimiento. No te enseñarán coreografías: te enseñarán a BAILAR con sentimiento.",
   rcbIdentifyClosing:
     'Deja el reggaeton de academia y descubre el reggaeton de las calles de Cuba.',
 
@@ -4886,7 +4887,7 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
   rcbTransform6Title: 'Conexión con la cultura cubana',
   rcbTransform6Desc:
     'No solo aprendes pasos: entiendes la cultura, la historia y el sentimiento detrás del baile.',
-  rcbTransformCTA: "¿Por qué elegir Farray's Center para aprender Reggaeton Cubano?",
+  rcbTransformCTA: "¿Por qué elegir Farray\'s Center para aprender Reggaeton Cubano?",
 
   // Why Choose Section (7 cards)
   rcbWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
@@ -5047,7 +5048,7 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
     'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
 
   // Course Schema
-  rcbCourseSchemaName: "Clases de Reggaeton Cubano en Barcelona - Farray's Center",
+  rcbCourseSchemaName: "Clases de Reggaeton Cubano en Barcelona - Farray\'s Center",
   rcbCourseSchemaDesc:
     'Aprende Reggaeton Cubano auténtico con Yunaisy Farray, maestra cubana y actriz de Street Dance 2. Clases de Reparto, Cubatón e improvisación para todos los niveles en Barcelona.',
 
@@ -5070,7 +5071,7 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
   // ====================
   // HEELS BARCELONA PAGE (Category Hub Page)
   // ====================
-  heelsBarcelona_title: "Clases de Heels en Barcelona | Femmology y Sexy Style | Farray's Center",
+  heelsBarcelona_title: "Clases de Heels en Barcelona | Femmology y Sexy Style | Farray\'s Center",
   heelsBarcelona_description:
     'Aprende a bailar en tacones con elegancia y sensualidad en Barcelona. Clases de Femmology Heels y Sexy Style con Yunaisy Farray, reconocida por CID-UNESCO. Todos los niveles.',
   heelsBarcelona_breadcrumb_home: 'Inicio',
@@ -5079,7 +5080,7 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
   heelsBarcelona_breadcrumb_current: 'Clases de Heels',
   heelsBarcelona_h1: 'Clases de Heels en Barcelona',
   heelsBarcelona_intro:
-    "Descubre el arte de bailar en tacones en Farray's Center Barcelona. Nuestras clases de Heels combinan técnica, elegancia y sensualidad para que camines y bailes con seguridad y estilo. Desde Femmology hasta Sexy Style, encuentra la disciplina perfecta para conectar con tu feminidad, mejorar tu postura y ganar confianza con el exclusivo Método Farray® creado por Yunaisy Farray.",
+    "Descubre el arte de bailar en tacones en Farray\'s Center Barcelona. Nuestras clases de Heels combinan técnica, elegancia y sensualidad para que camines y bailes con seguridad y estilo. Desde Femmology hasta Sexy Style, encuentra la disciplina perfecta para conectar con tu feminidad, mejorar tu postura y ganar confianza con el exclusivo Método Farray® creado por Yunaisy Farray.",
 
   // What is Heels Section (Point 1 - SEO CRITICAL)
   heelsBarcelona_whatIs_title: '¿Qué son las Clases de Heels?',
@@ -5167,7 +5168,7 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
     '¡Sí! Muchas alumnas hacen ambos. Femmology te transforma por dentro (miedos, bloqueos, autoestima) mientras desarrollas técnica exigente con Yunaisy. Sexy Style te da libertad para disfrutar sin presión. Juntos, te convierten en una mujer más completa por dentro y por fuera.',
 
   // Why Choose Section (Value Pillars)
-  heelsBarcelona_why_title: "¿Por qué aprender Heels en Farray's Center?",
+  heelsBarcelona_why_title: "¿Por qué aprender Heels en Farray\'s Center?",
   heelsBarcelona_why_reason1_title: 'Academia Reconocida por CID-UNESCO',
   heelsBarcelona_why_reason1_desc:
     'La única escuela de Heels en Barcelona avalada por el Consejo Internacional de Danza de la UNESCO. Certificación y reconocimiento internacional para tu formación.',
@@ -5193,7 +5194,7 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
   // Testimonials Section
   heelsBarcelona_testimonials_title: 'Testimonios de Nuestras Alumnas',
   heelsBarcelona_testimonials_intro:
-    "Alumnas de Femmology y Sexy Style comparten su experiencia en Farray's Center Barcelona. Sin filtros, sin guiones. Solo historias reales de transformación.",
+    "Alumnas de Femmology y Sexy Style comparten su experiencia en Farray\'s Center Barcelona. Sin filtros, sin guiones. Solo historias reales de transformación.",
 
   // FAQ Section
   heelsBarcelona_faq_title: 'Preguntas frecuentes sobre nuestras clases de Heels en Barcelona',
@@ -5251,10 +5252,10 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
   heelsBarcelona_cta_title: 'Descubre tu Poder en Tacones',
   heelsBarcelona_cta_subtitle: 'Tu primera clase de Heels te está esperando.',
   heelsBarcelona_cta_description:
-    "Únete a cientos de alumnas que están descubriendo su feminidad, ganando confianza y brillando en tacones en Farray's Center Barcelona. Femmology, Sexy Style y mucho más con el exclusivo Método Farray® creado por Yunaisy Farray.",
+    "Únete a cientos de alumnas que están descubriendo su feminidad, ganando confianza y brillando en tacones en Farray\'s Center Barcelona. Femmology, Sexy Style y mucho más con el exclusivo Método Farray® creado por Yunaisy Farray.",
 
   // Course Schema
-  heelsCourseSchemaName: "Clases de Heels en Barcelona - Farray's Center",
+  heelsCourseSchemaName: "Clases de Heels en Barcelona - Farray\'s Center",
   heelsCourseSchemaDesc:
     'Aprende a bailar en tacones con Yunaisy Farray, creadora del Método Farray® y reconocida por CID-UNESCO. Clases de Femmology y Sexy Style para todos los niveles en Barcelona.',
 
@@ -5342,7 +5343,7 @@ El nombre "Femmology" fusiona "femme" (mujer en francés) con "ology" (estudio d
 
 Lo que hace único a Femmology es que no se trata de "bailar sexy para otros", sino de "sentirte poderosa para ti misma". Cada clase es un espacio seguro donde las mujeres exploran su feminidad sin juicios, aprendiendo a moverse con elegancia y sensualidad desde un lugar de autorespeto y amor propio.
 
-Actualmente, Femmology se imparte exclusivamente en Farray's Center bajo la dirección de Yunaisy Farray, quien ha formado a cientos de mujeres en esta disciplina transformadora.`,
+Actualmente, Femmology se imparte exclusivamente en Farray\'s Center bajo la dirección de Yunaisy Farray, quien ha formado a cientos de mujeres en esta disciplina transformadora.`,
 
   // Identify Section
   femIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
@@ -5365,7 +5366,7 @@ Actualmente, Femmology se imparte exclusivamente en Farray's Center bajo la dire
   femIdentifyAgitate1:
     'Seguir desconectada de tu feminidad te aleja de vivir plenamente. Cada día que pasa sin reconectar contigo misma es un día menos sintiéndote completa.',
   femIdentifySolution:
-    "En Farray's Center encontrarás más que clases de baile. Yunaisy Farray ha creado un espacio donde las mujeres se transforman, ganan confianza y descubren una versión de sí mismas que habían olvidado.",
+    "En Farray\'s Center encontrarás más que clases de baile. Yunaisy Farray ha creado un espacio donde las mujeres se transforman, ganan confianza y descubren una versión de sí mismas que habían olvidado.",
   femIdentifyClosing:
     'Tu feminidad no está perdida. Solo está esperando que le des permiso para florecer.',
 
@@ -5389,7 +5390,7 @@ Actualmente, Femmology se imparte exclusivamente en Farray's Center bajo la dire
   femTransform6Title: 'De apagada a radiante',
   femTransform6Desc:
     'Reconectas con tu energía femenina. Empiezas a brillar no solo cuando bailas, sino en tu día a día.',
-  femTransformCTA: "¿Por qué elegir Farray's Center para Femmology?",
+  femTransformCTA: "¿Por qué elegir Farray\'s Center para Femmology?",
 
   // Why Choose Section - Balanced reasons
   femWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
@@ -5497,7 +5498,7 @@ Actualmente, Femmology se imparte exclusivamente en Farray's Center bajo la dire
 
   femFaqQ11: '¿Femmology es lo mismo que Sexy Style o son cosas diferentes?',
   femFaqA11:
-    "Son disciplinas complementarias pero diferentes. Femmology es el proyecto personal de Yunaisy que fusiona múltiples estilos y trabaja también el autoconocimiento. Las clases de Femmology son más técnicas y el grado de exigencia es superior. Sexy Style se enfoca más en coreografías sensuales específicas. En Farray's Center ofrecemos ambas.",
+    "Son disciplinas complementarias pero diferentes. Femmology es el proyecto personal de Yunaisy que fusiona múltiples estilos y trabaja también el autoconocimiento. Las clases de Femmology son más técnicas y el grado de exigencia es superior. Sexy Style se enfoca más en coreografías sensuales específicas. En Farray\'s Center ofrecemos ambas.",
 
   femFaqQ12: '¿Puedo recuperar clases si falto?',
   femFaqA12:
@@ -5633,7 +5634,7 @@ Este movimiento ha convertido lo que antes era solo "baile para show" en una ví
 
 ### El Sexy Style en Barcelona
 
-Farray's Center fue una de las primeras academias en Barcelona en ofrecer clases de Sexy Style con una metodología profesional, integrando tanto la raíz comercial (videoclips, giras, trabajo en tacones) como el enfoque de empoderamiento personal. Bajo la dirección de Yasmina Fernández, se ha desarrollado un programa que combina técnica (equilibrio, caminar en tacones, disociaciones, musicalidad) con trabajo de actitud y presencia escénica.
+Farray\'s Center fue una de las primeras academias en Barcelona en ofrecer clases de Sexy Style con una metodología profesional, integrando tanto la raíz comercial (videoclips, giras, trabajo en tacones) como el enfoque de empoderamiento personal. Bajo la dirección de Yasmina Fernández, se ha desarrollado un programa que combina técnica (equilibrio, caminar en tacones, disociaciones, musicalidad) con trabajo de actitud y presencia escénica.
 
 Hoy, el Sexy Style en Farray's se vive como un espacio de aprendizaje técnico y, a la vez, como un laboratorio de autoconfianza donde cada alumna puede construir su propia versión de lo que significa ser sensual, fuerte y libre.`,
 
@@ -5659,7 +5660,7 @@ Hoy, el Sexy Style en Farray's se vive como un espacio de aprendizaje técnico y
   sexystyleIdentifyAgitate1:
     'Cada día que pasas sin bailar, tu cuerpo se acostumbra a la rutina y se olvida del placer de bailar. Tu sensualidad no desaparece: solo se queda dormida hasta que decides despertarla.',
   sexystyleIdentifySolution:
-    "En Farray's Center, hemos creado un espacio donde puedes redescubrir tu cuerpo sin presiones. Aquí no hay cuerpos perfectos, solo momentos perfectos.",
+    "En Farray\'s Center, hemos creado un espacio donde puedes redescubrir tu cuerpo sin presiones. Aquí no hay cuerpos perfectos, solo momentos perfectos.",
   sexystyleIdentifyClosing: 'Déjate llevar y reconecta con la mujer poderosa que llevas dentro.',
 
   // Transform Section (6 transformaciones que responden a los 6 pain points)
@@ -5682,7 +5683,7 @@ Hoy, el Sexy Style en Farray's se vive como un espacio de aprendizaje técnico y
   sexystyleTransform6Title: 'De rutina gris a cita semanal contigo',
   sexystyleTransform6Desc:
     'Antes los días eran todos iguales; ahora tienes tu momento Sexy Style: una hora para ti, para sudar, jugar, sentirte viva y salir de clase con esa energía de "aquí mando yo".',
-  sexystyleTransformCTA: "¿Por qué elegir Farray's Center como academia de Sexy Style?",
+  sexystyleTransformCTA: "¿Por qué elegir Farray\'s Center como academia de Sexy Style?",
 
   // Why Choose Section (6 items)
   sexystyleWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
@@ -5727,7 +5728,7 @@ Hoy, el Sexy Style en Farray's se vive como un espacio de aprendizaje técnico y
   // Video Section
   sexystyleVideoTitle: 'Descubre nuestras clases de Sexy Style',
   sexystyleVideoDesc:
-    "Mira cómo es una clase en Farray's Center: energía, técnica y mucho empoderamiento.",
+    "Mira cómo es una clase en Farray\'s Center: energía, técnica y mucho empoderamiento.",
 
   // Why Today Section
   sexystyleWhyTodayFullTitle: '¿Por qué hoy es el mejor momento para empezar a bailar Sexy Style?',
@@ -5812,10 +5813,10 @@ Hoy, el Sexy Style en Farray's se vive como un espacio de aprendizaje técnico y
     'Farray\'s Center está a solo 5 minutos andando de Plaza España, en Calle Entença 100, 08015 Barcelona. Somos la academia de referencia en Sexy Style en la zona, con conexión directa por metro (L1, L3), bus y tren desde Sants Estació.<br/><br/><strong>Dirección:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
 
   // Image alts
-  sexystyleImageAlt: "Clases de Sexy Style en Barcelona - Farray's Center",
+  sexystyleImageAlt: "Clases de Sexy Style en Barcelona - Farray\'s Center",
 
   // Course Schema (SEO)
-  sexystyleCourseSchemaName: "Clases de Sexy Style en Barcelona - Farray's Center",
+  sexystyleCourseSchemaName: "Clases de Sexy Style en Barcelona - Farray\'s Center",
   sexystyleCourseSchemaDesc:
     'Aprende Sexy Style con Yasmina Fernández, instructora especializada. Clases para todos los niveles en el corazón de Barcelona.',
 
@@ -5957,7 +5958,7 @@ El **Método Farray®** crea una progresión pedagógica que:
 
 El Modern Jazz impartido en **Farray's International Dance Center** forma parte del plan curricular de formación profesional en danza **avalado por el CID-UNESCO** (Consejo Internacional de la Danza, París). Este reconocimiento certifica la calidad técnica y efectividad del Método Farray®.
 
-"Farray's Center: academia en Barcelona con Modern Jazz avalada CID-UNESCO + Método Farray® exclusivo."
+"Farray\'s Center: academia en Barcelona con Modern Jazz avalada CID-UNESCO + Método Farray® exclusivo."
 
 ### El Legado Vivo: 80 Años de Jazz Teatral
 
@@ -5994,7 +5995,7 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
   modernjazzIdentifyAgitate1:
     'La técnica no se aprende sola. Sin una base sólida, los malos hábitos se instalan y cada vez es más difícil corregirlos. Cuanto antes empieces con un buen profesor, más lejos llegarás.',
   modernjazzIdentifySolution:
-    "En Farray's Center, Alejandro Miñoso te guiará desde los fundamentos hasta el movimiento expresivo. Clases estructuradas, correcciones personalizadas y un ambiente donde crecer.",
+    "En Farray\'s Center, Alejandro Miñoso te guiará desde los fundamentos hasta el movimiento expresivo. Clases estructuradas, correcciones personalizadas y un ambiente donde crecer.",
   modernjazzIdentifyClosing:
     'Tu cuerpo está esperando moverse con libertad y precisión. Dale la oportunidad.',
 
@@ -6018,7 +6019,7 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
   modernjazzTransform6Title: 'De aislado a parte de una comunidad',
   modernjazzTransform6Desc:
     'Encuentras personas que comparten tu pasión. El baile te conecta con otros.',
-  modernjazzTransformCTA: "¿Por qué elegir Farray's Center para Modern Jazz?",
+  modernjazzTransformCTA: "¿Por qué elegir Farray\'s Center para Modern Jazz?",
 
   // Why Choose Section (6 items)
   modernjazzWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
@@ -6063,7 +6064,7 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
   // Video Section
   modernjazzVideoTitle: 'Descubre nuestras clases de Modern Jazz',
   modernjazzVideoDesc:
-    "Mira cómo es una clase en Farray's Center: técnica, expresión y pasión por el baile.",
+    "Mira cómo es una clase en Farray\'s Center: técnica, expresión y pasión por el baile.",
 
   // Why Today Section
   modernjazzWhyTodayFullTitle: '¿Por qué hoy es el mejor momento para empezar Modern Jazz?',
@@ -6110,7 +6111,7 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
 
   modernjazzFaqQ6: '¿Quién es Alejandro Miñoso?',
   modernjazzFaqA6:
-    "Alejandro Miñoso es bailarín profesional y profesor de Modern Jazz en Farray's Center. Formado en la escuela cubana, combina la precisión y elegancia de danza clásica con la fluidez y expresividad de contemporáneo y del jazz. Su metodología se centra en construir una técnica sólida mientras se desarrolla la expresión artística.",
+    "Alejandro Miñoso es bailarín profesional y profesor de Modern Jazz en Farray\'s Center. Formado en la escuela cubana, combina la precisión y elegancia de danza clásica con la fluidez y expresividad de contemporáneo y del jazz. Su metodología se centra en construir una técnica sólida mientras se desarrolla la expresión artística.",
 
   modernjazzFaqQ7: '¿Puedo probar una clase de Modern Jazz antes de inscribirme?',
   modernjazzFaqA7:
@@ -6158,10 +6159,10 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
     "Las clases de Modern Jazz en Farray's están dirigidas a bailarines de cualquier nivel, ya que todos somos capaces de expresarnos de forma creativa a través del baile. En clase la dinámica se organiza a partir de una parte técnica de calentamiento seguida de varios ejercicios en los que entrenarás giros, saltos, caídas, etc. Es una práctica que favorece la eliminación de tensiones, la adopción de una postura correcta y la expresión corporal a través de la música. ¡Ven a probar una clase y déjate enamorar!",
 
   // Image alts
-  modernjazzImageAlt: "Clases de Modern Jazz en Barcelona - Farray's Center",
+  modernjazzImageAlt: "Clases de Modern Jazz en Barcelona - Farray\'s Center",
 
   // Course Schema (SEO)
-  modernjazzCourseSchemaName: "Clases de Modern Jazz en Barcelona - Farray's Center",
+  modernjazzCourseSchemaName: "Clases de Modern Jazz en Barcelona - Farray\'s Center",
   modernjazzCourseSchemaDesc:
     'Aprende Modern Jazz con Alejandro Miñoso. Técnica clásica, expresión contemporánea. Clases para todos los niveles en Barcelona.',
 
@@ -6174,7 +6175,7 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
   // ===== GEO OPTIMIZATION: HowTo Schema =====
   modernjazzHowToName: 'Cómo empezar a bailar Modern Jazz en Barcelona',
   modernjazzHowToDesc:
-    "Guía paso a paso para comenzar tus clases de Modern Jazz en Farray's Center. Desde elegir tu nivel hasta tu primera clase.",
+    "Guía paso a paso para comenzar tus clases de Modern Jazz en Farray\'s Center. Desde elegir tu nivel hasta tu primera clase.",
   modernjazzHowToSupply1: 'Ropa cómoda y elástica',
   modernjazzHowToSupply2: 'Zapatillas de jazz o calcetines antideslizantes',
   modernjazzHowToSupply3: 'Botella de agua',
@@ -6207,7 +6208,7 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
     'La musicalidad en danza es la capacidad de interpretar y expresar la música a través del movimiento. Incluye entender el ritmo, acentos, dinámicas y emociones de la música para bailar "con" ella, no solo "sobre" ella.',
 
   // ===== GEO OPTIMIZATION: Event Schema =====
-  modernjazzEventName: "Clase de Modern Jazz en Barcelona - Farray's Center",
+  modernjazzEventName: "Clase de Modern Jazz en Barcelona - Farray\'s Center",
   modernjazzEventDesc:
     'Clase semanal de Modern Jazz con Alejandro Miñoso. Técnica clásica, expresión contemporánea, coreografías de Broadway. Todos los niveles bienvenidos.',
 
@@ -6398,7 +6399,7 @@ En 1661, Luis XIV —conocido como "el Rey Sol" por su papel protagonista en el 
 
 **La Escuela Cubana de Ballet, fundada por Alicia Alonso en 1948, se distingue por su virtuosismo técnico, expresividad dramática y adaptación de la técnica clásica al físico latino.** Bailarines cubanos como Carlos Acosta, Lorena Feijóo y José Manuel Carreño han brillado en las principales compañías del mundo.
 
-**En Farray's Center, las clases de ballet siguen la tradición de la Escuela Cubana de Ballet**, reconocida mundialmente por combinar la técnica rusa con la expresividad latina. **Alejandro Miñoso, formado en la ENA (Escuela Nacional de Arte de Cuba) y ex-solista de la compañía de Carlos Acosta**, transmite esta metodología única.
+**En Farray\'s Center, las clases de ballet siguen la tradición de la Escuela Cubana de Ballet**, reconocida mundialmente por combinar la técnica rusa con la expresividad latina. **Alejandro Miñoso, formado en la ENA (Escuela Nacional de Arte de Cuba) y ex-solista de la compañía de Carlos Acosta**, transmite esta metodología única.
 
 **"Escuela Cubana (Alicia Alonso, 1948): técnica rusa + expresividad latina. En Farray's: metodología ENA-Cuba."**
 
@@ -6478,7 +6479,7 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
     'Antes: Buscas ejercicio mente+cuerpo, no solo cardio. Después: Memoria muscular, concentración y gracia 24/7. El ballet entrena cerebro y físico simultáneamente.',
 
   // ===== Why Choose Section =====
-  balletTransformCTA: "¿Por qué elegir Farray's Center para Ballet?",
+  balletTransformCTA: "¿Por qué elegir Farray\'s Center para Ballet?",
   balletWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
   balletWhyChoose1Desc:
     'Nuestro programa de ballet forma parte del plan curricular avalado por el Consejo Internacional de la Danza de la UNESCO en París. Formación con estándares internacionales.',
@@ -6523,7 +6524,7 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
 
   // ===== Video Section =====
   balletVideoTitle: 'Descubre nuestras clases de Ballet',
-  balletVideoDesc: "Mira cómo es una clase real de ballet en Farray's Center",
+  balletVideoDesc: "Mira cómo es una clase real de ballet en Farray\'s Center",
 
   // ===== Why Today Section =====
   balletWhyTodayFullTitle: '¿Por qué hoy es el mejor momento para empezar Ballet?',
@@ -6620,8 +6621,8 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
     'Nuestras clases de ballet ofrecen entrenamiento de técnica específica y conciencia corporal, además de trabajo de flexibilidad. La danza clásica contribuye al desarrollo de hábitos de disciplina, estimulando el amor por el estudio y por el uso correcto del movimiento. La metodología desafía el condicionamiento físico con múltiples movimientos, trabajando todos los grupos musculares de forma armónica.',
 
   // ===== Accessibility & Schema =====
-  balletImageAlt: "Clases de Ballet en Barcelona - Farray's Center",
-  balletCourseSchemaName: "Clases de Ballet en Barcelona - Farray's Center",
+  balletImageAlt: "Clases de Ballet en Barcelona - Farray\'s Center",
+  balletCourseSchemaName: "Clases de Ballet en Barcelona - Farray\'s Center",
   balletCourseSchemaDesc:
     'Curso de ballet clásico para adultos en Barcelona. Técnica de barra, centro, saltos y giros. Niveles principiante e intermedio. Academia CID-UNESCO.',
   balletCTAGroup: 'Acciones de reserva',
@@ -6629,7 +6630,7 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
   // ===== HowTo Schema =====
   balletHowToName: 'Cómo empezar a bailar Ballet en Barcelona',
   balletHowToDesc:
-    "Guía paso a paso para comenzar tus clases de Ballet en Farray's Center. Desde elegir tu nivel hasta tu primera clase.",
+    "Guía paso a paso para comenzar tus clases de Ballet en Farray\'s Center. Desde elegir tu nivel hasta tu primera clase.",
   balletHowToSupply1: 'Ropa ajustada (mallas o leggins)',
   balletHowToSupply2: 'Zapatillas de media punta o calcetines',
   balletHowToSupply3: 'Botella de agua',
@@ -6662,7 +6663,7 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
     'Plié (del francés "doblar") es un movimiento fundamental del ballet que consiste en doblar las rodillas manteniendo la espalda recta y las rodillas sobre los dedos de los pies.',
 
   // ===== Event Schema =====
-  balletEventName: "Clase de Ballet en Barcelona - Farray's Center",
+  balletEventName: "Clase de Ballet en Barcelona - Farray\'s Center",
   balletEventDesc:
     'Clases semanales de Ballet con Daniel Sene (intermedio) y Alejandro Miñoso (principiantes). Técnica clásica, barra, centro y coreografía. Todos los niveles bienvenidos.',
 
@@ -6777,7 +6778,7 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
 
   // ===== CONTEMPORÁNEO PAGE =====
   // SEO & Meta
-  contemporaneoPageTitle: "Clases de Danza Contemporánea en Barcelona | Academia Farray's Center",
+  contemporaneoPageTitle: "Clases de Danza Contemporánea en Barcelona | Academia Farray\'s Center",
   contemporaneoMetaDescription:
     'Clases de danza contemporánea en Barcelona. Disciplina ecléctica y visceral. Técnica, expresión e improvisación. Todos los niveles. ¡Reserva tu clase de prueba!',
 
@@ -6859,7 +6860,7 @@ Cuba crea desde 1959 su **escuela propia** (Ramiro Guerra), integrando moderna a
 
 **"ENA/ENBC Cuba: formación integral (clásica + moderna + folclórica). Metodología conservatorio reconocida mundialmente."**
 
-### El contemporáneo en Farray's Center
+### El contemporáneo en Farray\'s Center
 
 **Profesores especialistas formados en la escuela cubana (ENA/ENBC)**, con sólida base técnica de ballet y contemporáneo. Formación integral que combina clásica, moderna y folclórica para resultados profesionales.
 
@@ -6893,7 +6894,7 @@ Trabaja integralmente: **flexibilidad, fuerza funcional, coordinación, propioce
   contemporaneoIdentifyAgitate1:
     'Seguir esperando solo te aleja de descubrir tu potencial artístico y físico.',
   contemporaneoIdentifySolution:
-    "En Farray's Center encontrarás un espacio pensado para que explores, crees y evoluciones sin presiones.",
+    "En Farray\'s Center encontrarás un espacio pensado para que explores, crees y evoluciones sin presiones.",
   contemporaneoIdentifyClosing: 'Déjate llevar por la libertad y la expresión del contemporáneo.',
 
   // Transform Section (6 transformaciones)
@@ -6913,7 +6914,7 @@ Trabaja integralmente: **flexibilidad, fuerza funcional, coordinación, propioce
   contemporaneoTransform6Title: 'Mejoras tu forma física',
   contemporaneoTransform6Desc: 'Entrenamientos intensos y armónicos que transforman tu cuerpo.',
   contemporaneoTransformCTA:
-    "¿Por qué elegir Farray's Center para Danza Contemporánea en Barcelona?",
+    "¿Por qué elegir Farray\'s Center para Danza Contemporánea en Barcelona?",
 
   // Why Choose Section (7 items)
   contemporaneoWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
@@ -7035,7 +7036,7 @@ Trabaja integralmente: **flexibilidad, fuerza funcional, coordinación, propioce
   // Local SEO Section
   contemporaneoNearbyTitle: 'Contemporáneo cerca de ti en Barcelona',
   contemporaneoNearbyDesc:
-    "Farray's Center está en el corazón de Barcelona, en Calle Entença 100. Accesible desde cualquier punto de la ciudad.",
+    "Farray\'s Center está en el corazón de Barcelona, en Calle Entença 100. Accesible desde cualquier punto de la ciudad.",
   contemporaneoNearbySearchText:
     'Si buscas "clases de contemporáneo cerca de mi" en Barcelona, estamos a:',
   contemporaneoNearbyMetro:
@@ -7044,7 +7045,7 @@ Trabaja integralmente: **flexibilidad, fuerza funcional, coordinación, propioce
   // Video Section
   contemporaneoVideoTitle: 'Ven a descubrir nuestras clases de Contemporáneo',
   contemporaneoVideoDesc:
-    "Mira cómo es una clase en Farray's Center: técnica, expresión y libertad de movimiento. ¡Te esperamos!",
+    "Mira cómo es una clase en Farray\'s Center: técnica, expresión y libertad de movimiento. ¡Te esperamos!",
 
   // Why Today Section
   contemporaneoWhyTodayFullTitle:
@@ -7111,18 +7112,18 @@ Trabaja integralmente: **flexibilidad, fuerza funcional, coordinación, propioce
   contemporaneoFaqQ14:
     '¿Dónde puedo encontrar clases de Danza Contemporánea cerca de Plaza España?',
   contemporaneoFaqA14:
-    "Farray's Center está ubicado en Calle Entença 100, a solo 5 minutos de Plaza España y Estación de Sants. Puedes llegar en metro (L1, L3), bus o tren.",
+    "Farray\'s Center está ubicado en Calle Entença 100, a solo 5 minutos de Plaza España y Estación de Sants. Puedes llegar en metro (L1, L3), bus o tren.",
   contemporaneoFaqQ15: '¿Qué hago si tengo dudas o necesito más información?',
   contemporaneoFaqA15:
     'Si tienes alguna pregunta adicional o necesitas más información, puedes contactarnos:<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/><strong>Dirección:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
 
   // Image alts
-  contemporaneoImage1Alt: "Clases de Danza Contemporánea en Barcelona - Farray's Center",
+  contemporaneoImage1Alt: "Clases de Danza Contemporánea en Barcelona - Farray\'s Center",
   contemporaneoImage2Alt: 'Estudiantes practicando danza contemporánea',
   contemporaneoImage3Alt: 'Alejandro Miñoso - Instructor de Danza Contemporánea',
 
   // Course Schema (SEO)
-  contemporaneoCourseSchemaName: "Clases de Danza Contemporánea en Barcelona - Farray's Center",
+  contemporaneoCourseSchemaName: "Clases de Danza Contemporánea en Barcelona - Farray\'s Center",
   contemporaneoCourseSchemaDesc:
     'Aprende Danza Contemporánea con Alejandro Miñoso. Técnica, expresión e improvisación. Clases para todos los niveles en Barcelona.',
 
@@ -7237,7 +7238,7 @@ Lo que hace único al Afro Contemporáneo es su capacidad de integrar elementos 
 
 El Afro Contemporáneo impartido en **Farray's International Dance Center** forma parte del plan curricular de formación profesional en danza **avalado por el CID-UNESCO** (Consejo Internacional de la Danza, París). Este reconocimiento certifica tanto la autenticidad de la técnica DCC como la efectividad del Método Farray® para su enseñanza.
 
-**"Farray's Center: única academia en Barcelona con Afro Contemporáneo (DCC) avalada CID-UNESCO + Método Farray® exclusivo."**
+**"Farray\'s Center: única academia en Barcelona con Afro Contemporáneo (DCC) avalada CID-UNESCO + Método Farray® exclusivo."**
 
 ### El Legado Vivo: 65 Años de DCC
 
@@ -7269,7 +7270,7 @@ El Afro Contemporáneo impartido en **Farray's International Dance Center** form
   afrocontemporaneoIdentifyAgitate1:
     'Sin una base técnica sólida, tu evolución como bailarín se estanca. El Afro Contemporáneo es la disciplina que desarrolla todas las capacidades que otros estilos dan por supuestas.',
   afrocontemporaneoIdentifySolution:
-    "En Farray's Center aprenderás con el exclusivo Método Farray®, creado por Yunaisy Farray (maestra CID-UNESCO formada en la ENA Cuba) y adaptado específicamente para que los europeos aprendan de manera más eficaz.",
+    "En Farray\'s Center aprenderás con el exclusivo Método Farray®, creado por Yunaisy Farray (maestra CID-UNESCO formada en la ENA Cuba) y adaptado específicamente para que los europeos aprendan de manera más eficaz.",
   afrocontemporaneoIdentifyClosing:
     '¡No pierdas la oportunidad única de aprender Afro Contemporáneo con el Método Farray®: la pedagogía DCC diseñada para ti!',
 
@@ -7293,7 +7294,7 @@ El Afro Contemporáneo impartido en **Farray's International Dance Center** form
   afrocontemporaneoTransform6Title: 'Método Farray® + CID-UNESCO',
   afrocontemporaneoTransform6Desc:
     'Aprende con una pedagogía exclusiva adaptada a europeos, en una academia avalada internacionalmente por el CID-UNESCO.',
-  afrocontemporaneoTransformCTA: "¿Por qué elegir Farray's Center para bailar Afro Contemporáneo?",
+  afrocontemporaneoTransformCTA: "¿Por qué elegir Farray\'s Center para bailar Afro Contemporáneo?",
   afrocontemporaneoTransformCTASubtitle: 'Descubre de lo que es capaz tu cuerpo',
 
   // Why Choose Section (7 items)
@@ -7428,19 +7429,19 @@ El Afro Contemporáneo impartido en **Farray's International Dance Center** form
   afrocontemporaneoFaqQ14:
     '¿Dónde puedo encontrar clases de Afro Contemporáneo cerca de Plaza España?',
   afrocontemporaneoFaqA14:
-    "Farray's Center está ubicado en Calle Entença 100, a solo 5 minutos de Plaza España y Estación de Sants. Somos la única academia en Barcelona que imparte Afro Contemporáneo con metodología ENA original.",
+    "Farray\'s Center está ubicado en Calle Entença 100, a solo 5 minutos de Plaza España y Estación de Sants. Somos la única academia en Barcelona que imparte Afro Contemporáneo con metodología ENA original.",
 
   afrocontemporaneoFaqQ15: '¿Cómo puedo contactar para más información?',
   afrocontemporaneoFaqA15:
     'Si tienes alguna pregunta adicional o necesitas más información, puedes contactarnos:<br/><br/>📞 <strong>Teléfono:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web:</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a><br/><strong>Dirección:</strong> <a href="https://maps.google.com/?q=Calle+Entença+100,+08015+Barcelona" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">Calle Entença 100, 08015 Barcelona</a>',
 
   // Image alts
-  afrocontemporaneoImage1Alt: "Clases de Afro Contemporáneo en Barcelona - Farray's Center",
+  afrocontemporaneoImage1Alt: "Clases de Afro Contemporáneo en Barcelona - Farray\'s Center",
   afrocontemporaneoImage2Alt: 'Estudiantes practicando técnica Afro Contemporánea',
   afrocontemporaneoImage3Alt: 'Yunaisy Farray - Maestra de Afro Contemporáneo CID-UNESCO',
 
   // Course Schema (SEO)
-  afrocontemporaneoCourseSchemaName: "Clases de Afro Contemporáneo en Barcelona - Farray's Center",
+  afrocontemporaneoCourseSchemaName: "Clases de Afro Contemporáneo en Barcelona - Farray\'s Center",
   afrocontemporaneoCourseSchemaDesc:
     'Aprende Afro Contemporáneo con Yunaisy Farray, maestra CID-UNESCO formada en la ENA Cuba. Técnica de perfeccionamiento para bailarines.',
 
@@ -7637,7 +7638,7 @@ A diferencia de otros estilos, el Afro Jazz trabaja contrastes dinámicos extrem
 
 Farray's Dance Center es la única academia del mundo que enseña Afro Jazz con la metodología original de su creadora, avalada por el **CID-UNESCO (Consejo Internacional de la Danza)**. Centro avalado internacionalmente desde 2017, con más de 15 años de desarrollo metodológico y +15.000 alumnos formados en Barcelona.
 
-**"Farray's Center: único centro mundial CID-UNESCO para Afro Jazz. Credencial verificable desde 2017."**
+**"Farray\'s Center: único centro mundial CID-UNESCO para Afro Jazz. Credencial verificable desde 2017."**
 
 ### Por Qué el Método Farray® es Diferente
 
@@ -7672,7 +7673,7 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   afrojazzIdentifyAgitate1:
     'No importa si nunca has bailado o si llevas años haciéndolo. El Afro Jazz te ofrece un camino de crecimiento adaptado a tu punto de partida.',
   afrojazzIdentifySolution:
-    "En Farray's Center encontrarás clases de Afro Jazz para todos los niveles, con la única metodología profesional del mundo avalada por el CID-UNESCO.",
+    "En Farray\'s Center encontrarás clases de Afro Jazz para todos los niveles, con la única metodología profesional del mundo avalada por el CID-UNESCO.",
   afrojazzIdentifyClosing: 'Empieza donde estés. Llega donde quieras.',
 
   // Transform Section (6 transformaciones)
@@ -7694,7 +7695,7 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
     'Secuencias complejas que trabajan ambos hemisferios cerebrales y la memoria muscular.',
   afrojazzTransform6Title: 'Accedes a repertorio exclusivo',
   afrojazzTransform6Desc: 'Coreografías originales que solo encontrarás en nuestra academia.',
-  afrojazzTransformCTA: "¿Por qué elegir Farray's Center para tu formación en Afro Jazz?",
+  afrojazzTransformCTA: "¿Por qué elegir Farray\'s Center para tu formación en Afro Jazz?",
 
   // Why Choose Section (7 items - incluye profesores especializados)
   afrojazzWhyChoose1Title: 'Única academia del mundo con Afro Jazz CID-UNESCO',
@@ -7750,7 +7751,7 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
     'Para bailarines con experiencia previa en danza. Trabaja secuencias complejas, improvisación avanzada, interpretación musical y repertorio coreográfico. Profundiza en la técnica con la creadora del Método Farray®.',
 
   // Video Section
-  afrojazzVideoTitle: "Descubre el Afro Jazz en Farray's Center",
+  afrojazzVideoTitle: "Descubre el Afro Jazz en Farray\'s Center",
   afrojazzVideoDesc:
     'Mira cómo trabajamos la fusión de Afro Contemporáneo y Jazz: técnica, improvisación y repertorio con metodología profesional.',
 
@@ -7988,7 +7989,7 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   hiphopWhatIsP3:
     'Los tres elementos — freestyle, batallas y ciphers — son los componentes esenciales de la danza hip hop auténtica.',
   hiphopWhatIsP4:
-    "En Farray's Center aprenderás Hip Hop con Marcos Martínez, juez de competiciones internacionales y uno de los referentes del Hip Hop en España. Con más de 30 años de existencia global, el Hip Hop es parte del plan curricular de formación profesional en danza avalado por el CID-UNESCO.",
+    "En Farray\'s Center aprenderás Hip Hop con Marcos Martínez, juez de competiciones internacionales y uno de los referentes del Hip Hop en España. Con más de 30 años de existencia global, el Hip Hop es parte del plan curricular de formación profesional en danza avalado por el CID-UNESCO.",
   hiphopWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
   hiphopWhatIsQuestionAnswer: 'Si sientes el ritmo, ya lo eres.',
 
@@ -8087,7 +8088,7 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   hiphopIdentifyAgitate1:
     'Si no das el paso ahora, seguirás mirando vídeos de bailarines en Instagram preguntándote cómo lo hacen.',
   hiphopIdentifySolution:
-    "En Farray's Center encontrarás un espacio donde aprender de verdad, con un maestro que respira Hip Hop y una comunidad que te recibe sin importar tu nivel.",
+    "En Farray\'s Center encontrarás un espacio donde aprender de verdad, con un maestro que respira Hip Hop y una comunidad que te recibe sin importar tu nivel.",
   hiphopIdentifyClosing: 'Siente el flow, libérate, crea tu estilo. El Hip Hop te está esperando.',
 
   // Transform Section
@@ -8109,7 +8110,7 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   hiphopTransform6Title: 'De espectador a protagonista',
   hiphopTransform6Desc:
     'Dejarás de mirar desde fuera para ser quien entra al cipher y se lleva todas las miradas.',
-  hiphopTransformCTA: "¿Por qué elegir Farray's Center para aprender Hip Hop?",
+  hiphopTransformCTA: "¿Por qué elegir Farray\'s Center para aprender Hip Hop?",
   hiphopTransformCTASubtitle:
     'La academia de Hip Hop en Barcelona con el profesor que marca la diferencia',
 
@@ -8220,7 +8221,7 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   hiphopNearbyMetro: 'Metro Hostafrancs (L1), Plaza España (L1, L3), Sants Estació (L3, L5, Renfe)',
 
   // Course Schema
-  hiphopCourseSchemaName: "Clases de Hip Hop en Barcelona - Farray's Center",
+  hiphopCourseSchemaName: "Clases de Hip Hop en Barcelona - Farray\'s Center",
   hiphopCourseSchemaDesc:
     'Aprende Hip Hop con Marcos Martínez, juez de competiciones y maestro internacional. Breaking, locking, popping y freestyle.',
 
@@ -8269,7 +8270,7 @@ Con más de **50 años de desarrollo global**, el Hip Hop ha pasado de los block
 
 **Una clase de Hip Hop de 60 minutos puede quemar entre 400-600 calorías** mientras mejora la coordinación, el ritmo y la expresión corporal. **Estudios demuestran que bailar hip hop mejora la memoria, la concentración y reduce los niveles de estrés.**
 
-### El Hip Hop en Farray's Center
+### El Hip Hop en Farray\'s Center
 
 En nuestra academia, el Hip Hop forma parte del plan curricular de formación profesional en danza avalado por el **CID-UNESCO (Consejo Internacional de la Danza de la UNESCO en París)**. La metodología respeta las raíces de la cultura: técnica base, musicalidad, historia del movimiento y desarrollo del estilo personal a través del freestyle.
 
@@ -8285,7 +8286,7 @@ Nuestro profesor **Marcos Martínez**, juez de competiciones internacionales y r
   hiphopCitableTecnicas:
     'Las técnicas principales del Hip Hop incluyen: grooves y bounces (base rítmica), social dances, toprock, footwork, freezes, power moves, y elementos de locking, popping y breaking.',
   hiphopCitableMetodologia:
-    "En Farray's Center, el Hip Hop se enseña respetando las raíces de la cultura: técnica base, musicalidad, historia del movimiento y desarrollo del estilo personal a través del freestyle.",
+    "En Farray\'s Center, el Hip Hop se enseña respetando las raíces de la cultura: técnica base, musicalidad, historia del movimiento y desarrollo del estilo personal a través del freestyle.",
   hiphopStatistics:
     'El Hip Hop es practicado por más de 30 millones de personas en todo el mundo. Una clase de 60 minutos puede quemar entre 400-600 calorías mientras mejora coordinación, ritmo y expresión corporal.',
   hiphopCitableFact1:
@@ -8455,7 +8456,7 @@ Nuestro profesor **Marcos Martínez**, juez de competiciones internacionales y r
   salsaCubanaBenefit5: 'Gana confianza corporal que se traslada a tu vida diaria',
 
   // What Is Section - Aprende a Bailar Salsa
-  salsaCubanaWhatIsTitle: "Aprende A Bailar Salsa en Farray's Center",
+  salsaCubanaWhatIsTitle: "Aprende A Bailar Salsa en Farray\'s Center",
   salsaCubanaWhatIsP1:
     'En nuestras clases de Salsa Cubana en Barcelona podrás aprender a bailar salsa cubana con estilo y elegancia gracias a un método único en el mundo: el Método Farray®.',
   salsaCubanaWhatIsP2:
@@ -8728,13 +8729,13 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
     'Es una forma de bailar salsa cubana en grupo, en círculo, donde todas las parejas ejecutan figuras sincronizadas siguiendo las indicaciones de un "cantante". Es muy divertida y social.',
   salsaCubanaFaqQ9: '¿Cuál es la mejor academia de salsa cubana en Barcelona?',
   salsaCubanaFaqA9:
-    "Farray's Center es la academia de referencia en Barcelona, acreditada por el CID-UNESCO con el Método Farray® exclusivo. Con más de 15.000 alumnos formados, 8 años de experiencia y una valoración de 4.9/5 en Google (505+ reseñas), ofrece un sistema progresivo que enseña a bailar de verdad, no solo a memorizar figuras.",
+    "Farray\'s Center es la academia de referencia en Barcelona, acreditada por el CID-UNESCO con el Método Farray® exclusivo. Con más de 15.000 alumnos formados, 8 años de experiencia y una valoración de 4.9/5 en Google (505+ reseñas), ofrece un sistema progresivo que enseña a bailar de verdad, no solo a memorizar figuras.",
   salsaCubanaFaqQ10: '¿Cuánto cuestan las clases de salsa cubana en Barcelona?',
   salsaCubanaFaqA10:
-    "Farray's Center ofrece una clase de prueba GRATIS para que experimentes el Método Farray® sin compromiso. Las cuotas mensuales varían según la frecuencia de clases. Contacta para conocer las tarifas actuales y promociones.",
+    "Farray\'s Center ofrece una clase de prueba GRATIS para que experimentes el Método Farray® sin compromiso. Las cuotas mensuales varían según la frecuencia de clases. Contacta para conocer las tarifas actuales y promociones.",
   salsaCubanaFaqQ11: "¿Dónde está la academia Farray's en Barcelona?",
   salsaCubanaFaqA11:
-    "Farray's Center está ubicada entre Plaza España y Sants, una zona céntrica y bien comunicada de Barcelona. Accesible en metro (L1, L3, L5) y múltiples líneas de bus. A 5 minutos andando de las estaciones Hostafrancs y Tarragona.",
+    "Farray\'s Center está ubicada entre Plaza España y Sants, una zona céntrica y bien comunicada de Barcelona. Accesible en metro (L1, L3, L5) y múltiples líneas de bus. A 5 minutos andando de las estaciones Hostafrancs y Tarragona.",
   salsaCubanaFaqQ12: '¿Qué horarios tienen las clases de salsa cubana?',
   salsaCubanaFaqA12:
     'Ofrecemos clases de salsa cubana de lunes a viernes a las 20:00h, con un nivel diferente cada día para que puedas encontrar el que mejor se adapte a ti. Los lunes: Nivel 0 (principiantes absolutos), martes: Básico I, miércoles: Básico II-III, jueves: Intermedio, viernes: Avanzado. Si no sabes tu nivel, ven a una clase de prueba y te orientaremos.',
@@ -9220,11 +9221,11 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
 
 **"El Lady Style quema entre 300-400 calorías por hora mientras tonifica piernas, glúteos, core y brazos, siendo uno de los ejercicios más completos para la mujer."**
 
-### Lady Style en Farray's Center
+### Lady Style en Farray\'s Center
 
 **Farray's International Dance Center es la única academia de Barcelona donde puedes aprender Salsa Lady Style directamente con Yunaisy Farray**, creadora del Método Farray® y miembro del CID-UNESCO desde 2018. Yunaisy, formada en la Escuela Nacional de Arte de Cuba y reconocida internacionalmente por su participación en la película "Street Dance 2" y el programa "Got Talent", aporta una combinación única de técnica clásica y sabor afrocubano que no encontrarás en ningún otro lugar.
 
-**"Farray's Center es la única academia en Barcelona con enseñanza directa de Yunaisy Farray, creadora del Método Farray® y miembro del CID-UNESCO, ofreciendo Lady Style con auténtica técnica cubana."**
+**"Farray\'s Center es la única academia en Barcelona con enseñanza directa de Yunaisy Farray, creadora del Método Farray® y miembro del CID-UNESCO, ofreciendo Lady Style con auténtica técnica cubana."**
 
 ### El Lady Style Hoy: Empoderamiento Femenino
 
@@ -9299,7 +9300,7 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
   salsaLadyFinalCTA2Subtext: 'Descubre el Método Farray®',
 
   // Course Schema
-  salsaLadyCourseSchemaName: "Clases de Salsa Lady Style en Barcelona - Farray's Center",
+  salsaLadyCourseSchemaName: "Clases de Salsa Lady Style en Barcelona - Farray\'s Center",
   salsaLadyCourseSchemaDesc:
     'Aprende Salsa Lady Style con Yunaisy Farray, creadora del Método Farray® y miembro del CID-UNESCO. Clases de estilo chica, técnica femenina y elegancia para todos los niveles en Barcelona.',
 
@@ -9664,12 +9665,12 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
   // Teacher Section
   bachataLadyTeachersTitle: 'Tu Maestra de Bachata Lady Style',
   bachataLadyTeachersSubtitle: 'Aprende con una maestra experta en sensualidad y técnica femenina',
-  bachataLadyTeacherCredential: "Maestra de Bachata en Farray's Center",
+  bachataLadyTeacherCredential: "Maestra de Bachata en Farray\'s Center",
   bachataLadyTeacherBio:
     'Yunaisy Farray ha adaptado su revolucionario Método Farray® para la bachata, combinando la sensualidad caribeña con una técnica depurada que te permite expresar tu feminidad con elegancia.',
   bachataLadyTeacher2Specialty: 'Campeona Mundial Salsa LA | Especialista en Bachata',
   bachataLadyTeacher2Bio:
-    "Eugenia Trujillo es una maestra y bailarina internacional uruguaya, profesora en Farray's Center desde hace 4 años con excelentes resultados. Especialista en bachata pero también en Salsa LA, modalidad en la que compitió junto a Mathias Font y fueron campeones mundiales. Su carisma, simpatía y cercanía hacen de Eugenia una de las profesoras más queridas de nuestro claustro.",
+    "Eugenia Trujillo es una maestra y bailarina internacional uruguaya, profesora en Farray\'s Center desde hace 4 años con excelentes resultados. Especialista en bachata pero también en Salsa LA, modalidad en la que compitió junto a Mathias Font y fueron campeones mundiales. Su carisma, simpatía y cercanía hacen de Eugenia una de las profesoras más queridas de nuestro claustro.",
   bachataLadyTeachersClosing:
     'Con nuestra maestra descubrirás cómo expresar sensualidad con elegancia y técnica impecable.',
 
@@ -9719,9 +9720,9 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
   bachataLadyIdentify6: 'Buscas un espacio seguro para explorar tu sensualidad a través del baile',
   bachataLadyIdentifyTransition:
     'Si te identificas con alguno de estos puntos, las clases de Bachata Lady Style son exactamente lo que necesitas.',
-  bachataLadyIdentifyNeedTitle: "Necesitas Aprender Bachata Lady Style en Farray's Center",
+  bachataLadyIdentifyNeedTitle: "Necesitas Aprender Bachata Lady Style en Farray\'s Center",
   bachataLadyIdentifySolution:
-    "En Farray's Center te enseñamos a conectar con tu cuerpo, desarrollar ondulaciones naturales y expresar sensualidad con técnica y elegancia.",
+    "En Farray\'s Center te enseñamos a conectar con tu cuerpo, desarrollar ondulaciones naturales y expresar sensualidad con técnica y elegancia.",
   bachataLadyIdentifyClosing:
     'Tu transformación empieza el día que decides hacer tu primera clase con nosotros.',
 
@@ -10062,7 +10063,7 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
   bachataLadyFinalCTA2Subtext: 'Válido por tiempo limitado',
 
   // ===== FOLKLORE CUBANO PAGE =====
-  folklorePageTitle: "Clases de Folklore Cubano en Barcelona | Academia Farray's Center",
+  folklorePageTitle: "Clases de Folklore Cubano en Barcelona | Academia Farray\'s Center",
   folkloreMetaDescription:
     'Aprende Folklore Cubano auténtico en Barcelona. Danzas a los Orishas, Yoruba, Rumba y más. Maestros cubanos especializados. Entre Plaza España y Sants. ¡Prueba gratis!',
   folkloreCourseSchemaName: 'Clases de Folklore Cubano en Barcelona',
@@ -10155,7 +10156,7 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
   folkloreTransform6Title: 'Mejora tu forma física',
   folkloreTransform6Desc:
     'El trabajo físico exigente del folklore te mantendrá en forma todo el año.',
-  folkloreTransformCTA: "¿Por qué elegir Farray's Center para aprender Folklore Cubano?",
+  folkloreTransformCTA: "¿Por qué elegir Farray\'s Center para aprender Folklore Cubano?",
 
   // Why Choose Section
   folkloreWhyChoose1Title: 'Maestros cubanos especializados',
@@ -10323,7 +10324,7 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
     "¿Por qué aprender Folklore Cubano en Farray's y no en otra academia de Barcelona?",
   folkloreCompareSubtitle: 'La diferencia está en las raíces.',
   folkloreCompareColOthers: 'Otras academias',
-  folkloreCompareColFarrays: "Farray's Center",
+  folkloreCompareColFarrays: "Farray\'s Center",
   folkloreCompareRow1Label: 'Formación de profesores',
   folkloreCompareRow1Others: 'Bailarines sin formación especializada',
   folkloreCompareRow1Farrays: 'Maestros de la Escuela Nacional de Arte de Cuba',
@@ -10371,7 +10372,7 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
   // === META & SEO ===
   timbaPageTitle: 'Clases de Timba en Barcelona',
   timbaMetaDescription:
-    "Clases de Timba en Barcelona: Timba en Pareja y Lady Timba con maestros cubanos. Aprende a bailar cuando te sueltan en la salsa. Farray's Center, academia CID-UNESCO.",
+    "Clases de Timba en Barcelona: Timba en Pareja y Lady Timba con maestros cubanos. Aprende a bailar cuando te sueltan en la salsa. Farray\'s Center, academia CID-UNESCO.",
   timbaCourseSchemaName: 'Curso de Timba Cubana en Barcelona',
   timbaCourseSchemaDesc:
     'Clases de Timba con maestros cubanos profesionales. Timba en pareja y Lady Timba para mujeres. Aprende interpretación musical y despelote cubano.',
@@ -10589,7 +10590,7 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
   // === NEARBY AREAS SECTION (Local SEO) ===
   timbaNearbyTitle: 'Clases de Timba cerca de ti en Barcelona',
   timbaNearbyDesc:
-    "Farray's Center está en Plaza España, perfectamente comunicado por metro (L1 y L3) y autobús. Alumnos de toda Barcelona vienen a aprender Timba con nosotros.",
+    "Farray\'s Center está en Plaza España, perfectamente comunicado por metro (L1 y L3) y autobús. Alumnos de toda Barcelona vienen a aprender Timba con nosotros.",
   timbaNearbySearchText: '¿Buscas "clases de Timba cerca de mí"? Mira lo fácil que es llegar:',
   timbaNearbyMetro: 'Metro: Plaza España (L1, L3) · Hostafrancs (L1) · Tarragona (L3)',
 
@@ -10610,7 +10611,7 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
 
   // === SEO META ===
   stretchingPageTitle:
-    "Clases de Stretching en Barcelona | Estiramientos y Flexibilidad | Farray's Center",
+    "Clases de Stretching en Barcelona | Estiramientos y Flexibilidad | Farray\'s Center",
   stretchingMetaDescription:
     'Clases de stretching y estiramientos en Barcelona. Mejora tu flexibilidad con el Método Farray. Backbending, elongación de piernas y espalda. Todos los niveles. Plaza España.',
   stretchingMetaKeywords:
@@ -10627,7 +10628,7 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
   stretchingHeroSubtitle: 'Estiramientos y Flexibilidad con el Método Farray',
   stretchingHeroDesc:
     'Transforma tu cuerpo con nuestras clases de stretching. Desde principiantes hasta nivel avanzado.',
-  stretchingHeroLocation: "Farray's Center · Entre Plaza España y Sants, Barcelona",
+  stretchingHeroLocation: "Farray\'s Center · Entre Plaza España y Sants, Barcelona",
   stretchingHeroStudents: '+15.000 alumnos formados',
   stretchingCTAGroup: 'Opciones de inscripción',
   stretchingCTA1: 'Hazte Socio Ahora',
@@ -10681,7 +10682,7 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
   stretchingTransform5Desc: 'Mayor consciencia de tu cuerpo y sus límites.',
   stretchingTransform6Title: 'Bienestar total',
   stretchingTransform6Desc: 'Sensación de ligereza y bienestar después de cada clase.',
-  stretchingTransformCTA: "¿Por qué elegir Farray's Center para tu Stretching en Barcelona?",
+  stretchingTransformCTA: "¿Por qué elegir Farray\'s Center para tu Stretching en Barcelona?",
 
   // === LEVELS SECTION ===
   stretchingLevelsTitle: 'Nuestros Niveles de Stretching',
@@ -10785,7 +10786,7 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
 
 ### El Método Farray: Fusión de Tradiciones
 
-**En Farray's Center hemos desarrollado una metodología propia que combina lo mejor de cada tradición:** la paciencia y consciencia corporal del yoga, el rigor técnico del ballet clásico, las técnicas PNF de rehabilitación deportiva, y el conocimiento de la anatomía moderna.
+**En Farray\'s Center hemos desarrollado una metodología propia que combina lo mejor de cada tradición:** la paciencia y consciencia corporal del yoga, el rigor técnico del ballet clásico, las técnicas PNF de rehabilitación deportiva, y el conocimiento de la anatomía moderna.
 
 El Método Farray se caracteriza por:
 - **Progresión estructurada**: 4 niveles (Principiantes → Básico → Intermedio → Intermedio/Avanzado)
@@ -10820,7 +10821,7 @@ Estudios científicos confirman que el stretching regular de 3+ veces por semana
   stretchingCitableBeneficios:
     'Stretching regular: +15-20% flexibilidad en 4-8 semanas, -30% lesiones, mejora circulación, reduce cortisol.',
   stretchingCitableMetodoFarray:
-    "Método Farray (Barcelona): fusión yoga + ballet clásico + PNF + anatomía moderna; en Farray's Center desde 2018.",
+    "Método Farray (Barcelona): fusión yoga + ballet clásico + PNF + anatomía moderna; en Farray\'s Center desde 2018.",
   stretchingCitableStatistics:
     'Stretching: 150-200 cal/hora, +30% eficacia con PNF, mejora ROM 15-20% en 4-8 semanas práctica constante.',
   stretchingCitableFact1:
@@ -10858,7 +10859,7 @@ Estudios científicos confirman que el stretching regular de 3+ veces por semana
     'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba".',
   stretchingFaqQ9: '¿Hay contrato o permanencia mínima?',
   stretchingFaqA9:
-    "No hay contrato ni permanencia mínima. En Farray's Center trabajamos mes a mes: pagas solo los meses que asistes. Puedes pausar o cancelar en cualquier momento sin penalizaciones. Flexibilidad total para adaptarnos a tu vida.",
+    "No hay contrato ni permanencia mínima. En Farray\'s Center trabajamos mes a mes: pagas solo los meses que asistes. Puedes pausar o cancelar en cualquier momento sin penalizaciones. Flexibilidad total para adaptarnos a tu vida.",
   stretchingFaqQ10: '¿Puedo combinar stretching con otras clases de la academia?',
   stretchingFaqA10:
     'Sí, es la combinación ideal. El stretching complementa cualquier estilo de baile mejorando tu rango de movimiento y previniendo lesiones. Recomendación: 1-2 clases de stretching por semana + tus clases de baile habituales. Muchos alumnos combinan Bachata/Salsa + Stretching o Danzas Urbanas + Backbending & Legs.',
@@ -10881,7 +10882,7 @@ Estudios científicos confirman que el stretching regular de 3+ veces por semana
   // === NEARBY AREAS SECTION (Local SEO) ===
   stretchingNearbyTitle: 'Clases de Stretching cerca de ti en Barcelona',
   stretchingNearbyDesc:
-    "Somos una de las academias de referencia para clases de stretching y estiramientos en la zona de Plaza España, Hostafrancs, Sants y alrededores. Farray's Center está perfectamente comunicado por metro y autobús.",
+    "Somos una de las academias de referencia para clases de stretching y estiramientos en la zona de Plaza España, Hostafrancs, Sants y alrededores. Farray\'s Center está perfectamente comunicado por metro y autobús.",
   stretchingNearbySearchText:
     '¿Buscas "clases de estiramientos cerca de mí"? Mira lo fácil que es llegar:',
   stretchingNearbyMetro:
@@ -10917,15 +10918,15 @@ Estudios científicos confirman que el stretching regular de 3+ veces por semana
     '"Llegué sin poder tocarme los pies. 6 meses después, puedo hacer el split." — Alumna anónima',
 
   // === SCHEMA MARKUP ===
-  stretchingCourseSchemaName: "Clases de Stretching en Barcelona - Farray's Center",
+  stretchingCourseSchemaName: "Clases de Stretching en Barcelona - Farray\'s Center",
   stretchingCourseSchemaDesc:
     'Clases de stretching y estiramientos en Barcelona. Backbending, elongación de piernas y espalda. Método Farray. Todos los niveles.',
-  stretchingEventName: "Clase de Stretching en Barcelona - Farray's Center",
+  stretchingEventName: "Clase de Stretching en Barcelona - Farray\'s Center",
   stretchingEventDesc:
     'Clases semanales de Stretching con Cris Ag y Daniel Sené. Principiantes, Básico e Intermedio. Backbending & Legs. Todos los niveles bienvenidos.',
   stretchingVideoTitle: 'Clases de Stretching en Barcelona',
   stretchingVideoDesc:
-    "Descubre nuestras clases de stretching y estiramientos en Farray's Center. Backbending, elongación de piernas y espalda con el Método Farray.",
+    "Descubre nuestras clases de stretching y estiramientos en Farray\'s Center. Backbending, elongación de piernas y espalda con el Método Farray.",
 
   // ============================================================
   // BUM BUM GLÚTEOS MARAVILLOSOS PAGE
@@ -10949,7 +10950,7 @@ Estudios científicos confirman que el stretching regular de 3+ veces por semana
   bumbumHeroSubtitle: 'Tonifica, Fortalece y Aumenta tus Glúteos',
   bumbumHeroDesc:
     'Transforma tus glúteos con nuestro programa exclusivo que combina ejercicios específicos con técnicas de danza. Resultados visibles desde las primeras semanas.',
-  bumbumHeroLocation: "Farray's Center · Entre Plaza España y Sants, Barcelona",
+  bumbumHeroLocation: "Farray\'s Center · Entre Plaza España y Sants, Barcelona",
   bumbumHeroStudents: '+15.000 alumnos formados',
   bumbumCTAGroup: 'Opciones de inscripción',
   bumbumCTA1: 'Hazte Socio Ahora',
@@ -11008,7 +11009,7 @@ Estudios científicos confirman que el stretching regular de 3+ veces por semana
   bumbumTransform6Title: 'Confianza renovada',
   bumbumTransform6Desc: 'Sentirte bien con tu cuerpo se nota en todo lo que haces.',
   bumbumTransformCTA:
-    "¿Por qué elegir Farray's Center para tus ejercicios de glúteos en Barcelona?",
+    "¿Por qué elegir Farray\'s Center para tus ejercicios de glúteos en Barcelona?",
 
   // === LEVELS SECTION ===
   bumbumLevelsTitle: 'Nivel de la Clase',
@@ -11105,7 +11106,7 @@ Según estudios científicos de activación muscular:
 
 ### El Método Farray Aplicado a Glúteos
 
-**En Farray's Center hemos adaptado nuestra metodología al entrenamiento de glúteos**, combinando:
+**En Farray\'s Center hemos adaptado nuestra metodología al entrenamiento de glúteos**, combinando:
 
 - **Ejercicios científicamente probados**: Hip thrust, sentadillas, puente de glúteos
 - **Técnicas de danza**: Ritmo, música y movimiento para hacer el entrenamiento divertido
@@ -11134,7 +11135,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   bumbumCitableBeneficios:
     'Entrenamiento glúteos regular: -50% dolor lumbar, mejora postura, +potencia, 300-400 cal/hora.',
   bumbumCitableMetodoFarray:
-    "Método Farray Glúteos: hip thrust + técnicas danza + progresión personalizada; en Farray's Center Barcelona.",
+    "Método Farray Glúteos: hip thrust + técnicas danza + progresión personalizada; en Farray\'s Center Barcelona.",
   bumbumCitableStatistics:
     'Glúteos: grupo muscular más grande del cuerpo; 3 músculos (mayor, medio, menor) para postura y potencia.',
   bumbumCitableFact1:
@@ -11172,7 +11173,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
     'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba".',
   bumbumFaqQ9: '¿Hay contrato o permanencia mínima?',
   bumbumFaqA9:
-    "No hay contrato ni permanencia mínima. En Farray's Center trabajamos mes a mes: pagas solo los meses que asistes. Puedes pausar o cancelar en cualquier momento sin penalizaciones.",
+    "No hay contrato ni permanencia mínima. En Farray\'s Center trabajamos mes a mes: pagas solo los meses que asistes. Puedes pausar o cancelar en cualquier momento sin penalizaciones.",
   bumbumFaqQ10: '¿Puedo combinar Bum Bum con otras clases de la academia?',
   bumbumFaqA10:
     'Sí, es una combinación ideal. Muchos alumnos combinan Bum Bum Glúteos con Stretching (para flexibilidad) o con clases de baile como Reggaeton o Twerk. Los glúteos fuertes mejoran tu rendimiento en cualquier estilo de danza.',
@@ -11195,7 +11196,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   // === NEARBY AREAS SECTION (Local SEO) ===
   bumbumNearbyTitle: 'Clases de Ejercicios de Glúteos cerca de ti en Barcelona',
   bumbumNearbyDesc:
-    "Somos una de las academias de referencia para clases de ejercicios de glúteos en la zona de Plaza España, Hostafrancs, Sants y alrededores. Farray's Center está perfectamente comunicado por metro y autobús.",
+    "Somos una de las academias de referencia para clases de ejercicios de glúteos en la zona de Plaza España, Hostafrancs, Sants y alrededores. Farray\'s Center está perfectamente comunicado por metro y autobús.",
   bumbumNearbySearchText: '¿Buscas "clases de glúteos cerca de mí"? Mira lo fácil que es llegar:',
   bumbumNearbyMetro:
     'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
@@ -11230,15 +11231,15 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
     '"Llegué pensando que era imposible activar mis glúteos. Ahora no paro de sentirlos en cada movimiento." — Alumna de Bum Bum',
 
   // === SCHEMA MARKUP ===
-  bumbumCourseSchemaName: "Clases de Ejercicios de Glúteos en Barcelona - Farray's Center",
+  bumbumCourseSchemaName: "Clases de Ejercicios de Glúteos en Barcelona - Farray\'s Center",
   bumbumCourseSchemaDesc:
     'Clases de ejercicios de glúteos en Barcelona. Hip thrust, sentadillas, puente de glúteos. Bum Bum Glúteos Maravillosos con Método Farray.',
-  bumbumEventName: "Clase de Bum Bum Glúteos Maravillosos en Barcelona - Farray's Center",
+  bumbumEventName: "Clase de Bum Bum Glúteos Maravillosos en Barcelona - Farray\'s Center",
   bumbumEventDesc:
     'Clase semanal de Bum Bum Glúteos Maravillosos con Cris Ag. Ejercicios de glúteos combinados con técnicas de danza. Todos los niveles bienvenidos.',
   bumbumVideoTitle: 'Clases de Ejercicios de Glúteos en Barcelona',
   bumbumVideoDesc:
-    "Descubre nuestras clases de Bum Bum Glúteos Maravillosos en Farray's Center. Hip thrust, sentadillas y más con el Método Farray.",
+    "Descubre nuestras clases de Bum Bum Glúteos Maravillosos en Farray\'s Center. Hip thrust, sentadillas y más con el Método Farray.",
 
   // ============================================================
   // CALENDAR / CALENDARIO
@@ -11329,7 +11330,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricing_breadcrumb_current: 'Cuotas',
 
   // Schema
-  pricing_schema_name: "Cuotas Club Deportivo Farray's Center",
+  pricing_schema_name: "Cuotas Club Deportivo Farray\'s Center",
   pricing_schema_description:
     'Cuotas de socio para actividades de baile en Barcelona. Planes mensuales, flexibles y entrenamientos personalizados.',
 
@@ -11444,27 +11445,34 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricing_exclusive_subtitle:
     'Ser socio de FIDC te abre las puertas a una comunidad y oportunidades únicas que no encontrarás en ninguna otra escuela.',
 
-  // Community Group
+  // Comunidad Group (restored original)
   pricing_exclusive_community: 'Comunidad',
-  pricing_exclusive_community_1: '+10.000 socios en nuestra comunidad activa',
-  pricing_exclusive_community_2: 'Gala Anual en el Teatro Victoria de Barcelona',
+  pricing_exclusive_community_1: '+10.000 socios que comparten tu pasión',
+  pricing_exclusive_community_2: 'Gala Anual con espectáculos de alumnos',
+  pricing_exclusive_community_3: 'Conexión con artistas y bailarines profesionales',
 
-  // Special Prices Group
+  // Condiciones Especiales Group (new)
+  pricing_exclusive_conditions: 'Condiciones Especiales',
+  pricing_exclusive_conditions_1: 'Mentoring y preparación para competiciones',
+  pricing_exclusive_conditions_2: 'Entrenamientos personalizados',
+  pricing_exclusive_conditions_3: 'Acceso a experiencias exclusivas',
+
+  // Precios Especiales Group
   pricing_exclusive_prices: 'Precios Especiales',
-  pricing_exclusive_prices_1: 'Clases particulares, mentoring y preparación para competiciones',
-  pricing_exclusive_prices_2: 'Coreografías para bailes de boda personalizados',
-  pricing_exclusive_prices_3: 'Despedidas de soltero/a con experiencias exclusivas',
+  pricing_exclusive_prices_1: 'Coreografías para bailes de boda personalizados',
+  pricing_exclusive_prices_2: 'Despedidas de soltero/a con experiencias exclusivas',
+  pricing_exclusive_prices_3: 'Clases particulares y sesiones privadas',
 
   // Discounts Group
   pricing_exclusive_discounts: 'Descuentos',
-  pricing_exclusive_discounts_1: 'Merchandising oficial de la academia',
+  pricing_exclusive_discounts_1: 'Merchandising oficial del centro',
   pricing_exclusive_discounts_2: 'Fiestas y eventos especiales de la escuela',
   pricing_exclusive_discounts_3: 'Entidades colaboradoras del barrio',
 
   // Opportunities Group
   pricing_exclusive_opportunities: 'Oportunidades',
   pricing_exclusive_opportunities_1: 'Bolsa de trabajo exclusiva para bailarines',
-  pricing_exclusive_opportunities_2: 'Colaboraciones con nuestra agencia y productora',
+  pricing_exclusive_opportunities_2: 'Colaboraciones con agencias y productoras',
   pricing_exclusive_opportunities_3: 'Posibilidad de formar parte del equipo de la academia',
 
   // Referral Program
@@ -11496,7 +11504,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
     "La cuota de inscripción es de 60€ el primer año y 20€/año de renovación para todos los socios. Esta cuota te garantiza el acceso al sistema, tu plaza fija en el horario, y todas las ventajas exclusivas de socio de Farray's: seguro de accidentes, entrada prioritaria a eventos y actividades internas, programa de referidos (2 participaciones puntuales por amigo), descuentos en merchandising y fiestas, y todos los beneficios de formar parte de nuestra comunidad de +10.000 bailarines. A veces tenemos promociones donde la bonificamos.",
   pricing_faq2_q: '¿Puedo probar una clase antes de inscribirme?',
   pricing_faq2_a:
-    'Sí, puedes reservar tu primera clase sin compromiso para conocernos. Si decides hacerte socio después, te aplicamos la cuota de inscripción normal.',
+    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
   pricing_faq3_q: '¿Hay compromiso de permanencia?',
   pricing_faq3_a:
     'No, no hay permanencia obligatoria. Puedes cancelar tu cuota mensual cuando quieras, solicitándolo a través del formulario de contacto de la web con un mínimo de 15 días de antelación del siguiente cobro.',
@@ -11527,6 +11535,18 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricing_faq12_q: '¿Qué métodos de pago aceptan?',
   pricing_faq12_a:
     'Aceptamos tarjeta de crédito/débito (pago recurrente automático para cuotas mensuales), transferencia bancaria y efectivo. Todo se gestiona a través de nuestra app Momence.',
+  pricing_faq13_q: '¿Cuánto cuestan las clases de baile en Barcelona?',
+  pricing_faq13_a:
+    "En Barcelona, los precios varían según el centro y la modalidad. En general, oscilan entre 50€ y 150€/mes para cuotas regulares, o entre 10€ y 25€ por clase suelta. En Farray's Center ofrecemos opciones desde 50€/mes con acceso a +25 estilos, sin permanencia.",
+  pricing_faq14_q: '¿Puedo ir solo/a a las clases?',
+  pricing_faq14_a:
+    'Sí, la mayoría de nuestros socios vienen solos. No necesitas pareja para ningún estilo. En las clases de bailes en pareja rotamos continuamente, así que siempre tendrás con quién practicar. Es una forma estupenda de conocer gente.',
+  pricing_faq15_q: '¿Tengo que apuntarme a todo el mes?',
+  pricing_faq15_a:
+    'No necesariamente. Ofrecemos cuotas mensuales (la opción más económica), pero también bonos flexibles de 10 o 20 participaciones que puedes usar cuando quieras, y participaciones puntuales para días sueltos. Elige lo que mejor se adapte a tu agenda.',
+  pricing_faq16_q: '¿Qué estilos de baile ofrecéis?',
+  pricing_faq16_a:
+    'Ofrecemos +25 estilos: Salsa Cubana, Bachata, Afrobeat, Dancehall, Hip Hop, Reggaeton, Ballet, Danza Contemporánea, Modern Jazz, Kizomba, Twerk, Stretching, y muchos más. Desde ritmos latinos hasta danzas urbanas y danza clásica.',
 
   // Final CTA Section
   pricing_cta_title: '¿Listo para empezar a bailar?',
@@ -11538,8 +11558,210 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricing_cta_emotional_close: 'Ese momento puede ser esta semana.',
   pricing_cta_technical1: 'Sin permanencia. Cancela cuando quieras. Empieza cuando quieras.',
   pricing_cta_technical2: 'Más de 15.000 socios han confiado en nosotros desde 2017.',
-  pricing_cta_primary: 'Reservar Clase De Prueba',
-  pricing_cta_primary_subtext: 'Sin compromiso de permanencia',
+  pricing_cta_primary: 'Descubre Cómo Empezar',
+  pricing_cta_primary_subtext:
+    'Puertas Abiertas · Del 7 al 31 de enero · Prueba el centro · Conoce horarios y niveles',
   pricing_cta_secondary: 'Contactar para Más Info',
   pricing_cta_secondary_subtext: 'Resolvemos tus dudas',
+
+  // ============================================================================
+  // PRECIOS PAGE V2 - Lead Capture Oriented
+  // ============================================================================
+
+  // Page Meta
+  pricingV2_page_title: 'Precios Clases de Baile Barcelona | Desde 50 euros/mes',
+  pricingV2_page_description:
+    'Descubre los precios de clases de baile en Barcelona. Cuotas mensuales desde 50 euros, bonos flexibles y opciones puntuales. Sin permanencia. Primera clase gratis.',
+
+  // Hero
+  pricingV2_hero_title: 'Precios de Clases de Baile en Barcelona',
+  pricingV2_hero_subtitle:
+    'Descubre las opciones de participación en actividades de baile en uno de los centros de referencia en Barcelona.',
+  pricingV2_hero_subtitle2:
+    'Clases de salsa, bachata, afrobeat y más, adaptadas a todos los niveles.',
+  pricingV2_hero_cta: 'Descubre Cómo Empezar',
+  pricingV2_hero_cta_subtext:
+    'Puertas Abiertas · Del 7 al 31 de enero · Prueba el centro · Conoce horarios y niveles',
+
+  // Reassurance Mini Cards (after hero)
+  pricingV2_reassurance1: 'Puedes empezar desde cero',
+  pricingV2_reassurance2: 'No necesitas venir en pareja',
+  pricingV2_reassurance3: 'Puedes cambiar de modalidad',
+  pricingV2_reassurance4: 'Te ayudamos a elegir bien',
+
+  // Price Context Section (after hero)
+  pricingV2_priceContext_title: '¿Cuánto cuestan las clases de baile en Barcelona?',
+  pricingV2_priceContext_text1:
+    'En Barcelona, las clases de baile suelen oscilar entre 10€ y 25€ por sesión, o entre 50€ y 150€ al mes en formato de cuota, dependiendo de la frecuencia, el tipo de centro y el nivel de especialización.',
+  pricingV2_priceContext_text2:
+    "En Farray's Center apostamos por un modelo flexible, accesible y orientado a la práctica real del baile. No vendemos clases sueltas sin contexto: ofrecemos un sistema de participación que se adapta a tu ritmo de vida, con profesores certificados y una comunidad activa de más de 10.000 bailarines.",
+  pricingV2_priceContext_highlight:
+    'Centro de referencia en Barcelona desde 2017 · Reconocido por CID-UNESCO · +25 estilos de baile',
+
+  // How It Works
+  pricingV2_howItWorks_title: "Como funcionan las cuotas en Farray's Center",
+  pricingV2_howItWorks_text:
+    "En Farray's Center no pagas clases sueltas sin contexto. Eliges una forma de participacion segun tu disponibilidad y tus objetivos.",
+  pricingV2_howItWorks_point1: 'Puedes empezar desde cero',
+  pricingV2_howItWorks_point2: 'No necesitas venir en pareja',
+  pricingV2_howItWorks_point3: 'Puedes cambiar de modalidad',
+  pricingV2_howItWorks_point4: 'Te ayudamos a elegir bien',
+
+  // Participation Cards
+  pricingV2_participate_title: 'Elige como te gustaria empezar',
+  pricingV2_participate_subtitle:
+    'Tres formas de ser socio de nuestro centro adaptadas a tu estilo de vida',
+
+  // Card Regular
+  pricingV2_card_regular_title: 'Participacion Regular',
+  pricingV2_card_regular_desc:
+    'Ideal si quieres bailar cada semana, progresar y formar parte de una comunidad activa.',
+  pricingV2_card_regular_include1: 'Acceso a actividades semanales',
+  pricingV2_card_regular_include2: 'Plaza fija en tu horario',
+  pricingV2_card_regular_include3: 'Acceso a +25 estilos',
+  pricingV2_card_regular_include4: 'Beneficios exclusivos de socio',
+  pricingV2_card_regular_cta: 'Ver cuotas y horarios',
+
+  // Card Flexible
+  pricingV2_card_flexible_title: 'Participacion Flexible',
+  pricingV2_card_flexible_desc:
+    'Para horarios variables o si no puedes comprometerte todas las semanas.',
+  pricingV2_card_flexible_include1: 'Paquetes de actividades',
+  pricingV2_card_flexible_include2: 'Validez amplia (6-12 meses)',
+  pricingV2_card_flexible_include3: 'Sin rutina fija',
+  pricingV2_card_flexible_cta: 'Ver opciones flexibles',
+
+  // Card Puntual
+  pricingV2_card_puntual_title: 'Participacion Puntual',
+  pricingV2_card_puntual_desc: 'Opciones limitadas para venir de forma puntual o en eventos.',
+  pricingV2_card_puntual_include1: 'Actividades puntuales',
+  pricingV2_card_puntual_include2: 'Jornadas de puertas abiertas',
+  pricingV2_card_puntual_cta: 'Consultar disponibilidad',
+
+  // Price labels
+  pricingV2_price_indicative: 'Precio orientativo',
+  pricingV2_price_from: 'Desde',
+
+  // Enrollment
+  pricingV2_enrollment_title: 'Cuota de Inscripcion',
+  pricingV2_enrollment_desc:
+    'Para formar parte de nuestro centro es necesaria una cuota anual de inscripcion.',
+
+  // Why Not All Prices
+  pricingV2_whyNotAll_title: 'Por que no ves una tabla infinita de precios',
+  pricingV2_whyNotAll_text1: 'Porque queremos que elijas bien.',
+  pricingV2_whyNotAll_depends: 'Las cuotas y horarios dependen de:',
+  pricingV2_whyNotAll_dep1: 'Tu disponibilidad',
+  pricingV2_whyNotAll_dep2: 'Tu nivel actual',
+  pricingV2_whyNotAll_dep3: 'El tipo de actividad',
+  pricingV2_whyNotAll_dep4: 'La modalidad que elijas',
+  pricingV2_whyNotAll_text2:
+    'Por eso, toda la informacion se envia de forma automatica y clara por email.',
+  pricingV2_whyNotAll_cta: 'Recibir guia completa de precios',
+
+  // Benefits
+  pricingV2_benefits_title: 'Por que nuestros socios se quedan',
+
+  // Final CTA
+  pricingV2_finalCta_title: "Descubre si Farray's Center es para ti",
+  pricingV2_finalCta_text:
+    'Dejanos tu email y te enviamos toda la informacion para empezar sin compromiso.',
+  pricingV2_finalCta_button: 'Recibir precios y horarios',
+  pricingV2_finalCta_privacy: 'Informacion enviada automaticamente. Sin spam.',
+
+  // Footer Legal
+  pricingV2_footer_legal:
+    'La informacion mostrada es orientativa. La inscripcion como socio y la participacion en actividades deportivas se realiza exclusivamente con Club Esportiu Farray Barcelona, de acuerdo con su normativa interna.',
+
+  // ============================================================================
+  // LEAD CAPTURE MODAL
+  // ============================================================================
+
+  // Modal Header
+  leadModal_title: "Descubre cómo empezar en Farray's Center",
+  leadModal_subtitle:
+    'Te enviamos toda la información para empezar a bailar con nosotros de forma clara y sin compromiso.',
+  leadModal_success_title: 'Enviado correctamente',
+  close: 'Cerrar',
+
+  // Intro
+  leadModal_intro:
+    'Completa el formulario y recibe en tu email toda la información que necesitas para decidir con calma y elegir la opción que mejor encaje contigo.',
+
+  // Benefits
+  leadModal_benefits_title: 'Qué recibirás:',
+  leadModal_benefit1: 'Opciones de participación y precios',
+  leadModal_benefit2: 'Horarios disponibles y niveles recomendados',
+  leadModal_benefit3: 'Cómo funciona el club y qué incluye ser socio',
+  leadModal_benefit4: 'Puertas Abiertas de Enero y promoción de bienvenida',
+
+  // Form Fields
+  leadModal_field_firstName: 'Nombre',
+  leadModal_field_lastName: 'Apellido',
+  leadModal_field_email: 'Email',
+  leadModal_field_phone: 'Teléfono',
+  leadModal_field_discovery: 'Cómo nos conociste',
+  leadModal_field_style: 'Estilo de baile preferido',
+
+  // Placeholders
+  leadModal_placeholder_firstName: 'Tu nombre',
+  leadModal_placeholder_lastName: 'Tu apellido',
+  leadModal_placeholder_email: 'tu@email.com',
+  leadModal_placeholder_phone: '+34 600 000 000',
+
+  // Discovery Options
+  leadModal_discovery_placeholder: 'Selecciona una opción',
+  leadModal_discovery_google: 'Google',
+  leadModal_discovery_instagram: 'Instagram',
+  leadModal_discovery_passingby: 'Pasé por delante del centro',
+  leadModal_discovery_friend: 'Un amigo me lo recomendó',
+  leadModal_discovery_event: 'Vi un evento o actuación',
+  leadModal_discovery_other: 'Otro',
+
+  // Style Options
+  leadModal_style_placeholder: 'Selecciona un estilo',
+  leadModal_style_latinos: 'Ritmos Latinos (Salsa, Bachata, Lady Style...)',
+  leadModal_style_urbanos: 'Bailes Urbanos (Hip Hop, Reggaeton, Heels...)',
+  leadModal_style_danza: 'Danza (Contemporáneo, Jazz, Ballet...)',
+  leadModal_style_fitness: 'Preparación Física (Stretching, Cuerpo Fit...)',
+  leadModal_style_other: 'Otros',
+
+  // Form Actions
+  leadModal_submit: 'Descubre Cómo Empezar',
+  leadModal_sending: 'Enviando...',
+
+  // Errors
+  leadModal_error_firstName: 'Por favor, introduce tu nombre',
+  leadModal_error_lastName: 'Por favor, introduce tu apellido',
+  leadModal_error_email: 'Por favor, introduce un email válido',
+  leadModal_error_phone: 'Por favor, introduce tu teléfono',
+  leadModal_error_discovery: 'Por favor, indica cómo nos conociste',
+  leadModal_error_style: 'Por favor, selecciona un estilo de baile',
+  leadModal_error_consent: 'Debes aceptar la política de privacidad para continuar',
+  leadModal_error_generic: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+  leadModal_error_retry: 'Puedes volver a intentarlo',
+
+  // RGPD Consent
+  leadModal_consent_text:
+    "Acepto recibir información sobre precios, horarios y promociones de Farray's Center. Puedo darme de baja en cualquier momento.",
+  leadModal_consent_link: 'Política de privacidad',
+
+  // Legal
+  leadModal_legal_text:
+    "La información solicitada se envía automáticamente desde Farray's Center como parte de su servicio de información y orientación. La inscripción como socio y la participación en las actividades deportivas se formaliza exclusivamente con Club Esportiu Farray Barcelona (entidad deportiva), de acuerdo con su normativa interna y condiciones de socio. Este formulario no implica inscripción, reserva de plaza ni contratación.",
+  leadModal_legal_link: 'Ver aviso legal y política de privacidad',
+
+  // Success State
+  leadModal_success_heading: 'Todo listo',
+  leadModal_success_message: 'Te hemos enviado la guía a tu email.',
+  leadModal_success_spam_note:
+    'Si no lo ves en unos minutos, revisa las carpetas de Promociones o Spam.',
+  leadModal_success_promo_included: 'Promoción de bienvenida incluida',
+  leadModal_success_deliverability:
+    'Para asegurarte de recibir toda la información, te recomendamos añadir nuestro correo a tu lista de contactos.',
+  leadModal_success_close: 'Entendido',
+
+  // Generic labels used in pricing pages
+  members: 'socios',
+  years_in_barcelona: 'años en Barcelona',
 };
