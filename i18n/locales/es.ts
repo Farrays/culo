@@ -11327,7 +11327,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricing_page_description:
     'Conoce las cuotas de socio de FIDC Barcelona: planes mensuales desde 50€, cuotas flexibles, entrenamientos personalizados. Sin permanencia. Primera clase gratis.',
   pricing_breadcrumb_home: 'Inicio',
-  pricing_breadcrumb_current: 'Cuotas',
+  pricing_breadcrumb_current: 'Horarios y Precios',
 
   // Schema
   pricing_schema_name: "Cuotas Club Deportivo Farray\'s Center",
@@ -11335,7 +11335,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
     'Cuotas de socio para actividades de baile en Barcelona. Planes mensuales, flexibles y entrenamientos personalizados.',
 
   // Hero Section
-  pricing_hero_title: 'Cuotas de Socio',
+  pricing_hero_title: 'Horarios y Precios',
   pricing_hero_subtitle:
     'Invierte en tu bienestar. Elige el plan que mejor se adapte a tu ritmo de vida y empieza a bailar hoy.',
   pricing_badge_no_permanence: 'Sin permanencia',
@@ -11344,10 +11344,10 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricing_hero_cta: 'Hazte Socio Ahora',
 
   // Free Trial Section
-  pricing_trial_title: '¿Primera vez? Reserva tu clase de prueba',
+  pricing_trial_title: '¿Primera vez? Reserva tu clase de Bienvenida',
   pricing_trial_subtitle:
-    'Ven a conocernos sin compromiso. Prueba cualquier actividad y descubre por qué más de 1500 socios nos eligen cada semana.',
-  pricing_trial_cta: 'Reservar Clase de Prueba',
+    'En enero ven a conocernos sin compromiso. Prueba cualquier actividad y descubre por qué más de 1500 socios nos eligen cada semana.',
+  pricing_trial_cta: 'Reservar Clase De Bienvenida',
 
   // Enrollment Fee Section
   pricing_enrollment_title: 'Cuota de Inscripción',
@@ -11498,7 +11498,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricing_google_rating: '4.9/5 en Google Reviews (más de 200 opiniones)',
 
   // FAQ Section
-  pricing_faq_title: 'Preguntas Frecuentes sobre Cuotas',
+  pricing_faq_title: 'Preguntas Frecuentes sobre nuestros horarios y precios',
   pricing_faq1_q: '¿Cuánto cuesta la cuota de inscripción y qué incluye?',
   pricing_faq1_a:
     "La cuota de inscripción es de 60€ el primer año y 20€/año de renovación para todos los socios. Esta cuota te garantiza el acceso al sistema, tu plaza fija en el horario, y todas las ventajas exclusivas de socio de Farray's: seguro de accidentes, entrada prioritaria a eventos y actividades internas, programa de referidos (2 participaciones puntuales por amigo), descuentos en merchandising y fiestas, y todos los beneficios de formar parte de nuestra comunidad de +10.000 bailarines. A veces tenemos promociones donde la bonificamos.",
@@ -11529,9 +11529,9 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricing_faq10_q: '¿Cómo funciona el programa de referidos?',
   pricing_faq10_a:
     'Por cada amigo que se inscriba gracias a ti, recibes 2 participaciones puntuales (valoradas en 34€). Tu amigo también recibe beneficios de bienvenida. Pregunta en recepción los detalles.',
-  pricing_faq11_q: '¿Hay descuentos para familias?',
+  pricing_faq11_q: '¿Tenéis algún descuento especial?',
   pricing_faq11_a:
-    'Sí, ofrecemos descuentos especiales para familias (2 o más miembros inscritos). Consulta en recepción las condiciones y promociones vigentes.',
+    'Sí, ofrecemos descuentos si te apuntas a más de un curso. Consulta nuestra web o pregúntanos directamente para más detalles.',
   pricing_faq12_q: '¿Qué métodos de pago aceptan?',
   pricing_faq12_a:
     'Aceptamos tarjeta de crédito/débito (pago recurrente automático para cuotas mensuales), transferencia bancaria y efectivo. Todo se gestiona a través de nuestra app Momence.',
@@ -11558,11 +11558,12 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricing_cta_emotional_close: 'Ese momento puede ser esta semana.',
   pricing_cta_technical1: 'Sin permanencia. Cancela cuando quieras. Empieza cuando quieras.',
   pricing_cta_technical2: 'Más de 15.000 socios han confiado en nosotros desde 2017.',
-  pricing_cta_primary: 'Descubre Cómo Empezar',
+  pricing_cta_primary: 'Hazte Socio Ahora',
   pricing_cta_primary_subtext:
-    'Puertas Abiertas · Del 7 al 31 de enero · Prueba el centro · Conoce horarios y niveles',
-  pricing_cta_secondary: 'Contactar para Más Info',
-  pricing_cta_secondary_subtext: 'Resolvemos tus dudas',
+    'Hacerte socio es fácil. Elige tu cuota, paga online y empieza cuando quieras.',
+  pricing_cta_secondary: 'Reservar Clase de Bienvenida',
+  pricing_cta_secondary_subtext: 'Puertas Abiertas · Del 7 al 31 de enero',
+  pricing_cta_secondary_subtitle: 'Prueba el centro · Conoce horarios y niveles',
 
   // ============================================================================
   // PRECIOS PAGE V2 - Lead Capture Oriented
@@ -11674,6 +11675,38 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
     'La información mostrada es orientativa. La inscripción como socio y la participación en actividades deportivas se realiza exclusivamente con Club Esportiu Farray Barcelona, de acuerdo con su normativa interna.',
 
   // ============================================================================
+  // SCHEDULE SECTION (Horarios)
+  // ============================================================================
+  schedule_title: 'Horarios de Clases',
+  schedule_subtitle: 'Más de 70 clases semanales de lunes a viernes. Encuentra tu horario ideal.',
+
+  // Categories
+  schedule_category_all: 'Todos',
+  schedule_category_latino: 'Latino',
+  schedule_category_urbano: 'Urbano',
+  schedule_category_danza: 'Danza',
+  schedule_category_fitness: 'Fitness',
+
+  // Levels
+  schedule_level_beginner: 'Principiante',
+  schedule_level_basic: 'Básico',
+  schedule_level_intermediate: 'Intermedio',
+  schedule_level_advanced: 'Avanzado',
+  schedule_level_intermediateAdvanced: 'Inter/Avanzado',
+  schedule_level_all: 'Todos los niveles',
+
+  // UI
+  schedule_classes_found: 'clases',
+  schedule_no_classes: 'No hay clases este día',
+  schedule_try_other_day: 'Prueba seleccionando otro día o categoría',
+
+  // CTA
+  schedule_cta_text: 'Reservar Clase de Bienvenida',
+  schedule_cta_button: 'Reservar Clase de Bienvenida',
+  schedule_cta_subtitle: 'Puertas Abiertas · Del 7 al 31 de enero',
+  schedule_cta_subtitle2: 'Prueba el centro · Conoce horarios y niveles',
+
+  // ============================================================================
   // LEAD CAPTURE MODAL
   // ============================================================================
 
@@ -11764,4 +11797,331 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   // Generic labels used in pricing pages
   members: 'socios',
   years_in_barcelona: 'años en Barcelona',
+
+  // ============================================================================
+  // HORARIOS PAGE V2 (Enterprise Schedule Page)
+  // ============================================================================
+
+  // Page Meta
+  horariosV2_page_title: 'Horarios Clases de Baile Barcelona | Farray Center',
+  horariosV2_page_description:
+    'Encuentra el horario perfecto para tus clases de baile en Barcelona. Mañanas, tardes y noches. +25 estilos de danza, salsa, bachata, urbano y más. Grupos por nivel.',
+  horariosV2_breadcrumb: 'Horarios',
+
+  // Skip Links
+  horariosV2_skipToContent: 'Saltar al contenido principal',
+  horariosV2_skipToFilters: 'Ir a filtros de horario',
+
+  // Hero
+  horariosV2_hero_title: 'Horarios de Clases de Baile en Barcelona',
+  horariosV2_hero_subtitle:
+    'Encuentra el horario y el estilo que encajan contigo y descubre como empezar en Farray Center de forma clara y sin compromiso.',
+  horariosV2_hero_cta: 'Recibir Horarios Completos',
+  horariosV2_hero_ctaSubtext: 'Gratis y sin compromiso',
+  horariosV2_hero_years: 'anos en Barcelona',
+
+  // Preview notice section
+  horariosV2_preview_title: 'Esto es solo una muestra',
+  horariosV2_preview_subtitle: 'Tenemos muchos mas horarios y estilos que mostrarte',
+  horariosV2_preview_point1: '+100 clases semanales de baile',
+  horariosV2_preview_point2: 'Horarios de manana, tarde y noche',
+  horariosV2_preview_point3: 'Todos los niveles y edades',
+  horariosV2_preview_point4: 'Informacion de profesores y salas',
+  horariosV2_preview_cta: 'Recibir Horarios Completos por Email',
+  horariosV2_preview_free: 'Gratis y sin compromiso',
+
+  // More schedules CTA
+  horariosV2_moreSchedules_title: 'Hay muchos mas horarios disponibles',
+  horariosV2_moreSchedules_desc:
+    'Los horarios que ves aqui son solo una seleccion. Para ver todos los horarios disponibles, incluyendo clases de noche y fines de semana, solicita la informacion completa.',
+  horariosV2_moreSchedules_cta: 'Ver Todos los Horarios',
+
+  // Sample preview label
+  horariosV2_sample_preview_label: 'Muestra de horarios - Para ver todos, solicita info',
+
+  // Trust badges
+  horariosV2_trust_noCommitment: 'Sin permanencia',
+  horariosV2_trust_byLevel: 'Grupos por nivel',
+  horariosV2_trust_freeClass: 'Primera clase gratuita',
+
+  // Authority badges
+  horariosV2_authority_since2017: 'Desde 2017',
+  horariosV2_authority_cidUnesco: 'CID-UNESCO',
+  horariosV2_authority_members: '+15.000 socios',
+  horariosV2_authority_styles: '+25 estilos',
+  horariosV2_authority_rating: '4.9/5 Google',
+  horariosV2_authority_teachers: 'Profesores certificados',
+
+  // Orientation section
+  horariosV2_orientation_title: 'Antes de elegir un horario, ten en cuenta esto',
+  horariosV2_orientation_subtitle:
+    'No te preocupes si es tu primera vez. Estamos aqui para ayudarte.',
+  horariosV2_orientation_noExperience: 'No necesitas experiencia previa en muchas actividades',
+  horariosV2_orientation_byLevel: 'Los grupos se organizan por nivel',
+  horariosV2_orientation_startAnytime: 'Puedes empezar en cualquier momento del año',
+  horariosV2_orientation_weHelp: 'Te ayudamos a elegir el grupo adecuado',
+
+  // Filter section
+  horariosV2_filter_title: 'Encuentra lo que encaja contigo',
+  horariosV2_filter_subtitle: 'Selecciona el momento del dia o el estilo que prefieres',
+  horariosV2_filter_step1: 'Por horario',
+  horariosV2_filter_step2: 'Por estilo',
+  horariosV2_filter_or: 'o',
+  horariosV2_filter_morning: 'Mañanas',
+  horariosV2_filter_afternoon: 'Tardes',
+  horariosV2_filter_evening: 'Noches',
+  horariosV2_filter_danza: 'Danza',
+  horariosV2_filter_latino: 'Salsa & Bachata',
+  horariosV2_filter_urbano: 'Urbano',
+  horariosV2_filter_fitness: 'Prep. Física',
+
+  // Weekly matrix
+  horariosV2_matrix_title: 'Vista rápida de disponibilidad',
+  horariosV2_matrix_available: 'Disponible',
+  horariosV2_matrix_unavailable: 'Sin clases',
+
+  // Days
+  horariosV2_day_monday: 'Lunes',
+  horariosV2_day_tuesday: 'Martes',
+  horariosV2_day_wednesday: 'Miércoles',
+  horariosV2_day_thursday: 'Jueves',
+  horariosV2_day_friday: 'Viernes',
+  horariosV2_day_saturday: 'Sábado',
+  horariosV2_day_sunday: 'Domingo',
+
+  // Schedule blocks
+  horariosV2_block_morning_title: 'Clases de baile por la mañana en Barcelona',
+  horariosV2_block_morning_subtitle: 'Afro · Jazz · Contemporáneo · Preparación física',
+  horariosV2_block_evening_title: 'Clases de baile por la tarde y noche en Barcelona',
+  horariosV2_block_evening_subtitle: 'Afro · Jazz · Ballet · Contemporáneo',
+  horariosV2_block_salsa_title: 'Horarios de salsa y bachata en Barcelona',
+  horariosV2_block_salsa_subtitle: 'Social · Progresivo · Todos los niveles',
+  horariosV2_block_urbano_title: 'Clases de baile urbano en Barcelona',
+  horariosV2_block_urbano_subtitle: 'Afrobeats · Dancehall · Hip Hop · Reggaeton · Heels · Twerk',
+  horariosV2_block_showMore: 'Ver más clases',
+  horariosV2_block_disclaimer:
+    'Horarios orientativos. Asignación definitiva según nivel y disponibilidad.',
+
+  // CTAs per block
+  horariosV2_cta_morning: 'Ver plazas disponibles para mañanas',
+  horariosV2_cta_evening: 'Ver grupos por nivel',
+  horariosV2_cta_salsa: 'Encontrar mi grupo de salsa ideal',
+  horariosV2_cta_urbano: 'Descubrir actividades urbanas',
+
+  // Testimonials
+  horariosV2_testimonial_morning:
+    'Las clases de mañana me cambiaron la rutina. Ahora empiezo el día con energía.',
+  horariosV2_testimonial_morning_author: 'María, 34 años',
+  horariosV2_testimonial_evening: 'Después del trabajo, bailar es mi mejor forma de desconectar.',
+  horariosV2_testimonial_evening_author: 'Carlos, 28 años',
+  horariosV2_testimonial_salsa: 'Empecé sin saber nada y ahora no me pierdo una clase de bachata.',
+  horariosV2_testimonial_salsa_author: 'Laura, 31 años',
+  horariosV2_testimonial_urbano:
+    'El ambiente es increíble. Te sientes parte de una familia desde el primer día.',
+  horariosV2_testimonial_urbano_author: 'Pablo, 25 años',
+
+  // Badges
+  horariosV2_badge_popular: 'Más demandado',
+  horariosV2_badge_limited: 'Plazas limitadas',
+  horariosV2_badge_new: 'Nuevo',
+  horariosV2_badge_smallGroup: 'Grupos reducidos',
+
+  // Card actions
+  horariosV2_card_teacher: 'Profesor/a',
+  horariosV2_card_reminder: 'Recordar',
+  horariosV2_card_share: 'Compartir',
+
+  // Levels
+  horariosV2_levels_title: '¿Qué significan los niveles?',
+  horariosV2_levels_subtitle:
+    'Te ayudamos a encontrar el grupo perfecto para tu experiencia actual.',
+  horariosV2_level_principiantes: 'Principiantes',
+  horariosV2_level_principiantes_desc:
+    'Empiezas desde cero. No tienes experiencia previa en este estilo. Te guiaremos paso a paso.',
+  horariosV2_level_basico: 'Básico',
+  horariosV2_level_basico_desc:
+    'Conoces los fundamentos. Has practicado algo antes pero aún estás aprendiendo las bases.',
+  horariosV2_level_intermedio: 'Intermedio',
+  horariosV2_level_intermedio_desc:
+    'Dominas la técnica básica. Puedes seguir coreografías y quieres perfeccionar tu estilo.',
+  horariosV2_level_avanzado: 'Avanzado',
+  horariosV2_level_avanzado_desc:
+    'Alto dominio técnico. Buscas retos, coreografías complejas y preparación para escenario.',
+  horariosV2_level_open: 'Open Level',
+  horariosV2_level_open_desc:
+    'Todos los niveles mezclados. Cada uno trabaja a su ritmo con adaptaciones del profesor.',
+  horariosV2_level_intermedioAvanzado: 'Intermedio-Avanzado',
+  horariosV2_levels_helpText:
+    '¿No sabes cuál es tu nivel? No te preocupes, te orientamos personalmente antes de empezar.',
+
+  // Season notice
+  horariosV2_season_current: 'Actual',
+  horariosV2_season_winter: 'Horario de invierno',
+  horariosV2_season_winter_desc: 'Estos son los horarios actuales (septiembre - junio).',
+  horariosV2_season_summer: 'Horario de verano',
+  horariosV2_season_summer_desc:
+    'Los horarios pueden variar en julio y agosto. Consulta disponibilidad.',
+
+  // How to start
+  horariosV2_howToStart_title: 'Como empezar en Farray Center',
+  horariosV2_howToStart_subtitle: 'Cuatro pasos sencillos para comenzar tu aventura en el baile',
+  horariosV2_howToStart_step1: 'Recibe la informacion completa',
+  horariosV2_howToStart_step2: 'Valora horarios y niveles',
+  horariosV2_howToStart_step3: 'Ven a conocernos (opcional)',
+  horariosV2_howToStart_step4: 'Empieza cuando te sientas listo/a',
+  horariosV2_howToStart_cta: 'Descubre Cómo Empezar',
+  horariosV2_howToStart_microcopy: 'Sin compromiso · Información clara · A tu ritmo',
+
+  // FAQ
+  horariosV2_faq_title: 'Preguntas frecuentes sobre los horarios de nuestras clases de baile',
+  horariosV2_faq_subtitle: 'Las respuestas a las dudas mas comunes sobre nuestras clases',
+  horariosV2_faq1_q: 'Puedo empezar clases de baile aunque no tenga experiencia?',
+  horariosV2_faq1_a:
+    'Sí. Muchas de nuestras clases están pensadas para personas que empiezan desde cero. Además, te ayudamos a elegir el grupo adecuado según tu experiencia y objetivos.',
+  horariosV2_faq2_q: '¿Tengo que elegir un horario fijo desde el primer día?',
+  horariosV2_faq2_a:
+    'Como club deportivo, trabajamos con horarios organizados por nivel. Una vez te orientamos, podrás elegir el horario que mejor encaje contigo dentro de las opciones disponibles.',
+  horariosV2_faq3_q: '¿Puedo cambiar de horario o de estilo más adelante?',
+  horariosV2_faq3_a:
+    'Sí. Nuestros socios pueden adaptar su participación según disponibilidad y evolución, siempre que haya plazas disponibles en el grupo.',
+  horariosV2_faq4_q: '¿Hay clases por la mañana y por la tarde?',
+  horariosV2_faq4_a:
+    'Sí. Ofrecemos clases de baile tanto por la mañana como por la tarde y noche, según el estilo y la temporada.',
+  horariosV2_faq5_q: '¿Los horarios son siempre los mismos todo el año?',
+  horariosV2_faq5_a:
+    'Los horarios son orientativos y pueden variar según la temporada, el nivel y la disponibilidad de plazas. Siempre te enviamos la información actualizada antes de empezar.',
+  horariosV2_faq6_q: '¿Puedo probar una clase de Afrobeats antes de inscribirme?',
+  horariosV2_faq6_a:
+    'Mira, lo importante es que pruebes. Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
+  horariosV2_faq7_q: '¿Dónde está Farray Center y a quién van dirigidas las actividades de baile?',
+  horariosV2_faq7_a:
+    'Estamos en Calle Entença nº 100 en Barcelona y nuestras clases están dirigidas a adultos de todos los niveles que quieren aprender, mejorar o disfrutar del baile en un entorno profesional y cercano.',
+
+  // Emotional close
+  horariosV2_emotional_close:
+    'No se trata solo de encajar una clase en tu agenda. Se trata de encontrar un lugar donde disfrutar, progresar y sentirte parte de una comunidad.',
+  horariosV2_whatsapp_cta: '¿Tienes más dudas? Escríbenos por WhatsApp',
+
+  // Footer
+  horariosV2_footer_legal:
+    'Los horarios y plazas mostrados son orientativos y pueden variar según temporada, nivel y disponibilidad. La asignación definitiva de grupo se realiza de forma personalizada tras solicitar información.',
+
+  // Navigation
+  horariosV2_nav_ariaLabel: 'Navegación rápida de secciones de horarios',
+  horariosV2_nav_progressLabel: 'Progreso de lectura',
+  horariosV2_nav_morning: 'Mañanas',
+  horariosV2_nav_evening: 'Tardes',
+  horariosV2_nav_salsa: 'Salsa',
+  horariosV2_nav_urbano: 'Urbano',
+  horariosV2_nav_levels: 'Niveles',
+  horariosV2_nav_faq: 'FAQ',
+
+  // Styles (for schedule cards)
+  horariosV2_style_afroJazz: 'Afro Jazz',
+  horariosV2_style_contemporaneo: 'Contemporáneo',
+  horariosV2_style_contemporaneoLirico: 'Contemporáneo Lírico & Flow',
+  horariosV2_style_modernJazz: 'Modern Jazz',
+  horariosV2_style_pilates: 'Pilates',
+  horariosV2_style_stretching: 'Stretching',
+  horariosV2_style_barre: 'Barre',
+  horariosV2_style_afroContemporaneo: 'Afro Contemporáneo',
+  horariosV2_style_ballet: 'Ballet Clásico',
+  horariosV2_style_bachata: 'Bachata',
+  horariosV2_style_salsaCubana: 'Salsa Cubana',
+  horariosV2_style_ladyStyle: 'Lady Style',
+  horariosV2_style_timba: 'Timba',
+  horariosV2_style_afrobeats: 'Afrobeats',
+  horariosV2_style_dancehall: 'Dancehall',
+  horariosV2_style_hipHop: 'Hip Hop Urbano',
+  horariosV2_style_reggaeton: 'Reggaeton Comercial',
+  horariosV2_style_heels: 'Heels',
+  horariosV2_style_sexyStyle: 'Sexy Style',
+  horariosV2_style_twerk: 'Twerk',
+
+  // ============================================================================
+  // HORARIOS PAGE V2 - Additional Keys (New Design)
+  // ============================================================================
+
+  // Hero additional
+  horariosV2_hero_subtitle2: 'Encuentra el horario perfecto para ti',
+  horariosV2_weekly_classes: 'clases semanales',
+  horariosV2_trust_noExperience: 'No necesitas experiencia',
+
+  // Preview section
+  horariosV2_preview_text1:
+    'Los horarios que ves aqui son solo una muestra. Tenemos mas de 100 clases semanales de baile en diferentes estilos y niveles.',
+  horariosV2_preview_includes: 'La informacion completa incluye:',
+
+  // How it works section
+  horariosV2_howItWorks_title: 'Como funcionan nuestros horarios',
+  horariosV2_howItWorks_text:
+    'Organizamos las clases por bloques horarios y niveles para que encuentres facilmente el que mejor encaja contigo.',
+
+  // Reassurance cards
+  horariosV2_reassurance1: 'Clases de manana, tarde y noche',
+  horariosV2_reassurance2: 'Todos los niveles',
+  horariosV2_reassurance3: 'Grupos reducidos',
+  horariosV2_reassurance4: 'Ambiente acogedor',
+
+  // Schedule blocks section
+  horariosV2_blocks_title: 'Bloques de Horarios',
+  horariosV2_blocks_subtitle:
+    'Cada bloque agrupa clases en franjas horarias similares. Elige el que mejor se adapte a tu dia a dia.',
+  horariosV2_classes_available: 'clases disponibles',
+  horariosV2_see_schedule: 'Ver horarios completos',
+  horariosV2_blocks_cta: 'Recibir Todos los Horarios',
+
+  // Block examples - Morning
+  horariosV2_block_morning_ex1: 'Afro Jazz 10:30h',
+  horariosV2_block_morning_ex2: 'Contemporaneo 11:45h',
+  horariosV2_block_morning_ex3: 'Pilates y Stretching',
+
+  // Block examples - Evening Danza
+  'horariosV2_block_evening-danza_ex1': 'Ballet 18:00h',
+  'horariosV2_block_evening-danza_ex2': 'Modern Jazz 19:15h',
+  'horariosV2_block_evening-danza_ex3': 'Contemporaneo 20:30h',
+
+  // Block examples - Salsa Bachata
+  'horariosV2_block_salsa-bachata_ex1': 'Salsa Cubana todos los niveles',
+  'horariosV2_block_salsa-bachata_ex2': 'Bachata Sensual',
+  'horariosV2_block_salsa-bachata_ex3': 'Lady Style',
+
+  // Block examples - Urbano
+  horariosV2_block_urbano_ex1: 'Afrobeats y Dancehall',
+  horariosV2_block_urbano_ex2: 'Hip Hop y Reggaeton',
+  horariosV2_block_urbano_ex3: 'Heels y Twerk',
+
+  // Levels (new simplified names)
+  horariosV2_level_beginner: 'Principiante',
+  horariosV2_level_beginner_desc: 'Empiezas desde cero',
+  horariosV2_level_basic: 'Basico',
+  horariosV2_level_basic_desc: 'Conoces los fundamentos',
+  horariosV2_level_intermediate: 'Intermedio',
+  horariosV2_level_intermediate_desc: 'Dominas la tecnica basica',
+  horariosV2_level_advanced: 'Avanzado',
+  horariosV2_level_advanced_desc: 'Alto dominio tecnico',
+
+  // Why not all schedules
+  horariosV2_whyNotAll_title: 'Por que no mostramos todos los horarios?',
+  horariosV2_whyNotAll_text1:
+    'Porque cada persona es diferente. Queremos ayudarte a encontrar el grupo perfecto segun tu nivel, tu disponibilidad y tus objetivos.',
+  horariosV2_whyNotAll_text2:
+    'Por eso preferimos enviarte la informacion completa y personalizada por email.',
+
+  // Testimonials
+  horariosV2_testimonials_title: 'Lo que dicen nuestros alumnos',
+  horariosV2_testimonial1:
+    'Las clases de manana me cambiaron la rutina. Ahora empiezo el dia con energia y buen humor.',
+  horariosV2_testimonial2:
+    'Despues del trabajo, bailar es mi mejor forma de desconectar. El ambiente es increible.',
+  horariosV2_testimonial3:
+    'Empece sin saber nada y ahora no me pierdo una clase. Los profes son lo mejor.',
+
+  // Final CTA section
+  horariosV2_cta_title: 'Tu proximo paso',
+  horariosV2_cta_emotional1: 'No se trata solo de encajar una clase en tu agenda.',
+  horariosV2_cta_emotional2:
+    'Se trata de encontrar un lugar donde disfrutar, progresar y sentirte parte de una comunidad.',
+  horariosV2_cta_primary: 'Recibir Horarios Completos',
+  horariosV2_cta_subtext: 'Gratis y sin compromiso - Te contactamos de manera inmediata',
 };

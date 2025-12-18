@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
+import HorariosScheduleSection from './HorariosScheduleSection';
 import {
   CheckIcon,
   ChevronDownIcon,
@@ -12,7 +13,6 @@ import {
   UserIcon,
   ClockIcon,
   HeartIcon,
-  HeartFilledIcon,
   CheckCircleIcon,
   AcademicCapIcon,
 } from '../lib/icons';
@@ -338,6 +338,7 @@ const HorariosPreciosPage: React.FC = () => {
       <Helmet>
         <title>{t('pricing_page_title')} | Farray&apos;s Center</title>
         <meta name="description" content={t('pricing_page_description')} />
+        <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href={`${baseUrl}/${locale}/horarios-precios`} />
         <meta property="og:title" content={t('pricing_page_title')} />
         <meta property="og:description" content={t('pricing_page_description')} />
@@ -405,46 +406,46 @@ const HorariosPreciosPage: React.FC = () => {
                 </span>
               </div>
 
-              {/* CTA */}
-              <a
-                href="#cuotas-mensuales"
-                className="inline-block bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
-              >
-                {t('pricing_hero_cta')}
-              </a>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* ================================================================
-            SECTION 2: FREE TRIAL CTA
-        ================================================================ */}
-        <section className="relative py-16 md:py-20 overflow-hidden">
-          {/* Gradient Background */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-primary-dark/20 to-black"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-accent/10 via-transparent to-primary-accent/10"></div>
-
-          <div className="relative z-10 container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="[perspective:1000px]">
-                <div className="max-w-3xl mx-auto text-center bg-black/60 backdrop-blur-md border border-primary-accent/30 rounded-2xl p-8 md:p-12 [transform-style:preserve-3d] transition-all duration-500 hover:[transform:translateY(-0.5rem)_rotateX(2deg)] hover:shadow-accent-glow hover:border-primary-accent/50">
-                  <h2 className="text-2xl md:text-4xl font-black text-neutral mb-4 holographic-text">
-                    {t('pricing_trial_title')}
-                  </h2>
-                  <p className="text-lg text-neutral/90 mb-8">{t('pricing_trial_subtitle')}</p>
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <div className="w-full sm:w-auto">
                   <a
                     href="https://momence.com/sign-in?hostId=36148"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
+                    className="block w-full sm:w-auto bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
                   >
-                    {t('pricing_trial_cta')}
+                    {t('pricing_cta_primary')}
                   </a>
+                  <p className="text-xs text-neutral/70 mt-2 text-center">
+                    {t('pricing_cta_primary_subtext')}
+                  </p>
+                </div>
+                <div className="w-full sm:w-auto">
+                  <a
+                    href="https://momence.com/sign-in?hostId=36148"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full sm:w-auto bg-black/50 backdrop-blur-md border-2 border-primary-accent text-primary-accent font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white hover:scale-105 hover:shadow-accent-glow"
+                  >
+                    {t('pricing_cta_secondary')}
+                  </a>
+                  <p className="text-xs text-neutral/70 mt-2 text-center">
+                    {t('pricing_cta_secondary_subtext')}
+                  </p>
+                  <p className="text-xs text-neutral/50 text-center">
+                    {t('pricing_cta_secondary_subtitle')}
+                  </p>
                 </div>
               </div>
             </AnimateOnScroll>
           </div>
         </section>
+
+        {/* ================================================================
+            SECTION 2: SCHEDULE (Horarios)
+        ================================================================ */}
+        <HorariosScheduleSection />
 
         {/* ================================================================
             SECTION 3: ENROLLMENT FEE
@@ -710,37 +711,7 @@ const HorariosPreciosPage: React.FC = () => {
         </section>
 
         {/* ================================================================
-            SECTION 8: LEAD MAGNET
-        ================================================================ */}
-        <section className="py-20 bg-gradient-to-b from-primary-dark/20 to-black">
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="max-w-3xl mx-auto [perspective:1000px]">
-                <div className="bg-black/70 backdrop-blur-md border border-primary-accent/30 rounded-2xl p-8 md:p-12 text-center [transform-style:preserve-3d] transition-all duration-500 hover:[transform:translateY(-0.5rem)_rotateY(2deg)_rotateX(2deg)] hover:shadow-accent-glow hover:border-primary-accent/50">
-                  <HeartFilledIcon className="w-16 h-16 text-primary-accent mx-auto mb-6" />
-                  <h2 className="text-2xl md:text-3xl font-black text-neutral mb-4 holographic-text">
-                    {t('pricing_lead_title')}
-                  </h2>
-                  <p className="text-neutral/90 mb-4">{t('pricing_lead_subtitle')}</p>
-                  <p className="text-neutral font-semibold mb-8">{t('pricing_lead_discount')}</p>
-
-                  {/* Simple CTA - Full lead magnet form would be separate component */}
-                  <a
-                    href={`/${locale}/contacto`}
-                    className="inline-block bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
-                  >
-                    {t('pricing_lead_cta')}
-                  </a>
-
-                  <p className="text-xs text-neutral/50 mt-4">{t('pricing_lead_privacy')}</p>
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* ================================================================
-            SECTION 9: BENEFITS / VALUE PROPOSITION
+            SECTION 8: BENEFITS / VALUE PROPOSITION
         ================================================================ */}
         <section className="py-20 bg-black">
           <div className="container mx-auto px-6">
@@ -824,31 +795,35 @@ const HorariosPreciosPage: React.FC = () => {
                           <CheckIcon className="w-5 h-5 text-primary-accent flex-shrink-0 mt-0.5" />
                           <span>{t('pricing_exclusive_community_2')}</span>
                         </li>
+                        <li className="flex items-start gap-3 text-neutral/90">
+                          <CheckIcon className="w-5 h-5 text-primary-accent flex-shrink-0 mt-0.5" />
+                          <span>{t('pricing_exclusive_community_3')}</span>
+                        </li>
                       </ul>
                     </div>
                   </div>
                 </AnimateOnScroll>
 
-                {/* Special Prices Group */}
+                {/* Condiciones Especiales Group */}
                 <AnimateOnScroll delay={200}>
                   <div className="[perspective:1000px] h-full">
                     <div className="h-full bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl p-6 hover:border-primary-accent/50 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_rotateY(3deg)_rotateX(2deg)] hover:shadow-accent-glow">
                       <h3 className="text-xl font-bold text-neutral mb-4 flex items-center gap-2">
                         <SparklesIcon className="w-5 h-5 text-primary-accent" />
-                        {t('pricing_exclusive_prices')}
+                        {t('pricing_exclusive_conditions')}
                       </h3>
                       <ul className="space-y-3">
                         <li className="flex items-start gap-3 text-neutral/90">
                           <CheckIcon className="w-5 h-5 text-primary-accent flex-shrink-0 mt-0.5" />
-                          <span>{t('pricing_exclusive_prices_1')}</span>
+                          <span>{t('pricing_exclusive_conditions_1')}</span>
                         </li>
                         <li className="flex items-start gap-3 text-neutral/90">
                           <CheckIcon className="w-5 h-5 text-primary-accent flex-shrink-0 mt-0.5" />
-                          <span>{t('pricing_exclusive_prices_2')}</span>
+                          <span>{t('pricing_exclusive_conditions_2')}</span>
                         </li>
                         <li className="flex items-start gap-3 text-neutral/90">
                           <CheckIcon className="w-5 h-5 text-primary-accent flex-shrink-0 mt-0.5" />
-                          <span>{t('pricing_exclusive_prices_3')}</span>
+                          <span>{t('pricing_exclusive_conditions_3')}</span>
                         </li>
                       </ul>
                     </div>
@@ -935,7 +910,7 @@ const HorariosPreciosPage: React.FC = () => {
         {/* ================================================================
             SECTION 11: TESTIMONIALS / SOCIAL PROOF
         ================================================================ */}
-        <section id="testimonials" className="py-16 md:py-20 bg-primary-dark/10">
+        <section id="testimonials" className="pt-10 pb-16 md:pt-12 md:pb-20 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-8 sm:mb-10 max-w-4xl mx-auto">
@@ -1087,14 +1062,19 @@ const HorariosPreciosPage: React.FC = () => {
                     </p>
                   </div>
                   <div className="w-full sm:w-auto">
-                    <Link
-                      to={`/${locale}/contacto`}
+                    <a
+                      href="https://momence.com/sign-in?hostId=36148"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="block w-full sm:w-auto bg-black/50 backdrop-blur-md border-2 border-primary-accent text-primary-accent font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white hover:scale-105 hover:shadow-accent-glow"
                     >
                       {t('pricing_cta_secondary')}
-                    </Link>
+                    </a>
                     <p className="text-xs text-neutral/70 mt-2 text-center">
                       {t('pricing_cta_secondary_subtext')}
+                    </p>
+                    <p className="text-xs text-neutral/50 text-center">
+                      {t('pricing_cta_secondary_subtitle')}
                     </p>
                   </div>
                 </div>

@@ -71,6 +71,7 @@ const BumBumPage = lazy(() => import('./components/BumBumPage'));
 const CalendarPage = lazy(() => import('./components/CalendarPage'));
 const PreciosPage = lazy(() => import('./components/PreciosPage'));
 const HorariosPreciosPage = lazy(() => import('./components/HorariosPreciosPage'));
+const HorariosPageV2 = lazy(() => import('./components/HorariosPageV2'));
 
 // Valid locales - use centralized constant from types.ts
 const VALID_LOCALES = SUPPORTED_LOCALES;
@@ -586,6 +587,17 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <HorariosPreciosPage />
+                </>
+              }
+            />
+
+            {/* Horarios Enterprise Page */}
+            <Route
+              path="/:locale/horarios-clases-baile-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <HorariosPageV2 />
                 </>
               }
             />
