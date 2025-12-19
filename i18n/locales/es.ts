@@ -1673,7 +1673,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   danzaFaqA9:
     'Estamos en Calle Entença 100, 08015 Barcelona, a solo 5 minutos andando de Plaza España y la Estación de Sants. Metro: L1 (Hostafrancs) / L3 (Tarragona, Plaza España). Tren: Sants Estació. Buses: 13, 37, 65, 79, 109, 165.',
 
-  danzaFaqQ10: '¿Puedo probar una clase de Ballet, Jazz o Contemporaneo antes de inscribirme?',
+  danzaFaqQ10: '¿Puedo probar una clase de Ballet, Jazz o Contemporáneo antes de inscribirme?',
   danzaFaqA10:
     'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en la parte superior de esta página.',
 
@@ -7513,18 +7513,18 @@ El Afro Contemporáneo impartido en **Farray's International Dance Center** form
     'Requiere mínimo 1 año de experiencia en danza o bases técnicas importantes (ballet, contemporáneo, jazz). Secuencias avanzadas, interpretación musical y perfeccionamiento técnico. Clases de 90 minutos.',
 
   // Prepara tu primera clase Section
-  afrocontemporaneoPrepareTitle: 'Prepara tu primera clase de Afro Contemporaneo',
+  afrocontemporaneoPrepareTitle: 'Prepara tu primera clase de Afro Contemporáneo',
   afrocontemporaneoPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
-  afrocontemporaneoPrepareWhatToBring: 'Que traer:',
-  afrocontemporaneoPrepareItem1: 'Ropa comoda y ajustada (leggings, mallas o pantalon de danza)',
-  afrocontemporaneoPrepareItem2: 'Camiseta o top que permita ver la linea del cuerpo',
-  afrocontemporaneoPrepareItem3: 'Botella de agua (minimo 500ml) - la necesitaras',
-  afrocontemporaneoPrepareItem4: 'Toalla pequena para el sudor',
+  afrocontemporaneoPrepareWhatToBring: 'Qué traer:',
+  afrocontemporaneoPrepareItem1: 'Ropa cómoda y ajustada (leggings, mallas o pantalón de danza)',
+  afrocontemporaneoPrepareItem2: 'Camiseta o top que permita ver la línea del cuerpo',
+  afrocontemporaneoPrepareItem3: 'Botella de agua (mínimo 500ml) - la necesitarás',
+  afrocontemporaneoPrepareItem4: 'Toalla pequeña para el sudor',
   afrocontemporaneoPrepareItem5: 'Calcetines de danza (opcional, se puede ir descalzo)',
   afrocontemporaneoPrepareBefore: 'Antes de llegar:',
   afrocontemporaneoPrepareBeforeItem1: 'Llega 10-15 minutos antes para cambiarte y ambientarte',
   afrocontemporaneoPrepareBeforeItem2: 'Evita comer pesado 2 horas antes de clase',
-  afrocontemporaneoPrepareBeforeItem3: 'Hidratate bien durante el dia',
+  afrocontemporaneoPrepareBeforeItem3: 'Hidrátate bien durante el día',
   afrocontemporaneoPrepareAvoid: 'Evita:',
   afrocontemporaneoPrepareAvoidItem1:
     'Joyas, anillos, pulseras o accesorios que puedan engancharse',
@@ -7532,12 +7532,12 @@ El Afro Contemporáneo impartido en **Farray's International Dance Center** form
   afrocontemporaneoPrepareAvoidItem3: 'Calzado de calle en la sala (hay vestuarios)',
   afrocontemporaneoPrepareTeacherTip: 'Consejo de Yunaisy:',
   afrocontemporaneoPrepareTeacherQuote:
-    'Ven con la mente abierta y sin miedo a equivocarte. El Afro Contemporaneo se aprende sintiendo, no solo pensando. Tu cuerpo sabe mas de lo que crees.',
+    'Ven con la mente abierta y sin miedo a equivocarte. El Afro Contemporáneo se aprende sintiendo, no solo pensando. Tu cuerpo sabe más de lo que crees.',
 
   // Comparison Table Section
-  afrocontemporaneoCompareTitle: 'Afro Contemporaneo vs Otras Disciplinas: Cual es la diferencia?',
+  afrocontemporaneoCompareTitle: 'Afro Contemporáneo vs Otras Disciplinas: ¿Cuál es la diferencia?',
   afrocontemporaneoCompareSubtitle:
-    'Descubre que hace unico al Afro Contemporaneo comparado con otras tecnicas',
+    'Descubre qué hace único al Afro Contemporáneo comparado con otras técnicas',
   afrocontemporaneoCompareCapacity: 'Capacidad',
   afrocontemporaneoCompareAfro: 'Afro Cont.',
   afrocontemporaneoCompareLirico: 'Cont. Lírico',
@@ -7554,30 +7554,30 @@ El Afro Contemporáneo impartido en **Farray's International Dance Center** form
   afrocontemporaneoCompareRow9: 'Conexión tierra (grounding)',
   afrocontemporaneoCompareRow10: 'Exigencia cardiovascular',
   afrocontemporaneoCompareRow11: 'Versatilidad para otros estilos',
-  afrocontemporaneoCompareMeaningTitle: 'Que significa esto para ti?',
-  afrocontemporaneoCompareMeaning1Title: 'Si vienes del Contemporaneo Lirico:',
+  afrocontemporaneoCompareMeaningTitle: '¿Qué significa esto para ti?',
+  afrocontemporaneoCompareMeaning1Title: 'Si vienes del Contemporáneo Lírico:',
   afrocontemporaneoCompareMeaning1Desc:
-    'El Afro Contemporaneo potenciara tu musicalidad y anadira capas de complejidad ritmica que transformaran tu interpretacion.',
-  afrocontemporaneoCompareMeaning2Title: 'Si vienes del Contemporaneo Suelo & Flow:',
+    'El Afro Contemporáneo potenciará tu musicalidad y añadirá capas de complejidad rítmica que transformarán tu interpretación.',
+  afrocontemporaneoCompareMeaning2Title: 'Si vienes del Contemporáneo Suelo & Flow:',
   afrocontemporaneoCompareMeaning2Desc:
-    'Ganaras verticalidad, disociacion de caderas/torso y una conexion con el ritmo que dara otra dimension a tu fluidez.',
+    'Ganarás verticalidad, disociación de caderas/torso y una conexión con el ritmo que dará otra dimensión a tu fluidez.',
   afrocontemporaneoCompareMeaning3Title: 'Si vienes del Ballet:',
   afrocontemporaneoCompareMeaning3Desc:
-    'El Afro Contemporaneo liberara tu cuerpo de la rigidez, desarrollara tu capacidad de disociacion y te conectara con la musica de una forma completamente nueva.',
+    'El Afro Contemporáneo liberará tu cuerpo de la rigidez, desarrollará tu capacidad de disociación y te conectará con la música de una forma completamente nueva.',
   afrocontemporaneoCompareMeaning4Title: 'Si vienes de estilos urbanos o latinos:',
   afrocontemporaneoCompareMeaning4Desc:
-    'Encontraras la base tecnica que te falta para elevar tu nivel y entender el "porque" detras de cada movimiento.',
+    'Encontrarás la base técnica que te falta para elevar tu nivel y entender el "porqué" detrás de cada movimiento.',
   afrocontemporaneoCompareConclusion:
-    'El Afro Contemporaneo es el complemento perfecto porque trabaja las capacidades que otras disciplinas dan por supuestas.',
+    'El Afro Contemporáneo es el complemento perfecto porque trabaja las capacidades que otras disciplinas dan por supuestas.',
 
   // Local SEO Section
-  afrocontemporaneoNearbyTitle: 'Afro Contemporaneo cerca de ti en Barcelona',
+  afrocontemporaneoNearbyTitle: 'Afro Contemporáneo cerca de ti en Barcelona',
   afrocontemporaneoNearbyDesc:
-    "Somos la academia de referencia para clases de Afro Contemporaneo en la zona de Plaza Espana, Sants, Hostafrancs, Les Corts y Eixample Esquerra. Tambien recibimos alumnos de Poble Sec, Sant Antoni y L'Hospitalet que buscan formacion en danza contemporanea africana con metodologia profesional.",
+    "Somos la academia de referencia para clases de Afro Contemporáneo en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnos de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en danza contemporánea africana con metodología profesional.",
   afrocontemporaneoNearbySearchText:
-    'Si buscas "Afro Contemporaneo cerca de mi" en Barcelona, estamos a:',
+    'Si buscas "Afro Contemporáneo cerca de mí" en Barcelona, estamos a:',
   afrocontemporaneoNearbyMetro:
-    'Metro: Plaza Espana (L1, L3), Rocafort (L1) - 5 min andando, Entenza (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando',
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando',
 
   // ===== AfroJazz Page =====
   afrojazzPageTitle: "Clases de Afro Jazz | Farray's International Dance Center",
@@ -11815,25 +11815,25 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   // Hero
   horariosV2_hero_title: 'Horarios de Clases de Baile en Barcelona',
   horariosV2_hero_subtitle:
-    'Encuentra el horario y el estilo que encajan contigo y descubre como empezar en Farray Center de forma clara y sin compromiso.',
+    'Encuentra el horario y el estilo que encajan contigo y descubre cómo empezar en Farray Center de forma clara y sin compromiso.',
   horariosV2_hero_cta: 'Recibir Horarios Completos',
   horariosV2_hero_ctaSubtext: 'Gratis y sin compromiso',
-  horariosV2_hero_years: 'anos en Barcelona',
+  horariosV2_hero_years: 'años en Barcelona',
 
   // Preview notice section
   horariosV2_preview_title: 'Esto es solo una muestra',
-  horariosV2_preview_subtitle: 'Tenemos muchos mas horarios y estilos que mostrarte',
+  horariosV2_preview_subtitle: 'Tenemos muchos más horarios y estilos que mostrarte',
   horariosV2_preview_point1: '+100 clases semanales de baile',
-  horariosV2_preview_point2: 'Horarios de manana, tarde y noche',
+  horariosV2_preview_point2: 'Horarios de mañana, tarde y noche',
   horariosV2_preview_point3: 'Todos los niveles y edades',
-  horariosV2_preview_point4: 'Informacion de profesores y salas',
+  horariosV2_preview_point4: 'Información de profesores y salas',
   horariosV2_preview_cta: 'Recibir Horarios Completos por Email',
   horariosV2_preview_free: 'Gratis y sin compromiso',
 
   // More schedules CTA
-  horariosV2_moreSchedules_title: 'Hay muchos mas horarios disponibles',
+  horariosV2_moreSchedules_title: 'Hay muchos más horarios disponibles',
   horariosV2_moreSchedules_desc:
-    'Los horarios que ves aqui son solo una seleccion. Para ver todos los horarios disponibles, incluyendo clases de noche y fines de semana, solicita la informacion completa.',
+    'Los horarios que ves aquí son solo una selección. Para ver todos los horarios disponibles, incluyendo clases de noche y fines de semana, solicita la información completa.',
   horariosV2_moreSchedules_cta: 'Ver Todos los Horarios',
 
   // Sample preview label
@@ -11855,7 +11855,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   // Orientation section
   horariosV2_orientation_title: 'Antes de elegir un horario, ten en cuenta esto',
   horariosV2_orientation_subtitle:
-    'No te preocupes si es tu primera vez. Estamos aqui para ayudarte.',
+    'No te preocupes si es tu primera vez. Estamos aquí para ayudarte.',
   horariosV2_orientation_noExperience: 'No necesitas experiencia previa en muchas actividades',
   horariosV2_orientation_byLevel: 'Los grupos se organizan por nivel',
   horariosV2_orientation_startAnytime: 'Puedes empezar en cualquier momento del año',
@@ -11863,7 +11863,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
 
   // Filter section
   horariosV2_filter_title: 'Encuentra lo que encaja contigo',
-  horariosV2_filter_subtitle: 'Selecciona el momento del dia o el estilo que prefieres',
+  horariosV2_filter_subtitle: 'Selecciona el momento del día o el estilo que prefieres',
   horariosV2_filter_step1: 'Por horario',
   horariosV2_filter_step2: 'Por estilo',
   horariosV2_filter_or: 'o',
@@ -11963,9 +11963,9 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
     'Los horarios pueden variar en julio y agosto. Consulta disponibilidad.',
 
   // How to start
-  horariosV2_howToStart_title: 'Como empezar en Farray Center',
+  horariosV2_howToStart_title: 'Cómo empezar en Farray Center',
   horariosV2_howToStart_subtitle: 'Cuatro pasos sencillos para comenzar tu aventura en el baile',
-  horariosV2_howToStart_step1: 'Recibe la informacion completa',
+  horariosV2_howToStart_step1: 'Recibe la información completa',
   horariosV2_howToStart_step2: 'Valora horarios y niveles',
   horariosV2_howToStart_step3: 'Ven a conocernos (opcional)',
   horariosV2_howToStart_step4: 'Empieza cuando te sientas listo/a',
@@ -11974,8 +11974,8 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
 
   // FAQ
   horariosV2_faq_title: 'Preguntas frecuentes sobre los horarios de nuestras clases de baile',
-  horariosV2_faq_subtitle: 'Las respuestas a las dudas mas comunes sobre nuestras clases',
-  horariosV2_faq1_q: 'Puedo empezar clases de baile aunque no tenga experiencia?',
+  horariosV2_faq_subtitle: 'Las respuestas a las dudas más comunes sobre nuestras clases',
+  horariosV2_faq1_q: '¿Puedo empezar clases de baile aunque no tenga experiencia?',
   horariosV2_faq1_a:
     'Sí. Muchas de nuestras clases están pensadas para personas que empiezan desde cero. Además, te ayudamos a elegir el grupo adecuado según tu experiencia y objetivos.',
   horariosV2_faq2_q: '¿Tengo que elegir un horario fijo desde el primer día?',
@@ -12049,16 +12049,16 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
 
   // Preview section
   horariosV2_preview_text1:
-    'Los horarios que ves aqui son solo una muestra. Tenemos mas de 100 clases semanales de baile en diferentes estilos y niveles.',
-  horariosV2_preview_includes: 'La informacion completa incluye:',
+    'Los horarios que ves aquí son solo una muestra. Tenemos más de 100 clases semanales de baile en diferentes estilos y niveles.',
+  horariosV2_preview_includes: 'La información completa incluye:',
 
   // How it works section
-  horariosV2_howItWorks_title: 'Como funcionan nuestros horarios',
+  horariosV2_howItWorks_title: 'Cómo funcionan nuestros horarios',
   horariosV2_howItWorks_text:
-    'Organizamos las clases por bloques horarios y niveles para que encuentres facilmente el que mejor encaja contigo.',
+    'Organizamos las clases por bloques horarios y niveles para que encuentres fácilmente el que mejor encaja contigo.',
 
   // Reassurance cards
-  horariosV2_reassurance1: 'Clases de manana, tarde y noche',
+  horariosV2_reassurance1: 'Clases de mañana, tarde y noche',
   horariosV2_reassurance2: 'Todos los niveles',
   horariosV2_reassurance3: 'Grupos reducidos',
   horariosV2_reassurance4: 'Ambiente acogedor',
@@ -12066,20 +12066,20 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   // Schedule blocks section
   horariosV2_blocks_title: 'Bloques de Horarios',
   horariosV2_blocks_subtitle:
-    'Cada bloque agrupa clases en franjas horarias similares. Elige el que mejor se adapte a tu dia a dia.',
+    'Cada bloque agrupa clases en franjas horarias similares. Elige el que mejor se adapte a tu día a día.',
   horariosV2_classes_available: 'clases disponibles',
   horariosV2_see_schedule: 'Ver horarios completos',
   horariosV2_blocks_cta: 'Recibir Todos los Horarios',
 
   // Block examples - Morning
   horariosV2_block_morning_ex1: 'Afro Jazz 10:30h',
-  horariosV2_block_morning_ex2: 'Contemporaneo 11:45h',
+  horariosV2_block_morning_ex2: 'Contemporáneo 11:45h',
   horariosV2_block_morning_ex3: 'Pilates y Stretching',
 
   // Block examples - Evening Danza
   'horariosV2_block_evening-danza_ex1': 'Ballet 18:00h',
   'horariosV2_block_evening-danza_ex2': 'Modern Jazz 19:15h',
-  'horariosV2_block_evening-danza_ex3': 'Contemporaneo 20:30h',
+  'horariosV2_block_evening-danza_ex3': 'Contemporáneo 20:30h',
 
   // Block examples - Salsa Bachata
   'horariosV2_block_salsa-bachata_ex1': 'Salsa Cubana todos los niveles',
@@ -12094,31 +12094,31 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   // Levels (new simplified names)
   horariosV2_level_beginner: 'Principiante',
   horariosV2_level_beginner_desc: 'Empiezas desde cero',
-  horariosV2_level_basic: 'Basico',
+  horariosV2_level_basic: 'Básico',
   horariosV2_level_basic_desc: 'Conoces los fundamentos',
   horariosV2_level_intermediate: 'Intermedio',
-  horariosV2_level_intermediate_desc: 'Dominas la tecnica basica',
+  horariosV2_level_intermediate_desc: 'Dominas la técnica básica',
   horariosV2_level_advanced: 'Avanzado',
-  horariosV2_level_advanced_desc: 'Alto dominio tecnico',
+  horariosV2_level_advanced_desc: 'Alto dominio técnico',
 
   // Why not all schedules
-  horariosV2_whyNotAll_title: 'Por que no mostramos todos los horarios?',
+  horariosV2_whyNotAll_title: '¿Por qué no mostramos todos los horarios?',
   horariosV2_whyNotAll_text1:
-    'Porque cada persona es diferente. Queremos ayudarte a encontrar el grupo perfecto segun tu nivel, tu disponibilidad y tus objetivos.',
+    'Porque cada persona es diferente. Queremos ayudarte a encontrar el grupo perfecto según tu nivel, tu disponibilidad y tus objetivos.',
   horariosV2_whyNotAll_text2:
-    'Por eso preferimos enviarte la informacion completa y personalizada por email.',
+    'Por eso preferimos enviarte la información completa y personalizada por email.',
 
   // Testimonials
   horariosV2_testimonials_title: 'Lo que dicen nuestros alumnos',
   horariosV2_testimonial1:
-    'Las clases de manana me cambiaron la rutina. Ahora empiezo el dia con energia y buen humor.',
+    'Las clases de mañana me cambiaron la rutina. Ahora empiezo el día con energía y buen humor.',
   horariosV2_testimonial2:
-    'Despues del trabajo, bailar es mi mejor forma de desconectar. El ambiente es increible.',
+    'Después del trabajo, bailar es mi mejor forma de desconectar. El ambiente es increíble.',
   horariosV2_testimonial3:
-    'Empece sin saber nada y ahora no me pierdo una clase. Los profes son lo mejor.',
+    'Empecé sin saber nada y ahora no me pierdo una clase. Los profes son lo mejor.',
 
   // Final CTA section
-  horariosV2_cta_title: 'Tu proximo paso',
+  horariosV2_cta_title: 'Tu próximo paso',
   horariosV2_cta_emotional1: 'No se trata solo de encajar una clase en tu agenda.',
   horariosV2_cta_emotional2:
     'Se trata de encontrar un lugar donde disfrutar, progresar y sentirte parte de una comunidad.',
