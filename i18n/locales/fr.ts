@@ -366,7 +366,7 @@ export const fr = {
   // Home FAQ
   homeFaqQ1: "Où se trouve l'académie et comment y accéder ?",
   homeFaqA1:
-    "Farray's International Dance Center est situé Calle Entença 100, Barcelone (08015), à seulement 5 minutes à pied de la Plaça España et de la gare de Sants. C'est super accessible en métro (lignes L1, L3, L8), bus et train. Le quartier a d'excellentes connexions dans toute Barcelone. Vous trouverez notre centre dans une zone animée avec cafés et commerces tout autour.",
+    "Farray's International Dance Center est situé Calle Entença 100, Barcelone (08015), à seulement 5 minutes à pied de la Plaça España et de la gare de Sants. C'est super accessible en métro (lignes L1, L3, L5), bus et train. Le quartier a d'excellentes connexions dans toute Barcelone. Vous trouverez notre centre dans une zone animée avec cafés et commerces tout autour.",
   homeFaqQ2: "Qu'est-ce qui distingue Farray's des autres académies de danse à Barcelone ?",
   homeFaqA2:
     "Farray's n'est pas qu'une école de plus : elle est née d'une histoire d'amour pour la danse. Nous avons rénové un local abandonné pendant 10 ans de nos propres mains car l'école dont nous rêvions n'existait pas. Nous sommes accrédités par le CID-UNESCO, nous utilisons la Méthode Farray® exclusive créée par Yunaisy (danseuse dans Street Dance 2 et Got Talent), et surtout, chaque élève compte ici. Vous n'êtes pas un numéro : vous faites partie de la famille.",
@@ -5193,7 +5193,7 @@ Tous les termes du ballet sont en français, héritage de son développement à 
     "Notre programme de ballet fait partie du curriculum certifié par le Conseil International de la Danse de l'UNESCO à Paris. Formation aux standards internationaux.",
   balletWhyChoose2Title: 'Emplacement idéal',
   balletWhyChoose2Desc:
-    'À 5 minutes de Plaza España et Sants. Métro Rocafort (L1), Entença (L2) et Tarragona (L3) et plusieurs lignes de bus. Facile à atteindre, facile à repartir.',
+    'À 5 minutes de Plaza España et Sants. Métro Rocafort (L1), Entença (L5) et Tarragona (L3) et plusieurs lignes de bus. Facile à atteindre, facile à repartir.',
   balletWhyChoose3Title: 'Ambiance accueillante pour adultes',
   balletWhyChoose3Desc:
     "Ici pas d'enfants prodiges ni de compétitivité toxique. Seulement des adultes comme vous qui veulent apprendre dans un environnement professionnel mais chaleureux.",

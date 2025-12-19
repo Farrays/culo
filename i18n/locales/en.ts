@@ -364,7 +364,7 @@ export const en = {
   // Home FAQ
   homeFaqQ1: 'Where is the academy located and how do I get there?',
   homeFaqA1:
-    "Farray's International Dance Center is at Calle Entença 100, Barcelona (08015), just 5 minutes walking from Plaza España and Sants Station. It's super accessible by metro (lines L1, L3, L8), bus, and train. The neighborhood has excellent connections throughout Barcelona. You'll find our center in a vibrant area with cafes and shops all around.",
+    "Farray's International Dance Center is at Calle Entença 100, Barcelona (08015), just 5 minutes walking from Plaza España and Sants Station. It's easily accessible by metro (lines L1, L3, L5), bus, and train. The neighborhood has excellent connections throughout Barcelona. You'll find our center in a vibrant area with cafes and shops all around.",
   homeFaqQ2: "What sets Farray's apart from other dance academies in Barcelona?",
   homeFaqA2:
     "Farray's is not just another school: it was born from a love story for dance. We renovated a space abandoned for 10 years with our own hands because the school we dreamed of didn't exist. We're accredited by CID-UNESCO, we use the exclusive Farray Method® created by Yunaisy (dancer in Street Dance 2 and Got Talent), and above all, every student matters here. You're not a number: you're part of the family.",
@@ -5328,7 +5328,7 @@ All ballet terms are in French, a legacy of its development at the court of Vers
     'Our ballet program is part of the curriculum endorsed by the International Dance Council of UNESCO in Paris. Training with international standards.',
   balletWhyChoose2Title: 'Unbeatable location',
   balletWhyChoose2Desc:
-    '5 minutes from Plaza España and Sants. Metro Rocafort (L1), Entença (L2) and Tarragona (L3) and multiple bus lines. Easy to get there, easy to get back.',
+    '5 minutes from Plaza España and Sants. Metro Rocafort (L1), Entença (L5) and Tarragona (L3) and multiple bus lines. Easy to get there, easy to get back.',
   balletWhyChoose3Title: 'Welcoming environment for adults',
   balletWhyChoose3Desc:
     'No child prodigies or toxic competitiveness here. Just adults like you who want to learn in a professional but friendly environment.',

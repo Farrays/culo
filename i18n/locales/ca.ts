@@ -366,7 +366,7 @@ export const ca = {
   // Home FAQ
   homeFaqQ1: "On està ubicada l'acadèmia i com hi arribo?",
   homeFaqA1:
-    "Farray's International Dance Center està al carrer Entença 100, Barcelona (08015), a només 5 minuts caminant de la Plaça Espanya i l'Estació de Sants. És súper accessible en metro (línies L1, L3, L8), autobús i tren. El barri té excel·lents connexions amb tota Barcelona. Trobaràs el nostre centre en una zona vibrant amb cafeteries i comerços al voltant.",
+    "Farray's International Dance Center està al carrer Entença 100, Barcelona (08015), a només 5 minuts caminant de la Plaça Espanya i l'Estació de Sants. És súper accessible en metro (línies L1, L3, L5), autobús i tren. El barri té excel·lents connexions amb tota Barcelona. Trobaràs el nostre centre en una zona vibrant amb cafeteries i comerços al voltant.",
   homeFaqQ2: "Què diferencia Farray's d'altres acadèmies de ball a Barcelona?",
   homeFaqA2:
     "Farray's no és una escola més: va néixer d'una història d'amor per la dansa. Vam reformar un local abandonat durant 10 anys amb les nostres pròpies mans perquè no existia l'escola que somniàvem. Estem acreditats per CID-UNESCO, utilitzem el Mètode Farray® exclusiu creat per Yunaisy (ballarina a Street Dance 2 i Got Talent), i sobretot, aquí cada alumne importa. No ets un número: ets part de la família.",
@@ -5229,7 +5229,7 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
     'El nostre programa de ballet forma part del pla curricular avalat pel Consell Internacional de la Dansa de la UNESCO a París. Formació amb estàndards internacionals.',
   balletWhyChoose2Title: 'Ubicació immillorable',
   balletWhyChoose2Desc:
-    'A 5 minuts de Plaça Espanya i Sants. Metro Rocafort (L1), Entença (L2) i Tarragona (L3) i múltiples línies de bus. Fàcil arribar, fàcil tornar.',
+    'A 5 minuts de Plaça Espanya i Sants. Metro Rocafort (L1), Entença (L5) i Tarragona (L3) i múltiples línies de bus. Fàcil arribar, fàcil tornar.',
   balletWhyChoose3Title: 'Ambient acollidor per a adults',
   balletWhyChoose3Desc:
     'Aquí no hi ha nens prodigi ni competitivitat tòxica. Només adults com tu que volen aprendre en un ambient professional però proper.',

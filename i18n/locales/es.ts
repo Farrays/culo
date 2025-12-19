@@ -365,7 +365,7 @@ export const es = {
   // Home FAQ
   homeFaqQ1: '¿Dónde está ubicada la academia y cómo llego?',
   homeFaqA1:
-    "Farray's International Dance Center está en Calle Entença 100, Barcelona (08015), a solo 5 minutos andando de Plaza España y Estación de Sants. Es súper accesible en metro (líneas L1, L3, L8), autobús y tren. El barrio tiene excelentes conexiones con toda Barcelona. Encontrarás nuestro centro en una zona vibrante con cafeterías y comercios alrededor.",
+    "Farray's International Dance Center está en Calle Entença 100, Barcelona (08015), a solo 5 minutos andando de Plaza España y Estación de Sants. Es súper accesible en metro (líneas L1, L3, L5), autobús y tren. El barrio tiene excelentes conexiones con toda Barcelona. Encontrarás nuestro centro en una zona vibrante con cafeterías y comercios alrededor.",
   homeFaqQ2: "¿Qué diferencia a Farray's de otras academias de baile en Barcelona?",
   homeFaqA2:
     "Farray's no es una escuela más: nació de una historia de amor por la danza. Reformamos un local abandonado durante 10 años con nuestras propias manos porque no existía la escuela que soñábamos. Estamos acreditados por CID-UNESCO, usamos el exclusivo Método Farray® creado por Yunaisy (bailarina de Street Dance 2 y Got Talent), y sobre todo, aquí cada alumno importa. No eres un número: eres parte de la familia.",
@@ -2316,7 +2316,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   about_social_p1:
     "Las actividades realizadas en Farray's no se limitan a ser actividades lucrativas, sino que tienen un marcado componente integrador y social, ayudando a sectores especiales de la comunidad como las mujeres maltratadas, las mujeres presidiarias, los niños y la tercera edad a reencontrarse consigo mismos y a nutrir su alma mediante la danza.",
   about_social_p2:
-    'La danza es la manera más ancestral de comunicación —no sólo con los demás sino con nosotros mismos— y que, pese a la evolución del hombre, sigue permaneciendo dentro de cada uno de nosotros a la espera de que alguien encienda esa llama y sepa enseñarnos a mantenerla siempre viva.',
+    'La danza es la manera más ancestral de comunicación —no solo con los demás sino con nosotros mismos— y que, pese a la evolución del hombre, sigue permaneciendo dentro de cada uno de nosotros a la espera de que alguien encienda esa llama y sepa enseñarnos a mantenerla siempre viva.',
 
   // Values Section
   about_values_title: 'Nuestros Valores',
@@ -3617,7 +3617,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   twerkTestimonialsTitle: 'Lo que dicen nuestros alumnos',
   twerkTestimonial1Name: 'Laura M.',
   twerkTestimonial1Quote:
-    'Las clases de Twerk con Sandra son increíbles. El ambiente es genial, no hay juicios y la profesora explica todo muy bien. He ganado muchísima confianza.',
+    'Las clases de Twerk con Sandra son increíbles. El ambiente es excelente, no hay juicios y la profesora explica todo muy bien. He ganado muchísima confianza.',
   twerkTestimonial2Name: 'Ana R.',
   twerkTestimonial2Quote:
     'Empecé sin saber nada y ahora me siento súper cómoda bailando. Sandra es la mejor profesora, siempre motivando y con buen rollo.',
@@ -6485,7 +6485,7 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
     'Nuestro programa de ballet forma parte del plan curricular avalado por el Consejo Internacional de la Danza de la UNESCO en París. Formación con estándares internacionales.',
   balletWhyChoose2Title: 'Ubicación inmejorable',
   balletWhyChoose2Desc:
-    'A 5 minutos de Plaza España y Sants. Metro Rocafort (L1), Entença (L2) y Tarragona (L3) y múltiples líneas de bus. Fácil llegar, fácil volver.',
+    'A 5 minutos de Plaza España y Sants. Metro Rocafort (L1), Entença (L5) y Tarragona (L3) y múltiples líneas de bus. Fácil llegar, fácil volver.',
   balletWhyChoose3Title: 'Ambiente acogedor para adultos',
   balletWhyChoose3Desc:
     'Aquí no hay niños prodigio ni competitividad tóxica. Solo adultos como tú que quieren aprender en un ambiente profesional pero cercano.',
@@ -8202,7 +8202,7 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
     'Sí. El Hip Hop no tiene edad. Tenemos alumnos desde adolescentes hasta adultos de más de 50 años. Lo importante es la actitud y las ganas de aprender.',
   hiphopFaqQ12: '¿Organizáis batallas o eventos de Hip Hop?',
   hiphopFaqA12:
-    'Sí. Organizamos jams, ciphers y participamos en eventos de la escena Hip Hop barcelonesa. Es una forma genial de poner en práctica lo aprendido.',
+    'Sí. Organizamos jams, ciphers y participamos en eventos de la escena Hip Hop barcelonesa. Es una oportunidad excelente para poner en práctica lo aprendido.',
   hiphopFaqQ13: '¿Qué diferencia a vuestras clases de otras escuelas?',
   hiphopFaqA13:
     'La principal diferencia es el profesor: Marcos Martínez es juez de competiciones internacionales y un referente del Hip Hop en España. Además, somos una academia avalada por el CID-UNESCO, lo que garantiza calidad pedagógica.',
@@ -11489,7 +11489,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricing_testimonial2_text:
     'Llevo 3 años siendo socia y es la mejor inversión en mi bienestar. Los profesores son increíbles y el ambiente es único.',
   pricing_testimonial3_text:
-    'Las cuotas son muy razonables para la calidad que ofrecen. Poder elegir entre tantos estilos con la misma cuota es genial.',
+    'Las cuotas son muy razonables para la calidad que ofrecen. Poder elegir entre tantos estilos con la misma cuota es fantástico.',
   pricing_testimonial4_text:
     'El sistema de cuotas es muy flexible. Puedo adaptar mis horas según mi disponibilidad cada mes sin problemas.',
   pricing_testimonial_text:
