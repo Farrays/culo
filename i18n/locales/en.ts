@@ -10851,21 +10851,24 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // === REFERENCES (GEO Citability) ===
   blogHistoriaSalsa_referencesTitle: 'Sources and references',
   blogHistoriaSalsa_referencesIntro: 'Sources consulted for this article:',
-  blogHistoriaSalsa_refFaniaTitle: 'Fania Records History',
-  blogHistoriaSalsa_refFaniaDesc:
-    'The record label founded in 1964 that defined the salsa sound and projected artists like Celia Cruz, Héctor Lavoe and Willie Colón.',
-  blogHistoriaSalsa_refSmithsonianTitle: 'Latin Music Collections - Smithsonian',
-  blogHistoriaSalsa_refSmithsonianDesc:
-    'Smithsonian Institution archive with historical materials on Latin and Afro-Caribbean music.',
   blogHistoriaSalsa_refNEJMTitle: 'Dance and Dementia (Verghese et al., 2003)',
   blogHistoriaSalsa_refNEJMDesc:
-    'Study published in the New England Journal of Medicine on leisure activities and dementia risk.',
-  blogHistoriaSalsa_refFrontiersTitle: 'Psychological Benefits of Dance',
-  blogHistoriaSalsa_refFrontiersDesc:
-    'Research on the effects of dance on emotional well-being and mental health.',
-  blogHistoriaSalsa_refBcnSalsaTitle: 'Salsa Festivals in Barcelona',
-  blogHistoriaSalsa_refBcnSalsaDesc:
-    'Calendar of Latin dance events and congresses in Barcelona and surroundings.',
+    'NEJM study: dancing reduces dementia risk by 76% vs. crossword puzzles or reading. DOI: 10.1056/NEJMoa022252',
+  blogHistoriaSalsa_refVelezTitle: 'Salsa in Barcelona (Vélez, 2017)',
+  blogHistoriaSalsa_refVelezDesc:
+    'Doctoral thesis from Universitat de Barcelona on identity, migration and cultural scene of salsa in Barcelona (1980s-2010s).',
+  blogHistoriaSalsa_refFaniaTitle: 'Fania Records Official',
+  blogHistoriaSalsa_refFaniaDesc:
+    'Official site of the label that defined the salsa sound: Fania All-Stars, Celia Cruz, Héctor Lavoe, Willie Colón.',
+  blogHistoriaSalsa_refWikipediaTitle: 'Salsa (music) - Wikipedia',
+  blogHistoriaSalsa_refWikipediaDesc:
+    'Musicological consensus: commercial label vs. genre, roots in Cuban son, guaracha and mambo.',
+  blogHistoriaSalsa_refElPaisTitle: 'Salsa was born in New York (El País, 2024)',
+  blogHistoriaSalsa_refElPaisDesc:
+    'Article about the Bronx/Spanish Harlem diaspora and the jazz-soul fusion of the 1960s.',
+  blogHistoriaSalsa_refMarulaTitle: 'Salsa Nights in Barcelona (Marula Café)',
+  blogHistoriaSalsa_refMarulaDesc:
+    'The current salsa scene in Barcelona: Eixample, Gràcia, Poblenou and local festivals.',
 
   // === AUTO-ADDED TRANSLATIONS (2025-12-19) ===
   openLevel: 'Open Level',

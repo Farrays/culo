@@ -12427,21 +12427,24 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   // === REFERENCIAS (GEO Citability) ===
   blogHistoriaSalsa_referencesTitle: 'Fuentes y referencias',
   blogHistoriaSalsa_referencesIntro: 'Fuentes consultadas para la elaboración de este artículo:',
-  blogHistoriaSalsa_refFaniaTitle: 'Historia de Fania Records',
-  blogHistoriaSalsa_refFaniaDesc:
-    'El sello discográfico fundado en 1964 que definió el sonido de la salsa y proyectó artistas como Celia Cruz, Héctor Lavoe y Willie Colón.',
-  blogHistoriaSalsa_refSmithsonianTitle: 'Colecciones de Música Latina - Smithsonian',
-  blogHistoriaSalsa_refSmithsonianDesc:
-    'Archivo del Smithsonian Institution con materiales históricos sobre música latina y afrocaribeña.',
   blogHistoriaSalsa_refNEJMTitle: 'Baile y Demencia (Verghese et al., 2003)',
   blogHistoriaSalsa_refNEJMDesc:
-    'Estudio publicado en el New England Journal of Medicine sobre actividades de ocio y riesgo de demencia.',
-  blogHistoriaSalsa_refFrontiersTitle: 'Beneficios Psicológicos del Baile',
-  blogHistoriaSalsa_refFrontiersDesc:
-    'Investigaciones sobre los efectos del baile en el bienestar emocional y la salud mental.',
-  blogHistoriaSalsa_refBcnSalsaTitle: 'Festivales de Salsa en Barcelona',
-  blogHistoriaSalsa_refBcnSalsaDesc:
-    'Calendario de eventos y congresos de baile latino en Barcelona y alrededores.',
+    'Estudio del NEJM: bailar reduce un 76% el riesgo de demencia vs. crucigramas o lectura. DOI: 10.1056/NEJMoa022252',
+  blogHistoriaSalsa_refVelezTitle: 'La Salsa en Barcelona (Vélez, 2017)',
+  blogHistoriaSalsa_refVelezDesc:
+    'Tesis doctoral de la Universitat de Barcelona sobre identidad, migración y escena cultural de la salsa en Barcelona (1980s-2010s).',
+  blogHistoriaSalsa_refFaniaTitle: 'Fania Records Official',
+  blogHistoriaSalsa_refFaniaDesc:
+    'Sitio oficial del sello que definió el sonido de la salsa: Fania All-Stars, Celia Cruz, Héctor Lavoe, Willie Colón.',
+  blogHistoriaSalsa_refWikipediaTitle: 'Salsa (género musical) - Wikipedia',
+  blogHistoriaSalsa_refWikipediaDesc:
+    'Consenso musicológico: etiqueta comercial vs. género, raíces en son, guaracha y mambo cubano.',
+  blogHistoriaSalsa_refElPaisTitle: 'La salsa nació en Nueva York (El País, 2024)',
+  blogHistoriaSalsa_refElPaisDesc:
+    'Artículo sobre la diáspora del Bronx/Spanish Harlem y la fusión jazz-soul de los años 60.',
+  blogHistoriaSalsa_refMarulaTitle: 'Noches de Salsa en Barcelona (Marula Café)',
+  blogHistoriaSalsa_refMarulaDesc:
+    'La escena actual de salsa en Barcelona: Eixample, Gràcia, Poblenou y festivales locales.',
 
   // =============================================
   // TEACHERS PAGE - Profesores de Baile Barcelona

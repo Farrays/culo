@@ -11173,21 +11173,24 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // === RÉFÉRENCES (GEO Citability) ===
   blogHistoriaSalsa_referencesTitle: 'Sources et références',
   blogHistoriaSalsa_referencesIntro: 'Sources consultées pour cet article :',
-  blogHistoriaSalsa_refFaniaTitle: 'Histoire de Fania Records',
-  blogHistoriaSalsa_refFaniaDesc:
-    'Le label discographique fondé en 1964 qui a défini le son de la salsa et projeté des artistes comme Celia Cruz, Héctor Lavoe et Willie Colón.',
-  blogHistoriaSalsa_refSmithsonianTitle: 'Collections de Musique Latine - Smithsonian',
-  blogHistoriaSalsa_refSmithsonianDesc:
-    'Archives du Smithsonian Institution avec des matériaux historiques sur la musique latine et afro-caribéenne.',
   blogHistoriaSalsa_refNEJMTitle: 'Danse et Démence (Verghese et al., 2003)',
   blogHistoriaSalsa_refNEJMDesc:
-    'Étude publiée dans le New England Journal of Medicine sur les activités de loisir et le risque de démence.',
-  blogHistoriaSalsa_refFrontiersTitle: 'Bienfaits Psychologiques de la Danse',
-  blogHistoriaSalsa_refFrontiersDesc:
-    'Recherches sur les effets de la danse sur le bien-être émotionnel et la santé mentale.',
-  blogHistoriaSalsa_refBcnSalsaTitle: 'Festivals de Salsa à Barcelone',
-  blogHistoriaSalsa_refBcnSalsaDesc:
-    'Calendrier des événements et congrès de danse latine à Barcelone et environs.',
+    'Étude du NEJM : danser réduit de 76% le risque de démence vs. mots croisés ou lecture. DOI: 10.1056/NEJMoa022252',
+  blogHistoriaSalsa_refVelezTitle: 'La Salsa à Barcelone (Vélez, 2017)',
+  blogHistoriaSalsa_refVelezDesc:
+    "Thèse doctorale de la Universitat de Barcelona sur l'identité, la migration et la scène culturelle de la salsa à Barcelone (1980s-2010s).",
+  blogHistoriaSalsa_refFaniaTitle: 'Fania Records Official',
+  blogHistoriaSalsa_refFaniaDesc:
+    'Site officiel du label qui a défini le son de la salsa : Fania All-Stars, Celia Cruz, Héctor Lavoe, Willie Colón.',
+  blogHistoriaSalsa_refWikipediaTitle: 'Salsa (genre musical) - Wikipedia',
+  blogHistoriaSalsa_refWikipediaDesc:
+    'Consensus musicologique : étiquette commerciale vs. genre, racines dans le son, guaracha et mambo cubain.',
+  blogHistoriaSalsa_refElPaisTitle: 'La salsa est née à New York (El País, 2024)',
+  blogHistoriaSalsa_refElPaisDesc:
+    'Article sur la diaspora du Bronx/Spanish Harlem et la fusion jazz-soul des années 60.',
+  blogHistoriaSalsa_refMarulaTitle: 'Soirées Salsa à Barcelone (Marula Café)',
+  blogHistoriaSalsa_refMarulaDesc:
+    'La scène actuelle de la salsa à Barcelone : Eixample, Gràcia, Poblenou et festivals locaux.',
 
   // === AUTO-ADDED TRANSLATIONS (2025-12-19) ===
   openLevel: 'Niveau Ouvert',

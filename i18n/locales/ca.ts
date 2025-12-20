@@ -11000,21 +11000,24 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // === REFERÈNCIES (GEO Citability) ===
   blogHistoriaSalsa_referencesTitle: 'Fonts i referències',
   blogHistoriaSalsa_referencesIntro: "Fonts consultades per a l'elaboració d'aquest article:",
-  blogHistoriaSalsa_refFaniaTitle: 'Història de Fania Records',
-  blogHistoriaSalsa_refFaniaDesc:
-    'El segell discogràfic fundat el 1964 que va definir el so de la salsa i va projectar artistes com Celia Cruz, Héctor Lavoe i Willie Colón.',
-  blogHistoriaSalsa_refSmithsonianTitle: 'Col·leccions de Música Llatina - Smithsonian',
-  blogHistoriaSalsa_refSmithsonianDesc:
-    'Arxiu del Smithsonian Institution amb materials històrics sobre música llatina i afrocaribenca.',
   blogHistoriaSalsa_refNEJMTitle: 'Ball i Demència (Verghese et al., 2003)',
   blogHistoriaSalsa_refNEJMDesc:
-    "Estudi publicat al New England Journal of Medicine sobre activitats d'oci i risc de demència.",
-  blogHistoriaSalsa_refFrontiersTitle: 'Beneficis Psicològics del Ball',
-  blogHistoriaSalsa_refFrontiersDesc:
-    'Investigacions sobre els efectes del ball en el benestar emocional i la salut mental.',
-  blogHistoriaSalsa_refBcnSalsaTitle: 'Festivals de Salsa a Barcelona',
-  blogHistoriaSalsa_refBcnSalsaDesc:
-    "Calendari d'esdeveniments i congressos de ball llatí a Barcelona i rodalia.",
+    'Estudi del NEJM: ballar redueix un 76% el risc de demència vs. mots encreuats o lectura. DOI: 10.1056/NEJMoa022252',
+  blogHistoriaSalsa_refVelezTitle: 'La Salsa a Barcelona (Vélez, 2017)',
+  blogHistoriaSalsa_refVelezDesc:
+    'Tesi doctoral de la Universitat de Barcelona sobre identitat, migració i escena cultural de la salsa a Barcelona (1980s-2010s).',
+  blogHistoriaSalsa_refFaniaTitle: 'Fania Records Official',
+  blogHistoriaSalsa_refFaniaDesc:
+    'Lloc oficial del segell que va definir el so de la salsa: Fania All-Stars, Celia Cruz, Héctor Lavoe, Willie Colón.',
+  blogHistoriaSalsa_refWikipediaTitle: 'Salsa (gènere musical) - Wikipedia',
+  blogHistoriaSalsa_refWikipediaDesc:
+    'Consens musicològic: etiqueta comercial vs. gènere, arrels en son, guaracha i mambo cubà.',
+  blogHistoriaSalsa_refElPaisTitle: 'La salsa va néixer a Nova York (El País, 2024)',
+  blogHistoriaSalsa_refElPaisDesc:
+    'Article sobre la diàspora del Bronx/Spanish Harlem i la fusió jazz-soul dels anys 60.',
+  blogHistoriaSalsa_refMarulaTitle: 'Nits de Salsa a Barcelona (Marula Café)',
+  blogHistoriaSalsa_refMarulaDesc:
+    "L'escena actual de salsa a Barcelona: Eixample, Gràcia, Poblenou i festivals locals.",
 
   // === AUTO-ADDED TRANSLATIONS (2025-12-19) ===
   openLevel: 'Nivell Obert',
