@@ -39,6 +39,11 @@ export const fr = {
   headerFAQ: 'FAQ',
   headerLanguage: 'Langue',
   navFacilities: 'Installations',
+  navSchedule: 'Horaires',
+  navYunaisy: 'Yunaisy Farray',
+  navProfesores: 'Professeurs',
+  navBlog: 'Blog',
+  navInstalaciones: 'Installations',
   breadcrumb_services: 'Services de Danse',
   enrollNow: 'Devenez Membre Maintenant',
   // Hero
@@ -11065,13 +11070,13 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogHistoriaSalsa_section1Title:
     'Origines de la Salsa : Racines Afro-cubaines, Diaspora et Explosion à New York (1850–1970)',
   blogHistoriaSalsa_section1Content1:
-    "Il n'existe pas de consensus absolu sur le lieu exact de naissance de la salsa, mais son ADN musical se forge à **Cuba** entre la fin du XIXe siècle et les premières décennies du XXe. Là, le **son cubain** (1890–1910) a intégré des rythmes africains —provenant des traditions yoruba et congo— avec des instruments et structures de la musique européenne, créant la base sur laquelle la salsa moderne s'est construite.",
+    "Il n'existe pas de [consensus absolu](https://es.wikipedia.org/wiki/Salsa_(g%C3%A9nero_musical)) sur le lieu exact de naissance de la salsa, mais son ADN musical se forge à **Cuba** entre la fin du XIXe siècle et les premières décennies du XXe. Là, le **son cubain** (1890–1910) a intégré des rythmes africains —provenant des traditions yoruba et congo— avec des instruments et structures de la musique européenne, créant la base sur laquelle la salsa moderne s'est construite.",
   blogHistoriaSalsa_section1Content2:
-    'Tout au long du XXe siècle, des genres comme la **guaracha** (rythmique et festive, dans les années 30), le **guaguancó** (branche de la rumba afro-cubaine), le **mambo** (Pérez Prado, 1940s) et le **cha-cha-chá** (Enrique Jorrín, 1951) ont contribué à ce croisement musical. Leurs enregistrements ont voyagé dans les Caraïbes et les Amériques, notamment à Porto Rico, en République Dominicaine et à New York.',
+    'Tout au long du XXe siècle, [des genres comme la **guaracha**](https://los40.com/2025/08/01/origen-e-historia-de-la-musica-salsa-las-5-caracteristicas-que-lo-diferencian-del-resto/) (rythmique et festive, dans les années 30), le **guaguancó** (branche de la rumba afro-cubaine), le **mambo** (Pérez Prado, 1940s) et le **cha-cha-chá** (Enrique Jorrín, 1951) ont contribué à ce croisement musical. Leurs enregistrements ont voyagé dans les Caraïbes et les Amériques, notamment à Porto Rico, en République Dominicaine et à New York.',
   blogHistoriaSalsa_section1Content3:
-    'La décennie 1960 fut cruciale : le **Bronx et le Spanish Harlem** sont devenus des épicentres où la diaspora caribéenne a fusionné des sons afro-caribéens avec le jazz latin, des influences soul et R&B, et une énergie urbaine inimitable. Des artistes comme **Tito Puente, Tito Rodríguez et Charlie Palmieri** ont mené ce mouvement qui a donné naissance à la **salsa dura** : une musique puissante, avec des cuivres intenses, des percussions agressives et des paroles racontant la vie du quartier.',
+    'La décennie 1960 fut cruciale : le **[Bronx et le Spanish Harlem](https://elpais.com/us/entretenimiento/2024-06-08/la-salsa-nacio-y-vive-en-nueva-york-con-permiso-de-cali.html)** sont devenus des épicentres où la diaspora caribéenne a fusionné des sons afro-caribéens avec le jazz latin, des influences soul et R&B, et une énergie urbaine inimitable. Des artistes comme **Tito Puente, Tito Rodríguez et Charlie Palmieri** ont mené ce mouvement qui a donné naissance à la **salsa dura** : une musique puissante, avec des cuivres intenses, des percussions agressives et des paroles racontant la vie du quartier.',
   blogHistoriaSalsa_section1Content4:
-    "En 1964, le label **[Fania Records](https://www.faniarecords.com/)** —fondé par Johnny Pacheco (dominicain) et Jerry Masucci (new-yorkais)— a cristallisé et projeté ce phénomène. Fania n'a pas \"inventé\" la salsa, mais l'a transformée en une **identité globale**, combinant stratégie commerciale et fierté culturelle latine. La création des **Fania All-Stars** en 1968 et des concerts iconiques comme ceux du Cheetah Club ou du Yankee Stadium ont marqué le moment où la salsa s'est consolidée comme symbole de la latinité urbaine et fière.",
+    "En 1964, le label **[Fania Records](https://www.udiscovermusica.com/articulos/fania-records-historia/)** —fondé par Johnny Pacheco (dominicain) et Jerry Masucci (new-yorkais)— a cristallisé et projeté ce phénomène. Fania n'a pas \"inventé\" la salsa, mais l'a transformée en une **identité globale**, combinant stratégie commerciale et fierté culturelle latine. La création des **[Fania All-Stars](https://es.wikipedia.org/wiki/Fania_All-Stars)** en 1968 et des concerts iconiques comme ceux du Cheetah Club ou du Yankee Stadium ont marqué le moment où la salsa s'est consolidée comme symbole de la latinité urbaine et fière.",
 
   // === IMAGE CAPTIONS ===
   blogHistoriaSalsa_imageFaniaCaption:
@@ -11086,15 +11091,15 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
     'Le terme "salsa" n\'a jamais eu une origine unique confirmée, mais plutôt de multiples chemins convergents. Parmi les théories les plus solides :',
   blogHistoriaSalsa_section2TeoriasTitle: "Principales théories sur l'origine du nom",
   blogHistoriaSalsa_teoria1:
-    '**Analogie culinaire** : popularisée dans les années 60 par l\'animateur vénézuélien Phidias Danilo Escalona, associant "salsa" à un mélange savoureux et épicé, métaphore de la fusion musicale (son + jazz + quartier)',
+    '**[Analogie culinaire](https://www.uspto.gov/learning-and-resources/journeys-innovation/historical-stories/inventing-salsa-es)** : popularisée dans les années 60 par l\'animateur vénézuélien Phidias Danilo Escalona, associant "salsa" à un mélange savoureux et épicé, métaphore de la fusion musicale (son + jazz + quartier)',
   blogHistoriaSalsa_teoria2:
-    '**"Échale salsita" (1933)** : du compositeur cubain Ignacio Piñeiro et son Septeto Nacional, l\'une des premières mentions directes du terme',
+    '**["Échale salsita" (1933)](https://pieslatinos.com/origen-nombre-salsa-baile/)** : du compositeur cubain Ignacio Piñeiro et son Septeto Nacional, l\'une des premières mentions directes du terme',
   blogHistoriaSalsa_teoria3:
     '**Cheo Marquetti et "Los Salseros" (années 40)** : utilisent le terme de manière artistique avant Fania',
   blogHistoriaSalsa_teoria4:
-    '**Usage commercial de Fania (1960s–1970s)** : des titres comme "Salsa Na\' Ma\'" ou des campagnes radiophoniques new-yorkaises consolident le terme comme marque internationale',
+    '**[Usage commercial de Fania](https://costaricasalsa.com/como-nace-la-palabra-salsa/) (1960s–1970s)** : des titres comme "Salsa Na\' Ma\'" ou des campagnes radiophoniques new-yorkaises consolident le terme comme marque internationale',
   blogHistoriaSalsa_section2Debate:
-    'La musicologie contemporaine distingue deux perspectives : la **vision académique** (étiquette parapluie pour des genres afro-cubains actualisés) et la **vision populaire** (genre propre avec identité sonore basée sur la clave 2-3, le piano montuno et les chœurs appel-réponse).',
+    'La [musicologie contemporaine](https://es.wikipedia.org/wiki/Salsa_(g%C3%A9nero_musical)) distingue deux perspectives : la **vision académique** (étiquette parapluie pour des genres afro-cubains actualisés) et la **vision populaire** (genre propre avec identité sonore basée sur la clave 2-3, le piano montuno et les chœurs appel-réponse).',
   blogHistoriaSalsa_section2Callout:
     "Chez [Farray's International Dance Center](/fr/clases), ce débat prend vie dans les cours. Apprendre la [salsa cubaine](/fr/clases/salsa-cubana-barcelona) —centrée sur les racines du son— face à la salsa en ligne, développée à New York, permet aux élèves de vivre dans leur propre corps cette tension entre tradition et évolution.",
 
@@ -11134,7 +11139,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // === SECTION 4: BARCELONE ===
   blogHistoriaSalsa_section4Title: 'De New York et des Caraïbes à Barcelone',
   blogHistoriaSalsa_section4Content1:
-    "Ces dernières décennies, Barcelone s'est transformée en l'une des **capitales européennes de la danse latine**, où cohabitent tradition et modernité. La ville accueille une large communauté latino-américaine et afro-caribéenne, générant une scène salsera plurielle : des clubs de l'Eixample aux écoles spécialisées de Gràcia ou Poblenou, où le rythme se mêle à la vie quotidienne.",
+    "Ces dernières décennies, Barcelone s'est transformée en l'une des **capitales européennes de la danse latine**, où cohabitent tradition et modernité. [Des études académiques](https://www.academia.edu/24917752/Tesis_ISABEL_LLANO_La_Salsa_en_Barcelona) documentent comment la ville accueille une large communauté latino-américaine et afro-caribéenne, générant une [scène salsera plurielle](https://marulacafe.com/noches-de-salsa-en-barcelona/) : des clubs de l'Eixample aux écoles spécialisées de Gràcia ou Poblenou, où le rythme se mêle à la vie quotidienne.",
   blogHistoriaSalsa_section4Content2:
     "[Farray's International Dance Center](/fr/clases), institution pionnière dans l'enseignement professionnel de la danse afro-caribéenne, maintient vivant cet héritage à travers des programmes combinant technique, culture et histoire. Ici la salsa s'enseigne non seulement avec précision technique, mais avec conscience du contexte qui l'a créée. Découvrez [nos professeurs](/fr/profesores-baile-barcelona) et la [Méthode Farray®](/fr/yunaisy-farray).",
 
@@ -11143,7 +11148,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogHistoriaSalsa_section5Intro:
     "La salsa n'est pas seulement un exercice physique. La science a démontré que danser régulièrement a un impact positif à plusieurs niveaux : améliore la santé cardiovasculaire, renforce la mémoire et la concentration, libère des endorphines et crée des liens sociaux profonds.",
   blogHistoriaSalsa_beneficiosDetalle:
-    "Une étude du New England Journal of Medicine (2003) a révélé que danser peut réduire jusqu'à 76% le risque de démence chez les adultes âgés. Chaque cours est un investissement en santé physique et mentale qui, de plus, vous connecte à une tradition culturelle vivante.",
+    "Une étude du [New England Journal of Medicine (2003)](https://www.nejm.org/doi/full/10.1056/NEJMoa022252) a révélé que danser peut réduire jusqu'à **76% le risque de démence** chez les adultes âgés. Chaque cours est un investissement en santé physique et mentale qui, de plus, vous connecte à une tradition culturelle vivante.",
 
   // === SECTION 6: CONCLUSION ===
   blogHistoriaSalsa_section6Title: 'Tradition vivante à Barcelone',
@@ -11169,43 +11174,6 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogHistoriaSalsa_faq5Question: 'Quels bienfaits la salsa a-t-elle pour la santé ?',
   blogHistoriaSalsa_faq5Answer:
     "Selon des études du New England Journal of Medicine, danser régulièrement peut réduire jusqu'à 76% le risque de démence. De plus, une heure de salsa brûle entre 350-450 kcal, améliore la coordination, réduit le stress et augmente le bonheur de 25% selon Frontiers in Psychology.",
-
-  // === RÉFÉRENCES (GEO Citability) ===
-  blogHistoriaSalsa_referencesTitle: 'Sources et références',
-  blogHistoriaSalsa_referencesIntro: 'Sources consultées pour cet article :',
-  // --- SOURCES SCIENTIFIQUES PRIMAIRES ---
-  blogHistoriaSalsa_refNEJMTitle: 'Danse et Démence (Verghese et al., 2003)',
-  blogHistoriaSalsa_refNEJMDesc:
-    'Étude longitudinale : danser réduit de 76% le risque de démence vs. mots croisés ou lecture. DOI: 10.1056/NEJMoa022252',
-  blogHistoriaSalsa_refHarvardTitle: 'Calories brûlées par activité (Harvard, 2023)',
-  blogHistoriaSalsa_refHarvardDesc:
-    'Guide de Harvard Medical School : danser brûle 300-450 kcal/heure selon le poids et intensité.',
-  blogHistoriaSalsa_refJAMATitle: 'Danse et santé cardiaque (Belardinelli, 2008)',
-  blogHistoriaSalsa_refJAMADesc:
-    'Étude JAMA Cardiology : valser 3x/semaine réduit de 30-50% le risque cardiaque chez les patients insuffisants.',
-  blogHistoriaSalsa_refBJSMTitle: 'Danse et équilibre musculaire (West et al., 2017)',
-  blogHistoriaSalsa_refBJSMDesc:
-    'Revue systématique BJSM : danser améliore force, flexibilité et équilibre chez les adultes âgés.',
-  blogHistoriaSalsa_refCortisolTitle: 'Salsa et réduction du cortisol (Quiroga Murcia, 2009)',
-  blogHistoriaSalsa_refCortisolDesc:
-    'Étude Psychoneuroendocrinology : danser la salsa réduit le cortisol et augmente la testostérone vs. écoute passive.',
-  blogHistoriaSalsa_refFrontiersTitle: 'Dance/Movement Therapy - Bien-être (Goodill, 2016)',
-  blogHistoriaSalsa_refFrontiersDesc:
-    'Méta-analyse Frontiers in Psychology : thérapie mouvement/danse augmente +25% satisfaction vitale et bien-être.',
-  // --- SOURCES SECONDAIRES AUTORISÉES ---
-  blogHistoriaSalsa_refACETitle: 'Calculateur de Calories (ACE Fitness, 2024)',
-  blogHistoriaSalsa_refACEDesc:
-    "Outil officiel de l'American Council on Exercise pour calculer la dépense calorique par type de danse.",
-  blogHistoriaSalsa_refCDCTitle: "Guides d'Activité Physique (CDC, 2023)",
-  blogHistoriaSalsa_refCDCDesc:
-    'Recommandations officielles du CDC : 150 min/semaine activité modérée ou 75 min activité intense.',
-  // --- SOURCES LOCALES/INSTITUTIONNELLES ---
-  blogHistoriaSalsa_refFarraysTitle: "Statistiques des élèves (Farray's, 2025)",
-  blogHistoriaSalsa_refFarraysDesc:
-    "Données internes de Farray's International Dance Center : méthodologie et résultats de 20+ ans formant des danseurs.",
-  blogHistoriaSalsa_refBcnActivaTitle: 'Culture et loisirs à Barcelone (Barcelona Activa, 2024)',
-  blogHistoriaSalsa_refBcnActivaDesc:
-    'Statistiques de participation aux activités culturelles et de loisirs actifs à Barcelone.',
 
   // === AUTO-ADDED TRANSLATIONS (2025-12-19) ===
   openLevel: 'Niveau Ouvert',

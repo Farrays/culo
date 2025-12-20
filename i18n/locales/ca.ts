@@ -39,6 +39,11 @@ export const ca = {
   headerFAQ: 'Preguntes Freqüents',
   headerLanguage: 'Idioma',
   navFacilities: 'Instal·lacions',
+  navSchedule: 'Horaris',
+  navYunaisy: 'Yunaisy Farray',
+  navProfesores: 'Professors',
+  navBlog: 'Blog',
+  navInstalaciones: 'Instal·lacions',
   breadcrumb_services: 'Serveis de Ball',
   enrollNow: 'Fes-te Soci Ara',
   // Hero
@@ -10893,13 +10898,13 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogHistoriaSalsa_section1Title:
     'Orígens de la Salsa: Arrels Afrocubanes, Diàspora i Explosió a Nova York (1850–1970)',
   blogHistoriaSalsa_section1Content1:
-    'No existeix consens absolut sobre el lloc exacte de naixement de la salsa, però el seu ADN musical es forja a **Cuba** entre finals del segle XIX i les primeres dècades del XX. Allà, el **son cubà** (1890–1910) va integrar ritmes africans —provinents de tradicions yoruba i congo— amb instruments i estructures de la música europea, creant la base sobre la qual es va construir la salsa moderna.',
+    'No existeix [consens absolut](https://es.wikipedia.org/wiki/Salsa_(g%C3%A9nero_musical)) sobre el lloc exacte de naixement de la salsa, però el seu ADN musical es forja a **Cuba** entre finals del segle XIX i les primeres dècades del XX. Allà, el **son cubà** (1890–1910) va integrar ritmes africans —provinents de tradicions yoruba i congo— amb instruments i estructures de la música europea, creant la base sobre la qual es va construir la salsa moderna.',
   blogHistoriaSalsa_section1Content2:
-    'Al llarg del segle XX, gèneres com la **guaracha** (rítmica i festiva, als anys 30), el **guaguancó** (branca de la rumba afrocubana), el **mambo** (Pérez Prado, 1940s) i el **chachachá** (Enrique Jorrín, 1951) van contribuir a aquest encreuament musical. Les seves gravacions van viatjar pel Carib i Amèrica, especialment a Puerto Rico, República Dominicana i Nova York.',
+    'Al llarg del segle XX, [gèneres com la **guaracha**](https://los40.com/2025/08/01/origen-e-historia-de-la-musica-salsa-las-5-caracteristicas-que-lo-diferencian-del-resto/) (rítmica i festiva, als anys 30), el **guaguancó** (branca de la rumba afrocubana), el **mambo** (Pérez Prado, 1940s) i el **chachachá** (Enrique Jorrín, 1951) van contribuir a aquest encreuament musical. Les seves gravacions van viatjar pel Carib i Amèrica, especialment a Puerto Rico, República Dominicana i Nova York.',
   blogHistoriaSalsa_section1Content3:
-    "La dècada de 1960 va ser crucial: el **Bronx i el Spanish Harlem** es van convertir en epicentres on la diàspora caribenca va fusionar sons afrocaribencs amb jazz llatí, influències de soul i R&B, i una energia urbana inconfusible. Artistes com **Tito Puente, Tito Rodríguez i Charlie Palmieri** van liderar aquest moviment que va donar origen a l'anomenada **salsa dura**: una música poderosa, amb metalls intensos, percussió agressiva i lletres que contaven la vida al barri.",
+    "La dècada de 1960 va ser crucial: el **[Bronx i el Spanish Harlem](https://elpais.com/us/entretenimiento/2024-06-08/la-salsa-nacio-y-vive-en-nueva-york-con-permiso-de-cali.html)** es van convertir en epicentres on la diàspora caribenca va fusionar sons afrocaribencs amb jazz llatí, influències de soul i R&B, i una energia urbana inconfusible. Artistes com **Tito Puente, Tito Rodríguez i Charlie Palmieri** van liderar aquest moviment que va donar origen a l'anomenada **salsa dura**: una música poderosa, amb metalls intensos, percussió agressiva i lletres que contaven la vida al barri.",
   blogHistoriaSalsa_section1Content4:
-    'El 1964, el segell **[Fania Records](https://www.faniarecords.com/)** —fundat per Johnny Pacheco (dominicà) i Jerry Masucci (novaiorquès)— va cristal·litzar i projectar aquest fenomen. Fania no va "inventar" la salsa, però la va convertir en una **identitat global**, combinant estratègia comercial i orgull cultural llatí. La creació de **Fania All-Stars** el 1968 i concerts icònics com els del Cheetah Club o el Yankee Stadium van marcar el moment en què la salsa es va consolidar com a símbol de la llatinitat urbana i orgullosa.',
+    'El 1964, el segell **[Fania Records](https://www.udiscovermusica.com/articulos/fania-records-historia/)** —fundat per Johnny Pacheco (dominicà) i Jerry Masucci (novaiorquès)— va cristal·litzar i projectar aquest fenomen. Fania no va "inventar" la salsa, però la va convertir en una **identitat global**, combinant estratègia comercial i orgull cultural llatí. La creació de **[Fania All-Stars](https://es.wikipedia.org/wiki/Fania_All-Stars)** el 1968 i concerts icònics com els del Cheetah Club o el Yankee Stadium van marcar el moment en què la salsa es va consolidar com a símbol de la llatinitat urbana i orgullosa.',
 
   // === IMAGE CAPTIONS ===
   blogHistoriaSalsa_imageFaniaCaption:
@@ -10914,15 +10919,15 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
     'El terme "salsa" mai va tenir un únic origen confirmat, però sí múltiples camins convergents. Entre les teories més sòlides destaquen:',
   blogHistoriaSalsa_section2TeoriasTitle: "Principals teories sobre l'origen del nom",
   blogHistoriaSalsa_teoria1:
-    '**Analogia culinària**: popularitzada als anys 60 pel locutor veneçolà Phidias Danilo Escalona, associa "salsa" amb barreja saborosa i picant, metàfora de la fusió musical (son + jazz + barri)',
+    '**[Analogia culinària](https://www.uspto.gov/learning-and-resources/journeys-innovation/historical-stories/inventing-salsa-es)**: popularitzada als anys 60 pel locutor veneçolà Phidias Danilo Escalona, associa "salsa" amb barreja saborosa i picant, metàfora de la fusió musical (son + jazz + barri)',
   blogHistoriaSalsa_teoria2:
-    '**"Échale salsita" (1933)**: del compositor cubà Ignacio Piñeiro i el seu Septeto Nacional, una de les primeres mencions directes al terme',
+    '**["Échale salsita" (1933)](https://pieslatinos.com/origen-nombre-salsa-baile/)**: del compositor cubà Ignacio Piñeiro i el seu Septeto Nacional, una de les primeres mencions directes al terme',
   blogHistoriaSalsa_teoria3:
     '**Cheo Marquetti i "Los Salseros" (1940s)**: fan servir el terme de forma artística abans de Fania',
   blogHistoriaSalsa_teoria4:
-    '**Ús comercial de Fania (1960s–1970s)**: títols com "Salsa Na\' Ma\'" o campanyes radiofòniques novaiorqueses consoliden el terme com a marca internacional',
+    '**[Ús comercial de Fania](https://costaricasalsa.com/como-nace-la-palabra-salsa/) (1960s–1970s)**: títols com "Salsa Na\' Ma\'" o campanyes radiofòniques novaiorqueses consoliden el terme com a marca internacional',
   blogHistoriaSalsa_section2Debate:
-    'La musicologia contemporània distingeix dues perspectives: la **visió acadèmica** (etiqueta paraigua per a gèneres afrocubans actualitzats) i la **visió popular** (gènere propi amb identitat sonora basada en la clau 2-3, el piano montuno i els cors de crida i resposta).',
+    'La [musicologia contemporània](https://es.wikipedia.org/wiki/Salsa_(g%C3%A9nero_musical)) distingeix dues perspectives: la **visió acadèmica** (etiqueta paraigua per a gèneres afrocubans actualitzats) i la **visió popular** (gènere propi amb identitat sonora basada en la clau 2-3, el piano montuno i els cors de crida i resposta).',
   blogHistoriaSalsa_section2Callout:
     "A [Farray's International Dance Center](/ca/clases), aquest debat cobra vida a les classes. Aprendre [salsa cubana](/ca/clases/salsa-cubana-barcelona) —centrada en arrels del son— davant salsa en línia, desenvolupada a Nova York, permet als alumnes viure al seu propi cos aquesta tensió entre tradició i evolució.",
 
@@ -10961,7 +10966,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // === SECTION 4: BARCELONA ===
   blogHistoriaSalsa_section4Title: 'De Nova York i el Carib a Barcelona',
   blogHistoriaSalsa_section4Content1:
-    "En les últimes dècades, Barcelona s'ha transformat en una de les **capitals europees del ball llatí**, on conviuen tradició i modernitat. La ciutat acull una àmplia comunitat llatinoamericana i afrocaribenca, generant una escena salsera plural: des de clubs a l'Eixample fins a escoles especialitzades a Gràcia o Poblenou, on el ritme es barreja amb la vida quotidiana.",
+    "En les últimes dècades, Barcelona s'ha transformat en una de les **capitals europees del ball llatí**, on conviuen tradició i modernitat. [Estudis acadèmics](https://www.academia.edu/24917752/Tesis_ISABEL_LLANO_La_Salsa_en_Barcelona) documenten com la ciutat acull una àmplia comunitat llatinoamericana i afrocaribenca, generant una [escena salsera plural](https://marulacafe.com/noches-de-salsa-en-barcelona/): des de clubs a l'Eixample fins a escoles especialitzades a Gràcia o Poblenou, on el ritme es barreja amb la vida quotidiana.",
   blogHistoriaSalsa_section4Content2:
     "[Farray's International Dance Center](/ca/clases), institució pionera en l'ensenyament professional de dansa afrocaribenca, manté viva aquesta herència a través de programes que combinen tècnica, cultura i història. Aquí la salsa s'ensenya no només amb precisió tècnica, sinó amb consciència del context que la va originar. Coneix els [nostres professors](/ca/profesores-baile-barcelona) i descobreix el [Mètode Farray®](/ca/yunaisy-farray).",
 
@@ -10970,7 +10975,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogHistoriaSalsa_section5Intro:
     'La salsa no és només un exercici físic. La ciència ha demostrat que ballar de forma regular té un impacte positiu a múltiples nivells: millora la salut cardiovascular, reforça la memòria i la concentració, allibera endorfines i crea vincles socials profunds.',
   blogHistoriaSalsa_beneficiosDetalle:
-    'Un estudi del New England Journal of Medicine (2003) va trobar que ballar pot reduir fins a un 76% el risc de demència en adults grans. Cada classe és una inversió en salut física i mental que, a més, et connecta amb una tradició cultural viva.',
+    'Un estudi del [New England Journal of Medicine (2003)](https://www.nejm.org/doi/full/10.1056/NEJMoa022252) va trobar que ballar pot reduir fins a un **76% el risc de demència** en adults grans. Cada classe és una inversió en salut física i mental que, a més, et connecta amb una tradició cultural viva.',
 
   // === SECTION 6: CONCLUSIÓ ===
   blogHistoriaSalsa_section6Title: 'Tradició viva a Barcelona',
@@ -10996,43 +11001,6 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogHistoriaSalsa_faq5Question: 'Quins beneficis té ballar salsa per a la salut?',
   blogHistoriaSalsa_faq5Answer:
     "Segons estudis del New England Journal of Medicine, ballar regularment pot reduir fins a un 76% el risc de demència. A més, una hora de salsa crema entre 350-450 kcal, millora la coordinació, redueix l'estrès i augmenta la felicitat en un 25% segons Frontiers in Psychology.",
-
-  // === REFERÈNCIES (GEO Citability) ===
-  blogHistoriaSalsa_referencesTitle: 'Fonts i referències',
-  blogHistoriaSalsa_referencesIntro: "Fonts consultades per a l'elaboració d'aquest article:",
-  // --- FONTS CIENTÍFIQUES PRIMÀRIES ---
-  blogHistoriaSalsa_refNEJMTitle: 'Ball i Demència (Verghese et al., 2003)',
-  blogHistoriaSalsa_refNEJMDesc:
-    'Estudi longitudinal: ballar redueix un 76% el risc de demència vs. mots encreuats o lectura. DOI: 10.1056/NEJMoa022252',
-  blogHistoriaSalsa_refHarvardTitle: 'Calories cremades per activitat (Harvard, 2023)',
-  blogHistoriaSalsa_refHarvardDesc:
-    'Guia de Harvard Medical School: ballar crema 300-450 kcal/hora segons pes i intensitat.',
-  blogHistoriaSalsa_refJAMATitle: 'Ball i salut cardíaca (Belardinelli, 2008)',
-  blogHistoriaSalsa_refJAMADesc:
-    'Estudi de JAMA Cardiology: ballar vals 3x/setmana redueix 30-50% el risc cardíac en pacients amb insuficiència.',
-  blogHistoriaSalsa_refBJSMTitle: 'Ball i equilibri muscular (West et al., 2017)',
-  blogHistoriaSalsa_refBJSMDesc:
-    'Revisió sistemàtica BJSM: ballar millora força, flexibilitat i equilibri en adults grans.',
-  blogHistoriaSalsa_refCortisolTitle: 'Salsa i reducció de cortisol (Quiroga Murcia, 2009)',
-  blogHistoriaSalsa_refCortisolDesc:
-    'Estudi de Psychoneuroendocrinology: ballar salsa redueix cortisol i augmenta testosterona vs. escoltar música passivament.',
-  blogHistoriaSalsa_refFrontiersTitle: 'Dance/Movement Therapy - Benestar (Goodill, 2016)',
-  blogHistoriaSalsa_refFrontiersDesc:
-    'Meta-anàlisi de Frontiers in Psychology: teràpia de moviment/dansa augmenta +25% satisfacció vital i benestar.',
-  // --- FONTS SECUNDÀRIES AUTORITZADES ---
-  blogHistoriaSalsa_refACETitle: 'Calculadora de Calories (ACE Fitness, 2024)',
-  blogHistoriaSalsa_refACEDesc:
-    "Eina oficial de l'American Council on Exercise per calcular despesa calòrica per tipus de ball.",
-  blogHistoriaSalsa_refCDCTitle: "Guies d'Activitat Física (CDC, 2023)",
-  blogHistoriaSalsa_refCDCDesc:
-    'Recomanacions oficials del CDC: 150 min/setmana activitat moderada o 75 min activitat intensa.',
-  // --- FONTS LOCALS/INSTITUCIONALS ---
-  blogHistoriaSalsa_refFarraysTitle: "Estadístiques d'alumnes (Farray's, 2025)",
-  blogHistoriaSalsa_refFarraysDesc:
-    "Dades internes de Farray's International Dance Center: metodologia i resultats de 20+ anys formant ballarins.",
-  blogHistoriaSalsa_refBcnActivaTitle: 'Cultura i oci a Barcelona (Barcelona Activa, 2024)',
-  blogHistoriaSalsa_refBcnActivaDesc:
-    "Estadístiques de participació en activitats culturals i d'oci actiu a Barcelona.",
 
   // === AUTO-ADDED TRANSLATIONS (2025-12-19) ===
   openLevel: 'Nivell Obert',
