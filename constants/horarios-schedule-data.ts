@@ -806,7 +806,8 @@ export const getClassesByCategory = (category: CategoryKey): ScheduleClass[] => 
 // Helper function to filter classes
 export const filterClasses = (
   day: DayKey | 'all',
-  category: CategoryKey | 'all'
+  category: CategoryKey | 'all',
+  level: LevelKey | 'all' = 'all'
 ): ScheduleClass[] => {
   let filtered = [...SCHEDULE_DATA];
 
@@ -818,12 +819,28 @@ export const filterClasses = (
     filtered = filtered.filter(c => c.category === category);
   }
 
+  if (level !== 'all') {
+    filtered = filtered.filter(c => c.level === level);
+  }
+
   return filtered.sort((a, b) => {
     // Sort by day first, then by time
     const dayDiff = DAY_ORDER.indexOf(a.day) - DAY_ORDER.indexOf(b.day);
     if (dayDiff !== 0) return dayDiff;
     return a.time.localeCompare(b.time);
   });
+};
+
+// Get class count by level
+export const getCountByLevel = (): Record<LevelKey | 'all', number> => {
+  return {
+    all: SCHEDULE_DATA.length,
+    beginner: SCHEDULE_DATA.filter(c => c.level === 'beginner').length,
+    basic: SCHEDULE_DATA.filter(c => c.level === 'basic').length,
+    intermediate: SCHEDULE_DATA.filter(c => c.level === 'intermediate').length,
+    advanced: SCHEDULE_DATA.filter(c => c.level === 'advanced').length,
+    intermediateAdvanced: SCHEDULE_DATA.filter(c => c.level === 'intermediateAdvanced').length,
+  };
 };
 
 // Get unique teachers

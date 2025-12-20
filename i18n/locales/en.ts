@@ -10531,4 +10531,1247 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   pricing_exclusive_referral_credits: '2 drop-in classes',
   pricing_exclusive_referral_value: 'Gift valued at €34',
   pricing_exclusive_referral_desc: 'For each new member who signs up thanks to you',
+
+  // ========================================
+  // BLOG SYSTEM
+  // ========================================
+
+  // Blog General
+  blog_pageTitle: 'Dance Blog | Tips, Tutorials & Dance History',
+  blog_metaDescription:
+    'Discover tips, tutorials and the fascinating history of dance. Expert advice from professional dancers to improve your technique and enjoy every step.',
+  blog_breadcrumbHome: 'Home',
+  blog_breadcrumbBlog: 'Blog',
+  blog_readMore: 'Read more',
+  blog_allArticles: 'All',
+  blog_noArticles: 'No articles yet',
+  blog_noArticlesDesc: 'We are preparing content that will transform the way you dance.',
+  blog_viewAllArticles: 'View all articles',
+
+  // Reading Metrics
+  blog_readingTime: '{minutes} min read',
+  blog_publishedOn: 'Published on',
+  blog_updatedOn: 'Updated on',
+  blog_wordCount: '{count} words',
+
+  // Content Elements
+  blog_summary: 'Summary',
+  blog_keyPoints: 'Key Points',
+  blog_tableOfContents: 'Contents',
+  blog_definition: 'Definition',
+  blog_source: 'Source',
+
+  // Author
+  blog_authorRole: 'Professional dancer, founder of FIDC and CID-UNESCO member',
+  blog_authorBio:
+    "Cuban professional dancer with over 20 years of experience. Founder of Farray's International Dance Center, she has trained thousands of dancers in Barcelona. Specialized in Contemporary, Jazz, Heels and Cuban styles.",
+  blog_authorAbout: 'About the author',
+  blog_authorCredentials: 'Credentials',
+  blog_credential_specialization: 'Contemporary · Jazz · Heels · Cuban',
+  blog_credential_experience: '20+ years experience',
+  blog_credential_founder: 'FIDC Founder',
+
+  // Categories
+  blog_category_tutoriales: 'Tutorials',
+  blog_category_tutoriales_desc: 'Learn technique and steps with our detailed guides',
+  blog_category_tips: 'Tips',
+  blog_category_tips_desc: 'Practical advice to improve your dancing',
+  blog_category_historia: 'History',
+  blog_category_historia_desc: 'Discover the roots and evolution of dance styles',
+  blog_category_fitness: 'Fitness',
+  blog_category_fitness_desc: 'Health and wellness benefits of dancing',
+  blog_category_lifestyle: 'Lifestyle',
+  blog_category_lifestyle_desc: 'Dance culture and dancer lifestyle',
+
+  // Social Share
+  blog_shareArticle: 'Share this article',
+  blog_shareWhatsApp: 'Share on WhatsApp',
+  blog_shareFacebook: 'Share on Facebook',
+  blog_shareTwitter: 'Share on Twitter',
+  blog_shareLinkedIn: 'Share on LinkedIn',
+  blog_shareEmail: 'Share by Email',
+  blog_emailSubject: 'Interesting article: {title}',
+  blog_emailBody: "I think you'll find this interesting:\n\n{title}\n\n{url}",
+
+  // Related Articles
+  blog_relatedArticles: 'Related Articles',
+  blog_relatedArticlesDesc: 'Keep exploring topics you love',
+
+  // Article Navigation
+  blog_previousArticle: 'Previous article',
+  blog_nextArticle: 'Next article',
+  blog_backToBlog: 'Back to blog',
+
+  // ========================================
+  // PILOT ARTICLE: 10 Benefits of Dancing Salsa
+  // ========================================
+
+  // Meta
+  blogBeneficiosSalsa_title: '10 Scientific Benefits of Dancing Salsa in Barcelona',
+  blogBeneficiosSalsa_metaDescription:
+    "Burn 400 cal/hour, reduce dementia 76%, lower stress: 10 proven benefits of salsa classes in Barcelona. Join Farray's International Dance Center.",
+
+  // Summary Bullets (GEO Critical)
+  blogBeneficiosSalsa_summaryBullet1:
+    'Burns 300-450 calories per hour (equivalent to moderate running)',
+  blogBeneficiosSalsa_summaryBullet2: 'Reduces dementia risk by 76% (NEJM 2003 study)',
+  blogBeneficiosSalsa_summaryBullet3: 'Lowers stress 20-30% and increases life satisfaction 25%',
+
+  // Summary Stats (Holographic Cards)
+  blogBeneficiosSalsa_statCaloriesLabel: 'calories burned per hour dancing salsa',
+  blogBeneficiosSalsa_statDementiaLabel: 'lower dementia risk vs sedentary people',
+
+  // Breadcrumb
+  blogBeneficiosSalsa_breadcrumbCurrent: '10 Scientific Benefits',
+
+  // Intro
+  blogBeneficiosSalsa_intro:
+    "Dancing salsa burns up to **400 calories per hour**, protects your brain (**76% lower dementia risk**) and significantly reduces stress. It's not magic: it's science.\n\nDiscover the **10 scientifically-backed benefits** of salsa classes in Barcelona, and why thousands have already chosen Farray's International Dance Center to transform their body and mind through dance.",
+
+  // Benefit 1: Calories
+  blogBeneficiosSalsa_benefit1Title: '1. Burns 300-450 Calories per Hour',
+  blogBeneficiosSalsa_benefit1Content:
+    "An hour of intense salsa burns between **300 and 450 calories** (70kg person), equivalent to moderate-pace running. According to [Harvard Medical School](https://www.health.harvard.edu/diet-and-weight-loss/calories-burned-in-30-minutes-for-people-of-three-different-weights), it's cardiovascular exercise disguised as fun.\n\nThe key difference: while running you count the minutes until it's over, dancing Cuban salsa time flies because you're enjoying yourself. This makes consistency easier – the real key to any exercise program.",
+  blogBeneficiosSalsa_stat1Label: 'calories burned per hour',
+
+  // Benefit 2: Cardiovascular
+  blogBeneficiosSalsa_benefit2Title: '2. Improves Cardiovascular Health',
+  blogBeneficiosSalsa_benefit2Content:
+    'Salsa is moderate-to-high intensity aerobic exercise. According to studies published in [JAMA Cardiology](https://jamanetwork.com/journals/jamacardiology), dancing 3 hours per week **reduces cardiac risk by 30-50%**.\n\nThe constant movements, turns and direction changes keep your heart efficient, lower blood pressure and optimize HDL cholesterol. Your heart will thank you.',
+
+  // Benefit 3: Muscles
+  blogBeneficiosSalsa_benefit3Title: '3. Strengthens Muscles and Balance',
+  blogBeneficiosSalsa_benefit3Content:
+    'Every salsa step works multiple muscle groups: **core, legs, glutes and arms** in functional movements. A [British Journal of Sports Medicine](https://bjsm.bmj.com/) study confirms dance improves flexibility and prevents falls.\n\nUnlike repetitive gym workouts, salsa offers complete functional training that develops strength, balance and coordination naturally.',
+
+  // Benefit 4: Brain
+  blogBeneficiosSalsa_benefit4Title: '4. Reduces Dementia by 76% (NEJM 2003 Study)',
+  blogBeneficiosSalsa_benefit4Content:
+    'This is the most impressive benefit. The [New England Journal of Medicine (2003)](https://www.nejm.org/doi/full/10.1056/NEJMoa022252) found that **dancing reduces dementia risk by 76%** – more than crosswords, reading or any other activity studied.\n\nWhy? Salsa combines physical exercise with mental challenges: memorizing steps + coordinating with partner + improvising. This unique combination creates new neural connections and keeps your brain young.',
+  blogBeneficiosSalsa_stat2Label: 'lower dementia risk',
+
+  // Benefit 5: Stress
+  blogBeneficiosSalsa_benefit5Title: '5. Releases Endorphins and Lowers Cortisol',
+  blogBeneficiosSalsa_benefit5Content:
+    "Studies published in [Psychoneuroendocrinology](https://www.sciencedirect.com/journal/psychoneuroendocrinology) show that dancing **reduces stress by 20-30%** post-session, measured by cortisol levels.\n\nWhen you dance, your body releases endorphins, dopamine and serotonin – the happiness neurotransmitters. After a salsa class in Barcelona, you'll feel wellbeing and calm that lasts for hours. The best anti-stress therapy.",
+
+  // Benefit 6: Confidence
+  blogBeneficiosSalsa_benefit6Title: '6. Boosts Self-Esteem and Confidence',
+  blogBeneficiosSalsa_benefit6Content:
+    "Every step you master, every turn you nail, every song you dance without stumbling... these are 'small wins' that trigger dopamine and build confidence.\n\nSalsa teaches you to **feel comfortable in your body**, take up space, express yourself without words. This confidence transfers: it shows in work, relationships, social life.",
+
+  // Benefit 7: Posture
+  blogBeneficiosSalsa_benefit7Title: '7. Corrects Posture and Proprioception',
+  blogBeneficiosSalsa_benefit7Content:
+    "Salsa technique requires **upright posture + free hips** = natural alignment. In just weeks of salsa classes in Barcelona, you'll notice this posture even when you're not dancing.\n\nCoordinating feet, arms, hips and partner develops proprioceptive skills that make you more agile in everyday life.",
+
+  // Benefit 8: Social
+  blogBeneficiosSalsa_benefit8Title: '8. Expands Your Social Network in Barcelona',
+  blogBeneficiosSalsa_benefit8Content:
+    "Cuban salsa classes are the best place to meet new people. You share passion, work as a team, the atmosphere is naturally social.\n\nAt Farray's International Dance Center (Eixample Izquierdo, Barcelona) we've seen lifelong friendships, couples, marriages born. The **Barcelona salsa community** is diverse: all ages, professions, nationalities.",
+
+  // Benefit 9: Culture
+  blogBeneficiosSalsa_benefit9Title: '9. Connects You with Cuban Salsa Culture',
+  blogBeneficiosSalsa_benefit9Content:
+    "Dancing salsa is immersing yourself in vibrant culture: from Celia Cruz to Fania, from son to mambo, Afro-Caribbean rhythms. In our classes we explain the **history and context** behind each step.\n\nYou learn about Cuba, Puerto Rico, the New York scene. Salsa connects you with something bigger than yourself – it's a cultural experience, not just exercise.",
+
+  // Benefit 10: Happiness
+  blogBeneficiosSalsa_benefit10Title: '10. Elevates Your Happiness (Frontiers Psychology)',
+  blogBeneficiosSalsa_benefit10Content:
+    "A study published in [Frontiers in Psychology](https://www.frontiersin.org/journals/psychology) showed that dancers report **+25% higher life satisfaction** than sedentary people.\n\nIt's no coincidence: music + movement + social contact + personal achievement = the perfect wellbeing cocktail. As we say at Farray's: 'Those who dance, live happier.'",
+
+  // Image Captions
+  blogBeneficiosSalsa_imageFitnessCaption:
+    'Dancing salsa burns up to 400 calories per hour while toning your whole body',
+  blogBeneficiosSalsa_imageConfidenceCaption:
+    'Personal transformation begins when you dare to move with confidence',
+  blogBeneficiosSalsa_imageSocialCaption:
+    'The salsa community: real friendships born on the dance floor',
+
+  // FAQ Section
+  blogBeneficiosSalsa_faqTitle: 'Frequently Asked Questions about Dancing Salsa',
+  blogBeneficiosSalsa_faq1Question: 'Do I need prior experience to start dancing salsa?',
+  blogBeneficiosSalsa_faq1Answer:
+    "Not at all. Our beginner classes start from zero. We teach the basic step, rhythm, and gradually add figures. In a few weeks you'll be dancing confidently.",
+  blogBeneficiosSalsa_faq2Question: 'Do I need to bring a dance partner?',
+  blogBeneficiosSalsa_faq2Answer:
+    "No, it's not necessary. In classes we rotate partners, so you practice with different people and learn to adapt. Many students come alone and end up making great friends.",
+  blogBeneficiosSalsa_faq3Question: 'How many classes do I need to dance well?',
+  blogBeneficiosSalsa_faq3Answer:
+    "With 2-3 months of regular classes (twice a week), you'll be able to dance full songs confidently. Dance is an endless journey, but you start feeling the benefits from day one.",
+  blogBeneficiosSalsa_faq4Question: 'Is salsa only for young people?',
+  blogBeneficiosSalsa_faq4Answer:
+    "Not at all. We have students from 18 to 70 years old. Salsa adapts to your energy level and fitness. In fact, for older adults it's especially beneficial for memory and balance.",
+  blogBeneficiosSalsa_faq5Question: 'What is the difference between Cuban salsa and line salsa?',
+  blogBeneficiosSalsa_faq5Answer:
+    "Cuban salsa (casino) is danced in a circle, with more fluid and sensual movements, deeply connected to Afro-Cuban music. Line salsa (LA/NY style) follows a straight line, with more acrobatics. At Farray's we teach authentic Cuban salsa.",
+
+  // ============================================================================
+  // BLOG ARTICLE: History of Salsa in Barcelona
+  // ============================================================================
+
+  // === META & SEO ===
+  blogHistoriaSalsa_title: 'History of Salsa: From the Caribbean to the Heart of Barcelona',
+  blogHistoriaSalsa_metaDescription:
+    "Discover the complete history of salsa: Afro-Cuban roots, the New York revolution and how it lives today in Barcelona at Farray's International Dance Center.",
+  blogHistoriaSalsa_excerpt:
+    'Afro-Cuban roots, New York explosion with Fania Records and living tradition in Barcelona. Discover the complete history of salsa.',
+
+  // === BREADCRUMB ===
+  blogHistoriaSalsa_breadcrumbCurrent: 'History of Salsa',
+
+  // === SUMMARY BULLETS (GEO Optimized) ===
+  blogHistoriaSalsa_summaryBullet1:
+    'Afro-Cuban roots: son, guaracha, mambo and guaguancó fused in New York',
+  blogHistoriaSalsa_summaryBullet2:
+    'Fania Records (1964): the label that crystallized salsa as a global Latin identity',
+  blogHistoriaSalsa_summaryBullet3:
+    'Barcelona: European salsa capital with vibrant scene since the 80s-90s',
+  blogHistoriaSalsa_summaryBullet4:
+    'Dancing reduces dementia risk by 76% according to the New England Journal of Medicine',
+
+  // === SUMMARY STATS (Holographic Cards) ===
+  blogHistoriaSalsa_statFaniaLabel: 'Fania Records founded',
+  blogHistoriaSalsa_statDementiaLabel: 'Dementia risk reduction',
+  blogHistoriaSalsa_statStudentsLabel: "Active students at Farray's",
+
+  // === INTRODUCTION ===
+  blogHistoriaSalsa_intro:
+    "Salsa is much more than a rhythm: it's a story of migrations, resistance and collective creativity connecting Africa, the Caribbean and the world. From its Afro-Cuban roots to its global expansion, salsa embodies centuries of cultural mixing and expressive freedom.",
+  blogHistoriaSalsa_introFarrays:
+    "In Barcelona, this tradition beats strongly at [Farray's International Dance Center](/en/clases), where learning salsa means understanding a living, universal history told through the body. Check our [schedules and prices](/en/horarios-precios) to join this tradition.",
+
+  // === SECTION 1: ORIGINS (1850-1970) ===
+  blogHistoriaSalsa_section1Title:
+    'Origins of Salsa: Afro-Cuban Roots, Diaspora and New York Explosion (1850–1970)',
+  blogHistoriaSalsa_section1Content1:
+    'There is no absolute consensus on the exact birthplace of salsa, but its musical DNA was forged in **Cuba** between the late 19th and early 20th centuries. There, **Cuban son** (1890–1910) integrated African rhythms—from Yoruba and Congo traditions—with European instruments and structures, creating the foundation upon which modern salsa was built.',
+  blogHistoriaSalsa_section1Content2:
+    'Throughout the 20th century, genres such as **guaracha** (rhythmic and festive, in the 30s), **guaguancó** (a branch of Afro-Cuban rumba), **mambo** (Pérez Prado, 1940s) and **cha-cha-chá** (Enrique Jorrín, 1951) contributed to this musical crossover. Their recordings traveled across the Caribbean and Americas, especially to Puerto Rico, the Dominican Republic and New York.',
+  blogHistoriaSalsa_section1Content3:
+    'The 1960s were crucial: the **Bronx and Spanish Harlem** became epicenters where the Caribbean diaspora fused Afro-Caribbean sounds with Latin jazz, soul and R&B influences, and an unmistakable urban energy. Artists like **Tito Puente, Tito Rodríguez and Charlie Palmieri** led this movement that gave rise to **salsa dura**: powerful music with intense brass, aggressive percussion and lyrics about life in the barrio.',
+  blogHistoriaSalsa_section1Content4:
+    'In 1964, **[Fania Records](https://www.faniarecords.com/)**—founded by Johnny Pacheco (Dominican) and Jerry Masucci (New Yorker)—crystallized and projected this phenomenon. Fania didn\'t "invent" salsa, but turned it into a **global identity**, combining commercial strategy with Latino cultural pride. The creation of **Fania All-Stars** in 1968 and iconic concerts like those at the Cheetah Club or Yankee Stadium marked the moment when salsa became the symbol of urban, proud Latinidad.',
+
+  // === IMAGE CAPTIONS ===
+  blogHistoriaSalsa_imageFaniaCaption:
+    'Fania All-Stars: the salsa dream team that conquered the world from New York',
+  blogHistoriaSalsa_imageBarcelonaCaption:
+    "Cuban salsa class at Farray's International Dance Center Barcelona",
+
+  // === SECTION 2: ETYMOLOGY OF "SALSA" ===
+  blogHistoriaSalsa_section2Title:
+    'Etymology of "Salsa": Theories, Academic Debate and Commercial Label',
+  blogHistoriaSalsa_section2Intro:
+    'The term "salsa" never had a single confirmed origin, but rather multiple converging paths. Among the strongest theories:',
+  blogHistoriaSalsa_section2TeoriasTitle: 'Main theories about the origin of the name',
+  blogHistoriaSalsa_teoria1:
+    '**Culinary analogy**: popularized in the 60s by Venezuelan broadcaster Phidias Danilo Escalona, associating "salsa" with a tasty, spicy mix, a metaphor for musical fusion (son + jazz + barrio)',
+  blogHistoriaSalsa_teoria2:
+    '**"Échale salsita" (1933)**: from Cuban composer Ignacio Piñeiro and his Septeto Nacional, one of the first direct mentions of the term',
+  blogHistoriaSalsa_teoria3:
+    '**Cheo Marquetti and "Los Salseros" (1940s)**: used the term artistically before Fania',
+  blogHistoriaSalsa_teoria4:
+    "**Fania's commercial use (1960s–1970s)**: titles like \"Salsa Na' Ma'\" or New York radio campaigns consolidated the term as an international brand",
+  blogHistoriaSalsa_section2Debate:
+    'Contemporary musicology distinguishes two perspectives: the **academic view** (umbrella label for updated Afro-Cuban genres) and the **popular view** (a genre in its own right with sonic identity based on the 2-3 clave, piano montuno and call-and-response choruses).',
+  blogHistoriaSalsa_section2Callout:
+    "At [Farray's International Dance Center](/en/clases), this debate comes alive in classes. Learning [Cuban salsa](/en/clases/salsa-cubana-barcelona)—rooted in son—versus line salsa, developed in New York, allows students to experience in their own bodies that tension between tradition and evolution.",
+
+  // === SECTION 3: STYLISTIC EVOLUTION (TABLE) ===
+  blogHistoriaSalsa_section3Title: 'Stylistic Evolution: From Salsa Dura to Contemporary Fusion',
+  blogHistoriaSalsa_section3Intro:
+    'Salsa has evolved into multiple styles, each with its unique character. In [our Barcelona classes](/en/clases) we teach this diversity:',
+  blogHistoriaSalsa_section3TableTitle: 'Salsa styles comparison',
+  blogHistoriaSalsa_tableHeaderEstilo: 'Style',
+  blogHistoriaSalsa_tableHeaderEpoca: 'Era',
+  blogHistoriaSalsa_tableHeaderCaracteristicas: 'Characteristics',
+  blogHistoriaSalsa_tableHeaderRepresentantes: 'Representatives',
+  blogHistoriaSalsa_tableHeaderBarcelona: 'In Barcelona',
+  blogHistoriaSalsa_tableRow1Col1: 'Salsa Dura (NY)',
+  blogHistoriaSalsa_tableRow1Col2: '1968–1980',
+  blogHistoriaSalsa_tableRow1Col3: 'Powerful brass, intense percussion, identity-themed lyrics',
+  blogHistoriaSalsa_tableRow1Col4: 'Fania All-Stars, Willie Colón, Héctor Lavoe',
+  blogHistoriaSalsa_tableRow1Col5: 'Foundation of classic scene in Eixample and Gràcia',
+  blogHistoriaSalsa_tableRow2Col1: 'Romantic Salsa',
+  blogHistoriaSalsa_tableRow2Col2: '1980s–1990s',
+  blogHistoriaSalsa_tableRow2Col3: 'Slow ballads, emphasis on love, less percussion',
+  blogHistoriaSalsa_tableRow2Col4: 'Frankie Ruiz, Gilberto Santa Rosa, Tito Nieves',
+  blogHistoriaSalsa_tableRow2Col5: 'Inspires modern line and sensual salsa',
+  blogHistoriaSalsa_tableRow3Col1: 'Cuban Salsa / Timba',
+  blogHistoriaSalsa_tableRow3Col2: '1990s–today',
+  blogHistoriaSalsa_tableRow3Col3: 'Integration of songo, timba, improvisation and casino',
+  blogHistoriaSalsa_tableRow3Col4: 'Celia Cruz, Los Van Van, Manolín',
+  blogHistoriaSalsa_tableRow3Col5: "Advanced classes at Farray's",
+  blogHistoriaSalsa_tableRow4Col1: 'Power Salsa / Salsa Choke',
+  blogHistoriaSalsa_tableRow4Col2: '2000s–today',
+  blogHistoriaSalsa_tableRow4Col3: 'Fusions with hip-hop, electronic and reggaeton',
+  blogHistoriaSalsa_tableRow4Col4: "Oscar D'León, Colombian artists",
+  blogHistoriaSalsa_tableRow4Col5: 'Young scene in Poblenou and 22@',
+
+  // === SECTION 4: BARCELONA ===
+  blogHistoriaSalsa_section4Title: 'From New York and the Caribbean to Barcelona',
+  blogHistoriaSalsa_section4Content1:
+    'In recent decades, Barcelona has transformed into one of the **European capitals of Latin dance**, where tradition and modernity coexist. The city hosts a large Latin American and Afro-Caribbean community, generating a plural salsa scene: from clubs in Eixample to specialized schools in Gràcia or Poblenou, where rhythm blends with everyday life.',
+  blogHistoriaSalsa_section4Content2:
+    "[Farray's International Dance Center](/en/clases), a pioneering institution in professional Afro-Caribbean dance education, keeps this heritage alive through programs combining technique, culture and history. Here salsa is taught not only with technical precision, but with awareness of the context that originated it. Meet [our teachers](/en/profesores-baile-barcelona) and discover the [Farray® Method](/en/yunaisy-farray).",
+
+  // === SECTION 5: BENEFITS ===
+  blogHistoriaSalsa_section5Title: 'More than exercise: what science says about dance',
+  blogHistoriaSalsa_section5Intro:
+    'Salsa is not just physical exercise. Science has shown that dancing regularly has a positive impact on multiple levels: it improves cardiovascular health, strengthens memory and concentration, releases endorphins and creates deep social bonds.',
+  blogHistoriaSalsa_beneficiosDetalle:
+    'A study from the New England Journal of Medicine (2003) found that dancing can reduce dementia risk by up to 76% in older adults. Each class is an investment in physical and mental health that also connects you with a living cultural tradition.',
+
+  // === SECTION 6: CONCLUSION ===
+  blogHistoriaSalsa_section6Title: 'Living tradition in Barcelona',
+  blogHistoriaSalsa_section6Content1:
+    'Salsa is a mirror of Latin American history: African root, Caribbean soul and global heart. Its journey from Cuban solares to New York barrios—and today, to Barcelona academies—demonstrates the power of art to unite cultures and transcend eras.',
+  blogHistoriaSalsa_conclusionCTA:
+    "If you want to feel the pulse of the Caribbean in the heart of Barcelona, check our [schedules and prices](/en/horarios-precios) and [book your first class](/en/clases/salsa-cubana-barcelona). At [Farray's](/en/clases), salsa is not learned: it's lived.",
+
+  // === FAQ (SEO Schema) ===
+  blogHistoriaSalsa_faqTitle: 'Frequently Asked Questions About Salsa History',
+  blogHistoriaSalsa_faq1Question: 'Where was salsa really born?',
+  blogHistoriaSalsa_faq1Answer:
+    'Salsa\'s musical DNA was forged in Cuba between the late 19th and early 20th centuries with Cuban son. However, the term "salsa" and its consolidation as a genre occurred in New York in the 60s-70s, when the Caribbean diaspora fused Afro-Cuban rhythms with Latin jazz and soul. Fania Records (1964) was fundamental to its global projection.',
+  blogHistoriaSalsa_faq2Question: 'Why is it called salsa?',
+  blogHistoriaSalsa_faq2Answer:
+    'Several theories exist: the culinary analogy (tasty mix), Ignacio Piñeiro\'s song "Échale salsita" (1933), and Fania Records\' commercial use in the 60s-70s. The term worked as an umbrella label for modernized Afro-Caribbean rhythms and became established as a Latin identity brand.',
+  blogHistoriaSalsa_faq3Question: "What's the difference between Cuban salsa and line salsa?",
+  blogHistoriaSalsa_faq3Answer:
+    "Cuban salsa (casino) is danced in a circle with more fluid movements and comes directly from Cuba. Line salsa (LA/NY style) developed in the United States, is danced in a straight line and has hustle and mambo influences. At Farray's we teach both styles so you understand the full richness of the genre.",
+  blogHistoriaSalsa_faq4Question: 'Is Barcelona a good city to learn salsa?',
+  blogHistoriaSalsa_faq4Answer:
+    "Barcelona is considered one of Europe's Latin dance capitals. The city has a vibrant Latin American community, numerous dance venues, international congresses like the Barcelona Salsa Congress, and specialized schools like Farray's International Dance Center.",
+  blogHistoriaSalsa_faq5Question: 'What health benefits does dancing salsa have?',
+  blogHistoriaSalsa_faq5Answer:
+    'According to New England Journal of Medicine studies, dancing regularly can reduce dementia risk by up to 76%. Additionally, an hour of salsa burns 350-450 kcal, improves coordination, reduces stress and increases happiness by 25% according to Frontiers in Psychology.',
+
+  // === REFERENCES (GEO Citability) ===
+  blogHistoriaSalsa_referencesTitle: 'Sources and references',
+  blogHistoriaSalsa_referencesIntro: 'Sources consulted for this article:',
+  blogHistoriaSalsa_refFaniaTitle: 'Fania Records History',
+  blogHistoriaSalsa_refFaniaDesc:
+    'The record label founded in 1964 that defined the salsa sound and projected artists like Celia Cruz, Héctor Lavoe and Willie Colón.',
+  blogHistoriaSalsa_refSmithsonianTitle: 'Latin Music Collections - Smithsonian',
+  blogHistoriaSalsa_refSmithsonianDesc:
+    'Smithsonian Institution archive with historical materials on Latin and Afro-Caribbean music.',
+  blogHistoriaSalsa_refNEJMTitle: 'Dance and Dementia (Verghese et al., 2003)',
+  blogHistoriaSalsa_refNEJMDesc:
+    'Study published in the New England Journal of Medicine on leisure activities and dementia risk.',
+  blogHistoriaSalsa_refFrontiersTitle: 'Psychological Benefits of Dance',
+  blogHistoriaSalsa_refFrontiersDesc:
+    'Research on the effects of dance on emotional well-being and mental health.',
+  blogHistoriaSalsa_refBcnSalsaTitle: 'Salsa Festivals in Barcelona',
+  blogHistoriaSalsa_refBcnSalsaDesc:
+    'Calendar of Latin dance events and congresses in Barcelona and surroundings.',
+
+  // === AUTO-ADDED TRANSLATIONS (2025-12-19) ===
+  openLevel: 'Open Level',
+  dhV3CompareTitle: "Why learn Dancehall at Farray's and not at another academy in Barcelona?",
+  dhV3CompareSubtitle: "The difference is not marketing. It's facts.",
+  dhV3CompareColOthers: 'Other academies',
+  dhV3CompareColFarrays: "Farray's Center",
+  dhV3CompareRow1Label: 'Teacher training',
+  dhV3CompareRow1Others: 'Online or weekend courses',
+  dhV3CompareRow1Farrays: 'Trained in Jamaica + Farray® Method',
+  dhV3CompareRow2Label: 'Teaching method',
+  dhV3CompareRow2Others: "You copy this month's choreography",
+  dhV3CompareRow2Farrays: 'Technique + fundamentals + real progression',
+  dhV3CompareRow3Label: 'Level separation',
+  dhV3CompareRow3Others: '"Open level" - everyone mixed',
+  dhV3CompareRow3Farrays: 'Real Beginner, Intermediate and Advanced',
+  dhV3CompareRow4Label: 'Dancehall classes per week',
+  dhV3CompareRow4Others: '1-2 classes',
+  dhV3CompareRow4Farrays: '5 different classes to choose from',
+  dhV3CompareRow5Label: 'Facilities',
+  dhV3CompareRow5Others: 'Small or shared spaces',
+  dhV3CompareRow5Farrays: '700m² with professional floor and climate control',
+  dhV3CompareRow6Label: 'Minimum commitment',
+  dhV3CompareRow6Others: '3 to 12 month contracts',
+  dhV3CompareRow6Farrays: 'Month to month, leave when you want',
+  dhV3CompareRow7Label: 'Official recognition',
+  dhV3CompareRow7Others: 'None',
+  dhV3CompareRow7Farrays: 'Academy accredited by CID-UNESCO',
+  dhV3CompareRow8Label: 'Community and events',
+  dhV3CompareRow8Others: 'You go to class and leave',
+  dhV3CompareRow8Farrays: 'Free practices, events, real family',
+  dhV3CompareMeaningTitle: 'What does this mean for you?',
+  dhV3CompareMeaning1Title: "If you've never danced Dancehall:",
+  dhV3CompareMeaning1Desc:
+    "You'll start with real fundamentals, not copying steps you don't understand. In 3 months you'll notice the difference.",
+  dhV3CompareMeaning2Title: "If you've tried other academies:",
+  dhV3CompareMeaning2Desc:
+    "You'll finally understand the \"why\" behind each movement. It wasn't your fault you weren't progressing — it was the method.",
+  dhV3CompareMeaning3Title: 'If you want flexibility:',
+  dhV3CompareMeaning3Desc:
+    "5 classes per week means you train when YOU can. And if you can't come one month, no problem.",
+  dhV3CompareMeaning4Title: 'If you seek community:',
+  dhV3CompareMeaning4Desc:
+    "Here you're not a number. You'll meet people, go to practices, and have a real dance family.",
+  dhV3CompareCTA: 'See for yourself: first trial class',
+  dhV3CompareNote: 'No commitment. No tricks. No pressure.',
+  navBachataLadyStyle: 'Bachata Lady Style',
+  navTimba: 'Timba',
+  salsaCubanaLevelBasicTitle: 'Basic I, II and III',
+  salsaCubanaLevelBasicDesc:
+    'Consolidate fundamentals, introduce first figures, work on fluidity and perfect lead/follow technique.',
+  salsaCubanaWhyChoose7Title: 'Annual gala + salsa parties',
+  salsaCubanaWhyChoose7Desc:
+    "Shine on a professional stage, enjoy our themed parties and live experiences you won't find at any other school in Barcelona.",
+  salsaLadyTeacher2Specialty: 'Cuban International Master and Artist',
+  salsaLadyTeacher2Bio:
+    "With over 20 years of artistic career, trained at Cuba's National School of Art (ENA). Lia Valdes is a world reference in Cabaret and Lady Style, bringing scenic elegance and impeccable technique to every class.",
+  salsaLadyTeacher3Specialty: 'Lady Style Instructor | Feminine Technique Specialist',
+  salsaLadyTeacher3Bio:
+    'Yasmina Fernández is a passionate Lady Style instructor trained in the Farray® Method. With years of experience teaching feminine technique, she stands out for her ability to connect with students and transmit the elegance and sensuality of Latin dance.',
+  salsaLadyV2PageTitle: 'Salsa Lady Style Classes in Barcelona | Farray® Method',
+  salsaLadyV2MetaDescription:
+    'Master Lady Style with the Farray® Method. Arm technique, hips, turns and heels. Cuban masters from ENA. The only structured system in Barcelona.',
+  salsaLadyV2HeroTitle: 'Salsa Lady Style',
+  salsaLadyV2HeroSubtitle: 'The Method That Transforms Your Dance',
+  salsaLadyV2HeroDesc:
+    'Stop improvising on shines. Learn real feminine technique with the only structured Lady Style system in Barcelona.',
+  salsaLadyV2CTA1: 'Book Your Trial Class',
+  salsaLadyV2CTA2: 'See the Farray® Method',
+  salsaLadyV2ProblemTitle: 'The glass ceiling of Lady Style',
+  salsaLadyV2ProblemP1: "You've been dancing salsa for months (or years).",
+  salsaLadyV2ProblemP2:
+    "Your follow is correct. You understand the lead. You don't get lost in the music.",
+  salsaLadyV2ProblemP3: 'But when your partner releases you for a shine...',
+  salsaLadyV2ProblemTrigger: 'What happens then?',
+  salsaLadyV2Pain1: "You don't know what to do with your arms",
+  salsaLadyV2Pain2: 'Your hips freeze',
+  salsaLadyV2Pain3: 'You do "something" but you don\'t know if it\'s right',
+  salsaLadyV2Pain4: 'You see other dancers shine and think: "how do they do it?"',
+  salsaLadyV2ProblemNotYou: "The problem isn't you.",
+  salsaLadyV2ProblemRealCause: 'The problem is that no one taught you real feminine technique.',
+  salsaLadyV2DiagnosisTitle: "Why your Lady Style isn't progressing",
+  salsaLadyV2DiagnosisSubtitle: "(And why it's not your fault)",
+  salsaLadyV2DiagnosisIntro: "Most academies DON'T have a structured Lady Style system.",
+  salsaLadyV2DiagnosisOthersTitle: 'What other academies do:',
+  salsaLadyV2DiagnosisBad1: 'Standalone classes without logical progression',
+  salsaLadyV2DiagnosisBad2: 'Teachers who teach "what they learned" without methodology',
+  salsaLadyV2DiagnosisBad3: 'They mix beginners with advanced in the same class',
+  salsaLadyV2DiagnosisBad4: 'They copy YouTube choreographies without teaching base technique',
+  salsaLadyV2DiagnosisBad5: 'They ignore musicality and expression',
+  salsaLadyV2DiagnosisBad6: 'No clear levels or defined objectives',
+  salsaLadyV2DiagnosisResult:
+    "The result: you've been at it for months and you're still doing the same basic movements.",
+  salsaLadyV2DiagnosisFarrayTitle:
+    "At Farray's it's different. The Farray® Method is the only Lady Style system in Barcelona with:",
+  salsaLadyV2DiagnosisGood1: 'Proven teaching structure',
+  salsaLadyV2DiagnosisGood2: 'Clear levels with specific objectives',
+  salsaLadyV2DiagnosisGood3: 'Measurable technical progression',
+  salsaLadyV2DiagnosisGood4: 'Cuban master trained at ENA',
+  salsaLadyV2WhatIsTitle: 'What is Salsa Lady Style and why will it transform your dance?',
+  salsaLadyV2WhatIsDesc:
+    'Salsa Lady Style is the discipline that develops your feminine technique within salsa dancing. Unlike partner classes, Lady Style focuses 100% on you.',
+  salsaLadyV2Focus1: 'Your elegance',
+  salsaLadyV2Focus2: 'Your arm work',
+  salsaLadyV2Focus3: 'Your way of walking',
+  salsaLadyV2Focus4: 'Your turns',
+  salsaLadyV2Focus5: 'Your stage presence',
+  salsaLadyV2Focus6: 'Your musical interpretation',
+  salsaLadyV2Quote:
+    "It's not just about steps. It's about how you move, how you occupy space and how you transmit femininity in every movement.",
+  salsaLadyV2PillarsTitle: 'The Farray® Method: The 6 Pillars of Lady Style',
+  salsaLadyV2PillarsSubtitle:
+    'The complete system that develops every aspect of your feminine technique',
+  salsaLadyV2Pillar1Title: 'Arm Technique',
+  salsaLadyV2Pillar1Subtitle: 'The art of expressive arms',
+  salsaLadyV2Pillar1Desc:
+    'Learn to use your arms as an extension of your body, creating elegant lines and fluid movements that complement every step.',
+  salsaLadyV2Pillar1Item1: 'Elegant and defined lines',
+  salsaLadyV2Pillar1Item2: 'Arm-body coordination',
+  salsaLadyV2Pillar1Item3: 'Port de bras with Cuban technique',
+  salsaLadyV2Pillar1Result: 'From stiff arms to extensions that mesmerize.',
+  salsaLadyV2Pillar2Title: 'Hip Control',
+  salsaLadyV2Pillar2Subtitle: 'Movement with intention',
+  salsaLadyV2Pillar2Desc:
+    'Master the hypnotic hip movement with authentic Cuban technique. Each movement has purpose and transmits femininity.',
+  salsaLadyV2Pillar2Item1: 'Dissociation and isolation',
+  salsaLadyV2Pillar2Item2: 'Figure eights and circular movements',
+  salsaLadyV2Pillar2Item3: 'Controlled undulations',
+  salsaLadyV2Pillar2Result: 'From blocked hips to sensual and controlled movement.',
+  salsaLadyV2Pillar3Title: 'Turns with Elegance',
+  salsaLadyV2Pillar3Subtitle: 'Balance and fluidity',
+  salsaLadyV2Pillar3Desc:
+    'Turn technique that combines balance, grace and control. From simple to multiple, always with elegance.',
+  salsaLadyV2Pillar3Item1: 'Preparation, spot and entry',
+  salsaLadyV2Pillar3Item2: 'Center control',
+  salsaLadyV2Pillar3Item3: 'Multiple turns with style',
+  salsaLadyV2Pillar3Result: 'From wobbly turns to clean and elegant spins.',
+  salsaLadyV2Pillar4Title: 'Heel Mastery',
+  salsaLadyV2Pillar4Subtitle: 'Safety and style',
+  salsaLadyV2Pillar4Desc:
+    'Learn to walk, dance and turn in heels like a professional. Confidence in every step.',
+  salsaLadyV2Pillar4Item1: 'Walking elegantly on stilettos',
+  salsaLadyV2Pillar4Item2: 'Stability and balance',
+  salsaLadyV2Pillar4Item3: 'Heel and toe play',
+  salsaLadyV2Pillar4Result: 'From insecurity to total heel mastery.',
+  salsaLadyV2Pillar5Title: 'Musicality',
+  salsaLadyV2Pillar5Subtitle: 'Interpreting the music',
+  salsaLadyV2Pillar5Desc:
+    'Understand Latin music in depth: clave, timings, accents. Your body becomes an instrument.',
+  salsaLadyV2Pillar5Item1: 'Identifying accents and changes',
+  salsaLadyV2Pillar5Item2: 'Interpreting music with the body',
+  salsaLadyV2Pillar5Item3: 'Playing with speed and dynamics',
+  salsaLadyV2Pillar5Result: 'From executing steps to interpreting songs.',
+  salsaLadyV2Pillar6Title: 'Stage Presence',
+  salsaLadyV2Pillar6Subtitle: 'Attitude and confidence',
+  salsaLadyV2Pillar6Desc:
+    'Develop your own personality in dance. Attitude, gaze and confidence that captivate.',
+  salsaLadyV2Pillar6Item1: 'Energy projection',
+  salsaLadyV2Pillar6Item2: 'Use of the gaze',
+  salsaLadyV2Pillar6Item3: 'Attitude and self-confidence',
+  salsaLadyV2Pillar6Result: 'From dancing "inward" to shining outward.',
+  salsaLadyV2PersuasiveBlockTitle: 'Why is the Farray Method different?',
+  salsaLadyV2CompareTitle: 'Traditional Lady Style vs. Farray® Method',
+  salsaLadyV2CompareAspect: 'Aspect',
+  salsaLadyV2CompareOthers: 'Other academies',
+  salsaLadyV2CompareFarray: 'Farray® Method',
+  salsaLadyV2CompareRow1Label: 'Teaching system',
+  salsaLadyV2CompareRow1Others: 'Standalone classes without structure',
+  salsaLadyV2CompareRow1Farray: 'Progressive 3-level system',
+  salsaLadyV2CompareRow2Label: 'Teacher training',
+  salsaLadyV2CompareRow2Others: 'Teachers who teach "by ear"',
+  salsaLadyV2CompareRow2Farray: 'Cuban master trained at ENA Cuba',
+  salsaLadyV2CompareRow3Label: 'Groups',
+  salsaLadyV2CompareRow3Others: 'They mix all levels',
+  salsaLadyV2CompareRow3Farray: 'Groups separated by technical level',
+  salsaLadyV2CompareRow4Label: 'Content',
+  salsaLadyV2CompareRow4Others: 'They copy YouTube choreographies',
+  salsaLadyV2CompareRow4Farray: 'Base technique before choreographies',
+  salsaLadyV2CompareRow5Label: 'Musicality',
+  salsaLadyV2CompareRow5Others: 'Only movements, no musicality',
+  salsaLadyV2CompareRow5Farray: 'Integrated musical interpretation',
+  salsaLadyV2CompareRow6Label: 'Style',
+  salsaLadyV2CompareRow6Others: 'Generic "international" style',
+  salsaLadyV2CompareRow6Farray: 'Cuban authenticity in every class',
+  salsaLadyV2CompareRow7Label: 'Progression',
+  salsaLadyV2CompareRow7Others: 'No clear progression',
+  salsaLadyV2CompareRow7Farray: 'Defined objectives by level',
+  salsaLadyV2CompareRow8Label: 'Requirements',
+  salsaLadyV2CompareRow8Others: 'Suitable for anyone',
+  salsaLadyV2CompareRow8Farray: 'Requirement: Cuban salsa base',
+  salsaLadyV2ForWhoTitle: 'Is Farray® Lady Style for you?',
+  salsaLadyV2ForYesTitle: "YES it's for you if:",
+  salsaLadyV2ForYes1: 'You already dance salsa (Cuban or in line) and have a technical base',
+  salsaLadyV2ForYes2: 'You want to develop your own style to shine on the floor',
+  salsaLadyV2ForYes3: 'You feel your arm/hip technique could be better',
+  salsaLadyV2ForYes4: "When you're released you don't know what to do",
+  salsaLadyV2ForYes5: 'You want to learn heel technique with methodology',
+  salsaLadyV2ForYes6: "You're stuck at your current academy",
+  salsaLadyV2ForYes7: "You're looking for a progressive system, not standalone classes",
+  salsaLadyV2ForYes8: 'You want to prepare for performances/competitions',
+  salsaLadyV2ForNoTitle: 'NOT for you if:',
+  salsaLadyV2ForNo1: "You've never danced salsa (start with Cuban Salsa Level 0)",
+  salsaLadyV2ForNo2: "You're looking for fitness classes without real technique",
+  salsaLadyV2ForNo3: 'You want results without effort or practice',
+  salsaLadyV2ForNo4: 'You prefer classes where they mix all levels',
+  salsaLadyV2ForWhoCTA: 'If you said "yes" to 3 or more points, Farray® Lady Style is for you.',
+  salsaLadyV2TransformTitle: 'Your Before and After with Farray® Lady Style',
+  salsaLadyV2TransformAspect: 'Aspect',
+  salsaLadyV2TransformBefore: 'BEFORE',
+  salsaLadyV2TransformAfter: 'AFTER',
+  salsaLadyV2TransformbrazosLabel: 'Arms',
+  salsaLadyV2TransformbrazosBefore: 'Stiff, not knowing what to do',
+  salsaLadyV2TransformbrazosAfter: 'Fluid, elegant, expressive',
+  salsaLadyV2TransformcaderasLabel: 'Hips',
+  salsaLadyV2TransformcaderasBefore: 'Blocked or out of control',
+  salsaLadyV2TransformcaderasAfter: 'Sensual and controlled movement',
+  salsaLadyV2TransformgirosLabel: 'Turns',
+  salsaLadyV2TransformgirosBefore: 'Wobbly, off balance',
+  salsaLadyV2TransformgirosAfter: 'Clean, multiple, with style',
+  salsaLadyV2TransformtaconesLabel: 'Heels',
+  salsaLadyV2TransformtaconesBefore: 'Insecurity, stumbles',
+  salsaLadyV2TransformtaconesAfter: 'Total mastery, elegance',
+  salsaLadyV2TransformshinesLabel: 'Shines',
+  salsaLadyV2TransformshinesBefore: 'Repeating 2-3 movements',
+  salsaLadyV2TransformshinesAfter: 'Wide repertoire and personal style',
+  salsaLadyV2TransformconfianzaLabel: 'Confianza',
+  salsaLadyV2TransformconfianzaBefore: 'Dudas sobre tu baile',
+  salsaLadyV2TransformconfianzaAfter: 'Seguridad cuando suena la salsa',
+  salsaLadyV2TransformestiloLabel: 'Estilo',
+  salsaLadyV2TransformestiloBefore: 'Copiar a otras',
+  salsaLadyV2TransformestiloAfter: 'Tu sello personal único',
+  salsaLadyV2FinalCTATitle: '¿Lista para brillar en la pista?',
+  salsaLadyV2FinalCTADesc:
+    'Tu transformación comienza con una sola clase. El Método Farray® te espera.',
+  salsaLadyV2FinalCTA1: 'Reservar por WhatsApp',
+  salsaLadyV2FinalCTA2: 'Ver Horarios',
+  salsaLadyV2WhyFarrayTitle: "¿Por qué elegir Farray's para aprender Lady Style?",
+  salsaLadyV2WhyFarraySubtitle:
+    'No todas las academias son iguales. Esto es lo que nos hace diferentes.',
+  salsaLadyV2WhyFarray1Title: 'Maestra Cubana Formada en la ENA',
+  salsaLadyV2WhyFarray1Desc:
+    'Yunaisy Farray se formó en la Escuela Nacional de Arte de Cuba. Técnica cubana auténtica, no imitaciones.',
+  salsaLadyV2WhyFarray2Title: 'Sistema Progresivo por Niveles',
+  salsaLadyV2WhyFarray2Desc:
+    'Principiante, Básico, Intermedio y Avanzado. Cada nivel con objetivos claros y evaluación de progreso.',
+  salsaLadyV2WhyFarray3Title: 'Grupos Reducidos',
+  salsaLadyV2WhyFarray3Desc:
+    'Máximo 15 alumnas por clase para atención personalizada. Tu profesora te conoce por tu nombre.',
+  salsaLadyV2WhyFarray4Title: 'Metodología Propia',
+  salsaLadyV2WhyFarray4Desc:
+    'El Método Farray no es improvisado: es un sistema probado durante 8+ años con miles de alumnas.',
+  salsaLadyV2WhyFarray5Title: 'Aval CID-UNESCO',
+  salsaLadyV2WhyFarray5Desc:
+    'Somos academia acreditada por el Consejo Internacional de la Danza. Tu formación tiene reconocimiento internacional.',
+  salsaLadyV2WhyFarray6Title: 'Comunidad Real',
+  salsaLadyV2WhyFarray6Desc:
+    'No eres un número. Eventos, quedadas, workshops exclusivos. Aquí se crean amistades de verdad.',
+  navPricing: 'Pricing',
+  pricing_page_title: 'Precios Clases de Baile Barcelona | Cuotas 2025',
+  pricing_page_description:
+    'Conoce las cuotas de socio de FIDC Barcelona: planes mensuales desde 50€, cuotas flexibles, entrenamientos personalizados. Sin permanencia. Primera clase gratis.',
+  pricing_breadcrumb_home: 'Inicio',
+  pricing_breadcrumb_current: 'Horarios y Precios',
+  pricing_schema_name: "Cuotas Club Deportivo Farray\'s Center",
+  pricing_schema_description:
+    'Cuotas de socio para actividades de baile en Barcelona. Planes mensuales, flexibles y entrenamientos personalizados.',
+  pricing_hero_title: 'Horarios y Precios',
+  pricing_hero_subtitle:
+    'Invierte en tu bienestar. Elige el plan que mejor se adapte a tu ritmo de vida y empieza a bailar hoy.',
+  pricing_badge_no_permanence: 'Sin permanencia',
+  pricing_badge_cancel_anytime: 'Cancela cuando quieras',
+  pricing_badge_first_class_free: 'Reserva sin compromiso',
+  pricing_hero_cta: 'Hazte Socio Ahora',
+  pricing_trial_title: '¿Primera vez? Reserva tu clase de Bienvenida',
+  pricing_trial_subtitle:
+    'En enero ven a conocernos sin compromiso. Prueba cualquier actividad y descubre por qué más de 1500 socios nos eligen cada semana.',
+  pricing_trial_cta: 'Reservar Clase De Bienvenida',
+  pricing_enrollment_title: 'Cuota de Inscripción',
+  pricing_enrollment_desc:
+    'Un pago único que te convierte en socio del club y te da acceso a todos los beneficios exclusivos de nuestra comunidad.',
+  pricing_enrollment_once: 'Pago único · Sin renovación',
+  enrollmentInclude1: 'Acceso al sistema y plaza fija en tu horario',
+  enrollmentInclude2: 'Seguro de accidentes incluido',
+  enrollmentInclude3: 'Todos los beneficios exclusivos de socio',
+  pricing_monthly_title: 'Cuotas Mensuales',
+  pricing_monthly_subtitle:
+    'Elige cuántas actividades quieres hacer a la semana. A más actividades, menor coste por sesión.',
+  pricing_tab_regular: 'Regular',
+  pricing_tab_premium: 'Premium',
+  pricing_activities_month: 'actividades/mes',
+  pricing_per_activity: 'actividad',
+  pricing_per_week: 'semanales',
+  pricing_all_styles: 'Acceso a +25 estilos',
+  pricing_with_yunaisy: 'Incluye clases con Yunaisy Farray',
+  pricing_popular: 'Más popular',
+  pricing_select_plan: 'Seleccionar Plan',
+  pricing_show_more: 'Ver más opciones',
+  pricing_show_less: 'Ver menos',
+  pricing_unlimited_badge: 'Para los más apasionados',
+  pricing_unlimited_title: 'Cuota Ilimitada',
+  pricing_unlimited_desc:
+    'Acceso ilimitado a todas las actividades, todos los días, todas las semanas. El plan perfecto para bailarines que no pueden parar.',
+  pricing_unlimited_cta: 'Quiero Ilimitado',
+  pricing_flexible_title: 'Cuotas de Participación Flexibles',
+  pricing_flexible_subtitle:
+    'Ideal si tu horario es variable. Compra un paquete de actividades y úsalas cuando puedas.',
+  pricing_activities: 'actividades',
+  pricing_valid: 'Validez:',
+  pricing_months: 'meses',
+  pricing_activity: 'actividad',
+  pricing_duration: 'Duración',
+  pricing_premium: 'Premium',
+  pricing_regular: 'Regular',
+  pricing_dropin_title: 'Participación Puntual (Sin Inscripción)',
+  pricing_session: 'sesión',
+  pricing_sessions: 'sesiones',
+  pricing_personal_title: 'Entrenamientos Personalizados',
+  pricing_personal_subtitle:
+    'Formación a medida con nuestros profesores. Ideal para preparar audiciones, eventos o acelerar tu aprendizaje.',
+  pricing_save: 'Ahorra',
+  pricing_personal_more: 'Más información sobre entrenamientos privados',
+  pricing_personal_reference_note:
+    'Los precios mostrados son de referencia y pueden variar según el profesor y tipo de entrenamiento.',
+  pricing_lead_title: '¿Quieres una guía completa de precios y horarios?',
+  pricing_lead_subtitle:
+    'Déjanos tu email y te enviamos toda la información detallada: horarios de cada estilo, niveles disponibles y consejos para elegir tu cuota ideal.',
+  pricing_lead_discount: '...y recibe un descuento exclusivo para nuevos socios',
+  pricing_lead_cta: 'Solicitar Guía',
+  pricing_lead_privacy: 'Respetamos tu privacidad. Nunca compartimos tu email.',
+  pricing_benefits_title: '¿Por qué ser socio de FIDC?',
+  pricing_benefit1_title: 'Método Farray®',
+  pricing_benefit1_desc:
+    'Sistema exclusivo de enseñanza creado por Yunaisy Farray. Resultados rápidos, sólidos y contrastados.',
+  pricing_benefit2_title: 'Comunidad Real',
+  pricing_benefit2_desc:
+    'No eres un número. Conocerás a personas increíbles que comparten tu pasión por el baile.',
+  pricing_benefit3_title: '+25 Estilos de Baile',
+  pricing_benefit3_desc:
+    'Desde salsa cubana hasta hip hop, pasando por contemporáneo, ballet, heels y mucho más.',
+  pricing_benefit4_title: 'Ambiente Familiar',
+  pricing_benefit4_desc:
+    'Profesores que conocen tu nombre, tu nivel y tus objetivos. Aquí nadie se queda atrás.',
+  pricing_benefit5_title: 'Sin Compromiso',
+  pricing_benefit5_desc:
+    'Sin permanencia obligatoria. Si no estás satisfecho, puedes cancelar en cualquier momento.',
+  pricing_benefit6_title: 'Reconocimiento Internacional',
+  pricing_benefit6_desc:
+    'Centro acreditado por CID-UNESCO. Formación de élite con sello de calidad.',
+  pricing_no_classpass:
+    'No trabajamos con ClassPass ni intermediarios. Aquí recibes atención directa y personalizada de nuestro equipo.',
+  pricing_testimonials_title: 'Testimonios No Solicitados de Nuestros Socios',
+  pricing_testimonial1_text:
+    '5 estrellas y porque no hay más. Espectacular, desde el minuto en el que pisas recepción, hasta los profesores, la calidad y el buen rollo.',
+  pricing_testimonial2_text:
+    'Llevo 3 años siendo socia y es la mejor inversión en mi bienestar. Los profesores son increíbles y el ambiente es único.',
+  pricing_testimonial3_text:
+    'Las cuotas son muy razonables para la calidad que ofrecen. Poder elegir entre tantos estilos con la misma cuota es fantástico.',
+  pricing_testimonial4_text:
+    'El sistema de cuotas es muy flexible. Puedo adaptar mis horas según mi disponibilidad cada mes sin problemas.',
+  pricing_testimonial_text:
+    'Llevo 3 años siendo socia y es la mejor inversión en mi bienestar. Los profesores son increíbles y el ambiente es único.',
+  pricing_testimonial_author: '— María L., socia desde 2022',
+  pricing_google_rating: '4.9/5 en Google Reviews (más de 200 opiniones)',
+  pricing_faq_title: 'Preguntas Frecuentes sobre nuestros horarios y precios',
+  pricing_faq1_q: '¿Cuánto cuesta la cuota de inscripción y qué incluye?',
+  pricing_faq1_a:
+    "La cuota de inscripción es de 60€ el primer año y 20€/año de renovación para todos los socios. Esta cuota te garantiza el acceso al sistema, tu plaza fija en el horario, y todas las ventajas exclusivas de socio de Farray's: seguro de accidentes, entrada prioritaria a eventos y actividades internas, programa de referidos (2 participaciones puntuales por amigo), descuentos en merchandising y fiestas, y todos los beneficios de formar parte de nuestra comunidad de +10.000 bailarines. A veces tenemos promociones donde la bonificamos.",
+  pricing_faq2_q: '¿Puedo probar una clase antes de inscribirme?',
+  pricing_faq2_a:
+    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
+  pricing_faq3_q: '¿Hay compromiso de permanencia?',
+  pricing_faq3_a:
+    'No, no hay permanencia obligatoria. Puedes cancelar tu cuota mensual cuando quieras, solicitándolo a través del formulario de contacto de la web con un mínimo de 15 días de antelación del siguiente cobro.',
+  pricing_faq4_q: '¿Puedo cambiar de plan o de estilo cada mes?',
+  pricing_faq4_a:
+    'Sí, puedes cambiar tu cuota mensual y elegir entre +25 estilos de baile diferentes cada mes. Solo avísanos 15 días antes del siguiente cobro.',
+  pricing_faq5_q: '¿Qué incluyen las clases Premium con Yunaisy Farray?',
+  pricing_faq5_a:
+    'Las clases Premium son impartidas por Yunaisy Farray, nuestra fundadora y maestra internacional reconocida por CID-UNESCO. Tienen un suplemento de +5€/mes sobre la cuota regular. La experiencia y metodología es única.',
+  pricing_faq6_q: '¿Puedo recuperar clases si falto?',
+  pricing_faq6_a:
+    'Las cuotas mensuales se basan en actividades por mes. Si faltas, puedes compensar haciendo más actividades otros días dentro del mismo mes. Con las cuotas flexibles, tienes hasta 6 o 12 meses para usar tus créditos.',
+  pricing_faq7_q: '¿Cómo funcionan las cuotas de participación flexibles?',
+  pricing_faq7_a:
+    'Compras un paquete de 10 o 20 actividades que puedes usar cuando quieras: 10 actividades tienen 6 meses de validez, y 20 actividades tienen 12 meses. Ideal si tu horario es variable o viajas frecuentemente.',
+  pricing_faq8_q: '¿Puedo venir a una clase suelta sin ser socio?',
+  pricing_faq8_a:
+    'Sí, ofrecemos participación puntual: 17€ (1h regular), 20€ (1.5h regular), 18€ (1h Premium) o 22€ (1.5h Premium). Es perfecto para visitantes o si quieres probar antes de comprometerte con una cuota.',
+  pricing_faq9_q: '¿Existe algún plan ilimitado?',
+  pricing_faq9_a:
+    'Sí, la Cuota Ilimitada cuesta 300€/mes y te permite asistir a todas las clases que quieras, todos los estilos, todos los días. Equivale a aproximadamente 5€ por actividad si aprovechas al máximo.',
+  pricing_faq10_q: '¿Cómo funciona el programa de referidos?',
+  pricing_faq10_a:
+    'Por cada amigo que se inscriba gracias a ti, recibes 2 participaciones puntuales (valoradas en 34€). Tu amigo también recibe beneficios de bienvenida. Pregunta en recepción los detalles.',
+  pricing_faq11_q: '¿Tenéis algún descuento especial?',
+  pricing_faq11_a:
+    'Sí, ofrecemos descuentos si te apuntas a más de un curso. Consulta nuestra web o pregúntanos directamente para más detalles.',
+  pricing_faq12_q: '¿Qué métodos de pago aceptan?',
+  pricing_faq12_a:
+    'Aceptamos tarjeta de crédito/débito (pago recurrente automático para cuotas mensuales), transferencia bancaria y efectivo. Todo se gestiona a través de nuestra app Momence.',
+  pricing_faq13_q: '¿Cuánto cuestan las clases de baile en Barcelona?',
+  pricing_faq13_a:
+    "En Barcelona, los precios varían según el centro y la modalidad. En general, oscilan entre 50€ y 150€/mes para cuotas regulares, o entre 10€ y 25€ por clase suelta. En Farray's Center ofrecemos opciones desde 50€/mes con acceso a +25 estilos, sin permanencia.",
+  pricing_faq14_q: '¿Puedo ir solo/a a las clases?',
+  pricing_faq14_a:
+    'Sí, la mayoría de nuestros socios vienen solos. No necesitas pareja para ningún estilo. En las clases de bailes en pareja rotamos continuamente, así que siempre tendrás con quién practicar. Es una forma estupenda de conocer gente.',
+  pricing_faq15_q: '¿Tengo que apuntarme a todo el mes?',
+  pricing_faq15_a:
+    'No necesariamente. Ofrecemos cuotas mensuales (la opción más económica), pero también bonos flexibles de 10 o 20 participaciones que puedes usar cuando quieras, y participaciones puntuales para días sueltos. Elige lo que mejor se adapte a tu agenda.',
+  pricing_faq16_q: '¿Qué estilos de baile ofrecéis?',
+  pricing_faq16_a:
+    'Ofrecemos +25 estilos: Salsa Cubana, Bachata, Afrobeat, Dancehall, Hip Hop, Reggaeton, Ballet, Danza Contemporánea, Modern Jazz, Kizomba, Twerk, Stretching, y muchos más. Desde ritmos latinos hasta danzas urbanas y danza clásica.',
+  pricing_cta_title: '¿Listo para empezar a bailar?',
+  pricing_cta_subtitle:
+    'Reserva tu primera clase sin compromiso. Ven a conocernos y descubre por qué más de 1500 socios nos eligen cada semana.',
+  pricing_cta_emotional1: 'Imagínate entrando a tu primera clase...',
+  pricing_cta_emotional2:
+    'Sintiendo el ritmo, conectando con tu cuerpo, olvidando el estrés del día.',
+  pricing_cta_emotional_close: 'Ese momento puede ser esta semana.',
+  pricing_cta_technical1: 'Sin permanencia. Cancela cuando quieras. Empieza cuando quieras.',
+  pricing_cta_technical2: 'Más de 15.000 socios han confiado en nosotros desde 2017.',
+  pricing_cta_primary: 'Hazte Socio Ahora',
+  pricing_cta_primary_subtext:
+    'Hacerte socio es fácil. Elige tu cuota, paga online y empieza cuando quieras.',
+  pricing_cta_secondary: 'Reservar Clase de Bienvenida',
+  pricing_cta_secondary_subtext: 'Puertas Abiertas · Del 7 al 31 de enero',
+  pricing_cta_secondary_subtitle: 'Prueba el centro · Conoce horarios y niveles',
+  pricingV2_page_title: 'Precios Clases de Baile Barcelona | Desde 50 euros/mes',
+  pricingV2_page_description:
+    'Descubre los precios de clases de baile en Barcelona. Cuotas mensuales desde 50 euros, bonos flexibles y opciones puntuales. Sin permanencia. Primera clase gratis.',
+  pricingV2_hero_title: 'Precios de Clases de Baile en Barcelona',
+  pricingV2_hero_subtitle:
+    'Descubre las opciones de participación en actividades de baile en uno de los centros de referencia en Barcelona.',
+  pricingV2_hero_subtitle2:
+    'Clases de salsa, bachata, afrobeat y más, adaptadas a todos los niveles.',
+  pricingV2_hero_cta: 'Descubre Cómo Empezar',
+  pricingV2_hero_cta_subtext:
+    'Puertas Abiertas · Del 7 al 31 de enero · Prueba el centro · Conoce horarios y niveles',
+  pricingV2_reassurance1: 'Puedes empezar desde cero',
+  pricingV2_reassurance2: 'No necesitas venir en pareja',
+  pricingV2_reassurance3: 'Puedes cambiar de modalidad',
+  pricingV2_reassurance4: 'Te ayudamos a elegir bien',
+  pricingV2_priceContext_title: '¿Cuánto cuestan las clases de baile en Barcelona?',
+  pricingV2_priceContext_text1:
+    'En Barcelona, las clases de baile suelen oscilar entre 10€ y 25€ por sesión, o entre 50€ y 150€ al mes en formato de cuota, dependiendo de la frecuencia, el tipo de centro y el nivel de especialización.',
+  pricingV2_priceContext_text2:
+    "En Farray's Center apostamos por un modelo flexible, accesible y orientado a la práctica real del baile. No vendemos clases sueltas sin contexto: ofrecemos un sistema de participación que se adapta a tu ritmo de vida, con profesores certificados y una comunidad activa de más de 10.000 bailarines.",
+  pricingV2_priceContext_highlight:
+    'Centro de referencia en Barcelona desde 2017 · Reconocido por CID-UNESCO · +25 estilos de baile',
+  pricingV2_howItWorks_title: "Cómo funcionan las cuotas en Farray's Center",
+  pricingV2_howItWorks_text:
+    "En Farray's Center no pagas clases sueltas sin contexto. Eliges una forma de participación según tu disponibilidad y tus objetivos.",
+  pricingV2_howItWorks_point1: 'Puedes empezar desde cero',
+  pricingV2_howItWorks_point2: 'No necesitas venir en pareja',
+  pricingV2_howItWorks_point3: 'Puedes cambiar de modalidad',
+  pricingV2_howItWorks_point4: 'Te ayudamos a elegir bien',
+  pricingV2_participate_title: 'Elige cómo te gustaría empezar',
+  pricingV2_participate_subtitle:
+    'Tres formas de ser socio de nuestro centro adaptadas a tu estilo de vida',
+  pricingV2_card_regular_title: 'Participación Regular',
+  pricingV2_card_regular_desc:
+    'Ideal si quieres bailar cada semana, progresar y formar parte de una comunidad activa.',
+  pricingV2_card_regular_include1: 'Acceso a actividades semanales',
+  pricingV2_card_regular_include2: 'Plaza fija en tu horario',
+  pricingV2_card_regular_include3: 'Acceso a +25 estilos',
+  pricingV2_card_regular_include4: 'Beneficios exclusivos de socio',
+  pricingV2_card_regular_cta: 'Ver cuotas y horarios',
+  pricingV2_card_flexible_title: 'Participación Flexible',
+  pricingV2_card_flexible_desc:
+    'Para horarios variables o si no puedes comprometerte todas las semanas.',
+  pricingV2_card_flexible_include1: 'Paquetes de actividades',
+  pricingV2_card_flexible_include2: 'Validez amplia (6-12 meses)',
+  pricingV2_card_flexible_include3: 'Sin rutina fija',
+  pricingV2_card_flexible_cta: 'Ver opciones flexibles',
+  pricingV2_card_puntual_title: 'Participación Puntual',
+  pricingV2_card_puntual_desc: 'Opciones limitadas para venir de forma puntual o en eventos.',
+  pricingV2_card_puntual_include1: 'Actividades puntuales',
+  pricingV2_card_puntual_include2: 'Jornadas de puertas abiertas',
+  pricingV2_card_puntual_cta: 'Consultar disponibilidad',
+  pricingV2_price_indicative: 'Precio orientativo',
+  pricingV2_price_from: 'Desde',
+  pricingV2_enrollment_title: 'Cuota de Inscripción',
+  pricingV2_enrollment_desc:
+    'Para formar parte de nuestro centro es necesaria una cuota anual de inscripción.',
+  pricingV2_whyNotAll_title: 'Por qué no ves una tabla infinita de precios',
+  pricingV2_whyNotAll_text1: 'Porque queremos que elijas bien.',
+  pricingV2_whyNotAll_depends: 'Las cuotas y horarios dependen de:',
+  pricingV2_whyNotAll_dep1: 'Tu disponibilidad',
+  pricingV2_whyNotAll_dep2: 'Tu nivel actual',
+  pricingV2_whyNotAll_dep3: 'El tipo de actividad',
+  pricingV2_whyNotAll_dep4: 'La modalidad que elijas',
+  pricingV2_whyNotAll_text2:
+    'Por eso, toda la información se envía de forma automática y clara por email.',
+  pricingV2_whyNotAll_cta: 'Recibir guía completa de precios',
+  pricingV2_benefits_title: 'Por qué nuestros socios se quedan',
+  pricingV2_finalCta_title: "Descubre si Farray's Center es para ti",
+  pricingV2_finalCta_text:
+    'Déjanos tu email y te enviamos toda la información para empezar sin compromiso.',
+  pricingV2_finalCta_button: 'Recibir precios y horarios',
+  pricingV2_finalCta_privacy: 'Información enviada automáticamente. Sin spam.',
+  pricingV2_footer_legal:
+    'La información mostrada es orientativa. La inscripción como socio y la participación en actividades deportivas se realiza exclusivamente con Club Esportiu Farray Barcelona, de acuerdo con su normativa interna.',
+  schedule_title: 'Horarios de Clases',
+  schedule_subtitle: 'Más de 70 clases semanales de lunes a viernes. Encuentra tu horario ideal.',
+  schedule_category_all: 'Todos',
+  schedule_category_latino: 'Latino',
+  schedule_category_urbano: 'Urbano',
+  schedule_category_danza: 'Danza',
+  schedule_category_fitness: 'Fitness',
+  schedule_level_beginner: 'Principiante',
+  schedule_level_basic: 'Básico',
+  schedule_level_intermediate: 'Intermedio',
+  schedule_level_advanced: 'Avanzado',
+  schedule_level_intermediateAdvanced: 'Inter/Avanzado',
+  schedule_level_all: 'Todos los niveles',
+  schedule_classes_found: 'clases',
+  schedule_no_classes: 'No hay clases este día',
+  schedule_try_other_day: 'Prueba seleccionando otro día o categoría',
+  schedule_cta_text: 'Reservar Clase de Bienvenida',
+  schedule_cta_button: 'Reservar Clase de Bienvenida',
+  schedule_cta_subtitle: 'Puertas Abiertas · Del 7 al 31 de enero',
+  schedule_cta_subtitle2: 'Prueba el centro · Conoce horarios y niveles',
+  leadModal_title: "Descubre cómo empezar en Farray's Center",
+  leadModal_subtitle:
+    'Te enviamos toda la información para empezar a bailar con nosotros de forma clara y sin compromiso.',
+  leadModal_success_title: 'Enviado correctamente',
+  close: 'Close',
+  leadModal_intro:
+    'Completa el formulario y recibe en tu email toda la información que necesitas para decidir con calma y elegir la opción que mejor encaje contigo.',
+  leadModal_benefits_title: 'Qué recibirás:',
+  leadModal_benefit1: 'Opciones de participación y precios',
+  leadModal_benefit2: 'Horarios disponibles y niveles recomendados',
+  leadModal_benefit3: 'Cómo funciona el club y qué incluye ser socio',
+  leadModal_benefit4: 'Puertas Abiertas de Enero y promoción de bienvenida',
+  leadModal_field_firstName: 'Nombre',
+  leadModal_field_lastName: 'Apellido',
+  leadModal_field_email: 'Email',
+  leadModal_field_phone: 'Teléfono',
+  leadModal_field_discovery: 'Cómo nos conociste',
+  leadModal_field_style: 'Estilo de baile preferido',
+  leadModal_placeholder_firstName: 'Tu nombre',
+  leadModal_placeholder_lastName: 'Tu apellido',
+  leadModal_placeholder_email: 'tu@email.com',
+  leadModal_placeholder_phone: '+34 600 000 000',
+  leadModal_discovery_placeholder: 'Selecciona una opción',
+  leadModal_discovery_google: 'Google',
+  leadModal_discovery_instagram: 'Instagram',
+  leadModal_discovery_passingby: 'Pasé por delante del centro',
+  leadModal_discovery_friend: 'Un amigo me lo recomendó',
+  leadModal_discovery_event: 'Vi un evento o actuación',
+  leadModal_discovery_other: 'Otro',
+  leadModal_style_placeholder: 'Selecciona un estilo',
+  leadModal_style_latinos: 'Ritmos Latinos (Salsa, Bachata, Lady Style...)',
+  leadModal_style_urbanos: 'Bailes Urbanos (Hip Hop, Reggaeton, Heels...)',
+  leadModal_style_danza: 'Danza (Contemporáneo, Jazz, Ballet...)',
+  leadModal_style_fitness: 'Preparación Física (Stretching, Cuerpo Fit...)',
+  leadModal_style_other: 'Otros',
+  leadModal_submit: 'Descubre Cómo Empezar',
+  leadModal_sending: 'Enviando...',
+  leadModal_error_firstName: 'Por favor, introduce tu nombre',
+  leadModal_error_lastName: 'Por favor, introduce tu apellido',
+  leadModal_error_email: 'Por favor, introduce un email válido',
+  leadModal_error_phone: 'Por favor, introduce tu teléfono',
+  leadModal_error_discovery: 'Por favor, indica cómo nos conociste',
+  leadModal_error_style: 'Por favor, selecciona un estilo de baile',
+  leadModal_error_consent: 'Debes aceptar la política de privacidad para continuar',
+  leadModal_error_generic: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+  leadModal_error_retry: 'Puedes volver a intentarlo',
+  leadModal_consent_text:
+    "Acepto recibir información sobre precios, horarios y promociones de Farray's Center. Puedo darme de baja en cualquier momento.",
+  leadModal_consent_link: 'Política de privacidad',
+  leadModal_legal_text:
+    "La información solicitada se envía automáticamente desde Farray's Center como parte de su servicio de información y orientación. La inscripción como socio y la participación en las actividades deportivas se formaliza exclusivamente con Club Esportiu Farray Barcelona (entidad deportiva), de acuerdo con su normativa interna y condiciones de socio. Este formulario no implica inscripción, reserva de plaza ni contratación.",
+  leadModal_legal_link: 'Ver aviso legal y política de privacidad',
+  leadModal_success_heading: 'Todo listo',
+  leadModal_success_message: 'Te hemos enviado la guía a tu email.',
+  leadModal_success_spam_note:
+    'Si no lo ves en unos minutos, revisa las carpetas de Promociones o Spam.',
+  leadModal_success_promo_included: 'Promoción de bienvenida incluida',
+  leadModal_success_deliverability:
+    'Para asegurarte de recibir toda la información, te recomendamos añadir nuestro correo a tu lista de contactos.',
+  leadModal_success_close: 'Entendido',
+  members: 'members',
+  years_in_barcelona: 'años en Barcelona',
+  horariosV2_page_title: 'Horarios Clases de Baile Barcelona | Farray Center',
+  horariosV2_page_description:
+    'Encuentra el horario perfecto para tus clases de baile en Barcelona. Mañanas, tardes y noches. +25 estilos de danza, salsa, bachata, urbano y más. Grupos por nivel.',
+  horariosV2_breadcrumb: 'Horarios',
+  horariosV2_skipToContent: 'Saltar al contenido principal',
+  horariosV2_skipToFilters: 'Ir a filtros de horario',
+  horariosV2_hero_title: 'Horarios de Clases de Baile en Barcelona',
+  horariosV2_hero_subtitle:
+    'Encuentra el horario y el estilo que encajan contigo y descubre cómo empezar en Farray Center de forma clara y sin compromiso.',
+  horariosV2_hero_cta: 'Recibir Horarios Completos',
+  horariosV2_hero_ctaSubtext: 'Gratis y sin compromiso',
+  horariosV2_hero_years: 'años en Barcelona',
+  horariosV2_preview_title: 'Esto es solo una muestra',
+  horariosV2_preview_subtitle: 'Tenemos muchos más horarios y estilos que mostrarte',
+  horariosV2_preview_point1: '+100 clases semanales de baile',
+  horariosV2_preview_point2: 'Horarios de mañana, tarde y noche',
+  horariosV2_preview_point3: 'Todos los niveles y edades',
+  horariosV2_preview_point4: 'Información de profesores y salas',
+  horariosV2_preview_cta: 'Recibir Horarios Completos por Email',
+  horariosV2_preview_free: 'Gratis y sin compromiso',
+  horariosV2_moreSchedules_title: 'Hay muchos más horarios disponibles',
+  horariosV2_moreSchedules_desc:
+    'Los horarios que ves aquí son solo una selección. Para ver todos los horarios disponibles, incluyendo clases de noche y fines de semana, solicita la información completa.',
+  horariosV2_moreSchedules_cta: 'Ver Todos los Horarios',
+  horariosV2_sample_preview_label: 'Muestra de horarios - Para ver todos, solicita info',
+  horariosV2_trust_noCommitment: 'Sin permanencia',
+  horariosV2_trust_byLevel: 'Grupos por nivel',
+  horariosV2_trust_freeClass: 'Primera clase gratuita',
+  horariosV2_authority_since2017: 'Desde 2017',
+  horariosV2_authority_cidUnesco: 'CID-UNESCO',
+  horariosV2_authority_members: '+15.000 socios',
+  horariosV2_authority_styles: '+25 estilos',
+  horariosV2_authority_rating: '4.9/5 Google',
+  horariosV2_authority_teachers: 'Profesores certificados',
+  horariosV2_orientation_title: 'Antes de elegir un horario, ten en cuenta esto',
+  horariosV2_orientation_subtitle:
+    'No te preocupes si es tu primera vez. Estamos aquí para ayudarte.',
+  horariosV2_orientation_noExperience: 'No necesitas experiencia previa en muchas actividades',
+  horariosV2_orientation_byLevel: 'Los grupos se organizan por nivel',
+  horariosV2_orientation_startAnytime: 'Puedes empezar en cualquier momento del año',
+  horariosV2_orientation_weHelp: 'Te ayudamos a elegir el grupo adecuado',
+  horariosV2_filter_title: 'Encuentra lo que encaja contigo',
+  horariosV2_filter_subtitle: 'Selecciona el momento del día o el estilo que prefieres',
+  horariosV2_filter_step1: 'Por horario',
+  horariosV2_filter_step2: 'Por estilo',
+  horariosV2_filter_or: 'o',
+  horariosV2_filter_morning: 'Mañanas',
+  horariosV2_filter_afternoon: 'Tardes',
+  horariosV2_filter_evening: 'Noches',
+  horariosV2_filter_danza: 'Danza',
+  horariosV2_filter_latino: 'Salsa & Bachata',
+  horariosV2_filter_urbano: 'Urbano',
+  horariosV2_filter_fitness: 'Prep. Física',
+  horariosV2_matrix_title: 'Vista rápida de disponibilidad',
+  horariosV2_matrix_available: 'Disponible',
+  horariosV2_matrix_unavailable: 'Sin clases',
+  horariosV2_day_monday: 'Lunes',
+  horariosV2_day_tuesday: 'Martes',
+  horariosV2_day_wednesday: 'Miércoles',
+  horariosV2_day_thursday: 'Jueves',
+  horariosV2_day_friday: 'Viernes',
+  horariosV2_day_saturday: 'Sábado',
+  horariosV2_day_sunday: 'Domingo',
+  horariosV2_block_morning_title: 'Clases de baile por la mañana en Barcelona',
+  horariosV2_block_morning_subtitle: 'Afro · Jazz · Contemporáneo · Preparación física',
+  horariosV2_block_evening_title: 'Clases de baile por la tarde y noche en Barcelona',
+  horariosV2_block_evening_subtitle: 'Afro · Jazz · Ballet · Contemporáneo',
+  horariosV2_block_salsa_title: 'Horarios de salsa y bachata en Barcelona',
+  horariosV2_block_salsa_subtitle: 'Social · Progresivo · Todos los niveles',
+  horariosV2_block_urbano_title: 'Clases de baile urbano en Barcelona',
+  horariosV2_block_urbano_subtitle: 'Afrobeats · Dancehall · Hip Hop · Reggaeton · Heels · Twerk',
+  horariosV2_block_showMore: 'Ver más clases',
+  horariosV2_block_disclaimer:
+    'Horarios orientativos. Asignación definitiva según nivel y disponibilidad.',
+  horariosV2_cta_morning: 'Ver plazas disponibles para mañanas',
+  horariosV2_cta_evening: 'Ver grupos por nivel',
+  horariosV2_cta_salsa: 'Encontrar mi grupo de salsa ideal',
+  horariosV2_cta_urbano: 'Descubrir actividades urbanas',
+  horariosV2_testimonial_morning:
+    'Las clases de mañana me cambiaron la rutina. Ahora empiezo el día con energía.',
+  horariosV2_testimonial_morning_author: 'María, 34 años',
+  horariosV2_testimonial_evening: 'Después del trabajo, bailar es mi mejor forma de desconectar.',
+  horariosV2_testimonial_evening_author: 'Carlos, 28 años',
+  horariosV2_testimonial_salsa: 'Empecé sin saber nada y ahora no me pierdo una clase de bachata.',
+  horariosV2_testimonial_salsa_author: 'Laura, 31 años',
+  horariosV2_testimonial_urbano:
+    'El ambiente es increíble. Te sientes parte de una familia desde el primer día.',
+  horariosV2_testimonial_urbano_author: 'Pablo, 25 años',
+  horariosV2_badge_popular: 'Más demandado',
+  horariosV2_badge_limited: 'Plazas limitadas',
+  horariosV2_badge_new: 'Nuevo',
+  horariosV2_badge_smallGroup: 'Grupos reducidos',
+  horariosV2_card_teacher: 'Profesor/a',
+  horariosV2_card_reminder: 'Recordar',
+  horariosV2_card_share: 'Compartir',
+  horariosV2_levels_title: '¿Qué significan los niveles?',
+  horariosV2_levels_subtitle:
+    'Te ayudamos a encontrar el grupo perfecto para tu experiencia actual.',
+  horariosV2_level_principiantes: 'Principiantes',
+  horariosV2_level_principiantes_desc:
+    'Empiezas desde cero. No tienes experiencia previa en este estilo. Te guiaremos paso a paso.',
+  horariosV2_level_basico: 'Básico',
+  horariosV2_level_basico_desc:
+    'Conoces los fundamentos. Has practicado algo antes pero aún estás aprendiendo las bases.',
+  horariosV2_level_intermedio: 'Intermedio',
+  horariosV2_level_intermedio_desc:
+    'Dominas la técnica básica. Puedes seguir coreografías y quieres perfeccionar tu estilo.',
+  horariosV2_level_avanzado: 'Avanzado',
+  horariosV2_level_avanzado_desc:
+    'Alto dominio técnico. Buscas retos, coreografías complejas y preparación para escenario.',
+  horariosV2_level_open: 'Open Level',
+  horariosV2_level_open_desc:
+    'Todos los niveles mezclados. Cada uno trabaja a su ritmo con adaptaciones del profesor.',
+  horariosV2_level_intermedioAvanzado: 'Intermedio-Avanzado',
+  horariosV2_levels_helpText:
+    '¿No sabes cuál es tu nivel? No te preocupes, te orientamos personalmente antes de empezar.',
+  horariosV2_season_current: 'Actual',
+  horariosV2_season_winter: 'Horario de invierno',
+  horariosV2_season_winter_desc: 'Estos son los horarios actuales (septiembre - junio).',
+  horariosV2_season_summer: 'Horario de verano',
+  horariosV2_season_summer_desc:
+    'Los horarios pueden variar en julio y agosto. Consulta disponibilidad.',
+  horariosV2_howToStart_title: 'Cómo empezar en Farray Center',
+  horariosV2_howToStart_subtitle: 'Cuatro pasos sencillos para comenzar tu aventura en el baile',
+  horariosV2_howToStart_step1: 'Recibe la información completa',
+  horariosV2_howToStart_step2: 'Valora horarios y niveles',
+  horariosV2_howToStart_step3: 'Ven a conocernos (opcional)',
+  horariosV2_howToStart_step4: 'Empieza cuando te sientas listo/a',
+  horariosV2_howToStart_cta: 'Descubre Cómo Empezar',
+  horariosV2_howToStart_microcopy: 'Sin compromiso · Información clara · A tu ritmo',
+  horariosV2_faq_title: 'Preguntas frecuentes sobre los horarios de nuestras clases de baile',
+  horariosV2_faq_subtitle: 'Las respuestas a las dudas más comunes sobre nuestras clases',
+  horariosV2_faq1_q: '¿Puedo empezar clases de baile aunque no tenga experiencia?',
+  horariosV2_faq1_a:
+    'Sí. Muchas de nuestras clases están pensadas para personas que empiezan desde cero. Además, te ayudamos a elegir el grupo adecuado según tu experiencia y objetivos.',
+  horariosV2_faq2_q: '¿Tengo que elegir un horario fijo desde el primer día?',
+  horariosV2_faq2_a:
+    'Como club deportivo, trabajamos con horarios organizados por nivel. Una vez te orientamos, podrás elegir el horario que mejor encaje contigo dentro de las opciones disponibles.',
+  horariosV2_faq3_q: '¿Puedo cambiar de horario o de estilo más adelante?',
+  horariosV2_faq3_a:
+    'Sí. Nuestros socios pueden adaptar su participación según disponibilidad y evolución, siempre que haya plazas disponibles en el grupo.',
+  horariosV2_faq4_q: '¿Hay clases por la mañana y por la tarde?',
+  horariosV2_faq4_a:
+    'Sí. Ofrecemos clases de baile tanto por la mañana como por la tarde y noche, según el estilo y la temporada.',
+  horariosV2_faq5_q: '¿Los horarios son siempre los mismos todo el año?',
+  horariosV2_faq5_a:
+    'Los horarios son orientativos y pueden variar según la temporada, el nivel y la disponibilidad de plazas. Siempre te enviamos la información actualizada antes de empezar.',
+  horariosV2_faq6_q: '¿Puedo probar una clase de Afrobeats antes de inscribirme?',
+  horariosV2_faq6_a:
+    'Mira, lo importante es que pruebes. Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
+  horariosV2_faq7_q: '¿Dónde está Farray Center y a quién van dirigidas las actividades de baile?',
+  horariosV2_faq7_a:
+    'Estamos en Calle Entença nº 100 en Barcelona y nuestras clases están dirigidas a adultos de todos los niveles que quieren aprender, mejorar o disfrutar del baile en un entorno profesional y cercano.',
+  horariosV2_emotional_close:
+    'No se trata solo de encajar una clase en tu agenda. Se trata de encontrar un lugar donde disfrutar, progresar y sentirte parte de una comunidad.',
+  horariosV2_whatsapp_cta: '¿Tienes más dudas? Escríbenos por WhatsApp',
+  horariosV2_footer_legal:
+    'Los horarios y plazas mostrados son orientativos y pueden variar según temporada, nivel y disponibilidad. La asignación definitiva de grupo se realiza de forma personalizada tras solicitar información.',
+  horariosV2_nav_ariaLabel: 'Navegación rápida de secciones de horarios',
+  horariosV2_nav_progressLabel: 'Progreso de lectura',
+  horariosV2_nav_morning: 'Mañanas',
+  horariosV2_nav_evening: 'Tardes',
+  horariosV2_nav_salsa: 'Salsa',
+  horariosV2_nav_urbano: 'Urbano',
+  horariosV2_nav_levels: 'Niveles',
+  horariosV2_nav_faq: 'FAQ',
+  horariosV2_style_afroJazz: 'Afro Jazz',
+  horariosV2_style_contemporaneo: 'Contemporáneo',
+  horariosV2_style_contemporaneoLirico: 'Contemporáneo Lírico & Flow',
+  horariosV2_style_modernJazz: 'Modern Jazz',
+  horariosV2_style_pilates: 'Pilates',
+  horariosV2_style_stretching: 'Stretching',
+  horariosV2_style_barre: 'Barre',
+  horariosV2_style_afroContemporaneo: 'Afro Contemporáneo',
+  horariosV2_style_ballet: 'Ballet Clásico',
+  horariosV2_style_bachata: 'Bachata',
+  horariosV2_style_salsaCubana: 'Salsa Cubana',
+  horariosV2_style_ladyStyle: 'Lady Style',
+  horariosV2_style_timba: 'Timba',
+  horariosV2_style_afrobeats: 'Afrobeats',
+  horariosV2_style_dancehall: 'Dancehall',
+  horariosV2_style_hipHop: 'Hip Hop Urbano',
+  horariosV2_style_reggaeton: 'Reggaeton Comercial',
+  horariosV2_style_heels: 'Heels',
+  horariosV2_style_sexyStyle: 'Sexy Style',
+  horariosV2_style_twerk: 'Twerk',
+  horariosV2_hero_subtitle2: 'Encuentra el horario perfecto para ti',
+  horariosV2_weekly_classes: 'clases semanales',
+  horariosV2_trust_noExperience: 'No necesitas experiencia',
+  horariosV2_preview_text1:
+    'Los horarios que ves aquí son solo una muestra. Tenemos más de 100 clases semanales de baile en diferentes estilos y niveles.',
+  horariosV2_preview_includes: 'La información completa incluye:',
+  horariosV2_howItWorks_title: 'Cómo funcionan nuestros horarios',
+  horariosV2_howItWorks_text:
+    'Organizamos las clases por bloques horarios y niveles para que encuentres fácilmente el que mejor encaja contigo.',
+  horariosV2_reassurance1: 'Clases de mañana, tarde y noche',
+  horariosV2_reassurance2: 'Todos los niveles',
+  horariosV2_reassurance3: 'Grupos reducidos',
+  horariosV2_reassurance4: 'Ambiente acogedor',
+  horariosV2_blocks_title: 'Bloques de Horarios',
+  horariosV2_blocks_subtitle:
+    'Cada bloque agrupa clases en franjas horarias similares. Elige el que mejor se adapte a tu día a día.',
+  horariosV2_classes_available: 'clases disponibles',
+  horariosV2_see_schedule: 'Ver horarios completos',
+  horariosV2_blocks_cta: 'Recibir Todos los Horarios',
+  horariosV2_block_morning_ex1: 'Afro Jazz 10:30h',
+  horariosV2_block_morning_ex2: 'Contemporáneo 11:45h',
+  horariosV2_block_morning_ex3: 'Pilates y Stretching',
+  horariosV2_block_urbano_ex1: 'Afrobeats y Dancehall',
+  horariosV2_block_urbano_ex2: 'Hip Hop y Reggaeton',
+  horariosV2_block_urbano_ex3: 'Heels y Twerk',
+  horariosV2_level_beginner: 'Principiante',
+  horariosV2_level_beginner_desc: 'Empiezas desde cero',
+  horariosV2_level_basic: 'Básico',
+  horariosV2_level_basic_desc: 'Conoces los fundamentos',
+  horariosV2_level_intermediate: 'Intermedio',
+  horariosV2_level_intermediate_desc: 'Dominas la técnica básica',
+  horariosV2_level_advanced: 'Avanzado',
+  horariosV2_level_advanced_desc: 'Alto dominio técnico',
+  horariosV2_whyNotAll_title: '¿Por qué no mostramos todos los horarios?',
+  horariosV2_whyNotAll_text1:
+    'Porque cada persona es diferente. Queremos ayudarte a encontrar el grupo perfecto según tu nivel, tu disponibilidad y tus objetivos.',
+  horariosV2_whyNotAll_text2:
+    'Por eso preferimos enviarte la información completa y personalizada por email.',
+  horariosV2_testimonials_title: 'Lo que dicen nuestros alumnos',
+  horariosV2_testimonial1:
+    'Las clases de mañana me cambiaron la rutina. Ahora empiezo el día con energía y buen humor.',
+  horariosV2_testimonial2:
+    'Después del trabajo, bailar es mi mejor forma de desconectar. El ambiente es increíble.',
+  horariosV2_testimonial3:
+    'Empecé sin saber nada y ahora no me pierdo una clase. Los profes son lo mejor.',
+  horariosV2_cta_title: 'Tu próximo paso',
+  horariosV2_cta_emotional1: 'No se trata solo de encajar una clase en tu agenda.',
+  horariosV2_cta_emotional2:
+    'Se trata de encontrar un lugar donde disfrutar, progresar y sentirte parte de una comunidad.',
+  horariosV2_cta_primary: 'Recibir Horarios Completos',
+  horariosV2_cta_subtext: 'Gratis y sin compromiso - Te contactamos de manera inmediata',
+  blogBeneficiosSalsa_excerpt:
+    'Bailar salsa no es solo divertido: es una de las actividades más completas para tu salud física, mental y social.',
+  blogBeneficiosSalsa_stat1Value: '400',
+  blogBeneficiosSalsa_stat1Source: 'Harvard Medical School, 2023',
+  blogBeneficiosSalsa_stat2Value: '76%',
+  blogBeneficiosSalsa_stat2Source: 'New England Journal of Medicine',
+  blogBeneficiosSalsa_ctaTitle: '¿Listo para experimentar estos beneficios?',
+  blogBeneficiosSalsa_ctaText:
+    "En Farray's International Dance Center tenemos clases de salsa cubana para todos los niveles. Profesores cubanos con más de 20 años de experiencia te guiarán desde tus primeros pasos hasta movimientos avanzados.",
+  blogBeneficiosSalsa_ctaButton: 'Probar Clase Gratis',
+
+  // =============================================
+  // TEACHERS PAGE - Profesores de Baile Barcelona
+  // =============================================
+  teachersPageTitle: "Dance Teachers in Barcelona | Farray's International Dance Center",
+  teachersPageMetaDescription:
+    'Meet our dance teachers in Barcelona. An international team of professional dancers specialized in urban, Latin and classical styles. Over 20 years of experience.',
+  teachersPageBreadcrumbHome: 'Home',
+  teachersPageBreadcrumbCurrent: 'Dance Teachers',
+  teachersPageH1: 'Dance Teachers in Barcelona',
+  teachersPageSubtitle:
+    'An international team of professional dancers trained at the best schools in the world. Learn from the best in every style.',
+  teachersPageStatYears: 'years of experience',
+  teachersPageStatTeachers: 'teachers',
+  teachersPageStatStyles: 'dance styles',
+  teachersPageStatStudents: 'students trained',
+
+  // Director Section
+  teachersPageDirectorTitle: 'Director & Founder',
+  teachersPageDirectorSubtitle:
+    'Meet Yunaisy Farray, the soul of our school and creator of the revolutionary Farray Method®.',
+  teachersPageDirectorSpecialty: 'Director | Creator of the Farray Method® | CID-UNESCO Member',
+  teachersPageDirectorBio:
+    'Cuban professional dancer trained at the National School of Art of Cuba (ENA). With over two decades of international experience, Yunaisy has participated in the movie "Street Dance 2", the finals of "Got Talent" and shows like "The Dancer". Her exclusive method combines classical discipline with Afro-Cuban rhythms, guaranteeing fast and solid results.',
+
+  // Team Section
+  teachersPageTeamTitle: 'Our Teaching Team',
+  teachersPageTeamSubtitle:
+    'Passionate professionals who share their art and knowledge in every class. Each one brings their unique specialty.',
+
+  // Individual Teachers
+  teachersPageTeacher1Specialty: 'Classical Ballet & Contemporary',
+  teachersPageTeacher1Bio:
+    'Professional dancer trained at the National School of Art of Cuba. Specialist in Cuban classical technique and contemporary dance.',
+  teachersPageTeacher2Specialty: 'Ballet, Modern Jazz & Afro Jazz',
+  teachersPageTeacher2Bio:
+    'Cuban professional dancer with ENA training. Expert in fusion of classical and Afro styles.',
+  teachersPageTeacher3Specialty: 'Dancehall & Twerk',
+  teachersPageTeacher3Bio:
+    'Dancehall and Twerk specialist with extensive experience in urban dance pedagogy.',
+  teachersPageTeacher4Specialty: 'Dancehall & Dancehall Female',
+  teachersPageTeacher4Bio:
+    'Dancehall specialist with international competition experience and training in Jamaica.',
+  teachersPageTeacher5Specialty: 'Hip Hop | International Judge',
+  teachersPageTeacher5Bio:
+    'International Hip Hop judge with extensive experience in competitions and urban style teaching.',
+  teachersPageTeacher6Specialty: 'Cuban Salsa & Lady Style',
+  teachersPageTeacher6Bio:
+    'Professional dancer specialized in authentic Cuban salsa and Lady Style techniques.',
+  teachersPageTeacher7Specialty: 'International Cuban Master & Artist',
+  teachersPageTeacher7Bio: 'With over 20 years of artistic career in Cuban salsa and Latin styles.',
+  teachersPageTeacher8Specialty: 'Cuban Salsa | Farray Method',
+  teachersPageTeacher8Bio:
+    'Certified instructor in the Farray Method for Cuban Salsa. Lead technique specialist.',
+  teachersPageTeacher9Specialty: 'Afro Contemporary & Hip Hop',
+  teachersPageTeacher9Bio:
+    'Professional dancer with experience in Afro and urban styles. Certified in Afro Contemporary.',
+  teachersPageTeacher10Specialty: 'Bachata Lady Style | World Champion Salsa LA',
+  teachersPageTeacher10Bio:
+    'World champion in Salsa LA and Bachata Lady Style specialist. Expert in feminine technique.',
+  teachersPageTeacher11Specialty: 'Bachata & Bachata Sensual',
+  teachersPageTeacher11Bio:
+    'Bachata and Bachata Sensual specialist with refined technique and great musicality.',
+  teachersPageTeacher12Specialty: 'Bachata & Modern Bachata',
+  teachersPageTeacher12Bio:
+    'Bachata instructor focused on technique, musicality and partner connection.',
+  teachersPageTeacher13Specialty: 'Bachata & Bachata Lady Style',
+  teachersPageTeacher13Bio:
+    'Bachata and feminine technique specialist. Expert in style and body expression.',
+  teachersPageTeacher14Specialty: 'Afrobeats & Afro Dance',
+  teachersPageTeacher14Bio:
+    'Afrobeats and contemporary African dance specialist. Energy and rhythm in every class.',
+
+  // CTA Section
+  teachersPageCtaTitle: 'Ready to Learn from the Best?',
+  teachersPageCtaSubtitle: 'Join our family and discover why over 15,000 students have trusted us.',
+  teachersPageCtaClasses: 'View Dance Classes',
 };

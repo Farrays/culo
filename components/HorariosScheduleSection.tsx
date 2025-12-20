@@ -11,6 +11,7 @@ import {
   DAY_ORDER,
   filterClasses,
   getCountByCategory,
+  getCountByLevel,
   type DayKey,
   type CategoryKey,
   type LevelKey,
@@ -24,12 +25,14 @@ import { ClockIcon, UserIcon, AcademicCapIcon, ChevronRightIcon } from '../lib/i
 
 type FilterDay = DayKey | 'all';
 type FilterCategory = CategoryKey | 'all';
+type FilterLevel = LevelKey | 'all';
 
 // ============================================================================
 // CONSTANTS
 // ============================================================================
 
-const DAY_LABELS: Record<DayKey, string> = {
+const DAY_LABELS: Record<DayKey | 'all', string> = {
+  all: 'Todos',
   monday: 'Lun',
   tuesday: 'Mar',
   wednesday: 'Mié',
@@ -81,6 +84,51 @@ const LEVEL_CONFIG: Record<LevelKey, { labelKey: string; colorClass: string }> =
   all: { labelKey: 'schedule_level_all', colorClass: 'text-neutral/70' },
 };
 
+// Level filter config for chips (subset of levels shown in filter)
+const LEVEL_FILTER_ORDER: LevelKey[] = ['beginner', 'basic', 'intermediate', 'advanced'];
+
+const LEVEL_FILTER_CONFIG: Record<
+  LevelKey,
+  { labelKey: string; bgClass: string; textClass: string; borderClass: string }
+> = {
+  beginner: {
+    labelKey: 'schedule_level_beginner',
+    bgClass: 'bg-emerald-500/20',
+    textClass: 'text-emerald-400',
+    borderClass: 'border-emerald-500/30',
+  },
+  basic: {
+    labelKey: 'schedule_level_basic',
+    bgClass: 'bg-sky-500/20',
+    textClass: 'text-sky-400',
+    borderClass: 'border-sky-500/30',
+  },
+  intermediate: {
+    labelKey: 'schedule_level_intermediate',
+    bgClass: 'bg-amber-500/20',
+    textClass: 'text-amber-400',
+    borderClass: 'border-amber-500/30',
+  },
+  advanced: {
+    labelKey: 'schedule_level_advanced',
+    bgClass: 'bg-rose-500/20',
+    textClass: 'text-rose-400',
+    borderClass: 'border-rose-500/30',
+  },
+  intermediateAdvanced: {
+    labelKey: 'schedule_level_intermediateAdvanced',
+    bgClass: 'bg-purple-500/20',
+    textClass: 'text-purple-400',
+    borderClass: 'border-purple-500/30',
+  },
+  all: {
+    labelKey: 'schedule_level_all',
+    bgClass: 'bg-white/10',
+    textClass: 'text-neutral/70',
+    borderClass: 'border-white/20',
+  },
+};
+
 // ============================================================================
 // SUB-COMPONENTS
 // ============================================================================
@@ -90,12 +138,12 @@ const LEVEL_CONFIG: Record<LevelKey, { labelKey: string; colorClass: string }> =
  */
 const DayTab = memo(
   ({
-    day,
+    label,
     isActive,
     onClick,
     count,
   }: {
-    day: DayKey;
+    label: string;
     isActive: boolean;
     onClick: () => void;
     count: number;
@@ -113,7 +161,7 @@ const DayTab = memo(
       `}
       aria-pressed={isActive}
     >
-      <span className="relative z-10">{DAY_LABELS[day]}</span>
+      <span className="relative z-10">{label}</span>
       {count > 0 && (
         <span
           className={`
@@ -183,6 +231,59 @@ const CategoryChip = memo(
 );
 
 CategoryChip.displayName = 'CategoryChip';
+
+/**
+ * Level Filter Chip
+ */
+const LevelChip = memo(
+  ({
+    level,
+    label,
+    isActive,
+    onClick,
+    count,
+  }: {
+    level: FilterLevel;
+    label: string;
+    isActive: boolean;
+    onClick: () => void;
+    count: number;
+  }) => {
+    const config = level !== 'all' ? LEVEL_FILTER_CONFIG[level] : null;
+
+    return (
+      <button
+        onClick={onClick}
+        className={`
+          px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium
+          transition-all duration-300 ease-out
+          border flex items-center gap-1.5
+          ${
+            isActive
+              ? config
+                ? `${config.bgClass} ${config.textClass} ${config.borderClass}`
+                : 'bg-primary-accent/20 text-primary-accent border-primary-accent/50'
+              : 'bg-white/5 text-neutral/60 border-white/10 hover:border-white/30 hover:text-neutral/80'
+          }
+        `}
+        aria-pressed={isActive}
+      >
+        <AcademicCapIcon className="w-3 h-3" />
+        <span>{label}</span>
+        <span
+          className={`
+            px-1.5 py-0.5 rounded-full text-[10px] font-bold
+            ${isActive ? 'bg-white/20' : 'bg-white/10'}
+          `}
+        >
+          {count}
+        </span>
+      </button>
+    );
+  }
+);
+
+LevelChip.displayName = 'LevelChip';
 
 /**
  * Schedule Class Card
@@ -289,15 +390,20 @@ const HorariosScheduleSection: React.FC = () => {
   const { t, locale } = useI18n();
 
   // Filter state
-  const [selectedDay, setSelectedDay] = useState<FilterDay>('monday');
+  const [selectedDay, setSelectedDay] = useState<FilterDay>('all');
   const [selectedCategory, setSelectedCategory] = useState<FilterCategory>('all');
+  const [selectedLevel, setSelectedLevel] = useState<FilterLevel>('all');
 
   // Get category counts
   const categoryCounts = useMemo(() => getCountByCategory(), []);
 
-  // Get day counts for current category
+  // Get level counts
+  const levelCounts = useMemo(() => getCountByLevel(), []);
+
+  // Get day counts for current category and level
   const dayCountsForCategory = useMemo(() => {
-    const counts: Record<DayKey, number> = {
+    const counts: Record<DayKey | 'all', number> = {
+      all: 0,
       monday: 0,
       tuesday: 0,
       wednesday: 0,
@@ -308,21 +414,24 @@ const HorariosScheduleSection: React.FC = () => {
     };
 
     SCHEDULE_DATA.forEach(c => {
-      if (selectedCategory === 'all' || c.category === selectedCategory) {
+      const matchesCategory = selectedCategory === 'all' || c.category === selectedCategory;
+      const matchesLevel = selectedLevel === 'all' || c.level === selectedLevel;
+      if (matchesCategory && matchesLevel) {
         counts[c.day]++;
+        counts.all++;
       }
     });
 
     return counts;
-  }, [selectedCategory]);
+  }, [selectedCategory, selectedLevel]);
 
   // Filtered classes
   const filteredClasses = useMemo(() => {
-    return filterClasses(selectedDay, selectedCategory);
-  }, [selectedDay, selectedCategory]);
+    return filterClasses(selectedDay, selectedCategory, selectedLevel);
+  }, [selectedDay, selectedCategory, selectedLevel]);
 
   // Handlers
-  const handleDayChange = useCallback((day: DayKey) => {
+  const handleDayChange = useCallback((day: FilterDay) => {
     setSelectedDay(day);
   }, []);
 
@@ -330,8 +439,15 @@ const HorariosScheduleSection: React.FC = () => {
     setSelectedCategory(category);
   }, []);
 
-  // Active days (only Mon-Fri have classes currently)
-  const activeDays = DAY_ORDER.filter(day => day !== 'saturday' && day !== 'sunday');
+  const handleLevelChange = useCallback((level: FilterLevel) => {
+    setSelectedLevel(level);
+  }, []);
+
+  // Active days (All + Mon-Fri, excluding weekend as no classes)
+  const activeDays: FilterDay[] = [
+    'all',
+    ...DAY_ORDER.filter(day => day !== 'saturday' && day !== 'sunday'),
+  ];
 
   return (
     <section
@@ -358,7 +474,7 @@ const HorariosScheduleSection: React.FC = () => {
                 {activeDays.map(day => (
                   <DayTab
                     key={day}
-                    day={day}
+                    label={DAY_LABELS[day]}
                     isActive={selectedDay === day}
                     onClick={() => handleDayChange(day)}
                     count={dayCountsForCategory[day]}
@@ -384,6 +500,27 @@ const HorariosScheduleSection: React.FC = () => {
                   isActive={selectedCategory === cat}
                   onClick={() => handleCategoryChange(cat)}
                   count={categoryCounts[cat]}
+                />
+              ))}
+            </div>
+
+            {/* Level Filters */}
+            <div className="flex flex-wrap justify-center gap-2">
+              <LevelChip
+                level="all"
+                label={t('schedule_level_all')}
+                isActive={selectedLevel === 'all'}
+                onClick={() => handleLevelChange('all')}
+                count={levelCounts.all}
+              />
+              {LEVEL_FILTER_ORDER.map(lvl => (
+                <LevelChip
+                  key={lvl}
+                  level={lvl}
+                  label={t(LEVEL_FILTER_CONFIG[lvl].labelKey)}
+                  isActive={selectedLevel === lvl}
+                  onClick={() => handleLevelChange(lvl)}
+                  count={levelCounts[lvl]}
                 />
               ))}
             </div>

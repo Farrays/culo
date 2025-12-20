@@ -12124,4 +12124,401 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
     'Se trata de encontrar un lugar donde disfrutar, progresar y sentirte parte de una comunidad.',
   horariosV2_cta_primary: 'Recibir Horarios Completos',
   horariosV2_cta_subtext: 'Gratis y sin compromiso - Te contactamos de manera inmediata',
+
+  // ============================================================================
+  // BLOG
+  // ============================================================================
+
+  // Blog - General
+  blog_pageTitle: 'Blog de Baile',
+  blog_metaDescription:
+    "Consejos, tutoriales, historia y todo sobre el mundo del baile. Aprende de los expertos de Farray's International Dance Center Barcelona.",
+  blog_breadcrumbHome: 'Inicio',
+  blog_breadcrumbBlog: 'Blog',
+  blog_readingTime: '{minutes} min de lectura',
+  blog_publishedOn: 'Publicado el {date}',
+  blog_updatedOn: 'Actualizado el {date}',
+  blog_summary: 'Resumen',
+  blog_tableOfContents: 'Contenido',
+  blog_shareArticle: 'Compartir',
+  blog_relatedArticles: 'Artículos Relacionados',
+  blog_readMore: 'Leer más',
+  blog_allArticles: 'Todos',
+  blog_noArticles: 'Próximamente más artículos',
+  blog_noArticlesDesc: 'Estamos preparando contenido increíble para ti. ¡Vuelve pronto!',
+  blog_viewAllArticles: 'Ver todos los artículos',
+
+  // Blog - Author
+  blog_authorRole: 'Fundadora y Directora de FIDC',
+  blog_authorBio:
+    "Bailarina profesional cubana con más de 20 años de experiencia. Fundadora de Farray's International Dance Center, ha formado a miles de bailarines en Barcelona. Especializada en Contemporáneo, Jazz, Heels y estilos cubanos.",
+  blog_credential_specialization: 'Contemporáneo · Jazz · Heels · Cubano',
+  blog_credential_experience: '20+ años de experiencia',
+  blog_credential_founder: 'Fundadora de FIDC',
+
+  // Blog - Categories
+  blog_category_tutoriales: 'Tutoriales',
+  blog_category_tutoriales_desc: 'Guías paso a paso para mejorar tu técnica de baile',
+  blog_category_tips: 'Tips',
+  blog_category_tips_desc: 'Consejos rápidos para bailarines de todos los niveles',
+  blog_category_historia: 'Historia',
+  blog_category_historia_desc: 'Orígenes y evolución de los estilos de baile',
+  blog_category_fitness: 'Fitness',
+  blog_category_fitness_desc: 'Beneficios físicos y mentales del baile',
+  blog_category_lifestyle: 'Lifestyle',
+  blog_category_lifestyle_desc: 'La cultura del baile y estilo de vida',
+
+  // ============================================================================
+  // BLOG ARTICLE: Beneficios de Bailar Salsa
+  // ============================================================================
+
+  blogBeneficiosSalsa_title: '10 Beneficios Científicos de Bailar Salsa en Barcelona',
+  blogBeneficiosSalsa_metaDescription:
+    "Quema 400 cal/hora, reduce demencia 76%, baja estrés: 10 beneficios probados de clases de salsa en Barcelona. Únete a Farray's International Dance Center.",
+  blogBeneficiosSalsa_excerpt:
+    'Bailar salsa quema hasta 400 calorías/hora, protege el cerebro (76% menos riesgo demencia) y reduce estrés. Descubre por qué miles eligen clases de salsa en Barcelona.',
+  blogBeneficiosSalsa_breadcrumbCurrent: '10 Beneficios Científicos',
+
+  // Summary bullets
+  blogBeneficiosSalsa_summaryBullet1:
+    'Quema 300-450 calorías por hora (equivalente a correr moderado)',
+  blogBeneficiosSalsa_summaryBullet2: 'Reduce riesgo de demencia en un 76% (estudio NEJM 2003)',
+  blogBeneficiosSalsa_summaryBullet3: 'Baja estrés 20-30% y aumenta satisfacción vital 25%',
+
+  // Summary Stats (Holographic Cards)
+  blogBeneficiosSalsa_statCaloriesLabel: 'calorías quemadas por hora bailando salsa',
+  blogBeneficiosSalsa_statDementiaLabel: 'menos riesgo de demencia vs sedentarios',
+
+  // Intro
+  blogBeneficiosSalsa_intro:
+    "Bailar salsa quema hasta **400 calorías por hora**, protege el cerebro (**76% menos riesgo de demencia**) y reduce el estrés significativamente. No es magia: es ciencia.\n\nDescubre los **10 beneficios respaldados por estudios científicos** de las clases de salsa en Barcelona, y por qué miles de personas ya han elegido Farray's International Dance Center para transformar su cuerpo y su mente bailando.",
+
+  // Benefit 1
+  blogBeneficiosSalsa_benefit1Title: '1. Quema 300-450 Calorías por Hora',
+  blogBeneficiosSalsa_benefit1Content:
+    'Una hora de salsa intensa quema entre **300 y 450 calorías** (persona de 70kg), equivalente a correr a ritmo moderado. Según [Harvard Medical School](https://www.health.harvard.edu/diet-and-weight-loss/calories-burned-in-30-minutes-for-people-of-three-different-weights), es ejercicio cardiovascular disfrazado de diversión.\n\nLa diferencia clave: mientras corres cuentas los minutos para terminar, bailando salsa cubana el tiempo vuela porque estás disfrutando. Esto facilita la constancia, la verdadera clave de cualquier programa de ejercicio.',
+  blogBeneficiosSalsa_stat1Value: '350-450',
+  blogBeneficiosSalsa_stat1Label: 'calorías quemadas por hora',
+  blogBeneficiosSalsa_stat1Source: 'Harvard Medical School',
+
+  // Benefit 2
+  blogBeneficiosSalsa_benefit2Title: '2. Mejora Tu Salud Cardiovascular',
+  blogBeneficiosSalsa_benefit2Content:
+    'La salsa es ejercicio aeróbico de intensidad moderada-alta. Según estudios publicados en [JAMA Cardiology](https://jamanetwork.com/journals/jamacardiology), bailar 3 horas por semana **reduce el riesgo cardíaco entre un 30% y 50%**.\n\nLos movimientos constantes, giros y cambios de dirección mantienen tu corazón eficiente, bajan la presión arterial y optimizan el colesterol HDL. Tu corazón te lo agradecerá.',
+
+  // Benefit 3
+  blogBeneficiosSalsa_benefit3Title: '3. Fortalece Músculos y Equilibrio',
+  blogBeneficiosSalsa_benefit3Content:
+    'Cada paso de salsa trabaja múltiples grupos musculares: **core, piernas, glúteos y brazos** en movimientos funcionales. Un estudio del [British Journal of Sports Medicine](https://bjsm.bmj.com/) confirma que el baile mejora la flexibilidad y previene caídas.\n\nA diferencia del gimnasio repetitivo, la salsa ofrece un entrenamiento funcional completo que desarrolla fuerza, equilibrio y coordinación de forma natural.',
+
+  // Benefit 4
+  blogBeneficiosSalsa_benefit4Title: '4. Reduce Demencia un 76% (Estudio NEJM 2003)',
+  blogBeneficiosSalsa_benefit4Content:
+    'Este es el beneficio más impresionante. El [New England Journal of Medicine (2003)](https://www.nejm.org/doi/full/10.1056/NEJMoa022252) encontró que **bailar reduce el riesgo de demencia en un 76%** – más que crucigramas, lectura o cualquier otra actividad estudiada.\n\n¿Por qué? La salsa combina ejercicio físico con desafíos mentales: memorizar pasos + coordinarse con pareja + improvisar. Esta combinación única crea nuevas conexiones neuronales y mantiene tu cerebro joven.',
+  blogBeneficiosSalsa_stat2Value: '76%',
+  blogBeneficiosSalsa_stat2Label: 'menor riesgo de demencia',
+  blogBeneficiosSalsa_stat2Source: 'New England Journal of Medicine, 2003',
+
+  // Benefit 5
+  blogBeneficiosSalsa_benefit5Title: '5. Libera Endorfinas y Baja Cortisol',
+  blogBeneficiosSalsa_benefit5Content:
+    'Estudios publicados en [Psychoneuroendocrinology](https://www.sciencedirect.com/journal/psychoneuroendocrinology) demuestran que bailar **reduce el estrés entre un 20% y 30%** post-sesión, medido en niveles de cortisol.\n\nCuando bailas, tu cuerpo libera endorfinas, dopamina y serotonina – los neurotransmisores de la felicidad. Después de una clase de salsa en Barcelona, sentirás bienestar y calma que dura horas. La mejor terapia anti-estrés.',
+
+  // Benefit 6
+  blogBeneficiosSalsa_benefit6Title: '6. Aumenta Autoestima y Confianza',
+  blogBeneficiosSalsa_benefit6Content:
+    'Cada paso que dominas, cada giro que logras, cada canción que bailas sin tropezar... son "small wins" que disparan tu dopamina y construyen confianza.\n\nLa salsa te enseña a **sentirte cómodo en tu cuerpo**, ocupar espacio, expresarte sin palabras. Esta confianza es transferible: se nota en el trabajo, las relaciones, la vida social.',
+
+  // Benefit 7
+  blogBeneficiosSalsa_benefit7Title: '7. Corrige Postura y Propiocepción',
+  blogBeneficiosSalsa_benefit7Content:
+    'La técnica de salsa exige **postura erguida + cadera libre** = alineación natural. En pocas semanas de clases de salsa en Barcelona, notarás esta postura incluso cuando no bailas.\n\nLa coordinación entre pies, brazos, cadera y pareja desarrolla habilidades propioceptivas que te hacen más ágil en la vida cotidiana.',
+
+  // Benefit 8
+  blogBeneficiosSalsa_benefit8Title: '8. Expande Tu Red Social en Barcelona',
+  blogBeneficiosSalsa_benefit8Content:
+    "Las clases de salsa cubana son el mejor lugar para conocer gente nueva. Compartes pasión, trabajas en equipo, el ambiente es naturalmente social.\n\nEn Farray's International Dance Center (Eixample Izquierdo, Barcelona) hemos visto nacer amistades de por vida, parejas, matrimonios. La **comunidad salsera barcelonesa** es diversa: todas las edades, profesiones, nacionalidades.",
+
+  // Benefit 9
+  blogBeneficiosSalsa_benefit9Title: '9. Conecta con la Cultura Salsa Cubana',
+  blogBeneficiosSalsa_benefit9Content:
+    'Bailar salsa es sumergirte en cultura vibrante: de Celia Cruz a Fania, del son al mambo, los ritmos afrocaribeños. En nuestras clases explicamos la **historia y el contexto** de cada paso.\n\nAprendes sobre Cuba, Puerto Rico, la escena neoyorquina. La salsa te conecta con algo más grande que tú – es experiencia cultural, no solo ejercicio.',
+
+  // Benefit 10
+  blogBeneficiosSalsa_benefit10Title: '10. Eleva Tu Felicidad (Frontiers Psychology)',
+  blogBeneficiosSalsa_benefit10Content:
+    'Un estudio publicado en [Frontiers in Psychology](https://www.frontiersin.org/journals/psychology) demostró que los bailarines reportan **+25% más satisfacción vital** que personas sedentarias.\n\nNo es casualidad: música + movimiento + contacto social + logro personal = cóctel perfecto de bienestar. Como decimos en Farray\'s: "Quien baila, vive más feliz".',
+
+  // Image Captions
+  blogBeneficiosSalsa_imageFitnessCaption:
+    'Bailar salsa quema hasta 400 calorías por hora mientras tonificas todo el cuerpo',
+  blogBeneficiosSalsa_imageConfidenceCaption:
+    'La transformación personal comienza cuando te atreves a moverte con confianza',
+  blogBeneficiosSalsa_imageSocialCaption:
+    'La comunidad salsera: amistades reales que nacen en la pista de baile',
+
+  // CTA
+  blogBeneficiosSalsa_ctaTitle: "Empieza en Farray's (Barcelona)",
+  blogBeneficiosSalsa_ctaText:
+    'Clases de salsa cubana en el Eixample Izquierdo de Barcelona. Principiantes y avanzados. Profesores cubanos con +20 años de experiencia. Baila, vive, transforma.',
+  blogBeneficiosSalsa_ctaButton: 'Reservar Clase de Prueba',
+
+  // FAQ
+  blogBeneficiosSalsa_faqTitle: 'Preguntas Frecuentes sobre Bailar Salsa',
+  blogBeneficiosSalsa_faq1Question: '¿Necesito experiencia previa para empezar a bailar salsa?',
+  blogBeneficiosSalsa_faq1Answer:
+    'No, en absoluto. Nuestras clases de nivel principiante empiezan desde cero. Te enseñamos el paso básico, el ritmo, y gradualmente vamos añadiendo figuras. En pocas semanas estarás bailando con soltura.',
+  blogBeneficiosSalsa_faq2Question: '¿Necesito venir con pareja de baile?',
+  blogBeneficiosSalsa_faq2Answer:
+    'No es necesario. En las clases rotamos parejas, así que practicas con diferentes personas y aprendes a adaptarte. Además, muchos alumnos vienen solos y terminan haciendo grandes amigos.',
+  blogBeneficiosSalsa_faq3Question: '¿Cuántas clases necesito para bailar bien?',
+  blogBeneficiosSalsa_faq3Answer:
+    'Con 2-3 meses de clases regulares (2 veces por semana), ya podrás bailar canciones completas con confianza. El baile es un viaje sin fin, pero los beneficios empiezas a sentirlos desde la primera clase.',
+  blogBeneficiosSalsa_faq4Question: '¿La salsa es solo para jóvenes?',
+  blogBeneficiosSalsa_faq4Answer:
+    'Para nada. Tenemos alumnos desde 18 hasta 70 años. La salsa se adapta a tu nivel de energía y condición física. De hecho, para personas mayores es especialmente beneficiosa por su impacto en la memoria y el equilibrio.',
+  blogBeneficiosSalsa_faq5Question: '¿Qué diferencia hay entre salsa cubana y salsa en línea?',
+  blogBeneficiosSalsa_faq5Answer:
+    "La salsa cubana (casino) se baila en círculo, con movimientos más fluidos y sensuales, muy conectada con la música afrocubana. La salsa en línea (LA/NY style) se baila en una línea recta, con más acrobacias. En Farray's enseñamos salsa cubana auténtica.",
+
+  // ============================================================================
+  // BLOG ARTICLE: Historia de la Salsa en Barcelona
+  // ============================================================================
+
+  // === META & SEO ===
+  blogHistoriaSalsa_title: 'Historia de la Salsa: del Caribe al Corazón de Barcelona',
+  blogHistoriaSalsa_metaDescription:
+    "Descubre la historia completa de la salsa: raíces afrocubanas, revolución en Nueva York y cómo se vive hoy en Barcelona en Farray's International Dance Center.",
+  blogHistoriaSalsa_excerpt:
+    'Raíces afrocubanas, explosión en Nueva York con Fania Records y tradición viva en Barcelona. Descubre la historia completa de la salsa.',
+
+  // === BREADCRUMB ===
+  blogHistoriaSalsa_breadcrumbCurrent: 'Historia de la Salsa',
+
+  // === SUMMARY BULLETS (GEO Optimized) ===
+  blogHistoriaSalsa_summaryBullet1:
+    'Raíces afrocubanas: son, guaracha, mambo y guaguancó fusionados en Nueva York',
+  blogHistoriaSalsa_summaryBullet2:
+    'Fania Records (1964): el sello que cristalizó la salsa como identidad global latina',
+  blogHistoriaSalsa_summaryBullet3:
+    'Barcelona: capital europea de la salsa con escena vibrante desde los 80-90',
+  blogHistoriaSalsa_summaryBullet4:
+    'Bailar reduce un 76% el riesgo de demencia según el New England Journal of Medicine',
+
+  // === SUMMARY STATS (Holographic Cards) ===
+  blogHistoriaSalsa_statFaniaLabel: 'Fundación de Fania Records',
+  blogHistoriaSalsa_statDementiaLabel: 'Reducción riesgo demencia',
+  blogHistoriaSalsa_statStudentsLabel: "Alumnos activos en Farray's",
+
+  // === INTRODUCTION ===
+  blogHistoriaSalsa_intro:
+    'La salsa es mucho más que un ritmo: es una historia de migraciones, resistencia y creatividad colectiva que conecta a África, el Caribe y el mundo. Desde sus raíces afrocubanas hasta su expansión global, la salsa encarna siglos de mestizaje cultural y libertad expresiva.',
+  blogHistoriaSalsa_introFarrays:
+    "En Barcelona, esta tradición late con fuerza en [Farray's International Dance Center](/es/clases), donde aprender salsa significa comprender una historia viva y universal contada a través del cuerpo. Consulta nuestros [horarios y precios](/es/horarios-precios) para unirte a esta tradición.",
+
+  // === SECTION 1: ORÍGENES (1850-1970) ===
+  blogHistoriaSalsa_section1Title:
+    'Orígenes de la Salsa: Raíces Afrocubanas, Diáspora y Explosión en Nueva York (1850–1970)',
+  blogHistoriaSalsa_section1Content1:
+    'No existe consenso absoluto sobre el lugar exacto de nacimiento de la salsa, pero su ADN musical se forja en **Cuba** entre finales del siglo XIX y las primeras décadas del XX. Allí, el **son cubano** (1890–1910) integró ritmos africanos —provenientes de tradiciones yoruba y congo— con instrumentos y estructuras de la música europea, creando la base sobre la que se construyó la salsa moderna.',
+  blogHistoriaSalsa_section1Content2:
+    'A lo largo del siglo XX, géneros como la **guaracha** (rítmica y festiva, en los años 30), el **guaguancó** (rama de la rumba afro-cubana), el **mambo** (Pérez Prado, 1940s) y el **chachachá** (Enrique Jorrín, 1951) contribuyeron a este cruce musical. Sus grabaciones viajaron por el Caribe y América, especialmente a Puerto Rico, República Dominicana y Nueva York.',
+  blogHistoriaSalsa_section1Content3:
+    'La década de 1960 fue crucial: el **Bronx y el Spanish Harlem** se convirtieron en epicentros donde la diáspora caribeña fusionó sonidos afrocaribeños con jazz latino, influencias de soul y R&B, y una energía urbana inconfundible. Artistas como **Tito Puente, Tito Rodríguez y Charlie Palmieri** lideraron este movimiento que dio origen a la llamada **salsa dura**: una música poderosa, con metales intensos, percusión agresiva y letras que contaban la vida en el barrio.',
+  blogHistoriaSalsa_section1Content4:
+    'En 1964, el sello **[Fania Records](https://www.faniarecords.com/)** —fundado por Johnny Pacheco (dominicano) y Jerry Masucci (neoyorquino)— cristalizó y proyectó este fenómeno. Fania no "inventó" la salsa, pero la convirtió en una **identidad global**, combinando estrategia comercial y orgullo cultural latino. La creación de **Fania All-Stars** en 1968 y conciertos icónicos como los del Cheetah Club o el Yankee Stadium marcaron el momento en que la salsa se consolidó como símbolo de la latinidad urbana y orgullosa.',
+
+  // === IMAGE CAPTIONS ===
+  blogHistoriaSalsa_imageFaniaCaption:
+    'Fania All-Stars: el dream team de la salsa que conquistó el mundo desde Nueva York',
+  blogHistoriaSalsa_imageBarcelonaCaption:
+    "Clase de salsa cubana en Farray's International Dance Center Barcelona",
+
+  // === SECTION 2: ETIMOLOGÍA DE "SALSA" ===
+  blogHistoriaSalsa_section2Title:
+    'Etimología de "Salsa": Teorías, Debate Académico y Etiqueta Comercial',
+  blogHistoriaSalsa_section2Intro:
+    'El término "salsa" nunca tuvo un único origen confirmado, pero sí múltiples caminos convergentes. Entre las teorías más sólidas destacan:',
+  blogHistoriaSalsa_section2TeoriasTitle: 'Principales teorías sobre el origen del nombre',
+  blogHistoriaSalsa_teoria1:
+    '**Analogía culinaria**: popularizada en los años 60 por el locutor venezolano Phidias Danilo Escalona, asocia "salsa" con mezcla sabrosa y picante, metáfora de la fusión musical (son + jazz + barrio)',
+  blogHistoriaSalsa_teoria2:
+    '**"Échale salsita" (1933)**: del compositor cubano Ignacio Piñeiro y su Septeto Nacional, una de las primeras menciones directas al término',
+  blogHistoriaSalsa_teoria3:
+    '**Cheo Marquetti y "Los Salseros" (1940s)**: usan el término de forma artística antes de Fania',
+  blogHistoriaSalsa_teoria4:
+    '**Uso comercial de Fania (1960s–1970s)**: títulos como "Salsa Na\' Ma\'" o campañas radiofónicas neoyorquinas consolidan el término como marca internacional',
+  blogHistoriaSalsa_section2Debate:
+    'La musicología contemporánea distingue dos perspectivas: la **visión académica** (etiqueta paraguas para géneros afrocubanos actualizados) y la **visión popular** (género propio con identidad sonora basada en la clave 2-3, el piano montuno y los coros responsoriales).',
+  blogHistoriaSalsa_section2Callout:
+    "En [Farray's International Dance Center](/es/clases), este debate cobra vida en las clases. Aprender [salsa cubana](/es/clases/salsa-cubana-barcelona) —centrada en raíces del son— frente a salsa en línea, desarrollada en Nueva York, permite a los alumnos vivir en su propio cuerpo esa tensión entre tradición y evolución.",
+
+  // === SECTION 3: EVOLUCIÓN ESTILÍSTICA (TABLA) ===
+  blogHistoriaSalsa_section3Title:
+    'Evolución Estilística: de la Salsa Dura a la Fusión Contemporánea',
+  blogHistoriaSalsa_section3Intro:
+    'La salsa ha evolucionado en múltiples estilos, cada uno con su carácter único. En [nuestras clases en Barcelona](/es/clases) enseñamos esta diversidad:',
+  blogHistoriaSalsa_section3TableTitle: 'Comparativa de estilos de salsa',
+  blogHistoriaSalsa_tableHeaderEstilo: 'Estilo',
+  blogHistoriaSalsa_tableHeaderEpoca: 'Época',
+  blogHistoriaSalsa_tableHeaderCaracteristicas: 'Características',
+  blogHistoriaSalsa_tableHeaderRepresentantes: 'Representantes',
+  blogHistoriaSalsa_tableHeaderBarcelona: 'En Barcelona',
+  blogHistoriaSalsa_tableRow1Col1: 'Salsa Dura (NY)',
+  blogHistoriaSalsa_tableRow1Col2: '1968–1980',
+  blogHistoriaSalsa_tableRow1Col3: 'Metales potentes, percusión intensa, letras sobre identidad',
+  blogHistoriaSalsa_tableRow1Col4: 'Fania All-Stars, Willie Colón, Héctor Lavoe',
+  blogHistoriaSalsa_tableRow1Col5: 'Base de la escena clásica en Eixample y Gràcia',
+  blogHistoriaSalsa_tableRow2Col1: 'Salsa Romántica',
+  blogHistoriaSalsa_tableRow2Col2: '1980s–1990s',
+  blogHistoriaSalsa_tableRow2Col3: 'Baladas lentas, énfasis en el amor, menos percusión',
+  blogHistoriaSalsa_tableRow2Col4: 'Frankie Ruiz, Gilberto Santa Rosa, Tito Nieves',
+  blogHistoriaSalsa_tableRow2Col5: 'Inspira salsa en línea y sensual moderna',
+  blogHistoriaSalsa_tableRow3Col1: 'Salsa Cubana / Timba',
+  blogHistoriaSalsa_tableRow3Col2: '1990s–hoy',
+  blogHistoriaSalsa_tableRow3Col3: 'Integración de songo, timba, improvisación y casino',
+  blogHistoriaSalsa_tableRow3Col4: 'Celia Cruz, Los Van Van, Manolín',
+  blogHistoriaSalsa_tableRow3Col5: "Clases avanzadas en Farray's",
+  blogHistoriaSalsa_tableRow4Col1: 'Power Salsa / Salsa Choke',
+  blogHistoriaSalsa_tableRow4Col2: '2000s–hoy',
+  blogHistoriaSalsa_tableRow4Col3: 'Fusiones con hip-hop, electrónica y reguetón',
+  blogHistoriaSalsa_tableRow4Col4: "Oscar D'León, artistas colombianos",
+  blogHistoriaSalsa_tableRow4Col5: 'Escena joven en Poblenou y 22@',
+
+  // === SECTION 4: BARCELONA ===
+  blogHistoriaSalsa_section4Title: 'De Nueva York y el Caribe a Barcelona',
+  blogHistoriaSalsa_section4Content1:
+    'En las últimas décadas, Barcelona se ha transformado en una de las **capitales europeas del baile latino**, donde conviven tradición y modernidad. La ciudad acoge a una amplia comunidad latinoamericana y afrocaribeña, generando una escena salsera plural: desde clubes en Eixample hasta escuelas especializadas en Gràcia o Poblenou, donde el ritmo se mezcla con la vida cotidiana.',
+  blogHistoriaSalsa_section4Content2:
+    "[Farray's International Dance Center](/es/clases), institución pionera en la enseñanza profesional de danza afrocaribeña, mantiene viva esta herencia a través de programas que combinan técnica, cultura e historia. Aquí la salsa se enseña no solo con precisión técnica, sino con conciencia del contexto que la originó. Conoce a [nuestros profesores](/es/profesores-baile-barcelona) y descubre el [Método Farray®](/es/yunaisy-farray).",
+
+  // === SECTION 5: BENEFICIOS ===
+  blogHistoriaSalsa_section5Title: 'Más que ejercicio: lo que la ciencia dice del baile',
+  blogHistoriaSalsa_section5Intro:
+    'La salsa no es solo un ejercicio físico. La ciencia ha demostrado que bailar de forma regular tiene un impacto positivo a múltiples niveles: mejora la salud cardiovascular, refuerza la memoria y la concentración, libera endorfinas y crea vínculos sociales profundos.',
+  blogHistoriaSalsa_beneficiosDetalle:
+    'Un estudio del New England Journal of Medicine (2003) encontró que bailar puede reducir hasta un 76% el riesgo de demencia en adultos mayores. Cada clase es una inversión en salud física y mental que, además, te conecta con una tradición cultural viva.',
+
+  // === SECTION 6: CONCLUSIÓN ===
+  blogHistoriaSalsa_section6Title: 'Tradición viva en Barcelona',
+  blogHistoriaSalsa_section6Content1:
+    'La salsa es un espejo de la historia latinoamericana: raíz africana, alma caribeña y corazón global. Su viaje desde los solares cubanos hasta los barrios de Nueva York —y hoy, hasta las academias de Barcelona— demuestra el poder del arte para unir culturas y trascender épocas.',
+  blogHistoriaSalsa_conclusionCTA:
+    "Si deseas sentir el pulso del Caribe en el corazón de Barcelona, consulta nuestros [horarios y precios](/es/horarios-precios) y [reserva tu primera clase](/es/clases/salsa-cubana-barcelona). En [Farray's](/es/clases), la salsa no se aprende: se vive.",
+
+  // === FAQ (SEO Schema) ===
+  blogHistoriaSalsa_faqTitle: 'Preguntas Frecuentes sobre la Historia de la Salsa',
+  blogHistoriaSalsa_faq1Question: '¿Dónde nació realmente la salsa?',
+  blogHistoriaSalsa_faq1Answer:
+    'El ADN musical de la salsa se forja en Cuba entre finales del siglo XIX y principios del XX con el son cubano. Sin embargo, el término "salsa" y su consolidación como género ocurrieron en Nueva York en los años 60-70, cuando la diáspora caribeña fusionó ritmos afrocubanos con jazz latino y soul. Fania Records (1964) fue fundamental para su proyección mundial.',
+  blogHistoriaSalsa_faq2Question: '¿Por qué se llama salsa?',
+  blogHistoriaSalsa_faq2Answer:
+    'Existen varias teorías: la analogía culinaria (mezcla sabrosa), la canción "Échale salsita" de Ignacio Piñeiro (1933), y el uso comercial de Fania Records en los 60s-70s. El término funcionó como etiqueta paraguas para ritmos afrocaribeños modernizados y se consolidó como marca de identidad latina.',
+  blogHistoriaSalsa_faq3Question: '¿Qué diferencia hay entre salsa cubana y salsa en línea?',
+  blogHistoriaSalsa_faq3Answer:
+    "La salsa cubana (casino) se baila en círculo con movimientos más fluidos y proviene directamente de Cuba. La salsa en línea (LA/NY style) se desarrolló en Estados Unidos, se baila en línea recta y tiene influencias del hustle y el mambo. En Farray's enseñamos ambos estilos para que comprendas toda la riqueza del género.",
+  blogHistoriaSalsa_faq4Question: '¿Barcelona es una buena ciudad para aprender salsa?',
+  blogHistoriaSalsa_faq4Answer:
+    "Barcelona es considerada una de las capitales europeas del baile latino. La ciudad tiene una vibrante comunidad latinoamericana, numerosas salas de baile, congresos internacionales como el Barcelona Salsa Congress, y escuelas especializadas como Farray's International Dance Center.",
+  blogHistoriaSalsa_faq5Question: '¿Qué beneficios tiene bailar salsa para la salud?',
+  blogHistoriaSalsa_faq5Answer:
+    'Según estudios del New England Journal of Medicine, bailar regularmente puede reducir hasta un 76% el riesgo de demencia. Además, una hora de salsa quema entre 350-450 kcal, mejora la coordinación, reduce el estrés y aumenta la felicidad en un 25% según Frontiers in Psychology.',
+
+  // === REFERENCIAS (GEO Citability) ===
+  blogHistoriaSalsa_referencesTitle: 'Fuentes y referencias',
+  blogHistoriaSalsa_referencesIntro: 'Fuentes consultadas para la elaboración de este artículo:',
+  blogHistoriaSalsa_refFaniaTitle: 'Historia de Fania Records',
+  blogHistoriaSalsa_refFaniaDesc:
+    'El sello discográfico fundado en 1964 que definió el sonido de la salsa y proyectó artistas como Celia Cruz, Héctor Lavoe y Willie Colón.',
+  blogHistoriaSalsa_refSmithsonianTitle: 'Colecciones de Música Latina - Smithsonian',
+  blogHistoriaSalsa_refSmithsonianDesc:
+    'Archivo del Smithsonian Institution con materiales históricos sobre música latina y afrocaribeña.',
+  blogHistoriaSalsa_refNEJMTitle: 'Baile y Demencia (Verghese et al., 2003)',
+  blogHistoriaSalsa_refNEJMDesc:
+    'Estudio publicado en el New England Journal of Medicine sobre actividades de ocio y riesgo de demencia.',
+  blogHistoriaSalsa_refFrontiersTitle: 'Beneficios Psicológicos del Baile',
+  blogHistoriaSalsa_refFrontiersDesc:
+    'Investigaciones sobre los efectos del baile en el bienestar emocional y la salud mental.',
+  blogHistoriaSalsa_refBcnSalsaTitle: 'Festivales de Salsa en Barcelona',
+  blogHistoriaSalsa_refBcnSalsaDesc:
+    'Calendario de eventos y congresos de baile latino en Barcelona y alrededores.',
+
+  // =============================================
+  // TEACHERS PAGE - Profesores de Baile Barcelona
+  // =============================================
+  teachersPageTitle: "Profesores de Baile en Barcelona | Farray's International Dance Center",
+  teachersPageMetaDescription:
+    'Conoce a nuestros profesores de baile en Barcelona. Equipo internacional de bailarines profesionales especializados en estilos urbanos, latinos y clásicos. Más de 20 años de experiencia.',
+  teachersPageBreadcrumbHome: 'Inicio',
+  teachersPageBreadcrumbCurrent: 'Profesores de Baile',
+  teachersPageH1: 'Profesores de Baile en Barcelona',
+  teachersPageSubtitle:
+    'Un equipo internacional de bailarines profesionales formados en las mejores escuelas del mundo. Aprende de los mejores en cada estilo.',
+  teachersPageStatYears: 'años de experiencia',
+  teachersPageStatTeachers: 'profesores',
+  teachersPageStatStyles: 'estilos de baile',
+  teachersPageStatStudents: 'estudiantes formados',
+
+  // Director Section
+  teachersPageDirectorTitle: 'Directora y Fundadora',
+  teachersPageDirectorSubtitle:
+    'Conoce a Yunaisy Farray, el alma de nuestra escuela y creadora del revolucionario Método Farray®.',
+  teachersPageDirectorSpecialty: 'Directora | Creadora del Método Farray® | Miembro CID-UNESCO',
+  teachersPageDirectorBio:
+    'Bailarina profesional cubana formada en la Escuela Nacional de Arte de Cuba (ENA). Con más de dos décadas de experiencia internacional, Yunaisy ha participado en la película "Street Dance 2", las finales de "Got Talent" y programas como "The Dancer". Su método exclusivo combina la disciplina clásica con los ritmos afrocubanos, garantizando resultados rápidos y sólidos.',
+
+  // Team Section
+  teachersPageTeamTitle: 'Nuestro Equipo Docente',
+  teachersPageTeamSubtitle:
+    'Profesionales apasionados que comparten su arte y conocimiento en cada clase. Cada uno aporta su especialidad única.',
+
+  // Individual Teachers
+  teachersPageTeacher1Specialty: 'Ballet Clásico & Contemporáneo',
+  teachersPageTeacher1Bio:
+    'Bailarín profesional formado en la Escuela Nacional de Arte de Cuba. Especialista en técnica clásica cubana y danza contemporánea.',
+  teachersPageTeacher2Specialty: 'Ballet, Modern Jazz & Afro Jazz',
+  teachersPageTeacher2Bio:
+    'Bailarín profesional cubano con formación en la ENA. Experto en fusión de estilos clásicos y afro.',
+  teachersPageTeacher3Specialty: 'Dancehall & Twerk',
+  teachersPageTeacher3Bio:
+    'Especialista en Dancehall y Twerk con amplia experiencia en pedagogía de la danza urbana.',
+  teachersPageTeacher4Specialty: 'Dancehall & Dancehall Female',
+  teachersPageTeacher4Bio:
+    'Especialista en Dancehall con experiencia en competiciones internacionales y formación en Jamaica.',
+  teachersPageTeacher5Specialty: 'Hip Hop | Juez Internacional',
+  teachersPageTeacher5Bio:
+    'Juez internacional de Hip Hop con amplia experiencia en competiciones y enseñanza de estilos urbanos.',
+  teachersPageTeacher6Specialty: 'Salsa Cubana & Lady Style',
+  teachersPageTeacher6Bio:
+    'Bailarina profesional especializada en salsa cubana auténtica y técnicas de Lady Style.',
+  teachersPageTeacher7Specialty: 'Maestra y Artista Internacional Cubana',
+  teachersPageTeacher7Bio:
+    'Con más de 20 años de carrera artística en salsa cubana y estilos latinos.',
+  teachersPageTeacher8Specialty: 'Salsa Cubana | Método Farray',
+  teachersPageTeacher8Bio:
+    'Instructor certificado en el Método Farray para Salsa Cubana. Especialista en técnica de guía.',
+  teachersPageTeacher9Specialty: 'Afro Contemporáneo & Hip Hop',
+  teachersPageTeacher9Bio:
+    'Bailarín profesional con experiencia en estilos afro y urbanos. Certificado en Afro Contemporáneo.',
+  teachersPageTeacher10Specialty: 'Bachata Lady Style | Campeona Mundial Salsa LA',
+  teachersPageTeacher10Bio:
+    'Campeona mundial de Salsa LA y especialista en Bachata Lady Style. Experta en técnica femenina.',
+  teachersPageTeacher11Specialty: 'Bachata & Bachata Sensual',
+  teachersPageTeacher11Bio:
+    'Especialista en Bachata y Bachata Sensual con técnica depurada y gran musicalidad.',
+  teachersPageTeacher12Specialty: 'Bachata & Bachata Moderna',
+  teachersPageTeacher12Bio:
+    'Profesor de Bachata con enfoque en técnica, musicalidad y conexión en pareja.',
+  teachersPageTeacher13Specialty: 'Bachata & Bachata Lady Style',
+  teachersPageTeacher13Bio:
+    'Especialista en Bachata y técnicas femeninas. Experta en estilo y expresión corporal.',
+  teachersPageTeacher14Specialty: 'Afrobeats & Afro Dance',
+  teachersPageTeacher14Bio:
+    'Especialista en Afrobeats y danzas africanas contemporáneas. Energía y ritmo en cada clase.',
+
+  // CTA Section
+  teachersPageCtaTitle: '¿Listo para Aprender de los Mejores?',
+  teachersPageCtaSubtitle:
+    'Únete a nuestra familia y descubre por qué más de 15.000 estudiantes han confiado en nosotros.',
+  teachersPageCtaClasses: 'Ver Clases de Baile',
 };

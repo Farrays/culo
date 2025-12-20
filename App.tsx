@@ -73,6 +73,15 @@ const PreciosPage = lazy(() => import('./components/PreciosPage'));
 const HorariosPreciosPage = lazy(() => import('./components/HorariosPreciosPage'));
 const HorariosPageV2 = lazy(() => import('./components/HorariosPageV2'));
 
+// ===== BLOG PAGES =====
+const BlogListPage = lazy(() => import('./components/pages/BlogListPage'));
+const BlogArticlePage = lazy(() => import('./components/pages/BlogArticlePage'));
+
+// ===== INFO PAGES =====
+const ProfesoresBaileBarcelonaPage = lazy(
+  () => import('./components/pages/ProfesoresBaileBarcelonaPage')
+);
+
 // Valid locales - use centralized constant from types.ts
 const VALID_LOCALES = SUPPORTED_LOCALES;
 
@@ -471,6 +480,16 @@ const AppContent: React.FC = () => {
             />
 
             <Route
+              path="/:locale/profesores-baile-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <ProfesoresBaileBarcelonaPage />
+                </>
+              }
+            />
+
+            <Route
               path="/:locale/contacto"
               element={
                 <>
@@ -598,6 +617,35 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <HorariosPageV2 />
+                </>
+              }
+            />
+
+            {/* ===== BLOG ROUTES ===== */}
+            <Route
+              path="/:locale/blog"
+              element={
+                <>
+                  <LocaleSync />
+                  <BlogListPage />
+                </>
+              }
+            />
+            <Route
+              path="/:locale/blog/:category"
+              element={
+                <>
+                  <LocaleSync />
+                  <BlogListPage />
+                </>
+              }
+            />
+            <Route
+              path="/:locale/blog/:category/:slug"
+              element={
+                <>
+                  <LocaleSync />
+                  <BlogArticlePage />
                 </>
               }
             />

@@ -118,6 +118,31 @@ const routes = [
   { path: 'fr/regala-baile', lang: 'fr', page: 'regalaBaile' },
   { path: 'fr/instalaciones', lang: 'fr', page: 'facilities' },
   { path: 'fr/contacto', lang: 'fr', page: 'contact' },
+
+  // Blog routes
+  { path: 'es/blog', lang: 'es', page: 'blog' },
+  { path: 'es/blog/lifestyle', lang: 'es', page: 'blogLifestyle' },
+  { path: 'es/blog/lifestyle/beneficios-bailar-salsa', lang: 'es', page: 'blogBeneficiosSalsa' },
+  { path: 'es/blog/historia', lang: 'es', page: 'blogHistoria' },
+  { path: 'es/blog/historia/historia-salsa-barcelona', lang: 'es', page: 'blogHistoriaSalsa' },
+
+  { path: 'ca/blog', lang: 'ca', page: 'blog' },
+  { path: 'ca/blog/lifestyle', lang: 'ca', page: 'blogLifestyle' },
+  { path: 'ca/blog/lifestyle/beneficios-bailar-salsa', lang: 'ca', page: 'blogBeneficiosSalsa' },
+  { path: 'ca/blog/historia', lang: 'ca', page: 'blogHistoria' },
+  { path: 'ca/blog/historia/historia-salsa-barcelona', lang: 'ca', page: 'blogHistoriaSalsa' },
+
+  { path: 'en/blog', lang: 'en', page: 'blog' },
+  { path: 'en/blog/lifestyle', lang: 'en', page: 'blogLifestyle' },
+  { path: 'en/blog/lifestyle/beneficios-bailar-salsa', lang: 'en', page: 'blogBeneficiosSalsa' },
+  { path: 'en/blog/historia', lang: 'en', page: 'blogHistoria' },
+  { path: 'en/blog/historia/historia-salsa-barcelona', lang: 'en', page: 'blogHistoriaSalsa' },
+
+  { path: 'fr/blog', lang: 'fr', page: 'blog' },
+  { path: 'fr/blog/lifestyle', lang: 'fr', page: 'blogLifestyle' },
+  { path: 'fr/blog/lifestyle/beneficios-bailar-salsa', lang: 'fr', page: 'blogBeneficiosSalsa' },
+  { path: 'fr/blog/historia', lang: 'fr', page: 'blogHistoria' },
+  { path: 'fr/blog/historia/historia-salsa-barcelona', lang: 'fr', page: 'blogHistoriaSalsa' },
 ];
 
 // Metadata for each page in each language
@@ -231,6 +256,26 @@ const metadata = {
       title: 'Contacto | Farray\'s International Dance Center Barcelona',
       description: 'Contacta con nosotros. Carrer d\'Entença 100, Barcelona. Tel: +34 622 24 70 85. Reserva tu clase de prueba gratuita.',
     },
+    blog: {
+      title: 'Blog de Baile | Consejos, Tutoriales e Historia del Baile | Farray\'s Center',
+      description: 'Descubre consejos, tutoriales y la fascinante historia del baile. Asesoramiento experto de bailarines profesionales para mejorar tu técnica y disfrutar cada paso.',
+    },
+    blogLifestyle: {
+      title: 'Lifestyle y Baile | Bienestar y Estilo de Vida | Farray\'s Center Blog',
+      description: 'Descubre cómo el baile transforma tu vida. Artículos sobre bienestar, felicidad y estilo de vida a través del baile.',
+    },
+    blogBeneficiosSalsa: {
+      title: '10 Beneficios de Bailar Salsa que Cambiarán Tu Vida | Farray\'s Center',
+      description: 'Descubre los 10 beneficios científicamente probados de bailar salsa: quema 400 cal/hora, mejora la salud cardiovascular, reduce el estrés y aumenta la autoestima. Guía completa.',
+    },
+    blogHistoria: {
+      title: 'Historia del Baile | Orígenes y Evolución | Farray\'s Center Blog',
+      description: 'Descubre la fascinante historia del baile: orígenes, evolución y cómo llegó a Barcelona. Artículos sobre salsa, dancehall y más.',
+    },
+    blogHistoriaSalsa: {
+      title: 'Historia de la Salsa en Barcelona: del Caribe y Nueva York a Farray\'s | Farray\'s Center',
+      description: 'Descubre la fascinante historia de la salsa: desde sus orígenes en el Caribe y Nueva York hasta su llegada a Barcelona. Más de 60 años de ritmo que cambiaron el mundo.',
+    },
   },
   ca: {
     home: {
@@ -340,6 +385,26 @@ const metadata = {
     contact: {
       title: 'Contacte | Farray\'s International Dance Center Barcelona',
       description: 'Contacta amb nosaltres. Carrer d\'Entença 100, Barcelona. Tel: +34 622 24 70 85. Reserva la teva classe de prova gratuïta.',
+    },
+    blog: {
+      title: 'Blog de Ball | Consells, Tutorials i Història del Ball | Farray\'s Center',
+      description: 'Descobreix consells, tutorials i la fascinant història del ball. Assessorament expert de ballarins professionals per millorar la teva tècnica i gaudir cada pas.',
+    },
+    blogLifestyle: {
+      title: 'Lifestyle i Ball | Benestar i Estil de Vida | Farray\'s Center Blog',
+      description: 'Descobreix com el ball transforma la teva vida. Articles sobre benestar, felicitat i estil de vida a través del ball.',
+    },
+    blogBeneficiosSalsa: {
+      title: '10 Beneficis de Ballar Salsa que Canviaran la Teva Vida | Farray\'s Center',
+      description: 'Descobreix els 10 beneficis científicament demostrats de ballar salsa: crema 400 cal/hora, millora la salut cardiovascular, redueix l\'estrès i augmenta l\'autoestima. Guia completa.',
+    },
+    blogHistoria: {
+      title: 'Història del Ball | Orígens i Evolució | Farray\'s Center Blog',
+      description: 'Descobreix la fascinant història del ball: orígens, evolució i com va arribar a Barcelona. Articles sobre salsa, dancehall i més.',
+    },
+    blogHistoriaSalsa: {
+      title: 'Història de la Salsa a Barcelona: del Carib i Nova York a Farray\'s | Farray\'s Center',
+      description: 'Descobreix la fascinant història de la salsa: des dels seus orígens al Carib i Nova York fins a la seva arribada a Barcelona. Més de 60 anys de ritme que van canviar el món.',
     },
   },
   en: {
@@ -451,6 +516,26 @@ const metadata = {
       title: 'Contact | Farray\'s International Dance Center Barcelona',
       description: 'Contact us. Carrer d\'Entença 100, Barcelona. Tel: +34 622 24 70 85. Book your free trial class.',
     },
+    blog: {
+      title: 'Dance Blog | Tips, Tutorials & Dance History | Farray\'s Center',
+      description: 'Discover tips, tutorials and the fascinating history of dance. Expert advice from professional dancers to improve your technique and enjoy every step.',
+    },
+    blogLifestyle: {
+      title: 'Lifestyle & Dance | Wellbeing & Life Balance | Farray\'s Center Blog',
+      description: 'Discover how dance transforms your life. Articles about wellbeing, happiness and lifestyle through dance.',
+    },
+    blogBeneficiosSalsa: {
+      title: '10 Benefits of Dancing Salsa That Will Change Your Life | Farray\'s Center',
+      description: 'Discover the 10 scientifically proven benefits of dancing salsa: burn 400 cal/hour, improve cardiovascular health, reduce stress and boost self-esteem. Complete guide.',
+    },
+    blogHistoria: {
+      title: 'Dance History | Origins & Evolution | Farray\'s Center Blog',
+      description: 'Discover the fascinating history of dance: origins, evolution and how it arrived in Barcelona. Articles about salsa, dancehall and more.',
+    },
+    blogHistoriaSalsa: {
+      title: 'History of Salsa in Barcelona: From the Caribbean and New York to Farray\'s | Farray\'s Center',
+      description: 'Discover the fascinating history of salsa: from its origins in the Caribbean and New York to its arrival in Barcelona. Over 60 years of rhythm that changed the world.',
+    },
   },
   fr: {
     home: {
@@ -560,6 +645,26 @@ const metadata = {
     contact: {
       title: 'Contact | Farray\'s International Dance Center Barcelone',
       description: 'Contactez-nous. Carrer d\'Entença 100, Barcelone. Tél: +34 622 24 70 85. Réservez votre cours d\'essai gratuit.',
+    },
+    blog: {
+      title: 'Blog de Danse | Conseils, Tutoriels et Histoire de la Danse | Farray\'s Center',
+      description: 'Découvrez conseils, tutoriels et la fascinante histoire de la danse. Conseils experts de danseurs professionnels pour améliorer votre technique et profiter de chaque pas.',
+    },
+    blogLifestyle: {
+      title: 'Lifestyle et Danse | Bien-être et Art de Vivre | Farray\'s Center Blog',
+      description: 'Découvrez comment la danse transforme votre vie. Articles sur le bien-être, le bonheur et l\'art de vivre à travers la danse.',
+    },
+    blogBeneficiosSalsa: {
+      title: '10 Bienfaits de Danser la Salsa qui Changeront Votre Vie | Farray\'s Center',
+      description: 'Découvrez les 10 bienfaits scientifiquement prouvés de danser la salsa : brûlez 400 cal/heure, améliorez la santé cardiovasculaire, réduisez le stress et boostez l\'estime de soi. Guide complet.',
+    },
+    blogHistoria: {
+      title: 'Histoire de la Danse | Origines et Évolution | Farray\'s Center Blog',
+      description: 'Découvrez la fascinante histoire de la danse : origines, évolution et comment elle est arrivée à Barcelone. Articles sur la salsa, le dancehall et plus.',
+    },
+    blogHistoriaSalsa: {
+      title: 'Histoire de la Salsa à Barcelone : des Caraïbes et New York à Farray\'s | Farray\'s Center',
+      description: 'Découvrez la fascinante histoire de la salsa : de ses origines caribéennes et new-yorkaises jusqu\'à son arrivée à Barcelone. Plus de 60 ans de rythme qui ont changé le monde.',
     },
   },
 };
@@ -692,6 +797,11 @@ const initialContent = {
         </p>
       </main>
     `,
+    blog: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Blog de Baile</h1><p>Consejos, tutoriales e historia del baile. Asesoramiento experto para mejorar tu técnica y disfrutar cada paso.</p></main>`,
+    blogLifestyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Lifestyle y Baile</h1><p>Descubre cómo el baile transforma tu vida. Artículos sobre bienestar, felicidad y estilo de vida.</p></main>`,
+    blogBeneficiosSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">10 Beneficios de Bailar Salsa que Cambiarán Tu Vida</h1><p>Descubre los 10 beneficios científicamente probados de bailar salsa: quema 400 cal/hora, mejora la salud cardiovascular, reduce el estrés y aumenta la autoestima.</p></article></main>`,
+    blogHistoria: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Historia del Baile</h1><p>Descubre la fascinante historia del baile: orígenes, evolución y cómo llegó a Barcelona.</p></main>`,
+    blogHistoriaSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Historia de la Salsa en Barcelona: del Caribe y Nueva York a Farray's</h1><p>Descubre la fascinante historia de la salsa: desde sus orígenes en el Caribe y Nueva York hasta su llegada a Barcelona. Más de 60 años de ritmo.</p></article></main>`,
   },
   // Simplified content for other languages
   ca: {
@@ -706,6 +816,11 @@ const initialContent = {
     danzasUrbanas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Danses Urbanes a Barcelona</h1><p>Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat i més. Aprèn amb professors formats a Kingston, Seül, Nova York i L'Havana.</p></main>`,
     dancehall: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Dancehall a Barcelona</h1><p>Descobreix l'autèntic Dancehall de Jamaica a Barcelona. Energia, cultura i ritme a cada classe.</p></main>`,
     clasesParticulares: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes Particulars de Ball a Barcelona</h1><p>Aprèn al teu ritme amb un professor dedicat 100% a tu. Horaris flexibles, tots els estils de ball, progrés 3x més ràpid. La teva dansa, les teves regles.</p></main>`,
+    blog: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Blog de Ball</h1><p>Consells, tutorials i història del ball. Assessorament expert per millorar la teva tècnica i gaudir cada pas.</p></main>`,
+    blogLifestyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Lifestyle i Ball</h1><p>Descobreix com el ball transforma la teva vida. Articles sobre benestar, felicitat i estil de vida.</p></main>`,
+    blogBeneficiosSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">10 Beneficis de Ballar Salsa que Canviaran la Teva Vida</h1><p>Descobreix els 10 beneficis científicament demostrats de ballar salsa: crema 400 cal/hora, millora la salut cardiovascular, redueix l'estrès i augmenta l'autoestima.</p></article></main>`,
+    blogHistoria: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Història del Ball</h1><p>Descobreix la fascinant història del ball: orígens, evolució i com va arribar a Barcelona.</p></main>`,
+    blogHistoriaSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Història de la Salsa a Barcelona: del Carib i Nova York a Farray's</h1><p>Descobreix la fascinant història de la salsa: des dels seus orígens al Carib i Nova York fins a la seva arribada a Barcelona. Més de 60 anys de ritme.</p></article></main>`,
   },
   en: {
     home: `<main id="main-content"><h1 class="holographic-text text-5xl font-extrabold">FarRays Center</h1><p class="text-xl">Urban dance school in Barcelona. Learn Dancehall and more.</p></main>`,
@@ -719,6 +834,11 @@ const initialContent = {
     danzasUrbanas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Urban Dance Classes in Barcelona</h1><p>Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat and more. Learn with teachers trained in Kingston, Seoul, New York and Havana.</p></main>`,
     dancehall: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dancehall Classes in Barcelona</h1><p>Discover authentic Dancehall from Jamaica in Barcelona. Energy, culture and rhythm in every class.</p></main>`,
     clasesParticulares: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Private Dance Classes in Barcelona</h1><p>Learn at your pace with a teacher 100% dedicated to you. Flexible schedules, all dance styles, 3x faster progress. Your dance, your rules.</p></main>`,
+    blog: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Blog</h1><p>Tips, tutorials and dance history. Expert advice to improve your technique and enjoy every step.</p></main>`,
+    blogLifestyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Lifestyle & Dance</h1><p>Discover how dance transforms your life. Articles about wellbeing, happiness and lifestyle.</p></main>`,
+    blogBeneficiosSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">10 Benefits of Dancing Salsa That Will Change Your Life</h1><p>Discover the 10 scientifically proven benefits of dancing salsa: burn 400 cal/hour, improve cardiovascular health, reduce stress and boost self-esteem.</p></article></main>`,
+    blogHistoria: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance History</h1><p>Discover the fascinating history of dance: origins, evolution and how it arrived in Barcelona.</p></main>`,
+    blogHistoriaSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">History of Salsa in Barcelona: From the Caribbean and New York to Farray's</h1><p>Discover the fascinating history of salsa: from its origins in the Caribbean and New York to its arrival in Barcelona. Over 60 years of rhythm.</p></article></main>`,
   },
   fr: {
     home: `<main id="main-content"><h1 class="holographic-text text-5xl font-extrabold">FarRays Center</h1><p class="text-xl">École de danse urbaine à Barcelone. Apprenez le Dancehall et plus.</p></main>`,
@@ -732,6 +852,11 @@ const initialContent = {
     danzasUrbanas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Danses Urbaines à Barcelone</h1><p>Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat et plus. Apprenez avec des professeurs formés à Kingston, Séoul, New York et La Havane.</p></main>`,
     dancehall: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Dancehall à Barcelone</h1><p>Découvrez le véritable Dancehall de Jamaïque à Barcelone. Énergie, culture et rythme à chaque cours.</p></main>`,
     clasesParticulares: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours Particuliers de Danse à Barcelone</h1><p>Apprenez à votre rythme avec un professeur 100% dédié à vous. Horaires flexibles, tous les styles de danse, progrès 3x plus rapide. Votre danse, vos règles.</p></main>`,
+    blog: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Blog de Danse</h1><p>Conseils, tutoriels et histoire de la danse. Conseils experts pour améliorer votre technique et profiter de chaque pas.</p></main>`,
+    blogLifestyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Lifestyle et Danse</h1><p>Découvrez comment la danse transforme votre vie. Articles sur le bien-être, le bonheur et l'art de vivre.</p></main>`,
+    blogBeneficiosSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">10 Bienfaits de Danser la Salsa qui Changeront Votre Vie</h1><p>Découvrez les 10 bienfaits scientifiquement prouvés de danser la salsa : brûlez 400 cal/heure, améliorez la santé cardiovasculaire, réduisez le stress et boostez l'estime de soi.</p></article></main>`,
+    blogHistoria: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Histoire de la Danse</h1><p>Découvrez la fascinante histoire de la danse : origines, évolution et comment elle est arrivée à Barcelone.</p></main>`,
+    blogHistoriaSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Histoire de la Salsa à Barcelone : des Caraïbes et New York à Farray's</h1><p>Découvrez la fascinante histoire de la salsa : de ses origines caribéennes et new-yorkaises jusqu'à son arrivée à Barcelone. Plus de 60 ans de rythme.</p></article></main>`,
   },
 };
 
@@ -836,6 +961,16 @@ routes.forEach(route => {
     pagePath = 'clases/modern-jazz-barcelona';
   } else if (page === 'clasesParticulares') {
     pagePath = 'clases-particulares-baile';
+  } else if (page === 'blog') {
+    pagePath = 'blog';
+  } else if (page === 'blogLifestyle') {
+    pagePath = 'blog/lifestyle';
+  } else if (page === 'blogBeneficiosSalsa') {
+    pagePath = 'blog/lifestyle/beneficios-bailar-salsa';
+  } else if (page === 'blogHistoria') {
+    pagePath = 'blog/historia';
+  } else if (page === 'blogHistoriaSalsa') {
+    pagePath = 'blog/historia/historia-salsa-barcelona';
   }
 
   const hreflangLinks = [
