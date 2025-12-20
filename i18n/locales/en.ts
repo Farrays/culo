@@ -10750,7 +10750,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogHistoriaSalsa_section1Title:
     'Origins of Salsa: Afro-Cuban Roots, Diaspora and New York Explosion (1850–1970)',
   blogHistoriaSalsa_section1Content1:
-    'There is no [absolute consensus](https://es.wikipedia.org/wiki/Salsa_(g%C3%A9nero_musical)) on the exact birthplace of salsa, but its musical DNA was forged in **Cuba** between the late 19th and early 20th centuries. There, **Cuban son** (1890–1910) integrated African rhythms—from Yoruba and Congo traditions—with European instruments and structures, creating the foundation upon which modern salsa was built.',
+    'There is no [absolute consensus](https://es.wikipedia.org/wiki/Salsa_%28g%C3%A9nero_musical%29) on the exact birthplace of salsa, but its musical DNA was forged in **Cuba** between the late 19th and early 20th centuries. There, **Cuban son** (1890–1910) integrated African rhythms—from Yoruba and Congo traditions—with European instruments and structures, creating the foundation upon which modern salsa was built.',
   blogHistoriaSalsa_section1Content2:
     'Throughout the 20th century, [genres such as **guaracha**](https://los40.com/2025/08/01/origen-e-historia-de-la-musica-salsa-las-5-caracteristicas-que-lo-diferencian-del-resto/) (rhythmic and festive, in the 30s), **guaguancó** (a branch of Afro-Cuban rumba), **mambo** (Pérez Prado, 1940s) and **cha-cha-chá** (Enrique Jorrín, 1951) contributed to this musical crossover. Their recordings traveled across the Caribbean and Americas, especially to Puerto Rico, the Dominican Republic and New York.',
   blogHistoriaSalsa_section1Content3:
@@ -10779,7 +10779,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogHistoriaSalsa_teoria4:
     "**[Fania's commercial use](https://costaricasalsa.com/como-nace-la-palabra-salsa/) (1960s–1970s)**: titles like \"Salsa Na' Ma'\" or New York radio campaigns consolidated the term as an international brand",
   blogHistoriaSalsa_section2Debate:
-    '[Contemporary musicology](https://es.wikipedia.org/wiki/Salsa_(g%C3%A9nero_musical)) distinguishes two perspectives: the **academic view** (umbrella label for updated Afro-Cuban genres) and the **popular view** (a genre in its own right with sonic identity based on the 2-3 clave, piano montuno and call-and-response choruses).',
+    '[Contemporary musicology](https://es.wikipedia.org/wiki/Salsa_%28g%C3%A9nero_musical%29) distinguishes two perspectives: the **academic view** (umbrella label for updated Afro-Cuban genres) and the **popular view** (a genre in its own right with sonic identity based on the 2-3 clave, piano montuno and call-and-response choruses).',
   blogHistoriaSalsa_section2Callout:
     "At [Farray's International Dance Center](/en/clases), this debate comes alive in classes. Learning [Cuban salsa](/en/clases/salsa-cubana-barcelona)—rooted in son—versus line salsa, developed in New York, allows students to experience in their own bodies that tension between tradition and evolution.",
 

@@ -404,7 +404,8 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
             }}
             className={`flex items-center transition-colors duration-300 ${
               location.pathname.includes('/yunaisy-farray') ||
-              location.pathname.includes('/sobre-nosotros')
+              location.pathname.includes('/sobre-nosotros') ||
+              location.pathname.includes('/profesores-baile')
                 ? 'text-white'
                 : 'text-neutral/75 hover:text-white'
             }`}
@@ -426,21 +427,42 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
               className="absolute top-full left-0 mt-2 bg-black/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl shadow-primary-accent/10 overflow-hidden min-w-[240px] animate-fadeIn z-50"
             >
               <Link
-                to={`/${locale}/yunaisy-farray`}
-                onClick={closeAllDropdowns}
-                className="block px-4 py-3 text-sm font-medium text-neutral/90 hover:bg-white/10 hover:text-white transition-all duration-200"
-              >
-                {t('sitemapYunaisy')}
-              </Link>
-              <Link
                 to={`/${locale}/sobre-nosotros`}
                 onClick={closeAllDropdowns}
                 className="block px-4 py-3 text-sm font-medium text-neutral/90 hover:bg-white/10 hover:text-white transition-all duration-200"
               >
                 {t('headerAbout')}
               </Link>
+              <Link
+                to={`/${locale}/yunaisy-farray`}
+                onClick={closeAllDropdowns}
+                className="block px-4 py-3 text-sm font-medium text-neutral/90 hover:bg-white/10 hover:text-white transition-all duration-200"
+              >
+                {t('navYunaisy')}
+              </Link>
+              <Link
+                to={`/${locale}/profesores-baile-barcelona`}
+                onClick={closeAllDropdowns}
+                className="block px-4 py-3 text-sm font-medium text-neutral/90 hover:bg-white/10 hover:text-white transition-all duration-200"
+              >
+                {t('navProfesores')}
+              </Link>
             </div>
           )}
+        </li>
+
+        {/* Blog Link */}
+        <li>
+          <Link
+            to={`/${locale}/blog`}
+            className={`transition-colors duration-300 ${
+              location.pathname.includes('/blog')
+                ? 'text-white'
+                : 'text-neutral/75 hover:text-white'
+            }`}
+          >
+            {t('navBlog')}
+          </Link>
         </li>
       </ul>
     </nav>

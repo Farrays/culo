@@ -378,18 +378,6 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
             {openSections['about'] && (
               <div className="pl-4 space-y-1 border-l-2 border-primary-accent/30 ml-2">
                 <Link
-                  to={`/${locale}/yunaisy-farray`}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
-                    location.pathname === `/${locale}/yunaisy-farray`
-                      ? 'text-primary-accent'
-                      : 'text-neutral/90 hover:text-white'
-                  }`}
-                >
-                  {t('sitemapYunaisy')}
-                </Link>
-
-                <Link
                   to={`/${locale}/sobre-nosotros`}
                   onClick={() => setIsMenuOpen(false)}
                   className={`block py-2 text-base font-medium transition-colors duration-300 ${
@@ -400,6 +388,30 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                 >
                   {t('headerAbout')}
                 </Link>
+
+                <Link
+                  to={`/${locale}/yunaisy-farray`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                    location.pathname === `/${locale}/yunaisy-farray`
+                      ? 'text-primary-accent'
+                      : 'text-neutral/90 hover:text-white'
+                  }`}
+                >
+                  {t('navYunaisy')}
+                </Link>
+
+                <Link
+                  to={`/${locale}/profesores-baile-barcelona`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                    location.pathname === `/${locale}/profesores-baile-barcelona`
+                      ? 'text-primary-accent'
+                      : 'text-neutral/90 hover:text-white'
+                  }`}
+                >
+                  {t('navProfesores')}
+                </Link>
               </div>
             )}
           </div>
@@ -408,6 +420,46 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           <div className="border-b border-white/10 my-2" />
 
           {/* Direct Links */}
+          <Link
+            to={`/${locale}/blog`}
+            onClick={() => setIsMenuOpen(false)}
+            className={`py-3 text-lg font-semibold transition-colors duration-300 ${
+              location.pathname.includes('/blog')
+                ? 'text-primary-accent'
+                : 'text-white hover:text-primary-accent'
+            }`}
+          >
+            {t('navBlog')}
+          </Link>
+
+          {/* Divider */}
+          <div className="border-b border-white/10 my-2" />
+
+          {/* Quick Access Links */}
+          <Link
+            to={`/${locale}/horarios-clases-baile-barcelona`}
+            onClick={() => setIsMenuOpen(false)}
+            className={`py-3 text-lg font-semibold transition-colors duration-300 ${
+              location.pathname === `/${locale}/horarios-clases-baile-barcelona`
+                ? 'text-primary-accent'
+                : 'text-white hover:text-primary-accent'
+            }`}
+          >
+            {t('navSchedule')}
+          </Link>
+
+          <Link
+            to={`/${locale}/precios-clases-baile-barcelona`}
+            onClick={() => setIsMenuOpen(false)}
+            className={`py-3 text-lg font-semibold transition-colors duration-300 ${
+              location.pathname === `/${locale}/precios-clases-baile-barcelona`
+                ? 'text-primary-accent'
+                : 'text-white hover:text-primary-accent'
+            }`}
+          >
+            {t('navPricing')}
+          </Link>
+
           <Link
             to={`/${locale}/contacto`}
             onClick={() => setIsMenuOpen(false)}
@@ -418,18 +470,6 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
             }`}
           >
             {t('headerContact')}
-          </Link>
-
-          <Link
-            to={`/${locale}/preguntas-frecuentes`}
-            onClick={() => setIsMenuOpen(false)}
-            className={`py-3 text-lg font-semibold transition-colors duration-300 ${
-              location.pathname === `/${locale}/preguntas-frecuentes`
-                ? 'text-primary-accent'
-                : 'text-white hover:text-primary-accent'
-            }`}
-          >
-            {t('headerFAQ')}
           </Link>
         </nav>
 

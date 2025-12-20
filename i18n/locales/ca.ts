@@ -10898,7 +10898,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogHistoriaSalsa_section1Title:
     'Orígens de la Salsa: Arrels Afrocubanes, Diàspora i Explosió a Nova York (1850–1970)',
   blogHistoriaSalsa_section1Content1:
-    'No existeix [consens absolut](https://es.wikipedia.org/wiki/Salsa_(g%C3%A9nero_musical)) sobre el lloc exacte de naixement de la salsa, però el seu ADN musical es forja a **Cuba** entre finals del segle XIX i les primeres dècades del XX. Allà, el **son cubà** (1890–1910) va integrar ritmes africans —provinents de tradicions yoruba i congo— amb instruments i estructures de la música europea, creant la base sobre la qual es va construir la salsa moderna.',
+    'No existeix [consens absolut](https://es.wikipedia.org/wiki/Salsa_%28g%C3%A9nero_musical%29) sobre el lloc exacte de naixement de la salsa, però el seu ADN musical es forja a **Cuba** entre finals del segle XIX i les primeres dècades del XX. Allà, el **son cubà** (1890–1910) va integrar ritmes africans —provinents de tradicions yoruba i congo— amb instruments i estructures de la música europea, creant la base sobre la qual es va construir la salsa moderna.',
   blogHistoriaSalsa_section1Content2:
     'Al llarg del segle XX, [gèneres com la **guaracha**](https://los40.com/2025/08/01/origen-e-historia-de-la-musica-salsa-las-5-caracteristicas-que-lo-diferencian-del-resto/) (rítmica i festiva, als anys 30), el **guaguancó** (branca de la rumba afrocubana), el **mambo** (Pérez Prado, 1940s) i el **chachachá** (Enrique Jorrín, 1951) van contribuir a aquest encreuament musical. Les seves gravacions van viatjar pel Carib i Amèrica, especialment a Puerto Rico, República Dominicana i Nova York.',
   blogHistoriaSalsa_section1Content3:
@@ -10927,7 +10927,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogHistoriaSalsa_teoria4:
     '**[Ús comercial de Fania](https://costaricasalsa.com/como-nace-la-palabra-salsa/) (1960s–1970s)**: títols com "Salsa Na\' Ma\'" o campanyes radiofòniques novaiorqueses consoliden el terme com a marca internacional',
   blogHistoriaSalsa_section2Debate:
-    'La [musicologia contemporània](https://es.wikipedia.org/wiki/Salsa_(g%C3%A9nero_musical)) distingeix dues perspectives: la **visió acadèmica** (etiqueta paraigua per a gèneres afrocubans actualitzats) i la **visió popular** (gènere propi amb identitat sonora basada en la clau 2-3, el piano montuno i els cors de crida i resposta).',
+    'La [musicologia contemporània](https://es.wikipedia.org/wiki/Salsa_%28g%C3%A9nero_musical%29) distingeix dues perspectives: la **visió acadèmica** (etiqueta paraigua per a gèneres afrocubans actualitzats) i la **visió popular** (gènere propi amb identitat sonora basada en la clau 2-3, el piano montuno i els cors de crida i resposta).',
   blogHistoriaSalsa_section2Callout:
     "A [Farray's International Dance Center](/ca/clases), aquest debat cobra vida a les classes. Aprendre [salsa cubana](/ca/clases/salsa-cubana-barcelona) —centrada en arrels del son— davant salsa en línia, desenvolupada a Nova York, permet als alumnes viure al seu propi cos aquesta tensió entre tradició i evolució.",
 

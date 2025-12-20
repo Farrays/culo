@@ -46,6 +46,7 @@ const HeelsBarcelonaPage = lazy(() => import('./components/HeelsBarcelonaPage'))
 const SalsaLadyStylePage = lazy(() => import('./components/SalsaLadyStylePage'));
 const SalsaLadyStylePageV2 = lazy(() => import('./components/SalsaLadyStylePageV2'));
 const BachataLadyStylePage = lazy(() => import('./components/BachataLadyStylePage'));
+const BachataPage = lazy(() => import('./components/BachataPage'));
 
 // ===== DANCE CLASS PAGES USING UNIFIED TEMPLATE =====
 // Migrated from ~900 lines each to ~15 lines using FullDanceClassTemplate
@@ -385,6 +386,16 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <BachataLadyStylePage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/clases/bachata-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <BachataPage />
                 </>
               }
             />

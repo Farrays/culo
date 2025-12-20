@@ -12325,7 +12325,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   blogHistoriaSalsa_section1Title:
     'Orígenes de la Salsa: Raíces Afrocubanas, Diáspora y Explosión en Nueva York (1850–1970)',
   blogHistoriaSalsa_section1Content1:
-    'No existe [consenso absoluto](https://es.wikipedia.org/wiki/Salsa_(g%C3%A9nero_musical)) sobre el lugar exacto de nacimiento de la salsa, pero su ADN musical se forja en **Cuba** entre finales del siglo XIX y las primeras décadas del XX. Allí, el **son cubano** (1890–1910) integró ritmos africanos —provenientes de tradiciones yoruba y congo— con instrumentos y estructuras de la música europea, creando la base sobre la que se construyó la salsa moderna.',
+    'No existe [consenso absoluto](https://es.wikipedia.org/wiki/Salsa_%28g%C3%A9nero_musical%29) sobre el lugar exacto de nacimiento de la salsa, pero su ADN musical se forja en **Cuba** entre finales del siglo XIX y las primeras décadas del XX. Allí, el **son cubano** (1890–1910) integró ritmos africanos —provenientes de tradiciones yoruba y congo— con instrumentos y estructuras de la música europea, creando la base sobre la que se construyó la salsa moderna.',
   blogHistoriaSalsa_section1Content2:
     'A lo largo del siglo XX, [géneros como la **guaracha**](https://los40.com/2025/08/01/origen-e-historia-de-la-musica-salsa-las-5-caracteristicas-que-lo-diferencian-del-resto/) (rítmica y festiva, en los años 30), el **guaguancó** (rama de la rumba afro-cubana), el **mambo** (Pérez Prado, 1940s) y el **chachachá** (Enrique Jorrín, 1951) contribuyeron a este cruce musical. Sus grabaciones viajaron por el Caribe y América, especialmente a Puerto Rico, República Dominicana y Nueva York.',
   blogHistoriaSalsa_section1Content3:
@@ -12354,7 +12354,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   blogHistoriaSalsa_teoria4:
     '**[Uso comercial de Fania](https://costaricasalsa.com/como-nace-la-palabra-salsa/) (1960s–1970s)**: títulos como "Salsa Na\' Ma\'" o campañas radiofónicas neoyorquinas consolidan el término como marca internacional',
   blogHistoriaSalsa_section2Debate:
-    'La [musicología contemporánea](https://es.wikipedia.org/wiki/Salsa_(g%C3%A9nero_musical)) distingue dos perspectivas: la **visión académica** (etiqueta paraguas para géneros afrocubanos actualizados) y la **visión popular** (género propio con identidad sonora basada en la clave 2-3, el piano montuno y los coros responsoriales).',
+    'La [musicología contemporánea](https://es.wikipedia.org/wiki/Salsa_%28g%C3%A9nero_musical%29) distingue dos perspectivas: la **visión académica** (etiqueta paraguas para géneros afrocubanos actualizados) y la **visión popular** (género propio con identidad sonora basada en la clave 2-3, el piano montuno y los coros responsoriales).',
   blogHistoriaSalsa_section2Callout:
     "En [Farray's International Dance Center](/es/clases), este debate cobra vida en las clases. Aprender [salsa cubana](/es/clases/salsa-cubana-barcelona) —centrada en raíces del son— frente a salsa en línea, desarrollada en Nueva York, permite a los alumnos vivir en su propio cuerpo esa tensión entre tradición y evolución.",
 
@@ -12507,4 +12507,278 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   teachersPageCtaSubtitle:
     'Únete a nuestra familia y descubre por qué más de 15.000 estudiantes han confiado en nosotros.',
   teachersPageCtaClasses: 'Ver Clases de Baile',
+
+  // ==========================================
+  // BACHATA SENSUAL BARCELONA PAGE (bachataV3)
+  // ==========================================
+
+  // SEO & Meta
+  bachataV3PageTitle: 'Clases de Bachata Sensual en Barcelona | Aprende con Campeones Mundiales',
+  bachataV3MetaDescription:
+    'Aprende bachata sensual en Barcelona con Mathias Font y Eugenia Trujillo, campeones mundiales de Salsa LA. Clases para todos los niveles: conexión, ondulaciones, musicalidad. Academia CID-UNESCO cerca de Plaza España.',
+
+  // Breadcrumb (4 niveles)
+  bachataV3BreadcrumbHome: 'Inicio',
+  bachataV3BreadcrumbClasses: 'Clases de Baile',
+  bachataV3BreadcrumbLatin: 'Salsa y Bachata',
+  bachataV3BreadcrumbCurrent: 'Bachata Sensual',
+
+  // Hero
+  bachataV3HeroTitle: 'Clases de Bachata Sensual en Barcelona',
+  bachataV3HeroSubtitle: 'Aprende con Campeones Mundiales el Arte de la Conexión',
+  bachataV3HeroDesc:
+    'Descubre la bachata sensual de la mano de Mathias Font y Eugenia Trujillo, campeones mundiales. Aprende ondulaciones, conexión en pareja y musicalidad en una academia acreditada por CID-UNESCO.',
+  bachataV3HeroLocation: 'Calle Entença 100, Barcelona',
+  bachataV3HeroStudents: '+15.000 estudiantes formados',
+  bachataV3CTA1: 'Hazte Socio Ahora',
+  bachataV3CTA1Subtext: 'Quedan pocas plazas este mes',
+  bachataV3CTA2: 'Reserva tu Clase de Prueba',
+  bachataV3CTA2Subtext: 'Válido por tiempo limitado',
+  bachataV3CTAGroup: 'Clase de Prueba',
+
+  // What Is Section
+  bachataV3WhatIsTitle: '¿Qué es la Bachata Sensual y por qué aprenderla en Barcelona?',
+  bachataV3WhatIsP1:
+    'La bachata sensual es una evolución moderna del baile dominicano tradicional que incorpora ondulaciones corporales, conexión profunda con tu pareja y una interpretación más íntima de la música. A diferencia de la bachata dominicana clásica, el estilo sensual se centra en el body movement, los dips y las olas que fluyen entre líder y seguidor.',
+  bachataV3WhatIsP2:
+    "En Barcelona, la escena de bachata sensual ha crecido enormemente en los últimos años. En Farray's Center contamos con Mathias Font y Eugenia Trujillo, campeones mundiales de Salsa LA, que aportan su técnica impecable y su experiencia internacional a cada clase.",
+  bachataV3WhatIsP3:
+    'Nuestro enfoque integral va más allá de los pasos: trabajamos la conexión, la musicalidad y la expresión corporal. No solo aprenderás a bailar bachata, sino a comunicarte con tu pareja a través del movimiento.',
+  bachataV3WhatIsP4:
+    'Ya sea que busques bailar en sociales, mejorar tu vida en pareja o simplemente disfrutar de un baile sensual y divertido, la bachata sensual te ofrece todo eso y más.',
+  bachataV3WhatIsQuestionTitle: '¿Por qué elegir bachata sensual?',
+  bachataV3WhatIsQuestionAnswer:
+    'La bachata sensual te permite expresar emociones a través del baile de una forma única. Es accesible para principiantes, increíblemente social y te conecta con una comunidad activa de bailarines en Barcelona y en todo el mundo.',
+
+  // Schedule Section
+  bachataV3ScheduleTitle: 'Horarios de Bachata Sensual en Barcelona',
+  bachataV3ScheduleSubtitle:
+    'Clases todos los días de la semana. Elige el nivel y horario que mejor se adapte a ti.',
+
+  // Levels
+  bachataV3LevelsTitle: 'Niveles de Bachata Sensual',
+  bachataV3LevelBeginnerTitle: 'Principiantes',
+  bachataV3LevelBeginnerDesc:
+    'Nunca has bailado bachata o tienes muy poca experiencia. Aprenderás el paso básico, el ritmo, las primeras figuras y cómo conectar con tu pareja. Sin presión, a tu ritmo.',
+  bachataV3LevelBasicTitle: 'Básico',
+  bachataV3LevelBasicDesc:
+    'Ya dominas el paso básico y algunas figuras. Es momento de trabajar ondulaciones iniciales, giros simples, dips básicos y empezar a desarrollar tu estilo personal.',
+  bachataV3LevelIntermediateTitle: 'Intermedio',
+  bachataV3LevelIntermediateDesc:
+    'Bailas con fluidez y quieres perfeccionar. Trabajamos ondas corporales complejas, combinaciones de figuras, musicalidad avanzada y técnica de guía/seguimiento refinada.',
+  bachataV3LevelAdvancedTitle: 'Avanzado',
+  bachataV3LevelAdvancedDesc:
+    'Dominas la técnica y buscas el siguiente nivel. Figuras complejas, interpretación musical profunda, improvisación y estilo artístico personal. Para bailadores comprometidos.',
+
+  // Teachers Section
+  bachataV3TeachersTitle: 'Tus Profesores de Bachata Sensual',
+  bachataV3TeachersSubtitle: 'Aprende con campeones mundiales y talentos emergentes de Barcelona',
+  bachataV3Teacher1Name: 'Mathias Font',
+  bachataV3Teacher1Specialty: 'Bachata Sensual | Musicalidad | Conexión en Pareja',
+  bachataV3Teacher1Bio:
+    'Junto a su pareja de baile Eugenia Trujillo, Mathias es campeón mundial de Salsa LA. Especialista en bachata sensual, aporta una técnica impecable y un enfoque único en la musicalidad y la dinamización de las clases.',
+  bachataV3Teacher2Name: 'Eugenia Trujillo',
+  bachataV3Teacher2Specialty: 'Bachata Sensual | Campeona Mundial Salsa LA',
+  bachataV3Teacher2Bio:
+    "Maestra y bailarina internacional uruguaya, profesora en Farray's desde hace 4 años. Campeona mundial de Salsa LA junto a Mathias Font. Su carisma y cercanía la hacen una de las profesoras más queridas.",
+  bachataV3Teacher3Name: 'Carlos Canto',
+  bachataV3Teacher3Specialty: 'Bachata Sensual',
+  bachataV3Teacher3Bio:
+    "Talento emergente con don de gentes que ha demostrado capacidad para conectar con sus alumnos. Cuenta con una gran comunidad de seguidores en Farray's y un estilo fresco y accesible.",
+  bachataV3Teacher4Name: 'Noemí',
+  bachataV3Teacher4Specialty: 'Bachata Sensual | Bachata Lady Style',
+  bachataV3Teacher4Bio:
+    "Talento emergente que Farray's apostó fuerte. Pareja de Carlos Canto, están floreciendo como una de las parejas más prometedoras de la escena de Barcelona. Sus alumnos se convierten en fans fieles.",
+  bachataV3Teacher5Name: 'Juan Álvarez',
+  bachataV3Teacher5Specialty: 'Bachata Sensual',
+  bachataV3Teacher5Bio:
+    'Talento emergente en la escena de Barcelona. Cautiva por su carisma y capacidad de interpretación musical. Su formación en danza contemporánea aporta un estilo único a sus clases.',
+  bachataV3TeachersClosing:
+    'Nuestros profesores no solo enseñan pasos: te transmiten la pasión por el baile y te acompañan en cada etapa de tu evolución.',
+
+  // Prepare Class Section
+  bachataV3PrepareTitle: 'Prepara tu Primera Clase de Bachata Sensual',
+  bachataV3PrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
+  bachataV3PrepareItem1: 'Ropa cómoda que permita movimiento (evita jeans muy ajustados)',
+  bachataV3PrepareItem2: 'Zapatos de baile o zapatillas con suela lisa (no running)',
+  bachataV3PrepareItem3: 'Botella de agua para hidratarte',
+  bachataV3PrepareItem4: 'Toalla pequeña - ¡vas a sudar bailando!',
+  bachataV3PrepareItem5: 'Actitud abierta y ganas de conectar con tu pareja de baile',
+  bachataV3PrepareBeforeItem1: 'Llega 10-15 minutos antes para cambiarte y relajarte',
+  bachataV3PrepareBeforeItem2: 'Evita comer pesado 2 horas antes de la clase',
+  bachataV3PrepareBeforeItem3: 'Ven con la mente abierta a conocer gente nueva',
+  bachataV3PrepareAvoidItem1: 'Joyas que puedan molestar al bailar en pareja',
+  bachataV3PrepareAvoidItem2: 'Perfumes muy fuertes (estarás cerca de tu pareja)',
+  bachataV3PrepareAvoidItem3: 'Miedo a equivocarte - aquí todos aprendemos juntos',
+  bachataV3PrepareTeacherTip: 'Consejo de Mathias y Eugenia:',
+  bachataV3PrepareTeacherQuote:
+    'La bachata sensual es sobre conexión, no sobre perfección. Disfruta el proceso, escucha la música y deja que tu cuerpo se exprese. Los pasos vendrán solos.',
+
+  // Identification Section (¿Te identificas?)
+  bachataV3IdentifyTitle: '¿Te identificas con esto?',
+  bachataV3Identify1: 'Quieres aprender a bailar bachata pero no sabes por dónde empezar',
+  bachataV3Identify2: 'Ya bailas pero sientes que te falta conexión y fluidez con tu pareja',
+  bachataV3Identify3: 'Ves a otras parejas hacer ondas y dips increíbles y quieres aprender',
+  bachataV3Identify4: 'Buscas una actividad para hacer en pareja que os conecte de verdad',
+  bachataV3Identify5: 'Quieres mejorar tu vida social y conocer gente en los sociales de bachata',
+  bachataV3Identify6: 'Te gusta la música latina y quieres expresarte a través del baile',
+  bachataV3IdentifyTransition:
+    'Si te identificas con alguno de estos puntos, las clases de bachata sensual son exactamente lo que necesitas.',
+  bachataV3NeedEnrollTitle: "Necesitas Aprender Bachata Sensual en Farray's Center",
+  bachataV3IdentifyAgitate1:
+    'Sin una metodología clara, puedes pasar años sin mejorar realmente. Muchas escuelas enseñan pasos sueltos sin conexión.',
+  bachataV3IdentifySolution:
+    "En Farray's te enseñamos con campeones mundiales, trabajando técnica, musicalidad y conexión desde el primer día.",
+  bachataV3IdentifyClosing:
+    'Tu transformación empieza el día que decides dar el primer paso. Y ese día puede ser hoy.',
+
+  // Transformation Section (Antes/Después)
+  bachataV3TransformTitle: 'Tu Transformación con Bachata Sensual',
+  bachataV3Transform1Title: 'Ritmo y Timing',
+  bachataV3Transform1Desc: 'De perder el tiempo a bailar siempre en compás',
+  bachataV3Transform2Title: 'Ondulaciones',
+  bachataV3Transform2Desc: 'De movimientos rígidos a ondas fluidas y naturales',
+  bachataV3Transform3Title: 'Conexión en Pareja',
+  bachataV3Transform3Desc: 'De bailar solo a comunicarte con el cuerpo',
+  bachataV3Transform4Title: 'Guía y Seguimiento',
+  bachataV3Transform4Desc: 'De tirar/empujar a guiar con el torso y la intención',
+  bachataV3Transform5Title: 'Musicalidad',
+  bachataV3Transform5Desc: 'De ignorar la música a interpretar cada acento',
+  bachataV3Transform6Title: 'Confianza',
+  bachataV3Transform6Desc: 'De miedo a sacar a bailar a sentirte cómodo en cualquier social',
+  bachataV3TransformCTA: 'Empieza tu transformación hoy',
+
+  // Why Choose Section
+  bachataV3WhyChooseTitle: "¿Por qué elegir Farray's para aprender Bachata Sensual?",
+  bachataV3WhyChoose1Title: 'Campeones Mundiales como Profesores',
+  bachataV3WhyChoose1Desc:
+    'Mathias Font y Eugenia Trujillo, campeones mundiales de Salsa LA, te enseñan bachata sensual con la misma técnica que los llevó a lo más alto.',
+  bachataV3WhyChoose2Title: 'Metodología Integral',
+  bachataV3WhyChoose2Desc:
+    'No solo pasos: trabajamos conexión, musicalidad, expresión corporal y técnica de guía/seguimiento. Formación completa.',
+  bachataV3WhyChoose3Title: 'Academia Certificada CID-UNESCO',
+  bachataV3WhyChoose3Desc:
+    'La única academia de bachata sensual en Barcelona avalada por el Consejo Internacional de la Danza de la UNESCO.',
+  bachataV3WhyChoose4Title: 'Comunidad Activa',
+  bachataV3WhyChoose4Desc:
+    'Sociales, prácticas, viajes a congresos internacionales. No solo aprendes a bailar, te unes a una familia de bailadores.',
+  bachataV3WhyChoose5Title: 'Instalaciones Premium',
+  bachataV3WhyChoose5Desc:
+    'Más de 700 m², salas climatizadas, suelo profesional de danza, espejos y sonido de alta calidad.',
+  bachataV3WhyChoose6Title: 'Ubicación Céntrica',
+  bachataV3WhyChoose6Desc:
+    'Calle Entença 100, a 5 minutos andando de Plaza España y Sants Estació. Fácil acceso en metro, tren y bus.',
+  bachataV3WhyChoose7Title: 'Progresión por Niveles Reales',
+  bachataV3WhyChoose7Desc:
+    '4 niveles diferenciados (Principiantes, Básico, Intermedio, Avanzado) para que siempre estés con gente de tu nivel.',
+
+  // Why Today Section
+  bachataV3WhyTodayFullTitle: '¿Por qué empezar a bailar bachata sensual hoy?',
+  bachataV3WhyToday1:
+    'Cada día que pasa es un día que podrías estar bailando, conectando y disfrutando. La bachata sensual no requiere experiencia previa: empezamos desde cero.',
+  bachataV3WhyToday2:
+    'Nuestras clases de principiantes se llenan rápido, especialmente las de Carlos y Noemí los jueves. Reservar tu plaza ahora te garantiza empezar este mes.',
+  bachataV3WhyToday3:
+    'Los sociales de bachata en Barcelona son cada fin de semana. En 3 meses podrías estar bailando con confianza en cualquiera de ellos.',
+  bachataV3WhyTodayClosing1: 'El mejor momento para empezar fue hace un año.',
+  bachataV3WhyTodayClosing2: 'El segundo mejor momento es ahora.',
+
+  // Logos Section
+  bachataV3LogosTitle: 'Nos has podido ver en...',
+  bachataV3LogosIntlFestivalsText: 'y en festivales internacionales de bachata y salsa',
+
+  // Cultural History Section
+  bachataV3CulturalHistoryTitle: 'Historia y Origen de la Bachata Sensual',
+  bachataV3CulturalShort:
+    'La bachata nació en República Dominicana en los años 60 como música de guitarra de los barrios populares. La bachata sensual es una evolución moderna que fusiona el romanticismo dominicano con influencias del zouk y la danza contemporánea.',
+  bachataV3CulturalFull: `### Del Barrio Dominicano a las Pistas de Todo el Mundo
+
+La bachata tiene sus raíces en República Dominicana, donde nació en los años 60 como la música de los barrios humildes. Durante décadas fue marginada por las clases altas, considerada música de cantina. Todo cambió en los años 90 cuando artistas como Juan Luis Guerra la llevaron al mainstream internacional.
+
+**"La bachata nació en República Dominicana (años 60): música de guitarra de los barrios populares que evolucionó hasta conquistar el mundo."**
+
+### La Revolución de la Bachata Sensual
+
+En los años 2000, bailarines europeos (especialmente en España) comenzaron a fusionar la bachata tradicional con elementos del zouk, la danza contemporánea y el tango. Nació así la bachata sensual: un estilo que prioriza las ondulaciones corporales, la conexión íntima y la interpretación musical.
+
+**"Bachata Sensual: evolución moderna (años 2000) que fusiona bachata dominicana con zouk, contemporáneo y tango. Prioriza ondulaciones, conexión y musicalidad."**
+
+### Bachata Sensual vs Bachata Dominicana
+
+La bachata dominicana tradicional se caracteriza por juego de pies rápido, movimientos de cadera marcados y un estilo más "de calle". La bachata sensual, en cambio, enfatiza el body movement, las olas entre los bailarines, los dips y una conexión más cercana.
+
+**"Diferencia clave: Dominicana = juego de pies y cadera. Sensual = ondulaciones, dips y conexión íntima."**
+
+### Bachata Sensual en Barcelona
+
+Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sensual. Festivales, congresos y una comunidad activa de bailarines hacen de la ciudad un destino obligado para los amantes del baile. En Farray's Center, enseñamos bachata sensual con profesores de nivel internacional.
+
+**"Farray's International Dance Center: bachata sensual con campeones mundiales, certificación CID-UNESCO, +15.000 estudiantes formados."**`,
+
+  // FAQs (10 preguntas SEO-optimizadas)
+  bachataV3FaqTitle: 'Preguntas Frecuentes sobre Bachata Sensual en Barcelona',
+  bachataV3FaqQ1: '¿Qué es la bachata sensual y en qué se diferencia de otros estilos de bachata?',
+  bachataV3FaqA1:
+    "La bachata sensual es una evolución moderna de la bachata dominicana que incorpora ondulaciones corporales (body waves), dips, y una conexión más íntima entre los bailarines. A diferencia de la bachata dominicana tradicional (centrada en juego de pies rápido) o la bachata social (más básica y social), la sensual prioriza el body movement y la interpretación musical. En Farray's enseñamos principalmente bachata sensual, aunque en nuestras FAQs también cubrimos bachata social y bachata fusion para quienes buscan esos estilos.",
+  bachataV3FaqQ2: "¿Necesito pareja para aprender bachata sensual en Farray's?",
+  bachataV3FaqA2:
+    'No, no necesitas venir con pareja. En nuestras clases rotamos constantemente para que todos tengan oportunidad de bailar con diferentes compañeros. Esto te ayuda a desarrollar tu técnica de conexión y a sentirte cómodo bailando con cualquier persona. Muchos de nuestros alumnos vienen solos y encuentran compañeros de baile en clase.',
+  bachataV3FaqQ3: '¿Cuál es la diferencia entre bachata sensual y bachata dominicana?',
+  bachataV3FaqA3:
+    'La bachata dominicana es el estilo original de República Dominicana: juego de pies rápido, movimientos de cadera marcados, estilo más "callejero" y tradicional. La bachata sensual es una evolución moderna que fusiona la bachata con elementos de zouk y contemporáneo: ondulaciones corporales, dips, conexión cercana y body movement. Ambos estilos comparten la misma música, pero la forma de bailar es diferente. En Farray\'s nos especializamos en bachata sensual.',
+  bachataV3FaqQ4: '¿Cuánto tiempo se tarda en aprender a bailar bachata sensual?',
+  bachataV3FaqA4:
+    'Depende de tu dedicación, pero con práctica constante (2 clases por semana) puedes bailar con confianza en sociales en 3-4 meses. Para dominar las ondulaciones complejas, la musicalidad avanzada y las figuras elaboradas, recomendamos al menos 12-18 meses. Lo importante es disfrutar el proceso: desde la primera clase ya estarás bailando y conectando con tu pareja.',
+  bachataV3FaqQ5: '¿Qué nivel de bachata necesito para bailar en fiestas sociales?',
+  bachataV3FaqA5:
+    'Con nuestro nivel Básico (3-6 meses de formación) ya puedes disfrutar de los sociales de bachata en Barcelona. Tendrás el paso básico dominado, algunas figuras, giros simples y la capacidad de conectar con tu pareja. Muchos alumnos empiezan a ir a sociales desde el nivel Principiantes para practicar y ganar confianza. La bachata social es precisamente eso: bailar para disfrutar, no para demostrar.',
+  bachataV3FaqQ6: '¿Se puede aprender bachata sensual sin experiencia previa en baile?',
+  bachataV3FaqA6:
+    'Absolutamente sí. Más del 70% de nuestros alumnos de bachata empiezan sin ninguna experiencia previa en baile. Nuestro nivel Principiantes está diseñado específicamente para personas que nunca han bailado: empezamos desde el paso básico, el ritmo, y cómo conectar con tu pareja. No necesitas "tener ritmo" ni "saber moverte": eso te lo enseñamos nosotros.',
+  bachataV3FaqQ7: "¿Qué es la bachata fusion y la enseñan en Farray's?",
+  bachataV3FaqA7:
+    "La bachata fusion es un estilo que mezcla bachata con otros géneros de baile como hip hop, contemporáneo, o dancehall. Es un estilo más experimental y creativo. En Farray's nos centramos en bachata sensual pura, aunque nuestros profesores (especialmente Juan Álvarez, con formación en contemporáneo) incorporan elementos de fusion en niveles avanzados. Si buscas bachata fusion específicamente, consúltanos para opciones.",
+  bachataV3FaqQ8: "¿Cuál es el método de enseñanza de bachata en Farray's?",
+  bachataV3FaqA8:
+    "En Farray's aplicamos un enfoque integral que va más allá de los pasos. Trabajamos: 1) Técnica corporal (ondulaciones, aislaciones), 2) Conexión en pareja (guía con el cuerpo, no con fuerza), 3) Musicalidad (interpretar acentos, pausas), 4) Expresión (tu estilo personal). Nuestros profesores son campeones mundiales (Mathias y Eugenia) y talentos emergentes (Carlos, Noemí, Juan) que combinan excelencia técnica con pedagogía accesible.",
+  bachataV3FaqQ9: "¿Hay eventos sociales de bachata en Farray's?",
+  bachataV3FaqA9:
+    "Sí, organizamos regularmente prácticas internas, sociales temáticos y eventos especiales. Además, la comunidad de bachata de Barcelona tiene sociales cada fin de semana en diferentes locales. Como alumno de Farray's, te mantenemos informado de todos los eventos y muchos alumnos van juntos en grupo. También organizamos viajes a congresos internacionales de bachata.",
+  bachataV3FaqQ10: '¿Cuánto cuestan las clases de bachata sensual en Barcelona?',
+  bachataV3FaqA10:
+    'Ofrecemos diferentes modalidades: mensualidad con acceso a múltiples clases, bonos de horas, y clases sueltas. Según la temporada, la clase de prueba puede ser gratuita o tener un precio simbólico de bienvenida. Reserva tu clase de prueba para conocernos y te explicaremos todas las opciones. Consulta nuestra página de precios para información detallada.',
+
+  // Nearby Areas
+  bachataV3NearbyTitle: 'Clases de Bachata Sensual cerca de ti',
+  bachataV3NearbyDesc:
+    "Somos una de las academias de referencia para clases de bachata sensual en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnos de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en bachata con profesores de nivel internacional.",
+  bachataV3NearbySearchText: 'Si buscas clases de bachata sensual en Barcelona, estás a:',
+  bachataV3NearbyMetro:
+    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
+
+  // Final CTA
+  bachataV3FinalCTATitle: 'Tu Primera Clase de Bachata Sensual Te Espera',
+  bachataV3FinalCTASubtitle: 'Aprende con Campeones Mundiales en Barcelona',
+  bachataV3FinalCTADesc:
+    'No importa si vienes solo o en pareja. Si nunca has bailado o si ya tienes experiencia. Lo importante es que des el primer paso.\n\nCon Mathias, Eugenia, Carlos, Noemí y Juan aprenderás bachata sensual de verdad: técnica, conexión, musicalidad y mucha diversión.',
+  bachataV3FinalCTAFunny: '¿Preparado para hacer ondas? 🌊',
+
+  // ===== GEO OPTIMIZATION: Citable Statistics for Bachata Sensual =====
+
+  bachataV3CitableDefinicion:
+    'Bachata Sensual: evolución moderna de la bachata dominicana que incorpora ondulaciones corporales (body waves), dips, y conexión íntima entre bailarines. Fusiona bachata tradicional con zouk y danza contemporánea.',
+  bachataV3CitableOrigen:
+    'La bachata nació en República Dominicana (años 60) como música de guitarra de barrios populares. La bachata sensual surgió en Europa (años 2000) fusionando bachata con zouk y contemporáneo.',
+  bachataV3CitableSensualVsDominicana:
+    'Diferencia clave: Bachata Dominicana = juego de pies rápido, cadera marcada, estilo tradicional. Bachata Sensual = ondulaciones, body waves, dips, conexión cercana.',
+  bachataV3CitableConexion:
+    'En bachata sensual, la conexión en pareja se logra a través del torso, no de las manos. El líder guía con su cuerpo, el seguidor responde con ondas y movimiento fluido.',
+  bachataV3CitableMetodologia:
+    "Farray's International Dance Center enseña bachata sensual con campeones mundiales (Mathias Font & Eugenia Trujillo), certificación CID-UNESCO, y un enfoque integral: técnica + musicalidad + conexión.",
+  bachataV3CitableFact1:
+    'Una clase activa de bachata sensual quema entre 300-400 calorías por hora, combinando ejercicio cardiovascular con trabajo de flexibilidad y coordinación.',
+  bachataV3CitableFact2:
+    "Mathias Font y Eugenia Trujillo, profesores de bachata sensual en Farray's, son campeones mundiales de Salsa LA.",
+  bachataV3CitableFact3:
+    "Farray's International Dance Center Barcelona: academia certificada CID-UNESCO con más de 15.000 estudiantes formados y valoración 4.9/5 en Google.",
 };

@@ -240,6 +240,26 @@ const Header: React.FC = () => {
         },
       ],
     },
+    services: {
+      path: `/${locale}/servicios-baile`,
+      textKey: 'navServices',
+      submenu: [
+        { path: `/${locale}/clases-particulares-baile`, textKey: 'navClasesParticulares' },
+        { path: `/${locale}/alquiler-salas-baile-barcelona`, textKey: 'navAlquilerSalas' },
+        { path: `/${locale}/estudio-grabacion-barcelona`, textKey: 'navEstudioGrabacion' },
+        { path: `/${locale}/regala-baile`, textKey: 'navRegalaBaile' },
+      ],
+    },
+    aboutUs: {
+      path: `/${locale}/sobre-nosotros`,
+      textKey: 'navAboutUs',
+      submenu: [
+        { path: `/${locale}/yunaisy-farray`, textKey: 'navYunaisy' },
+        { path: `/${locale}/profesores-baile-barcelona`, textKey: 'navProfesores' },
+        { path: `/${locale}/instalaciones-escuela-baile-barcelona`, textKey: 'navInstalaciones' },
+      ],
+    },
+    blog: { path: `/${locale}/blog`, textKey: 'navBlog' },
   };
 
   return (
@@ -285,6 +305,14 @@ const Header: React.FC = () => {
 
           {/* Right Actions */}
           <div className="hidden md:flex items-center space-x-6 flex-1 justify-end">
+            {/* Horarios Link */}
+            <Link
+              to={`/${locale}/horarios-clases-baile-barcelona`}
+              className="transition-colors duration-300 text-sm font-medium text-neutral/75 hover:text-white"
+            >
+              {t('navSchedule')}
+            </Link>
+
             {/* Pricing Link */}
             <Link
               to={`/${locale}/precios-clases-baile-barcelona`}
@@ -293,28 +321,12 @@ const Header: React.FC = () => {
               {t('navPricing')}
             </Link>
 
-            {/* Calendar Link */}
-            <Link
-              to={`/${locale}/calendario`}
-              className="transition-colors duration-300 text-sm font-medium text-neutral/75 hover:text-white"
-            >
-              {t('navCalendar')}
-            </Link>
-
             {/* Contact Link */}
             <Link
               to={`/${locale}/contacto`}
               className="transition-colors duration-300 text-sm font-medium text-neutral/75 hover:text-white"
             >
               {t('headerContact')}
-            </Link>
-
-            {/* FAQ Link */}
-            <Link
-              to={`/${locale}/preguntas-frecuentes`}
-              className="transition-colors duration-300 text-sm font-medium text-neutral/75 hover:text-white"
-            >
-              {t('headerFAQ')}
             </Link>
 
             {/* Language Selector */}

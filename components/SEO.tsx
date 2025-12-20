@@ -35,6 +35,7 @@ import { OrganizationSchema } from './SchemaMarkup';
  */
 const PATH_TO_PAGE: ReadonlyArray<readonly [string, string]> = [
   // Dance class pages (specific styles first - longer paths)
+  ['/clases/bachata-barcelona', 'bachata'],
   ['/clases/folklore-cubano', 'folkloreCubano'],
   ['/clases/salsa-cubana-barcelona', 'salsaCubana'],
   ['/clases/salsa-lady-style-barcelona', 'salsaLadyStyle'],
@@ -108,6 +109,7 @@ const SEO: React.FC = () => {
     salsaBachata: 'clases/salsa-bachata-barcelona',
     salsaCubana: 'clases/salsa-cubana-barcelona',
     salsaLadyStyle: 'clases/salsa-lady-style-barcelona',
+    bachata: 'clases/bachata-barcelona',
     folkloreCubano: 'clases/folklore-cubano',
     danzasUrbanas: 'clases/danzas-urbanas-barcelona',
     dancehall: 'clases/dancehall-barcelona',
@@ -169,6 +171,11 @@ const SEO: React.FC = () => {
     salsaLadyStyle: {
       titleKey: 'salsaLadyPageTitle',
       descKey: 'salsaLadyMetaDescription',
+      image: `${baseUrl}/images/og-classes.jpg`,
+    },
+    bachata: {
+      titleKey: 'bachataV3PageTitle',
+      descKey: 'bachataV3MetaDescription',
       image: `${baseUrl}/images/og-classes.jpg`,
     },
     danzasUrbanas: {

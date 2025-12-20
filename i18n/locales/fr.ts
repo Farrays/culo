@@ -11070,7 +11070,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogHistoriaSalsa_section1Title:
     'Origines de la Salsa : Racines Afro-cubaines, Diaspora et Explosion à New York (1850–1970)',
   blogHistoriaSalsa_section1Content1:
-    "Il n'existe pas de [consensus absolu](https://es.wikipedia.org/wiki/Salsa_(g%C3%A9nero_musical)) sur le lieu exact de naissance de la salsa, mais son ADN musical se forge à **Cuba** entre la fin du XIXe siècle et les premières décennies du XXe. Là, le **son cubain** (1890–1910) a intégré des rythmes africains —provenant des traditions yoruba et congo— avec des instruments et structures de la musique européenne, créant la base sur laquelle la salsa moderne s'est construite.",
+    "Il n'existe pas de [consensus absolu](https://es.wikipedia.org/wiki/Salsa_%28g%C3%A9nero_musical%29) sur le lieu exact de naissance de la salsa, mais son ADN musical se forge à **Cuba** entre la fin du XIXe siècle et les premières décennies du XXe. Là, le **son cubain** (1890–1910) a intégré des rythmes africains —provenant des traditions yoruba et congo— avec des instruments et structures de la musique européenne, créant la base sur laquelle la salsa moderne s'est construite.",
   blogHistoriaSalsa_section1Content2:
     'Tout au long du XXe siècle, [des genres comme la **guaracha**](https://los40.com/2025/08/01/origen-e-historia-de-la-musica-salsa-las-5-caracteristicas-que-lo-diferencian-del-resto/) (rythmique et festive, dans les années 30), le **guaguancó** (branche de la rumba afro-cubaine), le **mambo** (Pérez Prado, 1940s) et le **cha-cha-chá** (Enrique Jorrín, 1951) ont contribué à ce croisement musical. Leurs enregistrements ont voyagé dans les Caraïbes et les Amériques, notamment à Porto Rico, en République Dominicaine et à New York.',
   blogHistoriaSalsa_section1Content3:
@@ -11099,7 +11099,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogHistoriaSalsa_teoria4:
     '**[Usage commercial de Fania](https://costaricasalsa.com/como-nace-la-palabra-salsa/) (1960s–1970s)** : des titres comme "Salsa Na\' Ma\'" ou des campagnes radiophoniques new-yorkaises consolident le terme comme marque internationale',
   blogHistoriaSalsa_section2Debate:
-    'La [musicologie contemporaine](https://es.wikipedia.org/wiki/Salsa_(g%C3%A9nero_musical)) distingue deux perspectives : la **vision académique** (étiquette parapluie pour des genres afro-cubains actualisés) et la **vision populaire** (genre propre avec identité sonore basée sur la clave 2-3, le piano montuno et les chœurs appel-réponse).',
+    'La [musicologie contemporaine](https://es.wikipedia.org/wiki/Salsa_%28g%C3%A9nero_musical%29) distingue deux perspectives : la **vision académique** (étiquette parapluie pour des genres afro-cubains actualisés) et la **vision populaire** (genre propre avec identité sonore basée sur la clave 2-3, le piano montuno et les chœurs appel-réponse).',
   blogHistoriaSalsa_section2Callout:
     "Chez [Farray's International Dance Center](/fr/clases), ce débat prend vie dans les cours. Apprendre la [salsa cubaine](/fr/clases/salsa-cubana-barcelona) —centrée sur les racines du son— face à la salsa en ligne, développée à New York, permet aux élèves de vivre dans leur propre corps cette tension entre tradition et évolution.",
 
