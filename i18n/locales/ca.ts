@@ -366,7 +366,7 @@ export const ca = {
   // Home FAQ
   homeFaqQ1: "On està ubicada l'acadèmia i com hi arribo?",
   homeFaqA1:
-    "Farray's International Dance Center està al carrer Entença 100, Barcelona (08015), a només 5 minuts caminant de la Plaça Espanya i l'Estació de Sants. És súper accessible en metro (línies L1, L3, L8), autobús i tren. El barri té excel·lents connexions amb tota Barcelona. Trobaràs el nostre centre en una zona vibrant amb cafeteries i comerços al voltant.",
+    "Farray's International Dance Center està al carrer Entença 100, Barcelona (08015), a només 5 minuts caminant de la Plaça Espanya i l'Estació de Sants. És súper accessible en metro (línies L1, L3, L5), autobús i tren. El barri té excel·lents connexions amb tota Barcelona. Trobaràs el nostre centre en una zona vibrant amb cafeteries i comerços al voltant.",
   homeFaqQ2: "Què diferencia Farray's d'altres acadèmies de ball a Barcelona?",
   homeFaqA2:
     "Farray's no és una escola més: va néixer d'una història d'amor per la dansa. Vam reformar un local abandonat durant 10 anys amb les nostres pròpies mans perquè no existia l'escola que somniàvem. Estem acreditats per CID-UNESCO, utilitzem el Mètode Farray® exclusiu creat per Yunaisy (ballarina a Street Dance 2 i Got Talent), i sobretot, aquí cada alumne importa. No ets un número: ets part de la família.",
@@ -2564,7 +2564,8 @@ export const ca = {
     'En paral·lel a la seva feina com a professora internacional, actua amb la seva companyia en múltiples esdeveniments, apareixent en escenaris com el Palau Sant Jordi, el Teatre Apolo, el Casino de Barcelona, el Círculo Ecuestre de Barcelona, i molts altres. El 2016 funda la D&Y Dance Company (2016–2020), aconseguint un gran èxit amb el seu primer espectacle "Roots & Passion".',
   yunaisyFarray_barcelona_p5:
     "El 12 de febrer de 2017, Yunaisy compleix un dels seus somnis: inaugura, al cor de Barcelona, Farray's Center, que poc després es converteix en Farray's International Dance Center: un centre global de 700m² on conviuen disciplines com contemporani, ballet, salsa, reggaeton, hip-hop, heels, dansa, stretching, preparació física, acrobàcies... i un enfocament profund de cura del cos i la ment.",
-  yunaisyFarray_barcelona_p6: '',
+  yunaisyFarray_barcelona_p6:
+    "Avui, Farray's International Dance Center és molt més que una escola: és un espai on cada persona pot descobrir la seva pròpia manera de ballar i expressar-se.",
 
   yunaisyFarray_method_title: 'El Mètode Farray: tècnica, cos i resultats reals',
   yunaisyFarray_method_p1:
@@ -5229,7 +5230,7 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
     'El nostre programa de ballet forma part del pla curricular avalat pel Consell Internacional de la Dansa de la UNESCO a París. Formació amb estàndards internacionals.',
   balletWhyChoose2Title: 'Ubicació immillorable',
   balletWhyChoose2Desc:
-    'A 5 minuts de Plaça Espanya i Sants. Metro Rocafort (L1), Entença (L2) i Tarragona (L3) i múltiples línies de bus. Fàcil arribar, fàcil tornar.',
+    'A 5 minuts de Plaça Espanya i Sants. Metro Rocafort (L1), Entença (L5) i Tarragona (L3) i múltiples línies de bus. Fàcil arribar, fàcil tornar.',
   balletWhyChoose3Title: 'Ambient acollidor per a adults',
   balletWhyChoose3Desc:
     'Aquí no hi ha nens prodigi ni competitivitat tòxica. Només adults com tu que volen aprendre en un ambient professional però proper.',
@@ -8092,78 +8093,78 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   dancehallHeroSubtitleV2:
     "Puro Dancehall Jamaicano en Farray's Center. Mucho más que baile, una forma de vivir. Viaja a Jamaica sin salir de Barcelona | Clases desde iniciación hasta avanzado, entre Plaza España y Sants.",
   dancehallCTA1: 'Date de Alta Ahora',
-  dancehallCTA2: 'Ver Horarios',
-  dancehallUrgency: 'Solo quedan 3 plazas este mes',
-  dancehallUrgency2: 'Oferta válida solo hasta el viernes',
-  dancehallProblemsTitle: '¿Te Identificas en Alguna de Estas Situaciones?',
-  dancehallProblem1Title: '¿Te Sientes Estresado, Sin Energía y Cansado de Tu Rutina?',
+  dancehallCTA2: 'Veure Horaris',
+  dancehallUrgency: 'Només queden 3 places aquest mes',
+  dancehallUrgency2: 'Oferta vàlida només fins divendres',
+  dancehallProblemsTitle: "T'Identifiques en Alguna d'Aquestes Situacions?",
+  dancehallProblem1Title: 'Et Sents Estressat, Sense Energia i Cansat de la Teva Rutina?',
   dancehallProblem1Desc:
-    'No debes dejar que la monotonía te domine. Es hora de hacer un cambio y recuperar tu vitalidad, motivación y ganas de hacer cosas.',
-  dancehallProblem2Title: '¿Sientes Que Podrías Mostrar Una Versión Más Segura de Ti?',
+    'No has de deixar que la monotonia et domini. És hora de fer un canvi i recuperar la teva vitalitat, motivació i ganes de fer coses.',
+  dancehallProblem2Title: 'Sents Que Podries Mostrar Una Versió Més Segura de Tu?',
   dancehallProblem2Desc:
-    'Los que hoy se muestran seguros y confiados aprendieron a vencer sus miedos. Tú también puedes descubrir la mejor versión de ti.',
-  dancehallProblem3Title: '¿Estás Cansado de Rutinas de Ejercicio Aburridas?',
+    'Els que avui es mostren segurs i confiats van aprendre a vèncer les seves pors. Tu també pots descobrir la millor versió de tu.',
+  dancehallProblem3Title: "Estàs Cansat de Rutines d'Exercici Avorrides?",
   dancehallProblem3Desc:
-    'Deberías poder mantenerte en forma de una manera divertida, agradable y amena, porque hacer siempre lo mismo es lo que te aburre.',
-  dancehallProblem4Title: '¿Sientes Que Deberías Divertirte y Socializar Más?',
+    "Hauries de poder mantenir-te en forma d'una manera divertida, agradable i amena, perquè fer sempre el mateix és el que t'avorreix.",
+  dancehallProblem4Title: 'Sents Que Hauries de Divertir-te i Socialitzar Més?',
   dancehallProblem4Desc:
-    'Necesitas un momento en tu semana para divertirte, ampliar tu círculo de amigos y hacer una actividad que te conecte contigo y con los demás.',
-  dancehallProblem5Title: '¿Te Encanta Bailar Pero Necesitas Probar Algo Diferente y Fresco?',
+    "Necessites un moment a la teva setmana per divertir-te, ampliar el teu cercle d'amics i fer una activitat que et connecti amb tu i amb els altres.",
+  dancehallProblem5Title: "T'Encanta Ballar Però Necessites Provar Alguna Cosa Diferent i Fresca?",
   dancehallProblem5Desc:
-    'Necesitas un soplo de aire fresco para despertar tu creatividad y reconectar con tu cuerpo de una forma totalmente nueva.',
-  dancehallProblem6Title: '¿La Esencia de Jamaica y Su Cultura Te Mueven Por Dentro?',
+    "Necessites un buf d'aire fresc per despertar la teva creativitat i reconnectar amb el teu cos d'una forma totalment nova.",
+  dancehallProblem6Title: "L'Essència de Jamaica i la Seva Cultura et Mouen Per Dins?",
   dancehallProblem6Desc:
-    'Si te inspira todo lo que representa Jamaica deberías encontrar formas de experimentar su cultura sin tener que cruzar el océano.',
-  dancehallSolutionTitle: 'Necesitas Apuntarte a Clases de Dancehall en Una Academia de Baile',
+    "Si t'inspira tot el que representa Jamaica hauries de trobar formes d'experimentar la seva cultura sense haver de creuar l'oceà.",
+  dancehallSolutionTitle: 'Necessites Apuntar-te a Classes de Dancehall en Una Acadèmia de Ball',
   dancehallSolutionDesc:
-    'Decenas de personas ya han dado el paso y lo viven cada semana en nuestras clases de Dancehall en Barcelona, a tan solo 5 minutos de Plaza España y Estación de Sants. Y cuando salen... ya no son los mismos. Si quieres salir de la rutina, sentirte mejor contigo mismo, conocer gente nueva y ponerte en forma mientras te diviertes, este estilo caribeño es lo tuyo.',
-  dancehallCulturalTitle: '¿Qué es el Dancehall? Mucho Más Que Un Baile',
+    'Desenes de persones ja han fet el pas i ho viuen cada setmana a les nostres classes de Dancehall a Barcelona, a només 5 minuts de Plaça Espanya i Estació de Sants. I quan surten... ja no són els mateixos. Si vols sortir de la rutina, sentir-te millor amb tu mateix, conèixer gent nova i posar-te en forma mentre et diverteixes, aquest estil caribeny és el teu.',
+  dancehallCulturalTitle: 'Què és el Dancehall? Molt Més Que Un Ball',
   dancehallCulturalShort:
-    '**El Dancehall nace en los guetos de Kingston (Jamaica) a finales de los 70 como evolución del reggae, impulsado por sound systems en streets y dancehalls, espacios comunitarios para bailar y liberar tensiones sociales.**',
+    '**El Dancehall neix als guetos de Kingston (Jamaica) a finals dels 70 com a evolució del reggae, impulsat per sound systems als carrers i dancehalls, espais comunitaris per ballar i alliberar tensions socials.**',
   dancehallCulturalFull:
     '### Los Orígenes: Kingston, Jamaica (1970s-1980s)\n\nEl Dancehall nació en los guetos de Kingston a finales de los años 70. Surgió como una evolución natural del reggae, cuando los sound systems (sistemas de sonido móviles) empezaron a llevar la música a las calles y a los dancehalls (salas de baile). El nombre "dancehall" proviene de esos espacios donde la comunidad se reunía para bailar, socializar y expresarse. Era el lugar donde las tensiones sociales se liberaban a través de la música y el movimiento.\n\n### Las Leyendas: Bogle, Passa Passa y los Pioneros\n\n**Gerald "Bogle" Levy (1964-2005) es considerado el padre del Dancehall moderno.** Creó movimientos icónicos como **Bogle, Row Di Boat, Log On y Willie Bounce**, base del vocabulario Dancehall.\n\n**Passa Passa**, las sesiones legendarias de street dancehall en Tivoli Gardens (Kingston), fue el epicentro donde nacían nuevos pasos y se consagraban los bailarines.\n\nOtros pioneros como **Ding Dong, Keiva, John Hype** y crews como **Ravers Clavers** llevaron el Dancehall a nivel internacional en los 2000.\n\n**"Gerald \'Bogle\' Levy es el padre del Dancehall moderno con pasos icónicos como Bogle, Row Di Boat y Log On; Passa Passa en Tivoli Gardens (Kingston) fue el epicentro de street dancehall donde nacían tendencias."**\n\n### La Expansión Global (2000s-Presente)\n\nEn los años 2000, el Dancehall explotó globalmente gracias a artistas como **Sean Paul, Shaggy, Elephant Man y Beenie Man**. Las redes sociales y YouTube popularizaron pasos como **Dutty Wine, Daggering y Nuh Linga**.\n\n**Desde los 2000, artistas como Sean Paul y Elephant Man, junto a YouTube y redes, globalizaron el Dancehall con pasos como Dutty Wine y Daggering; hoy tiene comunidades fuertes en Europa (Barcelona como epicentro), África, Asia y América.**\n\nHoy, el Dancehall es un fenómeno mundial con comunidades activas en Europa, África, Asia y América; Barcelona es uno de sus epicentros europeos.\n\n### La Música: Riddims y Cultura Sound System\n\n**El Dancehall se baila sobre riddims (bases instrumentales) que los productores crean y múltiples artistas vocalizan.** Riddims legendarios como **Diwali, Coolie Dance o Dump Truck** definieron épocas enteras.\n\n**"El Dancehall se baila sobre riddims legendarios como Diwali o Coolie Dance, con cultura sound system de selectores, MCs y rewind; múltiples artistas vocalizan la misma base instrumental, definiendo épocas."**\n\nLa cultura del sound system —con sus selectores, MCs y el famoso rewind cuando una canción es tan buena que se vuelve a poner desde el principio— es esencial para entender el Dancehall.\n\n### Más Que Baile: Identidad y Resistencia\n\nEl Dancehall ha sido siempre una forma de resistencia cultural y expresión de identidad para las comunidades marginadas de Jamaica. Es la voz de los guetos, una celebración de la alegría a pesar de las dificultades.\n\n**"El Dancehall es resistencia cultural de guetos jamaicanos, con pasos cargados de significado como Log On (\'conectarse\') o Nuh Linga (\'no te demores\'), celebrando alegría e identidad pese a las dificultades."**\n\nCada paso tiene un significado: **Log On** (conectarse), **Willie Bounce** (homenaje a Willie Haggart), **Nuh Linga** (no te demores). Cada movimiento cuenta una historia.\n\n### Dancehall en Farray\'s: técnica y comunidad\n\nEn Farray\'s International Dance Center, el Dancehall se enseña con técnica, respeto y contexto histórico, priorizando la buena energía, la precisión de movimientos y un entorno profesional.\n\n**Estudios científicos sobre danza señalan que bailar mejora la coordinación, la propiocepción y la condición física general, además de reducir el estrés y mejorar el estado de ánimo, y el Dancehall se beneficia de estos efectos por su alta energía y trabajo corporal completo.**\n\n**Una clase de Dancehall activa puede quemar 300-480 calorías por hora según peso e intensidad, similar a otros bailes aeróbicos de alta demanda.**\n\n**Revisiones científicas asocian el baile regular con menor riesgo de deterioro cognitivo y demencia, destacando su valor como entrenamiento cerebral en estilos dinámicos como Dancehall.**\n\n**Farray\'s International Dance Center ofrece clases de Dancehall en una escuela valorada cerca del 5/5 en Google con cientos de reseñas positivas.**',
-  dancehallBenefitsTitle: '¿Por Qué Apuntarte a Clases de Dancehall Mejorará Tu Vida?',
-  dancehallBenefitsSubtitle: "Imagina Tu 'Antes y Después'",
-  dancehallBenefit1Title: 'Recuperas Energía, Motivación y Ganas',
+  dancehallBenefitsTitle: 'Per Què Apuntar-te a Classes de Dancehall Millorarà la Teva Vida?',
+  dancehallBenefitsSubtitle: "Imagina el Teu 'Abans i Després'",
+  dancehallBenefit1Title: 'Recuperes Energia, Motivació i Ganes',
   dancehallBenefit1Desc:
-    'Las clases de dancehall rompen la rutina, te ayudan a liberar el estrés y te devuelven las ganas de moverte y de volver a disfrutar.',
-  dancehallBenefit2Title: 'Ganas Seguridad, Confianza y Autoestima',
+    "Les classes de dancehall trenquen la rutina, t'ajuden a alliberar l'estrès i et tornen les ganes de moure't i de tornar a gaudir.",
+  dancehallBenefit2Title: 'Guanyes Seguretat, Confiança i Autoestima',
   dancehallBenefit2Desc:
-    'Bailar dancehall te permite subir tu autoestima, superar miedos, soltarte y descubrir una versión más segura y auténtica de ti mismo.',
-  dancehallBenefit3Title: 'Evitas Las Rutinas de Ejercicio Aburridas',
+    'Ballar dancehall et permet pujar la teva autoestima, superar pors, deixar-te anar i descobrir una versió més segura i autèntica de tu mateix.',
+  dancehallBenefit3Title: "Evites Les Rutines d'Exercici Avorrides",
   dancehallBenefit3Desc:
-    'Las clases de dancehall son dinámicas, divertidas y siempre diferentes. Te pones en forma con una sonrisa en la cara y te sorprendes con cada clase.',
-  dancehallBenefit4Title: 'Te Diviertes, Conoces Personas Nuevas y Socializas',
+    'Les classes de dancehall són dinàmiques, divertides i sempre diferents. Et poses en forma amb un somriure a la cara i et sorprens amb cada classe.',
+  dancehallBenefit4Title: 'Et Diverteixes, Coneixes Persones Noves i Socialitzes',
   dancehallBenefit4Desc:
-    'Las clases de dancehall son el lugar perfecto para conocer gente nueva, reírte y crear conexiones reales mientras te diviertes.',
-  dancehallBenefit5Title: 'Conoces Pasos Nuevos y Evitas la Monotonía en el Baile',
+    'Les classes de dancehall són el lloc perfecte per conèixer gent nova, riure i crear connexions reals mentre et diverteixes.',
+  dancehallBenefit5Title: 'Coneixes Passos Nous i Evites la Monotonia en el Ball',
   dancehallBenefit5Desc:
-    'Bailar dancehall te permitirá descubrir movimientos y sensaciones nuevas, reconectar con tu cuerpo y volver a disfrutar bailando.',
-  dancehallBenefit6Title: 'Viajas a Jamaica Sin Moverte de Barcelona',
+    'Ballar dancehall et permetrà descobrir moviments i sensacions noves, reconnectar amb el teu cos i tornar a gaudir ballant.',
+  dancehallBenefit6Title: "Viatges a Jamaica Sense Moure't de Barcelona",
   dancehallBenefit6Desc:
-    'Te conectarás con la esencia y las raíces de Jamaica sin que tengas que salir de Barcelona. Te contagiará por su estilo, alegría y autenticidad.',
-  dancehallBenefit7Title: 'Descubres Nuevos Ritmos y Entrenas Tu Oído',
+    "Et connectaràs amb l'essència i les arrels de Jamaica sense que hagis de sortir de Barcelona. Et contagiarà pel seu estil, alegria i autenticitat.",
+  dancehallBenefit7Title: 'Descobreixes Nous Ritmes i Entrenes la Teva Oïda',
   dancehallBenefit7Desc:
-    'Vas a conocer nuevas músicas y ritmos, ejercitar tu coordinación y memoria, y mejorar tu capacidad de improvisación e interpretación musical.',
-  dancehallMidCTATitle: '¿Listo Para Transformar Tu Vida?',
+    "Coneixeràs noves músiques i ritmes, exercitaràs la teva coordinació i memòria, i milloraràs la teva capacitat d'improvisació i interpretació musical.",
+  dancehallMidCTATitle: 'Preparat Per Transformar la Teva Vida?',
   dancehallMidCTADesc:
-    'Habla con nosotros por WhatsApp y reserva tu clase gratis ahora mismo. ¡Te respondemos en minutos!',
-  dancehallHowItWorksTitle: '¿Cómo Funcionan Nuestras Clases de Dancehall en Barcelona?',
-  dancehallClassStructureTitle: 'Estructura de Cada Clase (60 min)',
+    'Parla amb nosaltres per WhatsApp i reserva la teva classe gratis ara mateix. Et responem en minuts!',
+  dancehallHowItWorksTitle: 'Com Funcionen les Nostres Classes de Dancehall a Barcelona?',
+  dancehallClassStructureTitle: 'Estructura de Cada Classe (60 min)',
   dancehallClassStructureDesc:
-    'En nuestras clases de Dancehall en Barcelona generalmente se enseña una secuencia coreografiada, pero en la práctica el Dancehall es una danza improvisada. Cada sesión está diseñada para que aprendas, te diviertas y te expreses.',
-  dancehallLevelsTitle: 'Niveles Para Todos',
-  dancehallTeachersTitle: 'Conoce Nuestras Profesoras de Dancehall',
-  dancehallTeachersSubtitle: 'Increíbles Profesionales, Mejores Personas',
-  dancehallTeacher1Specialty: 'Profesora de Dancehall | +5 años de Experiencia',
+    "A les nostres classes de Dancehall a Barcelona generalment s'ensenya una seqüència coreografiada, però a la pràctica el Dancehall és una dansa improvisada. Cada sessió està dissenyada perquè aprenguis, et diverteixis i t'expressis.",
+  dancehallLevelsTitle: 'Nivells Per a Tothom',
+  dancehallTeachersTitle: 'Coneix les Nostres Professores de Dancehall',
+  dancehallTeachersSubtitle: 'Increïbles Professionals, Millors Persones',
+  dancehallTeacher1Specialty: "Professora de Dancehall | +5 anys d'Experiència",
   dancehallTeacher1Bio:
-    "Isabel López es una apasionada del dancehall con más de 5 años de experiencia como profesora especializada en baile urbano y reggaeton. Entrenada con maestros jamaicanos, su energía contagiosa y técnica profesional la convierten en una de las instructoras más queridas de Farray's Center. Sus clases mezclan old school moves (Willie Bounce, Nuh Linga) con los últimos hits.",
-  dancehallTeacher2Specialty: 'Profesora de Dancehall y Twerk | +6 años de Experiencia',
+    "Isabel López és una apassionada del dancehall amb més de 5 anys d'experiència com a professora especialitzada en ball urbà i reggaeton. Entrenada amb mestres jamaicans, la seva energia contagiosa i tècnica professional la converteixen en una de les instructores més estimades de Farray's Center. Les seves classes barregen old school moves (Willie Bounce, Nuh Linga) amb els últims hits.",
+  dancehallTeacher2Specialty: "Professora de Dancehall i Twerk | +6 anys d'Experiència",
   dancehallTeacher2Bio:
-    'Sandra Gómez es una bailarina profesional con más de 6 años de experiencia en dancehall y twerk. Su estilo único fusiona movimientos del Twerk/Bootydance con la esencia jamaicana. Su técnica impecable y metodología de enseñanza la convierten en una de las profesoras más solicitadas. Energía, sensualidad y feminidad pura.',
-  dancehallScheduleTitle: 'Horarios de Nuestras Clases de Dancehall en Barcelona',
-  dancehallScheduleSubtitle: 'Clases disponibles prácticamente todos los días de la semana',
-  dancehallFaqTitle: 'Preguntas Frecuentes Sobre Nuestra Escuela de Dancehall en Barcelona',
+    "Sandra Gómez és una ballarina professional amb més de 6 anys d'experiència en dancehall i twerk. El seu estil únic fusiona moviments del Twerk/Bootydance amb l'essència jamaicana. La seva tècnica impecable i metodologia d'ensenyament la converteixen en una de les professores més sol·licitades. Energia, sensualitat i feminitat pura.",
+  dancehallScheduleTitle: 'Horaris de les Nostres Classes de Dancehall a Barcelona',
+  dancehallScheduleSubtitle: 'Classes disponibles pràcticament tots els dies de la setmana',
+  dancehallFaqTitle: 'Preguntes Freqüents Sobre la Nostra Escola de Dancehall a Barcelona',
   dancehallFaqQ5: '¿Dónde puedo encontrar clases de Dancehall cerca de Plaza España en Barcelona?',
   dancehallFaqA5:
     "Farray's Center está ubicado en Calle Entença 100, Barcelona, a solo 5 minutos de Plaza España y Estación de Sants. Contamos con profesoras con amplia experiencia y un ambiente familiar para todos los niveles.",
@@ -8355,205 +8356,205 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   roomRental_room2_holiday_companies_price: '45 €/hora',
   roomRental_room2_holiday_events: 'Clases / eventos',
   roomRental_room2_holiday_events_price: '55 €/hora',
-  roomRental_room2_condition: 'Fines de semana y festivos: mínimo 3 horas de alquiler',
-  roomRental_cta_phone: 'Llamar: 933 25 96 44',
-  roomRental_cta_location: 'Calle Entença 100, Barcelona (entre Plaza España y Sants)',
-  facilitiesHeroTitle: 'Instalaciones - Escuela de Baile en Barcelona',
-  facilitiesHeroSubtitle: 'Más de 700 m² dedicados a la danza en el corazón de Barcelona',
+  roomRental_room2_condition: 'Caps de setmana i festius: mínim 3 hores de lloguer',
+  roomRental_cta_phone: 'Trucar: 933 25 96 44',
+  roomRental_cta_location: 'Carrer Entença 100, Barcelona (entre Plaça Espanya i Sants)',
+  facilitiesHeroTitle: 'Instal·lacions - Escola de Ball a Barcelona',
+  facilitiesHeroSubtitle: 'Més de 700 m² dedicats a la dansa al cor de Barcelona',
   facilitiesHeroDesc:
-    "Farray's International Dance Center es una escuela de baile en Barcelona con más de 700 m² de instalaciones diseñadas específicamente para la danza, el entrenamiento físico y la creación artística.",
-  facilitiesHeroLocation: 'Calle Entença 100, Barcelona - Entre Plaza España y Sants',
-  facilitiesCTA1: 'Reserva Tu Clase de Prueba',
-  facilitiesCTA1Subtext: 'Conoce nuestras instalaciones en persona',
-  facilitiesCTA2: 'Solicita un Tour',
-  facilitiesCTA2Subtext: 'Descubre nuestros espacios',
-  facilitiesStatSpace: 'm² de instalaciones',
-  facilitiesStatRooms: 'Salas Profesionales',
-  facilitiesStatProfessional: 'Profesional',
-  facilitiesIntroTitle: 'Un espacio pensado para bailar, entrenar y compartir',
+    "Farray's International Dance Center és una escola de ball a Barcelona amb més de 700 m² d'instal·lacions dissenyades específicament per a la dansa, l'entrenament físic i la creació artística.",
+  facilitiesHeroLocation: 'Carrer Entença 100, Barcelona - Entre Plaça Espanya i Sants',
+  facilitiesCTA1: 'Reserva la Teva Classe de Prova',
+  facilitiesCTA1Subtext: 'Coneix les nostres instal·lacions en persona',
+  facilitiesCTA2: 'Sol·licita un Tour',
+  facilitiesCTA2Subtext: 'Descobreix els nostres espais',
+  facilitiesStatSpace: "m² d'instal·lacions",
+  facilitiesStatRooms: 'Sales Professionals',
+  facilitiesStatProfessional: 'Professional',
+  facilitiesIntroTitle: 'Un espai pensat per ballar, entrenar i compartir',
   facilitiesIntroP1:
-    "Farray's International Dance Center es una escuela de baile en Barcelona con más de 700 m² de instalaciones diseñadas específicamente para la danza, el entrenamiento físico y la creación artística. Todo está pensado para que puedas aprovechar al máximo tus clases de baile, ensayos, formaciones y eventos, en un espacio profesional y cuidado.",
+    "Farray's International Dance Center és una escola de ball a Barcelona amb més de 700 m² d'instal·lacions dissenyades específicament per a la dansa, l'entrenament físic i la creació artística. Tot està pensat perquè puguis aprofitar al màxim les teves classes de ball, assajos, formacions i esdeveniments, en un espai professional i cuidat.",
   facilitiesIntroP2:
-    'Nuestras instalaciones combinan equipamiento de última generación con un ambiente familiar y acogedor, donde cada detalle está pensado para tu comodidad y rendimiento.',
-  facilitiesRoomsTitle: '4 Salas de Baile Profesionales',
-  facilitiesRoomsSubtitle: 'Espacios diseñados específicamente para cada disciplina',
-  facilitiesRoom1Size: '120 m² de espacio diáfano',
-  facilitiesRoom1Floor: 'Suelo de linóleo flotante profesional',
-  facilitiesRoom2Size: '80 m² de espacio técnico',
-  facilitiesRoom2Floor: 'Suelo de linóleo flotante',
-  facilitiesRoom3Size: '80 m² optimizados',
-  facilitiesRoom3Floor: 'Parquet flotante de alta calidad',
+    "Les nostres instal·lacions combinen equipament d'última generació amb un ambient familiar i acollidor, on cada detall està pensat per a la teva comoditat i rendiment.",
+  facilitiesRoomsTitle: '4 Sales de Ball Professionals',
+  facilitiesRoomsSubtitle: 'Espais dissenyats específicament per a cada disciplina',
+  facilitiesRoom1Size: "120 m² d'espai diàfan",
+  facilitiesRoom1Floor: 'Terra de linòleum flotant professional',
+  facilitiesRoom2Size: "80 m² d'espai tècnic",
+  facilitiesRoom2Floor: 'Terra de linòleum flotant',
+  facilitiesRoom3Size: '80 m² optimitzats',
+  facilitiesRoom3Floor: "Parquet flotant d'alta qualitat",
   facilitiesRoom4Title: 'Sala de Fitness - 40 m²',
-  facilitiesRoom4Size: '40 m² de pura energía',
-  facilitiesRoom4Floor: 'Parquet flotante resistente',
+  facilitiesRoom4Size: '40 m² de pura energia',
+  facilitiesRoom4Floor: 'Parquet flotant resistent',
   facilitiesRoom4Desc:
-    'Ideal para preparación física, fitness y acondicionamiento para bailarines. Espacio optimizado para entrenamientos funcionales y clases de cardio.',
-  facilitiesActivitiesTitle: '¿Qué sucede en nuestras salas de baile?',
+    'Ideal per a preparació física, fitness i condicionament per a ballarins. Espai optimitzat per a entrenaments funcionals i classes de cardio.',
+  facilitiesActivitiesTitle: 'Què passa a les nostres sales de ball?',
   facilitiesActivity1:
-    'Clases de baile y danza de todos los estilos: latinos, urbanos, contemporáneos y ballet',
-  facilitiesActivity2: 'Actividades de fitness y preparación física específica para bailarines',
-  facilitiesActivity3: 'Ensayos de compañías profesionales y grupos coreográficos',
-  facilitiesActivity4: 'Producción de trabajos para televisión, cine, videoclips y musicales',
-  facilitiesActivity5: 'Masterclasses con grandes bailarines y coreógrafos internacionales',
-  facilitiesActivity6: 'Workshops intensivos, audiciones, castings y formaciones profesionales',
-  facilitiesAmenitiesTitle: 'Zona Social y Vestuarios de nuestra escuela de baile',
-  facilitiesAmenitiesSubtitle: 'Más que una escuela: una comunidad',
+    'Classes de ball i dansa de tots els estils: llatins, urbans, contemporanis i ballet',
+  facilitiesActivity2: 'Activitats de fitness i preparació física específica per a ballarins',
+  facilitiesActivity3: 'Assajos de companyies professionals i grups coreogràfics',
+  facilitiesActivity4: 'Producció de treballs per a televisió, cinema, videoclips i musicals',
+  facilitiesActivity5: 'Masterclasses amb grans ballarins i coreògrafs internacionals',
+  facilitiesActivity6: 'Workshops intensius, audicions, castings i formacions professionals',
+  facilitiesAmenitiesTitle: 'Zona Social i Vestidors de la nostra escola de ball',
+  facilitiesAmenitiesSubtitle: 'Més que una escola: una comunitat',
   facilitiesAm1Title: 'Bar / Zona Social',
   facilitiesAm1Desc:
-    "Un espacio donde relajarte, compartir con tus compañeros y vivir el ambiente de comunidad que caracteriza a Farray's. Café, bebidas y snacks disponibles.",
-  facilitiesAm2Title: '2 Vestuarios Amplios',
+    "Un espai on relaxar-te, compartir amb els teus companys i viure l'ambient de comunitat que caracteritza Farray's. Cafè, begudes i snacks disponibles.",
+  facilitiesAm2Title: '2 Vestidors Amplis',
   facilitiesAm2Desc:
-    'Más de 30 m² cada uno, equipados con duchas de agua caliente, taquillas seguras y espacio suficiente para cambiarte con comodidad antes y después de tus clases.',
-  facilitiesAm3Title: 'Zona Wi-Fi Gratuita',
+    "Més de 30 m² cadascun, equipats amb dutxes d'aigua calenta, taquilles segures i espai suficient per canviar-te amb comoditat abans i després de les teves classes.",
+  facilitiesAm3Title: 'Zona Wi-Fi Gratuïta',
   facilitiesAm3Desc:
-    'Conexión Wi-Fi de alta velocidad en todas las instalaciones para que puedas trabajar, estudiar o compartir tus contenidos entre clases.',
-  facilitiesEquipmentTitle: 'Equipamiento Profesional en Cada Sala',
-  facilitiesEquipmentSubtitle: 'Todo lo que necesitas para tu práctica y rendimiento',
-  facilitiesEq1Title: 'Suelos Profesionales',
+    "Connexió Wi-Fi d'alta velocitat a totes les instal·lacions perquè puguis treballar, estudiar o compartir els teus continguts entre classes.",
+  facilitiesEquipmentTitle: 'Equipament Professional a Cada Sala',
+  facilitiesEquipmentSubtitle: 'Tot el que necessites per a la teva pràctica i rendiment',
+  facilitiesEq1Title: 'Terres Professionals',
   facilitiesEq1Desc:
-    'Parquet o linóleo flotante de alta calidad, específicamente diseñados para cada disciplina. Absorción de impactos, agarre óptimo y protección articular.',
-  facilitiesEq2Title: 'Espejos de Pared Completa',
+    "Parquet o linòleum flotant d'alta qualitat, específicament dissenyats per a cada disciplina. Absorció d'impactes, adherència òptima i protecció articular.",
+  facilitiesEq2Title: 'Miralls de Paret Completa',
   facilitiesEq2Desc:
-    'Espejos profesionales de pared a pared para trabajar técnica, líneas corporales y postura. Visibilidad perfecta desde cualquier ángulo de la sala.',
-  facilitiesEq3Title: 'Ventilación y Aire Acondicionado',
+    'Miralls professionals de paret a paret per treballar tècnica, línies corporals i postura. Visibilitat perfecta des de qualsevol angle de la sala.',
+  facilitiesEq3Title: 'Ventilació i Aire Condicionat',
   facilitiesEq3Desc:
-    'Sistema de climatización profesional con ventilación centralizada, pensado para el esfuerzo físico intenso. Temperatura controlada todo el año.',
-  facilitiesEq4Title: 'Barras de Ballet',
+    "Sistema de climatització professional amb ventilació centralitzada, pensat per a l'esforç físic intens. Temperatura controlada tot l'any.",
+  facilitiesEq4Title: 'Barres de Ballet',
   facilitiesEq4Desc:
-    'Barras fijas de doble altura en las salas orientadas a danza clásica y técnica contemporánea. Instalación profesional.',
+    'Barres fixes de doble altura a les sales orientades a dansa clàssica i tècnica contemporània. Instal·lació professional.',
   facilitiesEq5Title: 'Material de Fitness',
   facilitiesEq5Desc:
-    'Colchonetas, pesas ligeras, bandas elásticas, foam rollers y material específico para preparación física para bailarines.',
-  facilitiesEq6Title: 'Equipos de Audio Profesionales',
+    'Matalassos, peses lleugeres, bandes elàstiques, foam rollers i material específic per a preparació física per a ballarins.',
+  facilitiesEq6Title: "Equips d'Àudio Professionals",
   facilitiesEq6Desc:
-    'Sistemas de sonido de alta fidelidad con entrada para smartphone, tablet u ordenador. Listos para tus clases, ensayos o grabaciones.',
-  facilitiesTrustTitle: 'Un Centro de Referencia en Barcelona',
-  facilitiesWhyTitle: '¿Por Qué Elegir Nuestras Instalaciones?',
-  facilitiesWhy1Title: 'Ubicación Inmejorable',
+    "Sistemes de so d'alta fidelitat amb entrada per a smartphone, tablet o ordinador. Preparats per a les teves classes, assajos o gravacions.",
+  facilitiesTrustTitle: 'Un Centre de Referència a Barcelona',
+  facilitiesWhyTitle: 'Per Què Triar les Nostres Instal·lacions?',
+  facilitiesWhy1Title: 'Ubicació Immillorable',
   facilitiesWhy1Desc:
-    'En pleno corazón de Barcelona, entre Plaza España y Sants. Acceso fácil en metro (L1, L3, L5), tren y autobús. Parking público cercano.',
-  facilitiesWhy2Title: 'Instalaciones Profesionales',
+    'Al cor de Barcelona, entre Plaça Espanya i Sants. Accés fàcil en metro (L1, L3, L5), tren i autobús. Pàrquing públic proper.',
+  facilitiesWhy2Title: 'Instal·lacions Professionals',
   facilitiesWhy2Desc:
-    'Más de 700 m² específicamente diseñados para danza. Suelos flotantes, climatización, espejos profesionales y equipamiento de primera calidad.',
-  facilitiesWhy3Title: 'Acreditación CID-UNESCO',
+    'Més de 700 m² específicament dissenyats per a dansa. Terres flotants, climatització, miralls professionals i equipament de primera qualitat.',
+  facilitiesWhy3Title: 'Acreditació CID-UNESCO',
   facilitiesWhy3Desc:
-    'Centro reconocido por el Consejo Internacional de la Danza de la UNESCO. Garantía de calidad, profesionalidad y estándares internacionales.',
-  facilitiesWhy4Title: 'Ambiente Familiar',
+    'Centre reconegut pel Consell Internacional de la Dansa de la UNESCO. Garantia de qualitat, professionalitat i estàndards internacionals.',
+  facilitiesWhy4Title: 'Ambient Familiar',
   facilitiesWhy4Desc:
-    'No eres un número. Aquí todos nos conocemos, nos apoyamos y compartimos la pasión por el baile. Comunidad real, no marketing.',
-  facilitiesWhy5Title: 'Flexibilidad Horaria',
+    'No ets un número. Aquí tots ens coneixem, ens donem suport i compartim la passió pel ball. Comunitat real, no màrqueting.',
+  facilitiesWhy5Title: 'Flexibilitat Horària',
   facilitiesWhy5Desc:
-    'Más de 100 clases semanales en horarios de mañana, tarde y noche. De lunes a viernes. Siempre hay un horario que se adapta a tu vida.',
-  facilitiesWhy6Title: 'Mantenimiento Impecable',
+    "Més de 100 classes setmanals en horaris de matí, tarda i nit. De dilluns a divendres. Sempre hi ha un horari que s'adapta a la teva vida.",
+  facilitiesWhy6Title: 'Manteniment Impecable',
   facilitiesWhy6Desc:
-    'Instalaciones cuidadas diariamente. Limpieza profesional, mantenimiento preventivo y renovación constante del equipamiento.',
-  facilitiesCTATitle: "Farray's International Dance Center: Más que una Escuela",
+    "Instal·lacions cuidades diàriament. Neteja professional, manteniment preventiu i renovació constant de l'equipament.",
+  facilitiesCTATitle: "Farray's International Dance Center: Més que una Escola",
   facilitiesCTAP1:
-    "Si buscas una academia de baile en Barcelona con instalaciones profesionales, amplias y cuidadas, Farray's International Dance Center te ofrece un espacio de referencia donde entrenar, crear proyectos artísticos y disfrutar de la danza en las mejores condiciones.",
-  facilitiesCTAP2: 'Ven a conocernos. Te enseñamos las instalaciones sin compromiso.',
-  facilitiesFaqTitle: 'Preguntas Frecuentes sobre las Instalaciones de nuestra academia de baile',
-  facilitiesFaqQ1: "¿Dónde están ubicadas las instalaciones de Farray's Center?",
+    "Si busques una acadèmia de ball a Barcelona amb instal·lacions professionals, àmplies i cuidades, Farray's International Dance Center t'ofereix un espai de referència on entrenar, crear projectes artístics i gaudir de la dansa en les millors condicions.",
+  facilitiesCTAP2: "Vine a conèixer-nos. T'ensenyem les instal·lacions sense compromís.",
+  facilitiesFaqTitle: 'Preguntes Freqüents sobre les Instal·lacions de la nostra acadèmia de ball',
+  facilitiesFaqQ1: "On es troben les instal·lacions de Farray's Center?",
   facilitiesFaqA1:
-    'Estamos en Calle Entença 100, Barcelona, entre Plaza España y Estación de Sants. Acceso fácil en metro (Entença L5, Rocafort L1, Tarragona L3), tren (Sants) y autobús. A 5 minutos caminando de Plaza España.',
-  facilitiesFaqQ2: "¿Cuántas salas de baile tiene Farray's Center?",
+    "Som al Carrer Entença 100, Barcelona, entre Plaça Espanya i l'Estació de Sants. Accés fàcil en metro (Entença L5, Rocafort L1, Tarragona L3), tren (Sants) i autobús. A 5 minuts caminant de Plaça Espanya.",
+  facilitiesFaqQ2: "Quantes sales de ball té Farray's Center?",
   facilitiesFaqA2:
-    'Tenemos 4 salas profesionales: una sala principal de 120 m² con linóleo, una sala de ballet de 80 m² con linóleo, una sala de latinos y urbanos de 80 m² con parquet, y una sala de fitness de 40 m² con parquet.',
-  facilitiesFaqQ3: '¿Qué tipo de suelo tienen las salas?',
+    'Tenim 4 sales professionals: una sala principal de 120 m² amb linòleum, una sala de ballet de 80 m² amb linòleum, una sala de llatins i urbans de 80 m² amb parquet, i una sala de fitness de 40 m² amb parquet.',
+  facilitiesFaqQ3: 'Quin tipus de terra tenen les sales?',
   facilitiesFaqA3:
-    'Nuestras salas tienen suelos flotantes profesionales: linóleo flotante en 2 salas (ideal para ballet y contemporáneo) y parquet flotante de alta calidad en 2 salas (perfecto para latinos y fitness). Todos con absorción de impactos para proteger tus articulaciones.',
-  facilitiesFaqQ4: '¿Las salas tienen aire acondicionado?',
+    "Les nostres sales tenen terres flotants professionals: linòleum flotant a 2 sales (ideal per a ballet i contemporani) i parquet flotant d'alta qualitat a 2 sales (perfecte per a llatins i fitness). Tots amb absorció d'impactes per protegir les teves articulacions.",
+  facilitiesFaqQ4: 'Les sales tenen aire condicionat?',
   facilitiesFaqA4:
-    'Sí, todas nuestras salas están equipadas con aire acondicionado y ventilación centralizada, específicamente diseñada para actividades físicas intensas. Temperatura controlada durante todo el año.',
-  facilitiesFaqQ5: '¿Hay vestuarios y duchas disponibles?',
+    "Sí, totes les nostres sales estan equipades amb aire condicionat i ventilació centralitzada, específicament dissenyada per a activitats físiques intenses. Temperatura controlada durant tot l'any.",
+  facilitiesFaqQ5: 'Hi ha vestidors i dutxes disponibles?',
   facilitiesFaqA5:
-    'Sí, tenemos 2 vestuarios amplios (más de 30 m² cada uno) equipados con duchas de agua caliente, taquillas seguras y espacio suficiente para cambiarte con comodidad antes y después de tus clases.',
-  facilitiesFaqQ6: '¿Puedo visitar las instalaciones antes de inscribirme?',
+    "Sí, tenim 2 vestidors amplis (més de 30 m² cadascun) equipats amb dutxes d'aigua calenta, taquilles segures i espai suficient per canviar-te amb comoditat abans i després de les teves classes.",
+  facilitiesFaqQ6: "Puc visitar les instal·lacions abans d'inscriure'm?",
   facilitiesFaqA6:
-    'Por supuesto. Puedes venir a conocer nuestras instalaciones sin compromiso. También ofrecemos clases de prueba donde podrás experimentar las salas, conocer a los profesores y sentir el ambiente de la escuela.',
-  facilitiesFaqQ7: '¿Se pueden alquilar las salas para ensayos privados o eventos?',
+    "Per descomptat. Pots venir a conèixer les nostres instal·lacions sense compromís. També oferim classes de prova on podràs experimentar les sales, conèixer els professors i sentir l'ambient de l'escola.",
+  facilitiesFaqQ7: 'Es poden llogar les sales per a assajos privats o esdeveniments?',
   facilitiesFaqA7:
-    'Sí, ofrecemos alquiler de salas por horas para ensayos, clases particulares, workshops, castings, grabaciones y eventos. Contáctanos para disponibilidad y tarifas especiales.',
-  facilitiesBreadcrumbHome: 'Inicio',
-  facilitiesBreadcrumbCurrent: 'Instalaciones',
-  twerkLevelsTitle: 'Nuestros Niveles de Twerk',
-  twerkPrepareTitle: 'Prepara tu primera clase de Twerk',
-  twerkPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
-  twerkPrepareWhatToBring: 'Qué traer:',
-  twerkPrepareItem1: 'Leggings o shorts cortos que permitan ver el movimiento de glúteos',
-  twerkPrepareItem2: 'Top deportivo o camiseta cómoda',
-  twerkPrepareItem3: 'Botella de agua (mínimo 500ml) - el Twerk es intenso',
-  twerkPrepareItem4: 'Toalla pequeña para el sudor',
-  twerkPrepareItem5: 'Calcetines antideslizantes o zapatillas ligeras',
-  twerkPrepareBefore: 'Antes de llegar:',
-  twerkPrepareBeforeItem1: 'Llega 10-15 minutos antes para cambiarte y calentar',
-  twerkPrepareBeforeItem2: 'Evita comer pesado 2 horas antes de clase',
-  twerkPrepareBeforeItem3: 'Hidrátate bien durante el día - trabajarás mucho',
+    "Sí, oferim lloguer de sales per hores per a assajos, classes particulars, workshops, càstings, gravacions i esdeveniments. Contacta'ns per disponibilitat i tarifes especials.",
+  facilitiesBreadcrumbHome: 'Inici',
+  facilitiesBreadcrumbCurrent: 'Instal·lacions',
+  twerkLevelsTitle: 'Els Nostres Nivells de Twerk',
+  twerkPrepareTitle: 'Prepara la teva primera classe de Twerk',
+  twerkPrepareSubtitle: 'Tot el que necessites saber abans de venir',
+  twerkPrepareWhatToBring: 'Què portar:',
+  twerkPrepareItem1: 'Leggings o pantalons curts que permetin veure el moviment de glutis',
+  twerkPrepareItem2: 'Top esportiu o samarreta còmoda',
+  twerkPrepareItem3: "Ampolla d'aigua (mínim 500ml) - el Twerk és intens",
+  twerkPrepareItem4: 'Tovallola petita per a la suor',
+  twerkPrepareItem5: 'Mitjons antilliscants o sabatilles lleugeres',
+  twerkPrepareBefore: "Abans d'arribar:",
+  twerkPrepareBeforeItem1: 'Arriba 10-15 minuts abans per canviar-te i escalfar',
+  twerkPrepareBeforeItem2: 'Evita menjar pesat 2 hores abans de classe',
+  twerkPrepareBeforeItem3: "Hidrata't bé durant el dia - treballaràs molt",
   twerkPrepareAvoid: 'Evita:',
-  twerkPrepareAvoidItem1: 'Joyas, anillos, pulseras o accesorios que puedan molestarte',
-  twerkPrepareAvoidItem2: 'Pantalones anchos que impidan ver tu técnica',
-  twerkPrepareAvoidItem3: 'Calzado de calle en la sala (hay vestuarios)',
-  twerkPrepareTeacherTip: 'Consejo de la profe:',
+  twerkPrepareAvoidItem1: 'Joies, anells, polseres o accessoris que puguin molestar-te',
+  twerkPrepareAvoidItem2: 'Pantalons amples que impedeixin veure la teva tècnica',
+  twerkPrepareAvoidItem3: 'Calçat de carrer a la sala (hi ha vestidors)',
+  twerkPrepareTeacherTip: 'Consell de la profe:',
   twerkPrepareTeacherQuote:
-    'El Twerk es para TODOS los cuerpos. No importa tu forma, tu peso o tu experiencia. Lo importante es que vengas con ganas de moverte, reírte y descubrir tu poder.',
-  twerkNearbyTitle: 'Clases de Twerk cerca de ti en Barcelona',
+    "El Twerk és per a TOTS els cossos. No importa la teva forma, el teu pes o la teva experiència. L'important és que vinguis amb ganes de moure't, riure i descobrir el teu poder.",
+  twerkNearbyTitle: 'Classes de Twerk a prop teu a Barcelona',
   twerkNearbyDesc:
-    "Somos la academia de referencia para clases de Twerk en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnas de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en Twerk con metodología profesional y ambiente seguro.",
-  twerkNearbySearchText: 'Si buscas "Clases de Twerk cerca de mi" en Barcelona, estamos a:',
+    "Som l'acadèmia de referència per a classes de Twerk a la zona de Plaça Espanya, Sants, Hostafrancs, Les Corts i Eixample Esquerra. També rebem alumnes de Poble Sec, Sant Antoni i L'Hospitalet que busquen formació en Twerk amb metodologia professional i ambient segur.",
+  twerkNearbySearchText: 'Si busques "Classes de Twerk a prop meu" a Barcelona, som a:',
   twerkNearbyMetro:
-    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
+    'Metro: Plaça Espanya (L1, L3), Rocafort (L1) - 5 min caminant, Entença (L5) - 5 min caminant o Hostafrancs (L1) - 5 min caminant.',
   twerkCitableOrigen:
-    'El Twerk contemporáneo nace de una mezcla de danzas afrodescendientes como la mapouka y otras danzas de África occidental, de tradiciones afrocaribeñas y de la cultura bounce de Nueva Orleans, donde a finales de los 80 y principios de los 90 se consolidó como estilo reconocible dentro del hip hop.',
+    "El Twerk contemporani neix d'una barreja de danses afrodescendents com la mapouka i altres danses de l'Àfrica occidental, de tradicions afrocaribenyes i de la cultura bounce de Nova Orleans, on a finals dels 80 i principis dels 90 es va consolidar com a estil reconeixible dins del hip hop.",
   twerkStatistics:
-    'Estudios científicos sobre danza señalan que bailar mejora la coordinación, la propiocepción y la condición física general, además de reducir el estrés y mejorar el estado de ánimo, y el Twerk se beneficia de estos mismos efectos por su carácter aeróbico y de fuerza en tren inferior.',
+    "Estudis científics sobre dansa assenyalen que ballar millora la coordinació, la propiocepció i la condició física general, a més de reduir l'estrès i millorar l'estat d'ànim, i el Twerk es beneficia d'aquests mateixos efectes pel seu caràcter aeròbic i de força en tren inferior.",
   twerkCitableEvolucionGlobal:
-    'Desde los años 2000, impulsado por videoclips y redes sociales, el Twerk pasó de ser un baile ligado a clubes y block parties del sur de Estados Unidos a un fenómeno global presente en videoclips mainstream, escuelas de danza, battles y workshops en Europa y Latinoamérica.',
+    'Des dels anys 2000, impulsat per videoclips i xarxes socials, el Twerk va passar de ser un ball lligat a clubs i block parties del sud dels Estats Units a un fenomen global present en videoclips mainstream, escoles de dansa, battles i workshops a Europa i Llatinoamèrica.',
   twerkCitableMusica:
-    'Aunque el Twerk está fuertemente vinculado al bounce de Nueva Orleans, hoy se baila también sobre bases de hip hop, trap, dancehall, afrobeats, reggaeton y otros ritmos urbanos, siempre buscando un beat marcado y sensación de bombeo que facilite rebotes y cambios de ritmo.',
+    'Tot i que el Twerk està fortament vinculat al bounce de Nova Orleans, avui es balla també sobre bases de hip hop, trap, dancehall, afrobeats, reggaeton i altres ritmes urbans, sempre buscant un beat marcat i sensació de bombeig que faciliti rebots i canvis de ritme.',
   twerkCitableIdentidadPoder:
-    'En el contexto de escuelas serias, el Twerk se trabaja no solo como movimiento de glúteos, sino como entrenamiento de conciencia corporal, fuerza de piernas, core y glúteos, coordinación, autoestima y empoderamiento, ayudando al alumnado a reconciliarse con su cuerpo y decidir cómo quiere mostrarse.',
+    "En el context d'escoles serioses, el Twerk es treballa no només com a moviment de glutis, sinó com a entrenament de consciència corporal, força de cames, core i glutis, coordinació, autoestima i apoderament, ajudant l'alumnat a reconciliar-se amb el seu cos i decidir com vol mostrar-se.",
   twerkCitableFact1:
-    'Una clase de Twerk activa, como forma de baile de alta intensidad, puede rondar un gasto aproximado de 300-500 calorías por hora según el peso corporal y la intensidad, en línea con otros estilos de danza fitness.',
+    "Una classe de Twerk activa, com a forma de ball d'alta intensitat, pot rondar una despesa aproximada de 300-500 calories per hora segons el pes corporal i la intensitat, en línia amb altres estils de dansa fitness.",
   twerkCitableFact2:
-    'Revisiones científicas sobre programas de danza en adultos indican que bailar de forma regular se asocia con menor riesgo de deterioro cognitivo y puede contribuir a reducir la incidencia de demencia frente a estilos de vida sedentarios, lo que respalda el valor del baile como entrenamiento para el cerebro.',
+    "Revisions científiques sobre programes de dansa en adults indiquen que ballar de forma regular s'associa amb menor risc de deteriorament cognitiu i pot contribuir a reduir la incidència de demència davant estils de vida sedentaris, cosa que recolza el valor del ball com a entrenament per al cervell.",
   twerkCitableFact3:
-    "Farray's International Dance Center ofrece clases de Twerk dentro de una escuela con una valoración cercana al 5/5 en Google con cientos de reseñas, lo que respalda la satisfacción del alumnado y la calidad percibida de sus formaciones.",
-  afroLevelsTitle: 'Nuestros Niveles de Afrobeat',
-  afroLevelBasicTitle: 'Afrobeat Básico',
+    "Farray's International Dance Center ofereix classes de Twerk dins d'una escola amb una valoració propera al 5/5 a Google amb centenars de ressenyes, cosa que recolza la satisfacció de l'alumnat i la qualitat percebuda de les seves formacions.",
+  afroLevelsTitle: "Els Nostres Nivells d'Afrobeat",
+  afroLevelBasicTitle: 'Afrobeat Bàsic',
   afroLevelBasicDesc:
-    'Ideal para principiantes. Aprenderás los fundamentos del Afrobeats: rebote, flow, pasos básicos de Azonto, Shaku Shaku y actitud africana. Sin experiencia previa necesaria.',
-  afroLevelIntermediateTitle: 'Afrobeat Intermedio',
+    "Ideal per a principiants. Aprendràs els fonaments de l'Afrobeats: rebot, flow, passos bàsics d'Azonto, Shaku Shaku i actitud africana. Sense experiència prèvia necessària.",
+  afroLevelIntermediateTitle: 'Afrobeat Intermedi',
   afroLevelIntermediateDesc:
-    'Para quienes ya dominan lo básico. Trabajamos coreografías más complejas, combinaciones de estilos (Ntcham, Amapiano, Legwork) y musicalidad avanzada.',
-  afroPrepareTitle: 'Prepara tu primera clase de Afrobeat',
-  afroPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
-  afroPrepareWhatToBring: 'Qué traer:',
-  afroPrepareItem1: 'Ropa cómoda y suelta que te permita moverte con libertad',
-  afroPrepareItem2: 'Zapatillas deportivas con buena amortiguación (mucho rebote)',
-  afroPrepareItem3: 'Botella de agua (mínimo 500ml) - el Afrobeat es muy energético',
-  afroPrepareItem4: 'Toalla pequeña para el sudor',
-  afroPrepareItem5: 'Actitud positiva y ganas de pasarlo bien',
-  afroPrepareBefore: 'Antes de llegar:',
-  afroPrepareBeforeItem1: 'Llega 10-15 minutos antes para cambiarte y ambientarte',
-  afroPrepareBeforeItem2: 'Evita comer pesado 2 horas antes de clase',
-  afroPrepareBeforeItem3: 'Hidrátate bien durante el día - sudarás mucho',
+    "Per a qui ja domina el bàsic. Treballem coreografies més complexes, combinacions d'estils (Ntcham, Amapiano, Legwork) i musicalitat avançada.",
+  afroPrepareTitle: "Prepara la teva primera classe d'Afrobeat",
+  afroPrepareSubtitle: 'Tot el que necessites saber abans de venir',
+  afroPrepareWhatToBring: 'Què portar:',
+  afroPrepareItem1: "Roba còmoda i fluixa que et permeti moure't amb llibertat",
+  afroPrepareItem2: 'Sabatilles esportives amb bona amortització (molt rebot)',
+  afroPrepareItem3: "Ampolla d'aigua (mínim 500ml) - l'Afrobeat és molt energètic",
+  afroPrepareItem4: 'Tovallola petita per a la suor',
+  afroPrepareItem5: 'Actitud positiva i ganes de passar-ho bé',
+  afroPrepareBefore: "Abans d'arribar:",
+  afroPrepareBeforeItem1: 'Arriba 10-15 minuts abans per canviar-te i ambientar-te',
+  afroPrepareBeforeItem2: 'Evita menjar pesat 2 hores abans de classe',
+  afroPrepareBeforeItem3: "Hidrata't bé durant el dia - suaràs molt",
   afroPrepareAvoid: 'Evita:',
-  afroPrepareAvoidItem1: 'Joyas, anillos, pulseras que puedan engancharse o molestarte',
-  afroPrepareAvoidItem2: 'Ropa muy ajustada que limite el movimiento de brazos y piernas',
-  afroPrepareAvoidItem3: 'Calzado de calle en la sala (hay vestuarios)',
-  afroPrepareTeacherTip: 'Consejo del profe:',
+  afroPrepareAvoidItem1: 'Joies, anells, polseres que puguin enganxar-se o molestar-te',
+  afroPrepareAvoidItem2: 'Roba molt ajustada que limiti el moviment de braços i cames',
+  afroPrepareAvoidItem3: 'Calçat de carrer a la sala (hi ha vestidors)',
+  afroPrepareTeacherTip: 'Consell del profe:',
   afroPrepareTeacherQuote:
-    'El Afrobeat es alegría pura. No vengas a hacer pasos perfectos, ven a sentir la música y dejarte llevar. La energía africana se contagia cuando te sueltas.',
-  afroNearbyTitle: 'Clases de Afrobeat cerca de ti en Barcelona',
+    "L'Afrobeat és alegria pura. No vinguis a fer passos perfectes, vine a sentir la música i deixar-te portar. L'energia africana es contagia quan et deixes anar.",
+  afroNearbyTitle: "Classes d'Afrobeat a prop teu a Barcelona",
   afroNearbyDesc:
-    "Somos la academia de referencia para clases de Afrobeat en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnos de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en danza africana con profesores especializados.",
-  afroNearbySearchText: 'Si buscas "Clases de Afrobeat cerca de mi" en Barcelona, estamos a:',
+    "Som l'acadèmia de referència per a classes d'Afrobeat a la zona de Plaça Espanya, Sants, Hostafrancs, Les Corts i Eixample Esquerra. També rebem alumnes de Poble Sec, Sant Antoni i L'Hospitalet que busquen formació en dansa africana amb professors especialitzats.",
+  afroNearbySearchText: "Si busques 'Classes d'Afrobeat a prop meu' a Barcelona, som a:",
   afroNearbyMetro:
-    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
-  hhrLevelsTitle: 'Nuestros Niveles de Hip Hop Reggaeton',
-  hhrLevelBasicTitle: 'Hip Hop Reggaeton Básico',
+    'Metro: Plaça Espanya (L1, L3), Rocafort (L1) - 5 min caminant, Entença (L5) - 5 min caminant o Hostafrancs (L1) - 5 min caminant.',
+  hhrLevelsTitle: 'Els Nostres Nivells de Hip Hop Reggaeton',
+  hhrLevelBasicTitle: 'Hip Hop Reggaeton Bàsic',
   hhrLevelBasicDesc:
-    'Para principiantes. Aprenderás los fundamentos: groove, bounce, pasos básicos de hip-hop y reggaeton, actitud y musicalidad. Sin experiencia previa necesaria.',
-  hhrLevelIntermediateTitle: 'Hip Hop Reggaeton Intermedio',
+    'Per a principiants. Aprendràs els fonaments: groove, bounce, passos bàsics de hip-hop i reggaeton, actitud i musicalitat. Sense experiència prèvia necessària.',
+  hhrLevelIntermediateTitle: 'Hip Hop Reggaeton Intermedi',
   hhrLevelIntermediateDesc:
     "Per a qui domina el bàsic. Coreografies estil videoclip, combinacions més complexes, improvisació i desenvolupament d'estil propi.",
 
@@ -8569,402 +8570,395 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
     'Per a ballarins experimentats. Coreografies intensives, tècnica avançada, freestyle i preparació per a shows o competicions.',
 
   hhrPrepareTitle: 'Prepara la teva primera classe de Hip Hop Reggaeton',
-  hhrPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
-  hhrPrepareWhatToBring: 'Qué traer:',
-  hhrPrepareItem1: 'Ropa urbana cómoda (joggers, pantalones anchos, camiseta holgada)',
-  hhrPrepareItem2: 'Zapatillas deportivas con buena suela (estilo sneakers)',
-  hhrPrepareItem3: 'Botella de agua (mínimo 500ml) - sudarás bastante',
-  hhrPrepareItem4: 'Toalla pequeña para el sudor',
-  hhrPrepareItem5: 'Gorra o accesorios si te gusta el estilo (opcional)',
-  hhrPrepareBefore: 'Antes de llegar:',
-  hhrPrepareBeforeItem1: 'Llega 10-15 minutos antes para cambiarte y calentar',
-  hhrPrepareBeforeItem2: 'Evita comer pesado 2 horas antes de clase',
-  hhrPrepareBeforeItem3: 'Escucha algo de música urbana para venir con energía',
+  hhrPrepareSubtitle: 'Tot el que necessites saber abans de venir',
+  hhrPrepareWhatToBring: 'Què portar:',
+  hhrPrepareItem1: 'Roba urbana còmoda (joggers, pantalons amples, samarreta fluixa)',
+  hhrPrepareItem2: 'Sabatilles esportives amb bona sola (estil sneakers)',
+  hhrPrepareItem3: "Ampolla d'aigua (mínim 500ml) - suaràs bastant",
+  hhrPrepareItem4: 'Tovallola petita per a la suor',
+  hhrPrepareItem5: "Gorra o accessoris si t'agrada l'estil (opcional)",
+  hhrPrepareBefore: "Abans d'arribar:",
+  hhrPrepareBeforeItem1: 'Arriba 10-15 minuts abans per canviar-te i escalfar',
+  hhrPrepareBeforeItem2: 'Evita menjar pesat 2 hores abans de classe',
+  hhrPrepareBeforeItem3: 'Escolta una mica de música urbana per venir amb energia',
   hhrPrepareAvoid: 'Evita:',
-  hhrPrepareAvoidItem1: 'Joyas grandes o cadenas que puedan molestarte',
-  hhrPrepareAvoidItem2: 'Ropa muy ajustada que limite tu movimiento',
-  hhrPrepareAvoidItem3: 'Calzado de calle en la sala (hay vestuarios)',
-  hhrPrepareTeacherTip: 'Consejo de Charlie Breezy:',
+  hhrPrepareAvoidItem1: 'Joies grans o cadenes que puguin molestar-te',
+  hhrPrepareAvoidItem2: 'Roba molt ajustada que limiti el teu moviment',
+  hhrPrepareAvoidItem3: 'Calçat de carrer a la sala (hi ha vestidors)',
+  hhrPrepareTeacherTip: 'Consell de Charlie Breezy:',
   hhrPrepareTeacherQuote:
-    'El Hip Hop Reggaeton es actitud. No te preocupes si no te sale perfecto al principio, lo importante es que vengas con ganas de moverte y pasarlo bien. El flow viene solo.',
-  hhrNearbyTitle: 'Clases de Hip Hop Reggaeton cerca de ti en Barcelona',
+    "El Hip Hop Reggaeton és actitud. No et preocupis si no et surt perfecte al principi, l'important és que vinguis amb ganes de moure't i passar-ho bé. El flow ve sol.",
+  hhrNearbyTitle: 'Classes de Hip Hop Reggaeton a prop teu a Barcelona',
   hhrNearbyDesc:
-    "Somos la academia de referencia para clases de Hip Hop y Reggaeton en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnos de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en baile urbano con metodología profesional.",
-  hhrNearbySearchText:
-    'Si buscas "Clases de Hip Hop Reggaeton cerca de mi" en Barcelona, estamos a:',
+    "Som l'acadèmia de referència per a classes de Hip Hop i Reggaeton a la zona de Plaça Espanya, Sants, Hostafrancs, Les Corts i Eixample Esquerra. També rebem alumnes de Poble Sec, Sant Antoni i L'Hospitalet que busquen formació en ball urbà amb metodologia professional.",
+  hhrNearbySearchText: 'Si busques "Classes de Hip Hop Reggaeton a prop meu" a Barcelona, som a:',
   hhrNearbyMetro:
-    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
-  sxrLevelsTitle: 'Nuestros Niveles de Sexy Reggaeton',
-  sxrLevelBasicTitle: 'Sexy Reggaeton Básico',
+    'Metro: Plaça Espanya (L1, L3), Rocafort (L1) - 5 min caminant, Entença (L5) - 5 min caminant o Hostafrancs (L1) - 5 min caminant.',
+  sxrLevelsTitle: 'Els Nostres Nivells de Sexy Reggaeton',
+  sxrLevelBasicTitle: 'Sexy Reggaeton Bàsic',
   sxrLevelBasicDesc:
-    'Para principiantes. Aprenderás los fundamentos: body roll, perreo básico, movimientos de cadera y sensualidad. Sin experiencia previa necesaria. Ambiente seguro y sin juicios.',
-  sxrLevelIntermediateTitle: 'Sexy Reggaeton Intermedio',
+    'Per a principiants. Aprendràs els fonaments: body roll, perreo bàsic, moviments de maluc i sensualitat. Sense experiència prèvia necessària. Ambient segur i sense judicis.',
+  sxrLevelIntermediateTitle: 'Sexy Reggaeton Intermedi',
   sxrLevelIntermediateDesc:
-    'Para quienes dominan lo básico. Coreografías más sensuales, drops al suelo, combinaciones avanzadas y desarrollo de tu propio estilo.',
-  sxrPrepareTitle: 'Prepara tu primera clase de Sexy Reggaeton',
-  sxrPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
-  sxrPrepareWhatToBring: 'Qué traer:',
-  sxrPrepareItem1: 'Leggings o shorts cómodos que permitan ver tu movimiento',
-  sxrPrepareItem2: 'Top deportivo o camiseta ajustada',
-  sxrPrepareItem3: 'Botella de agua (mínimo 500ml)',
-  sxrPrepareItem4: 'Toalla pequeña para el sudor',
-  sxrPrepareItem5: 'Rodilleras si tienes rodillas sensibles (opcional, para floorwork)',
-  sxrPrepareBefore: 'Antes de llegar:',
-  sxrPrepareBeforeItem1: 'Llega 10-15 minutos antes para cambiarte y relajarte',
-  sxrPrepareBeforeItem2: 'Evita comer pesado 2 horas antes de clase',
-  sxrPrepareBeforeItem3: 'Ven con la mente abierta y ganas de disfrutar',
+    'Per a qui domina el bàsic. Coreografies més sensuals, drops a terra, combinacions avançades i desenvolupament del teu propi estil.',
+  sxrPrepareTitle: 'Prepara la teva primera classe de Sexy Reggaeton',
+  sxrPrepareSubtitle: 'Tot el que necessites saber abans de venir',
+  sxrPrepareWhatToBring: 'Què portar:',
+  sxrPrepareItem1: 'Leggings o pantalons curts còmodes que permetin veure el teu moviment',
+  sxrPrepareItem2: 'Top esportiu o samarreta ajustada',
+  sxrPrepareItem3: "Ampolla d'aigua (mínim 500ml)",
+  sxrPrepareItem4: 'Tovallola petita per a la suor',
+  sxrPrepareItem5: 'Genolleres si tens genolls sensibles (opcional, per a floorwork)',
+  sxrPrepareBefore: "Abans d'arribar:",
+  sxrPrepareBeforeItem1: 'Arriba 10-15 minuts abans per canviar-te i relaxar-te',
+  sxrPrepareBeforeItem2: 'Evita menjar pesat 2 hores abans de classe',
+  sxrPrepareBeforeItem3: 'Vine amb la ment oberta i ganes de gaudir',
   sxrPrepareAvoid: 'Evita:',
-  sxrPrepareAvoidItem1: 'Joyas que puedan molestarte o engancharse',
-  sxrPrepareAvoidItem2: 'Ropa muy holgada que impida ver tu técnica',
-  sxrPrepareAvoidItem3: 'Calzado de calle en la sala (hay vestuarios)',
-  sxrPrepareTeacherTip: 'Consejo de la profe:',
+  sxrPrepareAvoidItem1: 'Joies que puguin molestar-te o enganxar-se',
+  sxrPrepareAvoidItem2: 'Roba molt fluixa que impedeixi veure la teva tècnica',
+  sxrPrepareAvoidItem3: 'Calçat de carrer a la sala (hi ha vestidors)',
+  sxrPrepareTeacherTip: 'Consell de la profe:',
   sxrPrepareTeacherQuote:
-    'El Sexy Reggaeton es para todas. No importa tu cuerpo, tu experiencia o tu edad. Aquí celebramos la sensualidad de cada mujer. Ven a descubrirte.',
-  sxrNearbyTitle: 'Clases de Sexy Reggaeton cerca de ti en Barcelona',
+    'El Sexy Reggaeton és per a totes. No importa el teu cos, la teva experiència o la teva edat. Aquí celebrem la sensualitat de cada dona. Vine a descobrir-te.',
+  sxrNearbyTitle: 'Classes de Sexy Reggaeton a prop teu a Barcelona',
   sxrNearbyDesc:
-    "Somos la academia de referencia para clases de Sexy Reggaeton en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnas de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en baile sensual con ambiente seguro y profesional.",
-  sxrNearbySearchText: 'Si buscas "Clases de Sexy Reggaeton cerca de mi" en Barcelona, estamos a:',
+    "Som l'acadèmia de referència per a classes de Sexy Reggaeton a la zona de Plaça Espanya, Sants, Hostafrancs, Les Corts i Eixample Esquerra. També rebem alumnes de Poble Sec, Sant Antoni i L'Hospitalet que busquen formació en ball sensual amb ambient segur i professional.",
+  sxrNearbySearchText: 'Si busques "Classes de Sexy Reggaeton a prop meu" a Barcelona, som a:',
   sxrNearbyMetro:
-    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
-  rcbPageTitle: 'Clases de Reggaeton Cubano en Barcelona | Reparto y Cubatón Auténtico',
+    'Metro: Plaça Espanya (L1, L3), Rocafort (L1) - 5 min caminant, Entença (L5) - 5 min caminant o Hostafrancs (L1) - 5 min caminant.',
+  rcbPageTitle: 'Classes de Reggaeton Cubà a Barcelona | Reparto i Cubatón Autèntic',
   rcbMetaDescription:
-    'Aprende Reggaeton Cubano auténtico en Barcelona con maestros cubanos. Clases de Reparto, Cubatón e improvisación cerca de Plaza España y Sants. ¡El reggaeton de las calles de Cuba!',
+    'Aprèn Reggaeton Cubà autèntic a Barcelona amb mestres cubans. Classes de Reparto, Cubatón i improvisació a prop de Plaça Espanya i Sants. El reggaeton dels carrers de Cuba!',
   rcbHeroDesc:
-    'Aprende a bailar el reggaeton auténtico que se baila en las calles de Cuba. No el comercial, el de verdad.',
-  rcbCTA1: 'Hazte Socio Ahora',
-  rcbCTA1Subtext: 'Quedan pocas plazas este mes',
-  rcbCTA2: 'Reserva tu Clase de Prueba',
-  rcbCTA2Subtext: 'Oferta por tiempo limitado',
-  rcbAuthenticGuaranteed: 'Sabor Cubano',
+    'Aprèn a ballar el reggaeton autèntic que es balla als carrers de Cuba. No el comercial, el de debò.',
+  rcbCTA1: 'Fes-te Soci Ara',
+  rcbCTA1Subtext: 'Queden poques places aquest mes',
+  rcbCTA2: 'Reserva la teva Classe de Prova',
+  rcbCTA2Subtext: 'Oferta per temps limitat',
+  rcbAuthenticGuaranteed: 'Sabor Cubà',
   rcbWhatIsP3:
-    '"En Cuba no bailamos para impresionar. Bailamos para sentir. Y eso es lo que enseñamos aquí."',
+    '"A Cuba no ballem per impressionar. Ballem per sentir. I això és el que ensenyem aquí."',
   rcbWhatIsP4:
-    'Aprenderás a disociar cada parte de tu cuerpo, a improvisar con la música y a desarrollar tu propio estilo. Porque el reggaeton cubano no se copia: se vive.',
-  rcbWhatIsQuestionTitle: '¿Cansado del reggaeton comercial que todo el mundo baila igual?',
-  rcbWhatIsQuestionAnswer: 'Entonces esto es para ti.',
+    'Aprendràs a dissociar cada part del teu cos, a improvisar amb la música i a desenvolupar el teu propi estil. Perquè el reggaeton cubà no es copia: es viu.',
+  rcbWhatIsQuestionTitle: 'Cansat del reggaeton comercial que tothom balla igual?',
+  rcbWhatIsQuestionAnswer: 'Llavors això és per a tu.',
   rcbCulturalShort:
-    'El reggaeton cubano tiene sus raíces en los barrios de La Habana, donde la fusión del reggae jamaicano con ritmos afrocubanos creó un estilo único y callejero.',
+    "El reggaeton cubà té les seves arrels als barris de L'Havana, on la fusió del reggae jamaicà amb ritmes afrocubans va crear un estil únic i de carrer.",
   rcbCulturalFull:
-    '### Orígenes: Los Barrios de La Habana (1990s-2000s)\n\n**El Reggaeton Cubano (también conocido como Cubatón o Reparto) surgió a finales de los años 90 y principios de los 2000 en barrios populares de La Habana como La Lisa, Marianao, Centro Habana y El Cerro.** Nació como fusión del reggaeton puertorriqueño que llegaba por radio con los ritmos afrocubanos tradicionales: rumba, son cubano y elementos yoruba.\n\n**"El Reggaeton Cubano fusiona reggaeton puertorriqueño con rumba, son y ritmos yoruba, creando un estilo único nacido en los barrios de La Habana."**\n\n### Artistas Pioneros\n\n**Artistas como Candyman, El Taiger, Chocolate MC, Osmani García y El Chacal popularizaron el género** y definieron su sonido característico: bases de dembow combinadas con percusión afrocubana, letras callejeras y una actitud rebelde que refleja la vida cotidiana de los barrios cubanos.\n\n### El Reparto: El Estilo de los Barrios\n\n**El término "Reparto" proviene de los "repartos" o barrios populares de La Habana donde nació este estilo.** Se caracteriza por ritmos más crudos que el reggaeton comercial, con una conexión más directa y visceral con la música. Los bailarines de Reparto son reconocidos mundialmente por su capacidad de improvisación y su dominio técnico.\n\n**"El Reparto se caracteriza por ritmos crudos, letras callejeras y una actitud rebelde que refleja la vida de los barrios cubanos."**\n\n### Técnicas Distintivas del Baile\n\nEl baile de Reggaeton Cubano se distingue por elementos técnicos únicos:\n- **Improvisación constante**: respuesta instantánea a los cambios de la música\n- **Disociación corporal avanzada**: caderas, pecho y hombros moviéndose independientemente\n- **Tembleque**: vibración rápida y controlada de caderas, técnica exclusiva cubana\n- **Movimientos de suelo**: inspirados en la rumba afrocubana (guaguancó, columbia)\n- **Perreo cubano**: variante más técnica y rítmica que el puertorriqueño\n\n**"El baile de Reggaeton Cubano se distingue por improvisación, disociación corporal, tembleque y movimientos de suelo inspirados en la rumba afrocubana."**\n\n### Influencias Afrocubanas\n\n**El Reggaeton Cubano incorpora elementos de la rumba (guaguancó, columbia), son cubano y danzas yoruba, creando un estilo único que lo diferencia del reggaeton puertorriqueño.** Esta fusión de tradiciones africanas y caribeñas le da su sabor característico y su riqueza de movimientos.\n\n### El Cubatón Hoy: Expansión Internacional\n\nHoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia: la improvisación, el sabor y esa energía única que solo viene de Cuba. Artistas como **El Taiger, Jacob Forever y Chocolate MC** han llevado el sonido cubano al mundo, y con él, su forma de bailar.\n\n### Beneficios para la Salud\n\n**Una clase de Reggaeton Cubano puede quemar entre 350 y 550 calorías por hora** debido a la intensidad del tembleque y los movimientos de disociación corporal. Además, mejora la coordinación, la flexibilidad de cadera y la conexión rítmica.\n\n### Reggaeton Cubano en Farray\'s Center\n\n**Farray\'s International Dance Center enseña Reggaeton Cubano auténtico con profesores cubanos formados en la Escuela Nacional de Arte (ENA) de La Habana.** Las clases mantienen la esencia callejera del estilo mientras ofrecen una progresión técnica estructurada para todos los niveles.',
+    "### Orígens: Els Barris de L'Havana (1990s-2000s)\n\n**El Reggaeton Cubà (també conegut com Cubatón o Reparto) va sorgir a finals dels anys 90 i principis dels 2000 als barris populars de L'Havana com La Lisa, Marianao, Centro Habana i El Cerro.** Va néixer com a fusió del reggaeton porto-riqueny que arribava per ràdio amb els ritmes afrocubans tradicionals: rumba, son cubà i elements yoruba.\n\n**\"El Reggaeton Cubà fusiona reggaeton porto-riqueny amb rumba, son i ritmes yoruba, creant un estil únic nascut als barris de L'Havana.\"**\n\n### Artistes Pioners\n\n**Artistes com Candyman, El Taiger, Chocolate MC, Osmani García i El Chacal van popularitzar el gènere** i van definir el seu so característic: bases de dembow combinades amb percussió afrocubana, lletres de carrer i una actitud rebel que reflecteix la vida quotidiana dels barris cubans.\n\n### El Reparto: L'Estil dels Barris\n\n**El terme \"Reparto\" prové dels \"repartos\" o barris populars de L'Havana on va néixer aquest estil.** Es caracteritza per ritmes més crus que el reggaeton comercial, amb una connexió més directa i visceral amb la música. Els ballarins de Reparto són reconeguts mundialment per la seva capacitat d'improvisació i el seu domini tècnic.\n\n**\"El Reparto es caracteritza per ritmes crus, lletres de carrer i una actitud rebel que reflecteix la vida dels barris cubans.\"**\n\n### Tècniques Distintives del Ball\n\nEl ball de Reggaeton Cubà es distingeix per elements tècnics únics:\n- **Improvisació constant**: resposta instantània als canvis de la música\n- **Dissociació corporal avançada**: malucs, pit i espatlles movent-se independentment\n- **Tembleque**: vibració ràpida i controlada de malucs, tècnica exclusiva cubana\n- **Moviments de terra**: inspirats en la rumba afrocubana (guaguancó, columbia)\n- **Perreo cubà**: variant més tècnica i rítmica que el porto-riqueny\n\n**\"El ball de Reggaeton Cubà es distingeix per improvisació, dissociació corporal, tembleque i moviments de terra inspirats en la rumba afrocubana.\"**\n\n### Influències Afrocubanes\n\n**El Reggaeton Cubà incorpora elements de la rumba (guaguancó, columbia), son cubà i danses yoruba, creant un estil únic que el diferencia del reggaeton porto-riqueny.** Aquesta fusió de tradicions africanes i caribenyes li dóna el seu sabor característic i la seva riquesa de moviments.\n\n### El Cubatón Avui: Expansió Internacional\n\nAvui, el Cubatón s'ha expandit internacionalment mentre manté la seva essència: la improvisació, el sabor i aquesta energia única que només ve de Cuba. Artistes com **El Taiger, Jacob Forever i Chocolate MC** han portat el so cubà al món, i amb ell, la seva forma de ballar.\n\n### Beneficis per a la Salut\n\n**Una classe de Reggaeton Cubà pot cremar entre 350 i 550 calories per hora** degut a la intensitat del tembleque i els moviments de dissociació corporal. A més, millora la coordinació, la flexibilitat de maluc i la connexió rítmica.\n\n### Reggaeton Cubà a Farray's Center\n\n**Farray's International Dance Center ensenya Reggaeton Cubà autèntic amb professors cubans formats a l'Escola Nacional d'Art (ENA) de L'Havana.** Les classes mantenen l'essència de carrer de l'estil mentre ofereixen una progressió tècnica estructurada per a tots els nivells.",
   rcbIdentifyTransition:
-    'Si has dicho "sí" a alguno de estos puntos, necesitas conocer el reggaeton de verdad.',
+    'Si has dit "sí" a algun d\'aquests punts, necessites conèixer el reggaeton de debò.',
   rcbIdentifyAgitate1:
-    'Seguir bailando el mismo reggaeton comercial de siempre te mantiene en tu zona de confort. Nunca desarrollarás tu propio estilo ni esa libertad que ves en los bailarines cubanos.',
+    'Seguir ballant el mateix reggaeton comercial de sempre et manté a la teva zona de confort. Mai desenvoluparàs el teu propi estil ni aquesta llibertat que veus als ballarins cubans.',
   rcbIdentifySolution:
-    "En Farray's Center aprenderás con Alejandro Miñoso y Charlie Breezy, cubanos de nacimiento. No te enseñarán coreografías: te enseñarán a BAILAR con sentimiento.",
-  rcbLevelsTitle: 'Nuestros Niveles de Reggaeton Cubano',
-  rcbLevelBasicTitle: 'Reggaeton Cubano Básico',
+    "A Farray's Center aprendràs amb Alejandro Miñoso i Charlie Breezy, cubans de naixement. No t'ensenyaran coreografies: t'ensenyaran a BALLAR amb sentiment.",
+  rcbLevelsTitle: 'Els Nostres Nivells de Reggaeton Cubà',
+  rcbLevelBasicTitle: 'Reggaeton Cubà Bàsic',
   rcbLevelBasicDesc:
-    'Para principiantes. Aprenderás los fundamentos: disociación corporal, tembleque básico, pasos de Reparto y actitud cubana. Sin experiencia previa necesaria.',
-  rcbLevelIntermediateTitle: 'Reggaeton Cubano Intermedio',
+    'Per a principiants. Aprendràs els fonaments: dissociació corporal, tembleque bàsic, passos de Reparto i actitud cubana. Sense experiència prèvia necessària.',
+  rcbLevelIntermediateTitle: 'Reggaeton Cubà Intermedi',
   rcbLevelIntermediateDesc:
-    'Para quienes dominan lo básico. Improvisación avanzada, tembleque y disociación complejos, movimientos de suelo y desarrollo de estilo propio cubano.',
-  rcbPrepareTitle: 'Prepara tu primera clase de Reggaeton Cubano',
-  rcbPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
-  rcbPrepareWhatToBring: 'Qué traer:',
-  rcbPrepareItem1: 'Ropa cómoda que permita movimiento libre de caderas',
-  rcbPrepareItem2: 'Zapatillas deportivas con buena amortiguación',
-  rcbPrepareItem3: 'Botella de agua (mínimo 500ml) - sudarás mucho',
-  rcbPrepareItem4: 'Toalla pequeña para el sudor',
-  rcbPrepareItem5: 'Actitud abierta a la improvisación',
-  rcbPrepareBefore: 'Antes de llegar:',
-  rcbPrepareBeforeItem1: 'Llega 10-15 minutos antes para cambiarte y calentar',
-  rcbPrepareBeforeItem2: 'Evita comer pesado 2 horas antes de clase',
-  rcbPrepareBeforeItem3: 'Escucha algo de reggaeton cubano para venir con energía',
+    "Per a qui domina el bàsic. Improvisació avançada, tembleque i dissociació complexos, moviments de terra i desenvolupament d'estil propi cubà.",
+  rcbPrepareTitle: 'Prepara la teva primera classe de Reggaeton Cubà',
+  rcbPrepareSubtitle: 'Tot el que necessites saber abans de venir',
+  rcbPrepareWhatToBring: 'Què portar:',
+  rcbPrepareItem1: 'Roba còmoda que permeti moviment lliure de malucs',
+  rcbPrepareItem2: 'Sabatilles esportives amb bona amortització',
+  rcbPrepareItem3: "Ampolla d'aigua (mínim 500ml) - suaràs molt",
+  rcbPrepareItem4: 'Tovallola petita per a la suor',
+  rcbPrepareItem5: 'Actitud oberta a la improvisació',
+  rcbPrepareBefore: "Abans d'arribar:",
+  rcbPrepareBeforeItem1: 'Arriba 10-15 minuts abans per canviar-te i escalfar',
+  rcbPrepareBeforeItem2: 'Evita menjar pesat 2 hores abans de classe',
+  rcbPrepareBeforeItem3: 'Escolta una mica de reggaeton cubà per venir amb energia',
   rcbPrepareAvoid: 'Evita:',
-  rcbPrepareAvoidItem1: 'Joyas o accesorios que puedan molestarte',
-  rcbPrepareAvoidItem2: 'Ropa muy ajustada que limite el movimiento de caderas',
-  rcbPrepareAvoidItem3: 'Calzado de calle en la sala (hay vestuarios)',
-  rcbPrepareTeacherTip: 'Consejo del profe:',
+  rcbPrepareAvoidItem1: 'Joies o accessoris que puguin molestar-te',
+  rcbPrepareAvoidItem2: 'Roba molt ajustada que limiti el moviment de malucs',
+  rcbPrepareAvoidItem3: 'Calçat de carrer a la sala (hi ha vestidors)',
+  rcbPrepareTeacherTip: 'Consell del profe:',
   rcbPrepareTeacherQuote:
-    'El Reggaeton Cubano es puro sentimiento. No vengas a copiar pasos, ven a sentir la música y dejar que tu cuerpo improvise. Eso es lo que nos hace únicos los cubanos.',
-  rcbNearbyTitle: 'Clases de Reggaeton Cubano cerca de ti en Barcelona',
+    'El Reggaeton Cubà és pur sentiment. No vinguis a copiar passos, vine a sentir la música i deixar que el teu cos improvisi. Això és el que ens fa únics als cubans.',
+  rcbNearbyTitle: 'Classes de Reggaeton Cubà a prop teu a Barcelona',
   rcbNearbyDesc:
-    "Somos la academia de referencia para clases de Reggaeton Cubano en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnos de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en reparto y reggaeton auténtico cubano.",
-  rcbNearbySearchText:
-    'Si buscas "Clases de Reggaeton Cubano cerca de mi" en Barcelona, estamos a:',
+    "Som l'acadèmia de referència per a classes de Reggaeton Cubà a la zona de Plaça Espanya, Sants, Hostafrancs, Les Corts i Eixample Esquerra. També rebem alumnes de Poble Sec, Sant Antoni i L'Hospitalet que busquen formació en reparto i reggaeton autèntic cubà.",
+  rcbNearbySearchText: 'Si busques "Classes de Reggaeton Cubà a prop meu" a Barcelona, som a:',
   rcbNearbyMetro:
-    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
-  femLevelsTitle: 'Nuestros Niveles de Femmology',
-  femLevelBasicTitle: 'Femmology Iniciación',
+    'Metro: Plaça Espanya (L1, L3), Rocafort (L1) - 5 min caminant, Entença (L5) - 5 min caminant o Hostafrancs (L1) - 5 min caminant.',
+  femLevelsTitle: 'Els Nostres Nivells de Femmology',
+  femLevelBasicTitle: 'Femmology Iniciació',
   femLevelBasicDesc:
-    'Perfecto para empezar tu viaje. Aprenderás a caminar en tacones con elegancia, trabajarás la postura básica, descubrirás el uso del pelo como elemento expresivo y comenzarás a conectar con tu feminidad a través del movimiento.',
-  femLevelIntermediateTitle: 'Femmology Avanzado',
+    "Perfecte per començar el teu viatge. Aprendràs a caminar amb tacons amb elegància, treballaràs la postura bàsica, descobriràs l'ús del cabell com a element expressiu i començaràs a connectar amb la teva feminitat a través del moviment.",
+  femLevelIntermediateTitle: 'Femmology Avançat',
   femLevelIntermediateDesc:
-    'Para quienes ya dominan los fundamentos. Coreografías más complejas, floorwork avanzado, disociación corporal refinada, trabajo emocional más profundo y técnica de tacones de alto nivel.',
-  femPrepareTitle: 'Prepara tu primera clase de Femmology',
-  femPrepareSubtitle: 'Todo lo que necesitas saber antes de tu transformación',
-  femPrepareWhatToBring: 'Qué traer:',
-  femPrepareItem1: 'Tacones con tira en el tobillo (7-10 cm recomendado para principiantes)',
-  femPrepareItem2: 'Ropa cómoda y ajustada que te permita ver tu cuerpo en el espejo',
-  femPrepareItem3: 'Rodilleras si tus rodillas son sensibles (habrá trabajo de suelo)',
-  femPrepareItem4: 'Botella de agua y toalla pequeña',
-  femPrepareItem5: 'Mente abierta y ganas de descubrirte',
-  femPrepareBefore: 'Antes de llegar:',
-  femPrepareBeforeItem1: 'Llega 15 minutos antes para cambiarte y prepararte mentalmente',
-  femPrepareBeforeItem2: 'Evita comer pesado 2 horas antes de clase',
-  femPrepareBeforeItem3: 'Si es tu primera vez en tacones, practica caminar un poco en casa',
+    "Per a qui ja domina els fonaments. Coreografies més complexes, floorwork avançat, dissociació corporal refinada, treball emocional més profund i tècnica de tacons d'alt nivell.",
+  femPrepareTitle: 'Prepara la teva primera classe de Femmology',
+  femPrepareSubtitle: 'Tot el que necessites saber abans de la teva transformació',
+  femPrepareWhatToBring: 'Què portar:',
+  femPrepareItem1: 'Tacons amb tira al turmell (7-10 cm recomanat per a principiants)',
+  femPrepareItem2: 'Roba còmoda i ajustada que et permeti veure el teu cos al mirall',
+  femPrepareItem3: 'Genolleres si els teus genolls són sensibles (hi haurà treball de terra)',
+  femPrepareItem4: "Ampolla d'aigua i tovallola petita",
+  femPrepareItem5: 'Ment oberta i ganes de descobrir-te',
+  femPrepareBefore: "Abans d'arribar:",
+  femPrepareBeforeItem1: 'Arriba 15 minuts abans per canviar-te i preparar-te mentalment',
+  femPrepareBeforeItem2: 'Evita menjar pesat 2 hores abans de classe',
+  femPrepareBeforeItem3: 'Si és el teu primer cop amb tacons, practica caminar una mica a casa',
   femPrepareAvoid: 'Evita:',
-  femPrepareAvoidItem1: 'Joyas, anillos o pulseras que puedan engancharse o molestarte',
-  femPrepareAvoidItem2: 'Ropa muy suelta que no te permita ver tus movimientos',
-  femPrepareAvoidItem3: 'Vergüenza o miedo: este es un espacio seguro y sin juicios',
-  femPrepareTeacherTip: 'Consejo de Yunaisy:',
+  femPrepareAvoidItem1: 'Joies, anells o polseres que puguin enganxar-se o molestar-te',
+  femPrepareAvoidItem2: 'Roba molt fluixa que no et permeti veure els teus moviments',
+  femPrepareAvoidItem3: 'Vergonya o por: aquest és un espai segur i sense judicis',
+  femPrepareTeacherTip: 'Consell de Yunaisy:',
   femPrepareTeacherQuote:
-    'Femmology no se trata de ser perfecta, se trata de ser auténtica. Ven como eres, con tus miedos y tus ganas. Aquí no juzgamos, aquí nos transformamos. Para que te quieras cada día más, hermosa mujer.',
-  femNearbyTitle: 'Clases de Femmology cerca de ti en Barcelona',
+    "Femmology no es tracta de ser perfecta, es tracta de ser autèntica. Vine com ets, amb les teves pors i les teves ganes. Aquí no jutgem, aquí ens transformem. Perquè t'estimis cada dia més, preciosa dona.",
+  femNearbyTitle: 'Classes de Femmology a prop teu a Barcelona',
   femNearbyDesc:
-    "Somos la academia de referencia para clases de Femmology en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnas de Poble Sec, Sant Antoni y L'Hospitalet que buscan reconectar con su feminidad a través del movimiento.",
-  femNearbySearchText: 'Si buscas "Clases de Femmology cerca de mi" en Barcelona, estamos a:',
+    "Som l'acadèmia de referència per a classes de Femmology a la zona de Plaça Espanya, Sants, Hostafrancs, Les Corts i Eixample Esquerra. També rebem alumnes de Poble Sec, Sant Antoni i L'Hospitalet que busquen reconnectar amb la seva feminitat a través del moviment.",
+  femNearbySearchText: 'Si busques "Classes de Femmology a prop meu" a Barcelona, som a:',
   femNearbyMetro:
-    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
-  sexystyleLevelsTitle: 'Nuestros Niveles de Sexy Style',
-  sexystyleLevelBasicTitle: 'Sexy Style Principiante',
+    'Metro: Plaça Espanya (L1, L3), Rocafort (L1) - 5 min caminant, Entença (L5) - 5 min caminant o Hostafrancs (L1) - 5 min caminant.',
+  sexystyleLevelsTitle: 'Els Nostres Nivells de Sexy Style',
+  sexystyleLevelBasicTitle: 'Sexy Style Principiant',
   sexystyleLevelBasicDesc:
-    'Ideal para empezar sin presión. Aprenderás los movimientos básicos de cadera, ondas corporales y actitud. Los tacones son opcionales: puedes venir con zapatillas y progresar a tu ritmo.',
-  sexystyleLevelIntermediateTitle: 'Sexy Style Intermedio',
+    'Ideal per començar sense pressió. Aprendràs els moviments bàsics de maluc, ones corporals i actitud. Els tacons són opcionals: pots venir amb sabatilles i progressar al teu ritme.',
+  sexystyleLevelIntermediateTitle: 'Sexy Style Intermedi',
   sexystyleLevelIntermediateDesc:
-    'Para quienes ya se sienten cómodas con los fundamentos. Coreografías más elaboradas, floorwork, transiciones fluidas y trabajo de actitud y presencia escénica.',
-  sexystylePrepareTitle: 'Prepara tu primera clase de Sexy Style',
-  sexystylePrepareSubtitle: 'Todo lo que necesitas para tu primera experiencia',
-  sexystylePrepareWhatToBring: 'Qué traer:',
-  sexystylePrepareItem1: 'Ropa cómoda y ajustada: leggings o shorts, top o camiseta',
-  sexystylePrepareItem2: 'Zapatillas deportivas o tacones (los tacones son opcionales)',
-  sexystylePrepareItem3: 'Rodilleras si tienes rodillas sensibles (habrá floorwork)',
-  sexystylePrepareItem4: 'Botella de agua y toalla pequeña',
-  sexystylePrepareItem5: 'Ganas de pasarlo bien y soltarte',
-  sexystylePrepareBefore: 'Antes de llegar:',
-  sexystylePrepareBeforeItem1: 'Llega 10-15 minutos antes para cambiarte tranquilamente',
-  sexystylePrepareBeforeItem2: 'Evita comer pesado 2 horas antes de clase',
-  sexystylePrepareBeforeItem3: 'Pon música que te haga sentir bien en el camino',
+    "Per a qui ja se sent còmoda amb els fonaments. Coreografies més elaborades, floorwork, transicions fluides i treball d'actitud i presència escènica.",
+  sexystylePrepareTitle: 'Prepara la teva primera classe de Sexy Style',
+  sexystylePrepareSubtitle: 'Tot el que necessites per a la teva primera experiència',
+  sexystylePrepareWhatToBring: 'Què portar:',
+  sexystylePrepareItem1: 'Roba còmoda i ajustada: leggings o pantalons curts, top o samarreta',
+  sexystylePrepareItem2: 'Sabatilles esportives o tacons (els tacons són opcionals)',
+  sexystylePrepareItem3: 'Genolleres si tens genolls sensibles (hi haurà floorwork)',
+  sexystylePrepareItem4: "Ampolla d'aigua i tovallola petita",
+  sexystylePrepareItem5: 'Ganes de passar-ho bé i deixar-te anar',
+  sexystylePrepareBefore: "Abans d'arribar:",
+  sexystylePrepareBeforeItem1: 'Arriba 10-15 minuts abans per canviar-te tranquil·lament',
+  sexystylePrepareBeforeItem2: 'Evita menjar pesat 2 hores abans de classe',
+  sexystylePrepareBeforeItem3: 'Posa música que et faci sentir bé pel camí',
   sexystylePrepareAvoid: 'Evita:',
-  sexystylePrepareAvoidItem1: 'Joyas o accesorios que puedan molestarte al moverte',
-  sexystylePrepareAvoidItem2: 'Ropa muy suelta que no te permita ver tu cuerpo en el espejo',
-  sexystylePrepareAvoidItem3: 'Compararte con las demás: cada cuerpo tiene su propio flow',
-  sexystylePrepareTeacherTip: 'Consejo de Yasmina:',
+  sexystylePrepareAvoidItem1: "Joies o accessoris que puguin molestar-te en moure't",
+  sexystylePrepareAvoidItem2: 'Roba molt fluixa que no et permeti veure el teu cos al mirall',
+  sexystylePrepareAvoidItem3: 'Comparar-te amb les altres: cada cos té el seu propi flow',
+  sexystylePrepareTeacherTip: 'Consell de Yasmina:',
   sexystylePrepareTeacherQuote:
-    'Lo más importante es que vengas con ganas de disfrutar. No importa si nunca has bailado o si crees que no eres sexy. Aquí todas nos soltamos, nos reímos y salimos sintiéndonos más poderosas. ¡Te espero!',
-  sexystyleNearbyTitle: 'Clases de Sexy Style cerca de ti en Barcelona',
+    "El més important és que vinguis amb ganes de gaudir. No importa si mai has ballat o si creus que no ets sexy. Aquí totes ens deixem anar, ens riem i sortim sentint-nos més poderoses. T'espero!",
+  sexystyleNearbyTitle: 'Classes de Sexy Style a prop teu a Barcelona',
   sexystyleNearbyDesc:
-    "Somos la academia de referencia para clases de Sexy Style en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnas de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en baile sensual con metodología profesional y ambiente seguro.",
-  sexystyleNearbySearchText:
-    'Si buscas "Clases de Sexy Style cerca de mi" en Barcelona, estamos a:',
+    "Som l'acadèmia de referència per a classes de Sexy Style a la zona de Plaça Espanya, Sants, Hostafrancs, Les Corts i Eixample Esquerra. També rebem alumnes de Poble Sec, Sant Antoni i L'Hospitalet que busquen formació en ball sensual amb metodologia professional i ambient segur.",
+  sexystyleNearbySearchText: 'Si busques "Classes de Sexy Style a prop meu" a Barcelona, som a:',
   sexystyleNearbyMetro:
-    'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
+    'Metro: Plaça Espanya (L1, L3), Rocafort (L1) - 5 min caminant, Entença (L5) - 5 min caminant o Hostafrancs (L1) - 5 min caminant.',
   modernjazzCitableDefinicion:
-    '**"El Modern Jazz es un estilo de danza que fusiona la técnica del ballet clásico con la energía y libertad del jazz americano. Combina isolations, contracciones, jazz walks y saltos, con fuerte énfasis en la musicalidad y la expresión individual."**',
+    '**"El Modern Jazz és un estil de dansa que fusiona la tècnica del ballet clàssic amb l\'energia i llibertat del jazz americà. Combina isolations, contraccions, jazz walks i salts, amb fort èmfasi en la musicalitat i l\'expressió individual."**',
   modernjazzCitableOrigen:
-    '**"El Modern Jazz nació en Estados Unidos a mediados del siglo XX, desarrollado por pioneros como Jack Cole (considerado el padre del jazz teatral), Bob Fosse (célebre por su estilo característico de hombros, caderas y sombreros) y Luigi (Eugene Louis Faccuito), quien sistematizó la técnica tras un accidente que lo dejó parcialmente paralizado."**',
+    '**"El Modern Jazz va néixer als Estats Units a mitjan segle XX, desenvolupat per pioners com Jack Cole (considerat el pare del jazz teatral), Bob Fosse (cèlebre pel seu estil característic d\'espatlles, malucs i barrets) i Luigi (Eugene Louis Faccuito), qui va sistematitzar la tècnica després d\'un accident que el va deixar parcialment paralitzat."**',
   modernjazzCitableTecnicas:
-    '**"Las técnicas fundamentales del Modern Jazz incluyen: isolations (movimientos aislados de cabeza, hombros, caja torácica y caderas), contracciones y releases, jazz walks, pirouettes, grand battements, ball changes, kicks y saltos como jetés y tour jetés."**',
+    '**"Les tècniques fonamentals del Modern Jazz inclouen: isolations (moviments aïllats de cap, espatlles, caixa toràcica i malucs), contraccions i releases, jazz walks, pirouettes, grand battements, ball changes, kicks i salts com jetés i tour jetés."**',
   modernjazzCitableMetodologia:
-    '**"En Farray\'s Center, las clases de Modern Jazz siguen una metodología que combina calentamiento técnico, ejercicios de centro (isolations, coordinación), diagonales (giros, saltos, desplazamientos) y coreografía final. Alejandro Miñoso, formado en la Escuela Nacional de Arte de Cuba, aporta la disciplina de la técnica cubana con la expresividad del jazz."**',
+    "**\"A Farray's Center, les classes de Modern Jazz segueixen una metodologia que combina escalfament tècnic, exercicis de centre (isolations, coordinació), diagonals (girs, salts, desplaçaments) i coreografia final. Alejandro Miñoso, format a l'Escola Nacional d'Art de Cuba, aporta la disciplina de la tècnica cubana amb l'expressivitat del jazz.\"**",
   modernjazzCitableEvolucionGlobal:
-    '**"El Modern Jazz evolucionó desde los espectáculos de Broadway y Hollywood de los años 40-60 hasta convertirse en un estilo global presente en videoclips, comerciales, competiciones de danza y escuelas de todo el mundo. Artistas como Michael Jackson popularizaron elementos del jazz en la cultura pop."**',
+    '**"El Modern Jazz va evolucionar des dels espectacles de Broadway i Hollywood dels anys 40-60 fins a convertir-se en un estil global present en videoclips, anuncis, competicions de dansa i escoles de tot el món. Artistes com Michael Jackson van popularitzar elements del jazz en la cultura pop."**',
   modernjazzCitableExpresionCorporal:
-    '**"A diferencia del ballet, el Modern Jazz permite mayor libertad de expresión personal. Cada bailarín desarrolla su propio estilo dentro de la técnica, combinando precisión con personalidad, lo que lo hace ideal para quienes buscan técnica sin rigidez."**',
+    '**"A diferència del ballet, el Modern Jazz permet major llibertat d\'expressió personal. Cada ballarí desenvolupa el seu propi estil dins de la tècnica, combinant precisió amb personalitat, cosa que el fa ideal per a qui busca tècnica sense rigidesa."**',
   modernjazzCitableBroadway:
-    '**"El jazz de Broadway, desarrollado por coreógrafos como Bob Fosse, Jerome Robbins y Gwen Verdon, definió un estilo teatral que sigue vigente en musicales como Chicago, Cabaret, All That Jazz, y producciones actuales como Hamilton y SIX."**',
+    '**"El jazz de Broadway, desenvolupat per coreògrafs com Bob Fosse, Jerome Robbins i Gwen Verdon, va definir un estil teatral que segueix vigent en musicals com Chicago, Cabaret, All That Jazz, i produccions actuals com Hamilton i SIX."**',
   modernjazzCitableLegado:
-    '**"El legado del Modern Jazz pervive en cada videoclip de pop, cada musical de Broadway y cada escuela de danza que enseña técnica jazz. Es la base de la danza comercial contemporánea y sigue evolucionando con cada nueva generación de bailarines."**',
-  balletCompareRow9: 'Conexión tierra (grounding)',
-  balletCompareRow10: 'Exigencia cardiovascular',
-  balletCompareRow11: 'Versatilidad para otros estilos',
+    '**"El llegat del Modern Jazz perviu en cada videoclip de pop, cada musical de Broadway i cada escola de dansa que ensenya tècnica jazz. És la base de la dansa comercial contemporània i segueix evolucionant amb cada nova generació de ballarins."**',
+  balletCompareRow9: 'Connexió terra (grounding)',
+  balletCompareRow10: 'Exigència cardiovascular',
+  balletCompareRow11: 'Versatilitat per a altres estils',
   afrocontemporaneoStatistics:
-    'Afro Contemporáneo / DCC mejora coordinación/espacialidad/musicalidad (ENA), técnica híbrida profesional.',
+    'Afro Contemporani / DCC millora coordinació/espacialitat/musicalitat (ENA), tècnica híbrida professional.',
   afrocontemporaneoCitableEvolucionGlobal:
-    'DCC exporta Afro Contemporáneo (ENA) mundialmente desde 1970s; 65 años de giras consolidan fusión cubana.',
+    'DCC exporta Afro Contemporani (ENA) mundialment des dels 1970s; 65 anys de gires consoliden fusió cubana.',
   afrocontemporaneoCitableMusica:
-    'El Afro Contemporáneo se trabaja sobre música que fusiona ritmos afrocubanos (batá, rumba, son) con composiciones contemporáneas. La poliritmia característica exige al bailarín desarrollar una musicalidad compleja.',
+    "L'Afro Contemporani es treballa sobre música que fusiona ritmes afrocubans (batá, rumba, son) amb composicions contemporànies. La polirrítmia característica exigeix al ballarí desenvolupar una musicalitat complexa.",
   afrocontemporaneoCitableIdentidadPoder:
-    'En academias con metodología profesional, el Afro Contemporáneo se trabaja como disciplina de perfeccionamiento técnico integral: disociación corporal, coordinación avanzada, memoria coreográfica, interpretación musical y conciencia espacial.',
+    "En acadèmies amb metodologia professional, l'Afro Contemporani es treballa com a disciplina de perfeccionament tècnic integral: dissociació corporal, coordinació avançada, memòria coreogràfica, interpretació musical i consciència espacial.",
   afrocontemporaneoCitableFact1:
-    'Clase Afro Contemporáneo quema 300–480 cal/hora (aeróbico afrocubano).',
+    'Classe Afro Contemporani crema 300–480 cal/hora (aeròbic afrocubà).',
   afrocontemporaneoCitableFact2:
-    'La metodología de la Escuela Nacional de Arte de Cuba (ENA) para Afro Contemporáneo está reconocida internacionalmente por formar bailarines técnicamente completos.',
+    "La metodologia de l'Escola Nacional d'Art de Cuba (ENA) per a Afro Contemporani està reconeguda internacionalment per formar ballarins tècnicament complets.",
   afrocontemporaneoCitableFact3:
-    "Farray's: Afro Contemporáneo (DCC ENA) aval CID-UNESCO, 5/5 Google.",
+    "Farray's: Afro Contemporani (DCC ENA) aval CID-UNESCO, 5/5 Google.",
   afrocontemporaneoCitableLegado:
-    'DCC exporta Afro Contemporáneo (ENA) mundialmente desde 1970s; 65 años de giras consolidan fusión cubana.',
-  afrocontemporaneoCompareLirico: 'Cont. Lírico',
+    'DCC exporta Afro Contemporani (ENA) mundialment des dels 1970s; 65 anys de gires consoliden fusió cubana.',
+  afrocontemporaneoCompareLirico: 'Cont. Líric',
   afrocontemporaneoCompareJazz: 'Modern Jazz',
-  afrojazzImage1Alt: "Clases de Afro Jazz - Farray's International Dance Center",
-  afrojazzImage2Alt: 'Bailarina practicando Afro Jazz',
-  afrojazzImage3Alt: 'Yunaisy Farray - Maestra de Afro Jazz CID-UNESCO',
+  afrojazzImage1Alt: "Classes d'Afro Jazz - Farray's International Dance Center",
+  afrojazzImage2Alt: 'Ballarina practicant Afro Jazz',
+  afrojazzImage3Alt: "Yunaisy Farray - Mestra d'Afro Jazz CID-UNESCO",
   afrojazzStatistics:
-    'Estudios sobre entrenamiento de danza técnica demuestran que disciplinas de fusión como el Afro Jazz desarrollan coordinación motora compleja, mejoran la neuroplasticidad por el aprendizaje de vocabularios de movimiento diversos, y potencian la capacidad de improvisación y creatividad.',
-  hiphopBreadcrumbHome: 'Inicio',
-  hiphopBreadcrumbClasses: 'Clases de Baile Barcelona',
-  hiphopBreadcrumbUrban: 'Clases de Danzas Urbanas',
-  hiphopBreadcrumbCurrent: 'Clases de Hip Hop',
+    "Estudis sobre entrenament de dansa tècnica demostren que disciplines de fusió com l'Afro Jazz desenvolupen coordinació motora complexa, milloren la neuroplasticitat per l'aprenentatge de vocabularis de moviment diversos, i potencien la capacitat d'improvisació i creativitat.",
+  hiphopBreadcrumbHome: 'Inici',
+  hiphopBreadcrumbClasses: 'Classes de Ball Barcelona',
+  hiphopBreadcrumbUrban: 'Classes de Danses Urbanes',
+  hiphopBreadcrumbCurrent: 'Classes de Hip Hop',
   hiphopHeroDesc:
-    'Aprende Hip Hop auténtico con un referente nacional. Breaking, locking, popping, freestyle y todo el flow de la cultura urbana original de los 70s.',
-  hiphopHeroLocation: 'Clases open level para todos los niveles, entre Plaza España y Sants',
-  hiphopCTA1: 'Hazte Socio Ahora',
-  hiphopCTA1Subtext: 'Quedan pocas plazas este mes',
-  hiphopCTA2: 'Reserva tu Clase de Prueba',
-  hiphopCTA2Subtext: 'Oferta por tiempo limitado',
-  hiphopCTAGroup: 'Opciones de inscripción',
+    'Aprèn Hip Hop autèntic amb un referent nacional. Breaking, locking, popping, freestyle i tot el flow de la cultura urbana original dels 70s.',
+  hiphopHeroLocation: 'Classes open level per a tots els nivells, entre Plaça Espanya i Sants',
+  hiphopCTA1: 'Fes-te Soci Ara',
+  hiphopCTA1Subtext: 'Queden poques places aquest mes',
+  hiphopCTA2: 'Reserva la teva Classe de Prova',
+  hiphopCTA2Subtext: 'Oferta per temps limitat',
+  hiphopCTAGroup: "Opcions d'inscripció",
   flowGuaranteed: 'Flow',
   hiphopWhatIsP1:
-    'El Hip Hop es mucho más que un baile: es una cultura, una forma de expresión y una actitud ante la vida que nació en el Bronx de Nueva York en los años 70.',
+    "El Hip Hop és molt més que un ball: és una cultura, una forma d'expressió i una actitud davant la vida que va néixer al Bronx de Nova York als anys 70.",
   hiphopWhatIsP2:
-    'La danza hip hop incluye una gran variedad de estilos, especialmente el breakdance, el locking y el popping, que fueron desarrollados por afroamericanos y latinoamericanos. Lo que diferencia el baile hip hop de otros tipos de danza es el freestyle y las batallas — competiciones que se realizan en un "cipher", un círculo que se forma naturalmente cuando la batalla comienza.',
+    'La dansa hip hop inclou una gran varietat d\'estils, especialment el breakdance, el locking i el popping, que van ser desenvolupats per afroamericans i llatinoamericans. El que diferencia el ball hip hop d\'altres tipus de dansa és el freestyle i les batalles — competicions que es realitzen en un "cipher", un cercle que es forma naturalment quan la batalla comença.',
   hiphopWhatIsP3:
-    'Los tres elementos — freestyle, batallas y ciphers — son los componentes esenciales de la danza hip hop auténtica.',
+    'Els tres elements — freestyle, batalles i ciphers — són els components essencials de la dansa hip hop autèntica.',
   hiphopWhatIsP4:
-    "En Farray's Center aprenderás Hip Hop con Marcos Martínez, juez de competiciones internacionales y uno de los referentes del Hip Hop en España. Con más de 30 años de existencia global, el Hip Hop es parte del plan curricular de formación profesional en danza avalado por el CID-UNESCO.",
-  hiphopWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
-  hiphopWhatIsQuestionAnswer: 'Si sientes el ritmo, ya lo eres.',
+    "A Farray's Center aprendràs Hip Hop amb Marcos Martínez, jutge de competicions internacionals i un dels referents del Hip Hop a Espanya. Amb més de 30 anys d'existència global, el Hip Hop és part del pla curricular de formació professional en dansa avalat pel CID-UNESCO.",
+  hiphopWhatIsQuestionTitle: 'Et preguntes si és per a tu?',
+  hiphopWhatIsQuestionAnswer: 'Si sents el ritme, ja ho ets.',
   hiphopTeachersClosing:
-    'Aprende de un maestro que ha dedicado su vida al Hip Hop y que transmite no solo técnica, sino la cultura y la actitud que define este estilo.',
+    "Aprèn d'un mestre que ha dedicat la seva vida al Hip Hop i que transmet no només tècnica, sinó la cultura i l'actitud que defineix aquest estil.",
   hiphopComparePopping: 'Popping',
-  hiphopIdentifyListLabel: 'Situaciones con las que te puedes identificar',
+  hiphopIdentifyListLabel: 'Situacions amb les quals et pots identificar',
   hiphopIdentify1:
-    'Siempre has querido aprender Hip Hop pero pensabas que no tenías ritmo o que era solo para jóvenes.',
+    'Sempre has volgut aprendre Hip Hop però pensaves que no tenies ritme o que era només per a joves.',
   hiphopIdentify2:
-    'Te encanta la música hip hop y rap pero nunca supiste cómo bailarla más allá de mover los brazos.',
+    "T'encanta la música hip hop i rap però mai vas saber com ballar-la més enllà de moure els braços.",
   hiphopIdentify3:
-    'Buscas una forma de expresarte y liberarte del estrés sin tener que seguir coreografías rígidas.',
+    "Busques una forma d'expressar-te i alliberar-te de l'estrès sense haver de seguir coreografies rígides.",
   hiphopIdentify4:
-    'Quieres ganar confianza y soltura en cualquier situación social donde haya música.',
+    'Vols guanyar confiança i soltura en qualsevol situació social on hi hagi música.',
   hiphopIdentify5:
-    'Te atrae la cultura urbana auténtica, no la versión comercial que ves en los videoclips.',
+    "T'atrau la cultura urbana autèntica, no la versió comercial que veus als videoclips.",
   hiphopIdentify6:
-    'Necesitas una actividad física que te motive de verdad y no te aburra como el gimnasio.',
-  hiphopIdentifyTransition:
-    'Si has dicho "sí" a alguno de estos puntos, ya sabes lo que necesitas.',
-  hiphopNeedEnrollTitle: 'Necesitas apuntarte a clases de Hip Hop',
+    "Necessites una activitat física que et motivi de debò i no t'avorrei com el gimnàs.",
+  hiphopIdentifyTransition: 'Si has dit "sí" a algun d\'aquests punts, ja saps el que necessites.',
+  hiphopNeedEnrollTitle: 'Necessites apuntar-te a classes de Hip Hop',
   hiphopIdentifyAgitate1:
-    'Si no das el paso ahora, seguirás mirando vídeos de bailarines en Instagram preguntándote cómo lo hacen.',
+    'Si no fas el pas ara, seguiràs mirant vídeos de ballarins a Instagram preguntant-te com ho fan.',
   hiphopIdentifySolution:
-    "En Farray's Center encontrarás un espacio donde aprender de verdad, con un maestro que respira Hip Hop y una comunidad que te recibe sin importar tu nivel.",
-  hiphopIdentifyClosing: 'Siente el flow, libérate, crea tu estilo. El Hip Hop te está esperando.',
-  hiphopTransformCTA: "¿Por qué elegir Farray's Center para aprender Hip Hop?",
+    "A Farray's Center trobaràs un espai on aprendre de debò, amb un mestre que respira Hip Hop i una comunitat que t'acull sense importar el teu nivell.",
+  hiphopIdentifyClosing: "Sent el flow, allibera't, crea el teu estil. El Hip Hop t'està esperant.",
+  hiphopTransformCTA: "Per què triar Farray's Center per aprendre Hip Hop?",
   hiphopTransformCTASubtitle:
-    'La academia de Hip Hop en Barcelona con el profesor que marca la diferencia',
-  hiphopWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
+    "L'acadèmia de Hip Hop a Barcelona amb el professor que marca la diferència",
+  hiphopWhyChoose1Title: 'Acadèmia reconeguda pel CID UNESCO',
   hiphopWhyChoose1Desc:
-    'Dirigida por Yunaisy Farray, con reconocimiento internacional por nuestra excelencia educativa.',
-  hiphopWhyChoose2Title: 'Ubicación inmejorable',
+    'Dirigida per Yunaisy Farray, amb reconeixement internacional per la nostra excel·lència educativa.',
+  hiphopWhyChoose2Title: 'Ubicació immillorable',
   hiphopWhyChoose2Desc:
-    'Calle Entença 100, a 5 minutos de Plaza España y Sants. Fácil acceso en metro y bus.',
-  hiphopWhyChoose3Title: 'Ambiente familiar y profesional',
-  hiphopWhyChoose3Desc:
-    'Un espacio acogedor donde todos son bienvenidos, sin importar edad ni nivel.',
-  hiphopWhyChoose4Title: 'Instalaciones de primer nivel',
+    'Carrer Entença 100, a 5 minuts de Plaça Espanya i Sants. Fàcil accés en metro i bus.',
+  hiphopWhyChoose3Title: 'Ambient familiar i professional',
+  hiphopWhyChoose3Desc: 'Un espai acollidor on tothom és benvingut, sense importar edat ni nivell.',
+  hiphopWhyChoose4Title: 'Instal·lacions de primer nivell',
   hiphopWhyChoose4Desc:
-    'Más de 700 m² con salas amplias, suelo profesional y sistema de sonido de calidad.',
-  hiphopWhyChoose5Title: 'Academia multidisciplinar',
+    'Més de 700 m² amb sales àmplies, terra professional i sistema de so de qualitat.',
+  hiphopWhyChoose5Title: 'Acadèmia multidisciplinària',
   hiphopWhyChoose5Desc:
-    'Más de 25 estilos para complementar tu formación y explorar nuevos horizontes.',
+    'Més de 25 estils per complementar la teva formació i explorar nous horitzons.',
   hiphopWhyChoose6Title: 'Gala anual + workshops',
   hiphopWhyChoose6Desc:
-    'Oportunidades de brillar en escenarios profesionales y aprender de artistas invitados.',
-  hiphopWhyChoose7Title: 'Profesor de referencia nacional',
+    "Oportunitats de brillar en escenaris professionals i aprendre d'artistes convidats.",
+  hiphopWhyChoose7Title: 'Professor de referència nacional',
   hiphopWhyChoose7Desc:
-    'Marcos Martínez, juez de competiciones y maestro internacional con décadas de experiencia.',
-  hiphopLogosTitle: 'Has podido vernos en…',
-  hiphopLogosIntlFestivalsText: 'y en los mejores festivales de baile del mundo',
-  hiphopVideoTitle: 'Descubre nuestras clases de Hip Hop',
-  hiphopVideoDesc: "Mira cómo es una clase en Farray's: técnica, freestyle y mucho flow.",
-  hiphopWhyTodayFullTitle: '¿Por qué hoy es el mejor momento para empezar?',
+    "Marcos Martínez, jutge de competicions i mestre internacional amb dècades d'experiència.",
+  hiphopLogosTitle: "Has pogut veure'ns a…",
+  hiphopLogosIntlFestivalsText: 'i als millors festivals de ball del món',
+  hiphopVideoTitle: 'Descobreix les nostres classes de Hip Hop',
+  hiphopVideoDesc: "Mira com és una classe a Farray's: tècnica, freestyle i molt flow.",
+  hiphopWhyTodayFullTitle: 'Per què avui és el millor moment per començar?',
   hiphopWhyToday1:
-    'Porque cada jueves que dejas pasar es una oportunidad menos de desarrollar tu estilo.',
+    'Perquè cada dijous que deixes passar és una oportunitat menys de desenvolupar el teu estil.',
   hiphopWhyToday2:
-    'Porque la única forma de aprender freestyle es practicándolo, y aquí tienes el espacio perfecto.',
-  hiphopWhyToday3: 'Porque el Hip Hop no va de bailar bien, sino de sentirte bien bailando.',
-  hiphopWhyTodayClosing1:
-    "En Farray's no vendemos clases. Creamos experiencias que te transforman.",
-  hiphopWhyTodayClosing2:
-    'Te esperamos con beats potentes, un profe de leyenda y energía de cipher.',
-  hiphopFinalCTADesc: 'Reserva tu plaza ahora y empieza a desarrollar tu propio flow.',
-  hiphopFinalCTAFunny: 'Las plazas vuelan más rápido que un headspin en una batalla.',
-  hiphopCulturalHistoryTitle: 'Historia y Cultura del Hip Hop',
+    "Perquè l'única forma d'aprendre freestyle és practicant-lo, i aquí tens l'espai perfecte.",
+  hiphopWhyToday3: 'Perquè el Hip Hop no va de ballar bé, sinó de sentir-te bé ballant.',
+  hiphopWhyTodayClosing1: "A Farray's no venem classes. Creem experiències que et transformen.",
+  hiphopWhyTodayClosing2: "T'esperem amb beats potents, un profe de llegenda i energia de cipher.",
+  hiphopFinalCTADesc: 'Reserva la teva plaça ara i comença a desenvolupar el teu propi flow.',
+  hiphopFinalCTAFunny: 'Les places volen més ràpid que un headspin en una batalla.',
+  hiphopCulturalHistoryTitle: 'Història i Cultura del Hip Hop',
   hiphopCulturalShort:
-    'El Hip Hop nació en el Bronx de Nueva York a principios de los años 70, como expresión cultural de comunidades afroamericanas y latinas.',
+    'El Hip Hop va néixer al Bronx de Nova York a principis dels anys 70, com a expressió cultural de comunitats afroamericanes i llatines.',
   hiphopCulturalFull:
-    '### Los Orígenes: El South Bronx de Nueva York (1973-1974)\n\n**El Hip Hop emergió en el South Bronx de Nueva York entre 1973 y 1974, cuando DJ Kool Herc empezó a aislar los "breaks" (secciones instrumentales) de los discos de funk y soul**, creando un nuevo sonido que invitaba al baile. Las comunidades afroamericanas y latinas del Bronx transformaron las calles en escenarios de expresión artística.\n\n**"El Hip Hop dance nació entre 1973-1974 en el South Bronx de Nueva York, impulsado por DJ Kool Herc y desarrollado por comunidades afroamericanas y latinas como forma de expresión artística."**\n\n### Los Cuatro Pilares Fundacionales\n\nLa cultura Hip Hop se construye sobre **cuatro pilares fundamentales**:\n- **DJing** (turntablism): manipulación de discos y creación de breaks\n- **MCing** (rap): expresión lírica y rimas\n- **Graffiti**: arte visual urbano\n- **B-boying/B-girling** (breaking): danza\n\n**"Los elementos de la danza hip hop — freestyle, batallas y ciphers — definen la esencia competitiva y comunitaria de esta cultura."**\n\n### Grupos Pioneros\n\nGrupos que establecieron las bases técnicas y estilísticas vigentes hoy:\n- **The Rock Steady Crew** (1977): pioneros del breaking\n- **The Lockers** (1973): creadores del locking con Don Campbell\n- **Electric Boogaloos** (1977): innovadores del popping con Boogaloo Sam\n\n### Técnicas Principales del Hip Hop\n\n**Las técnicas principales incluyen: grooves y bounces (base rítmica), social dances, toprock, footwork, freezes, power moves, y elementos de locking, popping y breaking.** Cada estilo tiene su vocabulario y su historia específica.\n\n### El Breaking: Disciplina Olímpica\n\n**El breaking fue incluido como deporte olímpico en los Juegos de París 2024**, reconociendo oficialmente al Hip Hop como disciplina deportiva de élite. Este hito histórico valida décadas de desarrollo técnico y artístico.\n\n### De la Calle al Mundo: Expansión Global\n\nCon más de **50 años de desarrollo global**, el Hip Hop ha pasado de los block parties del Bronx a ser un fenómeno cultural planetario. **El Hip Hop es practicado por más de 30 millones de personas en todo el mundo.**\n\n**"La danza hip hop se practica tanto en la calle como en academias profesionales, manteniendo siempre su espíritu de libertad y autoexpresión."**\n\n### Beneficios para la Salud\n\n**Una clase de Hip Hop de 60 minutos puede quemar entre 400-600 calorías** mientras mejora la coordinación, el ritmo y la expresión corporal. **Estudios demuestran que bailar hip hop mejora la memoria, la concentración y reduce los niveles de estrés.**\n\n### El Hip Hop en Farray\'s Center\n\nEn nuestra academia, el Hip Hop forma parte del plan curricular de formación profesional en danza avalado por el **CID-UNESCO (Consejo Internacional de la Danza de la UNESCO en París)**. La metodología respeta las raíces de la cultura: técnica base, musicalidad, historia del movimiento y desarrollo del estilo personal a través del freestyle.\n\n**"El Hip Hop no es solo un estilo de baile, es una filosofía de vida que promueve la creatividad, el respeto y la superación personal."**\n\nNuestro profesor **Marcos Martínez**, juez de competiciones internacionales y referente del Hip Hop en España, transmite no solo técnica sino los valores y la historia que hacen de este estilo algo único.',
+    '### Els Orígens: El South Bronx de Nova York (1973-1974)\n\n**El Hip Hop va emergir al South Bronx de Nova York entre 1973 i 1974, quan DJ Kool Herc va començar a aïllar els "breaks" (seccions instrumentals) dels discos de funk i soul**, creant un nou so que convidava al ball. Les comunitats afroamericanes i llatines del Bronx van transformar els carrers en escenaris d\'expressió artística.\n\n**"El Hip Hop dance va néixer entre 1973-1974 al South Bronx de Nova York, impulsat per DJ Kool Herc i desenvolupat per comunitats afroamericanes i llatines com a forma d\'expressió artística."**\n\n### Els Quatre Pilars Fundacionals\n\nLa cultura Hip Hop es construeix sobre **quatre pilars fonamentals**:\n- **DJing** (turntablism): manipulació de discos i creació de breaks\n- **MCing** (rap): expressió lírica i rimes\n- **Graffiti**: art visual urbà\n- **B-boying/B-girling** (breaking): dansa\n\n**"Els elements de la dansa hip hop — freestyle, batalles i ciphers — defineixen l\'essència competitiva i comunitària d\'aquesta cultura."**\n\n### Grups Pioners\n\nGrups que van establir les bases tècniques i estilístiques vigents avui:\n- **The Rock Steady Crew** (1977): pioners del breaking\n- **The Lockers** (1973): creadors del locking amb Don Campbell\n- **Electric Boogaloos** (1977): innovadors del popping amb Boogaloo Sam\n\n### Tècniques Principals del Hip Hop\n\n**Les tècniques principals inclouen: grooves i bounces (base rítmica), social dances, toprock, footwork, freezes, power moves, i elements de locking, popping i breaking.** Cada estil té el seu vocabulari i la seva història específica.\n\n### El Breaking: Disciplina Olímpica\n\n**El breaking va ser inclòs com a esport olímpic als Jocs de París 2024**, reconeixent oficialment el Hip Hop com a disciplina esportiva d\'elit. Aquesta fita històrica valida dècades de desenvolupament tècnic i artístic.\n\n### Del Carrer al Món: Expansió Global\n\nAmb més de **50 anys de desenvolupament global**, el Hip Hop ha passat dels block parties del Bronx a ser un fenomen cultural planetari. **El Hip Hop és practicat per més de 30 milions de persones a tot el món.**\n\n**"La dansa hip hop es practica tant al carrer com en acadèmies professionals, mantenint sempre el seu esperit de llibertat i autoexpressió."**\n\n### Beneficis per a la Salut\n\n**Una classe de Hip Hop de 60 minuts pot cremar entre 400-600 calories** mentre millora la coordinació, el ritme i l\'expressió corporal. **Estudis demostren que ballar hip hop millora la memòria, la concentració i redueix els nivells d\'estrès.**\n\n### El Hip Hop a Farray\'s Center\n\nA la nostra acadèmia, el Hip Hop forma part del pla curricular de formació professional en dansa avalat pel **CID-UNESCO (Consell Internacional de la Dansa de la UNESCO a París)**. La metodologia respecta les arrels de la cultura: tècnica base, musicalitat, història del moviment i desenvolupament de l\'estil personal a través del freestyle.\n\n**"El Hip Hop no és només un estil de ball, és una filosofia de vida que promou la creativitat, el respecte i la superació personal."**\n\nEl nostre professor **Marcos Martínez**, jutge de competicions internacionals i referent del Hip Hop a Espanya, transmet no només tècnica sinó els valors i la història que fan d\'aquest estil quelcom únic.',
   hiphopCitableTecnicas:
-    'Las técnicas principales del Hip Hop incluyen: grooves y bounces (base rítmica), social dances, toprock, footwork, freezes, power moves, y elementos de locking, popping y breaking.',
+    'Les tècniques principals del Hip Hop inclouen: grooves i bounces (base rítmica), social dances, toprock, footwork, freezes, power moves, i elements de locking, popping i breaking.',
   hiphopStatistics:
-    'El Hip Hop es practicado por más de 30 millones de personas en todo el mundo. Una clase de 60 minutos puede quemar entre 400-600 calorías mientras mejora coordinación, ritmo y expresión corporal.',
+    'El Hip Hop és practicat per més de 30 milions de persones a tot el món. Una classe de 60 minuts pot cremar entre 400-600 calories mentre millora coordinació, ritme i expressió corporal.',
   hiphopCitableFact1:
-    'El breaking fue incluido como deporte olímpico en París 2024, reconociendo oficialmente al Hip Hop como disciplina deportiva de élite.',
+    "El breaking va ser inclòs com a esport olímpic a París 2024, reconeixent oficialment el Hip Hop com a disciplina esportiva d'elit.",
   hiphopCitableFact2:
-    'Estudios demuestran que bailar hip hop mejora la memoria, la concentración y reduce los niveles de estrés hasta un 70% tras 8 semanas de práctica regular.',
+    "Estudis demostren que ballar hip hop millora la memòria, la concentració i redueix els nivells d'estrès fins a un 70% després de 8 setmanes de pràctica regular.",
   hiphopCitableFact3:
-    "Farray's International Dance Center es una de las pocas academias en Barcelona con profesores certificados como jueces de competiciones internacionales de Hip Hop.",
-  salsaCubanaHeroEmotional: 'Deja el móvil. Mira a alguien a los ojos. Muévete. Ríete. Baila.',
+    "Farray's International Dance Center és una de les poques acadèmies a Barcelona amb professors certificats com a jutges de competicions internacionals de Hip Hop.",
+  salsaCubanaHeroEmotional: 'Deixa el mòbil. Mira algú als ulls. Mou-te. Riu. Balla.',
   salsaCubanaBlueOceanTitle:
-    '¿Por qué miles de barceloneses eligieron aprender salsa cubana con nosotros?',
-  salsaCubanaBlueOceanIntro: 'Spoiler: No vinieron (solo) a aprender figuras.',
-  salsaCubanaBlueOcean1Title: 'Para los que necesitan desconectar',
+    'Per què milers de barcelonins van triar aprendre salsa cubana amb nosaltres?',
+  salsaCubanaBlueOceanIntro: 'Spoiler: No van venir (només) a aprendre figures.',
+  salsaCubanaBlueOcean1Title: 'Per als que necessiten desconnectar',
   salsaCubanaBlueOcean1P1:
-    'Después de 8 horas frente a una pantalla, tu cuerpo pide algo más que un gimnasio.',
-  salsaCubanaBlueOcean1P2: 'Pide ritmo. Pide música. Pide movimiento que no sea mecánico.',
+    "Després de 8 hores davant d'una pantalla, el teu cos demana alguna cosa més que un gimnàs.",
+  salsaCubanaBlueOcean1P2: 'Demana ritme. Demana música. Demana moviment que no sigui mecànic.',
   salsaCubanaBlueOcean1P3:
-    '60 minutos donde es físicamente imposible pensar en el email que no respondiste, en la reunión de mañana, en la lista de tareas infinita.',
-  salsaCubanaBlueOcean1P4: 'Aquí tu mente descansa mientras tu cuerpo se activa.',
-  salsaCubanaBlueOcean2Title: 'Para los hartos de hacer swipe',
+    "60 minuts on és físicament impossible pensar en l'email que no vas respondre, en la reunió de demà, en la llista de tasques infinita.",
+  salsaCubanaBlueOcean1P4: "Aquí la teva ment descansa mentre el teu cos s'activa.",
+  salsaCubanaBlueOcean2Title: 'Per als farts de fer swipe',
   salsaCubanaBlueOcean2P1:
-    "Tinder te da matches. Farray's te da miradas reales, conversaciones reales, risas reales.",
+    "Tinder et dóna matches. Farray's et dóna mirades reals, converses reals, riures reals.",
   salsaCubanaBlueOcean2P2:
-    'Cada clase conoces gente nueva. Sin algoritmos. Sin filtros. Sin ghosting.',
-  salsaCubanaBlueOcean2P3: 'Solo música, movimiento y conexión humana de verdad.',
+    'Cada classe coneixes gent nova. Sense algoritmes. Sense filtres. Sense ghosting.',
+  salsaCubanaBlueOcean2P3: 'Només música, moviment i connexió humana de debò.',
   salsaCubanaBlueOcean2P4:
-    'Muchas parejas se han conocido aquí. Pero aunque no busques eso, te llevas amigos.',
-  salsaCubanaBlueOcean3Title: 'Para parejas que quieren reconectar',
+    "Moltes parelles s'han conegut aquí. Però encara que no busquis això, t'emportes amics.",
+  salsaCubanaBlueOcean3Title: 'Per a parelles que volen reconnectar',
   salsaCubanaBlueOcean3P1:
-    '¿Cuánto hace que no hacen algo juntos donde se miren a los ojos, se toquen y se rían?',
+    'Quant fa que no feu alguna cosa junts on us mireu als ulls, us toqueu i us rieu?',
   salsaCubanaBlueOcean3P2:
-    '¿Cuántas cenas más frente al móvil? ¿Cuántas noches más de Netflix en silencio?',
+    'Quants sopars més davant del mòbil? Quantes nits més de Netflix en silenci?',
   salsaCubanaBlueOcean3P3:
-    'La salsa cubana es la terapia de pareja que nadie te recetó — pero que funciona.',
-  salsaCubanaBlueOcean3P4: 'Aquí aprenden un lenguaje nuevo. Juntos. Y se lo llevan a casa.',
-  salsaCubanaBlueOcean4Title: 'Para los que "no saben bailar"',
-  salsaCubanaBlueOcean4Quotes: '"Tengo dos pies izquierdos." "No tengo ritmo." "Me da vergüenza."',
+    'La salsa cubana és la teràpia de parella que ningú et va receptar — però que funciona.',
+  salsaCubanaBlueOcean3P4: "Aquí aprenen un llenguatge nou. Junts. I se l'emporten a casa.",
+  salsaCubanaBlueOcean4Title: 'Per als que "no saben ballar"',
+  salsaCubanaBlueOcean4Quotes: '"Tinc dos peus esquerres." "No tinc ritme." "Em fa vergonya."',
   salsaCubanaBlueOcean4P1:
-    'Hemos escuchado esto miles de veces. Y miles de veces hemos demostrado que era mentira.',
-  salsaCubanaBlueOcean4P2: 'Todos nacemos con ritmo. Solo hay que desbloquearlo.',
+    'Hem escoltat això milers de vegades. I milers de vegades hem demostrat que era mentida.',
+  salsaCubanaBlueOcean4P2: 'Tots naixem amb ritme. Només cal desbloquejar-lo.',
   salsaCubanaBlueOcean4P3:
-    'El Nivel 0 existe precisamente para ti. El 90% de nuestros alumnos empezaron exactamente donde estás tú ahora.',
-  salsaCubanaBlueOceanClose1: 'No importa por qué vengas.',
-  salsaCubanaBlueOceanClose2: 'Lo que importa es que des el primer paso.',
-  salsaCubanaBlueOceanClose3: 'Y de paso... aprenderás a bailar salsa cubana de verdad.',
-  salsaCubanaWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
-  salsaCubanaWhatIsQuestionAnswer: 'Sí, lo es.',
+    'El Nivell 0 existeix precisament per a tu. El 90% dels nostres alumnes van començar exactament on ets tu ara.',
+  salsaCubanaBlueOceanClose1: 'No importa per què vinguis.',
+  salsaCubanaBlueOceanClose2: 'El que importa és que facis el primer pas.',
+  salsaCubanaBlueOceanClose3: 'I de passada... aprendràs a ballar salsa cubana de debò.',
+  salsaCubanaWhatIsQuestionTitle: 'Et preguntes si és per a tu?',
+  salsaCubanaWhatIsQuestionAnswer: 'Sí, ho és.',
   salsaCubanaTeacher4Name: 'Lia Valdes',
-  salsaCubanaTeacher4Specialty: 'Profesora de Salsa Cubana • Método Farray®',
+  salsaCubanaTeacher4Specialty: 'Professora de Salsa Cubana • Mètode Farray®',
   salsaCubanaTeacher4Bio:
-    'Lia Valdes aporta el sabor auténtico de Cuba a cada clase. Con una formación sólida en el Método Farray® y una pasión contagiosa por la salsa cubana, transmite no solo los pasos sino también la alegría y el espíritu del baile caribeño.',
-  salsaCubanaIdentifyBlueOceanTitle: 'Si buscas algo más que baile...',
-  salsaCubanaIdentifyBlue1: 'Personas hartas de apps que buscan conexión humana real',
-  salsaCubanaIdentifyBlue2: 'Profesionales estresados que necesitan desconectar del trabajo',
-  salsaCubanaIdentifyBlue3: 'Parejas que quieren reconectar haciendo algo juntos',
+    "Lia Valdes aporta el sabor autèntic de Cuba a cada classe. Amb una formació sòlida en el Mètode Farray® i una passió contagiosa per la salsa cubana, transmet no només els passos sinó també l'alegria i l'esperit del ball caribeny.",
+  salsaCubanaIdentifyBlueOceanTitle: 'Si busques alguna cosa més que ball...',
+  salsaCubanaIdentifyBlue1: "Persones fartes d'apps que busquen connexió humana real",
+  salsaCubanaIdentifyBlue2: 'Professionals estressats que necessiten desconnectar de la feina',
+  salsaCubanaIdentifyBlue3: 'Parelles que volen reconnectar fent alguna cosa junts',
   salsaCubanaIdentifyBlue4:
-    'Los que siempre dijeron "no sé bailar" y quieren demostrarse lo contrario',
-  salsaCubanaIdentifyBlue5: 'Curiosos que buscan comunidad, no solo una actividad',
-  salsaCubanaIdentifyBlue6: 'Quienes quieren ejercicio que no parezca ejercicio',
-  salsaCubanaIdentifyRedOceanTitle: 'Si vienes del mundo del baile...',
+    'Els que sempre van dir "no sé ballar" i volen demostrar-se el contrari',
+  salsaCubanaIdentifyBlue5: 'Curiosos que busquen comunitat, no només una activitat',
+  salsaCubanaIdentifyBlue6: 'Qui vol exercici que no sembli exercici',
+  salsaCubanaIdentifyRedOceanTitle: 'Si véns del món del ball...',
   salsaCubanaIdentifyRed1:
-    'Principiantes absolutos que quieren empezar con bases sólidas (no con vicios)',
-  salsaCubanaIdentifyRed2: 'Bailarines estancados que sienten que hace tiempo no avanzan',
-  salsaCubanaIdentifyRed3: 'Frustrados con el método tradicional de "memorizar figuras"',
-  salsaCubanaIdentifyRed4: 'Quienes buscan calidad sobre cantidad de figuras',
-  salsaCubanaIdentifyRed5: 'Curiosos exigentes que quieren ENTENDER el baile, no solo hacerlo',
-  salsaCubanaIdentifyRed6: 'Los que buscan bailar socialmente con confianza en cualquier pista',
-  salsaCubanaIdentifyClose1: 'No importa por qué vengas:',
-  salsaCubanaIdentifyClose2: 'Lo que importa es que des el primer paso.',
-  salsaCubanaIdentifyClose3: 'Y de paso... aprenderás a bailar salsa cubana de verdad.',
-  salsaCubanaFinalCTAEmotional1: 'No importa si vienes a desconectar del trabajo.',
-  salsaCubanaFinalCTAEmotional2: 'A conocer gente de verdad.',
-  salsaCubanaFinalCTAEmotional3: 'A reconectar con tu pareja.',
-  salsaCubanaFinalCTAEmotional4: 'A demostrar que SÍ puedes bailar.',
-  salsaCubanaFinalCTAEmotionalClose: 'Lo que importa es que des el primer paso.',
-  salsaCubanaFinalCTATechnical1: 'Con el Método Farray® no aprenderás "trucos".',
+    'Principiants absoluts que volen començar amb bases sòlides (no amb vicis)',
+  salsaCubanaIdentifyRed2: 'Ballarins estancats que senten que fa temps que no avancen',
+  salsaCubanaIdentifyRed3: 'Frustrats amb el mètode tradicional de "memoritzar figures"',
+  salsaCubanaIdentifyRed4: 'Qui busca qualitat sobre quantitat de figures',
+  salsaCubanaIdentifyRed5: 'Curiosos exigents que volen ENTENDRE el ball, no només fer-lo',
+  salsaCubanaIdentifyRed6: 'Els que busquen ballar socialment amb confiança a qualsevol pista',
+  salsaCubanaIdentifyClose1: 'No importa per què vinguis:',
+  salsaCubanaIdentifyClose2: 'El que importa és que facis el primer pas.',
+  salsaCubanaIdentifyClose3: 'I de passada... aprendràs a ballar salsa cubana de debò.',
+  salsaCubanaFinalCTAEmotional1: 'No importa si véns a desconnectar de la feina.',
+  salsaCubanaFinalCTAEmotional2: 'A conèixer gent de debò.',
+  salsaCubanaFinalCTAEmotional3: 'A reconnectar amb la teva parella.',
+  salsaCubanaFinalCTAEmotional4: 'A demostrar que SÍ pots ballar.',
+  salsaCubanaFinalCTAEmotionalClose: 'El que importa és que facis el primer pas.',
+  salsaCubanaFinalCTATechnical1: 'Amb el Mètode Farray® no aprendràs "trucs".',
   salsaCubanaFinalCTATechnical2:
-    'Aprenderás a bailar de verdad. Con fundamentos. Con técnica. Con estilo.',
-  salsaCubanaFinalCTATechnical3: 'Y lo más importante: disfrutando cada minuto.',
+    'Aprendràs a ballar de debò. Amb fonaments. Amb tècnica. Amb estil.',
+  salsaCubanaFinalCTATechnical3: 'I el més important: gaudint cada minut.',
 
   // ===== FOLKLORE CUBANO PAGE =====
   folklorePageTitle: "Classes de Folklore Cubà a Barcelona | Acadèmia Farray's Center",
@@ -10654,4 +10648,1283 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   bachataLadyFinalCTA1Subtext: 'Queden poques places aquest mes',
   bachataLadyFinalCTA2: 'Reserva la teva Classe de Prova',
   bachataLadyFinalCTA2Subtext: 'Vàlid per temps limitat',
+
+  // Pricing - Exclusive Member Benefits
+  pricing_exclusive_title: 'Beneficis Exclusius per a Socis',
+  pricing_exclusive_subtitle:
+    'Formar part de la nostra comunitat obre portes a oportunitats úniques i condicions especials.',
+  pricing_exclusive_community: 'Comunitat',
+  pricing_exclusive_community_1: '+10.000 socis que comparteixen la teva passió',
+  pricing_exclusive_community_2: "Gala Anual amb espectacles d'alumnes",
+  pricing_exclusive_community_3: 'Connexió amb artistes i ballarins professionals',
+  pricing_exclusive_conditions: 'Condicions Especials',
+  pricing_exclusive_conditions_1: 'Mentoring i preparació per a competicions',
+  pricing_exclusive_conditions_2: 'Entrenaments personalitzats',
+  pricing_exclusive_conditions_3: 'Accés a experiències exclusives',
+  pricing_exclusive_prices: 'Preus Especials',
+  pricing_exclusive_prices_1: 'Coreografies per a balls de casament personalitzats',
+  pricing_exclusive_prices_2: 'Comiats de solter/a amb experiències exclusives',
+  pricing_exclusive_prices_3: 'Classes particulars i sessions privades',
+  pricing_exclusive_discounts: 'Descomptes',
+  pricing_exclusive_discounts_1: 'Merchandising oficial del centre',
+  pricing_exclusive_discounts_2: "Festes i esdeveniments especials de l'escola",
+  pricing_exclusive_discounts_3: 'Entitats col·laboradores del barri',
+  pricing_exclusive_opportunities: 'Oportunitats',
+  pricing_exclusive_opportunities_1: 'Borsa de treball exclusiva per a ballarins',
+  pricing_exclusive_opportunities_2: 'Col·laboracions amb agències i productores',
+  pricing_exclusive_opportunities_3: "Possibilitat de formar part de l'equip de l'acadèmia",
+  pricing_exclusive_referral_badge: 'Programa Referits',
+  pricing_exclusive_referral_title: 'Porta un amic i guanya',
+  pricing_exclusive_referral_credits: '2 participacions puntuals',
+  pricing_exclusive_referral_value: 'Regal valorat en 34€',
+  pricing_exclusive_referral_desc: "Per cada nou soci que s'inscrigui gràcies a tu",
+
+  // ========================================
+  // SISTEMA BLOG
+  // ========================================
+
+  // Blog General
+  blog_pageTitle: 'Blog de Ball | Consells, Tutorials i Història del Ball',
+  blog_metaDescription:
+    'Descobreix consells, tutorials i la fascinant història del ball. Assessorament expert de ballarins professionals per millorar la teva tècnica i gaudir cada pas.',
+  blog_breadcrumbHome: 'Inici',
+  blog_breadcrumbBlog: 'Blog',
+  blog_readMore: 'Llegir més',
+  blog_allArticles: 'Tots',
+  blog_noArticles: 'Encara no hi ha articles',
+  blog_noArticlesDesc: 'Estem preparant contingut que transformarà la manera com balles.',
+  blog_viewAllArticles: 'Veure tots els articles',
+
+  // Mètriques de Lectura
+  blog_readingTime: '{minutes} min de lectura',
+  blog_publishedOn: 'Publicat el',
+  blog_updatedOn: 'Actualitzat el',
+  blog_wordCount: '{count} paraules',
+
+  // Elements de Contingut
+  blog_summary: 'Resum',
+  blog_keyPoints: 'Punts Clau',
+  blog_tableOfContents: 'Contingut',
+  blog_definition: 'Definició',
+  blog_source: 'Font',
+
+  // Autor
+  blog_authorRole: 'Ballarina professional, fundadora del FIDC i membre del CID-UNESCO',
+  blog_authorBio:
+    "Ballarina professional cubana amb més de 20 anys d'experiència. Fundadora de Farray's International Dance Center, ha format milers de balladors a Barcelona. Especialitzada en Contemporani, Jazz, Heels i estils cubans.",
+  blog_authorAbout: "Sobre l'autora",
+  blog_authorCredentials: 'Credencials',
+  blog_credential_specialization: 'Contemporani · Jazz · Heels · Cubà',
+  blog_credential_experience: "+20 anys d'experiència",
+  blog_credential_founder: 'Fundadora FIDC',
+
+  // Categories
+  blog_category_tutoriales: 'Tutorials',
+  blog_category_tutoriales_desc: 'Aprèn tècnica i passos amb les nostres guies detallades',
+  blog_category_tips: 'Consells',
+  blog_category_tips_desc: 'Consells pràctics per millorar el teu ball',
+  blog_category_historia: 'Història',
+  blog_category_historia_desc: "Descobreix les arrels i l'evolució dels estils de ball",
+  blog_category_fitness: 'Fitness',
+  blog_category_fitness_desc: 'Beneficis per a la salut i el benestar de ballar',
+  blog_category_lifestyle: 'Lifestyle',
+  blog_category_lifestyle_desc: 'Cultura del ball i estil de vida del ballador',
+
+  // Compartir Social
+  blog_shareArticle: 'Compartir aquest article',
+  blog_shareWhatsApp: 'Compartir a WhatsApp',
+  blog_shareFacebook: 'Compartir a Facebook',
+  blog_shareTwitter: 'Compartir a Twitter',
+  blog_shareLinkedIn: 'Compartir a LinkedIn',
+  blog_shareEmail: 'Compartir per Email',
+  blog_emailSubject: 'Article interessant: {title}',
+  blog_emailBody: 'Crec que et pot interessar:\n\n{title}\n\n{url}',
+
+  // Articles Relacionats
+  blog_relatedArticles: 'Articles Relacionats',
+  blog_relatedArticlesDesc: "Continua explorant temes que t'encanten",
+
+  // Navegació d'Articles
+  blog_previousArticle: 'Article anterior',
+  blog_nextArticle: 'Article següent',
+  blog_backToBlog: 'Tornar al blog',
+
+  // ========================================
+  // ARTICLE PILOT: 10 Beneficis de Ballar Salsa
+  // ========================================
+
+  // Meta
+  blogBeneficiosSalsa_title: '10 Beneficis Científics de Ballar Salsa a Barcelona',
+  blogBeneficiosSalsa_metaDescription:
+    "Crema 400 cal/hora, redueix demència 76%, baixa l'estrès: 10 beneficis provats de classes de salsa a Barcelona. Uneix-te a Farray's International Dance Center.",
+
+  // Summary Bullets (GEO Critical)
+  blogBeneficiosSalsa_summaryBullet1:
+    'Crema 300-450 calories per hora (equivalent a córrer moderat)',
+  blogBeneficiosSalsa_summaryBullet2: 'Redueix risc de demència un 76% (estudi NEJM 2003)',
+  blogBeneficiosSalsa_summaryBullet3: "Baixa l'estrès 20-30% i augmenta satisfacció vital 25%",
+
+  // Summary Stats (Holographic Cards)
+  blogBeneficiosSalsa_statCaloriesLabel: 'calories cremades per hora ballant salsa',
+  blogBeneficiosSalsa_statDementiaLabel: 'menys risc de demència vs sedentaris',
+
+  // Breadcrumb
+  blogBeneficiosSalsa_breadcrumbCurrent: '10 Beneficis Científics',
+
+  // Intro
+  blogBeneficiosSalsa_intro:
+    "Ballar salsa crema fins a **400 calories per hora**, protegeix el cervell (**76% menys risc de demència**) i redueix l'estrès significativament. No és màgia: és ciència.\n\nDescobreix els **10 beneficis avalats per estudis científics** de les classes de salsa a Barcelona, i per què milers de persones ja han triat Farray's International Dance Center per transformar el seu cos i la seva ment ballant.",
+
+  // Benefici 1: Calories
+  blogBeneficiosSalsa_benefit1Title: '1. Crema 300-450 Calories per Hora',
+  blogBeneficiosSalsa_benefit1Content:
+    "Una hora de salsa intensa crema entre **300 i 450 calories** (persona de 70kg), equivalent a córrer a ritme moderat. Segons [Harvard Medical School](https://www.health.harvard.edu/diet-and-weight-loss/calories-burned-in-30-minutes-for-people-of-three-different-weights), és exercici cardiovascular disfressat de diversió.\n\nLa diferència clau: mentre corres comptes els minuts per acabar, ballant salsa cubana el temps vola perquè t'ho estàs passant bé. Això facilita la constància, la veritable clau de qualsevol programa d'exercici.",
+  blogBeneficiosSalsa_stat1Label: 'calories cremades per hora',
+
+  // Benefici 2: Cardiovascular
+  blogBeneficiosSalsa_benefit2Title: '2. Millora la Salut Cardiovascular',
+  blogBeneficiosSalsa_benefit2Content:
+    "La salsa és exercici aeròbic d'intensitat moderada-alta. Segons estudis publicats a [JAMA Cardiology](https://jamanetwork.com/journals/jamacardiology), ballar 3 hores per setmana **redueix el risc cardíac entre un 30% i 50%**.\n\nEls moviments constants, girs i canvis de direcció mantenen el cor eficient, baixen la pressió arterial i optimitzen el colesterol HDL. El teu cor t'ho agrairà.",
+
+  // Benefici 3: Músculs
+  blogBeneficiosSalsa_benefit3Title: '3. Enforteix Músculs i Equilibri',
+  blogBeneficiosSalsa_benefit3Content:
+    'Cada pas de salsa treballa múltiples grups musculars: **core, cames, glutis i braços** en moviments funcionals. Un estudi del [British Journal of Sports Medicine](https://bjsm.bmj.com/) confirma que el ball millora la flexibilitat i prevé caigudes.\n\nA diferència del gimnàs repetitiu, la salsa ofereix un entrenament funcional complet que desenvolupa força, equilibri i coordinació de forma natural.',
+
+  // Benefici 4: Cervell
+  blogBeneficiosSalsa_benefit4Title: '4. Redueix Demència un 76% (Estudi NEJM 2003)',
+  blogBeneficiosSalsa_benefit4Content:
+    'Aquest és el benefici més impressionant. El [New England Journal of Medicine (2003)](https://www.nejm.org/doi/full/10.1056/NEJMoa022252) va trobar que **ballar redueix el risc de demència un 76%** – més que mots encreuats, lectura o qualsevol altra activitat estudiada.\n\nPer què? La salsa combina exercici físic amb reptes mentals: memoritzar passos + coordinar-se amb la parella + improvisar. Aquesta combinació única crea noves connexions neuronals i manté el cervell jove.',
+  blogBeneficiosSalsa_stat2Label: 'menys risc de demència',
+
+  // Benefici 5: Estrès
+  blogBeneficiosSalsa_benefit5Title: '5. Allibera Endorfines i Baixa Cortisol',
+  blogBeneficiosSalsa_benefit5Content:
+    "Estudis publicats a [Psychoneuroendocrinology](https://www.sciencedirect.com/journal/psychoneuroendocrinology) demostren que ballar **redueix l'estrès entre un 20% i 30%** post-sessió, mesurat en nivells de cortisol.\n\nQuan balles, el cos allibera endorfines, dopamina i serotonina – els neurotransmissors de la felicitat. Després d'una classe de salsa a Barcelona, sentiràs benestar i calma que dura hores. La millor teràpia anti-estrès.",
+
+  // Benefici 6: Confiança
+  blogBeneficiosSalsa_benefit6Title: "6. Augmenta l'Autoestima i Confiança",
+  blogBeneficiosSalsa_benefit6Content:
+    "Cada pas que domines, cada gir que aconsegueixes, cada cançó que balles sense ensopegar... són 'small wins' que disparen la dopamina i construeixen confiança.\n\nLa salsa t'ensenya a **sentir-te còmode al teu cos**, ocupar espai, expressar-te sense paraules. Aquesta confiança és transferible: es nota a la feina, les relacions, la vida social.",
+
+  // Benefici 7: Postura
+  blogBeneficiosSalsa_benefit7Title: '7. Corregeix Postura i Propiocepció',
+  blogBeneficiosSalsa_benefit7Content:
+    'La tècnica de salsa exigeix **postura erecta + maluc lliure** = alineació natural. En poques setmanes de classes de salsa a Barcelona, notaràs aquesta postura fins i tot quan no balles.\n\nLa coordinació entre peus, braços, maluc i parella desenvolupa habilitats propioceptives que et fan més àgil en la vida quotidiana.',
+
+  // Benefici 8: Social
+  blogBeneficiosSalsa_benefit8Title: '8. Expandeix la Teva Xarxa Social a Barcelona',
+  blogBeneficiosSalsa_benefit8Content:
+    "Les classes de salsa cubana són el millor lloc per conèixer gent nova. Comparteixes passió, treballes en equip, l'ambient és naturalment social.\n\nA Farray's International Dance Center (Eixample Esquerre, Barcelona) hem vist néixer amistats per a tota la vida, parelles, matrimonis. La **comunitat salsera barcelonina** és diversa: totes les edats, professions, nacionalitats.",
+
+  // Benefici 9: Cultura
+  blogBeneficiosSalsa_benefit9Title: '9. Connecta amb la Cultura Salsa Cubana',
+  blogBeneficiosSalsa_benefit9Content:
+    "Ballar salsa és submergir-te en cultura vibrant: de Celia Cruz a Fania, del son al mambo, els ritmes afro-caribenys. A les nostres classes expliquem la **història i el context** de cada pas.\n\nAprens sobre Cuba, Puerto Rico, l'escena novaiorquesa. La salsa et connecta amb quelcom més gran que tu – és experiència cultural, no només exercici.",
+
+  // Benefici 10: Felicitat
+  blogBeneficiosSalsa_benefit10Title: '10. Eleva la Teva Felicitat (Frontiers Psychology)',
+  blogBeneficiosSalsa_benefit10Content:
+    "Un estudi publicat a [Frontiers in Psychology](https://www.frontiersin.org/journals/psychology) va demostrar que els balladors reporten **+25% més satisfacció vital** que persones sedentàries.\n\nNo és casualitat: música + moviment + contacte social + assoliment personal = còctel perfecte de benestar. Com diem a Farray's: 'Qui balla, viu més feliç'.",
+
+  // Image Captions
+  blogBeneficiosSalsa_imageFitnessCaption:
+    'Ballar salsa crema fins a 400 calories per hora mentre tonifiques tot el cos',
+  blogBeneficiosSalsa_imageConfidenceCaption:
+    "La transformació personal comença quan t'atreveixes a moure't amb confiança",
+  blogBeneficiosSalsa_imageSocialCaption:
+    'La comunitat salsera: amistats reals que neixen a la pista de ball',
+
+  // Secció FAQ
+  blogBeneficiosSalsa_faqTitle: 'Preguntes Freqüents sobre Ballar Salsa',
+  blogBeneficiosSalsa_faq1Question: 'Necessito experiència prèvia per començar a ballar salsa?',
+  blogBeneficiosSalsa_faq1Answer:
+    "No, en absolut. Les nostres classes de nivell principiant comencen des de zero. T'ensenyem el pas bàsic, el ritme, i gradualment afegim figures. En poques setmanes estaràs ballant amb soltura.",
+  blogBeneficiosSalsa_faq2Question: 'Necessito venir amb parella de ball?',
+  blogBeneficiosSalsa_faq2Answer:
+    'No és necessari. A les classes rotem parelles, així practiques amb diferents persones i aprens a adaptar-te. A més, molts alumnes vénen sols i acaben fent grans amics.',
+  blogBeneficiosSalsa_faq3Question: 'Quantes classes necessito per ballar bé?',
+  blogBeneficiosSalsa_faq3Answer:
+    'Amb 2-3 mesos de classes regulars (2 vegades per setmana), ja podràs ballar cançons completes amb confiança. El ball és un viatge sense fi, però els beneficis es noten des del primer dia.',
+  blogBeneficiosSalsa_faq4Question: 'La salsa és només per a joves?',
+  blogBeneficiosSalsa_faq4Answer:
+    "De cap manera. Tenim alumnes de 18 a 70 anys. La salsa s'adapta al teu nivell d'energia i condició física. De fet, per a persones grans és especialment beneficiosa pel seu impacte en la memòria i l'equilibri.",
+  blogBeneficiosSalsa_faq5Question:
+    'Quina diferència hi ha entre la salsa cubana i la salsa en línia?',
+  blogBeneficiosSalsa_faq5Answer:
+    "La salsa cubana (casino) es balla en cercle, amb moviments més fluids i sensuals, molt connectada amb la música afro-cubana. La salsa en línia (LA/NY style) es balla en línia recta, amb més acrobàcies. A Farray's ensenyem salsa cubana autèntica.",
+
+  // ============================================================================
+  // BLOG ARTICLE: Història de la Salsa a Barcelona
+  // ============================================================================
+
+  // === META & SEO ===
+  blogHistoriaSalsa_title: 'Història de la Salsa: del Carib al Cor de Barcelona',
+  blogHistoriaSalsa_metaDescription:
+    "Descobreix la història completa de la salsa: arrels afrocubanes, revolució a Nova York i com es viu avui a Barcelona a Farray's International Dance Center.",
+  blogHistoriaSalsa_excerpt:
+    'Arrels afrocubanes, explosió a Nova York amb Fania Records i tradició viva a Barcelona. Descobreix la història completa de la salsa.',
+
+  // === BREADCRUMB ===
+  blogHistoriaSalsa_breadcrumbCurrent: 'Història de la Salsa',
+
+  // === SUMMARY BULLETS (GEO Optimized) ===
+  blogHistoriaSalsa_summaryBullet1:
+    'Arrels afrocubanes: son, guaracha, mambo i guaguancó fusionats a Nova York',
+  blogHistoriaSalsa_summaryBullet2:
+    'Fania Records (1964): el segell que va cristal·litzar la salsa com a identitat global llatina',
+  blogHistoriaSalsa_summaryBullet3:
+    'Barcelona: capital europea de la salsa amb escena vibrant des dels 80-90',
+  blogHistoriaSalsa_summaryBullet4:
+    'Ballar redueix un 76% el risc de demència segons el New England Journal of Medicine',
+
+  // === SUMMARY STATS (Holographic Cards) ===
+  blogHistoriaSalsa_statFaniaLabel: 'Fundació de Fania Records',
+  blogHistoriaSalsa_statDementiaLabel: 'Reducció risc demència',
+  blogHistoriaSalsa_statStudentsLabel: "Alumnes actius a Farray's",
+
+  // === INTRODUCTION ===
+  blogHistoriaSalsa_intro:
+    'La salsa és molt més que un ritme: és una història de migracions, resistència i creativitat col·lectiva que connecta Àfrica, el Carib i el món. Des de les seves arrels afrocubanes fins a la seva expansió global, la salsa encarna segles de mestissatge cultural i llibertat expressiva.',
+  blogHistoriaSalsa_introFarrays:
+    "A Barcelona, aquesta tradició batega amb força a [Farray's International Dance Center](/ca/clases), on aprendre salsa significa comprendre una història viva i universal explicada a través del cos. Consulta els nostres [horaris i preus](/ca/horarios-precios) per unir-te a aquesta tradició.",
+
+  // === SECTION 1: ORÍGENS (1850-1970) ===
+  blogHistoriaSalsa_section1Title:
+    'Orígens de la Salsa: Arrels Afrocubanes, Diàspora i Explosió a Nova York (1850–1970)',
+  blogHistoriaSalsa_section1Content1:
+    'No existeix consens absolut sobre el lloc exacte de naixement de la salsa, però el seu ADN musical es forja a **Cuba** entre finals del segle XIX i les primeres dècades del XX. Allà, el **son cubà** (1890–1910) va integrar ritmes africans —provinents de tradicions yoruba i congo— amb instruments i estructures de la música europea, creant la base sobre la qual es va construir la salsa moderna.',
+  blogHistoriaSalsa_section1Content2:
+    'Al llarg del segle XX, gèneres com la **guaracha** (rítmica i festiva, als anys 30), el **guaguancó** (branca de la rumba afrocubana), el **mambo** (Pérez Prado, 1940s) i el **chachachá** (Enrique Jorrín, 1951) van contribuir a aquest encreuament musical. Les seves gravacions van viatjar pel Carib i Amèrica, especialment a Puerto Rico, República Dominicana i Nova York.',
+  blogHistoriaSalsa_section1Content3:
+    "La dècada de 1960 va ser crucial: el **Bronx i el Spanish Harlem** es van convertir en epicentres on la diàspora caribenca va fusionar sons afrocaribencs amb jazz llatí, influències de soul i R&B, i una energia urbana inconfusible. Artistes com **Tito Puente, Tito Rodríguez i Charlie Palmieri** van liderar aquest moviment que va donar origen a l'anomenada **salsa dura**: una música poderosa, amb metalls intensos, percussió agressiva i lletres que contaven la vida al barri.",
+  blogHistoriaSalsa_section1Content4:
+    'El 1964, el segell **[Fania Records](https://www.faniarecords.com/)** —fundat per Johnny Pacheco (dominicà) i Jerry Masucci (novaiorquès)— va cristal·litzar i projectar aquest fenomen. Fania no va "inventar" la salsa, però la va convertir en una **identitat global**, combinant estratègia comercial i orgull cultural llatí. La creació de **Fania All-Stars** el 1968 i concerts icònics com els del Cheetah Club o el Yankee Stadium van marcar el moment en què la salsa es va consolidar com a símbol de la llatinitat urbana i orgullosa.',
+
+  // === IMAGE CAPTIONS ===
+  blogHistoriaSalsa_imageFaniaCaption:
+    'Fania All-Stars: el dream team de la salsa que va conquistar el món des de Nova York',
+  blogHistoriaSalsa_imageBarcelonaCaption:
+    "Classe de salsa cubana a Farray's International Dance Center Barcelona",
+
+  // === SECTION 2: ETIMOLOGIA DE "SALSA" ===
+  blogHistoriaSalsa_section2Title:
+    'Etimologia de "Salsa": Teories, Debat Acadèmic i Etiqueta Comercial',
+  blogHistoriaSalsa_section2Intro:
+    'El terme "salsa" mai va tenir un únic origen confirmat, però sí múltiples camins convergents. Entre les teories més sòlides destaquen:',
+  blogHistoriaSalsa_section2TeoriasTitle: "Principals teories sobre l'origen del nom",
+  blogHistoriaSalsa_teoria1:
+    '**Analogia culinària**: popularitzada als anys 60 pel locutor veneçolà Phidias Danilo Escalona, associa "salsa" amb barreja saborosa i picant, metàfora de la fusió musical (son + jazz + barri)',
+  blogHistoriaSalsa_teoria2:
+    '**"Échale salsita" (1933)**: del compositor cubà Ignacio Piñeiro i el seu Septeto Nacional, una de les primeres mencions directes al terme',
+  blogHistoriaSalsa_teoria3:
+    '**Cheo Marquetti i "Los Salseros" (1940s)**: fan servir el terme de forma artística abans de Fania',
+  blogHistoriaSalsa_teoria4:
+    '**Ús comercial de Fania (1960s–1970s)**: títols com "Salsa Na\' Ma\'" o campanyes radiofòniques novaiorqueses consoliden el terme com a marca internacional',
+  blogHistoriaSalsa_section2Debate:
+    'La musicologia contemporània distingeix dues perspectives: la **visió acadèmica** (etiqueta paraigua per a gèneres afrocubans actualitzats) i la **visió popular** (gènere propi amb identitat sonora basada en la clau 2-3, el piano montuno i els cors de crida i resposta).',
+  blogHistoriaSalsa_section2Callout:
+    "A [Farray's International Dance Center](/ca/clases), aquest debat cobra vida a les classes. Aprendre [salsa cubana](/ca/clases/salsa-cubana-barcelona) —centrada en arrels del son— davant salsa en línia, desenvolupada a Nova York, permet als alumnes viure al seu propi cos aquesta tensió entre tradició i evolució.",
+
+  // === SECTION 3: EVOLUCIÓ ESTILÍSTICA (TAULA) ===
+  blogHistoriaSalsa_section3Title:
+    'Evolució Estilística: de la Salsa Dura a la Fusió Contemporània',
+  blogHistoriaSalsa_section3Intro:
+    'La salsa ha evolucionat en múltiples estils, cadascun amb el seu caràcter únic. A les [nostres classes a Barcelona](/ca/clases) ensenyem aquesta diversitat:',
+  blogHistoriaSalsa_section3TableTitle: "Comparativa d'estils de salsa",
+  blogHistoriaSalsa_tableHeaderEstilo: 'Estil',
+  blogHistoriaSalsa_tableHeaderEpoca: 'Època',
+  blogHistoriaSalsa_tableHeaderCaracteristicas: 'Característiques',
+  blogHistoriaSalsa_tableHeaderRepresentantes: 'Representants',
+  blogHistoriaSalsa_tableHeaderBarcelona: 'A Barcelona',
+  blogHistoriaSalsa_tableRow1Col1: 'Salsa Dura (NY)',
+  blogHistoriaSalsa_tableRow1Col2: '1968–1980',
+  blogHistoriaSalsa_tableRow1Col3: 'Metalls potents, percussió intensa, lletres sobre identitat',
+  blogHistoriaSalsa_tableRow1Col4: 'Fania All-Stars, Willie Colón, Héctor Lavoe',
+  blogHistoriaSalsa_tableRow1Col5: "Base de l'escena clàssica a l'Eixample i Gràcia",
+  blogHistoriaSalsa_tableRow2Col1: 'Salsa Romàntica',
+  blogHistoriaSalsa_tableRow2Col2: '1980s–1990s',
+  blogHistoriaSalsa_tableRow2Col3: "Balades lentes, èmfasi en l'amor, menys percussió",
+  blogHistoriaSalsa_tableRow2Col4: 'Frankie Ruiz, Gilberto Santa Rosa, Tito Nieves',
+  blogHistoriaSalsa_tableRow2Col5: 'Inspira salsa en línia i sensual moderna',
+  blogHistoriaSalsa_tableRow3Col1: 'Salsa Cubana / Timba',
+  blogHistoriaSalsa_tableRow3Col2: '1990s–avui',
+  blogHistoriaSalsa_tableRow3Col3: 'Integració de songo, timba, improvisació i casino',
+  blogHistoriaSalsa_tableRow3Col4: 'Celia Cruz, Los Van Van, Manolín',
+  blogHistoriaSalsa_tableRow3Col5: "Classes avançades a Farray's",
+  blogHistoriaSalsa_tableRow4Col1: 'Power Salsa / Salsa Choke',
+  blogHistoriaSalsa_tableRow4Col2: '2000s–avui',
+  blogHistoriaSalsa_tableRow4Col3: 'Fusions amb hip-hop, electrònica i reggaeton',
+  blogHistoriaSalsa_tableRow4Col4: "Oscar D'León, artistes colombians",
+  blogHistoriaSalsa_tableRow4Col5: 'Escena jove a Poblenou i 22@',
+
+  // === SECTION 4: BARCELONA ===
+  blogHistoriaSalsa_section4Title: 'De Nova York i el Carib a Barcelona',
+  blogHistoriaSalsa_section4Content1:
+    "En les últimes dècades, Barcelona s'ha transformat en una de les **capitals europees del ball llatí**, on conviuen tradició i modernitat. La ciutat acull una àmplia comunitat llatinoamericana i afrocaribenca, generant una escena salsera plural: des de clubs a l'Eixample fins a escoles especialitzades a Gràcia o Poblenou, on el ritme es barreja amb la vida quotidiana.",
+  blogHistoriaSalsa_section4Content2:
+    "[Farray's International Dance Center](/ca/clases), institució pionera en l'ensenyament professional de dansa afrocaribenca, manté viva aquesta herència a través de programes que combinen tècnica, cultura i història. Aquí la salsa s'ensenya no només amb precisió tècnica, sinó amb consciència del context que la va originar. Coneix els [nostres professors](/ca/profesores-baile-barcelona) i descobreix el [Mètode Farray®](/ca/yunaisy-farray).",
+
+  // === SECTION 5: BENEFICIS ===
+  blogHistoriaSalsa_section5Title: 'Més que exercici: el que la ciència diu del ball',
+  blogHistoriaSalsa_section5Intro:
+    'La salsa no és només un exercici físic. La ciència ha demostrat que ballar de forma regular té un impacte positiu a múltiples nivells: millora la salut cardiovascular, reforça la memòria i la concentració, allibera endorfines i crea vincles socials profunds.',
+  blogHistoriaSalsa_beneficiosDetalle:
+    'Un estudi del New England Journal of Medicine (2003) va trobar que ballar pot reduir fins a un 76% el risc de demència en adults grans. Cada classe és una inversió en salut física i mental que, a més, et connecta amb una tradició cultural viva.',
+
+  // === SECTION 6: CONCLUSIÓ ===
+  blogHistoriaSalsa_section6Title: 'Tradició viva a Barcelona',
+  blogHistoriaSalsa_section6Content1:
+    "La salsa és un mirall de la història llatinoamericana: arrel africana, ànima caribenca i cor global. El seu viatge des dels solars cubans fins als barris de Nova York —i avui, fins a les acadèmies de Barcelona— demostra el poder de l'art per unir cultures i transcendir èpoques.",
+  blogHistoriaSalsa_conclusionCTA:
+    "Si vols sentir el pols del Carib al cor de Barcelona, consulta els nostres [horaris i preus](/ca/horarios-precios) i [reserva la teva primera classe](/ca/clases/salsa-cubana-barcelona). A [Farray's](/ca/clases), la salsa no s'aprèn: es viu.",
+
+  // === FAQ (SEO Schema) ===
+  blogHistoriaSalsa_faqTitle: 'Preguntes Freqüents sobre la Història de la Salsa',
+  blogHistoriaSalsa_faq1Question: 'On va néixer realment la salsa?',
+  blogHistoriaSalsa_faq1Answer:
+    'L\'ADN musical de la salsa es forja a Cuba entre finals del segle XIX i principis del XX amb el son cubà. No obstant això, el terme "salsa" i la seva consolidació com a gènere van ocórrer a Nova York als anys 60-70, quan la diàspora caribenca va fusionar ritmes afrocubans amb jazz llatí i soul. Fania Records (1964) va ser fonamental per a la seva projecció mundial.',
+  blogHistoriaSalsa_faq2Question: 'Per què es diu salsa?',
+  blogHistoriaSalsa_faq2Answer:
+    "Existeixen diverses teories: l'analogia culinària (barreja saborosa), la cançó \"Échale salsita\" d'Ignacio Piñeiro (1933), i l'ús comercial de Fania Records als 60s-70s. El terme va funcionar com a etiqueta paraigua per a ritmes afrocaribencs modernitzats i es va consolidar com a marca d'identitat llatina.",
+  blogHistoriaSalsa_faq3Question: 'Quina diferència hi ha entre salsa cubana i salsa en línia?',
+  blogHistoriaSalsa_faq3Answer:
+    "La salsa cubana (casino) es balla en cercle amb moviments més fluids i prové directament de Cuba. La salsa en línia (LA/NY style) es va desenvolupar als Estats Units, es balla en línia recta i té influències del hustle i el mambo. A Farray's ensenyem ambdós estils perquè compren tota la riquesa del gènere.",
+  blogHistoriaSalsa_faq4Question: 'Barcelona és una bona ciutat per aprendre salsa?',
+  blogHistoriaSalsa_faq4Answer:
+    "Barcelona és considerada una de les capitals europees del ball llatí. La ciutat té una vibrant comunitat llatinoamericana, nombroses sales de ball, congressos internacionals com el Barcelona Salsa Congress, i escoles especialitzades com Farray's International Dance Center.",
+  blogHistoriaSalsa_faq5Question: 'Quins beneficis té ballar salsa per a la salut?',
+  blogHistoriaSalsa_faq5Answer:
+    "Segons estudis del New England Journal of Medicine, ballar regularment pot reduir fins a un 76% el risc de demència. A més, una hora de salsa crema entre 350-450 kcal, millora la coordinació, redueix l'estrès i augmenta la felicitat en un 25% segons Frontiers in Psychology.",
+
+  // === REFERÈNCIES (GEO Citability) ===
+  blogHistoriaSalsa_referencesTitle: 'Fonts i referències',
+  blogHistoriaSalsa_referencesIntro: "Fonts consultades per a l'elaboració d'aquest article:",
+  blogHistoriaSalsa_refFaniaTitle: 'Història de Fania Records',
+  blogHistoriaSalsa_refFaniaDesc:
+    'El segell discogràfic fundat el 1964 que va definir el so de la salsa i va projectar artistes com Celia Cruz, Héctor Lavoe i Willie Colón.',
+  blogHistoriaSalsa_refSmithsonianTitle: 'Col·leccions de Música Llatina - Smithsonian',
+  blogHistoriaSalsa_refSmithsonianDesc:
+    'Arxiu del Smithsonian Institution amb materials històrics sobre música llatina i afrocaribenca.',
+  blogHistoriaSalsa_refNEJMTitle: 'Ball i Demència (Verghese et al., 2003)',
+  blogHistoriaSalsa_refNEJMDesc:
+    "Estudi publicat al New England Journal of Medicine sobre activitats d'oci i risc de demència.",
+  blogHistoriaSalsa_refFrontiersTitle: 'Beneficis Psicològics del Ball',
+  blogHistoriaSalsa_refFrontiersDesc:
+    'Investigacions sobre els efectes del ball en el benestar emocional i la salut mental.',
+  blogHistoriaSalsa_refBcnSalsaTitle: 'Festivals de Salsa a Barcelona',
+  blogHistoriaSalsa_refBcnSalsaDesc:
+    "Calendari d'esdeveniments i congressos de ball llatí a Barcelona i rodalia.",
+
+  // === AUTO-ADDED TRANSLATIONS (2025-12-19) ===
+  openLevel: 'Nivell Obert',
+  dhV3CompareTitle:
+    "Per què aprendre Dancehall a Farray's i no en una altra acadèmia de Barcelona?",
+  dhV3CompareSubtitle: 'La diferència no és màrqueting. Són fets.',
+  dhV3CompareColOthers: 'Altres acadèmies',
+  dhV3CompareColFarrays: "Farray's Center",
+  dhV3CompareRow1Label: 'Formació del professorat',
+  dhV3CompareRow1Others: 'Cursos online o de cap de setmana',
+  dhV3CompareRow1Farrays: 'Formades a Jamaica + Mètode Farray®',
+  dhV3CompareRow2Label: "Mètode d'ensenyament",
+  dhV3CompareRow2Others: 'Copies la coreografia del mes',
+  dhV3CompareRow2Farrays: 'Tècnica + fonaments + progressió real',
+  dhV3CompareRow3Label: 'Separació per nivells',
+  dhV3CompareRow3Others: '"Nivell obert" - tots barrejats',
+  dhV3CompareRow3Farrays: 'Iniciació, Intermedi i Avançat reals',
+  dhV3CompareRow4Label: 'Classes de Dancehall per setmana',
+  dhV3CompareRow4Others: '1-2 classes',
+  dhV3CompareRow4Farrays: '5 classes diferents per triar',
+  dhV3CompareRow5Label: 'Instal·lacions',
+  dhV3CompareRow5Others: 'Locals petits o compartits',
+  dhV3CompareRow5Farrays: '700m² amb terra professional i climatització',
+  dhV3CompareRow6Label: 'Permanència mínima',
+  dhV3CompareRow6Others: 'Contractes de 3 a 12 mesos',
+  dhV3CompareRow6Farrays: "Mes a mes, te'n vas quan vulguis",
+  dhV3CompareRow7Label: 'Reconeixement oficial',
+  dhV3CompareRow7Others: 'Cap',
+  dhV3CompareRow7Farrays: 'Acadèmia acreditada pel CID-UNESCO',
+  dhV3CompareRow8Label: 'Comunitat i esdeveniments',
+  dhV3CompareRow8Others: "Vas a classe i te'n vas",
+  dhV3CompareRow8Farrays: 'Pràctiques lliures, esdeveniments, família real',
+  dhV3CompareMeaningTitle: 'Què significa això per a tu?',
+  dhV3CompareMeaning1Title: 'Si mai has ballat Dancehall:',
+  dhV3CompareMeaning1Desc:
+    'Començaràs amb fonaments reals, no copiant passos que no entens. En 3 mesos notaràs la diferència.',
+  dhV3CompareMeaning2Title: 'Si ja has provat altres acadèmies:',
+  dhV3CompareMeaning2Desc:
+    'Per fi entendràs el "per què" de cada moviment. No era culpa teva no progressar — era el mètode.',
+  dhV3CompareMeaning3Title: 'Si vols flexibilitat:',
+  dhV3CompareMeaning3Desc:
+    '5 classes per setmana significa que entrenes quan TU puguis. I si un mes no pots venir, no passa res.',
+  dhV3CompareMeaning4Title: 'Si busques comunitat:',
+  dhV3CompareMeaning4Desc:
+    'Aquí no ets un número. Coneixeràs gent, aniràs a pràctiques, i tindràs una família de ball real.',
+  dhV3CompareCTA: 'Comprova-ho: primera classe de prova',
+  dhV3CompareNote: 'Sense permanència. Sense trucs. Sense pressió.',
+  navBachataLadyStyle: 'Bachata Lady Style',
+  navTimba: 'Timba',
+  salsaCubanaLevelBasicTitle: 'Bàsic I, II i III',
+  salsaCubanaLevelBasicDesc:
+    'Consolida els fonaments, introdueix les primeres figures, treballa la fluïdesa i perfecciona la tècnica de guia/seguiment.',
+  salsaCubanaWhyChoose7Title: 'Gala anual + festes salseres',
+  salsaCubanaWhyChoose7Desc:
+    'Brilla en un teatre professional, gaudeix de les nostres festes temàtiques i viu experiències que no trobaràs en cap altra escola de Barcelona.',
+  salsaLadyTeacher2Specialty: 'Mestra i Artista Internacional Cubana',
+  salsaLadyTeacher2Bio:
+    "Amb més de 20 anys de carrera artística, formada a l'Escola Nacional d'Art de Cuba (ENA). Lia Valdes és referent mundial en Cabaret i Lady Style, aportant elegància escènica i tècnica impecable a cada classe.",
+  salsaLadyTeacher3Specialty: 'Instructora de Lady Style | Especialista en Tècnica Femenina',
+  salsaLadyTeacher3Bio:
+    "Yasmina Fernández és una apassionada instructora de Lady Style formada en el Mètode Farray®. Amb anys d'experiència en l'ensenyament de la tècnica femenina, destaca per la seva capacitat de connectar amb les alumnes i transmetre l'elegància i sensualitat del ball llatí.",
+  salsaLadyV2PageTitle: 'Classes de Salsa Lady Style a Barcelona | Mètode Farray®',
+  salsaLadyV2MetaDescription:
+    "Domina el Lady Style amb el Mètode Farray®. Tècnica de braços, malucs, girs i talons. Mestres cubanes de l'ENA. L'únic sistema estructurat de Barcelona.",
+  salsaLadyV2HeroTitle: 'Salsa Lady Style',
+  salsaLadyV2HeroSubtitle: 'El Mètode que Transforma el teu Ball',
+  salsaLadyV2HeroDesc:
+    "Deixa d'improvisar en els shines. Aprèn tècnica femenina real amb l'únic sistema estructurat de Lady Style a Barcelona.",
+  salsaLadyV2CTA1: 'Reserva la teva Classe de Prova',
+  salsaLadyV2CTA2: 'Veure el Mètode Farray®',
+  salsaLadyV2ProblemTitle: 'El sostre de vidre del Lady Style',
+  salsaLadyV2ProblemP1: 'Portes mesos (o anys) ballant salsa.',
+  salsaLadyV2ProblemP2: 'El teu follow és correcte. Entens la guia. No et perds en la música.',
+  salsaLadyV2ProblemP3: 'Però quan la teva parella et deixa anar per un shine...',
+  salsaLadyV2ProblemTrigger: 'Què passa llavors?',
+  salsaLadyV2Pain1: 'No saps què fer amb els braços',
+  salsaLadyV2Pain2: 'Els teus malucs es bloquegen',
+  salsaLadyV2Pain3: 'Fas "alguna cosa" però no saps si està bé',
+  salsaLadyV2Pain4: 'Veus altres balladores brillar i penses: "com ho fan?"',
+  salsaLadyV2ProblemNotYou: 'El problema no ets tu.',
+  salsaLadyV2ProblemRealCause:
+    'El problema és que ningú et va ensenyar tècnica femenina de veritat.',
+  salsaLadyV2DiagnosisTitle: 'Per què el teu Lady Style no progressa',
+  salsaLadyV2DiagnosisSubtitle: '(I per què no és culpa teva)',
+  salsaLadyV2DiagnosisIntro:
+    "La majoria d'acadèmies NO tenen un sistema de Lady Style estructurat.",
+  salsaLadyV2DiagnosisOthersTitle: 'El que fan altres acadèmies:',
+  salsaLadyV2DiagnosisBad1: 'Classes soltes sense progressió lògica',
+  salsaLadyV2DiagnosisBad2: 'Professores que ensenyen "el que van aprendre" sense metodologia',
+  salsaLadyV2DiagnosisBad3: 'Barrejen principiants amb avançades a la mateixa classe',
+  salsaLadyV2DiagnosisBad4: 'Copien coreografies de YouTube sense ensenyar tècnica base',
+  salsaLadyV2DiagnosisBad5: "Ignoren la musicalitat i l'expressió",
+  salsaLadyV2DiagnosisBad6: 'No hi ha nivells clars ni objectius definits',
+  salsaLadyV2DiagnosisResult:
+    'El resultat: portes mesos i segueixes fent els mateixos moviments bàsics.',
+  salsaLadyV2DiagnosisFarrayTitle:
+    "A Farray's és diferent. El Mètode Farray® és l'únic sistema de Lady Style a Barcelona amb:",
+  salsaLadyV2DiagnosisGood1: 'Estructura didàctica provada',
+  salsaLadyV2DiagnosisGood2: 'Nivells clars amb objectius específics',
+  salsaLadyV2DiagnosisGood3: 'Progressió tècnica mesurable',
+  salsaLadyV2DiagnosisGood4: "Mestra cubana formada a l'ENA",
+  salsaLadyV2WhatIsTitle: 'Què és el Salsa Lady Style i per què transformarà el teu ball?',
+  salsaLadyV2WhatIsDesc:
+    "El Salsa Lady Style és la disciplina que desenvolupa la teva tècnica femenina dins del ball de salsa. A diferència de les classes en parella, el Lady Style s'enfoca 100% en tu.",
+  salsaLadyV2Focus1: 'La teva elegància',
+  salsaLadyV2Focus2: 'El teu braceig',
+  salsaLadyV2Focus3: 'La teva forma de caminar',
+  salsaLadyV2Focus4: 'Els teus girs',
+  salsaLadyV2Focus5: 'La teva presència escènica',
+  salsaLadyV2Focus6: 'La teva interpretació musical',
+  salsaLadyV2Quote:
+    "No es tracta només de passos. Es tracta de com et mous, com ocupes l'espai i com transmets feminitat en cada moviment.",
+  salsaLadyV2PillarsTitle: 'El Mètode Farray®: Els 6 Pilars del Lady Style',
+  salsaLadyV2PillarsSubtitle:
+    'El sistema complet que desenvolupa cada aspecte de la teva tècnica femenina',
+  salsaLadyV2Pillar1Title: 'Tècnica de Braceig',
+  salsaLadyV2Pillar1Subtitle: "L'art dels braços expressius",
+  salsaLadyV2Pillar1Desc:
+    'Aprèn a utilitzar els teus braços com a extensió del teu cos, creant línies elegants i moviments fluids que complementen cada pas.',
+  salsaLadyV2Pillar1Item1: 'Línies elegants i definides',
+  salsaLadyV2Pillar1Item2: 'Coordinació braços-cos',
+  salsaLadyV2Pillar1Item3: 'Port de bras amb tècnica cubana',
+  salsaLadyV2Pillar1Result: 'De braços rígids a extensions que hipnotitzen.',
+  salsaLadyV2Pillar2Title: 'Control de Malucs',
+  salsaLadyV2Pillar2Subtitle: 'Moviment amb intenció',
+  salsaLadyV2Pillar2Desc:
+    'Domina el moviment hipnòtic de malucs amb tècnica cubana autèntica. Cada moviment té propòsit i transmet feminitat.',
+  salsaLadyV2Pillar2Item1: 'Dissociació i aïllació',
+  salsaLadyV2Pillar2Item2: 'Vuits i moviments circulars',
+  salsaLadyV2Pillar2Item3: 'Ondulacions controlades',
+  salsaLadyV2Pillar2Result: 'De malucs bloquejats a moviment sensual i controlat.',
+  salsaLadyV2Pillar3Title: 'Girs amb Elegància',
+  salsaLadyV2Pillar3Subtitle: 'Equilibri i fluïdesa',
+  salsaLadyV2Pillar3Desc:
+    'Tècnica de girs que combina equilibri, gràcia i control. Des de simples fins a múltiples, sempre amb elegància.',
+  salsaLadyV2Pillar3Item1: 'Preparació, spot i entrada',
+  salsaLadyV2Pillar3Item2: 'Control del centre',
+  salsaLadyV2Pillar3Item3: 'Girs múltiples amb estil',
+  salsaLadyV2Pillar3Result: 'De girs trontollants a voltes netes i elegants.',
+  salsaLadyV2Pillar4Title: 'Domini de Talons',
+  salsaLadyV2Pillar4Subtitle: 'Seguretat i estil',
+  salsaLadyV2Pillar4Desc:
+    'Aprèn a caminar, ballar i girar amb talons com una professional. Confiança en cada pas.',
+  salsaLadyV2Pillar4Item1: 'Caminar amb elegància sobre stilettos',
+  salsaLadyV2Pillar4Item2: 'Estabilitat i equilibri',
+  salsaLadyV2Pillar4Item3: 'Joc de taló i punta',
+  salsaLadyV2Pillar4Result: "D'inseguretat a domini total sobre els talons.",
+  salsaLadyV2Pillar5Title: 'Musicalitat',
+  salsaLadyV2Pillar5Subtitle: 'Interpretar la música',
+  salsaLadyV2Pillar5Desc:
+    'Entén la música llatina en profunditat: clau, temps, accents. El teu cos es converteix en instrument.',
+  salsaLadyV2Pillar5Item1: 'Identificar accents i canvis',
+  salsaLadyV2Pillar5Item2: 'Interpretar la música amb el cos',
+  salsaLadyV2Pillar5Item3: 'Jugar amb la velocitat i dinàmica',
+  salsaLadyV2Pillar5Result: "D'executar passos a interpretar cançons.",
+  salsaLadyV2Pillar6Title: 'Presència Escènica',
+  salsaLadyV2Pillar6Subtitle: 'Actitud i confiança',
+  salsaLadyV2Pillar6Desc:
+    'Desenvolupa la teva pròpia personalitat en el ball. Actitud, mirada i confiança que captiven.',
+  salsaLadyV2Pillar6Item1: "Projecció d'energia",
+  salsaLadyV2Pillar6Item2: 'Ús de la mirada',
+  salsaLadyV2Pillar6Item3: 'Actitud i confiança en tu mateixa',
+  salsaLadyV2Pillar6Result: 'De ballar "cap a dins" a brillar cap a fora.',
+  salsaLadyV2PersuasiveBlockTitle: 'Per què el Mètode Farray és diferent?',
+  salsaLadyV2CompareTitle: 'Lady Style tradicional vs. Mètode Farray®',
+  salsaLadyV2CompareAspect: 'Aspecte',
+  salsaLadyV2CompareOthers: 'Altres acadèmies',
+  salsaLadyV2CompareFarray: 'Mètode Farray®',
+  salsaLadyV2CompareRow1Label: "Sistema d'ensenyament",
+  salsaLadyV2CompareRow1Others: 'Classes soltes sense estructura',
+  salsaLadyV2CompareRow1Farray: 'Sistema progressiu de 3 nivells',
+  salsaLadyV2CompareRow2Label: 'Formació del professorat',
+  salsaLadyV2CompareRow2Others: 'Professores que ensenyen "d\'oïda"',
+  salsaLadyV2CompareRow2Farray: "Mestra cubana formada a l'ENA Cuba",
+  salsaLadyV2CompareRow3Label: 'Grups',
+  salsaLadyV2CompareRow3Others: 'Barrejen tots els nivells',
+  salsaLadyV2CompareRow3Farray: 'Grups separats per nivell tècnic',
+  salsaLadyV2CompareRow4Label: 'Contingut',
+  salsaLadyV2CompareRow4Others: 'Copien coreografies de YouTube',
+  salsaLadyV2CompareRow4Farray: 'Tècnica base abans de coreografies',
+  salsaLadyV2CompareRow5Label: 'Musicalitat',
+  salsaLadyV2CompareRow5Others: 'Només moviments, sense musicalitat',
+  salsaLadyV2CompareRow5Farray: 'Interpretació musical integrada',
+  salsaLadyV2CompareRow6Label: 'Estil',
+  salsaLadyV2CompareRow6Others: 'Estil genèric "internacional"',
+  salsaLadyV2CompareRow6Farray: 'Autenticitat cubana a cada classe',
+  salsaLadyV2CompareRow7Label: 'Progressió',
+  salsaLadyV2CompareRow7Others: 'Sense progressió clara',
+  salsaLadyV2CompareRow7Farray: 'Objectius definits per nivell',
+  salsaLadyV2CompareRow8Label: 'Requisits',
+  salsaLadyV2CompareRow8Others: 'Apta per a qualsevol',
+  salsaLadyV2CompareRow8Farray: 'Requisit: base de salsa cubana',
+  salsaLadyV2ForWhoTitle: 'És el Lady Style Farray® per a tu?',
+  salsaLadyV2ForYesTitle: 'SÍ és per a tu si:',
+  salsaLadyV2ForYes1: 'Ja balles salsa (cubana o en línia) i tens base tècnica',
+  salsaLadyV2ForYes2: 'Vols desenvolupar el teu estil propi per brillar a la pista',
+  salsaLadyV2ForYes3: 'Sents que la teva tècnica de braços/malucs és millorable',
+  salsaLadyV2ForYes4: 'Quan et deixen anar no saps què fer',
+  salsaLadyV2ForYes5: 'Vols aprendre tècnica de talons amb metodologia',
+  salsaLadyV2ForYes6: 'Estàs estancada a la teva acadèmia actual',
+  salsaLadyV2ForYes7: 'Busques un sistema progressiu, no classes soltes',
+  salsaLadyV2ForYes8: 'Vols preparar-te per actuacions/competicions',
+  salsaLadyV2ForNoTitle: 'NO és per a tu si:',
+  salsaLadyV2ForNo1: 'Mai has ballat salsa (comença per Salsa Cubana Nivell 0)',
+  salsaLadyV2ForNo2: 'Busques classes de fitness sense tècnica real',
+  salsaLadyV2ForNo3: 'Vols resultats sense esforç ni pràctica',
+  salsaLadyV2ForNo4: 'Prefereixes classes on barrejen tots els nivells',
+  salsaLadyV2ForWhoCTA: 'Si has dit "sí" a 3 o més punts, el Lady Style Farray® és per a tu.',
+  salsaLadyV2TransformTitle: 'El teu Abans i Després amb Lady Style Farray®',
+  salsaLadyV2TransformAspect: 'Aspecte',
+  salsaLadyV2TransformBefore: 'ABANS',
+  salsaLadyV2TransformAfter: 'DESPRÉS',
+  salsaLadyV2TransformbrazosLabel: 'Braços',
+  salsaLadyV2TransformbrazosBefore: 'Rígids, sense saber què fer',
+  salsaLadyV2TransformbrazosAfter: 'Fluids, elegants, expressius',
+  salsaLadyV2TransformcaderasLabel: 'Malucs',
+  salsaLadyV2TransformcaderasBefore: 'Bloquejats o descontrolats',
+  salsaLadyV2TransformcaderasAfter: 'Moviment sensual i controlat',
+  salsaLadyV2TransformgirosLabel: 'Girs',
+  salsaLadyV2TransformgirosBefore: 'Trontollants, sense equilibri',
+  salsaLadyV2TransformgirosAfter: 'Nets, múltiples, amb estil',
+  salsaLadyV2TransformtaconesLabel: 'Talons',
+  salsaLadyV2TransformtaconesBefore: 'Inseguretat, ensopegades',
+  salsaLadyV2TransformtaconesAfter: 'Domini total, elegància',
+  salsaLadyV2TransformshinesLabel: 'Shines',
+  salsaLadyV2TransformshinesBefore: 'Repetint 2-3 moviments',
+  salsaLadyV2TransformshinesAfter: 'Ampli repertori i estil personal',
+  salsaLadyV2TransformconfianzaLabel: 'Confianza',
+  salsaLadyV2TransformconfianzaBefore: 'Dudas sobre tu baile',
+  salsaLadyV2TransformconfianzaAfter: 'Seguridad cuando suena la salsa',
+  salsaLadyV2TransformestiloLabel: 'Estilo',
+  salsaLadyV2TransformestiloBefore: 'Copiar a otras',
+  salsaLadyV2TransformestiloAfter: 'Tu sello personal único',
+  salsaLadyV2FinalCTATitle: '¿Lista para brillar en la pista?',
+  salsaLadyV2FinalCTADesc:
+    'Tu transformación comienza con una sola clase. El Método Farray® te espera.',
+  salsaLadyV2FinalCTA1: 'Reservar por WhatsApp',
+  salsaLadyV2FinalCTA2: 'Ver Horarios',
+  salsaLadyV2WhyFarrayTitle: "¿Por qué elegir Farray's para aprender Lady Style?",
+  salsaLadyV2WhyFarraySubtitle:
+    'No todas las academias son iguales. Esto es lo que nos hace diferentes.',
+  salsaLadyV2WhyFarray1Title: 'Maestra Cubana Formada en la ENA',
+  salsaLadyV2WhyFarray1Desc:
+    'Yunaisy Farray se formó en la Escuela Nacional de Arte de Cuba. Técnica cubana auténtica, no imitaciones.',
+  salsaLadyV2WhyFarray2Title: 'Sistema Progresivo por Niveles',
+  salsaLadyV2WhyFarray2Desc:
+    'Principiante, Básico, Intermedio y Avanzado. Cada nivel con objetivos claros y evaluación de progreso.',
+  salsaLadyV2WhyFarray3Title: 'Grupos Reducidos',
+  salsaLadyV2WhyFarray3Desc:
+    'Máximo 15 alumnas por clase para atención personalizada. Tu profesora te conoce por tu nombre.',
+  salsaLadyV2WhyFarray4Title: 'Metodología Propia',
+  salsaLadyV2WhyFarray4Desc:
+    'El Método Farray no es improvisado: es un sistema probado durante 8+ años con miles de alumnas.',
+  salsaLadyV2WhyFarray5Title: 'Aval CID-UNESCO',
+  salsaLadyV2WhyFarray5Desc:
+    'Somos academia acreditada por el Consejo Internacional de la Danza. Tu formación tiene reconocimiento internacional.',
+  salsaLadyV2WhyFarray6Title: 'Comunidad Real',
+  salsaLadyV2WhyFarray6Desc:
+    'No eres un número. Eventos, quedadas, workshops exclusivos. Aquí se crean amistades de verdad.',
+  navPricing: 'Preus',
+  pricing_page_title: 'Precios Clases de Baile Barcelona | Cuotas 2025',
+  pricing_page_description:
+    'Conoce las cuotas de socio de FIDC Barcelona: planes mensuales desde 50€, cuotas flexibles, entrenamientos personalizados. Sin permanencia. Primera clase gratis.',
+  pricing_breadcrumb_home: 'Inicio',
+  pricing_breadcrumb_current: 'Horarios y Precios',
+  pricing_schema_name: "Cuotas Club Deportivo Farray\'s Center",
+  pricing_schema_description:
+    'Cuotas de socio para actividades de baile en Barcelona. Planes mensuales, flexibles y entrenamientos personalizados.',
+  pricing_hero_title: 'Horarios y Precios',
+  pricing_hero_subtitle:
+    'Invierte en tu bienestar. Elige el plan que mejor se adapte a tu ritmo de vida y empieza a bailar hoy.',
+  pricing_badge_no_permanence: 'Sin permanencia',
+  pricing_badge_cancel_anytime: 'Cancela cuando quieras',
+  pricing_badge_first_class_free: 'Reserva sin compromiso',
+  pricing_hero_cta: 'Hazte Socio Ahora',
+  pricing_trial_title: '¿Primera vez? Reserva tu clase de Bienvenida',
+  pricing_trial_subtitle:
+    'En enero ven a conocernos sin compromiso. Prueba cualquier actividad y descubre por qué más de 1500 socios nos eligen cada semana.',
+  pricing_trial_cta: 'Reservar Clase De Bienvenida',
+  pricing_enrollment_title: 'Cuota de Inscripción',
+  pricing_enrollment_desc:
+    'Un pago único que te convierte en socio del club y te da acceso a todos los beneficios exclusivos de nuestra comunidad.',
+  pricing_enrollment_once: 'Pago único · Sin renovación',
+  enrollmentInclude1: 'Acceso al sistema y plaza fija en tu horario',
+  enrollmentInclude2: 'Seguro de accidentes incluido',
+  enrollmentInclude3: 'Todos los beneficios exclusivos de socio',
+  pricing_monthly_title: 'Cuotas Mensuales',
+  pricing_monthly_subtitle:
+    'Elige cuántas actividades quieres hacer a la semana. A más actividades, menor coste por sesión.',
+  pricing_tab_regular: 'Regular',
+  pricing_tab_premium: 'Premium',
+  pricing_activities_month: 'actividades/mes',
+  pricing_per_activity: 'actividad',
+  pricing_per_week: 'semanales',
+  pricing_all_styles: 'Acceso a +25 estilos',
+  pricing_with_yunaisy: 'Incluye clases con Yunaisy Farray',
+  pricing_popular: 'Más popular',
+  pricing_select_plan: 'Seleccionar Plan',
+  pricing_show_more: 'Ver más opciones',
+  pricing_show_less: 'Ver menos',
+  pricing_unlimited_badge: 'Para los más apasionados',
+  pricing_unlimited_title: 'Cuota Ilimitada',
+  pricing_unlimited_desc:
+    'Acceso ilimitado a todas las actividades, todos los días, todas las semanas. El plan perfecto para bailarines que no pueden parar.',
+  pricing_unlimited_cta: 'Quiero Ilimitado',
+  pricing_flexible_title: 'Cuotas de Participación Flexibles',
+  pricing_flexible_subtitle:
+    'Ideal si tu horario es variable. Compra un paquete de actividades y úsalas cuando puedas.',
+  pricing_activities: 'actividades',
+  pricing_valid: 'Validez:',
+  pricing_months: 'meses',
+  pricing_activity: 'actividad',
+  pricing_duration: 'Duración',
+  pricing_premium: 'Premium',
+  pricing_regular: 'Regular',
+  pricing_dropin_title: 'Participación Puntual (Sin Inscripción)',
+  pricing_session: 'sesión',
+  pricing_sessions: 'sesiones',
+  pricing_personal_title: 'Entrenamientos Personalizados',
+  pricing_personal_subtitle:
+    'Formación a medida con nuestros profesores. Ideal para preparar audiciones, eventos o acelerar tu aprendizaje.',
+  pricing_save: 'Ahorra',
+  pricing_personal_more: 'Más información sobre entrenamientos privados',
+  pricing_personal_reference_note:
+    'Los precios mostrados son de referencia y pueden variar según el profesor y tipo de entrenamiento.',
+  pricing_lead_title: '¿Quieres una guía completa de precios y horarios?',
+  pricing_lead_subtitle:
+    'Déjanos tu email y te enviamos toda la información detallada: horarios de cada estilo, niveles disponibles y consejos para elegir tu cuota ideal.',
+  pricing_lead_discount: '...y recibe un descuento exclusivo para nuevos socios',
+  pricing_lead_cta: 'Solicitar Guía',
+  pricing_lead_privacy: 'Respetamos tu privacidad. Nunca compartimos tu email.',
+  pricing_benefits_title: '¿Por qué ser socio de FIDC?',
+  pricing_benefit1_title: 'Método Farray®',
+  pricing_benefit1_desc:
+    'Sistema exclusivo de enseñanza creado por Yunaisy Farray. Resultados rápidos, sólidos y contrastados.',
+  pricing_benefit2_title: 'Comunidad Real',
+  pricing_benefit2_desc:
+    'No eres un número. Conocerás a personas increíbles que comparten tu pasión por el baile.',
+  pricing_benefit3_title: '+25 Estilos de Baile',
+  pricing_benefit3_desc:
+    'Desde salsa cubana hasta hip hop, pasando por contemporáneo, ballet, heels y mucho más.',
+  pricing_benefit4_title: 'Ambiente Familiar',
+  pricing_benefit4_desc:
+    'Profesores que conocen tu nombre, tu nivel y tus objetivos. Aquí nadie se queda atrás.',
+  pricing_benefit5_title: 'Sin Compromiso',
+  pricing_benefit5_desc:
+    'Sin permanencia obligatoria. Si no estás satisfecho, puedes cancelar en cualquier momento.',
+  pricing_benefit6_title: 'Reconocimiento Internacional',
+  pricing_benefit6_desc:
+    'Centro acreditado por CID-UNESCO. Formación de élite con sello de calidad.',
+  pricing_no_classpass:
+    'No trabajamos con ClassPass ni intermediarios. Aquí recibes atención directa y personalizada de nuestro equipo.',
+  pricing_testimonials_title: 'Testimonios No Solicitados de Nuestros Socios',
+  pricing_testimonial1_text:
+    '5 estrellas y porque no hay más. Espectacular, desde el minuto en el que pisas recepción, hasta los profesores, la calidad y el buen rollo.',
+  pricing_testimonial2_text:
+    'Llevo 3 años siendo socia y es la mejor inversión en mi bienestar. Los profesores son increíbles y el ambiente es único.',
+  pricing_testimonial3_text:
+    'Las cuotas son muy razonables para la calidad que ofrecen. Poder elegir entre tantos estilos con la misma cuota es fantástico.',
+  pricing_testimonial4_text:
+    'El sistema de cuotas es muy flexible. Puedo adaptar mis horas según mi disponibilidad cada mes sin problemas.',
+  pricing_testimonial_text:
+    'Llevo 3 años siendo socia y es la mejor inversión en mi bienestar. Los profesores son increíbles y el ambiente es único.',
+  pricing_testimonial_author: '— María L., socia desde 2022',
+  pricing_google_rating: '4.9/5 en Google Reviews (más de 200 opiniones)',
+  pricing_faq_title: 'Preguntas Frecuentes sobre nuestros horarios y precios',
+  pricing_faq1_q: '¿Cuánto cuesta la cuota de inscripción y qué incluye?',
+  pricing_faq1_a:
+    "La cuota de inscripción es de 60€ el primer año y 20€/año de renovación para todos los socios. Esta cuota te garantiza el acceso al sistema, tu plaza fija en el horario, y todas las ventajas exclusivas de socio de Farray's: seguro de accidentes, entrada prioritaria a eventos y actividades internas, programa de referidos (2 participaciones puntuales por amigo), descuentos en merchandising y fiestas, y todos los beneficios de formar parte de nuestra comunidad de +10.000 bailarines. A veces tenemos promociones donde la bonificamos.",
+  pricing_faq2_q: '¿Puedo probar una clase antes de inscribirme?',
+  pricing_faq2_a:
+    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
+  pricing_faq3_q: '¿Hay compromiso de permanencia?',
+  pricing_faq3_a:
+    'No, no hay permanencia obligatoria. Puedes cancelar tu cuota mensual cuando quieras, solicitándolo a través del formulario de contacto de la web con un mínimo de 15 días de antelación del siguiente cobro.',
+  pricing_faq4_q: '¿Puedo cambiar de plan o de estilo cada mes?',
+  pricing_faq4_a:
+    'Sí, puedes cambiar tu cuota mensual y elegir entre +25 estilos de baile diferentes cada mes. Solo avísanos 15 días antes del siguiente cobro.',
+  pricing_faq5_q: '¿Qué incluyen las clases Premium con Yunaisy Farray?',
+  pricing_faq5_a:
+    'Las clases Premium son impartidas por Yunaisy Farray, nuestra fundadora y maestra internacional reconocida por CID-UNESCO. Tienen un suplemento de +5€/mes sobre la cuota regular. La experiencia y metodología es única.',
+  pricing_faq6_q: '¿Puedo recuperar clases si falto?',
+  pricing_faq6_a:
+    'Las cuotas mensuales se basan en actividades por mes. Si faltas, puedes compensar haciendo más actividades otros días dentro del mismo mes. Con las cuotas flexibles, tienes hasta 6 o 12 meses para usar tus créditos.',
+  pricing_faq7_q: '¿Cómo funcionan las cuotas de participación flexibles?',
+  pricing_faq7_a:
+    'Compras un paquete de 10 o 20 actividades que puedes usar cuando quieras: 10 actividades tienen 6 meses de validez, y 20 actividades tienen 12 meses. Ideal si tu horario es variable o viajas frecuentemente.',
+  pricing_faq8_q: '¿Puedo venir a una clase suelta sin ser socio?',
+  pricing_faq8_a:
+    'Sí, ofrecemos participación puntual: 17€ (1h regular), 20€ (1.5h regular), 18€ (1h Premium) o 22€ (1.5h Premium). Es perfecto para visitantes o si quieres probar antes de comprometerte con una cuota.',
+  pricing_faq9_q: '¿Existe algún plan ilimitado?',
+  pricing_faq9_a:
+    'Sí, la Cuota Ilimitada cuesta 300€/mes y te permite asistir a todas las clases que quieras, todos los estilos, todos los días. Equivale a aproximadamente 5€ por actividad si aprovechas al máximo.',
+  pricing_faq10_q: '¿Cómo funciona el programa de referidos?',
+  pricing_faq10_a:
+    'Por cada amigo que se inscriba gracias a ti, recibes 2 participaciones puntuales (valoradas en 34€). Tu amigo también recibe beneficios de bienvenida. Pregunta en recepción los detalles.',
+  pricing_faq11_q: '¿Tenéis algún descuento especial?',
+  pricing_faq11_a:
+    'Sí, ofrecemos descuentos si te apuntas a más de un curso. Consulta nuestra web o pregúntanos directamente para más detalles.',
+  pricing_faq12_q: '¿Qué métodos de pago aceptan?',
+  pricing_faq12_a:
+    'Aceptamos tarjeta de crédito/débito (pago recurrente automático para cuotas mensuales), transferencia bancaria y efectivo. Todo se gestiona a través de nuestra app Momence.',
+  pricing_faq13_q: '¿Cuánto cuestan las clases de baile en Barcelona?',
+  pricing_faq13_a:
+    "En Barcelona, los precios varían según el centro y la modalidad. En general, oscilan entre 50€ y 150€/mes para cuotas regulares, o entre 10€ y 25€ por clase suelta. En Farray's Center ofrecemos opciones desde 50€/mes con acceso a +25 estilos, sin permanencia.",
+  pricing_faq14_q: '¿Puedo ir solo/a a las clases?',
+  pricing_faq14_a:
+    'Sí, la mayoría de nuestros socios vienen solos. No necesitas pareja para ningún estilo. En las clases de bailes en pareja rotamos continuamente, así que siempre tendrás con quién practicar. Es una forma estupenda de conocer gente.',
+  pricing_faq15_q: '¿Tengo que apuntarme a todo el mes?',
+  pricing_faq15_a:
+    'No necesariamente. Ofrecemos cuotas mensuales (la opción más económica), pero también bonos flexibles de 10 o 20 participaciones que puedes usar cuando quieras, y participaciones puntuales para días sueltos. Elige lo que mejor se adapte a tu agenda.',
+  pricing_faq16_q: '¿Qué estilos de baile ofrecéis?',
+  pricing_faq16_a:
+    'Ofrecemos +25 estilos: Salsa Cubana, Bachata, Afrobeat, Dancehall, Hip Hop, Reggaeton, Ballet, Danza Contemporánea, Modern Jazz, Kizomba, Twerk, Stretching, y muchos más. Desde ritmos latinos hasta danzas urbanas y danza clásica.',
+  pricing_cta_title: '¿Listo para empezar a bailar?',
+  pricing_cta_subtitle:
+    'Reserva tu primera clase sin compromiso. Ven a conocernos y descubre por qué más de 1500 socios nos eligen cada semana.',
+  pricing_cta_emotional1: 'Imagínate entrando a tu primera clase...',
+  pricing_cta_emotional2:
+    'Sintiendo el ritmo, conectando con tu cuerpo, olvidando el estrés del día.',
+  pricing_cta_emotional_close: 'Ese momento puede ser esta semana.',
+  pricing_cta_technical1: 'Sin permanencia. Cancela cuando quieras. Empieza cuando quieras.',
+  pricing_cta_technical2: 'Más de 15.000 socios han confiado en nosotros desde 2017.',
+  pricing_cta_primary: 'Hazte Socio Ahora',
+  pricing_cta_primary_subtext:
+    'Hacerte socio es fácil. Elige tu cuota, paga online y empieza cuando quieras.',
+  pricing_cta_secondary: 'Reservar Clase de Bienvenida',
+  pricing_cta_secondary_subtext: 'Puertas Abiertas · Del 7 al 31 de enero',
+  pricing_cta_secondary_subtitle: 'Prueba el centro · Conoce horarios y niveles',
+  pricingV2_page_title: 'Precios Clases de Baile Barcelona | Desde 50 euros/mes',
+  pricingV2_page_description:
+    'Descubre los precios de clases de baile en Barcelona. Cuotas mensuales desde 50 euros, bonos flexibles y opciones puntuales. Sin permanencia. Primera clase gratis.',
+  pricingV2_hero_title: 'Precios de Clases de Baile en Barcelona',
+  pricingV2_hero_subtitle:
+    'Descubre las opciones de participación en actividades de baile en uno de los centros de referencia en Barcelona.',
+  pricingV2_hero_subtitle2:
+    'Clases de salsa, bachata, afrobeat y más, adaptadas a todos los niveles.',
+  pricingV2_hero_cta: 'Descubre Cómo Empezar',
+  pricingV2_hero_cta_subtext:
+    'Puertas Abiertas · Del 7 al 31 de enero · Prueba el centro · Conoce horarios y niveles',
+  pricingV2_reassurance1: 'Puedes empezar desde cero',
+  pricingV2_reassurance2: 'No necesitas venir en pareja',
+  pricingV2_reassurance3: 'Puedes cambiar de modalidad',
+  pricingV2_reassurance4: 'Te ayudamos a elegir bien',
+  pricingV2_priceContext_title: '¿Cuánto cuestan las clases de baile en Barcelona?',
+  pricingV2_priceContext_text1:
+    'En Barcelona, las clases de baile suelen oscilar entre 10€ y 25€ por sesión, o entre 50€ y 150€ al mes en formato de cuota, dependiendo de la frecuencia, el tipo de centro y el nivel de especialización.',
+  pricingV2_priceContext_text2:
+    "En Farray's Center apostamos por un modelo flexible, accesible y orientado a la práctica real del baile. No vendemos clases sueltas sin contexto: ofrecemos un sistema de participación que se adapta a tu ritmo de vida, con profesores certificados y una comunidad activa de más de 10.000 bailarines.",
+  pricingV2_priceContext_highlight:
+    'Centro de referencia en Barcelona desde 2017 · Reconocido por CID-UNESCO · +25 estilos de baile',
+  pricingV2_howItWorks_title: "Cómo funcionan las cuotas en Farray's Center",
+  pricingV2_howItWorks_text:
+    "En Farray's Center no pagas clases sueltas sin contexto. Eliges una forma de participación según tu disponibilidad y tus objetivos.",
+  pricingV2_howItWorks_point1: 'Puedes empezar desde cero',
+  pricingV2_howItWorks_point2: 'No necesitas venir en pareja',
+  pricingV2_howItWorks_point3: 'Puedes cambiar de modalidad',
+  pricingV2_howItWorks_point4: 'Te ayudamos a elegir bien',
+  pricingV2_participate_title: 'Elige cómo te gustaría empezar',
+  pricingV2_participate_subtitle:
+    'Tres formas de ser socio de nuestro centro adaptadas a tu estilo de vida',
+  pricingV2_card_regular_title: 'Participación Regular',
+  pricingV2_card_regular_desc:
+    'Ideal si quieres bailar cada semana, progresar y formar parte de una comunidad activa.',
+  pricingV2_card_regular_include1: 'Acceso a actividades semanales',
+  pricingV2_card_regular_include2: 'Plaza fija en tu horario',
+  pricingV2_card_regular_include3: 'Acceso a +25 estilos',
+  pricingV2_card_regular_include4: 'Beneficios exclusivos de socio',
+  pricingV2_card_regular_cta: 'Ver cuotas y horarios',
+  pricingV2_card_flexible_title: 'Participación Flexible',
+  pricingV2_card_flexible_desc:
+    'Para horarios variables o si no puedes comprometerte todas las semanas.',
+  pricingV2_card_flexible_include1: 'Paquetes de actividades',
+  pricingV2_card_flexible_include2: 'Validez amplia (6-12 meses)',
+  pricingV2_card_flexible_include3: 'Sin rutina fija',
+  pricingV2_card_flexible_cta: 'Ver opciones flexibles',
+  pricingV2_card_puntual_title: 'Participación Puntual',
+  pricingV2_card_puntual_desc: 'Opciones limitadas para venir de forma puntual o en eventos.',
+  pricingV2_card_puntual_include1: 'Actividades puntuales',
+  pricingV2_card_puntual_include2: 'Jornadas de puertas abiertas',
+  pricingV2_card_puntual_cta: 'Consultar disponibilidad',
+  pricingV2_price_indicative: 'Precio orientativo',
+  pricingV2_price_from: 'Desde',
+  pricingV2_enrollment_title: 'Cuota de Inscripción',
+  pricingV2_enrollment_desc:
+    'Para formar parte de nuestro centro es necesaria una cuota anual de inscripción.',
+  pricingV2_whyNotAll_title: 'Por qué no ves una tabla infinita de precios',
+  pricingV2_whyNotAll_text1: 'Porque queremos que elijas bien.',
+  pricingV2_whyNotAll_depends: 'Las cuotas y horarios dependen de:',
+  pricingV2_whyNotAll_dep1: 'Tu disponibilidad',
+  pricingV2_whyNotAll_dep2: 'Tu nivel actual',
+  pricingV2_whyNotAll_dep3: 'El tipo de actividad',
+  pricingV2_whyNotAll_dep4: 'La modalidad que elijas',
+  pricingV2_whyNotAll_text2:
+    'Por eso, toda la información se envía de forma automática y clara por email.',
+  pricingV2_whyNotAll_cta: 'Recibir guía completa de precios',
+  pricingV2_benefits_title: 'Por qué nuestros socios se quedan',
+  pricingV2_finalCta_title: "Descubre si Farray's Center es para ti",
+  pricingV2_finalCta_text:
+    'Déjanos tu email y te enviamos toda la información para empezar sin compromiso.',
+  pricingV2_finalCta_button: 'Recibir precios y horarios',
+  pricingV2_finalCta_privacy: 'Información enviada automáticamente. Sin spam.',
+  pricingV2_footer_legal:
+    'La información mostrada es orientativa. La inscripción como socio y la participación en actividades deportivas se realiza exclusivamente con Club Esportiu Farray Barcelona, de acuerdo con su normativa interna.',
+  schedule_title: 'Horarios de Clases',
+  schedule_subtitle: 'Más de 70 clases semanales de lunes a viernes. Encuentra tu horario ideal.',
+  schedule_category_all: 'Todos',
+  schedule_category_latino: 'Latino',
+  schedule_category_urbano: 'Urbano',
+  schedule_category_danza: 'Danza',
+  schedule_category_fitness: 'Fitness',
+  schedule_level_beginner: 'Principiante',
+  schedule_level_basic: 'Básico',
+  schedule_level_intermediate: 'Intermedio',
+  schedule_level_advanced: 'Avanzado',
+  schedule_level_intermediateAdvanced: 'Inter/Avanzado',
+  schedule_level_all: 'Todos los niveles',
+  schedule_classes_found: 'clases',
+  schedule_no_classes: 'No hay clases este día',
+  schedule_try_other_day: 'Prueba seleccionando otro día o categoría',
+  schedule_cta_text: 'Reservar Clase de Bienvenida',
+  schedule_cta_button: 'Reservar Clase de Bienvenida',
+  schedule_cta_subtitle: 'Puertas Abiertas · Del 7 al 31 de enero',
+  schedule_cta_subtitle2: 'Prueba el centro · Conoce horarios y niveles',
+  leadModal_title: "Descubre cómo empezar en Farray's Center",
+  leadModal_subtitle:
+    'Te enviamos toda la información para empezar a bailar con nosotros de forma clara y sin compromiso.',
+  leadModal_success_title: 'Enviado correctamente',
+  close: 'Tancar',
+  leadModal_intro:
+    'Completa el formulario y recibe en tu email toda la información que necesitas para decidir con calma y elegir la opción que mejor encaje contigo.',
+  leadModal_benefits_title: 'Qué recibirás:',
+  leadModal_benefit1: 'Opciones de participación y precios',
+  leadModal_benefit2: 'Horarios disponibles y niveles recomendados',
+  leadModal_benefit3: 'Cómo funciona el club y qué incluye ser socio',
+  leadModal_benefit4: 'Puertas Abiertas de Enero y promoción de bienvenida',
+  leadModal_field_firstName: 'Nombre',
+  leadModal_field_lastName: 'Apellido',
+  leadModal_field_email: 'Email',
+  leadModal_field_phone: 'Teléfono',
+  leadModal_field_discovery: 'Cómo nos conociste',
+  leadModal_field_style: 'Estilo de baile preferido',
+  leadModal_placeholder_firstName: 'Tu nombre',
+  leadModal_placeholder_lastName: 'Tu apellido',
+  leadModal_placeholder_email: 'tu@email.com',
+  leadModal_placeholder_phone: '+34 600 000 000',
+  leadModal_discovery_placeholder: 'Selecciona una opción',
+  leadModal_discovery_google: 'Google',
+  leadModal_discovery_instagram: 'Instagram',
+  leadModal_discovery_passingby: 'Pasé por delante del centro',
+  leadModal_discovery_friend: 'Un amigo me lo recomendó',
+  leadModal_discovery_event: 'Vi un evento o actuación',
+  leadModal_discovery_other: 'Otro',
+  leadModal_style_placeholder: 'Selecciona un estilo',
+  leadModal_style_latinos: 'Ritmos Latinos (Salsa, Bachata, Lady Style...)',
+  leadModal_style_urbanos: 'Bailes Urbanos (Hip Hop, Reggaeton, Heels...)',
+  leadModal_style_danza: 'Danza (Contemporáneo, Jazz, Ballet...)',
+  leadModal_style_fitness: 'Preparación Física (Stretching, Cuerpo Fit...)',
+  leadModal_style_other: 'Otros',
+  leadModal_submit: 'Descubre Cómo Empezar',
+  leadModal_sending: 'Enviando...',
+  leadModal_error_firstName: 'Por favor, introduce tu nombre',
+  leadModal_error_lastName: 'Por favor, introduce tu apellido',
+  leadModal_error_email: 'Por favor, introduce un email válido',
+  leadModal_error_phone: 'Por favor, introduce tu teléfono',
+  leadModal_error_discovery: 'Por favor, indica cómo nos conociste',
+  leadModal_error_style: 'Por favor, selecciona un estilo de baile',
+  leadModal_error_consent: 'Debes aceptar la política de privacidad para continuar',
+  leadModal_error_generic: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+  leadModal_error_retry: 'Puedes volver a intentarlo',
+  leadModal_consent_text:
+    "Acepto recibir información sobre precios, horarios y promociones de Farray's Center. Puedo darme de baja en cualquier momento.",
+  leadModal_consent_link: 'Política de privacidad',
+  leadModal_legal_text:
+    "La información solicitada se envía automáticamente desde Farray's Center como parte de su servicio de información y orientación. La inscripción como socio y la participación en las actividades deportivas se formaliza exclusivamente con Club Esportiu Farray Barcelona (entidad deportiva), de acuerdo con su normativa interna y condiciones de socio. Este formulario no implica inscripción, reserva de plaza ni contratación.",
+  leadModal_legal_link: 'Ver aviso legal y política de privacidad',
+  leadModal_success_heading: 'Todo listo',
+  leadModal_success_message: 'Te hemos enviado la guía a tu email.',
+  leadModal_success_spam_note:
+    'Si no lo ves en unos minutos, revisa las carpetas de Promociones o Spam.',
+  leadModal_success_promo_included: 'Promoción de bienvenida incluida',
+  leadModal_success_deliverability:
+    'Para asegurarte de recibir toda la información, te recomendamos añadir nuestro correo a tu lista de contactos.',
+  leadModal_success_close: 'Entendido',
+  members: 'membres',
+  years_in_barcelona: 'años en Barcelona',
+  horariosV2_page_title: 'Horarios Clases de Baile Barcelona | Farray Center',
+  horariosV2_page_description:
+    'Encuentra el horario perfecto para tus clases de baile en Barcelona. Mañanas, tardes y noches. +25 estilos de danza, salsa, bachata, urbano y más. Grupos por nivel.',
+  horariosV2_breadcrumb: 'Horarios',
+  horariosV2_skipToContent: 'Saltar al contenido principal',
+  horariosV2_skipToFilters: 'Ir a filtros de horario',
+  horariosV2_hero_title: 'Horarios de Clases de Baile en Barcelona',
+  horariosV2_hero_subtitle:
+    'Encuentra el horario y el estilo que encajan contigo y descubre cómo empezar en Farray Center de forma clara y sin compromiso.',
+  horariosV2_hero_cta: 'Recibir Horarios Completos',
+  horariosV2_hero_ctaSubtext: 'Gratis y sin compromiso',
+  horariosV2_hero_years: 'años en Barcelona',
+  horariosV2_preview_title: 'Esto es solo una muestra',
+  horariosV2_preview_subtitle: 'Tenemos muchos más horarios y estilos que mostrarte',
+  horariosV2_preview_point1: '+100 clases semanales de baile',
+  horariosV2_preview_point2: 'Horarios de mañana, tarde y noche',
+  horariosV2_preview_point3: 'Todos los niveles y edades',
+  horariosV2_preview_point4: 'Información de profesores y salas',
+  horariosV2_preview_cta: 'Recibir Horarios Completos por Email',
+  horariosV2_preview_free: 'Gratis y sin compromiso',
+  horariosV2_moreSchedules_title: 'Hay muchos más horarios disponibles',
+  horariosV2_moreSchedules_desc:
+    'Los horarios que ves aquí son solo una selección. Para ver todos los horarios disponibles, incluyendo clases de noche y fines de semana, solicita la información completa.',
+  horariosV2_moreSchedules_cta: 'Ver Todos los Horarios',
+  horariosV2_sample_preview_label: 'Muestra de horarios - Para ver todos, solicita info',
+  horariosV2_trust_noCommitment: 'Sin permanencia',
+  horariosV2_trust_byLevel: 'Grupos por nivel',
+  horariosV2_trust_freeClass: 'Primera clase gratuita',
+  horariosV2_authority_since2017: 'Desde 2017',
+  horariosV2_authority_cidUnesco: 'CID-UNESCO',
+  horariosV2_authority_members: '+15.000 socios',
+  horariosV2_authority_styles: '+25 estilos',
+  horariosV2_authority_rating: '4.9/5 Google',
+  horariosV2_authority_teachers: 'Profesores certificados',
+  horariosV2_orientation_title: 'Antes de elegir un horario, ten en cuenta esto',
+  horariosV2_orientation_subtitle:
+    'No te preocupes si es tu primera vez. Estamos aquí para ayudarte.',
+  horariosV2_orientation_noExperience: 'No necesitas experiencia previa en muchas actividades',
+  horariosV2_orientation_byLevel: 'Los grupos se organizan por nivel',
+  horariosV2_orientation_startAnytime: 'Puedes empezar en cualquier momento del año',
+  horariosV2_orientation_weHelp: 'Te ayudamos a elegir el grupo adecuado',
+  horariosV2_filter_title: 'Encuentra lo que encaja contigo',
+  horariosV2_filter_subtitle: 'Selecciona el momento del día o el estilo que prefieres',
+  horariosV2_filter_step1: 'Por horario',
+  horariosV2_filter_step2: 'Por estilo',
+  horariosV2_filter_or: 'o',
+  horariosV2_filter_morning: 'Mañanas',
+  horariosV2_filter_afternoon: 'Tardes',
+  horariosV2_filter_evening: 'Noches',
+  horariosV2_filter_danza: 'Danza',
+  horariosV2_filter_latino: 'Salsa & Bachata',
+  horariosV2_filter_urbano: 'Urbano',
+  horariosV2_filter_fitness: 'Prep. Física',
+  horariosV2_matrix_title: 'Vista rápida de disponibilidad',
+  horariosV2_matrix_available: 'Disponible',
+  horariosV2_matrix_unavailable: 'Sin clases',
+  horariosV2_day_monday: 'Lunes',
+  horariosV2_day_tuesday: 'Martes',
+  horariosV2_day_wednesday: 'Miércoles',
+  horariosV2_day_thursday: 'Jueves',
+  horariosV2_day_friday: 'Viernes',
+  horariosV2_day_saturday: 'Sábado',
+  horariosV2_day_sunday: 'Domingo',
+  horariosV2_block_morning_title: 'Clases de baile por la mañana en Barcelona',
+  horariosV2_block_morning_subtitle: 'Afro · Jazz · Contemporáneo · Preparación física',
+  horariosV2_block_evening_title: 'Clases de baile por la tarde y noche en Barcelona',
+  horariosV2_block_evening_subtitle: 'Afro · Jazz · Ballet · Contemporáneo',
+  horariosV2_block_salsa_title: 'Horarios de salsa y bachata en Barcelona',
+  horariosV2_block_salsa_subtitle: 'Social · Progresivo · Todos los niveles',
+  horariosV2_block_urbano_title: 'Clases de baile urbano en Barcelona',
+  horariosV2_block_urbano_subtitle: 'Afrobeats · Dancehall · Hip Hop · Reggaeton · Heels · Twerk',
+  horariosV2_block_showMore: 'Ver más clases',
+  horariosV2_block_disclaimer:
+    'Horarios orientativos. Asignación definitiva según nivel y disponibilidad.',
+  horariosV2_cta_morning: 'Ver plazas disponibles para mañanas',
+  horariosV2_cta_evening: 'Ver grupos por nivel',
+  horariosV2_cta_salsa: 'Encontrar mi grupo de salsa ideal',
+  horariosV2_cta_urbano: 'Descubrir actividades urbanas',
+  horariosV2_testimonial_morning:
+    'Las clases de mañana me cambiaron la rutina. Ahora empiezo el día con energía.',
+  horariosV2_testimonial_morning_author: 'María, 34 años',
+  horariosV2_testimonial_evening: 'Después del trabajo, bailar es mi mejor forma de desconectar.',
+  horariosV2_testimonial_evening_author: 'Carlos, 28 años',
+  horariosV2_testimonial_salsa: 'Empecé sin saber nada y ahora no me pierdo una clase de bachata.',
+  horariosV2_testimonial_salsa_author: 'Laura, 31 años',
+  horariosV2_testimonial_urbano:
+    'El ambiente es increíble. Te sientes parte de una familia desde el primer día.',
+  horariosV2_testimonial_urbano_author: 'Pablo, 25 años',
+  horariosV2_badge_popular: 'Más demandado',
+  horariosV2_badge_limited: 'Plazas limitadas',
+  horariosV2_badge_new: 'Nuevo',
+  horariosV2_badge_smallGroup: 'Grupos reducidos',
+  horariosV2_card_teacher: 'Profesor/a',
+  horariosV2_card_reminder: 'Recordar',
+  horariosV2_card_share: 'Compartir',
+  horariosV2_levels_title: '¿Qué significan los niveles?',
+  horariosV2_levels_subtitle:
+    'Te ayudamos a encontrar el grupo perfecto para tu experiencia actual.',
+  horariosV2_level_principiantes: 'Principiantes',
+  horariosV2_level_principiantes_desc:
+    'Empiezas desde cero. No tienes experiencia previa en este estilo. Te guiaremos paso a paso.',
+  horariosV2_level_basico: 'Básico',
+  horariosV2_level_basico_desc:
+    'Conoces los fundamentos. Has practicado algo antes pero aún estás aprendiendo las bases.',
+  horariosV2_level_intermedio: 'Intermedio',
+  horariosV2_level_intermedio_desc:
+    'Dominas la técnica básica. Puedes seguir coreografías y quieres perfeccionar tu estilo.',
+  horariosV2_level_avanzado: 'Avanzado',
+  horariosV2_level_avanzado_desc:
+    'Alto dominio técnico. Buscas retos, coreografías complejas y preparación para escenario.',
+  horariosV2_level_open: 'Open Level',
+  horariosV2_level_open_desc:
+    'Todos los niveles mezclados. Cada uno trabaja a su ritmo con adaptaciones del profesor.',
+  horariosV2_level_intermedioAvanzado: 'Intermedio-Avanzado',
+  horariosV2_levels_helpText:
+    '¿No sabes cuál es tu nivel? No te preocupes, te orientamos personalmente antes de empezar.',
+  horariosV2_season_current: 'Actual',
+  horariosV2_season_winter: 'Horario de invierno',
+  horariosV2_season_winter_desc: 'Estos son los horarios actuales (septiembre - junio).',
+  horariosV2_season_summer: 'Horario de verano',
+  horariosV2_season_summer_desc:
+    'Los horarios pueden variar en julio y agosto. Consulta disponibilidad.',
+  horariosV2_howToStart_title: 'Cómo empezar en Farray Center',
+  horariosV2_howToStart_subtitle: 'Cuatro pasos sencillos para comenzar tu aventura en el baile',
+  horariosV2_howToStart_step1: 'Recibe la información completa',
+  horariosV2_howToStart_step2: 'Valora horarios y niveles',
+  horariosV2_howToStart_step3: 'Ven a conocernos (opcional)',
+  horariosV2_howToStart_step4: 'Empieza cuando te sientas listo/a',
+  horariosV2_howToStart_cta: 'Descubre Cómo Empezar',
+  horariosV2_howToStart_microcopy: 'Sin compromiso · Información clara · A tu ritmo',
+  horariosV2_faq_title: 'Preguntas frecuentes sobre los horarios de nuestras clases de baile',
+  horariosV2_faq_subtitle: 'Las respuestas a las dudas más comunes sobre nuestras clases',
+  horariosV2_faq1_q: '¿Puedo empezar clases de baile aunque no tenga experiencia?',
+  horariosV2_faq1_a:
+    'Sí. Muchas de nuestras clases están pensadas para personas que empiezan desde cero. Además, te ayudamos a elegir el grupo adecuado según tu experiencia y objetivos.',
+  horariosV2_faq2_q: '¿Tengo que elegir un horario fijo desde el primer día?',
+  horariosV2_faq2_a:
+    'Como club deportivo, trabajamos con horarios organizados por nivel. Una vez te orientamos, podrás elegir el horario que mejor encaje contigo dentro de las opciones disponibles.',
+  horariosV2_faq3_q: '¿Puedo cambiar de horario o de estilo más adelante?',
+  horariosV2_faq3_a:
+    'Sí. Nuestros socios pueden adaptar su participación según disponibilidad y evolución, siempre que haya plazas disponibles en el grupo.',
+  horariosV2_faq4_q: '¿Hay clases por la mañana y por la tarde?',
+  horariosV2_faq4_a:
+    'Sí. Ofrecemos clases de baile tanto por la mañana como por la tarde y noche, según el estilo y la temporada.',
+  horariosV2_faq5_q: '¿Los horarios son siempre los mismos todo el año?',
+  horariosV2_faq5_a:
+    'Los horarios son orientativos y pueden variar según la temporada, el nivel y la disponibilidad de plazas. Siempre te enviamos la información actualizada antes de empezar.',
+  horariosV2_faq6_q: '¿Puedo probar una clase de Afrobeats antes de inscribirme?',
+  horariosV2_faq6_a:
+    'Mira, lo importante es que pruebes. Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
+  horariosV2_faq7_q: '¿Dónde está Farray Center y a quién van dirigidas las actividades de baile?',
+  horariosV2_faq7_a:
+    'Estamos en Calle Entença nº 100 en Barcelona y nuestras clases están dirigidas a adultos de todos los niveles que quieren aprender, mejorar o disfrutar del baile en un entorno profesional y cercano.',
+  horariosV2_emotional_close:
+    'No se trata solo de encajar una clase en tu agenda. Se trata de encontrar un lugar donde disfrutar, progresar y sentirte parte de una comunidad.',
+  horariosV2_whatsapp_cta: '¿Tienes más dudas? Escríbenos por WhatsApp',
+  horariosV2_footer_legal:
+    'Los horarios y plazas mostrados son orientativos y pueden variar según temporada, nivel y disponibilidad. La asignación definitiva de grupo se realiza de forma personalizada tras solicitar información.',
+  horariosV2_nav_ariaLabel: 'Navegación rápida de secciones de horarios',
+  horariosV2_nav_progressLabel: 'Progreso de lectura',
+  horariosV2_nav_morning: 'Mañanas',
+  horariosV2_nav_evening: 'Tardes',
+  horariosV2_nav_salsa: 'Salsa',
+  horariosV2_nav_urbano: 'Urbano',
+  horariosV2_nav_levels: 'Niveles',
+  horariosV2_nav_faq: 'FAQ',
+  horariosV2_style_afroJazz: 'Afro Jazz',
+  horariosV2_style_contemporaneo: 'Contemporáneo',
+  horariosV2_style_contemporaneoLirico: 'Contemporáneo Lírico & Flow',
+  horariosV2_style_modernJazz: 'Modern Jazz',
+  horariosV2_style_pilates: 'Pilates',
+  horariosV2_style_stretching: 'Stretching',
+  horariosV2_style_barre: 'Barre',
+  horariosV2_style_afroContemporaneo: 'Afro Contemporáneo',
+  horariosV2_style_ballet: 'Ballet Clásico',
+  horariosV2_style_bachata: 'Bachata',
+  horariosV2_style_salsaCubana: 'Salsa Cubana',
+  horariosV2_style_ladyStyle: 'Lady Style',
+  horariosV2_style_timba: 'Timba',
+  horariosV2_style_afrobeats: 'Afrobeats',
+  horariosV2_style_dancehall: 'Dancehall',
+  horariosV2_style_hipHop: 'Hip Hop Urbano',
+  horariosV2_style_reggaeton: 'Reggaeton Comercial',
+  horariosV2_style_heels: 'Heels',
+  horariosV2_style_sexyStyle: 'Sexy Style',
+  horariosV2_style_twerk: 'Twerk',
+  horariosV2_hero_subtitle2: 'Encuentra el horario perfecto para ti',
+  horariosV2_weekly_classes: 'clases semanales',
+  horariosV2_trust_noExperience: 'No necesitas experiencia',
+  horariosV2_preview_text1:
+    'Los horarios que ves aquí son solo una muestra. Tenemos más de 100 clases semanales de baile en diferentes estilos y niveles.',
+  horariosV2_preview_includes: 'La información completa incluye:',
+  horariosV2_howItWorks_title: 'Cómo funcionan nuestros horarios',
+  horariosV2_howItWorks_text:
+    'Organizamos las clases por bloques horarios y niveles para que encuentres fácilmente el que mejor encaja contigo.',
+  horariosV2_reassurance1: 'Clases de mañana, tarde y noche',
+  horariosV2_reassurance2: 'Todos los niveles',
+  horariosV2_reassurance3: 'Grupos reducidos',
+  horariosV2_reassurance4: 'Ambiente acogedor',
+  horariosV2_blocks_title: 'Bloques de Horarios',
+  horariosV2_blocks_subtitle:
+    'Cada bloque agrupa clases en franjas horarias similares. Elige el que mejor se adapte a tu día a día.',
+  horariosV2_classes_available: 'clases disponibles',
+  horariosV2_see_schedule: 'Ver horarios completos',
+  horariosV2_blocks_cta: 'Recibir Todos los Horarios',
+  horariosV2_block_morning_ex1: 'Afro Jazz 10:30h',
+  horariosV2_block_morning_ex2: 'Contemporáneo 11:45h',
+  horariosV2_block_morning_ex3: 'Pilates y Stretching',
+  horariosV2_block_urbano_ex1: 'Afrobeats y Dancehall',
+  horariosV2_block_urbano_ex2: 'Hip Hop y Reggaeton',
+  horariosV2_block_urbano_ex3: 'Heels y Twerk',
+  horariosV2_level_beginner: 'Principiante',
+  horariosV2_level_beginner_desc: 'Empiezas desde cero',
+  horariosV2_level_basic: 'Básico',
+  horariosV2_level_basic_desc: 'Conoces los fundamentos',
+  horariosV2_level_intermediate: 'Intermedio',
+  horariosV2_level_intermediate_desc: 'Dominas la técnica básica',
+  horariosV2_level_advanced: 'Avanzado',
+  horariosV2_level_advanced_desc: 'Alto dominio técnico',
+  horariosV2_whyNotAll_title: '¿Por qué no mostramos todos los horarios?',
+  horariosV2_whyNotAll_text1:
+    'Porque cada persona es diferente. Queremos ayudarte a encontrar el grupo perfecto según tu nivel, tu disponibilidad y tus objetivos.',
+  horariosV2_whyNotAll_text2:
+    'Por eso preferimos enviarte la información completa y personalizada por email.',
+  horariosV2_testimonials_title: 'Lo que dicen nuestros alumnos',
+  horariosV2_testimonial1:
+    'Las clases de mañana me cambiaron la rutina. Ahora empiezo el día con energía y buen humor.',
+  horariosV2_testimonial2:
+    'Después del trabajo, bailar es mi mejor forma de desconectar. El ambiente es increíble.',
+  horariosV2_testimonial3:
+    'Empecé sin saber nada y ahora no me pierdo una clase. Los profes son lo mejor.',
+  horariosV2_cta_title: 'Tu próximo paso',
+  horariosV2_cta_emotional1: 'No se trata solo de encajar una clase en tu agenda.',
+  horariosV2_cta_emotional2:
+    'Se trata de encontrar un lugar donde disfrutar, progresar y sentirte parte de una comunidad.',
+  horariosV2_cta_primary: 'Recibir Horarios Completos',
+  horariosV2_cta_subtext: 'Gratis y sin compromiso - Te contactamos de manera inmediata',
+  blogBeneficiosSalsa_excerpt:
+    'Bailar salsa no es solo divertido: es una de las actividades más completas para tu salud física, mental y social.',
+  blogBeneficiosSalsa_stat1Value: '400',
+  blogBeneficiosSalsa_stat1Source: 'Harvard Medical School, 2023',
+  blogBeneficiosSalsa_stat2Value: '76%',
+  blogBeneficiosSalsa_stat2Source: 'New England Journal of Medicine',
+  blogBeneficiosSalsa_ctaTitle: '¿Listo para experimentar estos beneficios?',
+  blogBeneficiosSalsa_ctaText:
+    "En Farray's International Dance Center tenemos clases de salsa cubana para todos los niveles. Profesores cubanos con más de 20 años de experiencia te guiarán desde tus primeros pasos hasta movimientos avanzados.",
+  blogBeneficiosSalsa_ctaButton: 'Probar Clase Gratis',
+
+  // =============================================
+  // TEACHERS PAGE - Professors de Ball Barcelona
+  // =============================================
+  teachersPageTitle: "Professors de Ball a Barcelona | Farray's International Dance Center",
+  teachersPageMetaDescription:
+    "Coneix els nostres professors de ball a Barcelona. Un equip internacional de ballarins professionals especialitzats en estils urbans, llatins i clàssics. Més de 20 anys d'experiència.",
+  teachersPageBreadcrumbHome: 'Inici',
+  teachersPageBreadcrumbCurrent: 'Professors de Ball',
+  teachersPageH1: 'Professors de Ball a Barcelona',
+  teachersPageSubtitle:
+    'Un equip internacional de ballarins professionals formats a les millors escoles del món. Aprèn dels millors en cada estil.',
+  teachersPageStatYears: "anys d'experiència",
+  teachersPageStatTeachers: 'professors',
+  teachersPageStatStyles: 'estils de ball',
+  teachersPageStatStudents: 'estudiants formats',
+
+  // Director Section
+  teachersPageDirectorTitle: 'Directora i Fundadora',
+  teachersPageDirectorSubtitle:
+    "Coneix Yunaisy Farray, l'ànima de la nostra escola i creadora del revolucionari Mètode Farray®.",
+  teachersPageDirectorSpecialty: 'Directora | Creadora del Mètode Farray® | Membre CID-UNESCO',
+  teachersPageDirectorBio:
+    'Ballarina professional cubana formada a l\'Escola Nacional d\'Art de Cuba (ENA). Amb més de dues dècades d\'experiència internacional, Yunaisy ha participat a la pel·lícula "Street Dance 2", les finals de "Got Talent" i programes com "The Dancer". El seu mètode exclusiu combina la disciplina clàssica amb els ritmes afrocubans, garantint resultats ràpids i sòlids.',
+
+  // Team Section
+  teachersPageTeamTitle: 'El Nostre Equip Docent',
+  teachersPageTeamSubtitle:
+    'Professionals apassionats que comparteixen el seu art i coneixement a cada classe. Cadascú aporta la seva especialitat única.',
+
+  // Individual Teachers
+  teachersPageTeacher1Specialty: 'Ballet Clàssic i Contemporani',
+  teachersPageTeacher1Bio:
+    "Ballarí professional format a l'Escola Nacional d'Art de Cuba. Especialista en tècnica clàssica cubana i dansa contemporània.",
+  teachersPageTeacher2Specialty: 'Ballet, Modern Jazz i Afro Jazz',
+  teachersPageTeacher2Bio:
+    "Ballarí professional cubà amb formació a l'ENA. Expert en fusió d'estils clàssics i afro.",
+  teachersPageTeacher3Specialty: 'Dancehall i Twerk',
+  teachersPageTeacher3Bio:
+    'Especialista en Dancehall i Twerk amb àmplia experiència en pedagogia de la dansa urbana.',
+  teachersPageTeacher4Specialty: 'Dancehall i Dancehall Female',
+  teachersPageTeacher4Bio:
+    'Especialista en Dancehall amb experiència en competicions internacionals i formació a Jamaica.',
+  teachersPageTeacher5Specialty: 'Hip Hop | Jutge Internacional',
+  teachersPageTeacher5Bio:
+    "Jutge internacional de Hip Hop amb àmplia experiència en competicions i ensenyament d'estils urbans.",
+  teachersPageTeacher6Specialty: 'Salsa Cubana i Lady Style',
+  teachersPageTeacher6Bio:
+    'Ballarina professional especialitzada en salsa cubana autèntica i tècniques de Lady Style.',
+  teachersPageTeacher7Specialty: 'Mestra i Artista Internacional Cubana',
+  teachersPageTeacher7Bio:
+    'Amb més de 20 anys de carrera artística en salsa cubana i estils llatins.',
+  teachersPageTeacher8Specialty: 'Salsa Cubana | Mètode Farray',
+  teachersPageTeacher8Bio:
+    'Instructor certificat en el Mètode Farray per a Salsa Cubana. Especialista en tècnica de guia.',
+  teachersPageTeacher9Specialty: 'Afro Contemporani i Hip Hop',
+  teachersPageTeacher9Bio:
+    'Ballarí professional amb experiència en estils afro i urbans. Certificat en Afro Contemporani.',
+  teachersPageTeacher10Specialty: 'Bachata Lady Style | Campiona Mundial Salsa LA',
+  teachersPageTeacher10Bio:
+    'Campiona mundial de Salsa LA i especialista en Bachata Lady Style. Experta en tècnica femenina.',
+  teachersPageTeacher11Specialty: 'Bachata i Bachata Sensual',
+  teachersPageTeacher11Bio:
+    'Especialista en Bachata i Bachata Sensual amb tècnica depurada i gran musicalitat.',
+  teachersPageTeacher12Specialty: 'Bachata i Bachata Moderna',
+  teachersPageTeacher12Bio:
+    'Professor de Bachata amb enfocament en tècnica, musicalitat i connexió en parella.',
+  teachersPageTeacher13Specialty: 'Bachata i Bachata Lady Style',
+  teachersPageTeacher13Bio:
+    'Especialista en Bachata i tècniques femenines. Experta en estil i expressió corporal.',
+  teachersPageTeacher14Specialty: 'Afrobeats i Afro Dance',
+  teachersPageTeacher14Bio:
+    'Especialista en Afrobeats i danses africanes contemporànies. Energia i ritme a cada classe.',
+
+  // CTA Section
+  teachersPageCtaTitle: 'Preparat per Aprendre dels Millors?',
+  teachersPageCtaSubtitle:
+    'Uneix-te a la nostra família i descobreix per què més de 15.000 estudiants han confiat en nosaltres.',
+  teachersPageCtaClasses: 'Veure Classes de Ball',
 };

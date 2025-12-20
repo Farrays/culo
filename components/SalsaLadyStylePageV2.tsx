@@ -256,7 +256,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
         priceRange="$$"
       />
       <CourseSchema
-        name="Clases de Salsa Lady Style Barcelona - Metodo Farray"
+        name="Clases de Salsa Lady Style Barcelona - Método Farray"
         description={t('salsaLadyV2MetaDescription')}
         provider={{ name: "Farray's International Dance Center", url: baseUrl }}
       />
@@ -300,7 +300,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <StarRating size="sm" />
                   <span className="font-semibold">4.9/5</span>
-                  <span className="text-sm">(505+ resenas)</span>
+                  <span className="text-sm">(505+ reseñas)</span>
                 </div>
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
@@ -310,7 +310,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
                   <CalendarDaysIcon className="w-5 h-5 text-primary-accent" />
-                  <span className="text-sm sm:text-base">8 anos en Barcelona</span>
+                  <span className="text-sm sm:text-base">8 años en Barcelona</span>
                 </div>
               </div>
 
@@ -389,7 +389,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
                           Yunaisy Farray
                         </cite>
                         <p className="text-primary-accent text-xs sm:text-sm">
-                          Creadora del Metodo Farray
+                          Creadora del Método Farray
                         </p>
                       </div>
                     </div>

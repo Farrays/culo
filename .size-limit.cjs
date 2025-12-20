@@ -8,25 +8,25 @@ module.exports = [
   {
     name: 'ES Locale Bundle',
     path: 'dist/assets/i18n-es-*.js',
-    limit: '222 KB', // Increased after adding PreciosPageV2 + LeadCaptureModal translations
+    limit: '240 KB', // Increased after adding blog articles (Beneficios Salsa + Historia Salsa)
     gzip: true,
   },
   {
     name: 'EN Locale Bundle',
     path: 'dist/assets/i18n-en-*.js',
-    limit: '205 KB', // Increased after adding Bachata Lady Style translations
+    limit: '230 KB', // Increased after adding blog articles (Beneficios Salsa + Historia Salsa)
     gzip: true,
   },
   {
     name: 'CA Locale Bundle',
     path: 'dist/assets/i18n-ca-*.js',
-    limit: '220 KB', // Increased after adding Bachata Lady Style translations
+    limit: '250 KB', // Increased after adding blog articles (Beneficios Salsa + Historia Salsa)
     gzip: true,
   },
   {
     name: 'FR Locale Bundle',
     path: 'dist/assets/i18n-fr-*.js',
-    limit: '230 KB', // Increased after adding Bachata Lady Style translations
+    limit: '260 KB', // Increased after adding blog articles (Beneficios Salsa + Historia Salsa)
     gzip: true,
   },
   {

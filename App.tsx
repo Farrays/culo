@@ -70,7 +70,17 @@ const StretchingPage = lazy(() => import('./components/StretchingPage'));
 const BumBumPage = lazy(() => import('./components/BumBumPage'));
 const CalendarPage = lazy(() => import('./components/CalendarPage'));
 const PreciosPage = lazy(() => import('./components/PreciosPage'));
-const PreciosPageV2 = lazy(() => import('./components/PreciosPageV2'));
+const HorariosPreciosPage = lazy(() => import('./components/HorariosPreciosPage'));
+const HorariosPageV2 = lazy(() => import('./components/HorariosPageV2'));
+
+// ===== BLOG PAGES =====
+const BlogListPage = lazy(() => import('./components/pages/BlogListPage'));
+const BlogArticlePage = lazy(() => import('./components/pages/BlogArticlePage'));
+
+// ===== INFO PAGES =====
+const ProfesoresBaileBarcelonaPage = lazy(
+  () => import('./components/pages/ProfesoresBaileBarcelonaPage')
+);
 
 // Valid locales - use centralized constant from types.ts
 const VALID_LOCALES = SUPPORTED_LOCALES;
@@ -470,6 +480,16 @@ const AppContent: React.FC = () => {
             />
 
             <Route
+              path="/:locale/profesores-baile-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <ProfesoresBaileBarcelonaPage />
+                </>
+              }
+            />
+
+            <Route
               path="/:locale/contacto"
               element={
                 <>
@@ -579,13 +599,53 @@ const AppContent: React.FC = () => {
               }
             />
 
-            {/* V2 Precios - Lead Capture Version for A/B testing */}
+            {/* Horarios y Precios detallados */}
             <Route
-              path="/:locale/precios-v2"
+              path="/:locale/horarios-precios"
               element={
                 <>
                   <LocaleSync />
-                  <PreciosPageV2 />
+                  <HorariosPreciosPage />
+                </>
+              }
+            />
+
+            {/* Horarios Enterprise Page */}
+            <Route
+              path="/:locale/horarios-clases-baile-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <HorariosPageV2 />
+                </>
+              }
+            />
+
+            {/* ===== BLOG ROUTES ===== */}
+            <Route
+              path="/:locale/blog"
+              element={
+                <>
+                  <LocaleSync />
+                  <BlogListPage />
+                </>
+              }
+            />
+            <Route
+              path="/:locale/blog/:category"
+              element={
+                <>
+                  <LocaleSync />
+                  <BlogListPage />
+                </>
+              }
+            />
+            <Route
+              path="/:locale/blog/:category/:slug"
+              element={
+                <>
+                  <LocaleSync />
+                  <BlogArticlePage />
                 </>
               }
             />

@@ -1,39 +1,35 @@
 import { useState, memo } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
+import LeadCaptureModal from './shared/LeadCaptureModal';
 import {
   CheckIcon,
   ChevronDownIcon,
+  ChevronRightIcon,
   SparklesIcon,
   StarIcon,
   UserIcon,
   ClockIcon,
   HeartIcon,
-  HeartFilledIcon,
   CheckCircleIcon,
   AcademicCapIcon,
+  CalendarDaysIcon,
+  KeyIcon,
 } from '../lib/icons';
-import {
-  ENROLLMENT_FEE,
-  MONTHLY_PLANS_REGULAR,
-  MONTHLY_PLANS_PREMIUM,
-  UNLIMITED_PLAN,
-  FLEXIBLE_PLANS_REGULAR,
-  FLEXIBLE_PLANS_PREMIUM,
-  DROP_IN_PRICES,
-  PERSONAL_TRAINING_PACKS,
-  formatPrice,
-  type MonthlyPlan,
-  type FlexiblePlan,
-} from '../constants/pricing-data';
+import { ENROLLMENT_FEE, formatPrice } from '../constants/pricing-data';
 
 /**
- * PreciosPage - Página de Cuotas/Precios
+ * PreciosPage - Página de Precios con captura de leads
  * URL SEO: /precios-clases-baile-barcelona
- * Terminología interna: Club Deportivo (cuotas, socio, actividades)
+ *
+ * Estrategia:
+ * - No mostrar precios detallados directamente
+ * - Captar email via modal antes de revelar informacion completa
+ * - Precios "desde" orientativos para SEO
+ * - Tres formas de participacion simplificadas
+ * - Mantener beneficios, testimonios y FAQ de la V1
  */
 
 // ============================================================================
@@ -41,158 +37,98 @@ import {
 // ============================================================================
 
 /**
- * Plan Card for Monthly Plans
+ * Participation Card - Tarjeta de modalidad de participacion
  */
-const MonthlyPlanCard = memo(
+const ParticipationCard = memo(
   ({
-    plan,
+    title,
+    description,
+    icon: Icon,
+    includes,
+    priceFrom,
+    priceUnit,
+    ctaText,
+    onCTAClick,
+    isHighlighted = false,
     t,
-    isPremium,
   }: {
-    plan: MonthlyPlan;
+    title: string;
+    description: string;
+    icon: React.FC<{ className?: string }>;
+    includes: string[];
+    priceFrom: string;
+    priceUnit?: string;
+    ctaText: string;
+    onCTAClick: () => void;
+    isHighlighted?: boolean;
     t: (key: string) => string;
-    isPremium: boolean;
-  }) => {
-    const isPopular = plan.isPopular;
-
-    return (
-      <div className="[perspective:1000px] h-full">
-        <div
-          className={`relative h-full flex flex-col bg-black/50 backdrop-blur-md rounded-2xl p-6 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_rotateY(3deg)_rotateX(2deg)] hover:shadow-accent-glow ${
-            isPopular
-              ? 'border-2 border-primary-accent shadow-accent-glow'
-              : 'border border-primary-dark/50 hover:border-primary-accent/50'
-          }`}
-        >
-          {isPopular && (
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary-accent text-white text-xs font-bold px-4 py-1 rounded-full">
-              {t('pricing_popular')}
-            </div>
-          )}
-
-          <div className="text-center mb-4">
-            <p className="text-neutral/70 text-sm mb-1">
-              {plan.activitiesPerMonth} {t('pricing_activities_month')}
-            </p>
-            <p className="text-4xl font-black text-neutral">
-              {formatPrice(plan.price)}
-              <span className="text-lg font-normal text-neutral/70">/mes</span>
-            </p>
-            <p className="text-primary-accent text-sm mt-1">
-              {formatPrice(plan.pricePerActivity)} / {t('pricing_per_activity')}
-            </p>
-          </div>
-
-          <ul className="space-y-2 mb-6 text-sm flex-grow">
-            <li className="flex items-center gap-2 text-neutral/90">
-              <CheckIcon className="w-4 h-4 text-primary-accent flex-shrink-0" />
-              {plan.hoursPerWeek}h {t('pricing_per_week')}
-            </li>
-            <li className="flex items-center gap-2 text-neutral/90">
-              <CheckIcon className="w-4 h-4 text-primary-accent flex-shrink-0" />
-              {t('pricing_all_styles')}
-            </li>
-            {isPremium && (
-              <li className="flex items-center gap-2 text-neutral/90">
-                <StarIcon className="w-4 h-4 text-primary-accent flex-shrink-0" />
-                {t('pricing_with_yunaisy')}
-              </li>
-            )}
-          </ul>
-
-          <a
-            href="https://momence.com/sign-in?hostId=36148"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`block w-full text-center font-bold py-3 px-6 rounded-full transition-all duration-300 mt-auto ${
-              isPopular
-                ? 'bg-primary-accent text-white hover:shadow-accent-glow animate-glow'
-                : 'bg-black/50 border border-primary-accent text-primary-accent hover:bg-primary-accent hover:text-white'
-            }`}
-          >
-            {t('pricing_select_plan')}
-          </a>
-        </div>
-      </div>
-    );
-  }
-);
-
-MonthlyPlanCard.displayName = 'MonthlyPlanCard';
-
-/**
- * Flexible Plan Card
- */
-const FlexiblePlanCard = memo(
-  ({
-    plan,
-    t,
-    isPremium,
-  }: {
-    plan: FlexiblePlan;
-    t: (key: string) => string;
-    isPremium: boolean;
   }) => (
     <div className="[perspective:1000px] h-full">
-      <div className="h-full flex flex-col bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl p-5 hover:border-primary-accent/50 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_rotateY(3deg)_rotateX(2deg)] hover:shadow-accent-glow">
-        <div className="flex justify-between items-start mb-3 flex-grow">
-          <div>
-            <p className="text-xl font-bold text-neutral">
-              {plan.activities} {t('pricing_activities')}
-            </p>
-            <p className="text-sm text-neutral/70">
-              {t('pricing_valid')} {plan.validityMonths} {t('pricing_months')}
-            </p>
+      <div
+        className={`relative h-full flex flex-col bg-black/50 backdrop-blur-md rounded-2xl p-6 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_rotateY(3deg)_rotateX(2deg)] hover:shadow-accent-glow ${
+          isHighlighted
+            ? 'border-2 border-primary-accent shadow-accent-glow'
+            : 'border border-primary-dark/50 hover:border-primary-accent/50'
+        }`}
+      >
+        {isHighlighted && (
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary-accent text-white text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap">
+            {t('pricing_popular')}
           </div>
-          <div className="text-right">
-            <p className="text-2xl font-black text-neutral">{formatPrice(plan.price)}</p>
-            <p className="text-xs text-primary-accent">
-              {formatPrice(plan.pricePerActivity)} / {t('pricing_activity')}
-            </p>
-          </div>
-        </div>
-        <div className="flex items-center gap-2 text-sm text-neutral/70 mt-auto">
-          <ClockIcon className="w-4 h-4 flex-shrink-0" />
-          {t('pricing_duration')}: {plan.duration}
-          {isPremium && (
-            <>
-              <StarIcon className="w-4 h-4 text-primary-accent ml-2 flex-shrink-0" />
-              <span className="text-primary-accent">{t('pricing_premium')}</span>
-            </>
-          )}
-        </div>
-      </div>
-    </div>
-  )
-);
-
-FlexiblePlanCard.displayName = 'FlexiblePlanCard';
-
-/**
- * Personal Training Pack Card
- */
-const PersonalTrainingCard = memo(
-  ({ pack, t }: { pack: (typeof PERSONAL_TRAINING_PACKS)[0]; t: (key: string) => string }) => (
-    <div className="[perspective:1000px] h-full">
-      <div className="h-full flex flex-col bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl p-6 hover:border-primary-accent/50 transition-all duration-500 text-center [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_rotateY(3deg)_rotateX(2deg)] hover:shadow-accent-glow">
-        <p className="text-3xl font-black text-neutral mb-1">
-          {pack.sessions} {pack.sessions === 1 ? t('pricing_session') : t('pricing_sessions')}
-        </p>
-        <p className="text-4xl font-black holographic-text mb-2">{formatPrice(pack.price)}</p>
-        <p className="text-sm text-neutral/70 mb-4 flex-grow">
-          {formatPrice(pack.pricePerSession)} / {t('pricing_session')}
-        </p>
-        {pack.savingsPercent && (
-          <span className="inline-block bg-primary-accent/20 text-primary-accent text-xs font-bold px-3 py-1 rounded-full mt-auto">
-            {t('pricing_save')} {pack.savingsPercent}%
-          </span>
         )}
+
+        {/* Header */}
+        <div className="flex items-start gap-4 mb-4">
+          <div className="w-12 h-12 bg-primary-accent/20 rounded-xl flex items-center justify-center flex-shrink-0">
+            <Icon className="w-6 h-6 text-primary-accent" />
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-neutral">{title}</h3>
+          </div>
+        </div>
+
+        {/* Description */}
+        <p className="text-neutral/70 text-sm mb-4">{description}</p>
+
+        {/* Includes */}
+        <ul className="space-y-2 mb-6 flex-grow">
+          {includes.map((item, index) => (
+            <li key={index} className="flex items-start gap-2 text-sm text-neutral/80">
+              <CheckIcon className="w-4 h-4 text-primary-accent flex-shrink-0 mt-0.5" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Price */}
+        <div className="mb-4 pb-4 border-b border-white/10">
+          <p className="text-sm text-neutral/60 mb-1">{t('pricingV2_price_indicative')}</p>
+          <p className="text-2xl font-black text-neutral">
+            {t('pricingV2_price_from')} {priceFrom}
+            {priceUnit && (
+              <span className="text-base font-normal text-neutral/60">{priceUnit}</span>
+            )}
+          </p>
+        </div>
+
+        {/* CTA */}
+        <button
+          onClick={onCTAClick}
+          className={`w-full flex items-center justify-center gap-2 font-bold py-3 px-6 rounded-full transition-all duration-300 ${
+            isHighlighted
+              ? 'bg-primary-accent text-white hover:shadow-accent-glow'
+              : 'bg-white/10 text-neutral hover:bg-primary-accent hover:text-white'
+          }`}
+        >
+          {ctaText}
+          <ChevronRightIcon className="w-4 h-4" />
+        </button>
       </div>
     </div>
   )
 );
 
-PersonalTrainingCard.displayName = 'PersonalTrainingCard';
+ParticipationCard.displayName = 'ParticipationCard';
 
 /**
  * FAQ Item Component
@@ -245,15 +181,11 @@ const PreciosPage: React.FC = () => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
 
-  // State for tabs and accordions
-  const [isPremiumTab, setIsPremiumTab] = useState(false);
-  const [showAllPlans, setShowAllPlans] = useState(false);
-  const [openFAQ, setOpenFAQ] = useState<string | null>(null);
+  // Modal state
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Get current plans based on tab
-  const currentMonthlyPlans = isPremiumTab ? MONTHLY_PLANS_PREMIUM : MONTHLY_PLANS_REGULAR;
-  const currentFlexiblePlans = isPremiumTab ? FLEXIBLE_PLANS_PREMIUM : FLEXIBLE_PLANS_REGULAR;
-  const displayedPlans = showAllPlans ? currentMonthlyPlans : currentMonthlyPlans.slice(0, 4);
+  // FAQ state
+  const [openFAQ, setOpenFAQ] = useState<string | null>(null);
 
   // Breadcrumb
   const breadcrumbItems = [
@@ -285,7 +217,7 @@ const PreciosPage: React.FC = () => {
     ],
   };
 
-  // Pricing Schema for Google
+  // Pricing Schema for Google (precios orientativos)
   const pricingSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -298,26 +230,22 @@ const PreciosPage: React.FC = () => {
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'EUR',
-      lowPrice: MONTHLY_PLANS_REGULAR[0]?.price ?? 50,
-      highPrice: UNLIMITED_PLAN.price,
-      offerCount: MONTHLY_PLANS_REGULAR.length + MONTHLY_PLANS_PREMIUM.length + 1,
+      lowPrice: 17,
+      highPrice: 300,
+      offerCount: 20,
     },
   };
 
-  // FAQ data for pricing
+  // FAQ data - ordenados por relevancia SEO y frecuencia de consulta
   const pricingFAQs = [
-    { id: 'faq1', question: t('pricing_faq1_q'), answer: t('pricing_faq1_a') },
-    { id: 'faq2', question: t('pricing_faq2_q'), answer: t('pricing_faq2_a') },
-    { id: 'faq3', question: t('pricing_faq3_q'), answer: t('pricing_faq3_a') },
-    { id: 'faq4', question: t('pricing_faq4_q'), answer: t('pricing_faq4_a') },
-    { id: 'faq5', question: t('pricing_faq5_q'), answer: t('pricing_faq5_a') },
-    { id: 'faq6', question: t('pricing_faq6_q'), answer: t('pricing_faq6_a') },
-    { id: 'faq7', question: t('pricing_faq7_q'), answer: t('pricing_faq7_a') },
-    { id: 'faq8', question: t('pricing_faq8_q'), answer: t('pricing_faq8_a') },
-    { id: 'faq9', question: t('pricing_faq9_q'), answer: t('pricing_faq9_a') },
-    { id: 'faq10', question: t('pricing_faq10_q'), answer: t('pricing_faq10_a') },
-    { id: 'faq11', question: t('pricing_faq11_q'), answer: t('pricing_faq11_a') },
-    { id: 'faq12', question: t('pricing_faq12_q'), answer: t('pricing_faq12_a') },
+    { id: 'faq13', question: t('pricing_faq13_q'), answer: t('pricing_faq13_a') }, // ¿Cuánto cuestan? (SEO)
+    { id: 'faq16', question: t('pricing_faq16_q'), answer: t('pricing_faq16_a') }, // ¿Qué estilos? (SEO)
+    { id: 'faq14', question: t('pricing_faq14_q'), answer: t('pricing_faq14_a') }, // ¿Puedo ir solo/a?
+    { id: 'faq2', question: t('pricing_faq2_q'), answer: t('pricing_faq2_a') }, // ¿Puedo probar?
+    { id: 'faq15', question: t('pricing_faq15_q'), answer: t('pricing_faq15_a') }, // ¿Tengo que apuntarme al mes?
+    { id: 'faq8', question: t('pricing_faq8_q'), answer: t('pricing_faq8_a') }, // ¿Clases sueltas?
+    { id: 'faq3', question: t('pricing_faq3_q'), answer: t('pricing_faq3_a') }, // ¿Hay permanencia?
+    { id: 'faq1', question: t('pricing_faq1_q'), answer: t('pricing_faq1_a') }, // Cuota inscripción
   ];
 
   const faqSchema = {
@@ -333,14 +261,17 @@ const PreciosPage: React.FC = () => {
     })),
   };
 
+  // Handler para abrir modal
+  const openModal = () => setIsModalOpen(true);
+
   return (
     <>
       <Helmet>
-        <title>{t('pricing_page_title')} | Farray&apos;s Center</title>
-        <meta name="description" content={t('pricing_page_description')} />
+        <title>{t('pricingV2_page_title')} | Farray&apos;s Center</title>
+        <meta name="description" content={t('pricingV2_page_description')} />
         <link rel="canonical" href={`${baseUrl}/${locale}/precios-clases-baile-barcelona`} />
-        <meta property="og:title" content={t('pricing_page_title')} />
-        <meta property="og:description" content={t('pricing_page_description')} />
+        <meta property="og:title" content={t('pricingV2_page_title')} />
+        <meta property="og:description" content={t('pricingV2_page_description')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${baseUrl}/${locale}/precios-clases-baile-barcelona`} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
@@ -348,9 +279,12 @@ const PreciosPage: React.FC = () => {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
+      {/* Lead Capture Modal */}
+      <LeadCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
       <div className="min-h-screen bg-black pt-20 md:pt-24">
         {/* ================================================================
-            SECTION 1: HERO
+            SECTION 1: HERO (mismo diseno que V1)
         ================================================================ */}
         <section className="relative text-center py-24 md:py-32 overflow-hidden flex items-center justify-center min-h-[500px]">
           {/* Background */}
@@ -364,10 +298,13 @@ const PreciosPage: React.FC = () => {
 
             <AnimateOnScroll>
               <h1 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter leading-tight mb-6 holographic-text">
-                {t('pricing_hero_title')}
+                {t('pricingV2_hero_title')}
               </h1>
-              <p className="text-xl sm:text-2xl md:text-3xl text-neutral/90 mb-4">
-                {t('pricing_hero_subtitle')}
+              <p className="text-xl sm:text-2xl md:text-3xl text-neutral/90 mb-2">
+                {t('pricingV2_hero_subtitle')}
+              </p>
+              <p className="text-lg sm:text-xl text-neutral/70 mb-6">
+                {t('pricingV2_hero_subtitle2')}
               </p>
 
               {/* Social Proof */}
@@ -375,17 +312,17 @@ const PreciosPage: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <StarIcon className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                   <span className="font-semibold">4.9/5</span>
-                  <span className="text-sm">(505+ reseñas)</span>
+                  <span className="text-sm">(505+ {t('reviews')})</span>
                 </div>
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
                   <UserIcon className="w-5 h-5 text-primary-accent" />
-                  <span>+15.000 socios</span>
+                  <span>+15.000 {t('members')}</span>
                 </div>
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
                   <ClockIcon className="w-5 h-5 text-primary-accent" />
-                  <span>8 años en Barcelona</span>
+                  <span>8 {t('years_in_barcelona')}</span>
                 </div>
               </div>
 
@@ -405,41 +342,53 @@ const PreciosPage: React.FC = () => {
                 </span>
               </div>
 
-              {/* CTA */}
-              <a
-                href="#cuotas-mensuales"
+              {/* Main CTA - abre modal en lugar de scroll */}
+              <button
+                onClick={openModal}
                 className="inline-block bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
               >
-                {t('pricing_hero_cta')}
-              </a>
+                {t('pricingV2_hero_cta')}
+              </button>
+              <p className="text-sm text-neutral/60 mt-3">{t('pricingV2_hero_cta_subtext')}</p>
             </AnimateOnScroll>
           </div>
         </section>
 
         {/* ================================================================
-            SECTION 2: FREE TRIAL CTA
+            SECTION 2: PRICE CONTEXT - SEO Authority Section
         ================================================================ */}
-        <section className="relative py-16 md:py-20 overflow-hidden">
-          {/* Gradient Background */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-primary-dark/20 to-black"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-accent/10 via-transparent to-primary-accent/10"></div>
-
-          <div className="relative z-10 container mx-auto px-6">
+        <section className="py-8 md:py-12 bg-gradient-to-b from-black via-primary-dark/10 to-black">
+          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
-              <div className="[perspective:1000px]">
-                <div className="max-w-3xl mx-auto text-center bg-black/60 backdrop-blur-md border border-primary-accent/30 rounded-2xl p-8 md:p-12 [transform-style:preserve-3d] transition-all duration-500 hover:[transform:translateY(-0.5rem)_rotateX(2deg)] hover:shadow-accent-glow hover:border-primary-accent/50">
-                  <h2 className="text-2xl md:text-4xl font-black text-neutral mb-4 holographic-text">
-                    {t('pricing_trial_title')}
+              <div className="max-w-4xl mx-auto [perspective:1000px]">
+                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 md:p-12 [transform-style:preserve-3d] transition-all duration-500 hover:[transform:translateY(-0.5rem)_rotateY(1deg)_rotateX(1deg)] hover:border-primary-accent/50 hover:shadow-accent-glow">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-6 text-center holographic-text">
+                    {t('pricingV2_priceContext_title')}
                   </h2>
-                  <p className="text-lg text-neutral/90 mb-8">{t('pricing_trial_subtitle')}</p>
-                  <a
-                    href="https://momence.com/sign-in?hostId=36148"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
-                  >
-                    {t('pricing_trial_cta')}
-                  </a>
+
+                  <p className="text-lg text-neutral/80 mb-6 leading-relaxed">
+                    {t('pricingV2_priceContext_text1')}
+                  </p>
+
+                  <p className="text-lg text-neutral/90 mb-8 leading-relaxed">
+                    {t('pricingV2_priceContext_text2')}
+                  </p>
+
+                  {/* Authority Badges */}
+                  <div className="flex flex-wrap justify-center gap-4 pt-6 border-t border-white/10">
+                    <div className="flex items-center gap-2 bg-primary-accent/10 border border-primary-accent/30 px-4 py-2 rounded-full">
+                      <ClockIcon className="w-4 h-4 text-primary-accent" />
+                      <span className="text-sm text-neutral font-medium">Desde 2017</span>
+                    </div>
+                    <div className="flex items-center gap-2 bg-primary-accent/10 border border-primary-accent/30 px-4 py-2 rounded-full">
+                      <AcademicCapIcon className="w-4 h-4 text-primary-accent" />
+                      <span className="text-sm text-neutral font-medium">CID-UNESCO</span>
+                    </div>
+                    <div className="flex items-center gap-2 bg-primary-accent/10 border border-primary-accent/30 px-4 py-2 rounded-full">
+                      <SparklesIcon className="w-4 h-4 text-primary-accent" />
+                      <span className="text-sm text-neutral font-medium">+25 estilos</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </AnimateOnScroll>
@@ -447,19 +396,139 @@ const PreciosPage: React.FC = () => {
         </section>
 
         {/* ================================================================
-            SECTION 3: ENROLLMENT FEE
+            SECTION 3: COMO FUNCIONAN LOS PRECIOS
         ================================================================ */}
-        <section className="py-16 bg-black">
-          <div className="container mx-auto px-6">
+        <section className="py-16 md:py-20 bg-gradient-to-b from-black to-primary-dark/10">
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="max-w-3xl mx-auto text-center mb-12">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-6 holographic-text">
+                  {t('pricingV2_howItWorks_title')}
+                </h2>
+                <p className="text-lg text-neutral/80 mb-8">{t('pricingV2_howItWorks_text')}</p>
+
+                {/* Reassurance Mini Cards 3D */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                  {[
+                    { key: 'pricingV2_reassurance1', icon: SparklesIcon },
+                    { key: 'pricingV2_reassurance2', icon: UserIcon },
+                    { key: 'pricingV2_reassurance3', icon: KeyIcon },
+                    { key: 'pricingV2_reassurance4', icon: HeartIcon },
+                  ].map((item, index) => (
+                    <div
+                      key={item.key}
+                      className="[perspective:800px] group"
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 text-center h-full [transform-style:preserve-3d] transition-all duration-500 hover:[transform:translateY(-4px)_rotateX(5deg)_rotateY(-5deg)] hover:border-primary-accent/50 hover:bg-white/10 hover:shadow-lg hover:shadow-primary-accent/20 group-hover:scale-[1.02]">
+                        <item.icon className="w-8 h-8 text-primary-accent mx-auto mb-3 transition-transform duration-300 group-hover:scale-110" />
+                        <p className="text-sm text-neutral/90 font-medium leading-tight">
+                          {t(item.key)}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* ================================================================
+            SECTION 3: LAS 3 FORMAS DE PARTICIPAR
+        ================================================================ */}
+        <section className="py-16 md:py-20 bg-black">
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-12">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-4 holographic-text">
+                  {t('pricingV2_participate_title')}
+                </h2>
+                <p className="text-lg text-neutral/70 max-w-2xl mx-auto">
+                  {t('pricingV2_participate_subtitle')}
+                </p>
+              </div>
+            </AnimateOnScroll>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {/* Card 1: Regular */}
+              <AnimateOnScroll delay={100}>
+                <ParticipationCard
+                  title={t('pricingV2_card_regular_title')}
+                  description={t('pricingV2_card_regular_desc')}
+                  icon={UserIcon}
+                  includes={[
+                    t('pricingV2_card_regular_include1'),
+                    t('pricingV2_card_regular_include2'),
+                    t('pricingV2_card_regular_include3'),
+                    t('pricingV2_card_regular_include4'),
+                  ]}
+                  priceFrom="50 €"
+                  priceUnit=" /mes"
+                  ctaText={t('pricingV2_hero_cta')}
+                  onCTAClick={openModal}
+                  isHighlighted={true}
+                  t={t}
+                />
+              </AnimateOnScroll>
+
+              {/* Card 2: Flexible */}
+              <AnimateOnScroll delay={200}>
+                <ParticipationCard
+                  title={t('pricingV2_card_flexible_title')}
+                  description={t('pricingV2_card_flexible_desc')}
+                  icon={ClockIcon}
+                  includes={[
+                    t('pricingV2_card_flexible_include1'),
+                    t('pricingV2_card_flexible_include2'),
+                    t('pricingV2_card_flexible_include3'),
+                  ]}
+                  priceFrom="145 €"
+                  ctaText={t('pricingV2_hero_cta')}
+                  onCTAClick={openModal}
+                  t={t}
+                />
+              </AnimateOnScroll>
+
+              {/* Card 3: Puntual */}
+              <AnimateOnScroll delay={300}>
+                <ParticipationCard
+                  title={t('pricingV2_card_puntual_title')}
+                  description={t('pricingV2_card_puntual_desc')}
+                  icon={CalendarDaysIcon}
+                  includes={[
+                    t('pricingV2_card_puntual_include1'),
+                    t('pricingV2_card_puntual_include2'),
+                  ]}
+                  priceFrom="17 €"
+                  ctaText={t('pricingV2_hero_cta')}
+                  onCTAClick={openModal}
+                  t={t}
+                />
+              </AnimateOnScroll>
+            </div>
+          </div>
+        </section>
+
+        {/* ================================================================
+            SECTION 4: CUOTA DE INSCRIPCION
+        ================================================================ */}
+        <section className="py-16 md:py-20 bg-gradient-to-b from-black to-primary-dark/10">
+          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto [perspective:1000px]">
-                <div className="bg-gradient-to-br from-primary-dark/30 to-black border border-primary-accent/30 rounded-2xl p-8 md:p-12 [transform-style:preserve-3d] transition-all duration-500 hover:[transform:translateY(-0.5rem)_rotateY(2deg)_rotateX(2deg)] hover:shadow-accent-glow hover:border-primary-accent/50">
+                <div className="bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-2xl p-8 md:p-10 [transform-style:preserve-3d] transition-all duration-500 hover:[transform:translateY(-0.5rem)_rotateY(1deg)_rotateX(1deg)] hover:shadow-accent-glow">
                   <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div>
-                      <h2 className="text-3xl md:text-4xl font-black text-neutral mb-4 holographic-text">
-                        {t('pricing_enrollment_title')}
-                      </h2>
-                      <p className="text-neutral/90 mb-6">{t('pricing_enrollment_desc')}</p>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 bg-primary-accent/20 rounded-xl flex items-center justify-center">
+                          <KeyIcon className="w-5 h-5 text-primary-accent" />
+                        </div>
+                        <h2 className="text-2xl md:text-3xl font-black text-neutral">
+                          {t('pricingV2_enrollment_title')}
+                        </h2>
+                      </div>
+                      <p className="text-neutral/80 mb-6">{t('pricingV2_enrollment_desc')}</p>
                       <ul className="space-y-3">
                         {ENROLLMENT_FEE.includes.map((includeKey, index) => (
                           <li key={index} className="flex items-center gap-3 text-neutral/90">
@@ -469,8 +538,8 @@ const PreciosPage: React.FC = () => {
                         ))}
                       </ul>
                     </div>
-                    <div className="text-center">
-                      <p className="text-6xl md:text-7xl font-black holographic-text">
+                    <div className="text-center md:text-right">
+                      <p className="text-5xl md:text-6xl font-black holographic-text">
                         {formatPrice(ENROLLMENT_FEE.price)}
                       </p>
                     </div>
@@ -482,257 +551,55 @@ const PreciosPage: React.FC = () => {
         </section>
 
         {/* ================================================================
-            SECTION 4: MONTHLY PLANS
+            SECTION 5: POR QUE NO MOSTRAMOS TODOS LOS PRECIOS
         ================================================================ */}
-        <section
-          id="cuotas-mensuales"
-          className="py-20 bg-gradient-to-b from-black to-primary-dark/10"
-        >
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('pricing_monthly_title')}
-                </h2>
-                <p className="text-lg text-neutral/90 max-w-2xl mx-auto mb-8">
-                  {t('pricing_monthly_subtitle')}
-                </p>
-
-                {/* Regular/Premium Tabs */}
-                <div className="inline-flex bg-black/50 border border-primary-dark/50 rounded-full p-1">
-                  <button
-                    onClick={() => setIsPremiumTab(false)}
-                    className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
-                      !isPremiumTab
-                        ? 'bg-primary-accent text-white'
-                        : 'text-neutral/70 hover:text-neutral'
-                    }`}
-                  >
-                    {t('pricing_tab_regular')}
-                  </button>
-                  <button
-                    onClick={() => setIsPremiumTab(true)}
-                    className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
-                      isPremiumTab
-                        ? 'bg-primary-accent text-white'
-                        : 'text-neutral/70 hover:text-neutral'
-                    }`}
-                  >
-                    <StarIcon className="w-4 h-4" />
-                    {t('pricing_tab_premium')}
-                  </button>
-                </div>
-              </div>
-            </AnimateOnScroll>
-
-            {/* Plans Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-              {displayedPlans.map((plan, index) => (
-                <AnimateOnScroll key={plan.id} delay={index * 100}>
-                  <MonthlyPlanCard plan={plan} t={t} isPremium={isPremiumTab} />
-                </AnimateOnScroll>
-              ))}
-            </div>
-
-            {/* Show More Button */}
-            {currentMonthlyPlans.length > 4 && (
-              <AnimateOnScroll delay={400}>
-                <div className="text-center mt-8">
-                  <button
-                    onClick={() => setShowAllPlans(!showAllPlans)}
-                    className="inline-flex items-center gap-2 text-neutral hover:text-white transition-colors duration-300 font-semibold"
-                  >
-                    {showAllPlans ? t('pricing_show_less') : t('pricing_show_more')}
-                    <ChevronDownIcon
-                      className={`w-5 h-5 transition-transform duration-300 ${showAllPlans ? 'rotate-180' : ''}`}
-                    />
-                  </button>
-                </div>
-              </AnimateOnScroll>
-            )}
-
-            {/* Unlimited Plan Card */}
-            <AnimateOnScroll delay={500}>
-              <div className="max-w-2xl mx-auto mt-12 [perspective:1000px]">
-                <div className="relative bg-gradient-to-r from-primary-accent/20 via-primary-dark/30 to-primary-accent/20 border-2 border-primary-accent rounded-2xl p-8 text-center [transform-style:preserve-3d] transition-all duration-500 hover:[transform:translateY(-0.5rem)_rotateY(2deg)_rotateX(2deg)] hover:shadow-accent-glow">
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-accent text-white text-sm font-bold px-6 py-1 rounded-full">
-                    {t('pricing_unlimited_badge')}
-                  </div>
-                  <h3 className="text-2xl font-bold text-neutral mb-2">
-                    {t('pricing_unlimited_title')}
-                  </h3>
-                  <p className="text-5xl md:text-6xl font-black holographic-text mb-2">
-                    {formatPrice(UNLIMITED_PLAN.price)}
-                    <span className="text-xl font-normal text-neutral/70">/mes</span>
-                  </p>
-                  <p className="text-neutral mb-4">
-                    ~{formatPrice(UNLIMITED_PLAN.pricePerActivity)} / {t('pricing_per_activity')}
-                  </p>
-                  <p className="text-neutral/90 mb-6">{t('pricing_unlimited_desc')}</p>
-                  <a
-                    href="https://momence.com/sign-in?hostId=36148"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-primary-accent text-white font-bold py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
-                  >
-                    {t('pricing_unlimited_cta')}
-                  </a>
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* ================================================================
-            SECTION 5: FLEXIBLE PLANS (BONOS)
-        ================================================================ */}
-        <section id="cuotas-flexibles" className="py-20 bg-black">
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('pricing_flexible_title')}
-                </h2>
-                <p className="text-lg text-neutral/90 max-w-2xl mx-auto mb-8">
-                  {t('pricing_flexible_subtitle')}
-                </p>
-
-                {/* Regular/Premium Tabs */}
-                <div className="inline-flex bg-black/50 border border-primary-dark/50 rounded-full p-1">
-                  <button
-                    onClick={() => setIsPremiumTab(false)}
-                    className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
-                      !isPremiumTab
-                        ? 'bg-primary-accent text-white'
-                        : 'text-neutral/70 hover:text-neutral'
-                    }`}
-                  >
-                    {t('pricing_tab_regular')}
-                  </button>
-                  <button
-                    onClick={() => setIsPremiumTab(true)}
-                    className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 flex items-center gap-2 ${
-                      isPremiumTab
-                        ? 'bg-primary-accent text-white'
-                        : 'text-neutral/70 hover:text-neutral'
-                    }`}
-                  >
-                    <StarIcon className="w-4 h-4" />
-                    {t('pricing_tab_premium')}
-                  </button>
-                </div>
-              </div>
-            </AnimateOnScroll>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {currentFlexiblePlans.map((plan, index) => (
-                <AnimateOnScroll key={plan.id} delay={index * 100}>
-                  <FlexiblePlanCard plan={plan} t={t} isPremium={isPremiumTab} />
-                </AnimateOnScroll>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ================================================================
-            SECTION 6: DROP-IN PRICES
-        ================================================================ */}
-        <section className="py-16 bg-primary-dark/10">
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-2xl md:text-3xl font-black tracking-tighter text-neutral mb-8 text-center holographic-text">
-                  {t('pricing_dropin_title')}
-                </h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {DROP_IN_PRICES.map((price, index) => (
-                    <AnimateOnScroll key={price.id} delay={index * 50}>
-                      <div className="[perspective:1000px] h-full">
-                        <div className="h-full flex flex-col justify-center bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl p-4 text-center hover:border-primary-accent/50 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_rotateY(3deg)_rotateX(2deg)] hover:shadow-accent-glow">
-                          <p className="text-sm text-neutral/70 mb-1">
-                            {price.duration} -{' '}
-                            {price.type === 'premium' ? t('pricing_premium') : t('pricing_regular')}
-                          </p>
-                          <p className="text-3xl font-black text-neutral">
-                            {formatPrice(price.price)}
-                          </p>
-                        </div>
-                      </div>
-                    </AnimateOnScroll>
-                  ))}
-                </div>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* ================================================================
-            SECTION 7: PERSONAL TRAINING
-        ================================================================ */}
-        <section id="entrenamientos" className="py-20 bg-black">
-          <div className="container mx-auto px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('pricing_personal_title')}
-                </h2>
-                <p className="text-lg text-neutral/90 max-w-2xl mx-auto">
-                  {t('pricing_personal_subtitle')}
-                </p>
-              </div>
-            </AnimateOnScroll>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {PERSONAL_TRAINING_PACKS.map((pack, index) => (
-                <AnimateOnScroll key={pack.id} delay={index * 100}>
-                  <PersonalTrainingCard pack={pack} t={t} />
-                </AnimateOnScroll>
-              ))}
-            </div>
-
-            <AnimateOnScroll delay={200}>
-              <p className="text-center text-sm text-neutral/70 mt-6 max-w-2xl mx-auto">
-                {t('pricing_personal_reference_note')}
-              </p>
-            </AnimateOnScroll>
-
-            <AnimateOnScroll delay={300}>
-              <div className="text-center mt-6">
-                <Link
-                  to={`/${locale}/clases-particulares-baile`}
-                  className="inline-flex items-center gap-2 holographic-text hover:text-white transition-colors duration-300 font-bold text-lg"
-                >
-                  {t('pricing_personal_more')} →
-                </Link>
-              </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
-
-        {/* ================================================================
-            SECTION 8: LEAD MAGNET
-        ================================================================ */}
-        <section className="py-20 bg-gradient-to-b from-primary-dark/20 to-black">
-          <div className="container mx-auto px-6">
+        <section className="py-16 md:py-20 bg-black">
+          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-3xl mx-auto [perspective:1000px]">
-                <div className="bg-black/70 backdrop-blur-md border border-primary-accent/30 rounded-2xl p-8 md:p-12 text-center [transform-style:preserve-3d] transition-all duration-500 hover:[transform:translateY(-0.5rem)_rotateY(2deg)_rotateX(2deg)] hover:shadow-accent-glow hover:border-primary-accent/50">
-                  <HeartFilledIcon className="w-16 h-16 text-primary-accent mx-auto mb-6" />
-                  <h2 className="text-2xl md:text-3xl font-black text-neutral mb-4 holographic-text">
-                    {t('pricing_lead_title')}
+                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 md:p-10 text-center [transform-style:preserve-3d] transition-all duration-500 hover:[transform:translateY(-0.5rem)_rotateY(2deg)_rotateX(2deg)] hover:border-primary-accent/50 hover:shadow-accent-glow">
+                  <div className="w-16 h-16 bg-primary-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <AcademicCapIcon className="w-8 h-8 text-primary-accent" />
+                  </div>
+
+                  <h2 className="text-2xl sm:text-3xl font-black tracking-tighter text-neutral mb-6 holographic-text">
+                    {t('pricingV2_whyNotAll_title')}
                   </h2>
-                  <p className="text-neutral/90 mb-4">{t('pricing_lead_subtitle')}</p>
-                  <p className="text-neutral font-semibold mb-8">{t('pricing_lead_discount')}</p>
 
-                  {/* Simple CTA - Full lead magnet form would be separate component */}
-                  <a
-                    href={`/${locale}/contacto`}
-                    className="inline-block bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
+                  <p className="text-lg text-neutral/80 mb-6">{t('pricingV2_whyNotAll_text1')}</p>
+
+                  <div className="bg-white/5 rounded-xl p-6 mb-8 text-left border border-white/10">
+                    <p className="text-neutral/70 mb-4">{t('pricingV2_whyNotAll_depends')}</p>
+                    <ul className="grid grid-cols-2 gap-3">
+                      <li className="flex items-center gap-2 text-neutral/80">
+                        <CheckCircleIcon className="w-4 h-4 text-primary-accent flex-shrink-0" />
+                        {t('pricingV2_whyNotAll_dep1')}
+                      </li>
+                      <li className="flex items-center gap-2 text-neutral/80">
+                        <CheckCircleIcon className="w-4 h-4 text-primary-accent flex-shrink-0" />
+                        {t('pricingV2_whyNotAll_dep2')}
+                      </li>
+                      <li className="flex items-center gap-2 text-neutral/80">
+                        <CheckCircleIcon className="w-4 h-4 text-primary-accent flex-shrink-0" />
+                        {t('pricingV2_whyNotAll_dep3')}
+                      </li>
+                      <li className="flex items-center gap-2 text-neutral/80">
+                        <CheckCircleIcon className="w-4 h-4 text-primary-accent flex-shrink-0" />
+                        {t('pricingV2_whyNotAll_dep4')}
+                      </li>
+                    </ul>
+                  </div>
+
+                  <p className="text-neutral/70 mb-8">{t('pricingV2_whyNotAll_text2')}</p>
+
+                  <button
+                    onClick={openModal}
+                    className="inline-flex items-center gap-2 bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
                   >
-                    {t('pricing_lead_cta')}
-                  </a>
-
-                  <p className="text-xs text-neutral/50 mt-4">{t('pricing_lead_privacy')}</p>
+                    {t('pricingV2_hero_cta')}
+                    <ChevronRightIcon className="w-5 h-5" />
+                  </button>
+                  <p className="text-xs text-neutral/70 mt-3">{t('pricingV2_hero_cta_subtext')}</p>
                 </div>
               </div>
             </AnimateOnScroll>
@@ -740,14 +607,14 @@ const PreciosPage: React.FC = () => {
         </section>
 
         {/* ================================================================
-            SECTION 9: BENEFITS / VALUE PROPOSITION
+            SECTION 6: BENEFICIOS / POR QUE NUESTROS SOCIOS SE QUEDAN
         ================================================================ */}
-        <section className="py-20 bg-black">
-          <div className="container mx-auto px-6">
+        <section className="py-16 md:py-20 bg-gradient-to-b from-primary-dark/10 to-black">
+          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-                  {t('pricing_benefits_title')}
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-4 holographic-text">
+                  {t('pricingV2_benefits_title')}
                 </h2>
               </div>
             </AnimateOnScroll>
@@ -763,12 +630,12 @@ const PreciosPage: React.FC = () => {
               ].map((benefit, index) => (
                 <AnimateOnScroll key={benefit.key} delay={index * 100}>
                   <div className="[perspective:1000px] h-full">
-                    <div className="h-full flex flex-col bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl p-6 hover:border-primary-accent/50 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_rotateY(3deg)_rotateX(2deg)] hover:shadow-accent-glow">
+                    <div className="h-full flex flex-col bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl p-6 hover:border-primary-accent/50 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_rotateY(2deg)_rotateX(2deg)] hover:shadow-accent-glow">
                       <benefit.icon className="w-10 h-10 text-primary-accent mb-4 flex-shrink-0" />
                       <h3 className="text-lg font-bold text-neutral mb-2">
                         {t(`pricing_${benefit.key}_title`)}
                       </h3>
-                      <p className="text-neutral/90 text-sm flex-grow">
+                      <p className="text-neutral/80 text-sm flex-grow">
                         {t(`pricing_${benefit.key}_desc`)}
                       </p>
                     </div>
@@ -776,20 +643,11 @@ const PreciosPage: React.FC = () => {
                 </AnimateOnScroll>
               ))}
             </div>
-
-            {/* ClassPass Differentiator */}
-            <AnimateOnScroll delay={600}>
-              <div className="max-w-2xl mx-auto mt-12 text-center [perspective:1000px]">
-                <div className="inline-block bg-black/70 backdrop-blur-md border border-primary-accent/30 rounded-xl px-8 py-6 [transform-style:preserve-3d] transition-all duration-500 hover:[transform:translateY(-0.5rem)_rotateY(2deg)_rotateX(2deg)] hover:shadow-accent-glow hover:border-primary-accent/50">
-                  <p className="text-neutral font-semibold text-lg">{t('pricing_no_classpass')}</p>
-                </div>
-              </div>
-            </AnimateOnScroll>
           </div>
         </section>
 
         {/* ================================================================
-            SECTION 10: EXCLUSIVE MEMBER BENEFITS
+            SECTION 7: EXCLUSIVE MEMBER BENEFITS (Premium)
         ================================================================ */}
         <section className="py-20 bg-gradient-to-b from-black to-primary-dark/10">
           <div className="container mx-auto px-6">
@@ -824,31 +682,35 @@ const PreciosPage: React.FC = () => {
                           <CheckIcon className="w-5 h-5 text-primary-accent flex-shrink-0 mt-0.5" />
                           <span>{t('pricing_exclusive_community_2')}</span>
                         </li>
+                        <li className="flex items-start gap-3 text-neutral/90">
+                          <CheckIcon className="w-5 h-5 text-primary-accent flex-shrink-0 mt-0.5" />
+                          <span>{t('pricing_exclusive_community_3')}</span>
+                        </li>
                       </ul>
                     </div>
                   </div>
                 </AnimateOnScroll>
 
-                {/* Special Prices Group */}
-                <AnimateOnScroll delay={200}>
+                {/* Condiciones Especiales Group */}
+                <AnimateOnScroll delay={150}>
                   <div className="[perspective:1000px] h-full">
                     <div className="h-full bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl p-6 hover:border-primary-accent/50 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_rotateY(3deg)_rotateX(2deg)] hover:shadow-accent-glow">
                       <h3 className="text-xl font-bold text-neutral mb-4 flex items-center gap-2">
-                        <SparklesIcon className="w-5 h-5 text-primary-accent" />
-                        {t('pricing_exclusive_prices')}
+                        <StarIcon className="w-5 h-5 text-primary-accent" />
+                        {t('pricing_exclusive_conditions')}
                       </h3>
                       <ul className="space-y-3">
                         <li className="flex items-start gap-3 text-neutral/90">
                           <CheckIcon className="w-5 h-5 text-primary-accent flex-shrink-0 mt-0.5" />
-                          <span>{t('pricing_exclusive_prices_1')}</span>
+                          <span>{t('pricing_exclusive_conditions_1')}</span>
                         </li>
                         <li className="flex items-start gap-3 text-neutral/90">
                           <CheckIcon className="w-5 h-5 text-primary-accent flex-shrink-0 mt-0.5" />
-                          <span>{t('pricing_exclusive_prices_2')}</span>
+                          <span>{t('pricing_exclusive_conditions_2')}</span>
                         </li>
                         <li className="flex items-start gap-3 text-neutral/90">
                           <CheckIcon className="w-5 h-5 text-primary-accent flex-shrink-0 mt-0.5" />
-                          <span>{t('pricing_exclusive_prices_3')}</span>
+                          <span>{t('pricing_exclusive_conditions_3')}</span>
                         </li>
                       </ul>
                     </div>
@@ -856,7 +718,7 @@ const PreciosPage: React.FC = () => {
                 </AnimateOnScroll>
 
                 {/* Discounts Group */}
-                <AnimateOnScroll delay={300}>
+                <AnimateOnScroll delay={200}>
                   <div className="[perspective:1000px] h-full">
                     <div className="h-full bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl p-6 hover:border-primary-accent/50 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_rotateY(3deg)_rotateX(2deg)] hover:shadow-accent-glow">
                       <h3 className="text-xl font-bold text-neutral mb-4 flex items-center gap-2">
@@ -882,7 +744,7 @@ const PreciosPage: React.FC = () => {
                 </AnimateOnScroll>
 
                 {/* Opportunities Group */}
-                <AnimateOnScroll delay={400}>
+                <AnimateOnScroll delay={250}>
                   <div className="[perspective:1000px] h-full">
                     <div className="h-full bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl p-6 hover:border-primary-accent/50 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_rotateY(3deg)_rotateX(2deg)] hover:shadow-accent-glow">
                       <h3 className="text-xl font-bold text-neutral mb-4 flex items-center gap-2">
@@ -933,28 +795,23 @@ const PreciosPage: React.FC = () => {
         </section>
 
         {/* ================================================================
-            SECTION 11: TESTIMONIALS / SOCIAL PROOF
+            SECTION 8: TESTIMONIOS
         ================================================================ */}
-        <section id="testimonials" className="py-16 md:py-20 bg-primary-dark/10">
+        <section className="py-16 md:py-20 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-8 sm:mb-10 max-w-4xl mx-auto">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 sm:mb-6 holographic-text">
+              <div className="text-center mb-10 max-w-4xl mx-auto">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-6 holographic-text">
                   {t('pricing_testimonials_title')}
                 </h2>
                 <div className="inline-block">
-                  <div className="mb-2 sm:mb-3 text-2xl sm:text-3xl font-black text-neutral">
-                    {t('excellent')}
-                  </div>
+                  <div className="mb-3 text-2xl font-black text-neutral">{t('excellent')}</div>
                   <div className="flex items-center justify-center gap-1 mb-2">
                     {[...Array(5)].map((_, i) => (
-                      <StarIcon
-                        key={i}
-                        className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400 fill-yellow-400"
-                      />
+                      <StarIcon key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                     ))}
                   </div>
-                  <div className="text-xs sm:text-sm text-neutral/70">
+                  <div className="text-sm text-neutral/70">
                     {t('basedOnReviews').replace('{count}', '505')}
                   </div>
                   <div className="mt-2 text-xs text-neutral/50">Google</div>
@@ -967,37 +824,37 @@ const PreciosPage: React.FC = () => {
                 { id: 1, name: 'Ana Cid', city: 'Barcelona', quote: 'pricing_testimonial1_text' },
                 {
                   id: 2,
-                  name: 'María García',
+                  name: 'Maria Garcia',
                   city: "L'Hospitalet",
                   quote: 'pricing_testimonial2_text',
                 },
-                { id: 3, name: 'Carlos Ruiz', city: 'Gràcia', quote: 'pricing_testimonial3_text' },
+                { id: 3, name: 'Carlos Ruiz', city: 'Gracia', quote: 'pricing_testimonial3_text' },
                 {
                   id: 4,
-                  name: 'Laura Martínez',
+                  name: 'Laura Martinez',
                   city: 'Eixample',
                   quote: 'pricing_testimonial4_text',
                 },
               ].map((testimonial, index) => (
                 <AnimateOnScroll key={testimonial.id} delay={index * 100}>
                   <div className="[perspective:1000px] h-full">
-                    <div className="flex flex-col h-full min-h-[180px] sm:min-h-[200px] p-4 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg [transform-style:preserve-3d] transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:[transform:translateY(-0.5rem)_rotateY(3deg)_rotateX(2deg)]">
-                      <div className="mb-2 sm:mb-3 flex gap-0.5">
+                    <div className="flex flex-col h-full min-h-[180px] p-5 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg [transform-style:preserve-3d] transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:[transform:translateY(-0.5rem)_rotateY(2deg)_rotateX(2deg)]">
+                      <div className="mb-3 flex gap-0.5">
                         {[...Array(5)].map((_, i) => (
                           <StarIcon key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
                         ))}
                       </div>
-                      <blockquote className="flex-grow text-neutral/90 mb-3 sm:mb-4">
-                        <p className="text-xs sm:text-sm leading-relaxed">
+                      <blockquote className="flex-grow text-neutral/90 mb-4">
+                        <p className="text-sm leading-relaxed">
                           &ldquo;{t(testimonial.quote)}&rdquo;
                         </p>
                       </blockquote>
-                      <div className="flex items-center gap-3 mt-auto pt-3 sm:pt-4 border-t border-primary-dark/30">
+                      <div className="flex items-center gap-3 mt-auto pt-3 border-t border-primary-dark/30">
                         <div>
-                          <cite className="font-bold text-neutral not-italic text-xs sm:text-sm">
+                          <cite className="font-bold text-neutral not-italic text-sm">
                             {testimonial.name}
                           </cite>
-                          <p className="text-xs text-neutral/75">{testimonial.city}</p>
+                          <p className="text-xs text-neutral/70">{testimonial.city}</p>
                         </div>
                       </div>
                     </div>
@@ -1009,13 +866,13 @@ const PreciosPage: React.FC = () => {
         </section>
 
         {/* ================================================================
-            SECTION 11: FAQ
+            SECTION 8: FAQ
         ================================================================ */}
-        <section id="faq-precios" className="py-20 bg-black">
-          <div className="container mx-auto px-6">
+        <section className="py-16 md:py-20 bg-gradient-to-b from-black to-primary-dark/10">
+          <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-4 holographic-text">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-4 holographic-text">
                   {t('pricing_faq_title')}
                 </h2>
               </div>
@@ -1037,11 +894,11 @@ const PreciosPage: React.FC = () => {
         </section>
 
         {/* ================================================================
-            SECTION 12: FINAL CTA
+            SECTION 10: FINAL CTA (Premium - con emotional copy)
         ================================================================ */}
-        <section id="final-cta" className="relative py-16 md:py-24 overflow-hidden">
-          <div className="absolute inset-0 bg-black">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
+        <section className="relative py-16 md:py-24 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/10 to-black">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/20 via-black/50 to-black"></div>
             <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-20"></div>
           </div>
           <div className="container mx-auto px-4 sm:px-6 relative z-20">
@@ -1071,35 +928,31 @@ const PreciosPage: React.FC = () => {
                   {t('pricing_cta_technical2')}
                 </p>
 
-                {/* Final CTAs */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-                  <div className="w-full sm:w-auto">
-                    <a
-                      href="https://momence.com/sign-in?hostId=36148"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full sm:w-auto bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
-                    >
-                      {t('pricing_cta_primary')}
-                    </a>
-                    <p className="text-xs text-neutral/70 mt-2 text-center">
-                      {t('pricing_cta_primary_subtext')}
-                    </p>
-                  </div>
-                  <div className="w-full sm:w-auto">
-                    <Link
-                      to={`/${locale}/contacto`}
-                      className="block w-full sm:w-auto bg-black/50 backdrop-blur-md border-2 border-primary-accent text-primary-accent font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white hover:scale-105 hover:shadow-accent-glow"
-                    >
-                      {t('pricing_cta_secondary')}
-                    </Link>
-                    <p className="text-xs text-neutral/70 mt-2 text-center">
-                      {t('pricing_cta_secondary_subtext')}
-                    </p>
-                  </div>
+                {/* Final CTA */}
+                <div className="flex flex-col items-center justify-center">
+                  <button
+                    onClick={openModal}
+                    className="bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
+                  >
+                    {t('pricing_cta_primary')}
+                  </button>
+                  <p className="text-xs text-neutral/70 mt-2 text-center">
+                    {t('pricing_cta_primary_subtext')}
+                  </p>
                 </div>
               </div>
             </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* ================================================================
+            FOOTER LEGAL
+        ================================================================ */}
+        <section className="py-8 bg-black border-t border-white/10">
+          <div className="container mx-auto px-4 sm:px-6">
+            <p className="text-xs text-center text-neutral/40 max-w-3xl mx-auto leading-relaxed">
+              {t('pricingV2_footer_legal')}
+            </p>
           </div>
         </section>
       </div>
