@@ -816,6 +816,9 @@ export const ca = {
   danceClassesHub_style_sevillanas: 'Sevillanes',
   danceClassesHub_style_telas_aereas: 'Teles Aèries i Aro',
   danceClassesHub_style_acro_yoga: 'Acro Yoga',
+  danceClassesHub_style_bachata_sensual: 'Bachata Sensual',
+  danceClassesHub_style_bachata_sensual_desc:
+    'Bachata sensual amb campions mundials. Ones, connexió en parella, musicalitat i expressió corporal. Des de principiant absolut fins a nivell avançat amb Mathias Font i Eugenia Trujillo.',
   danceClassesHub_style_salsa_bachata: 'Salsa i Bachata',
   danceClassesHub_style_salsa_bachata_desc:
     'Balls llatins en parella que combinen passió, ritme i connexió. Salsa cubana amb sabor caribeny autèntic i Bachata amb sensualitat dominicana. Classes per a tots els nivells on aprendràs tècnica, leading/following i musicalitat.',
@@ -11049,6 +11052,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   dhV3CompareCTA: 'Comprova-ho: primera classe de prova',
   dhV3CompareNote: 'Sense permanència. Sense trucs. Sense pressió.',
   navBachataLadyStyle: 'Bachata Lady Style',
+  navBachataSensual: 'Bachata Sensual',
   navTimba: 'Timba',
   salsaCubanaLevelBasicTitle: 'Bàsic I, II i III',
   salsaCubanaLevelBasicDesc:
@@ -11913,4 +11917,382 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   teachersPageCtaSubtitle:
     'Uneix-te a la nostra família i descobreix per què més de 15.000 estudiants han confiat en nosaltres.',
   teachersPageCtaClasses: 'Veure Classes de Ball',
+
+  // =============================================
+  // BACHATA SENSUAL PAGE V3 (bachata-barcelona)
+  // =============================================
+
+  // === SEO & META ===
+  bachataV3PageTitle: 'Classes de Bachata Sensual a Barcelona | Aprèn amb Campions Mundials',
+  bachataV3MetaDescription:
+    "Aprèn bachata sensual a Barcelona amb Mathias Font i Eugenia Trujillo, campions mundials de Salsa LA. Classes des de principiant fins a avançat al Farray's Center prop de Plaça Espanya.",
+  bachataV3MetaKeywords:
+    'bachata sensual barcelona, classes bachata barcelona, aprendre bachata, classes bachata sensual, escola bachata barcelona',
+
+  // === HERO SECTION ===
+  bachataV3HeroTitle: 'Bachata Sensual a Barcelona',
+  bachataV3HeroSubtitle: 'Sent la connexió, expressa la música',
+  bachataV3HeroDescription:
+    'Aprèn bachata sensual amb campions mundials. Des del teu primer pas fins a escenari, transforma la teva manera de ballar i connectar.',
+  bachataV3HeroStatMinutes: 'minuts per classe',
+  bachataV3HeroStatCalories: 'calories cremades',
+  bachataV3HeroStatFun: 'diversió garantida',
+  bachataV3HeroCTA: 'Comença a Ballar',
+  bachataV3HeroSecondaryCTA: 'Veure Horaris',
+  bachataV3HeroScrollText: 'Descobreix la bachata sensual',
+  bachataV3HeroClassType: 'Classes de Bachata Sensual',
+
+  // === BREADCRUMB ===
+  bachataV3BreadcrumbHome: 'Inici',
+  bachataV3BreadcrumbClasses: 'Classes',
+  bachataV3BreadcrumbLatin: 'Salsa i Bachata',
+  bachataV3BreadcrumbCurrent: 'Bachata Sensual',
+
+  // === WHAT IS SECTION ===
+  bachataV3WhatIsTitle: 'Què és la Bachata Sensual?',
+  bachataV3WhatIsP1:
+    'La bachata sensual és una evolució moderna de la bachata dominicana que posa èmfasi en la connexió corporal, la interpretació musical i el moviment fluid. A diferència de la bachata tradicional, la bachata sensual incorpora ones, dips i moviments corporals que expressen les emocions de la música.',
+  bachataV3WhatIsP2:
+    'Nascuda a Espanya i Europa als anys 2010, aquest estil va revolucionar la manera de ballar bachata. La connexió entre la parella es converteix en el centre de tot: cada moviment, cada ona, cada pausa explica una història.',
+  bachataV3WhatIsP3:
+    "A Farray's ensenyem bachata sensual autèntica amb professors de classe mundial. El nostre mètode combina tècnica sòlida amb expressió emocional, perquè puguis ballar amb qualsevol a qualsevol festa.",
+  bachataV3WhatIsP4:
+    "També toquem elements de bachata dominicana i bachata fusion a les nostres classes, donant-te una base completa. No obstant això, el nostre enfocament principal és la bachata sensual, l'estil que ha revolucionat el ball social a tot el món.",
+  bachataV3WhatIsQuestion: 'La bachata sensual és només per a ballarins experimentats?',
+  bachataV3WhatIsAnswer:
+    "De cap manera. Encara que pugui semblar complexa, la bachata sensual comença amb fonaments bàsics que qualsevol pot aprendre. A Farray's tenim una classe específica per a principiants on t'ensenyem des de zero. En només 3 mesos estaràs fent ones i dips que mai havies pensat que podries fer.",
+
+  // === SCHEDULE SECTION ===
+  bachataV3ScheduleTitle: 'Horaris de Classes de Bachata Sensual',
+  bachataV3ScheduleSubtitle:
+    "5 classes setmanals per a tots els nivells. Troba l'horari que encaixi amb la teva rutina i comença a ballar.",
+  bachataV3ScheduleCTA: 'Reserva la Teva Primera Classe',
+  bachataV3ScheduleNote: 'Primera classe GRATIS per provar',
+
+  // === LEVEL CARDS ===
+  bachataV3LevelBeginnerTitle: 'Principiants',
+  bachataV3LevelBeginnerDesc:
+    "Mai has ballat? Perfecte. T'ensenyem el pas bàsic, el ritme lateral i els teus primers girs guiats. Aprendràs a moure't al ritme de la música de bachata i sentir-te segur des de la primera classe.",
+  bachataV3LevelBasicTitle: 'Bàsic',
+  bachataV3LevelBasicDesc:
+    'Ja saps el bàsic. Ara afegim connexió corporal, ones bàsiques i girs intermedis. Començaràs a sentir la diferència entre simplement fer passos i realment ballar.',
+  bachataV3LevelIntermediateTitle: 'Intermedi',
+  bachataV3LevelIntermediateDesc:
+    "Moment de refinar. Dips, ones combinades, interpretació musical i seqüències més complexes. Aquí és on la bachata sensual realment s'obre i es converteix en art.",
+  bachataV3LevelAdvancedTitle: 'Avançat',
+  bachataV3LevelAdvancedDesc:
+    "Per als que volen l'excel·lència. Coreografies avançades, estil personal, tècnica professional. Prepara't per a competicions, shows o simplement ser aquell ballarí amb qui tothom vol ballar.",
+
+  // === TEACHERS SECTION ===
+  bachataV3TeachersTitle: 'Aprèn de Campions Mundials',
+  bachataV3TeachersSubtitle:
+    'Els nostres professors han ballat en escenaris internacionals i guanyat campionats mundials. Ara comparteixen el seu art amb tu.',
+  bachataV3Teacher1Specialty: 'Bachata Sensual | Musicalitat | Campió Mundial Salsa LA',
+  bachataV3Teacher1Bio:
+    'Campió Mundial de Salsa LA juntament amb Eugenia Trujillo. Especialista en bachata sensual amb enfocament en musicalitat i connexió profunda en parella. La seva capacitat per interpretar la música i traduir-la en moviment fa de cada classe una experiència única.',
+  bachataV3Teacher2Specialty: 'Bachata Sensual | Lady Style | Campiona Mundial Salsa LA',
+  bachataV3Teacher2Bio:
+    "Mestra i ballarina internacional uruguaiana. Campiona Mundial de Salsa LA amb Mathias Font. El seu carisma i proximitat la fan una de les professores més estimades de Farray's. Especialista en tècnica femenina i bachata lady style.",
+  bachataV3Teacher3Specialty: 'Bachata Sensual | Principiants',
+  bachataV3Teacher3Bio:
+    "Talent emergent de l'escena de bachata de Barcelona amb un do per connectar amb els alumnes. Especialista en classes per a principiants amb paciència i energia que inspiren. Ja compta amb una gran comunitat de seguidors fidels.",
+  bachataV3Teacher4Specialty: 'Bachata Sensual | Lady Style',
+  bachataV3Teacher4Bio:
+    "Talent emergent que Farray's va apostar fort. Parella de Carlos Canto, junts estan florint com una de les parelles més prometedores de l'escena de Barcelona. Els seus alumnes es converteixen en fans i seguidors fidels.",
+  bachataV3Teacher5Specialty: 'Bachata Sensual | Contemporani',
+  bachataV3Teacher5Bio:
+    "Talent emergent de l'escena de Barcelona, captiva pel seu talent, carisma i capacitat d'interpretació musical. La seva formació en dansa contemporània aporta una fluïdesa única al seu estil de bachata sensual.",
+
+  // === PREPARE CLASS SECTION ===
+  bachataV3PrepareTitle: 'Prepara la Teva Primera Classe',
+  bachataV3PrepareSubtitle: 'Tot el que necessites saber abans de començar',
+  bachataV3PrepareWhatToBring1: 'Roba còmoda',
+  bachataV3PrepareWhatToBring2: 'Sabates de ball o esportives netes',
+  bachataV3PrepareWhatToBring3: "Ampolla d'aigua",
+  bachataV3PrepareWhatToBring4: 'Bona actitud',
+  bachataV3PrepareWhatToBring5: 'Pots venir sol/a o en parella',
+  bachataV3PrepareBefore1: 'Menja alguna cosa lleugera 1-2 hores abans',
+  bachataV3PrepareBefore2: 'Estira a casa si pots',
+  bachataV3PrepareBefore3: 'Arriba 10 minuts abans el primer dia',
+  bachataV3PrepareAvoid1: 'Menjar massa just abans de classe',
+  bachataV3PrepareAvoid2: 'Venir sense haver-te hidratat',
+  bachataV3PrepareAvoid3: 'Portar joies que puguin ratllar',
+
+  // === IDENTIFICATION SECTION ===
+  bachataV3IdentificationTitle: 'Aquesta Classe és per a Tu?',
+  bachataV3IdentificationSubtitle:
+    "Si t'identifiques amb alguna d'aquestes situacions, la bachata sensual a Farray's t'espera:",
+  bachataV3IdentificationItem1:
+    "Sempre has volgut ballar però mai t'has atrevit a fer el primer pas",
+  bachataV3IdentificationItem2:
+    'Busques alguna cosa diferent del gimnàs per mantenir-te en forma mentre et diverteixes',
+  bachataV3IdentificationItem3:
+    'Vols connectar amb la teva parella a través del ball o conèixer gent que comparteixi la teva passió',
+  bachataV3IdentificationItem4: "T'encanta la música bachata i vols expressar-la amb el teu cos",
+  bachataV3IdentificationItem5:
+    'Has provat altres balls però et sent atret per la sensualitat i connexió de la bachata',
+  bachataV3IdentificationItem6: 'Vols anar a socials i festes sentint-te segur a la pista de ball',
+  bachataV3IdentificationTransition:
+    "Si alguna cosa d'això ressona amb tu, estàs al lloc correcte.",
+  bachataV3IdentificationNeedEnroll:
+    'Només necessites fer el primer pas. Nosaltres ens encarreguem de la resta.',
+
+  // === TRANSFORMATION SECTION ===
+  bachataV3TransformationTitle: 'Com et Transformarà la Bachata Sensual?',
+  bachataV3TransformationSubtitle:
+    "Més enllà dels passos i els girs, la bachata sensual canvia la manera en què et mous, connectes i t'expresses.",
+  bachataV3TransformationItem1Title: 'Connexió amb el Teu Cos',
+  bachataV3TransformationItem1Desc:
+    "Aprendràs a moure't amb fluïdesa, sentir cada múscul i expressar emocions a través del moviment.",
+  bachataV3TransformationItem2Title: 'Confiança Social',
+  bachataV3TransformationItem2Desc:
+    'Entraràs a qualsevol festa sabent que pots ballar amb qualsevol. Aquesta seguretat transforma com et relaciones amb els altres.',
+  bachataV3TransformationItem3Title: 'Forma Física',
+  bachataV3TransformationItem3Desc:
+    "Ballar bachata crema 300-400 calories per hora i ni t'adones perquè t'ho passes molt bé.",
+  bachataV3TransformationItem4Title: 'Musicalitat',
+  bachataV3TransformationItem4Desc:
+    "Escoltaràs la música d'una nova manera. Cada pausa, cada break, cada canvi tindrà sentit al teu cos.",
+  bachataV3TransformationItem5Title: 'Comunitat Autèntica',
+  bachataV3TransformationItem5Desc:
+    "T'uniràs a una comunitat de persones que comparteixen la teva passió. Amistats que perduren més enllà de la pista de ball.",
+  bachataV3TransformationItem6Title: 'Expressió Creativa',
+  bachataV3TransformationItem6Desc:
+    'La bachata sensual et permet expressar qui ets. Cada ball és únic, cada interpretació és personal.',
+
+  // === WHY CHOOSE SECTION ===
+  bachataV3WhyChooseTitle: "Per Què Triar Farray's per a Bachata Sensual?",
+  bachataV3WhyChooseSubtitle: "No som una escola qualsevol. Som on s'entrenen els campions.",
+  bachataV3WhyChooseItem1Title: 'Professors Campions Mundials',
+  bachataV3WhyChooseItem1Desc:
+    "Mathias i Eugenia són Campions Mundials de Salsa LA. La seva experiència en escenaris internacionals es tradueix en una qualitat d'ensenyament sense parió.",
+  bachataV3WhyChooseItem2Title: 'Mètode Progressiu',
+  bachataV3WhyChooseItem2Desc:
+    "El nostre sistema de nivells assegura que sempre estiguis aprenent al teu ritme. Des de principiant fins a avançat, cada pas es construeix sobre l'anterior.",
+  bachataV3WhyChooseItem3Title: 'Afiliació CID-UNESCO',
+  bachataV3WhyChooseItem3Desc:
+    "Farray's Center està oficialment afiliat al Consell Internacional de Dansa CID-UNESCO. Qualitat garantida.",
+  bachataV3WhyChooseItem4Title: 'Comunitat Activa',
+  bachataV3WhyChooseItem4Desc:
+    "Socials setmanals, viatges a congressos, events especials. Aquí no només aprens, vius l'experiència de la bachata.",
+  bachataV3WhyChooseItem5Title: 'Ubicació Privilegiada',
+  bachataV3WhyChooseItem5Desc:
+    '5 minuts caminant de Plaça Espanya. Fàcil accés en metro, bus i tram.',
+  bachataV3WhyChooseItem6Title: 'Resultats Garantits',
+  bachataV3WhyChooseItem6Desc:
+    'En 3 mesos des de zero a ballar a festes. En 6 mesos et sentiràs un ballarí diferent.',
+  bachataV3WhyChooseItem7Title: 'No Necessites Parella',
+  bachataV3WhyChooseItem7Desc:
+    'Pots venir sol/a. Rotem parelles a classe perquè aprenguis a ballar amb tothom. De fet, és millor per aprendre.',
+
+  // === WHY TODAY SECTION ===
+  bachataV3WhyTodayTitle: 'Per Què Començar Bachata Sensual Avui?',
+  bachataV3WhyTodayP1:
+    'Cada setmana que esperes és una setmana menys ballant. Aquella festa, aquell congrés, aquell viatge... arribarà i tu ja podries estar preparat.',
+  bachataV3WhyTodayP2:
+    'La bachata sensual està al seu punt àlgid. Hi ha events per tot arreu, la comunitat creix, i ara és el millor moment per unir-te. En uns mesos estaràs a la pista preguntant-te per què vas esperar tant.',
+  bachataV3WhyTodayP3:
+    "A Farray's donem la benvinguda a nous alumnes cada setmana. Avui podria ser el teu dia. La primera classe és gratuïta, així que no tens res a perdre i una nova passió a guanyar.",
+
+  // === LOGOS SECTION ===
+  bachataV3LogosTitle: 'Reconeguts pels Millors',
+  bachataV3LogosSubtitle: 'Hem aparegut a TV3, Telecinco, Antena 3 i estem afiliats al CID-UNESCO.',
+
+  // === CULTURAL HISTORY SECTION ===
+  bachataV3CulturalHistoryTitle: 'La Història de la Bachata: De la República Dominicana al Món',
+  bachataV3CulturalShort:
+    'La bachata va néixer a la República Dominicana als anys 60 com a música dels barris populars. El que va començar com a música estigmatitzada per les classes altes es va convertir en un fenomen global.',
+  bachataV3CulturalFull:
+    "La bachata va néixer a la República Dominicana als anys 60 com a música dels barris populars. El que va començar com a música estigmatitzada per les classes altes es va convertir en un fenomen global després de l'èxit de Juan Luis Guerra als anys 90. La bachata sensual va emergir a Espanya i Europa als anys 2010, afegint elements de moviment corporal i connexió en parella que van revolucionar el ball social. Avui, la bachata es balla a tot el món i la bachata sensual és l'estil més popular a Europa, especialment a ciutats com Barcelona on escoles com Farray's formen milers d'estudiants cada any.",
+
+  // === FAQ SECTION ===
+  bachataV3FaqTitle: 'Preguntes Freqüents sobre Bachata Sensual',
+  bachataV3FaqSubtitle: 'Responem els teus dubtes perquè puguis ballar amb confiança.',
+  bachataV3FaqQ1: "Què és la bachata sensual i com es diferencia d'altres estils de bachata?",
+  bachataV3FaqA1:
+    "La bachata sensual és una evolució moderna de la bachata dominicana que posa èmfasi en la connexió corporal, la interpretació musical i moviments fluids com ones i dips. A diferència de la bachata dominicana (més ràpida, amb més treball de peus) o la bachata fusion (barrejada amb altres estils), la bachata sensual se centra en la connexió en parella i l'expressió corporal. A Farray's ensenyem principalment bachata sensual, encara que toquem elements de bachata social i bachata fusion a les classes avançades.",
+  bachataV3FaqQ2: "Necessito parella per aprendre bachata a Farray's?",
+  bachataV3FaqA2:
+    'No, no necessites venir amb parella. A les nostres classes rotem parelles constantment, cosa que de fet és millor per aprendre perquè aprens a ballar amb diferents persones. Molts dels nostres alumnes venen sols i així és com fan amics i fins i tot parelles.',
+  bachataV3FaqQ3: 'Quina diferència hi ha entre bachata sensual i bachata dominicana?',
+  bachataV3FaqA3:
+    "La bachata dominicana és l'estil original, més ràpid, amb més treball de peus i més proper a les arrels dominicanes. La bachata sensual és una evolució europea que se centra més en la connexió corporal, ones i dips. A Farray's ensenyem bachata sensual com a estil principal perquè és el més ballat als socials europeus, però incloem elements de tècnica dominicana per donar-te una base sòlida.",
+  bachataV3FaqQ4: 'Quant temps es tarda a aprendre bachata sensual?',
+  bachataV3FaqA4:
+    'En 3 mesos de classes regulars podràs ballar còmodament a qualsevol social. En 6 mesos et sentiràs un ballarí completament diferent. Per descomptat, la bachata és un art que segueixes perfeccionant tota la vida, però per gaudir dels socials, 3-6 mesos és suficient.',
+  bachataV3FaqQ5: 'Quin nivell de bachata necessito per ballar a festes socials?',
+  bachataV3FaqA5:
+    "Amb el nostre nivell bàsic (uns 3 mesos) ja pots gaudir de les festes de bachata social. Sabràs prou moviments per passar-t'ho bé i connectar amb la teva parella. Als socials es balla amb tots els nivells, així que sempre trobaràs gent amb qui ballar.",
+  bachataV3FaqQ6: 'Puc aprendre bachata sense experiència prèvia en ball?',
+  bachataV3FaqA6:
+    "Absolutament! Molts dels nostres alumnes no han ballat mai abans. La nostra classe de principiants està dissenyada específicament per a persones que comencen des de zero. No necessites ritme, experiència ni habilitats especials. T'ho ensenyem tot.",
+  bachataV3FaqQ7: "Què és la bachata fusion i l'ensenyeu a Farray's?",
+  bachataV3FaqA7:
+    "La bachata fusion és un estil que barreja bachata amb elements de hip hop, contemporani, zouk i altres balls. A Farray's el nostre enfocament principal és la bachata sensual, però els nostres professors avançats inclouen elements de fusion a les seves coreografies. Si t'interessa específicament la fusion, pregunta pels nostres masterclasses i events especials.",
+  bachataV3FaqQ8: "Quin és el mètode d'ensenyament de bachata a Farray's?",
+  bachataV3FaqA8:
+    "El nostre mètode combina tècnica sòlida amb diversió i expressió creativa. Comencem amb els bàsics (ritme, pas bàsic, girs simples), progressem a connexió corporal i ones, i finalment treballem la musicalitat i l'estil personal. Els nostres professors són campions mundials que han adaptat els seus coneixements per a tots els nivells.",
+  bachataV3FaqQ9: "Hi ha events socials de bachata a Farray's?",
+  bachataV3FaqA9:
+    'Sí! Organitzem pràctiques setmanals i socials mensuals on pots ballar el que aprens a classe. També organitzem viatges a congressos de bachata nacionals i internacionals. La nostra comunitat és molt activa i sempre tindràs on ballar.',
+  bachataV3FaqQ10: 'Quant costen les classes de bachata a Barcelona?',
+  bachataV3FaqA10:
+    "A Farray's tenim opcions flexibles: classes individuals, paquets mensuals i passis il·limitats. La primera classe és GRATIS perquè puguis provar sense compromís. Després d'això, els preus comencen a 40€/mes per 1 classe setmanal. Consulta la nostra pàgina de tarifes per a més detalls.",
+
+  // === NEARBY SECTION ===
+  bachataV3NearbyTitle: 'Classes de Bachata Sensual a Prop Teu',
+  bachataV3NearbySubtitle:
+    "Farray's Center està situat prop de Plaça Espanya, amb excel·lents connexions des de tot Barcelona.",
+  bachataV3NearbyFrom: 'des de',
+  bachataV3NearbyAccess: 'Com arribar',
+
+  // === FINAL CTA SECTION ===
+  bachataV3FinalCtaTitle: 'Preparat per Començar a Ballar Bachata Sensual?',
+  bachataV3FinalCtaSubtitle:
+    "La teva primera classe és GRATIS. Vine a conèixer-nos i descobreix per què milers d'estudiants han triat Farray's.",
+  bachataV3FinalCtaPrimary: 'Reservar Classe Gratis',
+  bachataV3FinalCtaSecondary: 'Veure Tots els Horaris',
+  bachataV3FinalCtaGuarantee: '100% garantia de satisfacció en la teva primera classe',
+  bachataV3FinalCtaSocial: 'Uneix-te a la nostra comunitat de +15.000 estudiants',
+
+  // === GEO OPTIMIZATION: Citable Statistics ===
+  bachataV3CitableDefinicion:
+    'La bachata sensual és un estil de ball que va evolucionar de la bachata dominicana a Espanya i Europa durant els anys 2010. Posa èmfasi en la connexió corporal, ones i interpretació musical per sobre del treball de peus.',
+  bachataV3CitableOrigen:
+    "La bachata va originar-se a la República Dominicana als anys 60. Inicialment es considerava música de les classes baixes fins que l'èxit internacional de Juan Luis Guerra als anys 90 va elevar el seu estatus globalment.",
+  bachataV3CitableSensualVsDominicana:
+    'La bachata dominicana és més ràpida amb més treball de peus; la bachata sensual és més lenta amb més moviment corporal i connexió en parella. Ambdós estils es ballen als socials internacionals.',
+  bachataV3CitableConexion:
+    'La connexió en parella a la bachata sensual es refereix a la capacitat de comunicar-se a través del cos, anticipant i responent als moviments en sincronia amb la música.',
+  bachataV3CitableMetodologia:
+    "Farray's Center utilitza un mètode progressiu amb 4 nivells: Principiant (0-3 mesos), Bàsic (3-6 mesos), Intermedi (6-18 mesos) i Avançat (+18 mesos).",
+  bachataV3CitableFact1:
+    'Una hora ballant bachata crema entre 300-400 calories, equivalent a 30 minuts de córrer però molt més divertit.',
+  bachataV3CitableFact2:
+    "Farray's Center té professors campions mundials de Salsa LA (Mathias Font i Eugenia Trujillo) ensenyant bachata sensual.",
+  bachataV3CitableFact3:
+    "Farray's Dance & Cultural Center està afiliat al CID-UNESCO, el Consell Internacional de Dansa reconegut per la UNESCO.",
+
+  // ==========================================================================
+  // BLOG ARTICLE: SALSA - EL RITME QUE VA CONQUERIR EL MÓN
+  // ==========================================================================
+
+  // === META ===
+  blogSalsaRitmo_title: 'Salsa: el Ritme que va Conquerir el Món, del Carib a Barcelona',
+  blogSalsaRitmo_metaDescription:
+    "Descobreix els orígens, estils i formes de ballar salsa, el gènere que va fusionar cultures i avui es viu a Barcelona a Farray's International Dance Center.",
+  blogSalsaRitmo_excerpt: 'Del Carib al món: història, estils i com aprendre salsa a Barcelona',
+  blogSalsaRitmo_breadcrumbCurrent: 'Salsa: el Ritme que va Conquerir el Món',
+
+  // === SUMMARY BULLETS ===
+  blogSalsaRitmo_summaryBullet1:
+    'La salsa va néixer de la fusió afrocubana entre ritmes africans i melodies europees',
+  blogSalsaRitmo_summaryBullet2:
+    'Existeixen múltiples estils: salsa cubana, en línia, calenya i porto-riquenya',
+  blogSalsaRitmo_summaryBullet3:
+    'La roda de casino és el format més social i divertit del ball salser',
+  blogSalsaRitmo_summaryBullet4: "Aprèn salsa a Farray's Barcelona amb professionals certificats",
+
+  // === STATS ===
+  blogSalsaRitmo_statNYCLabel: 'Explosió a Nova York',
+  blogSalsaRitmo_statEstilosLabel: 'Estils principals de salsa',
+
+  // === INTRODUCTION ===
+  blogSalsaRitmo_intro:
+    "Poques danses concentren tanta història i passió com la **salsa**. Més que un ball, és el resultat d'un llarg viatge entre cultures, d'anades i tornades entre Àfrica, Europa, el Carib i les Amèriques. La seva arrel és a Cuba, en la trobada entre les [tradicions rítmiques africanes](https://www.arecibo.inter.edu/wp-content/uploads/biblioteca/pdf/salsa.pdf) i les melodies europees.",
+  blogSalsaRitmo_intro2:
+    "Però la seva expansió i evolució la van convertir en **l'idioma musical per excel·lència de la comunitat llatina**. Parlar de salsa moderna és parlar d'un gènere viu, canviant i poderós, on cada pas conta segles de ritme i mestissatge.",
+
+  // === SECTION 1: ORÍGENS ===
+  blogSalsaRitmo_origenesTitle: 'Orígens de la Salsa: Mestissatge i Evolució',
+  blogSalsaRitmo_origenesContent1:
+    'Abans que existís la salsa tal com la coneixem, Cuba ja ballava i tocava una àmplia gamma de ritmes que avui formen el seu ADN: el **[danzón](https://www.muchomasquebaile.es/wp-content/uploads/2021/11/Historia-de-la-salsa-desde-las-raices-hasta-el-1975.pdf)**, el **son**, la **guaracha**, la **rumba** i el **chachachá**. El danzón, molt popular des de finals del segle XIX, unia elegància i proximitat entre parelles; mentre que el **son cubà** —de finals del 1800— barrejava percussió africana amb guitarres espanyoles, donant origen a la base rítmica de la salsa.',
+  blogSalsaRitmo_origenesContent2:
+    "En els anys següents, gèneres com el **mambo** (popularitzat per Dámaso Pérez Prado) i el **chachachá** (creat per Enrique Jorrín) van continuar ampliant l'horitzó del ball cubà. A través de la migració caribenca, aquests estils van viatjar cap a **Puerto Rico, Veneçuela, República Dominicana i Estats Units**, especialment a **[Nova York](https://dialnet.unirioja.es/descarga/articulo/8889123.pdf)**, on es van fusionar amb el **jazz**, el **soul** i el **R&B**. D'aquella trobada va néixer la salsa moderna: una música urbana, vibrant i comunitària, símbol d'[identitat per a milions de persones](https://es.wikipedia.org/wiki/Salsa_%28g%C3%A9nero_musical%29).",
+
+  // === SECTION 2: ESTILS ===
+  blogSalsaRitmo_estilosTitle: 'Estils i Formes de Ballar Salsa',
+  blogSalsaRitmo_estilosIntro:
+    'Encara que tots els estils comparteixen la mateixa base rítmica, existeixen variants que reflecteixen les diferents arrels culturals de la salsa:',
+  blogSalsaRitmo_estilosListaTitle: 'Principals estils de salsa',
+  blogSalsaRitmo_estiloCubana:
+    "**[Salsa cubana o casino](/ca/clases/salsa-cubana-barcelona):** circular, improvisada i plena de connexió entre els balladors. És l'estil més tradicional i social.",
+  blogSalsaRitmo_estiloLinea:
+    '**[Salsa en línia](/ca/clases/salsa-en-linea-barcelona):** estructurada sobre una línia frontal, amb estil elegant i urbà, desenvolupada a Nova York i Los Angeles.',
+  blogSalsaRitmo_estiloCaleña:
+    "**Salsa calenya (Colòmbia):** veloç, acrobàtica i rítmica; destaca el treball de peus i l'energia explosiva.",
+  blogSalsaRitmo_estiloPuertorriqueña:
+    '**Salsa porto-riquenya:** musical i precisa, amb girs amplis i gran èmfasi en la sincronia amb la música.',
+  blogSalsaRitmo_estilosCierre:
+    "Cada estil parla del seu lloc d'origen, però tots comparteixen un mateix esperit: celebrar la vida a través del moviment. Avui, la salsa és un dels balls més practicats al món, ensenyat a escoles, clubs i festivals internacionals, i Barcelona no n'és l'excepció!",
+  blogSalsaRitmo_imageEstilosCaption:
+    'Els diferents estils de salsa: cubana, en línia, calenya i porto-riquenya',
+
+  // === SECTION 3: RODA DE CASINO ===
+  blogSalsaRitmo_ruedaTitle: 'Roda de Casino: la Salsa que es Balla en Grup',
+  blogSalsaRitmo_ruedaContent1:
+    "Un dels formats més socials i divertits de la salsa és la **[roda de casino](https://es.wikipedia.org/wiki/Rueda_de_casino)**, nascuda a **Cuba als anys 70**. El seu nom prové del **Club Casino Deportivo de l'Havana**, on s'organitzaven aquestes coreografies grupals.",
+  blogSalsaRitmo_ruedaContent2:
+    "En una roda, diverses parelles ballen formant un **cercle sincronitzat** guiades per un *líder* o *cantant*, que indica cada figura o canvi. Les parelles giren, s'entrecreuen i s'intercanvien constantment, creant un espectacle dinàmic, ple d'energia col·lectiva. A **[Farray's International Dance Center](/ca/clases)**, la roda de casino és una de les activitats més estimades. No només millora la tècnica i la memòria, sinó que també enforteix el treball en equip, l'escolta musical i el sentit de comunitat.",
+  blogSalsaRitmo_imageRuedaCaption: "Roda de casino a Farray's: ball grupal cubà ple d'energia",
+
+  // === SECTION 4: PROJECCIÓ I ÀNIMA ===
+  blogSalsaRitmo_proyeccionTitle: "La Projecció i l'Ànima del Ball Salser",
+  blogSalsaRitmo_proyeccionContent1:
+    "La salsa és pura comunicació. Cada parella conta una història diferent: l'home proposa, guia; la dona respon, interpreta i brilla amb expressió i elegància. No obstant això, aquestes convencions tradicionals avui es reinterpreten des de la igualtat: a la pista, tots dos lideren, tots dos creen.",
+  blogSalsaRitmo_proyeccionContent2:
+    'A les nostres classes és habitual veure **dones ballant juntes** o persones canviant de rol per aprendre ambdós costats del ball. La màgia del gènere rau en la **[projecció escènica](https://dialnet.unirioja.es/descarga/articulo/8889123.pdf)**. La connexió, el somriure, el joc de mirades i la improvisació fan que la salsa sigui un dels espectacles més captivadors del món.',
+
+  // === SECTION 5: VESTUARI ===
+  blogSalsaRitmo_vestuarioTitle: 'Vestuari per Ballar Salsa: Llibertat i Comoditat',
+  blogSalsaRitmo_vestuarioContent:
+    "La salsa exigeix moviment, llibertat i expressió, així que la roba ha d'acompanyar aquesta fluïdesa:",
+  blogSalsaRitmo_vestuarioListaTitle: 'Recomanacions de vestuari',
+  blogSalsaRitmo_vestuarioMujeres:
+    '**Per a dones:** vestits o faldilles amb vol que ressaltin les voltes i el dinamisme; sabates còmodes de taló mitjà o alt, amb bona subjecció.',
+  blogSalsaRitmo_vestuarioHombres:
+    '**Per a homes:** camises lleugeres, pantalons que permetin moviment i calçat flexible (evitar roba molt ajustada).',
+  blogSalsaRitmo_vestuarioCierre:
+    "La regla és simple: **balla amb allò que et faci sentir bé i et permeti expressar el teu estil**. L'important no és la roba, sinó l'actitud.",
+
+  // === SECTION 6: BENEFICIS ===
+  blogSalsaRitmo_beneficiosTitle: "Per Què Aprendre Salsa a Barcelona (i a Farray's)",
+  blogSalsaRitmo_beneficiosIntro:
+    'Ballar salsa no és només una activitat física: és un aprenentatge emocional, social i cultural. Els seus [beneficis estan més que demostrats](https://www.nejm.org/doi/full/10.1056/NEJMoa022252):',
+  blogSalsaRitmo_beneficiosListaTitle: 'Beneficis de ballar salsa',
+  blogSalsaRitmo_beneficioSalud:
+    '**Salut i benestar:** millora la coordinació, la resistència i [allibera endorfines](https://www.frontiersin.org/articles/10.3389/fpsyg.2019.01221/full) que augmenten la felicitat.',
+  blogSalsaRitmo_beneficioCultura:
+    '**Cultura viva:** et connecta amb les arrels afrocaribenques i amb la història llatina.',
+  blogSalsaRitmo_beneficioComunidad:
+    "**Comunitat:** t'integra en una xarxa de gent alegre i diversa.",
+  blogSalsaRitmo_beneficioConfianza:
+    '**Confiança personal:** aprens a expressar-te, improvisar i gaudir del present.',
+  blogSalsaRitmo_beneficiosFarrays:
+    "A **[Farray's International Dance Center](/ca/clases)**, les nostres classes de salsa a Barcelona són molt més que un entrenament: són una experiència completa. Aquí ensenyem **[salsa cubana](/ca/clases/salsa-cubana-barcelona)**, **roda de casino**, **[salsa en línia](/ca/clases/salsa-en-linea-barcelona)** i estils afrollatins contemporanis, amb un equip docent que entén la música tant des de la tècnica com des de l'ànima.",
+
+  // === SECTION 7: CONCLUSIÓ ===
+  blogSalsaRitmo_conclusionTitle: 'Conclusió: el Ritme que Uneix Cultures',
+  blogSalsaRitmo_conclusionContent:
+    "La salsa és alegria, tradició i modernitat en moviment. És història ballada. La seva essència viatja des dels tambors africans fins a les pistes europees, reinventant-se sense perdre la seva arrel. A **[Farray's International Dance Center](/ca)** celebrem aquesta herència cada dia: formem balladors, però també guardians d'una cultura viva.",
+  blogSalsaRitmo_conclusionCTA:
+    'Si vols aprendre, gaudir i sentir com batega el Carib al cor del Mediterrani, aquest és el teu lloc. **Balla salsa, viu la història.** [Descobreix els nostres horaris i classes](/ca/horarios-precios).',
+
+  // === FAQ ===
+  blogSalsaRitmo_faqTitle: 'Preguntes Freqüents sobre Salsa',
+  blogSalsaRitmo_faq1Question: "Quin és l'origen de la salsa com a ball?",
+  blogSalsaRitmo_faq1Answer:
+    'La salsa té les seves arrels a Cuba, on el son cubà, el danzón, la guaracha i la rumba es van fusionar amb ritmes africans. Als anys 60, aquests estils van viatjar a Nova York on es van barrejar amb jazz i soul, donant origen a la salsa moderna que coneixem avui.',
+  blogSalsaRitmo_faq2Question: 'Quina diferència hi ha entre salsa cubana i salsa en línia?',
+  blogSalsaRitmo_faq2Answer:
+    "La salsa cubana (casino) es balla en cercles, amb moviments improvisats i molta connexió entre parelles. La salsa en línia (estil NY/LA) s'estructura sobre una línia frontal, amb girs més tècnics i un estil més elegant i urbà. Ambdues comparteixen la mateixa base rítmica però tenen personalitats diferents.",
+  blogSalsaRitmo_faq3Question: 'Què és la roda de casino?',
+  blogSalsaRitmo_faq3Answer:
+    "La roda de casino és un format de ball grupal nascut a Cuba als anys 70. Diverses parelles formen un cercle i ballen sincronitzades, seguint les indicacions d'un líder que canta les figures. Les parelles s'intercanvien constantment, creant un espectacle dinàmic i molt divertit.",
+  blogSalsaRitmo_faq4Question: 'Quina roba usar per ballar salsa?',
+  blogSalsaRitmo_faq4Answer:
+    'El més important és la comoditat i llibertat de moviment. Per a dones: vestits o faldilles amb vol i sabates de taló mitjà amb bona subjecció. Per a homes: camises lleugeres, pantalons còmodes i calçat flexible. La regla és ballar amb allò que et faci sentir bé.',
+  blogSalsaRitmo_faq5Question: 'On aprendre salsa a Barcelona?',
+  blogSalsaRitmo_faq5Answer:
+    "A Farray's International Dance Center oferim classes de salsa cubana, salsa en línia i roda de casino per a tots els nivells. Comptem amb professors certificats, un ambient acollidor i una comunitat activa de balladors. Som a Barcelona i pots consultar els nostres horaris a la web.",
 };

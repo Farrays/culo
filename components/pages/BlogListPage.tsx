@@ -20,11 +20,13 @@ import BackToTop from '../BackToTop';
 // Import all article configs
 import { BENEFICIOS_SALSA_CONFIG } from '../../constants/blog/articles/beneficios-bailar-salsa';
 import { HISTORIA_SALSA_CONFIG } from '../../constants/blog/articles/historia-salsa-barcelona';
+import { SALSA_RITMO_CONFIG } from '../../constants/blog/articles/salsa-ritmo-conquisto-mundo';
 
 // Generate article card data from configs
 const ALL_ARTICLES: ArticleCardData[] = [
   getArticleCardData(BENEFICIOS_SALSA_CONFIG),
   getArticleCardData(HISTORIA_SALSA_CONFIG),
+  getArticleCardData(SALSA_RITMO_CONFIG),
 ];
 
 const BlogListPage: React.FC = () => {

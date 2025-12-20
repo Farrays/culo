@@ -22,3 +22,4 @@ export type { CategoryMeta } from './categories';
 // Articles
 export { BENEFICIOS_SALSA_CONFIG } from './articles/beneficios-bailar-salsa';
 export { HISTORIA_SALSA_CONFIG } from './articles/historia-salsa-barcelona';
+export { SALSA_RITMO_CONFIG } from './articles/salsa-ritmo-conquisto-mundo';

@@ -583,6 +583,9 @@ export const es = {
   danceClassesHub_style_sevillanas: 'Sevillanas',
   danceClassesHub_style_telas_aereas: 'Telas Aéreas y Aro',
   danceClassesHub_style_acro_yoga: 'Acro Yoga',
+  danceClassesHub_style_bachata_sensual: 'Bachata Sensual',
+  danceClassesHub_style_bachata_sensual_desc:
+    'Bachata sensual con campeones mundiales. Ondulaciones, conexión en pareja, musicalidad y expresión corporal. Desde principiante absoluto hasta nivel avanzado con Mathias Font y Eugenia Trujillo.',
   danceClassesHub_style_salsa_bachata: 'Salsa y Bachata',
   danceClassesHub_style_salsa_bachata_desc:
     'Bailes latinos en pareja que combinan pasión, ritmo y conexión. Salsa cubana con sabor caribeño auténtico y Bachata con sensualidad dominicana. Clases para todos los niveles donde aprenderás técnica, leading/following y musicalidad.',
@@ -8307,6 +8310,7 @@ Nuestro profesor **Marcos Martínez**, juez de competiciones internacionales y r
   navSalsaLadyStyle: 'Salsa Lady Style',
   navFolkloreCubano: 'Folklore Cubano',
   navBachataLadyStyle: 'Bachata Lady Style',
+  navBachataSensual: 'Bachata Sensual',
   navTimba: 'Timba',
 
   // Page SEO
@@ -12781,4 +12785,130 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
     "Mathias Font y Eugenia Trujillo, profesores de bachata sensual en Farray's, son campeones mundiales de Salsa LA.",
   bachataV3CitableFact3:
     "Farray's International Dance Center Barcelona: academia certificada CID-UNESCO con más de 15.000 estudiantes formados y valoración 4.9/5 en Google.",
+
+  // ==========================================================================
+  // BLOG ARTICLE: SALSA - EL RITMO QUE CONQUISTÓ EL MUNDO
+  // ==========================================================================
+
+  // === META ===
+  blogSalsaRitmo_title: 'Salsa: el Ritmo que Conquistó el Mundo, del Caribe a Barcelona',
+  blogSalsaRitmo_metaDescription:
+    "Descubre los orígenes, estilos y formas de bailar salsa, el género que fusionó culturas y hoy se vive en Barcelona en Farray's International Dance Center.",
+  blogSalsaRitmo_excerpt:
+    'Del Caribe al mundo: historia, estilos y cómo aprender salsa en Barcelona',
+  blogSalsaRitmo_breadcrumbCurrent: 'Salsa: el Ritmo que Conquistó el Mundo',
+
+  // === SUMMARY BULLETS ===
+  blogSalsaRitmo_summaryBullet1:
+    'La salsa nació de la fusión afrocubana entre ritmos africanos y melodías europeas',
+  blogSalsaRitmo_summaryBullet2:
+    'Existen múltiples estilos: salsa cubana, en línea, caleña y puertorriqueña',
+  blogSalsaRitmo_summaryBullet3:
+    'La rueda de casino es el formato más social y divertido del baile salsero',
+  blogSalsaRitmo_summaryBullet4:
+    "Aprende salsa en Farray's Barcelona con profesionales certificados",
+
+  // === STATS ===
+  blogSalsaRitmo_statNYCLabel: 'Explosión en Nueva York',
+  blogSalsaRitmo_statEstilosLabel: 'Estilos principales de salsa',
+
+  // === INTRODUCTION ===
+  blogSalsaRitmo_intro:
+    'Pocas danzas concentran tanta historia y pasión como la **salsa**. Más que un baile, es el resultado de un largo viaje entre culturas, de idas y vueltas entre África, Europa, el Caribe y las Américas. Su raíz está en Cuba, en el encuentro entre las [tradiciones rítmicas africanas](https://www.arecibo.inter.edu/wp-content/uploads/biblioteca/pdf/salsa.pdf) y las melodías europeas.',
+  blogSalsaRitmo_intro2:
+    'Pero su expansión y evolución la convirtieron en **el idioma musical por excelencia de la comunidad latina**. Hablar de salsa moderna es hablar de un género vivo, cambiante y poderoso, donde cada paso cuenta siglos de ritmo y mestizaje.',
+
+  // === SECTION 1: ORÍGENES ===
+  blogSalsaRitmo_origenesTitle: 'Orígenes de la Salsa: Mestizaje y Evolución',
+  blogSalsaRitmo_origenesContent1:
+    'Antes de que existiera la salsa tal como la conocemos, Cuba ya bailaba y tocaba una amplia gama de ritmos que hoy forman su ADN: el **[danzón](https://www.muchomasquebaile.es/wp-content/uploads/2021/11/Historia-de-la-salsa-desde-las-raices-hasta-el-1975.pdf)**, el **son**, la **guaracha**, la **rumba** y el **chachachá**. El danzón, muy popular desde finales del siglo XIX, unía elegancia y cercanía entre parejas; mientras que el **son cubano** —de finales de 1800— mezclaba percusión africana con guitarras españolas, dando origen a la base rítmica de la salsa.',
+  blogSalsaRitmo_origenesContent2:
+    'En los años siguientes, géneros como el **mambo** (popularizado por Dámaso Pérez Prado) y el **chachachá** (creado por Enrique Jorrín) siguieron ampliando el horizonte del baile cubano. A través de la migración caribeña, estos estilos viajaron hacia **Puerto Rico, Venezuela, República Dominicana y Estados Unidos**, especialmente a **[Nueva York](https://dialnet.unirioja.es/descarga/articulo/8889123.pdf)**, donde se fusionaron con el **jazz**, el **soul** y el **R&B**. De ese encuentro nació la salsa moderna: una música urbana, vibrante y comunitaria, símbolo de [identidad para millones de personas](https://es.wikipedia.org/wiki/Salsa_%28g%C3%A9nero_musical%29).',
+
+  // === SECTION 2: ESTILOS ===
+  blogSalsaRitmo_estilosTitle: 'Estilos y Formas de Bailar Salsa',
+  blogSalsaRitmo_estilosIntro:
+    'Aunque todos los estilos comparten la misma base rítmica, existen variantes que reflejan las distintas raíces culturales de la salsa:',
+  blogSalsaRitmo_estilosListaTitle: 'Principales estilos de salsa',
+  blogSalsaRitmo_estiloCubana:
+    '**[Salsa cubana o casino](/es/clases/salsa-cubana-barcelona):** circular, improvisada y llena de conexión entre los bailarines. Es el estilo más tradicional y social.',
+  blogSalsaRitmo_estiloLinea:
+    '**[Salsa en línea](/es/clases/salsa-en-linea-barcelona):** estructurada sobre una línea frontal, con estilo elegante y urbano, desarrollada en Nueva York y Los Ángeles.',
+  blogSalsaRitmo_estiloCaleña:
+    '**Salsa caleña (Colombia):** veloz, acrobática y rítmica; destaca el trabajo de pies y la energía explosiva.',
+  blogSalsaRitmo_estiloPuertorriqueña:
+    '**Salsa puertorriqueña:** musical y precisa, con giros amplios y gran énfasis en la sincronía con la música.',
+  blogSalsaRitmo_estilosCierre:
+    'Cada estilo habla de su lugar de origen, pero todos comparten un mismo espíritu: celebrar la vida a través del movimiento. Hoy, la salsa es uno de los bailes más practicados en el mundo, enseñado en escuelas, clubes y festivales internacionales, ¡y Barcelona no es la excepción!',
+  blogSalsaRitmo_imageEstilosCaption:
+    'Los diferentes estilos de salsa: cubana, en línea, caleña y puertorriqueña',
+
+  // === SECTION 3: RUEDA DE CASINO ===
+  blogSalsaRitmo_ruedaTitle: 'Rueda de Casino: la Salsa que se Baila en Grupo',
+  blogSalsaRitmo_ruedaContent1:
+    'Uno de los formatos más sociales y divertidos de la salsa es la **[rueda de casino](https://es.wikipedia.org/wiki/Rueda_de_casino)**, nacida en **Cuba en los años 70**. Su nombre viene del **Club Casino Deportivo de La Habana**, donde se organizaban estas coreografías grupales.',
+  blogSalsaRitmo_ruedaContent2:
+    "En una rueda, varias parejas bailan formando un **círculo sincronizado** guiadas por un *líder* o *cantante*, que indica cada figura o cambio. Las parejas giran, se entrecruzan y se intercambian constantemente, creando un espectáculo dinámico, lleno de energía colectiva. En **[Farray's International Dance Center](/es/clases)**, la rueda de casino es una de las actividades más queridas. No solo mejora la técnica y la memoria, sino que también fortalece el trabajo en equipo, la escucha musical y el sentido de comunidad.",
+  blogSalsaRitmo_imageRuedaCaption:
+    "Rueda de casino en Farray's: baile grupal cubano lleno de energía",
+
+  // === SECTION 4: PROYECCIÓN Y ALMA ===
+  blogSalsaRitmo_proyeccionTitle: 'La Proyección y el Alma del Baile Salsero',
+  blogSalsaRitmo_proyeccionContent1:
+    'La salsa es pura comunicación. Cada pareja cuenta una historia diferente: el hombre propone, guía; la mujer responde, interpreta y brilla con expresión y elegancia. Sin embargo, esas convenciones tradicionales hoy se reinterpretan desde la igualdad: en la pista, ambos lideran, ambos crean.',
+  blogSalsaRitmo_proyeccionContent2:
+    'En nuestras clases es habitual ver **mujeres bailando juntas** o personas cambiando de rol para aprender ambos lados del baile. La magia del género radica en la **[proyección escénica](https://dialnet.unirioja.es/descarga/articulo/8889123.pdf)**. La conexión, la sonrisa, el juego de miradas y la improvisación hacen que la salsa sea uno de los espectáculos más cautivadores del mundo.',
+
+  // === SECTION 5: VESTUARIO ===
+  blogSalsaRitmo_vestuarioTitle: 'Vestuario para Bailar Salsa: Libertad y Comodidad',
+  blogSalsaRitmo_vestuarioContent:
+    'La salsa exige movimiento, libertad y expresión, así que la ropa debe acompañar esa fluidez:',
+  blogSalsaRitmo_vestuarioListaTitle: 'Recomendaciones de vestuario',
+  blogSalsaRitmo_vestuarioMujeres:
+    '**Para mujeres:** vestidos o faldas con vuelo que resalten las vueltas y el dinamismo; zapatos cómodos de tacón medio o alto, con buena sujeción.',
+  blogSalsaRitmo_vestuarioHombres:
+    '**Para hombres:** camisas ligeras, pantalones que permitan movimiento y calzado flexible (evitar ropa muy ajustada).',
+  blogSalsaRitmo_vestuarioCierre:
+    'La regla es simple: **baila con lo que te haga sentir bien y te permita expresar tu estilo**. Lo importante no es la ropa, sino la actitud.',
+
+  // === SECTION 6: BENEFICIOS ===
+  blogSalsaRitmo_beneficiosTitle: "Por Qué Aprender Salsa en Barcelona (y en Farray's)",
+  blogSalsaRitmo_beneficiosIntro:
+    'Bailar salsa no es solo una actividad física: es un aprendizaje emocional, social y cultural. Sus [beneficios están más que demostrados](https://www.nejm.org/doi/full/10.1056/NEJMoa022252):',
+  blogSalsaRitmo_beneficiosListaTitle: 'Beneficios de bailar salsa',
+  blogSalsaRitmo_beneficioSalud:
+    '**Salud y bienestar:** mejora la coordinación, la resistencia y [libera endorfinas](https://www.frontiersin.org/articles/10.3389/fpsyg.2019.01221/full) que aumentan la felicidad.',
+  blogSalsaRitmo_beneficioCultura:
+    '**Cultura viva:** te conecta con las raíces afrocaribeñas y con la historia latina.',
+  blogSalsaRitmo_beneficioComunidad:
+    '**Comunidad:** te integra en una red de gente alegre y diversa.',
+  blogSalsaRitmo_beneficioConfianza:
+    '**Confianza personal:** aprendes a expresarte, improvisar y disfrutar del presente.',
+  blogSalsaRitmo_beneficiosFarrays:
+    "En **[Farray's International Dance Center](/es/clases)**, nuestras clases de salsa en Barcelona son mucho más que un entrenamiento: son una experiencia completa. Aquí enseñamos **[salsa cubana](/es/clases/salsa-cubana-barcelona)**, **rueda de casino**, **[salsa en línea](/es/clases/salsa-en-linea-barcelona)** y estilos afrolatinos contemporáneos, con un equipo docente que entiende la música tanto desde la técnica como desde el alma.",
+
+  // === SECTION 7: CONCLUSIÓN ===
+  blogSalsaRitmo_conclusionTitle: 'Conclusión: el Ritmo que Une Culturas',
+  blogSalsaRitmo_conclusionContent:
+    "La salsa es alegría, tradición y modernidad en movimiento. Es historia bailada. Su esencia viaja desde los tambores africanos hasta las pistas europeas, reinventándose sin perder su raíz. En **[Farray's International Dance Center](/es)** celebramos esa herencia cada día: formamos bailarines, pero también guardianes de una cultura viva.",
+  blogSalsaRitmo_conclusionCTA:
+    'Si quieres aprender, disfrutar y sentir cómo late el Caribe en pleno Mediterráneo, este es tu lugar. **Baila salsa, vive la historia.** [Descubre nuestros horarios y clases](/es/horarios-precios).',
+
+  // === FAQ ===
+  blogSalsaRitmo_faqTitle: 'Preguntas Frecuentes sobre Salsa',
+  blogSalsaRitmo_faq1Question: '¿Cuál es el origen de la salsa como baile?',
+  blogSalsaRitmo_faq1Answer:
+    'La salsa tiene sus raíces en Cuba, donde el son cubano, el danzón, la guaracha y la rumba se fusionaron con ritmos africanos. En los años 60, estos estilos viajaron a Nueva York donde se mezclaron con jazz y soul, dando origen a la salsa moderna que conocemos hoy.',
+  blogSalsaRitmo_faq2Question: '¿Qué diferencia hay entre salsa cubana y salsa en línea?',
+  blogSalsaRitmo_faq2Answer:
+    'La salsa cubana (casino) se baila en círculos, con movimientos improvisados y mucha conexión entre parejas. La salsa en línea (estilo NY/LA) se estructura sobre una línea frontal, con giros más técnicos y un estilo más elegante y urbano. Ambas comparten la misma base rítmica pero tienen personalidades distintas.',
+  blogSalsaRitmo_faq3Question: '¿Qué es la rueda de casino?',
+  blogSalsaRitmo_faq3Answer:
+    'La rueda de casino es un formato de baile grupal nacido en Cuba en los años 70. Varias parejas forman un círculo y bailan sincronizadas, siguiendo las indicaciones de un líder que canta las figuras. Las parejas se intercambian constantemente, creando un espectáculo dinámico y muy divertido.',
+  blogSalsaRitmo_faq4Question: '¿Qué ropa usar para bailar salsa?',
+  blogSalsaRitmo_faq4Answer:
+    'Lo más importante es la comodidad y libertad de movimiento. Para mujeres: vestidos o faldas con vuelo y zapatos de tacón medio con buena sujeción. Para hombres: camisas ligeras, pantalones cómodos y calzado flexible. La regla es bailar con lo que te haga sentir bien.',
+  blogSalsaRitmo_faq5Question: '¿Dónde aprender salsa en Barcelona?',
+  blogSalsaRitmo_faq5Answer:
+    "En Farray's International Dance Center ofrecemos clases de salsa cubana, salsa en línea y rueda de casino para todos los niveles. Contamos con profesores certificados, un ambiente acogedor y una comunidad activa de bailarines. Estamos en Barcelona y puedes consultar nuestros horarios en la web.",
 };

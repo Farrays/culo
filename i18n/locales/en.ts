@@ -816,6 +816,9 @@ export const en = {
   danceClassesHub_style_sevillanas: 'Sevillanas',
   danceClassesHub_style_telas_aereas: 'Aerial Silks & Hoop',
   danceClassesHub_style_acro_yoga: 'Acro Yoga',
+  danceClassesHub_style_bachata_sensual: 'Sensual Bachata',
+  danceClassesHub_style_bachata_sensual_desc:
+    'Sensual bachata with world champions. Waves, couple connection, musicality and body expression. From absolute beginner to advanced level with Mathias Font and Eugenia Trujillo.',
   danceClassesHub_style_salsa_bachata: 'Salsa & Bachata',
   danceClassesHub_style_salsa_bachata_desc:
     'Latin partner dances combining passion, rhythm and connection. Cuban salsa with authentic Caribbean flavor and Bachata with Dominican sensuality. Classes for all levels where you will learn technique, leading/following and musicality.',
@@ -10899,6 +10902,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   dhV3CompareCTA: 'See for yourself: first trial class',
   dhV3CompareNote: 'No commitment. No tricks. No pressure.',
   navBachataLadyStyle: 'Bachata Lady Style',
+  navBachataSensual: 'Sensual Bachata',
   navTimba: 'Timba',
   salsaCubanaLevelBasicTitle: 'Basic I, II and III',
   salsaCubanaLevelBasicDesc:
@@ -11760,4 +11764,386 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   teachersPageCtaTitle: 'Ready to Learn from the Best?',
   teachersPageCtaSubtitle: 'Join our family and discover why over 15,000 students have trusted us.',
   teachersPageCtaClasses: 'View Dance Classes',
+
+  // =============================================
+  // BACHATA SENSUAL PAGE V3 (bachata-barcelona)
+  // =============================================
+
+  // === SEO & META ===
+  bachataV3PageTitle: 'Sensual Bachata Classes in Barcelona | Learn with World Champions',
+  bachataV3MetaDescription:
+    "Learn sensual bachata in Barcelona with Mathias Font and Eugenia Trujillo, world champions in Salsa LA. Classes from beginner to advanced at Farray's Center near Plaza España.",
+  bachataV3MetaKeywords:
+    'sensual bachata barcelona, bachata classes barcelona, learn bachata, sensual bachata classes, bachata school barcelona',
+
+  // === HERO SECTION ===
+  bachataV3HeroTitle: 'Sensual Bachata in Barcelona',
+  bachataV3HeroSubtitle: 'Feel the connection, express the music',
+  bachataV3HeroDescription:
+    'Learn sensual bachata with world champions. From your first step to the stage, transform your way of dancing and connecting.',
+  bachataV3HeroStatMinutes: 'minutes per class',
+  bachataV3HeroStatCalories: 'calories burned',
+  bachataV3HeroStatFun: 'guaranteed fun',
+  bachataV3HeroCTA: 'Start Dancing',
+  bachataV3HeroSecondaryCTA: 'See Schedules',
+  bachataV3HeroScrollText: 'Discover sensual bachata',
+  bachataV3HeroClassType: 'Sensual Bachata Classes',
+
+  // === BREADCRUMB ===
+  bachataV3BreadcrumbHome: 'Home',
+  bachataV3BreadcrumbClasses: 'Classes',
+  bachataV3BreadcrumbLatin: 'Salsa and Bachata',
+  bachataV3BreadcrumbCurrent: 'Sensual Bachata',
+
+  // === WHAT IS SECTION ===
+  bachataV3WhatIsTitle: 'What is Sensual Bachata?',
+  bachataV3WhatIsP1:
+    'Sensual bachata is a modern evolution of Dominican bachata that emphasizes body connection, musical interpretation and fluid movement. Unlike traditional bachata, sensual bachata incorporates waves, dips and body movements that express the emotions of the music.',
+  bachataV3WhatIsP2:
+    'Born in Spain and Europe in the 2010s, this style revolutionized the way bachata was danced. The connection between the couple becomes the center of everything: each movement, each wave, each pause tells a story.',
+  bachataV3WhatIsP3:
+    "At Farray's we teach authentic sensual bachata with world-class teachers. Our method combines solid technique with emotional expression, so you can dance with anyone at any party.",
+  bachataV3WhatIsP4:
+    "We also touch on elements of Dominican bachata and bachata fusion in our classes, giving you a complete foundation. However, our main focus is sensual bachata, the style that's revolutionized social dancing worldwide.",
+  bachataV3WhatIsQuestion: 'Is sensual bachata only for experienced dancers?',
+  bachataV3WhatIsAnswer:
+    "Not at all. Although it may look complex, sensual bachata starts with basic fundamentals that anyone can learn. At Farray's we have a specific beginner class where we teach you from zero. In just 3 months you'll be doing waves and dips you never thought possible.",
+
+  // === SCHEDULE SECTION ===
+  bachataV3ScheduleTitle: 'Sensual Bachata Class Schedules',
+  bachataV3ScheduleSubtitle:
+    '5 weekly classes for all levels. Find the schedule that fits your routine and start dancing.',
+  bachataV3ScheduleCTA: 'Book Your First Class',
+  bachataV3ScheduleNote: 'First class is FREE to try',
+
+  // === LEVEL CARDS ===
+  bachataV3LevelBeginnerTitle: 'Beginner',
+  bachataV3LevelBeginnerDesc:
+    'Never danced? Perfect. We teach you the basic step, lateral rhythm and your first guided turns. You will learn to move to the rhythm of bachata music and feel confident in your first class.',
+  bachataV3LevelBasicTitle: 'Basic',
+  bachataV3LevelBasicDesc:
+    'You already know the basics. Now we add body connection, basic waves and intermediate turns. You will start to feel the difference between just stepping and really dancing.',
+  bachataV3LevelIntermediateTitle: 'Intermediate',
+  bachataV3LevelIntermediateDesc:
+    'Time to refine. Dips, combined waves, musical interpretation and more complex sequences. This is where sensual bachata really opens up and becomes art.',
+  bachataV3LevelAdvancedTitle: 'Advanced',
+  bachataV3LevelAdvancedDesc:
+    'For those who want excellence. Advanced choreographies, personal style, professional technique. Prepare for competitions, shows or simply be that dancer everyone wants to dance with.',
+
+  // === TEACHERS SECTION ===
+  bachataV3TeachersTitle: 'Learn from World Champions',
+  bachataV3TeachersSubtitle:
+    'Our teachers have danced on international stages and won world championships. Now they share their art with you.',
+  bachataV3Teacher1Specialty: 'Sensual Bachata | Musicality | World Champion Salsa LA',
+  bachataV3Teacher1Bio:
+    'World Champion of Salsa LA together with Eugenia Trujillo. Specialist in sensual bachata with a focus on musicality and deep couple connection. His ability to interpret music and translate it into movement makes each class a unique experience.',
+  bachataV3Teacher2Specialty: 'Sensual Bachata | Lady Style | World Champion Salsa LA',
+  bachataV3Teacher2Bio:
+    "International Uruguayan master dancer and choreographer. World Champion of Salsa LA with Mathias Font. Her charisma and closeness make her one of the most beloved teachers at Farray's. Specialist in feminine technique and bachata lady style.",
+  bachataV3Teacher3Specialty: 'Sensual Bachata | Beginners',
+  bachataV3Teacher3Bio:
+    "Emerging talent from Barcelona's bachata scene with a gift for connecting with students. Specialist in beginner classes with patience and energy that inspire. He already has a large community of loyal followers.",
+  bachataV3Teacher4Specialty: 'Sensual Bachata | Lady Style',
+  bachataV3Teacher4Bio:
+    "Emerging talent that Farray's bet on strongly. Partner of Carlos Canto, together they are flourishing as one of the most promising couples on the Barcelona scene. Her students become fans and loyal followers.",
+  bachataV3Teacher5Specialty: 'Sensual Bachata | Contemporary',
+  bachataV3Teacher5Bio:
+    'Emerging talent on the Barcelona scene, captivates with his talent, charisma and musical interpretation capacity. His contemporary dance background brings unique fluidity to his sensual bachata style.',
+
+  // === PREPARE CLASS SECTION ===
+  bachataV3PrepareTitle: 'Prepare for Your First Class',
+  bachataV3PrepareSubtitle: 'Everything you need to know before starting',
+  bachataV3PrepareWhatToBring1: 'Comfortable clothes',
+  bachataV3PrepareWhatToBring2: 'Dance shoes or clean sneakers',
+  bachataV3PrepareWhatToBring3: 'Water bottle',
+  bachataV3PrepareWhatToBring4: 'Good attitude',
+  bachataV3PrepareWhatToBring5: 'You can come alone or as a couple',
+  bachataV3PrepareBefore1: 'Eat something light 1-2 hours before',
+  bachataV3PrepareBefore2: 'Stretch at home if you can',
+  bachataV3PrepareBefore3: 'Arrive 10 minutes early on your first day',
+  bachataV3PrepareAvoid1: 'Eating too much right before class',
+  bachataV3PrepareAvoid2: 'Coming in without having hydrated',
+  bachataV3PrepareAvoid3: 'Wearing jewelry that could scratch',
+
+  // === IDENTIFICATION SECTION ===
+  bachataV3IdentificationTitle: 'Is This Class For You?',
+  bachataV3IdentificationSubtitle:
+    "If you identify with any of these, sensual bachata at Farray's is waiting for you:",
+  bachataV3IdentificationItem1:
+    "You've always wanted to dance but never dared to take the first step",
+  bachataV3IdentificationItem2:
+    'You look for something different from the gym to keep fit while having fun',
+  bachataV3IdentificationItem3:
+    'You want to connect with your partner through dance or meet people who share your passion',
+  bachataV3IdentificationItem4: 'You love bachata music and want to express it with your body',
+  bachataV3IdentificationItem5:
+    "You've tried other dances but feel attracted to the sensuality and connection of bachata",
+  bachataV3IdentificationItem6:
+    'You want to go to socials and parties feeling confident on the dance floor',
+  bachataV3IdentificationTransition:
+    'If any of this resonates with you, you are in the right place.',
+  bachataV3IdentificationNeedEnroll:
+    'You only need to take the first step. We take care of the rest.',
+
+  // === TRANSFORMATION SECTION ===
+  bachataV3TransformationTitle: 'How Will Sensual Bachata Transform You?',
+  bachataV3TransformationSubtitle:
+    'Beyond steps and turns, sensual bachata changes the way you move, connect and express yourself.',
+  bachataV3TransformationItem1Title: 'Connection with Your Body',
+  bachataV3TransformationItem1Desc:
+    'You will learn to move with fluidity, feel every muscle and express emotions through movement.',
+  bachataV3TransformationItem2Title: 'Social Confidence',
+  bachataV3TransformationItem2Desc:
+    'You will enter any party knowing you can dance with anyone. That security transforms how you relate to others.',
+  bachataV3TransformationItem3Title: 'Physical Fitness',
+  bachataV3TransformationItem3Desc:
+    "Dancing bachata burns 300-400 calories per hour and you don't even notice because you're having so much fun.",
+  bachataV3TransformationItem4Title: 'Musicality',
+  bachataV3TransformationItem4Desc:
+    'You will hear music in a new way. Every pause, every break, every change will make sense in your body.',
+  bachataV3TransformationItem5Title: 'Authentic Community',
+  bachataV3TransformationItem5Desc:
+    'You will join a community of people who share your passion. Friendships that last beyond the dance floor.',
+  bachataV3TransformationItem6Title: 'Creative Expression',
+  bachataV3TransformationItem6Desc:
+    'Sensual bachata allows you to express who you are. Every dance is unique, every interpretation is personal.',
+
+  // === WHY CHOOSE SECTION ===
+  bachataV3WhyChooseTitle: "Why Choose Farray's for Sensual Bachata?",
+  bachataV3WhyChooseSubtitle: "We're not just any school. We're where champions are trained.",
+  bachataV3WhyChooseItem1Title: 'World Champion Teachers',
+  bachataV3WhyChooseItem1Desc:
+    'Mathias and Eugenia are Salsa LA World Champions. Their experience on international stages translates to unparalleled teaching quality.',
+  bachataV3WhyChooseItem2Title: 'Progressive Method',
+  bachataV3WhyChooseItem2Desc:
+    "Our level system ensures you're always learning at your pace. From beginner to advanced, each step builds on the previous one.",
+  bachataV3WhyChooseItem3Title: 'CID-UNESCO Affiliation',
+  bachataV3WhyChooseItem3Desc:
+    "Farray's Center is officially affiliated with the International Dance Council CID-UNESCO. Quality guaranteed.",
+  bachataV3WhyChooseItem4Title: 'Active Community',
+  bachataV3WhyChooseItem4Desc:
+    'Weekly socials, trips to congresses, special events. Here you not only learn, you live the bachata experience.',
+  bachataV3WhyChooseItem5Title: 'Privileged Location',
+  bachataV3WhyChooseItem5Desc:
+    '5 minutes walk from Plaza España. Easy access by metro, bus and tram.',
+  bachataV3WhyChooseItem6Title: 'Guaranteed Results',
+  bachataV3WhyChooseItem6Desc:
+    'In 3 months from zero to dancing at parties. In 6 months you will feel like a different dancer.',
+  bachataV3WhyChooseItem7Title: 'No Partner Required',
+  bachataV3WhyChooseItem7Desc:
+    "You can come alone. We rotate partners in class so you learn to dance with everyone. It's actually better for learning.",
+
+  // === WHY TODAY SECTION ===
+  bachataV3WhyTodayTitle: 'Why Start Sensual Bachata Today?',
+  bachataV3WhyTodayP1:
+    'Every week you wait is a week less dancing. That party, that congress, that trip... will arrive and you could already be ready.',
+  bachataV3WhyTodayP2:
+    'Sensual bachata is at its peak. Events are everywhere, the community is growing, and now is the best time to join. In a few months you will be on the dance floor wondering why you waited so long.',
+  bachataV3WhyTodayP3:
+    "At Farray's we welcome new students every week. Today could be your day. The first class is free so you have nothing to lose and a new passion to gain.",
+
+  // === LOGOS SECTION ===
+  bachataV3LogosTitle: 'Recognized by the Best',
+  bachataV3LogosSubtitle:
+    'We have appeared on TV3, Telecinco, Antena 3 and are affiliated with CID-UNESCO.',
+
+  // === CULTURAL HISTORY SECTION ===
+  bachataV3CulturalHistoryTitle: 'The History of Bachata: From Dominican Republic to the World',
+  bachataV3CulturalShort:
+    'Bachata was born in the Dominican Republic in the 1960s as music of popular neighborhoods. What started as music stigmatized by the upper classes became a global phenomenon.',
+  bachataV3CulturalFull:
+    "Bachata was born in the Dominican Republic in the 1960s as music of popular neighborhoods. What started as music stigmatized by the upper classes became a global phenomenon after Juan Luis Guerra's success in the 1990s. Sensual bachata emerged in Spain and Europe in the 2010s, adding body movement and couple connection elements that revolutionized social dancing. Today, bachata is danced worldwide and sensual bachata is the most popular style in Europe, especially in cities like Barcelona where schools like Farray's train thousands of students every year.",
+
+  // === FAQ SECTION ===
+  bachataV3FaqTitle: 'Frequently Asked Questions about Sensual Bachata',
+  bachataV3FaqSubtitle: 'We answer your doubts so you can dance with confidence.',
+  bachataV3FaqQ1: 'What is sensual bachata and how is it different from other bachata styles?',
+  bachataV3FaqA1:
+    "Sensual bachata is a modern evolution of Dominican bachata that emphasizes body connection, musical interpretation and fluid movements like waves and dips. Unlike Dominican bachata (faster, with more footwork) or bachata fusion (mixed with other styles), sensual bachata focuses on couple connection and body expression. At Farray's we mainly teach sensual bachata, although we touch on elements of social bachata and bachata fusion in advanced classes.",
+  bachataV3FaqQ2: "Do I need a partner to learn bachata at Farray's?",
+  bachataV3FaqA2:
+    "No, you don't need to come with a partner. In our classes we rotate partners constantly, which is actually better for learning because you learn to dance with different people. Many of our students come alone and that's how they meet friends and even partners.",
+  bachataV3FaqQ3: 'What is the difference between sensual bachata and Dominican bachata?',
+  bachataV3FaqA3:
+    "Dominican bachata is the original style, faster, with more footwork and closer to Dominican roots. Sensual bachata is a European evolution that focuses more on body connection, waves and dips. At Farray's we teach sensual bachata as the main style because it's the most danced at European socials, but we include Dominican technique elements to give you a solid foundation.",
+  bachataV3FaqQ4: 'How long does it take to learn sensual bachata?',
+  bachataV3FaqA4:
+    'In 3 months of regular classes you will be able to dance comfortably at any social. In 6 months you will feel like a completely different dancer. Of course, bachata is an art that you keep perfecting your whole life, but to enjoy socials, 3-6 months is enough.',
+  bachataV3FaqQ5: 'What bachata level do I need to dance at social parties?',
+  bachataV3FaqA5:
+    'With our basic level (about 3 months) you can already enjoy social bachata parties. You will know enough moves to have fun and connect with your partner. At socials you dance with all levels, so you will always find people to dance with.',
+  bachataV3FaqQ6: 'Can I learn bachata without previous dance experience?',
+  bachataV3FaqA6:
+    "Absolutely! Many of our students have never danced before. Our beginner class is designed specifically for people starting from zero. You don't need rhythm, experience or special abilities. We teach you everything.",
+  bachataV3FaqQ7: "What is bachata fusion and do you teach it at Farray's?",
+  bachataV3FaqA7:
+    "Bachata fusion is a style that mixes bachata with elements of hip hop, contemporary, zouk and other dances. At Farray's our main focus is sensual bachata, but our advanced teachers include fusion elements in their choreographies. If you are specifically interested in fusion, ask about our masterclasses and special events.",
+  bachataV3FaqQ8: "What is Farray's bachata teaching method?",
+  bachataV3FaqA8:
+    'Our method combines solid technique with fun and creative expression. We start with basics (rhythm, basic step, simple turns), progress to body connection and waves, and finally work on musicality and personal style. Our teachers are world champions who have adapted their knowledge for all levels.',
+  bachataV3FaqQ9: "Are there bachata social events at Farray's?",
+  bachataV3FaqA9:
+    "Yes! We organize weekly practices and monthly socials where you can dance what you learn in class. We also organize trips to national and international bachata congresses. Our community is very active and you'll always have somewhere to dance.",
+  bachataV3FaqQ10: 'How much do bachata classes cost in Barcelona?',
+  bachataV3FaqA10:
+    "At Farray's we have flexible options: individual classes, monthly packages and unlimited passes. The first class is FREE so you can try without commitment. After that, prices start at €40/month for 1 weekly class. Check our rates page for more details.",
+
+  // === NEARBY SECTION ===
+  bachataV3NearbyTitle: 'Sensual Bachata Classes Near You',
+  bachataV3NearbySubtitle:
+    "Farray's Center is located near Plaza España, with excellent connections from all of Barcelona.",
+  bachataV3NearbyFrom: 'from',
+  bachataV3NearbyAccess: 'How to get here',
+
+  // === FINAL CTA SECTION ===
+  bachataV3FinalCtaTitle: 'Ready to Start Dancing Sensual Bachata?',
+  bachataV3FinalCtaSubtitle:
+    "Your first class is FREE. Come meet us and discover why thousands of students have chosen Farray's.",
+  bachataV3FinalCtaPrimary: 'Book Free Class',
+  bachataV3FinalCtaSecondary: 'View All Schedules',
+  bachataV3FinalCtaGuarantee: '100% satisfaction guarantee on your first class',
+  bachataV3FinalCtaSocial: 'Join our community of +15,000 students',
+
+  // === GEO OPTIMIZATION: Citable Statistics ===
+  bachataV3CitableDefinicion:
+    'Sensual bachata is a dance style that evolved from Dominican bachata in Spain and Europe during the 2010s. It emphasizes body connection, waves and musical interpretation above footwork.',
+  bachataV3CitableOrigen:
+    "Bachata originated in the Dominican Republic in the 1960s. It was initially considered music of the lower classes until Juan Luis Guerra's international success in the 1990s elevated its status globally.",
+  bachataV3CitableSensualVsDominicana:
+    'Dominican bachata is faster with more footwork; sensual bachata is slower with more body movement and couple connection. Both styles are danced at international socials.',
+  bachataV3CitableConexion:
+    'Couple connection in sensual bachata refers to the ability to communicate through the body, anticipating and responding to movements in synchrony with the music.',
+  bachataV3CitableMetodologia:
+    "Farray's Center uses a progressive method with 4 levels: Beginner (0-3 months), Basic (3-6 months), Intermediate (6-18 months) and Advanced (+18 months).",
+  bachataV3CitableFact1:
+    'An hour of dancing bachata burns between 300-400 calories, equivalent to 30 minutes of running but much more fun.',
+  bachataV3CitableFact2:
+    "Farray's Center has Salsa LA world champion teachers (Mathias Font and Eugenia Trujillo) teaching sensual bachata.",
+  bachataV3CitableFact3:
+    "Farray's Dance & Cultural Center is affiliated with CID-UNESCO, the International Dance Council recognized by UNESCO.",
+
+  // ==========================================================================
+  // BLOG ARTICLE: SALSA - THE RHYTHM THAT CONQUERED THE WORLD
+  // ==========================================================================
+
+  // === META ===
+  blogSalsaRitmo_title:
+    'Salsa: the Rhythm that Conquered the World, from the Caribbean to Barcelona',
+  blogSalsaRitmo_metaDescription:
+    "Discover the origins, styles and ways of dancing salsa, the genre that fused cultures and today lives on in Barcelona at Farray's International Dance Center.",
+  blogSalsaRitmo_excerpt:
+    'From the Caribbean to the world: history, styles and how to learn salsa in Barcelona',
+  blogSalsaRitmo_breadcrumbCurrent: 'Salsa: the Rhythm that Conquered the World',
+
+  // === SUMMARY BULLETS ===
+  blogSalsaRitmo_summaryBullet1:
+    'Salsa was born from the Afro-Cuban fusion of African rhythms and European melodies',
+  blogSalsaRitmo_summaryBullet2:
+    'Multiple styles exist: Cuban salsa, line salsa, Caleña and Puerto Rican',
+  blogSalsaRitmo_summaryBullet3:
+    'Rueda de casino is the most social and fun format of salsa dancing',
+  blogSalsaRitmo_summaryBullet4: "Learn salsa at Farray's Barcelona with certified professionals",
+
+  // === STATS ===
+  blogSalsaRitmo_statNYCLabel: 'Explosion in New York',
+  blogSalsaRitmo_statEstilosLabel: 'Main salsa styles',
+
+  // === INTRODUCTION ===
+  blogSalsaRitmo_intro:
+    'Few dances concentrate as much history and passion as **salsa**. More than a dance, it is the result of a long journey between cultures, of comings and goings between Africa, Europe, the Caribbean and the Americas. Its roots are in Cuba, in the meeting between [African rhythmic traditions](https://www.arecibo.inter.edu/wp-content/uploads/biblioteca/pdf/salsa.pdf) and European melodies.',
+  blogSalsaRitmo_intro2:
+    'But its expansion and evolution turned it into **the quintessential musical language of the Latino community**. To speak of modern salsa is to speak of a living, changing and powerful genre, where each step tells centuries of rhythm and mestizaje.',
+
+  // === SECTION 1: ORIGINS ===
+  blogSalsaRitmo_origenesTitle: 'Origins of Salsa: Mestizaje and Evolution',
+  blogSalsaRitmo_origenesContent1:
+    'Before salsa as we know it existed, Cuba was already dancing and playing a wide range of rhythms that today form its DNA: the **[danzón](https://www.muchomasquebaile.es/wp-content/uploads/2021/11/Historia-de-la-salsa-desde-las-raices-hasta-el-1975.pdf)**, the **son**, the **guaracha**, the **rumba** and the **cha-cha-chá**. The danzón, very popular since the late 19th century, united elegance and closeness between couples; while **Cuban son**—from the late 1800s—mixed African percussion with Spanish guitars, giving rise to the rhythmic base of salsa.',
+  blogSalsaRitmo_origenesContent2:
+    'In the following years, genres like **mambo** (popularized by Dámaso Pérez Prado) and **cha-cha-chá** (created by Enrique Jorrín) continued to expand the horizon of Cuban dance. Through Caribbean migration, these styles traveled to **Puerto Rico, Venezuela, Dominican Republic and the United States**, especially to **[New York](https://dialnet.unirioja.es/descarga/articulo/8889123.pdf)**, where they fused with **jazz**, **soul** and **R&B**. From that encounter, modern salsa was born: an urban, vibrant and communal music, a symbol of [identity for millions of people](https://es.wikipedia.org/wiki/Salsa_%28g%C3%A9nero_musical%29).',
+
+  // === SECTION 2: STYLES ===
+  blogSalsaRitmo_estilosTitle: 'Styles and Ways of Dancing Salsa',
+  blogSalsaRitmo_estilosIntro:
+    'Although all styles share the same rhythmic base, there are variants that reflect the different cultural roots of salsa:',
+  blogSalsaRitmo_estilosListaTitle: 'Main salsa styles',
+  blogSalsaRitmo_estiloCubana:
+    '**[Cuban salsa or casino](/en/clases/salsa-cubana-barcelona):** circular, improvised and full of connection between dancers. It is the most traditional and social style.',
+  blogSalsaRitmo_estiloLinea:
+    '**[Line salsa](/en/clases/salsa-en-linea-barcelona):** structured on a frontal line, with elegant and urban style, developed in New York and Los Angeles.',
+  blogSalsaRitmo_estiloCaleña:
+    '**Caleña salsa (Colombia):** fast, acrobatic and rhythmic; highlights the footwork and explosive energy.',
+  blogSalsaRitmo_estiloPuertorriqueña:
+    '**Puerto Rican salsa:** musical and precise, with wide turns and great emphasis on synchronization with the music.',
+  blogSalsaRitmo_estilosCierre:
+    'Each style speaks of its place of origin, but all share the same spirit: celebrating life through movement. Today, salsa is one of the most practiced dances in the world, taught in schools, clubs and international festivals, and Barcelona is no exception!',
+  blogSalsaRitmo_imageEstilosCaption:
+    'The different styles of salsa: Cuban, line, Caleña and Puerto Rican',
+
+  // === SECTION 3: RUEDA DE CASINO ===
+  blogSalsaRitmo_ruedaTitle: 'Rueda de Casino: Salsa Danced in a Group',
+  blogSalsaRitmo_ruedaContent1:
+    'One of the most social and fun formats of salsa is the **[rueda de casino](https://es.wikipedia.org/wiki/Rueda_de_casino)**, born in **Cuba in the 1970s**. Its name comes from the **Club Casino Deportivo de La Habana**, where these group choreographies were organized.',
+  blogSalsaRitmo_ruedaContent2:
+    "In a rueda, several couples dance forming a **synchronized circle** guided by a *leader* or *caller*, who indicates each figure or change. The couples rotate, cross and constantly exchange, creating a dynamic spectacle full of collective energy. At **[Farray's International Dance Center](/en/clases)**, rueda de casino is one of the most beloved activities. It not only improves technique and memory but also strengthens teamwork, musical listening and sense of community.",
+  blogSalsaRitmo_imageRuedaCaption: "Rueda de casino at Farray's: Cuban group dance full of energy",
+
+  // === SECTION 4: PROJECTION AND SOUL ===
+  blogSalsaRitmo_proyeccionTitle: 'The Projection and Soul of Salsa Dancing',
+  blogSalsaRitmo_proyeccionContent1:
+    'Salsa is pure communication. Each couple tells a different story: the man proposes, leads; the woman responds, interprets and shines with expression and elegance. However, those traditional conventions are now reinterpreted from equality: on the dance floor, both lead, both create.',
+  blogSalsaRitmo_proyeccionContent2:
+    'In our classes, it is common to see **women dancing together** or people changing roles to learn both sides of the dance. The magic of the genre lies in the **[scenic projection](https://dialnet.unirioja.es/descarga/articulo/8889123.pdf)**. The connection, the smile, the play of glances and improvisation make salsa one of the most captivating spectacles in the world.',
+
+  // === SECTION 5: ATTIRE ===
+  blogSalsaRitmo_vestuarioTitle: 'Attire for Dancing Salsa: Freedom and Comfort',
+  blogSalsaRitmo_vestuarioContent:
+    'Salsa demands movement, freedom and expression, so clothing must accompany that fluidity:',
+  blogSalsaRitmo_vestuarioListaTitle: 'Attire recommendations',
+  blogSalsaRitmo_vestuarioMujeres:
+    '**For women:** flowy dresses or skirts that highlight the turns and dynamism; comfortable medium or high-heeled shoes with good support.',
+  blogSalsaRitmo_vestuarioHombres:
+    '**For men:** light shirts, pants that allow movement and flexible footwear (avoid very tight clothing).',
+  blogSalsaRitmo_vestuarioCierre:
+    'The rule is simple: **dance in what makes you feel good and allows you to express your style**. What matters is not the clothes, but the attitude.',
+
+  // === SECTION 6: BENEFITS ===
+  blogSalsaRitmo_beneficiosTitle: "Why Learn Salsa in Barcelona (and at Farray's)",
+  blogSalsaRitmo_beneficiosIntro:
+    'Dancing salsa is not just a physical activity: it is an emotional, social and cultural learning experience. Its [benefits are more than proven](https://www.nejm.org/doi/full/10.1056/NEJMoa022252):',
+  blogSalsaRitmo_beneficiosListaTitle: 'Benefits of dancing salsa',
+  blogSalsaRitmo_beneficioSalud:
+    '**Health and wellbeing:** improves coordination, endurance and [releases endorphins](https://www.frontiersin.org/articles/10.3389/fpsyg.2019.01221/full) that increase happiness.',
+  blogSalsaRitmo_beneficioCultura:
+    '**Living culture:** connects you with Afro-Caribbean roots and Latino history.',
+  blogSalsaRitmo_beneficioComunidad:
+    '**Community:** integrates you into a network of cheerful and diverse people.',
+  blogSalsaRitmo_beneficioConfianza:
+    '**Personal confidence:** you learn to express yourself, improvise and enjoy the present.',
+  blogSalsaRitmo_beneficiosFarrays:
+    "At **[Farray's International Dance Center](/en/clases)**, our salsa classes in Barcelona are much more than a workout: they are a complete experience. Here we teach **[Cuban salsa](/en/clases/salsa-cubana-barcelona)**, **rueda de casino**, **[line salsa](/en/clases/salsa-en-linea-barcelona)** and contemporary Afro-Latin styles, with a teaching team that understands music from both technique and soul.",
+
+  // === SECTION 7: CONCLUSION ===
+  blogSalsaRitmo_conclusionTitle: 'Conclusion: the Rhythm that Unites Cultures',
+  blogSalsaRitmo_conclusionContent:
+    "Salsa is joy, tradition and modernity in motion. It is danced history. Its essence travels from African drums to European dance floors, reinventing itself without losing its roots. At **[Farray's International Dance Center](/en)** we celebrate that heritage every day: we train dancers, but also guardians of a living culture.",
+  blogSalsaRitmo_conclusionCTA:
+    'If you want to learn, enjoy and feel how the Caribbean beats in the heart of the Mediterranean, this is your place. **Dance salsa, live the history.** [Discover our schedules and classes](/en/horarios-precios).',
+
+  // === FAQ ===
+  blogSalsaRitmo_faqTitle: 'Frequently Asked Questions about Salsa',
+  blogSalsaRitmo_faq1Question: 'What is the origin of salsa as a dance?',
+  blogSalsaRitmo_faq1Answer:
+    'Salsa has its roots in Cuba, where Cuban son, danzón, guaracha and rumba merged with African rhythms. In the 1960s, these styles traveled to New York where they mixed with jazz and soul, giving rise to the modern salsa we know today.',
+  blogSalsaRitmo_faq2Question: 'What is the difference between Cuban salsa and line salsa?',
+  blogSalsaRitmo_faq2Answer:
+    'Cuban salsa (casino) is danced in circles, with improvised movements and lots of connection between couples. Line salsa (NY/LA style) is structured on a frontal line, with more technical turns and a more elegant and urban style. Both share the same rhythmic base but have distinct personalities.',
+  blogSalsaRitmo_faq3Question: 'What is rueda de casino?',
+  blogSalsaRitmo_faq3Answer:
+    'Rueda de casino is a group dance format born in Cuba in the 1970s. Several couples form a circle and dance synchronized, following the instructions of a leader who calls out the figures. The couples constantly exchange, creating a dynamic and very fun spectacle.',
+  blogSalsaRitmo_faq4Question: 'What clothes to wear for dancing salsa?',
+  blogSalsaRitmo_faq4Answer:
+    'The most important thing is comfort and freedom of movement. For women: flowy dresses or skirts and medium-heeled shoes with good support. For men: light shirts, comfortable pants and flexible footwear. The rule is to dance in what makes you feel good.',
+  blogSalsaRitmo_faq5Question: 'Where to learn salsa in Barcelona?',
+  blogSalsaRitmo_faq5Answer:
+    "At Farray's International Dance Center we offer Cuban salsa, line salsa and rueda de casino classes for all levels. We have certified teachers, a welcoming atmosphere and an active community of dancers. We are in Barcelona and you can check our schedules on the website.",
 };
