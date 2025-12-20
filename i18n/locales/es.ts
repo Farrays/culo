@@ -12833,7 +12833,7 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
   blogSalsaRitmo_estiloCubana:
     '**[Salsa cubana o casino](/es/clases/salsa-cubana-barcelona):** circular, improvisada y llena de conexión entre los bailarines. Es el estilo más tradicional y social.',
   blogSalsaRitmo_estiloLinea:
-    '**[Salsa en línea](/es/clases/salsa-en-linea-barcelona):** estructurada sobre una línea frontal, con estilo elegante y urbano, desarrollada en Nueva York y Los Ángeles.',
+    '**Salsa en línea:** estructurada sobre una línea frontal, con estilo elegante y urbano, desarrollada en Nueva York y Los Ángeles.',
   blogSalsaRitmo_estiloCaleña:
     '**Salsa caleña (Colombia):** veloz, acrobática y rítmica; destaca el trabajo de pies y la energía explosiva.',
   blogSalsaRitmo_estiloPuertorriqueña:
@@ -12885,7 +12885,7 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
   blogSalsaRitmo_beneficioConfianza:
     '**Confianza personal:** aprendes a expresarte, improvisar y disfrutar del presente.',
   blogSalsaRitmo_beneficiosFarrays:
-    "En **[Farray's International Dance Center](/es/clases)**, nuestras clases de salsa en Barcelona son mucho más que un entrenamiento: son una experiencia completa. Aquí enseñamos **[salsa cubana](/es/clases/salsa-cubana-barcelona)**, **rueda de casino**, **[salsa en línea](/es/clases/salsa-en-linea-barcelona)** y estilos afrolatinos contemporáneos, con un equipo docente que entiende la música tanto desde la técnica como desde el alma.",
+    "En **[Farray's International Dance Center](/es/clases)**, nuestras clases de salsa en Barcelona son mucho más que un entrenamiento: son una experiencia completa. Aquí enseñamos **[salsa cubana](/es/clases/salsa-cubana-barcelona)**, **rueda de casino**, **salsa en línea** y estilos afrolatinos contemporáneos, con un equipo docente que entiende la música tanto desde la técnica como desde el alma.",
 
   // === SECTION 7: CONCLUSIÓN ===
   blogSalsaRitmo_conclusionTitle: 'Conclusión: el Ritmo que Une Culturas',

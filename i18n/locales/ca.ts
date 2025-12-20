@@ -12218,7 +12218,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogSalsaRitmo_estiloCubana:
     "**[Salsa cubana o casino](/ca/clases/salsa-cubana-barcelona):** circular, improvisada i plena de connexió entre els balladors. És l'estil més tradicional i social.",
   blogSalsaRitmo_estiloLinea:
-    '**[Salsa en línia](/ca/clases/salsa-en-linea-barcelona):** estructurada sobre una línia frontal, amb estil elegant i urbà, desenvolupada a Nova York i Los Angeles.',
+    '**Salsa en línia:** estructurada sobre una línia frontal, amb estil elegant i urbà, desenvolupada a Nova York i Los Angeles.',
   blogSalsaRitmo_estiloCaleña:
     "**Salsa calenya (Colòmbia):** veloç, acrobàtica i rítmica; destaca el treball de peus i l'energia explosiva.",
   blogSalsaRitmo_estiloPuertorriqueña:
@@ -12269,7 +12269,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogSalsaRitmo_beneficioConfianza:
     '**Confiança personal:** aprens a expressar-te, improvisar i gaudir del present.',
   blogSalsaRitmo_beneficiosFarrays:
-    "A **[Farray's International Dance Center](/ca/clases)**, les nostres classes de salsa a Barcelona són molt més que un entrenament: són una experiència completa. Aquí ensenyem **[salsa cubana](/ca/clases/salsa-cubana-barcelona)**, **roda de casino**, **[salsa en línia](/ca/clases/salsa-en-linea-barcelona)** i estils afrollatins contemporanis, amb un equip docent que entén la música tant des de la tècnica com des de l'ànima.",
+    "A **[Farray's International Dance Center](/ca/clases)**, les nostres classes de salsa a Barcelona són molt més que un entrenament: són una experiència completa. Aquí ensenyem **[salsa cubana](/ca/clases/salsa-cubana-barcelona)**, **roda de casino**, **salsa en línia** i estils afrollatins contemporanis, amb un equip docent que entén la música tant des de la tècnica com des de l'ànima.",
 
   // === SECTION 7: CONCLUSIÓ ===
   blogSalsaRitmo_conclusionTitle: 'Conclusió: el Ritme que Uneix Cultures',

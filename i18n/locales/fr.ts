@@ -12402,7 +12402,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogSalsaRitmo_estiloCubana:
     "**[Salsa cubaine ou casino](/fr/clases/salsa-cubana-barcelona):** circulaire, improvisée et pleine de connexion entre les danseurs. C'est le style le plus traditionnel et social.",
   blogSalsaRitmo_estiloLinea:
-    '**[Salsa en ligne](/fr/clases/salsa-en-linea-barcelona):** structurée sur une ligne frontale, avec un style élégant et urbain, développée à New York et Los Angeles.',
+    '**Salsa en ligne:** structurée sur une ligne frontale, avec un style élégant et urbain, développée à New York et Los Angeles.',
   blogSalsaRitmo_estiloCaleña:
     "**Salsa caleña (Colombie):** rapide, acrobatique et rythmique; elle met en valeur le jeu de pieds et l'énergie explosive.",
   blogSalsaRitmo_estiloPuertorriqueña:
@@ -12454,7 +12454,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogSalsaRitmo_beneficioConfianza:
     '**Confiance personnelle:** vous apprenez à vous exprimer, improviser et profiter du présent.',
   blogSalsaRitmo_beneficiosFarrays:
-    "Chez **[Farray's International Dance Center](/fr/clases)**, nos cours de salsa à Barcelone sont bien plus qu'un entraînement: c'est une expérience complète. Ici nous enseignons la **[salsa cubaine](/fr/clases/salsa-cubana-barcelona)**, la **rueda de casino**, la **[salsa en ligne](/fr/clases/salsa-en-linea-barcelona)** et des styles afro-latins contemporains, avec une équipe pédagogique qui comprend la musique tant d'un point de vue technique que de l'âme.",
+    "Chez **[Farray's International Dance Center](/fr/clases)**, nos cours de salsa à Barcelone sont bien plus qu'un entraînement: c'est une expérience complète. Ici nous enseignons la **[salsa cubaine](/fr/clases/salsa-cubana-barcelona)**, la **rueda de casino**, la **salsa en ligne** et des styles afro-latins contemporains, avec une équipe pédagogique qui comprend la musique tant d'un point de vue technique que de l'âme.",
 
   // === SECTION 7: CONCLUSION ===
   blogSalsaRitmo_conclusionTitle: 'Conclusion: le Rythme qui Unit les Cultures',

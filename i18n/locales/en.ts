@@ -12069,7 +12069,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogSalsaRitmo_estiloCubana:
     '**[Cuban salsa or casino](/en/clases/salsa-cubana-barcelona):** circular, improvised and full of connection between dancers. It is the most traditional and social style.',
   blogSalsaRitmo_estiloLinea:
-    '**[Line salsa](/en/clases/salsa-en-linea-barcelona):** structured on a frontal line, with elegant and urban style, developed in New York and Los Angeles.',
+    '**Line salsa:** structured on a frontal line, with elegant and urban style, developed in New York and Los Angeles.',
   blogSalsaRitmo_estiloCaleña:
     '**Caleña salsa (Colombia):** fast, acrobatic and rhythmic; highlights the footwork and explosive energy.',
   blogSalsaRitmo_estiloPuertorriqueña:
@@ -12120,7 +12120,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogSalsaRitmo_beneficioConfianza:
     '**Personal confidence:** you learn to express yourself, improvise and enjoy the present.',
   blogSalsaRitmo_beneficiosFarrays:
-    "At **[Farray's International Dance Center](/en/clases)**, our salsa classes in Barcelona are much more than a workout: they are a complete experience. Here we teach **[Cuban salsa](/en/clases/salsa-cubana-barcelona)**, **rueda de casino**, **[line salsa](/en/clases/salsa-en-linea-barcelona)** and contemporary Afro-Latin styles, with a teaching team that understands music from both technique and soul.",
+    "At **[Farray's International Dance Center](/en/clases)**, our salsa classes in Barcelona are much more than a workout: they are a complete experience. Here we teach **[Cuban salsa](/en/clases/salsa-cubana-barcelona)**, **rueda de casino**, **line salsa** and contemporary Afro-Latin styles, with a teaching team that understands music from both technique and soul.",
 
   // === SECTION 7: CONCLUSION ===
   blogSalsaRitmo_conclusionTitle: 'Conclusion: the Rhythm that Unites Cultures',
