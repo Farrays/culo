@@ -8,25 +8,25 @@ module.exports = [
   {
     name: 'ES Locale Bundle',
     path: 'dist/assets/i18n-es-*.js',
-    limit: '240 KB', // Increased after adding blog articles (Beneficios Salsa + Historia Salsa)
+    limit: '300 KB', // Increased after adding blog articles, legal pages, cookie consent, new dance classes
     gzip: true,
   },
   {
     name: 'EN Locale Bundle',
     path: 'dist/assets/i18n-en-*.js',
-    limit: '230 KB', // Increased after adding blog articles (Beneficios Salsa + Historia Salsa)
+    limit: '295 KB', // Increased after adding blog articles, legal pages, cookie consent, new dance classes
     gzip: true,
   },
   {
     name: 'CA Locale Bundle',
     path: 'dist/assets/i18n-ca-*.js',
-    limit: '250 KB', // Increased after adding blog articles (Beneficios Salsa + Historia Salsa)
+    limit: '315 KB', // Increased after adding blog articles, legal pages, cookie consent, new dance classes
     gzip: true,
   },
   {
     name: 'FR Locale Bundle',
     path: 'dist/assets/i18n-fr-*.js',
-    limit: '260 KB', // Increased after adding blog articles (Beneficios Salsa + Historia Salsa)
+    limit: '325 KB', // Increased after adding blog articles, legal pages, cookie consent, new dance classes
     gzip: true,
   },
   {
