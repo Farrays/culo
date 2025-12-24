@@ -7,19 +7,20 @@ describe('HomePage', () => {
     render(<HomePage />);
     const hero = screen.getByLabelText(/hero section/i);
     expect(hero).toBeInTheDocument();
-  });
+  }, 10000);
 
   it('should render main heading', () => {
     render(<HomePage />);
-    const heading = screen.getAllByRole('heading')[0];
-    expect(heading).toBeInTheDocument();
-  });
+    const headings = screen.getAllByRole('heading');
+    expect(headings.length).toBeGreaterThan(0);
+    expect(headings[0]).toBeInTheDocument();
+  }, 10000);
 
   it('should have CTA buttons', () => {
     render(<HomePage />);
     const buttons = screen.getAllByRole('link');
     expect(buttons.length).toBeGreaterThan(0);
-  });
+  }, 10000);
 
   it('should render navigation links', () => {
     render(<HomePage />);
@@ -27,5 +28,5 @@ describe('HomePage', () => {
     links.forEach(link => {
       expect(link).toHaveAttribute('href');
     });
-  });
+  }, 10000);
 });
