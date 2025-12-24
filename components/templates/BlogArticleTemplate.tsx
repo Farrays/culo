@@ -24,7 +24,14 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../../hooks/useI18n';
 import { SUPPORTED_LOCALES } from '../../types';
-import type { BlogArticleConfig } from '../../constants/blog/types';
+import type { BlogArticleConfig, AuthorConfig } from '../../constants/blog/types';
+import { AUTHOR_YUNAISY, AUTHOR_MAR_GUERRERO } from '../../constants/blog/author';
+
+// Author registry - add new authors here
+const AUTHORS: Record<string, AuthorConfig> = {
+  'yunaisy-farray': AUTHOR_YUNAISY,
+  'mar-guerrero': AUTHOR_MAR_GUERRERO,
+};
 
 // Blog Components
 import {
@@ -54,6 +61,9 @@ const BlogArticleTemplate: React.FC<BlogArticleTemplateProps> = ({ config }) => 
   const articleUrl = `${baseUrl}/${locale}/blog/${config.category}/${config.slug}`;
   const ogImage = config.ogImage || config.featuredImage.src;
 
+  // Get author (defaults to Yunaisy if not specified)
+  const author = config.authorId ? AUTHORS[config.authorId] || AUTHOR_YUNAISY : AUTHOR_YUNAISY;
+
   // Transform FAQs for FAQSection component
   const transformedFaqs = config.faqSection?.faqs.map(faq => ({
     id: faq.id,
@@ -74,7 +84,7 @@ const BlogArticleTemplate: React.FC<BlogArticleTemplateProps> = ({ config }) => 
         <meta property="article:published_time" content={config.datePublished} />
         <meta property="article:modified_time" content={config.dateModified} />
         <meta property="article:section" content={config.category} />
-        <meta property="article:author" content="Yunaisy Farray" />
+        <meta property="article:author" content={author.name} />
 
         {/* Open Graph */}
         <meta property="og:type" content="article" />
@@ -116,7 +126,7 @@ const BlogArticleTemplate: React.FC<BlogArticleTemplateProps> = ({ config }) => 
       </Helmet>
 
       {/* ========== SCHEMA MARKUP ========== */}
-      <BlogSchemas config={config} />
+      <BlogSchemas config={config} author={author} />
 
       {/* ========== READING PROGRESS BAR ========== */}
       {config.progressBar.enabled && <ReadingProgressBar targetSelector="article" />}
@@ -164,7 +174,7 @@ const BlogArticleTemplate: React.FC<BlogArticleTemplateProps> = ({ config }) => 
               )}
 
               {/* Author Box (E-E-A-T) */}
-              <AuthorBox delay={100} />
+              <AuthorBox author={author} delay={100} />
 
               {/* Share Buttons */}
               {config.shareButtons.enabled && (

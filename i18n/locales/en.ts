@@ -6,9 +6,11 @@ export const en = {
   skipToMainContent: 'Skip to main content',
   ratingAriaLabel: '{rating} out of 5 stars',
   closeButton: 'Close',
+  breadcrumbHome: 'Home',
   // Header
   navHome: 'Home',
   navClasses: 'Dance Classes',
+  navAllClasses: 'View all classes',
   navDanza: 'Classical Dance',
   navDanzasUrbanas: 'Urban Dances',
   navDancehall: 'Dancehall',
@@ -45,7 +47,7 @@ export const en = {
   navBlog: 'Blog',
   navInstalaciones: 'Facilities',
   breadcrumb_services: 'Dance Services',
-  enrollNow: 'Become a Member Now',
+  enrollNow: 'Discover How to Start',
   // Hero
   heroTitle1: 'Your Dance School in Barcelona',
   heroTitle2: 'Classes for Dance, Salsa, Bachata, Urban Dance, and More',
@@ -229,7 +231,12 @@ export const en = {
   followOnFacebook: 'Follow us on Facebook',
   followOnInstagram: 'Follow us on Instagram',
   followOnYoutube: 'Follow us on YouTube',
+  followOnTikTok: 'Follow us on TikTok',
   footerContact: 'Contact',
+  footerSchoolTitle: 'The School',
+  footerUrbanTitle: 'Urban Dance',
+  footerLatinoTitle: 'Latin Rhythms',
+  footerServicesTitle: 'Services',
   footerAddressValue: "Carrer d'Entença, 100, Local 1\n08015 Barcelona, Spain",
   footerPhone: 'Phone',
   footerPhoneValue: '+34 622 24 70 85',
@@ -239,7 +246,9 @@ export const en = {
   footerHoursContent:
     'Mon: 10:30-12:30, 17:30-23:00\nTue: 10:30-13:30, 17:30-23:00\nWed: 17:30-23:00\nThu: 09:30-11:30, 17:30-23:00\nFri: 17:30-20:30',
   footerPhoneHoursTitle: 'Phone Assistance',
-  footerPhoneHoursContent: 'Mon to Fri: 10:00 - 14:00 and 16:00 - 20:00',
+  footerPhoneHoursContent:
+    'Mon 10:30-13:00 | Wed 10:30-13:00 | Thu 09:30-12:00 | Mon-Thu 17:30-23:00 | Fri 17:30-20:00',
+  footerViewMap: 'View on Google Maps',
   footerSitemapTitle: 'Sitemap',
   sitemapSchool: 'The School',
   sitemapYunaisy: 'Yunaisy Farray',
@@ -255,6 +264,22 @@ export const en = {
   sitemapTerms: 'Terms & Conditions',
   sitemapPrivacy: 'Privacy Policy',
   sitemapCookies: 'Cookies Policy',
+  // Footer - Additional links
+  sitemapAbout: 'About Us',
+  sitemapProfesores: 'Teachers',
+  sitemapInstalaciones: 'Facilities',
+  sitemapBlog: 'Blog',
+  sitemapHipHop: 'Hip Hop & Reggaeton',
+  sitemapSalsa: 'Salsa & Bachata',
+  sitemapBachata: 'Bachata',
+  sitemapSalsaCubana: 'Cuban Salsa',
+  sitemapFolklore: 'Cuban Folklore',
+  sitemapTimba: 'Timba',
+  sitemapHorarios: 'Schedule',
+  sitemapPrecios: 'Prices',
+  sitemapParticulares: 'Private Lessons',
+  sitemapAlquiler: 'Room Rental',
+  sitemapRegala: 'Gift Dance',
   footerCopyright: "© 2025 Farray's International Dance Center. All Rights Reserved.",
   // InstagramFeed
   instagramTitle: 'Join Our Community on Instagram',
@@ -1593,7 +1618,7 @@ export const en = {
   prepFisica_finalCTA_description:
     'Join hundreds of students—from absolute beginners to advanced dancers—who are improving their performance in stretching, body conditioning, pilates, yoga flow, dance barre and much more. All with the exclusive Farray Method® created by Yunaisy Farray (Street Dance 2 dancer) and specialized training for the demands of dance in the heart of Barcelona.',
 
-  // Testimonials - Preparación Física Bailarines
+  // Testimonials - Physical Training Bailarines
   prepFisica_testimonials_title: 'Unsolicited Testimonials from Our Students',
   prepFisica_testimonials_intro:
     "Dancers who are improving their performance with our specialized training share their authentic experience at Farray's Center Barcelona. No filters, no scripts. Just real stories of physical and technical transformation.",
@@ -3320,6 +3345,7 @@ At Farray's International Dance Center, Afrobeats is taught with technique, resp
   hhrHeroSubtitle: 'Urban fusion with flow, rhythm and music video choreography',
   hhrHeroDesc: 'More than a dance: a unique, informal, sensual fusion with lots of flow.',
   hhrHeroLocation: 'Classes from beginner to advanced level, between Plaza España and Sants',
+  hhrHeroStudents: '+15,000 students trained',
 
   // CTAs
   hhrCTA1: 'Become a Member Now',
@@ -3344,6 +3370,7 @@ At Farray's International Dance Center, Afrobeats is taught with technique, resp
   hhrWhatIsQuestionAnswer: 'Yes, it is.',
 
   // Cultural History
+  hhrCulturalHistoryTitle: 'Hip Hop Reggaeton History & Culture',
   hhrCulturalShort:
     "Hip Hop Reggaeton is a fusion of two iconic styles: American hip-hop and Latin reggaeton. At Farray's we've created a unique style that combines the best of both worlds.",
   hhrCulturalFull: `### Hip Hop Origins
@@ -6142,14 +6169,14 @@ Works comprehensively: **flexibility, functional strength, coordination, proprio
   contemporaneoScheduleSubtitle: 'Two styles, multiple schedules: find your perfect class',
 
   // Level Cards Section
-  contemporaneoLevelPrincipianteTitle: 'Lyrical Beginners',
-  contemporaneoLevelPrincipianteDesc:
+  contemporaneoLevelBeginnerTitle: 'Lyrical Beginners',
+  contemporaneoLevelBeginnerDesc:
     'First contact with contemporary dance. Fluid movement, emotional expression and connection with music. No previous requirements.',
   contemporaneoLevelLiricoBasicoTitle: 'Lyrical Basic',
   contemporaneoLevelLiricoBasicoDesc:
     'Continue developing your lyrical technique with more elaborate sequences. For students who have taken contemporary classes or have ballet/dance foundation.',
-  contemporaneoLevelLiricoIntermedioTitle: 'Lyrical Intermediate',
-  contemporaneoLevelLiricoIntermedioDesc:
+  contemporaneoLevelLiricoIntermediateTitle: 'Lyrical Intermediate',
+  contemporaneoLevelLiricoIntermediateDesc:
     'Complex sequences, interpretive work and development of your personal style. Requirement: at least 1 year of contemporary classes or solid dance foundation.',
   contemporaneoLevelSueloFlowTitle: 'Floor & Flow',
   contemporaneoLevelSueloFlowDesc:
@@ -10747,7 +10774,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogHistoriaSalsa_intro:
     "Salsa is much more than a rhythm: it's a story of migrations, resistance and collective creativity connecting Africa, the Caribbean and the world. From its Afro-Cuban roots to its global expansion, salsa embodies centuries of cultural mixing and expressive freedom.",
   blogHistoriaSalsa_introFarrays:
-    "In Barcelona, this tradition beats strongly at [Farray's International Dance Center](/en/clases), where learning salsa means understanding a living, universal history told through the body. Check our [schedules and prices](/en/horarios-precios) to join this tradition.",
+    "In Barcelona, this tradition beats strongly at [Farray's International Dance Center](/en/clases), where learning salsa means understanding a living, universal history told through the body. Check our [schedules and prices](/en/horarios-clases-baile-barcelona) to join this tradition.",
 
   // === SECTION 1: ORIGINS (1850-1970) ===
   blogHistoriaSalsa_section1Title:
@@ -10836,7 +10863,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogHistoriaSalsa_section6Content1:
     'Salsa is a mirror of Latin American history: African root, Caribbean soul and global heart. Its journey from Cuban solares to New York barrios—and today, to Barcelona academies—demonstrates the power of art to unite cultures and transcend eras.',
   blogHistoriaSalsa_conclusionCTA:
-    "If you want to feel the pulse of the Caribbean in the heart of Barcelona, check our [schedules and prices](/en/horarios-precios) and [book your first class](/en/clases/salsa-cubana-barcelona). At [Farray's](/en/clases), salsa is not learned: it's lived.",
+    "If you want to feel the pulse of the Caribbean in the heart of Barcelona, check our [schedules and prices](/en/horarios-clases-baile-barcelona) and [book your first class](/en/clases/salsa-cubana-barcelona). At [Farray's](/en/clases), salsa is not learned: it's lived.",
 
   // === FAQ (SEO Schema) ===
   blogHistoriaSalsa_faqTitle: 'Frequently Asked Questions About Salsa History',
@@ -11091,7 +11118,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   salsaLadyV2FinalCTADesc:
     'Tu transformación comienza con una sola clase. El Método Farray® te espera.',
   salsaLadyV2FinalCTA1: 'Reservar por WhatsApp',
-  salsaLadyV2FinalCTA2: 'Ver Horarios',
+  salsaLadyV2FinalCTA2: 'View Schedule',
   salsaLadyV2WhyFarrayTitle: "¿Por qué elegir Farray's para aprender Lady Style?",
   salsaLadyV2WhyFarraySubtitle:
     'No todas las academias son iguales. Esto es lo que nos hace diferentes.',
@@ -11100,7 +11127,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     'Yunaisy Farray se formó en la Escuela Nacional de Arte de Cuba. Técnica cubana auténtica, no imitaciones.',
   salsaLadyV2WhyFarray2Title: 'Sistema Progresivo por Niveles',
   salsaLadyV2WhyFarray2Desc:
-    'Principiante, Básico, Intermedio y Avanzado. Cada nivel con objetivos claros y evaluación de progreso.',
+    'Beginner, Básico, Intermediate y Avanzado. Cada nivel con objetivos claros y evaluación de progreso.',
   salsaLadyV2WhyFarray3Title: 'Grupos Reducidos',
   salsaLadyV2WhyFarray3Desc:
     'Máximo 15 alumnas por clase para atención personalizada. Tu profesora te conoce por tu nombre.',
@@ -11117,18 +11144,18 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   pricing_page_title: 'Precios Clases de Baile Barcelona | Cuotas 2025',
   pricing_page_description:
     'Conoce las cuotas de socio de FIDC Barcelona: planes mensuales desde 50€, cuotas flexibles, entrenamientos personalizados. Sin permanencia. Primera clase gratis.',
-  pricing_breadcrumb_home: 'Inicio',
+  pricing_breadcrumb_home: 'Home',
   pricing_breadcrumb_current: 'Horarios y Precios',
   pricing_schema_name: "Cuotas Club Deportivo Farray\'s Center",
   pricing_schema_description:
-    'Cuotas de socio para actividades de baile en Barcelona. Planes mensuales, flexibles y entrenamientos personalizados.',
+    'Cuotas de socio para actividades de baile in Barcelona. Planes mensuales, flexibles y entrenamientos personalizados.',
   pricing_hero_title: 'Horarios y Precios',
   pricing_hero_subtitle:
     'Invierte en tu bienestar. Elige el plan que mejor se adapte a tu ritmo de vida y empieza a bailar hoy.',
   pricing_badge_no_permanence: 'Sin permanencia',
   pricing_badge_cancel_anytime: 'Cancela cuando quieras',
   pricing_badge_first_class_free: 'Reserva sin compromiso',
-  pricing_hero_cta: 'Hazte Socio Ahora',
+  pricing_hero_cta: 'Become a Member Now',
   pricing_trial_title: '¿Primera vez? Reserva tu clase de Bienvenida',
   pricing_trial_subtitle:
     'En enero ven a conocernos sin compromiso. Prueba cualquier actividad y descubre por qué más de 1500 socios nos eligen cada semana.',
@@ -11142,7 +11169,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   enrollmentInclude3: 'Todos los beneficios exclusivos de socio',
   pricing_monthly_title: 'Cuotas Mensuales',
   pricing_monthly_subtitle:
-    'Elige cuántas actividades quieres hacer a la semana. A más actividades, menor coste por sesión.',
+    'Elige cuántas actividades quieres hacer a la semana. A más actividades, menor coste por session.',
   pricing_tab_regular: 'Regular',
   pricing_tab_premium: 'Premium',
   pricing_activities_month: 'actividades/mes',
@@ -11170,7 +11197,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   pricing_premium: 'Premium',
   pricing_regular: 'Regular',
   pricing_dropin_title: 'Participación Puntual (Sin Inscripción)',
-  pricing_session: 'sesión',
+  pricing_session: 'session',
   pricing_sessions: 'sesiones',
   pricing_personal_title: 'Entrenamientos Personalizados',
   pricing_personal_subtitle:
@@ -11256,7 +11283,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   pricing_faq12_q: '¿Qué métodos de pago aceptan?',
   pricing_faq12_a:
     'Aceptamos tarjeta de crédito/débito (pago recurrente automático para cuotas mensuales), transferencia bancaria y efectivo. Todo se gestiona a través de nuestra app Momence.',
-  pricing_faq13_q: '¿Cuánto cuestan las clases de baile en Barcelona?',
+  pricing_faq13_q: '¿Cuánto cuestan las clases de baile in Barcelona?',
   pricing_faq13_a:
     "En Barcelona, los precios varían según el centro y la modalidad. En general, oscilan entre 50€ y 150€/mes para cuotas regulares, o entre 10€ y 25€ por clase suelta. En Farray's Center ofrecemos opciones desde 50€/mes con acceso a +25 estilos, sin permanencia.",
   pricing_faq14_q: '¿Puedo ir solo/a a las clases?',
@@ -11277,7 +11304,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   pricing_cta_emotional_close: 'Ese momento puede ser esta semana.',
   pricing_cta_technical1: 'Sin permanencia. Cancela cuando quieras. Empieza cuando quieras.',
   pricing_cta_technical2: 'Más de 15.000 socios han confiado en nosotros desde 2017.',
-  pricing_cta_primary: 'Hazte Socio Ahora',
+  pricing_cta_primary: 'Become a Member Now',
   pricing_cta_primary_subtext:
     'Hacerte socio es fácil. Elige tu cuota, paga online y empieza cuando quieras.',
   pricing_cta_secondary: 'Reservar Clase de Bienvenida',
@@ -11285,10 +11312,10 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   pricing_cta_secondary_subtitle: 'Prueba el centro · Conoce horarios y niveles',
   pricingV2_page_title: 'Precios Clases de Baile Barcelona | Desde 50 euros/mes',
   pricingV2_page_description:
-    'Descubre los precios de clases de baile en Barcelona. Cuotas mensuales desde 50 euros, bonos flexibles y opciones puntuales. Sin permanencia. Primera clase gratis.',
-  pricingV2_hero_title: 'Precios de Clases de Baile en Barcelona',
+    'Descubre los precios de clases de baile in Barcelona. Cuotas mensuales desde 50 euros, bonos flexibles y opciones puntuales. Sin permanencia. Primera clase gratis.',
+  pricingV2_hero_title: 'Precios de Clases de Baile in Barcelona',
   pricingV2_hero_subtitle:
-    'Descubre las opciones de participación en actividades de baile en uno de los centros de referencia en Barcelona.',
+    'Descubre las opciones de participación en actividades de baile en uno de los centros de referencia in Barcelona.',
   pricingV2_hero_subtitle2:
     'Clases de salsa, bachata, afrobeat y más, adaptadas a todos los niveles.',
   pricingV2_hero_cta: 'Descubre Cómo Empezar',
@@ -11298,13 +11325,13 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   pricingV2_reassurance2: 'No necesitas venir en pareja',
   pricingV2_reassurance3: 'Puedes cambiar de modalidad',
   pricingV2_reassurance4: 'Te ayudamos a elegir bien',
-  pricingV2_priceContext_title: '¿Cuánto cuestan las clases de baile en Barcelona?',
+  pricingV2_priceContext_title: '¿Cuánto cuestan las clases de baile in Barcelona?',
   pricingV2_priceContext_text1:
-    'En Barcelona, las clases de baile suelen oscilar entre 10€ y 25€ por sesión, o entre 50€ y 150€ al mes en formato de cuota, dependiendo de la frecuencia, el tipo de centro y el nivel de especialización.',
+    'En Barcelona, las clases de baile suelen oscilar entre 10€ y 25€ por session, o entre 50€ y 150€ al mes en formato de cuota, dependiendo de la frecuencia, el tipo de centro y el nivel de especialización.',
   pricingV2_priceContext_text2:
     "En Farray's Center apostamos por un modelo flexible, accesible y orientado a la práctica real del baile. No vendemos clases sueltas sin contexto: ofrecemos un sistema de participación que se adapta a tu ritmo de vida, con profesores certificados y una comunidad activa de más de 10.000 bailarines.",
   pricingV2_priceContext_highlight:
-    'Centro de referencia en Barcelona desde 2017 · Reconocido por CID-UNESCO · +25 estilos de baile',
+    'Centro de referencia in Barcelona desde 2017 · Reconocido por CID-UNESCO · +25 estilos de baile',
   pricingV2_howItWorks_title: "Cómo funcionan las cuotas en Farray's Center",
   pricingV2_howItWorks_text:
     "En Farray's Center no pagas clases sueltas sin contexto. Eliges una forma de participación según tu disponibilidad y tus objetivos.",
@@ -11365,9 +11392,9 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   schedule_category_urbano: 'Urbano',
   schedule_category_danza: 'Danza',
   schedule_category_fitness: 'Fitness',
-  schedule_level_beginner: 'Principiante',
+  schedule_level_beginner: 'Beginner',
   schedule_level_basic: 'Básico',
-  schedule_level_intermediate: 'Intermedio',
+  schedule_level_intermediate: 'Intermediate',
   schedule_level_advanced: 'Avanzado',
   schedule_level_intermediateAdvanced: 'Inter/Avanzado',
   schedule_level_all: 'Todos los niveles',
@@ -11378,6 +11405,10 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   schedule_cta_button: 'Reservar Clase de Bienvenida',
   schedule_cta_subtitle: 'Puertas Abiertas · Del 7 al 31 de enero',
   schedule_cta_subtitle2: 'Prueba el centro · Conoce horarios y niveles',
+  // PUERTAS ABIERTAS CTA (Global for all class pages)
+  puertasAbiertasCTA: 'Discover How to Start',
+  puertasAbiertasSubtext:
+    'Open Doors · January 7-31 · Try the center · Learn about schedules and levels',
   leadModal_title: "Descubre cómo empezar en Farray's Center",
   leadModal_subtitle:
     'Te enviamos toda la información para empezar a bailar con nosotros de forma clara y sin compromiso.',
@@ -11411,7 +11442,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   leadModal_style_latinos: 'Ritmos Latinos (Salsa, Bachata, Lady Style...)',
   leadModal_style_urbanos: 'Bailes Urbanos (Hip Hop, Reggaeton, Heels...)',
   leadModal_style_danza: 'Danza (Contemporáneo, Jazz, Ballet...)',
-  leadModal_style_fitness: 'Preparación Física (Stretching, Cuerpo Fit...)',
+  leadModal_style_fitness: 'Physical Training (Stretching, Cuerpo Fit...)',
   leadModal_style_other: 'Otros',
   leadModal_submit: 'Descubre Cómo Empezar',
   leadModal_sending: 'Enviando...',
@@ -11439,19 +11470,19 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     'Para asegurarte de recibir toda la información, te recomendamos añadir nuestro correo a tu lista de contactos.',
   leadModal_success_close: 'Entendido',
   members: 'members',
-  years_in_barcelona: 'años en Barcelona',
+  years_in_barcelona: 'años in Barcelona',
   horariosV2_page_title: 'Horarios Clases de Baile Barcelona | Farray Center',
   horariosV2_page_description:
-    'Encuentra el horario perfecto para tus clases de baile en Barcelona. Mañanas, tardes y noches. +25 estilos de danza, salsa, bachata, urbano y más. Grupos por nivel.',
+    'Encuentra el horario perfecto para tus clases de baile in Barcelona. Mañanas, tardes y noches. +25 estilos de danza, salsa, bachata, urbano y más. Grupos por nivel.',
   horariosV2_breadcrumb: 'Horarios',
   horariosV2_skipToContent: 'Saltar al contenido principal',
   horariosV2_skipToFilters: 'Ir a filtros de horario',
-  horariosV2_hero_title: 'Horarios de Clases de Baile en Barcelona',
+  horariosV2_hero_title: 'Horarios de Clases de Baile in Barcelona',
   horariosV2_hero_subtitle:
     'Encuentra el horario y el estilo que encajan contigo y descubre cómo empezar en Farray Center de forma clara y sin compromiso.',
   horariosV2_hero_cta: 'Recibir Horarios Completos',
   horariosV2_hero_ctaSubtext: 'Gratis y sin compromiso',
-  horariosV2_hero_years: 'años en Barcelona',
+  horariosV2_hero_years: 'años in Barcelona',
   horariosV2_preview_title: 'Esto es solo una muestra',
   horariosV2_preview_subtitle: 'Tenemos muchos más horarios y estilos que mostrarte',
   horariosV2_preview_point1: '+100 clases semanales de baile',
@@ -11503,13 +11534,13 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   horariosV2_day_friday: 'Viernes',
   horariosV2_day_saturday: 'Sábado',
   horariosV2_day_sunday: 'Domingo',
-  horariosV2_block_morning_title: 'Clases de baile por la mañana en Barcelona',
+  horariosV2_block_morning_title: 'Clases de baile por la mañana in Barcelona',
   horariosV2_block_morning_subtitle: 'Afro · Jazz · Contemporáneo · Preparación física',
-  horariosV2_block_evening_title: 'Clases de baile por la tarde y noche en Barcelona',
+  horariosV2_block_evening_title: 'Clases de baile por la tarde y noche in Barcelona',
   horariosV2_block_evening_subtitle: 'Afro · Jazz · Ballet · Contemporáneo',
-  horariosV2_block_salsa_title: 'Horarios de salsa y bachata en Barcelona',
+  horariosV2_block_salsa_title: 'Horarios de salsa y bachata in Barcelona',
   horariosV2_block_salsa_subtitle: 'Social · Progresivo · Todos los niveles',
-  horariosV2_block_urbano_title: 'Clases de baile urbano en Barcelona',
+  horariosV2_block_urbano_title: 'Clases de baile urbano in Barcelona',
   horariosV2_block_urbano_subtitle: 'Afrobeats · Dancehall · Hip Hop · Reggaeton · Heels · Twerk',
   horariosV2_block_showMore: 'Ver más clases',
   horariosV2_block_disclaimer:
@@ -11531,20 +11562,20 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   horariosV2_badge_popular: 'Más demandado',
   horariosV2_badge_limited: 'Plazas limitadas',
   horariosV2_badge_new: 'Nuevo',
-  horariosV2_badge_smallGroup: 'Grupos reducidos',
+  horariosV2_badge_smallGroup: 'Small groups',
   horariosV2_card_teacher: 'Profesor/a',
   horariosV2_card_reminder: 'Recordar',
   horariosV2_card_share: 'Compartir',
   horariosV2_levels_title: '¿Qué significan los niveles?',
   horariosV2_levels_subtitle:
     'Te ayudamos a encontrar el grupo perfecto para tu experiencia actual.',
-  horariosV2_level_principiantes: 'Principiantes',
+  horariosV2_level_principiantes: 'Beginners',
   horariosV2_level_principiantes_desc:
     'Empiezas desde cero. No tienes experiencia previa en este estilo. Te guiaremos paso a paso.',
   horariosV2_level_basico: 'Básico',
   horariosV2_level_basico_desc:
     'Conoces los fundamentos. Has practicado algo antes pero aún estás aprendiendo las bases.',
-  horariosV2_level_intermedio: 'Intermedio',
+  horariosV2_level_intermedio: 'Intermediate',
   horariosV2_level_intermedio_desc:
     'Dominas la técnica básica. Puedes seguir coreografías y quieres perfeccionar tu estilo.',
   horariosV2_level_avanzado: 'Avanzado',
@@ -11553,7 +11584,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   horariosV2_level_open: 'Open Level',
   horariosV2_level_open_desc:
     'Todos los niveles mezclados. Cada uno trabaja a su ritmo con adaptaciones del profesor.',
-  horariosV2_level_intermedioAvanzado: 'Intermedio-Avanzado',
+  horariosV2_level_intermedioAvanzado: 'Intermediate-Avanzado',
   horariosV2_levels_helpText:
     '¿No sabes cuál es tu nivel? No te preocupes, te orientamos personalmente antes de empezar.',
   horariosV2_season_current: 'Actual',
@@ -11592,7 +11623,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     'Mira, lo importante es que pruebes. Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
   horariosV2_faq7_q: '¿Dónde está Farray Center y a quién van dirigidas las actividades de baile?',
   horariosV2_faq7_a:
-    'Estamos en Calle Entença nº 100 en Barcelona y nuestras clases están dirigidas a adultos de todos los niveles que quieren aprender, mejorar o disfrutar del baile en un entorno profesional y cercano.',
+    'Estamos en Calle Entença nº 100 in Barcelona y nuestras clases están dirigidas a adultos de todos los niveles que quieren aprender, mejorar o disfrutar del baile en un entorno profesional y cercano.',
   horariosV2_emotional_close:
     'No se trata solo de encajar una clase en tu agenda. Se trata de encontrar un lugar donde disfrutar, progresar y sentirte parte de una comunidad.',
   horariosV2_whatsapp_cta: '¿Tienes más dudas? Escríbenos por WhatsApp',
@@ -11637,7 +11668,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     'Organizamos las clases por bloques horarios y niveles para que encuentres fácilmente el que mejor encaja contigo.',
   horariosV2_reassurance1: 'Clases de mañana, tarde y noche',
   horariosV2_reassurance2: 'Todos los niveles',
-  horariosV2_reassurance3: 'Grupos reducidos',
+  horariosV2_reassurance3: 'Small groups',
   horariosV2_reassurance4: 'Ambiente acogedor',
   horariosV2_blocks_title: 'Bloques de Horarios',
   horariosV2_blocks_subtitle:
@@ -11651,11 +11682,11 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   horariosV2_block_urbano_ex1: 'Afrobeats y Dancehall',
   horariosV2_block_urbano_ex2: 'Hip Hop y Reggaeton',
   horariosV2_block_urbano_ex3: 'Heels y Twerk',
-  horariosV2_level_beginner: 'Principiante',
+  horariosV2_level_beginner: 'Beginner',
   horariosV2_level_beginner_desc: 'Empiezas desde cero',
   horariosV2_level_basic: 'Básico',
   horariosV2_level_basic_desc: 'Conoces los fundamentos',
-  horariosV2_level_intermediate: 'Intermedio',
+  horariosV2_level_intermediate: 'Intermediate',
   horariosV2_level_intermediate_desc: 'Dominas la técnica básica',
   horariosV2_level_advanced: 'Avanzado',
   horariosV2_level_advanced_desc: 'Alto dominio técnico',
@@ -12127,7 +12158,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogSalsaRitmo_conclusionContent:
     "Salsa is joy, tradition and modernity in motion. It is danced history. Its essence travels from African drums to European dance floors, reinventing itself without losing its roots. At **[Farray's International Dance Center](/en)** we celebrate that heritage every day: we train dancers, but also guardians of a living culture.",
   blogSalsaRitmo_conclusionCTA:
-    'If you want to learn, enjoy and feel how the Caribbean beats in the heart of the Mediterranean, this is your place. **Dance salsa, live the history.** [Discover our schedules and classes](/en/horarios-precios).',
+    'If you want to learn, enjoy and feel how the Caribbean beats in the heart of the Mediterranean, this is your place. **Dance salsa, live the history.** [Discover our schedules and classes](/en/horarios-clases-baile-barcelona).',
 
   // === FAQ ===
   blogSalsaRitmo_faqTitle: 'Frequently Asked Questions about Salsa',
@@ -12146,4 +12177,2203 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogSalsaRitmo_faq5Question: 'Where to learn salsa in Barcelona?',
   blogSalsaRitmo_faq5Answer:
     "At Farray's International Dance Center we offer Cuban salsa, line salsa and rueda de casino classes for all levels. We have certified teachers, a welcoming atmosphere and an active community of dancers. We are in Barcelona and you can check our schedules on the website.",
+
+  // =====================================================
+  // TWERK LANDING PAGE
+  // =====================================================
+
+  twLandingPageTitle: 'Twerk Welcome Class',
+  twLandingPageDescription:
+    'Discover Twerk in Barcelona. Completely FREE Welcome Class. Limited spots. No commitment. Book now.',
+
+  twLandingBadge: 'FREE WELCOME CLASS',
+  twLandingHeadline: 'Awaken Your Power with Twerk',
+  twLandingSubheadline:
+    'Start the new year releasing your energy, connecting with your body and discovering a dance that empowers you from the first minute. Guaranteed fun while working glutes, core and self-esteem.',
+  twLandingCTA: 'BOOK YOUR WELCOME CLASS NOW',
+  twLandingTrustText: 'No cost · No commitment · Very limited spots',
+  twLandingTrustActiveStudents: '1,500+ active students',
+  twLandingTrustYearsExp: '8+ years',
+  twLandingTrustLocationShort: 'Barcelona - Plaza España',
+  twLandingReviewsLabel: 'reviews',
+  twLandingExclusiveBadge: 'EXCLUSIVE',
+
+  twLandingLogosTitle: 'As seen in',
+  twLandingFestivalsText: 'And at the Best Dance Festivals Around the World',
+
+  twLandingStatYears: 'Years of Experience',
+  twLandingStatActive: 'Active Students',
+  twLandingStatSatisfied: 'Satisfied Students',
+
+  twLandingExperienceTitle: 'Ready to unleash your inner power?',
+  twLandingExperienceDesc:
+    "Twerk is not just a dance, it's a statement of freedom. It's your moment to connect with your body without judgment, build confidence and have an amazing time. First time with us? This is your chance: a completely free Twerk Welcome Class, no cost, no commitment, with limited spots.",
+
+  twLandingValueTitle: "What's included in this experience?",
+  twLandingValueItem1: 'A full 60-minute Twerk class',
+  twLandingValuePrice1: 'Value: {price}€',
+  twLandingValueItem2: 'Safe and judgment-free environment',
+  twLandingValueItem3: 'Small group: limited spots each week',
+  twLandingValueItem4: 'Direct WhatsApp confirmation after booking',
+  twLandingValueItem5: 'Access to private offer if you sign up that day',
+  twLandingValueIncluded: 'Included',
+  twLandingValueTotal: 'TOTAL VALUE:',
+  twLandingValueYourPrice: 'YOUR PRICE TODAY:',
+  twLandingValueFree: 'FREE',
+
+  twLandingOfferTitle: 'Limited time only',
+  twLandingOfferDesc:
+    "Book your class now and if you sign up the same day, you'll receive an exclusive welcome offer valid only after the class. We want you to be part of Farray's only if you connect with our energy... but if you do, don't waste any time.",
+
+  twLandingScheduleTitle: 'Choose your schedule',
+  twLandingScheduleSubtitle: 'Classes available at Calle Entença nº 100, Barcelona',
+  twLandingLimitedSpots: 'Very limited spots! This experience is only available once per person',
+  twLandingUrgencyBadge: 'LIMITED SPOTS — Book now!',
+
+  twLandingWhyFarraysTitle: "Why Farray's International Dance Center?",
+  twLandingWhyTitle1: 'Specialized Twerk teachers',
+  twLandingWhyDesc1:
+    'Sandra and Isabel: experts in Twerk and Dancehall Female with training in Jamaican roots and Afro-Caribbean culture.',
+  twLandingWhyTitle2: 'Safe and empowering environment',
+  twLandingWhyDesc2:
+    'No judgment, no shame. Here we celebrate all bodies and all levels. Your only competition is yourself.',
+  twLandingWhyTitle3: 'CID UNESCO recognized academy',
+  twLandingWhyDesc3:
+    'Directed by Yunaisy Farray, actress from Street Dance 2. Guaranteed professionalism and quality.',
+  twLandingWhyTitle4: 'Unbeatable location',
+  twLandingWhyDesc4:
+    'Calle Entença 100, between Plaza España and Sants. Metro, buses and train at the door. Over 700 m² of facilities.',
+
+  twLandingTestimonialsTitle: 'What do those who have experienced it say?',
+  twLandingTestimonial1:
+    "I came absolutely embarrassed thinking I wouldn't know how to move anything. I left feeling more confident than ever. The teachers are amazing and the atmosphere is pure love.",
+  twLandingTestimonial2:
+    "Twerk has changed my life. It's not just a brutal workout for glutes and core, it's pure therapy. I leave every class feeling renewed.",
+  twLandingTestimonial3:
+    "I never thought I'd dare to do Twerk. Now it's my favorite class of the week. The group is wonderful and the teachers make you feel at home.",
+
+  twLandingFaqTitle: 'You might be wondering...',
+  twLandingObjQ1: "What if I've never done Twerk or anything like it?",
+  twLandingObjA1:
+    'Perfect, this class is designed exactly for you. We guide you step by step from zero. Most of our students started with no experience.',
+  twLandingObjQ2: 'Do I need to have a specific body type?',
+  twLandingObjA2:
+    'Not at all! Twerk is for ALL bodies. Here we celebrate diversity and each one shines in their own way.',
+  twLandingObjQ3: 'Is it very physically intense?',
+  twLandingObjA3:
+    'Twerk works glutes, core and legs, but everyone goes at their own pace. The teachers adapt exercises so you can enjoy without forcing yourself.',
+  twLandingObjQ4: 'Can I go alone? Will I feel uncomfortable?',
+  twLandingObjA4:
+    '90% of our students come alone the first time. The atmosphere is super welcoming and zero judgment. Here we only support each other and dance together.',
+
+  twLandingVideoPlaceholder: 'Video coming soon',
+
+  twLandingFinalCTATitle: 'Your body has power. Time to awaken it.',
+  twLandingFinalCTADesc:
+    "Book your spot now and don't let them tell you about it... or dance it for you.",
+  twLandingFinalCTAExtra: 'Spots fly faster than a "Booty Pop" on a Friday night.',
+  twLandingFinalTrust: 'No cost · No commitment · Very limited spots',
+
+  twLandingFooterRights: 'All rights reserved',
+  twLandingFooterLegal: 'Legal Notice',
+  twLandingFooterPrivacy: 'Privacy Policy',
+  twLandingFooterTerms: 'Terms and Conditions',
+
+  twLandingCountdownTitle: 'This offer ends in:',
+  twLandingCountdownExpires: 'Limited spots each week',
+  twLandingCountdownDays: 'Days',
+  twLandingCountdownHours: 'Hours',
+  twLandingCountdownMinutes: 'Min',
+  twLandingCountdownSeconds: 'Sec',
+
+  twExitIntent_title: 'Not convinced by Twerk?',
+  twExitIntent_description:
+    "No worries, we have over 25 different dance styles. There's surely one perfect for you.",
+  twExitIntent_ctaExplore: 'See all available classes',
+  twExitIntent_ctaDancehall: 'Book Twerk class',
+  twExitIntent_ctaClose: 'Close',
+  twExitIntent_hint: 'Dancehall, Heels, Hip-Hop, Afrobeats, Salsa, Bachata and much more...',
+
+  // TWERK LEAD MODAL
+  twLeadModal_title: 'Discover how to start with Twerk',
+  twLeadModal_subtitle: 'Try a welcome class and decide calmly if it fits you.',
+  twLeadModal_microCommit_question: 'Would you like to try a Twerk class?',
+  twLeadModal_microCommit_yes: 'Yes, I want to try!',
+  twLeadModal_microCommit_curious: 'I just want more information',
+  twLeadModal_intro:
+    'Fill in the form and receive all the information to come relaxed and enjoy the experience.',
+  twLeadModal_benefits_title: "What you'll receive:",
+  twLeadModal_benefit1: 'Available Twerk schedules by level',
+  twLeadModal_benefit3: 'Confirmation and reminders via WhatsApp',
+  twLeadModal_benefit4: 'Access to the welcome class (no commitment)',
+  twLeadModal_field_firstName: 'First Name',
+  twLeadModal_field_lastName: 'Last Name',
+  twLeadModal_field_email: 'Email',
+  twLeadModal_field_phone: 'Phone',
+  twLeadModal_placeholder_firstName: 'Your first name',
+  twLeadModal_placeholder_lastName: 'Your last name',
+  twLeadModal_placeholder_email: 'your@email.com',
+  twLeadModal_placeholder_phone: '+34 600 000 000',
+  twLeadModal_consent_text: 'I accept to receive information about my Twerk welcome class and the',
+  twLeadModal_consent_link: 'privacy policy',
+  twLeadModal_submit: 'Book my welcome class',
+  twLeadModal_sending: 'Booking...',
+  twLeadModal_error_firstName: 'Please enter your first name',
+  twLeadModal_error_lastName: 'Please enter your last name',
+  twLeadModal_error_email: 'Please enter a valid email',
+  twLeadModal_error_phone: 'Please enter your phone',
+  twLeadModal_error_consent: 'You must accept to receive information to continue',
+  twLeadModal_error_generic: 'An error occurred. Please try again.',
+  twLeadModal_success_title: 'Booking Confirmed',
+  twLeadModal_success_heading: 'Check your email right now',
+  twLeadModal_success_message: "We've sent you all the information for your welcome class.",
+  twLeadModal_success_check_email:
+    "If you don't see it, check spam or promotions and add our email to your contacts.",
+  twLeadModal_success_next_title: 'Next steps:',
+  twLeadModal_success_next_1: 'Check your email (also spam or promotions)',
+  twLeadModal_success_next_2: 'Choose the schedule that works best for you',
+  twLeadModal_success_next_3: "We'll confirm via WhatsApp before the class",
+  twLeadModal_success_spam_note:
+    "Add info@farrayscenter.com to your contacts so you don't miss anything.",
+  twLeadModal_success_close: 'Got it',
+  twLeadModal_existing_heading: "You're already registered!",
+  twLeadModal_existing_message: 'We see you already registered for a Twerk class before.',
+  twLeadModal_existing_contact:
+    "If you have any questions or haven't received information, write to us at info@farrayscenter.com",
+  twLeadModal_legal_text:
+    "Your data will be processed by Farray's International Dance Center to manage your welcome class. You can exercise your rights by writing to info@farrayscenter.com.",
+
+  // Legal Notice Page
+  legalNotice_page_title: 'Legal Notice',
+  legalNotice_page_description:
+    "Legal notice for Farray's Center - Information about the website owner, terms of use and applicable regulations.",
+  legalNotice_hero_title: 'Legal Notice',
+  legalNotice_breadcrumb_current: 'Legal Notice',
+  legalNotice_last_updated: 'Last updated',
+  legalNotice_back_home: 'Back to home',
+  legalNotice_prevalence_clause:
+    'This Legal Notice was originally drafted in Spanish. In case of discrepancy between translated versions and the Spanish version, the Spanish text shall prevail.',
+  legalNotice_language_note:
+    'The legal content of this page is presented in Spanish, the official language for legal purposes in Spain, regardless of the language selected for website navigation.',
+  legalNotice_index_title: 'Index',
+
+  // Cookie Consent Banner
+  cookies_banner_title: 'We use cookies',
+  cookies_banner_description:
+    'We use our own and third-party cookies to improve your experience, analyze traffic and show you personalized content. You can accept all, reject non-essential or configure your preferences.',
+  cookies_accept_all: 'Accept all',
+  cookies_reject_all: 'Reject non-essential',
+  cookies_configure: 'Configure cookies',
+  cookies_settings: 'Cookie settings',
+  cookies_settings_title: 'Cookie settings',
+  cookies_save_preferences: 'Save preferences',
+  cookies_policy_link: 'Cookie Policy',
+  cookies_more_info: 'For more information, see our',
+
+  // Cookie Categories
+  cookies_category_essential: 'Essential cookies',
+  cookies_category_essential_desc:
+    'Necessary for the basic functioning of the site. They cannot be disabled.',
+  cookies_category_analytics: 'Analytics cookies',
+  cookies_category_analytics_desc:
+    'Help us understand how you use the site to improve your experience. Includes Google Analytics.',
+  cookies_category_marketing: 'Marketing cookies',
+  cookies_category_marketing_desc:
+    'Allow us to show you relevant ads and measure campaign effectiveness. Includes Meta Pixel.',
+  cookies_category_functional: 'Functional cookies',
+  cookies_category_functional_desc: 'Enable additional features like embedded YouTube videos.',
+
+  // YouTube blocked message
+  cookies_youtube_blocked: 'To watch this video, you need to accept functional cookies.',
+
+  // ============================================================================
+  // BLOG ARTICLE: History of Bachata
+  // ============================================================================
+
+  blogHistoriaBachata_title: 'History of Bachata: From Dominican Barrios to Barcelona',
+  blogHistoriaBachata_metaDescription:
+    "Complete history of bachata: origin Dominican Republic 1960s, sensual evolution, icons like Calderón and Romeo Santos. Bachata classes Barcelona at Farray's.",
+  blogHistoriaBachata_excerpt:
+    'From Dominican barrios to Barcelona: history, icons and how to learn sensual bachata',
+  blogHistoriaBachata_breadcrumbCurrent: 'History of Bachata',
+  blogHistoriaBachata_summaryBullet1:
+    'Origin Dominican Republic 1960s: fusion bolero + son + merengue',
+  blogHistoriaBachata_summaryBullet2: 'José Manuel Calderón: father of bachata (1962)',
+  blogHistoriaBachata_summaryBullet3: 'From marginal stigma to UNESCO Heritage (2019)',
+  blogHistoriaBachata_summaryBullet4: "Barcelona: European bachata capital with Farray's",
+  blogHistoriaBachata_statCalderonLabel: 'First bachata recording',
+  blogHistoriaBachata_statUNESCOLabel: 'UNESCO Intangible Heritage',
+  blogHistoriaBachata_intro:
+    'Bachata bursts in like a sensual sequence shot: bodies merging in perfect sway, guitars crying heartbreak and a rhythm born in the marginal barrios of Santo Domingo to conquer dance floors worldwide. According to [Peter Manuel (1995)](https://doi.org/10.2307/780250), bachata represents a unique fusion of romantic bolero, Cuban son and Dominican merengue that crystallized in the 60s.',
+  blogHistoriaBachata_introFarrays:
+    'At **[Farray\'s International Dance Center](/en/clases)** we teach bachata from its traditional roots to contemporary sensual. Here we tell you the complete history: from "Borracho de amor" (1962) to the classes we offer in Barcelona.',
+  blogHistoriaBachata_origenesTitle:
+    'Origins of Bachata: Dominican Roots, Marginality and Birth (1960s)',
+  blogHistoriaBachata_origenesContent1:
+    "Bachata's DNA is forged in the [Dominican Republic](https://en.wikipedia.org/wiki/Dominican_Republic) of the 1960s. It fuses Cuban **romantic bolero**, **son** and local **merengue**, creating a distinctive sound characterized by the requinto guitar, güiro and bongó. According to [Deborah Pacini Hernández (1995)](https://www.jstor.org/stable/3052288), bachata emerges as a musical expression of the urban popular classes.",
+  blogHistoriaBachata_origenesContent2:
+    'The marginal stage (1962-1970) marks the birth of the genre. Disparagingly viewed as "música de amargue" (bitter music) by elites, bachata played in corner stores, brothels and poor neighborhoods. **José Manuel Calderón** (1937-2010), considered the father of bachata, recorded "Borracho de amor" and "Condena" in 1962, establishing the foundations of the genre according to [Paul Austerlitz (1997)](https://www.jstor.org/stable/j.ctt1bh2k1h).',
+  blogHistoriaBachata_origenesBarcelona:
+    'Dominican migration to Spain, especially to Barcelona since the 80s, brought traditional bachata. Initially danced at family gatherings and private parties before conquering dance schools.',
+  blogHistoriaBachata_etimologiaTitle: 'Why "Bachata"? Etymology, Stigma and Rebranding',
+  blogHistoriaBachata_etimologiaIntro:
+    'The word "bachata" originally meant a **rural creole party** or informal gathering, as documented by [Martha Ellen Davis (1994)](https://muse.jhu.edu/article/515850). In the 60s, the term acquired pejorative connotation when associated with music from marginal neighborhoods.',
+  blogHistoriaBachata_etimologiaTeoriasTitle: 'Evolution of the term "bachata":',
+  blogHistoriaBachata_teoria1:
+    '**Creole party (pre-1960s):** Rural festive gathering with music, drinks and dancing. Documented in Dominican folklore since the 19th century.',
+  blogHistoriaBachata_teoria2:
+    '**Marginal genre (1960s-1980s):** The term was applied disparagingly to music from corner stores and poor neighborhoods. "Guard music" or "bitter music".',
+  blogHistoriaBachata_teoria3:
+    '**Global rebranding (1990s-today):** With Juan Luis Guerra and internationalization, "bachata" became a globally recognized brand of sensuality and Latin passion.',
+  blogHistoriaBachata_etimologiaCierre:
+    'The transition from stigma to cultural pride culminated when [UNESCO declared bachata Intangible Cultural Heritage of Humanity](https://ich.unesco.org/en/RL/bachata-of-the-dominican-republic-01514) in December 2019, recognizing its value as an artistic and social expression.',
+  blogHistoriaBachata_evolucionTitle: 'Stylistic Evolution: From Amargue to Sensual (1962-2025)',
+  blogHistoriaBachata_evolucionIntro:
+    'Bachata has gone through three main stages according to the periodization by [Deborah Pacini Hernández (2014)](https://www.dukeupress.edu/bachata). Each era contributed sounds, dance styles and representative figures:',
+  blogHistoriaBachata_evolucionTableTitle: 'Historical evolution of bachata',
+  blogHistoriaBachata_tableHeaderEtapa: 'Stage',
+  blogHistoriaBachata_tableHeaderDecada: 'Decade',
+  blogHistoriaBachata_tableHeaderCaracteristicas: 'Characteristics',
+  blogHistoriaBachata_tableHeaderFiguras: 'Key Figures',
+  blogHistoriaBachata_tableHeaderBarcelona: 'In Barcelona',
+  blogHistoriaBachata_tableRow1Col1: 'Marginal Takeoff',
+  blogHistoriaBachata_tableRow1Col2: '1960s-1970s',
+  blogHistoriaBachata_tableRow1Col3: 'Raw guitar, heartbreak lyrics, prominent güiro',
+  blogHistoriaBachata_tableRow1Col4: 'Calderón, Luis Segura, Rafael Encarnación',
+  blogHistoriaBachata_tableRow1Col5: 'Traditional base in Dominican parties',
+  blogHistoriaBachata_tableRow2Col1: 'Radio Broadcasting',
+  blogHistoriaBachata_tableRow2Col2: '1980s',
+  blogHistoriaBachata_tableRow2Col3: 'National radio, less stigma, bolero influence',
+  blogHistoriaBachata_tableRow2Col4: 'Luis Segura, Blas Durán, Mélida Rodríguez',
+  blogHistoriaBachata_tableRow2Col5: 'Boom in Gràcia and Raval venues',
+  blogHistoriaBachata_tableRow3Col1: 'Evolutionary / Rosa',
+  blogHistoriaBachata_tableRow3Col2: '1990s-2025',
+  blogHistoriaBachata_tableRow3Col3: 'Professional production, pop/R&B fusion, sensual bachata',
+  blogHistoriaBachata_tableRow3Col4: 'Juan Luis Guerra, Aventura, Romeo Santos, Prince Royce',
+  blogHistoriaBachata_tableRow3Col5: "Farray's: sensual + Dominican",
+  blogHistoriaBachata_imageIconosCaption:
+    'Bachata icons: from Calderón to Romeo Santos, six decades of evolution',
+  blogHistoriaBachata_imageBarcelonaCaption:
+    "Sensual bachata class at Farray's International Dance Center Barcelona",
+  blogHistoriaBachata_iconosTitle: 'Bachata Icons: The Epic Cast of the Sensual Saga',
+  blogHistoriaBachata_iconosIntro:
+    'Bachata boasts an "all-star cast" of artists who defined each era of the genre. From marginalized pioneers to global stars:',
+  blogHistoriaBachata_iconosListaTitle: 'Fundamental figures of bachata:',
+  blogHistoriaBachata_iconoCalderon:
+    '**José Manuel Calderón (1937-2010):** The father of bachata. "Borracho de amor" and "Condena" (1962) are the first recordings of the genre. He innovated with the use of güiro as the lead instrument.',
+  blogHistoriaBachata_iconoSegura:
+    '**Luis Segura (1940):** The "Añoñaíto", king of bachata heartbreak. "Pena por ti" (1982) broke the radio taboo and brought bachata to Dominican national stations.',
+  blogHistoriaBachata_iconoVictorVictor:
+    '**Víctor Víctor (1948-2021):** Bridge between traditional bachata and nueva trova. "Mesita de noche" fused poetry with bachata rhythm.',
+  blogHistoriaBachata_iconoJuanLuis:
+    '**[Juan Luis Guerra](https://en.wikipedia.org/wiki/Juan_Luis_Guerra) (1957):** The globalizer. "Bachata rosa" (1990) won the Latin Grammy and legitimized the genre internationally. He fused bachata with jazz and pop.',
+  blogHistoriaBachata_iconoRomeo:
+    '**[Aventura](https://en.wikipedia.org/wiki/Aventura_(band)) / Romeo Santos (1981):** Urban revolution. "Obsession" (2002) sold millions in Europe. Romeo Santos is today the "King of Bachata" with hip-hop and R&B fusions.',
+  blogHistoriaBachata_iconoPrince:
+    '**[Prince Royce](https://en.wikipedia.org/wiki/Prince_Royce) (1989):** International pop. "Corazón sin cara" and "Darte un beso" made him a crossover phenomenon with 5+ Billboard Awards.',
+  blogHistoriaBachata_iconosFarrays:
+    "At **[Farray's](/en/clases/bachata-barcelona)** we dance the music of all these artists, from Calderón's classic amargue to the hits of Romeo Santos and Prince Royce.",
+  blogHistoriaBachata_barcelonaTitle:
+    'Bachata in Barcelona: From Dominican Migration to European Capital',
+  blogHistoriaBachata_barcelonaComunidad:
+    "Barcelona has consolidated as Spain's **bachata epicenter**. The Dominican community (over 20,000 residents according to INE) brought the genre in the 80s, first establishing private parties in neighborhoods like Raval and Ciutat Vella, and later conquering dance academies.",
+  blogHistoriaBachata_barcelonaFarrays:
+    "**[Farray's International Dance Center](/en/clases)** is a bachata reference in Barcelona. We offer classes in **traditional bachata**, **sensual bachata** and modern fusions. Our Dominican and European teachers combine authenticity with pedagogical technique. [Check schedules and prices](/en/horarios-clases-baile-barcelona).",
+  blogHistoriaBachata_beneficiosTitle: 'Scientific Benefits of Dancing Bachata',
+  blogHistoriaBachata_beneficiosIntro:
+    'Beyond enjoyment, dancing bachata provides science-backed benefits:',
+  blogHistoriaBachata_beneficiosListaTitle: 'Proven benefits:',
+  blogHistoriaBachata_beneficio1:
+    '**Burns 350-450 calories/hour:** Equivalent to sensual HIIT. Hip movements and spins activate core and legs ([Harvard Health](https://www.health.harvard.edu/diet-and-weight-loss/calories-burned-in-30-minutes-for-people-of-three-different-weights)).',
+  blogHistoriaBachata_beneficio2:
+    '**Reduces 76% dementia risk:** Step memorization and partner connection stimulate neuroplasticity ([NEJM 2003](https://www.nejm.org/doi/full/10.1056/NEJMoa022252)).',
+  blogHistoriaBachata_beneficio3:
+    '**Decreases 20-30% cortisol:** Endorphins released during dancing reduce chronic stress ([Frontiers in Psychology](https://www.frontiersin.org/articles/10.3389/fpsyg.2021.635578/full)).',
+  blogHistoriaBachata_beneficio4:
+    '**Improves confidence and posture:** Sensual body awareness develops body presence and self-esteem.',
+  blogHistoriaBachata_conclusionTitle: 'Your Bachata Sequence Shot Starts Here',
+  blogHistoriaBachata_conclusionContent:
+    'From Santo Domingo barrios to Barcelona academies, bachata has traveled an epic path: from marginal genre to UNESCO Heritage, from "bitter music" to global phenomenon with Romeo Santos filling stadiums.',
+  blogHistoriaBachata_conclusionCTA:
+    "Bachata didn't stop in Santo Domingo: it pulses in Barcelona's Eixample. **[Book your trial class](/en/clases/bachata-barcelona)** at Farray's and write your own chapter in this story of rhythm and passion.",
+  blogHistoriaBachata_faqTitle: 'Frequently Asked Questions About Bachata History',
+  blogHistoriaBachata_faq1Question: 'What is the origin of bachata as a musical genre?',
+  blogHistoriaBachata_faq1Answer:
+    'Bachata was born in the Dominican Republic in the 1960s as a fusion of Cuban bolero, son and merengue. It emerged in marginal neighborhoods of Santo Domingo and was initially stigmatized as "bitter music" before achieving international recognition.',
+  blogHistoriaBachata_faq2Question: 'Who is the father of bachata?',
+  blogHistoriaBachata_faq2Answer:
+    'José Manuel Calderón (1937-2010) is recognized as the father of bachata. In 1962 he recorded "Borracho de amor" and "Condena", considered the first recordings of the genre.',
+  blogHistoriaBachata_faq3Question: 'What does the word "bachata" mean?',
+  blogHistoriaBachata_faq3Answer:
+    'Originally, "bachata" meant a rural creole party or informal gathering with music and dancing in the Dominican Republic. In the 60s, the term was applied to the musical genre emerging in popular neighborhoods.',
+  blogHistoriaBachata_faq4Question: 'When was bachata declared UNESCO Heritage?',
+  blogHistoriaBachata_faq4Answer:
+    'UNESCO declared Dominican bachata Intangible Cultural Heritage of Humanity in December 2019, recognizing its value as an artistic and cultural expression.',
+  blogHistoriaBachata_faq5Question: 'Where to learn sensual bachata in Barcelona?',
+  blogHistoriaBachata_faq5Answer:
+    "At Farray's International Dance Center we offer traditional, sensual and Dominican bachata classes for all levels. We have specialized teachers, a welcoming environment and flexible schedules. Check our programming on the website.",
+
+  // ============================================================================
+  // BLOG ARTICLE: Men and women, shall we talk salsa?
+  // ============================================================================
+
+  blogClasesSalsaBarcelona_title: 'Men and women, shall we talk salsa?',
+  blogClasesSalsaBarcelona_metaDescription:
+    "Salsa as a universal language: reflections on the dance floor as a space for connection between men and women. Salsa classes in Barcelona at Farray's.",
+  blogClasesSalsaBarcelona_excerpt:
+    'The dance floor as a space for connection: salsa is a universal language spoken by men and women',
+  blogClasesSalsaBarcelona_breadcrumbCurrent: "Let's talk salsa",
+  blogClasesSalsaBarcelona_summaryBullet1:
+    'The dance floor: a stage where men and women share more than a hobby',
+  blogClasesSalsaBarcelona_summaryBullet2:
+    'Salsa as a universal language that helps us know ourselves better',
+  blogClasesSalsaBarcelona_summaryBullet3:
+    'Dancing together opens doors to conversations and understanding',
+  blogClasesSalsaBarcelona_intro:
+    'We breathe airs that smell of revolution. A revolution that will be feminist and that we will make, together, men and women. We will rewrite the concepts of masculinity and femininity and accept that, just as there is no single feminine ideal, there is no single way to be a man. Through changing our behavior, we will change our thinking; but we will continue to need spaces where we can express our multiple identities and give outlet to realities as natural as the need for human contact, affection, acceptance; even more, the desire to seduce and be seduced, to touch and be touched. Virtual relationship spaces fall short when it comes to providing a multisensory experience.',
+  blogClasesSalsaBarcelona_section1Title: 'The dance floor: a shared stage',
+  blogClasesSalsaBarcelona_section1Content:
+    'The dance floor, on the other hand, provides us with a stage where men and women can share something that is much more than a hobby; it is a way of understanding life, interpreting music and relating to our own body. And if salsa is danced on that floor, the possibilities for interaction multiply. Each song change implies a partner change, understanding "partner" as two people dancing together; many times we see women dancing with women, but there are also, and there will be more and more, happy men dancing with other men. And they don\'t clash, because the good vibes emanating from a couple that dances and feels the same rhythm go beyond gender. This environment of full awareness, of maximum enjoyment, fosters healthy emotional relationships, friendship and acceptance of the other, whether man or woman.',
+  blogClasesSalsaBarcelona_imagePareja: 'Connection on the dance floor goes beyond gender',
+  blogClasesSalsaBarcelona_imageCuban:
+    'Salsa is a universal language spoken in every corner of the planet',
+  blogClasesSalsaBarcelona_section2Title: 'Salsa: a universal language',
+  blogClasesSalsaBarcelona_section2Content1:
+    "Salsa is a universal language spoken in every corner of the planet. It allows us to express our identity in a fluid and uninhibited way. It reveals aspects of ourselves we didn't know. It helps us know ourselves better, both ourselves and others. And, despite what may be said, the salsa scene evolves at the same pace as we people evolve. It is we, the dancers, who shape it.",
+  blogClasesSalsaBarcelona_section2Content2:
+    "Men, who don't need trophy women, nor mothers, nor cooks, but women who ask us to dance and during the four minutes the song lasts look us in the eyes and make us feel like the only man on the floor. And women, who don't need Adonises, nor bosses, nor heroes, but new models of men who enjoy sharing with us the everyday and special moments of life. Speaking this language we understand each other better and open the door to possible conversations, future understandings or, simply, a pleasant and rewarding chat.",
+  blogClasesSalsaBarcelona_section3Title: "Men and women, let's talk salsa!",
+  blogClasesSalsaBarcelona_section3Content:
+    "Men and women, let's talk salsa! Because on the dance floor we find that space of authentic connection we so need. A place where words are superfluous and the body speaks for us. Where each step is a conversation and each turn a shared complicity.",
+  blogClasesSalsaBarcelona_section4Title: 'Learn this language with great professionals',
+  blogClasesSalsaBarcelona_section4Content:
+    "And if you want to learn this language, do it with teachers who think like you; who not only give wings to your feet, but also to your mind; who teach you the basics of the language with rigor, while infecting you with the emotion of the bright future that awaits you. At Farray's, we know how to speak and teach salsa. And timba, and rumba, and son, and bachata, and kizomba, and afro contemporary, and jazz, and reggaeton, and hip-hop, and dancehall... It's our language, our culture, our passion. And we feel very happy to transmit it!",
+  blogClasesSalsaBarcelona_ctaClases:
+    '**Want to start speaking salsa?** Discover our <a href="/en/clases/salsa-cubana-barcelona">Cuban Salsa classes</a>, <a href="/en/clases/salsa-bachata-barcelona">Salsa and Bachata</a> or <a href="/en/clases/timba-barcelona">Timba</a>. First trial class free. <a href="/en/horarios"><strong>See schedules and book →</strong></a>',
+
+  // ============================================================================
+  // BLOG ARTICLE: Dance classes for beginners in Barcelona
+  // ============================================================================
+
+  blogClasesBeginners_title: "Dance classes for beginners in Barcelona: guide to start at Farray's",
+  blogClasesBeginners_metaDescription:
+    "Start dancing from scratch in Barcelona (Eixample). Come meet Farray's with a welcome class and follow this guide: what to bring, how to choose a style and how to progress.",
+  blogClasesBeginners_excerpt:
+    'Complete guide to start dancing from scratch in Barcelona. Welcome class, no partner needed, all levels. Drop-in from €20.',
+  blogClasesBeginners_breadcrumbCurrent: 'Classes for beginners',
+  blogClasesBeginners_summaryBullet1:
+    "Welcome class at Farray's (Eixample) – free during promotional season or from €10",
+  blogClasesBeginners_summaryBullet2: "You don't need previous experience or a partner",
+  blogClasesBeginners_summaryBullet3:
+    'Step-by-step guide: what to bring, which style to choose and how to progress',
+  blogClasesBeginners_summaryBullet4:
+    '+25 styles available: Latin, urban, technical dance and more',
+  blogClasesBeginners_intro:
+    "Feel like starting to dance from scratch and don't know where to begin? You're in the right place. At <a href='/en'>Farray's International Dance Center</a> (Barcelona, Eixample) you can book a <strong>welcome class</strong> to get to know us: <strong>free during promotional season</strong>, or with courtesy price (from €10) the rest of the year. You can also come with drop-in from €20. No pressure, no posing and a team that makes it easy from minute one.",
+  blogClasesBeginners_ctaHero:
+    '<strong><a href="/en/contacto">Book your welcome class →</a></strong>',
+  blogClasesBeginners_section1Title:
+    "The first thing I want you to know (because it'll take the pressure off)",
+  blogClasesBeginners_section1Content:
+    "At Farray's you don't come to \"prove yourself\". You come to learn, disconnect and feel part of a community where dancing is a plan, not an exam. It doesn't matter if:",
+  blogClasesBeginners_section1ListTitle: "It doesn't matter if:",
+  blogClasesBeginners_list1Item1: 'You\'ve never danced and feel like a "stiff board"',
+  blogClasesBeginners_list1Item2: "You're embarrassed to make mistakes",
+  blogClasesBeginners_list1Item3: "You're worried about going alone",
+  blogClasesBeginners_list1Item4: 'You think you "have no rhythm"',
+  blogClasesBeginners_section1Conclusion:
+    'Here the rule is simple: <strong>nobody judges you</strong>, and everyone started the same way.',
+  blogClasesBeginners_section2Title: 'What your first class is like (step by step)',
+  blogClasesBeginners_section2Intro: 'So you come with confidence, this is how it normally works:',
+  blogClasesBeginners_section2ListTitle: 'Steps of your first class:',
+  blogClasesBeginners_paso1:
+    '<strong>You arrive and we orient you:</strong> Our staff welcomes you, explains how the space works and guides you according to your goal (social, urban, technique, etc.).',
+  blogClasesBeginners_paso2:
+    '<strong>You choose your real level:</strong> Zero is a valid level. There are classes for beginners and also people who repeat basics to improve. You come for your own thing.',
+  blogClasesBeginners_paso3:
+    "<strong>You start moving without overthinking:</strong> The first victory isn't doing it perfectly. It's doing it.",
+  blogClasesBeginners_imageClase:
+    'Your first dance class in Barcelona: no pressure, just enjoyment',
+  blogClasesBeginners_queTraerTitle: 'What to bring (and what not)',
+  blogClasesBeginners_queTraerListTitle: 'What you need:',
+  blogClasesBeginners_traer1: 'Comfortable clothes (like for walking fast)',
+  blogClasesBeginners_traer2: 'Clean sneakers or comfortable footwear',
+  blogClasesBeginners_traer3: 'Water',
+  blogClasesBeginners_traer4:
+    'And most importantly: <strong>willingness to try</strong> (the rest is learned)',
+  blogClasesBeginners_section3Title: 'Do I need to come with a partner?',
+  blogClasesBeginners_section3Content:
+    "In most <strong>beginner classes you don't need to come with a partner</strong>. And if some format requires partners or rotation, we explain it so you're comfortable from the start.",
+  blogClasesBeginners_section4Title: "Which style to choose if you're starting",
+  blogClasesBeginners_section4Intro:
+    'If right now you only know that you "want to dance", perfect. Choose by feeling, not by theory:',
+  blogClasesBeginners_section4ListTitle: 'Choose according to what you seek:',
+  blogClasesBeginners_estilo1:
+    '<strong>If you want to socialize and have fun quickly:</strong> <a href="/en/clases/salsa-bachata-barcelona">social/Latin dances</a>',
+  blogClasesBeginners_estilo2:
+    '<strong>If you like energy, cardio and attitude:</strong> <a href="/en/clases/danzas-urbanas-barcelona">urban</a>',
+  blogClasesBeginners_estilo3:
+    '<strong>If you\'re drawn to technique, posture and body control:</strong> <a href="/en/clases/danza-barcelona">dance/technique</a>',
+  blogClasesBeginners_section4Cta:
+    'Not sure? We make it easy: come to a <a href="/en/contacto">welcome class</a> and we\'ll guide you according to your goal.',
+  blogClasesBeginners_section5Title: 'The rule that makes you improve (and almost nobody applies)',
+  blogClasesBeginners_section5Content:
+    "In dance there's a formula that never fails: <strong>repetition + consistency</strong>. Your body learns like it learns a language: at first you think too much, you stumble, you get frustrated... and suddenly one day it happens: you start doing steps without thinking. That's called <strong>muscle memory</strong>. And it's the moment when dancing stops being effort and becomes pleasure.",
+  blogClasesBeginners_section5Tip:
+    '**Realistic tip:** better 2 days a week for 2 months than one intense week and then disappearing.',
+  blogClasesBeginners_section6Title: "Don't compare yourself to anyone (compare yourself to you)",
+  blogClasesBeginners_section6Content: 'In a beginner class you can find:',
+  blogClasesBeginners_section6ListTitle: 'Types of students:',
+  blogClasesBeginners_comparar1: 'People who are truly starting',
+  blogClasesBeginners_comparar2: 'People who repeat basics to polish technique',
+  blogClasesBeginners_comparar3: 'Students who come from other schools',
+  blogClasesBeginners_section6Conclusion:
+    "If you compare, you lose. Your useful comparison is this: <strong>today's me vs me from 3 weeks ago</strong>.",
+  blogClasesBeginners_section7Title:
+    "If you get stuck, ask (and if you want to accelerate, there's an option)",
+  blogClasesBeginners_section7Content: 'If a movement resists you:',
+  blogClasesBeginners_section7ListTitle: 'Options:',
+  blogClasesBeginners_pregunta1: 'Ask during or after class',
+  blogClasesBeginners_pregunta2:
+    'Ask for a specific correction ("what do I do with my weight?", "where do I look?", "how do I mark the time?")',
+  blogClasesBeginners_section7Privadas:
+    'And if you want to advance faster, there\'s the short path: <a href="/en/clases-particulares-baile">private classes</a> to work on what your body needs (without distractions and with direct feedback).',
+  blogClasesBeginners_section8Title: 'Coming to meet us?',
+  blogClasesBeginners_section8Content:
+    "If this guide has taken away some mental noise, that's it: that was what was missing.",
+  blogClasesBeginners_ctaReserva:
+    '<strong><a href="/en/contacto">Book your welcome class →</a></strong><br/><br/>• <strong>During promotional season:</strong> free welcome class<br/>• <strong>Rest of the year:</strong> courtesy class from €10<br/>• <strong>Drop-in:</strong> from €20<br/><br/>Questions? Write to us and we\'ll help you choose class and level.',
+  blogClasesBeginners_section9Title: 'Where we are (Barcelona)',
+  blogClasesBeginners_section9Content:
+    "<strong>Farray's International Dance Center</strong><br/>C/ Entença, 100 (ground floor), 08015 Barcelona, Catalonia<br/>Tel. <a href='tel:+34622247085'>(+34) 622 247 085</a><br/>Email: <a href='mailto:info@farrayscenter.com'>info@farrayscenter.com</a><br/><br/><strong>Class schedule:</strong> 10:00 to 22:00<br/><strong>Phone service:</strong> Mon–Fri 10:00 to 22:00<br/><br/><em>Dance academy in Barcelona (Eixample) - Near Plaza España and Sants Station</em>",
+  blogClasesBeginners_faqTitle: 'Frequently asked questions about dance classes for beginners',
+  blogClasesBeginners_faq1Question: 'Can I start dancing without experience?',
+  blogClasesBeginners_faq1Answer:
+    'Yes. We have beginner classes where you start from the basics and everything is explained step by step.',
+  blogClasesBeginners_faq2Question: 'Is there a trial class to get to know the center?',
+  blogClasesBeginners_faq2Answer:
+    'Yes. During promotional season we offer a free welcome class. The rest of the year you can come meet us with a courtesy class from €10, or with drop-in from €20.',
+  blogClasesBeginners_faq3Question: 'Do I have to go with a partner?',
+  blogClasesBeginners_faq3Answer:
+    "Not necessarily. In many formats you can come alone. We'll guide you according to the class.",
+  blogClasesBeginners_faq4Question: 'What clothes do I need?',
+  blogClasesBeginners_faq4Answer:
+    "Comfortable clothes and comfortable footwear. You don't need anything special to start.",
+  blogClasesBeginners_faq5Question: 'How often should I come to notice improvement?',
+  blogClasesBeginners_faq5Answer:
+    "With consistency (for example, 2 times a week) you'll notice real progress in a few weeks.",
+
+  // ===== TERMS AND CONDITIONS PAGE =====
+  terms_page_title: "General Terms and Conditions | Farray's Center",
+  terms_page_description:
+    "General terms and conditions of Farray's Dance & Fitness S.L. and Club Esportiu Farray Barcelona. Information about services, merchandising, memberships and sports activities.",
+  terms_hero_title: 'General Terms and Conditions',
+  terms_breadcrumb_current: 'Terms and Conditions',
+  terms_last_updated: 'Last updated',
+  terms_back_to_top: '↑ Back to top',
+
+  // Section 1
+  terms_section1_title: '1. IDENTIFICATION AND "WHO IS WHO"',
+  terms_section1_1_title: '1.1. Website owner and information society service provider',
+  terms_section1_1_company: "Farray's Dance & Fitness, S.L.",
+  terms_section1_1_company_short: '(hereinafter, the "SL")',
+  terms_section1_1_nif: 'Tax ID:',
+  terms_section1_1_nif_value: 'B67004812',
+  terms_section1_1_address: 'Address:',
+  terms_section1_1_address_value: 'C/ Entença 100, ground floor 2, 08015 Barcelona (Spain)',
+  terms_section1_1_email: 'Email:',
+  terms_section1_1_phone: 'Phone:',
+  terms_section1_1_phone_value: '(+34) 622 247 085',
+  terms_section1_1_text:
+    'The SL is the owner of the Website and provides the information required for online contracting and identification of the holder in accordance with applicable regulations (LSSI).',
+
+  terms_section1_2_title: '1.2. Sports activity provider for members (separate entity)',
+  terms_section1_2_company: 'Club Esportiu Farray Barcelona',
+  terms_section1_2_company_short: '(hereinafter, the "Club")',
+  terms_section1_2_nif_value: 'G67317701',
+  terms_section1_2_registry: 'Registry:',
+  terms_section1_2_registry_value: "Registre d'Entitats Esportives No. 18821",
+  terms_section1_2_address_value: 'C/ Entença 100, 08015 Barcelona (Spain)',
+  terms_section1_2_text:
+    "The Club is a separate entity from the SL and is the provider of dance sports activities for members, managed through the Club's platform (e.g., Momence) and subject to the texts accepted during the purchase/booking process (including annexes).",
+  terms_section1_2_insurance:
+    'The Club has civil liability insurance for sports activities carried out at its facilities.',
+
+  terms_section1_3_title: '1.3. SL–Club relationship (marketing/support)',
+  terms_section1_3_text:
+    'The SL provides marketing and digital support services to the Club (including Website management and communication). This does not alter who is the contracting party in each purchase: it is always identified at checkout or on the corresponding platform.',
+
+  terms_section1_4_title: '1.4. Golden rule: how to know who you are contracting with',
+  terms_section1_4_text:
+    'For each product/service and during the purchase process, "Sold/Provided by" will be indicated. The entity indicated there will be the contracting party and responsible for the provision.',
+
+  // Section 2
+  terms_section2_title: '2. PURPOSE AND SCOPE OF APPLICATION',
+  terms_section2_intro: 'These Terms govern the contracting of:',
+  terms_section2_a_title: 'A) PRODUCTS AND SERVICES PROVIDED BY THE SL',
+  terms_section2_a_item1:
+    'Merchandising (physical products) paid/reserved online and collected at the facilities.',
+  terms_section2_a_item2:
+    'Services (e.g.: private dance sessions, corporate services, weddings, team building, bachelor/bachelorette parties and similar services).',
+  terms_section2_a_item3: 'Gift packs redeemable for services provided by the SL.',
+  terms_section2_b_title: 'B) SPORTS ACTIVITIES PROVIDED BY THE CLUB (MEMBERS ONLY)',
+  terms_section2_b_item1: 'Club memberships.',
+  terms_section2_b_item2: 'Activity packages (credits).',
+  terms_section2_b_item3: 'Reservations/participation in Club activities.',
+
+  // Section 3
+  terms_section3_title: '3. ACCEPTANCE, CAPACITY AND DATA ACCURACY',
+  terms_section3_intro: 'Contracting implies that the user:',
+  terms_section3_item1: 'Has read and understands these Terms.',
+  terms_section3_item2:
+    'Has legal capacity to contract (over 18 years old or with authorization from a legal representative).',
+  terms_section3_item3: 'Guarantees the accuracy of the data provided.',
+  terms_section3_minor:
+    'If you contract or book for a minor, you declare that you are the parent/legal guardian or have sufficient authorization.',
+
+  // Section 4
+  terms_section4_title: '4. LANGUAGE, CONFIRMATION AND DURABLE MEDIUM',
+  terms_section4_text:
+    'The procedure is carried out in Spanish. The purchase/reservation confirmation is provided on a durable medium (e.g., email/platform confirmation). The user may request documentation in Catalan.',
+
+  // Section 5
+  terms_section5_title: '5. PRICES, TAXES AND INVOICING',
+  terms_section5_intro:
+    'Prices are expressed in euros (€) and include applicable taxes unless otherwise indicated.',
+  terms_section5_item1: 'SL purchases (merch/services):',
+  terms_section5_item1_text: 'the invoice/receipt is issued by the SL.',
+  terms_section5_item2: 'Club contracting (activities):',
+  terms_section5_item2_text:
+    'the receipt is issued by the Club or the Club platform, as applicable.',
+
+  // Section 6
+  terms_section6_title: '6. PAYMENT METHODS',
+  terms_section6_1_title: '6.1. SL',
+  terms_section6_1_text:
+    'Available methods are shown at checkout (e.g., card/Stripe, PayPal or others).',
+  terms_section6_2_title: '6.2. Club',
+  terms_section6_2_text: 'Methods are shown on the Club platform (e.g., card and/or direct debit).',
+
+  // Part I Header
+  terms_part1_title: 'PART I — SL CONDITIONS (MERCH + SERVICES)',
+
+  // Section 7
+  terms_section7_title: '7. MERCHANDISING (PHYSICAL PRODUCTS) — SL',
+  terms_section7_1_title:
+    '7.1. Mode: online purchase/reservation with mandatory collection at facilities',
+  terms_section7_1_text:
+    'Merchandising can be paid for or reserved online, but delivery is made exclusively by collection at the facilities indicated by the SL (currently: C/ Entença 100, ground floor 2, 08015 Barcelona), during current opening hours.',
+  terms_section7_2_title: '7.2. Collection: identification and delivery',
+  terms_section7_2_intro:
+    'To collect the order, the user (or a third party authorized by the user) must present:',
+  terms_section7_2_item1: 'order confirmation (email/receipt), and',
+  terms_section7_2_item2: 'identification document (if necessary to verify ownership).',
+  terms_section7_2_text:
+    'Possession of the product (and, where applicable, the start of the withdrawal period when applicable) is understood to occur when the user or authorized third party takes physical possession of the goods. Mere "availability for collection" does not start the period.',
+  terms_section7_3_title: '7.3. Collection period',
+  terms_section7_3_intro:
+    'The order must be collected within a maximum of 30 calendar days from the "order ready for collection" notification, unless a different period is indicated in the product sheet or confirmation.',
+  terms_section7_3_text: 'If the order has not been collected after this period, the SL may:',
+  terms_section7_3_item1: 'contact the user to arrange collection, and/or',
+  terms_section7_3_item2:
+    'cancel the order and refund the amount paid by the same payment method, unless there is a legitimate reason previously communicated (e.g., customization when applicable).',
+  terms_section7_4_title: '7.4. Right of withdrawal (merchandising purchased online)',
+  terms_section7_4_intro:
+    'In distance contracts for goods, the consumer generally has 14 calendar days to withdraw without justification.',
+  terms_section7_4_start: 'Start of period:',
+  terms_section7_4_start_text:
+    'from when the consumer (or a third party indicated by them) acquires physical possession of the goods (in this case, from actual collection).',
+  terms_section7_4_exercise: 'To exercise it:',
+  terms_section7_4_exercise_text:
+    'email to info@farrayscenter.com with subject "Merchandising Withdrawal", indicating name, purchase email, order number and product.',
+  terms_section7_4_return: 'Return:',
+  terms_section7_4_return_text:
+    "the product must be returned in good condition. The return can be made in person at the facilities or by shipping at the user's expense (except for defect or error attributable to the SL).",
+  terms_section7_4_refund: 'Refund:',
+  terms_section7_4_refund_text:
+    'will be made without undue delay and within legal deadlines; the SL may withhold the refund until receiving the product or proof of return.',
+  terms_section7_5_title: '7.5. In-person purchases (merchandising)',
+  terms_section7_5_text:
+    'For in-person purchases, there is no general right of withdrawal for change of mind, without prejudice to legal warranty or an express commercial policy of exchanges/returns.',
+  terms_section7_6_title: '7.6. Legal warranty (merchandising)',
+  terms_section7_6_text:
+    'Products have a 3-year legal warranty from delivery in accordance with art. 120 of the Consolidated Text of the General Law for the Defense of Consumers and Users (TRLGDCU).',
+
+  // Section 8
+  terms_section8_title: '8. SERVICES PROVIDED BY THE SL',
+  terms_section8_subtitle:
+    '(e.g.: private dance sessions, corporate services, weddings, team building, parties, etc.)',
+  terms_section8_1_title: '8.1. Advance payment',
+  terms_section8_1_text:
+    'To confirm a reservation, the user must pay in advance the total amount of the service (or the deposit indicated in the sheet/quote). Payment blocks schedule, resources and availability.',
+  terms_section8_2_title: '8.2. Services with specific date or period (no withdrawal for online)',
+  terms_section8_2_text:
+    'When the contracted service is set for a specific date or execution period (e.g.: wedding, corporate event, team building, party, session booked with date), the right of withdrawal in online contracting does not apply due to the legal exception provided.',
+  terms_section8_3_title: '8.3. Rescheduling (date change) — with 7 calendar days notice',
+  terms_section8_3_intro: 'The user may request rescheduling by meeting all these conditions:',
+  terms_section8_3_item1:
+    'Written request (email or indicated channel) at least 7 calendar days in advance of the reserved date/time.',
+  terms_section8_3_item2: 'Subject to availability.',
+  terms_section8_3_item3:
+    'Maximum 1 rescheduling per reservation/service, unless expressly authorized.',
+  terms_section8_4_title: '8.4. Late cancellation and no-show',
+  terms_section8_4_noshow: 'No-show:',
+  terms_section8_4_noshow_text:
+    'if the user does not show up, the service will be considered consumed and no refund will be given.',
+  terms_section8_4_late: 'Cancellation with less than 7 calendar days:',
+  terms_section8_4_late_text:
+    'will be considered late cancellation and no refund will be given, as these are services with reserved schedule and resources.',
+  terms_section8_4_note:
+    'The foregoing is without prejudice to any inalienable rights that may correspond under applicable regulations.',
+  terms_section8_5_title: '8.5. Force majeure',
+  terms_section8_5_text:
+    'In duly accredited cases of force majeure (pandemics, natural disasters, general strikes, acts of terrorism, or any unforeseeable and unavoidable circumstance), the SL may offer an alternative (e.g., rescheduling), without this constituting a general obligation or acquired right for future reservations.',
+
+  // Section 9
+  terms_section9_title: '9. SL GIFT PACKS (REDEEMABLE FOR SERVICES)',
+  terms_section9_1_title: '9.1. Definition',
+  terms_section9_1_text: 'A "Gift pack" is a prepaid voucher/coupon redeemable for SL services.',
+  terms_section9_2_title: '9.2. Expiration',
+  terms_section9_2_text:
+    'The expiration and redemption conditions are informed at the time of purchase. Once expired, the pack does not generate a right to refund except for legal obligation.',
+  terms_section9_3_title: '9.3. Withdrawal (gift packs purchased online)',
+  terms_section9_3_item1:
+    'Generally, if the gift pack is purchased online, withdrawal can be exercised within 14 days if the pack has not been redeemed and no specific date/period has been reserved.',
+  terms_section9_3_item2:
+    'If it has already been fully or partially redeemed or a specific date/period has been reserved, the leisure services exception with date/period or the policy communicated before payment will apply (and, if applicable, the proportional criterion for what has already been provided).',
+
+  // Part II Header
+  terms_part2_title: 'PART II — CLUB CONDITIONS (SPORTS ACTIVITIES FOR MEMBERS)',
+
+  // Section 10
+  terms_section10_title: '10. KEY PRINCIPLES (WEB SUMMARY)',
+  terms_section10_1_title: '10.1. Exclusivity for active members',
+  terms_section10_1_text:
+    "The Club's sports activities are exclusive to active members/users who are up to date with payment.",
+  terms_section10_2_title: '10.2. Reservations, cancellations and credits',
+  terms_section10_2_intro:
+    'Management is done on the Club platform (e.g., Momence). Before purchasing/booking, the user accepts:',
+  terms_section10_2_item1: 'Membership Conditions (if applicable)',
+  terms_section10_2_item2: 'Package Conditions (credits) (Annex 1)',
+  terms_section10_2_item3: 'Acceptance for reservation/participation (Annex 2)',
+  terms_section10_2_item4: 'Cancellation policy and credit usage',
+  terms_section10_3_title: '10.3. Direct debit and bank returns (SEPA) — practical effect',
+  terms_section10_3_text1:
+    'Banking regulations may allow the return of direct debits in certain cases and timeframes (e.g., 8 weeks in provided scenarios).',
+  terms_section10_3_text2:
+    'A bank return does not by itself extinguish payment obligations if the period was due and/or there was enjoyment of access/service. In case of non-payment/return, the Club may suspend access/reservations until regularization and pass on reasonable banking/management costs as accepted at registration.',
+
+  // Part III Header
+  terms_part3_title: 'PART III — WITHDRAWAL (GENERAL RULE + EXCEPTIONS) AND IN-PERSON PURCHASES',
+
+  // Section 11
+  terms_section11_title: '11. RIGHT OF WITHDRAWAL (LEGAL SUMMARY)',
+  terms_section11_1_title: '11.1. General rule (only distance or off-premises contracts)',
+  terms_section11_1_intro:
+    'In distance or off-premises contracts, there is generally a minimum period of 14 calendar days to withdraw without justification.',
+  terms_section11_1_goods: 'Goods:',
+  terms_section11_1_goods_text:
+    'from when the consumer (or indicated third party) acquires physical possession of the goods.',
+  terms_section11_1_services: 'Services:',
+  terms_section11_1_services_text: 'from the conclusion of the contract.',
+  terms_section11_2_title: '11.2. Exceptions (when withdrawal does NOT exist, even online)',
+  terms_section11_2_intro: 'Withdrawal does not apply in legal cases, especially relevant here:',
+  terms_section11_2_item1:
+    'Services related to leisure activities when the contract provides for a specific date or execution period (e.g., weddings, events, team building, parties, sessions on reserved dates).',
+  terms_section11_2_item2:
+    'Services fully executed with express consent to start during the period and knowledge of loss of right, meeting legal requirements.',
+  terms_section11_3_title: '11.3. In-person purchases',
+  terms_section11_3_text:
+    'For in-person purchases, there is no general right of withdrawal for change of mind (except for legal warranty or express commercial policy).',
+
+  // Part IV Header
+  terms_part4_title: 'PART IV — SUPPORT, COMPLAINTS, DATA AND JURISDICTION',
+
+  // Section 12
+  terms_section12_title: '12. CUSTOMER SERVICE / CONTACT',
+
+  // Section 13
+  terms_section13_title: '13. COMPLAINTS',
+  terms_section13_text1:
+    'The user may file a complaint by email. They may also go to the competent consumer bodies and request official complaint forms in accordance with applicable regulations (Decree 121/2013 of the Generalitat de Catalunya).',
+  terms_section13_text2:
+    'The user may go to the Junta Arbitral de Consum de Catalunya as an out-of-court dispute resolution mechanism.',
+
+  // Section 14
+  terms_section14_title: '14. ONLINE DISPUTE RESOLUTION (ODR) — NOTICE',
+  terms_section14_text:
+    'The European Online Dispute Resolution Platform (ODR) was discontinued as of July 20, 2025.',
+
+  // Section 15
+  terms_section15_title: '15. DATA PROTECTION',
+  terms_section15_text1: 'Data processing is governed by the Privacy Policy of the site:',
+  terms_section15_link: 'Privacy Policy',
+  terms_section15_text2:
+    'When external platforms are used (e.g., Momence), their policies will also apply.',
+
+  // Section 16
+  terms_section16_title: '16. APPLICABLE LAW AND JURISDICTION',
+  terms_section16_text:
+    'These Terms are governed by Spanish law. In the area of Catalonia, the Codi de Consum de Catalunya (Law 22/2010) will apply supplementarily.',
+  terms_section16_item1:
+    'If the user acts as a consumer, the courts established by applicable consumer regulations will be competent.',
+  terms_section16_item2:
+    'If acting as a business/professional, the parties submit to the courts of Barcelona, unless mandatory rule applies.',
+
+  // Section 17
+  terms_section17_title: '17. MODIFICATION OF THESE TERMS',
+  terms_section17_text:
+    'The SL and the Club reserve the right to modify these conditions, notifying the user by publication on the website and, where appropriate, by email with reasonable advance notice. Continued use of the site or services after the modifications come into effect implies acceptance thereof.',
+
+  // Annex 1
+  terms_annex1_title: 'ANNEX 1 — ACCEPTANCE OF SPECIFIC PACKAGE (CREDITS) CONDITIONS',
+  terms_annex1_subtitle: 'CLUB ESPORTIU FARRAY BARCELONA',
+  terms_annex1_intro:
+    'By purchasing a Club activity Package, I declare that I have read and accept the following:',
+  terms_annex1_1_title: '1) Definitions',
+  terms_annex1_1_package: '"Package":',
+  terms_annex1_1_package_text:
+    'prepaid package that grants a number of credits to book and participate in Club activities.',
+  terms_annex1_1_credit: '"Credit":',
+  terms_annex1_1_credit_text:
+    'booking/participation unit associated with the indicated duration (1 h or 1.5 h, depending on the Package).',
+  terms_annex1_1_momence: '"Momence":',
+  terms_annex1_1_momence_text: 'booking and management platform used by the Club.',
+  terms_annex1_2_title: '2) Expiration',
+  terms_annex1_2_item1: '10-credit packages (1 h or 1.5 h): 6-month expiration.',
+  terms_annex1_2_item2: '20-credit packages (1 h or 1.5 h): 12-month expiration.',
+  terms_annex1_2_text:
+    'Expiration starts counting from the purchase date (unless another rule is expressly indicated at the time of purchase). Once the Package has expired, unused credits are lost and do not generate a right to refund.',
+  terms_annex1_3_title: '3) Personal and non-transferable nature',
+  terms_annex1_3_text:
+    'Packages are personal and non-transferable, non-refundable and not exchangeable for money.',
+  terms_annex1_4_title: '4) Mandatory booking and availability',
+  terms_annex1_4_text:
+    'Participation is subject to prior booking on Momence and availability of spots/capacity.',
+  terms_annex1_5_title: '5) Cancellations and credit consumption',
+  terms_annex1_5_item1:
+    'To recover the credit, I must cancel the booking at least 2 hours in advance.',
+  terms_annex1_5_item2:
+    'If I cancel late or do not attend ("no-show"), the credit is considered consumed.',
+  terms_annex1_5_item3:
+    'If the Club cancels the activity, the credit will be automatically returned or a reasonable alternative will be offered.',
+  terms_annex1_6_title: '6) Member status and facility access',
+  terms_annex1_6_text1:
+    'Access to facilities and participation in activities are linked to maintaining active member/user status and compliance with Club regulations.',
+  terms_annex1_6_text2:
+    'If my member/user status ends, I understand that I will lose the right to access facilities. Package credits may be paused until I reactivate my status, always within their expiration.',
+  terms_annex1_7_title: '7) Health and responsibility',
+  terms_annex1_7_text:
+    "I acknowledge that participation involves physical activity and I assume the inherent risks. This acceptance does not limit the inalienable rights recognized by law nor exclude the Club's liability in legally required cases.",
+  terms_annex1_8_title: '8) Proper use and regulations',
+  terms_annex1_8_text:
+    'I commit to respecting the rules for use of facilities, conduct and safety. Non-compliance may result in suspension of bookings/access according to regulations.',
+  terms_annex1_9_title: '9) Support and inquiries',
+  terms_annex1_9_text: 'For administrative questions or incidents:',
+
+  // Annex 2
+  terms_annex2_title: 'ANNEX 2 — ACCEPTANCE FOR BOOKING AND PARTICIPATION IN ACTIVITIES (CLUB)',
+  terms_annex2_subtitle: 'CLUB ESPORTIU FARRAY BARCELONA – Tax ID G67317701 – Registry 18821',
+  terms_annex2_intro: 'By booking and/or participating in a Club activity, I declare and accept:',
+  terms_annex2_1_title: '1) Health and fitness',
+  terms_annex2_1_text:
+    'I am in adequate physical condition to participate and, if in doubt, I will consult a healthcare professional. I commit to informing the Club of any relevant limitation that may affect my safety.',
+  terms_annex2_2_title: '2) Assumption of risks',
+  terms_annex2_2_text:
+    "I understand that physical activity involves risks (injuries, falls, etc.) and I agree to participate voluntarily assuming the inherent risks. This acceptance does not limit the inalienable rights recognized by law nor exclude the Club's liability when legally applicable.",
+  terms_annex2_3_title: '3) Facility and conduct rules',
+  terms_annex2_3_item1:
+    'I will respect the rules of use (appropriate footwear, hygiene, safety, silent phones, etc.).',
+  terms_annex2_3_item2: 'Audio/video recording is prohibited without Club authorization.',
+  terms_annex2_3_item3:
+    'The Club may suspend participation for reasons of safety, coexistence or non-compliance with rules.',
+  terms_annex2_4_title: '4) Bookings and cancellations (summary)',
+  terms_annex2_4_item1: 'I must cancel at least 2 hours in advance to recover the credit.',
+  terms_annex2_4_item2: 'Late cancellation or non-attendance: the credit is considered consumed.',
+  terms_annex2_4_item3:
+    'If the Club cancels an activity, the credit will be returned or a reasonable alternative will be offered.',
+  terms_annex2_5_title: '5) Data protection',
+  terms_annex2_5_text:
+    "I have read and accept the Club's Privacy Policy and understand that management is done through Momence:",
+  terms_annex2_6_title: '6) Minors',
+  terms_annex2_6_text:
+    'If I book for a minor, I declare that I am their parent/legal guardian or have sufficient authorization, and I accept these conditions on their behalf.',
+  terms_annex2_7_title: '7) Emergencies',
+  terms_annex2_7_text:
+    'I authorize that, in case of emergency, the Club may contact the emergency phone number on my file (if provided) or activate emergency services if necessary.',
+
+  // =====================================================
+  // PRIVACY POLICY PAGE - Privacy Policy
+  // =====================================================
+  privacy_page_title: "Privacy Policy | Farray's Center",
+  privacy_page_description:
+    "Privacy policy and data protection of Farray's Center. Information about how we process your personal data in accordance with GDPR.",
+  privacy_breadcrumb_current: 'Privacy Policy',
+  privacy_hero_title: 'Privacy Policy',
+  privacy_last_updated: 'Last updated',
+  privacy_hero_intro:
+    'Your privacy is important to us. In this Policy we explain what personal data we collect, what we use it for, who we share it with and what rights you have.',
+  privacy_expand_all: 'Expand all',
+  privacy_collapse_all: 'Collapse all',
+  privacy_back_to_top: '↑ Back to top',
+
+  // Prevalence clause
+  privacy_prevalence_clause:
+    'This Privacy Policy was originally drafted in Spanish. In case of discrepancy between translated versions and the Spanish version, the Spanish text shall prevail.',
+
+  // Section 1 - Data Controller
+  privacy_section1_title: '1. Who is the data controller?',
+  privacy_section1_intro:
+    "At Farray's Center, two distinct entities coexist. Depending on the service, the data controller may change:",
+  privacy_section1_controller_a_title: 'A) Controller (Website, Merchandising and SL Services)',
+  privacy_section1_controller_a_name: "Farray's Dance & Fitness, S.L.",
+  privacy_section1_controller_a_label: '("the SL")',
+  privacy_section1_nif: 'Tax ID',
+  privacy_section1_address: 'Address',
+  privacy_section1_email: 'Email',
+  privacy_section1_controller_a_address: 'C/ Entença 100, ground floor 2, 08015 Barcelona (Spain)',
+  privacy_section1_controller_a_desc:
+    'The SL is the website owner and responsible for data processed for:',
+  privacy_section1_controller_a_item1: 'Website and forms management',
+  privacy_section1_controller_a_item2: 'Merchandising sales/pickup',
+  privacy_section1_controller_a_item3:
+    'Services provided by the SL (private sessions, corporate services, weddings, teambuilding, farewell parties and similar)',
+
+  privacy_section1_controller_b_title: 'B) Controller (Sports Activities for Club Members)',
+  privacy_section1_controller_b_name: 'Club Esportiu Farray Barcelona',
+  privacy_section1_controller_b_label: '("the Club")',
+  privacy_section1_registry: 'Sports Entities Registry',
+  privacy_section1_controller_b_address: 'C/ Entença 100, 08015 Barcelona (Spain)',
+  privacy_section1_controller_b_desc: 'The Club is responsible for data processed for:',
+  privacy_section1_controller_b_item1: 'Member/user registration and management',
+  privacy_section1_controller_b_item2: 'Membership management',
+  privacy_section1_controller_b_item3: 'Bookings and participation in sports activities',
+  privacy_section1_controller_b_item4: 'Access control and associated administrative management',
+
+  privacy_section1_note_title: 'Note on the SL–Club relationship:',
+  privacy_section1_note_text:
+    'The SL may provide support/marketing services to the Club. In such cases, the SL may process data on behalf of the Club as "data processor", when necessary and with the corresponding legal agreement.',
+
+  // Section 2 - Data We Process
+  privacy_section2_title: '2. What data we process',
+  privacy_section2_intro: 'Depending on how you interact with us, we may process:',
+  privacy_section2_item1_title: 'Identification and contact data:',
+  privacy_section2_item1_text:
+    'name, surname, email, phone, and other data necessary to manage requests.',
+  privacy_section2_item2_title: 'Administrative data:',
+  privacy_section2_item2_text:
+    'ID/Tax ID only when necessary (e.g. verification, billing, incidents).',
+  privacy_section2_item3_title: 'Purchase data (SL):',
+  privacy_section2_item3_text: 'purchased products, receipts, communications, incidents.',
+  privacy_section2_item4_title: 'Activity data (Club):',
+  privacy_section2_item4_text: 'member status, bookings, attendance, credits, incidents.',
+  privacy_section2_item5_title: 'Payment data:',
+  privacy_section2_item5_text:
+    'we do not store your complete card number. Payments are processed through secure gateways.',
+  privacy_section2_item6_title: 'Technical data:',
+  privacy_section2_item6_text:
+    'IP, browser/device, and cookie data according to your settings/consent.',
+  privacy_section2_item7_title: 'Images and videos:',
+  privacy_section2_item7_text:
+    'only if there is consent for capture and use, or if properly informed and legally applicable.',
+
+  // Section 3 - How We Obtain Your Data
+  privacy_section3_title: '3. How we obtain your data',
+  privacy_section3_item1: 'Website forms (contact, requests, quotes, newsletter).',
+  privacy_section3_item2: 'Merchandising purchases/reservations (pickup at facilities).',
+  privacy_section3_item3: 'Contracting services provided by the SL.',
+  privacy_section3_item4:
+    'Club registration and bookings through management platform (for example, Momence).',
+  privacy_section3_item5:
+    'Communications via email/phone/WhatsApp if you use them to manage a request or incident.',
+
+  // Section 4 - Purposes and Legal Basis
+  privacy_section4_title: '4. Purposes and legal basis',
+  privacy_section4_intro:
+    'We process your data in accordance with GDPR and applicable Spanish regulations.',
+  privacy_section4_sl_title: 'A) SL Purposes',
+  privacy_section4_sl_a: 'a) Responding to requests and contact',
+  privacy_section4_sl_a_desc: '(forms, inquiries, quotes).',
+  privacy_section4_sl_a_basis: 'Legal basis: consent and/or pre-contractual measures.',
+  privacy_section4_sl_b: 'b) Merchandising sales and pickup',
+  privacy_section4_sl_b_desc: '(order management, billing, incidents).',
+  privacy_section4_sl_b_basis: 'Legal basis: contract performance and legal obligations.',
+  privacy_section4_sl_c: 'c) SL service provision',
+  privacy_section4_sl_c_desc:
+    '(private sessions, corporate, weddings, teambuilding, farewell parties, etc.).',
+  privacy_section4_sl_c_basis: 'Legal basis: contract performance and legal obligations.',
+  privacy_section4_sl_d: 'd) Commercial communications',
+  privacy_section4_sl_d_desc: '(newsletter/promotions), if you authorize it.',
+  privacy_section4_sl_d_basis: 'Legal basis: consent (revocable at any time).',
+  privacy_section4_sl_e: 'e) Site security',
+  privacy_section4_sl_e_desc: ', fraud prevention and technical management.',
+  privacy_section4_sl_e_basis: 'Legal basis: legitimate interest.',
+
+  privacy_section4_club_title: 'B) Club Purposes',
+  privacy_section4_club_a: 'a) Registration and member status management',
+  privacy_section4_club_a_desc: 'and booking/participation administration.',
+  privacy_section4_club_a_basis:
+    'Legal basis: associative/contractual relationship and legal obligations.',
+  privacy_section4_club_b: 'b) Operational communications',
+  privacy_section4_club_b_desc: '(schedules, booking notices, incidents, rules).',
+  privacy_section4_club_b_basis:
+    'Legal basis: relationship performance and legitimate organizational interest.',
+
+  // Section 5 - Recipients and Providers
+  privacy_section5_title: '5. Recipients and providers (Processors)',
+  privacy_section5_intro:
+    'We do not sell your data. We only share it when necessary to provide the service or due to legal obligation.',
+  privacy_section5_providers_title: 'Regular providers:',
+  privacy_section5_provider1_title: 'Hosting and domain (web):',
+  privacy_section5_provider1_text: 'Arsys Internet S.L.U. (Spain).',
+  privacy_section5_provider2_title: 'Web platform:',
+  privacy_section5_provider2_text: "Custom developed by Farray's Dance & Fitness SL.",
+  privacy_section5_provider3_title: 'Online payments:',
+  privacy_section5_provider3_text: 'Stripe (secure payment processing).',
+  privacy_section5_provider4_title: 'Club booking/management platform:',
+  privacy_section5_provider4_text: 'Momence (bookings, attendance, activity management).',
+  privacy_section5_provider5_title: 'Email marketing:',
+  privacy_section5_provider5_text: 'Momence Inc.',
+  privacy_section5_provider6_title: 'Analytics/measurement:',
+  privacy_section5_provider6_text: 'Google Analytics (GA4).',
+  privacy_section5_provider7_title: 'Advertising/remarketing:',
+  privacy_section5_provider7_text: 'Google Ads / Meta (Pixel).',
+
+  privacy_section5_others_title: 'We may also communicate data to:',
+  privacy_section5_others_item1:
+    'Public administrations, judges and courts, law enforcement, when there is a legal obligation.',
+  privacy_section5_others_item2:
+    'Advisory/management, audit or legal/accounting support, when necessary and with confidentiality.',
+
+  // Section 6 - International Transfers
+  privacy_section6_title: '6. International transfers',
+  privacy_section6_intro:
+    'Some providers may process data outside the EEA (for example, USA). When this occurs, we will apply appropriate legal mechanisms:',
+  privacy_section6_item1: 'Adequacy decisions where applicable, or',
+  privacy_section6_item2:
+    'Standard Contractual Clauses (SCCs) and additional measures when necessary.',
+
+  // Section 7 - Retention Periods
+  privacy_section7_title: '7. Retention periods',
+  privacy_section7_intro:
+    'We retain data only for the time necessary for the stated purposes and during the periods required by applicable regulations:',
+  privacy_section7_item1_title: 'Request/contact data:',
+  privacy_section7_item1_text:
+    'while management lasts and, afterwards, the time necessary to handle claims.',
+  privacy_section7_item2_title: 'Purchase/service data:',
+  privacy_section7_item2_text:
+    'during the relationship and applicable legal periods (tax/accounting).',
+  privacy_section7_item3_title: 'Newsletter:',
+  privacy_section7_item3_text: 'until you unsubscribe or withdraw consent.',
+  privacy_section7_item4_title: 'Club data:',
+  privacy_section7_item4_text:
+    'while the member/user relationship lasts and according to legal/organizational periods and defense against claims.',
+
+  // Section 8 - Rights
+  privacy_section8_title: '8. Rights',
+  privacy_section8_intro: 'You can exercise:',
+  privacy_section8_rights: 'access, rectification, erasure, objection, restriction and portability',
+  privacy_section8_exercise_title: 'To exercise them:',
+  privacy_section8_exercise_text:
+    'Write to {email} with subject "Data Protection – Rights", indicating your request and, if necessary, a means of identity verification.',
+  privacy_section8_complaint:
+    'You can also lodge a complaint with the {link} if you consider that the processing does not comply with regulations.',
+  privacy_section8_aepd: 'Spanish Data Protection Agency (AEPD)',
+
+  // Section 9 - Minors
+  privacy_section9_title: '9. Minors',
+  privacy_section9_text1:
+    'In Spain, consent-based processing of data from minors under 14 years of age is only lawful if consent from the holder of parental authority or guardianship is obtained.',
+  privacy_section9_text2:
+    'If we detect data from minors without valid consent, we may cancel/limit registration and delete the data when appropriate.',
+
+  // Section 10 - Images and Videos
+  privacy_section10_title: '10. Images and videos (Consent)',
+  privacy_section10_intro:
+    'During activities and events, images/videos may be captured for informational and/or promotional purposes.',
+  privacy_section10_item1:
+    'The legal basis will be consent when applicable (and, for minors, that of the legal representative).',
+  privacy_section10_item2: 'You can withdraw consent at any time by writing to {email}.',
+  privacy_section10_item3:
+    'Withdrawal does not affect lawfully made uses, but does affect reasonably avoidable future uses (e.g. new publications).',
+
+  // Section 11 - Security
+  privacy_section11_title: '11. Security',
+  privacy_section11_text:
+    'We apply reasonable technical and organizational measures to protect data. However, no system is 100% impenetrable.',
+
+  // Section 12 - Cookies
+  privacy_section12_title: '12. Cookies',
+  privacy_section12_intro:
+    'We use technical cookies and, if you consent, analytics and advertising/remarketing cookies.',
+  privacy_section12_text:
+    'Non-essential cookies are only activated according to your settings/consent in the banner or preferences panel. See the site {link} for more details.',
+  privacy_section12_cookies_policy_link: 'Cookie Policy',
+
+  // Section 13 - Policy Changes
+  privacy_section13_title: '13. Policy changes',
+  privacy_section13_text:
+    'We may update this Policy due to legal or operational changes. The "Last updated" date indicates the current version.',
+
+  // =====================================================
+  // COOKIE POLICY PAGE - Cookie Policy
+  // =====================================================
+  cookies_page_title: "Cookie Policy | Farray's Center",
+  cookies_page_description:
+    "Cookie policy of Farray's Center. Information about the cookies we use, their purpose and how to manage your preferences.",
+  cookies_breadcrumb_current: 'Cookie Policy',
+  cookies_hero_title: 'Cookie Policy',
+  cookies_last_updated: 'Last updated',
+  cookies_hero_intro:
+    'On this page we explain what cookies are, which ones we use on our website and how you can configure your preferences.',
+  cookies_expand_all: 'Expand all',
+  cookies_collapse_all: 'Collapse all',
+  cookies_back_to_top: '↑ Back to top',
+
+  // Prevalence clause
+  cookies_prevalence_clause:
+    'This Cookie Policy was originally drafted in Spanish. In case of discrepancy between translated versions and the Spanish version, the Spanish text shall prevail.',
+
+  // Table headers
+  cookies_table_cookie: 'Cookie',
+  cookies_table_provider: 'Provider',
+  cookies_table_purpose: 'Purpose',
+  cookies_table_duration: 'Duration',
+
+  // Section 1 - What are cookies
+  cookies_section1_title: '1. What are cookies?',
+  cookies_section1_text1:
+    'Cookies are small text files that are stored on your device (computer, tablet, mobile) when you visit a website. They allow the site to remember your actions and preferences over a period of time.',
+  cookies_section1_text2:
+    'There are different types of cookies depending on their purpose: technical, analytics, advertising, etc. Some are strictly necessary for the site to function, while others require your prior consent.',
+
+  // Section 2 - Legal basis
+  cookies_section2_title: '2. Legal basis',
+  cookies_section2_intro: 'The use of cookies in Spain is regulated by:',
+  cookies_section2_lssi_title: 'LSSI-CE',
+  cookies_section2_lssi_text:
+    '(Law 34/2002, on Information Society Services): Requires informing the user and obtaining consent for non-essential cookies.',
+  cookies_section2_rgpd_title: 'GDPR',
+  cookies_section2_rgpd_text:
+    '(General Data Protection Regulation): Requires consent to be free, informed, specific and unambiguous.',
+  cookies_section2_lopdgdd_title: 'LOPDGDD',
+  cookies_section2_lopdgdd_text: '(Organic Law 3/2018): Adapts the GDPR to Spanish law.',
+  cookies_section2_important: 'Important:',
+  cookies_section2_important_text:
+    'Essential cookies do not require consent, but do require information. Analytics and advertising cookies are only activated if you give your explicit consent.',
+
+  // Section 3 - Cookies we use
+  cookies_section3_title: '3. Cookies we use',
+  cookies_section3_essential_title: 'A) Essential cookies (always active)',
+  cookies_section3_essential_text:
+    'Necessary for the basic functioning of the site. They do not collect personal information and cannot be disabled.',
+  cookies_section3_analytics_title: 'B) Analytics cookies',
+  cookies_section3_analytics_text:
+    'Allow us to measure traffic and analyze user behavior to improve the site. Only activated with your consent.',
+  cookies_section3_marketing_title: 'C) Marketing/advertising cookies',
+  cookies_section3_marketing_text:
+    'Allow displaying personalized ads and measuring campaign effectiveness. Only activated with your consent.',
+  cookies_section3_functional_title: 'D) Functional cookies',
+  cookies_section3_functional_text:
+    'Enhance user experience with additional features such as embedded videos. Only activated with your consent.',
+  cookies_section3_maps_title: 'E) Google Maps cookies',
+  cookies_section3_maps_text:
+    'If the site includes Google maps, cookies may be set for the service to function. Only activated with your consent.',
+  cookies_section3_more_info: 'More information:',
+  cookies_section3_google_privacy: 'Google Privacy Policy',
+  cookies_section3_meta_privacy: 'Meta Privacy Policy',
+  cookies_section3_youtube_privacy: 'YouTube/Google Privacy Policy',
+  cookies_section3_google_cookies: 'Google Cookie Policy',
+
+  // Cookie purposes
+  cookies_purpose_consent_storage: 'Stores your cookie preferences',
+  cookies_purpose_locale: 'Remembers selected language',
+  cookies_purpose_unique_users: 'Distinguishes unique users',
+  cookies_purpose_session_state: 'Maintains session state',
+  cookies_purpose_distinguish_users: 'Distinguishes users',
+  cookies_purpose_conversion_tracking: 'Conversion tracking and remarketing',
+  cookies_purpose_personalized_ads: 'Personalized advertising',
+  cookies_purpose_video_stats: 'Registers an ID for video statistics',
+  cookies_purpose_bandwidth: 'Estimates user bandwidth',
+  cookies_purpose_maps_preferences: 'Map preferences and personalization',
+  cookies_purpose_consent_status: 'User consent status',
+  cookies_purpose_site_stats: 'Collects site statistics',
+
+  // Cookie durations
+  cookies_duration_1_year: '1 year',
+  cookies_duration_2_years: '2 years',
+  cookies_duration_24_hours: '24 hours',
+  cookies_duration_3_months: '3 months',
+  cookies_duration_session: 'Session',
+  cookies_duration_6_months: '6 months',
+  cookies_duration_1_month: '1 month',
+
+  // Cookie types
+  cookies_type_essential: 'Essential',
+  cookies_type_analytics: 'Analytics',
+  cookies_type_marketing: 'Marketing',
+  cookies_type_functional: 'Functional',
+  cookies_type_own: 'Own',
+
+  // Section 4 - How to manage preferences
+  cookies_section4_title: '4. How to manage your preferences',
+  cookies_section4_intro: 'You can change your cookie preferences at any time:',
+  cookies_section4_duration_title: 'Consent duration:',
+  cookies_section4_duration_text:
+    'Your cookie preferences are saved for 1 year. After that period, we will request your consent again.',
+  cookies_section4_option1_title: 'Option 1: Cookie settings panel',
+  cookies_section4_option1_text:
+    'Click the following button to open the settings panel and adjust which cookie categories you accept:',
+  cookies_section4_option2_title: 'Option 2: Browser settings',
+  cookies_section4_option2_text:
+    'You can also configure your browser to block or delete cookies. Please note that this may affect site functionality.',
+  cookies_section4_settings_button: 'Configure cookies',
+
+  // Section 5 - International transfers
+  cookies_section5_title: '5. International data transfers',
+  cookies_section5_intro:
+    'Some of the third-party cookie providers mentioned in this policy are companies based outside the European Economic Area (EEA), mainly in the United States.',
+  cookies_section5_providers_title: 'Providers and guarantees:',
+  cookies_section5_google_text:
+    '(Analytics, YouTube, Maps): Operates under the EU-U.S. Data Privacy Framework and Standard Contractual Clauses (SCCs) approved by the European Commission.',
+  cookies_section5_meta_text:
+    '(Facebook Pixel): Uses Standard Contractual Clauses (SCCs) to ensure an adequate level of protection.',
+  cookies_section5_consent_note:
+    'These transfers are only made when the user has given consent for the corresponding cookie categories (analytics, marketing or functional).',
+
+  // Section 6 - Data controller
+  cookies_section6_title: '6. Data controller',
+  cookies_section6_more_info: 'For more information about personal data processing, see our',
+  cookies_section6_privacy_link: 'Privacy Policy',
+
+  // Section 7 - Updates
+  cookies_section7_title: '7. Updates',
+  cookies_section7_text:
+    'This Cookie Policy may be updated to reflect legal or technical changes. The "Last updated" date indicates the current version. We recommend reviewing it periodically.',
+
+  // === Auto-generated translations (need review) ===
+  limitedSpots: `Plazas Limitadas`,
+  startToday: `Empieza Hoy`,
+  finalCTADefaultNote: `Consulta schedules disponibles`,
+  navBodyConditioning: `Acondicionamiento Físico`,
+  navCuerpoFit: `Cuerpo-Fit`,
+  navFAQ: `Preguntas Frecuentes`,
+  danceClassesHub_style_cuerpo_fit: `Cuerpo-Fit (Cardio Dance)`,
+  danceClassesHub_style_stretching: `Stretching & Flexibilidad`,
+  danceClassesHub_style_cuerpo_fit_desc: `Entrenamiento full body with elementos de danza que quema 400-500 calories per session. Cardio intenso, tonificación muscular y diversión asegurada. Ideal for quienes buscan results visibles without experience previa en dance. Class híbrida perfecta for principiantes.`,
+  danceClassesHub_style_stretching_desc: `Estiramientos profundos y flexibilidad activa for mejorar tu rango de movement. Técnicas de backbending, splits y flexibilidad articular with enfoque en prevención de lesiones. Perfecto for bailarines y no bailarines que buscan mayor movilidad.`,
+  dhV3HeroStudents: `+15,000 students formados`,
+  dhV3PrepareTitle: `Prepara tu first class de Dancehall`,
+  dhV3PrepareSubtitle: `Everything you need to know before coming`,
+  twerkHeroStudents: `+15,000 students formados`,
+  afroHeroStudents: `+15,000 students formados`,
+  sxrHeroStudents: `+15,000 students formados`,
+  rcbHeroStudents: `+15,000 students formados`,
+  femHeroStudents: `+15,000 students formados`,
+  sexystyleHeroStudents: `+15,000 students formados`,
+  modernjazzHeroStudents: `+15,000 students formados`,
+  balletHeroStudents: `+15,000 students formados`,
+  contemporaneoHeroStudents: `+15,000 students formados`,
+  afrocontemporaneoHeroStudents: `+15,000 students formados`,
+  afrojazzHeroStudents: `+15,000 students formados`,
+  hiphopHeroStudents: `+15,000 students formados`,
+  salsaCubanaHeroStudents: `+15,000 students formados`,
+  cuerpofitBreadcrumbHome: `Home`,
+  cuerpofitBreadcrumbClasses: `Classes`,
+  cuerpofitBreadcrumbCategory: `Dancer Training`,
+  cuerpofitBreadcrumbCurrent: `Body Conditioning`,
+  cuerpofitPageTitle: `Body Conditioning Classes in Barcelona | Physical Conditioning for Dancers`,
+  cuerpofitMetaDescription: `Body conditioning and physical conditioning classes for dancers in Barcelona. Improve strength, flexibility and endurance with the Farray Method®. Mondays 7pm. Plaza España.`,
+  cuerpofitMetaKeywords: `body conditioning barcelona, physical conditioning dancers, dance physical preparation, functional training dancers, strength and flexibility dance, fitness dancers`,
+  cuerpofitHeroTitle: `Body Conditioning in Barcelona`,
+  cuerpofitHeroSubtitle: `Specialized Physical Conditioning for Dancers`,
+  cuerpofitHeroDesc: `Develop functional strength, active flexibility and specific endurance for dance. A prepared body dances better and gets injured less.`,
+  cuerpofitHeroLocation: `Farray's Center · Between Plaza España and Sants, Barcelona`,
+  cuerpofitHeroStudents: `+15,000 students trained`,
+  cuerpofitCTAGroup: `Enrollment options`,
+  cuerpofitCTA1: `Become a Member Now`,
+  cuerpofitCTA1Subtext: `Limited spots per class`,
+  cuerpofitCTA2: `Book Your Trial Class`,
+  cuerpofitCTA2Subtext: `Limited time offer`,
+  cuerpofitWhatIsTitle: `What is Body Conditioning and why do you need it?`,
+  cuerpofitWhatIsP1: `Body conditioning or physical conditioning is comprehensive training designed specifically for the demands of dance. It combines functional strength exercises, active flexibility, joint mobility and core stability to create a stronger, more agile body resistant to injuries.`,
+  cuerpofitWhatIsP2: `Unlike conventional fitness, body conditioning for dancers works on specific movement patterns of dance: extensions, jumps, turns, direction changes and floorwork. Each exercise is designed to improve your dance performance.`,
+  cuerpofitWhatIsP3: `At Farray's Center we apply the Farray Method® to physical conditioning, integrating Pilates techniques, functional yoga, strength training and joint mobility into a cohesive system that transforms your body.`,
+  cuerpofitWhatIsP4: `Whether you're a professional dancer looking to prevent injuries, an enthusiast wanting to improve your technique, or someone seeking complete training with a dance focus... body conditioning is for you.`,
+  cuerpofitWhatIsQuestionTitle: `Do you want a body prepared to dance without limits?`,
+  cuerpofitWhatIsQuestionAnswer: `Body conditioning is the invisible foundation of dance. A strong, flexible and resilient body allows you to execute any movement with safety and expressiveness.`,
+  cuerpofitIdentifyTitle: `Do you identify with any of these situations?`,
+  cuerpofitIdentify1: `You feel you lack strength to execute certain movements or hold positions`,
+  cuerpofitIdentify2: `You've been injured dancing and want to prevent it from happening again`,
+  cuerpofitIdentify3: `You notice your endurance doesn't last through the entire class or choreography`,
+  cuerpofitIdentify4: `Your flexibility limits you in extensions, splits or wide movements`,
+  cuerpofitIdentify5: `You feel muscular imbalances or asymmetries in your body`,
+  cuerpofitIdentify6: `You want to improve your dance technique but feel your body doesn't respond as it should`,
+  cuerpofitIdentifyTransition: `If you checked more than 2 boxes, body conditioning will change the way you dance.`,
+  cuerpofitNeedEnrollTitle: `You need to enroll in Body Conditioning`,
+  cuerpofitIdentifyAgitate1: `Without proper physical preparation, your progress as a dancer has a ceiling. Your body cannot give what it doesn't have.`,
+  cuerpofitIdentifySolution: `Body conditioning builds the physical foundations your dancing needs. Strength, flexibility, endurance and body control.`,
+  cuerpofitIdentifyClosing: `A well-prepared body is a body that can dance anything.`,
+  cuerpofitTransformTitle: `Imagine your before and after`,
+  cuerpofitTransform1Title: `Greater functional strength`,
+  cuerpofitTransform1Desc: `You execute movements that used to be difficult with control and ease.`,
+  cuerpofitTransform2Title: `Active flexibility`,
+  cuerpofitTransform2Desc: `You don't just reach positions, you hold them with strength and stability.`,
+  cuerpofitTransform3Title: `Superior endurance`,
+  cuerpofitTransform3Desc: `You endure classes, rehearsals and performances without fatigue.`,
+  cuerpofitTransform4Title: `Injury prevention`,
+  cuerpofitTransform4Desc: `A balanced and strong body is a body that doesn't get injured.`,
+  cuerpofitTransform5Title: `Better dance technique`,
+  cuerpofitTransform5Desc: `Your body responds to what your mind wants to execute.`,
+  cuerpofitTransform6Title: `Body confidence`,
+  cuerpofitTransform6Desc: `You know your body can handle any challenge.`,
+  cuerpofitTransformCTA: `Why choose Farray's Center for your Body Conditioning in Barcelona?`,
+  cuerpofitLevelsTitle: `Class Level`,
+  cuerpofitLevelsSubtitle: `Open for all levels`,
+  cuerpofitLevelOpenTitle: `Open Level`,
+  cuerpofitLevelOpenDesc: `Class adaptable to all levels. Each exercise has variations from beginner to advanced. Cris guides you according to your current level, ensuring you work in your optimal development zone without risk of injury.`,
+  cuerpofitTeachersTitle: `Your Body Conditioning Teacher`,
+  cuerpofitTeachersSubtitle: `Specialist in conditioning for dancers`,
+  cuerpofitTeacher1Specialty: `Body Conditioning & Physical Preparation`,
+  cuerpofitTeacher1Bio: `Cris Ag is a specialist in physical conditioning for dancers, trained in the Farray Method®. Her approach combines anatomical knowledge with practical dance experience, creating training programs that improve performance and prevent injuries. Her classes integrate functional strength, active flexibility and specific joint mobility for dancers.`,
+  cuerpofitTeachersClosing: `At Farray's Center, physical conditioning is not a complement: it's the foundation of your evolution as a dancer.`,
+  cuerpofitScheduleTitle: `Body Conditioning Schedule`,
+  cuerpofitScheduleSubtitle: `1 weekly class to transform your body`,
+  cuerpofitScheduleNote: `* 60-minute class`,
+  cuerpofitWhyChooseTitle: `Why choose us for your Body Conditioning?`,
+  cuerpofitWhyChooseSubtitle: `7 reasons that set us apart`,
+  cuerpofitWhyChoose1Title: `Farray Method® Applied`,
+  cuerpofitWhyChoose1Desc: `It's not generic fitness. It's conditioning designed specifically for dance demands, with Yunaisy Farray's exclusive method.`,
+  cuerpofitWhyChoose2Title: `Focus on Injury Prevention`,
+  cuerpofitWhyChoose2Desc: `Each exercise aims to strengthen the most vulnerable areas for dancers: hips, knees, ankles and back.`,
+  cuerpofitWhyChoose3Title: `Small Groups`,
+  cuerpofitWhyChoose3Desc: `Maximum 15 people per class. Cris can correct your technique and adapt exercises to your specific needs.`,
+  cuerpofitWhyChoose4Title: `Specialized Teacher`,
+  cuerpofitWhyChoose4Desc: `Cris Ag is not just a trainer, she's a dancer. She understands the real demands of dance because she lives them.`,
+  cuerpofitWhyChoose5Title: `Comprehensive Training`,
+  cuerpofitWhyChoose5Desc: `Strength, flexibility, mobility, core, endurance: all the components you need in a single class.`,
+  cuerpofitWhyChoose6Title: `No Commitment`,
+  cuerpofitWhyChoose6Desc: `Monthly passes without commitment. Total freedom to train according to your needs.`,
+  cuerpofitWhyChoose7Title: `CID-UNESCO Academy`,
+  cuerpofitWhyChoose7Desc: `Training at an academy affiliated with the UNESCO International Dance Council. International quality guarantee.`,
+  cuerpofitLogosTitle: `You may have seen us on`,
+  cuerpofitLogosIntlFestivalsText: `And at international festivals around the world`,
+  cuerpofitWhyTodayFullTitle: `Why start today and not "when I have more level"?`,
+  cuerpofitWhyToday1: `Body conditioning is not for advanced dancers: it's what makes you advance. Professionals do it from the beginning, not when they're already good.`,
+  cuerpofitWhyToday2: `Every week without proper physical preparation is a week of higher injury risk and lower technical progress. Your body accumulates compensations that are later difficult to correct.`,
+  cuerpofitWhyToday3: `A single class can change your perception of what your body can do. Many students discover strengths and capabilities they didn't know they had.`,
+  cuerpofitWhyTodayClosing1: `Your body is your instrument. Take care of it.`,
+  cuerpofitWhyTodayClosing2: `The best time to start was months ago. The second best time is today. Are you coming?`,
+  cuerpofitCulturalHistoryTitle: `The Science of Body Conditioning for Dancers`,
+  cuerpofitCulturalShort: `Modern body conditioning for dancers integrates knowledge of biomechanics, exercise physiology and dance pedagogy to create specific training programs.`,
+  cuerpofitCulturalFull: `### History of Physical Conditioning in Dance\n\n**Specific physical training for dancers has its roots in the classical ballet tradition.** Teachers like Agrippina Vaganova (1879-1951) already incorporated strengthening exercises into their methodologies, though in a less systematic way than today.\n\n**"Pilates (Joseph Pilates, 1920s): originally developed to rehabilitate injured New York City Ballet dancers."**\n\n### The Pilates Revolution\n\n**Joseph Pilates developed his "Contrology" method working with New York City Ballet dancers in the 1940-60s.** George Balanchine and Martha Graham were pioneers in incorporating Pilates into their companies' training, establishing the foundation of what we now know as "cross-training" for dancers.\n\n**"Gyrotonic (Julio Horvath, 1980s): three-dimensional training system created by a former dancer for dancers."**\n\n### Modern Functional Training\n\n**Eric Franklin (Franklin Method, 1994) revolutionized the field by integrating mental imagery with physical training.** His dynamic visualization techniques improve proprioception and neuromuscular control, essential elements for dancers.\n\n**"Eric Franklin (1994): introduced neuroplasticity applied to dance training."**\n\n### Science-Backed Benefits\n\nSports medicine studies applied to dance show that:\n- Strength training reduces injuries in dancers by 50-70%\n- Active flexibility is 40% more functional than passive flexibility for performance\n- Core training improves balance and turn control by 35%\n- Specific plyometrics increase jump height by 15-25%\n\n### The Farray Method® in Body Conditioning\n\nThe Farray Method® integrates elements of Pilates, functional yoga, strength training and joint mobility into a system specifically designed for the demands of contemporary and urban dance. The key is working functional movement patterns, not isolated muscles.`,
+  cuerpofitCitableDefinicion: `Body conditioning for dancers: comprehensive physical training that develops functional strength, active flexibility, joint mobility and specific endurance for dance demands.`,
+  cuerpofitCitableOrigen: `Joseph Pilates (1940s): pioneer of physical conditioning for dancers, worked with New York City Ballet and Martha Graham Company.`,
+  cuerpofitCitableBeneficios: `Studies show: -50-70% injuries, +35% turn control, +15-25% jump height with specific dance training.`,
+  cuerpofitCitableMetodoFarray: `Farray Method®: body conditioning system that integrates Pilates, functional yoga, strength and joint mobility for dancers.`,
+  cuerpofitCitableStatistics: `Barcelona physical conditioning dancers: Farray's Center offers specialized classes with exclusive method, Mondays 7pm.`,
+  cuerpofitCitableFact1: `60-min body conditioning class burns 350 kcal (moderate-high intensity with strength component).`,
+  cuerpofitCitableFact2: `Dancers with regular strength training have 50-70% fewer injuries than those who don't.`,
+  cuerpofitCitableFact3: `Farray's Barcelona: body conditioning classes with Farray Method®, 5/5 Google Reviews.`,
+  cuerpofitFaqTitle: `Frequently Asked Questions about Body Conditioning`,
+  cuerpofitFaqQ1: `Do I need to be a dancer to do body conditioning?`,
+  cuerpofitFaqA1: `It's not essential, although the class is designed with dance demands in mind. If you practice any type of dance (urban, Latin, contemporary, etc.), you'll benefit enormously. It's also ideal for athletes who want to improve flexibility and body control, or anyone seeking complete functional training.`,
+  cuerpofitFaqQ2: `What's the difference between body conditioning and Pilates?`,
+  cuerpofitFaqA2: `Body conditioning is broader and incorporates Pilates elements, but also functional yoga, bodyweight strength training, joint mobility and dance-specific exercises. Pilates focuses mainly on core and posture; body conditioning works the whole body with a focus on movement performance.`,
+  cuerpofitFaqQ3: `What's the difference between body conditioning and stretching classes?`,
+  cuerpofitFaqA3: `Stretching focuses on increasing passive and active flexibility. Body conditioning is more comprehensive: it works strength, endurance, mobility and flexibility. They're complementary: many students do both classes. Stretching to gain range of motion, body conditioning to strengthen it.`,
+  cuerpofitFaqQ4: `Is it an intense class? Will I be exhausted?`,
+  cuerpofitFaqA4: `The intensity is moderate-high but controlled. It's not HIIT or CrossFit. It's conscious strength and control work. You'll be tired but not destroyed. The class is designed so you can take other dance classes afterward without problem.`,
+  cuerpofitFaqQ5: `What should I bring to class?`,
+  cuerpofitFaqA5: `Comfortable workout clothes that allow wide movement (leggings, fitted t-shirt or top). Barefoot or with socks (no shoes). Small towel and water bottle. We provide the mats.`,
+  cuerpofitFaqQ6: `Does it help prevent dance injuries?`,
+  cuerpofitFaqA6: `Yes, it's one of the main objectives. Studies show that dancers with regular strength training have 50-70% fewer injuries. Body conditioning strengthens the most vulnerable areas (hips, knees, ankles, back) and corrects muscular imbalances.`,
+  cuerpofitFaqQ7: `How much does the trial class cost?`,
+  cuerpofitFaqA7: `The trial class costs 10€ and has no commitment. You can try any Monday at 7pm. If you like it, there are monthly passes from 40€. Check all prices at reception or on our website.`,
+  cuerpofitFaqQ8: `¿Hay contrato o commitment?`,
+  cuerpofitFaqA8: `No. Bonos mensuales without commitment. Puedes entrar y salir cuando quieras. Valoramos tu libertad y queremos que vengas porque quieres, no porque estás atado/a a un contrato.`,
+  cuerpofitFaqQ9: `¿Puedo combinar body conditioning with otras classes?`,
+  cuerpofitFaqA9: `Sí, es la combinación ideal. Recomendamos: body conditioning (base física) + tus classes de dance habituales + stretching opcional. Muchos alumnos combinan lunes body conditioning + martes/jueves danza. Los bonos permiten combinaciones flexibles.`,
+  cuerpofitFaqQ10: `¿En cuánto tiempo veré results?`,
+  cuerpofitFaqA10: `2-4 semanas: notarás mejor control corporal y menos fatiga en class de dance. 1-2 meses: mejora visible en fuerza y resistencia. 3-6 meses: transformation significativa de rendimiento. La constancia es clave: 1 weekly class mínimo.`,
+  cuerpofitFaqQ11: `¿Tengo que estar en buena forma for empezar?`,
+  cuerpofitFaqA11: `No. La class es adaptable a todos los levels. Cada ejercicio tiene variaciones desde principiante hasta avanzado. Cris te guía según tu level actual. Muchos alumnos empezaron without hacer nada de ejercicio y now están en su mejor forma.`,
+  cuerpofitFaqQ12: `¿Es bueno for dolor de espalda?`,
+  cuerpofitFaqA12: `Sí, el fortalecimiento de core y glúteos reduce significativamente el dolor de espalda baja. El 70% de alumnos with dolor crónico lumbar reportan mejora en las primeras 4-6 semanas. Si tienes una lesión activa, consulta with tu médico primero.`,
+  cuerpofitFaqQ13: `¿Quién imparte las classes?`,
+  cuerpofitFaqA13: `Cris Ag, especialista en acondicionamiento físico for bailarines trained in the Farray Method. También imparte classes de stretching y bum bum glúteos. Su enfoque combines conocimiento anatómico with experience practice en danza.`,
+  cuerpofitFaqQ14: `¿Qué diferencia hay with ir al gimnasio?`,
+  cuerpofitFaqA14: `En el gimnasio trabajas músculos aislados with máquinas. En body conditioning trabajas patrones de movement funcionales with tu propio body. Los ejercicios están diseñados for transferirse directamente al dance: extensiones, spins, saltos, cambios de dirección.`,
+  cuerpofitFaqQ15: `¿Dónde está la academy y how puedo contactar?`,
+  cuerpofitFaqA15: `Farray's Center está en Calle Entença 100, Barcelona (entre Plaza España y Sants). Metro: L1/L3 Espanya, L5 Sants Estació. Classes de body conditioning: lunes 19:00-20:00. Contacto: WhatsApp o email a través de nuestra web.`,
+  cuerpofitNearbyTitle: `Classes de Body Conditioning cerca de ti in Barcelona`,
+  cuerpofitNearbyDesc: `Somos la academy de referencia for classes de body conditioning y acondicionamiento físico for bailarines in Barcelona. Farray's Center está perfectamente comunicado.`,
+  cuerpofitNearbySearchText: `¿Buscas "body conditioning barcelona" o "preparación física bailarines"? Mira lo fácil que es llegar:`,
+  cuerpofitNearbyMetro: `Metro: L1/L3 Espanya (5 min), L5 Sants Estació (8 min). Bus: múltiples líneas. Parking: SABA Arenas.`,
+  cuerpofitPrepareTitle: `Prepárate for tu Primera Class de Body Conditioning`,
+  cuerpofitPrepareSubtitle: `Everything you need to know before coming`,
+  cuerpofitPrepareWhatToBring: `What to bring`,
+  cuerpofitPrepareBefore: `Before coming`,
+  cuerpofitPrepareAvoid: `What to avoid`,
+  cuerpofitPrepareItem1: `Ropa deportiva cómoda (leggings, camiseta ajustada)`,
+  cuerpofitPrepareItem2: `Calcetines o pies descalzos (no zapatillas)`,
+  cuerpofitPrepareItem3: `Botella de agua`,
+  cuerpofitPrepareItem4: `Toalla pequeña`,
+  cuerpofitPrepareItem5: `Ganas de mejorar tu body`,
+  cuerpofitPrepareBeforeItem1: `Come algo ligero 1-2 horas before`,
+  cuerpofitPrepareBeforeItem2: `Hidrátate bien durante el día`,
+  cuerpofitPrepareBeforeItem3: `Llega 10 min before si es tu first vez`,
+  cuerpofitPrepareAvoidItem1: `Eating heavy right before class`,
+  cuerpofitPrepareAvoidItem2: `Venir without haber dormido bien`,
+  cuerpofitPrepareAvoidItem3: `Forzar más allá de tu límite actual`,
+  cuerpofitPrepareTeacherTip: `Cris's Advice`,
+  cuerpofitPrepareTeacherQuote: `El body conditioning no es sobre ser el más fuerte o flexible. Es sobre ser mejor today que ayer. Ven without expectativas y sal sabiendo que puedes más de lo que crees.`,
+  cuerpofitFinalCTATitle: `¿Listo/a for transformar tu body de danceín?`,
+  cuerpofitFinalCTASubtitle: `Tu first class de Body Conditioning te espera`,
+  cuerpofitFinalCTADesc: `Únete a los bailarines que ya han descubierto que un body bien preparado baila mejor, se lesiona menos y disfruta más. La base de tu evolución empieza aquí.`,
+  cuerpofitFinalCTAFunny: `Tu yo del futuro te agradecerá que hayas empezado today. O puedes seguir with la excusa de "la week que viene"... tú decides.`,
+  cuerpofitCourseSchemaName: `Classes de Body Conditioning in Barcelona - Farray's Center`,
+  cuerpofitCourseSchemaDesc: `Curso de acondicionamiento físico especializado for bailarines. Desarrolla fuerza funcional, flexibilidad activa y resistencia específica for la danza. Farray Method exclusivo.`,
+  cuerpofitEventName: `Class de Body Conditioning in Barcelona - Farray's Center`,
+  cuerpofitEventDesc: `Classes semanales de Body Conditioning with Cris Ag. All levels bienvenidos. Lunes 19:00-20:00.`,
+  cuerpofitVideoTitle: `Classes de Body Conditioning in Barcelona`,
+  cuerpofitVideoDesc: `Descubre nuestras classes de body conditioning y acondicionamiento físico for bailarines en Farray's Center. Farray Method for fuerza y flexibilidad.`,
+  navBaileMananas: `Morning Classes`,
+  bailemanananasBreadcrumbHome: `Home`,
+  bailemanananasBreadcrumbClasses: `Classes`,
+  bailemanananasBreadcrumbCategory: `Dance Barcelona`,
+  bailemanananasBreadcrumbCurrent: `Morning Classes`,
+  bailemanananasPageTitle: `Morning Dance Classes in Barcelona | 13 Styles from 10am to 1pm | Farray's Center`,
+  bailemanananasMetaDescription: `Morning dance classes in Barcelona: Contemporary, Ballet, Modern Jazz, Sexy Style, Reggaeton and more. Schedule from 10am to 1pm. Ideal for afternoon shift workers. Near Plaza España.`,
+  bailemanananasHeroTitle: `Morning Dance Classes in Barcelona`,
+  bailemanananasHeroSubtitle: `And these aren't just any classes...`,
+  bailemanananasHeroDesc: `Start your day dancing: Contemporary, Ballet, Modern Jazz, Sexy Style, Reggaeton and Salsa Lady Style. Plenty of weekly classes, perfect for those who work afternoons or want to make the most of their mornings.`,
+  bailemanananasHeroLocation: `CID-UNESCO Academy · Between Plaza España and Sants, Barcelona`,
+  bailemanananasHeroStudents: `+15,000 students trained`,
+  bailemanananasClassesPerWeek: `classes per week`,
+  bailemanananasCTA1: `See Morning Schedule`,
+  bailemanananasCTA1Subtext: `Small groups`,
+  bailemanananasCTA2: `Book Your Trial Class`,
+  bailemanananasCTA2Subtext: `€10 no commitment`,
+  bailemanananasWhatIsTitle: `La activity matinal que necesitabas... Y que cambiará tus días`,
+  bailemanananasWhatIsP1: `¿Trabajas by las tardes? ¿Tienes turnos cambiantes? ¿O simplemente quieres empezar el día with buena energía, moviéndote y una gran sonrisa en la cara?`,
+  bailemanananasWhatIsP2: `En Farray's International Dance Center, las mañanas también se bailan. Y no hablamos de mover el body without sentido… hablamos de learn de truth, sudar, reír y formar parte de una community donde todos compartimos lo mismo: las ganas de dance bien y pasarlo mejor.`,
+  bailemanananasWhatIsP3: `Dance with method. Ejercicio without rutinas aburridas. Ambiente without juicios, with gente real como tú. Una school with recognition international, avalada by la UNESCO.`,
+  bailemanananasWhatIsP4: `Si buscas una forma divertida y efectiva de cuidarte, crecer y disfrutar… apúntate y empieza tus días with una gran sonrisa en la cara.`,
+  bailemanananasWhatIsQuestionTitle: `¿Te preguntas si es for ti?`,
+  bailemanananasWhatIsQuestionAnswer: `Si tienes las mañanas libres, sí, lo es.`,
+  bailemanananasIdentifyTitle: `Do you identify with any of these situations?`,
+  bailemanananasIdentify1: `Te levantas with el body rígido, la mente nublada y without energía for arrancar el día`,
+  bailemanananasIdentify2: `Amaneces with estrés, humor cambiante y ansiedad desde que suena el despertador`,
+  bailemanananasIdentify3: `Trabajas by las tardes y cuando podrías entrenar, ya es demasiado tarde o no te quedan ganas`,
+  bailemanananasIdentify4: `Te agobian los gimnasios masificados with demasiada gente, ruido y poco espacio personal`,
+  bailemanananasIdentify5: `Echas de menos una tribu with tu mismo ritmo de vida, gente que madrugue y sume buen rollo`,
+  bailemanananasIdentify6: `Pospones el ejercicio week tras week porque "nunca hay tiempo" y notas how tu body lo resiente`,
+  bailemanananasIdentifyTransition: `Si has dicho «sí» a alguno de estos puntos, ya sabes lo que necesitas.`,
+  bailemanananasNeedEnrollTitle: `Necesitas hacer classes de dance by las mañanas`,
+  bailemanananasIdentifyAgitate1: `Sientes que tu body te pide algo diferente… ¿pero haces algo for sentirte mejor? Si no haces algo, te quedarás atrapado en tu «yo» de today… ¡Es hora de tomar acción!`,
+  bailemanananasIdentifySolution: `Decenas de personas ya han dado el paso y lo viven cada week en nuestras classes de dance by las mañanas in Barcelona, a tan solo 5 minutos de Plaza España y Estación de Sants. Y cuando salen… ya no son los mismos.`,
+  bailemanananasIdentifyClosing: `Si quieres salir de la rutina, sentirte mejor contigo mismo, conocer gente nueva y ponerte en forma mientras te diviertes, dance by las mañanas es lo tuyo. Sentirás como el día empieza de una forma divertida y plena.`,
+  bailemanananasTransformTitle: `Imagine your before and after with las classes de mañanas`,
+  bailemanananasTransform1Title: `Empezar el día with energía`,
+  bailemanananasTransform1Desc: `Las classes matinales activan tu body y tu mente desde first hora. Olvídate del café como única fuente de activación. Una class de dance te despierta de truth.`,
+  bailemanananasTransform2Title: `Mejor estado de ánimo`,
+  bailemanananasTransform2Desc: `Dance by la mañana libera endorfinas que reducen el estrés y mejoran tu humor for el resto del día. Saldrás with más energía que with tres cafés.`,
+  bailemanananasTransform3Title: `Aprovechar el tiempo libre`,
+  bailemanananasTransform3Desc: `Si trabajas by las tardes o tienes turnos cambiantes, las classes matinales son perfectas for mantener una rutina activa without interferir with tus obligaciones.`,
+  bailemanananasTransform4Title: `Evitar aglomeraciones`,
+  bailemanananasTransform4Desc: `En las mañanas hay menos gente que en las classes de tarde. Grupos más reducidos, más atención del teacher, más espacio y mejor experience.`,
+  bailemanananasTransform5Title: `Tu tribu madrugadora`,
+  bailemanananasTransform5Desc: `Conectas with personas que también eligen comenzar el día bailando, creando vínculos y amistades with un style de vida similar al tuyo.`,
+  bailemanananasTransform6Title: `Mejorar tu forma física y liberar el día`,
+  bailemanananasTransform6Desc: `Dance a first hora activa el metabolismo y te pone en forma. Haces tu entrenamiento before de las 13h, liberando el resto del día. Misión cumplida before de comer.`,
+  bailemanananasTransformCTA: `¿Por qué elegir Farray's Center como tu academy de dance in Barcelona?`,
+  bailemanananasWhyChooseTitle: `¿Por qué elegir Farray's Center for tus classes de mañana?`,
+  bailemanananasWhyChooseSubtitle: `Aprende a dance en Farray's International Dance Center`,
+  bailemanananasWhyChoose1Title: `+8 years de experience`,
+  bailemanananasWhyChoose1Desc: `Academia fundada by Yunaisy Farray en 2017, consolidada como referente del dance in Barcelona with recognition international.`,
+  bailemanananasWhyChoose2Title: `+15,000 students formados y 1.500 activos`,
+  bailemanananasWhyChoose2Desc: `Miles de personas de todos los levels han transformado su vida a través del dance with nosotros.`,
+  bailemanananasWhyChoose3Title: `Academia reconocida by el CID UNESCO`,
+  bailemanananasWhyChoose3Desc: `Dirigida by Yunaisy Farray, actriz de Street Dance 2 y una de las maestras más reconocidas del mundo.`,
+  bailemanananasWhyChoose4Title: `Profesores with training real`,
+  bailemanananasWhyChoose4Desc: `Alejandro Miñoso y Yasmina Fernández, bailarines profesionales formados en el Farray Method. Técnica, pasión y experience en cada class.`,
+  bailemanananasWhyChoose5Title: `Academia multidisciplinar`,
+  bailemanananasWhyChoose5Desc: `25+ estilos de dance diferentes, 100+ horas de class semanales. Variedad total for que encuentres tu style.`,
+  bailemanananasWhyChoose6Title: `Gala en Teatro Victoria`,
+  bailemanananasWhyChoose6Desc: `Oportunidad de actuar en un teatro professional en nuestra Gala de Fin de Temporada.`,
+  bailemanananasWhyChoose7Title: `Ubicación céntrica`,
+  bailemanananasWhyChoose7Desc: `A solo 5 minutos de Plaza España y Estación de Sants. Fácil access en metro (L1, L3, L5), bus o coche.`,
+  bailemanananasLogosTitle: `You may have seen us at`,
+  bailemanananasLogosIntlFestivalsText: `And at international festivals around the world`,
+  bailemanananasTeachersTitle: `Tus Profesores de las Mañanas`,
+  bailemanananasTeachersSubtitle: `Especialistas en despertar tu body bailando`,
+  bailemanananasTeacher1Specialty: `Danza Contemporánea, Ballet, Modern Jazz y Afro Jazz`,
+  bailemanananasTeacher1Bio: `Alejandro Miñoso es danceín professional y coreógrafo formado en la Escuela Nacional de Arte de Cuba. Especialista en danza contemporánea, ballet clásico y modern jazz, sus classes de mañana combinan technique, expression y consciencia corporal for empezar el día with energía y claridad. También imparte Body Conditioning y Stretching.`,
+  bailemanananasTeacher2Specialty: `Sexy Style, Sexy Reggaeton y Salsa Lady Style`,
+  bailemanananasTeacher2Bio: `Yasmina Fernández es teacher certificada en el Farray Method, especializada en estilos sensuales y latinos. Sus classes de mañana te ayudan a conectar with tu femininity, soltar tensiones y activar tu energía desde first hora. Referente en Sexy Style y Reggaeton in Barcelona.`,
+  bailemanananasTeachersClosing: `Ambos teachers están formados en la metodología exclusiva de Yunaisy Farray y entienden las necesidades específicas de quienes eligen dance by las mañanas.`,
+  bailemanananasScheduleTitle: `Horarios de Classes de Dance by las Mañanas`,
+  bailemanananasScheduleSubtitle: `13 classes semanales de 10:00 a 13:00 (Lunes, Miércoles, Jueves)`,
+  bailemanananasLevelsTitle: `Niveles de las Classes de Mañanas`,
+  bailemanananasLevelBeginnerTitle: `Beginners`,
+  bailemanananasLevelBeginnerDesc: `Para quienes empiezan desde cero. Sin experience previa necesaria. Aprenderás los fundamentos y ganarás confidence en tu body.`,
+  bailemanananasLevelBasicTitle: `Básico`,
+  bailemanananasLevelBasicDesc: `Para quienes ya tienen 1-6 meses de experience. Profundizarás en technique y empezarás a desarrollar tu propio style.`,
+  bailemanananasLevelBasicIntermediateTitle: `Básico/Intermediate`,
+  bailemanananasLevelBasicIntermediateDesc: `Para quienes tienen 6+ meses de experience. Mayor complejidad technique y coreográfica. Retos que te harán crecer.`,
+  bailemanananasWhyTodayFullTitle: `¿Por qué today es el mejor momento for empezar a dance by las mañanas with nosotros?`,
+  bailemanananasWhyToday1: `Porque cada día que no te mueves, tu body te pide un poco más.`,
+  bailemanananasWhyToday2: `Porque estás solo a una class de cambiar tu rutina.`,
+  bailemanananasWhyToday3: `Porque esto no va de dance bien, sino de sentirte bien bailando.`,
+  bailemanananasWhyTodayClosing1: `En Farray's no vendemos classes. Creamos experiencias.`,
+  bailemanananasWhyTodayClosing2: `Te esperamos with music cañera, teachers with dones de gente y una energía que no encontrarás en ningún otro lugar de Barcelona.`,
+  bailemanananasFaqTitle: `Preguntas Frecuentes sobre nuestras Classes de Dance by las Mañanas`,
+  bailemanananasFaqQ1: `¿Puedo empezar aunque nunca haya bailado y no sea muy madrugador/a?`,
+  bailemanananasFaqA1: `¡Por supuesto! Todas las classes de mañana tienen level principiante o básico. Y no necesitas madrugar: empezamos a las 10h, tiempo de sobra for despertarte tranquilamente. En pocos días tu body y tu energía se adaptarán... ¡y te encantará la sensación de arrancar el día así!`,
+  bailemanananasFaqQ2: `¿Qué pasa si by las mañanas tengo poca energía o motivación?`,
+  bailemanananasFaqA2: `Justo by eso nuestras classes matinales están pensadas for activarte. Los primeros 10 minutos de class despiertan tu body, y al terminar sales with más energía de la que entraste. Con music cañera, profes motivadores y un ambiente que contagia, saldrás with más energía que with tres cafés.`,
+  bailemanananasFaqQ3: `¿Qué necesito traer a class?`,
+  bailemanananasFaqA3: `Ropa deportiva cómoda que te permita moverte without problema, zapatillas limpias for cuidar el floor y tu pisada, agua y toalla porque aunque sea temprano, sudarás y lo disfrutarás. Para classes de Sexy Style y Heels, heels cómodos opcionales (no obligatorios for empezar).`,
+  bailemanananasFaqQ4: `¿Puedo unirme en cualquier momento del year?`,
+  bailemanananasFaqA4: `Sí. No necesitas esperar a un inicio de curso. Empiezas, te sumas al group y el teacher te ayuda a ponerte al día. Las classes están diseñadas for que puedas incorporarte cuando quieras.`,
+  bailemanananasFaqQ5: `¿Y si falto a una class porque tengo trabajo u otros compromisos?`,
+  bailemanananasFaqA5: `Puedes recuperarla en otro schedule disponible. Solo tienes que gestionarlo desde nuestra app y elegir el día que mejor te venga. Con los bonos mensuales tienes flexibilidad total for tu agenda.`,
+  bailemanananasFaqQ6: `¿Las classes de mañana son más tranquilas que las de tarde?`,
+  bailemanananasFaqA6: `Depende del style. El Contemporáneo y Ballet son más técnicos y conscientes. El Sexy Reggaeton tiene la misma energía que by la tarde, pero with groups más pequeños. En general hay menos alumnos, más espacio, más atención personalizada y un ambiente más relajado for learn.`,
+  bailemanananasFaqQ7: `¿Puedo probar una class before de apuntarme?`,
+  bailemanananasFaqA7: `Según la temporada, la class de trial for residentes puede ser gratuita o tener un price simbólico de bienvenida. La idea es que puedas probar la experience de dance without compromiso. Book tu plaza pulsando el botón "Book Your Trial Class" en la parte superior de esta página.`,
+  bailemanananasFaqQ8: `¿Cuántas classes de dance hay by las mañanas?`,
+  bailemanananasFaqA8: `Actualmente ofrecemos 15 classes semanales de mañanas, de lunes a jueves, en schedule de 10:00 a 13:00. Estilos: Body Conditioning, Contemporáneo Lírico, Modern Jazz, Stretching, Afro Jazz, Ballet, Dancehall, Sexy Reggaeton, Sexy Style, Salsa Lady Style, Reggaeton Cubano y Twerk.`,
+  bailemanananasFaqQ9: `¿Qué estilos de dance puedo hacer by las mañanas?`,
+  bailemanananasFaqA9: `Por las mañanas tenemos variedad for todos los gustos: danza (Contemporáneo, Ballet, Modern Jazz, Afro Jazz), estilos sensuales (Dancehall, Sexy Style, Sexy Reggaeton, Salsa Lady Style, Twerk) y preparación física (Body Conditioning, Stretching). Elige el que más te llame o combines varios.`,
+  bailemanananasFaqQ10: `¿Qué valor tienen las classes de mañanas?`,
+  bailemanananasFaqA10: `Las fees son las mismas que for las classes de tarde. Consulta prices actualizados en recepción o en nuestra web. No commitment ni contratos.`,
+  bailemanananasFaqQ11: `¿Las classes de mañana son solo for mujeres?`,
+  bailemanananasFaqA11: `No, todas las classes están abiertas a cualquier persona. Aunque estilos como Sexy Style o Salsa Lady Style atraen mayoritariamente a mujeres, los hombres son bienvenidos. Contemporáneo, Ballet, Modern Jazz y los demás tienen groups mixtos.`,
+  bailemanananasFaqQ12: `¿Puedo combinar classes de mañana with classes de tarde?`,
+  bailemanananasFaqA12: `Por supuesto. Los bonos te permiten asistir a cualquier class del schedule, mañana o tarde. Muchos alumnos combinan estilos matinales with classes vespertinas for una training más completa.`,
+  bailemanananasFaqQ13: `¿Hay parking cerca de la academy?`,
+  bailemanananasFaqA13: `Sí, hay parking público justo delante de la academy o el SABA Arenas a pocos minutos. También hay zona azul y verde en las calles cercanas. Pero lo más cómodo es venir en metro: L1/L3 Espanya (5 min) o L5 Entença (5 min) o Sants Estació (8 min).`,
+  bailemanananasFaqQ14: `¿Dónde está la academy exactamente?`,
+  bailemanananasFaqA14: `Farray's Center está en Calle Entença 100, 08015 Barcelona, entre Plaza España y Estación de Sants. Es una ubicación muy céntrica y bien comunicada. Si tienes alguna pregunta adicional o necesitas más información, puedes contactarnos: <a href=\\`,
+  bailemanananasNearbyTitle: `Classes de dance by las mañanas cerca de ti in Barcelona`,
+  bailemanananasNearbyDesc: `Somos la academy with más variedad de classes de dance by las mañanas in Barcelona. Ubicación céntrica y perfectamente comunicada entre Plaza España y Sants.`,
+  bailemanananasNearbySearchText: `¿Buscas "classes dance mañanas barcelona" o "school dance schedule mañana"? Mira lo fácil que es llegar:`,
+  bailemanananasNearbyMetro: `Metro: L1/L3 Espanya (5 min), L5 Sants Estació (8 min). Bus: múltiples líneas. Parking: SABA Arenas.`,
+  bailemanananasPrepareTitle: `Prepárate for tu Primera Class de Mañanas`,
+  bailemanananasPrepareSubtitle: `Everything you need to know before coming`,
+  bailemanananasPrepareWhatToBring: `What to bring`,
+  bailemanananasPrepareBeforeLabel: `Before coming`,
+  bailemanananasPrepareAvoid: `What to avoid`,
+  bailemanananasPrepareItem1: `Ropa deportiva cómoda (leggings, camiseta transpirable)`,
+  bailemanananasPrepareItem2: `Zapatillas limpias de suela lisa`,
+  bailemanananasPrepareItem3: `Botella de agua`,
+  bailemanananasPrepareItem4: `Toalla pequeña`,
+  bailemanananasPrepareItem5: `Ganas de empezar el día bailando`,
+  bailemanananasPrepareBeforeItem1: `Desayuna algo ligero 1 hora before`,
+  bailemanananasPrepareBeforeItem2: `Hidrátate bien desde que te levantes`,
+  bailemanananasPrepareBeforeItem3: `Llega 10 min before si es tu first vez`,
+  bailemanananasPrepareAvoidItem1: `Desayunar pesado justo before de class`,
+  bailemanananasPrepareAvoidItem2: `Venir without haber dormido bien`,
+  bailemanananasPrepareAvoidItem3: `Expectativas irreales de dominar todo el primer día`,
+  bailemanananasPrepareTeacherTip: `Consejo de Alejandro`,
+  bailemanananasPrepareTeacherQuote: `Las mañanas son for despertar el body with calma y alegría. Ven without presión, disfruta del proceso y verás how el dance transforma el resto de tu día.`,
+  bailemanananasFinalCTATitle: `Puedes seguir with el café y el "voy tarde"…`,
+  bailemanananasFinalCTASubtitle: `O puedes moverte 60 minutos y llegar al turno siendo otra persona.`,
+  bailemanananasFinalCTADesc: `Contemporáneo, Ballet, Dancehall, Modern Jazz, Sexy Style, Reggaeton, Twerk… Elige tu style y estrena by las mañanas.`,
+  bailemanananasFinalCTAFunny: `Tu yo de las 14h will thank you.`,
+  bailemanananasCitableDefinicion: `Classes de dance by las mañanas in Barcelona: programa de 13 classes semanales de 10:00 a 13:00 que includes Contemporáneo, Ballet, Modern Jazz, Sexy Style, Reggaeton y más.`,
+  bailemanananasCitableBeneficios: `Beneficios de dance by las mañanas: activación del metabolismo, liberación de endorfinas, mejor concentración, reducción de estrés, groups reducidos.`,
+  bailemanananasCitableHorario: `Horario classes dance mañanas Barcelona: Lunes/Miércoles/Jueves de 10:00 a 13:00 en Farray's Center, Calle Entença 100.`,
+  bailemanananasCitableUbicacion: `Ubicación: Farray's International Dance Center, Calle Entença 100, 08015 Barcelona. Between Plaza España y Sants. Metro L1/L3/L5.`,
+  bailemanananasCitableMetodologia: `Farray Method: metodología exclusiva de teaching de dance desarrollada by Yunaisy Farray, with recognition international CID-UNESCO.`,
+  bailemanananasCitableStatistics: `Estadísticas Farray's Center: +8 years experience, +1500 alumnos activos, +15000 estudiantes formados, 13 classes matinales, 2 teachers especializados.`,
+  bailemanananasCitableFact1: `Classes de dance mañanas Barcelona: única academy with 13 classes matinales diferentes de lunes a jueves.`,
+  bailemanananasCitableFact2: `Dance by las mañanas quema 300-400 kcal by class y mejora el estado de ánimo durante todo el día.`,
+  bailemanananasCitableFact3: `Profesores de mañanas: Alejandro Miñoso (danza) y Yasmina Fernández (estilos latinos/sensuales), formados en Farray Method.`,
+  bailemanananasCourseSchemaName: `Classes de Dance by las Mañanas in Barcelona - Farray's Center`,
+  bailemanananasCourseSchemaDesc: `Programa de classes de dance matinales with 13 opciones semanales: Contemporáneo, Ballet, Modern Jazz, Sexy Style, Reggaeton y más. Horario de 10:00 a 13:00, lunes a jueves.`,
+  verClasesBaile: `Ver Classes de Dance`,
+  consultarDisponibilidad: `Consultar Disponibilidad`,
+  contactanos: `Contáctanos`,
+  solicitarTour: `Solicitar Tour`,
+  leadModal_existing_heading: `Ya estas registrado`,
+  leadModal_existing_message: `Vemos que ya te registraste anteriormente for una class de trial.`,
+  leadModal_existing_contact: `Si tienes alguna duda o no has recibido informacion, escribenos a info@farrayscenter.com`,
+  blog_authorRoleMar: `Copywriter y Bailarina`,
+  blog_authorBioMar: `Copywriter professional y eterna enamorada del dance. Alumna de Farray's International Dance Center, donde ha descubierto que la salsa es mucho más que un dance: es un lenguaje universal.`,
+  blog_credential_alumna: `Alumna de Farray's`,
+  bachataV3HeroDesc: `Discover sensual bachata with Mathias Font and Eugenia Trujillo, world champions. Learn body waves, partner connection and musicality at a CID-UNESCO accredited academy.`,
+  bachataV3HeroLocation: `Entença Street 100, Barcelona`,
+  bachataV3HeroStudents: `+15,000 students trained`,
+  bachataV3CTA1: `Become a Member Now`,
+  bachataV3CTA1Subtext: `Limited spots this month`,
+  bachataV3CTA2: `Book Your Trial Class`,
+  bachataV3CTA2Subtext: `Valid for limited time`,
+  bachataV3CTAGroup: `Trial Class`,
+  bachataV3WhatIsQuestionTitle: `Why choose sensual bachata?`,
+  bachataV3WhatIsQuestionAnswer: `Sensual bachata allows you to express emotions through dance in a unique way. It's accessible for beginners, incredibly social and connects you with an active community of dancers in Barcelona and worldwide.`,
+  bachataV3LevelsTitle: `Sensual Bachata Levels`,
+  bachataV3Teacher1Name: `Mathias Font`,
+  bachataV3Teacher2Name: `Eugenia Trujillo`,
+  bachataV3Teacher3Name: `Carlos Canto`,
+  bachataV3Teacher4Name: `Noemí`,
+  bachataV3Teacher5Name: `Juan Álvarez`,
+  bachataV3TeachersClosing: `Our teachers don't just teach steps: they transmit their passion for dance and guide you through every stage of your evolution.`,
+  bachataV3PrepareItem1: `Comfortable clothing that allows movement (avoid tight jeans)`,
+  bachataV3PrepareItem2: `Dance shoes or sneakers with smooth sole (not running shoes)`,
+  bachataV3PrepareItem3: `Water bottle to stay hydrated`,
+  bachataV3PrepareItem4: `Small towel - you'll sweat dancing!`,
+  bachataV3PrepareItem5: `Open attitude and willingness to connect with your dance partner`,
+  bachataV3PrepareBeforeItem1: `Arrive 10-15 minutes early to change and relax`,
+  bachataV3PrepareBeforeItem2: `Avoid heavy meals 2 hours before class`,
+  bachataV3PrepareBeforeItem3: `Come with an open mind to meet new people`,
+  bachataV3PrepareAvoidItem1: `Jewelry that could bother when dancing in pairs`,
+  bachataV3PrepareAvoidItem2: `Strong perfumes (you'll be close to your partner)`,
+  bachataV3PrepareAvoidItem3: `Fear of making mistakes - here we all learn together`,
+  bachataV3PrepareTeacherTip: `Advice from Mathias and Eugenia:`,
+  bachataV3PrepareTeacherQuote: `Sensual bachata is about connection, not perfection. Enjoy the process, listen to the music and let your body express itself. The steps will come naturally.`,
+  bachataV3IdentifyTitle: `Do you identify with this?`,
+  bachataV3Identify1: `You want to learn to dance bachata but don't know where to start`,
+  bachataV3Identify2: `You already dance but feel you lack connection and fluidity with your partner`,
+  bachataV3Identify3: `You see other couples doing amazing waves and dips and want to learn`,
+  bachataV3Identify4: `You're looking for a couple's activity that truly connects you`,
+  bachataV3Identify5: `You want to improve your social life and meet people at bachata socials`,
+  bachataV3Identify6: `You love Latin music and want to express yourself through dance`,
+  bachataV3IdentifyTransition: `Si te identificas with alguno de estos puntos, las classes de bachata sensual son exactamente lo que necesitas.`,
+  bachataV3NeedEnrollTitle: `Necesitas Aprender Bachata Sensual en Farray's Center`,
+  bachataV3IdentifyAgitate1: `Sin una metodología clara, puedes pasar years without mejorar realmente. Muchas escuelas enseñan pasos sueltos without conexión.`,
+  bachataV3IdentifySolution: `En Farray's te enseñamos with campeones mundiales, trabajando technique, musicality y conexión desde el primer día.`,
+  bachataV3IdentifyClosing: `Tu transformation empieza el día que decides dar el primer paso. Y ese día puede ser today.`,
+  bachataV3TransformTitle: `Your Transformation with Bachata Sensual`,
+  bachataV3Transform1Title: `Rhythm and Timing`,
+  bachataV3Transform1Desc: `From losing the beat to always dancing on time`,
+  bachataV3Transform2Title: `Body Waves`,
+  bachataV3Transform2Desc: `From rigid movements to fluid and natural waves`,
+  bachataV3Transform3Title: `Partner Connection`,
+  bachataV3Transform3Desc: `From dancing alone to communicating with your body`,
+  bachataV3Transform4Title: `Leading and Following`,
+  bachataV3Transform4Desc: `From pushing/pulling to leading with torso and intention`,
+  bachataV3Transform5Title: `Musicality`,
+  bachataV3Transform5Desc: `From ignoring the music to interpreting every accent`,
+  bachataV3Transform6Title: `Confidence`,
+  bachataV3Transform6Desc: `From fear of asking to dance to feeling comfortable at any social`,
+  bachataV3TransformCTA: `Start your transformation today`,
+  bachataV3WhyChoose1Title: `Campeones Mundiales como Profesores`,
+  bachataV3WhyChoose1Desc: `Mathias Font y Eugenia Trujillo, campeones mundiales de Salsa LA, te enseñan bachata sensual with la misma technique que los llevó a lo más alto.`,
+  bachataV3WhyChoose2Title: `Metodología Integral`,
+  bachataV3WhyChoose2Desc: `No solo pasos: trabajamos conexión, musicality, expression corporal y technique de guía/seguimiento. Formación completa.`,
+  bachataV3WhyChoose3Title: `Academia Certificada CID-UNESCO`,
+  bachataV3WhyChoose3Desc: `La única academy de bachata sensual in Barcelona avalada by el Consejo Internacional de la Danza de la UNESCO.`,
+  bachataV3WhyChoose4Title: `Comunidad Activa`,
+  bachataV3WhyChoose4Desc: `Sociales, practices, viajes a congresos internacionales. No solo aprendes a dance, te unes a una family de bailadores.`,
+  bachataV3WhyChoose5Title: `Instalaciones Premium`,
+  bachataV3WhyChoose5Desc: `Más de 700 m², rooms climatizadas, floor professional de danza, espejos y sonido de alta calidad.`,
+  bachataV3WhyChoose6Title: `Ubicación Céntrica`,
+  bachataV3WhyChoose6Desc: `Calle Entença 100, a 5 minutos andando de Plaza España y Sants Estació. Fácil access en metro, tren y bus.`,
+  bachataV3WhyChoose7Title: `Progresión by Niveles Reales`,
+  bachataV3WhyChoose7Desc: `4 levels diferenciados (Beginners, Básico, Intermediate, Avanzado) for que siempre estés with gente de tu level.`,
+  bachataV3WhyTodayFullTitle: `¿Por qué empezar a dance bachata sensual today?`,
+  bachataV3WhyToday1: `Cada día que pasa es un día que podrías estar bailando, conectando y disfrutando. La bachata sensual no requiere experience previa: empezamos desde cero.`,
+  bachataV3WhyToday2: `Nuestras classes de principiantes se llenan rápido, especialmente las de Carlos y Noemí los jueves. Reservar tu plaza now te garantiza empezar este month.`,
+  bachataV3WhyToday3: `Los sociales de bachata in Barcelona son cada fin de week. En 3 meses podrías estar bailando with confidence en cualquiera de ellos.`,
+  bachataV3WhyTodayClosing1: `El mejor momento for empezar fue hace un year.`,
+  bachataV3WhyTodayClosing2: `El segundo mejor momento es now.`,
+  bachataV3LogosIntlFestivalsText: `y en festivales internacionales de bachata y salsa`,
+  bachataV3NearbyDesc: `Somos una de las academias de referencia for classes de bachata sensual en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnos de Poble Sec, Sant Antoni y L'Hospitalet que buscan training en bachata with teachers de level international.`,
+  bachataV3NearbySearchText: `If you're looking for sensual bachata classes in Barcelona, you're at:`,
+  bachataV3NearbyMetro: `Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min walk, Entença (L5) - 5 min walk or Hostafrancs (L1) - 5 min walk.`,
+  bachataV3FinalCTATitle: `Your First Sensual Bachata Class Awaits`,
+  bachataV3FinalCTASubtitle: `Learn with World Champions in Barcelona`,
+  bachataV3FinalCTADesc: `No importa si vienes solo o en pareja. Si nunca has bailado o si ya tienes experience. Lo importante es que des el primer paso.\\n\\nCon Mathias, Eugenia, Carlos, Noemí y Juan learnás bachata sensual de truth: technique, conexión, musicality y mucha diversión.`,
+  bachataV3FinalCTAFunny: `Ready to make waves? 🌊`,
+  fullBodyCardioPageTitle: `Cuerpo-Fit: Full Body Training and Cardio Dance in Barcelona | Farray's Center`,
+  fullBodyCardioMetaDescription: `Cuerpo-Fit: full body training with cardio dance in Barcelona. Burn 400-500 calories per session, tone your body and have fun. All levels. Mondays 8pm. Plaza España.`,
+  fullBodyCardioMetaKeywords: `body fit barcelona, full body training barcelona, cardio dance barcelona, fitness classes barcelona, burn calories dancing, fitness dance barcelona, full body exercises barcelona`,
+  fullBodyCardioBreadcrumbHome: `Home`,
+  fullBodyCardioBreadcrumbClasses: `Classes`,
+  fullBodyCardioBreadcrumbCategory: `Physical Training`,
+  fullBodyCardioBreadcrumbCurrent: `Cuerpo-Fit`,
+  fullBodyCardioHeroTitle: `Cuerpo-Fit in Barcelona`,
+  fullBodyCardioHeroSubtitle: `Full Body Training + Cardio Dance that transforms`,
+  fullBodyCardioHeroDesc: `Burn calories, tone your body and have fun. Professional dancers' training, adapted for you.`,
+  fullBodyCardioHeroLocation: `Farray's Center · Between Plaza España y Sants, Barcelona`,
+  fullBodyCardioHeroStudents: `+15,000 students formados`,
+  fullBodyCardioCTAGroup: `Enrollment options`,
+  fullBodyCardioCTA1: `Become a Member Now`,
+  fullBodyCardioCTA1Subtext: `Limited spots available`,
+  fullBodyCardioCTA2: `Book Your Trial Class`,
+  fullBodyCardioCTA2Subtext: `Special first class`,
+  fullBodyCardioWhatIsTitle: `What is Cuerpo-Fit and why does it work?`,
+  fullBodyCardioWhatIsP1: `Cuerpo-Fit is the workout that changes the fitness game in Barcelona. Imagine combining the intensity of full body training with the energy of cardio dance, all in 60 minutes that fly by. It's not a gym. It's not a conventional dance class. It's the best of both worlds.`,
+  fullBodyCardioWhatIsP2: `Born from the physical conditioning used by our academy's professional dancers, we've adapted their techniques so anyone—regardless of their level—can benefit. The result: a stronger, more agile and more toned body, without the monotony of machines.`,
+  fullBodyCardioWhatIsP3: `Each session is designed to work your entire body: legs, glutes, core, arms and back. But here's the trick: we do it to the rhythm of music, with functional exercises that mimic dance movements. You burn between 400 and 500 calories without realizing you're training.`,
+  fullBodyCardioWhatIsP4: `Cuerpo-Fit is for you if the gym bores you, if you want real results without suffering, or if you're simply looking for a fun way to get fit. Zero previous experience needed. Just the desire to move.`,
+  fullBodyCardioWhatIsQuestionTitle: `Tired of boring workouts that don't work?`,
+  fullBodyCardioWhatIsQuestionAnswer: `Cuerpo-Fit is the alternative you've been looking for. Effective, fun and adapted to all levels. Come try it and see for yourself.`,
+  fullBodyCardioIdentifyTitle: `Do you identify with any of these situations?`,
+  fullBodyCardioIdentify1: `You've tried gyms but get bored and end up quitting`,
+  fullBodyCardioIdentify2: `You want to lose weight or tone up but can't find the motivation`,
+  fullBodyCardioIdentify3: `You'd like to move to the rhythm of music but think "you can't dance"`,
+  fullBodyCardioIdentify4: `You're looking for an effective workout that fits your schedule (just 1h per week)`,
+  fullBodyCardioIdentify5: `You want to burn calories without punishing your joints with impact`,
+  fullBodyCardioIdentify6: `You need a hobby that gets you in shape and that you enjoy`,
+  fullBodyCardioIdentifyTransition: `If you said "yes" to any of these points, you already know what you need.`,
+  fullBodyCardioNeedEnrollTitle: `You need to try Cuerpo-Fit`,
+  fullBodyCardioIdentifyAgitate1: `Without a workout that motivates you, it's easy to fall into a sedentary lifestyle. And sedentary lifestyle takes its toll: less energy, more weight, worse mood...`,
+  fullBodyCardioIdentifySolution: `Cuerpo-Fit breaks that cycle. It's the workout that doesn't feel like a workout. You come, you move, you sweat, you laugh... and before you know it, you've burned 450 calories.`,
+  fullBodyCardioIdentifyClosing: `Your body deserves to move with joy.`,
+  fullBodyCardioTransformTitle: `Imagine your before and after`,
+  fullBodyCardioTransform1Title: `Burn calórica real`,
+  fullBodyCardioTransform1Desc: `400-500 calories per session. Equivalente a 45 min de running, pero mucho más divertido.`,
+  fullBodyCardioTransform2Title: `Complete toning`,
+  fullBodyCardioTransform2Desc: `Your entire body works: legs, glutes, core, arms. Leaving no muscle behind.`,
+  fullBodyCardioTransform3Title: `More daily energy`,
+  fullBodyCardioTransform3Desc: `Exercise endorphins stay with you all week. Less stress, better mood.`,
+  fullBodyCardioTransform4Title: `Improved coordination`,
+  fullBodyCardioTransform4Desc: `Movements to the rhythm of music train your coordination without you realizing it.`,
+  fullBodyCardioTransform5Title: `Visible results`,
+  fullBodyCardioTransform5Desc: `In 4-8 weeks you'll notice changes: more strength, better posture, clothes that fit better.`,
+  fullBodyCardioTransform6Title: `Guaranteed fun`,
+  fullBodyCardioTransform6Desc: `It's not suffering at the gym. It's having fun while getting fit.`,
+  fullBodyCardioTransformCTA: `¿Por qué elegir Farray's Center for tu Cuerpo-Fit in Barcelona?`,
+  fullBodyCardioLevelsTitle: `Nivel for Cuerpo-Fit`,
+  fullBodyCardioLevelsSubtitle: `An open class for everyone`,
+  fullBodyCardioLevelOpenTitle: `All levels`,
+  fullBodyCardioLevelOpenDesc: `Cuerpo-Fit is open level. Each exercise has intensity variations: you choose yours. Absolute beginners work alongside experienced people, each at their own pace. No pressure, no comparisons.`,
+  fullBodyCardioTeachersTitle: `Tu Profesora for Cuerpo-Fit`,
+  fullBodyCardioTeachersSubtitle: `Specialist in functional training and cardio dance`,
+  fullBodyCardioTeacher1Specialty: `Cuerpo-Fit, Stretching & Acondicionamiento Físico`,
+  fullBodyCardioTeacher1Bio: `Cris Ag is a specialist in full body training and cardio dance, trained in the Farray Method. Her style combines the intensity of functional fitness with the joy of movement. Her goal: that you leave each class feeling stronger and happier. She also teaches Stretching and Backbending at the academy.`,
+  fullBodyCardioTeachersClosing: `Cris adapts each exercise to your level. It doesn't matter if it's your first class or you've been training for months: you'll always have a challenge suited to you.`,
+  fullBodyCardioScheduleTitle: `Horarios for Cuerpo-Fit`,
+  fullBodyCardioScheduleSubtitle: `1 weekly class to transform your body`,
+  fullBodyCardioWhyChooseTitle: `Why choose us for your Cuerpo-Fit?`,
+  fullBodyCardioWhyChooseSubtitle: `7 reasons that set us apart`,
+  fullBodyCardioWhyChoose1Title: `Farray Method`,
+  fullBodyCardioWhyChoose1Desc: `A proven methodology that combines the best of functional fitness with dance elements. Fast results, zero boredom.`,
+  fullBodyCardioWhyChoose2Title: `For all levels`,
+  fullBodyCardioWhyChoose2Desc: `You don't need experience. Each exercise has intensity variations. You choose your level at each moment.`,
+  fullBodyCardioWhyChoose3Title: `Small groups`,
+  fullBodyCardioWhyChoose3Desc: `Maximum 20 people per class to guarantee personalized attention and individual corrections.`,
+  fullBodyCardioWhyChoose4Title: `Specialized teacher`,
+  fullBodyCardioWhyChoose4Desc: `Cris Ag combines knowledge of fitness, dance and functional anatomy for safe and effective training.`,
+  fullBodyCardioWhyChoose5Title: `Motivating environment`,
+  fullBodyCardioWhyChoose5Desc: `There are no egos or competition here. Just people who come to have fun while getting fit.`,
+  fullBodyCardioWhyChoose6Title: `No commitment`,
+  fullBodyCardioWhyChoose6Desc: `Pay month to month. If you can't come one month, no problem. Total flexibility.`,
+  fullBodyCardioWhyChoose7Title: `Academia CID-UNESCO`,
+  fullBodyCardioWhyChoose7Desc: `International recognition that endorses the quality of our teaching and methodology.`,
+  fullBodyCardioLogosTitle: `You may have seen us at`,
+  fullBodyCardioLogosIntlFestivalsText: `And at international festivals around the world`,
+  fullBodyCardioWhyTodayFullTitle: `Why start today and not "next Monday"?`,
+  fullBodyCardioWhyToday1: `Every week that passes without moving is a week of lost energy, calories you don't burn, and opportunities to feel better that slip away. There's no perfect time to start. The time is now.`,
+  fullBodyCardioWhyToday2: `Many of our students came thinking "I'm not fit for this". And they discovered that Cuerpo-Fit adapts to them, not the other way around. The only requirement is wanting to move.`,
+  fullBodyCardioWhyToday3: `Mondays the class fills up fast. Book your spot before it's gone. One hour a week can change everything.`,
+  fullBodyCardioWhyTodayClosing1: `Tu body will thank you.`,
+  fullBodyCardioWhyTodayClosing2: `Imagine yourself in 2 months: stronger, more agile, with more energy. That future starts today.`,
+  fullBodyCardioCulturalHistoryTitle: `La ciencia detrás for Cuerpo-Fit`,
+  fullBodyCardioCulturalShort: `Cuerpo-Fit fuses full body functional training with cardio dance elements, based on scientific principles of calorie burning and muscle toning.`,
+  fullBodyCardioCulturalFull: `### El origen for Cuerpo-Fit\n\n**Cuerpo-Fit nació en Farray's Center Barcelona como respuesta a una necesidad real: ofrecer el acondicionamiento físico de bailarines profesionales a personas que no bailan.** Los bailarines de élite mantienen cuerpos fuertes, ágiles y resistentes without stepping foot in a conventional gym. ¿Su secreto? Functional training with music.\n\n**"Cuerpo-Fit: method de full body training + cardio dance desarrollado en Farray's Center Barcelona (2023), quema 400-500 kcal/session."**\n\n### Por qué funciona: la ciencia del Full Body\n\n**El full body training activa más del 60% de la masa muscular en cada session**, lo que dispara el gasto calórico y acelera el metabolismo. A diferencia de las rutinas divididas de gimnasio, el full body:\n\n- **Burn más calories** en menos tiempo\n- **Mejora la coordinación** entre groups musculares\n- **Reduce el riesgo de lesiones** by imbalances\n- **Aumenta la fuerza funcional** for daily activities\n\n**"Full Body Training: activa +60% masa muscular, quema 400-500 kcal/hora, mejora coordinación y fuerza funcional."**\n\n### El factor cardio dance: diversión que quema\n\n**Cuando añades music y ritmo al entrenamiento, el cerebro libera más dopamina y endorfinas.** Estudios demuestran que el exercise with music:\n\n- **Reduce la percepción del esfuerzo** hasta un 12%\n- **Aumenta la adherencia** al programa de entrenamiento\n- **Mejora la coordinación motriz** y la memoria muscular\n- **Potencia el estado de ánimo** post-ejercicio\n\n**"Cardio Dance: exercise with music reduce percepción esfuerzo -12%, aumenta adherencia +40%, potencia endorfinas."**\n\n### Cuerpo-Fit: la fusión perfecta\n\n**En Cuerpo-Fit combinamos ejercicios funcionales de alta efectividad with la energía del cardio dance:**\n\n- **Ejercicios compound** (sentadillas, lunges, burpees adaptados)\n- **Core training** (plancha, trabajo abdominal dinámico)\n- **Cardio intervals** (intensity peaks to the rhythm of music)\n- **Movimientos de danza** (desplazamientos, coordinación)\n\nTodo secuenciado en 60 minutos que trabajan cada músculo de tu body while the music keeps you motivated.\n\n**"Method Cuerpo-Fit (Barcelona): fusión full body + cardio dance; 60 min, ~450 kcal, todos los levels."**\n\n### Resultados esperados\n\nWith regular practice for Cuerpo-Fit (1-2 times per week):\n\n- **Semanas 1-2**: Más energía, mejor humor, menos estrés\n- **Semanas 3-4**: Ropa que empieza a quedar diferente, más fuerza\n- **Semanas 5-8**: Cambios visibles en tonificación, resistencia mejorada\n- **Meses 2-3**: Transformación notable, nuevos hábitos consolidados\n\n**"Cuerpo-Fit results: +energía (week 1), cambios visibles (month 1), transformation (months 2-3)."**`,
+  fullBodyCardioCitableDefinicion: `Cuerpo-Fit: method de full body training + cardio dance that combines functional exercises with music to burn 400-500 kcal/session.`,
+  fullBodyCardioCitableMetodo: `Cuerpo-Fit (Barcelona, 2023): adaptación del condicionamiento físico de bailarines profesionales for people without experience, desarrollado en Farray's Center.`,
+  fullBodyCardioCitableQuema: `Cuerpo-Fit quema 400-500 calories per session de 60 minutos, equivalente a 45 min de running pero with menor impacto articular.`,
+  fullBodyCardioCitableStats: `Cuerpo-Fit: 60 min, 400-500 kcal, activa +60% masa muscular, todos los levels, 1 class/week sufficient to see results.`,
+  fullBodyCardioCitableBeneficios: `Cuerpo-Fit benefits: tonificación integral, quema calórica alta, mejora coordinación, reduce estrés, diversión garantizada.`,
+  fullBodyCardioCitableUbicacion: `Classes for Cuerpo-Fit in Barcelona: Farray's Center, Calle Entença 100 (08015), a 5 min de Plaza España y Sants. Metro: L1 Hostafrancs, L3 Plaza España.`,
+  fullBodyCardioCitableComparacion: `Cuerpo-Fit vs gimnasio tradicional: misma quema calórica, mayor diversión, without machines, with music, adapted to all levels.`,
+  fullBodyCardioCitableResultados: `Resultados Cuerpo-Fit: más energía (week 1-2), cambios visibles (month 1), transformation notable (months 2-3) with regular practice.`,
+  fullBodyCardioFaqTitle: `Frequently Asked Questions about Cuerpo-Fit`,
+  fullBodyCardioFaqQ1: `How many calories do you burn in Cuerpo-Fit?`,
+  fullBodyCardioFaqA1: `En una session for Cuerpo-Fit de 60 minutos se queman aproximadamente <strong>400-500 calories</strong>, dependiendo de tu peso e intensidad. Es equivalente a 45 minutos de running, but much more fun and with less impact on the joints. The combined work of cardio and toning keeps your metabolism active even after class (EPOC effect).`,
+  fullBodyCardioFaqQ2: `Do I need to know how to dance to do Cuerpo-Fit?`,
+  fullBodyCardioFaqA2: `No. Cuerpo-Fit is not a dance class, it's functional training with music. The movements are fitness exercises (squats, lunges, core...) sequenced to the rhythm of music. There are no choreographies to memorize. If you can walk, you can do Cuerpo-Fit.`,
+  fullBodyCardioFaqQ3: `What's the difference between Cuerpo-Fit and the gym?`,
+  fullBodyCardioFaqA3: `<strong>Cuerpo-Fit</strong>: group training with music, functional exercises, without machines, guaranteed fun, adapted in real time. <strong>Gym</strong>: isolated machines, monotonous repetitions, without guidance (usually). Same caloric expenditure, but Cuerpo-Fit has better adherence because it's not boring.`,
+  fullBodyCardioFaqQ4: `What clothes should I wear to Cuerpo-Fit?`,
+  fullBodyCardioFaqA4: `<strong>Required clothing</strong>: ropa deportiva cómoda (leggings, camiseta transpirable), zapatillas de deporte. <strong>Recomendado</strong>: toalla pequeña, botella de agua. <strong>No necesitas</strong>: special dance clothes or extra equipment (we provide everything).`,
+  fullBodyCardioFaqQ5: `Is it suitable for absolute beginners?`,
+  fullBodyCardioFaqA5: `Sí, 100%. Cuerpo-Fit is open level designed for everyone. Each exercise has <strong>3 intensity levels</strong>: bajo (principiantes), medio (intermedios), alto (avanzados). Tú eliges en cada momento. Cris adapts and corrects in real time. Many of our students started without having set foot in a gym in years.`,
+  fullBodyCardioFaqQ6: `How often should I do Cuerpo-Fit to see results?`,
+  fullBodyCardioFaqA6: `Con <strong>1 weekly class</strong> ya notarás cambios en energía y ánimo. For visible toning results, we recommend <strong>2 sesiones semanales</strong> (you can combine with other classes at the academy). La constancia es más importante que the intensity. Better 1 class each week for months than 5 classes one week and then nothing.`,
+  fullBodyCardioFaqQ7: `Can I do Cuerpo-Fit if I'm overweight?`,
+  fullBodyCardioFaqA7: `Sí. Cuerpo-Fit is especially effective for people who want to lose weight because: it works the whole body (more caloric expenditure), the exercises are low impact (they take care of the joints), and each movement has lower intensity variations. Many students with excess weight choose Cuerpo-Fit precisely because they don't feel judged and can go at their own pace.`,
+  fullBodyCardioFaqQ8: `What muscles do I work in Cuerpo-Fit?`,
+  fullBodyCardioFaqA8: `Cuerpo-Fit es <strong>full body</strong>, works all major muscle groups: <strong>Tren inferior</strong>: cuádriceps, isquiotibiales, glúteos, gemelos. <strong>Core</strong>: abdominales, oblicuos, espalda baja. <strong>Tren superior</strong>: arms, shoulders, back, chest. En 60 minutos activamos más del 60% de tu masa muscular total.`,
+  fullBodyCardioFaqQ9: `How long does it take to see results?`,
+  fullBodyCardioFaqA9: `<strong>Semanas 1-2</strong>: más energía, mejor humor, mejor sueño. <strong>Semanas 3-4</strong>: clothes start to fit differently, more strength in daily activities. <strong>Meses 1-2</strong>: cambios visibles en tonificación, resistencia cardiovascular mejorada. <strong>Mes 3+</strong>: transformation notable, nuevos hábitos consolidados. Resultados with practice regular de 1-2 times per week.`,
+  fullBodyCardioFaqQ10: `¿Hay classes for Cuerpo-Fit for mayores de 40 o 50 years?`,
+  fullBodyCardioFaqA10: `Sí, tenemos alumnos de todas las edades, desde 20 to 60+ years. Cuerpo-Fit is especially recommended for people over 40 because: it maintains muscle mass (which starts to be lost with age), improves bone density, is low impact (takes care of joints), and each exercise adapts to your level. Age is not an excuse, it's a reason to start.`,
+  fullBodyCardioFaqQ11: `¿Cómo es una class típica for Cuerpo-Fit?`,
+  fullBodyCardioFaqA11: `<strong>Calentamiento (10 min)</strong>: activación cardiovascular suave, movilidad articular. <strong>Bloque principal (40 min)</strong>: circuitos de full body exercises al ritmo de la music, combinando cardio y tonificación, with pausas activas. <strong>Vuelta a la calma (10 min)</strong>: estiramientos, respiración, relajación. All guided by Cris with motivating music in the background.`,
+  fullBodyCardioFaqQ12: `What intensity level does the class have?`,
+  fullBodyCardioFaqA12: `Intensidad <strong>moderada-alta</strong>, pero siempre adaptable. Cuerpo-Fit works with the principle of "choose your intensity": cada ejercicio tiene versión suave (principiantes), media (intermedios) e intensa (avanzados). Tú decides en cada momento cuánto das. La idea es que termines sudando pero sonriendo, no arrastrándote.`,
+  fullBodyCardioFaqQ13: `Can I do Cuerpo-Fit if I have injuries?`,
+  fullBodyCardioFaqA13: `Depende de la lesión. <strong>Requisitos</strong>: consult with your doctor or physiotherapist first. If you have medical clearance, let us know before class to adapt exercises. <strong>Contraindicaciones absolutas</strong>: lesiones agudas, problemas cardíacos no controlados, embarazo de riesgo. Cris can modify exercises for most common limitations (knees, back, shoulders).`,
+  fullBodyCardioFaqQ14: `¿Cuánto cuesta la class for Cuerpo-Fit?`,
+  fullBodyCardioFaqA14: `Cuerpo-Fit is included in the academy's monthly memberships. <strong>Trial class</strong>: consulta condiciones actuales en recepción o web. <strong>Bono mensual</strong>: gives you access to Cuerpo-Fit and other classes at the academy. <strong>No commitment</strong>: you pay month to month, without commitment. Consulta tarifas actualizadas en nuestra web o pulsando "Book Your Trial Class".`,
+  fullBodyCardioFaqQ15: `¿Dónde están las classes for Cuerpo-Fit in Barcelona?`,
+  fullBodyCardioFaqA15: `<strong>Dirección</strong>: Calle Entença 100, 08015 Barcelona (zona Plaza España, entre Sants y Hostafrancs).<br><strong>Metro</strong>: Plaza España (L1, L3), Hostafrancs (L1), Rocafort (L1), Entença (L5) – todos a 5 min andando.<br><strong>Horario</strong>: Lunes de 20:00 a 21:00h.<br><br>📞 <strong>Teléfono</strong>: +34 622 247 085<br>📧 <strong>Email</strong>: info@farrayscenter.com<br>🌐 <strong>Web</strong>: www.farrayscenter.com`,
+  fullBodyCardioNearbyTitle: `Classes for Cuerpo-Fit cerca de ti in Barcelona`,
+  fullBodyCardioNearbyDesc: `Farray's Center es referencia en full body training and cardio dance en la zona de Plaza España, Hostafrancs, Sants y L'Hospitalet. Perfectamente comunicado by metro y autobús.`,
+  fullBodyCardioNearbySearchText: `¿Buscas "classes de fitness cerca de mí" o "full body training Barcelona"? Mira lo fácil que es llegar:`,
+  fullBodyCardioNearbyMetro: `Metro: Plaza España (L1, L3), Rocafort (L1), Hostafrancs (L1), Entença (L5) - todos a 5 min andando.`,
+  fullBodyCardioPrepareTitle: `Prepárate for tu Primera Class for Cuerpo-Fit`,
+  fullBodyCardioPrepareSubtitle: `Everything you need to know before coming`,
+  fullBodyCardioPrepareWhatToBring: `What to bring`,
+  fullBodyCardioPrepareBefore: `Before coming`,
+  fullBodyCardioPrepareAvoid: `What to avoid`,
+  fullBodyCardioPrepareItem1: `Ropa deportiva cómoda (leggings o shorts, camiseta transpirable)`,
+  fullBodyCardioPrepareItem2: `Zapatillas de deporte (cualquier calzado deportivo sirve)`,
+  fullBodyCardioPrepareItem3: `Botella de agua (imprescindible)`,
+  fullBodyCardioPrepareItem4: `Small towel for sweat`,
+  fullBodyCardioPrepareItem5: `Ganas de moverte y pasártelo bien`,
+  fullBodyCardioPrepareBeforeItem1: `Eat something light 1-2 hours before (not fasting, not heavy)`,
+  fullBodyCardioPrepareBeforeItem2: `Hidrátate bien durante el día`,
+  fullBodyCardioPrepareBeforeItem3: `Arrive 10 minutes before if it's your first time`,
+  fullBodyCardioPrepareAvoidItem1: `Eating heavy right before class`,
+  fullBodyCardioPrepareAvoidItem2: `Venir deshidratado/a (bebe agua durante el día)`,
+  fullBodyCardioPrepareAvoidItem3: `Comparing yourself with others (everyone goes at their own pace)`,
+  fullBodyCardioPrepareTeacherTip: `Cris's Advice`,
+  fullBodyCardioPrepareTeacherQuote: `Cuerpo-Fit no es sobre ser perfecta. Es sobre moverse, sudar y sonreír. No me importa si haces la versión fácil o difícil de cada ejercicio. Me importa que vengas, que lo intentes y que te vayas feeling mejor de lo que llegaste.`,
+  testClassPageTitle: `Experimental Class V2 - Visual Test`,
+  testClassMetaDescription: `Trial page for the new V2 template with enhanced visual hero.`,
+  testClassCategory: `Test`,
+  testClassCurrent: `Experimental Class`,
+  testClassHeroTitle: `New Visual Design`,
+  testClassHeroSubtitle: `Hero with Background Video + Split Layout`,
+  testClassHeroDesc: `This is a trial page to experiment with the new template design. The hero now features background video and split layout.`,
+  testClassHeroLocation: `Farray's Center · Barcelona`,
+  testClassHeroStudents: `+15,000 students`,
+  testClassCTAGroup: `Actions`,
+  testClassCTA1: `View Schedule`,
+  testClassCTA1Subtext: `Discover our classes`,
+  testClassCTA2: `More Information`,
+  testClassCTA2Subtext: `Learn more`,
+  testClassWhatIsTitle: `What is this Trial Page?`,
+  testClassWhatIsP1: `This is an experimental page to test the new V2 template with visual enhancements.`,
+  testClassWhatIsP2: `The hero now features background video with dark overlay to improve text readability.`,
+  testClassWhatIsP3: `The layout is split: text on the left, image/video on the right on desktop.`,
+  testClassWhatIsP4: `On mobile it stacks vertically for a better responsive experience.`,
+  testClassWhatIsQuestionTitle: `Why this design?`,
+  testClassWhatIsQuestionAnswer: `To make pages more visually impactful and reduce text density in the hero.`,
+  testClassWhatIsQuote: `Dance is the poetry of the body in motion`,
+  testClassWhatIsCTA: `View Schedule`,
+  testClassScheduleTitle: `Trial Schedule`,
+  testClassScheduleSubtitle: `Fictional classes for demonstration`,
+  testClassLevelsTitle: `Trial Levels`,
+  testClassLevelBeginnerTitle: `Beginner`,
+  testClassLevelBeginnerDesc: `Initial level to test the design of level cards.`,
+  testClassLevelIntermediateTitle: `Intermediate`,
+  testClassLevelIntermediateDesc: `Mid-level to see how multiple levels are displayed.`,
+  testClassTeachersTitle: `Trial Teachers`,
+  testClassTeachersSubtitle: `Teacher cards demonstration`,
+  testClassTeacher1Specialty: `Demo Specialty`,
+  testClassTeacher1Bio: `This is a fictional teacher to test the teacher card design in the new template.`,
+  testClassTeachersClosing: `Closing text for the teachers section.`,
+  testClassIdentifyTitle: `Do You Relate to This?`,
+  testClassIdentify1: `You want to see how the new hero design looks`,
+  testClassIdentify2: `You're interested in testing visual improvements before implementing them`,
+  testClassIdentify3: `You're looking to make class pages more attractive`,
+  testClassIdentify4: `You want to reduce the amount of text in the hero`,
+  testClassIdentify5: `You'd like to add more photos to the pages`,
+  testClassIdentify6: `You value a more modern and visual design`,
+  testClassIdentifyTransition: `If you relate to any of these points, this template is for you.`,
+  testClassNeedEnrollTitle: `Ready to Try?`,
+  testClassIdentifyAgitate1: `The current design has too much text in the hero.`,
+  testClassIdentifySolution: `The new V2 template solves this with a more visual design.`,
+  testClassIdentifyClosing: `Try this page on different devices to see the result.`,
+  testClassTransformTitle: `Your Transformation`,
+  testClassTransform1Title: `Confidence on the Dance Floor`,
+  testClassTransform1Before: `Ashamed to dance`,
+  testClassTransform1After: `You dance with confidence`,
+  testClassTransform1Desc: `You'll learn to move naturally and express yourself through dance, losing stage fright.`,
+  testClassTransform2Title: `Physical Fitness`,
+  testClassTransform2Before: `Sedentary lifestyle`,
+  testClassTransform2After: `Burn 400 cal/class`,
+  testClassTransform2Desc: `Dance is one of the most complete exercises: improves cardiovascular health, coordination and flexibility.`,
+  testClassTransform3Title: `Social Life`,
+  testClassTransform3Before: `Boring routine`,
+  testClassTransform3After: `New friends and parties`,
+  testClassTransform3Desc: `You'll meet people with your same interests and enjoy social events, parties and outings.`,
+  testClassTransform4Title: `Mental Wellbeing`,
+  testClassTransform4Before: `Accumulated stress`,
+  testClassTransform4After: `Relaxed mind`,
+  testClassTransform4Desc: `Dance releases endorphins, reduces cortisol and helps you disconnect from daily worries.`,
+  testClassTransform5Title: `New Skills`,
+  testClassTransform5Before: `Don't know how to dance`,
+  testClassTransform5After: `Master the rhythm`,
+  testClassTransform5Desc: `You'll develop skills that will accompany you for life: musicality, coordination and body expression.`,
+  testClassTransform6Title: `Self-esteem`,
+  testClassTransform6Before: `Insecurity`,
+  testClassTransform6After: `You feel amazing`,
+  testClassTransform6Desc: `Seeing your progress and mastering new movements will increase your confidence in yourself each week.`,
+  testClassTransformCTA: `Why This New Design?`,
+  testClassWhyChoose1Title: `Visual Impact`,
+  testClassWhyChoose1Desc: `Background video captures attention immediately.`,
+  testClassWhyChoose2Title: `Better UX`,
+  testClassWhyChoose2Desc: `Users see what the class is about instantly.`,
+  testClassWhyChoose3Title: `Less Scrolling`,
+  testClassWhyChoose3Desc: `Key information is visible without scrolling.`,
+  testClassWhyChoose4Title: `Modern`,
+  testClassWhyChoose4Desc: `Following current web design trends.`,
+  testClassWhyChoose5Title: `Flexible`,
+  testClassWhyChoose5Desc: `Can use video, image or gradient only.`,
+  testClassWhyChoose6Title: `Accessible`,
+  testClassWhyChoose6Desc: `Respects prefers-reduced-motion for sensitive users.`,
+  testClassLogosTitle: `Endorsed By`,
+  testClassLogosIntlFestivalsText: `And presence at international festivals`,
+  testClassWhyTodayFullTitle: `Why Try Today?`,
+  testClassWhyToday1: `Because you can see the result immediately.`,
+  testClassWhyToday2: `Because changes are isolated and don't affect production.`,
+  testClassWhyToday3: `Because iterating is faster in a trial environment.`,
+  testClassWhyTodayClosing1: `Try, evaluate and decide.`,
+  testClassWhyTodayClosing2: `No rush, no pressure.`,
+  testClassFaqTitle: `Frequently Asked Questions about Template V2`,
+  testClassFaqQ1: `Does this design affect current pages?`,
+  testClassFaqA1: `No. This V2 template is experimental and only used on /test/class-experimental. Current pages continue using the original template.`,
+  testClassFaqQ2: `How do I migrate to the new design when it's ready?`,
+  testClassFaqA2: `Once the design is approved, the main template will be updated and all pages will use it automatically.`,
+  testClassFaqQ3: `Can I customize the background video?`,
+  testClassFaqA3: `Yes. The config allows specifying videoUrl, videoPoster and heroImage for each page.`,
+  testClassNearbyTitle: `Nearby Areas (Demo)`,
+  testClassNearbyDesc: `Example of nearby areas section.`,
+  testClassNearbySearchText: `Related searches:`,
+  testClassNearbyMetro: `Metro: L1/L3 Plaza España · L5 Sants Estació`,
+  testClassFinalCTATitle: `Do You Like the New Design?`,
+  testClassFinalCTASubtitle: `Share your feedback`,
+  testClassFinalCTADesc: `This experimental template is ready to iterate. Try it on different devices and give us your opinion.`,
+  testClassFinalCTAFunny: `Spoiler: the old design is jealous.`,
+  testClassCourseSchemaName: `Experimental Class V2`,
+  testClassCourseSchemaDesc: `Trial page for the new visual template.`,
+  testClassCourseTeaches: `Enhanced visual design for class pages`,
+  fbLandingPageTitle: `FREE Dance Class in Barcelona | Farray's Center`,
+  fbLandingPageDescription: `Book tu class de trial gratuita en la mejor school de dance de Barcelona. +15,000 students, +40 estilos, teachers profesionales. Sin compromiso.`,
+  fbLandingBadge: `Special Offer`,
+  fbLandingHeroTitle: `Your First Dance Class`,
+  fbLandingHeroTitleAccent: `FREE`,
+  fbLandingHeroSubtitle: `Discover why +{students} students have chosen Farray's Center in Barcelona`,
+  fbLandingHeroCTA: `BOOK YOUR FREE SPOT`,
+  fbLandingHeroSpots: `Only {spots} spots left this week`,
+  fbLandingHeroTimer: `Offer ends in:`,
+  fbLandingHeroTrust: `No credit card · No commitments · Just dance`,
+  fbLandingActiveStudents: `active students`,
+  fbLandingYears: `years in Barcelona`,
+  fbLandingProofRating: `Google Reviews`,
+  fbLandingProofStudents: `students trained`,
+  fbLandingProofYears: `years of experience`,
+  fbLandingProofLocation: `Plaza España`,
+  fbLandingValueTitle: `Here's what you get in your trial class:`,
+  fbLandingValue1: `1 complete 60-minute class with professional teachers`,
+  fbLandingValue1Price: `Value €{price}`,
+  fbLandingValue2: `Choose from +40 styles: Salsa, Bachata, Reggaeton, Hip Hop, Heels...`,
+  fbLandingValue2Price: `Included`,
+  fbLandingValue3: `Small groups (max 15 people) for personalized attention`,
+  fbLandingValue3Price: `Included`,
+  fbLandingValue4: `Premium facilities: 3 air-conditioned rooms, changing rooms, rest area`,
+  fbLandingValue4Price: `Included`,
+  fbLandingValue5: `No commitment: you come, try it, and decide without pressure`,
+  fbLandingValue5Price: `Included`,
+  fbLandingValueTotal: `Total value:`,
+  fbLandingValueYourPrice: `Your price today:`,
+  fbLandingValueFree: `FREE`,
+  fbLandingValueCTA: `I WANT MY FREE CLASS`,
+  fbLandingValueSubtext: `Over 500 people book every month`,
+  fbLandingTransformTitle: `From "I have two left feet" to dancing with confidence`,
+  fbLandingTransformSubtitle: `This is what our students say:`,
+  fbLandingTestimonial1Name: `María, 34 years old`,
+  fbLandingTestimonial1Text: `I arrived without knowing how to move my feet. Today I dance salsa at any party and I feel like a different person. The teachers have incredible patience.`,
+  fbLandingTestimonial2Name: `Carlos, 28 years old`,
+  fbLandingTestimonial2Text: `I came alone and embarrassed. Now I have a group of dancer friends and I go to social events every week. Best decision of the year.`,
+  fbLandingTestimonial3Name: `Laura, 42 years old`,
+  fbLandingTestimonial3Text: `After years of wanting to and not daring, I finally did it. The atmosphere is so good that I forgot I was embarrassed.`,
+  fbLandingGoogleReviews: `505+ Google reviews`,
+  fbLandingTransformCTA: `I WANT THAT TRANSFORMATION`,
+  fbLandingFaqTitle: `You might be wondering...`,
+  fbLandingFaq1Q: `"I don't know how to dance at all, I'm a complete beginner"`,
+  fbLandingFaq1A: `Perfect! 80% of our students start from scratch. We have specific classes for absolute beginners where everyone is at the same level. No one judges you, we all started the same.`,
+  fbLandingFaq2Q: `"I don't have a dance partner"`,
+  fbLandingFaq2A: `You don't need a partner! In our classes we rotate constantly, so you'll dance with different people. You'll come alone and make new friends who share your passion for dance.`,
+  fbLandingFaq3Q: `"I'm embarrassed, I don't want to make a fool of myself"`,
+  fbLandingFaq3A: `We understand perfectly. That's why our groups are small (max 15 people) and the atmosphere is super welcoming. Here you're not judged, you learn. And the teachers are used to working with shy people.`,
+  fbLandingFaqReassurance: `Have another question? Write to us on WhatsApp and we'll respond immediately.`,
+  fbLandingFinalTitle: `Spots for this week are flying...`,
+  fbLandingFinalSubtitle: `Don't leave it for tomorrow, your future self will thank you`,
+  fbLandingFinalSpots: `Only {spots} spots left`,
+  fbLandingFinalCountdown: `Offer expires in:`,
+  fbLandingFinalCTA: `BOOK NOW - IT'S FREE`,
+  fbLandingTrust_noCard: `No card`,
+  fbLandingTrust_noCommitment: `No commitment`,
+  fbLandingTrust_noSpam: `No spam`,
+  fbLandingFinalLegal: `By booking you agree to receive information about your class. You can cancel at any time. Your data is protected according to GDPR.`,
+  dhLandingPageTitle: `Class de Bienvenida de Dancehall in Barcelona | GRATIS | Farray's Center`,
+  dhLandingPageDescription: `Travel to Jamaica without leaving Barcelona. Totally FREE Dancehall Welcome Class. Limited spots. No commitment. Book now.`,
+  dhLandingBadge: `FREE WELCOME CLASS`,
+  dhLandingHeadline: `Travel To Jamaica Without Leaving Barcelona`,
+  dhLandingSubheadline: `Start the new year moving intensely to Jamaica's most enjoyable and powerful music. Discover this super fun dance while balancing out the holiday excesses with a big smile on your face.`,
+  dhLandingCTA: `BOOK YOUR WELCOME CLASS NOW`,
+  dhLandingTrustText: `No cost · No commitment · Very limited spots`,
+  dhLandingTrustStudents: `students trained`,
+  dhLandingTrustYears: `years of experience`,
+  dhLandingTrustReviews: `Google Reviews`,
+  dhLandingTrustLocation: `Plaza España`,
+  dhLandingReviewsLabel: `reviews`,
+  dhLandingTrustActiveStudents: `1,500+ active students`,
+  dhLandingTrustYearsExp: `8+ years`,
+  dhLandingTrustLocationShort: `Barcelona - Plaza España`,
+  dhLandingExclusiveBadge: `EXCLUSIVE`,
+  dhLandingLogosTitle: `You may have seen us at`,
+  dhLandingLogosSubtitle: `Collaborations on television, film and international festivals`,
+  dhLandingFestivalsText: `And at the Best Dance Festivals Around the World`,
+  dhLandingStatYears: `Years of Experience`,
+  dhLandingStatActive: `Active Students`,
+  dhLandingStatSatisfied: `Satisfied Students`,
+  dhLandingExperienceTitle: `Want to travel to Jamaica without leaving Barcelona?`,
+  dhLandingExperienceDesc: `This is not just any class. It's your access to an exclusive and cultural experience, where we guide you step by step to discover the true flavor of Dancehall. First time with us? This is your chance: a totally free Dancehall Welcome class, no cost, no commitment, with limited spots. A welcome with all the flow you deserve.`,
+  dhLandingValueTitle: `What does this experience include?`,
+  dhLandingValueSubtitle: `All this completely FREE for new students`,
+  dhLandingValueItem1: `A complete 60-minute Dancehall class`,
+  dhLandingValuePrice1: `Value: {price}€`,
+  dhLandingValueItem2: `Friendly and warm treatment that characterizes us`,
+  dhLandingValueItem3: `Small group: limited spots each week`,
+  dhLandingValueItem4: `Direct confirmation via WhatsApp after booking`,
+  dhLandingValueItem5: `Access to private offer if you sign up that day`,
+  dhLandingValueIncluded: `Included`,
+  dhLandingValueTotal: `TOTAL VALUE:`,
+  dhLandingValueYourPrice: `YOUR PRICE TODAY:`,
+  dhLandingValueFree: `FREE`,
+  dhLandingOfferTitle: `For a limited time only`,
+  dhLandingOfferDesc: `Book your class now and if you decide to sign up the same day, you'll receive an exclusive welcome special offer only valid after the class. We want you to join Farray's only if you connect with our energy... but if you do, don't waste time.`,
+  dhLandingPrepareTitle: `¿What to bring a tu class?`,
+  dhLandingPrepare1: `Comfortable sportswear`,
+  dhLandingPrepare2: `Clean sports shoes`,
+  dhLandingPrepare3: `Water bottle`,
+  dhLandingPrepare4: `Lots of desire to have fun`,
+  dhLandingScheduleTitle: `Choose your schedule`,
+  dhLandingScheduleSubtitle: `Every day of the week at Calle Entença nº 100, Barcelona`,
+  dhLandingReserveBtn: `Book`,
+  dhLandingLimitedSpots: `Very limited spots! This experience is only available once per person`,
+  dhLandingUrgencyBadge: `LIMITED SPOTS — Book now!`,
+  dhLandingWhyFarraysTitle: `Why Farray's International Dance Center?`,
+  dhLandingWhyTitle1: `Academy recognized by CID UNESCO`,
+  dhLandingWhyDesc1: `Led by Yunaisy Farray, actress in Street Dance 2 and one of the most recognized masters in the world.`,
+  dhLandingWhyTitle2: `Teachers trained in Jamaican roots`,
+  dhLandingWhyDesc2: `Experts in Dancehall Female, Twerk and Afro-Caribbean culture. Classes with flow, technique and authenticity.`,
+  dhLandingWhyTitle3: `Unbeatable location`,
+  dhLandingWhyDesc3: `Calle Entença 100, between Plaza España and Sants, 5 minutes from Plaça Espanya and Sants. Metro, buses and train at the door. Easy to arrive. Easy to return.`,
+  dhLandingWhyTitle4: `Family atmosphere, with the professionalism you need`,
+  dhLandingWhyDesc4: `Close, inclusive and without judgments or comparisons, but with the professionalism you need to truly evolve.`,
+  dhLandingWhyTitle5: `Truly prepared facilities`,
+  dhLandingWhyDesc5: `Over 700 m², spacious rooms, mirrors, professional sound, air conditioning and centralized ventilation to train comfortably all year round.`,
+  dhLandingWhyTitle6: `Multidisciplinary academy`,
+  dhLandingWhyDesc6: `Over 25 styles so you never get bored and can grow at your own pace: urban, Latin dances, contemporary, technique, stretching and much more.`,
+  dhLandingWhyTitle7: `Annual gala + powerful workshops`,
+  dhLandingWhyDesc7: `Shine in a professional theater, participate in international workshops and live experiences you won't find at any other school.`,
+  dhLandingTestimonialsTitle: `What do those who have already experienced it say?`,
+  dhLandingTestimonial1: `I had tried classes at another school, but at Farray's I understood the difference between teaching and transmitting. Here you don't just learn to dance, you understand what you're dancing. I was hooked from the first class.`,
+  dhLandingTestimonial2: `I love going to my classes, it's my moment of the week. They're very professional and caring, a great family.`,
+  dhLandingTestimonial3: `The atmosphere is incredible. I came nervous thinking I wouldn't know how to move and left wanting to come back. I've been here for 8 months now.`,
+  dhLandingFeaturedTestimonial: `I had tried similar classes at another school with a teacher I thought was just what I was looking for. Until I came to Farray's Center and understood the difference between teaching and transmitting. At Farray's you don't just learn to dance, you understand what you're dancing. I was hooked from the first class.`,
+  dhLandingFeaturedTestimonialAuthor: `Marta C., student since January`,
+  dhLandingFaqTitle: `You might be wondering...`,
+  dhLandingObjQ1: `What if I've never danced Dancehall or anything like it?`,
+  dhLandingObjA1: `Perfect, this class is designed exactly for you. We guide you step by step from scratch. 80% of our students started without previous experience.`,
+  dhLandingObjQ2: `Do I need to be in good physical shape?`,
+  dhLandingObjA2: `No. Come as you are right now. Dancehall gets you in shape while you have fun. Everyone goes at their own pace.`,
+  dhLandingObjQ3: `What clothes should I wear?`,
+  dhLandingObjA3: `Comfortable sportswear and clean sports shoes. Also bring a water bottle. And lots of desire to have fun!`,
+  dhLandingObjQ4: `Can I go alone? Will I feel uncomfortable?`,
+  dhLandingObjA4: `90% of our students come alone the first time. The atmosphere is super family-friendly and welcoming. No one judges you here, we just dance and enjoy together.`,
+  dhLandingVideoTitle: `Watch a real class`,
+  dhLandingVideoSubtitle: `This is how Dancehall is experienced at Farray's`,
+  dhLandingVideoPlaceholder: `Video coming soon`,
+  dhLandingLocationTitle: `We wait for you here`,
+  dhLandingLocationAddress: `Calle Entença nº 100 - Plaza España (L1, L3), Rocafort (L1), Entença (L5); Estación de Sants (L5, Ferrocarril)`,
+  facilitiesSize: `of facilities`,
+  dhLandingFinalCTATitle: `Book your spot now and don't let them tell you about it... or dance it for you.`,
+  dhLandingFinalCTADesc: `Spots fly faster than a "Dutty Wine" on Friday night.`,
+  dhLandingFinalTrust: `No cost · No commitment · Very limited spots`,
+  dhLandingUrgencyReminder: `Remember: spots are very limited each week`,
+  dhLandingFooterTagline: `Farray's can't be explained. It's danced. It's lived. Come discover it for yourself.`,
+  dhLandingFooterRights: `All rights reserved`,
+  dhLandingFooterLegal: `Legal Notice`,
+  dhLandingFooterPrivacy: `Privacy Policy`,
+  dhLandingFooterTerms: `Terms and Conditions`,
+  dhLandingCountdownTitle: `This offer ends in:`,
+  dhLandingCountdownExpires: `Limited spots each week`,
+  dhLandingCountdownDays: `Days`,
+  dhLandingCountdownHours: `Hours`,
+  dhLandingCountdownMinutes: `Min`,
+  dhLandingCountdownSeconds: `Sec`,
+  dhExitIntent_title: `Not convinced about Dancehall?`,
+  dhExitIntent_description: `No problem, we have over 25 different dance styles. There's sure to be one perfect for you.`,
+  dhExitIntent_ctaExplore: `See all available classes`,
+  dhExitIntent_ctaDancehall: `Book Dancehall class`,
+  dhExitIntent_ctaClose: `Close`,
+  dhExitIntent_hint: `Salsa, Bachata, Twerk, Hip-Hop, Heels, Afrobeats y mucho más...`,
+  dhLeadModal_title: `Discover how to start in Dancehall`,
+  dhLeadModal_subtitle: `Try a welcome class and decide calmly if it fits you.`,
+  dhLeadModal_microCommit_question: `Would you like to try a Dancehall class?`,
+  dhLeadModal_microCommit_yes: `Yes, I want to try!`,
+  dhLeadModal_microCommit_curious: `I just want more information`,
+  dhLeadModal_intro: `Complete the form and receive all the information by email right now to come relaxed and enjoy the experience.`,
+  dhLeadModal_benefits_title: `What you'll receive:`,
+  dhLeadModal_benefit1: `Available Dancehall schedules by level`,
+  dhLeadModal_benefit2: `Practical guide: what to bring and how to get there`,
+  dhLeadModal_benefit3: `Confirmation and reminders via WhatsApp`,
+  dhLeadModal_benefit4: `Access to the welcome class (no commitment)`,
+  dhLeadModal_field_firstName: `First Name`,
+  dhLeadModal_field_lastName: `Last Name`,
+  dhLeadModal_field_email: `Email`,
+  dhLeadModal_field_phone: `Teléfono`,
+  dhLeadModal_placeholder_firstName: `Your first name`,
+  dhLeadModal_placeholder_lastName: `Your last name`,
+  dhLeadModal_placeholder_email: `tu@email.com`,
+  dhLeadModal_placeholder_phone: `+34 600 000 000`,
+  dhLeadModal_consent_text: `I agree to receive information about my Dancehall welcome class and the`,
+  dhLeadModal_consent_link: `privacy policy`,
+  dhLeadModal_submit: `Book my welcome class`,
+  dhLeadModal_sending: `Booking...`,
+  dhLeadModal_error_firstName: `Please enter your first name`,
+  dhLeadModal_error_lastName: `Please enter your last name`,
+  dhLeadModal_error_email: `Please enter a valid email`,
+  dhLeadModal_error_phone: `Please enter your phone`,
+  dhLeadModal_error_consent: `You must agree to receive information to continue`,
+  dhLeadModal_error_generic: `An error occurred. Please try again.`,
+  dhLeadModal_success_title: `Booking Confirmed`,
+  dhLeadModal_success_heading: `Check your email right now`,
+  dhLeadModal_success_message: `We've sent you all the information for your welcome class.`,
+  dhLeadModal_success_check_email: `If you don't see it, check spam or promotions and add our email to your contacts to receive the information properly.`,
+  dhLeadModal_success_next_title: `Next steps:`,
+  dhLeadModal_success_next_1: `Check your email (also spam or promotions)`,
+  dhLeadModal_success_next_2: `Choose the schedule that suits you best`,
+  dhLeadModal_success_next_3: `We'll confirm via WhatsApp before the class`,
+  dhLeadModal_success_spam_note: `Add info@farrayscenter.com to your contacts so you don't miss anything.`,
+  dhLeadModal_success_close: `Understood`,
+  dhLeadModal_existing_heading: `You're already registered!`,
+  dhLeadModal_existing_message: `We see that you previously registered for a Dancehall class.`,
+  dhLeadModal_existing_contact: `If you have any questions or haven't received information, write to us at info@farrayscenter.com`,
+  dhLeadModal_legal_text: `Your data will be processed by Farray's International Dance Center to manage your welcome class and send you related information. You can exercise your rights of access, rectification, deletion and portability by writing to us at info@farrayscenter.com.`,
+  homev2_pageTitle: `Dance School in Barcelona | Salsa, Bachata & Dance Classes | FIDC`,
+  homev2_metaDescription: `Dance school in Barcelona with salsa, bachata and dance classes for adults. CID-UNESCO Center with 4.9/5 on Google. First class free. Book now.`,
+  homev2_heroHeadline: `You don't need more dance classes.\\nYou need the right classes.`,
+  homev2_heroSubheadline: `The Farray Method® is the only dance teaching system registered with UNESCO that tracks your progress class by class.`,
+  homev2_heroTagline: `Dancing is working on your happiness. But only if you truly progress.`,
+  homev2_heroValue: `In Barcelona there are dozens of dance schools. Some have good teachers. Others have a great atmosphere. But almost none can answer this: "What level am I at and what do I need for the next one?" We can.`,
+  homev2_heroCta1: `View Schedule and Book`,
+  homev2_heroCta1Subtext: `Free assessment in your first class`,
+  homev2_heroCta2: `Discover the Method`,
+  homev2_founderTitle: `Behind every class there's a story. This is mine.`,
+  homev2_founderPara1: `From Cuba's National School of Arts to Barcelona. Over 20 years training dancers who today shine on stages around the world.`,
+  homev2_founderPara2: `Creator of the Farray Method®, registered with CID-UNESCO. I don't teach random steps. I teach you to feel the music and express it with your body.`,
+  homev2_founderPara3: `I've appeared in \"Street Dance 2\", \"Got Talent\" and \"The Dancer\". But my greatest pride isn't on screen: it's the hundreds of students who came in knowing nothing and today dance amazingly.`,
+  homev2_founderQuote: `The noblest art is to make others happy.`,
+  homev2_founderCta: `Learn my full story`,
+  homev2_methodProblemTitle: `Why 87% of people quit dance classes... and how to avoid it`,
+  homev2_methodProblemText: `Most schools give you random steps. You memorize, get frustrated, and think \"I'm not cut out for dancing\". The problem isn't you. It's the method.`,
+  homev2_methodSolutionTitle: `Los 3 Pilares del Farray Method®`,
+  homev2_methodPillar1Title: `Discipline and Rigor`,
+  homev2_methodPillar1Desc: `Russian technique + Cuban heritage. Every movement has a reason. Every class takes you to the next level.`,
+  homev2_methodPillar2Title: `Flavor and Rhythm`,
+  homev2_methodPillar2Desc: `It's not enough to do the steps. We teach you to feel the music, to interpret each rhythm, to dance with your soul.`,
+  homev2_methodPillar3Title: `Global Innovation`,
+  homev2_methodPillar3Desc: `Fusion of styles and cultures. The best of Cuba, Africa, USA and Europe in a unique method.`,
+  homev2_methodResult: `In 8 weeks you dance confidently. Not because we say so, but because the method is designed for it.`,
+  homev2_methodCta: `View progress testimonials`,
+  homev2_comparisonTitle: `What other academies don't tell you`,
+  homev2_comparisonSubtitle: `We don't bad-mouth anyone. We just lay out the facts. You decide.`,
+  homev2_comparisonDisclaimer: `We're not saying other schools are bad. We're saying our approach is different.`,
+  homev2_compRow1Label: `Methodology`,
+  homev2_compRow1Others: `"Open level" - everyone mixed`,
+  homev2_compRow1Us: `Real levels with objective assessment`,
+  homev2_compRow2Label: `Progression`,
+  homev2_compRow2Others: `You attend class, but are you progressing?`,
+  homev2_compRow2Us: `You know exactly where you stand`,
+  homev2_compRow3Label: `Teachers`,
+  homev2_compRow3Others: `Instructors with online course`,
+  homev2_compRow3Us: `Masters trained at elite academies`,
+  homev2_compRow4Label: `Facilities`,
+  homev2_compRow4Others: `Adapted spaces, generic flooring`,
+  homev2_compRow4Us: `700m² with professional flooring and air conditioning`,
+  homev2_compRow5Label: `Commitment`,
+  homev2_compRow5Others: `3-12 month contracts`,
+  homev2_compRow5Us: `Month to month, no strings attached`,
+  homev2_compRow6Label: `Recognition`,
+  homev2_compRow6Others: `None official`,
+  homev2_compRow6Us: `CID-UNESCO accredited center`,
+  homev2_compRow7Label: `Community`,
+  homev2_compRow7Others: `You go to class and leave`,
+  homev2_compRow7Us: `Events, practices, real family`,
+  homev2_compRow8Label: `Results`,
+  homev2_compRow8Others: `"It depends on you..."`,
+  homev2_compRow8Us: `Measurable progress class by class`,
+  homev2_comparisonCta: `See for yourself`,
+  homev2_comparisonCtaSubtext: `First free assessment class`,
+  homev2_styleFinderTitle: `25+ styles. One method. Your journey.`,
+  homev2_styleFinderSubtitle: `What motivates you to dance? Find your path.`,
+  homev2_persona1Title: `I want to feel powerful`,
+  homev2_persona1Desc: `Feminine, sensual and empowering movement. Discover your most confident and expressive side.`,
+  homev2_persona1Cta: `Explore empowerment classes`,
+  homev2_persona2Title: `I want to dance with a partner`,
+  homev2_persona2Desc: `Salsa, bachata, timba... Connect with your partner through dance or find new connections.`,
+  homev2_persona2Cta: `Explore partner dances`,
+  homev2_persona3Title: `I want to release energy`,
+  homev2_persona3Desc: `Hip hop, dancehall, reggaeton, twerk... The latest styles to release your energy.`,
+  homev2_persona3Cta: `Explore urban dances`,
+  homev2_persona4Title: `I want to take care of myself dancing`,
+  homev2_persona4Desc: `Fitness dancístico que quema calories mientras te diviertes. Mejora tu condición física.`,
+  homev2_persona4Cta: `Explore dance fitness`,
+  homev2_styleFinderViewAll: `View all 25+ styles`,
+  homev2_socialProofTitle: `What 505 people who already danced here say`,
+  homev2_stat1Label: `active students`,
+  homev2_stat2Label: `years of experience`,
+  homev2_stat3Label: `dance styles`,
+  homev2_stat4Label: `of facilities`,
+  homev2_googleReviewsLink: `Google reviews`,
+  homev2_testimonialsCta: `Read more reviews`,
+  homev2_pricingTitle: `Start this week. The method works from day one.`,
+  homev2_pricingSubtitle: `Transparent prices. No surprises.`,
+  homev2_pricingUrgency: `Small groups. When a level fills up, we open a waiting list.`,
+  homev2_price1: `From 50€/month`,
+  homev2_price1Desc: `Monthly fee (1 class/week)`,
+  homev2_price2: `From 78€/month`,
+  homev2_price2Desc: `Monthly fee (2 classes/week)`,
+  homev2_price3: `20€`,
+  homev2_price3Desc: `Drop-in class (no commitment)`,
+  homev2_pricingCta: `View Schedule and Book`,
+  homev2_pricingCtaSecondary: `View all prices`,
+  homev2_faqTitle: `Questions everyone asks before starting`,
+  homev2_faq1Q: `I have no experience, can I start?`,
+  homev2_faq1A: `Of course. We have levels for absolute beginners. 80% of our students started with no previous experience.`,
+  homev2_faq2Q: `Am I too old/young to dance?`,
+  homev2_faq2A: `Our students range from 18 to 70+ years. Dance knows no age, only desire.`,
+  homev2_faq3Q: `How long will it take me to dance well?`,
+  homev2_faq3A: `Con el Farray Method®, en 8 semanas notarás una diferencia significativa. En 6 meses, danceás with confidence.`,
+  homev2_faq4Q: `What happens if I miss a class?`,
+  homev2_faq4A: `You can make up classes in other schedules of the same level. Total flexibility.`,
+  homev2_faq5Q: `Do I need a partner for salsa classes?`,
+  homev2_faq5A: `No. In our classes we rotate constantly. Whether you come alone or accompanied, you'll dance with everyone.`,
+  homev2_faqViewAll: `View all frequently asked questions`,
+  homev2_finalCtaTitle1: `We don't promise to be the best school in Barcelona.`,
+  homev2_finalCtaTitle2: `We promise something more useful: results.`,
+  homev2_finalCtaSubtitle1: `Thousands of people dance amazingly today.`,
+  homev2_finalCtaSubtitle2: `They started just like you: doubting.`,
+  homev2_finalCtaSubtitle3: `The only difference is they took the first step.`,
+  homev2_finalCta1: `Book my first class`,
+  homev2_finalCta2: `View schedules and prices`,
+  homev2_finalCtaTrust: `No commitment. No surprises. Just dance.`,
+  homev2_classes_title: `Find Your Dance Style`,
+  homev2_classes_subtitle: `Over 25 different styles. From salsa and bachata to urban dances, ballet and contemporary. All levels.`,
+  homev2_classes_cta: `View All Classes`,
+  homev2_services_title: `More Than Dance Classes`,
+  homev2_services_subtitle: `Room rental, private classes, parties, corporate events and more. Everything you need under one roof.`,
+  homev2_services_cta: `View All Services`,
+  homev2_services_learn_more: `Learn more`,
+  homev2_interrupt1: `80% of people who sign up for dance quit in the first 3 months.\\nIt's not that they're not cut out for dancing. It's that they chose the wrong place to learn.`,
+  homev2_interrupt2: `Fun fact: In Cuba there are no "open level" dance schools.\\nThey know that mixing levels doesn't work. We know it too.`,
+  homev2_interrupt3: `Uncomfortable question:\\nHow long have you been dancing "the same thing" because nobody told you how to progress?`,
+  homev2_interrupt4: `The difference between a good school and an excellent one\\nisn't in what they promise you. It's in what you can measure.`,
+  homev2_interrupt5: `Spoiler: Not everyone fits here.\\nIf you're looking to "just have fun", there are cheaper options.\\nIf you're looking to transform yourself through dance, keep reading.`,
+  homev2_interrupt6: `One last thing:\\nWe're not selling you anything.\\nWe're showing you an option.\\nThe decision is yours. It always has been.`,
 };

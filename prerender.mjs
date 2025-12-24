@@ -11,6 +11,7 @@ const routes = [
   { path: 'es/clases/baile-barcelona', lang: 'es', page: 'classes' },
   { path: 'es/clases/danza-barcelona', lang: 'es', page: 'danza' },
   { path: 'es/clases/salsa-bachata-barcelona', lang: 'es', page: 'salsaBachata' },
+  { path: 'es/clases/bachata-barcelona', lang: 'es', page: 'bachataSensual' },
   { path: 'es/clases/salsa-cubana-barcelona', lang: 'es', page: 'salsaCubana' },
   { path: 'es/clases/salsa-lady-style-barcelona', lang: 'es', page: 'salsaLadyStyle' },
   { path: 'es/clases/folklore-cubano', lang: 'es', page: 'folkloreCubano' },
@@ -27,6 +28,8 @@ const routes = [
   { path: 'es/clases/sexy-style-barcelona', lang: 'es', page: 'sexyStyle' },
   { path: 'es/clases/modern-jazz-barcelona', lang: 'es', page: 'modernJazz' },
   { path: 'es/clases/ballet-barcelona', lang: 'es', page: 'ballet' },
+  { path: 'es/clases/cuerpo-fit', lang: 'es', page: 'cuerpoFit' },
+  { path: 'es/clases/baile-mananas', lang: 'es', page: 'baileManananas' },
   { path: 'es/clases-particulares-baile', lang: 'es', page: 'clasesParticulares' },
   { path: 'es/sobre-nosotros', lang: 'es', page: 'about' },
   { path: 'es/yunaisy-farray', lang: 'es', page: 'yunaisy' },
@@ -39,6 +42,7 @@ const routes = [
   { path: 'ca/clases/baile-barcelona', lang: 'ca', page: 'classes' },
   { path: 'ca/clases/danza-barcelona', lang: 'ca', page: 'danza' },
   { path: 'ca/clases/salsa-bachata-barcelona', lang: 'ca', page: 'salsaBachata' },
+  { path: 'ca/clases/bachata-barcelona', lang: 'ca', page: 'bachataSensual' },
   { path: 'ca/clases/salsa-cubana-barcelona', lang: 'ca', page: 'salsaCubana' },
   { path: 'ca/clases/salsa-lady-style-barcelona', lang: 'ca', page: 'salsaLadyStyle' },
   { path: 'ca/clases/folklore-cubano', lang: 'ca', page: 'folkloreCubano' },
@@ -55,6 +59,8 @@ const routes = [
   { path: 'ca/clases/sexy-style-barcelona', lang: 'ca', page: 'sexyStyle' },
   { path: 'ca/clases/modern-jazz-barcelona', lang: 'ca', page: 'modernJazz' },
   { path: 'ca/clases/ballet-barcelona', lang: 'ca', page: 'ballet' },
+  { path: 'ca/clases/cuerpo-fit', lang: 'ca', page: 'cuerpoFit' },
+  { path: 'ca/clases/baile-mananas', lang: 'ca', page: 'baileManananas' },
   { path: 'ca/clases-particulares-baile', lang: 'ca', page: 'clasesParticulares' },
   { path: 'ca/sobre-nosotros', lang: 'ca', page: 'about' },
   { path: 'ca/yunaisy-farray', lang: 'ca', page: 'yunaisy' },
@@ -67,6 +73,7 @@ const routes = [
   { path: 'en/clases/baile-barcelona', lang: 'en', page: 'classes' },
   { path: 'en/clases/danza-barcelona', lang: 'en', page: 'danza' },
   { path: 'en/clases/salsa-bachata-barcelona', lang: 'en', page: 'salsaBachata' },
+  { path: 'en/clases/bachata-barcelona', lang: 'en', page: 'bachataSensual' },
   { path: 'en/clases/salsa-cubana-barcelona', lang: 'en', page: 'salsaCubana' },
   { path: 'en/clases/salsa-lady-style-barcelona', lang: 'en', page: 'salsaLadyStyle' },
   { path: 'en/clases/folklore-cubano', lang: 'en', page: 'folkloreCubano' },
@@ -83,6 +90,8 @@ const routes = [
   { path: 'en/clases/sexy-style-barcelona', lang: 'en', page: 'sexyStyle' },
   { path: 'en/clases/modern-jazz-barcelona', lang: 'en', page: 'modernJazz' },
   { path: 'en/clases/ballet-barcelona', lang: 'en', page: 'ballet' },
+  { path: 'en/clases/cuerpo-fit', lang: 'en', page: 'cuerpoFit' },
+  { path: 'en/clases/baile-mananas', lang: 'en', page: 'baileManananas' },
   { path: 'en/clases-particulares-baile', lang: 'en', page: 'clasesParticulares' },
   { path: 'en/sobre-nosotros', lang: 'en', page: 'about' },
   { path: 'en/yunaisy-farray', lang: 'en', page: 'yunaisy' },
@@ -95,6 +104,7 @@ const routes = [
   { path: 'fr/clases/baile-barcelona', lang: 'fr', page: 'classes' },
   { path: 'fr/clases/danza-barcelona', lang: 'fr', page: 'danza' },
   { path: 'fr/clases/salsa-bachata-barcelona', lang: 'fr', page: 'salsaBachata' },
+  { path: 'fr/clases/bachata-barcelona', lang: 'fr', page: 'bachataSensual' },
   { path: 'fr/clases/salsa-cubana-barcelona', lang: 'fr', page: 'salsaCubana' },
   { path: 'fr/clases/salsa-lady-style-barcelona', lang: 'fr', page: 'salsaLadyStyle' },
   { path: 'fr/clases/folklore-cubano', lang: 'fr', page: 'folkloreCubano' },
@@ -111,6 +121,8 @@ const routes = [
   { path: 'fr/clases/sexy-style-barcelona', lang: 'fr', page: 'sexyStyle' },
   { path: 'fr/clases/modern-jazz-barcelona', lang: 'fr', page: 'modernJazz' },
   { path: 'fr/clases/ballet-barcelona', lang: 'fr', page: 'ballet' },
+  { path: 'fr/clases/cuerpo-fit', lang: 'fr', page: 'cuerpoFit' },
+  { path: 'fr/clases/baile-mananas', lang: 'fr', page: 'baileManananas' },
   { path: 'fr/clases-particulares-baile', lang: 'fr', page: 'clasesParticulares' },
   { path: 'fr/sobre-nosotros', lang: 'fr', page: 'about' },
   { path: 'fr/yunaisy-farray', lang: 'fr', page: 'yunaisy' },
@@ -123,26 +135,50 @@ const routes = [
   { path: 'es/blog', lang: 'es', page: 'blog' },
   { path: 'es/blog/lifestyle', lang: 'es', page: 'blogLifestyle' },
   { path: 'es/blog/lifestyle/beneficios-bailar-salsa', lang: 'es', page: 'blogBeneficiosSalsa' },
+  { path: 'es/blog/lifestyle/clases-de-salsa-barcelona', lang: 'es', page: 'blogClasesSalsaBarcelona' },
   { path: 'es/blog/historia', lang: 'es', page: 'blogHistoria' },
   { path: 'es/blog/historia/historia-salsa-barcelona', lang: 'es', page: 'blogHistoriaSalsa' },
+  { path: 'es/blog/tips', lang: 'es', page: 'blogTips' },
+  { path: 'es/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'es', page: 'blogClasesPrincipiantes' },
 
   { path: 'ca/blog', lang: 'ca', page: 'blog' },
   { path: 'ca/blog/lifestyle', lang: 'ca', page: 'blogLifestyle' },
   { path: 'ca/blog/lifestyle/beneficios-bailar-salsa', lang: 'ca', page: 'blogBeneficiosSalsa' },
+  { path: 'ca/blog/lifestyle/clases-de-salsa-barcelona', lang: 'ca', page: 'blogClasesSalsaBarcelona' },
   { path: 'ca/blog/historia', lang: 'ca', page: 'blogHistoria' },
   { path: 'ca/blog/historia/historia-salsa-barcelona', lang: 'ca', page: 'blogHistoriaSalsa' },
+  { path: 'ca/blog/tips', lang: 'ca', page: 'blogTips' },
+  { path: 'ca/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'ca', page: 'blogClasesPrincipiantes' },
 
   { path: 'en/blog', lang: 'en', page: 'blog' },
   { path: 'en/blog/lifestyle', lang: 'en', page: 'blogLifestyle' },
   { path: 'en/blog/lifestyle/beneficios-bailar-salsa', lang: 'en', page: 'blogBeneficiosSalsa' },
+  { path: 'en/blog/lifestyle/clases-de-salsa-barcelona', lang: 'en', page: 'blogClasesSalsaBarcelona' },
   { path: 'en/blog/historia', lang: 'en', page: 'blogHistoria' },
   { path: 'en/blog/historia/historia-salsa-barcelona', lang: 'en', page: 'blogHistoriaSalsa' },
+  { path: 'en/blog/tips', lang: 'en', page: 'blogTips' },
+  { path: 'en/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'en', page: 'blogClasesPrincipiantes' },
 
   { path: 'fr/blog', lang: 'fr', page: 'blog' },
   { path: 'fr/blog/lifestyle', lang: 'fr', page: 'blogLifestyle' },
   { path: 'fr/blog/lifestyle/beneficios-bailar-salsa', lang: 'fr', page: 'blogBeneficiosSalsa' },
+  { path: 'fr/blog/lifestyle/clases-de-salsa-barcelona', lang: 'fr', page: 'blogClasesSalsaBarcelona' },
   { path: 'fr/blog/historia', lang: 'fr', page: 'blogHistoria' },
   { path: 'fr/blog/historia/historia-salsa-barcelona', lang: 'fr', page: 'blogHistoriaSalsa' },
+  { path: 'fr/blog/tips', lang: 'fr', page: 'blogTips' },
+  { path: 'fr/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'fr', page: 'blogClasesPrincipiantes' },
+
+  // Facebook Ads Landing (promo)
+  { path: 'es/promo/clase-gratis', lang: 'es', page: 'promoClaseGratis' },
+  { path: 'ca/promo/clase-gratis', lang: 'ca', page: 'promoClaseGratis' },
+  { path: 'en/promo/clase-gratis', lang: 'en', page: 'promoClaseGratis' },
+  { path: 'fr/promo/clase-gratis', lang: 'fr', page: 'promoClaseGratis' },
+
+  // Sexy Reggaeton Landing (FB Ads)
+  { path: 'es/promo/sexy-reggaeton', lang: 'es', page: 'promoSexyReggaeton' },
+  { path: 'ca/promo/sexy-reggaeton', lang: 'ca', page: 'promoSexyReggaeton' },
+  { path: 'en/promo/sexy-reggaeton', lang: 'en', page: 'promoSexyReggaeton' },
+  { path: 'fr/promo/sexy-reggaeton', lang: 'fr', page: 'promoSexyReggaeton' },
 ];
 
 // Metadata for each page in each language
@@ -163,6 +199,10 @@ const metadata = {
     salsaBachata: {
       title: 'Clases de Salsa y Bachata en Barcelona | Salsa Cubana, Bachata Sensual y más | Farray\'s Center',
       description: 'Aprende a bailar Salsa Cubana, Bachata Sensual y Dominicana, Timba, Son y más en Barcelona. Escuela fundada por maestros cubanos con experiencia en las mejores academias de La Habana. Reserva tu clase de prueba.',
+    },
+    bachataSensual: {
+      title: 'Clases de Bachata Sensual en Barcelona | Aprende con Campeones Mundiales | Farray\'s Center',
+      description: 'Aprende bachata sensual en Barcelona con Mathias Font y Eugenia Trujillo, campeones mundiales de Salsa LA. Clases desde principiante hasta avanzado cerca de Plaza España.',
     },
     salsaCubana: {
       title: 'Clases de Salsa Cubana en Barcelona | Casino, Rueda y Son | Farray\'s Center',
@@ -228,6 +268,14 @@ const metadata = {
       title: 'Clases de Ballet en Barcelona | Técnica Clásica y Elegancia | Farray\'s Center',
       description: 'Clases de ballet clásico en Barcelona para adultos. Aprende técnica, postura y elegancia con maestros formados en la ENA. Academia CID-UNESCO entre Plaza España y Sants.',
     },
+    cuerpoFit: {
+      title: 'Cuerpo-Fit Barcelona | Cardio Dance y Entrenamiento Full Body | Farray\'s Center',
+      description: 'Quema 400-500 calorías bailando con Cuerpo-Fit en Barcelona. Entrenamiento full body con elementos de danza. Clase híbrida de cardio y tonificación para todos los niveles. Lunes 20h cerca de Plaza España.',
+    },
+    baileManananas: {
+      title: 'Clases de Baile por las Mañanas en Barcelona | 13 Estilos de 10h a 13h | Farray\'s Center',
+      description: 'Clases de baile por las mañanas en Barcelona: Contemporáneo, Ballet, Modern Jazz, Sexy Style, Reggaeton y más. Horario de 10h a 13h. Ideal para turnos de tarde. Cerca de Plaza España.',
+    },
     clasesParticulares: {
       title: 'Clases Particulares de Baile en Barcelona | Personalizado y a Tu Ritmo | Farray\'s Center',
       description: 'Clases particulares de baile en Barcelona 100% personalizadas. Profesor exclusivo para ti, horarios flexibles, todos los estilos. Aprende 3x más rápido que en clases grupales. Bonos disponibles.',
@@ -276,6 +324,28 @@ const metadata = {
       title: 'Historia de la Salsa en Barcelona: del Caribe y Nueva York a Farray\'s | Farray\'s Center',
       description: 'Descubre la fascinante historia de la salsa: desde sus orígenes en el Caribe y Nueva York hasta su llegada a Barcelona. Más de 60 años de ritmo que cambiaron el mundo.',
     },
+    blogClasesSalsaBarcelona: {
+      title: 'Hombres y mujeres, ¿hablamos salsa? | Farray\'s Center Blog',
+      description: 'La salsa como lenguaje universal: reflexiones sobre la pista de baile como espacio de conexión entre hombres y mujeres. Por Mar Guerrero.',
+    },
+    blogTips: {
+      title: 'Consejos para Bailar | Farray\'s Center Blog',
+      description: 'Consejos prácticos y guías para principiantes y bailarines de todos los niveles en Barcelona.',
+    },
+    blogClasesPrincipiantes: {
+      title: 'Clases de baile para principiantes en Barcelona | Farray\'s Center',
+      description: 'Guía completa para empezar a bailar desde cero en Barcelona. Clase de bienvenida gratuita (promocional) o desde 10€. Participación puntual desde 20€.',
+    },
+    promoClaseGratis: {
+      title: 'Tu Primera Clase de Baile GRATIS | Farray\'s Center Barcelona',
+      description: 'Reserva tu clase de prueba gratis en la escuela de baile más completa de Barcelona. +15.000 alumnos, +40 estilos. ¡Plazas limitadas!',
+      robots: 'noindex, nofollow',
+    },
+    promoSexyReggaeton: {
+      title: 'Clase de Sexy Reggaeton GRATIS en Barcelona | Farray\'s Center',
+      description: 'Aprende a moverte al ritmo de reggaeton con sensualidad y confianza. Primera clase GRATIS. +15.000 alumnos, profesora experta.',
+      robots: 'noindex, nofollow',
+    },
   },
   ca: {
     home: {
@@ -293,6 +363,10 @@ const metadata = {
     salsaBachata: {
       title: 'Classes de Salsa i Bachata a Barcelona | Salsa Cubana, Bachata Sensual i més | Farray\'s Center',
       description: 'Aprèn a ballar Salsa Cubana, Bachata Sensual i Dominicana, Timba, Son i més a Barcelona. Escola fundada per mestres cubans amb experiència en les millors acadèmies de L\'Havana. Reserva la teva classe de prova.',
+    },
+    bachataSensual: {
+      title: 'Classes de Bachata Sensual a Barcelona | Aprèn amb Campions Mundials | Farray\'s Center',
+      description: 'Aprèn bachata sensual a Barcelona amb Mathias Font i Eugenia Trujillo, campions mundials de Salsa LA. Classes des de principiant fins a avançat prop de Plaça Espanya.',
     },
     salsaCubana: {
       title: 'Classes de Salsa Cubana a Barcelona | Casino, Rueda i Son | Farray\'s Center',
@@ -358,6 +432,14 @@ const metadata = {
       title: 'Classes de Ballet a Barcelona | Tècnica Clàssica i Elegància | Farray\'s Center',
       description: "Classes de ballet clàssic a Barcelona per a adults. Aprèn tècnica, postura i elegància amb mestres formats a l'ENA. Acadèmia CID-UNESCO entre Plaça Espanya i Sants.",
     },
+    cuerpoFit: {
+      title: 'Cuerpo-Fit Barcelona | Cardio Dance i Entrenament Full Body | Farray\'s Center',
+      description: 'Crema 400-500 calories ballant amb Cuerpo-Fit a Barcelona. Entrenament full body amb elements de dansa. Classe híbrida de cardio i tonificació per a tots els nivells. Dilluns 20h prop de Plaça Espanya.',
+    },
+    baileManananas: {
+      title: 'Classes de Ball pel Matí a Barcelona | 13 Estils de 10h a 13h | Farray\'s Center',
+      description: 'Classes de ball pel matí a Barcelona: Contemporani, Ballet, Modern Jazz, Sexy Style, Reggaeton i més. Horari de 10h a 13h. Ideal per a torns de tarda. Prop de Plaça Espanya.',
+    },
     clasesParticulares: {
       title: 'Classes Particulars de Ball a Barcelona | Personalitzat i al Teu Ritme | Farray\'s Center',
       description: 'Classes particulars de ball a Barcelona 100% personalitzades. Professor exclusiu per a tu, horaris flexibles, tots els estils. Aprèn 3x més ràpid que en classes grupals. Bons disponibles.',
@@ -406,6 +488,28 @@ const metadata = {
       title: 'Història de la Salsa a Barcelona: del Carib i Nova York a Farray\'s | Farray\'s Center',
       description: 'Descobreix la fascinant història de la salsa: des dels seus orígens al Carib i Nova York fins a la seva arribada a Barcelona. Més de 60 anys de ritme que van canviar el món.',
     },
+    blogClasesSalsaBarcelona: {
+      title: 'Homes i dones, parlem salsa? | Farray\'s Center Blog',
+      description: 'La salsa com a llenguatge universal: reflexions sobre la pista de ball com a espai de connexió entre homes i dones. Per Mar Guerrero.',
+    },
+    blogTips: {
+      title: 'Consells per Ballar | Farray\'s Center Blog',
+      description: 'Consells pràctics i guies per a principiants i balladors de tots els nivells a Barcelona.',
+    },
+    blogClasesPrincipiantes: {
+      title: 'Classes de ball per a principiants a Barcelona | Farray\'s Center',
+      description: 'Guia completa per començar a ballar des de zero a Barcelona. Classe de benvinguda gratuïta (promocional) o des de 10€. Participació puntual des de 20€.',
+    },
+    promoClaseGratis: {
+      title: 'La Teva Primera Classe de Ball GRATIS | Farray\'s Center Barcelona',
+      description: 'Reserva la teva classe de prova gratuïta a l\'escola de ball més completa de Barcelona. +15.000 alumnes, +40 estils. Places limitades!',
+      robots: 'noindex, nofollow',
+    },
+    promoSexyReggaeton: {
+      title: 'Classe de Sexy Reggaeton GRATIS a Barcelona | Farray\'s Center',
+      description: 'Aprèn a moure\'t al ritme del reggaeton amb sensualitat i confiança. Primera classe GRATIS. +15.000 alumnes, professora experta.',
+      robots: 'noindex, nofollow',
+    },
   },
   en: {
     home: {
@@ -423,6 +527,10 @@ const metadata = {
     salsaBachata: {
       title: 'Salsa and Bachata Classes in Barcelona | Cuban Salsa, Sensual Bachata & more | Farray\'s Center',
       description: 'Learn to dance Cuban Salsa, Sensual and Dominican Bachata, Timba, Son and more in Barcelona. School founded by Cuban masters with experience in Havana\'s best academies. Book your trial class.',
+    },
+    bachataSensual: {
+      title: 'Sensual Bachata Classes in Barcelona | Learn with World Champions | Farray\'s Center',
+      description: 'Learn sensual bachata in Barcelona with Mathias Font and Eugenia Trujillo, world champions in Salsa LA. Classes from beginner to advanced near Plaza España.',
     },
     salsaCubana: {
       title: 'Cuban Salsa Classes in Barcelona | Casino, Rueda & Son | Farray\'s Center',
@@ -488,6 +596,14 @@ const metadata = {
       title: 'Ballet Classes in Barcelona | Classical Technique and Elegance | Farray\'s Center',
       description: 'Classical ballet classes in Barcelona for adults. Learn technique, posture and elegance with ENA-trained masters. CID-UNESCO Academy between Plaza España and Sants.',
     },
+    cuerpoFit: {
+      title: 'Cuerpo-Fit Barcelona | Cardio Dance & Full Body Training | Farray\'s Center',
+      description: 'Burn 400-500 calories dancing with Cuerpo-Fit in Barcelona. Full body workout with dance elements. Hybrid cardio and toning class for all levels. Mondays 8pm near Plaza España.',
+    },
+    baileManananas: {
+      title: 'Morning Dance Classes in Barcelona | 13 Styles from 10am to 1pm | Farray\'s Center',
+      description: 'Morning dance classes in Barcelona: Contemporary, Ballet, Modern Jazz, Sexy Style, Reggaeton and more. Schedule from 10am to 1pm. Ideal for afternoon shifts. Near Plaza España.',
+    },
     clasesParticulares: {
       title: 'Private Dance Classes in Barcelona | Personalized and At Your Pace | Farray\'s Center',
       description: 'Private dance classes in Barcelona with 100% dedicated teacher. Salsa, Bachata, Dancehall, Contemporary Dance. Personalized teaching, flexible schedules and guaranteed results. Reserve your class now!',
@@ -536,6 +652,28 @@ const metadata = {
       title: 'History of Salsa in Barcelona: From the Caribbean and New York to Farray\'s | Farray\'s Center',
       description: 'Discover the fascinating history of salsa: from its origins in the Caribbean and New York to its arrival in Barcelona. Over 60 years of rhythm that changed the world.',
     },
+    blogClasesSalsaBarcelona: {
+      title: 'Men and Women, Shall We Speak Salsa? | Farray\'s Center Blog',
+      description: 'Salsa as a universal language: reflections on the dance floor as a space of connection between men and women. By Mar Guerrero.',
+    },
+    blogTips: {
+      title: 'Dance Tips | Farray\'s Center Blog',
+      description: 'Practical tips and guides for beginners and dancers of all levels in Barcelona.',
+    },
+    blogClasesPrincipiantes: {
+      title: 'Beginner Dance Classes in Barcelona | Farray\'s Center',
+      description: 'Complete guide to start dancing from scratch in Barcelona. Free welcome class (promotional) or from €10. One-time participation from €17.',
+    },
+    promoClaseGratis: {
+      title: 'Your First Dance Class FREE | Farray\'s Center Barcelona',
+      description: 'Book your free trial class at Barcelona\'s most complete dance school. +15,000 students, +40 styles. Limited spots!',
+      robots: 'noindex, nofollow',
+    },
+    promoSexyReggaeton: {
+      title: 'FREE Sexy Reggaeton Class in Barcelona | Farray\'s Center',
+      description: 'Learn to move to reggaeton with sensuality and confidence. First class FREE. +15,000 students, expert instructor.',
+      robots: 'noindex, nofollow',
+    },
   },
   fr: {
     home: {
@@ -553,6 +691,10 @@ const metadata = {
     salsaBachata: {
       title: 'Cours de Salsa et Bachata à Barcelone | Salsa Cubaine, Bachata Sensuelle et plus | Farray\'s Center',
       description: 'Apprenez à danser la Salsa Cubaine, la Bachata Sensuelle et Dominicaine, la Timba, le Son et plus à Barcelone. École fondée par des maîtres cubains avec expérience dans les meilleures académies de La Havane. Réservez votre cours d\'essai.',
+    },
+    bachataSensual: {
+      title: 'Cours de Bachata Sensuelle à Barcelone | Apprenez avec des Champions du Monde | Farray\'s Center',
+      description: 'Apprenez la bachata sensuelle à Barcelone avec Mathias Font et Eugenia Trujillo, champions du monde de Salsa LA. Cours du débutant à l\'avancé près de Plaza España.',
     },
     salsaCubana: {
       title: 'Cours de Salsa Cubaine à Barcelone | Casino, Rueda et Son | Farray\'s Center',
@@ -618,6 +760,14 @@ const metadata = {
       title: 'Cours de Ballet à Barcelone | Technique Classique et Élégance | Farray\'s Center',
       description: "Cours de ballet classique à Barcelone pour adultes. Apprenez la technique, la posture et l'élégance avec des maîtres formés à l'ENA. Académie CID-UNESCO entre Plaza España et Sants.",
     },
+    cuerpoFit: {
+      title: 'Cuerpo-Fit Barcelone | Cardio Dance et Entraînement Full Body | Farray\'s Center',
+      description: 'Brûlez 400-500 calories en dansant avec Cuerpo-Fit à Barcelone. Entraînement full body avec éléments de danse. Cours hybride cardio et tonification pour tous niveaux. Lundis 20h près de Plaza España.',
+    },
+    baileManananas: {
+      title: 'Cours de Danse le Matin à Barcelone | 13 Styles de 10h à 13h | Farray\'s Center',
+      description: 'Cours de danse le matin à Barcelone: Contemporain, Ballet, Modern Jazz, Sexy Style, Reggaeton et plus. Horaire de 10h à 13h. Idéal pour les équipes de l\'après-midi. Près de Plaza España.',
+    },
     clasesParticulares: {
       title: 'Cours Particuliers de Danse à Barcelone | Personnalisé et à Votre Rythme | Farray\'s Center',
       description: 'Cours particuliers de danse à Barcelone avec professeur 100% dédié. Salsa, Bachata, Dancehall, Danse Contemporaine. Enseignement personnalisé, horaires flexibles et résultats garantis. Réservez votre cours maintenant!',
@@ -665,6 +815,28 @@ const metadata = {
     blogHistoriaSalsa: {
       title: 'Histoire de la Salsa à Barcelone : des Caraïbes et New York à Farray\'s | Farray\'s Center',
       description: 'Découvrez la fascinante histoire de la salsa : de ses origines caribéennes et new-yorkaises jusqu\'à son arrivée à Barcelone. Plus de 60 ans de rythme qui ont changé le monde.',
+    },
+    blogClasesSalsaBarcelona: {
+      title: 'Hommes et femmes, parlons salsa ? | Farray\'s Center Blog',
+      description: 'La salsa comme langage universel : réflexions sur la piste de danse comme espace de connexion entre hommes et femmes. Par Mar Guerrero.',
+    },
+    blogTips: {
+      title: 'Conseils de Danse | Farray\'s Center Blog',
+      description: 'Conseils pratiques et guides pour débutants et danseurs de tous niveaux à Barcelone.',
+    },
+    blogClasesPrincipiantes: {
+      title: 'Cours de danse pour débutants à Barcelone | Farray\'s Center',
+      description: 'Guide complet pour commencer à danser à Barcelone. Cours de bienvenue gratuit (promotionnel) ou dès 10€. Participation ponctuelle dès 20€.',
+    },
+    promoClaseGratis: {
+      title: 'Votre Premier Cours de Danse GRATUIT | Farray\'s Center Barcelone',
+      description: 'Réservez votre cours d\'essai gratuit dans l\'école de danse la plus complète de Barcelone. +15 000 élèves, +40 styles. Places limitées !',
+      robots: 'noindex, nofollow',
+    },
+    promoSexyReggaeton: {
+      title: 'Cours de Sexy Reggaeton GRATUIT à Barcelone | Farray\'s Center',
+      description: 'Apprenez à bouger au rythme du reggaeton avec sensualité et confiance. Premier cours GRATUIT. +15 000 élèves, professeure experte.',
+      robots: 'noindex, nofollow',
     },
   },
 };
@@ -802,6 +974,10 @@ const initialContent = {
     blogBeneficiosSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">10 Beneficios de Bailar Salsa que Cambiarán Tu Vida</h1><p>Descubre los 10 beneficios científicamente probados de bailar salsa: quema 400 cal/hora, mejora la salud cardiovascular, reduce el estrés y aumenta la autoestima.</p></article></main>`,
     blogHistoria: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Historia del Baile</h1><p>Descubre la fascinante historia del baile: orígenes, evolución y cómo llegó a Barcelona.</p></main>`,
     blogHistoriaSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Historia de la Salsa en Barcelona: del Caribe y Nueva York a Farray's</h1><p>Descubre la fascinante historia de la salsa: desde sus orígenes en el Caribe y Nueva York hasta su llegada a Barcelona. Más de 60 años de ritmo.</p></article></main>`,
+    blogClasesSalsaBarcelona: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Hombres y mujeres, ¿hablamos salsa?</h1><p>La salsa como lenguaje universal: reflexiones sobre la pista de baile como espacio de conexión entre hombres y mujeres. Por Mar Guerrero.</p></article></main>`,
+    blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Consejos para Bailar</h1><p>Guías prácticas y consejos para principiantes y bailarines de todos los niveles en Barcelona.</p></main>`,
+    blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Clases de baile para principiantes en Barcelona: la guía definitiva</h1><p>Guía completa para empezar a bailar desde cero en Barcelona. Clase de bienvenida gratuita (promocional) o desde 10€. Participación puntual desde 20€.</p></article></main>`,
+    baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Baile por las Mañanas en Barcelona</h1><p>13 clases semanales de 10h a 13h: Contemporáneo, Ballet, Modern Jazz, Sexy Style, Reggaeton y más. La actividad matinal que necesitabas para empezar el día con energía.</p></main>`,
   },
   // Simplified content for other languages
   ca: {
@@ -821,6 +997,10 @@ const initialContent = {
     blogBeneficiosSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">10 Beneficis de Ballar Salsa que Canviaran la Teva Vida</h1><p>Descobreix els 10 beneficis científicament demostrats de ballar salsa: crema 400 cal/hora, millora la salut cardiovascular, redueix l'estrès i augmenta l'autoestima.</p></article></main>`,
     blogHistoria: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Història del Ball</h1><p>Descobreix la fascinant història del ball: orígens, evolució i com va arribar a Barcelona.</p></main>`,
     blogHistoriaSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Història de la Salsa a Barcelona: del Carib i Nova York a Farray's</h1><p>Descobreix la fascinant història de la salsa: des dels seus orígens al Carib i Nova York fins a la seva arribada a Barcelona. Més de 60 anys de ritme.</p></article></main>`,
+    blogClasesSalsaBarcelona: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Homes i dones, parlem salsa?</h1><p>La salsa com a llenguatge universal: reflexions sobre la pista de ball com a espai de connexió entre homes i dones. Per Mar Guerrero.</p></article></main>`,
+    blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Consells per Ballar</h1><p>Guies pràctiques i consells per a principiants i balladors de tots els nivells a Barcelona.</p></main>`,
+    blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Classes de ball per a principiants a Barcelona: la guia definitiva</h1><p>Guia completa per començar a ballar des de zero a Barcelona. Classe de benvinguda gratuïta (promocional) o des de 10€. Participació puntual des de 20€.</p></article></main>`,
+    baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Ball pel Matí a Barcelona</h1><p>13 classes setmanals de 10h a 13h: Contemporani, Ballet, Modern Jazz, Sexy Style, Reggaeton i més. L'activitat matinal que necessitaves per començar el dia amb energia.</p></main>`,
   },
   en: {
     home: `<main id="main-content"><h1 class="holographic-text text-5xl font-extrabold">FarRays Center</h1><p class="text-xl">Urban dance school in Barcelona. Learn Dancehall and more.</p></main>`,
@@ -839,6 +1019,10 @@ const initialContent = {
     blogBeneficiosSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">10 Benefits of Dancing Salsa That Will Change Your Life</h1><p>Discover the 10 scientifically proven benefits of dancing salsa: burn 400 cal/hour, improve cardiovascular health, reduce stress and boost self-esteem.</p></article></main>`,
     blogHistoria: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance History</h1><p>Discover the fascinating history of dance: origins, evolution and how it arrived in Barcelona.</p></main>`,
     blogHistoriaSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">History of Salsa in Barcelona: From the Caribbean and New York to Farray's</h1><p>Discover the fascinating history of salsa: from its origins in the Caribbean and New York to its arrival in Barcelona. Over 60 years of rhythm.</p></article></main>`,
+    blogClasesSalsaBarcelona: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Men and Women, Shall We Speak Salsa?</h1><p>Salsa as a universal language: reflections on the dance floor as a space of connection between men and women. By Mar Guerrero.</p></article></main>`,
+    blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Tips</h1><p>Practical guides and tips for beginners and dancers of all levels in Barcelona.</p></main>`,
+    blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Beginner Dance Classes in Barcelona: The Complete Guide</h1><p>Complete guide to start dancing from scratch in Barcelona. Free welcome class (promotional) or from €10. One-time participation from €20.</p></article></main>`,
+    baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Morning Dance Classes in Barcelona</h1><p>13 weekly classes from 10am to 1pm: Contemporary, Ballet, Modern Jazz, Sexy Style, Reggaeton and more. The morning activity you needed to start the day with energy.</p></main>`,
   },
   fr: {
     home: `<main id="main-content"><h1 class="holographic-text text-5xl font-extrabold">FarRays Center</h1><p class="text-xl">École de danse urbaine à Barcelone. Apprenez le Dancehall et plus.</p></main>`,
@@ -857,6 +1041,10 @@ const initialContent = {
     blogBeneficiosSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">10 Bienfaits de Danser la Salsa qui Changeront Votre Vie</h1><p>Découvrez les 10 bienfaits scientifiquement prouvés de danser la salsa : brûlez 400 cal/heure, améliorez la santé cardiovasculaire, réduisez le stress et boostez l'estime de soi.</p></article></main>`,
     blogHistoria: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Histoire de la Danse</h1><p>Découvrez la fascinante histoire de la danse : origines, évolution et comment elle est arrivée à Barcelone.</p></main>`,
     blogHistoriaSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Histoire de la Salsa à Barcelone : des Caraïbes et New York à Farray's</h1><p>Découvrez la fascinante histoire de la salsa : de ses origines caribéennes et new-yorkaises jusqu'à son arrivée à Barcelone. Plus de 60 ans de rythme.</p></article></main>`,
+    blogClasesSalsaBarcelona: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Hommes et femmes, parlons salsa ?</h1><p>La salsa comme langage universel : réflexions sur la piste de danse comme espace de connexion entre hommes et femmes. Par Mar Guerrero.</p></article></main>`,
+    blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Conseils de Danse</h1><p>Guides pratiques et conseils pour débutants et danseurs de tous niveaux à Barcelone.</p></main>`,
+    blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Cours de danse pour débutants à Barcelone : le guide complet</h1><p>Guide complet pour commencer à danser à Barcelone. Cours de bienvenue gratuit (promotionnel) ou dès 10€. Participation ponctuelle dès 20€.</p></article></main>`,
+    baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Danse le Matin à Barcelone</h1><p>13 cours hebdomadaires de 10h à 13h : Contemporain, Ballet, Modern Jazz, Sexy Style, Reggaeton et plus. L'activité matinale dont vous aviez besoin pour commencer la journée avec énergie.</p></main>`,
   },
 };
 
@@ -941,6 +1129,8 @@ routes.forEach(route => {
     pagePath = 'clases/danza-barcelona';
   } else if (page === 'salsaBachata') {
     pagePath = 'clases/salsa-bachata-barcelona';
+  } else if (page === 'bachataSensual') {
+    pagePath = 'clases/bachata-barcelona';
   } else if (page === 'salsaCubana') {
     pagePath = 'clases/salsa-cubana-barcelona';
   } else if (page === 'salsaLadyStyle') {
@@ -971,6 +1161,14 @@ routes.forEach(route => {
     pagePath = 'blog/historia';
   } else if (page === 'blogHistoriaSalsa') {
     pagePath = 'blog/historia/historia-salsa-barcelona';
+  } else if (page === 'blogClasesSalsaBarcelona') {
+    pagePath = 'blog/lifestyle/clases-de-salsa-barcelona';
+  } else if (page === 'blogTips') {
+    pagePath = 'blog/tips';
+  } else if (page === 'blogClasesPrincipiantes') {
+    pagePath = 'blog/tips/clases-baile-principiantes-barcelona-farrays';
+  } else if (page === 'baileManananas') {
+    pagePath = 'clases/baile-mananas';
   }
 
   const hreflangLinks = [

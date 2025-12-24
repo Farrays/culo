@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import { render } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
 import { BrowserRouter } from 'react-router-dom';
@@ -14,10 +14,22 @@ expect.extend(toHaveNoViolations);
 /**
  * Accessibility Tests with jest-axe
  * Tests critical components for WCAG 2.1 AA compliance
+ *
+ * Note: axe-core cannot run multiple analyses in parallel, so we use
+ * a single describe block to ensure sequential execution
  */
 
-describe('Accessibility - Header', () => {
-  it('should not have any automatically detectable accessibility issues', async () => {
+describe('Accessibility Tests', () => {
+  // Reset axe between tests to avoid conflicts
+  beforeAll(() => {
+    // Give axe time to initialize
+  });
+
+  afterAll(() => {
+    // Cleanup
+  });
+
+  it('Header - should not have any automatically detectable accessibility issues', async () => {
     const { container } = render(
       <HelmetProvider>
         <BrowserRouter>
@@ -31,10 +43,8 @@ describe('Accessibility - Header', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
-});
 
-describe('Accessibility - Footer', () => {
-  it('should not have any automatically detectable accessibility issues', async () => {
+  it('Footer - should not have any automatically detectable accessibility issues', async () => {
     const { container } = render(
       <HelmetProvider>
         <BrowserRouter>
@@ -48,10 +58,8 @@ describe('Accessibility - Footer', () => {
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
-});
 
-describe('Accessibility - Breadcrumb', () => {
-  it('should not have any automatically detectable accessibility issues', async () => {
+  it('Breadcrumb - should not have any automatically detectable accessibility issues', async () => {
     const breadcrumbItems = [
       { name: 'Home', url: '/es' },
       { name: 'Clases', url: '/es/clases' },
@@ -68,7 +76,7 @@ describe('Accessibility - Breadcrumb', () => {
     expect(results).toHaveNoViolations();
   });
 
-  it('should have proper ARIA attributes', () => {
+  it('Breadcrumb - should have proper ARIA attributes', () => {
     const breadcrumbItems = [
       { name: 'Home', url: '/es' },
       { name: 'Clases', url: '/es/clases', isActive: true },

@@ -1,11 +1,10 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../../hooks/useI18n';
 import { SUPPORTED_LOCALES } from '../../types';
 import Breadcrumb from '../shared/Breadcrumb';
 import {
   StarRating,
-  CheckIcon,
   CheckCircleIcon,
   ClockIcon,
   FlameIcon,
@@ -50,6 +49,7 @@ import {
 } from '../../constants/shared';
 import type { Testimonial } from '../../types';
 import type { FAQ } from './ClassPageTemplate';
+import LeadCaptureModal from '../shared/LeadCaptureModal';
 
 // ============================================================================
 // TYPES - Comprehensive configuration for all dance class pages
@@ -218,7 +218,7 @@ export interface FullDanceClassConfig {
   comparisonTable?: ComparisonTableSection;
   whyUsComparison?: WhyUsComparisonConfig;
   nearbySection?: NearbyAreasConfig;
-  testimonialsSection?: { enabled: boolean };
+  testimonialsSection?: { enabled: boolean; position?: 'default' | 'after-why-choose' };
   faqSection?: { enabled: boolean };
 
   // === LATIN DANCE COMPARISON TABLE (for Latin styles like Salsa, Bachata, etc.) ===
@@ -346,6 +346,9 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
     emerald: 'from-emerald-900/30 via-black to-black',
     violet: 'from-violet-900/30 via-black to-black',
   };
+
+  // Lead capture modal state
+  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
   // ===== MEMOIZED DATA =====
   const schedules = useMemo(
@@ -746,40 +749,21 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
                   <CalendarDaysIcon className="w-5 h-5 text-primary-accent" />
-                  <span className="text-sm">8 años en Barcelona</span>
+                  <span className="text-sm">8 {t('years_in_barcelona')}</span>
                 </div>
               </div>
 
-              {/* CTA Buttons */}
-              <div
-                className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-8 sm:mt-10"
-                role="group"
-                aria-label={t(`${config.styleKey}CTAGroup`) || 'Opciones de inscripción'}
-              >
-                <div className="w-full sm:w-auto">
-                  <a
-                    href="#schedule"
-                    aria-describedby="cta1-subtext"
-                    className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
-                  >
-                    {t(`${config.styleKey}CTA1`)}
-                  </a>
-                  <p id="cta1-subtext" className="text-xs text-neutral/70 mt-2 text-center">
-                    {t(`${config.styleKey}CTA1Subtext`)}
-                  </p>
-                </div>
-                <div className="w-full sm:w-auto">
-                  <a
-                    href="#schedule"
-                    aria-describedby="cta2-subtext"
-                    className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] border-2 border-neutral text-neutral font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
-                  >
-                    {t(`${config.styleKey}CTA2`)}
-                  </a>
-                  <p id="cta2-subtext" className="text-xs text-neutral/70 mt-2 text-center">
-                    {t(`${config.styleKey}CTA2Subtext`)}
-                  </p>
-                </div>
+              {/* CTA Button - Puertas Abiertas */}
+              <div className="flex flex-col items-center justify-center mt-8 sm:mt-10">
+                <button
+                  onClick={() => setIsLeadModalOpen(true)}
+                  className="w-full sm:w-auto sm:min-w-[320px] min-h-[48px] bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
+                >
+                  {t('puertasAbiertasCTA')}
+                </button>
+                <p className="text-sm text-neutral/80 mt-3 text-center max-w-md">
+                  {t('puertasAbiertasSubtext')}
+                </p>
               </div>
 
               {/* Hero Stats */}
@@ -861,7 +845,31 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                     {t(`${config.styleKey}WhatIsTitle`)}
                   </h2>
                   <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
-                    <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-neutral/90 leading-relaxed">
+                    {/* Imagen - Izquierda en desktop */}
+                    {config.whatIsSection.image && (
+                      <div className="order-1 rounded-2xl overflow-hidden shadow-lg aspect-[4/3] md:aspect-auto">
+                        <picture>
+                          {config.whatIsSection.image.srcSet && (
+                            <source
+                              type="image/webp"
+                              srcSet={config.whatIsSection.image.srcSet}
+                              sizes="(max-width: 768px) 100vw, 50vw"
+                            />
+                          )}
+                          <img
+                            src={config.whatIsSection.image.src}
+                            alt={config.whatIsSection.image.alt}
+                            width="960"
+                            height="720"
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-full object-cover"
+                          />
+                        </picture>
+                      </div>
+                    )}
+                    {/* Texto - Derecha en desktop */}
+                    <div className="order-2 space-y-4 sm:space-y-6 text-base sm:text-lg text-neutral/90 leading-relaxed">
                       <p className="text-lg sm:text-xl font-semibold holographic-text">
                         {t(`${config.styleKey}WhatIsP1`)}
                       </p>
@@ -884,28 +892,6 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                         </>
                       )}
                     </div>
-                    {config.whatIsSection.image && (
-                      <div className="rounded-2xl overflow-hidden shadow-lg aspect-[4/3] md:aspect-auto">
-                        <picture>
-                          {config.whatIsSection.image.srcSet && (
-                            <source
-                              type="image/webp"
-                              srcSet={config.whatIsSection.image.srcSet}
-                              sizes="(max-width: 768px) 100vw, 50vw"
-                            />
-                          )}
-                          <img
-                            src={config.whatIsSection.image.src}
-                            alt={config.whatIsSection.image.alt}
-                            width="960"
-                            height="720"
-                            loading="lazy"
-                            decoding="async"
-                            className="w-full h-full object-cover"
-                          />
-                        </picture>
-                      </div>
-                    )}
                   </div>
                 </div>
               </AnimateOnScroll>
@@ -972,85 +958,99 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
           />
         )}
 
-        {/* ===== 5. IDENTIFICATION SECTION ===== */}
-        {config.identificationSection?.enabled && (
-          <section aria-labelledby="identify-title" className="py-12 md:py-20 bg-primary-dark/10">
-            <div className="container mx-auto px-4 sm:px-6">
-              <AnimateOnScroll>
-                <div className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto">
-                  <h2
-                    id="identify-title"
-                    className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-6 sm:mb-8 holographic-text"
-                  >
-                    {t(`${config.styleKey}IdentifyTitle`)}
-                  </h2>
-                </div>
-              </AnimateOnScroll>
-
-              <ul
-                className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-8 sm:mb-10 list-none"
-                role="list"
+        {/* ===== 5. IDENTIFICATION SECTION (V2 Design) ===== */}
+        {config.identificationSection?.enabled &&
+          (() => {
+            return (
+              <section
+                aria-labelledby="identify-title"
+                className="py-16 md:py-24 bg-gradient-to-b from-black to-primary-dark/20"
               >
-                {Array.from(
-                  { length: config.identificationSection.itemCount || 6 },
-                  (_, i) => i + 1
-                ).map((num, index) => (
-                  <AnimateOnScroll
-                    key={num}
-                    as="li"
-                    delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
-                    className="[perspective:1000px]"
-                  >
-                    <div className="group relative h-full min-h-[100px] flex items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-primary-dark/20 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary-accent/20 flex items-center justify-center group-hover:bg-primary-accent/40 transition-colors duration-300">
-                        <CheckIcon className="text-primary-accent" size="sm" />
-                      </div>
-                      <p className="text-neutral/90 leading-relaxed">
-                        {t(`${config.styleKey}Identify${num}`)}
+                <div className="container mx-auto px-4 sm:px-6">
+                  <AnimateOnScroll>
+                    <div className="text-center mb-12 sm:mb-16 max-w-4xl mx-auto">
+                      <h2
+                        id="identify-title"
+                        className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                      >
+                        {t(`${config.styleKey}IdentifyTitle`)}
+                      </h2>
+                      <p className="text-lg text-neutral/70">
+                        Si alguno de estos te suena, estás en el lugar correcto
                       </p>
                     </div>
                   </AnimateOnScroll>
-                ))}
-              </ul>
 
-              {config.identificationSection.hasTransition !== false && (
-                <AnimateOnScroll>
-                  <div className="text-center mb-4 sm:mb-6">
-                    <p className="text-sm text-neutral/75 italic max-w-2xl mx-auto">
-                      {t(`${config.styleKey}IdentifyTransition`)}
-                    </p>
+                  {/* Grid de identificación con checks del tema */}
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+                    {Array.from(
+                      { length: config.identificationSection.itemCount || 6 },
+                      (_, i) => i + 1
+                    ).map((num, index) => {
+                      const itemCount = config.identificationSection?.itemCount || 6;
+                      const isLastItem = index === itemCount - 1;
+                      const shouldCenter = isLastItem && itemCount % 3 === 1;
+                      return (
+                        <AnimateOnScroll
+                          key={num}
+                          delay={index * ANIMATION_DELAYS.STAGGER_SMALL * 1.5}
+                          className={`[perspective:1000px] ${shouldCenter ? 'lg:col-start-2' : ''}`}
+                        >
+                          <div className="group relative h-full bg-gradient-to-br from-primary-dark/40 to-black/60 backdrop-blur-sm rounded-2xl border border-primary-accent/20 hover:border-primary-accent p-6 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)] hover:shadow-accent-glow cursor-pointer">
+                            {/* Check del tema */}
+                            <div className="w-14 h-14 rounded-xl bg-primary-accent/20 flex items-center justify-center mb-4 group-hover:bg-primary-accent/40 group-hover:scale-110 transition-all duration-300">
+                              <CheckCircleIcon className="w-7 h-7 text-primary-accent" />
+                            </div>
+                            {/* Texto del item */}
+                            <p className="text-lg font-medium text-neutral leading-relaxed">
+                              {t(`${config.styleKey}Identify${num}`)}
+                            </p>
+                          </div>
+                        </AnimateOnScroll>
+                      );
+                    })}
                   </div>
-                </AnimateOnScroll>
-              )}
 
-              {config.identificationSection.hasNeedEnroll !== false && (
-                <>
+                  {/* Sección de transición y CTA */}
                   <AnimateOnScroll>
-                    <div className="text-center mb-6 sm:mb-8 max-w-4xl mx-auto">
-                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-4 sm:mb-6 holographic-text">
-                        {t(`${config.styleKey}NeedEnrollTitle`)}
-                      </h3>
+                    <div className="max-w-3xl mx-auto text-center space-y-6 bg-gradient-to-r from-primary-accent/10 via-primary-dark/30 to-primary-accent/10 rounded-2xl p-8 border border-primary-accent/20">
+                      {config.identificationSection.hasTransition !== false && (
+                        <p className="text-neutral/80 italic">
+                          {t(`${config.styleKey}IdentifyTransition`)}
+                        </p>
+                      )}
+                      {config.identificationSection.hasNeedEnroll !== false && (
+                        <>
+                          <h3 className="text-2xl sm:text-3xl font-black text-neutral holographic-text">
+                            {t(`${config.styleKey}NeedEnrollTitle`)}
+                          </h3>
+                          <p className="text-lg text-neutral/90">
+                            {t(`${config.styleKey}IdentifySolution`)}
+                          </p>
+                          {/* CTA Button - Puertas Abiertas */}
+                          <div className="flex flex-col items-center mt-4">
+                            <button
+                              onClick={() => setIsLeadModalOpen(true)}
+                              className="w-full sm:w-auto sm:min-w-[320px] min-h-[48px] bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
+                            >
+                              {t('puertasAbiertasCTA')}
+                            </button>
+                            <p className="text-sm text-neutral/80 mt-3 text-center max-w-md">
+                              {t('puertasAbiertasSubtext')}
+                            </p>
+                          </div>
+                          {/* Closing text after CTA */}
+                          <p className="text-lg text-neutral/90 mt-6 italic">
+                            {t(`${config.styleKey}IdentifyClosing`)}
+                          </p>
+                        </>
+                      )}
                     </div>
                   </AnimateOnScroll>
-
-                  <AnimateOnScroll>
-                    <div className="max-w-3xl mx-auto text-center space-y-3 sm:space-y-4">
-                      <p className="text-lg sm:text-xl font-semibold holographic-text">
-                        {t(`${config.styleKey}IdentifyAgitate1`)}
-                      </p>
-                      <p className="text-base sm:text-lg text-neutral/90">
-                        {t(`${config.styleKey}IdentifySolution`)}
-                      </p>
-                      <p className="text-lg sm:text-xl text-neutral/90 italic">
-                        {t(`${config.styleKey}IdentifyClosing`)}
-                      </p>
-                    </div>
-                  </AnimateOnScroll>
-                </>
-              )}
-            </div>
-          </section>
-        )}
+                </div>
+              </section>
+            );
+          })()}
 
         {/* ===== 6. TRANSFORMATION SECTION ===== */}
         {config.transformationSection?.enabled && (
@@ -1228,29 +1228,77 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
           </section>
         )}
 
-        {/* ===== 8. WHY TODAY SECTION ===== */}
+        {/* ===== 7b. TESTIMONIALS (early position - after Why Choose) ===== */}
+        {config.testimonialsSection?.enabled !== false &&
+          config.testimonialsSection?.position === 'after-why-choose' && (
+            <TestimonialsSection
+              testimonials={config.testimonials}
+              titleKey="testimonialsNotRequested"
+            />
+          )}
+
+        {/* ===== 8. WHY TODAY SECTION (Single Card Design) ===== */}
         {config.whyTodaySection?.enabled && (
-          <section className="py-12 md:py-20 bg-black">
+          <section className="py-16 md:py-24 bg-gradient-to-b from-primary-dark/20 to-black">
             <div className="container mx-auto px-4 sm:px-6">
+              {/* Card único con todo el contenido */}
               <AnimateOnScroll>
-                <div className="max-w-3xl mx-auto text-center space-y-4 sm:space-y-5">
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 sm:mb-6 holographic-text">
+                <div className="max-w-4xl mx-auto bg-gradient-to-br from-primary-dark/40 to-black/60 backdrop-blur-sm rounded-2xl border border-primary-accent/20 p-8 sm:p-10 transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow">
+                  {/* Icono decorativo */}
+                  <div className="w-16 h-16 rounded-xl bg-primary-accent/20 flex items-center justify-center mb-6 mx-auto">
+                    <svg
+                      className="w-8 h-8 text-primary-accent"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+
+                  {/* Título */}
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 text-center holographic-text">
                     {t(`${config.styleKey}WhyTodayFullTitle`)}
                   </h2>
-                  {Array.from(
-                    { length: config.whyTodaySection.paragraphCount || 3 },
-                    (_, i) => i + 1
-                  ).map(num => (
-                    <p key={num} className="text-lg sm:text-xl text-neutral/90">
-                      {t(`${config.styleKey}WhyToday${num}`)}
+
+                  {/* Contenido de los párrafos */}
+                  <div className="space-y-6 text-center">
+                    {Array.from(
+                      { length: config.whyTodaySection.paragraphCount || 3 },
+                      (_, i) => i + 1
+                    ).map(num => (
+                      <p key={num} className="text-lg sm:text-xl text-neutral/90 leading-relaxed">
+                        {t(`${config.styleKey}WhyToday${num}`)}
+                      </p>
+                    ))}
+                  </div>
+
+                  {/* Cierre y CTA */}
+                  <div className="mt-8 pt-8 border-t border-primary-accent/20 text-center space-y-4">
+                    <h3 className="text-2xl sm:text-3xl font-black text-neutral holographic-text">
+                      {t(`${config.styleKey}WhyTodayClosing1`)}
+                    </h3>
+                    <p className="text-lg text-neutral/80 italic">
+                      {t(`${config.styleKey}WhyTodayClosing2`)}
                     </p>
-                  ))}
-                  <p className="text-xl sm:text-2xl font-bold holographic-text mt-4 sm:mt-6">
-                    {t(`${config.styleKey}WhyTodayClosing1`)}
-                  </p>
-                  <p className="text-base sm:text-lg text-neutral/90 italic">
-                    {t(`${config.styleKey}WhyTodayClosing2`)}
-                  </p>
+                    {/* CTA Button - Puertas Abiertas */}
+                    <div className="flex flex-col items-center mt-4">
+                      <button
+                        onClick={() => setIsLeadModalOpen(true)}
+                        className="w-full sm:w-auto sm:min-w-[320px] min-h-[48px] bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
+                      >
+                        {t('puertasAbiertasCTA')}
+                      </button>
+                      <p className="text-sm text-neutral/80 mt-3 text-center max-w-md">
+                        {t('puertasAbiertasSubtext')}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </AnimateOnScroll>
             </div>
@@ -1311,13 +1359,14 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
           </section>
         )}
 
-        {/* ===== 10. TESTIMONIALS SECTION ===== */}
-        {config.testimonialsSection?.enabled !== false && (
-          <TestimonialsSection
-            testimonials={config.testimonials}
-            titleKey="testimonialsNotRequested"
-          />
-        )}
+        {/* ===== 10. TESTIMONIALS SECTION (default position) ===== */}
+        {config.testimonialsSection?.enabled !== false &&
+          config.testimonialsSection?.position !== 'after-why-choose' && (
+            <TestimonialsSection
+              testimonials={config.testimonials}
+              titleKey="testimonialsNotRequested"
+            />
+          )}
 
         {/* ===== 11. CULTURAL HISTORY SECTION (SEO content) ===== */}
         {config.culturalHistory?.enabled && (
@@ -1435,39 +1484,26 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                   {t(`${config.styleKey}FinalCTAFunny`)}
                 </p>
 
-                <div
-                  className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
-                  role="group"
-                  aria-label="Inscripción"
-                >
-                  <div className="w-full sm:w-auto">
-                    <a
-                      href="#schedule"
-                      className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none"
-                    >
-                      {t(`${config.styleKey}CTA1`)}
-                    </a>
-                    <p className="text-xs text-neutral/70 mt-2 text-center">
-                      {t(`${config.styleKey}CTA1Subtext`)}
-                    </p>
-                  </div>
-                  <div className="w-full sm:w-auto">
-                    <a
-                      href="#schedule"
-                      className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] border-2 border-neutral text-neutral font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none"
-                    >
-                      {t(`${config.styleKey}CTA2`)}
-                    </a>
-                    <p className="text-xs text-neutral/70 mt-2 text-center">
-                      {t(`${config.styleKey}CTA2Subtext`)}
-                    </p>
-                  </div>
+                {/* CTA Button - Puertas Abiertas */}
+                <div className="flex flex-col items-center justify-center">
+                  <button
+                    onClick={() => setIsLeadModalOpen(true)}
+                    className="w-full sm:w-auto sm:min-w-[320px] min-h-[48px] bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
+                  >
+                    {t('puertasAbiertasCTA')}
+                  </button>
+                  <p className="text-sm text-neutral/80 mt-3 text-center max-w-md">
+                    {t('puertasAbiertasSubtext')}
+                  </p>
                 </div>
               </div>
             </AnimateOnScroll>
           </div>
         </section>
       </main>
+
+      {/* Lead Capture Modal */}
+      <LeadCaptureModal isOpen={isLeadModalOpen} onClose={() => setIsLeadModalOpen(false)} />
     </>
   );
 };

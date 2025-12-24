@@ -30,6 +30,10 @@ const browserGlobals = {
   fetch: 'readonly',
   React: 'readonly',
   Element: 'readonly',
+  KeyboardEvent: 'readonly',
+  CustomEvent: 'readonly',
+  setTimeout: 'readonly',
+  clearTimeout: 'readonly',
 };
 
 // Node globals (for scripts and tests)

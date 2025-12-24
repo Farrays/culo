@@ -111,7 +111,7 @@ export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
         title: "Dancehall Classes at Farray's Center Barcelona",
       },
     ],
-    placeholderCount: 2, // 2 "coming soon" placeholders
+    placeholderCount: 0, // No placeholders, only real video
   },
 
   logosSection: {
@@ -127,7 +127,7 @@ export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
 
   culturalHistory: {
     enabled: true,
-    titleKey: 'dhV3CulturalHistoryTitle',
+    titleKey: 'dhV3CulturalTitle',
     shortDescKey: 'dhV3CulturalShort',
     fullHistoryKey: 'dhV3CulturalFull',
   },
@@ -136,7 +136,7 @@ export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
   courseConfig: {
     teaches: 'Dancehall jamaicano, técnica de danza urbana, musicalidad',
     prerequisites: 'Ninguno',
-    lessons: '5 clases semanales',
+    lessons: '6 clases semanales',
     duration: 'PT1H',
   },
 

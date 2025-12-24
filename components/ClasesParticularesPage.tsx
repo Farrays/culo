@@ -290,6 +290,31 @@ const ClasesParticularesPage: React.FC = () => {
                 {t('particularesPage_intro')}
               </p>
             </AnimateOnScroll>
+
+            {/* CTA Button */}
+            <AnimateOnScroll delay={200}>
+              <div className="mt-10 flex justify-center">
+                <Link
+                  to={`/${locale}/contacto`}
+                  className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
+                >
+                  {t('consultarDisponibilidad')}
+                  <svg
+                    className="w-5 h-5 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </AnimateOnScroll>
           </div>
         </section>
 
@@ -639,12 +664,12 @@ const ClasesParticularesPage: React.FC = () => {
             </AnimateOnScroll>
 
             <AnimateOnScroll delay={200}>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="flex justify-center">
                 <Link
                   to={`/${locale}/contacto`}
                   className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-xl py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-accent-glow animate-glow"
                 >
-                  {t('particularesPage_finalCta_button')}
+                  {t('consultarDisponibilidad')}
                   <svg
                     className="w-6 h-6 ml-2"
                     fill="none"
@@ -658,12 +683,6 @@ const ClasesParticularesPage: React.FC = () => {
                       d="M13 7l5 5m0 0l-5 5m5-5H6"
                     />
                   </svg>
-                </Link>
-                <Link
-                  to={`/${locale}/contacto`}
-                  className="inline-flex items-center justify-center bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-xl py-5 px-12 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white"
-                >
-                  {t('particularesPage_finalCta_button_secondary')}
                 </Link>
               </div>
             </AnimateOnScroll>

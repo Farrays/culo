@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
@@ -16,6 +16,7 @@ import type { ValuePillar } from '../types';
 import { SUPPORTED_LOCALES } from '../types';
 import TestimonialsSection from './TestimonialsSection';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
+import LeadCaptureModal from './shared/LeadCaptureModal';
 
 // Type extension for ValuePillar with icon names instead of components
 type ValuePillarWithIcon = Omit<ValuePillar, 'Icon'> & { iconName: IconName };
@@ -62,6 +63,7 @@ const valuePillars: ValuePillarWithIcon[] = [
 const DanzasUrbanasBarcelonaPage: React.FC = () => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
+  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
   // Get the "urban" category data from HUB_CATEGORIES
   const urbanCategory = HUB_CATEGORIES.find(cat => cat.key === 'urban');
@@ -209,14 +211,14 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
               </p>
             </AnimateOnScroll>
 
-            {/* CTA Buttons */}
+            {/* CTA Button - Puertas Abiertas */}
             <AnimateOnScroll delay={200}>
-              <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  to={`/${locale}#enroll`}
+              <div className="mt-12 flex flex-col items-center justify-center">
+                <button
+                  onClick={() => setIsLeadModalOpen(true)}
                   className="w-full sm:w-auto inline-flex items-center justify-center bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
                 >
-                  {t('enrollNow')}
+                  {t('puertasAbiertasCTA')}
                   <svg
                     className="w-5 h-5 ml-2"
                     fill="none"
@@ -230,13 +232,10 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
                       d="M13 7l5 5m0 0l-5 5m5-5H6"
                     />
                   </svg>
-                </Link>
-                <Link
-                  to={`/${locale}#enroll`}
-                  className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white"
-                >
-                  {t('heroCTA1')}
-                </Link>
+                </button>
+                <p className="text-sm text-neutral/80 mt-3 text-center max-w-md">
+                  {t('puertasAbiertasSubtext')}
+                </p>
               </div>
             </AnimateOnScroll>
           </div>
@@ -569,12 +568,12 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
             </AnimateOnScroll>
 
             <AnimateOnScroll delay={200}>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  to={`/${locale}#enroll`}
+              <div className="flex flex-col items-center justify-center">
+                <button
+                  onClick={() => setIsLeadModalOpen(true)}
                   className="w-full sm:w-auto inline-flex items-center justify-center bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
                 >
-                  {t('enrollNow')}
+                  {t('puertasAbiertasCTA')}
                   <svg
                     className="w-5 h-5 ml-2"
                     fill="none"
@@ -588,18 +587,18 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
                       d="M13 7l5 5m0 0l-5 5m5-5H6"
                     />
                   </svg>
-                </Link>
-                <Link
-                  to={`/${locale}#enroll`}
-                  className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white"
-                >
-                  {t('heroCTA1')}
-                </Link>
+                </button>
+                <p className="text-sm text-neutral/80 mt-3 text-center max-w-md">
+                  {t('puertasAbiertasSubtext')}
+                </p>
               </div>
             </AnimateOnScroll>
           </div>
         </section>
       </div>
+
+      {/* Lead Capture Modal */}
+      <LeadCaptureModal isOpen={isLeadModalOpen} onClose={() => setIsLeadModalOpen(false)} />
     </>
   );
 };

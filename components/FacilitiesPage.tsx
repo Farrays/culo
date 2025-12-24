@@ -444,29 +444,26 @@ const FacilitiesPage: React.FC = () => {
                 </p>
                 <p className="text-2xl font-bold holographic-text mb-10">{t('facilitiesCTAP2')}</p>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                  <div className="w-full sm:w-auto">
-                    <a
-                      href="#contact"
-                      className="block w-full sm:w-auto bg-primary-accent text-white font-bold text-lg py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center"
+                <div className="flex justify-center">
+                  <a
+                    href="#tour"
+                    className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-lg py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
+                  >
+                    {t('solicitarTour')}
+                    <svg
+                      className="w-5 h-5 ml-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      {t('facilitiesCTA1')}
-                    </a>
-                    <p className="text-xs text-neutral/70 mt-2 text-center">
-                      {t('facilitiesCTA1Subtext')}
-                    </p>
-                  </div>
-                  <div className="w-full sm:w-auto">
-                    <a
-                      href="#tour"
-                      className="block w-full sm:w-auto border-2 border-neutral text-neutral font-bold text-lg py-5 px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center"
-                    >
-                      {t('facilitiesCTA2')}
-                    </a>
-                    <p className="text-xs text-neutral/70 mt-2 text-center">
-                      {t('facilitiesCTA2Subtext')}
-                    </p>
-                  </div>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </AnimateOnScroll>

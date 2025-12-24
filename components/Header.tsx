@@ -2,10 +2,10 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
 import { debounce } from '../utils/debounce';
-import { MenuIcon, XMarkIcon as CloseIcon } from '../lib/icons';
-import DesktopNavigation from './header/DesktopNavigation';
+import { MenuIcon, XMarkIcon as CloseIcon, ChevronDownIcon } from '../lib/icons';
 import MobileNavigation from './header/MobileNavigation';
 import LanguageSelector from './header/LanguageSelector';
+import LeadCaptureModal from './shared/LeadCaptureModal';
 import type { Locale } from '../types';
 import { SUPPORTED_LOCALES } from '../types';
 
@@ -52,6 +52,7 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [openDropdowns, setOpenDropdowns] = useState<Set<DropdownKey>>(new Set());
+  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
   const toggleDropdown = useCallback((key: DropdownKey) => {
     setOpenDropdowns(prev => {
@@ -162,12 +163,6 @@ const Header: React.FC = () => {
     fr: 'Français',
   };
 
-  const handleEnrollClick = () => {
-    if (location.pathname !== `/${locale}`) {
-      setIsMenuOpen(false);
-    }
-  };
-
   const menuStructure = {
     home: { path: `/${locale}`, textKey: 'navHome' },
     classes: {
@@ -222,6 +217,7 @@ const Header: React.FC = () => {
           submenu: [
             { path: `/${locale}/clases/salsa-cubana-barcelona`, textKey: 'navSalsaCubana' },
             { path: `/${locale}/clases/salsa-lady-style-barcelona`, textKey: 'navSalsaLadyStyle' },
+            { path: `/${locale}/clases/bachata-barcelona`, textKey: 'navBachataSensual' },
             {
               path: `/${locale}/clases/bachata-lady-style-barcelona`,
               textKey: 'navBachataLadyStyle',
@@ -234,10 +230,16 @@ const Header: React.FC = () => {
           path: `/${locale}/clases/entrenamiento-bailarines-barcelona`,
           textKey: 'navPrepFisica',
           submenu: [
-            { path: `/${locale}/clases/stretching-barcelona`, textKey: 'navStretching' },
+            {
+              path: `/${locale}/clases/acondicionamiento-fisico-bailarines`,
+              textKey: 'navBodyConditioning',
+            },
+            { path: `/${locale}/clases/cuerpo-fit`, textKey: 'navCuerpoFit' },
             { path: `/${locale}/clases/ejercicios-gluteos-barcelona`, textKey: 'navBumBum' },
+            { path: `/${locale}/clases/stretching-barcelona`, textKey: 'navStretching' },
           ],
         },
+        { path: `/${locale}/clases/baile-mananas`, textKey: 'navBaileMananas' },
       ],
     },
     services: {
@@ -257,6 +259,7 @@ const Header: React.FC = () => {
         { path: `/${locale}/yunaisy-farray`, textKey: 'navYunaisy' },
         { path: `/${locale}/profesores-baile-barcelona`, textKey: 'navProfesores' },
         { path: `/${locale}/instalaciones-escuela-baile-barcelona`, textKey: 'navInstalaciones' },
+        { path: `/${locale}/preguntas-frecuentes`, textKey: 'navFAQ' },
       ],
     },
     blog: { path: `/${locale}/blog`, textKey: 'navBlog' },
@@ -264,6 +267,14 @@ const Header: React.FC = () => {
 
   return (
     <>
+      {/* Skip to Content Link - Accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-primary-accent focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:outline-none"
+      >
+        {t('skipToMainContent')}
+      </a>
+
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
@@ -271,65 +282,289 @@ const Header: React.FC = () => {
             : 'bg-transparent'
         }`}
       >
-        <div className="container mx-auto px-4 sm:px-6 py-6 md:py-8 flex items-center relative">
-          {/* Desktop Navigation */}
-          <DesktopNavigation
-            menuStructure={menuStructure}
-            locale={locale}
-            isDropdownOpen={isDropdownOpen}
-            toggleDropdown={toggleDropdown}
-            closeAllDropdowns={closeAllDropdowns}
-          />
-
-          {/* Centered Logo */}
-          <Link
-            to={`/${locale}`}
-            aria-label="FIDC Home"
-            className="absolute left-1/2 -translate-x-1/2 z-10 pointer-events-auto"
-          >
-            <picture>
-              <source
-                type="image/webp"
-                srcSet="/images/logo/img/logo-fidc_256.webp 1x, /images/logo/img/logo-fidc_512.webp 2x"
-              />
-              <img
-                src="/images/logo/img/logo-fidc_256.png"
-                srcSet="/images/logo/img/logo-fidc_256.png 1x, /images/logo/img/logo-fidc_512.png 2x"
-                alt="Farray's International Dance Center"
-                width="256"
-                height="256"
-                className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 transition-transform duration-300 hover:scale-105"
-              />
-            </picture>
-          </Link>
-
-          {/* Right Actions */}
-          <div className="hidden md:flex items-center space-x-6 flex-1 justify-end">
-            {/* Horarios Link */}
-            <Link
-              to={`/${locale}/horarios-clases-baile-barcelona`}
-              className="transition-colors duration-300 text-sm font-medium text-neutral/75 hover:text-white"
-            >
-              {t('navSchedule')}
+        <div className="container mx-auto px-4 sm:px-6 py-3 md:py-4">
+          {/* Top Row: Logo + Nav + CTA */}
+          <div className="flex items-center justify-between">
+            {/* Logo - Left aligned, bigger */}
+            <Link to={`/${locale}`} aria-label="FIDC Home" className="flex-shrink-0">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet="/images/logo/img/logo-fidc_256.webp 1x, /images/logo/img/logo-fidc_512.webp 2x"
+                />
+                <img
+                  src="/images/logo/img/logo-fidc_256.png"
+                  srcSet="/images/logo/img/logo-fidc_256.png 1x, /images/logo/img/logo-fidc_512.png 2x"
+                  alt="Farray's International Dance Center"
+                  width="256"
+                  height="256"
+                  className="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 transition-transform duration-300 hover:scale-105"
+                />
+              </picture>
             </Link>
 
-            {/* Pricing Link */}
-            <Link
-              to={`/${locale}/precios-clases-baile-barcelona`}
-              className="transition-colors duration-300 text-sm font-medium text-neutral/75 hover:text-white"
+            {/* Desktop Navigation - Simplified order */}
+            <nav
+              className="hidden lg:flex items-center space-x-6 text-sm font-medium"
+              aria-label="Main navigation"
             >
-              {t('navPricing')}
-            </Link>
+              {/* Inicio */}
+              <Link
+                to={`/${locale}`}
+                className={`transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent ${
+                  location.pathname === `/${locale}` || location.pathname === `/${locale}/`
+                    ? 'text-white'
+                    : 'text-neutral/75 hover:text-white'
+                }`}
+              >
+                {t('navHome')}
+              </Link>
 
-            {/* Contact Link */}
-            <Link
-              to={`/${locale}/contacto`}
-              className="transition-colors duration-300 text-sm font-medium text-neutral/75 hover:text-white"
-            >
-              {t('headerContact')}
-            </Link>
+              {/* Quiénes Somos - Dropdown */}
+              <div className="relative aboutus-dropdown">
+                <button
+                  onClick={() => toggleDropdown('aboutUs')}
+                  className={`flex items-center transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent ${
+                    location.pathname.includes('/sobre-nosotros') ||
+                    location.pathname.includes('/yunaisy-farray') ||
+                    location.pathname.includes('/profesores-baile')
+                      ? 'text-white'
+                      : 'text-neutral/75 hover:text-white'
+                  }`}
+                  aria-expanded={isDropdownOpen('aboutUs')}
+                >
+                  {t('navAboutUs')}
+                  <ChevronDownIcon
+                    className={`w-4 h-4 ml-1 transition-transform duration-300 ${isDropdownOpen('aboutUs') ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                {isDropdownOpen('aboutUs') && (
+                  <div className="absolute top-full left-0 mt-2 bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-2xl min-w-[200px] py-2 z-50">
+                    <Link
+                      to={`/${locale}/sobre-nosotros`}
+                      onClick={closeAllDropdowns}
+                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                    >
+                      {t('headerAbout')}
+                    </Link>
+                    <Link
+                      to={`/${locale}/yunaisy-farray`}
+                      onClick={closeAllDropdowns}
+                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                    >
+                      {t('navYunaisy')}
+                    </Link>
+                    <Link
+                      to={`/${locale}/profesores-baile-barcelona`}
+                      onClick={closeAllDropdowns}
+                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                    >
+                      {t('navProfesores')}
+                    </Link>
+                    <Link
+                      to={`/${locale}/instalaciones-escuela-baile-barcelona`}
+                      onClick={closeAllDropdowns}
+                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                    >
+                      {t('navFacilities')}
+                    </Link>
+                    <Link
+                      to={`/${locale}/preguntas-frecuentes`}
+                      onClick={closeAllDropdowns}
+                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                    >
+                      {t('navFAQ')}
+                    </Link>
+                  </div>
+                )}
+              </div>
 
-            {/* Language Selector */}
+              {/* Clases de Baile - Dropdown */}
+              <div className="relative classes-dropdown">
+                <button
+                  onClick={() => toggleDropdown('classes')}
+                  className={`flex items-center transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent ${
+                    location.pathname.includes('/clases')
+                      ? 'text-white'
+                      : 'text-neutral/75 hover:text-white'
+                  }`}
+                  aria-expanded={isDropdownOpen('classes')}
+                >
+                  {t('navClasses')}
+                  <ChevronDownIcon
+                    className={`w-4 h-4 ml-1 transition-transform duration-300 ${isDropdownOpen('classes') ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                {isDropdownOpen('classes') && (
+                  <div className="absolute top-full left-0 mt-2 bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-2xl min-w-[220px] py-2 z-50">
+                    <Link
+                      to={`/${locale}/clases/baile-barcelona`}
+                      onClick={closeAllDropdowns}
+                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white font-semibold"
+                    >
+                      {t('navAllClasses')}
+                    </Link>
+                    <div className="border-t border-white/10 my-1"></div>
+                    <Link
+                      to={`/${locale}/clases/danza-barcelona`}
+                      onClick={closeAllDropdowns}
+                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                    >
+                      {t('navDanza')}
+                    </Link>
+                    <Link
+                      to={`/${locale}/clases/danzas-urbanas-barcelona`}
+                      onClick={closeAllDropdowns}
+                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                    >
+                      {t('navDanzasUrbanas')}
+                    </Link>
+                    <Link
+                      to={`/${locale}/clases/salsa-bachata-barcelona`}
+                      onClick={closeAllDropdowns}
+                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                    >
+                      {t('navSalsaBachata')}
+                    </Link>
+                    <Link
+                      to={`/${locale}/clases/entrenamiento-bailarines-barcelona`}
+                      onClick={closeAllDropdowns}
+                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                    >
+                      {t('navPrepFisica')}
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              {/* Horarios */}
+              <Link
+                to={`/${locale}/horarios-clases-baile-barcelona`}
+                className={`transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent ${
+                  location.pathname.includes('/horarios')
+                    ? 'text-white'
+                    : 'text-neutral/75 hover:text-white'
+                }`}
+              >
+                {t('navSchedule')}
+              </Link>
+
+              {/* Cuotas (Precios) */}
+              <Link
+                to={`/${locale}/precios-clases-baile-barcelona`}
+                className={`transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent ${
+                  location.pathname.includes('/precios')
+                    ? 'text-white'
+                    : 'text-neutral/75 hover:text-white'
+                }`}
+              >
+                {t('navPricing')}
+              </Link>
+
+              {/* Servicios - Dropdown */}
+              <div className="relative services-dropdown">
+                <button
+                  onClick={() => toggleDropdown('services')}
+                  className={`flex items-center transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent ${
+                    location.pathname.includes('/alquiler-salas') ||
+                    location.pathname.includes('/estudio-grabacion') ||
+                    location.pathname.includes('/regala-baile') ||
+                    location.pathname.includes('/clases-particulares')
+                      ? 'text-white'
+                      : 'text-neutral/75 hover:text-white'
+                  }`}
+                  aria-expanded={isDropdownOpen('services')}
+                >
+                  {t('navServices')}
+                  <ChevronDownIcon
+                    className={`w-4 h-4 ml-1 transition-transform duration-300 ${isDropdownOpen('services') ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                {isDropdownOpen('services') && (
+                  <div className="absolute top-full left-0 mt-2 bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-2xl min-w-[200px] py-2 z-50">
+                    <Link
+                      to={`/${locale}/clases-particulares-baile`}
+                      onClick={closeAllDropdowns}
+                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                    >
+                      {t('navClasesParticulares')}
+                    </Link>
+                    <Link
+                      to={`/${locale}/alquiler-salas-baile-barcelona`}
+                      onClick={closeAllDropdowns}
+                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                    >
+                      {t('headerRoomRental')}
+                    </Link>
+                    <Link
+                      to={`/${locale}/estudio-grabacion-barcelona`}
+                      onClick={closeAllDropdowns}
+                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                    >
+                      {t('headerRecordingStudio')}
+                    </Link>
+                    <Link
+                      to={`/${locale}/regala-baile`}
+                      onClick={closeAllDropdowns}
+                      className="block px-4 py-2 text-sm text-neutral/90 hover:bg-white/10 hover:text-white"
+                    >
+                      {t('headerGiftDance')}
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              {/* Blog */}
+              <Link
+                to={`/${locale}/blog`}
+                className={`transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent ${
+                  location.pathname.includes('/blog')
+                    ? 'text-white'
+                    : 'text-neutral/75 hover:text-white'
+                }`}
+              >
+                {t('navBlog')}
+              </Link>
+
+              {/* Contacto */}
+              <Link
+                to={`/${locale}/contacto`}
+                className={`transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent ${
+                  location.pathname.includes('/contacto')
+                    ? 'text-white'
+                    : 'text-neutral/75 hover:text-white'
+                }`}
+              >
+                {t('headerContact')}
+              </Link>
+            </nav>
+
+            {/* CTA Button */}
+            <div className="hidden lg:block">
+              <button
+                onClick={() => setIsLeadModalOpen(true)}
+                className="bg-primary-accent text-white font-bold text-base py-2.5 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              >
+                {t('enrollNow')}
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className="lg:hidden ml-auto">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="z-50 relative"
+                aria-controls="mobile-menu"
+                aria-expanded={isMenuOpen}
+                aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              >
+                {isMenuOpen ? <CloseIcon className="w-8 h-8" /> : <MenuIcon className="w-8 h-8" />}
+              </button>
+            </div>
+          </div>
+
+          {/* Language Selector - Centered below nav (desktop only) */}
+          <div className="hidden lg:flex justify-center mt-2">
             <LanguageSelector
               locale={locale}
               isOpen={isDropdownOpen('lang')}
@@ -337,30 +572,6 @@ const Header: React.FC = () => {
               handleLanguageChange={handleLanguageChange}
               languageNames={languageNames}
             />
-          </div>
-
-          {/* Enroll Button - Separated to be on far right */}
-          <div className="hidden md:block ml-4">
-            <Link
-              to={`/${locale}#enroll`}
-              onClick={handleEnrollClick}
-              className="bg-primary-accent text-white font-bold text-lg py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow whitespace-nowrap"
-            >
-              {t('enrollNow')}
-            </Link>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden ml-auto">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="z-50 relative"
-              aria-controls="mobile-menu"
-              aria-expanded={isMenuOpen}
-              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-            >
-              {isMenuOpen ? <CloseIcon className="w-8 h-8" /> : <MenuIcon className="w-8 h-8" />}
-            </button>
           </div>
         </div>
       </header>
@@ -372,9 +583,12 @@ const Header: React.FC = () => {
         menuStructure={menuStructure}
         locale={locale}
         handleLanguageChange={handleLanguageChange}
-        handleEnrollClick={handleEnrollClick}
+        onOpenLeadModal={() => setIsLeadModalOpen(true)}
         languageNames={languageNames}
       />
+
+      {/* Lead Capture Modal */}
+      <LeadCaptureModal isOpen={isLeadModalOpen} onClose={() => setIsLeadModalOpen(false)} />
     </>
   );
 };

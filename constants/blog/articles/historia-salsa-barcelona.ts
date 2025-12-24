@@ -349,11 +349,7 @@ export const HISTORIA_SALSA_CONFIG: BlogArticleConfig = {
   ],
 
   // === RELATED CLASSES (internal linking for SEO) ===
-  relatedClasses: [
-    'salsa-cubana-barcelona',
-    'salsa-en-linea-barcelona',
-    'bachata-sensual-barcelona',
-  ],
+  relatedClasses: ['salsa-cubana-barcelona', 'bachata-barcelona', 'salsa-bachata-barcelona'],
 
   // === UX TOGGLES ===
   tableOfContents: {

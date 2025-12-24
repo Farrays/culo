@@ -56,6 +56,8 @@ const PATH_TO_PAGE: ReadonlyArray<readonly [string, string]> = [
   ['/clases/heels-barcelona', 'heels'],
   ['/clases/twerk-barcelona', 'twerk'],
   ['/clases/femmology', 'femmology'],
+  ['/clases/acondicionamiento-fisico-bailarines', 'cuerpofit'],
+  ['/clases/baile-mananas', 'baileManananas'],
   // Hub pages (after specific styles - shorter paths)
   ['/clases/danzas-urbanas-barcelona', 'danzasUrbanas'],
   ['/clases/danza-barcelona', 'danza'],
@@ -128,6 +130,8 @@ const SEO: React.FC = () => {
     afroContemporaneo: 'clases/afro-contemporaneo-barcelona',
     afroJazz: 'clases/afro-jazz',
     prepFisica: 'clases/entrenamiento-bailarines-barcelona',
+    cuerpofit: 'clases/acondicionamiento-fisico-bailarines',
+    baileManananas: 'clases/baile-mananas',
     clasesParticulares: 'clases-particulares-baile',
     alquilerSalas: 'alquiler-salas-baile-barcelona',
     estudioGrabacion: 'estudio-grabacion-barcelona',
@@ -262,6 +266,16 @@ const SEO: React.FC = () => {
       titleKey: 'prepFisica_title',
       descKey: 'prepFisica_description',
       image: `${baseUrl}/images/og-classes.jpg`,
+    },
+    cuerpofit: {
+      titleKey: 'cuerpofitPageTitle',
+      descKey: 'cuerpofitMetaDescription',
+      image: `${baseUrl}/images/og-classes.jpg`,
+    },
+    baileManananas: {
+      titleKey: 'bailemanananasPageTitle',
+      descKey: 'bailemanananasMetaDescription',
+      image: `${baseUrl}/images/og-baile-mananas.jpg`,
     },
     clasesParticulares: {
       titleKey: 'particularesPage_title',

@@ -96,7 +96,7 @@ export const HIP_HOP_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
         title: "Hip Hop Reggaeton Classes at Farray's Center Barcelona",
       },
     ],
-    placeholderCount: 2,
+    placeholderCount: 1,
   },
 
   logosSection: {

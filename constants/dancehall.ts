@@ -49,7 +49,7 @@ export const DANCEHALL_TESTIMONIALS: Testimonial[] = [
 export const DANCEHALL_COURSE_CONFIG = {
   teaches: 'Dancehall jamaicano, técnica de danza urbana, musicalidad',
   prerequisites: 'Ninguno',
-  lessons: '5 clases semanales',
+  lessons: '6 clases semanales',
   duration: 'PT1H',
 };
 
@@ -66,21 +66,29 @@ export const DANCEHALL_SCHEDULE_KEYS = [
   {
     id: '2',
     dayKey: 'wednesday',
+    className: 'Dancehall Female Principiantes',
+    time: '12:00 - 13:00',
+    teacher: 'Isabel López',
+    levelKey: 'beginnerLevel',
+  },
+  {
+    id: '3',
+    dayKey: 'wednesday',
     className: 'Dancehall Twerk Intermedio',
     time: '21:00 - 22:00',
     teacher: 'Isabel López',
     levelKey: 'intermediateLevel',
   },
   {
-    id: '3',
+    id: '4',
     dayKey: 'thursday',
-    className: 'Dancehall Female Avanzado',
+    className: 'Dancehall Female Principiantes',
     time: '21:00 - 22:00',
     teacher: 'Isabel López',
-    levelKey: 'advancedLevel',
+    levelKey: 'beginnerLevel',
   },
   {
-    id: '4',
+    id: '5',
     dayKey: 'thursday',
     className: 'Dancehall Female Básico',
     time: '22:00 - 23:00',
@@ -88,7 +96,7 @@ export const DANCEHALL_SCHEDULE_KEYS = [
     levelKey: 'basicLevel',
   },
   {
-    id: '5',
+    id: '6',
     dayKey: 'friday',
     className: 'Dancehall Twerk Principiantes',
     time: '18:00 - 19:00',

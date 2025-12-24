@@ -36,7 +36,7 @@ export const DEFAULT_HERO_STATS = {
 // Social proof stats (Google Reviews)
 export const SOCIAL_PROOF = {
   rating: '4.9',
-  reviewCount: '505+',
+  reviewCount: '508+',
   ratingValue: 5,
 } as const;
 

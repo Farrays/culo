@@ -3,6 +3,28 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { HelmetProvider } from 'react-helmet-async';
 import YouTubeEmbed from '../YouTubeEmbed';
 
+// Mock useCookieConsent to allow video playback
+vi.mock('../../hooks/useCookieConsent', () => ({
+  useCookieConsent: () => ({
+    preferences: {
+      essential: true,
+      analytics: true,
+      marketing: true,
+      functional: true, // This allows YouTube embeds
+    },
+    setShowBanner: vi.fn(),
+    isLoading: false,
+  }),
+}));
+
+// Mock useI18n
+vi.mock('../../hooks/useI18n', () => ({
+  useI18n: () => ({
+    t: (key: string) => key,
+    locale: 'es',
+  }),
+}));
+
 const renderWithHelmet = (ui: React.ReactElement) => {
   return render(<HelmetProvider>{ui}</HelmetProvider>);
 };

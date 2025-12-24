@@ -209,11 +209,11 @@ const ContactPage: React.FC = () => {
 
     // Simulate form submission (replace with actual API call)
     // In production, send sanitizedData to backend API endpoint (e.g., POST /api/contact)
-    // eslint-disable-next-line no-undef
+
     setTimeout(() => {
       setFormStatus('success');
       setFormData({ name: '', email: '', phone: '', subject: 'general', message: '' });
-      // eslint-disable-next-line no-undef
+
       setTimeout(() => setFormStatus('idle'), 5000);
     }, 1500);
   };

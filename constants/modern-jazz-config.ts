@@ -96,7 +96,7 @@ export const MODERN_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
         title: "Modern Jazz Classes at Farray's Center Barcelona",
       },
     ],
-    placeholderCount: 2,
+    placeholderCount: 1,
   },
 
   logosSection: {

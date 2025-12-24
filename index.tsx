@@ -3,34 +3,27 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { initSentry } from './utils/sentry';
+import { initializeAnalytics, trackEvent } from './utils/analytics';
 import { onCLS, onINP, onFCP, onLCP, onTTFB, Metric } from 'web-vitals';
 
 // Initialize error tracking (only in production with DSN configured)
 initSentry();
 
+// Initialize analytics based on existing consent (if any)
+// This runs on page load to restore analytics if user previously consented
+initializeAnalytics();
+
 // Core Web Vitals monitoring
 function sendToAnalytics(metric: Metric) {
-  // Send metrics to Google Analytics (if configured)
-  if (window.gtag && import.meta.env['VITE_GA_MEASUREMENT_ID']) {
-    window.gtag('event', metric.name, {
-      value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
-      event_category: 'Web Vitals',
-      event_label: metric.id,
-      non_interaction: true,
-    });
-  }
+  // Send metrics to Google Analytics (trackEvent checks consent internally)
+  trackEvent(metric.name, {
+    value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+    event_category: 'Web Vitals',
+    event_label: metric.id,
+    non_interaction: true,
+  });
 
-  // Log to console in development (disabled to pass ESLint)
-  // if (import.meta.env.DEV) {
-  //   console.info(`[Web Vitals] ${metric.name}:`, {
-  //     value: metric.value,
-  //     rating: metric.rating,
-  //     delta: metric.delta,
-  //     id: metric.id,
-  //   });
-  // }
-
-  // Send to Sentry (if configured)
+  // Send to Sentry (if configured) - Sentry is considered essential for error tracking
   if (window.Sentry && import.meta.env.PROD) {
     window.Sentry.captureMessage(`Web Vital: ${metric.name}`, {
       level: 'info',

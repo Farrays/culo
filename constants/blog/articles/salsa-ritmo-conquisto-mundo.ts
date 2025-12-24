@@ -335,11 +335,7 @@ export const SALSA_RITMO_CONFIG: BlogArticleConfig = {
   ],
 
   // === RELATED CLASSES (internal linking for SEO) ===
-  relatedClasses: [
-    'salsa-cubana-barcelona',
-    'salsa-en-linea-barcelona',
-    'rueda-de-casino-barcelona',
-  ],
+  relatedClasses: ['salsa-cubana-barcelona', 'bachata-barcelona', 'salsa-bachata-barcelona'],
 
   // === UX TOGGLES ===
   tableOfContents: {

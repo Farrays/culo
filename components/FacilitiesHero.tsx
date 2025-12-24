@@ -33,19 +33,22 @@ const FacilitiesHero: React.FC<FacilitiesHeroProps> = ({ t, locale: _locale }) =
             {t('facilitiesHeroLocation')}
           </p>
 
-          {/* CTA Button */}
+          {/* CTA Button - Solicitar un Tour */}
           <div className="flex justify-center mt-10">
-            <div className="w-full sm:w-auto">
-              <a
-                href="#tour"
-                className="block w-full sm:w-auto bg-primary-accent text-white font-bold text-lg py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center"
-              >
-                {t('facilitiesCTA2')}
-              </a>
-              <p className="text-xs text-neutral/70 mt-2 text-center">
-                {t('facilitiesCTA2Subtext')}
-              </p>
-            </div>
+            <a
+              href="#tour"
+              className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-lg py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
+            >
+              {t('solicitarTour')}
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            </a>
           </div>
         </AnimateOnScroll>
       </div>

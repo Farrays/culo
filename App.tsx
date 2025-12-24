@@ -69,7 +69,18 @@ const FolkloreCubanoPage = lazy(() => import('./components/FolkloreCubanoPage'))
 const TimbaPage = lazy(() => import('./components/TimbaPage'));
 const StretchingPage = lazy(() => import('./components/StretchingPage'));
 const BumBumPage = lazy(() => import('./components/BumBumPage'));
+const CuerpoFitPage = lazy(() => import('./components/CuerpoFitPage'));
+const BaileMananasPage = lazy(() => import('./components/BaileMananasPage'));
+const FullBodyCardioPage = lazy(() => import('./components/FullBodyCardioPage'));
+const TestClassPage = lazy(() => import('./components/TestClassPage'));
+const AfroContemporaneoV2Page = lazy(() => import('./components/AfroContemporaneoV2Page'));
 const CalendarPage = lazy(() => import('./components/CalendarPage'));
+const HomePageV2 = lazy(() => import('./components/HomePageV2'));
+
+// ===== DANCEHALL LANDING =====
+const DancehallLanding = lazy(() => import('./components/landing/DancehallLanding'));
+const GenericDanceLanding = lazy(() => import('./components/landing/GenericDanceLanding'));
+import { TWERK_LANDING_CONFIG } from './constants/twerk-landing-config';
 const PreciosPage = lazy(() => import('./components/PreciosPage'));
 const HorariosPreciosPage = lazy(() => import('./components/HorariosPreciosPage'));
 const HorariosPageV2 = lazy(() => import('./components/HorariosPageV2'));
@@ -82,6 +93,15 @@ const BlogArticlePage = lazy(() => import('./components/pages/BlogArticlePage'))
 const ProfesoresBaileBarcelonaPage = lazy(
   () => import('./components/pages/ProfesoresBaileBarcelonaPage')
 );
+
+// ===== LEGAL PAGES =====
+const TermsConditionsPage = lazy(() => import('./components/TermsConditionsPage'));
+const LegalNoticePage = lazy(() => import('./components/LegalNoticePage'));
+const PrivacyPolicyPage = lazy(() => import('./components/PrivacyPolicyPage'));
+const CookiePolicyPage = lazy(() => import('./components/CookiePolicyPage'));
+
+// ===== COOKIE CONSENT =====
+import CookieBanner from './components/shared/CookieBanner';
 
 // Valid locales - use centralized constant from types.ts
 const VALID_LOCALES = SUPPORTED_LOCALES;
@@ -142,6 +162,11 @@ const LocaleSync: React.FC = () => {
 
 const AppContent: React.FC = () => {
   const { locale } = useI18n();
+  const location = useLocation();
+
+  // Check if current route is a landing page (no header/footer)
+  const isPromoLanding =
+    location.pathname.endsWith('/dancehall') || location.pathname.endsWith('/twerk');
 
   useEffect(() => {
     document.documentElement.lang = locale;
@@ -151,8 +176,12 @@ const AppContent: React.FC = () => {
     <div className="bg-black text-neutral antialiased font-sans overflow-x-hidden">
       <ScrollToTop />
       <SEO />
-      <SkipLink />
-      <Header />
+      {!isPromoLanding && (
+        <>
+          <SkipLink />
+          <Header />
+        </>
+      )}
       <main id="main-content">
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
@@ -166,6 +195,16 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <HomePage />
+                </>
+              }
+            />
+            {/* Test Homepage V2 - Nueva versión con océano azul */}
+            <Route
+              path="/:locale/test-home-v2"
+              element={
+                <>
+                  <LocaleSync />
+                  <HomePageV2 />
                 </>
               }
             />
@@ -461,6 +500,36 @@ const AppContent: React.FC = () => {
             />
 
             <Route
+              path="/:locale/clases/acondicionamiento-fisico-bailarines"
+              element={
+                <>
+                  <LocaleSync />
+                  <CuerpoFitPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/clases/baile-mananas"
+              element={
+                <>
+                  <LocaleSync />
+                  <BaileMananasPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/clases/cuerpo-fit"
+              element={
+                <>
+                  <LocaleSync />
+                  <FullBodyCardioPage />
+                </>
+              }
+            />
+
+            <Route
               path="/:locale/clases/hip-hop-barcelona"
               element={
                 <>
@@ -506,6 +575,46 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <ContactPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/terminos-y-condiciones"
+              element={
+                <>
+                  <LocaleSync />
+                  <TermsConditionsPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/aviso-legal"
+              element={
+                <>
+                  <LocaleSync />
+                  <LegalNoticePage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/politica-privacidad"
+              element={
+                <>
+                  <LocaleSync />
+                  <PrivacyPolicyPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/politica-cookies"
+              element={
+                <>
+                  <LocaleSync />
+                  <CookiePolicyPage />
                 </>
               }
             />
@@ -628,6 +737,48 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <HorariosPageV2 />
+                </>
+              }
+            />
+
+            {/* ===== TEST/EXPERIMENTAL ROUTES ===== */}
+            <Route
+              path="/:locale/test/clase-experimental"
+              element={
+                <>
+                  <LocaleSync />
+                  <TestClassPage />
+                </>
+              }
+            />
+            <Route
+              path="/:locale/test/afro-contemporaneo-v2"
+              element={
+                <>
+                  <LocaleSync />
+                  <AfroContemporaneoV2Page />
+                </>
+              }
+            />
+
+            {/* ===== DANCEHALL LANDING ===== */}
+            <Route
+              path="/:locale/dancehall"
+              element={
+                <>
+                  <LocaleSync />
+                  <DancehallLanding />
+                </>
+              }
+            />
+
+            {/* ===== TWERK LANDING ===== */}
+            <Route
+              path="/:locale/twerk"
+              element={
+                <>
+                  <LocaleSync />
+                  <GenericDanceLanding config={TWERK_LANDING_CONFIG} />
                 </>
               }
             />
@@ -770,8 +921,13 @@ const AppContent: React.FC = () => {
           </Routes>
         </Suspense>
       </main>
-      <Footer />
-      <BackToTop />
+      {!isPromoLanding && (
+        <>
+          <Footer />
+          <BackToTop />
+        </>
+      )}
+      <CookieBanner />
     </div>
   );
 };

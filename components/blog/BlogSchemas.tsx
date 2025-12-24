@@ -9,17 +9,19 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../../hooks/useI18n';
 import { DEFAULT_AUTHOR } from '../../constants/blog/author';
-import type { BlogArticleConfig } from '../../constants/blog/types';
+import type { BlogArticleConfig, AuthorConfig } from '../../constants/blog/types';
 
 interface BlogSchemasProps {
   /** Article configuration */
   config: BlogArticleConfig;
+  /** Author configuration (defaults to Yunaisy if not provided) */
+  author?: AuthorConfig;
 }
 
-const BlogSchemas: React.FC<BlogSchemasProps> = ({ config }) => {
+const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp }) => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
-  const author = DEFAULT_AUTHOR;
+  const author = authorProp || DEFAULT_AUTHOR;
   const articleUrl = `${baseUrl}/${locale}/blog/${config.category}/${config.slug}`;
 
   // Article Schema (BlogPosting)

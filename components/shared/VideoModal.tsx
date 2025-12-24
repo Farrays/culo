@@ -71,7 +71,6 @@ const VideoModal: React.FC<VideoModalProps> = memo(function VideoModal({
   useEffect(() => {
     if (!isOpen) return;
 
-    // eslint-disable-next-line no-undef
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         handleClose();

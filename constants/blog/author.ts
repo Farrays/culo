@@ -36,6 +36,23 @@ export const AUTHOR_YUNAISY: AuthorConfig = {
 };
 
 /**
+ * Mar Guerrero - Guest Author (Copywriter & Dance Enthusiast)
+ *
+ * Guest author for selected blog articles.
+ * Professional copywriter and student at Farray's Center.
+ */
+export const AUTHOR_MAR_GUERRERO: AuthorConfig = {
+  id: 'mar-guerrero',
+  name: 'Mar Guerrero',
+  roleKey: 'blog_authorRoleMar',
+  bioKey: 'blog_authorBioMar',
+  image: '/images/authors/mar-guerrero.webp',
+  profileUrl: '/blog', // Links to blog since she's a guest author
+  credentials: ['blog_credential_alumna'],
+  sameAs: [],
+};
+
+/**
  * Default author for all blog articles
  */
 export const DEFAULT_AUTHOR = AUTHOR_YUNAISY;

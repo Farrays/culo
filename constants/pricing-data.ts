@@ -290,10 +290,10 @@ export const FLEXIBLE_PLANS_PREMIUM: FlexiblePlan[] = [
 // ============================================================================
 
 export const DROP_IN_PRICES: DropInPrice[] = [
-  { id: 'dropin-regular-1h', duration: '1h', type: 'regular', price: 17 },
-  { id: 'dropin-regular-1.5h', duration: '1.5h', type: 'regular', price: 20 },
-  { id: 'dropin-premium-1h', duration: '1h', type: 'premium', price: 18 },
-  { id: 'dropin-premium-1.5h', duration: '1.5h', type: 'premium', price: 22 },
+  { id: 'dropin-regular-1h', duration: '1h', type: 'regular', price: 20 },
+  { id: 'dropin-regular-1.5h', duration: '1.5h', type: 'regular', price: 23 },
+  { id: 'dropin-premium-1h', duration: '1h', type: 'premium', price: 22 },
+  { id: 'dropin-premium-1.5h', duration: '1.5h', type: 'premium', price: 25 },
 ];
 
 // ============================================================================
