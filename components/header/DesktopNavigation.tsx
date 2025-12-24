@@ -141,13 +141,13 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
   };
 
   return (
-    <nav className="hidden md:block flex-1" aria-label="Main navigation">
-      <ul className="flex items-center space-x-8 text-sm font-medium">
+    <nav aria-label="Main navigation">
+      <ul className="flex items-center space-x-6 text-sm font-medium">
         {/* Home */}
         <li>
           <Link
             to={menuStructure.home.path}
-            className={`transition-colors duration-300 ${
+            className={`transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black ${
               location.pathname === menuStructure.home.path
                 ? 'text-white'
                 : 'text-neutral/75 hover:text-white'
@@ -163,7 +163,7 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
           <div className="flex items-center">
             <Link
               to={menuStructure.classes.path}
-              className={`transition-colors duration-300 ${
+              className={`transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black ${
                 location.pathname.startsWith(`/${locale}/clases`)
                   ? 'text-white'
                   : 'text-neutral/75 hover:text-white'
@@ -181,7 +181,7 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
                   closeAllDropdowns();
                 }
               }}
-              className="ml-1 text-neutral/75 hover:text-white transition-colors"
+              className="ml-1 text-neutral/75 hover:text-white transition-colors rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black"
               aria-expanded={isDropdownOpen('classes')}
               aria-controls="classes-menu"
               aria-label={t('navClasses')}
@@ -317,7 +317,7 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
                 closeAllDropdowns();
               }
             }}
-            className={`flex items-center transition-colors duration-300 ${
+            className={`flex items-center transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black ${
               location.pathname.includes('/alquiler-salas') ||
               location.pathname.includes('/merchandising') ||
               location.pathname.includes('/estudio-grabacion') ||
@@ -402,9 +402,10 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
                 closeAllDropdowns();
               }
             }}
-            className={`flex items-center transition-colors duration-300 ${
+            className={`flex items-center transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black ${
               location.pathname.includes('/yunaisy-farray') ||
-              location.pathname.includes('/sobre-nosotros')
+              location.pathname.includes('/sobre-nosotros') ||
+              location.pathname.includes('/profesores-baile')
                 ? 'text-white'
                 : 'text-neutral/75 hover:text-white'
             }`}
@@ -426,21 +427,42 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
               className="absolute top-full left-0 mt-2 bg-black/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl shadow-primary-accent/10 overflow-hidden min-w-[240px] animate-fadeIn z-50"
             >
               <Link
-                to={`/${locale}/yunaisy-farray`}
-                onClick={closeAllDropdowns}
-                className="block px-4 py-3 text-sm font-medium text-neutral/90 hover:bg-white/10 hover:text-white transition-all duration-200"
-              >
-                {t('sitemapYunaisy')}
-              </Link>
-              <Link
                 to={`/${locale}/sobre-nosotros`}
                 onClick={closeAllDropdowns}
                 className="block px-4 py-3 text-sm font-medium text-neutral/90 hover:bg-white/10 hover:text-white transition-all duration-200"
               >
                 {t('headerAbout')}
               </Link>
+              <Link
+                to={`/${locale}/yunaisy-farray`}
+                onClick={closeAllDropdowns}
+                className="block px-4 py-3 text-sm font-medium text-neutral/90 hover:bg-white/10 hover:text-white transition-all duration-200"
+              >
+                {t('navYunaisy')}
+              </Link>
+              <Link
+                to={`/${locale}/profesores-baile-barcelona`}
+                onClick={closeAllDropdowns}
+                className="block px-4 py-3 text-sm font-medium text-neutral/90 hover:bg-white/10 hover:text-white transition-all duration-200"
+              >
+                {t('navProfesores')}
+              </Link>
             </div>
           )}
+        </li>
+
+        {/* Blog Link */}
+        <li>
+          <Link
+            to={`/${locale}/blog`}
+            className={`transition-colors duration-300 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black ${
+              location.pathname.includes('/blog')
+                ? 'text-white'
+                : 'text-neutral/75 hover:text-white'
+            }`}
+          >
+            {t('navBlog')}
+          </Link>
         </li>
       </ul>
     </nav>

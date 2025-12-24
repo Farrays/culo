@@ -8,7 +8,7 @@
 export * from './types';
 
 // Author
-export { AUTHOR_YUNAISY, DEFAULT_AUTHOR } from './author';
+export { AUTHOR_YUNAISY, AUTHOR_MAR_GUERRERO, DEFAULT_AUTHOR } from './author';
 
 // Categories
 export {
@@ -22,3 +22,7 @@ export type { CategoryMeta } from './categories';
 // Articles
 export { BENEFICIOS_SALSA_CONFIG } from './articles/beneficios-bailar-salsa';
 export { HISTORIA_SALSA_CONFIG } from './articles/historia-salsa-barcelona';
+export { HISTORIA_BACHATA_CONFIG } from './articles/historia-bachata-barcelona';
+export { SALSA_RITMO_CONFIG } from './articles/salsa-ritmo-conquisto-mundo';
+export { CLASES_SALSA_BARCELONA_CONFIG } from './articles/clases-de-salsa-barcelona';
+export { CLASES_PRINCIPIANTES_CONFIG } from './articles/clases-baile-principiantes-barcelona';

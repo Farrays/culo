@@ -90,7 +90,11 @@
       "Bash(npx husky init)",
       "Bash(git mv:*)",
       "Bash(gh pr create --base main --head folklore-cubano --title \"feat: Folklore Cubano page + category color themes\" --body \"$(cat <<''EOF''\n## Summary\n- Add complete Folklore Cubano page with teacher Grechén Mendez\n- Add WhyUsComparisonSection component for category pages\n- Apply **amber theme** to Salsa/Bachata category (Salsa Cubana, Salsa Lady Style, Folklore Cubano)\n- Apply **rose theme** to Danzas Urbanas category (Dancehall, Afrobeat, Hip Hop, etc.)\n- Apply **emerald theme** to Danza category (Ballet, Contemporáneo, Modern Jazz, etc.)\n- Fix 2469 Prettier formatting errors blocking Vercel deployment\n- Add Folklore Cubano to header navigation menu\n- Update Cultural History sections with markdown formatting for subtitles\n\n## Test plan\n- [x] Run `npm run build` - 105 pages generated\n- [x] Run `npm run typecheck` - no errors\n- [x] Run `npm run test:run` - 269 tests passed\n- [x] Run `npm run lint` - no errors\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\nEOF\n)\")",
-      "Bash(git remote:*)"
+      "Bash(git remote:*)",
+      "Bash(timeout:*)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(git remote get-url:*)",
+      "Bash(node scripts/update-sitemap.mjs:*)"
     ],
     "deny": [],
     "ask": []

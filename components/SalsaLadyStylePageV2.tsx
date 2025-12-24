@@ -310,7 +310,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
                   <CalendarDaysIcon className="w-5 h-5 text-primary-accent" />
-                  <span className="text-sm sm:text-base">8 años en Barcelona</span>
+                  <span className="text-sm sm:text-base">8 {t('years_in_barcelona')}</span>
                 </div>
               </div>
 

@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { kv } from '@vercel/kv';
 
 /**
  * API Route: /api/lead
@@ -6,11 +7,27 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
  * Recibe datos del formulario de captacion y los envia a Momence
  * El token se guarda en variables de entorno de Vercel (nunca expuesto al cliente)
  *
+ * Deduplicación con Vercel KV:
+ * - TTL de 90 días para evitar leads duplicados
+ * - Si el email ya existe en KV (dentro de TTL), no se envía a Momence
+ * - Si el TTL expiró, se re-envía y actualiza el timestamp
+ *
  * Variables de entorno requeridas en Vercel:
  * - MOMENCE_API_URL
  * - MOMENCE_TOKEN
- * - MOMENCE_SOURCE_ID
+ * - MOMENCE_SOURCE_ID (default, puede override con sourceId en body)
+ * - KV_REST_API_URL (auto-configurado por Vercel KV)
+ * - KV_REST_API_TOKEN (auto-configurado por Vercel KV)
  */
+
+// TTL de 90 días en segundos
+const LEAD_TTL_SECONDS = 90 * 24 * 60 * 60; // 7,776,000 segundos
+
+// Prefijo para keys de leads en KV
+const LEAD_KEY_PREFIX = 'lead:';
+
+// Tipos de estado de lead
+type LeadStatus = 'new' | 'existing' | 'refresh';
 
 // Rate limiting simple (en memoria - se resetea en cada cold start)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -84,6 +101,7 @@ export default async function handler(
       estilo,
       acceptsMarketing,
       url,
+      sourceId: customSourceId, // Permite override del sourceId por landing
     } = req.body;
 
     // Validaciones
@@ -100,16 +118,49 @@ export default async function handler(
       return res.status(400).json({ error: 'Invalid email format' });
     }
 
+    const normalizedEmail = sanitize(email).toLowerCase();
+    const kvKey = `${LEAD_KEY_PREFIX}${normalizedEmail}`;
+
+    // ===== DEDUPLICACIÓN CON VERCEL KV =====
+    let leadStatus: LeadStatus = 'new';
+
+    try {
+      // Verificar si el lead ya existe en KV
+      const existingLead = await kv.get<{ timestamp: number; sourceId: string }>(kvKey);
+
+      if (existingLead) {
+        // Lead existe en KV (dentro del TTL de 90 días)
+        leadStatus = 'existing';
+        console.warn(
+          `Lead duplicado detectado: ${normalizedEmail} (registrado: ${new Date(existingLead.timestamp).toISOString()})`
+        );
+
+        // Retornar éxito pero indicando que es duplicado (no se envía a Momence)
+        return res.status(200).json({
+          success: true,
+          status: leadStatus,
+          message: 'Lead already registered within 90 days',
+        });
+      }
+      // Si no existe o TTL expiró, continuar como nuevo lead
+    } catch (kvError) {
+      // Si KV falla, continuar sin deduplicación (graceful degradation)
+      console.warn('KV lookup failed, continuing without deduplication:', kvError);
+    }
+
+    // Usar sourceId del body si se proporciona, sino el default de env
+    const finalSourceId = customSourceId ? String(customSourceId) : MOMENCE_SOURCE_ID;
+
     // Preparar payload para Momence
     const payload = {
       firstName: sanitize(firstName),
       lastName: sanitize(lastName),
-      email: sanitize(email).toLowerCase(),
+      email: normalizedEmail,
       phoneNumber: sanitize(phoneNumber),
       discoveryAnswer: sanitize(discoveryAnswer || 'Not specified'),
       estilo: sanitize(estilo || 'Not specified'),
       acceptsMarketing: Boolean(acceptsMarketing),
-      sourceId: MOMENCE_SOURCE_ID,
+      sourceId: finalSourceId,
       url: sanitize(url || ''),
     };
 
@@ -129,8 +180,29 @@ export default async function handler(
       return res.status(502).json({ error: 'Failed to submit lead' });
     }
 
-    // Exito
-    return res.status(200).json({ success: true });
+    // ===== GUARDAR EN KV CON TTL =====
+    try {
+      await kv.set(
+        kvKey,
+        {
+          timestamp: Date.now(),
+          sourceId: finalSourceId,
+          estilo: sanitize(estilo || 'Not specified'),
+        },
+        { ex: LEAD_TTL_SECONDS } // TTL de 90 días
+      );
+      console.warn(`Lead guardado en KV: ${normalizedEmail} (TTL: 90 días)`);
+    } catch (kvError) {
+      // Si KV falla al guardar, solo logear (el lead ya se envió a Momence)
+      console.warn('KV save failed:', kvError);
+    }
+
+    // Éxito - nuevo lead registrado
+    return res.status(200).json({
+      success: true,
+      status: leadStatus,
+      message: 'Lead submitted successfully',
+    });
   } catch (error) {
     console.error('Lead submission error:', error);
     return res.status(500).json({ error: 'Internal server error' });

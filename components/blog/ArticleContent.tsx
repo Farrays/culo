@@ -172,10 +172,11 @@ const ArticleContent: React.FC<ArticleContentProps> = ({ sections, className = '
         );
 
       case 'callout': {
-        const calloutStyles = {
+        const calloutStyles: Record<string, string> = {
           info: 'bg-blue-500/10 border-blue-500',
           tip: 'bg-emerald-500/10 border-emerald-500',
           warning: 'bg-amber-500/10 border-amber-500',
+          cta: 'bg-primary-accent/10 border-primary-accent',
         };
         const calloutType = section.calloutType || 'info';
 

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useI18n } from '../hooks/useI18n';
+import LeadCaptureModal from './shared/LeadCaptureModal';
 
 const Hero: React.FC = () => {
   const { t } = useI18n();
+  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
   return (
     <section
@@ -30,13 +32,29 @@ const Hero: React.FC = () => {
         <p className="max-w-3xl mx-auto text-lg md:text-xl text-neutral/90 mb-10 min-h-[60px]">
           {t('heroValue')}
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="#classes"
+        <div className="flex flex-col items-center justify-center">
+          <button
+            onClick={() => setIsLeadModalOpen(true)}
             className="w-full sm:w-auto bg-primary-accent text-white font-bold text-xl py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
           >
-            {t('heroCTA2')}
-          </a>
+            {t('puertasAbiertasCTA')}
+            <svg
+              className="w-5 h-5 ml-2 inline-block"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
+            </svg>
+          </button>
+          <p className="text-sm text-neutral/80 mt-3 text-center max-w-md">
+            {t('puertasAbiertasSubtext')}
+          </p>
         </div>
       </div>
 
@@ -61,6 +79,9 @@ const Hero: React.FC = () => {
           ></path>
         </svg>
       </a>
+
+      {/* Lead Capture Modal */}
+      <LeadCaptureModal isOpen={isLeadModalOpen} onClose={() => setIsLeadModalOpen(false)} />
     </section>
   );
 };

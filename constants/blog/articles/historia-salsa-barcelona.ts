@@ -283,68 +283,6 @@ export const HISTORIA_SALSA_CONFIG: BlogArticleConfig = {
       type: 'paragraph',
       contentKey: 'blogHistoriaSalsa_conclusionCTA',
     },
-
-    // =====================================================
-    // REFERENCES SECTION (GEO Citability)
-    // =====================================================
-    {
-      id: 'referencias',
-      type: 'heading',
-      level: 2,
-      contentKey: 'blogHistoriaSalsa_referencesTitle',
-    },
-    {
-      id: 'referencias-list',
-      type: 'references',
-      contentKey: 'blogHistoriaSalsa_referencesIntro',
-      references: [
-        {
-          id: 'ref-fania',
-          titleKey: 'blogHistoriaSalsa_refFaniaTitle',
-          descriptionKey: 'blogHistoriaSalsa_refFaniaDesc',
-          url: 'https://fania.com/history/',
-          publisher: 'Fania Records',
-          year: '1964',
-          image: '/images/blog/historia-salsa/ref-fania.webp',
-        },
-        {
-          id: 'ref-smithsonian',
-          titleKey: 'blogHistoriaSalsa_refSmithsonianTitle',
-          descriptionKey: 'blogHistoriaSalsa_refSmithsonianDesc',
-          url: 'https://www.si.edu/spotlight/highlights-of-latino-music-collections-at-the-smithsonian',
-          publisher: 'Smithsonian Institution',
-          year: '2024',
-          image: '/images/blog/historia-salsa/ref-smithsonian.webp',
-        },
-        {
-          id: 'ref-nejm',
-          titleKey: 'blogHistoriaSalsa_refNEJMTitle',
-          descriptionKey: 'blogHistoriaSalsa_refNEJMDesc',
-          url: 'https://pubmed.ncbi.nlm.nih.gov/12815136/',
-          publisher: 'PubMed / NEJM',
-          year: '2003',
-          image: '/images/blog/historia-salsa/ref-nejm.webp',
-        },
-        {
-          id: 'ref-frontiers',
-          titleKey: 'blogHistoriaSalsa_refFrontiersTitle',
-          descriptionKey: 'blogHistoriaSalsa_refFrontiersDesc',
-          url: 'https://www.frontiersin.org/journals/psychology',
-          publisher: 'Frontiers in Psychology',
-          year: '2021',
-          image: '/images/blog/historia-salsa/ref-frontiers.webp',
-        },
-        {
-          id: 'ref-bcn-salsa',
-          titleKey: 'blogHistoriaSalsa_refBcnSalsaTitle',
-          descriptionKey: 'blogHistoriaSalsa_refBcnSalsaDesc',
-          url: 'https://latindancecalendar.com/festivals/location/barcelona-spain/',
-          publisher: 'Latin Dance Calendar',
-          year: '2025',
-          image: '/images/blog/historia-salsa/ref-bcn-congress.webp',
-        },
-      ],
-    },
   ],
 
   // === FEATURED IMAGE ===
@@ -411,11 +349,7 @@ export const HISTORIA_SALSA_CONFIG: BlogArticleConfig = {
   ],
 
   // === RELATED CLASSES (internal linking for SEO) ===
-  relatedClasses: [
-    'salsa-cubana-barcelona',
-    'salsa-en-linea-barcelona',
-    'bachata-sensual-barcelona',
-  ],
+  relatedClasses: ['salsa-cubana-barcelona', 'bachata-barcelona', 'salsa-bachata-barcelona'],
 
   // === UX TOGGLES ===
   tableOfContents: {

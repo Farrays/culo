@@ -562,15 +562,12 @@ const HorariosScheduleSection: React.FC = () => {
               href="https://momence.com/sign-in?hostId=36148"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary-accent text-white font-bold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow"
+              className="inline-block bg-black/50 backdrop-blur-md border-2 border-primary-accent text-primary-accent font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white hover:scale-105 hover:shadow-accent-glow"
             >
-              {t('schedule_cta_button')}
-              <ChevronRightIcon className="w-4 h-4" />
+              {t('pricing_cta_secondary')}
             </a>
-            <p className="text-primary-accent/80 text-sm mt-3 font-medium">
-              {t('schedule_cta_subtitle')}
-            </p>
-            <p className="text-neutral/50 text-xs mt-1">{t('schedule_cta_subtitle2')}</p>
+            <p className="text-xs text-neutral/70 mt-2">{t('pricing_cta_secondary_subtext')}</p>
+            <p className="text-xs text-neutral/50">{t('pricing_cta_secondary_subtitle')}</p>
           </div>
         </AnimateOnScroll>
       </div>

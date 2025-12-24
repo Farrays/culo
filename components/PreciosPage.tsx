@@ -347,9 +347,9 @@ const PreciosPage: React.FC = () => {
                 onClick={openModal}
                 className="inline-block bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
               >
-                {t('pricingV2_hero_cta')}
+                {t('puertasAbiertasCTA')}
               </button>
-              <p className="text-sm text-neutral/60 mt-3">{t('pricingV2_hero_cta_subtext')}</p>
+              <p className="text-sm text-neutral/60 mt-3">{t('puertasAbiertasSubtext')}</p>
             </AnimateOnScroll>
           </div>
         </section>
@@ -500,7 +500,7 @@ const PreciosPage: React.FC = () => {
                     t('pricingV2_card_puntual_include1'),
                     t('pricingV2_card_puntual_include2'),
                   ]}
-                  priceFrom="17 €"
+                  priceFrom="20 €"
                   ctaText={t('pricingV2_hero_cta')}
                   onCTAClick={openModal}
                   t={t}
@@ -934,10 +934,10 @@ const PreciosPage: React.FC = () => {
                     onClick={openModal}
                     className="bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
                   >
-                    {t('pricing_cta_primary')}
+                    {t('puertasAbiertasCTA')}
                   </button>
-                  <p className="text-xs text-neutral/70 mt-2 text-center">
-                    {t('pricing_cta_primary_subtext')}
+                  <p className="text-sm text-neutral/60 mt-3 text-center max-w-md mx-auto">
+                    {t('puertasAbiertasSubtext')}
                   </p>
                 </div>
               </div>

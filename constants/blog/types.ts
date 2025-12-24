@@ -114,7 +114,7 @@ export interface ArticleSection {
   /** Quote author - for 'quote' type */
   quoteAuthor?: string;
   /** Callout type - for 'callout' type */
-  calloutType?: 'info' | 'tip' | 'warning';
+  calloutType?: 'info' | 'tip' | 'warning' | 'cta';
   /** YouTube video ID - for 'video' type */
   videoId?: string;
   /** Video title key - for 'video' type */
@@ -284,6 +284,10 @@ export interface BlogArticleConfig {
   }>;
   /** Article content sections */
   sections: ArticleSection[];
+
+  // === AUTHOR ===
+  /** Custom author ID (defaults to Yunaisy if not set) */
+  authorId?: string;
 
   // === IMAGES ===
   /** Featured/hero image configuration */

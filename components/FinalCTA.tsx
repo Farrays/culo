@@ -1,10 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { useI18n } from '../hooks/useI18n';
 import AnimateOnScroll from './AnimateOnScroll';
+import LeadCaptureModal from './shared/LeadCaptureModal';
 
 const FinalCTA: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
+  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
   return (
     <section id="enroll" className="relative py-20 md:py-32 overflow-hidden">
@@ -37,12 +38,12 @@ const FinalCTA: React.FC = () => {
         </div>
 
         <AnimateOnScroll delay={200}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              to={`/${locale}#enroll`}
+          <div className="flex flex-col items-center justify-center">
+            <button
+              onClick={() => setIsLeadModalOpen(true)}
               className="w-full sm:w-auto inline-flex items-center justify-center bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
             >
-              {t('finalCtaButton1')}
+              {t('puertasAbiertasCTA')}
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
@@ -51,16 +52,16 @@ const FinalCTA: React.FC = () => {
                   d="M13 7l5 5m0 0l-5 5m5-5H6"
                 />
               </svg>
-            </Link>
-            <Link
-              to={`/${locale}#enroll`}
-              className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white"
-            >
-              {t('finalCtaButton2')}
-            </Link>
+            </button>
+            <p className="text-sm text-neutral/80 mt-3 text-center max-w-md">
+              {t('puertasAbiertasSubtext')}
+            </p>
           </div>
         </AnimateOnScroll>
       </div>
+
+      {/* Lead Capture Modal */}
+      <LeadCaptureModal isOpen={isLeadModalOpen} onClose={() => setIsLeadModalOpen(false)} />
     </section>
   );
 };

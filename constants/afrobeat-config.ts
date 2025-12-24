@@ -101,7 +101,7 @@ export const AFROBEAT_PAGE_CONFIG: FullDanceClassConfig = {
         title: "Afrobeats Classes at Farray's Center Barcelona",
       },
     ],
-    placeholderCount: 2,
+    placeholderCount: 0,
   },
 
   logosSection: {
@@ -115,7 +115,7 @@ export const AFROBEAT_PAGE_CONFIG: FullDanceClassConfig = {
 
   culturalHistory: {
     enabled: true,
-    titleKey: 'afroCulturalHistoryTitle',
+    titleKey: 'afroCulturalTitle',
     shortDescKey: 'afroCulturalShort',
     fullHistoryKey: 'afroCulturalFull',
   },

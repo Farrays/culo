@@ -30,7 +30,7 @@ interface MobileNavigationProps {
   menuStructure: MenuStructure;
   locale: Locale;
   handleLanguageChange: (lang: Locale) => void;
-  handleEnrollClick: () => void;
+  onOpenLeadModal: () => void;
   languageNames: Record<Locale, string>;
 }
 
@@ -40,13 +40,12 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
   menuStructure,
   locale,
   handleLanguageChange,
-  handleEnrollClick,
+  onOpenLeadModal,
   languageNames: _languageNames,
 }) => {
   const { t } = useI18n();
   const location = useLocation();
   const menuRef = useRef<HTMLDivElement>(null);
-  // eslint-disable-next-line no-undef
   const firstFocusableRef = useRef<HTMLAnchorElement>(null);
 
   // Accordion states
@@ -71,7 +70,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
     firstFocusableRef.current?.focus();
 
     // Handle Escape key to close menu
-    // eslint-disable-next-line no-undef
+
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setIsMenuOpen(false);
@@ -79,7 +78,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
     };
 
     // Trap focus within menu
-    // eslint-disable-next-line no-undef
+
     const handleTabKey = (e: KeyboardEvent) => {
       if (e.key === 'Tab' && menuRef.current) {
         const focusableElements = menuRef.current.querySelectorAll(
@@ -165,7 +164,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
     >
       <div className="flex flex-col h-full overflow-y-auto pt-24 pb-8 px-6">
         <nav className="flex flex-col space-y-1">
-          {/* Home */}
+          {/* 1. Inicio */}
           <Link
             ref={firstFocusableRef}
             to={menuStructure.home.path}
@@ -182,7 +181,84 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           {/* Divider */}
           <div className="border-b border-white/10 my-2" />
 
-          {/* Classes Section - Accordion */}
+          {/* 2. Quiénes Somos - Accordion */}
+          <div>
+            <AccordionHeader
+              label={t('navAboutUs')}
+              isOpen={openSections['about'] || false}
+              onClick={() => toggleSection('about')}
+              isPrimary
+            />
+
+            {openSections['about'] && (
+              <div className="pl-4 space-y-1 border-l-2 border-primary-accent/30 ml-2">
+                <Link
+                  to={`/${locale}/sobre-nosotros`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                    location.pathname === `/${locale}/sobre-nosotros`
+                      ? 'text-primary-accent'
+                      : 'text-neutral/90 hover:text-white'
+                  }`}
+                >
+                  {t('headerAbout')}
+                </Link>
+
+                <Link
+                  to={`/${locale}/yunaisy-farray`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                    location.pathname === `/${locale}/yunaisy-farray`
+                      ? 'text-primary-accent'
+                      : 'text-neutral/90 hover:text-white'
+                  }`}
+                >
+                  {t('navYunaisy')}
+                </Link>
+
+                <Link
+                  to={`/${locale}/profesores-baile-barcelona`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                    location.pathname === `/${locale}/profesores-baile-barcelona`
+                      ? 'text-primary-accent'
+                      : 'text-neutral/90 hover:text-white'
+                  }`}
+                >
+                  {t('navProfesores')}
+                </Link>
+
+                <Link
+                  to={`/${locale}/instalaciones-escuela-baile-barcelona`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                    location.pathname === `/${locale}/instalaciones-escuela-baile-barcelona`
+                      ? 'text-primary-accent'
+                      : 'text-neutral/90 hover:text-white'
+                  }`}
+                >
+                  {t('navFacilities')}
+                </Link>
+
+                <Link
+                  to={`/${locale}/preguntas-frecuentes`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                    location.pathname === `/${locale}/preguntas-frecuentes`
+                      ? 'text-primary-accent'
+                      : 'text-neutral/90 hover:text-white'
+                  }`}
+                >
+                  {t('navFAQ')}
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* Divider */}
+          <div className="border-b border-white/10 my-2" />
+
+          {/* 3. Clases de Baile - Accordion */}
           <div>
             <AccordionHeader
               label={t(menuStructure.classes.textKey)}
@@ -277,7 +353,36 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           {/* Divider */}
           <div className="border-b border-white/10 my-2" />
 
-          {/* Services Section - Accordion */}
+          {/* 4. Horarios */}
+          <Link
+            to={`/${locale}/horarios-clases-baile-barcelona`}
+            onClick={() => setIsMenuOpen(false)}
+            className={`py-3 text-lg font-semibold transition-colors duration-300 ${
+              location.pathname === `/${locale}/horarios-clases-baile-barcelona`
+                ? 'text-primary-accent'
+                : 'text-white hover:text-primary-accent'
+            }`}
+          >
+            {t('navSchedule')}
+          </Link>
+
+          {/* 5. Cuotas (Precios) */}
+          <Link
+            to={`/${locale}/precios-clases-baile-barcelona`}
+            onClick={() => setIsMenuOpen(false)}
+            className={`py-3 text-lg font-semibold transition-colors duration-300 ${
+              location.pathname === `/${locale}/precios-clases-baile-barcelona`
+                ? 'text-primary-accent'
+                : 'text-white hover:text-primary-accent'
+            }`}
+          >
+            {t('navPricing')}
+          </Link>
+
+          {/* Divider */}
+          <div className="border-b border-white/10 my-2" />
+
+          {/* 6. Servicios - Accordion */}
           <div>
             <AccordionHeader
               label={t('navServices')}
@@ -288,6 +393,18 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
 
             {openSections['services'] && (
               <div className="pl-4 space-y-1 border-l-2 border-primary-accent/30 ml-2">
+                <Link
+                  to={`/${locale}/clases-particulares-baile`}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
+                    location.pathname === `/${locale}/clases-particulares-baile`
+                      ? 'text-primary-accent'
+                      : 'text-neutral/90 hover:text-white'
+                  }`}
+                >
+                  {t('navClasesParticulares')}
+                </Link>
+
                 <Link
                   to={`/${locale}/alquiler-salas-baile-barcelona`}
                   onClick={() => setIsMenuOpen(false)}
@@ -323,42 +440,6 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                 >
                   {t('headerGiftDance')}
                 </Link>
-
-                <Link
-                  to={`/${locale}/clases-particulares-baile`}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
-                    location.pathname === `/${locale}/clases-particulares-baile`
-                      ? 'text-primary-accent'
-                      : 'text-neutral/90 hover:text-white'
-                  }`}
-                >
-                  {t('navClasesParticulares')}
-                </Link>
-
-                <Link
-                  to={`/${locale}/merchandising`}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
-                    location.pathname === `/${locale}/merchandising`
-                      ? 'text-primary-accent'
-                      : 'text-neutral/90 hover:text-white'
-                  }`}
-                >
-                  {t('headerMerchandising')}
-                </Link>
-
-                <Link
-                  to={`/${locale}/instalaciones-escuela-baile-barcelona`}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
-                    location.pathname === `/${locale}/instalaciones-escuela-baile-barcelona`
-                      ? 'text-primary-accent'
-                      : 'text-neutral/90 hover:text-white'
-                  }`}
-                >
-                  {t('navFacilities')}
-                </Link>
               </div>
             )}
           </div>
@@ -366,48 +447,20 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           {/* Divider */}
           <div className="border-b border-white/10 my-2" />
 
-          {/* About Us Section - Accordion */}
-          <div>
-            <AccordionHeader
-              label={t('navAboutUs')}
-              isOpen={openSections['about'] || false}
-              onClick={() => toggleSection('about')}
-              isPrimary
-            />
+          {/* 7. Blog */}
+          <Link
+            to={`/${locale}/blog`}
+            onClick={() => setIsMenuOpen(false)}
+            className={`py-3 text-lg font-semibold transition-colors duration-300 ${
+              location.pathname.includes('/blog')
+                ? 'text-primary-accent'
+                : 'text-white hover:text-primary-accent'
+            }`}
+          >
+            {t('navBlog')}
+          </Link>
 
-            {openSections['about'] && (
-              <div className="pl-4 space-y-1 border-l-2 border-primary-accent/30 ml-2">
-                <Link
-                  to={`/${locale}/yunaisy-farray`}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
-                    location.pathname === `/${locale}/yunaisy-farray`
-                      ? 'text-primary-accent'
-                      : 'text-neutral/90 hover:text-white'
-                  }`}
-                >
-                  {t('sitemapYunaisy')}
-                </Link>
-
-                <Link
-                  to={`/${locale}/sobre-nosotros`}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block py-2 text-base font-medium transition-colors duration-300 ${
-                    location.pathname === `/${locale}/sobre-nosotros`
-                      ? 'text-primary-accent'
-                      : 'text-neutral/90 hover:text-white'
-                  }`}
-                >
-                  {t('headerAbout')}
-                </Link>
-              </div>
-            )}
-          </div>
-
-          {/* Divider */}
-          <div className="border-b border-white/10 my-2" />
-
-          {/* Direct Links */}
+          {/* 8. Contacto */}
           <Link
             to={`/${locale}/contacto`}
             onClick={() => setIsMenuOpen(false)}
@@ -418,18 +471,6 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
             }`}
           >
             {t('headerContact')}
-          </Link>
-
-          <Link
-            to={`/${locale}/preguntas-frecuentes`}
-            onClick={() => setIsMenuOpen(false)}
-            className={`py-3 text-lg font-semibold transition-colors duration-300 ${
-              location.pathname === `/${locale}/preguntas-frecuentes`
-                ? 'text-primary-accent'
-                : 'text-white hover:text-primary-accent'
-            }`}
-          >
-            {t('headerFAQ')}
           </Link>
         </nav>
 
@@ -464,16 +505,15 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           </div>
 
           {/* CTA Button */}
-          <Link
-            to={`/${locale}#enroll`}
+          <button
             onClick={() => {
-              handleEnrollClick();
               setIsMenuOpen(false);
+              onOpenLeadModal();
             }}
             className="block w-full text-center bg-primary-accent text-white text-lg font-bold py-4 rounded-full transition-all duration-300 hover:bg-white hover:text-primary-accent shadow-lg hover:shadow-accent-glow"
           >
             {t('enrollNow')}
-          </Link>
+          </button>
         </div>
       </div>
     </div>

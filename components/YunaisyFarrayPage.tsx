@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
+import LeadCaptureModal from './shared/LeadCaptureModal';
 
 const YunaisyFarrayPage: React.FC = () => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
+  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
   // Schema Markup - BreadcrumbList
   const breadcrumbSchema = {
@@ -397,11 +399,11 @@ const YunaisyFarrayPage: React.FC = () => {
                   {t('yunaisyFarray_cta_subtitle')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    to={`/${locale}#enroll`}
+                  <button
+                    onClick={() => setIsLeadModalOpen(true)}
                     className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow min-w-[240px]"
                   >
-                    {t('enrollNow')}
+                    {t('puertasAbiertasCTA')}
                     <svg
                       className="w-5 h-5 ml-2"
                       fill="none"
@@ -415,19 +417,25 @@ const YunaisyFarrayPage: React.FC = () => {
                         d="M13 7l5 5m0 0l-5 5m5-5H6"
                       />
                     </svg>
-                  </Link>
+                  </button>
                   <Link
-                    to={`/${locale}/clases`}
+                    to={`/${locale}/clases/baile-barcelona`}
                     className="inline-flex items-center justify-center bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white min-w-[240px]"
                   >
-                    {t('yunaisyFarray_cta_classes')}
+                    {t('verClasesBaile')}
                   </Link>
                 </div>
+                <p className="text-sm text-neutral/80 mt-3 text-center max-w-md mx-auto">
+                  {t('puertasAbiertasSubtext')}
+                </p>
               </div>
             </AnimateOnScroll>
           </div>
         </section>
       </div>
+
+      {/* Lead Capture Modal */}
+      <LeadCaptureModal isOpen={isLeadModalOpen} onClose={() => setIsLeadModalOpen(false)} />
     </>
   );
 };

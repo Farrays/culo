@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import React, { useEffect, useState, useCallback, useRef, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
@@ -8,7 +7,10 @@ import { XMarkIcon, CheckIcon, CheckCircleIcon } from '../../lib/icons';
 // TYPES
 // ============================================================================
 
-type FormStatus = 'idle' | 'loading' | 'success' | 'error';
+type FormStatus = 'idle' | 'loading' | 'success' | 'success_existing' | 'error';
+
+// Response status from API (KV deduplication)
+type LeadResponseStatus = 'new' | 'existing' | 'refresh';
 
 interface FormData {
   firstName: string;
@@ -321,7 +323,18 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
         throw new Error(data.error || `HTTP ${response.status}`);
       }
 
-      setStatus('success');
+      // Parse response to check lead status (KV deduplication)
+      const responseData = await response.json().catch(() => ({ success: true }));
+      const leadStatus: LeadResponseStatus = responseData.status || 'new';
+
+      // Set appropriate success state based on lead status
+      if (leadStatus === 'existing') {
+        // Lead ya registrado dentro de 90 días - mostrar mensaje diferente
+        setStatus('success_existing');
+      } else {
+        // new o refresh - lead nuevo o re-registrado después de 90 días
+        setStatus('success');
+      }
     } catch (err) {
       console.error('Lead submission error:', err);
       setStatus('error');
@@ -379,9 +392,11 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
             <div className="flex items-start justify-between">
               <div className="flex-1 pr-4">
                 <h2 id="lead-modal-title" className="text-xl font-black text-neutral">
-                  {status === 'success' ? t('leadModal_success_title') : t('leadModal_title')}
+                  {status === 'success' || status === 'success_existing'
+                    ? t('leadModal_success_title')
+                    : t('leadModal_title')}
                 </h2>
-                {status !== 'success' && (
+                {status !== 'success' && status !== 'success_existing' && (
                   <p className="text-sm text-neutral/70 mt-1">{t('leadModal_subtitle')}</p>
                 )}
               </div>
@@ -398,7 +413,7 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
 
           {/* Content */}
           <div className="p-6">
-            {status === 'success' ? (
+            {status === 'success' || status === 'success_existing' ? (
               /* ============================================================
                  SUCCESS STATE - Confirmacion educativa
               ============================================================ */
@@ -418,25 +433,46 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
 
                 {/* Success title */}
                 <h3 className="text-2xl font-black text-neutral mb-4">
-                  {t('leadModal_success_heading')}
+                  {status === 'success_existing'
+                    ? t('leadModal_existing_heading')
+                    : t('leadModal_success_heading')}
                 </h3>
 
-                {/* Main message */}
-                <p className="text-lg text-neutral/90 mb-2">{t('leadModal_success_message')}</p>
+                {status === 'success_existing' ? (
+                  /* Mensaje para leads duplicados */
+                  <>
+                    <p className="text-lg text-neutral/90 mb-2">
+                      {t('leadModal_existing_message')}
+                    </p>
+                    <p className="text-sm text-neutral/70 mb-6">
+                      {t('leadModal_existing_contact')}
+                    </p>
+                  </>
+                ) : (
+                  /* Mensaje para leads nuevos */
+                  <>
+                    {/* Main message */}
+                    <p className="text-lg text-neutral/90 mb-2">{t('leadModal_success_message')}</p>
 
-                {/* Secondary message */}
-                <p className="text-sm text-neutral/70 mb-6">{t('leadModal_success_spam_note')}</p>
+                    {/* Secondary message */}
+                    <p className="text-sm text-neutral/70 mb-6">
+                      {t('leadModal_success_spam_note')}
+                    </p>
 
-                {/* Promo badge */}
-                <div className="inline-flex items-center gap-2 bg-primary-accent/20 text-primary-accent px-5 py-3 rounded-xl text-sm font-semibold mb-6">
-                  <CheckCircleIcon className="w-5 h-5" />
-                  {t('leadModal_success_promo_included')}
-                </div>
+                    {/* Promo badge */}
+                    <div className="inline-flex items-center gap-2 bg-primary-accent/20 text-primary-accent px-5 py-3 rounded-xl text-sm font-semibold mb-6">
+                      <CheckCircleIcon className="w-5 h-5" />
+                      {t('leadModal_success_promo_included')}
+                    </div>
 
-                {/* Deliverability tip */}
-                <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                  <p className="text-xs text-neutral/60">{t('leadModal_success_deliverability')}</p>
-                </div>
+                    {/* Deliverability tip */}
+                    <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                      <p className="text-xs text-neutral/60">
+                        {t('leadModal_success_deliverability')}
+                      </p>
+                    </div>
+                  </>
+                )}
 
                 {/* Close button */}
                 <button

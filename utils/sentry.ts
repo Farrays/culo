@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 /**
  * Initialize Sentry error tracking (lazy loaded)
  * Only enabled in production with a valid DSN

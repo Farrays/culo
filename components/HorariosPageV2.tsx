@@ -102,7 +102,7 @@ const SchedulePreviewCard = memo(
             onClick={onCTAClick}
             className="w-full flex items-center justify-center gap-2 font-bold py-3 px-6 rounded-full bg-white/10 text-neutral hover:bg-primary-accent hover:text-white transition-all duration-300"
           >
-            {t('horariosV2_see_schedule')}
+            {t('puertasAbiertasCTA')}
             <ChevronRightIcon className="w-4 h-4" />
           </button>
         </div>
@@ -327,9 +327,9 @@ const HorariosPageV2: React.FC = () => {
                 onClick={openModal}
                 className="inline-block bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
               >
-                {t('horariosV2_hero_cta')}
+                {t('puertasAbiertasCTA')}
               </button>
-              <p className="text-sm text-neutral/60 mt-3">{t('horariosV2_hero_ctaSubtext')}</p>
+              <p className="text-sm text-neutral/60 mt-3">{t('puertasAbiertasSubtext')}</p>
             </AnimateOnScroll>
           </div>
         </section>
@@ -382,10 +382,10 @@ const HorariosPageV2: React.FC = () => {
                       onClick={openModal}
                       className="inline-flex items-center gap-2 bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
                     >
-                      {t('horariosV2_preview_cta')}
+                      {t('puertasAbiertasCTA')}
                       <ChevronRightIcon className="w-5 h-5" />
                     </button>
-                    <p className="text-sm text-neutral/60 mt-3">{t('horariosV2_preview_free')}</p>
+                    <p className="text-sm text-neutral/60 mt-3">{t('puertasAbiertasSubtext')}</p>
                   </div>
                 </div>
               </div>
@@ -475,9 +475,10 @@ const HorariosPageV2: React.FC = () => {
                   onClick={openModal}
                   className="inline-flex items-center gap-2 bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
                 >
-                  {t('horariosV2_blocks_cta')}
+                  {t('puertasAbiertasCTA')}
                   <ChevronRightIcon className="w-5 h-5" />
                 </button>
+                <p className="text-sm text-neutral/60 mt-3">{t('puertasAbiertasSubtext')}</p>
               </div>
             </AnimateOnScroll>
           </div>
@@ -548,10 +549,10 @@ const HorariosPageV2: React.FC = () => {
                     onClick={openModal}
                     className="inline-flex items-center gap-2 bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
                   >
-                    {t('horariosV2_hero_cta')}
+                    {t('puertasAbiertasCTA')}
                     <ChevronRightIcon className="w-5 h-5" />
                   </button>
-                  <p className="text-xs text-neutral/70 mt-3">{t('horariosV2_hero_ctaSubtext')}</p>
+                  <p className="text-sm text-neutral/60 mt-3">{t('puertasAbiertasSubtext')}</p>
                 </div>
               </div>
             </AnimateOnScroll>
@@ -676,10 +677,10 @@ const HorariosPageV2: React.FC = () => {
                     onClick={openModal}
                     className="bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
                   >
-                    {t('horariosV2_cta_primary')}
+                    {t('puertasAbiertasCTA')}
                   </button>
-                  <p className="text-xs text-neutral/70 mt-2 text-center">
-                    {t('horariosV2_cta_subtext')}
+                  <p className="text-sm text-neutral/60 mt-3 text-center max-w-md mx-auto">
+                    {t('puertasAbiertasSubtext')}
                   </p>
                 </div>
               </div>

@@ -79,8 +79,14 @@ export const HUB_CATEGORIES: HubCategory[] = [
     pillarUrl: '/clases/salsa-bachata-barcelona',
     imageUrl:
       'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800&h=600&fit=crop&q=80&auto=format',
-    featuredStyles: [{ key: 'salsa_bachata', url: '/clases/salsa-bachata-barcelona' }],
-    allStyles: [{ key: 'salsa_bachata', url: '/clases/salsa-bachata-barcelona' }],
+    featuredStyles: [
+      { key: 'salsa_bachata', url: '/clases/salsa-bachata-barcelona' },
+      { key: 'bachata_sensual', url: '/clases/bachata-barcelona' },
+    ],
+    allStyles: [
+      { key: 'bachata_sensual', url: '/clases/bachata-barcelona' },
+      { key: 'salsa_bachata', url: '/clases/salsa-bachata-barcelona' },
+    ],
   },
 
   // 4. Fitness para bailarines
@@ -92,8 +98,17 @@ export const HUB_CATEGORIES: HubCategory[] = [
     pillarUrl: '/clases/entrenamiento-bailarines-barcelona',
     imageUrl:
       'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop&q=80&auto=format',
-    featuredStyles: [{ key: 'entrenamiento', url: '/clases/entrenamiento-bailarines-barcelona' }],
-    allStyles: [{ key: 'entrenamiento', url: '/clases/entrenamiento-bailarines-barcelona' }],
+    featuredStyles: [
+      { key: 'cuerpo_fit', url: '/clases/cuerpo-fit' },
+      { key: 'body_conditioning', url: '/clases/acondicionamiento-fisico-bailarines' },
+      { key: 'stretching', url: '/clases/stretching-barcelona' },
+    ],
+    allStyles: [
+      { key: 'body_conditioning', url: '/clases/acondicionamiento-fisico-bailarines' },
+      { key: 'bum_bum', url: '/clases/ejercicios-gluteos-barcelona' },
+      { key: 'cuerpo_fit', url: '/clases/cuerpo-fit' },
+      { key: 'stretching', url: '/clases/stretching-barcelona' },
+    ],
   },
 ];
 
@@ -118,7 +133,11 @@ export const FEATURED_STYLES: StyleLink[] = [
   { key: 'sexy_style', url: '/clases/sexy-style-barcelona' },
   { key: 'twerk', url: '/clases/twerk-barcelona' },
   // Latinos
+  { key: 'bachata_sensual', url: '/clases/bachata-barcelona' },
   { key: 'salsa_bachata', url: '/clases/salsa-bachata-barcelona' },
   // Fitness
-  { key: 'entrenamiento', url: '/clases/entrenamiento-bailarines-barcelona' },
+  { key: 'body_conditioning', url: '/clases/acondicionamiento-fisico-bailarines' },
+  { key: 'bum_bum', url: '/clases/ejercicios-gluteos-barcelona' },
+  { key: 'cuerpo_fit', url: '/clases/cuerpo-fit' },
+  { key: 'stretching', url: '/clases/stretching-barcelona' },
 ];

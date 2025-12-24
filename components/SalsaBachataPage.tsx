@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
@@ -14,6 +14,7 @@ import { SUPPORTED_LOCALES } from '../types';
 import TestimonialsSection from './TestimonialsSection';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 import { CheckIcon } from '../lib/icons';
+import LeadCaptureModal from './shared/LeadCaptureModal';
 
 const ANIMATION_DELAYS = {
   STAGGER_SMALL: 100,
@@ -60,6 +61,7 @@ const valuePillars: ValuePillarWithIcon[] = [
 const SalsaBachataPage: React.FC = () => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
+  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
   // Get the "latin" category data from HUB_CATEGORIES
   const salsaBachataCategory = HUB_CATEGORIES.find(cat => cat.key === 'latin');
@@ -228,22 +230,19 @@ const SalsaBachataPage: React.FC = () => {
               </p>
             </AnimateOnScroll>
 
-            {/* CTA Buttons */}
+            {/* CTA Button - Puertas Abiertas */}
             <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 2}>
-              <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  to={`/${locale}#enroll`}
+              <div className="mt-12 flex flex-col items-center justify-center">
+                <button
+                  onClick={() => setIsLeadModalOpen(true)}
                   className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-base sm:text-lg py-4 px-8 sm:px-10 rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-accent-glow animate-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                 >
-                  {t('enrollNow')}
+                  {t('puertasAbiertasCTA')}
                   <CheckIcon className="w-5 h-5 ml-2" />
-                </Link>
-                <Link
-                  to={`/${locale}#enroll`}
-                  className="inline-flex items-center justify-center bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-base sm:text-lg py-4 px-8 sm:px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
-                >
-                  {t('heroCTA1')}
-                </Link>
+                </button>
+                <p className="text-sm text-neutral/80 mt-3 text-center max-w-md">
+                  {t('puertasAbiertasSubtext')}
+                </p>
               </div>
             </AnimateOnScroll>
           </div>
@@ -686,25 +685,25 @@ const SalsaBachataPage: React.FC = () => {
             </AnimateOnScroll>
 
             <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL * 2}>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  to={`/${locale}#enroll`}
+              <div className="flex flex-col items-center justify-center">
+                <button
+                  onClick={() => setIsLeadModalOpen(true)}
                   className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-lg sm:text-xl py-4 sm:py-5 px-10 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-accent-glow animate-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
                 >
-                  {t('enrollNow')}
+                  {t('puertasAbiertasCTA')}
                   <CheckIcon className="w-5 h-5 sm:w-6 sm:h-6 ml-2" />
-                </Link>
-                <Link
-                  to={`/${locale}#enroll`}
-                  className="inline-flex items-center justify-center bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-lg sm:text-xl py-4 sm:py-5 px-10 sm:px-12 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none motion-reduce:transition-none"
-                >
-                  {t('heroCTA1')}
-                </Link>
+                </button>
+                <p className="text-sm text-neutral/80 mt-3 text-center max-w-md">
+                  {t('puertasAbiertasSubtext')}
+                </p>
               </div>
             </AnimateOnScroll>
           </div>
         </section>
       </main>
+
+      {/* Lead Capture Modal */}
+      <LeadCaptureModal isOpen={isLeadModalOpen} onClose={() => setIsLeadModalOpen(false)} />
     </>
   );
 };

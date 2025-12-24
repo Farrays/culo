@@ -355,15 +355,18 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
                   onClick={() => setIsModalOpen(true)}
                   className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
                 >
-                  {t('enrollNow')}
+                  {t('puertasAbiertasCTA')}
                 </button>
                 <Link
                   to={`/${locale}/clases/baile-barcelona`}
                   className="inline-flex items-center justify-center bg-black/50 backdrop-blur-md border-2 border-primary-accent text-primary-accent font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white hover:scale-105 hover:shadow-accent-glow"
                 >
-                  {t('teachersPageCtaClasses')}
+                  {t('verClasesBaile')}
                 </Link>
               </div>
+              <p className="text-sm text-neutral/80 mt-3 text-center max-w-md mx-auto">
+                {t('puertasAbiertasSubtext')}
+              </p>
             </AnimateOnScroll>
           </div>
         </section>

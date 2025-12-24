@@ -100,7 +100,7 @@ export const TWERK_PAGE_CONFIG: FullDanceClassConfig = {
         title: "Twerk Classes at Farray's Center Barcelona",
       },
     ],
-    placeholderCount: 2,
+    placeholderCount: 1,
   },
 
   logosSection: {

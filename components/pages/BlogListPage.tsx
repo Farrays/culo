@@ -11,17 +11,28 @@ import { useI18n } from '../../hooks/useI18n';
 import { SUPPORTED_LOCALES } from '../../types';
 import { getAllCategories, getCategoryMeta } from '../../constants/blog/categories';
 import type { BlogCategory, ArticleCardData } from '../../constants/blog/types';
+import { getArticleCardData } from '../../constants/blog/types';
 import Breadcrumb from '../shared/Breadcrumb';
 import AnimateOnScroll from '../AnimateOnScroll';
 import ArticleCard from '../blog/ArticleCard';
 import BackToTop from '../BackToTop';
 
-// Import all article configs (will be populated as articles are created)
-// import { BENEFICIOS_SALSA_CONFIG } from '../../constants/blog/articles/beneficios-bailar-salsa';
+// Import all article configs
+import { BENEFICIOS_SALSA_CONFIG } from '../../constants/blog/articles/beneficios-bailar-salsa';
+import { HISTORIA_SALSA_CONFIG } from '../../constants/blog/articles/historia-salsa-barcelona';
+import { HISTORIA_BACHATA_CONFIG } from '../../constants/blog/articles/historia-bachata-barcelona';
+import { SALSA_RITMO_CONFIG } from '../../constants/blog/articles/salsa-ritmo-conquisto-mundo';
+import { CLASES_SALSA_BARCELONA_CONFIG } from '../../constants/blog/articles/clases-de-salsa-barcelona';
+import { CLASES_PRINCIPIANTES_CONFIG } from '../../constants/blog/articles/clases-baile-principiantes-barcelona';
 
-// Placeholder: In production, this would be dynamically generated from article configs
+// Generate article card data from configs
 const ALL_ARTICLES: ArticleCardData[] = [
-  // Will be populated with actual articles
+  getArticleCardData(BENEFICIOS_SALSA_CONFIG),
+  getArticleCardData(HISTORIA_SALSA_CONFIG),
+  getArticleCardData(HISTORIA_BACHATA_CONFIG),
+  getArticleCardData(SALSA_RITMO_CONFIG),
+  getArticleCardData(CLASES_SALSA_BARCELONA_CONFIG),
+  getArticleCardData(CLASES_PRINCIPIANTES_CONFIG),
 ];
 
 const BlogListPage: React.FC = () => {

@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useCookieConsent } from '../hooks/useCookieConsent';
+import { useI18n } from '../hooks/useI18n';
 
 interface YouTubeEmbedProps {
   videoId: string;
@@ -57,6 +59,10 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   uploadDate = new Date().toISOString().split('T')[0],
   duration = 'PT5M',
 }) => {
+  const { t } = useI18n();
+  const { preferences, setShowBanner } = useCookieConsent();
+  const hasFunctionalConsent = preferences?.functional ?? false;
+
   const [isLoaded, setIsLoaded] = useState(false);
   const [thumbnailError, setThumbnailError] = useState(false);
   const playerRef = useRef<YTPlayer | null>(null);
@@ -171,6 +177,57 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
       }
     };
   }, [isLoaded, videoId]);
+
+  // Show consent required placeholder if user hasn't accepted functional cookies
+  if (!hasFunctionalConsent) {
+    return (
+      <>
+        <Helmet>
+          <script type="application/ld+json">{JSON.stringify(videoSchema)}</script>
+        </Helmet>
+        <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-neutral/30 bg-dark-surface/50">
+          <img
+            src={thumbnailUrl}
+            alt={title}
+            width="1280"
+            height="720"
+            loading="lazy"
+            className="w-full h-full object-cover opacity-30"
+            onLoad={e => {
+              const img = e.currentTarget;
+              if (!thumbnailError && img.naturalWidth <= 120) {
+                setThumbnailError(true);
+              }
+            }}
+            onError={() => !thumbnailError && setThumbnailError(true)}
+          />
+          <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+            <svg
+              className="w-12 h-12 text-neutral/50 mb-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+              />
+            </svg>
+            <p className="text-neutral/80 text-sm mb-4 max-w-xs">{t('cookies_youtube_blocked')}</p>
+            <button
+              onClick={() => setShowBanner(true)}
+              className="px-4 py-2 bg-primary-accent text-white text-sm rounded-full font-medium hover:bg-primary-accent/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-accent"
+            >
+              {t('cookies_configure')}
+            </button>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   if (!isLoaded) {
     return (

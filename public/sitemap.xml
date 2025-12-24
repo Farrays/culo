@@ -231,6 +231,144 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/danzas-urbanas-barcelona"/>
   </url>
 
+  <!-- Bachata Sensual Barcelona Page -->
+  <url>
+    <loc>https://www.farrayscenter.com/es/clases/bachata-barcelona</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/bachata-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/ca/clases/bachata-barcelona</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/bachata-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/en/clases/bachata-barcelona</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/bachata-barcelona"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/fr/clases/bachata-barcelona</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/bachata-barcelona"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/bachata-barcelona"/>
+  </url>
+
+  <!-- Cuerpo-Fit Page (Full Body Cardio Dance) -->
+  <url>
+    <loc>https://www.farrayscenter.com/es/clases/cuerpo-fit</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/cuerpo-fit"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/cuerpo-fit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/cuerpo-fit"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/cuerpo-fit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/cuerpo-fit"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/ca/clases/cuerpo-fit</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/cuerpo-fit"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/cuerpo-fit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/cuerpo-fit"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/cuerpo-fit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/cuerpo-fit"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/en/clases/cuerpo-fit</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/cuerpo-fit"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/cuerpo-fit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/cuerpo-fit"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/cuerpo-fit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/cuerpo-fit"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/fr/clases/cuerpo-fit</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/cuerpo-fit"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/cuerpo-fit"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/cuerpo-fit"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/cuerpo-fit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/cuerpo-fit"/>
+  </url>
+
+  <!-- Baile Mañanas Page (Morning Dance Classes) -->
+  <url>
+    <loc>https://www.farrayscenter.com/es/clases/baile-mananas</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/baile-mananas"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/baile-mananas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/baile-mananas"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/baile-mananas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/baile-mananas"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/ca/clases/baile-mananas</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/baile-mananas"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/baile-mananas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/baile-mananas"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/baile-mananas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/baile-mananas"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/en/clases/baile-mananas</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/baile-mananas"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/baile-mananas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/baile-mananas"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/baile-mananas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/baile-mananas"/>
+  </url>
+  <url>
+    <loc>https://www.farrayscenter.com/fr/clases/baile-mananas</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.farrayscenter.com/es/clases/baile-mananas"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://www.farrayscenter.com/ca/clases/baile-mananas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.farrayscenter.com/en/clases/baile-mananas"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.farrayscenter.com/fr/clases/baile-mananas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.farrayscenter.com/es/clases/baile-mananas"/>
+  </url>
+
   <!-- Dancehall Page -->
   <url>
     <loc>https://www.farrayscenter.com/es/clases/dancehall-barcelona</loc>

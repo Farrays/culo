@@ -26,7 +26,6 @@ const VideoModal: React.FC<VideoModalProps> = memo(function VideoModal({
 }) {
   const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
-  // eslint-disable-next-line no-undef
   const videoRef = useRef<HTMLVideoElement>(null);
 
   // Handle History API para que el botón atrás cierre el modal
@@ -71,7 +70,6 @@ const VideoModal: React.FC<VideoModalProps> = memo(function VideoModal({
   useEffect(() => {
     if (!isOpen) return;
 
-    // eslint-disable-next-line no-undef
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         handleClose();
