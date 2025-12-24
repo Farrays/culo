@@ -65,7 +65,6 @@ export const sanitizeUrl = (url: string): string => {
   const sanitized = sanitizeString(url);
 
   try {
-    // eslint-disable-next-line no-undef
     const parsedUrl = new URL(sanitized);
     // Only allow http and https protocols
     if (parsedUrl.protocol === 'http:' || parsedUrl.protocol === 'https:') {

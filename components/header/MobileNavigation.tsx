@@ -46,7 +46,6 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
   const { t } = useI18n();
   const location = useLocation();
   const menuRef = useRef<HTMLDivElement>(null);
-  // eslint-disable-next-line no-undef
   const firstFocusableRef = useRef<HTMLAnchorElement>(null);
 
   // Accordion states

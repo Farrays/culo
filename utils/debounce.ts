@@ -6,7 +6,7 @@
  * @param wait - The number of milliseconds to delay
  * @returns The debounced function
  */
-/* eslint-disable no-undef, @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export function debounce<T extends (...args: any[]) => any>(
   func: T,
   wait: number = 150
@@ -25,4 +25,4 @@ export function debounce<T extends (...args: any[]) => any>(
     }, wait);
   };
 }
-/* eslint-enable no-undef, @typescript-eslint/no-explicit-any */
+/* eslint-enable @typescript-eslint/no-explicit-any */

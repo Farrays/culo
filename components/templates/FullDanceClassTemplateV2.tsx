@@ -317,7 +317,6 @@ const HeroSectionV2: React.FC<HeroV2Props> = ({
   t,
   setIsLeadModalOpen,
 }) => {
-  // eslint-disable-next-line no-undef
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);

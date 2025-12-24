@@ -39,7 +39,6 @@ const localStorageMock = {
   length: 0,
   key: vi.fn(),
 };
-// eslint-disable-next-line no-undef
 global.localStorage = localStorageMock as unknown as Storage;
 
 // Mock scrollTo

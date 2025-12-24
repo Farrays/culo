@@ -7,7 +7,6 @@
  * Se usa junto con GenericDanceLanding y recibe la misma configuración.
  */
 
-/* eslint-disable no-undef */
 import React, { useEffect, useState, useCallback, useRef, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';

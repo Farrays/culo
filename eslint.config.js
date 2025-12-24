@@ -34,6 +34,15 @@ const browserGlobals = {
   CustomEvent: 'readonly',
   setTimeout: 'readonly',
   clearTimeout: 'readonly',
+  setInterval: 'readonly',
+  clearInterval: 'readonly',
+  URL: 'readonly',
+  HTMLVideoElement: 'readonly',
+  HTMLAnchorElement: 'readonly',
+  HTMLTextAreaElement: 'readonly',
+  HTMLSelectElement: 'readonly',
+  HTMLInputElement: 'readonly',
+  Storage: 'readonly',
 };
 
 // Node globals (for scripts and tests)

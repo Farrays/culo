@@ -102,10 +102,8 @@ const ContactPage: React.FC = () => {
     };
 
     updateRateLimitInfo();
-    // eslint-disable-next-line no-undef
     const interval = setInterval(updateRateLimitInfo, 1000); // Update every second for countdown
 
-    // eslint-disable-next-line no-undef
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [formStatus]);
@@ -135,7 +133,6 @@ const ContactPage: React.FC = () => {
   };
 
   const handleChange = (
-    // eslint-disable-next-line no-undef
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
