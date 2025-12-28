@@ -102,7 +102,15 @@ const generateLandingMetadata = () => {
   return result;
 };
 
-// Auto-generate landing HTML content for SSG
+// CTA text per language for landing pages
+const LANDING_CTA_TEXT = {
+  es: { cta: '¡Reservar Clase GRATIS!', subtext: 'Sin compromiso · Plazas limitadas' },
+  ca: { cta: 'Reservar Classe GRATIS!', subtext: 'Sense compromís · Places limitades' },
+  en: { cta: 'Book FREE Class!', subtext: 'No commitment · Limited spots' },
+  fr: { cta: 'Réserver Cours GRATUIT!', subtext: 'Sans engagement · Places limitées' },
+};
+
+// Auto-generate landing HTML content for SSG (full Hero structure)
 const generateLandingContent = () => {
   const result = {};
   SUPPORTED_LOCALES.forEach(lang => {
@@ -111,7 +119,36 @@ const generateLandingContent = () => {
       const pageKey = slugToPageKey(slug);
       const displayName = LANDING_DISPLAY_NAMES[slug][lang];
       const templates = LANDING_META_TEMPLATES[lang];
-      result[lang][pageKey] = `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">${templates.titleTemplate(displayName)}</h1><p>${templates.descTemplate(displayName)}</p></main>`;
+      const cta = LANDING_CTA_TEXT[lang];
+
+      result[lang][pageKey] = `
+      <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+          <div class="text-2xl font-bold text-primary-accent holographic-text">Farray's Center</div>
+        </div>
+      </header>
+      <main id="main-content" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black">
+        <div class="absolute inset-0 bg-[url('/images/hero/hero-video-poster.webp')] bg-cover bg-center opacity-30"></div>
+        <div class="relative z-10 text-center px-6 py-20 max-w-4xl mx-auto">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6" style="text-shadow: 0 4px 20px rgba(0,0,0,0.8);">
+            ${templates.titleTemplate(displayName)}
+          </h1>
+          <p class="text-xl sm:text-2xl text-white/90 mb-8 max-w-2xl mx-auto">
+            ${templates.descTemplate(displayName)}
+          </p>
+          <div class="flex flex-col items-center gap-4">
+            <a href="#lead-form" class="bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full shadow-lg hover:scale-105 transition-transform animate-pulse">
+              ${cta.cta}
+            </a>
+            <p class="text-white/70 text-sm">${cta.subtext}</p>
+          </div>
+          <div class="mt-12 flex flex-wrap justify-center gap-4 text-white/80 text-sm">
+            <span class="flex items-center gap-2"><span class="text-yellow-400">★★★★★</span> 4.9/5 (500+ reseñas)</span>
+            <span>✓ CID-UNESCO</span>
+            <span>✓ +15.000 alumnos</span>
+          </div>
+        </div>
+      </main>`;
     });
   });
   return result;
