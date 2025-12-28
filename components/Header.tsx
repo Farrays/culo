@@ -440,7 +440,7 @@ const Header: React.FC = () => {
                   />
                 </button>
                 {isDropdownOpen('classes') && (
-                  <div className="absolute top-full left-0 mt-3 bg-black/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl shadow-black/50 min-w-[280px] py-2 z-50 animate-fadeIn overflow-hidden">
+                  <div className="absolute top-full left-0 mt-3 bg-black/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl shadow-black/50 min-w-[280px] py-2 z-50 animate-fadeIn">
                     <Link
                       to={`/${locale}/clases/baile-barcelona`}
                       onClick={closeAllDropdowns}
