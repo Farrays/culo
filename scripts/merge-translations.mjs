@@ -46,7 +46,9 @@ for (const lang of languages) {
 
   let newTranslations;
   try {
-    newTranslations = eval('(' + match[1] + ')');
+    // Use Function constructor instead of eval (slightly safer, no access to local scope)
+    // eslint-disable-next-line no-new-func
+    newTranslations = new Function('return (' + match[1] + ')')();
   } catch (e) {
     console.log(`❌ Could not evaluate translations for ${lang}: ${e.message}`);
     continue;
