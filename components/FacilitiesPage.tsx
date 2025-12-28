@@ -5,6 +5,7 @@ import FacilitiesHero from './FacilitiesHero';
 import FacilityCard, { type FacilityRoom } from './FacilityCard';
 import FacilityFeatureList from './FacilityFeatureList';
 import SocialAmenities from './SocialAmenities';
+import FacilitiesFullGallery from './FacilitiesFullGallery';
 import FAQSection from './FAQSection';
 import AnimateOnScroll from './AnimateOnScroll';
 import AnimatedCounter from './AnimatedCounter';
@@ -15,7 +16,8 @@ const FacilitiesPage: React.FC = () => {
   const baseUrl = 'https://www.farrayscenter.com';
   const pageUrl = `${baseUrl}/${locale}/instalaciones-escuela-baile-barcelona`;
 
-  // 4 salas profesionales
+  // 4 salas profesionales con galerías de imágenes
+  // Mapeo corregido según fotos reales en cada carpeta
   const rooms: FacilityRoom[] = [
     {
       id: 'room-1',
@@ -24,6 +26,8 @@ const FacilitiesPage: React.FC = () => {
       floorTypeKey: 'facilitiesRoom1Floor',
       descKey: 'facilitiesRoom1Desc',
       icon: 'xlarge',
+      areaId: 'salaB', // 120m² usa fotos de carpeta salaB
+      imageCount: 3,
     },
     {
       id: 'room-2',
@@ -32,6 +36,8 @@ const FacilitiesPage: React.FC = () => {
       floorTypeKey: 'facilitiesRoom2Floor',
       descKey: 'facilitiesRoom2Desc',
       icon: 'large',
+      areaId: 'salaD', // Ballet usa fotos de carpeta salaD
+      imageCount: 3,
     },
     {
       id: 'room-3',
@@ -40,6 +46,8 @@ const FacilitiesPage: React.FC = () => {
       floorTypeKey: 'facilitiesRoom3Floor',
       descKey: 'facilitiesRoom3Desc',
       icon: 'large',
+      areaId: 'salaC', // Latinos/Urbanos usa fotos de carpeta salaC
+      imageCount: 3,
     },
     {
       id: 'room-4',
@@ -48,6 +56,8 @@ const FacilitiesPage: React.FC = () => {
       floorTypeKey: 'facilitiesRoom4Floor',
       descKey: 'facilitiesRoom4Desc',
       icon: 'large',
+      areaId: 'salaA', // Fitness usa fotos de carpeta salaA
+      imageCount: 3,
     },
   ];
 
@@ -91,19 +101,25 @@ const FacilitiesPage: React.FC = () => {
     },
   ];
 
-  // Social amenities
+  // Social amenities con galería para el bar
   const amenities = [
     {
       id: 'am-1',
       titleKey: 'facilitiesAm1Title',
       descKey: 'facilitiesAm1Desc',
       icon: 'bar' as const,
+      showGallery: true,
+      galleryAreaId: 'bar' as const,
+      galleryImageCount: 4,
     },
     {
       id: 'am-2',
       titleKey: 'facilitiesAm2Title',
       descKey: 'facilitiesAm2Desc',
       icon: 'locker' as const,
+      showGallery: true,
+      galleryAreaId: 'vestuario' as const,
+      galleryImageCount: 4,
     },
     {
       id: 'am-3',
@@ -192,6 +208,57 @@ const FacilitiesPage: React.FC = () => {
     ],
   };
 
+  // ImageGallery Schema for SEO
+  const imageGallerySchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ImageGallery',
+    name: t('facilitiesGalleryTitle'),
+    description: t('facilitiesGallerySubtitle'),
+    url: pageUrl,
+    about: {
+      '@type': 'Place',
+      name: "Farray's International Dance Center",
+    },
+    image: [
+      {
+        '@type': 'ImageObject',
+        contentUrl: `${baseUrl}/images/salas/img/salaa-1.jpg`,
+        name: 'Sala Principal A - 120m²',
+        description: 'Professional dance studio with floating linoleum floor',
+      },
+      {
+        '@type': 'ImageObject',
+        contentUrl: `${baseUrl}/images/salas/img/salab-1.jpg`,
+        name: 'Sala Ballet B - 80m²',
+        description: 'Ballet studio with mirrors and barres',
+      },
+      {
+        '@type': 'ImageObject',
+        contentUrl: `${baseUrl}/images/salas/img/salac-1.jpg`,
+        name: 'Sala Latinos C - 80m²',
+        description: 'Latin dance studio with parquet floor',
+      },
+      {
+        '@type': 'ImageObject',
+        contentUrl: `${baseUrl}/images/salas/img/salad-1.jpg`,
+        name: 'Sala Fitness D - 40m²',
+        description: 'Fitness room for dancer conditioning',
+      },
+      {
+        '@type': 'ImageObject',
+        contentUrl: `${baseUrl}/images/salas/img/bar1.jpg`,
+        name: 'Bar & Social Area',
+        description: 'Social space for relaxation and community',
+      },
+      {
+        '@type': 'ImageObject',
+        contentUrl: `${baseUrl}/images/salas/img/recepción1.jpg`,
+        name: 'Reception',
+        description: "Welcome area at Farray's Center",
+      },
+    ],
+  };
+
   return (
     <>
       <Helmet>
@@ -221,6 +288,12 @@ const FacilitiesPage: React.FC = () => {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(placeSchema) }}
+      />
+
+      {/* ImageGallery Schema for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(imageGallerySchema) }}
       />
 
       {/* LocalBusiness Schema */}
@@ -289,6 +362,9 @@ const FacilitiesPage: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Full Gallery Section */}
+        <FacilitiesFullGallery />
 
         {/* What Happens in Our Rooms Section */}
         <section className="py-20 md:py-32 bg-primary-dark/10">

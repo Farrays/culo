@@ -56,7 +56,7 @@ export const en = {
   heroSubtitle: 'The Pedagogy That Was Missing',
   heroTagline: 'Dancing is working on your happiness.',
   heroValue:
-    "If you're looking for dance classes in Barcelona where you finally make progress and don't feel like just a number, you're in the right place. With the Farray Method® you learn well, fast and with style… and you have more fun than in any gym.",
+    "You don't need more dance classes. You need the right classes. If you're looking for dance classes in Barcelona where you finally make progress and don't feel like just a number, you're in the right place. With the Farray Method® you learn well, fast and with style… and you have more fun than in any gym.",
   heroCTA1: 'Book Your Trial Class',
   heroCTA2: 'Explore Classes',
   heroScroll: 'Unfold Your Potential',
@@ -8847,8 +8847,8 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   roomRental_room2_holiday_events: 'Classes / events',
   roomRental_room2_holiday_events_price: '€55/hour',
   roomRental_room2_condition: 'Weekends and holidays: minimum 3 hours rental',
-  facilitiesHeroTitle: 'Facilities - Dance School in Barcelona',
-  facilitiesHeroSubtitle: 'Over 700 m² dedicated to dance in the heart of Barcelona',
+  facilitiesHeroTitle: '+700 m² Dedicated to Dance in Barcelona',
+  facilitiesHeroSubtitle: '4 Professional Studios with Elite Equipment',
   facilitiesHeroDesc:
     "Farray's International Dance Center is a dance school in Barcelona with over 700 m² of facilities specifically designed for dance, physical training, and artistic creation.",
   facilitiesHeroLocation: 'Calle Entença 100, Barcelona - Between Plaza España and Sants',
@@ -8922,6 +8922,32 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   facilitiesCTATitle: 'Ready to dance?',
   facilitiesCTAP1: 'Discover for yourself why hundreds of students choose our facilities.',
   facilitiesCTAP2: 'Book your trial class or visit our facilities.',
+
+  // Gallery Section
+  facilitiesGalleryTitle: 'Facilities Gallery',
+  facilitiesGallerySubtitle: 'Discover every corner of our professional facilities',
+  facilitiesGalleryAll: 'All',
+  facilitiesGallerySalas: 'Studios',
+  facilitiesGallerySocial: 'Social Area',
+  facilitiesGalleryServicios: 'Amenities',
+  facilitiesGalleryPhotos: 'photos',
+  facilitiesAreaSalaA: 'Room A',
+  facilitiesAreaSalaB: 'Room B',
+  facilitiesAreaSalaC: 'Room C',
+  facilitiesAreaSalaD: 'Room D',
+  facilitiesAreaBar: 'Bar',
+  facilitiesAreaRecepcion: 'Reception',
+  facilitiesAreaRinconDelux: 'Delux Corner',
+  facilitiesAreaVestuario: 'Changing Rooms',
+
+  // Lightbox
+  lightboxTitle: 'Image gallery',
+  closeLightbox: 'Close gallery',
+  previousImage: 'Previous image',
+  nextImage: 'Next image',
+  toClose: 'to close',
+  toNavigate: 'to navigate',
+
   facilitiesFaqTitle: 'Frequently Asked Questions',
   facilitiesFaqQ1: 'Can I rent a room for private rehearsals?',
   facilitiesFaqA1:
@@ -12014,6 +12040,17 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   teachersPageTeacher14Specialty: 'Afrobeats & Afro Dance',
   teachersPageTeacher14Bio:
     'Afrobeats and contemporary African dance specialist. Energy and rhythm in every class.',
+
+  // New Teachers
+  teachersPageTeacherJuanSpecialty: 'Cuban Salsa',
+  teachersPageTeacherJuanBio:
+    'Cuban Salsa instructor with extensive experience in authentic Cuban style. Passion for transmitting the essence of Caribbean dance.',
+  teachersPageTeacherCrisagSpecialty: 'Urban Dance',
+  teachersPageTeacherCrisagBio:
+    'Professional dancer specialized in contemporary urban styles. Creativity and expression in every movement.',
+  teachersPageTeacherGrechenSpecialty: 'Bachata & Salsa',
+  teachersPageTeacherGrechenBio:
+    'Instructor with experience in Latin dances and Caribbean styles. Refined technique and connection with the music.',
 
   // CTA Section
   teachersPageCtaTitle: 'Ready to Learn from the Best?',

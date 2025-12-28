@@ -139,7 +139,8 @@ export const CONFIG = {
     teachers: {
       path: 'teachers',
       description: 'Teacher profile photos',
-      aspectRatio: '1:1',
+      aspectRatio: '3:4',
+      focus: 'attention',  // Smart crop - focuses on faces
       breakpoints: [320, 640, 960],
     },
     logo: {

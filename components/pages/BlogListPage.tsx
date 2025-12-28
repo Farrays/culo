@@ -131,7 +131,10 @@ const BlogListPage: React.FC = () => {
 
             {/* Title */}
             <AnimateOnScroll>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-neutral mt-8 mb-6">
+              <h1
+                className="text-4xl md:text-5xl lg:text-6xl font-black text-white mt-8 mb-6"
+                style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
+              >
                 {displayTitle}
               </h1>
             </AnimateOnScroll>

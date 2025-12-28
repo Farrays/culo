@@ -5,6 +5,7 @@ import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import LeadCaptureModal from './shared/LeadCaptureModal';
+import OptimizedImage from './OptimizedImage';
 
 // External links for E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)
 const EXTERNAL_LINKS: { pattern: RegExp; url: string; title: string }[] = [
@@ -188,7 +189,7 @@ const YunaisyFarrayPage: React.FC = () => {
         {/* Hero Section - Stellar Background */}
         <section
           id="yunaisy-hero"
-          className="relative text-center py-32 md:py-40 overflow-hidden flex items-center justify-center min-h-[600px]"
+          className="relative text-center py-16 md:py-20 overflow-hidden flex items-center justify-center"
         >
           {/* Background with stars */}
           <div className="absolute inset-0 bg-black">
@@ -200,7 +201,7 @@ const YunaisyFarrayPage: React.FC = () => {
             <Breadcrumb items={breadcrumbItems} textColor="text-neutral/75" />
 
             <AnimateOnScroll>
-              <div className="max-w-6xl mx-auto text-center mb-16">
+              <div className="max-w-6xl mx-auto text-center mb-8">
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text">
                   {t('yunaisyFarray_hero_title')}
                 </h1>
@@ -210,18 +211,21 @@ const YunaisyFarrayPage: React.FC = () => {
               </div>
             </AnimateOnScroll>
 
-            {/* 3D Image Placeholder - Responsive */}
+            {/* Yunaisy Farray Photo */}
             <AnimateOnScroll delay={200}>
-              <div className="max-w-2xl mx-auto mb-8">
-                <div className="relative aspect-[3/4] md:aspect-square rounded-2xl overflow-hidden border-2 border-primary-accent/30 shadow-accent-glow bg-gradient-to-br from-primary-dark/30 to-black">
-                  {/* Placeholder for image - will be replaced with actual photo */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-8xl mb-4 opacity-20">✨</div>
-                      <p className="text-neutral/50 text-sm">Yunaisy Farray Photo</p>
-                      <p className="text-neutral/30 text-xs mt-2">(3D Image Placeholder)</p>
-                    </div>
-                  </div>
+              <div className="max-w-md mx-auto">
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border-2 border-primary-accent/30 shadow-accent-glow">
+                  <OptimizedImage
+                    src="/images/teachers/img/maestra-yunaisy-farray"
+                    alt="Yunaisy Farray - Fundadora y Directora de Farray's International Dance Center"
+                    breakpoints={[320, 640, 960]}
+                    sizes="(max-width: 448px) 100vw, 448px"
+                    aspectRatio="3/4"
+                    objectFit="cover"
+                    objectPosition="center top"
+                    priority="high"
+                    blurDataURL="data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAAAQAwCdASoUABsAPzmQu1g+qaajqAqr0CcJZwDBzBd04sAA/uRi9FDE9N/DyZGXszGzoYQA"
+                  />
                   {/* Holographic overlay effect */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary-accent/10 via-transparent to-primary-dark/10 pointer-events-none"></div>
                 </div>
@@ -231,7 +235,7 @@ const YunaisyFarrayPage: React.FC = () => {
         </section>
 
         {/* Introduction Section */}
-        <section className="pt-8 pb-16 bg-black">
+        <section className="pt-6 pb-10 bg-black">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <AnimateOnScroll delay={100}>
@@ -253,7 +257,7 @@ const YunaisyFarrayPage: React.FC = () => {
         </section>
 
         {/* Raíces en La Habana */}
-        <section className="py-16 bg-gradient-to-b from-black via-primary-dark/5 to-black">
+        <section className="py-10 bg-gradient-to-b from-black via-primary-dark/5 to-black">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <AnimateOnScroll delay={150}>
@@ -272,7 +276,7 @@ const YunaisyFarrayPage: React.FC = () => {
         </section>
 
         {/* Carrera Internacional */}
-        <section className="py-16 bg-black">
+        <section className="py-10 bg-black">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <AnimateOnScroll delay={100}>
@@ -295,7 +299,7 @@ const YunaisyFarrayPage: React.FC = () => {
         </section>
 
         {/* Método Farray */}
-        <section className="py-16 bg-gradient-to-b from-black via-primary-dark/5 to-black">
+        <section className="py-10 bg-gradient-to-b from-black via-primary-dark/5 to-black">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <AnimateOnScroll delay={150}>
@@ -332,7 +336,7 @@ const YunaisyFarrayPage: React.FC = () => {
         </section>
 
         {/* Barcelona */}
-        <section className="py-16 bg-black">
+        <section className="py-10 bg-black">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <AnimateOnScroll delay={100}>
@@ -357,7 +361,7 @@ const YunaisyFarrayPage: React.FC = () => {
         </section>
 
         {/* Igualdad y Mujer */}
-        <section className="py-16 bg-gradient-to-b from-black via-primary-dark/5 to-black">
+        <section className="py-10 bg-gradient-to-b from-black via-primary-dark/5 to-black">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <AnimateOnScroll delay={150}>
@@ -393,7 +397,7 @@ const YunaisyFarrayPage: React.FC = () => {
         </section>
 
         {/* Pionera Online */}
-        <section className="py-16 bg-black">
+        <section className="py-10 bg-black">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <AnimateOnScroll delay={100}>
@@ -412,7 +416,7 @@ const YunaisyFarrayPage: React.FC = () => {
         </section>
 
         {/* Compromiso Social */}
-        <section className="py-16 bg-gradient-to-b from-black via-primary-dark/5 to-black">
+        <section className="py-10 bg-gradient-to-b from-black via-primary-dark/5 to-black">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <AnimateOnScroll delay={150}>
@@ -461,7 +465,7 @@ const YunaisyFarrayPage: React.FC = () => {
         </section>
 
         {/* Hoy - Closing Section */}
-        <section className="py-16 bg-black">
+        <section className="py-10 bg-black">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <AnimateOnScroll delay={100}>
@@ -488,7 +492,7 @@ const YunaisyFarrayPage: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="relative py-20 md:py-32 overflow-hidden">
+        <section className="relative py-12 md:py-16 overflow-hidden">
           {/* Background with stars */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>

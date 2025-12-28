@@ -404,7 +404,10 @@ const CalendarPage: React.FC = () => {
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-b from-black via-primary-dark/20 to-black">
         <div className="container mx-auto px-6 text-center">
           <AnimateOnScroll>
-            <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-neutral mb-4 holographic-text">
+            <h1
+              className="text-4xl md:text-6xl font-black tracking-tighter text-white mb-4"
+              style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
+            >
               {t('calendar_page_heading')}
             </h1>
           </AnimateOnScroll>

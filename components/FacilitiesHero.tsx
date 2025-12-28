@@ -1,5 +1,6 @@
 import React from 'react';
 import AnimateOnScroll from './AnimateOnScroll';
+import OptimizedImage from './OptimizedImage';
 
 interface FacilitiesHeroProps {
   t: (key: string) => string;
@@ -12,22 +13,39 @@ const FacilitiesHero: React.FC<FacilitiesHeroProps> = ({ t, locale: _locale }) =
       id="facilities-hero"
       className="relative text-center py-32 md:py-40 overflow-hidden flex items-center justify-center min-h-[600px]"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-black">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <OptimizedImage
+          src="/images/salas/img/salab-1"
+          altKey="facilities.hero"
+          sizes="100vw"
+          className="w-full h-full object-cover"
+          priority="high"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80"></div>
       </div>
 
       <div className="relative z-20 container mx-auto px-6">
         <AnimateOnScroll>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text">
+          <h1
+            className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 text-white"
+            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
+          >
             {t('facilitiesHeroTitle')}
           </h1>
-          <p className="text-3xl md:text-4xl font-bold mb-4 holographic-text">
+          <p
+            className="text-xl sm:text-3xl md:text-4xl font-bold mb-4 text-white"
+            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
+          >
             {t('facilitiesHeroSubtitle')}
           </p>
           <p className="max-w-4xl mx-auto text-xl md:text-2xl text-neutral/90 mt-8 mb-6 leading-relaxed">
             {t('facilitiesHeroDesc')}
+          </p>
+          <p className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight holographic-text mb-6">
+            4 Salas Profesionales con Equipamiento de Élite
           </p>
           <p className="text-lg md:text-xl text-neutral/90 italic mb-12">
             {t('facilitiesHeroLocation')}

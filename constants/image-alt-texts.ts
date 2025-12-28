@@ -383,18 +383,148 @@ export const IMAGE_ALT_TEXTS = {
   // TEACHERS
   // ==========================================================================
   teachers: {
-    yunaisy: {
+    'yunaisy-farray': {
       portrait: {
         es: 'Yunaisy Farray - Directora y Maestra CID-UNESCO de danza en Barcelona',
         en: 'Yunaisy Farray - Director and CID-UNESCO Dance Master in Barcelona',
         ca: 'Yunaisy Farray - Directora i Mestra CID-UNESCO de dansa a Barcelona',
         fr: 'Yunaisy Farray - Directrice et Maître de danse CID-UNESCO à Barcelone',
       },
-      action: {
-        es: 'Yunaisy Farray enseñando coreografía de baile cubano',
-        en: 'Yunaisy Farray teaching Cuban dance choreography',
-        ca: 'Yunaisy Farray ensenyant coreografia de ball cubà',
-        fr: 'Yunaisy Farray enseignant une chorégraphie de danse cubaine',
+    },
+    'daniel-sene': {
+      portrait: {
+        es: 'Daniel Sené - Profesor de Ballet Clásico en Barcelona',
+        en: 'Daniel Sené - Classical Ballet Instructor in Barcelona',
+        ca: 'Daniel Sené - Professor de Ballet Clàssic a Barcelona',
+        fr: 'Daniel Sené - Professeur de Ballet Classique à Barcelone',
+      },
+    },
+    'alejandro-minoso': {
+      portrait: {
+        es: 'Alejandro Miñoso - Profesor de Ballet y Afro Jazz en Barcelona',
+        en: 'Alejandro Miñoso - Ballet and Afro Jazz Instructor in Barcelona',
+        ca: 'Alejandro Miñoso - Professor de Ballet i Afro Jazz a Barcelona',
+        fr: 'Alejandro Miñoso - Professeur de Ballet et Afro Jazz à Barcelone',
+      },
+    },
+    'sandra-gomez': {
+      portrait: {
+        es: 'Sandra Gómez - Instructora de Dancehall y Twerk en Barcelona',
+        en: 'Sandra Gómez - Dancehall and Twerk Instructor in Barcelona',
+        ca: 'Sandra Gómez - Instructora de Dancehall i Twerk a Barcelona',
+        fr: 'Sandra Gómez - Instructrice de Dancehall et Twerk à Barcelone',
+      },
+    },
+    'isabel-lopez': {
+      portrait: {
+        es: 'Isabel López - Instructora de Dancehall en Barcelona',
+        en: 'Isabel López - Dancehall Instructor in Barcelona',
+        ca: 'Isabel López - Instructora de Dancehall a Barcelona',
+        fr: 'Isabel López - Instructrice de Dancehall à Barcelone',
+      },
+    },
+    'marcos-martinez': {
+      portrait: {
+        es: 'Marcos Martínez - Instructor de Hip Hop y Breaking en Barcelona',
+        en: 'Marcos Martínez - Hip Hop and Breaking Instructor in Barcelona',
+        ca: 'Marcos Martínez - Instructor de Hip Hop i Breaking a Barcelona',
+        fr: 'Marcos Martínez - Instructeur de Hip Hop et Breaking à Barcelone',
+      },
+    },
+    'yasmina-fernandez': {
+      portrait: {
+        es: 'Yasmina Fernández - Profesora de Salsa Cubana en Barcelona',
+        en: 'Yasmina Fernández - Cuban Salsa Instructor in Barcelona',
+        ca: 'Yasmina Fernández - Professora de Salsa Cubana a Barcelona',
+        fr: 'Yasmina Fernández - Professeure de Salsa Cubaine à Barcelone',
+      },
+    },
+    'lia-valdes': {
+      portrait: {
+        es: 'Lia Valdes - Maestra de Salsa Cubana en Barcelona',
+        en: 'Lia Valdes - Cuban Salsa Master in Barcelona',
+        ca: 'Lia Valdes - Mestra de Salsa Cubana a Barcelona',
+        fr: 'Lia Valdes - Maître de Salsa Cubaine à Barcelone',
+      },
+    },
+    'iroel-bastarreche': {
+      portrait: {
+        es: 'Iroel Bastarreche - Profesor de Salsa Cubana en Barcelona',
+        en: 'Iroel Bastarreche - Cuban Salsa Instructor in Barcelona',
+        ca: 'Iroel Bastarreche - Professor de Salsa Cubana a Barcelona',
+        fr: 'Iroel Bastarreche - Professeur de Salsa Cubaine à Barcelone',
+      },
+    },
+    'charlie-breezy': {
+      portrait: {
+        es: 'Charlie Breezy - Profesor de Afro Contemporáneo y Hip Hop en Barcelona',
+        en: 'Charlie Breezy - Afro Contemporary and Hip Hop Instructor in Barcelona',
+        ca: "Charlie Breezy - Professor d'Afro Contemporani i Hip Hop a Barcelona",
+        fr: "Charlie Breezy - Professeur d'Afro Contemporain et Hip Hop à Barcelone",
+      },
+    },
+    'eugenia-trujillo': {
+      portrait: {
+        es: 'Eugenia Trujillo - Campeona Mundial Salsa LA en Barcelona',
+        en: 'Eugenia Trujillo - World Salsa LA Champion in Barcelona',
+        ca: 'Eugenia Trujillo - Campiona Mundial Salsa LA a Barcelona',
+        fr: 'Eugenia Trujillo - Championne Mondiale Salsa LA à Barcelone',
+      },
+    },
+    'mathias-font': {
+      portrait: {
+        es: 'Mathias Font - Instructor de Bachata Sensual en Barcelona',
+        en: 'Mathias Font - Sensual Bachata Instructor in Barcelona',
+        ca: 'Mathias Font - Instructor de Bachata Sensual a Barcelona',
+        fr: 'Mathias Font - Instructeur de Bachata Sensual à Barcelone',
+      },
+    },
+    'carlos-canto': {
+      portrait: {
+        es: 'Carlos Canto - Instructor de Bachata Moderna en Barcelona',
+        en: 'Carlos Canto - Modern Bachata Instructor in Barcelona',
+        ca: 'Carlos Canto - Instructor de Bachata Moderna a Barcelona',
+        fr: 'Carlos Canto - Instructeur de Bachata Moderna à Barcelone',
+      },
+    },
+    noemi: {
+      portrait: {
+        es: 'Noemi - Instructora de Bachata Lady Style en Barcelona',
+        en: 'Noemi - Bachata Lady Style Instructor in Barcelona',
+        ca: 'Noemi - Instructora de Bachata Lady Style a Barcelona',
+        fr: 'Noemi - Instructrice de Bachata Lady Style à Barcelone',
+      },
+    },
+    redbhlue: {
+      portrait: {
+        es: 'Redbhlue - Instructor de Afrobeats y Afro Dance en Barcelona',
+        en: 'Redbhlue - Afrobeats and Afro Dance Instructor in Barcelona',
+        ca: "Redbhlue - Instructor d'Afrobeats i Afro Dance a Barcelona",
+        fr: "Redbhlue - Instructeur d'Afrobeats et Afro Dance à Barcelone",
+      },
+    },
+    'juan-alvarez': {
+      portrait: {
+        es: 'Juan Alvarez - Profesor de Salsa Cubana en Barcelona',
+        en: 'Juan Alvarez - Cuban Salsa Instructor in Barcelona',
+        ca: 'Juan Alvarez - Professor de Salsa Cubana a Barcelona',
+        fr: 'Juan Alvarez - Professeur de Salsa Cubaine à Barcelone',
+      },
+    },
+    crisag: {
+      portrait: {
+        es: 'CrisAg - Instructora de Urban Dance en Barcelona',
+        en: 'CrisAg - Urban Dance Instructor in Barcelona',
+        ca: "CrisAg - Instructora d'Urban Dance a Barcelona",
+        fr: "CrisAg - Instructrice d'Urban Dance à Barcelone",
+      },
+    },
+    'grechen-mendez': {
+      portrait: {
+        es: 'Grechen Méndez - Instructora de Bachata y Salsa en Barcelona',
+        en: 'Grechen Méndez - Bachata and Salsa Instructor in Barcelona',
+        ca: 'Grechen Méndez - Instructora de Bachata i Salsa a Barcelona',
+        fr: 'Grechen Méndez - Instructrice de Bachata et Salsa à Barcelone',
       },
     },
     default: {
@@ -1325,6 +1455,209 @@ export const IMAGE_ALT_TEXTS = {
         ca: "Ballarins realitzant condicionament físic a Barcelona - Preparació professional a Farray's Center",
         fr: "Danseurs effectuant du conditionnement physique à Barcelone - Préparation professionnelle chez Farray's Center",
       },
+    },
+  },
+
+  // ==========================================================================
+  // FACILITIES - Salas de baile e instalaciones
+  // ==========================================================================
+  facilities: {
+    // Sala A - Sala Principal (120 m²)
+    salaA: {
+      gallery: [
+        {
+          es: "Sala A principal de Farray's Center Barcelona - 120 m² con suelo flotante profesional y espejos de pared completa",
+          en: "Farray's Center Barcelona main Room A - 120 sqm with professional floating floor and full wall mirrors",
+          ca: "Sala A principal de Farray's Center Barcelona - 120 m² amb terra flotant professional i miralls de paret completa",
+          fr: "Salle A principale de Farray's Center Barcelone - 120 m² avec plancher flottant professionnel et miroirs muraux complets",
+        },
+        {
+          es: "Vista lateral de la Sala A con sistema de audio profesional y aire acondicionado - Farray's Center Barcelona",
+          en: "Side view of Room A with professional audio system and air conditioning - Farray's Center Barcelona",
+          ca: "Vista lateral de la Sala A amb sistema d'àudio professional i aire condicionat - Farray's Center Barcelona",
+          fr: "Vue latérale de la Salle A avec système audio professionnel et climatisation - Farray's Center Barcelone",
+        },
+        {
+          es: 'Detalle del suelo flotante profesional y barras de ballet de la Sala A - Instalaciones de danza Barcelona',
+          en: 'Detail of Room A professional floating floor and ballet barres - Dance facilities Barcelona',
+          ca: 'Detall del terra flotant professional i barres de ballet de la Sala A - Instal·lacions de dansa Barcelona',
+          fr: 'Détail du plancher flottant professionnel et barres de ballet de la Salle A - Installations de danse Barcelone',
+        },
+      ],
+    },
+    // Sala B (80 m²)
+    salaB: {
+      gallery: [
+        {
+          es: "Sala B de Farray's Center Barcelona - 80 m² con espejos y equipamiento profesional para clases de baile",
+          en: "Farray's Center Barcelona Room B - 80 sqm with mirrors and professional equipment for dance classes",
+          ca: "Sala B de Farray's Center Barcelona - 80 m² amb miralls i equipament professional per a classes de ball",
+          fr: "Salle B de Farray's Center Barcelone - 80 m² avec miroirs et équipement professionnel pour cours de danse",
+        },
+        {
+          es: 'Vista de la Sala B con sistema de iluminación profesional - Academia de baile Barcelona',
+          en: 'View of Room B with professional lighting system - Dance academy Barcelona',
+          ca: "Vista de la Sala B amb sistema d'il·luminació professional - Acadèmia de ball Barcelona",
+          fr: "Vue de la Salle B avec système d'éclairage professionnel - Académie de danse Barcelone",
+        },
+        {
+          es: "Sala B preparada para clases grupales de danza - Farray's International Dance Center",
+          en: "Room B set up for group dance classes - Farray's International Dance Center",
+          ca: "Sala B preparada per a classes grupals de dansa - Farray's International Dance Center",
+          fr: "Salle B préparée pour cours de danse en groupe - Farray's International Dance Center",
+        },
+      ],
+    },
+    // Sala C (60 m²)
+    salaC: {
+      gallery: [
+        {
+          es: "Sala C de Farray's Center Barcelona - 60 m² ideal para clases reducidas y ensayos privados",
+          en: "Farray's Center Barcelona Room C - 60 sqm ideal for small classes and private rehearsals",
+          ca: "Sala C de Farray's Center Barcelona - 60 m² ideal per a classes reduïdes i assajos privats",
+          fr: "Salle C de Farray's Center Barcelone - 60 m² idéale pour petits cours et répétitions privées",
+        },
+        {
+          es: 'Interior de la Sala C con espejos de cuerpo entero - Espacio para coreografías Barcelona',
+          en: 'Interior of Room C with full-length mirrors - Choreography space Barcelona',
+          ca: 'Interior de la Sala C amb miralls de cos sencer - Espai per a coreografies Barcelona',
+          fr: 'Intérieur de la Salle C avec miroirs en pied - Espace pour chorégraphies Barcelone',
+        },
+        {
+          es: 'Sala C con equipamiento de audio y climatización - Instalaciones profesionales de danza',
+          en: 'Room C with audio equipment and climate control - Professional dance facilities',
+          ca: "Sala C amb equipament d'àudio i climatització - Instal·lacions professionals de dansa",
+          fr: 'Salle C avec équipement audio et climatisation - Installations de danse professionnelles',
+        },
+      ],
+    },
+    // Sala D (50 m²)
+    salaD: {
+      gallery: [
+        {
+          es: "Sala D de Farray's Center Barcelona - 50 m² perfecta para clases privadas y workshops especializados",
+          en: "Farray's Center Barcelona Room D - 50 sqm perfect for private classes and specialized workshops",
+          ca: "Sala D de Farray's Center Barcelona - 50 m² perfecta per a classes privades i workshops especialitzats",
+          fr: "Salle D de Farray's Center Barcelone - 50 m² parfaite pour cours privés et ateliers spécialisés",
+        },
+        {
+          es: 'Vista de la Sala D con suelo de alta calidad para baile - Academia de danza Barcelona',
+          en: 'View of Room D with high-quality dance flooring - Dance academy Barcelona',
+          ca: "Vista de la Sala D amb terra d'alta qualitat per a ball - Acadèmia de dansa Barcelona",
+          fr: 'Vue de la Salle D avec sol de haute qualité pour la danse - Académie de danse Barcelone',
+        },
+        {
+          es: 'Sala D equipada para entrenamientos individuales y clases en grupo pequeño',
+          en: 'Room D equipped for individual training and small group classes',
+          ca: 'Sala D equipada per a entrenaments individuals i classes en grup petit',
+          fr: 'Salle D équipée pour entraînements individuels et cours en petit groupe',
+        },
+      ],
+    },
+    // Bar y zona social
+    bar: {
+      gallery: [
+        {
+          es: "Bar y zona social de Farray's Center Barcelona - Espacio de descanso y networking para bailarines",
+          en: "Farray's Center Barcelona bar and social area - Rest and networking space for dancers",
+          ca: "Bar i zona social de Farray's Center Barcelona - Espai de descans i networking per a ballarins",
+          fr: "Bar et espace social de Farray's Center Barcelone - Espace de repos et networking pour danseurs",
+        },
+        {
+          es: 'Zona de descanso con servicio de bebidas y snacks en la academia de baile Barcelona',
+          en: 'Rest area with drinks and snacks service at the Barcelona dance academy',
+          ca: "Zona de descans amb servei de begudes i snacks a l'acadèmia de ball Barcelona",
+          fr: "Zone de repos avec service de boissons et snacks à l'académie de danse Barcelone",
+        },
+        {
+          es: "Área social de Farray's Center con WiFi gratuito y ambiente acogedor para estudiantes",
+          en: "Farray's Center social area with free WiFi and welcoming atmosphere for students",
+          ca: "Àrea social de Farray's Center amb WiFi gratuït i ambient acollidor per a estudiants",
+          fr: "Espace social de Farray's Center avec WiFi gratuit et ambiance accueillante pour étudiants",
+        },
+        {
+          es: "Detalle del bar con decoración tropical y vibes caribeñas - Farray's International Dance Center",
+          en: "Bar detail with tropical decor and Caribbean vibes - Farray's International Dance Center",
+          ca: "Detall del bar amb decoració tropical i vibes caribenyes - Farray's International Dance Center",
+          fr: "Détail du bar avec décoration tropicale et ambiance caribéenne - Farray's International Dance Center",
+        },
+      ],
+    },
+    // Recepción
+    recepcion: {
+      gallery: [
+        {
+          es: "Recepción de Farray's International Dance Center Barcelona - Atención personalizada y bienvenida",
+          en: "Farray's International Dance Center Barcelona reception - Personalized attention and welcome",
+          ca: "Recepció de Farray's International Dance Center Barcelona - Atenció personalitzada i benvinguda",
+          fr: "Réception de Farray's International Dance Center Barcelone - Attention personnalisée et bienvenue",
+        },
+        {
+          es: 'Entrada y área de recepción con información de clases y horarios - Academia de baile Barcelona',
+          en: 'Entrance and reception area with class information and schedules - Dance academy Barcelona',
+          ca: 'Entrada i àrea de recepció amb informació de classes i horaris - Acadèmia de ball Barcelona',
+          fr: 'Entrée et zone de réception avec informations sur les cours et horaires - Académie de danse Barcelone',
+        },
+      ],
+    },
+    // Rincón Delux
+    rinconDelux: {
+      gallery: [
+        {
+          es: "Rincón Delux de Farray's Center - Espacio premium para eventos exclusivos y sesiones VIP",
+          en: "Farray's Center Delux Corner - Premium space for exclusive events and VIP sessions",
+          ca: "Racó Delux de Farray's Center - Espai premium per a esdeveniments exclusius i sessions VIP",
+          fr: "Coin Delux de Farray's Center - Espace premium pour événements exclusifs et sessions VIP",
+        },
+        {
+          es: 'Zona Delux con ambientación especial y equipamiento de alta gama - Instalaciones Barcelona',
+          en: 'Delux zone with special ambiance and high-end equipment - Barcelona facilities',
+          ca: "Zona Delux amb ambientació especial i equipament d'alta gamma - Instal·lacions Barcelona",
+          fr: 'Zone Delux avec ambiance spéciale et équipement haut de gamme - Installations Barcelone',
+        },
+      ],
+    },
+    // Vestuarios
+    vestuario: {
+      gallery: [
+        {
+          es: "Vestuarios modernos de Farray's Center Barcelona - Taquillas seguras y zona de cambio amplia",
+          en: "Modern changing rooms at Farray's Center Barcelona - Secure lockers and spacious changing area",
+          ca: "Vestuaris moderns de Farray's Center Barcelona - Taquilles segures i zona de canvi àmplia",
+          fr: "Vestiaires modernes de Farray's Center Barcelone - Casiers sécurisés et vaste zone de change",
+        },
+        {
+          es: 'Área de taquillas individuales en vestuario de academia de baile Barcelona - Instalaciones limpias y equipadas',
+          en: 'Individual locker area in Barcelona dance academy changing room - Clean and well-equipped facilities',
+          ca: "Àrea de taquilles individuals al vestuari d'acadèmia de ball Barcelona - Instal·lacions netes i equipades",
+          fr: "Espace de casiers individuels dans le vestiaire de l'académie de danse Barcelone - Installations propres et équipées",
+        },
+        {
+          es: "Zona de bancos y espejo en vestuarios de Farray's International Dance Center - Comodidad para bailarines",
+          en: "Bench and mirror area in Farray's International Dance Center changing rooms - Comfort for dancers",
+          ca: "Zona de bancs i mirall als vestuaris de Farray's International Dance Center - Comoditat per a ballarins",
+          fr: "Zone de bancs et miroir dans les vestiaires de Farray's International Dance Center - Confort pour les danseurs",
+        },
+        {
+          es: 'Interior de vestuario profesional en escuela de baile Barcelona - Ambiente limpio y bien iluminado',
+          en: 'Professional changing room interior at Barcelona dance school - Clean and well-lit environment',
+          ca: 'Interior de vestuari professional a escola de ball Barcelona - Ambient net i ben il·luminat',
+          fr: "Intérieur du vestiaire professionnel à l'école de danse Barcelone - Environnement propre et bien éclairé",
+        },
+      ],
+    },
+    // Alt texts generales para la página
+    hero: {
+      es: "Instalaciones profesionales de Farray's International Dance Center Barcelona - 4 salas de baile con más de 700 m²",
+      en: "Farray's International Dance Center Barcelona professional facilities - 4 dance studios with over 700 sqm",
+      ca: "Instal·lacions professionals de Farray's International Dance Center Barcelona - 4 sales de ball amb més de 700 m²",
+      fr: "Installations professionnelles de Farray's International Dance Center Barcelone - 4 salles de danse de plus de 700 m²",
+    },
+    og: {
+      es: "Instalaciones de Farray's Center Barcelona - Salas de baile profesionales con equipamiento de primer nivel",
+      en: "Farray's Center Barcelona Facilities - Professional dance studios with top-level equipment",
+      ca: "Instal·lacions de Farray's Center Barcelona - Sales de ball professionals amb equipament de primer nivell",
+      fr: "Installations de Farray's Center Barcelone - Salles de danse professionnelles avec équipement de premier niveau",
     },
   },
 } as const;

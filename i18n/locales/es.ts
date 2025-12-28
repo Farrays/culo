@@ -3623,8 +3623,8 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
     'Más de 700 m² de instalaciones profesionales para danza en Barcelona. 4 salas equipadas con suelos especializados, espejos, aire acondicionado, vestuarios y zona social. Centro acreditado CID-UNESCO.',
 
   // Hero Section
-  facilitiesHeroTitle: 'Instalaciones - Escuela de Baile en Barcelona',
-  facilitiesHeroSubtitle: 'Más de 700 m² dedicados a la danza en el corazón de Barcelona',
+  facilitiesHeroTitle: '+700 m² Dedicados al Baile en Barcelona',
+  facilitiesHeroSubtitle: '4 Salas Profesionales con Equipamiento de Élite',
   facilitiesHeroDesc:
     "Farray's International Dance Center es una escuela de baile en Barcelona con más de 700 m² de instalaciones diseñadas específicamente para la danza, el entrenamiento físico y la creación artística.",
   facilitiesHeroLocation: 'Calle Entença 100, Barcelona - Entre Plaza España y Sants',
@@ -3761,6 +3761,31 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   facilitiesCTAP1:
     "Si buscas una academia de baile en Barcelona con instalaciones profesionales, amplias y cuidadas, Farray's International Dance Center te ofrece un espacio de referencia donde entrenar, crear proyectos artísticos y disfrutar de la danza en las mejores condiciones.",
   facilitiesCTAP2: 'Ven a conocernos. Te enseñamos las instalaciones sin compromiso.',
+
+  // Gallery Section
+  facilitiesGalleryTitle: 'Galería de Instalaciones',
+  facilitiesGallerySubtitle: 'Descubre cada rincón de nuestras instalaciones profesionales',
+  facilitiesGalleryAll: 'Todas',
+  facilitiesGallerySalas: 'Salas',
+  facilitiesGallerySocial: 'Zona Social',
+  facilitiesGalleryServicios: 'Servicios',
+  facilitiesGalleryPhotos: 'fotos',
+  facilitiesAreaSalaA: 'Sala A',
+  facilitiesAreaSalaB: 'Sala B',
+  facilitiesAreaSalaC: 'Sala C',
+  facilitiesAreaSalaD: 'Sala D',
+  facilitiesAreaBar: 'Bar',
+  facilitiesAreaRecepcion: 'Recepción',
+  facilitiesAreaRinconDelux: 'Rincón Delux',
+  facilitiesAreaVestuario: 'Vestuarios',
+
+  // Lightbox
+  lightboxTitle: 'Galería de imágenes',
+  closeLightbox: 'Cerrar galería',
+  previousImage: 'Imagen anterior',
+  nextImage: 'Siguiente imagen',
+  toClose: 'para cerrar',
+  toNavigate: 'para navegar',
 
   // FAQ Section
   facilitiesFaqTitle: 'Preguntas Frecuentes sobre las Instalaciones de nuestra academia de baile',
@@ -13374,6 +13399,17 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   teachersPageTeacher14Specialty: 'Afrobeats & Afro Dance',
   teachersPageTeacher14Bio:
     'Especialista en Afrobeats y danzas africanas contemporáneas. Energía y ritmo en cada clase.',
+
+  // New Teachers
+  teachersPageTeacherJuanSpecialty: 'Salsa Cubana',
+  teachersPageTeacherJuanBio:
+    'Instructor de Salsa Cubana con amplia experiencia en el estilo cubano auténtico. Pasión por transmitir la esencia del baile caribeño.',
+  teachersPageTeacherCrisagSpecialty: 'Urban Dance',
+  teachersPageTeacherCrisagBio:
+    'Bailarina profesional especializada en estilos urbanos contemporáneos. Creatividad y expresión en cada movimiento.',
+  teachersPageTeacherGrechenSpecialty: 'Bachata & Salsa',
+  teachersPageTeacherGrechenBio:
+    'Instructora con experiencia en bailes latinos y estilos caribeños. Técnica refinada y conexión con la música.',
 
   // CTA Section
   teachersPageCtaTitle: '¿Listo para Aprender de los Mejores?',

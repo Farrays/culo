@@ -1,0 +1,95 @@
+{
+  "id": "profesora-yasmina-fernandez",
+  "className": "teachers",
+  "originalFile": "Profesora Yasmina Fernández.jpg",
+  "original": {
+    "width": 1080,
+    "height": 1080,
+    "aspectRatio": "1.0000",
+    "format": "jpeg",
+    "space": "srgb",
+    "channels": 3,
+    "hasAlpha": false
+  },
+  "placeholder": {
+    "lqip": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAABQAwCdASoUABQAPzmQv1e+qackqAqr0CcJaQAARL8TYpJ3AAD+6riHr0mkkDylRD47jKCgAAA=",
+    "dominantColor": "#c3b9b4",
+    "svg": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23c3b9b4%22%2F%3E%3C%2Fsvg%3E"
+  },
+  "basePath": "/images/classes/teachers/img/teachers-profesora-yasmina-fernandez-barcelona",
+  "variants": [
+    {
+      "width": 320,
+      "height": 427,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesora-yasmina-fern-ndez_320.jpg",
+      "size": 19377
+    },
+    {
+      "width": 320,
+      "height": 427,
+      "format": "webp",
+      "path": "/images/teachers/img/profesora-yasmina-fern-ndez_320.webp",
+      "size": 17238
+    },
+    {
+      "width": 320,
+      "height": 427,
+      "format": "avif",
+      "path": "/images/teachers/img/profesora-yasmina-fern-ndez_320.avif",
+      "size": 18098
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesora-yasmina-fern-ndez_640.jpg",
+      "size": 61038
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "avif",
+      "path": "/images/teachers/img/profesora-yasmina-fern-ndez_640.avif",
+      "size": 54301
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "webp",
+      "path": "/images/teachers/img/profesora-yasmina-fern-ndez_640.webp",
+      "size": 53030
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesora-yasmina-fern-ndez_960.jpg",
+      "size": 89085
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "webp",
+      "path": "/images/teachers/img/profesora-yasmina-fern-ndez_960.webp",
+      "size": 76440
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "avif",
+      "path": "/images/teachers/img/profesora-yasmina-fern-ndez_960.avif",
+      "size": 74766
+    }
+  ],
+  "srcSets": {
+    "avif": "/images/teachers/img/profesora-yasmina-fern-ndez_320.avif 320w, /images/teachers/img/profesora-yasmina-fern-ndez_640.avif 640w, /images/teachers/img/profesora-yasmina-fern-ndez_960.avif 960w",
+    "webp": "/images/teachers/img/profesora-yasmina-fern-ndez_320.webp 320w, /images/teachers/img/profesora-yasmina-fern-ndez_640.webp 640w, /images/teachers/img/profesora-yasmina-fern-ndez_960.webp 960w",
+    "jpeg": "/images/teachers/img/profesora-yasmina-fern-ndez_320.jpg 320w, /images/teachers/img/profesora-yasmina-fern-ndez_640.jpg 640w, /images/teachers/img/profesora-yasmina-fern-ndez_960.jpg 960w"
+  },
+  "defaultSrc": "/images/teachers/img/profesora-yasmina-fern-ndez_320.jpg",
+  "generated": {
+    "at": "2025-12-28T07:39:18.876Z",
+    "version": "2.0.0"
+  }
+}

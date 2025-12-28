@@ -1,11 +1,18 @@
 import React from 'react';
 import AnimateOnScroll from './AnimateOnScroll';
+import FacilityGallery from './FacilityGallery';
 
 interface Amenity {
   id: string;
   titleKey: string;
   descKey: string;
   icon: 'bar' | 'locker' | 'wifi';
+  /** Optional: Show gallery instead of icon */
+  showGallery?: boolean;
+  /** Gallery area ID if showGallery is true */
+  galleryAreaId?: 'bar' | 'recepcion' | 'rinconDelux' | 'vestuario';
+  /** Number of gallery images */
+  galleryImageCount?: number;
 }
 
 interface SocialAmenitiesProps {
@@ -49,12 +56,28 @@ const SocialAmenities: React.FC<SocialAmenitiesProps> = ({ amenities, t }) => {
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {amenities.map((amenity, index) => (
             <AnimateOnScroll key={amenity.id} delay={index * 100} className="[perspective:1000px]">
-              <div className="group h-full p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
-                <div className="mb-6 flex justify-center">{iconComponents[amenity.icon]}</div>
-                <h3 className="text-2xl font-bold text-neutral mb-4 text-center">
-                  {t(amenity.titleKey)}
-                </h3>
-                <p className="text-neutral/90 leading-relaxed text-center">{t(amenity.descKey)}</p>
+              <div className="group h-full bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)] hover:shadow-accent-glow overflow-hidden">
+                {/* Show gallery for bar, icon for others */}
+                {amenity.showGallery && amenity.galleryAreaId && amenity.galleryImageCount ? (
+                  <FacilityGallery
+                    areaId={amenity.galleryAreaId}
+                    imageCount={amenity.galleryImageCount}
+                    compact
+                    className="aspect-[16/10]"
+                  />
+                ) : (
+                  <div className="pt-8 pb-4 flex justify-center">
+                    {iconComponents[amenity.icon]}
+                  </div>
+                )}
+                <div className="p-6 pt-4">
+                  <h3 className="text-2xl font-bold text-neutral mb-4 text-center">
+                    {t(amenity.titleKey)}
+                  </h3>
+                  <p className="text-neutral/90 leading-relaxed text-center">
+                    {t(amenity.descKey)}
+                  </p>
+                </div>
               </div>
             </AnimateOnScroll>
           ))}

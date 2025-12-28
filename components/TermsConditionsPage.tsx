@@ -58,7 +58,10 @@ const TermsConditionsPage: React.FC = () => {
 
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto text-center">
-                <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-neutral mb-4">
+                <h1
+                  className="text-4xl md:text-6xl font-black tracking-tighter text-white mb-4"
+                  style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
+                >
                   {t('terms_hero_title')}
                 </h1>
                 <p className="text-lg text-neutral/70">

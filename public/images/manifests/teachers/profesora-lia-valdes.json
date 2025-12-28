@@ -1,0 +1,96 @@
+{
+  "id": "profesora-lia-valdes",
+  "className": "teachers",
+  "originalFile": "Profesora Lia Valdes.jpg",
+  "original": {
+    "width": 5504,
+    "height": 8256,
+    "aspectRatio": "0.6667",
+    "format": "jpeg",
+    "space": "srgb",
+    "channels": 3,
+    "hasAlpha": false,
+    "orientation": 1
+  },
+  "placeholder": {
+    "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAwAwCdASoUAB4APzmIvla+sKaksBgIA9AnCWkAzfwWxUuAAP7s9D5GsZ1+BVeQB0WRTjFY8NgAAA==",
+    "dominantColor": "#b4aba6",
+    "svg": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23b4aba6%22%2F%3E%3C%2Fsvg%3E"
+  },
+  "basePath": "/images/classes/teachers/img/teachers-profesora-lia-valdes-barcelona",
+  "variants": [
+    {
+      "width": 320,
+      "height": 427,
+      "format": "webp",
+      "path": "/images/teachers/img/profesora-lia-valdes_320.webp",
+      "size": 9734
+    },
+    {
+      "width": 320,
+      "height": 427,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesora-lia-valdes_320.jpg",
+      "size": 12284
+    },
+    {
+      "width": 320,
+      "height": 427,
+      "format": "avif",
+      "path": "/images/teachers/img/profesora-lia-valdes_320.avif",
+      "size": 8828
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "avif",
+      "path": "/images/teachers/img/profesora-lia-valdes_640.avif",
+      "size": 23494
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesora-lia-valdes_640.jpg",
+      "size": 34971
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "webp",
+      "path": "/images/teachers/img/profesora-lia-valdes_640.webp",
+      "size": 27690
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "webp",
+      "path": "/images/teachers/img/profesora-lia-valdes_960.webp",
+      "size": 50460
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "avif",
+      "path": "/images/teachers/img/profesora-lia-valdes_960.avif",
+      "size": 41775
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesora-lia-valdes_960.jpg",
+      "size": 66587
+    }
+  ],
+  "srcSets": {
+    "avif": "/images/teachers/img/profesora-lia-valdes_320.avif 320w, /images/teachers/img/profesora-lia-valdes_640.avif 640w, /images/teachers/img/profesora-lia-valdes_960.avif 960w",
+    "webp": "/images/teachers/img/profesora-lia-valdes_320.webp 320w, /images/teachers/img/profesora-lia-valdes_640.webp 640w, /images/teachers/img/profesora-lia-valdes_960.webp 960w",
+    "jpeg": "/images/teachers/img/profesora-lia-valdes_320.jpg 320w, /images/teachers/img/profesora-lia-valdes_640.jpg 640w, /images/teachers/img/profesora-lia-valdes_960.jpg 960w"
+  },
+  "defaultSrc": "/images/teachers/img/profesora-lia-valdes_320.webp",
+  "generated": {
+    "at": "2025-12-28T07:39:14.434Z",
+    "version": "2.0.0"
+  }
+}

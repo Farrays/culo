@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
 import AnimateOnScroll from '../AnimateOnScroll';
+import OptimizedImage from '../OptimizedImage';
 import { Breadcrumb } from '../shared/Breadcrumb';
 import LeadCaptureModal from '../shared/LeadCaptureModal';
 import {
@@ -29,6 +30,9 @@ const AVATAR_COLORS = [
   'from-teal-500 to-teal-700',
   'from-orange-500 to-orange-700',
 ];
+
+// Image positions - 'attention' crop handles all teachers now
+const getImagePosition = (_teacherId: string): string => 'center';
 
 // Get initials from name
 const getInitials = (name: string): string => {
@@ -223,11 +227,16 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
                     {/* Director Photo - Rectangular */}
                     <div className="md:w-2/5 flex-shrink-0">
                       {DIRECTOR_INFO.image ? (
-                        <img
-                          src={DIRECTOR_INFO.image}
-                          alt={DIRECTOR_INFO.name}
-                          className="w-full h-64 md:h-full object-cover"
-                          loading="lazy"
+                        <OptimizedImage
+                          src={DIRECTOR_INFO.image.replace('_320.webp', '')}
+                          altKey={`teachers.${DIRECTOR_INFO.id}.portrait`}
+                          alt={`${DIRECTOR_INFO.name} - Directora de Farray's International Dance Center Barcelona`}
+                          aspectRatio="3/4"
+                          sizes="(max-width: 768px) 100vw, 40vw"
+                          priority="high"
+                          breakpoints={[320, 640, 960]}
+                          className="w-full h-64 md:h-full"
+                          objectPosition={getImagePosition(DIRECTOR_INFO.id)}
                         />
                       ) : (
                         <div className="w-full h-64 md:h-full bg-gradient-to-br from-primary-accent to-primary-dark flex items-center justify-center">
@@ -286,18 +295,24 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
               {TEACHERS_LIST.map((teacher, index) => (
                 <AnimateOnScroll key={teacher.id} delay={index * 50}>
                   <div className="bg-black/60 backdrop-blur-md border border-primary-dark/50 rounded-xl overflow-hidden hover:border-primary-accent transition-all h-full flex flex-col group">
-                    {/* Photo/Avatar - Rectangular */}
-                    <div className="relative h-72 overflow-hidden">
+                    {/* Photo/Avatar - Portrait 3:4 */}
+                    <div className="relative overflow-hidden">
                       {teacher.image ? (
-                        <img
-                          src={teacher.image}
-                          alt={teacher.name}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                          loading="lazy"
+                        <OptimizedImage
+                          src={teacher.image.replace('_320.webp', '')}
+                          altKey={`teachers.${teacher.id}.portrait`}
+                          alt={`${teacher.name} - Profesor de baile en Farray's Barcelona`}
+                          aspectRatio="3/4"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          priority={index < 3 ? 'high' : 'auto'}
+                          breakpoints={[320, 640, 960]}
+                          className="w-full group-hover:scale-105 transition-transform duration-500"
+                          objectPosition={getImagePosition(teacher.id)}
                         />
                       ) : (
                         <div
-                          className={`w-full h-full bg-gradient-to-br ${AVATAR_COLORS[index % AVATAR_COLORS.length]} flex items-center justify-center`}
+                          className={`w-full bg-gradient-to-br ${AVATAR_COLORS[index % AVATAR_COLORS.length]} flex items-center justify-center`}
+                          style={{ aspectRatio: '3/4' }}
                         >
                           <span className="text-5xl font-bold text-white">
                             {getInitials(teacher.name)}
@@ -305,7 +320,7 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
                         </div>
                       )}
                       {/* Overlay gradient */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                     </div>
 
                     {/* Info */}

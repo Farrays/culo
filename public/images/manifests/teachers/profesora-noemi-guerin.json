@@ -1,0 +1,95 @@
+{
+  "id": "profesora-noemi-guerin",
+  "className": "teachers",
+  "originalFile": "Profesora Noemi Guerin .webp",
+  "original": {
+    "width": 1080,
+    "height": 1440,
+    "aspectRatio": "0.7500",
+    "format": "webp",
+    "space": "srgb",
+    "channels": 3,
+    "hasAlpha": false
+  },
+  "placeholder": {
+    "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAQAwCdASoUABsAPzmOvlg0qa4lKAqqkCcJZwC+DBnLV5QA/uTFtWm7sBSRdKJ2VoVzemMnqAAAAA==",
+    "dominantColor": "#a2a6a9",
+    "svg": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23a2a6a9%22%2F%3E%3C%2Fsvg%3E"
+  },
+  "basePath": "/images/classes/teachers/img/teachers-profesora-noemi-guerin-barcelona",
+  "variants": [
+    {
+      "width": 320,
+      "height": 427,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesora-noemi-guerin-_320.jpg",
+      "size": 11788
+    },
+    {
+      "width": 320,
+      "height": 427,
+      "format": "webp",
+      "path": "/images/teachers/img/profesora-noemi-guerin-_320.webp",
+      "size": 8520
+    },
+    {
+      "width": 320,
+      "height": 427,
+      "format": "avif",
+      "path": "/images/teachers/img/profesora-noemi-guerin-_320.avif",
+      "size": 7613
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesora-noemi-guerin-_640.jpg",
+      "size": 31209
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "webp",
+      "path": "/images/teachers/img/profesora-noemi-guerin-_640.webp",
+      "size": 21320
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "avif",
+      "path": "/images/teachers/img/profesora-noemi-guerin-_640.avif",
+      "size": 18640
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesora-noemi-guerin-_960.jpg",
+      "size": 54513
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "webp",
+      "path": "/images/teachers/img/profesora-noemi-guerin-_960.webp",
+      "size": 35270
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "avif",
+      "path": "/images/teachers/img/profesora-noemi-guerin-_960.avif",
+      "size": 29846
+    }
+  ],
+  "srcSets": {
+    "avif": "/images/teachers/img/profesora-noemi-guerin-_320.avif 320w, /images/teachers/img/profesora-noemi-guerin-_640.avif 640w, /images/teachers/img/profesora-noemi-guerin-_960.avif 960w",
+    "webp": "/images/teachers/img/profesora-noemi-guerin-_320.webp 320w, /images/teachers/img/profesora-noemi-guerin-_640.webp 640w, /images/teachers/img/profesora-noemi-guerin-_960.webp 960w",
+    "jpeg": "/images/teachers/img/profesora-noemi-guerin-_320.jpg 320w, /images/teachers/img/profesora-noemi-guerin-_640.jpg 640w, /images/teachers/img/profesora-noemi-guerin-_960.jpg 960w"
+  },
+  "defaultSrc": "/images/teachers/img/profesora-noemi-guerin-_320.jpg",
+  "generated": {
+    "at": "2025-12-28T07:39:15.121Z",
+    "version": "2.0.0"
+  }
+}

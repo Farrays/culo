@@ -1,5 +1,6 @@
 import React from 'react';
 import AnimateOnScroll from './AnimateOnScroll';
+import FacilityGallery, { type FacilityAreaId } from './FacilityGallery';
 
 export interface FacilityRoom {
   id: string;
@@ -9,6 +10,10 @@ export interface FacilityRoom {
   descKey: string;
   imageUrl?: string;
   icon: 'large' | 'medium' | 'small' | 'xlarge';
+  /** Facility area ID for gallery images */
+  areaId?: FacilityAreaId;
+  /** Number of gallery images */
+  imageCount?: number;
 }
 
 interface FacilityCardProps {
@@ -41,18 +46,38 @@ const iconMap = {
 };
 
 const FacilityCard: React.FC<FacilityCardProps> = ({ room, t, index }) => {
+  const { areaId, imageCount } = room;
+
   return (
     <AnimateOnScroll delay={index * 100} className="[perspective:1000px]">
-      <div className="group h-full p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
-        <div className="mb-6 flex justify-center">{iconMap[room.icon]}</div>
-        <h3 className="text-2xl font-bold text-neutral mb-3 text-center holographic-text">
-          {t(room.titleKey)}
-        </h3>
-        <div className="space-y-2 mb-4">
-          <p className="text-lg font-semibold text-primary-accent text-center">{t(room.sizeKey)}</p>
-          <p className="text-sm text-neutral/75 text-center italic">{t(room.floorTypeKey)}</p>
+      <div className="group h-full bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 overflow-hidden">
+        {/* Gallery or Icon */}
+        {areaId && imageCount && imageCount > 0 ? (
+          <div className="relative">
+            <FacilityGallery
+              areaId={areaId}
+              imageCount={imageCount}
+              compact
+              className="aspect-[16/10]"
+            />
+          </div>
+        ) : (
+          <div className="pt-8 pb-4 flex justify-center">{iconMap[room.icon]}</div>
+        )}
+
+        {/* Content */}
+        <div className="p-6 pt-4">
+          <h3 className="text-2xl font-bold text-neutral mb-3 text-center holographic-text">
+            {t(room.titleKey)}
+          </h3>
+          <div className="space-y-2 mb-4">
+            <p className="text-lg font-semibold text-primary-accent text-center">
+              {t(room.sizeKey)}
+            </p>
+            <p className="text-sm text-neutral/75 text-center italic">{t(room.floorTypeKey)}</p>
+          </div>
+          <p className="text-neutral/90 leading-relaxed text-center text-sm">{t(room.descKey)}</p>
         </div>
-        <p className="text-neutral/90 leading-relaxed text-center">{t(room.descKey)}</p>
       </div>
     </AnimateOnScroll>
   );
