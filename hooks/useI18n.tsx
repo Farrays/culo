@@ -55,31 +55,48 @@ const getCookie = (name: string): string | null => {
   return null;
 };
 
-export const I18nProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [locale, setLocaleState] = useState<Locale>(() => {
-    // Priority: 1) localStorage, 2) Cookie, 3) Navigator, 4) Default
-    const supportedLocales: Locale[] = ['en', 'es', 'ca', 'fr'];
+// Helper to get initial locale (only call on client)
+const getInitialLocale = (): Locale => {
+  const supportedLocales: Locale[] = ['en', 'es', 'ca', 'fr'];
 
-    // Try localStorage first
+  // Try localStorage first
+  try {
     const stored = localStorage.getItem(LOCALE_STORAGE_KEY) as Locale | null;
     if (stored && supportedLocales.includes(stored)) {
       return stored;
     }
+  } catch {
+    // localStorage not available
+  }
 
-    // Try cookie
+  // Try cookie
+  try {
     const cookieLocale = getCookie(LOCALE_COOKIE_NAME) as Locale | null;
     if (cookieLocale && supportedLocales.includes(cookieLocale)) {
       return cookieLocale;
     }
+  } catch {
+    // cookies not available
+  }
 
-    // Fallback to browser language
+  // Fallback to browser language
+  try {
     const browserLang = navigator.language.split('-')[0];
     if (supportedLocales.includes(browserLang as Locale)) {
       return browserLang as Locale;
     }
+  } catch {
+    // navigator not available
+  }
 
-    return 'es'; // Default to Spanish
-  });
+  return 'es'; // Default to Spanish
+};
+
+export const I18nProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  // Initialize with default 'es' to avoid hydration mismatch
+  // The actual locale will be determined in useEffect after hydration
+  const [locale, setLocaleState] = useState<Locale>('es');
+  const [isHydrated, setIsHydrated] = useState(false);
 
   const [currentTranslations, setCurrentTranslations] = useState<TranslationKeys>(() => {
     // Initialize with cached translations if available
@@ -89,6 +106,17 @@ export const I18nProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     // Only loading if translations are not cached
     return !translationsCache[locale];
   });
+
+  // After hydration, determine the correct locale from client storage
+  useEffect(() => {
+    if (!isHydrated) {
+      setIsHydrated(true);
+      const clientLocale = getInitialLocale();
+      if (clientLocale !== locale) {
+        setLocaleState(clientLocale);
+      }
+    }
+  }, [isHydrated, locale]);
 
   // Load translations for current locale
   useEffect(() => {
