@@ -413,4 +413,40 @@ Pasar a Pro ($20/mes) cuando:
 
 ---
 
-_Última actualización: 2024-01_
+## 9. BACKLOG - CORRECCIONES TÉCNICAS
+
+### 9.1 Preload Warnings (Console)
+
+**Problema identificado:** Warnings repetidos en consola sobre recursos precargados no utilizados.
+
+#### 9.1.1 stardust.png - Discrepancia de URLs
+
+- **Severidad:** Media
+- **Síntoma:** `The resource .../stardust.png was preloaded using link preload but not used`
+- **Causa raíz:**
+  - `index.html:68` precarga `/images/textures/stardust.png` (local)
+  - `Hero.tsx:57` y mayoría de componentes usan `https://www.transparenttextures.com/patterns/stardust.png` (externo)
+- **Impacto:** ~100KB bandwidth desperdiciado por visita
+- **Solución propuesta:**
+  - Opción A: Cambiar todos los componentes a usar la versión local `/images/textures/stardust.png`
+  - Opción B: Eliminar el preload de index.html si se prefiere usar la versión externa
+- **Archivos afectados:**
+  - `index.html` (preload)
+  - `Hero.tsx`, `FinalCTA.tsx`, `HeroV2.tsx`, `FinalCTAV2.tsx` y ~30 componentes más
+
+#### 9.1.2 style-\*.css - Preload duplicado de Vite
+
+- **Severidad:** Baja
+- **Síntoma:** `The resource .../style-EHBsYaPp.css was preloaded but not used`
+- **Causa raíz:**
+  - `vite.config.ts:95-97` tiene `modulePreload.polyfill: true`
+  - `cssCodeSplit: false` genera un CSS global referenciado por múltiples chunks
+  - Timing del preload no coincide con el uso real
+- **Impacto:** Solo ruido en consola, no afecta performance
+- **Solución propuesta:**
+  - Opción A: Configurar `modulePreload: false` si no es necesario
+  - Opción B: Dejar como está (solo cosmético)
+
+---
+
+_Última actualización: 2024-12_
