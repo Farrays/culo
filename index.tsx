@@ -55,10 +55,12 @@ if (!rootElement) {
 }
 
 // Detectar si hay contenido prerenderizado
-const hasPrerenderedContent = rootElement.hasChildNodes();
+// Usamos el atributo data-prerendered para detectar SSG (incluso si el contenido está vacío)
+const isPrerendered = rootElement.hasAttribute('data-prerendered');
+const hasContent = rootElement.hasChildNodes();
 
-if (hasPrerenderedContent) {
-  // En producción con prerender: hidratar el HTML existente
+if (isPrerendered && hasContent) {
+  // En producción con prerender Y contenido: hidratar el HTML existente
   ReactDOM.hydrateRoot(
     rootElement,
     <React.StrictMode>
@@ -66,7 +68,7 @@ if (hasPrerenderedContent) {
     </React.StrictMode>
   );
 } else {
-  // En desarrollo sin prerender: renderizar normalmente
+  // En desarrollo sin prerender, o landing pages con SSG vacío: renderizar normalmente
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <React.StrictMode>

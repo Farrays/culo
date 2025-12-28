@@ -274,15 +274,30 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
 
   // Track PageView on mount
   useEffect(() => {
-    if (typeof window.fbq === 'function') {
-      window.fbq('track', 'PageView');
+    try {
+      if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+        window.fbq('track', 'PageView');
+      }
+    } catch {
+      // FB Pixel not available - silently fail
     }
   }, []);
 
   // Exit Intent Detection
   useEffect(() => {
+    // Guard: only run on client-side
+    if (typeof window === 'undefined') return;
+
     const storageKey = `${config.id}_exit_intent_shown`;
-    const alreadyShown = sessionStorage.getItem(storageKey);
+
+    // Check if already shown (with sessionStorage protection)
+    let alreadyShown = false;
+    try {
+      alreadyShown = sessionStorage.getItem(storageKey) === 'true';
+    } catch {
+      // sessionStorage not available
+    }
+
     if (alreadyShown) {
       setHasShownExitIntent(true);
       return;
@@ -292,13 +307,22 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
       if (hasShownExitIntent || isModalOpen || isExitPopupOpen) return;
 
       setHasShownExitIntent(true);
-      sessionStorage.setItem(storageKey, 'true');
 
-      if (typeof window.fbq === 'function') {
-        window.fbq('trackCustom', 'ExitIntentTriggered', {
-          content_name: `${config.estiloValue} Landing`,
-          trigger_source: source,
-        });
+      try {
+        sessionStorage.setItem(storageKey, 'true');
+      } catch {
+        // sessionStorage not available
+      }
+
+      try {
+        if (typeof window.fbq === 'function') {
+          window.fbq('trackCustom', 'ExitIntentTriggered', {
+            content_name: `${config.estiloValue} Landing`,
+            trigger_source: source,
+          });
+        }
+      } catch {
+        // FB Pixel not available
       }
 
       setIsExitPopupOpen(true);
@@ -310,15 +334,16 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
       }
     };
 
-    let lastScrollY = window.scrollY;
+    let lastScrollY = window.scrollY || 0;
     let maxScrollY = 0;
     let scrollUpDistance = 0;
     const SCROLL_THRESHOLD = 0.3;
     const SCROLL_UP_TRIGGER = 150;
 
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const currentScrollY = window.scrollY || 0;
+      const windowHeight = window.innerHeight || 1;
+      const pageHeight = document.documentElement.scrollHeight - windowHeight;
       const scrollPercentage = maxScrollY / pageHeight;
 
       if (currentScrollY > maxScrollY) {
@@ -352,13 +377,17 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
   }, [hasShownExitIntent, isModalOpen, isExitPopupOpen, config.id, config.estiloValue]);
 
   const openModal = () => {
-    if (typeof window.fbq === 'function') {
-      window.fbq('track', 'InitiateCheckout', {
-        content_name: `${config.estiloValue} Free Welcome Class`,
-        content_category: 'Dance Class',
-        value: '0',
-        currency: 'EUR',
-      });
+    try {
+      if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+        window.fbq('track', 'InitiateCheckout', {
+          content_name: `${config.estiloValue} Free Welcome Class`,
+          content_category: 'Dance Class',
+          value: '0',
+          currency: 'EUR',
+        });
+      }
+    } catch {
+      // FB Pixel not available
     }
     setIsModalOpen(true);
   };
