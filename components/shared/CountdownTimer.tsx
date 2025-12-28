@@ -59,12 +59,27 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
     };
   }, [targetDate]);
 
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft);
+  // Initialize with static values to avoid hydration mismatch
+  // The actual time will be calculated in useEffect after mount
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+    expired: false,
+  });
   const [hasExpired, setHasExpired] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  // Calculate initial time after mount to avoid hydration mismatch
+  useEffect(() => {
+    setIsClient(true);
+    setTimeLeft(calculateTimeLeft());
+  }, [calculateTimeLeft]);
 
   useEffect(() => {
-    // Don't start interval if already expired
-    if (hasExpired) return;
+    // Don't start interval until client-side or if already expired
+    if (!isClient || hasExpired) return;
 
     const timer = setInterval(() => {
       const newTimeLeft = calculateTimeLeft();
@@ -78,7 +93,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [calculateTimeLeft, hasExpired, onExpire]);
+  }, [calculateTimeLeft, hasExpired, onExpire, isClient]);
 
   // Get translated labels
   const labels = {
