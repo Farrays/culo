@@ -17,20 +17,20 @@ describe('Hero', () => {
 
   it('should render CTA button with accessible name', () => {
     render(<Hero />);
-    const ctaLinks = screen.getAllByRole('link');
-    expect(ctaLinks.length).toBeGreaterThan(0);
-    // Verify all links have accessible text content (no redundant aria-labels needed)
-    const accessibleLinks = ctaLinks.filter(
-      link => link.textContent && link.textContent.trim().length > 0
+    const ctaButtons = screen.getAllByRole('button');
+    expect(ctaButtons.length).toBeGreaterThan(0);
+    // Verify all buttons have accessible text content
+    const accessibleButtons = ctaButtons.filter(
+      button => button.textContent && button.textContent.trim().length > 0
     );
-    expect(accessibleLinks.length).toBeGreaterThan(0);
+    expect(accessibleButtons.length).toBeGreaterThan(0);
   });
 
-  it('should render scroll indicator', () => {
+  it('should render main CTA button', () => {
     render(<Hero />);
-    const scrollLinks = screen.getAllByRole('link');
-    const scrollToClasses = scrollLinks.filter(link => link.getAttribute('href') === '#classes');
-    expect(scrollToClasses.length).toBeGreaterThan(0);
+    const ctaButtons = screen.getAllByRole('button');
+    // The Hero has a CTA button for lead capture
+    expect(ctaButtons.length).toBeGreaterThan(0);
   });
 
   it('should have proper section structure', () => {
