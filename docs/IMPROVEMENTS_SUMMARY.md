@@ -5,18 +5,20 @@
 ### 1. **Performance Optimization**
 
 #### ✓ Preconnect a Dominios Externos Críticos
+
 **Archivo**: `index.html`  
 **Impacto**: +5-7 puntos Lighthouse Performance
 
 ```html
 <!-- Añadidos -->
-<link rel="preconnect" href="https://www.google-analytics.com">
-<link rel="preconnect" href="https://browser.sentry-cdn.com">
+<link rel="preconnect" href="https://www.google-analytics.com" />
+<link rel="preconnect" href="https://browser.sentry-cdn.com" />
 ```
 
 **Beneficio**: Reduce DNS lookup + TLS handshake en ~200-300ms para Google Analytics y Sentry.
 
 #### ✓ Compresión Brotli Habilitada
+
 **Archivo**: `vite.config.ts`, `package.json`  
 **Impacto**: +3-5 puntos Lighthouse Performance
 
@@ -25,29 +27,33 @@
 - Reducción estimada: 15-20% tamaño vs solo Gzip
 
 **Antes**:
+
 ```
 index-*.js: 244KB (gzipped: ~85KB)
 ```
 
 **Después** (estimado):
+
 ```
 index-*.js: 244KB (brotli: ~70KB, gzip: ~85KB)
 ```
 
 #### ✓ Imágenes con `decoding="async"` y `fetchpriority`
+
 **Archivo**: `components/LazyImage.tsx`  
 **Impacto**: +2-3 puntos Lighthouse Performance
 
 ```tsx
 // Añadido soporte para priorizar imágenes LCP
-<LazyImage 
-  src="hero.jpg" 
-  alt="Hero" 
-  priority="high"  // Para imágenes above-the-fold
+<LazyImage
+  src="hero.jpg"
+  alt="Hero"
+  priority="high" // Para imágenes above-the-fold
 />
 ```
 
-**Beneficio**: 
+**Beneficio**:
+
 - `decoding="async"` no bloquea el thread principal
 - `fetchpriority="high"` para imágenes críticas del hero
 
@@ -56,6 +62,7 @@ index-*.js: 244KB (brotli: ~70KB, gzip: ~85KB)
 ### 2. **CI/CD Improvements**
 
 #### ✓ Dependabot Configurado
+
 **Archivo**: `.github/dependabot.yml` (NUEVO)  
 **Impacto**: Automatiza actualizaciones de dependencias
 
@@ -67,26 +74,31 @@ index-*.js: 244KB (brotli: ~70KB, gzip: ~85KB)
 **Beneficio**: Reduce tiempo manual de mantenimiento en ~4h/mes.
 
 #### ✓ Security Audit Ahora es Bloqueante
+
 **Archivo**: `.github/workflows/ci.yml`  
 **Impacto**: Previene merges inseguros
 
 **Antes**:
+
 ```yaml
 - run: npm audit --audit-level=moderate
-  continue-on-error: true  # ❌ No bloqueaba
+  continue-on-error: true # ❌ No bloqueaba
 ```
 
 **Después**:
+
 ```yaml
 - run: npm audit --audit-level=moderate
   # ✅ Falla el PR si hay vulnerabilidades moderate+
 ```
 
 #### ✓ Bundle Size Limits Más Estrictos
+
 **Archivo**: `.size-limit.cjs`  
 **Impacto**: Previene regresión de performance
 
 **Cambios**:
+
 - Main bundle: 200KB → 170KB (-15%)
 - ES locale: 200KB → 180KB (-10%)
 - Ahora incluye compresión gzip en el check
@@ -96,9 +108,11 @@ index-*.js: 244KB (brotli: ~70KB, gzip: ~85KB)
 ### 3. **Documentación**
 
 #### ✓ Auditoría Completa Enterprise
+
 **Archivo**: `docs/ENTERPRISE_AUDIT_COMPLETE.md` (NUEVO)
 
 Incluye:
+
 - ✅ Análisis detallado de arquitectura
 - ✅ 40+ mejoras específicas categorizadas
 - ✅ Plan de acción priorizado (3 bloques)
@@ -107,6 +121,7 @@ Incluye:
 - ✅ Checklist GitHub-ready
 
 #### ✓ Este README de Mejoras
+
 **Archivo**: `docs/IMPROVEMENTS_SUMMARY.md` (NUEVO)
 
 Documenta todas las implementaciones realizadas.
@@ -117,40 +132,40 @@ Documenta todas las implementaciones realizadas.
 
 ### Lighthouse Score (Estimado)
 
-| Categoría | Antes | Después Quick Wins | Objetivo Final |
-|-----------|-------|-------------------|----------------|
-| Performance | 70-75 | 82-87 (+12-17) | 95+ |
-| SEO | 85-90 | 85-90 (=) | 98+ |
-| Accessibility | 85-90 | 85-90 (=) | 95+ |
-| Best Practices | 85-90 | 90-95 (+5-10) | 100 |
+| Categoría      | Antes | Después Quick Wins | Objetivo Final |
+| -------------- | ----- | ------------------ | -------------- |
+| Performance    | 70-75 | 82-87 (+12-17)     | 95+            |
+| SEO            | 85-90 | 85-90 (=)          | 98+            |
+| Accessibility  | 85-90 | 85-90 (=)          | 95+            |
+| Best Practices | 85-90 | 90-95 (+5-10)      | 100            |
 
 ### Core Web Vitals (Estimado)
 
 | Métrica | Antes | Después | Mejora |
-|---------|-------|---------|--------|
-| LCP | ~3.5s | ~2.8s | -20% |
-| FCP | ~2.0s | ~1.6s | -20% |
-| TTI | ~4.5s | ~3.8s | -15% |
-| CLS | ~0.1 | ~0.08 | -20% |
+| ------- | ----- | ------- | ------ |
+| LCP     | ~3.5s | ~2.8s   | -20%   |
+| FCP     | ~2.0s | ~1.6s   | -20%   |
+| TTI     | ~4.5s | ~3.8s   | -15%   |
+| CLS     | ~0.1  | ~0.08   | -20%   |
 
 ### Bundle Size (Estimado con Brotli)
 
-| Asset | Antes (gzip) | Después (brotli) | Reducción |
-|-------|--------------|------------------|-----------|
-| index.js | ~85KB | ~70KB | -18% |
-| es.js | ~92KB | ~75KB | -18% |
-| style.css | ~15KB | ~12KB | -20% |
-| **TOTAL FCP** | ~192KB | ~157KB | **-18%** |
+| Asset         | Antes (gzip) | Después (brotli) | Reducción |
+| ------------- | ------------ | ---------------- | --------- |
+| index.js      | ~85KB        | ~70KB            | -18%      |
+| es.js         | ~92KB        | ~75KB            | -18%      |
+| style.css     | ~15KB        | ~12KB            | -20%      |
+| **TOTAL FCP** | ~192KB       | ~157KB           | **-18%**  |
 
 ---
 
 ## 🔄 Próximos Pasos Recomendados
 
 ### Semana 1 (8 horas)
+
 - [ ] **P1: Refactorizar i18n bundles** (-50KB en locale bundles)
   - Mover traducciones a JSON externos
   - Cargar con `fetch()` en vez de bundling
-  
 - [ ] **P2: Crear OG Images específicas**
   - 7 imágenes 1200x630px (una por página principal)
   - Actualizar `components/SEO.tsx`
@@ -160,6 +175,7 @@ Documenta todas las implementaciones realizadas.
   - Actualizar `vercel.json`
 
 ### Semana 2-3 (16 horas)
+
 - [ ] **P4: Añadir Structured Data completo**
   - `CourseSchema` para cada clase
   - `BreadcrumbSchema` en todas las páginas
@@ -173,6 +189,16 @@ Documenta todas las implementaciones realizadas.
   - Skip link visible on focus
   - ARIA labels en dropdowns
   - Tests automatizados (axe-core)
+
+### Backlog (Baja Prioridad)
+
+- [ ] **P7: Eliminar React Hydration Error #418** ⚠️ No crítico
+  - **Problema**: El HTML prerenderizado en `prerender.mjs` no coincide con el output de React
+  - **Impacto**: Solo error en consola, UX/SEO no afectados, React se recupera automáticamente
+  - **Solución rápida** (~5 min): Cambiar `initialContent` a `''` para todas las páginas (como landing pages)
+  - **Solución completa** (alto esfuerzo): Implementar SSR real con `renderToString()` o migrar a Next.js
+  - **Archivos afectados**: `prerender.mjs` (líneas 999-1200), `index.tsx`
+  - **Análisis completo**: Ver conversación del 28/12/2024
 
 ---
 
@@ -219,16 +245,17 @@ npm audit --audit-level=moderate
 
 ## 📈 Métricas de Negocio Esperadas
 
-| KPI | Impacto Estimado | Timeframe |
-|-----|------------------|-----------|
-| **Tráfico Orgánico** | +15-25% | 3-6 meses |
-| **Tasa de Conversión** | +8-12% | 1-2 meses |
-| **Bounce Rate** | -10-15% | 1 mes |
-| **Tiempo en Sitio** | +20-30% | 1 mes |
-| **Mobile Traffic** | +25-35% | 2-3 meses |
-| **Core Web Vitals (Pass)** | 60% → 90%+ | Inmediato |
+| KPI                        | Impacto Estimado | Timeframe |
+| -------------------------- | ---------------- | --------- |
+| **Tráfico Orgánico**       | +15-25%          | 3-6 meses |
+| **Tasa de Conversión**     | +8-12%           | 1-2 meses |
+| **Bounce Rate**            | -10-15%          | 1 mes     |
+| **Tiempo en Sitio**        | +20-30%          | 1 mes     |
+| **Mobile Traffic**         | +25-35%          | 2-3 meses |
+| **Core Web Vitals (Pass)** | 60% → 90%+       | Inmediato |
 
 **ROI de Performance**:
+
 - Cada 100ms de mejora en LCP = +1% conversión (Google data)
 - -35KB en bundle = -200ms en 3G = +2% conversión estimado
 
@@ -237,6 +264,7 @@ npm audit --audit-level=moderate
 ## 🔍 Recursos de Verificación
 
 ### Tools Online
+
 - [PageSpeed Insights](https://pagespeed.web.dev/) - Lighthouse oficial
 - [WebPageTest](https://www.webpagetest.org/) - Análisis detallado
 - [GTmetrix](https://gtmetrix.com/) - Performance + waterfall
@@ -249,7 +277,7 @@ npm audit --audit-level=moderate
 # Ver tamaño real de bundles comprimidos
 npm run build
 cd dist/assets
-for f in *.js; do 
+for f in *.js; do
   echo "$f: $(stat -f%z "$f") bytes | gzip: $(gzip -c $f | wc -c) bytes | brotli: $(brotli -c $f | wc -c) bytes"
 done
 
@@ -269,6 +297,7 @@ npx serve dist -l 5000
 **Implementado en esta sesión**: 6 mejoras de alto impacto en ~2 horas.
 
 **Impacto total estimado**:
+
 - ✅ +12-17 puntos Lighthouse Performance
 - ✅ -18% tamaño de assets (Brotli)
 - ✅ +5-10 puntos Best Practices
