@@ -168,7 +168,10 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
             <Breadcrumb items={breadcrumbItems} textColor="text-neutral/75" />
 
             <AnimateOnScroll>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter holographic-text mb-6">
+              <h1
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white mb-6"
+                style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
+              >
                 {t('teachersPageH1')}
               </h1>
               <p className="max-w-3xl mx-auto text-lg md:text-xl text-neutral/90 mb-8">

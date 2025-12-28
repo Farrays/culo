@@ -2,7 +2,7 @@
 # SECURITY VERIFICATION CHECKLIST
 # Run this to verify all security fixes are applied
 
-echo "🔐 FarRays Center - Security Verification Script"
+echo "🔐 Farray's Center - Security Verification Script"
 echo "=================================================="
 echo ""
 

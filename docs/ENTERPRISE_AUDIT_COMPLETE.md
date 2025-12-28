@@ -116,7 +116,7 @@
 ```bash
 # Archivos críticos (first load)
 index-D6f_-XxD.js        →  244KB  ❌ (límite: 170KB)
-es-jc-w6mB5.js           →  263KB  ❌ (límite: 200KB)  
+es-jc-w6mB5.js           →  263KB  ❌ (límite: 200KB)
 ca-EF-IBD-R.js           →  218KB  ❌ (límite: 160KB)
 en-COotjpPs.js           →  207KB  ✅
 fr-D9Re3lYH.js           →  206KB  ✅
@@ -130,10 +130,12 @@ style-DYW1KykP.css       →   44KB  ⚠️  (límite: 30KB)
 ### 🔴 Problemas Críticos Detectados
 
 #### 1. **Locale Bundles Inflados**
+
 **Causa**: Las traducciones JSON están inline en el bundle de cada idioma.  
 **Impacto**: +40-60KB por idioma innecesarios en FCP (First Contentful Paint).
 
 **Solución**:
+
 ```typescript
 // vite.config.ts - ANTES
 // Las traducciones se bundean dentro de cada chunk dinámico
@@ -166,25 +168,29 @@ export default defineConfig({
 ```
 
 #### 2. **Falta Preload de Recursos Críticos**
+
 **Problema**: El navegador descubre los chunks tardíamente.
 
 **Solución**:
+
 ```html
 <!-- index.html - AÑADIR EN <head> -->
-<link rel="preload" href="/assets/react-vendor-{hash}.js" as="script" crossorigin>
-<link rel="preload" href="/assets/router-vendor-{hash}.js" as="script" crossorigin>
-<link rel="preload" href="/assets/style-{hash}.css" as="style">
+<link rel="preload" href="/assets/react-vendor-{hash}.js" as="script" crossorigin />
+<link rel="preload" href="/assets/router-vendor-{hash}.js" as="script" crossorigin />
+<link rel="preload" href="/assets/style-{hash}.css" as="style" />
 
 <!-- Preconnect a dominios externos ANTES de Google Analytics -->
-<link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="preconnect" href="https://www.google-analytics.com">
-<link rel="dns-prefetch" href="https://browser.sentry-cdn.com">
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link rel="preconnect" href="https://www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://browser.sentry-cdn.com" />
 ```
 
 #### 3. **CSS Bundle Sin Purge Completo**
+
 **Problema**: 44KB de CSS es alto para TailwindCSS.
 
 **Solución**:
+
 ```javascript
 // tailwind.config.js
 module.exports = {
@@ -202,9 +208,11 @@ module.exports = {
 ```
 
 #### 4. **Sin Compresión Brotli en Build**
+
 **Impacto**: Archivos se sirven solo con Gzip (ratio 70%), Brotli alcanza 80%+.
 
 **Solución**:
+
 ```typescript
 // vite.config.ts
 import viteCompression from 'vite-plugin-compression';
@@ -227,15 +235,17 @@ export default defineConfig({
 ```
 
 #### 5. **Imágenes Sin Lazy Loading**
+
 **Problema**: Todas las imágenes se cargan eagerly.
 
 **Solución**:
+
 ```tsx
 // components/LazyImage.tsx - MEJORAR
 <img
   src={src}
   alt={alt}
-  loading="lazy"  // ✅ AÑADIR
+  loading="lazy" // ✅ AÑADIR
   decoding="async" // ✅ AÑADIR
   fetchpriority={isHero ? 'high' : 'auto'} // ✅ AÑADIR
 />
@@ -243,14 +253,14 @@ export default defineConfig({
 
 ### 🎯 Quick Wins para Lighthouse Performance
 
-| Acción | Impacto | Esfuerzo | Archivo |
-|--------|---------|----------|---------|
-| Añadir `<link rel="preconnect">` a GA/Sentry | +5-8 puntos | 5 min | index.html |
-| Habilitar Brotli compression | +3-5 puntos | 15 min | vite.config.ts |
-| Añadir `loading="lazy"` a imágenes | +2-4 puntos | 30 min | LazyImage.tsx |
-| Preload fuente critical | +2-3 puntos | 10 min | index.html |
-| Reducir bundle ES (-50KB) | +5-8 puntos | 2h | i18n refactor |
-| Inline CSS critical | +3-5 puntos | 1h | prerender.mjs |
+| Acción                                       | Impacto     | Esfuerzo | Archivo        |
+| -------------------------------------------- | ----------- | -------- | -------------- |
+| Añadir `<link rel="preconnect">` a GA/Sentry | +5-8 puntos | 5 min    | index.html     |
+| Habilitar Brotli compression                 | +3-5 puntos | 15 min   | vite.config.ts |
+| Añadir `loading="lazy"` a imágenes           | +2-4 puntos | 30 min   | LazyImage.tsx  |
+| Preload fuente critical                      | +2-3 puntos | 10 min   | index.html     |
+| Reducir bundle ES (-50KB)                    | +5-8 puntos | 2h       | i18n refactor  |
+| Inline CSS critical                          | +3-5 puntos | 1h       | prerender.mjs  |
 
 **Puntuación Estimada Actual**: 70-75/100  
 **Objetivo Con Quick Wins**: 85-90/100  
@@ -271,9 +281,11 @@ export default defineConfig({
 ### ❌ Problemas Críticos
 
 #### 1. **Falta Structured Data (JSON-LD)**
+
 **Impacto SEO**: ALTO - Google no puede generar Rich Snippets.
 
 **Solución Inmediata**:
+
 ```tsx
 // components/SchemaMarkup.tsx - MEJORAR
 import { Helmet } from 'react-helmet-async';
@@ -282,43 +294,44 @@ export const LocalBusinessSchema = () => (
   <Helmet>
     <script type="application/ld+json">
       {JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "DanceGroup",
-        "@id": "https://www.farrayscenter.com/#organization",
-        "name": "Farray's International Dance Center",
-        "alternateName": "FarRays Center",
-        "url": "https://www.farrayscenter.com",
-        "logo": "https://www.farrayscenter.com/images/logo-farrays-center.png",
-        "image": "https://www.farrayscenter.com/images/og-home.jpg",
-        "description": "Escuela de baile urbano en Barcelona: Dancehall, Salsa, Bachata, Danza Contemporánea y más.",
-        "telephone": "+34622247085",
-        "email": "info@farrayscenter.com",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Carrer d'Entença 100",
-          "addressLocality": "Barcelona",
-          "postalCode": "08015",
-          "addressCountry": "ES"
+        '@context': 'https://schema.org',
+        '@type': 'DanceGroup',
+        '@id': 'https://www.farrayscenter.com/#organization',
+        name: "Farray's International Dance Center",
+        alternateName: "Farray's Center",
+        url: 'https://www.farrayscenter.com',
+        logo: 'https://www.farrayscenter.com/images/logo-farrays-center.png',
+        image: 'https://www.farrayscenter.com/images/og-home.jpg',
+        description:
+          'Escuela de baile urbano en Barcelona: Dancehall, Salsa, Bachata, Danza Contemporánea y más.',
+        telephone: '+34622247085',
+        email: 'info@farrayscenter.com',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: "Carrer d'Entença 100",
+          addressLocality: 'Barcelona',
+          postalCode: '08015',
+          addressCountry: 'ES',
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "41.3784",
-          "longitude": "2.1496"
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: '41.3784',
+          longitude: '2.1496',
         },
-        "openingHoursSpecification": [
+        openingHoursSpecification: [
           {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "10:00",
-            "closes": "22:00"
-          }
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            opens: '10:00',
+            closes: '22:00',
+          },
         ],
-        "priceRange": "€€",
-        "sameAs": [
-          "https://www.instagram.com/farrayscenter",
-          "https://www.facebook.com/farrayscenter",
-          "https://www.youtube.com/@farrayscenter"
-        ]
+        priceRange: '€€',
+        sameAs: [
+          'https://www.instagram.com/farrayscenter',
+          'https://www.facebook.com/farrayscenter',
+          'https://www.youtube.com/@farrayscenter',
+        ],
       })}
     </script>
   </Helmet>
@@ -329,19 +342,19 @@ export const CourseSchema = ({ name, description, price }: CourseProps) => (
   <Helmet>
     <script type="application/ld+json">
       {JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Course",
-        "name": name,
-        "description": description,
-        "provider": {
-          "@id": "https://www.farrayscenter.com/#organization"
+        '@context': 'https://schema.org',
+        '@type': 'Course',
+        name: name,
+        description: description,
+        provider: {
+          '@id': 'https://www.farrayscenter.com/#organization',
         },
-        "offers": {
-          "@type": "Offer",
-          "price": price,
-          "priceCurrency": "EUR",
-          "availability": "https://schema.org/InStock"
-        }
+        offers: {
+          '@type': 'Offer',
+          price: price,
+          priceCurrency: 'EUR',
+          availability: 'https://schema.org/InStock',
+        },
       })}
     </script>
   </Helmet>
@@ -349,15 +362,18 @@ export const CourseSchema = ({ name, description, price }: CourseProps) => (
 ```
 
 **Archivos a Crear**:
+
 - `components/schema/LocalBusinessSchema.tsx`
 - `components/schema/CourseSchema.tsx`
 - `components/schema/BreadcrumbSchema.tsx`
 - `components/schema/FAQSchema.tsx` (ya existe pero mejorar)
 
 #### 2. **Sitemap Incompleto**
+
 **Problema**: Faltan páginas nuevas en sitemap.xml
 
 **Solución**:
+
 ```bash
 # Ejecutar y verificar:
 npm run update:sitemap
@@ -374,9 +390,11 @@ const pages = [
 ```
 
 #### 3. **OG Images Faltantes**
+
 **Problema**: Muchas páginas usan og-classes.jpg genérico.
 
 **Solución**:
+
 ```bash
 # Crear imágenes específicas (1200x630px):
 public/images/og-danza-barcelona.jpg
@@ -389,9 +407,11 @@ public/images/og-prep-fisica.jpg
 ```
 
 #### 4. **Heading Hierarchy Inconsistente**
+
 **Problema**: Algunas páginas saltan de H1 a H3.
 
 **Solución**:
+
 ```tsx
 // Verificar en todas las páginas:
 // ✅ Correcto:
@@ -407,13 +427,13 @@ public/images/og-prep-fisica.jpg
 
 ### 🎯 SEO Quick Wins
 
-| Acción | Impacto | Archivo |
-|--------|---------|---------|
-| Añadir LocalBusinessSchema | ALTO | HomePage.tsx |
-| Añadir CourseSchema a clases | ALTO | DancehallPage.tsx, etc. |
-| Crear OG images específicas | MEDIO | public/images/ |
-| Completar sitemap | MEDIO | update-sitemap.mjs |
-| Añadir BreadcrumbSchema | BAJO | All pages |
+| Acción                       | Impacto | Archivo                 |
+| ---------------------------- | ------- | ----------------------- |
+| Añadir LocalBusinessSchema   | ALTO    | HomePage.tsx            |
+| Añadir CourseSchema a clases | ALTO    | DancehallPage.tsx, etc. |
+| Crear OG images específicas  | MEDIO   | public/images/          |
+| Completar sitemap            | MEDIO   | update-sitemap.mjs      |
+| Añadir BreadcrumbSchema      | BAJO    | All pages               |
 
 ---
 
@@ -429,14 +449,16 @@ public/images/og-prep-fisica.jpg
 ### ❌ Problemas Detectados
 
 #### 1. **Skip Link No Visible al Hacer Foco**
+
 **Problema**: Usuarios de teclado no ven el skip link.
 
 **Solución**:
+
 ```tsx
 // components/SkipLink.tsx - MEJORAR
 const SkipLink: React.FC = () => {
   const { t } = useI18n();
-  
+
   return (
     <a
       href="#main-content"
@@ -458,9 +480,11 @@ const SkipLink: React.FC = () => {
 ```
 
 #### 2. **Botones Sin Labels Accesibles**
+
 **Problema**: Algunos botones solo tienen iconos.
 
 **Solución**:
+
 ```tsx
 // ANTES (❌):
 <button onClick={handleClick}>
@@ -474,9 +498,11 @@ const SkipLink: React.FC = () => {
 ```
 
 #### 3. **Dropdowns Sin ARIA**
+
 **Problema**: Menús desplegables no son accesibles para lectores de pantalla.
 
 **Solución**:
+
 ```tsx
 // components/header/DesktopNavigation.tsx - MEJORAR
 <button
@@ -500,18 +526,18 @@ const SkipLink: React.FC = () => {
 ```
 
 #### 4. **Focus Trap en Modal/Dropdown**
+
 **Problema**: Al abrir menú móvil, el foco puede escapar.
 
 **Solución**:
+
 ```tsx
 // Instalar: npm install focus-trap-react
 import FocusTrap from 'focus-trap-react';
 
 const MobileNavigation = () => (
   <FocusTrap active={isMenuOpen}>
-    <div className="mobile-menu">
-      {/* contenido del menú */}
-    </div>
+    <div className="mobile-menu">{/* contenido del menú */}</div>
   </FocusTrap>
 );
 ```
@@ -519,16 +545,18 @@ const MobileNavigation = () => (
 ### 🎯 A11Y Testing Automatizado
 
 **Añadir a CI**:
+
 ```yaml
 # .github/workflows/ci.yml
 - name: Run accessibility tests
   run: npm run test:a11y
-  
+
 - name: Axe-core automated scan
   run: npm run test -- --run a11y.test.tsx
 ```
 
 **Test Example**:
+
 ```typescript
 // components/__tests__/Header.a11y.test.tsx
 import { axe, toHaveNoViolations } from 'jest-axe';
@@ -558,9 +586,11 @@ test('Header should not have accessibility violations', async () => {
 ### ❌ Problemas Críticos
 
 #### 1. **CSP con 'unsafe-inline' en Styles**
+
 **Riesgo**: XSS via inline styles injection.
 
 **Solución**:
+
 ```json
 // vercel.json - MEJORAR CSP
 {
@@ -579,15 +609,18 @@ test('Header should not have accessibility violations', async () => {
 ```
 
 **Generar hashes de styles inline**:
+
 ```bash
 # Script nuevo: scripts/generate-csp-hashes.mjs
 npm run csp:hash
 ```
 
 #### 2. **Dependencias con Vulnerabilidades**
+
 **Problema**: 4 low severity vulnerabilities.
 
 **Solución**:
+
 ```bash
 # Ejecutar y revisar:
 npm audit fix
@@ -607,9 +640,11 @@ updates:
 ```
 
 #### 3. **Sin SRI (Subresource Integrity)**
+
 **Riesgo**: Scripts de terceros pueden ser comprometidos.
 
 **Solución**:
+
 ```html
 <!-- index.html - Para scripts de Google Analytics -->
 <script
@@ -623,15 +658,18 @@ updates:
 **Nota**: Google Analytics no proporciona hashes estables, considerar alternativa (Plausible, Fathom).
 
 #### 4. **No Hay Rate Limiting en Formularios**
+
 **Riesgo**: Bots pueden spamear formularios.
 
 **Solución** (si hay backend):
+
 ```typescript
 // Si fuera necesario en el futuro con API
 // Usar express-rate-limit o similar
 ```
 
 **Solución (frontend)**:
+
 ```tsx
 // components/ContactPage.tsx - AÑADIR
 const [submitCount, setSubmitCount] = useState(0);
@@ -639,7 +677,8 @@ const [lastSubmit, setLastSubmit] = useState(0);
 
 const handleSubmit = () => {
   const now = Date.now();
-  if (now - lastSubmit < 5000) { // 5 segundos
+  if (now - lastSubmit < 5000) {
+    // 5 segundos
     toast.error('Por favor espera antes de enviar de nuevo');
     return;
   }
@@ -655,12 +694,12 @@ const handleSubmit = () => {
 
 ### 🎯 Security Quick Wins
 
-| Acción | Impacto | Archivo |
-|--------|---------|---------|
-| Quitar 'unsafe-inline' de CSP | ALTO | vercel.json |
-| npm audit fix | ALTO | package.json |
-| Configurar Dependabot | MEDIO | .github/dependabot.yml |
-| Añadir rate limiting visual | BAJO | ContactPage.tsx |
+| Acción                        | Impacto | Archivo                |
+| ----------------------------- | ------- | ---------------------- |
+| Quitar 'unsafe-inline' de CSP | ALTO    | vercel.json            |
+| npm audit fix                 | ALTO    | package.json           |
+| Configurar Dependabot         | MEDIO   | .github/dependabot.yml |
+| Añadir rate limiting visual   | BAJO    | ContactPage.tsx        |
 
 ---
 
@@ -676,9 +715,11 @@ const handleSubmit = () => {
 ### ❌ Áreas de Mejora
 
 #### 1. **Falta Paralelización Eficiente**
+
 **Problema**: typecheck y lint pueden correr en paralelo.
 
 **Solución**:
+
 ```yaml
 # .github/workflows/ci.yml - MEJORAR
 jobs:
@@ -705,9 +746,11 @@ jobs:
 ```
 
 #### 2. **Security Audit No Bloqueante**
+
 **Problema**: `continue-on-error: true` permite merges inseguros.
 
 **Solución**:
+
 ```yaml
 # .github/workflows/ci.yml
 security:
@@ -720,12 +763,12 @@ security:
         node-version: '20'
         cache: 'npm'
     - run: npm ci --legacy-peer-deps
-    
+
     # Hacer bloqueante para moderate+
     - name: Audit dependencies (BLOQUEANTE)
       run: npm audit --audit-level=moderate
       # Quitar continue-on-error para que falle el PR
-    
+
     # Escaneo adicional con Snyk (recomendado)
     - name: Run Snyk to check for vulnerabilities
       uses: snyk/actions/node@master
@@ -734,9 +777,11 @@ security:
 ```
 
 #### 3. **Falta E2E Testing**
+
 **Problema**: Solo tests unitarios, no hay E2E con Playwright.
 
 **Solución**:
+
 ```yaml
 # .github/workflows/ci.yml - AÑADIR
 e2e-tests:
@@ -750,19 +795,19 @@ e2e-tests:
         node-version: '20'
         cache: 'npm'
     - run: npm ci --legacy-peer-deps
-    
+
     - name: Install Playwright browsers
       run: npx playwright install --with-deps chromium
-    
+
     - name: Download build artifacts
       uses: actions/download-artifact@v4
       with:
         name: production-build
         path: dist/
-    
+
     - name: Run Playwright tests
       run: npm run test:e2e
-    
+
     - name: Upload test results
       if: always()
       uses: actions/upload-artifact@v4
@@ -772,20 +817,21 @@ e2e-tests:
 ```
 
 **Crear tests E2E**:
+
 ```typescript
 // tests/e2e/navigation.spec.ts
 import { test, expect } from '@playwright/test';
 
 test('should navigate between pages', async ({ page }) => {
   await page.goto('http://localhost:5173/es');
-  
+
   // Verificar home page
-  await expect(page.locator('h1')).toContainText('FarRays Center');
-  
+  await expect(page.locator('h1')).toContainText("Farray's Center");
+
   // Navegar a clases
   await page.click('text=Clases');
   await expect(page).toHaveURL(/.*clases\/baile-barcelona/);
-  
+
   // Verificar meta tags SEO
   const title = await page.title();
   expect(title).toContain('Clases de Baile');
@@ -793,9 +839,11 @@ test('should navigate between pages', async ({ page }) => {
 ```
 
 #### 4. **Sin Bundle Size Regression Check**
+
 **Problema**: Los bundles pueden crecer sin control.
 
 **Solución**:
+
 ```yaml
 # .github/workflows/ci.yml - AÑADIR
 - name: Check bundle size limits
@@ -804,6 +852,7 @@ test('should navigate between pages', async ({ page }) => {
 ```
 
 **Mejorar .size-limit.cjs**:
+
 ```javascript
 module.exports = [
   {
@@ -824,9 +873,11 @@ module.exports = [
 ```
 
 #### 5. **Falta Performance Budget Enforcement**
+
 **Problema**: Lighthouse CI en modo `warn` no bloquea.
 
 **Solución**:
+
 ```json
 // lighthouserc.json - CAMBIAR warnings a errors
 {
@@ -837,7 +888,7 @@ module.exports = [
         "categories:accessibility": ["error", { "minScore": 0.95 }],
         "categories:seo": ["error", { "minScore": 0.95 }],
         "first-contentful-paint": ["error", { "maxNumericValue": 1800 }],
-        "largest-contentful-paint": ["error", { "maxNumericValue": 2500 }],
+        "largest-contentful-paint": ["error", { "maxNumericValue": 2500 }]
         // ... resto con "error" en lugar de "warn"
       }
     }
@@ -911,6 +962,7 @@ jobs:
 ### 🔴 BLOQUE 1: CAMBIOS URGENTES / ALTO IMPACTO (Semana 1)
 
 #### P1.1 - Reducir Bundle Size ES (-50KB)
+
 - **Prioridad**: 🔴 CRÍTICA
 - **Área**: Performance
 - **Impacto**: +8-10 puntos Lighthouse
@@ -918,6 +970,7 @@ jobs:
 - **Archivos**: `i18n/locales/*.ts`, `vite.config.ts`
 
 **Acción**:
+
 ```bash
 # 1. Separar traducciones a JSON externos
 mkdir public/locales
@@ -931,6 +984,7 @@ mv i18n/locales/fr.ts public/locales/fr.json
 ```
 
 #### P1.2 - Añadir Preconnect a Dominios Externos
+
 - **Prioridad**: 🔴 ALTA
 - **Área**: Performance
 - **Impacto**: +5-7 puntos Lighthouse
@@ -938,15 +992,17 @@ mv i18n/locales/fr.ts public/locales/fr.json
 - **Archivos**: `index.html`
 
 **Snippet**:
+
 ```html
 <!-- index.html - AÑADIR en <head> antes de cualquier script -->
-<link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="preconnect" href="https://www.google-analytics.com">
-<link rel="dns-prefetch" href="https://browser.sentry-cdn.com">
-<link rel="dns-prefetch" href="https://www.youtube.com">
+<link rel="preconnect" href="https://www.googletagmanager.com" />
+<link rel="preconnect" href="https://www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://browser.sentry-cdn.com" />
+<link rel="dns-prefetch" href="https://www.youtube.com" />
 ```
 
 #### P1.3 - Habilitar Compresión Brotli
+
 - **Prioridad**: 🔴 ALTA
 - **Área**: Performance
 - **Impacto**: +3-5 puntos Lighthouse
@@ -954,6 +1010,7 @@ mv i18n/locales/fr.ts public/locales/fr.json
 - **Archivos**: `vite.config.ts`, `package.json`
 
 **Snippet**:
+
 ```bash
 npm install --save-dev vite-plugin-compression
 ```
@@ -984,6 +1041,7 @@ export default defineConfig({
 ```
 
 #### P1.4 - Quitar 'unsafe-inline' de CSP
+
 - **Prioridad**: 🔴 CRÍTICA (Seguridad)
 - **Área**: Seguridad
 - **Impacto**: Elimina vector XSS
@@ -991,6 +1049,7 @@ export default defineConfig({
 - **Archivos**: `vercel.json`, `scripts/generate-csp-hashes.mjs`
 
 **Acción**:
+
 ```bash
 # 1. Crear script para generar hashes
 node scripts/generate-csp-hashes.mjs > csp-hashes.txt
@@ -1000,6 +1059,7 @@ node scripts/generate-csp-hashes.mjs > csp-hashes.txt
 ```
 
 #### P1.5 - Añadir LocalBusinessSchema (JSON-LD)
+
 - **Prioridad**: 🔴 ALTA (SEO)
 - **Área**: SEO
 - **Impacto**: Rich Snippets en Google
@@ -1013,11 +1073,13 @@ node scripts/generate-csp-hashes.mjs > csp-hashes.txt
 ### 🟡 BLOQUE 2: MEJORAS RECOMENDADAS A CORTO PLAZO (Semana 2-3)
 
 #### P2.1 - Crear OG Images Específicas
+
 - **Prioridad**: 🟡 MEDIA
 - **Área**: SEO
 - **Archivos**: `public/images/og-*.jpg`
 
 **Acción**:
+
 ```bash
 # Crear 1200x630px para cada página principal:
 og-danza-barcelona.jpg
@@ -1030,6 +1092,7 @@ og-about.jpg
 ```
 
 #### P2.2 - Añadir Tests E2E con Playwright
+
 - **Prioridad**: 🟡 MEDIA
 - **Área**: CI/CD
 - **Archivos**: `tests/e2e/*.spec.ts`, `.github/workflows/ci.yml`
@@ -1040,6 +1103,7 @@ npx playwright install
 ```
 
 #### P2.3 - Implementar Service Worker (Offline-First)
+
 - **Prioridad**: 🟡 MEDIA
 - **Área**: Performance / PWA
 - **Archivos**: `vite.config.ts`, `public/sw.js`
@@ -1049,6 +1113,7 @@ npm install --save-dev vite-plugin-pwa
 ```
 
 #### P2.4 - Mejorar Accesibilidad (A11Y Tests en CI)
+
 - **Prioridad**: 🟡 MEDIA
 - **Área**: Accesibilidad
 - **Archivos**: `.github/workflows/ci.yml`, `tests/a11y/*.test.ts`
@@ -1059,6 +1124,7 @@ npm install --save-dev vite-plugin-pwa
 ```
 
 #### P2.5 - Configurar Dependabot
+
 - **Prioridad**: 🟡 MEDIA
 - **Área**: Seguridad / DevOps
 - **Archivos**: `.github/dependabot.yml`
@@ -1066,10 +1132,10 @@ npm install --save-dev vite-plugin-pwa
 ```yaml
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "weekly"
+      interval: 'weekly'
 ```
 
 ---
@@ -1077,32 +1143,37 @@ updates:
 ### 🟢 BLOQUE 3: MEJORES PRÁCTICAS ENTERPRISE A MEDIO PLAZO (Mes 1-2)
 
 #### P3.1 - Migrar a Monorepo (Opcional)
+
 - **Prioridad**: 🟢 BAJA
 - **Área**: Arquitectura
 - **Herramientas**: Nx, Turborepo, o pnpm workspaces
 
 #### P3.2 - Extraer Design System
+
 - **Prioridad**: 🟢 BAJA
 - **Área**: Mantenibilidad
 - **Acción**: Crear `@farrays/ui-components` package
 
 #### P3.3 - Implementar Feature Flags
+
 - **Prioridad**: 🟢 BAJA
 - **Área**: DevOps
 - **Herramienta**: LaunchDarkly, Unleash, o custom
 
 #### P3.4 - Añadir Monitoring Avanzado
+
 - **Prioridad**: 🟢 BAJA
 - **Área**: Observabilidad
-- **Herramientas**: 
+- **Herramientas**:
   - Frontend: Sentry (ya instalado) + Hotjar/FullStory
   - Performance: SpeedCurve, Calibre
   - Uptime: Pingdom, UptimeRobot
 
 #### P3.5 - Internacionalización Avanzada
+
 - **Prioridad**: 🟢 BAJA
 - **Área**: i18n
-- **Acción**: 
+- **Acción**:
   - Migrar a `react-i18next` (más robusto)
   - Añadir Crowdin para gestión de traducciones
   - Detectar locale por geolocalización (Cloudflare Workers)
@@ -1113,6 +1184,7 @@ updates:
 
 ```markdown
 ## 🔴 Urgente (Semana 1)
+
 - [ ] Reducir bundle ES de 263KB a <180KB (separar JSON traducciones)
 - [ ] Añadir preconnect a GA, Sentry, YouTube (index.html)
 - [ ] Habilitar Brotli compression (vite-plugin-compression)
@@ -1122,6 +1194,7 @@ updates:
 - [ ] npm audit fix (resolver 4 vulnerabilidades)
 
 ## 🟡 Importante (Semana 2-3)
+
 - [ ] Crear 7 OG images específicas (1200x630px)
 - [ ] Añadir CourseSchema a páginas de clases
 - [ ] Implementar loading="lazy" en todas las imágenes
@@ -1132,6 +1205,7 @@ updates:
 - [ ] Hacer security audit bloqueante en CI
 
 ## 🟢 Medio Plazo (Mes 1-2)
+
 - [ ] Service Worker para offline-first
 - [ ] Performance budgets estrictos (error en vez de warn)
 - [ ] A11Y tests automatizados en CI
@@ -1146,19 +1220,19 @@ updates:
 
 ### KPIs a Monitorear
 
-| Métrica | Actual | Objetivo | Verificación |
-|---------|--------|----------|--------------|
-| Lighthouse Performance | 70-75 | 95+ | CI + Production |
-| Lighthouse SEO | 85-90 | 98+ | CI |
-| Lighthouse A11Y | 85-90 | 95+ | CI + Axe tests |
-| Bundle Size (main) | 244KB | <170KB | size-limit |
-| Bundle Size (ES) | 263KB | <180KB | size-limit |
-| LCP (Largest Contentful Paint) | ~3.5s | <2.5s | Web Vitals |
-| CLS (Cumulative Layout Shift) | ~0.1 | <0.1 | Web Vitals |
-| FCP (First Contentful Paint) | ~2.0s | <1.8s | Web Vitals |
-| TTI (Time to Interactive) | ~4.5s | <3.5s | Lighthouse |
-| Security Headers | 6/8 | 8/8 | securityheaders.com |
-| npm audit (moderate+) | 4 low | 0 | CI bloqueante |
+| Métrica                        | Actual | Objetivo | Verificación        |
+| ------------------------------ | ------ | -------- | ------------------- |
+| Lighthouse Performance         | 70-75  | 95+      | CI + Production     |
+| Lighthouse SEO                 | 85-90  | 98+      | CI                  |
+| Lighthouse A11Y                | 85-90  | 95+      | CI + Axe tests      |
+| Bundle Size (main)             | 244KB  | <170KB   | size-limit          |
+| Bundle Size (ES)               | 263KB  | <180KB   | size-limit          |
+| LCP (Largest Contentful Paint) | ~3.5s  | <2.5s    | Web Vitals          |
+| CLS (Cumulative Layout Shift)  | ~0.1   | <0.1     | Web Vitals          |
+| FCP (First Contentful Paint)   | ~2.0s  | <1.8s    | Web Vitals          |
+| TTI (Time to Interactive)      | ~4.5s  | <3.5s    | Lighthouse          |
+| Security Headers               | 6/8    | 8/8      | securityheaders.com |
+| npm audit (moderate+)          | 4 low  | 0        | CI bloqueante       |
 
 ---
 
@@ -1186,6 +1260,7 @@ updates:
 ## 📚 RECURSOS Y REFERENCIAS
 
 ### Documentación Oficial
+
 - [Vite Build Optimizations](https://vitejs.dev/guide/build.html)
 - [React Router Performance](https://reactrouter.com/en/main/guides/performance)
 - [Google Schema.org Guide](https://developers.google.com/search/docs/appearance/structured-data)
@@ -1193,6 +1268,7 @@ updates:
 - [MDN CSP Guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
 
 ### Herramientas de Testing
+
 - [PageSpeed Insights](https://pagespeed.web.dev/)
 - [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci)
 - [Security Headers Scanner](https://securityheaders.com/)
@@ -1200,6 +1276,7 @@ updates:
 - [Google Rich Results Test](https://search.google.com/test/rich-results)
 
 ### Benchmarking
+
 - Comparar con competidores (escuelas de baile Barcelona):
   - Tiempo de carga: <3s objetivo
   - Lighthouse: >90 en todas las categorías
@@ -1217,6 +1294,7 @@ Este proyecto tiene **fundamentos excelentes** para ser escalable a nivel enterp
 4. **CI/CD**: Hacer checks bloqueantes y añadir E2E
 
 Con las mejoras propuestas en el **Bloque 1** (urgentes), se puede alcanzar:
+
 - 🎯 Lighthouse Performance: 85-90/100
 - 🎯 SEO: 95+/100
 - 🎯 Seguridad: A+ en securityheaders.com
@@ -1225,6 +1303,7 @@ Con las mejoras propuestas en el **Bloque 1** (urgentes), se puede alcanzar:
 **Tiempo estimado implementación completa**: 2-3 semanas (1 desarrollador full-time)
 
 **ROI Esperado**:
+
 - +30% tráfico orgánico (SEO improvements)
 - +15% conversión (performance boost)
 - Reducción 80% incidentes seguridad (hardened CSP + deps)

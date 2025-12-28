@@ -272,16 +272,8 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
   const { images, logos, translationPrefix: prefix } = config;
   const theme = config.theme.classes;
 
-  // Track PageView on mount
-  useEffect(() => {
-    try {
-      if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
-        window.fbq('track', 'PageView');
-      }
-    } catch {
-      // FB Pixel not available - silently fail
-    }
-  }, []);
+  // NOTE: PageView tracking is handled by GTM (fires on All Pages)
+  // Removed direct fbq('track', 'PageView') call to avoid duplicate events
 
   // Exit Intent Detection
   useEffect(() => {

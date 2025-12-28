@@ -315,11 +315,11 @@ const routes = [
 const metadata = {
   es: {
     home: {
-      title: 'FarRays Center - Escuela de Baile Urbano en Barcelona',
+      title: 'Farray\'s Center - Escuela de Baile Urbano en Barcelona',
       description: 'Descubre las mejores clases de baile urbano en Barcelona. Dancehall y más. Profesores experimentados y ambiente inclusivo.',
     },
     classes: {
-      title: 'Clases de Baile - FarRays Center Barcelona',
+      title: 'Clases de Baile - Farray\'s Center Barcelona',
       description: 'Clases de Dancehall y baile urbano para todos los niveles. Horarios flexibles en Barcelona.',
     },
     danza: {
@@ -355,7 +355,7 @@ const metadata = {
       description: 'Descubre nuestras clases de danzas urbanas en Barcelona: Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat y más. Academia de referencia en estilos urbanos. Prueba una clase gratis.',
     },
     dancehall: {
-      title: 'Clases de Dancehall en Barcelona - Academia de Baile Urbano | FarRays Center',
+      title: 'Clases de Dancehall en Barcelona - Academia de Baile Urbano | Farray\'s Center',
       description: 'Aprende Dancehall auténtico en Barcelona con profesores expertos. Clases para todos los niveles. Descubre el ritmo de Jamaica.',
     },
     twerk: {
@@ -485,11 +485,11 @@ const metadata = {
   },
   ca: {
     home: {
-      title: 'FarRays Center - Escola de Ball Urbà a Barcelona',
+      title: 'Farray\'s Center - Escola de Ball Urbà a Barcelona',
       description: 'Descobreix les millors classes de ball urbà a Barcelona. Dancehall i més. Professors experimentats i ambient inclusiu.',
     },
     classes: {
-      title: 'Classes de Ball - FarRays Center Barcelona',
+      title: 'Classes de Ball - Farray\'s Center Barcelona',
       description: 'Classes de Dancehall i ball urbà per a tots els nivells. Horaris flexibles a Barcelona.',
     },
     danza: {
@@ -525,7 +525,7 @@ const metadata = {
       description: 'Descobreix les nostres classes de danses urbanes a Barcelona: Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat i més. Acadèmia de referència en estils urbans. Prova una classe gratis.',
     },
     dancehall: {
-      title: 'Classes de Dancehall a Barcelona - Acadèmia de Ball Urbà | FarRays Center',
+      title: 'Classes de Dancehall a Barcelona - Acadèmia de Ball Urbà | Farray\'s Center',
       description: 'Aprèn Dancehall autèntic a Barcelona amb professors experts. Classes per a tots els nivells. Descobreix el ritme de Jamaica.',
     },
     twerk: {
@@ -655,11 +655,11 @@ const metadata = {
   },
   en: {
     home: {
-      title: 'FarRays Center - Urban Dance School in Barcelona',
+      title: 'Farray\'s Center - Urban Dance School in Barcelona',
       description: 'Discover the best urban dance classes in Barcelona. Dancehall and more. Experienced teachers and inclusive atmosphere.',
     },
     classes: {
-      title: 'Dance Classes - FarRays Center Barcelona',
+      title: 'Dance Classes - Farray\'s Center Barcelona',
       description: 'Dancehall and urban dance classes for all levels. Flexible schedules in Barcelona.',
     },
     danza: {
@@ -695,7 +695,7 @@ const metadata = {
       description: 'Discover our urban dance classes in Barcelona: Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat and more. Leading academy for urban styles. Try a free class.',
     },
     dancehall: {
-      title: 'Dancehall Classes in Barcelona - Urban Dance Academy | FarRays Center',
+      title: 'Dancehall Classes in Barcelona - Urban Dance Academy | Farray\'s Center',
       description: 'Learn authentic Dancehall in Barcelona with expert teachers. Classes for all levels. Discover the rhythm of Jamaica.',
     },
     twerk: {
@@ -825,11 +825,11 @@ const metadata = {
   },
   fr: {
     home: {
-      title: 'FarRays Center - École de Danse Urbaine à Barcelone',
+      title: 'Farray\'s Center - École de Danse Urbaine à Barcelone',
       description: 'Découvrez les meilleurs cours de danse urbaine à Barcelone. Dancehall et plus. Professeurs expérimentés et ambiance inclusive.',
     },
     classes: {
-      title: 'Cours de Danse - FarRays Center Barcelone',
+      title: 'Cours de Danse - Farray\'s Center Barcelone',
       description: 'Cours de Dancehall et danse urbaine pour tous les niveaux. Horaires flexibles à Barcelone.',
     },
     danza: {
@@ -865,7 +865,7 @@ const metadata = {
       description: 'Découvrez nos cours de danses urbaines à Barcelone : Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat et plus. Académie de référence pour les styles urbains. Essayez un cours gratuit.',
     },
     dancehall: {
-      title: 'Cours de Dancehall à Barcelone - Académie de Danse Urbaine | FarRays Center',
+      title: 'Cours de Dancehall à Barcelone - Académie de Danse Urbaine | Farray\'s Center',
       description: 'Apprenez le Dancehall authentique à Barcelone avec des professeurs experts. Cours pour tous les niveaux. Découvrez le rythme de la Jamaïque.',
     },
     twerk: {
@@ -1001,7 +1001,7 @@ const initialContent = {
     home: `
       <header class="fixed top-0 left-0 right-0 z-50 bg-transparent">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div class="text-2xl font-bold text-primary-accent holographic-text">FarRays Center</div>
+          <div class="text-2xl font-bold text-primary-accent holographic-text">Farray's Center</div>
           <nav class="hidden md:flex space-x-8 text-neutral/90 font-medium text-lg">
             <a href="/es" class="hover:text-primary-accent transition-colors">Inicio</a>
             <a href="/es/clases/baile-barcelona" class="hover:text-primary-accent transition-colors">Clases</a>
@@ -1011,7 +1011,7 @@ const initialContent = {
       </header>
       <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12 text-center">
         <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-neutral mb-6 holographic-text">
-          FarRays Center
+          Farray's Center
         </h1>
         <p class="text-xl sm:text-2xl text-neutral/80 max-w-3xl mx-auto mb-12">
           Escuela de baile urbano en Barcelona. Aprende Dancehall y más con los mejores profesores.
@@ -1137,7 +1137,7 @@ const initialContent = {
   },
   // Simplified content for other languages
   ca: {
-    home: `<main id="main-content"><h1 class="holographic-text text-5xl font-extrabold">FarRays Center</h1><p class="text-xl">Escola de ball urbà a Barcelona. Aprèn Dancehall i més.</p></main>`,
+    home: `<main id="main-content"><h1 class="holographic-text text-5xl font-extrabold">Farray's Center</h1><p class="text-xl">Escola de ball urbà a Barcelona. Aprèn Dancehall i més.</p></main>`,
     classes: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Les nostres Classes</h1><p>Classes de Dancehall i ball urbà per a tots els nivells.</p></main>`,
     danza: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Dansa a Barcelona</h1><p>Explora la tècnica, elegància i expressió de la dansa clàssica i contemporània. Ballet Clàssic Cubà, Dansa Contemporània, Modern Jazz i més. Acadèmia reconeguda per CID-UNESCO.</p></main>`,
     salsaBachata: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Salsa i Bachata a Barcelona</h1><p>Descobreix la passió, el ritme i la connexió del ball llatí. Salsa Cubana, Bachata Sensual i Dominicana, Timba, Son Cubà i més. Professors formats a L'Havana.</p></main>`,
@@ -1161,7 +1161,7 @@ const initialContent = {
     ...LANDING_CONTENT.ca,
   },
   en: {
-    home: `<main id="main-content"><h1 class="holographic-text text-5xl font-extrabold">FarRays Center</h1><p class="text-xl">Urban dance school in Barcelona. Learn Dancehall and more.</p></main>`,
+    home: `<main id="main-content"><h1 class="holographic-text text-5xl font-extrabold">Farray's Center</h1><p class="text-xl">Urban dance school in Barcelona. Learn Dancehall and more.</p></main>`,
     classes: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Our Classes</h1><p>Dancehall and urban dance classes for all levels.</p></main>`,
     danza: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Classes in Barcelona</h1><p>Explore the technique, elegance and expression of classical and contemporary dance. Cuban Classical Ballet, Contemporary Dance, Modern Jazz and more. CID-UNESCO accredited academy.</p></main>`,
     salsaBachata: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Salsa and Bachata Classes in Barcelona</h1><p>Discover the passion, rhythm and connection of Latin dance. Cuban Salsa, Sensual and Dominican Bachata, Timba, Son and more. Teachers trained in Havana.</p></main>`,
@@ -1185,7 +1185,7 @@ const initialContent = {
     ...LANDING_CONTENT.en,
   },
   fr: {
-    home: `<main id="main-content"><h1 class="holographic-text text-5xl font-extrabold">FarRays Center</h1><p class="text-xl">École de danse urbaine à Barcelone. Apprenez le Dancehall et plus.</p></main>`,
+    home: `<main id="main-content"><h1 class="holographic-text text-5xl font-extrabold">Farray's Center</h1><p class="text-xl">École de danse urbaine à Barcelone. Apprenez le Dancehall et plus.</p></main>`,
     classes: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Nos Cours</h1><p>Cours de Dancehall et danse urbaine pour tous les niveaux.</p></main>`,
     danza: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Danse à Barcelone</h1><p>Explorez la technique, l'élégance et l'expression de la danse classique et contemporaine. Ballet Classique Cubain, Danse Contemporaine, Modern Jazz et plus. Académie accréditée par CID-UNESCO.</p></main>`,
     salsaBachata: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Salsa et Bachata à Barcelone</h1><p>Découvrez la passion, le rythme et la connexion de la danse latine. Salsa Cubaine, Bachata Sensuelle et Dominicaine, Timba, Son et plus. Professeurs formés à La Havane.</p></main>`,

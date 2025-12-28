@@ -61,7 +61,7 @@ async function createOGPlaceholder(filename, title, subtitle, bgColor = BRAND_CO
           fill="${BRAND_COLORS.primaryAccent}"
           text-anchor="middle"
         >
-          FarRays Center
+          Farray's Center
         </text>
 
         <!-- Main title -->
@@ -173,7 +173,7 @@ async function main() {
 
   await createOGPlaceholder(
     'og-image.jpg',
-    'FarRays Center',
+    'Farray\'s Center',
     'Dance School Barcelona'
   );
 
