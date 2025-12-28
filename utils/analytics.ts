@@ -1,6 +1,6 @@
 import { hasConsentFor } from '../hooks/useCookieConsent';
 
-// Declare gtag and fbq on window for TypeScript
+// Declare gtag, fbq, and clarity on window for TypeScript
 declare global {
   interface Window {
     gtag?: (
@@ -15,6 +15,7 @@ declare global {
       params?: Record<string, unknown>
     ) => void;
     _fbq?: unknown;
+    clarity?: (command: string, ...args: unknown[]) => void;
   }
 }
 
@@ -81,6 +82,37 @@ export function getStoredUTMParams(): Record<string, string> {
 }
 
 let consentUpdated = false;
+let clarityLoaded = false;
+
+// Microsoft Clarity Project ID
+const CLARITY_PROJECT_ID = 'urluk2l5up';
+
+/**
+ * Load Microsoft Clarity for heatmaps and session recordings
+ * Only loads if user has given analytics consent (GDPR compliant)
+ */
+export function loadClarity(): void {
+  if (clarityLoaded) return;
+  if (!hasConsentFor('analytics')) return;
+  if (typeof window === 'undefined' || typeof document === 'undefined') return;
+
+  // Clarity initialization code
+  /* eslint-disable @typescript-eslint/no-explicit-any */
+  const w = window as any;
+  w.clarity =
+    w.clarity ||
+    function (...args: unknown[]) {
+      (w.clarity.q = w.clarity.q || []).push(args);
+    };
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.clarity.ms/tag/${CLARITY_PROJECT_ID}`;
+  const firstScript = document.getElementsByTagName('script')[0];
+  firstScript?.parentNode?.insertBefore(script, firstScript);
+  /* eslint-enable @typescript-eslint/no-explicit-any */
+
+  clarityLoaded = true;
+}
 
 /**
  * Update GTM Consent Mode when user accepts cookies
@@ -129,6 +161,11 @@ export function loadGoogleAnalytics(): void {
 export function initializeAnalytics(): void {
   // Update GTM consent (GTM handles GA4 and Meta Pixel)
   updateGTMConsent();
+
+  // Load Clarity if analytics consent given (GDPR)
+  if (hasConsentFor('analytics')) {
+    loadClarity();
+  }
 }
 
 /**
@@ -341,6 +378,11 @@ if (typeof window !== 'undefined') {
 
     // Update GTM/GA4 consent state (GTM handles Meta Pixel)
     updateGAConsent(preferences.analytics, preferences.marketing);
+
+    // Load Clarity if analytics consent given (GDPR)
+    if (preferences.analytics) {
+      loadClarity();
+    }
   });
 
   // Check if user already has consent stored (e.g., returning visitor)
