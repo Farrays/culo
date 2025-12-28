@@ -8,25 +8,25 @@ module.exports = [
   {
     name: 'ES Locale Bundle',
     path: 'dist/assets/i18n-es-*.js',
-    limit: '315 KB', // Increased for landing pages (Dancehall, Afrobeats, Twerk, etc.)
+    limit: '330 KB', // Increased for all landing pages and new translations
     gzip: true,
   },
   {
     name: 'EN Locale Bundle',
     path: 'dist/assets/i18n-en-*.js',
-    limit: '310 KB', // Increased for landing pages (Dancehall, Afrobeats, Twerk, etc.)
+    limit: '325 KB', // Increased for all landing pages and new translations
     gzip: true,
   },
   {
     name: 'CA Locale Bundle',
     path: 'dist/assets/i18n-ca-*.js',
-    limit: '330 KB', // Increased for landing pages (Dancehall, Afrobeats, Twerk, etc.)
+    limit: '345 KB', // Increased for all landing pages and new translations
     gzip: true,
   },
   {
     name: 'FR Locale Bundle',
     path: 'dist/assets/i18n-fr-*.js',
-    limit: '345 KB', // Increased for landing pages (Dancehall, Afrobeats, Twerk, etc.)
+    limit: '355 KB', // Increased for all landing pages and new translations
     gzip: true,
   },
   {
