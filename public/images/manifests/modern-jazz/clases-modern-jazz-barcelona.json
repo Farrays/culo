@@ -1,0 +1,158 @@
+{
+  "id": "clases-modern-jazz-barcelona",
+  "className": "modern-jazz",
+  "originalFile": "Clases-Modern-Jazz-Barcelona.webp",
+  "original": {
+    "width": 5504,
+    "height": 8256,
+    "aspectRatio": "0.6667",
+    "format": "webp",
+    "space": "srgb",
+    "channels": 3,
+    "hasAlpha": false
+  },
+  "placeholder": {
+    "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAQAwCdASoUAB4APxl6sFO6KCSkN+gDQCMJZQDLpEU7LAAA/u816VzcHNAYJFNywx7SmQJLSbYYAA==",
+    "dominantColor": "#322945",
+    "svg": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23322945%22%2F%3E%3C%2Fsvg%3E"
+  },
+  "basePath": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona",
+  "variants": [
+    {
+      "width": 320,
+      "height": 480,
+      "format": "jpg",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_320.jpg",
+      "size": 13124
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "format": "webp",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_320.webp",
+      "size": 10008
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "format": "avif",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_320.avif",
+      "size": 9263
+    },
+    {
+      "width": 640,
+      "height": 960,
+      "format": "avif",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_640.avif",
+      "size": 24127
+    },
+    {
+      "width": 640,
+      "height": 960,
+      "format": "jpg",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_640.jpg",
+      "size": 38707
+    },
+    {
+      "width": 640,
+      "height": 960,
+      "format": "webp",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_640.webp",
+      "size": 26720
+    },
+    {
+      "width": 768,
+      "height": 1152,
+      "format": "webp",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_768.webp",
+      "size": 34556
+    },
+    {
+      "width": 768,
+      "height": 1152,
+      "format": "jpg",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_768.jpg",
+      "size": 51500
+    },
+    {
+      "width": 768,
+      "height": 1152,
+      "format": "avif",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_768.avif",
+      "size": 30473
+    },
+    {
+      "width": 1024,
+      "height": 1536,
+      "format": "avif",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1024.avif",
+      "size": 48251
+    },
+    {
+      "width": 1024,
+      "height": 1536,
+      "format": "jpg",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1024.jpg",
+      "size": 82069
+    },
+    {
+      "width": 1024,
+      "height": 1536,
+      "format": "webp",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1024.webp",
+      "size": 53746
+    },
+    {
+      "width": 1440,
+      "height": 2160,
+      "format": "jpg",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1440.jpg",
+      "size": 148696
+    },
+    {
+      "width": 1440,
+      "height": 2160,
+      "format": "avif",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1440.avif",
+      "size": 99017
+    },
+    {
+      "width": 1440,
+      "height": 2160,
+      "format": "webp",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1440.webp",
+      "size": 103834
+    },
+    {
+      "width": 1920,
+      "height": 2880,
+      "format": "jpg",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1920.jpg",
+      "size": 257613
+    },
+    {
+      "width": 1920,
+      "height": 2880,
+      "format": "avif",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1920.avif",
+      "size": 200712
+    },
+    {
+      "width": 1920,
+      "height": 2880,
+      "format": "webp",
+      "path": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1920.webp",
+      "size": 188926
+    }
+  ],
+  "srcSets": {
+    "avif": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_320.avif 320w, /images/classes/modern-jazz/img/clases-modern-jazz-barcelona_640.avif 640w, /images/classes/modern-jazz/img/clases-modern-jazz-barcelona_768.avif 768w, /images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1024.avif 1024w, /images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1440.avif 1440w, /images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1920.avif 1920w",
+    "webp": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_320.webp 320w, /images/classes/modern-jazz/img/clases-modern-jazz-barcelona_640.webp 640w, /images/classes/modern-jazz/img/clases-modern-jazz-barcelona_768.webp 768w, /images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1024.webp 1024w, /images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1440.webp 1440w, /images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1920.webp 1920w",
+    "jpeg": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_320.jpg 320w, /images/classes/modern-jazz/img/clases-modern-jazz-barcelona_640.jpg 640w, /images/classes/modern-jazz/img/clases-modern-jazz-barcelona_768.jpg 768w, /images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1024.jpg 1024w, /images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1440.jpg 1440w, /images/classes/modern-jazz/img/clases-modern-jazz-barcelona_1920.jpg 1920w"
+  },
+  "defaultSrc": "/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_320.jpg",
+  "generated": {
+    "at": "2025-12-27T01:37:06.785Z",
+    "version": "2.0.0"
+  }
+}

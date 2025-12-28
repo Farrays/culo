@@ -1,0 +1,158 @@
+{
+  "id": "clases-afrobeat-barcelona",
+  "className": "afrobeat",
+  "originalFile": "Clases-Afrobeat-Barcelona.webp",
+  "original": {
+    "width": 1920,
+    "height": 1223,
+    "aspectRatio": "1.5699",
+    "format": "webp",
+    "space": "srgb",
+    "channels": 3,
+    "hasAlpha": false
+  },
+  "placeholder": {
+    "lqip": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoUAA0APzmGulQvKSWxMAgCICcJZQCdAC5JAAD+2X5l5YG3ceup+IlNAwAAAA==",
+    "dominantColor": "#89a3ac",
+    "svg": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%2389a3ac%22%2F%3E%3C%2Fsvg%3E"
+  },
+  "basePath": "/images/classes/afrobeat/img/clases-afrobeat-barcelona",
+  "variants": [
+    {
+      "width": 320,
+      "height": 204,
+      "format": "jpg",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_320.jpg",
+      "size": 14831
+    },
+    {
+      "width": 320,
+      "height": 204,
+      "format": "webp",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_320.webp",
+      "size": 13532
+    },
+    {
+      "width": 640,
+      "height": 408,
+      "format": "jpg",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_640.jpg",
+      "size": 43815
+    },
+    {
+      "width": 640,
+      "height": 408,
+      "format": "webp",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_640.webp",
+      "size": 37636
+    },
+    {
+      "width": 320,
+      "height": 204,
+      "format": "avif",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_320.avif",
+      "size": 13078
+    },
+    {
+      "width": 640,
+      "height": 408,
+      "format": "avif",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_640.avif",
+      "size": 33555
+    },
+    {
+      "width": 768,
+      "height": 489,
+      "format": "jpg",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_768.jpg",
+      "size": 58003
+    },
+    {
+      "width": 768,
+      "height": 489,
+      "format": "webp",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_768.webp",
+      "size": 47890
+    },
+    {
+      "width": 1024,
+      "height": 652,
+      "format": "avif",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_1024.avif",
+      "size": 62516
+    },
+    {
+      "width": 768,
+      "height": 489,
+      "format": "avif",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_768.avif",
+      "size": 42649
+    },
+    {
+      "width": 1024,
+      "height": 652,
+      "format": "jpg",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_1024.jpg",
+      "size": 90246
+    },
+    {
+      "width": 1024,
+      "height": 652,
+      "format": "webp",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_1024.webp",
+      "size": 69918
+    },
+    {
+      "width": 1440,
+      "height": 917,
+      "format": "avif",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_1440.avif",
+      "size": 89519
+    },
+    {
+      "width": 1440,
+      "height": 917,
+      "format": "jpg",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_1440.jpg",
+      "size": 144677
+    },
+    {
+      "width": 1440,
+      "height": 917,
+      "format": "webp",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_1440.webp",
+      "size": 103352
+    },
+    {
+      "width": 1920,
+      "height": 1223,
+      "format": "avif",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_1920.avif",
+      "size": 140244
+    },
+    {
+      "width": 1920,
+      "height": 1223,
+      "format": "jpg",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_1920.jpg",
+      "size": 224358
+    },
+    {
+      "width": 1920,
+      "height": 1223,
+      "format": "webp",
+      "path": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_1920.webp",
+      "size": 142768
+    }
+  ],
+  "srcSets": {
+    "avif": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_320.avif 320w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_640.avif 640w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_1024.avif 1024w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_768.avif 768w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_1440.avif 1440w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_1920.avif 1920w",
+    "webp": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_320.webp 320w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_640.webp 640w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_768.webp 768w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_1024.webp 1024w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_1440.webp 1440w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_1920.webp 1920w",
+    "jpeg": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_320.jpg 320w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_640.jpg 640w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_768.jpg 768w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_1024.jpg 1024w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_1440.jpg 1440w, /images/classes/afrobeat/img/clases-afrobeat-barcelona_1920.jpg 1920w"
+  },
+  "defaultSrc": "/images/classes/afrobeat/img/clases-afrobeat-barcelona_320.jpg",
+  "generated": {
+    "at": "2025-12-26T23:07:45.678Z",
+    "version": "2.0.0"
+  }
+}

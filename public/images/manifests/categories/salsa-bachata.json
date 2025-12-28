@@ -1,0 +1,117 @@
+{
+  "id": "salsa-bachata",
+  "className": "categories",
+  "originalFile": "salsa-bachata.jpg",
+  "original": {
+    "width": 8256,
+    "height": 5504,
+    "aspectRatio": "1.5000",
+    "format": "jpeg",
+    "space": "srgb",
+    "channels": 3,
+    "hasAlpha": false,
+    "orientation": 1
+  },
+  "placeholder": {
+    "lqip": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAwAwCdASoUAA0APzmGulQvKSWjMAgB4CcJZACdLwAAJJ1wAOMO9qRueToAxX8mS4GKe0mBXEnPPY1vgAA=",
+    "dominantColor": "#9066a2",
+    "svg": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%239066a2%22%2F%3E%3C%2Fsvg%3E"
+  },
+  "basePath": "/images/classes/categories/img/categories-salsa-bachata-barcelona",
+  "variants": [
+    {
+      "width": 320,
+      "height": 240,
+      "format": "jpg",
+      "path": "/images/categories/img/salsa-bachata_320.jpg",
+      "size": 10111
+    },
+    {
+      "width": 320,
+      "height": 240,
+      "format": "webp",
+      "path": "/images/categories/img/salsa-bachata_320.webp",
+      "size": 7912
+    },
+    {
+      "width": 320,
+      "height": 240,
+      "format": "avif",
+      "path": "/images/categories/img/salsa-bachata_320.avif",
+      "size": 7373
+    },
+    {
+      "width": 640,
+      "height": 480,
+      "format": "avif",
+      "path": "/images/categories/img/salsa-bachata_640.avif",
+      "size": 17920
+    },
+    {
+      "width": 640,
+      "height": 480,
+      "format": "webp",
+      "path": "/images/categories/img/salsa-bachata_640.webp",
+      "size": 20832
+    },
+    {
+      "width": 640,
+      "height": 480,
+      "format": "jpg",
+      "path": "/images/categories/img/salsa-bachata_640.jpg",
+      "size": 28681
+    },
+    {
+      "width": 768,
+      "height": 576,
+      "format": "webp",
+      "path": "/images/categories/img/salsa-bachata_768.webp",
+      "size": 26560
+    },
+    {
+      "width": 768,
+      "height": 576,
+      "format": "avif",
+      "path": "/images/categories/img/salsa-bachata_768.avif",
+      "size": 22711
+    },
+    {
+      "width": 768,
+      "height": 576,
+      "format": "jpg",
+      "path": "/images/categories/img/salsa-bachata_768.jpg",
+      "size": 37935
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "format": "avif",
+      "path": "/images/categories/img/salsa-bachata_1024.avif",
+      "size": 32381
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "format": "webp",
+      "path": "/images/categories/img/salsa-bachata_1024.webp",
+      "size": 39334
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "format": "jpg",
+      "path": "/images/categories/img/salsa-bachata_1024.jpg",
+      "size": 58889
+    }
+  ],
+  "srcSets": {
+    "avif": "/images/categories/img/salsa-bachata_320.avif 320w, /images/categories/img/salsa-bachata_640.avif 640w, /images/categories/img/salsa-bachata_768.avif 768w, /images/categories/img/salsa-bachata_1024.avif 1024w",
+    "webp": "/images/categories/img/salsa-bachata_320.webp 320w, /images/categories/img/salsa-bachata_640.webp 640w, /images/categories/img/salsa-bachata_768.webp 768w, /images/categories/img/salsa-bachata_1024.webp 1024w",
+    "jpeg": "/images/categories/img/salsa-bachata_320.jpg 320w, /images/categories/img/salsa-bachata_640.jpg 640w, /images/categories/img/salsa-bachata_768.jpg 768w, /images/categories/img/salsa-bachata_1024.jpg 1024w"
+  },
+  "defaultSrc": "/images/categories/img/salsa-bachata_320.jpg",
+  "generated": {
+    "at": "2025-12-27T00:50:40.601Z",
+    "version": "2.0.0"
+  }
+}

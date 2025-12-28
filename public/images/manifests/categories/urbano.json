@@ -1,0 +1,117 @@
+{
+  "id": "urbano",
+  "className": "categories",
+  "originalFile": "urbano.jpg",
+  "original": {
+    "width": 8256,
+    "height": 5504,
+    "aspectRatio": "1.5000",
+    "format": "jpeg",
+    "space": "srgb",
+    "channels": 3,
+    "hasAlpha": false,
+    "orientation": 1
+  },
+  "placeholder": {
+    "lqip": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAgCdASoUAA0APzmGvFQ/qSYjMAgD8CcJZwAAhSoAAP7YgjPGpfJUTc+ommzDcvfrn5vQAAA=",
+    "dominantColor": "#603e43",
+    "svg": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23603e43%22%2F%3E%3C%2Fsvg%3E"
+  },
+  "basePath": "/images/classes/categories/img/categories-urbano-barcelona",
+  "variants": [
+    {
+      "width": 320,
+      "height": 240,
+      "format": "webp",
+      "path": "/images/categories/img/urbano_320.webp",
+      "size": 14804
+    },
+    {
+      "width": 320,
+      "height": 240,
+      "format": "jpg",
+      "path": "/images/categories/img/urbano_320.jpg",
+      "size": 16094
+    },
+    {
+      "width": 320,
+      "height": 240,
+      "format": "avif",
+      "path": "/images/categories/img/urbano_320.avif",
+      "size": 15064
+    },
+    {
+      "width": 640,
+      "height": 480,
+      "format": "avif",
+      "path": "/images/categories/img/urbano_640.avif",
+      "size": 40095
+    },
+    {
+      "width": 640,
+      "height": 480,
+      "format": "jpg",
+      "path": "/images/categories/img/urbano_640.jpg",
+      "size": 48734
+    },
+    {
+      "width": 640,
+      "height": 480,
+      "format": "webp",
+      "path": "/images/categories/img/urbano_640.webp",
+      "size": 42494
+    },
+    {
+      "width": 768,
+      "height": 576,
+      "format": "webp",
+      "path": "/images/categories/img/urbano_768.webp",
+      "size": 55100
+    },
+    {
+      "width": 768,
+      "height": 576,
+      "format": "avif",
+      "path": "/images/categories/img/urbano_768.avif",
+      "size": 51161
+    },
+    {
+      "width": 768,
+      "height": 576,
+      "format": "jpg",
+      "path": "/images/categories/img/urbano_768.jpg",
+      "size": 64707
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "format": "avif",
+      "path": "/images/categories/img/urbano_1024.avif",
+      "size": 78127
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "format": "webp",
+      "path": "/images/categories/img/urbano_1024.webp",
+      "size": 85356
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "format": "jpg",
+      "path": "/images/categories/img/urbano_1024.jpg",
+      "size": 102534
+    }
+  ],
+  "srcSets": {
+    "avif": "/images/categories/img/urbano_320.avif 320w, /images/categories/img/urbano_640.avif 640w, /images/categories/img/urbano_768.avif 768w, /images/categories/img/urbano_1024.avif 1024w",
+    "webp": "/images/categories/img/urbano_320.webp 320w, /images/categories/img/urbano_640.webp 640w, /images/categories/img/urbano_768.webp 768w, /images/categories/img/urbano_1024.webp 1024w",
+    "jpeg": "/images/categories/img/urbano_320.jpg 320w, /images/categories/img/urbano_640.jpg 640w, /images/categories/img/urbano_768.jpg 768w, /images/categories/img/urbano_1024.jpg 1024w"
+  },
+  "defaultSrc": "/images/categories/img/urbano_320.webp",
+  "generated": {
+    "at": "2025-12-27T00:50:48.348Z",
+    "version": "2.0.0"
+  }
+}

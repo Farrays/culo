@@ -1,0 +1,117 @@
+{
+  "id": "danza",
+  "className": "categories",
+  "originalFile": "danza.jpg",
+  "original": {
+    "width": 8256,
+    "height": 5504,
+    "aspectRatio": "1.5000",
+    "format": "jpeg",
+    "space": "srgb",
+    "channels": 3,
+    "hasAlpha": false,
+    "orientation": 1
+  },
+  "placeholder": {
+    "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADwAgCdASoUAA0APzmEuVO0qKWwsAgCkCcJYgCdAC5JAAD+66tPC/ih5rdh5qIVt7R+HW8epYAAAA==",
+    "dominantColor": "#3c2cb1",
+    "svg": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%233c2cb1%22%2F%3E%3C%2Fsvg%3E"
+  },
+  "basePath": "/images/classes/categories/img/categories-danza-barcelona",
+  "variants": [
+    {
+      "width": 320,
+      "height": 240,
+      "format": "webp",
+      "path": "/images/categories/img/danza_320.webp",
+      "size": 11016
+    },
+    {
+      "width": 320,
+      "height": 240,
+      "format": "jpg",
+      "path": "/images/categories/img/danza_320.jpg",
+      "size": 12945
+    },
+    {
+      "width": 320,
+      "height": 240,
+      "format": "avif",
+      "path": "/images/categories/img/danza_320.avif",
+      "size": 10291
+    },
+    {
+      "width": 640,
+      "height": 480,
+      "format": "avif",
+      "path": "/images/categories/img/danza_640.avif",
+      "size": 25779
+    },
+    {
+      "width": 640,
+      "height": 480,
+      "format": "jpg",
+      "path": "/images/categories/img/danza_640.jpg",
+      "size": 37612
+    },
+    {
+      "width": 640,
+      "height": 480,
+      "format": "webp",
+      "path": "/images/categories/img/danza_640.webp",
+      "size": 30198
+    },
+    {
+      "width": 768,
+      "height": 576,
+      "format": "webp",
+      "path": "/images/categories/img/danza_768.webp",
+      "size": 39196
+    },
+    {
+      "width": 768,
+      "height": 576,
+      "format": "avif",
+      "path": "/images/categories/img/danza_768.avif",
+      "size": 32473
+    },
+    {
+      "width": 768,
+      "height": 576,
+      "format": "jpg",
+      "path": "/images/categories/img/danza_768.jpg",
+      "size": 49689
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "format": "avif",
+      "path": "/images/categories/img/danza_1024.avif",
+      "size": 48568
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "format": "webp",
+      "path": "/images/categories/img/danza_1024.webp",
+      "size": 59086
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "format": "jpg",
+      "path": "/images/categories/img/danza_1024.jpg",
+      "size": 78208
+    }
+  ],
+  "srcSets": {
+    "avif": "/images/categories/img/danza_320.avif 320w, /images/categories/img/danza_640.avif 640w, /images/categories/img/danza_768.avif 768w, /images/categories/img/danza_1024.avif 1024w",
+    "webp": "/images/categories/img/danza_320.webp 320w, /images/categories/img/danza_640.webp 640w, /images/categories/img/danza_768.webp 768w, /images/categories/img/danza_1024.webp 1024w",
+    "jpeg": "/images/categories/img/danza_320.jpg 320w, /images/categories/img/danza_640.jpg 640w, /images/categories/img/danza_768.jpg 768w, /images/categories/img/danza_1024.jpg 1024w"
+  },
+  "defaultSrc": "/images/categories/img/danza_320.webp",
+  "generated": {
+    "at": "2025-12-27T00:50:36.062Z",
+    "version": "2.0.0"
+  }
+}
