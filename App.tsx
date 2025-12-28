@@ -224,7 +224,9 @@ const AppContent: React.FC = () => {
     location.pathname.endsWith('/hip-hop') ||
     location.pathname.endsWith('/afrobeats') ||
     location.pathname.endsWith('/afro-jazz') ||
-    location.pathname.endsWith('/salsa-cubana');
+    location.pathname.endsWith('/salsa-cubana') ||
+    location.pathname.endsWith('/ballet') ||
+    location.pathname.endsWith('/afro-contemporaneo');
 
   // Determine if exit intent modal should show on current page
   const shouldShowExitIntent = useMemo(() => {
