@@ -1405,10 +1405,10 @@ ${preloadHintsHtml}
   </head>`);
 
   // Inject prerendered content in <div id="root">
-  // Use data-prerendered to mark for hydration compatibility
+  // Content MUST be inside the div for SSG to work (not as HTML comment)
   html = html.replace(
     '<div id="root"></div>',
-    `<div id="root" data-prerendered="true"></div><!--${content}-->`
+    `<div id="root" data-prerendered="true">${content}</div>`
   );
 
   // Determine file path
