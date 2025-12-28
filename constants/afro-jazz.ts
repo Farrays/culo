@@ -58,10 +58,10 @@ export const AFRO_JAZZ_SCHEDULE_KEYS = [
   {
     id: '1',
     dayKey: 'wednesday',
-    className: 'Afro Jazz Básico',
+    className: 'Afro Jazz Principiantes',
     time: '12:00 - 13:00',
     teacher: 'Alejandro Miñoso',
-    levelKey: 'basicLevel',
+    levelKey: 'beginnerLevel',
   },
   {
     id: '2',

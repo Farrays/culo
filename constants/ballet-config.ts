@@ -62,11 +62,13 @@ export const BALLET_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
-    image: {
-      src: '/images/classes/ballet/img/clases-ballet-barcelona_960.webp',
-      srcSet:
-        '/images/classes/ballet/img/clases-ballet-barcelona_480.webp 480w, /images/classes/ballet/img/clases-ballet-barcelona_960.webp 960w',
-      alt: 'Clases de Ballet en Barcelona - Estudiantes practicando en la barra',
+    // Enterprise: OptimizedImage with AVIF/WebP/JPG multi-format srcset
+    optimizedImage: {
+      basePath: '/images/classes/ballet/img/clases-ballet-barcelona',
+      alt: 'Estudiantes de ballet clásico practicando posiciones en la barra en academia de Barcelona',
+      altKey: 'styleImages.ballet.whatIs',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
     },
   },
 
@@ -142,4 +144,27 @@ export const BALLET_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Ballet Clásico', 'Técnica Cubana', 'Contemporáneo'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Ballet -> Contemporáneo, Modern Jazz, Stretching
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'contemporaneo-barcelona',
+        nameKey: 'relatedContemporaneoName',
+        descriptionKey: 'relatedContemporaneoDesc',
+      },
+      {
+        slug: 'modern-jazz-barcelona',
+        nameKey: 'relatedModernJazzName',
+        descriptionKey: 'relatedModernJazzDesc',
+      },
+      {
+        slug: 'stretching-barcelona',
+        nameKey: 'relatedStretchingName',
+        descriptionKey: 'relatedStretchingDesc',
+      },
+    ],
+  },
 };

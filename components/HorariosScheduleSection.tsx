@@ -26,6 +26,7 @@ import { ClockIcon, UserIcon, AcademicCapIcon, ChevronRightIcon } from '../lib/i
 type FilterDay = DayKey | 'all';
 type FilterCategory = CategoryKey | 'all';
 type FilterLevel = LevelKey | 'all';
+type FilterTimeOfDay = 'all' | 'morning' | 'evening';
 
 // ============================================================================
 // CONSTANTS
@@ -82,6 +83,38 @@ const LEVEL_CONFIG: Record<LevelKey, { labelKey: string; colorClass: string }> =
     colorClass: 'text-purple-400',
   },
   all: { labelKey: 'schedule_level_all', colorClass: 'text-neutral/70' },
+};
+
+// Time of day filter config
+const TIME_OF_DAY_CONFIG: Record<
+  FilterTimeOfDay,
+  { labelKey: string; bgClass: string; textClass: string; borderClass: string }
+> = {
+  all: {
+    labelKey: 'schedule_time_all',
+    bgClass: 'bg-primary-accent/20',
+    textClass: 'text-primary-accent',
+    borderClass: 'border-primary-accent/50',
+  },
+  morning: {
+    labelKey: 'schedule_time_morning',
+    bgClass: 'bg-yellow-500/20',
+    textClass: 'text-yellow-400',
+    borderClass: 'border-yellow-500/30',
+  },
+  evening: {
+    labelKey: 'schedule_time_evening',
+    bgClass: 'bg-indigo-500/20',
+    textClass: 'text-indigo-400',
+    borderClass: 'border-indigo-500/30',
+  },
+};
+
+// Helper function to check if a time is morning (before 14:00)
+const isMorningClass = (time: string): boolean => {
+  const hourPart = time.split(':')[0] ?? '0';
+  const hour = parseInt(hourPart, 10);
+  return hour < 14;
 };
 
 // Level filter config for chips (subset of levels shown in filter)
@@ -286,6 +319,57 @@ const LevelChip = memo(
 LevelChip.displayName = 'LevelChip';
 
 /**
+ * Time of Day Filter Chip
+ */
+const TimeOfDayChip = memo(
+  ({
+    timeOfDay,
+    label,
+    isActive,
+    onClick,
+    count,
+  }: {
+    timeOfDay: FilterTimeOfDay;
+    label: string;
+    isActive: boolean;
+    onClick: () => void;
+    count: number;
+  }) => {
+    const config = TIME_OF_DAY_CONFIG[timeOfDay];
+
+    return (
+      <button
+        onClick={onClick}
+        className={`
+          px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium
+          transition-all duration-300 ease-out
+          border flex items-center gap-1.5
+          ${
+            isActive
+              ? `${config.bgClass} ${config.textClass} ${config.borderClass}`
+              : 'bg-white/5 text-neutral/60 border-white/10 hover:border-white/30 hover:text-neutral/80'
+          }
+        `}
+        aria-pressed={isActive}
+      >
+        <ClockIcon className="w-3 h-3" />
+        <span>{label}</span>
+        <span
+          className={`
+            px-1.5 py-0.5 rounded-full text-[10px] font-bold
+            ${isActive ? 'bg-white/20' : 'bg-white/10'}
+          `}
+        >
+          {count}
+        </span>
+      </button>
+    );
+  }
+);
+
+TimeOfDayChip.displayName = 'TimeOfDayChip';
+
+/**
  * Schedule Class Card
  */
 const ClassCard = memo(
@@ -393,6 +477,7 @@ const HorariosScheduleSection: React.FC = () => {
   const [selectedDay, setSelectedDay] = useState<FilterDay>('all');
   const [selectedCategory, setSelectedCategory] = useState<FilterCategory>('all');
   const [selectedLevel, setSelectedLevel] = useState<FilterLevel>('all');
+  const [selectedTimeOfDay, setSelectedTimeOfDay] = useState<FilterTimeOfDay>('all');
 
   // Get category counts
   const categoryCounts = useMemo(() => getCountByCategory(), []);
@@ -400,7 +485,18 @@ const HorariosScheduleSection: React.FC = () => {
   // Get level counts
   const levelCounts = useMemo(() => getCountByLevel(), []);
 
-  // Get day counts for current category and level
+  // Get time of day counts
+  const timeOfDayCounts = useMemo(() => {
+    const morningCount = SCHEDULE_DATA.filter(c => isMorningClass(c.time)).length;
+    const eveningCount = SCHEDULE_DATA.filter(c => !isMorningClass(c.time)).length;
+    return {
+      all: SCHEDULE_DATA.length,
+      morning: morningCount,
+      evening: eveningCount,
+    };
+  }, []);
+
+  // Get day counts for current category, level, and time of day
   const dayCountsForCategory = useMemo(() => {
     const counts: Record<DayKey | 'all', number> = {
       all: 0,
@@ -416,19 +512,32 @@ const HorariosScheduleSection: React.FC = () => {
     SCHEDULE_DATA.forEach(c => {
       const matchesCategory = selectedCategory === 'all' || c.category === selectedCategory;
       const matchesLevel = selectedLevel === 'all' || c.level === selectedLevel;
-      if (matchesCategory && matchesLevel) {
+      const matchesTimeOfDay =
+        selectedTimeOfDay === 'all' ||
+        (selectedTimeOfDay === 'morning' && isMorningClass(c.time)) ||
+        (selectedTimeOfDay === 'evening' && !isMorningClass(c.time));
+      if (matchesCategory && matchesLevel && matchesTimeOfDay) {
         counts[c.day]++;
         counts.all++;
       }
     });
 
     return counts;
-  }, [selectedCategory, selectedLevel]);
+  }, [selectedCategory, selectedLevel, selectedTimeOfDay]);
 
-  // Filtered classes
+  // Filtered classes (including time of day filter)
   const filteredClasses = useMemo(() => {
-    return filterClasses(selectedDay, selectedCategory, selectedLevel);
-  }, [selectedDay, selectedCategory, selectedLevel]);
+    let classes = filterClasses(selectedDay, selectedCategory, selectedLevel);
+
+    // Apply time of day filter
+    if (selectedTimeOfDay === 'morning') {
+      classes = classes.filter(c => isMorningClass(c.time));
+    } else if (selectedTimeOfDay === 'evening') {
+      classes = classes.filter(c => !isMorningClass(c.time));
+    }
+
+    return classes;
+  }, [selectedDay, selectedCategory, selectedLevel, selectedTimeOfDay]);
 
   // Handlers
   const handleDayChange = useCallback((day: FilterDay) => {
@@ -441,6 +550,10 @@ const HorariosScheduleSection: React.FC = () => {
 
   const handleLevelChange = useCallback((level: FilterLevel) => {
     setSelectedLevel(level);
+  }, []);
+
+  const handleTimeOfDayChange = useCallback((timeOfDay: FilterTimeOfDay) => {
+    setSelectedTimeOfDay(timeOfDay);
   }, []);
 
   // Active days (All + Mon-Fri, excluding weekend as no classes)
@@ -456,104 +569,112 @@ const HorariosScheduleSection: React.FC = () => {
     >
       <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}
-        <AnimateOnScroll>
-          <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-4 holographic-text">
-              {t('schedule_title')}
-            </h2>
-            <p className="text-neutral/70 max-w-2xl mx-auto">{t('schedule_subtitle')}</p>
-          </div>
-        </AnimateOnScroll>
+        <div className="text-center mb-10">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter text-neutral mb-4 holographic-text">
+            {t('schedule_title')}
+          </h2>
+          <p className="text-neutral/70 max-w-2xl mx-auto">{t('schedule_subtitle')}</p>
+        </div>
 
         {/* Filters Container */}
-        <AnimateOnScroll delay={100}>
-          <div className="max-w-4xl mx-auto mb-8 space-y-4">
-            {/* Day Tabs */}
-            <div className="flex justify-center">
-              <div className="inline-flex gap-1.5 p-1.5 bg-black/50 backdrop-blur-md rounded-xl border border-white/10">
-                {activeDays.map(day => (
-                  <DayTab
-                    key={day}
-                    label={DAY_LABELS[day]}
-                    isActive={selectedDay === day}
-                    onClick={() => handleDayChange(day)}
-                    count={dayCountsForCategory[day]}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Category Filters */}
-            <div className="flex flex-wrap justify-center gap-2">
-              <CategoryChip
-                category="all"
-                label={t('schedule_category_all')}
-                isActive={selectedCategory === 'all'}
-                onClick={() => handleCategoryChange('all')}
-                count={categoryCounts.all}
-              />
-              {(Object.keys(CATEGORY_CONFIG) as CategoryKey[]).map(cat => (
-                <CategoryChip
-                  key={cat}
-                  category={cat}
-                  label={t(CATEGORY_CONFIG[cat].labelKey)}
-                  isActive={selectedCategory === cat}
-                  onClick={() => handleCategoryChange(cat)}
-                  count={categoryCounts[cat]}
+        <div className="max-w-4xl mx-auto mb-8 space-y-4">
+          {/* Day Tabs */}
+          <div className="flex justify-center">
+            <div className="inline-flex gap-1.5 p-1.5 bg-black/50 backdrop-blur-md rounded-xl border border-white/10">
+              {activeDays.map(day => (
+                <DayTab
+                  key={day}
+                  label={DAY_LABELS[day]}
+                  isActive={selectedDay === day}
+                  onClick={() => handleDayChange(day)}
+                  count={dayCountsForCategory[day]}
                 />
               ))}
-            </div>
-
-            {/* Level Filters */}
-            <div className="flex flex-wrap justify-center gap-2">
-              <LevelChip
-                level="all"
-                label={t('schedule_level_all')}
-                isActive={selectedLevel === 'all'}
-                onClick={() => handleLevelChange('all')}
-                count={levelCounts.all}
-              />
-              {LEVEL_FILTER_ORDER.map(lvl => (
-                <LevelChip
-                  key={lvl}
-                  level={lvl}
-                  label={t(LEVEL_FILTER_CONFIG[lvl].labelKey)}
-                  isActive={selectedLevel === lvl}
-                  onClick={() => handleLevelChange(lvl)}
-                  count={levelCounts[lvl]}
-                />
-              ))}
-            </div>
-
-            {/* Results Counter */}
-            <div className="text-center">
-              <span className="text-sm text-neutral/50">
-                {filteredClasses.length} {t('schedule_classes_found')}
-              </span>
             </div>
           </div>
-        </AnimateOnScroll>
+
+          {/* Time of Day Filters */}
+          <div className="flex flex-wrap justify-center gap-2">
+            {(['all', 'morning', 'evening'] as FilterTimeOfDay[]).map(timeOfDay => (
+              <TimeOfDayChip
+                key={timeOfDay}
+                timeOfDay={timeOfDay}
+                label={t(TIME_OF_DAY_CONFIG[timeOfDay].labelKey)}
+                isActive={selectedTimeOfDay === timeOfDay}
+                onClick={() => handleTimeOfDayChange(timeOfDay)}
+                count={timeOfDayCounts[timeOfDay]}
+              />
+            ))}
+          </div>
+
+          {/* Category Filters */}
+          <div className="flex flex-wrap justify-center gap-2">
+            <CategoryChip
+              category="all"
+              label={t('schedule_category_all')}
+              isActive={selectedCategory === 'all'}
+              onClick={() => handleCategoryChange('all')}
+              count={categoryCounts.all}
+            />
+            {(Object.keys(CATEGORY_CONFIG) as CategoryKey[]).map(cat => (
+              <CategoryChip
+                key={cat}
+                category={cat}
+                label={t(CATEGORY_CONFIG[cat].labelKey)}
+                isActive={selectedCategory === cat}
+                onClick={() => handleCategoryChange(cat)}
+                count={categoryCounts[cat]}
+              />
+            ))}
+          </div>
+
+          {/* Level Filters */}
+          <div className="flex flex-wrap justify-center gap-2">
+            <LevelChip
+              level="all"
+              label={t('schedule_level_all')}
+              isActive={selectedLevel === 'all'}
+              onClick={() => handleLevelChange('all')}
+              count={levelCounts.all}
+            />
+            {LEVEL_FILTER_ORDER.map(lvl => (
+              <LevelChip
+                key={lvl}
+                level={lvl}
+                label={t(LEVEL_FILTER_CONFIG[lvl].labelKey)}
+                isActive={selectedLevel === lvl}
+                onClick={() => handleLevelChange(lvl)}
+                count={levelCounts[lvl]}
+              />
+            ))}
+          </div>
+
+          {/* Results Counter */}
+          <div className="text-center">
+            <span className="text-sm text-neutral/50">
+              {filteredClasses.length} {t('schedule_classes_found')}
+            </span>
+          </div>
+        </div>
 
         {/* Schedule Grid */}
-        <AnimateOnScroll delay={200}>
-          <div className="max-w-3xl mx-auto">
-            {filteredClasses.length > 0 ? (
-              <div className="space-y-3">
-                {filteredClasses.map((classData, index) => (
-                  <div
-                    key={classData.id}
-                    className="animate-fadeIn"
-                    style={{ animationDelay: `${index * 50}ms` }}
-                  >
-                    <ClassCard classData={classData} t={t} locale={locale} />
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <EmptyState t={t} />
-            )}
-          </div>
-        </AnimateOnScroll>
+        <div className="max-w-3xl mx-auto">
+          {filteredClasses.length > 0 ? (
+            <div className="space-y-3">
+              {filteredClasses.map((classData, index) => (
+                <div
+                  key={classData.id}
+                  className="animate-fadeIn"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <ClassCard classData={classData} t={t} locale={locale} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <EmptyState t={t} />
+          )}
+        </div>
 
         {/* CTA */}
         <AnimateOnScroll delay={300}>

@@ -146,4 +146,27 @@ export const MODERN_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Modern Jazz', 'Jazz Dance', 'Ballet', 'Cuban Technique'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Modern Jazz -> Contemporáneo, Ballet, Afro Jazz
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'contemporaneo-barcelona',
+        nameKey: 'relatedContemporaneoName',
+        descriptionKey: 'relatedContemporaneoDesc',
+      },
+      {
+        slug: 'ballet-barcelona',
+        nameKey: 'relatedBalletName',
+        descriptionKey: 'relatedBalletDesc',
+      },
+      {
+        slug: 'afro-jazz-barcelona',
+        nameKey: 'relatedAfroJazzName',
+        descriptionKey: 'relatedAfroJazzDesc',
+      },
+    ],
+  },
 };

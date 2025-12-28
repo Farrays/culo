@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback, useRef, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
 import { XMarkIcon, CheckIcon, CheckCircleIcon } from '../../lib/icons';
+import { trackLeadConversion, LEAD_VALUES, pushToDataLayer } from '../../utils/analytics';
 
 // ============================================================================
 // TYPES
@@ -307,6 +308,14 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
         console.warn('[DEV] Lead form data:', payload);
         await new Promise(resolve => window.setTimeout(resolve, 1000)); // Simular delay
         setStatus('success');
+
+        // Track conversion with full dataLayer + GA4 + Meta Pixel
+        trackLeadConversion({
+          leadSource: 'generic_modal',
+          formName: `Lead Capture - ${formData.estilo || 'General'}`,
+          leadValue: LEAD_VALUES.GENERIC_LEAD,
+          pagePath: window.location.pathname,
+        });
         return;
       }
 
@@ -331,9 +340,24 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
       if (leadStatus === 'existing') {
         // Lead ya registrado dentro de 90 días - mostrar mensaje diferente
         setStatus('success_existing');
+        // Track existing lead event for analytics
+        pushToDataLayer({
+          event: 'lead_existing',
+          lead_source: 'generic_modal',
+          form_name: `Lead Capture - ${formData.estilo || 'General'}`,
+          page_path: window.location.pathname,
+        });
       } else {
         // new o refresh - lead nuevo o re-registrado después de 90 días
         setStatus('success');
+
+        // Track conversion with full dataLayer + GA4 + Meta Pixel
+        trackLeadConversion({
+          leadSource: 'generic_modal',
+          formName: `Lead Capture - ${formData.estilo || 'General'}`,
+          leadValue: LEAD_VALUES.GENERIC_LEAD,
+          pagePath: window.location.pathname,
+        });
       }
     } catch (err) {
       console.error('Lead submission error:', err);

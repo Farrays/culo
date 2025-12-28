@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
 import { HUB_CATEGORIES } from '../constants/danceClassesHub';
+import { getStyleImage, getContextualAltKey } from '../constants/style-images';
 import {
   DANZAS_URBANAS_TESTIMONIALS,
   DANZAS_URBANAS_FAQS_CONFIG,
@@ -17,6 +18,7 @@ import { SUPPORTED_LOCALES } from '../types';
 import TestimonialsSection from './TestimonialsSection';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 import LeadCaptureModal from './shared/LeadCaptureModal';
+import OptimizedImage from './OptimizedImage';
 
 // Type extension for ValuePillar with icon names instead of components
 type ValuePillarWithIcon = Omit<ValuePillar, 'Icon'> & { iconName: IconName };
@@ -304,48 +306,55 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
               </p>
             </AnimateOnScroll>
 
-            {/* Grid of Urban Dance Styles */}
+            {/* Grid of Urban Dance Styles - Enterprise OptimizedImage */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {urbanCategory.allStyles.map((style, index) => (
-                <AnimateOnScroll key={style.key} delay={index * 100}>
-                  <Link
-                    to={`/${locale}${style.url}`}
-                    className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col"
-                  >
-                    {/* Background Image - Top half of card */}
-                    <div className="relative h-48 overflow-hidden flex-shrink-0">
-                      <img
-                        src={urbanCategory.imageUrl}
-                        alt={`${t(`danceClassesHub_style_${style.key}`)} - Clases en Barcelona`}
-                        width="800"
-                        height="600"
-                        className="w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110 opacity-60 group-hover:opacity-80"
-                        loading={index < 3 ? 'eager' : 'lazy'}
-                        decoding="async"
-                      />
-                      {/* Gradient overlay on image */}
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
-                    </div>
-
-                    {/* Text Content - Always visible */}
-                    <div className="p-6 space-y-3 flex-grow flex flex-col">
-                      <h3 className="text-2xl font-bold text-white group-hover:text-primary-accent transition-colors duration-300">
-                        {t(`danceClassesHub_style_${style.key}`)}
-                      </h3>
-
-                      {/* SEO Text - Always visible */}
-                      <p className="text-neutral/90 text-sm leading-relaxed flex-grow">
-                        {t(`danzasUrbanas_style_${style.key}_seo`)}
-                      </p>
-
-                      {/* CTA Link */}
-                      <div className="pt-2 text-primary-accent font-bold text-sm flex items-center group-hover:translate-x-1 transition-transform duration-300">
-                        {t('danzasUrbanas_viewMore')}
+              {urbanCategory.allStyles.map((style, index) => {
+                const styleImage = getStyleImage(style.key);
+                return (
+                  <AnimateOnScroll key={style.key} delay={index * 100}>
+                    <Link
+                      to={`/${locale}${style.url}`}
+                      className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col"
+                    >
+                      {/* Background Image - Enterprise OptimizedImage with contextual alt */}
+                      <div className="relative h-48 overflow-hidden flex-shrink-0">
+                        <OptimizedImage
+                          src={styleImage.basePath}
+                          altKey={getContextualAltKey(style.key, 'urban')}
+                          altFallback={styleImage.fallbackAlt}
+                          aspectRatio="4/3"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          priority={index < 3 ? 'high' : 'low'}
+                          breakpoints={styleImage.breakpoints}
+                          formats={styleImage.formats}
+                          className="w-full h-full transition-all duration-500 ease-in-out group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                          placeholder="color"
+                          placeholderColor="#111"
+                        />
+                        {/* Gradient overlay on image */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
                       </div>
-                    </div>
-                  </Link>
-                </AnimateOnScroll>
-              ))}
+
+                      {/* Text Content - Always visible */}
+                      <div className="p-6 space-y-3 flex-grow flex flex-col">
+                        <h3 className="text-2xl font-bold text-white group-hover:text-primary-accent transition-colors duration-300">
+                          {t(`danceClassesHub_style_${style.key}`)}
+                        </h3>
+
+                        {/* SEO Text - Always visible */}
+                        <p className="text-neutral/90 text-sm leading-relaxed flex-grow">
+                          {t(`danzasUrbanas_style_${style.key}_seo`)}
+                        </p>
+
+                        {/* CTA Link */}
+                        <div className="pt-2 text-primary-accent font-bold text-sm flex items-center group-hover:translate-x-1 transition-transform duration-300">
+                          {t('danzasUrbanas_viewMore')}
+                        </div>
+                      </div>
+                    </Link>
+                  </AnimateOnScroll>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -593,6 +602,258 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
                 </p>
               </div>
             </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* Related Classes Section (Internal Linking) */}
+        <section
+          id="related-classes"
+          aria-labelledby="related-classes-title"
+          className="py-12 md:py-20"
+        >
+          <div className="container mx-auto px-6">
+            <AnimateOnScroll>
+              <header className="text-center mb-8 sm:mb-12 relative z-10">
+                <h2
+                  id="related-classes-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                >
+                  {t('relatedClassesTitle')}
+                </h2>
+                <p className="text-lg sm:text-xl text-neutral/70">{t('relatedClassesSubtitle')}</p>
+              </header>
+            </AnimateOnScroll>
+
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto relative z-0"
+              role="list"
+              aria-label={t('relatedClassesTitle')}
+            >
+              {/* Hip Hop - Enterprise OptimizedImage */}
+              <div role="listitem">
+                <AnimateOnScroll delay={100} className="[perspective:1000px]">
+                  <article className="h-full" aria-labelledby="related-hiphop-title">
+                    {(() => {
+                      const hipHopImage = getStyleImage('hip_hop');
+                      return (
+                        <Link
+                          to={`/${locale}/clases/hip-hop-barcelona`}
+                          className="group block h-full bg-black/70 backdrop-blur-md
+                                     border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                     transition-all duration-500
+                                     [transform-style:preserve-3d]
+                                     hover:border-primary-accent hover:shadow-accent-glow
+                                     hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                     focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                     focus:ring-offset-2 focus:ring-offset-black"
+                          aria-label={`${t('relatedHipHopName')} - ${t('relatedClassesViewClass')}`}
+                        >
+                          <div className="relative overflow-hidden" style={{ aspectRatio: '3/2' }}>
+                            <OptimizedImage
+                              src={hipHopImage.basePath}
+                              alt={hipHopImage.fallbackAlt}
+                              aspectRatio="3/2"
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              priority="low"
+                              breakpoints={hipHopImage.breakpoints}
+                              formats={hipHopImage.formats}
+                              className="w-full h-full transition-transform duration-500 group-hover:scale-110"
+                              placeholder="color"
+                              placeholderColor="#111"
+                            />
+                            <div
+                              className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                              aria-hidden="true"
+                            />
+                          </div>
+                          <div className="p-4 sm:p-6">
+                            <h3
+                              id="related-hiphop-title"
+                              className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                            >
+                              {t('relatedHipHopName')}
+                            </h3>
+                            <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                              {t('relatedHipHopDesc')}
+                            </p>
+                            <div
+                              className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                              aria-hidden="true"
+                            >
+                              <span>{t('relatedClassesViewClass')}</span>
+                              <svg
+                                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </Link>
+                      );
+                    })()}
+                  </article>
+                </AnimateOnScroll>
+              </div>
+
+              {/* Dancehall - Enterprise OptimizedImage */}
+              <div role="listitem">
+                <AnimateOnScroll delay={200} className="[perspective:1000px]">
+                  <article className="h-full" aria-labelledby="related-dancehall-title">
+                    {(() => {
+                      const dancehallImage = getStyleImage('dancehall');
+                      return (
+                        <Link
+                          to={`/${locale}/clases/dancehall-barcelona`}
+                          className="group block h-full bg-black/70 backdrop-blur-md
+                                     border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                     transition-all duration-500
+                                     [transform-style:preserve-3d]
+                                     hover:border-primary-accent hover:shadow-accent-glow
+                                     hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                     focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                     focus:ring-offset-2 focus:ring-offset-black"
+                          aria-label={`${t('relatedDancehallName')} - ${t('relatedClassesViewClass')}`}
+                        >
+                          <div className="relative overflow-hidden" style={{ aspectRatio: '3/2' }}>
+                            <OptimizedImage
+                              src={dancehallImage.basePath}
+                              alt={dancehallImage.fallbackAlt}
+                              aspectRatio="3/2"
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              priority="low"
+                              breakpoints={dancehallImage.breakpoints}
+                              formats={dancehallImage.formats}
+                              className="w-full h-full transition-transform duration-500 group-hover:scale-110"
+                              placeholder="color"
+                              placeholderColor="#111"
+                            />
+                            <div
+                              className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                              aria-hidden="true"
+                            />
+                          </div>
+                          <div className="p-4 sm:p-6">
+                            <h3
+                              id="related-dancehall-title"
+                              className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                            >
+                              {t('relatedDancehallName')}
+                            </h3>
+                            <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                              {t('relatedDancehallDesc')}
+                            </p>
+                            <div
+                              className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                              aria-hidden="true"
+                            >
+                              <span>{t('relatedClassesViewClass')}</span>
+                              <svg
+                                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </Link>
+                      );
+                    })()}
+                  </article>
+                </AnimateOnScroll>
+              </div>
+
+              {/* Afrobeats - Enterprise OptimizedImage */}
+              <div role="listitem">
+                <AnimateOnScroll delay={300} className="[perspective:1000px]">
+                  <article className="h-full" aria-labelledby="related-afrobeats-title">
+                    {(() => {
+                      const afrobeatImage = getStyleImage('afrobeat');
+                      return (
+                        <Link
+                          to={`/${locale}/clases/afrobeats-barcelona`}
+                          className="group block h-full bg-black/70 backdrop-blur-md
+                                     border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                     transition-all duration-500
+                                     [transform-style:preserve-3d]
+                                     hover:border-primary-accent hover:shadow-accent-glow
+                                     hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                     focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                     focus:ring-offset-2 focus:ring-offset-black"
+                          aria-label={`${t('relatedAfrobeatsName')} - ${t('relatedClassesViewClass')}`}
+                        >
+                          <div className="relative overflow-hidden" style={{ aspectRatio: '3/2' }}>
+                            <OptimizedImage
+                              src={afrobeatImage.basePath}
+                              alt={afrobeatImage.fallbackAlt}
+                              aspectRatio="3/2"
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              priority="low"
+                              breakpoints={afrobeatImage.breakpoints}
+                              formats={afrobeatImage.formats}
+                              className="w-full h-full transition-transform duration-500 group-hover:scale-110"
+                              placeholder="color"
+                              placeholderColor="#111"
+                            />
+                            <div
+                              className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                              aria-hidden="true"
+                            />
+                          </div>
+                          <div className="p-4 sm:p-6">
+                            <h3
+                              id="related-afrobeats-title"
+                              className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                            >
+                              {t('relatedAfrobeatsName')}
+                            </h3>
+                            <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                              {t('relatedAfrobeatsDesc')}
+                            </p>
+                            <div
+                              className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                              aria-hidden="true"
+                            >
+                              <span>{t('relatedClassesViewClass')}</span>
+                              <svg
+                                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </Link>
+                      );
+                    })()}
+                  </article>
+                </AnimateOnScroll>
+              </div>
+            </div>
           </div>
         </section>
       </div>

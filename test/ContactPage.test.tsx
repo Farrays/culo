@@ -21,20 +21,22 @@ describe('ContactPage - Rate Limiting', () => {
     fireEvent.click(submitButton);
 
     await waitFor(() => {
-      const nameInput = screen.getByLabelText(/Name/i);
-      expect(nameInput).toBeInTheDocument();
+      const firstNameInput = screen.getByLabelText(/First name/i);
+      expect(firstNameInput).toBeInTheDocument();
     });
   });
 
   it('should allow form submission within rate limit', async () => {
     render(<ContactPage />);
 
-    // Fill out the form
-    const nameInput = screen.getByLabelText(/Name/i);
+    // Fill out the form - uses firstName and lastName separately
+    const firstNameInput = screen.getByLabelText(/First name/i);
+    const lastNameInput = screen.getByLabelText(/Last name/i);
     const emailInput = screen.getByLabelText(/Email/i);
     const messageInput = screen.getByLabelText(/Message/i);
 
-    fireEvent.change(nameInput, { target: { value: 'John Doe' } });
+    fireEvent.change(firstNameInput, { target: { value: 'John' } });
+    fireEvent.change(lastNameInput, { target: { value: 'Doe' } });
     fireEvent.change(emailInput, { target: { value: 'john@example.com' } });
     fireEvent.change(messageInput, {
       target: { value: 'This is a test message with more than 10 characters' },

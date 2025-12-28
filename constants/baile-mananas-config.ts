@@ -177,4 +177,27 @@ export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
       ],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Baile Mañanas -> Stretching, Ballet, Contemporáneo (clases matinales complementarias)
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'stretching-barcelona',
+        nameKey: 'relatedStretchingName',
+        descriptionKey: 'relatedStretchingDesc',
+      },
+      {
+        slug: 'ballet-barcelona',
+        nameKey: 'relatedBalletName',
+        descriptionKey: 'relatedBalletDesc',
+      },
+      {
+        slug: 'contemporaneo-barcelona',
+        nameKey: 'relatedContemporaneoName',
+        descriptionKey: 'relatedContemporaneoDesc',
+      },
+    ],
+  },
 };

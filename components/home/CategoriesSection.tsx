@@ -49,10 +49,14 @@ const CategoriesSection: React.FC = () => {
           <p className="max-w-3xl mx-auto text-lg text-neutral/90 mb-12">{sectionDescription}</p>
         </AnimateOnScroll>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {/* Cards Grid - Flexbox for centering incomplete rows */}
+        <div className="flex flex-wrap justify-center gap-8 mb-12">
           {CATEGORIES.map((category, index) => (
-            <AnimateOnScroll key={category.key} delay={index * 100}>
+            <AnimateOnScroll
+              key={category.key}
+              delay={index * 100}
+              className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]"
+            >
               <CategoryCard category={category} />
             </AnimateOnScroll>
           ))}

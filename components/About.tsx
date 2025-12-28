@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
 import AnimateOnScroll from './AnimateOnScroll';
 import MethodInfographic from './MethodInfographic';
 
 const About: React.FC = () => {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   return (
     <section id="about" className="relative py-20 md:py-32 bg-black overflow-hidden">
@@ -35,12 +36,12 @@ const About: React.FC = () => {
                 {t('aboutMethodTitle')}
               </h3>
               <MethodInfographic />
-              <a
-                href="#legacy"
+              <Link
+                to={`/${locale}/metodo-farray`}
                 className="inline-block bg-primary-accent text-white font-bold text-xl py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
               >
                 {t('aboutMethodCTA')}
-              </a>
+              </Link>
             </div>
           </AnimateOnScroll>
         </div>

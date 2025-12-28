@@ -9,7 +9,7 @@ import { CATEGORIES } from '../../constants/categories';
 
 const CategoriesSchemaMarkup: React.FC = () => {
   const { t } = useI18n();
-  const siteUrl = 'https://www.farraysdance.com';
+  const siteUrl = 'https://www.farrayscenter.com';
 
   // Schema Strategy (verified in section 0.3):
   // - Organization Schema: DOES NOT EXIST in page (verified)

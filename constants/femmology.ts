@@ -58,7 +58,7 @@ export const FEMMOLOGY_SCHEDULE_KEYS = [
   {
     id: '1',
     dayKey: 'tuesday',
-    className: 'Femmology',
+    className: 'Femmology Heels Technique Intermedio',
     time: '20:30 - 21:30',
     teacher: 'Yunaisy Farray',
     levelKey: 'intermediateLevel',
@@ -66,7 +66,7 @@ export const FEMMOLOGY_SCHEDULE_KEYS = [
   {
     id: '2',
     dayKey: 'tuesday',
-    className: 'Femmology',
+    className: 'Femmology Heels Technique Avanzado',
     time: '21:30 - 23:00',
     teacher: 'Yunaisy Farray',
     levelKey: 'advancedLevel',
@@ -74,7 +74,7 @@ export const FEMMOLOGY_SCHEDULE_KEYS = [
   {
     id: '3',
     dayKey: 'wednesday',
-    className: 'Femmology',
+    className: 'Femmology Heels Technique Básico',
     time: '21:00 - 22:00',
     teacher: 'Yunaisy Farray',
     levelKey: 'basicLevel',
@@ -82,7 +82,7 @@ export const FEMMOLOGY_SCHEDULE_KEYS = [
   {
     id: '4',
     dayKey: 'thursday',
-    className: 'Femmology',
+    className: 'Femmology Heels Technique Principiantes',
     time: '21:30 - 22:30',
     teacher: 'Yunaisy Farray',
     levelKey: 'beginnerLevel',

@@ -18,6 +18,9 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
   const intro = t(`home_categories_${category.key}_intro`) || '';
   const viewStylesText = t('home_categories_cta_view_styles') || 'Ver estilos';
 
+  const { optimizedImage } = category;
+  const sizes = '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw';
+
   return (
     <Link
       to={`/${locale}${category.pillarSlug}`}
@@ -25,16 +28,39 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
       aria-label={`${title} - ${viewStylesText}`}
     >
       <article className="group relative rounded-xl overflow-hidden shadow-lg h-80 bg-black text-white transition-all duration-500 ease-in-out [transform-style:preserve-3d] hover:shadow-accent-glow hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)]">
-        {/* Background Image */}
-        <img
-          src={category.imageUrl}
-          alt={imageAlt}
-          width="640"
-          height="640"
-          className="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110 opacity-40 group-hover:opacity-60"
-          loading={category.key === 'salsa_bachata' ? 'eager' : 'lazy'}
-          decoding="async"
-        />
+        {/* Background Image - Optimized with AVIF/WebP/JPEG */}
+        {optimizedImage ? (
+          <picture>
+            <source type="image/avif" srcSet={optimizedImage.srcSetAvif} sizes={sizes} />
+            <source type="image/webp" srcSet={optimizedImage.srcSetWebp} sizes={sizes} />
+            <img
+              src={optimizedImage.src}
+              srcSet={optimizedImage.srcSetJpeg}
+              sizes={sizes}
+              alt={imageAlt}
+              width="640"
+              height="480"
+              className="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110 opacity-40 group-hover:opacity-60"
+              loading={category.key === 'salsa_bachata' ? 'eager' : 'lazy'}
+              decoding="async"
+              style={
+                optimizedImage.dominantColor
+                  ? { backgroundColor: optimizedImage.dominantColor }
+                  : undefined
+              }
+            />
+          </picture>
+        ) : (
+          <img
+            src={category.imageUrl}
+            alt={imageAlt}
+            width="640"
+            height="480"
+            className="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110 opacity-40 group-hover:opacity-60"
+            loading={category.key === 'salsa_bachata' ? 'eager' : 'lazy'}
+            decoding="async"
+          />
+        )}
 
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>

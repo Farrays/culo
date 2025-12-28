@@ -15,6 +15,8 @@ import TestimonialsSection from './TestimonialsSection';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 import { CheckIcon } from '../lib/icons';
 import LeadCaptureModal from './shared/LeadCaptureModal';
+import OptimizedImage from './OptimizedImage';
+import { getStyleImage, getContextualAltKey } from '../constants/style-images';
 
 const ANIMATION_DELAYS = {
   STAGGER_SMALL: 100,
@@ -326,42 +328,49 @@ const SalsaBachataPage: React.FC = () => {
               role="list"
               aria-label={t('salsaBachataBarcelona_styles_title')}
             >
-              {salsaBachataCategory.allStyles.map((style, index) => (
-                <AnimateOnScroll key={style.key} delay={index * ANIMATION_DELAYS.STAGGER_SMALL}>
-                  <Link
-                    to={`/${locale}${style.url}`}
-                    className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black"
-                    role="listitem"
-                  >
-                    {/* Image Section - Fixed Height */}
-                    <div className="relative h-40 sm:h-48 overflow-hidden flex-shrink-0">
-                      <img
-                        src={salsaBachataCategory.imageUrl}
-                        alt={`${t(`danceClassesHub_style_${style.key}`)} - Clases en Barcelona`}
-                        width="800"
-                        height="600"
-                        className="w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110"
-                        loading={index < 3 ? 'eager' : 'lazy'}
-                        decoding="async"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-                    </div>
-
-                    {/* Text Section - Always Visible, Flexible Height */}
-                    <div className="p-4 sm:p-6 space-y-3 flex-grow flex flex-col">
-                      <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-primary-accent transition-colors duration-300">
-                        {t(`danceClassesHub_style_${style.key}`)}
-                      </h3>
-                      <p className="text-neutral/90 text-xs sm:text-sm leading-relaxed flex-grow">
-                        {t(`salsaBachata_style_${style.key}_seo`)}
-                      </p>
-                      <div className="text-primary-accent font-bold text-sm group-hover:translate-x-1 transition-transform duration-300">
-                        {t('salsaBachataBarcelona_viewMore')}
+              {salsaBachataCategory.allStyles.map((style, index) => {
+                const styleImage = getStyleImage(style.key);
+                return (
+                  <AnimateOnScroll key={style.key} delay={index * ANIMATION_DELAYS.STAGGER_SMALL}>
+                    <Link
+                      to={`/${locale}${style.url}`}
+                      className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                      role="listitem"
+                    >
+                      {/* Image Section - Fixed Height */}
+                      <div className="relative h-40 sm:h-48 overflow-hidden flex-shrink-0">
+                        <OptimizedImage
+                          src={styleImage.basePath}
+                          altKey={getContextualAltKey(style.key, 'latin')}
+                          altFallback={styleImage.fallbackAlt}
+                          aspectRatio="4/3"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          priority={index < 3 ? 'high' : 'low'}
+                          breakpoints={styleImage.breakpoints}
+                          formats={styleImage.formats}
+                          className="w-full h-full transition-transform duration-500 group-hover:scale-110"
+                          placeholder="color"
+                          placeholderColor="#111"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
                       </div>
-                    </div>
-                  </Link>
-                </AnimateOnScroll>
-              ))}
+
+                      {/* Text Section - Always Visible, Flexible Height */}
+                      <div className="p-4 sm:p-6 space-y-3 flex-grow flex flex-col">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-primary-accent transition-colors duration-300">
+                          {t(`danceClassesHub_style_${style.key}`)}
+                        </h3>
+                        <p className="text-neutral/90 text-xs sm:text-sm leading-relaxed flex-grow">
+                          {t(`salsaBachata_style_${style.key}_seo`)}
+                        </p>
+                        <div className="text-primary-accent font-bold text-sm group-hover:translate-x-1 transition-transform duration-300">
+                          {t('salsaBachataBarcelona_viewMore')}
+                        </div>
+                      </div>
+                    </Link>
+                  </AnimateOnScroll>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -698,6 +707,255 @@ const SalsaBachataPage: React.FC = () => {
                 </p>
               </div>
             </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* Related Classes Section (Internal Linking) */}
+        <section
+          id="related-classes"
+          aria-labelledby="related-classes-title"
+          className="py-12 md:py-20"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <header className="text-center mb-8 sm:mb-12 relative z-10">
+                <h2
+                  id="related-classes-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                >
+                  {t('relatedClassesTitle')}
+                </h2>
+                <p className="text-lg sm:text-xl text-neutral/70">{t('relatedClassesSubtitle')}</p>
+              </header>
+            </AnimateOnScroll>
+
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto relative z-0"
+              role="list"
+              aria-label={t('relatedClassesTitle')}
+            >
+              {/* Salsa Cubana */}
+              <div role="listitem">
+                <AnimateOnScroll
+                  delay={ANIMATION_DELAYS.STAGGER_SMALL}
+                  className="[perspective:1000px]"
+                >
+                  <article className="h-full" aria-labelledby="related-salsacubana-title">
+                    <Link
+                      to={`/${locale}/clases/salsa-cubana-barcelona`}
+                      className="group block h-full bg-black/70 backdrop-blur-md
+                                 border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                 transition-all duration-500
+                                 [transform-style:preserve-3d]
+                                 hover:border-primary-accent hover:shadow-accent-glow
+                                 hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                 focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                 focus:ring-offset-2 focus:ring-offset-black"
+                      aria-label={`${t('relatedSalsaCubanaName')} - ${t('relatedClassesViewClass')}`}
+                    >
+                      <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
+                        <OptimizedImage
+                          src={getStyleImage('salsa_cubana').basePath}
+                          altKey={getContextualAltKey('salsa_cubana', 'latin')}
+                          altFallback="Pareja bailando salsa cubana en Barcelona - ritmo caribeño y técnica casino en Farray's Center"
+                          aspectRatio="3/2"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          priority="low"
+                          breakpoints={getStyleImage('salsa_cubana').breakpoints}
+                          formats={getStyleImage('salsa_cubana').formats}
+                          className="w-full h-full transition-transform duration-500 group-hover:scale-110"
+                          placeholder="color"
+                          placeholderColor="#111"
+                        />
+                        <div
+                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <h3
+                          id="related-salsacubana-title"
+                          className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                        >
+                          {t('relatedSalsaCubanaName')}
+                        </h3>
+                        <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                          {t('relatedSalsaCubanaDesc')}
+                        </p>
+                        <div
+                          className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                          aria-hidden="true"
+                        >
+                          <span>{t('relatedClassesViewClass')}</span>
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                </AnimateOnScroll>
+              </div>
+
+              {/* Bachata */}
+              <div role="listitem">
+                <AnimateOnScroll
+                  delay={ANIMATION_DELAYS.STAGGER_SMALL * 2}
+                  className="[perspective:1000px]"
+                >
+                  <article className="h-full" aria-labelledby="related-bachata-title">
+                    <Link
+                      to={`/${locale}/clases/bachata-barcelona`}
+                      className="group block h-full bg-black/70 backdrop-blur-md
+                                 border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                 transition-all duration-500
+                                 [transform-style:preserve-3d]
+                                 hover:border-primary-accent hover:shadow-accent-glow
+                                 hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                 focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                 focus:ring-offset-2 focus:ring-offset-black"
+                      aria-label={`${t('relatedBachataName')} - ${t('relatedClassesViewClass')}`}
+                    >
+                      <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
+                        <OptimizedImage
+                          src={getStyleImage('bachata_sensual').basePath}
+                          altKey={getContextualAltKey('bachata_sensual', 'latin')}
+                          altFallback={getStyleImage('bachata_sensual').fallbackAlt}
+                          aspectRatio="3/2"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          priority="low"
+                          breakpoints={getStyleImage('bachata_sensual').breakpoints}
+                          formats={getStyleImage('bachata_sensual').formats}
+                          className="w-full h-full transition-transform duration-500 group-hover:scale-110"
+                          placeholder="color"
+                          placeholderColor="#111"
+                        />
+                        <div
+                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <h3
+                          id="related-bachata-title"
+                          className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                        >
+                          {t('relatedBachataName')}
+                        </h3>
+                        <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                          {t('relatedBachataDesc')}
+                        </p>
+                        <div
+                          className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                          aria-hidden="true"
+                        >
+                          <span>{t('relatedClassesViewClass')}</span>
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                </AnimateOnScroll>
+              </div>
+
+              {/* Timba */}
+              <div role="listitem">
+                <AnimateOnScroll
+                  delay={ANIMATION_DELAYS.STAGGER_SMALL * 3}
+                  className="[perspective:1000px]"
+                >
+                  <article className="h-full" aria-labelledby="related-timba-title">
+                    <Link
+                      to={`/${locale}/clases/timba-barcelona`}
+                      className="group block h-full bg-black/70 backdrop-blur-md
+                                 border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                 transition-all duration-500
+                                 [transform-style:preserve-3d]
+                                 hover:border-primary-accent hover:shadow-accent-glow
+                                 hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                 focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                 focus:ring-offset-2 focus:ring-offset-black"
+                      aria-label={`${t('relatedTimbaName')} - ${t('relatedClassesViewClass')}`}
+                    >
+                      <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
+                        <OptimizedImage
+                          src={getStyleImage('timba_cubana').basePath}
+                          altKey={getContextualAltKey('timba_cubana', 'latin')}
+                          altFallback="Clase de Timba Cubana en Barcelona - ritmo cubano moderno con energía y sabor en Farray's Center"
+                          aspectRatio="3/2"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          priority="low"
+                          breakpoints={getStyleImage('timba_cubana').breakpoints}
+                          formats={getStyleImage('timba_cubana').formats}
+                          className="w-full h-full transition-transform duration-500 group-hover:scale-110"
+                          placeholder="color"
+                          placeholderColor="#111"
+                        />
+                        <div
+                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <h3
+                          id="related-timba-title"
+                          className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                        >
+                          {t('relatedTimbaName')}
+                        </h3>
+                        <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                          {t('relatedTimbaDesc')}
+                        </p>
+                        <div
+                          className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                          aria-hidden="true"
+                        >
+                          <span>{t('relatedClassesViewClass')}</span>
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                </AnimateOnScroll>
+              </div>
+            </div>
           </div>
         </section>
       </main>

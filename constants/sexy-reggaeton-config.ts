@@ -137,4 +137,27 @@ export const SEXY_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Sexy Reggaeton', 'Perreo', 'Sensual Dance', 'Urban Dance'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Sexy Reggaeton -> Hip Hop Reggaeton, Sexy Style, Twerk
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'hip-hop-reggaeton-barcelona',
+        nameKey: 'relatedHipHopReggaetonName',
+        descriptionKey: 'relatedHipHopReggaetonDesc',
+      },
+      {
+        slug: 'sexy-style-barcelona',
+        nameKey: 'relatedSexyStyleName',
+        descriptionKey: 'relatedSexyStyleDesc',
+      },
+      {
+        slug: 'twerk-barcelona',
+        nameKey: 'relatedTwerkName',
+        descriptionKey: 'relatedTwerkDesc',
+      },
+    ],
+  },
 };

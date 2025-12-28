@@ -108,9 +108,14 @@ export interface HeroConfigV2 {
   videoPoster?: string; // Imagen mientras carga el video
   // V2 NEW: Layout type
   layout?: 'centered' | 'split'; // Default: 'split' for V2
-  // V2 NEW: Hero image (for split layout right side or as fallback)
-  heroImage?: string;
-  heroImageAlt?: string;
+  // V2 NEW: Hero image (Enterprise format for OptimizedImage)
+  heroImage?: {
+    basePath: string; // Path without size/format
+    alt: string; // Fallback alt text
+    altKey?: string; // i18n key for alt text
+    breakpoints?: number[]; // Default: [320, 640, 768, 1024, 1440, 1920]
+    formats?: ('avif' | 'webp' | 'jpg')[]; // Default: ['avif', 'webp', 'jpg']
+  };
 }
 
 export interface WhatIsSection {
@@ -349,7 +354,10 @@ const HeroSectionV2: React.FC<HeroV2Props> = ({
   const placeholderVideoUrl =
     'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4';
   const videoUrl = hero.videoUrl || placeholderVideoUrl;
-  const posterImage = hero.videoPoster || hero.heroImage || '/images/og-default.jpg';
+  // Enterprise: Use basePath with default size for poster fallback
+  const posterImage =
+    hero.videoPoster ||
+    (hero.heroImage ? `${hero.heroImage.basePath}_1920.jpg` : '/images/og-default.jpg');
 
   return (
     <section
@@ -867,8 +875,8 @@ const FullDanceClassTemplateV2: React.FC<{ config: FullDanceClassConfigV2 }> = (
 
                       {/* Contenido con expansión para SEO */}
                       <ExpandableContent
-                        expandLabel="Leer más sobre este estilo"
-                        collapseLabel="Ver menos"
+                        expandLabel={t('expandStyleDetails')}
+                        collapseLabel={t('collapseContent')}
                         visibleContent={
                           <div className="space-y-4 text-base sm:text-lg text-neutral/90 leading-relaxed">
                             <p className="text-lg sm:text-xl font-medium">
@@ -1371,8 +1379,8 @@ const FullDanceClassTemplateV2: React.FC<{ config: FullDanceClassConfigV2 }> = (
 
                       {/* Contenido SEO completo con expansión */}
                       <ExpandableContent
-                        expandLabel="Leer más sobre por qué empezar hoy"
-                        collapseLabel="Ver menos"
+                        expandLabel={t('expandWhyStart')}
+                        collapseLabel={t('collapseContent')}
                         visibleContent={
                           <div className="space-y-4 text-lg sm:text-xl text-neutral/90 leading-relaxed">
                             <p>{t(`${config.styleKey}WhyToday1`)}</p>
@@ -1515,7 +1523,12 @@ const FullDanceClassTemplateV2: React.FC<{ config: FullDanceClassConfigV2 }> = (
                 muted
                 loop
                 playsInline
-                poster={hero.videoPoster || hero.heroImage || '/images/og-default.jpg'}
+                poster={
+                  hero.videoPoster ||
+                  (hero.heroImage
+                    ? `${hero.heroImage.basePath}_1920.jpg`
+                    : '/images/og-default.jpg')
+                }
                 className="absolute inset-0 w-full h-full object-cover"
               >
                 <source src={hero.videoUrl} type="video/mp4" />

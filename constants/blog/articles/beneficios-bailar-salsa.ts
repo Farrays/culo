@@ -242,6 +242,47 @@ export const BENEFICIOS_SALSA_CONFIG: BlogArticleConfig = {
       type: 'paragraph',
       contentKey: 'blogBeneficiosSalsa_benefit10Content',
     },
+
+    // === REFERENCES SECTION (E-E-A-T Authority) ===
+    {
+      id: 'references',
+      type: 'references',
+      contentKey: 'blogBeneficiosSalsa_referencesIntro',
+      references: [
+        {
+          id: 'harvard',
+          titleKey: 'blogBeneficiosSalsa_refHarvardTitle',
+          url: 'https://www.health.harvard.edu/staying-healthy/the-health-benefits-of-dancing',
+          publisher: 'Harvard Medical School',
+          year: '2023',
+          descriptionKey: 'blogBeneficiosSalsa_refHarvardDesc',
+        },
+        {
+          id: 'nejm-2003',
+          titleKey: 'blogBeneficiosSalsa_refNEJMTitle',
+          url: 'https://www.nejm.org/doi/full/10.1056/NEJMoa022252',
+          publisher: 'New England Journal of Medicine',
+          year: '2003',
+          descriptionKey: 'blogBeneficiosSalsa_refNEJMDesc',
+        },
+        {
+          id: 'apa-dance',
+          titleKey: 'blogBeneficiosSalsa_refAPATitle',
+          url: 'https://www.apa.org/monitor/2019/06/benefit-dancing',
+          publisher: 'American Psychological Association',
+          year: '2019',
+          descriptionKey: 'blogBeneficiosSalsa_refAPADesc',
+        },
+        {
+          id: 'ncbi-dance-brain',
+          titleKey: 'blogBeneficiosSalsa_refNCBITitle',
+          url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5649320/',
+          publisher: 'National Institutes of Health',
+          year: '2017',
+          descriptionKey: 'blogBeneficiosSalsa_refNCBIDesc',
+        },
+      ],
+    },
   ],
 
   // === FEATURED IMAGE ===

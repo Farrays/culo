@@ -17,6 +17,7 @@ export { default as ReadingProgressBar } from './ReadingProgressBar';
 export { default as AuthorBox } from './AuthorBox';
 export { default as ShareButtons } from './ShareButtons';
 export { default as RelatedArticles } from './RelatedArticles';
+export { default as RelatedClasses } from './RelatedClasses';
 
 // GEO Optimization Components
 export { default as DefinitionBox } from './DefinitionBox';

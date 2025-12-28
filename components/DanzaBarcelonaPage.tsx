@@ -14,6 +14,9 @@ import { SUPPORTED_LOCALES } from '../types';
 import TestimonialsSection from './TestimonialsSection';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 import LeadCaptureModal from './shared/LeadCaptureModal';
+import LazyImage from './LazyImage';
+import OptimizedImage from './OptimizedImage';
+import { getStyleImage, getContextualAltKey } from '../constants/style-images';
 
 // Type extension for ValuePillar with icon names instead of components
 type ValuePillarWithIcon = Omit<ValuePillar, 'Icon'> & { iconName: IconName };
@@ -297,48 +300,57 @@ const DanzaBarcelonaPage: React.FC = () => {
               </p>
             </AnimateOnScroll>
 
-            {/* Grid of Dance Styles */}
+            {/* Grid of Dance Styles - Enterprise OptimizedImage with centralized config */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {danzaCategory.allStyles.map((style, index) => (
-                <AnimateOnScroll key={style.key} delay={index * 100}>
-                  <Link
-                    to={`/${locale}${style.url}`}
-                    className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col"
-                  >
-                    {/* Background Image - Top half of card */}
-                    <div className="relative h-48 overflow-hidden flex-shrink-0">
-                      <img
-                        src={danzaCategory.imageUrl}
-                        alt={`${t(`danceClassesHub_style_${style.key}`)} - Clases en Barcelona`}
-                        width="800"
-                        height="600"
-                        className="w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110 opacity-60 group-hover:opacity-80"
-                        loading={index < 3 ? 'eager' : 'lazy'}
-                        decoding="async"
-                      />
-                      {/* Gradient overlay on image */}
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
-                    </div>
+              {danzaCategory.allStyles.map((style, index) => {
+                // Get centralized image config from style-images.ts
+                const styleImage = getStyleImage(style.key);
 
-                    {/* Text Content - Always visible */}
-                    <div className="p-6 space-y-3 flex-grow flex flex-col">
-                      <h3 className="text-2xl font-bold text-white group-hover:text-primary-accent transition-colors duration-300">
-                        {t(`danceClassesHub_style_${style.key}`)}
-                      </h3>
-
-                      {/* SEO Text - Always visible */}
-                      <p className="text-neutral/90 text-sm leading-relaxed flex-grow">
-                        {t(`danzaBarcelona_style_${style.key}_seo`)}
-                      </p>
-
-                      {/* CTA Link */}
-                      <div className="pt-2 text-primary-accent font-bold text-sm flex items-center group-hover:translate-x-1 transition-transform duration-300">
-                        {t('danzaBarcelona_viewMore')}
+                return (
+                  <AnimateOnScroll key={style.key} delay={index * 100}>
+                    <Link
+                      to={`/${locale}${style.url}`}
+                      className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col"
+                    >
+                      {/* Background Image - Enterprise OptimizedImage with contextual SEO alt */}
+                      <div className="relative h-48 overflow-hidden flex-shrink-0">
+                        <OptimizedImage
+                          src={styleImage.basePath}
+                          altKey={getContextualAltKey(style.key, 'danza')}
+                          altFallback={styleImage.fallbackAlt}
+                          aspectRatio="4/3"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          priority={index < 3 ? 'high' : 'low'}
+                          breakpoints={styleImage.breakpoints}
+                          formats={styleImage.formats}
+                          className="w-full h-full transition-all duration-500 ease-in-out group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                          placeholder="color"
+                          placeholderColor="#111"
+                        />
+                        {/* Gradient overlay on image */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
                       </div>
-                    </div>
-                  </Link>
-                </AnimateOnScroll>
-              ))}
+
+                      {/* Text Content - Always visible */}
+                      <div className="p-6 space-y-3 flex-grow flex flex-col">
+                        <h3 className="text-2xl font-bold text-white group-hover:text-primary-accent transition-colors duration-300">
+                          {t(`danceClassesHub_style_${style.key}`)}
+                        </h3>
+
+                        {/* SEO Text - Always visible */}
+                        <p className="text-neutral/90 text-sm leading-relaxed flex-grow">
+                          {t(`danzaBarcelona_style_${style.key}_seo`)}
+                        </p>
+
+                        {/* CTA Link */}
+                        <div className="pt-2 text-primary-accent font-bold text-sm flex items-center group-hover:translate-x-1 transition-transform duration-300">
+                          {t('danzaBarcelona_viewMore')}
+                        </div>
+                      </div>
+                    </Link>
+                  </AnimateOnScroll>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -585,6 +597,231 @@ const DanzaBarcelonaPage: React.FC = () => {
                 </p>
               </div>
             </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* Related Classes Section (Internal Linking) */}
+        <section
+          id="related-classes"
+          aria-labelledby="related-classes-title"
+          className="py-12 md:py-20"
+        >
+          <div className="container mx-auto px-6">
+            <AnimateOnScroll>
+              <header className="text-center mb-8 sm:mb-12 relative z-10">
+                <h2
+                  id="related-classes-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                >
+                  {t('relatedClassesTitle')}
+                </h2>
+                <p className="text-lg sm:text-xl text-neutral/70">{t('relatedClassesSubtitle')}</p>
+              </header>
+            </AnimateOnScroll>
+
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto relative z-0"
+              role="list"
+              aria-label={t('relatedClassesTitle')}
+            >
+              {/* Ballet */}
+              <div role="listitem">
+                <AnimateOnScroll delay={100} className="[perspective:1000px]">
+                  <article className="h-full" aria-labelledby="related-ballet-title">
+                    <Link
+                      to={`/${locale}/clases/ballet-barcelona`}
+                      className="group block h-full bg-black/70 backdrop-blur-md
+                                 border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                 transition-all duration-500
+                                 [transform-style:preserve-3d]
+                                 hover:border-primary-accent hover:shadow-accent-glow
+                                 hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                 focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                 focus:ring-offset-2 focus:ring-offset-black"
+                      aria-label={`${t('relatedBalletName')} - ${t('relatedClassesViewClass')}`}
+                    >
+                      <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
+                        <LazyImage
+                          src="/images/classes/ballet/img/clases-ballet-barcelona_480.webp"
+                          alt={`Clase de ${t('relatedBalletName')} en Barcelona - Farray's Dance Center`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          width={480}
+                          height={320}
+                        />
+                        <div
+                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <h3
+                          id="related-ballet-title"
+                          className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                        >
+                          {t('relatedBalletName')}
+                        </h3>
+                        <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                          {t('relatedBalletDesc')}
+                        </p>
+                        <div
+                          className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                          aria-hidden="true"
+                        >
+                          <span>{t('relatedClassesViewClass')}</span>
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                </AnimateOnScroll>
+              </div>
+
+              {/* Contemporáneo */}
+              <div role="listitem">
+                <AnimateOnScroll delay={200} className="[perspective:1000px]">
+                  <article className="h-full" aria-labelledby="related-contemporaneo-title">
+                    <Link
+                      to={`/${locale}/clases/contemporaneo-barcelona`}
+                      className="group block h-full bg-black/70 backdrop-blur-md
+                                 border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                 transition-all duration-500
+                                 [transform-style:preserve-3d]
+                                 hover:border-primary-accent hover:shadow-accent-glow
+                                 hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                 focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                 focus:ring-offset-2 focus:ring-offset-black"
+                      aria-label={`${t('relatedContemporaneoName')} - ${t('relatedClassesViewClass')}`}
+                    >
+                      <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
+                        <OptimizedImage
+                          src="/images/classes/contemporaneo/img/mgs_5189"
+                          alt={`Clase de ${t('relatedContemporaneoName')} en Barcelona - Farray's Dance Center`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          width={480}
+                          height={320}
+                          breakpoints={[320, 640, 768]}
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 480px"
+                          priority="auto"
+                        />
+                        <div
+                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <h3
+                          id="related-contemporaneo-title"
+                          className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                        >
+                          {t('relatedContemporaneoName')}
+                        </h3>
+                        <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                          {t('relatedContemporaneoDesc')}
+                        </p>
+                        <div
+                          className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                          aria-hidden="true"
+                        >
+                          <span>{t('relatedClassesViewClass')}</span>
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                </AnimateOnScroll>
+              </div>
+
+              {/* Modern Jazz */}
+              <div role="listitem">
+                <AnimateOnScroll delay={300} className="[perspective:1000px]">
+                  <article className="h-full" aria-labelledby="related-modernjazz-title">
+                    <Link
+                      to={`/${locale}/clases/modern-jazz-barcelona`}
+                      className="group block h-full bg-black/70 backdrop-blur-md
+                                 border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                 transition-all duration-500
+                                 [transform-style:preserve-3d]
+                                 hover:border-primary-accent hover:shadow-accent-glow
+                                 hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                 focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                 focus:ring-offset-2 focus:ring-offset-black"
+                      aria-label={`${t('relatedModernJazzName')} - ${t('relatedClassesViewClass')}`}
+                    >
+                      <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
+                        <LazyImage
+                          src="/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_480.webp"
+                          alt={`Clase de ${t('relatedModernJazzName')} en Barcelona - Farray's Dance Center`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          width={480}
+                          height={320}
+                        />
+                        <div
+                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <h3
+                          id="related-modernjazz-title"
+                          className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                        >
+                          {t('relatedModernJazzName')}
+                        </h3>
+                        <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                          {t('relatedModernJazzDesc')}
+                        </p>
+                        <div
+                          className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                          aria-hidden="true"
+                        >
+                          <span>{t('relatedClassesViewClass')}</span>
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                </AnimateOnScroll>
+              </div>
+            </div>
           </div>
         </section>
       </div>

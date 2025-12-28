@@ -2,15 +2,24 @@ import sharp from "sharp";
 import { readdir, mkdir } from "node:fs/promises";
 import { join, extname, basename } from "node:path";
 
-const classes = ["dancehall", "twerk", "afrobeat", "hip-hop-reggaeton", "sexy-reggaeton", "reggaeton-cubano", "femmology", "sexy-style", "modern-jazz", "ballet", "contemporaneo", "test-preview", "afro-contemporaneo", "afro-jazz"]; // añade más clases aquí
+// ============================================================================
+// ENTERPRISE IMAGE BUILD SCRIPT
+// ============================================================================
+// Generates AVIF, WebP, and JPEG at 6 responsive breakpoints
+// Matching OptimizedImage component: [320, 640, 768, 1024, 1440, 1920]
+// ============================================================================
+
+const classes = ["dancehall", "twerk", "afrobeat", "hip-hop", "hip-hop-reggaeton", "sexy-reggaeton", "reggaeton-cubano", "femmology", "sexy-style", "modern-jazz", "ballet", "contemporaneo", "afro-contemporaneo", "afro-jazz", "bachata", "bum-bum", "folklore-cubano", "cuerpo-fit", "salsa-lady-style", "salsa-lady-timba", "heels", "timba", "salsa-cubana"]; // añade más clases aquí
 const logos = true; // procesar logos
 const teachers = true; // procesar fotos de profesores
 const teacherSizes = [320, 640, 960]; // tamaños para fotos de profesores (cuadradas)
+
+// Enterprise: 6 breakpoints matching OptimizedImage component
 const sizesByAspect = {
-  "16x9": [640, 1280, 1920],
-  "1x1":  [480, 960, 1440],
-  "4x5":  [640, 960, 1440],
-  "3x4":  [640, 960, 1440],
+  "16x9": [320, 640, 768, 1024, 1440, 1920],
+  "1x1":  [320, 640, 768, 1024, 1440, 1920],
+  "4x5":  [320, 640, 768, 1024, 1440, 1920],
+  "3x4":  [320, 640, 768, 1024, 1440, 1920],
 };
 const logoSizes = [128, 256, 512, 1024]; // tamaños específicos para logos
 
@@ -26,37 +35,59 @@ const guessAspect = (w, h) => {
 for (const cls of classes) {
   const rawDir = `public/images/classes/${cls}/raw`;
   const outDir = `public/images/classes/${cls}/img`;
-  await mkdir(outDir, { recursive: true });
 
-  const files = (await readdir(rawDir)).filter(f => /\.(jpe?g|png|webp)$/i.test(f));
+  try {
+    await mkdir(outDir, { recursive: true });
 
-  for (const file of files) {
-    const inPath = join(rawDir, file);
-    const meta = await sharp(inPath).metadata();
-    const aspect = guessAspect(meta.width ?? 1920, meta.height ?? 1080);
-    const sizes = sizesByAspect[aspect] ?? sizesByAspect["16x9"];
-    const base = basename(file, extname(file)).toLowerCase().replace(/\s+/g, "-");
-
-    console.log(`  Processing: ${file} (${meta.width}x${meta.height}) → ${aspect}`);
-
-    for (const w of sizes) {
-      // WEBP
-      await sharp(inPath)
-        .resize({ width: w, withoutEnlargement: true })
-        .webp({ quality: 78 })
-        .toFile(join(outDir, `${base}_${w}.webp`));
-
-      // JPEG fallback
-      await sharp(inPath)
-        .resize({ width: w, withoutEnlargement: true })
-        .jpeg({ quality: 78, mozjpeg: true })
-        .toFile(join(outDir, `${base}_${w}.jpg`));
-
-      console.log(`    ✓ Generated ${base}_${w}.webp & .jpg`);
+    let files = [];
+    try {
+      files = (await readdir(rawDir)).filter(f => /\.(jpe?g|png|webp)$/i.test(f));
+    } catch {
+      console.log(`  ⚠️ No se encontró carpeta ${rawDir} - saltando...`);
+      continue;
     }
-  }
 
-  console.log(`✔ ${cls}: todas las imágenes generadas\n`);
+    if (files.length === 0) {
+      console.log(`  ℹ️ ${cls}: sin imágenes raw para procesar`);
+      continue;
+    }
+
+    for (const file of files) {
+      const inPath = join(rawDir, file);
+      const meta = await sharp(inPath).metadata();
+      const aspect = guessAspect(meta.width ?? 1920, meta.height ?? 1080);
+      const sizes = sizesByAspect[aspect] ?? sizesByAspect["16x9"];
+      const base = basename(file, extname(file)).toLowerCase().replace(/\s+/g, "-");
+
+      console.log(`  Processing: ${file} (${meta.width}x${meta.height}) → ${aspect}`);
+
+      for (const w of sizes) {
+        // AVIF (best compression - Enterprise)
+        await sharp(inPath)
+          .resize({ width: w, withoutEnlargement: true })
+          .avif({ quality: 65, effort: 4 })
+          .toFile(join(outDir, `${base}_${w}.avif`));
+
+        // WEBP (good compression, wide support)
+        await sharp(inPath)
+          .resize({ width: w, withoutEnlargement: true })
+          .webp({ quality: 78 })
+          .toFile(join(outDir, `${base}_${w}.webp`));
+
+        // JPEG fallback (universal support)
+        await sharp(inPath)
+          .resize({ width: w, withoutEnlargement: true })
+          .jpeg({ quality: 78, mozjpeg: true })
+          .toFile(join(outDir, `${base}_${w}.jpg`));
+
+        console.log(`    ✓ Generated ${base}_${w} (.avif, .webp, .jpg)`);
+      }
+    }
+
+    console.log(`✔ ${cls}: todas las imágenes generadas\n`);
+  } catch (error) {
+    console.error(`  ❌ Error procesando ${cls}:`, error.message);
+  }
 }
 
 // Procesar logos
@@ -143,5 +174,56 @@ if (teachers) {
 
   console.log(`✔ Teachers: todas las imágenes generadas\n`);
 }
+
+// ============================================================================
+// PROCESAR FOTOS DE SALAS DE ALQUILER
+// ============================================================================
+console.log("\n🏢 Procesando fotos de salas de alquiler...\n");
+const salasRawDir = `public/images/salas/raw`;
+const salasOutDir = `public/images/salas/img`;
+await mkdir(salasOutDir, { recursive: true });
+
+let salasFiles = [];
+try {
+  salasFiles = (await readdir(salasRawDir)).filter(f => /\.(jpe?g|png|webp)$/i.test(f));
+} catch {
+  console.log(`  ⚠️ No se encontró carpeta ${salasRawDir} o está vacía`);
+}
+
+// Enterprise: 6 breakpoints for sala images
+const salasSizes = [320, 640, 768, 1024, 1440, 1920];
+
+for (const file of salasFiles) {
+  const inPath = join(salasRawDir, file);
+  const ext = extname(file).toLowerCase();
+  const base = basename(file, ext).toLowerCase().replace(/\s+/g, "-");
+
+  const meta = await sharp(inPath).metadata();
+  console.log(`  Processing sala: ${file} (${meta.width}x${meta.height})`);
+
+  for (const w of salasSizes) {
+    // AVIF (best compression - Enterprise)
+    await sharp(inPath)
+      .resize({ width: w, withoutEnlargement: true })
+      .avif({ quality: 70, effort: 4 })
+      .toFile(join(salasOutDir, `${base}_${w}.avif`));
+
+    // WEBP (good compression, wide support)
+    await sharp(inPath)
+      .resize({ width: w, withoutEnlargement: true })
+      .webp({ quality: 80 })
+      .toFile(join(salasOutDir, `${base}_${w}.webp`));
+
+    // JPEG fallback (universal support)
+    await sharp(inPath)
+      .resize({ width: w, withoutEnlargement: true })
+      .jpeg({ quality: 82, mozjpeg: true })
+      .toFile(join(salasOutDir, `${base}_${w}.jpg`));
+
+    console.log(`    ✓ Generated ${base}_${w} (.avif, .webp, .jpg)`);
+  }
+}
+
+console.log(`✔ Salas: todas las imágenes generadas\n`);
 
 console.log("🎉 Build completo!");

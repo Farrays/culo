@@ -126,4 +126,27 @@ export const SALSA_CUBANA_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Salsa Cubana', 'Casino', 'Rueda de Casino', 'Método Farray', 'Cuban Dance'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Salsa Cubana -> Bachata, Timba, Folklore Cubano
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'bachata-barcelona',
+        nameKey: 'relatedBachataName',
+        descriptionKey: 'relatedBachataDesc',
+      },
+      {
+        slug: 'timba-barcelona',
+        nameKey: 'relatedTimbaName',
+        descriptionKey: 'relatedTimbaDesc',
+      },
+      {
+        slug: 'folklore-cubano',
+        nameKey: 'relatedFolkloreCubanoName',
+        descriptionKey: 'relatedFolkloreCubanoDesc',
+      },
+    ],
+  },
 };

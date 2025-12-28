@@ -30,8 +30,8 @@ export const AUTHOR_YUNAISY: AuthorConfig = {
     'blog_credential_founder',
   ],
   sameAs: [
-    'https://www.instagram.com/farrays_international_dance/',
-    'https://www.facebook.com/farraysinternationaldancecenter',
+    'https://www.instagram.com/farrays_centerbcn/',
+    'https://www.facebook.com/farrayscenter/',
   ],
 };
 

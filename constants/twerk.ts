@@ -80,12 +80,19 @@ export const TWERK_SCHEDULE_KEYS = [
   },
   {
     id: '4',
+    dayKey: 'thursday',
+    className: 'Twerk Principiantes',
+    time: '11:00 - 12:00',
+    teacher: 'Isa López',
+    levelKey: 'beginnerLevel',
+  },
+  {
+    id: '5',
     dayKey: 'friday',
     className: 'Twerk Principiantes',
     time: '19:00 - 20:00',
-    teacher: 'Isabel López',
+    teacher: 'Isa López',
     levelKey: 'beginnerLevel',
-    note: 'A partir del 16 de enero',
   },
 ];
 

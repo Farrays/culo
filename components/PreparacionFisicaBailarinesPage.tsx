@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
 import {
@@ -13,6 +14,8 @@ import Icon, { type IconName } from './Icon';
 import type { ValuePillar } from '../types';
 import TestimonialsSection from './TestimonialsSection';
 import LeadCaptureModal from './shared/LeadCaptureModal';
+import OptimizedImage from './OptimizedImage';
+import { getStyleImage, getContextualAltKey } from '../constants/style-images';
 
 // Type extension for ValuePillar with icon names instead of components
 type ValuePillarWithIcon = Omit<ValuePillar, 'Icon'> & { iconName: IconName };
@@ -56,42 +59,33 @@ const valuePillars: ValuePillarWithIcon[] = [
   },
 ];
 
-// Training activities offered
+// Training activities offered - Enterprise version using STYLE_IMAGES
 interface TrainingActivity {
   key: string;
-  imageUrl: string;
+  styleKey: string; // Maps to STYLE_IMAGES key
+  url: string; // Link to class page
 }
 
 const trainingActivities: TrainingActivity[] = [
   {
+    key: 'cuerpo_fit',
+    styleKey: 'cuerpo_fit',
+    url: '/clases/cuerpo-fit',
+  },
+  {
+    key: 'bum_bum',
+    styleKey: 'bum_bum',
+    url: '/clases/ejercicios-gluteos-barcelona',
+  },
+  {
+    key: 'stretching',
+    styleKey: 'stretching',
+    url: '/clases/stretching-barcelona',
+  },
+  {
     key: 'body_conditioning',
-    imageUrl:
-      'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop&q=80&auto=format',
-  },
-  {
-    key: 'bum_bum_gluteos',
-    imageUrl:
-      'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&q=80&auto=format',
-  },
-  {
-    key: 'bum_bum_fit',
-    imageUrl:
-      'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop&q=80&auto=format',
-  },
-  {
-    key: 'yoga_flow',
-    imageUrl:
-      'https://images.unsplash.com/photo-1588286840104-8957b019727f?w=800&h=600&fit=crop&q=80&auto=format',
-  },
-  {
-    key: 'dance_barre',
-    imageUrl:
-      'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop&q=80&auto=format',
-  },
-  {
-    key: 'mate_pilates',
-    imageUrl:
-      'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop&q=80&auto=format',
+    styleKey: 'body_conditioning',
+    url: '/clases/acondicionamiento-fisico-bailarines',
   },
 ];
 
@@ -289,45 +283,60 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
               </p>
             </AnimateOnScroll>
 
-            {/* Grid of Training Activities */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {trainingActivities.map((activity, index) => (
-                <AnimateOnScroll key={activity.key} delay={index * 100}>
-                  <div className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col">
-                    {/* Background Image - Top half of card */}
-                    <div className="relative h-48 overflow-hidden flex-shrink-0">
-                      <img
-                        src={activity.imageUrl}
-                        alt={`${t(`prepFisica_activity_${activity.key}_title`)} - Clases en Barcelona`}
-                        width="800"
-                        height="600"
-                        className="w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110 opacity-60 group-hover:opacity-80"
-                        loading={index < 3 ? 'eager' : 'lazy'}
-                        decoding="async"
-                      />
-                      {/* Gradient overlay on image */}
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
-                    </div>
+            {/* Grid of Training Activities - Enterprise: Flexbox auto-centers orphan items */}
+            <div className="flex flex-wrap justify-center gap-8">
+              {trainingActivities.map((activity, index) => {
+                const styleImage = getStyleImage(activity.styleKey);
 
-                    {/* Text Content - Always visible */}
-                    <div className="p-6 space-y-3 flex-grow flex flex-col">
-                      <h3 className="text-2xl font-bold text-white group-hover:text-primary-accent transition-colors duration-300">
-                        {t(`prepFisica_activity_${activity.key}_title`)}
-                      </h3>
-
-                      {/* SEO Text - Always visible */}
-                      <p className="text-neutral/90 text-sm leading-relaxed flex-grow">
-                        {t(`prepFisica_activity_${activity.key}_desc`)}
-                      </p>
-
-                      {/* CTA Link */}
-                      <div className="pt-2 text-primary-accent font-bold text-sm flex items-center group-hover:translate-x-1 transition-transform duration-300">
-                        {t('prepFisica_viewMore')}
+                return (
+                  <AnimateOnScroll
+                    key={activity.key}
+                    delay={index * 100}
+                    className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)]"
+                  >
+                    <Link
+                      to={`/${locale}${activity.url}`}
+                      className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col"
+                    >
+                      {/* Background Image - Enterprise OptimizedImage with contextual SEO alt */}
+                      <div className="relative h-48 overflow-hidden flex-shrink-0">
+                        <OptimizedImage
+                          src={styleImage.basePath}
+                          altKey={getContextualAltKey(activity.styleKey, 'fitness')}
+                          altFallback={styleImage.fallbackAlt}
+                          aspectRatio="4/3"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          priority={index < 3 ? 'high' : 'low'}
+                          breakpoints={styleImage.breakpoints}
+                          formats={styleImage.formats}
+                          className="w-full h-full transition-all duration-500 ease-in-out group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                          placeholder="color"
+                          placeholderColor="#111"
+                        />
+                        {/* Gradient overlay on image */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
                       </div>
-                    </div>
-                  </div>
-                </AnimateOnScroll>
-              ))}
+
+                      {/* Text Content - Always visible */}
+                      <div className="p-6 space-y-3 flex-grow flex flex-col">
+                        <h3 className="text-2xl font-bold text-white group-hover:text-primary-accent transition-colors duration-300">
+                          {t(`prepFisica_activity_${activity.key}_title`)}
+                        </h3>
+
+                        {/* SEO Text - Always visible */}
+                        <p className="text-neutral/90 text-sm leading-relaxed flex-grow">
+                          {t(`prepFisica_activity_${activity.key}_desc`)}
+                        </p>
+
+                        {/* CTA Link */}
+                        <div className="pt-2 text-primary-accent font-bold text-sm flex items-center group-hover:translate-x-1 transition-transform duration-300">
+                          {t('prepFisica_viewMore')}
+                        </div>
+                      </div>
+                    </Link>
+                  </AnimateOnScroll>
+                );
+              })}
             </div>
           </div>
         </section>

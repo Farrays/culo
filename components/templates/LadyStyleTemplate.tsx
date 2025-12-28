@@ -15,6 +15,9 @@ import { StarRating, CheckIcon, CheckCircleIcon, CalendarDaysIcon } from '../../
 import { UsersIcon, MapPinIcon } from '../shared/CommonIcons';
 import type { Testimonial } from '../../types';
 import type { FAQ } from './ClassPageTemplate';
+import { Link } from 'react-router-dom';
+import OptimizedImage from '../OptimizedImage';
+import { getStyleImage, getContextualAltKey } from '../../constants/style-images';
 
 // ============= CONFIG TYPES =============
 
@@ -56,7 +59,8 @@ export interface WhyChooseConfig {
 export interface ScheduleItem {
   id: string;
   dayKey: string;
-  className: string;
+  classNameKey?: string; // Translation key for class name (preferred for i18n)
+  className?: string; // Direct class name (deprecated - use classNameKey for i18n)
   time: string;
   teacher: string;
   levelKey: string;
@@ -106,10 +110,33 @@ export interface LadyStyleTemplateConfig {
     cta2SubtextKey: string;
     stats: {
       rating: string;
-      reviewCount: string;
-      students: string;
-      yearsText: string;
+      reviewCountKey?: string; // Translation key (preferred for i18n)
+      reviewCount?: string; // Direct value (deprecated - use reviewCountKey)
+      studentsKey?: string; // Translation key (preferred for i18n)
+      students?: string; // Direct value (deprecated - use studentsKey)
+      yearsTextKey?: string; // Translation key (preferred for i18n)
+      yearsText?: string; // Direct value (deprecated - use yearsTextKey)
     };
+  };
+
+  // Enterprise Image Configuration
+  // styleKey maps to STYLE_IMAGES in constants/style-images.ts
+  images: {
+    styleKey: string; // e.g., 'salsa_lady_style' - used for hero and whatIs images
+  };
+
+  // Hero Visual Configuration (Enterprise-level customization)
+  heroVisuals?: {
+    /** Image opacity (0-100, default: 40) */
+    imageOpacity?: number;
+    /** Object position for hero image (default: 'center') */
+    objectPosition?: string;
+    /** Gradient overlay style: 'dark' (default), 'subtle', 'vibrant', 'none' */
+    gradientStyle?: 'dark' | 'subtle' | 'vibrant' | 'none';
+    /** Enable text shadow for better contrast (default: false) */
+    textShadow?: boolean;
+    /** Custom gradient (overrides gradientStyle) */
+    customGradient?: string;
   };
 
   // What is section
@@ -397,15 +424,43 @@ interface LadyStyleTemplateProps {
   config: LadyStyleTemplateConfig;
 }
 
+// Hero gradient presets for enterprise-level visual customization
+const HERO_GRADIENT_PRESETS = {
+  dark: 'bg-gradient-to-br from-primary-dark/60 via-black/80 to-black',
+  subtle: 'bg-gradient-to-br from-black/40 via-black/50 to-black/70',
+  vibrant: 'bg-gradient-to-t from-black/90 via-black/40 to-transparent',
+  none: '',
+} as const;
+
 const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
   const pageUrl = `${baseUrl}/${locale}/clases/${config.pageSlug}`;
 
+  // Hero visual configuration with defaults
+  const heroVisuals = {
+    imageOpacity: config.heroVisuals?.imageOpacity ?? 40,
+    objectPosition: config.heroVisuals?.objectPosition ?? 'center',
+    gradientStyle: config.heroVisuals?.gradientStyle ?? 'dark',
+    textShadow: config.heroVisuals?.textShadow ?? false,
+    customGradient: config.heroVisuals?.customGradient,
+  };
+
+  // Compute hero gradient class
+  const heroGradientClass = heroVisuals.customGradient
+    ? heroVisuals.customGradient
+    : HERO_GRADIENT_PRESETS[heroVisuals.gradientStyle];
+
+  // Text shadow style for better contrast on vibrant backgrounds
+  const heroTextShadowStyle = heroVisuals.textShadow
+    ? { textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }
+    : {};
+
   // Schedule data
   const schedules = config.schedules.map(schedule => ({
     ...schedule,
     day: t(schedule.dayKey),
+    className: schedule.classNameKey ? t(schedule.classNameKey) : (schedule.className ?? ''),
     level: t(schedule.levelKey),
   }));
 
@@ -546,15 +601,33 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
       />
 
       <main className="bg-black text-neutral min-h-screen pt-20 md:pt-24">
-        {/* 1. Hero Section */}
+        {/* 1. Hero Section - Enterprise with OptimizedImage */}
         <section
           id="hero"
           aria-labelledby="hero-title"
           className="relative min-h-[90vh] sm:min-h-[600px] flex items-center justify-center overflow-hidden py-16 sm:py-24 md:py-32"
         >
-          <div className="absolute inset-0 bg-black">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/40 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-20"></div>
+          {/* Enterprise Background Image with OptimizedImage */}
+          <div className="absolute inset-0">
+            <OptimizedImage
+              src={getStyleImage(config.images.styleKey).basePath}
+              altKey={getContextualAltKey(config.images.styleKey, 'hero')}
+              altFallback={getStyleImage(config.images.styleKey).fallbackAlt}
+              aspectRatio="16/9"
+              sizes="100vw"
+              priority="high"
+              breakpoints={getStyleImage(config.images.styleKey).breakpoints}
+              formats={getStyleImage(config.images.styleKey).formats}
+              className={`w-full h-full object-cover`}
+              style={{
+                opacity: heroVisuals.imageOpacity / 100,
+                objectPosition: heroVisuals.objectPosition,
+              }}
+              placeholder="color"
+              placeholderColor="#000"
+            />
+            {heroGradientClass && <div className={`absolute inset-0 ${heroGradientClass}`}></div>}
+            <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-15"></div>
           </div>
 
           <div className="relative z-20 container mx-auto px-4 sm:px-6 text-center">
@@ -564,13 +637,20 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
               <h1
                 id="hero-title"
                 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-4 sm:mb-6 holographic-text"
+                style={heroTextShadowStyle}
               >
                 {t(config.hero.titleKey)}
               </h1>
-              <p className="text-xl sm:text-3xl md:text-4xl font-bold mb-4 holographic-text">
+              <p
+                className="text-xl sm:text-3xl md:text-4xl font-bold mb-4 holographic-text"
+                style={heroTextShadowStyle}
+              >
                 {t(config.hero.subtitleKey)}
               </p>
-              <p className="max-w-4xl mx-auto text-base sm:text-xl md:text-2xl text-neutral/90 mt-4 sm:mt-8 mb-6 leading-relaxed px-2">
+              <p
+                className="max-w-4xl mx-auto text-base sm:text-xl md:text-2xl text-neutral/90 mt-4 sm:mt-8 mb-6 leading-relaxed px-2"
+                style={heroTextShadowStyle}
+              >
                 {t(config.hero.descKey)}
               </p>
 
@@ -579,17 +659,31 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
                 <div className="flex items-center gap-2">
                   <StarRating size="sm" />
                   <span className="font-semibold">{config.hero.stats.rating}</span>
-                  <span className="text-sm">({config.hero.stats.reviewCount})</span>
+                  <span className="text-sm">
+                    (
+                    {config.hero.stats.reviewCountKey
+                      ? t(config.hero.stats.reviewCountKey)
+                      : config.hero.stats.reviewCount}
+                    )
+                  </span>
                 </div>
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
                   <UsersIcon className="w-5 h-5 text-primary-accent" />
-                  <span className="text-sm sm:text-base">{config.hero.stats.students}</span>
+                  <span className="text-sm sm:text-base">
+                    {config.hero.stats.studentsKey
+                      ? t(config.hero.stats.studentsKey)
+                      : config.hero.stats.students}
+                  </span>
                 </div>
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
                   <CalendarDaysIcon className="w-5 h-5 text-primary-accent" />
-                  <span className="text-sm sm:text-base">{config.hero.stats.yearsText}</span>
+                  <span className="text-sm sm:text-base">
+                    {config.hero.stats.yearsTextKey
+                      ? t(config.hero.stats.yearsTextKey)
+                      : config.hero.stats.yearsText}
+                  </span>
                 </div>
               </div>
 
@@ -1533,6 +1627,255 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
                 </div>
               </div>
             </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* 20. Related Classes Section (Internal Linking) */}
+        <section
+          id="related-classes"
+          aria-labelledby="related-classes-title"
+          className="py-12 md:py-20"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <header className="text-center mb-8 sm:mb-12 relative z-10">
+                <h2
+                  id="related-classes-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                >
+                  {t('relatedClassesTitle')}
+                </h2>
+                <p className="text-lg sm:text-xl text-neutral/70">{t('relatedClassesSubtitle')}</p>
+              </header>
+            </AnimateOnScroll>
+
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto relative z-0"
+              role="list"
+              aria-label={t('relatedClassesTitle')}
+            >
+              {/* Sexy Style */}
+              <div role="listitem">
+                <AnimateOnScroll
+                  delay={ANIMATION_DELAYS.STAGGER_SMALL}
+                  className="[perspective:1000px]"
+                >
+                  <article className="h-full" aria-labelledby="related-sexystyle-title">
+                    <Link
+                      to={`/${locale}/clases/sexy-style-barcelona`}
+                      className="group block h-full bg-black/70 backdrop-blur-md
+                                 border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                 transition-all duration-500
+                                 [transform-style:preserve-3d]
+                                 hover:border-primary-accent hover:shadow-accent-glow
+                                 hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                 focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                 focus:ring-offset-2 focus:ring-offset-black"
+                      aria-label={`${t('relatedSexyStyleName')} - ${t('relatedClassesViewClass')}`}
+                    >
+                      <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
+                        <OptimizedImage
+                          src={getStyleImage('sexy_style').basePath}
+                          altKey={getContextualAltKey('sexy_style', 'latin')}
+                          altFallback={getStyleImage('sexy_style').fallbackAlt}
+                          aspectRatio="3/2"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          priority="low"
+                          breakpoints={getStyleImage('sexy_style').breakpoints}
+                          formats={getStyleImage('sexy_style').formats}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          placeholder="color"
+                          placeholderColor="#111"
+                        />
+                        <div
+                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <h3
+                          id="related-sexystyle-title"
+                          className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                        >
+                          {t('relatedSexyStyleName')}
+                        </h3>
+                        <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                          {t('relatedSexyStyleDesc')}
+                        </p>
+                        <div
+                          className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                          aria-hidden="true"
+                        >
+                          <span>{t('relatedClassesViewClass')}</span>
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                </AnimateOnScroll>
+              </div>
+
+              {/* Femmology */}
+              <div role="listitem">
+                <AnimateOnScroll
+                  delay={ANIMATION_DELAYS.STAGGER_SMALL * 2}
+                  className="[perspective:1000px]"
+                >
+                  <article className="h-full" aria-labelledby="related-femmology-title">
+                    <Link
+                      to={`/${locale}/clases/femmology`}
+                      className="group block h-full bg-black/70 backdrop-blur-md
+                                 border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                 transition-all duration-500
+                                 [transform-style:preserve-3d]
+                                 hover:border-primary-accent hover:shadow-accent-glow
+                                 hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                 focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                 focus:ring-offset-2 focus:ring-offset-black"
+                      aria-label={`${t('relatedFemmologyName')} - ${t('relatedClassesViewClass')}`}
+                    >
+                      <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
+                        <OptimizedImage
+                          src={getStyleImage('femmology_heels').basePath}
+                          altKey={getContextualAltKey('femmology_heels', 'latin')}
+                          altFallback={getStyleImage('femmology_heels').fallbackAlt}
+                          aspectRatio="3/2"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          priority="low"
+                          breakpoints={getStyleImage('femmology_heels').breakpoints}
+                          formats={getStyleImage('femmology_heels').formats}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          placeholder="color"
+                          placeholderColor="#111"
+                        />
+                        <div
+                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <h3
+                          id="related-femmology-title"
+                          className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                        >
+                          {t('relatedFemmologyName')}
+                        </h3>
+                        <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                          {t('relatedFemmologyDesc')}
+                        </p>
+                        <div
+                          className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                          aria-hidden="true"
+                        >
+                          <span>{t('relatedClassesViewClass')}</span>
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                </AnimateOnScroll>
+              </div>
+
+              {/* Heels */}
+              <div role="listitem">
+                <AnimateOnScroll
+                  delay={ANIMATION_DELAYS.STAGGER_SMALL * 3}
+                  className="[perspective:1000px]"
+                >
+                  <article className="h-full" aria-labelledby="related-heels-title">
+                    <Link
+                      to={`/${locale}/clases/heels-barcelona`}
+                      className="group block h-full bg-black/70 backdrop-blur-md
+                                 border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                 transition-all duration-500
+                                 [transform-style:preserve-3d]
+                                 hover:border-primary-accent hover:shadow-accent-glow
+                                 hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                 focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                 focus:ring-offset-2 focus:ring-offset-black"
+                      aria-label={`${t('relatedHeelsName')} - ${t('relatedClassesViewClass')}`}
+                    >
+                      <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
+                        <OptimizedImage
+                          src={getStyleImage('heels_barcelona').basePath}
+                          altKey={getContextualAltKey('heels_barcelona', 'latin')}
+                          altFallback={getStyleImage('heels_barcelona').fallbackAlt}
+                          aspectRatio="3/2"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          priority="low"
+                          breakpoints={getStyleImage('heels_barcelona').breakpoints}
+                          formats={getStyleImage('heels_barcelona').formats}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          placeholder="color"
+                          placeholderColor="#111"
+                        />
+                        <div
+                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <h3
+                          id="related-heels-title"
+                          className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                        >
+                          {t('relatedHeelsName')}
+                        </h3>
+                        <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                          {t('relatedHeelsDesc')}
+                        </p>
+                        <div
+                          className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                          aria-hidden="true"
+                        >
+                          <span>{t('relatedClassesViewClass')}</span>
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                </AnimateOnScroll>
+              </div>
+            </div>
           </div>
         </section>
       </main>

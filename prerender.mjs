@@ -33,6 +33,7 @@ const routes = [
   { path: 'es/clases-particulares-baile', lang: 'es', page: 'clasesParticulares' },
   { path: 'es/sobre-nosotros', lang: 'es', page: 'about' },
   { path: 'es/yunaisy-farray', lang: 'es', page: 'yunaisy' },
+  { path: 'es/metodo-farray', lang: 'es', page: 'metodoFarray' },
   { path: 'es/merchandising', lang: 'es', page: 'merchandising' },
   { path: 'es/regala-baile', lang: 'es', page: 'regalaBaile' },
   { path: 'es/instalaciones', lang: 'es', page: 'facilities' },
@@ -64,6 +65,7 @@ const routes = [
   { path: 'ca/clases-particulares-baile', lang: 'ca', page: 'clasesParticulares' },
   { path: 'ca/sobre-nosotros', lang: 'ca', page: 'about' },
   { path: 'ca/yunaisy-farray', lang: 'ca', page: 'yunaisy' },
+  { path: 'ca/metodo-farray', lang: 'ca', page: 'metodoFarray' },
   { path: 'ca/merchandising', lang: 'ca', page: 'merchandising' },
   { path: 'ca/regala-baile', lang: 'ca', page: 'regalaBaile' },
   { path: 'ca/instalaciones', lang: 'ca', page: 'facilities' },
@@ -95,6 +97,7 @@ const routes = [
   { path: 'en/clases-particulares-baile', lang: 'en', page: 'clasesParticulares' },
   { path: 'en/sobre-nosotros', lang: 'en', page: 'about' },
   { path: 'en/yunaisy-farray', lang: 'en', page: 'yunaisy' },
+  { path: 'en/metodo-farray', lang: 'en', page: 'metodoFarray' },
   { path: 'en/merchandising', lang: 'en', page: 'merchandising' },
   { path: 'en/regala-baile', lang: 'en', page: 'regalaBaile' },
   { path: 'en/instalaciones', lang: 'en', page: 'facilities' },
@@ -126,6 +129,7 @@ const routes = [
   { path: 'fr/clases-particulares-baile', lang: 'fr', page: 'clasesParticulares' },
   { path: 'fr/sobre-nosotros', lang: 'fr', page: 'about' },
   { path: 'fr/yunaisy-farray', lang: 'fr', page: 'yunaisy' },
+  { path: 'fr/metodo-farray', lang: 'fr', page: 'metodoFarray' },
   { path: 'fr/merchandising', lang: 'fr', page: 'merchandising' },
   { path: 'fr/regala-baile', lang: 'fr', page: 'regalaBaile' },
   { path: 'fr/instalaciones', lang: 'fr', page: 'facilities' },
@@ -287,6 +291,10 @@ const metadata = {
     yunaisy: {
       title: 'Yunaisy Farray | Fundadora y Directora | Farray\'s Center',
       description: 'Conoce a Yunaisy Farray, bailarina profesional cubana y fundadora de Farray\'s International Dance Center. Más de 20 años de experiencia en danza.',
+    },
+    metodoFarray: {
+      title: 'Método Farray® | Sistema Pedagógico Exclusivo de Danza | Farray\'s Center',
+      description: 'Descubre el Método Farray®, sistema pedagógico exclusivo que fusiona disciplina técnica cubana, ritmo afrocaribeño e innovación. Certificación CID-UNESCO. Aprende a bailar de verdad.',
     },
     merchandising: {
       title: 'Merchandising | Camisetas, Sudaderas y Accesorios | Farray\'s Center',
@@ -452,6 +460,10 @@ const metadata = {
       title: 'Yunaisy Farray | Fundadora i Directora | Farray\'s Center',
       description: 'Coneix Yunaisy Farray, ballarina professional cubana i fundadora de Farray\'s International Dance Center. Més de 20 anys d\'experiència en dansa.',
     },
+    metodoFarray: {
+      title: 'Mètode Farray® | Sistema Pedagògic Exclusiu de Dansa | Farray\'s Center',
+      description: 'Descobreix el Mètode Farray®, sistema pedagògic exclusiu que fusiona disciplina tècnica cubana, ritme afrocaribeny i innovació. Certificació CID-UNESCO. Aprèn a ballar de veritat.',
+    },
     merchandising: {
       title: 'Merchandising | Samarretes, Dessuadores i Accessoris | Farray\'s Center',
       description: 'Compra merchandising oficial de Farray\'s Center: samarretes, dessuadores, bosses i més. Porta la teva passió pel ball amb tu.',
@@ -616,6 +628,10 @@ const metadata = {
       title: 'Yunaisy Farray | Founder and Director | Farray\'s Center',
       description: 'Meet Yunaisy Farray, Cuban professional dancer and founder of Farray\'s International Dance Center. Over 20 years of experience in dance.',
     },
+    metodoFarray: {
+      title: 'Farray Method® | Exclusive Dance Pedagogical System | Farray\'s Center',
+      description: 'Discover the Farray Method®, an exclusive pedagogical system that combines Cuban technical discipline, Afro-Caribbean rhythm and innovation. CID-UNESCO certification. Learn to dance for real.',
+    },
     merchandising: {
       title: 'Merchandising | T-Shirts, Hoodies and Accessories | Farray\'s Center',
       description: 'Buy official Farray\'s Center merchandise: t-shirts, hoodies, bags and more. Take your passion for dance with you.',
@@ -779,6 +795,10 @@ const metadata = {
     yunaisy: {
       title: 'Yunaisy Farray | Fondatrice et Directrice | Farray\'s Center',
       description: 'Rencontrez Yunaisy Farray, danseuse professionnelle cubaine et fondatrice de Farray\'s International Dance Center. Plus de 20 ans d\'expérience en danse.',
+    },
+    metodoFarray: {
+      title: 'Méthode Farray® | Système Pédagogique Exclusif de Danse | Farray\'s Center',
+      description: 'Découvrez la Méthode Farray®, système pédagogique exclusif qui fusionne discipline technique cubaine, rythme afro-caribéen et innovation. Certification CID-UNESCO. Apprenez à danser vraiment.',
     },
     merchandising: {
       title: 'Merchandising | T-Shirts, Sweats et Accessoires | Farray\'s Center',

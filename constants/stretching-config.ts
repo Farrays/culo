@@ -74,7 +74,13 @@ export const STRETCHING_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
-    // No image yet - will be added later
+    optimizedImage: {
+      basePath: '/images/categories/img/fitness',
+      alt: 'Clase de stretching y flexibilidad para bailarines en Barcelona - estiramientos profesionales',
+      altKey: 'classes.stretching.whatIs',
+      breakpoints: [320, 640, 768, 1024],
+      formats: ['avif', 'webp', 'jpg'],
+    },
   },
 
   identificationSection: {
@@ -162,4 +168,27 @@ export const STRETCHING_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Stretching', 'Ballet', 'Classical Technique', 'Flexibility', 'Posture'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Stretching -> Ballet, Contemporáneo, Modern Jazz (preparación física ideal)
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'ballet-barcelona',
+        nameKey: 'relatedBalletName',
+        descriptionKey: 'relatedBalletDesc',
+      },
+      {
+        slug: 'contemporaneo-barcelona',
+        nameKey: 'relatedContemporaneoName',
+        descriptionKey: 'relatedContemporaneoDesc',
+      },
+      {
+        slug: 'modern-jazz-barcelona',
+        nameKey: 'relatedModernJazzName',
+        descriptionKey: 'relatedModernJazzDesc',
+      },
+    ],
+  },
 };

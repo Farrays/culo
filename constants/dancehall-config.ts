@@ -164,4 +164,27 @@ export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Dancehall', 'Dancehall Female', 'Urban Dance', 'Choreography'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Dancehall -> Twerk, Afrobeats, Reggaeton Cubano
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'twerk-barcelona',
+        nameKey: 'relatedTwerkName',
+        descriptionKey: 'relatedTwerkDesc',
+      },
+      {
+        slug: 'afrobeats-barcelona',
+        nameKey: 'relatedAfrobeatsName',
+        descriptionKey: 'relatedAfrobeatsDesc',
+      },
+      {
+        slug: 'reggaeton-cubano-barcelona',
+        nameKey: 'relatedReggaetonCubanoName',
+        descriptionKey: 'relatedReggaetonCubanoDesc',
+      },
+    ],
+  },
 };

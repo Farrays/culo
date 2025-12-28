@@ -72,8 +72,16 @@ export const BUM_BUM_COURSE_CONFIG = {
 export const BUM_BUM_SCHEDULE_KEYS = [
   {
     id: '1',
+    dayKey: 'monday',
+    className: 'Bum Bum Cuerpo Fit Open Level',
+    time: '20:00 - 21:00',
+    teacher: 'Cris Ag',
+    levelKey: 'openLevel',
+  },
+  {
+    id: '2',
     dayKey: 'wednesday',
-    className: 'Bum Bum Glúteos Maravillosos',
+    className: 'Bum Bum Glúteos Maravillosos Open Level',
     time: '19:00 - 20:00',
     teacher: 'Cris Ag',
     levelKey: 'openLevel',

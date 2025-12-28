@@ -99,15 +99,15 @@ export const TIMBA_SCHEDULE_KEYS = [
   {
     id: '1',
     dayKey: 'tuesday',
-    className: 'Timba en Pareja',
-    time: '20:30 - 21:30',
-    teacher: 'Grechén Mendez',
+    className: 'Timba Cubana Básico',
+    time: '21:30 - 22:30',
+    teacher: 'Grechén Méndez',
     levelKey: 'basicLevel',
   },
   {
     id: '2',
     dayKey: 'thursday',
-    className: 'Lady Timba',
+    className: 'Salsa Ladies Styling Timba Fusión Intermedio/Avanzado',
     time: '20:30 - 21:30',
     teacher: 'Yunaisy Farray',
     levelKey: 'intermediateAdvancedLevel',
@@ -115,9 +115,9 @@ export const TIMBA_SCHEDULE_KEYS = [
   {
     id: '3',
     dayKey: 'friday',
-    className: 'Lady Timba Básico',
+    className: 'Salsa Ladies Styling Timba Fusión Básico',
     time: '19:00 - 20:00',
-    teacher: 'Lia Valdés',
+    teacher: 'Lía Valdes',
     levelKey: 'basicLevel',
   },
 ];

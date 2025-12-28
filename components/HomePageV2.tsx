@@ -7,30 +7,50 @@ import { HOMEPAGE_V2_CONFIG } from '../constants/homepage-v2-config';
 import HeroV2 from './homev2/HeroV2';
 
 // Lazy load below-the-fold sections for performance
-const FounderSection = lazy(() => import('./homev2/FounderSection'));
+const TrustBar = lazy(() => import('./homev2/TrustBar'));
+const ProblemSolutionSection = lazy(() => import('./homev2/ProblemSolutionSection'));
 const MethodSection = lazy(() => import('./homev2/MethodSection'));
 const ComparisonSection = lazy(() => import('./homev2/ComparisonSection'));
 const ClassesPreview = lazy(() => import('./homev2/ClassesPreview'));
-const ServicesPreview = lazy(() => import('./homev2/ServicesPreview'));
+const InstructorsSection = lazy(() => import('./homev2/InstructorsSection'));
+const VideoTestimonialsSection = lazy(() => import('./homev2/VideoTestimonialsSection'));
+const IrresistibleOfferSection = lazy(() => import('./homev2/IrresistibleOfferSection'));
 const MiniFAQ = lazy(() => import('./homev2/MiniFAQ'));
 const FinalCTAV2 = lazy(() => import('./homev2/FinalCTAV2'));
-
-// Reuse existing components
 const HowToGetHere = lazy(() => import('./HowToGetHere'));
+const StickyMobileCTA = lazy(() => import('./homev2/StickyMobileCTA'));
 
 /**
- * HomePageV2 - Nueva homepage con estrategia océano azul
+ * HomePageV2 - Homepage de Alta Conversión
  *
- * Arquitectura de secciones:
- * 1. Hero - Headline disruptivo + Social Proof + CTA
- * 2. Founder - Yunaisy como ancla de autoridad
- * 3. Method - Método Farray como diferenciador (Océano Azul)
- * 4. Comparison - "Nosotros vs Otros" visual
- * 5. Classes - Preview de categorías + CTA ver todas
- * 6. Services - Preview de servicios + CTA ver todos
- * 7. Mini FAQ - Objection buster (5 preguntas)
- * 8. Final CTA - Copy emotivo de cierre
- * 9. How To Get Here - Ubicación y transporte
+ * Arquitectura de 12 secciones optimizada para conversión:
+ *
+ * 1.  Hero - Video background + CTA prominente + Urgencia
+ * 2.  TrustBar - Credibilidad instantánea (CID-UNESCO, estudiantes, etc.)
+ * 3.  ProblemSolution (PAS) - Conexión emocional con el dolor
+ * 4.  MethodSection - Método Farray® (3 pilares: Aprender, Disfrutar, Pertenecer)
+ * 5.  ComparisonSection - "Nosotros vs Otros" visual
+ * 6.  ClassesPreview - Estilos de baile con grid visual
+ * 7.  InstructorsSection - Instructores estrella (carrusel)
+ * 8.  VideoTestimonialsSection - Social proof máximo (videos + Google reviews)
+ * 9.  IrresistibleOfferSection - Oferta con urgencia y escasez
+ * 10. MiniFAQ - 5 preguntas críticas (objection buster)
+ * 11. FinalCTAV2 - CTA final emocional
+ * 12. HowToGetHere - Ubicación + contacto
+ *
+ * + StickyMobileCTA - CTA fijo en móvil (aparece después del hero)
+ *
+ * Basado en análisis de:
+ * - Broadway Dance Center (NYC)
+ * - Steezy Studio (Online)
+ * - Pineapple Dance Studios (Londres)
+ * - DNCR Academy (Online)
+ * - Millennium Dance Complex (LA)
+ *
+ * Principios aplicados:
+ * - AIDA (Attention, Interest, Desire, Action)
+ * - PAS (Problem, Agitation, Solution)
+ * - Social Proof, Scarcity, Urgency, Risk Reversal
  */
 const HomePageV2: React.FC = () => {
   const { t, locale } = useI18n();
@@ -57,29 +77,43 @@ const HomePageV2: React.FC = () => {
 
       {/* Lazy loaded sections below the fold */}
       <Suspense fallback={<div className="min-h-[50vh]" />}>
-        {/* 2. FOUNDER SECTION - Yunaisy como autoridad */}
-        <FounderSection config={config.founder} />
+        {/* 2. TRUST BAR - Credibilidad instantánea */}
+        <div id="trust-bar">
+          <TrustBar />
+        </div>
 
-        {/* 3. METHOD SECTION - Océano azul */}
+        {/* 3. PROBLEM-SOLUTION (PAS) - Conexión emocional */}
+        <ProblemSolutionSection />
+
+        {/* 4. METHOD SECTION - Método Farray® (3 pilares) */}
         <MethodSection config={config.method} />
 
-        {/* 4. COMPARISON SECTION - Nosotros vs Otros */}
+        {/* 5. COMPARISON SECTION - Nosotros vs Otros */}
         <ComparisonSection config={config.comparison} />
 
-        {/* 5. CLASSES PREVIEW - Categorías de clases */}
+        {/* 6. CLASSES PREVIEW - Estilos de baile */}
         <ClassesPreview />
 
-        {/* 6. SERVICES PREVIEW - Servicios */}
-        <ServicesPreview />
+        {/* 7. INSTRUCTORS SECTION - Instructores estrella */}
+        <InstructorsSection />
 
-        {/* 7. MINI FAQ - Objection buster */}
+        {/* 8. VIDEO TESTIMONIALS - Social proof máximo */}
+        <VideoTestimonialsSection />
+
+        {/* 9. IRRESISTIBLE OFFER - Urgencia y escasez */}
+        <IrresistibleOfferSection />
+
+        {/* 10. MINI FAQ - Objection buster */}
         <MiniFAQ config={config.miniFaq} />
 
-        {/* 8. FINAL CTA - Conversión */}
+        {/* 11. FINAL CTA - Cierre emocional */}
         <FinalCTAV2 config={config.finalCta} />
 
-        {/* 9. HOW TO GET HERE - Ubicación */}
+        {/* 12. HOW TO GET HERE - Ubicación */}
         <HowToGetHere />
+
+        {/* STICKY MOBILE CTA - Aparece después del hero */}
+        <StickyMobileCTA />
       </Suspense>
     </>
   );

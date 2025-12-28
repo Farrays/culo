@@ -85,6 +85,12 @@ export const BACHATA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
     },
   },
 
+  // Enterprise Image Configuration
+  // Maps to STYLE_IMAGES in constants/style-images.ts
+  images: {
+    styleKey: 'bachata_lady_style',
+  },
+
   // What is section
   whatIs: {
     titleKey: 'bachataLadyWhatIsTitle',

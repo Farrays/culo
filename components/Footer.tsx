@@ -65,9 +65,9 @@ const organizationSchema = {
   ],
   sameAs: [
     'https://www.instagram.com/farrays_centerbcn/',
-    'https://www.tiktok.com/@farrayscenter',
+    'https://www.tiktok.com/@farrays_centerbcn',
     'https://www.facebook.com/farrayscenter/',
-    'https://www.youtube.com/user/yunaisyfarray',
+    'https://www.youtube.com/@farraysinternationaldance',
   ],
   priceRange: '€€',
   currenciesAccepted: 'EUR',
@@ -84,7 +84,7 @@ const organizationSchema = {
   memberOf: {
     '@type': 'Organization',
     name: 'CID-UNESCO',
-    url: 'https://www.cid-unesco.org',
+    url: 'https://cid-world.org/',
   },
 };
 
@@ -203,7 +203,7 @@ const Footer: React.FC = () => {
                   </svg>
                 </SocialIcon>
                 <SocialIcon
-                  href="https://www.tiktok.com/@farrayscenter"
+                  href="https://www.tiktok.com/@farrays_centerbcn"
                   ariaLabel={t('followOnTikTok')}
                 >
                   <svg
@@ -233,7 +233,7 @@ const Footer: React.FC = () => {
                   </svg>
                 </SocialIcon>
                 <SocialIcon
-                  href="https://www.youtube.com/user/yunaisyfarray"
+                  href="https://www.youtube.com/@farraysinternationaldance"
                   ariaLabel={t('followOnYoutube')}
                 >
                   <svg
@@ -248,7 +248,7 @@ const Footer: React.FC = () => {
               </div>
               {/* CID-UNESCO Badge */}
               <a
-                href="https://www.cid-unesco.org"
+                href="https://cid-world.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs text-neutral/50 hover:text-primary-accent transition-colors mt-2"
@@ -340,14 +340,14 @@ const Footer: React.FC = () => {
 
             {/* Danzas Urbanas */}
             <FooterSection title={t('footerUrbanTitle')}>
-              <FooterLink to={`/${locale}/clases/dancehall-barcelona`} textKey="navDancehall" />
-              <FooterLink to={`/${locale}/clases/twerk-barcelona`} textKey="navTwerk" />
+              <FooterLink to={`/${locale}/clases/dancehall-barcelona`} textKey="sitemapDancehall" />
+              <FooterLink to={`/${locale}/clases/twerk-barcelona`} textKey="sitemapTwerk" />
               <FooterLink
                 to={`/${locale}/clases/hip-hop-reggaeton-barcelona`}
                 textKey="sitemapHipHop"
               />
-              <FooterLink to={`/${locale}/clases/afrobeats-barcelona`} textKey="navAfrobeat" />
-              <FooterLink to={`/${locale}/clases/heels-barcelona`} textKey="navHeels" />
+              <FooterLink to={`/${locale}/clases/afrobeats-barcelona`} textKey="sitemapAfrobeat" />
+              <FooterLink to={`/${locale}/clases/heels-barcelona`} textKey="sitemapHeels" />
             </FooterSection>
 
             {/* Ritmos Latinos */}

@@ -63,11 +63,12 @@ export const AFROBEAT_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
-    image: {
-      src: '/images/classes/afrobeats/img/clases-afrobeats-barcelona_960.webp',
-      srcSet:
-        '/images/classes/afrobeats/img/clases-afrobeats-barcelona_480.webp 480w, /images/classes/afrobeats/img/clases-afrobeats-barcelona_960.webp 960w',
+    // Enterprise OptimizedImage config (AVIF/WebP/JPG, 6 breakpoints)
+    optimizedImage: {
+      basePath: '/images/classes/afrobeat/img/clases-afrobeat-barcelona',
       alt: 'Clases de Afrobeats en Barcelona - Estudiantes bailando en la academia',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
     },
   },
 
@@ -149,4 +150,27 @@ export const AFROBEAT_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Afrobeats', 'Hip Hop', 'Reggaeton', 'Urban Dance'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Afrobeats -> Dancehall, Afro Contemporáneo, Hip Hop Reggaeton
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'dancehall-barcelona',
+        nameKey: 'relatedDancehallName',
+        descriptionKey: 'relatedDancehallDesc',
+      },
+      {
+        slug: 'afro-contemporaneo-barcelona',
+        nameKey: 'relatedAfroContemporaneoName',
+        descriptionKey: 'relatedAfroContemporaneoDesc',
+      },
+      {
+        slug: 'hip-hop-reggaeton-barcelona',
+        nameKey: 'relatedHipHopReggaetonName',
+        descriptionKey: 'relatedHipHopReggaetonDesc',
+      },
+    ],
+  },
 };

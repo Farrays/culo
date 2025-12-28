@@ -1,6 +1,8 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, memo, useId } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
+import { useImageAlt } from '../../hooks/useImageAlt';
 import { SUPPORTED_LOCALES } from '../../types';
 import Breadcrumb from '../shared/Breadcrumb';
 import {
@@ -15,6 +17,8 @@ import {
 import { UsersIcon, MapPinIcon } from '../shared/CommonIcons';
 import AnimateOnScroll from '../AnimateOnScroll';
 import AnimatedCounter from '../AnimatedCounter';
+import LazyImage from '../LazyImage';
+import OptimizedImage from '../OptimizedImage';
 import CulturalHistorySection from '../CulturalHistorySection';
 import ScheduleSection from '../ScheduleSection';
 import FAQSection from '../FAQSection';
@@ -31,6 +35,7 @@ import ArtisticDanceComparisonTable, {
   type ArtisticDanceStyle,
 } from '../shared/ArtisticDanceComparisonTable';
 import YouTubeEmbed from '../YouTubeEmbed';
+import BunnyEmbed from '../BunnyEmbed';
 import {
   LocalBusinessSchema,
   CourseSchema,
@@ -95,16 +100,47 @@ export interface HeroConfig {
   };
   // Background gradient color (e.g., 'rose' for Ballet, 'primary' for default)
   gradientColor?: 'primary' | 'rose' | 'amber' | 'emerald' | 'violet';
+  // Enterprise: Hero background image with OptimizedImage
+  heroImage?: {
+    basePath: string; // Path without size/format (e.g., '/images/classes/femmology/img/clases-de-femmology-barcelona')
+    alt: string; // Fallback alt text
+    altKey?: string; // i18n key for alt text (e.g., 'styleImages.femmology.hero')
+    breakpoints?: number[]; // Default: [320, 640, 768, 1024, 1440, 1920]
+    formats?: ('avif' | 'webp' | 'jpg')[]; // Default: ['avif', 'webp', 'jpg']
+  };
+  // Enterprise: Hero Visual Configuration (opacity, positioning, gradients)
+  heroVisuals?: {
+    /** Image opacity (0-100, default: 40) - higher values show more of the image */
+    imageOpacity?: number;
+    /** Object position for hero image (default: 'center') - e.g., 'center 30%' to focus on upper body */
+    objectPosition?: string;
+    /** Gradient overlay style: 'dark' (default), 'subtle', 'vibrant', 'dramatic', 'none' */
+    gradientStyle?: 'dark' | 'subtle' | 'vibrant' | 'dramatic' | 'none';
+    /** Enable text shadow for better contrast against vibrant backgrounds (default: false) */
+    textShadow?: boolean;
+    /** Custom gradient (overrides gradientStyle) - e.g., 'from-black/90 via-black/50 to-transparent' */
+    customGradient?: string;
+  };
 }
 
 export interface WhatIsSection {
   enabled: boolean;
   paragraphCount?: number; // Number of paragraphs (default 4)
   hasQuestionAnswer?: boolean; // Show question/answer at end
+  // Legacy image config (src + srcSet)
   image?: {
     src: string;
     srcSet?: string;
     alt: string;
+    altKey?: string; // i18n key for alt text (e.g., 'classes.afro-contemporaneo.whatIs')
+  };
+  // Enterprise image config (OptimizedImage with multi-format srcset)
+  optimizedImage?: {
+    basePath: string; // Path without size/format (e.g., '/images/classes/afrobeat/img/clases-afrobeat-barcelona')
+    alt: string; // Fallback alt text
+    altKey?: string; // i18n key for alt text (enterprise i18n support)
+    breakpoints: number[]; // e.g., [320, 640, 768, 1024, 1440, 1920]
+    formats: ('avif' | 'webp' | 'jpg')[]; // e.g., ['avif', 'webp', 'jpg']
   };
 }
 
@@ -137,6 +173,14 @@ export interface VideoSection {
     title: string;
   }>;
   placeholderCount?: number; // Number of "coming soon" placeholders
+  // Bunny Stream video support
+  bunnyVideo?: {
+    videoId: string; // Bunny video GUID
+    libraryId: string; // Bunny library ID
+    title?: string;
+    aspectRatio?: '16:9' | '9:16' | '1:1'; // Default: 16:9
+    thumbnailUrl?: string; // Custom thumbnail URL from Bunny dashboard
+  };
 }
 
 export interface LogosSection {
@@ -186,6 +230,18 @@ export interface DefinedTermConfig {
 export interface EventSchemaConfig {
   enabled: boolean;
   performerName?: string;
+}
+
+export interface RelatedClassConfig {
+  slug: string; // URL slug like 'salsa-cubana-barcelona'
+  nameKey: string; // Translation key for class name
+  descriptionKey: string; // Translation key for short description
+  imageUrl?: string; // Optional custom image URL
+}
+
+export interface RelatedClassesSection {
+  enabled: boolean;
+  classes: RelatedClassConfig[];
 }
 
 // Main configuration interface
@@ -261,6 +317,9 @@ export interface FullDanceClassConfig {
     thumbnailUrl?: string;
     videoId?: string;
   };
+
+  // === RELATED CLASSES (internal linking) ===
+  relatedClasses?: RelatedClassesSection;
 }
 
 // ============================================================================
@@ -325,11 +384,279 @@ const TeacherCard: React.FC<{
 );
 
 // ============================================================================
+// RELATED CLASSES - CONSTANTS & COMPONENTS
+// ============================================================================
+
+/** Image dimensions for consistent layout and CLS prevention */
+const RELATED_CLASS_IMAGE_DIMENSIONS = {
+  width: 480,
+  height: 320,
+} as const;
+
+/**
+ * Images for related classes.
+ * Uses local optimized WebP when available, high-quality Unsplash as fallback.
+ *
+ * @note Local images have priority. When local assets are created for a class,
+ *       update the path here to use the local version for better performance.
+ *
+ * TODO: Replace Unsplash URLs with local images as they become available
+ */
+const DEFAULT_CLASS_IMAGES: Record<string, string> = {
+  // ===== LATIN DANCE =====
+  // Local images not yet available - using high-quality Unsplash
+  'salsa-cubana-barcelona':
+    'https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?w=480&h=320&fit=crop&q=85&auto=format',
+  'bachata-barcelona':
+    'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=480&h=320&fit=crop&q=85&auto=format',
+  'salsa-bachata-barcelona':
+    'https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=480&h=320&fit=crop&q=85&auto=format',
+  'salsa-lady-style-barcelona':
+    'https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=480&h=320&fit=crop&q=85&auto=format',
+  'timba-barcelona':
+    'https://images.unsplash.com/photo-1545959570-a94084071b5d?w=480&h=320&fit=crop&q=85&auto=format',
+  'folklore-cubano': '/images/classes/folklore-cubano/img/folklore-calle-habana_640.webp',
+
+  // ===== URBAN DANCE =====
+  // Using local optimized images where available ✅
+  'dancehall-barcelona': '/images/classes/dancehall/img/dancehall-classes-barcelona-01_640.webp',
+  'hip-hop-reggaeton-barcelona':
+    '/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona_640.webp',
+  'reggaeton-cubano-barcelona':
+    'https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=480&h=320&fit=crop&q=85&auto=format',
+  'twerk-barcelona': '/images/classes/twerk/img/clases-twerk-barcelona_640.webp',
+  'sexy-reggaeton-barcelona':
+    '/images/classes/sexy-reggaeton/img/clases-sexy-reggaeton-barcelona_640.webp',
+  'sexy-style-barcelona': '/images/classes/sexy-style/img/clases-de-sexy-style-barcelona_640.webp',
+  'afrobeats-barcelona': '/images/classes/afrobeat/img/clases-afrobeat-barcelona_640.webp',
+  femmology: '/images/classes/femmology/img/clases-de-femmology-barcelona_480.webp',
+  'heels-barcelona': '/images/classes/femmology/img/clases-de-femmology-barcelona_480.webp',
+  'hip-hop-barcelona':
+    '/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona_640.webp',
+
+  // ===== CONTEMPORARY DANCE =====
+  'ballet-barcelona': '/images/classes/ballet/img/clases-ballet-barcelona_480.webp',
+  'contemporaneo-barcelona':
+    'https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?w=480&h=320&fit=crop&q=85&auto=format',
+  'modern-jazz-barcelona': '/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_640.webp',
+  'afro-contemporaneo-barcelona':
+    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=480&h=320&fit=crop&q=85&auto=format',
+  'afro-jazz':
+    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=480&h=320&fit=crop&q=85&auto=format',
+
+  // ===== FITNESS =====
+  'stretching-barcelona':
+    'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=480&h=320&fit=crop&q=85&auto=format',
+  'ejercicios-gluteos-barcelona':
+    'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=480&h=320&fit=crop&q=85&auto=format',
+  'cuerpo-fit':
+    'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=480&h=320&fit=crop&q=85&auto=format',
+  'acondicionamiento-fisico-bailarines':
+    'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=480&h=320&fit=crop&q=85&auto=format',
+};
+
+/** Default fallback image - uses reliable ballet image that exists locally */
+const FALLBACK_CLASS_IMAGE = '/images/classes/ballet/img/clases-ballet-barcelona_480.webp';
+
+/**
+ * Decorative arrow icon for CTA buttons.
+ * Marked as aria-hidden since it's purely decorative.
+ */
+const RelatedClassArrowIcon: React.FC = memo(() => (
+  <svg
+    className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M17 8l4 4m0 0l-4 4m4-4H3"
+    />
+  </svg>
+));
+RelatedClassArrowIcon.displayName = 'RelatedClassArrowIcon';
+
+/**
+ * Schema.org ItemList for related classes section.
+ * Improves SEO and GEO by providing structured data for AI crawlers.
+ */
+const RelatedClassesSchema: React.FC<{
+  classes: RelatedClassConfig[];
+  locale: string;
+  t: (key: string) => string;
+  currentStyleName: string;
+}> = memo(({ classes, locale, t, currentStyleName }) => {
+  const baseUrl = 'https://www.farrayscenter.com';
+
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `${t('relatedClassesTitle')} - ${currentStyleName}`,
+    description: t('relatedClassesSubtitle'),
+    numberOfItems: classes.length,
+    itemListElement: classes.map((classInfo, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Course',
+        '@id': `${baseUrl}/${locale}/clases/${classInfo.slug}`,
+        name: t(classInfo.nameKey),
+        description: t(classInfo.descriptionKey),
+        url: `${baseUrl}/${locale}/clases/${classInfo.slug}`,
+        image: `${baseUrl}${DEFAULT_CLASS_IMAGES[classInfo.slug] || FALLBACK_CLASS_IMAGE}`,
+        provider: {
+          '@type': 'DanceSchool',
+          name: "Farray's International Dance Center",
+          url: baseUrl,
+        },
+        hasCourseInstance: {
+          '@type': 'CourseInstance',
+          courseMode: 'onsite',
+          location: {
+            '@type': 'Place',
+            name: "Farray's International Dance Center",
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: 'Carrer de Pallars, 85',
+              addressLocality: 'Barcelona',
+              postalCode: '08018',
+              addressCountry: 'ES',
+            },
+          },
+        },
+      },
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+    />
+  );
+});
+RelatedClassesSchema.displayName = 'RelatedClassesSchema';
+
+/**
+ * Individual related class card with optimized accessibility,
+ * performance, and UX.
+ *
+ * @accessibility
+ * - Descriptive aria-label for screen readers
+ * - Visible focus ring for keyboard navigation
+ * - Article semantics with aria-labelledby
+ *
+ * @performance
+ * - Memoized component
+ * - LazyImage with explicit dimensions (prevents CLS)
+ * - Optimized local WebP images
+ *
+ * @ux
+ * - Smooth hover animations with 3D transform
+ * - Visual feedback on interaction
+ * - Clear call-to-action
+ */
+const RelatedClassCard: React.FC<{
+  classInfo: RelatedClassConfig;
+  index: number;
+  locale: string;
+  t: (key: string) => string;
+}> = memo(({ classInfo, index, locale, t }) => {
+  // Generate unique ID for accessibility
+  const headingId = useId();
+
+  // Get image URL with fallback
+  const imageUrl =
+    classInfo.imageUrl || DEFAULT_CLASS_IMAGES[classInfo.slug] || FALLBACK_CLASS_IMAGE;
+
+  // Get translated texts
+  const className = t(classInfo.nameKey);
+  const classDescription = t(classInfo.descriptionKey);
+  const ctaText = t('relatedClassesViewClass');
+
+  return (
+    <AnimateOnScroll
+      delay={(index + 1) * ANIMATION_DELAYS.STAGGER_SMALL}
+      className="[perspective:1000px]"
+    >
+      <article className="h-full" aria-labelledby={headingId}>
+        <Link
+          to={`/${locale}/clases/${classInfo.slug}`}
+          className="group block h-full bg-black/70 backdrop-blur-md
+                     border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                     transition-all duration-500
+                     [transform-style:preserve-3d]
+                     hover:border-primary-accent hover:shadow-accent-glow
+                     hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                     focus:outline-none focus:ring-2 focus:ring-primary-accent
+                     focus:ring-offset-2 focus:ring-offset-black"
+          aria-label={`${className} - ${ctaText}`}
+        >
+          {/* Image Container with fixed aspect ratio */}
+          <div
+            className="relative overflow-hidden"
+            style={{
+              aspectRatio: `${RELATED_CLASS_IMAGE_DIMENSIONS.width}/${RELATED_CLASS_IMAGE_DIMENSIONS.height}`,
+            }}
+          >
+            <LazyImage
+              src={imageUrl}
+              alt={`Clase de ${className} en Barcelona - Farray's Dance Center`}
+              className="w-full h-full object-cover transition-transform duration-500
+                         group-hover:scale-110"
+              width={RELATED_CLASS_IMAGE_DIMENSIONS.width}
+              height={RELATED_CLASS_IMAGE_DIMENSIONS.height}
+            />
+
+            {/* Overlay gradient */}
+            <div
+              className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+              aria-hidden="true"
+            />
+          </div>
+
+          {/* Content */}
+          <div className="p-4 sm:p-6">
+            <h3
+              id={headingId}
+              className="text-lg sm:text-xl font-bold text-neutral mb-2
+                         group-hover:text-primary-accent transition-colors duration-300"
+            >
+              {className}
+            </h3>
+            <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+              {classDescription}
+            </p>
+
+            {/* CTA Button - aria-hidden since Link already has aria-label */}
+            <div
+              className="flex items-center gap-2 text-primary-accent font-semibold text-sm
+                         group-hover:gap-3 transition-all duration-300"
+              aria-hidden="true"
+            >
+              <span>{ctaText}</span>
+              <RelatedClassArrowIcon />
+            </div>
+          </div>
+        </Link>
+      </article>
+    </AnimateOnScroll>
+  );
+});
+RelatedClassCard.displayName = 'RelatedClassCard';
+
+// ============================================================================
 // MAIN COMPONENT
 // ============================================================================
 
 const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ config }) => {
   const { t, locale } = useI18n();
+  const { getAlt } = useImageAlt();
   const baseUrl = 'https://www.farrayscenter.com';
   const pageUrl = `${baseUrl}/${locale}/clases/${config.stylePath}`;
   const currentDate = new Date().toISOString().split('T')[0];
@@ -346,6 +673,30 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
     emerald: 'from-emerald-900/30 via-black to-black',
     violet: 'from-violet-900/30 via-black to-black',
   };
+
+  // ===== ENTERPRISE HERO VISUALS =====
+  const heroVisuals = hero.heroVisuals || {};
+  const imageOpacity = heroVisuals.imageOpacity ?? 40;
+  const objectPosition = heroVisuals.objectPosition || 'center';
+  const gradientStyle = heroVisuals.gradientStyle || 'dark';
+  const textShadow = heroVisuals.textShadow || false;
+
+  // Enterprise gradient styles for hero overlay (bottom-to-top for text readability)
+  const heroGradientStyles: Record<string, string> = {
+    dark: 'bg-gradient-to-t from-black via-black/70 to-black/40',
+    subtle: 'bg-gradient-to-t from-black/90 via-black/40 to-transparent',
+    vibrant: 'bg-gradient-to-t from-black/80 via-black/30 to-transparent',
+    dramatic: 'bg-gradient-to-t from-black via-black/60 to-black/20',
+    none: '',
+  };
+
+  // Calculate overlay opacity inverse of image opacity (higher image opacity = lower overlay)
+  const overlayOpacity = Math.max(0, Math.min(100, 100 - imageOpacity));
+
+  // Text shadow class for vibrant backgrounds
+  const textShadowClass = textShadow
+    ? '[text-shadow:0_2px_8px_rgba(0,0,0,0.8),0_4px_16px_rgba(0,0,0,0.6)]'
+    : '';
 
   // Lead capture modal state
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
@@ -703,10 +1054,43 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
           aria-labelledby="hero-title"
           className="relative text-center py-24 md:py-32 overflow-hidden flex items-center justify-center min-h-[600px]"
         >
+          {/* Background - Enterprise OptimizedImage with heroVisuals config or Gradient fallback */}
           <div className="absolute inset-0 bg-black">
-            <div
-              className={`absolute inset-0 bg-gradient-to-br ${gradientClasses[gradientColor]}`}
-            ></div>
+            {config.hero?.heroImage ? (
+              <>
+                {/* Enterprise: OptimizedImage with configurable opacity and positioning */}
+                <div className="absolute inset-0" style={{ opacity: imageOpacity / 100 }}>
+                  <OptimizedImage
+                    src={config.hero.heroImage.basePath}
+                    altKey={config.hero.heroImage.altKey}
+                    altFallback={config.hero.heroImage.alt}
+                    priority="high"
+                    sizes="100vw"
+                    aspectRatio="16/9"
+                    className="w-full h-full"
+                    objectFit="cover"
+                    style={{ objectPosition }}
+                    placeholder="color"
+                    placeholderColor="#111"
+                    breakpoints={
+                      config.hero.heroImage.breakpoints || [320, 640, 768, 1024, 1440, 1920]
+                    }
+                    formats={config.hero.heroImage.formats || ['avif', 'webp', 'jpg']}
+                  />
+                </div>
+                {/* Enterprise: Gradient overlay with configurable style */}
+                {gradientStyle !== 'none' && (
+                  <div
+                    className={`absolute inset-0 ${heroVisuals.customGradient || heroGradientStyles[gradientStyle]}`}
+                    style={{ opacity: overlayOpacity / 100 }}
+                  ></div>
+                )}
+              </>
+            ) : (
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${gradientClasses[gradientColor]}`}
+              ></div>
+            )}
             <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-20"></div>
           </div>
 
@@ -716,17 +1100,23 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
             <AnimateOnScroll>
               <h1
                 id="hero-title"
-                className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text"
+                className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text ${textShadowClass}`}
               >
                 {t(`${config.styleKey}HeroTitle`)}
               </h1>
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 holographic-text">
+              <p
+                className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-4 holographic-text ${textShadowClass}`}
+              >
                 {t(`${config.styleKey}HeroSubtitle`)}
               </p>
-              <p className="max-w-4xl mx-auto text-lg sm:text-xl md:text-2xl text-neutral/90 mt-6 sm:mt-8 mb-4 sm:mb-6 leading-relaxed">
+              <p
+                className={`max-w-4xl mx-auto text-lg sm:text-xl md:text-2xl text-neutral/90 mt-6 sm:mt-8 mb-4 sm:mb-6 leading-relaxed ${textShadowClass}`}
+              >
                 {t(`${config.styleKey}HeroDesc`)}
               </p>
-              <p className="text-base sm:text-lg md:text-xl text-neutral/90 italic mb-6">
+              <p
+                className={`text-base sm:text-lg md:text-xl text-neutral/90 italic mb-6 ${textShadowClass}`}
+              >
                 {t(`${config.styleKey}HeroLocation`)}
               </p>
 
@@ -845,8 +1235,24 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                     {t(`${config.styleKey}WhatIsTitle`)}
                   </h2>
                   <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
-                    {/* Imagen - Izquierda en desktop */}
-                    {config.whatIsSection.image && (
+                    {/* Imagen - Izquierda en desktop (Enterprise OptimizedImage or Legacy) */}
+                    {config.whatIsSection.optimizedImage ? (
+                      <div className="order-1 rounded-2xl overflow-hidden shadow-lg">
+                        <OptimizedImage
+                          src={config.whatIsSection.optimizedImage.basePath}
+                          altKey={config.whatIsSection.optimizedImage.altKey}
+                          altFallback={config.whatIsSection.optimizedImage.alt}
+                          aspectRatio="4/3"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          priority="high"
+                          breakpoints={config.whatIsSection.optimizedImage.breakpoints}
+                          formats={config.whatIsSection.optimizedImage.formats}
+                          className="w-full h-full"
+                          placeholder="color"
+                          placeholderColor="#111"
+                        />
+                      </div>
+                    ) : config.whatIsSection.image ? (
                       <div className="order-1 rounded-2xl overflow-hidden shadow-lg aspect-[4/3] md:aspect-auto">
                         <picture>
                           {config.whatIsSection.image.srcSet && (
@@ -858,7 +1264,11 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                           )}
                           <img
                             src={config.whatIsSection.image.src}
-                            alt={config.whatIsSection.image.alt}
+                            alt={
+                              config.whatIsSection.image.altKey
+                                ? getAlt(config.whatIsSection.image.altKey)
+                                : config.whatIsSection.image.alt
+                            }
                             width="960"
                             height="720"
                             loading="lazy"
@@ -867,7 +1277,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                           />
                         </picture>
                       </div>
-                    )}
+                    ) : null}
                     {/* Texto - Derecha en desktop */}
                     <div className="order-2 space-y-4 sm:space-y-6 text-base sm:text-lg text-neutral/90 leading-relaxed">
                       <p className="text-lg sm:text-xl font-semibold holographic-text">
@@ -1325,36 +1735,60 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                 </div>
               </AnimateOnScroll>
 
-              <div
-                className={`grid grid-cols-1 ${(config.videoSection.videos?.length ?? 0) > 1 ? 'sm:grid-cols-2 lg:grid-cols-3' : 'max-w-4xl mx-auto'} gap-4 sm:gap-6 max-w-7xl mx-auto`}
-              >
-                {config.videoSection.videos?.map((video, index) => (
-                  <AnimateOnScroll
-                    key={video.videoId}
-                    delay={(index + 1) * ANIMATION_DELAYS.STAGGER_SMALL}
-                  >
-                    <YouTubeEmbed videoId={video.videoId} title={video.title} />
-                  </AnimateOnScroll>
-                ))}
-                {Array.from({ length: config.videoSection.placeholderCount || 0 }, (_, i) => (
-                  <AnimateOnScroll
-                    key={`placeholder-${i}`}
-                    delay={
-                      ((config.videoSection?.videos?.length ?? 0) + i + 1) *
-                      ANIMATION_DELAYS.STAGGER_SMALL
+              {/* Bunny Stream Video (supports vertical/horizontal) */}
+              {config.videoSection.bunnyVideo && (
+                <AnimateOnScroll>
+                  <BunnyEmbed
+                    videoId={config.videoSection.bunnyVideo.videoId}
+                    libraryId={config.videoSection.bunnyVideo.libraryId}
+                    title={
+                      config.videoSection.bunnyVideo.title || t(`${config.styleKey}VideoTitle`)
                     }
-                  >
-                    <div className="aspect-video rounded-2xl overflow-hidden border-2 border-primary-accent/50 bg-black/50 backdrop-blur-sm flex items-center justify-center">
-                      <div className="text-center p-4 sm:p-6">
-                        <PlayIcon className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 text-primary-accent/50" />
-                        <p className="text-sm sm:text-base text-neutral/70 font-semibold">
-                          Video próximamente
-                        </p>
+                    aspectRatio={config.videoSection.bunnyVideo.aspectRatio}
+                    thumbnailUrl={config.videoSection.bunnyVideo.thumbnailUrl}
+                  />
+                </AnimateOnScroll>
+              )}
+
+              {/* YouTube Videos Grid */}
+              {config.videoSection.videos && config.videoSection.videos.length > 0 && (
+                <div
+                  className={`grid grid-cols-1 ${config.videoSection.videos.length > 1 ? 'sm:grid-cols-2 lg:grid-cols-3' : 'max-w-4xl mx-auto'} gap-4 sm:gap-6 max-w-7xl mx-auto ${config.videoSection.bunnyVideo ? 'mt-8' : ''}`}
+                >
+                  {config.videoSection.videos.map((video, index) => (
+                    <AnimateOnScroll
+                      key={video.videoId}
+                      delay={(index + 1) * ANIMATION_DELAYS.STAGGER_SMALL}
+                    >
+                      <YouTubeEmbed videoId={video.videoId} title={video.title} />
+                    </AnimateOnScroll>
+                  ))}
+                </div>
+              )}
+
+              {/* Placeholders */}
+              {(config.videoSection.placeholderCount ?? 0) > 0 && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto mt-8">
+                  {Array.from({ length: config.videoSection.placeholderCount || 0 }, (_, i) => (
+                    <AnimateOnScroll
+                      key={`placeholder-${i}`}
+                      delay={
+                        ((config.videoSection?.videos?.length ?? 0) + i + 1) *
+                        ANIMATION_DELAYS.STAGGER_SMALL
+                      }
+                    >
+                      <div className="aspect-video rounded-2xl overflow-hidden border-2 border-primary-accent/50 bg-black/50 backdrop-blur-sm flex items-center justify-center">
+                        <div className="text-center p-4 sm:p-6">
+                          <PlayIcon className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 text-primary-accent/50" />
+                          <p className="text-sm sm:text-base text-neutral/70 font-semibold">
+                            Video próximamente
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </AnimateOnScroll>
-                ))}
-              </div>
+                    </AnimateOnScroll>
+                  ))}
+                </div>
+              )}
             </div>
           </section>
         )}
@@ -1412,9 +1846,6 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         {config.faqSection?.enabled !== false && (
           <FAQSection title={t(`${config.styleKey}FaqTitle`)} faqs={faqs} pageUrl={pageUrl} />
         )}
-
-        {/* ===== 13. RELATED CLASSES SECTION (internal linking) ===== */}
-        {/* TODO: Add RelatedClassesSection component when ready */}
 
         {/* ===== 14. LOCAL SEO / NEARBY AREAS SECTION ===== */}
         {config.nearbySection?.enabled !== false &&
@@ -1500,6 +1931,61 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
             </AnimateOnScroll>
           </div>
         </section>
+
+        {/* ===== 16. RELATED CLASSES SECTION (internal linking) ===== */}
+        {config.relatedClasses?.enabled && config.relatedClasses.classes.length > 0 && (
+          <>
+            {/* Schema.org ItemList for SEO/GEO */}
+            <RelatedClassesSchema
+              classes={config.relatedClasses.classes}
+              locale={locale}
+              t={t}
+              currentStyleName={t(`${config.styleKey}PageTitle`)}
+            />
+
+            <section
+              id="related-classes"
+              aria-labelledby="related-classes-title"
+              className="py-12 md:py-20"
+            >
+              <div className="container mx-auto px-4 sm:px-6">
+                {/* Section Header - z-10 to stay above cards on hover */}
+                <AnimateOnScroll>
+                  <header className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto relative z-10">
+                    <h2
+                      id="related-classes-title"
+                      className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                    >
+                      {t('relatedClassesTitle')}
+                    </h2>
+                    <p className="text-lg sm:text-xl text-neutral/70">
+                      {t('relatedClassesSubtitle')}
+                    </p>
+                  </header>
+                </AnimateOnScroll>
+
+                {/* Classes Grid with ARIA list role - z-0 to stay below header */}
+                <div
+                  className={`grid grid-cols-1 relative z-0 ${
+                    config.relatedClasses.classes.length === 2
+                      ? 'sm:grid-cols-2 max-w-3xl'
+                      : config.relatedClasses.classes.length === 3
+                        ? 'sm:grid-cols-2 lg:grid-cols-3 max-w-5xl'
+                        : 'sm:grid-cols-2 lg:grid-cols-4 max-w-6xl'
+                  } gap-6 sm:gap-8 mx-auto`}
+                  role="list"
+                  aria-label={t('relatedClassesTitle')}
+                >
+                  {config.relatedClasses.classes.map((classInfo, index) => (
+                    <div key={classInfo.slug} role="listitem">
+                      <RelatedClassCard classInfo={classInfo} index={index} locale={locale} t={t} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </>
+        )}
       </main>
 
       {/* Lead Capture Modal */}
