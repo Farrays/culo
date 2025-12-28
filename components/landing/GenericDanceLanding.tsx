@@ -493,7 +493,8 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
           </div>
 
           <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center py-16 sm:py-20">
-            <AnimateOnScroll>
+            {/* Hero content without AnimateOnScroll - always visible on page load */}
+            <div>
               <div
                 className={`inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 mb-8 sm:mb-10 rounded-full ${theme.bgPrimaryLight} ${theme.borderPrimary} border backdrop-blur-md`}
               >
@@ -545,7 +546,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
               <p className="text-xs sm:text-sm text-neutral/50 mt-4 sm:mt-5">
                 {t(`${prefix}TrustText`)}
               </p>
-            </AnimateOnScroll>
+            </div>
 
             {/* Trust Bar - First */}
             <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-x-2 sm:gap-x-3 gap-y-1 text-neutral/70 text-xs sm:text-sm">
@@ -571,51 +572,49 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
               </span>
             </div>
 
-            {/* Hero Stats - After Trust Bar */}
-            <AnimateOnScroll>
-              <div className="mt-8 sm:mt-10 grid grid-cols-3 gap-4 sm:gap-8 max-w-xl mx-auto">
-                {/* 60 Minutes */}
-                <div className="text-center">
-                  <div className="mb-1 sm:mb-2 flex justify-center">
-                    <ClockIcon className={`w-6 h-6 sm:w-8 sm:h-8 ${theme.textPrimary}`} />
-                  </div>
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-black mb-0.5 sm:mb-1 holographic-text">
-                    <AnimatedCounter target={60} className="inline" />
-                  </div>
-                  <div className="text-[10px] sm:text-xs md:text-sm text-neutral/80 font-semibold">
-                    {t('classMinutes')}
-                  </div>
+            {/* Hero Stats - After Trust Bar (no AnimateOnScroll - already visible on load) */}
+            <div className="mt-8 sm:mt-10 grid grid-cols-3 gap-4 sm:gap-8 max-w-xl mx-auto">
+              {/* 60 Minutes */}
+              <div className="text-center">
+                <div className="mb-1 sm:mb-2 flex justify-center">
+                  <ClockIcon className={`w-6 h-6 sm:w-8 sm:h-8 ${theme.textPrimary}`} />
                 </div>
-
-                {/* 400 Calories */}
-                <div className="text-center">
-                  <div className="mb-1 sm:mb-2 flex justify-center">
-                    <FlameIcon className={`w-6 h-6 sm:w-8 sm:h-8 ${theme.textPrimary}`} />
-                  </div>
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-black mb-0.5 sm:mb-1 holographic-text">
-                    <AnimatedCounter target={400} className="inline" />
-                  </div>
-                  <div className="text-[10px] sm:text-xs md:text-sm text-neutral/80 font-semibold">
-                    {t('caloriesBurned')}
-                  </div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-black mb-0.5 sm:mb-1 holographic-text">
+                  <AnimatedCounter target={60} className="inline" />
                 </div>
-
-                {/* 100% Fun */}
-                <div className="text-center">
-                  <div className="mb-1 sm:mb-2 flex justify-center">
-                    <StarIcon className={`w-6 h-6 sm:w-8 sm:h-8 ${theme.textPrimary}`} />
-                  </div>
-                  <AnimatedCounter
-                    target={100}
-                    suffix="%"
-                    className="text-2xl sm:text-3xl md:text-4xl font-black mb-0.5 sm:mb-1 holographic-text"
-                  />
-                  <div className="text-[10px] sm:text-xs md:text-sm text-neutral/80 font-semibold">
-                    {t('funGuaranteed')}
-                  </div>
+                <div className="text-[10px] sm:text-xs md:text-sm text-neutral/80 font-semibold">
+                  {t('classMinutes')}
                 </div>
               </div>
-            </AnimateOnScroll>
+
+              {/* 400 Calories */}
+              <div className="text-center">
+                <div className="mb-1 sm:mb-2 flex justify-center">
+                  <FlameIcon className={`w-6 h-6 sm:w-8 sm:h-8 ${theme.textPrimary}`} />
+                </div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-black mb-0.5 sm:mb-1 holographic-text">
+                  <AnimatedCounter target={400} className="inline" />
+                </div>
+                <div className="text-[10px] sm:text-xs md:text-sm text-neutral/80 font-semibold">
+                  {t('caloriesBurned')}
+                </div>
+              </div>
+
+              {/* 100% Fun */}
+              <div className="text-center">
+                <div className="mb-1 sm:mb-2 flex justify-center">
+                  <StarIcon className={`w-6 h-6 sm:w-8 sm:h-8 ${theme.textPrimary}`} />
+                </div>
+                <AnimatedCounter
+                  target={100}
+                  suffix="%"
+                  className="text-2xl sm:text-3xl md:text-4xl font-black mb-0.5 sm:mb-1 holographic-text"
+                />
+                <div className="text-[10px] sm:text-xs md:text-sm text-neutral/80 font-semibold">
+                  {t('funGuaranteed')}
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
