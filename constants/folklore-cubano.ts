@@ -83,10 +83,10 @@ export const FOLKLORE_CUBANO_SCHEDULE_KEYS = [
   {
     id: '1',
     dayKey: 'tuesday',
-    className: 'Folklore Cubano',
+    className: 'Folklore Cubano Open Level',
     time: '20:30 - 21:30',
-    teacher: 'Grechén Mendez',
-    levelKey: 'allLevelsLevel',
+    teacher: 'Grechén Méndez',
+    levelKey: 'openLevel',
   },
 ];
 

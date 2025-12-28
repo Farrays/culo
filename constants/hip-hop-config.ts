@@ -58,10 +58,10 @@ export const HIPHOP_PAGE_CONFIG: FullDanceClassConfig = {
     paragraphCount: 4,
     hasQuestionAnswer: true,
     image: {
-      src: '/images/classes/hip-hop/img/clases-hip-hop-barcelona_960.webp',
+      src: '/images/classes/hip-hop/img/clases-hip-hop-barcelona_1024.webp',
       srcSet:
-        '/images/classes/hip-hop/img/clases-hip-hop-barcelona_480.webp 480w, /images/classes/hip-hop/img/clases-hip-hop-barcelona_960.webp 960w',
-      alt: 'Clases de Hip Hop en Barcelona',
+        '/images/classes/hip-hop/img/clases-hip-hop-barcelona_640.webp 640w, /images/classes/hip-hop/img/clases-hip-hop-barcelona_768.webp 768w, /images/classes/hip-hop/img/clases-hip-hop-barcelona_1024.webp 1024w, /images/classes/hip-hop/img/clases-hip-hop-barcelona_1440.webp 1440w',
+      alt: 'Clases de Hip Hop en Barcelona - Street dance urbano',
     },
   },
 
@@ -125,4 +125,27 @@ export const HIPHOP_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Hip Hop', 'Breaking', 'Locking', 'Popping', 'Urban Dance'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Hip Hop -> Hip Hop Reggaeton, Dancehall, Afrobeats
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'hip-hop-reggaeton-barcelona',
+        nameKey: 'relatedHipHopReggaetonName',
+        descriptionKey: 'relatedHipHopReggaetonDesc',
+      },
+      {
+        slug: 'dancehall-barcelona',
+        nameKey: 'relatedDancehallName',
+        descriptionKey: 'relatedDancehallDesc',
+      },
+      {
+        slug: 'afrobeats-barcelona',
+        nameKey: 'relatedAfrobeatsName',
+        descriptionKey: 'relatedAfrobeatsDesc',
+      },
+    ],
+  },
 };

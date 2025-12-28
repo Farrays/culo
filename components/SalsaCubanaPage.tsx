@@ -1,6 +1,8 @@
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
+import LazyImage from './LazyImage';
 import {
   SALSA_CUBANA_TESTIMONIALS,
   SALSA_CUBANA_FAQS_CONFIG,
@@ -1400,6 +1402,237 @@ const SalsaCubanaPage: React.FC = () => {
                 </div>
               </div>
             </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* 15. Related Classes Section (Internal Linking) */}
+        <section
+          id="related-classes"
+          aria-labelledby="related-classes-title"
+          className="py-12 md:py-20"
+        >
+          <div className="container mx-auto px-6">
+            <AnimateOnScroll>
+              <header className="text-center mb-8 sm:mb-12 relative z-10">
+                <h2
+                  id="related-classes-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                >
+                  {t('relatedClassesTitle')}
+                </h2>
+                <p className="text-lg sm:text-xl text-neutral/70">{t('relatedClassesSubtitle')}</p>
+              </header>
+            </AnimateOnScroll>
+
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto relative z-0"
+              role="list"
+              aria-label={t('relatedClassesTitle')}
+            >
+              {/* Bachata */}
+              <div role="listitem">
+                <AnimateOnScroll
+                  delay={ANIMATION_DELAYS.STAGGER_SMALL}
+                  className="[perspective:1000px]"
+                >
+                  <article className="h-full" aria-labelledby="related-bachata-title">
+                    <Link
+                      to={`/${locale}/clases/bachata-barcelona`}
+                      className="group block h-full bg-black/70 backdrop-blur-md
+                                 border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                 transition-all duration-500
+                                 [transform-style:preserve-3d]
+                                 hover:border-primary-accent hover:shadow-accent-glow
+                                 hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                 focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                 focus:ring-offset-2 focus:ring-offset-black"
+                      aria-label={`${t('relatedBachataName')} - ${t('relatedClassesViewClass')}`}
+                    >
+                      <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
+                        <LazyImage
+                          src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=480&h=320&fit=crop&q=85&auto=format"
+                          alt={`Clase de ${t('relatedBachataName')} en Barcelona - Farray's Dance Center`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          width={480}
+                          height={320}
+                        />
+                        <div
+                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <h3
+                          id="related-bachata-title"
+                          className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                        >
+                          {t('relatedBachataName')}
+                        </h3>
+                        <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                          {t('relatedBachataDesc')}
+                        </p>
+                        <div
+                          className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                          aria-hidden="true"
+                        >
+                          <span>{t('relatedClassesViewClass')}</span>
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                </AnimateOnScroll>
+              </div>
+
+              {/* Timba */}
+              <div role="listitem">
+                <AnimateOnScroll
+                  delay={ANIMATION_DELAYS.STAGGER_SMALL * 2}
+                  className="[perspective:1000px]"
+                >
+                  <article className="h-full" aria-labelledby="related-timba-title">
+                    <Link
+                      to={`/${locale}/clases/timba-barcelona`}
+                      className="group block h-full bg-black/70 backdrop-blur-md
+                                 border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                 transition-all duration-500
+                                 [transform-style:preserve-3d]
+                                 hover:border-primary-accent hover:shadow-accent-glow
+                                 hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                 focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                 focus:ring-offset-2 focus:ring-offset-black"
+                      aria-label={`${t('relatedTimbaName')} - ${t('relatedClassesViewClass')}`}
+                    >
+                      <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
+                        <LazyImage
+                          src="https://images.unsplash.com/photo-1545959570-a94084071b5d?w=480&h=320&fit=crop&q=85&auto=format"
+                          alt={`Clase de ${t('relatedTimbaName')} en Barcelona - Farray's Dance Center`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          width={480}
+                          height={320}
+                        />
+                        <div
+                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <h3
+                          id="related-timba-title"
+                          className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                        >
+                          {t('relatedTimbaName')}
+                        </h3>
+                        <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                          {t('relatedTimbaDesc')}
+                        </p>
+                        <div
+                          className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                          aria-hidden="true"
+                        >
+                          <span>{t('relatedClassesViewClass')}</span>
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                </AnimateOnScroll>
+              </div>
+
+              {/* Folklore Cubano */}
+              <div role="listitem">
+                <AnimateOnScroll
+                  delay={ANIMATION_DELAYS.STAGGER_SMALL * 3}
+                  className="[perspective:1000px]"
+                >
+                  <article className="h-full" aria-labelledby="related-folklore-title">
+                    <Link
+                      to={`/${locale}/clases/folklore-cubano`}
+                      className="group block h-full bg-black/70 backdrop-blur-md
+                                 border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                 transition-all duration-500
+                                 [transform-style:preserve-3d]
+                                 hover:border-primary-accent hover:shadow-accent-glow
+                                 hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                 focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                 focus:ring-offset-2 focus:ring-offset-black"
+                      aria-label={`${t('relatedFolkloreCubanoName')} - ${t('relatedClassesViewClass')}`}
+                    >
+                      <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
+                        <LazyImage
+                          src="https://images.unsplash.com/photo-1547153760-18fc9c88c1c8?w=480&h=320&fit=crop&q=85&auto=format"
+                          alt={`Clase de ${t('relatedFolkloreCubanoName')} en Barcelona - Farray's Dance Center`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          width={480}
+                          height={320}
+                        />
+                        <div
+                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <h3
+                          id="related-folklore-title"
+                          className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                        >
+                          {t('relatedFolkloreCubanoName')}
+                        </h3>
+                        <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                          {t('relatedFolkloreCubanoDesc')}
+                        </p>
+                        <div
+                          className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                          aria-hidden="true"
+                        >
+                          <span>{t('relatedClassesViewClass')}</span>
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                </AnimateOnScroll>
+              </div>
+            </div>
           </div>
         </section>
       </main>

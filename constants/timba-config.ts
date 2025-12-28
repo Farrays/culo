@@ -65,6 +65,21 @@ export const TIMBA_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 450,
     funPercent: 100,
     gradientColor: 'amber',
+    // Enterprise: Hero background image with OptimizedImage
+    heroImage: {
+      basePath: '/images/classes/timba/img/timba-cubana',
+      alt: "Clases de Timba Cubana en Barcelona - Farray's Center",
+      altKey: 'styleImages.timba.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
+    },
+    // Enterprise: Hero Visual Configuration
+    heroVisuals: {
+      imageOpacity: 45,
+      objectPosition: 'center 40%',
+      gradientStyle: 'vibrant',
+      textShadow: true,
+    },
   },
 
   // === SECTION TOGGLES ===
@@ -72,6 +87,14 @@ export const TIMBA_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 5,
     hasQuestionAnswer: true,
+    // Enterprise: Optimized image for whatIs section
+    optimizedImage: {
+      basePath: '/images/classes/timba/img/timba-cubana',
+      alt: "Bailarines practicando Timba Cubana en academia de Barcelona - Farray's Center",
+      altKey: 'styleImages.timba.whatIs',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
+    },
   },
 
   identificationSection: {
@@ -149,4 +172,27 @@ export const TIMBA_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Lady Timba', 'Salsa Cubana', 'Estilo Femenino'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Timba -> Salsa Cubana, Folklore Cubano, Reggaeton Cubano
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'salsa-cubana-barcelona',
+        nameKey: 'relatedSalsaCubanaName',
+        descriptionKey: 'relatedSalsaCubanaDesc',
+      },
+      {
+        slug: 'folklore-cubano',
+        nameKey: 'relatedFolkloreCubanoName',
+        descriptionKey: 'relatedFolkloreCubanoDesc',
+      },
+      {
+        slug: 'reggaeton-cubano-barcelona',
+        nameKey: 'relatedReggaetonCubanoName',
+        descriptionKey: 'relatedReggaetonCubanoDesc',
+      },
+    ],
+  },
 };

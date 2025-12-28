@@ -57,7 +57,7 @@ export const REGGAETON_CUBANO_SCHEDULE_KEYS = [
   {
     id: '1',
     dayKey: 'tuesday',
-    className: 'Reggaeton Cubano Open Level',
+    className: 'Reggaeton Cubano (Reparto) Open Level',
     time: '19:00 - 20:00',
     teacher: 'Charlie Breezy',
     levelKey: 'openLevel',

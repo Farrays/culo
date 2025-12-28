@@ -66,6 +66,8 @@ vi.mock('../hooks/useI18n', () => {
     contact_phone_title: 'Phone',
     contact_email_title: 'Email',
     contact_form_title: 'Send us a message',
+    contact_form_firstName: 'First name',
+    contact_form_lastName: 'Last name',
     contact_form_name: 'Name',
     contact_form_email: 'Email',
     contact_form_phone: 'Phone',

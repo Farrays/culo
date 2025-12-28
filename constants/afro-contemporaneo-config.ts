@@ -64,11 +64,13 @@ export const AFRO_CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
-    image: {
-      src: '/images/classes/afro-contemporaneo/img/clases-afro-contemporaneo-barcelona_960.webp',
-      srcSet:
-        '/images/classes/afro-contemporaneo/img/clases-afro-contemporaneo-barcelona_480.webp 480w, /images/classes/afro-contemporaneo/img/clases-afro-contemporaneo-barcelona_960.webp 960w',
-      alt: 'Clases de Afro Contemporáneo en Barcelona',
+    // Enterprise OptimizedImage with i18n alt text support
+    optimizedImage: {
+      basePath: '/images/classes/afro-contemporaneo/img/mgs_5260',
+      altKey: 'classes.afro-contemporaneo.whatIs',
+      alt: "Clases de Afro Contemporáneo en Barcelona - Técnica cubana ENA en Farray's Center",
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
     },
   },
 
@@ -95,7 +97,15 @@ export const AFRO_CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false,
+    enabled: true,
+    bunnyVideo: {
+      videoId: 'e5a3686f-1548-46bf-ba24-a46c4e053002',
+      libraryId: '570522',
+      title: 'Clase de Afro Contemporáneo en Barcelona',
+      aspectRatio: '9:16', // Formato vertical (Reel)
+      thumbnailUrl:
+        'https://vz-c354d67e-cc3.b-cdn.net/e5a3686f-1548-46bf-ba24-a46c4e053002/thumbnail.jpg',
+    },
   },
 
   logosSection: {
@@ -144,4 +154,27 @@ export const AFRO_CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Afro Contemporáneo', 'Urban Dance', 'African Dance'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Afro Contemporáneo -> Contemporáneo, Afro Jazz, Afrobeats
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'contemporaneo-barcelona',
+        nameKey: 'relatedContemporaneoName',
+        descriptionKey: 'relatedContemporaneoDesc',
+      },
+      {
+        slug: 'afro-jazz-barcelona',
+        nameKey: 'relatedAfroJazzName',
+        descriptionKey: 'relatedAfroJazzDesc',
+      },
+      {
+        slug: 'afrobeats-barcelona',
+        nameKey: 'relatedAfrobeatsName',
+        descriptionKey: 'relatedAfrobeatsDesc',
+      },
+    ],
+  },
 };

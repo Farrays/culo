@@ -115,10 +115,10 @@ export const MODERN_JAZZ_SCHEDULE_KEYS = [
   {
     id: '1',
     dayKey: 'tuesday',
-    className: 'Modern Jazz',
+    className: 'Modern Jazz Principiantes',
     time: '18:00 - 19:00',
     teacher: 'Alejandro Miñoso',
-    levelKey: 'basicLevel',
+    levelKey: 'beginnerLevel',
   },
 ];
 

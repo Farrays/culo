@@ -79,10 +79,25 @@ export const SALSA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
     cta2SubtextKey: 'salsaLadyCTA2Subtext',
     stats: {
       rating: '4.9/5',
-      reviewCount: '505+ reseñas',
-      students: '+15.000 estudiantes formados',
-      yearsText: '8 años en Barcelona',
+      reviewCountKey: 'salsaLadyStatReviewCount',
+      studentsKey: 'salsaLadyStatStudents',
+      yearsTextKey: 'salsaLadyStatYears',
     },
+  },
+
+  // Enterprise Image Configuration
+  // Maps to STYLE_IMAGES in constants/style-images.ts
+  images: {
+    styleKey: 'salsa_lady_style',
+  },
+
+  // Hero Visual Configuration - Enterprise-level optimization
+  // Configured for the vibrant red Salsa Lady Style performance image
+  heroVisuals: {
+    imageOpacity: 55, // Increased from 40% for better visibility
+    objectPosition: 'center 30%', // Focus on dancers' upper bodies and poses
+    gradientStyle: 'vibrant', // Bottom-to-top gradient for readable text
+    textShadow: true, // Enhanced text contrast against vibrant background
   },
 
   // What is section
@@ -102,7 +117,7 @@ export const SALSA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
     {
       id: '1',
       dayKey: 'monday',
-      className: 'Salsa Lady Style Básico',
+      classNameKey: 'salsaLadyScheduleClassBasic',
       time: '19:00 - 20:00',
       teacher: 'Yunaisy Farray',
       levelKey: 'basicLevel',
@@ -110,7 +125,7 @@ export const SALSA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
     {
       id: '2',
       dayKey: 'wednesday',
-      className: 'Salsa Lady Style Intermedio',
+      classNameKey: 'salsaLadyScheduleClassIntermediate',
       time: '19:00 - 20:00',
       teacher: 'Yunaisy Farray',
       levelKey: 'intermediateLevel',
@@ -118,7 +133,7 @@ export const SALSA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
     {
       id: '3',
       dayKey: 'friday',
-      className: 'Salsa Lady Style Avanzado',
+      classNameKey: 'salsaLadyScheduleClassAdvanced',
       time: '19:00 - 20:00',
       teacher: 'Yunaisy Farray',
       levelKey: 'advancedLevel',
@@ -134,7 +149,7 @@ export const SALSA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
       levelKey: 'beginnerLevel',
       titleKey: 'salsaLadyLevelBeginnerTitle',
       descKey: 'salsaLadyLevelBeginnerDesc',
-      duration: '0-3 meses',
+      durationKey: 'salsaLadyDuration1',
       color: 'primary-dark',
     },
     {
@@ -142,7 +157,7 @@ export const SALSA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
       levelKey: 'basicLevel',
       titleKey: 'salsaLadyLevelBasicTitle',
       descKey: 'salsaLadyLevelBasicDesc',
-      duration: '3-6 meses',
+      durationKey: 'salsaLadyDuration2',
       color: 'primary-dark-mid',
     },
     {
@@ -150,7 +165,7 @@ export const SALSA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
       levelKey: 'intermediateLevel',
       titleKey: 'salsaLadyLevelIntermediateTitle',
       descKey: 'salsaLadyLevelIntermediateDesc',
-      duration: '6-12 meses',
+      durationKey: 'salsaLadyDuration3',
       color: 'primary-accent-light',
     },
     {
@@ -158,7 +173,7 @@ export const SALSA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
       levelKey: 'advancedLevel',
       titleKey: 'salsaLadyLevelAdvancedTitle',
       descKey: 'salsaLadyLevelAdvancedDesc',
-      duration: '+12 meses',
+      durationKey: 'salsaLadyDuration4',
       color: 'primary-accent',
     },
   ],

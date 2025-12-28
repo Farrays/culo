@@ -283,6 +283,47 @@ export const HISTORIA_SALSA_CONFIG: BlogArticleConfig = {
       type: 'paragraph',
       contentKey: 'blogHistoriaSalsa_conclusionCTA',
     },
+
+    // === REFERENCES SECTION (E-E-A-T Authority) ===
+    {
+      id: 'references',
+      type: 'references',
+      contentKey: 'blogHistoriaSalsa_referencesIntro',
+      references: [
+        {
+          id: 'wikipedia-salsa',
+          titleKey: 'blogHistoriaSalsa_refWikipediaTitle',
+          url: 'https://es.wikipedia.org/wiki/Salsa_(g%C3%A9nero_musical)',
+          publisher: 'Wikipedia',
+          year: '2024',
+          descriptionKey: 'blogHistoriaSalsa_refWikipediaDesc',
+        },
+        {
+          id: 'smithsonian-fania',
+          titleKey: 'blogHistoriaSalsa_refSmithsonianTitle',
+          url: 'https://www.si.edu/spotlight/the-birth-of-salsa',
+          publisher: 'Smithsonian Institution',
+          year: '2019',
+          descriptionKey: 'blogHistoriaSalsa_refSmithsonianDesc',
+        },
+        {
+          id: 'library-congress',
+          titleKey: 'blogHistoriaSalsa_refLOCTitle',
+          url: 'https://www.loc.gov/item/ihas.200152312/',
+          publisher: 'Library of Congress',
+          year: '2014',
+          descriptionKey: 'blogHistoriaSalsa_refLOCDesc',
+        },
+        {
+          id: 'nejm-dance-brain',
+          titleKey: 'blogHistoriaSalsa_refNEJMTitle',
+          url: 'https://www.nejm.org/doi/full/10.1056/NEJMoa022252',
+          publisher: 'New England Journal of Medicine',
+          year: '2003',
+          descriptionKey: 'blogHistoriaSalsa_refNEJMDesc',
+        },
+      ],
+    },
   ],
 
   // === FEATURED IMAGE ===

@@ -7,7 +7,8 @@ export interface LevelConfig {
   levelKey: string; // Translation key for level badge (beginnerLevel, basicLevel, etc.)
   titleKey: string; // Translation key for title
   descKey: string; // Translation key for description
-  duration: string; // Duration text (e.g., "0-3 meses")
+  durationKey?: string; // Translation key for duration (preferred for i18n)
+  duration?: string; // Direct duration text (deprecated - use durationKey for i18n)
   color: 'primary-dark' | 'primary-dark-mid' | 'primary-accent-light' | 'primary-accent' | 'amber'; // Color theme progression
 }
 
@@ -193,7 +194,9 @@ const LevelCardsSection: React.FC<LevelCardsSectionProps> = ({
                       {t(level.descKey)}
                     </p>
                     <div className="mt-auto pt-3 border-t border-neutral/10">
-                      <p className={`text-xs font-semibold ${styles.duration}`}>{level.duration}</p>
+                      <p className={`text-xs font-semibold ${styles.duration}`}>
+                        {level.durationKey ? t(level.durationKey) : level.duration}
+                      </p>
                     </div>
                   </div>
                 </div>

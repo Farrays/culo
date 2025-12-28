@@ -63,10 +63,10 @@ export const AFRO_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
     paragraphCount: 4,
     hasQuestionAnswer: true,
     image: {
-      src: '/images/classes/afro-jazz/img/clases-afro-jazz-barcelona_960.webp',
+      src: '/images/classes/afro-jazz/img/afro-jazz_1024.webp',
       srcSet:
-        '/images/classes/afro-jazz/img/clases-afro-jazz-barcelona_480.webp 480w, /images/classes/afro-jazz/img/clases-afro-jazz-barcelona_960.webp 960w',
-      alt: 'Clases de Afro Jazz en Barcelona',
+        '/images/classes/afro-jazz/img/afro-jazz_320.webp 320w, /images/classes/afro-jazz/img/afro-jazz_640.webp 640w, /images/classes/afro-jazz/img/afro-jazz_768.webp 768w, /images/classes/afro-jazz/img/afro-jazz_1024.webp 1024w, /images/classes/afro-jazz/img/afro-jazz_1440.webp 1440w',
+      alt: "Clases de Afro Jazz en Barcelona - Farray's Center",
     },
   },
 
@@ -141,4 +141,27 @@ export const AFRO_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Afro Jazz', 'Cuban Dance', 'Contemporary'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Afro Jazz -> Afro Contemporáneo, Modern Jazz, Afrobeats
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'afro-contemporaneo-barcelona',
+        nameKey: 'relatedAfroContemporaneoName',
+        descriptionKey: 'relatedAfroContemporaneoDesc',
+      },
+      {
+        slug: 'modern-jazz-barcelona',
+        nameKey: 'relatedModernJazzName',
+        descriptionKey: 'relatedModernJazzDesc',
+      },
+      {
+        slug: 'afrobeats-barcelona',
+        nameKey: 'relatedAfrobeatsName',
+        descriptionKey: 'relatedAfrobeatsDesc',
+      },
+    ],
+  },
 };

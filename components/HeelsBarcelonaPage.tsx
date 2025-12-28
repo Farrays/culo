@@ -13,6 +13,8 @@ import { SUPPORTED_LOCALES } from '../types';
 import TestimonialsSection from './TestimonialsSection';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 import { CheckIcon } from '../lib/icons';
+import LazyImage from './LazyImage';
+import OptimizedImage from './OptimizedImage';
 
 const ANIMATION_DELAYS = {
   STAGGER_SMALL: 100,
@@ -228,9 +230,22 @@ const HeelsBarcelonaPage: React.FC = () => {
           aria-labelledby="heels-hero-title"
           className="relative text-center py-24 sm:py-32 md:py-40 overflow-hidden flex items-center justify-center min-h-[600px]"
         >
-          {/* Background */}
-          <div className="absolute inset-0 bg-black">
-            <div className="absolute inset-0 bg-gradient-to-br from-pink-900/30 via-black to-black"></div>
+          {/* Background Image - Enterprise OptimizedImage */}
+          <div className="absolute inset-0">
+            <OptimizedImage
+              src="/images/classes/heels/img/clases-heels-barcelona"
+              altKey="styleImages.heels.hero"
+              altFallback="Clases de Heels en Barcelona - Farray's Center"
+              priority="high"
+              sizes="100vw"
+              aspectRatio="16/9"
+              className="w-full h-full"
+              objectFit="cover"
+              placeholder="color"
+              placeholderColor="#111"
+            />
+            {/* Gradient overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-br from-pink-900/60 via-black/70 to-black/80"></div>
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-4 sm:px-6">
@@ -354,18 +369,21 @@ const HeelsBarcelonaPage: React.FC = () => {
                     className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                     role="listitem"
                   >
-                    {/* Background Image - Top half of card */}
+                    {/* Background Image - Enterprise OptimizedImage */}
                     <div className="relative h-48 sm:h-64 overflow-hidden flex-shrink-0">
-                      <div className="absolute inset-0 bg-gradient-to-br from-pink-600/40 to-purple-900/40"></div>
-                      {/* Gradient overlay on image */}
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
-                      {/* Centered Icon */}
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Icon
-                          name="sparkles"
-                          className="w-20 h-20 sm:w-24 sm:h-24 text-white/30 group-hover:text-primary-accent/50 transition-colors duration-500"
-                        />
-                      </div>
+                      <OptimizedImage
+                        src={style.basePath}
+                        altKey={style.altKey}
+                        altFallback={style.fallbackAlt}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        aspectRatio="4/3"
+                        className="w-full h-full"
+                        objectFit="cover"
+                        placeholder="color"
+                        placeholderColor="#111"
+                      />
+                      {/* Gradient overlay for text readability */}
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/90"></div>
                     </div>
 
                     {/* Text Content - Always visible */}
@@ -807,6 +825,237 @@ const HeelsBarcelonaPage: React.FC = () => {
                 </Link>
               </div>
             </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* Related Classes Section (Internal Linking) */}
+        <section
+          id="related-classes"
+          aria-labelledby="related-classes-title"
+          className="py-12 md:py-20"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <header className="text-center mb-8 sm:mb-12 relative z-10">
+                <h2
+                  id="related-classes-title"
+                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                >
+                  {t('relatedClassesTitle')}
+                </h2>
+                <p className="text-lg sm:text-xl text-neutral/70">{t('relatedClassesSubtitle')}</p>
+              </header>
+            </AnimateOnScroll>
+
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto relative z-0"
+              role="list"
+              aria-label={t('relatedClassesTitle')}
+            >
+              {/* Sexy Style */}
+              <div role="listitem">
+                <AnimateOnScroll
+                  delay={ANIMATION_DELAYS.STAGGER_SMALL}
+                  className="[perspective:1000px]"
+                >
+                  <article className="h-full" aria-labelledby="related-sexystyle-title">
+                    <Link
+                      to={`/${locale}/clases/sexy-style-barcelona`}
+                      className="group block h-full bg-black/70 backdrop-blur-md
+                                 border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                 transition-all duration-500
+                                 [transform-style:preserve-3d]
+                                 hover:border-primary-accent hover:shadow-accent-glow
+                                 hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                 focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                 focus:ring-offset-2 focus:ring-offset-black"
+                      aria-label={`${t('relatedSexyStyleName')} - ${t('relatedClassesViewClass')}`}
+                    >
+                      <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
+                        <LazyImage
+                          src="/images/classes/sexy-style/img/clases-sexy-style-barcelona_480.webp"
+                          alt={`Clase de ${t('relatedSexyStyleName')} en Barcelona - Farray's Dance Center`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          width={480}
+                          height={320}
+                        />
+                        <div
+                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <h3
+                          id="related-sexystyle-title"
+                          className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                        >
+                          {t('relatedSexyStyleName')}
+                        </h3>
+                        <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                          {t('relatedSexyStyleDesc')}
+                        </p>
+                        <div
+                          className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                          aria-hidden="true"
+                        >
+                          <span>{t('relatedClassesViewClass')}</span>
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                </AnimateOnScroll>
+              </div>
+
+              {/* Femmology */}
+              <div role="listitem">
+                <AnimateOnScroll
+                  delay={ANIMATION_DELAYS.STAGGER_SMALL * 2}
+                  className="[perspective:1000px]"
+                >
+                  <article className="h-full" aria-labelledby="related-femmology-title">
+                    <Link
+                      to={`/${locale}/clases/femmology`}
+                      className="group block h-full bg-black/70 backdrop-blur-md
+                                 border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                 transition-all duration-500
+                                 [transform-style:preserve-3d]
+                                 hover:border-primary-accent hover:shadow-accent-glow
+                                 hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                 focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                 focus:ring-offset-2 focus:ring-offset-black"
+                      aria-label={`${t('relatedFemmologyName')} - ${t('relatedClassesViewClass')}`}
+                    >
+                      <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
+                        <LazyImage
+                          src="/images/classes/femmology/img/clases-femmology-barcelona_480.webp"
+                          alt={`Clase de ${t('relatedFemmologyName')} en Barcelona - Farray's Dance Center`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          width={480}
+                          height={320}
+                        />
+                        <div
+                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <h3
+                          id="related-femmology-title"
+                          className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                        >
+                          {t('relatedFemmologyName')}
+                        </h3>
+                        <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                          {t('relatedFemmologyDesc')}
+                        </p>
+                        <div
+                          className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                          aria-hidden="true"
+                        >
+                          <span>{t('relatedClassesViewClass')}</span>
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                </AnimateOnScroll>
+              </div>
+
+              {/* Salsa Lady Style */}
+              <div role="listitem">
+                <AnimateOnScroll
+                  delay={ANIMATION_DELAYS.STAGGER_SMALL * 3}
+                  className="[perspective:1000px]"
+                >
+                  <article className="h-full" aria-labelledby="related-salsaladystyle-title">
+                    <Link
+                      to={`/${locale}/clases/salsa-lady-style-barcelona`}
+                      className="group block h-full bg-black/70 backdrop-blur-md
+                                 border border-primary-dark/50 rounded-2xl shadow-lg overflow-hidden
+                                 transition-all duration-500
+                                 [transform-style:preserve-3d]
+                                 hover:border-primary-accent hover:shadow-accent-glow
+                                 hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                                 focus:outline-none focus:ring-2 focus:ring-primary-accent
+                                 focus:ring-offset-2 focus:ring-offset-black"
+                      aria-label={`${t('relatedSalsaLadyStyleName')} - ${t('relatedClassesViewClass')}`}
+                    >
+                      <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
+                        <LazyImage
+                          src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=480&h=320&fit=crop&q=85&auto=format"
+                          alt={`Clase de ${t('relatedSalsaLadyStyleName')} en Barcelona - Farray's Dance Center`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          width={480}
+                          height={320}
+                        />
+                        <div
+                          className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="p-4 sm:p-6">
+                        <h3
+                          id="related-salsaladystyle-title"
+                          className="text-lg sm:text-xl font-bold text-neutral mb-2 group-hover:text-primary-accent transition-colors duration-300"
+                        >
+                          {t('relatedSalsaLadyStyleName')}
+                        </h3>
+                        <p className="text-sm text-neutral/80 leading-relaxed mb-4 line-clamp-2">
+                          {t('relatedSalsaLadyStyleDesc')}
+                        </p>
+                        <div
+                          className="flex items-center gap-2 text-primary-accent font-semibold text-sm group-hover:gap-3 transition-all duration-300"
+                          aria-hidden="true"
+                        >
+                          <span>{t('relatedClassesViewClass')}</span>
+                          <svg
+                            className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </Link>
+                  </article>
+                </AnimateOnScroll>
+              </div>
+            </div>
           </div>
         </section>
       </main>

@@ -50,6 +50,14 @@ export const FEMMOLOGY_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 400,
     funPercent: 100,
     gradientColor: 'rose',
+    // Enterprise: Hero background image
+    heroImage: {
+      basePath: '/images/classes/femmology/img/clases-de-femmology-barcelona',
+      alt: 'Clases de Femmology en Barcelona - Método exclusivo de Yunaisy Farray',
+      altKey: 'styleImages.femmology.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
+    },
   },
 
   // === SECTION TOGGLES ===
@@ -57,11 +65,13 @@ export const FEMMOLOGY_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
-    image: {
-      src: '/images/classes/femmology/img/clases-femmology-barcelona_960.webp',
-      srcSet:
-        '/images/classes/femmology/img/clases-femmology-barcelona_480.webp 480w, /images/classes/femmology/img/clases-femmology-barcelona_960.webp 960w',
+    // Enterprise: OptimizedImage with multi-format srcset
+    optimizedImage: {
+      basePath: '/images/classes/femmology/img/clases-de-femmology-barcelona',
       alt: 'Clases de Femmology en Barcelona - Creado por Yunaisy Farray',
+      altKey: 'styleImages.femmology.whatIs',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
     },
   },
 
@@ -124,4 +134,27 @@ export const FEMMOLOGY_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Femmology', 'Heels Dance', 'Cuban Dance', 'Dance Therapy', 'Choreography'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Femmology -> Sexy Style, Heels, Salsa Lady Style
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'sexy-style-barcelona',
+        nameKey: 'relatedSexyStyleName',
+        descriptionKey: 'relatedSexyStyleDesc',
+      },
+      {
+        slug: 'heels-barcelona',
+        nameKey: 'relatedHeelsName',
+        descriptionKey: 'relatedHeelsDesc',
+      },
+      {
+        slug: 'salsa-lady-style-barcelona',
+        nameKey: 'relatedSalsaLadyStyleName',
+        descriptionKey: 'relatedSalsaLadyStyleDesc',
+      },
+    ],
+  },
 };

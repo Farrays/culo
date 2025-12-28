@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
-import { OrganizationSchema } from './SchemaMarkup';
+import { OrganizationSchema, WebSiteSchema, SiteNavigationElementSchema } from './SchemaMarkup';
 
 /**
  * Global SEO component that manages meta tags, Open Graph, and hreflang.
@@ -373,8 +373,10 @@ const SEO: React.FC = () => {
 
   return (
     <>
-      {/* Global Organization Schema - renders once for all pages */}
+      {/* Global Schemas - render once for all pages */}
       <OrganizationSchema />
+      <WebSiteSchema />
+      <SiteNavigationElementSchema />
       <Helmet>
         {/* Basic meta tags */}
         <html lang={locale} />

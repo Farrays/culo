@@ -59,6 +59,13 @@ export const FOLKLORE_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
+    optimizedImage: {
+      basePath: '/images/classes/folklore-cubano/img/folklore-calle-habana',
+      altKey: 'classes.folklore-cubano.whatIs',
+      alt: 'Grupo de estudiantes aprendiendo danzas a los Orishas y folklore cubano tradicional en academia de Barcelona',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
+    },
   },
 
   identificationSection: {
@@ -145,4 +152,27 @@ export const FOLKLORE_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
       ],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Folklore Cubano -> Salsa Cubana, Timba, Afro Contemporáneo
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'salsa-cubana-barcelona',
+        nameKey: 'relatedSalsaCubanaName',
+        descriptionKey: 'relatedSalsaCubanaDesc',
+      },
+      {
+        slug: 'timba-barcelona',
+        nameKey: 'relatedTimbaName',
+        descriptionKey: 'relatedTimbaDesc',
+      },
+      {
+        slug: 'afro-contemporaneo-barcelona',
+        nameKey: 'relatedAfroContemporaneoName',
+        descriptionKey: 'relatedAfroContemporaneoDesc',
+      },
+    ],
+  },
 };

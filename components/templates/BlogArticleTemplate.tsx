@@ -43,6 +43,7 @@ import {
   AuthorBox,
   ShareButtons,
   RelatedArticles,
+  RelatedClasses,
   BlogSchemas,
 } from '../blog';
 
@@ -186,6 +187,11 @@ const BlogArticleTemplate: React.FC<BlogArticleTemplateProps> = ({ config }) => 
               )}
             </div>
           </div>
+
+          {/* Related Classes (CTA for conversion) */}
+          {config.relatedClasses && config.relatedClasses.length > 0 && (
+            <RelatedClasses relatedClasses={config.relatedClasses} />
+          )}
 
           {/* Related Articles */}
           {config.relatedArticles && config.relatedArticles.length > 0 && (

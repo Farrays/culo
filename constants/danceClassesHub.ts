@@ -19,14 +19,14 @@ export interface HubCategory {
 
 export const HUB_CATEGORIES: HubCategory[] = [
   // 1. Danza (Ballet/Contemporáneo/Jazz)
+  // Uses SAME image as categories.ts for visual consistency (HOME → HUB)
   {
     key: 'contemporary',
     titleKey: 'classCatContemporaryTitle',
     descriptionKey: 'classCatContemporaryDesc',
     detailedDescriptionKey: 'classDetailContemporaryDesc',
     pillarUrl: '/clases/danza-barcelona',
-    imageUrl:
-      'https://images.unsplash.com/photo-1535525153412-5a42439a210d?w=800&h=600&fit=crop&q=80&auto=format',
+    imageUrl: '/images/categories/danza.webp',
     featuredStyles: [
       { key: 'ballet_clasico', url: '/clases/ballet-barcelona' },
       { key: 'danza_contemporanea', url: '/clases/contemporaneo-barcelona' },
@@ -42,14 +42,14 @@ export const HUB_CATEGORIES: HubCategory[] = [
   },
 
   // 2. Danzas Urbanas / Hip Hop (ordenado alfabéticamente)
+  // Uses SAME image as categories.ts for visual consistency (HOME → HUB)
   {
     key: 'urban',
     titleKey: 'classCatUrbanTitle',
     descriptionKey: 'classCatUrbanDesc',
     detailedDescriptionKey: 'classDetailUrbanDesc',
     pillarUrl: '/clases/danzas-urbanas-barcelona',
-    imageUrl:
-      'https://images.unsplash.com/photo-1547153760-18fc9c88c1c8?w=800&h=600&fit=crop&q=80&auto=format',
+    imageUrl: '/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona_640.webp',
     featuredStyles: [
       { key: 'dancehall', url: '/clases/dancehall-barcelona' },
       { key: 'heels_barcelona', url: '/clases/heels-barcelona' },
@@ -71,33 +71,38 @@ export const HUB_CATEGORIES: HubCategory[] = [
   },
 
   // 3. Salsa y Bachata (Parejas / Latinos)
+  // Uses SAME image as categories.ts for visual consistency (HOME → HUB)
   {
     key: 'latin',
     titleKey: 'classCatLatinTitle',
     descriptionKey: 'classCatLatinDesc',
     detailedDescriptionKey: 'classDetailLatinDesc',
     pillarUrl: '/clases/salsa-bachata-barcelona',
-    imageUrl:
-      'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800&h=600&fit=crop&q=80&auto=format',
+    imageUrl: '/images/categories/salsa-bachata.webp',
     featuredStyles: [
       { key: 'salsa_bachata', url: '/clases/salsa-bachata-barcelona' },
       { key: 'bachata_sensual', url: '/clases/bachata-barcelona' },
     ],
     allStyles: [
       { key: 'bachata_sensual', url: '/clases/bachata-barcelona' },
-      { key: 'salsa_bachata', url: '/clases/salsa-bachata-barcelona' },
+      { key: 'bachata_lady_style', url: '/clases/bachata-lady-style-barcelona' },
+      { key: 'folklore_cubano', url: '/clases/folklore-cubano' },
+      { key: 'salsa_cubana', url: '/clases/salsa-cubana-barcelona' },
+      { key: 'salsa_lady_style', url: '/clases/salsa-lady-style-barcelona' },
+      { key: 'salsa_lady_timba', url: '/clases/timba-barcelona' },
+      { key: 'timba_cubana', url: '/clases/timba-barcelona' },
     ],
   },
 
   // 4. Fitness para bailarines
+  // Uses SAME image as categories.ts for visual consistency (HOME → HUB)
   {
     key: 'fitness',
     titleKey: 'classCatFitnessTitle',
     descriptionKey: 'classCatFitnessDesc',
     detailedDescriptionKey: 'classDetailFitnessDesc',
     pillarUrl: '/clases/entrenamiento-bailarines-barcelona',
-    imageUrl:
-      'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop&q=80&auto=format',
+    imageUrl: '/images/categories/fitness.webp',
     featuredStyles: [
       { key: 'cuerpo_fit', url: '/clases/cuerpo-fit' },
       { key: 'body_conditioning', url: '/clases/acondicionamiento-fisico-bailarines' },
@@ -134,7 +139,12 @@ export const FEATURED_STYLES: StyleLink[] = [
   { key: 'twerk', url: '/clases/twerk-barcelona' },
   // Latinos
   { key: 'bachata_sensual', url: '/clases/bachata-barcelona' },
-  { key: 'salsa_bachata', url: '/clases/salsa-bachata-barcelona' },
+  { key: 'bachata_lady_style', url: '/clases/bachata-lady-style-barcelona' },
+  { key: 'folklore_cubano', url: '/clases/folklore-cubano' },
+  { key: 'salsa_cubana', url: '/clases/salsa-cubana-barcelona' },
+  { key: 'salsa_lady_style', url: '/clases/salsa-lady-style-barcelona' },
+  { key: 'salsa_lady_timba', url: '/clases/timba-barcelona' },
+  { key: 'timba_cubana', url: '/clases/timba-barcelona' },
   // Fitness
   { key: 'body_conditioning', url: '/clases/acondicionamiento-fisico-bailarines' },
   { key: 'bum_bum', url: '/clases/ejercicios-gluteos-barcelona' },

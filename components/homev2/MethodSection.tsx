@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
 import AnimateOnScroll from '../AnimateOnScroll';
 import { HOMEPAGE_V2_CONFIG } from '../../constants/homepage-v2-config';
@@ -49,7 +50,7 @@ const PillarIcons: Record<string, React.FC<{ className?: string }>> = {
  * - Glow effects en hover
  */
 const MethodSection: React.FC<MethodSectionProps> = ({ config }) => {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   return (
     <section id="method-section" className="py-20 md:py-32 bg-black">
@@ -112,18 +113,15 @@ const MethodSection: React.FC<MethodSectionProps> = ({ config }) => {
               {t(config.resultPromiseKey)}
             </p>
 
-            <button
-              onClick={() => {
-                const element = document.querySelector('#comparison-section');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-              }}
+            <Link
+              to={`/${locale}/metodo-farray`}
               className="inline-flex items-center gap-2 font-bold text-primary-accent hover:text-white transition-all duration-300 group"
             >
               <span>{t(config.ctaTextKey)}</span>
               <span className="inline-block transition-all duration-300 group-hover:translate-x-2">
                 →
               </span>
-            </button>
+            </Link>
           </div>
         </AnimateOnScroll>
       </div>

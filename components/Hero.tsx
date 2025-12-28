@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative h-screen w-full flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-52 sm:pt-56 md:pt-56 lg:pt-44 xl:pt-48"
       aria-label="Hero section"
     >
       {/* Background with Video */}
@@ -57,23 +57,54 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20" />
       </div>
 
-      <div className="relative z-10 text-center text-neutral px-4">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-tight mb-4 min-h-[120px] md:min-h-[180px] lg:min-h-[200px] flex flex-col items-center justify-center holographic-text">
+      <div className="relative z-10 text-center text-neutral px-4 sm:px-6">
+        <h1
+          className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-4 sm:mb-6 text-white"
+          style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
+        >
           {t('heroTitle1')}
-          <br />
-          <span className="text-3xl md:text-5xl lg:text-6xl opacity-90 font-bold tracking-normal">
-            {t('heroTitle2')}
-          </span>
         </h1>
+        <p
+          className="text-xl sm:text-3xl md:text-4xl font-bold mb-4 text-white"
+          style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
+        >
+          {t('heroTitle2')}
+        </p>
         <p className="text-xl md:text-2xl font-semibold text-neutral/90 mb-6 italic">
           {t('heroSubtitle')}
         </p>
-        <p className="max-w-3xl mx-auto text-lg md:text-xl text-neutral/90 mb-8 min-h-[60px]">
+        <p className="max-w-3xl mx-auto text-lg md:text-xl text-neutral/90 mb-8">
           {t('heroValue')}
         </p>
 
-        {/* Trust Bar - Credibilidad instantánea */}
-        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 mb-10 max-w-4xl mx-auto">
+        {/* CTA Button */}
+        <div className="flex flex-col items-center justify-center mb-10">
+          <button
+            onClick={() => setIsLeadModalOpen(true)}
+            className="w-full sm:w-auto bg-primary-accent text-white font-bold text-sm xl:text-base py-2.5 xl:py-3 px-5 xl:px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
+          >
+            {t('puertasAbiertasCTA')}
+            <svg
+              className="w-4 h-4 ml-1.5 inline-block"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
+            </svg>
+          </button>
+          <p className="text-sm text-neutral/80 mt-3 text-center max-w-md">
+            {t('puertasAbiertasSubtext')}
+          </p>
+        </div>
+
+        {/* Trust Bar - Credibilidad instantánea (después del CTA) */}
+        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 max-w-4xl mx-auto">
           {/* Rating Google */}
           <div className="flex items-center gap-2 bg-neutral/10 backdrop-blur-sm rounded-full px-4 py-2 border border-primary-accent/30">
             <div className="flex text-yellow-400">
@@ -128,31 +159,6 @@ const Hero: React.FC = () => {
             <span className="text-primary-accent font-bold text-sm">8 años</span>
             <span className="text-neutral/80 text-xs">en Barcelona</span>
           </div>
-        </div>
-
-        <div className="flex flex-col items-center justify-center">
-          <button
-            onClick={() => setIsLeadModalOpen(true)}
-            className="w-full sm:w-auto bg-primary-accent text-white font-bold text-xl py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
-          >
-            {t('puertasAbiertasCTA')}
-            <svg
-              className="w-5 h-5 ml-2 inline-block"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M13 7l5 5m0 0l-5 5m5-5H6"
-              />
-            </svg>
-          </button>
-          <p className="text-sm text-neutral/80 mt-3 text-center max-w-md">
-            {t('puertasAbiertasSubtext')}
-          </p>
         </div>
       </div>
 

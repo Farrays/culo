@@ -68,7 +68,13 @@ export const BUM_BUM_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
-    // No image yet - will be added later
+    // Enterprise OptimizedImage config (AVIF/WebP/JPG, 6 breakpoints)
+    optimizedImage: {
+      basePath: '/images/classes/bum-bum/img/bum-bum-gluteos',
+      alt: 'Grupo de alumnas tonificando glúteos con ejercicios Bum Bum en academia de Barcelona',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
+    },
   },
 
   identificationSection: {
@@ -148,4 +154,27 @@ export const BUM_BUM_PAGE_CONFIG: FullDanceClassConfig = {
       ],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Bum Bum -> Cuerpo Fit, Sexy Style, Twerk (complementos fitness + sensualidad)
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'cuerpo-fit',
+        nameKey: 'relatedFullBodyCardioName',
+        descriptionKey: 'relatedFullBodyCardioDesc',
+      },
+      {
+        slug: 'sexy-style-barcelona',
+        nameKey: 'relatedSexyStyleName',
+        descriptionKey: 'relatedSexyStyleDesc',
+      },
+      {
+        slug: 'twerk-barcelona',
+        nameKey: 'relatedTwerkName',
+        descriptionKey: 'relatedTwerkDesc',
+      },
+    ],
+  },
 };

@@ -72,7 +72,13 @@ export const FULL_BODY_CARDIO_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
-    // No image yet - will be added later
+    // Enterprise OptimizedImage config (AVIF/WebP/JPG, 6 breakpoints)
+    optimizedImage: {
+      basePath: '/images/classes/cuerpo-fit/img/cuerpo-fit-entrenamiento-bailarines',
+      alt: "Alumnas realizando ejercicios de cardio dance Cuerpo-Fit en Barcelona - Entrenamiento full body con música en Farray's Center",
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
+    },
   },
 
   identificationSection: {
@@ -154,4 +160,27 @@ export const FULL_BODY_CARDIO_PAGE_CONFIG: FullDanceClassConfig = {
       ],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Full Body Cardio -> Bum Bum, Stretching, Hip Hop Reggaeton (fitness + baile urbano)
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'ejercicios-gluteos-barcelona',
+        nameKey: 'relatedBumBumName',
+        descriptionKey: 'relatedBumBumDesc',
+      },
+      {
+        slug: 'stretching-barcelona',
+        nameKey: 'relatedStretchingName',
+        descriptionKey: 'relatedStretchingDesc',
+      },
+      {
+        slug: 'hip-hop-reggaeton-barcelona',
+        nameKey: 'relatedHipHopReggaetonName',
+        descriptionKey: 'relatedHipHopReggaetonDesc',
+      },
+    ],
+  },
 };

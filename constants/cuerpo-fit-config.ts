@@ -66,7 +66,13 @@ export const CUERPO_FIT_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
-    // No image yet - will be added later
+    // Enterprise OptimizedImage config (AVIF/WebP/JPG, 6 breakpoints)
+    optimizedImage: {
+      basePath: '/images/classes/cuerpo-fit/img/cuerpo-fit-entrenamiento-bailarines',
+      alt: 'Grupo de bailarines entrenando fuerza y resistencia en clase de Cuerpo Fit en academia de Barcelona',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
+    },
   },
 
   identificationSection: {
@@ -148,4 +154,27 @@ export const CUERPO_FIT_PAGE_CONFIG: FullDanceClassConfig = {
       ],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Body Conditioning -> Stretching, Bum Bum, Full Body Cardio (fitness complementario)
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'stretching-barcelona',
+        nameKey: 'relatedStretchingName',
+        descriptionKey: 'relatedStretchingDesc',
+      },
+      {
+        slug: 'ejercicios-gluteos-barcelona',
+        nameKey: 'relatedBumBumName',
+        descriptionKey: 'relatedBumBumDesc',
+      },
+      {
+        slug: 'cuerpo-fit',
+        nameKey: 'relatedFullBodyCardioName',
+        descriptionKey: 'relatedFullBodyCardioDesc',
+      },
+    ],
+  },
 };

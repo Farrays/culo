@@ -55,6 +55,21 @@ export const CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 500,
     funPercent: 100,
     gradientColor: 'emerald',
+    // Enterprise: Hero background image with OptimizedImage multi-format srcset
+    heroImage: {
+      basePath: '/images/classes/contemporaneo/img/mgs_5189',
+      alt: "Clase de Danza Contemporánea en Barcelona - Bailarines en movimiento fluido y expresivo en Farray's Center",
+      altKey: 'styleImages.contemporaneo.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
+    },
+    // Enterprise: Hero Visual Configuration - optimized for artistic contemporary dance
+    heroVisuals: {
+      imageOpacity: 50, // Balanced visibility for elegant, fluid dance movement
+      objectPosition: 'center 40%', // Focus on dancers' full body expression and lines
+      gradientStyle: 'subtle', // Soft gradient for artistic, refined aesthetic
+      textShadow: true, // Enhanced text contrast against dance imagery
+    },
   },
 
   // === SECTION TOGGLES ===
@@ -62,11 +77,13 @@ export const CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
-    image: {
-      src: '/images/classes/contemporaneo/img/clases-contemporaneo-barcelona_960.webp',
-      srcSet:
-        '/images/classes/contemporaneo/img/clases-contemporaneo-barcelona_480.webp 480w, /images/classes/contemporaneo/img/clases-contemporaneo-barcelona_960.webp 960w',
-      alt: 'Clases de Danza Contemporánea en Barcelona',
+    // Enterprise: OptimizedImage with multi-format srcset and i18n alt
+    optimizedImage: {
+      basePath: '/images/classes/contemporaneo/img/mgs_5189',
+      alt: 'Clases de Danza Contemporánea en Barcelona', // Fallback
+      altKey: 'styleImages.contemporaneo.hero', // i18n key for localized alt
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
     },
   },
 
@@ -142,4 +159,27 @@ export const CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Danza Contemporánea', 'Suelo & Flow', 'Cuban Technique'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Contemporáneo -> Ballet, Afro Contemporáneo, Modern Jazz
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'ballet-barcelona',
+        nameKey: 'relatedBalletName',
+        descriptionKey: 'relatedBalletDesc',
+      },
+      {
+        slug: 'afro-contemporaneo-barcelona',
+        nameKey: 'relatedAfroContemporaneoName',
+        descriptionKey: 'relatedAfroContemporaneoDesc',
+      },
+      {
+        slug: 'modern-jazz-barcelona',
+        nameKey: 'relatedModernJazzName',
+        descriptionKey: 'relatedModernJazzDesc',
+      },
+    ],
+  },
 };

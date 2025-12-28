@@ -51,6 +51,22 @@ export const HIP_HOP_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 500,
     funPercent: 100,
     gradientColor: 'rose',
+    // Enterprise: Hero background image with OptimizedImage multi-format srcset
+    heroImage: {
+      basePath:
+        '/images/classes/hip-hop-reggaeton/img/hip-hop-reggaeton-clases-hip-hop-reaggaeton-barcelona',
+      alt: "Clases de Hip Hop y Reggaetón en Barcelona - Estudiantes bailando con energía urbana en Farray's Center",
+      altKey: 'styleImages.hipHopReggaeton.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
+    },
+    // Enterprise: Hero Visual Configuration - optimized for urban dance energy
+    heroVisuals: {
+      imageOpacity: 55, // Higher visibility to showcase dynamic urban dance movement
+      objectPosition: 'center 35%', // Focus on dancers' upper bodies and choreography
+      gradientStyle: 'vibrant', // Bottom-to-top gradient for energetic urban vibe
+      textShadow: true, // Enhanced text contrast against vibrant dance imagery
+    },
   },
 
   // === SECTION TOGGLES ===
@@ -58,11 +74,13 @@ export const HIP_HOP_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
-    image: {
-      src: '/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reggaeton-barcelona_960.webp',
-      srcSet:
-        '/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reggaeton-barcelona_480.webp 480w, /images/classes/hip-hop-reggaeton/img/clases-hip-hop-reggaeton-barcelona_960.webp 960w',
-      alt: 'Clases de Hip Hop Reggaeton en Barcelona',
+    // Enterprise: OptimizedImage with AVIF/WebP/JPG multi-format srcset
+    optimizedImage: {
+      basePath: '/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona',
+      alt: 'Estudiantes practicando coreografía de Hip Hop y Reggaetón en academia de Barcelona',
+      altKey: 'styleImages.hipHopReggaeton.whatIs',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
     },
   },
 
@@ -139,4 +157,27 @@ export const HIP_HOP_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Hip Hop Reggaeton', 'Urban Dance', 'Reggaeton', 'Hip Hop'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Hip Hop Reggaeton -> Reggaeton Cubano, Sexy Reggaeton, Dancehall
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'reggaeton-cubano-barcelona',
+        nameKey: 'relatedReggaetonCubanoName',
+        descriptionKey: 'relatedReggaetonCubanoDesc',
+      },
+      {
+        slug: 'sexy-reggaeton-barcelona',
+        nameKey: 'relatedSexyReggaetonName',
+        descriptionKey: 'relatedSexyReggaetonDesc',
+      },
+      {
+        slug: 'dancehall-barcelona',
+        nameKey: 'relatedDancehallName',
+        descriptionKey: 'relatedDancehallDesc',
+      },
+    ],
+  },
 };

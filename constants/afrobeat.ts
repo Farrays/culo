@@ -65,6 +65,14 @@ export const AFROBEAT_SCHEDULE_KEYS = [
   },
   {
     id: '2',
+    dayKey: 'wednesday',
+    className: 'Afrobeats Principiantes',
+    time: '18:00 - 19:00',
+    teacher: 'Charlie Breezy',
+    levelKey: 'beginnerLevel',
+  },
+  {
+    id: '3',
     dayKey: 'friday',
     className: 'Afrobeat Básico',
     time: '18:00 - 19:00',

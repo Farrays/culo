@@ -64,8 +64,14 @@ export const AFRO_CONTEMPORANEO_V2_CONFIG: FullDanceClassConfigV2 = {
     gradientColor: 'emerald',
     // Video placeholder - reemplazar con video real de afro contemporáneo
     videoUrl: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-    heroImage:
-      '/images/classes/afro-contemporaneo/img/clases-afro-contemporaneo-barcelona_960.webp',
+    // Enterprise: Hero background image
+    heroImage: {
+      basePath: '/images/classes/afro-contemporaneo/img/mgs_5260',
+      alt: 'Clases de Afro Contemporáneo en Barcelona - Técnica cubana ENA',
+      altKey: 'styleImages.afroContemporaneo.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
+    },
   },
 
   // === SECTION TOGGLES ===

@@ -5,6 +5,8 @@
  *
  * Available schemas:
  * - OrganizationSchema - Global organization info (use once at app level)
+ * - WebSiteSchema - Website info with SearchAction (use once at app level)
+ * - SiteNavigationElementSchema - Main navigation structure
  * - LocalBusinessSchema - Dance school business info
  * - CourseSchema - Dance class/course details
  * - ReviewSchema - Individual review
@@ -78,10 +80,10 @@ export const OrganizationSchema: React.FC = () => {
     telephone: '+34 644 55 06 20',
     email: 'info@farrayscenter.com',
     sameAs: [
-      'https://www.instagram.com/farrays_international_dance/',
-      'https://www.facebook.com/farraysinternationaldancecenter',
-      'https://www.youtube.com/@FarraysDanceCenter',
-      'https://www.tiktok.com/@farraysdancecenter',
+      'https://www.instagram.com/farrays_centerbcn/',
+      'https://www.facebook.com/farrayscenter/',
+      'https://www.youtube.com/@farraysinternationaldance',
+      'https://www.tiktok.com/@farrays_centerbcn',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -108,6 +110,123 @@ export const OrganizationSchema: React.FC = () => {
       'Modern Jazz',
     ],
     slogan: 'Dance Your Dreams',
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};
+
+/**
+ * WebSite Schema - renders once at app level.
+ * Provides search engines with website-level information and SearchAction for sitelinks.
+ * This should be included in App.tsx or the main layout component.
+ */
+export const WebSiteSchema: React.FC = () => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': 'https://www.farrayscenter.com/#website',
+    url: 'https://www.farrayscenter.com',
+    name: "Farray's International Dance Center",
+    description:
+      'Escuela de baile en Barcelona con mas de 25 estilos: Dancehall, Twerk, Afrobeats, Reggaeton, Hip Hop, Salsa, Bachata, Ballet, Contemporaneo y mas.',
+    publisher: {
+      '@id': 'https://www.farrayscenter.com/#organization',
+    },
+    inLanguage: ['es-ES', 'ca-ES', 'en', 'fr-FR'],
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate:
+          'https://www.farrayscenter.com/es/clases/baile-barcelona?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};
+
+/**
+ * Navigation item structure for SiteNavigationElement
+ */
+interface NavigationItem {
+  name: string;
+  url: string;
+}
+
+/**
+ * SiteNavigationElement Schema - renders main site navigation.
+ * Helps search engines understand the site structure and navigation hierarchy.
+ * This should be included in App.tsx or Header component.
+ */
+export const SiteNavigationElementSchema: React.FC = () => {
+  const baseUrl = 'https://www.farrayscenter.com';
+
+  // Main navigation items matching the Header structure
+  const navigationItems: NavigationItem[] = [
+    {
+      name: 'Inicio',
+      url: `${baseUrl}/es`,
+    },
+    {
+      name: 'Clases de Baile',
+      url: `${baseUrl}/es/clases/baile-barcelona`,
+    },
+    {
+      name: 'Danza',
+      url: `${baseUrl}/es/clases/danza-barcelona`,
+    },
+    {
+      name: 'Danzas Urbanas',
+      url: `${baseUrl}/es/clases/danzas-urbanas-barcelona`,
+    },
+    {
+      name: 'Salsa y Bachata',
+      url: `${baseUrl}/es/clases/salsa-bachata-barcelona`,
+    },
+    {
+      name: 'Servicios',
+      url: `${baseUrl}/es/servicios-baile`,
+    },
+    {
+      name: 'Blog',
+      url: `${baseUrl}/es/blog`,
+    },
+    {
+      name: 'Sobre Nosotros',
+      url: `${baseUrl}/es/sobre-nosotros`,
+    },
+    {
+      name: 'Contacto',
+      url: `${baseUrl}/es/contacto`,
+    },
+    {
+      name: 'Horarios',
+      url: `${baseUrl}/es/horarios-clases-baile-barcelona`,
+    },
+    {
+      name: 'Precios',
+      url: `${baseUrl}/es/precios-clases-baile-barcelona`,
+    },
+  ];
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': navigationItems.map((item, index) => ({
+      '@type': 'SiteNavigationElement',
+      '@id': `${baseUrl}/#navigation-${index + 1}`,
+      name: item.name,
+      url: item.url,
+    })),
   };
 
   return (

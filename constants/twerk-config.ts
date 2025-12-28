@@ -150,4 +150,27 @@ export const TWERK_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Twerk', 'Dancehall', 'Urban Dance', 'Jamaican Dance'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Twerk -> Dancehall, Sexy Reggaeton, Bum Bum
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'dancehall-barcelona',
+        nameKey: 'relatedDancehallName',
+        descriptionKey: 'relatedDancehallDesc',
+      },
+      {
+        slug: 'sexy-reggaeton-barcelona',
+        nameKey: 'relatedSexyReggaetonName',
+        descriptionKey: 'relatedSexyReggaetonDesc',
+      },
+      {
+        slug: 'ejercicios-gluteos-barcelona',
+        nameKey: 'relatedBumBumName',
+        descriptionKey: 'relatedBumBumDesc',
+      },
+    ],
+  },
 };

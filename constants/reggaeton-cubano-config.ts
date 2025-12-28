@@ -62,11 +62,12 @@ export const REGGAETON_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
-    image: {
-      src: '/images/classes/reggaeton-cubano/img/clases-reggaeton-cubano-barcelona_960.webp',
-      srcSet:
-        '/images/classes/reggaeton-cubano/img/clases-reggaeton-cubano-barcelona_480.webp 480w, /images/classes/reggaeton-cubano/img/clases-reggaeton-cubano-barcelona_960.webp 960w',
-      alt: 'Clases de Reggaeton Cubano en Barcelona',
+    optimizedImage: {
+      basePath: '/images/classes/reggaeton-cubano/img/mgs_8884',
+      altKey: 'styleImages.reggaetonCubano.hero',
+      alt: "Clases de Reggaeton Cubano en Barcelona - Reparto y Cubatón en Farray's Center",
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
     },
   },
 
@@ -134,4 +135,27 @@ export const REGGAETON_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Reggaeton Cubano', 'Cuban Dance', 'Urban Dance'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Reggaeton Cubano -> Hip Hop Reggaeton, Salsa Cubana, Timba
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'hip-hop-reggaeton-barcelona',
+        nameKey: 'relatedHipHopReggaetonName',
+        descriptionKey: 'relatedHipHopReggaetonDesc',
+      },
+      {
+        slug: 'salsa-cubana-barcelona',
+        nameKey: 'relatedSalsaCubanaName',
+        descriptionKey: 'relatedSalsaCubanaDesc',
+      },
+      {
+        slug: 'timba-barcelona',
+        nameKey: 'relatedTimbaName',
+        descriptionKey: 'relatedTimbaDesc',
+      },
+    ],
+  },
 };

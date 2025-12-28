@@ -1,10 +1,108 @@
-import React, { useState } from 'react';
+import React, { useState, ReactNode } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import LeadCaptureModal from './shared/LeadCaptureModal';
+
+// External links for E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)
+const EXTERNAL_LINKS: { pattern: RegExp; url: string; title: string }[] = [
+  {
+    pattern: /Street Dance 2|STREET DANCE 2|StreetDance 2/gi,
+    url: 'https://www.imdb.com/title/tt1800741/',
+    title: 'Street Dance 2 on IMDb',
+  },
+  {
+    pattern: /CID-UNESCO|CID UNESCO/gi,
+    url: 'https://cid-world.org/',
+    title: 'International Dance Council - UNESCO',
+  },
+  {
+    pattern: /Got Talent España|Got Talent Spain/gi,
+    url: 'https://es.wikipedia.org/wiki/Got_Talent_Espa%C3%B1a',
+    title: 'Got Talent España - Wikipedia',
+  },
+  {
+    pattern: /The Dancer/gi,
+    url: 'https://es.wikipedia.org/wiki/The_Dancer_(programa_de_televisi%C3%B3n)',
+    title: 'The Dancer - Wikipedia',
+  },
+];
+
+// Component for external link with proper accessibility
+const ExternalLink: React.FC<{ href: string; title: string; children: ReactNode }> = ({
+  href,
+  title,
+  children,
+}) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    title={title}
+    className="text-primary-accent hover:text-white underline decoration-primary-accent/50 hover:decoration-white transition-colors duration-200"
+  >
+    {children}
+  </a>
+);
+
+// Function to render text with external links for E-E-A-T
+const renderTextWithLinks = (text: string): ReactNode => {
+  // Track which links we've already added to avoid duplicates in same text
+  const usedPatterns = new Set<string>();
+
+  // Build a combined regex to find all matches
+  const result: ReactNode[] = [];
+  let lastIndex = 0;
+
+  // Find all matches and their positions
+  const matches: { index: number; length: number; replacement: ReactNode; patternKey: string }[] =
+    [];
+
+  EXTERNAL_LINKS.forEach(link => {
+    let match;
+    const regex = new RegExp(link.pattern.source, link.pattern.flags);
+    while ((match = regex.exec(text)) !== null) {
+      const patternKey = link.url;
+      // Only add first occurrence of each link type
+      if (!usedPatterns.has(patternKey)) {
+        usedPatterns.add(patternKey);
+        matches.push({
+          index: match.index,
+          length: match[0].length,
+          replacement: (
+            <ExternalLink key={`${patternKey}-${match.index}`} href={link.url} title={link.title}>
+              {match[0]}
+            </ExternalLink>
+          ),
+          patternKey,
+        });
+      }
+    }
+  });
+
+  // Sort matches by position
+  matches.sort((a, b) => a.index - b.index);
+
+  // Build result array
+  matches.forEach(match => {
+    // Add text before this match
+    if (match.index > lastIndex) {
+      result.push(text.substring(lastIndex, match.index));
+    }
+    // Add the linked text
+    result.push(match.replacement);
+    lastIndex = match.index + match.length;
+  });
+
+  // Add remaining text
+  if (lastIndex < text.length) {
+    result.push(text.substring(lastIndex));
+  }
+
+  return result.length > 0 ? result : text;
+};
 
 const YunaisyFarrayPage: React.FC = () => {
   const { t, locale } = useI18n();
@@ -145,7 +243,7 @@ const YunaisyFarrayPage: React.FC = () => {
                     <p className="text-xl font-semibold text-primary-accent">
                       {t('yunaisyFarray_intro_subtitle')}
                     </p>
-                    <p>{t('yunaisyFarray_intro_p1')}</p>
+                    <p>{renderTextWithLinks(t('yunaisyFarray_intro_p1'))}</p>
                     <p>{t('yunaisyFarray_intro_p2')}</p>
                   </div>
                 </div>
@@ -188,7 +286,7 @@ const YunaisyFarrayPage: React.FC = () => {
                     <p>{t('yunaisyFarray_career_p3')}</p>
                     <p>{t('yunaisyFarray_career_p4')}</p>
                     <p>{t('yunaisyFarray_career_p5')}</p>
-                    <p>{t('yunaisyFarray_career_p6')}</p>
+                    <p>{renderTextWithLinks(t('yunaisyFarray_career_p6'))}</p>
                   </div>
                 </div>
               </AnimateOnScroll>
@@ -219,6 +317,13 @@ const YunaisyFarrayPage: React.FC = () => {
                     </div>
 
                     <p>{t('yunaisyFarray_method_p4')}</p>
+
+                    <Link
+                      to={`/${locale}/metodo-farray`}
+                      className="inline-flex items-center gap-2 text-primary-accent hover:text-white transition-colors font-semibold mt-4"
+                    >
+                      {t('yunaisyFarray_method_link')}
+                    </Link>
                   </div>
                 </div>
               </AnimateOnScroll>

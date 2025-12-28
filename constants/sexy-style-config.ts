@@ -57,11 +57,12 @@ export const SEXY_STYLE_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
-    image: {
-      src: '/images/classes/sexy-style/img/clases-sexy-style-barcelona_960.webp',
-      srcSet:
-        '/images/classes/sexy-style/img/clases-sexy-style-barcelona_480.webp 480w, /images/classes/sexy-style/img/clases-sexy-style-barcelona_960.webp 960w',
-      alt: 'Clases de Sexy Style en Barcelona',
+    optimizedImage: {
+      basePath: '/images/classes/sexy-style/img/clases-de-sexy-style-barcelona',
+      alt: 'Alumnas practicando Sexy Style con expresión sensual y confianza en Barcelona',
+      altKey: 'classes.sexy-style.whatIs',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
     },
   },
 
@@ -137,4 +138,27 @@ export const SEXY_STYLE_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Sexy Style', 'Sensual Dance', 'Femininity', 'Urban Dance'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Sexy Style -> Femmology, Sexy Reggaeton, Heels
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'femmology-barcelona',
+        nameKey: 'relatedFemmologyName',
+        descriptionKey: 'relatedFemmologyDesc',
+      },
+      {
+        slug: 'sexy-reggaeton-barcelona',
+        nameKey: 'relatedSexyReggaetonName',
+        descriptionKey: 'relatedSexyReggaetonDesc',
+      },
+      {
+        slug: 'heels-barcelona',
+        nameKey: 'relatedHeelsName',
+        descriptionKey: 'relatedHeelsDesc',
+      },
+    ],
+  },
 };

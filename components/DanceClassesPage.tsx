@@ -5,12 +5,23 @@ import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
 import { HUB_CATEGORIES, FEATURED_STYLES } from '../constants/danceClassesHub';
 import { GOOGLE_REVIEWS_TESTIMONIALS } from '../constants/testimonials';
+import { getStyleImage, getContextualAltKey } from '../constants/style-images';
 import AnimateOnScroll from './AnimateOnScroll';
 import FAQSection from './FAQSection';
 import Icon from './Icon';
 import AnimatedCounter from './AnimatedCounter';
 import TestimonialsSection from './TestimonialsSection';
 import LeadCaptureModal from './shared/LeadCaptureModal';
+import OptimizedImage from './OptimizedImage';
+
+// Category images mapping - Enterprise optimized (AVIF/WebP/JPEG srcsets)
+// Uses local images with responsive breakpoints for optimal performance
+const CATEGORY_IMAGES: Record<string, string> = {
+  contemporary: '/images/categories/img/danza',
+  urban: '/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona',
+  latin: '/images/categories/img/salsa-bachata',
+  fitness: '/images/categories/img/fitness',
+};
 
 const DanceClassesPage: React.FC = () => {
   const { t, locale } = useI18n();
@@ -213,7 +224,7 @@ const DanceClassesPage: React.FC = () => {
               </p>
             </AnimateOnScroll>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {HUB_CATEGORIES.map((category, index) => (
                 <AnimateOnScroll key={category.key} delay={index * 100} className="h-full">
                   <article
@@ -224,16 +235,18 @@ const DanceClassesPage: React.FC = () => {
                       to={`/${locale}${category.pillarUrl}`}
                       className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col"
                     >
-                      {/* Image Section - Top half */}
+                      {/* Image Section - Top half - Enterprise Optimized */}
                       <div className="relative h-48 overflow-hidden flex-shrink-0">
-                        <img
-                          src={category.imageUrl}
+                        <OptimizedImage
+                          src={CATEGORY_IMAGES[category.key] || category.imageUrl}
                           alt={`${t(category.titleKey)} - Clases en Barcelona`}
-                          width="800"
-                          height="600"
-                          className="w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110 opacity-60 group-hover:opacity-80"
-                          loading={index < 3 ? 'eager' : 'lazy'}
-                          decoding="async"
+                          aspectRatio="4/3"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          priority={index < 2 ? 'high' : 'low'}
+                          className="w-full h-full transition-all duration-500 ease-in-out group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                          placeholder="color"
+                          placeholderColor="#111"
+                          breakpoints={[320, 640, 768, 1024]}
                         />
                         {/* Gradient overlay on image */}
                         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
@@ -432,64 +445,55 @@ const DanceClassesPage: React.FC = () => {
               </p>
             </AnimateOnScroll>
 
-            {/* Grid of Featured Styles with Descriptions */}
+            {/* Grid of Featured Styles with Descriptions - Enterprise OptimizedImage */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {FEATURED_STYLES.map((style, index) => (
-                <AnimateOnScroll key={style.key} delay={index * 50}>
-                  <Link
-                    to={`/${locale}${style.url}`}
-                    className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col"
-                  >
-                    {/* Image Section - Top */}
-                    <div className="relative h-48 overflow-hidden flex-shrink-0">
-                      <img
-                        src={
-                          style.key === 'afro_contemporaneo' ||
-                          style.key === 'afro_jazz' ||
-                          style.key === 'ballet_clasico' ||
-                          style.key === 'danza_contemporanea'
-                            ? 'https://images.unsplash.com/photo-1535525153412-5a42439a210d?w=800&h=600&fit=crop&q=80&auto=format'
-                            : style.key === 'femmology_heels' ||
-                                style.key === 'dancehall' ||
-                                style.key === 'hip_hop' ||
-                                style.key === 'sexy_reggaeton' ||
-                                style.key === 'sexy_style' ||
-                                style.key === 'afrobeat'
-                              ? 'https://images.unsplash.com/photo-1547153760-18fc9c88c1c8?w=800&h=600&fit=crop&q=80&auto=format'
-                              : style.key === 'salsa_cubana' || style.key === 'bachata'
-                                ? 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800&h=600&fit=crop&q=80&auto=format'
-                                : 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&h=600&fit=crop&q=80&auto=format'
-                        }
-                        alt={`${t(`danceClassesHub_style_${style.key}`)} - Clases en Barcelona`}
-                        width="800"
-                        height="600"
-                        className="w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110 opacity-60 group-hover:opacity-80"
-                        loading={index < 6 ? 'eager' : 'lazy'}
-                        decoding="async"
-                      />
-                      {/* Gradient overlay on image */}
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
-                    </div>
-
-                    {/* Text Content - Always visible */}
-                    <div className="p-6 space-y-3 flex-grow flex flex-col">
-                      <h3 className="text-2xl font-bold text-white group-hover:text-primary-accent transition-colors duration-300">
-                        {t(`danceClassesHub_style_${style.key}`)}
-                      </h3>
-
-                      {/* SEO Description - Always visible */}
-                      <p className="text-neutral/90 text-sm leading-relaxed flex-grow">
-                        {t(`danceClassesHub_style_${style.key}_desc`)}
-                      </p>
-
-                      {/* CTA Link */}
-                      <div className="pt-2 text-primary-accent font-bold text-sm flex items-center group-hover:translate-x-1 transition-transform duration-300">
-                        Ver clase →
+              {FEATURED_STYLES.map((style, index) => {
+                const styleImage = getStyleImage(style.key);
+                return (
+                  <AnimateOnScroll key={style.key} delay={index * 50}>
+                    <Link
+                      to={`/${locale}${style.url}`}
+                      className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out hover:shadow-accent-glow hover:scale-105 border border-white/10 hover:border-primary-accent flex flex-col"
+                    >
+                      {/* Image Section - Enterprise OptimizedImage with contextual alt */}
+                      <div className="relative h-48 overflow-hidden flex-shrink-0">
+                        <OptimizedImage
+                          src={styleImage.basePath}
+                          altKey={getContextualAltKey(style.key, 'hub')}
+                          altFallback={styleImage.fallbackAlt}
+                          aspectRatio="4/3"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          priority={index < 3 ? 'high' : 'low'}
+                          breakpoints={styleImage.breakpoints}
+                          formats={styleImage.formats}
+                          className="w-full h-full transition-all duration-500 ease-in-out group-hover:scale-110 opacity-60 group-hover:opacity-80"
+                          placeholder="color"
+                          placeholderColor="#111"
+                        />
+                        {/* Gradient overlay on image */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
                       </div>
-                    </div>
-                  </Link>
-                </AnimateOnScroll>
-              ))}
+
+                      {/* Text Content - Always visible */}
+                      <div className="p-6 space-y-3 flex-grow flex flex-col">
+                        <h3 className="text-2xl font-bold text-white group-hover:text-primary-accent transition-colors duration-300">
+                          {t(`danceClassesHub_style_${style.key}`)}
+                        </h3>
+
+                        {/* SEO Description - Always visible */}
+                        <p className="text-neutral/90 text-sm leading-relaxed flex-grow">
+                          {t(`danceClassesHub_style_${style.key}_desc`)}
+                        </p>
+
+                        {/* CTA Link */}
+                        <div className="pt-2 text-primary-accent font-bold text-sm flex items-center group-hover:translate-x-1 transition-transform duration-300">
+                          Ver clase →
+                        </div>
+                      </div>
+                    </Link>
+                  </AnimateOnScroll>
+                );
+              })}
             </div>
           </div>
         </section>

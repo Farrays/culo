@@ -62,9 +62,9 @@ export const BALLET_SCHEDULE_KEYS = [
   {
     id: '1',
     dayKey: 'monday',
-    className: 'Ballet Intermedio',
+    className: 'Ballet Clásico Intermedio',
     time: '20:00 - 21:00',
-    teacher: 'Daniel Sene',
+    teacher: 'Daniel Sené',
     levelKey: 'intermediateLevel',
   },
   {

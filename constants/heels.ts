@@ -2,17 +2,30 @@ import { GOOGLE_REVIEWS_TESTIMONIALS } from './testimonials';
 import type { Testimonial } from '../types';
 import type { FAQ } from '../components/templates/ClassPageTemplate';
 
-// Heels styles for the hub page
-export const HEELS_STYLES = [
+// Heels style card configuration - Enterprise format for OptimizedImage
+export interface HeelsStyleConfig {
+  key: string;
+  url: string;
+  basePath: string;
+  altKey: string;
+  fallbackAlt: string;
+}
+
+// Heels styles for the hub page - Enterprise OptimizedImage format
+export const HEELS_STYLES: HeelsStyleConfig[] = [
   {
     key: 'femmology',
     url: '/clases/femmology',
-    imageUrl: '/images/classes/heels/femmology.webp',
+    basePath: '/images/classes/femmology/img/clases-de-femmology-barcelona',
+    altKey: 'styleImages.femmology.cardHub',
+    fallbackAlt: 'Clases de Femmology en Barcelona - Baile en tacones con Yunaisy Farray',
   },
   {
     key: 'sexy_style',
     url: '/clases/sexy-style-barcelona',
-    imageUrl: '/images/classes/heels/sexy-style.webp',
+    basePath: '/images/classes/sexy-style/img/clases-de-sexy-style-barcelona',
+    altKey: 'styleImages.sexyStyle.cardHub',
+    fallbackAlt: 'Clases de Sexy Style en Barcelona - Sensualidad y expresión corporal',
   },
 ];
 

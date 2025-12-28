@@ -58,9 +58,9 @@ export const DANCEHALL_SCHEDULE_KEYS = [
   {
     id: '1',
     dayKey: 'monday',
-    className: 'Dancehall Female Principiantes',
+    className: 'Dancehall Principiantes',
     time: '22:00 - 23:00',
-    teacher: 'Sandra Gómez',
+    teacher: 'Isa López',
     levelKey: 'beginnerLevel',
   },
   {
@@ -68,7 +68,7 @@ export const DANCEHALL_SCHEDULE_KEYS = [
     dayKey: 'wednesday',
     className: 'Dancehall Female Principiantes',
     time: '12:00 - 13:00',
-    teacher: 'Isabel López',
+    teacher: 'Isa López',
     levelKey: 'beginnerLevel',
   },
   {
@@ -76,7 +76,7 @@ export const DANCEHALL_SCHEDULE_KEYS = [
     dayKey: 'wednesday',
     className: 'Dancehall Twerk Intermedio',
     time: '21:00 - 22:00',
-    teacher: 'Isabel López',
+    teacher: 'Isa López',
     levelKey: 'intermediateLevel',
   },
   {
@@ -84,13 +84,13 @@ export const DANCEHALL_SCHEDULE_KEYS = [
     dayKey: 'thursday',
     className: 'Dancehall Female Principiantes',
     time: '21:00 - 22:00',
-    teacher: 'Isabel López',
+    teacher: 'Isa López',
     levelKey: 'beginnerLevel',
   },
   {
     id: '5',
     dayKey: 'thursday',
-    className: 'Dancehall Female Básico',
+    className: 'Dancehall Básico',
     time: '22:00 - 23:00',
     teacher: 'Sandra Gómez',
     levelKey: 'basicLevel',
@@ -100,7 +100,15 @@ export const DANCEHALL_SCHEDULE_KEYS = [
     dayKey: 'friday',
     className: 'Dancehall Twerk Principiantes',
     time: '18:00 - 19:00',
-    teacher: 'Isabel López',
+    teacher: 'Isa López',
+    levelKey: 'beginnerLevel',
+  },
+  {
+    id: '7',
+    dayKey: 'friday',
+    className: 'Dancehall Female Principiantes',
+    time: '19:00 - 20:00',
+    teacher: 'Isa López',
     levelKey: 'beginnerLevel',
   },
 ];

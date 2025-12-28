@@ -82,26 +82,18 @@ export const CONTEMPORANEO_SCHEDULE_KEYS = [
   {
     id: '4',
     dayKey: 'wednesday',
-    className: 'Contemporáneo Suelo & Flow',
-    time: '18:00 - 19:00',
-    teacher: 'Alejandro Miñoso',
-    levelKey: 'basicIntermediateLevel',
-  },
-  {
-    id: '5',
-    dayKey: 'wednesday',
     className: 'Contemporáneo Lírico Intermedio',
     time: '20:00 - 21:00',
     teacher: 'Daniel Sené',
     levelKey: 'intermediateLevel',
   },
   {
-    id: '6',
+    id: '5',
     dayKey: 'thursday',
-    className: 'Contemporáneo Lírico Básico',
+    className: 'Contemporáneo Lírico Principiantes',
     time: '18:00 - 19:00',
     teacher: 'Daniel Sené',
-    levelKey: 'basicLevel',
+    levelKey: 'beginnerLevel',
   },
 ];
 

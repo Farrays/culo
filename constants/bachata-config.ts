@@ -89,6 +89,14 @@ export const BACHATA_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
+    // Enterprise OptimizedImage config (AVIF/WebP/JPG, 6 breakpoints)
+    optimizedImage: {
+      basePath: '/images/classes/Bachata/img/clases-bachata-sensual-barcelona',
+      altKey: 'styleImages.bachata.hero',
+      alt: "Pareja bailando bachata sensual en clase de Barcelona - conexión, ondulaciones y técnica profesional en Farray's Center",
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
+    },
   },
 
   identificationSection: {
@@ -172,4 +180,27 @@ export const BACHATA_PAGE_CONFIG: FullDanceClassConfig = {
       knowsAbout: ['Bachata Sensual', 'Bachata para principiantes'],
     },
   ],
+
+  // === RELATED CLASSES (internal linking) ===
+  // Bachata -> Salsa Cubana, Timba, Salsa Lady Style
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'salsa-cubana-barcelona',
+        nameKey: 'relatedSalsaCubanaName',
+        descriptionKey: 'relatedSalsaCubanaDesc',
+      },
+      {
+        slug: 'timba-barcelona',
+        nameKey: 'relatedTimbaName',
+        descriptionKey: 'relatedTimbaDesc',
+      },
+      {
+        slug: 'salsa-lady-style-barcelona',
+        nameKey: 'relatedSalsaLadyStyleName',
+        descriptionKey: 'relatedSalsaLadyStyleDesc',
+      },
+    ],
+  },
 };

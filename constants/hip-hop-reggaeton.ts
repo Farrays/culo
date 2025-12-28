@@ -73,26 +73,18 @@ export const HIP_HOP_REGGAETON_SCHEDULE_KEYS = [
   {
     id: '3',
     dayKey: 'wednesday',
-    className: 'Hip Hop Reggaeton Básico',
-    time: '18:00 - 19:00',
-    teacher: 'Charlie Breezy',
-    levelKey: 'basicLevel',
-  },
-  {
-    id: '4',
-    dayKey: 'wednesday',
     className: 'Hip Hop Reggaeton Intermedio/Avanzado',
     time: '19:00 - 20:00',
     teacher: 'Charlie Breezy',
     levelKey: 'intermediateAdvancedLevel',
   },
   {
-    id: '5',
+    id: '4',
     dayKey: 'friday',
-    className: 'Hip Hop Reggaeton Básico',
-    time: '18:00 - 19:00',
+    className: 'Hip Hop Reggaeton Principiantes',
+    time: '19:00 - 20:00',
     teacher: 'Charlie Breezy',
-    levelKey: 'basicLevel',
+    levelKey: 'beginnerLevel',
   },
 ];
 

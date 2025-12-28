@@ -33,9 +33,9 @@ export const HOMEPAGE_V2_CONFIG = {
       badge: 'CID-UNESCO',
     },
     // Placeholder para video - cuando esté listo, cambiar a video URL
-    backgroundType: 'image' as const, // 'image' | 'video'
+    backgroundType: 'image' as 'image' | 'video',
     backgroundImage: '/images/hero-bg.jpg',
-    backgroundVideo: null, // '/videos/hero-loop.mp4' cuando esté listo
+    backgroundVideo: null as string | null, // '/videos/hero-loop.mp4' cuando esté listo
   },
 
   // Founder Section (Pattern Interrupt)
