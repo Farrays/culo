@@ -1,0 +1,601 @@
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import { useI18n } from '../hooks/useI18n';
+import Breadcrumb from './shared/Breadcrumb';
+import AnimateOnScroll from './AnimateOnScroll';
+import LeadCaptureModal from './shared/LeadCaptureModal';
+
+// Iconos para los pilares
+const PillarIcons: Record<string, React.FC<{ className?: string }>> = {
+  discipline: ({ className }) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+      />
+    </svg>
+  ),
+  rhythm: ({ className }) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
+      />
+    </svg>
+  ),
+  innovation: ({ className }) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="M13 10V3L4 14h7v7l9-11h-7z"
+      />
+    </svg>
+  ),
+};
+
+const MetodoFarrayPage: React.FC = () => {
+  const { t, locale } = useI18n();
+  const baseUrl = 'https://www.farrayscenter.com';
+  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
+
+  // Schema Markup - BreadcrumbList
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: t('metodoFarray_breadcrumb_home'),
+        item: `${baseUrl}/${locale}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: t('metodoFarray_breadcrumb_current'),
+        item: `${baseUrl}/${locale}/metodo-farray`,
+      },
+    ],
+  };
+
+  // Schema Markup - Course
+  const courseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'Método Farray',
+    description: t('metodoFarray_meta_description'),
+    provider: {
+      '@type': 'EducationalOrganization',
+      name: "Farray's International Dance Center",
+      sameAs: 'https://www.farrayscenter.com',
+    },
+    educationalCredentialAwarded: 'Certificación CID-UNESCO',
+    teaches: [
+      'Disciplina y técnica de baile',
+      'Ritmos afrodescendientes',
+      'Fusión de estilos internacionales',
+    ],
+  };
+
+  const breadcrumbItems = [
+    { name: t('metodoFarray_breadcrumb_home'), url: `/${locale}` },
+    {
+      name: t('metodoFarray_breadcrumb_current'),
+      url: `/${locale}/metodo-farray`,
+      isActive: true,
+    },
+  ];
+
+  const pillars = [
+    {
+      icon: 'discipline',
+      titleKey: 'metodoFarray_pillar1_title',
+      descKey: 'metodoFarray_pillar1_desc',
+      originKey: 'metodoFarray_pillar1_origin',
+    },
+    {
+      icon: 'rhythm',
+      titleKey: 'metodoFarray_pillar2_title',
+      descKey: 'metodoFarray_pillar2_desc',
+      originKey: 'metodoFarray_pillar2_origin',
+    },
+    {
+      icon: 'innovation',
+      titleKey: 'metodoFarray_pillar3_title',
+      descKey: 'metodoFarray_pillar3_desc',
+      originKey: 'metodoFarray_pillar3_origin',
+    },
+  ];
+
+  return (
+    <>
+      <Helmet>
+        <title>{t('metodoFarray_page_title')} | Farray&apos;s Center</title>
+        <meta name="description" content={t('metodoFarray_meta_description')} />
+        <link rel="canonical" href={`${baseUrl}/${locale}/metodo-farray`} />
+        <meta
+          property="og:title"
+          content={`${t('metodoFarray_page_title')} | Farray&apos;s Center`}
+        />
+        <meta property="og:description" content={t('metodoFarray_meta_description')} />
+        <meta property="og:url" content={`${baseUrl}/${locale}/metodo-farray`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${baseUrl}/images/og-yunaisy-farray.jpg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${t('metodoFarray_page_title')} | Farray's Center`} />
+        <meta name="twitter:description" content={t('metodoFarray_meta_description')} />
+        <meta name="twitter:image" content={`${baseUrl}/images/og-yunaisy-farray.jpg`} />
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(courseSchema)}</script>
+      </Helmet>
+
+      <div className="pt-16 md:pt-20">
+        {/* SECCIÓN 1: HERO PREMIUM */}
+        <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
+          {/* Background con gradient premium */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/40 via-black to-primary-dark/20" />
+
+          {/* Textura stardust */}
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30" />
+
+          {/* Glow decorativo */}
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary-accent/20 rounded-full blur-[150px] pointer-events-none" />
+
+          <div className="relative z-20 container mx-auto px-4 sm:px-6 text-center">
+            <AnimateOnScroll>
+              <Breadcrumb items={breadcrumbItems} textColor="text-neutral/60" />
+            </AnimateOnScroll>
+
+            <AnimateOnScroll delay={100}>
+              <span className="inline-block px-4 py-2 bg-primary-accent/20 backdrop-blur-sm text-primary-accent rounded-full text-xs sm:text-sm font-semibold mb-6 border border-primary-accent/30">
+                {t('metodoFarray_hero_badge')}
+              </span>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll delay={200}>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-tight mb-6 holographic-text">
+                {t('metodoFarray_hero_title')}
+              </h1>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll delay={300}>
+              <p className="max-w-3xl mx-auto text-base sm:text-lg md:text-xl lg:text-2xl text-neutral/90 leading-relaxed px-4">
+                {t('metodoFarray_hero_subtitle')}
+              </p>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll delay={400}>
+              <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                  onClick={() => setIsLeadModalOpen(true)}
+                  className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-base sm:text-lg py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
+                >
+                  {t('metodoFarray_cta_button')}
+                </button>
+              </div>
+            </AnimateOnScroll>
+          </div>
+
+          {/* Scroll indicator */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-subtle-bob">
+            <svg
+              className="w-6 h-6 text-neutral/50"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+          </div>
+        </section>
+
+        {/* SECCIÓN 2: EL PROBLEMA */}
+        <section className="py-12 md:py-16 bg-gradient-to-b from-black via-red-950/10 to-black">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="max-w-4xl mx-auto">
+              <AnimateOnScroll>
+                <div className="group bg-black/70 backdrop-blur-xl border border-red-500/30 hover:border-red-500/50 rounded-2xl p-6 sm:p-8 md:p-12 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)] hover:shadow-[0_0_30px_rgba(239,68,68,0.3)]">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-neutral mb-6">
+                    {t('metodoFarray_problem_title')}
+                  </h2>
+                  <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-neutral/90">
+                    <p>{t('metodoFarray_problem_p1')}</p>
+                    <p className="font-semibold text-red-400">{t('metodoFarray_problem_p2')}</p>
+                    <ul className="space-y-3 mt-6">
+                      {[1, 2, 3].map(i => (
+                        <li key={i} className="flex items-start gap-3">
+                          <span className="flex-shrink-0 w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center mt-0.5">
+                            <svg
+                              className="w-4 h-4 text-red-400"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M6 18L18 6M6 6l12 12"
+                              />
+                            </svg>
+                          </span>
+                          <span>{t(`metodoFarray_problem_point${i}`)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+            </div>
+          </div>
+        </section>
+
+        {/* SECCIÓN 3: LA SOLUCIÓN */}
+        <section className="py-12 md:py-16 bg-black">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="max-w-4xl mx-auto">
+              <AnimateOnScroll>
+                <div className="group relative bg-black/70 backdrop-blur-xl border border-primary-accent/50 rounded-2xl p-6 sm:p-8 md:p-12 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)] hover:shadow-accent-glow overflow-hidden">
+                  {/* Glow decoration */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl bg-primary-accent/10 pointer-events-none" />
+
+                  <div className="relative z-10">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-neutral mb-6 holographic-text">
+                      {t('metodoFarray_solution_title')}
+                    </h2>
+                    <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-neutral/90">
+                      <p className="text-lg sm:text-xl md:text-2xl font-bold text-primary-accent">
+                        {t('metodoFarray_solution_tagline')}
+                      </p>
+                      <p>{t('metodoFarray_solution_p1')}</p>
+                      <p>{t('metodoFarray_solution_p2')}</p>
+                    </div>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+            </div>
+          </div>
+        </section>
+
+        {/* SECCIÓN 4: LOS 3 PILARES - Con perspectiva 3D */}
+        <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-black via-primary-dark/10 to-black">
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-8 md:mb-10">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-neutral mb-4 holographic-text">
+                  {t('metodoFarray_pillars_title')}
+                </h2>
+                <p className="text-base sm:text-lg text-neutral/80 max-w-2xl mx-auto px-4">
+                  {t('metodoFarray_pillars_subtitle')}
+                </p>
+              </div>
+            </AnimateOnScroll>
+
+            {/* Grid con perspectiva 3D */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 [perspective:1000px]">
+              {pillars.map((pillar, index) => {
+                const IconComponent = PillarIcons[pillar.icon];
+                return (
+                  <AnimateOnScroll key={pillar.titleKey} delay={100 + index * 150}>
+                    <div className="group h-full min-h-[280px] sm:min-h-[320px] p-6 sm:p-8 bg-black/70 backdrop-blur-xl border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.75rem)_rotateY(5deg)_rotateX(2deg)] hover:shadow-accent-glow relative overflow-hidden">
+                      {/* Glow effect decorativo */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-xl bg-primary-accent/15 pointer-events-none" />
+
+                      <div className="relative z-10 flex flex-col h-full">
+                        {/* Icono */}
+                        <div className="mb-6">
+                          <div className="bg-primary-dark/40 group-hover:bg-primary-accent/30 p-4 rounded-xl inline-block shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
+                            {IconComponent && (
+                              <IconComponent className="h-8 w-8 sm:h-10 sm:w-10 text-primary-accent transition-all duration-500 group-hover:scale-110" />
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Título */}
+                        <h4 className="text-xl sm:text-2xl font-bold mb-4 text-neutral group-hover:text-white transition-colors duration-300">
+                          {t(pillar.titleKey)}
+                        </h4>
+
+                        {/* Descripción */}
+                        <p className="text-sm sm:text-base text-neutral/90 leading-relaxed flex-grow">
+                          {t(pillar.descKey)}
+                        </p>
+
+                        {/* Origen */}
+                        <p className="text-xs sm:text-sm text-primary-accent/70 mt-4 pt-4 border-t border-primary-dark/30 italic">
+                          {t(pillar.originKey)}
+                        </p>
+                      </div>
+                    </div>
+                  </AnimateOnScroll>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* SECCIÓN 5: COMPARATIVA PREMIUM */}
+        <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-black via-primary-dark/5 to-black">
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-8 md:mb-10 max-w-3xl mx-auto">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-neutral mb-4 holographic-text">
+                  {t('metodoFarray_comparison_title')}
+                </h2>
+                <p className="text-base sm:text-lg text-neutral/90 px-4">
+                  {t('metodoFarray_comparison_subtitle')}
+                </p>
+              </div>
+            </AnimateOnScroll>
+
+            {/* Grid comparativo con perspectiva */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 [perspective:1000px]">
+              {/* Academia Típica */}
+              <AnimateOnScroll delay={100}>
+                <div className="group relative h-full bg-black/70 backdrop-blur-xl border border-red-500/30 hover:border-red-500/50 rounded-2xl p-6 sm:p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_rotateY(-3deg)]">
+                  {/* Red glow decoration */}
+                  <div className="absolute -inset-1 bg-gradient-to-r from-red-500/10 to-red-600/10 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity" />
+
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-6 sm:mb-8">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-red-500/20 flex items-center justify-center">
+                        <svg
+                          className="w-5 h-5 sm:w-6 sm:h-6 text-red-400"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-neutral/70">
+                        {t('metodoFarray_comparison_others_title')}
+                      </h3>
+                    </div>
+                    <ul className="space-y-3 sm:space-y-4">
+                      {[1, 2, 3, 4, 5, 6].map(i => (
+                        <li key={i} className="flex items-start gap-3">
+                          <span
+                            className="flex-shrink-0 w-5 h-5 rounded-full bg-red-500/20 flex items-center justify-center mt-0.5"
+                            aria-hidden="true"
+                          >
+                            <svg
+                              className="w-3 h-3 text-red-400"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={3}
+                                d="M6 18L18 6M6 6l12 12"
+                              />
+                            </svg>
+                          </span>
+                          <span className="text-sm sm:text-base text-neutral/70">
+                            {t(`metodoFarray_comparison_others_${i}`)}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+
+              {/* Método Farray */}
+              <AnimateOnScroll delay={200}>
+                <div className="group relative h-full bg-black/70 backdrop-blur-xl border border-primary-accent/50 hover:border-primary-accent rounded-2xl p-6 sm:p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_rotateY(3deg)] hover:shadow-accent-glow">
+                  {/* Accent glow decoration */}
+                  <div className="absolute -inset-1 bg-gradient-to-r from-primary-accent/20 to-green-500/20 rounded-3xl blur-xl opacity-50 group-hover:opacity-80 transition-opacity" />
+
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-6 sm:mb-8">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-accent/20 flex items-center justify-center">
+                        <svg
+                          className="w-5 h-5 sm:w-6 sm:h-6 text-primary-accent"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-bold text-neutral holographic-text">
+                        {t('metodoFarray_comparison_us_title')}
+                      </h3>
+                    </div>
+                    <ul className="space-y-3 sm:space-y-4">
+                      {[1, 2, 3, 4, 5, 6].map(i => (
+                        <li key={i} className="flex items-start gap-3">
+                          <span
+                            className="flex-shrink-0 w-5 h-5 rounded-full bg-primary-accent/20 flex items-center justify-center mt-0.5"
+                            aria-hidden="true"
+                          >
+                            <svg
+                              className="w-3 h-3 text-primary-accent"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={3}
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                          </span>
+                          <span className="text-sm sm:text-base text-neutral font-medium">
+                            {t(`metodoFarray_comparison_us_${i}`)}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+            </div>
+          </div>
+        </section>
+
+        {/* SECCIÓN 6: RESULTADOS CON STATS GRANDES */}
+        <section className="py-12 md:py-16 lg:py-20 bg-black">
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-8 md:mb-10">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-neutral mb-4 holographic-text">
+                  {t('metodoFarray_results_title')}
+                </h2>
+              </div>
+            </AnimateOnScroll>
+
+            {/* Stats Grid con diseño premium */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 md:mb-10 [perspective:1000px]">
+              {[
+                { value: '15000+', key: 'students' },
+                { value: '15+', key: 'years' },
+                { value: '4.9', key: 'rating' },
+                { value: '25+', key: 'styles' },
+              ].map((stat, index) => (
+                <AnimateOnScroll key={stat.key} delay={100 + index * 100}>
+                  <div className="group text-center p-4 sm:p-6 bg-black/70 backdrop-blur-xl border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)] hover:shadow-accent-glow">
+                    <div className="text-3xl sm:text-4xl md:text-5xl font-black mb-2 transition-transform duration-300 group-hover:scale-110 holographic-text">
+                      {stat.value}
+                    </div>
+                    <div className="text-xs sm:text-sm text-neutral/70">
+                      {t(`metodoFarray_stats_${stat.key}`)}
+                    </div>
+                  </div>
+                </AnimateOnScroll>
+              ))}
+            </div>
+
+            {/* Quote destacado con diseño premium */}
+            <AnimateOnScroll delay={500}>
+              <div className="max-w-3xl mx-auto relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary-accent/20 via-primary-dark/20 to-primary-accent/20 rounded-2xl blur-xl opacity-50" />
+                <div className="relative bg-black/70 backdrop-blur-xl p-6 sm:p-8 md:p-10 border-l-4 border-primary-accent rounded-r-2xl">
+                  <svg
+                    className="w-8 h-8 sm:w-10 sm:h-10 text-primary-accent/30 mb-4"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                  <p className="text-lg sm:text-xl md:text-2xl italic text-neutral mb-4 leading-relaxed">
+                    {t('metodoFarray_featured_quote')}
+                  </p>
+                  <p className="text-primary-accent font-bold text-sm sm:text-base">
+                    {t('metodoFarray_featured_quote_author')}
+                  </p>
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* SECCIÓN 7: QUIÉN LO ENSEÑA */}
+        <section className="py-12 md:py-16 bg-gradient-to-b from-black via-primary-dark/10 to-black">
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="text-center mb-8 md:mb-12">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-neutral mb-4 holographic-text">
+                  {t('metodoFarray_teachers_title')}
+                </h2>
+                <p className="text-base sm:text-lg text-neutral/80 max-w-2xl mx-auto px-4">
+                  {t('metodoFarray_teachers_subtitle')}
+                </p>
+              </div>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll delay={100}>
+              <div className="max-w-2xl mx-auto text-center bg-black/50 backdrop-blur-xl border border-primary-dark/50 rounded-2xl p-6 sm:p-8 transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow">
+                <p className="text-sm sm:text-base text-neutral/90 mb-6">
+                  {t('metodoFarray_teachers_text')}
+                </p>
+                <Link
+                  to={`/${locale}/yunaisy-farray`}
+                  className="inline-flex items-center gap-2 text-primary-accent hover:text-white transition-all duration-300 font-semibold group"
+                >
+                  <span>{t('metodoFarray_teachers_cta')}</span>
+                  <span className="inline-block transition-transform duration-300 group-hover:translate-x-2">
+                    →
+                  </span>
+                </Link>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
+        {/* SECCIÓN 8: CTA FINAL PREMIUM */}
+        <section className="relative py-16 md:py-20 overflow-hidden">
+          {/* Background con gradient premium */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/40 via-black to-primary-dark/30" />
+
+          {/* Textura */}
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20" />
+
+          {/* Glow central */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary-accent/15 rounded-full blur-[120px] pointer-events-none" />
+
+          <div className="relative z-20 container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="max-w-3xl mx-auto text-center">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-neutral mb-6 holographic-text">
+                  {t('metodoFarray_cta_title')}
+                </h2>
+                <p className="text-base sm:text-lg md:text-xl text-neutral/90 mb-8 md:mb-10 px-4">
+                  {t('metodoFarray_cta_subtitle')}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button
+                    onClick={() => setIsLeadModalOpen(true)}
+                    className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-base sm:text-lg py-4 px-8 sm:px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
+                  >
+                    {t('metodoFarray_cta_button')}
+                  </button>
+                  <Link
+                    to={`/${locale}/clases/baile-barcelona`}
+                    className="inline-flex items-center justify-center bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-base sm:text-lg py-4 px-8 sm:px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white"
+                  >
+                    {t('metodoFarray_cta_secondary')}
+                  </Link>
+                </div>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+      </div>
+
+      {/* Lead Capture Modal */}
+      <LeadCaptureModal isOpen={isLeadModalOpen} onClose={() => setIsLeadModalOpen(false)} />
+    </>
+  );
+};
+
+export default MetodoFarrayPage;
