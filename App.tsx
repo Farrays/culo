@@ -79,7 +79,8 @@ const CalendarPage = lazy(() => import('./components/CalendarPage'));
 const HomePageV2 = lazy(() => import('./components/HomePageV2'));
 
 // ===== LANDING PAGES =====
-const GenericDanceLanding = lazy(() => import('./components/landing/GenericDanceLanding'));
+// NOTE: Import normal (not lazy) to avoid loading issues on landing pages
+import GenericDanceLanding from './components/landing/GenericDanceLanding';
 import { DANCEHALL_LANDING_CONFIG } from './constants/dancehall-landing-config';
 import { TWERK_LANDING_CONFIG } from './constants/twerk-landing-config';
 import { SEXY_REGGAETON_LANDING_CONFIG } from './constants/sexy-reggaeton-landing-config';
