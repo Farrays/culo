@@ -1,22 +1,17 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm ci && npm run build",
+  "installCommand": "npm ci",
   "outputDirectory": "dist",
   "framework": "vite",
   "cleanUrls": true,
   "trailingSlash": false,
+  "functions": {
+    "api/*.ts": {
+      "memory": 512,
+      "maxDuration": 10
+    }
+  },
   "rewrites": [
-    {
-      "source": "/assets/:path*",
-      "destination": "/assets/:path*"
-    },
-    {
-      "source": "/fonts/:path*",
-      "destination": "/fonts/:path*"
-    },
-    {
-      "source": "/images/:path*",
-      "destination": "/images/:path*"
-    },
     {
       "source": "/(.*)",
       "destination": "/index.html"
@@ -35,10 +30,6 @@
           "value": "SAMEORIGIN"
         },
         {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        },
-        {
           "key": "Referrer-Policy",
           "value": "strict-origin-when-cross-origin"
         },
@@ -51,17 +42,48 @@
           "value": "max-age=31536000; includeSubDomains; preload"
         },
         {
+          "key": "Vary",
+          "value": "Accept-Encoding"
+        },
+        {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'sha256-MhtPZXr7+LpJUY5qtMutB+qWfQtMaPccfe7QXtCcEYc=' 'sha256-rCzSmNCIl1NJWcHIEy6e0/vPauItKFYiBux17aVmE5E=' 'sha256-nLSiNfBCmVNw1A/3hLrEBVKH7Q5+lHqp2xUKBBXb8+A=' 'sha256-BalffTW4u/osO9GQA/t2ZTaYxty5CtvcccqT8ivwwIo=' 'sha256-A+vzvg9FqpPRh5i4moEMXeidCBdCGgbzBuXy/94sUzk=' https://www.googletagmanager.com https://www.google-analytics.com https://browser.sentry-cdn.com https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://*.sentry.io https://www.google-analytics.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://browser.sentry-cdn.com https://www.youtube.com https://iframe.mediadelivery.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://*.sentry.io https://www.google-analytics.com https://*.bunny.net; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://iframe.mediadelivery.net; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; media-src 'self' https://*.bunny.net blob:;"
         }
       ]
     },
     {
-      "source": "/(.*)\\.(js|css|woff|woff2|ttf|otf|eot)",
+      "source": "/assets/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(js|css|woff|woff2|ttf|otf|eot)$",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(avif|webp|jpg|jpeg|png|gif|svg|ico)$",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, stale-while-revalidate=86400"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.html$",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     }

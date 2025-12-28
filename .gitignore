@@ -25,8 +25,21 @@ npm-debug.log*
 # Raw images (source files, not needed in repo)
 public/images/**/raw/
 public/images/teachers/raw/
+
+# Lighthouse reports
 .lighthouseci/
+lighthouse-*.html
+
+# Claude local settings
 .claude/settings.local.json
 
+# Storybook
 *storybook.log
 storybook-static
+
+# Temporary analysis files
+missing_translations_*.json
+*.backup
+*.backup.ts
+cookies_*.txt
+nul

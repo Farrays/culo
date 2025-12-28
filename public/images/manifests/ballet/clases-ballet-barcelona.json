@@ -1,0 +1,74 @@
+{
+  "id": "clases-ballet-barcelona",
+  "className": "ballet",
+  "originalFile": "Clases-Ballet-Barcelona.jpg",
+  "original": {
+    "width": 750,
+    "height": 752,
+    "aspectRatio": "0.9973",
+    "format": "jpeg",
+    "space": "srgb",
+    "channels": 3,
+    "hasAlpha": false
+  },
+  "placeholder": {
+    "lqip": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAwAwCdASoUABQAPzGAs1O/qCSisAwD8CYJZwDCgDAbhRgAAP7H/rwv3Cbx8vPY5dG1gFCShgqqoAAA",
+    "dominantColor": "#6a6364",
+    "svg": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%236a6364%22%2F%3E%3C%2Fsvg%3E"
+  },
+  "basePath": "/images/classes/ballet/img/clases-ballet-barcelona",
+  "variants": [
+    {
+      "width": 320,
+      "height": 321,
+      "format": "jpg",
+      "path": "/images/classes/ballet/img/clases-ballet-barcelona_320.jpg",
+      "size": 19981
+    },
+    {
+      "width": 320,
+      "height": 321,
+      "format": "webp",
+      "path": "/images/classes/ballet/img/clases-ballet-barcelona_320.webp",
+      "size": 18844
+    },
+    {
+      "width": 640,
+      "height": 642,
+      "format": "jpg",
+      "path": "/images/classes/ballet/img/clases-ballet-barcelona_640.jpg",
+      "size": 66247
+    },
+    {
+      "width": 640,
+      "height": 642,
+      "format": "webp",
+      "path": "/images/classes/ballet/img/clases-ballet-barcelona_640.webp",
+      "size": 58918
+    },
+    {
+      "width": 320,
+      "height": 321,
+      "format": "avif",
+      "path": "/images/classes/ballet/img/clases-ballet-barcelona_320.avif",
+      "size": 20112
+    },
+    {
+      "width": 640,
+      "height": 642,
+      "format": "avif",
+      "path": "/images/classes/ballet/img/clases-ballet-barcelona_640.avif",
+      "size": 61310
+    }
+  ],
+  "srcSets": {
+    "avif": "/images/classes/ballet/img/clases-ballet-barcelona_320.avif 320w, /images/classes/ballet/img/clases-ballet-barcelona_640.avif 640w",
+    "webp": "/images/classes/ballet/img/clases-ballet-barcelona_320.webp 320w, /images/classes/ballet/img/clases-ballet-barcelona_640.webp 640w",
+    "jpeg": "/images/classes/ballet/img/clases-ballet-barcelona_320.jpg 320w, /images/classes/ballet/img/clases-ballet-barcelona_640.jpg 640w"
+  },
+  "defaultSrc": "/images/classes/ballet/img/clases-ballet-barcelona_320.jpg",
+  "generated": {
+    "at": "2025-12-27T01:55:39.841Z",
+    "version": "2.0.0"
+  }
+}
