@@ -4,6 +4,126 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+// =============================================================================
+// ENTERPRISE LANDING CONFIGURATION
+// =============================================================================
+// Single source of truth for all landing pages (Facebook Ads campaigns)
+// To add a new landing: just add the slug here, everything else is auto-generated
+
+const SUPPORTED_LOCALES = ['es', 'ca', 'en', 'fr'];
+
+const LANDING_SLUGS = [
+  'dancehall',
+  'twerk',
+  'sexy-reggaeton',
+  'sexy-style',
+  'hip-hop-reggaeton',
+  'contemporaneo',
+  'femmology',
+  'bachata',
+  'hip-hop',
+  'afrobeats',
+  'afro-jazz',
+  'salsa-cubana',
+  'ballet',
+  'afro-contemporaneo',
+];
+
+// Helper: convert slug to page key (e.g., 'sexy-reggaeton' -> 'sexyReggaetonLanding')
+const slugToPageKey = (slug) => {
+  const camelCase = slug.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+  return `${camelCase}Landing`;
+};
+
+// Auto-generate landing routes (14 slugs × 4 languages = 56 routes)
+const generateLandingRoutes = () =>
+  SUPPORTED_LOCALES.flatMap(lang =>
+    LANDING_SLUGS.map(slug => ({
+      path: `${lang}/${slug}`,
+      lang,
+      page: slugToPageKey(slug),
+    }))
+  );
+
+// Landing metadata templates per language
+const LANDING_META_TEMPLATES = {
+  es: {
+    titleTemplate: (name) => `Clase de ${name} GRATIS en Barcelona | Farray's Center`,
+    descTemplate: (name) => `Aprende ${name} en Barcelona con profesores expertos. Primera clase GRATIS. +15.000 alumnos satisfechos.`,
+  },
+  ca: {
+    titleTemplate: (name) => `Classe de ${name} GRATIS a Barcelona | Farray's Center`,
+    descTemplate: (name) => `Aprèn ${name} a Barcelona amb professors experts. Primera classe GRATIS. +15.000 alumnes satisfets.`,
+  },
+  en: {
+    titleTemplate: (name) => `FREE ${name} Class in Barcelona | Farray's Center`,
+    descTemplate: (name) => `Learn ${name} in Barcelona with expert instructors. First class FREE. +15,000 satisfied students.`,
+  },
+  fr: {
+    titleTemplate: (name) => `Cours de ${name} GRATUIT à Barcelone | Farray's Center`,
+    descTemplate: (name) => `Apprenez le ${name} à Barcelone avec des professeurs experts. Premier cours GRATUIT. +15 000 élèves satisfaits.`,
+  },
+};
+
+// Display names for each style per language
+const LANDING_DISPLAY_NAMES = {
+  'dancehall': { es: 'Dancehall', ca: 'Dancehall', en: 'Dancehall', fr: 'Dancehall' },
+  'twerk': { es: 'Twerk', ca: 'Twerk', en: 'Twerk', fr: 'Twerk' },
+  'sexy-reggaeton': { es: 'Sexy Reggaeton', ca: 'Sexy Reggaeton', en: 'Sexy Reggaeton', fr: 'Sexy Reggaeton' },
+  'sexy-style': { es: 'Sexy Style', ca: 'Sexy Style', en: 'Sexy Style', fr: 'Sexy Style' },
+  'hip-hop-reggaeton': { es: 'Hip Hop Reggaeton', ca: 'Hip Hop Reggaeton', en: 'Hip Hop Reggaeton', fr: 'Hip Hop Reggaeton' },
+  'contemporaneo': { es: 'Contemporáneo', ca: 'Contemporani', en: 'Contemporary Dance', fr: 'Danse Contemporaine' },
+  'femmology': { es: 'Femmology', ca: 'Femmology', en: 'Femmology', fr: 'Femmology' },
+  'bachata': { es: 'Bachata Sensual', ca: 'Bachata Sensual', en: 'Sensual Bachata', fr: 'Bachata Sensuelle' },
+  'hip-hop': { es: 'Hip Hop', ca: 'Hip Hop', en: 'Hip Hop', fr: 'Hip Hop' },
+  'afrobeats': { es: 'Afrobeats', ca: 'Afrobeats', en: 'Afrobeats', fr: 'Afrobeats' },
+  'afro-jazz': { es: 'Afro Jazz', ca: 'Afro Jazz', en: 'Afro Jazz', fr: 'Afro Jazz' },
+  'salsa-cubana': { es: 'Salsa Cubana', ca: 'Salsa Cubana', en: 'Cuban Salsa', fr: 'Salsa Cubaine' },
+  'ballet': { es: 'Ballet Clásico', ca: 'Ballet Clàssic', en: 'Classical Ballet', fr: 'Ballet Classique' },
+  'afro-contemporaneo': { es: 'Afro Contemporáneo', ca: 'Afro Contemporani', en: 'Afro Contemporary', fr: 'Afro Contemporain' },
+};
+
+// Auto-generate landing metadata for all languages
+const generateLandingMetadata = () => {
+  const result = {};
+  SUPPORTED_LOCALES.forEach(lang => {
+    result[lang] = {};
+    LANDING_SLUGS.forEach(slug => {
+      const pageKey = slugToPageKey(slug);
+      const displayName = LANDING_DISPLAY_NAMES[slug][lang];
+      const templates = LANDING_META_TEMPLATES[lang];
+      result[lang][pageKey] = {
+        title: templates.titleTemplate(displayName),
+        description: templates.descTemplate(displayName),
+        robots: 'noindex, nofollow',
+      };
+    });
+  });
+  return result;
+};
+
+// Auto-generate landing HTML content for SSG
+const generateLandingContent = () => {
+  const result = {};
+  SUPPORTED_LOCALES.forEach(lang => {
+    result[lang] = {};
+    LANDING_SLUGS.forEach(slug => {
+      const pageKey = slugToPageKey(slug);
+      const displayName = LANDING_DISPLAY_NAMES[slug][lang];
+      const templates = LANDING_META_TEMPLATES[lang];
+      result[lang][pageKey] = `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">${templates.titleTemplate(displayName)}</h1><p>${templates.descTemplate(displayName)}</p></main>`;
+    });
+  });
+  return result;
+};
+
+// Generate all landing data
+const LANDING_ROUTES = generateLandingRoutes();
+const LANDING_METADATA = generateLandingMetadata();
+const LANDING_CONTENT = generateLandingContent();
+
+// =============================================================================
+
 // All language/page combinations to prerender
 const routes = [
   { path: '', lang: 'es', page: 'home' },
@@ -183,6 +303,9 @@ const routes = [
   { path: 'ca/promo/sexy-reggaeton', lang: 'ca', page: 'promoSexyReggaeton' },
   { path: 'en/promo/sexy-reggaeton', lang: 'en', page: 'promoSexyReggaeton' },
   { path: 'fr/promo/sexy-reggaeton', lang: 'fr', page: 'promoSexyReggaeton' },
+
+  // Generic Dance Landing Pages (auto-generated from LANDING_SLUGS)
+  ...LANDING_ROUTES,
 ];
 
 // Metadata for each page in each language
@@ -354,6 +477,8 @@ const metadata = {
       description: 'Aprende a moverte al ritmo de reggaeton con sensualidad y confianza. Primera clase GRATIS. +15.000 alumnos, profesora experta.',
       robots: 'noindex, nofollow',
     },
+    // Generic Dance Landing Pages (auto-generated from LANDING_METADATA)
+    ...LANDING_METADATA.es,
   },
   ca: {
     home: {
@@ -522,6 +647,8 @@ const metadata = {
       description: 'Aprèn a moure\'t al ritme del reggaeton amb sensualitat i confiança. Primera classe GRATIS. +15.000 alumnes, professora experta.',
       robots: 'noindex, nofollow',
     },
+    // Generic Dance Landing Pages (auto-generated from LANDING_METADATA)
+    ...LANDING_METADATA.ca,
   },
   en: {
     home: {
@@ -690,6 +817,8 @@ const metadata = {
       description: 'Learn to move to reggaeton with sensuality and confidence. First class FREE. +15,000 students, expert instructor.',
       robots: 'noindex, nofollow',
     },
+    // Generic Dance Landing Pages (auto-generated from LANDING_METADATA)
+    ...LANDING_METADATA.en,
   },
   fr: {
     home: {
@@ -858,6 +987,8 @@ const metadata = {
       description: 'Apprenez à bouger au rythme du reggaeton avec sensualité et confiance. Premier cours GRATUIT. +15 000 élèves, professeure experte.',
       robots: 'noindex, nofollow',
     },
+    // Generic Dance Landing Pages (auto-generated from LANDING_METADATA)
+    ...LANDING_METADATA.fr,
   },
 };
 
@@ -998,6 +1129,8 @@ const initialContent = {
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Consejos para Bailar</h1><p>Guías prácticas y consejos para principiantes y bailarines de todos los niveles en Barcelona.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Clases de baile para principiantes en Barcelona: la guía definitiva</h1><p>Guía completa para empezar a bailar desde cero en Barcelona. Clase de bienvenida gratuita (promocional) o desde 10€. Participación puntual desde 20€.</p></article></main>`,
     baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Baile por las Mañanas en Barcelona</h1><p>13 clases semanales de 10h a 13h: Contemporáneo, Ballet, Modern Jazz, Sexy Style, Reggaeton y más. La actividad matinal que necesitabas para empezar el día con energía.</p></main>`,
+    // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
+    ...LANDING_CONTENT.es,
   },
   // Simplified content for other languages
   ca: {
@@ -1021,6 +1154,8 @@ const initialContent = {
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Consells per Ballar</h1><p>Guies pràctiques i consells per a principiants i balladors de tots els nivells a Barcelona.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Classes de ball per a principiants a Barcelona: la guia definitiva</h1><p>Guia completa per començar a ballar des de zero a Barcelona. Classe de benvinguda gratuïta (promocional) o des de 10€. Participació puntual des de 20€.</p></article></main>`,
     baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Ball pel Matí a Barcelona</h1><p>13 classes setmanals de 10h a 13h: Contemporani, Ballet, Modern Jazz, Sexy Style, Reggaeton i més. L'activitat matinal que necessitaves per començar el dia amb energia.</p></main>`,
+    // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
+    ...LANDING_CONTENT.ca,
   },
   en: {
     home: `<main id="main-content"><h1 class="holographic-text text-5xl font-extrabold">FarRays Center</h1><p class="text-xl">Urban dance school in Barcelona. Learn Dancehall and more.</p></main>`,
@@ -1043,6 +1178,8 @@ const initialContent = {
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Tips</h1><p>Practical guides and tips for beginners and dancers of all levels in Barcelona.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Beginner Dance Classes in Barcelona: The Complete Guide</h1><p>Complete guide to start dancing from scratch in Barcelona. Free welcome class (promotional) or from €10. One-time participation from €20.</p></article></main>`,
     baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Morning Dance Classes in Barcelona</h1><p>13 weekly classes from 10am to 1pm: Contemporary, Ballet, Modern Jazz, Sexy Style, Reggaeton and more. The morning activity you needed to start the day with energy.</p></main>`,
+    // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
+    ...LANDING_CONTENT.en,
   },
   fr: {
     home: `<main id="main-content"><h1 class="holographic-text text-5xl font-extrabold">FarRays Center</h1><p class="text-xl">École de danse urbaine à Barcelone. Apprenez le Dancehall et plus.</p></main>`,
@@ -1065,6 +1202,8 @@ const initialContent = {
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Conseils de Danse</h1><p>Guides pratiques et conseils pour débutants et danseurs de tous niveaux à Barcelone.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Cours de danse pour débutants à Barcelone : le guide complet</h1><p>Guide complet pour commencer à danser à Barcelone. Cours de bienvenue gratuit (promotionnel) ou dès 10€. Participation ponctuelle dès 20€.</p></article></main>`,
     baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Danse le Matin à Barcelone</h1><p>13 cours hebdomadaires de 10h à 13h : Contemporain, Ballet, Modern Jazz, Sexy Style, Reggaeton et plus. L'activité matinale dont vous aviez besoin pour commencer la journée avec énergie.</p></main>`,
+    // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
+    ...LANDING_CONTENT.fr,
   },
 };
 
@@ -1235,11 +1374,15 @@ routes.forEach(route => {
   html = html.replace(/<meta\s+property="og:[^"]*"[^>]*>/gi, '');
   // Remove Twitter Card tags
   html = html.replace(/<meta\s+(?:name|property)="twitter:[^"]*"[^>]*>/gi, '');
+  // Remove robots meta tag (will be replaced with page-specific value)
+  html = html.replace(/<meta\s+name="robots"[^>]*>/gi, '');
 
   // Inject metadata in <head>
+  const robotsContent = meta.robots || 'index, follow';
   html = html.replace('</head>', `
     <title>${meta.title}</title>
     <meta name="description" content="${meta.description}" />
+    <meta name="robots" content="${robotsContent}" />
     <link rel="canonical" href="${currentUrl}" />
     ${hreflangLinks}
 
@@ -1262,10 +1405,10 @@ ${preloadHintsHtml}
   </head>`);
 
   // Inject prerendered content in <div id="root">
-  // Use data-prerendered to mark for hydration compatibility
+  // Content MUST be inside the div for SSG to work (not as HTML comment)
   html = html.replace(
     '<div id="root"></div>',
-    `<div id="root" data-prerendered="true"></div><!--${content}-->`
+    `<div id="root" data-prerendered="true">${content}</div>`
   );
 
   // Determine file path
