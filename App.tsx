@@ -1033,10 +1033,7 @@ const AppContent: React.FC = () => {
             />
 
             {/* Redirects from old URLs to new SEO-friendly URLs */}
-            <Route
-              path="/:locale/dancehall"
-              element={<Navigate to={`/${locale}/clases/dancehall-barcelona`} replace />}
-            />
+            {/* NOTE: /:locale/dancehall is now a landing page (line ~845), not a redirect */}
             <Route
               path="/:locale/clases/dancehall-v2"
               element={<Navigate to={`/${locale}/clases/dancehall-barcelona`} replace />}
