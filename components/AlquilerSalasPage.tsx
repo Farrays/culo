@@ -218,7 +218,13 @@ const RoomGallery: React.FC<RoomGalleryProps> = ({ images, t, isFirstRoom = fals
     );
   }
 
-  const currentImage = images[currentIndex] ?? images[0];
+  // After the early return above, we know images has at least one element
+  const selectedImage = images[currentIndex] ?? images[0];
+  // Type guard ensures currentImage is always defined (we verified images.length > 0 above)
+  if (!selectedImage) {
+    return null;
+  }
+  const currentImage = selectedImage;
 
   // Swipe detection
   const minSwipeDistance = 50;
