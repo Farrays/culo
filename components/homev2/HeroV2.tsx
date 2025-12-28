@@ -63,7 +63,10 @@ const HeroV2: React.FC<HeroV2Props> = ({ config }) => {
         {/* Contenido */}
         <div className="relative z-10 text-center text-neutral px-6 max-w-5xl mx-auto">
           {/* Headline principal - Holographic */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-tight mb-4 min-h-[120px] md:min-h-[180px] flex flex-col items-center justify-center holographic-text">
+          <h1
+            className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-tight mb-4 min-h-[120px] md:min-h-[180px] flex flex-col items-center justify-center text-white"
+            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
+          >
             {t(config.headlineKey)}
             <br />
             <span className="text-3xl md:text-5xl lg:text-6xl opacity-90 font-bold tracking-normal">

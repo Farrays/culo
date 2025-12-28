@@ -81,7 +81,6 @@ export function getStoredUTMParams(): Record<string, string> {
 }
 
 let consentUpdated = false;
-let metaPixelLoaded = false;
 
 /**
  * Update GTM Consent Mode when user accepts cookies
@@ -117,68 +116,19 @@ export function loadGoogleAnalytics(): void {
   updateGTMConsent();
 }
 
-/**
- * Load Meta (Facebook) Pixel script
- * Only loads if user has given marketing consent
- */
-export function loadMetaPixel(): void {
-  if (metaPixelLoaded) return;
-  if (!hasConsentFor('marketing')) return;
-
-  const pixelId = import.meta.env['VITE_FACEBOOK_PIXEL_ID'];
-  if (!pixelId) {
-    // Meta Pixel is optional, don't warn if not configured
-    return;
-  }
-
-  // Meta Pixel initialization code
-  /* eslint-disable */
-  (function (f: Window, b: Document, e: string, v: string) {
-    let n: unknown;
-    let t: HTMLScriptElement;
-    let s: HTMLScriptElement | null;
-    if (f.fbq) return;
-    n = f.fbq = function (...args: unknown[]) {
-      if ((n as { callMethod?: (...a: unknown[]) => void }).callMethod) {
-        (n as { callMethod: (...a: unknown[]) => void }).callMethod(...args);
-      } else {
-        (n as { queue: unknown[] }).queue.push(args);
-      }
-    };
-    (n as { push: typeof Array.prototype.push }).push = (
-      n as { push: typeof Array.prototype.push }
-    ).push;
-    (n as { loaded: boolean }).loaded = true;
-    (n as { version: string }).version = '2.0';
-    (n as { queue: unknown[] }).queue = [];
-    t = b.createElement(e) as HTMLScriptElement;
-    t.async = true;
-    t.src = v;
-    s = b.getElementsByTagName(e)[0] as HTMLScriptElement | null;
-    s?.parentNode?.insertBefore(t, s);
-  })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-  /* eslint-enable */
-
-  if (window.fbq) {
-    window.fbq('init', pixelId);
-    window.fbq('track', 'PageView');
-  }
-
-  metaPixelLoaded = true;
-}
+// NOTE: Meta Pixel is now loaded exclusively via GTM (Google Tag Manager)
+// The loadMetaPixel() function has been removed to avoid duplicate pixel loading
+// GTM handles: pixel initialization, PageView tracking, and Lead events
+// Code still uses window.fbq for events not configured in GTM (Purchase, Schedule, etc.)
 
 /**
  * Initialize all analytics based on user consent
  * Call this after user gives consent or on page load if consent exists
+ * Note: Meta Pixel is loaded via GTM, not from code
  */
 export function initializeAnalytics(): void {
-  // Update GTM consent (GTM handles GA4)
+  // Update GTM consent (GTM handles GA4 and Meta Pixel)
   updateGTMConsent();
-
-  // Load Meta Pixel if marketing consent given
-  if (hasConsentFor('marketing')) {
-    loadMetaPixel();
-  }
 }
 
 /**
@@ -285,15 +235,8 @@ export function trackLeadConversion(params: {
     });
   }
 
-  // 3. Track in Meta Pixel with standard Lead event
-  if (hasConsentFor('marketing') && window.fbq) {
-    window.fbq('track', 'Lead', {
-      content_name: params.formName,
-      content_category: params.leadSource,
-      value: params.leadValue,
-      currency: 'EUR',
-    });
-  }
+  // NOTE: Meta Pixel Lead event is handled by GTM (listens to 'generate_lead' dataLayer event)
+  // Removed direct fbq('track', 'Lead') call to avoid duplicate events
 }
 
 /**
@@ -396,13 +339,8 @@ if (typeof window !== 'undefined') {
   window.addEventListener('cookieConsentChanged', event => {
     const preferences = (event as CustomEvent).detail;
 
-    // Update GTM/GA4 consent state
+    // Update GTM/GA4 consent state (GTM handles Meta Pixel)
     updateGAConsent(preferences.analytics, preferences.marketing);
-
-    // Load Meta Pixel if marketing consent given
-    if (preferences.marketing) {
-      loadMetaPixel();
-    }
   });
 
   // Check if user already has consent stored (e.g., returning visitor)
