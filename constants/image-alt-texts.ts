@@ -1,0 +1,1335 @@
+/**
+ * Image Alt Texts Registry
+ * ========================
+ * Centralized, multilingual alt texts for all images.
+ *
+ * Structure:
+ * - classes: Dance class images
+ * - teachers: Instructor photos
+ * - general: Logo, OG images, etc.
+ *
+ * SEO Guidelines:
+ * - 50-125 characters (optimal: 80-100)
+ * - Include geographic keyword (Barcelona)
+ * - Include brand name when relevant
+ * - Describe action, not just object
+ * - Avoid "image of", "photo of"
+ */
+
+export type Locale = 'es' | 'en' | 'ca' | 'fr';
+
+export type LocalizedAltText = Record<Locale, string>;
+
+export interface ImageAltConfig {
+  es: string;
+  en: string;
+  ca: string;
+  fr: string;
+}
+
+// ============================================================================
+// IMAGE ALT TEXTS REGISTRY
+// ============================================================================
+
+export const IMAGE_ALT_TEXTS = {
+  // ==========================================================================
+  // DANCE CLASSES
+  // ==========================================================================
+  classes: {
+    dancehall: {
+      hero: {
+        es: "Clases de Dancehall en Barcelona - Farray's International Dance Center",
+        en: "Dancehall Classes in Barcelona - Farray's International Dance Center",
+        ca: "Classes de Dancehall a Barcelona - Farray's International Dance Center",
+        fr: "Cours de Dancehall à Barcelone - Farray's International Dance Center",
+      },
+      whatIs: {
+        es: 'Estudiantes aprendiendo Dancehall jamaicano en academia de Barcelona',
+        en: 'Students learning Jamaican Dancehall at Barcelona dance academy',
+        ca: 'Estudiants aprenent Dancehall jamaicà a acadèmia de Barcelona',
+        fr: 'Étudiants apprenant le Dancehall jamaïcain à académie de Barcelone',
+      },
+      gallery: [
+        {
+          es: 'Grupo de bailarines practicando Dancehall en Barcelona',
+          en: 'Group of dancers practicing Dancehall in Barcelona',
+          ca: 'Grup de ballarins practicant Dancehall a Barcelona',
+          fr: 'Groupe de danseurs pratiquant le Dancehall à Barcelone',
+        },
+      ],
+    },
+
+    twerk: {
+      hero: {
+        es: "Clases de Twerk en Barcelona - Farray's Center",
+        en: "Twerk Classes in Barcelona - Farray's Center",
+        ca: "Classes de Twerk a Barcelona - Farray's Center",
+        fr: "Cours de Twerk à Barcelone - Farray's Center",
+      },
+      whatIs: {
+        es: 'Alumnas en clase de Twerk fitness en Barcelona',
+        en: 'Students in Twerk fitness class in Barcelona',
+        ca: 'Alumnes a classe de Twerk fitness a Barcelona',
+        fr: 'Élèves en cours de Twerk fitness à Barcelone',
+      },
+    },
+
+    afrobeat: {
+      hero: {
+        es: "Clases de Afrobeat en Barcelona - Farray's Center",
+        en: "Afrobeat Classes in Barcelona - Farray's Center",
+        ca: "Classes d'Afrobeat a Barcelona - Farray's Center",
+        fr: "Cours d'Afrobeat à Barcelone - Farray's Center",
+      },
+      whatIs: {
+        es: 'Bailarines ejecutando movimientos de Afrobeat africano',
+        en: 'Dancers performing African Afrobeat movements',
+        ca: "Ballarins executant moviments de l'Afrobeat africà",
+        fr: 'Danseurs exécutant des mouvements Afrobeat africains',
+      },
+    },
+
+    'hip-hop': {
+      hero: {
+        es: "Clases de Hip Hop en Barcelona - Street dance urbano en Farray's Center",
+        en: "Hip Hop Classes in Barcelona - Urban street dance at Farray's Center",
+        ca: "Classes de Hip Hop a Barcelona - Street dance urbà a Farray's Center",
+        fr: "Cours de Hip Hop à Barcelone - Street dance urbain à Farray's Center",
+      },
+      whatIs: {
+        es: 'Estudiantes practicando movimientos de Hip Hop en academia de Barcelona',
+        en: 'Students practicing Hip Hop moves at Barcelona dance academy',
+        ca: 'Estudiants practicant moviments de Hip Hop a acadèmia de Barcelona',
+        fr: 'Étudiants pratiquant des mouvements de Hip Hop à académie de Barcelone',
+      },
+      card: {
+        es: 'Clases de Hip Hop Barcelona - Aprende breaking, locking y popping',
+        en: 'Hip Hop Classes Barcelona - Learn breaking, locking and popping',
+        ca: 'Classes de Hip Hop Barcelona - Aprèn breaking, locking i popping',
+        fr: 'Cours de Hip Hop Barcelone - Apprenez le breaking, locking et popping',
+      },
+    },
+
+    'hip-hop-reggaeton': {
+      hero: {
+        es: "Clases de Hip Hop y Reggaetón en Barcelona - Farray's Center",
+        en: "Hip Hop and Reggaeton Classes in Barcelona - Farray's Center",
+        ca: "Classes de Hip Hop i Reggaeton a Barcelona - Farray's Center",
+        fr: "Cours de Hip Hop et Reggaeton à Barcelone - Farray's Center",
+      },
+    },
+
+    femmology: {
+      hero: {
+        es: 'Clases de Femmology en Barcelona - Baile en tacones con Yunaisy Farray',
+        en: 'Femmology Classes in Barcelona - Heels dance with Yunaisy Farray',
+        ca: 'Classes de Femmology a Barcelona - Ball amb talons amb Yunaisy Farray',
+        fr: 'Cours de Femmology à Barcelone - Danse en talons avec Yunaisy Farray',
+      },
+    },
+
+    'sexy-style': {
+      hero: {
+        es: "Clases de Sexy Style en Barcelona - Farray's Center",
+        en: "Sexy Style Classes in Barcelona - Farray's Center",
+        ca: "Classes de Sexy Style a Barcelona - Farray's Center",
+        fr: "Cours de Sexy Style à Barcelone - Farray's Center",
+      },
+      whatIs: {
+        es: 'Alumnas practicando Sexy Style con expresión sensual y movimientos elegantes en academia de Barcelona',
+        en: 'Students practicing Sexy Style with sensual expression and elegant movements at Barcelona dance academy',
+        ca: 'Alumnes practicant Sexy Style amb expressió sensual i moviments elegants a acadèmia de Barcelona',
+        fr: 'Élèves pratiquant le Sexy Style avec expression sensuelle et mouvements élégants à académie de Barcelone',
+      },
+      card: {
+        es: 'Clases de Sexy Style Barcelona - Sensualidad, confianza y expresión corporal',
+        en: 'Sexy Style Classes Barcelona - Sensuality, confidence and body expression',
+        ca: 'Classes de Sexy Style Barcelona - Sensualitat, confiança i expressió corporal',
+        fr: 'Cours de Sexy Style Barcelone - Sensualité, confiance et expression corporelle',
+      },
+    },
+
+    ballet: {
+      hero: {
+        es: "Clases de Ballet Clásico en Barcelona - Farray's Center",
+        en: "Classical Ballet Classes in Barcelona - Farray's Center",
+        ca: "Classes de Ballet Clàssic a Barcelona - Farray's Center",
+        fr: "Cours de Ballet Classique à Barcelone - Farray's Center",
+      },
+    },
+
+    // NOTE: contemporaneo is in styleImages section (line ~714) with full enterprise structure
+
+    'modern-jazz': {
+      hero: {
+        es: "Clases de Modern Jazz en Barcelona - Farray's Center",
+        en: "Modern Jazz Classes in Barcelona - Farray's Center",
+        ca: "Classes de Modern Jazz a Barcelona - Farray's Center",
+        fr: "Cours de Modern Jazz à Barcelone - Farray's Center",
+      },
+    },
+
+    'salsa-cubana': {
+      hero: {
+        es: "Clases de Salsa Cubana en Barcelona - Farray's Center",
+        en: "Cuban Salsa Classes in Barcelona - Farray's Center",
+        ca: "Classes de Salsa Cubana a Barcelona - Farray's Center",
+        fr: "Cours de Salsa Cubaine à Barcelone - Farray's Center",
+      },
+    },
+
+    bachata: {
+      hero: {
+        es: "Clases de Bachata en Barcelona - Farray's Center",
+        en: "Bachata Classes in Barcelona - Farray's Center",
+        ca: "Classes de Bachata a Barcelona - Farray's Center",
+        fr: "Cours de Bachata à Barcelone - Farray's Center",
+      },
+    },
+
+    stretching: {
+      hero: {
+        es: "Clases de Stretching en Barcelona - Farray's Center",
+        en: "Stretching Classes in Barcelona - Farray's Center",
+        ca: "Classes d'Stretching a Barcelona - Farray's Center",
+        fr: "Cours de Stretching à Barcelone - Farray's Center",
+      },
+      whatIs: {
+        es: 'Alumna ejecutando ejercicio de flexibilidad y elongación en clase de stretching profesional en Barcelona',
+        en: 'Student performing flexibility and elongation exercise in professional stretching class in Barcelona',
+        ca: 'Alumna executant exercici de flexibilitat i elongació a classe de stretching professional a Barcelona',
+        fr: 'Élève exécutant exercice de flexibilité et élongation en cours de stretching professionnel à Barcelone',
+      },
+      card: {
+        es: 'Clases de Stretching Barcelona - Flexibilidad, backbending y elongación para bailarines',
+        en: 'Stretching Classes Barcelona - Flexibility, backbending and elongation for dancers',
+        ca: 'Classes de Stretching Barcelona - Flexibilitat, backbending i elongació per a ballarins',
+        fr: 'Cours de Stretching Barcelone - Flexibilité, backbending et élongation pour danseurs',
+      },
+    },
+
+    'sexy-reggaeton': {
+      hero: {
+        es: "Clases de Sexy Reggaetón en Barcelona - Farray's Center",
+        en: "Sexy Reggaeton Classes in Barcelona - Farray's Center",
+        ca: "Classes de Sexy Reggaeton a Barcelona - Farray's Center",
+        fr: "Cours de Sexy Reggaeton à Barcelone - Farray's Center",
+      },
+    },
+
+    'reggaeton-cubano': {
+      hero: {
+        es: "Clases de Reggaetón Cubano en Barcelona - Farray's Center",
+        en: "Cuban Reggaeton Classes in Barcelona - Farray's Center",
+        ca: "Classes de Reggaeton Cubà a Barcelona - Farray's Center",
+        fr: "Cours de Reggaeton Cubain à Barcelone - Farray's Center",
+      },
+    },
+
+    'afro-contemporaneo': {
+      hero: {
+        es: "Clases de Afro Contemporáneo en Barcelona - Técnica cubana ENA en Farray's Center",
+        en: "Afro Contemporary Classes in Barcelona - Cuban ENA technique at Farray's Center",
+        ca: "Classes d'Afro Contemporani a Barcelona - Tècnica cubana ENA a Farray's Center",
+        fr: "Cours d'Afro Contemporain à Barcelone - Technique cubaine ENA à Farray's Center",
+      },
+      whatIs: {
+        es: 'Estudiantes practicando técnica Afro Contemporánea cubana en Barcelona',
+        en: 'Students practicing Cuban Afro Contemporary technique in Barcelona',
+        ca: 'Estudiants practicant tècnica Afro Contemporània cubana a Barcelona',
+        fr: 'Étudiants pratiquant la technique Afro Contemporaine cubaine à Barcelone',
+      },
+      card: {
+        es: "Clases de Afro Contemporáneo Barcelona - Técnica cubana ENA en Farray's Center",
+        en: "Afro Contemporary Classes Barcelona - Cuban ENA technique at Farray's Center",
+        ca: "Classes d'Afro Contemporani Barcelona - Tècnica cubana ENA a Farray's Center",
+        fr: "Cours d'Afro Contemporain Barcelone - Technique cubaine ENA à Farray's Center",
+      },
+    },
+
+    'afro-jazz': {
+      hero: {
+        es: "Clases de Afro Jazz en Barcelona - Farray's Center",
+        en: "Afro Jazz Classes in Barcelona - Farray's Center",
+        ca: "Classes d'Afro Jazz a Barcelona - Farray's Center",
+        fr: "Cours d'Afro Jazz à Barcelone - Farray's Center",
+      },
+    },
+
+    timba: {
+      // Alt genérico (fallback)
+      alt: {
+        es: "Clases de Timba Cubana en Barcelona - Farray's Center",
+        en: "Cuban Timba Classes in Barcelona - Farray's Center",
+        ca: "Classes de Timba Cubana a Barcelona - Farray's Center",
+        fr: "Cours de Timba Cubaine à Barcelone - Farray's Center",
+      },
+      // Para cards en hub de clases de baile (/clases/baile-barcelona)
+      cardHub: {
+        es: 'Timba Cubana Barcelona - Ritmo explosivo con raíces del son y jazz afrocubano',
+        en: 'Cuban Timba Barcelona - Explosive rhythm with son and Afro-Cuban jazz roots',
+        ca: 'Timba Cubana Barcelona - Ritme explosiu amb arrels del son i jazz afrocubà',
+        fr: 'Timba Cubaine Barcelone - Rythme explosif avec racines du son et jazz afro-cubain',
+      },
+      // Para cards en categoría salsa/bachata (/clases/salsa-bachata-barcelona)
+      cardLatin: {
+        es: 'Timba Cubana - Ritmo urbano cubano que fusiona son, jazz y música popular',
+        en: 'Cuban Timba - Cuban urban rhythm fusing son, jazz and popular music',
+        ca: 'Timba Cubana - Ritme urbà cubà que fusiona son, jazz i música popular',
+        fr: 'Timba Cubaine - Rythme urbain cubain fusionnant son, jazz et musique populaire',
+      },
+      // Para hero de la página de clase individual
+      hero: {
+        es: "Bailarines ejecutando Timba Cubana en Barcelona - Ritmo explosivo en Farray's Center",
+        en: "Dancers performing Cuban Timba in Barcelona - Explosive rhythm at Farray's Center",
+        ca: "Ballarins executant Timba Cubana a Barcelona - Ritme explosiu a Farray's Center",
+        fr: "Danseurs exécutant la Timba Cubaine à Barcelone - Rythme explosif chez Farray's Center",
+      },
+      // Para sección "¿Qué es?" de la página de clase
+      whatIs: {
+        es: 'Bailarines practicando Timba Cubana y Lady Timba en academia de Barcelona - Interpretación musical y despelote cubano',
+        en: 'Dancers practicing Cuban Timba and Lady Timba at Barcelona dance academy - Musical interpretation and Cuban despelote',
+        ca: 'Ballarins practicant Timba Cubana i Lady Timba a acadèmia de Barcelona - Interpretació musical i despelote cubà',
+        fr: 'Danseurs pratiquant la Timba Cubaine et Lady Timba à académie de Barcelone - Interprétation musicale et despelote cubain',
+      },
+    },
+
+    'folklore-cubano': {
+      hero: {
+        es: "Bailarina ejecutando danza Yoruba de Folklore Cubano en las calles de La Habana - Tradición afrocubana en Farray's Center Barcelona",
+        en: "Dancer performing Yoruba dance from Cuban Folklore on the streets of Havana - Afro-Cuban tradition at Farray's Center Barcelona",
+        ca: "Ballarina executant dansa Yoruba de Folklore Cubà als carrers de l'Havana - Tradició afrocubana a Farray's Center Barcelona",
+        fr: "Danseuse exécutant une danse Yoruba du Folklore Cubain dans les rues de La Havane - Tradition afro-cubaine chez Farray's Center Barcelone",
+      },
+      whatIs: {
+        es: 'Grupo de estudiantes aprendiendo danzas a los Orishas y folklore cubano tradicional en academia de Barcelona',
+        en: 'Group of students learning Orishas dances and traditional Cuban folklore at Barcelona dance academy',
+        ca: "Grup d'estudiants aprenent danses als Orixàs i folklore cubà tradicional a acadèmia de Barcelona",
+        fr: "Groupe d'étudiants apprenant les danses aux Orishas et folklore cubain traditionnel à académie de Barcelone",
+      },
+      card: {
+        es: 'Clases de Folklore Cubano Barcelona - Danzas Yoruba, Orishas y rumba cubana',
+        en: 'Cuban Folklore Classes Barcelona - Yoruba dances, Orishas and Cuban rumba',
+        ca: 'Classes de Folklore Cubà Barcelona - Danses Yoruba, Orixàs i rumba cubana',
+        fr: 'Cours de Folklore Cubain Barcelone - Danses Yoruba, Orishas et rumba cubaine',
+      },
+    },
+
+    'salsa-lady-style': {
+      hero: {
+        es: "Bailarinas ejecutando Salsa Lady Style en Barcelona - Técnica femenina cubana y braceo elegante en Farray's Center",
+        en: "Dancers performing Salsa Lady Style in Barcelona - Cuban feminine technique and elegant arm styling at Farray's Center",
+        ca: "Ballarines executant Salsa Lady Style a Barcelona - Tècnica femenina cubana i braceo elegant a Farray's Center",
+        fr: "Danseuses exécutant le Salsa Lady Style à Barcelone - Technique féminine cubaine et braceo élégant chez Farray's Center",
+      },
+      whatIs: {
+        es: 'Alumnas practicando técnica de Salsa Lady Style con braceo y movimientos femeninos en academia de Barcelona',
+        en: 'Students practicing Salsa Lady Style technique with arm styling and feminine movements at Barcelona dance academy',
+        ca: 'Alumnes practicant tècnica de Salsa Lady Style amb braceo i moviments femenins a acadèmia de Barcelona',
+        fr: 'Élèves pratiquant la technique Salsa Lady Style avec braceo et mouvements féminins à académie de Barcelone',
+      },
+      card: {
+        es: 'Clases de Salsa Lady Style Barcelona - Técnica femenina cubana, braceo elegante y expresión corporal',
+        en: 'Salsa Lady Style Classes Barcelona - Cuban feminine technique, elegant arm styling and body expression',
+        ca: 'Classes de Salsa Lady Style Barcelona - Tècnica femenina cubana, braceo elegant i expressió corporal',
+        fr: 'Cours de Salsa Lady Style Barcelone - Technique féminine cubaine, braceo élégant et expression corporelle',
+      },
+    },
+
+    'bum-bum': {
+      hero: {
+        es: 'Alumnas realizando ejercicios de glúteos Bum Bum en Barcelona - Método Farray con hip thrust y sentadillas',
+        en: 'Students performing Bum Bum glute exercises in Barcelona - Farray Method with hip thrust and squats',
+        ca: 'Alumnes realitzant exercicis de glutis Bum Bum a Barcelona - Mètode Farray amb hip thrust i esquats',
+        fr: 'Élèves effectuant des exercices Bum Bum fessiers à Barcelone - Méthode Farray avec hip thrust et squats',
+      },
+      whatIs: {
+        es: 'Grupo de alumnas tonificando glúteos con ejercicios Bum Bum en academia de Barcelona',
+        en: 'Group of students toning glutes with Bum Bum exercises at Barcelona dance academy',
+        ca: "Grup d'alumnes tonificant glutis amb exercicis Bum Bum a acadèmia de Barcelona",
+        fr: "Groupe d'élèves tonifiant les fessiers avec exercices Bum Bum à académie de Barcelone",
+      },
+      card: {
+        es: 'Clases de Bum Bum Barcelona - Tonifica glúteos con hip thrust y técnicas de baile',
+        en: 'Bum Bum Classes Barcelona - Tone glutes with hip thrust and dance techniques',
+        ca: 'Classes de Bum Bum Barcelona - Tonifica glutis amb hip thrust i tècniques de ball',
+        fr: 'Cours de Bum Bum Barcelone - Tonifiez les fessiers avec hip thrust et techniques de danse',
+      },
+    },
+
+    'cuerpo-fit': {
+      hero: {
+        es: 'Alumnas realizando ejercicios de acondicionamiento físico Cuerpo Fit en Barcelona - Método Farray con entrenamiento funcional para bailarines',
+        en: 'Students performing Cuerpo Fit physical conditioning exercises in Barcelona - Farray Method with functional training for dancers',
+        ca: 'Alumnes realitzant exercicis de condicionament físic Cuerpo Fit a Barcelona - Mètode Farray amb entrenament funcional per a ballarins',
+        fr: 'Élèves effectuant des exercices de conditionnement physique Cuerpo Fit à Barcelone - Méthode Farray avec entraînement fonctionnel pour danseurs',
+      },
+      whatIs: {
+        es: 'Grupo de bailarines entrenando fuerza y resistencia en clase de Cuerpo Fit en academia de Barcelona',
+        en: 'Group of dancers training strength and endurance in Cuerpo Fit class at Barcelona dance academy',
+        ca: 'Grup de ballarins entrenant força i resistència a classe de Cuerpo Fit a acadèmia de Barcelona',
+        fr: 'Groupe de danseurs entraînant force et endurance en cours de Cuerpo Fit à académie de Barcelone',
+      },
+      card: {
+        es: 'Clases de Cuerpo Fit Barcelona - Acondicionamiento físico integral para bailarines',
+        en: 'Cuerpo Fit Classes Barcelona - Complete physical conditioning for dancers',
+        ca: 'Classes de Cuerpo Fit Barcelona - Condicionament físic integral per a ballarins',
+        fr: 'Cours de Cuerpo Fit Barcelone - Conditionnement physique complet pour danseurs',
+      },
+    },
+  },
+
+  // ==========================================================================
+  // TEACHERS
+  // ==========================================================================
+  teachers: {
+    yunaisy: {
+      portrait: {
+        es: 'Yunaisy Farray - Directora y Maestra CID-UNESCO de danza en Barcelona',
+        en: 'Yunaisy Farray - Director and CID-UNESCO Dance Master in Barcelona',
+        ca: 'Yunaisy Farray - Directora i Mestra CID-UNESCO de dansa a Barcelona',
+        fr: 'Yunaisy Farray - Directrice et Maître de danse CID-UNESCO à Barcelone',
+      },
+      action: {
+        es: 'Yunaisy Farray enseñando coreografía de baile cubano',
+        en: 'Yunaisy Farray teaching Cuban dance choreography',
+        ca: 'Yunaisy Farray ensenyant coreografia de ball cubà',
+        fr: 'Yunaisy Farray enseignant une chorégraphie de danse cubaine',
+      },
+    },
+    default: {
+      portrait: {
+        es: "Profesor de baile en Farray's International Dance Center Barcelona",
+        en: "Dance instructor at Farray's International Dance Center Barcelona",
+        ca: "Professor de ball a Farray's International Dance Center Barcelona",
+        fr: "Professeur de danse à Farray's International Dance Center Barcelone",
+      },
+    },
+  },
+
+  // ==========================================================================
+  // GENERAL
+  // ==========================================================================
+  general: {
+    logo: {
+      es: "Farray's International Dance Center - Escuela de baile en Barcelona",
+      en: "Farray's International Dance Center - Dance school in Barcelona",
+      ca: "Farray's International Dance Center - Escola de ball a Barcelona",
+      fr: "Farray's International Dance Center - École de danse à Barcelone",
+    },
+    hero: {
+      es: "Academia de baile Farray's Center en Barcelona - Clases para todos los niveles",
+      en: "Farray's Dance Academy in Barcelona - Classes for all levels",
+      ca: "Acadèmia de ball Farray's Center a Barcelona - Classes per a tots els nivells",
+      fr: "Académie de danse Farray's Center à Barcelone - Cours pour tous niveaux",
+    },
+    studio: {
+      es: 'Sala de baile principal con espejos en Barcelona',
+      en: 'Main dance studio with mirrors in Barcelona',
+      ca: 'Sala de ball principal amb miralls a Barcelona',
+      fr: 'Salle de danse principale avec miroirs à Barcelone',
+    },
+    facilities: {
+      es: 'Instalaciones modernas de la academia de danza',
+      en: 'Modern dance academy facilities',
+      ca: "Instal·lacions modernes de l'acadèmia de dansa",
+      fr: "Installations modernes de l'académie de danse",
+    },
+
+    // Brand logos
+    brands: {
+      cidUnesco: {
+        es: 'CID UNESCO - Consejo Internacional de la Danza',
+        en: 'CID UNESCO - International Dance Council',
+        ca: 'CID UNESCO - Consell Internacional de la Dansa',
+        fr: 'CID UNESCO - Conseil International de la Danse',
+      },
+      telecinco: {
+        es: 'Telecinco - Cadena de televisión española',
+        en: 'Telecinco - Spanish television network',
+        ca: 'Telecinco - Cadena de televisió espanyola',
+        fr: 'Telecinco - Chaîne de télévision espagnole',
+      },
+      gotTalent: {
+        es: "Got Talent España - Aparición de Farray's Center",
+        en: "Got Talent Spain - Farray's Center appearance",
+        ca: "Got Talent Espanya - Aparició de Farray's Center",
+        fr: "Got Talent Espagne - Apparition de Farray's Center",
+      },
+      theDancer: {
+        es: "The Dancer TVE - Participación de bailarines de Farray's Center",
+        en: "The Dancer TVE - Farray's Center dancers participation",
+        ca: "The Dancer TVE - Participació de ballarins de Farray's Center",
+        fr: "The Dancer TVE - Participation des danseurs de Farray's Center",
+      },
+    },
+
+    // Open Graph images
+    og: {
+      home: {
+        es: "Farray's Dance Center Barcelona - Escuela de baile urbano y latino",
+        en: "Farray's Dance Center Barcelona - Urban and Latin dance school",
+        ca: "Farray's Dance Center Barcelona - Escola de ball urbà i llatí",
+        fr: "Farray's Dance Center Barcelone - École de danse urbaine et latine",
+      },
+      classes: {
+        es: "Clases de baile en Barcelona - Farray's International Dance Center",
+        en: "Dance classes in Barcelona - Farray's International Dance Center",
+        ca: "Classes de ball a Barcelona - Farray's International Dance Center",
+        fr: "Cours de danse à Barcelone - Farray's International Dance Center",
+      },
+    },
+  },
+
+  // ==========================================================================
+  // BLOG
+  // ==========================================================================
+  blog: {
+    'beneficios-bailar-salsa': {
+      featured: {
+        es: 'Beneficios de bailar salsa para la salud física y mental',
+        en: 'Benefits of dancing salsa for physical and mental health',
+        ca: 'Beneficis de ballar salsa per a la salut física i mental',
+        fr: 'Bienfaits de danser la salsa pour la santé physique et mentale',
+      },
+    },
+    'historia-salsa-barcelona': {
+      featured: {
+        es: 'Historia de la salsa en Barcelona - Evolución del baile latino',
+        en: 'History of salsa in Barcelona - Evolution of Latin dance',
+        ca: 'Història de la salsa a Barcelona - Evolució del ball llatí',
+        fr: 'Histoire de la salsa à Barcelone - Évolution de la danse latine',
+      },
+    },
+  },
+
+  // ==========================================================================
+  // STYLE IMAGES (for OptimizedImage component)
+  // ==========================================================================
+  styleImages: {
+    dancehall: {
+      alt: {
+        es: "Clases de Dancehall en Barcelona - Aprende con profesionales en Farray's Center",
+        en: "Dancehall Classes in Barcelona - Learn with professionals at Farray's Center",
+        ca: "Classes de Dancehall a Barcelona - Aprèn amb professionals a Farray's Center",
+        fr: "Cours de Dancehall à Barcelone - Apprenez avec des professionnels chez Farray's Center",
+      },
+      cardHub: {
+        es: 'Dancehall Barcelona - Ritmos jamaicanos y movimientos auténticos del Caribe',
+        en: 'Dancehall Barcelona - Jamaican rhythms and authentic Caribbean movements',
+        ca: 'Dancehall Barcelona - Ritmes jamaicans i moviments autèntics del Carib',
+        fr: 'Dancehall Barcelone - Rythmes jamaïcains et mouvements authentiques des Caraïbes',
+      },
+      cardUrban: {
+        es: 'Dancehall - Estilo jamaicano con raíces en la cultura soundsystem de Kingston',
+        en: 'Dancehall - Jamaican style rooted in Kingston soundsystem culture',
+        ca: 'Dancehall - Estil jamaicà amb arrels en la cultura soundsystem de Kingston',
+        fr: 'Dancehall - Style jamaïcain enraciné dans la culture soundsystem de Kingston',
+      },
+      hero: {
+        es: "Bailarines ejecutando movimientos de Dancehall jamaicano en Barcelona - Farray's Center",
+        en: "Dancers performing Jamaican Dancehall moves in Barcelona - Farray's Center",
+        ca: "Ballarins executant moviments de Dancehall jamaicà a Barcelona - Farray's Center",
+        fr: "Danseurs exécutant des mouvements de Dancehall jamaïcain à Barcelone - Farray's Center",
+      },
+    },
+    afrobeat: {
+      alt: {
+        es: "Clases de Afrobeat en Barcelona - Ritmos africanos en Farray's Center",
+        en: "Afrobeat Classes in Barcelona - African rhythms at Farray's Center",
+        ca: "Classes d'Afrobeat a Barcelona - Ritmes africans a Farray's Center",
+        fr: "Cours d'Afrobeat à Barcelone - Rythmes africains chez Farray's Center",
+      },
+      cardHub: {
+        es: 'Afrobeat Barcelona - Ritmos africanos modernos con influencias de Nigeria y Ghana',
+        en: 'Afrobeat Barcelona - Modern African rhythms with Nigerian and Ghanaian influences',
+        ca: 'Afrobeat Barcelona - Ritmes africans moderns amb influències de Nigèria i Ghana',
+        fr: 'Afrobeat Barcelone - Rythmes africains modernes avec influences du Nigeria et du Ghana',
+      },
+      cardUrban: {
+        es: 'Afrobeat - Fusión de música africana contemporánea con movimientos tradicionales',
+        en: 'Afrobeat - Fusion of contemporary African music with traditional movements',
+        ca: 'Afrobeat - Fusió de música africana contemporània amb moviments tradicionals',
+        fr: 'Afrobeat - Fusion de musique africaine contemporaine avec mouvements traditionnels',
+      },
+      hero: {
+        es: "Bailarines ejecutando coreografía Afrobeat en Barcelona - Ritmos africanos en Farray's Center",
+        en: "Dancers performing Afrobeat choreography in Barcelona - African rhythms at Farray's Center",
+        ca: "Ballarins executant coreografia Afrobeat a Barcelona - Ritmes africans a Farray's Center",
+        fr: "Danseurs exécutant une chorégraphie Afrobeat à Barcelone - Rythmes africains chez Farray's Center",
+      },
+    },
+    twerk: {
+      alt: {
+        es: "Clases de Twerk en Barcelona - Empoderamiento y fitness en Farray's Center",
+        en: "Twerk Classes in Barcelona - Empowerment and fitness at Farray's Center",
+        ca: "Classes de Twerk a Barcelona - Apoderament i fitness a Farray's Center",
+        fr: "Cours de Twerk à Barcelone - Empowerment et fitness chez Farray's Center",
+      },
+      cardHub: {
+        es: 'Twerk Barcelona - Empoderamiento femenino y entrenamiento de glúteos',
+        en: 'Twerk Barcelona - Female empowerment and glute training',
+        ca: 'Twerk Barcelona - Apoderament femení i entrenament de glutis',
+        fr: 'Twerk Barcelone - Empowerment féminin et entraînement des fessiers',
+      },
+      cardUrban: {
+        es: 'Twerk - Estilo de empoderamiento con aislaciones de cadera y trabajo de glúteos',
+        en: 'Twerk - Empowerment style with hip isolations and glute work',
+        ca: "Twerk - Estil d'apoderament amb aïllacions de maluc i treball de glutis",
+        fr: "Twerk - Style d'empowerment avec isolations de hanches et travail des fessiers",
+      },
+      hero: {
+        es: "Alumnas practicando Twerk en Barcelona - Empoderamiento y fitness en Farray's Center",
+        en: "Students practicing Twerk in Barcelona - Empowerment and fitness at Farray's Center",
+        ca: "Alumnes practicant Twerk a Barcelona - Apoderament i fitness a Farray's Center",
+        fr: "Élèves pratiquant le Twerk à Barcelone - Empowerment et fitness chez Farray's Center",
+      },
+    },
+    hipHop: {
+      // Alt genérico (fallback)
+      alt: {
+        es: "Clases de Hip Hop en Barcelona - Street dance en Farray's Center",
+        en: "Hip Hop Classes in Barcelona - Street dance at Farray's Center",
+        ca: "Classes de Hip Hop a Barcelona - Street dance a Farray's Center",
+        fr: "Cours de Hip Hop à Barcelone - Street dance chez Farray's Center",
+      },
+      // Para cards en hub de clases de baile (/clases/baile-barcelona)
+      cardHub: {
+        es: 'Hip Hop en Barcelona - Aprende breaking, locking y popping con los mejores',
+        en: 'Hip Hop in Barcelona - Learn breaking, locking and popping with the best',
+        ca: 'Hip Hop a Barcelona - Aprèn breaking, locking i popping amb els millors',
+        fr: 'Hip Hop à Barcelone - Apprenez le breaking, locking et popping avec les meilleurs',
+      },
+      // Para cards en categoría urbana (/clases/danzas-urbanas-barcelona)
+      cardUrban: {
+        es: 'Hip Hop - Estilo urbano con raíces en la cultura callejera de Nueva York',
+        en: 'Hip Hop - Urban style rooted in New York street culture',
+        ca: 'Hip Hop - Estil urbà amb arrels en la cultura del carrer de Nova York',
+        fr: 'Hip Hop - Style urbain enraciné dans la culture de rue de New York',
+      },
+    },
+    hipHopReggaeton: {
+      alt: {
+        es: "Clases de Hip Hop y Reggaetón en Barcelona - Farray's Center",
+        en: "Hip Hop and Reggaeton Classes in Barcelona - Farray's Center",
+        ca: "Classes de Hip Hop i Reggaeton a Barcelona - Farray's Center",
+        fr: "Cours de Hip Hop et Reggaeton à Barcelone - Farray's Center",
+      },
+      cardHub: {
+        es: 'Hip Hop & Reggaetón Barcelona - Fusión de street dance y ritmos latinos urbanos',
+        en: 'Hip Hop & Reggaeton Barcelona - Fusion of street dance and urban Latin rhythms',
+        ca: 'Hip Hop & Reggaeton Barcelona - Fusió de street dance i ritmes llatins urbans',
+        fr: 'Hip Hop & Reggaeton Barcelone - Fusion de street dance et rythmes latins urbains',
+      },
+      cardUrban: {
+        es: 'Hip Hop & Reggaetón - Combinación explosiva de cultura urbana americana y latina',
+        en: 'Hip Hop & Reggaeton - Explosive combination of American and Latin urban culture',
+        ca: 'Hip Hop & Reggaeton - Combinació explosiva de cultura urbana americana i llatina',
+        fr: 'Hip Hop & Reggaeton - Combinaison explosive de culture urbaine américaine et latine',
+      },
+      hero: {
+        es: "Bailarines ejecutando coreografía de Hip Hop y Reggaetón en Barcelona - Farray's Center",
+        en: "Dancers performing Hip Hop and Reggaeton choreography in Barcelona - Farray's Center",
+        ca: "Ballarins executant coreografia de Hip Hop i Reggaeton a Barcelona - Farray's Center",
+        fr: "Danseurs exécutant une chorégraphie Hip Hop et Reggaeton à Barcelone - Farray's Center",
+      },
+      whatIs: {
+        es: 'Estudiantes practicando coreografía de Hip Hop y Reggaetón en academia de Barcelona',
+        en: 'Students practicing Hip Hop and Reggaeton choreography at Barcelona dance academy',
+        ca: 'Estudiants practicant coreografia de Hip Hop i Reggaeton a acadèmia de Barcelona',
+        fr: 'Étudiants pratiquant une chorégraphie Hip Hop et Reggaeton à académie de Barcelone',
+      },
+    },
+    sexyReggaeton: {
+      alt: {
+        es: "Clases de Sexy Reggaetón en Barcelona - Farray's Center",
+        en: "Sexy Reggaeton Classes in Barcelona - Farray's Center",
+        ca: "Classes de Sexy Reggaeton a Barcelona - Farray's Center",
+        fr: "Cours de Sexy Reggaeton à Barcelone - Farray's Center",
+      },
+      cardHub: {
+        es: 'Sexy Reggaetón Barcelona - Sensualidad y actitud con ritmos urbanos latinos',
+        en: 'Sexy Reggaeton Barcelona - Sensuality and attitude with urban Latin rhythms',
+        ca: 'Sexy Reggaeton Barcelona - Sensualitat i actitud amb ritmes urbans llatins',
+        fr: 'Sexy Reggaeton Barcelone - Sensualité et attitude avec rythmes urbains latins',
+      },
+      cardUrban: {
+        es: 'Sexy Reggaetón - Estilo sensual con movimientos de cadera y actitud femenina',
+        en: 'Sexy Reggaeton - Sensual style with hip movements and feminine attitude',
+        ca: 'Sexy Reggaeton - Estil sensual amb moviments de maluc i actitud femenina',
+        fr: 'Sexy Reggaeton - Style sensuel avec mouvements de hanches et attitude féminine',
+      },
+      hero: {
+        es: "Alumnas bailando Sexy Reggaetón en Barcelona - Sensualidad y ritmo en Farray's Center",
+        en: "Students dancing Sexy Reggaeton in Barcelona - Sensuality and rhythm at Farray's Center",
+        ca: "Alumnes ballant Sexy Reggaeton a Barcelona - Sensualitat i ritme a Farray's Center",
+        fr: "Élèves dansant le Sexy Reggaeton à Barcelone - Sensualité et rythme chez Farray's Center",
+      },
+    },
+    reggaetonCubano: {
+      alt: {
+        es: "Clases de Reggaetón Cubano en Barcelona - Farray's Center",
+        en: "Cuban Reggaeton Classes in Barcelona - Farray's Center",
+        ca: "Classes de Reggaeton Cubà a Barcelona - Farray's Center",
+        fr: "Cours de Reggaeton Cubain à Barcelone - Farray's Center",
+      },
+      cardHub: {
+        es: 'Reggaetón Cubano Barcelona - El sabor auténtico del Caribe con raíces cubanas',
+        en: 'Cuban Reggaeton Barcelona - Authentic Caribbean flavor with Cuban roots',
+        ca: 'Reggaeton Cubà Barcelona - El sabor autèntic del Carib amb arrels cubanes',
+        fr: 'Reggaeton Cubain Barcelone - Saveur authentique des Caraïbes avec racines cubaines',
+      },
+      cardUrban: {
+        es: 'Reggaetón Cubano - Estilo caribeño con influencias de timba y son cubano',
+        en: 'Cuban Reggaeton - Caribbean style with timba and Cuban son influences',
+        ca: 'Reggaeton Cubà - Estil caribeny amb influències de timba i son cubà',
+        fr: 'Reggaeton Cubain - Style caribéen avec influences de timba et son cubain',
+      },
+      hero: {
+        es: "Bailarines ejecutando Reggaetón Cubano en Barcelona - Sabor caribeño en Farray's Center",
+        en: "Dancers performing Cuban Reggaeton in Barcelona - Caribbean flavor at Farray's Center",
+        ca: "Ballarins executant Reggaeton Cubà a Barcelona - Sabor caribeny a Farray's Center",
+        fr: "Danseurs exécutant le Reggaeton Cubain à Barcelone - Saveur caribéenne chez Farray's Center",
+      },
+    },
+    femmology: {
+      alt: {
+        es: "Clases de Femmology y Heels en Barcelona - Farray's Center",
+        en: "Femmology and Heels Classes in Barcelona - Farray's Center",
+        ca: "Classes de Femmology i Heels a Barcelona - Farray's Center",
+        fr: "Cours de Femmology et Heels à Barcelone - Farray's Center",
+      },
+      cardHub: {
+        es: 'Femmology Barcelona - Baile en tacones con técnica y actitud de Yunaisy Farray',
+        en: 'Femmology Barcelona - Heels dance with Yunaisy Farray technique and attitude',
+        ca: 'Femmology Barcelona - Ball amb talons amb tècnica i actitud de Yunaisy Farray',
+        fr: 'Femmology Barcelone - Danse en talons avec technique et attitude de Yunaisy Farray',
+      },
+      cardUrban: {
+        es: 'Femmology - Método exclusivo de baile en tacones creado por Yunaisy Farray',
+        en: 'Femmology - Exclusive heels dance method created by Yunaisy Farray',
+        ca: 'Femmology - Mètode exclusiu de ball amb talons creat per Yunaisy Farray',
+        fr: 'Femmology - Méthode exclusive de danse en talons créée par Yunaisy Farray',
+      },
+      hero: {
+        es: 'Alumnas ejecutando técnica Femmology en tacones - Método Yunaisy Farray en Barcelona',
+        en: 'Students performing Femmology technique in heels - Yunaisy Farray Method in Barcelona',
+        ca: 'Alumnes executant tècnica Femmology amb talons - Mètode Yunaisy Farray a Barcelona',
+        fr: 'Élèves exécutant la technique Femmology en talons - Méthode Yunaisy Farray à Barcelone',
+      },
+    },
+    heels: {
+      alt: {
+        es: "Clases de Heels en Barcelona - Baile con tacones en Farray's Center",
+        en: "Heels Classes in Barcelona - Dance in high heels at Farray's Center",
+        ca: "Classes de Heels a Barcelona - Ball amb talons a Farray's Center",
+        fr: "Cours de Heels à Barcelone - Danse en talons chez Farray's Center",
+      },
+      cardHub: {
+        es: 'Heels Barcelona - Aprende a bailar con tacones con confianza y técnica',
+        en: 'Heels Barcelona - Learn to dance in heels with confidence and technique',
+        ca: 'Heels Barcelona - Aprèn a ballar amb talons amb confiança i tècnica',
+        fr: 'Heels Barcelone - Apprenez à danser en talons avec confiance et technique',
+      },
+      cardUrban: {
+        es: 'Heels - Baile con tacones que combina técnica, actitud y empoderamiento',
+        en: 'Heels - High heels dancing combining technique, attitude and empowerment',
+        ca: 'Heels - Ball amb talons que combina tècnica, actitud i apoderament',
+        fr: 'Heels - Danse en talons combinant technique, attitude et empowerment',
+      },
+      hero: {
+        es: "Bailarinas ejecutando coreografía Heels en Barcelona - Técnica y elegancia en Farray's Center",
+        en: "Dancers performing Heels choreography in Barcelona - Technique and elegance at Farray's Center",
+        ca: "Ballarines executant coreografia Heels a Barcelona - Tècnica i elegància a Farray's Center",
+        fr: "Danseuses exécutant une chorégraphie Heels à Barcelone - Technique et élégance chez Farray's Center",
+      },
+    },
+    sexyStyle: {
+      alt: {
+        es: "Clases de Sexy Style en Barcelona - Farray's Center",
+        en: "Sexy Style Classes in Barcelona - Farray's Center",
+        ca: "Classes de Sexy Style a Barcelona - Farray's Center",
+        fr: "Cours de Sexy Style à Barcelone - Farray's Center",
+      },
+      cardHub: {
+        es: 'Sexy Style Barcelona - Sensualidad, floorwork y expresión corporal femenina',
+        en: 'Sexy Style Barcelona - Sensuality, floorwork and feminine body expression',
+        ca: 'Sexy Style Barcelona - Sensualitat, floorwork i expressió corporal femenina',
+        fr: 'Sexy Style Barcelone - Sensualité, floorwork et expression corporelle féminine',
+      },
+      cardUrban: {
+        es: 'Sexy Style - Estilo sensual con técnicas de suelo, ondas y expresión corporal',
+        en: 'Sexy Style - Sensual style with floor techniques, waves and body expression',
+        ca: 'Sexy Style - Estil sensual amb tècniques de terra, ones i expressió corporal',
+        fr: 'Sexy Style - Style sensuel avec techniques au sol, ondulations et expression corporelle',
+      },
+      hero: {
+        es: "Alumnas ejecutando técnica Sexy Style en Barcelona - Sensualidad y expresión en Farray's Center",
+        en: "Students performing Sexy Style technique in Barcelona - Sensuality and expression at Farray's Center",
+        ca: "Alumnes executant tècnica Sexy Style a Barcelona - Sensualitat i expressió a Farray's Center",
+        fr: "Élèves exécutant la technique Sexy Style à Barcelone - Sensualité et expression chez Farray's Center",
+      },
+    },
+    ballet: {
+      alt: {
+        es: "Clases de Ballet Clásico en Barcelona - Técnica clásica en Farray's Center",
+        en: "Classical Ballet Classes in Barcelona - Classical technique at Farray's Center",
+        ca: "Classes de Ballet Clàssic a Barcelona - Tècnica clàssica a Farray's Center",
+        fr: "Cours de Ballet Classique à Barcelone - Technique classique chez Farray's Center",
+      },
+      cardHub: {
+        es: 'Ballet Clásico Barcelona - Técnica cubana ENA con profesores profesionales',
+        en: 'Classical Ballet Barcelona - Cuban ENA technique with professional teachers',
+        ca: 'Ballet Clàssic Barcelona - Tècnica cubana ENA amb professors professionals',
+        fr: 'Ballet Classique Barcelone - Technique cubaine ENA avec professeurs professionnels',
+      },
+      cardDanza: {
+        es: 'Ballet Clásico - Base técnica fundamental para todas las disciplinas de danza',
+        en: 'Classical Ballet - Fundamental technical foundation for all dance disciplines',
+        ca: 'Ballet Clàssic - Base tècnica fonamental per a totes les disciplines de dansa',
+        fr: 'Ballet Classique - Base technique fondamentale pour toutes les disciplines de danse',
+      },
+      hero: {
+        es: 'Bailarinas ejecutando técnica de ballet clásico en Barcelona - Método Farray con profesores cubanos ENA',
+        en: 'Dancers performing classical ballet technique in Barcelona - Farray Method with Cuban ENA teachers',
+        ca: 'Ballarines executant tècnica de ballet clàssic a Barcelona - Mètode Farray amb professors cubans ENA',
+        fr: 'Danseuses exécutant la technique de ballet classique à Barcelone - Méthode Farray avec professeurs cubains ENA',
+      },
+      whatIs: {
+        es: 'Estudiantes de ballet clásico practicando posiciones en la barra en academia de Barcelona',
+        en: 'Classical ballet students practicing positions at the barre in Barcelona dance academy',
+        ca: 'Estudiants de ballet clàssic practicant posicions a la barra a acadèmia de Barcelona',
+        fr: 'Étudiants de ballet classique pratiquant les positions à la barre à académie de Barcelone',
+      },
+    },
+    contemporaneo: {
+      // Alt genérico (fallback)
+      alt: {
+        es: "Clases de Danza Contemporánea en Barcelona - Técnica profesional en Farray's Center",
+        en: "Contemporary Dance Classes in Barcelona - Professional technique at Farray's Center",
+        ca: "Classes de Dansa Contemporània a Barcelona - Tècnica professional a Farray's Center",
+        fr: "Cours de Danse Contemporaine à Barcelone - Technique professionnelle chez Farray's Center",
+      },
+      // Para cards en hub de clases de baile (/clases/baile-barcelona)
+      cardHub: {
+        es: 'Danza Contemporánea Barcelona - Expresión corporal y técnica de suelo con profesores cubanos',
+        en: 'Contemporary Dance Barcelona - Body expression and floor technique with Cuban teachers',
+        ca: 'Dansa Contemporània Barcelona - Expressió corporal i tècnica de terra amb professors cubans',
+        fr: 'Danse Contemporaine Barcelone - Expression corporelle et technique au sol avec professeurs cubains',
+      },
+      // Para cards en categoría danza (/clases/danza-barcelona)
+      cardDanza: {
+        es: 'Danza Contemporánea - Técnica release, improvisación y expresión corporal libre',
+        en: 'Contemporary Dance - Release technique, improvisation and free body expression',
+        ca: 'Dansa Contemporània - Tècnica release, improvisació i expressió corporal lliure',
+        fr: 'Danse Contemporaine - Technique release, improvisation et expression corporelle libre',
+      },
+      // Para hero de la página de clase
+      hero: {
+        es: 'Bailarines ejecutando técnica de danza contemporánea en Barcelona - Método Farray con profesores cubanos ENA',
+        en: 'Dancers performing contemporary dance technique in Barcelona - Farray Method with Cuban ENA teachers',
+        ca: 'Ballarins executant tècnica de dansa contemporània a Barcelona - Mètode Farray amb professors cubans ENA',
+        fr: 'Danseurs exécutant la technique de danse contemporaine à Barcelone - Méthode Farray avec professeurs cubains ENA',
+      },
+    },
+    modernJazz: {
+      alt: {
+        es: "Clases de Modern Jazz en Barcelona - Farray's Center",
+        en: "Modern Jazz Classes in Barcelona - Farray's Center",
+        ca: "Classes de Modern Jazz a Barcelona - Farray's Center",
+        fr: "Cours de Modern Jazz à Barcelone - Farray's Center",
+      },
+      cardHub: {
+        es: 'Modern Jazz Barcelona - Técnica dinámica con influencias Broadway y contemporáneas',
+        en: 'Modern Jazz Barcelona - Dynamic technique with Broadway and contemporary influences',
+        ca: 'Modern Jazz Barcelona - Tècnica dinàmica amb influències Broadway i contemporànies',
+        fr: 'Modern Jazz Barcelone - Technique dynamique avec influences Broadway et contemporaines',
+      },
+      cardDanza: {
+        es: 'Modern Jazz - Estilo versátil que combina técnica clásica con libertad expresiva moderna',
+        en: 'Modern Jazz - Versatile style combining classical technique with modern expressive freedom',
+        ca: 'Modern Jazz - Estil versàtil que combina tècnica clàssica amb llibertat expressiva moderna',
+        fr: 'Modern Jazz - Style polyvalent combinant technique classique et liberté expressive moderne',
+      },
+      hero: {
+        es: "Bailarines ejecutando coreografía de Modern Jazz en Barcelona - Técnica profesional en Farray's Center",
+        en: "Dancers performing Modern Jazz choreography in Barcelona - Professional technique at Farray's Center",
+        ca: "Ballarins executant coreografia de Modern Jazz a Barcelona - Tècnica professional a Farray's Center",
+        fr: "Danseurs exécutant une chorégraphie de Modern Jazz à Barcelone - Technique professionnelle chez Farray's Center",
+      },
+    },
+    afroContemporaneo: {
+      // Alt genérico (fallback)
+      alt: {
+        es: "Clases de Afro Contemporáneo en Barcelona - Técnica cubana ENA en Farray's Center",
+        en: "Afro Contemporary Classes in Barcelona - Cuban ENA technique at Farray's Center",
+        ca: "Classes d'Afro Contemporani a Barcelona - Tècnica cubana ENA a Farray's Center",
+        fr: "Cours d'Afro Contemporain à Barcelone - Technique cubaine ENA chez Farray's Center",
+      },
+      // Para cards en hub de clases de baile (/clases/baile-barcelona)
+      cardHub: {
+        es: 'Afro Contemporáneo Barcelona - Fusión de técnica ENA cubana con danza contemporánea',
+        en: 'Afro Contemporary Barcelona - Fusion of Cuban ENA technique with contemporary dance',
+        ca: 'Afro Contemporani Barcelona - Fusió de tècnica ENA cubana amb dansa contemporània',
+        fr: 'Afro Contemporain Barcelone - Fusion de technique ENA cubaine avec danse contemporaine',
+      },
+      // Para cards en categoría danza (/clases/danza-barcelona)
+      cardDanza: {
+        es: 'Afro Contemporáneo - Técnica cubana ENA que fusiona raíces africanas con danza contemporánea',
+        en: 'Afro Contemporary - Cuban ENA technique fusing African roots with contemporary dance',
+        ca: 'Afro Contemporani - Tècnica cubana ENA que fusiona arrels africanes amb dansa contemporània',
+        fr: 'Afro Contemporain - Technique cubaine ENA fusionnant racines africaines et danse contemporaine',
+      },
+      // Para hero de la página de clase
+      hero: {
+        es: "Bailarines ejecutando técnica Afro Contemporánea cubana ENA en Barcelona - Farray's Center",
+        en: "Dancers performing Cuban Afro Contemporary ENA technique in Barcelona - Farray's Center",
+        ca: "Ballarins executant tècnica Afro Contemporània cubana ENA a Barcelona - Farray's Center",
+        fr: "Danseurs exécutant la technique Afro Contemporaine cubaine ENA à Barcelone - Farray's Center",
+      },
+    },
+    afroJazz: {
+      alt: {
+        es: "Clases de Afro Jazz en Barcelona - Farray's Center",
+        en: "Afro Jazz Classes in Barcelona - Farray's Center",
+        ca: "Classes d'Afro Jazz a Barcelona - Farray's Center",
+        fr: "Cours d'Afro Jazz à Barcelone - Farray's Center",
+      },
+      cardHub: {
+        es: 'Afro Jazz Barcelona - Fusión de danza africana y jazz contemporáneo con profesores cubanos',
+        en: 'Afro Jazz Barcelona - Fusion of African dance and contemporary jazz with Cuban teachers',
+        ca: 'Afro Jazz Barcelona - Fusió de dansa africana i jazz contemporani amb professors cubans',
+        fr: 'Afro Jazz Barcelone - Fusion de danse africaine et jazz contemporain avec professeurs cubains',
+      },
+      cardDanza: {
+        es: 'Afro Jazz - Técnica que fusiona ritmos africanos con expresión corporal del jazz moderno',
+        en: 'Afro Jazz - Technique fusing African rhythms with modern jazz body expression',
+        ca: 'Afro Jazz - Tècnica que fusiona ritmes africans amb expressió corporal del jazz modern',
+        fr: 'Afro Jazz - Technique fusionnant rythmes africains et expression corporelle du jazz moderne',
+      },
+      hero: {
+        es: "Bailarines ejecutando técnica Afro Jazz en Barcelona - Fusión africana y jazz en Farray's Center",
+        en: "Dancers performing Afro Jazz technique in Barcelona - African and jazz fusion at Farray's Center",
+        ca: "Ballarins executant tècnica Afro Jazz a Barcelona - Fusió africana i jazz a Farray's Center",
+        fr: "Danseurs exécutant la technique Afro Jazz à Barcelone - Fusion africaine et jazz chez Farray's Center",
+      },
+    },
+    salsaCubana: {
+      alt: {
+        es: "Clases de Salsa Cubana en Barcelona - Farray's Center",
+        en: "Cuban Salsa Classes in Barcelona - Farray's Center",
+        ca: "Classes de Salsa Cubana a Barcelona - Farray's Center",
+        fr: "Cours de Salsa Cubaine à Barcelone - Farray's Center",
+      },
+      cardHub: {
+        es: 'Salsa Cubana Barcelona - Aprende casino, rueda y estilo cubano auténtico',
+        en: 'Cuban Salsa Barcelona - Learn casino, rueda and authentic Cuban style',
+        ca: 'Salsa Cubana Barcelona - Aprèn casino, rueda i estil cubà autèntic',
+        fr: 'Salsa Cubaine Barcelone - Apprenez casino, rueda et style cubain authentique',
+      },
+      cardLatin: {
+        es: 'Salsa Cubana - Estilo casino con rueda, despelote y sabor habanero auténtico',
+        en: 'Cuban Salsa - Casino style with rueda, despelote and authentic Havana flavor',
+        ca: 'Salsa Cubana - Estil casino amb rueda, despelote i sabor havanès autèntic',
+        fr: 'Salsa Cubaine - Style casino avec rueda, despelote et saveur havanaise authentique',
+      },
+      hero: {
+        es: "Parejas bailando Salsa Cubana en Barcelona - Estilo casino en Farray's Center",
+        en: "Couples dancing Cuban Salsa in Barcelona - Casino style at Farray's Center",
+        ca: "Parelles ballant Salsa Cubana a Barcelona - Estil casino a Farray's Center",
+        fr: "Couples dansant la Salsa Cubaine à Barcelone - Style casino chez Farray's Center",
+      },
+    },
+    bachata: {
+      alt: {
+        es: "Clases de Bachata Sensual en Barcelona - Conexión y musicalidad en Farray's Center",
+        en: "Sensual Bachata Classes in Barcelona - Connection and musicality at Farray's Center",
+        ca: "Classes de Bachata Sensual a Barcelona - Connexió i musicalitat a Farray's Center",
+        fr: "Cours de Bachata Sensuelle à Barcelone - Connexion et musicalité chez Farray's Center",
+      },
+      cardHub: {
+        es: "Pareja bailando bachata sensual en Barcelona - Aprende en Farray's Center",
+        en: "Couple dancing sensual bachata in Barcelona - Learn at Farray's Center",
+        ca: "Parella ballant bachata sensual a Barcelona - Aprèn a Farray's Center",
+        fr: "Couple dansant la bachata sensuelle à Barcelone - Apprenez chez Farray's Center",
+      },
+      cardLatin: {
+        es: 'Clases de Bachata Sensual - Conexión, musicalidad y técnica dominicana',
+        en: 'Sensual Bachata Classes - Connection, musicality and Dominican technique',
+        ca: 'Classes de Bachata Sensual - Connexió, musicalitat i tècnica dominicana',
+        fr: 'Cours de Bachata Sensuelle - Connexion, musicalité et technique dominicaine',
+      },
+      hero: {
+        es: 'Bailarines de bachata sensual ejecutando figuras en Barcelona - Método Farray',
+        en: 'Sensual bachata dancers performing figures in Barcelona - Farray Method',
+        ca: 'Ballarins de bachata sensual executant figures a Barcelona - Mètode Farray',
+        fr: 'Danseurs de bachata sensuelle exécutant des figures à Barcelone - Méthode Farray',
+      },
+      // Para sección "¿Qué es?" de la página de clase
+      whatIs: {
+        es: 'Pareja bailando bachata sensual en clase de Barcelona - conexión, ondulaciones y técnica profesional',
+        en: 'Couple dancing sensual bachata in Barcelona class - connection, waves and professional technique',
+        ca: 'Parella ballant bachata sensual a classe de Barcelona - connexió, ondulacions i tècnica professional',
+        fr: 'Couple dansant la bachata sensuelle en cours à Barcelone - connexion, ondulations et technique professionnelle',
+      },
+    },
+    salsaBachata: {
+      alt: {
+        es: "Clases de Salsa y Bachata en Barcelona - Farray's Center",
+        en: "Salsa and Bachata Classes in Barcelona - Farray's Center",
+        ca: "Classes de Salsa i Bachata a Barcelona - Farray's Center",
+        fr: "Cours de Salsa et Bachata à Barcelone - Farray's Center",
+      },
+      cardHub: {
+        es: 'Salsa y Bachata Barcelona - Aprende los bailes latinos más populares',
+        en: 'Salsa and Bachata Barcelona - Learn the most popular Latin dances',
+        ca: 'Salsa i Bachata Barcelona - Aprèn els balls llatins més populars',
+        fr: 'Salsa et Bachata Barcelone - Apprenez les danses latines les plus populaires',
+      },
+      cardLatin: {
+        es: 'Salsa y Bachata - Combinación perfecta de ritmos cubanos y dominicanos',
+        en: 'Salsa and Bachata - Perfect combination of Cuban and Dominican rhythms',
+        ca: 'Salsa i Bachata - Combinació perfecta de ritmes cubans i dominicans',
+        fr: 'Salsa et Bachata - Combinaison parfaite de rythmes cubains et dominicains',
+      },
+      hero: {
+        es: "Parejas bailando Salsa y Bachata en Barcelona - Ritmos latinos en Farray's Center",
+        en: "Couples dancing Salsa and Bachata in Barcelona - Latin rhythms at Farray's Center",
+        ca: "Parelles ballant Salsa i Bachata a Barcelona - Ritmes llatins a Farray's Center",
+        fr: "Couples dansant la Salsa et Bachata à Barcelone - Rythmes latins chez Farray's Center",
+      },
+    },
+    salsaLadyStyle: {
+      alt: {
+        es: "Clases de Salsa Lady Style en Barcelona - Técnica femenina y styling en Farray's Center",
+        en: "Salsa Lady Style Classes in Barcelona - Feminine technique and styling at Farray's Center",
+        ca: "Classes de Salsa Lady Style a Barcelona - Tècnica femenina i styling a Farray's Center",
+        fr: "Cours de Salsa Lady Style à Barcelone - Technique féminine et styling chez Farray's Center",
+      },
+      cardHub: {
+        es: 'Salsa Lady Style Barcelona - Técnica femenina cubana, braceo elegante y expresión corporal',
+        en: 'Salsa Lady Style Barcelona - Cuban feminine technique, elegant arm styling and body expression',
+        ca: 'Salsa Lady Style Barcelona - Tècnica femenina cubana, braceo elegant i expressió corporal',
+        fr: 'Salsa Lady Style Barcelone - Technique féminine cubaine, braceo élégant et expression corporelle',
+      },
+      cardLatin: {
+        es: 'Salsa Lady Style - Movimientos femeninos, giros elegantes y actitud sensual con Método Farray',
+        en: 'Salsa Lady Style - Feminine movements, elegant spins and sensual attitude with Farray Method',
+        ca: 'Salsa Lady Style - Moviments femenins, girs elegants i actitud sensual amb Mètode Farray',
+        fr: 'Salsa Lady Style - Mouvements féminins, tours élégants et attitude sensuelle avec Méthode Farray',
+      },
+      hero: {
+        es: "Bailarinas ejecutando Salsa Lady Style en Barcelona - Técnica femenina cubana y braceo elegante en Farray's Center",
+        en: "Dancers performing Salsa Lady Style in Barcelona - Cuban feminine technique and elegant arm styling at Farray's Center",
+        ca: "Ballarines executant Salsa Lady Style a Barcelona - Tècnica femenina cubana i braceo elegant a Farray's Center",
+        fr: "Danseuses exécutant le Salsa Lady Style à Barcelone - Technique féminine cubaine et braceo élégant chez Farray's Center",
+      },
+      whatIs: {
+        es: 'Alumnas practicando técnica de Salsa Lady Style con braceo y movimientos femeninos en academia de Barcelona',
+        en: 'Students practicing Salsa Lady Style technique with arm styling and feminine movements at Barcelona dance academy',
+        ca: 'Alumnes practicant tècnica de Salsa Lady Style amb braceo i moviments femenins a acadèmia de Barcelona',
+        fr: 'Élèves pratiquant la technique Salsa Lady Style avec braceo et mouvements féminins à académie de Barcelone',
+      },
+    },
+    bachataLadyStyle: {
+      alt: {
+        es: "Clases de Bachata Lady Style en Barcelona - Farray's Center",
+        en: "Bachata Lady Style Classes in Barcelona - Farray's Center",
+        ca: "Classes de Bachata Lady Style a Barcelona - Farray's Center",
+        fr: "Cours de Bachata Lady Style à Barcelone - Farray's Center",
+      },
+      cardHub: {
+        es: 'Bachata Lady Style Barcelona - Ondas, styling y sensualidad femenina',
+        en: 'Bachata Lady Style Barcelona - Waves, styling and feminine sensuality',
+        ca: 'Bachata Lady Style Barcelona - Ones, styling i sensualitat femenina',
+        fr: 'Bachata Lady Style Barcelone - Ondulations, styling et sensualité féminine',
+      },
+      cardLatin: {
+        es: 'Bachata Lady Style - Movimientos sensuales, ondas y expresión corporal femenina',
+        en: 'Bachata Lady Style - Sensual movements, waves and feminine body expression',
+        ca: 'Bachata Lady Style - Moviments sensuals, ones i expressió corporal femenina',
+        fr: 'Bachata Lady Style - Mouvements sensuels, ondulations et expression corporelle féminine',
+      },
+      hero: {
+        es: "Bailarinas ejecutando Bachata Lady Style en Barcelona - Sensualidad en Farray's Center",
+        en: "Dancers performing Bachata Lady Style in Barcelona - Sensuality at Farray's Center",
+        ca: "Ballarines executant Bachata Lady Style a Barcelona - Sensualitat a Farray's Center",
+        fr: "Danseuses exécutant le Bachata Lady Style à Barcelone - Sensualité chez Farray's Center",
+      },
+    },
+    timba: {
+      // Alt genérico (fallback)
+      alt: {
+        es: "Clases de Timba Cubana en Barcelona - Farray's Center",
+        en: "Cuban Timba Classes in Barcelona - Farray's Center",
+        ca: "Classes de Timba Cubana a Barcelona - Farray's Center",
+        fr: "Cours de Timba Cubaine à Barcelone - Farray's Center",
+      },
+      // Para cards en hub de clases de baile (/clases/baile-barcelona)
+      cardHub: {
+        es: 'Timba Cubana Barcelona - Ritmo explosivo con raíces del son y jazz afrocubano',
+        en: 'Cuban Timba Barcelona - Explosive rhythm with son and Afro-Cuban jazz roots',
+        ca: 'Timba Cubana Barcelona - Ritme explosiu amb arrels del son i jazz afrocubà',
+        fr: 'Timba Cubaine Barcelone - Rythme explosif avec racines du son et jazz afro-cubain',
+      },
+      // Para cards en categoría salsa/bachata (/clases/salsa-bachata-barcelona)
+      cardLatin: {
+        es: 'Timba Cubana - Ritmo urbano cubano que fusiona son, jazz y música popular',
+        en: 'Cuban Timba - Cuban urban rhythm fusing son, jazz and popular music',
+        ca: 'Timba Cubana - Ritme urbà cubà que fusiona son, jazz i música popular',
+        fr: 'Timba Cubaine - Rythme urbain cubain fusionnant son, jazz et musique populaire',
+      },
+      // Para hero de la página de clase individual
+      hero: {
+        es: "Bailarines ejecutando Timba Cubana en Barcelona - Ritmo explosivo en Farray's Center",
+        en: "Dancers performing Cuban Timba in Barcelona - Explosive rhythm at Farray's Center",
+        ca: "Ballarins executant Timba Cubana a Barcelona - Ritme explosiu a Farray's Center",
+        fr: "Danseurs exécutant la Timba Cubaine à Barcelone - Rythme explosif chez Farray's Center",
+      },
+      // Para sección "¿Qué es?" de la página de clase
+      whatIs: {
+        es: 'Bailarines practicando Timba Cubana y Lady Timba en academia de Barcelona - Interpretación musical y despelote cubano',
+        en: 'Dancers practicing Cuban Timba and Lady Timba at Barcelona dance academy - Musical interpretation and Cuban despelote',
+        ca: 'Ballarins practicant Timba Cubana i Lady Timba a acadèmia de Barcelona - Interpretació musical i despelote cubà',
+        fr: 'Danseurs pratiquant la Timba Cubaine et Lady Timba à académie de Barcelone - Interprétation musicale et despelote cubain',
+      },
+    },
+    salsaLadyTimba: {
+      alt: {
+        es: "Clases de Salsa Lady Timba en Barcelona - Farray's Center",
+        en: "Salsa Lady Timba Classes in Barcelona - Farray's Center",
+        ca: "Classes de Salsa Lady Timba a Barcelona - Farray's Center",
+        fr: "Cours de Salsa Lady Timba à Barcelone - Farray's Center",
+      },
+      cardHub: {
+        es: 'Salsa Lady Timba Barcelona - Técnica femenina con el sabor de la timba cubana',
+        en: 'Salsa Lady Timba Barcelona - Feminine technique with Cuban timba flavor',
+        ca: 'Salsa Lady Timba Barcelona - Tècnica femenina amb el sabor de la timba cubana',
+        fr: 'Salsa Lady Timba Barcelone - Technique féminine avec saveur de la timba cubaine',
+      },
+      cardLatin: {
+        es: 'Salsa Lady Timba - Estilo femenino cubano con movimientos de despelote y rumba',
+        en: 'Salsa Lady Timba - Cuban feminine style with despelote and rumba movements',
+        ca: 'Salsa Lady Timba - Estil femení cubà amb moviments de despelote i rumba',
+        fr: 'Salsa Lady Timba - Style féminin cubain avec mouvements de despelote et rumba',
+      },
+      hero: {
+        es: "Bailarinas ejecutando Salsa Lady Timba en Barcelona - Estilo cubano en Farray's Center",
+        en: "Dancers performing Salsa Lady Timba in Barcelona - Cuban style at Farray's Center",
+        ca: "Ballarines executant Salsa Lady Timba a Barcelona - Estil cubà a Farray's Center",
+        fr: "Danseuses exécutant le Salsa Lady Timba à Barcelone - Style cubain chez Farray's Center",
+      },
+      whatIs: {
+        es: 'Alumnas practicando técnica de Salsa Lady Timba con despelotes y movimientos de rumba en academia de Barcelona',
+        en: 'Students practicing Salsa Lady Timba technique with despelotes and rumba movements at Barcelona dance academy',
+        ca: 'Alumnes practicant tècnica de Salsa Lady Timba amb despelotes i moviments de rumba a acadèmia de Barcelona',
+        fr: 'Élèves pratiquant la technique Salsa Lady Timba avec despelotes et mouvements de rumba à académie de Barcelone',
+      },
+    },
+    folkloreCubano: {
+      // Alt genérico (fallback)
+      alt: {
+        es: "Clases de Folklore Cubano en Barcelona - Danzas Yoruba y Orishas en Farray's Center",
+        en: "Cuban Folklore Classes in Barcelona - Yoruba and Orishas dances at Farray's Center",
+        ca: "Classes de Folklore Cubà a Barcelona - Danses Yoruba i Orixàs a Farray's Center",
+        fr: "Cours de Folklore Cubain à Barcelone - Danses Yoruba et Orishas chez Farray's Center",
+      },
+      // Para cards en hub de clases de baile (/clases/baile-barcelona)
+      cardHub: {
+        es: 'Folklore Cubano Barcelona - Aprende danzas Yoruba, Orishas y rumba con maestros cubanos',
+        en: 'Cuban Folklore Barcelona - Learn Yoruba dances, Orishas and rumba with Cuban masters',
+        ca: 'Folklore Cubà Barcelona - Aprèn danses Yoruba, Orixàs i rumba amb mestres cubans',
+        fr: 'Folklore Cubain Barcelone - Apprenez danses Yoruba, Orishas et rumba avec maîtres cubains',
+      },
+      // Para cards en categoría salsa/bachata (/clases/salsa-bachata-barcelona)
+      cardLatin: {
+        es: 'Folklore Cubano - Danzas tradicionales yoruba, rumba cubana y expresión afrocubana auténtica',
+        en: 'Cuban Folklore - Traditional Yoruba dances, Cuban rumba and authentic Afro-Cuban expression',
+        ca: 'Folklore Cubà - Danses tradicionals yoruba, rumba cubana i expressió afrocubana autèntica',
+        fr: 'Folklore Cubain - Danses traditionnelles yoruba, rumba cubaine et expression afro-cubaine authentique',
+      },
+      // Para hero de la página de clase individual
+      hero: {
+        es: "Bailarina ejecutando danza Yoruba de Folklore Cubano en las calles de La Habana - Tradición afrocubana en Farray's Center Barcelona",
+        en: "Dancer performing Yoruba dance from Cuban Folklore on the streets of Havana - Afro-Cuban tradition at Farray's Center Barcelona",
+        ca: "Ballarina executant dansa Yoruba de Folklore Cubà als carrers de l'Havana - Tradició afrocubana a Farray's Center Barcelona",
+        fr: "Danseuse exécutant une danse Yoruba du Folklore Cubain dans les rues de La Havane - Tradition afro-cubaine chez Farray's Center Barcelone",
+      },
+      // Para sección "¿Qué es?" de la página de clase
+      whatIs: {
+        es: 'Grupo de estudiantes aprendiendo danzas a los Orishas y folklore cubano tradicional en academia de Barcelona',
+        en: 'Group of students learning Orishas dances and traditional Cuban folklore at Barcelona dance academy',
+        ca: "Grup d'estudiants aprenent danses als Orixàs i folklore cubà tradicional a acadèmia de Barcelona",
+        fr: "Groupe d'étudiants apprenant les danses aux Orishas et folklore cubain traditionnel à académie de Barcelone",
+      },
+    },
+    stretching: {
+      alt: {
+        es: "Clases de Stretching en Barcelona - Flexibilidad en Farray's Center",
+        en: "Stretching Classes in Barcelona - Flexibility at Farray's Center",
+        ca: "Classes de Stretching a Barcelona - Flexibilitat a Farray's Center",
+        fr: "Cours de Stretching à Barcelone - Flexibilité chez Farray's Center",
+      },
+      cardHub: {
+        es: 'Stretching Barcelona - Mejora tu flexibilidad y previene lesiones',
+        en: 'Stretching Barcelona - Improve your flexibility and prevent injuries',
+        ca: 'Stretching Barcelona - Millora la teva flexibilitat i prevé lesions',
+        fr: 'Stretching Barcelone - Améliorez votre flexibilité et prévenez les blessures',
+      },
+      cardFitness: {
+        es: 'Stretching - Estiramientos profundos para bailarines y deportistas',
+        en: 'Stretching - Deep stretches for dancers and athletes',
+        ca: 'Stretching - Estiraments profunds per a ballarins i esportistes',
+        fr: 'Stretching - Étirements profonds pour danseurs et sportifs',
+      },
+      hero: {
+        es: "Alumnas realizando estiramientos en Barcelona - Flexibilidad profesional en Farray's Center",
+        en: "Students performing stretches in Barcelona - Professional flexibility at Farray's Center",
+        ca: "Alumnes realitzant estiraments a Barcelona - Flexibilitat professional a Farray's Center",
+        fr: "Élèves effectuant des étirements à Barcelone - Flexibilité professionnelle chez Farray's Center",
+      },
+    },
+    bumBum: {
+      // Alt genérico (fallback)
+      alt: {
+        es: "Clases de Bum Bum en Barcelona - Ejercicios de glúteos en Farray's Center",
+        en: "Bum Bum Classes in Barcelona - Glutes workout at Farray's Center",
+        ca: "Classes de Bum Bum a Barcelona - Exercicis de glutis a Farray's Center",
+        fr: "Cours de Bum Bum à Barcelone - Exercices fessiers chez Farray's Center",
+      },
+      // Para cards en hub de clases de baile (/clases/baile-barcelona)
+      cardHub: {
+        es: 'Bum Bum Glúteos Barcelona - Tonifica y fortalece con el Método Farray',
+        en: 'Bum Bum Glutes Barcelona - Tone and strengthen with the Farray Method',
+        ca: 'Bum Bum Glutis Barcelona - Tonifica i enforteix amb el Mètode Farray',
+        fr: 'Bum Bum Fessiers Barcelone - Tonifiez et renforcez avec la Méthode Farray',
+      },
+      // Para cards en categoría fitness (/clases/entrenamiento-bailarines-barcelona)
+      cardFitness: {
+        es: 'Bum Bum - Ejercicios de glúteos con hip thrust, sentadillas y técnicas de baile',
+        en: 'Bum Bum - Glute exercises with hip thrust, squats and dance techniques',
+        ca: 'Bum Bum - Exercicis de glutis amb hip thrust, esquats i tècniques de ball',
+        fr: 'Bum Bum - Exercices fessiers avec hip thrust, squats et techniques de danse',
+      },
+      // Para hero de la página de clase
+      hero: {
+        es: 'Alumnas realizando ejercicios de glúteos Bum Bum en Barcelona - Método Farray con hip thrust y sentadillas',
+        en: 'Students performing Bum Bum glute exercises in Barcelona - Farray Method with hip thrust and squats',
+        ca: 'Alumnes realitzant exercicis de glutis Bum Bum a Barcelona - Mètode Farray amb hip thrust i esquats',
+        fr: 'Élèves effectuant des exercices Bum Bum fessiers à Barcelone - Méthode Farray avec hip thrust et squats',
+      },
+      // Para sección "¿Qué es?" de la página de clase
+      whatIs: {
+        es: 'Grupo de alumnas tonificando glúteos con ejercicios Bum Bum en academia de Barcelona',
+        en: 'Group of students toning glutes with Bum Bum exercises at Barcelona dance academy',
+        ca: "Grup d'alumnes tonificant glutis amb exercicis Bum Bum a acadèmia de Barcelona",
+        fr: "Groupe d'élèves tonifiant les fessiers avec exercices Bum Bum à académie de Barcelone",
+      },
+    },
+    cuerpoFit: {
+      // Alt genérico (fallback)
+      alt: {
+        es: "Clases de Cuerpo Fit en Barcelona - Acondicionamiento físico para bailarines en Farray's Center",
+        en: "Cuerpo Fit Classes in Barcelona - Physical conditioning for dancers at Farray's Center",
+        ca: "Classes de Cuerpo Fit a Barcelona - Condicionament físic per a ballarins a Farray's Center",
+        fr: "Cours de Cuerpo Fit à Barcelone - Conditionnement physique pour danseurs chez Farray's Center",
+      },
+      // Para cards en hub de clases de baile (/clases/baile-barcelona)
+      cardHub: {
+        es: 'Cuerpo Fit Barcelona - Acondicionamiento físico integral para bailarines con el Método Farray',
+        en: 'Cuerpo Fit Barcelona - Complete physical conditioning for dancers with the Farray Method',
+        ca: 'Cuerpo Fit Barcelona - Condicionament físic integral per a ballarins amb el Mètode Farray',
+        fr: 'Cuerpo Fit Barcelone - Conditionnement physique complet pour danseurs avec la Méthode Farray',
+      },
+      // Para cards en categoría fitness (/clases/entrenamiento-bailarines-barcelona)
+      cardFitness: {
+        es: 'Cuerpo Fit - Entrenamiento funcional diseñado para potenciar fuerza, resistencia y flexibilidad en bailarines',
+        en: 'Cuerpo Fit - Functional training designed to enhance strength, endurance and flexibility in dancers',
+        ca: 'Cuerpo Fit - Entrenament funcional dissenyat per potenciar força, resistència i flexibilitat en ballarins',
+        fr: 'Cuerpo Fit - Entraînement fonctionnel conçu pour améliorer force, endurance et flexibilité chez les danseurs',
+      },
+      // Para hero de la página de clase individual
+      hero: {
+        es: 'Alumnas realizando ejercicios de acondicionamiento físico Cuerpo Fit en Barcelona - Método Farray con entrenamiento funcional para bailarines',
+        en: 'Students performing Cuerpo Fit physical conditioning exercises in Barcelona - Farray Method with functional training for dancers',
+        ca: 'Alumnes realitzant exercicis de condicionament físic Cuerpo Fit a Barcelona - Mètode Farray amb entrenament funcional per a ballarins',
+        fr: 'Élèves effectuant des exercices de conditionnement physique Cuerpo Fit à Barcelone - Méthode Farray avec entraînement fonctionnel pour danseurs',
+      },
+      // Para sección "¿Qué es?" de la página de clase
+      whatIs: {
+        es: 'Grupo de bailarines entrenando fuerza y resistencia en clase de Cuerpo Fit en academia de Barcelona',
+        en: 'Group of dancers training strength and endurance in Cuerpo Fit class at Barcelona dance academy',
+        ca: 'Grup de ballarins entrenant força i resistència a classe de Cuerpo Fit a acadèmia de Barcelona',
+        fr: 'Groupe de danseurs entraînant force et endurance en cours de Cuerpo Fit à académie de Barcelone',
+      },
+    },
+    fullBodyCardio: {
+      // Alt genérico (fallback)
+      alt: {
+        es: "Clases de Cuerpo-Fit Cardio Dance en Barcelona - Entrenamiento full body en Farray's Center",
+        en: "Cuerpo-Fit Cardio Dance Classes in Barcelona - Full body workout at Farray's Center",
+        ca: "Classes de Cuerpo-Fit Cardio Dance a Barcelona - Entrenament full body a Farray's Center",
+        fr: "Cours de Cuerpo-Fit Cardio Dance à Barcelone - Entraînement full body chez Farray's Center",
+      },
+      // Para cards en hub de clases de baile (/clases/baile-barcelona)
+      cardHub: {
+        es: 'Cuerpo-Fit Cardio Barcelona - Quema calorías bailando con entrenamiento full body',
+        en: 'Cuerpo-Fit Cardio Barcelona - Burn calories dancing with full body workout',
+        ca: 'Cuerpo-Fit Cardio Barcelona - Crema calories ballant amb entrenament full body',
+        fr: 'Cuerpo-Fit Cardio Barcelone - Brûlez des calories en dansant avec entraînement full body',
+      },
+      // Para cards en categoría fitness (/clases/entrenamiento-bailarines-barcelona)
+      cardFitness: {
+        es: 'Cuerpo-Fit - Cardio dance que combina ejercicios funcionales con música y coreografías',
+        en: 'Cuerpo-Fit - Cardio dance combining functional exercises with music and choreography',
+        ca: 'Cuerpo-Fit - Cardio dance que combina exercicis funcionals amb música i coreografies',
+        fr: 'Cuerpo-Fit - Cardio dance combinant exercices fonctionnels avec musique et chorégraphies',
+      },
+      // Para hero de la página de clase individual
+      hero: {
+        es: "Alumnas realizando ejercicios de cardio dance Cuerpo-Fit en Barcelona - Entrenamiento full body con música en Farray's Center",
+        en: "Students performing Cuerpo-Fit cardio dance exercises in Barcelona - Full body workout with music at Farray's Center",
+        ca: "Alumnes realitzant exercicis de cardio dance Cuerpo-Fit a Barcelona - Entrenament full body amb música a Farray's Center",
+        fr: "Élèves effectuant des exercices de cardio dance Cuerpo-Fit à Barcelone - Entraînement full body avec musique chez Farray's Center",
+      },
+      // Para sección "¿Qué es?" de la página de clase
+      whatIs: {
+        es: 'Grupo de alumnas quemando calorías con cardio dance Cuerpo-Fit en academia de Barcelona',
+        en: 'Group of students burning calories with Cuerpo-Fit cardio dance at Barcelona dance academy',
+        ca: "Grup d'alumnes cremant calories amb cardio dance Cuerpo-Fit a acadèmia de Barcelona",
+        fr: "Groupe d'élèves brûlant des calories avec cardio dance Cuerpo-Fit à académie de Barcelone",
+      },
+    },
+    bodyConditioning: {
+      alt: {
+        es: "Acondicionamiento Físico para Bailarines en Barcelona - Farray's Center",
+        en: "Body Conditioning for Dancers in Barcelona - Farray's Center",
+        ca: "Condicionament Físic per a Ballarins a Barcelona - Farray's Center",
+        fr: "Conditionnement Physique pour Danseurs à Barcelone - Farray's Center",
+      },
+      cardHub: {
+        es: 'Acondicionamiento Físico Barcelona - Preparación integral para bailarines profesionales',
+        en: 'Body Conditioning Barcelona - Comprehensive preparation for professional dancers',
+        ca: 'Condicionament Físic Barcelona - Preparació integral per a ballarins professionals',
+        fr: 'Conditionnement Physique Barcelone - Préparation complète pour danseurs professionnels',
+      },
+      cardFitness: {
+        es: 'Acondicionamiento Físico - Fortalecimiento muscular, resistencia y prevención de lesiones',
+        en: 'Body Conditioning - Muscle strengthening, endurance and injury prevention',
+        ca: 'Condicionament Físic - Enfortiment muscular, resistència i prevenció de lesions',
+        fr: 'Conditionnement Physique - Renforcement musculaire, endurance et prévention des blessures',
+      },
+      hero: {
+        es: "Bailarines realizando acondicionamiento físico en Barcelona - Preparación profesional en Farray's Center",
+        en: "Dancers performing body conditioning in Barcelona - Professional preparation at Farray's Center",
+        ca: "Ballarins realitzant condicionament físic a Barcelona - Preparació professional a Farray's Center",
+        fr: "Danseurs effectuant du conditionnement physique à Barcelone - Préparation professionnelle chez Farray's Center",
+      },
+    },
+  },
+} as const;
+
+// Type helper to get paths
+export type ImageAltPath = keyof typeof IMAGE_ALT_TEXTS;
+
+export default IMAGE_ALT_TEXTS;

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, lazy, Suspense } from 'react';
+import React, { useEffect, useRef, lazy, Suspense, useMemo } from 'react';
 import {
   BrowserRouter,
   Routes,
@@ -37,6 +37,7 @@ const ContactPage = lazy(() => import('./components/ContactPage'));
 const MerchandisingPage = lazy(() => import('./components/MerchandisingPage'));
 const FAQPage = lazy(() => import('./components/FAQPage'));
 const YunaisyFarrayPage = lazy(() => import('./components/YunaisyFarrayPage'));
+const MetodoFarrayPage = lazy(() => import('./components/MetodoFarrayPage'));
 const RegalaBailePage = lazy(() => import('./components/RegalaBailePage'));
 const AlquilerSalasPage = lazy(() => import('./components/AlquilerSalasPage'));
 const ServiciosBailePage = lazy(() => import('./components/ServiciosBailePage'));
@@ -77,10 +78,22 @@ const AfroContemporaneoV2Page = lazy(() => import('./components/AfroContemporane
 const CalendarPage = lazy(() => import('./components/CalendarPage'));
 const HomePageV2 = lazy(() => import('./components/HomePageV2'));
 
-// ===== DANCEHALL LANDING =====
-const DancehallLanding = lazy(() => import('./components/landing/DancehallLanding'));
+// ===== LANDING PAGES =====
 const GenericDanceLanding = lazy(() => import('./components/landing/GenericDanceLanding'));
+import { DANCEHALL_LANDING_CONFIG } from './constants/dancehall-landing-config';
 import { TWERK_LANDING_CONFIG } from './constants/twerk-landing-config';
+import { SEXY_REGGAETON_LANDING_CONFIG } from './constants/sexy-reggaeton-landing-config';
+import { SEXY_STYLE_LANDING_CONFIG } from './constants/sexy-style-landing-config';
+import { HIP_HOP_REGGAETON_LANDING_CONFIG } from './constants/hip-hop-reggaeton-landing-config';
+import { CONTEMPORANEO_LANDING_CONFIG } from './constants/contemporaneo-landing-config';
+import { FEMMOLOGY_LANDING_CONFIG } from './constants/femmology-landing-config';
+import { BACHATA_LANDING_CONFIG } from './constants/bachata-landing-config';
+import { HIP_HOP_LANDING_CONFIG } from './constants/hip-hop-landing-config';
+import { AFROBEATS_LANDING_CONFIG } from './constants/afrobeats-landing-config';
+import { AFRO_JAZZ_LANDING_CONFIG } from './constants/afro-jazz-landing-config';
+import { SALSA_CUBANA_LANDING_CONFIG } from './constants/salsa-cubana-landing-config';
+import { BALLET_LANDING_CONFIG } from './constants/ballet-landing-config';
+import { AFRO_CONTEMPORANEO_LANDING_CONFIG } from './constants/afro-contemporaneo-landing-config';
 const PreciosPage = lazy(() => import('./components/PreciosPage'));
 const HorariosPreciosPage = lazy(() => import('./components/HorariosPreciosPage'));
 const HorariosPageV2 = lazy(() => import('./components/HorariosPageV2'));
@@ -102,6 +115,9 @@ const CookiePolicyPage = lazy(() => import('./components/CookiePolicyPage'));
 
 // ===== COOKIE CONSENT =====
 import CookieBanner from './components/shared/CookieBanner';
+
+// ===== EXIT INTENT MODAL =====
+import ExitIntentModal from './components/ExitIntentModal';
 
 // Valid locales - use centralized constant from types.ts
 const VALID_LOCALES = SUPPORTED_LOCALES;
@@ -160,13 +176,65 @@ const LocaleSync: React.FC = () => {
   return null;
 };
 
+// ===== EXIT INTENT CONFIGURATION =====
+// Paths where exit intent modal should NOT appear (legal, informational pages)
+const EXIT_INTENT_EXCLUDED_PATHS = [
+  '/terminos-y-condiciones',
+  '/aviso-legal',
+  '/politica-privacidad',
+  '/politica-cookies',
+  '/blog',
+  '/sobre-nosotros',
+  '/metodofarray',
+  '/yunaisy-farray',
+  '/profesores-baile-barcelona',
+  '/preguntas-frecuentes',
+  '/alquiler-salas-baile-barcelona',
+  '/servicios-baile',
+  '/estudio-grabacion-barcelona',
+  '/instalaciones-escuela-baile-barcelona',
+  '/merchandise',
+  '/test',
+  '/404',
+];
+
+// Promotion configuration - easy to update
+const EXIT_INTENT_PROMO_CONFIG = {
+  endDate: new Date('2025-01-31T23:59:59'),
+  discountPercent: 50,
+  delay: 5000, // 5 seconds before activating detection
+  cookieExpiry: 7, // Show again after 7 days
+};
+
 const AppContent: React.FC = () => {
   const { locale } = useI18n();
   const location = useLocation();
 
   // Check if current route is a landing page (no header/footer)
   const isPromoLanding =
-    location.pathname.endsWith('/dancehall') || location.pathname.endsWith('/twerk');
+    location.pathname.endsWith('/dancehall') ||
+    location.pathname.endsWith('/twerk') ||
+    location.pathname.endsWith('/sexy-reggaeton') ||
+    location.pathname.endsWith('/sexy-style') ||
+    location.pathname.endsWith('/hip-hop-reggaeton') ||
+    location.pathname.endsWith('/contemporaneo') ||
+    location.pathname.endsWith('/femmology') ||
+    location.pathname.endsWith('/bachata') ||
+    location.pathname.endsWith('/hip-hop') ||
+    location.pathname.endsWith('/afrobeats') ||
+    location.pathname.endsWith('/afro-jazz') ||
+    location.pathname.endsWith('/salsa-cubana');
+
+  // Determine if exit intent modal should show on current page
+  const shouldShowExitIntent = useMemo(() => {
+    // Remove locale prefix to get the base path
+    const pathWithoutLocale = location.pathname.replace(/^\/(es|en|ca|fr)/, '') || '/';
+
+    // Check if current path matches any excluded path
+    return !EXIT_INTENT_EXCLUDED_PATHS.some(
+      excluded => pathWithoutLocale === excluded || pathWithoutLocale.startsWith(excluded + '/')
+    );
+  }, [location.pathname]);
 
   useEffect(() => {
     document.documentElement.lang = locale;
@@ -640,6 +708,16 @@ const AppContent: React.FC = () => {
             />
 
             <Route
+              path="/:locale/metodo-farray"
+              element={
+                <>
+                  <LocaleSync />
+                  <MetodoFarrayPage />
+                </>
+              }
+            />
+
+            <Route
               path="/:locale/regala-baile"
               element={
                 <>
@@ -767,7 +845,7 @@ const AppContent: React.FC = () => {
               element={
                 <>
                   <LocaleSync />
-                  <DancehallLanding />
+                  <GenericDanceLanding config={DANCEHALL_LANDING_CONFIG} />
                 </>
               }
             />
@@ -779,6 +857,136 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <GenericDanceLanding config={TWERK_LANDING_CONFIG} />
+                </>
+              }
+            />
+
+            {/* ===== SEXY REGGAETON LANDING ===== */}
+            <Route
+              path="/:locale/sexy-reggaeton"
+              element={
+                <>
+                  <LocaleSync />
+                  <GenericDanceLanding config={SEXY_REGGAETON_LANDING_CONFIG} />
+                </>
+              }
+            />
+
+            {/* ===== SEXY STYLE LANDING ===== */}
+            <Route
+              path="/:locale/sexy-style"
+              element={
+                <>
+                  <LocaleSync />
+                  <GenericDanceLanding config={SEXY_STYLE_LANDING_CONFIG} />
+                </>
+              }
+            />
+
+            {/* ===== HIP HOP REGGAETON LANDING ===== */}
+            <Route
+              path="/:locale/hip-hop-reggaeton"
+              element={
+                <>
+                  <LocaleSync />
+                  <GenericDanceLanding config={HIP_HOP_REGGAETON_LANDING_CONFIG} />
+                </>
+              }
+            />
+
+            {/* ===== CONTEMPORANEO LANDING ===== */}
+            <Route
+              path="/:locale/contemporaneo"
+              element={
+                <>
+                  <LocaleSync />
+                  <GenericDanceLanding config={CONTEMPORANEO_LANDING_CONFIG} />
+                </>
+              }
+            />
+
+            {/* ===== FEMMOLOGY LANDING ===== */}
+            <Route
+              path="/:locale/femmology"
+              element={
+                <>
+                  <LocaleSync />
+                  <GenericDanceLanding config={FEMMOLOGY_LANDING_CONFIG} />
+                </>
+              }
+            />
+
+            {/* ===== BACHATA SENSUAL LANDING ===== */}
+            <Route
+              path="/:locale/bachata"
+              element={
+                <>
+                  <LocaleSync />
+                  <GenericDanceLanding config={BACHATA_LANDING_CONFIG} />
+                </>
+              }
+            />
+
+            {/* ===== HIP HOP LANDING ===== */}
+            <Route
+              path="/:locale/hip-hop"
+              element={
+                <>
+                  <LocaleSync />
+                  <GenericDanceLanding config={HIP_HOP_LANDING_CONFIG} />
+                </>
+              }
+            />
+
+            {/* ===== AFROBEATS LANDING ===== */}
+            <Route
+              path="/:locale/afrobeats"
+              element={
+                <>
+                  <LocaleSync />
+                  <GenericDanceLanding config={AFROBEATS_LANDING_CONFIG} />
+                </>
+              }
+            />
+
+            {/* ===== AFRO JAZZ LANDING ===== */}
+            <Route
+              path="/:locale/afro-jazz"
+              element={
+                <>
+                  <LocaleSync />
+                  <GenericDanceLanding config={AFRO_JAZZ_LANDING_CONFIG} />
+                </>
+              }
+            />
+
+            {/* ===== SALSA CUBANA LANDING ===== */}
+            <Route
+              path="/:locale/salsa-cubana"
+              element={
+                <>
+                  <LocaleSync />
+                  <GenericDanceLanding config={SALSA_CUBANA_LANDING_CONFIG} />
+                </>
+              }
+            />
+
+            {/* ===== BALLET LANDING ===== */}
+            <Route
+              path="/:locale/ballet"
+              element={
+                <>
+                  <LocaleSync />
+                  <GenericDanceLanding config={BALLET_LANDING_CONFIG} />
+                </>
+              }
+            />
+            <Route
+              path="/:locale/afro-contemporaneo"
+              element={
+                <>
+                  <LocaleSync />
+                  <GenericDanceLanding config={AFRO_CONTEMPORANEO_LANDING_CONFIG} />
                 </>
               }
             />
@@ -926,6 +1134,15 @@ const AppContent: React.FC = () => {
           <Footer />
           <BackToTop />
         </>
+      )}
+      {/* Exit Intent Modal - Only on conversion pages */}
+      {shouldShowExitIntent && (
+        <ExitIntentModal
+          delay={EXIT_INTENT_PROMO_CONFIG.delay}
+          cookieExpiry={EXIT_INTENT_PROMO_CONFIG.cookieExpiry}
+          promoEndDate={EXIT_INTENT_PROMO_CONFIG.endDate}
+          discountPercent={EXIT_INTENT_PROMO_CONFIG.discountPercent}
+        />
       )}
       <CookieBanner />
     </div>

@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
 import { XMarkIcon, CheckIcon, CheckCircleIcon } from '../../lib/icons';
 import type { LandingConfig } from '../../constants/landing-template-config';
+import { trackLeadConversion, LEAD_VALUES, pushToDataLayer } from '../../utils/analytics';
 
 // =============================================================================
 // TYPES
@@ -267,14 +268,13 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
         await new Promise(resolve => window.setTimeout(resolve, 1000));
         setStatus('success');
 
-        if (typeof window.fbq === 'function') {
-          window.fbq('track', 'Lead', {
-            content_name: `${estiloValue} Free Welcome Class`,
-            content_category: 'Dance Class',
-            value: 0,
-            currency: 'EUR',
-          });
-        }
+        // Track conversion with full dataLayer + GA4 + Meta Pixel
+        trackLeadConversion({
+          leadSource: 'generic_modal',
+          formName: `${estiloValue} Free Welcome Class`,
+          leadValue: LEAD_VALUES.GENERIC_LEAD,
+          pagePath: window.location.pathname,
+        });
         return;
       }
 
@@ -296,17 +296,23 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
 
       if (leadStatus === 'existing') {
         setStatus('success_existing');
+        // Track existing lead event for analytics (lower value)
+        pushToDataLayer({
+          event: 'lead_existing',
+          lead_source: 'generic_modal',
+          form_name: `${estiloValue} Free Welcome Class`,
+          page_path: window.location.pathname,
+        });
       } else {
         setStatus('success');
 
-        if (typeof window.fbq === 'function') {
-          window.fbq('track', 'Lead', {
-            content_name: `${estiloValue} Free Welcome Class`,
-            content_category: 'Dance Class',
-            value: 0,
-            currency: 'EUR',
-          });
-        }
+        // Track conversion with full dataLayer + GA4 + Meta Pixel
+        trackLeadConversion({
+          leadSource: 'generic_modal',
+          formName: `${estiloValue} Free Welcome Class`,
+          leadValue: LEAD_VALUES.GENERIC_LEAD,
+          pagePath: window.location.pathname,
+        });
       }
     } catch (err) {
       console.error('Lead submission error:', err);

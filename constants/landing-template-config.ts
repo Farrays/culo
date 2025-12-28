@@ -184,7 +184,7 @@ export interface LandingConfig {
 }
 
 // =============================================================================
-// CONFIGURACIÓN DE EJEMPLO - DANCEHALL
+// HELPER FUNCTION
 // =============================================================================
 
 /**
@@ -202,135 +202,6 @@ export function createLandingConfig(
     },
   };
 }
-
-export const DANCEHALL_LANDING_CONFIG: LandingConfig = createLandingConfig('rose', {
-  // Identificadores
-  id: 'dancehall-landing',
-  slug: 'dancehall',
-  sourceId: 127831,
-  estiloValue: 'Dancehall',
-  discoveryValue: 'Facebook',
-
-  // Imágenes
-  images: {
-    hero: '/images/classes/dancehall/img/dancehall-classes-barcelona-01_960.webp',
-    showcase: '/images/classes/dancehall/img/dancehall-dance-students-02_960.webp',
-    heroAlt: 'Clases de Dancehall en Barcelona',
-    showcaseAlt: 'Alumnas de Dancehall en Barcelona',
-  },
-
-  // Logos
-  logos: [
-    { src: '/images/cid-unesco-logo.webp', alt: 'CID UNESCO', label: 'CID UNESCO' },
-    { src: '/images/Street-Dance-2.webp', alt: 'Street Dance 2', label: 'Street Dance 2' },
-    {
-      src: '/images/the-dancer-espectaculo-baile-cuadrada.webp',
-      alt: 'The Dancer',
-      label: 'The Dancer',
-    },
-    { src: '/images/telecinco-logo.webp', alt: 'Telecinco', label: 'Telecinco' },
-  ],
-
-  // Prefijo de traducciones
-  translationPrefix: 'dhLanding',
-
-  // Value Stack
-  valueStack: [
-    { key: 'dhLandingValueItem1', price: 20, priceKey: 'dhLandingValuePrice1' },
-    { key: 'dhLandingValueItem2', price: 0, priceKey: 'dhLandingValueIncluded' },
-    { key: 'dhLandingValueItem3', price: 0, priceKey: 'dhLandingValueIncluded' },
-    { key: 'dhLandingValueItem4', price: 0, priceKey: 'dhLandingValueIncluded' },
-    { key: 'dhLandingValueItem5', price: 0, priceKey: 'dhLandingValueIncluded' },
-  ],
-
-  // Why Us
-  whyUs: [
-    { titleKey: 'dhLandingWhyTitle1', descKey: 'dhLandingWhyDesc1' },
-    { titleKey: 'dhLandingWhyTitle2', descKey: 'dhLandingWhyDesc2' },
-    { titleKey: 'dhLandingWhyTitle4', descKey: 'dhLandingWhyDesc4' },
-    { titleKey: 'dhLandingWhyTitle3', descKey: 'dhLandingWhyDesc3' },
-  ],
-
-  // FAQs
-  faqs: [
-    { id: 'obj-1', questionKey: 'dhLandingObjQ1', answerKey: 'dhLandingObjA1' },
-    { id: 'obj-2', questionKey: 'dhLandingObjQ2', answerKey: 'dhLandingObjA2' },
-    { id: 'obj-3', questionKey: 'dhLandingObjQ3', answerKey: 'dhLandingObjA3' },
-    { id: 'obj-4', questionKey: 'dhLandingObjQ4', answerKey: 'dhLandingObjA4' },
-  ],
-
-  // Testimoniales
-  testimonials: [
-    { id: 1, name: 'Marta C.', quote: 'dhLandingTestimonial1' },
-    { id: 2, name: 'Laura S.', quote: 'dhLandingTestimonial2' },
-    { id: 3, name: 'Paula G.', quote: 'dhLandingTestimonial3' },
-  ],
-
-  // Horarios
-  schedule: [
-    {
-      id: '1',
-      dayKey: 'monday',
-      time: '22:00 - 23:00',
-      levelKey: 'beginnerLevel',
-      className: 'Dancehall Female',
-      teacher: 'Sandra',
-    },
-    {
-      id: '2',
-      dayKey: 'wednesday',
-      time: '12:00 - 13:00',
-      levelKey: 'beginnerLevel',
-      className: 'Dancehall Female',
-      teacher: 'Isabel',
-    },
-    {
-      id: '3',
-      dayKey: 'wednesday',
-      time: '21:00 - 22:00',
-      levelKey: 'intermediateLevel',
-      className: 'Dancehall Twerk',
-      teacher: 'Isabel',
-    },
-    {
-      id: '4',
-      dayKey: 'thursday',
-      time: '21:00 - 22:00',
-      levelKey: 'beginnerLevel',
-      className: 'Dancehall Female',
-      teacher: 'Isabel',
-    },
-    {
-      id: '5',
-      dayKey: 'thursday',
-      time: '22:00 - 23:00',
-      levelKey: 'basicLevel',
-      className: 'Dancehall Female',
-      teacher: 'Sandra',
-    },
-    {
-      id: '6',
-      dayKey: 'friday',
-      time: '18:00 - 19:00',
-      levelKey: 'beginnerLevel',
-      className: 'Dancehall Twerk',
-      teacher: 'Isabel',
-    },
-  ],
-
-  // Estadísticas
-  stats: {
-    years: 8,
-    activeStudents: 1500,
-    satisfiedStudents: 15000,
-  },
-
-  // Countdown
-  countdown: {
-    baseDate: '2025-01-06T23:59:59',
-    intervalDays: 14,
-  },
-});
 
 // =============================================================================
 // TEMPLATE VACÍO PARA COPIAR
