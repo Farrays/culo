@@ -497,7 +497,10 @@ const ContactPage: React.FC = () => {
 
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto text-center">
-                <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-neutral mb-6 holographic-text">
+                <h1
+                  className="text-5xl md:text-7xl font-black tracking-tighter text-white mb-6"
+                  style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
+                >
                   {t('contact_hero_title')}
                 </h1>
                 <p className="text-xl md:text-2xl text-neutral/90 leading-relaxed">

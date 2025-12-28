@@ -56,7 +56,7 @@ export const fr = {
   heroSubtitle: 'La Pédagogie Qui Manquait',
   heroTagline: "Danser, c'est travailler à son bonheur.",
   heroValue:
-    "Si vous cherchez des cours de danse à Barcelone où vous progressez enfin et ne vous sentez pas comme un simple numéro, vous êtes au bon endroit. Avec la Méthode Farray®, vous apprenez bien, vite et avec style… et vous vous amusez plus que dans n'importe quelle salle de sport.",
+    "Vous n'avez pas besoin de plus de cours de danse. Vous avez besoin des bons cours. Si vous cherchez des cours de danse à Barcelone où vous progressez enfin et ne vous sentez pas comme un simple numéro, vous êtes au bon endroit. Avec la Méthode Farray®, vous apprenez bien, vite et avec style… et vous vous amusez plus que dans n'importe quelle salle de sport.",
   heroCTA1: "Réservez Votre Cours d'Essai",
   heroCTA2: 'Découvrir les Cours',
   heroScroll: 'Révélez Votre Potentiel',
@@ -8716,8 +8716,8 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   roomRental_room2_condition: 'Fines de semana y festivos: mínimo 3 horas de alquiler',
   roomRental_cta_phone: 'Llamar: 933 25 96 44',
   roomRental_cta_location: 'Calle Entença 100, Barcelona (entre Plaza España y Sants)',
-  facilitiesHeroTitle: 'Instalaciones - Escuela de Baile en Barcelona',
-  facilitiesHeroSubtitle: 'Más de 700 m² dedicados a la danza en el corazón de Barcelona',
+  facilitiesHeroTitle: '+700 m² Dédiés à la Danse à Barcelone',
+  facilitiesHeroSubtitle: "4 Studios Professionnels avec Équipement d'Élite",
   facilitiesHeroDesc:
     "Farray's International Dance Center es una escuela de baile en Barcelona con más de 700 m² de instalaciones diseñadas específicamente para la danza, el entrenamiento físico y la creación artística.",
   facilitiesHeroLocation: 'Calle Entença 100, Barcelona - Entre Plaza España y Sants',
@@ -8832,7 +8832,32 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   facilitiesFaqA7:
     'Sí, ofrecemos alquiler de salas por horas para ensayos, clases particulares, workshops, castings, grabaciones y eventos. Contáctanos para disponibilidad y tarifas especiales.',
   facilitiesBreadcrumbHome: 'Accueil',
-  facilitiesBreadcrumbCurrent: 'Instalaciones',
+  facilitiesBreadcrumbCurrent: 'Installations',
+  // Gallery Section
+  facilitiesGalleryTitle: 'Galerie des Installations',
+  facilitiesGallerySubtitle: 'Découvrez chaque recoin de nos installations professionnelles',
+  facilitiesGalleryAll: 'Toutes',
+  facilitiesGallerySalas: 'Studios',
+  facilitiesGallerySocial: 'Espace Social',
+  facilitiesGalleryServicios: 'Services',
+  facilitiesGalleryViewLarge: 'Voir en grand',
+  facilitiesGalleryPhotosLabel: 'photos',
+  facilitiesGalleryPhotos: 'photos',
+  facilitiesAreaSalaA: 'Salle A',
+  facilitiesAreaSalaB: 'Salle B',
+  facilitiesAreaSalaC: 'Salle C',
+  facilitiesAreaSalaD: 'Salle D',
+  facilitiesAreaBar: 'Bar',
+  facilitiesAreaRecepcion: 'Réception',
+  facilitiesAreaRinconDelux: 'Coin Delux',
+  facilitiesAreaVestuario: 'Vestiaires',
+  // Lightbox Accessibility
+  lightboxClose: 'Fermer la galerie',
+  lightboxPrevious: 'Image précédente',
+  lightboxNext: 'Image suivante',
+  lightboxImageCounter: 'Image {current} de {total}',
+  lightboxLoading: "Chargement de l'image...",
+  lightboxGalleryLabel: "Galerie d'images des installations",
   twerkLevelsTitle: 'Nuestros Niveles de Twerk',
   twerkPrepareTitle: 'Prepara tu primera clase de Twerk',
   twerkPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
@@ -12349,6 +12374,17 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   teachersPageTeacher14Specialty: 'Afrobeats & Afro Dance',
   teachersPageTeacher14Bio:
     "Spécialiste de l'Afrobeats et des danses africaines contemporaines. Énergie et rythme à chaque cours.",
+
+  // New Teachers
+  teachersPageTeacherJuanSpecialty: 'Salsa Cubaine',
+  teachersPageTeacherJuanBio:
+    "Instructeur de Salsa Cubaine avec une vaste expérience dans le style cubain authentique. Passion pour transmettre l'essence de la danse caribéenne.",
+  teachersPageTeacherCrisagSpecialty: 'Urban Dance',
+  teachersPageTeacherCrisagBio:
+    'Danseuse professionnelle spécialisée dans les styles urbains contemporains. Créativité et expression à chaque mouvement.',
+  teachersPageTeacherGrechenSpecialty: 'Bachata & Salsa',
+  teachersPageTeacherGrechenBio:
+    'Instructrice avec expérience en danses latines et styles caribéens. Technique raffinée et connexion avec la musique.',
 
   // CTA Section
   teachersPageCtaTitle: 'Prêt à Apprendre des Meilleurs?',

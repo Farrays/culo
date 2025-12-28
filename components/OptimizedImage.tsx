@@ -61,6 +61,8 @@ export interface OptimizedImageProps {
   style?: React.CSSProperties;
   /** Object-fit behavior */
   objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down';
+  /** Object-position for image alignment (e.g., "center", "top", "center 30%") */
+  objectPosition?: string;
   /** Placeholder type while loading */
   placeholder?: 'blur' | 'color' | 'none';
   /** Dominant color for 'color' placeholder (default: "#111") */
@@ -147,6 +149,7 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   className = '',
   style: externalStyle,
   objectFit = 'cover',
+  objectPosition = 'center',
   placeholder = 'blur',
   placeholderColor = '#111',
   blurDataURL,
@@ -254,10 +257,10 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       transition: 'opacity 0.3s ease-in-out',
       // Apply external opacity or default loaded state
       opacity: isLoaded ? (externalStyle?.opacity ?? 1) : 0,
-      // Support custom objectPosition from external style
-      objectPosition: externalStyle?.objectPosition ?? 'center',
+      // Use objectPosition prop directly (more reliable than style prop)
+      objectPosition: objectPosition,
     }),
-    [objectFit, isLoaded, externalStyle?.opacity, externalStyle?.objectPosition]
+    [objectFit, isLoaded, externalStyle?.opacity, objectPosition]
   );
 
   // Loading attributes based on priority

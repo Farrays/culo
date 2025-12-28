@@ -1,0 +1,95 @@
+{
+  "id": "profesor-alejandro-minoso",
+  "className": "teachers",
+  "originalFile": "Profesor Alejandro Miñoso.jpg",
+  "original": {
+    "width": 1067,
+    "height": 1334,
+    "aspectRatio": "0.7999",
+    "format": "jpeg",
+    "space": "srgb",
+    "channels": 3,
+    "hasAlpha": false
+  },
+  "placeholder": {
+    "lqip": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAQAwCdASoUABkAPzmIuFO/qSUisAgD8CcJZwDA3C080gAA/t6qzRDO0FkQOMTNPNVC45UXKNC9psaAAAA=",
+    "dominantColor": "#5d4836",
+    "svg": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%235d4836%22%2F%3E%3C%2Fsvg%3E"
+  },
+  "basePath": "/images/classes/teachers/img/teachers-profesor-alejandro-minoso-barcelona",
+  "variants": [
+    {
+      "width": 320,
+      "height": 427,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesor-alejandro-mi-oso_320.jpg",
+      "size": 17491
+    },
+    {
+      "width": 320,
+      "height": 427,
+      "format": "webp",
+      "path": "/images/teachers/img/profesor-alejandro-mi-oso_320.webp",
+      "size": 14586
+    },
+    {
+      "width": 320,
+      "height": 427,
+      "format": "avif",
+      "path": "/images/teachers/img/profesor-alejandro-mi-oso_320.avif",
+      "size": 15226
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "webp",
+      "path": "/images/teachers/img/profesor-alejandro-mi-oso_640.webp",
+      "size": 48730
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "avif",
+      "path": "/images/teachers/img/profesor-alejandro-mi-oso_640.avif",
+      "size": 54074
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesor-alejandro-mi-oso_640.jpg",
+      "size": 58702
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesor-alejandro-mi-oso_960.jpg",
+      "size": 118311
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "avif",
+      "path": "/images/teachers/img/profesor-alejandro-mi-oso_960.avif",
+      "size": 98503
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "webp",
+      "path": "/images/teachers/img/profesor-alejandro-mi-oso_960.webp",
+      "size": 95892
+    }
+  ],
+  "srcSets": {
+    "avif": "/images/teachers/img/profesor-alejandro-mi-oso_320.avif 320w, /images/teachers/img/profesor-alejandro-mi-oso_640.avif 640w, /images/teachers/img/profesor-alejandro-mi-oso_960.avif 960w",
+    "webp": "/images/teachers/img/profesor-alejandro-mi-oso_320.webp 320w, /images/teachers/img/profesor-alejandro-mi-oso_640.webp 640w, /images/teachers/img/profesor-alejandro-mi-oso_960.webp 960w",
+    "jpeg": "/images/teachers/img/profesor-alejandro-mi-oso_320.jpg 320w, /images/teachers/img/profesor-alejandro-mi-oso_640.jpg 640w, /images/teachers/img/profesor-alejandro-mi-oso_960.jpg 960w"
+  },
+  "defaultSrc": "/images/teachers/img/profesor-alejandro-mi-oso_320.jpg",
+  "generated": {
+    "at": "2025-12-28T07:38:38.731Z",
+    "version": "2.0.0"
+  }
+}

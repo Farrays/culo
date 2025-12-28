@@ -1,0 +1,95 @@
+{
+  "id": "profesora-eugenio-trujillo",
+  "className": "teachers",
+  "originalFile": "Profesora Eugenio Trujillo.jpg",
+  "original": {
+    "width": 1080,
+    "height": 1440,
+    "aspectRatio": "0.7500",
+    "format": "jpeg",
+    "space": "srgb",
+    "channels": 3,
+    "hasAlpha": false
+  },
+  "placeholder": {
+    "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAAAwAwCdASoUABsAPzmQulU0siWjMBgIApAnCWcAygAXQy1oAP7ghM4rduFTyzUyk0fcyR7asQgAAA==",
+    "dominantColor": "#a4a09e",
+    "svg": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23a4a09e%22%2F%3E%3C%2Fsvg%3E"
+  },
+  "basePath": "/images/classes/teachers/img/teachers-profesora-eugenio-trujillo-barcelona",
+  "variants": [
+    {
+      "width": 320,
+      "height": 427,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesora-eugenio-trujillo_320.jpg",
+      "size": 18116
+    },
+    {
+      "width": 320,
+      "height": 427,
+      "format": "webp",
+      "path": "/images/teachers/img/profesora-eugenio-trujillo_320.webp",
+      "size": 14116
+    },
+    {
+      "width": 320,
+      "height": 427,
+      "format": "avif",
+      "path": "/images/teachers/img/profesora-eugenio-trujillo_320.avif",
+      "size": 12966
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesora-eugenio-trujillo_640.jpg",
+      "size": 53409
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "webp",
+      "path": "/images/teachers/img/profesora-eugenio-trujillo_640.webp",
+      "size": 42296
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "avif",
+      "path": "/images/teachers/img/profesora-eugenio-trujillo_640.avif",
+      "size": 38380
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesora-eugenio-trujillo_960.jpg",
+      "size": 104309
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "webp",
+      "path": "/images/teachers/img/profesora-eugenio-trujillo_960.webp",
+      "size": 81990
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "avif",
+      "path": "/images/teachers/img/profesora-eugenio-trujillo_960.avif",
+      "size": 69979
+    }
+  ],
+  "srcSets": {
+    "avif": "/images/teachers/img/profesora-eugenio-trujillo_320.avif 320w, /images/teachers/img/profesora-eugenio-trujillo_640.avif 640w, /images/teachers/img/profesora-eugenio-trujillo_960.avif 960w",
+    "webp": "/images/teachers/img/profesora-eugenio-trujillo_320.webp 320w, /images/teachers/img/profesora-eugenio-trujillo_640.webp 640w, /images/teachers/img/profesora-eugenio-trujillo_960.webp 960w",
+    "jpeg": "/images/teachers/img/profesora-eugenio-trujillo_320.jpg 320w, /images/teachers/img/profesora-eugenio-trujillo_640.jpg 640w, /images/teachers/img/profesora-eugenio-trujillo_960.jpg 960w"
+  },
+  "defaultSrc": "/images/teachers/img/profesora-eugenio-trujillo_320.jpg",
+  "generated": {
+    "at": "2025-12-28T07:39:07.640Z",
+    "version": "2.0.0"
+  }
+}

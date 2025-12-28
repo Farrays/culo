@@ -402,6 +402,7 @@ export async function processSpecialFolder(folderName, options = {}) {
   const processOptions = {
     ...options,
     crop: options.crop || folderConfig.aspectRatio,
+    focus: options.focus || folderConfig.focus || 'center',
   };
 
   for (const file of files) {

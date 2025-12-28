@@ -17,7 +17,7 @@ export interface TeacherPageInfo {
 export const DIRECTOR_INFO: TeacherPageInfo = {
   id: 'yunaisy-farray',
   name: 'Yunaisy Farray',
-  image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
+  image: '/images/teachers/img/maestra-yunaisy-farray_320.webp',
   specialtyKey: 'teachersPageDirectorSpecialty',
   bioKey: 'teachersPageDirectorBio',
   styles: [
@@ -35,6 +35,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'daniel-sene',
     name: 'Daniel Sené',
+    image: '/images/teachers/img/profesor-daniel-sen-_320.webp',
     specialtyKey: 'teachersPageTeacher1Specialty',
     bioKey: 'teachersPageTeacher1Bio',
     styles: ['Ballet Clásico', 'Contemporáneo'],
@@ -42,6 +43,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'alejandro-minoso',
     name: 'Alejandro Miñoso',
+    image: '/images/teachers/img/profesor-alejandro-mi-oso_320.webp',
     specialtyKey: 'teachersPageTeacher2Specialty',
     bioKey: 'teachersPageTeacher2Bio',
     styles: ['Ballet', 'Modern Jazz', 'Afro Jazz', 'Afro Contemporáneo'],
@@ -49,7 +51,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'sandra-gomez',
     name: 'Sandra Gómez',
-    image: '/images/teachers/img/profesora-twerk-dancehall-sandra-gomez_320.webp',
+    image: '/images/teachers/img/profesora-sandra-gomez_320.webp',
     specialtyKey: 'teachersPageTeacher3Specialty',
     bioKey: 'teachersPageTeacher3Bio',
     styles: ['Dancehall', 'Twerk'],
@@ -57,6 +59,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'isabel-lopez',
     name: 'Isabel López',
+    image: '/images/teachers/img/profesora-isabel-l-pez_320.webp',
     specialtyKey: 'teachersPageTeacher4Specialty',
     bioKey: 'teachersPageTeacher4Bio',
     styles: ['Dancehall', 'Twerk'],
@@ -64,6 +67,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'marcos-martinez',
     name: 'Marcos Martínez',
+    image: '/images/teachers/img/profesor-marcos-mart-nez_320.webp',
     specialtyKey: 'teachersPageTeacher5Specialty',
     bioKey: 'teachersPageTeacher5Bio',
     styles: ['Hip Hop', 'Breaking', 'Locking', 'Popping'],
@@ -71,7 +75,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'yasmina-fernandez',
     name: 'Yasmina Fernández',
-    image: '/images/teachers/img/profesora-yasmina-fernandez_320.webp',
+    image: '/images/teachers/img/profesora-yasmina-fern-ndez_320.webp',
     specialtyKey: 'teachersPageTeacher6Specialty',
     bioKey: 'teachersPageTeacher6Bio',
     styles: ['Salsa Cubana', 'Salsa Lady Style'],
@@ -79,6 +83,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'lia-valdes',
     name: 'Lia Valdes',
+    image: '/images/teachers/img/profesora-lia-valdes_320.webp',
     specialtyKey: 'teachersPageTeacher7Specialty',
     bioKey: 'teachersPageTeacher7Bio',
     styles: ['Salsa Cubana', 'Salsa Lady Style'],
@@ -86,6 +91,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'iroel-bastarreche',
     name: 'Iroel Bastarreche',
+    image: '/images/teachers/img/profesor-iroel-bastarreche_320.webp',
     specialtyKey: 'teachersPageTeacher8Specialty',
     bioKey: 'teachersPageTeacher8Bio',
     styles: ['Salsa Cubana'],
@@ -93,7 +99,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'charlie-breezy',
     name: 'Charlie Breezy',
-    image: '/images/teachers/img/profesor-hip-hop-charlie-breezy_320.webp',
+    image: '/images/teachers/img/profesor-charlie-breezy_320.webp',
     specialtyKey: 'teachersPageTeacher9Specialty',
     bioKey: 'teachersPageTeacher9Bio',
     styles: ['Afro Contemporáneo', 'Hip Hop'],
@@ -101,6 +107,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'eugenia-trujillo',
     name: 'Eugenia Trujillo',
+    image: '/images/teachers/img/profesora-eugenio-trujillo_320.webp',
     specialtyKey: 'teachersPageTeacher10Specialty',
     bioKey: 'teachersPageTeacher10Bio',
     styles: ['Bachata Lady Style', 'Salsa LA'],
@@ -108,6 +115,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'mathias-font',
     name: 'Mathias Font',
+    image: '/images/teachers/img/profesor-mathias-font_320.webp',
     specialtyKey: 'teachersPageTeacher11Specialty',
     bioKey: 'teachersPageTeacher11Bio',
     styles: ['Bachata', 'Bachata Sensual'],
@@ -115,6 +123,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'carlos-canto',
     name: 'Carlos Canto',
+    image: '/images/teachers/img/profesor-carlos-canto_320.webp',
     specialtyKey: 'teachersPageTeacher12Specialty',
     bioKey: 'teachersPageTeacher12Bio',
     styles: ['Bachata', 'Bachata Moderna'],
@@ -122,6 +131,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'noemi',
     name: 'Noemi',
+    image: '/images/teachers/img/profesora-noemi-guerin-_320.webp',
     specialtyKey: 'teachersPageTeacher13Specialty',
     bioKey: 'teachersPageTeacher13Bio',
     styles: ['Bachata', 'Bachata Lady Style'],
@@ -129,18 +139,43 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'redbhlue',
     name: 'Redbhlue',
+    image: '/images/teachers/img/profesor-redblueh_320.webp',
     specialtyKey: 'teachersPageTeacher14Specialty',
     bioKey: 'teachersPageTeacher14Bio',
     styles: ['Afrobeats', 'Afro Dance'],
+  },
+  {
+    id: 'juan-alvarez',
+    name: 'Juan Alvarez',
+    image: '/images/teachers/img/profesor-juan-alvarez_320.webp',
+    specialtyKey: 'teachersPageTeacherJuanSpecialty',
+    bioKey: 'teachersPageTeacherJuanBio',
+    styles: ['Salsa Cubana'],
+  },
+  {
+    id: 'crisag',
+    name: 'CrisAg',
+    image: '/images/teachers/img/profesora-crisag_320.webp',
+    specialtyKey: 'teachersPageTeacherCrisagSpecialty',
+    bioKey: 'teachersPageTeacherCrisagBio',
+    styles: ['Urban Dance'],
+  },
+  {
+    id: 'grechen-mendez',
+    name: 'Grechen Méndez',
+    image: '/images/teachers/img/profesora-grechen-m-ndez_320.webp',
+    specialtyKey: 'teachersPageTeacherGrechenSpecialty',
+    bioKey: 'teachersPageTeacherGrechenBio',
+    styles: ['Bachata', 'Salsa'],
   },
 ];
 
 // Page stats
 export const TEACHERS_PAGE_STATS = {
-  totalTeachers: 15,
+  totalTeachers: 18,
   yearsExperience: 20,
   totalStudents: 15000,
-  danceStyles: 15,
+  danceStyles: 25,
 };
 
 // Person schemas for SEO
@@ -242,5 +277,23 @@ export const TEACHERS_PERSON_SCHEMAS = [
     jobTitle: 'Instructor de Afrobeats',
     description: 'Especialista en Afrobeats y danzas africanas contemporáneas.',
     knowsAbout: ['Afrobeats', 'Afro Dance', 'African Dance', 'Urban Dance'],
+  },
+  {
+    name: 'Juan Alvarez',
+    jobTitle: 'Profesor de Salsa Cubana',
+    description: 'Instructor de Salsa Cubana con amplia experiencia en el estilo cubano.',
+    knowsAbout: ['Salsa Cubana', 'Casino', 'Cuban Dance'],
+  },
+  {
+    name: 'CrisAg',
+    jobTitle: 'Instructora de Urban Dance',
+    description: 'Bailarina profesional especializada en estilos urbanos contemporáneos.',
+    knowsAbout: ['Urban Dance', 'Street Dance', 'Contemporary Urban'],
+  },
+  {
+    name: 'Grechen Méndez',
+    jobTitle: 'Instructora de Bachata y Salsa',
+    description: 'Profesora con experiencia en bailes latinos y estilos caribeños.',
+    knowsAbout: ['Bachata', 'Salsa', 'Latin Dance', 'Caribbean Dance'],
   },
 ];

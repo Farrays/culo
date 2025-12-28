@@ -1100,7 +1100,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
             <AnimateOnScroll>
               <h1
                 id="hero-title"
-                className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text ${textShadowClass}`}
+                className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 text-white ${textShadowClass}`}
               >
                 {t(`${config.styleKey}HeroTitle`)}
               </h1>

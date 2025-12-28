@@ -56,7 +56,7 @@ export const ca = {
   heroSubtitle: 'La Pedagogia Que Faltava',
   heroTagline: 'Ballar és treballar la teva felicitat.',
   heroValue:
-    'Si busques classes de ball a Barcelona on per fi avancis i no et sentis un número, estàs al lloc correcte. Amb el Mètode Farray® aprens bé, ràpid i amb estil… i et diverteixes més que a qualsevol gimnàs.',
+    'No necessites més classes de ball. Necessites les classes correctes. Si busques classes de ball a Barcelona on per fi avancis i no et sentis un número, estàs al lloc correcte. Amb el Mètode Farray® aprens bé, ràpid i amb estil… i et diverteixes més que a qualsevol gimnàs.',
   heroCTA1: 'Reserva la teva Classe de Prova',
   heroCTA2: 'Explora les Classes',
   heroScroll: 'Desplega el Teu Potencial',
@@ -8581,8 +8581,8 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   roomRental_room2_condition: 'Caps de setmana i festius: mínim 3 hores de lloguer',
   roomRental_cta_phone: 'Trucar: 933 25 96 44',
   roomRental_cta_location: 'Carrer Entença 100, Barcelona (entre Plaça Espanya i Sants)',
-  facilitiesHeroTitle: 'Instal·lacions - Escola de Ball a Barcelona',
-  facilitiesHeroSubtitle: 'Més de 700 m² dedicats a la dansa al cor de Barcelona',
+  facilitiesHeroTitle: '+700 m² Dedicats al Ball a Barcelona',
+  facilitiesHeroSubtitle: "4 Sales Professionals amb Equipament d'Elit",
   facilitiesHeroDesc:
     "Farray's International Dance Center és una escola de ball a Barcelona amb més de 700 m² d'instal·lacions dissenyades específicament per a la dansa, l'entrenament físic i la creació artística.",
   facilitiesHeroLocation: 'Carrer Entença 100, Barcelona - Entre Plaça Espanya i Sants',
@@ -8674,6 +8674,32 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   facilitiesCTAP1:
     "Si busques una acadèmia de ball a Barcelona amb instal·lacions professionals, àmplies i cuidades, Farray's International Dance Center t'ofereix un espai de referència on entrenar, crear projectes artístics i gaudir de la dansa en les millors condicions.",
   facilitiesCTAP2: "Vine a conèixer-nos. T'ensenyem les instal·lacions sense compromís.",
+
+  // Gallery Section
+  facilitiesGalleryTitle: "Galeria d'Instal·lacions",
+  facilitiesGallerySubtitle: 'Descobreix cada racó de les nostres instal·lacions professionals',
+  facilitiesGalleryAll: 'Totes',
+  facilitiesGallerySalas: 'Sales',
+  facilitiesGallerySocial: 'Zona Social',
+  facilitiesGalleryServicios: 'Serveis',
+  facilitiesGalleryPhotos: 'fotos',
+  facilitiesAreaSalaA: 'Sala A',
+  facilitiesAreaSalaB: 'Sala B',
+  facilitiesAreaSalaC: 'Sala C',
+  facilitiesAreaSalaD: 'Sala D',
+  facilitiesAreaBar: 'Bar',
+  facilitiesAreaRecepcion: 'Recepció',
+  facilitiesAreaRinconDelux: 'Racó Delux',
+  facilitiesAreaVestuario: 'Vestuaris',
+
+  // Lightbox
+  lightboxTitle: "Galeria d'imatges",
+  closeLightbox: 'Tancar galeria',
+  previousImage: 'Imatge anterior',
+  nextImage: 'Següent imatge',
+  toClose: 'per tancar',
+  toNavigate: 'per navegar',
+
   facilitiesFaqTitle: 'Preguntes Freqüents sobre les Instal·lacions de la nostra acadèmia de ball',
   facilitiesFaqQ1: "On es troben les instal·lacions de Farray's Center?",
   facilitiesFaqA1:
@@ -12170,6 +12196,17 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   teachersPageTeacher14Specialty: 'Afrobeats i Afro Dance',
   teachersPageTeacher14Bio:
     'Especialista en Afrobeats i danses africanes contemporànies. Energia i ritme a cada classe.',
+
+  // New Teachers
+  teachersPageTeacherJuanSpecialty: 'Salsa Cubana',
+  teachersPageTeacherJuanBio:
+    "Instructor de Salsa Cubana amb àmplia experiència en l'estil cubà autèntic. Passió per transmetre l'essència del ball caribeny.",
+  teachersPageTeacherCrisagSpecialty: 'Urban Dance',
+  teachersPageTeacherCrisagBio:
+    'Ballarina professional especialitzada en estils urbans contemporanis. Creativitat i expressió a cada moviment.',
+  teachersPageTeacherGrechenSpecialty: 'Bachata i Salsa',
+  teachersPageTeacherGrechenBio:
+    'Instructora amb experiència en balls llatins i estils caribenys. Tècnica refinada i connexió amb la música.',
 
   // CTA Section
   teachersPageCtaTitle: 'Preparat per Aprendre dels Millors?',

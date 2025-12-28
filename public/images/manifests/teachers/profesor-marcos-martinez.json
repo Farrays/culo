@@ -1,0 +1,96 @@
+{
+  "id": "profesor-marcos-martinez",
+  "className": "teachers",
+  "originalFile": "Profesor Marcos Martínez.jpg",
+  "original": {
+    "width": 5504,
+    "height": 8256,
+    "aspectRatio": "0.6667",
+    "format": "jpeg",
+    "space": "srgb",
+    "channels": 3,
+    "hasAlpha": false,
+    "orientation": 1
+  },
+  "placeholder": {
+    "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACQAwCdASoUAB4APzmIt1Q/qSUssAgD8CcJaQDMWC5T6NoEWRMYAP7rygob39FlFnbewjawAgJt1wiPoHdOUgAA",
+    "dominantColor": "#8e8782",
+    "svg": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%238e8782%22%2F%3E%3C%2Fsvg%3E"
+  },
+  "basePath": "/images/classes/teachers/img/teachers-profesor-marcos-martinez-barcelona",
+  "variants": [
+    {
+      "width": 320,
+      "height": 427,
+      "format": "webp",
+      "path": "/images/teachers/img/profesor-marcos-mart-nez_320.webp",
+      "size": 7202
+    },
+    {
+      "width": 320,
+      "height": 427,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesor-marcos-mart-nez_320.jpg",
+      "size": 10477
+    },
+    {
+      "width": 320,
+      "height": 427,
+      "format": "avif",
+      "path": "/images/teachers/img/profesor-marcos-mart-nez_320.avif",
+      "size": 6977
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "avif",
+      "path": "/images/teachers/img/profesor-marcos-mart-nez_640.avif",
+      "size": 18187
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesor-marcos-mart-nez_640.jpg",
+      "size": 28306
+    },
+    {
+      "width": 640,
+      "height": 853,
+      "format": "webp",
+      "path": "/images/teachers/img/profesor-marcos-mart-nez_640.webp",
+      "size": 19074
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "avif",
+      "path": "/images/teachers/img/profesor-marcos-mart-nez_960.avif",
+      "size": 36813
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "webp",
+      "path": "/images/teachers/img/profesor-marcos-mart-nez_960.webp",
+      "size": 38356
+    },
+    {
+      "width": 960,
+      "height": 1280,
+      "format": "jpg",
+      "path": "/images/teachers/img/profesor-marcos-mart-nez_960.jpg",
+      "size": 53473
+    }
+  ],
+  "srcSets": {
+    "avif": "/images/teachers/img/profesor-marcos-mart-nez_320.avif 320w, /images/teachers/img/profesor-marcos-mart-nez_640.avif 640w, /images/teachers/img/profesor-marcos-mart-nez_960.avif 960w",
+    "webp": "/images/teachers/img/profesor-marcos-mart-nez_320.webp 320w, /images/teachers/img/profesor-marcos-mart-nez_640.webp 640w, /images/teachers/img/profesor-marcos-mart-nez_960.webp 960w",
+    "jpeg": "/images/teachers/img/profesor-marcos-mart-nez_320.jpg 320w, /images/teachers/img/profesor-marcos-mart-nez_640.jpg 640w, /images/teachers/img/profesor-marcos-mart-nez_960.jpg 960w"
+  },
+  "defaultSrc": "/images/teachers/img/profesor-marcos-mart-nez_320.webp",
+  "generated": {
+    "at": "2025-12-28T07:39:03.109Z",
+    "version": "2.0.0"
+  }
+}
