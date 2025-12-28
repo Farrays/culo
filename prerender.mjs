@@ -183,6 +183,71 @@ const routes = [
   { path: 'ca/promo/sexy-reggaeton', lang: 'ca', page: 'promoSexyReggaeton' },
   { path: 'en/promo/sexy-reggaeton', lang: 'en', page: 'promoSexyReggaeton' },
   { path: 'fr/promo/sexy-reggaeton', lang: 'fr', page: 'promoSexyReggaeton' },
+
+  // Generic Dance Landing Pages (Facebook Ads - root level URLs)
+  // Spanish
+  { path: 'es/dancehall', lang: 'es', page: 'dancehallLanding' },
+  { path: 'es/twerk', lang: 'es', page: 'twerkLanding' },
+  { path: 'es/sexy-reggaeton', lang: 'es', page: 'sexyReggaetonLanding' },
+  { path: 'es/sexy-style', lang: 'es', page: 'sexyStyleLanding' },
+  { path: 'es/hip-hop-reggaeton', lang: 'es', page: 'hipHopReggaetonLanding' },
+  { path: 'es/contemporaneo', lang: 'es', page: 'contemporaneoLanding' },
+  { path: 'es/femmology', lang: 'es', page: 'femmologyLanding' },
+  { path: 'es/bachata', lang: 'es', page: 'bachataLanding' },
+  { path: 'es/hip-hop', lang: 'es', page: 'hipHopLanding' },
+  { path: 'es/afrobeats', lang: 'es', page: 'afrobeatsLanding' },
+  { path: 'es/afro-jazz', lang: 'es', page: 'afroJazzLanding' },
+  { path: 'es/salsa-cubana', lang: 'es', page: 'salsaCubanaLanding' },
+  { path: 'es/ballet', lang: 'es', page: 'balletLanding' },
+  { path: 'es/afro-contemporaneo', lang: 'es', page: 'afroContemporaneoLanding' },
+
+  // Catalan
+  { path: 'ca/dancehall', lang: 'ca', page: 'dancehallLanding' },
+  { path: 'ca/twerk', lang: 'ca', page: 'twerkLanding' },
+  { path: 'ca/sexy-reggaeton', lang: 'ca', page: 'sexyReggaetonLanding' },
+  { path: 'ca/sexy-style', lang: 'ca', page: 'sexyStyleLanding' },
+  { path: 'ca/hip-hop-reggaeton', lang: 'ca', page: 'hipHopReggaetonLanding' },
+  { path: 'ca/contemporaneo', lang: 'ca', page: 'contemporaneoLanding' },
+  { path: 'ca/femmology', lang: 'ca', page: 'femmologyLanding' },
+  { path: 'ca/bachata', lang: 'ca', page: 'bachataLanding' },
+  { path: 'ca/hip-hop', lang: 'ca', page: 'hipHopLanding' },
+  { path: 'ca/afrobeats', lang: 'ca', page: 'afrobeatsLanding' },
+  { path: 'ca/afro-jazz', lang: 'ca', page: 'afroJazzLanding' },
+  { path: 'ca/salsa-cubana', lang: 'ca', page: 'salsaCubanaLanding' },
+  { path: 'ca/ballet', lang: 'ca', page: 'balletLanding' },
+  { path: 'ca/afro-contemporaneo', lang: 'ca', page: 'afroContemporaneoLanding' },
+
+  // English
+  { path: 'en/dancehall', lang: 'en', page: 'dancehallLanding' },
+  { path: 'en/twerk', lang: 'en', page: 'twerkLanding' },
+  { path: 'en/sexy-reggaeton', lang: 'en', page: 'sexyReggaetonLanding' },
+  { path: 'en/sexy-style', lang: 'en', page: 'sexyStyleLanding' },
+  { path: 'en/hip-hop-reggaeton', lang: 'en', page: 'hipHopReggaetonLanding' },
+  { path: 'en/contemporaneo', lang: 'en', page: 'contemporaneoLanding' },
+  { path: 'en/femmology', lang: 'en', page: 'femmologyLanding' },
+  { path: 'en/bachata', lang: 'en', page: 'bachataLanding' },
+  { path: 'en/hip-hop', lang: 'en', page: 'hipHopLanding' },
+  { path: 'en/afrobeats', lang: 'en', page: 'afrobeatsLanding' },
+  { path: 'en/afro-jazz', lang: 'en', page: 'afroJazzLanding' },
+  { path: 'en/salsa-cubana', lang: 'en', page: 'salsaCubanaLanding' },
+  { path: 'en/ballet', lang: 'en', page: 'balletLanding' },
+  { path: 'en/afro-contemporaneo', lang: 'en', page: 'afroContemporaneoLanding' },
+
+  // French
+  { path: 'fr/dancehall', lang: 'fr', page: 'dancehallLanding' },
+  { path: 'fr/twerk', lang: 'fr', page: 'twerkLanding' },
+  { path: 'fr/sexy-reggaeton', lang: 'fr', page: 'sexyReggaetonLanding' },
+  { path: 'fr/sexy-style', lang: 'fr', page: 'sexyStyleLanding' },
+  { path: 'fr/hip-hop-reggaeton', lang: 'fr', page: 'hipHopReggaetonLanding' },
+  { path: 'fr/contemporaneo', lang: 'fr', page: 'contemporaneoLanding' },
+  { path: 'fr/femmology', lang: 'fr', page: 'femmologyLanding' },
+  { path: 'fr/bachata', lang: 'fr', page: 'bachataLanding' },
+  { path: 'fr/hip-hop', lang: 'fr', page: 'hipHopLanding' },
+  { path: 'fr/afrobeats', lang: 'fr', page: 'afrobeatsLanding' },
+  { path: 'fr/afro-jazz', lang: 'fr', page: 'afroJazzLanding' },
+  { path: 'fr/salsa-cubana', lang: 'fr', page: 'salsaCubanaLanding' },
+  { path: 'fr/ballet', lang: 'fr', page: 'balletLanding' },
+  { path: 'fr/afro-contemporaneo', lang: 'fr', page: 'afroContemporaneoLanding' },
 ];
 
 // Metadata for each page in each language
@@ -354,6 +419,77 @@ const metadata = {
       description: 'Aprende a moverte al ritmo de reggaeton con sensualidad y confianza. Primera clase GRATIS. +15.000 alumnos, profesora experta.',
       robots: 'noindex, nofollow',
     },
+    // Generic Dance Landing Pages (noindex for paid ads)
+    dancehallLanding: {
+      title: 'Clase de Dancehall GRATIS en Barcelona | Farray\'s Center',
+      description: 'Aprende Dancehall auténtico de Jamaica en Barcelona. Primera clase GRATIS. +15.000 alumnos satisfechos.',
+      robots: 'noindex, nofollow',
+    },
+    twerkLanding: {
+      title: 'Clase de Twerk GRATIS en Barcelona | Farray\'s Center',
+      description: 'Aprende Twerk en Barcelona con profesoras expertas. Primera clase GRATIS. Libera tu energía y confianza.',
+      robots: 'noindex, nofollow',
+    },
+    sexyReggaetonLanding: {
+      title: 'Clase de Sexy Reggaeton GRATIS en Barcelona | Farray\'s Center',
+      description: 'Aprende Sexy Reggaeton con sensualidad y confianza. Primera clase GRATIS. +15.000 alumnos.',
+      robots: 'noindex, nofollow',
+    },
+    sexyStyleLanding: {
+      title: 'Clase de Sexy Style GRATIS en Barcelona | Farray\'s Center',
+      description: 'Aprende Sexy Style en Barcelona. Sensualidad, confianza y movimiento. Primera clase GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    hipHopReggaetonLanding: {
+      title: 'Clase de Hip Hop Reggaeton GRATIS en Barcelona | Farray\'s Center',
+      description: 'Aprende Hip Hop Reggaeton en Barcelona. Fusión única con mucho flow. Primera clase GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    contemporaneoLanding: {
+      title: 'Clase de Contemporáneo GRATIS en Barcelona | Farray\'s Center',
+      description: 'Aprende Danza Contemporánea en Barcelona. Expresión corporal y técnica. Primera clase GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    femmologyLanding: {
+      title: 'Clase de Femmology GRATIS en Barcelona | Farray\'s Center',
+      description: 'Descubre Femmology en Barcelona. Danzaterapia con tacones. Primera clase GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    bachataLanding: {
+      title: 'Clase de Bachata GRATIS en Barcelona | Farray\'s Center',
+      description: 'Aprende Bachata Sensual en Barcelona con campeones mundiales. Primera clase GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    hipHopLanding: {
+      title: 'Clase de Hip Hop GRATIS en Barcelona | Farray\'s Center',
+      description: 'Aprende Hip Hop en Barcelona con profesores expertos. Primera clase GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    afrobeatsLanding: {
+      title: 'Clase de Afrobeats GRATIS en Barcelona | Farray\'s Center',
+      description: 'Aprende Afrobeats y Afrodance en Barcelona. Ritmos africanos modernos. Primera clase GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    afroJazzLanding: {
+      title: 'Clase de Afro Jazz GRATIS en Barcelona | Farray\'s Center',
+      description: 'Aprende Afro Jazz en Barcelona. Fusión de danza africana y jazz. Primera clase GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    salsaCubanaLanding: {
+      title: 'Clase de Salsa Cubana GRATIS en Barcelona | Farray\'s Center',
+      description: 'Aprende Salsa Cubana auténtica en Barcelona con maestros cubanos. Primera clase GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    balletLanding: {
+      title: 'Clase de Ballet GRATIS en Barcelona | Farray\'s Center',
+      description: 'Aprende Ballet Clásico en Barcelona para adultos. Técnica y elegancia. Primera clase GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    afroContemporaneoLanding: {
+      title: 'Clase de Afro Contemporáneo GRATIS en Barcelona | Farray\'s Center',
+      description: 'Aprende Afro Contemporáneo en Barcelona. Fusión de raíces africanas y contemporáneo. Primera clase GRATIS.',
+      robots: 'noindex, nofollow',
+    },
   },
   ca: {
     home: {
@@ -520,6 +656,77 @@ const metadata = {
     promoSexyReggaeton: {
       title: 'Classe de Sexy Reggaeton GRATIS a Barcelona | Farray\'s Center',
       description: 'Aprèn a moure\'t al ritme del reggaeton amb sensualitat i confiança. Primera classe GRATIS. +15.000 alumnes, professora experta.',
+      robots: 'noindex, nofollow',
+    },
+    // Generic Dance Landing Pages (noindex for paid ads)
+    dancehallLanding: {
+      title: 'Classe de Dancehall GRATIS a Barcelona | Farray\'s Center',
+      description: 'Aprèn Dancehall autèntic de Jamaica a Barcelona. Primera classe GRATIS. +15.000 alumnes satisfets.',
+      robots: 'noindex, nofollow',
+    },
+    twerkLanding: {
+      title: 'Classe de Twerk GRATIS a Barcelona | Farray\'s Center',
+      description: 'Aprèn Twerk a Barcelona amb professores expertes. Primera classe GRATIS. Allibera la teva energia i confiança.',
+      robots: 'noindex, nofollow',
+    },
+    sexyReggaetonLanding: {
+      title: 'Classe de Sexy Reggaeton GRATIS a Barcelona | Farray\'s Center',
+      description: 'Aprèn Sexy Reggaeton amb sensualitat i confiança. Primera classe GRATIS. +15.000 alumnes.',
+      robots: 'noindex, nofollow',
+    },
+    sexyStyleLanding: {
+      title: 'Classe de Sexy Style GRATIS a Barcelona | Farray\'s Center',
+      description: 'Aprèn Sexy Style a Barcelona. Sensualitat, confiança i moviment. Primera classe GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    hipHopReggaetonLanding: {
+      title: 'Classe de Hip Hop Reggaeton GRATIS a Barcelona | Farray\'s Center',
+      description: 'Aprèn Hip Hop Reggaeton a Barcelona. Fusió única amb molt de flow. Primera classe GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    contemporaneoLanding: {
+      title: 'Classe de Contemporani GRATIS a Barcelona | Farray\'s Center',
+      description: 'Aprèn Dansa Contemporània a Barcelona. Expressió corporal i tècnica. Primera classe GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    femmologyLanding: {
+      title: 'Classe de Femmology GRATIS a Barcelona | Farray\'s Center',
+      description: 'Descobreix Femmology a Barcelona. Dansateràpia amb talons. Primera classe GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    bachataLanding: {
+      title: 'Classe de Bachata GRATIS a Barcelona | Farray\'s Center',
+      description: 'Aprèn Bachata Sensual a Barcelona amb campions mundials. Primera classe GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    hipHopLanding: {
+      title: 'Classe de Hip Hop GRATIS a Barcelona | Farray\'s Center',
+      description: 'Aprèn Hip Hop a Barcelona amb professors experts. Primera classe GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    afrobeatsLanding: {
+      title: 'Classe d\'Afrobeats GRATIS a Barcelona | Farray\'s Center',
+      description: 'Aprèn Afrobeats i Afrodance a Barcelona. Ritmes africans moderns. Primera classe GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    afroJazzLanding: {
+      title: 'Classe d\'Afro Jazz GRATIS a Barcelona | Farray\'s Center',
+      description: 'Aprèn Afro Jazz a Barcelona. Fusió de dansa africana i jazz. Primera classe GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    salsaCubanaLanding: {
+      title: 'Classe de Salsa Cubana GRATIS a Barcelona | Farray\'s Center',
+      description: 'Aprèn Salsa Cubana autèntica a Barcelona amb mestres cubans. Primera classe GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    balletLanding: {
+      title: 'Classe de Ballet GRATIS a Barcelona | Farray\'s Center',
+      description: 'Aprèn Ballet Clàssic a Barcelona per a adults. Tècnica i elegància. Primera classe GRATIS.',
+      robots: 'noindex, nofollow',
+    },
+    afroContemporaneoLanding: {
+      title: 'Classe d\'Afro Contemporani GRATIS a Barcelona | Farray\'s Center',
+      description: 'Aprèn Afro Contemporani a Barcelona. Fusió d\'arrels africanes i contemporani. Primera classe GRATIS.',
       robots: 'noindex, nofollow',
     },
   },
@@ -690,6 +897,77 @@ const metadata = {
       description: 'Learn to move to reggaeton with sensuality and confidence. First class FREE. +15,000 students, expert instructor.',
       robots: 'noindex, nofollow',
     },
+    // Generic Dance Landing Pages (noindex for paid ads)
+    dancehallLanding: {
+      title: 'FREE Dancehall Class in Barcelona | Farray\'s Center',
+      description: 'Learn authentic Dancehall from Jamaica in Barcelona. First class FREE. +15,000 satisfied students.',
+      robots: 'noindex, nofollow',
+    },
+    twerkLanding: {
+      title: 'FREE Twerk Class in Barcelona | Farray\'s Center',
+      description: 'Learn Twerk in Barcelona with expert instructors. First class FREE. Release your energy and confidence.',
+      robots: 'noindex, nofollow',
+    },
+    sexyReggaetonLanding: {
+      title: 'FREE Sexy Reggaeton Class in Barcelona | Farray\'s Center',
+      description: 'Learn Sexy Reggaeton with sensuality and confidence. First class FREE. +15,000 students.',
+      robots: 'noindex, nofollow',
+    },
+    sexyStyleLanding: {
+      title: 'FREE Sexy Style Class in Barcelona | Farray\'s Center',
+      description: 'Learn Sexy Style in Barcelona. Sensuality, confidence and movement. First class FREE.',
+      robots: 'noindex, nofollow',
+    },
+    hipHopReggaetonLanding: {
+      title: 'FREE Hip Hop Reggaeton Class in Barcelona | Farray\'s Center',
+      description: 'Learn Hip Hop Reggaeton in Barcelona. Unique fusion with lots of flow. First class FREE.',
+      robots: 'noindex, nofollow',
+    },
+    contemporaneoLanding: {
+      title: 'FREE Contemporary Dance Class in Barcelona | Farray\'s Center',
+      description: 'Learn Contemporary Dance in Barcelona. Body expression and technique. First class FREE.',
+      robots: 'noindex, nofollow',
+    },
+    femmologyLanding: {
+      title: 'FREE Femmology Class in Barcelona | Farray\'s Center',
+      description: 'Discover Femmology in Barcelona. Dance therapy with heels. First class FREE.',
+      robots: 'noindex, nofollow',
+    },
+    bachataLanding: {
+      title: 'FREE Bachata Class in Barcelona | Farray\'s Center',
+      description: 'Learn Sensual Bachata in Barcelona with world champions. First class FREE.',
+      robots: 'noindex, nofollow',
+    },
+    hipHopLanding: {
+      title: 'FREE Hip Hop Class in Barcelona | Farray\'s Center',
+      description: 'Learn Hip Hop in Barcelona with expert instructors. First class FREE.',
+      robots: 'noindex, nofollow',
+    },
+    afrobeatsLanding: {
+      title: 'FREE Afrobeats Class in Barcelona | Farray\'s Center',
+      description: 'Learn Afrobeats and Afrodance in Barcelona. Modern African rhythms. First class FREE.',
+      robots: 'noindex, nofollow',
+    },
+    afroJazzLanding: {
+      title: 'FREE Afro Jazz Class in Barcelona | Farray\'s Center',
+      description: 'Learn Afro Jazz in Barcelona. African dance and jazz fusion. First class FREE.',
+      robots: 'noindex, nofollow',
+    },
+    salsaCubanaLanding: {
+      title: 'FREE Cuban Salsa Class in Barcelona | Farray\'s Center',
+      description: 'Learn authentic Cuban Salsa in Barcelona with Cuban masters. First class FREE.',
+      robots: 'noindex, nofollow',
+    },
+    balletLanding: {
+      title: 'FREE Ballet Class in Barcelona | Farray\'s Center',
+      description: 'Learn Classical Ballet in Barcelona for adults. Technique and elegance. First class FREE.',
+      robots: 'noindex, nofollow',
+    },
+    afroContemporaneoLanding: {
+      title: 'FREE Afro Contemporary Class in Barcelona | Farray\'s Center',
+      description: 'Learn Afro Contemporary in Barcelona. African roots and contemporary fusion. First class FREE.',
+      robots: 'noindex, nofollow',
+    },
   },
   fr: {
     home: {
@@ -858,6 +1136,77 @@ const metadata = {
       description: 'Apprenez à bouger au rythme du reggaeton avec sensualité et confiance. Premier cours GRATUIT. +15 000 élèves, professeure experte.',
       robots: 'noindex, nofollow',
     },
+    // Generic Dance Landing Pages (noindex for paid ads)
+    dancehallLanding: {
+      title: 'Cours de Dancehall GRATUIT à Barcelone | Farray\'s Center',
+      description: 'Apprenez le Dancehall authentique de Jamaïque à Barcelone. Premier cours GRATUIT. +15 000 élèves satisfaits.',
+      robots: 'noindex, nofollow',
+    },
+    twerkLanding: {
+      title: 'Cours de Twerk GRATUIT à Barcelone | Farray\'s Center',
+      description: 'Apprenez le Twerk à Barcelone avec des professeurs experts. Premier cours GRATUIT. Libérez votre énergie et confiance.',
+      robots: 'noindex, nofollow',
+    },
+    sexyReggaetonLanding: {
+      title: 'Cours de Sexy Reggaeton GRATUIT à Barcelone | Farray\'s Center',
+      description: 'Apprenez le Sexy Reggaeton avec sensualité et confiance. Premier cours GRATUIT. +15 000 élèves.',
+      robots: 'noindex, nofollow',
+    },
+    sexyStyleLanding: {
+      title: 'Cours de Sexy Style GRATUIT à Barcelone | Farray\'s Center',
+      description: 'Apprenez le Sexy Style à Barcelone. Sensualité, confiance et mouvement. Premier cours GRATUIT.',
+      robots: 'noindex, nofollow',
+    },
+    hipHopReggaetonLanding: {
+      title: 'Cours de Hip Hop Reggaeton GRATUIT à Barcelone | Farray\'s Center',
+      description: 'Apprenez le Hip Hop Reggaeton à Barcelone. Fusion unique avec beaucoup de flow. Premier cours GRATUIT.',
+      robots: 'noindex, nofollow',
+    },
+    contemporaneoLanding: {
+      title: 'Cours de Danse Contemporaine GRATUIT à Barcelone | Farray\'s Center',
+      description: 'Apprenez la Danse Contemporaine à Barcelone. Expression corporelle et technique. Premier cours GRATUIT.',
+      robots: 'noindex, nofollow',
+    },
+    femmologyLanding: {
+      title: 'Cours de Femmology GRATUIT à Barcelone | Farray\'s Center',
+      description: 'Découvrez la Femmology à Barcelone. Danse-thérapie avec talons. Premier cours GRATUIT.',
+      robots: 'noindex, nofollow',
+    },
+    bachataLanding: {
+      title: 'Cours de Bachata GRATUIT à Barcelone | Farray\'s Center',
+      description: 'Apprenez la Bachata Sensuelle à Barcelone avec des champions du monde. Premier cours GRATUIT.',
+      robots: 'noindex, nofollow',
+    },
+    hipHopLanding: {
+      title: 'Cours de Hip Hop GRATUIT à Barcelone | Farray\'s Center',
+      description: 'Apprenez le Hip Hop à Barcelone avec des professeurs experts. Premier cours GRATUIT.',
+      robots: 'noindex, nofollow',
+    },
+    afrobeatsLanding: {
+      title: 'Cours d\'Afrobeats GRATUIT à Barcelone | Farray\'s Center',
+      description: 'Apprenez l\'Afrobeats et l\'Afrodance à Barcelone. Rythmes africains modernes. Premier cours GRATUIT.',
+      robots: 'noindex, nofollow',
+    },
+    afroJazzLanding: {
+      title: 'Cours d\'Afro Jazz GRATUIT à Barcelone | Farray\'s Center',
+      description: 'Apprenez l\'Afro Jazz à Barcelone. Fusion de danse africaine et jazz. Premier cours GRATUIT.',
+      robots: 'noindex, nofollow',
+    },
+    salsaCubanaLanding: {
+      title: 'Cours de Salsa Cubaine GRATUIT à Barcelone | Farray\'s Center',
+      description: 'Apprenez la Salsa Cubaine authentique à Barcelone avec des maîtres cubains. Premier cours GRATUIT.',
+      robots: 'noindex, nofollow',
+    },
+    balletLanding: {
+      title: 'Cours de Ballet GRATUIT à Barcelone | Farray\'s Center',
+      description: 'Apprenez le Ballet Classique à Barcelone pour adultes. Technique et élégance. Premier cours GRATUIT.',
+      robots: 'noindex, nofollow',
+    },
+    afroContemporaneoLanding: {
+      title: 'Cours d\'Afro Contemporain GRATUIT à Barcelone | Farray\'s Center',
+      description: 'Apprenez l\'Afro Contemporain à Barcelone. Fusion de racines africaines et contemporain. Premier cours GRATUIT.',
+      robots: 'noindex, nofollow',
+    },
   },
 };
 
@@ -998,6 +1347,21 @@ const initialContent = {
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Consejos para Bailar</h1><p>Guías prácticas y consejos para principiantes y bailarines de todos los niveles en Barcelona.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Clases de baile para principiantes en Barcelona: la guía definitiva</h1><p>Guía completa para empezar a bailar desde cero en Barcelona. Clase de bienvenida gratuita (promocional) o desde 10€. Participación puntual desde 20€.</p></article></main>`,
     baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Baile por las Mañanas en Barcelona</h1><p>13 clases semanales de 10h a 13h: Contemporáneo, Ballet, Modern Jazz, Sexy Style, Reggaeton y más. La actividad matinal que necesitabas para empezar el día con energía.</p></main>`,
+    // Generic Dance Landing Pages
+    dancehallLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clase de Dancehall GRATIS</h1><p>Aprende Dancehall auténtico de Jamaica en Barcelona. Primera clase GRATIS. +15.000 alumnos satisfechos.</p></main>`,
+    twerkLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clase de Twerk GRATIS</h1><p>Aprende Twerk en Barcelona con profesoras expertas. Primera clase GRATIS.</p></main>`,
+    sexyReggaetonLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clase de Sexy Reggaeton GRATIS</h1><p>Aprende Sexy Reggaeton con sensualidad y confianza. Primera clase GRATIS.</p></main>`,
+    sexyStyleLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clase de Sexy Style GRATIS</h1><p>Aprende Sexy Style en Barcelona. Sensualidad, confianza y movimiento. Primera clase GRATIS.</p></main>`,
+    hipHopReggaetonLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clase de Hip Hop Reggaeton GRATIS</h1><p>Aprende Hip Hop Reggaeton en Barcelona. Fusión única con mucho flow. Primera clase GRATIS.</p></main>`,
+    contemporaneoLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clase de Contemporáneo GRATIS</h1><p>Aprende Danza Contemporánea en Barcelona. Expresión corporal y técnica. Primera clase GRATIS.</p></main>`,
+    femmologyLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clase de Femmology GRATIS</h1><p>Descubre Femmology en Barcelona. Danzaterapia con tacones. Primera clase GRATIS.</p></main>`,
+    bachataLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clase de Bachata GRATIS</h1><p>Aprende Bachata Sensual en Barcelona con campeones mundiales. Primera clase GRATIS.</p></main>`,
+    hipHopLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clase de Hip Hop GRATIS</h1><p>Aprende Hip Hop en Barcelona con profesores expertos. Primera clase GRATIS.</p></main>`,
+    afrobeatsLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clase de Afrobeats GRATIS</h1><p>Aprende Afrobeats y Afrodance en Barcelona. Ritmos africanos modernos. Primera clase GRATIS.</p></main>`,
+    afroJazzLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clase de Afro Jazz GRATIS</h1><p>Aprende Afro Jazz en Barcelona. Fusión de danza africana y jazz. Primera clase GRATIS.</p></main>`,
+    salsaCubanaLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clase de Salsa Cubana GRATIS</h1><p>Aprende Salsa Cubana auténtica en Barcelona con maestros cubanos. Primera clase GRATIS.</p></main>`,
+    balletLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clase de Ballet GRATIS</h1><p>Aprende Ballet Clásico en Barcelona para adultos. Técnica y elegancia. Primera clase GRATIS.</p></main>`,
+    afroContemporaneoLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clase de Afro Contemporáneo GRATIS</h1><p>Aprende Afro Contemporáneo en Barcelona. Fusión de raíces africanas y contemporáneo. Primera clase GRATIS.</p></main>`,
   },
   // Simplified content for other languages
   ca: {
@@ -1021,6 +1385,21 @@ const initialContent = {
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Consells per Ballar</h1><p>Guies pràctiques i consells per a principiants i balladors de tots els nivells a Barcelona.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Classes de ball per a principiants a Barcelona: la guia definitiva</h1><p>Guia completa per començar a ballar des de zero a Barcelona. Classe de benvinguda gratuïta (promocional) o des de 10€. Participació puntual des de 20€.</p></article></main>`,
     baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Ball pel Matí a Barcelona</h1><p>13 classes setmanals de 10h a 13h: Contemporani, Ballet, Modern Jazz, Sexy Style, Reggaeton i més. L'activitat matinal que necessitaves per començar el dia amb energia.</p></main>`,
+    // Generic Dance Landing Pages
+    dancehallLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classe de Dancehall GRATIS</h1><p>Aprèn Dancehall autèntic de Jamaica a Barcelona. Primera classe GRATIS.</p></main>`,
+    twerkLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classe de Twerk GRATIS</h1><p>Aprèn Twerk a Barcelona amb professores expertes. Primera classe GRATIS.</p></main>`,
+    sexyReggaetonLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classe de Sexy Reggaeton GRATIS</h1><p>Aprèn Sexy Reggaeton amb sensualitat i confiança. Primera classe GRATIS.</p></main>`,
+    sexyStyleLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classe de Sexy Style GRATIS</h1><p>Aprèn Sexy Style a Barcelona. Primera classe GRATIS.</p></main>`,
+    hipHopReggaetonLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classe de Hip Hop Reggaeton GRATIS</h1><p>Aprèn Hip Hop Reggaeton a Barcelona. Primera classe GRATIS.</p></main>`,
+    contemporaneoLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classe de Contemporani GRATIS</h1><p>Aprèn Dansa Contemporània a Barcelona. Primera classe GRATIS.</p></main>`,
+    femmologyLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classe de Femmology GRATIS</h1><p>Descobreix Femmology a Barcelona. Primera classe GRATIS.</p></main>`,
+    bachataLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classe de Bachata GRATIS</h1><p>Aprèn Bachata Sensual a Barcelona. Primera classe GRATIS.</p></main>`,
+    hipHopLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classe de Hip Hop GRATIS</h1><p>Aprèn Hip Hop a Barcelona. Primera classe GRATIS.</p></main>`,
+    afrobeatsLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classe d'Afrobeats GRATIS</h1><p>Aprèn Afrobeats a Barcelona. Primera classe GRATIS.</p></main>`,
+    afroJazzLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classe d'Afro Jazz GRATIS</h1><p>Aprèn Afro Jazz a Barcelona. Primera classe GRATIS.</p></main>`,
+    salsaCubanaLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classe de Salsa Cubana GRATIS</h1><p>Aprèn Salsa Cubana a Barcelona. Primera classe GRATIS.</p></main>`,
+    balletLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classe de Ballet GRATIS</h1><p>Aprèn Ballet Clàssic a Barcelona. Primera classe GRATIS.</p></main>`,
+    afroContemporaneoLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classe d'Afro Contemporani GRATIS</h1><p>Aprèn Afro Contemporani a Barcelona. Primera classe GRATIS.</p></main>`,
   },
   en: {
     home: `<main id="main-content"><h1 class="holographic-text text-5xl font-extrabold">FarRays Center</h1><p class="text-xl">Urban dance school in Barcelona. Learn Dancehall and more.</p></main>`,
@@ -1043,6 +1422,21 @@ const initialContent = {
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Tips</h1><p>Practical guides and tips for beginners and dancers of all levels in Barcelona.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Beginner Dance Classes in Barcelona: The Complete Guide</h1><p>Complete guide to start dancing from scratch in Barcelona. Free welcome class (promotional) or from €10. One-time participation from €20.</p></article></main>`,
     baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Morning Dance Classes in Barcelona</h1><p>13 weekly classes from 10am to 1pm: Contemporary, Ballet, Modern Jazz, Sexy Style, Reggaeton and more. The morning activity you needed to start the day with energy.</p></main>`,
+    // Generic Dance Landing Pages
+    dancehallLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">FREE Dancehall Class</h1><p>Learn authentic Dancehall from Jamaica in Barcelona. First class FREE.</p></main>`,
+    twerkLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">FREE Twerk Class</h1><p>Learn Twerk in Barcelona with expert instructors. First class FREE.</p></main>`,
+    sexyReggaetonLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">FREE Sexy Reggaeton Class</h1><p>Learn Sexy Reggaeton with sensuality and confidence. First class FREE.</p></main>`,
+    sexyStyleLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">FREE Sexy Style Class</h1><p>Learn Sexy Style in Barcelona. First class FREE.</p></main>`,
+    hipHopReggaetonLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">FREE Hip Hop Reggaeton Class</h1><p>Learn Hip Hop Reggaeton in Barcelona. First class FREE.</p></main>`,
+    contemporaneoLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">FREE Contemporary Dance Class</h1><p>Learn Contemporary Dance in Barcelona. First class FREE.</p></main>`,
+    femmologyLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">FREE Femmology Class</h1><p>Discover Femmology in Barcelona. First class FREE.</p></main>`,
+    bachataLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">FREE Bachata Class</h1><p>Learn Sensual Bachata in Barcelona. First class FREE.</p></main>`,
+    hipHopLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">FREE Hip Hop Class</h1><p>Learn Hip Hop in Barcelona. First class FREE.</p></main>`,
+    afrobeatsLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">FREE Afrobeats Class</h1><p>Learn Afrobeats in Barcelona. First class FREE.</p></main>`,
+    afroJazzLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">FREE Afro Jazz Class</h1><p>Learn Afro Jazz in Barcelona. First class FREE.</p></main>`,
+    salsaCubanaLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">FREE Cuban Salsa Class</h1><p>Learn Cuban Salsa in Barcelona. First class FREE.</p></main>`,
+    balletLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">FREE Ballet Class</h1><p>Learn Classical Ballet in Barcelona. First class FREE.</p></main>`,
+    afroContemporaneoLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">FREE Afro Contemporary Class</h1><p>Learn Afro Contemporary in Barcelona. First class FREE.</p></main>`,
   },
   fr: {
     home: `<main id="main-content"><h1 class="holographic-text text-5xl font-extrabold">FarRays Center</h1><p class="text-xl">École de danse urbaine à Barcelone. Apprenez le Dancehall et plus.</p></main>`,
@@ -1065,6 +1459,21 @@ const initialContent = {
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Conseils de Danse</h1><p>Guides pratiques et conseils pour débutants et danseurs de tous niveaux à Barcelone.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Cours de danse pour débutants à Barcelone : le guide complet</h1><p>Guide complet pour commencer à danser à Barcelone. Cours de bienvenue gratuit (promotionnel) ou dès 10€. Participation ponctuelle dès 20€.</p></article></main>`,
     baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Danse le Matin à Barcelone</h1><p>13 cours hebdomadaires de 10h à 13h : Contemporain, Ballet, Modern Jazz, Sexy Style, Reggaeton et plus. L'activité matinale dont vous aviez besoin pour commencer la journée avec énergie.</p></main>`,
+    // Generic Dance Landing Pages
+    dancehallLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Dancehall GRATUIT</h1><p>Apprenez le Dancehall authentique à Barcelone. Premier cours GRATUIT.</p></main>`,
+    twerkLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Twerk GRATUIT</h1><p>Apprenez le Twerk à Barcelone. Premier cours GRATUIT.</p></main>`,
+    sexyReggaetonLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Sexy Reggaeton GRATUIT</h1><p>Apprenez le Sexy Reggaeton à Barcelone. Premier cours GRATUIT.</p></main>`,
+    sexyStyleLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Sexy Style GRATUIT</h1><p>Apprenez le Sexy Style à Barcelone. Premier cours GRATUIT.</p></main>`,
+    hipHopReggaetonLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Hip Hop Reggaeton GRATUIT</h1><p>Apprenez le Hip Hop Reggaeton à Barcelone. Premier cours GRATUIT.</p></main>`,
+    contemporaneoLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Danse Contemporaine GRATUIT</h1><p>Apprenez la Danse Contemporaine à Barcelone. Premier cours GRATUIT.</p></main>`,
+    femmologyLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Femmology GRATUIT</h1><p>Découvrez la Femmology à Barcelone. Premier cours GRATUIT.</p></main>`,
+    bachataLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Bachata GRATUIT</h1><p>Apprenez la Bachata Sensuelle à Barcelone. Premier cours GRATUIT.</p></main>`,
+    hipHopLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Hip Hop GRATUIT</h1><p>Apprenez le Hip Hop à Barcelone. Premier cours GRATUIT.</p></main>`,
+    afrobeatsLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours d'Afrobeats GRATUIT</h1><p>Apprenez l'Afrobeats à Barcelone. Premier cours GRATUIT.</p></main>`,
+    afroJazzLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours d'Afro Jazz GRATUIT</h1><p>Apprenez l'Afro Jazz à Barcelone. Premier cours GRATUIT.</p></main>`,
+    salsaCubanaLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Salsa Cubaine GRATUIT</h1><p>Apprenez la Salsa Cubaine à Barcelone. Premier cours GRATUIT.</p></main>`,
+    balletLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Ballet GRATUIT</h1><p>Apprenez le Ballet Classique à Barcelone. Premier cours GRATUIT.</p></main>`,
+    afroContemporaneoLanding: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours d'Afro Contemporain GRATUIT</h1><p>Apprenez l'Afro Contemporain à Barcelone. Premier cours GRATUIT.</p></main>`,
   },
 };
 
@@ -1235,11 +1644,15 @@ routes.forEach(route => {
   html = html.replace(/<meta\s+property="og:[^"]*"[^>]*>/gi, '');
   // Remove Twitter Card tags
   html = html.replace(/<meta\s+(?:name|property)="twitter:[^"]*"[^>]*>/gi, '');
+  // Remove robots meta tag (will be replaced with page-specific value)
+  html = html.replace(/<meta\s+name="robots"[^>]*>/gi, '');
 
   // Inject metadata in <head>
+  const robotsContent = meta.robots || 'index, follow';
   html = html.replace('</head>', `
     <title>${meta.title}</title>
     <meta name="description" content="${meta.description}" />
+    <meta name="robots" content="${robotsContent}" />
     <link rel="canonical" href="${currentUrl}" />
     ${hreflangLinks}
 
