@@ -196,6 +196,32 @@ export const THEME_FUCHSIA: LandingThemeClasses = {
 };
 
 // =============================================================================
+// TEMA: BRAND (Colores oficiales de Farray's - Bachata)
+// =============================================================================
+
+export const THEME_BRAND: LandingThemeClasses = {
+  bgPrimary: 'bg-brand-600',
+  bgPrimaryHover: 'hover:bg-brand-500',
+  bgPrimaryLight: 'bg-brand-600/20',
+  bgPrimaryDark: 'bg-brand-900/20',
+  bgAccentLight: 'bg-brand-900/10',
+
+  textPrimary: 'text-brand-600',
+  textPrimaryLight: 'text-brand-500',
+
+  borderPrimary: 'border-brand-600/30',
+  borderPrimaryLight: 'border-brand-600/20',
+  borderPrimaryHover: 'hover:border-brand-600/40',
+
+  shadowPrimary: 'shadow-brand-600/50',
+
+  gradient: 'from-brand-900/40 via-black to-brand-600/30',
+  modalGlow: 'from-brand-600 via-brand-500 to-brand-600',
+
+  ringPrimary: 'focus:ring-brand-600/20',
+};
+
+// =============================================================================
 // MAPA DE TEMAS
 // =============================================================================
 
@@ -206,6 +232,7 @@ export const LANDING_THEMES = {
   violet: THEME_VIOLET,
   cyan: THEME_CYAN,
   fuchsia: THEME_FUCHSIA,
+  brand: THEME_BRAND,
 } as const;
 
 export type ThemeName = keyof typeof LANDING_THEMES;

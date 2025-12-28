@@ -33,7 +33,7 @@ export const es = {
   navContemporaneo: 'Contemporáneo',
   navAfroContemporaneo: 'Afro Contemporáneo',
   navAfroJazz: 'Afro Jazz',
-  navPrepFisica: 'Entrenamiento para Bailarines',
+  navPrepFisica: 'Entrenamiento Bailarines',
   navBodyConditioning: 'Acondicionamiento Físico',
   navCuerpoFit: 'Cuerpo-Fit',
   navFAQ: 'Preguntas Frecuentes',
@@ -51,18 +51,20 @@ export const es = {
   navFacilities: 'Instalaciones',
   navSchedule: 'Horarios',
   navYunaisy: 'Yunaisy Farray',
+  navMetodoFarray: 'Método Farray',
   navProfesores: 'Profesores',
   navBlog: 'Blog',
   navInstalaciones: 'Instalaciones',
   breadcrumb_services: 'Servicios de Baile',
   enrollNow: 'Descubre Cómo Empezar',
+  ctaShort: 'Empezar',
   // Hero
   heroTitle1: 'Tu Escuela de Baile en Barcelona',
   heroTitle2: 'Clases de Danza, Salsa, Bachata, Danza Urbana, y Más',
   heroSubtitle: 'La Pedagogía Que Faltaba',
   heroTagline: 'Bailar es trabajar tu felicidad.',
   heroValue:
-    'Si buscas clases de baile en Barcelona donde por fin avances y no te sientas un número, estás en el sitio correcto. Con el Método Farray® aprendes bien, rápido y con estilo… y te diviertes más que en cualquier gimnasio.',
+    'No necesitas más clases de baile. Necesitas las clases correctas. Si buscas clases de baile en Barcelona donde por fin avances y no te sientas un número, estás en el sitio correcto. Con el Método Farray® aprendes bien, rápido y con estilo… y te diviertes más que en cualquier gimnasio.',
   heroCTA1: 'Reserva tu Clase de Prueba',
   heroCTA2: 'Explora las Clases',
   heroScroll: 'Despliega Tu Potencial',
@@ -171,7 +173,7 @@ export const es = {
   servicePhotoTitle: 'Grabaciones y Fotografía',
   servicePhotoDesc:
     'Tu arte merece un escenario. Alquila nuestras salas para producciones audiovisuales o sesiones de fotos profesionales.',
-  servicePhotoCTA: 'Ver Opciones',
+  servicePhotoCTA: 'Reservar Estudio de Grabacion',
   servicePartiesTitle: 'Fiestas y Despedidas',
   servicePartiesDesc:
     'Celebra tu cumpleaños o despedida de soltera/o bailando con tu grupo en una experiencia divertida y original.',
@@ -187,7 +189,7 @@ export const es = {
   serviceCorporateTitle: 'Servicios para Empresas',
   serviceCorporateDesc:
     'Creamos experiencias de team-building y bienestar a través del baile. Perfecto para motivar y cohesionar equipos.',
-  serviceCorporateCTA: 'Saber Más',
+  serviceCorporateCTA: 'Solicitar Team Building',
   serviceGiftTitle: 'Regala Baile',
   serviceGiftDesc:
     'Sorprende con un regalo único: una experiencia de baile inolvidable para disfrutar o compartir.',
@@ -240,7 +242,7 @@ export const es = {
   followOnInstagram: 'Síguenos en Instagram',
   followOnYoutube: 'Síguenos en YouTube',
   followOnTikTok: 'Síguenos en TikTok',
-  footerContact: 'Contacto',
+  footerContact: 'Contacta con Nosotros',
   footerSchoolTitle: 'La Escuela',
   footerUrbanTitle: 'Danzas Urbanas',
   footerLatinoTitle: 'Ritmos Latinos',
@@ -265,29 +267,34 @@ export const es = {
   sitemapUrban: 'Danzas Urbanas',
   sitemapFitness: 'Fitness y Bienestar',
   sitemapSchedule: 'Horarios y Precios',
-  sitemapFAQ: 'Preguntas Frecuentes',
-  sitemapContact: 'Contacto',
+  sitemapFAQ: 'Dudas sobre Clases de Baile',
+  sitemapContact: 'Contactar Escuela Barcelona',
   sitemapCID: 'CID-UNESCO',
   sitemapLegal: 'Aviso Legal',
   sitemapTerms: 'Términos y Condiciones',
   sitemapPrivacy: 'Política de Privacidad',
   sitemapCookies: 'Política de Cookies',
-  // Footer - Enlaces adicionales
-  sitemapAbout: 'Sobre Nosotros',
-  sitemapProfesores: 'Profesores',
-  sitemapInstalaciones: 'Instalaciones',
-  sitemapBlog: 'Blog',
-  sitemapHipHop: 'Hip Hop & Reggaeton',
-  sitemapSalsa: 'Salsa y Bachata',
-  sitemapBachata: 'Bachata',
-  sitemapSalsaCubana: 'Salsa Cubana',
-  sitemapFolklore: 'Folklore Cubano',
-  sitemapTimba: 'Timba',
-  sitemapHorarios: 'Horarios',
-  sitemapPrecios: 'Precios',
-  sitemapParticulares: 'Clases Particulares',
-  sitemapAlquiler: 'Alquiler de Salas',
-  sitemapRegala: 'Regala Baile',
+  // Footer - Enlaces adicionales (SEO optimizados)
+  sitemapAbout: "Conoce Farray's",
+  sitemapProfesores: 'Nuestros Profesores de Baile',
+  sitemapInstalaciones: 'Instalaciones 700m² Barcelona',
+  sitemapBlog: 'Blog de Danza',
+  sitemapHipHop: 'Clases Hip Hop Barcelona',
+  sitemapSalsa: 'Salsa y Bachata Barcelona',
+  sitemapBachata: 'Clases de Bachata',
+  sitemapSalsaCubana: 'Salsa Cubana Auténtica',
+  sitemapFolklore: 'Folklore Cubano Tradicional',
+  sitemapTimba: 'Clases de Timba',
+  // Footer - Danzas Urbanas (SEO optimizados)
+  sitemapDancehall: 'Clases Dancehall Barcelona',
+  sitemapTwerk: 'Clases Twerk Barcelona',
+  sitemapAfrobeat: 'Clases Afrobeats Barcelona',
+  sitemapHeels: 'Clases Heels Barcelona',
+  sitemapHorarios: 'Horarios de Clases',
+  sitemapPrecios: 'Precios y Tarifas',
+  sitemapParticulares: 'Clases Particulares de Baile',
+  sitemapAlquiler: 'Alquiler Salas Barcelona',
+  sitemapRegala: 'Regalar Clases de Baile',
   footerCopyright: "© 2025 Farray's International Dance Center. Todos los Derechos Reservados.",
   // InstagramFeed
   instagramTitle: 'Únete a Nuestra Comunidad en Instagram',
@@ -562,6 +569,9 @@ export const es = {
   danceClassesHub_style_k_pop_desc:
     'Baile comercial coreano con coreografías de precisión inspiradas en BTS, Blackpink, Stray Kids y tus grupos favoritos. Aprende sincronización perfecta, formaciones grupales, detalles faciales, gestos característicos y energía K-Pop. Ideal para amantes del K-Pop y danza comercial asiática.',
 
+  danceClassesHub_style_bum_bum: 'Bum Bum',
+  danceClassesHub_style_bum_bum_desc:
+    'Entrena y tonifica glúteos con técnica y diversión. Combina ejercicios específicos de glúteos con movimientos de baile que fortalecen, levantan y esculpen. Clase fitness orientada a bailarines con ejercicios funcionales.',
   danceClassesHub_style_bum_bum_gluteos: 'Bum Bum Glúteos Maravillosos',
   danceClassesHub_style_afrobeat: 'Afrobeat',
   danceClassesHub_style_dancehall: 'Dancehall',
@@ -595,6 +605,9 @@ export const es = {
   danceClassesHub_style_salsa_lady_timba: 'Salsa Lady Timba',
   danceClassesHub_style_salsa_lady_timba_desc:
     'Lady Style con la energía explosiva de la Timba cubana moderna. Combina técnica femenina individual con ritmo acelerado, despelotes, vacilones y actitud imparable. Para bailarinas avanzadas que buscan desafío técnico, velocidad extrema y presencia escénica de alto impacto.',
+  danceClassesHub_style_bachata_lady_style: 'Bachata Lady Style',
+  danceClassesHub_style_bachata_lady_style_desc:
+    'Técnica femenina de bachata: ondas de cadera, aislaciones sensuales, movimientos de brazos fluidos y expresión corporal elegante. Aprende a bailar sola con gracia, actitud y control total de tu cuerpo. Desarrolla tu propio estilo sensual y artístico en bachata.',
   danceClassesHub_style_son_cubano: 'Son Cubano',
   danceClassesHub_style_son_cubano_desc:
     'El padre de la salsa: elegante, clásico y lleno de tradición cubana auténtica de los años 40-50. Aprende la base original de todos los bailes latinos con pasos tradicionales, elegancia refinada, conexión de pareja clásica y musicalidad del son montuno. La esencia pura del baile cubano.',
@@ -928,6 +941,10 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 **Farray's International Dance Center ofrece clases de Dancehall en una escuela valorada cerca del 5/5 en Google con cientos de reseñas positivas.**`,
   readMore: 'Leer Más Sobre la Historia y Cultura',
   readLess: 'Leer Menos',
+  // Expandable Content CTAs - Contextuales
+  expandStyleDetails: 'Descubrir Más Sobre Este Estilo',
+  expandWhyStart: 'Ver Por Qué Empezar Hoy',
+  collapseContent: 'Mostrar Menos',
   skipToContent: 'Saltar al contenido principal',
 
   // Benefits Section
@@ -1458,7 +1475,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
     'Descubre nuestras clases de baile para adultos y encuentra el estilo perfecto para ti. Calidad, profesionalidad y comunidad en el corazón de Barcelona, en una academia acreditada por CID-UNESCO.',
 
   // CTAs
-  home_categories_cta_learn_more: 'Saber más',
+  home_categories_cta_learn_more: 'Explorar Estilos de Baile',
   home_categories_cta_view_styles: 'Ver estilos',
   home_categories_cta_view_category: 'Ver todos los estilos',
   home_categories_cta_close: 'Cerrar',
@@ -1466,7 +1483,8 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   // Category: Danzas Urbanas / Hip Hop
   home_categories_urbano_title: 'Clases de Danza Urbana y Hip Hop',
-  home_categories_urbano_image_alt: 'Clase de Hip Hop en estudio de baile',
+  home_categories_urbano_image_alt:
+    "Bailarinas practicando Hip Hop Reggaeton en clase de danzas urbanas - Farray's Center Barcelona",
   home_categories_urbano_bullets:
     '11 estilos urbanos diferentes, Desde principiante a profesional, Primera clase gratis',
   home_categories_urbano_intro:
@@ -1485,7 +1503,8 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   // Category: Salsa y Bachata
   home_categories_salsa_bachata_title: 'Clases de Salsa y Bachata',
-  home_categories_salsa_bachata_image_alt: 'Pareja bailando salsa cubana',
+  home_categories_salsa_bachata_image_alt:
+    "Clases de Salsa Cubana y Bachata en Barcelona - Farray's Center",
   home_categories_salsa_bachata_bullets:
     'Salsa, Bachata, Timba y más, Baila solo o en pareja, Grupos de todos los niveles',
   home_categories_salsa_bachata_intro:
@@ -1501,7 +1520,8 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   // Category: Danza (Ballet/Contemporáneo/Jazz)
   home_categories_danza_title: 'Ballet, Contemporáneo y Jazz',
-  home_categories_danza_image_alt: 'Bailarina de ballet en estudio',
+  home_categories_danza_image_alt:
+    "Clases de Ballet, Contemporáneo y Jazz en Barcelona - Farray's Center",
   home_categories_danza_bullets:
     'Técnica clásica y contemporánea, Ballet, Jazz, Afro Contemporáneo, Desde cero hasta avanzado',
   home_categories_danza_intro:
@@ -1515,7 +1535,8 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   // Category: Fitness para Bailarines
   home_categories_fitness_title: 'Preparación Física',
-  home_categories_fitness_image_alt: 'Clase de fitness con música',
+  home_categories_fitness_image_alt:
+    "Clases de preparación física para bailarines en Barcelona - Farray's Center",
   home_categories_fitness_bullets:
     'Tonifica bailando, Bum Bum, Pilates, Dance Barre, Clases divertidas y efectivas',
   home_categories_fitness_intro:
@@ -1556,7 +1577,8 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   // Todas las clases Category
   home_categories_todas_title: 'Todas las Clases de Baile',
-  home_categories_todas_image_alt: 'Clases de baile en Barcelona',
+  home_categories_todas_image_alt:
+    "Todas las clases de baile en Barcelona - Academia Farray's Center",
   home_categories_todas_bullets:
     '+25 Estilos · Todos los Niveles · Método Farray® · Profesores Expertos',
   home_categories_todas_intro:
@@ -1816,7 +1838,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   salsaBachataFaqQ10: '¿Puedo probar una clase de salsa o bachata antes de inscribirme?',
   salsaBachataFaqA10:
-    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas experimentar nuestra metodología, conocer a los profesores y sentir la energía de nuestra academia de baile sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en la parte superior de esta página.',
+    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas experimentar nuestra metodología, conocer a los profesores y sentir la energía de nuestra academia de baile sin compromiso.',
 
   // CTA Final - Salsa/Bachata Barcelona
   salsaBachataCTA_title: 'Aprende a bailar Salsa y Bachata Como Siempre Soñaste',
@@ -1847,6 +1869,8 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
     'Aprende el estilo más social y festivo de salsa. Rueda de casino, movimientos afrocaribeños, juego de pies cubano y conexión auténtica con la música. Ideal para principiantes y baile en grupo.',
   salsaBachata_style_bachata_seo:
     'Domina el baile latino más sensual y romántico. Movimientos de cadera, pasos básicos, giros fluidos y conexión en pareja. Desde Bachata Dominicana tradicional hasta Bachata Sensual moderna.',
+  salsaBachata_style_bachata_sensual_seo:
+    'Explora la bachata sensual moderna: ondulaciones corporales, conexión íntima en pareja, musicalidad avanzada y expresión emocional. Técnica dominicana fusionada con movimientos sensuales contemporáneos.',
   salsaBachata_style_timba_cubana_seo:
     'Descubre la evolución explosiva de la salsa cubana. Ritmos complejos, energía intensa, improvisación avanzada y afrocubanismo puro. Para bailadores intermedios/avanzados que buscan desafío musical.',
   salsaBachata_style_son_cubano_seo:
@@ -2143,6 +2167,19 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   prepFisica_activity_body_conditioning_desc:
     'Acondicionamiento físico específico para bailarines: fuerza funcional, resistencia cardiovascular y control corporal adaptado a las exigencias de la danza. Ejercicios de core, piernas, brazos y espalda diseñados para mejorar saltos, giros, equilibrios y la potencia de tus movimientos. Entrena como un profesional.',
 
+  // Activity cards for Preparación Física page
+  prepFisica_activity_cuerpo_fit_title: 'Cuerpo Fit',
+  prepFisica_activity_cuerpo_fit_desc:
+    'Entrenamiento funcional completo diseñado para bailarines. Trabaja fuerza, resistencia, cardio y tonificación en sesiones dinámicas. Transforma tu cuerpo y eleva tu rendimiento en clase.',
+
+  prepFisica_activity_bum_bum_title: 'Bum Bum Glúteos',
+  prepFisica_activity_bum_bum_desc:
+    'Ejercicios intensivos de glúteos con hip thrust, sentadillas y técnicas de activación muscular. Tonifica, fortalece y esculpe la zona con el Método Farray.',
+
+  prepFisica_activity_stretching_title: 'Stretching',
+  prepFisica_activity_stretching_desc:
+    'Estiramientos profundos y flexibilidad para bailarines. Mejora tu amplitud de movimiento, previene lesiones y recupera tu cuerpo después de entrenar.',
+
   prepFisica_activity_bum_bum_gluteos_title: 'Bum Bum Glúteos Maravillosos',
   prepFisica_activity_bum_bum_gluteos_desc:
     'Entrenamiento intenso enfocado en glúteos fuertes, tonificados y levantados con técnicas específicas de activación muscular. Sentadillas, hip thrusts, trabajo de resistencia y ejercicios de aislamiento para esculpir y potenciar la zona. Potencia, estética y resultados visibles garantizados.',
@@ -2431,12 +2468,23 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   contact_form_title: 'Envíanos un Mensaje',
   contact_form_subtitle:
     '¿Tienes alguna pregunta? Completa el formulario y nos pondremos en contacto contigo pronto.',
-  contact_form_name: 'Nombre completo',
-  contact_form_name_placeholder: 'Tu nombre',
+  contact_form_firstName: 'Nombre',
+  contact_form_firstName_placeholder: 'Tu nombre',
+  contact_form_lastName: 'Apellido',
+  contact_form_lastName_placeholder: 'Tu apellido',
   contact_form_email: 'Email',
   contact_form_email_placeholder: 'tu@email.com',
   contact_form_phone: 'Teléfono',
   contact_form_phone_placeholder: '+34 XXX XXX XXX',
+  contact_form_discovery: '¿Cómo nos conociste?',
+  contact_discovery_placeholder: 'Selecciona una opción',
+  contact_discovery_google: 'Google',
+  contact_discovery_instagram: 'Instagram',
+  contact_discovery_facebook: 'Facebook',
+  contact_discovery_passingby: 'Pasé por delante del centro',
+  contact_discovery_friend: 'Me lo recomendó un amigo/a',
+  contact_discovery_event: 'Vi un evento o actuación',
+  contact_discovery_other: 'Otro',
   contact_form_subject: 'Asunto',
   contact_form_subject_general: 'Consulta general',
   contact_form_subject_classes: 'Información sobre clases',
@@ -2449,7 +2497,37 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   contact_form_submit: 'Enviar Mensaje',
   contact_form_sending: 'Enviando...',
   contact_form_success: '¡Mensaje enviado con éxito! Te responderemos pronto.',
+  contact_success_title: '¡Mensaje Enviado!',
+  contact_success_response_time: 'Te responderemos en menos de 24 horas',
   contact_form_error: 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.',
+
+  // Contact Form - Validation Errors
+  contact_error_firstName: 'Por favor, introduce tu nombre (mínimo 2 caracteres)',
+  contact_error_lastName: 'Por favor, introduce tu apellido (mínimo 2 caracteres)',
+  contact_error_email: 'Por favor, introduce un email válido',
+  contact_error_phone: 'Por favor, introduce un teléfono válido',
+  contact_error_message: 'El mensaje debe tener entre 10 y 2000 caracteres',
+  contact_error_privacy: 'Debes aceptar la política de privacidad para continuar',
+
+  // Contact Form - LOPD/RGPD Consent
+  contact_consent_text: 'He leído y acepto la',
+  contact_consent_link: 'Política de Privacidad',
+
+  // Contact Form - Rate Limiting
+  contact_rate_limit_warning: 'Aviso: Te queda {remaining} intento',
+  contact_rate_limit_info: 'Para evitar spam, solo puedes enviar 3 mensajes cada 15 minutos.',
+  contact_rate_limited_title: 'Demasiados intentos de envío',
+  contact_rate_limited_message:
+    'Has alcanzado el máximo de 3 envíos en 15 minutos. Por favor, espera {minutes} minutos.',
+  contact_rate_limited_alternative: 'Si necesitas asistencia inmediata, llámanos al',
+  contact_rate_limited_button: 'Límite alcanzado',
+  contact_or: 'o escríbenos a',
+
+  // Contact Form - Legal Text (LOPD Compliance)
+  contact_legal_text:
+    "Responsable: Farray's International Dance Center S.L. Finalidad: Gestionar tu consulta y contactarte. Legitimación: Tu consentimiento. Destinatarios: No se cederán datos a terceros. Derechos: Acceso, rectificación, supresión, limitación, portabilidad y oposición. Más información en nuestra política de privacidad.",
+  contact_privacy_link: 'Política de Privacidad',
+  contact_legal_link: 'Aviso Legal',
 
   // Merchandising Page
   merchandising_page_title: 'Merchandising',
@@ -2591,6 +2669,103 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   yunaisyFarray_cta_subtitle:
     'Únete a la escuela donde Yunaisy Farray transmite su pasión, técnica y experiencia.',
   yunaisyFarray_cta_classes: 'Ver Clases',
+  yunaisyFarray_method_link: 'Descubre el Método Farray →',
+
+  // ==================== MÉTODO FARRAY PAGE ====================
+  metodoFarray_page_title: 'El Método Farray - Sistema Exclusivo de Enseñanza de Baile',
+  metodoFarray_meta_description:
+    'Descubre el Método Farray: el sistema exclusivo de enseñanza que fusiona disciplina clásica, ritmos afrodescendientes e innovación global. Creado por Yunaisy Farray, maestra CID-UNESCO.',
+  metodoFarray_breadcrumb_home: 'Inicio',
+  metodoFarray_breadcrumb_current: 'Método Farray',
+
+  // Hero
+  metodoFarray_hero_badge: 'Sistema Exclusivo de Enseñanza',
+  metodoFarray_hero_title: 'El Método Farray',
+  metodoFarray_hero_subtitle:
+    'El camino más rápido entre tú y tu mejor versión bailando. Un sistema de enseñanza único que fusiona lo mejor de la disciplina clásica con el alma de los ritmos afrodescendientes.',
+
+  // Problema
+  metodoFarray_problem_title: 'El Problema de las Academias Tradicionales',
+  metodoFarray_problem_p1:
+    'La mayoría de academias de baile siguen métodos genéricos copiados de otros centros. Clases masificadas donde eres un número más, sin atención personalizada ni seguimiento real de tu progreso.',
+  metodoFarray_problem_p2:
+    'El resultado: meses de clases y la sensación de que no avanzas. Frustración. Abandono.',
+  metodoFarray_problem_point1: 'Clases masificadas sin atención individual',
+  metodoFarray_problem_point2: 'Métodos genéricos sin fundamento pedagógico',
+  metodoFarray_problem_point3: 'Profesores sin formación profesional certificada',
+
+  // Solución
+  metodoFarray_solution_title: 'Qué es el Método Farray',
+  metodoFarray_solution_tagline: 'El sistema de enseñanza que faltaba en Barcelona.',
+  metodoFarray_solution_p1:
+    'El Método Farray es un sistema pedagógico exclusivo creado por Yunaisy Farray, fruto de más de 20 años de experiencia como bailarina profesional, maestra internacional y formación en la prestigiosa Escuela Nacional de Arte de Cuba (ENA).',
+  metodoFarray_solution_p2:
+    'No es una copia de otros métodos. Es una fusión única de tres pilares fundamentales que garantizan resultados rápidos, sólidos y contrastados.',
+
+  // Pilares
+  metodoFarray_pillars_title: 'Los 3 Pilares del Método Farray',
+  metodoFarray_pillars_subtitle:
+    'Cada pilar aporta un elemento esencial para tu transformación como bailarín.',
+
+  metodoFarray_pillar1_title: 'Disciplina y Rigor',
+  metodoFarray_pillar1_desc:
+    'Fundamentos técnicos de precisión inspirados en la disciplina clásica rusa. Estructura, control corporal y postura impecable como base de todo movimiento.',
+  metodoFarray_pillar1_origin: 'Herencia de la escuela clásica rusa y cubana',
+
+  metodoFarray_pillar2_title: 'Sabor y Ritmo',
+  metodoFarray_pillar2_desc:
+    'El alma de los ritmos afrodescendientes. Esa conexión musical profunda, esa fluidez natural, esa expresión que transforma un paso técnico en algo que se siente.',
+  metodoFarray_pillar2_origin: 'Raíces afrocubanas y caribeñas',
+
+  metodoFarray_pillar3_title: 'Innovación Global',
+  metodoFarray_pillar3_desc:
+    'Una metodología en constante evolución que integra tendencias internacionales, fusiona estilos y te prepara para el escenario global. Sin quedarse en el pasado.',
+  metodoFarray_pillar3_origin: 'Experiencia internacional en 30+ países',
+
+  // Comparativa
+  metodoFarray_comparison_title: 'Método Farray vs Academia Típica',
+  metodoFarray_comparison_subtitle: 'La diferencia está en los detalles',
+
+  metodoFarray_comparison_others_title: 'Academia Típica',
+  metodoFarray_comparison_others_1: 'Método copiado de otras academias',
+  metodoFarray_comparison_others_2: 'Clases masificadas (+30 alumnos)',
+  metodoFarray_comparison_others_3: 'Profesores sin formación profesional',
+  metodoFarray_comparison_others_4: 'Niveles genéricos mal definidos',
+  metodoFarray_comparison_others_5: 'Sin seguimiento del progreso',
+  metodoFarray_comparison_others_6: 'Foco en cantidad, no en calidad',
+
+  metodoFarray_comparison_us_title: 'Método Farray',
+  metodoFarray_comparison_us_1: 'Sistema exclusivo creado en 20+ años',
+  metodoFarray_comparison_us_2: 'Grupos reducidos (máx 15 alumnos)',
+  metodoFarray_comparison_us_3: 'Profesores formados por Yunaisy Farray',
+  metodoFarray_comparison_us_4: 'Niveles reales con evaluación continua',
+  metodoFarray_comparison_us_5: 'Feedback personalizado cada clase',
+  metodoFarray_comparison_us_6: 'Foco en tu transformación real',
+
+  // Resultados
+  metodoFarray_results_title: 'Resultados que Hablan',
+  metodoFarray_stats_students: 'Alumnos formados',
+  metodoFarray_stats_years: 'Años perfeccionando el método',
+  metodoFarray_stats_rating: 'Valoración en Google (505+ reseñas)',
+  metodoFarray_stats_styles: 'Estilos de baile disponibles',
+
+  metodoFarray_featured_quote:
+    '"La técnica es la técnica... y sin técnica, no hay técnica. Pero la técnica sin alma es solo gimnasia. El Método Farray une ambos mundos."',
+  metodoFarray_featured_quote_author: '— Yunaisy Farray, Creadora del Método',
+
+  // Quién enseña
+  metodoFarray_teachers_title: 'Quién Enseña el Método Farray',
+  metodoFarray_teachers_subtitle:
+    'Solo profesores certificados y formados directamente por Yunaisy',
+  metodoFarray_teachers_text:
+    'Todos nuestros profesores han sido formados personalmente por Yunaisy Farray y siguen el método de forma rigurosa. No hay improvisación ni variaciones no autorizadas.',
+  metodoFarray_teachers_cta: 'Conoce a Yunaisy Farray →',
+
+  // CTA
+  metodoFarray_cta_title: 'Descubre Cómo Empezar',
+  metodoFarray_cta_subtitle: 'Tu primera clase es gratis. Ven a probar y siente la diferencia.',
+  metodoFarray_cta_button: 'Descubre Cómo Empezar',
+  metodoFarray_cta_secondary: 'Ver Todas las Clases',
 
   // ==================== REGALA BAILE PAGE ====================
   regalaBaile_page_title:
@@ -9063,6 +9238,18 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
   salsaLadyStatMinutes: 'minutos',
   salsaLadyStatCalories: 'calorías',
   salsaLadyStatElegance: 'Elegancia',
+  salsaLadyStatReviewCount: '505+ reseñas',
+  salsaLadyStatStudents: '+15.000 estudiantes formados',
+  salsaLadyStatYears: '8 años en Barcelona',
+  // Schedule class names
+  salsaLadyScheduleClassBasic: 'Salsa Lady Style Básico',
+  salsaLadyScheduleClassIntermediate: 'Salsa Lady Style Intermedio',
+  salsaLadyScheduleClassAdvanced: 'Salsa Lady Style Avanzado',
+  // Level durations
+  salsaLadyDuration1: '0-3 meses',
+  salsaLadyDuration2: '3-6 meses',
+  salsaLadyDuration3: '6-12 meses',
+  salsaLadyDuration4: '+12 meses',
 
   // What Is Section
   salsaLadyWhatIsTitle: '¿Qué es Salsa Lady Style y por qué transformará tu baile?',
@@ -10453,7 +10640,7 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
   timbaBreadcrumbCurrent: 'Timba',
 
   // === HERO SECTION ===
-  timbaHeroTitle: 'TIMBA EN BARCELONA',
+  timbaHeroTitle: 'Timba En Barcelona',
   timbaHeroSubtitle: '¿Qué hacer cuando te sueltan en la salsa?',
   timbaHeroDesc:
     'La Timba es la respuesta. Aprende a interpretar la música cubana moderna con libertad, estilo y sabor. Clases para parejas y estilo femenino Lady Timba.',
@@ -12259,7 +12446,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   pricingV2_card_flexible_include1: 'Paquetes de actividades',
   pricingV2_card_flexible_include2: 'Validez amplia (6-12 meses)',
   pricingV2_card_flexible_include3: 'Sin rutina fija',
-  pricingV2_card_flexible_cta: 'Ver opciones flexibles',
+  pricingV2_card_flexible_cta: 'Consultar Bonos y Tarifas',
 
   // Card Puntual
   pricingV2_card_puntual_title: 'Participación Puntual',
@@ -12307,7 +12494,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   // SCHEDULE SECTION (Horarios)
   // ============================================================================
   schedule_title: 'Horarios de Clases',
-  schedule_subtitle: 'Más de 70 clases semanales de lunes a viernes. Encuentra tu horario ideal.',
+  schedule_subtitle: 'Más de 100 clases semanales de lunes a viernes. Encuentra tu horario ideal.',
 
   // Categories
   schedule_category_all: 'Todos',
@@ -12323,6 +12510,11 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   schedule_level_advanced: 'Avanzado',
   schedule_level_intermediateAdvanced: 'Inter/Avanzado',
   schedule_level_all: 'Todos los niveles',
+
+  // Time of Day
+  schedule_time_all: 'Todas las horas',
+  schedule_time_morning: 'Mañanas',
+  schedule_time_evening: 'Tardes/Noches',
 
   // UI
   schedule_classes_found: 'clases',
@@ -12636,7 +12828,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   horariosV2_faq5_q: '¿Los horarios son siempre los mismos todo el año?',
   horariosV2_faq5_a:
     'Los horarios son orientativos y pueden variar según la temporada, el nivel y la disponibilidad de plazas. Siempre te enviamos la información actualizada antes de empezar.',
-  horariosV2_faq6_q: '¿Puedo probar una clase de Afrobeats antes de inscribirme?',
+  horariosV2_faq6_q: '¿Puedo probar una clase antes de inscribirme?',
   horariosV2_faq6_a:
     'Mira, lo importante es que pruebes. Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
   horariosV2_faq7_q: '¿Dónde está Farray Center y a quién van dirigidas las actividades de baile?',
@@ -12788,7 +12980,11 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   blog_tableOfContents: 'Contenido',
   blog_shareArticle: 'Compartir',
   blog_relatedArticles: 'Artículos Relacionados',
-  blog_readMore: 'Leer más',
+  blog_relatedClasses_title: 'Aprende con Nosotros',
+  blog_relatedClasses_subtitle:
+    'Transforma tu pasion en movimiento con nuestras clases en Barcelona',
+  blog_relatedClasses_viewClass: 'Ver Clase',
+  blog_readMore: 'Leer Articulo Completo',
   blog_allArticles: 'Todos',
   blog_noArticles: 'Próximamente más artículos',
   blog_noArticlesDesc: 'Estamos preparando contenido increíble para ti. ¡Vuelve pronto!',
@@ -12933,6 +13129,21 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   blogBeneficiosSalsa_faq5Answer:
     "La salsa cubana (casino) se baila en círculo, con movimientos más fluidos y sensuales, muy conectada con la música afrocubana. La salsa en línea (LA/NY style) se baila en una línea recta, con más acrobacias. En Farray's enseñamos salsa cubana auténtica.",
 
+  // === REFERENCES (E-E-A-T Authority) ===
+  blogBeneficiosSalsa_referencesIntro: 'Fuentes científicas consultadas para este artículo:',
+  blogBeneficiosSalsa_refHarvardTitle: 'Los Beneficios del Baile para la Salud',
+  blogBeneficiosSalsa_refHarvardDesc:
+    'Estudio de Harvard sobre cómo el baile quema calorías y mejora la salud cardiovascular.',
+  blogBeneficiosSalsa_refNEJMTitle: 'Actividades de Ocio y Riesgo de Demencia',
+  blogBeneficiosSalsa_refNEJMDesc:
+    'Estudio pionero que demuestra que bailar reduce el riesgo de demencia en un 76%.',
+  blogBeneficiosSalsa_refAPATitle: 'Los Beneficios Psicológicos del Baile',
+  blogBeneficiosSalsa_refAPADesc:
+    'Investigación sobre el impacto del baile en la salud mental y el bienestar emocional.',
+  blogBeneficiosSalsa_refNCBITitle: 'Efectos del Baile en la Neuroplasticidad',
+  blogBeneficiosSalsa_refNCBIDesc:
+    'Meta-análisis sobre cómo el baile mejora la función cognitiva y la memoria.',
+
   // ============================================================================
   // BLOG ARTICLE: Historia de la Salsa en Barcelona
   // ============================================================================
@@ -13075,6 +13286,21 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   blogHistoriaSalsa_faq5Question: '¿Qué beneficios tiene bailar salsa para la salud?',
   blogHistoriaSalsa_faq5Answer:
     'Según estudios del New England Journal of Medicine, bailar regularmente puede reducir hasta un 76% el riesgo de demencia. Además, una hora de salsa quema entre 350-450 kcal, mejora la coordinación, reduce el estrés y aumenta la felicidad en un 25% según Frontiers in Psychology.',
+
+  // === REFERENCES (E-E-A-T Authority) ===
+  blogHistoriaSalsa_referencesIntro: 'Fuentes históricas y académicas consultadas:',
+  blogHistoriaSalsa_refWikipediaTitle: 'Salsa (género musical) - Historia Completa',
+  blogHistoriaSalsa_refWikipediaDesc:
+    'Artículo enciclopédico sobre los orígenes, evolución y características de la salsa como género musical.',
+  blogHistoriaSalsa_refSmithsonianTitle: 'El Nacimiento de la Salsa',
+  blogHistoriaSalsa_refSmithsonianDesc:
+    'Exposición del Smithsonian sobre la historia cultural de la salsa y su impacto global.',
+  blogHistoriaSalsa_refLOCTitle: 'Archivos de Música Latina',
+  blogHistoriaSalsa_refLOCDesc:
+    'Colección de la Biblioteca del Congreso sobre la historia de la música latina en Estados Unidos.',
+  blogHistoriaSalsa_refNEJMTitle: 'Actividades de Ocio y Riesgo de Demencia',
+  blogHistoriaSalsa_refNEJMDesc:
+    'Estudio científico sobre los beneficios cognitivos del baile, publicado en el New England Journal of Medicine.',
 
   // =============================================
   // TEACHERS PAGE - Profesores de Baile Barcelona
@@ -14717,6 +14943,164 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
     "Tus datos serán tratados por Farray's International Dance Center para gestionar tu clase de bienvenida y enviarte información relacionada. Puedes ejercer tus derechos de acceso, rectificación, supresión y portabilidad escribiéndonos a info@farrayscenter.com.",
 
   // =====================================================
+  // FEMMOLOGY LANDING PAGE - Landing para captación Femmology
+  // Método exclusivo de Yunaisy Farray - Empoderamiento femenino
+  // NOINDEX: Landing solo para campañas de ads
+  // =====================================================
+
+  // Meta SEO
+  femLandingPageTitle: "Clase de Bienvenida de Femmology en Barcelona | GRATIS | Farray's Center",
+  femLandingPageDescription:
+    'Descubre Femmology, el método exclusivo de Yunaisy Farray para reconectar con tu feminidad. Clase de Bienvenida totalmente GRATIS. Plazas limitadas. Reserva ahora.',
+
+  // Hero Section
+  femLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  femLandingHeadline: 'Reconecta con Tu Feminidad a Través del Movimiento',
+  femLandingSubheadline:
+    'Femmology es el método exclusivo creado por Yunaisy Farray que combina danza en tacones, expresión corporal y trabajo emocional para que te ames cada día más. Una experiencia transformadora que va más allá del baile.',
+  femLandingCTA: 'RESERVA TU CLASE DE BIENVENIDA AHORA',
+  femLandingTrustText: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+  femLandingTrustStudents: 'alumnas transformadas',
+  femLandingTrustYears: 'años de experiencia',
+  femLandingTrustReviews: 'Google Reviews',
+  femLandingTrustLocation: 'Plaza España',
+  femLandingReviewsLabel: 'reviews',
+  femLandingTrustActiveStudents: '1.500+ alumnas activas',
+  femLandingTrustYearsExp: '8+ años',
+  femLandingTrustLocationShort: 'Barcelona - Plaza España',
+  femLandingExclusiveBadge: 'EXCLUSIVO',
+
+  // Logos Section
+  femLandingLogosTitle: 'Has podido vernos en',
+  femLandingLogosSubtitle: 'Colaboraciones en televisión, cine y festivales internacionales',
+  femLandingFestivalsText: 'Y en los mejores Festivales de Danza de Todo El Mundo',
+
+  // Stats
+  femLandingStatYears: 'Años de Experiencia',
+  femLandingStatActive: 'Estudiantes Activas',
+  femLandingStatSatisfied: 'Mujeres Transformadas',
+
+  // Experience Section
+  femLandingExperienceTitle: '¿Quieres reconectar con tu esencia femenina?',
+  femLandingExperienceDesc:
+    'Esta no es una clase de baile cualquiera. Femmology es un viaje hacia tu interior, una experiencia que combina el poder del movimiento en tacones con el trabajo emocional. Creado por Yunaisy Farray, este método único te ayuda a liberarte de inseguridades, abrazar tu sensualidad y quererte cada día más. ¿Primera vez con nosotras? Esta es tu ocasión: una clase de Bienvenida totalmente gratis.',
+
+  // Value Stack
+  femLandingValueTitle: '¿Qué incluye esta experiencia?',
+  femLandingValueSubtitle: 'Todo esto completamente GRATIS para nuevas estudiantes',
+  femLandingValueItem1: 'Una clase completa de Femmology de 60 minutos',
+  femLandingValuePrice1: 'Valor: {price}€',
+  femLandingValueItem2: 'Conexión directa con Yunaisy Farray, creadora del método',
+  femLandingValueItem3: 'Grupo reducido: plazas limitadas cada semana',
+  femLandingValueItem4: 'Confirmación directa por WhatsApp tras la reserva',
+  femLandingValueItem5: 'Acceso a oferta privada si decides apuntarte ese día',
+  femLandingValueIncluded: 'Incluido',
+  femLandingValueTotal: 'VALOR TOTAL:',
+  femLandingValueYourPrice: 'TU PRECIO HOY:',
+  femLandingValueFree: 'GRATIS',
+
+  // Special Offer
+  femLandingOfferTitle: 'Solo por tiempo limitado',
+  femLandingOfferDesc:
+    'Reserva tu clase ahora y si decides apuntarte el mismo día, recibirás una oferta especial de bienvenida exclusiva. Femmology no es solo una clase, es una transformación. Y queremos que la vivas sin presión.',
+
+  // Prepare Section
+  femLandingPrepareTitle: '¿Qué traer a tu clase?',
+  femLandingPrepare1: 'Ropa ajustada y cómoda',
+  femLandingPrepare2: 'Tacones de baile (te prestamos si no tienes)',
+  femLandingPrepare3: 'Botella de agua',
+  femLandingPrepare4: 'Mente abierta y ganas de conectar contigo',
+
+  // Schedule Section
+  femLandingScheduleTitle: 'Elige tu horario',
+  femLandingScheduleSubtitle: 'Clases con Yunaisy Farray en Calle Entença nº 100, Barcelona',
+  femLandingReserveBtn: 'Reservar',
+  femLandingLimitedSpots:
+    '¡Plazas muy limitadas! Esta experiencia solo está disponible una vez por persona',
+  femLandingUrgencyBadge: 'PLAZAS LIMITADAS — ¡Reserva ahora!',
+
+  // Why Farray's Section
+  femLandingWhyFarraysTitle: "¿Por qué Femmology en Farray's?",
+  femLandingWhyTitle1: 'Método exclusivo creado por Yunaisy Farray',
+  femLandingWhyDesc1:
+    'Femmology es un método único registrado, creado por una de las bailarinas más reconocidas del mundo. No es solo baile, es transformación.',
+  femLandingWhyTitle2: 'Academia reconocida por el CID UNESCO',
+  femLandingWhyDesc2:
+    'Formación profesional avalada internacionalmente. Aprenderás de verdaderas maestras del movimiento y la expresión corporal.',
+  femLandingWhyTitle3: 'Ambiente seguro y sin juicios',
+  femLandingWhyDesc3:
+    'Un espacio donde puedes ser vulnerable, explorar tu feminidad y crecer a tu ritmo. Aquí todas las mujeres son bienvenidas.',
+  femLandingWhyTitle4: 'Ubicación perfecta en el corazón de Barcelona',
+  femLandingWhyDesc4:
+    'Calle Entença 100, entre Plaza España y Sants. A 5 minutos de transporte público. Fácil llegar, imposible olvidar.',
+
+  // Testimonials Section
+  femLandingTestimonialsTitle: '¿Qué dicen quienes ya lo han vivido?',
+  femLandingTestimonial1:
+    'Femmology ha sido un antes y un después en mi vida. Llegué con miedos e inseguridades, y salgo de cada clase sintiéndome una mujer más completa. Yunaisy no es solo una profesora, es una guía en el camino hacia el amor propio.',
+  femLandingTestimonial2:
+    'Nunca pensé que bailar en tacones me ayudaría tanto a nivel emocional. Cada clase es una terapia. He ganado confianza, seguridad y sobre todo, conexión conmigo misma.',
+  femLandingTestimonial3:
+    'Vine buscando aprender a bailar y encontré mucho más. Femmology me enseñó a mirarme al espejo con amor. Gracias Yunaisy por crear este espacio mágico.',
+
+  // FAQ Section - Objection Busters
+  femLandingFaqTitle: 'Quizás te preguntas...',
+  femLandingObjQ1: '¿Y si nunca he bailado en tacones?',
+  femLandingObjA1:
+    'Perfecto, Femmology está diseñado para todas. Te guiamos paso a paso, respetando tu ritmo. Además, si no tienes tacones de baile, te prestamos unos para empezar.',
+  femLandingObjQ2: '¿Necesito tener experiencia en baile?',
+  femLandingObjA2:
+    'No necesitas ninguna experiencia previa. Femmology no va de pasos perfectos, va de conexión contigo misma. Aquí no se juzga, se acompaña.',
+  femLandingObjQ3: '¿Es solo para mujeres jóvenes y delgadas?',
+  femLandingObjA3:
+    'Femmology es para TODAS las mujeres, sin importar edad, talla o condición física. La feminidad no tiene forma ni edad. Aquí celebramos todos los cuerpos.',
+  femLandingObjQ4: '¿Puedo ir sola? ¿Me sentiré incómoda?',
+  femLandingObjA4:
+    'El 90% de nuestras alumnas vienen solas la primera vez. El ambiente es de sororidad y apoyo mutuo. Aquí encontrarás mujeres como tú, buscando lo mismo: conectar consigo mismas.',
+
+  // Video Section
+  femLandingVideoTitle: 'Mira una clase real',
+  femLandingVideoSubtitle: "Así se vive Femmology en Farray's",
+  femLandingVideoPlaceholder: 'Video próximamente',
+
+  // Location Section
+  femLandingLocationTitle: 'Te esperamos aquí',
+  femLandingLocationAddress:
+    'Calle Entença nº 100 - Plaza España (L1, L3), Rocafort (L1), Entença (L5); Estación de Sants (L5, Ferrocarril)',
+
+  // Final CTA Section
+  femLandingFinalCTATitle: 'Reserva tu plaza ahora y da el primer paso hacia tu transformación',
+  femLandingFinalCTADesc: 'Las plazas vuelan. Este es tu momento de reconectar contigo misma.',
+  femLandingFinalCTAExtra: 'Tu feminidad te está esperando. No la hagas esperar más.',
+  femLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+  femLandingUrgencyReminder: 'Recuerda: las plazas son muy limitadas cada semana',
+
+  // Footer
+  femLandingFooterTagline:
+    'Femmology no se explica. Se siente. Se vive. Ven a descubrirlo por ti misma.',
+  femLandingFooterRights: 'Todos los derechos reservados',
+  femLandingFooterLegal: 'Aviso Legal',
+  femLandingFooterPrivacy: 'Política de Privacidad',
+  femLandingFooterTerms: 'Términos y Condiciones',
+
+  // Countdown Timer
+  femLandingCountdownTitle: 'Esta oferta termina en:',
+  femLandingCountdownExpires: 'Plazas limitadas cada semana',
+  femLandingCountdownDays: 'Días',
+  femLandingCountdownHours: 'Horas',
+  femLandingCountdownMinutes: 'Min',
+  femLandingCountdownSeconds: 'Seg',
+
+  // Exit Intent Popup
+  femExitIntent_title: '¿No te convence Femmology?',
+  femExitIntent_description:
+    'No pasa nada, tenemos más de 25 estilos de baile diferentes. Seguro que hay uno perfecto para ti.',
+  femExitIntent_ctaExplore: 'Ver todas las clases disponibles',
+  femExitIntent_ctaDancehall: 'Reservar clase de Femmology',
+  femExitIntent_ctaClose: 'Cerrar',
+  femExitIntent_hint: 'Sexy Style, Heels, Salsa Lady Style, Bachata y mucho más...',
+
+  // =====================================================
   // HOMEPAGE V2 - Nueva homepage con estrategia océano azul
   // =====================================================
 
@@ -14827,7 +15211,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   homev2_stat3Label: 'estilos de baile',
   homev2_stat4Label: 'de instalaciones',
   homev2_googleReviewsLink: 'opiniones en Google',
-  homev2_testimonialsCta: 'Leer más opiniones',
+  homev2_testimonialsCta: 'Ver Todas las Opiniones en Google',
 
   // Pricing Preview Section
   homev2_pricingTitle: 'Empieza esta semana. El método funciona desde el día uno.',
@@ -14896,6 +15280,95 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
     'Spoiler: No todo el mundo encaja aquí.\nSi buscas "pasarlo bien sin más", hay opciones más baratas.\nSi buscas transformarte bailando, sigue leyendo.',
   homev2_interrupt6:
     'Última cosa:\nNo te estamos vendiendo nada.\nTe estamos mostrando una opción.\nLa decisión es tuya. Siempre lo ha sido.',
+
+  // =====================================================
+  // HOMEPAGE V2 - Nuevas secciones de alta conversión
+  // =====================================================
+
+  // Hero V2 - Nuevas claves
+  hero_urgency: 'Oferta Enero: Primera semana GRATIS + Regalo sorpresa',
+  hero_cta_schedule: 'Ver Horarios',
+
+  // Trust Bar - Barra de credibilidad
+  trustbar_cidunesco: 'Acreditados',
+  trustbar_students: 'Estudiantes',
+  trustbar_facilities: 'Instalaciones',
+  trustbar_styles: 'Estilos',
+  trustbar_google: 'Google Reviews',
+
+  // Problem-Solution Section (PAS Framework)
+  pas_title: '¿Te Suena Familiar?',
+  pas_subtitle: 'Si alguna de estas frases resuena contigo, no estás solo.',
+  pas_problem1: 'Llevas años queriendo aprender a bailar pero nunca das el paso.',
+  pas_problem2: 'Probaste otras escuelas y te sentiste un número más, sin atención real.',
+  pas_problem3: 'Los horarios nunca cuadran con tu vida y acabas dejándolo.',
+  pas_problem4: 'Sientes que "no tienes ritmo" o que "ya es muy tarde" para empezar.',
+  pas_agitation1: 'Cada día que pasa es un día menos para disfrutar bailando.',
+  pas_agitation2: 'Y la verdad es que el problema nunca fuiste tú...',
+  pas_solution1: 'El problema era no encontrar EL MÉTODO correcto.',
+  pas_solution2: "En Farray's, hemos creado algo diferente.",
+  pas_cta: 'Descubre el Método Farray®',
+
+  // Irresistible Offer Section
+  offer_badge: 'Oferta Especial',
+  offer_title: 'Puertas Abiertas',
+  offer_subtitle: 'Tu oportunidad de probar sin compromiso',
+  offer_benefit1: '1 Clase de Prueba GRATIS',
+  offer_value1: 'valor 20€',
+  offer_benefit2: 'Tour por las instalaciones de 700m²',
+  offer_value2: 'valor 15€',
+  offer_benefit3: 'Asesoría personalizada de nivel',
+  offer_value3: 'valor 25€',
+  offer_benefit4: 'Acceso al grupo de WhatsApp de la comunidad',
+  offer_value4: 'exclusivo',
+  offer_benefit5: '10% descuento si te matriculas hoy',
+  offer_value5: 'oferta limitada',
+  offer_urgency: 'Plazas limitadas: Quedan {spots} plazas esta semana',
+  offer_cta: 'Reservar Mi Plaza Gratis',
+  offer_trust1: 'Sin compromiso',
+  offer_trust2: 'Cancelación gratuita',
+
+  // Video Testimonials Section
+  videotestimonials_title: 'Ellos Tampoco Creían Que Podían Bailar',
+  videotestimonials_subtitle: 'Personas reales. Transformaciones reales. Sin filtros.',
+  videotestimonials_reviews: 'opiniones',
+  testimonial1_name: 'María García',
+  testimonial1_role: 'Oficinista, 34 años',
+  testimonial1_quote:
+    'Pensaba que no tenía ritmo. Después de 3 meses, estoy preparando mi primera coreografía para un showcase. El método funciona.',
+  testimonial2_name: 'Carlos Rodríguez',
+  testimonial2_role: '+50 años, jubilado',
+  testimonial2_quote:
+    'A mi edad pensé que era imposible. Aquí me demostraron que el límite estaba solo en mi cabeza. Ahora bailo salsa mejor que muchos jóvenes.',
+  testimonial3_name: 'Anna Kowalski',
+  testimonial3_role: 'Diseñadora, 28 años',
+  testimonial3_quote:
+    'Probé 3 academias antes. Ninguna me hizo sentir tan bienvenida ni me enseñó tan bien. La diferencia es brutal.',
+
+  // Instructors Section
+  instructors_title: 'Aprende de los Mejores',
+  instructors_subtitle:
+    'Profesores formados en academias de élite, con experiencia internacional y pasión por enseñar.',
+  instructor1_name: 'Yunaisy Farray',
+  instructor1_role: 'Fundadora & Directora Artística',
+  instructor1_bio:
+    '+25 años de experiencia internacional. Formada en la Escuela Nacional de Arte de Cuba. Ha trabajado con artistas como Madonna y participado en Street Dance 2.',
+  instructor1_quote: 'Mi misión es que cada alumno descubra el bailarín que lleva dentro.',
+  instructor2_name: 'Joni Pila',
+  instructor2_role: 'Director de Danzas Urbanas',
+  instructor2_bio:
+    'Especialista en Hip Hop, Dancehall y Afrobeat. Coreógrafo de videoclips y eventos internacionales.',
+  instructor2_quote: 'El baile urbano no es solo técnica, es actitud y expresión.',
+  instructor3_name: 'Elena Petrova',
+  instructor3_role: 'Profesora de Ballet y Contemporáneo',
+  instructor3_bio:
+    'Formación clásica en Rusia. 15 años de experiencia en compañías profesionales europeas.',
+  instructor3_quote: 'La técnica clásica es la base de todo buen bailarín.',
+  instructors_viewall: 'Ver Todos Los Profesores',
+
+  // Sticky Mobile CTA
+  sticky_cta: 'Clase Gratis',
+  sticky_trust1: 'Sin compromiso',
 
   // =====================================================
   // TWERK LANDING PAGE - Landing de captación para Twerk
@@ -15104,6 +15577,2199 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   twLeadModal_legal_text:
     "Tus datos serán tratados por Farray's International Dance Center para gestionar tu clase de bienvenida. Puedes ejercer tus derechos escribiéndonos a info@farrayscenter.com.",
 
+  // =====================================================
+  // SEXY REGGAETON LANDING PAGE - ENTERPRISE
+  // =====================================================
+  // Tema: Rose (sensual, empoderador, femenino)
+  // Profesora: Yasmina Fernández
+
+  // SEO
+  sxrLandingPageTitle:
+    "Clase de Bienvenida de Sexy Reggaeton en Barcelona | GRATIS | Farray's Center",
+  sxrLandingPageDescription:
+    'Prueba una clase GRATIS de Sexy Reggaeton con Yasmina Fernández en Barcelona. Descubre la sensualidad del perreo y el body roll. Sin experiencia previa. Academia CID-UNESCO.',
+
+  // Hero Section
+  sxrLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  sxrLandingHeadline: 'Despierta Tu Sensualidad con Sexy Reggaeton',
+  sxrLandingSubheadline:
+    'Libera tu energía, conecta con tu cuerpo y descubre un baile que te empodera desde el primer minuto. Sensualidad, confianza y diversión garantizada mientras trabajas tu expresión corporal.',
+  sxrLandingCTA: 'RESERVA TU CLASE DE BIENVENIDA AHORA',
+  sxrLandingTrustText: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+  sxrLandingTrustActiveStudents: '1.500+ alumnos activos',
+  sxrLandingTrustYearsExp: '8+ años',
+  sxrLandingTrustLocationShort: 'Barcelona - Plaza España',
+  sxrLandingReviewsLabel: 'reviews',
+  sxrLandingExclusiveBadge: 'EXCLUSIVO',
+  sxrLandingUrgencyBadge: 'PLAZAS LIMITADAS — ¡Reserva ahora!',
+
+  // Logos & Social Proof
+  sxrLandingLogosTitle: 'Has podido vernos en',
+  sxrLandingFestivalsText: 'Y en los mejores Festivales de Danza de Todo El Mundo',
+
+  // Stats
+  sxrLandingStatYears: 'Años de Experiencia',
+  sxrLandingStatActive: 'Estudiantes Activos',
+  sxrLandingStatSatisfied: 'Alumnos Satisfechos',
+
+  // Experience Section
+  sxrLandingExperienceTitle: '¿Lista para despertar tu sensualidad?',
+  sxrLandingExperienceDesc:
+    'El Sexy Reggaeton no es solo un baile: es una forma de reconectar con tu cuerpo, ganar confianza y expresar tu feminidad sin filtros. Perreo, body roll, movimientos de cadera... todo en un ambiente seguro donde la única regla es disfrutar.',
+
+  // Value Stack
+  sxrLandingValueTitle: '¿Qué incluye esta experiencia?',
+  sxrLandingValueItem1: 'Una clase completa de Sexy Reggaeton de 60 minutos',
+  sxrLandingValuePrice1: 'Valor: {price}€',
+  sxrLandingValueItem2: 'Ambiente seguro y sin juicios',
+  sxrLandingValueItem3: 'Grupo reducido: plazas limitadas cada semana',
+  sxrLandingValueItem4: 'Confirmación directa por WhatsApp tras la reserva',
+  sxrLandingValueItem5: 'Acceso a oferta privada si decides apuntarte ese día',
+  sxrLandingValueIncluded: 'Incluido',
+  sxrLandingValueTotal: 'VALOR TOTAL:',
+  sxrLandingValueYourPrice: 'TU PRECIO HOY:',
+  sxrLandingValueFree: 'GRATIS',
+
+  // Offer Section
+  sxrLandingOfferTitle: 'Solo por tiempo limitado',
+  sxrLandingOfferDesc:
+    'Si decides continuar después de la clase de bienvenida, tendrás acceso a un descuento exclusivo en tu primera mensualidad o bono. Solo válido para nuevas alumnas.',
+
+  // Schedule Section
+  sxrLandingScheduleTitle: 'Elige tu horario',
+  sxrLandingScheduleSubtitle: 'Clases disponibles en Calle Entença nº 100, Barcelona',
+  sxrLandingLimitedSpots:
+    'Las plazas se llenan rápido. Si quieres asegurar tu sitio, reserva ahora mismo.',
+
+  // Why Farray's Section
+  sxrLandingWhyFarraysTitle: "¿Por qué Farray's International Dance Center?",
+  sxrLandingWhyTitle1: 'Profesoras especializadas en estilos sensuales',
+  sxrLandingWhyDesc1:
+    'Yasmina Fernández lidera nuestras clases de Sexy Reggaeton con años de experiencia en perreo, body roll y expresión corporal sensual.',
+  sxrLandingWhyTitle2: 'Ambiente seguro y empoderador',
+  sxrLandingWhyDesc2:
+    'Un espacio donde cada mujer puede explorar su sensualidad sin juicios, rodeada de otras mujeres con la misma energía.',
+  sxrLandingWhyTitle3: 'Academia reconocida por el CID UNESCO',
+  sxrLandingWhyDesc3:
+    'Formamos parte del Consejo Internacional de Danza de la UNESCO, garantía de calidad y excelencia en la enseñanza.',
+  sxrLandingWhyTitle4: 'Ubicación inmejorable',
+  sxrLandingWhyDesc4:
+    'A solo 2 minutos del metro Plaza España en Barcelona. Fácil acceso en transporte público y parking cercano.',
+
+  // Testimonials
+  sxrLandingTestimonialsTitle: '¿Qué dicen quienes ya lo han vivido?',
+  sxrLandingTestimonial1:
+    'Las clases de Sexy Reggaeton han transformado mi confianza. Aprendes a mover el cuerpo con sensualidad y fuerza. ¡La profe es increíble!',
+  sxrLandingTestimonial2:
+    'Nunca pensé que podría bailar así. Yasmina te hace sentir cómoda desde el primer momento y el ambiente es súper empoderador.',
+  sxrLandingTestimonial3:
+    'Es mi momento de la semana para desconectar, sentirme sexy y disfrutar. Además, ¡es un entreno brutal!',
+
+  // FAQ Section
+  sxrLandingFaqTitle: 'Quizás te preguntas...',
+  sxrLandingObjQ1: '¿Y si nunca he bailado Sexy Reggaeton ni nada parecido?',
+  sxrLandingObjA1:
+    'La clase de bienvenida está diseñada para principiantes absolutas. Empezamos desde cero, con movimientos básicos que cualquiera puede hacer. No necesitas experiencia previa.',
+  sxrLandingObjQ2: '¿Me sentiré incómoda con los movimientos sensuales?',
+  sxrLandingObjA2:
+    'Es normal sentir algo de vergüenza al principio, pero nuestro ambiente es 100% libre de juicios. Todas empezamos igual y la energía del grupo te ayuda a soltarte rápidamente.',
+  sxrLandingObjQ3: '¿Necesito un tipo de cuerpo específico?',
+  sxrLandingObjA3:
+    '¡Para nada! El Sexy Reggaeton es para TODOS los cuerpos. Lo importante es conectar contigo misma y disfrutar del movimiento. Tu cuerpo ya es perfecto para bailar.',
+  sxrLandingObjQ4: '¿Qué ropa debo llevar a la clase?',
+  sxrLandingObjA4:
+    'Ropa cómoda que te permita moverte con libertad. Puedes venir con tacones si te sientes cómoda, pero no es obligatorio. Muchas alumnas empiezan con zapatillas.',
+
+  // Video Section
+  sxrLandingVideoPlaceholder: 'Video próximamente',
+
+  // Final CTA Section
+  sxrLandingFinalCTATitle: 'Tu cuerpo merece expresarse. Es hora de brillar.',
+  sxrLandingFinalCTADesc:
+    'Reserva ahora tu clase de bienvenida gratuita y descubre por qué cientos de mujeres han encontrado en el Sexy Reggaeton su forma favorita de expresarse.',
+  sxrLandingFinalCTAExtra:
+    'La próxima alumna que reserve podría descubrir una nueva versión de sí misma.',
+  sxrLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+
+  // Footer
+  sxrLandingFooterRights: 'Todos los derechos reservados',
+  sxrLandingFooterLegal: 'Aviso Legal',
+  sxrLandingFooterPrivacy: 'Política de Privacidad',
+  sxrLandingFooterTerms: 'Términos y Condiciones',
+
+  // Countdown
+  sxrLandingCountdownTitle: 'Esta oferta termina en:',
+  sxrLandingCountdownExpires: 'Plazas limitadas cada semana',
+  sxrLandingCountdownDays: 'Días',
+  sxrLandingCountdownHours: 'Horas',
+  sxrLandingCountdownMinutes: 'Min',
+  sxrLandingCountdownSeconds: 'Seg',
+
+  // Exit Intent Popup
+  sxrExitIntent_title: '¿No te convence el Sexy Reggaeton?',
+  sxrExitIntent_description:
+    'No pasa nada, tenemos más de 25 estilos de baile diferentes. Seguro que hay uno perfecto para ti.',
+  sxrExitIntent_ctaExplore: 'Ver todas las clases disponibles',
+  sxrExitIntent_ctaDancehall: 'Reservar clase de Sexy Reggaeton',
+  sxrExitIntent_ctaClose: 'Cerrar',
+  sxrExitIntent_hint: 'Dancehall, Twerk, Heels, Hip-Hop, Afrobeats, Salsa, Bachata y mucho más...',
+
+  // =====================================================
+  // SEXY REGGAETON LEAD MODAL
+  // =====================================================
+
+  // Modal Header
+  sxrLeadModal_title: 'Descubre cómo empezar en Sexy Reggaeton',
+  sxrLeadModal_subtitle: 'Prueba una clase de bienvenida y decide con calma si encaja contigo.',
+
+  // Micro Commitment
+  sxrLeadModal_microCommit_question: '¿Te gustaría probar una clase de Sexy Reggaeton?',
+  sxrLeadModal_microCommit_yes: '¡Sí, quiero probar!',
+  sxrLeadModal_microCommit_curious: 'Solo quiero más información',
+
+  sxrLeadModal_intro:
+    'Completa el formulario y recibe toda la información para venir tranquila y disfrutar la experiencia.',
+
+  // Benefits
+  sxrLeadModal_benefits_title: 'Qué recibirás:',
+  sxrLeadModal_benefit1: 'Horarios disponibles de Sexy Reggaeton según nivel',
+  sxrLeadModal_benefit3: 'Confirmación y recordatorios por WhatsApp',
+  sxrLeadModal_benefit4: 'Acceso a la clase de bienvenida (sin compromiso)',
+
+  // Form fields
+  sxrLeadModal_field_firstName: 'Nombre',
+  sxrLeadModal_field_lastName: 'Apellido',
+  sxrLeadModal_field_email: 'Email',
+  sxrLeadModal_field_phone: 'Teléfono',
+  sxrLeadModal_placeholder_firstName: 'Tu nombre',
+  sxrLeadModal_placeholder_lastName: 'Tu apellido',
+  sxrLeadModal_placeholder_email: 'tu@email.com',
+  sxrLeadModal_placeholder_phone: '+34 600 000 000',
+
+  // Consent
+  sxrLeadModal_consent_text:
+    'Acepto recibir información sobre mi clase de bienvenida de Sexy Reggaeton y la',
+  sxrLeadModal_consent_link: 'política de privacidad',
+
+  // Submit
+  sxrLeadModal_submit: 'Reservar mi clase de bienvenida',
+  sxrLeadModal_sending: 'Reservando...',
+
+  // Errors
+  sxrLeadModal_error_firstName: 'Por favor, introduce tu nombre',
+  sxrLeadModal_error_lastName: 'Por favor, introduce tu apellido',
+  sxrLeadModal_error_email: 'Por favor, introduce un email válido',
+  sxrLeadModal_error_phone: 'Por favor, introduce tu teléfono',
+  sxrLeadModal_error_consent: 'Debes aceptar recibir información para continuar',
+  sxrLeadModal_error_generic: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+
+  // Success
+  sxrLeadModal_success_title: 'Reserva Confirmada',
+  sxrLeadModal_success_heading: 'Revisa tu email ahora mismo',
+  sxrLeadModal_success_message: 'Te hemos enviado toda la información para tu clase de bienvenida.',
+  sxrLeadModal_success_check_email:
+    'Si no lo ves, mira spam o promociones y añade nuestro correo a tus contactos.',
+  sxrLeadModal_success_next_title: 'Próximos pasos:',
+  sxrLeadModal_success_next_1: 'Revisa tu email (también spam o promociones)',
+  sxrLeadModal_success_next_2: 'Elige el horario que mejor te venga',
+  sxrLeadModal_success_next_3: 'Te confirmaremos por WhatsApp antes de la clase',
+  sxrLeadModal_success_spam_note:
+    'Añade info@farrayscenter.com a tus contactos para no perderte nada.',
+  sxrLeadModal_success_close: 'Entendido',
+
+  // Existing lead
+  sxrLeadModal_existing_heading: '¡Ya estás registrada!',
+  sxrLeadModal_existing_message:
+    'Vemos que ya te registraste anteriormente para una clase de Sexy Reggaeton.',
+  sxrLeadModal_existing_contact:
+    'Si tienes alguna duda o no has recibido información, escríbenos a info@farrayscenter.com',
+
+  // Legal
+  sxrLeadModal_legal_text:
+    "Tus datos serán tratados por Farray's International Dance Center para gestionar tu clase de bienvenida. Puedes ejercer tus derechos escribiéndonos a info@farrayscenter.com.",
+
+  // =====================================================
+  // HIP HOP REGGAETON LANDING PAGE
+  // =====================================================
+  // Tema: Amber (Hip-Hop, Afrobeats, Reggaeton)
+  // Profesor: Charlie Breezy
+
+  // SEO
+  hhrLandingPageTitle:
+    "Clase de Bienvenida de Hip Hop Reggaeton en Barcelona | GRATIS | Farray's Center",
+  hhrLandingPageDescription:
+    'Prueba una clase GRATIS de Hip Hop Reggaeton con Charlie Breezy en Barcelona. Fusiona el flow del Hip Hop con la energía del Reggaeton. Sin experiencia previa. Academia CID-UNESCO.',
+
+  // Hero
+  hhrLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  hhrLandingHeadline: 'Fusiona Hip Hop + Reggaeton y Libera Tu Flow',
+  hhrLandingSubheadline:
+    'Prueba una clase con Charlie Breezy y descubre el estilo urbano que combina lo mejor de dos mundos. Sin experiencia previa. Sin compromiso.',
+  hhrLandingCTA: 'RESERVA TU CLASE DE BIENVENIDA AHORA',
+  hhrLandingTrustText: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+  hhrLandingTrustActiveStudents: '1.500+ alumnos activos',
+  hhrLandingTrustYearsExp: '8+ años',
+  hhrLandingTrustLocationShort: 'Barcelona - Plaza España',
+  hhrLandingReviewsLabel: 'reviews',
+  hhrLandingExclusiveBadge: 'EXCLUSIVO',
+
+  // Logos Section
+  hhrLandingLogosTitle: 'Has podido vernos en',
+  hhrLandingLogosSubtitle: 'Colaboraciones en televisión, cine y festivales internacionales',
+  hhrLandingFestivalsText: 'Y en los mejores Festivales de Danza de Todo El Mundo',
+
+  // Stats
+  hhrLandingStatYears: 'Años de Experiencia',
+  hhrLandingStatActive: 'Estudiantes Activos',
+  hhrLandingStatSatisfied: 'Alumnos Satisfechos',
+
+  // Experience Section
+  hhrLandingExperienceTitle: '¿Listo para fusionar Hip Hop y Reggaeton?',
+  hhrLandingExperienceDesc:
+    'Hip Hop Reggaeton es la fusión perfecta entre el swagger del Hip Hop y el perreo del Reggaeton. Charlie Breezy ha creado un estilo único que combina técnica urbana, actitud escénica y ritmos latinos. Aprenderás coreografías que mezclan lo mejor de ambos mundos, con movimientos que van desde el bounce del Hip Hop hasta el dembow del Reggaeton. Una experiencia que libera tu flow interior.',
+
+  // Value Stack
+  hhrLandingValueTitle: '¿Qué incluye esta experiencia?',
+  hhrLandingValueSubtitle: 'Todo esto completamente GRATIS para nuevos estudiantes',
+  hhrLandingValueItem1: 'Una clase completa de Hip Hop Reggaeton de 60 minutos',
+  hhrLandingValuePrice1: 'Valor: {price}€',
+  hhrLandingValueItem2: 'Aprende el flow y la actitud con Charlie Breezy',
+  hhrLandingValueItem3: 'Grupo reducido: plazas limitadas cada semana',
+  hhrLandingValueItem4: 'Confirmación directa por WhatsApp tras la reserva',
+  hhrLandingValueItem5: 'Acceso a oferta privada si decides apuntarte ese día',
+  hhrLandingValueIncluded: 'Incluido',
+  hhrLandingValueTotal: 'VALOR TOTAL:',
+  hhrLandingValueYourPrice: 'TU PRECIO HOY:',
+  hhrLandingValueFree: 'GRATIS',
+
+  // Offer Section
+  hhrLandingOfferTitle: 'Solo por tiempo limitado',
+  hhrLandingOfferDesc:
+    'Esta clase de bienvenida gratuita es nuestra forma de presentarte el Hip Hop Reggaeton. Sin presiones, sin compromiso. Solo ven, prueba y decide.',
+
+  // Schedule Section
+  hhrLandingScheduleTitle: 'Elige tu horario',
+  hhrLandingScheduleSubtitle: 'Todas las clases en Calle Entença nº 100, Barcelona',
+  hhrLandingReserveBtn: 'Reservar',
+  hhrLandingLimitedSpots:
+    'Cada clase tiene plazas limitadas para garantizar atención personalizada',
+  hhrLandingUrgencyBadge: 'PLAZAS LIMITADAS — ¡Reserva ahora!',
+
+  // Why Farray's Section
+  hhrLandingWhyFarraysTitle: "¿Por qué Farray's International Dance Center?",
+  hhrLandingWhyTitle1: 'Charlie Breezy: Maestro del Hip Hop Reggaeton',
+  hhrLandingWhyDesc1:
+    'Especialista en fusionar Hip Hop con ritmos latinos. Su estilo único y su flow característico te enseñarán a moverte con confianza y actitud.',
+  hhrLandingWhyTitle2: 'La fusión perfecta de dos mundos',
+  hhrLandingWhyDesc2:
+    'Aprende técnica de Hip Hop auténtico combinada con la energía del Reggaeton. Una clase que trabaja tu flow, coordinación y expresión escénica.',
+  hhrLandingWhyTitle3: 'Academia reconocida por el CID UNESCO',
+  hhrLandingWhyDesc3:
+    "Farray's es miembro del Conseil International de la Danse UNESCO. Un sello de calidad que garantiza excelencia en la enseñanza de danza.",
+  hhrLandingWhyTitle4: 'Ubicación inmejorable',
+  hhrLandingWhyDesc4:
+    'A solo 5 minutos de Plaza España y Estación de Sants. 700m² de instalaciones premium con suelo flotante y equipamiento profesional.',
+
+  // Testimonials Section
+  hhrLandingTestimonialsTitle: '¿Qué dicen quienes ya lo han vivido?',
+  hhrLandingTestimonial1:
+    'Las clases de Charlie son increíbles. Mezcla Hip Hop y Reggaeton de una forma que nunca había visto. Aprendes flow de verdad y la energía es brutal.',
+  hhrLandingTestimonial2:
+    'Nunca había bailado nada urbano y ahora no puedo parar. Charlie te hace sentir que puedes con todo. El ambiente es genial y las coreos son fuego.',
+  hhrLandingTestimonial3:
+    'Lo mejor de esta academia es que te enseñan la técnica real pero también la actitud. Después de unas semanas ya me sentía con swagger.',
+
+  // FAQ Section
+  hhrLandingFaqTitle: 'Quizás te preguntas...',
+  hhrLandingObjQ1: '¿Y si nunca he bailado Hip Hop ni Reggaeton?',
+  hhrLandingObjA1:
+    'Perfecto. La clase de bienvenida está diseñada exactamente para personas que empiezan desde cero. Charlie descompone cada movimiento paso a paso, explicando la técnica y el feeling. No necesitas saber nada, solo venir con ganas.',
+  hhrLandingObjQ2: '¿Es solo para gente joven o con cierto look?',
+  hhrLandingObjA2:
+    'El Hip Hop Reggaeton es para todos. Tenemos alumnos de 16 a 50 años, con estilos muy diferentes. Lo importante es tener actitud y ganas de pasarlo bien. La cultura urbana es inclusiva y en nuestra academia lo vivimos así.',
+  hhrLandingObjQ3: '¿Qué tipo de música bailamos?',
+  hhrLandingObjA3:
+    'Usamos música actual: desde clásicos del Hip Hop hasta los últimos éxitos del Reggaeton. Bad Bunny, J Balvin, Daddy Yankee, pero también Hip Hop americano clásico y moderno. La playlist siempre está actualizada.',
+  hhrLandingObjQ4: '¿Puedo venir solo/a? ¿Encajaré?',
+  hhrLandingObjA4:
+    'La mayoría vienen solos. Es lo normal. El ambiente es muy acogedor y Charlie se asegura de que todo el mundo se sienta incluido desde el primer momento. Rápidamente conocerás a otros con la misma pasión por el baile urbano.',
+
+  // Video Section
+  hhrLandingVideoTitle: 'Mira una clase real',
+  hhrLandingVideoSubtitle: "Así se vive el Hip Hop Reggaeton en Farray's",
+  hhrLandingVideoPlaceholder: 'Video próximamente',
+
+  // Location Section
+  hhrLandingLocationTitle: 'Te esperamos aquí',
+  hhrLandingLocationAddress:
+    "Farray's International Dance Center · Calle Entença 100 · Barcelona · Metro: Tarragona (L3) · A 5 min de Plaza España",
+
+  // Final CTA Section
+  hhrLandingFinalCTATitle:
+    'El flow está dentro de ti. Solo necesitas la clase correcta para liberarlo.',
+  hhrLandingFinalCTADesc:
+    'Reserva tu clase de bienvenida GRATIS ahora y descubre lo que Hip Hop + Reggaeton pueden hacer por ti.',
+  hhrLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+  hhrLandingUrgencyReminder: 'Recuerda: las plazas son muy limitadas cada semana',
+
+  // Footer
+  hhrLandingFooterTagline:
+    "Farray's International Dance Center — El centro de danza internacional de referencia en Barcelona",
+  hhrLandingFooterRights: 'Todos los derechos reservados',
+  hhrLandingFooterLegal: 'Aviso Legal',
+  hhrLandingFooterPrivacy: 'Política de Privacidad',
+  hhrLandingFooterTerms: 'Términos y Condiciones',
+
+  // Countdown
+  hhrLandingCountdownTitle: 'Esta oferta termina en:',
+  hhrLandingCountdownExpires: 'Plazas limitadas cada semana',
+  hhrLandingCountdownDays: 'Días',
+  hhrLandingCountdownHours: 'Horas',
+  hhrLandingCountdownMinutes: 'Min',
+  hhrLandingCountdownSeconds: 'Seg',
+
+  // Exit Intent Popup
+  hhrExitIntent_title: '¿No te convence el Hip Hop Reggaeton?',
+  hhrExitIntent_description:
+    'No pasa nada, tenemos más de 25 estilos de baile diferentes. Seguro que hay uno perfecto para ti.',
+  hhrExitIntent_ctaExplore: 'Ver todas las clases disponibles',
+  hhrExitIntent_ctaDancehall: 'Reservar clase de Hip Hop Reggaeton',
+  hhrExitIntent_ctaClose: 'Cerrar',
+  hhrExitIntent_hint: 'Dancehall, Twerk, Heels, Afrobeats, Salsa, Bachata y mucho más...',
+
+  // =====================================================
+  // HIP HOP REGGAETON LEAD MODAL
+  // =====================================================
+
+  // Modal Header
+  hhrLeadModal_title: 'Descubre cómo empezar en Hip Hop Reggaeton',
+  hhrLeadModal_subtitle: 'Prueba una clase de bienvenida y decide con calma si encaja contigo.',
+
+  // Micro Commitment
+  hhrLeadModal_microCommit_question: '¿Te gustaría probar una clase de Hip Hop Reggaeton?',
+  hhrLeadModal_microCommit_yes: '¡Sí, quiero probar!',
+  hhrLeadModal_microCommit_curious: 'Solo quiero más información',
+
+  hhrLeadModal_intro:
+    'Completa el formulario y recibe toda la información para venir tranquilo/a y disfrutar la experiencia.',
+
+  // Benefits
+  hhrLeadModal_benefits_title: 'Qué recibirás:',
+  hhrLeadModal_benefit1: 'Horarios disponibles de Hip Hop Reggaeton según nivel',
+  hhrLeadModal_benefit3: 'Confirmación y recordatorios por WhatsApp',
+  hhrLeadModal_benefit4: 'Acceso a la clase de bienvenida (sin compromiso)',
+
+  // Form fields
+  hhrLeadModal_field_firstName: 'Nombre',
+  hhrLeadModal_field_lastName: 'Apellido',
+  hhrLeadModal_field_email: 'Email',
+  hhrLeadModal_field_phone: 'Teléfono',
+  hhrLeadModal_placeholder_firstName: 'Tu nombre',
+  hhrLeadModal_placeholder_lastName: 'Tu apellido',
+  hhrLeadModal_placeholder_email: 'tu@email.com',
+  hhrLeadModal_placeholder_phone: '+34 600 000 000',
+
+  // Consent
+  hhrLeadModal_consent_text:
+    'Acepto recibir información sobre mi clase de bienvenida de Hip Hop Reggaeton y la',
+  hhrLeadModal_consent_link: 'política de privacidad',
+
+  // Submit
+  hhrLeadModal_submit: 'Reservar mi clase de bienvenida',
+  hhrLeadModal_sending: 'Reservando...',
+
+  // Errors
+  hhrLeadModal_error_firstName: 'Por favor, introduce tu nombre',
+  hhrLeadModal_error_lastName: 'Por favor, introduce tu apellido',
+  hhrLeadModal_error_email: 'Por favor, introduce un email válido',
+  hhrLeadModal_error_phone: 'Por favor, introduce tu teléfono',
+  hhrLeadModal_error_consent: 'Debes aceptar recibir información para continuar',
+  hhrLeadModal_error_generic: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+
+  // Success
+  hhrLeadModal_success_title: 'Reserva Confirmada',
+  hhrLeadModal_success_heading: 'Revisa tu email ahora mismo',
+  hhrLeadModal_success_message: 'Te hemos enviado toda la información para tu clase de bienvenida.',
+  hhrLeadModal_success_check_email:
+    'Si no lo ves, mira spam o promociones y añade nuestro correo a tus contactos.',
+  hhrLeadModal_success_next_title: 'Próximos pasos:',
+  hhrLeadModal_success_next_1: 'Revisa tu email (también spam o promociones)',
+  hhrLeadModal_success_next_2: 'Elige el horario que mejor te venga',
+  hhrLeadModal_success_next_3: 'Te confirmaremos por WhatsApp antes de la clase',
+  hhrLeadModal_success_spam_note:
+    'Añade info@farrayscenter.com a tus contactos para no perderte nada.',
+  hhrLeadModal_success_close: 'Entendido',
+
+  // Existing lead
+  hhrLeadModal_existing_heading: '¡Ya estás registrado/a!',
+  hhrLeadModal_existing_message:
+    'Vemos que ya te registraste anteriormente para una clase de Hip Hop Reggaeton.',
+  hhrLeadModal_existing_contact:
+    'Si tienes alguna duda o no has recibido información, escríbenos a info@farrayscenter.com',
+
+  // Legal
+  hhrLeadModal_legal_text:
+    "Tus datos serán tratados por Farray's International Dance Center para gestionar tu clase de bienvenida. Puedes ejercer tus derechos escribiéndonos a info@farrayscenter.com.",
+
+  // =====================================================
+  // HIP HOP LANDING PAGE - ENTERPRISE
+  // =====================================================
+  // Tema: Amber (energético, urbano, street dance)
+  // Profesor: Marcos Martínez (Juez Internacional Hip Hop)
+  // Ruta: /:locale/hip-hop
+  // SEO: noindex, nofollow (landing de captación ads)
+
+  // SEO
+  hhLandingPageTitle: "Clase de Bienvenida de Hip Hop en Barcelona | GRATIS | Farray's Center",
+  hhLandingPageDescription:
+    'Prueba una clase GRATIS de Hip Hop con Marcos Martínez, juez internacional, en Barcelona. Aprende Breaking, Locking, Popping y Freestyle. Sin experiencia previa. Academia CID-UNESCO.',
+
+  // Hero Section
+  hhLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  hhLandingHeadline: 'Domina el Arte del Street Dance',
+  hhLandingSubheadline:
+    'Aprende Hip Hop auténtico con Marcos Martínez, juez internacional de Hip Hop. Breaking, Locking, Popping, Freestyle... descubre tu propio estilo en la calle más importante de Barcelona.',
+  hhLandingCTA: 'RESERVA TU CLASE DE BIENVENIDA AHORA',
+  hhLandingTrustText: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+  hhLandingTrustActiveStudents: '1.500+ alumnos activos',
+  hhLandingTrustYearsExp: '8+ años',
+  hhLandingTrustLocationShort: 'Barcelona - Plaza España',
+  hhLandingReviewsLabel: 'reviews',
+  hhLandingExclusiveBadge: 'EXCLUSIVO',
+  hhLandingUrgencyBadge: 'PLAZAS LIMITADAS — ¡Reserva ahora!',
+
+  // Logos & Social Proof
+  hhLandingLogosTitle: 'Has podido vernos en',
+  hhLandingLogosSubtitle: 'Colaboraciones en televisión, cine y festivales internacionales',
+  hhLandingFestivalsText: 'Y en los mejores Festivales de Danza de Todo El Mundo',
+
+  // Stats
+  hhLandingStatYears: 'Años de Experiencia',
+  hhLandingStatActive: 'Estudiantes Activos',
+  hhLandingStatSatisfied: 'Alumnos Satisfechos',
+
+  // Experience Section
+  hhLandingExperienceTitle: '¿Listo para soltar tu flow?',
+  hhLandingExperienceDesc:
+    'El Hip Hop es libertad, expresión y cultura urbana. En cada clase aprenderás técnicas fundamentales como Breaking, Locking y Popping, mientras desarrollas tu propio estilo y te conectas con la esencia del street dance.',
+
+  // Value Stack
+  hhLandingValueTitle: '¿Qué incluye esta experiencia?',
+  hhLandingValueSubtitle: 'Todo esto completamente GRATIS para nuevos estudiantes',
+  hhLandingValueItem1: 'Una clase completa de Hip Hop de 60 minutos',
+  hhLandingValuePrice1: 'Valor: {price}€',
+  hhLandingValueItem2: 'Aprende técnicas de Breaking, Locking y Popping con un juez internacional',
+  hhLandingValueItem3: 'Grupo reducido: plazas limitadas cada semana',
+  hhLandingValueItem4: 'Confirmación directa por WhatsApp tras la reserva',
+  hhLandingValueItem5: 'Acceso a oferta privada si decides apuntarte ese día',
+  hhLandingValueIncluded: 'Incluido',
+  hhLandingValueTotal: 'VALOR TOTAL:',
+  hhLandingValueYourPrice: 'TU PRECIO HOY:',
+  hhLandingValueFree: 'GRATIS',
+
+  // Offer Section
+  hhLandingOfferTitle: 'Solo por tiempo limitado',
+  hhLandingOfferDesc:
+    'Esta clase de bienvenida gratuita es exclusiva para nuevos estudiantes. Las plazas son muy limitadas porque trabajamos con grupos reducidos para garantizar una atención personalizada.',
+
+  // Schedule Section
+  hhLandingScheduleTitle: 'Elige tu horario',
+  hhLandingScheduleSubtitle: 'Todas las clases en Calle Entença nº 100, Barcelona',
+  hhLandingReserveBtn: 'Reservar',
+  hhLandingLimitedSpots:
+    'Plazas muy limitadas: solo aceptamos 15 nuevos alumnos por semana para mantener la calidad.',
+
+  // Why Us Section
+  hhLandingWhyFarraysTitle: "¿Por qué Farray's International Dance Center?",
+  hhLandingWhyTitle1: 'Marcos Martínez: Juez Internacional de Hip Hop',
+  hhLandingWhyDesc1:
+    'Aprende con un profesional reconocido internacionalmente. Su experiencia como juez en competiciones le da una perspectiva única para enseñar las técnicas más auténticas del Hip Hop.',
+  hhLandingWhyTitle2: 'Hip Hop auténtico, desde la calle',
+  hhLandingWhyDesc2:
+    'Aquí no enseñamos coreografías de TikTok. Aprenderás la esencia real del Hip Hop: su historia, sus técnicas fundamentales y cómo desarrollar tu propio estilo único.',
+  hhLandingWhyTitle3: 'Academia reconocida por el CID UNESCO',
+  hhLandingWhyDesc3:
+    'Somos la única academia de Barcelona con certificación internacional del CID-UNESCO. Tu formación en danza está respaldada por los más altos estándares mundiales.',
+  hhLandingWhyTitle4: 'Ubicación inmejorable',
+  hhLandingWhyDesc4:
+    'A 5 minutos de Plaza España y con conexiones directas de metro y FGC. La escuela más accesible de Barcelona para que ninguna excusa te impida bailar.',
+
+  // Testimonials Section
+  hhLandingTestimonialsTitle: '¿Qué dicen quienes ya lo han vivido?',
+  hhLandingTestimonial1:
+    'Marcos es el mejor profesor de Hip Hop que he tenido. Su experiencia como juez internacional se nota en cada clase. Aprendes técnica real, no solo pasos.',
+  hhLandingTestimonial2:
+    'Venía de otras escuelas donde solo hacíamos coreografías. Aquí aprendí a entender el Hip Hop de verdad, su historia y a desarrollar mi propio estilo.',
+  hhLandingTestimonial3:
+    'El ambiente es increíble. Desde el primer día me sentí parte de la familia. Marcos sabe cómo sacar lo mejor de cada alumno.',
+
+  // FAQ Section (Objection Handlers)
+  hhLandingFaqTitle: 'Quizás te preguntas...',
+  hhLandingObjQ1: '¿Y si nunca he bailado Hip Hop?',
+  hhLandingObjA1:
+    'Perfecto. Nuestras clases están diseñadas para todos los niveles. Marcos tiene años de experiencia enseñando desde cero. Empezamos con los fundamentos y avanzamos a tu ritmo.',
+  hhLandingObjQ2: '¿Necesito estar en buena forma física?',
+  hhLandingObjA2:
+    'No es necesario. El Hip Hop es para todos los cuerpos. Irás ganando resistencia y flexibilidad clase a clase. Lo importante es disfrutar y expresarte.',
+  hhLandingObjQ3: '¿Qué estilos de Hip Hop aprenderé?',
+  hhLandingObjA3:
+    'Trabajamos los estilos fundamentales: Breaking, Locking, Popping y Freestyle. También aprenderás la historia y cultura del Hip Hop, lo que te dará una base sólida para desarrollar tu propio estilo.',
+  hhLandingObjQ4: '¿Puedo venir solo/a? ¿Encajaré?',
+  hhLandingObjA4:
+    'La mayoría de nuestros alumnos vienen solos. La comunidad Hip Hop es muy acogedora y enseguida te sentirás parte del grupo. El respeto y la buena vibra son fundamentales en nuestra escuela.',
+
+  // Video Section
+  hhLandingVideoTitle: 'Mira una clase real',
+  hhLandingVideoSubtitle: "Así se vive el Hip Hop en Farray's",
+  hhLandingVideoPlaceholder: 'Video próximamente',
+
+  // Location Section
+  hhLandingLocationTitle: 'Te esperamos aquí',
+  hhLandingLocationAddress:
+    "Farray's International Dance Center\nCalle Entença nº 100, Barcelona\n(A 5 min de Plaza España)",
+
+  // Final CTA Section
+  hhLandingFinalCTATitle: '¿Preparado para descubrir el verdadero Hip Hop?',
+  hhLandingFinalCTADesc:
+    'Reserva tu clase de bienvenida gratuita ahora y empieza tu viaje en el street dance con un juez internacional de Hip Hop.',
+  hhLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+  hhLandingUrgencyReminder: 'Recuerda: las plazas son muy limitadas cada semana',
+
+  // Footer
+  hhLandingFooterTagline:
+    "Farray's International Dance Center - Academia de Danza Certificada CID-UNESCO",
+  hhLandingFooterRights: 'Todos los derechos reservados',
+  hhLandingFooterLegal: 'Aviso Legal',
+  hhLandingFooterPrivacy: 'Política de Privacidad',
+  hhLandingFooterTerms: 'Términos y Condiciones',
+
+  // Countdown
+  hhLandingCountdownTitle: 'Esta oferta termina en:',
+  hhLandingCountdownExpires: 'Plazas limitadas cada semana',
+  hhLandingCountdownDays: 'Días',
+  hhLandingCountdownHours: 'Horas',
+  hhLandingCountdownMinutes: 'Min',
+  hhLandingCountdownSeconds: 'Seg',
+
+  // Exit Intent Popup
+  hhExitIntent_title: '¿No te convence el Hip Hop?',
+  hhExitIntent_description:
+    'No pasa nada, tenemos más de 25 estilos de baile diferentes. Seguro que hay uno perfecto para ti.',
+  hhExitIntent_ctaExplore: 'Ver todas las clases disponibles',
+  hhExitIntent_ctaDancehall: 'Reservar clase de Hip Hop',
+  hhExitIntent_ctaClose: 'Cerrar',
+  hhExitIntent_hint: 'Hip Hop Reggaeton, Dancehall, Twerk, Heels, Afrobeats y mucho más...',
+
+  // =====================================================
+  // HIP HOP LEAD MODAL
+  // =====================================================
+
+  // Modal Header
+  hhLeadModal_title: 'Descubre cómo empezar en Hip Hop',
+  hhLeadModal_subtitle: 'Prueba una clase de bienvenida y decide con calma si encaja contigo.',
+
+  // Micro Commitment
+  hhLeadModal_microCommit_question: '¿Te gustaría probar una clase de Hip Hop?',
+  hhLeadModal_microCommit_yes: '¡Sí, quiero probar!',
+  hhLeadModal_microCommit_curious: 'Solo quiero más información',
+
+  hhLeadModal_intro:
+    'Completa el formulario y recibe toda la información para venir tranquilo/a y disfrutar la experiencia.',
+
+  // Benefits
+  hhLeadModal_benefits_title: 'Qué recibirás:',
+  hhLeadModal_benefit1: 'Horarios disponibles de Hip Hop según nivel',
+  hhLeadModal_benefit3: 'Confirmación y recordatorios por WhatsApp',
+  hhLeadModal_benefit4: 'Acceso a la clase de bienvenida (sin compromiso)',
+
+  // Form fields
+  hhLeadModal_field_firstName: 'Nombre',
+  hhLeadModal_field_lastName: 'Apellido',
+  hhLeadModal_field_email: 'Email',
+  hhLeadModal_field_phone: 'Teléfono',
+  hhLeadModal_placeholder_firstName: 'Tu nombre',
+  hhLeadModal_placeholder_lastName: 'Tu apellido',
+  hhLeadModal_placeholder_email: 'tu@email.com',
+  hhLeadModal_placeholder_phone: '+34 600 000 000',
+
+  // Consent
+  hhLeadModal_consent_text:
+    'Acepto recibir información sobre mi clase de bienvenida de Hip Hop y la',
+  hhLeadModal_consent_link: 'política de privacidad',
+
+  // Submit
+  hhLeadModal_submit: 'Reservar mi clase de bienvenida',
+  hhLeadModal_sending: 'Reservando...',
+
+  // Errors
+  hhLeadModal_error_firstName: 'Por favor, introduce tu nombre',
+  hhLeadModal_error_lastName: 'Por favor, introduce tu apellido',
+  hhLeadModal_error_email: 'Por favor, introduce un email válido',
+  hhLeadModal_error_phone: 'Por favor, introduce tu teléfono',
+  hhLeadModal_error_consent: 'Debes aceptar recibir información para continuar',
+  hhLeadModal_error_generic: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+
+  // Success
+  hhLeadModal_success_title: 'Reserva Confirmada',
+  hhLeadModal_success_heading: 'Revisa tu email ahora mismo',
+  hhLeadModal_success_message: 'Te hemos enviado toda la información para tu clase de bienvenida.',
+  hhLeadModal_success_check_email:
+    'Si no lo ves, mira spam o promociones y añade nuestro correo a tus contactos.',
+  hhLeadModal_success_next_title: 'Próximos pasos:',
+  hhLeadModal_success_next_1: 'Revisa tu email (también spam o promociones)',
+  hhLeadModal_success_next_2: 'Elige el horario que mejor te venga',
+  hhLeadModal_success_next_3: 'Te confirmaremos por WhatsApp antes de la clase',
+  hhLeadModal_success_spam_note:
+    'Añade info@farrayscenter.com a tus contactos para no perderte nada.',
+  hhLeadModal_success_close: 'Entendido',
+
+  // Existing lead
+  hhLeadModal_existing_heading: '¡Ya estás registrado/a!',
+  hhLeadModal_existing_message:
+    'Vemos que ya te registraste anteriormente para una clase de Hip Hop.',
+  hhLeadModal_existing_contact:
+    'Si tienes alguna duda o no has recibido información, escríbenos a info@farrayscenter.com',
+
+  // Legal
+  hhLeadModal_legal_text:
+    "Tus datos serán tratados por Farray's International Dance Center para gestionar tu clase de bienvenida. Puedes ejercer tus derechos escribiéndonos a info@farrayscenter.com.",
+
+  // =====================================================
+  // AFROBEATS LANDING PAGE - ENTERPRISE
+  // =====================================================
+  // Tema: Amber (energético, africano, vibrante)
+  // Profesores: Redblueh, Charlie Breezy
+
+  // SEO
+  abLandingPageTitle: "Clase de Bienvenida de Afrobeats en Barcelona | GRATIS | Farray's Center",
+  abLandingPageDescription:
+    'Prueba una clase GRATIS de Afrobeats con Redblueh y Charlie Breezy en Barcelona. Descubre los ritmos africanos, la energía vibrante y los movimientos auténticos del Afrodance. Sin experiencia previa. Academia CID-UNESCO.',
+
+  // Hero Section
+  abLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  abLandingHeadline: 'Siente la Energía de África con Afrobeats',
+  abLandingSubheadline:
+    'Descubre los ritmos más vibrantes del continente africano. Afrobeats, Amapiano, Afrodance... movimientos que liberan tu cuerpo y conectan con la alegría más pura.',
+  abLandingCTA: 'RESERVA TU CLASE DE BIENVENIDA AHORA',
+  abLandingTrustText: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+  abLandingTrustActiveStudents: '1.500+ alumnos activos',
+  abLandingTrustYearsExp: '8+ años',
+  abLandingTrustLocationShort: 'Barcelona - Plaza España',
+  abLandingReviewsLabel: 'reviews',
+  abLandingExclusiveBadge: 'EXCLUSIVO',
+  abLandingUrgencyBadge: 'PLAZAS LIMITADAS — ¡Reserva ahora!',
+
+  // Logos & Social Proof
+  abLandingLogosTitle: 'Has podido vernos en',
+  abLandingLogosSubtitle: 'Colaboraciones en televisión, cine y festivales internacionales',
+  abLandingFestivalsText: 'Y en los mejores Festivales de Danza de Todo El Mundo',
+
+  // Stats
+  abLandingStatYears: 'Años de Experiencia',
+  abLandingStatActive: 'Estudiantes Activos',
+  abLandingStatSatisfied: 'Alumnos Satisfechos',
+
+  // Experience Section
+  abLandingExperienceTitle: '¿Listo para sentir la vibra africana?',
+  abLandingExperienceDesc:
+    'El Afrobeats es pura energía, alegría y conexión con las raíces africanas. En cada clase aprenderás movimientos auténticos de estilos como Afrodance, Amapiano y Azonto, mientras sueltas el cuerpo y te diviertes como nunca antes.',
+
+  // Value Stack
+  abLandingValueTitle: '¿Qué incluye esta experiencia?',
+  abLandingValueSubtitle: 'Todo esto completamente GRATIS para nuevos estudiantes',
+  abLandingValueItem1: 'Una clase completa de Afrobeats de 60 minutos',
+  abLandingValuePrice1: 'Valor: {price}€',
+  abLandingValueItem2: 'Aprende movimientos auténticos africanos con profesores especializados',
+  abLandingValueItem3: 'Grupo reducido: plazas limitadas cada semana',
+  abLandingValueItem4: 'Confirmación directa por WhatsApp tras la reserva',
+  abLandingValueItem5: 'Acceso a oferta privada si decides apuntarte ese día',
+  abLandingValueIncluded: 'Incluido',
+  abLandingValueTotal: 'VALOR TOTAL:',
+  abLandingValueYourPrice: 'TU PRECIO HOY:',
+  abLandingValueFree: 'GRATIS',
+
+  // Offer Section
+  abLandingOfferTitle: 'Solo por tiempo limitado',
+  abLandingOfferDesc:
+    'Si decides continuar después de la clase de bienvenida, tendrás acceso a un descuento exclusivo en tu primera mensualidad o bono. Solo válido para nuevos alumnos.',
+
+  // Schedule Section
+  abLandingScheduleTitle: 'Elige tu horario',
+  abLandingScheduleSubtitle: 'Todas las clases en Calle Entença nº 100, Barcelona',
+  abLandingReserveBtn: 'Reservar',
+  abLandingLimitedSpots:
+    'Las plazas se llenan rápido. Si quieres asegurar tu sitio, reserva ahora mismo.',
+
+  // Why Farray's Section
+  abLandingWhyFarraysTitle: "¿Por qué Farray's International Dance Center?",
+  abLandingWhyTitle1: 'Redblueh y Charlie Breezy: Maestros del Afrobeats',
+  abLandingWhyDesc1:
+    'Profesores con raíces africanas y formación internacional. Redblueh trae la autenticidad de Ghana y Nigeria, mientras Charlie Breezy fusiona Afrobeats con la energía urbana.',
+  abLandingWhyTitle2: 'La esencia de África en Barcelona',
+  abLandingWhyDesc2:
+    'Aprende Afrodance, Amapiano, Azonto y los últimos trends africanos. Ritmos auténticos que te harán mover el cuerpo como nunca.',
+  abLandingWhyTitle3: 'Academia reconocida por el CID UNESCO',
+  abLandingWhyDesc3:
+    'Formamos parte del Consejo Internacional de Danza de la UNESCO, garantía de calidad y excelencia en la enseñanza de danza africana.',
+  abLandingWhyTitle4: 'Ubicación inmejorable',
+  abLandingWhyDesc4:
+    'A solo 2 minutos del metro Plaza España en Barcelona. Fácil acceso en transporte público y parking cercano.',
+
+  // Testimonials
+  abLandingTestimonialsTitle: '¿Qué dicen quienes ya lo han vivido?',
+  abLandingTestimonial1:
+    'Las clases de Afrobeats con Redblueh son increíbles. Su energía es contagiosa y aprendes las raíces africanas en cada paso. Salgo de cada clase con una sonrisa enorme.',
+  abLandingTestimonial2:
+    'Nunca había bailado nada africano y pensaba que no iba a poder seguir el ritmo. Charlie Breezy hace que todo fluya natural. Ahora Afrobeats es mi estilo favorito.',
+  abLandingTestimonial3:
+    'El ambiente en las clases de Afrobeats es único. La música te atrapa, los movimientos te liberan y el grupo te hace sentir en familia. Totalmente recomendado.',
+
+  // FAQ Section
+  abLandingFaqTitle: 'Quizás te preguntas...',
+  abLandingObjQ1: '¿Y si nunca he bailado Afrobeats ni danzas africanas?',
+  abLandingObjA1:
+    'La clase de bienvenida está diseñada para principiantes absolutos. Empezamos desde cero, con movimientos básicos que cualquiera puede hacer. No necesitas experiencia previa ni conocer la cultura africana.',
+  abLandingObjQ2: '¿Es muy intenso físicamente? ¿Necesito estar en forma?',
+  abLandingObjA2:
+    'El Afrobeats es energético pero adaptable a tu nivel. Nuestros profesores ajustan la intensidad y te permiten ir a tu ritmo. Lo importante es disfrutar, no competir.',
+  abLandingObjQ3: '¿Qué tipo de música bailamos?',
+  abLandingObjA3:
+    'Bailamos los hits del momento de artistas como Burna Boy, Wizkid, Davido, Tiwa Savage y muchos más. También exploramos estilos como Amapiano, Azonto, Ndombolo y otras danzas africanas.',
+  abLandingObjQ4: '¿Puedo venir solo/a? ¿Encajaré?',
+  abLandingObjA4:
+    'Por supuesto. La mayoría de alumnos nuevos vienen solos. El ambiente es súper acogedor y harás amigos desde la primera clase. La comunidad Afrobeats es como una familia.',
+
+  // Video Section
+  abLandingVideoTitle: 'Mira una clase real',
+  abLandingVideoSubtitle: "Así se vive el Afrobeats en Farray's",
+  abLandingVideoPlaceholder: 'Video próximamente',
+
+  // Location Section
+  abLandingLocationTitle: 'Te esperamos aquí',
+  abLandingLocationAddress:
+    "Farray's International Dance Center - Calle Entença, 100 - Barcelona (Metro Plaza España)",
+
+  // Final CTA Section
+  abLandingFinalCTATitle: 'La energía de África te está esperando. ¿Vienes a descubrirla?',
+  abLandingFinalCTADesc:
+    'Reserva ahora tu clase de bienvenida gratuita y descubre por qué cientos de alumnos han encontrado en el Afrobeats su forma favorita de liberar energía y disfrutar.',
+  abLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+  abLandingUrgencyReminder: 'Recuerda: las plazas son muy limitadas cada semana',
+
+  // Footer
+  abLandingFooterTagline:
+    "Farray's International Dance Center — El centro de danza internacional de referencia en Barcelona",
+  abLandingFooterRights: 'Todos los derechos reservados',
+  abLandingFooterLegal: 'Aviso Legal',
+  abLandingFooterPrivacy: 'Política de Privacidad',
+  abLandingFooterTerms: 'Términos y Condiciones',
+
+  // Countdown
+  abLandingCountdownTitle: 'Esta oferta termina en:',
+  abLandingCountdownExpires: 'Plazas limitadas cada semana',
+  abLandingCountdownDays: 'Días',
+  abLandingCountdownHours: 'Horas',
+  abLandingCountdownMinutes: 'Min',
+  abLandingCountdownSeconds: 'Seg',
+
+  // Exit Intent Popup
+  abExitIntent_title: '¿No te convence el Afrobeats?',
+  abExitIntent_description:
+    'No pasa nada, tenemos más de 25 estilos de baile diferentes. Seguro que hay uno perfecto para ti.',
+  abExitIntent_ctaExplore: 'Ver todas las clases disponibles',
+  abExitIntent_ctaDancehall: 'Reservar clase de Afrobeats',
+  abExitIntent_ctaClose: 'Cerrar',
+  abExitIntent_hint: 'Dancehall, Hip Hop, Twerk, Heels, Salsa, Bachata y mucho más...',
+
+  // =====================================================
+  // AFRO JAZZ LANDING - Facebook Ads Landing Page
+  // Objetivo: Captar leads → Clase de prueba VIP → Funnel de conversión
+  // =====================================================
+
+  // Meta SEO
+  ajLandingPageTitle: "Clase de Bienvenida de Afro Jazz en Barcelona | GRATIS | Farray's Center",
+  ajLandingPageDescription:
+    'Descubre la fusión perfecta entre las raíces africanas y la técnica del jazz. Clase de Bienvenida de Afro Jazz totalmente GRATIS. Plazas limitadas. Sin compromiso.',
+
+  // Hero Section
+  ajLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  ajLandingHeadline: 'Fusiona Raíces Africanas con la Elegancia del Jazz',
+  ajLandingSubheadline:
+    'Descubre una danza única que combina la fuerza y espiritualidad de los ritmos africanos con la técnica y fluidez del jazz moderno. Una experiencia que transforma cuerpo y alma.',
+  ajLandingCTA: 'RESERVA TU CLASE DE BIENVENIDA AHORA',
+  ajLandingTrustText: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+  ajLandingTrustStudents: 'alumnos formados',
+  ajLandingTrustYears: 'años de experiencia',
+  ajLandingTrustReviews: 'Google Reviews',
+  ajLandingTrustLocation: 'Plaza España',
+  ajLandingReviewsLabel: 'reviews',
+  ajLandingTrustActiveStudents: '1.500+ alumnos activos',
+  ajLandingTrustYearsExp: '8+ años',
+  ajLandingTrustLocationShort: 'Barcelona - Plaza España',
+  ajLandingExclusiveBadge: 'EXCLUSIVO',
+
+  // Logos Section
+  ajLandingLogosTitle: 'Has podido vernos en',
+  ajLandingLogosSubtitle: 'Colaboraciones en televisión, cine y festivales internacionales',
+  ajLandingFestivalsText: 'Y en los mejores Festivales de Danza de Todo El Mundo',
+
+  // Stats
+  ajLandingStatYears: 'Años de Experiencia',
+  ajLandingStatActive: 'Estudiantes Activos',
+  ajLandingStatSatisfied: 'Alumnos Satisfechos',
+
+  // Experience Section
+  ajLandingExperienceTitle: '¿Buscas una danza que combine técnica y expresión?',
+  ajLandingExperienceDesc:
+    'El Afro Jazz es una fusión única creada por Yunaisy Farray que combina la energía ancestral de los ritmos africanos con la elegancia técnica del jazz contemporáneo. Esta no es una clase cualquiera: es tu entrada a un universo donde la fuerza de las raíces africanas se encuentra con la fluidez del movimiento moderno. ¿Primera vez? Una clase de Bienvenida totalmente gratis.',
+
+  // Value Stack
+  ajLandingValueTitle: '¿Qué incluye esta experiencia?',
+  ajLandingValueSubtitle: 'Todo esto completamente GRATIS para nuevos estudiantes',
+  ajLandingValueItem1: 'Una clase completa de Afro Jazz de 60-90 minutos',
+  ajLandingValuePrice1: 'Valor: {price}€',
+  ajLandingValueItem2: 'Metodología única creada por Yunaisy Farray',
+  ajLandingValueItem3: 'Grupo reducido: atención personalizada garantizada',
+  ajLandingValueItem4: 'Confirmación directa por WhatsApp tras la reserva',
+  ajLandingValueItem5: 'Acceso a oferta privada si decides apuntarte ese día',
+  ajLandingValueIncluded: 'Incluido',
+  ajLandingValueTotal: 'VALOR TOTAL:',
+  ajLandingValueYourPrice: 'TU PRECIO HOY:',
+  ajLandingValueFree: 'GRATIS',
+
+  // Special Offer
+  ajLandingOfferTitle: 'Solo por tiempo limitado',
+  ajLandingOfferDesc:
+    'Reserva tu clase ahora y si decides apuntarte el mismo día, recibirás una oferta especial de bienvenida. Queremos que formes parte de nuestra familia solo si conectas con la energía del Afro Jazz.',
+
+  // Schedule Section
+  ajLandingScheduleTitle: 'Elige tu horario',
+  ajLandingScheduleSubtitle: 'Clases impartidas por Yunaisy Farray y Alejandro Miñoso',
+  ajLandingReserveBtn: 'Reservar',
+  ajLandingLimitedSpots:
+    '¡Plazas muy limitadas! Esta experiencia solo está disponible una vez por persona',
+  ajLandingUrgencyBadge: 'PLAZAS LIMITADAS — ¡Reserva ahora!',
+
+  // Why Farray's Section
+  ajLandingWhyFarraysTitle: "¿Por qué Farray's International Dance Center?",
+  ajLandingWhyTitle1: 'Metodología única Afro Jazz Fusión',
+  ajLandingWhyDesc1:
+    'Creada por Yunaisy Farray, formada en la Escuela Nacional de Arte de Cuba (ENA). Una fusión auténtica que no encontrarás en ningún otro lugar.',
+  ajLandingWhyTitle2: 'Profesores con formación profesional cubana',
+  ajLandingWhyDesc2:
+    'Aprende de bailarines profesionales formados en la ENA con técnica clásica y contemporánea, que aportan autenticidad y profundidad a cada clase.',
+  ajLandingWhyTitle3: 'Academia reconocida por el CID UNESCO',
+  ajLandingWhyDesc3:
+    'Dirigida por Yunaisy Farray, actriz de Street Dance 2 y una de las maestras de danza más reconocidas internacionalmente.',
+  ajLandingWhyTitle4: 'Ambiente que potencia tu expresión',
+  ajLandingWhyDesc4:
+    'Un espacio donde la técnica y la emoción se encuentran. Sin juicios, con profesionalidad, para que descubras todo tu potencial artístico.',
+
+  // Testimonials Section
+  ajLandingTestimonialsTitle: '¿Qué dicen quienes ya lo han vivido?',
+  ajLandingTestimonial1:
+    'Las clases de Afro Jazz con Yunaisy han transformado mi versatilidad como bailarina. La fusión de técnicas es única y la metodología es realmente profesional.',
+  ajLandingTestimonial2:
+    'Nunca había sentido tanta conexión entre la técnica y la expresión. El Afro Jazz me ha abierto un mundo nuevo de posibilidades artísticas.',
+  ajLandingTestimonial3:
+    'La forma en que combinan las raíces africanas con el jazz es mágica. Cada clase es un viaje que te transforma por dentro y por fuera.',
+
+  // FAQ Section
+  ajLandingFaqTitle: 'Quizás te preguntas...',
+  ajLandingObjQ1: '¿Necesito experiencia previa en danza?',
+  ajLandingObjA1:
+    'Recomendamos cierta experiencia en danza, pero tenemos niveles desde principiantes. La clase de bienvenida te permite descubrir si es para ti.',
+  ajLandingObjQ2: '¿Qué diferencia el Afro Jazz del jazz tradicional?',
+  ajLandingObjA2:
+    'El Afro Jazz fusiona la energía y espiritualidad de las danzas africanas con la técnica del jazz, creando un estilo único con más groove y conexión corporal.',
+  ajLandingObjQ3: '¿Qué ropa debo llevar?',
+  ajLandingObjA3:
+    'Ropa de danza o deportiva que permita movimiento. Puedes venir descalzo/a o con calcetines antideslizantes. Trae agua.',
+  ajLandingObjQ4: '¿Es una clase físicamente exigente?',
+  ajLandingObjA4:
+    'Es moderadamente intensa pero adaptable. El profesor/a ajusta la intensidad. Lo importante es disfrutar y conectar con el movimiento.',
+
+  // Video Section
+  ajLandingVideoTitle: 'Mira una clase real',
+  ajLandingVideoSubtitle: "Así se vive el Afro Jazz en Farray's",
+  ajLandingVideoPlaceholder: 'Video próximamente',
+
+  // Final CTA Section
+  ajLandingFinalCTATitle: 'El Afro Jazz no se explica. Se baila. Se siente.',
+  ajLandingFinalCTADesc: 'Las plazas son limitadas porque queremos darte la atención que mereces.',
+  ajLandingFinalCTAExtra: 'Tu cuerpo tiene una historia que contar. Ven a descubrirla.',
+  ajLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+
+  // Footer
+  ajLandingFooterRights: 'Todos los derechos reservados',
+  ajLandingFooterLegal: 'Aviso Legal',
+  ajLandingFooterPrivacy: 'Política de Privacidad',
+  ajLandingFooterTerms: 'Términos y Condiciones',
+
+  // Countdown Timer
+  ajLandingCountdownTitle: 'Esta oferta termina en:',
+  ajLandingCountdownExpires: 'Plazas limitadas cada semana',
+  ajLandingCountdownDays: 'Días',
+  ajLandingCountdownHours: 'Horas',
+  ajLandingCountdownMinutes: 'Min',
+  ajLandingCountdownSeconds: 'Seg',
+
+  // Exit Intent Popup
+  ajExitIntent_title: '¿El Afro Jazz no es lo tuyo?',
+  ajExitIntent_description:
+    'No pasa nada, tenemos más de 25 estilos de baile diferentes. Seguro que hay uno perfecto para ti.',
+  ajExitIntent_ctaExplore: 'Ver todas las clases disponibles',
+  ajExitIntent_ctaDancehall: 'Reservar clase de Afro Jazz',
+  ajExitIntent_ctaClose: 'Cerrar',
+  ajExitIntent_hint: 'Afro Contemporáneo, Modern Jazz, Dancehall, Salsa, Bachata y mucho más...',
+
+  // =====================================================
+  // AFRO CONTEMPORÁNEO LANDING PAGE
+  // =====================================================
+
+  // Page Meta
+  acLandingPageTitle:
+    "Clase de Bienvenida de Afro Contemporáneo en Barcelona | GRATIS | Farray's Center",
+  acLandingPageDescription:
+    'Descubre la Danza Contemporánea Cubana (DCC) con técnica de la ENA. Clase de Bienvenida de Afro Contemporáneo totalmente GRATIS. Plazas limitadas. Sin compromiso.',
+
+  // Hero Section
+  acLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  acLandingHeadline: 'Descubre la Danza Contemporánea Cubana Auténtica',
+  acLandingSubheadline:
+    'Fusiona la técnica de la Escuela Nacional de Arte de Cuba con la fuerza ancestral de los ritmos afrocubanos. Una experiencia única que transforma tu cuerpo y tu expresión artística.',
+  acLandingCTA: 'RESERVA TU CLASE DE BIENVENIDA AHORA',
+  acLandingTrustText: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+  acLandingTrustStudents: 'alumnos formados',
+  acLandingTrustYears: 'años de experiencia',
+  acLandingTrustReviews: 'Google Reviews',
+  acLandingTrustLocation: 'Plaza España',
+  acLandingReviewsLabel: 'reviews',
+  acLandingTrustActiveStudents: '1.500+ alumnos activos',
+  acLandingTrustYearsExp: '8+ años',
+  acLandingTrustLocationShort: 'Barcelona - Plaza España',
+  acLandingExclusiveBadge: 'EXCLUSIVO',
+
+  // Logos Section
+  acLandingLogosTitle: 'Has podido vernos en',
+  acLandingLogosSubtitle: 'Colaboraciones en televisión, cine y festivales internacionales',
+  acLandingFestivalsText: 'Y en los mejores Festivales de Danza de Todo El Mundo',
+
+  // Stats
+  acLandingStatYears: 'Años de Experiencia',
+  acLandingStatActive: 'Estudiantes Activos',
+  acLandingStatSatisfied: 'Alumnos Satisfechos',
+
+  // Experience Section
+  acLandingExperienceTitle: '¿Buscas una danza que conecte técnica, raíces y expresión?',
+  acLandingExperienceDesc:
+    'El Afro Contemporáneo es la fusión de la técnica cubana de la ENA con los ritmos y movimientos afrocubanos. Yunaisy Farray, formada en la Escuela Nacional de Arte de Cuba, ha creado una metodología única que combina la precisión técnica de la danza contemporánea con la fuerza, musicalidad y espiritualidad de las danzas africanas. ¿Primera vez? Una clase de Bienvenida totalmente gratis.',
+
+  // Value Stack
+  acLandingValueTitle: '¿Qué incluye esta experiencia?',
+  acLandingValueSubtitle: 'Todo esto completamente GRATIS para nuevos estudiantes',
+  acLandingValueItem1: 'Una clase completa de Afro Contemporáneo de 60-90 minutos',
+  acLandingValuePrice1: 'Valor: {price}€',
+  acLandingValueItem2: 'Metodología ENA auténtica con Yunaisy Farray',
+  acLandingValueItem3: 'Grupo reducido: atención personalizada garantizada',
+  acLandingValueItem4: 'Confirmación directa por WhatsApp tras la reserva',
+  acLandingValueItem5: 'Acceso a oferta privada si decides apuntarte ese día',
+  acLandingValueIncluded: 'Incluido',
+  acLandingValueTotal: 'VALOR TOTAL:',
+  acLandingValueYourPrice: 'TU PRECIO HOY:',
+  acLandingValueFree: 'GRATIS',
+
+  // Special Offer
+  acLandingOfferTitle: 'Solo por tiempo limitado',
+  acLandingOfferDesc:
+    'Reserva tu clase ahora y si decides apuntarte el mismo día, recibirás una oferta especial de bienvenida. Queremos que formes parte de nuestra familia solo si conectas con la esencia del Afro Contemporáneo.',
+
+  // Schedule Section
+  acLandingScheduleTitle: 'Elige tu horario',
+  acLandingScheduleSubtitle: 'Clases impartidas por Yunaisy Farray y Charlie Breezy',
+  acLandingReserveBtn: 'Reservar',
+  acLandingLimitedSpots:
+    '¡Plazas muy limitadas! Esta experiencia solo está disponible una vez por persona',
+  acLandingUrgencyBadge: 'PLAZAS LIMITADAS — ¡Reserva ahora!',
+
+  // Why Farray's Section
+  acLandingWhyFarraysTitle: "¿Por qué Farray's International Dance Center?",
+  acLandingWhyTitle1: 'Técnica cubana ENA auténtica',
+  acLandingWhyDesc1:
+    'Yunaisy Farray se formó en la Escuela Nacional de Arte de Cuba (ENA), cuna de la Danza Contemporánea Cubana. Una técnica que combina la precisión rusa con el sabor afrocubano.',
+  acLandingWhyTitle2: 'Metodología única en Europa',
+  acLandingWhyDesc2:
+    'La única academia en Barcelona que enseña Danza Contemporánea Cubana con la metodología original de la ENA. Técnica, expresión y raíces en cada movimiento.',
+  acLandingWhyTitle3: 'Academia reconocida por el CID UNESCO',
+  acLandingWhyDesc3:
+    'Centro acreditado internacionalmente, dirigido por Yunaisy Farray, actriz de Street Dance 2 y maestra de danza reconocida mundialmente.',
+  acLandingWhyTitle4: 'Conexión cuerpo-alma-raíces',
+  acLandingWhyDesc4:
+    'Más que técnica: un espacio donde la danza te conecta con tu cuerpo, tus emociones y la riqueza cultural afrocubana. Cada clase es un viaje de transformación.',
+
+  // Testimonials Section
+  acLandingTestimonialsTitle: '¿Qué dicen quienes ya lo han vivido?',
+  acLandingTestimonial1:
+    'Aprender Afro Contemporáneo con Yunaisy ha transformado mi técnica. Por fin entiendo lo que significa bailar de verdad desde dentro.',
+  acLandingTestimonial2:
+    'La conexión entre la técnica contemporánea y las raíces africanas es mágica. Nunca había sentido tanta expresión en mi baile.',
+  acLandingTestimonial3:
+    'La metodología de la ENA es única. Cada clase te desafía técnicamente mientras conectas con algo mucho más profundo.',
+
+  // FAQ Section
+  acLandingFaqTitle: 'Quizás te preguntas...',
+  acLandingObjQ1: '¿Necesito experiencia previa en danza contemporánea?',
+  acLandingObjA1:
+    'No es necesario. Tenemos niveles desde básico hasta avanzado. La clase de bienvenida te permite descubrir si es para ti y en qué nivel encajas mejor.',
+  acLandingObjQ2: '¿Qué diferencia el Afro Contemporáneo de la danza contemporánea tradicional?',
+  acLandingObjA2:
+    'El Afro Contemporáneo fusiona la técnica cubana de la ENA (influenciada por Graham y Limón) con los ritmos, movimientos y espiritualidad de las danzas yoruba y afrocubanas. Es más orgánico, musical y expresivo.',
+  acLandingObjQ3: '¿Qué ropa debo llevar?',
+  acLandingObjA3:
+    'Ropa de danza cómoda que permita movimiento amplio. Se baila descalzo/a o con calcetines antideslizantes. Trae agua y una toalla.',
+  acLandingObjQ4: '¿Es una clase físicamente exigente?',
+  acLandingObjA4:
+    'Requiere trabajo corporal intenso pero adaptado a tu nivel. La técnica ENA desarrolla fuerza, flexibilidad y control progresivamente. Cada estudiante avanza a su ritmo.',
+
+  // Video Section
+  acLandingVideoTitle: 'Mira una clase real',
+  acLandingVideoSubtitle: "Así se vive el Afro Contemporáneo en Farray's",
+  acLandingVideoPlaceholder: 'Video próximamente',
+
+  // Final CTA Section
+  acLandingFinalCTATitle: 'El Afro Contemporáneo no se explica. Se vive. Se siente.',
+  acLandingFinalCTADesc: 'Las plazas son limitadas porque queremos darte la atención que mereces.',
+  acLandingFinalCTAExtra: 'Tu cuerpo tiene raíces que explorar. Ven a descubrirlas.',
+  acLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+
+  // Footer
+  acLandingFooterRights: 'Todos los derechos reservados',
+  acLandingFooterLegal: 'Aviso Legal',
+  acLandingFooterPrivacy: 'Política de Privacidad',
+  acLandingFooterTerms: 'Términos y Condiciones',
+
+  // Countdown Timer
+  acLandingCountdownTitle: 'Esta oferta termina en:',
+  acLandingCountdownExpires: 'Plazas limitadas cada semana',
+  acLandingCountdownDays: 'Días',
+  acLandingCountdownHours: 'Horas',
+  acLandingCountdownMinutes: 'Min',
+  acLandingCountdownSeconds: 'Seg',
+
+  // Exit Intent Popup
+  acExitIntent_title: '¿El Afro Contemporáneo no es lo tuyo?',
+  acExitIntent_description:
+    'No pasa nada, tenemos más de 25 estilos de baile diferentes. Seguro que hay uno perfecto para ti.',
+  acExitIntent_ctaExplore: 'Ver todas las clases disponibles',
+  acExitIntent_ctaDancehall: 'Reservar clase de Afro Contemporáneo',
+  acExitIntent_ctaClose: 'Cerrar',
+  acExitIntent_hint: 'Afro Jazz, Contemporáneo, Modern Jazz, Dancehall, Salsa y mucho más...',
+
+  // =====================================================
+  // AFRO CONTEMPORÁNEO LEAD MODAL
+  // =====================================================
+
+  // Modal Header
+  acLeadModal_title: 'Descubre cómo empezar en Afro Contemporáneo',
+  acLeadModal_subtitle: 'Prueba una clase de bienvenida y decide con calma si encaja contigo.',
+
+  // Micro Commitment
+  acLeadModal_microCommit_question: '¿Te gustaría probar una clase de Afro Contemporáneo?',
+  acLeadModal_microCommit_yes: '¡Sí, quiero probar!',
+  acLeadModal_microCommit_curious: 'Solo quiero más información',
+
+  acLeadModal_intro:
+    'Completa el formulario y recibe toda la información para venir tranquilo/a y disfrutar la experiencia.',
+
+  // Benefits
+  acLeadModal_benefits_title: 'Qué recibirás:',
+  acLeadModal_benefit1: 'Horarios disponibles de Afro Contemporáneo según nivel',
+  acLeadModal_benefit3: 'Confirmación y recordatorios por WhatsApp',
+  acLeadModal_benefit4: 'Acceso a la clase de bienvenida (sin compromiso)',
+
+  // Form fields
+  acLeadModal_field_firstName: 'Nombre',
+  acLeadModal_field_lastName: 'Apellido',
+  acLeadModal_field_email: 'Email',
+  acLeadModal_field_phone: 'Teléfono',
+  acLeadModal_field_level: '¿Tienes experiencia en baile?',
+  acLeadModal_level_none: 'Nunca he bailado',
+  acLeadModal_level_beginner: 'He probado algún baile',
+  acLeadModal_level_intermediate: 'Bailo regularmente',
+  acLeadModal_level_advanced: 'Nivel avanzado/profesional',
+
+  // Placeholders
+  acLeadModal_placeholder_firstName: 'Tu nombre',
+  acLeadModal_placeholder_lastName: 'Tu apellido',
+  acLeadModal_placeholder_email: 'tu@email.com',
+  acLeadModal_placeholder_phone: '+34 600 000 000',
+
+  // Consent
+  acLeadModal_consent_text:
+    'Acepto recibir información sobre clases y eventos de Afro Contemporáneo según la',
+  acLeadModal_consent_link: 'política de privacidad',
+
+  // Submit
+  acLeadModal_submit: 'Reservar mi clase de bienvenida',
+  acLeadModal_sending: 'Reservando...',
+  acLeadModal_cta: 'Quiero mi clase de bienvenida',
+  acLeadModal_ctaLoading: 'Procesando...',
+
+  // Errors
+  acLeadModal_error_required: 'Este campo es obligatorio',
+  acLeadModal_error_email: 'Email no válido',
+  acLeadModal_error_phone: 'Teléfono no válido',
+  acLeadModal_error_generic: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+
+  // Success
+  acLeadModal_success_title: 'Reserva Confirmada',
+  acLeadModal_success_heading: 'Revisa tu email ahora mismo',
+  acLeadModal_success_message: 'Te hemos enviado toda la información para tu clase de bienvenida.',
+  acLeadModal_success_check_email:
+    'Si no lo ves, mira spam o promociones y añade nuestro correo a tus contactos.',
+  acLeadModal_success_next_title: 'Próximos pasos:',
+  acLeadModal_success_next_1: 'Revisa tu email (también spam o promociones)',
+  acLeadModal_success_next_2: 'Elige el horario que mejor te venga',
+  acLeadModal_success_next_3: 'Te confirmaremos por WhatsApp antes de la clase',
+  acLeadModal_success_spam_note:
+    'Añade info@farrayscenter.com a tus contactos para no perderte nada.',
+  acLeadModal_success_close: 'Entendido',
+
+  // Existing user
+  acLeadModal_existing_heading: '¡Ya estás registrado/a!',
+  acLeadModal_existing_message:
+    'Vemos que ya te registraste anteriormente para una clase de Afro Contemporáneo.',
+  acLeadModal_existing_contact:
+    'Si tienes alguna duda o no has recibido información, escríbenos a info@farrayscenter.com',
+
+  // Legal
+  acLeadModal_legal_text:
+    "Tus datos serán tratados por Farray's International Dance Center para gestionar tu clase de bienvenida. Puedes ejercer tus derechos escribiéndonos a info@farrayscenter.com.",
+
+  // =====================================================
+  // AFRO JAZZ LEAD MODAL
+  // =====================================================
+
+  // Modal Header
+  ajLeadModal_title: 'Descubre cómo empezar en Afro Jazz',
+  ajLeadModal_subtitle: 'Prueba una clase de bienvenida y decide con calma si encaja contigo.',
+
+  // Micro Commitment
+  ajLeadModal_microCommit_question: '¿Te gustaría probar una clase de Afro Jazz?',
+  ajLeadModal_microCommit_yes: '¡Sí, quiero probar!',
+  ajLeadModal_microCommit_curious: 'Solo quiero más información',
+
+  ajLeadModal_intro:
+    'Completa el formulario y recibe toda la información para venir tranquilo/a y disfrutar la experiencia.',
+
+  // Benefits
+  ajLeadModal_benefits_title: 'Qué recibirás:',
+  ajLeadModal_benefit1: 'Horarios disponibles de Afro Jazz según nivel',
+  ajLeadModal_benefit3: 'Confirmación y recordatorios por WhatsApp',
+  ajLeadModal_benefit4: 'Acceso a la clase de bienvenida (sin compromiso)',
+
+  // Form fields
+  ajLeadModal_field_firstName: 'Nombre',
+  ajLeadModal_field_lastName: 'Apellido',
+  ajLeadModal_field_email: 'Email',
+  ajLeadModal_field_phone: 'Teléfono',
+  ajLeadModal_field_level: '¿Tienes experiencia en baile?',
+  ajLeadModal_level_none: 'Nunca he bailado',
+  ajLeadModal_level_beginner: 'He probado algún baile',
+  ajLeadModal_level_intermediate: 'Bailo regularmente',
+  ajLeadModal_level_advanced: 'Nivel avanzado/profesional',
+
+  // Placeholders
+  ajLeadModal_placeholder_firstName: 'Tu nombre',
+  ajLeadModal_placeholder_lastName: 'Tu apellido',
+  ajLeadModal_placeholder_email: 'tu@email.com',
+  ajLeadModal_placeholder_phone: '+34 600 000 000',
+
+  // Consent
+  ajLeadModal_consent_text:
+    'Acepto recibir información sobre clases y eventos de Afro Jazz según la',
+  ajLeadModal_consent_link: 'política de privacidad',
+
+  // Submit
+  ajLeadModal_submit: 'Reservar mi clase de bienvenida',
+  ajLeadModal_sending: 'Reservando...',
+  ajLeadModal_cta: 'Quiero mi clase de bienvenida',
+  ajLeadModal_ctaLoading: 'Procesando...',
+
+  // Errors
+  ajLeadModal_error_required: 'Este campo es obligatorio',
+  ajLeadModal_error_email: 'Email no válido',
+  ajLeadModal_error_phone: 'Teléfono no válido',
+  ajLeadModal_error_generic: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+
+  // Success
+  ajLeadModal_success_title: 'Reserva Confirmada',
+  ajLeadModal_success_heading: 'Revisa tu email ahora mismo',
+  ajLeadModal_success_message: 'Te hemos enviado toda la información para tu clase de bienvenida.',
+  ajLeadModal_success_check_email:
+    'Si no lo ves, mira spam o promociones y añade nuestro correo a tus contactos.',
+  ajLeadModal_success_next_title: 'Próximos pasos:',
+  ajLeadModal_success_next_1: 'Revisa tu email (también spam o promociones)',
+  ajLeadModal_success_next_2: 'Elige el horario que mejor te venga',
+  ajLeadModal_success_next_3: 'Te confirmaremos por WhatsApp antes de la clase',
+  ajLeadModal_success_spam_note:
+    'Añade info@farrayscenter.com a tus contactos para no perderte nada.',
+  ajLeadModal_success_close: 'Entendido',
+
+  // Existing user
+  ajLeadModal_existing_heading: '¡Ya estás registrado/a!',
+  ajLeadModal_existing_message:
+    'Vemos que ya te registraste anteriormente para una clase de Afro Jazz.',
+  ajLeadModal_existing_contact:
+    'Si tienes alguna duda o no has recibido información, escríbenos a info@farrayscenter.com',
+
+  // Legal
+  ajLeadModal_legal_text:
+    "Tus datos serán tratados por Farray's International Dance Center para gestionar tu clase de bienvenida. Puedes ejercer tus derechos escribiéndonos a info@farrayscenter.com.",
+
+  // =====================================================
+  // AFROBEATS LEAD MODAL
+  // =====================================================
+
+  // Modal Header
+  abLeadModal_title: 'Descubre cómo empezar en Afrobeats',
+  abLeadModal_subtitle: 'Prueba una clase de bienvenida y decide con calma si encaja contigo.',
+
+  // Micro Commitment
+  abLeadModal_microCommit_question: '¿Te gustaría probar una clase de Afrobeats?',
+  abLeadModal_microCommit_yes: '¡Sí, quiero probar!',
+  abLeadModal_microCommit_curious: 'Solo quiero más información',
+
+  abLeadModal_intro:
+    'Completa el formulario y recibe toda la información para venir tranquilo/a y disfrutar la experiencia.',
+
+  // Benefits
+  abLeadModal_benefits_title: 'Qué recibirás:',
+  abLeadModal_benefit1: 'Horarios disponibles de Afrobeats según nivel',
+  abLeadModal_benefit3: 'Confirmación y recordatorios por WhatsApp',
+  abLeadModal_benefit4: 'Acceso a la clase de bienvenida (sin compromiso)',
+
+  // Form fields
+  abLeadModal_field_firstName: 'Nombre',
+  abLeadModal_field_lastName: 'Apellido',
+  abLeadModal_field_email: 'Email',
+  abLeadModal_field_phone: 'Teléfono',
+  abLeadModal_field_level: '¿Tienes experiencia en baile?',
+  abLeadModal_level_none: 'Nunca he bailado',
+  abLeadModal_level_beginner: 'He probado algún baile',
+  abLeadModal_level_intermediate: 'Bailo regularmente',
+  abLeadModal_level_advanced: 'Nivel avanzado/profesional',
+
+  // Placeholders
+  abLeadModal_placeholder_firstName: 'Tu nombre',
+  abLeadModal_placeholder_lastName: 'Tu apellido',
+  abLeadModal_placeholder_email: 'tu@email.com',
+  abLeadModal_placeholder_phone: '+34 600 000 000',
+
+  // Consent
+  abLeadModal_consent_text:
+    'Acepto recibir información sobre clases y eventos de Afrobeats según la',
+  abLeadModal_consent_link: 'política de privacidad',
+
+  // CTA
+  abLeadModal_submit: 'Reservar mi clase de bienvenida',
+  abLeadModal_sending: 'Reservando...',
+  abLeadModal_cta: 'Quiero mi clase de bienvenida',
+  abLeadModal_ctaLoading: 'Procesando...',
+
+  // Validation
+  abLeadModal_error_required: 'Este campo es obligatorio',
+  abLeadModal_error_email: 'Email no válido',
+  abLeadModal_error_phone: 'Teléfono no válido',
+  abLeadModal_error_generic: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+
+  // Success
+  abLeadModal_success_title: 'Reserva Confirmada',
+  abLeadModal_success_heading: 'Revisa tu email ahora mismo',
+  abLeadModal_success_message: 'Te hemos enviado toda la información para tu clase de bienvenida.',
+  abLeadModal_success_check_email:
+    'Si no lo ves, mira spam o promociones y añade nuestro correo a tus contactos.',
+  abLeadModal_success_next_title: 'Próximos pasos:',
+  abLeadModal_success_next_1: 'Revisa tu email (también spam o promociones)',
+  abLeadModal_success_next_2: 'Elige el horario que mejor te venga',
+  abLeadModal_success_next_3: 'Te confirmaremos por WhatsApp antes de la clase',
+  abLeadModal_success_spam_note:
+    'Añade info@farrayscenter.com a tus contactos para no perderte nada.',
+  abLeadModal_success_close: 'Entendido',
+
+  // Existing lead
+  abLeadModal_existing_heading: '¡Ya estás registrado/a!',
+  abLeadModal_existing_message:
+    'Vemos que ya te registraste anteriormente para una clase de Afrobeats.',
+  abLeadModal_existing_contact:
+    'Si tienes alguna duda o no has recibido información, escríbenos a info@farrayscenter.com',
+
+  // Legal
+  abLeadModal_legal_text:
+    "Tus datos serán tratados por Farray's International Dance Center para gestionar tu clase de bienvenida. Puedes ejercer tus derechos escribiéndonos a info@farrayscenter.com.",
+
+  // =====================================================
+  // SEXY STYLE LANDING PAGE - ENTERPRISE
+  // =====================================================
+  // Tema: Rose (sensual, empoderador, femenino)
+  // Profesora: Yasmina Fernández
+
+  // SEO
+  ssLandingPageTitle: "Clase de Bienvenida de Sexy Style en Barcelona | GRATIS | Farray's Center",
+  ssLandingPageDescription:
+    'Prueba una clase GRATIS de Sexy Style con Yasmina Fernández en Barcelona. Descubre la sensualidad, la expresión corporal y la confianza a través del baile. Sin experiencia previa. Academia CID-UNESCO.',
+
+  // Hero Section
+  ssLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  ssLandingHeadline: 'Despierta Tu Poder Femenino con Sexy Style',
+  ssLandingSubheadline:
+    'Libera tu sensualidad, reconecta con tu cuerpo y descubre un baile que te empodera desde el primer paso. Confianza, feminidad y expresión corporal en estado puro.',
+  ssLandingCTA: 'RESERVA TU CLASE DE BIENVENIDA AHORA',
+  ssLandingTrustText: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+  ssLandingTrustActiveStudents: '1.500+ alumnos activos',
+  ssLandingTrustYearsExp: '8+ años',
+  ssLandingTrustLocationShort: 'Barcelona - Plaza España',
+  ssLandingReviewsLabel: 'reviews',
+  ssLandingExclusiveBadge: 'EXCLUSIVO',
+  ssLandingUrgencyBadge: 'PLAZAS LIMITADAS — ¡Reserva ahora!',
+
+  // Logos & Social Proof
+  ssLandingLogosTitle: 'Has podido vernos en',
+  ssLandingFestivalsText: 'Y en los mejores Festivales de Danza de Todo El Mundo',
+
+  // Stats
+  ssLandingStatYears: 'Años de Experiencia',
+  ssLandingStatActive: 'Estudiantes Activos',
+  ssLandingStatSatisfied: 'Alumnos Satisfechos',
+
+  // Experience Section
+  ssLandingExperienceTitle: '¿Lista para despertar tu feminidad?',
+  ssLandingExperienceDesc:
+    'El Sexy Style no es solo un baile: es una forma de reconectar con tu esencia femenina, ganar seguridad y expresar tu sensualidad sin filtros. Movimientos fluidos, ondas corporales, expresión facial... todo en un ambiente seguro donde la única regla es disfrutar de ti misma.',
+
+  // Value Stack
+  ssLandingValueTitle: '¿Qué incluye esta experiencia?',
+  ssLandingValueItem1: 'Una clase completa de Sexy Style de 60 minutos',
+  ssLandingValuePrice1: 'Valor: {price}€',
+  ssLandingValueItem2: 'Ambiente seguro y sin juicios',
+  ssLandingValueItem3: 'Grupo reducido: plazas limitadas cada semana',
+  ssLandingValueItem4: 'Confirmación directa por WhatsApp tras la reserva',
+  ssLandingValueItem5: 'Acceso a oferta privada si decides apuntarte ese día',
+  ssLandingValueIncluded: 'Incluido',
+  ssLandingValueTotal: 'VALOR TOTAL:',
+  ssLandingValueYourPrice: 'TU PRECIO HOY:',
+  ssLandingValueFree: 'GRATIS',
+
+  // Offer Section
+  ssLandingOfferTitle: 'Solo por tiempo limitado',
+  ssLandingOfferDesc:
+    'Si decides continuar después de la clase de bienvenida, tendrás acceso a un descuento exclusivo en tu primera mensualidad o bono. Solo válido para nuevas alumnas.',
+
+  // Schedule Section
+  ssLandingScheduleTitle: 'Elige tu horario',
+  ssLandingScheduleSubtitle: 'Clases disponibles en Calle Entença nº 100, Barcelona',
+  ssLandingLimitedSpots:
+    'Las plazas se llenan rápido. Si quieres asegurar tu sitio, reserva ahora mismo.',
+
+  // Why Farray's Section
+  ssLandingWhyFarraysTitle: "¿Por qué Farray's International Dance Center?",
+  ssLandingWhyTitle1: 'Profesora especializada en expresión sensual',
+  ssLandingWhyDesc1:
+    'Yasmina Fernández lidera nuestras clases de Sexy Style con años de experiencia en movimiento sensual, feminidad y expresión corporal.',
+  ssLandingWhyTitle2: 'Ambiente seguro y empoderador',
+  ssLandingWhyDesc2:
+    'Un espacio donde cada mujer puede explorar su sensualidad sin juicios, rodeada de otras mujeres con la misma energía positiva.',
+  ssLandingWhyTitle3: 'Academia reconocida por el CID UNESCO',
+  ssLandingWhyDesc3:
+    'Formamos parte del Consejo Internacional de Danza de la UNESCO, garantía de calidad y excelencia en la enseñanza.',
+  ssLandingWhyTitle4: 'Ubicación inmejorable',
+  ssLandingWhyDesc4:
+    'A solo 2 minutos del metro Plaza España en Barcelona. Fácil acceso en transporte público y parking cercano.',
+
+  // Testimonials
+  ssLandingTestimonialsTitle: '¿Qué dicen quienes ya lo han vivido?',
+  ssLandingTestimonial1:
+    'Las clases de Sexy Style han transformado cómo me veo a mí misma. Llegué sintiéndome insegura y ahora me muevo con confianza. Yasmina crea un espacio mágico.',
+  ssLandingTestimonial2:
+    'Nunca pensé que podría sentirme tan empoderada bailando. El ambiente es increíble y la profe te hace sentir cómoda desde el primer momento.',
+  ssLandingTestimonial3:
+    'Es mi momento de la semana para conectar conmigo misma, sentirme sexy y disfrutar. Además, ¡es un entreno increíble para el cuerpo!',
+
+  // FAQ Section
+  ssLandingFaqTitle: 'Quizás te preguntas...',
+  ssLandingObjQ1: '¿Y si nunca he bailado Sexy Style ni nada parecido?',
+  ssLandingObjA1:
+    'La clase de bienvenida está diseñada para principiantes absolutas. Empezamos desde cero, con movimientos básicos que cualquiera puede hacer. No necesitas experiencia previa.',
+  ssLandingObjQ2: '¿Me sentiré incómoda con los movimientos sensuales?',
+  ssLandingObjA2:
+    'Es normal sentir algo de vergüenza al principio, pero nuestro ambiente es 100% libre de juicios. Todas empezamos igual y la energía del grupo te ayuda a soltarte rápidamente.',
+  ssLandingObjQ3: '¿Necesito un tipo de cuerpo específico?',
+  ssLandingObjA3:
+    '¡Para nada! El Sexy Style es para TODOS los cuerpos. Lo importante es conectar contigo misma y disfrutar del movimiento. Tu cuerpo ya es perfecto para bailar.',
+  ssLandingObjQ4: '¿Qué ropa debo llevar a la clase?',
+  ssLandingObjA4:
+    'Ropa cómoda que te permita moverte con libertad. Puedes venir con tacones si te sientes cómoda, pero no es obligatorio. Muchas alumnas empiezan con zapatillas.',
+
+  // Video Section
+  ssLandingVideoPlaceholder: 'Video próximamente',
+
+  // Final CTA Section
+  ssLandingFinalCTATitle: 'Tu feminidad merece brillar. Es hora de liberarla.',
+  ssLandingFinalCTADesc:
+    'Reserva ahora tu clase de bienvenida gratuita y descubre por qué cientos de mujeres han encontrado en el Sexy Style su forma favorita de expresarse.',
+  ssLandingFinalCTAExtra:
+    'La próxima alumna que reserve podría descubrir una nueva versión de sí misma.',
+  ssLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+
+  // Footer
+  ssLandingFooterRights: 'Todos los derechos reservados',
+  ssLandingFooterLegal: 'Aviso Legal',
+  ssLandingFooterPrivacy: 'Política de Privacidad',
+  ssLandingFooterTerms: 'Términos y Condiciones',
+
+  // Countdown
+  ssLandingCountdownTitle: 'Esta oferta termina en:',
+  ssLandingCountdownExpires: 'Plazas limitadas cada semana',
+  ssLandingCountdownDays: 'Días',
+  ssLandingCountdownHours: 'Horas',
+  ssLandingCountdownMinutes: 'Min',
+  ssLandingCountdownSeconds: 'Seg',
+
+  // Exit Intent Popup
+  ssExitIntent_title: '¿No te convence el Sexy Style?',
+  ssExitIntent_description:
+    'No pasa nada, tenemos más de 25 estilos de baile diferentes. Seguro que hay uno perfecto para ti.',
+  ssExitIntent_ctaExplore: 'Ver todas las clases disponibles',
+  ssExitIntent_ctaDancehall: 'Reservar clase de Sexy Style',
+  ssExitIntent_ctaClose: 'Cerrar',
+  ssExitIntent_hint: 'Dancehall, Twerk, Heels, Hip-Hop, Afrobeats, Salsa, Bachata y mucho más...',
+
+  // =====================================================
+  // SEXY STYLE LEAD MODAL
+  // =====================================================
+
+  // Modal Header
+  ssLeadModal_title: 'Descubre cómo empezar en Sexy Style',
+  ssLeadModal_subtitle: 'Prueba una clase de bienvenida y decide con calma si encaja contigo.',
+
+  // Micro Commitment
+  ssLeadModal_microCommit_question: '¿Te gustaría probar una clase de Sexy Style?',
+  ssLeadModal_microCommit_yes: '¡Sí, quiero probar!',
+  ssLeadModal_microCommit_curious: 'Solo quiero más información',
+
+  ssLeadModal_intro:
+    'Completa el formulario y recibe toda la información para venir tranquila y disfrutar la experiencia.',
+
+  // Benefits
+  ssLeadModal_benefits_title: 'Qué recibirás:',
+  ssLeadModal_benefit1: 'Horarios disponibles de Sexy Style según nivel',
+  ssLeadModal_benefit3: 'Confirmación y recordatorios por WhatsApp',
+  ssLeadModal_benefit4: 'Acceso a la clase de bienvenida (sin compromiso)',
+
+  // Form fields
+  ssLeadModal_field_firstName: 'Nombre',
+  ssLeadModal_field_lastName: 'Apellido',
+  ssLeadModal_field_email: 'Email',
+  ssLeadModal_field_phone: 'Teléfono',
+  ssLeadModal_placeholder_firstName: 'Tu nombre',
+  ssLeadModal_placeholder_lastName: 'Tu apellido',
+  ssLeadModal_placeholder_email: 'tu@email.com',
+  ssLeadModal_placeholder_phone: '+34 600 000 000',
+
+  // Consent
+  ssLeadModal_consent_text:
+    'Acepto recibir información sobre mi clase de bienvenida de Sexy Style y la',
+  ssLeadModal_consent_link: 'política de privacidad',
+
+  // Submit
+  ssLeadModal_submit: 'Reservar mi clase de bienvenida',
+  ssLeadModal_sending: 'Reservando...',
+
+  // Errors
+  ssLeadModal_error_firstName: 'Por favor, introduce tu nombre',
+  ssLeadModal_error_lastName: 'Por favor, introduce tu apellido',
+  ssLeadModal_error_email: 'Por favor, introduce un email válido',
+  ssLeadModal_error_phone: 'Por favor, introduce tu teléfono',
+  ssLeadModal_error_consent: 'Debes aceptar recibir información para continuar',
+  ssLeadModal_error_generic: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+
+  // Success
+  ssLeadModal_success_title: 'Reserva Confirmada',
+  ssLeadModal_success_heading: 'Revisa tu email ahora mismo',
+  ssLeadModal_success_message: 'Te hemos enviado toda la información para tu clase de bienvenida.',
+  ssLeadModal_success_check_email:
+    'Si no lo ves, mira spam o promociones y añade nuestro correo a tus contactos.',
+  ssLeadModal_success_next_title: 'Próximos pasos:',
+  ssLeadModal_success_next_1: 'Revisa tu email (también spam o promociones)',
+  ssLeadModal_success_next_2: 'Elige el horario que mejor te venga',
+  ssLeadModal_success_next_3: 'Te confirmaremos por WhatsApp antes de la clase',
+  ssLeadModal_success_spam_note:
+    'Añade info@farrayscenter.com a tus contactos para no perderte nada.',
+  ssLeadModal_success_close: 'Entendido',
+
+  // Existing lead
+  ssLeadModal_existing_heading: '¡Ya estás registrada!',
+  ssLeadModal_existing_message:
+    'Vemos que ya te registraste anteriormente para una clase de Sexy Style.',
+  ssLeadModal_existing_contact:
+    'Si tienes alguna duda o no has recibido información, escríbenos a info@farrayscenter.com',
+
+  // Legal
+  ssLeadModal_legal_text:
+    "Tus datos serán tratados por Farray's International Dance Center para gestionar tu clase de bienvenida. Puedes ejercer tus derechos escribiéndonos a info@farrayscenter.com.",
+
+  // =====================================================
+  // SALSA CUBANA LANDING PAGE - ENTERPRISE
+  // =====================================================
+  // Tema: Emerald (Salsa, Bachata, Caribeño)
+  // Profesores: Yunaisy Farray, Iroel Bastarreche
+
+  // SEO (noindex, nofollow - landing de captación ads)
+  scLandingPageTitle: "Clase de Bienvenida de Salsa Cubana en Barcelona | GRATIS | Farray's Center",
+  scLandingPageDescription:
+    'Prueba una clase GRATIS de Salsa Cubana con el Método Farray en Barcelona. Aprende con Yunaisy Farray, creadora del método. Casino, Rueda, musicalidad y conexión de pareja. Academia CID-UNESCO.',
+
+  // Hero Section
+  scLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  scLandingHeadline: 'Aprende Salsa Cubana con el Método Farray',
+  scLandingSubheadline:
+    'Descubre el único método probado que te enseña a bailar Casino en pareja desde cero. Guía perfecta, musicalidad auténtica y la alegría cubana que transforma tu forma de bailar.',
+  scLandingCTA: 'RESERVA TU CLASE DE BIENVENIDA AHORA',
+  scLandingTrustText: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+  scLandingTrustActiveStudents: '1.500+ alumnos activos',
+  scLandingTrustYearsExp: '8+ años',
+  scLandingTrustLocationShort: 'Barcelona - Plaza España',
+  scLandingReviewsLabel: 'reviews',
+  scLandingExclusiveBadge: 'EXCLUSIVO',
+  scLandingUrgencyBadge: 'PLAZAS LIMITADAS — ¡Reserva ahora!',
+
+  // Logos & Social Proof
+  scLandingLogosTitle: 'Has podido vernos en',
+  scLandingLogosSubtitle: 'Colaboraciones en televisión, cine y festivales internacionales',
+  scLandingFestivalsText: 'Y en los mejores Festivales de Danza de Todo El Mundo',
+
+  // Stats
+  scLandingStatYears: 'Años de Experiencia',
+  scLandingStatActive: 'Estudiantes Activos',
+  scLandingStatSatisfied: 'Alumnos Satisfechos',
+
+  // Experience Section
+  scLandingExperienceTitle: '¿Listo/a para bailar Salsa Cubana de verdad?',
+  scLandingExperienceDesc:
+    'La Salsa Cubana no es solo un baile: es conexión, alegría y tradición. Con el Método Farray aprenderás a guiar o seguir con naturalidad, a sentir el ritmo en tu cuerpo y a disfrutar de cada paso. Desde el primer día bailarás en pareja con técnica real.',
+
+  // Value Stack
+  scLandingValueTitle: '¿Qué incluye esta experiencia?',
+  scLandingValueSubtitle: 'Todo esto completamente GRATIS para nuevos estudiantes',
+  scLandingValueItem1: 'Una clase completa de Salsa Cubana de 60 minutos',
+  scLandingValuePrice1: 'Valor: {price}€',
+  scLandingValueItem2: 'Introducción al Método Farray: guía y seguimiento desde el día 1',
+  scLandingValueItem3: 'Grupo reducido: plazas limitadas cada semana',
+  scLandingValueItem4: 'Confirmación directa por WhatsApp tras la reserva',
+  scLandingValueItem5: 'Acceso a oferta privada si decides apuntarte ese día',
+  scLandingValueIncluded: 'Incluido',
+  scLandingValueTotal: 'VALOR TOTAL:',
+  scLandingValueYourPrice: 'TU PRECIO HOY:',
+  scLandingValueFree: 'GRATIS',
+
+  // Offer Section
+  scLandingOfferTitle: 'Solo por tiempo limitado',
+  scLandingOfferDesc:
+    'Si decides continuar después de la clase de bienvenida, tendrás acceso a un descuento exclusivo en tu primera mensualidad o bono. Solo válido para nuevos alumnos.',
+
+  // Schedule Section
+  scLandingScheduleTitle: 'Elige tu horario',
+  scLandingScheduleSubtitle: 'Todas las clases en Calle Entença nº 100, Barcelona',
+  scLandingReserveBtn: 'Reservar',
+  scLandingLimitedSpots:
+    'Las plazas se llenan rápido. Si quieres asegurar tu sitio, reserva ahora mismo.',
+
+  // Why Farray's Section
+  scLandingWhyFarraysTitle: "¿Por qué Farray's International Dance Center?",
+  scLandingWhyTitle1: 'El Método Farray: único en el mundo',
+  scLandingWhyDesc1:
+    'Creado por Yunaisy Farray, este método te enseña a guiar/seguir desde la primera clase. No memorizas pasos: entiendes la lógica del Casino cubano y bailas con cualquier pareja.',
+  scLandingWhyTitle2: 'Yunaisy Farray e Iroel Bastarreche: maestros cubanos',
+  scLandingWhyDesc2:
+    'Aprende directamente de bailarines formados en Cuba con décadas de experiencia. Su enseñanza combina técnica profesional con la alegría y sabor auténticos del Casino.',
+  scLandingWhyTitle3: 'Academia reconocida por el CID UNESCO',
+  scLandingWhyDesc3:
+    'Formamos parte del Consejo Internacional de Danza de la UNESCO, garantía de calidad y excelencia en la enseñanza.',
+  scLandingWhyTitle4: 'Ubicación inmejorable',
+  scLandingWhyDesc4:
+    'A solo 2 minutos del metro Plaza España en Barcelona. Fácil acceso en transporte público y parking cercano.',
+
+  // Testimonials
+  scLandingTestimonialsTitle: '¿Qué dicen quienes ya lo han vivido?',
+  scLandingTestimonial1:
+    '5 estrellas y porque no hay más. Espectacular, desde el minuto en el que pisas recepción, hasta los profesores, la calidad y el buen rollo.',
+  scLandingTestimonial2:
+    'El Método Farray transformó mi baile por completo. Ahora guío con confianza y bailo a tiempo. Después de años estancado en otras escuelas, aquí por fin entendí lo que es la salsa cubana de verdad.',
+  scLandingTestimonial3:
+    'Siempre dije que tenía dos pies izquierdos. En 3 meses estaba bailando en mi primera fiesta. El Nivel 0 es magia pura.',
+
+  // FAQ Section
+  scLandingFaqTitle: 'Quizás te preguntas...',
+  scLandingObjQ1: '¿Y si nunca he bailado Salsa Cubana ni ningún otro baile?',
+  scLandingObjA1:
+    'El Método Farray está diseñado precisamente para principiantes absolutos. Nuestro Nivel 0 te enseña los fundamentos paso a paso, sin que necesites experiencia previa. En pocas clases estarás bailando en pareja.',
+  scLandingObjQ2: '¿Necesito venir con pareja de baile?',
+  scLandingObjA2:
+    'No es necesario. En clase rotamos parejas para que aprendas a bailar con diferentes personas. Así desarrollas mejor técnica y te sientes cómodo/a bailando con cualquiera en una fiesta.',
+  scLandingObjQ3: '¿Qué diferencia hay entre Salsa Cubana y otros tipos de Salsa?',
+  scLandingObjA3:
+    'La Salsa Cubana (Casino) se baila en círculo con movimientos fluidos y espontáneos. Es más social y divertida que la salsa en línea. El Método Farray te enseña la esencia cubana auténtica, no una versión comercial.',
+  scLandingObjQ4: '¿Qué ropa debo llevar a la clase?',
+  scLandingObjA4:
+    'Ropa cómoda que te permita moverte con libertad. Zapatillas o zapatos con suela lisa (evita suelas de goma que se pegan al suelo). No necesitas calzado especial para empezar.',
+
+  // Video Section
+  scLandingVideoTitle: 'Mira una clase real',
+  scLandingVideoSubtitle: "Así se vive la Salsa Cubana en Farray's",
+  scLandingVideoPlaceholder: 'Video próximamente',
+
+  // Location Section
+  scLandingLocationTitle: 'Te esperamos aquí',
+  scLandingLocationAddress:
+    "Farray's International Dance Center - Calle Entença nº 100, 08015 Barcelona",
+
+  // Final CTA Section
+  scLandingFinalCTATitle: 'El ritmo cubano te está esperando. ¿Te atreves a probarlo?',
+  scLandingFinalCTADesc:
+    'Reserva ahora tu clase de bienvenida gratuita y descubre por qué miles de alumnos han elegido el Método Farray para aprender Salsa Cubana en Barcelona.',
+  scLandingFinalCTAExtra:
+    'Primeros 10 que reserven esta semana: acceso prioritario a horario preferente',
+  scLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+  scLandingUrgencyReminder: 'Recuerda: las plazas son muy limitadas cada semana',
+
+  // Footer
+  scLandingFooterTagline:
+    "Farray's International Dance Center — El centro de danza internacional de referencia en Barcelona",
+  scLandingFooterRights: 'Todos los derechos reservados',
+  scLandingFooterLegal: 'Aviso Legal',
+  scLandingFooterPrivacy: 'Política de Privacidad',
+  scLandingFooterTerms: 'Términos y Condiciones',
+
+  // Countdown
+  scLandingCountdownTitle: 'Esta oferta termina en:',
+  scLandingCountdownExpires: 'Plazas limitadas cada semana',
+  scLandingCountdownDays: 'Días',
+  scLandingCountdownHours: 'Horas',
+  scLandingCountdownMinutes: 'Min',
+  scLandingCountdownSeconds: 'Seg',
+
+  // Exit Intent Popup
+  scExitIntent_title: '¿No te convence la Salsa Cubana?',
+  scExitIntent_description:
+    'No pasa nada, tenemos más de 25 estilos de baile diferentes. Seguro que hay uno perfecto para ti.',
+  scExitIntent_ctaExplore: 'Ver todas las clases disponibles',
+  scExitIntent_ctaDancehall: 'Reservar clase de Salsa Cubana',
+  scExitIntent_ctaClose: 'Cerrar',
+  scExitIntent_hint: 'Bachata, Timba, Dancehall, Hip Hop, Twerk, Heels y mucho más...',
+
+  // =====================================================
+  // SALSA CUBANA LEAD MODAL
+  // =====================================================
+
+  // Modal Header
+  scLeadModal_title: 'Descubre cómo empezar en Salsa Cubana',
+  scLeadModal_subtitle: 'Prueba una clase de bienvenida y decide con calma si encaja contigo.',
+
+  // Micro Commitment
+  scLeadModal_microCommit_question: '¿Te gustaría probar una clase de Salsa Cubana?',
+  scLeadModal_microCommit_yes: '¡Sí, quiero probar!',
+  scLeadModal_microCommit_curious: 'Solo quiero más información',
+
+  scLeadModal_intro:
+    'Completa el formulario y recibe toda la información para venir tranquilo/a y disfrutar la experiencia.',
+
+  // Benefits
+  scLeadModal_benefits_title: 'Qué recibirás:',
+  scLeadModal_benefit1: 'Horarios disponibles de Salsa Cubana según nivel',
+  scLeadModal_benefit3: 'Confirmación y recordatorios por WhatsApp',
+  scLeadModal_benefit4: 'Acceso a la clase de bienvenida (sin compromiso)',
+
+  // Form fields
+  scLeadModal_field_firstName: 'Nombre',
+  scLeadModal_field_lastName: 'Apellido',
+  scLeadModal_field_email: 'Email',
+  scLeadModal_field_phone: 'Teléfono',
+  scLeadModal_field_level: '¿Tienes experiencia en baile?',
+  scLeadModal_level_none: 'Nunca he bailado',
+  scLeadModal_level_beginner: 'He probado algún baile',
+  scLeadModal_level_intermediate: 'Bailo regularmente',
+  scLeadModal_level_advanced: 'Nivel avanzado/profesional',
+
+  // Placeholders
+  scLeadModal_placeholder_firstName: 'Tu nombre',
+  scLeadModal_placeholder_lastName: 'Tu apellido',
+  scLeadModal_placeholder_email: 'tu@email.com',
+  scLeadModal_placeholder_phone: '+34 600 000 000',
+
+  // Consent
+  scLeadModal_consent_text:
+    'Acepto recibir información sobre mi clase de bienvenida de Salsa Cubana y la',
+  scLeadModal_consent_link: 'política de privacidad',
+
+  // CTA
+  scLeadModal_submit: 'Reservar Mi Clase Gratis',
+  scLeadModal_sending: 'Procesando...',
+
+  // Validation
+  scLeadModal_error_firstName: 'El nombre es obligatorio',
+  scLeadModal_error_lastName: 'El apellido es obligatorio',
+  scLeadModal_error_email: 'Email no válido',
+  scLeadModal_error_phone: 'Teléfono no válido',
+  scLeadModal_error_consent: 'Debes aceptar la política de privacidad',
+  scLeadModal_error_generic: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+
+  // Success
+  scLeadModal_success_title: 'Reserva Confirmada',
+  scLeadModal_success_heading: 'Revisa tu email ahora mismo',
+  scLeadModal_success_message: 'Te hemos enviado toda la información para tu clase de bienvenida.',
+  scLeadModal_success_check_email:
+    'Si no lo ves, mira spam o promociones y añade nuestro correo a tus contactos.',
+  scLeadModal_success_next_title: 'Próximos pasos:',
+  scLeadModal_success_next_1: 'Revisa tu email (también spam o promociones)',
+  scLeadModal_success_next_2: 'Elige el horario que mejor te venga',
+  scLeadModal_success_next_3: 'Te confirmaremos por WhatsApp antes de la clase',
+  scLeadModal_success_spam_note:
+    'Añade info@farrayscenter.com a tus contactos para no perderte nada.',
+  scLeadModal_success_close: 'Entendido',
+
+  // Existing lead
+  scLeadModal_existing_heading: '¡Ya estás registrado/a!',
+  scLeadModal_existing_message:
+    'Vemos que ya te registraste anteriormente para una clase de Salsa Cubana.',
+  scLeadModal_existing_contact:
+    'Si tienes alguna duda o no has recibido información, escríbenos a info@farrayscenter.com',
+
+  // Legal
+  scLeadModal_legal_text:
+    "Tus datos serán tratados por Farray's International Dance Center para gestionar tu clase de bienvenida. Puedes ejercer tus derechos escribiéndonos a info@farrayscenter.com.",
+
+  // =====================================================
+  // CONTEMPORANEO LANDING PAGE - ENTERPRISE
+  // =====================================================
+  // Tema: Cyan (Contemporáneo, Lírico, Expresivo)
+  // Profesores: Daniel Sené, Alejandro Miñoso
+
+  // SEO
+  ctLandingPageTitle:
+    "Clase de Bienvenida de Danza Contemporánea en Barcelona | GRATIS | Farray's Center",
+  ctLandingPageDescription:
+    'Prueba una clase GRATIS de Danza Contemporánea con Daniel Sené y Alejandro Miñoso en Barcelona. Técnica de suelo, release, improvisación y expresión corporal. Sin experiencia previa. Academia CID-UNESCO.',
+
+  // Hero Section
+  ctLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  ctLandingHeadline: 'Descubre la Danza Contemporánea y Conecta con Tu Cuerpo',
+  ctLandingSubheadline:
+    'Una clase para explorar el movimiento fluido, la técnica de suelo y la expresión corporal. Sin experiencia previa necesaria.',
+  ctLandingCTA: 'RESERVA TU CLASE DE BIENVENIDA AHORA',
+  ctLandingTrustText: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+  ctLandingTrustActiveStudents: '1.500+ alumnos activos',
+  ctLandingTrustYearsExp: '8+ años',
+  ctLandingTrustLocationShort: 'Barcelona - Plaza España',
+  ctLandingReviewsLabel: 'reviews',
+  ctLandingExclusiveBadge: 'EXCLUSIVO',
+  ctLandingUrgencyBadge: 'PLAZAS LIMITADAS — ¡Reserva ahora!',
+
+  // Logos Section
+  ctLandingLogosTitle: 'Has podido vernos en',
+  ctLandingFestivalsText: 'Y en los mejores Festivales de Danza de Todo El Mundo',
+
+  // Stats
+  ctLandingStatYears: 'Años de Experiencia',
+  ctLandingStatActive: 'Estudiantes Activos',
+  ctLandingStatSatisfied: 'Alumnos Satisfechos',
+
+  // Experience Section
+  ctLandingExperienceTitle: '¿Preparado/a para explorar el movimiento?',
+  ctLandingExperienceDesc:
+    'La danza contemporánea es libertad de expresión, conexión mente-cuerpo y técnica fluida. En tu primera clase descubrirás un espacio donde cada movimiento cuenta una historia, guiado por profesores formados en la prestigiosa Escuela Nacional de Arte de Cuba.',
+
+  // Value Stack
+  ctLandingValueTitle: '¿Qué incluye esta experiencia?',
+  ctLandingValueItem1: 'Una clase completa de Danza Contemporánea de 60 minutos',
+  ctLandingValuePrice1: 'Valor: {price}€',
+  ctLandingValueItem2: 'Introducción a técnica de suelo y release',
+  ctLandingValueItem3: 'Grupo reducido: atención personalizada garantizada',
+  ctLandingValueItem4: 'Confirmación directa por WhatsApp tras la reserva',
+  ctLandingValueItem5: 'Acceso a oferta privada si decides apuntarte ese día',
+  ctLandingValueIncluded: 'Incluido',
+  ctLandingValueTotal: 'VALOR TOTAL:',
+  ctLandingValueYourPrice: 'TU PRECIO HOY:',
+  ctLandingValueFree: 'GRATIS',
+
+  // Offer Section
+  ctLandingOfferTitle: 'Solo por tiempo limitado',
+  ctLandingOfferDesc:
+    'Las plazas para la clase de bienvenida son muy limitadas cada semana. Reserva ahora para asegurar tu lugar y comenzar tu viaje en la danza contemporánea.',
+
+  // Schedule
+  ctLandingScheduleTitle: 'Elige tu horario',
+  ctLandingScheduleSubtitle: 'Clases disponibles en Calle Entença nº 100, Barcelona',
+  ctLandingLimitedSpots:
+    'Cada clase tiene plazas muy limitadas para garantizar atención personalizada',
+
+  // Why Us Section
+  ctLandingWhyFarraysTitle: "¿Por qué Farray's International Dance Center?",
+  ctLandingWhyTitle1: 'Profesores formados en la Escuela Nacional de Arte de Cuba',
+  ctLandingWhyDesc1:
+    'Daniel Sené y Alejandro Miñoso combinan técnica cubana de elite con pedagogía contemporánea. Aprenderás de profesionales que han bailado en escenarios internacionales.',
+  ctLandingWhyTitle2: 'Técnica progresiva adaptada a tu nivel',
+  ctLandingWhyDesc2:
+    'Desde lírico principiante hasta suelo & flow intermedio. Avanza a tu ritmo con una metodología que respeta tu cuerpo y potencia tu expresión.',
+  ctLandingWhyTitle3: 'Academia reconocida por el CID UNESCO',
+  ctLandingWhyDesc3:
+    'Somos centro oficial del Consejo Internacional de la Danza. Tu formación tiene respaldo internacional y acceso a certificaciones oficiales.',
+  ctLandingWhyTitle4: 'Instalaciones profesionales en Barcelona centro',
+  ctLandingWhyDesc4:
+    'Salas con suelo flotante profesional, espejos de cuerpo completo y climatización. A 2 minutos de Metro Plaza España con parking gratuito.',
+
+  // Testimonials
+  ctLandingTestimonialsTitle: '¿Qué dicen quienes ya lo han vivido?',
+  ctLandingTestimonial1:
+    'Las clases de contemporáneo con Daniel son increíbles. Te ayuda a descubrir movimientos que no sabías que tu cuerpo podía hacer. El ambiente es súper acogedor.',
+  ctLandingTestimonial2:
+    'Nunca había bailado y Alejandro me hizo sentir cómoda desde el primer momento. La técnica de suelo es desafiante pero muy gratificante.',
+  ctLandingTestimonial3:
+    'Después de años haciendo yoga buscaba algo más expresivo. El contemporáneo lírico ha sido un descubrimiento. Me encanta la conexión cuerpo-emoción.',
+
+  // FAQ Section
+  ctLandingFaqTitle: 'Quizás te preguntas...',
+  ctLandingObjQ1: '¿Y si nunca he hecho danza contemporánea ni tengo formación previa?',
+  ctLandingObjA1:
+    'Perfecto, empezamos desde cero. Las clases de principiantes están diseñadas específicamente para personas sin experiencia. Trabajamos la consciencia corporal paso a paso, con ejercicios accesibles que te preparan para movimientos más complejos.',
+  ctLandingObjQ2: '¿Necesito flexibilidad o condición física especial?',
+  ctLandingObjA2:
+    'No. La flexibilidad y la fuerza se desarrollan con la práctica. Nuestros profesores adaptan los ejercicios a cada cuerpo. Lo importante es la disposición a explorar y disfrutar el movimiento.',
+  ctLandingObjQ3: '¿Es muy diferente al ballet clásico o al yoga?',
+  ctLandingObjA3:
+    'La danza contemporánea toma elementos de ambos pero añade libertad de expresión e improvisación. Es menos rígida que el ballet y más dinámica que el yoga. Muchos alumnos vienen de ambas disciplinas y encuentran en el contemporáneo un complemento perfecto.',
+  ctLandingObjQ4: '¿Qué ropa y calzado necesito para la clase?',
+  ctLandingObjA4:
+    'Ropa cómoda que permita movimiento amplio (leggings, camiseta). El contemporáneo se baila descalzo o con calcetines antideslizantes. No necesitas invertir en nada especial para tu primera clase.',
+
+  // Video Placeholder
+  ctLandingVideoPlaceholder: 'Video próximamente',
+
+  // Final CTA
+  ctLandingFinalCTATitle: 'Tu cuerpo tiene historias que contar. Es hora de expresarlas.',
+  ctLandingFinalCTADesc:
+    'Únete a cientos de alumnos que han descubierto la danza contemporánea en Barcelona. Tu primera clase es completamente gratis.',
+  ctLandingFinalCTAExtra:
+    'Primeros 10 que reserven esta semana: sesión de orientación personalizada incluida',
+  ctLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+
+  // Footer
+  ctLandingFooterRights: 'Todos los derechos reservados',
+  ctLandingFooterLegal: 'Aviso Legal',
+  ctLandingFooterPrivacy: 'Política de Privacidad',
+  ctLandingFooterTerms: 'Términos y Condiciones',
+
+  // Countdown
+  ctLandingCountdownTitle: 'Esta oferta termina en:',
+  ctLandingCountdownExpires: 'Plazas limitadas cada semana',
+  ctLandingCountdownDays: 'Días',
+  ctLandingCountdownHours: 'Horas',
+  ctLandingCountdownMinutes: 'Min',
+  ctLandingCountdownSeconds: 'Seg',
+
+  // Exit Intent Popup
+  ctExitIntent_title: '¿No te convence la Danza Contemporánea?',
+  ctExitIntent_description:
+    'No pasa nada, tenemos más de 25 estilos de baile diferentes. Seguro que hay uno perfecto para ti.',
+  ctExitIntent_ctaExplore: 'Ver todas las clases disponibles',
+  ctExitIntent_ctaDancehall: 'Reservar clase de Danza Contemporánea',
+  ctExitIntent_ctaClose: 'Cerrar',
+  ctExitIntent_hint: 'Modern Jazz, Ballet, Afro Contemporáneo, Dancehall, Heels y mucho más...',
+
+  // =====================================================
+  // CONTEMPORANEO LEAD MODAL
+  // =====================================================
+
+  // Modal Header
+  ctLeadModal_title: 'Descubre cómo empezar en Danza Contemporánea',
+  ctLeadModal_subtitle: 'Prueba una clase de bienvenida y decide con calma si encaja contigo.',
+
+  // Micro Commitment
+  ctLeadModal_microCommit_question: '¿Te gustaría probar una clase de Danza Contemporánea?',
+  ctLeadModal_microCommit_yes: '¡Sí, quiero probar!',
+  ctLeadModal_microCommit_curious: 'Solo quiero más información',
+
+  ctLeadModal_intro:
+    'Completa el formulario y recibe toda la información para venir tranquilo/a y disfrutar la experiencia.',
+
+  // Benefits
+  ctLeadModal_benefits_title: 'Qué recibirás:',
+  ctLeadModal_benefit1: 'Horarios disponibles de Contemporáneo según nivel',
+  ctLeadModal_benefit3: 'Confirmación y recordatorios por WhatsApp',
+  ctLeadModal_benefit4: 'Acceso a la clase de bienvenida (sin compromiso)',
+
+  // Form fields
+  ctLeadModal_field_firstName: 'Nombre',
+  ctLeadModal_field_lastName: 'Apellido',
+  ctLeadModal_field_email: 'Email',
+  ctLeadModal_field_phone: 'Teléfono',
+  ctLeadModal_placeholder_firstName: 'Tu nombre',
+  ctLeadModal_placeholder_lastName: 'Tu apellido',
+  ctLeadModal_placeholder_email: 'tu@email.com',
+  ctLeadModal_placeholder_phone: '+34 600 000 000',
+
+  // Consent
+  ctLeadModal_consent_text:
+    'Acepto recibir información sobre mi clase de bienvenida de Danza Contemporánea y la',
+  ctLeadModal_consent_link: 'política de privacidad',
+
+  // Submit
+  ctLeadModal_submit: 'Reservar mi clase de bienvenida',
+  ctLeadModal_sending: 'Reservando...',
+
+  // Errors
+  ctLeadModal_error_firstName: 'Por favor, introduce tu nombre',
+  ctLeadModal_error_lastName: 'Por favor, introduce tu apellido',
+  ctLeadModal_error_email: 'Por favor, introduce un email válido',
+  ctLeadModal_error_phone: 'Por favor, introduce tu teléfono',
+  ctLeadModal_error_consent: 'Debes aceptar recibir información para continuar',
+  ctLeadModal_error_generic: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+
+  // Success
+  ctLeadModal_success_title: 'Reserva Confirmada',
+  ctLeadModal_success_heading: 'Revisa tu email ahora mismo',
+  ctLeadModal_success_message: 'Te hemos enviado toda la información para tu clase de bienvenida.',
+  ctLeadModal_success_check_email:
+    'Si no lo ves, mira spam o promociones y añade nuestro correo a tus contactos.',
+  ctLeadModal_success_next_title: 'Próximos pasos:',
+  ctLeadModal_success_next_1: 'Revisa tu email (también spam o promociones)',
+  ctLeadModal_success_next_2: 'Elige el horario que mejor te venga',
+  ctLeadModal_success_next_3: 'Te confirmaremos por WhatsApp antes de la clase',
+  ctLeadModal_success_spam_note:
+    'Añade info@farrayscenter.com a tus contactos para no perderte nada.',
+  ctLeadModal_success_close: 'Entendido',
+
+  // Existing lead
+  ctLeadModal_existing_heading: '¡Ya estás registrado/a!',
+  ctLeadModal_existing_message:
+    'Vemos que ya te registraste anteriormente para una clase de Danza Contemporánea.',
+  ctLeadModal_existing_contact:
+    'Si tienes alguna duda o no has recibido información, escríbenos a info@farrayscenter.com',
+
+  // Legal
+  ctLeadModal_legal_text:
+    "Tus datos serán tratados por Farray's International Dance Center para gestionar tu clase de bienvenida. Puedes ejercer tus derechos escribiéndonos a info@farrayscenter.com.",
+
+  // =====================================================
+  // BALLET LANDING PAGE - Landing para captación Ballet Clásico
+  // Técnica clásica con influencia de la Escuela Cubana
+  // NOINDEX: Landing solo para campañas de ads
+  // =====================================================
+
+  // Page Meta
+  btLandingPageTitle:
+    "Clase de Bienvenida de Ballet Clásico en Barcelona | GRATIS | Farray's Center",
+  btLandingPageDescription:
+    'Prueba una clase gratuita de ballet clásico en Barcelona. Profesores formados en la Escuela Nacional de Arte de Cuba. Técnica, postura y elegancia para todos los niveles.',
+
+  // Hero Section
+  btLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  btLandingHeadline: 'Descubre la Elegancia del Ballet Clásico en Barcelona',
+  btLandingSubheadline:
+    'Desarrolla postura perfecta, flexibilidad y gracia con profesores formados en la prestigiosa Escuela Nacional de Arte de Cuba. Tu primera clase es completamente gratis.',
+  btLandingCTA: 'RESERVA TU CLASE DE BIENVENIDA AHORA',
+  btLandingTrustText: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+  btLandingTrustActiveStudents: '1.500+ alumnos activos',
+  btLandingTrustYearsExp: '8+ años',
+  btLandingTrustLocationShort: 'Barcelona - Plaza España',
+  btLandingReviewsLabel: 'reviews',
+  btLandingExclusiveBadge: 'EXCLUSIVO',
+  btLandingUrgencyBadge: 'PLAZAS LIMITADAS — ¡Reserva ahora!',
+
+  // Logos Section
+  btLandingLogosTitle: 'Has podido vernos en',
+  btLandingFestivalsText: 'Y en los mejores Festivales de Danza de Todo El Mundo',
+
+  // Stats
+  btLandingStatYears: 'Años de Experiencia',
+  btLandingStatActive: 'Estudiantes Activos',
+  btLandingStatSatisfied: 'Alumnos Satisfechos',
+
+  // Experience Section
+  btLandingExperienceTitle: '¿Listo/a para descubrir la elegancia del ballet?',
+  btLandingExperienceDesc:
+    'El ballet clásico es la base de todas las danzas. Desarrolla fuerza, flexibilidad y una postura impecable mientras conectas con una tradición artística centenaria. Nuestros profesores, formados en la Escuela Nacional de Arte de Cuba, te guiarán paso a paso.',
+
+  // Value Stack
+  btLandingValueTitle: '¿Qué incluye esta experiencia?',
+  btLandingValueItem1: 'Una clase completa de Ballet Clásico de 60 minutos',
+  btLandingValuePrice1: 'Valor: {price}€',
+  btLandingValueItem2: 'Trabajo de barra y centro adaptado a tu nivel',
+  btLandingValueItem3: 'Grupo reducido: atención personalizada garantizada',
+  btLandingValueItem4: 'Confirmación directa por WhatsApp tras la reserva',
+  btLandingValueItem5: 'Acceso a oferta privada si decides apuntarte ese día',
+  btLandingValueIncluded: 'Incluido',
+  btLandingValueTotal: 'VALOR TOTAL:',
+  btLandingValueYourPrice: 'TU PRECIO HOY:',
+  btLandingValueFree: 'GRATIS',
+
+  // Offer Section
+  btLandingOfferTitle: 'Solo por tiempo limitado',
+  btLandingOfferDesc:
+    'Las plazas para la clase de bienvenida son muy limitadas cada semana. Reserva ahora para asegurar tu lugar y comenzar tu formación en ballet clásico.',
+
+  // Schedule
+  btLandingScheduleTitle: 'Elige tu horario',
+  btLandingScheduleSubtitle: 'Clases disponibles en Calle Entença nº 100, Barcelona',
+  btLandingLimitedSpots:
+    'Cada clase tiene plazas muy limitadas para garantizar atención personalizada',
+
+  // Why Us Section
+  btLandingWhyFarraysTitle: "¿Por qué Farray's International Dance Center?",
+  btLandingWhyTitle1: 'Profesores formados en la Escuela Nacional de Arte de Cuba',
+  btLandingWhyDesc1:
+    'Daniel Sené y Alejandro Miñoso combinan la exigente técnica cubana con pedagogía adaptada a adultos. Aprenderás de profesionales que han actuado en escenarios internacionales.',
+  btLandingWhyTitle2: 'Metodología progresiva para todos los niveles',
+  btLandingWhyDesc2:
+    'Desde principiante absoluto hasta intermedio. Cada ejercicio está diseñado para que avances con seguridad, respetando tu cuerpo y desarrollando técnica real.',
+  btLandingWhyTitle3: 'Academia reconocida por el CID UNESCO',
+  btLandingWhyDesc3:
+    'Somos centro oficial del Consejo Internacional de la Danza. Tu formación tiene respaldo internacional y acceso a certificaciones oficiales.',
+  btLandingWhyTitle4: 'Instalaciones profesionales en Barcelona centro',
+  btLandingWhyDesc4:
+    'Salas con suelo flotante profesional, barras de ballet, espejos de cuerpo completo y climatización. A 2 minutos de Metro Plaza España con parking gratuito.',
+
+  // Testimonials
+  btLandingTestimonialsTitle: '¿Qué dicen quienes ya lo han vivido?',
+  btLandingTestimonial1:
+    'Siempre quise hacer ballet pero pensaba que era tarde. Con Daniel encontré un ambiente perfecto para aprender. La técnica cubana tiene algo especial, muy musical y expresiva.',
+  btLandingTestimonial2:
+    'La clase de Alejandro me sorprendió. Muy profesional pero cercano. Me corrige con cariño y noto cómo mejora mi postura semana a semana.',
+  btLandingTestimonial3:
+    'Después de años haciendo pilates, el ballet ha sido un cambio increíble. La disciplina, la música, la elegancia... Me encanta venir a clase.',
+
+  // FAQ Section
+  btLandingFaqTitle: 'Quizás te preguntas...',
+  btLandingObjQ1: '¿Y si nunca he hecho ballet ni tengo formación previa?',
+  btLandingObjA1:
+    'Perfecto, empezamos desde cero. Las clases de principiantes están diseñadas para adultos sin experiencia. Trabajamos posiciones básicas, coordinación y musicalidad paso a paso, sin prisas.',
+  btLandingObjQ2: '¿Necesito mucha flexibilidad o estar en forma?',
+  btLandingObjA2:
+    'No. La flexibilidad y la fuerza se desarrollan con la práctica. Nuestros profesores adaptan los ejercicios a cada cuerpo. Lo importante es la constancia y las ganas de aprender.',
+  btLandingObjQ3: '¿No soy muy mayor para empezar ballet?',
+  btLandingObjA3:
+    'Nunca es tarde. El ballet para adultos se enfoca en los beneficios: postura, coordinación, fuerza y expresión artística. Tenemos alumnos de 20 a 60 años disfrutando cada clase.',
+  btLandingObjQ4: '¿Qué ropa y calzado necesito para la clase?',
+  btLandingObjA4:
+    'Ropa cómoda y ajustada (leggings, maillot o camiseta ajustada). Para la primera clase puedes venir con calcetines. Después recomendamos zapatillas de media punta.',
+
+  // Video Placeholder
+  btLandingVideoPlaceholder: 'Video próximamente',
+
+  // Final CTA
+  btLandingFinalCTATitle: 'La disciplina más elegante del mundo te espera',
+  btLandingFinalCTADesc:
+    'Únete a cientos de alumnos que han descubierto el ballet clásico en Barcelona. Tu primera clase es completamente gratis.',
+  btLandingFinalCTAExtra:
+    'Primeros 10 que reserven esta semana: sesión de orientación personalizada incluida',
+  btLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+
+  // Footer
+  btLandingFooterRights: 'Todos los derechos reservados',
+  btLandingFooterLegal: 'Aviso Legal',
+  btLandingFooterPrivacy: 'Política de Privacidad',
+  btLandingFooterTerms: 'Términos y Condiciones',
+
+  // Countdown
+  btLandingCountdownTitle: 'Esta oferta termina en:',
+  btLandingCountdownExpires: 'Plazas limitadas cada semana',
+  btLandingCountdownDays: 'Días',
+  btLandingCountdownHours: 'Horas',
+  btLandingCountdownMinutes: 'Min',
+  btLandingCountdownSeconds: 'Seg',
+
+  // Exit Intent Popup
+  btExitIntent_title: '¿No te convence el Ballet Clásico?',
+  btExitIntent_description:
+    'No pasa nada, tenemos más de 25 estilos de baile diferentes. Seguro que hay uno perfecto para ti.',
+  btExitIntent_ctaExplore: 'Ver todas las clases disponibles',
+  btExitIntent_ctaDancehall: 'Reservar clase de Ballet',
+  btExitIntent_ctaClose: 'Cerrar',
+  btExitIntent_hint: 'Contemporáneo, Modern Jazz, Salsa, Bachata, Heels y mucho más...',
+
+  // =====================================================
+  // BALLET LEAD MODAL
+  // =====================================================
+
+  // Modal Header
+  btLeadModal_title: 'Descubre cómo empezar en Ballet Clásico',
+  btLeadModal_subtitle: 'Prueba una clase de bienvenida y decide con calma si encaja contigo.',
+
+  // Micro Commitment
+  btLeadModal_microCommit_question: '¿Te gustaría probar una clase de Ballet?',
+  btLeadModal_microCommit_yes: '¡Sí, quiero probar!',
+  btLeadModal_microCommit_curious: 'Solo quiero más información',
+
+  btLeadModal_intro:
+    'Completa el formulario y recibe toda la información para venir tranquilo/a y disfrutar la experiencia.',
+
+  // Benefits
+  btLeadModal_benefits_title: 'Qué recibirás:',
+  btLeadModal_benefit1: 'Horarios disponibles de Ballet según nivel',
+  btLeadModal_benefit3: 'Confirmación y recordatorios por WhatsApp',
+  btLeadModal_benefit4: 'Acceso a la clase de bienvenida (sin compromiso)',
+
+  // Form fields
+  btLeadModal_field_firstName: 'Nombre',
+  btLeadModal_field_lastName: 'Apellido',
+  btLeadModal_field_email: 'Email',
+  btLeadModal_field_phone: 'Teléfono',
+  btLeadModal_placeholder_firstName: 'Tu nombre',
+  btLeadModal_placeholder_lastName: 'Tu apellido',
+  btLeadModal_placeholder_email: 'tu@email.com',
+  btLeadModal_placeholder_phone: '+34 600 000 000',
+
+  // Consent
+  btLeadModal_consent_text:
+    'Acepto recibir información sobre mi clase de bienvenida de Ballet y la',
+  btLeadModal_consent_link: 'política de privacidad',
+
+  // Submit
+  btLeadModal_submit: 'Reservar mi clase de bienvenida',
+  btLeadModal_sending: 'Reservando...',
+
+  // Errors
+  btLeadModal_error_firstName: 'Por favor, introduce tu nombre',
+  btLeadModal_error_lastName: 'Por favor, introduce tu apellido',
+  btLeadModal_error_email: 'Por favor, introduce un email válido',
+  btLeadModal_error_phone: 'Por favor, introduce tu teléfono',
+  btLeadModal_error_consent: 'Debes aceptar recibir información para continuar',
+  btLeadModal_error_generic: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+
+  // Success
+  btLeadModal_success_title: 'Reserva Confirmada',
+  btLeadModal_success_heading: 'Revisa tu email ahora mismo',
+  btLeadModal_success_message: 'Te hemos enviado toda la información para tu clase de bienvenida.',
+  btLeadModal_success_check_email:
+    'Si no lo ves, mira spam o promociones y añade nuestro correo a tus contactos.',
+  btLeadModal_success_next_title: 'Próximos pasos:',
+  btLeadModal_success_next_1: 'Revisa tu email (también spam o promociones)',
+  btLeadModal_success_next_2: 'Elige el horario que mejor te venga',
+  btLeadModal_success_next_3: 'Te confirmaremos por WhatsApp antes de la clase',
+  btLeadModal_success_spam_note:
+    'Añade info@farrayscenter.com a tus contactos para no perderte nada.',
+  btLeadModal_success_close: 'Entendido',
+
+  // Existing lead
+  btLeadModal_existing_heading: '¡Ya estás registrado/a!',
+  btLeadModal_existing_message:
+    'Vemos que ya te registraste anteriormente para una clase de Ballet.',
+  btLeadModal_existing_contact:
+    'Si tienes alguna duda o no has recibido información, escríbenos a info@farrayscenter.com',
+
+  // Legal
+  btLeadModal_legal_text:
+    "Tus datos serán tratados por Farray's International Dance Center para gestionar tu clase de bienvenida. Puedes ejercer tus derechos escribiéndonos a info@farrayscenter.com.",
+
   // Legal Notice Page
   legalNotice_page_title: 'Aviso Legal',
   legalNotice_page_description:
@@ -15147,6 +17813,33 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
 
   // YouTube blocked message
   cookies_youtube_blocked: 'Para ver este video, necesitas aceptar las cookies funcionales.',
+
+  // ============================================================================
+  // EXIT INTENT MODAL - PROMO 50% DESCUENTO
+  // ============================================================================
+  exitIntent_badge: 'OFERTA EXCLUSIVA',
+  exitIntent_title: '50% de descuento en tu matrícula',
+  exitIntent_subtitle: 'Solo para nuevos alumnos',
+  exitIntent_countdown_label: 'Termina en:',
+  exitIntent_countdown_expired: 'Oferta finalizada',
+  exitIntent_benefit1: 'Primera clase de prueba GRATIS',
+  exitIntent_benefit2: 'Válido para cualquier estilo de baile',
+  exitIntent_benefit3: 'Reserva tu plaza antes de que se agoten',
+  exitIntent_email_label: 'Tu email',
+  exitIntent_email_placeholder: 'tu@email.com',
+  exitIntent_cta: 'QUIERO MI DESCUENTO',
+  exitIntent_sending: 'Reservando...',
+  exitIntent_privacy: 'Sin spam. Solo te contactaremos para activar tu descuento.',
+  exitIntent_success_title: '¡Descuento reservado!',
+  exitIntent_success_message:
+    'Te contactaremos pronto para activar tu 50% de descuento en la matrícula.',
+  exitIntent_success_cta: 'Continuar navegando',
+  exitIntent_error: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+  exitIntent_close: 'Cerrar',
+  exitIntent_days: 'd',
+  exitIntent_hours: 'h',
+  exitIntent_minutes: 'm',
+  exitIntent_seconds: 's',
 
   // ===== TERMS AND CONDITIONS PAGE =====
   terms_page_title: "Condiciones Generales de Contratación | Farray's Center",
@@ -15850,4 +18543,325 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   cookies_section7_title: '7. Actualizaciones',
   cookies_section7_text:
     'Esta Política de Cookies puede actualizarse para reflejar cambios legales o técnicos. La fecha de "Última actualización" indica la versión vigente. Te recomendamos revisarla periódicamente.',
+
+  // ============================================================================
+  // RELATED CLASSES SECTION (Internal Linking)
+  // ============================================================================
+  relatedClassesTitle: 'Clases Similares',
+  relatedClassesSubtitle: 'Descubre otros estilos que complementan tu formacion',
+  relatedClassesViewClass: 'Ver Clase',
+
+  // Related class names and descriptions
+  relatedSalsaCubanaName: 'Salsa Cubana',
+  relatedSalsaCubanaDesc:
+    'Domina el autentico Casino cubano con el Metodo Farray. Ritmo, sabor y conexion en cada paso.',
+  relatedBachataName: 'Bachata Sensual',
+  relatedBachataDesc:
+    'Aprende a bailar bachata sensual con campeones mundiales. Ondas, dips y conexion en pareja.',
+  relatedTimbaName: 'Timba Cubana',
+  relatedTimbaDesc:
+    'La salsa mas explosiva y autentica de Cuba. Ritmos complejos y movimiento con sabor cubano.',
+  relatedSalsaLadyStyleName: 'Salsa Lady Style',
+  relatedSalsaLadyStyleDesc:
+    'Desarrolla tu estilo femenino en la salsa. Tecnica, elegancia y expresion corporal.',
+  relatedFolkloreCubanoName: 'Folklore Cubano',
+  relatedFolkloreCubanoDesc:
+    'Conecta con las raices afrocubanas. Orishas, rumba y tradicion en cada movimiento.',
+  relatedDancehallName: 'Dancehall',
+  relatedDancehallDesc:
+    'Energia jamaicana pura. Aprende los pasos originales y muevete con actitud y estilo.',
+  relatedTwerkName: 'Twerk',
+  relatedTwerkDesc:
+    'Fortalece y tonifica mientras aprendes tecnica de isolaciones y control muscular.',
+  relatedAfrobeatsName: 'Afrobeats',
+  relatedAfrobeatsDesc:
+    'Ritmos africanos contemporaneos. Movimientos organicos, alegria y conexion cultural.',
+  relatedReggaetonCubanoName: 'Reggaeton Cubano',
+  relatedReggaetonCubanoDesc:
+    'El flow cubano del reggaeton. Movimiento de cadera, sabor y actitud caribena.',
+  relatedSexyReggaetonName: 'Sexy Reggaeton',
+  relatedSexyReggaetonDesc:
+    'Empodera tu feminidad con movimientos sensuales y confianza en la pista.',
+  relatedBalletName: 'Ballet Clasico',
+  relatedBalletDesc:
+    'La base de toda danza. Tecnica, postura, gracia y disciplina en un ambiente acogedor.',
+  relatedContemporaneoName: 'Danza Contemporanea',
+  relatedContemporaneoDesc:
+    'Expresion libre y creatividad. Conecta cuerpo y emocion a traves del movimiento.',
+  relatedModernJazzName: 'Modern Jazz',
+  relatedModernJazzDesc:
+    'Fusion de tecnica y estilo. Coreografias dinamicas con influencias contemporaneas.',
+  relatedAfroContemporaneoName: 'Afro Contemporaneo',
+  relatedAfroContemporaneoDesc:
+    'Fusion unica de raices africanas y danza contemporanea. Fuerza, gracia y expresion.',
+  relatedHipHopReggaetonName: 'Hip Hop Reggaeton',
+  relatedHipHopReggaetonDesc:
+    'Lo mejor de dos mundos urbanos. Groove, flow y actitud en cada movimiento.',
+
+  // Additional related classes (Phase 1 - Complete Coverage)
+  relatedAfroJazzName: 'Afro Jazz',
+  relatedAfroJazzDesc:
+    'Fusion explosiva de tecnica jazz y ritmos africanos. Energia, expresion y movimientos organicos.',
+  relatedFemmologyName: 'Femmology',
+  relatedFemmologyDesc:
+    'Explora tu feminidad a traves del baile. Sensualidad, empoderamiento y expresion artistica.',
+  relatedSexyStyleName: 'Sexy Style',
+  relatedSexyStyleDesc:
+    'Movimientos sensuales y elegantes. Confianza, actitud y tecnica en un ambiente seguro.',
+  relatedHipHopName: 'Hip Hop',
+  relatedHipHopDesc:
+    'Cultura urbana autentica. Groove, freestyle y coreografias con actitud street.',
+  relatedHeelsName: 'Heels',
+  relatedHeelsDesc:
+    'Baila con tacones como las profesionales. Tecnica, postura y coreografias de videoclip.',
+  relatedStretchingName: 'Stretching',
+  relatedStretchingDesc:
+    'Mejora tu flexibilidad y previene lesiones. Estiramientos profundos para bailarines.',
+  relatedBumBumName: 'Bum Bum',
+  relatedBumBumDesc:
+    'Tonifica gluteos bailando. Ejercicios funcionales con musica y mucha energia.',
+  relatedCuerpoFitName: 'Cuerpo-Fit',
+  relatedCuerpoFitDesc:
+    'Acondicionamiento fisico para bailarines. Fuerza, resistencia y control corporal.',
+  relatedFullBodyCardioName: 'Full Body Cardio',
+  relatedFullBodyCardioDesc:
+    'Cardio intenso con movimientos de baile. Quema calorias mientras te diviertes.',
+
+  // ============================================================================
+  // STYLE IMAGES ALT TEXTS - Enterprise SEO Optimized
+  // ============================================================================
+  'styleImages.dancehall.alt':
+    "Clases de Dancehall en Barcelona - Aprende con profesionales en Farray's Center",
+  'styleImages.afrobeat.alt':
+    "Clases de Afrobeat en Barcelona - Ritmos africanos en Farray's Center",
+  'styleImages.twerk.alt':
+    "Clases de Twerk en Barcelona - Empoderamiento y fitness en Farray's Center",
+  'styleImages.hipHop.alt': "Clases de Hip Hop en Barcelona - Street dance en Farray's Center",
+  'styleImages.hipHopReggaeton.alt': "Clases de Hip Hop y Reggaetón en Barcelona - Farray's Center",
+  'styleImages.sexyReggaeton.alt': "Clases de Sexy Reggaetón en Barcelona - Farray's Center",
+  'styleImages.reggaetonCubano.alt': "Clases de Reggaetón Cubano en Barcelona - Farray's Center",
+  'styleImages.reggaetonCubano.cardHub':
+    'Reggaetón Cubano Barcelona - Aprende Reparto y Cubatón con profesores cubanos auténticos',
+  'styleImages.reggaetonCubano.cardUrban':
+    'Reggaetón Cubano - Fusión urbana cubana con movimientos de Reparto, Cubatón y expresión callejera',
+  'styleImages.reggaetonCubano.hero':
+    "Bailarines ejecutando movimientos de Reggaetón Cubano en Barcelona - Clases de Reparto y Cubatón en Farray's Center",
+  'styleImages.femmology.alt': "Clases de Femmology y Heels en Barcelona - Farray's Center",
+  'styleImages.heels.alt': "Clases de Heels en Barcelona - Baile con tacones en Farray's Center",
+  'styleImages.sexyStyle.alt': "Clases de Sexy Style en Barcelona - Farray's Center",
+  'styleImages.ballet.alt':
+    "Clases de Ballet Clásico en Barcelona - Técnica clásica en Farray's Center",
+  'styleImages.contemporaneo.alt':
+    "Clases de Danza Contemporánea en Barcelona - Técnica profesional en Farray's Center",
+  'styleImages.contemporaneo.cardHub':
+    'Danza Contemporánea Barcelona - Expresión corporal y técnica de suelo con profesores cubanos',
+  'styleImages.contemporaneo.cardDanza':
+    'Danza Contemporánea - Técnica release, improvisación y expresión corporal libre',
+  'styleImages.contemporaneo.hero':
+    'Bailarines ejecutando técnica de danza contemporánea en Barcelona - Método Farray con profesores cubanos ENA',
+  'styleImages.modernJazz.alt': "Clases de Modern Jazz en Barcelona - Farray's Center",
+  'styleImages.afroContemporaneo.alt':
+    "Clases de Afro Contemporáneo en Barcelona - Técnica cubana ENA en Farray's Center",
+  'styleImages.afroJazz.alt': "Clases de Afro Jazz en Barcelona - Farray's Center",
+  'styleImages.salsaCubana.alt': "Clases de Salsa Cubana en Barcelona - Farray's Center",
+  'styleImages.bachata.alt':
+    "Clases de Bachata Sensual en Barcelona - Conexión y musicalidad en Farray's Center",
+  'styleImages.salsaBachata.alt': "Clases de Salsa y Bachata en Barcelona - Farray's Center",
+  'styleImages.salsaLadyStyle.alt': "Clases de Salsa Lady Style en Barcelona - Farray's Center",
+  'styleImages.bachataLadyStyle.alt': "Clases de Bachata Lady Style en Barcelona - Farray's Center",
+  'styleImages.timba.alt': "Clases de Timba Cubana en Barcelona - Farray's Center",
+  'styleImages.salsaLadyTimba.alt': "Clases de Salsa Lady Timba en Barcelona - Farray's Center",
+  'styleImages.folkloreCubano.alt': "Clases de Folklore Cubano en Barcelona - Farray's Center",
+  'styleImages.stretching.alt':
+    "Clases de Stretching en Barcelona - Flexibilidad en Farray's Center",
+  'styleImages.bumBum.alt': "Clases de Bum Bum en Barcelona - Glúteos en Farray's Center",
+  'styleImages.cuerpoFit.alt': 'Clases de Cuerpo Fit en Barcelona - Fitness para bailarines',
+  'styleImages.bodyConditioning.alt':
+    "Acondicionamiento Físico para Bailarines en Barcelona - Farray's Center",
+
+  // =====================================================
+  // BACHATA SENSUAL LANDING PAGE
+  // =====================================================
+
+  // Page Meta
+  baLandingPageTitle: 'Clase de Bienvenida de Bachata Sensual',
+  baLandingPageDescription:
+    'Descubre la Bachata Sensual en Barcelona. Clase de Bienvenida totalmente GRATIS. Aprende con campeones mundiales. Plazas limitadas. Sin compromiso. Reserva ahora.',
+
+  // Hero Section
+  baLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  baLandingHeadline: 'Conecta y Siente con la Bachata Sensual',
+  baLandingSubheadline:
+    'Aprende a bailar bachata sensual con campeones mundiales de Salsa LA. Descubre la conexión en pareja, las ondulaciones y la musicalidad que te harán destacar en cualquier pista de baile.',
+  baLandingCTA: 'RESERVA TU CLASE DE BIENVENIDA AHORA',
+  baLandingTrustText: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+  baLandingTrustActiveStudents: '1.500+ alumnos activos',
+  baLandingTrustYearsExp: '8+ años',
+  baLandingTrustLocationShort: 'Barcelona - Plaza España',
+  baLandingReviewsLabel: 'reviews',
+  baLandingExclusiveBadge: 'EXCLUSIVO',
+
+  // Logos Section
+  baLandingLogosTitle: 'Has podido vernos en',
+  baLandingFestivalsText: 'Y en los mejores Festivales de Bachata y Salsa de Todo El Mundo',
+
+  // Stats
+  baLandingStatYears: 'Años de Experiencia',
+  baLandingStatActive: 'Estudiantes Activos',
+  baLandingStatSatisfied: 'Alumnos Satisfechos',
+
+  // Experience Section
+  baLandingExperienceTitle: '¿Quieres sentir la conexión real del baile en pareja?',
+  baLandingExperienceDesc:
+    'La bachata sensual no es solo un baile, es una conversación sin palabras. Es conectar con tu pareja a través del movimiento, las ondulaciones y la musicalidad. ¿Primera vez con nosotros? Esta es tu ocasión: una clase de Bienvenida de Bachata Sensual totalmente gratis, impartida por campeones mundiales, sin compromiso y con plazas limitadas.',
+
+  // Value Stack
+  baLandingValueTitle: '¿Qué incluye esta experiencia?',
+  baLandingValueItem1: 'Una clase completa de Bachata Sensual de 60 minutos',
+  baLandingValuePrice1: 'Valor: {price}€',
+  baLandingValueItem2: 'Profesores campeones mundiales de Salsa LA',
+  baLandingValueItem3: 'Rotación de parejas: no necesitas venir acompañado',
+  baLandingValueItem4: 'Confirmación directa por WhatsApp tras la reserva',
+  baLandingValueItem5: 'Acceso a oferta privada si decides apuntarte ese día',
+  baLandingValueIncluded: 'Incluido',
+  baLandingValueTotal: 'VALOR TOTAL:',
+  baLandingValueYourPrice: 'TU PRECIO HOY:',
+  baLandingValueFree: 'GRATIS',
+
+  // Special Offer
+  baLandingOfferTitle: 'Solo por tiempo limitado',
+  baLandingOfferDesc:
+    "Reserva tu clase ahora y si decides apuntarte el mismo día, recibirás una oferta especial de bienvenida exclusiva. Queremos que formes parte de Farray's solo si conectas con nuestra energía… y si lo haces, que puedas bailar bachata en cualquier lugar del mundo.",
+
+  // Schedule Section
+  baLandingScheduleTitle: 'Elige tu horario',
+  baLandingScheduleSubtitle: 'Clases disponibles en Calle Entença nº 100, Barcelona',
+  baLandingLimitedSpots:
+    '¡Plazas muy limitadas! Esta experiencia solo está disponible una vez por persona',
+  baLandingUrgencyBadge: 'PLAZAS LIMITADAS — ¡Reserva ahora!',
+
+  // Why Farray's Section
+  baLandingWhyFarraysTitle: "¿Por qué Farray's International Dance Center?",
+  baLandingWhyTitle1: 'Profesores campeones mundiales',
+  baLandingWhyDesc1:
+    'Mathias Font y Eugenia Trujillo: campeones mundiales de Salsa LA. Aprende de los mejores bachata sensual, ondulaciones y conexión en pareja.',
+  baLandingWhyTitle2: 'Sistema progresivo de niveles',
+  baLandingWhyDesc2:
+    'Desde principiante absoluto hasta avanzado. Nunca te sentirás perdido ni aburrido. Progresa a tu ritmo con el Método Farray®.',
+  baLandingWhyTitle3: 'Academia reconocida por el CID UNESCO',
+  baLandingWhyDesc3:
+    'Dirigida por Yunaisy Farray, actriz de Street Dance 2. Profesionalidad y calidad garantizadas.',
+  baLandingWhyTitle4: 'Ubicación inmejorable',
+  baLandingWhyDesc4:
+    'Calle Entença 100, entre Plaza España y Sants. Metro, buses y tren a la puerta. Más de 700 m² de instalaciones.',
+
+  // Testimonials
+  baLandingTestimonialsTitle: '¿Qué dicen quienes ya lo han vivido?',
+  baLandingTestimonial1:
+    'Empezamos bachata para hacer algo diferente juntos. Ahora es nuestro ritual semanal. La conexión que sientes al bailar bachata sensual es algo que no se puede explicar, hay que vivirlo.',
+  baLandingTestimonial2:
+    'Mathias y Eugenia son campeones mundiales y se nota. Te enseñan a guiar con el cuerpo, no con fuerza. En 6 meses pasé de no saber bailar a sentirme cómodo en cualquier fiesta.',
+  baLandingTestimonial3:
+    'Pensaba que la bachata sensual era solo para expertos. ¡Error! Te enseñan desde cero con paciencia. En 3 meses ya hacía ondas y dips que no pensaba que podría hacer jamás.',
+
+  // FAQs - Objection Handling
+  baLandingFaqTitle: 'Quizás te preguntas...',
+  baLandingObjQ1: '¿Y si nunca he bailado bachata ni nada parecido?',
+  baLandingObjA1:
+    'Perfecto, esta clase está diseñada exactamente para ti. Te guiamos paso a paso desde cero. La mayoría de nuestros alumnos empezaron sin experiencia. ¡Y ahora brillan en las pistas!',
+  baLandingObjQ2: '¿Necesito venir con pareja?',
+  baLandingObjA2:
+    '¡Para nada! En nuestras clases rotamos constantemente. Vengas solo o acompañado, bailarás con todos y aprenderás más rápido.',
+  baLandingObjQ3: '¿La bachata sensual es muy "íntima"? Me da vergüenza...',
+  baLandingObjA3:
+    'Entendemos esa preocupación. Los profesores crean un ambiente respetuoso y cómodo. Empezamos con técnicas básicas de conexión y vas avanzando a tu ritmo. Cero presión.',
+  baLandingObjQ4: '¿Puedo ir solo/a? ¿Me sentiré incómodo/a?',
+  baLandingObjA4:
+    'El 85% de nuestros alumnos vienen solos la primera vez. El ambiente es súper acogedor y profesional. Aquí solo nos apoyamos y bailamos juntos.',
+
+  // Video
+  baLandingVideoPlaceholder: 'Video próximamente',
+
+  // Final CTA Section
+  baLandingFinalCTATitle: 'Tu momento de conexión empieza aquí.',
+  baLandingFinalCTADesc:
+    'Reserva tu plaza ahora y descubre por qué miles de personas se han enamorado de la bachata sensual.',
+  baLandingFinalCTAExtra: 'Con campeones mundiales como profesores, cada clase es una masterclass.',
+  baLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
+
+  // Footer
+  baLandingFooterRights: 'Todos los derechos reservados',
+  baLandingFooterLegal: 'Aviso Legal',
+  baLandingFooterPrivacy: 'Política de Privacidad',
+  baLandingFooterTerms: 'Términos y Condiciones',
+
+  // Countdown
+  baLandingCountdownTitle: 'Esta oferta termina en:',
+  baLandingCountdownExpires: 'Plazas limitadas cada semana',
+  baLandingCountdownDays: 'Días',
+  baLandingCountdownHours: 'Horas',
+  baLandingCountdownMinutes: 'Min',
+  baLandingCountdownSeconds: 'Seg',
+
+  // Exit Intent Popup
+  baExitIntent_title: '¿No te convence la Bachata Sensual?',
+  baExitIntent_description:
+    'No pasa nada, tenemos más de 25 estilos de baile diferentes. Seguro que hay uno perfecto para ti.',
+  baExitIntent_ctaExplore: 'Ver todas las clases disponibles',
+  baExitIntent_ctaDancehall: 'Reservar clase de Bachata',
+  baExitIntent_ctaClose: 'Cerrar',
+  baExitIntent_hint: 'Salsa, Heels, Dancehall, Hip-Hop, Afrobeats y mucho más...',
+
+  // =====================================================
+  // BACHATA SENSUAL LEAD MODAL
+  // =====================================================
+
+  // Modal Header
+  baLeadModal_title: 'Descubre cómo empezar en Bachata Sensual',
+  baLeadModal_subtitle:
+    'Prueba una clase de bienvenida con campeones mundiales y decide con calma si encaja contigo.',
+
+  // Micro Commitment
+  baLeadModal_microCommit_question: '¿Te gustaría probar una clase de Bachata Sensual?',
+  baLeadModal_microCommit_yes: '¡Sí, quiero probar!',
+  baLeadModal_microCommit_curious: 'Solo quiero más información',
+
+  baLeadModal_intro:
+    'Completa el formulario y recibe toda la información para venir con confianza y disfrutar la experiencia.',
+
+  // Benefits
+  baLeadModal_benefits_title: 'Qué recibirás:',
+  baLeadModal_benefit1: 'Horarios disponibles de Bachata Sensual según nivel',
+  baLeadModal_benefit3: 'Confirmación y recordatorios por WhatsApp',
+  baLeadModal_benefit4: 'Acceso a la clase de bienvenida (sin compromiso)',
+
+  // Form fields
+  baLeadModal_field_firstName: 'Nombre',
+  baLeadModal_field_lastName: 'Apellido',
+  baLeadModal_field_email: 'Email',
+  baLeadModal_field_phone: 'Teléfono',
+  baLeadModal_placeholder_firstName: 'Tu nombre',
+  baLeadModal_placeholder_lastName: 'Tu apellido',
+  baLeadModal_placeholder_email: 'tu@email.com',
+  baLeadModal_placeholder_phone: '+34 600 000 000',
+
+  // Consent
+  baLeadModal_consent_text:
+    'Acepto recibir información sobre mi clase de bienvenida de Bachata Sensual y la',
+  baLeadModal_consent_link: 'política de privacidad',
+
+  // Submit
+  baLeadModal_submit: 'Reservar Mi Clase Gratis',
+  baLeadModal_submitLoading: 'Procesando...',
+
+  // Success
+  baLeadModal_success_title: '¡Reserva Confirmada!',
+  baLeadModal_success_message:
+    'Recibirás un WhatsApp con todos los detalles para tu clase de bienvenida de Bachata Sensual. ¡Prepárate para conectar!',
+  baLeadModal_success_cta: 'Cerrar',
+
+  // Error
+  baLeadModal_error_title: 'Error al procesar',
+  baLeadModal_error_message: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+  baLeadModal_error_cta: 'Reintentar',
 };

@@ -8,25 +8,25 @@ module.exports = [
   {
     name: 'ES Locale Bundle',
     path: 'dist/assets/i18n-es-*.js',
-    limit: '300 KB', // Increased after adding blog articles, legal pages, cookie consent, new dance classes
+    limit: '315 KB', // Increased for landing pages (Dancehall, Afrobeats, Twerk, etc.)
     gzip: true,
   },
   {
     name: 'EN Locale Bundle',
     path: 'dist/assets/i18n-en-*.js',
-    limit: '295 KB', // Increased after adding blog articles, legal pages, cookie consent, new dance classes
+    limit: '310 KB', // Increased for landing pages (Dancehall, Afrobeats, Twerk, etc.)
     gzip: true,
   },
   {
     name: 'CA Locale Bundle',
     path: 'dist/assets/i18n-ca-*.js',
-    limit: '315 KB', // Increased after adding blog articles, legal pages, cookie consent, new dance classes
+    limit: '330 KB', // Increased for landing pages (Dancehall, Afrobeats, Twerk, etc.)
     gzip: true,
   },
   {
     name: 'FR Locale Bundle',
     path: 'dist/assets/i18n-fr-*.js',
-    limit: '325 KB', // Increased after adding blog articles, legal pages, cookie consent, new dance classes
+    limit: '345 KB', // Increased for landing pages (Dancehall, Afrobeats, Twerk, etc.)
     gzip: true,
   },
   {

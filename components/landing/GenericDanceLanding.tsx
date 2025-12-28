@@ -13,8 +13,9 @@
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
+import { SUPPORTED_LOCALES, type Locale } from '../../types';
 import GenericLeadModal from './GenericLeadModal';
 import AnimateOnScroll from '../AnimateOnScroll';
 import AnimatedCounter from '../AnimatedCounter';
@@ -258,7 +259,9 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({
 // =============================================================================
 
 const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => {
-  const { t, locale, setLocale } = useI18n();
+  const { t, locale } = useI18n();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isExitPopupOpen, setIsExitPopupOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<string | null>(null);
@@ -366,14 +369,32 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
     setOpenFaq(openFaq === id ? null : id);
   };
 
-  const handleLangChange = (newLocale: string) => {
-    setLocale(newLocale as 'es' | 'en' | 'ca' | 'fr');
-    setShowLangMenu(false);
-  };
+  // Get current path without locale prefix
+  const getCurrentPath = useCallback((): string => {
+    const pathParts = location.pathname.split('/').filter(Boolean);
+    if (
+      pathParts.length > 0 &&
+      pathParts[0] &&
+      (SUPPORTED_LOCALES as readonly string[]).includes(pathParts[0])
+    ) {
+      pathParts.shift();
+    }
+    return pathParts.length > 0 ? `/${pathParts.join('/')}` : '/';
+  }, [location.pathname]);
+
+  const handleLangChange = useCallback(
+    (newLocale: string) => {
+      const currentPath = getCurrentPath();
+      const newPath = `/${newLocale}${currentPath === '/' ? '' : currentPath}`;
+      navigate(newPath);
+      setShowLangMenu(false);
+    },
+    [getCurrentPath, navigate]
+  );
 
   const totalValue = config.valueStack.reduce((sum, item) => sum + item.price, 0);
 
-  const languages = [
+  const languages: { code: Locale; label: string }[] = [
     { code: 'es', label: 'ES' },
     { code: 'en', label: 'EN' },
     { code: 'ca', label: 'CA' },

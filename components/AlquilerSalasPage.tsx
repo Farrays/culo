@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import DOMPurify from 'dompurify';
@@ -7,81 +7,224 @@ import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import Icon, { type IconName } from './Icon';
 
-// Datos de salas
-const rooms = [
+// ============================================================================
+// ENTERPRISE ROOM DATA - Salas con nomenclatura por letras (A, B, C, D)
+// ============================================================================
+// Las imágenes se procesan con el script enterprise build-images.mjs
+// Generando AVIF, WebP y JPEG en 6 breakpoints: [320, 640, 768, 1024, 1440, 1920]
+// ============================================================================
+
+interface RoomImage {
+  basePath: string;
+  alt: string;
+}
+
+interface Room {
+  id: string;
+  name: string;
+  size: string;
+  sizeM2: number; // Para schema markup
+  description: string;
+  weekdayPrices: { type: string; price: string; priceValue: number }[];
+  images: RoomImage[];
+}
+
+const rooms: Room[] = [
   {
-    id: 1,
-    name: 'Sala 1',
+    id: 'A',
+    name: 'Sala A',
     size: '40 m²',
+    sizeM2: 40,
     description:
       'Sala diáfana con suelo de madera flotante. Ideal para ensayos pequeños, clases en grupos reducidos, coaching individual o castings.',
     weekdayPrices: [
-      { type: 'Compañías / ensayos', price: '14 €/hora' },
-      { type: 'Clases', price: '22 €/hora' },
+      { type: 'Compañías / ensayos', price: '14 €/hora', priceValue: 14 },
+      { type: 'Clases', price: '22 €/hora', priceValue: 22 },
     ],
-    images: ['/images/salas/sala1-1.jpg', '/images/salas/sala1-2.jpg', '/images/salas/sala1-3.jpg'],
+    images: [
+      {
+        basePath: '/images/salas/img/salaa-1',
+        alt: 'Sala A - Vista principal del espacio de 40m² con suelo de madera flotante',
+      },
+      {
+        basePath: '/images/salas/img/salaa-2',
+        alt: 'Sala A - Vista lateral con espejos y equipo de sonido',
+      },
+      {
+        basePath: '/images/salas/img/salaa-3',
+        alt: 'Sala A - Detalle del suelo de madera profesional para danza',
+      },
+    ],
   },
   {
-    id: 2,
-    name: 'Sala 2',
+    id: 'B',
+    name: 'Sala B',
     size: '120 m²',
+    sizeM2: 120,
     description:
       'Nuestra sala más grande. Suelo de linóleo profesional instalado sobre madera flotante con aproximadamente un 60% de amortiguación. Perfecta para clases grandes, eventos, workshops, rodajes y entrenamientos de compañías.',
     weekdayPrices: [
-      { type: 'Compañías / ensayos', price: '40 €/hora' },
-      { type: 'Clases / eventos', price: '50 €/hora' },
+      { type: 'Compañías / ensayos', price: '40 €/hora', priceValue: 40 },
+      { type: 'Clases / eventos', price: '50 €/hora', priceValue: 50 },
     ],
-    images: ['/images/salas/sala2-1.jpg', '/images/salas/sala2-2.jpg', '/images/salas/sala2-3.jpg'],
+    images: [
+      {
+        basePath: '/images/salas/img/salab-1',
+        alt: 'Sala B - Amplio espacio de 120m² con suelo de linóleo profesional',
+      },
+      {
+        basePath: '/images/salas/img/salab-2',
+        alt: 'Sala B - Vista panorámica ideal para eventos y workshops',
+      },
+      {
+        basePath: '/images/salas/img/salab-3',
+        alt: 'Sala B - Detalle de la iluminación y equipamiento profesional',
+      },
+    ],
   },
   {
-    id: 3,
-    name: 'Sala 3',
+    id: 'C',
+    name: 'Sala C',
     size: '80 m²',
+    sizeM2: 80,
     description:
       'Sala diáfana con suelo de parquet especial para baile. Perfecta para grupos medianos, ensayos, cursos y entrenamientos técnicos.',
     weekdayPrices: [
-      { type: 'Compañías / ensayos', price: '25 €/hora' },
-      { type: 'Clases / eventos', price: '35 €/hora' },
+      { type: 'Compañías / ensayos', price: '25 €/hora', priceValue: 25 },
+      { type: 'Clases / eventos', price: '35 €/hora', priceValue: 35 },
     ],
-    images: ['/images/salas/sala3-1.jpg', '/images/salas/sala3-2.jpg', '/images/salas/sala3-3.jpg'],
+    images: [
+      {
+        basePath: '/images/salas/img/salac-1',
+        alt: 'Sala C - Espacio de 80m² con parquet especial para baile',
+      },
+      {
+        basePath: '/images/salas/img/salac-2',
+        alt: 'Sala C - Vista del área de ensayo con espejos de pared completa',
+      },
+      {
+        basePath: '/images/salas/img/salac-3',
+        alt: 'Sala C - Detalle del equipamiento de audio y ambiente',
+      },
+    ],
   },
   {
-    id: 4,
-    name: 'Sala 4',
+    id: 'D',
+    name: 'Sala D',
     size: '80 m²',
+    sizeM2: 80,
     description:
       'Sala diáfana con suelo de linóleo profesional. Muy versátil para danzas urbanas, contemporáneo, ensayos, castings, shootings y pequeños eventos.',
     weekdayPrices: [
-      { type: 'Compañías / ensayos', price: '25 €/hora' },
-      { type: 'Clases / eventos', price: '35 €/hora' },
+      { type: 'Compañías / ensayos', price: '25 €/hora', priceValue: 25 },
+      { type: 'Clases / eventos', price: '35 €/hora', priceValue: 35 },
     ],
-    images: ['/images/salas/sala4-1.jpg', '/images/salas/sala4-2.jpg', '/images/salas/sala4-3.jpg'],
+    images: [
+      {
+        basePath: '/images/salas/img/salad-1',
+        alt: 'Sala D - Espacio versátil de 80m² con linóleo profesional',
+      },
+      {
+        basePath: '/images/salas/img/salad-2',
+        alt: 'Sala D - Vista ideal para danzas urbanas y contemporáneo',
+      },
+      {
+        basePath: '/images/salas/img/salad-3',
+        alt: 'Sala D - Detalle del espacio para castings y shootings',
+      },
+    ],
   },
 ];
 
-// Room Gallery Component
-const RoomGallery: React.FC<{ images: string[]; roomName: string; t: (key: string) => string }> = ({
-  images,
-  roomName,
-  t,
-}) => {
+// ============================================================================
+// ENTERPRISE IMAGE SYSTEM
+// ============================================================================
+const IMAGE_BREAKPOINTS = [320, 640, 768, 1024, 1440, 1920] as const;
+
+/** LQIP placeholder - Dark gradient matching brand */
+const LQIP_PLACEHOLDER =
+  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"%3E%3Cdefs%3E%3ClinearGradient id="g" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:%231a1a2e"%3E%3C/stop%3E%3Cstop offset="100%25" style="stop-color:%230f0f23"%3E%3C/stop%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="1200" height="800" fill="url(%23g)"%3E%3C/rect%3E%3C/svg%3E';
+
+const generateSrcSet = (basePath: string, format: string): string => {
+  return IMAGE_BREAKPOINTS.map(w => `${basePath}_${w}.${format} ${w}w`).join(', ');
+};
+
+// ============================================================================
+// ENTERPRISE ROOM GALLERY COMPONENT
+// ============================================================================
+// Features:
+// - Intersection Observer for efficient lazy loading
+// - LQIP blur placeholder with smooth transition
+// - Multi-format (AVIF/WebP/JPEG) with srcset
+// - Touch swipe for mobile
+// - fetchPriority for LCP optimization
+// - Preload support for critical images
+// ============================================================================
+
+interface RoomGalleryProps {
+  images: RoomImage[];
+  t: (key: string) => string;
+  isFirstRoom?: boolean; // For LCP optimization
+}
+
+const RoomGallery: React.FC<RoomGalleryProps> = ({ images, t, isFirstRoom = false }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(isFirstRoom); // First room loads immediately
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const nextImage = () => {
-    setCurrentIndex(prev => (prev + 1) % images.length);
-  };
+  // Intersection Observer for lazy loading
+  useEffect(() => {
+    if (isFirstRoom) return; // First room doesn't need observer
 
-  const prevImage = () => {
-    setCurrentIndex(prev => (prev - 1 + images.length) % images.length);
-  };
+    const element = containerRef.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { rootMargin: '200px 0px', threshold: 0.01 }
+    );
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [isFirstRoom]);
+
+  // Navigation callbacks - must be before early return to follow Rules of Hooks
+  const nextImage = useCallback(() => {
+    setIsLoaded(false);
+    setCurrentIndex(prev => (prev + 1) % (images?.length || 1));
+  }, [images?.length]);
+
+  const prevImage = useCallback(() => {
+    setIsLoaded(false);
+    setCurrentIndex(prev => (prev - 1 + (images?.length || 1)) % (images?.length || 1));
+  }, [images?.length]);
+
+  // Early return if no images
+  if (!images || images.length === 0) {
+    return (
+      <div className="w-full h-full min-h-[300px] lg:min-h-[400px] bg-primary-dark/50 flex items-center justify-center">
+        <span className="text-neutral/50">No images available</span>
+      </div>
+    );
+  }
+
+  const currentImage = images[currentIndex] ?? images[0];
 
   // Swipe detection
   const minSwipeDistance = 50;
 
   const onTouchStart = (e: React.TouchEvent) => {
-    setTouchEnd(0); // Reset
+    setTouchEnd(0);
     setTouchStart(e.targetTouches[0]?.clientX ?? 0);
   };
 
@@ -96,30 +239,71 @@ const RoomGallery: React.FC<{ images: string[]; roomName: string; t: (key: strin
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
 
-    if (isLeftSwipe) {
-      nextImage();
-    } else if (isRightSwipe) {
-      prevImage();
-    }
+    if (isLeftSwipe) nextImage();
+    else if (isRightSwipe) prevImage();
   };
 
   return (
     <div
+      ref={containerRef}
       className="relative w-full h-full min-h-[300px] lg:min-h-[400px] bg-black/30 overflow-hidden group/gallery touch-pan-y"
+      style={{ aspectRatio: '3/2' }}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
-      {/* Main Image */}
-      <img
-        src={images[currentIndex]}
-        alt={`${roomName} - Foto ${currentIndex + 1}`}
-        width="1200"
-        height="800"
-        loading="lazy"
-        className="w-full h-full object-cover select-none"
-        draggable={false}
+      {/* LQIP Blur Placeholder */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 transition-opacity duration-500"
+        style={{
+          backgroundImage: `url("${LQIP_PLACEHOLDER}")`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'blur(20px)',
+          transform: 'scale(1.1)',
+          opacity: isLoaded ? 0 : 1,
+        }}
       />
+
+      {/* Enterprise Multi-Format Picture Element */}
+      {isInView && (
+        <picture>
+          <source
+            type="image/avif"
+            srcSet={generateSrcSet(currentImage.basePath, 'avif')}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          <source
+            type="image/webp"
+            srcSet={generateSrcSet(currentImage.basePath, 'webp')}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          <img
+            src={`${currentImage.basePath}_1024.jpg`}
+            srcSet={generateSrcSet(currentImage.basePath, 'jpg')}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            alt={currentImage.alt}
+            width={1200}
+            height={800}
+            loading={isFirstRoom ? 'eager' : 'lazy'}
+            decoding={isFirstRoom ? 'sync' : 'async'}
+            fetchPriority={isFirstRoom && currentIndex === 0 ? 'high' : 'auto'}
+            onLoad={() => setIsLoaded(true)}
+            className={`absolute inset-0 w-full h-full object-cover select-none transition-opacity duration-500 ${
+              isLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
+            draggable={false}
+          />
+        </picture>
+      )}
+
+      {/* Loading spinner - only shows if taking long to load */}
+      {isInView && !isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-10 h-10 border-3 border-primary-accent/20 border-t-primary-accent rounded-full animate-spin" />
+        </div>
+      )}
 
       {/* Navigation Buttons - Desktop only */}
       {images.length > 1 && (
@@ -153,7 +337,10 @@ const RoomGallery: React.FC<{ images: string[]; roomName: string; t: (key: strin
             {images.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentIndex(index)}
+                onClick={() => {
+                  setIsLoaded(false);
+                  setCurrentIndex(index);
+                }}
                 className={`rounded-full transition-all duration-300 ${
                   index === currentIndex
                     ? 'bg-primary-accent w-6 h-2'
@@ -164,7 +351,7 @@ const RoomGallery: React.FC<{ images: string[]; roomName: string; t: (key: strin
             ))}
           </div>
 
-          {/* Swipe instruction for mobile - shows only on first image */}
+          {/* Swipe instruction for mobile */}
           {currentIndex === 0 && (
             <div className="lg:hidden absolute top-4 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-1 animate-pulse">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -250,6 +437,10 @@ const AlquilerSalasPage: React.FC = () => {
     },
   ];
 
+  // ============================================================================
+  // ENTERPRISE SCHEMA MARKUP
+  // ============================================================================
+
   // Schema Markup - BreadcrumbList
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -276,6 +467,94 @@ const AlquilerSalasPage: React.FC = () => {
     ],
   };
 
+  // Schema Markup - Service with Offers for each room
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${baseUrl}/${locale}/alquiler-salas-baile-barcelona#service`,
+    name: 'Alquiler de Salas de Baile',
+    description: t('roomRental_metaDescription'),
+    provider: {
+      '@type': 'LocalBusiness',
+      '@id': `${baseUrl}/#organization`,
+      name: "Farray's Center",
+      image: `${baseUrl}/images/logo/farrays-logo.png`,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Carrer de Mallorca, 323',
+        addressLocality: 'Barcelona',
+        postalCode: '08037',
+        addressCountry: 'ES',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 41.3971,
+        longitude: 2.1645,
+      },
+      telephone: '+34 644 67 02 25',
+      priceRange: '€€',
+    },
+    areaServed: {
+      '@type': 'City',
+      name: 'Barcelona',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Salas de Baile Disponibles',
+      itemListElement: rooms.map((room, index) => ({
+        '@type': 'Offer',
+        '@id': `${baseUrl}/${locale}/alquiler-salas-baile-barcelona#sala-${room.id}`,
+        name: `${room.name} - ${room.size}`,
+        description: room.description,
+        image: `${baseUrl}${room.images[0]?.basePath}_1024.jpg`,
+        priceSpecification: room.weekdayPrices.map(price => ({
+          '@type': 'PriceSpecification',
+          price: price.priceValue,
+          priceCurrency: 'EUR',
+          unitText: 'hora',
+          name: price.type,
+        })),
+        availability: 'https://schema.org/InStock',
+        validFrom: new Date().toISOString().split('T')[0],
+        itemOffered: {
+          '@type': 'Product',
+          name: room.name,
+          description: room.description,
+          category: 'Sala de ensayo para danza',
+          additionalProperty: [
+            {
+              '@type': 'PropertyValue',
+              name: 'Superficie',
+              value: room.sizeM2,
+              unitCode: 'MTK',
+            },
+          ],
+        },
+        position: index + 1,
+      })),
+    },
+  };
+
+  // Schema Markup - ImageGallery for SEO
+  const imageGallerySchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ImageGallery',
+    name: "Galería de Salas de Baile - Farray's Center",
+    description: 'Fotos de nuestras 4 salas de baile profesionales en Barcelona',
+    image: rooms.flatMap(room =>
+      room.images.map(img => ({
+        '@type': 'ImageObject',
+        contentUrl: `${baseUrl}${img.basePath}_1920.jpg`,
+        thumbnailUrl: `${baseUrl}${img.basePath}_320.jpg`,
+        name: img.alt,
+        description: img.alt,
+        width: 1920,
+        height: 1280,
+        encodingFormat: 'image/jpeg',
+      }))
+    ),
+  };
+
   // Breadcrumb items for visual navigation with microdata
   const breadcrumbItems = [
     { name: t('navHome'), url: `/${locale}` },
@@ -296,7 +575,18 @@ const AlquilerSalasPage: React.FC = () => {
           name="keywords"
           content="alquiler salas baile Barcelona, alquiler salas danza Barcelona, alquiler espacios baile Barcelona, salas ensayo Barcelona, alquiler sala baile"
         />
+        {/* LCP Optimization - Preload first room image */}
+        <link
+          rel="preload"
+          as="image"
+          type="image/avif"
+          imageSrcSet={generateSrcSet(rooms[0]?.images[0]?.basePath ?? '', 'avif')}
+          imageSizes="(max-width: 768px) 100vw, 50vw"
+        />
+        {/* Enterprise Schema Markup */}
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(imageGallerySchema)}</script>
       </Helmet>
 
       <div className="pt-20 md:pt-24">
@@ -540,7 +830,7 @@ const AlquilerSalasPage: React.FC = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                       {/* Gallery */}
                       <div className="lg:order-1">
-                        <RoomGallery images={room.images} roomName={room.name} t={t} />
+                        <RoomGallery images={room.images} t={t} isFirstRoom={index === 0} />
                       </div>
 
                       {/* Info */}
