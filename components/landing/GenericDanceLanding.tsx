@@ -644,37 +644,20 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
         </section>
 
         {/* VIDEO SECTION */}
-        {/* Note: BunnyEmbed with autoplay must NOT be wrapped in AnimateOnScroll */}
-        {/* because opacity:0 prevents iframe loading in production (Vercel) */}
+        {/* Note: BunnyEmbed must NOT be wrapped in AnimateOnScroll */}
+        {/* because opacity:0 causes layout/spacing issues in production (Vercel SSR) */}
         {config.video ? (
           <section className="pb-6 md:pb-8">
             <div className="container mx-auto px-4 sm:px-6">
-              {config.video.autoplay ? (
-                // Autoplay videos: render directly without AnimateOnScroll
-                // to ensure iframe loads properly (opacity:0 blocks iframe loading)
-                <BunnyEmbed
-                  videoId={config.video.bunnyVideoId}
-                  libraryId={config.video.bunnyLibraryId}
-                  title={t(`${prefix}VideoTitle`)}
-                  aspectRatio={config.video.aspectRatio || '16:9'}
-                  thumbnailUrl={config.video.thumbnailUrl}
-                  autoplay={config.video.autoplay}
-                  priority
-                />
-              ) : (
-                // Non-autoplay videos: can use AnimateOnScroll since thumbnail loads first
-                <AnimateOnScroll>
-                  <BunnyEmbed
-                    videoId={config.video.bunnyVideoId}
-                    libraryId={config.video.bunnyLibraryId}
-                    title={t(`${prefix}VideoTitle`)}
-                    aspectRatio={config.video.aspectRatio || '16:9'}
-                    thumbnailUrl={config.video.thumbnailUrl}
-                    autoplay={config.video.autoplay}
-                    priority
-                  />
-                </AnimateOnScroll>
-              )}
+              <BunnyEmbed
+                videoId={config.video.bunnyVideoId}
+                libraryId={config.video.bunnyLibraryId}
+                title={t(`${prefix}VideoTitle`)}
+                aspectRatio={config.video.aspectRatio || '16:9'}
+                thumbnailUrl={config.video.thumbnailUrl}
+                autoplay={config.video.autoplay}
+                priority
+              />
             </div>
           </section>
         ) : (

@@ -358,7 +358,7 @@ const CookieBanner: React.FC = memo(function CookieBanner() {
       {showBanner && (
         <div
           className={`
-            fixed bottom-0 left-0 right-0 z-50
+            fixed bottom-0 left-0 right-0 z-[100]
             bg-black/95 backdrop-blur-md border-t border-primary-accent/30
             transform transition-transform duration-300 ease-out
             ${isVisible ? 'translate-y-0' : 'translate-y-full'}
