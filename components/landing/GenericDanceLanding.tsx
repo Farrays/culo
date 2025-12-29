@@ -291,6 +291,19 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
 
     const storageKey = `${config.id}_exit_intent_shown`;
 
+    // Check if navigated from another exit intent (skip showing exit intent)
+    const urlParams = new window.URLSearchParams(window.location.search);
+    const fromExitIntent = urlParams.get('fromExitIntent') === 'true';
+
+    if (fromExitIntent) {
+      setHasShownExitIntent(true);
+      // Clean up the URL parameter without triggering a navigation
+      const newUrl = new window.URL(window.location.href);
+      newUrl.searchParams.delete('fromExitIntent');
+      window.history.replaceState({}, '', newUrl.toString());
+      return;
+    }
+
     // Check if already shown (with sessionStorage protection)
     let alreadyShown = false;
     try {
@@ -1214,7 +1227,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
         exploreUrl={
           config.slug === 'jornada-puertas-abiertas'
             ? `/${locale}/clases`
-            : `/${locale}/jornada-puertas-abiertas`
+            : `/${locale}/jornada-puertas-abiertas?fromExitIntent=true`
         }
       />
     </>
