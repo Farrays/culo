@@ -13067,7 +13067,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
 
   twLandingOfferTitle: 'Temps limité seulement',
   twLandingOfferDesc:
-    "Réservez votre cours maintenant et si vous vous inscrivez le même jour, vous recevrez une offre spéciale de bienvenue exclusive valable uniquement après le cours. Nous voulons que vous fassiez partie de Farray's uniquement si vous vous connectez à notre énergie… mais si c'est le cas, ne perdez pas de temps.",
+    'Réservez votre cours maintenant et si vous vous inscrivez le même jour, vous recevrez une offre spéciale de bienvenue exclusive valable uniquement après le cours.',
 
   twLandingScheduleTitle: 'Choisissez votre horaire',
   twLandingScheduleSubtitle: 'Cours disponibles à Calle Entença nº 100, Barcelone',
@@ -13091,11 +13091,11 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
 
   twLandingTestimonialsTitle: "Ce que disent celles qui ont déjà vécu l'expérience ?",
   twLandingTestimonial1:
-    "Je suis venue morte de honte pensant que je ne saurais rien bouger. Je suis repartie plus confiante que jamais. Les profs sont incroyables et l'ambiance est pur amour.",
+    "Je suis venue morte de honte pensant que ce style n'était pas pour moi. Je suis repartie bluffée. Sandra est incroyable et l'ambiance est pur amour.",
   twLandingTestimonial2:
-    "Le Twerk a changé ma vie. Ce n'est pas seulement un entraînement brutal pour les fessiers et les abdos, c'est de la pure thérapie. Je ressors de chaque cours renouvelée.",
+    "Le Twerk a changé ma vie. Ce n'est pas seulement un entraînement, c'est de la pure thérapie. Je ressors de chaque cours renouvelée.",
   twLandingTestimonial3:
-    "Je n'aurais jamais pensé oser faire du Twerk. Maintenant c'est mon cours préféré de la semaine. Le groupe est merveilleux et les profs te font sentir comme à la maison.",
+    "Je n'aurais jamais pensé oser faire du Twerk. Maintenant c'est mon cours préféré de la semaine. Le groupe est merveilleux et Sandra me fait sentir comme à la maison.",
 
   twLandingFaqTitle: 'Vous vous demandez peut-être...',
   twLandingObjQ1: "Et si je n'ai jamais fait de Twerk ni rien de similaire ?",
@@ -13441,9 +13441,9 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   hhrLandingValueTotal: 'VALEUR TOTALE :',
   hhrLandingValueYourPrice: "VOTRE PRIX AUJOURD'HUI :",
   hhrLandingValueFree: 'GRATUIT',
-  hhrLandingOfferTitle: 'Pour une durée limitée seulement',
+  hhrLandingOfferTitle: 'Réduction exclusive · Temps limité seulement',
   hhrLandingOfferDesc:
-    "Ce cours d'accueil gratuit est notre façon de vous présenter le Hip Hop Reggaeton. Sans pression, sans engagement.",
+    "Si vous décidez de continuer après le cours d'accueil, vous aurez accès à une réduction exclusive sur votre premier abonnement mensuel ou forfait. Valable uniquement pour les nouveaux élèves.",
   hhrLandingScheduleTitle: 'Choisissez votre horaire',
   hhrLandingScheduleSubtitle: 'Tous les cours à Calle Entença 100, Barcelone',
   hhrLandingReserveBtn: 'Réserver',
@@ -13465,11 +13465,11 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
     "À seulement 5 minutes de Plaza España et de la Gare de Sants. 700m² d'installations premium avec parquet flottant et équipement professionnel.",
   hhrLandingTestimonialsTitle: "Que disent ceux qui l'ont déjà vécu ?",
   hhrLandingTestimonial1:
-    "Les cours de Charlie sont incroyables. Il mélange Hip Hop et Reggaeton d'une façon que je n'avais jamais vue. On apprend le vrai flow et l'énergie est folle.",
+    "Les cours de Charlie sont incroyables. On apprend le vrai flow et l'énergie et la bonne ambiance de l'académie sont incroyables.",
   hhrLandingTestimonial2:
-    "Je n'avais jamais dansé rien d'urbain et maintenant je ne peux plus m'arrêter. Charlie vous fait sentir que vous pouvez tout faire. L'ambiance est géniale.",
+    "Je n'avais jamais dansé rien d'urbain et maintenant je ne peux plus m'arrêter. C'est mon moment préféré de la semaine. L'ambiance est géniale et les chorés sont du feu.",
   hhrLandingTestimonial3:
-    "Le meilleur de cette académie c'est qu'ils vous enseignent la vraie technique mais aussi l'attitude. Après quelques semaines je me sentais déjà avec du swagger.",
+    'Le meilleur des cours avec Charlie, en plus de tout ce que nous apprenons, est la bonne vibe que nous ressentons.',
   hhrLandingFaqTitle: 'Vous vous demandez peut-être...',
   hhrLandingObjQ1: "Et si je n'ai jamais dansé Hip Hop ni Reggaeton ?",
   hhrLandingObjA1:
@@ -13492,6 +13492,8 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   hhrLandingFinalCTATitle: 'Le flow est en vous. Il vous faut juste le bon cours pour le libérer.',
   hhrLandingFinalCTADesc:
     "Réservez votre cours d'accueil GRATUIT maintenant et découvrez ce que Hip Hop + Reggaeton peuvent faire pour vous.",
+  hhrLandingFinalCTAExtra:
+    'Charlie Breezy vous attend au cœur de Barcelone. Votre corps connaît déjà le rythme.',
   hhrLandingFinalTrust: 'Sans frais · Sans engagement · Places très limitées',
   hhrLandingUrgencyReminder: 'Rappel : les places sont très limitées chaque semaine',
   hhrLandingFooterTagline:
@@ -13686,6 +13688,8 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   hhLandingFinalCTATitle: 'Prêt(e) à découvrir le vrai Hip Hop ?',
   hhLandingFinalCTADesc:
     "Réservez votre cours d'accueil gratuit maintenant et commencez votre voyage dans le street dance avec un juge international de Hip Hop.",
+  hhLandingFinalCTAExtra:
+    "Réduction exclusive · Temps limité uniquement\n\nSi vous décidez de continuer après le cours d'accueil, vous aurez accès à une réduction exclusive sur votre premier abonnement mensuel ou forfait. Valable uniquement pour les nouveaux élèves.",
   hhLandingFinalTrust: 'Sans frais · Sans engagement · Places très limitées',
   hhLandingUrgencyReminder: 'Rappel : les places sont très limitées chaque semaine',
 
@@ -13804,7 +13808,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   abLandingBadge: "COURS D'ACCUEIL GRATUIT",
   abLandingHeadline: "Ressentez l'Énergie de l'Afrique avec l'Afrobeats",
   abLandingSubheadline:
-    'Découvrez les rythmes les plus vibrants du continent africain. Afrobeats, Amapiano, Afrodance... des mouvements qui libèrent votre corps et connectent avec la joie la plus pure.',
+    "Entrez dans la nouvelle année en bougeant intensément au rythme de l'Afrique. Danser l'Afrobeats est bien plus qu'un cours... c'est une explosion de joie, d'énergie et de connexion avec les rythmes les plus puissants de la planète.",
   abLandingCTA: "RÉSERVEZ VOTRE COURS D'ACCUEIL MAINTENANT",
   abLandingTrustText: 'Sans frais · Sans engagement · Places très limitées',
   abLandingTrustActiveStudents: '1 500+ élèves actifs',
@@ -13826,9 +13830,9 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   abLandingStatSatisfied: 'Élèves Satisfaits',
 
   // Experience Section
-  abLandingExperienceTitle: 'Prêt(e) à ressentir le vibe africain ?',
+  abLandingExperienceTitle: 'Vous voulez voyager en Afrique sans quitter Barcelone ?',
   abLandingExperienceDesc:
-    "L'Afrobeats est pure énergie, joie et connexion avec les racines africaines. À chaque cours, vous apprendrez des mouvements authentiques de styles comme Afrodance, Amapiano et Azonto, tout en vous lâchant et en vous amusant comme jamais.",
+    "L'Afrobeats est une explosion d'énergie qui vous connecte avec la joie, la culture et les rythmes les plus vibrants de l'Afrique. À chaque cours, vous apprendrez des mouvements d'Afrodance, Amapiano, Azonto et bien plus, en vous lâchant et en vous amusant comme jamais.",
 
   // Value Stack
   abLandingValueTitle: "Qu'inclut cette expérience ?",
@@ -13870,7 +13874,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
     "Nous faisons partie du Conseil International de la Danse de l'UNESCO, garantie de qualité et d'excellence dans l'enseignement de la danse africaine.",
   abLandingWhyTitle4: 'Emplacement imbattable',
   abLandingWhyDesc4:
-    'À seulement 2 minutes du métro Plaza España à Barcelone. Accès facile en transports en commun et parking à proximité.',
+    'À seulement 5 minutes du métro Plaza España à Barcelone. Accès facile en transports en commun et parking à proximité.',
 
   // Testimonials
   abLandingTestimonialsTitle: 'Que disent ceux qui ont déjà vécu cette expérience ?',
@@ -13910,6 +13914,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   abLandingFinalCTATitle: "L'énergie de l'Afrique vous attend. Venez-vous la découvrir ?",
   abLandingFinalCTADesc:
     "Réservez maintenant votre cours d'accueil gratuit et découvrez pourquoi des centaines d'élèves ont trouvé dans l'Afrobeats leur façon préférée de libérer de l'énergie et de profiter.",
+  abLandingFinalCTAExtra: `L'Afrique bouge. Bougez-vous avec elle ?`,
   abLandingFinalTrust: 'Sans frais · Sans engagement · Places très limitées',
   abLandingUrgencyReminder: 'Rappel : les places sont très limitées chaque semaine',
 
@@ -14953,7 +14958,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Experience Section
   ctLandingExperienceTitle: 'Prêt(e) à explorer le mouvement ?',
   ctLandingExperienceDesc:
-    "La danse contemporaine est liberté d'expression, connexion corps-esprit et technique fluide. Dans votre premier cours, vous découvrirez un espace où chaque mouvement raconte une histoire, guidé par des professeurs formés à la prestigieuse École Nationale d'Art de Cuba.",
+    "La danse contemporaine est liberté d'expression, connexion corps-esprit et technique fluide. Dans votre premier cours, vous découvrirez un espace où chaque mouvement raconte une histoire, guidé par des professeurs formés dans les plus prestigieuses écoles de danse de Cuba.",
 
   // Value Stack
   ctLandingValueTitle: 'Que comprend cette expérience ?',
@@ -14969,9 +14974,9 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   ctLandingValueFree: 'GRATUIT',
 
   // Offer Section
-  ctLandingOfferTitle: 'Seulement pour un temps limité',
+  ctLandingOfferTitle: 'Réduction exclusive pour nouveaux élèves',
   ctLandingOfferDesc:
-    "Les places pour le cours d'accueil sont très limitées chaque semaine. Réservez maintenant pour garantir votre place et commencer votre voyage dans la danse contemporaine.",
+    "Si vous décidez de continuer après le cours d'accueil, vous aurez accès à une réduction exclusive sur votre premier abonnement mensuel ou forfait. Valable uniquement pour les nouveaux élèves.",
 
   // Schedule
   ctLandingScheduleTitle: 'Choisissez votre horaire',
@@ -14981,27 +14986,27 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
 
   // Why Us Section
   ctLandingWhyFarraysTitle: "Pourquoi Farray's International Dance Center ?",
-  ctLandingWhyTitle1: "Professeurs formés à l'École Nationale d'Art de Cuba",
+  ctLandingWhyTitle1: 'Contemporain Lyrique et Afro Contemporain (Technique Cubaine ENA)',
   ctLandingWhyDesc1:
-    "Daniel Sené et Alejandro Miñoso combinent technique cubaine d'élite et pédagogie contemporaine. Vous apprendrez de professionnels qui ont dansé sur des scènes internationales.",
+    "Professeurs formés à la prestigieuse École Nationale d'Art de Cuba. Explorez du lyrique expressif à l'Afro Contemporain avec racines africaines et technique cubaine d'élite.",
   ctLandingWhyTitle2: 'Technique progressive adaptée à votre niveau',
   ctLandingWhyDesc2:
-    'Du lyrique débutant au sol & flow intermédiaire. Progressez à votre rythme avec une méthodologie qui respecte votre corps et améliore votre expression.',
+    'Du débutant à avancé en Contemporain Lyrique, Sol & Flow et Afro Contemporain. Progressez à votre rythme avec une méthodologie qui respecte votre corps et améliore votre expression.',
   ctLandingWhyTitle3: 'Académie reconnue par le CID UNESCO',
   ctLandingWhyDesc3:
     "Nous sommes un centre officiel du Conseil International de la Danse. Votre formation bénéficie d'un soutien international et d'un accès aux certifications officielles.",
   ctLandingWhyTitle4: 'Installations professionnelles au centre de Barcelone',
   ctLandingWhyDesc4:
-    'Salles avec plancher flottant professionnel, miroirs pleine longueur et climatisation. À 2 minutes du Métro Plaza España avec parking gratuit.',
+    'Salles avec sol en linoléum flottant professionnel, miroirs pleine longueur et climatisation. À 5 minutes de Plaza España et de Sants Estació.',
 
   // Testimonials
   ctLandingTestimonialsTitle: "Que disent ceux qui l'ont déjà vécu ?",
   ctLandingTestimonial1:
-    "Les cours de contemporain avec Daniel sont incroyables. Il vous aide à découvrir des mouvements que vous ne saviez pas que votre corps pouvait faire. L'ambiance est super accueillante.",
+    "Les cours de contemporain avec Daniel sont incroyables. Ils m'ont aidé à découvrir des mouvements que je ne savais pas que mon corps pouvait faire. De plus, l'ambiance à l'école est super accueillante.",
   ctLandingTestimonial2:
-    "Je n'avais jamais dansé et Alejandro m'a fait sentir à l'aise dès le premier moment. La technique au sol est exigeante mais très gratifiante.",
+    "Je n'avais jamais dansé et Alejandro m'a fait sentir à l'aise dès le premier moment. Le style est exigeant mais très gratifiant.",
   ctLandingTestimonial3:
-    "Après des années de yoga, je cherchais quelque chose de plus expressif. Le contemporain lyrique a été une découverte. J'adore la connexion corps-émotion.",
+    "Après des années de yoga, je cherchais quelque chose de différent. Le contemporain lyrique a été une découverte. J'adore la connexion corps-esprit et la fatigue que je ressens après les cours.",
 
   // FAQ Section
   ctLandingFaqTitle: 'Vous vous demandez peut-être...',
@@ -15018,15 +15023,15 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   ctLandingObjA4:
     "Des vêtements confortables permettant de larges mouvements (leggings, t-shirt). Le contemporain se danse pieds nus ou avec des chaussettes antidérapantes. Vous n'avez pas besoin d'investir dans quoi que ce soit de spécial pour votre premier cours.",
 
-  // Video Placeholder
+  // Video
+  ctLandingVideoTitle: 'Regardez un vrai cours de Contemporain',
   ctLandingVideoPlaceholder: 'Vidéo bientôt disponible',
 
   // Final CTA
   ctLandingFinalCTATitle: 'Votre corps a des histoires à raconter. Il est temps de les exprimer.',
   ctLandingFinalCTADesc:
     "Rejoignez des centaines d'élèves qui ont découvert la danse contemporaine à Barcelone. Votre premier cours est entièrement gratuit.",
-  ctLandingFinalCTAExtra:
-    "Les 10 premiers qui réservent cette semaine : séance d'orientation personnalisée incluse",
+  ctLandingFinalCTAExtra: '',
   ctLandingFinalTrust: 'Sans frais · Sans engagement · Places très limitées',
 
   // Footer
@@ -17830,4 +17835,203 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   'styleImages.cuerpoFit.alt': 'Cours de Cuerpo Fit à Barcelone - Fitness pour danseurs',
   'styleImages.bodyConditioning.alt':
     "Conditionnement Physique pour Danseurs à Barcelone - Farray's Center",
+
+  // =====================================================
+  // JORNADA PUERTAS ABIERTAS LANDING PAGE
+  // =====================================================
+
+  // SEO
+  jpaLandingPageTitle:
+    "Journée Portes Ouvertes | Farray's Center Barcelone | Cours de Bienvenue GRATUIT",
+  jpaLandingPageDescription:
+    'Venez à notre Journée Portes Ouvertes (du 7 au 31 janvier) et essayez GRATUITEMENT un cours de danse. Plus de 25 styles : Dancehall, Contemporain, Hip-Hop, Salsa, Bachata et bien plus. Sans engagement.',
+
+  // Hero Section
+  jpaLandingBadge: 'DU 7 AU 31 JANVIER',
+  jpaLandingHeadline: 'Essayez Un Cours de Danse GRATUITEMENT',
+  jpaLandingSubheadline:
+    'Venez nous rencontrer pendant notre Journée Portes Ouvertes et découvrez votre style de danse idéal. Plus de 25 styles différents vous attendent. Sans engagement.',
+  jpaLandingCTA: 'RÉSERVEZ VOTRE COURS DE BIENVENUE',
+  jpaLandingTrustText: 'Un cours gratuit · Sans engagement · Places limitées',
+  jpaLandingTrustActiveStudents: '1 500+ étudiants actifs',
+  jpaLandingTrustYearsExp: '8+ ans',
+  jpaLandingTrustLocationShort: 'Barcelone - Plaza España',
+  jpaLandingReviewsLabel: 'avis',
+  jpaLandingExclusiveBadge: 'JOURNÉE PORTES OUVERTES',
+  jpaLandingUrgencyBadge: 'DU 7 AU 31 JANVIER — Places limitées !',
+
+  // Logos Section
+  jpaLandingLogosTitle: 'Vous avez pu nous voir dans',
+  jpaLandingFestivalsText: 'Et aux meilleurs Festivals de Danse du Monde Entier',
+
+  // Stats
+  jpaLandingStatYears: "Années d'Expérience",
+  jpaLandingStatActive: 'Étudiants Actifs',
+  jpaLandingStatSatisfied: 'Élèves Satisfaits',
+
+  // Experience Section
+  jpaLandingExperienceTitle: 'Prêt(e) à découvrir votre style de danse ?',
+  jpaLandingExperienceDesc:
+    'Pendant la Journée Portes Ouvertes (du 7 au 31 janvier), vous pourrez essayer un cours de bienvenue entièrement gratuit. Latino, Urbain, Danse Classique ou Fitness : découvrez celui qui vous correspond le mieux. Des professeurs professionnels vous guideront à chaque pas.',
+
+  // Schedule Widget
+  jpaLandingScheduleTitle: 'Consultez tous nos horaires',
+  jpaLandingScheduleSubtitle:
+    'Choisissez le jour et le style qui vous intéresse pour votre cours de bienvenue gratuit.',
+
+  // Value Stack
+  jpaLandingValueTitle: "Qu'est-ce qui est inclus dans votre cours de bienvenue ?",
+  jpaLandingValueItem1: 'Un cours complet de 60 minutes dans le style de votre choix',
+  jpaLandingValuePrice1: 'Valeur : {price}€',
+  jpaLandingValueItem2: 'Des professeurs incroyables et des personnes encore meilleures',
+  jpaLandingValueItem3: 'Découvrez nos installations et notre ambiance',
+  jpaLandingValueItem4: 'Conseils personnalisés pour choisir votre style',
+  jpaLandingValueItem5: 'Accès à une réduction exclusive si vous décidez de vous inscrire',
+  jpaLandingValueIncluded: 'Inclus',
+  jpaLandingValueFree: 'GRATUIT',
+  jpaLandingValueTotal: 'VALEUR TOTALE :',
+  jpaLandingValueYourPrice: "VOTRE PRIX AUJOURD'HUI :",
+
+  // Offer Section
+  jpaLandingOfferTitle: 'Réduction exclusive · Temps limité',
+  jpaLandingOfferDesc:
+    'Si vous décidez de continuer après le cours de bienvenue, vous aurez accès à une réduction exclusive sur votre premier mois ou forfait. Valable uniquement pour les nouveaux élèves.',
+
+  // Schedule
+  jpaLandingLimitedSpots: 'Places limitées par cours pour garantir une attention personnalisée',
+
+  // Why Us Section
+  jpaLandingWhyFarraysTitle: "Pourquoi Farray's International Dance Center ?",
+  jpaLandingWhyTitle1: 'Plus de 25 styles de danse différents',
+  jpaLandingWhyDesc1:
+    'Latino, Urbain, Danse Classique, Fitness et bien plus. Dancehall, Hip-Hop, Contemporain, Salsa, Bachata, Ballet, Twerk, Heels... Trouvez le style qui vous correspond.',
+  jpaLandingWhyTitle2: 'Professeurs professionnels avec expérience internationale',
+  jpaLandingWhyDesc2:
+    'Notre équipe comprend des danseurs de programmes comme The Dancer, Street Dance 2 et des artistes qui ont travaillé avec les meilleures productions internationales.',
+  jpaLandingWhyTitle3: 'Académie reconnue par le CID UNESCO',
+  jpaLandingWhyDesc3:
+    'Nous sommes un centre officiel du Conseil International de la Danse. Votre formation a un soutien international et un accès aux certifications officielles.',
+  jpaLandingWhyTitle4: 'Installations professionnelles au centre de Barcelone',
+  jpaLandingWhyDesc4:
+    'Salles avec sol en linoléum flottant professionnel, miroirs pleine longueur et climatisation. À 5 minutes de Plaza España et de la gare de Sants.',
+
+  // Testimonials
+  jpaLandingTestimonialsTitle: 'Que disent nos élèves ?',
+  jpaLandingTestimonial1:
+    "Je suis venu(e) à une journée portes ouvertes sans savoir quel style choisir et j'ai fini par tomber amoureux(se) du Dancehall. Les profs sont incroyables et l'ambiance est super accueillante.",
+  jpaLandingTestimonial2:
+    "J'ai essayé plusieurs cours le même jour et j'ai choisi Hip-Hop et Contemporain. C'est génial de pouvoir explorer avant de décider.",
+  jpaLandingTestimonial3:
+    "Je n'avais jamais dansé et je me suis sentie à l'aise dès le premier moment. Maintenant je viens 3 fois par semaine. Farray's est devenue ma deuxième maison.",
+
+  // FAQs
+  jpaLandingFaqTitle: 'Questions fréquentes',
+  jpaLandingObjQ1: "Puis-je essayer plus d'un cours gratuit ?",
+  jpaLandingObjA1:
+    "Le cours de bienvenue gratuit est limité à un par personne. Si après l'avoir essayé vous souhaitez explorer d'autres styles avant de vous inscrire, vous pouvez le faire en payant le tarif cours à l'unité (20€). Ainsi vous pourrez vraiment découvrir quel style vous correspond le mieux.",
+  jpaLandingObjQ2: "Ai-je besoin d'une expérience préalable en danse ?",
+  jpaLandingObjA2:
+    'Non, nous avons des cours pour tous les niveaux. Nos professeurs adaptent les cours pour que débutants et danseurs expérimentés puissent profiter de la même manière.',
+  jpaLandingObjQ3: 'Quels vêtements dois-je porter ?',
+  jpaLandingObjA3:
+    'Des vêtements confortables qui vous permettent de bouger librement. Selon le style, vous pouvez danser avec des baskets, pieds nus ou avec des chaussettes. Nous vous guiderons lors de votre réservation.',
+  jpaLandingObjQ4: "Y a-t-il une obligation de s'inscrire après ?",
+  jpaLandingObjA4:
+    "Aucune. Le cours de bienvenue est entièrement gratuit et sans engagement. Nous voulons que vous connaissiez le centre et découvriez si c'est l'endroit idéal pour vous.",
+
+  // Video
+  jpaLandingVideoTitle: 'Découvrez notre centre',
+  jpaLandingVideoPlaceholder: 'Vidéo bientôt disponible',
+
+  // Final CTA
+  jpaLandingFinalCTATitle: "Le meilleur moment pour commencer à danser, c'est maintenant",
+  jpaLandingFinalCTADesc:
+    "Rejoignez la Journée Portes Ouvertes de Farray's Center (du 7 au 31 janvier) et découvrez votre passion pour la danse. Plus de 25 styles vous attendent.",
+  jpaLandingFinalCTAExtra: '',
+  jpaLandingFinalTrust: 'Un cours gratuit · Sans engagement · Réduction exclusive',
+
+  // Footer
+  jpaLandingFooterRights: 'Tous droits réservés',
+  jpaLandingFooterLegal: 'Mentions Légales',
+  jpaLandingFooterPrivacy: 'Politique de Confidentialité',
+  jpaLandingFooterTerms: 'Conditions Générales',
+
+  // Countdown
+  jpaLandingCountdownTitle: "L'événement se termine dans :",
+  jpaLandingCountdownExpires: 'Du 7 au 31 janvier - Places limitées',
+  jpaLandingCountdownDays: 'Jours',
+  jpaLandingCountdownHours: 'Heures',
+  jpaLandingCountdownMinutes: 'Min',
+  jpaLandingCountdownSeconds: 'Sec',
+
+  // Exit Intent Popup
+  jpaExitIntent_title: 'Vous partez sans réserver votre cours ?',
+  jpaExitIntent_description:
+    "Ne manquez pas l'opportunité d'essayer un cours de danse GRATUITEMENT. La Journée Portes Ouvertes (du 7 au 31 janvier) est un événement spécial avec des places limitées.",
+  jpaExitIntent_ctaExplore: 'Voir les cours disponibles',
+  jpaExitIntent_ctaDancehall: 'Réserver mon cours de bienvenue',
+  jpaExitIntent_ctaClose: 'Fermer',
+  jpaExitIntent_hint: 'Dancehall, Hip-Hop, Contemporain, Salsa, Bachata, Ballet et bien plus...',
+
+  // =====================================================
+  // JORNADA PUERTAS ABIERTAS LEAD MODAL
+  // =====================================================
+
+  // Modal Header
+  jpaLeadModal_title: 'Réservez votre Cours de Bienvenue Gratuit',
+  jpaLeadModal_subtitle: 'Journée Portes Ouvertes : du 7 au 31 janvier',
+
+  // Micro Commitment
+  jpaLeadModal_microCommit_question: 'Aimeriez-vous essayer un cours de danse GRATUIT ?',
+  jpaLeadModal_microCommit_yes: 'Oui, je veux mon cours gratuit !',
+  jpaLeadModal_microCommit_curious: "Je veux juste plus d'informations",
+
+  jpaLeadModal_intro:
+    'Remplissez le formulaire et recevez toutes les informations pour réserver votre cours de bienvenue gratuit.',
+
+  // Benefits
+  jpaLeadModal_benefits_title: 'Ce que vous recevrez :',
+  jpaLeadModal_benefit1: 'Confirmation de votre cours de bienvenue par WhatsApp',
+  jpaLeadModal_benefit2: 'Horaires disponibles pour choisir votre cours',
+  jpaLeadModal_benefit3: 'Informations sur la réduction exclusive',
+  jpaLeadModal_benefit4: 'Indications pour arriver au centre',
+
+  // Form Fields - Labels
+  jpaLeadModal_firstName: 'Prénom',
+  jpaLeadModal_lastName: 'Nom',
+  jpaLeadModal_email: 'Email',
+  jpaLeadModal_phone: 'Téléphone (WhatsApp)',
+  jpaLeadModal_phonePlaceholder: '612 345 678',
+
+  // Form Fields - Field Labels (with asterisk indicator)
+  jpaLeadModal_field_firstName: 'Prénom',
+  jpaLeadModal_field_lastName: 'Nom de famille',
+  jpaLeadModal_field_email: 'Adresse email',
+  jpaLeadModal_field_phone: 'Téléphone (WhatsApp)',
+
+  // Form Fields - Placeholders
+  jpaLeadModal_placeholder_firstName: 'Votre prénom',
+  jpaLeadModal_placeholder_lastName: 'Votre nom de famille',
+  jpaLeadModal_placeholder_email: 'vous@email.com',
+  jpaLeadModal_placeholder_phone: '612 345 678',
+
+  // Consent
+  jpaLeadModal_consent_text:
+    "J'accepte de recevoir des informations sur mon cours de bienvenue et la politique de confidentialité",
+  jpaLeadModal_consent_link: 'politique de confidentialité',
+
+  // Submit
+  jpaLeadModal_submit: 'Réserver Mon Cours Gratuit',
+  jpaLeadModal_submitLoading: 'Traitement...',
+
+  // Success
+  jpaLeadModal_success_title: 'Cours Réservé !',
+  jpaLeadModal_success_message:
+    'Vous recevrez un WhatsApp avec tous les détails pour votre cours de bienvenue. On vous attend à la Journée Portes Ouvertes !',
+  jpaLeadModal_success_cta: 'Fermer',
+
+  // Error
+  jpaLeadModal_error_title: 'Erreur de traitement',
+  jpaLeadModal_error_message: 'Une erreur est survenue. Veuillez réessayer.',
+  jpaLeadModal_error_cta: 'Réessayer',
 };

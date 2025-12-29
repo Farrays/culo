@@ -12836,7 +12836,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
 
   twLandingOfferTitle: 'Només per temps limitat',
   twLandingOfferDesc:
-    "Reserva la teva classe ara i si decideixes apuntar-te el mateix dia, rebràs una oferta especial de benvinguda exclusiva només vàlida després de la classe. Volem que formis part de Farray's només si connectes amb la nostra energia… però si ho fas, que no perdis el temps.",
+    'Reserva la teva classe ara i si decideixes apuntar-te el mateix dia, rebràs una oferta especial de benvinguda exclusiva només vàlida després de la classe.',
 
   twLandingScheduleTitle: 'Tria el teu horari',
   twLandingScheduleSubtitle: 'Classes disponibles a Carrer Entença nº 100, Barcelona',
@@ -12860,11 +12860,11 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
 
   twLandingTestimonialsTitle: 'Què diuen les que ja ho han viscut?',
   twLandingTestimonial1:
-    "Vaig venir morta de vergonya pensant que no sabria moure res. Vaig sortir sentint-me més segura que mai. Les profes són increïbles i l'ambient és pur amor.",
+    "Vaig venir morta de vergonya pensant que aquest estil no era per a mi. Vaig sortir flipant. La Sandra és increïble i l'ambient és pur amor.",
   twLandingTestimonial2:
-    "El Twerk m'ha canviat la vida. No només és un entrenament brutal per a glutis i core, és teràpia pura. Cada classe surto renovada.",
+    "El Twerk m'ha canviat la vida. No només és un entrenament, és teràpia pura. Cada classe surto renovada.",
   twLandingTestimonial3:
-    "Mai vaig pensar que m'atreviria a fer Twerk. Ara és la meva classe preferida de la setmana. El grup és meravellós i les profes et fan sentir com a casa.",
+    "Mai vaig pensar que m'atreviria a fer Twerk. Ara és la meva classe preferida de la setmana. El grup és meravellós i la Sandra em fa sentir com a casa.",
 
   twLandingFaqTitle: 'Potser et preguntes...',
   twLandingObjQ1: 'I si mai he fet Twerk ni res semblant?',
@@ -13211,9 +13211,9 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   hhrLandingValueTotal: 'VALOR TOTAL:',
   hhrLandingValueYourPrice: 'EL TEU PREU AVUI:',
   hhrLandingValueFree: 'GRATIS',
-  hhrLandingOfferTitle: 'Només per temps limitat',
+  hhrLandingOfferTitle: 'Descompte exclusiu · Només per temps limitat',
   hhrLandingOfferDesc:
-    'Aquesta classe de benvinguda gratuïta és la nostra manera de presentar-te el Hip Hop Reggaeton. Sense pressions, sense compromís.',
+    'Si decideixes continuar després de la classe de benvinguda, tindràs accés a un descompte exclusiu en la teva primera mensualitat o paquet. Només vàlid per a nous alumnes.',
   hhrLandingScheduleTitle: 'Tria el teu horari',
   hhrLandingScheduleSubtitle: 'Totes les classes a Carrer Entença 100, Barcelona',
   hhrLandingReserveBtn: 'Reservar',
@@ -13234,11 +13234,11 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
     "A només 5 minuts de Plaça Espanya i Estació de Sants. 700m² d'instal·lacions premium amb terra flotant i equipament professional.",
   hhrLandingTestimonialsTitle: 'Què diuen els qui ja ho han viscut?',
   hhrLandingTestimonial1:
-    "Les classes de Charlie són increïbles. Barreja Hip Hop i Reggaeton d'una manera que mai havia vist. Aprens flow de veritat i l'energia és brutal.",
+    "Les classes de Charlie són increïbles. Aprens flow de veritat i l'energia i bon rotllo de l'acadèmia és brutal.",
   hhrLandingTestimonial2:
-    "Mai havia ballat res urbà i ara no puc parar. Charlie et fa sentir que pots amb tot. L'ambient és genial.",
+    "Mai havia ballat res urbà i ara no puc parar. És el meu moment preferit de la setmana. L'ambient és genial i les coreos són foc.",
   hhrLandingTestimonial3:
-    "El millor d'aquesta acadèmia és que t'ensenyen la tècnica real però també l'actitud. Després d'unes setmanes ja em sentia amb swagger.",
+    'El millor de les classes amb Charlie, a més de tot el que aprenem, és la bona vibra que es respira.',
   hhrLandingFaqTitle: 'Potser et preguntes...',
   hhrLandingObjQ1: 'I si mai he ballat Hip Hop ni Reggaeton?',
   hhrLandingObjA1:
@@ -13262,6 +13262,8 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
     'El flow és dins teu. Només necessites la classe correcta per alliberar-lo.',
   hhrLandingFinalCTADesc:
     'Reserva la teva classe de benvinguda GRATIS ara i descobreix el que Hip Hop + Reggaeton poden fer per tu.',
+  hhrLandingFinalCTAExtra:
+    "Charlie Breezy t'espera al cor de Barcelona. El teu cos ja coneix el ritme.",
   hhrLandingFinalTrust: 'Sense cost · Sense compromís · Places molt limitades',
   hhrLandingUrgencyReminder: 'Recorda: les places són molt limitades cada setmana',
   hhrLandingFooterTagline:
@@ -13452,6 +13454,8 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   hhLandingFinalCTATitle: 'Preparat per descobrir el veritable Hip Hop?',
   hhLandingFinalCTADesc:
     'Reserva la teva classe de benvinguda gratuïta ara i comença el teu viatge al street dance amb un jutge internacional de Hip Hop.',
+  hhLandingFinalCTAExtra:
+    'Descompte exclusiu · Només per temps limitat\n\nSi decideixes continuar després de la classe de benvinguda, tindràs accés a un descompte exclusiu en la teva primera mensualitat o paquet. Només vàlid per a nous alumnes.',
   hhLandingFinalTrust: 'Sense cost · Sense compromís · Places molt limitades',
   hhLandingUrgencyReminder: 'Recorda: les places són molt limitades cada setmana',
 
@@ -13570,7 +13574,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   abLandingBadge: 'CLASSE GRATIS DE BENVINGUDA',
   abLandingHeadline: "Sent l'Energia d'Àfrica amb Afrobeats",
   abLandingSubheadline:
-    "Descobreix els ritmes més vibrants del continent africà. Afrobeats, Amapiano, Afrodance... moviments que alliberen el teu cos i connecten amb l'alegria més pura.",
+    "Entra al nou any movent-te intensament al ritme d'Àfrica i descobreix els balls més divertits d'aquest continent, mentre compenses els excessos de les festes amb un gran somriure a la cara.",
   abLandingCTA: 'RESERVA LA TEVA CLASSE DE BENVINGUDA ARA',
   abLandingTrustText: 'Sense cost · Sense compromís · Places molt limitades',
   abLandingTrustActiveStudents: '1.500+ alumnes actius',
@@ -13591,9 +13595,9 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   abLandingStatSatisfied: 'Alumnes Satisfets',
 
   // Experience Section
-  abLandingExperienceTitle: 'Preparat per sentir la vibra africana?',
+  abLandingExperienceTitle: 'Vols viatjar a Àfrica sense sortir de Barcelona?',
   abLandingExperienceDesc:
-    "L'Afrobeats és pura energia, alegria i connexió amb les arrels africanes. A cada classe aprendràs moviments autèntics d'estils com Afrodance, Amapiano i Azonto, mentre deixes anar el cos i et diverteixes com mai abans.",
+    "Aquesta no és una classe qualsevol. És el teu accés a una experiència exclusiva i cultural, on et guiem pas a pas perquè descobreixis el veritable sabor de l'Afrodance. Primera vegada amb nosaltres? Aquesta és la teva ocasió: una classe de Benvinguda d'Afrodance totalment gratis, sense cost, sense compromís i amb places limitades. Una benvinguda amb tota la diversió que mereixes.",
 
   // Value Stack
   abLandingValueTitle: 'Què inclou aquesta experiència?',
@@ -13612,7 +13616,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Offer Section
   abLandingOfferTitle: 'Només per temps limitat',
   abLandingOfferDesc:
-    'Si decideixes continuar després de la classe de benvinguda, tindràs accés a un descompte exclusiu a la teva primera mensualitat o bo. Només vàlid per a nous alumnes.',
+    'Si decideixes continuar després de la classe de benvinguda, tindràs accés a un descompte exclusiu a la teva primera mensualitat o paquet. Només vàlid per a nous alumnes.',
 
   // Schedule Section
   abLandingScheduleTitle: 'Tria el teu horari',
@@ -13634,7 +13638,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
     "Formem part del Consell Internacional de Dansa de la UNESCO, garantia de qualitat i excel·lència en l'ensenyament de dansa africana.",
   abLandingWhyTitle4: 'Ubicació immillorable',
   abLandingWhyDesc4:
-    'A només 2 minuts del metro Plaça Espanya a Barcelona. Fàcil accés en transport públic i pàrquing proper.',
+    'A només 5 minuts del metro Plaça Espanya a Barcelona. Fàcil accés en transport públic i pàrquing proper.',
 
   // Testimonials
   abLandingTestimonialsTitle: 'Què diuen els qui ja ho han viscut?',
@@ -13674,6 +13678,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   abLandingFinalCTATitle: "L'energia d'Àfrica t'està esperant. Véns a descobrir-la?",
   abLandingFinalCTADesc:
     "Reserva ara la teva classe de benvinguda gratuïta i descobreix per què centenars d'alumnes han trobat en l'Afrobeats la seva forma preferida d'alliberar energia i gaudir.",
+  abLandingFinalCTAExtra: `Àfrica es mou. Et mous amb ella?`,
   abLandingFinalTrust: 'Sense cost · Sense compromís · Places molt limitades',
   abLandingUrgencyReminder: 'Recorda: les places són molt limitades cada setmana',
 
@@ -14711,7 +14716,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Experience Section
   ctLandingExperienceTitle: 'Preparat/da per explorar el moviment?',
   ctLandingExperienceDesc:
-    "La dansa contemporània és llibertat d'expressió, connexió ment-cos i tècnica fluida. A la teva primera classe descobriràs un espai on cada moviment explica una història, guiat per professors formats a la prestigiosa Escola Nacional d'Art de Cuba.",
+    "La dansa contemporània és llibertat d'expressió, connexió ment-cos i tècnica fluida. A la teva primera classe descobriràs un espai on cada moviment explica una història, guiat per professors formats a les més prestigioses escoles de dansa de Cuba.",
 
   // Value Stack
   ctLandingValueTitle: 'Què inclou aquesta experiència?',
@@ -14727,9 +14732,9 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   ctLandingValueFree: 'GRATIS',
 
   // Offer Section
-  ctLandingOfferTitle: 'Només per temps limitat',
+  ctLandingOfferTitle: 'Descompte exclusiu per a nous alumnes',
   ctLandingOfferDesc:
-    'Les places per a la classe de benvinguda són molt limitades cada setmana. Reserva ara per assegurar el teu lloc i començar el teu viatge en la dansa contemporània.',
+    'Si decideixes continuar després de la classe de benvinguda, tindràs accés a un descompte exclusiu en la teva primera mensualitat o paquet. Només vàlid per a nous alumnes.',
 
   // Schedule
   ctLandingScheduleTitle: 'Tria el teu horari',
@@ -14738,27 +14743,27 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
 
   // Why Us Section
   ctLandingWhyFarraysTitle: "Per què Farray's International Dance Center?",
-  ctLandingWhyTitle1: "Professors formats a l'Escola Nacional d'Art de Cuba",
+  ctLandingWhyTitle1: 'Contemporani Líric i Afro Contemporani (Tècnica Cubana ENA)',
   ctLandingWhyDesc1:
-    "Daniel Sené i Alejandro Miñoso combinen tècnica cubana d'elit amb pedagogia contemporània. Aprendràs de professionals que han ballat en escenaris internacionals.",
+    "Professors formats a la prestigiosa Escola Nacional d'Art de Cuba. Explora des del líric expressiu fins a l'Afro Contemporani amb arrels africanes i tècnica cubana d'elit.",
   ctLandingWhyTitle2: 'Tècnica progressiva adaptada al teu nivell',
   ctLandingWhyDesc2:
-    'Des de líric principiant fins a terra & flow intermedi. Avança al teu ritme amb una metodologia que respecta el teu cos i potencia la teva expressió.',
+    'Des de principiant fins a avançat en Contemporani Líric, Terra & Flow i Afro Contemporani. Avança al teu ritme amb una metodologia que respecta el teu cos i potencia la teva expressió.',
   ctLandingWhyTitle3: 'Acadèmia reconeguda pel CID UNESCO',
   ctLandingWhyDesc3:
     'Som centre oficial del Consell Internacional de la Dansa. La teva formació té suport internacional i accés a certificacions oficials.',
   ctLandingWhyTitle4: 'Instal·lacions professionals al centre de Barcelona',
   ctLandingWhyDesc4:
-    'Sales amb terra flotant professional, miralls de cos sencer i climatització. A 2 minuts del Metro Plaça Espanya amb parking gratuït.',
+    'Sales amb terra de linòleum flotant professional, miralls de cos sencer i climatització. A 5 minuts de Plaça Espanya i de Sants Estació.',
 
   // Testimonials
   ctLandingTestimonialsTitle: 'Què diuen els qui ja ho han viscut?',
   ctLandingTestimonial1:
-    "Les classes de contemporani amb Daniel són increïbles. T'ajuda a descobrir moviments que no sabies que el teu cos podia fer. L'ambient és súper acollidor.",
+    "Les classes de contemporani amb Daniel són increïbles. M'han ajudat a descobrir moviments que no sabia que el meu cos podia fer. A més, l'ambient a l'escola és súper acollidor.",
   ctLandingTestimonial2:
-    "Mai havia ballat i l'Alejandro em va fer sentir còmoda des del primer moment. La tècnica de terra és desafiant però molt gratificant.",
+    "Mai havia ballat i l'Alejandro em va fer sentir còmoda des del primer moment. L'estil és desafiant però molt gratificant.",
   ctLandingTestimonial3:
-    "Després d'anys fent yoga buscava alguna cosa més expressiva. El contemporani líric ha estat un descobriment. M'encanta la connexió cos-emoció.",
+    "Després d'anys fent yoga buscava alguna cosa diferent. El contemporani líric ha estat un descobriment. M'encanta la connexió cos-ment i el cansada que surto de les classes.",
 
   // FAQ Section
   ctLandingFaqTitle: 'Potser et preguntes...',
@@ -14775,15 +14780,15 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   ctLandingObjA4:
     'Roba còmoda que permeti moviment ampli (malles, samarreta). El contemporani es balla descalç o amb mitjons antilliscants. No necessites invertir en res especial per a la teva primera classe.',
 
-  // Video Placeholder
+  // Video
+  ctLandingVideoTitle: 'Mira una classe real de Contemporani',
   ctLandingVideoPlaceholder: 'Vídeo properament',
 
   // Final CTA
   ctLandingFinalCTATitle: "El teu cos té històries per explicar. És hora d'expressar-les.",
   ctLandingFinalCTADesc:
     "Uneix-te a centenars d'alumnes que han descobert la dansa contemporània a Barcelona. La teva primera classe és completament gratis.",
-  ctLandingFinalCTAExtra:
-    "Primers 10 que reservin aquesta setmana: sessió d'orientació personalitzada inclosa",
+  ctLandingFinalCTAExtra: '',
   ctLandingFinalTrust: 'Sense cost · Sense compromís · Places molt limitades',
 
   // Footer
@@ -17752,4 +17757,203 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   baLeadModal_error_title: 'Error al processar',
   baLeadModal_error_message: 'Hi ha hagut un error. Si us plau, torna-ho a intentar.',
   baLeadModal_error_cta: 'Reintentar',
+
+  // =====================================================
+  // JORNADA PUERTAS ABIERTAS LANDING PAGE
+  // =====================================================
+
+  // SEO
+  jpaLandingPageTitle:
+    "Jornada de Portes Obertes | Farray's Center Barcelona | Classe de Benvinguda GRATIS",
+  jpaLandingPageDescription:
+    'Vine a la nostra Jornada de Portes Obertes (del 7 al 31 de gener) i prova GRATIS una classe de ball. Més de 25 estils: Dancehall, Contemporani, Hip-Hop, Salsa, Bachata i molt més. Sense compromís.',
+
+  // Hero Section
+  jpaLandingBadge: 'DEL 7 AL 31 DE GENER',
+  jpaLandingHeadline: 'Prova Una Classe de Ball GRATIS',
+  jpaLandingSubheadline:
+    "Vine a conèixer-nos durant la nostra Jornada de Portes Obertes i descobreix el teu estil de ball ideal. Més de 25 estils diferents t'esperen. Sense compromís.",
+  jpaLandingCTA: 'RESERVA LA TEVA CLASSE DE BENVINGUDA',
+  jpaLandingTrustText: 'Una classe gratis · Sense compromís · Places limitades',
+  jpaLandingTrustActiveStudents: '1.500+ alumnes actius',
+  jpaLandingTrustYearsExp: '8+ anys',
+  jpaLandingTrustLocationShort: 'Barcelona - Plaça Espanya',
+  jpaLandingReviewsLabel: 'ressenyes',
+  jpaLandingExclusiveBadge: 'JORNADA DE PORTES OBERTES',
+  jpaLandingUrgencyBadge: 'DEL 7 AL 31 DE GENER — Places limitades!',
+
+  // Logos Section
+  jpaLandingLogosTitle: 'Ens has pogut veure a',
+  jpaLandingFestivalsText: 'I als millors Festivals de Dansa de Tot El Món',
+
+  // Stats
+  jpaLandingStatYears: "Anys d'Experiència",
+  jpaLandingStatActive: 'Estudiants Actius',
+  jpaLandingStatSatisfied: 'Alumnes Satisfets',
+
+  // Experience Section
+  jpaLandingExperienceTitle: 'Preparat/da per descobrir el teu estil de ball?',
+  jpaLandingExperienceDesc:
+    'Durant la Jornada de Portes Obertes (del 7 al 31 de gener), podràs provar una classe de benvinguda completament gratis. Llatí, Urbà, Dansa Clàssica o Fitness: descobreix quin connecta millor amb tu. Professors professionals et guiaran a cada pas.',
+
+  // Schedule Widget
+  jpaLandingScheduleTitle: 'Consulta tots els nostres horaris',
+  jpaLandingScheduleSubtitle:
+    "Tria el dia i estil que més t'interessi per a la teva classe de benvinguda gratuïta.",
+
+  // Value Stack
+  jpaLandingValueTitle: 'Què inclou la teva classe de benvinguda?',
+  jpaLandingValueItem1: "Una classe completa de 60 minuts de l'estil que triïs",
+  jpaLandingValuePrice1: 'Valor: {price}€',
+  jpaLandingValueItem2: 'Increïbles professors i millors persones',
+  jpaLandingValueItem3: 'Descobreix les nostres instal·lacions i el nostre ambient',
+  jpaLandingValueItem4: 'Assessorament personalitzat per triar el teu estil',
+  jpaLandingValueItem5: "Accés a descompte exclusiu si decideixes inscriure't",
+  jpaLandingValueIncluded: 'Inclòs',
+  jpaLandingValueFree: 'GRATIS',
+  jpaLandingValueTotal: 'VALOR TOTAL:',
+  jpaLandingValueYourPrice: 'EL TEU PREU AVUI:',
+
+  // Offer Section
+  jpaLandingOfferTitle: 'Descompte exclusiu · Només per temps limitat',
+  jpaLandingOfferDesc:
+    'Si decideixes continuar després de la classe de benvinguda, tindràs accés a un descompte exclusiu en la teva primera mensualitat o bo. Només vàlid per a nous alumnes.',
+
+  // Schedule
+  jpaLandingLimitedSpots: 'Places limitades per classe per garantir atenció personalitzada',
+
+  // Why Us Section
+  jpaLandingWhyFarraysTitle: "Per què Farray's International Dance Center?",
+  jpaLandingWhyTitle1: 'Més de 25 estils de ball diferents',
+  jpaLandingWhyDesc1:
+    "Llatí, Urbà, Dansa Clàssica, Fitness i molt més. Dancehall, Hip-Hop, Contemporani, Salsa, Bachata, Ballet, Twerk, Heels... Troba l'estil que connecta amb tu.",
+  jpaLandingWhyTitle2: 'Professors professionals amb experiència internacional',
+  jpaLandingWhyDesc2:
+    'El nostre equip inclou ballarins de programes com The Dancer, Street Dance 2 i artistes que han treballat amb les millors produccions internacionals.',
+  jpaLandingWhyTitle3: 'Acadèmia reconeguda pel CID UNESCO',
+  jpaLandingWhyDesc3:
+    'Som centre oficial del Consell Internacional de la Dansa. La teva formació té suport internacional i accés a certificacions oficials.',
+  jpaLandingWhyTitle4: 'Instal·lacions professionals al centre de Barcelona',
+  jpaLandingWhyDesc4:
+    'Sales amb terra de linòleum flotant professional, miralls de cos sencer i climatització. A 5 minuts de Plaça Espanya i de Sants Estació.',
+
+  // Testimonials
+  jpaLandingTestimonialsTitle: 'Què diuen els nostres alumnes?',
+  jpaLandingTestimonial1:
+    "Vaig venir a una jornada de portes obertes sense saber quin estil triar i vaig acabar enamorant-me del Dancehall. Els profes són increïbles i l'ambient és súper acollidor.",
+  jpaLandingTestimonial2:
+    'Vaig provar diverses classes el mateix dia i em vaig quedar amb Hip-Hop i Contemporani. És genial poder explorar abans de decidir.',
+  jpaLandingTestimonial3:
+    "Mai havia ballat i em vaig sentir còmoda des del primer moment. Ara vinc 3 cops per setmana. Farray's s'ha convertit en la meva segona llar.",
+
+  // FAQs
+  jpaLandingFaqTitle: 'Preguntes freqüents',
+  jpaLandingObjQ1: "Puc provar més d'una classe gratis?",
+  jpaLandingObjA1:
+    "La classe de benvinguda gratuïta és una per persona. Si després de provar-la vols explorar altres estils abans d'inscriure't, pots fer-ho abonant el preu de classe solta (20€). Així podràs descobrir realment quin estil s'adapta millor a tu.",
+  jpaLandingObjQ2: 'Necessito experiència prèvia en ball?',
+  jpaLandingObjA2:
+    'No, tenim classes per a tots els nivells. Els nostres professors adapten les classes perquè principiants i ballarins amb experiència puguin gaudir per igual.',
+  jpaLandingObjQ3: 'Quina roba necessito portar?',
+  jpaLandingObjA3:
+    "Roba còmoda que et permeti moure't amb llibertat. Depenent de l'estil, pots ballar amb sabatilles esportives, descalç o amb mitjons. T'orientem quan reservis.",
+  jpaLandingObjQ4: "Hi ha obligació d'inscriure's després?",
+  jpaLandingObjA4:
+    'Cap. La classe de benvinguda és completament gratuïta i sense compromís. Volem que coneguis el centre i descobreixis si és el lloc ideal per a tu.',
+
+  // Video
+  jpaLandingVideoTitle: 'Coneix el nostre centre',
+  jpaLandingVideoPlaceholder: 'Vídeo pròximament',
+
+  // Final CTA
+  jpaLandingFinalCTATitle: 'El millor moment per començar a ballar és ara',
+  jpaLandingFinalCTADesc:
+    "Uneix-te a la Jornada de Portes Obertes de Farray's Center (del 7 al 31 de gener) i descobreix la teva passió pel ball. Més de 25 estils t'esperen.",
+  jpaLandingFinalCTAExtra: '',
+  jpaLandingFinalTrust: 'Una classe gratis · Sense compromís · Descompte exclusiu',
+
+  // Footer
+  jpaLandingFooterRights: 'Tots els drets reservats',
+  jpaLandingFooterLegal: 'Avís Legal',
+  jpaLandingFooterPrivacy: 'Política de Privacitat',
+  jpaLandingFooterTerms: 'Termes i Condicions',
+
+  // Countdown
+  jpaLandingCountdownTitle: 'La jornada acaba en:',
+  jpaLandingCountdownExpires: 'Del 7 al 31 de gener - Places limitades',
+  jpaLandingCountdownDays: 'Dies',
+  jpaLandingCountdownHours: 'Hores',
+  jpaLandingCountdownMinutes: 'Min',
+  jpaLandingCountdownSeconds: 'Seg',
+
+  // Exit Intent Popup
+  jpaExitIntent_title: "Te'n vas sense reservar la teva classe?",
+  jpaExitIntent_description:
+    "No perdis l'oportunitat de provar una classe de ball GRATIS. La Jornada de Portes Obertes (del 7 al 31 de gener) és un esdeveniment especial amb places limitades.",
+  jpaExitIntent_ctaExplore: 'Veure classes disponibles',
+  jpaExitIntent_ctaDancehall: 'Reservar la meva classe de benvinguda',
+  jpaExitIntent_ctaClose: 'Tancar',
+  jpaExitIntent_hint: 'Dancehall, Hip-Hop, Contemporani, Salsa, Bachata, Ballet i molt més...',
+
+  // =====================================================
+  // JORNADA PUERTAS ABIERTAS LEAD MODAL
+  // =====================================================
+
+  // Modal Header
+  jpaLeadModal_title: 'Reserva la teva Classe de Benvinguda Gratuïta',
+  jpaLeadModal_subtitle: 'Jornada de Portes Obertes: del 7 al 31 de gener',
+
+  // Micro Commitment
+  jpaLeadModal_microCommit_question: "T'agradaria provar una classe de ball GRATIS?",
+  jpaLeadModal_microCommit_yes: 'Sí, vull la meva classe gratis!',
+  jpaLeadModal_microCommit_curious: 'Només vull més informació',
+
+  jpaLeadModal_intro:
+    'Completa el formulari i rep tota la informació per reservar la teva classe de benvinguda gratuïta.',
+
+  // Benefits
+  jpaLeadModal_benefits_title: 'Què rebràs:',
+  jpaLeadModal_benefit1: 'Confirmació de la teva classe de benvinguda per WhatsApp',
+  jpaLeadModal_benefit2: 'Horaris disponibles per triar la teva classe',
+  jpaLeadModal_benefit3: 'Informació sobre el descompte exclusiu',
+  jpaLeadModal_benefit4: 'Indicacions per arribar al centre',
+
+  // Form Fields - Labels
+  jpaLeadModal_firstName: 'Nom',
+  jpaLeadModal_lastName: 'Cognoms',
+  jpaLeadModal_email: 'Email',
+  jpaLeadModal_phone: 'Telèfon (WhatsApp)',
+  jpaLeadModal_phonePlaceholder: '612 345 678',
+
+  // Form Fields - Field Labels (with asterisk indicator)
+  jpaLeadModal_field_firstName: 'Nom',
+  jpaLeadModal_field_lastName: 'Cognoms',
+  jpaLeadModal_field_email: 'Correu electrònic',
+  jpaLeadModal_field_phone: 'Telèfon (WhatsApp)',
+
+  // Form Fields - Placeholders
+  jpaLeadModal_placeholder_firstName: 'El teu nom',
+  jpaLeadModal_placeholder_lastName: 'Els teus cognoms',
+  jpaLeadModal_placeholder_email: 'tu@email.com',
+  jpaLeadModal_placeholder_phone: '612 345 678',
+
+  // Consent
+  jpaLeadModal_consent_text:
+    'Accepto rebre informació sobre la meva classe de benvinguda i la política de privacitat',
+  jpaLeadModal_consent_link: 'política de privacitat',
+
+  // Submit
+  jpaLeadModal_submit: 'Reservar La Meva Classe Gratis',
+  jpaLeadModal_submitLoading: 'Processant...',
+
+  // Success
+  jpaLeadModal_success_title: 'Classe Reservada!',
+  jpaLeadModal_success_message:
+    "Rebràs un WhatsApp amb tots els detalls per a la teva classe de benvinguda. T'esperem a la Jornada de Portes Obertes!",
+  jpaLeadModal_success_cta: 'Tancar',
+
+  // Error
+  jpaLeadModal_error_title: 'Error al processar',
+  jpaLeadModal_error_message: 'Hi ha hagut un error. Si us plau, torna-ho a intentar.',
+  jpaLeadModal_error_cta: 'Reintentar',
 };
