@@ -42,12 +42,18 @@ const BunnyEmbed: React.FC<BunnyEmbedProps> = ({
   const hasFunctionalConsent = preferences?.functional ?? false;
 
   const [isLoaded, setIsLoaded] = useState(autoplay);
-  const [thumbnailError, setThumbnailError] = useState(false);
+  // When autoplay is true, skip thumbnail loading entirely to avoid 404 errors
+  // Bunny.net videos may not have thumbnails generated, and we don't need them for autoplay
+  const [thumbnailError, setThumbnailError] = useState(autoplay);
 
   // Use custom thumbnail or generate from Bunny's embed thumbnail endpoint
   // Format: https://video.bunnycdn.com/play/{libraryId}/{videoId}/thumbnail.jpg
+  // Only compute URL if we might use it (not autoplay mode without custom thumbnail)
   const thumbnailUrl =
-    customThumbnailUrl || `https://video.bunnycdn.com/play/${libraryId}/${videoId}/thumbnail.jpg`;
+    autoplay && !customThumbnailUrl
+      ? '' // Don't generate URL if autoplay and no custom thumbnail - avoids 404
+      : customThumbnailUrl ||
+        `https://video.bunnycdn.com/play/${libraryId}/${videoId}/thumbnail.jpg`;
 
   // Aspect ratio styles
   const aspectRatioStyle = aspectRatio === '9:16' ? '9/16' : aspectRatio === '1:1' ? '1/1' : '16/9';
