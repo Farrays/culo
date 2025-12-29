@@ -363,6 +363,123 @@ export const CourseSchema: React.FC<CourseSchemaProps> = props => {
   );
 };
 
+/**
+ * Schedule item for CourseSchemaEnterprise
+ * Represents a single class schedule with day, time, and instructor
+ */
+export interface CourseScheduleItem {
+  /** Translated class name */
+  className: string;
+  /** Day key (monday, tuesday, etc.) - will be converted to schema.org format */
+  dayKey: string;
+  /** Time range in format "HH:MM - HH:MM" */
+  time: string;
+  /** Instructor name */
+  teacher: string;
+}
+
+/**
+ * Props for CourseSchemaEnterprise - Enterprise-level course schema with hasCourseInstance
+ * Includes detailed schedule information for each class instance
+ */
+interface CourseSchemaEnterpriseProps {
+  /** Course name */
+  name: string;
+  /** Course description */
+  description: string;
+  /** Page URL for @id */
+  pageUrl: string;
+  /** Base URL of the site */
+  baseUrl: string;
+  /** Array of schedule items - each becomes a CourseInstance */
+  schedules: CourseScheduleItem[];
+}
+
+/**
+ * Enterprise Course Schema with hasCourseInstance for each schedule.
+ * Generates rich structured data with:
+ * - Individual CourseInstance for each class schedule
+ * - courseSchedule with day, start/end times, and timezone
+ * - instructor information
+ * - location with full address
+ * - offers with availability
+ *
+ * @example
+ * ```tsx
+ * <CourseSchemaEnterprise
+ *   name="Salsa Lady Style - Método Farray"
+ *   description="Clases de Salsa Lady Style en Barcelona"
+ *   pageUrl="https://www.farrayscenter.com/es/clases/salsa-lady-style-barcelona"
+ *   baseUrl="https://www.farrayscenter.com"
+ *   schedules={[
+ *     { className: 'Salsa Lady Style Intermedio', dayKey: 'monday', time: '19:00 - 20:00', teacher: 'Yunaisy Farray' },
+ *     { className: 'Salsa Lady Style Básico', dayKey: 'wednesday', time: '19:00 - 20:00', teacher: 'Yunaisy Farray' },
+ *   ]}
+ * />
+ * ```
+ */
+export const CourseSchemaEnterprise: React.FC<CourseSchemaEnterpriseProps> = ({
+  name,
+  description,
+  pageUrl,
+  baseUrl,
+  schedules,
+}) => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    '@id': `${pageUrl}#course`,
+    name,
+    description,
+    provider: {
+      '@type': 'DanceSchool',
+      '@id': `${baseUrl}/#organization`,
+      name: "Farray's International Dance Center",
+      url: baseUrl,
+    },
+    hasCourseInstance: schedules.map((schedule, index) => ({
+      '@type': 'CourseInstance',
+      '@id': `${pageUrl}#schedule-${index + 1}`,
+      name: schedule.className,
+      courseMode: 'onsite',
+      courseSchedule: {
+        '@type': 'Schedule',
+        byDay: `https://schema.org/${schedule.dayKey.charAt(0).toUpperCase() + schedule.dayKey.slice(1)}`,
+        startTime: schedule.time.split(' - ')[0],
+        endTime: schedule.time.split(' - ')[1],
+        scheduleTimezone: 'Europe/Madrid',
+      },
+      instructor: {
+        '@type': 'Person',
+        name: schedule.teacher,
+      },
+      location: {
+        '@type': 'Place',
+        name: "Farray's International Dance Center",
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Calle Entenca 100',
+          addressLocality: 'Barcelona',
+          postalCode: '08015',
+          addressCountry: 'ES',
+        },
+      },
+    })),
+    offers: {
+      '@type': 'Offer',
+      category: 'Subscription',
+      priceCurrency: 'EUR',
+      availability: 'https://schema.org/InStock',
+    },
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};
+
 export const ReviewSchema: React.FC<ReviewSchemaProps> = props => {
   const schema = {
     '@context': 'https://schema.org',

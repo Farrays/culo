@@ -232,7 +232,7 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
 
         {/* Video Section */}
         {videoConfig && (
-          <section className="py-16 md:py-24 bg-gradient-to-b from-black to-gray-900">
+          <section className="py-12 md:py-16 bg-gradient-to-b from-black to-gray-900">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               {videoConfig.sectionTitleKey && (
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-white">

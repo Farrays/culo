@@ -8,25 +8,25 @@ module.exports = [
   {
     name: 'ES Locale Bundle',
     path: 'dist/assets/i18n-es-*.js',
-    limit: '330 KB', // Increased for all landing pages and new translations
+    limit: '335 KB', // Increased for teacher profiles, security improvements, landing pages
     gzip: true,
   },
   {
     name: 'EN Locale Bundle',
     path: 'dist/assets/i18n-en-*.js',
-    limit: '325 KB', // Increased for all landing pages and new translations
+    limit: '330 KB', // Increased for teacher profiles, security improvements, landing pages
     gzip: true,
   },
   {
     name: 'CA Locale Bundle',
     path: 'dist/assets/i18n-ca-*.js',
-    limit: '345 KB', // Increased for all landing pages and new translations
+    limit: '350 KB', // Increased for teacher profiles, security improvements, landing pages
     gzip: true,
   },
   {
     name: 'FR Locale Bundle',
     path: 'dist/assets/i18n-fr-*.js',
-    limit: '355 KB', // Increased for all landing pages and new translations
+    limit: '360 KB', // Increased for teacher profiles, security improvements, landing pages
     gzip: true,
   },
   {

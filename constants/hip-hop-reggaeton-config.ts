@@ -10,6 +10,7 @@ import {
   HIP_HOP_REGGAETON_PREPARE_CONFIG,
   HIP_HOP_REGGAETON_VIDEO_ID,
 } from './hip-hop-reggaeton';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const HIP_HOP_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
@@ -22,14 +23,12 @@ export const HIP_HOP_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: HIP_HOP_REGGAETON_TESTIMONIALS,
   scheduleKeys: HIP_HOP_REGGAETON_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Charlie Breezy',
-      specialtyKey: 'hhrTeacher1Specialty',
-      bioKey: 'hhrTeacher1Bio',
-      image: '/images/teachers/img/profesor-hip-hop-charlie-breezy_320.webp',
-    },
+    getTeacherInfo('charlie-breezy', 'hhrTeacher1Specialty', 'hhrTeacher1Bio', [
+      'Hip Hop',
+      'Reggaeton',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Hip Hop Reggaeton)
@@ -114,7 +113,7 @@ export const HIP_HOP_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
         title: "Hip Hop Reggaeton Classes at Farray's Center Barcelona",
       },
     ],
-    placeholderCount: 1,
+    placeholderCount: 0,
   },
 
   logosSection: {

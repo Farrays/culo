@@ -133,17 +133,15 @@ export const CONTEMPORANEO_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const CONTEMPORANEO_PREPARE_CONFIG = {
   prefix: 'contemporaneoPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Daniel Sené',
-    credential: 'Especialista en Contemporáneo',
-    image: undefined,
-  },
+  teacher: getTeacherQuoteInfo('alejandro-minoso', 'Especialista en Contemporáneo'),
 };
 
 // Nearby neighborhoods for local SEO

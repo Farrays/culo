@@ -127,15 +127,13 @@ export const HIP_HOP_REGGAETON_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const HIP_HOP_REGGAETON_PREPARE_CONFIG = {
   prefix: 'hhrPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Charlie Breezy',
-    credential: 'Especialista en Hip Hop Reggaeton',
-    image: '/images/teachers/img/profesor-hip-hop-charlie-breezy_320.webp',
-  },
+  teacher: getTeacherQuoteInfo('charlie-breezy', 'Especialista en Hip Hop Reggaeton'),
 };

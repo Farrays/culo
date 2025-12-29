@@ -12,7 +12,6 @@ import FinalCTA from './FinalCTA';
 // Lazy load components below the fold for better initial page load performance
 const Services = lazy(() => import('./Services'));
 const Teachers = lazy(() => import('./Teachers'));
-const VideoTestimonialsSection = lazy(() => import('./home/VideoTestimonialsSection'));
 const Testimonials = lazy(() => import('./Testimonials'));
 const FAQSection = lazy(() => import('./FAQSection'));
 const HowToGetHere = lazy(() => import('./HowToGetHere'));
@@ -61,7 +60,6 @@ const HomePage: React.FC = () => {
         <Services />
         <Teachers />
         <CalendarWidget />
-        <VideoTestimonialsSection />
         <Testimonials />
         <FAQSection title={t('faqTitle')} faqs={homeFaqs} pageUrl={`${baseUrl}/${locale}`} />
         <FinalCTA />

@@ -491,7 +491,7 @@ const ContactPage: React.FC = () => {
 
       <div className="min-h-screen bg-black pt-20 md:pt-24">
         {/* Hero Section */}
-        <section className="relative py-20 md:py-32 bg-gradient-to-b from-black via-primary-dark/10 to-black">
+        <section className="relative py-12 md:py-16 bg-gradient-to-b from-black via-primary-dark/10 to-black">
           <div className="container mx-auto px-6">
             <Breadcrumb items={breadcrumbItems} textColor="text-neutral/70" />
 
@@ -512,7 +512,7 @@ const ContactPage: React.FC = () => {
         </section>
 
         {/* Contact Form and Map Section */}
-        <section className="py-20 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 items-start max-w-7xl mx-auto">
               {/* Contact Form */}
@@ -928,7 +928,7 @@ const ContactPage: React.FC = () => {
         </section>
 
         {/* Contact Info Card - Moved to bottom */}
-        <section className="py-16 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-3xl mx-auto">

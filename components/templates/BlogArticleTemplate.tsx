@@ -136,7 +136,7 @@ const BlogArticleTemplate: React.FC<BlogArticleTemplateProps> = ({ config }) => 
       <ArticleHero config={config} />
 
       {/* ========== MAIN CONTENT ========== */}
-      <article className="py-16 md:py-20 bg-black">
+      <article className="py-12 md:py-16 bg-black">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-12">
             {/* ===== SIDEBAR: ToC (Desktop) ===== */}

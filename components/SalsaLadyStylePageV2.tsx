@@ -275,7 +275,6 @@ const SalsaLadyStylePageV2: React.FC = () => {
         >
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/40 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-20"></div>
           </div>
 
           <div className="relative z-20 container mx-auto px-4 sm:px-6 text-center">
@@ -334,7 +333,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
         </section>
 
         {/* ===== 2. QUE ES LADY STYLE + BENEFICIOS ===== */}
-        <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-b from-primary-dark/20 via-black to-black">
+        <section className="py-12 md:py-16 bg-gradient-to-b from-primary-dark/20 via-black to-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto text-center">
@@ -413,7 +412,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
         <LevelCardsSection titleKey="salsaLadyLevelsTitle" levels={SALSA_LADY_STYLE_LEVELS} />
 
         {/* ===== 5. PROFESORAS ===== */}
-        <section className="py-12 md:py-20 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-8 sm:mb-10">
@@ -470,7 +469,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
         />
 
         {/* ===== 6b. POR QUE ELEGIR FARRAY'S - Premium Section ===== */}
-        <section className="py-14 sm:py-20 md:py-28 bg-gradient-to-b from-black via-primary-dark/5 to-black relative overflow-hidden">
+        <section className="py-12 md:py-16 bg-gradient-to-b from-black via-primary-dark/5 to-black relative overflow-hidden">
           {/* Decorative elements */}
           <div className="absolute top-20 left-10 w-32 h-32 border border-primary-accent/10 rounded-full"></div>
           <div className="absolute bottom-20 right-10 w-48 h-48 border border-primary-accent/5 rounded-full"></div>
@@ -535,7 +534,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
         </section>
 
         {/* ===== 7. EL PROBLEMA (PAS Framework) - Elegant & Exclusive ===== */}
-        <section className="py-14 sm:py-20 md:py-28 bg-black relative overflow-hidden">
+        <section className="py-12 md:py-16 bg-black relative overflow-hidden">
           {/* Subtle background texture */}
           <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/5 via-transparent to-primary-dark/5"></div>
 
@@ -606,7 +605,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
         </section>
 
         {/* ===== 8. EL METODO FARRAY (6 PILARES) ===== */}
-        <section id="pillars" className="py-12 sm:py-16 md:py-24 bg-black">
+        <section id="pillars" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-8 sm:mb-12">
@@ -665,7 +664,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
         </section>
 
         {/* ===== 9. TABLA COMPARATIVA ===== */}
-        <section className="py-12 sm:py-16 md:py-24 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-6 sm:mb-10">
@@ -726,7 +725,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
         </section>
 
         {/* ===== 10. PARA QUIEN ES / NO ES - Exclusive Design ===== */}
-        <section className="py-14 sm:py-20 md:py-28 bg-black relative overflow-hidden">
+        <section className="py-12 md:py-16 bg-black relative overflow-hidden">
           {/* Background elements */}
           <div className="absolute inset-0">
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-accent/5 rounded-full blur-3xl"></div>
@@ -803,7 +802,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
         </section>
 
         {/* ===== 11. TRANSFORMACION BEFORE/AFTER ===== */}
-        <section className="py-12 sm:py-16 md:py-24 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-6 sm:mb-10">
@@ -854,7 +853,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
         </section>
 
         {/* ===== 12. VIDEO SECTION ===== */}
-        <section className="py-12 sm:py-16 md:py-24 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-6 sm:mb-10">
@@ -873,7 +872,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
         </section>
 
         {/* ===== 13. TESTIMONIALS ===== */}
-        <section className="py-12 sm:py-16 md:py-24 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-6 sm:mb-8">
@@ -937,9 +936,8 @@ const SalsaLadyStylePageV2: React.FC = () => {
         </section>
 
         {/* ===== 16. FINAL CTA ===== */}
-        <section className="py-12 sm:py-16 md:py-24 relative overflow-hidden">
+        <section className="py-12 md:py-16 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary-accent/20 via-black to-primary-dark/20"></div>
-          <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-10"></div>
           <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <AnimateOnScroll>
               <div className="max-w-3xl mx-auto text-center">

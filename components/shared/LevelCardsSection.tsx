@@ -153,7 +153,7 @@ const LevelCardsSection: React.FC<LevelCardsSectionProps> = ({
   };
 
   return (
-    <section id={id} className={`py-14 md:py-20 bg-black ${className}`}>
+    <section id={id} className={`py-12 md:py-16 bg-black ${className}`}>
       <div className="container mx-auto px-4 sm:px-6">
         <AnimateOnScroll>
           <div className="text-center mb-10">

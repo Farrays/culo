@@ -9,6 +9,7 @@ import {
   AFROBEAT_LEVELS,
   AFROBEAT_PREPARE_CONFIG,
 } from './afrobeat';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const AFROBEAT_PAGE_CONFIG: FullDanceClassConfig = {
@@ -21,20 +22,13 @@ export const AFROBEAT_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: AFROBEAT_TESTIMONIALS,
   scheduleKeys: AFROBEAT_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Redblueh',
-      specialtyKey: 'afroTeacher1Specialty',
-      bioKey: 'afroTeacher1Bio',
-      image: '/images/teachers/img/profesor-afrobeats-redblueh_320.webp',
-    },
-    {
-      name: 'Charlie Breezy',
-      specialtyKey: 'afroTeacher2Specialty',
-      bioKey: 'afroTeacher2Bio',
-      image: '/images/teachers/img/profesor-hip-hop-charlie-breezy_320.webp',
-    },
+    getTeacherInfo('redbhlue', 'afroTeacher1Specialty', 'afroTeacher1Bio', [
+      'Afrobeats',
+      'Afro Dance',
+    ]),
+    getTeacherInfo('charlie-breezy', 'afroTeacher2Specialty', 'afroTeacher2Bio', ['Afro', 'Urban']),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Afrobeat)
@@ -56,6 +50,20 @@ export const AFROBEAT_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 500,
     funPercent: 100,
     gradientColor: 'rose',
+
+    // Enterprise: Hero background image
+    heroImage: {
+      basePath: '/images/classes/afrobeat/img/clases-afrobeat-barcelona',
+      alt: "Clases de Afrobeat en Barcelona - Farray's Center",
+      altKey: 'styleImages.afrobeat.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'] as const,
+    },
+    heroVisuals: {
+      imageOpacity: 45,
+      objectPosition: 'center 40%',
+      gradientStyle: 'vibrant' as const,
+    },
   },
 
   // === SECTION TOGGLES ===

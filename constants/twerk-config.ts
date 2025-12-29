@@ -9,6 +9,7 @@ import {
   TWERK_LEVELS,
   TWERK_PREPARE_CONFIG,
 } from './twerk';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const TWERK_PAGE_CONFIG: FullDanceClassConfig = {
@@ -21,19 +22,16 @@ export const TWERK_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: TWERK_TESTIMONIALS,
   scheduleKeys: TWERK_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Sandra Gómez',
-      specialtyKey: 'twerkTeacher1Specialty',
-      bioKey: 'twerkTeacher1Bio',
-      image: '/images/teachers/img/profesora-twerk-dancehall-sandra-gomez_320.webp',
-    },
-    {
-      name: 'Isabel López',
-      specialtyKey: 'twerkTeacher2Specialty',
-      bioKey: 'twerkTeacher2Bio',
-    },
+    getTeacherInfo('sandra-gomez', 'twerkTeacher1Specialty', 'twerkTeacher1Bio', [
+      'Twerk',
+      'Dancehall',
+    ]),
+    getTeacherInfo('isabel-lopez', 'twerkTeacher2Specialty', 'twerkTeacher2Bio', [
+      'Twerk',
+      'Urban',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Twerk)
@@ -55,6 +53,20 @@ export const TWERK_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 500,
     funPercent: 100,
     gradientColor: 'rose',
+
+    // Enterprise: Hero background image
+    heroImage: {
+      basePath: '/images/classes/twerk/img/clases-twerk-barcelona',
+      alt: "Clases de Twerk en Barcelona - Farray's Center",
+      altKey: 'styleImages.twerk.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'] as const,
+    },
+    heroVisuals: {
+      imageOpacity: 45,
+      objectPosition: 'center 40%',
+      gradientStyle: 'vibrant' as const,
+    },
   },
 
   // === SECTION TOGGLES ===
@@ -100,7 +112,7 @@ export const TWERK_PAGE_CONFIG: FullDanceClassConfig = {
         title: "Twerk Classes at Farray's Center Barcelona",
       },
     ],
-    placeholderCount: 1,
+    placeholderCount: 0,
   },
 
   logosSection: {

@@ -8,28 +8,8 @@ import type { LadyStyleTemplateConfig } from '../components/templates/LadyStyleT
 import { GOOGLE_REVIEWS_TESTIMONIALS } from './testimonials';
 import type { Testimonial } from '../types';
 
-// Testimonials for Bachata Lady Style page
-const BACHATA_LADY_STYLE_TESTIMONIALS: Testimonial[] = [
-  ...GOOGLE_REVIEWS_TESTIMONIALS,
-  {
-    id: 4,
-    name: 'Sofia M.',
-    image: '',
-    rating: 5,
-    city: {
-      en: 'Barcelona, Spain',
-      es: 'Barcelona, España',
-      ca: 'Barcelona, Espanya',
-      fr: 'Barcelone, Espagne',
-    },
-    quote: {
-      en: "The Bachata Lady Style classes helped me discover a sensuality I didn't know I had. Now I dance bachata with confidence and my own personal style. The waves and body isolations are incredible!",
-      es: 'Las clases de Bachata Lady Style me ayudaron a descubrir una sensualidad que no sabía que tenía. Ahora bailo bachata con confianza y mi propio estilo personal. ¡Las ondulaciones y aislamientos corporales son increíbles!',
-      ca: 'Les classes de Bachata Lady Style em van ajudar a descobrir una sensualitat que no sabia que tenia. Ara ballo bachata amb confiança i el meu propi estil personal. Les ondulacions i aïllaments corporals són increïbles!',
-      fr: "Les cours de Bachata Lady Style m'ont aidée à découvrir une sensualité que je ne connaissais pas. Maintenant je danse la bachata avec confiance et mon propre style personnel. Les ondulations et isolations corporelles sont incroyables!",
-    },
-  },
-];
+// Testimonials for Bachata Lady Style page - Uses Google Reviews only
+const BACHATA_LADY_STYLE_TESTIMONIALS: Testimonial[] = [...GOOGLE_REVIEWS_TESTIMONIALS];
 
 // Style comparison data for Bachata
 const BACHATA_LADY_COMPARISON_DATA = {
@@ -73,10 +53,8 @@ export const BACHATA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
     titleKey: 'bachataLadyHeroTitle',
     subtitleKey: 'bachataLadyHeroSubtitle',
     descKey: 'bachataLadyHeroDesc',
-    cta1Key: 'bachataLadyCTA1',
-    cta1SubtextKey: 'bachataLadyCTA1Subtext',
-    cta2Key: 'bachataLadyCTA2',
-    cta2SubtextKey: 'bachataLadyCTA2Subtext',
+    ctaKey: 'puertasAbiertasCTA',
+    ctaSubtextKey: 'puertasAbiertasSubtext',
     stats: {
       rating: '4.9/5',
       reviewCount: '505+ reseñas',
@@ -91,6 +69,11 @@ export const BACHATA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
     styleKey: 'bachata_lady_style',
   },
 
+  // Hero Visual Configuration - Use simple text style like home
+  heroVisuals: {
+    heroTextStyle: 'simple',
+  },
+
   // What is section
   whatIs: {
     titleKey: 'bachataLadyWhatIsTitle',
@@ -99,7 +82,8 @@ export const BACHATA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
     quoteAuthor: {
       name: 'Eugenia Trujillo',
       credentialKey: 'bachataLadyTeacherCredential',
-      image: '/images/teachers/eugenia-trujillo_256.webp',
+      image: '/images/teachers/img/profesora-eugenio-trujillo_320.webp',
+      objectPosition: 'center 35%',
     },
   },
 
@@ -136,7 +120,8 @@ export const BACHATA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
       name: 'Eugenia Trujillo',
       specialty: 'bachataLadyTeacher2Specialty',
       bio: 'bachataLadyTeacher2Bio',
-      image: undefined, // Will show initials
+      image: '/images/teachers/img/profesora-eugenio-trujillo_320.webp',
+      objectPosition: 'center 35%',
     },
   ],
   teachersTitleKey: 'bachataLadyTeachersTitle',
@@ -152,7 +137,8 @@ export const BACHATA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
     teacher: {
       name: 'Eugenia Trujillo',
       credential: 'Campeona Mundial Salsa LA | Especialista en Bachata',
-      image: undefined,
+      image: '/images/teachers/img/profesora-eugenio-trujillo_320.webp',
+      objectPosition: 'center 35%',
     },
   },
   prepareTitleKey: 'bachataLadyPrepareTitle',
@@ -392,9 +378,9 @@ export const BACHATA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
     festivalTextKey: 'bachataLadyLogosIntlFestivalsText',
   },
 
-  // Video
+  // Video - Enterprise: Shows "Video Próximamente" placeholder (not clickable)
   video: {
-    id: 'dQw4w9WgXcQ', // Placeholder - to be replaced with actual Bachata Lady Style video
+    id: '', // Empty = shows Coming Soon placeholder
     titleKey: 'bachataLadyVideoTitle',
     descKey: 'bachataLadyVideoDesc',
   },
@@ -459,9 +445,7 @@ export const BACHATA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
   finalCta: {
     titleKey: 'bachataLadyFinalCTATitle',
     descKey: 'bachataLadyFinalCTADesc',
-    cta1Key: 'bachataLadyFinalCTA1',
-    cta1SubtextKey: 'bachataLadyFinalCTA1Subtext',
-    cta2Key: 'bachataLadyFinalCTA2',
-    cta2SubtextKey: 'bachataLadyFinalCTA2Subtext',
+    ctaKey: 'puertasAbiertasCTA',
+    ctaSubtextKey: 'puertasAbiertasSubtext',
   },
 };

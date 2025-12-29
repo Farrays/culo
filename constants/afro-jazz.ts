@@ -124,15 +124,13 @@ export const AFRO_JAZZ_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const AFRO_JAZZ_PREPARE_CONFIG = {
   prefix: 'afrojazzPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Yunaisy Farray',
-    credential: 'Creadora de Afro Jazz Fusión',
-    image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
-  },
+  teacher: getTeacherQuoteInfo('yunaisy-farray', 'Creadora de Afro Jazz Fusión'),
 };

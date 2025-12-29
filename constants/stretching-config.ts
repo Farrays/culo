@@ -20,6 +20,7 @@ import {
   STRETCHING_LEVELS,
   STRETCHING_PREPARE_CONFIG,
 } from './stretching';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const STRETCHING_PAGE_CONFIG: FullDanceClassConfig = {
@@ -32,20 +33,16 @@ export const STRETCHING_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: STRETCHING_TESTIMONIALS,
   scheduleKeys: STRETCHING_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Cris Ag',
-      specialtyKey: 'stretchingTeacher1Specialty',
-      bioKey: 'stretchingTeacher1Bio',
-      // No image - will use initials avatar
-    },
-    {
-      name: 'Daniel Sené',
-      specialtyKey: 'stretchingTeacher2Specialty',
-      bioKey: 'stretchingTeacher2Bio',
-      // No image - will use initials avatar
-    },
+    getTeacherInfo('cris-ag', 'stretchingTeacher1Specialty', 'stretchingTeacher1Bio', [
+      'Stretching',
+      'Backbending',
+    ]),
+    getTeacherInfo('daniel-sene', 'stretchingTeacher2Specialty', 'stretchingTeacher2Bio', [
+      'Stretching',
+      'Ballet',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Prep Física > Stretching)
@@ -67,6 +64,20 @@ export const STRETCHING_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 200,
     funPercent: 100,
     gradientColor: 'emerald', // Green for wellness/flexibility
+
+    // Enterprise: Hero background image (using fitness category - no stretching-specific images)
+    heroImage: {
+      basePath: '/images/categories/img/fitness',
+      alt: "Clases de Stretching en Barcelona - Farray's Center",
+      altKey: 'styleImages.stretching.hero',
+      breakpoints: [320, 640, 768, 1024],
+      formats: ['avif', 'webp', 'jpg'] as const,
+    },
+    heroVisuals: {
+      imageOpacity: 45,
+      objectPosition: 'center 40%',
+      gradientStyle: 'dark' as const,
+    },
   },
 
   // === SECTION TOGGLES ===

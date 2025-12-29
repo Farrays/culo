@@ -604,7 +604,6 @@ const AlquilerSalasPage: React.FC = () => {
           {/* Background */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6">
             {/* Breadcrumb with Microdata */}
@@ -657,7 +656,7 @@ const AlquilerSalasPage: React.FC = () => {
         </section>
 
         {/* Intro Premium Section - SEO CRITICAL */}
-        <section aria-labelledby="intro-title" className="py-16 md:py-24 bg-black">
+        <section aria-labelledby="intro-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto space-y-6 text-neutral/90 leading-relaxed">
               <AnimateOnScroll delay={100}>
@@ -685,7 +684,7 @@ const AlquilerSalasPage: React.FC = () => {
         </section>
 
         {/* Para Quién Es Section */}
-        <section aria-labelledby="para-quien-title" className="py-12 md:py-20 bg-primary-dark/10">
+        <section aria-labelledby="para-quien-title" className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-6 text-center">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -724,7 +723,7 @@ const AlquilerSalasPage: React.FC = () => {
         </section>
 
         {/* Características Section */}
-        <section aria-labelledby="caracteristicas-title" className="py-16 md:py-24 bg-black">
+        <section aria-labelledby="caracteristicas-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -815,7 +814,7 @@ const AlquilerSalasPage: React.FC = () => {
         <section
           id="salas"
           aria-labelledby="salas-title"
-          className="py-16 md:py-24 bg-primary-dark/10"
+          className="py-12 md:py-16 bg-primary-dark/10"
         >
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
@@ -904,7 +903,7 @@ const AlquilerSalasPage: React.FC = () => {
         </section>
 
         {/* Descuentos Section */}
-        <section aria-labelledby="descuentos-title" className="py-16 md:py-24 bg-black">
+        <section aria-labelledby="descuentos-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-3xl mx-auto bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl p-8 md:p-10">
@@ -946,11 +945,10 @@ const AlquilerSalasPage: React.FC = () => {
         </section>
 
         {/* Final CTA Section */}
-        <section className="relative py-20 md:py-32 overflow-hidden">
+        <section className="relative py-12 md:py-16 overflow-hidden">
           {/* Background */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6 text-center">
             <AnimateOnScroll>

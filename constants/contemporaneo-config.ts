@@ -10,6 +10,7 @@ import {
   CONTEMPORANEO_PREPARE_CONFIG,
   CONTEMPORANEO_NEARBY_AREAS,
 } from './contemporaneo';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
@@ -22,18 +23,18 @@ export const CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: CONTEMPORANEO_TESTIMONIALS,
   scheduleKeys: CONTEMPORANEO_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Daniel Sené',
-      specialtyKey: 'contemporaneoTeacher1Specialty',
-      bioKey: 'contemporaneoTeacher1Bio',
-    },
-    {
-      name: 'Alejandro Miñoso',
-      specialtyKey: 'contemporaneoTeacher2Specialty',
-      bioKey: 'contemporaneoTeacher2Bio',
-    },
+    getTeacherInfo('daniel-sene', 'contemporaneoTeacher1Specialty', 'contemporaneoTeacher1Bio', [
+      'Contemporáneo',
+      'ENA Cuba',
+    ]),
+    getTeacherInfo(
+      'alejandro-minoso',
+      'contemporaneoTeacher2Specialty',
+      'contemporaneoTeacher2Bio',
+      ['Contemporáneo', 'Suelo & Flow']
+    ),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Dance > Contemporáneo)

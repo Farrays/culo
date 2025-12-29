@@ -250,7 +250,7 @@ const FAQPage: React.FC = () => {
 
       <div className="min-h-screen bg-black pt-20 md:pt-24">
         {/* Hero Section */}
-        <section className="relative py-20 md:py-32 bg-gradient-to-b from-black via-primary-dark/10 to-black">
+        <section className="relative py-12 md:py-16 bg-gradient-to-b from-black via-primary-dark/10 to-black">
           <div className="container mx-auto px-6">
             {/* Breadcrumb with Microdata */}
             <Breadcrumb items={breadcrumbItems} textColor="text-neutral/70" />
@@ -272,7 +272,7 @@ const FAQPage: React.FC = () => {
         </section>
 
         {/* FAQ Categories Section */}
-        <section className="py-20 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <div className="max-w-5xl mx-auto space-y-16">
               {faqCategories.map((category, categoryIndex) => (
@@ -336,7 +336,7 @@ const FAQPage: React.FC = () => {
         </section>
 
         {/* Contact CTA */}
-        <section className="py-16 bg-gradient-to-b from-black to-primary-dark/10">
+        <section className="py-12 md:py-16 bg-gradient-to-b from-black to-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-3xl mx-auto text-center">

@@ -18,6 +18,7 @@ import {
   CUERPO_FIT_LEVELS,
   CUERPO_FIT_PREPARE_CONFIG,
 } from './cuerpo-fit';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const CUERPO_FIT_PAGE_CONFIG: FullDanceClassConfig = {
@@ -30,14 +31,12 @@ export const CUERPO_FIT_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: CUERPO_FIT_TESTIMONIALS,
   scheduleKeys: CUERPO_FIT_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Cris Ag',
-      specialtyKey: 'cuerpofitTeacher1Specialty',
-      bioKey: 'cuerpofitTeacher1Bio',
-      // No image - will use initials avatar
-    },
+    getTeacherInfo('cris-ag', 'cuerpofitTeacher1Specialty', 'cuerpofitTeacher1Bio', [
+      'Body Conditioning',
+      'Método Farray',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Prep Física > Body Conditioning)
@@ -59,6 +58,20 @@ export const CUERPO_FIT_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 350,
     funPercent: 100,
     gradientColor: 'emerald', // Green for wellness/health
+
+    // Enterprise: Hero background image
+    heroImage: {
+      basePath: '/images/classes/cuerpo-fit/img/cuerpo-fit-entrenamiento-bailarines',
+      alt: 'Alumnas realizando ejercicios de acondicionamiento físico Cuerpo Fit en Barcelona - Método Farray con entrenamiento funcional para bailarines',
+      altKey: 'styleImages.cuerpoFit.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'] as const,
+    },
+    heroVisuals: {
+      imageOpacity: 45,
+      objectPosition: 'center 40%',
+      gradientStyle: 'dark' as const,
+    },
   },
 
   // === SECTION TOGGLES ===

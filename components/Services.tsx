@@ -84,7 +84,7 @@ const Services: React.FC = () => {
   const { t } = useI18n();
 
   return (
-    <section id="services" className="py-20 md:py-32 bg-primary-dark/10">
+    <section id="services" className="py-12 md:py-16 bg-primary-dark/10">
       <div className="container mx-auto px-6">
         <AnimateOnScroll>
           <div className="text-center mb-16 max-w-3xl mx-auto">

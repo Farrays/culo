@@ -91,7 +91,7 @@ const ComparisonSection: React.FC<ComparisonSectionProps> = ({ config }) => {
   ];
 
   return (
-    <section id="comparison-section" className="py-20 md:py-32 bg-primary-dark/10">
+    <section id="comparison-section" className="py-12 md:py-16 bg-primary-dark/10">
       <div className="container mx-auto px-6">
         {/* Header */}
         <AnimateOnScroll>

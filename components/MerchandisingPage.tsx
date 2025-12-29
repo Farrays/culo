@@ -187,7 +187,6 @@ const MerchandisingPage: React.FC = () => {
           {/* Background */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6">
             {/* Breadcrumb with Microdata */}
@@ -234,7 +233,7 @@ const MerchandisingPage: React.FC = () => {
         </section>
 
         {/* Products Grid Section */}
-        <section className="py-20 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-16 max-w-4xl mx-auto">
@@ -290,11 +289,10 @@ const MerchandisingPage: React.FC = () => {
         </section>
 
         {/* Final CTA Section - Conversion Optimized */}
-        <section className="relative py-20 md:py-32 overflow-hidden">
+        <section className="relative py-12 md:py-16 overflow-hidden">
           {/* Background with stars */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6 text-center">
             <AnimateOnScroll>

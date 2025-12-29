@@ -31,14 +31,18 @@ export const DIRECTOR_INFO: TeacherPageInfo = {
 };
 
 // Rest of the teaching team
+// Enterprise Order: Cuban teachers → Marcos → CrisAg → Yasmina → Redbhlue → rest
 export const TEACHERS_LIST: TeacherPageInfo[] = [
+  // ============================================================================
+  // CUBAN TEACHERS (formación académica cubana)
+  // ============================================================================
   {
     id: 'daniel-sene',
     name: 'Daniel Sené',
     image: '/images/teachers/img/profesor-daniel-sen-_320.webp',
     specialtyKey: 'teachersPageTeacher1Specialty',
     bioKey: 'teachersPageTeacher1Bio',
-    styles: ['Ballet Clásico', 'Contemporáneo'],
+    styles: ['Ballet Clásico', 'Contemporáneo', 'Yoga', 'Tai-Chi', 'Stretching'],
   },
   {
     id: 'alejandro-minoso',
@@ -46,8 +50,87 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
     image: '/images/teachers/img/profesor-alejandro-mi-oso_320.webp',
     specialtyKey: 'teachersPageTeacher2Specialty',
     bioKey: 'teachersPageTeacher2Bio',
-    styles: ['Ballet', 'Modern Jazz', 'Afro Jazz', 'Afro Contemporáneo'],
+    styles: ['Ballet', 'Modern Jazz', 'Afro Jazz', 'Afro Contemporáneo', 'Contemporáneo'],
   },
+  {
+    id: 'lia-valdes',
+    name: 'Lia Valdes',
+    image: '/images/teachers/img/profesora-lia-valdes_320.webp',
+    specialtyKey: 'teachersPageTeacher7Specialty',
+    bioKey: 'teachersPageTeacher7Bio',
+    styles: ['Salsa Cubana', 'Salsa Lady Style'],
+  },
+  {
+    id: 'iroel-bastarreche',
+    name: 'Iroel Bastarreche',
+    image: '/images/teachers/img/profesor-iroel-bastarreche_320.webp',
+    specialtyKey: 'teachersPageTeacher8Specialty',
+    bioKey: 'teachersPageTeacher8Bio',
+    styles: ['Folklore Cubano', 'Afro Contemporáneo'],
+  },
+  {
+    id: 'charlie-breezy',
+    name: 'Charlie Breezy',
+    image: '/images/teachers/img/profesor-charlie-breezy_320.webp',
+    specialtyKey: 'teachersPageTeacher9Specialty',
+    bioKey: 'teachersPageTeacher9Bio',
+    styles: ['Afro Contemporáneo', 'Hip Hop', 'Afrobeats'],
+  },
+  {
+    id: 'grechen-mendez',
+    name: 'Grechén Méndez',
+    image: '/images/teachers/img/profesora-grechen-m-ndez_320.webp',
+    specialtyKey: 'teachersPageTeacherGrechenSpecialty',
+    bioKey: 'teachersPageTeacherGrechenBio',
+    styles: ['Danzas Afrocubanas', 'Folklore Cubano', 'Rumba'],
+  },
+  // ============================================================================
+  // MARCOS (referente Hip Hop España, juez internacional)
+  // ============================================================================
+  {
+    id: 'marcos-martinez',
+    name: 'Marcos Martínez',
+    image: '/images/teachers/img/profesor-marcos-mart-nez_320.webp',
+    specialtyKey: 'teachersPageTeacher5Specialty',
+    bioKey: 'teachersPageTeacher5Bio',
+    styles: ['Hip Hop', 'Breaking', 'Locking', 'Popping'],
+  },
+  // ============================================================================
+  // CRISAG (desde 2012 con Yunaisy Farray)
+  // ============================================================================
+  {
+    id: 'crisag',
+    name: 'CrisAg',
+    image: '/images/teachers/img/profesora-crisag_320.webp',
+    specialtyKey: 'teachersPageTeacherCrisagSpecialty',
+    bioKey: 'teachersPageTeacherCrisagBio',
+    styles: ['Body Conditioning', 'Cuerpo Fit', 'Bum Bum Glúteos', 'Stretching'],
+  },
+  // ============================================================================
+  // YASMINA (certificada Método Farray®, muy versátil)
+  // ============================================================================
+  {
+    id: 'yasmina-fernandez',
+    name: 'Yasmina Fernández',
+    image: '/images/teachers/img/profesora-yasmina-fern-ndez_320.webp',
+    specialtyKey: 'teachersPageTeacher6Specialty',
+    bioKey: 'teachersPageTeacher6Bio',
+    styles: ['Salsa Cubana', 'Salsa Lady Style', 'Sexy Style', 'Sexy Reggaeton'],
+  },
+  // ============================================================================
+  // REDBHLUE (raíces africanas, Tanzania)
+  // ============================================================================
+  {
+    id: 'redbhlue',
+    name: 'Redbhlue',
+    image: '/images/teachers/img/profesor-redblueh_320.webp',
+    specialtyKey: 'teachersPageTeacher14Specialty',
+    bioKey: 'teachersPageTeacher14Bio',
+    styles: ['Afrobeats', 'Afro Dance'],
+  },
+  // ============================================================================
+  // REST OF TEACHING TEAM
+  // ============================================================================
   {
     id: 'sandra-gomez',
     name: 'Sandra Gómez',
@@ -65,52 +148,12 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
     styles: ['Dancehall', 'Twerk'],
   },
   {
-    id: 'marcos-martinez',
-    name: 'Marcos Martínez',
-    image: '/images/teachers/img/profesor-marcos-mart-nez_320.webp',
-    specialtyKey: 'teachersPageTeacher5Specialty',
-    bioKey: 'teachersPageTeacher5Bio',
-    styles: ['Hip Hop', 'Breaking', 'Locking', 'Popping'],
-  },
-  {
-    id: 'yasmina-fernandez',
-    name: 'Yasmina Fernández',
-    image: '/images/teachers/img/profesora-yasmina-fern-ndez_320.webp',
-    specialtyKey: 'teachersPageTeacher6Specialty',
-    bioKey: 'teachersPageTeacher6Bio',
-    styles: ['Salsa Cubana', 'Salsa Lady Style'],
-  },
-  {
-    id: 'lia-valdes',
-    name: 'Lia Valdes',
-    image: '/images/teachers/img/profesora-lia-valdes_320.webp',
-    specialtyKey: 'teachersPageTeacher7Specialty',
-    bioKey: 'teachersPageTeacher7Bio',
-    styles: ['Salsa Cubana', 'Salsa Lady Style'],
-  },
-  {
-    id: 'iroel-bastarreche',
-    name: 'Iroel Bastarreche',
-    image: '/images/teachers/img/profesor-iroel-bastarreche_320.webp',
-    specialtyKey: 'teachersPageTeacher8Specialty',
-    bioKey: 'teachersPageTeacher8Bio',
-    styles: ['Salsa Cubana'],
-  },
-  {
-    id: 'charlie-breezy',
-    name: 'Charlie Breezy',
-    image: '/images/teachers/img/profesor-charlie-breezy_320.webp',
-    specialtyKey: 'teachersPageTeacher9Specialty',
-    bioKey: 'teachersPageTeacher9Bio',
-    styles: ['Afro Contemporáneo', 'Hip Hop'],
-  },
-  {
     id: 'eugenia-trujillo',
     name: 'Eugenia Trujillo',
     image: '/images/teachers/img/profesora-eugenio-trujillo_320.webp',
     specialtyKey: 'teachersPageTeacher10Specialty',
     bioKey: 'teachersPageTeacher10Bio',
-    styles: ['Bachata Lady Style', 'Salsa LA'],
+    styles: ['Bachata Lady Style', 'Bachata en Pareja', 'Salsa LA'],
   },
   {
     id: 'mathias-font',
@@ -137,36 +180,12 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
     styles: ['Bachata', 'Bachata Lady Style'],
   },
   {
-    id: 'redbhlue',
-    name: 'Redbhlue',
-    image: '/images/teachers/img/profesor-redblueh_320.webp',
-    specialtyKey: 'teachersPageTeacher14Specialty',
-    bioKey: 'teachersPageTeacher14Bio',
-    styles: ['Afrobeats', 'Afro Dance'],
-  },
-  {
     id: 'juan-alvarez',
     name: 'Juan Alvarez',
     image: '/images/teachers/img/profesor-juan-alvarez_320.webp',
     specialtyKey: 'teachersPageTeacherJuanSpecialty',
     bioKey: 'teachersPageTeacherJuanBio',
-    styles: ['Salsa Cubana'],
-  },
-  {
-    id: 'crisag',
-    name: 'CrisAg',
-    image: '/images/teachers/img/profesora-crisag_320.webp',
-    specialtyKey: 'teachersPageTeacherCrisagSpecialty',
-    bioKey: 'teachersPageTeacherCrisagBio',
-    styles: ['Urban Dance'],
-  },
-  {
-    id: 'grechen-mendez',
-    name: 'Grechen Méndez',
-    image: '/images/teachers/img/profesora-grechen-m-ndez_320.webp',
-    specialtyKey: 'teachersPageTeacherGrechenSpecialty',
-    bioKey: 'teachersPageTeacherGrechenBio',
-    styles: ['Bachata', 'Salsa'],
+    styles: ['Bachata Sensual'],
   },
 ];
 
@@ -182,118 +201,221 @@ export const TEACHERS_PAGE_STATS = {
 export const TEACHERS_PERSON_SCHEMAS = [
   {
     name: 'Yunaisy Farray',
-    jobTitle: "Directora y Fundadora de Farray's International Dance Center",
+    jobTitle:
+      "Directora y Fundadora de Farray's International Dance Center | Bailarina de Hollywood",
     description:
-      'Bailarina profesional cubana, creadora del Método Farray, miembro del CID UNESCO.',
+      'Bailarina de Hollywood y profesional cubana formada en la ENA, creadora del Método Farray® que integra la rigurosidad de la escuela rusa de ballet clásico con las raíces afrocubanas, adaptada para bailarines europeos. Actriz en Street Dance 2, finalista de Got Talent y miembro del CID UNESCO. Más de 25 años de experiencia internacional.',
     knowsAbout: [
       'Afro Jazz',
       'Salsa Lady Style',
       'Bachata Lady Style',
       'Afro Contemporáneo',
       'Salsa Cubana',
-      'Método Farray',
+      'Método Farray®',
+      'CID-UNESCO',
+      'Hollywood',
     ],
   },
   {
     name: 'Daniel Sené',
-    jobTitle: 'Profesor de Ballet Clásico',
-    description: 'Bailarín profesional formado en la Escuela Nacional de Arte de Cuba.',
-    knowsAbout: ['Ballet Clásico', 'Técnica Cubana', 'Danza Contemporánea'],
+    jobTitle:
+      'Profesor de Ballet Clásico, Contemporáneo, Yoga, Tai-Chi y Stretching | Escuela Nacional de Ballet de Cuba | Referente Nacional',
+    description:
+      'Bailarín profesional formado en la prestigiosa Escuela Nacional de Ballet de Cuba. Especialista en técnica clásica cubana y danza contemporánea. Profundo conocedor del cuerpo humano, también se destaca por su maestría en Yoga, Tai-Chi y Stretching. Referente nacional que combina precisión técnica con bienestar corporal.',
+    knowsAbout: [
+      'Ballet Clásico',
+      'Técnica Cubana',
+      'Danza Contemporánea',
+      'Yoga',
+      'Tai-Chi',
+      'Stretching',
+      'Escuela Nacional de Ballet de Cuba',
+      'Bienestar Corporal',
+    ],
   },
   {
     name: 'Alejandro Miñoso',
-    jobTitle: 'Profesor de Ballet y Afro Jazz',
-    description: 'Bailarín profesional cubano con formación en la ENA.',
-    knowsAbout: ['Ballet', 'Modern Jazz', 'Afro Jazz', 'Afro Contemporáneo'],
+    jobTitle:
+      'Profesor de Ballet, Modern Jazz, Afro Jazz y Contemporáneo | Ex Solista Compañía Carlos Acosta',
+    description:
+      'Bailarín profesional cubano formado en la ENA y ex solista de la prestigiosa compañía Carlos Acosta, uno de los mejores bailarines de la historia. Versátil en fusión de estilos clásicos, afro y contemporáneo.',
+    knowsAbout: [
+      'Ballet',
+      'Modern Jazz',
+      'Afro Jazz',
+      'Afro Contemporáneo',
+      'Contemporáneo',
+      'ENA Cuba',
+      'Compañía Carlos Acosta',
+    ],
   },
   {
     name: 'Sandra Gómez',
-    jobTitle: 'Instructora de Dancehall y Twerk',
-    description: 'Especialista en Dancehall y Twerk con amplia experiencia en pedagogía.',
-    knowsAbout: ['Dancehall', 'Twerk', 'Urban Dance', 'Choreography'],
+    jobTitle: 'Instructora de Dancehall y Twerk | Formación Jamaicana',
+    description:
+      'Bailarina profesional con formación jamaicana auténtica en dancehall y twerk. Su estilo fusiona Twerk/Bootydance con la esencia jamaicana genuina. Técnica impecable y metodología probada.',
+    knowsAbout: [
+      'Dancehall',
+      'Twerk',
+      'Bootydance',
+      'Urban Dance',
+      'Jamaican Dance',
+      'Formación Jamaica',
+    ],
   },
   {
     name: 'Isabel López',
-    jobTitle: 'Instructora de Dancehall',
-    description: 'Especialista en Dancehall con experiencia en competiciones internacionales.',
-    knowsAbout: ['Dancehall', 'Dancehall Female', 'Twerk', 'Jamaican Dance'],
+    jobTitle: 'Instructora de Dancehall Female',
+    description:
+      'Apasionada del dancehall con más de 5 años de experiencia. Entrenada con maestros jamaicanos. Especialista en old school moves (Willie Bounce, Nuh Linga) y últimas tendencias.',
+    knowsAbout: ['Dancehall', 'Dancehall Female', 'Jamaican Dance', 'Old School Dancehall'],
   },
   {
     name: 'Marcos Martínez',
-    jobTitle: 'Instructor de Hip Hop',
-    description: 'Juez internacional de Hip Hop con amplia experiencia en competiciones.',
-    knowsAbout: ['Hip Hop', 'Breaking', 'Locking', 'Popping', 'Urban Dance'],
+    jobTitle: 'Instructor de Hip Hop y Juez Internacional',
+    description:
+      'Uno de los referentes del Hip Hop en España. Décadas de experiencia como bailarín, maestro y juez de competiciones internacionales. Combina técnica old school con tendencias actuales.',
+    knowsAbout: ['Hip Hop', 'Breaking', 'Locking', 'Popping', 'Urban Dance', 'Old School Hip Hop'],
   },
   {
     name: 'Yasmina Fernández',
-    jobTitle: 'Profesora de Salsa Cubana',
-    description: 'Bailarina profesional especializada en estilos latinos cubanos.',
-    knowsAbout: ['Salsa Cubana', 'Salsa Lady Style', 'Casino'],
+    jobTitle:
+      'Profesora de Salsa Cubana, Lady Style, Sexy Style y Sexy Reggaeton | Método Farray® desde 2016',
+    description:
+      'Profesora extraordinariamente versátil certificada en el Método Farray® desde 2016. Destaca por un don de gentes excepcional que le permite conectar con los alumnos. Especialista en salsa cubana, Lady Style, Sexy Style y Sexy Reggaeton.',
+    knowsAbout: [
+      'Salsa Cubana',
+      'Salsa Lady Style',
+      'Sexy Style',
+      'Sexy Reggaeton',
+      'Método Farray®',
+    ],
   },
   {
     name: 'Lia Valdes',
-    jobTitle: 'Maestra y Artista Internacional Cubana',
-    description: 'Con más de 20 años de carrera artística en salsa cubana.',
-    knowsAbout: ['Salsa Cubana', 'Salsa Lady Style', 'Cuban Dance'],
+    jobTitle: 'Maestra y Artista Internacional Cubana | ENA Cuba | El Rey León París',
+    description:
+      'Maestra y artista internacional cubana con más de 20 años de carrera artística. Formada en la ENA (Escuela Nacional de Arte de Cuba), ha bailado en la prestigiosa producción "El Rey León" en París. Transmite la alegría y el espíritu del baile caribeño.',
+    knowsAbout: [
+      'Salsa Cubana',
+      'Salsa Lady Style',
+      'Cuban Dance',
+      'ENA Cuba',
+      'El Rey León',
+      'Teatro Musical',
+    ],
   },
   {
     name: 'Iroel Bastarreche',
-    jobTitle: 'Profesor de Salsa Cubana',
-    description: 'Instructor certificado en el Método Farray para Salsa Cubana.',
-    knowsAbout: ['Salsa Cubana', 'Casino', 'Método Farray'],
+    jobTitle:
+      'Profesor de Folklore Cubano y Afro Contemporáneo | Ballet Folklórico de Camagüey | Método Farray®',
+    description:
+      'Conocido como Iro, formado en la Escuela Vocacional de Arte de Cuba. Integrante del Conjunto Artístico de Maraguán y Ballet Folklórico de Camagüey. Desde 2014 se forma en el Método Farray®, convirtiéndose en referente del folklore afrocubano en Barcelona.',
+    knowsAbout: [
+      'Folklore Cubano',
+      'Afro Contemporáneo',
+      'Ballet Folklórico de Camagüey',
+      'Danzas Afrocaribeñas',
+      'Rumba',
+      'Método Farray®',
+    ],
   },
   {
     name: 'Charlie Breezy',
-    jobTitle: 'Profesor de Afro Contemporáneo',
-    description: 'Bailarín profesional con experiencia en estilos afro y urbanos.',
-    knowsAbout: ['Afro Contemporáneo', 'Hip Hop', 'Urban Dance', 'African Dance'],
+    jobTitle: 'Profesor de Afro Contemporáneo, Hip Hop y Afrobeats',
+    description:
+      'Maestro internacional y bailarín cubano formado en la ENA. Domina danza africana como el Afrobeats, contemporáneo, ballet y danzas urbanas. Versatilidad y formación académica excepcional.',
+    knowsAbout: [
+      'Afro Contemporáneo',
+      'Hip Hop',
+      'Afrobeats',
+      'African Dance',
+      'Ballet',
+      'Contemporary',
+      'ENA Cuba',
+    ],
   },
   {
     name: 'Eugenia Trujillo',
-    jobTitle: 'Campeona Mundial Salsa LA',
-    description: 'Campeona mundial de Salsa LA y especialista en Bachata Lady Style.',
-    knowsAbout: ['Bachata Lady Style', 'Salsa LA', 'Latin Dance'],
+    jobTitle: 'Campeona Mundial Salsa LA y Profesora de Bachata',
+    description:
+      "Maestra y bailarina internacional uruguaya, campeona mundial de Salsa LA junto a Mathias Font. Técnica impecable, especialista en bachata en pareja y bachata lady style con 4 años en Farray's.",
+    knowsAbout: [
+      'Bachata Lady Style',
+      'Bachata en Pareja',
+      'Salsa LA',
+      'Latin Dance',
+      'Campeonato Mundial',
+    ],
   },
   {
     name: 'Mathias Font',
-    jobTitle: 'Instructor de Bachata',
-    description: 'Especialista en Bachata y Bachata Sensual con técnica depurada.',
-    knowsAbout: ['Bachata', 'Bachata Sensual', 'Latin Dance'],
+    jobTitle: 'Campeón Mundial Salsa LA e Instructor de Bachata',
+    description:
+      'Campeón mundial de Salsa LA junto a Eugenia Trujillo. Especialista en bachata sensual con enfoque único en musicalidad, conexión en pareja y dinamización de clases. Referente en Barcelona.',
+    knowsAbout: [
+      'Bachata',
+      'Bachata Sensual',
+      'Salsa LA',
+      'Campeonato Mundial',
+      'Musicalidad',
+      'Conexión en Pareja',
+    ],
   },
   {
     name: 'Carlos Canto',
-    jobTitle: 'Instructor de Bachata',
-    description: 'Profesor de Bachata con enfoque en técnica y musicalidad.',
-    knowsAbout: ['Bachata', 'Bachata Moderna', 'Latin Dance'],
+    jobTitle: 'Instructor de Bachata | Talento Emergente Barcelona',
+    description:
+      'Talento emergente muy querido de sus alumnos con gran capacidad para conectar. Especialista en bachata con enfoque en técnica y musicalidad. Uno de los profesores más valorados de la escuela.',
+    knowsAbout: ['Bachata', 'Bachata Moderna', 'Latin Dance', 'Musicalidad'],
   },
   {
     name: 'Noemi',
-    jobTitle: 'Instructora de Bachata',
-    description: 'Especialista en Bachata y Bachata Lady Style.',
-    knowsAbout: ['Bachata', 'Bachata Lady Style', 'Latin Dance'],
+    jobTitle: 'Instructora de Bachata Lady Style | Talento Emergente Barcelona',
+    description:
+      'Talento emergente con excelentes dones de gente que le permiten conectar inmediatamente con sus alumnos. Pareja de Carlos Canto, una de las parejas más prometedoras de Barcelona. Especialista en bachata y técnicas femeninas.',
+    knowsAbout: ['Bachata', 'Bachata Lady Style', 'Latin Dance', 'Técnicas Femeninas'],
   },
   {
-    name: 'Redbhlue',
-    jobTitle: 'Instructor de Afrobeats',
-    description: 'Especialista en Afrobeats y danzas africanas contemporáneas.',
-    knowsAbout: ['Afrobeats', 'Afro Dance', 'African Dance', 'Urban Dance'],
+    name: 'Redblueh',
+    jobTitle: 'Instructor de Afrobeats y Ntcham',
+    description:
+      'Profesor y bailarín internacional nativo de Tanzania, especialista en Ntcham. Sus raíces africanas y alegría contagiante lo convierten en uno de los más recomendados de Barcelona.',
+    knowsAbout: ['Afrobeats', 'Ntcham', 'African Dance', 'Tanzanian Dance'],
   },
   {
     name: 'Juan Alvarez',
-    jobTitle: 'Profesor de Salsa Cubana',
-    description: 'Instructor de Salsa Cubana con amplia experiencia en el estilo cubano.',
-    knowsAbout: ['Salsa Cubana', 'Casino', 'Cuban Dance'],
+    jobTitle: 'Profesor de Bachata Sensual | Método Farray® | Talento Emergente Barcelona',
+    description:
+      'Instructor de Bachata Sensual certificado en el Método Farray®. Posee una capacidad extraordinaria para conectar desde el primer momento con sus alumnos. Transmite la esencia del baile latino con pasión y técnica depurada.',
+    knowsAbout: ['Bachata Sensual', 'Latin Dance', 'Método Farray®', 'Musicalidad', 'Conexión'],
   },
   {
     name: 'CrisAg',
-    jobTitle: 'Instructora de Urban Dance',
-    description: 'Bailarina profesional especializada en estilos urbanos contemporáneos.',
-    knowsAbout: ['Urban Dance', 'Street Dance', 'Contemporary Urban'],
+    jobTitle:
+      'Instructora de Body Conditioning, Cuerpo Fit, Bum Bum Glúteos y Stretching | Método Farray® desde 2012',
+    description:
+      'Licenciada en Filología Inglesa por la UB. Formada con Jorge Camagüey y en The Cuban School of Arts de Londres. Desde 2012 se forma en el Método Farray® y trabaja como profesora, convirtiéndose en referente del acondicionamiento corporal para bailarines en Barcelona.',
+    knowsAbout: [
+      'Body Conditioning',
+      'Cuerpo Fit',
+      'Bum Bum Glúteos',
+      'Stretching',
+      'Fitness',
+      'Método Farray®',
+    ],
   },
   {
-    name: 'Grechen Méndez',
-    jobTitle: 'Instructora de Bachata y Salsa',
-    description: 'Profesora con experiencia en bailes latinos y estilos caribeños.',
-    knowsAbout: ['Bachata', 'Salsa', 'Latin Dance', 'Caribbean Dance'],
+    name: 'Grechén Méndez',
+    jobTitle: 'Maestra Internacional de Danzas Afrocubanas | ISA Cuba | +25 años experiencia',
+    description:
+      'Maestra internacional de referencia en danzas afrocubanas con más de 25 años dedicados a la enseñanza del folklore cubano. Formada en el ISA (Instituto Superior de Arte de Cuba). Autoridad mundial en danzas a los Orishas y rumba.',
+    knowsAbout: [
+      'Danzas Afrocubanas',
+      'Folklore Cubano',
+      'Rumba',
+      'Danzas a los Orishas',
+      'ISA Cuba',
+    ],
   },
 ];

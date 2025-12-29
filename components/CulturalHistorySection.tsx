@@ -76,7 +76,7 @@ const CulturalHistorySection: React.FC<CulturalHistorySectionProps> = memo(
     };
 
     return (
-      <section id="cultural-history" className="py-12 md:py-20 bg-black">
+      <section id="cultural-history" className="py-12 md:py-16 bg-black">
         <div className="container mx-auto px-6">
           <AnimateOnScroll>
             <div className="max-w-4xl mx-auto">

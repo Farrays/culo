@@ -611,7 +611,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
         </section>
 
         {/* VIDEO SECTION */}
-        <section className="py-12 sm:py-16 md:py-20 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-3xl mx-auto">
               <AnimateOnScroll>
@@ -648,7 +648,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
         </section>
 
         {/* EXPERIENCE SECTION */}
-        <section className="py-12 sm:py-16 md:py-20">
+        <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-3xl mx-auto">
               <AnimateOnScroll>
@@ -677,7 +677,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
         </section>
 
         {/* VALUE STACK SECTION */}
-        <section className="py-12 sm:py-16 md:py-20 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-2xl mx-auto">
               <AnimateOnScroll>
@@ -812,7 +812,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
         </section>
 
         {/* SCHEDULE SECTION */}
-        <section className="py-12 sm:py-16 md:py-20">
+        <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-neutral text-center mb-2 sm:mb-3 holographic-text">
@@ -886,7 +886,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
         </section>
 
         {/* WHY FARRAY'S SECTION */}
-        <section className="py-12 sm:py-16 md:py-20 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-neutral text-center mb-8 sm:mb-10 holographic-text">
@@ -987,7 +987,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
         </section>
 
         {/* TESTIMONIALS SECTION */}
-        <section className="py-12 sm:py-16 md:py-20">
+        <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-8 sm:mb-10">
@@ -1083,7 +1083,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
         </section>
 
         {/* FAQ SECTION */}
-        <section className="py-12 sm:py-16 md:py-20 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-neutral text-center mb-8 sm:mb-10 holographic-text">
@@ -1123,9 +1123,8 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
         </section>
 
         {/* FINAL CTA SECTION */}
-        <section className="py-16 sm:py-20 md:py-28 relative overflow-hidden">
+        <section className="py-12 md:py-16 relative overflow-hidden">
           <div className={`absolute inset-0 bg-gradient-to-br ${config.theme.classes.gradient}`} />
-          <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-20" />
 
           <div className="relative z-10 container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -1158,37 +1157,12 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
           </div>
         </section>
 
-        {/* FOOTER - Legal Links */}
+        {/* FOOTER */}
         <footer className="py-6 sm:py-8 border-t border-white/10 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
-            <div className="text-center">
-              <p className="text-neutral/60 text-xs sm:text-sm mb-3 sm:mb-4">
-                Farray&apos;s International Dance Center © {new Date().getFullYear()} -{' '}
-                {t(`${prefix}FooterRights`)}
-              </p>
-              <div className="flex flex-wrap justify-center gap-3 sm:gap-4 text-xs sm:text-sm">
-                <Link
-                  to={`/${locale}/aviso-legal`}
-                  className="text-neutral/50 hover:text-neutral transition-colors"
-                >
-                  {t(`${prefix}FooterLegal`)}
-                </Link>
-                <span className="text-neutral/30">|</span>
-                <Link
-                  to={`/${locale}/politica-privacidad`}
-                  className="text-neutral/50 hover:text-neutral transition-colors"
-                >
-                  {t(`${prefix}FooterPrivacy`)}
-                </Link>
-                <span className="text-neutral/30">|</span>
-                <Link
-                  to={`/${locale}/terminos-condiciones`}
-                  className="text-neutral/50 hover:text-neutral transition-colors"
-                >
-                  {t(`${prefix}FooterTerms`)}
-                </Link>
-              </div>
-            </div>
+            <p className="text-neutral/60 text-xs sm:text-sm text-center">
+              Farray&apos;s International Dance Center © {new Date().getFullYear()}
+            </p>
           </div>
         </footer>
       </main>

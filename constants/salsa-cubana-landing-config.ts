@@ -34,8 +34,10 @@ export const SALSA_CUBANA_LANDING_CONFIG: LandingConfig = createLandingConfig('b
   images: {
     hero: '/images/classes/salsa-cubana/img/salsa-cubana_1024.webp',
     showcase: '/images/classes/salsa-cubana/img/salsa-cubana_1440.webp',
-    heroAlt: 'Clases de Salsa Cubana en Barcelona - Método Farray',
-    showcaseAlt: 'Estudiantes bailando Salsa Cubana en Barcelona con el Método Farray',
+    heroAlt:
+      "Pareja bailando salsa cubana en Barcelona - Aprende casino, rueda y son cubano con profesores auténticos en Farray's Center",
+    showcaseAlt:
+      "Pareja ejecutando giro de salsa cubana en Barcelona - Clases de casino y rueda con profesores cubanos en Farray's Center",
   },
 
   // =========================================================================

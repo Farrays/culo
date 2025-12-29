@@ -17,7 +17,7 @@ const PricingPreview: React.FC<PricingPreviewProps> = ({ config }) => {
   const { t, locale } = useI18n();
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-black to-gray-900">
+    <section className="py-12 md:py-16 bg-gradient-to-b from-black to-gray-900">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <AnimateOnScroll>

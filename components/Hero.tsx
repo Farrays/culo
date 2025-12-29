@@ -54,7 +54,6 @@ const Hero: React.FC = () => {
         {/* Overlays for text readability */}
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black/20 to-black/40" />
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20" />
       </div>
 
       <div className="relative z-10 text-center text-neutral px-4 sm:px-6">

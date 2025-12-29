@@ -68,7 +68,8 @@ import LeadCaptureModal from '../shared/LeadCaptureModal';
 export interface ScheduleItem {
   id: string;
   dayKey: string;
-  className: string;
+  classNameKey?: string; // Translation key for class name (enterprise i18n)
+  className?: string; // Direct class name (fallback for legacy configs)
   time: string;
   teacher: string;
   levelKey: string;
@@ -625,9 +626,13 @@ const FullDanceClassTemplateV2: React.FC<{ config: FullDanceClassConfigV2 }> = (
   const schedules = useMemo(
     () =>
       config.scheduleKeys.map(schedule => ({
-        ...schedule,
+        id: schedule.id,
         day: t(schedule.dayKey),
+        className: schedule.classNameKey ? t(schedule.classNameKey) : schedule.className || '',
+        time: schedule.time,
+        teacher: schedule.teacher,
         level: t(schedule.levelKey),
+        note: schedule.note,
       })),
     [config.scheduleKeys, t]
   );
@@ -808,7 +813,7 @@ const FullDanceClassTemplateV2: React.FC<{ config: FullDanceClassConfigV2 }> = (
           <section
             id="what-is"
             aria-labelledby="what-is-title"
-            className="py-16 md:py-24 bg-gradient-to-b from-black via-primary-dark/20 to-black"
+            className="py-12 md:py-16 bg-gradient-to-b from-black via-primary-dark/20 to-black"
           >
             <div className="container mx-auto px-4 sm:px-6">
               <div className="max-w-6xl mx-auto">
@@ -964,7 +969,7 @@ const FullDanceClassTemplateV2: React.FC<{ config: FullDanceClassConfigV2 }> = (
         <section
           id="teachers"
           aria-labelledby="teachers-title"
-          className="py-12 md:py-20 bg-primary-dark/10"
+          className="py-12 md:py-16 bg-primary-dark/10"
         >
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -1012,7 +1017,7 @@ const FullDanceClassTemplateV2: React.FC<{ config: FullDanceClassConfigV2 }> = (
             return (
               <section
                 aria-labelledby="identify-title"
-                className="py-16 md:py-24 bg-gradient-to-b from-black to-primary-dark/20"
+                className="py-12 md:py-16 bg-gradient-to-b from-black to-primary-dark/20"
               >
                 <div className="container mx-auto px-4 sm:px-6">
                   <AnimateOnScroll>
@@ -1097,7 +1102,7 @@ const FullDanceClassTemplateV2: React.FC<{ config: FullDanceClassConfigV2 }> = (
             return (
               <section
                 aria-labelledby="transform-title"
-                className="py-16 md:py-24 bg-gradient-to-b from-primary-dark/20 to-black overflow-hidden"
+                className="py-12 md:py-16 bg-gradient-to-b from-primary-dark/20 to-black overflow-hidden"
               >
                 <div className="container mx-auto px-4 sm:px-6">
                   <AnimateOnScroll>
@@ -1216,7 +1221,7 @@ const FullDanceClassTemplateV2: React.FC<{ config: FullDanceClassConfigV2 }> = (
 
         {/* ===== 7. WHY CHOOSE SECTION ===== */}
         {config.whyChooseSection?.enabled && (
-          <section className="py-12 md:py-20 bg-primary-dark/10">
+          <section className="py-12 md:py-16 bg-primary-dark/10">
             <div className="container mx-auto px-4 sm:px-6">
               <AnimateOnScroll>
                 <div className="text-center mb-8 sm:mb-10 max-w-4xl mx-auto">
@@ -1349,10 +1354,9 @@ const FullDanceClassTemplateV2: React.FC<{ config: FullDanceClassConfigV2 }> = (
 
         {/* ===== 8. WHY TODAY SECTION (V2 - Urgencia Visual) ===== */}
         {config.whyTodaySection?.enabled && (
-          <section className="relative py-16 md:py-24 overflow-hidden">
+          <section className="relative py-12 md:py-16 overflow-hidden">
             {/* Background con gradiente de urgencia */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary-accent/20 via-black to-primary-dark/30"></div>
-            <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-10"></div>
 
             <div className="container mx-auto px-4 sm:px-6 relative z-10">
               <div className="max-w-4xl mx-auto">
@@ -1471,7 +1475,7 @@ const FullDanceClassTemplateV2: React.FC<{ config: FullDanceClassConfigV2 }> = (
           (() => {
             const nearbyKeyPrefix = config.nearbySection?.keyPrefix || config.styleKey;
             return (
-              <section className="py-10 md:py-14 bg-black" aria-labelledby="nearby-title">
+              <section className="py-12 md:py-16 bg-black" aria-labelledby="nearby-title">
                 <div className="container mx-auto px-4 sm:px-6">
                   <AnimateOnScroll>
                     <div className="max-w-4xl mx-auto p-4 sm:p-6 bg-black/30 rounded-2xl border border-neutral/20">
@@ -1513,7 +1517,7 @@ const FullDanceClassTemplateV2: React.FC<{ config: FullDanceClassConfigV2 }> = (
         {/* ===== 15. FINAL CTA SECTION (V2 - Video Fondo + 1 CTA) ===== */}
         <section
           id="final-cta"
-          className="relative py-16 sm:py-20 md:py-28 overflow-hidden min-h-[500px] flex items-center"
+          className="relative py-12 md:py-16 overflow-hidden min-h-[500px] flex items-center"
         >
           {/* Video Background (reutiliza el del hero) */}
           <div className="absolute inset-0">

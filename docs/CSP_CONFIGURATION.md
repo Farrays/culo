@@ -38,10 +38,19 @@ git commit -m "Update CSP hash for inline scripts"
 
 ### Current Hash Information
 
-**Last Updated**: 2025-11-22  
-**Current Hash**: `sha256-lE663GA/AVh64NJNFLdYmeZ7ofg1KbcgSjiXS/ApOz8=`  
-**Script Type**: JSON-LD structured data (DanceSchool schema)  
-**Location**: `index.html` line 48-158
+**Last Updated**: 2025-12-28
+
+**Script 1 - GTM Consent Mode Default** (lines 8-19):
+
+- **Hash**: `sha256-5eDHtxmI9CN5flnH51iD0PrIQRAdTX/PSje62Qr2wGU=`
+- **Purpose**: Sets default consent state (GDPR compliant - denied until user accepts)
+
+**Script 2 - GTM Loader** (lines 20-24):
+
+- **Hash**: `sha256-ydOML15aaSLSZRfbaxA3VeIVLuQxBKjtf7habp/SVGg=`
+- **Purpose**: Loads Google Tag Manager asynchronously
+
+**Note**: JSON-LD structured data (lines 89-199) does NOT need a hash as `type="application/ld+json"` is data, not executable code.
 
 ### Troubleshooting CSP Violations
 

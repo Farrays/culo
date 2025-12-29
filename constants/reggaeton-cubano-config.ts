@@ -9,6 +9,7 @@ import {
   REGGAETON_CUBANO_LEVELS,
   REGGAETON_CUBANO_PREPARE_CONFIG,
 } from './reggaeton-cubano';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const REGGAETON_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
@@ -21,19 +22,16 @@ export const REGGAETON_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: REGGAETON_CUBANO_TESTIMONIALS,
   scheduleKeys: REGGAETON_CUBANO_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Charlie Breezy',
-      specialtyKey: 'rcbTeacher1Specialty',
-      bioKey: 'rcbTeacher1Bio',
-      image: '/images/teachers/img/profesor-hip-hop-charlie-breezy_320.webp',
-    },
-    {
-      name: 'Alejandro Miñoso',
-      specialtyKey: 'rcbTeacher2Specialty',
-      bioKey: 'rcbTeacher2Bio',
-    },
+    getTeacherInfo('charlie-breezy', 'rcbTeacher1Specialty', 'rcbTeacher1Bio', [
+      'Reggaeton',
+      'Urban',
+    ]),
+    getTeacherInfo('alejandro-minoso', 'rcbTeacher2Specialty', 'rcbTeacher2Bio', [
+      'ENA Cuba',
+      'Afro',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Reggaeton Cubano)
@@ -55,6 +53,20 @@ export const REGGAETON_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 500,
     funPercent: 100,
     gradientColor: 'rose',
+
+    // Enterprise: Hero background image
+    heroImage: {
+      basePath: '/images/classes/reggaeton-cubano/img/mgs_8884',
+      alt: "Clases de Reggaetón Cubano en Barcelona - Farray's Center",
+      altKey: 'styleImages.reggaetonCubano.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'] as const,
+    },
+    heroVisuals: {
+      imageOpacity: 45,
+      objectPosition: 'center 40%',
+      gradientStyle: 'vibrant' as const,
+    },
   },
 
   // === SECTION TOGGLES ===

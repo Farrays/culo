@@ -38,7 +38,7 @@ export const BAILE_MANANAS_FAQS_CONFIG: FAQ[] = [
 // Testimonials - Using Google Reviews (same pattern as CuerpoFit)
 export const BAILE_MANANAS_TESTIMONIALS: Testimonial[] = [...GOOGLE_REVIEWS_TESTIMONIALS];
 
-// Schedule data - 13 clases de mañanas (Lunes, Miércoles, Jueves)
+// Schedule data - 15 clases de mañanas (Lunes, Miércoles, Jueves)
 export const BAILE_MANANAS_SCHEDULE_KEYS = [
   // === LUNES ===
   {
@@ -114,6 +114,14 @@ export const BAILE_MANANAS_SCHEDULE_KEYS = [
     teacher: 'Alejandro Miñoso',
     levelKey: 'basicLevel',
   },
+  {
+    id: '14',
+    dayKey: 'wednesday',
+    className: 'Dancehall Female Principiantes',
+    time: '12:00 - 13:00',
+    teacher: 'Isabel López',
+    levelKey: 'beginnerLevel',
+  },
   // === JUEVES ===
   {
     id: '10',
@@ -147,6 +155,14 @@ export const BAILE_MANANAS_SCHEDULE_KEYS = [
     teacher: 'Yasmina Fernández',
     levelKey: 'beginnerLevel',
   },
+  {
+    id: '15',
+    dayKey: 'thursday',
+    className: 'Twerk Principiantes',
+    time: '11:00 - 12:00',
+    teacher: 'Isabel López',
+    levelKey: 'beginnerLevel',
+  },
 ];
 
 // Level descriptions for cards - 3 niveles
@@ -177,17 +193,15 @@ export const BAILE_MANANAS_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const BAILE_MANANAS_PREPARE_CONFIG = {
   prefix: 'bailemanananasPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Alejandro Miñoso',
-    credential: 'Profesor de Clases de Mañanas',
-    image: undefined, // Se añadirá después
-  },
+  teacher: getTeacherQuoteInfo('alejandro-minoso', 'Profesor de Clases de Mañanas'),
 };
 
 // Breadcrumb custom keys
@@ -201,9 +215,9 @@ export const BAILE_MANANAS_BREADCRUMB_KEYS = {
 // Course schema configuration
 export const BAILE_MANANAS_COURSE_CONFIG = {
   teaches:
-    'Contemporáneo, Ballet, Modern Jazz, Afro Jazz, Sexy Style, Sexy Reggaeton, Salsa Lady Style, Stretching, Body Conditioning, Reggaeton Cubano',
+    'Contemporáneo, Ballet, Modern Jazz, Afro Jazz, Sexy Style, Sexy Reggaeton, Salsa Lady Style, Stretching, Body Conditioning, Reggaeton Cubano, Dancehall Female, Twerk',
   prerequisites: 'Ninguno - clases para todos los niveles desde principiante',
-  lessons: '13 clases semanales de lunes a jueves',
+  lessons: '15 clases semanales de lunes a jueves',
   duration: 'PT1H',
 };
 

@@ -198,7 +198,7 @@ const RegalaBailePage: React.FC = () => {
         </section>
 
         {/* Benefits Section - Con Stellar Background */}
-        <section className="relative py-20 md:py-28 bg-black overflow-hidden">
+        <section className="relative py-12 md:py-16 bg-black overflow-hidden">
           {/* Stellar Background */}
           <div className="absolute inset-0 stellar-bg">
             <div className="stars"></div>
@@ -238,7 +238,7 @@ const RegalaBailePage: React.FC = () => {
         </section>
 
         {/* Perfect Occasions Section */}
-        <section className="py-16 md:py-20 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-12 max-w-4xl mx-auto">
@@ -267,7 +267,7 @@ const RegalaBailePage: React.FC = () => {
         </section>
 
         {/* How It Works Section */}
-        <section className="py-16 md:py-20 bg-gradient-to-b from-black via-primary-dark/5 to-black">
+        <section className="py-12 md:py-16 bg-gradient-to-b from-black via-primary-dark/5 to-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-16 max-w-4xl mx-auto">
@@ -305,7 +305,7 @@ const RegalaBailePage: React.FC = () => {
         </section>
 
         {/* Testimonial / Quote Section */}
-        <section className="py-16 md:py-20 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -329,7 +329,7 @@ const RegalaBailePage: React.FC = () => {
         />
 
         {/* Delivery Section */}
-        <section className="py-16 md:py-20 bg-gradient-to-b from-black via-primary-dark/5 to-black">
+        <section className="py-12 md:py-16 bg-gradient-to-b from-black via-primary-dark/5 to-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-12 max-w-4xl mx-auto">
@@ -383,7 +383,7 @@ const RegalaBailePage: React.FC = () => {
         </section>
 
         {/* Final CTA Section - Con Stellar Background */}
-        <section className="relative py-20 md:py-32 bg-black overflow-hidden">
+        <section className="relative py-12 md:py-16 bg-black overflow-hidden">
           {/* Stellar Background */}
           <div className="absolute inset-0 stellar-bg">
             <div className="stars"></div>

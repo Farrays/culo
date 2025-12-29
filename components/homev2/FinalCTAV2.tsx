@@ -19,11 +19,10 @@ const FinalCTAV2: React.FC<FinalCTAV2Props> = ({ config }) => {
   const { t, locale } = useI18n();
 
   return (
-    <section id="final-cta" className="relative py-20 md:py-32 overflow-hidden">
-      {/* Background con stardust */}
+    <section id="final-cta" className="relative py-12 md:py-16 overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0 bg-black">
         <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black" />
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20" />
       </div>
 
       {/* Contenido */}

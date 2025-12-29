@@ -419,20 +419,11 @@ Pasar a Pro ($20/mes) cuando:
 
 **Problema identificado:** Warnings repetidos en consola sobre recursos precargados no utilizados.
 
-#### 9.1.1 stardust.png - Discrepancia de URLs
+#### 9.1.1 ~~stardust.png - Discrepancia de URLs~~ ✅ RESUELTO
 
-- **Severidad:** Media
-- **Síntoma:** `The resource .../stardust.png was preloaded using link preload but not used`
-- **Causa raíz:**
-  - `index.html:68` precarga `/images/textures/stardust.png` (local)
-  - `Hero.tsx:57` y mayoría de componentes usan `https://www.transparenttextures.com/patterns/stardust.png` (externo)
-- **Impacto:** ~100KB bandwidth desperdiciado por visita
-- **Solución propuesta:**
-  - Opción A: Cambiar todos los componentes a usar la versión local `/images/textures/stardust.png`
-  - Opción B: Eliminar el preload de index.html si se prefiere usar la versión externa
-- **Archivos afectados:**
-  - `index.html` (preload)
-  - `Hero.tsx`, `FinalCTA.tsx`, `HeroV2.tsx`, `FinalCTAV2.tsx` y ~30 componentes más
+- **Estado:** ✅ Eliminado completamente
+- **Solución aplicada:** Se eliminó la textura stardust.png de toda la web (preload, ~48 ocurrencias en componentes, y archivo físico)
+- **Beneficio:** ~100KB bandwidth ahorrado por visita, código más limpio, sin dependencias externas
 
 #### 9.1.2 style-\*.css - Preload duplicado de Vite
 

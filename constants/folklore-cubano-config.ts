@@ -11,6 +11,7 @@ import {
   FOLKLORE_CUBANO_LEVELS,
   FOLKLORE_CUBANO_PREPARE_CONFIG,
 } from './folklore-cubano';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const FOLKLORE_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
@@ -23,14 +24,12 @@ export const FOLKLORE_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: FOLKLORE_CUBANO_TESTIMONIALS,
   scheduleKeys: FOLKLORE_CUBANO_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Grechén Mendez',
-      specialtyKey: 'folkloreTeacher1Specialty',
-      bioKey: 'folkloreTeacher1Bio',
-      // No image - will use initials avatar
-    },
+    getTeacherInfo('grechen-mendez', 'folkloreTeacher1Specialty', 'folkloreTeacher1Bio', [
+      'Folklore',
+      'Danzas Cubanas',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Salsa/Bachata > Folklore Cubano)
@@ -52,6 +51,20 @@ export const FOLKLORE_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 450,
     funPercent: 100,
     gradientColor: 'amber',
+
+    // Enterprise: Hero background image
+    heroImage: {
+      basePath: '/images/classes/folklore-cubano/img/folklore-calle-habana',
+      alt: "Bailarina ejecutando danza Yoruba de Folklore Cubano en las calles de La Habana - Tradición afrocubana en Farray's Center Barcelona",
+      altKey: 'styleImages.folkloreCubano.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'] as const,
+    },
+    heroVisuals: {
+      imageOpacity: 50,
+      objectPosition: 'center 35%',
+      gradientStyle: 'dark' as const,
+    },
   },
 
   // === SECTION TOGGLES ===

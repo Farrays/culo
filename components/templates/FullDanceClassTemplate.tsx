@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
 import { useImageAlt } from '../../hooks/useImageAlt';
-import { SUPPORTED_LOCALES } from '../../types';
 import Breadcrumb from '../shared/Breadcrumb';
 import {
   StarRating,
@@ -38,7 +37,7 @@ import YouTubeEmbed from '../YouTubeEmbed';
 import BunnyEmbed from '../BunnyEmbed';
 import {
   LocalBusinessSchema,
-  CourseSchema,
+  CourseSchemaEnterprise,
   AggregateReviewsSchema,
   HowToSchema,
   SpeakableSchema,
@@ -52,6 +51,7 @@ import {
   FARRAYS_LOCATION,
   SOCIAL_PROOF,
 } from '../../constants/shared';
+import { getRelatedClassImageUrl } from '../../constants/style-images';
 import type { Testimonial } from '../../types';
 import type { FAQ } from './ClassPageTemplate';
 import LeadCaptureModal from '../shared/LeadCaptureModal';
@@ -63,7 +63,8 @@ import LeadCaptureModal from '../shared/LeadCaptureModal';
 export interface ScheduleItem {
   id: string;
   dayKey: string;
-  className: string;
+  classNameKey?: string; // Translation key for class name (enterprise i18n)
+  className?: string; // Direct class name (fallback for legacy configs)
   time: string;
   teacher: string;
   levelKey: string;
@@ -76,7 +77,11 @@ export interface TeacherInfo {
   bioKey: string;
   image?: string;
   imageSrcSet?: string;
+  /** AVIF srcset for modern browsers (best compression) */
+  imageSrcSetAvif?: string;
   tags?: string[];
+  /** Object position for face focus (default: 'center 20%') */
+  objectPosition?: string;
 }
 
 export interface BreadcrumbConfig {
@@ -114,6 +119,8 @@ export interface HeroConfig {
     imageOpacity?: number;
     /** Object position for hero image (default: 'center') - e.g., 'center 30%' to focus on upper body */
     objectPosition?: string;
+    /** Object fit for hero image (default: 'cover') - use 'contain' to show full image without cropping */
+    objectFit?: 'cover' | 'contain';
     /** Gradient overlay style: 'dark' (default), 'subtle', 'vibrant', 'dramatic', 'none' */
     gradientStyle?: 'dark' | 'subtle' | 'vibrant' | 'dramatic' | 'none';
     /** Enable text shadow for better contrast against vibrant backgrounds (default: false) */
@@ -141,6 +148,8 @@ export interface WhatIsSection {
     altKey?: string; // i18n key for alt text (enterprise i18n support)
     breakpoints: number[]; // e.g., [320, 640, 768, 1024, 1440, 1920]
     formats: ('avif' | 'webp' | 'jpg')[]; // e.g., ['avif', 'webp', 'jpg']
+    /** Object fit for image (default: 'cover') - use 'contain' to show full image without cropping */
+    objectFit?: 'cover' | 'contain';
   };
 }
 
@@ -330,58 +339,87 @@ const TeacherCard: React.FC<{
   teacher: TeacherInfo;
   index: number;
   t: (key: string) => string;
-}> = ({ teacher, index, t }) => (
-  <AnimateOnScroll
-    delay={(index + 1) * ANIMATION_DELAYS.STAGGER_SMALL}
-    className="[perspective:1000px]"
-  >
-    <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-6 sm:p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow">
-      <div className="flex flex-col items-center text-center">
-        {teacher.image ? (
-          <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-4 sm:mb-6">
-            <picture>
-              {teacher.imageSrcSet && (
-                <source type="image/webp" srcSet={teacher.imageSrcSet} sizes="160px" />
-              )}
-              <img
-                src={teacher.image}
-                alt={teacher.name}
-                width="160"
-                height="160"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-            </picture>
-          </div>
-        ) : (
-          <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-4 sm:mb-6 bg-gradient-to-br from-primary-accent/30 to-primary-dark/50 flex items-center justify-center">
-            <span className="text-3xl font-black text-primary-accent/60">
-              {teacher.name
-                .split(' ')
-                .map(n => n[0])
-                .join('')}
-            </span>
-          </div>
-        )}
-        <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2">{teacher.name}</h3>
-        <p className="text-primary-accent font-semibold mb-3 sm:mb-4">{t(teacher.specialtyKey)}</p>
-        <p className="text-neutral/90 leading-relaxed text-sm">{t(teacher.bioKey)}</p>
-        {teacher.tags && teacher.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 justify-center mt-4">
-            {teacher.tags.map(tag => (
-              <span
-                key={tag}
-                className="px-3 py-1 bg-primary-accent/20 text-primary-accent text-xs rounded-full"
-              >
-                {tag}
+}> = ({ teacher, index, t }) => {
+  // Object position for face focus (default centers on face)
+  const objectPosition = teacher.objectPosition || 'center 20%';
+
+  // Generate descriptive alt text for SEO & accessibility
+  const altText = `${teacher.name} - ${t(teacher.specialtyKey)} en Farray's Center Barcelona`;
+
+  return (
+    <AnimateOnScroll
+      delay={(index + 1) * ANIMATION_DELAYS.STAGGER_SMALL}
+      className="[perspective:1000px]"
+    >
+      <article
+        className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-6 sm:p-8 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.05)_rotateY(5deg)] hover:shadow-accent-glow"
+        aria-labelledby={`teacher-${index}-name`}
+      >
+        <div className="flex flex-col items-center text-center">
+          {teacher.image ? (
+            <figure className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-4 sm:mb-6">
+              <picture>
+                {/* AVIF: Best compression, modern browsers */}
+                {teacher.imageSrcSetAvif && (
+                  <source type="image/avif" srcSet={teacher.imageSrcSetAvif} sizes="160px" />
+                )}
+                {/* WebP: Good compression, wide support */}
+                {teacher.imageSrcSet && (
+                  <source type="image/webp" srcSet={teacher.imageSrcSet} sizes="160px" />
+                )}
+                <img
+                  src={teacher.image}
+                  alt={altText}
+                  width="160"
+                  height="160"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  style={{ objectPosition }}
+                />
+              </picture>
+            </figure>
+          ) : (
+            <div
+              role="img"
+              aria-label={`Avatar de ${teacher.name}`}
+              className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-4 sm:mb-6 bg-gradient-to-br from-primary-accent/30 to-primary-dark/50 flex items-center justify-center"
+            >
+              <span className="text-3xl font-black text-primary-accent/60" aria-hidden="true">
+                {teacher.name
+                  .split(' ')
+                  .map(n => n[0])
+                  .join('')}
               </span>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  </AnimateOnScroll>
-);
+            </div>
+          )}
+          <h3
+            id={`teacher-${index}-name`}
+            className="text-xl sm:text-2xl font-bold text-neutral mb-2"
+          >
+            {teacher.name}
+          </h3>
+          <p className="text-primary-accent font-semibold mb-3 sm:mb-4">
+            {t(teacher.specialtyKey)}
+          </p>
+          <p className="text-neutral/90 leading-relaxed text-sm">{t(teacher.bioKey)}</p>
+          {teacher.tags && teacher.tags.length > 0 && (
+            <ul className="flex flex-wrap gap-2 justify-center mt-4" aria-label="Especialidades">
+              {teacher.tags.map(tag => (
+                <li
+                  key={tag}
+                  className="px-3 py-1 bg-primary-accent/20 text-primary-accent text-xs rounded-full"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </article>
+    </AnimateOnScroll>
+  );
+};
 
 // ============================================================================
 // RELATED CLASSES - CONSTANTS & COMPONENTS
@@ -393,70 +431,13 @@ const RELATED_CLASS_IMAGE_DIMENSIONS = {
   height: 320,
 } as const;
 
-/**
- * Images for related classes.
- * Uses local optimized WebP when available, high-quality Unsplash as fallback.
- *
- * @note Local images have priority. When local assets are created for a class,
- *       update the path here to use the local version for better performance.
- *
- * TODO: Replace Unsplash URLs with local images as they become available
- */
-const DEFAULT_CLASS_IMAGES: Record<string, string> = {
-  // ===== LATIN DANCE =====
-  // Local images not yet available - using high-quality Unsplash
-  'salsa-cubana-barcelona':
-    'https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?w=480&h=320&fit=crop&q=85&auto=format',
-  'bachata-barcelona':
-    'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=480&h=320&fit=crop&q=85&auto=format',
-  'salsa-bachata-barcelona':
-    'https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=480&h=320&fit=crop&q=85&auto=format',
-  'salsa-lady-style-barcelona':
-    'https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=480&h=320&fit=crop&q=85&auto=format',
-  'timba-barcelona':
-    'https://images.unsplash.com/photo-1545959570-a94084071b5d?w=480&h=320&fit=crop&q=85&auto=format',
-  'folklore-cubano': '/images/classes/folklore-cubano/img/folklore-calle-habana_640.webp',
-
-  // ===== URBAN DANCE =====
-  // Using local optimized images where available ✅
-  'dancehall-barcelona': '/images/classes/dancehall/img/dancehall-classes-barcelona-01_640.webp',
-  'hip-hop-reggaeton-barcelona':
-    '/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona_640.webp',
-  'reggaeton-cubano-barcelona':
-    'https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=480&h=320&fit=crop&q=85&auto=format',
-  'twerk-barcelona': '/images/classes/twerk/img/clases-twerk-barcelona_640.webp',
-  'sexy-reggaeton-barcelona':
-    '/images/classes/sexy-reggaeton/img/clases-sexy-reggaeton-barcelona_640.webp',
-  'sexy-style-barcelona': '/images/classes/sexy-style/img/clases-de-sexy-style-barcelona_640.webp',
-  'afrobeats-barcelona': '/images/classes/afrobeat/img/clases-afrobeat-barcelona_640.webp',
-  femmology: '/images/classes/femmology/img/clases-de-femmology-barcelona_480.webp',
-  'heels-barcelona': '/images/classes/femmology/img/clases-de-femmology-barcelona_480.webp',
-  'hip-hop-barcelona':
-    '/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona_640.webp',
-
-  // ===== CONTEMPORARY DANCE =====
-  'ballet-barcelona': '/images/classes/ballet/img/clases-ballet-barcelona_480.webp',
-  'contemporaneo-barcelona':
-    'https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?w=480&h=320&fit=crop&q=85&auto=format',
-  'modern-jazz-barcelona': '/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_640.webp',
-  'afro-contemporaneo-barcelona':
-    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=480&h=320&fit=crop&q=85&auto=format',
-  'afro-jazz':
-    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=480&h=320&fit=crop&q=85&auto=format',
-
-  // ===== FITNESS =====
-  'stretching-barcelona':
-    'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=480&h=320&fit=crop&q=85&auto=format',
-  'ejercicios-gluteos-barcelona':
-    'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=480&h=320&fit=crop&q=85&auto=format',
-  'cuerpo-fit':
-    'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=480&h=320&fit=crop&q=85&auto=format',
-  'acondicionamiento-fisico-bailarines':
-    'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=480&h=320&fit=crop&q=85&auto=format',
-};
-
-/** Default fallback image - uses reliable ballet image that exists locally */
-const FALLBACK_CLASS_IMAGE = '/images/classes/ballet/img/clases-ballet-barcelona_480.webp';
+// ============================================================================
+// RELATED CLASS IMAGES - Now using centralized style-images.ts system
+// ============================================================================
+// Images are now managed via getRelatedClassImageUrl() from style-images.ts
+// This eliminates duplication and ensures consistency with all image assets.
+// See: constants/style-images.ts -> SLUG_TO_STYLE_KEY mapping
+// ============================================================================
 
 /**
  * Decorative arrow icon for CTA buttons.
@@ -508,7 +489,7 @@ const RelatedClassesSchema: React.FC<{
         name: t(classInfo.nameKey),
         description: t(classInfo.descriptionKey),
         url: `${baseUrl}/${locale}/clases/${classInfo.slug}`,
-        image: `${baseUrl}${DEFAULT_CLASS_IMAGES[classInfo.slug] || FALLBACK_CLASS_IMAGE}`,
+        image: `${baseUrl}${classInfo.imageUrl || getRelatedClassImageUrl(classInfo.slug)}`,
         provider: {
           '@type': 'DanceSchool',
           name: "Farray's International Dance Center",
@@ -570,9 +551,8 @@ const RelatedClassCard: React.FC<{
   // Generate unique ID for accessibility
   const headingId = useId();
 
-  // Get image URL with fallback
-  const imageUrl =
-    classInfo.imageUrl || DEFAULT_CLASS_IMAGES[classInfo.slug] || FALLBACK_CLASS_IMAGE;
+  // Get image URL from centralized style-images system
+  const imageUrl = classInfo.imageUrl || getRelatedClassImageUrl(classInfo.slug);
 
   // Get translated texts
   const className = t(classInfo.nameKey);
@@ -678,6 +658,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
   const heroVisuals = hero.heroVisuals || {};
   const imageOpacity = heroVisuals.imageOpacity ?? 40;
   const objectPosition = heroVisuals.objectPosition || 'center';
+  const objectFit = heroVisuals.objectFit || 'cover';
   const gradientStyle = heroVisuals.gradientStyle || 'dark';
   const textShadow = heroVisuals.textShadow || false;
 
@@ -693,9 +674,9 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
   // Calculate overlay opacity inverse of image opacity (higher image opacity = lower overlay)
   const overlayOpacity = Math.max(0, Math.min(100, 100 - imageOpacity));
 
-  // Text shadow class for vibrant backgrounds
+  // Text shadow class for vibrant backgrounds (matches Home Hero styling)
   const textShadowClass = textShadow
-    ? '[text-shadow:0_2px_8px_rgba(0,0,0,0.8),0_4px_16px_rgba(0,0,0,0.6)]'
+    ? '[text-shadow:0_2px_8px_rgba(0,0,0,0.8),0_4px_24px_rgba(0,0,0,0.6)]'
     : '';
 
   // Lead capture modal state
@@ -705,9 +686,25 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
   const schedules = useMemo(
     () =>
       config.scheduleKeys.map(schedule => ({
-        ...schedule,
+        id: schedule.id,
         day: t(schedule.dayKey),
+        className: schedule.classNameKey ? t(schedule.classNameKey) : schedule.className || '',
+        time: schedule.time,
+        teacher: schedule.teacher,
         level: t(schedule.levelKey),
+        note: schedule.note,
+      })),
+    [config.scheduleKeys, t]
+  );
+
+  // Schedule data for CourseSchemaEnterprise
+  const courseSchedules = useMemo(
+    () =>
+      config.scheduleKeys.map(schedule => ({
+        className: schedule.classNameKey ? t(schedule.classNameKey) : schedule.className || '',
+        dayKey: schedule.dayKey,
+        time: schedule.time,
+        teacher: schedule.teacher,
       })),
     [config.scheduleKeys, t]
   );
@@ -938,19 +935,13 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         }}
       />
 
-      <CourseSchema
+      {/* Enterprise Course Schema with CourseInstance for each schedule */}
+      <CourseSchemaEnterprise
         name={t(`${config.styleKey}CourseSchemaName`)}
         description={t(`${config.styleKey}CourseSchemaDesc`)}
-        provider={{
-          name: FARRAYS_LOCATION.name,
-          url: baseUrl,
-        }}
-        educationalLevel="Beginner, Intermediate, Advanced"
-        teaches={config.courseConfig?.teaches || t(`${config.styleKey}CourseTeaches`)}
-        coursePrerequisites={config.courseConfig?.prerequisites || 'Ninguno'}
-        numberOfLessons={config.courseConfig?.lessons || 'Clases semanales'}
-        timeRequired={config.courseConfig?.duration || 'PT1H'}
-        availableLanguage={SUPPORTED_LOCALES}
+        pageUrl={pageUrl}
+        baseUrl={baseUrl}
+        schedules={courseSchedules}
       />
 
       <AggregateReviewsSchema
@@ -1068,7 +1059,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                     sizes="100vw"
                     aspectRatio="16/9"
                     className="w-full h-full"
-                    objectFit="cover"
+                    objectFit={objectFit}
                     style={{ objectPosition }}
                     placeholder="color"
                     placeholderColor="#111"
@@ -1091,7 +1082,6 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                 className={`absolute inset-0 bg-gradient-to-br ${gradientClasses[gradientColor]}`}
               ></div>
             )}
-            <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-20"></div>
           </div>
 
           <div className="relative z-20 container mx-auto px-4 sm:px-6">
@@ -1100,7 +1090,8 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
             <AnimateOnScroll>
               <h1
                 id="hero-title"
-                className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 text-white ${textShadowClass}`}
+                className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-4 sm:mb-6 text-white"
+                style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
               >
                 {t(`${config.styleKey}HeroTitle`)}
               </h1>
@@ -1224,7 +1215,10 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
 
         {/* ===== 2. WHAT IS X SECTION ===== */}
         {config.whatIsSection?.enabled && (
-          <section aria-labelledby="what-is-title" className="py-12 md:py-20 bg-primary-dark/10">
+          <section
+            aria-labelledby="what-is-title"
+            className="section-after-hero pb-12 md:pb-16 bg-primary-dark/10"
+          >
             <div className="container mx-auto px-4 sm:px-6">
               <AnimateOnScroll>
                 <div className="max-w-4xl mx-auto">
@@ -1248,6 +1242,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                           breakpoints={config.whatIsSection.optimizedImage.breakpoints}
                           formats={config.whatIsSection.optimizedImage.formats}
                           className="w-full h-full"
+                          objectFit={config.whatIsSection.optimizedImage.objectFit || 'cover'}
                           placeholder="color"
                           placeholderColor="#111"
                         />
@@ -1326,7 +1321,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         <section
           id="teachers"
           aria-labelledby="teachers-title"
-          className="py-12 md:py-20 bg-primary-dark/10"
+          className="py-12 md:py-16 bg-primary-dark/10"
         >
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -1374,7 +1369,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
             return (
               <section
                 aria-labelledby="identify-title"
-                className="py-16 md:py-24 bg-gradient-to-b from-black to-primary-dark/20"
+                className="py-12 md:py-16 bg-gradient-to-b from-black to-primary-dark/20"
               >
                 <div className="container mx-auto px-4 sm:px-6">
                   <AnimateOnScroll>
@@ -1464,7 +1459,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
 
         {/* ===== 6. TRANSFORMATION SECTION ===== */}
         {config.transformationSection?.enabled && (
-          <section aria-labelledby="transform-title" className="py-12 md:py-20 bg-black">
+          <section aria-labelledby="transform-title" className="py-12 md:py-16 bg-black">
             <div className="container mx-auto px-4 sm:px-6">
               <AnimateOnScroll>
                 <div className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto">
@@ -1507,7 +1502,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
 
         {/* ===== 7. WHY CHOOSE SECTION ===== */}
         {config.whyChooseSection?.enabled && (
-          <section className="py-12 md:py-20 bg-primary-dark/10">
+          <section className="py-12 md:py-16 bg-primary-dark/10">
             <div className="container mx-auto px-4 sm:px-6">
               <AnimateOnScroll>
                 <div className="text-center mb-8 sm:mb-10 max-w-4xl mx-auto">
@@ -1649,7 +1644,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
 
         {/* ===== 8. WHY TODAY SECTION (Single Card Design) ===== */}
         {config.whyTodaySection?.enabled && (
-          <section className="py-16 md:py-24 bg-gradient-to-b from-primary-dark/20 to-black">
+          <section className="py-12 md:py-16 bg-gradient-to-b from-primary-dark/20 to-black">
             <div className="container mx-auto px-4 sm:px-6">
               {/* Card único con todo el contenido */}
               <AnimateOnScroll>
@@ -1722,7 +1717,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
 
         {/* ===== 9. VIDEO SECTION ===== */}
         {config.videoSection?.enabled && (
-          <section id="video" className="py-12 md:py-20 bg-primary-dark/10">
+          <section id="video" className="py-12 md:py-16 bg-primary-dark/10">
             <div className="container mx-auto px-4 sm:px-6">
               <AnimateOnScroll>
                 <div className="text-center mb-8 sm:mb-12 max-w-4xl mx-auto">
@@ -1766,7 +1761,30 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                 </div>
               )}
 
-              {/* Placeholders */}
+              {/* Video Coming Soon Placeholder - Enterprise */}
+              {/* Shows automatically when no videos are configured */}
+              {!config.videoSection.bunnyVideo &&
+                (!config.videoSection.videos || config.videoSection.videos.length === 0) &&
+                (config.videoSection.placeholderCount ?? 0) === 0 && (
+                  <AnimateOnScroll>
+                    <div className="max-w-2xl mx-auto">
+                      <div className="relative aspect-video bg-gradient-to-br from-primary-dark/40 via-black/60 to-primary-dark/30 rounded-2xl border border-primary-accent/20 overflow-hidden shadow-xl pointer-events-none select-none">
+                        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-accent/10 via-transparent to-transparent" />
+                        <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+                          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary-accent/20 border-2 border-primary-accent/40 flex items-center justify-center mb-4 backdrop-blur-sm">
+                            <PlayIcon className="w-8 h-8 sm:w-10 sm:h-10 text-primary-accent/60" />
+                          </div>
+                          <p className="text-lg sm:text-xl font-bold text-neutral/90 mb-1">
+                            {t('videoComingSoon')}
+                          </p>
+                          <p className="text-sm text-neutral/50">{t('videoComingSoonDesc')}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </AnimateOnScroll>
+                )}
+
+              {/* Multiple Placeholders (legacy grid support) */}
               {(config.videoSection.placeholderCount ?? 0) > 0 && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto mt-8">
                   {Array.from({ length: config.videoSection.placeholderCount || 0 }, (_, i) => (
@@ -1777,11 +1795,11 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                         ANIMATION_DELAYS.STAGGER_SMALL
                       }
                     >
-                      <div className="aspect-video rounded-2xl overflow-hidden border-2 border-primary-accent/50 bg-black/50 backdrop-blur-sm flex items-center justify-center">
+                      <div className="aspect-video rounded-2xl overflow-hidden border-2 border-primary-accent/50 bg-black/50 backdrop-blur-sm flex items-center justify-center pointer-events-none select-none">
                         <div className="text-center p-4 sm:p-6">
                           <PlayIcon className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 text-primary-accent/50" />
                           <p className="text-sm sm:text-base text-neutral/70 font-semibold">
-                            Video próximamente
+                            {t('videoComingSoon')}
                           </p>
                         </div>
                       </div>
@@ -1818,7 +1836,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
 
         {/* ===== 11b. LATIN DANCE COMPARISON TABLE (for Latin styles) ===== */}
         {config.latinDanceComparison?.enabled && (
-          <section className="py-14 md:py-20 bg-black">
+          <section className="py-12 md:py-16 bg-black">
             <div className="container mx-auto px-4 sm:px-6">
               <AnimateOnScroll>
                 <LatinDanceComparisonTable
@@ -1831,7 +1849,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
 
         {/* ===== 11c. ARTISTIC DANCE COMPARISON TABLE (for Contemporary, Jazz, Ballet, etc.) ===== */}
         {config.artisticDanceComparison?.enabled && (
-          <section className="py-14 md:py-20 bg-black">
+          <section className="py-12 md:py-16 bg-black">
             <div className="container mx-auto px-4 sm:px-6">
               <AnimateOnScroll>
                 <ArtisticDanceComparisonTable
@@ -1852,7 +1870,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
           (() => {
             const nearbyKeyPrefix = config.nearbySection?.keyPrefix || config.styleKey;
             return (
-              <section className="py-10 md:py-14 bg-black" aria-labelledby="nearby-title">
+              <section className="py-12 md:py-16 bg-black" aria-labelledby="nearby-title">
                 <div className="container mx-auto px-4 sm:px-6">
                   <AnimateOnScroll>
                     <div className="max-w-4xl mx-auto p-4 sm:p-6 bg-black/30 rounded-2xl border border-neutral/20">
@@ -1892,12 +1910,11 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
           })()}
 
         {/* ===== 15. FINAL CTA SECTION (last chance to convert) ===== */}
-        <section id="final-cta" className="relative py-12 sm:py-16 md:py-24 overflow-hidden">
+        <section id="final-cta" className="relative py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0 bg-black">
             <div
               className={`absolute inset-0 bg-gradient-to-br ${gradientClasses[gradientColor]}`}
             ></div>
-            <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-20"></div>
           </div>
           <div className="container mx-auto px-4 sm:px-6 relative z-20">
             <AnimateOnScroll>
@@ -1946,7 +1963,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
             <section
               id="related-classes"
               aria-labelledby="related-classes-title"
-              className="py-12 md:py-20"
+              className="py-12 md:py-16"
             >
               <div className="container mx-auto px-4 sm:px-6">
                 {/* Section Header - z-10 to stay above cards on hover */}

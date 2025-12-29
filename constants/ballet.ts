@@ -144,15 +144,13 @@ export const BALLET_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const BALLET_PREPARE_CONFIG = {
   prefix: 'balletPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Daniel Sené',
-    credential: 'Profesor de Ballet',
-    image: undefined,
-  },
+  teacher: getTeacherQuoteInfo('daniel-sene', 'Profesor de Ballet'),
 };

@@ -148,6 +148,14 @@ export const BACHATA_TESTIMONIALS: Testimonial[] = [
 export const BACHATA_SCHEDULE_KEYS = [
   {
     id: '1',
+    dayKey: 'monday',
+    className: 'Bachata Sensual Básico',
+    time: '22:00 - 23:00',
+    teacher: 'Mathias Font & Eugenia Trujillo',
+    levelKey: 'basicLevel',
+  },
+  {
+    id: '2',
     dayKey: 'tuesday',
     className: 'Bachata Principiantes',
     time: '19:00 - 20:00',
@@ -155,7 +163,7 @@ export const BACHATA_SCHEDULE_KEYS = [
     levelKey: 'beginnerLevel',
   },
   {
-    id: '2',
+    id: '3',
     dayKey: 'tuesday',
     className: 'Bachata Sensual Intermedio',
     time: '20:00 - 21:00',
@@ -163,7 +171,7 @@ export const BACHATA_SCHEDULE_KEYS = [
     levelKey: 'intermediateLevel',
   },
   {
-    id: '3',
+    id: '4',
     dayKey: 'tuesday',
     className: 'Bachata Sensual Avanzado',
     time: '21:30 - 22:30',
@@ -171,7 +179,7 @@ export const BACHATA_SCHEDULE_KEYS = [
     levelKey: 'advancedLevel',
   },
   {
-    id: '4',
+    id: '5',
     dayKey: 'thursday',
     className: 'Bachata Sensual Principiantes',
     time: '20:00 - 21:00',
@@ -179,20 +187,12 @@ export const BACHATA_SCHEDULE_KEYS = [
     levelKey: 'beginnerLevel',
   },
   {
-    id: '5',
+    id: '6',
     dayKey: 'thursday',
     className: 'Bachata Principiantes',
     time: '22:00 - 23:00',
     teacher: 'Carlos & Noemi',
     levelKey: 'beginnerLevel',
-  },
-  {
-    id: '6',
-    dayKey: 'monday',
-    className: 'Bachata Sensual Básico',
-    time: '22:00 - 23:00',
-    teacher: 'Mathias Font & Eugenia Trujillo',
-    levelKey: 'basicLevel',
   },
   {
     id: '7',

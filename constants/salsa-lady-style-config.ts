@@ -7,6 +7,7 @@
 import type { LadyStyleTemplateConfig } from '../components/templates/LadyStyleTemplate';
 import { GOOGLE_REVIEWS_TESTIMONIALS } from './testimonials';
 import type { Testimonial } from '../types';
+import { getTeacherInfo, getTeacherQuoteInfo } from './teacher-images';
 
 // Testimonials for Salsa Lady Style page
 const SALSA_LADY_STYLE_TESTIMONIALS: Testimonial[] = [
@@ -73,10 +74,8 @@ export const SALSA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
     titleKey: 'salsaLadyHeroTitle',
     subtitleKey: 'salsaLadyHeroSubtitle',
     descKey: 'salsaLadyHeroDesc',
-    cta1Key: 'salsaLadyCTA1',
-    cta1SubtextKey: 'salsaLadyCTA1Subtext',
-    cta2Key: 'salsaLadyCTA2',
-    cta2SubtextKey: 'salsaLadyCTA2Subtext',
+    ctaKey: 'puertasAbiertasCTA',
+    ctaSubtextKey: 'puertasAbiertasSubtext',
     stats: {
       rating: '4.9/5',
       reviewCountKey: 'salsaLadyStatReviewCount',
@@ -100,43 +99,57 @@ export const SALSA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
     textShadow: true, // Enhanced text contrast against vibrant background
   },
 
-  // What is section
-  whatIs: {
-    titleKey: 'salsaLadyWhatIsTitle',
-    descKey: 'salsaLadyWhatIsDesc',
-    quoteKey: 'salsaLadyWhatIsQuote',
-    quoteAuthor: {
-      name: 'Yunaisy Farray',
-      credentialKey: 'salsaLadyTeacherCredential',
-      image: '/images/teachers/yunaisy-farray_256.webp',
-    },
-  },
+  // What is section - Enterprise: Sistema centralizado con imágenes optimizadas
+  whatIs: (() => {
+    const yunaisy = getTeacherQuoteInfo('yunaisy-farray', "Directora de Farray's Center");
+    return {
+      titleKey: 'salsaLadyWhatIsTitle',
+      descKey: 'salsaLadyWhatIsDesc',
+      quoteKey: 'salsaLadyWhatIsQuote',
+      quoteAuthor: {
+        name: yunaisy.name,
+        credentialKey: 'salsaLadyTeacherCredential',
+        image: yunaisy.image,
+        imageSrcSet: yunaisy.imageSrcSet,
+        imageSrcSetAvif: yunaisy.imageSrcSetAvif,
+        objectPosition: yunaisy.objectPosition,
+      },
+    };
+  })(),
 
   // Schedule
   schedules: [
     {
       id: '1',
       dayKey: 'monday',
-      classNameKey: 'salsaLadyScheduleClassBasic',
-      time: '19:00 - 20:00',
-      teacher: 'Yunaisy Farray',
-      levelKey: 'basicLevel',
-    },
-    {
-      id: '2',
-      dayKey: 'wednesday',
       classNameKey: 'salsaLadyScheduleClassIntermediate',
       time: '19:00 - 20:00',
       teacher: 'Yunaisy Farray',
       levelKey: 'intermediateLevel',
     },
     {
+      id: '2',
+      dayKey: 'wednesday',
+      classNameKey: 'salsaLadyScheduleClassBeginner',
+      time: '11:00 - 12:00',
+      teacher: 'Yasmina Fernández',
+      levelKey: 'beginnerLevel',
+    },
+    {
       id: '3',
-      dayKey: 'friday',
-      classNameKey: 'salsaLadyScheduleClassAdvanced',
+      dayKey: 'wednesday',
+      classNameKey: 'salsaLadyScheduleClassBasic',
       time: '19:00 - 20:00',
       teacher: 'Yunaisy Farray',
-      levelKey: 'advancedLevel',
+      levelKey: 'basicLevel',
+    },
+    {
+      id: '4',
+      dayKey: 'wednesday',
+      classNameKey: 'salsaLadyScheduleClassBeginner',
+      time: '20:00 - 21:00',
+      teacher: 'Lía Valdes',
+      levelKey: 'beginnerLevel',
     },
   ],
   scheduleTitleKey: 'salsaLadyScheduleTitle',
@@ -179,42 +192,60 @@ export const SALSA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
   ],
   levelsTitleKey: 'salsaLadyLevelsTitle',
 
-  // Teachers
-  teachers: [
-    {
-      name: 'Yunaisy Farray',
-      specialty: 'salsaLadyTeacherCredential',
-      bio: 'salsaLadyTeacherBio',
-      image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
-    },
-    {
-      name: 'Lia Valdes',
-      specialty: 'salsaLadyTeacher2Specialty',
-      bio: 'salsaLadyTeacher2Bio',
-      image: undefined, // Will show initials
-    },
-    {
-      name: 'Yasmina Fernandez',
-      specialty: 'salsaLadyTeacher3Specialty',
-      bio: 'salsaLadyTeacher3Bio',
-      image: '/images/teachers/img/profesora-yasmina-fernandez_320.webp',
-    },
-  ],
+  // Teachers - Enterprise: Sistema centralizado con srcSet y AVIF
+  teachers: (() => {
+    const yunaisy = getTeacherInfo(
+      'yunaisy-farray',
+      'salsaLadyTeacherCredential',
+      'salsaLadyTeacherBio'
+    );
+    const lia = getTeacherInfo('lia-valdes', 'salsaLadyTeacher2Specialty', 'salsaLadyTeacher2Bio');
+    const yasmina = getTeacherInfo(
+      'yasmina-fernandez',
+      'salsaLadyTeacher3Specialty',
+      'salsaLadyTeacher3Bio'
+    );
+    return [
+      {
+        name: yunaisy.name,
+        specialty: yunaisy.specialtyKey,
+        bio: yunaisy.bioKey,
+        image: yunaisy.image,
+        imageSrcSet: yunaisy.imageSrcSet,
+        imageSrcSetAvif: yunaisy.imageSrcSetAvif,
+        objectPosition: yunaisy.objectPosition,
+      },
+      {
+        name: lia.name,
+        specialty: lia.specialtyKey,
+        bio: lia.bioKey,
+        image: lia.image,
+        imageSrcSet: lia.imageSrcSet,
+        imageSrcSetAvif: lia.imageSrcSetAvif,
+        objectPosition: lia.objectPosition,
+      },
+      {
+        name: yasmina.name,
+        specialty: yasmina.specialtyKey,
+        bio: yasmina.bioKey,
+        image: yasmina.image,
+        imageSrcSet: yasmina.imageSrcSet,
+        imageSrcSetAvif: yasmina.imageSrcSetAvif,
+        objectPosition: yasmina.objectPosition,
+      },
+    ];
+  })(),
   teachersTitleKey: 'salsaLadyTeachersTitle',
   teachersSubtitleKey: 'salsaLadyTeachersSubtitle',
   teachersClosingKey: 'salsaLadyTeachersClosing',
 
-  // Prepare
+  // Prepare - Enterprise: Sistema centralizado con imágenes optimizadas
   prepareConfig: {
     prefix: 'salsaLadyPrepare',
     whatToBringCount: 5,
     beforeCount: 3,
     avoidCount: 3,
-    teacher: {
-      name: 'Yunaisy Farray',
-      credential: "Directora de Farray's Center",
-      image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
-    },
+    teacher: getTeacherQuoteInfo('yunaisy-farray', "Directora de Farray's Center"),
   },
   prepareTitleKey: 'salsaLadyPrepareTitle',
   prepareSubtitleKey: 'salsaLadyPrepareSubtitle',
@@ -520,9 +551,7 @@ export const SALSA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
   finalCta: {
     titleKey: 'salsaLadyFinalCTATitle',
     descKey: 'salsaLadyFinalCTADesc',
-    cta1Key: 'salsaLadyFinalCTA1',
-    cta1SubtextKey: 'salsaLadyFinalCTA1Subtext',
-    cta2Key: 'salsaLadyFinalCTA2',
-    cta2SubtextKey: 'salsaLadyFinalCTA2Subtext',
+    ctaKey: 'puertasAbiertasCTA',
+    ctaSubtextKey: 'puertasAbiertasSubtext',
   },
 };

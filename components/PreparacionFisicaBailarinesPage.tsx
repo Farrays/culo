@@ -218,7 +218,6 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
           {/* Background */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6">
             {/* Breadcrumb with Microdata */}
@@ -268,7 +267,7 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
         </section>
 
         {/* Training Activities Grid Section */}
-        <section aria-labelledby="activities-title" className="py-12 md:py-20 bg-primary-dark/10">
+        <section aria-labelledby="activities-title" className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-6 text-center">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -281,7 +280,7 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
               </div>
             </AnimateOnScroll>
             <AnimateOnScroll delay={200}>
-              <p className="max-w-3xl mx-auto text-lg text-neutral/90 mb-12">
+              <p className="max-w-3xl mx-auto text-lg text-neutral/90 mb-8">
                 {t('prepFisica_activities_description')}
               </p>
             </AnimateOnScroll>
@@ -345,7 +344,7 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
         </section>
 
         {/* Which Activity to Choose Section - UX + SEO CRITICAL */}
-        <section aria-labelledby="which-activity-title" className="py-16 md:py-24 bg-black">
+        <section aria-labelledby="which-activity-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -355,7 +354,7 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
                 >
                   {t('prepFisica_whichActivity_title')}
                 </h2>
-                <p className="max-w-3xl mx-auto text-lg text-neutral/90 mb-12 text-center">
+                <p className="max-w-3xl mx-auto text-lg text-neutral/90 mb-8 text-center">
                   {t('prepFisica_whichActivity_intro')}
                 </p>
               </div>
@@ -363,7 +362,7 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
 
             {/* Comparison Table */}
             <AnimateOnScroll delay={200}>
-              <div className="overflow-x-auto mb-12">
+              <div className="overflow-x-auto mb-8">
                 <table className="w-full max-w-5xl mx-auto bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl overflow-hidden shadow-lg">
                   <thead>
                     <tr className="bg-primary-accent/20 text-white">
@@ -474,10 +473,10 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
         </section>
 
         {/* Why Train at FIDC Section */}
-        <section aria-labelledby="why-title" className="py-20 md:py-32 bg-black">
+        <section aria-labelledby="why-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
-              <div className="text-center mb-16 max-w-3xl mx-auto">
+              <div className="text-center mb-10 max-w-3xl mx-auto">
                 <h2
                   id="why-title"
                   className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
@@ -567,11 +566,10 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
         />
 
         {/* Final CTA Section - Conversion Optimized */}
-        <section className="relative py-20 md:py-32 overflow-hidden">
+        <section className="relative py-12 md:py-16 overflow-hidden">
           {/* Background with stars */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6 text-center">
             <AnimateOnScroll>

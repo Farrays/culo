@@ -52,7 +52,7 @@ const InstagramFeed: React.FC = () => {
   return (
     <section
       id="instagram"
-      className="py-20 md:py-32 bg-primary-dark/10 overflow-hidden"
+      className="py-12 md:py-16 bg-primary-dark/10 overflow-hidden"
       aria-labelledby="instagram-heading"
     >
       <div className="container mx-auto">

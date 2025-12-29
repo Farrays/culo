@@ -86,7 +86,7 @@ const VideoTestimonialsSection: React.FC<VideoTestimonialsSectionProps> = memo(
     return (
       <>
         <section
-          className="py-20 md:py-32 bg-black relative overflow-hidden"
+          className="py-12 md:py-16 bg-black relative overflow-hidden"
           aria-labelledby="video-testimonials-title"
         >
           {/* Background decoration */}

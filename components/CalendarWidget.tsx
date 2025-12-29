@@ -143,7 +143,7 @@ const CalendarWidget: React.FC = memo(() => {
   }
 
   return (
-    <section id="calendario" className="py-16 md:py-24 bg-black">
+    <section id="calendario" className="py-12 md:py-16 bg-black">
       <div className="container mx-auto px-6">
         {/* Header */}
         <AnimateOnScroll>

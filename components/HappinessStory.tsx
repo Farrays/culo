@@ -6,7 +6,7 @@ const HappinessStory: React.FC = () => {
   const { t } = useI18n();
 
   return (
-    <section className="relative py-12 md:py-16 bg-black text-neutral">
+    <section className="relative section-after-hero pb-12 md:pb-16 bg-black text-neutral">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-primary-dark/10 to-black opacity-50"></div>
       <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
         {/* First line: Large white text */}

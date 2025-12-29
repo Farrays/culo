@@ -53,12 +53,12 @@ export const DANCEHALL_COURSE_CONFIG = {
   duration: 'PT1H',
 };
 
-// Schedule data for Dancehall classes
+// Schedule data for Dancehall classes (enterprise i18n with classNameKey)
 export const DANCEHALL_SCHEDULE_KEYS = [
   {
     id: '1',
     dayKey: 'monday',
-    className: 'Dancehall Principiantes',
+    classNameKey: 'dhScheduleClassFemaleBeginner',
     time: '22:00 - 23:00',
     teacher: 'Isa López',
     levelKey: 'beginnerLevel',
@@ -66,7 +66,7 @@ export const DANCEHALL_SCHEDULE_KEYS = [
   {
     id: '2',
     dayKey: 'wednesday',
-    className: 'Dancehall Female Principiantes',
+    classNameKey: 'dhScheduleClassFemaleBeginner',
     time: '12:00 - 13:00',
     teacher: 'Isa López',
     levelKey: 'beginnerLevel',
@@ -74,7 +74,7 @@ export const DANCEHALL_SCHEDULE_KEYS = [
   {
     id: '3',
     dayKey: 'wednesday',
-    className: 'Dancehall Twerk Intermedio',
+    classNameKey: 'dhScheduleClassTwerkIntermediate',
     time: '21:00 - 22:00',
     teacher: 'Isa López',
     levelKey: 'intermediateLevel',
@@ -82,15 +82,15 @@ export const DANCEHALL_SCHEDULE_KEYS = [
   {
     id: '4',
     dayKey: 'thursday',
-    className: 'Dancehall Female Principiantes',
+    classNameKey: 'dhScheduleClassFemaleBasic',
     time: '21:00 - 22:00',
     teacher: 'Isa López',
-    levelKey: 'beginnerLevel',
+    levelKey: 'basicLevel',
   },
   {
     id: '5',
     dayKey: 'thursday',
-    className: 'Dancehall Básico',
+    classNameKey: 'dhScheduleClassBasic',
     time: '22:00 - 23:00',
     teacher: 'Sandra Gómez',
     levelKey: 'basicLevel',
@@ -98,7 +98,7 @@ export const DANCEHALL_SCHEDULE_KEYS = [
   {
     id: '6',
     dayKey: 'friday',
-    className: 'Dancehall Twerk Principiantes',
+    classNameKey: 'dhScheduleClassTwerkBeginner',
     time: '18:00 - 19:00',
     teacher: 'Isa López',
     levelKey: 'beginnerLevel',
@@ -106,7 +106,7 @@ export const DANCEHALL_SCHEDULE_KEYS = [
   {
     id: '7',
     dayKey: 'friday',
-    className: 'Dancehall Female Principiantes',
+    classNameKey: 'dhScheduleClassFemaleBeginner',
     time: '19:00 - 20:00',
     teacher: 'Isa López',
     levelKey: 'beginnerLevel',
@@ -149,15 +149,13 @@ export const DANCEHALL_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const DANCEHALL_PREPARE_CONFIG = {
   prefix: 'dancehallPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Isabel López',
-    credential: 'Especialista en Dancehall',
-    image: undefined, // Will use initials avatar
-  },
+  teacher: getTeacherQuoteInfo('isabel-lopez', 'Especialista en Dancehall'),
 };

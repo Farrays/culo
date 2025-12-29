@@ -342,7 +342,7 @@ const FacilitiesPage: React.FC = () => {
         </section>
 
         {/* Dance Rooms Section */}
-        <section className="py-20 md:py-32 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-16">
@@ -367,7 +367,7 @@ const FacilitiesPage: React.FC = () => {
         <FacilitiesFullGallery />
 
         {/* What Happens in Our Rooms Section */}
-        <section className="py-20 md:py-32 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-12">
@@ -413,7 +413,7 @@ const FacilitiesPage: React.FC = () => {
         <FacilityFeatureList features={equipmentFeatures} t={t} />
 
         {/* Trust Section with Stats */}
-        <section className="py-20 md:py-32 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-12">
@@ -467,7 +467,7 @@ const FacilitiesPage: React.FC = () => {
         </section>
 
         {/* Why Choose Our Facilities Section */}
-        <section className="py-20 md:py-32 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-12">
@@ -503,10 +503,9 @@ const FacilitiesPage: React.FC = () => {
         </div>
 
         {/* Final CTA Section */}
-        <section className="relative py-20 md:py-32 overflow-hidden">
+        <section className="relative py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
 
           <div className="container mx-auto px-6 relative z-20">
