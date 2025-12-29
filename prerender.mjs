@@ -1274,7 +1274,11 @@ routes.forEach(route => {
   const content = initialContent[lang][page];
 
   // Build preload hints for this specific page (common + locale-specific i18n)
-  const pagePreloadHints = [...commonPreloadHints];
+  // For landing pages, skip CSS preload as it causes "preloaded but not used" warnings
+  const isLandingPage = page.endsWith('Landing');
+  const pagePreloadHints = isLandingPage
+    ? commonPreloadHints.filter(hint => !hint.includes('as="style"'))
+    : [...commonPreloadHints];
   if (criticalChunks[lang]) {
     pagePreloadHints.push(`<link rel="modulepreload" href="/assets/${criticalChunks[lang]}" />`);
   }
