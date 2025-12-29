@@ -53,12 +53,13 @@ const BunnyEmbed: React.FC<BunnyEmbedProps> = ({
   const aspectRatioStyle = aspectRatio === '9:16' ? '9/16' : aspectRatio === '1:1' ? '1/1' : '16/9';
 
   // Container max-width based on aspect ratio
+  // w-full ensures the container takes available width up to max-width
   const containerClass =
     aspectRatio === '9:16'
-      ? 'max-w-[350px] sm:max-w-[400px]'
+      ? 'w-full max-w-[350px] sm:max-w-[400px]'
       : aspectRatio === '1:1'
-        ? 'max-w-[500px]'
-        : 'max-w-4xl';
+        ? 'w-full max-w-[500px]'
+        : 'w-full max-w-4xl';
 
   // Play button color based on aspect ratio (Bunny brand orange for vertical)
   const playButtonClass =
