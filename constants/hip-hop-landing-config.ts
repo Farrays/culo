@@ -135,6 +135,6 @@ export const HIP_HOP_LANDING_CONFIG: LandingConfig = createLandingConfig('brand'
     bunnyVideoId: '54f2f015-18db-4535-b520-1c8cedde36b9',
     bunnyLibraryId: '570522',
     aspectRatio: '9:16',
-    autoplay: true,
+    autoplay: false,
   },
 });
