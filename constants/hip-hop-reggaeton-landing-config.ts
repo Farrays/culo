@@ -16,13 +16,13 @@
 
 import { createLandingConfig, type LandingConfig } from './landing-template-config';
 
-export const HIP_HOP_REGGAETON_LANDING_CONFIG: LandingConfig = createLandingConfig('amber', {
+export const HIP_HOP_REGGAETON_LANDING_CONFIG: LandingConfig = createLandingConfig('brand', {
   // =========================================================================
   // IDENTIFICADORES
   // =========================================================================
   id: 'hip-hop-reggaeton-landing',
   slug: 'hip-hop-reggaeton',
-  sourceId: 127833, // TODO: Solicitar sourceId real a Momence
+  sourceId: 129131, // Momence modal ID
   estiloValue: 'Hip Hop Reggaeton',
   discoveryValue: 'Facebook',
 
@@ -31,8 +31,7 @@ export const HIP_HOP_REGGAETON_LANDING_CONFIG: LandingConfig = createLandingConf
   // =========================================================================
   images: {
     hero: '/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona_960.webp',
-    showcase:
-      '/images/classes/hip-hop-reggaeton/img/hip-hop-reggaeton-clases-hip-hop-reaggaeton-barcelona_960.webp',
+    showcase: '/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona_960.webp',
     heroAlt: 'Clases de Hip Hop Reggaeton en Barcelona',
     showcaseAlt: 'Alumnos de Hip Hop Reggaeton en Barcelona bailando con Charlie Breezy',
   },
@@ -149,5 +148,15 @@ export const HIP_HOP_REGGAETON_LANDING_CONFIG: LandingConfig = createLandingConf
   countdown: {
     baseDate: '2025-01-06T23:59:59',
     intervalDays: 14,
+  },
+
+  // =========================================================================
+  // VIDEO (Bunny.net)
+  // =========================================================================
+  video: {
+    bunnyVideoId: '49199a2f-c69d-4be0-935e-66bf22cfe077',
+    bunnyLibraryId: '571535',
+    aspectRatio: '9:16',
+    autoplay: true,
   },
 });

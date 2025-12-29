@@ -11,8 +11,10 @@
  * import { CONTEMPORANEO_LANDING_CONFIG } from './constants/contemporaneo-landing-config';
  * <Route path="/:locale/contemporaneo" element={<GenericDanceLanding config={CONTEMPORANEO_LANDING_CONFIG} />} />
  *
- * TEMA: Cyan (artístico, fluido, elegante, expresivo)
+ * TEMA: Brand (colores oficiales de Farray's)
  * TARGET: Adultos 20-50 que buscan expresión artística, conexión cuerpo-mente, y desarrollo técnico
+ * SOURCE ID: 129132 (Momence)
+ * VIDEO: Bunny Stream 9:16 autoplay
  *
  * PROFESORES:
  * - Daniel Sené: Bailarín profesional formado en la Escuela Nacional de Arte de Cuba
@@ -27,13 +29,13 @@
 
 import { createLandingConfig, type LandingConfig } from './landing-template-config';
 
-export const CONTEMPORANEO_LANDING_CONFIG: LandingConfig = createLandingConfig('rose', {
+export const CONTEMPORANEO_LANDING_CONFIG: LandingConfig = createLandingConfig('brand', {
   // =========================================================================
   // IDENTIFICADORES
   // =========================================================================
   id: 'contemporaneo-landing',
   slug: 'contemporaneo',
-  sourceId: 127836, // Source ID para Momence tracking
+  sourceId: 129132, // Source ID para Momence tracking
   estiloValue: 'Danza Contemporánea',
   discoveryValue: 'Facebook',
 
@@ -42,9 +44,9 @@ export const CONTEMPORANEO_LANDING_CONFIG: LandingConfig = createLandingConfig('
   // =========================================================================
   images: {
     hero: '/images/classes/contemporaneo/img/mgs_5189_1440.webp',
-    showcase: '/images/classes/contemporaneo/img/mgs_5189_960.webp',
+    showcase: '/images/classes/afro-contemporaneo/img/mgs_5260_1024.webp',
     heroAlt: "Clases de Danza Contemporánea en Barcelona - Farray's Center",
-    showcaseAlt: 'Alumnas practicando danza contemporánea en Barcelona',
+    showcaseAlt: 'Clase de Afro Contemporáneo con técnica cubana ENA en Barcelona',
   },
 
   // =========================================================================
@@ -107,7 +109,7 @@ export const CONTEMPORANEO_LANDING_CONFIG: LandingConfig = createLandingConfig('
   ],
 
   // =========================================================================
-  // HORARIOS - Clases de Contemporáneo disponibles (datos reales 2025)
+  // HORARIOS - Clases de Contemporáneo y Afro Contemporáneo (datos reales 2025)
   // =========================================================================
   schedule: [
     {
@@ -115,7 +117,7 @@ export const CONTEMPORANEO_LANDING_CONFIG: LandingConfig = createLandingConfig('
       dayKey: 'monday',
       time: '11:00 - 12:00',
       levelKey: 'basicLevel',
-      className: 'Contemporáneo Lírico Básico',
+      className: 'Contemporáneo Lírico',
       teacher: 'Alejandro Miñoso',
     },
     {
@@ -123,11 +125,27 @@ export const CONTEMPORANEO_LANDING_CONFIG: LandingConfig = createLandingConfig('
       dayKey: 'monday',
       time: '19:00 - 20:00',
       levelKey: 'basicLevel',
-      className: 'Contemporáneo Lírico Básico',
+      className: 'Contemporáneo Lírico',
       teacher: 'Daniel Sené',
     },
     {
       id: '3',
+      dayKey: 'monday',
+      time: '21:00 - 22:00',
+      levelKey: 'basicLevel',
+      className: 'Afro Contemporáneo',
+      teacher: 'Charlie Breezy',
+    },
+    {
+      id: '4',
+      dayKey: 'tuesday',
+      time: '19:00 - 20:30',
+      levelKey: 'intermediateAdvancedLevel',
+      className: 'Afro Contemporáneo',
+      teacher: 'Yunaisy Farray',
+    },
+    {
+      id: '5',
       dayKey: 'wednesday',
       time: '11:00 - 12:00',
       levelKey: 'basicIntermediateLevel',
@@ -135,19 +153,19 @@ export const CONTEMPORANEO_LANDING_CONFIG: LandingConfig = createLandingConfig('
       teacher: 'Alejandro Miñoso',
     },
     {
-      id: '4',
+      id: '6',
       dayKey: 'wednesday',
       time: '20:00 - 21:00',
       levelKey: 'intermediateLevel',
-      className: 'Contemporáneo Lírico Intermedio',
+      className: 'Contemporáneo Lírico',
       teacher: 'Daniel Sené',
     },
     {
-      id: '5',
+      id: '7',
       dayKey: 'thursday',
       time: '18:00 - 19:00',
       levelKey: 'beginnerLevel',
-      className: 'Contemporáneo Lírico Principiantes',
+      className: 'Contemporáneo Lírico',
       teacher: 'Daniel Sené',
     },
   ],
@@ -167,5 +185,15 @@ export const CONTEMPORANEO_LANDING_CONFIG: LandingConfig = createLandingConfig('
   countdown: {
     baseDate: '2025-01-06T23:59:59',
     intervalDays: 14, // Resetea cada 2 semanas
+  },
+
+  // =========================================================================
+  // VIDEO (Bunny.net)
+  // =========================================================================
+  video: {
+    bunnyVideoId: '75a74b09-277f-493f-b142-8a84df33a487',
+    bunnyLibraryId: '571535',
+    aspectRatio: '9:16',
+    autoplay: true,
   },
 });

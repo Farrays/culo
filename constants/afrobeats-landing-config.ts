@@ -24,7 +24,7 @@ export const AFROBEATS_LANDING_CONFIG: LandingConfig = createLandingConfig('bran
   // =========================================================================
   id: 'afrobeats-landing',
   slug: 'afrobeats',
-  sourceId: 0, // TODO: Asignar sourceId real de Momence cuando esté disponible
+  sourceId: 129129,
   estiloValue: 'Afrobeats',
   discoveryValue: 'Facebook',
 
@@ -142,5 +142,15 @@ export const AFROBEATS_LANDING_CONFIG: LandingConfig = createLandingConfig('bran
   countdown: {
     baseDate: '2025-01-06T23:59:59',
     intervalDays: 14,
+  },
+
+  // =========================================================================
+  // VIDEO (Bunny.net)
+  // =========================================================================
+  video: {
+    bunnyVideoId: '44f53623-e523-4f22-a19d-dffff0cc26c0',
+    bunnyLibraryId: '571535',
+    aspectRatio: '9:16',
+    autoplay: true,
   },
 });

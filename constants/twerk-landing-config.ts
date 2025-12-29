@@ -19,7 +19,7 @@ export const TWERK_LANDING_CONFIG: LandingConfig = createLandingConfig('rose', {
   // =========================================================================
   id: 'twerk-landing',
   slug: 'twerk',
-  sourceId: 127832, // Pedir nuevo sourceId a Momence si no existe
+  sourceId: 129133, // Momence modal ID
   estiloValue: 'Twerk',
   discoveryValue: 'Facebook',
 
@@ -155,5 +155,15 @@ export const TWERK_LANDING_CONFIG: LandingConfig = createLandingConfig('rose', {
   countdown: {
     baseDate: '2025-01-06T23:59:59',
     intervalDays: 14,
+  },
+
+  // =========================================================================
+  // VIDEO (Bunny.net)
+  // =========================================================================
+  video: {
+    bunnyVideoId: '7e802ebe-cbd7-49ca-a5f1-569e5c1eba7c',
+    bunnyLibraryId: '571535',
+    aspectRatio: '9:16',
+    autoplay: true,
   },
 });

@@ -8,6 +8,8 @@ interface BunnyEmbedProps {
   title?: string;
   aspectRatio?: '16:9' | '9:16' | '1:1';
   thumbnailUrl?: string; // Custom thumbnail URL (optional)
+  priority?: boolean; // Load thumbnail eagerly (use with preload link for best performance)
+  autoplay?: boolean; // Skip thumbnail facade and load iframe directly
 }
 
 /**
@@ -32,18 +34,20 @@ const BunnyEmbed: React.FC<BunnyEmbedProps> = ({
   title = 'Video',
   aspectRatio = '16:9',
   thumbnailUrl: customThumbnailUrl,
+  priority = false,
+  autoplay = false,
 }) => {
   const { t } = useI18n();
   const { preferences, setShowBanner } = useCookieConsent();
   const hasFunctionalConsent = preferences?.functional ?? false;
 
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(autoplay);
   const [thumbnailError, setThumbnailError] = useState(false);
 
-  // Use custom thumbnail or fallback to Bunny's default thumbnail endpoint
-  // Farray's pull zone: vz-c354d67e-cc3
+  // Use custom thumbnail or generate from Bunny's embed thumbnail endpoint
+  // Format: https://video.bunnycdn.com/play/{libraryId}/{videoId}/thumbnail.jpg
   const thumbnailUrl =
-    customThumbnailUrl || `https://vz-c354d67e-cc3.b-cdn.net/${videoId}/thumbnail.jpg`;
+    customThumbnailUrl || `https://video.bunnycdn.com/play/${libraryId}/${videoId}/thumbnail.jpg`;
 
   // Aspect ratio styles
   const aspectRatioStyle = aspectRatio === '9:16' ? '9/16' : aspectRatio === '1:1' ? '1/1' : '16/9';
@@ -75,8 +79,9 @@ const BunnyEmbed: React.FC<BunnyEmbedProps> = ({
             <img
               src={thumbnailUrl}
               alt={title}
-              loading="lazy"
+              loading={priority ? 'eager' : 'lazy'}
               decoding="async"
+              fetchPriority={priority ? 'high' : 'auto'}
               className="absolute inset-0 w-full h-full object-cover opacity-30"
               onError={() => setThumbnailError(true)}
             />
@@ -135,8 +140,9 @@ const BunnyEmbed: React.FC<BunnyEmbedProps> = ({
             <img
               src={thumbnailUrl}
               alt={title}
-              loading="lazy"
+              loading={priority ? 'eager' : 'lazy'}
               decoding="async"
+              fetchPriority={priority ? 'high' : 'auto'}
               className="absolute inset-0 w-full h-full object-cover"
               onError={() => setThumbnailError(true)}
             />

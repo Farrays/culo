@@ -181,6 +181,31 @@ export interface LandingConfig {
     /** Intervalo en días para reiniciar (14 = 2 semanas) */
     intervalDays: number;
   };
+
+  // =========================================================================
+  // WIDGET DE HORARIOS COMPLETO (Jornada Puertas Abiertas)
+  // =========================================================================
+
+  /** Mostrar widget completo de horarios (todas las clases, no clicables) */
+  showFullSchedule?: boolean;
+
+  // =========================================================================
+  // VIDEO (Bunny.net)
+  // =========================================================================
+
+  /** Configuración del video de Bunny Stream (opcional) */
+  video?: {
+    /** ID del video en Bunny Stream (GUID) */
+    bunnyVideoId: string;
+    /** ID de la biblioteca en Bunny Stream */
+    bunnyLibraryId: string;
+    /** Aspect ratio del video: '16:9' (horizontal), '9:16' (reel/vertical), '1:1' (cuadrado) */
+    aspectRatio?: '16:9' | '9:16' | '1:1';
+    /** URL personalizada del thumbnail (opcional - obtener desde Bunny dashboard) */
+    thumbnailUrl?: string;
+    /** Cargar video directamente sin thumbnail facade */
+    autoplay?: boolean;
+  };
 }
 
 // =============================================================================
@@ -310,4 +335,17 @@ export const LANDING_TEMPLATE: LandingConfig = createLandingConfig('rose', {
     baseDate: '2025-01-06T23:59:59',
     intervalDays: 14,
   },
+
+  // Video (Bunny.net) - Opcional
+  // Para obtener estos datos:
+  // 1. Sube el video a Bunny Stream (dash.bunny.net)
+  // 2. Copia el Video ID (GUID) y Library ID
+  // 3. Para thumbnail: copia la URL desde el dashboard de Bunny
+  // video: {
+  //   bunnyVideoId: 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
+  //   bunnyLibraryId: '123456',
+  //   aspectRatio: '9:16', // '16:9' horizontal, '9:16' reel/vertical, '1:1' cuadrado
+  //   autoplay: true, // true = carga video directo, false = muestra thumbnail primero
+  //   thumbnailUrl: 'https://vz-XXXXX.b-cdn.net/{videoId}/thumbnail.jpg', // opcional
+  // },
 });
