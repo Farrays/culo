@@ -115,15 +115,23 @@ export const SEXY_REGGAETON_BREADCRUMB_KEYS = {
 // YouTube video ID for the page
 export const SEXY_REGGAETON_VIDEO_ID = 'J5SI4u1SVsg';
 
-// Level descriptions for cards - 2 levels for Sexy Reggaeton
+// Level descriptions for cards - 3 levels for Sexy Reggaeton
 export const SEXY_REGGAETON_LEVELS = [
+  {
+    id: 'principiante',
+    levelKey: 'beginnerLevel',
+    titleKey: 'sxrLevelBeginnerTitle',
+    descKey: 'sxrLevelBeginnerDesc',
+    duration: '0-3 meses',
+    color: 'primary-dark' as const,
+  },
   {
     id: 'basico',
     levelKey: 'basicLevel',
     titleKey: 'sxrLevelBasicTitle',
     descKey: 'sxrLevelBasicDesc',
-    duration: '0-6 meses',
-    color: 'primary-dark' as const,
+    duration: '3-6 meses',
+    color: 'primary-dark-mid' as const,
   },
   {
     id: 'intermedio',
@@ -135,15 +143,13 @@ export const SEXY_REGGAETON_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const SEXY_REGGAETON_PREPARE_CONFIG = {
   prefix: 'sxrPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Yasmina Fernández',
-    credential: 'Especialista en Sexy Reggaeton',
-    image: undefined,
-  },
+  teacher: getTeacherQuoteInfo('yasmina-fernandez', 'Especialista en Sexy Reggaeton'),
 };

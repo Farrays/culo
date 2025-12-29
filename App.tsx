@@ -212,21 +212,29 @@ const AppContent: React.FC = () => {
   const location = useLocation();
 
   // Check if current route is a landing page (no header/footer)
+  // Exclude /clases/ paths which should always have header/footer
   const isPromoLanding =
-    location.pathname.endsWith('/dancehall') ||
-    location.pathname.endsWith('/twerk') ||
-    location.pathname.endsWith('/sexy-reggaeton') ||
-    location.pathname.endsWith('/sexy-style') ||
-    location.pathname.endsWith('/hip-hop-reggaeton') ||
-    location.pathname.endsWith('/contemporaneo') ||
-    location.pathname.endsWith('/femmology') ||
-    location.pathname.endsWith('/bachata') ||
-    location.pathname.endsWith('/hip-hop') ||
-    location.pathname.endsWith('/afrobeats') ||
-    location.pathname.endsWith('/afro-jazz') ||
-    location.pathname.endsWith('/salsa-cubana') ||
-    location.pathname.endsWith('/ballet') ||
-    location.pathname.endsWith('/afro-contemporaneo');
+    !location.pathname.includes('/clases/') &&
+    (location.pathname.endsWith('/dancehall') ||
+      location.pathname.endsWith('/twerk') ||
+      location.pathname.endsWith('/sexy-reggaeton') ||
+      location.pathname.endsWith('/sexy-style') ||
+      location.pathname.endsWith('/hip-hop-reggaeton') ||
+      location.pathname.endsWith('/contemporaneo') ||
+      location.pathname.endsWith('/femmology') ||
+      location.pathname.endsWith('/bachata') ||
+      location.pathname.endsWith('/hip-hop') ||
+      location.pathname.endsWith('/afrobeats') ||
+      location.pathname.endsWith('/afro-jazz') ||
+      location.pathname.endsWith('/salsa-cubana') ||
+      location.pathname.endsWith('/ballet') ||
+      location.pathname.endsWith('/afro-contemporaneo'));
+
+  // Legal pages without header/footer (accessed from landing modal links)
+  const isMinimalLegalPage = location.pathname.includes('/politica-privacidad');
+
+  // Combined check for hiding header/footer
+  const hideHeaderFooter = isPromoLanding || isMinimalLegalPage;
 
   // Determine if exit intent modal should show on current page
   const shouldShowExitIntent = useMemo(() => {
@@ -247,7 +255,7 @@ const AppContent: React.FC = () => {
     <div className="bg-black text-neutral antialiased font-sans overflow-x-hidden">
       <ScrollToTop />
       <SEO />
-      {!isPromoLanding && (
+      {!hideHeaderFooter && (
         <>
           <SkipLink />
           <Header />
@@ -1129,7 +1137,7 @@ const AppContent: React.FC = () => {
           </Routes>
         </Suspense>
       </main>
-      {!isPromoLanding && (
+      {!hideHeaderFooter && (
         <>
           <Footer />
           <BackToTop />

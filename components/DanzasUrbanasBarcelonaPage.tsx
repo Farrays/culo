@@ -197,19 +197,22 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
           {/* Background */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-rose-900/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6">
             {/* Breadcrumb with Microdata */}
             <Breadcrumb items={breadcrumbItems} textColor="text-neutral/75" />
 
-            {/* H1 + Intro */}
+            {/* H1 + Subheadline - Enterprise pattern from HeroV2 */}
             <AnimateOnScroll>
               <h1
-                className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 text-white"
+                className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-tight mb-4 min-h-[100px] md:min-h-[140px] flex flex-col items-center justify-center text-white"
                 style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
               >
                 {t('danzasUrbanas_h1')}
+                <br />
+                <span className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-normal mt-2 holographic-text">
+                  {t('danzasUrbanas_h1_sub')}
+                </span>
               </h1>
               <p className="max-w-4xl mx-auto text-xl md:text-2xl text-neutral/90 mt-8 leading-relaxed">
                 {t('danzasUrbanas_intro')}
@@ -247,7 +250,7 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
         </section>
 
         {/* What is Urban Dance Section - SEO CRITICAL */}
-        <section aria-labelledby="what-is-title" className="py-16 md:py-24 bg-black">
+        <section aria-labelledby="what-is-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -291,7 +294,10 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
         </section>
 
         {/* Urban Dance Styles Grid Section */}
-        <section aria-labelledby="styles-title" className="py-12 md:py-20 bg-primary-dark/10">
+        <section
+          aria-labelledby="styles-title"
+          className="section-after-hero pb-12 md:pb-20 bg-primary-dark/10"
+        >
           <div className="container mx-auto px-6 text-center">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -363,7 +369,7 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
         </section>
 
         {/* Which Style to Choose Section - UX + SEO CRITICAL */}
-        <section aria-labelledby="which-style-title" className="py-16 md:py-24 bg-black">
+        <section aria-labelledby="which-style-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6 text-center">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -465,7 +471,7 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
         </section>
 
         {/* Why Study at FIDC Section */}
-        <section aria-labelledby="why-title" className="py-20 md:py-32 bg-black">
+        <section aria-labelledby="why-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-16 max-w-3xl mx-auto">
@@ -558,11 +564,10 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
         />
 
         {/* Final CTA Section - Conversion Optimized */}
-        <section className="relative py-20 md:py-32 overflow-hidden">
+        <section className="relative py-12 md:py-16 overflow-hidden">
           {/* Background with stars */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-rose-900/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6 text-center">
             <AnimateOnScroll>
@@ -612,7 +617,7 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
         <section
           id="related-classes"
           aria-labelledby="related-classes-title"
-          className="py-12 md:py-20"
+          className="py-12 md:py-16"
         >
           <div className="container mx-auto px-6">
             <AnimateOnScroll>

@@ -129,15 +129,13 @@ export const FEMMOLOGY_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const FEMMOLOGY_PREPARE_CONFIG = {
   prefix: 'femPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Yunaisy Farray',
-    credential: 'Creadora de Femmology',
-    image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
-  },
+  teacher: getTeacherQuoteInfo('yunaisy-farray', 'Creadora de Femmology'),
 };

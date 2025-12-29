@@ -18,7 +18,7 @@ const SocialProofSection: React.FC<SocialProofSectionProps> = ({ config }) => {
   const { t } = useI18n();
 
   return (
-    <section className="py-16 md:py-24 bg-black">
+    <section className="py-12 md:py-16 bg-black">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <AnimateOnScroll>

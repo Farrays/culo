@@ -185,17 +185,15 @@ export const SALSA_LADY_STYLE_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const SALSA_LADY_STYLE_PREPARE_CONFIG = {
   prefix: 'salsaLadyPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Yunaisy Farray',
-    credential: "Directora de Farray's Center",
-    image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
-  },
+  teacher: getTeacherQuoteInfo('yunaisy-farray', "Directora de Farray's Center"),
 };
 
 // Nearby neighborhoods for local SEO

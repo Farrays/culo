@@ -68,7 +68,7 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ config, className = '' }) => 
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 py-16 md:py-24">
+      <div className="relative z-10 container mx-auto px-6 py-12 md:py-16">
         {/* Breadcrumb */}
         <Breadcrumb items={breadcrumbItems} textColor="text-neutral/75" />
 

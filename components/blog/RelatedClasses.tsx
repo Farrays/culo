@@ -26,6 +26,7 @@ import { Link } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
 import AnimateOnScroll from '../AnimateOnScroll';
 import LazyImage from '../LazyImage';
+import { getRelatedClassImageUrl } from '../../constants/style-images';
 
 // ============================================================================
 // CONSTANTS
@@ -44,8 +45,6 @@ const IMAGE_DIMENSIONS = {
 interface ClassData {
   /** Translation key for class name (uses danceClassesHub_style_* pattern) */
   nameKey: string;
-  /** Image URL for the class card */
-  image: string;
   /** URL path for the class page (without locale prefix) */
   url: string;
   /** Category for Schema.org */
@@ -56,115 +55,90 @@ interface ClassData {
  * Maps class slugs to their display data.
  * Uses existing danceClassesHub_style_* translation keys.
  *
- * @note Uses local images when available, Unsplash as fallback for missing assets.
- * TODO: Replace Unsplash URLs with local images as they become available
+ * Images are now obtained from the centralized system via getRelatedClassImageUrl()
+ * which uses STYLE_IMAGES from style-images.ts for consistency across the entire website.
  */
 const CLASS_DATA_MAP: Record<string, ClassData> = {
   // ===== LATIN DANCE =====
-  // Local images not yet available - using Unsplash
   'salsa-cubana-barcelona': {
     nameKey: 'danceClassesHub_style_salsa_cubana',
-    image:
-      'https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?w=480&h=320&fit=crop&q=85&auto=format',
     url: '/clases/salsa-cubana-barcelona',
     category: 'latin',
   },
   'bachata-barcelona': {
     nameKey: 'danceClassesHub_style_bachata_sensual',
-    image:
-      'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=480&h=320&fit=crop&q=85&auto=format',
     url: '/clases/bachata-barcelona',
     category: 'latin',
   },
   'salsa-bachata-barcelona': {
     nameKey: 'danceClassesHub_style_salsa_bachata',
-    image:
-      'https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=480&h=320&fit=crop&q=85&auto=format',
     url: '/clases/salsa-bachata-barcelona',
     category: 'latin',
   },
   'salsa-lady-style-barcelona': {
     nameKey: 'danceClassesHub_style_salsa_lady_style',
-    image:
-      'https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=480&h=320&fit=crop&q=85&auto=format',
     url: '/clases/salsa-lady-style-barcelona',
     category: 'latin',
   },
   'timba-barcelona': {
     nameKey: 'danceClassesHub_style_timba_cubana',
-    image:
-      'https://images.unsplash.com/photo-1545959570-a94084071b5d?w=480&h=320&fit=crop&q=85&auto=format',
     url: '/clases/timba-barcelona',
     category: 'latin',
   },
   'folklore-cubano': {
     nameKey: 'danceClassesHub_style_folklore_cubano',
-    image:
-      'https://images.unsplash.com/photo-1547153760-18fc9c88c1c8?w=480&h=320&fit=crop&q=85&auto=format',
     url: '/clases/folklore-cubano',
     category: 'latin',
   },
 
   // ===== URBAN DANCE =====
-  // Using local optimized images where available ✅
   'dancehall-barcelona': {
     nameKey: 'danceClassesHub_style_dancehall',
-    image: '/images/classes/dancehall/img/dancehall-classes-barcelona-01_640.webp',
     url: '/clases/dancehall-barcelona',
     category: 'urban',
   },
   'hip-hop-reggaeton-barcelona': {
     nameKey: 'danceClassesHub_style_hip_hop_reggaeton',
-    image: '/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona_640.webp',
     url: '/clases/hip-hop-reggaeton-barcelona',
     category: 'urban',
   },
   'reggaeton-cubano-barcelona': {
     nameKey: 'danceClassesHub_style_reggaeton_cubano',
-    image:
-      'https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=480&h=320&fit=crop&q=85&auto=format',
     url: '/clases/reggaeton-cubano-barcelona',
     category: 'urban',
   },
   'twerk-barcelona': {
     nameKey: 'danceClassesHub_style_twerk',
-    image: '/images/classes/twerk/img/clases-twerk-barcelona_640.webp',
     url: '/clases/twerk-barcelona',
     category: 'urban',
   },
   'sexy-reggaeton-barcelona': {
     nameKey: 'danceClassesHub_style_sexy_reggaeton',
-    image: '/images/classes/sexy-reggaeton/img/clases-sexy-reggaeton-barcelona_640.webp',
     url: '/clases/sexy-reggaeton-barcelona',
     category: 'urban',
   },
   'sexy-style-barcelona': {
     nameKey: 'danceClassesHub_style_sexy_style',
-    image: '/images/classes/sexy-style/img/clases-de-sexy-style-barcelona_640.webp',
     url: '/clases/sexy-style-barcelona',
     category: 'urban',
   },
   'afrobeats-barcelona': {
     nameKey: 'danceClassesHub_style_afrobeat',
-    image: '/images/classes/afrobeat/img/clases-afrobeat-barcelona_640.webp',
     url: '/clases/afrobeats-barcelona',
     category: 'urban',
   },
   femmology: {
     nameKey: 'danceClassesHub_style_femmology_heels',
-    image: '/images/classes/femmology/img/clases-de-femmology-barcelona_480.webp',
     url: '/clases/femmology',
     category: 'urban',
   },
   'heels-barcelona': {
     nameKey: 'danceClassesHub_style_heels_barcelona',
-    image: '/images/classes/femmology/img/clases-de-femmology-barcelona_480.webp',
     url: '/clases/heels-barcelona',
     category: 'urban',
   },
   'hip-hop-barcelona': {
     nameKey: 'danceClassesHub_style_hip_hop',
-    image: '/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona_640.webp',
     url: '/clases/hip-hop-barcelona',
     category: 'urban',
   },
@@ -172,34 +146,26 @@ const CLASS_DATA_MAP: Record<string, ClassData> = {
   // ===== CONTEMPORARY DANCE =====
   'ballet-barcelona': {
     nameKey: 'danceClassesHub_style_ballet_clasico',
-    image: '/images/classes/ballet/img/clases-ballet-barcelona_480.webp',
     url: '/clases/ballet-barcelona',
     category: 'contemporary',
   },
   'contemporaneo-barcelona': {
     nameKey: 'danceClassesHub_style_danza_contemporanea',
-    image:
-      'https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?w=480&h=320&fit=crop&q=85&auto=format',
     url: '/clases/contemporaneo-barcelona',
     category: 'contemporary',
   },
   'modern-jazz-barcelona': {
     nameKey: 'danceClassesHub_style_modern_jazz',
-    image: '/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_640.webp',
     url: '/clases/modern-jazz-barcelona',
     category: 'contemporary',
   },
   'afro-contemporaneo-barcelona': {
     nameKey: 'danceClassesHub_style_afro_contemporaneo',
-    image:
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=480&h=320&fit=crop&q=85&auto=format',
     url: '/clases/afro-contemporaneo-barcelona',
     category: 'contemporary',
   },
   'afro-jazz': {
     nameKey: 'danceClassesHub_style_afro_jazz',
-    image:
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=480&h=320&fit=crop&q=85&auto=format',
     url: '/clases/afro-jazz',
     category: 'contemporary',
   },
@@ -207,29 +173,21 @@ const CLASS_DATA_MAP: Record<string, ClassData> = {
   // ===== FITNESS =====
   'stretching-barcelona': {
     nameKey: 'danceClassesHub_style_stretching',
-    image:
-      'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=480&h=320&fit=crop&q=85&auto=format',
     url: '/clases/stretching-barcelona',
     category: 'fitness',
   },
   'ejercicios-gluteos-barcelona': {
     nameKey: 'danceClassesHub_style_bum_bum',
-    image:
-      'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=480&h=320&fit=crop&q=85&auto=format',
     url: '/clases/ejercicios-gluteos-barcelona',
     category: 'fitness',
   },
   'cuerpo-fit': {
     nameKey: 'danceClassesHub_style_cuerpo_fit',
-    image:
-      'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=480&h=320&fit=crop&q=85&auto=format',
     url: '/clases/cuerpo-fit',
     category: 'fitness',
   },
   'acondicionamiento-fisico-bailarines': {
     nameKey: 'danceClassesHub_style_body_conditioning',
-    image:
-      'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=480&h=320&fit=crop&q=85&auto=format',
     url: '/clases/acondicionamiento-fisico-bailarines',
     category: 'fitness',
   },
@@ -244,7 +202,6 @@ interface RelatedClassesSchemaProps {
     slug: string;
     nameKey: string;
     url: string;
-    image: string;
   }>;
   locale: string;
   t: (key: string) => string;
@@ -271,7 +228,7 @@ const RelatedClassesSchema: React.FC<RelatedClassesSchemaProps> = memo(({ items,
         '@id': `${baseUrl}/${locale}${item.url}`,
         name: t(item.nameKey),
         url: `${baseUrl}/${locale}${item.url}`,
-        image: `${baseUrl}${item.image}`,
+        image: `${baseUrl}${getRelatedClassImageUrl(item.slug)}`,
         provider: {
           '@type': 'DanceSchool',
           name: "Farray's International Dance Center",
@@ -343,7 +300,6 @@ interface ClassCardProps {
   classItem: {
     slug: string;
     nameKey: string;
-    image: string;
     url: string;
   };
   classUrl: string;
@@ -384,7 +340,7 @@ const ClassCard: React.FC<ClassCardProps> = memo(
               style={{ aspectRatio: `${IMAGE_DIMENSIONS.width}/${IMAGE_DIMENSIONS.height}` }}
             >
               <LazyImage
-                src={classItem.image}
+                src={getRelatedClassImageUrl(classItem.slug)}
                 alt={`Clase de ${className} en Barcelona - Farray's Dance Center`}
                 className="w-full h-full object-cover transition-transform duration-500
                            group-hover:scale-110"

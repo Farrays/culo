@@ -24,6 +24,7 @@ import {
   FULL_BODY_CARDIO_LEVELS,
   FULL_BODY_CARDIO_PREPARE_CONFIG,
 } from './full-body-cardio';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const FULL_BODY_CARDIO_PAGE_CONFIG: FullDanceClassConfig = {
@@ -36,14 +37,12 @@ export const FULL_BODY_CARDIO_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: FULL_BODY_CARDIO_TESTIMONIALS,
   scheduleKeys: FULL_BODY_CARDIO_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Cris Ag',
-      specialtyKey: 'fullBodyCardioTeacher1Specialty',
-      bioKey: 'fullBodyCardioTeacher1Bio',
-      // No image - will use initials avatar
-    },
+    getTeacherInfo('cris-ag', 'fullBodyCardioTeacher1Specialty', 'fullBodyCardioTeacher1Bio', [
+      'Cardio Dance',
+      'Full Body',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Fitness > Cuerpo-Fit)
@@ -65,6 +64,20 @@ export const FULL_BODY_CARDIO_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 450, // Promedio de 400-500 kcal
     funPercent: 100,
     gradientColor: 'amber', // Energía, vitalidad, fitness
+
+    // Enterprise: Hero background image (shares image with body conditioning)
+    heroImage: {
+      basePath: '/images/classes/cuerpo-fit/img/cuerpo-fit-entrenamiento-bailarines',
+      alt: "Alumnas realizando ejercicios de cardio dance Cuerpo-Fit en Barcelona - Entrenamiento full body en Farray's Center",
+      altKey: 'styleImages.fullBodyCardio.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'] as const,
+    },
+    heroVisuals: {
+      imageOpacity: 45,
+      objectPosition: 'center 40%',
+      gradientStyle: 'vibrant' as const,
+    },
   },
 
   // === SECTION TOGGLES ===

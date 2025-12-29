@@ -18,6 +18,7 @@ import {
   BAILE_MANANAS_LEVELS,
   BAILE_MANANAS_PREPARE_CONFIG,
 } from './baile-mananas';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
@@ -30,20 +31,24 @@ export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: BAILE_MANANAS_TESTIMONIALS,
   scheduleKeys: BAILE_MANANAS_SCHEDULE_KEYS,
 
-  // Teachers - 2 profesores de mañanas
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Alejandro Miñoso',
-      specialtyKey: 'bailemanananasTeacher1Specialty',
-      bioKey: 'bailemanananasTeacher1Bio',
-      // Image to be added: /images/teachers/alejandro-minoso.jpg
-    },
-    {
-      name: 'Yasmina Fernández',
-      specialtyKey: 'bailemanananasTeacher2Specialty',
-      bioKey: 'bailemanananasTeacher2Bio',
-      // Image to be added: /images/teachers/yasmina-fernandez.jpg
-    },
+    getTeacherInfo(
+      'alejandro-minoso',
+      'bailemanananasTeacher1Specialty',
+      'bailemanananasTeacher1Bio',
+      ['ENA Cuba', 'Ballet']
+    ),
+    getTeacherInfo(
+      'yasmina-fernandez',
+      'bailemanananasTeacher2Specialty',
+      'bailemanananasTeacher2Bio',
+      ['Salsa Cubana', 'Lady Style']
+    ),
+    getTeacherInfo('isabel-lopez', 'bailemanananasTeacher3Specialty', 'bailemanananasTeacher3Bio', [
+      'Dancehall',
+      'Twerk',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Clases > Baile Barcelona > Clases de Mañanas)
@@ -137,9 +142,9 @@ export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches:
-      'Contemporáneo, Ballet, Modern Jazz, Afro Jazz, Sexy Style, Sexy Reggaeton, Salsa Lady Style, Stretching, Body Conditioning, Reggaeton Cubano',
+      'Contemporáneo, Ballet, Modern Jazz, Afro Jazz, Sexy Style, Sexy Reggaeton, Salsa Lady Style, Stretching, Body Conditioning, Reggaeton Cubano, Dancehall Female, Twerk',
     prerequisites: 'Ninguno - clases para todos los niveles desde principiante',
-    lessons: '13 clases semanales de lunes a jueves, horario de 10:00 a 13:00',
+    lessons: '15 clases semanales de lunes a jueves, horario de 10:00 a 13:00',
     duration: 'PT1H',
   },
 
@@ -174,6 +179,21 @@ export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
         'Baile Sensual',
         'Empoderamiento Femenino',
         'Método Farray',
+      ],
+    },
+    {
+      name: 'Isabel López',
+      jobTitle: 'Profesora de Dancehall Female y Twerk',
+      description:
+        "Profesora especializada en Dancehall y Twerk, con una energía contagiosa que transforma cada clase matinal en una fiesta. Imparte clases de Dancehall Female y Twerk en las mañanas de Farray's Center.",
+      knowsAbout: [
+        'Dancehall Female',
+        'Twerk',
+        'Dancehall',
+        'Baile Urbano',
+        'Ritmos Caribeños',
+        'Empoderamiento Femenino',
+        'Expresión Corporal',
       ],
     },
   ],

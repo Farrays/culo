@@ -8,7 +8,7 @@ const About: React.FC = () => {
   const { t, locale } = useI18n();
 
   return (
-    <section id="about" className="relative py-20 md:py-32 bg-black overflow-hidden">
+    <section id="about" className="relative py-12 md:py-16 bg-black overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">

@@ -56,7 +56,7 @@ const Teachers: React.FC = () => {
   const { t } = useI18n();
 
   return (
-    <section id="teachers" className="py-20 md:py-32 bg-black overflow-hidden">
+    <section id="teachers" className="py-12 md:py-16 bg-black overflow-hidden">
       <div className="container mx-auto px-6">
         <AnimateOnScroll>
           <div className="text-center mb-16">

@@ -49,6 +49,8 @@ export interface StyleImageConfig {
   breakpoints: number[];
   /** Available formats */
   formats: ('avif' | 'webp' | 'jpg')[];
+  /** Object position for CSS object-fit (e.g., "top", "center 30%") - useful for cropped images */
+  objectPosition?: string;
 }
 
 export interface CategoryFallbackConfig {
@@ -166,9 +168,10 @@ export const STYLE_IMAGES: Record<string, StyleImageConfig> = {
   },
 
   heels_barcelona: {
-    basePath: '/images/classes/heels/img/clases-heels-barcelona',
+    basePath: '/images/classes/Heels/img/clases-heels-barcelona',
     altKey: 'styleImages.heels.alt',
-    fallbackAlt: "Clases de Heels Barcelona - Baile con tacones en Farray's Center",
+    fallbackAlt:
+      "Bailarina ejecutando coreografía de Heels en Barcelona - Clases de baile con tacones, técnica y sensualidad en Farray's Center",
     breakpoints: [320, 640, 768, 1024, 1440, 1920],
     formats: ['avif', 'webp', 'jpg'],
   },
@@ -207,6 +210,7 @@ export const STYLE_IMAGES: Record<string, StyleImageConfig> = {
     fallbackAlt: "Clases de Modern Jazz Barcelona - Farray's Center",
     breakpoints: [320, 640, 768, 1024, 1440, 1920],
     formats: ['avif', 'webp', 'jpg'],
+    objectPosition: 'center 25%', // Focus on dancer's face - adjusted positioning
   },
 
   afro_contemporaneo: {
@@ -230,15 +234,16 @@ export const STYLE_IMAGES: Record<string, StyleImageConfig> = {
   // =========================================================================
 
   salsa_cubana: {
-    basePath: '/images/categories/img/salsa-bachata',
+    basePath: '/images/classes/salsa-cubana/img/salsa-cubana',
     altKey: 'styleImages.salsaCubana.alt',
-    fallbackAlt: "Clases de Salsa Cubana Barcelona - Farray's Center",
-    breakpoints: [320, 640, 768, 1024],
+    fallbackAlt:
+      "Pareja bailando salsa cubana en Barcelona - Aprende casino, rueda y son cubano con profesores auténticos en Farray's Center",
+    breakpoints: [320, 640, 768, 1024, 1440, 1920],
     formats: ['avif', 'webp', 'jpg'],
   },
 
   bachata_sensual: {
-    basePath: '/images/classes/Bachata/img/clases-bachata-sensual-barcelona',
+    basePath: '/images/classes/Bachata/img/clases-bachata-sensual-barcelona-pareja',
     altKey: 'styleImages.bachata.alt',
     fallbackAlt:
       "Pareja bailando bachata sensual en clase de Barcelona - conexión, ondulaciones y técnica profesional en Farray's Center",
@@ -264,19 +269,22 @@ export const STYLE_IMAGES: Record<string, StyleImageConfig> = {
   },
 
   bachata_lady_style: {
-    basePath: '/images/categories/img/salsa-bachata',
+    basePath: '/images/classes/bachata-lady-style/img/clases-bachata-lady-style-barcelona',
     altKey: 'styleImages.bachataLadyStyle.alt',
-    fallbackAlt: "Clases de Bachata Lady Style Barcelona - Farray's Center",
-    breakpoints: [320, 640, 768, 1024],
+    fallbackAlt:
+      "Bailarina ejecutando movimientos de Bachata Lady Style en Barcelona - ondulaciones, braceo y estilo femenino en Farray's Center",
+    breakpoints: [320, 640, 768, 1024, 1440, 1920],
     formats: ['avif', 'webp', 'jpg'],
   },
 
   timba_cubana: {
-    basePath: '/images/categories/img/salsa-bachata',
+    basePath: '/images/classes/timba/img/timba-cubana',
     altKey: 'styleImages.timba.alt',
-    fallbackAlt: "Clases de Timba Cubana Barcelona - Farray's Center",
-    breakpoints: [320, 640, 768, 1024],
+    fallbackAlt:
+      "Bailarina ejecutando estilo Timba Cubana en Barcelona - Clases de baile cubano con energía y sabor auténtico en Farray's Center",
+    breakpoints: [320, 640, 768, 1024, 1440, 1920],
     formats: ['avif', 'webp', 'jpg'],
+    objectPosition: 'center 25%',
   },
 
   salsa_lady_timba: {
@@ -529,6 +537,125 @@ export function getContextualAltKey(styleKey: string, context: AltContext = 'def
     default:
       return `styleImages.${camelKey}.alt`;
   }
+}
+
+// ============================================================================
+// RELATED CLASSES - SLUG TO STYLE KEY MAPPING
+// ============================================================================
+
+/**
+ * Maps URL slugs used in Related Classes to their corresponding style keys
+ * Used by getRelatedClassImage() to fetch images from the centralized system
+ *
+ * @example
+ * SLUG_TO_STYLE_KEY['salsa-cubana-barcelona'] // => 'salsa_cubana'
+ * SLUG_TO_STYLE_KEY['hip-hop-barcelona'] // => 'hip_hop'
+ */
+export const SLUG_TO_STYLE_KEY: Record<string, string> = {
+  // Urban styles
+  'dancehall-barcelona': 'dancehall',
+  'afrobeats-barcelona': 'afrobeat',
+  'twerk-barcelona': 'twerk',
+  'hip-hop-barcelona': 'hip_hop',
+  'hip-hop-reggaeton-barcelona': 'hip_hop_reggaeton',
+  'sexy-reggaeton-barcelona': 'sexy_reggaeton',
+  'reggaeton-cubano-barcelona': 'reggaeton_cubano',
+  'femmology-barcelona': 'femmology_heels',
+  'heels-barcelona': 'heels_barcelona',
+  'sexy-style-barcelona': 'sexy_style',
+
+  // Contemporary / Dance styles
+  'ballet-barcelona': 'ballet_clasico',
+  'contemporaneo-barcelona': 'danza_contemporanea',
+  'modern-jazz-barcelona': 'modern_jazz',
+  'afro-contemporaneo-barcelona': 'afro_contemporaneo',
+  'afro-jazz-barcelona': 'afro_jazz',
+
+  // Latin styles
+  'salsa-cubana-barcelona': 'salsa_cubana',
+  'bachata-barcelona': 'bachata_sensual',
+  'salsa-lady-style-barcelona': 'salsa_lady_style',
+  'bachata-lady-style-barcelona': 'bachata_lady_style',
+  'timba-barcelona': 'timba_cubana',
+  'salsa-lady-timba-barcelona': 'salsa_lady_timba',
+  'folklore-cubano': 'folklore_cubano',
+
+  // Fitness styles
+  'stretching-barcelona': 'stretching',
+  'ejercicios-gluteos-barcelona': 'bum_bum',
+  'cuerpo-fit': 'cuerpo_fit',
+  'full-body-cardio-barcelona': 'full_body_cardio',
+  'body-conditioning-barcelona': 'body_conditioning',
+};
+
+/**
+ * Related class image configuration for OptimizedImage component
+ */
+export interface RelatedClassImageConfig {
+  basePath: string;
+  altKey: string;
+  fallbackAlt: string;
+  breakpoints: number[];
+  formats: ('avif' | 'webp' | 'jpg')[];
+  objectPosition?: string;
+}
+
+/**
+ * Gets the image configuration for a Related Class card
+ * Uses the centralized STYLE_IMAGES system via slug mapping
+ *
+ * @param slug - The URL slug (e.g., 'salsa-cubana-barcelona')
+ * @returns RelatedClassImageConfig ready for OptimizedImage component
+ *
+ * @example
+ * const imageConfig = getRelatedClassImage('salsa-cubana-barcelona');
+ * // => { basePath: '/images/classes/salsa-cubana/img/salsa-cubana', ... }
+ */
+export function getRelatedClassImage(slug: string): RelatedClassImageConfig {
+  const styleKey = SLUG_TO_STYLE_KEY[slug];
+
+  if (styleKey && STYLE_IMAGES[styleKey]) {
+    const config = STYLE_IMAGES[styleKey];
+    return {
+      basePath: config.basePath,
+      altKey: config.altKey,
+      fallbackAlt: config.fallbackAlt,
+      breakpoints: config.breakpoints,
+      formats: config.formats,
+      objectPosition: config.objectPosition,
+    };
+  }
+
+  // Fallback for unknown slugs - use latin category as default
+  const fallback = CATEGORY_FALLBACK_IMAGES['latin'] ?? CATEGORY_FALLBACK_IMAGES['urban'];
+  return {
+    basePath: fallback?.basePath ?? '/images/categories/img/salsa-bachata',
+    altKey: 'styleImages.salsaBachata.alt',
+    fallbackAlt: fallback?.fallbackAlt ?? "Clases de baile en Barcelona - Farray's Center",
+    breakpoints: [320, 640, 768, 1024],
+    formats: ['avif', 'webp', 'jpg'],
+  };
+}
+
+/**
+ * Gets a single image URL for Related Class (for non-OptimizedImage usage)
+ *
+ * @param slug - The URL slug
+ * @param size - Desired width (default: 640)
+ * @param format - Desired format (default: 'webp')
+ * @returns Image URL string
+ */
+export function getRelatedClassImageUrl(
+  slug: string,
+  size: number = 640,
+  format: 'avif' | 'webp' | 'jpg' = 'webp'
+): string {
+  const config = getRelatedClassImage(slug);
+  const closestBreakpoint = config.breakpoints.reduce((prev, curr) =>
+    Math.abs(curr - size) < Math.abs(prev - size) ? curr : prev
+  );
+  const finalFormat = config.formats.includes(format) ? format : 'jpg';
+  return `${config.basePath}_${closestBreakpoint}.${finalFormat}`;
 }
 
 // ============================================================================

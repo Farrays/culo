@@ -51,7 +51,7 @@ const TermsConditionsPage: React.FC = () => {
 
       <div className="min-h-screen bg-black pt-20 md:pt-24">
         {/* Hero Section */}
-        <section className="relative py-16 md:py-24 bg-gradient-to-b from-black via-primary-dark/10 to-black">
+        <section className="relative py-12 md:py-16 bg-gradient-to-b from-black via-primary-dark/10 to-black">
           <div className="container mx-auto px-6">
             {/* Breadcrumb */}
             <Breadcrumb items={breadcrumbItems} textColor="text-neutral/70" />
@@ -73,7 +73,7 @@ const TermsConditionsPage: React.FC = () => {
         </section>
 
         {/* Legal Content Section */}
-        <section className="py-16 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <div className="text-neutral/90 leading-relaxed prose prose-invert max-w-none">

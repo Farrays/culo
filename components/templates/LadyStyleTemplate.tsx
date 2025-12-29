@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../../hooks/useI18n';
 import Breadcrumb from '../shared/Breadcrumb';
@@ -10,7 +11,11 @@ import LevelCardsSection, { type LevelConfig } from '../shared/LevelCardsSection
 import PrepareClassSection, { type PrepareConfig } from '../shared/PrepareClassSection';
 import AnimatedCounter from '../AnimatedCounter';
 import YouTubeEmbed from '../YouTubeEmbed';
-import { LocalBusinessSchema, CourseSchema, AggregateReviewsSchema } from '../SchemaMarkup';
+import {
+  LocalBusinessSchema,
+  AggregateReviewsSchema,
+  CourseSchemaEnterprise,
+} from '../SchemaMarkup';
 import { StarRating, CheckIcon, CheckCircleIcon, CalendarDaysIcon } from '../../lib/icons';
 import { UsersIcon, MapPinIcon } from '../shared/CommonIcons';
 import type { Testimonial } from '../../types';
@@ -18,6 +23,7 @@ import type { FAQ } from './ClassPageTemplate';
 import { Link } from 'react-router-dom';
 import OptimizedImage from '../OptimizedImage';
 import { getStyleImage, getContextualAltKey } from '../../constants/style-images';
+import LeadCaptureModal from '../shared/LeadCaptureModal';
 
 // ============= CONFIG TYPES =============
 
@@ -26,6 +32,9 @@ export interface TeacherConfig {
   specialty: string; // Translation key for specialty
   bio: string; // Translation key for bio
   image?: string;
+  imageSrcSet?: string; // WebP srcSet for responsive images
+  imageSrcSetAvif?: string; // AVIF srcSet for modern browsers
+  objectPosition?: string; // Face focus position (default: 'center 20%')
 }
 
 export interface PillarConfig {
@@ -104,10 +113,9 @@ export interface LadyStyleTemplateConfig {
     titleKey: string;
     subtitleKey: string;
     descKey: string;
-    cta1Key: string;
-    cta1SubtextKey: string;
-    cta2Key: string;
-    cta2SubtextKey: string;
+    /** Single CTA key - opens lead capture modal (like home) */
+    ctaKey: string;
+    ctaSubtextKey: string;
     stats: {
       rating: string;
       reviewCountKey?: string; // Translation key (preferred for i18n)
@@ -137,6 +145,8 @@ export interface LadyStyleTemplateConfig {
     textShadow?: boolean;
     /** Custom gradient (overrides gradientStyle) */
     customGradient?: string;
+    /** Hero text style: 'holographic' (default neon effect) or 'simple' (clean like home) */
+    heroTextStyle?: 'holographic' | 'simple';
   };
 
   // What is section
@@ -147,7 +157,10 @@ export interface LadyStyleTemplateConfig {
     quoteAuthor: {
       name: string;
       credentialKey: string;
-      image: string;
+      image?: string;
+      imageSrcSet?: string; // WebP srcSet for responsive images
+      imageSrcSetAvif?: string; // AVIF srcSet for modern browsers
+      objectPosition?: string;
     };
   };
 
@@ -237,9 +250,9 @@ export interface LadyStyleTemplateConfig {
     festivalTextKey: string;
   };
 
-  // Video
+  // Video (optional - shows placeholder if no id provided)
   video: {
-    id: string;
+    id?: string; // YouTube video ID - if empty/undefined, shows "Coming Soon" placeholder
     titleKey: string;
     descKey: string;
   };
@@ -279,10 +292,9 @@ export interface LadyStyleTemplateConfig {
   finalCta: {
     titleKey: string;
     descKey: string;
-    cta1Key: string;
-    cta1SubtextKey: string;
-    cta2Key: string;
-    cta2SubtextKey: string;
+    /** Single CTA key - opens lead capture modal (like home) */
+    ctaKey: string;
+    ctaSubtextKey: string;
   };
 }
 
@@ -434,6 +446,7 @@ const HERO_GRADIENT_PRESETS = {
 
 const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
   const { t, locale } = useI18n();
+  const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
   const baseUrl = 'https://www.farrayscenter.com';
   const pageUrl = `${baseUrl}/${locale}/clases/${config.pageSlug}`;
 
@@ -444,6 +457,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
     gradientStyle: config.heroVisuals?.gradientStyle ?? 'dark',
     textShadow: config.heroVisuals?.textShadow ?? false,
     customGradient: config.heroVisuals?.customGradient,
+    heroTextStyle: config.heroVisuals?.heroTextStyle ?? 'holographic',
   };
 
   // Compute hero gradient class
@@ -491,6 +505,14 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
     contentUrl: `https://www.youtube.com/watch?v=${config.video.id}`,
     embedUrl: `https://www.youtube.com/embed/${config.video.id}`,
   };
+
+  // Schedule data for CourseSchemaEnterprise
+  const courseSchedules = config.schedules.map(schedule => ({
+    className: schedule.classNameKey ? t(schedule.classNameKey) : '',
+    dayKey: schedule.dayKey,
+    time: schedule.time,
+    teacher: schedule.teacher,
+  }));
 
   // BreadcrumbList Schema
   const breadcrumbSchema = {
@@ -586,13 +608,13 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         geo={{ latitude: '41.3784', longitude: '2.1456' }}
         priceRange="€€"
       />
-      <CourseSchema
+      {/* Enterprise Course Schema with CourseInstance for each schedule */}
+      <CourseSchemaEnterprise
         name={`${t(config.pageTitleKey)} - Método Farray`}
         description={t(config.courseSchemaDescKey)}
-        provider={{
-          name: "Farray's International Dance Center",
-          url: pageUrl,
-        }}
+        pageUrl={pageUrl}
+        baseUrl={baseUrl}
+        schedules={courseSchedules}
       />
       <AggregateReviewsSchema
         itemName={`${t(config.pageTitleKey)} - Farray's Center`}
@@ -627,7 +649,6 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
               placeholderColor="#000"
             />
             {heroGradientClass && <div className={`absolute inset-0 ${heroGradientClass}`}></div>}
-            <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-15"></div>
           </div>
 
           <div className="relative z-20 container mx-auto px-4 sm:px-6 text-center">
@@ -636,14 +657,22 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
             <AnimateOnScroll>
               <h1
                 id="hero-title"
-                className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-4 sm:mb-6 holographic-text"
-                style={heroTextShadowStyle}
+                className={`text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-4 sm:mb-6 ${heroVisuals.heroTextStyle === 'simple' ? 'text-white' : 'holographic-text'}`}
+                style={
+                  heroVisuals.heroTextStyle === 'simple'
+                    ? { textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }
+                    : heroTextShadowStyle
+                }
               >
                 {t(config.hero.titleKey)}
               </h1>
               <p
-                className="text-xl sm:text-3xl md:text-4xl font-bold mb-4 holographic-text"
-                style={heroTextShadowStyle}
+                className={`text-xl sm:text-3xl md:text-4xl font-bold mb-4 ${heroVisuals.heroTextStyle === 'simple' ? 'text-white' : 'holographic-text'}`}
+                style={
+                  heroVisuals.heroTextStyle === 'simple'
+                    ? { textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }
+                    : heroTextShadowStyle
+                }
               >
                 {t(config.hero.subtitleKey)}
               </p>
@@ -687,41 +716,37 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
                 </div>
               </div>
 
-              {/* CTA Buttons */}
-              <div
-                className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-8 sm:mt-10"
-                role="group"
-                aria-label="Opciones de inscripción"
-              >
-                <div className="w-full sm:w-auto">
-                  <a
-                    href="#contact"
-                    className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95"
+              {/* CTA Button - Single button like home */}
+              <div className="flex flex-col items-center justify-center mt-8 sm:mt-10">
+                <button
+                  onClick={() => setIsLeadModalOpen(true)}
+                  className="w-full sm:w-auto bg-primary-accent text-white font-bold text-sm xl:text-base py-2.5 xl:py-3 px-5 xl:px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
+                >
+                  {t(config.hero.ctaKey)}
+                  <svg
+                    className="w-4 h-4 ml-1.5 inline-block"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    {t(config.hero.cta1Key)}
-                  </a>
-                  <p className="text-xs text-neutral/70 mt-2 text-center">
-                    {t(config.hero.cta1SubtextKey)}
-                  </p>
-                </div>
-                <div className="w-full sm:w-auto">
-                  <a
-                    href="#schedule"
-                    className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] border-2 border-neutral text-neutral font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95"
-                  >
-                    {t(config.hero.cta2Key)}
-                  </a>
-                  <p className="text-xs text-neutral/70 mt-2 text-center">
-                    {t(config.hero.cta2SubtextKey)}
-                  </p>
-                </div>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
+                </button>
+                <p className="text-sm text-neutral/80 mt-3 text-center max-w-md">
+                  {t(config.hero.ctaSubtextKey)}
+                </p>
               </div>
             </AnimateOnScroll>
           </div>
         </section>
 
         {/* 2. What is Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-b from-primary-dark/20 via-black to-black relative overflow-hidden">
+        <section className="py-12 md:py-16 bg-gradient-to-b from-primary-dark/20 via-black to-black relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-accent/10 via-transparent to-transparent"></div>
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-primary-dark/15 via-transparent to-transparent"></div>
 
@@ -751,14 +776,38 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
                     </blockquote>
 
                     <div className="mt-8 pt-6 border-t border-primary-accent/30 flex items-center justify-center gap-4">
-                      <div className="w-14 h-14 rounded-full overflow-hidden border-3 border-primary-accent/60 shadow-lg shadow-primary-accent/20">
+                      <figure className="w-14 h-14 rounded-full overflow-hidden border-3 border-primary-accent/60 shadow-lg shadow-primary-accent/20">
                         {config.whatIs.quoteAuthor.image ? (
-                          <img
-                            src={config.whatIs.quoteAuthor.image}
-                            alt={config.whatIs.quoteAuthor.name}
-                            className="w-full h-full object-cover"
-                            loading="lazy"
-                          />
+                          <picture>
+                            {/* AVIF: Best compression, modern browsers */}
+                            {config.whatIs.quoteAuthor.imageSrcSetAvif && (
+                              <source
+                                type="image/avif"
+                                srcSet={config.whatIs.quoteAuthor.imageSrcSetAvif}
+                                sizes="56px"
+                              />
+                            )}
+                            {/* WebP: Good compression, wide support */}
+                            {config.whatIs.quoteAuthor.imageSrcSet && (
+                              <source
+                                type="image/webp"
+                                srcSet={config.whatIs.quoteAuthor.imageSrcSet}
+                                sizes="56px"
+                              />
+                            )}
+                            <img
+                              src={config.whatIs.quoteAuthor.image}
+                              alt={config.whatIs.quoteAuthor.name}
+                              width="56"
+                              height="56"
+                              className="w-full h-full object-cover"
+                              style={{
+                                objectPosition:
+                                  config.whatIs.quoteAuthor.objectPosition || 'center 20%',
+                              }}
+                              loading="lazy"
+                            />
+                          </picture>
                         ) : (
                           <div className="w-full h-full bg-gradient-to-br from-primary-accent/30 to-primary-dark/50 flex items-center justify-center">
                             <span className="text-lg font-black text-primary-accent/60">
@@ -769,7 +818,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
                             </span>
                           </div>
                         )}
-                      </div>
+                      </figure>
                       <div className="text-left">
                         <cite className="not-italic font-bold text-neutral text-lg">
                           {config.whatIs.quoteAuthor.name}
@@ -802,7 +851,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         <section
           id="teachers"
           aria-labelledby="teachers-title"
-          className="py-12 md:py-20 bg-primary-dark/10 relative overflow-hidden"
+          className="py-12 md:py-16 bg-primary-dark/10 relative overflow-hidden"
         >
           <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <AnimateOnScroll>
@@ -836,14 +885,35 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
                 >
                   <div className="group h-full bg-black/70 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl shadow-lg p-5 sm:p-6 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)_rotateY(3deg)] hover:shadow-accent-glow">
                     <div className="flex flex-col items-center text-center">
-                      <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-3 sm:mb-4">
+                      <figure className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 mb-3 sm:mb-4">
                         {teacher.image ? (
-                          <img
-                            src={teacher.image}
-                            alt={teacher.name}
-                            className="w-full h-full object-cover"
-                            loading="lazy"
-                          />
+                          <picture>
+                            {/* AVIF: Best compression, modern browsers */}
+                            {teacher.imageSrcSetAvif && (
+                              <source
+                                type="image/avif"
+                                srcSet={teacher.imageSrcSetAvif}
+                                sizes="128px"
+                              />
+                            )}
+                            {/* WebP: Good compression, wide support */}
+                            {teacher.imageSrcSet && (
+                              <source
+                                type="image/webp"
+                                srcSet={teacher.imageSrcSet}
+                                sizes="128px"
+                              />
+                            )}
+                            <img
+                              src={teacher.image}
+                              alt={teacher.name}
+                              width="128"
+                              height="128"
+                              className="w-full h-full object-cover"
+                              style={{ objectPosition: teacher.objectPosition || 'center 20%' }}
+                              loading="lazy"
+                            />
+                          </picture>
                         ) : (
                           <div className="w-full h-full bg-primary-dark/30 flex items-center justify-center">
                             <span className="text-3xl sm:text-4xl font-black text-primary-accent/50">
@@ -854,7 +924,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
                             </span>
                           </div>
                         )}
-                      </div>
+                      </figure>
                       <h3 className="text-lg sm:text-xl font-bold text-neutral mb-1 sm:mb-2">
                         {teacher.name}
                       </h3>
@@ -886,7 +956,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         />
 
         {/* 7. Identification Section - Pain Points */}
-        <section aria-labelledby="identify-title" className="py-12 md:py-20 bg-black">
+        <section aria-labelledby="identify-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto">
@@ -958,7 +1028,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         <section
           id="pillars"
           aria-labelledby="pillars-title"
-          className="py-12 sm:py-16 md:py-24 bg-primary-dark/10"
+          className="py-12 md:py-16 bg-primary-dark/10"
         >
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -1028,7 +1098,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         </section>
 
         {/* 9. Comparison Table - Method vs Others */}
-        <section className="py-12 sm:py-16 md:py-24 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-6 sm:mb-10">
@@ -1109,7 +1179,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         </section>
 
         {/* 10. For Who / Not For Who */}
-        <section className="py-14 sm:py-20 md:py-28 bg-black relative overflow-hidden">
+        <section className="py-12 md:py-16 bg-black relative overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-accent/5 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-dark/10 rounded-full blur-3xl"></div>
@@ -1187,19 +1257,19 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
                 <p className="text-base sm:text-lg text-neutral/70 mb-6 sm:mb-8 max-w-xl mx-auto">
                   {t(config.forWho.ctaTextKey)}
                 </p>
-                <a
-                  href="#schedule"
+                <button
+                  onClick={() => setIsLeadModalOpen(true)}
                   className="inline-block bg-primary-accent text-white font-bold text-base sm:text-lg py-4 px-10 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
                 >
-                  {t(config.hero.cta1Key)}
-                </a>
+                  {t(config.hero.ctaKey)}
+                </button>
               </div>
             </AnimateOnScroll>
           </div>
         </section>
 
         {/* 11. Transformation Table */}
-        <section className="py-12 sm:py-16 md:py-24 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-6 sm:mb-10">
@@ -1250,7 +1320,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         </section>
 
         {/* 12. Why Choose + Stats + Logos */}
-        <section className="py-12 md:py-20 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-8 sm:mb-10 max-w-4xl mx-auto">
@@ -1360,7 +1430,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         </section>
 
         {/* 13. Video Section */}
-        <section className="py-16 md:py-24 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-10">
@@ -1374,15 +1444,46 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
             </AnimateOnScroll>
 
             <AnimateOnScroll>
-              <div className="max-w-4xl mx-auto">
-                <YouTubeEmbed videoId={config.video.id} title={t(config.video.titleKey)} />
-              </div>
+              {config.video.id ? (
+                /* Video disponible - mostrar YouTubeEmbed */
+                <div className="max-w-4xl mx-auto">
+                  <YouTubeEmbed videoId={config.video.id} title={t(config.video.titleKey)} />
+                </div>
+              ) : (
+                /* Video Coming Soon Placeholder - Enterprise (Not clickable) */
+                <div className="max-w-2xl mx-auto">
+                  <div className="relative aspect-video bg-gradient-to-br from-primary-dark/40 via-black/60 to-primary-dark/30 rounded-2xl border border-primary-accent/20 overflow-hidden shadow-xl pointer-events-none select-none">
+                    {/* Glow effect */}
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-accent/10 via-transparent to-transparent" />
+
+                    {/* Content */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+                      {/* Play icon placeholder */}
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary-accent/20 border-2 border-primary-accent/40 flex items-center justify-center mb-4 backdrop-blur-sm">
+                        <svg
+                          className="w-8 h-8 sm:w-10 sm:h-10 text-primary-accent/60"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+
+                      {/* Text */}
+                      <p className="text-lg sm:text-xl font-bold text-neutral/90 mb-1">
+                        {t('videoComingSoon')}
+                      </p>
+                      <p className="text-sm text-neutral/50">{t('videoComingSoonDesc')}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </AnimateOnScroll>
           </div>
         </section>
 
         {/* 14. Testimonials */}
-        <section aria-labelledby="testimonials-title" className="py-16 md:py-24 bg-black">
+        <section aria-labelledby="testimonials-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-8 sm:mb-10 max-w-4xl mx-auto">
@@ -1438,7 +1539,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         </section>
 
         {/* 15. Style Comparison */}
-        <section className="py-14 md:py-20 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-5xl mx-auto">
@@ -1553,7 +1654,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         <FAQSection title={t(config.faqTitleKey)} faqs={faqs} pageUrl={pageUrl} />
 
         {/* 18. Local SEO Section */}
-        <section className="py-10 md:py-14 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto p-6 bg-black/30 rounded-2xl border border-neutral/20">
@@ -1583,7 +1684,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         {/* 19. Final CTA */}
         <section
           id="contact"
-          className="py-16 md:py-24 bg-gradient-to-br from-primary-accent/20 via-black to-primary-dark/20"
+          className="py-12 md:py-16 bg-gradient-to-br from-primary-accent/20 via-black to-primary-dark/20"
         >
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -1595,35 +1696,30 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
                   {t(config.finalCta.descKey)}
                 </p>
 
-                <div
-                  className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-8"
-                  role="group"
-                  aria-label="Opciones de inscripción"
-                >
-                  <div className="w-full sm:w-auto">
-                    <a
-                      href="https://wa.me/34622247085"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] bg-primary-accent text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95"
+                {/* Single CTA Button - like home */}
+                <div className="flex flex-col items-center justify-center mt-8">
+                  <button
+                    onClick={() => setIsLeadModalOpen(true)}
+                    className="w-full sm:w-auto bg-primary-accent text-white font-bold text-sm xl:text-base py-2.5 xl:py-3 px-5 xl:px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
+                  >
+                    {t(config.finalCta.ctaKey)}
+                    <svg
+                      className="w-4 h-4 ml-1.5 inline-block"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
-                      {t(config.finalCta.cta1Key)}
-                    </a>
-                    <p className="text-xs text-neutral/70 mt-2 text-center">
-                      {t(config.finalCta.cta1SubtextKey)}
-                    </p>
-                  </div>
-                  <div className="w-full sm:w-auto">
-                    <a
-                      href="#schedule"
-                      className="block w-full sm:w-auto sm:min-w-[280px] min-h-[48px] border-2 border-neutral text-neutral font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full transition-all duration-300 hover:bg-neutral hover:text-black text-center focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95"
-                    >
-                      {t(config.finalCta.cta2Key)}
-                    </a>
-                    <p className="text-xs text-neutral/70 mt-2 text-center">
-                      {t(config.finalCta.cta2SubtextKey)}
-                    </p>
-                  </div>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
+                    </svg>
+                  </button>
+                  <p className="text-sm text-neutral/80 mt-3 text-center max-w-md">
+                    {t(config.finalCta.ctaSubtextKey)}
+                  </p>
                 </div>
               </div>
             </AnimateOnScroll>
@@ -1634,7 +1730,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         <section
           id="related-classes"
           aria-labelledby="related-classes-title"
-          className="py-12 md:py-20"
+          className="py-12 md:py-16"
         >
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -1879,6 +1975,9 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
           </div>
         </section>
       </main>
+
+      {/* Lead Capture Modal */}
+      <LeadCaptureModal isOpen={isLeadModalOpen} onClose={() => setIsLeadModalOpen(false)} />
     </>
   );
 };

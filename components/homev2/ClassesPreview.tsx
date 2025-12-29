@@ -17,7 +17,7 @@ const ClassesPreview: React.FC = () => {
   const previewCategories = CATEGORIES.filter(cat => cat.key !== 'todas').slice(0, 4);
 
   return (
-    <section id="classes-preview" className="py-20 md:py-32 bg-primary-dark/10">
+    <section id="classes-preview" className="py-12 md:py-16 bg-primary-dark/10">
       <div className="container mx-auto px-6 text-center">
         {/* Header */}
         <AnimateOnScroll>

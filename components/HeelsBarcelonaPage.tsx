@@ -15,6 +15,7 @@ import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 import { CheckIcon } from '../lib/icons';
 import LazyImage from './LazyImage';
 import OptimizedImage from './OptimizedImage';
+import { getRelatedClassImageUrl } from '../constants/style-images';
 
 const ANIMATION_DELAYS = {
   STAGGER_SMALL: 100,
@@ -230,35 +231,42 @@ const HeelsBarcelonaPage: React.FC = () => {
           aria-labelledby="heels-hero-title"
           className="relative text-center py-24 sm:py-32 md:py-40 overflow-hidden flex items-center justify-center min-h-[600px]"
         >
-          {/* Background Image - Enterprise OptimizedImage */}
+          {/* Background Image - Enterprise OptimizedImage with full optimization */}
           <div className="absolute inset-0">
             <OptimizedImage
-              src="/images/classes/heels/img/clases-heels-barcelona"
+              src="/images/classes/Heels/img/clases-heels-barcelona"
               altKey="styleImages.heels.hero"
-              altFallback="Clases de Heels en Barcelona - Farray's Center"
+              altFallback="Bailarina profesional en clase de Heels Barcelona - Técnica de baile con tacones y coreografía sensual en Farray's Center"
               priority="high"
               sizes="100vw"
               aspectRatio="16/9"
               className="w-full h-full"
               objectFit="cover"
+              objectPosition="center 30%"
               placeholder="color"
               placeholderColor="#111"
+              breakpoints={[320, 640, 768, 1024, 1440, 1920]}
+              formats={['avif', 'webp', 'jpg']}
             />
-            {/* Gradient overlay for text readability */}
+            {/* Gradient overlay for text readability - optimized for hero visibility */}
             <div className="absolute inset-0 bg-gradient-to-br from-pink-900/60 via-black/70 to-black/80"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-4 sm:px-6">
             {/* Breadcrumb with Microdata */}
             <Breadcrumb items={breadcrumbItems} textColor="text-neutral/90" />
 
-            {/* H1 + Intro */}
+            {/* H1 + Subheadline - Enterprise pattern with holographic */}
             <AnimateOnScroll>
               <h1
                 id="heels-hero-title"
-                className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text"
+                className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-tight mb-4 min-h-[100px] md:min-h-[140px] flex flex-col items-center justify-center text-white"
+                style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
               >
                 {t('heelsBarcelona_h1')}
+                <br />
+                <span className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-normal mt-2 holographic-text">
+                  {t('heelsBarcelona_h1_sub')}
+                </span>
               </h1>
               <p className="max-w-4xl mx-auto text-lg sm:text-xl md:text-2xl text-neutral/90 mt-8 leading-relaxed">
                 {t('heelsBarcelona_intro')}
@@ -290,7 +298,7 @@ const HeelsBarcelonaPage: React.FC = () => {
         <section
           id="what-is-heels"
           aria-labelledby="what-is-title"
-          className="py-12 sm:py-16 md:py-24 bg-black"
+          className="section-after-hero pb-12 sm:pb-16 md:pb-24 bg-black"
         >
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -337,7 +345,7 @@ const HeelsBarcelonaPage: React.FC = () => {
         <section
           id="styles"
           aria-labelledby="styles-title"
-          className="py-12 md:py-20 bg-primary-dark/10"
+          className="py-12 md:py-16 bg-primary-dark/10"
         >
           <div className="container mx-auto px-4 sm:px-6 text-center">
             <AnimateOnScroll>
@@ -414,7 +422,7 @@ const HeelsBarcelonaPage: React.FC = () => {
         <section
           id="which-style"
           aria-labelledby="which-style-title"
-          className="py-12 sm:py-16 md:py-24 bg-black"
+          className="py-12 md:py-16 bg-black"
         >
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -665,11 +673,7 @@ const HeelsBarcelonaPage: React.FC = () => {
         </section>
 
         {/* Why Study Heels at FIDC Section */}
-        <section
-          id="why-fidc"
-          aria-labelledby="why-title"
-          className="py-16 sm:py-20 md:py-32 bg-black"
-        >
+        <section id="why-fidc" aria-labelledby="why-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
@@ -783,12 +787,11 @@ const HeelsBarcelonaPage: React.FC = () => {
         <section
           id="final-cta"
           aria-labelledby="final-cta-title"
-          className="relative py-16 sm:py-20 md:py-32 overflow-hidden"
+          className="relative py-12 md:py-16 overflow-hidden"
         >
           {/* Background like Hero */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-pink-900/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-4 sm:px-6 text-center">
             <AnimateOnScroll>
@@ -832,7 +835,7 @@ const HeelsBarcelonaPage: React.FC = () => {
         <section
           id="related-classes"
           aria-labelledby="related-classes-title"
-          className="py-12 md:py-20"
+          className="py-12 md:py-16"
         >
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -1009,7 +1012,7 @@ const HeelsBarcelonaPage: React.FC = () => {
                     >
                       <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
                         <LazyImage
-                          src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=480&h=320&fit=crop&q=85&auto=format"
+                          src={getRelatedClassImageUrl('salsa-lady-style-barcelona')}
                           alt={`Clase de ${t('relatedSalsaLadyStyleName')} en Barcelona - Farray's Dance Center`}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                           width={480}

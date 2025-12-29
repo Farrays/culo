@@ -44,7 +44,7 @@ const WhyUsComparisonSection: React.FC<WhyUsComparisonSectionProps> = ({ styleKe
     <section
       id="why-us-comparison"
       aria-labelledby="why-us-title"
-      className="py-12 sm:py-16 md:py-24 bg-black"
+      className="py-12 md:py-16 bg-black"
     >
       <div className="container mx-auto px-4 sm:px-6">
         {/* Title */}

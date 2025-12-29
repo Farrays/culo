@@ -275,7 +275,6 @@ const ClasesParticularesPage: React.FC = () => {
           {/* Background */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6">
             {/* Breadcrumb with Microdata */}
@@ -322,7 +321,7 @@ const ClasesParticularesPage: React.FC = () => {
         </section>
 
         {/* Contenido SEO - What to Expect */}
-        <section aria-labelledby="what-to-expect-title" className="py-16 md:py-20 bg-black">
+        <section aria-labelledby="what-to-expect-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -360,7 +359,7 @@ const ClasesParticularesPage: React.FC = () => {
         {/* Stats Section - Números de impacto */}
         <section
           aria-labelledby="stats-title"
-          className="py-16 md:py-24 bg-gradient-to-br from-primary-dark/10 via-black to-black"
+          className="py-12 md:py-16 bg-gradient-to-br from-primary-dark/10 via-black to-black"
         >
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
@@ -415,7 +414,7 @@ const ClasesParticularesPage: React.FC = () => {
         </section>
 
         {/* Benefits Section - Cards estilo WhyFIDC con iconos SVG */}
-        <section aria-labelledby="benefits-title" className="py-20 md:py-32 bg-primary-dark/10">
+        <section aria-labelledby="benefits-title" className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -459,7 +458,7 @@ const ClasesParticularesPage: React.FC = () => {
         </section>
 
         {/* Modalidad Section - Cards con botón Contactar */}
-        <section aria-labelledby="comparison-title" className="py-20 md:py-32 bg-black">
+        <section aria-labelledby="comparison-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -482,7 +481,6 @@ const ClasesParticularesPage: React.FC = () => {
                     {/* Image Section */}
                     <div className="relative h-48 overflow-hidden flex-shrink-0">
                       <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/50 via-black/80 to-black"></div>
-                      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
                     </div>
 
                     {/* Text Content */}
@@ -512,7 +510,7 @@ const ClasesParticularesPage: React.FC = () => {
         </section>
 
         {/* Imagen decorativa con texto SEO */}
-        <section aria-labelledby="why-choose-title" className="py-16 md:py-24 bg-primary-dark/10">
+        <section aria-labelledby="why-choose-title" className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
               <AnimateOnScroll>
@@ -584,7 +582,6 @@ const ClasesParticularesPage: React.FC = () => {
                     {/* Image Section */}
                     <div className="relative h-32 overflow-hidden flex-shrink-0">
                       <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/50 via-black to-black"></div>
-                      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
                     </div>
 
                     {/* Text Content */}
@@ -645,11 +642,10 @@ const ClasesParticularesPage: React.FC = () => {
         </section>
 
         {/* Final CTA - Estilo DanceClassesPage con background y pulsante */}
-        <section className="relative py-12 md:py-20 overflow-hidden">
+        <section className="relative py-12 md:py-16 overflow-hidden">
           {/* Background with stars */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6 text-center">
             <AnimateOnScroll>

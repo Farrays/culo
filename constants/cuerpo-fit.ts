@@ -98,17 +98,18 @@ export const CUERPO_FIT_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const CUERPO_FIT_PREPARE_CONFIG = {
   prefix: 'cuerpofitPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Cris Ag',
-    credential: 'Especialista en Acondicionamiento Físico para Bailarines',
-    image: undefined,
-  },
+  teacher: getTeacherQuoteInfo(
+    'cris-ag',
+    'Especialista en Acondicionamiento Físico para Bailarines'
+  ),
 };
 
 // ===== GEO OPTIMIZATION: Citable Statistics Keys =====

@@ -14,6 +14,33 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  /* Enterprise Design System: Section Spacing Variables */
+  :root {
+    /* Hero section spacing - reduced gap between hero and following section */
+    --section-gap-after-hero: 2rem; /* 32px - mobile */
+    --section-gap-after-hero-sm: 2.5rem; /* 40px - sm */
+    --section-gap-after-hero-md: 3rem; /* 48px - md */
+  }
+}
+
+/* Enterprise: Reduced spacing for sections immediately after hero */
+@layer components {
+  .section-after-hero {
+    padding-top: var(--section-gap-after-hero);
+  }
+
+  @media (min-width: 640px) {
+    .section-after-hero {
+      padding-top: var(--section-gap-after-hero-sm);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .section-after-hero {
+      padding-top: var(--section-gap-after-hero-md);
+    }
+  }
 }
 
 /* Custom scrollbar aesthetics */

@@ -189,12 +189,11 @@ const YunaisyFarrayPage: React.FC = () => {
         {/* Hero Section - Stellar Background */}
         <section
           id="yunaisy-hero"
-          className="relative text-center py-16 md:py-20 overflow-hidden flex items-center justify-center"
+          className="relative text-center py-12 md:py-16 overflow-hidden flex items-center justify-center"
         >
           {/* Background with stars */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6">
             {/* Breadcrumb with Microdata */}
@@ -499,7 +498,6 @@ const YunaisyFarrayPage: React.FC = () => {
           {/* Background with stars */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6">
             <AnimateOnScroll>

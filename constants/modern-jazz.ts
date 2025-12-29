@@ -181,15 +181,13 @@ export const MODERN_JAZZ_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const MODERN_JAZZ_PREPARE_CONFIG = {
   prefix: 'modernjazzPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Alejandro Miñoso',
-    credential: 'Profesor de Modern Jazz',
-    image: undefined,
-  },
+  teacher: getTeacherQuoteInfo('alejandro-minoso', 'Profesor de Modern Jazz'),
 };

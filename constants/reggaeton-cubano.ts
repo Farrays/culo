@@ -112,14 +112,12 @@ export const REGGAETON_CUBANO_LEVELS = [
 ];
 
 // Prepare class configuration
+import { getTeacherQuoteInfo } from './teacher-images';
+
 export const REGGAETON_CUBANO_PREPARE_CONFIG = {
   prefix: 'rcbPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Charlie Breezy',
-    credential: 'Especialista en Reggaeton Cubano',
-    image: '/images/teachers/img/profesor-hip-hop-charlie-breezy_320.webp',
-  },
+  teacher: getTeacherQuoteInfo('charlie-breezy', 'Especialista en Reggaeton Cubano'),
 };

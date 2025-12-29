@@ -19,7 +19,7 @@ const FounderSection: React.FC<FounderSectionProps> = ({ config }) => {
   const { t, locale } = useI18n();
 
   return (
-    <section id="founder-section" className="relative py-20 md:py-32 bg-black text-neutral">
+    <section id="founder-section" className="relative py-12 md:py-16 bg-black text-neutral">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-primary-dark/10 to-black opacity-50" />
 
       <div className="container mx-auto px-6 relative z-10">

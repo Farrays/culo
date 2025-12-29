@@ -76,17 +76,15 @@ export const HIPHOP_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const HIPHOP_PREPARE_CONFIG = {
   prefix: 'hiphopPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Marcos Martínez',
-    credential: 'Juez Internacional Hip Hop',
-    image: undefined,
-  },
+  teacher: getTeacherQuoteInfo('marcos-martinez', 'Juez Internacional Hip Hop'),
 };
 
 // Breadcrumb custom keys for Hip Hop (4 niveles)

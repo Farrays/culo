@@ -53,7 +53,7 @@ const MethodSection: React.FC<MethodSectionProps> = ({ config }) => {
   const { t, locale } = useI18n();
 
   return (
-    <section id="method-section" className="py-20 md:py-32 bg-black">
+    <section id="method-section" className="py-12 md:py-16 bg-black">
       <div className="container mx-auto px-6">
         {/* PROBLEMA - Agitar el dolor */}
         <AnimateOnScroll>

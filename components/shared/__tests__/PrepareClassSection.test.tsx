@@ -146,7 +146,7 @@ describe('PrepareClassSection', () => {
     };
 
     render(<PrepareClassSection {...defaultProps} config={configWithImage} />);
-    const img = screen.getByAltText('María García');
+    const img = screen.getByAltText('Foto de María García');
     expect(img).toBeInTheDocument();
     expect(img).toHaveAttribute('src', '/images/teacher.jpg');
   });

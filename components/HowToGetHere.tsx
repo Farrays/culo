@@ -15,7 +15,7 @@ const HowToGetHere: React.FC = () => {
   const { t } = useI18n();
 
   return (
-    <section id="how-to-get-here" className="py-20 md:py-32 bg-black overflow-hidden">
+    <section id="how-to-get-here" className="py-12 md:py-16 bg-black overflow-hidden">
       <div className="container mx-auto px-6">
         <AnimateOnScroll>
           <div className="text-center mb-16 max-w-3xl mx-auto">

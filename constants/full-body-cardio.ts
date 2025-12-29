@@ -128,17 +128,15 @@ export const FULL_BODY_CARDIO_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const FULL_BODY_CARDIO_PREPARE_CONFIG = {
   prefix: 'fullBodyCardioPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Cris Ag',
-    credential: 'Especialista en Entrenamiento Full Body y Cardio Dance',
-    image: undefined,
-  },
+  teacher: getTeacherQuoteInfo('cris-ag', 'Especialista en Entrenamiento Full Body y Cardio Dance'),
 };
 
 // ===== GEO OPTIMIZATION: Citable Statistics Keys =====

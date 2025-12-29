@@ -125,7 +125,6 @@ const AboutPage: React.FC = () => {
         >
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6">
             {/* Breadcrumb with Microdata */}
@@ -179,7 +178,7 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Our Story Section */}
-        <section aria-labelledby="our-story-title" className="py-16 md:py-24 bg-black">
+        <section aria-labelledby="our-story-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -214,7 +213,7 @@ const AboutPage: React.FC = () => {
         {/* Yunaisy's Vision Section */}
         <section
           aria-labelledby="vision-title"
-          className="py-16 md:py-24 bg-gradient-to-br from-primary-dark/10 via-black to-black"
+          className="py-12 md:py-16 bg-gradient-to-br from-primary-dark/10 via-black to-black"
         >
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
@@ -243,7 +242,7 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Today's Farray's Section */}
-        <section aria-labelledby="today-title" className="py-16 md:py-24 bg-black">
+        <section aria-labelledby="today-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -306,7 +305,7 @@ const AboutPage: React.FC = () => {
         {/* Mission Section */}
         <section
           aria-labelledby="mission-title"
-          className="py-16 md:py-24 bg-gradient-to-br from-primary-dark/10 via-black to-black"
+          className="py-12 md:py-16 bg-gradient-to-br from-primary-dark/10 via-black to-black"
         >
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
@@ -337,7 +336,7 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Social Impact Section */}
-        <section aria-labelledby="social-impact-title" className="py-16 md:py-24 bg-black">
+        <section aria-labelledby="social-impact-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -364,7 +363,7 @@ const AboutPage: React.FC = () => {
         {/* Our Values Section */}
         <section
           aria-labelledby="values-title"
-          className="py-16 md:py-24 bg-gradient-to-br from-primary-dark/10 via-black to-black"
+          className="py-12 md:py-16 bg-gradient-to-br from-primary-dark/10 via-black to-black"
         >
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
@@ -407,7 +406,7 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Closing Statement Section */}
-        <section className="py-16 md:py-24 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center space-y-6">
               <AnimateOnScroll>
@@ -425,10 +424,9 @@ const AboutPage: React.FC = () => {
         </section>
 
         {/* Final CTA Section */}
-        <section className="relative py-20 md:py-32 overflow-hidden">
+        <section className="relative py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6 text-center">
             <AnimateOnScroll>

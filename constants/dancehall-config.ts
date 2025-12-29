@@ -11,6 +11,7 @@ import {
   DANCEHALL_LEVELS,
   DANCEHALL_PREPARE_CONFIG,
 } from './dancehall';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
@@ -23,20 +24,16 @@ export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: DANCEHALL_TESTIMONIALS,
   scheduleKeys: DANCEHALL_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (usando sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Isabel López',
-      specialtyKey: 'dhV3Teacher1Specialty',
-      bioKey: 'dhV3Teacher1Bio',
-      // No image - will use initials avatar
-    },
-    {
-      name: 'Sandra Gómez',
-      specialtyKey: 'dhV3Teacher2Specialty',
-      bioKey: 'dhV3Teacher2Bio',
-      // No image - will use initials avatar
-    },
+    getTeacherInfo('isabel-lopez', 'dhV3Teacher1Specialty', 'dhV3Teacher1Bio', [
+      'Dancehall Female',
+      'Competidora Internacional',
+    ]),
+    getTeacherInfo('sandra-gomez', 'dhV3Teacher2Specialty', 'dhV3Teacher2Bio', [
+      'Twerk',
+      'Dancehall',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Dancehall)
@@ -58,6 +55,20 @@ export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 500,
     funPercent: 100,
     gradientColor: 'rose',
+
+    // Enterprise: Hero background image (limited breakpoints - no avif)
+    heroImage: {
+      basePath: '/images/classes/dancehall/img/dancehall-classes-barcelona-01',
+      alt: "Clases de Dancehall en Barcelona - Farray's International Dance Center",
+      altKey: 'styleImages.dancehall.hero',
+      breakpoints: [640, 960, 1440],
+      formats: ['webp', 'jpg'] as const,
+    },
+    heroVisuals: {
+      imageOpacity: 45,
+      objectPosition: 'center 40%',
+      gradientStyle: 'vibrant' as const,
+    },
   },
 
   // === SECTION TOGGLES ===

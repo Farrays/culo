@@ -15,7 +15,10 @@ export interface PrepareConfig {
   teacher: {
     name: string;
     credential: string;
-    image?: string; // Optional teacher image URL
+    image?: string; // Optional teacher image URL (WebP base)
+    imageSrcSet?: string; // WebP srcSet for responsive images
+    imageSrcSetAvif?: string; // AVIF srcSet for modern browsers
+    objectPosition?: string; // CSS object-position for face focus (default: 'center 20%')
   };
 }
 
@@ -42,7 +45,7 @@ const PrepareClassSection: React.FC<PrepareClassSectionProps> = ({
   const { prefix, whatToBringCount, beforeCount, avoidCount, teacher } = config;
 
   return (
-    <section id={id} className={`py-16 md:py-24 bg-black relative overflow-hidden ${className}`}>
+    <section id={id} className={`py-12 md:py-16 bg-black relative overflow-hidden ${className}`}>
       {/* Background decorativo */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/5 via-transparent to-primary-dark/5"></div>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary-accent/5 rounded-full blur-3xl"></div>
@@ -181,21 +184,44 @@ const PrepareClassSection: React.FC<PrepareClassSectionProps> = ({
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-primary-dark/20 rounded-full blur-2xl"></div>
 
                 <div className="relative z-10 flex flex-col md:flex-row items-center gap-6">
-                  {/* Avatar del profesor */}
+                  {/* Avatar del profesor - Enterprise with AVIF/WebP support */}
                   <div className="flex-shrink-0">
                     <div className="w-20 h-20 rounded-full overflow-hidden border-3 border-primary-accent/50 shadow-accent-glow">
                       {teacher.image ? (
-                        <img
-                          src={teacher.image}
-                          alt={teacher.name}
-                          width="80"
-                          height="80"
-                          loading="lazy"
-                          className="w-full h-full object-cover"
-                        />
+                        <picture>
+                          {/* AVIF: Best compression, modern browsers */}
+                          {teacher.imageSrcSetAvif && (
+                            <source
+                              type="image/avif"
+                              srcSet={teacher.imageSrcSetAvif}
+                              sizes="80px"
+                            />
+                          )}
+                          {/* WebP: Good compression, wide support */}
+                          {teacher.imageSrcSet && (
+                            <source type="image/webp" srcSet={teacher.imageSrcSet} sizes="80px" />
+                          )}
+                          <img
+                            src={teacher.image}
+                            alt={`Foto de ${teacher.name}`}
+                            width="80"
+                            height="80"
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-full object-cover"
+                            style={{ objectPosition: teacher.objectPosition || 'center 20%' }}
+                          />
+                        </picture>
                       ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-primary-accent/30 to-primary-dark/50 flex items-center justify-center">
-                          <span className="text-2xl font-black text-primary-accent/60">
+                        <div
+                          role="img"
+                          aria-label={`Avatar de ${teacher.name}`}
+                          className="w-full h-full bg-gradient-to-br from-primary-accent/30 to-primary-dark/50 flex items-center justify-center"
+                        >
+                          <span
+                            className="text-2xl font-black text-primary-accent/60"
+                            aria-hidden="true"
+                          >
                             {teacher.name
                               .split(' ')
                               .map(n => n[0])

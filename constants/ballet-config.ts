@@ -10,6 +10,7 @@ import {
   BALLET_PREPARE_CONFIG,
   BALLET_NEARBY_AREAS,
 } from './ballet';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const BALLET_PAGE_CONFIG: FullDanceClassConfig = {
@@ -22,18 +23,16 @@ export const BALLET_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: BALLET_TESTIMONIALS,
   scheduleKeys: BALLET_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (usando sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Daniel Sené',
-      specialtyKey: 'balletTeacher1Specialty',
-      bioKey: 'balletTeacher1Bio',
-    },
-    {
-      name: 'Alejandro Miñoso',
-      specialtyKey: 'balletTeacher2Specialty',
-      bioKey: 'balletTeacher2Bio',
-    },
+    getTeacherInfo('daniel-sene', 'balletTeacher1Specialty', 'balletTeacher1Bio', [
+      'ENA Cuba',
+      'Técnica Cubana',
+    ]),
+    getTeacherInfo('alejandro-minoso', 'balletTeacher2Specialty', 'balletTeacher2Bio', [
+      'ENA Cuba',
+      'Modern Jazz',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Dance > Ballet)
@@ -55,6 +54,20 @@ export const BALLET_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 400,
     funPercent: 100,
     gradientColor: 'emerald',
+
+    // Enterprise: Hero background image
+    heroImage: {
+      basePath: '/images/classes/ballet/img/clases-ballet-barcelona',
+      alt: "Clases de Ballet Clásico en Barcelona - Farray's Center",
+      altKey: 'styleImages.ballet.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'] as const,
+    },
+    heroVisuals: {
+      imageOpacity: 45,
+      objectPosition: 'center 30%',
+      gradientStyle: 'dark' as const,
+    },
   },
 
   // === SECTION TOGGLES ===

@@ -10,6 +10,7 @@ import {
   SALSA_CUBANA_PREPARE_CONFIG,
   SALSA_CUBANA_NEARBY_AREAS,
 } from './salsa-cubana';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const SALSA_CUBANA_PAGE_CONFIG: FullDanceClassConfig = {
@@ -22,14 +23,21 @@ export const SALSA_CUBANA_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: SALSA_CUBANA_TESTIMONIALS,
   scheduleKeys: SALSA_CUBANA_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Yunaisy Farray',
-      specialtyKey: 'salsaCubanaTeacher1Specialty',
-      bioKey: 'salsaCubanaTeacher1Bio',
-      image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
-    },
+    getTeacherInfo('yunaisy-farray', 'salsaCubanaTeacher1Specialty', 'salsaCubanaTeacher1Bio', [
+      'Directora',
+      'Creadora Método Farray',
+      'CID-UNESCO',
+    ]),
+    getTeacherInfo('yasmina-fernandez', 'salsaCubanaTeacher2Specialty', 'salsaCubanaTeacher2Bio', [
+      'Salsa Cubana',
+      'Lady Style',
+    ]),
+    getTeacherInfo('iroel-bastarreche', 'salsaCubanaTeacher3Specialty', 'salsaCubanaTeacher3Bio', [
+      'Casino',
+      'Método Farray',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Latin > Salsa Cubana)
@@ -51,6 +59,19 @@ export const SALSA_CUBANA_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 400,
     funPercent: 100,
     gradientColor: 'amber',
+    // Enterprise: Hero background image with new salsa cubana photo
+    heroImage: {
+      basePath: '/images/classes/salsa-cubana/img/salsa-cubana',
+      alt: "Pareja bailando salsa cubana en Barcelona - Clases de casino y rueda con profesores cubanos en Farray's Center",
+      altKey: 'styleImages.salsaCubana.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'] as const,
+    },
+    heroVisuals: {
+      imageOpacity: 50,
+      objectPosition: 'center 40%',
+      gradientStyle: 'dark' as const,
+    },
   },
 
   // === SECTION TOGGLES ===
@@ -59,10 +80,10 @@ export const SALSA_CUBANA_PAGE_CONFIG: FullDanceClassConfig = {
     paragraphCount: 4,
     hasQuestionAnswer: true,
     image: {
-      src: '/images/classes/salsa-cubana/img/clases-salsa-cubana-barcelona_960.webp',
+      src: '/images/classes/salsa-cubana/img/salsa-cubana_1024.webp',
       srcSet:
-        '/images/classes/salsa-cubana/img/clases-salsa-cubana-barcelona_480.webp 480w, /images/classes/salsa-cubana/img/clases-salsa-cubana-barcelona_960.webp 960w',
-      alt: 'Clases de Salsa Cubana en Barcelona - Método Farray',
+        '/images/classes/salsa-cubana/img/salsa-cubana_640.webp 640w, /images/classes/salsa-cubana/img/salsa-cubana_768.webp 768w, /images/classes/salsa-cubana/img/salsa-cubana_1024.webp 1024w',
+      alt: "Pareja ejecutando giro de salsa cubana en Barcelona - Técnica de casino y guía con profesores cubanos en Farray's Center",
     },
   },
 

@@ -144,9 +144,6 @@ const MetodoFarrayPage: React.FC = () => {
           {/* Background con gradient premium */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/40 via-black to-primary-dark/20" />
 
-          {/* Textura stardust */}
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30" />
-
           {/* Glow decorativo */}
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary-accent/20 rounded-full blur-[150px] pointer-events-none" />
 
@@ -556,12 +553,9 @@ const MetodoFarrayPage: React.FC = () => {
         </section>
 
         {/* SECCIÓN 8: CTA FINAL PREMIUM */}
-        <section className="relative py-16 md:py-20 overflow-hidden">
+        <section className="relative py-12 md:py-16 overflow-hidden">
           {/* Background con gradient premium */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/40 via-black to-primary-dark/30" />
-
-          {/* Textura */}
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20" />
 
           {/* Glow central */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary-accent/15 rounded-full blur-[120px] pointer-events-none" />

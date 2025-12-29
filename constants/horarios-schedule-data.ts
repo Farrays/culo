@@ -497,11 +497,11 @@ export const SCHEDULE_DATA: ScheduleClass[] = [
   {
     id: 'wed-1',
     styleName: 'Salsa Ladies Styling',
-    className: 'Salsa Cubana Ladies Styling Open Level',
+    className: 'Salsa Cubana Ladies Styling Principiantes',
     day: 'wednesday',
     time: '11:00',
     teacher: 'Yasmina Fernández Ruiz',
-    level: 'all',
+    level: 'beginner',
     category: 'latino',
     link: '/clases/salsa-lady-style-barcelona',
   },

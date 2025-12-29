@@ -109,15 +109,13 @@ export const AFROBEAT_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const AFROBEAT_PREPARE_CONFIG = {
   prefix: 'afroPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Redblueh',
-    credential: 'Especialista en Afrobeats',
-    image: '/images/teachers/img/profesor-afrobeats-redblueh_320.webp',
-  },
+  teacher: getTeacherQuoteInfo('redbhlue', 'Especialista en Afrobeats'),
 };

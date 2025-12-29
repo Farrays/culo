@@ -20,6 +20,7 @@ import {
   BUM_BUM_LEVELS,
   BUM_BUM_PREPARE_CONFIG,
 } from './bum-bum';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const BUM_BUM_PAGE_CONFIG: FullDanceClassConfig = {
@@ -32,14 +33,12 @@ export const BUM_BUM_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: BUM_BUM_TESTIMONIALS,
   scheduleKeys: BUM_BUM_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Cris Ag',
-      specialtyKey: 'bumbumTeacher1Specialty',
-      bioKey: 'bumbumTeacher1Bio',
-      // No image - will use initials avatar
-    },
+    getTeacherInfo('cris-ag', 'bumbumTeacher1Specialty', 'bumbumTeacher1Bio', [
+      'Bum Bum',
+      'Fitness',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Prep Física > Bum Bum)
@@ -61,6 +60,20 @@ export const BUM_BUM_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 350,
     funPercent: 100,
     gradientColor: 'rose', // Pink/rose for fitness/body sculpting
+
+    // Enterprise: Hero background image
+    heroImage: {
+      basePath: '/images/classes/bum-bum/img/bum-bum',
+      alt: 'Alumnas realizando ejercicios de glúteos Bum Bum en Barcelona - Método Farray con hip thrust y sentadillas',
+      altKey: 'styleImages.bumBum.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'] as const,
+    },
+    heroVisuals: {
+      imageOpacity: 45,
+      objectPosition: 'center 40%',
+      gradientStyle: 'vibrant' as const,
+    },
   },
 
   // === SECTION TOGGLES ===

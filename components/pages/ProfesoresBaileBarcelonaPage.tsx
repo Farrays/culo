@@ -80,7 +80,7 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
     ],
   };
 
-  // Person schemas for SEO
+  // Person schemas for SEO with Geo-Local signals
   const personSchemas = TEACHERS_PERSON_SCHEMAS.map(teacher => ({
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -92,6 +92,23 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
       '@type': 'DanceGroup',
       name: "Farray's International Dance Center",
       url: baseUrl,
+    },
+    workLocation: {
+      '@type': 'Place',
+      name: "Farray's International Dance Center",
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Carrer de Llançà, 37',
+        addressLocality: 'Barcelona',
+        addressRegion: 'Cataluña',
+        postalCode: '08015',
+        addressCountry: 'ES',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 41.3762,
+        longitude: 2.1487,
+      },
     },
   }));
 
@@ -157,11 +174,10 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
 
       <div className="pt-20 md:pt-24">
         {/* Hero Section */}
-        <section id="teachers-hero" className="relative text-center py-20 md:py-32 overflow-hidden">
+        <section id="teachers-hero" className="relative text-center py-12 md:py-16 overflow-hidden">
           {/* Background */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
 
           <div className="relative z-20 container mx-auto px-4 sm:px-6">
@@ -212,7 +228,7 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
         </section>
 
         {/* Director Section */}
-        <section id="director" className="py-16 md:py-24 bg-primary-dark/10">
+        <section id="director" className="py-10 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-center mb-4 holographic-text">
@@ -281,8 +297,118 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Commitment Section */}
+        <section
+          id="commitment"
+          className="py-10 md:py-14 bg-gradient-to-b from-black to-primary-dark/20"
+        >
+          <div className="container mx-auto px-4 sm:px-6">
+            <AnimateOnScroll>
+              <div className="max-w-3xl mx-auto text-center">
+                {/* Shield Icon */}
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-accent/20 border border-primary-accent/40 mb-6">
+                  <svg
+                    className="w-8 h-8 text-primary-accent"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
+                    />
+                  </svg>
+                </div>
+
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-4">
+                  {t('teachersPageCommitmentTitle')}
+                </h2>
+                <p className="text-neutral/80 mb-8 max-w-xl mx-auto">
+                  {t('teachersPageCommitmentDescription')}
+                </p>
+
+                {/* 3 Points */}
+                <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 mb-8">
+                  <div className="flex items-center justify-center gap-2">
+                    <svg
+                      className="w-5 h-5 text-primary-accent flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-neutral font-medium">
+                      {t('teachersPageCommitmentPoint1')}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <svg
+                      className="w-5 h-5 text-primary-accent flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-neutral font-medium">
+                      {t('teachersPageCommitmentPoint2')}
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    <svg
+                      className="w-5 h-5 text-primary-accent flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-neutral font-medium">
+                      {t('teachersPageCommitmentPoint3')}
+                    </span>
+                  </div>
+                </div>
+
+                {/* CTA Button */}
+                <a
+                  href="mailto:info@farrays.com?subject=Candidatura%20Profesor"
+                  className="inline-flex items-center gap-2 bg-transparent border border-primary-accent/60 text-primary-accent font-medium px-6 py-3 rounded-full transition-all duration-300 hover:bg-primary-accent/10 hover:border-primary-accent"
+                >
+                  {t('teachersPageCommitmentCta')}
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </AnimateOnScroll>
+          </div>
+        </section>
+
         {/* Team Section */}
-        <section id="team" className="py-16 md:py-24 bg-black">
+        <section id="team" className="py-10 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-center mb-4 holographic-text">
@@ -293,11 +419,19 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
               </p>
             </AnimateOnScroll>
 
-            {/* Teachers Grid - Corporate Style */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Teachers Grid - Corporate Style with Accessibility */}
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+              role="list"
+              aria-label={t('teachersPageTeamTitle')}
+            >
               {TEACHERS_LIST.map((teacher, index) => (
                 <AnimateOnScroll key={teacher.id} delay={index * 50}>
-                  <div className="bg-black/60 backdrop-blur-md border border-primary-dark/50 rounded-xl overflow-hidden hover:border-primary-accent transition-all h-full flex flex-col group">
+                  <article
+                    className="bg-black/60 backdrop-blur-md border border-primary-dark/50 rounded-xl overflow-hidden hover:border-primary-accent transition-all h-full flex flex-col group"
+                    role="listitem"
+                    aria-labelledby={`teacher-name-${teacher.id}`}
+                  >
                     {/* Photo/Avatar - Portrait 3:4 */}
                     <div className="relative overflow-hidden">
                       {teacher.image ? (
@@ -328,7 +462,12 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
 
                     {/* Info */}
                     <div className="p-6 flex-1 flex flex-col">
-                      <h3 className="text-xl font-bold text-neutral mb-1">{teacher.name}</h3>
+                      <h3
+                        id={`teacher-name-${teacher.id}`}
+                        className="text-xl font-bold text-neutral mb-1"
+                      >
+                        {teacher.name}
+                      </h3>
                       <p className="text-primary-accent font-medium mb-3">
                         {t(teacher.specialtyKey)}
                       </p>
@@ -348,7 +487,7 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
                         ))}
                       </div>
                     </div>
-                  </div>
+                  </article>
                 </AnimateOnScroll>
               ))}
             </div>
@@ -356,10 +495,17 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
         </section>
 
         {/* Final CTA Section */}
-        <section id="cta" className="py-16 md:py-24 bg-primary-dark/10">
+        <section
+          id="cta"
+          className="py-10 md:py-16 bg-primary-dark/10"
+          aria-labelledby="cta-heading"
+        >
           <div className="container mx-auto px-4 sm:px-6 text-center">
             <AnimateOnScroll>
-              <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-4 holographic-text">
+              <h2
+                id="cta-heading"
+                className="text-3xl md:text-4xl font-black tracking-tighter mb-4 holographic-text"
+              >
                 {t('teachersPageCtaTitle')}
               </h2>
               <p className="text-neutral/80 mb-8 max-w-2xl mx-auto">
@@ -368,16 +514,22 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
             </AnimateOnScroll>
 
             <AnimateOnScroll delay={200}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div
+                className="flex flex-col sm:flex-row gap-4 justify-center"
+                role="group"
+                aria-label={t('teachersPageCtaTitle')}
+              >
                 <button
                   onClick={() => setIsModalOpen(true)}
                   className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
+                  aria-label={t('puertasAbiertasCTA')}
                 >
                   {t('puertasAbiertasCTA')}
                 </button>
                 <Link
                   to={`/${locale}/clases/baile-barcelona`}
                   className="inline-flex items-center justify-center bg-black/50 backdrop-blur-md border-2 border-primary-accent text-primary-accent font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white hover:scale-105 hover:shadow-accent-glow"
+                  aria-label={t('verClasesBaile')}
                 >
                   {t('verClasesBaile')}
                 </Link>

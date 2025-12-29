@@ -199,7 +199,6 @@ const EstudioGrabacionPage: React.FC = () => {
           {/* Background */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
 
           <div className="relative z-20 container mx-auto px-6">
@@ -255,7 +254,7 @@ const EstudioGrabacionPage: React.FC = () => {
         {/* Problem Section - Persuasion Framework */}
         <section
           aria-labelledby="problem-title"
-          className="py-16 md:py-24 bg-gradient-to-br from-primary-dark/10 via-black to-black"
+          className="py-12 md:py-16 bg-gradient-to-br from-primary-dark/10 via-black to-black"
         >
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
@@ -277,7 +276,7 @@ const EstudioGrabacionPage: React.FC = () => {
         </section>
 
         {/* Solution Section */}
-        <section aria-labelledby="solution-title" className="py-16 md:py-24 bg-black">
+        <section aria-labelledby="solution-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <h2
@@ -313,7 +312,7 @@ const EstudioGrabacionPage: React.FC = () => {
         {/* Stats Section */}
         <section
           aria-labelledby="stats-title"
-          className="py-16 md:py-24 bg-gradient-to-br from-primary-dark/10 via-black to-black"
+          className="py-12 md:py-16 bg-gradient-to-br from-primary-dark/10 via-black to-black"
         >
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
@@ -378,7 +377,7 @@ const EstudioGrabacionPage: React.FC = () => {
         </section>
 
         {/* Benefits Section */}
-        <section aria-labelledby="benefits-title" className="py-16 md:py-24 bg-black">
+        <section aria-labelledby="benefits-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <h2
@@ -413,7 +412,7 @@ const EstudioGrabacionPage: React.FC = () => {
         {/* Equipment Section */}
         <section
           aria-labelledby="equipment-title"
-          className="py-16 md:py-24 bg-gradient-to-br from-primary-dark/10 via-black to-black"
+          className="py-12 md:py-16 bg-gradient-to-br from-primary-dark/10 via-black to-black"
         >
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
@@ -495,7 +494,7 @@ const EstudioGrabacionPage: React.FC = () => {
         </section>
 
         {/* FAQ Section - Sin título redundante */}
-        <section className="py-16 md:py-24 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <FAQSection
@@ -510,7 +509,7 @@ const EstudioGrabacionPage: React.FC = () => {
         {/* Ideal For Section */}
         <section
           aria-labelledby="ideal-for-title"
-          className="py-16 md:py-24 bg-gradient-to-br from-primary-dark/10 via-black to-black"
+          className="py-12 md:py-16 bg-gradient-to-br from-primary-dark/10 via-black to-black"
         >
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
@@ -537,7 +536,7 @@ const EstudioGrabacionPage: React.FC = () => {
         </section>
 
         {/* Process Section */}
-        <section aria-labelledby="process-title" className="py-16 md:py-24 bg-black">
+        <section aria-labelledby="process-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <h2
@@ -580,7 +579,6 @@ const EstudioGrabacionPage: React.FC = () => {
         >
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
 
           <div className="relative z-20 container mx-auto px-6">

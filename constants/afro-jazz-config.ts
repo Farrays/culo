@@ -9,6 +9,7 @@ import {
   AFRO_JAZZ_LEVELS,
   AFRO_JAZZ_PREPARE_CONFIG,
 } from './afro-jazz';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const AFRO_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
@@ -21,19 +22,17 @@ export const AFRO_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: AFRO_JAZZ_TESTIMONIALS,
   scheduleKeys: AFRO_JAZZ_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Yunaisy Farray',
-      specialtyKey: 'afrojazzTeacher1Specialty',
-      bioKey: 'afrojazzTeacher1Bio',
-      image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
-    },
-    {
-      name: 'Alejandro Miñoso',
-      specialtyKey: 'afrojazzTeacher2Specialty',
-      bioKey: 'afrojazzTeacher2Bio',
-    },
+    getTeacherInfo('yunaisy-farray', 'afrojazzTeacher1Specialty', 'afrojazzTeacher1Bio', [
+      'Directora',
+      'CID-UNESCO',
+      'Creadora Método Farray',
+    ]),
+    getTeacherInfo('alejandro-minoso', 'afrojazzTeacher2Specialty', 'afrojazzTeacher2Bio', [
+      'ENA Cuba',
+      'Modern Jazz',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Dance > Afro Jazz)
@@ -55,6 +54,20 @@ export const AFRO_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 500,
     funPercent: 100,
     gradientColor: 'emerald',
+
+    // Enterprise: Hero background image
+    heroImage: {
+      basePath: '/images/classes/afro-jazz/img/afro-jazz',
+      alt: "Clases de Afro Jazz en Barcelona - Farray's Center",
+      altKey: 'styleImages.afroJazz.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'] as const,
+    },
+    heroVisuals: {
+      imageOpacity: 45,
+      objectPosition: 'center 35%',
+      gradientStyle: 'dark' as const,
+    },
   },
 
   // === SECTION TOGGLES ===

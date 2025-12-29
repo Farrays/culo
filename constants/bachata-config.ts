@@ -12,6 +12,7 @@ import {
   BACHATA_PREPARE_CONFIG,
   BACHATA_NEARBY_AREAS,
 } from './bachata';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const BACHATA_PAGE_CONFIG: FullDanceClassConfig = {
@@ -24,43 +25,26 @@ export const BACHATA_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: BACHATA_TESTIMONIALS,
   scheduleKeys: BACHATA_SCHEDULE_KEYS,
 
-  // Teachers - 5 profesores de bachata sensual
+  // Teachers - 5 profesores de bachata sensual (usando sistema centralizado)
   teachers: [
-    {
-      name: 'Mathias Font',
-      specialtyKey: 'bachataV3Teacher1Specialty',
-      bioKey: 'bachataV3Teacher1Bio',
-      image: undefined, // Pendiente de foto
-      tags: ['Campeón Mundial', 'Musicalidad', 'Conexión'],
-    },
-    {
-      name: 'Eugenia Trujillo',
-      specialtyKey: 'bachataV3Teacher2Specialty',
-      bioKey: 'bachataV3Teacher2Bio',
-      image: '/images/teachers/eugenia-trujillo_256.webp',
-      tags: ['Campeona Mundial', 'Salsa LA', 'Bachata Sensual'],
-    },
-    {
-      name: 'Carlos Canto',
-      specialtyKey: 'bachataV3Teacher3Specialty',
-      bioKey: 'bachataV3Teacher3Bio',
-      image: undefined, // Pendiente de foto
-      tags: ['Bachata Sensual', 'Principiantes'],
-    },
-    {
-      name: 'Noemí',
-      specialtyKey: 'bachataV3Teacher4Specialty',
-      bioKey: 'bachataV3Teacher4Bio',
-      image: undefined, // Pendiente de foto
-      tags: ['Bachata Sensual', 'Lady Style'],
-    },
-    {
-      name: 'Juan Álvarez',
-      specialtyKey: 'bachataV3Teacher5Specialty',
-      bioKey: 'bachataV3Teacher5Bio',
-      image: undefined, // Pendiente de foto
-      tags: ['Bachata Sensual', 'Contemporáneo'],
-    },
+    getTeacherInfo('mathias-font', 'bachataV3Teacher1Specialty', 'bachataV3Teacher1Bio', [
+      'Campeón Mundial',
+      'Musicalidad',
+      'Conexión',
+    ]),
+    getTeacherInfo('eugenia-trujillo', 'bachataV3Teacher2Specialty', 'bachataV3Teacher2Bio', [
+      'Campeona Mundial',
+      'Salsa LA',
+      'Bachata Sensual',
+    ]),
+    getTeacherInfo('carlos-canto', 'bachataV3Teacher3Specialty', 'bachataV3Teacher3Bio', [
+      'Bachata Sensual',
+      'Principiantes',
+    ]),
+    getTeacherInfo('noemi', 'bachataV3Teacher4Specialty', 'bachataV3Teacher4Bio', [
+      'Bachata Sensual',
+      'Lady Style',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Latin > Current)
@@ -82,6 +66,20 @@ export const BACHATA_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 350,
     funPercent: 100,
     gradientColor: 'violet', // Color distintivo para bachata sensual
+
+    // Enterprise: Hero background image
+    heroImage: {
+      basePath: '/images/classes/Bachata/img/clases-bachata-sensual-barcelona-pareja',
+      alt: "Pareja bailando bachata sensual en clase de Barcelona - conexión, ondulaciones y técnica profesional en Farray's Center",
+      altKey: 'styleImages.bachata.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'] as const,
+    },
+    heroVisuals: {
+      imageOpacity: 50,
+      objectPosition: 'center 40%',
+      gradientStyle: 'dark' as const,
+    },
   },
 
   // === SECTION TOGGLES ===
@@ -89,13 +87,13 @@ export const BACHATA_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
-    // Enterprise OptimizedImage config (AVIF/WebP/JPG, 6 breakpoints)
-    optimizedImage: {
-      basePath: '/images/classes/Bachata/img/clases-bachata-sensual-barcelona',
-      altKey: 'styleImages.bachata.hero',
+    // Enterprise: Legacy format with srcSet for aspect-auto on desktop
+    image: {
+      src: '/images/classes/Bachata/img/clases-bachata-sensual-barcelona-pareja_1024.webp',
+      srcSet:
+        '/images/classes/Bachata/img/clases-bachata-sensual-barcelona-pareja_640.webp 640w, /images/classes/Bachata/img/clases-bachata-sensual-barcelona-pareja_1024.webp 1024w',
       alt: "Pareja bailando bachata sensual en clase de Barcelona - conexión, ondulaciones y técnica profesional en Farray's Center",
-      breakpoints: [320, 640, 768, 1024, 1440, 1920],
-      formats: ['avif', 'webp', 'jpg'],
+      altKey: 'styleImages.bachata.whatIs',
     },
   },
 

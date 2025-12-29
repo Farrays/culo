@@ -290,17 +290,15 @@ export const SALSA_CUBANA_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const SALSA_CUBANA_PREPARE_CONFIG = {
   prefix: 'salsaCubanaPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Yunaisy Farray',
-    credential: "Directora de Farray's Center",
-    image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
-  },
+  teacher: getTeacherQuoteInfo('yunaisy-farray', "Directora de Farray's Center"),
 };
 
 // Nearby neighborhoods for local SEO

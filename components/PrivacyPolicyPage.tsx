@@ -2,7 +2,6 @@
 import React, { useState, useCallback, memo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../hooks/useI18n';
-import Breadcrumb from './shared/Breadcrumb';
 import { ChevronDownIcon } from '../lib/icons';
 
 interface PrivacySection {
@@ -119,15 +118,6 @@ const PrivacyPolicyPage: React.FC = () => {
     dateModified: '2025-12-24',
     specialty: 'Privacy Policy',
   };
-
-  const breadcrumbItems = [
-    { name: t('breadcrumbHome'), url: `/${locale}` },
-    {
-      name: t('privacy_breadcrumb_current'),
-      url: `/${locale}/politica-privacidad`,
-      isActive: true,
-    },
-  ];
 
   const sections: PrivacySection[] = [
     {
@@ -603,14 +593,11 @@ const PrivacyPolicyPage: React.FC = () => {
         <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
       </Helmet>
 
-      <div className="min-h-screen bg-black pt-20 md:pt-24">
+      <div className="min-h-screen bg-black">
         {/* Hero Section */}
-        <section className="relative py-16 md:py-24 bg-gradient-to-b from-black via-primary-dark/10 to-black">
+        <section className="relative py-12 md:py-16 bg-gradient-to-b from-black via-primary-dark/10 to-black">
           <div className="container mx-auto px-6">
-            {/* Breadcrumb */}
-            <Breadcrumb items={breadcrumbItems} textColor="text-neutral/70" />
-
-            <div className="max-w-4xl mx-auto text-center mt-6">
+            <div className="max-w-4xl mx-auto text-center">
               <h1
                 className="text-4xl md:text-6xl font-black tracking-tighter text-white mb-4"
                 style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
@@ -630,7 +617,7 @@ const PrivacyPolicyPage: React.FC = () => {
         </section>
 
         {/* Content Section */}
-        <section className="py-16 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6 max-w-4xl">
             {/* Controls */}
             <div className="flex justify-end gap-4 mb-6">

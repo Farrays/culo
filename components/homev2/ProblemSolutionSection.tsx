@@ -32,7 +32,7 @@ const ProblemSolutionSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-black">
+    <section className="py-12 md:py-16 bg-black">
       <div className="container mx-auto px-6">
         {/* PROBLEMA - Título */}
         <AnimateOnScroll>

@@ -10,6 +10,7 @@ import {
   SEXY_STYLE_PREPARE_CONFIG,
   SEXY_STYLE_VIDEO_ID,
 } from './sexy-style';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const SEXY_STYLE_PAGE_CONFIG: FullDanceClassConfig = {
@@ -22,13 +23,12 @@ export const SEXY_STYLE_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: SEXY_STYLE_TESTIMONIALS,
   scheduleKeys: SEXY_STYLE_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Yasmina Fernández',
-      specialtyKey: 'sexystyleTeacher1Specialty',
-      bioKey: 'sexystyleTeacher1Bio',
-    },
+    getTeacherInfo('yasmina-fernandez', 'sexystyleTeacher1Specialty', 'sexystyleTeacher1Bio', [
+      'Sexy Style',
+      'Método Farray',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Sexy Style)
@@ -50,6 +50,20 @@ export const SEXY_STYLE_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 450,
     funPercent: 100,
     gradientColor: 'rose',
+
+    // Enterprise: Hero background image
+    heroImage: {
+      basePath: '/images/classes/sexy-style/img/clases-de-sexy-style-barcelona',
+      alt: "Clases de Sexy Style en Barcelona - Farray's Center",
+      altKey: 'styleImages.sexyStyle.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'] as const,
+    },
+    heroVisuals: {
+      imageOpacity: 45,
+      objectPosition: 'center 40%',
+      gradientStyle: 'vibrant' as const,
+    },
   },
 
   // === SECTION TOGGLES ===
@@ -96,7 +110,6 @@ export const SEXY_STYLE_PAGE_CONFIG: FullDanceClassConfig = {
         title: "Sexy Style Classes at Farray's Center Barcelona",
       },
     ],
-    placeholderCount: 1,
   },
 
   logosSection: {

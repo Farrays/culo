@@ -126,33 +126,43 @@ export const SEXY_STYLE_BREADCRUMB_KEYS = {
 // YouTube video ID for the page
 export const SEXY_STYLE_VIDEO_ID = '516fMKBEIKw';
 
-// Level descriptions for cards - 3 levels
+// Level descriptions for cards - 4 levels
 export const SEXY_STYLE_LEVELS = [
   {
     id: 'principiante',
     levelKey: 'beginnerLevel',
     titleKey: 'sexystyleLevelBeginnerTitle',
     descKey: 'sexystyleLevelBeginnerDesc',
-    duration: '0-3 meses',
+    duration: '0-2 meses',
     color: 'primary-dark' as const,
+  },
+  {
+    id: 'basico',
+    levelKey: 'basicLevel',
+    titleKey: 'sexystyleLevelBasicTitle',
+    descKey: 'sexystyleLevelBasicDesc',
+    duration: '2-6 meses',
+    color: 'primary-accent-light' as const,
   },
   {
     id: 'intermedio',
     levelKey: 'intermediateLevel',
-    titleKey: 'sexystyleLevelInterTitle',
-    descKey: 'sexystyleLevelInterDesc',
-    duration: '3-9 meses',
-    color: 'primary-accent-light' as const,
+    titleKey: 'sexystyleLevelIntermediateTitle',
+    descKey: 'sexystyleLevelIntermediateDesc',
+    duration: '6-12 meses',
+    color: 'primary-accent' as const,
   },
   {
     id: 'avanzado',
     levelKey: 'advancedLevel',
     titleKey: 'sexystyleLevelAdvancedTitle',
     descKey: 'sexystyleLevelAdvancedDesc',
-    duration: '+9 meses',
-    color: 'primary-accent' as const,
+    duration: '+12 meses',
+    color: 'amber' as const,
   },
 ];
+
+import { getTeacherQuoteInfo } from './teacher-images';
 
 // Prepare class configuration
 export const SEXY_STYLE_PREPARE_CONFIG = {
@@ -160,9 +170,5 @@ export const SEXY_STYLE_PREPARE_CONFIG = {
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Yasmina Fernández',
-    credential: 'Especialista en Sexy Style',
-    image: undefined,
-  },
+  teacher: getTeacherQuoteInfo('yasmina-fernandez', 'Especialista en Sexy Style'),
 };

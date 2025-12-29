@@ -118,11 +118,10 @@ const BlogListPage: React.FC = () => {
 
       <div className="pt-20 md:pt-24">
         {/* ========== HERO SECTION ========== */}
-        <section className="relative py-16 md:py-24 bg-black overflow-hidden">
+        <section className="relative py-12 md:py-16 bg-black overflow-hidden">
           {/* Background */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black" />
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20" />
           </div>
 
           <div className="relative z-10 container mx-auto px-6">
@@ -182,7 +181,7 @@ const BlogListPage: React.FC = () => {
         </section>
 
         {/* ========== ARTICLES GRID ========== */}
-        <section className="py-16 md:py-20 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             {filteredArticles.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

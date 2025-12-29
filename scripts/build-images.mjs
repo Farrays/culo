@@ -9,7 +9,7 @@ import { join, extname, basename } from "node:path";
 // Matching OptimizedImage component: [320, 640, 768, 1024, 1440, 1920]
 // ============================================================================
 
-const classes = ["dancehall", "twerk", "afrobeat", "hip-hop", "hip-hop-reggaeton", "sexy-reggaeton", "reggaeton-cubano", "femmology", "sexy-style", "modern-jazz", "ballet", "contemporaneo", "afro-contemporaneo", "afro-jazz", "bachata", "bum-bum", "folklore-cubano", "cuerpo-fit", "salsa-lady-style", "salsa-lady-timba", "heels", "timba", "salsa-cubana"]; // añade más clases aquí
+const classes = ["dancehall", "twerk", "afrobeat", "hip-hop", "hip-hop-reggaeton", "sexy-reggaeton", "reggaeton-cubano", "femmology", "sexy-style", "modern-jazz", "ballet", "contemporaneo", "afro-contemporaneo", "afro-jazz", "bachata", "bachata-lady-style", "bum-bum", "folklore-cubano", "cuerpo-fit", "salsa-lady-style", "salsa-lady-timba", "heels", "timba", "salsa-cubana"]; // añade más clases aquí
 const logos = true; // procesar logos
 const teachers = true; // procesar fotos de profesores
 const teacherSizes = [320, 640, 960]; // tamaños para fotos de profesores (cuadradas)
@@ -156,19 +156,25 @@ if (teachers) {
     console.log(`  Processing teacher: ${file} (${meta.width}x${meta.height})`);
 
     for (const w of teacherSizes) {
+      // AVIF (best compression - Enterprise)
+      await sharp(inPath)
+        .resize({ width: w, height: w, fit: 'cover', position: 'north' })
+        .avif({ quality: 75, effort: 4 })
+        .toFile(join(outDir, `${base}_${w}.avif`));
+
       // WEBP
       await sharp(inPath)
-        .resize({ width: w, height: w, fit: 'cover' })
+        .resize({ width: w, height: w, fit: 'cover', position: 'north' })
         .webp({ quality: 85 })
         .toFile(join(outDir, `${base}_${w}.webp`));
 
       // JPEG fallback
       await sharp(inPath)
-        .resize({ width: w, height: w, fit: 'cover' })
+        .resize({ width: w, height: w, fit: 'cover', position: 'north' })
         .jpeg({ quality: 85, mozjpeg: true })
         .toFile(join(outDir, `${base}_${w}.jpg`));
 
-      console.log(`    ✓ Generated ${base}_${w}.webp & .jpg`);
+      console.log(`    ✓ Generated ${base}_${w} (.avif, .webp, .jpg)`);
     }
   }
 

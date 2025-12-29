@@ -142,17 +142,15 @@ export const TIMBA_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const TIMBA_PREPARE_CONFIG = {
   prefix: 'timbaPrepare',
   whatToBringCount: 4,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Yunaisy Farray',
-    credential: 'Directora | Miembro CID-UNESCO',
-    image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
-  },
+  teacher: getTeacherQuoteInfo('yunaisy-farray', 'Directora | Miembro CID-UNESCO'),
 };
 
 // Nearby areas for local SEO

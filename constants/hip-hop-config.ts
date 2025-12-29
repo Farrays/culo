@@ -10,6 +10,7 @@ import {
   HIPHOP_PREPARE_CONFIG,
   HIPHOP_NEARBY_AREAS,
 } from './hip-hop';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const HIPHOP_PAGE_CONFIG: FullDanceClassConfig = {
@@ -22,13 +23,13 @@ export const HIPHOP_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: HIPHOP_TESTIMONIALS,
   scheduleKeys: HIPHOP_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (usando sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Marcos Martínez',
-      specialtyKey: 'hiphopTeacher1Specialty',
-      bioKey: 'hiphopTeacher1Bio',
-    },
+    getTeacherInfo('marcos-martinez', 'hiphopTeacher1Specialty', 'hiphopTeacher1Bio', [
+      'Juez Internacional',
+      'Breaking',
+      'Locking',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Hip Hop)
@@ -50,6 +51,20 @@ export const HIPHOP_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 500,
     funPercent: 100,
     gradientColor: 'rose',
+
+    // Enterprise: Hero background image
+    heroImage: {
+      basePath: '/images/classes/hip-hop/img/clases-hip-hop-barcelona',
+      alt: "Clases de Hip Hop en Barcelona - Street dance urbano en Farray's Center",
+      altKey: 'styleImages.hipHop.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'] as const,
+    },
+    heroVisuals: {
+      imageOpacity: 45,
+      objectPosition: 'center 40%',
+      gradientStyle: 'vibrant' as const,
+    },
   },
 
   // === SECTION TOGGLES ===

@@ -11,6 +11,7 @@ import {
   MODERN_JAZZ_NEARBY_AREAS,
   MODERN_JAZZ_VIDEO_ID,
 } from './modern-jazz';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const MODERN_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
@@ -23,13 +24,12 @@ export const MODERN_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: MODERN_JAZZ_TESTIMONIALS,
   scheduleKeys: MODERN_JAZZ_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Alejandro Miñoso',
-      specialtyKey: 'modernjazzTeacher1Specialty',
-      bioKey: 'modernjazzTeacher1Bio',
-    },
+    getTeacherInfo('alejandro-minoso', 'modernjazzTeacher1Specialty', 'modernjazzTeacher1Bio', [
+      'Modern Jazz',
+      'ENA Cuba',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Dance > Modern Jazz)
@@ -51,6 +51,20 @@ export const MODERN_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 500,
     funPercent: 100,
     gradientColor: 'emerald',
+
+    // Enterprise: Hero background image
+    heroImage: {
+      basePath: '/images/classes/modern-jazz/img/clases-modern-jazz-barcelona',
+      alt: "Clases de Modern Jazz en Barcelona - Farray's Center",
+      altKey: 'styleImages.modernJazz.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'] as const,
+    },
+    heroVisuals: {
+      imageOpacity: 45,
+      objectPosition: 'center 25%',
+      gradientStyle: 'dark' as const,
+    },
   },
 
   // === SECTION TOGGLES ===
@@ -89,7 +103,7 @@ export const MODERN_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: true,
+    enabled: false,
     videos: [
       {
         videoId: MODERN_JAZZ_VIDEO_ID,

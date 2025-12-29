@@ -1,14 +1,20 @@
 /**
  * Script para fusionar las traducciones generadas en los archivos de locale existentes
  * SOLO añade claves que no existen ya en el archivo
+ *
+ * Security: Uses jiti for dynamic TypeScript imports instead of eval/new Function
  */
 
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { createJiti } from 'jiti';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Create jiti instance for TypeScript imports
+const jiti = createJiti(__filename);
 
 const localesDir = path.join(__dirname, '..', 'i18n', 'locales');
 const generatedDir = path.join(__dirname, '..', 'i18n', 'generated');
@@ -34,23 +40,24 @@ for (const lang of languages) {
 
   console.log(`\n📝 Processing ${lang.toUpperCase()}...`);
 
-  // Leer archivo generado
-  const generatedContent = fs.readFileSync(generatedPath, 'utf-8');
-
-  // Extraer el objeto de traducciones del archivo generado
-  const match = generatedContent.match(/export const generated_\w+ = ({[\s\S]*});/);
-  if (!match) {
-    console.log(`❌ Could not parse generated file for ${lang}`);
+  // Check if generated file exists
+  if (!fs.existsSync(generatedPath)) {
+    console.log(`⏭️  No generated file for ${lang}, skipping...`);
     continue;
   }
 
   let newTranslations;
   try {
-    // Use Function constructor instead of eval (slightly safer, no access to local scope)
-    // eslint-disable-next-line no-new-func
-    newTranslations = new Function('return (' + match[1] + ')')();
+    // Safely import the TypeScript module using jiti (no eval/new Function)
+    const generatedModule = jiti(generatedPath);
+    newTranslations = generatedModule[`generated_${lang}`];
+
+    if (!newTranslations) {
+      console.log(`❌ Could not find generated_${lang} export in ${generatedPath}`);
+      continue;
+    }
   } catch (e) {
-    console.log(`❌ Could not evaluate translations for ${lang}: ${e.message}`);
+    console.log(`❌ Could not import translations for ${lang}: ${e.message}`);
     continue;
   }
 

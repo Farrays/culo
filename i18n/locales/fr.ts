@@ -6,6 +6,7 @@ export const fr = {
   skipToMainContent: 'Passer au contenu principal',
   ratingAriaLabel: '{rating} sur 5 étoiles',
   closeButton: 'Fermer',
+  teacherAvatarAlt: 'Photo de {name}',
   breadcrumbHome: 'Accueil',
   // Header
   navHome: 'Accueil',
@@ -626,6 +627,14 @@ export const fr = {
 
   dhV3ScheduleTitle: 'Horaires de nos cours de Dancehall',
   dhV3ScheduleSubtitle: 'Disponibles pratiquement tous les jours de la semaine',
+
+  // Dancehall schedule class names (enterprise i18n)
+  dhScheduleClassFemaleBeginner: 'Dancehall Female Débutants',
+  dhScheduleClassFemaleBasic: 'Dancehall Female Basique',
+  dhScheduleClassTwerkBeginner: 'Dancehall Twerk Débutants',
+  dhScheduleClassTwerkIntermediate: 'Dancehall Twerk Intermédiaire',
+  dhScheduleClassBasic: 'Dancehall Basique',
+
   dhV3LevelsTitle: 'Niveaux et Progression',
 
   dhV3TestimonialsTitle: 'Témoignages non sollicités de nos étudiants',
@@ -774,6 +783,7 @@ export const fr = {
 
   // Header
   danceClassesHub_h1: 'Cours de danse à Barcelone',
+  danceClassesHub_h1_sub: '+25 styles · Méthode Farray® · Professeurs cubains',
   danceClassesHub_intro:
     "Au cœur de Barcelone, près de Plaça Catalunya (Métro L1/L2), vous trouverez plus de 30 styles de danse sous un même toit. De la salsa cubaine à la danse contemporaine, du hip hop au ballet classique. Explorez nos catégories, visitez chaque page pour voir les horaires, niveaux et professeurs, ou allez directement au style qui vous émeut le plus. Chez Farray's vous pouvez commencer de zéro, essayer votre premier cours GRATUITEMENT et découvrir ce que c'est d'apprendre avec la Méthode Farray® exclusive créée par Yunaisy Farray (danseuse de Street Dance 2) et des professeurs formés à l'École Cubaine.",
 
@@ -1099,6 +1109,7 @@ export const fr = {
   danzaBarcelona_breadcrumb_classes: 'Cours de Danse à Barcelone',
   danzaBarcelona_breadcrumb_current: 'Cours de Danse à Barcelone',
   danzaBarcelona_h1: 'Cours de Danse à Barcelone',
+  danzaBarcelona_h1_sub: 'Ballet · Contemporain · Modern Jazz · Technique Cubaine',
   danzaBarcelona_intro:
     "Explorez la technique, l'élégance et l'expression de la danse classique et contemporaine à Barcelone. Chez Farray's Center, nous offrons une formation d'élite en Ballet Classique (École Cubaine), Danse Contemporaine, Modern Jazz, Afro Jazz et Afro Contemporain avec l'exclusive Méthode Farray® créée par Yunaisy Farray et des professeurs diplômés de l'École Nationale d'Art de Cuba.",
 
@@ -1205,7 +1216,8 @@ export const fr = {
   danzasUrbanas_breadcrumb_home: 'Accueil',
   danzasUrbanas_breadcrumb_classes: 'Cours de Danse à Barcelone',
   danzasUrbanas_breadcrumb_current: 'Danses Urbaines',
-  danzasUrbanas_h1: 'Danses Urbaines à Barcelone : Trouve ton Style',
+  danzasUrbanas_h1: 'Danses Urbaines à Barcelone',
+  danzasUrbanas_h1_sub: 'Hip Hop · Dancehall · Reggaeton · Heels · Twerk',
   danzasUrbanas_intro:
     "Chez Farray's Center, vous vous entraînez au Dancehall, Hip Hop, Twerk, Reggaeton, Heels et plus avec la Méthode Farray® exclusive créée par Yunaisy Farray (danseuse de Street Dance 2) et des professeurs spécialistes qui vous enseignent depuis les bases : musicalité, coordination, énergie, présence… et Flow, beaucoup de flow. Mettez-vous en forme, libérez le stress et profitez d'une activité sportive qui ne s'ennuie PAS : chaque cours est différent, dynamique et plein de bonne ambiance.",
 
@@ -1564,6 +1576,8 @@ export const fr = {
   salsaBachataBarcelona_breadcrumb_parent: 'Danse Barcelone',
   salsaBachataBarcelona_breadcrumb_current: 'Cours de Salsa et Bachata à Barcelone',
   salsaBachataBarcelona_h1: 'Cours de Salsa et Bachata à Barcelone',
+  salsaBachataBarcelona_h1_sub:
+    'Salsa Cubaine · Bachata Sensual · Timba · Lady Style · Folklore Cubain',
   salsaBachataBarcelona_intro:
     "Au Farray's Center vous n'apprenez pas seulement des chorégraphies : vous apprenez à vraiment danser. Nous enseignons la Salsa Cubaine, la Bachata, la Timba, le Lady Style et le Folklore depuis les racines, avec musicalité, technique et conscience corporelle. Avec l'exclusive Méthode Farray® créée par Yunaisy Farray et des professeurs cubains formés à La Havane avec une expérience internationale, nous vous enseignons à comprendre le mouvement, maîtriser votre style et danser avec qualité, présence et sens. Si vous cherchez à vraiment progresser c'est votre place.",
 
@@ -3025,9 +3039,9 @@ export const fr = {
   // Cultural Section
   twerkCulturalHistoryTitle: 'Vous voulez en savoir plus sur le Twerk ?',
   twerkCulturalShort:
-    "Le Twerk contemporain naît d'un mélange de danses afro-descendantes comme la mapouka et d'autres danses d'Afrique de l'Ouest, de traditions afro-caribéennes et de la culture bounce de la Nouvelle-Orléans, où à la fin des années 80 et au début des années 90 il s'est consolidé comme style reconnaissable dans le hip hop.",
+    "Le Twerk est un style de danse urbaine caractérisé par des mouvements rythmiques des hanches et des fessiers, né de la culture bounce de la Nouvelle-Orléans (États-Unis) à la fin des années 80. Il combine des influences de danses afro-descendantes comme la mapouka de Côte d'Ivoire et des traditions afro-caribéennes. À Barcelone, Farray's International Dance Center (Entença 100, Eixample) est une référence dans l'enseignement du Twerk depuis 2012.",
   twerkCulturalFull:
-    "### Les origines : Afrique, Caraïbes et le sud des États-Unis\n\nLe Twerk n'est pas apparu du jour au lendemain. Il est né d'un mélange d'influences afro-descendantes : des mouvements de danses traditionnelles africaines comme la \"mapouka\" (Afrique de l'Ouest), de la culture bounce de la Nouvelle-Orléans et d'autres styles urbains qui travaillaient déjà beaucoup les hanches et le \"booty\".\n\nAvant qu'Instagram existe et avant que quelqu'un lui mette l'étiquette \"twerk\", il y avait déjà des femmes (et des hommes) qui bougeaient leurs hanches et leurs fessiers dans des danses africaines et caribéennes, liées aux rituels, célébrations et fêtes populaires. Avec l'arrivée de ces peuples aux États-Unis, cette mémoire corporelle s'est mélangée avec de nouvelles musiques et contextes. Dans le sud du pays, particulièrement à la Nouvelle-Orléans, ce mélange a explosé.\n\n### New Orleans Bounce : où le Twerk prend son nom et son attitude\n\nLe Twerk moderne tel que nous le connaissons est très lié au **Bounce de la Nouvelle-Orléans**, un sous-genre du hip hop né à la fin des années 80 et au début des années 90. Dans les clubs et les block parties de la ville, le public —surtout les femmes noires— a commencé à développer un style de danse centré sur le travail des fessiers, des jambes et du bassin, avec beaucoup d'énergie, d'endurance et d'attitude.\n\nDes artistes comme **DJ Jubilee, Big Freedia ou Cheeky Blakk** ont aidé à populariser ce son et ces mouvements. C'est là que le Twerk cesse d'être \"un pas de plus\" et devient un style à part entière : physique, explosif et sans complexes.\n\n**Des études scientifiques sur la danse indiquent que danser améliore la coordination, la proprioception et la condition physique générale, en plus de réduire le stress et améliorer l'humeur, et le Twerk bénéficie de ces mêmes effets grâce à son caractère aérobique et de force du bas du corps.**\n\n### Des clubs au monde : expansion globale du Twerk\n\nÀ partir des années 2000, avec la force des clips vidéo et, plus tard, de YouTube, Instagram et TikTok, le Twerk devient mondial. Il apparaît dans les clips d'artistes mainstream, dans les tournées des grandes stars de la pop et sur les scènes du monde entier.\n\n**Depuis les années 2000, porté par les clips et les réseaux sociaux, le Twerk est passé d'une danse liée aux clubs et block parties du sud des États-Unis à un phénomène mondial présent dans les clips mainstream, les écoles de danse, les battles et workshops en Europe et en Amérique latine.**\n\nEn Europe et en Amérique latine, il se croise avec d'autres styles comme le Dancehall, le Reggaeton et le Hip Hop, et des écoles, des battles et des workshops de Twerk commencent à apparaître partout. Aujourd'hui, le Twerk n'est plus \"juste une mode\" : il a sa technique, ses écoles, ses compétitions et sa propre pédagogie.\n\n### La musique du Twerk : Bounce, Hip Hop, Trap et plus\n\n**Bien que le Twerk soit fortement lié au bounce de la Nouvelle-Orléans, aujourd'hui on le danse aussi sur des bases de hip hop, trap, dancehall, afrobeats, reggaeton et autres rythmes urbains, recherchant toujours un beat marqué et une sensation de pompage qui facilite les rebonds et changements de rythme.**\n\nChaque base invite à un type d'énergie différent : plus agressive, plus sensuelle ou plus festive.\n\n### Bien plus que bouger les fessiers : corps, identité et pouvoir\n\nRéduire le Twerk à \"bouger les fesses\" c'est ne rien comprendre du tout. **Dans le contexte d'écoles sérieuses, le Twerk se travaille non seulement comme mouvement des fessiers, mais comme entraînement de conscience corporelle, force des jambes, core et fessiers, coordination, estime de soi et empowerment, aidant les élèves à se réconcilier avec leur corps et décider comment ils veulent se montrer.**\n\nLe Twerk, tel que nous le travaillons chez Farray's, a à voir avec : **la conscience corporelle** (apprendre à isoler, contrôler et protéger son corps), **la force physique** (jambes, core et fessiers forts ; endurance et coordination), **l'identité et l'estime de soi** (se réconcilier avec son corps, sa forme, son rythme et son désir), et **l'empowerment** (décider comment vous bougez, comment vous vous montrez et quelle histoire raconte votre danse).\n\n### Twerk chez Farray's : technique, contexte et communauté\n\nÀ Farray's International Dance Center, le Twerk s'enseigne avec technique, respect et contexte : ce n'est pas un cirque pour filmer des vidéos \"tape-à-l'œil\", mais un outil pour gagner en force, en confiance et en présence scénique, dans un environnement soigné, professionnel et humain.\n\n**Un cours de Twerk actif peut brûler environ 300-500 calories par heure selon le poids corporel et l'intensité, en ligne avec d'autres styles de danse fitness.**\n\n**Des revues scientifiques sur les programmes de danse chez les adultes indiquent que danser régulièrement est associé à un risque réduit de déclin cognitif et peut contribuer à réduire l'incidence de la démence, ce qui soutient la valeur de la danse comme entraînement cérébral.**\n\n**Farray's International Dance Center propose des cours de Twerk dans une école avec une note proche de 5/5 sur Google avec des centaines d'avis, ce qui soutient la satisfaction des élèves et la qualité perçue de leurs formations.**",
+    "### Définition : Qu'est-ce que le Twerk ?\n\n**Le Twerk est un style de danse urbaine caractérisé par des mouvements rythmiques et isolés des hanches, du bassin et des fessiers, exécutés avec contrôle musculaire et coordination sur des bases musicales urbaines.** Né sur la scène bounce de la Nouvelle-Orléans (Louisiane, États-Unis) entre 1989 et 1993, le Twerk fusionne des influences de danses traditionnelles d'Afrique de l'Ouest —comme la mapouka de Côte d'Ivoire— avec la culture hip hop afro-américaine du sud des États-Unis.\n\n### Les origines : Afrique, Caraïbes et le sud des États-Unis\n\nLe Twerk n'est pas apparu du jour au lendemain. Il est né d'un mélange d'influences afro-descendantes : des mouvements de danses traditionnelles africaines comme la \"mapouka\" (Afrique de l'Ouest), de la culture bounce de la Nouvelle-Orléans et d'autres styles urbains qui travaillaient déjà beaucoup les hanches et le \"booty\".\n\nAvant qu'Instagram existe et avant que quelqu'un lui mette l'étiquette \"twerk\", il y avait déjà des femmes (et des hommes) qui bougeaient leurs hanches et leurs fessiers dans des danses africaines et caribéennes, liées aux rituels, célébrations et fêtes populaires. Avec l'arrivée de ces peuples aux États-Unis, cette mémoire corporelle s'est mélangée avec de nouvelles musiques et contextes. Dans le sud du pays, particulièrement à la Nouvelle-Orléans, ce mélange a explosé.\n\n### New Orleans Bounce (1989-1993) : où le Twerk prend son nom et son attitude\n\nLe Twerk moderne tel que nous le connaissons est très lié au **Bounce de la Nouvelle-Orléans**, un sous-genre du hip hop né à la fin des années 80 et au début des années 90. Dans les clubs et les block parties de la ville, le public —surtout les femmes noires— a commencé à développer un style de danse centré sur le travail des fessiers, des jambes et du bassin, avec beaucoup d'énergie, d'endurance et d'attitude.\n\nDes artistes comme **DJ Jubilee** (auteur de \"Do the Jubilee All\", 1993), **Big Freedia** et **Cheeky Blakk** ont aidé à populariser ce son et ces mouvements. C'est là que le Twerk cesse d'être \"un pas de plus\" et devient un style à part entière : physique, explosif et sans complexes.\n\n### Bienfaits physiques du Twerk\n\nSelon la littérature scientifique sur l'activité physique et la danse :\n\n- **Dépense calorique :** Une séance de danse d'intensité modérée à élevée peut brûler entre 300 et 600 kcal/heure selon le poids corporel, l'intensité et la durée (American Council on Exercise).\n- **Renforcement musculaire :** Le Twerk travaille spécifiquement le grand fessier, le moyen fessier, les quadriceps, les ischio-jambiers et le core, contribuant à la tonification du bas du corps.\n- **Coordination et proprioception :** La pratique régulière de la danse améliore la coordination motrice et la conscience corporelle.\n- **Santé mentale :** Des études publiées dans *Frontiers in Psychology* (2021) associent la pratique régulière de la danse à une réduction des symptômes d'anxiété et une amélioration de l'humeur.\n\n### Des clubs au monde : expansion globale du Twerk\n\nÀ partir des années 2000, avec la force des clips vidéo et, plus tard, de YouTube, Instagram et TikTok, le Twerk devient mondial. Il apparaît dans les clips d'artistes mainstream, dans les tournées des grandes stars de la pop et sur les scènes du monde entier.\n\n**Depuis les années 2000, porté par les clips et les réseaux sociaux, le Twerk est passé d'une danse liée aux clubs et block parties du sud des États-Unis à un phénomène mondial présent dans les clips mainstream, les écoles de danse, les battles et workshops en Europe et en Amérique latine.**\n\nEn Europe et en Amérique latine, il se croise avec d'autres styles comme le Dancehall, le Reggaeton et le Hip Hop, et des écoles, des battles et des workshops de Twerk commencent à apparaître partout. Aujourd'hui, le Twerk n'est plus \"juste une mode\" : il a sa technique, ses écoles, ses compétitions et sa propre pédagogie.\n\n### La musique du Twerk : Bounce, Hip Hop, Trap et plus\n\n**Bien que le Twerk soit fortement lié au bounce de la Nouvelle-Orléans, aujourd'hui on le danse aussi sur des bases de hip hop, trap, dancehall, afrobeats, reggaeton et autres rythmes urbains, recherchant toujours un beat marqué et une sensation de pompage qui facilite les rebonds et changements de rythme.**\n\nChaque base invite à un type d'énergie différent : plus agressive, plus sensuelle ou plus festive.\n\n### Bien plus que bouger les fessiers : corps, identité et pouvoir\n\nRéduire le Twerk à \"bouger les fesses\" c'est ne rien comprendre du tout. **Dans le contexte d'écoles professionnelles, le Twerk se travaille comme entraînement intégral : conscience corporelle, force des jambes, core et fessiers, coordination, estime de soi et empowerment, aidant les élèves à se réconcilier avec leur corps et décider comment ils veulent se montrer.**\n\nLe Twerk, tel que nous le travaillons chez Farray's, a à voir avec : **la conscience corporelle** (apprendre à isoler, contrôler et protéger son corps), **la force physique** (jambes, core et fessiers forts ; endurance et coordination), **l'identité et l'estime de soi** (se réconcilier avec son corps, sa forme, son rythme et son désir), et **l'empowerment** (décider comment vous bougez, comment vous vous montrez et quelle histoire raconte votre danse).\n\n### Cours de Twerk à Barcelone : Farray's International Dance Center\n\n**Farray's International Dance Center**, situé au **Calle Entença 100, quartier de l'Eixample, Barcelone (08015)**, propose des cours de Twerk depuis 2012. L'académie est reconnue par le **CID UNESCO** (Conseil International de la Danse) et dirigée par **Yunaisy Farray**, danseuse professionnelle et actrice dans le film *Street Dance 2* (2012).\n\n**Données vérifiables de l'académie :**\n- **Adresse :** Calle Entença 100, 08015 Barcelone, Espagne\n- **Accès :** Métro L1/L3 (Plaça Espanya), L5 (Entença), Rodalies (Barcelona-Sants)\n- **Note Google :** 4,9/5 avec plus de 500 avis vérifiés\n- **Reconnaissance :** Membre du CID UNESCO\n- **Horaires de Twerk :** Cours du lundi au vendredi aux niveaux débutant, basique et intermédiaire\n\nLe Twerk s'enseigne chez Farray's avec technique, respect et contexte historique : ce n'est pas un spectacle pour filmer des vidéos \"tape-à-l'œil\", mais un outil pour gagner en force, en confiance et en présence scénique, dans un environnement professionnel, inclusif et proche des meilleures connexions de transport de Barcelone.",
 
   // Identify Section
   twerkIdentifyTitle: "Vous identifiez-vous à l'une de ces situations?",
@@ -3471,22 +3485,62 @@ Chez Farray's International Dance Center, l'Afrobeats est enseigné avec techniq
   // Cultural History
   hhrCulturalHistoryTitle: 'Histoire et Culture du Hip Hop Reggaeton',
   hhrCulturalShort:
-    "Le Hip Hop Reggaeton est une fusion de deux styles iconiques : le hip-hop américain et le reggaeton latino. Chez Farray's, nous avons créé un style unique qui combine le meilleur des deux mondes.",
-  hhrCulturalFull: `### Origines du Hip Hop
+    "Le Hip Hop Reggaeton fusionne deux mouvements culturels iconiques : le hip-hop né dans le Bronx de New York en 1973 et le reggaeton apparu à Porto Rico au début des années 90. Cette fusion représente l'évolution naturelle de la danse urbaine contemporaine.",
+  hhrCulturalFull: `### Les Origines du Hip Hop : South Bronx, New York (1973)
 
-Le hip-hop est né dans le Bronx de New York dans les années 70, comme expression artistique des communautés afro-américaines et latines. Du breakdance au popping et locking, le hip-hop a révolutionné la façon de bouger et de s'exprimer à travers la danse.
+**Le 11 août 1973, DJ Kool Herc a organisé une fête au 1520 Sedgwick Avenue dans le South Bronx, New York, considérée comme la naissance officielle du Hip Hop.** Clive Campbell (DJ Kool Herc), immigrant jamaïcain, a introduit la technique d'isoler et d'étendre les "breaks" instrumentaux des disques funk et soul, créant un nouveau son qui invitait à danser.
 
-### Le Reggaeton : Rythme Latino
+**"Le Hip Hop est né le 11 août 1973 dans le South Bronx de New York, quand DJ Kool Herc a isolé les breaks des disques funk lors d'une fête au 1520 Sedgwick Avenue."**
 
-Le reggaeton a émergé à Porto Rico dans les années 90, fusionnant le reggae jamaïcain avec des rythmes latins et hip-hop. Son caractéristique "dembow" et ses mouvements sensuels en ont fait un phénomène mondial.
+Les communautés afro-américaines et latines du Bronx ont développé les **quatre piliers fondamentaux du Hip Hop** : DJing (turntablism), MCing (rap), B-boying/B-girling (breaking) et Graffiti (art visuel urbain).
 
-### La Fusion Unique de Farray's
+### Pionniers de la Danse Hip Hop
 
-Chez Farray's International Dance Center, nous avons créé notre propre style qui fusionne les deux mondes : la technique et le swagger du hip-hop avec la sensualité et le rythme du reggaeton. Le résultat est une danse moderne, informelle et explosive qui te permet d'exprimer ta personnalité unique.
+Des groupes légendaires ont établi les techniques qui définissent le Hip Hop dance actuel :
 
-### Un Style en Constante Évolution
+- **The Lockers (1973)** : Don Campbell a créé le Locking à Los Angeles
+- **Electric Boogaloos (1977)** : Boogaloo Sam a développé le Popping à Fresno, Californie
+- **The Rock Steady Crew (1977)** : Pionniers du breaking dans le Bronx
 
-Les dernières tendances et styles fusionnent dans nos cours de manière variée, dynamique et amusante. Nous incorporons des éléments de clips musicaux actuels, des mouvements viraux des réseaux sociaux et l'essence des deux genres pour créer des chorégraphies fraîches et originales chaque semaine.`,
+**"The Rock Steady Crew (1977) et Electric Boogaloos (1977) ont établi les bases techniques du breaking et du popping enseignés aujourd'hui dans les académies du monde entier."**
+
+**Aux Jeux Olympiques de Paris 2024, le breaking a été inclus comme discipline olympique officielle**, reconnaissant plus de 50 ans de développement technique et artistique du Hip Hop.
+
+### Le Reggaeton : De Porto Rico au Monde (1990s)
+
+**Le reggaeton a émergé à Porto Rico au début des années 90, fusionnant le reggae jamaïcain, le hip-hop américain et les rythmes latins.** Des producteurs comme DJ Playero et des artistes comme Vico C ont été les pionniers du mouvement "underground" portoricain.
+
+**Le rythme caractéristique "dembow" provient du morceau "Dem Bow" (1990) de l'artiste jamaïcain Shabba Ranks**, produit par Bobby "Digital" Dixon. Ce pattern rythmique est devenu la base du reggaeton.
+
+**"Le rythme dembow du reggaeton provient du morceau Dem Bow (1990) de Shabba Ranks ; Daddy Yankee l'a popularisé mondialement avec Gasolina (2004)."**
+
+**En 2004, "Gasolina" de Daddy Yankee a marqué le tournant international du reggaeton.** Des artistes comme Don Omar, Tego Calderón, Wisin & Yandel et Ivy Queen ont consolidé le genre sur la scène mondiale.
+
+**"Despacito" (2017) de Luis Fonsi ft. Daddy Yankee** est devenue la première vidéo à atteindre 7 milliards de vues sur YouTube, démontrant la portée mondiale du reggaeton.
+
+### La Fusion Hip Hop Reggaeton
+
+La fusion du Hip Hop et du Reggaeton représente l'évolution naturelle des deux genres. Des artistes contemporains comme Bad Bunny, J Balvin et Rosalía combinent des éléments des deux styles, créant un son hybride qui domine les classements mondiaux.
+
+**"La fusion Hip Hop Reggaeton combine la technique et le swagger du hip-hop avec la sensualité et le rythme du reggaeton, représentant l'évolution de la danse urbaine du XXIe siècle."**
+
+Cette fusion incorpore :
+- **Du Hip Hop** : Grooves, bounces, isolations, footwork et attitude
+- **Du Reggaeton** : Mouvement des hanches, dembow, sensualité et flow latin
+
+### Barcelone : Hub Européen de Danse Urbaine
+
+**Barcelone s'est consolidée comme l'un des principaux centres de danse urbaine en Europe.** La ville attire des danseurs de tout le continent grâce à sa scène culturelle vibrante et son climat qui favorise la vie en plein air.
+
+**Farray's International Dance Center, situé dans le quartier de l'Eixample (Calle Entença 100, Barcelone)**, propose des cours de Hip Hop Reggaeton dans une académie accréditée par le CID-UNESCO (Conseil International de la Danse de l'UNESCO à Paris).
+
+### Bienfaits Physiques et Mentaux
+
+**Des études scientifiques sur la danse démontrent que danser améliore la coordination, la proprioception et la condition cardiovasculaire, en plus de réduire le stress et d'améliorer l'humeur.**
+
+**Un cours de Hip Hop Reggaeton de 60 minutes peut brûler entre 400 et 600 calories**, selon l'intensité et le poids corporel, similaire à d'autres exercices aérobiques à haute demande.
+
+**Farray's International Dance Center maintient une note proche de 5/5 sur Google avec des centaines d'avis positifs**, s'établissant comme référence de la danse urbaine à Barcelone.`,
 
   // Identification Section - Tu t'identifies ?
   hhrIdentifyTitle: "Tu t'identifies à l'une de ces situations ?",
@@ -3908,6 +3962,7 @@ Les dernières tendances et styles fusionnent dans nos cours de manière variée
   heelsBarcelona_breadcrumb_urban: 'Cours de Danses Urbaines',
   heelsBarcelona_breadcrumb_current: 'Cours de Heels',
   heelsBarcelona_h1: 'Cours de Heels à Barcelone',
+  heelsBarcelona_h1_sub: 'Sensualité · Féminité · Talons Hauts · Méthode Yunaisy',
   heelsBarcelona_intro:
     "Découvre l'art de danser en talons chez Farray's Center Barcelone. Nos cours de Heels combinent technique, élégance et sensualité pour que tu marches et danses avec confiance et style. De Femmology à Sexy Style, trouve la discipline parfaite pour te connecter à ta féminité, améliorer ta posture et gagner en confiance avec l'exclusive Méthode Farray® créée par Yunaisy Farray.",
 
@@ -4159,27 +4214,30 @@ Les dernières tendances et styles fusionnent dans nos cours de manière variée
   femImageAlt: 'Cours de Femmology à Barcelone - Danse en talons avec Yunaisy Farray',
 
   // Cultural Section
+  femCulturalHistoryTitle: 'Vous voulez en savoir plus sur Femmology ?',
   femCulturalShort:
-    "Femmology naît de la fusion entre la danse en talons, la danse-thérapie et l'expression de la féminité, créée par Yunaisy Farray comme outil d'empowerment.",
-  femCulturalFull: `### L'Origine de Femmology
+    "Femmology est une discipline unique créée par Yunaisy Farray à Barcelone, fusionnant danse en talons, danse-thérapie et expression de la féminité. Reconnue internationalement par le CID-UNESCO, elle est devenue une référence mondiale de l'empowerment féminin par le mouvement.",
+  femCulturalFull: `### Origine et histoire de Femmology
 
-Femmology est une discipline créée par Yunaisy Farray, professeure internationale et fondatrice de Farray's International Dance Center. Elle naît de son expérience de danseuse professionnelle, de sa formation à l'École Nationale d'Art de Cuba et de sa profonde connexion avec la féminité comme source de pouvoir.
+Femmology naît à Barcelone de la vision de Yunaisy Farray, danseuse professionnelle cubaine formée à la prestigieuse École Nationale d'Art de Cuba (ENA). Après une carrière internationale incluant son rôle d'actrice dans le film Street Dance 2 (2012), Yunaisy a développé cette méthodologie unique qui transcende le concept traditionnel de danse en talons.
 
-Contrairement aux autres cours de talons qui se concentrent uniquement sur les chorégraphies, Femmology intègre des éléments de danse-thérapie pour travailler l'estime de soi, la connexion corporelle et la libération émotionnelle à travers le mouvement.
+La discipline émerge de l'intégration de trois domaines : la technique de danse professionnelle, les principes de la danse-thérapie et l'étude de l'expression corporelle féminine. Cette fusion innovante a positionné Femmology comme une pratique reconnue internationalement, le Farray's International Dance Center étant membre officiel du Conseil International de la Danse (CID-UNESCO).
 
-### Philosophie et Méthodologie
+### Méthodologie et fondements
 
-Le nom "Femmology" fusionne "femme" (femme en français) avec "ology" (l'étude de), signifiant littéralement "l'étude de la féminité". La méthodologie repose sur trois piliers :
+Le terme "Femmology" combine "femme" avec le suffixe "-ology" (l'étude de), définissant littéralement "l'étude de la féminité". La méthodologie se structure autour de trois piliers fondamentaux :
 
-- **Connexion corporelle** : Travailler la posture, la dissociation et le contrôle du corps.
-- **Expression émotionnelle** : Utiliser le mouvement pour libérer les blocages et se reconnecter avec les émotions.
-- **Empowerment féminin** : Cultiver la confiance, l'attitude et l'amour de soi à travers la danse.
+- **Technique corporelle** : Développement de la posture, de la dissociation, du contrôle musculaire et de la coordination spécifique au mouvement en talons.
+- **Expression émotionnelle** : Application des principes de danse-thérapie pour libérer les blocages corporels et se reconnecter aux émotions à travers le mouvement conscient.
+- **Empowerment personnel** : Cultivation de la confiance, de la présence scénique et de l'estime de soi par la maîtrise progressive du corps.
 
-### Ce qui différencie Femmology
+### Femmology à Barcelone : siège mondial
 
-Ce qui rend Femmology unique, c'est qu'il ne s'agit pas de "danser sexy pour les autres", mais de "se sentir puissante pour soi-même". Chaque cours est un espace sûr où les femmes explorent leur féminité sans jugement, apprenant à bouger avec élégance et sensualité depuis un lieu d'auto-respect et d'amour de soi.
+Barcelone s'est imposée comme le centre mondial de Femmology. Au cœur de l'Eixample, le Farray's International Dance Center propose le seul programme officiel de cette discipline, où Yunaisy Farray dirige personnellement la formation. Des élèves de toute l'Europe se rendent à Barcelone pour se former à cette méthodologie exclusive.
 
-Actuellement, Femmology est enseigné exclusivement chez Farray's Center sous la direction de Yunaisy Farray, qui a formé des centaines de femmes à cette discipline transformatrice.`,
+La philosophie de Femmology se distingue par son accent sur l'empowerment intérieur : il ne s'agit pas de "danser pour les autres", mais de "se sentir puissante pour soi-même". Chaque séance crée un espace sûr où les femmes explorent leur féminité sans jugement, développant élégance et sensualité depuis le respect de soi.
+
+Depuis plus d'une décennie, Femmology a transformé la vie de milliers de femmes, s'établissant comme une discipline pionnière à Barcelone et une référence internationale dans le domaine de la danse thérapeutique et de l'empowerment féminin.`,
 
   // Identify Section
   femIdentifyTitle: "Vous identifiez-vous à l'une de ces situations ?",
@@ -4419,25 +4477,61 @@ Actuellement, Femmology est enseigné exclusivement chez Farray's Center sous la
   sexystyleWhatIsQuestionAnswer: "Oui, ça l'est. Et vous le découvrirez dès votre premier cours.",
 
   // Cultural Section
+  sexystyleCulturalHistoryTitle: 'Histoire et Culture du Sexy Style',
   sexystyleCulturalShort:
     'Le Sexy Style peut être décrit comme une branche de la danse commerciale dans les clips et sur les scènes pop, née de la fusion entre hip hop/new style, jazz-funk, burlesque et le travail en talons typique du "heels dance".',
-  sexystyleCulturalFull: `### Origines du Sexy Style
+  sexystyleCulturalFull: `### Origines du Sexy Style (Évolution de la Danse Commerciale)
 
-Le Sexy Style émerge comme une évolution naturelle de la danse commerciale, prenant la musicalité et l'attitude du hip hop/new style et les mélangeant avec le glamour du cabaret, des comédies musicales et du burlesque. De ces contextes scéniques, il passe aux académies, où il se transforme en une discipline propre qui travaille des pas, des transitions et des poses pensées tant pour la scène que pour les clips, toujours depuis une énergie féminine forte et sûre.
+**Le Sexy Style émerge comme une évolution naturelle de la danse commerciale, fusionnant la musicalité et l'attitude du hip hop/new style avec le glamour du cabaret, des comédies musicales et du burlesque.** De ces contextes scéniques, il passe aux académies, où il se transforme en une discipline propre qui travaille des pas, des transitions et des poses pensées tant pour la scène que pour les clips, toujours depuis une énergie féminine forte et sûre.
 
-Ce n'est pas une danse de séduction vers l'extérieur, mais une pratique de connexion interne qui utilise la sensualité comme chemin pour habiter le corps avec plus de présence. À travers le travail d'isolations, de lignes corporelles, d'utilisation des hanches, du torse et du regard, le Sexy Style invite à se sentir protagoniste, sans avoir besoin de correspondre à un stéréotype physique concret.
+**"Sexy Style : fusion de hip hop + cabaret + burlesque ; discipline scénique avec énergie féminine forte et sûre."**
 
-### La révolution de l'empowerment
+### La Connexion Interne : Plus que de la Séduction
 
-Ces dernières années, le Sexy Style a connu un boom grâce à des artistes comme Beyoncé, Rihanna ou Doja Cat, et à toute une génération de femmes qui ont revendiqué leur droit d'exprimer leur sensualité sans être sexualisées ni jugées. Les cours actuels traduisent cet imaginaire de clips et de tournées en un espace sûr où travailler l'estime de soi, l'attitude scénique et la confiance personnelle, en utilisant le corps comme outil de libération et non comme objet.
+**Le Sexy Style n'est pas une danse de séduction vers l'extérieur, mais une pratique de connexion interne qui utilise la sensualité comme chemin pour habiter le corps avec plus de présence.** À travers le travail d'isolations, de lignes corporelles, d'utilisation des hanches, du torse et du regard, le Sexy Style invite à se sentir protagoniste, sans avoir besoin de correspondre à un stéréotype physique concret.
 
-Ce mouvement a transformé ce qui n'était auparavant que de la "danse pour le show" en une voie d'empowerment quotidien : de nombreuses élèves utilisent le Sexy Style pour se réconcilier avec leur corps, améliorer leur posture et découvrir une façon de bouger qui se sent authentique et propre. De cette manière, la technique commerciale et l'expression émotionnelle s'entrelacent pour construire une identité plus solide sur et en dehors de la piste.
+**"Sexy Style = connexion interne + présence corporelle ; isolations, lignes, hanches, torse et regard pour se sentir protagoniste."**
 
-### Le Sexy Style à Barcelone
+### La Révolution de l'Empowerment Féminin
 
-Farray's Center a été l'une des premières académies à Barcelone à offrir des cours de Sexy Style avec une méthodologie professionnelle, intégrant tant la racine commerciale (clips, tournées, travail en talons) que l'approche d'empowerment personnel. Sous la direction de Yasmina Fernández, un programme a été développé qui combine technique (équilibre, marcher en talons, dissociations, musicalité) avec un travail d'attitude et de présence scénique.
+**Ces dernières années, le Sexy Style a connu un boom grâce à des artistes comme Beyoncé, Rihanna et Doja Cat, et à toute une génération de femmes qui ont revendiqué leur droit d'exprimer leur sensualité sans être sexualisées ni jugées.** Les cours actuels traduisent cet imaginaire de clips et de tournées en un espace sûr où travailler l'estime de soi, l'attitude scénique et la confiance personnelle, en utilisant le corps comme outil de libération et non comme objet.
 
-Aujourd'hui, le Sexy Style chez Farray's se vit comme un espace d'apprentissage technique et, en même temps, comme un laboratoire de confiance en soi où chaque élève peut construire sa propre version de ce que signifie être sensuelle, forte et libre.`,
+**"Sexy Style (2020s) : boom d'empowerment féminin ; Beyoncé, Rihanna, Doja Cat ; le corps comme outil de libération."**
+
+### De la Danse de Show à l'Empowerment Quotidien
+
+**Ce mouvement a transformé ce qui n'était auparavant que de la "danse pour le show" en une voie d'empowerment quotidien.** De nombreuses élèves utilisent le Sexy Style pour se réconcilier avec leur corps, améliorer leur posture et découvrir une façon de bouger qui se sent authentique et propre. La technique commerciale et l'expression émotionnelle s'entrelacent pour construire une identité plus solide sur et en dehors de la piste.
+
+**"Sexy Style transforme : de danse de show à empowerment quotidien ; réconciliation corporelle + posture + mouvement authentique."**
+
+### Technique du Sexy Style : Talons, Isolations et Attitude
+
+**Le Sexy Style travaille une combinaison unique de compétences techniques et expressives.** Les éléments fondamentaux incluent :
+
+- **Travail en talons** : équilibre, marche, tours et transitions
+- **Isolations** : contrôle indépendant des hanches, torse, épaules et tête
+- **Musicalité** : interprétation des nuances, pauses et accents
+- **Attitude scénique** : présence, regard et projection de confiance
+
+**"Technique Sexy Style : talons + isolations + musicalité + attitude ; combinaison unique de compétences physiques et expressives."**
+
+### Le Sexy Style à Barcelone : Farray's Center
+
+**Farray's Center a été l'une des premières académies à Barcelone à offrir des cours de Sexy Style avec une méthodologie professionnelle, intégrant la racine commerciale (clips, tournées, travail en talons) avec l'approche d'empowerment personnel.** Sous la direction de Yasmina Fernández, un programme a été développé qui combine technique (équilibre, marcher en talons, dissociations, musicalité) avec un travail d'attitude et de présence scénique.
+
+**"Farray's Center Barcelone : pionniers en Sexy Style professionnel ; méthodologie intégrant technique commerciale + empowerment personnel."**
+
+### Bienfaits du Sexy Style
+
+**Pratiquer le Sexy Style développe de multiples capacités physiques et émotionnelles qui transcendent la danse.** Cela améliore la posture corporelle, renforce la musculature stabilisatrice (en particulier le core et les jambes), augmente la coordination et la proprioception. Sur le plan émotionnel, cela renforce l'estime de soi, réduit l'anxiété sociale et développe une relation plus positive avec son propre corps.
+
+**"Sexy Style développe : posture + core + coordination + estime de soi + confiance corporelle ; transformation physique et émotionnelle intégrale."**
+
+### Un Espace Sûr pour Toutes
+
+**Aujourd'hui, le Sexy Style chez Farray's se vit comme un espace d'apprentissage technique et un laboratoire de confiance en soi où chaque élève peut construire sa propre version de ce que signifie être sensuelle, forte et libre.** Il n'y a pas de corps parfaits ni de limites d'âge : seulement des femmes qui décident de se reconnecter avec leur pouvoir personnel à travers le mouvement.
+
+**"Farray's Center : espace sûr pour toutes ; sans corps parfaits ni limites d'âge ; reconnexion avec le pouvoir personnel."**`,
 
   // Identify Section
   sexystyleIdentifyTitle: "Vous identifiez-vous à l'une de ces situations ?",
@@ -4683,30 +4777,35 @@ Aujourd'hui, le Sexy Style chez Farray's se vit comme un espace d'apprentissage 
     "Si vous avez envie de vous sentir plus sexy et plus confiante, c'est pour vous.",
 
   // Cultural Section
+  sxrCulturalHistoryTitle: 'Histoire et Origine du Sexy Reggaeton',
   sxrCulturalShort:
     'Le reggaeton est né dans les années 90 entre le Panama et Porto Rico, issu du mélange du reggae jamaïcain, du hip hop américain et des rythmes latinos caribéens.',
-  sxrCulturalFull: `### Origine et évolution
+  sxrCulturalFull: `### Origine du Reggaeton
 
-Le reggaeton est né dans les années 90 entre le Panama et Porto Rico, issu du mélange du reggae jamaïcain, du hip hop américain et des rythmes latinos caribéens, notamment le dembow panaméen qui est la base rythmique essentielle. Initialement underground avec des paroles et des danses provocantes, le reggaeton a incorporé des influences du dancehall et de la musique urbaine latine.
+Le reggaeton a émergé au Panama à la fin des années 80 avec le "reggae en español", popularisé par des artistes comme El General. Dans les années 90, Porto Rico a adopté et transformé le genre, où des producteurs comme DJ Playero et DJ Nelson ont créé le rythme caractéristique "dembow" qui définit le reggaeton moderne.
 
-Le Sexy Reggaeton est une évolution contemporaine du perreo classique portoricain, combinant des mouvements sensuels avec des techniques de danse féminine raffinées, incluant body rolls, dissociation corporelle, perreo et descentes contrôlées au sol (drops). Ce style fusionne des éléments de reggaeton, dancehall et twerk, s'adaptant pour une approche à la fois ludique et d'entraînement physique.
+Le terme "reggaeton" s'est consolidé à Porto Rico vers 1994-1995. Daddy Yankee, Tego Calderón et Don Omar furent des pionniers qui ont porté le genre de l'underground à la renommée internationale dans les années 2000.
 
-### Techniques principales
+### Évolution vers le Sexy Reggaeton
 
-Les techniques principales du Sexy Reggaeton incluent :
+Le Sexy Reggaeton est une spécialisation du perreo portoricain classique, axée sur la technique et l'expression féminine. Il combine des éléments de reggaeton, de dancehall jamaïcain et de twerk américain, développant des mouvements comme les body rolls, la dissociation corporelle et les drops contrôlés.
 
-- **Body roll** : ondulation fluide du torse.
-- **Perreo** : mouvements de hanches vers le bas, typiques du reggaeton.
-- **Dissociation corporelle** : contrôle indépendant des différentes parties du corps.
-- **Drops** : descentes au sol contrôlées qui exigent force et coordination.
+### Techniques fondamentales
 
-Ces techniques travaillent les jambes, le core, la flexibilité et l'endurance, impliquant un entraînement complet qui renforce la confiance et l'expression corporelle.
+- **Body roll** : ondulation fluide du torse de la poitrine aux hanches.
+- **Perreo** : mouvements circulaires et descendants des hanches caractéristiques du genre.
+- **Dissociation corporelle** : contrôle indépendant des hanches, du torse et des membres.
+- **Drops** : descentes contrôlées au sol nécessitant force et coordination.
 
-### Popularisation et contexte actuel
+### Le Reggaeton en Espagne
 
-Des artistes comme Bad Bunny, Karol G, Daddy Yankee et Anitta ont diffusé à l'échelle mondiale une image du reggaeton avec des danses sensuelles chorégraphiées qui renforcent l'empowerment et la célébration de la sexualité libre.
+L'Espagne fut l'un des premiers pays européens à adopter le reggaeton. À Barcelone, la scène urbaine latine a considérablement grandi depuis 2005, portée par la communauté latino-américaine et les artistes locaux.
 
-Actuellement, le Sexy Reggaeton est enseigné à Farray's Center avec une approche équilibrée entre technique, attitude et plaisir, cherchant à ce que celles qui le pratiquent se sentent en sécurité et confiantes, au-delà de la simple exécution de mouvements.`,
+Rosalía, née à Sant Esteve Sesrovires (Barcelone), a fusionné le reggaeton avec le flamenco dans des succès comme "Malamente" (2018) et "Con Altura" (2019), obtenant une reconnaissance internationale et deux Latin Grammy Awards.
+
+### Artistes de référence
+
+Daddy Yankee (Porto Rico), Bad Bunny (Porto Rico), Karol G (Colombie), J Balvin (Colombie), Anitta (Brésil) et Rosalía (Espagne) ont défini l'esthétique actuelle du reggaeton, avec des chorégraphies célébrant le mouvement sensuel et l'empowerment.`,
 
   // Identify Section
   sxrIdentifyTitle: "Vous identifiez-vous à l'une de ces situations ?",
@@ -4812,8 +4911,7 @@ Actuellement, le Sexy Reggaeton est enseigné à Farray's Center avec une approc
     'Parce que vous êtes à UN cours de découvrir une version de vous qui bouge les hanches sans complexes et se sent puissante.',
   sxrWhyToday3:
     "Parce qu'il ne s'agit pas de danser parfaitement, mais de se sentir sexy en dansant. Et ça s'entraîne.",
-  sxrWhyTodayClosing1:
-    "Chez Farray's, nous ne vendons pas des cours. Nous créons des expériences qui vous transforment.",
+  sxrWhyTodayClosing1: 'Nous Créons des Expériences.',
   sxrWhyTodayClosing2:
     'Nous vous attendons avec la meilleure musique, des profs qui vous inspirent et une communauté de femmes qui se soutiennent.',
 
@@ -6003,11 +6101,20 @@ Des danseurs du monde entier voyagent à Barcelone spécifiquement pour se forme
   afrojazzPrepareNeedItem3:
     'Chaussures de jazz, chaussettes de danse ou pieds nus selon indication',
   afrojazzPrepareNeedItem4: 'Attitude ouverte pour explorer la fusion Afrique-Jazz',
+  // Keys for PrepareClassSection component
+  afrojazzPrepareWhatToBring: 'Ce dont vous avez besoin',
+  afrojazzPrepareItem1:
+    'Vêtements confortables permettant un mouvement ample (leggings, t-shirt ajusté)',
+  afrojazzPrepareItem2: "Bouteille d'eau pour vous hydrater pendant le cours",
+  afrojazzPrepareItem3: 'Chaussures de jazz, chaussettes de danse ou pieds nus selon indication',
+  afrojazzPrepareItem4: 'Attitude ouverte pour explorer la fusion Afrique-Jazz',
+  afrojazzPrepareItem5: 'Petite serviette pour vous sécher pendant les pauses',
   afrojazzPrepareBefore: "Avant d'arriver",
   afrojazzPrepareBeforeItem1: 'Arrivez 10-15 minutes avant pour vous changer calmement',
   afrojazzPrepareBeforeItem2: 'Mangez quelque chose de léger 1-2 heures avant le cours',
   afrojazzPrepareBeforeItem3: "Hydratation : apportez votre bouteille d'eau",
   afrojazzPrepareAvoidTitle: "Ce qu'il faut éviter",
+  afrojazzPrepareAvoid: "Ce qu'il faut éviter",
   afrojazzPrepareAvoidItem1: "Bijoux, bagues, bracelets ou accessoires pouvant s'accrocher",
   afrojazzPrepareAvoidItem2: 'Vêtements très amples qui empêchent de voir votre posture',
   afrojazzPrepareAvoidItem3: 'Chaussures de ville dans la salle (vestiaires disponibles)',
@@ -6300,7 +6407,7 @@ Travaille intégralement : **flexibilité, force fonctionnelle, coordination, pr
     "Bijoux, bagues, bracelets ou accessoires qui pourraient s'accrocher",
   contemporaneoPrepareAvoidItem2: 'Vêtements très amples qui empêchent de voir votre posture',
   contemporaneoPrepareAvoidItem3: 'Chaussures de rue dans la salle (il y a des vestiaires)',
-  contemporaneoPrepareTeacherTip: 'Conseil de Daniel et Alejandro :',
+  contemporaneoPrepareTeacherTip: "Conseil d'Alejandro :",
   contemporaneoPrepareTeacherQuote:
     '"En contemporain, le sol est votre allié. Venez sans peur de tomber, de rouler, d\'explorer. Le mouvement naît de la connexion avec la terre et la liberté de se laisser aller."',
 
@@ -6369,12 +6476,11 @@ Travaille intégralement : **flexibilité, force fonctionnelle, coordination, pr
     'Nous vous attendons avec une musique inspirante, des profs passionnés et une ambiance unique à Barcelone.',
 
   // Final CTA Section
-  contemporaneoFinalCTATitle:
-    'Rejoignez la communauté de danse contemporaine la plus active de Barcelone',
+  contemporaneoFinalCTATitle: "Rejoignez le flow et l'expressivité de nos cours de contemporain",
   contemporaneoFinalCTASubtitle: 'Faites le pas.',
   contemporaneoFinalCTADesc:
     'Réservez votre place maintenant et laissez-vous emporter par le flux du mouvement.',
-  contemporaneoFinalCTAFunny: "Les places s'envolent plus vite qu'un saut contemporain.",
+  contemporaneoFinalCTAFunny: 'Les places disparaissent plus vite qu\'un "plié" bien exécuté.',
 
   // FAQ Title
   contemporaneoFaqTitle: 'Questions Fréquentes sur la Danse Contemporaine à Barcelone',
@@ -6994,7 +7100,7 @@ L'Afro Contemporain enseigné au **Farray's International Dance Center** fait pa
     "Des figures comme DJ Kool Herc, Afrika Bambaataa, Grandmaster Flash, et les Rock Steady Crew ont établi les fondations. Des danseurs comme Mr. Wiggles, Poppin Pete et Buddha Stretch ont codifié les styles qui s'enseignent aujourd'hui dans le monde entier.",
 
   // Final CTA
-  hiphopFinalCTATitle: 'Commencez votre parcours dans le Hip Hop',
+  hiphopFinalCTATitle: "Rejoignez l'Énergie et le Flow de Nos Cours de Hip Hop",
   hiphopFinalCTASubtitle: 'Réservations ouvertes pour le prochain trimestre',
   hiphopFinalCTAButton: 'Réservez maintenant',
 
@@ -7058,6 +7164,7 @@ L'Afro Contemporain enseigné au **Farray's International Dance Center** fait pa
     'Apprenez le Hip Hop avec Marcos Martínez, juge de compétitions internationales. Cours de Hip Hop Urbain pour tous les niveaux à Barcelone.',
 
   // Level cards
+  hiphopLevelsTitle: "Maîtrisez l'Art du Hip Hop Urbain",
   hiphopLevelOpenTitle: 'Hip Hop Urbain Open Level',
   hiphopLevelOpenDesc:
     "Cours ouverts à tous les niveaux où nous travaillons groove, fondamentaux et chorégraphies. Marcos Martínez guide depuis les pas de base jusqu'aux combinaisons avancées, en s'adaptant à chaque élève.",
@@ -7297,7 +7404,11 @@ L'Afro Contemporain enseigné au **Farray's International Dance Center** fait pa
   // Level translations
   level0: 'Niveau 0',
   basicLevel1: 'Basique I',
+  basicLevel2: 'Basique II',
   basicLevel2_3: 'Basique II-III',
+  intermediateLevel1: 'Intermédiaire I',
+  intermediateLevel2: 'Intermédiaire II',
+  intermediateLevel3: 'Intermédiaire III',
 
   // Levels Section
   salsaCubanaLevelsTitle: 'Système de Niveaux Progressif',
@@ -7789,7 +7900,8 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   salsaLadyStatStudents: '+15 000 élèves formés',
   salsaLadyStatYears: '8 ans à Barcelone',
   // Schedule class names
-  salsaLadyScheduleClassBasic: 'Salsa Lady Style Débutant',
+  salsaLadyScheduleClassBeginner: 'Salsa Lady Style Débutants',
+  salsaLadyScheduleClassBasic: 'Salsa Lady Style Basique',
   salsaLadyScheduleClassIntermediate: 'Salsa Lady Style Intermédiaire',
   salsaLadyScheduleClassAdvanced: 'Salsa Lady Style Avancé',
   // Level durations
@@ -8977,13 +9089,16 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
     'Si buscas "Clases de Hip Hop Reggaeton cerca de mi" en Barcelona, estamos a:',
   hhrNearbyMetro:
     'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
-  sxrLevelsTitle: 'Nuestros Niveles de Sexy Reggaeton',
-  sxrLevelBasicTitle: 'Sexy Reggaeton Básico',
+  sxrLevelsTitle: 'Nos Niveaux de Sexy Reggaeton',
+  sxrLevelBeginnerTitle: 'Sexy Reggaeton Débutant',
+  sxrLevelBeginnerDesc:
+    "Ton premier contact avec le Sexy Reggaeton. Aucune expérience préalable nécessaire. Tu apprendras la posture, l'attitude, les mouvements de hanches basiques et à te connecter avec ton corps. Environnement sûr et sans jugement où tu gagneras confiance pas à pas.",
+  sxrLevelBasicTitle: 'Sexy Reggaeton Basique',
   sxrLevelBasicDesc:
-    'Para principiantes. Aprenderás los fundamentos: body roll, perreo básico, movimientos de cadera y sensualidad. Sin experiencia previa necesaria. Ambiente seguro y sin juicios.',
-  sxrLevelIntermediateTitle: 'Sexy Reggaeton Intermedio',
+    'Tu maîtrises déjà les fondamentaux. Nous travaillerons le body roll, le perreo basique, les ondulations corporelles et les combinaisons simples. Tu commenceras à développer ton propre style et expression.',
+  sxrLevelIntermediateTitle: 'Sexy Reggaeton Intermédiaire',
   sxrLevelIntermediateDesc:
-    'Para quienes dominan lo básico. Coreografías más sensuales, drops al suelo, combinaciones avanzadas y desarrollo de tu propio estilo.',
+    'Pour ceux qui maîtrisent les bases. Chorégraphies plus sensuelles, drops au sol, combinaisons avancées et développement de ton propre style.',
   sxrPrepareTitle: 'Prepara tu primera clase de Sexy Reggaeton',
   sxrPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
   sxrPrepareWhatToBring: 'Quoi apporter:',
@@ -9024,9 +9139,12 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   rcbWhatIsP4:
     'Aprenderás a disociar cada parte de tu cuerpo, a improvisar con la música y a desarrollar tu propio estilo. Porque el reggaeton cubano no se copia: se vive.',
   rcbWhatIsQuestionTitle: '¿Cansado del reggaeton comercial que todo el mundo baila igual?',
-  rcbWhatIsQuestionAnswer: 'Entonces esto es para ti.',
+  rcbWhatIsQuestionAnswer: 'Alors ceci est pour toi.',
+
+  // Cultural History Section
+  rcbCulturalHistoryTitle: 'Histoire et Origines du Reggaeton Cubain',
   rcbCulturalShort:
-    'El reggaeton cubano tiene sus raíces en los barrios de La Habana, donde la fusión del reggae jamaicano con ritmos afrocubanos creó un estilo único y callejero.',
+    'Le reggaeton cubain trouve ses racines dans les quartiers de La Havane, où la fusion du reggae jamaïcain avec les rythmes afro-cubains a créé un style unique et urbain.',
   rcbCulturalFull:
     '### Orígenes: Los Barrios de La Habana (1990s-2000s)\n\n**El Reggaeton Cubano (también conocido como Cubatón o Reparto) surgió a finales de los años 90 y principios de los 2000 en barrios populares de La Habana como La Lisa, Marianao, Centro Habana y El Cerro.** Nació como fusión del reggaeton puertorriqueño que llegaba por radio con los ritmos afrocubanos tradicionales: rumba, son cubano y elementos yoruba.\n\n**"El Reggaeton Cubano fusiona reggaeton puertorriqueño con rumba, son y ritmos yoruba, creando un estilo único nacido en los barrios de La Habana."**\n\n### Artistas Pioneros\n\n**Artistas como Candyman, El Taiger, Chocolate MC, Osmani García y El Chacal popularizaron el género** y definieron su sonido característico: bases de dembow combinadas con percusión afrocubana, letras callejeras y una actitud rebelde que refleja la vida cotidiana de los barrios cubanos.\n\n### El Reparto: El Estilo de los Barrios\n\n**El término "Reparto" proviene de los "repartos" o barrios populares de La Habana donde nació este estilo.** Se caracteriza por ritmos más crudos que el reggaeton comercial, con una conexión más directa y visceral con la música. Los bailarines de Reparto son reconocidos mundialmente por su capacidad de improvisación y su dominio técnico.\n\n**"El Reparto se caracteriza por ritmos crudos, letras callejeras y una actitud rebelde que refleja la vida de los barrios cubanos."**\n\n### Técnicas Distintivas del Baile\n\nEl baile de Reggaeton Cubano se distingue por elementos técnicos únicos:\n- **Improvisación constante**: respuesta instantánea a los cambios de la música\n- **Disociación corporal avanzada**: caderas, pecho y hombros moviéndose independientemente\n- **Tembleque**: vibración rápida y controlada de caderas, técnica exclusiva cubana\n- **Movimientos de suelo**: inspirados en la rumba afrocubana (guaguancó, columbia)\n- **Perreo cubano**: variante más técnica y rítmica que el puertorriqueño\n\n**"El baile de Reggaeton Cubano se distingue por improvisación, disociación corporal, tembleque y movimientos de suelo inspirados en la rumba afrocubana."**\n\n### Influencias Afrocubanas\n\n**El Reggaeton Cubano incorpora elementos de la rumba (guaguancó, columbia), son cubano y danzas yoruba, creando un estilo único que lo diferencia del reggaeton puertorriqueño.** Esta fusión de tradiciones africanas y caribeñas le da su sabor característico y su riqueza de movimientos.\n\n### El Cubatón Hoy: Expansión Internacional\n\nHoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia: la improvisación, el sabor y esa energía única que solo viene de Cuba. Artistas como **El Taiger, Jacob Forever y Chocolate MC** han llevado el sonido cubano al mundo, y con él, su forma de bailar.\n\n### Beneficios para la Salud\n\n**Una clase de Reggaeton Cubano puede quemar entre 350 y 550 calorías por hora** debido a la intensidad del tembleque y los movimientos de disociación corporal. Además, mejora la coordinación, la flexibilidad de cadera y la conexión rítmica.\n\n### Reggaeton Cubano en Farray\'s Center\n\n**Farray\'s International Dance Center enseña Reggaeton Cubano auténtico con profesores cubanos formados en la Escuela Nacional de Arte (ENA) de La Habana.** Las clases mantienen la esencia callejera del estilo mientras ofrecen una progresión técnica estructurada para todos los niveles.',
   rcbIdentifyTransition:
@@ -9035,13 +9153,24 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
     'Seguir bailando el mismo reggaeton comercial de siempre te mantiene en tu zona de confort. Nunca desarrollarás tu propio estilo ni esa libertad que ves en los bailarines cubanos.',
   rcbIdentifySolution:
     "En Farray's Center aprenderás con Alejandro Miñoso y Charlie Breezy, cubanos de nacimiento. No te enseñarán coreografías: te enseñarán a BAILAR con sentimiento.",
-  rcbLevelsTitle: 'Nuestros Niveles de Reggaeton Cubano',
-  rcbLevelBasicTitle: 'Reggaeton Cubano Básico',
+  rcbLevelsTitle: 'Nos Niveaux de Reggaeton Cubain',
+  // Clés utilisées par REGGAETON_CUBANO_LEVELS (3 niveaux)
+  rcbLevelBeginnerTitle: 'Débutant',
+  rcbLevelBeginnerDesc:
+    'Votre premier contact avec le Reggaeton Cubain. Apprenez les fondamentaux : dissociation corporelle de base, tembleque initial, pas de Reparto et attitude cubaine. Aucune expérience préalable requise. Durée : 0-3 mois.',
+  rcbLevelInterTitle: 'Intermédiaire',
+  rcbLevelInterDesc:
+    "Pour ceux qui maîtrisent les fondamentaux. Travaillez l'improvisation, tembleque et dissociation plus complexes, mouvements au sol et développement du style personnel. Durée : 3-9 mois.",
+  rcbLevelAdvancedTitle: 'Avancé',
+  rcbLevelAdvancedDesc:
+    'Pour danseurs expérimentés. Maîtrise technique complète, improvisation avancée, chorégraphies complexes, musicalité profonde et préparation aux performances. Durée : +9 mois.',
+  // Clés legacy (maintenir compatibilité)
+  rcbLevelBasicTitle: 'Reggaeton Cubain Basique',
   rcbLevelBasicDesc:
-    'Para principiantes. Aprenderás los fundamentos: disociación corporal, tembleque básico, pasos de Reparto y actitud cubana. Sin experiencia previa necesaria.',
-  rcbLevelIntermediateTitle: 'Reggaeton Cubano Intermedio',
+    'Pour débutants. Vous apprendrez les fondamentaux : dissociation corporelle, tembleque basique, pas de Reparto et attitude cubaine. Aucune expérience préalable requise.',
+  rcbLevelIntermediateTitle: 'Reggaeton Cubain Intermédiaire',
   rcbLevelIntermediateDesc:
-    'Para quienes dominan lo básico. Improvisación avanzada, tembleque y disociación complejos, movimientos de suelo y desarrollo de estilo propio cubano.',
+    'Pour ceux qui maîtrisent les bases. Improvisation avancée, tembleque et dissociation complexes, mouvements au sol et développement du style personnel cubain.',
   rcbPrepareTitle: 'Prepara tu primera clase de Reggaeton Cubano',
   rcbPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
   rcbPrepareWhatToBring: 'Quoi apporter:',
@@ -9100,13 +9229,19 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   femNearbySearchText: 'Si buscas "Clases de Femmology cerca de mi" en Barcelona, estamos a:',
   femNearbyMetro:
     'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
-  sexystyleLevelsTitle: 'Nuestros Niveles de Sexy Style',
-  sexystyleLevelBasicTitle: 'Sexy Style Débutant',
+  sexystyleLevelsTitle: 'Nos Niveaux de Sexy Style',
+  sexystyleLevelBeginnerTitle: 'Sexy Style Débutant',
+  sexystyleLevelBeginnerDesc:
+    "Votre premier contact avec le Sexy Style à Barcelone. Conçu pour celles qui n'ont jamais dansé ce style, vous apprendrez la posture de base, les mouvements de hanches et les ondulations corporelles depuis zéro. Les talons sont totalement optionnels : vous pouvez venir en baskets et progresser à votre rythme dans un environnement sûr et sans pression.",
+  sexystyleLevelBasicTitle: 'Sexy Style Basique',
   sexystyleLevelBasicDesc:
-    'Ideal para empezar sin presión. Aprenderás los movimientos básicos de cadera, ondas corporales y actitud. Los tacones son opcionales: puedes venir con zapatillas y progresar a tu ritmo.',
-  sexystyleLevelIntermediateTitle: 'Sexy Style Intermedio',
+    "L'étape suivante dans votre formation Sexy Style. Pour les élèves qui maîtrisent les fondamentaux du niveau débutant. Vous consoliderez la technique des ondulations, la dissociation des hanches et des bras, et introduirez les premiers mouvements au sol (floorwork basique). Vous commencerez à travailler avec des talons si vous vous sentez prête et développerez plus de fluidité dans les transitions.",
+  sexystyleLevelIntermediateTitle: 'Sexy Style Intermédiaire',
   sexystyleLevelIntermediateDesc:
-    'Para quienes ya se sienten cómodas con los fundamentos. Coreografías más elaboradas, floorwork, transiciones fluidas y trabajo de actitud y presencia escénica.',
+    "Pour les danseuses qui maîtrisent les fondamentaux et cherchent à perfectionner leur technique. Chorégraphies plus élaborées avec floorwork avancé, transitions fluides entre les niveaux et travail intensif sur l'attitude et la présence scénique. Développement de votre style personnel dans le cadre technique du Sexy Style.",
+  sexystyleLevelAdvancedTitle: 'Sexy Style Avancé',
+  sexystyleLevelAdvancedDesc:
+    "Le niveau le plus élevé de Sexy Style chez Farray's Center Barcelone. Pour les danseuses expérimentées qui maîtrisent la technique complète. Chorégraphies complexes avec éléments acrobatiques, improvisation structurée, développement d'un style artistique personnel et préparation professionnelle pour les performances et showcases.",
   sexystylePrepareTitle: 'Prepara tu primera clase de Sexy Style',
   sexystylePrepareSubtitle: 'Todo lo que necesitas para tu primera experiencia',
   sexystylePrepareWhatToBring: 'Quoi apporter:',
@@ -9261,22 +9396,68 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   hiphopWhyTodayClosing2:
     'Te esperamos con beats potentes, un profe de leyenda y energía de cipher.',
   hiphopFinalCTADesc: 'Reserva tu plaza ahora y empieza a desarrollar tu propio flow.',
-  hiphopFinalCTAFunny: 'Las plazas vuelan más rápido que un headspin en una batalla.',
-  hiphopCulturalHistoryTitle: 'Historia y Cultura del Hip Hop',
+  hiphopFinalCTAFunny: "Les places s'épuisent plus vite qu'un changement de beat.",
+  hiphopCulturalHistoryTitle: 'Histoire et Culture du Hip Hop',
   hiphopCulturalShort:
-    'El Hip Hop nació en el Bronx de Nueva York a principios de los años 70, como expresión cultural de comunidades afroamericanas y latinas.',
-  hiphopCulturalFull:
-    '### Los Orígenes: El South Bronx de Nueva York (1973-1974)\n\n**El Hip Hop emergió en el South Bronx de Nueva York entre 1973 y 1974, cuando DJ Kool Herc empezó a aislar los "breaks" (secciones instrumentales) de los discos de funk y soul**, creando un nuevo sonido que invitaba al baile. Las comunidades afroamericanas y latinas del Bronx transformaron las calles en escenarios de expresión artística.\n\n**"El Hip Hop dance nació entre 1973-1974 en el South Bronx de Nueva York, impulsado por DJ Kool Herc y desarrollado por comunidades afroamericanas y latinas como forma de expresión artística."**\n\n### Los Cuatro Pilares Fundacionales\n\nLa cultura Hip Hop se construye sobre **cuatro pilares fundamentales**:\n- **DJing** (turntablism): manipulación de discos y creación de breaks\n- **MCing** (rap): expresión lírica y rimas\n- **Graffiti**: arte visual urbano\n- **B-boying/B-girling** (breaking): danza\n\n**"Los elementos de la danza hip hop — freestyle, batallas y ciphers — definen la esencia competitiva y comunitaria de esta cultura."**\n\n### Grupos Pioneros\n\nGrupos que establecieron las bases técnicas y estilísticas vigentes hoy:\n- **The Rock Steady Crew** (1977): pioneros del breaking\n- **The Lockers** (1973): creadores del locking con Don Campbell\n- **Electric Boogaloos** (1977): innovadores del popping con Boogaloo Sam\n\n### Técnicas Principales del Hip Hop\n\n**Las técnicas principales incluyen: grooves y bounces (base rítmica), social dances, toprock, footwork, freezes, power moves, y elementos de locking, popping y breaking.** Cada estilo tiene su vocabulario y su historia específica.\n\n### El Breaking: Disciplina Olímpica\n\n**El breaking fue incluido como deporte olímpico en los Juegos de París 2024**, reconociendo oficialmente al Hip Hop como disciplina deportiva de élite. Este hito histórico valida décadas de desarrollo técnico y artístico.\n\n### De la Calle al Mundo: Expansión Global\n\nCon más de **50 años de desarrollo global**, el Hip Hop ha pasado de los block parties del Bronx a ser un fenómeno cultural planetario. **El Hip Hop es practicado por más de 30 millones de personas en todo el mundo.**\n\n**"La danza hip hop se practica tanto en la calle como en academias profesionales, manteniendo siempre su espíritu de libertad y autoexpresión."**\n\n### Beneficios para la Salud\n\n**Una clase de Hip Hop de 60 minutos puede quemar entre 400-600 calorías** mientras mejora la coordinación, el ritmo y la expresión corporal. **Estudios demuestran que bailar hip hop mejora la memoria, la concentración y reduce los niveles de estrés.**\n\n### El Hip Hop en Farray\'s Center\n\nEn nuestra academia, el Hip Hop forma parte del plan curricular de formación profesional en danza avalado por el **CID-UNESCO (Consejo Internacional de la Danza de la UNESCO en París)**. La metodología respeta las raíces de la cultura: técnica base, musicalidad, historia del movimiento y desarrollo del estilo personal a través del freestyle.\n\n**"El Hip Hop no es solo un estilo de baile, es una filosofía de vida que promueve la creatividad, el respeto y la superación personal."**\n\nNuestro profesor **Marcos Martínez**, juez de competiciones internacionales y referente del Hip Hop en España, transmite no solo técnica sino los valores y la historia que hacen de este estilo algo único.',
+    'Le Hip Hop est né dans le Bronx de New York au début des années 70, comme expression culturelle des communautés afro-américaines et latinos.',
+  hiphopCulturalFull: `### Les Origines : Le South Bronx de New York (1973-1974)
+
+**Le Hip Hop a émergé dans le South Bronx de New York entre 1973 et 1974, lorsque DJ Kool Herc a commencé à isoler les "breaks" (sections instrumentales) des disques de funk et de soul**, créant un nouveau son qui invitait à danser. Les communautés afro-américaines et latinos du Bronx ont transformé les rues en scènes d'expression artistique.
+
+**"La danse Hip Hop est née entre 1973-1974 dans le South Bronx de New York, impulsée par DJ Kool Herc et développée par les communautés afro-américaines et latinos comme forme d'expression artistique."**
+
+### Les Quatre Piliers Fondamentaux
+
+La culture Hip Hop repose sur **quatre piliers fondamentaux** :
+- **DJing** (turntablism) : manipulation de disques et création de breaks
+- **MCing** (rap) : expression lyrique et rimes
+- **Graffiti** : art visuel urbain
+- **B-boying/B-girling** (breaking) : danse
+
+**"Les éléments de la danse hip hop — freestyle, battles et ciphers — définissent l'essence compétitive et communautaire de cette culture."**
+
+### Groupes Pionniers
+
+Groupes qui ont établi les bases techniques et stylistiques encore valables aujourd'hui :
+- **The Rock Steady Crew** (1977) : pionniers du breaking
+- **The Lockers** (1973) : créateurs du locking avec Don Campbell
+- **Electric Boogaloos** (1977) : innovateurs du popping avec Boogaloo Sam
+
+### Techniques Principales du Hip Hop
+
+**Les techniques principales incluent : grooves et bounces (base rythmique), social dances, toprock, footwork, freezes, power moves, et éléments de locking, popping et breaking.** Chaque style a son propre vocabulaire et son histoire spécifique.
+
+### Le Breaking : Discipline Olympique
+
+**Le breaking a été inclus comme sport olympique aux Jeux de Paris 2024**, reconnaissant officiellement le Hip Hop comme discipline sportive d'élite. Cette étape historique valide des décennies de développement technique et artistique.
+
+### De la Rue au Monde : Expansion Globale
+
+Avec plus de **50 ans de développement mondial**, le Hip Hop est passé des block parties du Bronx à un phénomène culturel planétaire. **Le Hip Hop est pratiqué par plus de 30 millions de personnes dans le monde.**
+
+**"La danse hip hop se pratique aussi bien dans la rue que dans les académies professionnelles, en maintenant toujours son esprit de liberté et d'auto-expression."**
+
+### Bienfaits pour la Santé
+
+**Un cours de Hip Hop de 60 minutes peut brûler entre 400-600 calories** tout en améliorant la coordination, le rythme et l'expression corporelle. **Des études montrent que danser le hip hop améliore la mémoire, la concentration et réduit les niveaux de stress.**
+
+### Le Hip Hop chez Farray's Center
+
+Dans notre académie, le Hip Hop fait partie du programme de formation professionnelle en danse certifié par le **CID-UNESCO (Conseil International de la Danse de l'UNESCO à Paris)**. La méthodologie respecte les racines de la culture : technique de base, musicalité, histoire du mouvement et développement du style personnel à travers le freestyle.
+
+**"Le Hip Hop n'est pas seulement un style de danse, c'est une philosophie de vie qui promeut la créativité, le respect et le dépassement de soi."**
+
+Notre professeur **Marcos Martínez**, juge de compétitions internationales et référence du Hip Hop en Espagne, transmet non seulement la technique mais aussi les valeurs et l'histoire qui rendent ce style unique.`,
   hiphopCitableTecnicas:
-    'Las técnicas principales del Hip Hop incluyen: grooves y bounces (base rítmica), social dances, toprock, footwork, freezes, power moves, y elementos de locking, popping y breaking.',
+    'Les techniques principales du Hip Hop incluent : grooves et bounces (base rythmique), social dances, toprock, footwork, freezes, power moves, et éléments de locking, popping et breaking.',
   hiphopStatistics:
-    'El Hip Hop es practicado por más de 30 millones de personas en todo el mundo. Una clase de 60 minutos puede quemar entre 400-600 calorías mientras mejora coordinación, ritmo y expresión corporal.',
+    'Le Hip Hop est pratiqué par plus de 30 millions de personnes dans le monde. Un cours de 60 minutes peut brûler entre 400-600 calories tout en améliorant coordination, rythme et expression corporelle.',
   hiphopCitableFact1:
-    'El breaking fue incluido como deporte olímpico en París 2024, reconociendo oficialmente al Hip Hop como disciplina deportiva de élite.',
+    "Le breaking a été inclus comme sport olympique à Paris 2024, reconnaissant officiellement le Hip Hop comme discipline sportive d'élite.",
   hiphopCitableFact2:
-    'Estudios demuestran que bailar hip hop mejora la memoria, la concentración y reduce los niveles de estrés hasta un 70% tras 8 semanas de práctica regular.',
+    "Des études montrent que danser le hip hop améliore la mémoire, la concentration et réduit les niveaux de stress jusqu'à 70% après 8 semaines de pratique régulière.",
   hiphopCitableFact3:
-    "Farray's International Dance Center es una de las pocas academias en Barcelona con profesores certificados como jueces de competiciones internacionales de Hip Hop.",
+    "Farray's International Dance Center est l'une des rares académies à Barcelone avec des professeurs certifiés comme juges de compétitions internationales de Hip Hop.",
   salsaCubanaHeroEmotional: 'Deja el móvil. Mira a alguien a los ojos. Muévete. Ríete. Baila.',
   salsaCubanaBlueOceanTitle:
     '¿Por qué miles de barceloneses eligieron aprender salsa cubana con nosotros?',
@@ -9553,10 +9734,10 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   folkloreTestimonialsTitle: 'Ce que disent nos élèves',
 
   // Final CTA Section
-  folkloreFinalCTATitle: "Plongez dans l'essence de la danse cubaine",
-  folkloreFinalCTASubtitle: 'La racine de la salsa vous attend.',
+  folkloreFinalCTATitle: "Plongez dans l'essence de toutes les danses cubaines",
+  folkloreFinalCTASubtitle: 'Les racines de la salsa vous attendent.',
   folkloreFinalCTADesc:
-    "Réservez votre cours d'essai et découvrez pourquoi le Folklore Cubain transformera votre façon de danser.",
+    'Venez découvrir pourquoi le Folklore Cubain transformera votre façon de comprendre la danse.',
   folkloreFinalCTAFunny:
     "Les Orishas savent déjà que vous venez. Il ne reste plus qu'à faire le premier pas.",
 
@@ -9707,7 +9888,7 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
     "Nous offrons deux modalités : Timba en Couple pour quand vous dansez le casino et qu'on vous lâche, et Lady Timba pour les femmes qui veulent développer leur style féminin et leur despelote.",
   timbaWhatIsQuestionTitle: 'Vous dansez la salsa cubaine et vous bloquez quand on vous lâche ?',
   timbaWhatIsQuestionAnswer:
-    'La Timba est votre solution. Vous ne vous sentirez plus jamais perdu(e) sur la piste.',
+    'La Timba est votre solution. Vous ne vous sentirez plus jamais perdu(e) lors des soirées sociales.',
 
   // === SCHEDULE SECTION ===
   timbaScheduleTitle: 'Horaires de nos cours de Timba',
@@ -9845,14 +10026,58 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   timbaCulturalHistoryTitle: 'Histoire et Origines de la Timba Cubaine',
   timbaCulturalShort:
     'La Timba est née à Cuba dans les années 80-90 comme évolution du Son et de la Salsa, fusionnant les rythmes traditionnels africains avec les genres modernes.',
-  timbaCulturalFull:
-    "## Les Origines de la Timba\n\nLa Timba a émergé à La Havane dans les années 80 et a atteint son expression maximale dans les années 90. C'est le résultat de l'évolution naturelle de la musique cubaine, quand les jeunes musiciens cubains ont commencé à fusionner le Son traditionnel avec des influences du funk, hip hop, rock et jazz.\n\n## Pourquoi s'appelle-t-elle \"Timba\" ?\n\nLe terme \"Timba\" a des racines dans l'argot cubain. Certains le relient aux \"timbales\" (instrument de percussion), d'autres aux expressions populaires cubaines. Ce sur quoi tout le monde s'accorde, c'est qu'il représente quelque chose d'intense, de rue et d'authentique.\n\n## Les Groupes qui ont Défini le Genre\n\nDes groupes comme **Los Van Van**, **NG La Banda**, **La Charanga Habanera**, **Manolín \"El Médico de la Salsa\"** et **Paulito FG** ont été les pionniers qui ont défini le son de la Timba.",
+  timbaCulturalFull: `### Les Origines de la Timba (Cuba, années 80-90)
+
+**La Timba a émergé à La Havane dans les années 80 et a atteint son expression maximale dans les années 90.** C'est le résultat de l'évolution naturelle de la musique cubaine, quand les jeunes musiciens cubains ont commencé à fusionner le Son traditionnel avec des influences du funk, hip hop, rock et jazz. Cette fusion révolutionnaire a créé un genre explosif qui a transformé la façon de danser la salsa cubaine.
+
+**"Timba cubaine (1980s-1990s) : fusion du Son traditionnel + funk + hip hop + rock + jazz ; révolution musicale qui a transformé la danse cubaine."**
+
+### Pourquoi s'appelle-t-elle "Timba" ?
+
+**Le terme "Timba" a des racines dans l'argot cubain populaire.** Certains le relient aux "timbales" (instrument de percussion), d'autres aux expressions populaires cubaines dénotant la saveur et l'authenticité. Ce sur quoi tout le monde s'accorde, c'est qu'il représente quelque chose d'intense, de rue et d'authentique de la culture cubaine.
+
+**"Timba = intensité + rue + authenticité ; terme de l'argot cubain qui définit l'essence du genre."**
+
+### Les Groupes qui ont Défini le Genre
+
+**Des groupes comme Los Van Van, NG La Banda, La Charanga Habanera, Manolín "El Médico de la Salsa" et Paulito FG ont été les pionniers qui ont défini le son de la Timba.** Leur musique se caractérise par :
+
+- **Changements de rythme** constants (du doux à l'explosif)
+- **Le "despelote"** - sections où le rythme s'intensifie et les danseurs improvisent
+- **Paroles urbaines** qui parlent de la vie quotidienne cubaine
+- **Improvisation** tant musicale que dans la danse
+
+**"Pionniers de la Timba : Los Van Van, NG La Banda, La Charanga Habanera, Paulito FG ; créateurs du son qui définit le genre."**
+
+### La Timba comme Danse : Le Despelote
+
+**Musicalement, la Timba exige une danse différente de la salsa traditionnelle.** Les danseurs ont développé des mouvements plus déliés, sensuels et expressifs pour répondre aux changements constants de la musique. C'est ainsi qu'est né le style de danse Timba, avec son caractéristique "despelote" (moment d'intensité maximale) et la liberté de mouvement individuel.
+
+**"Danse Timba = réponse corporelle aux changements de rythme + despelote + improvisation libre ; nécessite la maîtrise de l'interprétation musicale."**
+
+### Lady Timba : Le Style Féminin Cubain
+
+**Le Lady Timba ou "Timba pour femmes" se concentre sur le développement du style féminin dans ce genre.** Il met l'accent sur les mouvements de hanches, la sensualité et l'expression corporelle, permettant aux femmes de briller quand elles dansent seules ou quand on les "lâche" dans la danse en couple. C'est une discipline qui responsabilise et développe la féminité dans la danse.
+
+**"Lady Timba : style féminin cubain ; mouvements de hanches + sensualité + expression corporelle pour briller dans le despelote."**
+
+### La Timba à Barcelone : Farray's Center
+
+**La Timba continue d'évoluer à Cuba et dans le monde. À Barcelone, Farray's Center est une référence dans l'enseignement de la Timba authentique** avec des professeurs cubaines qui transmettent non seulement les pas, mais le sentiment et la culture derrière chaque mouvement. Yunaisy Farray (CID-UNESCO) dirige le programme Lady Timba avec une méthodologie professionnelle.
+
+**"Farray's Center Barcelone : référence en Timba cubaine authentique ; professeurs cubaines CID-UNESCO ; Lady Timba + Timba en Couple."**
+
+### Bienfaits de Danser la Timba
+
+**Danser la Timba développe de manière unique la musicalité, la coordination et l'expression corporelle.** La complexité rythmique de la musique Timba entraîne l'oreille musicale et la capacité de réaction. De plus, le caractère social de la danse renforce la confiance et la connexion avec les autres danseurs.
+
+**"La Timba développe : musicalité avancée + coordination + expression corporelle + confiance sociale ; formation intégrale du danseur."**`,
 
   // === FAQ SECTION ===
   timbaFaqTitle: 'Questions Fréquentes sur la Timba',
   timbaFaqQ1: 'Quel niveau de salsa ai-je besoin pour commencer la Timba ?',
   timbaFaqA1:
-    "Pour Lady Timba Basique (vendredi) nous recommandons au moins 6 mois de salsa cubaine. Pour Timba en Couple (mardi) et Lady Timba Intermédiaire (jeudi), nous recommandons minimum 1 an d'expérience en salsa cubaine.",
+    "Pour Lady Timba Basique (vendredi) et pour les cours de Timba en Couple (mardi), nous recommandons au moins 6 mois de cours de salsa cubaine. Pour Lady Timba Intermédiaire/Avancé (jeudi), nous recommandons minimum 1 an d'expérience en salsa cubaine et au moins 6 mois d'expérience en Salsa Cubana Lady Style.",
   timbaFaqQ2: 'Quelle est la différence entre Timba en Couple et Lady Timba ?',
   timbaFaqA2:
     "La Timba en Couple (mardi) travaille l'interprétation musicale quand vous dansez avec quelqu'un et qu'on vous lâche momentanément. Lady Timba (jeudi et vendredi) est axé exclusivement sur le style féminin et est réservé aux femmes.",
@@ -9901,9 +10126,6 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   timbaFinalCTASubtitle: 'Votre premier cours de Timba vous attend',
   timbaFinalCTADesc:
     "Peu importe si vous n'avez jamais fait de Timba. Ce qui compte, c'est que vous voulez vous améliorer, profiter davantage et vous sentir libre sur la piste. Nos professeurs cubains vous guideront pas à pas.",
-  timbaFinalCTAFunny:
-    '"Avant je restais comme une statue quand on me lâchait. Maintenant je souhaite qu\'on me lâche." — Élève anonyme 😄',
-
   // ============================================================
   // CALENDAR / CALENDRIER
   // ============================================================
@@ -11166,7 +11388,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
 
   // Classes Liées
   blog_relatedClasses_title: 'Apprenez avec Nous',
-  blog_relatedClasses_subtitle: 'Transformez votre passion en mouvement avec nos cours a Barcelone',
+  blog_relatedClasses_subtitle: 'Transformez votre passion en mouvement avec nos cours à Barcelone',
   blog_relatedClasses_viewClass: 'Voir le Cours',
 
   // Navigation Articles
@@ -11991,6 +12213,11 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   puertasAbiertasCTA: 'Découvrez Comment Commencer',
   puertasAbiertasSubtext:
     'Portes Ouvertes · Du 7 au 31 janvier · Essayez le centre · Découvrez les horaires et niveaux',
+
+  // Vidéo Bientôt
+  videoComingSoon: 'Vidéo Bientôt',
+  videoComingSoonDesc: 'Nous préparons quelque chose de spécial pour vous',
+
   leadModal_title: "Descubre cómo empezar en Farray's Center",
   leadModal_subtitle:
     'Te enviamos toda la información para empezar a bailar con nosotros de forma clara y sin compromiso.',
@@ -12322,9 +12549,10 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   teachersPageDirectorTitle: 'Directrice et Fondatrice',
   teachersPageDirectorSubtitle:
     "Rencontrez Yunaisy Farray, l'âme de notre école et créatrice de la révolutionnaire Méthode Farray®.",
-  teachersPageDirectorSpecialty: 'Directrice | Créatrice de la Méthode Farray® | Membre CID-UNESCO',
+  teachersPageDirectorSpecialty:
+    'Directrice | Créatrice de la Méthode Farray® | Membre CID-UNESCO | Danseuse de Hollywood',
   teachersPageDirectorBio:
-    'Danseuse professionnelle cubaine formée à l\'École Nationale d\'Art de Cuba (ENA). Avec plus de deux décennies d\'expérience internationale, Yunaisy a participé au film "Street Dance 2", aux finales de "Got Talent" et à des émissions comme "The Dancer". Sa méthode exclusive combine la discipline classique avec les rythmes afro-cubains, garantissant des résultats rapides et solides.',
+    'Danseuse de Hollywood, cette professionnelle cubaine formée à l\'École Nationale d\'Art de Cuba (ENA), est notre fondatrice et directrice. Avec plus de deux décennies d\'expérience internationale, Yunaisy a participé au film "Street Dance 2", aux finales de "Got Talent" et à des émissions comme "The Dancer". Sa Méthode Farray® est la seule méthodologie au monde qui intègre la rigueur de l\'école russe de ballet classique avec les racines afro-cubaines, spécialement adaptée pour les danseurs européens. Elle garantit des résultats rapides et une technique solide, combinant discipline classique et passion caribéenne.',
 
   // Team Section
   teachersPageTeamTitle: 'Notre Équipe Pédagogique',
@@ -12332,65 +12560,81 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
     'Des professionnels passionnés qui partagent leur art et leurs connaissances dans chaque cours. Chacun apporte sa spécialité unique.',
 
   // Individual Teachers
-  teachersPageTeacher1Specialty: 'Ballet Classique & Contemporain',
+  teachersPageTeacher1Specialty:
+    'Ballet Classique, Contemporain, Yoga, Tai-Chi & Stretching | École Nationale de Ballet de Cuba | Référence Nationale',
   teachersPageTeacher1Bio:
-    "Danseur professionnel formé à l'École Nationale d'Art de Cuba. Spécialiste de la technique classique cubaine et de la danse contemporaine.",
-  teachersPageTeacher2Specialty: 'Ballet, Modern Jazz & Afro Jazz',
+    "Daniel Sené est danseur professionnel formé à la prestigieuse École Nationale de Ballet de Cuba. Spécialiste de la technique classique cubaine et de la danse contemporaine, il apporte la rigueur académique et l'élégance propres à la tradition cubaine. Expert profond du corps humain, il excelle également en Yoga, Tai-Chi et Stretching. Ce maître est une référence nationale, combinant précision technique, expression artistique et bien-être corporel.",
+  teachersPageTeacher2Specialty:
+    'Ballet, Modern Jazz, Afro Jazz & Contemporain | ENA Cuba | Ex Soliste Cie. Carlos Acosta',
   teachersPageTeacher2Bio:
-    "Danseur professionnel cubain formé à l'ENA. Expert en fusion de styles classiques et afro.",
-  teachersPageTeacher3Specialty: 'Dancehall & Twerk',
+    "Alejandro Miñoso est danseur professionnel cubain formé à l'ENA et ancien soliste de la prestigieuse compagnie Carlos Acosta, l'un des plus grands danseurs de l'histoire. Son expertise dans la fusion des styles classiques et afro en fait un professeur polyvalent, capable de passer aisément du ballet au modern jazz, de l'afro jazz à l'afro contemporain et au contemporain. Technique académique cubaine de premier niveau.",
+  teachersPageTeacher3Specialty: 'Dancehall & Twerk | Formation Jamaïcaine',
   teachersPageTeacher3Bio:
-    'Spécialiste du Dancehall et du Twerk avec une grande expérience en pédagogie de la danse urbaine.',
-  teachersPageTeacher4Specialty: 'Dancehall & Dancehall Female',
+    "Sandra Gómez est danseuse professionnelle avec une formation jamaïcaine en dancehall et twerk. Son style unique fusionne les mouvements du Twerk/Bootydance avec l'essence jamaïcaine authentique. Une technique impeccable et une méthodologie d'enseignement éprouvée en font l'une des professeures les plus demandées. Énergie, sensualité et féminité pure à chaque cours.",
+  teachersPageTeacher4Specialty: 'Dancehall & Dancehall Female | Formation Jamaïque',
   teachersPageTeacher4Bio:
-    'Spécialiste du Dancehall avec une expérience en compétitions internationales et une formation en Jamaïque.',
-  teachersPageTeacher5Specialty: 'Hip Hop | Juge International',
+    "Isabel López est passionnée de dancehall avec plus de 5 ans d'expérience comme professeure spécialisée. Formée par des maîtres jamaïcains, son énergie contagieuse et sa technique professionnelle en font l'une des instructrices les plus appréciées. Ses cours mélangent old school moves (Willie Bounce, Nuh Linga) avec les derniers hits.",
+  teachersPageTeacher5Specialty: 'Hip Hop | Juge International | Référence Espagne',
   teachersPageTeacher5Bio:
-    'Juge international de Hip Hop avec une vaste expérience en compétitions et enseignement des styles urbains.',
-  teachersPageTeacher6Specialty: 'Salsa Cubaine & Lady Style',
+    "Marcos Martínez est l'une des références du Hip Hop en Espagne. Avec des décennies d'expérience comme danseur, professeur et juge de compétitions internationales, il a formé des générations de danseurs. Son style unique combine la technique old school avec les tendances actuelles, toujours dans le respect des racines de la culture hip hop.",
+  teachersPageTeacher6Specialty:
+    'Salsa Cubaine, Lady Style, Sexy Style & Sexy Reggaeton | Méthode Farray® depuis 2016',
   teachersPageTeacher6Bio:
-    'Danseuse professionnelle spécialisée dans la salsa cubaine authentique et les techniques Lady Style.',
-  teachersPageTeacher7Specialty: 'Maître et Artiste Internationale Cubaine',
+    "Yasmina Fernández est une professeure extraordinairement polyvalente avec une formation très complète. Certifiée dans la Méthode Farray® depuis 2016, elle se distingue par un don relationnel exceptionnel qui la rend capable de connecter avec les élèves et de faire couler chaque pas naturellement. Spécialiste de la salsa cubaine, Lady Style, Sexy Style et Sexy Reggaeton, elle combine des années d'expérience avec une méthodologie claire et accessible.",
+  teachersPageTeacher7Specialty:
+    'Salsa Cubaine & Lady Style | ENA Cuba | Le Roi Lion Paris | +20 ans carrière',
   teachersPageTeacher7Bio:
-    'Avec plus de 20 ans de carrière artistique en salsa cubaine et styles latins.',
-  teachersPageTeacher8Specialty: 'Salsa Cubaine | Méthode Farray',
+    "Maître et artiste internationale cubaine, Lia Valdes apporte la saveur authentique de Cuba à chaque cours, avec plus de 20 ans de carrière artistique. Formée à l'ENA (École Nationale d'Art de Cuba), elle a dansé dans la prestigieuse production \"Le Roi Lion\" à Paris, témoignant de son niveau professionnel. Elle transmet non seulement les pas mais aussi la joie et l'esprit de la danse caribéenne avec une passion contagieuse.",
+  teachersPageTeacher8Specialty:
+    'Folklore Cubain & Afro Contemporain | Ballet Folklórico de Camagüey | Méthode Farray®',
   teachersPageTeacher8Bio:
-    'Instructeur certifié de la Méthode Farray pour la Salsa Cubaine. Spécialiste de la technique de guidage.',
-  teachersPageTeacher9Specialty: 'Afro Contemporain & Hip Hop',
+    "Iroel Bastarreche, connu sous le nom d'Iro, est né à Camagüey (Cuba) et s'est formé à l'École Vocationnelle d'Art. Il a fait partie du prestigieux Conjunto Artístico de Maraguán, recevant une formation en folklore campagnard, danse populaire cubaine et racines haïtiennes, jamaïcaines et congolaises. Il a participé à des festivals internationaux partageant la scène avec Danger Rodríguez. Il a ensuite rejoint le Ballet Folklórico de Camagüey, complétant sa formation afro-contemporaine avec des maîtres comme Santiago Alfonso. Depuis 2014 il se forme dans la Méthode Farray®, devenant une référence du folklore afro-cubain à Barcelone. D'abord premier danseur de la compagnie Danger Rodríguez & Yunaisy, il est maintenant un membre clé de l'équipe pédagogique de Farray's.",
+  teachersPageTeacher9Specialty: 'Afro Contemporain, Hip Hop & Afrobeats | ENA Cuba',
   teachersPageTeacher9Bio:
-    'Danseur professionnel avec expérience en styles afro et urbains. Certifié en Afro Contemporain.',
-  teachersPageTeacher10Specialty: 'Bachata Lady Style | Championne du Monde Salsa LA',
+    "Charlie Breezy est maître international et danseur cubain, formé à la prestigieuse ENA (École Nationale d'Art de Cuba). Né dans un pays où la culture africaine est profondément enracinée, il maîtrise différents styles de danse africaine comme l'Afrobeats, ainsi que le contemporain, le ballet et un large éventail de danses urbaines. Polyvalence et formation académique exceptionnelles.",
+  teachersPageTeacher10Specialty:
+    'Bachata Lady Style & Bachata en Couple | Championne du Monde Salsa LA',
   teachersPageTeacher10Bio:
-    'Championne du monde de Salsa LA et spécialiste en Bachata Lady Style. Experte en technique féminine.',
-  teachersPageTeacher11Specialty: 'Bachata & Bachata Sensual',
+    "Eugenia Trujillo est maître et danseuse internationale uruguayenne, championne du monde de Salsa LA avec Mathias Font. Professeure chez Farray's depuis 4 ans, elle apporte une technique impeccable et est spécialiste de la bachata en couple et du bachata lady style avec d'excellents résultats. Son charisme, sa sympathie et sa proximité en font l'une des professeures les plus appréciées.",
+  teachersPageTeacher11Specialty: 'Bachata Sensual | Champion du Monde Salsa LA',
   teachersPageTeacher11Bio:
-    'Spécialiste de la Bachata et de la Bachata Sensual avec une technique raffinée et une grande musicalité.',
-  teachersPageTeacher12Specialty: 'Bachata & Bachata Moderne',
+    'Mathias Font est champion du monde de Salsa LA avec sa partenaire de danse Eugenia Trujillo. Spécialiste de la bachata sensual, il se distingue par son focus unique sur la musicalité, la connexion en couple et la dynamisation des cours. Référence sur la scène latine de Barcelone.',
+  teachersPageTeacher12Specialty: 'Bachata & Bachata Moderne | Talent Émergent Barcelone',
   teachersPageTeacher12Bio:
-    'Professeur de Bachata axé sur la technique, la musicalité et la connexion en couple.',
-  teachersPageTeacher13Specialty: 'Bachata & Bachata Lady Style',
+    "Carlos Canto est un talent émergent très apprécié de ses élèves qui a démontré une grande capacité à connecter avec les gens. Spécialiste de la bachata axé sur la technique et la musicalité, son style frais et accessible en fait l'un des professeurs les plus appréciés de l'école.",
+  teachersPageTeacher13Specialty: 'Bachata & Bachata Lady Style | Talent Émergent Barcelone',
   teachersPageTeacher13Bio:
-    'Spécialiste de la Bachata et des techniques féminines. Experte en style et expression corporelle.',
-  teachersPageTeacher14Specialty: 'Afrobeats & Afro Dance',
+    "Noemi est un talent émergent sur lequel Farray's a fortement misé. Elle possède d'excellents talents relationnels qui lui permettent de connecter immédiatement avec ses élèves. Partenaire de Carlos Canto, ils s'épanouissent comme l'un des couples les plus prometteurs de la scène barcelonaise. Ses élèves deviennent des fans fidèles grâce à son focus sur la bachata et les techniques féminines.",
+  teachersPageTeacher14Specialty: 'Afrobeats & Ntcham | Natif Tanzanie',
   teachersPageTeacher14Bio:
-    "Spécialiste de l'Afrobeats et des danses africaines contemporaines. Énergie et rythme à chaque cours.",
+    "Redblueh est professeur et danseur international, natif de Tanzanie et spécialiste du Ntcham. Ses racines africaines, ses connaissances profondes, son énergie et sa joie contagieuse en font l'un des professeurs les plus recommandés de tout Barcelone. Authenticité africaine à chaque mouvement.",
 
   // New Teachers
-  teachersPageTeacherJuanSpecialty: 'Salsa Cubaine',
+  teachersPageTeacherJuanSpecialty: 'Bachata Sensual | Méthode Farray® | Talent Émergent Barcelone',
   teachersPageTeacherJuanBio:
-    "Instructeur de Salsa Cubaine avec une vaste expérience dans le style cubain authentique. Passion pour transmettre l'essence de la danse caribéenne.",
-  teachersPageTeacherCrisagSpecialty: 'Urban Dance',
+    "Juan Alvarez est instructeur de Bachata Sensual avec une vaste expérience en connexion et musicalité. Certifié dans la Méthode Farray®, il transmet l'essence de la danse latine avec passion et technique raffinée. Il possède une capacité extraordinaire à connecter dès le premier moment avec ses élèves, facilitant l'apprentissage dès le premier jour.",
+  teachersPageTeacherCrisagSpecialty:
+    'Body Conditioning, Cuerpo Fit, Bum Bum Fessiers & Stretching | Méthode Farray® depuis 2012',
   teachersPageTeacherCrisagBio:
-    'Danseuse professionnelle spécialisée dans les styles urbains contemporains. Créativité et expression à chaque mouvement.',
-  teachersPageTeacherGrechenSpecialty: 'Bachata & Salsa',
+    "CrisAg a développé sa passion pour la danse dès son plus jeune âge. Diplômée en Philologie Anglaise de l'Université de Barcelone, elle s'est consacrée six ans à la danse orientale avant de se former avec Jorge Camagüey et de rejoindre sa compagnie Calle Real de Camagüey. Elle a complété sa formation à The Cuban School of Arts de Londres, travaillant aux côtés de danseuses prestigieuses comme Yunaisy Farray, Kirenia Cantin et Damarys Farrés. Depuis 2012 elle se forme dans la Méthode Farray® et travaille comme professeure de Body Conditioning, Cuerpo Fit, Bum Bum Fessiers et Stretching, devenant une référence en conditionnement corporel pour danseurs à Barcelone.",
+  teachersPageTeacherGrechenSpecialty: 'Danses Afro-Cubaines | ISA Cuba | +25 ans expérience',
   teachersPageTeacherGrechenBio:
-    'Instructrice avec expérience en danses latines et styles caribéens. Technique raffinée et connexion avec la musique.',
+    "Grechén Méndez est une maître internationale de référence en danses afro-cubaines avec plus de 25 ans dédiés à l'enseignement du folklore cubain. Formée au prestigieux Institut Supérieur d'Art de Cuba (ISA), la plus haute institution artistique du pays, elle maîtrise les danses aux Orishas, la rumba et toutes les manifestations du patrimoine afro-cubain. Autorité reconnue mondialement, elle a formé des danseurs professionnels à Cuba, en Europe et en Amérique, transmettant la technique et la profonde signification spirituelle et culturelle de chaque mouvement.",
 
   // CTA Section
   teachersPageCtaTitle: 'Prêt à Apprendre des Meilleurs?',
   teachersPageCtaSubtitle:
     'Rejoignez notre famille et découvrez pourquoi plus de 15 000 étudiants nous ont fait confiance.',
   teachersPageCtaClasses: 'Voir les Cours de Danse',
+
+  // Commitment Section (entre Director et Team)
+  teachersPageCommitmentTitle: 'Notre Engagement envers Nos Professeurs',
+  teachersPageCommitmentDescription:
+    "Nous croyons que prendre soin de ceux qui enseignent est la base d'une éducation de qualité. Chez Farray's, chaque professeur bénéficie de toutes les garanties professionnelles exigées par la loi, ce qui n'est malheureusement pas la norme dans le secteur.",
+  teachersPageCommitmentPoint1: 'Contrat de travail',
+  teachersPageCommitmentPoint2: 'Sécurité Sociale',
+  teachersPageCommitmentPoint3: 'Assurance accidents',
+  teachersPageCommitmentCta: 'Rejoignez notre équipe',
 
   // =============================================
   // BACHATA SENSUAL PAGE V3 (bachata-barcelona)
@@ -16189,164 +16433,164 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   salsaCubanaHeroStudents: `+15.000 élèves formados`,
   cuerpofitBreadcrumbHome: `Accueil`,
   cuerpofitBreadcrumbClasses: `Cours`,
-  cuerpofitBreadcrumbCategory: `Entrenamiento Bailarines`,
+  cuerpofitBreadcrumbCategory: `Entraînement Danseurs`,
   cuerpofitBreadcrumbCurrent: `Body Conditioning`,
-  cuerpofitPageTitle: `Cours de Body Conditioning en Barcelone | Acondicionamiento Físico Bailarines`,
-  cuerpofitMetaDescription: `Cours de body conditioning y acondicionamiento físico pour bailarines en Barcelone. Mejora fuerza, flexibilidad y resistencia avec el Méthode Farray. Lunes 19h. Plaza España.`,
-  cuerpofitMetaKeywords: `body conditioning barcelona, acondicionamiento físico bailarines, preparación física danza, entrenamiento funcional bailarines, fuerza y flexibilidad danser, fitness bailarines`,
-  cuerpofitHeroTitle: `Body Conditioning en Barcelone`,
-  cuerpofitHeroSubtitle: `Acondicionamiento Físico Especializado pour Bailarines`,
-  cuerpofitHeroDesc: `Desarrolla fuerza funcional, flexibilidad activa y resistencia específica pour la danza. Un corps preparado baila mejor y se lesiona menos.`,
+  cuerpofitPageTitle: `Cours de Body Conditioning à Barcelone | Préparation Physique pour Danseurs`,
+  cuerpofitMetaDescription: `Cours de body conditioning et préparation physique pour danseurs à Barcelone. Améliorez force, flexibilité et endurance avec la Méthode Farray. Lundis 19h. Plaza España.`,
+  cuerpofitMetaKeywords: `body conditioning barcelone, préparation physique danseurs, entraînement fonctionnel danse, force et flexibilité danse, fitness danseurs barcelone`,
+  cuerpofitHeroTitle: `Body Conditioning à Barcelone`,
+  cuerpofitHeroSubtitle: `Préparation Physique Spécialisée pour Danseurs`,
+  cuerpofitHeroDesc: `Développez force fonctionnelle, flexibilité active et endurance spécifique pour la danse. Un corps préparé danse mieux et se blesse moins.`,
   cuerpofitHeroLocation: `Farray's Center · Entre Plaza España et Sants, Barcelone`,
-  cuerpofitHeroStudents: `+15.000 élèves formados`,
+  cuerpofitHeroStudents: `+15 000 élèves formés`,
   cuerpofitCTAGroup: `Options d'inscription`,
   cuerpofitCTA1: `Devenez Membre Maintenant`,
   cuerpofitCTA1Subtext: `Places limitées par cours`,
   cuerpofitCTA2: `Réservez Votre Cours d'Essai`,
-  cuerpofitCTA2Subtext: `Válido par tiempo limitado`,
-  cuerpofitWhatIsTitle: `¿Qué es el Body Conditioning y par qué lo necesitas?`,
-  cuerpofitWhatIsP1: `El body conditioning o acondicionamiento físico es un entrenamiento integral diseñado específicamente pour las demandas de la danza. Combina ejercicios de fuerza funcional, flexibilidad activa, movilidad articular y core stability pour crear un corps más fuerte, ágil y resistente a las lesiones.`,
-  cuerpofitWhatIsP2: `A diferencia del fitness convencional, el body conditioning pour bailarines trabaja los patrones de mouvement específicos de la danza: extensiones, saltos, tours, cambios de dirección y trabajo de sol. Cada ejercicio está pensado pour mejorar tu rendimiento en el danse.`,
-  cuerpofitWhatIsP3: `En Farray's Center aplicamos el Méthode Farray al acondicionamiento físico, integrando técnicas de Pilates, yoga funcional, entrenamiento de fuerza y movilidad articular en un système cohesivo que transforma tu corps.`,
-  cuerpofitWhatIsP4: `Ya seas danserín professionnel que quiere prevenir lesiones, aficionado que quiere mejorar su technique, o alguien que busca un entrenamiento completo avec enfoque de danza... el body conditioning es pour ti.`,
-  cuerpofitWhatIsQuestionTitle: `¿Quieres un corps preparado pour danser sans límites?`,
-  cuerpofitWhatIsQuestionAnswer: `El body conditioning es la base invisible del danse. Un corps fuerte, flexible y resistente te permite ejecutar cualquier mouvement avec sécurité y expresividad.`,
+  cuerpofitCTA2Subtext: `Valable pour une durée limitée`,
+  cuerpofitWhatIsTitle: `Qu'est-ce que le Body Conditioning et pourquoi en avez-vous besoin ?`,
+  cuerpofitWhatIsP1: `Le body conditioning ou préparation physique est un entraînement complet conçu spécifiquement pour les exigences de la danse. Il combine exercices de force fonctionnelle, flexibilité active, mobilité articulaire et stabilité du core pour créer un corps plus fort, plus agile et résistant aux blessures.`,
+  cuerpofitWhatIsP2: `Contrairement au fitness conventionnel, le body conditioning pour danseurs travaille les schémas de mouvement spécifiques de la danse : extensions, sauts, tours, changements de direction et travail au sol. Chaque exercice est pensé pour améliorer vos performances en danse.`,
+  cuerpofitWhatIsP3: `Chez Farray's Center, nous appliquons la Méthode Farray à la préparation physique, intégrant techniques de Pilates, yoga fonctionnel, entraînement de force et mobilité articulaire dans un système cohésif qui transforme votre corps.`,
+  cuerpofitWhatIsP4: `Que vous soyez danseur professionnel souhaitant prévenir les blessures, amateur voulant améliorer votre technique, ou quelqu'un cherchant un entraînement complet orienté danse... le body conditioning est pour vous.`,
+  cuerpofitWhatIsQuestionTitle: `Voulez-vous un corps préparé pour danser sans limites ?`,
+  cuerpofitWhatIsQuestionAnswer: `Le body conditioning est la base invisible de la danse. Un corps fort, flexible et résistant vous permet d'exécuter n'importe quel mouvement avec sécurité et expressivité.`,
   cuerpofitIdentifyTitle: `Vous identifiez-vous à l'une de ces situations ?`,
-  cuerpofitIdentify1: `Sientes que te falta fuerza pour ejecutar ciertos mouvements o mantener posturas`,
-  cuerpofitIdentify2: `Te has lesionado bailando y quieres prevenir que vuelva a ocurrir`,
-  cuerpofitIdentify3: `Notas que tu resistencia no aguanta toda la cours o coreografía`,
-  cuerpofitIdentify4: `Tu flexibilidad te limita en extensiones, splits o mouvements amplios`,
-  cuerpofitIdentify5: `Sientes desequilibrios musculares o asimetrías en tu corps`,
-  cuerpofitIdentify6: `Quieres mejorar tu technique de danse pero sientes que tu corps no responde como debería`,
-  cuerpofitIdentifyTransition: `Si marcaste más de 2 casillas, el body conditioning cambiará tu forma de danser.`,
-  cuerpofitNeedEnrollTitle: `Necesitas apuntarte a Body Conditioning`,
-  cuerpofitIdentifyAgitate1: `Sin una preparación física adecuada, tu progreso como danserín tiene un techo. Tu corps no puede dar lo que no tiene.`,
-  cuerpofitIdentifySolution: `El body conditioning construye las bases físicas que tu danse necesita. Fuerza, flexibilidad, resistencia y contrôle corporal.`,
-  cuerpofitIdentifyClosing: `Un corps bien preparado es un corps que puede danser cualquier cosa.`,
+  cuerpofitIdentify1: `Vous sentez qu'il vous manque de la force pour exécuter certains mouvements ou maintenir des postures`,
+  cuerpofitIdentify2: `Vous vous êtes blessé(e) en dansant et voulez prévenir que cela se reproduise`,
+  cuerpofitIdentify3: `Vous remarquez que votre endurance ne tient pas tout le cours ou la chorégraphie`,
+  cuerpofitIdentify4: `Votre flexibilité vous limite dans les extensions, splits ou mouvements amples`,
+  cuerpofitIdentify5: `Vous ressentez des déséquilibres musculaires ou asymétries dans votre corps`,
+  cuerpofitIdentify6: `Vous voulez améliorer votre technique de danse mais sentez que votre corps ne répond pas comme il devrait`,
+  cuerpofitIdentifyTransition: `Si vous avez coché plus de 2 cases, le body conditioning changera votre façon de danser.`,
+  cuerpofitNeedEnrollTitle: `Vous avez besoin de vous inscrire au Body Conditioning`,
+  cuerpofitIdentifyAgitate1: `Sans une préparation physique adéquate, votre progression comme danseur a un plafond. Votre corps ne peut pas donner ce qu'il n'a pas.`,
+  cuerpofitIdentifySolution: `Le body conditioning construit les bases physiques dont votre danse a besoin. Force, flexibilité, endurance et contrôle corporel.`,
+  cuerpofitIdentifyClosing: `Un corps bien préparé est un corps qui peut danser n'importe quoi.`,
   cuerpofitTransformTitle: `Imaginez votre avant et après`,
-  cuerpofitTransform1Title: `Mayor fuerza funcional`,
-  cuerpofitTransform1Desc: `Ejecutas mouvements que avant te costaban avec contrôle y facilidad.`,
-  cuerpofitTransform2Title: `Flexibilidad activa`,
-  cuerpofitTransform2Desc: `No solo llegas a las posiciones, las mantienes avec fuerza y estabilidad.`,
-  cuerpofitTransform3Title: `Resistencia superior`,
-  cuerpofitTransform3Desc: `Aguantas cours, ensayos y actuaciones sans fatigarte.`,
-  cuerpofitTransform4Title: `Prevención de lesiones`,
-  cuerpofitTransform4Desc: `Un corps equilibrado y fuerte es un corps que no se lesiona.`,
-  cuerpofitTransform5Title: `Mejor technique de danse`,
-  cuerpofitTransform5Desc: `Tu corps responde a lo que tu mente quiere ejecutar.`,
-  cuerpofitTransform6Title: `Confianza corporal`,
-  cuerpofitTransform6Desc: `Sabes que tu corps puede avec cualquier reto.`,
-  cuerpofitTransformCTA: `¿Por qué elegir Farray's Center pour tu Body Conditioning en Barcelone?`,
-  cuerpofitLevelsTitle: `Nivel de la Cours`,
-  cuerpofitLevelsSubtitle: `Abierta pour todos los niveaux`,
+  cuerpofitTransform1Title: `Plus de force fonctionnelle`,
+  cuerpofitTransform1Desc: `Vous exécutez des mouvements qui vous coûtaient avant avec contrôle et facilité.`,
+  cuerpofitTransform2Title: `Flexibilité active`,
+  cuerpofitTransform2Desc: `Vous n'atteignez pas seulement les positions, vous les maintenez avec force et stabilité.`,
+  cuerpofitTransform3Title: `Endurance supérieure`,
+  cuerpofitTransform3Desc: `Vous tenez les cours, répétitions et représentations sans vous fatiguer.`,
+  cuerpofitTransform4Title: `Prévention des blessures`,
+  cuerpofitTransform4Desc: `Un corps équilibré et fort est un corps qui ne se blesse pas.`,
+  cuerpofitTransform5Title: `Meilleure technique de danse`,
+  cuerpofitTransform5Desc: `Votre corps répond à ce que votre esprit veut exécuter.`,
+  cuerpofitTransform6Title: `Confiance corporelle`,
+  cuerpofitTransform6Desc: `Vous savez que votre corps peut relever n'importe quel défi.`,
+  cuerpofitTransformCTA: `Pourquoi choisir Farray's Center pour votre Body Conditioning à Barcelone ?`,
+  cuerpofitLevelsTitle: `Niveau du Cours`,
+  cuerpofitLevelsSubtitle: `Ouvert à tous les niveaux`,
   cuerpofitLevelOpenTitle: `Open Level`,
-  cuerpofitLevelOpenDesc: `Cours adaptable a todos los niveaux. Cada ejercicio tiene variaciones desde principiante hasta avanzado. Cris te guía según tu niveau actual, asegurando que trabajes en tu zona de desarrollo óptimo sans riesgo de lesión.`,
-  cuerpofitTeachersTitle: `Tu Profesora de Body Conditioning`,
-  cuerpofitTeachersSubtitle: `Especialista en acondicionamiento pour bailarines`,
+  cuerpofitLevelOpenDesc: `Cours adaptable à tous les niveaux. Chaque exercice a des variations du débutant à l'avancé. Cris vous guide selon votre niveau actuel, assurant que vous travaillez dans votre zone de développement optimale sans risque de blessure.`,
+  cuerpofitTeachersTitle: `Votre Professeure de Body Conditioning`,
+  cuerpofitTeachersSubtitle: `Spécialiste en préparation physique pour danseurs`,
   cuerpofitTeacher1Specialty: `Body Conditioning & Préparation Physique`,
-  cuerpofitTeacher1Bio: `Cris Ag es especialista en acondicionamiento físico pour bailarines, formada en el Méthode Farray. Su enfoque combina conocimiento anatómico avec expérience pratique en danza, creando programas de entrenamiento que mejoran el rendimiento y previenen lesiones. Sus cours integran fuerza funcional, flexibilidad activa y movilidad articular específica pour bailarines.`,
-  cuerpofitTeachersClosing: `En Farray's Center, el acondicionamiento físico no es un complemento: es la base de tu evolución como danserín.`,
-  cuerpofitScheduleTitle: `Horario de Body Conditioning`,
+  cuerpofitTeacher1Bio: `Cris Ag est spécialiste en préparation physique pour danseurs, formée à la Méthode Farray. Son approche combine connaissance anatomique et expérience pratique en danse, créant des programmes d'entraînement qui améliorent les performances et préviennent les blessures. Ses cours intègrent force fonctionnelle, flexibilité active et mobilité articulaire spécifique pour danseurs.`,
+  cuerpofitTeachersClosing: `Chez Farray's Center, la préparation physique n'est pas un complément : c'est la base de votre évolution comme danseur.`,
+  cuerpofitScheduleTitle: `Horaires de Body Conditioning`,
   cuerpofitScheduleSubtitle: `1 cours hebdomadaire pour transformer votre corps`,
-  cuerpofitScheduleNote: `* Cours de 60 minutos`,
-  cuerpofitWhyChooseTitle: `¿Por qué elegirnos pour tu Body Conditioning?`,
+  cuerpofitScheduleNote: `* Cours de 60 minutes`,
+  cuerpofitWhyChooseTitle: `Pourquoi nous choisir pour votre Body Conditioning ?`,
   cuerpofitWhyChooseSubtitle: `7 raisons qui nous distinguent`,
-  cuerpofitWhyChoose1Title: `Méthode Farray Aplicado`,
-  cuerpofitWhyChoose1Desc: `No es fitness genérico. Es acondicionamiento diseñado específicamente pour las demandas de la danza, avec el méthode exclusivo de Yunaisy Farray.`,
-  cuerpofitWhyChoose2Title: `Enfoque en Prevención de Lesiones`,
-  cuerpofitWhyChoose2Desc: `Cada ejercicio tiene como objectif fortalecer las áreas más vulnerables del danserín: hanches, rodillas, tobillos y espalda.`,
-  cuerpofitWhyChoose3Title: `Grupos Reducidos`,
-  cuerpofitWhyChoose3Desc: `Máximo 15 personas par cours. Cris puede corregir tu technique y adaptar ejercicios a tus necesidades específicas.`,
-  cuerpofitWhyChoose4Title: `Profesora Especializada`,
-  cuerpofitWhyChoose4Desc: `Cris Ag no solo es entrenadora, es danseuse. Entiende las demandas reales de la danza porque las vive.`,
-  cuerpofitWhyChoose5Title: `Entrenamiento Integral`,
-  cuerpofitWhyChoose5Desc: `Fuerza, flexibilidad, movilidad, core, resistencia: todos los componentes que necesitas en una sola cours.`,
-  cuerpofitWhyChoose6Title: `Sin Permanencia`,
-  cuerpofitWhyChoose6Desc: `Bonos mensuales sans compromiso de engagement. Libertad total pour entrenar según tus necesidades.`,
+  cuerpofitWhyChoose1Title: `Méthode Farray Appliquée`,
+  cuerpofitWhyChoose1Desc: `Ce n'est pas du fitness générique. C'est un conditionnement conçu spécifiquement pour les exigences de la danse, avec la méthode exclusive de Yunaisy Farray.`,
+  cuerpofitWhyChoose2Title: `Focus sur la Prévention des Blessures`,
+  cuerpofitWhyChoose2Desc: `Chaque exercice vise à renforcer les zones les plus vulnérables du danseur : hanches, genoux, chevilles et dos.`,
+  cuerpofitWhyChoose3Title: `Groupes Réduits`,
+  cuerpofitWhyChoose3Desc: `Maximum 15 personnes par cours. Cris peut corriger votre technique et adapter les exercices à vos besoins spécifiques.`,
+  cuerpofitWhyChoose4Title: `Professeure Spécialisée`,
+  cuerpofitWhyChoose4Desc: `Cris Ag n'est pas seulement entraîneuse, elle est danseuse. Elle comprend les exigences réelles de la danse car elle les vit.`,
+  cuerpofitWhyChoose5Title: `Entraînement Intégral`,
+  cuerpofitWhyChoose5Desc: `Force, flexibilité, mobilité, core, endurance : tous les composants dont vous avez besoin en un seul cours.`,
+  cuerpofitWhyChoose6Title: `Sans Engagement`,
+  cuerpofitWhyChoose6Desc: `Forfaits mensuels sans engagement. Liberté totale pour vous entraîner selon vos besoins.`,
   cuerpofitWhyChoose7Title: `Académie CID-UNESCO`,
-  cuerpofitWhyChoose7Desc: `Formación en una académie afiliada al Consejo Internacional de Danza de la UNESCO. Garantía de calidad international.`,
+  cuerpofitWhyChoose7Desc: `Formation dans une académie affiliée au Conseil International de la Danse de l'UNESCO. Garantie de qualité internationale.`,
   cuerpofitLogosTitle: `Vous avez pu nous voir à`,
   cuerpofitLogosIntlFestivalsText: `Et dans des festivals internationaux du monde entier`,
-  cuerpofitWhyTodayFullTitle: `¿Por qué empezar aujourd'hui y no "cuando tenga más niveau"?`,
-  cuerpofitWhyToday1: `El body conditioning no es pour bailarines avanzados: es lo que te hace avanzar. Los profesionales lo hacen desde el principio, no cuando ya son buenos.`,
-  cuerpofitWhyToday2: `Cada semaine sans preparación física adecuada es una semaine de mayor riesgo de lesión y menor progreso técnico. Tu corps acumula compensaciones que après son difíciles de corregir.`,
-  cuerpofitWhyToday3: `Una sola cours puede cambiar tu percepción de lo que tu corps puede hacer. Muchos alumnos descubren fuerzas y capacidades que no sabían que tenían.`,
-  cuerpofitWhyTodayClosing1: `Tu corps es tu instrumento. Cuídalo.`,
-  cuerpofitWhyTodayClosing2: `El mejor momento pour empezar era hace meses. El segundo mejor momento es aujourd'hui. ¿Vienes?`,
-  cuerpofitCulturalHistoryTitle: `La Ciencia del Body Conditioning pour Bailarines`,
-  cuerpofitCulturalShort: `El body conditioning moderno pour bailarines integra conocimientos de biomecánica, fisiología del ejercicio y pedagogía de la danza pour crear programas de entrenamiento específicos.`,
+  cuerpofitWhyTodayFullTitle: `Pourquoi commencer aujourd'hui et pas "quand j'aurai plus de niveau" ?`,
+  cuerpofitWhyToday1: `Le body conditioning n'est pas pour les danseurs avancés : c'est ce qui vous fait progresser. Les professionnels le font dès le début, pas quand ils sont déjà bons.`,
+  cuerpofitWhyToday2: `Chaque semaine sans préparation physique adéquate est une semaine de plus grand risque de blessure et de moindre progression technique. Votre corps accumule des compensations qui sont ensuite difficiles à corriger.`,
+  cuerpofitWhyToday3: `Un seul cours peut changer votre perception de ce que votre corps peut faire. Beaucoup d'élèves découvrent des forces et capacités qu'ils ne savaient pas avoir.`,
+  cuerpofitWhyTodayClosing1: `Votre corps est votre instrument. Prenez-en soin.`,
+  cuerpofitWhyTodayClosing2: `Le meilleur moment pour commencer était il y a des mois. Le deuxième meilleur moment est aujourd'hui. Vous venez ?`,
+  cuerpofitCulturalHistoryTitle: `La Science du Body Conditioning pour Danseurs`,
+  cuerpofitCulturalShort: `Le body conditioning moderne pour danseurs intègre des connaissances en biomécanique, physiologie de l'exercice et pédagogie de la danse pour créer des programmes d'entraînement spécifiques.`,
   cuerpofitCulturalFull: `### Historia del Acondicionamiento Físico en Danza\n\n**El entrenamiento físico específico pour bailarines tiene sus raíces en la tradición del ballet clásico.** Maestros como Agrippina Vaganova (1879-1951) ya incorporaban ejercicios de fortalecimiento en sus metodologías, aunque de forma menos sistemática que aujourd'hui.\n\n**"Pilates (Joseph Pilates, 1920s): desarrollado originalmente pour rehabilitar bailarines lesionados del New York City Ballet."**\n\n### La Revolución del Pilates\n\n**Joseph Pilates desarrolló su méthode "Contrology" trabajando avec bailarines del New York City Ballet en los années 1940-60.** George Balanchine y Martha Graham fueron pioneros en incorporar Pilates a la formation de sus compañías, estableciendo la base de lo que aujourd'hui conocemos como "cross-training" pour bailarines.\n\n**"Gyrotonic (Julio Horvath, 1980s): système de entrenamiento tridimensional creado par un ex-danserín pour bailarines."**\n\n### El Entrenamiento Funcional Moderne\n\n**Eric Franklin (Méthode Franklin, 1994) revolucionó el campo al integrar imaginería mental avec entrenamiento físico.** Sus técnicas de visualización dinámica mejoran la propiocepción y el contrôle neuromuscular, elementos esenciales pour el danserín.\n\n**"Eric Franklin (1994): introdujo la neuroplasticidad aplicada al entrenamiento de danza."**\n\n### Beneficios Respaldados par la Ciencia\n\nEstudios de medicina deportiva aplicada a danza demuestran que:\n- El entrenamiento de fuerza reduce lesiones en bailarines en un 50-70%\n- La flexibilidad activa es 40% más funcional que la flexibilidad pasiva pour el rendimiento\n- El entrenamiento de core mejora el équilibre y contrôle de tours un 35%\n- La pliometría específica aumenta la altura de salto un 15-25%\n\n### El Méthode Farray en Body Conditioning\n\nEl Méthode Farray integra elementos de Pilates, yoga funcional, entrenamiento de fuerza y movilidad articular en un système específicamente diseñado pour las demandas de la danza contemporánea y urbana. La clave es el trabajo de patrones de mouvement funcionales, no músculos aislados.`,
-  cuerpofitCitableDefinicion: `Body conditioning pour bailarines: entrenamiento físico integral que desarrolla fuerza funcional, flexibilidad activa, movilidad articular y resistencia específica pour las demandas de la danza.`,
-  cuerpofitCitableOrigen: `Joseph Pilates (1940s): pionero del acondicionamiento físico pour bailarines, trabajó avec New York City Ballet y Martha Graham Company.`,
-  cuerpofitCitableBeneficios: `Estudios demuestran: -50-70% lesiones, +35% contrôle de tours, +15-25% altura de salto avec entrenamiento específico pour danza.`,
-  cuerpofitCitableMetodoFarray: `Méthode Farray: système de body conditioning que integra Pilates, yoga funcional, fuerza y movilidad articular pour bailarines.`,
-  cuerpofitCitableStatistics: `Barcelone acondicionamiento físico bailarines: Farray's Center ofrece cours especializadas avec méthode exclusivo, lunes 19h.`,
-  cuerpofitCitableFact1: `Cours de body conditioning 60 min quema 350 kcal (intensidad moderada-alta avec componente de fuerza).`,
-  cuerpofitCitableFact2: `Bailarines avec entrenamiento de fuerza regular tienen 50-70% menos lesiones que los que no lo hacen.`,
-  cuerpofitCitableFact3: `Farray's Barcelone: cours de body conditioning avec Méthode Farray, 5/5 Google Reviews.`,
-  cuerpofitFaqTitle: `Preguntas Frecuentes sobre Body Conditioning`,
-  cuerpofitFaqQ1: `¿Necesito ser danserín pour hacer body conditioning?`,
-  cuerpofitFaqA1: `No es imprescindible, aunque la cours está diseñada pensando en las demandas de la danza. Si practicas cualquier tipo de danse (urbano, latino, contemporáneo, etc.), te beneficiará enormemente. También es ideal pour deportistas que quieren mejorar flexibilidad y contrôle corporal, o cualquier persona que busque un entrenamiento funcional completo.`,
-  cuerpofitFaqQ2: `¿Cuál es la diferencia entre body conditioning y Pilates?`,
-  cuerpofitFaqA2: `El body conditioning es más amplio e incorpora elementos de Pilates, pero también yoga funcional, entrenamiento de fuerza avec peso corporal, movilidad articular y ejercicios específicos de danza. Pilates se centra principalmente en core y postura; body conditioning trabaja todo el corps avec enfoque en rendimiento de mouvement.`,
-  cuerpofitFaqQ3: `¿Qué diferencia hay entre body conditioning y las cours de stretching?`,
-  cuerpofitFaqA3: `El stretching se enfoca en aumentar flexibilidad pasiva y activa. El body conditioning es más integral: trabaja fuerza, resistencia, movilidad y flexibilidad. Son complementarios: muchos alumnos hacen ambas cours. Stretching pour ganar rango de mouvement, body conditioning pour fortalecerlo.`,
-  cuerpofitFaqQ4: `¿Es una cours intensa? ¿Acabaré agotado/a?`,
-  cuerpofitFaqA4: `La intensidad es moderada-alta pero controlada. No es HIIT ni CrossFit. Es un trabajo consciente de fuerza y contrôle. Acabarás cansado/a pero no destrozado/a. La cours está diseñada pour que puedas tomar otras cours de danse après sans problema.`,
-  cuerpofitFaqQ5: `¿Qué debo llevar a cours?`,
-  cuerpofitFaqA5: `Ropa deportiva cómoda que permita mouvement amplio (leggings, camiseta ajustada o top). Descalzos o avec calcetines (no zapatillas). Toalla pequeña y botella de agua. Nosotros proporcionamos las esterillas.`,
-  cuerpofitFaqQ6: `¿Sirve pour prevenir lesiones de danse?`,
-  cuerpofitFaqA6: `Sí, es uno de los principales objectifs. Estudios demuestran que bailarines avec entrenamiento de fuerza regular tienen un 50-70% menos de lesiones. El body conditioning fortalece las áreas más vulnerables (hanches, rodillas, tobillos, espalda) y corrige desequilibrios musculares.`,
-  cuerpofitFaqQ7: `¿Cuánto cuesta la cours de essai?`,
-  cuerpofitFaqA7: `La cours de essai cuesta 10€ y es sans compromiso. Puedes probar cualquier lunes a las 19h. Si te gusta, tienes bonos mensuales desde 40€. Consulta todos los prix en recepción o en nuestra web.`,
-  cuerpofitFaqQ8: `¿Hay contrato o engagement?`,
-  cuerpofitFaqA8: `No. Bonos mensuales sans engagement. Puedes entrar y salir cuando quieras. Valoramos tu libertad y queremos que vengas porque quieres, no porque estás atado/a a un contrato.`,
-  cuerpofitFaqQ9: `¿Puedo combinar body conditioning avec otras cours?`,
-  cuerpofitFaqA9: `Sí, es la combinación ideal. Recomendamos: body conditioning (base física) + tus cours de danse habituales + stretching opcional. Muchos alumnos combinan lunes body conditioning + martes/jueves danza. Los bonos permiten combinaciones flexibles.`,
-  cuerpofitFaqQ10: `¿En cuánto tiempo veré résultats?`,
-  cuerpofitFaqA10: `2-4 semanas: notarás mejor contrôle corporal y menos fatiga en cours de danse. 1-2 meses: mejora visible en fuerza y resistencia. 3-6 meses: transformation significativa de rendimiento. La constancia es clave: 1 cours hebdomadaire mínimo.`,
-  cuerpofitFaqQ11: `¿Tengo que estar en buena forma pour empezar?`,
-  cuerpofitFaqA11: `No. La cours es adaptable a todos los niveaux. Cada ejercicio tiene variaciones desde principiante hasta avanzado. Cris te guía según tu niveau actual. Muchos alumnos empezaron sans hacer nada de ejercicio y maintenant están en su mejor forma.`,
-  cuerpofitFaqQ12: `¿Es bueno pour dolor de espalda?`,
-  cuerpofitFaqA12: `Sí, el fortalecimiento de core y glúteos reduce significativamente el dolor de espalda baja. El 70% de alumnos avec dolor crónico lumbar reportan mejora en las primeras 4-6 semanas. Si tienes una lesión activa, consulta avec tu médico primero.`,
-  cuerpofitFaqQ13: `¿Quién imparte las cours?`,
-  cuerpofitFaqA13: `Cris Ag, especialista en acondicionamiento físico pour bailarines formada en el Méthode Farray. También imparte cours de stretching y bum bum glúteos. Su enfoque combina conocimiento anatómico avec expérience pratique en danza.`,
-  cuerpofitFaqQ14: `¿Qué diferencia hay avec ir al gimnasio?`,
-  cuerpofitFaqA14: `En el gimnasio trabajas músculos aislados avec máquinas. En body conditioning trabajas patrones de mouvement funcionales avec tu propio corps. Los ejercicios están diseñados pour transferirse directamente al danse: extensiones, tours, saltos, cambios de dirección.`,
-  cuerpofitFaqQ15: `¿Dónde está la académie y comment puedo contactar?`,
-  cuerpofitFaqA15: `Farray's Center está en Calle Entença 100, Barcelone (entre Plaza España y Sants). Metro: L1/L3 Espanya, L5 Sants Estació. Cours de body conditioning: lunes 19:00-20:00. Contacto: WhatsApp o email a través de nuestra web.`,
-  cuerpofitNearbyTitle: `Cours de Body Conditioning cerca de ti en Barcelone`,
-  cuerpofitNearbyDesc: `Somos la académie de referencia pour cours de body conditioning y acondicionamiento físico pour bailarines en Barcelone. Farray's Center está perfectamente comunicado.`,
-  cuerpofitNearbySearchText: `¿Buscas "body conditioning barcelona" o "preparación física bailarines"? Mira lo fácil que es llegar:`,
-  cuerpofitNearbyMetro: `Metro: L1/L3 Espanya (5 min), L5 Sants Estació (8 min). Bus: múltiples líneas. Parking: SABA Arenas.`,
-  cuerpofitPrepareTitle: `Prepárate pour tu Primera Cours de Body Conditioning`,
+  cuerpofitCitableDefinicion: `Body conditioning pour danseurs : entraînement physique intégral qui développe force fonctionnelle, flexibilité active, mobilité articulaire et endurance spécifique pour les exigences de la danse.`,
+  cuerpofitCitableOrigen: `Joseph Pilates (1940s) : pionnier de la préparation physique pour danseurs, a travaillé avec le New York City Ballet et la Martha Graham Company.`,
+  cuerpofitCitableBeneficios: `Des études démontrent : -50-70% de blessures, +35% de contrôle des tours, +15-25% de hauteur de saut avec un entraînement spécifique pour la danse.`,
+  cuerpofitCitableMetodoFarray: `Méthode Farray : système de body conditioning intégrant Pilates, yoga fonctionnel, force et mobilité articulaire pour danseurs.`,
+  cuerpofitCitableStatistics: `Barcelone préparation physique danseurs : Farray's Center propose des cours spécialisés avec méthode exclusive, lundis 19h.`,
+  cuerpofitCitableFact1: `Cours de body conditioning 60 min brûle 350 kcal (intensité modérée-haute avec composante de force).`,
+  cuerpofitCitableFact2: `Les danseurs avec un entraînement de force régulier ont 50-70% moins de blessures que ceux qui ne le font pas.`,
+  cuerpofitCitableFact3: `Farray's Barcelone : cours de body conditioning avec Méthode Farray, 5/5 Google Reviews.`,
+  cuerpofitFaqTitle: `Questions Fréquentes sur le Body Conditioning`,
+  cuerpofitFaqQ1: `Dois-je être danseur pour faire du body conditioning ?`,
+  cuerpofitFaqA1: `Ce n'est pas indispensable, bien que le cours soit conçu en pensant aux exigences de la danse. Si vous pratiquez n'importe quel type de danse (urbaine, latine, contemporaine, etc.), vous en bénéficierez énormément. C'est aussi idéal pour les sportifs qui veulent améliorer flexibilité et contrôle corporel, ou toute personne cherchant un entraînement fonctionnel complet.`,
+  cuerpofitFaqQ2: `Quelle est la différence entre body conditioning et Pilates ?`,
+  cuerpofitFaqA2: `Le body conditioning est plus large et incorpore des éléments de Pilates, mais aussi yoga fonctionnel, entraînement de force au poids du corps, mobilité articulaire et exercices spécifiques de danse. Le Pilates se concentre principalement sur le core et la posture ; le body conditioning travaille tout le corps avec un focus sur la performance du mouvement.`,
+  cuerpofitFaqQ3: `Quelle différence y a-t-il entre body conditioning et les cours de stretching ?`,
+  cuerpofitFaqA3: `Le stretching se concentre sur l'augmentation de la flexibilité passive et active. Le body conditioning est plus intégral : il travaille force, endurance, mobilité et flexibilité. Ils sont complémentaires : beaucoup d'élèves font les deux cours. Stretching pour gagner en amplitude de mouvement, body conditioning pour le renforcer.`,
+  cuerpofitFaqQ4: `Est-ce un cours intense ? Serai-je épuisé(e) ?`,
+  cuerpofitFaqA4: `L'intensité est modérée-haute mais contrôlée. Ce n'est pas du HIIT ni du CrossFit. C'est un travail conscient de force et de contrôle. Vous finirez fatigué(e) mais pas détruit(e). Le cours est conçu pour que vous puissiez suivre d'autres cours de danse après sans problème.`,
+  cuerpofitFaqQ5: `Que dois-je apporter au cours ?`,
+  cuerpofitFaqA5: `Vêtements de sport confortables permettant une grande amplitude de mouvement (leggings, t-shirt ajusté ou top). Pieds nus ou avec chaussettes (pas de baskets). Petite serviette et bouteille d'eau. Nous fournissons les tapis.`,
+  cuerpofitFaqQ6: `Cela sert-il à prévenir les blessures de danse ?`,
+  cuerpofitFaqA6: `Oui, c'est l'un des principaux objectifs. Des études démontrent que les danseurs avec un entraînement de force régulier ont 50-70% moins de blessures. Le body conditioning renforce les zones les plus vulnérables (hanches, genoux, chevilles, dos) et corrige les déséquilibres musculaires.`,
+  cuerpofitFaqQ7: `Combien coûte le cours d'essai ?`,
+  cuerpofitFaqA7: `Le cours d'essai coûte 10€ et est sans engagement. Vous pouvez essayer n'importe quel lundi à 19h. Si ça vous plaît, il y a des forfaits mensuels à partir de 40€. Consultez tous les prix à la réception ou sur notre site.`,
+  cuerpofitFaqQ8: `Y a-t-il un contrat ou un engagement ?`,
+  cuerpofitFaqA8: `Non. Forfaits mensuels sans engagement. Vous pouvez entrer et sortir quand vous voulez. Nous valorisons votre liberté et voulons que vous veniez parce que vous le voulez, pas parce que vous êtes lié(e) à un contrat.`,
+  cuerpofitFaqQ9: `Puis-je combiner le body conditioning avec d'autres cours ?`,
+  cuerpofitFaqA9: `Oui, c'est la combinaison idéale. Nous recommandons : body conditioning (base physique) + vos cours de danse habituels + stretching optionnel. Beaucoup d'élèves combinent lundi body conditioning + mardi/jeudi danse. Les forfaits permettent des combinaisons flexibles.`,
+  cuerpofitFaqQ10: `En combien de temps verrai-je des résultats ?`,
+  cuerpofitFaqA10: `2-4 semaines : vous remarquerez un meilleur contrôle corporel et moins de fatigue en cours de danse. 1-2 mois : amélioration visible en force et endurance. 3-6 mois : transformation significative des performances. La constance est clé : 1 cours hebdomadaire minimum.`,
+  cuerpofitFaqQ11: `Dois-je être en bonne forme pour commencer ?`,
+  cuerpofitFaqA11: `Non. Le cours est adaptable à tous les niveaux. Chaque exercice a des variations du débutant à l'avancé. Cris vous guide selon votre niveau actuel. Beaucoup d'élèves ont commencé sans faire aucun exercice et sont maintenant en meilleure forme que jamais.`,
+  cuerpofitFaqQ12: `Est-ce bon pour le mal de dos ?`,
+  cuerpofitFaqA12: `Oui, le renforcement du core et des fessiers réduit significativement les douleurs lombaires. 70% des élèves avec douleur chronique lombaire rapportent une amélioration dans les 4-6 premières semaines. Si vous avez une blessure active, consultez d'abord votre médecin.`,
+  cuerpofitFaqQ13: `Qui donne les cours ?`,
+  cuerpofitFaqA13: `Cris Ag, spécialiste en préparation physique pour danseurs formée à la Méthode Farray. Elle donne aussi des cours de stretching et de renforcement fessiers. Son approche combine connaissance anatomique et expérience pratique en danse.`,
+  cuerpofitFaqQ14: `Quelle différence avec aller à la salle de sport ?`,
+  cuerpofitFaqA14: `À la salle de sport vous travaillez des muscles isolés avec des machines. En body conditioning vous travaillez des schémas de mouvement fonctionnels avec votre propre corps. Les exercices sont conçus pour se transférer directement à la danse : extensions, tours, sauts, changements de direction.`,
+  cuerpofitFaqQ15: `Où est l'académie et comment puis-je vous contacter ?`,
+  cuerpofitFaqA15: `Farray's Center est au Calle Entença 100, Barcelone (entre Plaza España et Sants). Métro : L1/L3 Espanya, L5 Sants Estació. Cours de body conditioning : lundis 19h00-20h00. Contact : WhatsApp ou email via notre site.`,
+  cuerpofitNearbyTitle: `Cours de Body Conditioning près de chez vous à Barcelone`,
+  cuerpofitNearbyDesc: `Nous sommes l'académie de référence pour les cours de body conditioning et préparation physique pour danseurs à Barcelone. Farray's Center est parfaitement desservi.`,
+  cuerpofitNearbySearchText: `Vous cherchez "body conditioning barcelone" ou "préparation physique danseurs" ? Voyez comme c'est facile d'y arriver :`,
+  cuerpofitNearbyMetro: `Métro : L1/L3 Espanya (5 min), L5 Sants Estació (8 min). Bus : multiples lignes. Parking : SABA Arenas.`,
+  cuerpofitPrepareTitle: `Préparez-vous pour Votre Premier Cours de Body Conditioning`,
   cuerpofitPrepareSubtitle: `Tout ce que vous devez savoir avant de venir`,
   cuerpofitPrepareWhatToBring: `Quoi apporter`,
   cuerpofitPrepareBefore: `Avant de venir`,
   cuerpofitPrepareAvoid: `Quoi éviter`,
-  cuerpofitPrepareItem1: `Ropa deportiva cómoda (leggings, camiseta ajustada)`,
-  cuerpofitPrepareItem2: `Calcetines o pies descalzos (no zapatillas)`,
-  cuerpofitPrepareItem3: `Botella de agua`,
-  cuerpofitPrepareItem4: `Toalla pequeña`,
-  cuerpofitPrepareItem5: `Ganas de mejorar tu corps`,
-  cuerpofitPrepareBeforeItem1: `Come algo ligero 1-2 horas avant`,
-  cuerpofitPrepareBeforeItem2: `Hidrátate bien durante el día`,
-  cuerpofitPrepareBeforeItem3: `Llega 10 min avant si es tu première vez`,
+  cuerpofitPrepareItem1: `Vêtements de sport confortables (leggings, t-shirt ajusté)`,
+  cuerpofitPrepareItem2: `Chaussettes ou pieds nus (pas de baskets)`,
+  cuerpofitPrepareItem3: `Bouteille d'eau`,
+  cuerpofitPrepareItem4: `Petite serviette`,
+  cuerpofitPrepareItem5: `Envie d'améliorer votre corps`,
+  cuerpofitPrepareBeforeItem1: `Mangez quelque chose de léger 1-2 heures avant`,
+  cuerpofitPrepareBeforeItem2: `Hydratez-vous bien pendant la journée`,
+  cuerpofitPrepareBeforeItem3: `Arrivez 10 min avant si c'est votre première fois`,
   cuerpofitPrepareAvoidItem1: `Manger lourd juste avant le cours`,
-  cuerpofitPrepareAvoidItem2: `Venir sans haber dormido bien`,
-  cuerpofitPrepareAvoidItem3: `Forzar más allá de tu límite actual`,
+  cuerpofitPrepareAvoidItem2: `Venir sans avoir bien dormi`,
+  cuerpofitPrepareAvoidItem3: `Forcer au-delà de votre limite actuelle`,
   cuerpofitPrepareTeacherTip: `Conseil de Cris`,
-  cuerpofitPrepareTeacherQuote: `El body conditioning no es sobre ser el más fuerte o flexible. Es sobre ser mejor aujourd'hui que ayer. Ven sans expectativas y sal sabiendo que puedes más de lo que crees.`,
-  cuerpofitFinalCTATitle: `¿Listo/a pour transformar tu corps de danserín?`,
-  cuerpofitFinalCTASubtitle: `Tu première cours de Body Conditioning te espera`,
-  cuerpofitFinalCTADesc: `Únete a los bailarines que ya han descubierto que un corps bien preparado baila mejor, se lesiona menos y disfruta más. La base de tu evolución empieza aquí.`,
-  cuerpofitFinalCTAFunny: `Tu yo del futuro te agradecerá que hayas empezado aujourd'hui. O puedes seguir avec la excusa de "la semaine que viene"... tú decides.`,
-  cuerpofitCourseSchemaName: `Cours de Body Conditioning en Barcelone - Farray's Center`,
-  cuerpofitCourseSchemaDesc: `Curso de acondicionamiento físico especializado pour bailarines. Desarrolla fuerza funcional, flexibilidad activa y resistencia específica pour la danza. Méthode Farray exclusivo.`,
-  cuerpofitEventName: `Cours de Body Conditioning en Barcelone - Farray's Center`,
-  cuerpofitEventDesc: `Cours semanales de Body Conditioning avec Cris Ag. Tous les niveaux bienvenidos. Lunes 19:00-20:00.`,
-  cuerpofitVideoTitle: `Cours de Body Conditioning en Barcelone`,
-  cuerpofitVideoDesc: `Descubre nuestras cours de body conditioning y acondicionamiento físico pour bailarines en Farray's Center. Méthode Farray pour fuerza y flexibilidad.`,
+  cuerpofitPrepareTeacherQuote: `Le body conditioning ce n'est pas être le plus fort ou le plus flexible. C'est être meilleur aujourd'hui qu'hier. Venez sans attentes et repartez en sachant que vous pouvez plus que vous ne le croyez.`,
+  cuerpofitFinalCTATitle: `Prêt(e) à transformer votre corps de danseur ?`,
+  cuerpofitFinalCTASubtitle: `Votre premier cours de Body Conditioning vous attend`,
+  cuerpofitFinalCTADesc: `Rejoignez les danseurs qui ont déjà découvert qu'un corps bien préparé danse mieux, se blesse moins et profite davantage. La base de votre évolution commence ici.`,
+  cuerpofitFinalCTAFunny: `Votre moi du futur vous remerciera d'avoir commencé aujourd'hui. Ou vous pouvez continuer avec l'excuse "la semaine prochaine"... vous décidez.`,
+  cuerpofitCourseSchemaName: `Cours de Body Conditioning à Barcelone - Farray's Center`,
+  cuerpofitCourseSchemaDesc: `Cours de préparation physique spécialisé pour danseurs. Développez force fonctionnelle, flexibilité active et endurance spécifique pour la danse. Méthode Farray exclusive.`,
+  cuerpofitEventName: `Cours de Body Conditioning à Barcelone - Farray's Center`,
+  cuerpofitEventDesc: `Cours hebdomadaires de Body Conditioning avec Cris Ag. Tous niveaux bienvenus. Lundis 19h00-20h00.`,
+  cuerpofitVideoTitle: `Cours de Body Conditioning à Barcelone`,
+  cuerpofitVideoDesc: `Découvrez nos cours de body conditioning et préparation physique pour danseurs chez Farray's Center. Méthode Farray pour force et flexibilité.`,
   navBaileMananas: `Cours de Mañanas`,
   bailemanananasBreadcrumbHome: `Accueil`,
   bailemanananasBreadcrumbClasses: `Cours`,
@@ -16421,9 +16665,11 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   bailemanananasTeacher1Bio: `Alejandro Miñoso es danserín professionnel y coreógrafo formado en la Escuela Nacional de Arte de Cuba. Especialista en danza contemporánea, ballet clásico y modern jazz, sus cours de mañana combinan technique, expression y consciencia corporal pour empezar el día avec energía y claridad. También imparte Body Conditioning y Stretching.`,
   bailemanananasTeacher2Specialty: `Sexy Style, Sexy Reggaeton y Salsa Lady Style`,
   bailemanananasTeacher2Bio: `Yasmina Fernández es professeure certificada en el Méthode Farray, especializada en estilos sensuales y latinos. Sus cours de mañana te ayudan a conectar avec tu féminité, soltar tensiones y activar tu energía desde première hora. Referente en Sexy Style y Reggaeton en Barcelone.`,
-  bailemanananasTeachersClosing: `Ambos professeurs están formados en la metodología exclusiva de Yunaisy Farray y entienden las necesidades específicas de quienes eligen danser par las mañanas.`,
+  bailemanananasTeacher3Specialty: `Dancehall Female et Twerk`,
+  bailemanananasTeacher3Bio: `Isabel López est une professeure spécialisée en Dancehall et Twerk, avec une énergie contagieuse qui transforme chaque cours du matin en fête. Ses séances combinent technique, attitude et empowerment, vous aidant à libérer les tensions et à gagner en confiance en bougeant sur les rythmes les plus actuels des Caraïbes et de la scène urbaine.`,
+  bailemanananasTeachersClosing: `Nos trois professeurs sont formés à la méthodologie exclusive de Yunaisy Farray et comprennent les besoins spécifiques de ceux qui choisissent de danser le matin.`,
   bailemanananasScheduleTitle: `Horarios de Cours de Danse par las Mañanas`,
-  bailemanananasScheduleSubtitle: `13 cours semanales de 10:00 a 13:00 (Lunes, Miércoles, Jueves)`,
+  bailemanananasScheduleSubtitle: `15 cours semanales de 10:00 a 13:00 (Lunes, Miércoles, Jueves)`,
   bailemanananasLevelsTitle: `Niveles de las Cours de Mañanas`,
   bailemanananasLevelBeginnerTitle: `Débutants`,
   bailemanananasLevelBeginnerDesc: `Para quienes empiezan desde cero. Sin expérience previa necesaria. Aprenderás los fundamentos y ganarás confiance en tu corps.`,
@@ -16514,7 +16760,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blog_authorBioMar: `Copywriter professionnel y eterna enamorada del danse. Alumna de Farray's International Dance Center, donde ha descubierto que la salsa es mucho más que un danse: es un lenguaje universal.`,
   blog_credential_alumna: `Alumna de Farray's`,
   bachataV3HeroDesc: `Découvrez la bachata sensuelle avec Mathias Font et Eugenia Trujillo, champions du monde. Apprenez les ondulations, la connexion en couple et la musicalité dans une académie accréditée par CID-UNESCO.`,
-  bachataV3HeroLocation: `Calle Entença 100, Barcelone`,
+  bachataV3HeroLocation: `Rue Entença 100, Barcelone - Entre Plaza España et Sants`,
   bachataV3HeroStudents: `+15.000 estudiantes formados`,
   bachataV3CTA1: `Devenez Membre Maintenant`,
   bachataV3CTA1Subtext: `Places limitées este mois`,
@@ -16746,6 +16992,10 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   fullBodyCardioPrepareAvoidItem3: `Vous comparer aux autres (chacun va à son rythme)`,
   fullBodyCardioPrepareTeacherTip: `Conseil de Cris`,
   fullBodyCardioPrepareTeacherQuote: `Cuerpo-Fit no es sobre ser perfecta. Es sobre moverse, sudar y sonreír. No me importa si haces la versión fácil o difícil de cada ejercicio. Me importa que vengas, que lo intentes y que te vayas sintiéndote mejor de lo que llegaste.`,
+  fullBodyCardioFinalCTATitle: `Prêt(e) à transformer votre corps tout en vous amusant ?`,
+  fullBodyCardioFinalCTASubtitle: `Votre premier cours de Cuerpo-Fit vous attend`,
+  fullBodyCardioFinalCTADesc: `Peu importe votre niveau, votre âge ou depuis combien de temps vous n'avez pas fait d'exercice. Cuerpo-Fit s'adapte à vous, pas l'inverse. Chaque exercice propose 3 niveaux d'intensité pour que vous alliez à votre rythme.`,
+  fullBodyCardioFinalCTAFunny: `Les places partent plus vite que les calories que vous brûlerez lors de votre premier cours.`,
   testClassPageTitle: `Cours Expérimental V2 - Test Visuel`,
   testClassMetaDescription: `Page d'essai pour le nouveau modèle V2 avec hero visuel amélioré.`,
   testClassCategory: `Test`,
@@ -17002,6 +17252,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   facilitiesSize: `d'installations`,
   dhLandingFinalCTATitle: `Réservez votre place maintenant et ne laissez personne vous le raconter... ni vous le danser.`,
   dhLandingFinalCTADesc: `Les places s'envolent plus vite qu'un "Dutty Wine" le vendredi soir.`,
+  dhLandingFinalCTAExtra: `La Jamaïque vous attend au cœur de Barcelone. Votre corps connaît déjà le rythme.`,
   dhLandingFinalTrust: `Sans frais · Sans engagement · Places très limitées`,
   dhLandingUrgencyReminder: `N'oubliez pas: les places sont très limitées chaque semaine`,
   dhLandingFooterTagline: `Farray's ne s'explique pas. Ça se danse. Ça se vit. Venez le découvrir par vous-même.`,
@@ -17408,52 +17659,52 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // RELATED CLASSES SECTION (Internal Linking)
   // ============================================================================
   relatedClassesTitle: 'Cours Similaires',
-  relatedClassesSubtitle: "Decouvrez d'autres styles qui completent votre formation",
+  relatedClassesSubtitle: "Découvrez d'autres styles qui complètent votre formation",
   relatedClassesViewClass: 'Voir le Cours',
 
   // Related class names and descriptions
   relatedSalsaCubanaName: 'Salsa Cubaine',
   relatedSalsaCubanaDesc:
-    "Maitrisez l'authentique Casino cubain avec la Methode Farray. Rythme, saveur et connexion a chaque pas.",
+    "Maîtrisez l'authentique Casino cubain avec la Méthode Farray. Rythme, saveur et connexion à chaque pas.",
   relatedBachataName: 'Bachata Sensuelle',
   relatedBachataDesc:
-    'Apprenez a danser la bachata sensuelle avec des champions du monde. Vagues, dips et connexion en couple.',
+    'Apprenez à danser la bachata sensuelle avec des champions du monde. Vagues, dips et connexion en couple.',
   relatedTimbaName: 'Timba Cubaine',
   relatedTimbaDesc:
     'La salsa la plus explosive et authentique de Cuba. Rythmes complexes et mouvement avec saveur cubaine.',
   relatedSalsaLadyStyleName: 'Salsa Lady Style',
   relatedSalsaLadyStyleDesc:
-    'Developpez votre style feminin en salsa. Technique, elegance et expression corporelle.',
+    'Développez votre style féminin en salsa. Technique, élégance et expression corporelle.',
   relatedFolkloreCubanoName: 'Folklore Cubain',
   relatedFolkloreCubanoDesc:
     'Connectez-vous aux racines afro-cubaines. Orishas, rumba et tradition dans chaque mouvement.',
   relatedDancehallName: 'Dancehall',
   relatedDancehallDesc:
-    'Energie jamaicaine pure. Apprenez les pas originaux et bougez avec attitude et style.',
+    'Énergie jamaïcaine pure. Apprenez les pas originaux et bougez avec attitude et style.',
   relatedTwerkName: 'Twerk',
   relatedTwerkDesc:
-    "Renforcez et tonifiez tout en apprenant la technique d'isolation et le controle musculaire.",
+    "Renforcez et tonifiez tout en apprenant la technique d'isolation et le contrôle musculaire.",
   relatedAfrobeatsName: 'Afrobeats',
   relatedAfrobeatsDesc:
     'Rythmes africains contemporains. Mouvements organiques, joie et connexion culturelle.',
   relatedReggaetonCubanoName: 'Reggaeton Cubain',
   relatedReggaetonCubanoDesc:
-    'Le flow cubain du reggaeton. Mouvement des hanches, saveur et attitude caribeenne.',
+    'Le flow cubain du reggaeton. Mouvement des hanches, saveur et attitude caribéenne.',
   relatedSexyReggaetonName: 'Sexy Reggaeton',
   relatedSexyReggaetonDesc:
-    'Renforcez votre feminite avec des mouvements sensuels et confiance sur la piste.',
+    'Renforcez votre féminité avec des mouvements sensuels et confiance sur la piste.',
   relatedBalletName: 'Ballet Classique',
   relatedBalletDesc:
-    'La base de toute danse. Technique, posture, grace et discipline dans un environnement accueillant.',
+    'La base de toute danse. Technique, posture, grâce et discipline dans un environnement accueillant.',
   relatedContemporaneoName: 'Danse Contemporaine',
   relatedContemporaneoDesc:
-    'Expression libre et creativite. Connectez corps et emotion a travers le mouvement.',
+    'Expression libre et créativité. Connectez corps et émotion à travers le mouvement.',
   relatedModernJazzName: 'Modern Jazz',
   relatedModernJazzDesc:
-    'Fusion de technique et style. Choregraphies dynamiques aux influences contemporaines.',
+    'Fusion de technique et style. Chorégraphies dynamiques aux influences contemporaines.',
   relatedAfroContemporaneoName: 'Afro Contemporain',
   relatedAfroContemporaneoDesc:
-    'Fusion unique de racines africaines et danse contemporaine. Force, grace et expression.',
+    'Fusion unique de racines africaines et danse contemporaine. Force, grâce et expression.',
   relatedHipHopReggaetonName: 'Hip Hop Reggaeton',
   relatedHipHopReggaetonDesc:
     'Le meilleur de deux mondes urbains. Groove, flow et attitude dans chaque mouvement.',
@@ -17479,7 +17730,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
     'Améliorez votre flexibilité et prévenez les blessures. Étirements profonds pour danseurs.',
   relatedBumBumName: 'Bum Bum',
   relatedBumBumDesc:
-    'Tonifiez vos fessiers en dansant. Exercices fonctionnels avec musique et beaucoup dénergie.',
+    "Tonifiez vos fessiers en dansant. Exercices fonctionnels avec musique et beaucoup d'énergie.",
   relatedCuerpoFitName: 'Cuerpo-Fit',
   relatedCuerpoFitDesc:
     'Conditionnement physique pour danseurs. Force, endurance et contrôle corporel.',
@@ -17507,7 +17758,14 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   'styleImages.reggaetonCubano.hero':
     "Danseurs exécutant des mouvements de Reggaeton Cubain à Barcelone - Cours de Reparto et Cubatón chez Farray's Center",
   'styleImages.femmology.alt': "Cours de Femmology et Heels à Barcelone - Farray's Center",
-  'styleImages.heels.alt': "Cours de Heels à Barcelone - Danse en talons chez Farray's Center",
+  'styleImages.heels.alt':
+    "Danseuse exécutant une chorégraphie Heels à Barcelone - Cours de danse en talons chez Farray's Center",
+  'styleImages.heels.cardHub':
+    'Cours de Heels Barcelone - Apprenez la danse en talons, technique stiletto et chorégraphies sensuelles avec des professionnels',
+  'styleImages.heels.cardUrban':
+    "Heels Dance Barcelone - Style urbain en talons, fusion de technique et d'attitude pour une expression corporelle unique",
+  'styleImages.heels.hero':
+    "Danseuse professionnelle en cours de Heels Barcelone - Technique de danse en talons et chorégraphie sensuelle chez Farray's Center",
   'styleImages.sexyStyle.alt': "Cours de Sexy Style à Barcelone - Farray's Center",
   'styleImages.ballet.alt':
     "Cours de Ballet Classique à Barcelone - Technique classique chez Farray's Center",
@@ -17523,14 +17781,48 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   'styleImages.afroContemporaneo.alt':
     "Cours d'Afro Contemporain à Barcelone - Technique cubaine ENA chez Farray's Center",
   'styleImages.afroJazz.alt': "Cours d'Afro Jazz à Barcelone - Farray's Center",
-  'styleImages.salsaCubana.alt': "Cours de Salsa Cubaine à Barcelone - Farray's Center",
+  'styleImages.salsaCubana.alt':
+    "Couple dansant la salsa cubaine à Barcelone - Apprenez le casino, la rueda et le son cubain avec des professeurs authentiques chez Farray's Center",
+  'styleImages.salsaCubana.cardHub':
+    'Salsa Cubaine Barcelone - Apprenez le casino, la rueda de casino et le son cubain avec des maîtres cubains professionnels',
+  'styleImages.salsaCubana.cardLatin':
+    'Salsa Cubaine - Technique casino, saveur cubaine et musicalité avec des professeurs authentiques de La Havane',
+  'styleImages.salsaCubana.hero':
+    "Couple exécutant un tour de salsa cubaine à Barcelone - Cours de casino et rueda avec des professeurs cubains chez Farray's Center",
   'styleImages.bachata.alt':
     "Cours de Bachata Sensuelle à Barcelone - Connexion et musicalité chez Farray's Center",
+  'styleImages.bachata.hero':
+    "Couple dansant la bachata sensuelle en cours à Barcelone - connexion, ondulations et technique professionnelle chez Farray's Center",
+  'styleImages.bachata.whatIs':
+    "Couple exécutant ondulations et mouvements de connexion en cours de bachata sensuelle - technique professionnelle chez Farray's Center Barcelone",
+  'styleImages.bachata.cardHub':
+    'Bachata Sensuelle Barcelone - Apprenez ondulations, connexion et musicalité avec des champions du monde',
+  'styleImages.bachata.cardLatin':
+    'Bachata Sensuelle - Ondulations, connexion intime et technique de couple avec des professeurs internationaux',
   'styleImages.salsaBachata.alt': "Cours de Salsa et Bachata à Barcelone - Farray's Center",
   'styleImages.salsaLadyStyle.alt': "Cours de Salsa Lady Style à Barcelone - Farray's Center",
-  'styleImages.bachataLadyStyle.alt': "Cours de Bachata Lady Style à Barcelone - Farray's Center",
+  'styleImages.bachataLadyStyle.alt':
+    "Danseuse exécutant des mouvements de Bachata Lady Style à Barcelone - ondulations, bras et style féminin chez Farray's Center",
+  'styleImages.bachataLadyStyle.hero':
+    "Danseuse exécutant ondulations et mouvements de bras en cours de Bachata Lady Style - technique féminine et sensualité chez Farray's Center Barcelone",
+  'styleImages.bachataLadyStyle.cardHub':
+    'Bachata Lady Style Barcelone - Développez votre style féminin avec ondulations, bras et expression corporelle',
+  'styleImages.bachataLadyStyle.cardLatin':
+    'Bachata Lady Style - Technique féminine, ondulations sensuelles et présence scénique pour femmes',
   'styleImages.timba.alt': "Cours de Timba Cubaine à Barcelone - Farray's Center",
+  'styleImages.timba.cardHub':
+    'Timba Cubaine Barcelone - Apprenez le style le plus explosif de la salsa cubaine avec des professeurs cubains authentiques',
+  'styleImages.timba.cardLatin':
+    "Timba Cubaine - Énergie pure de La Havane, rythmes syncopés et liberté d'expression à chaque pas",
+  'styleImages.timba.hero':
+    'Danseuse exécutant une chorégraphie de Timba Cubaine en cours à Barcelone - Style explosif, saveur authentique et technique cubaine professionnelle',
   'styleImages.salsaLadyTimba.alt': "Cours de Salsa Lady Timba à Barcelone - Farray's Center",
+  'styleImages.salsaLadyTimba.cardHub':
+    'Salsa Lady Timba Barcelone - Le style féminin le plus puissant de la salsa cubaine avec des professeures cubaines',
+  'styleImages.salsaLadyTimba.cardLatin':
+    "Lady Timba - Fusion du Lady Style avec l'intensité de la Timba, expression féminine cubaine maximale",
+  'styleImages.salsaLadyTimba.hero':
+    'Danseuse exécutant Lady Timba en cours à Barcelone - Style féminin cubain avec technique avancée et expression personnelle unique',
   'styleImages.folkloreCubano.alt': "Cours de Folklore Cubain à Barcelone - Farray's Center",
   'styleImages.stretching.alt':
     "Cours de Stretching à Barcelone - Flexibilité chez Farray's Center",

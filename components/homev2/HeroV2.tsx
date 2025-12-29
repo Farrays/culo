@@ -57,7 +57,6 @@ const HeroV2: React.FC<HeroV2Props> = ({ config }) => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black" />
             </>
           )}
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20" />
         </div>
 
         {/* Contenido */}

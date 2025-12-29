@@ -270,7 +270,6 @@ const HorariosPageV2: React.FC = () => {
           {/* Background */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-20"></div>
           </div>
 
           <div className="relative z-20 container mx-auto px-4 sm:px-6">
@@ -399,7 +398,7 @@ const HorariosPageV2: React.FC = () => {
         {/* ================================================================
             SECTION 3: COMO FUNCIONAN LOS HORARIOS
         ================================================================ */}
-        <section className="py-16 md:py-20 bg-gradient-to-b from-black to-primary-dark/10">
+        <section className="py-12 md:py-16 bg-gradient-to-b from-black to-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-3xl mx-auto text-center mb-12">
@@ -438,7 +437,7 @@ const HorariosPageV2: React.FC = () => {
         {/* ================================================================
             SECTION 4: BLOQUES DE HORARIOS (Preview Cards)
         ================================================================ */}
-        <section className="py-16 md:py-20 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-12">
@@ -490,7 +489,7 @@ const HorariosPageV2: React.FC = () => {
         {/* ================================================================
             SECTION 5: NIVELES DE BAILE
         ================================================================ */}
-        <section className="py-16 md:py-20 bg-gradient-to-b from-black to-primary-dark/10">
+        <section className="py-12 md:py-16 bg-gradient-to-b from-black to-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-12">
@@ -532,7 +531,7 @@ const HorariosPageV2: React.FC = () => {
         {/* ================================================================
             SECTION 6: POR QUE NO MOSTRAMOS TODOS LOS HORARIOS
         ================================================================ */}
-        <section className="py-16 md:py-20 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-3xl mx-auto [perspective:1000px]">
@@ -565,7 +564,7 @@ const HorariosPageV2: React.FC = () => {
         {/* ================================================================
             SECTION 7: TESTIMONIOS
         ================================================================ */}
-        <section className="py-16 md:py-20 bg-gradient-to-b from-primary-dark/10 to-black">
+        <section className="py-12 md:py-16 bg-gradient-to-b from-primary-dark/10 to-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-10 max-w-4xl mx-auto">
@@ -625,7 +624,7 @@ const HorariosPageV2: React.FC = () => {
         {/* ================================================================
             SECTION 8: FAQ
         ================================================================ */}
-        <section className="py-16 md:py-20 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-12">
@@ -653,10 +652,9 @@ const HorariosPageV2: React.FC = () => {
         {/* ================================================================
             SECTION 9: FINAL CTA
         ================================================================ */}
-        <section className="relative py-16 md:py-24 overflow-hidden">
+        <section className="relative py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-black to-primary-dark/10">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/20 via-black/50 to-black"></div>
-            <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-20"></div>
           </div>
           <div className="container mx-auto px-4 sm:px-6 relative z-20">
             <AnimateOnScroll>

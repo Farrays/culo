@@ -10,6 +10,7 @@ import {
   AFRO_CONTEMPORANEO_PREPARE_CONFIG,
   AFRO_CONTEMPORANEO_NEARBY_AREAS,
 } from './afro-contemporaneo';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const AFRO_CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
@@ -22,20 +23,20 @@ export const AFRO_CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: AFRO_CONTEMPORANEO_TESTIMONIALS,
   scheduleKeys: AFRO_CONTEMPORANEO_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Yunaisy Farray',
-      specialtyKey: 'afrocontemporaneoTeacher1Specialty',
-      bioKey: 'afrocontemporaneoTeacher1Bio',
-      image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
-    },
-    {
-      name: 'Charlie Breezy',
-      specialtyKey: 'afrocontemporaneoTeacher2Specialty',
-      bioKey: 'afrocontemporaneoTeacher2Bio',
-      image: '/images/teachers/img/profesor-hip-hop-charlie-breezy_320.webp',
-    },
+    getTeacherInfo(
+      'yunaisy-farray',
+      'afrocontemporaneoTeacher1Specialty',
+      'afrocontemporaneoTeacher1Bio',
+      ['Directora', 'CID-UNESCO', 'ENA Cuba']
+    ),
+    getTeacherInfo(
+      'charlie-breezy',
+      'afrocontemporaneoTeacher2Specialty',
+      'afrocontemporaneoTeacher2Bio',
+      ['Afro', 'Urban']
+    ),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Dance > Afro Contemporáneo)

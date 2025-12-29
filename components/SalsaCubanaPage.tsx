@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
 import LazyImage from './LazyImage';
+import OptimizedImage from './OptimizedImage';
+import {
+  getStyleImage,
+  getContextualAltKey,
+  getRelatedClassImageUrl,
+} from '../constants/style-images';
 import {
   SALSA_CUBANA_TESTIMONIALS,
   SALSA_CUBANA_FAQS_CONFIG,
@@ -33,6 +39,9 @@ import {
 } from '../lib/icons';
 import LatinDanceComparisonTable from './shared/LatinDanceComparisonTable';
 import { UsersIcon, MapPinIcon } from './shared/CommonIcons';
+
+// Enterprise: Get salsa cubana image config from centralized system
+const salsaCubanaImage = getStyleImage('salsa_cubana');
 
 const SalsaCubanaPage: React.FC = () => {
   const { t, locale } = useI18n();
@@ -224,10 +233,28 @@ const SalsaCubanaPage: React.FC = () => {
           aria-labelledby="hero-title"
           className="relative text-center py-24 md:py-32 overflow-hidden flex items-center justify-center min-h-[600px]"
         >
-          {/* Background */}
+          {/* Background - Enterprise OptimizedImage with salsa cubana photo */}
           <div className="absolute inset-0 bg-black">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-20"></div>
+            {/* Hero background image with configurable opacity */}
+            <div className="absolute inset-0" style={{ opacity: 0.45 }}>
+              <OptimizedImage
+                src={salsaCubanaImage.basePath}
+                altKey={getContextualAltKey('salsa_cubana', 'hero')}
+                altFallback={salsaCubanaImage.fallbackAlt}
+                priority="high"
+                sizes="100vw"
+                aspectRatio="16/9"
+                className="w-full h-full"
+                objectPosition="center 40%"
+                placeholder="color"
+                placeholderColor="#111"
+                breakpoints={salsaCubanaImage.breakpoints}
+                formats={salsaCubanaImage.formats}
+              />
+            </div>
+            {/* Gradient overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/20 via-transparent to-black/50"></div>
           </div>
           <div className="relative z-20 container mx-auto px-4 sm:px-6">
             {/* Breadcrumb with Microdata */}
@@ -236,7 +263,8 @@ const SalsaCubanaPage: React.FC = () => {
             <AnimateOnScroll>
               <h1
                 id="hero-title"
-                className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 holographic-text"
+                className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-tight mb-6 text-white"
+                style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
               >
                 {t('salsaCubanaHeroTitle')}
               </h1>
@@ -361,7 +389,7 @@ const SalsaCubanaPage: React.FC = () => {
         </section>
 
         {/* 2. Bailar Salsa Cubana no es solo hacer figuras */}
-        <section aria-labelledby="what-is-title" className="py-12 md:py-20 bg-primary-dark/10">
+        <section aria-labelledby="what-is-title" className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -386,27 +414,21 @@ const SalsaCubanaPage: React.FC = () => {
                       {t('salsaCubanaWhatIsQuestionAnswer')}
                     </p>
                   </div>
-                  <div className="rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-primary-accent/20 to-primary-dark/20 p-8 flex items-center justify-center min-h-[300px]">
-                    <div className="text-center">
-                      <div className="flex justify-center gap-4 mb-4">
-                        <svg
-                          className="w-16 h-16 text-primary-accent"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={1}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
-                          />
-                        </svg>
-                      </div>
-                      <p className="text-neutral/80 text-sm italic">
-                        {t('salsaCubanaWhatIsImageAlt')}
-                      </p>
-                    </div>
+                  {/* Enterprise: OptimizedImage for "What is Salsa Cubana" section */}
+                  <div className="rounded-2xl overflow-hidden shadow-xl border border-primary-accent/20 hover:border-primary-accent/40 transition-all duration-500 group">
+                    <OptimizedImage
+                      src={salsaCubanaImage.basePath}
+                      altKey="styleImages.salsaCubana.alt"
+                      altFallback={salsaCubanaImage.fallbackAlt}
+                      priority="low"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      aspectRatio="4/3"
+                      className="w-full h-full transition-transform duration-500 group-hover:scale-105"
+                      objectPosition="center 40%"
+                      placeholder="blur"
+                      breakpoints={[640, 768, 1024]}
+                      formats={salsaCubanaImage.formats}
+                    />
                   </div>
                 </div>
               </div>
@@ -429,7 +451,7 @@ const SalsaCubanaPage: React.FC = () => {
         <section
           id="teachers"
           aria-labelledby="teachers-title"
-          className="py-12 md:py-20 bg-primary-dark/10 relative overflow-hidden"
+          className="py-12 md:py-16 bg-primary-dark/10 relative overflow-hidden"
         >
           <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <AnimateOnScroll>
@@ -453,17 +475,23 @@ const SalsaCubanaPage: React.FC = () => {
                   <div className="w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 border-primary-accent/50 group-hover:border-primary-accent transition-colors duration-300 flex-shrink-0">
                     <picture>
                       <source
+                        type="image/avif"
+                        srcSet="/images/teachers/img/maestra-yunaisy-farray_320.avif 320w, /images/teachers/img/maestra-yunaisy-farray_640.avif 640w, /images/teachers/img/maestra-yunaisy-farray_960.avif 960w"
+                        sizes="192px"
+                      />
+                      <source
                         type="image/webp"
-                        srcSet="/images/teachers/img/yunaisy-farray-directora_320.webp 320w, /images/teachers/img/yunaisy-farray-directora_640.webp 640w"
+                        srcSet="/images/teachers/img/maestra-yunaisy-farray_320.webp 320w, /images/teachers/img/maestra-yunaisy-farray_640.webp 640w, /images/teachers/img/maestra-yunaisy-farray_960.webp 960w"
                         sizes="192px"
                       />
                       <img
-                        src="/images/teachers/img/yunaisy-farray-directora_640.jpg"
+                        src="/images/teachers/img/maestra-yunaisy-farray_320.webp"
                         alt="Yunaisy Farray - Creadora del Método Farray, Maestra CID-UNESCO"
                         width="192"
                         height="192"
                         loading="lazy"
                         className="w-full h-full object-cover"
+                        style={{ objectPosition: 'center 20%' }}
                       />
                     </picture>
                   </div>
@@ -499,21 +527,28 @@ const SalsaCubanaPage: React.FC = () => {
               <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_MEDIUM}>
                 <div className="group h-full bg-black/50 backdrop-blur-md border border-primary-dark/40 hover:border-primary-accent/50 rounded-2xl p-6 transition-all duration-300">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary-dark/50 group-hover:border-primary-accent/50 transition-colors duration-300 mb-4 bg-primary-dark/30 flex items-center justify-center">
-                      {/* Placeholder icon for Iroel */}
-                      <svg
-                        className="w-12 h-12 text-primary-accent/50"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={1.5}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                    <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary-dark/50 group-hover:border-primary-accent/50 transition-colors duration-300 mb-4">
+                      <picture>
+                        <source
+                          type="image/avif"
+                          srcSet="/images/teachers/img/profesor-iroel-bastarreche_320.avif 320w, /images/teachers/img/profesor-iroel-bastarreche_640.avif 640w, /images/teachers/img/profesor-iroel-bastarreche_960.avif 960w"
+                          sizes="96px"
                         />
-                      </svg>
+                        <source
+                          type="image/webp"
+                          srcSet="/images/teachers/img/profesor-iroel-bastarreche_320.webp 320w, /images/teachers/img/profesor-iroel-bastarreche_640.webp 640w, /images/teachers/img/profesor-iroel-bastarreche_960.webp 960w"
+                          sizes="96px"
+                        />
+                        <img
+                          src="/images/teachers/img/profesor-iroel-bastarreche_320.webp"
+                          alt="Iroel Bastarreche - Profesor de Salsa Cubana"
+                          width="96"
+                          height="96"
+                          loading="lazy"
+                          className="w-full h-full object-cover"
+                          style={{ objectPosition: 'center 20%' }}
+                        />
+                      </picture>
                     </div>
                     <h3 className="text-xl font-bold text-neutral mb-1">
                       {t('salsaCubanaTeacher2Name')}
@@ -535,17 +570,23 @@ const SalsaCubanaPage: React.FC = () => {
                     <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary-dark/50 group-hover:border-primary-accent/50 transition-colors duration-300 mb-4">
                       <picture>
                         <source
+                          type="image/avif"
+                          srcSet="/images/teachers/img/profesora-yasmina-fern%C3%A1ndez_320.avif 320w, /images/teachers/img/profesora-yasmina-fern%C3%A1ndez_640.avif 640w, /images/teachers/img/profesora-yasmina-fern%C3%A1ndez_960.avif 960w"
+                          sizes="96px"
+                        />
+                        <source
                           type="image/webp"
-                          srcSet="/images/teachers/img/profesora-yasmina-fernandez_320.webp 320w, /images/teachers/img/profesora-yasmina-fernandez_640.webp 640w"
+                          srcSet="/images/teachers/img/profesora-yasmina-fern%C3%A1ndez_320.webp 320w, /images/teachers/img/profesora-yasmina-fern%C3%A1ndez_640.webp 640w, /images/teachers/img/profesora-yasmina-fern%C3%A1ndez_960.webp 960w"
                           sizes="96px"
                         />
                         <img
-                          src="/images/teachers/img/profesora-yasmina-fernandez_320.jpg"
+                          src="/images/teachers/img/profesora-yasmina-fern%C3%A1ndez_320.webp"
                           alt="Yasmina Fernández - Profesora de Salsa Cubana"
                           width="96"
                           height="96"
                           loading="lazy"
                           className="w-full h-full object-cover"
+                          style={{ objectPosition: 'center 15%' }}
                         />
                       </picture>
                     </div>
@@ -566,21 +607,28 @@ const SalsaCubanaPage: React.FC = () => {
               <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_MEDIUM * 3}>
                 <div className="group h-full bg-black/50 backdrop-blur-md border border-primary-dark/40 hover:border-primary-accent/50 rounded-2xl p-6 transition-all duration-300">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary-dark/50 group-hover:border-primary-accent/50 transition-colors duration-300 mb-4 bg-primary-dark/30 flex items-center justify-center">
-                      {/* Placeholder icon for Lia */}
-                      <svg
-                        className="w-12 h-12 text-primary-accent/50"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={1.5}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                    <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-primary-dark/50 group-hover:border-primary-accent/50 transition-colors duration-300 mb-4">
+                      <picture>
+                        <source
+                          type="image/avif"
+                          srcSet="/images/teachers/img/profesora-lia-valdes_320.avif 320w, /images/teachers/img/profesora-lia-valdes_640.avif 640w, /images/teachers/img/profesora-lia-valdes_960.avif 960w"
+                          sizes="96px"
                         />
-                      </svg>
+                        <source
+                          type="image/webp"
+                          srcSet="/images/teachers/img/profesora-lia-valdes_320.webp 320w, /images/teachers/img/profesora-lia-valdes_640.webp 640w, /images/teachers/img/profesora-lia-valdes_960.webp 960w"
+                          sizes="96px"
+                        />
+                        <img
+                          src="/images/teachers/img/profesora-lia-valdes_320.webp"
+                          alt="Lia Valdes - Profesora de Salsa Cubana"
+                          width="96"
+                          height="96"
+                          loading="lazy"
+                          className="w-full h-full object-cover"
+                          style={{ objectPosition: 'center 20%' }}
+                        />
+                      </picture>
                     </div>
                     <h3 className="text-xl font-bold text-neutral mb-1">
                       {t('salsaCubanaTeacher4Name')}
@@ -612,7 +660,7 @@ const SalsaCubanaPage: React.FC = () => {
         />
 
         {/* 3. El Problema - PAS Framework */}
-        <section aria-labelledby="problem-title" className="py-14 md:py-20 bg-black">
+        <section aria-labelledby="problem-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -650,7 +698,7 @@ const SalsaCubanaPage: React.FC = () => {
         </section>
 
         {/* 2b. Tabla Comparativa - Casino Social vs Método Farray */}
-        <section aria-labelledby="compare-title" className="py-14 md:py-20 bg-black">
+        <section aria-labelledby="compare-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-10 max-w-4xl mx-auto">
@@ -698,7 +746,7 @@ const SalsaCubanaPage: React.FC = () => {
         </section>
 
         {/* 4. Método Farray - Lo que nos hace únicos */}
-        <section aria-labelledby="method-title" className="py-12 md:py-20 bg-black">
+        <section aria-labelledby="method-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto">
@@ -906,7 +954,7 @@ const SalsaCubanaPage: React.FC = () => {
         </section>
 
         {/* 6. Para quién es este método - Identification (Dos Océanos) */}
-        <section aria-labelledby="identify-title" className="py-12 md:py-20 bg-primary-dark/10">
+        <section aria-labelledby="identify-title" className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto">
@@ -1008,7 +1056,7 @@ const SalsaCubanaPage: React.FC = () => {
         </section>
 
         {/* 7. Transformation - Qué conseguirás */}
-        <section aria-labelledby="transform-title" className="py-12 md:py-20 bg-black">
+        <section aria-labelledby="transform-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto">
@@ -1055,7 +1103,7 @@ const SalsaCubanaPage: React.FC = () => {
         </section>
 
         {/* 8. Why Choose Farray's */}
-        <section className="py-16 md:py-24 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-10 sm:mb-12 max-w-4xl mx-auto">
@@ -1199,7 +1247,7 @@ const SalsaCubanaPage: React.FC = () => {
         </section>
 
         {/* 9. Video Section */}
-        <section id="video" className="py-12 md:py-20 bg-black">
+        <section id="video" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-8 sm:mb-12 max-w-4xl mx-auto">
@@ -1225,7 +1273,7 @@ const SalsaCubanaPage: React.FC = () => {
         <section
           id="testimonials"
           aria-labelledby="testimonials-title"
-          className="py-12 md:py-20 bg-primary-dark/10"
+          className="py-12 md:py-16 bg-primary-dark/10"
         >
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -1292,7 +1340,7 @@ const SalsaCubanaPage: React.FC = () => {
         />
 
         {/* 11b. Latin Dance Comparison Table */}
-        <section className="py-14 md:py-20 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <LatinDanceComparisonTable highlightedStyle="salsaCubana" />
@@ -1304,7 +1352,7 @@ const SalsaCubanaPage: React.FC = () => {
         <FAQSection title={t('salsaCubanaFaqTitle')} faqs={salsaCubanaFaqs} pageUrl={pageUrl} />
 
         {/* 13. Local SEO Section */}
-        <section className="py-10 md:py-14 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto p-6 bg-black/30 rounded-2xl border border-neutral/20">
@@ -1332,10 +1380,9 @@ const SalsaCubanaPage: React.FC = () => {
         </section>
 
         {/* 14. Final CTA Section */}
-        <section id="final-cta" className="relative py-16 md:py-24 overflow-hidden">
+        <section id="final-cta" className="relative py-12 md:py-16 overflow-hidden">
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-20"></div>
           </div>
           <div className="container mx-auto px-4 sm:px-6 relative z-20">
             <AnimateOnScroll>
@@ -1409,7 +1456,7 @@ const SalsaCubanaPage: React.FC = () => {
         <section
           id="related-classes"
           aria-labelledby="related-classes-title"
-          className="py-12 md:py-20"
+          className="py-12 md:py-16"
         >
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
@@ -1450,7 +1497,7 @@ const SalsaCubanaPage: React.FC = () => {
                     >
                       <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
                         <LazyImage
-                          src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=480&h=320&fit=crop&q=85&auto=format"
+                          src={getRelatedClassImageUrl('bachata-barcelona')}
                           alt={`Clase de ${t('relatedBachataName')} en Barcelona - Farray's Dance Center`}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                           width={480}
@@ -1518,7 +1565,7 @@ const SalsaCubanaPage: React.FC = () => {
                     >
                       <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
                         <LazyImage
-                          src="https://images.unsplash.com/photo-1545959570-a94084071b5d?w=480&h=320&fit=crop&q=85&auto=format"
+                          src={getRelatedClassImageUrl('timba-barcelona')}
                           alt={`Clase de ${t('relatedTimbaName')} en Barcelona - Farray's Dance Center`}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                           width={480}
@@ -1586,7 +1633,7 @@ const SalsaCubanaPage: React.FC = () => {
                     >
                       <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
                         <LazyImage
-                          src="https://images.unsplash.com/photo-1547153760-18fc9c88c1c8?w=480&h=320&fit=crop&q=85&auto=format"
+                          src={getRelatedClassImageUrl('folklore-cubano')}
                           alt={`Clase de ${t('relatedFolkloreCubanoName')} en Barcelona - Farray's Dance Center`}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                           width={480}

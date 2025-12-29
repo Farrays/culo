@@ -565,7 +565,7 @@ const HorariosScheduleSection: React.FC = () => {
   return (
     <section
       id="horarios"
-      className="py-16 md:py-20 bg-gradient-to-b from-black via-primary-dark/5 to-black"
+      className="py-12 md:py-16 bg-gradient-to-b from-black via-primary-dark/5 to-black"
     >
       <div className="container mx-auto px-4 sm:px-6">
         {/* Header */}

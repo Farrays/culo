@@ -15,11 +15,11 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = memo(function Te
   const { t, locale } = useI18n();
 
   return (
-    <section className="py-20 md:py-32 bg-black">
+    <section className="py-10 md:py-14 bg-black">
       <div className="container mx-auto px-6">
         <AnimateOnScroll>
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
               {t(titleKey)}
             </h2>
             <div className="inline-block">

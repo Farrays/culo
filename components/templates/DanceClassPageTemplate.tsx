@@ -313,7 +313,6 @@ const DanceClassPageTemplate: React.FC<DanceClassPageConfig> = ({
         >
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-20"></div>
           </div>
 
           <div className="relative z-20 container mx-auto px-4 sm:px-6">
@@ -420,7 +419,7 @@ const DanceClassPageTemplate: React.FC<DanceClassPageConfig> = ({
         <section
           id="schedule"
           aria-labelledby="schedule-title"
-          className="py-14 md:py-20 bg-primary-dark/10"
+          className="py-12 md:py-16 bg-primary-dark/10"
         >
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -451,7 +450,7 @@ const DanceClassPageTemplate: React.FC<DanceClassPageConfig> = ({
 
         {/* ===== LEVELS SECTION (if provided) ===== */}
         {levels && levels.length > 0 && (
-          <section className="py-14 md:py-20 bg-black">
+          <section className="py-12 md:py-16 bg-black">
             <div className="container mx-auto px-4 sm:px-6">
               <AnimateOnScroll>
                 <div className="text-center mb-8">
@@ -483,7 +482,7 @@ const DanceClassPageTemplate: React.FC<DanceClassPageConfig> = ({
         <section
           id="teachers"
           aria-labelledby="teachers-title"
-          className="py-12 md:py-20 bg-primary-dark/10"
+          className="py-12 md:py-16 bg-primary-dark/10"
         >
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
@@ -587,7 +586,7 @@ const DanceClassPageTemplate: React.FC<DanceClassPageConfig> = ({
         )}
 
         {/* ===== TESTIMONIALS SECTION ===== */}
-        <section className="py-14 md:py-20 bg-black">
+        <section className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-10 max-w-3xl mx-auto">
@@ -612,7 +611,7 @@ const DanceClassPageTemplate: React.FC<DanceClassPageConfig> = ({
         <FAQSection faqs={faqs} title={t(`${styleKey}FaqTitle`)} pageUrl={pageUrl} />
 
         {/* ===== NEARBY AREAS / HOW TO GET HERE ===== */}
-        <section className="py-14 md:py-20 bg-primary-dark/10">
+        <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-10 max-w-3xl mx-auto">
@@ -645,8 +644,7 @@ const DanceClassPageTemplate: React.FC<DanceClassPageConfig> = ({
         </section>
 
         {/* ===== FINAL CTA SECTION ===== */}
-        <section className="py-20 md:py-28 bg-gradient-to-br from-primary-dark via-black to-black relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/images/textures/stardust.png')] opacity-10"></div>
+        <section className="py-12 md:py-16 bg-gradient-to-br from-primary-dark via-black to-black relative overflow-hidden">
           <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
             <AnimateOnScroll>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text mb-6">

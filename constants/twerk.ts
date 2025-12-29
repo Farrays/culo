@@ -131,15 +131,13 @@ export const TWERK_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const TWERK_PREPARE_CONFIG = {
   prefix: 'twerkPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Sandra Gómez',
-    credential: 'Especialista en Twerk',
-    image: '/images/teachers/img/profesora-twerk-dancehall-sandra-gomez_320.webp',
-  },
+  teacher: getTeacherQuoteInfo('sandra-gomez', 'Especialista en Twerk'),
 };

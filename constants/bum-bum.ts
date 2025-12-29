@@ -108,17 +108,15 @@ export const BUM_BUM_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const BUM_BUM_PREPARE_CONFIG = {
   prefix: 'bumbumPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Cris Ag',
-    credential: 'Especialista en Tonificación y Glúteos',
-    image: undefined,
-  },
+  teacher: getTeacherQuoteInfo('cris-ag', 'Especialista en Tonificación y Glúteos'),
 };
 
 // ===== GEO OPTIMIZATION: Citable Statistics Keys =====

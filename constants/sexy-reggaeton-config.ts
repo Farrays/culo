@@ -10,6 +10,7 @@ import {
   SEXY_REGGAETON_PREPARE_CONFIG,
   SEXY_REGGAETON_VIDEO_ID,
 } from './sexy-reggaeton';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const SEXY_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
@@ -22,13 +23,12 @@ export const SEXY_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: SEXY_REGGAETON_TESTIMONIALS,
   scheduleKeys: SEXY_REGGAETON_SCHEDULE_KEYS,
 
-  // Teachers
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Yasmina Fernández',
-      specialtyKey: 'sxrTeacher1Specialty',
-      bioKey: 'sxrTeacher1Bio',
-    },
+    getTeacherInfo('yasmina-fernandez', 'sxrTeacher1Specialty', 'sxrTeacher1Bio', [
+      'Sexy Reggaeton',
+      'Método Farray',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Sexy Reggaeton)
@@ -50,6 +50,20 @@ export const SEXY_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 500,
     funPercent: 100,
     gradientColor: 'rose',
+
+    // Enterprise: Hero background image
+    heroImage: {
+      basePath: '/images/classes/sexy-reggaeton/img/clases-sexy-reggaeton-barcelona',
+      alt: "Clases de Sexy Reggaetón en Barcelona - Farray's Center",
+      altKey: 'styleImages.sexyReggaeton.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'] as const,
+    },
+    heroVisuals: {
+      imageOpacity: 45,
+      objectPosition: 'center 40%',
+      gradientStyle: 'vibrant' as const,
+    },
   },
 
   // === SECTION TOGGLES ===
@@ -95,7 +109,6 @@ export const SEXY_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
         title: "Sexy Reggaeton Classes at Farray's Center Barcelona",
       },
     ],
-    placeholderCount: 1,
   },
 
   logosSection: {

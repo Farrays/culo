@@ -159,17 +159,15 @@ export const STRETCHING_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const STRETCHING_PREPARE_CONFIG = {
   prefix: 'stretchingPrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Cris Ag',
-    credential: 'Especialista en Flexibilidad y Backbending',
-    image: undefined,
-  },
+  teacher: getTeacherQuoteInfo('cris-ag', 'Especialista en Flexibilidad y Backbending'),
 };
 
 // ===== GEO OPTIMIZATION: Citable Statistics Keys =====

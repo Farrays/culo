@@ -11,6 +11,7 @@ import {
   TIMBA_PREPARE_CONFIG,
   TIMBA_NEARBY_AREAS,
 } from './timba';
+import { getTeacherInfo } from './teacher-images';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const TIMBA_PAGE_CONFIG: FullDanceClassConfig = {
@@ -23,26 +24,21 @@ export const TIMBA_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: TIMBA_TESTIMONIALS,
   scheduleKeys: TIMBA_SCHEDULE_KEYS,
 
-  // Teachers - 3 teachers for different classes
+  // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    {
-      name: 'Yunaisy Farray',
-      specialtyKey: 'timbaTeacher1Specialty',
-      bioKey: 'timbaTeacher1Bio',
-      image: '/images/teachers/img/yunaisy-farray-directora_320.webp',
-    },
-    {
-      name: 'Grechén Mendez',
-      specialtyKey: 'timbaTeacher2Specialty',
-      bioKey: 'timbaTeacher2Bio',
-      image: undefined, // Will use initials
-    },
-    {
-      name: 'Lia Valdés',
-      specialtyKey: 'timbaTeacher3Specialty',
-      bioKey: 'timbaTeacher3Bio',
-      image: undefined, // Will use initials
-    },
+    getTeacherInfo('yunaisy-farray', 'timbaTeacher1Specialty', 'timbaTeacher1Bio', [
+      'Directora',
+      'Timba',
+      'Lady Timba',
+    ]),
+    getTeacherInfo('grechen-mendez', 'timbaTeacher2Specialty', 'timbaTeacher2Bio', [
+      'Timba',
+      'Salsa',
+    ]),
+    getTeacherInfo('lia-valdes', 'timbaTeacher3Specialty', 'timbaTeacher3Bio', [
+      'Salsa Cubana',
+      'Lady Style',
+    ]),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Latin > Timba)

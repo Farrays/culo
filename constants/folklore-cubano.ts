@@ -102,15 +102,16 @@ export const FOLKLORE_CUBANO_LEVELS = [
   },
 ];
 
+import { getTeacherQuoteInfo } from './teacher-images';
+
 // Prepare class configuration
 export const FOLKLORE_CUBANO_PREPARE_CONFIG = {
   prefix: 'folklorePrepare',
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: {
-    name: 'Grechén Mendez',
-    credential: 'Maestra Internacional de Danzas Afrocubanas | ISA Cuba',
-    image: undefined, // Will use initials avatar
-  },
+  teacher: getTeacherQuoteInfo(
+    'grechen-mendez',
+    'Maestra Internacional de Danzas Afrocubanas | ISA Cuba'
+  ),
 };

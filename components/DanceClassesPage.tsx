@@ -117,19 +117,22 @@ const DanceClassesPage: React.FC = () => {
           {/* Background like DancehallPage Hero */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6">
             {/* Breadcrumb with Microdata */}
             <Breadcrumb items={breadcrumbItems} textColor="text-neutral/70" />
 
-            {/* H1 + Intro */}
+            {/* H1 + Subheadline - Enterprise pattern from HeroV2 */}
             <AnimateOnScroll>
               <h1
-                className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 text-white"
+                className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-tight mb-4 min-h-[100px] md:min-h-[140px] flex flex-col items-center justify-center text-white"
                 style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
               >
                 {t('danceClassesHub_h1')}
+                <br />
+                <span className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-normal mt-2 holographic-text">
+                  {t('danceClassesHub_h1_sub')}
+                </span>
               </h1>
               <p className="max-w-4xl mx-auto text-xl md:text-2xl text-neutral/90 mt-8 leading-relaxed">
                 {t('danceClassesHub_intro')}
@@ -167,7 +170,10 @@ const DanceClassesPage: React.FC = () => {
         </section>
 
         {/* What to Expect Section - SEO + UX CRITICAL */}
-        <section aria-labelledby="what-to-expect-title" className="py-16 md:py-24 bg-black">
+        <section
+          aria-labelledby="what-to-expect-title"
+          className="section-after-hero pb-16 md:pb-24 bg-black"
+        >
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -209,7 +215,7 @@ const DanceClassesPage: React.FC = () => {
         </section>
 
         {/* Categories Grid Section */}
-        <section aria-labelledby="categories-title" className="py-20 md:py-32 bg-primary-dark/10">
+        <section aria-labelledby="categories-title" className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-6 text-center">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -283,7 +289,7 @@ const DanceClassesPage: React.FC = () => {
         </section>
 
         {/* Which Category to Choose Section - UX + SEO CRITICAL */}
-        <section aria-labelledby="which-category-title" className="py-16 md:py-24 bg-black">
+        <section aria-labelledby="which-category-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -430,7 +436,7 @@ const DanceClassesPage: React.FC = () => {
         </section>
 
         {/* Featured Styles Section - Cards with Descriptions */}
-        <section aria-labelledby="featured-title" className="py-20 md:py-32 bg-primary-dark/10">
+        <section aria-labelledby="featured-title" className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto">
@@ -469,6 +475,7 @@ const DanceClassesPage: React.FC = () => {
                           priority={index < 3 ? 'high' : 'low'}
                           breakpoints={styleImage.breakpoints}
                           formats={styleImage.formats}
+                          objectPosition={styleImage.objectPosition}
                           className="w-full h-full transition-all duration-500 ease-in-out group-hover:scale-110 opacity-60 group-hover:opacity-80"
                           placeholder="color"
                           placeholderColor="#111"
@@ -502,7 +509,7 @@ const DanceClassesPage: React.FC = () => {
         </section>
 
         {/* Why FIDC Barcelona Section - SEO + UX CRITICAL */}
-        <section aria-labelledby="why-fidc-title" className="py-20 md:py-32 bg-black">
+        <section aria-labelledby="why-fidc-title" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <AnimateOnScroll>
               <div className="text-center mb-16 max-w-3xl mx-auto">
@@ -728,11 +735,10 @@ const DanceClassesPage: React.FC = () => {
         />
 
         {/* Final CTA Section - Conversion Optimized */}
-        <section className="relative py-20 md:py-32 overflow-hidden">
+        <section className="relative py-12 md:py-16 overflow-hidden">
           {/* Background with stars */}
           <div className="absolute inset-0 bg-black">
             <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6 text-center">
             <AnimateOnScroll>
