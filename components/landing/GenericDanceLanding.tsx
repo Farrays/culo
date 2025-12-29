@@ -645,8 +645,8 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
 
         {/* VIDEO SECTION */}
         {config.video && (
-          <section>
-            <div className="flex justify-center px-4 sm:px-6">
+          <section className="py-8 md:py-12">
+            <div className="container mx-auto px-4 sm:px-6">
               <BunnyEmbed
                 videoId={config.video.bunnyVideoId}
                 libraryId={config.video.bunnyLibraryId}
