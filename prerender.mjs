@@ -1346,16 +1346,11 @@ routes.forEach(route => {
   const currentUrl = `https://www.farrayscenter.com/${routePath}`;
 
   // Locale persistence script - runs before React mounts
+  // NOTE: This script is STATIC (same for all pages) to avoid CSP hash issues
+  // It reads the locale from the HTML lang attribute which is set during prerendering
   const localeScript = `
     <script>
-      // Set locale before React hydration
-      (function() {
-        const locale = '${lang}';
-        localStorage.setItem('fidc_preferred_locale', locale);
-        const expires = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toUTCString();
-        document.cookie = 'fidc_locale=' + locale + '; expires=' + expires + '; path=/; SameSite=Lax';
-        document.documentElement.lang = locale;
-      })();
+      (function(){var l=document.documentElement.lang||'es';localStorage.setItem('fidc_preferred_locale',l);document.cookie='fidc_locale='+l+';expires='+new Date(Date.now()+31536e6).toUTCString()+';path=/;SameSite=Lax';})();
     </script>
   `;
 
