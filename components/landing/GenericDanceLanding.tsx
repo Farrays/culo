@@ -292,15 +292,13 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
     const storageKey = `${config.id}_exit_intent_shown`;
 
     // Check if navigated from another exit intent (skip showing exit intent)
-    const urlParams = new window.URLSearchParams(window.location.search);
+    const urlParams = new window.URLSearchParams(location.search);
     const fromExitIntent = urlParams.get('fromExitIntent') === 'true';
 
     if (fromExitIntent) {
       setHasShownExitIntent(true);
-      // Clean up the URL parameter without triggering a navigation
-      const newUrl = new window.URL(window.location.href);
-      newUrl.searchParams.delete('fromExitIntent');
-      window.history.replaceState({}, '', newUrl.toString());
+      // Clean up the URL parameter without triggering a re-render loop
+      navigate(location.pathname, { replace: true });
       return;
     }
 
@@ -388,7 +386,16 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
       document.removeEventListener('mouseleave', handleMouseLeave);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [hasShownExitIntent, isModalOpen, isExitPopupOpen, config.id, config.estiloValue]);
+  }, [
+    hasShownExitIntent,
+    isModalOpen,
+    isExitPopupOpen,
+    config.id,
+    config.estiloValue,
+    location.search,
+    location.pathname,
+    navigate,
+  ]);
 
   const openModal = () => {
     try {
