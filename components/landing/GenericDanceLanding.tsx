@@ -644,11 +644,9 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
         </section>
 
         {/* VIDEO SECTION */}
-        {/* Note: BunnyEmbed must NOT be wrapped in AnimateOnScroll */}
-        {/* because opacity:0 causes layout/spacing issues in production (Vercel SSR) */}
-        {config.video ? (
-          <section className="pb-6 md:pb-8">
-            <div className="container mx-auto px-4 sm:px-6">
+        {config.video && (
+          <section>
+            <div className="flex justify-center px-4 sm:px-6">
               <BunnyEmbed
                 videoId={config.video.bunnyVideoId}
                 libraryId={config.video.bunnyLibraryId}
@@ -660,7 +658,8 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
               />
             </div>
           </section>
-        ) : (
+        )}
+        {!config.video && (
           <section className="pb-6 md:pb-8">
             <div className="container mx-auto px-4 sm:px-6">
               <div className="max-w-3xl mx-auto">
