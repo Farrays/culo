@@ -26,7 +26,7 @@ module.exports = [
   {
     name: 'FR Locale Bundle',
     path: 'dist/assets/i18n-fr-*.js',
-    limit: '360 KB', // Increased for teacher profiles, security improvements, landing pages
+    limit: '365 KB', // Increased for landing pages translations (hip-hop, etc.)
     gzip: true,
   },
   {

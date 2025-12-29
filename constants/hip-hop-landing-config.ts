@@ -24,7 +24,7 @@ export const HIP_HOP_LANDING_CONFIG: LandingConfig = createLandingConfig('brand'
   // =========================================================================
   id: 'hip-hop-landing',
   slug: 'hip-hop',
-  sourceId: 0, // TODO: Asignar sourceId real de Momence cuando esté disponible
+  sourceId: 129130, // Momence modal ID
   estiloValue: 'Hip Hop',
   discoveryValue: 'Facebook',
 
@@ -126,5 +126,15 @@ export const HIP_HOP_LANDING_CONFIG: LandingConfig = createLandingConfig('brand'
   countdown: {
     baseDate: '2025-01-06T23:59:59',
     intervalDays: 14,
+  },
+
+  // =========================================================================
+  // VIDEO (Bunny.net)
+  // =========================================================================
+  video: {
+    bunnyVideoId: '54f2f015-18db-4535-b520-1c8cedde36b9',
+    bunnyLibraryId: '570522',
+    aspectRatio: '9:16',
+    autoplay: true,
   },
 });

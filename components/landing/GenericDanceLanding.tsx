@@ -18,7 +18,9 @@ import { useI18n } from '../../hooks/useI18n';
 import { SUPPORTED_LOCALES, type Locale } from '../../types';
 import GenericLeadModal from './GenericLeadModal';
 import AnimateOnScroll from '../AnimateOnScroll';
+import BunnyEmbed from '../BunnyEmbed';
 import AnimatedCounter from '../AnimatedCounter';
+import ScheduleWidget from './ScheduleWidget';
 import {
   BoltIcon,
   CheckCircleIcon,
@@ -75,6 +77,11 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
     const now = new Date();
     const baseTime = baseDateObj.getTime();
 
+    // If intervalDays is 0, it's a fixed date (no recurrence)
+    if (intervalDays === 0) {
+      return baseDateObj;
+    }
+
     if (now.getTime() < baseTime) {
       return baseDateObj;
     }
@@ -84,7 +91,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
     const nextDeadline = new Date(baseTime + (periodsPassed + 1) * intervalMs);
 
     return nextDeadline;
-  }, [baseDateObj, intervalMs]);
+  }, [baseDateObj, intervalMs, intervalDays]);
 
   const calculateTimeLeft = useCallback((): TimeLeft => {
     const now = new Date();
@@ -164,16 +171,18 @@ interface ExitIntentPopupProps {
   prefix: string;
   theme: LandingThemeClasses;
   styleName: string;
+  exploreUrl: string;
 }
 
 const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({
   isOpen,
   onClose,
   onReserve,
-  locale,
+  locale: _locale,
   prefix,
   theme,
   styleName,
+  exploreUrl,
 }) => {
   const { t } = useI18n();
 
@@ -226,7 +235,7 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({
 
           <div className="space-y-3">
             <Link
-              to={`/${locale}/clases`}
+              to={exploreUrl}
               className={`block w-full py-3.5 px-6 ${theme.bgPrimary} ${theme.bgPrimaryHover} text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02]`}
             >
               {t(`${exitPrefix}ExitIntent_ctaExplore`)}
@@ -425,7 +434,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
   return (
     <>
       <Helmet>
-        <title>{t(`${prefix}PageTitle`)}</title>
+        <title>{config.estiloValue} | Farray&apos;s International Dance Center</title>
         <meta name="description" content={t(`${prefix}PageDescription`)} />
         <meta name="robots" content="noindex, nofollow" />
         <meta name="googlebot" content="noindex, nofollow" />
@@ -435,6 +444,10 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
         <meta property="og:url" content={`${baseUrl}/${locale}/${config.slug}`} />
         <meta property="og:image" content={`${baseUrl}${images.hero}`} />
         <link rel="canonical" href={`${baseUrl}/${locale}/${config.slug}`} />
+        {/* Preload video thumbnail for faster LCP (only when not autoplay) */}
+        {config.video && !config.video.autoplay && config.video.thumbnailUrl && (
+          <link rel="preload" as="image" href={config.video.thumbnailUrl} fetchPriority="high" />
+        )}
       </Helmet>
 
       <main className="bg-black">
@@ -615,33 +628,45 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-3xl mx-auto">
               <AnimateOnScroll>
-                <div
-                  className={`relative aspect-video rounded-2xl overflow-hidden ${theme.borderPrimary} border bg-black/60 shadow-xl`}
-                >
+                {config.video ? (
+                  <BunnyEmbed
+                    videoId={config.video.bunnyVideoId}
+                    libraryId={config.video.bunnyLibraryId}
+                    title={t(`${prefix}VideoTitle`)}
+                    aspectRatio={config.video.aspectRatio || '16:9'}
+                    thumbnailUrl={config.video.thumbnailUrl}
+                    autoplay={config.video.autoplay}
+                    priority
+                  />
+                ) : (
                   <div
-                    className={`absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br ${theme.bgPrimaryDark} ${theme.bgAccentLight}`}
+                    className={`relative aspect-video rounded-2xl overflow-hidden ${theme.borderPrimary} border bg-black/60 shadow-xl`}
                   >
                     <div
-                      className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full ${theme.bgPrimary} opacity-80 flex items-center justify-center mb-4 shadow-lg`}
+                      className={`absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br ${theme.bgPrimaryDark} ${theme.bgAccentLight}`}
                     >
-                      <svg
-                        className="w-8 h-8 sm:w-10 sm:h-10 text-white ml-1"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
+                      <div
+                        className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full ${theme.bgPrimary} opacity-80 flex items-center justify-center mb-4 shadow-lg`}
                       >
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
+                        <svg
+                          className="w-8 h-8 sm:w-10 sm:h-10 text-white ml-1"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <p className="text-neutral/70 text-sm sm:text-base font-medium">
+                        {t(`${prefix}VideoPlaceholder`)}
+                      </p>
                     </div>
-                    <p className="text-neutral/70 text-sm sm:text-base font-medium">
-                      {t(`${prefix}VideoPlaceholder`)}
-                    </p>
+                    <img
+                      src={images.hero}
+                      alt={images.heroAlt}
+                      className="w-full h-full object-cover opacity-30"
+                    />
                   </div>
-                  <img
-                    src={images.hero}
-                    alt={images.heroAlt}
-                    className="w-full h-full object-cover opacity-30"
-                  />
-                </div>
+                )}
               </AnimateOnScroll>
             </div>
           </div>
@@ -811,79 +836,86 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
           </div>
         </section>
 
-        {/* SCHEDULE SECTION */}
-        <section className="py-12 md:py-16">
-          <div className="container mx-auto px-4 sm:px-6">
-            <AnimateOnScroll>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-neutral text-center mb-2 sm:mb-3 holographic-text">
-                {t(`${prefix}ScheduleTitle`)}
-              </h2>
-              <p className="text-neutral/60 text-center text-sm sm:text-base mb-8 sm:mb-10">
-                {t(`${prefix}ScheduleSubtitle`)}
-              </p>
-            </AnimateOnScroll>
+        {/* FULL SCHEDULE WIDGET (Jornada Puertas Abiertas) */}
+        {config.showFullSchedule && (
+          <ScheduleWidget theme={config.theme} showFilters={true} translationPrefix={prefix} />
+        )}
 
-            <div className="max-w-xl mx-auto space-y-2 sm:space-y-3">
-              {config.schedule.map((schedule, index) => (
-                <AnimateOnScroll key={schedule.id} delay={index * 60}>
-                  <div
-                    className={`flex items-center justify-between p-3 sm:p-4 bg-black/50 backdrop-blur-md rounded-xl ${theme.borderPrimaryLight} border ${theme.borderPrimaryHover} transition-all duration-300`}
-                  >
-                    <div className="flex items-center gap-3 sm:gap-4">
-                      <div className="text-center min-w-[70px] sm:min-w-[80px]">
-                        <span className="text-neutral font-bold text-sm sm:text-base block">
-                          {t(schedule.dayKey)}
-                        </span>
-                        <span className="text-neutral/60 text-xs sm:text-sm">
-                          {schedule.time.split(' - ')[0]}
-                        </span>
-                      </div>
-                      <div className={`w-px h-8 ${theme.bgPrimaryLight}`} />
-                      <div>
-                        <p className="text-neutral font-semibold text-sm sm:text-base">
-                          {schedule.className}
-                        </p>
-                        <p className="text-neutral/60 text-xs sm:text-sm">{schedule.teacher}</p>
-                      </div>
-                    </div>
-                    <span
-                      className={`px-2 sm:px-3 py-1 text-[10px] sm:text-xs rounded-full ${theme.bgPrimaryLight} ${theme.textPrimary} font-medium whitespace-nowrap`}
-                    >
-                      {t(schedule.levelKey)}
-                    </span>
-                  </div>
-                </AnimateOnScroll>
-              ))}
-            </div>
-
-            <AnimateOnScroll>
-              <div className="text-center mt-8 sm:mt-10">
-                <button
-                  onClick={openModal}
-                  className={`w-full sm:w-auto sm:min-w-[280px] md:min-w-[320px] min-h-[48px] sm:min-h-[52px] ${theme.bgPrimary} text-white font-bold text-base sm:text-lg py-3 sm:py-3.5 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl ${theme.shadowPrimary} animate-glow active:scale-95`}
-                >
-                  {t(`${prefix}CTA`)}
-                </button>
-              </div>
-            </AnimateOnScroll>
-
-            <AnimateOnScroll>
-              <div className="flex items-center justify-center gap-2 mt-6 sm:mt-8">
-                <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
-                  <span
-                    className={`animate-ping absolute inline-flex h-full w-full rounded-full ${theme.bgPrimary} opacity-75`}
-                  ></span>
-                  <span
-                    className={`relative inline-flex rounded-full h-full w-full ${theme.bgPrimary}`}
-                  ></span>
-                </span>
-                <p className={`${theme.textPrimary} font-medium text-xs sm:text-sm`}>
-                  {t(`${prefix}LimitedSpots`)}
+        {/* SCHEDULE SECTION (only if not showing full schedule) */}
+        {!config.showFullSchedule && (
+          <section className="py-12 md:py-16">
+            <div className="container mx-auto px-4 sm:px-6">
+              <AnimateOnScroll>
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-neutral text-center mb-2 sm:mb-3 holographic-text">
+                  {t(`${prefix}ScheduleTitle`)}
+                </h2>
+                <p className="text-neutral/60 text-center text-sm sm:text-base mb-8 sm:mb-10">
+                  {t(`${prefix}ScheduleSubtitle`)}
                 </p>
+              </AnimateOnScroll>
+
+              <div className="max-w-xl mx-auto space-y-2 sm:space-y-3">
+                {config.schedule.map((schedule, index) => (
+                  <AnimateOnScroll key={schedule.id} delay={index * 60}>
+                    <div
+                      className={`flex items-center justify-between p-3 sm:p-4 bg-black/50 backdrop-blur-md rounded-xl ${theme.borderPrimaryLight} border ${theme.borderPrimaryHover} transition-all duration-300`}
+                    >
+                      <div className="flex items-center gap-3 sm:gap-4">
+                        <div className="text-center min-w-[70px] sm:min-w-[80px]">
+                          <span className="text-neutral font-bold text-sm sm:text-base block">
+                            {t(schedule.dayKey)}
+                          </span>
+                          <span className="text-neutral/60 text-xs sm:text-sm">
+                            {schedule.time.split(' - ')[0]}
+                          </span>
+                        </div>
+                        <div className={`w-px h-8 ${theme.bgPrimaryLight}`} />
+                        <div>
+                          <p className="text-neutral font-semibold text-sm sm:text-base">
+                            {schedule.className}
+                          </p>
+                          <p className="text-neutral/60 text-xs sm:text-sm">{schedule.teacher}</p>
+                        </div>
+                      </div>
+                      <span
+                        className={`px-2 sm:px-3 py-1 text-[10px] sm:text-xs rounded-full ${theme.bgPrimaryLight} ${theme.textPrimary} font-medium whitespace-nowrap`}
+                      >
+                        {t(schedule.levelKey)}
+                      </span>
+                    </div>
+                  </AnimateOnScroll>
+                ))}
               </div>
-            </AnimateOnScroll>
-          </div>
-        </section>
+
+              <AnimateOnScroll>
+                <div className="text-center mt-8 sm:mt-10">
+                  <button
+                    onClick={openModal}
+                    className={`w-full sm:w-auto sm:min-w-[280px] md:min-w-[320px] min-h-[48px] sm:min-h-[52px] ${theme.bgPrimary} text-white font-bold text-base sm:text-lg py-3 sm:py-3.5 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl ${theme.shadowPrimary} animate-glow active:scale-95`}
+                  >
+                    {t(`${prefix}CTA`)}
+                  </button>
+                </div>
+              </AnimateOnScroll>
+
+              <AnimateOnScroll>
+                <div className="flex items-center justify-center gap-2 mt-6 sm:mt-8">
+                  <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
+                    <span
+                      className={`animate-ping absolute inline-flex h-full w-full rounded-full ${theme.bgPrimary} opacity-75`}
+                    ></span>
+                    <span
+                      className={`relative inline-flex rounded-full h-full w-full ${theme.bgPrimary}`}
+                    ></span>
+                  </span>
+                  <p className={`${theme.textPrimary} font-medium text-xs sm:text-sm`}>
+                    {t(`${prefix}LimitedSpots`)}
+                  </p>
+                </div>
+              </AnimateOnScroll>
+            </div>
+          </section>
+        )}
 
         {/* WHY FARRAY'S SECTION */}
         <section className="py-12 md:py-16 bg-primary-dark/10">
@@ -1179,6 +1211,11 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
         prefix={prefix}
         theme={theme}
         styleName={config.estiloValue}
+        exploreUrl={
+          config.slug === 'jornada-puertas-abiertas'
+            ? `/${locale}/clases`
+            : `/${locale}/jornada-puertas-abiertas`
+        }
       />
     </>
   );

@@ -15669,7 +15669,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Special Offer
   twLandingOfferTitle: 'Solo por tiempo limitado',
   twLandingOfferDesc:
-    "Reserva tu clase ahora y si decides apuntarte el mismo día, recibirás una oferta especial de bienvenida exclusiva solo válida después de la clase. Queremos que formes parte de Farray's solo si conectas con nuestra energía… pero si lo haces, que no pierdas el tiempo.",
+    'Reserva tu clase ahora y si decides apuntarte el mismo día, recibirás una oferta especial de bienvenida exclusiva solo válida después de la clase.',
 
   // Schedule Section
   twLandingScheduleTitle: 'Elige tu horario',
@@ -15696,11 +15696,11 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Testimonials Section
   twLandingTestimonialsTitle: '¿Qué dicen quienes ya lo han vivido?',
   twLandingTestimonial1:
-    'Vine muerta de vergüenza pensando que no sabría mover nada. Salí sintiéndome más segura que nunca. Las profes son increíbles y el ambiente es puro amor.',
+    'Vine muerta de vergüenza pensando que este estilo no era para mi. Salí y estaba flipando. Sandra es increíble y el ambiente es puro amor.',
   twLandingTestimonial2:
-    'El Twerk me ha cambiado la vida. No solo es un entrenamiento brutal para glúteos y core, es terapia pura. Cada clase salgo renovada.',
+    'El Twerk me ha cambiado la vida. No solo es un entrenamiento, es terapia pura. Cada clase salgo renovada.',
   twLandingTestimonial3:
-    'Nunca pensé que me atrevería a hacer Twerk. Ahora es mi clase favorita de la semana. El grupo es maravilloso y las profes te hacen sentir como en casa.',
+    'Nunca pensé que me atrevería a hacer Twerk. Ahora es mi clase favorita de la semana. El grupo es maravilloso y Sandra me hace sentir como en casa.',
 
   // FAQ Section
   twLandingFaqTitle: 'Quizás te preguntas...',
@@ -16090,9 +16090,9 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   hhrLandingValueFree: 'GRATIS',
 
   // Offer Section
-  hhrLandingOfferTitle: 'Solo por tiempo limitado',
+  hhrLandingOfferTitle: 'Descuento exclusivo · Solo por tiempo limitado',
   hhrLandingOfferDesc:
-    'Esta clase de bienvenida gratuita es nuestra forma de presentarte el Hip Hop Reggaeton. Sin presiones, sin compromiso. Solo ven, prueba y decide.',
+    'Si decides continuar después de la clase de bienvenida, tendrás acceso a un descuento exclusivo en tu primera mensualidad o paquete. Solo válido para nuevos alumnos.',
 
   // Schedule Section
   hhrLandingScheduleTitle: 'Elige tu horario',
@@ -16120,11 +16120,11 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Testimonials Section
   hhrLandingTestimonialsTitle: '¿Qué dicen quienes ya lo han vivido?',
   hhrLandingTestimonial1:
-    'Las clases de Charlie son increíbles. Mezcla Hip Hop y Reggaeton de una forma que nunca había visto. Aprendes flow de verdad y la energía es brutal.',
+    'Las clases de Charlie son increíbles. Aprendes flow de verdad y la energía y buen rollo de la academia es brutal.',
   hhrLandingTestimonial2:
-    'Nunca había bailado nada urbano y ahora no puedo parar. Charlie te hace sentir que puedes con todo. El ambiente es genial y las coreos son fuego.',
+    'Nunca había bailado nada urbano y ahora no puedo parar. Es mi momento preferido de mi semana. El ambiente es genial y las coreos son fuego.',
   hhrLandingTestimonial3:
-    'Lo mejor de esta academia es que te enseñan la técnica real pero también la actitud. Después de unas semanas ya me sentía con swagger.',
+    'Lo mejor de las clases con Charlie, además de todo lo que aprendemos, es la buena vibra que se respira.',
 
   // FAQ Section
   hhrLandingFaqTitle: 'Quizás te preguntas...',
@@ -16156,6 +16156,8 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
     'El flow está dentro de ti. Solo necesitas la clase correcta para liberarlo.',
   hhrLandingFinalCTADesc:
     'Reserva tu clase de bienvenida GRATIS ahora y descubre lo que Hip Hop + Reggaeton pueden hacer por ti.',
+  hhrLandingFinalCTAExtra:
+    'Charlie Breezy te espera en el corazón de Barcelona. Tu cuerpo ya conoce el ritmo.',
   hhrLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
   hhrLandingUrgencyReminder: 'Recuerda: las plazas son muy limitadas cada semana',
 
@@ -16379,6 +16381,8 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   hhLandingFinalCTATitle: '¿Preparado para descubrir el verdadero Hip Hop?',
   hhLandingFinalCTADesc:
     'Reserva tu clase de bienvenida gratuita ahora y empieza tu viaje en el street dance con un juez internacional de Hip Hop.',
+  hhLandingFinalCTAExtra:
+    'Descuento exclusivo · Solo por tiempo limitado\n\nSi decides continuar después de la clase de bienvenida, tendrás acceso a un descuento exclusivo en tu primera mensualidad o paquete. Solo válido para nuevos alumnos.',
   hhLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
   hhLandingUrgencyReminder: 'Recuerda: las plazas son muy limitadas cada semana',
 
@@ -16496,7 +16500,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   abLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
   abLandingHeadline: 'Siente la Energía de África con Afrobeats',
   abLandingSubheadline:
-    'Descubre los ritmos más vibrantes del continente africano. Afrobeats, Amapiano, Afrodance... movimientos que liberan tu cuerpo y conectan con la alegría más pura.',
+    'Entra en el nuevo año moviéndote intensamente al ritmo de África y descubre los bailes más divertidos de este continente, mientras compensas los excesos de las fiestas con una gran sonrisa en la cara.',
   abLandingCTA: 'RESERVA TU CLASE DE BIENVENIDA AHORA',
   abLandingTrustText: 'Sin coste · Sin compromiso · Plazas muy limitadas',
   abLandingTrustActiveStudents: '1.500+ alumnos activos',
@@ -16517,9 +16521,9 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   abLandingStatSatisfied: 'Alumnos Satisfechos',
 
   // Experience Section
-  abLandingExperienceTitle: '¿Listo para sentir la vibra africana?',
+  abLandingExperienceTitle: '¿Quieres viajar a África sin salir de Barcelona?',
   abLandingExperienceDesc:
-    'El Afrobeats es pura energía, alegría y conexión con las raíces africanas. En cada clase aprenderás movimientos auténticos de estilos como Afrodance, Amapiano y Azonto, mientras sueltas el cuerpo y te diviertes como nunca antes.',
+    'Esta no es una clase cualquiera. Es tu acceso a una experiencia exclusiva y cultural, en la que te guiamos paso a paso para que descubras el verdadero sabor del Afrodance. ¿Primera vez con nosotros? Esta es tu ocasión: una clase de Bienvenida de Afrodance totalmente gratis, sin coste, sin compromiso y con plazas limitadas. Una bienvenida con toda la diversión que mereces.',
 
   // Value Stack
   abLandingValueTitle: '¿Qué incluye esta experiencia?',
@@ -16538,7 +16542,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Offer Section
   abLandingOfferTitle: 'Solo por tiempo limitado',
   abLandingOfferDesc:
-    'Si decides continuar después de la clase de bienvenida, tendrás acceso a un descuento exclusivo en tu primera mensualidad o bono. Solo válido para nuevos alumnos.',
+    'Si decides continuar después de la clase de bienvenida, tendrás acceso a un descuento exclusivo en tu primera mensualidad o paquete. Solo válido para nuevos alumnos.',
 
   // Schedule Section
   abLandingScheduleTitle: 'Elige tu horario',
@@ -16560,7 +16564,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
     'Formamos parte del Consejo Internacional de Danza de la UNESCO, garantía de calidad y excelencia en la enseñanza de danza africana.',
   abLandingWhyTitle4: 'Ubicación inmejorable',
   abLandingWhyDesc4:
-    'A solo 2 minutos del metro Plaza España en Barcelona. Fácil acceso en transporte público y parking cercano.',
+    'A solo 5 minutos del metro Plaza España en Barcelona. Fácil acceso en transporte público y parking cercano.',
 
   // Testimonials
   abLandingTestimonialsTitle: '¿Qué dicen quienes ya lo han vivido?',
@@ -16600,6 +16604,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   abLandingFinalCTATitle: 'La energía de África te está esperando. ¿Vienes a descubrirla?',
   abLandingFinalCTADesc:
     'Reserva ahora tu clase de bienvenida gratuita y descubre por qué cientos de alumnos han encontrado en el Afrobeats su forma favorita de liberar energía y disfrutar.',
+  abLandingFinalCTAExtra: `África se mueve. ¿Te mueves con ella?`,
   abLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
   abLandingUrgencyReminder: 'Recuerda: las plazas son muy limitadas cada semana',
 
@@ -17633,7 +17638,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Experience Section
   ctLandingExperienceTitle: '¿Preparado/a para explorar el movimiento?',
   ctLandingExperienceDesc:
-    'La danza contemporánea es libertad de expresión, conexión mente-cuerpo y técnica fluida. En tu primera clase descubrirás un espacio donde cada movimiento cuenta una historia, guiado por profesores formados en la prestigiosa Escuela Nacional de Arte de Cuba.',
+    'La danza contemporánea es libertad de expresión, conexión mente-cuerpo y técnica fluida. En tu primera clase descubrirás un espacio donde cada movimiento cuenta una historia, guiado por profesores formados en las más prestigiosas escuelas de danza de Cuba.',
 
   // Value Stack
   ctLandingValueTitle: '¿Qué incluye esta experiencia?',
@@ -17649,9 +17654,9 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   ctLandingValueFree: 'GRATIS',
 
   // Offer Section
-  ctLandingOfferTitle: 'Solo por tiempo limitado',
+  ctLandingOfferTitle: 'Descuento exclusivo para nuevos alumnos',
   ctLandingOfferDesc:
-    'Las plazas para la clase de bienvenida son muy limitadas cada semana. Reserva ahora para asegurar tu lugar y comenzar tu viaje en la danza contemporánea.',
+    'Si decides continuar después de la clase de bienvenida, tendrás acceso a un descuento exclusivo en tu primera mensualidad o paquete. Solo válido para nuevos alumnos.',
 
   // Schedule
   ctLandingScheduleTitle: 'Elige tu horario',
@@ -17661,27 +17666,27 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
 
   // Why Us Section
   ctLandingWhyFarraysTitle: "¿Por qué Farray's International Dance Center?",
-  ctLandingWhyTitle1: 'Profesores formados en la Escuela Nacional de Arte de Cuba',
+  ctLandingWhyTitle1: 'Contemporáneo Lírico y Afro Contemporáneo (Técnica Cubana ENA)',
   ctLandingWhyDesc1:
-    'Daniel Sené y Alejandro Miñoso combinan técnica cubana de elite con pedagogía contemporánea. Aprenderás de profesionales que han bailado en escenarios internacionales.',
+    'Profesores formados en la prestigiosa Escuela Nacional de Arte de Cuba. Explora desde el lírico expresivo hasta el Afro Contemporáneo con raíces africanas y técnica cubana de élite.',
   ctLandingWhyTitle2: 'Técnica progresiva adaptada a tu nivel',
   ctLandingWhyDesc2:
-    'Desde lírico principiante hasta suelo & flow intermedio. Avanza a tu ritmo con una metodología que respeta tu cuerpo y potencia tu expresión.',
+    'Desde principiante hasta avanzado en Contemporáneo Lírico, Suelo & Flow y Afro Contemporáneo. Avanza a tu ritmo con una metodología que respeta tu cuerpo y potencia tu expresión.',
   ctLandingWhyTitle3: 'Academia reconocida por el CID UNESCO',
   ctLandingWhyDesc3:
     'Somos centro oficial del Consejo Internacional de la Danza. Tu formación tiene respaldo internacional y acceso a certificaciones oficiales.',
   ctLandingWhyTitle4: 'Instalaciones profesionales en Barcelona centro',
   ctLandingWhyDesc4:
-    'Salas con suelo flotante profesional, espejos de cuerpo completo y climatización. A 2 minutos de Metro Plaza España con parking gratuito.',
+    'Salas con suelo de linóleo flotante profesional, espejos de cuerpo completo y climatización. A 5 minutos de Plaza España y de Sants Estació.',
 
   // Testimonials
   ctLandingTestimonialsTitle: '¿Qué dicen quienes ya lo han vivido?',
   ctLandingTestimonial1:
-    'Las clases de contemporáneo con Daniel son increíbles. Te ayuda a descubrir movimientos que no sabías que tu cuerpo podía hacer. El ambiente es súper acogedor.',
+    'Las clases de contemporáneo con Daniel son increíbles. Me han ayudado a descubrir movimientos que no sabía que mi cuerpo podía hacer. Además el ambiente en la escuela es súper acogedor.',
   ctLandingTestimonial2:
-    'Nunca había bailado y Alejandro me hizo sentir cómoda desde el primer momento. La técnica de suelo es desafiante pero muy gratificante.',
+    'Nunca había bailado y Alejandro me hizo sentir cómoda desde el primer momento. El estilo es desafiante pero muy gratificante.',
   ctLandingTestimonial3:
-    'Después de años haciendo yoga buscaba algo más expresivo. El contemporáneo lírico ha sido un descubrimiento. Me encanta la conexión cuerpo-emoción.',
+    'Después de años haciendo yoga buscaba algo diferente. El contemporáneo lírico ha sido un descubrimiento. Me encanta la conexión cuerpo-mente y lo cansada que salgo de las clases.',
 
   // FAQ Section
   ctLandingFaqTitle: 'Quizás te preguntas...',
@@ -17698,15 +17703,15 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   ctLandingObjA4:
     'Ropa cómoda que permita movimiento amplio (leggings, camiseta). El contemporáneo se baila descalzo o con calcetines antideslizantes. No necesitas invertir en nada especial para tu primera clase.',
 
-  // Video Placeholder
+  // Video
+  ctLandingVideoTitle: 'Mira una clase real de Contemporáneo',
   ctLandingVideoPlaceholder: 'Video próximamente',
 
   // Final CTA
   ctLandingFinalCTATitle: 'Tu cuerpo tiene historias que contar. Es hora de expresarlas.',
   ctLandingFinalCTADesc:
     'Únete a cientos de alumnos que han descubierto la danza contemporánea en Barcelona. Tu primera clase es completamente gratis.',
-  ctLandingFinalCTAExtra:
-    'Primeros 10 que reserven esta semana: sesión de orientación personalizada incluida',
+  ctLandingFinalCTAExtra: '',
   ctLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
 
   // Footer
@@ -19152,4 +19157,204 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   baLeadModal_error_title: 'Error al procesar',
   baLeadModal_error_message: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
   baLeadModal_error_cta: 'Reintentar',
+
+  // =====================================================
+  // JORNADA PUERTAS ABIERTAS LANDING PAGE - ENTERPRISE
+  // Del 7 al 31 de enero de 2025
+  // =====================================================
+
+  // SEO
+  jpaLandingPageTitle:
+    "Jornada de Puertas Abiertas | Del 7 al 31 de Enero | Farray's Center Barcelona",
+  jpaLandingPageDescription:
+    "Del 7 al 31 de enero, prueba una clase de baile GRATIS en Farray's Center. Más de 25 estilos: Dancehall, Contemporáneo, Hip-Hop, Salsa, Bachata y mucho más. Descuento exclusivo si te inscribes.",
+
+  // Hero Section
+  jpaLandingBadge: 'DEL 7 AL 31 DE ENERO',
+  jpaLandingHeadline: 'Prueba Una Clase de Baile GRATIS',
+  jpaLandingSubheadline:
+    'Jornada de Puertas Abiertas: ven a conocernos y descubre tu estilo de baile ideal entre más de 25 estilos diferentes. Elige la clase que más te interese y pruébala sin coste.',
+  jpaLandingCTA: 'RESERVA TU CLASE DE BIENVENIDA',
+  jpaLandingTrustText: 'Una clase gratis · Sin compromiso · Plazas limitadas',
+  jpaLandingTrustActiveStudents: '1.500+ alumnos activos',
+  jpaLandingTrustYearsExp: '8+ años',
+  jpaLandingTrustLocationShort: 'Barcelona - Plaza España',
+  jpaLandingReviewsLabel: 'reviews',
+  jpaLandingExclusiveBadge: 'JORNADA DE PUERTAS ABIERTAS',
+  jpaLandingUrgencyBadge: 'DEL 7 AL 31 DE ENERO — ¡Plazas limitadas!',
+
+  // Logos Section
+  jpaLandingLogosTitle: 'Has podido vernos en',
+  jpaLandingFestivalsText: 'Y en los mejores Festivales de Danza de Todo El Mundo',
+
+  // Stats
+  jpaLandingStatYears: 'Años de Experiencia',
+  jpaLandingStatActive: 'Estudiantes Activos',
+  jpaLandingStatSatisfied: 'Alumnos Satisfechos',
+
+  // Experience Section
+  jpaLandingExperienceTitle: '¿Preparado/a para descubrir tu estilo de baile?',
+  jpaLandingExperienceDesc:
+    "Durante la Jornada de Puertas Abiertas de Farray's Center (del 7 al 31 de enero) podrás probar una clase de baile completamente gratis. Latino, Urbano, Danza Clásica o Fitness: elige el estilo que más te llame la atención y pruébalo sin compromiso. Profesores profesionales te guiarán en cada paso.",
+
+  // Schedule Widget
+  jpaLandingScheduleTitle: 'Consulta todos nuestros horarios',
+  jpaLandingScheduleSubtitle:
+    'Elige el día y estilo que más te interese para tu clase de bienvenida gratuita.',
+
+  // Value Stack
+  jpaLandingValueTitle: '¿Qué incluye tu clase de bienvenida?',
+  jpaLandingValueItem1: 'Una clase completa de 60 minutos del estilo que elijas',
+  jpaLandingValuePrice1: 'Valor: {price}€',
+  jpaLandingValueItem2: 'Increíbles profesores y mejores personas',
+  jpaLandingValueItem3: 'Descubre nuestras instalaciones y nuestro ambiente',
+  jpaLandingValueItem4: 'Asesoramiento personalizado para elegir tu estilo',
+  jpaLandingValueItem5: 'Acceso a descuento exclusivo si decides inscribirte',
+  jpaLandingValueIncluded: 'Incluido',
+  jpaLandingValueFree: 'GRATIS',
+  jpaLandingValueTotal: 'VALOR TOTAL:',
+  jpaLandingValueYourPrice: 'TU PRECIO HOY:',
+
+  // Offer Section
+  jpaLandingOfferTitle: 'Descuento exclusivo · Solo por tiempo limitado',
+  jpaLandingOfferDesc:
+    'Si decides continuar después de la clase de bienvenida, tendrás acceso a un descuento exclusivo en tu primera mensualidad o bono. Solo válido para nuevos alumnos durante la Jornada de Puertas Abiertas (7-31 de enero).',
+
+  // Schedule (placeholder - usamos showFullSchedule)
+  jpaLandingLimitedSpots: 'Plazas limitadas por clase para garantizar atención personalizada',
+
+  // Why Us Section
+  jpaLandingWhyFarraysTitle: "¿Por qué Farray's International Dance Center?",
+  jpaLandingWhyTitle1: 'Más de 25 estilos de baile diferentes',
+  jpaLandingWhyDesc1:
+    'Latino, Urbano, Danza Clásica, Fitness y mucho más. Dancehall, Hip-Hop, Contemporáneo, Salsa, Bachata, Ballet, Twerk, Heels... Encuentra el estilo que conecta contigo.',
+  jpaLandingWhyTitle2: 'Profesores profesionales con experiencia internacional',
+  jpaLandingWhyDesc2:
+    'Nuestro equipo incluye bailarines de programas como The Dancer, Street Dance 2 y artistas que han trabajado con las mejores producciones internacionales.',
+  jpaLandingWhyTitle3: 'Academia reconocida por el CID UNESCO',
+  jpaLandingWhyDesc3:
+    'Somos centro oficial del Consejo Internacional de la Danza. Tu formación tiene respaldo internacional y acceso a certificaciones oficiales.',
+  jpaLandingWhyTitle4: 'Instalaciones profesionales en Barcelona centro',
+  jpaLandingWhyDesc4:
+    'Salas con suelo de linóleo flotante profesional, espejos de cuerpo completo y climatización. A 5 minutos de Plaza España y de Sants Estació.',
+
+  // Testimonials
+  jpaLandingTestimonialsTitle: '¿Qué dicen nuestros alumnos?',
+  jpaLandingTestimonial1:
+    'Vine a una clase de prueba sin saber qué estilo elegir y terminé enamorándome del Dancehall. Los profes son increíbles y el ambiente es súper acogedor.',
+  jpaLandingTestimonial2:
+    "Mi clase de bienvenida fue en Hip-Hop y desde entonces no he parado. Ahora también hago Contemporáneo. Farray's es como una familia.",
+  jpaLandingTestimonial3:
+    "Nunca había bailado y me sentí cómoda desde el primer momento. Ahora vengo 3 veces por semana. Farray's se ha convertido en mi segunda casa.",
+
+  // FAQs
+  jpaLandingFaqTitle: 'Preguntas frecuentes',
+  jpaLandingObjQ1: '¿Puedo probar más de una clase gratis?',
+  jpaLandingObjA1:
+    'La clase de bienvenida gratuita es una por persona. Si después de probarla quieres explorar otros estilos antes de inscribirte, puedes hacerlo abonando el precio de clase suelta (20€). Una vez inscrito, podrás disfrutar de todos los estilos incluidos en tu plan.',
+  jpaLandingObjQ2: '¿Necesito experiencia previa en baile?',
+  jpaLandingObjA2:
+    'No, tenemos clases para todos los niveles. Nuestros profesores adaptan las clases para que principiantes y bailarines con experiencia puedan disfrutar por igual.',
+  jpaLandingObjQ3: '¿Qué ropa necesito llevar?',
+  jpaLandingObjA3:
+    'Ropa cómoda que te permita moverte con libertad. Dependiendo del estilo, puedes bailar con zapatillas deportivas, descalzo o con calcetines. Te orientamos cuando reserves.',
+  jpaLandingObjQ4: '¿Hay obligación de inscribirse después?',
+  jpaLandingObjA4:
+    'Ninguna. La clase de bienvenida es completamente gratuita y sin compromiso. Si decides continuar, tendrás acceso a un descuento exclusivo en tu primera mensualidad o bono.',
+
+  // Video
+  jpaLandingVideoTitle: 'Conoce nuestro centro',
+  jpaLandingVideoPlaceholder: 'Video próximamente',
+
+  // Final CTA
+  jpaLandingFinalCTATitle: 'El mejor momento para empezar a bailar es ahora',
+  jpaLandingFinalCTADesc:
+    'Aprovecha la Jornada de Puertas Abiertas (7-31 de enero) para probar una clase gratis y descubrir tu pasión por el baile. Más de 25 estilos te esperan.',
+  jpaLandingFinalCTAExtra: '',
+  jpaLandingFinalTrust: 'Una clase gratis · Sin compromiso · Descuento exclusivo',
+
+  // Footer
+  jpaLandingFooterRights: 'Todos los derechos reservados',
+  jpaLandingFooterLegal: 'Aviso Legal',
+  jpaLandingFooterPrivacy: 'Política de Privacidad',
+  jpaLandingFooterTerms: 'Términos y Condiciones',
+
+  // Countdown
+  jpaLandingCountdownTitle: 'La jornada termina en:',
+  jpaLandingCountdownExpires: 'Del 7 al 31 de enero - Plazas limitadas',
+  jpaLandingCountdownDays: 'Días',
+  jpaLandingCountdownHours: 'Horas',
+  jpaLandingCountdownMinutes: 'Min',
+  jpaLandingCountdownSeconds: 'Seg',
+
+  // Exit Intent Popup
+  jpaExitIntent_title: '¿Te vas sin reservar tu clase de bienvenida?',
+  jpaExitIntent_description:
+    'No pierdas la oportunidad de probar una clase de baile GRATIS durante la Jornada de Puertas Abiertas (7-31 de enero). Plazas limitadas.',
+  jpaExitIntent_ctaExplore: 'Ver clases disponibles',
+  jpaExitIntent_ctaDancehall: 'Reservar mi clase gratis',
+  jpaExitIntent_ctaClose: 'Cerrar',
+  jpaExitIntent_hint: 'Dancehall, Hip-Hop, Contemporáneo, Salsa, Bachata, Ballet y mucho más...',
+
+  // =====================================================
+  // JORNADA PUERTAS ABIERTAS LEAD MODAL
+  // =====================================================
+
+  // Modal Header
+  jpaLeadModal_title: 'Reserva tu clase de bienvenida gratuita',
+  jpaLeadModal_subtitle: 'Jornada de Puertas Abiertas: del 7 al 31 de enero',
+
+  // Micro Commitment
+  jpaLeadModal_microCommit_question: '¿Te gustaría probar una clase de baile GRATIS?',
+  jpaLeadModal_microCommit_yes: '¡Sí, quiero mi clase gratis!',
+  jpaLeadModal_microCommit_curious: 'Solo quiero más información',
+
+  jpaLeadModal_intro:
+    'Completa el formulario y recibe toda la información para reservar tu clase de bienvenida gratuita.',
+
+  // Benefits
+  jpaLeadModal_benefits_title: 'Qué recibirás:',
+  jpaLeadModal_benefit1: 'Confirmación de tu clase de bienvenida por WhatsApp',
+  jpaLeadModal_benefit2: 'Horarios disponibles para elegir tu clase',
+  jpaLeadModal_benefit3: 'Información sobre el descuento exclusivo',
+  jpaLeadModal_benefit4: 'Indicaciones para llegar al centro',
+
+  // Form Fields - Labels
+  jpaLeadModal_firstName: 'Nombre',
+  jpaLeadModal_lastName: 'Apellidos',
+  jpaLeadModal_email: 'Email',
+  jpaLeadModal_phone: 'Teléfono (WhatsApp)',
+  jpaLeadModal_phonePlaceholder: '612 345 678',
+
+  // Form Fields - Field Labels (with asterisk indicator)
+  jpaLeadModal_field_firstName: 'Nombre',
+  jpaLeadModal_field_lastName: 'Apellidos',
+  jpaLeadModal_field_email: 'Correo electrónico',
+  jpaLeadModal_field_phone: 'Teléfono (WhatsApp)',
+
+  // Form Fields - Placeholders
+  jpaLeadModal_placeholder_firstName: 'Tu nombre',
+  jpaLeadModal_placeholder_lastName: 'Tus apellidos',
+  jpaLeadModal_placeholder_email: 'tu@email.com',
+  jpaLeadModal_placeholder_phone: '612 345 678',
+
+  // Consent
+  jpaLeadModal_consent_text:
+    'Acepto recibir información sobre mi clase de bienvenida y la política de privacidad',
+  jpaLeadModal_consent_link: 'política de privacidad',
+
+  // Submit
+  jpaLeadModal_submit: 'Reservar Mi Clase Gratis',
+  jpaLeadModal_submitLoading: 'Procesando...',
+
+  // Success
+  jpaLeadModal_success_title: '¡Clase Reservada!',
+  jpaLeadModal_success_message:
+    'Recibirás un WhatsApp con todos los detalles para tu clase de bienvenida. ¡Te esperamos en la Jornada de Puertas Abiertas!',
+  jpaLeadModal_success_cta: 'Cerrar',
+
+  // Error
+  jpaLeadModal_error_title: 'Error al procesar',
+  jpaLeadModal_error_message: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+  jpaLeadModal_error_cta: 'Reintentar',
 };

@@ -496,7 +496,7 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
                   </button>
                   <button
                     onClick={() => setHasMicroCommitment(true)}
-                    className="w-full py-3 bg-white/5 hover:bg-white/10 text-neutral/70 font-medium rounded-xl transition-all border border-white/10"
+                    className={`w-full py-3 ${theme.bgPrimaryLight} ${theme.textPrimary} font-medium rounded-xl transition-all ${theme.borderPrimary} border hover:opacity-80`}
                   >
                     {t(`${modalPrefix}_microCommit_curious`)}
                   </button>

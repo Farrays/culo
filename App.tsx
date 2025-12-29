@@ -95,6 +95,7 @@ import { AFRO_JAZZ_LANDING_CONFIG } from './constants/afro-jazz-landing-config';
 import { SALSA_CUBANA_LANDING_CONFIG } from './constants/salsa-cubana-landing-config';
 import { BALLET_LANDING_CONFIG } from './constants/ballet-landing-config';
 import { AFRO_CONTEMPORANEO_LANDING_CONFIG } from './constants/afro-contemporaneo-landing-config';
+import { JORNADA_PUERTAS_ABIERTAS_LANDING_CONFIG } from './constants/jornada-puertas-abiertas-landing-config';
 const PreciosPage = lazy(() => import('./components/PreciosPage'));
 const HorariosPreciosPage = lazy(() => import('./components/HorariosPreciosPage'));
 const HorariosPageV2 = lazy(() => import('./components/HorariosPageV2'));
@@ -228,7 +229,8 @@ const AppContent: React.FC = () => {
       location.pathname.endsWith('/afro-jazz') ||
       location.pathname.endsWith('/salsa-cubana') ||
       location.pathname.endsWith('/ballet') ||
-      location.pathname.endsWith('/afro-contemporaneo'));
+      location.pathname.endsWith('/afro-contemporaneo') ||
+      location.pathname.endsWith('/jornada-puertas-abiertas'));
 
   // Legal pages without header/footer (accessed from landing modal links)
   const isMinimalLegalPage = location.pathname.includes('/politica-privacidad');
@@ -998,6 +1000,17 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <GenericDanceLanding config={AFRO_CONTEMPORANEO_LANDING_CONFIG} />
+                </>
+              }
+            />
+
+            {/* ===== JORNADA PUERTAS ABIERTAS LANDING ===== */}
+            <Route
+              path="/:locale/jornada-puertas-abiertas"
+              element={
+                <>
+                  <LocaleSync />
+                  <GenericDanceLanding config={JORNADA_PUERTAS_ABIERTAS_LANDING_CONFIG} />
                 </>
               }
             />

@@ -171,6 +171,16 @@ export const DANCEHALL_LANDING_CONFIG: LandingConfig = createLandingConfig('rose
     baseDate: '2025-01-06T23:59:59',
     intervalDays: 14,
   },
+
+  // =========================================================================
+  // VIDEO (Bunny.net)
+  // =========================================================================
+  video: {
+    bunnyVideoId: 'ee68f627-8330-41aa-b1a8-5307a8400fc6',
+    bunnyLibraryId: '571535',
+    aspectRatio: '9:16',
+    autoplay: true,
+  },
 });
 
 // =============================================================================
