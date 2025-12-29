@@ -179,7 +179,7 @@ const LocaleSync: React.FC = () => {
 };
 
 // ===== EXIT INTENT CONFIGURATION =====
-// Paths where exit intent modal should NOT appear (legal, informational pages)
+// Paths where exit intent modal should NOT appear (legal, informational pages, landing pages)
 const EXIT_INTENT_EXCLUDED_PATHS = [
   '/terminos-y-condiciones',
   '/aviso-legal',
@@ -198,11 +198,20 @@ const EXIT_INTENT_EXCLUDED_PATHS = [
   '/merchandise',
   '/test',
   '/404',
+  // Landing pages (have their own exit intent)
+  '/dancehall',
+  '/hip-hop',
+  '/afrobeats',
+  '/afro-jazz',
+  '/salsa-cubana',
+  '/ballet',
+  '/afro-contemporaneo',
+  '/jornada-puertas-abiertas',
 ];
 
 // Promotion configuration - easy to update
 const EXIT_INTENT_PROMO_CONFIG = {
-  endDate: new Date('2025-01-31T23:59:59'),
+  endDate: new Date('2026-01-31T23:59:59'),
   discountPercent: 50,
   delay: 5000, // 5 seconds before activating detection
   cookieExpiry: 7, // Show again after 7 days
