@@ -644,11 +644,15 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
         </section>
 
         {/* VIDEO SECTION */}
+        {/* Note: BunnyEmbed with autoplay must NOT be wrapped in AnimateOnScroll */}
+        {/* because opacity:0 prevents iframe loading in production (Vercel) */}
         <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-3xl mx-auto">
-              <AnimateOnScroll>
-                {config.video ? (
+              {config.video ? (
+                config.video.autoplay ? (
+                  // Autoplay videos: render directly without AnimateOnScroll
+                  // to ensure iframe loads properly (opacity:0 blocks iframe loading)
                   <BunnyEmbed
                     videoId={config.video.bunnyVideoId}
                     libraryId={config.video.bunnyLibraryId}
@@ -659,6 +663,21 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
                     priority
                   />
                 ) : (
+                  // Non-autoplay videos: can use AnimateOnScroll since thumbnail loads first
+                  <AnimateOnScroll>
+                    <BunnyEmbed
+                      videoId={config.video.bunnyVideoId}
+                      libraryId={config.video.bunnyLibraryId}
+                      title={t(`${prefix}VideoTitle`)}
+                      aspectRatio={config.video.aspectRatio || '16:9'}
+                      thumbnailUrl={config.video.thumbnailUrl}
+                      autoplay={config.video.autoplay}
+                      priority
+                    />
+                  </AnimateOnScroll>
+                )
+              ) : (
+                <AnimateOnScroll>
                   <div
                     className={`relative aspect-video rounded-2xl overflow-hidden ${theme.borderPrimary} border bg-black/60 shadow-xl`}
                   >
@@ -686,8 +705,8 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
                       className="w-full h-full object-cover opacity-30"
                     />
                   </div>
-                )}
-              </AnimateOnScroll>
+                </AnimateOnScroll>
+              )}
             </div>
           </div>
         </section>
