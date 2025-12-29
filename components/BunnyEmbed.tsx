@@ -184,6 +184,10 @@ const BunnyEmbed: React.FC<BunnyEmbedProps> = ({
     );
   }
 
+  // Build iframe URL with proper parameters
+  // Note: muted=true is required for autoplay to work in browsers
+  const iframeSrc = `https://iframe.mediadelivery.net/embed/${libraryId}/${videoId}?autoplay=${autoplay}&muted=${autoplay}&preload=true&responsive=true`;
+
   return (
     <div className={`mx-auto ${containerClass}`}>
       <div
@@ -191,10 +195,9 @@ const BunnyEmbed: React.FC<BunnyEmbedProps> = ({
         style={{ aspectRatio: aspectRatioStyle }}
       >
         <iframe
-          src={`https://iframe.mediadelivery.net/embed/${libraryId}/${videoId}?autoplay=${autoplay}&preload=true&responsive=true`}
+          src={iframeSrc}
           className="absolute inset-0 w-full h-full border-0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-          allowFullScreen
           title={title}
         />
       </div>
