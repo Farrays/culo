@@ -646,7 +646,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
         {/* VIDEO SECTION */}
         {/* Note: BunnyEmbed with autoplay must NOT be wrapped in AnimateOnScroll */}
         {/* because opacity:0 prevents iframe loading in production (Vercel) */}
-        <section className="pb-12 md:pb-16">
+        <section className="pb-6 md:pb-8">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-3xl mx-auto">
               {config.video ? (
