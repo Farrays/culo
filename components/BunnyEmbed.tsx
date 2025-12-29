@@ -191,9 +191,9 @@ const BunnyEmbed: React.FC<BunnyEmbedProps> = ({
         style={{ aspectRatio: aspectRatioStyle }}
       >
         <iframe
-          src={`https://iframe.mediadelivery.net/embed/${libraryId}/${videoId}?autoplay=true&preload=false&responsive=true`}
+          src={`https://iframe.mediadelivery.net/embed/${libraryId}/${videoId}?autoplay=true&muted=${autoplay}&preload=true&responsive=true`}
           className="absolute inset-0 w-full h-full border-0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
           allowFullScreen
           title={title}
         />
