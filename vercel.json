@@ -11,7 +11,37 @@
       "maxDuration": 10
     }
   },
-  "rewrites": [{ "source": "/:locale(es|en|ca|fr)/:path*", "destination": "/index.html" }],
+  "rewrites": [
+    { "source": "/:locale(es|en|ca|fr)/horarios-precios", "destination": "/index.html" },
+    {
+      "source": "/:locale(es|en|ca|fr)/horarios-clases-baile-barcelona",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/:locale(es|en|ca|fr)/precios-clases-baile-barcelona",
+      "destination": "/index.html"
+    },
+    { "source": "/:locale(es|en|ca|fr)/calendario", "destination": "/index.html" },
+    { "source": "/:locale(es|en|ca|fr)/preguntas-frecuentes", "destination": "/index.html" },
+    {
+      "source": "/:locale(es|en|ca|fr)/alquiler-salas-baile-barcelona",
+      "destination": "/index.html"
+    },
+    { "source": "/:locale(es|en|ca|fr)/servicios-baile", "destination": "/index.html" },
+    { "source": "/:locale(es|en|ca|fr)/estudio-grabacion-barcelona", "destination": "/index.html" },
+    {
+      "source": "/:locale(es|en|ca|fr)/instalaciones-escuela-baile-barcelona",
+      "destination": "/index.html"
+    },
+    { "source": "/:locale(es|en|ca|fr)/profesores-baile-barcelona", "destination": "/index.html" },
+    { "source": "/:locale(es|en|ca|fr)/terminos-y-condiciones", "destination": "/index.html" },
+    { "source": "/:locale(es|en|ca|fr)/aviso-legal", "destination": "/index.html" },
+    { "source": "/:locale(es|en|ca|fr)/politica-privacidad", "destination": "/index.html" },
+    { "source": "/:locale(es|en|ca|fr)/politica-cookies", "destination": "/index.html" },
+    { "source": "/:locale(es|en|ca|fr)/test/:path*", "destination": "/index.html" },
+    { "source": "/:locale(es|en|ca|fr)/404", "destination": "/index.html" },
+    { "source": "/:locale(es|en|ca|fr)/:path*", "destination": "/index.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
