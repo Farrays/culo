@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { useCookieConsent } from '../hooks/useCookieConsent';
-import { useI18n } from '../hooks/useI18n';
 
 interface BunnyEmbedProps {
   videoId: string;
@@ -37,10 +35,6 @@ const BunnyEmbed: React.FC<BunnyEmbedProps> = ({
   priority = false,
   autoplay = false,
 }) => {
-  const { t } = useI18n();
-  const { preferences, setShowBanner } = useCookieConsent();
-  const hasFunctionalConsent = preferences?.functional ?? false;
-
   const [isLoaded, setIsLoaded] = useState(autoplay);
   // When autoplay is true, skip thumbnail loading entirely to avoid 404 errors
   // Bunny.net videos may not have thumbnails generated, and we don't need them for autoplay
@@ -72,57 +66,8 @@ const BunnyEmbed: React.FC<BunnyEmbedProps> = ({
       ? 'bg-gradient-to-br from-orange-500 to-orange-600'
       : 'bg-primary-accent';
 
-  // Show consent required placeholder if user hasn't accepted functional cookies
-  if (!hasFunctionalConsent) {
-    return (
-      <div className={`mx-auto ${containerClass}`}>
-        <div
-          className="relative w-full rounded-2xl overflow-hidden border-2 border-neutral/30 bg-dark-surface/50"
-          style={{ aspectRatio: aspectRatioStyle }}
-        >
-          {/* Blurred thumbnail */}
-          {!thumbnailError ? (
-            <img
-              src={thumbnailUrl}
-              alt={title}
-              loading={priority ? 'eager' : 'lazy'}
-              decoding="async"
-              fetchPriority={priority ? 'high' : 'auto'}
-              className="absolute inset-0 w-full h-full object-cover opacity-30"
-              onError={() => setThumbnailError(true)}
-            />
-          ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark via-black to-primary-accent/20 opacity-30" />
-          )}
-
-          {/* Consent message overlay */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-            <svg
-              className="w-12 h-12 text-neutral/50 mb-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-              />
-            </svg>
-            <p className="text-neutral/80 text-sm mb-4 max-w-xs">{t('cookies_youtube_blocked')}</p>
-            <button
-              onClick={() => setShowBanner(true)}
-              className="px-4 py-2 bg-primary-accent text-white text-sm rounded-full font-medium hover:bg-primary-accent/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-accent"
-            >
-              {t('cookies_configure')}
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  // Note: Bunny.net is a first-party video CDN, not a third-party tracker
+  // No cookie consent required for video playback
 
   if (!isLoaded) {
     return (
