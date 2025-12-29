@@ -1377,6 +1377,12 @@ routes.forEach(route => {
   // Remove robots meta tag (will be replaced with page-specific value)
   html = html.replace(/<meta\s+name="robots"[^>]*>/gi, '');
 
+  // Remove hero-video-poster preload for landing pages (they don't use the home hero video)
+  // This prevents "resource was preloaded but not used" warnings
+  if (page.endsWith('Landing')) {
+    html = html.replace(/<link[^>]*hero-video-poster\.webp[^>]*>/gi, '');
+  }
+
   // Inject metadata in <head>
   const robotsContent = meta.robots || 'index, follow';
   html = html.replace('</head>', `
