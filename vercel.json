@@ -11,7 +11,7 @@
       "maxDuration": 10
     }
   },
-  "rewrites": [],
+  "rewrites": [{ "source": "/:locale(es|en|ca|fr)/:path*", "destination": "/index.html" }],
   "headers": [
     {
       "source": "/(.*)",
