@@ -133,6 +133,8 @@ const LANDING_CONTENT = generateLandingContent();
 const routes = [
   { path: '', lang: 'es', page: 'home' },
   { path: 'es', lang: 'es', page: 'home' },
+  { path: 'es/clases', lang: 'es', page: 'classesHub' },
+  { path: 'es/horarios-precios', lang: 'es', page: 'horariosPrecio' },
   { path: 'es/clases/baile-barcelona', lang: 'es', page: 'classes' },
   { path: 'es/clases/danza-barcelona', lang: 'es', page: 'danza' },
   { path: 'es/clases/salsa-bachata-barcelona', lang: 'es', page: 'salsaBachata' },
@@ -165,6 +167,8 @@ const routes = [
   { path: 'es/contacto', lang: 'es', page: 'contact' },
 
   { path: 'ca', lang: 'ca', page: 'home' },
+  { path: 'ca/clases', lang: 'ca', page: 'classesHub' },
+  { path: 'ca/horarios-precios', lang: 'ca', page: 'horariosPrecio' },
   { path: 'ca/clases/baile-barcelona', lang: 'ca', page: 'classes' },
   { path: 'ca/clases/danza-barcelona', lang: 'ca', page: 'danza' },
   { path: 'ca/clases/salsa-bachata-barcelona', lang: 'ca', page: 'salsaBachata' },
@@ -197,6 +201,8 @@ const routes = [
   { path: 'ca/contacto', lang: 'ca', page: 'contact' },
 
   { path: 'en', lang: 'en', page: 'home' },
+  { path: 'en/clases', lang: 'en', page: 'classesHub' },
+  { path: 'en/horarios-precios', lang: 'en', page: 'horariosPrecio' },
   { path: 'en/clases/baile-barcelona', lang: 'en', page: 'classes' },
   { path: 'en/clases/danza-barcelona', lang: 'en', page: 'danza' },
   { path: 'en/clases/salsa-bachata-barcelona', lang: 'en', page: 'salsaBachata' },
@@ -229,6 +235,8 @@ const routes = [
   { path: 'en/contacto', lang: 'en', page: 'contact' },
 
   { path: 'fr', lang: 'fr', page: 'home' },
+  { path: 'fr/clases', lang: 'fr', page: 'classesHub' },
+  { path: 'fr/horarios-precios', lang: 'fr', page: 'horariosPrecio' },
   { path: 'fr/clases/baile-barcelona', lang: 'fr', page: 'classes' },
   { path: 'fr/clases/danza-barcelona', lang: 'fr', page: 'danza' },
   { path: 'fr/clases/salsa-bachata-barcelona', lang: 'fr', page: 'salsaBachata' },
@@ -323,6 +331,15 @@ const metadata = {
     classes: {
       title: 'Clases de Baile - Farray\'s Center Barcelona',
       description: 'Clases de Dancehall y baile urbano para todos los niveles. Horarios flexibles en Barcelona.',
+    },
+    classesHub: {
+      title: 'Todas las Clases de Baile en Barcelona | Farray\'s Center',
+      description: 'Descubre todas nuestras clases de baile en Barcelona: Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat y más. +40 estilos diferentes. Primera clase gratis.',
+    },
+    horariosPrecio: {
+      title: 'Horarios y Precios | Clases de Baile Barcelona | Farray\'s Center',
+      description: 'Consulta los horarios y precios de nuestras clases de baile en Barcelona. Bonos mensuales, clases sueltas y packs especiales. Escuela cerca de Plaza España.',
+      robots: 'noindex, nofollow',
     },
     danza: {
       title: 'Clases de Danza en Barcelona | Ballet, Contemporáneo y Jazz | Farray\'s Center',
@@ -494,6 +511,15 @@ const metadata = {
       title: 'Classes de Ball - Farray\'s Center Barcelona',
       description: 'Classes de Dancehall i ball urbà per a tots els nivells. Horaris flexibles a Barcelona.',
     },
+    classesHub: {
+      title: 'Totes les Classes de Ball a Barcelona | Farray\'s Center',
+      description: 'Descobreix totes les nostres classes de ball a Barcelona: Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat i més. +40 estils diferents. Primera classe gratis.',
+    },
+    horariosPrecio: {
+      title: 'Horaris i Preus | Classes de Ball Barcelona | Farray\'s Center',
+      description: 'Consulta els horaris i preus de les nostres classes de ball a Barcelona. Bonos mensuals, classes soltes i packs especials. Escola a prop de Plaça Espanya.',
+      robots: 'noindex, nofollow',
+    },
     danza: {
       title: 'Classes de Dansa a Barcelona | Ballet, Contemporani i Jazz | Farray\'s Center',
       description: 'Descobreix les nostres classes de dansa a Barcelona: Ballet Clàssic Cubà, Dansa Contemporània, Modern Jazz, Afro Jazz i més. Acadèmia reconeguda per CID-UNESCO. Prova una classe gratis.',
@@ -664,6 +690,15 @@ const metadata = {
       title: 'Dance Classes - Farray\'s Center Barcelona',
       description: 'Dancehall and urban dance classes for all levels. Flexible schedules in Barcelona.',
     },
+    classesHub: {
+      title: 'All Dance Classes in Barcelona | Farray\'s Center',
+      description: 'Discover all our dance classes in Barcelona: Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat and more. +40 different styles. First class free.',
+    },
+    horariosPrecio: {
+      title: 'Schedule & Prices | Dance Classes Barcelona | Farray\'s Center',
+      description: 'Check our dance class schedules and prices in Barcelona. Monthly passes, single classes and special packs. School near Plaza España.',
+      robots: 'noindex, nofollow',
+    },
     danza: {
       title: 'Dance Classes in Barcelona | Ballet, Contemporary & Jazz | Farray\'s Center',
       description: 'Discover our dance classes in Barcelona: Cuban Classical Ballet, Contemporary Dance, Modern Jazz, Afro Jazz and more. CID-UNESCO accredited academy. Try a free class.',
@@ -833,6 +868,15 @@ const metadata = {
     classes: {
       title: 'Cours de Danse - Farray\'s Center Barcelone',
       description: 'Cours de Dancehall et danse urbaine pour tous les niveaux. Horaires flexibles à Barcelone.',
+    },
+    classesHub: {
+      title: 'Tous les Cours de Danse à Barcelone | Farray\'s Center',
+      description: 'Découvrez tous nos cours de danse à Barcelone : Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat et plus. +40 styles différents. Premier cours gratuit.',
+    },
+    horariosPrecio: {
+      title: 'Horaires et Tarifs | Cours de Danse Barcelone | Farray\'s Center',
+      description: 'Consultez les horaires et tarifs de nos cours de danse à Barcelone. Abonnements mensuels, cours à l\'unité et packs spéciaux. École près de Plaza España.',
+      robots: 'noindex, nofollow',
     },
     danza: {
       title: 'Cours de Danse à Barcelone | Ballet, Contemporain et Jazz | Farray\'s Center',
@@ -1134,6 +1178,8 @@ const initialContent = {
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Consejos para Bailar</h1><p>Guías prácticas y consejos para principiantes y bailarines de todos los niveles en Barcelona.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Clases de baile para principiantes en Barcelona: la guía definitiva</h1><p>Guía completa para empezar a bailar desde cero en Barcelona. Clase de bienvenida gratuita (promocional) o desde 10€. Participación puntual desde 20€.</p></article></main>`,
     baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Baile por las Mañanas en Barcelona</h1><p>13 clases semanales de 10h a 13h: Contemporáneo, Ballet, Modern Jazz, Sexy Style, Reggaeton y más. La actividad matinal que necesitabas para empezar el día con energía.</p></main>`,
+    classesHub: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Todas las Clases de Baile en Barcelona</h1><p>Descubre más de 40 estilos de baile: Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat, Ballet, Contemporáneo y más. Primera clase gratis.</p></main>`,
+    horariosPrecio: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Horarios y Precios</h1><p>Consulta nuestros horarios de clases y precios. Bonos mensuales, clases sueltas y packs especiales. Escuela cerca de Plaza España.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.es,
   },
@@ -1159,6 +1205,8 @@ const initialContent = {
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Consells per Ballar</h1><p>Guies pràctiques i consells per a principiants i balladors de tots els nivells a Barcelona.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Classes de ball per a principiants a Barcelona: la guia definitiva</h1><p>Guia completa per començar a ballar des de zero a Barcelona. Classe de benvinguda gratuïta (promocional) o des de 10€. Participació puntual des de 20€.</p></article></main>`,
     baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Ball pel Matí a Barcelona</h1><p>13 classes setmanals de 10h a 13h: Contemporani, Ballet, Modern Jazz, Sexy Style, Reggaeton i més. L'activitat matinal que necessitaves per començar el dia amb energia.</p></main>`,
+    classesHub: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Totes les Classes de Ball a Barcelona</h1><p>Descobreix més de 40 estils de ball: Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat, Ballet, Contemporani i més. Primera classe gratis.</p></main>`,
+    horariosPrecio: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Horaris i Preus</h1><p>Consulta els nostres horaris de classes i preus. Bonos mensuals, classes soltes i packs especials. Escola a prop de Plaça Espanya.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.ca,
   },
@@ -1183,6 +1231,8 @@ const initialContent = {
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Tips</h1><p>Practical guides and tips for beginners and dancers of all levels in Barcelona.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Beginner Dance Classes in Barcelona: The Complete Guide</h1><p>Complete guide to start dancing from scratch in Barcelona. Free welcome class (promotional) or from €10. One-time participation from €20.</p></article></main>`,
     baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Morning Dance Classes in Barcelona</h1><p>13 weekly classes from 10am to 1pm: Contemporary, Ballet, Modern Jazz, Sexy Style, Reggaeton and more. The morning activity you needed to start the day with energy.</p></main>`,
+    classesHub: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">All Dance Classes in Barcelona</h1><p>Discover over 40 dance styles: Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat, Ballet, Contemporary and more. First class free.</p></main>`,
+    horariosPrecio: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Schedule & Prices</h1><p>Check our class schedules and prices. Monthly passes, single classes and special packs. School near Plaza España.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.en,
   },
@@ -1207,6 +1257,8 @@ const initialContent = {
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Conseils de Danse</h1><p>Guides pratiques et conseils pour débutants et danseurs de tous niveaux à Barcelone.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Cours de danse pour débutants à Barcelone : le guide complet</h1><p>Guide complet pour commencer à danser à Barcelone. Cours de bienvenue gratuit (promotionnel) ou dès 10€. Participation ponctuelle dès 20€.</p></article></main>`,
     baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Danse le Matin à Barcelone</h1><p>13 cours hebdomadaires de 10h à 13h : Contemporain, Ballet, Modern Jazz, Sexy Style, Reggaeton et plus. L'activité matinale dont vous aviez besoin pour commencer la journée avec énergie.</p></main>`,
+    classesHub: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Tous les Cours de Danse à Barcelone</h1><p>Découvrez plus de 40 styles de danse : Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat, Ballet, Contemporain et plus. Premier cours gratuit.</p></main>`,
+    horariosPrecio: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Horaires et Tarifs</h1><p>Consultez nos horaires de cours et tarifs. Abonnements mensuels, cours à l'unité et packs spéciaux. École près de Plaza España.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.fr,
   },
