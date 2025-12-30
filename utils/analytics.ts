@@ -23,13 +23,13 @@ declare global {
 // LEAD VALUES FOR CONVERSION TRACKING
 // These values help measure ROI in Google Ads and Meta Ads
 // ============================================================================
-export const LEAD_VALUES = {
+export const LEAD_VALUES = Object.freeze({
   EXIT_INTENT: 15, // Value of a lead from exit intent modal (EUR)
   CONTACT_FORM: 20, // Value of a lead from contact form (EUR)
   GENERIC_LEAD: 15, // Value of a generic lead modal (EUR)
   TRIAL_CLASS: 25, // Value of a trial class booking (EUR)
   MEMBERSHIP: 100, // Value of a membership purchase (EUR)
-} as const;
+});
 
 // ============================================================================
 // UTM PARAMETER TRACKING

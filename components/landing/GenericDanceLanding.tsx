@@ -670,67 +670,24 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
           </div>
         </section>
 
-        {/* VIDEO SECTION */}
-        {config.video && (
-          <section className="py-4 md:py-6">
-            <div className="container mx-auto px-4 sm:px-6">
-              <div className="max-w-3xl mx-auto">
-                <BunnyEmbed
-                  videoId={config.video.bunnyVideoId}
-                  libraryId={config.video.bunnyLibraryId}
-                  title={t(`${prefix}VideoTitle`)}
-                  aspectRatio={config.video.aspectRatio || '16:9'}
-                  thumbnailUrl={config.video.thumbnailUrl}
-                  autoplay={config.video.autoplay}
-                />
-              </div>
-            </div>
-          </section>
-        )}
-        {!config.video && (
-          <section className="py-6 md:py-8">
-            <div className="container mx-auto px-4 sm:px-6">
-              <div className="max-w-3xl mx-auto">
-                <AnimateOnScroll>
-                  <div
-                    className={`relative aspect-video rounded-2xl overflow-hidden ${theme.borderPrimary} border bg-black/60 shadow-xl`}
-                  >
-                    <div
-                      className={`absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br ${theme.bgPrimaryDark} ${theme.bgAccentLight}`}
-                    >
-                      <div
-                        className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full ${theme.bgPrimary} opacity-80 flex items-center justify-center mb-4 shadow-lg`}
-                      >
-                        <svg
-                          className="w-8 h-8 sm:w-10 sm:h-10 text-white ml-1"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                          aria-hidden="true"
-                        >
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
-                      <p className="text-neutral/70 text-sm sm:text-base font-medium">
-                        {t(`${prefix}VideoPlaceholder`)}
-                      </p>
-                    </div>
-                    <img
-                      src={images.hero}
-                      alt=""
-                      aria-hidden="true"
-                      className="w-full h-full object-cover opacity-30"
-                    />
-                  </div>
-                </AnimateOnScroll>
-              </div>
-            </div>
-          </section>
-        )}
-
         {/* VALUE STACK SECTION */}
         <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-2xl mx-auto">
+              {/* Video integrado en la sección */}
+              {config.video && (
+                <div className="mb-8 sm:mb-10">
+                  <BunnyEmbed
+                    videoId={config.video.bunnyVideoId}
+                    libraryId={config.video.bunnyLibraryId}
+                    title={t(`${prefix}VideoTitle`)}
+                    aspectRatio={config.video.aspectRatio || '16:9'}
+                    thumbnailUrl={config.video.thumbnailUrl}
+                    autoplay={config.video.autoplay}
+                  />
+                </div>
+              )}
+
               <AnimateOnScroll>
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-neutral text-center mb-8 sm:mb-10 holographic-text">
                   {t(`${prefix}ValueTitle`)}
