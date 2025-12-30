@@ -705,6 +705,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
                           className="w-8 h-8 sm:w-10 sm:h-10 text-white ml-1"
                           fill="currentColor"
                           viewBox="0 0 24 24"
+                          aria-hidden="true"
                         >
                           <path d="M8 5v14l11-7z" />
                         </svg>
@@ -715,7 +716,8 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
                     </div>
                     <img
                       src={images.hero}
-                      alt={images.heroAlt}
+                      alt=""
+                      aria-hidden="true"
                       className="w-full h-full object-cover opacity-30"
                     />
                   </div>
