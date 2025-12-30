@@ -179,7 +179,7 @@ export const DANCEHALL_LANDING_CONFIG: LandingConfig = createLandingConfig('rose
     bunnyVideoId: 'ee68f627-8330-41aa-b1a8-5307a8400fc6',
     bunnyLibraryId: '571535',
     aspectRatio: '9:16',
-    autoplay: true,
+    autoplay: false, // Facade pattern: muestra thumbnail, mejora LCP y rendimiento
   },
 });
 

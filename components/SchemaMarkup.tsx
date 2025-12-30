@@ -782,3 +782,47 @@ export const AggregateReviewsSchema: React.FC<{
     </Helmet>
   );
 };
+
+// BreadcrumbList Schema for navigation hierarchy (SEO - helps search engines understand site structure)
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface BreadcrumbListSchemaProps {
+  items: BreadcrumbItem[];
+}
+
+/**
+ * BreadcrumbList Schema - renders navigation breadcrumb trail.
+ * Helps search engines understand page hierarchy and can show breadcrumbs in search results.
+ *
+ * @example
+ * ```tsx
+ * <BreadcrumbListSchema
+ *   items={[
+ *     { name: 'Inicio', url: 'https://www.farrayscenter.com/es' },
+ *     { name: 'Clases', url: 'https://www.farrayscenter.com/es/clases/baile-barcelona' },
+ *     { name: 'Dancehall', url: 'https://www.farrayscenter.com/es/clases/dancehall-barcelona' },
+ *   ]}
+ * />
+ * ```
+ */
+export const BreadcrumbListSchema: React.FC<BreadcrumbListSchemaProps> = ({ items }) => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};

@@ -141,6 +141,6 @@ export const JORNADA_PUERTAS_ABIERTAS_LANDING_CONFIG: LandingConfig = createLand
     bunnyVideoId: 'f9ad8f80-f1be-4c20-a40d-c6f007759db7',
     bunnyLibraryId: '571535',
     aspectRatio: '9:16',
-    autoplay: true,
+    autoplay: false, // Facade pattern: muestra thumbnail, mejora LCP y rendimiento
   },
 });
