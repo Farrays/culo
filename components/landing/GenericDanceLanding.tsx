@@ -672,7 +672,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
 
         {/* VIDEO SECTION */}
         {config.video && (
-          <section className="py-8 md:py-12">
+          <section className="py-4 md:py-6">
             <div className="container mx-auto px-4 sm:px-6">
               <div className="max-w-3xl mx-auto">
                 <BunnyEmbed
