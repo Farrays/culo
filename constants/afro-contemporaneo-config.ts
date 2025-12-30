@@ -58,6 +58,16 @@ export const AFRO_CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 500,
     funPercent: 100,
     gradientColor: 'emerald',
+    heroImage: {
+      basePath: '/images/classes/afro-contemporaneo/img/mgs_5260',
+      alt: 'Clases de Afro Contemporáneo en Barcelona - Técnica cubana ENA',
+      altKey: 'styleImages.afroContemporaneo.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
+    },
+    heroVisuals: {
+      imageOpacity: 45,
+    },
   },
 
   // === SECTION TOGGLES ===

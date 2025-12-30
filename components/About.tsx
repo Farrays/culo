@@ -13,10 +13,10 @@ const About: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <AnimateOnScroll>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-2 holographic-text">
+              <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-2 holographic-text">
                 {t('aboutTitle')}
               </h2>
-              <p className="text-2xl md:text-3xl font-medium text-primary-accent holographic-text">
+              <p className="text-2xl md:text-3xl font-medium holographic-text">
                 {t('aboutSubtitle')}
               </p>
             </AnimateOnScroll>
@@ -32,9 +32,7 @@ const About: React.FC = () => {
           </div>
           <AnimateOnScroll delay={400}>
             <div className="space-y-8 p-8 bg-black/50 backdrop-blur-md border border-primary-accent/20 rounded-lg shadow-2xl">
-              <h3 className="text-3xl font-bold text-primary-accent holographic-text">
-                {t('aboutMethodTitle')}
-              </h3>
+              <h3 className="text-3xl font-bold holographic-text">{t('aboutMethodTitle')}</h3>
               <MethodInfographic />
               <Link
                 to={`/${locale}/metodo-farray`}

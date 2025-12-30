@@ -151,6 +151,6 @@ export const AFROBEATS_LANDING_CONFIG: LandingConfig = createLandingConfig('bran
     bunnyVideoId: '44f53623-e523-4f22-a19d-dffff0cc26c0',
     bunnyLibraryId: '571535',
     aspectRatio: '9:16',
-    autoplay: true,
+    autoplay: false, // Facade pattern: muestra thumbnail, mejora LCP y rendimiento
   },
 });

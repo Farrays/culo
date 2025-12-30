@@ -164,6 +164,6 @@ export const TWERK_LANDING_CONFIG: LandingConfig = createLandingConfig('rose', {
     bunnyVideoId: '7e802ebe-cbd7-49ca-a5f1-569e5c1eba7c',
     bunnyLibraryId: '571535',
     aspectRatio: '9:16',
-    autoplay: true,
+    autoplay: false, // Facade pattern: muestra thumbnail, mejora LCP y rendimiento
   },
 });

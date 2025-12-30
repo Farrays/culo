@@ -78,24 +78,29 @@ const AfroContemporaneoV2Page = lazy(() => import('./components/AfroContemporane
 const CalendarPage = lazy(() => import('./components/CalendarPage'));
 const HomePageV2 = lazy(() => import('./components/HomePageV2'));
 
-// ===== LANDING PAGES =====
-// NOTE: Import normal (not lazy) to avoid loading issues on landing pages
-import GenericDanceLanding from './components/landing/GenericDanceLanding';
-import { DANCEHALL_LANDING_CONFIG } from './constants/dancehall-landing-config';
-import { TWERK_LANDING_CONFIG } from './constants/twerk-landing-config';
-import { SEXY_REGGAETON_LANDING_CONFIG } from './constants/sexy-reggaeton-landing-config';
-import { SEXY_STYLE_LANDING_CONFIG } from './constants/sexy-style-landing-config';
-import { HIP_HOP_REGGAETON_LANDING_CONFIG } from './constants/hip-hop-reggaeton-landing-config';
-import { CONTEMPORANEO_LANDING_CONFIG } from './constants/contemporaneo-landing-config';
-import { FEMMOLOGY_LANDING_CONFIG } from './constants/femmology-landing-config';
-import { BACHATA_LANDING_CONFIG } from './constants/bachata-landing-config';
-import { HIP_HOP_LANDING_CONFIG } from './constants/hip-hop-landing-config';
-import { AFROBEATS_LANDING_CONFIG } from './constants/afrobeats-landing-config';
-import { AFRO_JAZZ_LANDING_CONFIG } from './constants/afro-jazz-landing-config';
-import { SALSA_CUBANA_LANDING_CONFIG } from './constants/salsa-cubana-landing-config';
-import { BALLET_LANDING_CONFIG } from './constants/ballet-landing-config';
-import { AFRO_CONTEMPORANEO_LANDING_CONFIG } from './constants/afro-contemporaneo-landing-config';
-import { JORNADA_PUERTAS_ABIERTAS_LANDING_CONFIG } from './constants/jornada-puertas-abiertas-landing-config';
+// ===== LANDING PAGES (Lazy-loaded for code splitting) =====
+// Each landing bundles its own config for optimal chunk splitting
+const DancehallLanding = lazy(() => import('./components/landing/pages/DancehallLanding'));
+const TwerkLanding = lazy(() => import('./components/landing/pages/TwerkLanding'));
+const SexyReggaetonLanding = lazy(() => import('./components/landing/pages/SexyReggaetonLanding'));
+const SexyStyleLanding = lazy(() => import('./components/landing/pages/SexyStyleLanding'));
+const HipHopReggaetonLanding = lazy(
+  () => import('./components/landing/pages/HipHopReggaetonLanding')
+);
+const ContemporaneoLanding = lazy(() => import('./components/landing/pages/ContemporaneoLanding'));
+const FemmologyLanding = lazy(() => import('./components/landing/pages/FemmologyLanding'));
+const BachataLanding = lazy(() => import('./components/landing/pages/BachataLanding'));
+const HipHopLanding = lazy(() => import('./components/landing/pages/HipHopLanding'));
+const AfrobeatsLanding = lazy(() => import('./components/landing/pages/AfrobeatsLanding'));
+const AfroJazzLanding = lazy(() => import('./components/landing/pages/AfroJazzLanding'));
+const SalsaCubanaLanding = lazy(() => import('./components/landing/pages/SalsaCubanaLanding'));
+const BalletLanding = lazy(() => import('./components/landing/pages/BalletLanding'));
+const AfroContemporaneoLanding = lazy(
+  () => import('./components/landing/pages/AfroContemporaneoLanding')
+);
+const JornadaPuertasAbiertasLanding = lazy(
+  () => import('./components/landing/pages/JornadaPuertasAbiertasLanding')
+);
 const PreciosPage = lazy(() => import('./components/PreciosPage'));
 const HorariosPreciosPage = lazy(() => import('./components/HorariosPreciosPage'));
 const HorariosPageV2 = lazy(() => import('./components/HorariosPageV2'));
@@ -861,145 +866,121 @@ const AppContent: React.FC = () => {
               }
             />
 
-            {/* ===== DANCEHALL LANDING ===== */}
+            {/* ===== LANDING PAGES (Lazy-loaded with code splitting) ===== */}
             <Route
               path="/:locale/dancehall"
               element={
                 <>
                   <LocaleSync />
-                  <GenericDanceLanding config={DANCEHALL_LANDING_CONFIG} />
+                  <DancehallLanding />
                 </>
               }
             />
-
-            {/* ===== TWERK LANDING ===== */}
             <Route
               path="/:locale/twerk"
               element={
                 <>
                   <LocaleSync />
-                  <GenericDanceLanding config={TWERK_LANDING_CONFIG} />
+                  <TwerkLanding />
                 </>
               }
             />
-
-            {/* ===== SEXY REGGAETON LANDING ===== */}
             <Route
               path="/:locale/sexy-reggaeton"
               element={
                 <>
                   <LocaleSync />
-                  <GenericDanceLanding config={SEXY_REGGAETON_LANDING_CONFIG} />
+                  <SexyReggaetonLanding />
                 </>
               }
             />
-
-            {/* ===== SEXY STYLE LANDING ===== */}
             <Route
               path="/:locale/sexy-style"
               element={
                 <>
                   <LocaleSync />
-                  <GenericDanceLanding config={SEXY_STYLE_LANDING_CONFIG} />
+                  <SexyStyleLanding />
                 </>
               }
             />
-
-            {/* ===== HIP HOP REGGAETON LANDING ===== */}
             <Route
               path="/:locale/hip-hop-reggaeton"
               element={
                 <>
                   <LocaleSync />
-                  <GenericDanceLanding config={HIP_HOP_REGGAETON_LANDING_CONFIG} />
+                  <HipHopReggaetonLanding />
                 </>
               }
             />
-
-            {/* ===== CONTEMPORANEO LANDING ===== */}
             <Route
               path="/:locale/contemporaneo"
               element={
                 <>
                   <LocaleSync />
-                  <GenericDanceLanding config={CONTEMPORANEO_LANDING_CONFIG} />
+                  <ContemporaneoLanding />
                 </>
               }
             />
-
-            {/* ===== FEMMOLOGY LANDING ===== */}
             <Route
               path="/:locale/femmology"
               element={
                 <>
                   <LocaleSync />
-                  <GenericDanceLanding config={FEMMOLOGY_LANDING_CONFIG} />
+                  <FemmologyLanding />
                 </>
               }
             />
-
-            {/* ===== BACHATA SENSUAL LANDING ===== */}
             <Route
               path="/:locale/bachata"
               element={
                 <>
                   <LocaleSync />
-                  <GenericDanceLanding config={BACHATA_LANDING_CONFIG} />
+                  <BachataLanding />
                 </>
               }
             />
-
-            {/* ===== HIP HOP LANDING ===== */}
             <Route
               path="/:locale/hip-hop"
               element={
                 <>
                   <LocaleSync />
-                  <GenericDanceLanding config={HIP_HOP_LANDING_CONFIG} />
+                  <HipHopLanding />
                 </>
               }
             />
-
-            {/* ===== AFROBEATS LANDING ===== */}
             <Route
               path="/:locale/afrobeats"
               element={
                 <>
                   <LocaleSync />
-                  <GenericDanceLanding config={AFROBEATS_LANDING_CONFIG} />
+                  <AfrobeatsLanding />
                 </>
               }
             />
-
-            {/* ===== AFRO JAZZ LANDING ===== */}
             <Route
               path="/:locale/afro-jazz"
               element={
                 <>
                   <LocaleSync />
-                  <GenericDanceLanding config={AFRO_JAZZ_LANDING_CONFIG} />
+                  <AfroJazzLanding />
                 </>
               }
             />
-
-            {/* ===== SALSA CUBANA LANDING ===== */}
             <Route
               path="/:locale/salsa-cubana"
               element={
                 <>
                   <LocaleSync />
-                  <GenericDanceLanding config={SALSA_CUBANA_LANDING_CONFIG} />
+                  <SalsaCubanaLanding />
                 </>
               }
             />
-
-            {/* ===== BALLET LANDING ===== */}
             <Route
               path="/:locale/ballet"
               element={
                 <>
                   <LocaleSync />
-                  <GenericDanceLanding config={BALLET_LANDING_CONFIG} />
+                  <BalletLanding />
                 </>
               }
             />
@@ -1008,18 +989,16 @@ const AppContent: React.FC = () => {
               element={
                 <>
                   <LocaleSync />
-                  <GenericDanceLanding config={AFRO_CONTEMPORANEO_LANDING_CONFIG} />
+                  <AfroContemporaneoLanding />
                 </>
               }
             />
-
-            {/* ===== JORNADA PUERTAS ABIERTAS LANDING ===== */}
             <Route
               path="/:locale/jornada-puertas-abiertas"
               element={
                 <>
                   <LocaleSync />
-                  <GenericDanceLanding config={JORNADA_PUERTAS_ABIERTAS_LANDING_CONFIG} />
+                  <JornadaPuertasAbiertasLanding />
                 </>
               }
             />

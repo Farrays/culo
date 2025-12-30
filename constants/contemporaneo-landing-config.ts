@@ -194,6 +194,6 @@ export const CONTEMPORANEO_LANDING_CONFIG: LandingConfig = createLandingConfig('
     bunnyVideoId: '75a74b09-277f-493f-b142-8a84df33a487',
     bunnyLibraryId: '571535',
     aspectRatio: '9:16',
-    autoplay: true,
+    autoplay: false, // Facade pattern: muestra thumbnail, mejora LCP y rendimiento
   },
 });

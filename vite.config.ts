@@ -44,8 +44,8 @@ export default defineConfig({
     }),
   ],
   build: {
-    // Enable source maps for Sentry error tracking
-    sourcemap: true,
+    // Source maps for Sentry - 'hidden' generates maps without exposing source code
+    sourcemap: 'hidden',
     // Single CSS file for better caching
     cssCodeSplit: false,
     // Minification with Terser for better compression
