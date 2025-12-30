@@ -157,6 +157,22 @@ export function useSharedIntersectionObserver<T extends HTMLElement = HTMLElemen
     const element = ref.current;
     if (!element) return;
 
+    // Check if element is already visible on mount (fixes hero not loading issue)
+    // This handles the case where the element is already in viewport before observer registers
+    const rect = element.getBoundingClientRect();
+    const rootMarginBottom = parseInt(config.rootMargin.split(' ')[2] ?? '0') || 0;
+    const isAlreadyVisible =
+      rect.top < window.innerHeight + rootMarginBottom &&
+      rect.bottom > 0 &&
+      rect.top + rect.height * config.threshold < window.innerHeight + rootMarginBottom;
+
+    if (isAlreadyVisible) {
+      setIsVisible(true);
+      if (config.once) {
+        return; // Don't need to observe if already visible and once mode
+      }
+    }
+
     observeElement(
       element,
       (isIntersecting: boolean) => {
