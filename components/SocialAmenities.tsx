@@ -53,10 +53,10 @@ const SocialAmenities: React.FC<SocialAmenitiesProps> = ({ amenities, t }) => {
           </div>
         </AnimateOnScroll>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
           {amenities.map((amenity, index) => (
             <AnimateOnScroll key={amenity.id} delay={index * 100} className="[perspective:1000px]">
-              <div className="group h-full bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)] hover:shadow-accent-glow overflow-hidden">
+              <div className="group h-full bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-xl sm:rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)] hover:shadow-accent-glow overflow-hidden">
                 {/* Show gallery for bar, icon for others */}
                 {amenity.showGallery && amenity.galleryAreaId && amenity.galleryImageCount ? (
                   <FacilityGallery
@@ -66,15 +66,15 @@ const SocialAmenities: React.FC<SocialAmenitiesProps> = ({ amenities, t }) => {
                     className="aspect-[16/10]"
                   />
                 ) : (
-                  <div className="pt-8 pb-4 flex justify-center">
+                  <div className="pt-6 sm:pt-8 pb-3 sm:pb-4 flex justify-center">
                     {iconComponents[amenity.icon]}
                   </div>
                 )}
-                <div className="p-6 pt-4">
-                  <h3 className="text-2xl font-bold text-neutral mb-4 text-center">
+                <div className="p-4 sm:p-6 pt-3 sm:pt-4">
+                  <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-3 sm:mb-4 text-center">
                     {t(amenity.titleKey)}
                   </h3>
-                  <p className="text-neutral/90 leading-relaxed text-center">
+                  <p className="text-sm sm:text-base text-neutral/90 leading-relaxed text-center">
                     {t(amenity.descKey)}
                   </p>
                 </div>

@@ -597,7 +597,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
               </span>
             </div>
 
-            {/* Hero Stats - After Trust Bar (no AnimateOnScroll - already visible on load) */}
+            {/* Hero Stats - Static values (AnimatedCounter doesn't work well for above-the-fold elements) */}
             <div className="mt-8 sm:mt-10 grid grid-cols-3 gap-4 sm:gap-8 max-w-xl mx-auto">
               {/* 60 Minutes */}
               <div className="text-center">
@@ -605,7 +605,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
                   <ClockIcon className={`w-6 h-6 sm:w-8 sm:h-8 ${theme.textPrimary}`} />
                 </div>
                 <div className="text-2xl sm:text-3xl md:text-4xl font-black mb-0.5 sm:mb-1 holographic-text">
-                  <AnimatedCounter target={60} className="inline" />
+                  60
                 </div>
                 <div className="text-[10px] sm:text-xs md:text-sm text-neutral/80 font-semibold">
                   {t('classMinutes')}
@@ -618,7 +618,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
                   <FlameIcon className={`w-6 h-6 sm:w-8 sm:h-8 ${theme.textPrimary}`} />
                 </div>
                 <div className="text-2xl sm:text-3xl md:text-4xl font-black mb-0.5 sm:mb-1 holographic-text">
-                  <AnimatedCounter target={400} className="inline" />
+                  400
                 </div>
                 <div className="text-[10px] sm:text-xs md:text-sm text-neutral/80 font-semibold">
                   {t('caloriesBurned')}
@@ -630,11 +630,9 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
                 <div className="mb-1 sm:mb-2 flex justify-center">
                   <StarIcon className={`w-6 h-6 sm:w-8 sm:h-8 ${theme.textPrimary}`} />
                 </div>
-                <AnimatedCounter
-                  target={100}
-                  suffix="%"
-                  className="text-2xl sm:text-3xl md:text-4xl font-black mb-0.5 sm:mb-1 holographic-text"
-                />
+                <div className="text-2xl sm:text-3xl md:text-4xl font-black mb-0.5 sm:mb-1 holographic-text">
+                  100%
+                </div>
                 <div className="text-[10px] sm:text-xs md:text-sm text-neutral/80 font-semibold">
                   {t('funGuaranteed')}
                 </div>
@@ -643,24 +641,54 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
           </div>
         </section>
 
+        {/* EXPERIENCE SECTION */}
+        <section className="py-12 md:py-16">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="max-w-3xl mx-auto">
+              <AnimateOnScroll>
+                <div
+                  className={`relative bg-gradient-to-br ${theme.bgPrimaryDark} via-black/80 ${theme.bgAccentLight} rounded-2xl p-6 sm:p-8 md:p-10 ${theme.borderPrimary} border shadow-2xl`}
+                >
+                  <div
+                    className={`absolute top-0 left-0 w-20 h-20 ${theme.bgPrimaryLight} rounded-full blur-3xl`}
+                  />
+                  <div
+                    className={`absolute bottom-0 right-0 w-32 h-32 ${theme.bgAccentLight} rounded-full blur-3xl`}
+                  />
+
+                  <div className="relative text-center">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-neutral mb-4 sm:mb-6 holographic-text">
+                      {t(`${prefix}ExperienceTitle`)}
+                    </h2>
+                    <p className="text-neutral/80 text-sm sm:text-base md:text-lg leading-relaxed">
+                      {t(`${prefix}ExperienceDesc`)}
+                    </p>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+            </div>
+          </div>
+        </section>
+
         {/* VIDEO SECTION */}
         {config.video && (
           <section className="py-8 md:py-12">
             <div className="container mx-auto px-4 sm:px-6">
-              <BunnyEmbed
-                videoId={config.video.bunnyVideoId}
-                libraryId={config.video.bunnyLibraryId}
-                title={t(`${prefix}VideoTitle`)}
-                aspectRatio={config.video.aspectRatio || '16:9'}
-                thumbnailUrl={config.video.thumbnailUrl}
-                autoplay={config.video.autoplay}
-                priority
-              />
+              <div className="max-w-3xl mx-auto">
+                <BunnyEmbed
+                  videoId={config.video.bunnyVideoId}
+                  libraryId={config.video.bunnyLibraryId}
+                  title={t(`${prefix}VideoTitle`)}
+                  aspectRatio={config.video.aspectRatio || '16:9'}
+                  thumbnailUrl={config.video.thumbnailUrl}
+                  autoplay={config.video.autoplay}
+                />
+              </div>
             </div>
           </section>
         )}
         {!config.video && (
-          <section className="pb-6 md:pb-8">
+          <section className="py-6 md:py-8">
             <div className="container mx-auto px-4 sm:px-6">
               <div className="max-w-3xl mx-auto">
                 <AnimateOnScroll>
@@ -696,35 +724,6 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
             </div>
           </section>
         )}
-
-        {/* EXPERIENCE SECTION */}
-        <section className="py-12 md:py-16">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="max-w-3xl mx-auto">
-              <AnimateOnScroll>
-                <div
-                  className={`relative bg-gradient-to-br ${theme.bgPrimaryDark} via-black/80 ${theme.bgAccentLight} rounded-2xl p-6 sm:p-8 md:p-10 ${theme.borderPrimary} border shadow-2xl`}
-                >
-                  <div
-                    className={`absolute top-0 left-0 w-20 h-20 ${theme.bgPrimaryLight} rounded-full blur-3xl`}
-                  />
-                  <div
-                    className={`absolute bottom-0 right-0 w-32 h-32 ${theme.bgAccentLight} rounded-full blur-3xl`}
-                  />
-
-                  <div className="relative text-center">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-neutral mb-4 sm:mb-6 holographic-text">
-                      {t(`${prefix}ExperienceTitle`)}
-                    </h2>
-                    <p className="text-neutral/80 text-sm sm:text-base md:text-lg leading-relaxed">
-                      {t(`${prefix}ExperienceDesc`)}
-                    </p>
-                  </div>
-                </div>
-              </AnimateOnScroll>
-            </div>
-          </div>
-        </section>
 
         {/* VALUE STACK SECTION */}
         <section className="py-12 md:py-16 bg-primary-dark/10">

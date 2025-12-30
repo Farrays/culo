@@ -125,7 +125,7 @@ const FacilityGallery: React.FC<FacilityGalleryProps> = ({
         <div className={`relative group cursor-pointer ${className}`}>
           <button
             onClick={() => openLightbox(0)}
-            className="w-full h-full focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-black rounded-xl overflow-hidden"
+            className="w-full h-full focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-black rounded-lg sm:rounded-xl overflow-hidden"
             aria-label={`View gallery for ${areaId}`}
           >
             <OptimizedImage
@@ -137,8 +137,13 @@ const FacilityGallery: React.FC<FacilityGalleryProps> = ({
             />
             {/* Overlay with gallery icon */}
             <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <div className="flex items-center gap-2 text-white font-medium">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="flex items-center gap-1.5 sm:gap-2 text-white font-medium text-sm sm:text-base">
+                <svg
+                  className="w-5 h-5 sm:w-6 sm:h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -166,11 +171,11 @@ const FacilityGallery: React.FC<FacilityGalleryProps> = ({
   // Full mode: Grid with main image + thumbnails
   return (
     <>
-      <div className={`grid gap-2 ${className}`}>
+      <div className={`grid gap-1.5 sm:gap-2 ${className}`}>
         {/* Main image */}
         <button
           onClick={() => openLightbox(0)}
-          className="relative group w-full focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-black rounded-xl overflow-hidden"
+          className="relative group w-full focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-black rounded-lg sm:rounded-xl overflow-hidden"
           aria-label="View main image in gallery"
         >
           <OptimizedImage
@@ -185,12 +190,12 @@ const FacilityGallery: React.FC<FacilityGalleryProps> = ({
 
         {/* Thumbnails row */}
         {imageCount > 1 && (
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
             {images.slice(1, 3).map((image, idx) => (
               <button
                 key={idx}
                 onClick={() => openLightbox(idx + 1)}
-                className="relative group w-full focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-black rounded-lg overflow-hidden"
+                className="relative group w-full focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-black rounded-md sm:rounded-lg overflow-hidden"
                 aria-label={`View image ${idx + 2} in gallery`}
               >
                 <OptimizedImage
@@ -208,7 +213,7 @@ const FacilityGallery: React.FC<FacilityGalleryProps> = ({
             {imageCount > 3 && images[3] && (
               <button
                 onClick={() => openLightbox(3)}
-                className="relative group w-full focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-black rounded-lg overflow-hidden"
+                className="relative group w-full focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-black rounded-md sm:rounded-lg overflow-hidden"
                 aria-label={`View all ${imageCount} images`}
               >
                 <OptimizedImage
@@ -219,7 +224,9 @@ const FacilityGallery: React.FC<FacilityGalleryProps> = ({
                   className="w-full"
                 />
                 <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                  <span className="text-white text-lg font-bold">+{imageCount - 3}</span>
+                  <span className="text-white text-base sm:text-lg font-bold">
+                    +{imageCount - 3}
+                  </span>
                 </div>
               </button>
             )}
