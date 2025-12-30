@@ -453,7 +453,9 @@ const ContactPage: React.FC = () => {
       sameAs: [
         'https://www.instagram.com/farrays_centerbcn/',
         'https://www.facebook.com/farrayscenter/',
-        'https://www.youtube.com/user/yunaisyfarray',
+        'https://www.youtube.com/@farraysinternationaldance',
+        'https://www.tiktok.com/@farrays_centerbcn',
+        'https://g.page/r/CQPRw_FarraysDanceBCN', // Google Business Profile
       ],
       areaServed: {
         '@type': 'City',

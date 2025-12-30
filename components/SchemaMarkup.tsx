@@ -66,28 +66,29 @@ export const OrganizationSchema: React.FC = () => {
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Carrer de Pallars, 85',
+      streetAddress: 'Calle Entenca, 100',
       addressLocality: 'Barcelona',
-      postalCode: '08018',
+      postalCode: '08015',
       addressRegion: 'Cataluña',
       addressCountry: 'ES',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '41.3980',
-      longitude: '2.1920',
+      latitude: '41.3751',
+      longitude: '2.1482',
     },
-    telephone: '+34 644 55 06 20',
+    telephone: '+34622247085',
     email: 'info@farrayscenter.com',
     sameAs: [
       'https://www.instagram.com/farrays_centerbcn/',
       'https://www.facebook.com/farrayscenter/',
       'https://www.youtube.com/@farraysinternationaldance',
       'https://www.tiktok.com/@farrays_centerbcn',
+      'https://g.page/r/CQPRw_FarraysDanceBCN', // Google Business Profile
     ],
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+34 644 55 06 20',
+      telephone: '+34622247085',
       contactType: 'customer service',
       availableLanguage: ['Spanish', 'Catalan', 'English', 'French'],
       areaServed: 'ES',
@@ -302,23 +303,34 @@ export const LocalBusinessSchema: React.FC<LocalBusinessSchemaProps> = props => 
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'DanceSchool',
+    '@id': 'https://www.farrayscenter.com/#localbusiness',
     name: props.name,
     description: props.description,
     url: props.url,
     telephone: props.telephone,
     email: props.email,
+    image: 'https://www.farrayscenter.com/images/og-home.jpg',
     address: {
       '@type': 'PostalAddress',
       streetAddress: props.address.streetAddress,
       addressLocality: props.address.addressLocality,
       postalCode: props.address.postalCode,
       addressCountry: props.address.addressCountry,
+      addressRegion: 'Cataluña',
     },
     geo: {
       '@type': 'GeoCoordinates',
       latitude: props.geo.latitude,
       longitude: props.geo.longitude,
     },
+    // Social profiles including Google Business Profile
+    sameAs: [
+      'https://www.instagram.com/farrays_centerbcn/',
+      'https://www.facebook.com/farrayscenter/',
+      'https://www.youtube.com/@farraysinternationaldance',
+      'https://www.tiktok.com/@farrays_centerbcn',
+      'https://g.page/r/CQPRw_FarraysDanceBCN',
+    ],
     ...(props.priceRange && { priceRange: props.priceRange }),
     ...(props.aggregateRating && {
       aggregateRating: {

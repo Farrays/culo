@@ -85,28 +85,45 @@ const AboutPage: React.FC = () => {
     { name: t('about_breadcrumb_current'), url: `/${locale}/sobre-nosotros`, isActive: true },
   ];
 
-  // Schema Markup - Organization
+  // Schema Markup - Organization (DanceSchool with LocalBusiness properties)
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'DanceSchool',
+    '@id': 'https://www.farrayscenter.com/#organization',
     name: "Farray's International Dance Center",
     description: t('about_description'),
+    url: 'https://www.farrayscenter.com',
     foundingDate: '2017',
     founder: {
       '@type': 'Person',
       name: 'Yunaisy Farray',
+      jobTitle: 'Directora y Fundadora',
     },
     address: {
       '@type': 'PostalAddress',
       streetAddress: "Carrer d'Entença, 100, Local 1",
       addressLocality: 'Barcelona',
-      addressRegion: 'Catalonia',
+      addressRegion: 'Cataluña',
       postalCode: '08015',
       addressCountry: 'ES',
     },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '41.3751',
+      longitude: '2.1482',
+    },
+    telephone: '+34622247085',
+    email: 'info@farrayscenter.com',
     areaServed: 'Barcelona',
     numberOfEmployees: '20+',
     slogan: t('about_slogan'),
+    sameAs: [
+      'https://www.instagram.com/farrays_centerbcn/',
+      'https://www.facebook.com/farrayscenter/',
+      'https://www.youtube.com/@farraysinternationaldance',
+      'https://www.tiktok.com/@farrays_centerbcn',
+      'https://g.page/r/CQPRw_FarraysDanceBCN', // Google Business Profile
+    ],
   };
 
   return (
