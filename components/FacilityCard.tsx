@@ -50,7 +50,7 @@ const FacilityCard: React.FC<FacilityCardProps> = ({ room, t, index }) => {
 
   return (
     <AnimateOnScroll delay={index * 100} className="[perspective:1000px]">
-      <div className="group h-full bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-2xl transition-all duration-500 overflow-hidden">
+      <div className="group h-full bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-xl sm:rounded-2xl transition-all duration-500 overflow-hidden">
         {/* Gallery or Icon */}
         {areaId && imageCount && imageCount > 0 ? (
           <div className="relative">
@@ -62,21 +62,25 @@ const FacilityCard: React.FC<FacilityCardProps> = ({ room, t, index }) => {
             />
           </div>
         ) : (
-          <div className="pt-8 pb-4 flex justify-center">{iconMap[room.icon]}</div>
+          <div className="pt-6 sm:pt-8 pb-3 sm:pb-4 flex justify-center">{iconMap[room.icon]}</div>
         )}
 
         {/* Content */}
-        <div className="p-6 pt-4">
-          <h3 className="text-2xl font-bold text-neutral mb-3 text-center holographic-text">
+        <div className="p-4 sm:p-6 pt-3 sm:pt-4">
+          <h3 className="text-xl sm:text-2xl font-bold text-neutral mb-2 sm:mb-3 text-center holographic-text">
             {t(room.titleKey)}
           </h3>
-          <div className="space-y-2 mb-4">
-            <p className="text-lg font-semibold text-primary-accent text-center">
+          <div className="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
+            <p className="text-base sm:text-lg font-semibold text-primary-accent text-center">
               {t(room.sizeKey)}
             </p>
-            <p className="text-sm text-neutral/75 text-center italic">{t(room.floorTypeKey)}</p>
+            <p className="text-xs sm:text-sm text-neutral/75 text-center italic">
+              {t(room.floorTypeKey)}
+            </p>
           </div>
-          <p className="text-neutral/90 leading-relaxed text-center text-sm">{t(room.descKey)}</p>
+          <p className="text-neutral/90 leading-relaxed text-center text-xs sm:text-sm">
+            {t(room.descKey)}
+          </p>
         </div>
       </div>
     </AnimateOnScroll>

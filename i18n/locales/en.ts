@@ -2,7 +2,7 @@ export const en = {
   // General
   pageTitle: "Farray's International Dance Center | Dance School in Barcelona",
   metaDescription:
-    'Elite dance academy in Barcelona, led by world icon Yunaisy Farray. We offer training in over 25 styles with the revolutionary Farray Method®, in a CID-UNESCO accredited center.',
+    'Dance school in Barcelona with 25+ styles: salsa, bachata, hip hop, ballet and more. Exclusive Farray Method®. CID-UNESCO center. First class free.',
   skipToMainContent: 'Skip to main content',
   ratingAriaLabel: '{rating} out of 5 stars',
   closeButton: 'Close',
@@ -345,7 +345,7 @@ export const en = {
   // Dancehall Page
   dancehallPageTitle: "Dancehall Classes in Barcelona | Farray's International Dance Center",
   dancehallMetaDescription:
-    'Learn authentic Dancehall in Barcelona with expert teachers. From beginners to advanced. More than dance: energy, culture, and transformation. Try 1 free class.',
+    'Jamaican Dancehall classes in Barcelona with expert teachers. Culture, energy and transformation. All levels. CID-UNESCO Academy. Start today!',
   dancehallHeroTitle: 'Unleash the Fire: Dancehall in Barcelona',
   dancehallHeroSubtitle:
     "Experience the authentic energy and culture of Jamaican Dancehall. It's not just a class, it's a movement.",
@@ -1849,7 +1849,7 @@ export const en = {
   // About Page
   about_page_title: 'About Us',
   about_description:
-    "Discover the story of Farray's International Dance Center, our mission, values and the dream that Yunaisy Farray turned into reality in the heart of Barcelona.",
+    "Discover Farray's Center Barcelona: 700m², +15,000 students trained, CID-UNESCO center. The story of Yunaisy Farray and her dream come true. Meet us.",
   about_slogan: 'Where dreams are danced',
   about_breadcrumb_home: 'Home',
   about_breadcrumb_current: 'About Us',
@@ -1948,7 +1948,7 @@ export const en = {
   // Contact Page
   contact_page_title: 'Contact',
   contact_page_description:
-    "Contact Farray's International Dance Center in Barcelona. Hours, location, phone and contact form for dance classes.",
+    "Contact Farray's Center Barcelona. We answer your questions about classes, schedules and prices. Located between Plaza España and Sants. Response in 24h.",
   contact_hero_title: 'Contact Us',
   contact_hero_subtitle:
     'We are here to help you. Write to us and we will respond as soon as possible.',
@@ -2030,7 +2030,7 @@ export const en = {
   // Merchandising Page
   merchandising_page_title: 'Merchandising',
   merchandising_page_description:
-    "Discover the official merchandising collection from Farray's International Dance Center. T-shirts, hoodies, bags and more.",
+    "Official Farray's Center Barcelona shop. Exclusive t-shirts, hoodies and accessories for dancers. Wear the FIDC style.",
   merchandising_hero_title: 'FIDC Merchandising',
   merchandising_hero_subtitle: "Take Farray's style with you. Discover our official collection.",
   merchandising_products_title: 'Our Products',
@@ -2400,7 +2400,7 @@ export const en = {
   // FAQ Page
   faq_page_title: 'Frequently Asked Questions',
   faq_page_description:
-    "Find answers to frequently asked questions about bookings, account management, payments and other topics related to Farray's Center.",
+    "We answer your questions about dance classes in Barcelona: registration, schedules, prices, levels and bookings. FAQ Farray's Center.",
   faq_hero_title: 'Frequently Asked Questions',
   faq_hero_subtitle:
     "Everything you need to know about bookings, account management and payments at Farray's Center",
@@ -3003,7 +3003,7 @@ export const en = {
   // ===== Twerk Page =====
   twerkPageTitle: "Twerk Classes in Barcelona | Farray's Center",
   twerkMetaDescription:
-    'Learn Twerk and Perreo in Barcelona with Sandra Gómez. Urban dance classes for all levels. Unleash your energy and confidence!',
+    'Twerk and Perreo classes in Barcelona with Sandra Gómez. Hip movements, isolation and attitude. All levels. Plaza España. Start today!',
 
   twerkHeroTitle: 'Twerk Classes in Barcelona',
   twerkHeroSubtitle:
@@ -3244,7 +3244,7 @@ export const en = {
   // ===== Afrobeat Page =====
   afroPageTitle: "Afrobeats and Afrodance Classes in Barcelona | Farray's Center Academy",
   afroMetaDescription:
-    'Learn Afrobeats and Afrodance in Barcelona with native African instructors. Amapiano, Ntcham and modern African dance classes for all levels in the heart of Barcelona, near Plaza España and Sants.',
+    'Afrobeats and Afrodance classes in Barcelona with African instructors. Amapiano, Ntcham and modern dances. All levels. CID-UNESCO Academy. Start today!',
 
   // Breadcrumb
   afroBreadcrumbHome: 'Home',
@@ -3519,7 +3519,7 @@ At Farray's International Dance Center, Afrobeats is taught with technique, resp
   // ===== Hip Hop Reggaeton Page =====
   hhrPageTitle: 'Hip Hop Reggaeton Classes in Barcelona | Urban Fusion with Flow',
   hhrMetaDescription:
-    'Hip Hop Reggaeton classes in Barcelona with Charlie Breezy. Urban fusion of hip-hop and reggaeton with flow and technique. Music video style choreography for all levels. Book your trial class!',
+    'Hip Hop Reggaeton classes in Barcelona with Charlie Breezy. Urban fusion, flow and music video choreography. All levels. Plaza España. Start today!',
 
   // Breadcrumb
   hhrBreadcrumbHome: 'Home',
@@ -3793,7 +3793,7 @@ This fusion incorporates:
   // ===== REGGAETON CUBANO / REPARTO PAGE =====
   rcbPageTitle: 'Cuban Reggaeton Classes in Barcelona | Authentic Reparto & Cubatón',
   rcbMetaDescription:
-    'Learn authentic Cuban Reggaeton in Barcelona with Cuban instructors. Reparto, Cubatón & improvisation classes near Plaza España and Sants. The reggaeton from the streets of Cuba!',
+    'Cuban Reggaeton classes in Barcelona with Cuban instructors. Reparto, Cubatón and authentic improvisation. CID-UNESCO Academy. Plaza España. Start today!',
   rcbBreadcrumbHome: 'Home',
   rcbBreadcrumbClasses: 'Dance Classes',
   rcbBreadcrumbUrban: 'Urban Dances',
@@ -4241,7 +4241,7 @@ Today, Cubatón has expanded internationally while maintaining its essence: impr
   // SEO & Meta
   femPageTitle: 'Femmology Classes in Barcelona | Heels Dancing with Yunaisy Farray',
   femMetaDescription:
-    'Learn to dance in heels with Yunaisy Farray, creator of the exclusive Farray Method®, actress in Street Dance 2 and UNESCO-recognized teacher. Femmology classes for all levels in Barcelona. Book your trial class!',
+    'Femmology classes in Barcelona with Yunaisy Farray, creator of the Farray Method®. Exclusive heels dancing. Street Dance 2 actress. Plaza España. Start today!',
 
   // Breadcrumb (5 levels: Home > Classes > Urban > Heels > Current)
   femBreadcrumbHome: 'Home',
@@ -4504,7 +4504,7 @@ Over more than a decade, Femmology has transformed the lives of thousands of wom
   // ===== Sexy Style Page =====
   sexystylePageTitle: 'Sexy Style Classes in Barcelona | Learn to Dance with Sensuality',
   sexystyleMetaDescription:
-    'Sexy Style classes in Barcelona with Yasmina Fernández. Learn to express yourself with sensuality, confidence and movement. All levels. Book your trial class!',
+    'Sexy Style classes in Barcelona with Yasmina Fernández. Sensuality, confidence and body expression. All levels. CID-UNESCO Academy. Start today!',
 
   // Breadcrumb
   sexystyleBreadcrumbHome: 'Home',
@@ -4796,7 +4796,7 @@ Over more than a decade, Femmology has transformed the lives of thousands of wom
   // ===== Sexy Reggaeton Page =====
   sxrPageTitle: "Sensual Reggaeton Classes for Women in Barcelona | Farray's Center",
   sxrMetaDescription:
-    'Sensual reggaeton and perreo classes for women in Barcelona. Female empowerment, body roll and body confidence. Safe, judgment-free environment. Book your trial class!',
+    'Sensual Reggaeton classes for women in Barcelona. Perreo, body roll and body confidence in a safe environment. CID-UNESCO Academy. Start today!',
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Current)
   sxrBreadcrumbHome: 'Home',
@@ -5057,7 +5057,7 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colombia), J Balvi
   modernjazzPageTitle:
     'Modern Jazz Classes in Barcelona | Technique and Expression with Alejandro Miñoso',
   modernjazzMetaDescription:
-    'Modern Jazz classes in Barcelona with Alejandro Miñoso. Technique, musicality and body expression. From beginner to advanced. Book your trial class!',
+    'Modern Jazz classes in Barcelona with Alejandro Miñoso. Technique, musicality and body expression. All levels. Plaza España. Start today!',
 
   // Breadcrumb (4 levels: Home > Classes > Dance > Current)
   modernjazzBreadcrumbHome: 'Home',
@@ -5469,7 +5469,7 @@ Farray's International Dance Center is rated close to **5/5 on Google**, with hu
   // ===== SEO Meta Tags =====
   balletPageTitle: 'Ballet Classes in Barcelona',
   balletMetaDescription:
-    'Classical ballet classes in Barcelona for adults. Learn technique, posture and elegance with ENA-trained teachers. CID-UNESCO academy between Plaza España and Sants. All levels.',
+    'Classical Ballet classes for adults in Barcelona. Technique, posture and elegance with ENA Cuba teachers. CID-UNESCO Academy. All levels. Start today!',
 
   // ===== Breadcrumbs =====
   balletBreadcrumbHome: 'Home',
@@ -5930,7 +5930,7 @@ All ballet terms are in French, a legacy of its development at the court of Vers
   // ===== SEO Meta Tags =====
   afrojazzPageTitle: "Afro Jazz Classes | Farray's International Dance Center",
   afrojazzMetaDescription:
-    'Learn Afro Jazz with Yunaisy Farray, CID-UNESCO master. Unique fusion of Afro Contemporary + Jazz. The only academy in the world teaching this discipline with professional methodology.',
+    'Afro Jazz classes in Barcelona with Yunaisy Farray, CID-UNESCO master. Unique Afro Contemporary + Jazz fusion. Exclusive methodology. Plaza España. Start today!',
 
   // ===== Breadcrumbs =====
   afrojazzBreadcrumbHome: 'Home',
@@ -6277,7 +6277,7 @@ Dancers from around the world travel to Barcelona specifically to train in Afro 
   // SEO & Meta
   contemporaneoPageTitle: "Contemporary Dance Classes in Barcelona | Farray's Center Academy",
   contemporaneoMetaDescription:
-    'Contemporary dance classes in Barcelona. Eclectic and visceral discipline. Technique, expression and improvisation. All levels. Book your trial class!',
+    'Contemporary Dance classes in Barcelona. Technique, expression and improvisation with ENA Cuba teachers. CID-UNESCO Academy. All levels. Start today!',
 
   // Breadcrumb
   contemporaneoBreadcrumbHome: 'Home',
@@ -6662,7 +6662,7 @@ Works comprehensively: **flexibility, functional strength, coordination, proprio
   afrocontemporaneoPageTitle:
     'Afro Contemporary Classes in Barcelona | Cuban ENA Technique with Yunaisy Farray',
   afrocontemporaneoMetaDescription:
-    'Learn Afro Contemporary in Barcelona with Yunaisy Farray, CID-UNESCO master. Technique from the National School of Art of Cuba. Technical refinement classes near Plaza España.',
+    'Afro Contemporary classes in Barcelona with Yunaisy Farray, CID-UNESCO master. ENA Cuba technique. Technical refinement. Plaza España. Start today!',
 
   // Breadcrumb
   afrocontemporaneoBreadcrumbHome: 'Home',
@@ -7016,7 +7016,7 @@ The Afro Contemporary taught at **Farray's International Dance Center** is part 
   // ===== HIP HOP PAGE =====
   hiphopPageTitle: 'Hip Hop Classes in Barcelona',
   hiphopMetaDescription:
-    'Learn Hip Hop in Barcelona with Marcos Martínez, competition judge and international master. Open level classes on Thursdays. Breaking, locking, popping and freestyle. CID-UNESCO academy near Plaza España.',
+    'Hip Hop classes in Barcelona with Marcos Martínez, international judge. Breaking, locking, popping and freestyle. CID-UNESCO Academy. Start today!',
   hiphopBreadcrumbHome: 'Home',
   hiphopBreadcrumbClasses: 'Dance Classes Barcelona',
   hiphopBreadcrumbUrban: 'Urban Dance Classes',
@@ -7317,7 +7317,7 @@ Our teacher **Marcos Martínez**, judge of international competitions and refere
   navFolkloreCubano: 'Cuban Folklore',
   salsaCubanaPageTitle: 'Cuban Salsa Classes in Barcelona',
   salsaCubanaMetaDescription:
-    'Learn Cuban salsa in Barcelona with the Farray Method®. Classes for all levels with Yunaisy Farray, CID-UNESCO master. Leading, following, musicality and partner connection.',
+    'Cuban Salsa classes in Barcelona with the Farray Method®. Yunaisy Farray, CID-UNESCO master. Leading, following and musicality. All levels. Start today!',
   salsaCubanaBreadcrumbHome: 'Home',
   salsaCubanaBreadcrumbClasses: 'Dance Classes',
   salsaCubanaBreadcrumbLatin: 'Salsa & Bachata',
@@ -7870,7 +7870,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   // SEO & Meta
   salsaLadyPageTitle: 'Salsa Lady Style Classes in Barcelona | Ladies Styling & Feminine Technique',
   salsaLadyMetaDescription:
-    'Learn Salsa Lady Style in Barcelona with the Farray Method®. Ladies styling salsa classes, feminine technique and elegance. CID-UNESCO certified academy near Plaza España.',
+    'Salsa Lady Style classes in Barcelona with the Farray Method®. Ladies styling, feminine technique and elegance. CID-UNESCO Academy. Plaza España. Start today!',
 
   // Breadcrumb (4 levels)
   salsaLadyBreadcrumbHome: 'Home',
@@ -9203,7 +9203,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   // ===== FOLKLORE CUBANO PAGE =====
   folklorePageTitle: "Cuban Folklore Classes in Barcelona | Farray's Academy",
   folkloreMetaDescription:
-    'Learn authentic Cuban Folklore in Barcelona. Dances to the Orishas, Yoruba, Rumba and more. Specialized Cuban masters. Between Plaza España and Sants. Free trial!',
+    'Cuban Folklore classes in Barcelona. Dances to the Orishas, Yoruba and Rumba with Cuban masters. CID-UNESCO Academy. All levels. Start today!',
   folkloreCourseSchemaName: 'Cuban Folklore Classes in Barcelona',
   folkloreCourseSchemaDesc:
     'Learn traditional Cuban dances to the Orishas with masters trained at the National School of Art of Cuba. Classes for all levels.',
@@ -9508,7 +9508,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   // === META & SEO ===
   timbaPageTitle: 'Timba Classes in Barcelona',
   timbaMetaDescription:
-    "Timba classes in Barcelona: Partner Timba and Lady Timba with Cuban teachers. Learn to dance when they let you go in salsa. Farray's Center, CID-UNESCO academy.",
+    'Timba classes in Barcelona with Cuban teachers. Partner Timba and Lady Timba. Learn authentic Cuban despelote. CID-UNESCO Academy. Start today!',
   timbaCourseSchemaName: 'Cuban Timba Course in Barcelona',
   timbaCourseSchemaDesc:
     'Timba classes with professional Cuban teachers. Partner Timba and Lady Timba for women. Learn musical interpretation and Cuban despelote.',
@@ -9866,7 +9866,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   stretchingPageTitle:
     "Stretching Classes in Barcelona | Flexibility & Stretching | Farray's Center",
   stretchingMetaDescription:
-    'Stretching and flexibility classes in Barcelona. Improve your flexibility with the Farray Method. Backbending, leg and back elongation. All levels. Plaza España.',
+    'Stretching classes in Barcelona with the Farray Method®. Backbending, elongation and flexibility. All levels. CID-UNESCO Academy. Plaza España. Start today!',
   stretchingMetaKeywords:
     'stretching barcelona, stretching classes, flexibility classes, backbending, elongation, Farray Method, flexibility training barcelona',
 
@@ -10196,7 +10196,7 @@ Scientific studies confirm that regular stretching 3+ times per week:
   // === SEO & META ===
   bumbumPageTitle: 'Glute Exercise Classes in Barcelona | Bum Bum Amazing Glutes',
   bumbumMetaDescription:
-    'Glute exercise classes in Barcelona. Tone and grow your glutes with hip thrust, squats and dance techniques. Farray Method. Trial class available.',
+    'Glute classes in Barcelona: hip thrust, squats and dance techniques. Tone and grow with the Farray Method®. Plaza España. Start today!',
 
   // === HERO SECTION ===
   bumbumHeroTitle: 'Bum Bum Amazing Glutes',
@@ -10963,7 +10963,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // Blog General
   blog_pageTitle: 'Dance Blog | Tips, Tutorials & Dance History',
   blog_metaDescription:
-    'Discover tips, tutorials and the fascinating history of dance. Expert advice from professional dancers to improve your technique and enjoy every step.',
+    "Dance blog: guides, techniques, history of salsa, bachata and urban dance. Expert articles from Farray's Center Barcelona. Learn more.",
   blog_breadcrumbHome: 'Home',
   blog_breadcrumbBlog: 'Blog',
   blog_readMore: 'Read Full Article',
@@ -12264,7 +12264,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // === SEO & META ===
   bachataV3PageTitle: 'Sensual Bachata Classes in Barcelona | Learn with World Champions',
   bachataV3MetaDescription:
-    "Learn sensual bachata in Barcelona with Mathias Font and Eugenia Trujillo, world champions in Salsa LA. Classes from beginner to advanced at Farray's Center near Plaza España.",
+    'Sensual Bachata classes in Barcelona with world champions. Connection, waves and musicality. CID-UNESCO Academy. All levels. Start today!',
   bachataV3MetaKeywords:
     'sensual bachata barcelona, bachata classes barcelona, learn bachata, sensual bachata classes, bachata school barcelona',
 
@@ -15974,7 +15974,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   cuerpofitBreadcrumbCategory: `Dancer Training`,
   cuerpofitBreadcrumbCurrent: `Body Conditioning`,
   cuerpofitPageTitle: `Body Conditioning Classes in Barcelona | Physical Conditioning for Dancers`,
-  cuerpofitMetaDescription: `Body conditioning and physical conditioning classes for dancers in Barcelona. Improve strength, flexibility and endurance with the Farray Method®. Mondays 7pm. Plaza España.`,
+  cuerpofitMetaDescription: `Body Conditioning classes for dancers in Barcelona. Strength, flexibility and endurance with the Farray Method®. Mondays 7pm. Plaza España. Start today!`,
   cuerpofitMetaKeywords: `body conditioning barcelona, physical conditioning dancers, dance physical preparation, functional training dancers, strength and flexibility dance, fitness dancers`,
   cuerpofitHeroTitle: `Body Conditioning in Barcelona`,
   cuerpofitHeroSubtitle: `Specialized Physical Conditioning for Dancers`,
@@ -16135,7 +16135,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   bailemanananasBreadcrumbCategory: `Dance Barcelona`,
   bailemanananasBreadcrumbCurrent: `Morning Classes`,
   bailemanananasPageTitle: `Morning Dance Classes in Barcelona | 13 Styles from 10am to 1pm | Farray's Center`,
-  bailemanananasMetaDescription: `Morning dance classes in Barcelona: Contemporary, Ballet, Modern Jazz, Sexy Style, Reggaeton and more. Schedule from 10am to 1pm. Ideal for afternoon shift workers. Near Plaza España.`,
+  bailemanananasMetaDescription: `Morning dance classes in Barcelona. Ballet, Contemporary, Reggaeton and more from 10am to 1pm. Ideal for afternoon shifts. Plaza España. Start today!`,
   bailemanananasHeroTitle: `Morning Dance Classes in Barcelona`,
   bailemanananasHeroSubtitle: `And these aren't just any classes...`,
   bailemanananasHeroDesc: `Start your day dancing: Contemporary, Ballet, Modern Jazz, Sexy Style, Reggaeton and Salsa Lady Style. Plenty of weekly classes, perfect for those who work afternoons or want to make the most of their mornings.`,
@@ -16382,7 +16382,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   bachataV3FinalCTADesc: `No importa si vienes solo o en pareja. Si nunca has bailado o si ya tienes experience. Lo importante es que des el primer paso.\\n\\nCon Mathias, Eugenia, Carlos, Noemí y Juan learnás bachata sensual de truth: technique, conexión, musicality y mucha diversión.`,
   bachataV3FinalCTAFunny: `Ready to make waves? 🌊`,
   fullBodyCardioPageTitle: `Cuerpo-Fit: Full Body Training and Cardio Dance in Barcelona | Farray's Center`,
-  fullBodyCardioMetaDescription: `Cuerpo-Fit: full body training with cardio dance in Barcelona. Burn 400-500 calories per session, tone your body and have fun. All levels. Mondays 8pm. Plaza España.`,
+  fullBodyCardioMetaDescription: `Full Body Cardio Dance classes in Barcelona. Burn 400-500 calories, tone and have fun. Farray Method®. Mondays 8pm. Plaza España. Start today!`,
   fullBodyCardioMetaKeywords: `body fit barcelona, full body training barcelona, cardio dance barcelona, fitness classes barcelona, burn calories dancing, fitness dance barcelona, full body exercises barcelona`,
   fullBodyCardioBreadcrumbHome: `Home`,
   fullBodyCardioBreadcrumbClasses: `Classes`,

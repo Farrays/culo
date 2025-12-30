@@ -277,12 +277,12 @@ const FacilitiesFullGallery: React.FC = () => {
 
         {/* Filter Tabs */}
         <AnimateOnScroll delay={100}>
-          <div className="flex justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12">
             {filters.map(filter => (
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-black ${
+                className={`px-4 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-black ${
                   activeFilter === filter.id
                     ? 'bg-primary-accent text-white shadow-accent-glow'
                     : 'bg-primary-dark/30 text-neutral/80 hover:bg-primary-dark/50 hover:text-neutral'
@@ -295,12 +295,12 @@ const FacilitiesFullGallery: React.FC = () => {
         </AnimateOnScroll>
 
         {/* Image Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4">
           {filteredImages.map((image, idx) => (
             <AnimateOnScroll key={`${image.area}-${image.index}`} delay={idx * 50}>
               <button
                 onClick={() => openLightbox(idx)}
-                className="relative group w-full aspect-[4/3] rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-black"
+                className="relative group w-full aspect-[4/3] rounded-lg sm:rounded-xl overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-accent focus:ring-offset-2 focus:ring-offset-black"
                 aria-label={`View image ${idx + 1}`}
               >
                 <OptimizedImage
@@ -311,8 +311,8 @@ const FacilitiesFullGallery: React.FC = () => {
                   className="w-full h-full transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="px-3 py-1 bg-black/70 rounded-full text-white text-xs font-medium uppercase tracking-wide">
+                <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="px-2 py-0.5 sm:px-3 sm:py-1 bg-black/70 rounded-full text-white text-[10px] sm:text-xs font-medium uppercase tracking-wide">
                     {t(
                       `facilitiesArea${image.area.charAt(0).toUpperCase() + image.area.slice(1)}`
                     ) || image.area}
