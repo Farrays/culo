@@ -460,7 +460,7 @@ const EmptyState = memo(({ t }: { t: (key: string) => string }) => (
   <div className="text-center py-12">
     <ClockIcon className="w-12 h-12 text-neutral/30 mx-auto mb-4" />
     <p className="text-neutral/50 text-lg">{t('schedule_no_classes')}</p>
-    <p className="text-neutral/40 text-sm mt-1">{t('schedule_try_other_day')}</p>
+    <p className="text-neutral/60 text-sm mt-1">{t('schedule_try_other_day')}</p>
   </div>
 ));
 

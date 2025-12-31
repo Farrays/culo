@@ -10,58 +10,58 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html', 'lcov'],
+      // Realistic thresholds for this codebase
+      // Focus on hooks, utilities, and reusable components
+      // Thresholds set to current baseline - increase as more tests are added
+      thresholds: {
+        statements: 23,
+        branches: 50,
+        functions: 45,
+        lines: 23,
+      },
       exclude: [
+        // === BUILD & CONFIG (not application code) ===
         'node_modules/**',
         'dist/**',
         'test/**',
         '**/*.test.{ts,tsx}',
         '**/__tests__/**',
-        // Exclude data files (i18n locales - these are just translation data)
-        'i18n/locales/*.ts',
-        // Exclude build/config scripts
+        '**/*.stories.{ts,tsx}',
         'scripts/**',
         'prerender.mjs',
-        '*.config.{js,ts,mjs}',
+        '*.config.{js,ts,mjs,cjs}',
         'vite.config.ts',
         'tailwind.config.js',
         'postcss.config.cjs',
-        // Exclude type definitions
         'types/**',
-        // Exclude constants that are pure data
-        'constants/*.ts',
-        // Exclude the page files (migrated to templates)
-        'components/*Page.tsx',
-        // Exclude complex templates (integration-tested via pages)
-        'components/templates/**',
-        // Exclude large navigation components (complex state)
-        'components/header/DesktopNavigation.tsx',
-        'components/header/MobileNavigation.tsx',
-        // Exclude responsive image components with complex loading
-        'src/components/**',
-        // Exclude external service integrations (Sentry, Instagram)
+
+        // === DATA FILES (no logic to test) ===
+        'i18n/locales/*.ts', // 12000+ lines of translation strings
+        'constants/**/*.ts', // Pure data constants
+
+        // === LANDING PAGES (Facebook Ads only, not indexed) ===
+        'components/landing/**',
+
+        // === PAGE COMPOSITIONS (tested via E2E, not unit tests) ===
+        'components/pages/**', // Full page components
+        'components/templates/**', // Layout templates
+
+        // === EXTERNAL INTEGRATIONS (require mocking entire services) ===
         'utils/sentry.ts',
         'components/InstagramFeed.tsx',
-        // Exclude comparison table (complex layout component)
-        'components/shared/ComparisonTable.tsx',
-        // Exclude common icons (pure SVG components)
+        'components/HowToGetHere.tsx', // Google Maps integration
+
+        // === PURE PRESENTATIONAL (SVG icons, no logic) ===
+        'lib/icons.tsx',
         'components/shared/CommonIcons.tsx',
-        // Exclude facilities components (simple presentational)
-        'components/FacilitiesHero.tsx',
-        'components/FacilityCard.tsx',
-        'components/FeatureList.tsx',
-        'components/StudioAmenities.tsx',
-        // Exclude hook with internal cache (functionally tested via integration tests)
-        'hooks/useI18n.tsx',
-        // Exclude HowToGetHere (needs map integration)
-        'components/HowToGetHere.tsx',
-        // Exclude sanitization utils (simple regex validations)
-        'utils/sanitization.ts',
+
+        // === INDEX FILES (re-exports only) ===
+        '**/index.ts',
       ],
       include: [
         'components/**/*.{ts,tsx}',
         'hooks/**/*.{ts,tsx}',
         'utils/**/*.{ts,tsx}',
-        'lib/**/*.{ts,tsx}',
       ],
     },
   },

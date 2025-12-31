@@ -447,8 +447,11 @@ const CalendarPage: React.FC = () => {
       </section>
 
       {/* Timeline */}
-      <section className="py-12 md:py-16 bg-black">
+      <section className="py-12 md:py-16 bg-black" aria-labelledby="timeline-heading">
         <div className="container mx-auto px-6">
+          <h2 id="timeline-heading" className="sr-only">
+            {t('calendar_timeline_heading')}
+          </h2>
           <div className="max-w-3xl mx-auto">
             {filteredEvents.length === 0 ? (
               <AnimateOnScroll>

@@ -81,7 +81,10 @@ const BlogArticleTemplate: React.FC<BlogArticleTemplateProps> = ({ config }) => 
         <meta name="description" content={t(`${config.articleKey}_metaDescription`)} />
         <link rel="canonical" href={articleUrl} />
 
-        {/* Article Meta */}
+        {/* Author Meta (HTML5 standard) */}
+        <meta name="author" content={author.name} />
+
+        {/* Article Meta (Open Graph) */}
         <meta property="article:published_time" content={config.datePublished} />
         <meta property="article:modified_time" content={config.dateModified} />
         <meta property="article:section" content={config.category} />

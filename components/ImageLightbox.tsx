@@ -1,3 +1,4 @@
+/* global PopStateEvent */
 /**
  * ImageLightbox - Enterprise-level accessible image lightbox
  * ===========================================================
@@ -127,6 +128,33 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({
       document.body.style.overflow = '';
     };
   }, [isOpen]);
+
+  // Handle browser back button to close lightbox instead of navigating away
+  useEffect(() => {
+    if (!isOpen) return;
+
+    // Push state when lightbox opens
+    const stateId = 'lightbox-open';
+    window.history.pushState({ lightbox: stateId }, '');
+
+    // Handle popstate (back button)
+    const handlePopState = (event: PopStateEvent) => {
+      // If we're going back from the lightbox state, close it
+      if (!event.state?.lightbox) {
+        onClose();
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      // Clean up history state if lightbox closes via other means (ESC, click, etc)
+      if (window.history.state?.lightbox === stateId) {
+        window.history.back();
+      }
+    };
+  }, [isOpen, onClose]);
 
   // Touch handlers for swipe
   const onTouchStart = (e: React.TouchEvent) => {

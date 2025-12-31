@@ -7,7 +7,7 @@ import { kv } from '@vercel/kv';
  * Recibe datos del formulario de captacion y los envia a Momence
  * El token se guarda en variables de entorno de Vercel (nunca expuesto al cliente)
  *
- * Deduplicación con Vercel KV:
+ * Deduplicación con Vercel KV (Redis):
  * - TTL de 90 días para evitar leads duplicados
  * - Si el email ya existe en KV (dentro de TTL), no se envía a Momence
  * - Si el TTL expiró, se re-envía y actualiza el timestamp
@@ -27,7 +27,7 @@ const LEAD_TTL_SECONDS = 90 * 24 * 60 * 60; // 7,776,000 segundos
 const LEAD_KEY_PREFIX = 'lead:';
 
 // Tipos de estado de lead
-type LeadStatus = 'new' | 'existing' | 'refresh';
+type LeadStatus = 'new' | 'existing';
 
 // Rate limiting simple (en memoria - se resetea en cada cold start)
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
