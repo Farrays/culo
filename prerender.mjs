@@ -1286,9 +1286,9 @@ if (criticalChunks.reactVendor) {
 if (criticalChunks.routerVendor) {
   commonPreloadHints.push(`<link rel="modulepreload" href="/assets/${criticalChunks.routerVendor}" />`);
 }
-if (criticalChunks.mainCss) {
-  commonPreloadHints.push(`<link rel="preload" href="/assets/${criticalChunks.mainCss}" as="style" />`);
-}
+// Note: CSS preload removed - it causes "preloaded but not used" warnings because
+// the CSS is loaded via Vite's JS module system, not a direct <link rel="stylesheet">.
+// By the time JS requests the CSS, the browser has already timed out the preload.
 
 console.log(`📦 Found critical chunks:`);
 console.log(`   - Main bundle: ${criticalChunks.index || 'not found'}`);
@@ -1307,11 +1307,7 @@ routes.forEach(route => {
   const content = initialContent[lang][page];
 
   // Build preload hints for this specific page (common + locale-specific i18n)
-  // For landing pages, skip CSS preload as it causes "preloaded but not used" warnings
-  const isLandingPage = page.endsWith('Landing');
-  const pagePreloadHints = isLandingPage
-    ? commonPreloadHints.filter(hint => !hint.includes('as="style"'))
-    : [...commonPreloadHints];
+  const pagePreloadHints = [...commonPreloadHints];
   if (criticalChunks[lang]) {
     pagePreloadHints.push(`<link rel="modulepreload" href="/assets/${criticalChunks[lang]}" />`);
   }
@@ -1414,9 +1410,9 @@ routes.forEach(route => {
   // Remove robots meta tag (will be replaced with page-specific value)
   html = html.replace(/<meta\s+name="robots"[^>]*>/gi, '');
 
-  // Remove hero-video-poster preload for landing pages (they don't use the home hero video)
+  // Remove hero-video-poster preload for non-home pages (only home uses the hero video)
   // This prevents "resource was preloaded but not used" warnings
-  if (page.endsWith('Landing')) {
+  if (page !== 'home') {
     html = html.replace(/<link[^>]*hero-video-poster\.webp[^>]*>/gi, '');
   }
 
