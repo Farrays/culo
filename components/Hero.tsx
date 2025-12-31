@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-52 sm:pt-56 md:pt-56 lg:pt-44 xl:pt-48"
+      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-32 sm:pt-36 md:pt-40 lg:pt-32 xl:pt-36 pb-8"
       aria-label="Hero section"
     >
       {/* Background with Video */}
@@ -69,15 +69,15 @@ const Hero: React.FC = () => {
         >
           {t('heroTitle2')}
         </p>
-        <p className="text-xl md:text-2xl font-semibold text-neutral/90 mb-6 italic">
+        <p className="text-xl md:text-2xl font-semibold text-neutral/90 mb-4 italic">
           {t('heroSubtitle')}
         </p>
-        <p className="max-w-3xl mx-auto text-lg md:text-xl text-neutral/90 mb-8">
+        <p className="max-w-3xl mx-auto text-lg md:text-xl text-neutral/90 mb-6">
           {t('heroValue')}
         </p>
 
         {/* CTA Button */}
-        <div className="flex flex-col items-center justify-center mb-10">
+        <div className="flex flex-col items-center justify-center mb-6">
           <button
             onClick={() => setIsLeadModalOpen(true)}
             className="w-full sm:w-auto bg-primary-accent text-white font-bold text-sm xl:text-base py-2.5 xl:py-3 px-5 xl:px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
