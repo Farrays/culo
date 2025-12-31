@@ -178,7 +178,7 @@ export const TimeBlockFilter: React.FC<TimeBlockFilterProps> = ({
         {/* Divider */}
         <div className="flex items-center gap-6 my-10">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-          <span className="text-neutral/40 text-sm font-medium uppercase tracking-wider">
+          <span className="text-neutral/60 text-sm font-medium uppercase tracking-wider">
             {t('horariosV2_filter_or')}
           </span>
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />

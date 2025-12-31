@@ -574,7 +574,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
                       style={{ animationDelay: `${i * 100}ms` }}
                     >
                       <div className="flex items-start gap-3 sm:gap-4">
-                        <span className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-neutral/20 flex items-center justify-center text-neutral/40 text-xs sm:text-sm font-bold group-hover:border-primary-accent/40 group-hover:text-primary-accent/60 transition-colors">
+                        <span className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full border border-neutral/20 flex items-center justify-center text-neutral/60 text-xs sm:text-sm font-bold group-hover:border-primary-accent/40 group-hover:text-primary-accent/60 transition-colors">
                           {num}
                         </span>
                         <p className="text-neutral/70 text-sm sm:text-base leading-relaxed group-hover:text-neutral/90 transition-colors">

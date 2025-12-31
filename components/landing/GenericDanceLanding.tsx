@@ -641,35 +641,6 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
           </div>
         </section>
 
-        {/* EXPERIENCE SECTION */}
-        <section className="py-12 md:py-16">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="max-w-3xl mx-auto">
-              <AnimateOnScroll>
-                <div
-                  className={`relative bg-gradient-to-br ${theme.bgPrimaryDark} via-black/80 ${theme.bgAccentLight} rounded-2xl p-6 sm:p-8 md:p-10 ${theme.borderPrimary} border shadow-2xl`}
-                >
-                  <div
-                    className={`absolute top-0 left-0 w-20 h-20 ${theme.bgPrimaryLight} rounded-full blur-3xl`}
-                  />
-                  <div
-                    className={`absolute bottom-0 right-0 w-32 h-32 ${theme.bgAccentLight} rounded-full blur-3xl`}
-                  />
-
-                  <div className="relative text-center">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-neutral mb-4 sm:mb-6 holographic-text">
-                      {t(`${prefix}ExperienceTitle`)}
-                    </h2>
-                    <p className="text-neutral/80 text-sm sm:text-base md:text-lg leading-relaxed">
-                      {t(`${prefix}ExperienceDesc`)}
-                    </p>
-                  </div>
-                </div>
-              </AnimateOnScroll>
-            </div>
-          </div>
-        </section>
-
         {/* VALUE STACK SECTION */}
         <section className="py-12 md:py-16 bg-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">

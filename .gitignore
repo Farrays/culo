@@ -43,3 +43,6 @@ missing_translations_*.json
 *.backup.ts
 cookies_*.txt
 nul
+
+# Coverage reports
+coverage/

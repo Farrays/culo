@@ -24,9 +24,9 @@
         "speed-index": ["warn", { "maxNumericValue": 3500 }],
         "interactive": ["warn", { "maxNumericValue": 4000 }],
         "max-potential-fid": ["warn", { "maxNumericValue": 200 }],
-        "color-contrast": "off",
+        "color-contrast": "warn",
         "errors-in-console": "off",
-        "heading-order": "off"
+        "heading-order": "warn"
       }
     },
     "upload": {

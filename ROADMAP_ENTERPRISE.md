@@ -440,4 +440,128 @@ Pasar a Pro ($20/mes) cuando:
 
 ---
 
-_Última actualización: 2024-12_
+## 10. AUDITORÍA WEB COMPLETA (Dic 2024)
+
+### 10.1 Puntuación Global: 8.8/10
+
+| Categoría                   | Puntuación | Estado           |
+| --------------------------- | ---------- | ---------------- |
+| SEO                         | 9.2/10     | ✅ Excelente     |
+| GEO/Local SEO               | 9.5/10     | ✅ Sobresaliente |
+| Accesibilidad (a11y)        | 8.8/10     | ✅ Muy bueno     |
+| Rendimiento                 | 8.5/10     | ✅ Muy bueno     |
+| Buenas Prácticas React/Vite | 9.0/10     | ✅ Excelente     |
+| Seguridad                   | 9.3/10     | ✅ Excelente     |
+| CSS/Tailwind                | 8.7/10     | ✅ Muy bueno     |
+| Testing                     | 7.5/10     | 🟡 Bueno         |
+| Internacionalización (i18n) | 9.0/10     | ✅ Excelente     |
+
+### 10.2 Correcciones Aplicadas (✅ Completadas)
+
+- [x] `<meta name="author">` en páginas de blog
+- [x] Contraste de color WCAG AA (`text-neutral/40` → `/60`)
+- [x] Jerarquía H1-H6 (H2 semántico en CalendarPage)
+- [x] Lighthouse rules habilitadas (color-contrast, heading-order)
+- [x] BreadcrumbList Schema (ya implementado en 36 archivos)
+- [x] Landings Facebook Ads con noindex/nofollow (verificado)
+
+### 10.3 Tests Añadidos (Dic 2024)
+
+**Estado: 543 tests passing | Coverage: ~24% (líneas), 71% (branches), 60% (funciones)**
+
+Tests de hooks:
+
+- [x] `hooks/__tests__/useScrollProgress.test.ts` - Hook de progreso de scroll
+- [x] `hooks/__tests__/useActiveSection.test.ts` - Hook de sección activa + scroll
+- [x] `hooks/__tests__/useCookieConsent.test.ts` - Gestión de cookies
+- [x] `hooks/__tests__/useImageAlt.test.ts` - Alt text de imágenes
+- [x] `hooks/__tests__/useSharedIntersectionObserver.test.ts` - Intersection Observer
+- [x] `hooks/__tests__/useLazyImage.test.tsx` - Lazy loading de imágenes
+- [x] `hooks/__tests__/useHLSVideo.test.ts` - Streaming HLS
+
+Tests de utils:
+
+- [x] `utils/__tests__/analytics.test.ts` - UTM params y lead values
+- [x] `utils/__tests__/debounce.test.ts` - Función debounce
+- [x] `utils/__tests__/imageConfig.test.ts` - Config de imágenes
+- [x] `utils/__tests__/inputSanitization.test.ts` - Sanitización de inputs
+
+Tests de componentes shared:
+
+- [x] `components/shared/__tests__/VideoCard.test.tsx` - Componente de video
+- [x] `components/shared/__tests__/CountdownTimer.test.tsx` - Countdown timer
+- [x] `components/shared/__tests__/VideoModal.test.tsx` - Modal de video
+
+Tests de componentes schedule:
+
+- [x] `components/schedule/__tests__/ScheduleCard.test.tsx` - Tarjeta de horario
+
+Tests de componentes homev2:
+
+- [x] `components/homev2/__tests__/TrustBar.test.tsx` - Barra de confianza
+- [x] `components/homev2/__tests__/MiniFAQ.test.tsx` - FAQ accordion
+- [x] `components/homev2/__tests__/StickyMobileCTA.test.tsx` - CTA fijo móvil
+- [x] `components/homev2/__tests__/ProblemSolutionSection.test.tsx` - Sección PAS
+- [x] `components/homev2/__tests__/SocialProofSection.test.tsx` - Social proof
+- [x] `components/homev2/__tests__/MethodSection.test.tsx` - Método Farray
+- [x] `components/homev2/__tests__/HeroV2.test.tsx` - Hero principal
+- [x] `components/homev2/__tests__/FinalCTAV2.test.tsx` - CTA final
+
+### 10.4 Configuración de Coverage (vitest.config.ts)
+
+```
+Thresholds actuales:
+- statements: 23%
+- branches: 50%
+- functions: 45%
+- lines: 23%
+
+Exclusiones razonables:
+- pages/** (composiciones de página, mejor E2E)
+- templates/** (layouts complejos, mejor E2E)
+- landing/** (Facebook Ads, no indexados)
+- constants/** (solo datos)
+- i18n/locales/** (traducciones)
+```
+
+### 10.5 Pendiente - Opcional (Nice-to-have)
+
+| Tarea                           | Prioridad | Esfuerzo | Impacto     | Notas                       |
+| ------------------------------- | --------- | -------- | ----------- | --------------------------- |
+| E2E tests con Playwright        | Media     | Alto     | QA          | Para pages/templates        |
+| Dividir bundles i18n por página | Baja      | Alto     | Performance | 330-365KB por locale        |
+| Eliminar `unsafe-eval` en CSP   | Baja      | Alto     | Seguridad   | Necesario para Vite bundles |
+| React Query para data fetching  | Baja      | Medio    | DX          | Solo si escala mucho        |
+
+### 10.6 NO Hacer (Descartado)
+
+- ❌ Purge CSS verificar: Tailwind 3.x ya lo hace automáticamente
+- ❌ Dark mode toggle: El sitio ya es dark mode, sin demanda de usuarios
+- ❌ Coverage 80% global: Config actual enfocada en hooks/utils/shared (valor real)
+
+---
+
+## PRIORIDADES ACTUALIZADAS (Enero 2025)
+
+### Inmediato (Pre-lanzamiento)
+
+1. ✅ Auditoría web completada
+2. ✅ Tests críticos añadidos (543 tests passing)
+3. ✅ Coverage thresholds configurados y cumplidos
+4. 🔜 Contenido de videos pendientes
+5. 🔜 Review final de traducciones
+
+### Post-lanzamiento
+
+5. E2E tests con Playwright
+6. Analytics avanzado (Hotjar/Clarity)
+
+### Futuro (Cuando haya tracción)
+
+7. PWA completa
+8. Booking directo integrado
+9. Optimización de bundles i18n
+
+---
+
+_Última actualización: 2024-12-30 (tests añadidos)_

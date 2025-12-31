@@ -123,7 +123,7 @@ export const ScheduleBlock: React.FC<ScheduleBlockProps> = ({ config, showTestim
         </AnimateOnScroll>
 
         {/* Legal disclaimer */}
-        <p className="text-center text-xs text-neutral/40 mt-6">
+        <p className="text-center text-xs text-neutral/60 mt-6">
           {t('horariosV2_block_disclaimer')}
         </p>
       </div>

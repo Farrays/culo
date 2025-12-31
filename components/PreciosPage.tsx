@@ -951,7 +951,7 @@ const PreciosPage: React.FC = () => {
         ================================================================ */}
         <section className="py-8 bg-black border-t border-white/10">
           <div className="container mx-auto px-4 sm:px-6">
-            <p className="text-xs text-center text-neutral/40 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xs text-center text-neutral/60 max-w-3xl mx-auto leading-relaxed">
               {t('pricingV2_footer_legal')}
             </p>
           </div>

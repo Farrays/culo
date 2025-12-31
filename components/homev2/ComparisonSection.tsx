@@ -200,7 +200,7 @@ const ComparisonSection: React.FC<ComparisonSectionProps> = ({ config }) => {
 
         {/* Disclaimer */}
         <AnimateOnScroll delay={300}>
-          <p className="text-center text-neutral/40 text-sm italic mb-12">
+          <p className="text-center text-neutral/60 text-sm italic mb-12">
             {t(config.disclaimerKey)}
           </p>
         </AnimateOnScroll>
