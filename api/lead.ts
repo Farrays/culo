@@ -98,9 +98,8 @@ export default async function handler(
       email,
       phoneNumber,
       discoveryAnswer,
-      estilo,
+      estilo, // No se envía a Momence, pero se guarda en KV para analytics
       acceptsMarketing,
-      url,
       sourceId: customSourceId, // Permite override del sourceId por landing
     } = req.body;
 
@@ -109,7 +108,7 @@ export default async function handler(
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
-    // RGPD: El consentimiento es obligatorio
+    // RGPD: El consentimiento es obligatorio (validamos en frontend, pero no enviamos a Momence)
     if (!acceptsMarketing) {
       return res.status(400).json({ error: 'Consent required' });
     }
@@ -151,17 +150,15 @@ export default async function handler(
     // Usar sourceId del body si se proporciona, sino el default de env
     const finalSourceId = customSourceId ? String(customSourceId) : MOMENCE_SOURCE_ID;
 
-    // Preparar payload para Momence
+    // Preparar payload para Momence (token va en el body, no en header)
     const payload = {
+      token: MOMENCE_TOKEN,
       firstName: sanitize(firstName),
       lastName: sanitize(lastName),
       email: normalizedEmail,
       phoneNumber: sanitize(phoneNumber),
       discoveryAnswer: sanitize(discoveryAnswer || 'Not specified'),
-      estilo: sanitize(estilo || 'Not specified'),
-      acceptsMarketing: Boolean(acceptsMarketing),
       sourceId: finalSourceId,
-      url: sanitize(url || ''),
     };
 
     // Enviar a Momence
@@ -169,7 +166,6 @@ export default async function handler(
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${MOMENCE_TOKEN}`,
       },
       body: JSON.stringify(payload),
     });
