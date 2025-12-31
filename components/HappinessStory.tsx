@@ -9,12 +9,10 @@ const HappinessStory: React.FC = () => {
     <section className="relative section-after-hero pb-12 md:pb-16 bg-black text-neutral">
       <div className="absolute inset-0 bg-gradient-to-b from-black via-primary-dark/10 to-black opacity-50"></div>
       <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
-        {/* First line: Large white text */}
-        <AnimateOnScroll>
-          <p className="text-3xl md:text-4xl text-white mb-6 leading-relaxed">
-            {t('happinessStoryLine1')}
-          </p>
-        </AnimateOnScroll>
+        {/* First line: Large white text - no animation to ensure visibility on load */}
+        <p className="text-3xl md:text-4xl text-white mb-6 leading-relaxed">
+          {t('happinessStoryLine1')}
+        </p>
 
         {/* Second line: Large holographic text */}
         <AnimateOnScroll delay={200}>
