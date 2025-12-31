@@ -2664,7 +2664,7 @@ export const en = {
 
   yunaisyFarray_career_title: 'An international career that sets trends',
   yunaisyFarray_career_p1:
-    "After graduation, she was signed by the renowned Turarte agency to work on the Italian cruise ship Valtur Prima, where she quickly became a principal dancer. Later, she joined Yolena Alonso's company, YOLDANCE, as a solo dancer at La Maison, the House of Cuban Fashion.",
+    'After graduation, she was signed by the renowned Turarte agency to work on the Italian cruise ship Valtur Prima, where she quickly became a principal dancer.',
   yunaisyFarray_career_p2:
     "Her career took her to Italy, where she lived a key stage of artistic maturity. She danced alongside figures such as Giusseppe Ransani (great tenor of Italian opera), Silvio Oddi and Mauro Mosconi, and became part of Michelle Pogliani's contemporary dance company.",
   yunaisyFarray_career_p3:
@@ -2712,7 +2712,7 @@ export const en = {
   yunaisyFarray_equality_point3:
     "Demanding the same respect and visibility for women's work on stage",
   yunaisyFarray_equality_p3:
-    "She is a defender of women's rights and a promoter of the Femmology movement, created by Daniela Polanco, a discipline oriented towards exploiting femininity through dancing in heels. Yunaisy takes this concept further, transforming it into a kind of dance-therapy, where many women literally come to heal through dance.",
+    "She is a defender of women's rights and a promoter of the Femmology movement, a discipline oriented towards exploiting femininity through dancing in heels. Yunaisy takes this concept further, transforming it into a kind of dance-therapy, where many women literally come to heal through dance.",
 
   yunaisyFarray_online_title: 'Pioneer in the online era',
   yunaisyFarray_online_p1:
@@ -9795,6 +9795,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   calendar_page_heading: 'Academic Calendar',
   calendar_page_subheading:
     'All important dates for the school year to help you plan your dance journey',
+  calendar_timeline_heading: 'Upcoming events and important dates',
 
   // Filters
   calendar_filter_all: 'All',
@@ -11569,7 +11570,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   pricing_page_description:
     'Conoce las cuotas de socio de FIDC Barcelona: planes mensuales desde 50€, cuotas flexibles, entrenamientos personalizados. Sin permanencia. Primera clase gratis.',
   pricing_breadcrumb_home: 'Home',
-  pricing_breadcrumb_current: 'Horarios y Precios',
+  pricing_breadcrumb_current: 'Schedules and Prices',
   pricing_schema_name: "Cuotas Club Deportivo Farray\'s Center",
   pricing_schema_description:
     'Cuotas de socio para actividades de baile in Barcelona. Planes mensuales, flexibles y entrenamientos personalizados.',
@@ -11906,7 +11907,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   horariosV2_page_title: 'Horarios Clases de Baile Barcelona | Farray Center',
   horariosV2_page_description:
     'Encuentra el horario perfecto para tus clases de baile in Barcelona. Mañanas, tardes y noches. +25 estilos de danza, salsa, bachata, urbano y más. Grupos por nivel.',
-  horariosV2_breadcrumb: 'Horarios',
+  horariosV2_breadcrumb: 'Schedules',
   horariosV2_skipToContent: 'Saltar al contenido principal',
   horariosV2_skipToFilters: 'Ir a filtros de horario',
   horariosV2_hero_title: 'Horarios de Clases de Baile in Barcelona',

@@ -205,6 +205,13 @@ const EXIT_INTENT_EXCLUDED_PATHS = [
   '/404',
   // Landing pages (have their own exit intent)
   '/dancehall',
+  '/twerk',
+  '/sexy-reggaeton',
+  '/sexy-style',
+  '/hip-hop-reggaeton',
+  '/contemporaneo',
+  '/femmology',
+  '/bachata',
   '/hip-hop',
   '/afrobeats',
   '/afro-jazz',

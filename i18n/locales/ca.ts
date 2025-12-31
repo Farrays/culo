@@ -2666,7 +2666,7 @@ export const ca = {
 
   yunaisyFarray_career_title: 'Una carrera internacional que marca tendència',
   yunaisyFarray_career_p1:
-    "Després de la seva graduació, és fitxada per la reconeguda agència Turarte per treballar en el creuer italià Valtur Prima, on en poc temps es converteix en primera ballarina. Més tard s'integra a la companyia de Yolena Alonso, YOLDANCE, com a ballarina solista a La Maison, la Casa de la Moda Cubana.",
+    'Després de la seva graduació, és fitxada per la reconeguda agència Turarte per treballar en el creuer italià Valtur Prima, on en poc temps es converteix en primera ballarina.',
   yunaisyFarray_career_p2:
     "La seva carrera la porta a Itàlia, on viu una etapa clau de maduresa artística. Balla al costat de figures com Giusseppe Ransani (gran tenor de l'òpera italiana), Silvio Oddi i Mauro Mosconi, i passa a formar part de la companyia de dansa contemporània Michelle Pogliani.",
   yunaisyFarray_career_p3:
@@ -2712,7 +2712,7 @@ export const ca = {
   yunaisyFarray_equality_point3:
     "Exigir el mateix respecte i visibilitat per a la feina de les dones a l'escenari",
   yunaisyFarray_equality_p3:
-    'És defensora del dret de les dones i una impulsora del moviment Femmology, creat per Daniela Polanco, una disciplina orientada a explotar la feminitat a través del ball en talons. Yunaisy porta aquest concepte més enllà, transformant-lo en una mena de dansa-teràpia, on moltes dones venen literalment a sanar a través del ball.',
+    'És defensora del dret de les dones i una impulsora del moviment Femmology, una disciplina orientada a explotar la feminitat a través del ball en talons. Yunaisy porta aquest concepte més enllà, transformant-lo en una mena de dansa-teràpia, on moltes dones venen literalment a sanar a través del ball.',
 
   yunaisyFarray_online_title: "Pionera en l'era online",
   yunaisyFarray_online_p1:
@@ -8636,7 +8636,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   home_categories_otras_styles_telas_aereas: 'Telas Aéreas y Aro',
   home_categories_otras_styles_acro_yoga: 'Acro Yoga',
   contact_breadcrumb_home: 'Inici',
-  contact_breadcrumb_current: 'Contacto',
+  contact_breadcrumb_current: 'Contacte',
   merchandising_breadcrumb_home: 'Inici',
   merchandising_breadcrumb_current: 'Merchandising',
   particularesPage_cta_primary: 'Ver Packs y Precios',
@@ -8675,7 +8675,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
     'Combina lo mejor de ambos mundos: aprendizaje acelerado con la energía de un grupo pequeño y privado. Perfecto para amigos, parejas o familias que quieren aprender juntos, compartir costos y mantener un ambiente íntimo. Más económico que clases particulares individuales, pero con atención mucho más personalizada que clases grupales regulares.',
   particularesPage_pack_regular_feature5: 'Enseñanza adaptada a tu nivel',
   faq_breadcrumb_home: 'Inici',
-  faq_breadcrumb_current: 'Preguntas Frecuentes',
+  faq_breadcrumb_current: 'Preguntes Freqüents',
   roomRental_broadcast_title: 'Novedad: Retransmisión Online (Broadcast)',
   roomRental_broadcast_subtitle:
     '¿Quieres que tu evento llegue más lejos que las cuatro paredes de la sala?',
@@ -9939,6 +9939,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   calendar_page_heading: 'Calendari Acadèmic',
   calendar_page_subheading:
     'Totes les dates importants del curs perquè organitzis el teu any de ball',
+  calendar_timeline_heading: 'Propers esdeveniments i dates importants',
 
   // Filters
   calendar_filter_all: 'Tots',
@@ -11722,7 +11723,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   pricing_page_description:
     'Conoce las cuotas de socio de FIDC Barcelona: planes mensuales desde 50€, cuotas flexibles, entrenamientos personalizados. Sin permanencia. Primera clase gratis.',
   pricing_breadcrumb_home: 'Inici',
-  pricing_breadcrumb_current: 'Horarios y Precios',
+  pricing_breadcrumb_current: 'Horaris i Preus',
   pricing_schema_name: "Cuotas Club Deportivo Farray\'s Center",
   pricing_schema_description:
     'Cuotas de socio para actividades de baile en Barcelona. Planes mensuales, flexibles y entrenamientos personalizados.',
@@ -12060,7 +12061,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   horariosV2_page_title: 'Horarios Clases de Baile Barcelona | Farray Center',
   horariosV2_page_description:
     'Encuentra el horario perfecto para tus clases de baile en Barcelona. Mañanas, tardes y noches. +25 estilos de danza, salsa, bachata, urbano y más. Grupos por nivel.',
-  horariosV2_breadcrumb: 'Horarios',
+  horariosV2_breadcrumb: 'Horaris',
   horariosV2_skipToContent: 'Saltar al contenido principal',
   horariosV2_skipToFilters: 'Ir a filtros de horario',
   horariosV2_hero_title: 'Horarios de Clases de Baile en Barcelona',
@@ -16340,7 +16341,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   bailemanananasBreadcrumbHome: `Inici`,
   bailemanananasBreadcrumbClasses: `Classes`,
   bailemanananasBreadcrumbCategory: `Ball Barcelona`,
-  bailemanananasBreadcrumbCurrent: `Classes de Mañanas`,
+  bailemanananasBreadcrumbCurrent: `Classes de Matins`,
   bailemanananasPageTitle: `Classes de Ball per las Mañanas en Barcelona | 13 Estilos de 10h a 13h | Farray's Center`,
   bailemanananasMetaDescription: `Classes de ball al matí a Barcelona. Ballet, Contemporani, Reggaeton i més de 10h a 13h. Ideal torns tarda. Plaça Espanya. Comença avui!`,
   bailemanananasHeroTitle: `Classes de Ball per las Mañanas en Barcelona`,
