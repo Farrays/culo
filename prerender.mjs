@@ -1042,33 +1042,13 @@ const metadata = {
 };
 
 // Basic prerendered content for each page (bots will see this)
+// NOTE: Home pages use empty content to avoid React hydration mismatch errors (React error #418).
+// The HomePage component has complex dynamic content that cannot be accurately prerendered.
+// Only metadata (title, description, robots) is prerendered for SEO.
 const initialContent = {
   es: {
-    home: `
-      <header class="fixed top-0 left-0 right-0 z-50 bg-transparent">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div class="text-2xl font-bold text-primary-accent holographic-text">Farray's Center</div>
-          <nav class="hidden md:flex space-x-8 text-neutral/90 font-medium text-lg">
-            <a href="/es" class="hover:text-primary-accent transition-colors">Inicio</a>
-            <a href="/es/clases/baile-barcelona" class="hover:text-primary-accent transition-colors">Clases</a>
-            <a href="/es/clases/dancehall-barcelona" class="hover:text-primary-accent transition-colors">Dancehall</a>
-          </nav>
-        </div>
-      </header>
-      <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12 text-center">
-        <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-neutral mb-6 holographic-text">
-          Farray's Center
-        </h1>
-        <p class="text-xl sm:text-2xl text-neutral/80 max-w-3xl mx-auto mb-12">
-          Escuela de baile urbano en Barcelona. Aprende Dancehall y más con los mejores profesores.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <a href="/es/clases/baile-barcelona" class="bg-primary-accent text-neutral px-10 py-4 rounded-full text-lg font-bold shadow-lg hover:bg-primary-dark transition-all">
-            Ver Clases
-          </a>
-        </div>
-      </main>
-    `,
+    // Empty content - React will render HomePage from scratch to avoid hydration mismatch
+    home: '',
     classes: `
       <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12">
         <h1 class="text-4xl sm:text-5xl font-bold text-neutral mb-8 text-center holographic-text">
@@ -1184,8 +1164,9 @@ const initialContent = {
     ...LANDING_CONTENT.es,
   },
   // Simplified content for other languages
+  // NOTE: Home pages use empty content to avoid React hydration mismatch errors (React error #418)
   ca: {
-    home: `<main id="main-content"><h1 class="holographic-text text-5xl font-extrabold">Farray's Center</h1><p class="text-xl">Escola de ball urbà a Barcelona. Aprèn Dancehall i més.</p></main>`,
+    home: '',
     classes: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Les nostres Classes</h1><p>Classes de Dancehall i ball urbà per a tots els nivells.</p></main>`,
     danza: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Dansa a Barcelona</h1><p>Explora la tècnica, elegància i expressió de la dansa clàssica i contemporània. Ballet Clàssic Cubà, Dansa Contemporània, Modern Jazz i més. Acadèmia reconeguda per CID-UNESCO.</p></main>`,
     salsaBachata: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Salsa i Bachata a Barcelona</h1><p>Descobreix la passió, el ritme i la connexió del ball llatí. Salsa Cubana, Bachata Sensual i Dominicana, Timba, Son Cubà i més. Professors formats a L'Havana.</p></main>`,
@@ -1211,7 +1192,7 @@ const initialContent = {
     ...LANDING_CONTENT.ca,
   },
   en: {
-    home: `<main id="main-content"><h1 class="holographic-text text-5xl font-extrabold">Farray's Center</h1><p class="text-xl">Urban dance school in Barcelona. Learn Dancehall and more.</p></main>`,
+    home: '',
     classes: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Our Classes</h1><p>Dancehall and urban dance classes for all levels.</p></main>`,
     danza: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Classes in Barcelona</h1><p>Explore the technique, elegance and expression of classical and contemporary dance. Cuban Classical Ballet, Contemporary Dance, Modern Jazz and more. CID-UNESCO accredited academy.</p></main>`,
     salsaBachata: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Salsa and Bachata Classes in Barcelona</h1><p>Discover the passion, rhythm and connection of Latin dance. Cuban Salsa, Sensual and Dominican Bachata, Timba, Son and more. Teachers trained in Havana.</p></main>`,
@@ -1237,7 +1218,7 @@ const initialContent = {
     ...LANDING_CONTENT.en,
   },
   fr: {
-    home: `<main id="main-content"><h1 class="holographic-text text-5xl font-extrabold">Farray's Center</h1><p class="text-xl">École de danse urbaine à Barcelone. Apprenez le Dancehall et plus.</p></main>`,
+    home: '',
     classes: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Nos Cours</h1><p>Cours de Dancehall et danse urbaine pour tous les niveaux.</p></main>`,
     danza: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Danse à Barcelone</h1><p>Explorez la technique, l'élégance et l'expression de la danse classique et contemporaine. Ballet Classique Cubain, Danse Contemporaine, Modern Jazz et plus. Académie accréditée par CID-UNESCO.</p></main>`,
     salsaBachata: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Salsa et Bachata à Barcelone</h1><p>Découvrez la passion, le rythme et la connexion de la danse latine. Salsa Cubaine, Bachata Sensuelle et Dominicaine, Timba, Son et plus. Professeurs formés à La Havane.</p></main>`,
