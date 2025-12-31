@@ -14,12 +14,10 @@ const HappinessStory: React.FC = () => {
           {t('happinessStoryLine1')}
         </p>
 
-        {/* Second line: Large holographic text */}
-        <AnimateOnScroll delay={200}>
-          <p className="text-3xl md:text-4xl holographic-text mb-8 leading-relaxed">
-            {t('happinessStoryLine2')}
-          </p>
-        </AnimateOnScroll>
+        {/* Second line: Large holographic text - no animation to ensure visibility on load */}
+        <p className="text-3xl md:text-4xl holographic-text mb-8 leading-relaxed">
+          {t('happinessStoryLine2')}
+        </p>
 
         {/* Third line: Bold normal size */}
         <AnimateOnScroll delay={300}>
