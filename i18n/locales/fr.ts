@@ -2573,7 +2573,7 @@ export const fr = {
 
   yunaisyFarray_career_title: 'Une carrière internationale qui fait tendance',
   yunaisyFarray_career_p1:
-    'Après son diplôme, elle est recrutée par la célèbre agence Turarte pour travailler sur le bateau de croisière italien Valtur Prima, où elle devient rapidement danseuse principale. Plus tard, elle rejoint la compagnie de Yolena Alonso, YOLDANCE, en tant que danseuse soliste à La Maison, la Maison de la Mode Cubaine.',
+    'Après son diplôme, elle est recrutée par la célèbre agence Turarte pour travailler sur le bateau de croisière italien Valtur Prima, où elle devient rapidement danseuse principale.',
   yunaisyFarray_career_p2:
     "Sa carrière la mène en Italie, où elle vit une étape clé de maturité artistique. Elle danse aux côtés de figures comme Giusseppe Ransani (grand ténor de l'opéra italien), Silvio Oddi et Mauro Mosconi, et devient membre de la compagnie de danse contemporaine Michelle Pogliani.",
   yunaisyFarray_career_p3:
@@ -2621,7 +2621,7 @@ export const fr = {
   yunaisyFarray_equality_point3:
     'Exiger le même respect et la même visibilité pour le travail des femmes sur scène',
   yunaisyFarray_equality_p3:
-    "Elle est défenseure des droits des femmes et promotrice du mouvement Femmology, créé par Daniela Polanco, une discipline orientée vers l'exploitation de la féminité à travers la danse en talons. Yunaisy va au-delà de ce concept, le transformant en une sorte de danse-thérapie, où de nombreuses femmes viennent littéralement guérir par la danse.",
+    "Elle est défenseure des droits des femmes et promotrice du mouvement Femmology, une discipline orientée vers l'exploitation de la féminité à travers la danse en talons. Yunaisy va au-delà de ce concept, le transformant en une sorte de danse-thérapie, où de nombreuses femmes viennent littéralement guérir par la danse.",
 
   yunaisyFarray_online_title: "Pionnière de l'ère en ligne",
   yunaisyFarray_online_p1:
@@ -8774,7 +8774,7 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   danzasUrbanas_whichStyle_combine_text:
     'Absolutamente sí. De hecho, te lo recomendamos. Hip Hop y Dancehall te da base y flow. K-Pop y Commercial te prepara para la industria. Heels y Dancehall fusiona sensualidad con energía. Experimenta y encuentra tu combinación perfecta.',
   contact_breadcrumb_home: 'Accueil',
-  contact_breadcrumb_current: 'Contacto',
+  contact_breadcrumb_current: 'Contact',
   merchandising_breadcrumb_home: 'Accueil',
   merchandising_breadcrumb_current: 'Merchandising',
   particularesPage_cta_primary: 'Ver Packs y Precios',
@@ -8809,7 +8809,7 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
     'Descubre las ventajas que solo las clases privadas pueden ofrecerte',
   particularesPage_pack_regular_feature5: 'Enseñanza adaptada a tu nivel',
   faq_breadcrumb_home: 'Accueil',
-  faq_breadcrumb_current: 'Preguntas Frecuentes',
+  faq_breadcrumb_current: 'Questions Fréquentes',
   roomRental_broadcast_title: 'Novedad: Retransmisión Online (Broadcast)',
   roomRental_broadcast_subtitle:
     '¿Quieres que tu evento llegue más lejos que las cuatro paredes de la sala?',
@@ -9311,9 +9311,9 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   afrojazzStatistics:
     'Estudios sobre entrenamiento de danza técnica demuestran que disciplinas de fusión como el Afro Jazz desarrollan coordinación motora compleja, mejoran la neuroplasticidad por el aprendizaje de vocabularios de movimiento diversos, y potencian la capacidad de improvisación y creatividad.',
   hiphopBreadcrumbHome: 'Accueil',
-  hiphopBreadcrumbClasses: 'Clases de Baile Barcelona',
-  hiphopBreadcrumbUrban: 'Clases de Danzas Urbanas',
-  hiphopBreadcrumbCurrent: 'Clases de Hip Hop',
+  hiphopBreadcrumbClasses: 'Cours de Danse Barcelone',
+  hiphopBreadcrumbUrban: 'Cours de Danses Urbaines',
+  hiphopBreadcrumbCurrent: 'Cours de Hip Hop',
   hiphopHeroDesc:
     'Aprende Hip Hop auténtico con un referente nacional. Breaking, locking, popping, freestyle y todo el flow de la cultura urbana original de los 70s.',
   hiphopHeroLocation: 'Clases open level para todos los niveles, entre Plaza España y Sants',
@@ -10143,6 +10143,7 @@ Notre professeur **Marcos Martínez**, juge de compétitions internationales et 
   calendar_page_heading: 'Calendrier Académique',
   calendar_page_subheading:
     "Toutes les dates importantes de l'année pour organiser votre année de danse",
+  calendar_timeline_heading: 'Événements à venir et dates importantes',
 
   // Filters
   calendar_filter_all: 'Tous',
@@ -11945,7 +11946,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   pricing_page_description:
     'Conoce las cuotas de socio de FIDC Barcelona: planes mensuales desde 50€, cuotas flexibles, entrenamientos personalizados. Sin permanencia. Primera clase gratis.',
   pricing_breadcrumb_home: 'Accueil',
-  pricing_breadcrumb_current: 'Horarios y Precios',
+  pricing_breadcrumb_current: 'Horaires et Tarifs',
   pricing_schema_name: "Cuotas Club Deportivo Farray\'s Center",
   pricing_schema_description:
     'Cuotas de socio para actividades de baile en Barcelona. Planes mensuales, flexibles y entrenamientos personalizados.',
@@ -12283,7 +12284,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   horariosV2_page_title: 'Horarios Clases de Baile Barcelona | Farray Center',
   horariosV2_page_description:
     'Encuentra el horario perfecto para tus clases de baile en Barcelona. Mañanas, tardes y noches. +25 estilos de danza, salsa, bachata, urbano y más. Grupos por nivel.',
-  horariosV2_breadcrumb: 'Horarios',
+  horariosV2_breadcrumb: 'Horaires',
   horariosV2_skipToContent: 'Saltar al contenido principal',
   horariosV2_skipToFilters: 'Ir a filtros de horario',
   horariosV2_hero_title: 'Horarios de Clases de Baile en Barcelona',
@@ -16600,7 +16601,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   bailemanananasBreadcrumbHome: `Accueil`,
   bailemanananasBreadcrumbClasses: `Cours`,
   bailemanananasBreadcrumbCategory: `Danse Barcelone`,
-  bailemanananasBreadcrumbCurrent: `Cours de Mañanas`,
+  bailemanananasBreadcrumbCurrent: `Cours du Matin`,
   bailemanananasPageTitle: `Cours de Danse par las Mañanas en Barcelone | 13 Estilos de 10h a 13h | Farray's Center`,
   bailemanananasMetaDescription: `Cours de danse le matin à Barcelone. Ballet, Contemporain, Reggaeton et plus de 10h à 13h. Idéal pour les équipes d'après-midi. Plaza España. Commencez dès maintenant!`,
   bailemanananasHeroTitle: `Cours de Danse par las Mañanas en Barcelone`,

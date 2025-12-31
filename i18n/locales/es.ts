@@ -2599,7 +2599,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   yunaisyFarray_career_title: 'Una carrera internacional que marca tendencia',
   yunaisyFarray_career_p1:
-    'Tras su graduación, es fichada por la reconocida agencia Turarte para trabajar en el crucero italiano Valtur Prima, donde en poco tiempo se convierte en primera bailarina. Más tarde se integra en la compañía de Yolena Alonso, YOLDANCE, como bailarina solista en La Maison, la Casa de la Moda Cubana.',
+    'Tras su graduación, es fichada por la reconocida agencia Turarte para trabajar en el crucero italiano Valtur Prima, donde en poco tiempo se convierte en primera bailarina.',
   yunaisyFarray_career_p2:
     'Su carrera la lleva a Italia, donde vive una etapa clave de madurez artística. Baila junto a figuras como Giusseppe Ransani (gran tenor de la ópera italiana), Silvio Oddi y Mauro Mosconi, y pasa a formar parte de la compañía de danza contemporánea Michelle Pogliani.',
   yunaisyFarray_career_p3:
@@ -2645,7 +2645,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   yunaisyFarray_equality_point3:
     'Exigir el mismo respeto y visibilidad para la labor de las mujeres en el escenario',
   yunaisyFarray_equality_p3:
-    'Es defensora del derecho de las mujeres y una impulsora del movimiento Femmology, creado por Daniela Polanco, una disciplina orientada a explotar la feminidad a través del baile en tacones. Yunaisy lleva este concepto más allá, transformándolo en una especie de danza-terapia, donde muchas mujeres vienen literalmente a sanar a través del baile.',
+    'Es defensora del derecho de las mujeres y una impulsora del movimiento Femmology, una disciplina orientada a explotar la feminidad a través del baile en tacones. Yunaisy lleva este concepto más allá, transformándolo en una especie de danza-terapia, donde muchas mujeres vienen literalmente a sanar a través del baile.',
 
   yunaisyFarray_online_title: 'Pionera en la era online',
   yunaisyFarray_online_p1:
@@ -12276,6 +12276,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   calendar_page_heading: 'Calendario Académico',
   calendar_page_subheading:
     'Todas las fechas importantes del curso para que organices tu año de baile',
+  calendar_timeline_heading: 'Próximos eventos y fechas importantes',
 
   // Filters
   calendar_filter_all: 'Todos',
