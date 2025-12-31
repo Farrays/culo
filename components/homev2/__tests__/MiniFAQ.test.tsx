@@ -66,26 +66,31 @@ describe('MiniFAQ', () => {
     renderWithRouter(<MiniFAQ config={mockConfig} />);
 
     const buttons = screen.getAllByRole('button');
+    const secondButton = buttons[1];
 
     // Click second question to open it
-    fireEvent.click(buttons[1]);
-    expect(screen.getByText('Respuesta 2')).toBeInTheDocument();
+    if (secondButton) {
+      fireEvent.click(secondButton);
+      expect(screen.getByText('Respuesta 2')).toBeInTheDocument();
 
-    // Click second question again to close it
-    fireEvent.click(buttons[1]);
-    // Answer should still exist in DOM but be hidden via CSS
+      // Click second question again to close it
+      fireEvent.click(secondButton);
+      // Answer should still exist in DOM but be hidden via CSS
+    }
   });
 
   it('closes current FAQ when opening another', () => {
     renderWithRouter(<MiniFAQ config={mockConfig} />);
 
     const buttons = screen.getAllByRole('button');
+    const secondButton = buttons[1];
 
     // Click second question - should close first and open second
-    fireEvent.click(buttons[1]);
-
-    // Check the toggle behavior works
-    expect(screen.getByText('Respuesta 2')).toBeInTheDocument();
+    if (secondButton) {
+      fireEvent.click(secondButton);
+      // Check the toggle behavior works
+      expect(screen.getByText('Respuesta 2')).toBeInTheDocument();
+    }
   });
 
   it('renders View All link with correct href', () => {

@@ -27,14 +27,14 @@ vi.mock('../../../constants/horarios-page-data', () => ({
 }));
 
 const mockScheduleClass: ScheduleClass = {
+  id: 'salsa-cubana-monday-1900',
+  styleName: 'Salsa Cubana',
   className: 'Salsa Cubana',
   day: 'monday',
   time: '19:00',
-  duration: 60,
   level: 'beginner',
   teacher: 'Yunaisy Farray',
-  room: 'Sala A',
-  category: 'latin',
+  category: 'latino',
 };
 
 const mockScheduleClassWithLink: ScheduleClass = {

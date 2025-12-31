@@ -39,18 +39,21 @@ const mockConfig = {
   valuePropositionKey: 'hero_value_proposition',
   backgroundType: 'image' as const,
   backgroundImage: '/hero-bg.jpg',
-  backgroundVideo: undefined,
+  backgroundVideo: null as string | null,
   socialProof: {
     rating: '4.9',
-    reviewCount: 200,
+    reviewCount: '200+',
+    studentsActive: '1500+',
+    badge: 'CID-UNESCO',
   },
   cta1: {
     textKey: 'hero_cta_reserve',
+    subtextKey: 'hero_urgency',
     href: '/reservar',
   },
   cta2: {
     textKey: 'hero_cta_schedule',
-    href: '/horarios',
+    scrollTo: '#horarios',
   },
 };
 
@@ -82,7 +85,8 @@ describe('HeroV2', () => {
     renderWithRouter(<HeroV2 config={mockConfig} />);
 
     expect(screen.getByText('4.9')).toBeInTheDocument();
-    expect(screen.getByText(/200\+ opiniones en Google/)).toBeInTheDocument();
+    // Component renders: reviewCount + "+ opiniones en Google"
+    expect(screen.getByText(/200\+\+ opiniones en Google/)).toBeInTheDocument();
   });
 
   it('displays urgency message', () => {

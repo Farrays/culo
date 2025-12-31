@@ -237,7 +237,9 @@
       "Bash(touch:*)",
       "Bash(npm run coverage:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nfix\\(exit-intent\\): exclude all landing pages from global exit intent\n\nAdd missing landing pages to EXIT_INTENT_EXCLUDED_PATHS:\n- /twerk\n- /sexy-reggaeton\n- /sexy-style\n- /hip-hop-reggaeton\n- /contemporaneo\n- /femmology\n- /bachata\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
-      "Bash(git commit -m \"$\\(cat <<''EOF''\nfix\\(i18n\\): remove references from Yunaisy Farray bio\n\nRemove mentions of Yolena Alonso/YOLDANCE/La Maison and Daniela Polanco\nfrom Yunaisy Farray page across all languages \\(ES, EN, CA, FR\\).\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfix\\(i18n\\): remove references from Yunaisy Farray bio\n\nRemove mentions of Yolena Alonso/YOLDANCE/La Maison and Daniela Polanco\nfrom Yunaisy Farray page across all languages \\(ES, EN, CA, FR\\).\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat\\(api\\): restore KV deduplication for lead capture\n\n- Re-add Vercel KV \\(Redis\\) integration for lead deduplication\n- 90-day TTL to prevent duplicate submissions to Momence\n- Graceful degradation if KV fails\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(npm audit fix:*)"
     ],
     "deny": [],
     "ask": []

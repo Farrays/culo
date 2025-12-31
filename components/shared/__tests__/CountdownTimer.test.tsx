@@ -88,7 +88,6 @@ describe('CountdownTimer', () => {
     render(<CountdownTimer targetDate={futureDate} />);
 
     const timer = screen.getByRole('timer');
-    const _initialContent = timer.textContent;
 
     act(() => {
       vi.advanceTimersByTime(1000);

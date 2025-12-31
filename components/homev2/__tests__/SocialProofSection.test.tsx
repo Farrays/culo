@@ -43,6 +43,7 @@ const mockConfig = {
     { name: 'Got Talent', src: '/logos/got-talent.png' },
     { name: 'TV3', src: '/logos/tv3.png' },
   ],
+  testimonialCtaKey: 'social_testimonials_cta',
 };
 
 describe('SocialProofSection', () => {

@@ -31,6 +31,7 @@ vi.mock('../../AnimateOnScroll', () => ({
 
 const mockConfig = {
   titleLine1Key: 'finalcta_title1',
+  titleLine2Key: 'finalcta_title2',
   subtitleLine1Key: 'finalcta_subtitle1',
   subtitleLine2Key: 'finalcta_subtitle2',
   subtitleLine3Key: 'finalcta_subtitle3',

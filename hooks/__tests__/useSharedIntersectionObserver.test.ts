@@ -1,4 +1,3 @@
-/* global IntersectionObserverEntry */
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
 import { useSharedIntersectionObserver, OBSERVER_CONFIGS } from '../useSharedIntersectionObserver';
@@ -9,11 +8,8 @@ const mockObserve = vi.fn();
 const mockUnobserve = vi.fn();
 const mockDisconnect = vi.fn();
 
-let _observerCallback: (entries: IntersectionObserverEntry[]) => void;
-
 beforeEach(() => {
-  mockIntersectionObserver.mockImplementation(callback => {
-    _observerCallback = callback;
+  mockIntersectionObserver.mockImplementation(() => {
     return {
       observe: mockObserve,
       unobserve: mockUnobserve,

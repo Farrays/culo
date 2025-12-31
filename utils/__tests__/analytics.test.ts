@@ -67,43 +67,43 @@ describe('analytics', () => {
     it('extracts utm_source parameter', () => {
       window.location.search = '?utm_source=google';
       const result = getUTMParams();
-      expect(result.utm_source).toBe('google');
+      expect(result['utm_source']).toBe('google');
     });
 
     it('extracts utm_medium parameter', () => {
       window.location.search = '?utm_medium=cpc';
       const result = getUTMParams();
-      expect(result.utm_medium).toBe('cpc');
+      expect(result['utm_medium']).toBe('cpc');
     });
 
     it('extracts utm_campaign parameter', () => {
       window.location.search = '?utm_campaign=summer_sale';
       const result = getUTMParams();
-      expect(result.utm_campaign).toBe('summer_sale');
+      expect(result['utm_campaign']).toBe('summer_sale');
     });
 
     it('extracts utm_term parameter', () => {
       window.location.search = '?utm_term=dance+classes';
       const result = getUTMParams();
-      expect(result.utm_term).toBe('dance classes');
+      expect(result['utm_term']).toBe('dance classes');
     });
 
     it('extracts utm_content parameter', () => {
       window.location.search = '?utm_content=banner_ad';
       const result = getUTMParams();
-      expect(result.utm_content).toBe('banner_ad');
+      expect(result['utm_content']).toBe('banner_ad');
     });
 
     it('extracts gclid parameter', () => {
       window.location.search = '?gclid=abc123';
       const result = getUTMParams();
-      expect(result.gclid).toBe('abc123');
+      expect(result['gclid']).toBe('abc123');
     });
 
     it('extracts fbclid parameter', () => {
       window.location.search = '?fbclid=xyz789';
       const result = getUTMParams();
-      expect(result.fbclid).toBe('xyz789');
+      expect(result['fbclid']).toBe('xyz789');
     });
 
     it('extracts multiple UTM params at once', () => {
