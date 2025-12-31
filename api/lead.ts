@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { kv } from '@vercel/kv';
+import Redis from 'ioredis';
 
 /**
  * API Route: /api/lead
@@ -7,18 +7,37 @@ import { kv } from '@vercel/kv';
  * Recibe datos del formulario de captacion y los envia a Momence
  * El token se guarda en variables de entorno de Vercel (nunca expuesto al cliente)
  *
- * Deduplicación con Vercel KV (Redis):
+ * Deduplicación con Redis:
  * - TTL de 90 días para evitar leads duplicados
- * - Si el email ya existe en KV (dentro de TTL), no se envía a Momence
+ * - Si el email ya existe en Redis (dentro de TTL), no se envía a Momence
  * - Si el TTL expiró, se re-envía y actualiza el timestamp
  *
  * Variables de entorno requeridas en Vercel:
  * - MOMENCE_API_URL
  * - MOMENCE_TOKEN
  * - MOMENCE_SOURCE_ID (default, puede override con sourceId en body)
- * - KV_REST_API_URL (auto-configurado por Vercel KV)
- * - KV_REST_API_TOKEN (auto-configurado por Vercel KV)
+ * - STORAGE_REDIS_URL (conexión a Redis)
  */
+
+// Lazy Redis connection (se crea solo cuando se necesita)
+let redisClient: Redis | null = null;
+
+function getRedisClient(): Redis | null {
+  const redisUrl = process.env['STORAGE_REDIS_URL'];
+  if (!redisUrl) {
+    console.warn('STORAGE_REDIS_URL not configured, deduplication disabled');
+    return null;
+  }
+
+  if (!redisClient) {
+    redisClient = new Redis(redisUrl, {
+      maxRetriesPerRequest: 1,
+      connectTimeout: 5000,
+      lazyConnect: true,
+    });
+  }
+  return redisClient;
+}
 
 // TTL de 90 días en segundos
 const LEAD_TTL_SECONDS = 90 * 24 * 60 * 60; // 7,776,000 segundos
@@ -120,31 +139,35 @@ export default async function handler(
     const normalizedEmail = sanitize(email).toLowerCase();
     const kvKey = `${LEAD_KEY_PREFIX}${normalizedEmail}`;
 
-    // ===== DEDUPLICACIÓN CON VERCEL KV =====
+    // ===== DEDUPLICACIÓN CON REDIS =====
     let leadStatus: LeadStatus = 'new';
+    const redis = getRedisClient();
 
-    try {
-      // Verificar si el lead ya existe en KV
-      const existingLead = await kv.get<{ timestamp: number; sourceId: string }>(kvKey);
+    if (redis) {
+      try {
+        // Verificar si el lead ya existe en Redis
+        const existingData = await redis.get(kvKey);
 
-      if (existingLead) {
-        // Lead existe en KV (dentro del TTL de 90 días)
-        leadStatus = 'existing';
-        console.warn(
-          `Lead duplicado detectado: ${normalizedEmail} (registrado: ${new Date(existingLead.timestamp).toISOString()})`
-        );
+        if (existingData) {
+          const existingLead = JSON.parse(existingData) as { timestamp: number; sourceId: string };
+          // Lead existe en Redis (dentro del TTL de 90 días)
+          leadStatus = 'existing';
+          console.warn(
+            `Lead duplicado detectado: ${normalizedEmail} (registrado: ${new Date(existingLead.timestamp).toISOString()})`
+          );
 
-        // Retornar éxito pero indicando que es duplicado (no se envía a Momence)
-        return res.status(200).json({
-          success: true,
-          status: leadStatus,
-          message: 'Lead already registered within 90 days',
-        });
+          // Retornar éxito pero indicando que es duplicado (no se envía a Momence)
+          return res.status(200).json({
+            success: true,
+            status: leadStatus,
+            message: 'Lead already registered within 90 days',
+          });
+        }
+        // Si no existe o TTL expiró, continuar como nuevo lead
+      } catch (redisError) {
+        // Si Redis falla, continuar sin deduplicación (graceful degradation)
+        console.warn('Redis lookup failed, continuing without deduplication:', redisError);
       }
-      // Si no existe o TTL expiró, continuar como nuevo lead
-    } catch (kvError) {
-      // Si KV falla, continuar sin deduplicación (graceful degradation)
-      console.warn('KV lookup failed, continuing without deduplication:', kvError);
     }
 
     // Usar sourceId del body si se proporciona, sino el default de env
@@ -176,21 +199,20 @@ export default async function handler(
       return res.status(502).json({ error: 'Failed to submit lead' });
     }
 
-    // ===== GUARDAR EN KV CON TTL =====
-    try {
-      await kv.set(
-        kvKey,
-        {
+    // ===== GUARDAR EN REDIS CON TTL =====
+    if (redis) {
+      try {
+        const leadData = JSON.stringify({
           timestamp: Date.now(),
           sourceId: finalSourceId,
           estilo: sanitize(estilo || 'Not specified'),
-        },
-        { ex: LEAD_TTL_SECONDS } // TTL de 90 días
-      );
-      console.warn(`Lead guardado en KV: ${normalizedEmail} (TTL: 90 días)`);
-    } catch (kvError) {
-      // Si KV falla al guardar, solo logear (el lead ya se envió a Momence)
-      console.warn('KV save failed:', kvError);
+        });
+        await redis.setex(kvKey, LEAD_TTL_SECONDS, leadData); // TTL de 90 días
+        console.warn(`Lead guardado en Redis: ${normalizedEmail} (TTL: 90 días)`);
+      } catch (redisError) {
+        // Si Redis falla al guardar, solo logear (el lead ya se envió a Momence)
+        console.warn('Redis save failed:', redisError);
+      }
     }
 
     // Éxito - nuevo lead registrado
