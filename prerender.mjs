@@ -399,6 +399,9 @@ const routes = [
   { path: 'es/blog/lifestyle/clases-de-salsa-barcelona', lang: 'es', page: 'blogClasesSalsaBarcelona' },
   { path: 'es/blog/historia', lang: 'es', page: 'blogHistoria' },
   { path: 'es/blog/historia/historia-salsa-barcelona', lang: 'es', page: 'blogHistoriaSalsa' },
+  { path: 'es/blog/historia/historia-bachata-barcelona', lang: 'es', page: 'blogHistoriaBachata' },
+  { path: 'es/blog/tutoriales', lang: 'es', page: 'blogTutoriales' },
+  { path: 'es/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'es', page: 'blogSalsaRitmo' },
   { path: 'es/blog/tips', lang: 'es', page: 'blogTips' },
   { path: 'es/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'es', page: 'blogClasesPrincipiantes' },
 
@@ -408,6 +411,9 @@ const routes = [
   { path: 'ca/blog/lifestyle/clases-de-salsa-barcelona', lang: 'ca', page: 'blogClasesSalsaBarcelona' },
   { path: 'ca/blog/historia', lang: 'ca', page: 'blogHistoria' },
   { path: 'ca/blog/historia/historia-salsa-barcelona', lang: 'ca', page: 'blogHistoriaSalsa' },
+  { path: 'ca/blog/historia/historia-bachata-barcelona', lang: 'ca', page: 'blogHistoriaBachata' },
+  { path: 'ca/blog/tutoriales', lang: 'ca', page: 'blogTutoriales' },
+  { path: 'ca/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'ca', page: 'blogSalsaRitmo' },
   { path: 'ca/blog/tips', lang: 'ca', page: 'blogTips' },
   { path: 'ca/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'ca', page: 'blogClasesPrincipiantes' },
 
@@ -417,6 +423,9 @@ const routes = [
   { path: 'en/blog/lifestyle/clases-de-salsa-barcelona', lang: 'en', page: 'blogClasesSalsaBarcelona' },
   { path: 'en/blog/historia', lang: 'en', page: 'blogHistoria' },
   { path: 'en/blog/historia/historia-salsa-barcelona', lang: 'en', page: 'blogHistoriaSalsa' },
+  { path: 'en/blog/historia/historia-bachata-barcelona', lang: 'en', page: 'blogHistoriaBachata' },
+  { path: 'en/blog/tutoriales', lang: 'en', page: 'blogTutoriales' },
+  { path: 'en/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'en', page: 'blogSalsaRitmo' },
   { path: 'en/blog/tips', lang: 'en', page: 'blogTips' },
   { path: 'en/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'en', page: 'blogClasesPrincipiantes' },
 
@@ -426,6 +435,9 @@ const routes = [
   { path: 'fr/blog/lifestyle/clases-de-salsa-barcelona', lang: 'fr', page: 'blogClasesSalsaBarcelona' },
   { path: 'fr/blog/historia', lang: 'fr', page: 'blogHistoria' },
   { path: 'fr/blog/historia/historia-salsa-barcelona', lang: 'fr', page: 'blogHistoriaSalsa' },
+  { path: 'fr/blog/historia/historia-bachata-barcelona', lang: 'fr', page: 'blogHistoriaBachata' },
+  { path: 'fr/blog/tutoriales', lang: 'fr', page: 'blogTutoriales' },
+  { path: 'fr/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'fr', page: 'blogSalsaRitmo' },
   { path: 'fr/blog/tips', lang: 'fr', page: 'blogTips' },
   { path: 'fr/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'fr', page: 'blogClasesPrincipiantes' },
 
@@ -600,6 +612,18 @@ const metadata = {
     blogHistoriaSalsa: {
       title: 'Historia de la Salsa en Barcelona: del Caribe y Nueva York a Farray\'s | Farray\'s Center',
       description: 'Descubre la fascinante historia de la salsa: desde sus orígenes en el Caribe y Nueva York hasta su llegada a Barcelona. Más de 60 años de ritmo que cambiaron el mundo.',
+    },
+    blogHistoriaBachata: {
+      title: 'Historia de la Bachata: Del Barrio Dominicano a Barcelona | Farray\'s Center',
+      description: 'Descubre la historia de la bachata desde sus humildes orígenes en República Dominicana hasta convertirse en fenómeno mundial. Romeo Santos, Juan Luis Guerra y más.',
+    },
+    blogTutoriales: {
+      title: 'Tutoriales de Baile | Aprende Paso a Paso | Farray\'s Center Blog',
+      description: 'Tutoriales y guías paso a paso para aprender diferentes estilos de baile. Salsa, bachata, dancehall y más.',
+    },
+    blogSalsaRitmo: {
+      title: 'Salsa: El Ritmo que Conquistó el Mundo | Guía de Estilos | Farray\'s Center',
+      description: 'Descubre todos los estilos de salsa: cubana, LA style, rueda de casino, son cubano y más. Guía completa para entender el universo de la salsa.',
     },
     blogClasesSalsaBarcelona: {
       title: 'Hombres y mujeres, ¿hablamos salsa? | Farray\'s Center Blog',
@@ -869,6 +893,18 @@ const metadata = {
       title: 'Història de la Salsa a Barcelona: del Carib i Nova York a Farray\'s | Farray\'s Center',
       description: 'Descobreix la fascinant història de la salsa: des dels seus orígens al Carib i Nova York fins a la seva arribada a Barcelona. Més de 60 anys de ritme que van canviar el món.',
     },
+    blogHistoriaBachata: {
+      title: 'Història de la Bachata: Del Barri Dominicà a Barcelona | Farray\'s Center',
+      description: 'Descobreix la història de la bachata des dels seus humils orígens a la República Dominicana fins a convertir-se en fenomen mundial. Romeo Santos, Juan Luis Guerra i més.',
+    },
+    blogTutoriales: {
+      title: 'Tutorials de Ball | Aprèn Pas a Pas | Farray\'s Center Blog',
+      description: 'Tutorials i guies pas a pas per aprendre diferents estils de ball. Salsa, bachata, dancehall i més.',
+    },
+    blogSalsaRitmo: {
+      title: 'Salsa: El Ritme que Va Conquerir el Món | Guia d\'Estils | Farray\'s Center',
+      description: 'Descobreix tots els estils de salsa: cubana, LA style, rueda de casino, son cubà i més. Guia completa per entendre l\'univers de la salsa.',
+    },
     blogClasesSalsaBarcelona: {
       title: 'Homes i dones, parlem salsa? | Farray\'s Center Blog',
       description: 'La salsa com a llenguatge universal: reflexions sobre la pista de ball com a espai de connexió entre homes i dones. Per Mar Guerrero.',
@@ -1136,6 +1172,18 @@ const metadata = {
     blogHistoriaSalsa: {
       title: 'History of Salsa in Barcelona: From the Caribbean and New York to Farray\'s | Farray\'s Center',
       description: 'Discover the fascinating history of salsa: from its origins in the Caribbean and New York to its arrival in Barcelona. Over 60 years of rhythm that changed the world.',
+    },
+    blogHistoriaBachata: {
+      title: 'History of Bachata: From the Dominican Barrio to Barcelona | Farray\'s Center',
+      description: 'Discover the history of bachata from its humble origins in the Dominican Republic to becoming a worldwide phenomenon. Romeo Santos, Juan Luis Guerra and more.',
+    },
+    blogTutoriales: {
+      title: 'Dance Tutorials | Learn Step by Step | Farray\'s Center Blog',
+      description: 'Step-by-step tutorials and guides to learn different dance styles. Salsa, bachata, dancehall and more.',
+    },
+    blogSalsaRitmo: {
+      title: 'Salsa: The Rhythm That Conquered the World | Style Guide | Farray\'s Center',
+      description: 'Discover all salsa styles: Cuban, LA style, rueda de casino, son cubano and more. Complete guide to understand the universe of salsa.',
     },
     blogClasesSalsaBarcelona: {
       title: 'Men and Women, Shall We Speak Salsa? | Farray\'s Center Blog',
@@ -1405,6 +1453,18 @@ const metadata = {
       title: 'Histoire de la Salsa à Barcelone : des Caraïbes et New York à Farray\'s | Farray\'s Center',
       description: 'Découvrez la fascinante histoire de la salsa : de ses origines caribéennes et new-yorkaises jusqu\'à son arrivée à Barcelone. Plus de 60 ans de rythme qui ont changé le monde.',
     },
+    blogHistoriaBachata: {
+      title: 'Histoire de la Bachata : Du Quartier Dominicain à Barcelone | Farray\'s Center',
+      description: 'Découvrez l\'histoire de la bachata depuis ses humbles origines en République Dominicaine jusqu\'à devenir un phénomène mondial. Romeo Santos, Juan Luis Guerra et plus.',
+    },
+    blogTutoriales: {
+      title: 'Tutoriels de Danse | Apprenez Pas à Pas | Farray\'s Center Blog',
+      description: 'Tutoriels et guides pas à pas pour apprendre différents styles de danse. Salsa, bachata, dancehall et plus.',
+    },
+    blogSalsaRitmo: {
+      title: 'Salsa : Le Rythme qui a Conquis le Monde | Guide des Styles | Farray\'s Center',
+      description: 'Découvrez tous les styles de salsa : cubaine, LA style, rueda de casino, son cubain et plus. Guide complet pour comprendre l\'univers de la salsa.',
+    },
     blogClasesSalsaBarcelona: {
       title: 'Hommes et femmes, parlons salsa ? | Farray\'s Center Blog',
       description: 'La salsa comme langage universel : réflexions sur la piste de danse comme espace de connexion entre hommes et femmes. Par Mar Guerrero.',
@@ -1634,6 +1694,9 @@ const initialContent = {
     blogBeneficiosSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">10 Beneficios de Bailar Salsa que Cambiarán Tu Vida</h1><p>Descubre los 10 beneficios científicamente probados de bailar salsa: quema 400 cal/hora, mejora la salud cardiovascular, reduce el estrés y aumenta la autoestima.</p></article></main>`,
     blogHistoria: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Historia del Baile</h1><p>Descubre la fascinante historia del baile: orígenes, evolución y cómo llegó a Barcelona.</p></main>`,
     blogHistoriaSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Historia de la Salsa en Barcelona: del Caribe y Nueva York a Farray's</h1><p>Descubre la fascinante historia de la salsa: desde sus orígenes en el Caribe y Nueva York hasta su llegada a Barcelona. Más de 60 años de ritmo.</p></article></main>`,
+    blogHistoriaBachata: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Historia de la Bachata: Del Barrio Dominicano a Barcelona</h1><p>Descubre la historia de la bachata desde sus orígenes en República Dominicana hasta convertirse en fenómeno mundial. Romeo Santos, Juan Luis Guerra y más.</p></article></main>`,
+    blogTutoriales: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Tutoriales de Baile</h1><p>Tutoriales y guías paso a paso para aprender diferentes estilos de baile. Salsa, bachata, dancehall y más.</p></main>`,
+    blogSalsaRitmo: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Salsa: El Ritmo que Conquistó el Mundo</h1><p>Descubre todos los estilos de salsa: cubana, LA style, rueda de casino, son cubano y más. Guía completa del universo salsero.</p></article></main>`,
     blogClasesSalsaBarcelona: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Hombres y mujeres, ¿hablamos salsa?</h1><p>La salsa como lenguaje universal: reflexiones sobre la pista de baile como espacio de conexión entre hombres y mujeres. Por Mar Guerrero.</p></article></main>`,
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Consejos para Bailar</h1><p>Guías prácticas y consejos para principiantes y bailarines de todos los niveles en Barcelona.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Clases de baile para principiantes en Barcelona: la guía definitiva</h1><p>Guía completa para empezar a bailar desde cero en Barcelona. Clase de bienvenida gratuita (promocional) o desde 10€. Participación puntual desde 20€.</p></article></main>`,
@@ -1665,6 +1728,8 @@ const initialContent = {
     calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Calendario de Eventos</h1><p>Workshops, masterclasses y actividades especiales en Farray's Center Barcelona.</p></main>`,
     salsaLadyStyleV2: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Salsa Lady Style</h1><p>Desarrolla tu feminidad, elegancia y estilo personal bailando salsa con el Método Farray®.</p></main>`,
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Página No Encontrada</h1><p>La página que buscas no existe. Vuelve a la página principal o explora nuestras clases de baile.</p></main>`,
+    regalaBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Regala Baile</h1><p>Tarjetas regalo para clases de baile. El regalo perfecto para amantes de la danza. Bonos personalizados para todos los estilos.</p></main>`,
+    facilities: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Instalaciones</h1><p>Descubre nuestras instalaciones: 3 salas de baile equipadas con espejos, barras, suelo profesional y vestuarios. Ubicación céntrica en Barcelona.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.es,
   },
@@ -1687,6 +1752,9 @@ const initialContent = {
     blogBeneficiosSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">10 Beneficis de Ballar Salsa que Canviaran la Teva Vida</h1><p>Descobreix els 10 beneficis científicament demostrats de ballar salsa: crema 400 cal/hora, millora la salut cardiovascular, redueix l'estrès i augmenta l'autoestima.</p></article></main>`,
     blogHistoria: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Història del Ball</h1><p>Descobreix la fascinant història del ball: orígens, evolució i com va arribar a Barcelona.</p></main>`,
     blogHistoriaSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Història de la Salsa a Barcelona: del Carib i Nova York a Farray's</h1><p>Descobreix la fascinant història de la salsa: des dels seus orígens al Carib i Nova York fins a la seva arribada a Barcelona. Més de 60 anys de ritme.</p></article></main>`,
+    blogHistoriaBachata: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Història de la Bachata: Del Barri Dominicà a Barcelona</h1><p>Descobreix la història de la bachata des dels seus humils orígens a la República Dominicana fins a convertir-se en fenomen mundial.</p></article></main>`,
+    blogTutoriales: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Tutorials de Ball</h1><p>Tutorials i guies pas a pas per aprendre diferents estils de ball. Salsa, bachata, dancehall i més.</p></main>`,
+    blogSalsaRitmo: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Salsa: El Ritme que Va Conquerir el Món</h1><p>Descobreix tots els estils de salsa: cubana, LA style, rueda de casino, son cubà i més.</p></article></main>`,
     blogClasesSalsaBarcelona: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Homes i dones, parlem salsa?</h1><p>La salsa com a llenguatge universal: reflexions sobre la pista de ball com a espai de connexió entre homes i dones. Per Mar Guerrero.</p></article></main>`,
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Consells per Ballar</h1><p>Guies pràctiques i consells per a principiants i balladors de tots els nivells a Barcelona.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Classes de ball per a principiants a Barcelona: la guia definitiva</h1><p>Guia completa per començar a ballar des de zero a Barcelona. Classe de benvinguda gratuïta (promocional) o des de 10€. Participació puntual des de 20€.</p></article></main>`,
@@ -1718,6 +1786,8 @@ const initialContent = {
     calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Calendari d'Esdeveniments</h1><p>Workshops, masterclasses i activitats especials a Farray's Center Barcelona.</p></main>`,
     salsaLadyStyleV2: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Salsa Lady Style</h1><p>Desenvolupa la teva feminitat, elegància i estil personal ballant salsa amb el Mètode Farray®.</p></main>`,
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Pàgina No Trobada</h1><p>La pàgina que busques no existeix. Torna a la pàgina principal o explora les nostres classes de ball.</p></main>`,
+    regalaBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Regala Ball</h1><p>Targetes regal per a classes de ball. El regal perfecte per als amants de la dansa. Bonos personalitzats per a tots els estils.</p></main>`,
+    facilities: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Instal·lacions</h1><p>Descobreix les nostres instal·lacions: 3 sales de ball equipades amb miralls, barres, terra professional i vestuaris. Ubicació cèntrica a Barcelona.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.ca,
   },
@@ -1738,6 +1808,9 @@ const initialContent = {
     blogBeneficiosSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">10 Benefits of Dancing Salsa That Will Change Your Life</h1><p>Discover the 10 scientifically proven benefits of dancing salsa: burn 400 cal/hour, improve cardiovascular health, reduce stress and boost self-esteem.</p></article></main>`,
     blogHistoria: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance History</h1><p>Discover the fascinating history of dance: origins, evolution and how it arrived in Barcelona.</p></main>`,
     blogHistoriaSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">History of Salsa in Barcelona: From the Caribbean and New York to Farray's</h1><p>Discover the fascinating history of salsa: from its origins in the Caribbean and New York to its arrival in Barcelona. Over 60 years of rhythm.</p></article></main>`,
+    blogHistoriaBachata: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">History of Bachata: From the Dominican Barrio to Barcelona</h1><p>Discover the history of bachata from its humble origins in the Dominican Republic to becoming a global phenomenon. Romeo Santos, Juan Luis Guerra and more.</p></article></main>`,
+    blogTutoriales: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Tutorials</h1><p>Step-by-step tutorials and guides to learn different dance styles. Salsa, bachata, dancehall and more.</p></main>`,
+    blogSalsaRitmo: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Salsa: The Rhythm That Conquered the World</h1><p>Discover all salsa styles: Cuban, LA style, rueda de casino, son cubano and more. Complete guide to the salsa universe.</p></article></main>`,
     blogClasesSalsaBarcelona: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Men and Women, Shall We Speak Salsa?</h1><p>Salsa as a universal language: reflections on the dance floor as a space of connection between men and women. By Mar Guerrero.</p></article></main>`,
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Tips</h1><p>Practical guides and tips for beginners and dancers of all levels in Barcelona.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Beginner Dance Classes in Barcelona: The Complete Guide</h1><p>Complete guide to start dancing from scratch in Barcelona. Free welcome class (promotional) or from €10. One-time participation from €20.</p></article></main>`,
@@ -1769,6 +1842,8 @@ const initialContent = {
     calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Events Calendar</h1><p>Workshops, masterclasses and special activities at Farray's Center Barcelona.</p></main>`,
     salsaLadyStyleV2: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Salsa Lady Style Classes</h1><p>Develop your femininity, elegance and personal style dancing salsa with the Farray Method®.</p></main>`,
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Page Not Found</h1><p>The page you are looking for does not exist. Go back to the home page or explore our dance classes.</p></main>`,
+    regalaBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Gift Dance</h1><p>Gift cards for dance classes. The perfect gift for dance lovers. Personalized vouchers for all styles.</p></main>`,
+    facilities: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Facilities</h1><p>Discover our facilities: 3 dance studios equipped with mirrors, bars, professional flooring and changing rooms. Central location in Barcelona.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.en,
   },
@@ -1789,6 +1864,9 @@ const initialContent = {
     blogBeneficiosSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">10 Bienfaits de Danser la Salsa qui Changeront Votre Vie</h1><p>Découvrez les 10 bienfaits scientifiquement prouvés de danser la salsa : brûlez 400 cal/heure, améliorez la santé cardiovasculaire, réduisez le stress et boostez l'estime de soi.</p></article></main>`,
     blogHistoria: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Histoire de la Danse</h1><p>Découvrez la fascinante histoire de la danse : origines, évolution et comment elle est arrivée à Barcelone.</p></main>`,
     blogHistoriaSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Histoire de la Salsa à Barcelone : des Caraïbes et New York à Farray's</h1><p>Découvrez la fascinante histoire de la salsa : de ses origines caribéennes et new-yorkaises jusqu'à son arrivée à Barcelone. Plus de 60 ans de rythme.</p></article></main>`,
+    blogHistoriaBachata: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Histoire de la Bachata : Du Quartier Dominicain à Barcelone</h1><p>Découvrez l'histoire de la bachata depuis ses humbles origines en République Dominicaine jusqu'à devenir un phénomène mondial. Romeo Santos, Juan Luis Guerra et plus.</p></article></main>`,
+    blogTutoriales: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Tutoriels de Danse</h1><p>Tutoriels et guides pas à pas pour apprendre différents styles de danse. Salsa, bachata, dancehall et plus.</p></main>`,
+    blogSalsaRitmo: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Salsa : Le Rythme qui a Conquis le Monde</h1><p>Découvrez tous les styles de salsa : cubaine, LA style, rueda de casino, son cubano et plus. Guide complet de l'univers salsa.</p></article></main>`,
     blogClasesSalsaBarcelona: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Hommes et femmes, parlons salsa ?</h1><p>La salsa comme langage universel : réflexions sur la piste de danse comme espace de connexion entre hommes et femmes. Par Mar Guerrero.</p></article></main>`,
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Conseils de Danse</h1><p>Guides pratiques et conseils pour débutants et danseurs de tous niveaux à Barcelone.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Cours de danse pour débutants à Barcelone : le guide complet</h1><p>Guide complet pour commencer à danser à Barcelone. Cours de bienvenue gratuit (promotionnel) ou dès 10€. Participation ponctuelle dès 20€.</p></article></main>`,
@@ -1820,6 +1898,8 @@ const initialContent = {
     calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Calendrier des Événements</h1><p>Workshops, masterclasses et activités spéciales à Farray's Center Barcelone.</p></main>`,
     salsaLadyStyleV2: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Salsa Lady Style</h1><p>Développez votre féminité, élégance et style personnel en dansant la salsa avec la Méthode Farray®.</p></main>`,
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Page Non Trouvée</h1><p>La page que vous recherchez n'existe pas. Retournez à la page d'accueil ou explorez nos cours de danse.</p></main>`,
+    regalaBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Offrez la Danse</h1><p>Cartes cadeaux pour cours de danse. Le cadeau parfait pour les amoureux de la danse. Bons personnalisés pour tous les styles.</p></main>`,
+    facilities: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Installations</h1><p>Découvrez nos installations : 3 studios de danse équipés de miroirs, barres, sol professionnel et vestiaires. Emplacement central à Barcelone.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.fr,
   },
