@@ -165,6 +165,25 @@ const routes = [
   { path: 'es/regala-baile', lang: 'es', page: 'regalaBaile' },
   { path: 'es/instalaciones', lang: 'es', page: 'facilities' },
   { path: 'es/contacto', lang: 'es', page: 'contact' },
+  // Missing class pages
+  { path: 'es/clases/afro-contemporaneo-barcelona', lang: 'es', page: 'afroContemporaneo' },
+  { path: 'es/clases/afro-jazz-barcelona', lang: 'es', page: 'afroJazz' },
+  { path: 'es/clases/contemporaneo-barcelona', lang: 'es', page: 'contemporaneo' },
+  { path: 'es/clases/stretching-barcelona', lang: 'es', page: 'stretching' },
+  { path: 'es/clases/hip-hop-barcelona', lang: 'es', page: 'hipHop' },
+  { path: 'es/clases/entrenamiento-bailarines-barcelona', lang: 'es', page: 'entrenamientoBailarines' },
+  { path: 'es/clases/bachata-lady-style-barcelona', lang: 'es', page: 'bachataLadyStyle' },
+  // Missing non-class pages
+  { path: 'es/profesores-baile-barcelona', lang: 'es', page: 'profesores' },
+  { path: 'es/preguntas-frecuentes', lang: 'es', page: 'faq' },
+  { path: 'es/alquiler-salas-baile-barcelona', lang: 'es', page: 'alquilerSalas' },
+  { path: 'es/estudio-grabacion-barcelona', lang: 'es', page: 'estudioGrabacion' },
+  // URL aliases (same content, different URL for SEO)
+  { path: 'es/instalaciones-escuela-baile-barcelona', lang: 'es', page: 'facilities' },
+  { path: 'es/horarios-clases-baile-barcelona', lang: 'es', page: 'horariosPrecio' },
+  { path: 'es/precios-clases-baile-barcelona', lang: 'es', page: 'horariosPrecio' },
+  // 404 page
+  { path: 'es/404', lang: 'es', page: 'notFound' },
 
   { path: 'ca', lang: 'ca', page: 'home' },
   { path: 'ca/clases', lang: 'ca', page: 'classesHub' },
@@ -199,6 +218,25 @@ const routes = [
   { path: 'ca/regala-baile', lang: 'ca', page: 'regalaBaile' },
   { path: 'ca/instalaciones', lang: 'ca', page: 'facilities' },
   { path: 'ca/contacto', lang: 'ca', page: 'contact' },
+  // Missing class pages
+  { path: 'ca/clases/afro-contemporaneo-barcelona', lang: 'ca', page: 'afroContemporaneo' },
+  { path: 'ca/clases/afro-jazz-barcelona', lang: 'ca', page: 'afroJazz' },
+  { path: 'ca/clases/contemporaneo-barcelona', lang: 'ca', page: 'contemporaneo' },
+  { path: 'ca/clases/stretching-barcelona', lang: 'ca', page: 'stretching' },
+  { path: 'ca/clases/hip-hop-barcelona', lang: 'ca', page: 'hipHop' },
+  { path: 'ca/clases/entrenamiento-bailarines-barcelona', lang: 'ca', page: 'entrenamientoBailarines' },
+  { path: 'ca/clases/bachata-lady-style-barcelona', lang: 'ca', page: 'bachataLadyStyle' },
+  // Missing non-class pages
+  { path: 'ca/profesores-baile-barcelona', lang: 'ca', page: 'profesores' },
+  { path: 'ca/preguntas-frecuentes', lang: 'ca', page: 'faq' },
+  { path: 'ca/alquiler-salas-baile-barcelona', lang: 'ca', page: 'alquilerSalas' },
+  { path: 'ca/estudio-grabacion-barcelona', lang: 'ca', page: 'estudioGrabacion' },
+  // URL aliases (same content, different URL for SEO)
+  { path: 'ca/instalaciones-escuela-baile-barcelona', lang: 'ca', page: 'facilities' },
+  { path: 'ca/horarios-clases-baile-barcelona', lang: 'ca', page: 'horariosPrecio' },
+  { path: 'ca/precios-clases-baile-barcelona', lang: 'ca', page: 'horariosPrecio' },
+  // 404 page
+  { path: 'ca/404', lang: 'ca', page: 'notFound' },
 
   { path: 'en', lang: 'en', page: 'home' },
   { path: 'en/clases', lang: 'en', page: 'classesHub' },
@@ -233,6 +271,25 @@ const routes = [
   { path: 'en/regala-baile', lang: 'en', page: 'regalaBaile' },
   { path: 'en/instalaciones', lang: 'en', page: 'facilities' },
   { path: 'en/contacto', lang: 'en', page: 'contact' },
+  // Missing class pages
+  { path: 'en/clases/afro-contemporaneo-barcelona', lang: 'en', page: 'afroContemporaneo' },
+  { path: 'en/clases/afro-jazz-barcelona', lang: 'en', page: 'afroJazz' },
+  { path: 'en/clases/contemporaneo-barcelona', lang: 'en', page: 'contemporaneo' },
+  { path: 'en/clases/stretching-barcelona', lang: 'en', page: 'stretching' },
+  { path: 'en/clases/hip-hop-barcelona', lang: 'en', page: 'hipHop' },
+  { path: 'en/clases/entrenamiento-bailarines-barcelona', lang: 'en', page: 'entrenamientoBailarines' },
+  { path: 'en/clases/bachata-lady-style-barcelona', lang: 'en', page: 'bachataLadyStyle' },
+  // Missing non-class pages
+  { path: 'en/profesores-baile-barcelona', lang: 'en', page: 'profesores' },
+  { path: 'en/preguntas-frecuentes', lang: 'en', page: 'faq' },
+  { path: 'en/alquiler-salas-baile-barcelona', lang: 'en', page: 'alquilerSalas' },
+  { path: 'en/estudio-grabacion-barcelona', lang: 'en', page: 'estudioGrabacion' },
+  // URL aliases (same content, different URL for SEO)
+  { path: 'en/instalaciones-escuela-baile-barcelona', lang: 'en', page: 'facilities' },
+  { path: 'en/horarios-clases-baile-barcelona', lang: 'en', page: 'horariosPrecio' },
+  { path: 'en/precios-clases-baile-barcelona', lang: 'en', page: 'horariosPrecio' },
+  // 404 page
+  { path: 'en/404', lang: 'en', page: 'notFound' },
 
   { path: 'fr', lang: 'fr', page: 'home' },
   { path: 'fr/clases', lang: 'fr', page: 'classesHub' },
@@ -267,6 +324,25 @@ const routes = [
   { path: 'fr/regala-baile', lang: 'fr', page: 'regalaBaile' },
   { path: 'fr/instalaciones', lang: 'fr', page: 'facilities' },
   { path: 'fr/contacto', lang: 'fr', page: 'contact' },
+  // Missing class pages
+  { path: 'fr/clases/afro-contemporaneo-barcelona', lang: 'fr', page: 'afroContemporaneo' },
+  { path: 'fr/clases/afro-jazz-barcelona', lang: 'fr', page: 'afroJazz' },
+  { path: 'fr/clases/contemporaneo-barcelona', lang: 'fr', page: 'contemporaneo' },
+  { path: 'fr/clases/stretching-barcelona', lang: 'fr', page: 'stretching' },
+  { path: 'fr/clases/hip-hop-barcelona', lang: 'fr', page: 'hipHop' },
+  { path: 'fr/clases/entrenamiento-bailarines-barcelona', lang: 'fr', page: 'entrenamientoBailarines' },
+  { path: 'fr/clases/bachata-lady-style-barcelona', lang: 'fr', page: 'bachataLadyStyle' },
+  // Missing non-class pages
+  { path: 'fr/profesores-baile-barcelona', lang: 'fr', page: 'profesores' },
+  { path: 'fr/preguntas-frecuentes', lang: 'fr', page: 'faq' },
+  { path: 'fr/alquiler-salas-baile-barcelona', lang: 'fr', page: 'alquilerSalas' },
+  { path: 'fr/estudio-grabacion-barcelona', lang: 'fr', page: 'estudioGrabacion' },
+  // URL aliases (same content, different URL for SEO)
+  { path: 'fr/instalaciones-escuela-baile-barcelona', lang: 'fr', page: 'facilities' },
+  { path: 'fr/horarios-clases-baile-barcelona', lang: 'fr', page: 'horariosPrecio' },
+  { path: 'fr/precios-clases-baile-barcelona', lang: 'fr', page: 'horariosPrecio' },
+  // 404 page
+  { path: 'fr/404', lang: 'fr', page: 'notFound' },
 
   // Blog routes
   { path: 'es/blog', lang: 'es', page: 'blog' },
@@ -499,6 +575,57 @@ const metadata = {
       description: 'Aprende a moverte al ritmo de reggaeton con sensualidad y confianza. Primera clase GRATIS. +15.000 alumnos, profesora experta.',
       robots: 'noindex, nofollow',
     },
+    // New class pages
+    afroContemporaneo: {
+      title: 'Clases de Afro Contemporáneo en Barcelona | Fusión de Danza Africana y Contemporánea | Farray\'s Center',
+      description: 'Aprende Afro Contemporáneo en Barcelona: fusión de danza africana tradicional con técnica contemporánea. Clases para todos los niveles. Academia CID-UNESCO. ¡Reserva tu clase!',
+    },
+    afroJazz: {
+      title: 'Clases de Afro Jazz en Barcelona | Ritmo Africano y Técnica de Jazz | Farray\'s Center',
+      description: 'Clases de Afro Jazz en Barcelona: combina ritmos africanos con técnica de jazz moderno. Expresión corporal, musicalidad y energía. Todos los niveles. ¡Prueba gratis!',
+    },
+    contemporaneo: {
+      title: 'Clases de Danza Contemporánea en Barcelona | Técnica y Expresión | Farray\'s Center',
+      description: 'Clases de danza contemporánea en Barcelona para adultos. Desarrolla técnica, expresión corporal y creatividad. Academia reconocida por CID-UNESCO. ¡Reserva tu clase de prueba!',
+    },
+    stretching: {
+      title: 'Clases de Stretching para Bailarines en Barcelona | Flexibilidad y Movilidad | Farray\'s Center',
+      description: 'Clases de stretching especializadas para bailarines en Barcelona. Mejora tu flexibilidad, movilidad y previene lesiones. Complemento perfecto para cualquier estilo de baile.',
+    },
+    hipHop: {
+      title: 'Clases de Hip Hop en Barcelona | Aprende con Profesionales | Farray\'s Center',
+      description: 'Aprende Hip Hop en Barcelona con profesores expertos. Clases desde principiante hasta avanzado. Estilos: Old School, New Style, House y más. ¡Primera clase gratis!',
+    },
+    entrenamientoBailarines: {
+      title: 'Entrenamiento para Bailarines en Barcelona | Técnica y Condición Física | Farray\'s Center',
+      description: 'Entrenamiento especializado para bailarines en Barcelona. Mejora tu técnica, fuerza, resistencia y flexibilidad. Programa diseñado por profesionales de la danza.',
+    },
+    bachataLadyStyle: {
+      title: 'Clases de Bachata Lady Style en Barcelona | Estilo Femenino y Sensualidad | Farray\'s Center',
+      description: 'Clases de Bachata Lady Style en Barcelona. Desarrolla tu feminidad, elegancia y estilo personal bailando bachata. Movimientos sensuales y expresivos. ¡Reserva tu clase!',
+    },
+    // New non-class pages
+    profesores: {
+      title: 'Profesores de Baile en Barcelona | Equipo de Farray\'s Center',
+      description: 'Conoce a nuestro equipo de profesores de baile en Barcelona. Bailarines profesionales de todo el mundo con años de experiencia. Formación CID-UNESCO.',
+    },
+    faq: {
+      title: 'Preguntas Frecuentes | Farray\'s International Dance Center Barcelona',
+      description: 'Resuelve tus dudas sobre nuestras clases de baile en Barcelona. Horarios, precios, niveles, inscripción y todo lo que necesitas saber antes de empezar.',
+    },
+    alquilerSalas: {
+      title: 'Alquiler de Salas de Baile en Barcelona | Espacios Profesionales | Farray\'s Center',
+      description: 'Alquila nuestras salas de baile profesionales en Barcelona. 3 espacios equipados con espejos, barras y suelo de danza. Ideal para ensayos, grabaciones y eventos.',
+    },
+    estudioGrabacion: {
+      title: 'Estudio de Grabación de Baile en Barcelona | Producción Audiovisual | Farray\'s Center',
+      description: 'Estudio de grabación para videos de baile en Barcelona. Equipamiento profesional, iluminación y sonido. Perfecto para videoclips, tutoriales y contenido para redes.',
+    },
+    notFound: {
+      title: 'Página No Encontrada | 404 | Farray\'s Center',
+      description: 'La página que buscas no existe. Vuelve a la página principal o explora nuestras clases de baile en Barcelona.',
+      robots: 'noindex, nofollow',
+    },
     // Generic Dance Landing Pages (auto-generated from LANDING_METADATA)
     ...LANDING_METADATA.es,
   },
@@ -676,6 +803,57 @@ const metadata = {
     promoSexyReggaeton: {
       title: 'Classe de Sexy Reggaeton GRATIS a Barcelona | Farray\'s Center',
       description: 'Aprèn a moure\'t al ritme del reggaeton amb sensualitat i confiança. Primera classe GRATIS. +15.000 alumnes, professora experta.',
+      robots: 'noindex, nofollow',
+    },
+    // New class pages
+    afroContemporaneo: {
+      title: 'Classes d\'Afro Contemporani a Barcelona | Fusió de Dansa Africana i Contemporània | Farray\'s Center',
+      description: 'Aprèn Afro Contemporani a Barcelona: fusió de dansa africana tradicional amb tècnica contemporània. Classes per a tots els nivells. Acadèmia CID-UNESCO. Reserva la teva classe!',
+    },
+    afroJazz: {
+      title: 'Classes d\'Afro Jazz a Barcelona | Ritme Africà i Tècnica de Jazz | Farray\'s Center',
+      description: 'Classes d\'Afro Jazz a Barcelona: combina ritmes africans amb tècnica de jazz modern. Expressió corporal, musicalitat i energia. Tots els nivells. Prova gratis!',
+    },
+    contemporaneo: {
+      title: 'Classes de Dansa Contemporània a Barcelona | Tècnica i Expressió | Farray\'s Center',
+      description: 'Classes de dansa contemporània a Barcelona per a adults. Desenvolupa tècnica, expressió corporal i creativitat. Acadèmia reconeguda per CID-UNESCO. Reserva la teva classe de prova!',
+    },
+    stretching: {
+      title: 'Classes d\'Stretching per a Ballarins a Barcelona | Flexibilitat i Mobilitat | Farray\'s Center',
+      description: 'Classes d\'stretching especialitzades per a ballarins a Barcelona. Millora la teva flexibilitat, mobilitat i preveu lesions. Complement perfecte per a qualsevol estil de ball.',
+    },
+    hipHop: {
+      title: 'Classes de Hip Hop a Barcelona | Aprèn amb Professionals | Farray\'s Center',
+      description: 'Aprèn Hip Hop a Barcelona amb professors experts. Classes des de principiant fins a avançat. Estils: Old School, New Style, House i més. Primera classe gratis!',
+    },
+    entrenamientoBailarines: {
+      title: 'Entrenament per a Ballarins a Barcelona | Tècnica i Condició Física | Farray\'s Center',
+      description: 'Entrenament especialitzat per a ballarins a Barcelona. Millora la teva tècnica, força, resistència i flexibilitat. Programa dissenyat per professionals de la dansa.',
+    },
+    bachataLadyStyle: {
+      title: 'Classes de Bachata Lady Style a Barcelona | Estil Femení i Sensualitat | Farray\'s Center',
+      description: 'Classes de Bachata Lady Style a Barcelona. Desenvolupa la teva feminitat, elegància i estil personal ballant bachata. Moviments sensuals i expressius. Reserva la teva classe!',
+    },
+    // New non-class pages
+    profesores: {
+      title: 'Professors de Ball a Barcelona | Equip de Farray\'s Center',
+      description: 'Coneix el nostre equip de professors de ball a Barcelona. Ballarins professionals de tot el món amb anys d\'experiència. Formació CID-UNESCO.',
+    },
+    faq: {
+      title: 'Preguntes Freqüents | Farray\'s International Dance Center Barcelona',
+      description: 'Resol els teus dubtes sobre les nostres classes de ball a Barcelona. Horaris, preus, nivells, inscripció i tot el que necessites saber abans de començar.',
+    },
+    alquilerSalas: {
+      title: 'Lloguer de Sales de Ball a Barcelona | Espais Professionals | Farray\'s Center',
+      description: 'Lloga les nostres sales de ball professionals a Barcelona. 3 espais equipats amb miralls, barres i terra de dansa. Ideal per a assajos, gravacions i esdeveniments.',
+    },
+    estudioGrabacion: {
+      title: 'Estudi de Gravació de Ball a Barcelona | Producció Audiovisual | Farray\'s Center',
+      description: 'Estudi de gravació per a vídeos de ball a Barcelona. Equipament professional, il·luminació i so. Perfecte per a videoclips, tutorials i contingut per a xarxes.',
+    },
+    notFound: {
+      title: 'Pàgina No Trobada | 404 | Farray\'s Center',
+      description: 'La pàgina que busques no existeix. Torna a la pàgina principal o explora les nostres classes de ball a Barcelona.',
       robots: 'noindex, nofollow',
     },
     // Generic Dance Landing Pages (auto-generated from LANDING_METADATA)
@@ -857,6 +1035,57 @@ const metadata = {
       description: 'Learn to move to reggaeton with sensuality and confidence. First class FREE. +15,000 students, expert instructor.',
       robots: 'noindex, nofollow',
     },
+    // New class pages
+    afroContemporaneo: {
+      title: 'Afro Contemporary Classes in Barcelona | African & Contemporary Dance Fusion | Farray\'s Center',
+      description: 'Learn Afro Contemporary in Barcelona: fusion of traditional African dance with contemporary technique. Classes for all levels. CID-UNESCO Academy. Book your class!',
+    },
+    afroJazz: {
+      title: 'Afro Jazz Classes in Barcelona | African Rhythm & Jazz Technique | Farray\'s Center',
+      description: 'Afro Jazz classes in Barcelona: combining African rhythms with modern jazz technique. Body expression, musicality and energy. All levels. Free trial!',
+    },
+    contemporaneo: {
+      title: 'Contemporary Dance Classes in Barcelona | Technique & Expression | Farray\'s Center',
+      description: 'Contemporary dance classes in Barcelona for adults. Develop technique, body expression and creativity. CID-UNESCO accredited academy. Book your trial class!',
+    },
+    stretching: {
+      title: 'Stretching Classes for Dancers in Barcelona | Flexibility & Mobility | Farray\'s Center',
+      description: 'Specialized stretching classes for dancers in Barcelona. Improve your flexibility, mobility and prevent injuries. Perfect complement for any dance style.',
+    },
+    hipHop: {
+      title: 'Hip Hop Classes in Barcelona | Learn with Professionals | Farray\'s Center',
+      description: 'Learn Hip Hop in Barcelona with expert teachers. Classes from beginner to advanced. Styles: Old School, New Style, House and more. First class free!',
+    },
+    entrenamientoBailarines: {
+      title: 'Training for Dancers in Barcelona | Technique & Fitness | Farray\'s Center',
+      description: 'Specialized training for dancers in Barcelona. Improve your technique, strength, endurance and flexibility. Program designed by dance professionals.',
+    },
+    bachataLadyStyle: {
+      title: 'Bachata Lady Style Classes in Barcelona | Feminine Style & Sensuality | Farray\'s Center',
+      description: 'Bachata Lady Style classes in Barcelona. Develop your femininity, elegance and personal style dancing bachata. Sensual and expressive movements. Book your class!',
+    },
+    // New non-class pages
+    profesores: {
+      title: 'Dance Teachers in Barcelona | Farray\'s Center Team',
+      description: 'Meet our team of dance teachers in Barcelona. Professional dancers from around the world with years of experience. CID-UNESCO certified.',
+    },
+    faq: {
+      title: 'Frequently Asked Questions | Farray\'s International Dance Center Barcelona',
+      description: 'Get answers about our dance classes in Barcelona. Schedules, prices, levels, registration and everything you need to know before starting.',
+    },
+    alquilerSalas: {
+      title: 'Dance Studio Rental in Barcelona | Professional Spaces | Farray\'s Center',
+      description: 'Rent our professional dance studios in Barcelona. 3 spaces equipped with mirrors, bars and dance flooring. Ideal for rehearsals, recordings and events.',
+    },
+    estudioGrabacion: {
+      title: 'Dance Video Studio in Barcelona | Audiovisual Production | Farray\'s Center',
+      description: 'Recording studio for dance videos in Barcelona. Professional equipment, lighting and sound. Perfect for music videos, tutorials and social media content.',
+    },
+    notFound: {
+      title: 'Page Not Found | 404 | Farray\'s Center',
+      description: 'The page you are looking for does not exist. Go back to the home page or explore our dance classes in Barcelona.',
+      robots: 'noindex, nofollow',
+    },
     // Generic Dance Landing Pages (auto-generated from LANDING_METADATA)
     ...LANDING_METADATA.en,
   },
@@ -1036,6 +1265,57 @@ const metadata = {
       description: 'Apprenez à bouger au rythme du reggaeton avec sensualité et confiance. Premier cours GRATUIT. +15 000 élèves, professeure experte.',
       robots: 'noindex, nofollow',
     },
+    // New class pages
+    afroContemporaneo: {
+      title: 'Cours d\'Afro Contemporain à Barcelone | Fusion Danse Africaine et Contemporaine | Farray\'s Center',
+      description: 'Apprenez l\'Afro Contemporain à Barcelone : fusion de danse africaine traditionnelle et technique contemporaine. Cours pour tous niveaux. Académie CID-UNESCO. Réservez votre cours !',
+    },
+    afroJazz: {
+      title: 'Cours d\'Afro Jazz à Barcelone | Rythme Africain et Technique Jazz | Farray\'s Center',
+      description: 'Cours d\'Afro Jazz à Barcelone : combinaison de rythmes africains et technique de jazz moderne. Expression corporelle, musicalité et énergie. Tous niveaux. Essai gratuit !',
+    },
+    contemporaneo: {
+      title: 'Cours de Danse Contemporaine à Barcelone | Technique et Expression | Farray\'s Center',
+      description: 'Cours de danse contemporaine à Barcelone pour adultes. Développez technique, expression corporelle et créativité. Académie accréditée CID-UNESCO. Réservez votre cours d\'essai !',
+    },
+    stretching: {
+      title: 'Cours de Stretching pour Danseurs à Barcelone | Flexibilité et Mobilité | Farray\'s Center',
+      description: 'Cours de stretching spécialisés pour danseurs à Barcelone. Améliorez votre flexibilité, mobilité et prévenez les blessures. Complément parfait pour tout style de danse.',
+    },
+    hipHop: {
+      title: 'Cours de Hip Hop à Barcelone | Apprenez avec des Professionnels | Farray\'s Center',
+      description: 'Apprenez le Hip Hop à Barcelone avec des professeurs experts. Cours du débutant à l\'avancé. Styles : Old School, New Style, House et plus. Premier cours gratuit !',
+    },
+    entrenamientoBailarines: {
+      title: 'Entraînement pour Danseurs à Barcelone | Technique et Condition Physique | Farray\'s Center',
+      description: 'Entraînement spécialisé pour danseurs à Barcelone. Améliorez votre technique, force, endurance et flexibilité. Programme conçu par des professionnels de la danse.',
+    },
+    bachataLadyStyle: {
+      title: 'Cours de Bachata Lady Style à Barcelone | Style Féminin et Sensualité | Farray\'s Center',
+      description: 'Cours de Bachata Lady Style à Barcelone. Développez votre féminité, élégance et style personnel en dansant la bachata. Mouvements sensuels et expressifs. Réservez votre cours !',
+    },
+    // New non-class pages
+    profesores: {
+      title: 'Professeurs de Danse à Barcelone | Équipe de Farray\'s Center',
+      description: 'Rencontrez notre équipe de professeurs de danse à Barcelone. Danseurs professionnels du monde entier avec des années d\'expérience. Certifiés CID-UNESCO.',
+    },
+    faq: {
+      title: 'Questions Fréquentes | Farray\'s International Dance Center Barcelone',
+      description: 'Obtenez des réponses sur nos cours de danse à Barcelone. Horaires, tarifs, niveaux, inscription et tout ce que vous devez savoir avant de commencer.',
+    },
+    alquilerSalas: {
+      title: 'Location de Studios de Danse à Barcelone | Espaces Professionnels | Farray\'s Center',
+      description: 'Louez nos studios de danse professionnels à Barcelone. 3 espaces équipés de miroirs, barres et sol de danse. Idéal pour répétitions, enregistrements et événements.',
+    },
+    estudioGrabacion: {
+      title: 'Studio de Tournage Vidéo Danse à Barcelone | Production Audiovisuelle | Farray\'s Center',
+      description: 'Studio d\'enregistrement pour vidéos de danse à Barcelone. Équipement professionnel, éclairage et son. Parfait pour clips, tutoriels et contenu réseaux sociaux.',
+    },
+    notFound: {
+      title: 'Page Non Trouvée | 404 | Farray\'s Center',
+      description: 'La page que vous recherchez n\'existe pas. Retournez à la page d\'accueil ou explorez nos cours de danse à Barcelone.',
+      robots: 'noindex, nofollow',
+    },
     // Generic Dance Landing Pages (auto-generated from LANDING_METADATA)
     ...LANDING_METADATA.fr,
   },
@@ -1160,6 +1440,20 @@ const initialContent = {
     baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Baile por las Mañanas en Barcelona</h1><p>13 clases semanales de 10h a 13h: Contemporáneo, Ballet, Modern Jazz, Sexy Style, Reggaeton y más. La actividad matinal que necesitabas para empezar el día con energía.</p></main>`,
     classesHub: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Todas las Clases de Baile en Barcelona</h1><p>Descubre más de 40 estilos de baile: Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat, Ballet, Contemporáneo y más. Primera clase gratis.</p></main>`,
     horariosPrecio: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Horarios y Precios</h1><p>Consulta nuestros horarios de clases y precios. Bonos mensuales, clases sueltas y packs especiales. Escuela cerca de Plaza España.</p></main>`,
+    // New class pages
+    afroContemporaneo: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Afro Contemporáneo en Barcelona</h1><p>Fusión de danza africana tradicional con técnica contemporánea. Expresión corporal, ritmo y movimiento. Academia CID-UNESCO.</p></main>`,
+    afroJazz: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Afro Jazz en Barcelona</h1><p>Combina ritmos africanos con técnica de jazz moderno. Expresión corporal, musicalidad y energía. Todos los niveles.</p></main>`,
+    contemporaneo: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Danza Contemporánea en Barcelona</h1><p>Desarrolla técnica, expresión corporal y creatividad. Academia reconocida por CID-UNESCO.</p></main>`,
+    stretching: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Stretching para Bailarines</h1><p>Mejora tu flexibilidad, movilidad y previene lesiones. Complemento perfecto para cualquier estilo de baile.</p></main>`,
+    hipHop: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Hip Hop en Barcelona</h1><p>Aprende con profesores expertos. Old School, New Style, House y más. Primera clase gratis.</p></main>`,
+    entrenamientoBailarines: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Entrenamiento para Bailarines</h1><p>Mejora tu técnica, fuerza, resistencia y flexibilidad. Programa diseñado por profesionales de la danza.</p></main>`,
+    bachataLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Bachata Lady Style</h1><p>Desarrolla tu feminidad, elegancia y estilo personal bailando bachata. Movimientos sensuales y expresivos.</p></main>`,
+    // New non-class pages
+    profesores: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Profesores de Baile en Barcelona</h1><p>Conoce a nuestro equipo de bailarines profesionales de todo el mundo con años de experiencia. Formación CID-UNESCO.</p></main>`,
+    faq: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Preguntas Frecuentes</h1><p>Resuelve tus dudas sobre horarios, precios, niveles, inscripción y todo lo que necesitas saber.</p></main>`,
+    alquilerSalas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Alquiler de Salas de Baile</h1><p>3 espacios profesionales equipados con espejos, barras y suelo de danza. Ideal para ensayos, grabaciones y eventos.</p></main>`,
+    estudioGrabacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Estudio de Grabación de Baile</h1><p>Equipamiento profesional, iluminación y sonido. Perfecto para videoclips, tutoriales y contenido para redes.</p></main>`,
+    notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Página No Encontrada</h1><p>La página que buscas no existe. Vuelve a la página principal o explora nuestras clases de baile.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.es,
   },
@@ -1188,6 +1482,20 @@ const initialContent = {
     baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Ball pel Matí a Barcelona</h1><p>13 classes setmanals de 10h a 13h: Contemporani, Ballet, Modern Jazz, Sexy Style, Reggaeton i més. L'activitat matinal que necessitaves per començar el dia amb energia.</p></main>`,
     classesHub: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Totes les Classes de Ball a Barcelona</h1><p>Descobreix més de 40 estils de ball: Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat, Ballet, Contemporani i més. Primera classe gratis.</p></main>`,
     horariosPrecio: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Horaris i Preus</h1><p>Consulta els nostres horaris de classes i preus. Bonos mensuals, classes soltes i packs especials. Escola a prop de Plaça Espanya.</p></main>`,
+    // New class pages
+    afroContemporaneo: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes d'Afro Contemporani a Barcelona</h1><p>Fusió de dansa africana tradicional amb tècnica contemporània. Expressió corporal, ritme i moviment. Acadèmia CID-UNESCO.</p></main>`,
+    afroJazz: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes d'Afro Jazz a Barcelona</h1><p>Combina ritmes africans amb tècnica de jazz modern. Expressió corporal, musicalitat i energia. Tots els nivells.</p></main>`,
+    contemporaneo: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Dansa Contemporània a Barcelona</h1><p>Desenvolupa tècnica, expressió corporal i creativitat. Acadèmia reconeguda per CID-UNESCO.</p></main>`,
+    stretching: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes d'Stretching per a Ballarins</h1><p>Millora la teva flexibilitat, mobilitat i preveu lesions. Complement perfecte per a qualsevol estil de ball.</p></main>`,
+    hipHop: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Hip Hop a Barcelona</h1><p>Aprèn amb professors experts. Old School, New Style, House i més. Primera classe gratis.</p></main>`,
+    entrenamientoBailarines: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Entrenament per a Ballarins</h1><p>Millora la teva tècnica, força, resistència i flexibilitat. Programa dissenyat per professionals de la dansa.</p></main>`,
+    bachataLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Bachata Lady Style</h1><p>Desenvolupa la teva feminitat, elegància i estil personal ballant bachata. Moviments sensuals i expressius.</p></main>`,
+    // New non-class pages
+    profesores: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Professors de Ball a Barcelona</h1><p>Coneix el nostre equip de ballarins professionals de tot el món amb anys d'experiència. Formació CID-UNESCO.</p></main>`,
+    faq: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Preguntes Freqüents</h1><p>Resol els teus dubtes sobre horaris, preus, nivells, inscripció i tot el que necessites saber.</p></main>`,
+    alquilerSalas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Lloguer de Sales de Ball</h1><p>3 espais professionals equipats amb miralls, barres i terra de dansa. Ideal per a assajos, gravacions i esdeveniments.</p></main>`,
+    estudioGrabacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Estudi de Gravació de Ball</h1><p>Equipament professional, il·luminació i so. Perfecte per a videoclips, tutorials i contingut per a xarxes.</p></main>`,
+    notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Pàgina No Trobada</h1><p>La pàgina que busques no existeix. Torna a la pàgina principal o explora les nostres classes de ball.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.ca,
   },
@@ -1214,6 +1522,20 @@ const initialContent = {
     baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Morning Dance Classes in Barcelona</h1><p>13 weekly classes from 10am to 1pm: Contemporary, Ballet, Modern Jazz, Sexy Style, Reggaeton and more. The morning activity you needed to start the day with energy.</p></main>`,
     classesHub: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">All Dance Classes in Barcelona</h1><p>Discover over 40 dance styles: Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat, Ballet, Contemporary and more. First class free.</p></main>`,
     horariosPrecio: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Schedule & Prices</h1><p>Check our class schedules and prices. Monthly passes, single classes and special packs. School near Plaza España.</p></main>`,
+    // New class pages
+    afroContemporaneo: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Afro Contemporary Classes in Barcelona</h1><p>Fusion of traditional African dance with contemporary technique. Body expression, rhythm and movement. CID-UNESCO Academy.</p></main>`,
+    afroJazz: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Afro Jazz Classes in Barcelona</h1><p>Combining African rhythms with modern jazz technique. Body expression, musicality and energy. All levels.</p></main>`,
+    contemporaneo: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Contemporary Dance Classes in Barcelona</h1><p>Develop technique, body expression and creativity. CID-UNESCO accredited academy.</p></main>`,
+    stretching: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Stretching Classes for Dancers</h1><p>Improve your flexibility, mobility and prevent injuries. Perfect complement for any dance style.</p></main>`,
+    hipHop: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Hip Hop Classes in Barcelona</h1><p>Learn with expert teachers. Old School, New Style, House and more. First class free.</p></main>`,
+    entrenamientoBailarines: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Training for Dancers</h1><p>Improve your technique, strength, endurance and flexibility. Program designed by dance professionals.</p></main>`,
+    bachataLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Bachata Lady Style Classes</h1><p>Develop your femininity, elegance and personal style dancing bachata. Sensual and expressive movements.</p></main>`,
+    // New non-class pages
+    profesores: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Teachers in Barcelona</h1><p>Meet our team of professional dancers from around the world with years of experience. CID-UNESCO certified.</p></main>`,
+    faq: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Frequently Asked Questions</h1><p>Get answers about schedules, prices, levels, registration and everything you need to know.</p></main>`,
+    alquilerSalas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Studio Rental</h1><p>3 professional spaces equipped with mirrors, bars and dance flooring. Ideal for rehearsals, recordings and events.</p></main>`,
+    estudioGrabacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Video Studio</h1><p>Professional equipment, lighting and sound. Perfect for music videos, tutorials and social media content.</p></main>`,
+    notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Page Not Found</h1><p>The page you are looking for does not exist. Go back to the home page or explore our dance classes.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.en,
   },
@@ -1240,6 +1562,20 @@ const initialContent = {
     baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Danse le Matin à Barcelone</h1><p>13 cours hebdomadaires de 10h à 13h : Contemporain, Ballet, Modern Jazz, Sexy Style, Reggaeton et plus. L'activité matinale dont vous aviez besoin pour commencer la journée avec énergie.</p></main>`,
     classesHub: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Tous les Cours de Danse à Barcelone</h1><p>Découvrez plus de 40 styles de danse : Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat, Ballet, Contemporain et plus. Premier cours gratuit.</p></main>`,
     horariosPrecio: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Horaires et Tarifs</h1><p>Consultez nos horaires de cours et tarifs. Abonnements mensuels, cours à l'unité et packs spéciaux. École près de Plaza España.</p></main>`,
+    // New class pages
+    afroContemporaneo: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours d'Afro Contemporain à Barcelone</h1><p>Fusion de danse africaine traditionnelle et technique contemporaine. Expression corporelle, rythme et mouvement. Académie CID-UNESCO.</p></main>`,
+    afroJazz: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours d'Afro Jazz à Barcelone</h1><p>Combinaison de rythmes africains et technique de jazz moderne. Expression corporelle, musicalité et énergie. Tous niveaux.</p></main>`,
+    contemporaneo: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Danse Contemporaine à Barcelone</h1><p>Développez technique, expression corporelle et créativité. Académie accréditée CID-UNESCO.</p></main>`,
+    stretching: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Stretching pour Danseurs</h1><p>Améliorez votre flexibilité, mobilité et prévenez les blessures. Complément parfait pour tout style de danse.</p></main>`,
+    hipHop: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Hip Hop à Barcelone</h1><p>Apprenez avec des professeurs experts. Old School, New Style, House et plus. Premier cours gratuit.</p></main>`,
+    entrenamientoBailarines: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Entraînement pour Danseurs</h1><p>Améliorez votre technique, force, endurance et flexibilité. Programme conçu par des professionnels de la danse.</p></main>`,
+    bachataLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Bachata Lady Style</h1><p>Développez votre féminité, élégance et style personnel en dansant la bachata. Mouvements sensuels et expressifs.</p></main>`,
+    // New non-class pages
+    profesores: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Professeurs de Danse à Barcelone</h1><p>Rencontrez notre équipe de danseurs professionnels du monde entier avec des années d'expérience. Certifiés CID-UNESCO.</p></main>`,
+    faq: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Questions Fréquentes</h1><p>Obtenez des réponses sur les horaires, tarifs, niveaux, inscription et tout ce que vous devez savoir.</p></main>`,
+    alquilerSalas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Location de Studios de Danse</h1><p>3 espaces professionnels équipés de miroirs, barres et sol de danse. Idéal pour répétitions, enregistrements et événements.</p></main>`,
+    estudioGrabacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Studio de Tournage Vidéo Danse</h1><p>Équipement professionnel, éclairage et son. Parfait pour clips, tutoriels et contenu réseaux sociaux.</p></main>`,
+    notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Page Non Trouvée</h1><p>La page que vous recherchez n'existe pas. Retournez à la page d'accueil ou explorez nos cours de danse.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.fr,
   },
