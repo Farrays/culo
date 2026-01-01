@@ -1888,7 +1888,7 @@ routes.forEach(route => {
 
   // Get metadata and content
   const meta = metadata[lang][page];
-  const content = initialContent[lang][page];
+  const content = initialContent[lang]?.[page] || '';
 
   // Build preload hints for this specific page (common + locale-specific i18n)
   const pagePreloadHints = [...commonPreloadHints];
