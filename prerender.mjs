@@ -1590,26 +1590,8 @@ const initialContent = {
     // Empty content - React will render from scratch to avoid hydration mismatch
     home: '',
     about: '',
-    classes: `
-      <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12">
-        <h1 class="text-4xl sm:text-5xl font-bold text-neutral mb-8 text-center holographic-text">
-          Nuestras Clases
-        </h1>
-        <p class="text-lg text-neutral/80 max-w-3xl mx-auto mb-12 text-center">
-          Clases de Dancehall y baile urbano para todos los niveles. Profesores experimentados y ambiente inclusivo.
-        </p>
-      </main>
-    `,
-    danza: `
-      <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12">
-        <h1 class="text-4xl sm:text-5xl font-bold text-neutral mb-8 text-center holographic-text">
-          Clases de Danza en Barcelona
-        </h1>
-        <p class="text-lg text-neutral/80 max-w-3xl mx-auto mb-12 text-center">
-          Explora la técnica, elegancia y expresión de la danza clásica y contemporánea. Ballet Clásico Cubano, Danza Contemporánea, Modern Jazz, Afro Jazz y más. Academia reconocida por CID-UNESCO.
-        </p>
-      </main>
-    `,
+    classes: '',
+    danza: '',
     salsaBachata: '',
     salsaCubana: '',
     salsaLadyStyle: '',
@@ -1662,8 +1644,8 @@ const initialContent = {
   ca: {
     home: '',
     about: '',
-    classes: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Les nostres Classes</h1><p>Classes de Dancehall i ball urbà per a tots els nivells.</p></main>`,
-    danza: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Dansa a Barcelona</h1><p>Explora la tècnica, elegància i expressió de la dansa clàssica i contemporània. Ballet Clàssic Cubà, Dansa Contemporània, Modern Jazz i més. Acadèmia reconeguda per CID-UNESCO.</p></main>`,
+    classes: '',
+    danza: '',
     salsaBachata: '',
     salsaCubana: '',
     salsaLadyStyle: '',
