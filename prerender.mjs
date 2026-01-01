@@ -167,7 +167,7 @@ const routes = [
   { path: 'es/contacto', lang: 'es', page: 'contact' },
   // Missing class pages
   { path: 'es/clases/afro-contemporaneo-barcelona', lang: 'es', page: 'afroContemporaneo' },
-  { path: 'es/clases/afro-jazz-barcelona', lang: 'es', page: 'afroJazz' },
+  { path: 'es/clases/afro-jazz', lang: 'es', page: 'afroJazz' },
   { path: 'es/clases/contemporaneo-barcelona', lang: 'es', page: 'contemporaneo' },
   { path: 'es/clases/stretching-barcelona', lang: 'es', page: 'stretching' },
   { path: 'es/clases/hip-hop-barcelona', lang: 'es', page: 'hipHop' },
@@ -181,6 +181,15 @@ const routes = [
   { path: 'es/preguntas-frecuentes', lang: 'es', page: 'faq' },
   { path: 'es/alquiler-salas-baile-barcelona', lang: 'es', page: 'alquilerSalas' },
   { path: 'es/estudio-grabacion-barcelona', lang: 'es', page: 'estudioGrabacion' },
+  // Legal pages
+  { path: 'es/terminos-y-condiciones', lang: 'es', page: 'termsConditions' },
+  { path: 'es/aviso-legal', lang: 'es', page: 'legalNotice' },
+  { path: 'es/politica-privacidad', lang: 'es', page: 'privacyPolicy' },
+  { path: 'es/politica-cookies', lang: 'es', page: 'cookiePolicy' },
+  // Additional pages
+  { path: 'es/servicios-baile', lang: 'es', page: 'serviciosBaile' },
+  { path: 'es/calendario', lang: 'es', page: 'calendario' },
+  { path: 'es/clases/salsa-lady-style-v2', lang: 'es', page: 'salsaLadyStyleV2' },
   // URL aliases (same content, different URL for SEO)
   { path: 'es/instalaciones-escuela-baile-barcelona', lang: 'es', page: 'facilities' },
   { path: 'es/horarios-clases-baile-barcelona', lang: 'es', page: 'horariosPrecio' },
@@ -223,7 +232,7 @@ const routes = [
   { path: 'ca/contacto', lang: 'ca', page: 'contact' },
   // Missing class pages
   { path: 'ca/clases/afro-contemporaneo-barcelona', lang: 'ca', page: 'afroContemporaneo' },
-  { path: 'ca/clases/afro-jazz-barcelona', lang: 'ca', page: 'afroJazz' },
+  { path: 'ca/clases/afro-jazz', lang: 'ca', page: 'afroJazz' },
   { path: 'ca/clases/contemporaneo-barcelona', lang: 'ca', page: 'contemporaneo' },
   { path: 'ca/clases/stretching-barcelona', lang: 'ca', page: 'stretching' },
   { path: 'ca/clases/hip-hop-barcelona', lang: 'ca', page: 'hipHop' },
@@ -237,6 +246,15 @@ const routes = [
   { path: 'ca/preguntas-frecuentes', lang: 'ca', page: 'faq' },
   { path: 'ca/alquiler-salas-baile-barcelona', lang: 'ca', page: 'alquilerSalas' },
   { path: 'ca/estudio-grabacion-barcelona', lang: 'ca', page: 'estudioGrabacion' },
+  // Legal pages
+  { path: 'ca/terminos-y-condiciones', lang: 'ca', page: 'termsConditions' },
+  { path: 'ca/aviso-legal', lang: 'ca', page: 'legalNotice' },
+  { path: 'ca/politica-privacidad', lang: 'ca', page: 'privacyPolicy' },
+  { path: 'ca/politica-cookies', lang: 'ca', page: 'cookiePolicy' },
+  // Additional pages
+  { path: 'ca/servicios-baile', lang: 'ca', page: 'serviciosBaile' },
+  { path: 'ca/calendario', lang: 'ca', page: 'calendario' },
+  { path: 'ca/clases/salsa-lady-style-v2', lang: 'ca', page: 'salsaLadyStyleV2' },
   // URL aliases (same content, different URL for SEO)
   { path: 'ca/instalaciones-escuela-baile-barcelona', lang: 'ca', page: 'facilities' },
   { path: 'ca/horarios-clases-baile-barcelona', lang: 'ca', page: 'horariosPrecio' },
@@ -279,7 +297,7 @@ const routes = [
   { path: 'en/contacto', lang: 'en', page: 'contact' },
   // Missing class pages
   { path: 'en/clases/afro-contemporaneo-barcelona', lang: 'en', page: 'afroContemporaneo' },
-  { path: 'en/clases/afro-jazz-barcelona', lang: 'en', page: 'afroJazz' },
+  { path: 'en/clases/afro-jazz', lang: 'en', page: 'afroJazz' },
   { path: 'en/clases/contemporaneo-barcelona', lang: 'en', page: 'contemporaneo' },
   { path: 'en/clases/stretching-barcelona', lang: 'en', page: 'stretching' },
   { path: 'en/clases/hip-hop-barcelona', lang: 'en', page: 'hipHop' },
@@ -293,6 +311,15 @@ const routes = [
   { path: 'en/preguntas-frecuentes', lang: 'en', page: 'faq' },
   { path: 'en/alquiler-salas-baile-barcelona', lang: 'en', page: 'alquilerSalas' },
   { path: 'en/estudio-grabacion-barcelona', lang: 'en', page: 'estudioGrabacion' },
+  // Legal pages
+  { path: 'en/terminos-y-condiciones', lang: 'en', page: 'termsConditions' },
+  { path: 'en/aviso-legal', lang: 'en', page: 'legalNotice' },
+  { path: 'en/politica-privacidad', lang: 'en', page: 'privacyPolicy' },
+  { path: 'en/politica-cookies', lang: 'en', page: 'cookiePolicy' },
+  // Additional pages
+  { path: 'en/servicios-baile', lang: 'en', page: 'serviciosBaile' },
+  { path: 'en/calendario', lang: 'en', page: 'calendario' },
+  { path: 'en/clases/salsa-lady-style-v2', lang: 'en', page: 'salsaLadyStyleV2' },
   // URL aliases (same content, different URL for SEO)
   { path: 'en/instalaciones-escuela-baile-barcelona', lang: 'en', page: 'facilities' },
   { path: 'en/horarios-clases-baile-barcelona', lang: 'en', page: 'horariosPrecio' },
@@ -335,7 +362,7 @@ const routes = [
   { path: 'fr/contacto', lang: 'fr', page: 'contact' },
   // Missing class pages
   { path: 'fr/clases/afro-contemporaneo-barcelona', lang: 'fr', page: 'afroContemporaneo' },
-  { path: 'fr/clases/afro-jazz-barcelona', lang: 'fr', page: 'afroJazz' },
+  { path: 'fr/clases/afro-jazz', lang: 'fr', page: 'afroJazz' },
   { path: 'fr/clases/contemporaneo-barcelona', lang: 'fr', page: 'contemporaneo' },
   { path: 'fr/clases/stretching-barcelona', lang: 'fr', page: 'stretching' },
   { path: 'fr/clases/hip-hop-barcelona', lang: 'fr', page: 'hipHop' },
@@ -349,6 +376,15 @@ const routes = [
   { path: 'fr/preguntas-frecuentes', lang: 'fr', page: 'faq' },
   { path: 'fr/alquiler-salas-baile-barcelona', lang: 'fr', page: 'alquilerSalas' },
   { path: 'fr/estudio-grabacion-barcelona', lang: 'fr', page: 'estudioGrabacion' },
+  // Legal pages
+  { path: 'fr/terminos-y-condiciones', lang: 'fr', page: 'termsConditions' },
+  { path: 'fr/aviso-legal', lang: 'fr', page: 'legalNotice' },
+  { path: 'fr/politica-privacidad', lang: 'fr', page: 'privacyPolicy' },
+  { path: 'fr/politica-cookies', lang: 'fr', page: 'cookiePolicy' },
+  // Additional pages
+  { path: 'fr/servicios-baile', lang: 'fr', page: 'serviciosBaile' },
+  { path: 'fr/calendario', lang: 'fr', page: 'calendario' },
+  { path: 'fr/clases/salsa-lady-style-v2', lang: 'fr', page: 'salsaLadyStyleV2' },
   // URL aliases (same content, different URL for SEO)
   { path: 'fr/instalaciones-escuela-baile-barcelona', lang: 'fr', page: 'facilities' },
   { path: 'fr/horarios-clases-baile-barcelona', lang: 'fr', page: 'horariosPrecio' },
@@ -641,6 +677,36 @@ const metadata = {
       title: 'Estudio de Grabación de Baile en Barcelona | Producción Audiovisual | Farray\'s Center',
       description: 'Estudio de grabación para videos de baile en Barcelona. Equipamiento profesional, iluminación y sonido. Perfecto para videoclips, tutoriales y contenido para redes.',
     },
+    // Legal pages
+    termsConditions: {
+      title: 'Términos y Condiciones | Farray\'s International Dance Center',
+      description: 'Términos y condiciones de uso de los servicios de Farray\'s Center. Información legal sobre inscripciones, pagos y políticas de la academia.',
+    },
+    legalNotice: {
+      title: 'Aviso Legal | Farray\'s International Dance Center',
+      description: 'Aviso legal de Farray\'s Center. Información sobre la empresa, propiedad intelectual y condiciones de uso del sitio web.',
+    },
+    privacyPolicy: {
+      title: 'Política de Privacidad | Farray\'s International Dance Center',
+      description: 'Política de privacidad de Farray\'s Center. Información sobre el tratamiento de datos personales según el RGPD.',
+    },
+    cookiePolicy: {
+      title: 'Política de Cookies | Farray\'s International Dance Center',
+      description: 'Política de cookies de Farray\'s Center. Información sobre las cookies utilizadas en nuestro sitio web.',
+    },
+    // Additional pages
+    serviciosBaile: {
+      title: 'Servicios de Baile en Barcelona | Farray\'s Center',
+      description: 'Servicios profesionales de baile en Barcelona: clases particulares, coreografías para eventos, shows y espectáculos. Contáctanos.',
+    },
+    calendario: {
+      title: 'Calendario de Eventos | Farray\'s International Dance Center',
+      description: 'Calendario de eventos, workshops y actividades especiales en Farray\'s Center Barcelona. Mantente al día de todas las novedades.',
+    },
+    salsaLadyStyleV2: {
+      title: 'Clases de Salsa Lady Style en Barcelona | Farray\'s Center',
+      description: 'Clases de Salsa Lady Style en Barcelona. Desarrolla tu feminidad, elegancia y estilo personal bailando salsa con el Método Farray®.',
+    },
     notFound: {
       title: 'Página No Encontrada | 404 | Farray\'s Center',
       description: 'La página que buscas no existe. Vuelve a la página principal o explora nuestras clases de baile en Barcelona.',
@@ -878,6 +944,36 @@ const metadata = {
     estudioGrabacion: {
       title: 'Estudi de Gravació de Ball a Barcelona | Producció Audiovisual | Farray\'s Center',
       description: 'Estudi de gravació per a vídeos de ball a Barcelona. Equipament professional, il·luminació i so. Perfecte per a videoclips, tutorials i contingut per a xarxes.',
+    },
+    // Legal pages
+    termsConditions: {
+      title: 'Termes i Condicions | Farray\'s International Dance Center',
+      description: 'Termes i condicions d\'ús dels serveis de Farray\'s Center. Informació legal sobre inscripcions, pagaments i polítiques de l\'acadèmia.',
+    },
+    legalNotice: {
+      title: 'Avís Legal | Farray\'s International Dance Center',
+      description: 'Avís legal de Farray\'s Center. Informació sobre l\'empresa, propietat intel·lectual i condicions d\'ús del lloc web.',
+    },
+    privacyPolicy: {
+      title: 'Política de Privacitat | Farray\'s International Dance Center',
+      description: 'Política de privacitat de Farray\'s Center. Informació sobre el tractament de dades personals segons el RGPD.',
+    },
+    cookiePolicy: {
+      title: 'Política de Cookies | Farray\'s International Dance Center',
+      description: 'Política de cookies de Farray\'s Center. Informació sobre les cookies utilitzades al nostre lloc web.',
+    },
+    // Additional pages
+    serviciosBaile: {
+      title: 'Serveis de Ball a Barcelona | Farray\'s Center',
+      description: 'Serveis professionals de ball a Barcelona: classes particulars, coreografies per a esdeveniments, shows i espectacles.',
+    },
+    calendario: {
+      title: 'Calendari d\'Esdeveniments | Farray\'s International Dance Center',
+      description: 'Calendari d\'esdeveniments, workshops i activitats especials a Farray\'s Center Barcelona.',
+    },
+    salsaLadyStyleV2: {
+      title: 'Classes de Salsa Lady Style a Barcelona | Farray\'s Center',
+      description: 'Classes de Salsa Lady Style a Barcelona. Desenvolupa la teva feminitat, elegància i estil personal ballant salsa amb el Mètode Farray®.',
     },
     notFound: {
       title: 'Pàgina No Trobada | 404 | Farray\'s Center',
@@ -1117,6 +1213,36 @@ const metadata = {
       title: 'Dance Video Studio in Barcelona | Audiovisual Production | Farray\'s Center',
       description: 'Recording studio for dance videos in Barcelona. Professional equipment, lighting and sound. Perfect for music videos, tutorials and social media content.',
     },
+    // Legal pages
+    termsConditions: {
+      title: 'Terms and Conditions | Farray\'s International Dance Center',
+      description: 'Terms and conditions for Farray\'s Center services. Legal information about registration, payments and academy policies.',
+    },
+    legalNotice: {
+      title: 'Legal Notice | Farray\'s International Dance Center',
+      description: 'Legal notice for Farray\'s Center. Information about the company, intellectual property and website terms of use.',
+    },
+    privacyPolicy: {
+      title: 'Privacy Policy | Farray\'s International Dance Center',
+      description: 'Privacy policy for Farray\'s Center. Information about personal data processing according to GDPR.',
+    },
+    cookiePolicy: {
+      title: 'Cookie Policy | Farray\'s International Dance Center',
+      description: 'Cookie policy for Farray\'s Center. Information about the cookies used on our website.',
+    },
+    // Additional pages
+    serviciosBaile: {
+      title: 'Dance Services in Barcelona | Farray\'s Center',
+      description: 'Professional dance services in Barcelona: private lessons, event choreography, shows and performances. Contact us.',
+    },
+    calendario: {
+      title: 'Events Calendar | Farray\'s International Dance Center',
+      description: 'Calendar of events, workshops and special activities at Farray\'s Center Barcelona. Stay up to date with all the news.',
+    },
+    salsaLadyStyleV2: {
+      title: 'Salsa Lady Style Classes in Barcelona | Farray\'s Center',
+      description: 'Salsa Lady Style classes in Barcelona. Develop your femininity, elegance and personal style dancing salsa with the Farray Method®.',
+    },
     notFound: {
       title: 'Page Not Found | 404 | Farray\'s Center',
       description: 'The page you are looking for does not exist. Go back to the home page or explore our dance classes in Barcelona.',
@@ -1355,6 +1481,36 @@ const metadata = {
       title: 'Studio de Tournage Vidéo Danse à Barcelone | Production Audiovisuelle | Farray\'s Center',
       description: 'Studio d\'enregistrement pour vidéos de danse à Barcelone. Équipement professionnel, éclairage et son. Parfait pour clips, tutoriels et contenu réseaux sociaux.',
     },
+    // Legal pages
+    termsConditions: {
+      title: 'Conditions Générales | Farray\'s International Dance Center',
+      description: 'Conditions générales d\'utilisation des services de Farray\'s Center. Informations légales sur les inscriptions, paiements et politiques de l\'académie.',
+    },
+    legalNotice: {
+      title: 'Mentions Légales | Farray\'s International Dance Center',
+      description: 'Mentions légales de Farray\'s Center. Informations sur l\'entreprise, propriété intellectuelle et conditions d\'utilisation du site.',
+    },
+    privacyPolicy: {
+      title: 'Politique de Confidentialité | Farray\'s International Dance Center',
+      description: 'Politique de confidentialité de Farray\'s Center. Informations sur le traitement des données personnelles selon le RGPD.',
+    },
+    cookiePolicy: {
+      title: 'Politique de Cookies | Farray\'s International Dance Center',
+      description: 'Politique de cookies de Farray\'s Center. Informations sur les cookies utilisés sur notre site web.',
+    },
+    // Additional pages
+    serviciosBaile: {
+      title: 'Services de Danse à Barcelone | Farray\'s Center',
+      description: 'Services professionnels de danse à Barcelone : cours particuliers, chorégraphies pour événements, spectacles et performances.',
+    },
+    calendario: {
+      title: 'Calendrier des Événements | Farray\'s International Dance Center',
+      description: 'Calendrier des événements, workshops et activités spéciales à Farray\'s Center Barcelone.',
+    },
+    salsaLadyStyleV2: {
+      title: 'Cours de Salsa Lady Style à Barcelone | Farray\'s Center',
+      description: 'Cours de Salsa Lady Style à Barcelone. Développez votre féminité, élégance et style personnel en dansant la salsa avec la Méthode Farray®.',
+    },
     notFound: {
       title: 'Page Non Trouvée | 404 | Farray\'s Center',
       description: 'La page que vous recherchez n\'existe pas. Retournez à la page d\'accueil ou explorez nos cours de danse à Barcelone.',
@@ -1499,6 +1655,15 @@ const initialContent = {
     faq: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Preguntas Frecuentes</h1><p>Resuelve tus dudas sobre horarios, precios, niveles, inscripción y todo lo que necesitas saber.</p></main>`,
     alquilerSalas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Alquiler de Salas de Baile</h1><p>3 espacios profesionales equipados con espejos, barras y suelo de danza. Ideal para ensayos, grabaciones y eventos.</p></main>`,
     estudioGrabacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Estudio de Grabación de Baile</h1><p>Equipamiento profesional, iluminación y sonido. Perfecto para videoclips, tutoriales y contenido para redes.</p></main>`,
+    // Legal pages
+    termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Términos y Condiciones</h1><p>Información legal sobre inscripciones, pagos y políticas de Farray's Center.</p></main>`,
+    legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Aviso Legal</h1><p>Información sobre la empresa, propiedad intelectual y condiciones de uso.</p></main>`,
+    privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Política de Privacidad</h1><p>Información sobre el tratamiento de datos personales según el RGPD.</p></main>`,
+    cookiePolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Política de Cookies</h1><p>Información sobre las cookies utilizadas en nuestro sitio web.</p></main>`,
+    // Additional pages
+    serviciosBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Servicios de Baile</h1><p>Clases particulares, coreografías para eventos, shows y espectáculos profesionales.</p></main>`,
+    calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Calendario de Eventos</h1><p>Workshops, masterclasses y actividades especiales en Farray's Center Barcelona.</p></main>`,
+    salsaLadyStyleV2: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Salsa Lady Style</h1><p>Desarrolla tu feminidad, elegancia y estilo personal bailando salsa con el Método Farray®.</p></main>`,
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Página No Encontrada</h1><p>La página que buscas no existe. Vuelve a la página principal o explora nuestras clases de baile.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.es,
@@ -1543,6 +1708,15 @@ const initialContent = {
     faq: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Preguntes Freqüents</h1><p>Resol els teus dubtes sobre horaris, preus, nivells, inscripció i tot el que necessites saber.</p></main>`,
     alquilerSalas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Lloguer de Sales de Ball</h1><p>3 espais professionals equipats amb miralls, barres i terra de dansa. Ideal per a assajos, gravacions i esdeveniments.</p></main>`,
     estudioGrabacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Estudi de Gravació de Ball</h1><p>Equipament professional, il·luminació i so. Perfecte per a videoclips, tutorials i contingut per a xarxes.</p></main>`,
+    // Legal pages
+    termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Termes i Condicions</h1><p>Informació legal sobre inscripcions, pagaments i polítiques de Farray's Center.</p></main>`,
+    legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Avís Legal</h1><p>Informació sobre l'empresa, propietat intel·lectual i condicions d'ús.</p></main>`,
+    privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Política de Privacitat</h1><p>Informació sobre el tractament de dades personals segons el RGPD.</p></main>`,
+    cookiePolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Política de Cookies</h1><p>Informació sobre les cookies utilitzades al nostre lloc web.</p></main>`,
+    // Additional pages
+    serviciosBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Serveis de Ball</h1><p>Classes particulars, coreografies per a esdeveniments, shows i espectacles professionals.</p></main>`,
+    calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Calendari d'Esdeveniments</h1><p>Workshops, masterclasses i activitats especials a Farray's Center Barcelona.</p></main>`,
+    salsaLadyStyleV2: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Salsa Lady Style</h1><p>Desenvolupa la teva feminitat, elegància i estil personal ballant salsa amb el Mètode Farray®.</p></main>`,
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Pàgina No Trobada</h1><p>La pàgina que busques no existeix. Torna a la pàgina principal o explora les nostres classes de ball.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.ca,
@@ -1585,6 +1759,15 @@ const initialContent = {
     faq: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Frequently Asked Questions</h1><p>Get answers about schedules, prices, levels, registration and everything you need to know.</p></main>`,
     alquilerSalas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Studio Rental</h1><p>3 professional spaces equipped with mirrors, bars and dance flooring. Ideal for rehearsals, recordings and events.</p></main>`,
     estudioGrabacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Video Studio</h1><p>Professional equipment, lighting and sound. Perfect for music videos, tutorials and social media content.</p></main>`,
+    // Legal pages
+    termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Terms and Conditions</h1><p>Legal information about registration, payments and policies at Farray's Center.</p></main>`,
+    legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Legal Notice</h1><p>Information about the company, intellectual property and terms of use.</p></main>`,
+    privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Privacy Policy</h1><p>Information about personal data processing in accordance with GDPR.</p></main>`,
+    cookiePolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cookie Policy</h1><p>Information about cookies used on our website.</p></main>`,
+    // Additional pages
+    serviciosBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Services</h1><p>Private lessons, event choreography, professional shows and performances.</p></main>`,
+    calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Events Calendar</h1><p>Workshops, masterclasses and special activities at Farray's Center Barcelona.</p></main>`,
+    salsaLadyStyleV2: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Salsa Lady Style Classes</h1><p>Develop your femininity, elegance and personal style dancing salsa with the Farray Method®.</p></main>`,
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Page Not Found</h1><p>The page you are looking for does not exist. Go back to the home page or explore our dance classes.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.en,
@@ -1627,6 +1810,15 @@ const initialContent = {
     faq: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Questions Fréquentes</h1><p>Obtenez des réponses sur les horaires, tarifs, niveaux, inscription et tout ce que vous devez savoir.</p></main>`,
     alquilerSalas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Location de Studios de Danse</h1><p>3 espaces professionnels équipés de miroirs, barres et sol de danse. Idéal pour répétitions, enregistrements et événements.</p></main>`,
     estudioGrabacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Studio de Tournage Vidéo Danse</h1><p>Équipement professionnel, éclairage et son. Parfait pour clips, tutoriels et contenu réseaux sociaux.</p></main>`,
+    // Legal pages
+    termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Conditions Générales</h1><p>Informations légales sur les inscriptions, paiements et politiques de Farray's Center.</p></main>`,
+    legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Mentions Légales</h1><p>Informations sur l'entreprise, propriété intellectuelle et conditions d'utilisation.</p></main>`,
+    privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Politique de Confidentialité</h1><p>Informations sur le traitement des données personnelles conformément au RGPD.</p></main>`,
+    cookiePolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Politique de Cookies</h1><p>Informations sur les cookies utilisés sur notre site web.</p></main>`,
+    // Additional pages
+    serviciosBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Services de Danse</h1><p>Cours particuliers, chorégraphies pour événements, shows et spectacles professionnels.</p></main>`,
+    calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Calendrier des Événements</h1><p>Workshops, masterclasses et activités spéciales à Farray's Center Barcelone.</p></main>`,
+    salsaLadyStyleV2: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Salsa Lady Style</h1><p>Développez votre féminité, élégance et style personnel en dansant la salsa avec la Méthode Farray®.</p></main>`,
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Page Non Trouvée</h1><p>La page que vous recherchez n'existe pas. Retournez à la page d'accueil ou explorez nos cours de danse.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.fr,
