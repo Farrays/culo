@@ -175,14 +175,16 @@ const Footer: React.FC = () => {
                 <picture>
                   <source
                     type="image/webp"
-                    srcSet="/images/logo/img/logo-fidc_256.webp 1x, /images/logo/img/logo-fidc_512.webp 2x"
+                    srcSet="/images/logo/img/logo-fidc_128.webp 128w, /images/logo/img/logo-fidc_256.webp 256w"
+                    sizes="(min-width: 1024px) 128px, 112px"
                   />
                   <img
-                    src="/images/logo/img/logo-fidc_256.png"
-                    srcSet="/images/logo/img/logo-fidc_256.png 1x, /images/logo/img/logo-fidc_512.png 2x"
+                    src="/images/logo/img/logo-fidc_128.png"
+                    srcSet="/images/logo/img/logo-fidc_128.png 128w, /images/logo/img/logo-fidc_256.png 256w"
+                    sizes="(min-width: 1024px) 128px, 112px"
                     alt="Farray's International Dance Center"
-                    width="256"
-                    height="256"
+                    width="128"
+                    height="128"
                     loading="lazy"
                     className="w-28 h-28 lg:w-32 lg:h-32 opacity-70 hover:opacity-100 transition-opacity"
                   />

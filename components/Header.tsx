@@ -314,14 +314,16 @@ const Header: React.FC = () => {
               <picture>
                 <source
                   type="image/webp"
-                  srcSet="/images/logo/img/logo-fidc_256.webp 1x, /images/logo/img/logo-fidc_512.webp 2x"
+                  srcSet="/images/logo/img/logo-fidc_128.webp 128w, /images/logo/img/logo-fidc_256.webp 256w"
+                  sizes="(min-width: 1280px) 128px, (min-width: 1024px) 112px, (min-width: 640px) 176px, 160px"
                 />
                 <img
-                  src="/images/logo/img/logo-fidc_256.png"
-                  srcSet="/images/logo/img/logo-fidc_256.png 1x, /images/logo/img/logo-fidc_512.png 2x"
+                  src="/images/logo/img/logo-fidc_128.png"
+                  srcSet="/images/logo/img/logo-fidc_128.png 128w, /images/logo/img/logo-fidc_256.png 256w"
+                  sizes="(min-width: 1280px) 128px, (min-width: 1024px) 112px, (min-width: 640px) 176px, 160px"
                   alt="Farray's International Dance Center"
-                  width="256"
-                  height="256"
+                  width="128"
+                  height="128"
                   fetchPriority="high"
                   className="w-40 h-40 sm:w-44 sm:h-44 md:w-44 md:h-44 lg:w-28 lg:h-28 xl:w-32 xl:h-32 transition-all duration-300 group-hover:scale-105 drop-shadow-[0_0_15px_rgba(200,34,96,0.3)]"
                 />
