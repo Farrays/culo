@@ -399,6 +399,9 @@ const routes = [
   { path: 'es/blog/lifestyle/clases-de-salsa-barcelona', lang: 'es', page: 'blogClasesSalsaBarcelona' },
   { path: 'es/blog/historia', lang: 'es', page: 'blogHistoria' },
   { path: 'es/blog/historia/historia-salsa-barcelona', lang: 'es', page: 'blogHistoriaSalsa' },
+  { path: 'es/blog/historia/historia-bachata-barcelona', lang: 'es', page: 'blogHistoriaBachata' },
+  { path: 'es/blog/tutoriales', lang: 'es', page: 'blogTutoriales' },
+  { path: 'es/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'es', page: 'blogSalsaRitmo' },
   { path: 'es/blog/tips', lang: 'es', page: 'blogTips' },
   { path: 'es/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'es', page: 'blogClasesPrincipiantes' },
 
@@ -408,6 +411,9 @@ const routes = [
   { path: 'ca/blog/lifestyle/clases-de-salsa-barcelona', lang: 'ca', page: 'blogClasesSalsaBarcelona' },
   { path: 'ca/blog/historia', lang: 'ca', page: 'blogHistoria' },
   { path: 'ca/blog/historia/historia-salsa-barcelona', lang: 'ca', page: 'blogHistoriaSalsa' },
+  { path: 'ca/blog/historia/historia-bachata-barcelona', lang: 'ca', page: 'blogHistoriaBachata' },
+  { path: 'ca/blog/tutoriales', lang: 'ca', page: 'blogTutoriales' },
+  { path: 'ca/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'ca', page: 'blogSalsaRitmo' },
   { path: 'ca/blog/tips', lang: 'ca', page: 'blogTips' },
   { path: 'ca/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'ca', page: 'blogClasesPrincipiantes' },
 
@@ -417,6 +423,9 @@ const routes = [
   { path: 'en/blog/lifestyle/clases-de-salsa-barcelona', lang: 'en', page: 'blogClasesSalsaBarcelona' },
   { path: 'en/blog/historia', lang: 'en', page: 'blogHistoria' },
   { path: 'en/blog/historia/historia-salsa-barcelona', lang: 'en', page: 'blogHistoriaSalsa' },
+  { path: 'en/blog/historia/historia-bachata-barcelona', lang: 'en', page: 'blogHistoriaBachata' },
+  { path: 'en/blog/tutoriales', lang: 'en', page: 'blogTutoriales' },
+  { path: 'en/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'en', page: 'blogSalsaRitmo' },
   { path: 'en/blog/tips', lang: 'en', page: 'blogTips' },
   { path: 'en/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'en', page: 'blogClasesPrincipiantes' },
 
@@ -426,6 +435,9 @@ const routes = [
   { path: 'fr/blog/lifestyle/clases-de-salsa-barcelona', lang: 'fr', page: 'blogClasesSalsaBarcelona' },
   { path: 'fr/blog/historia', lang: 'fr', page: 'blogHistoria' },
   { path: 'fr/blog/historia/historia-salsa-barcelona', lang: 'fr', page: 'blogHistoriaSalsa' },
+  { path: 'fr/blog/historia/historia-bachata-barcelona', lang: 'fr', page: 'blogHistoriaBachata' },
+  { path: 'fr/blog/tutoriales', lang: 'fr', page: 'blogTutoriales' },
+  { path: 'fr/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'fr', page: 'blogSalsaRitmo' },
   { path: 'fr/blog/tips', lang: 'fr', page: 'blogTips' },
   { path: 'fr/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'fr', page: 'blogClasesPrincipiantes' },
 
@@ -600,6 +612,18 @@ const metadata = {
     blogHistoriaSalsa: {
       title: 'Historia de la Salsa en Barcelona: del Caribe y Nueva York a Farray\'s | Farray\'s Center',
       description: 'Descubre la fascinante historia de la salsa: desde sus orígenes en el Caribe y Nueva York hasta su llegada a Barcelona. Más de 60 años de ritmo que cambiaron el mundo.',
+    },
+    blogHistoriaBachata: {
+      title: 'Historia de la Bachata: Del Barrio Dominicano a Barcelona | Farray\'s Center',
+      description: 'Descubre la historia de la bachata: desde sus humildes orígenes en República Dominicana hasta convertirse en fenómeno mundial. Romeo Santos, bachata sensual y más.',
+    },
+    blogTutoriales: {
+      title: 'Tutoriales de Baile | Farray\'s Center Blog',
+      description: 'Guías y tutoriales para aprender a bailar: técnicas, pasos básicos y consejos de profesionales para salsa, bachata, dancehall y más estilos.',
+    },
+    blogSalsaRitmo: {
+      title: 'Salsa: El Ritmo que Conquistó el Mundo | Farray\'s Center',
+      description: 'Descubre los diferentes estilos de salsa: cubana, rueda de casino, salsa en línea y más. Guía completa para entender y bailar salsa en Barcelona.',
     },
     blogClasesSalsaBarcelona: {
       title: 'Hombres y mujeres, ¿hablamos salsa? | Farray\'s Center Blog',
@@ -869,6 +893,18 @@ const metadata = {
       title: 'Història de la Salsa a Barcelona: del Carib i Nova York a Farray\'s | Farray\'s Center',
       description: 'Descobreix la fascinant història de la salsa: des dels seus orígens al Carib i Nova York fins a la seva arribada a Barcelona. Més de 60 anys de ritme que van canviar el món.',
     },
+    blogHistoriaBachata: {
+      title: 'Història de la Bachata: Del Barri Dominicà a Barcelona | Farray\'s Center',
+      description: 'Descobreix la història de la bachata: des dels seus humils orígens a la República Dominicana fins a convertir-se en fenomen mundial. Romeo Santos, bachata sensual i més.',
+    },
+    blogTutoriales: {
+      title: 'Tutorials de Ball | Farray\'s Center Blog',
+      description: 'Guies i tutorials per aprendre a ballar: tècniques, passos bàsics i consells de professionals per a salsa, bachata, dancehall i més estils.',
+    },
+    blogSalsaRitmo: {
+      title: 'Salsa: El Ritme que Va Conquistar el Món | Farray\'s Center',
+      description: 'Descobreix els diferents estils de salsa: cubana, roda de casino, salsa en línia i més. Guia completa per entendre i ballar salsa a Barcelona.',
+    },
     blogClasesSalsaBarcelona: {
       title: 'Homes i dones, parlem salsa? | Farray\'s Center Blog',
       description: 'La salsa com a llenguatge universal: reflexions sobre la pista de ball com a espai de connexió entre homes i dones. Per Mar Guerrero.',
@@ -1137,6 +1173,18 @@ const metadata = {
       title: 'History of Salsa in Barcelona: From the Caribbean and New York to Farray\'s | Farray\'s Center',
       description: 'Discover the fascinating history of salsa: from its origins in the Caribbean and New York to its arrival in Barcelona. Over 60 years of rhythm that changed the world.',
     },
+    blogHistoriaBachata: {
+      title: 'History of Bachata: From Dominican Barrios to Barcelona | Farray\'s Center',
+      description: 'Discover the history of bachata: from its humble origins in the Dominican Republic to becoming a worldwide phenomenon. Romeo Santos, sensual bachata and more.',
+    },
+    blogTutoriales: {
+      title: 'Dance Tutorials | Farray\'s Center Blog',
+      description: 'Guides and tutorials to learn dancing: techniques, basic steps and professional tips for salsa, bachata, dancehall and more styles.',
+    },
+    blogSalsaRitmo: {
+      title: 'Salsa: The Rhythm that Conquered the World | Farray\'s Center',
+      description: 'Discover the different salsa styles: Cuban, rueda de casino, line salsa and more. Complete guide to understand and dance salsa in Barcelona.',
+    },
     blogClasesSalsaBarcelona: {
       title: 'Men and Women, Shall We Speak Salsa? | Farray\'s Center Blog',
       description: 'Salsa as a universal language: reflections on the dance floor as a space of connection between men and women. By Mar Guerrero.',
@@ -1404,6 +1452,18 @@ const metadata = {
     blogHistoriaSalsa: {
       title: 'Histoire de la Salsa à Barcelone : des Caraïbes et New York à Farray\'s | Farray\'s Center',
       description: 'Découvrez la fascinante histoire de la salsa : de ses origines caribéennes et new-yorkaises jusqu\'à son arrivée à Barcelone. Plus de 60 ans de rythme qui ont changé le monde.',
+    },
+    blogHistoriaBachata: {
+      title: 'Histoire de la Bachata : Du Quartier Dominicain à Barcelone | Farray\'s Center',
+      description: 'Découvrez l\'histoire de la bachata : de ses humbles origines en République Dominicaine jusqu\'à devenir un phénomène mondial. Romeo Santos, bachata sensuelle et plus.',
+    },
+    blogTutoriales: {
+      title: 'Tutoriels de Danse | Farray\'s Center Blog',
+      description: 'Guides et tutoriels pour apprendre à danser : techniques, pas de base et conseils de professionnels pour salsa, bachata, dancehall et plus de styles.',
+    },
+    blogSalsaRitmo: {
+      title: 'Salsa : Le Rythme qui a Conquis le Monde | Farray\'s Center',
+      description: 'Découvrez les différents styles de salsa : cubaine, rueda de casino, salsa en ligne et plus. Guide complet pour comprendre et danser la salsa à Barcelone.',
     },
     blogClasesSalsaBarcelona: {
       title: 'Hommes et femmes, parlons salsa ? | Farray\'s Center Blog',
@@ -1942,6 +2002,12 @@ routes.forEach(route => {
     pagePath = 'blog/historia';
   } else if (page === 'blogHistoriaSalsa') {
     pagePath = 'blog/historia/historia-salsa-barcelona';
+  } else if (page === 'blogHistoriaBachata') {
+    pagePath = 'blog/historia/historia-bachata-barcelona';
+  } else if (page === 'blogTutoriales') {
+    pagePath = 'blog/tutoriales';
+  } else if (page === 'blogSalsaRitmo') {
+    pagePath = 'blog/tutoriales/salsa-ritmo-conquisto-mundo';
   } else if (page === 'blogClasesSalsaBarcelona') {
     pagePath = 'blog/lifestyle/clases-de-salsa-barcelona';
   } else if (page === 'blogTips') {
