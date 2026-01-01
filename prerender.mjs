@@ -2021,8 +2021,15 @@ ${preloadHintsHtml}
     fs.mkdirSync(dir, { recursive: true });
   }
 
-  // NOTE: Non-blocking CSS pattern removed - CSP hashes don't work for inline event handlers (onload)
-  // Critical CSS is already inline, so render-blocking impact is minimal
+  // Make main CSS non-blocking with preload + low priority load
+  // Critical CSS is already inline, so main CSS doesn't need to block render
+  html = html.replace(
+    /<link rel="stylesheet" crossorigin href="(\/assets\/style-[^"]+\.css)">/g,
+    (match, cssPath) => {
+      return `<link rel="preload" as="style" href="${cssPath}" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+    <noscript><link rel="stylesheet" href="${cssPath}" crossorigin></noscript>`;
+    }
+  );
 
   // Save file
   fs.writeFileSync(filePath, html);
