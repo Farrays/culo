@@ -1712,8 +1712,8 @@ const initialContent = {
     bumBum: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Bum Bum - Ejercicios de Glúteos en Barcelona</h1><p>Clases especializadas para glúteos y piernas. Tonifica, fortalece y moldea con música y energía. Primera clase gratis.</p></main>`,
     cuerpoFitPage: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Acondicionamiento Físico para Bailarines</h1><p>Mejora fuerza, flexibilidad y resistencia con el Método Farray. Entrenamiento funcional especializado.</p></main>`,
     // New non-class pages
-    profesores: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Profesores de Baile en Barcelona</h1><p>Conoce a nuestro equipo de bailarines profesionales de todo el mundo con años de experiencia. Formación CID-UNESCO.</p></main>`,
-    faq: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Preguntas Frecuentes</h1><p>Resuelve tus dudas sobre horarios, precios, niveles, inscripción y todo lo que necesitas saber.</p></main>`,
+    profesores: '',
+    faq: '',
     alquilerSalas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Alquiler de Salas de Baile</h1><p>3 espacios profesionales equipados con espejos, barras y suelo de danza. Ideal para ensayos, grabaciones y eventos.</p></main>`,
     estudioGrabacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Estudio de Grabación de Baile</h1><p>Equipamiento profesional, iluminación y sonido. Perfecto para videoclips, tutoriales y contenido para redes.</p></main>`,
     // Legal pages
@@ -1766,8 +1766,8 @@ const initialContent = {
     bumBum: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Bum Bum - Exercicis de Glutis a Barcelona</h1><p>Classes especialitzades per a glutis i cames. Tonifica, enforteix i modela amb música i energia. Primera classe gratis.</p></main>`,
     cuerpoFitPage: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Acondicionament Físic per a Ballarins</h1><p>Millora força, flexibilitat i resistència amb el Mètode Farray. Entrenament funcional especialitzat.</p></main>`,
     // New non-class pages
-    profesores: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Professors de Ball a Barcelona</h1><p>Coneix el nostre equip de ballarins professionals de tot el món amb anys d'experiència. Formació CID-UNESCO.</p></main>`,
-    faq: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Preguntes Freqüents</h1><p>Resol els teus dubtes sobre horaris, preus, nivells, inscripció i tot el que necessites saber.</p></main>`,
+    profesores: '',
+    faq: '',
     alquilerSalas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Lloguer de Sales de Ball</h1><p>3 espais professionals equipats amb miralls, barres i terra de dansa. Ideal per a assajos, gravacions i esdeveniments.</p></main>`,
     estudioGrabacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Estudi de Gravació de Ball</h1><p>Equipament professional, il·luminació i so. Perfecte per a videoclips, tutorials i contingut per a xarxes.</p></main>`,
     // Legal pages
@@ -1818,8 +1818,8 @@ const initialContent = {
     bumBum: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Bum Bum - Glute Exercises in Barcelona</h1><p>Specialized classes for glutes and legs. Tone, strengthen and sculpt with music and energy. First class free.</p></main>`,
     cuerpoFitPage: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Body Conditioning for Dancers</h1><p>Improve strength, flexibility and endurance with the Farray Method. Specialized functional training.</p></main>`,
     // New non-class pages
-    profesores: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Teachers in Barcelona</h1><p>Meet our team of professional dancers from around the world with years of experience. CID-UNESCO certified.</p></main>`,
-    faq: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Frequently Asked Questions</h1><p>Get answers about schedules, prices, levels, registration and everything you need to know.</p></main>`,
+    profesores: '',
+    faq: '',
     alquilerSalas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Studio Rental</h1><p>3 professional spaces equipped with mirrors, bars and dance flooring. Ideal for rehearsals, recordings and events.</p></main>`,
     estudioGrabacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Video Studio</h1><p>Professional equipment, lighting and sound. Perfect for music videos, tutorials and social media content.</p></main>`,
     // Legal pages
@@ -1870,8 +1870,8 @@ const initialContent = {
     bumBum: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Bum Bum - Exercices Fessiers à Barcelone</h1><p>Cours spécialisés pour fessiers et jambes. Tonifiez, renforcez et sculptez avec musique et énergie. Premier cours gratuit.</p></main>`,
     cuerpoFitPage: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Conditionnement Physique pour Danseurs</h1><p>Améliorez force, flexibilité et endurance avec la Méthode Farray. Entraînement fonctionnel spécialisé.</p></main>`,
     // New non-class pages
-    profesores: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Professeurs de Danse à Barcelone</h1><p>Rencontrez notre équipe de danseurs professionnels du monde entier avec des années d'expérience. Certifiés CID-UNESCO.</p></main>`,
-    faq: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Questions Fréquentes</h1><p>Obtenez des réponses sur les horaires, tarifs, niveaux, inscription et tout ce que vous devez savoir.</p></main>`,
+    profesores: '',
+    faq: '',
     alquilerSalas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Location de Studios de Danse</h1><p>3 espaces professionnels équipés de miroirs, barres et sol de danse. Idéal pour répétitions, enregistrements et événements.</p></main>`,
     estudioGrabacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Studio de Tournage Vidéo Danse</h1><p>Équipement professionnel, éclairage et son. Parfait pour clips, tutoriels et contenu réseaux sociaux.</p></main>`,
     // Legal pages
