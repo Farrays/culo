@@ -70,8 +70,9 @@
     <!-- Critical CSS (above the fold) -->
     <link rel="stylesheet" href="/critical.css">
 
-    <!-- Font CSS (critical @font-face already in critical.css above) -->
-    <link rel="stylesheet" href="/fonts/fonts.css">
+    <!-- Font CSS - async load (critical @font-face already in critical.css above) -->
+    <link rel="stylesheet" href="/fonts/fonts.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
 
     <!-- Main CSS: Vite injects during build -->
 
