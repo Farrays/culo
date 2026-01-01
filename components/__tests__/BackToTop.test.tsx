@@ -17,9 +17,13 @@ vi.mock('../../hooks/useI18n', () => ({
   }),
 }));
 
-// Mock debounce to execute immediately
+// Mock debounce to execute immediately with cancel method
 vi.mock('../../utils/debounce', () => ({
-  debounce: (fn: () => void) => fn,
+  debounce: (fn: () => void) => {
+    const debouncedFn = fn as (() => void) & { cancel: () => void };
+    debouncedFn.cancel = () => {};
+    return debouncedFn;
+  },
 }));
 
 describe('BackToTop', () => {

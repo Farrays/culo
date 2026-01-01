@@ -175,7 +175,6 @@ const routes = [
   { path: 'es/clases/bachata-lady-style-barcelona', lang: 'es', page: 'bachataLadyStyle' },
   { path: 'es/clases/ejercicios-gluteos-barcelona', lang: 'es', page: 'bumBum' },
   { path: 'es/clases/acondicionamiento-fisico-bailarines', lang: 'es', page: 'cuerpoFitPage' },
-  { path: 'es/clases/afro-jazz', lang: 'es', page: 'afroJazz' },
   // Missing non-class pages
   { path: 'es/profesores-baile-barcelona', lang: 'es', page: 'profesores' },
   { path: 'es/preguntas-frecuentes', lang: 'es', page: 'faq' },
@@ -240,7 +239,6 @@ const routes = [
   { path: 'ca/clases/bachata-lady-style-barcelona', lang: 'ca', page: 'bachataLadyStyle' },
   { path: 'ca/clases/ejercicios-gluteos-barcelona', lang: 'ca', page: 'bumBum' },
   { path: 'ca/clases/acondicionamiento-fisico-bailarines', lang: 'ca', page: 'cuerpoFitPage' },
-  { path: 'ca/clases/afro-jazz', lang: 'ca', page: 'afroJazz' },
   // Missing non-class pages
   { path: 'ca/profesores-baile-barcelona', lang: 'ca', page: 'profesores' },
   { path: 'ca/preguntas-frecuentes', lang: 'ca', page: 'faq' },
@@ -305,7 +303,6 @@ const routes = [
   { path: 'en/clases/bachata-lady-style-barcelona', lang: 'en', page: 'bachataLadyStyle' },
   { path: 'en/clases/ejercicios-gluteos-barcelona', lang: 'en', page: 'bumBum' },
   { path: 'en/clases/acondicionamiento-fisico-bailarines', lang: 'en', page: 'cuerpoFitPage' },
-  { path: 'en/clases/afro-jazz', lang: 'en', page: 'afroJazz' },
   // Missing non-class pages
   { path: 'en/profesores-baile-barcelona', lang: 'en', page: 'profesores' },
   { path: 'en/preguntas-frecuentes', lang: 'en', page: 'faq' },
@@ -370,7 +367,6 @@ const routes = [
   { path: 'fr/clases/bachata-lady-style-barcelona', lang: 'fr', page: 'bachataLadyStyle' },
   { path: 'fr/clases/ejercicios-gluteos-barcelona', lang: 'fr', page: 'bumBum' },
   { path: 'fr/clases/acondicionamiento-fisico-bailarines', lang: 'fr', page: 'cuerpoFitPage' },
-  { path: 'fr/clases/afro-jazz', lang: 'fr', page: 'afroJazz' },
   // Missing non-class pages
   { path: 'fr/profesores-baile-barcelona', lang: 'fr', page: 'profesores' },
   { path: 'fr/preguntas-frecuentes', lang: 'fr', page: 'faq' },
@@ -1729,7 +1725,7 @@ const initialContent = {
     salsaLadyStyleV2: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Salsa Lady Style</h1><p>Desarrolla tu feminidad, elegancia y estilo personal bailando salsa con el Método Farray®.</p></main>`,
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Página No Encontrada</h1><p>La página que buscas no existe. Vuelve a la página principal o explora nuestras clases de baile.</p></main>`,
     regalaBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Regala Baile</h1><p>Tarjetas regalo para clases de baile. El regalo perfecto para amantes de la danza. Bonos personalizados para todos los estilos.</p></main>`,
-    facilities: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Instalaciones</h1><p>Descubre nuestras instalaciones: 3 salas de baile equipadas con espejos, barras, suelo profesional y vestuarios. Ubicación céntrica en Barcelona.</p></main>`,
+    facilities: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Instalaciones</h1><p>Descubre nuestras instalaciones: 3 salas de baile equipadas con espejos, barras, suelo profesional y vestuarios. Ubicación céntrica en Barcelona.</p><section class="py-12 md:py-16 bg-primary-dark/10"><div class="container mx-auto px-6"><div class="max-w-4xl mx-auto text-center"><h2 class="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">Un espacio pensado para bailar, entrenar y compartir</h2><p class="text-xl text-neutral/90 leading-relaxed mb-6">Farray's International Dance Center es una escuela de baile en Barcelona con más de 700 m² de instalaciones diseñadas específicamente para la danza, el entrenamiento físico y la creación artística.</p></div></div></section></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.es,
   },
@@ -1787,7 +1783,7 @@ const initialContent = {
     salsaLadyStyleV2: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Salsa Lady Style</h1><p>Desenvolupa la teva feminitat, elegància i estil personal ballant salsa amb el Mètode Farray®.</p></main>`,
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Pàgina No Trobada</h1><p>La pàgina que busques no existeix. Torna a la pàgina principal o explora les nostres classes de ball.</p></main>`,
     regalaBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Regala Ball</h1><p>Targetes regal per a classes de ball. El regal perfecte per als amants de la dansa. Bonos personalitzats per a tots els estils.</p></main>`,
-    facilities: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Instal·lacions</h1><p>Descobreix les nostres instal·lacions: 3 sales de ball equipades amb miralls, barres, terra professional i vestuaris. Ubicació cèntrica a Barcelona.</p></main>`,
+    facilities: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Instal·lacions</h1><p>Descobreix les nostres instal·lacions: 3 sales de ball equipades amb miralls, barres, terra professional i vestuaris. Ubicació cèntrica a Barcelona.</p><section class="py-12 md:py-16 bg-primary-dark/10"><div class="container mx-auto px-6"><div class="max-w-4xl mx-auto text-center"><h2 class="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">Un espai pensat per ballar, entrenar i compartir</h2><p class="text-xl text-neutral/90 leading-relaxed mb-6">Farray's International Dance Center és una escola de ball a Barcelona amb més de 700 m² d'instal·lacions dissenyades específicament per a la dansa, l'entrenament físic i la creació artística.</p></div></div></section></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.ca,
   },
@@ -1843,7 +1839,7 @@ const initialContent = {
     salsaLadyStyleV2: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Salsa Lady Style Classes</h1><p>Develop your femininity, elegance and personal style dancing salsa with the Farray Method®.</p></main>`,
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Page Not Found</h1><p>The page you are looking for does not exist. Go back to the home page or explore our dance classes.</p></main>`,
     regalaBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Gift Dance</h1><p>Gift cards for dance classes. The perfect gift for dance lovers. Personalized vouchers for all styles.</p></main>`,
-    facilities: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Facilities</h1><p>Discover our facilities: 3 dance studios equipped with mirrors, bars, professional flooring and changing rooms. Central location in Barcelona.</p></main>`,
+    facilities: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Facilities</h1><p>Discover our facilities: 3 dance studios equipped with mirrors, bars, professional flooring and changing rooms. Central location in Barcelona.</p><section class="py-12 md:py-16 bg-primary-dark/10"><div class="container mx-auto px-6"><div class="max-w-4xl mx-auto text-center"><h2 class="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">A space designed for dance</h2><p class="text-xl text-neutral/90 leading-relaxed mb-6">Farray's International Dance Center is a dance school in Barcelona with over 700 m² of facilities specifically designed for dance, physical training and artistic creation.</p></div></div></section></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.en,
   },
@@ -1899,7 +1895,7 @@ const initialContent = {
     salsaLadyStyleV2: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Salsa Lady Style</h1><p>Développez votre féminité, élégance et style personnel en dansant la salsa avec la Méthode Farray®.</p></main>`,
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Page Non Trouvée</h1><p>La page que vous recherchez n'existe pas. Retournez à la page d'accueil ou explorez nos cours de danse.</p></main>`,
     regalaBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Offrez la Danse</h1><p>Cartes cadeaux pour cours de danse. Le cadeau parfait pour les amoureux de la danse. Bons personnalisés pour tous les styles.</p></main>`,
-    facilities: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Installations</h1><p>Découvrez nos installations : 3 studios de danse équipés de miroirs, barres, sol professionnel et vestiaires. Emplacement central à Barcelone.</p></main>`,
+    facilities: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Installations</h1><p>Découvrez nos installations : 3 studios de danse équipés de miroirs, barres, sol professionnel et vestiaires. Emplacement central à Barcelone.</p><section class="py-12 md:py-16 bg-primary-dark/10"><div class="container mx-auto px-6"><div class="max-w-4xl mx-auto text-center"><h2 class="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-8 holographic-text">Un espace conçu pour la danse</h2><p class="text-xl text-neutral/90 leading-relaxed mb-6">Farray's International Dance Center est une école de danse à Barcelone avec plus de 700 m² d'installations spécialement conçues pour la danse, l'entraînement physique et la création artistique.</p></div></div></section></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.fr,
   },

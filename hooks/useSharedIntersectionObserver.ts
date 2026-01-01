@@ -1,4 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+
+// Use useLayoutEffect on client, useEffect on server (to avoid SSR warnings)
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 /**
  * Callback type for intersection observer
@@ -153,7 +156,9 @@ export function useSharedIntersectionObserver<T extends HTMLElement = HTMLElemen
   const ref = useRef<T>(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
+  // Use useLayoutEffect to check visibility synchronously before paint
+  // This prevents the "flash" where content briefly appears invisible
+  useIsomorphicLayoutEffect(() => {
     const element = ref.current;
     if (!element) return;
 
