@@ -100,7 +100,7 @@ const ArticleSummaryBox: React.FC<ArticleSummaryBoxProps> = ({
                   </div>
                   <p className="text-sm text-neutral/80 leading-snug">{t(stat.labelKey)}</p>
                   {stat.source && (
-                    <p className="mt-2 text-xs text-neutral/50 italic">{stat.source}</p>
+                    <p className="mt-2 text-xs text-neutral/70 italic">{stat.source}</p>
                   )}
                 </div>
               </div>

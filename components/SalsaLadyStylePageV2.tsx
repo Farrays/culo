@@ -766,7 +766,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
                 {/* NO es para ti - Subtle card with subtle 3D */}
                 <div className="relative group [perspective:1000px]">
                   <div className="relative p-6 sm:p-8 bg-neutral/5 backdrop-blur-sm rounded-2xl border border-neutral/10 [transform-style:preserve-3d] transition-all duration-500 group-hover:[transform:rotateX(-1deg)_rotateY(-2deg)] group-hover:border-neutral/20">
-                    <h3 className="text-xl sm:text-2xl font-bold text-neutral/50 mb-6 sm:mb-8 tracking-tight">
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral/70 mb-6 sm:mb-8 tracking-tight">
                       {t('salsaLadyV2ForNoTitle')}
                     </h3>
                     <ul className="space-y-3 sm:space-y-4">
@@ -775,7 +775,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
                           <span className="flex-shrink-0 w-5 h-5 rounded-full bg-neutral/10 flex items-center justify-center mt-0.5">
                             <XIcon className="w-3 h-3 text-neutral/40" />
                           </span>
-                          <span className="text-neutral/50 text-sm sm:text-base leading-relaxed">
+                          <span className="text-neutral/70 text-sm sm:text-base leading-relaxed">
                             {t(`salsaLadyV2ForNo${num}`)}
                           </span>
                         </li>

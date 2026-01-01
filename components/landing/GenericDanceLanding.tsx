@@ -211,7 +211,7 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({
       <div className="relative z-10 w-full max-w-md bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl border border-white/20 shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 p-2 text-neutral/50 hover:text-neutral transition-colors rounded-full hover:bg-white/10 z-10"
+          className="absolute top-3 right-3 p-2 text-neutral/70 hover:text-neutral transition-colors rounded-full hover:bg-white/10 z-10"
           aria-label={t('close')}
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -250,7 +250,7 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({
 
             <button
               onClick={onClose}
-              className="block w-full py-2.5 px-6 text-neutral/50 hover:text-neutral/70 text-sm font-medium transition-colors"
+              className="block w-full py-2.5 px-6 text-neutral/70 hover:text-neutral/70 text-sm font-medium transition-colors"
             >
               {t(`${exitPrefix}ExitIntent_ctaClose`)}
             </button>
@@ -568,7 +568,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
                   {t(`${prefix}CTA`)}
                 </button>
               </div>
-              <p className="text-xs sm:text-sm text-neutral/50 mt-4 sm:mt-5">
+              <p className="text-xs sm:text-sm text-neutral/70 mt-4 sm:mt-5">
                 {t(`${prefix}TrustText`)}
               </p>
             </div>
@@ -768,7 +768,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
                     prefix={prefix}
                     theme={theme}
                   />
-                  <p className="text-neutral/50 text-xs sm:text-sm mt-3">
+                  <p className="text-neutral/70 text-xs sm:text-sm mt-3">
                     {t(`${prefix}CountdownExpires`)}
                   </p>
                 </div>
@@ -782,7 +782,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
                 >
                   {t(`${prefix}CTA`)}
                 </button>
-                <p className="text-xs sm:text-sm text-neutral/50 mt-3 sm:mt-4">
+                <p className="text-xs sm:text-sm text-neutral/70 mt-3 sm:mt-4">
                   {t(`${prefix}TrustText`)}
                 </p>
               </div>
@@ -1135,7 +1135,7 @@ const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => 
                   <span className="relative">{t(`${prefix}CTA`)}</span>
                 </button>
 
-                <p className="text-neutral/50 text-xs sm:text-sm mt-4 sm:mt-6">
+                <p className="text-neutral/70 text-xs sm:text-sm mt-4 sm:mt-6">
                   {t(`${prefix}FinalTrust`)}
                 </p>
               </div>

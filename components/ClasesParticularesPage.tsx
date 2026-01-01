@@ -516,7 +516,7 @@ const ClasesParticularesPage: React.FC = () => {
               <AnimateOnScroll>
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <div className="aspect-[4/3] bg-gradient-to-br from-primary-dark via-black to-primary-dark/50">
-                    <div className="absolute inset-0 flex items-center justify-center text-neutral/50 text-xl font-bold">
+                    <div className="absolute inset-0 flex items-center justify-center text-neutral/70 text-xl font-bold">
                       {t('particularesPage_imagePlaceholder')}
                     </div>
                   </div>

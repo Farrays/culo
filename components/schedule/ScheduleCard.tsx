@@ -113,7 +113,7 @@ export const ScheduleCard: React.FC<ScheduleCardProps> = ({
       {/* Day and time */}
       <div className="flex items-center gap-2 text-sm text-neutral/70 mb-2">
         <span className="capitalize">{t(DAYS_I18N[scheduleClass.day])}</span>
-        <span className="text-neutral/50" aria-hidden="true">
+        <span className="text-neutral/70" aria-hidden="true">
           ·
         </span>
         <span className="font-mono">{scheduleClass.time}</span>

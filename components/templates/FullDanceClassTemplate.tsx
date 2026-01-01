@@ -1777,7 +1777,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
                           <p className="text-lg sm:text-xl font-bold text-neutral/90 mb-1">
                             {t('videoComingSoon')}
                           </p>
-                          <p className="text-sm text-neutral/50">{t('videoComingSoonDesc')}</p>
+                          <p className="text-sm text-neutral/70">{t('videoComingSoonDesc')}</p>
                         </div>
                       </div>
                     </div>

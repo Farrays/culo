@@ -436,7 +436,7 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
                   disabled={status === 'submitting'}
                   aria-invalid={status === 'error' ? 'true' : 'false'}
                   aria-describedby={status === 'error' ? 'exit-intent-error' : undefined}
-                  className="w-full px-4 py-3 bg-black/50 border border-primary-accent/30 rounded-xl text-neutral placeholder:text-neutral/50 focus:outline-none focus:border-primary-accent focus:ring-2 focus:ring-primary-accent/30 transition-all motion-reduce:transition-none disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-4 py-3 bg-black/50 border border-primary-accent/30 rounded-xl text-neutral placeholder:text-neutral/70 focus:outline-none focus:border-primary-accent focus:ring-2 focus:ring-primary-accent/30 transition-all motion-reduce:transition-none disabled:opacity-50 disabled:cursor-not-allowed"
                 />
               </div>
 
@@ -466,7 +466,7 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
             </form>
 
             {/* Privacy text */}
-            <p className="text-center text-xs text-neutral/50 mt-4">
+            <p className="text-center text-xs text-neutral/70 mt-4">
               {t('exitIntent_privacy') ||
                 'Sin spam. Solo te contactaremos para activar tu descuento.'}
             </p>

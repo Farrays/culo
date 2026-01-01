@@ -97,7 +97,7 @@ export const ScheduleBlock: React.FC<ScheduleBlockProps> = ({ config, showTestim
                     &ldquo;{t(config.testimonialKey)}&rdquo;
                   </p>
                   {config.testimonialAuthorKey && (
-                    <p className="text-sm text-neutral/50">— {t(config.testimonialAuthorKey)}</p>
+                    <p className="text-sm text-neutral/70">— {t(config.testimonialAuthorKey)}</p>
                   )}
                 </div>
               </div>

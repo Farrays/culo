@@ -150,7 +150,7 @@ const WhyUsComparisonSection: React.FC<WhyUsComparisonSectionProps> = ({ styleKe
                 {t(`${styleKey}CompareCTA`)}
                 <ArrowRightIcon className="w-5 h-5 ml-2" />
               </a>
-              <p className="text-neutral/50 text-sm mt-3">{t(`${styleKey}CompareNote`)}</p>
+              <p className="text-neutral/70 text-sm mt-3">{t(`${styleKey}CompareNote`)}</p>
             </div>
           </AnimateOnScroll>
         )}

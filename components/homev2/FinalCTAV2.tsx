@@ -82,7 +82,7 @@ const FinalCTAV2: React.FC<FinalCTAV2Props> = ({ config }) => {
 
         {/* Trust line */}
         <AnimateOnScroll delay={500}>
-          <p className="mt-8 text-neutral/50 text-sm">{t(config.trustLineKey)}</p>
+          <p className="mt-8 text-neutral/70 text-sm">{t(config.trustLineKey)}</p>
         </AnimateOnScroll>
       </div>
     </section>

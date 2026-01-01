@@ -251,7 +251,7 @@ const Footer: React.FC = () => {
                 href="https://cid-world.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-neutral/50 hover:text-primary-accent transition-colors mt-2"
+                className="text-xs text-neutral/70 hover:text-primary-accent transition-colors mt-2"
               >
                 {t('sitemapCID')}
               </a>
@@ -386,7 +386,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Legal Links & Copyright */}
-          <div className="text-center text-neutral/50 text-xs mt-12 pt-8 border-t border-neutral/10">
+          <div className="text-center text-neutral/70 text-xs mt-12 pt-8 border-t border-neutral/10">
             <div className="flex flex-wrap justify-center gap-x-4 sm:gap-x-6 gap-y-2 mb-4">
               <Link
                 to={`/${locale}/aviso-legal`}

@@ -54,7 +54,7 @@ const StickyMobileCTA: React.FC = () => {
           </button>
 
           {/* Trust badges */}
-          <div className="flex items-center justify-center gap-4 mt-2 text-neutral/50 text-xs">
+          <div className="flex items-center justify-center gap-4 mt-2 text-neutral/70 text-xs">
             <span className="flex items-center gap-1">
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path

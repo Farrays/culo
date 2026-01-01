@@ -213,7 +213,7 @@ const RoomGallery: React.FC<RoomGalleryProps> = ({ images, t, isFirstRoom = fals
   if (!images || images.length === 0) {
     return (
       <div className="w-full h-full min-h-[300px] lg:min-h-[400px] bg-primary-dark/50 flex items-center justify-center">
-        <span className="text-neutral/50">No images available</span>
+        <span className="text-neutral/70">No images available</span>
       </div>
     );
   }

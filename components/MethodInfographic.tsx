@@ -88,7 +88,7 @@ const MethodInfographic: React.FC = () => {
       </div>
 
       {!activePillar && (
-        <p className="absolute bottom-4 text-neutral/50 text-sm animate-pulse">
+        <p className="absolute bottom-4 text-neutral/70 text-sm animate-pulse">
           {t('aboutMethodPillarInfo')}
         </p>
       )}

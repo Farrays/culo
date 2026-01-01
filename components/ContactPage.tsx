@@ -887,7 +887,7 @@ const ContactPage: React.FC = () => {
 
                       {/* Legal text - LOPD compliance */}
                       <div className="mt-4 pt-4 border-t border-white/10">
-                        <p className="text-[10px] leading-relaxed text-neutral/50">
+                        <p className="text-[10px] leading-relaxed text-neutral/70">
                           {t('contact_legal_text')}
                         </p>
                         <div className="flex gap-4 mt-2">

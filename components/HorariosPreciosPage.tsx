@@ -435,7 +435,7 @@ const HorariosPreciosPage: React.FC = () => {
                   <p className="text-xs text-neutral/70 mt-2 text-center">
                     {t('pricing_cta_secondary_subtext')}
                   </p>
-                  <p className="text-xs text-neutral/50 text-center">
+                  <p className="text-xs text-neutral/70 text-center">
                     {t('pricing_cta_secondary_subtitle')}
                   </p>
                 </div>
@@ -934,7 +934,7 @@ const HorariosPreciosPage: React.FC = () => {
                   <div className="text-xs sm:text-sm text-neutral/70">
                     {t('basedOnReviews').replace('{count}', '505')}
                   </div>
-                  <div className="mt-2 text-xs text-neutral/50">Google</div>
+                  <div className="mt-2 text-xs text-neutral/70">Google</div>
                 </div>
               </div>
             </AnimateOnScroll>
@@ -1074,7 +1074,7 @@ const HorariosPreciosPage: React.FC = () => {
                     <p className="text-xs text-neutral/70 mt-2 text-center">
                       {t('pricing_cta_secondary_subtext')}
                     </p>
-                    <p className="text-xs text-neutral/50 text-center">
+                    <p className="text-xs text-neutral/70 text-center">
                       {t('pricing_cta_secondary_subtitle')}
                     </p>
                   </div>

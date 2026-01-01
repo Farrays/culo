@@ -138,7 +138,7 @@ const ComparisonSection: React.FC<ComparisonSectionProps> = ({ config }) => {
                           {IconComponent && <IconComponent className="w-5 h-5 text-red-400/70" />}
                         </div>
                         <div>
-                          <p className="text-neutral/50 text-sm mb-1">{t(row.labelKey)}</p>
+                          <p className="text-neutral/70 text-sm mb-1">{t(row.labelKey)}</p>
                           <p className="text-neutral/70">{t(row.othersKey)}</p>
                         </div>
                       </li>
@@ -186,7 +186,7 @@ const ComparisonSection: React.FC<ComparisonSectionProps> = ({ config }) => {
                           )}
                         </div>
                         <div>
-                          <p className="text-neutral/50 text-sm mb-1">{t(row.labelKey)}</p>
+                          <p className="text-neutral/70 text-sm mb-1">{t(row.labelKey)}</p>
                           <p className="text-neutral font-medium">{t(row.usKey)}</p>
                         </div>
                       </li>
@@ -214,7 +214,7 @@ const ComparisonSection: React.FC<ComparisonSectionProps> = ({ config }) => {
             >
               {t(config.ctaTextKey)}
             </Link>
-            <p className="mt-4 text-neutral/50 text-sm">{t(config.ctaSubtextKey)}</p>
+            <p className="mt-4 text-neutral/70 text-sm">{t(config.ctaSubtextKey)}</p>
           </div>
         </AnimateOnScroll>
       </div>

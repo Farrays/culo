@@ -188,7 +188,7 @@ const MetodoFarrayPage: React.FC = () => {
           {/* Scroll indicator */}
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-subtle-bob">
             <svg
-              className="w-6 h-6 text-neutral/50"
+              className="w-6 h-6 text-neutral/70"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"

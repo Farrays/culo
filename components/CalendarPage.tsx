@@ -457,7 +457,7 @@ const CalendarPage: React.FC = () => {
               <AnimateOnScroll>
                 <div className="text-center py-16">
                   <span className="text-6xl mb-4 block">📅</span>
-                  <p className="text-neutral/50 text-lg">{t('calendar_no_events')}</p>
+                  <p className="text-neutral/70 text-lg">{t('calendar_no_events')}</p>
                 </div>
               </AnimateOnScroll>
             ) : (

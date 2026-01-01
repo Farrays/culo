@@ -1221,7 +1221,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
                 <div className="relative group [perspective:1000px]">
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-md bg-neutral/15"></div>
                   <div className="relative p-6 sm:p-8 bg-neutral/5 backdrop-blur-sm rounded-2xl border border-neutral/10 [transform-style:preserve-3d] transition-all duration-500 group-hover:[transform:translateY(-0.75rem)_rotateX(2deg)_rotateY(-5deg)] group-hover:border-neutral/30 group-hover:shadow-lg">
-                    <h3 className="text-xl sm:text-2xl font-bold text-neutral/50 mb-6 sm:mb-8 tracking-tight">
+                    <h3 className="text-xl sm:text-2xl font-bold text-neutral/70 mb-6 sm:mb-8 tracking-tight">
                       {t(config.forWho.noTitle)}
                     </h3>
                     <ul className="space-y-3 sm:space-y-4">
@@ -1242,7 +1242,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
                               />
                             </svg>
                           </span>
-                          <span className="text-neutral/50 text-sm sm:text-base leading-relaxed">
+                          <span className="text-neutral/70 text-sm sm:text-base leading-relaxed">
                             {t(`${config.forWho.noPrefixKey}${num}`)}
                           </span>
                         </li>
@@ -1473,7 +1473,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
                       <p className="text-lg sm:text-xl font-bold text-neutral/90 mb-1">
                         {t('videoComingSoon')}
                       </p>
-                      <p className="text-sm text-neutral/50">{t('videoComingSoonDesc')}</p>
+                      <p className="text-sm text-neutral/70">{t('videoComingSoonDesc')}</p>
                     </div>
                   </div>
                 </div>
@@ -1503,7 +1503,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
                   <div className="text-xs sm:text-sm text-neutral/70">
                     {t('basedOnReviews').replace('{count}', '505')}
                   </div>
-                  <div className="mt-2 text-xs text-neutral/50">Google</div>
+                  <div className="mt-2 text-xs text-neutral/70">Google</div>
                 </div>
               </div>
             </AnimateOnScroll>

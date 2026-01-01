@@ -387,7 +387,7 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
               <button
                 onClick={handleClose}
                 disabled={status === 'loading'}
-                className="p-2 text-neutral/50 hover:text-neutral transition-colors rounded-full hover:bg-white/5 disabled:opacity-50 flex-shrink-0"
+                className="p-2 text-neutral/70 hover:text-neutral transition-colors rounded-full hover:bg-white/5 disabled:opacity-50 flex-shrink-0"
                 aria-label={t('close')}
               >
                 <XMarkIcon className="w-5 h-5" />
@@ -470,7 +470,7 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
                   </div>
                 )}
 
-                <p className="text-xs text-neutral/50 mb-4">
+                <p className="text-xs text-neutral/70 mb-4">
                   {t(`${modalPrefix}_success_spam_note`)}
                 </p>
 

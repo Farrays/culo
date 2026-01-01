@@ -81,7 +81,7 @@ const IrresistibleOfferSection: React.FC = () => {
                           </div>
                           <div className="flex-1">
                             <span className="text-neutral text-lg">{t(benefit.textKey)}</span>
-                            <span className="ml-2 text-neutral/50 line-through text-sm">
+                            <span className="ml-2 text-neutral/70 line-through text-sm">
                               {t(benefit.valueKey)}
                             </span>
                           </div>
@@ -111,7 +111,7 @@ const IrresistibleOfferSection: React.FC = () => {
                       </button>
 
                       {/* Risk reversal */}
-                      <div className="flex flex-wrap items-center justify-center gap-4 mt-6 text-neutral/50 text-sm">
+                      <div className="flex flex-wrap items-center justify-center gap-4 mt-6 text-neutral/70 text-sm">
                         <span className="flex items-center gap-2">
                           <svg
                             className="w-4 h-4"

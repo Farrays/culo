@@ -1294,7 +1294,7 @@ const SalsaCubanaPage: React.FC = () => {
                   <div className="text-xs sm:text-sm text-neutral/70">
                     {t('basedOnReviews').replace('{count}', '505')}
                   </div>
-                  <div className="mt-2 text-xs text-neutral/50">Google</div>
+                  <div className="mt-2 text-xs text-neutral/70">Google</div>
                 </div>
               </div>
             </AnimateOnScroll>

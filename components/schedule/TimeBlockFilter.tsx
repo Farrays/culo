@@ -136,7 +136,7 @@ export const TimeBlockFilter: React.FC<TimeBlockFilterProps> = ({
 
         {/* Step 1: Time of day */}
         <div className="mb-10">
-          <p className="text-sm text-neutral/50 mb-5 text-center font-medium uppercase tracking-wider">
+          <p className="text-sm text-neutral/70 mb-5 text-center font-medium uppercase tracking-wider">
             {t('horariosV2_filter_step1')}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -166,7 +166,7 @@ export const TimeBlockFilter: React.FC<TimeBlockFilterProps> = ({
                         <block.Icon className="w-7 h-7" />
                       </div>
                       <span className="font-bold text-lg">{t(block.i18nKey)}</span>
-                      <span className="text-xs text-neutral/50 font-medium">{block.timeRange}</span>
+                      <span className="text-xs text-neutral/70 font-medium">{block.timeRange}</span>
                     </button>
                   </div>
                 </AnimateOnScroll>
@@ -186,7 +186,7 @@ export const TimeBlockFilter: React.FC<TimeBlockFilterProps> = ({
 
         {/* Step 2: Style category */}
         <div>
-          <p className="text-sm text-neutral/50 mb-5 text-center font-medium uppercase tracking-wider">
+          <p className="text-sm text-neutral/70 mb-5 text-center font-medium uppercase tracking-wider">
             {t('horariosV2_filter_step2')}
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -216,7 +216,7 @@ export const TimeBlockFilter: React.FC<TimeBlockFilterProps> = ({
                         <category.Icon className="w-6 h-6" />
                       </div>
                       <span className="font-semibold">{t(category.i18nKey)}</span>
-                      <span className="text-xs text-neutral/50 text-center leading-tight">
+                      <span className="text-xs text-neutral/70 text-center leading-tight">
                         {category.styles.join(' · ')}
                       </span>
                     </button>
