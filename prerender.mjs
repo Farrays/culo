@@ -1610,86 +1610,14 @@ const initialContent = {
         </p>
       </main>
     `,
-    salsaBachata: `
-      <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12">
-        <h1 class="text-4xl sm:text-5xl font-bold text-neutral mb-8 text-center holographic-text">
-          Clases de Salsa y Bachata en Barcelona
-        </h1>
-        <p class="text-lg text-neutral/80 max-w-3xl mx-auto mb-12 text-center">
-          Descubre la pasión, el ritmo y la conexión del baile latino. Salsa Cubana, Bachata Sensual y Dominicana, Timba, Son Cubano y más. Profesores formados en La Habana.
-        </p>
-      </main>
-    `,
-    salsaCubana: `
-      <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12">
-        <h1 class="text-4xl sm:text-5xl font-bold text-neutral mb-8 text-center holographic-text">
-          Clases de Salsa Cubana en Barcelona
-        </h1>
-        <p class="text-lg text-neutral/80 max-w-3xl mx-auto mb-12 text-center">
-          Aprende Salsa Cubana auténtica con maestros cubanos. Casino, Rueda de Casino y Son Cubano. Técnica de La Habana con el Método Farray®.
-        </p>
-      </main>
-    `,
-    salsaLadyStyle: `
-      <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12">
-        <h1 class="text-4xl sm:text-5xl font-bold text-neutral mb-8 text-center holographic-text">
-          Clases de Salsa Lady Style en Barcelona
-        </h1>
-        <p class="text-lg text-neutral/80 max-w-3xl mx-auto mb-12 text-center">
-          Desarrolla tu feminidad, elegancia y estilo personal bailando salsa. Clases con Yunaisy Farray y el Método Farray® reconocido por CID-UNESCO.
-        </p>
-      </main>
-    `,
-    folkloreCubano: `
-      <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12">
-        <h1 class="text-4xl sm:text-5xl font-bold text-neutral mb-8 text-center holographic-text">
-          Clases de Folklore Cubano en Barcelona
-        </h1>
-        <p class="text-lg text-neutral/80 max-w-3xl mx-auto mb-12 text-center">
-          Aprende las danzas afrocubanas a los Orishas: Eleguá, Yemayá, Changó, Ochún. Raíces yoruba, congo y arará con maestros cubanos especializados.
-        </p>
-      </main>
-    `,
-    timba: `
-      <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12">
-        <h1 class="text-4xl sm:text-5xl font-bold text-neutral mb-8 text-center holographic-text">
-          Clases de Timba en Barcelona
-        </h1>
-        <p class="text-lg text-neutral/80 max-w-3xl mx-auto mb-12 text-center">
-          Lady Timba y Timba en Pareja con maestros cubanos. Despelote, improvisación, interpretación musical y sabor cubano auténtico.
-        </p>
-      </main>
-    `,
-    danzasUrbanas: `
-      <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12">
-        <h1 class="text-4xl sm:text-5xl font-bold text-neutral mb-8 text-center holographic-text">
-          Clases de Danzas Urbanas en Barcelona
-        </h1>
-        <p class="text-lg text-neutral/80 max-w-3xl mx-auto mb-12 text-center">
-          Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat y más. Aprende con profesores formados en Kingston, Seúl, Nueva York y La Habana.
-        </p>
-      </main>
-    `,
-    dancehall: `
-      <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12">
-        <h1 class="text-4xl sm:text-5xl font-bold text-neutral mb-8 text-center holographic-text">
-          Clases de Dancehall en Barcelona
-        </h1>
-        <p class="text-lg text-neutral/80 max-w-3xl mx-auto mb-12 text-center">
-          Descubre el auténtico Dancehall de Jamaica en Barcelona. Energía, cultura y ritmo en cada clase.
-        </p>
-      </main>
-    `,
-    clasesParticulares: `
-      <main id="main-content" class="relative z-0 pt-20 pb-32 px-6 sm:px-12">
-        <h1 class="text-4xl sm:text-5xl font-bold text-neutral mb-8 text-center holographic-text">
-          Clases Particulares de Baile en Barcelona
-        </h1>
-        <p class="text-lg text-neutral/80 max-w-3xl mx-auto mb-12 text-center">
-          Aprende a tu ritmo con un profesor dedicado 100% a ti. Horarios flexibles, todos los estilos de baile, progreso 3x más rápido. Tu danza, tus reglas.
-        </p>
-      </main>
-    `,
+    salsaBachata: '',
+    salsaCubana: '',
+    salsaLadyStyle: '',
+    folkloreCubano: '',
+    timba: '',
+    danzasUrbanas: '',
+    dancehall: '',
+    clasesParticulares: '',
     blog: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Blog de Baile</h1><p>Consejos, tutoriales e historia del baile. Asesoramiento experto para mejorar tu técnica y disfrutar cada paso.</p></main>`,
     blogLifestyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Lifestyle y Baile</h1><p>Descubre cómo el baile transforma tu vida. Artículos sobre bienestar, felicidad y estilo de vida.</p></main>`,
     blogBeneficiosSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">10 Beneficios de Bailar Salsa que Cambiarán Tu Vida</h1><p>Descubre los 10 beneficios científicamente probados de bailar salsa: quema 400 cal/hora, mejora la salud cardiovascular, reduce el estrés y aumenta la autoestima.</p></article></main>`,
@@ -1698,24 +1626,24 @@ const initialContent = {
     blogClasesSalsaBarcelona: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Hombres y mujeres, ¿hablamos salsa?</h1><p>La salsa como lenguaje universal: reflexiones sobre la pista de baile como espacio de conexión entre hombres y mujeres. Por Mar Guerrero.</p></article></main>`,
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Consejos para Bailar</h1><p>Guías prácticas y consejos para principiantes y bailarines de todos los niveles en Barcelona.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Clases de baile para principiantes en Barcelona: la guía definitiva</h1><p>Guía completa para empezar a bailar desde cero en Barcelona. Clase de bienvenida gratuita (promocional) o desde 10€. Participación puntual desde 20€.</p></article></main>`,
-    baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Baile por las Mañanas en Barcelona</h1><p>13 clases semanales de 10h a 13h: Contemporáneo, Ballet, Modern Jazz, Sexy Style, Reggaeton y más. La actividad matinal que necesitabas para empezar el día con energía.</p></main>`,
-    classesHub: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Todas las Clases de Baile en Barcelona</h1><p>Descubre más de 40 estilos de baile: Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat, Ballet, Contemporáneo y más. Primera clase gratis.</p></main>`,
-    horariosPrecio: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Horarios y Precios</h1><p>Consulta nuestros horarios de clases y precios. Bonos mensuales, clases sueltas y packs especiales. Escuela cerca de Plaza España.</p></main>`,
+    baileManananas: '',
+    classesHub: '',
+    horariosPrecio: '',
     // New class pages
-    afroContemporaneo: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Afro Contemporáneo en Barcelona</h1><p>Fusión de danza africana tradicional con técnica contemporánea. Expresión corporal, ritmo y movimiento. Academia CID-UNESCO.</p></main>`,
-    afroJazz: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Afro Jazz en Barcelona</h1><p>Combina ritmos africanos con técnica de jazz moderno. Expresión corporal, musicalidad y energía. Todos los niveles.</p></main>`,
-    contemporaneo: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Danza Contemporánea en Barcelona</h1><p>Desarrolla técnica, expresión corporal y creatividad. Academia reconocida por CID-UNESCO.</p></main>`,
-    stretching: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Stretching para Bailarines</h1><p>Mejora tu flexibilidad, movilidad y previene lesiones. Complemento perfecto para cualquier estilo de baile.</p></main>`,
-    hipHop: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Hip Hop en Barcelona</h1><p>Aprende con profesores expertos. Old School, New Style, House y más. Primera clase gratis.</p></main>`,
-    entrenamientoBailarines: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Entrenamiento para Bailarines</h1><p>Mejora tu técnica, fuerza, resistencia y flexibilidad. Programa diseñado por profesionales de la danza.</p></main>`,
-    bachataLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Bachata Lady Style</h1><p>Desarrolla tu feminidad, elegancia y estilo personal bailando bachata. Movimientos sensuales y expresivos.</p></main>`,
-    bumBum: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Bum Bum - Ejercicios de Glúteos en Barcelona</h1><p>Clases especializadas para glúteos y piernas. Tonifica, fortalece y moldea con música y energía. Primera clase gratis.</p></main>`,
-    cuerpoFitPage: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Acondicionamiento Físico para Bailarines</h1><p>Mejora fuerza, flexibilidad y resistencia con el Método Farray. Entrenamiento funcional especializado.</p></main>`,
+    afroContemporaneo: '',
+    afroJazz: '',
+    contemporaneo: '',
+    stretching: '',
+    hipHop: '',
+    entrenamientoBailarines: '',
+    bachataLadyStyle: '',
+    bumBum: '',
+    cuerpoFitPage: '',
     // New non-class pages
     profesores: '',
     faq: '',
-    alquilerSalas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Alquiler de Salas de Baile</h1><p>3 espacios profesionales equipados con espejos, barras y suelo de danza. Ideal para ensayos, grabaciones y eventos.</p></main>`,
-    estudioGrabacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Estudio de Grabación de Baile</h1><p>Equipamiento profesional, iluminación y sonido. Perfecto para videoclips, tutoriales y contenido para redes.</p></main>`,
+    alquilerSalas: '',
+    estudioGrabacion: '',
     // Legal pages
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Términos y Condiciones</h1><p>Información legal sobre inscripciones, pagos y políticas de Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Aviso Legal</h1><p>Información sobre la empresa, propiedad intelectual y condiciones de uso.</p></main>`,
@@ -1724,7 +1652,7 @@ const initialContent = {
     // Additional pages
     serviciosBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Servicios de Baile</h1><p>Clases particulares, coreografías para eventos, shows y espectáculos profesionales.</p></main>`,
     calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Calendario de Eventos</h1><p>Workshops, masterclasses y actividades especiales en Farray's Center Barcelona.</p></main>`,
-    salsaLadyStyleV2: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Salsa Lady Style</h1><p>Desarrolla tu feminidad, elegancia y estilo personal bailando salsa con el Método Farray®.</p></main>`,
+    salsaLadyStyleV2: '',
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Página No Encontrada</h1><p>La página que buscas no existe. Vuelve a la página principal o explora nuestras clases de baile.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.es,
@@ -1736,14 +1664,14 @@ const initialContent = {
     about: '',
     classes: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Les nostres Classes</h1><p>Classes de Dancehall i ball urbà per a tots els nivells.</p></main>`,
     danza: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Dansa a Barcelona</h1><p>Explora la tècnica, elegància i expressió de la dansa clàssica i contemporània. Ballet Clàssic Cubà, Dansa Contemporània, Modern Jazz i més. Acadèmia reconeguda per CID-UNESCO.</p></main>`,
-    salsaBachata: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Salsa i Bachata a Barcelona</h1><p>Descobreix la passió, el ritme i la connexió del ball llatí. Salsa Cubana, Bachata Sensual i Dominicana, Timba, Son Cubà i més. Professors formats a L'Havana.</p></main>`,
-    salsaCubana: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Salsa Cubana a Barcelona</h1><p>Aprèn Salsa Cubana autèntica amb mestres cubans. Casino, Rueda de Casino i Son Cubà. Tècnica de L'Havana amb el Mètode Farray®.</p></main>`,
-    salsaLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Salsa Lady Style a Barcelona</h1><p>Desenvolupa la teva feminitat, elegància i estil personal ballant salsa. Classes amb Yunaisy Farray i el Mètode Farray® reconegut per CID-UNESCO.</p></main>`,
-    folkloreCubano: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Folklore Cubà a Barcelona</h1><p>Aprèn les danses afrocubanes als Orixàs: Eleguá, Yemayá, Changó, Ochún. Arrels yoruba, congo i arará amb mestres cubans especialitzats.</p></main>`,
-    timba: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Timba a Barcelona</h1><p>Lady Timba i Timba en Parella amb mestres cubans. Despelote, improvisació, interpretació musical i sabor cubà autèntic.</p></main>`,
-    danzasUrbanas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Danses Urbanes a Barcelona</h1><p>Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat i més. Aprèn amb professors formats a Kingston, Seül, Nova York i L'Havana.</p></main>`,
-    dancehall: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Dancehall a Barcelona</h1><p>Descobreix l'autèntic Dancehall de Jamaica a Barcelona. Energia, cultura i ritme a cada classe.</p></main>`,
-    clasesParticulares: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes Particulars de Ball a Barcelona</h1><p>Aprèn al teu ritme amb un professor dedicat 100% a tu. Horaris flexibles, tots els estils de ball, progrés 3x més ràpid. La teva dansa, les teves regles.</p></main>`,
+    salsaBachata: '',
+    salsaCubana: '',
+    salsaLadyStyle: '',
+    folkloreCubano: '',
+    timba: '',
+    danzasUrbanas: '',
+    dancehall: '',
+    clasesParticulares: '',
     blog: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Blog de Ball</h1><p>Consells, tutorials i història del ball. Assessorament expert per millorar la teva tècnica i gaudir cada pas.</p></main>`,
     blogLifestyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Lifestyle i Ball</h1><p>Descobreix com el ball transforma la teva vida. Articles sobre benestar, felicitat i estil de vida.</p></main>`,
     blogBeneficiosSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">10 Beneficis de Ballar Salsa que Canviaran la Teva Vida</h1><p>Descobreix els 10 beneficis científicament demostrats de ballar salsa: crema 400 cal/hora, millora la salut cardiovascular, redueix l'estrès i augmenta l'autoestima.</p></article></main>`,
@@ -1752,24 +1680,24 @@ const initialContent = {
     blogClasesSalsaBarcelona: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Homes i dones, parlem salsa?</h1><p>La salsa com a llenguatge universal: reflexions sobre la pista de ball com a espai de connexió entre homes i dones. Per Mar Guerrero.</p></article></main>`,
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Consells per Ballar</h1><p>Guies pràctiques i consells per a principiants i balladors de tots els nivells a Barcelona.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Classes de ball per a principiants a Barcelona: la guia definitiva</h1><p>Guia completa per començar a ballar des de zero a Barcelona. Classe de benvinguda gratuïta (promocional) o des de 10€. Participació puntual des de 20€.</p></article></main>`,
-    baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Ball pel Matí a Barcelona</h1><p>13 classes setmanals de 10h a 13h: Contemporani, Ballet, Modern Jazz, Sexy Style, Reggaeton i més. L'activitat matinal que necessitaves per començar el dia amb energia.</p></main>`,
-    classesHub: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Totes les Classes de Ball a Barcelona</h1><p>Descobreix més de 40 estils de ball: Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat, Ballet, Contemporani i més. Primera classe gratis.</p></main>`,
-    horariosPrecio: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Horaris i Preus</h1><p>Consulta els nostres horaris de classes i preus. Bonos mensuals, classes soltes i packs especials. Escola a prop de Plaça Espanya.</p></main>`,
+    baileManananas: '',
+    classesHub: '',
+    horariosPrecio: '',
     // New class pages
-    afroContemporaneo: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes d'Afro Contemporani a Barcelona</h1><p>Fusió de dansa africana tradicional amb tècnica contemporània. Expressió corporal, ritme i moviment. Acadèmia CID-UNESCO.</p></main>`,
-    afroJazz: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes d'Afro Jazz a Barcelona</h1><p>Combina ritmes africans amb tècnica de jazz modern. Expressió corporal, musicalitat i energia. Tots els nivells.</p></main>`,
-    contemporaneo: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Dansa Contemporània a Barcelona</h1><p>Desenvolupa tècnica, expressió corporal i creativitat. Acadèmia reconeguda per CID-UNESCO.</p></main>`,
-    stretching: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes d'Stretching per a Ballarins</h1><p>Millora la teva flexibilitat, mobilitat i preveu lesions. Complement perfecte per a qualsevol estil de ball.</p></main>`,
-    hipHop: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Hip Hop a Barcelona</h1><p>Aprèn amb professors experts. Old School, New Style, House i més. Primera classe gratis.</p></main>`,
-    entrenamientoBailarines: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Entrenament per a Ballarins</h1><p>Millora la teva tècnica, força, resistència i flexibilitat. Programa dissenyat per professionals de la dansa.</p></main>`,
-    bachataLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Bachata Lady Style</h1><p>Desenvolupa la teva feminitat, elegància i estil personal ballant bachata. Moviments sensuals i expressius.</p></main>`,
-    bumBum: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Bum Bum - Exercicis de Glutis a Barcelona</h1><p>Classes especialitzades per a glutis i cames. Tonifica, enforteix i modela amb música i energia. Primera classe gratis.</p></main>`,
-    cuerpoFitPage: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Acondicionament Físic per a Ballarins</h1><p>Millora força, flexibilitat i resistència amb el Mètode Farray. Entrenament funcional especialitzat.</p></main>`,
+    afroContemporaneo: '',
+    afroJazz: '',
+    contemporaneo: '',
+    stretching: '',
+    hipHop: '',
+    entrenamientoBailarines: '',
+    bachataLadyStyle: '',
+    bumBum: '',
+    cuerpoFitPage: '',
     // New non-class pages
     profesores: '',
     faq: '',
-    alquilerSalas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Lloguer de Sales de Ball</h1><p>3 espais professionals equipats amb miralls, barres i terra de dansa. Ideal per a assajos, gravacions i esdeveniments.</p></main>`,
-    estudioGrabacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Estudi de Gravació de Ball</h1><p>Equipament professional, il·luminació i so. Perfecte per a videoclips, tutorials i contingut per a xarxes.</p></main>`,
+    alquilerSalas: '',
+    estudioGrabacion: '',
     // Legal pages
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Termes i Condicions</h1><p>Informació legal sobre inscripcions, pagaments i polítiques de Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Avís Legal</h1><p>Informació sobre l'empresa, propietat intel·lectual i condicions d'ús.</p></main>`,
@@ -1778,7 +1706,7 @@ const initialContent = {
     // Additional pages
     serviciosBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Serveis de Ball</h1><p>Classes particulars, coreografies per a esdeveniments, shows i espectacles professionals.</p></main>`,
     calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Calendari d'Esdeveniments</h1><p>Workshops, masterclasses i activitats especials a Farray's Center Barcelona.</p></main>`,
-    salsaLadyStyleV2: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Salsa Lady Style</h1><p>Desenvolupa la teva feminitat, elegància i estil personal ballant salsa amb el Mètode Farray®.</p></main>`,
+    salsaLadyStyleV2: '',
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Pàgina No Trobada</h1><p>La pàgina que busques no existeix. Torna a la pàgina principal o explora les nostres classes de ball.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.ca,
@@ -1786,16 +1714,16 @@ const initialContent = {
   en: {
     home: '',
     about: '',
-    classes: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Our Classes</h1><p>Dancehall and urban dance classes for all levels.</p></main>`,
-    danza: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Classes in Barcelona</h1><p>Explore the technique, elegance and expression of classical and contemporary dance. Cuban Classical Ballet, Contemporary Dance, Modern Jazz and more. CID-UNESCO accredited academy.</p></main>`,
-    salsaBachata: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Salsa and Bachata Classes in Barcelona</h1><p>Discover the passion, rhythm and connection of Latin dance. Cuban Salsa, Sensual and Dominican Bachata, Timba, Son and more. Teachers trained in Havana.</p></main>`,
-    salsaCubana: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cuban Salsa Classes in Barcelona</h1><p>Learn authentic Cuban Salsa with Cuban masters. Casino, Rueda de Casino and Son Cubano. Havana technique with the Farray Method®.</p></main>`,
-    salsaLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Salsa Lady Style Classes in Barcelona</h1><p>Develop your femininity, elegance and personal style dancing salsa. Classes with Yunaisy Farray and the Farray Method® recognized by CID-UNESCO.</p></main>`,
-    folkloreCubano: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cuban Folklore Classes in Barcelona</h1><p>Learn Afro-Cuban dances to the Orishas: Eleguá, Yemayá, Changó, Ochún. Yoruba, Congo and Arará roots with specialized Cuban masters.</p></main>`,
-    timba: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Timba Classes in Barcelona</h1><p>Lady Timba and Partner Timba with Cuban masters. Despelote, improvisation, musical interpretation and authentic Cuban flavor.</p></main>`,
-    danzasUrbanas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Urban Dance Classes in Barcelona</h1><p>Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat and more. Learn with teachers trained in Kingston, Seoul, New York and Havana.</p></main>`,
-    dancehall: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dancehall Classes in Barcelona</h1><p>Discover authentic Dancehall from Jamaica in Barcelona. Energy, culture and rhythm in every class.</p></main>`,
-    clasesParticulares: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Private Dance Classes in Barcelona</h1><p>Learn at your pace with a teacher 100% dedicated to you. Flexible schedules, all dance styles, 3x faster progress. Your dance, your rules.</p></main>`,
+    classes: '',
+    danza: '',
+    salsaBachata: '',
+    salsaCubana: '',
+    salsaLadyStyle: '',
+    folkloreCubano: '',
+    timba: '',
+    danzasUrbanas: '',
+    dancehall: '',
+    clasesParticulares: '',
     blog: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Blog</h1><p>Tips, tutorials and dance history. Expert advice to improve your technique and enjoy every step.</p></main>`,
     blogLifestyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Lifestyle & Dance</h1><p>Discover how dance transforms your life. Articles about wellbeing, happiness and lifestyle.</p></main>`,
     blogBeneficiosSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">10 Benefits of Dancing Salsa That Will Change Your Life</h1><p>Discover the 10 scientifically proven benefits of dancing salsa: burn 400 cal/hour, improve cardiovascular health, reduce stress and boost self-esteem.</p></article></main>`,
@@ -1804,24 +1732,24 @@ const initialContent = {
     blogClasesSalsaBarcelona: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Men and Women, Shall We Speak Salsa?</h1><p>Salsa as a universal language: reflections on the dance floor as a space of connection between men and women. By Mar Guerrero.</p></article></main>`,
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Tips</h1><p>Practical guides and tips for beginners and dancers of all levels in Barcelona.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Beginner Dance Classes in Barcelona: The Complete Guide</h1><p>Complete guide to start dancing from scratch in Barcelona. Free welcome class (promotional) or from €10. One-time participation from €20.</p></article></main>`,
-    baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Morning Dance Classes in Barcelona</h1><p>13 weekly classes from 10am to 1pm: Contemporary, Ballet, Modern Jazz, Sexy Style, Reggaeton and more. The morning activity you needed to start the day with energy.</p></main>`,
-    classesHub: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">All Dance Classes in Barcelona</h1><p>Discover over 40 dance styles: Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat, Ballet, Contemporary and more. First class free.</p></main>`,
-    horariosPrecio: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Schedule & Prices</h1><p>Check our class schedules and prices. Monthly passes, single classes and special packs. School near Plaza España.</p></main>`,
+    baileManananas: '',
+    classesHub: '',
+    horariosPrecio: '',
     // New class pages
-    afroContemporaneo: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Afro Contemporary Classes in Barcelona</h1><p>Fusion of traditional African dance with contemporary technique. Body expression, rhythm and movement. CID-UNESCO Academy.</p></main>`,
-    afroJazz: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Afro Jazz Classes in Barcelona</h1><p>Combining African rhythms with modern jazz technique. Body expression, musicality and energy. All levels.</p></main>`,
-    contemporaneo: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Contemporary Dance Classes in Barcelona</h1><p>Develop technique, body expression and creativity. CID-UNESCO accredited academy.</p></main>`,
-    stretching: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Stretching Classes for Dancers</h1><p>Improve your flexibility, mobility and prevent injuries. Perfect complement for any dance style.</p></main>`,
-    hipHop: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Hip Hop Classes in Barcelona</h1><p>Learn with expert teachers. Old School, New Style, House and more. First class free.</p></main>`,
-    entrenamientoBailarines: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Training for Dancers</h1><p>Improve your technique, strength, endurance and flexibility. Program designed by dance professionals.</p></main>`,
-    bachataLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Bachata Lady Style Classes</h1><p>Develop your femininity, elegance and personal style dancing bachata. Sensual and expressive movements.</p></main>`,
-    bumBum: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Bum Bum - Glute Exercises in Barcelona</h1><p>Specialized classes for glutes and legs. Tone, strengthen and sculpt with music and energy. First class free.</p></main>`,
-    cuerpoFitPage: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Body Conditioning for Dancers</h1><p>Improve strength, flexibility and endurance with the Farray Method. Specialized functional training.</p></main>`,
+    afroContemporaneo: '',
+    afroJazz: '',
+    contemporaneo: '',
+    stretching: '',
+    hipHop: '',
+    entrenamientoBailarines: '',
+    bachataLadyStyle: '',
+    bumBum: '',
+    cuerpoFitPage: '',
     // New non-class pages
     profesores: '',
     faq: '',
-    alquilerSalas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Studio Rental</h1><p>3 professional spaces equipped with mirrors, bars and dance flooring. Ideal for rehearsals, recordings and events.</p></main>`,
-    estudioGrabacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Video Studio</h1><p>Professional equipment, lighting and sound. Perfect for music videos, tutorials and social media content.</p></main>`,
+    alquilerSalas: '',
+    estudioGrabacion: '',
     // Legal pages
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Terms and Conditions</h1><p>Legal information about registration, payments and policies at Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Legal Notice</h1><p>Information about the company, intellectual property and terms of use.</p></main>`,
@@ -1830,7 +1758,7 @@ const initialContent = {
     // Additional pages
     serviciosBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Services</h1><p>Private lessons, event choreography, professional shows and performances.</p></main>`,
     calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Events Calendar</h1><p>Workshops, masterclasses and special activities at Farray's Center Barcelona.</p></main>`,
-    salsaLadyStyleV2: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Salsa Lady Style Classes</h1><p>Develop your femininity, elegance and personal style dancing salsa with the Farray Method®.</p></main>`,
+    salsaLadyStyleV2: '',
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Page Not Found</h1><p>The page you are looking for does not exist. Go back to the home page or explore our dance classes.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.en,
@@ -1838,16 +1766,16 @@ const initialContent = {
   fr: {
     home: '',
     about: '',
-    classes: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Nos Cours</h1><p>Cours de Dancehall et danse urbaine pour tous les niveaux.</p></main>`,
-    danza: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Danse à Barcelone</h1><p>Explorez la technique, l'élégance et l'expression de la danse classique et contemporaine. Ballet Classique Cubain, Danse Contemporaine, Modern Jazz et plus. Académie accréditée par CID-UNESCO.</p></main>`,
-    salsaBachata: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Salsa et Bachata à Barcelone</h1><p>Découvrez la passion, le rythme et la connexion de la danse latine. Salsa Cubaine, Bachata Sensuelle et Dominicaine, Timba, Son et plus. Professeurs formés à La Havane.</p></main>`,
-    salsaCubana: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Salsa Cubaine à Barcelone</h1><p>Apprenez la Salsa Cubaine authentique avec des maîtres cubains. Casino, Rueda de Casino et Son Cubain. Technique de La Havane avec la Méthode Farray®.</p></main>`,
-    salsaLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Salsa Lady Style à Barcelone</h1><p>Développez votre féminité, élégance et style personnel en dansant la salsa. Cours avec Yunaisy Farray et la Méthode Farray® reconnue par CID-UNESCO.</p></main>`,
-    folkloreCubano: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Folklore Cubain à Barcelone</h1><p>Apprenez les danses afro-cubaines aux Orishas: Eleguá, Yemayá, Changó, Ochún. Racines yoruba, congo et arará avec des maîtres cubains spécialisés.</p></main>`,
-    timba: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Timba à Barcelone</h1><p>Lady Timba et Timba en Couple avec des maîtres cubains. Despelote, improvisation, interprétation musicale et saveur cubaine authentique.</p></main>`,
-    danzasUrbanas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Danses Urbaines à Barcelone</h1><p>Hip Hop, Dancehall, K-Pop, Reggaeton, Twerk, Afrobeat et plus. Apprenez avec des professeurs formés à Kingston, Séoul, New York et La Havane.</p></main>`,
-    dancehall: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Dancehall à Barcelone</h1><p>Découvrez le véritable Dancehall de Jamaïque à Barcelone. Énergie, culture et rythme à chaque cours.</p></main>`,
-    clasesParticulares: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours Particuliers de Danse à Barcelone</h1><p>Apprenez à votre rythme avec un professeur 100% dédié à vous. Horaires flexibles, tous les styles de danse, progrès 3x plus rapide. Votre danse, vos règles.</p></main>`,
+    classes: '',
+    danza: '',
+    salsaBachata: '',
+    salsaCubana: '',
+    salsaLadyStyle: '',
+    folkloreCubano: '',
+    timba: '',
+    danzasUrbanas: '',
+    dancehall: '',
+    clasesParticulares: '',
     blog: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Blog de Danse</h1><p>Conseils, tutoriels et histoire de la danse. Conseils experts pour améliorer votre technique et profiter de chaque pas.</p></main>`,
     blogLifestyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Lifestyle et Danse</h1><p>Découvrez comment la danse transforme votre vie. Articles sur le bien-être, le bonheur et l'art de vivre.</p></main>`,
     blogBeneficiosSalsa: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">10 Bienfaits de Danser la Salsa qui Changeront Votre Vie</h1><p>Découvrez les 10 bienfaits scientifiquement prouvés de danser la salsa : brûlez 400 cal/heure, améliorez la santé cardiovasculaire, réduisez le stress et boostez l'estime de soi.</p></article></main>`,
@@ -1856,24 +1784,24 @@ const initialContent = {
     blogClasesSalsaBarcelona: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Hommes et femmes, parlons salsa ?</h1><p>La salsa comme langage universel : réflexions sur la piste de danse comme espace de connexion entre hommes et femmes. Par Mar Guerrero.</p></article></main>`,
     blogTips: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Conseils de Danse</h1><p>Guides pratiques et conseils pour débutants et danseurs de tous niveaux à Barcelone.</p></main>`,
     blogClasesPrincipiantes: `<main id="main-content"><article><h1 class="holographic-text text-4xl font-bold">Cours de danse pour débutants à Barcelone : le guide complet</h1><p>Guide complet pour commencer à danser à Barcelone. Cours de bienvenue gratuit (promotionnel) ou dès 10€. Participation ponctuelle dès 20€.</p></article></main>`,
-    baileManananas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Danse le Matin à Barcelone</h1><p>13 cours hebdomadaires de 10h à 13h : Contemporain, Ballet, Modern Jazz, Sexy Style, Reggaeton et plus. L'activité matinale dont vous aviez besoin pour commencer la journée avec énergie.</p></main>`,
-    classesHub: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Tous les Cours de Danse à Barcelone</h1><p>Découvrez plus de 40 styles de danse : Dancehall, Salsa, Bachata, Hip Hop, Twerk, Afrobeat, Ballet, Contemporain et plus. Premier cours gratuit.</p></main>`,
-    horariosPrecio: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Horaires et Tarifs</h1><p>Consultez nos horaires de cours et tarifs. Abonnements mensuels, cours à l'unité et packs spéciaux. École près de Plaza España.</p></main>`,
+    baileManananas: '',
+    classesHub: '',
+    horariosPrecio: '',
     // New class pages
-    afroContemporaneo: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours d'Afro Contemporain à Barcelone</h1><p>Fusion de danse africaine traditionnelle et technique contemporaine. Expression corporelle, rythme et mouvement. Académie CID-UNESCO.</p></main>`,
-    afroJazz: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours d'Afro Jazz à Barcelone</h1><p>Combinaison de rythmes africains et technique de jazz moderne. Expression corporelle, musicalité et énergie. Tous niveaux.</p></main>`,
-    contemporaneo: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Danse Contemporaine à Barcelone</h1><p>Développez technique, expression corporelle et créativité. Académie accréditée CID-UNESCO.</p></main>`,
-    stretching: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Stretching pour Danseurs</h1><p>Améliorez votre flexibilité, mobilité et prévenez les blessures. Complément parfait pour tout style de danse.</p></main>`,
-    hipHop: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Hip Hop à Barcelone</h1><p>Apprenez avec des professeurs experts. Old School, New Style, House et plus. Premier cours gratuit.</p></main>`,
-    entrenamientoBailarines: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Entraînement pour Danseurs</h1><p>Améliorez votre technique, force, endurance et flexibilité. Programme conçu par des professionnels de la danse.</p></main>`,
-    bachataLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Bachata Lady Style</h1><p>Développez votre féminité, élégance et style personnel en dansant la bachata. Mouvements sensuels et expressifs.</p></main>`,
-    bumBum: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Bum Bum - Exercices Fessiers à Barcelone</h1><p>Cours spécialisés pour fessiers et jambes. Tonifiez, renforcez et sculptez avec musique et énergie. Premier cours gratuit.</p></main>`,
-    cuerpoFitPage: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Conditionnement Physique pour Danseurs</h1><p>Améliorez force, flexibilité et endurance avec la Méthode Farray. Entraînement fonctionnel spécialisé.</p></main>`,
+    afroContemporaneo: '',
+    afroJazz: '',
+    contemporaneo: '',
+    stretching: '',
+    hipHop: '',
+    entrenamientoBailarines: '',
+    bachataLadyStyle: '',
+    bumBum: '',
+    cuerpoFitPage: '',
     // New non-class pages
     profesores: '',
     faq: '',
-    alquilerSalas: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Location de Studios de Danse</h1><p>3 espaces professionnels équipés de miroirs, barres et sol de danse. Idéal pour répétitions, enregistrements et événements.</p></main>`,
-    estudioGrabacion: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Studio de Tournage Vidéo Danse</h1><p>Équipement professionnel, éclairage et son. Parfait pour clips, tutoriels et contenu réseaux sociaux.</p></main>`,
+    alquilerSalas: '',
+    estudioGrabacion: '',
     // Legal pages
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Conditions Générales</h1><p>Informations légales sur les inscriptions, paiements et politiques de Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Mentions Légales</h1><p>Informations sur l'entreprise, propriété intellectuelle et conditions d'utilisation.</p></main>`,
@@ -1882,7 +1810,7 @@ const initialContent = {
     // Additional pages
     serviciosBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Services de Danse</h1><p>Cours particuliers, chorégraphies pour événements, shows et spectacles professionnels.</p></main>`,
     calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Calendrier des Événements</h1><p>Workshops, masterclasses et activités spéciales à Farray's Center Barcelone.</p></main>`,
-    salsaLadyStyleV2: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Salsa Lady Style</h1><p>Développez votre féminité, élégance et style personnel en dansant la salsa avec la Méthode Farray®.</p></main>`,
+    salsaLadyStyleV2: '',
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Page Non Trouvée</h1><p>La page que vous recherchez n'existe pas. Retournez à la page d'accueil ou explorez nos cours de danse.</p></main>`,
     // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
     ...LANDING_CONTENT.fr,
