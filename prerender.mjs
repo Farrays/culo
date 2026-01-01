@@ -173,6 +173,9 @@ const routes = [
   { path: 'es/clases/hip-hop-barcelona', lang: 'es', page: 'hipHop' },
   { path: 'es/clases/entrenamiento-bailarines-barcelona', lang: 'es', page: 'entrenamientoBailarines' },
   { path: 'es/clases/bachata-lady-style-barcelona', lang: 'es', page: 'bachataLadyStyle' },
+  { path: 'es/clases/ejercicios-gluteos-barcelona', lang: 'es', page: 'bumBum' },
+  { path: 'es/clases/acondicionamiento-fisico-bailarines', lang: 'es', page: 'cuerpoFitPage' },
+  { path: 'es/clases/afro-jazz', lang: 'es', page: 'afroJazz' },
   // Missing non-class pages
   { path: 'es/profesores-baile-barcelona', lang: 'es', page: 'profesores' },
   { path: 'es/preguntas-frecuentes', lang: 'es', page: 'faq' },
@@ -226,6 +229,9 @@ const routes = [
   { path: 'ca/clases/hip-hop-barcelona', lang: 'ca', page: 'hipHop' },
   { path: 'ca/clases/entrenamiento-bailarines-barcelona', lang: 'ca', page: 'entrenamientoBailarines' },
   { path: 'ca/clases/bachata-lady-style-barcelona', lang: 'ca', page: 'bachataLadyStyle' },
+  { path: 'ca/clases/ejercicios-gluteos-barcelona', lang: 'ca', page: 'bumBum' },
+  { path: 'ca/clases/acondicionamiento-fisico-bailarines', lang: 'ca', page: 'cuerpoFitPage' },
+  { path: 'ca/clases/afro-jazz', lang: 'ca', page: 'afroJazz' },
   // Missing non-class pages
   { path: 'ca/profesores-baile-barcelona', lang: 'ca', page: 'profesores' },
   { path: 'ca/preguntas-frecuentes', lang: 'ca', page: 'faq' },
@@ -279,6 +285,9 @@ const routes = [
   { path: 'en/clases/hip-hop-barcelona', lang: 'en', page: 'hipHop' },
   { path: 'en/clases/entrenamiento-bailarines-barcelona', lang: 'en', page: 'entrenamientoBailarines' },
   { path: 'en/clases/bachata-lady-style-barcelona', lang: 'en', page: 'bachataLadyStyle' },
+  { path: 'en/clases/ejercicios-gluteos-barcelona', lang: 'en', page: 'bumBum' },
+  { path: 'en/clases/acondicionamiento-fisico-bailarines', lang: 'en', page: 'cuerpoFitPage' },
+  { path: 'en/clases/afro-jazz', lang: 'en', page: 'afroJazz' },
   // Missing non-class pages
   { path: 'en/profesores-baile-barcelona', lang: 'en', page: 'profesores' },
   { path: 'en/preguntas-frecuentes', lang: 'en', page: 'faq' },
@@ -332,6 +341,9 @@ const routes = [
   { path: 'fr/clases/hip-hop-barcelona', lang: 'fr', page: 'hipHop' },
   { path: 'fr/clases/entrenamiento-bailarines-barcelona', lang: 'fr', page: 'entrenamientoBailarines' },
   { path: 'fr/clases/bachata-lady-style-barcelona', lang: 'fr', page: 'bachataLadyStyle' },
+  { path: 'fr/clases/ejercicios-gluteos-barcelona', lang: 'fr', page: 'bumBum' },
+  { path: 'fr/clases/acondicionamiento-fisico-bailarines', lang: 'fr', page: 'cuerpoFitPage' },
+  { path: 'fr/clases/afro-jazz', lang: 'fr', page: 'afroJazz' },
   // Missing non-class pages
   { path: 'fr/profesores-baile-barcelona', lang: 'fr', page: 'profesores' },
   { path: 'fr/preguntas-frecuentes', lang: 'fr', page: 'faq' },
@@ -604,6 +616,14 @@ const metadata = {
       title: 'Clases de Bachata Lady Style en Barcelona | Estilo Femenino y Sensualidad | Farray\'s Center',
       description: 'Clases de Bachata Lady Style en Barcelona. Desarrolla tu feminidad, elegancia y estilo personal bailando bachata. Movimientos sensuales y expresivos. ¡Reserva tu clase!',
     },
+    bumBum: {
+      title: 'Bum Bum - Ejercicios de Glúteos en Barcelona | Tonificación y Fitness | Farray\'s Center',
+      description: 'Clases de Bum Bum en Barcelona: ejercicios especializados para glúteos y piernas. Tonifica, fortalece y moldea con música y energía. ¡Primera clase gratis!',
+    },
+    cuerpoFitPage: {
+      title: 'Acondicionamiento Físico para Bailarines en Barcelona | Cuerpo Fit | Farray\'s Center',
+      description: 'Clases de acondicionamiento físico para bailarines en Barcelona. Mejora fuerza, flexibilidad y resistencia con el Método Farray. Entrenamiento funcional especializado.',
+    },
     // New non-class pages
     profesores: {
       title: 'Profesores de Baile en Barcelona | Equipo de Farray\'s Center',
@@ -833,6 +853,14 @@ const metadata = {
     bachataLadyStyle: {
       title: 'Classes de Bachata Lady Style a Barcelona | Estil Femení i Sensualitat | Farray\'s Center',
       description: 'Classes de Bachata Lady Style a Barcelona. Desenvolupa la teva feminitat, elegància i estil personal ballant bachata. Moviments sensuals i expressius. Reserva la teva classe!',
+    },
+    bumBum: {
+      title: 'Bum Bum - Exercicis de Glutis a Barcelona | Tonificació i Fitness | Farray\'s Center',
+      description: 'Classes de Bum Bum a Barcelona: exercicis especialitzats per a glutis i cames. Tonifica, enforteix i modela amb música i energia. Primera classe gratis!',
+    },
+    cuerpoFitPage: {
+      title: 'Acondicionament Físic per a Ballarins a Barcelona | Cuerpo Fit | Farray\'s Center',
+      description: 'Classes d\'acondicionament físic per a ballarins a Barcelona. Millora força, flexibilitat i resistència amb el Mètode Farray. Entrenament funcional especialitzat.',
     },
     // New non-class pages
     profesores: {
@@ -1064,6 +1092,14 @@ const metadata = {
       title: 'Bachata Lady Style Classes in Barcelona | Feminine Style & Sensuality | Farray\'s Center',
       description: 'Bachata Lady Style classes in Barcelona. Develop your femininity, elegance and personal style dancing bachata. Sensual and expressive movements. Book your class!',
     },
+    bumBum: {
+      title: 'Bum Bum - Glute Exercises in Barcelona | Toning & Fitness | Farray\'s Center',
+      description: 'Bum Bum classes in Barcelona: specialized exercises for glutes and legs. Tone, strengthen and sculpt with music and energy. First class free!',
+    },
+    cuerpoFitPage: {
+      title: 'Body Conditioning for Dancers in Barcelona | Cuerpo Fit | Farray\'s Center',
+      description: 'Body conditioning classes for dancers in Barcelona. Improve strength, flexibility and endurance with the Farray Method. Specialized functional training.',
+    },
     // New non-class pages
     profesores: {
       title: 'Dance Teachers in Barcelona | Farray\'s Center Team',
@@ -1294,6 +1330,14 @@ const metadata = {
       title: 'Cours de Bachata Lady Style à Barcelone | Style Féminin et Sensualité | Farray\'s Center',
       description: 'Cours de Bachata Lady Style à Barcelone. Développez votre féminité, élégance et style personnel en dansant la bachata. Mouvements sensuels et expressifs. Réservez votre cours !',
     },
+    bumBum: {
+      title: 'Bum Bum - Exercices Fessiers à Barcelone | Tonification et Fitness | Farray\'s Center',
+      description: 'Cours de Bum Bum à Barcelone : exercices spécialisés pour fessiers et jambes. Tonifiez, renforcez et sculptez avec musique et énergie. Premier cours gratuit !',
+    },
+    cuerpoFitPage: {
+      title: 'Conditionnement Physique pour Danseurs à Barcelone | Cuerpo Fit | Farray\'s Center',
+      description: 'Cours de conditionnement physique pour danseurs à Barcelone. Améliorez force, flexibilité et endurance avec la Méthode Farray. Entraînement fonctionnel spécialisé.',
+    },
     // New non-class pages
     profesores: {
       title: 'Professeurs de Danse à Barcelone | Équipe de Farray\'s Center',
@@ -1448,6 +1492,8 @@ const initialContent = {
     hipHop: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Hip Hop en Barcelona</h1><p>Aprende con profesores expertos. Old School, New Style, House y más. Primera clase gratis.</p></main>`,
     entrenamientoBailarines: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Entrenamiento para Bailarines</h1><p>Mejora tu técnica, fuerza, resistencia y flexibilidad. Programa diseñado por profesionales de la danza.</p></main>`,
     bachataLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Clases de Bachata Lady Style</h1><p>Desarrolla tu feminidad, elegancia y estilo personal bailando bachata. Movimientos sensuales y expresivos.</p></main>`,
+    bumBum: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Bum Bum - Ejercicios de Glúteos en Barcelona</h1><p>Clases especializadas para glúteos y piernas. Tonifica, fortalece y moldea con música y energía. Primera clase gratis.</p></main>`,
+    cuerpoFitPage: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Acondicionamiento Físico para Bailarines</h1><p>Mejora fuerza, flexibilidad y resistencia con el Método Farray. Entrenamiento funcional especializado.</p></main>`,
     // New non-class pages
     profesores: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Profesores de Baile en Barcelona</h1><p>Conoce a nuestro equipo de bailarines profesionales de todo el mundo con años de experiencia. Formación CID-UNESCO.</p></main>`,
     faq: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Preguntas Frecuentes</h1><p>Resuelve tus dudas sobre horarios, precios, niveles, inscripción y todo lo que necesitas saber.</p></main>`,
@@ -1490,6 +1536,8 @@ const initialContent = {
     hipHop: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Hip Hop a Barcelona</h1><p>Aprèn amb professors experts. Old School, New Style, House i més. Primera classe gratis.</p></main>`,
     entrenamientoBailarines: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Entrenament per a Ballarins</h1><p>Millora la teva tècnica, força, resistència i flexibilitat. Programa dissenyat per professionals de la dansa.</p></main>`,
     bachataLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Classes de Bachata Lady Style</h1><p>Desenvolupa la teva feminitat, elegància i estil personal ballant bachata. Moviments sensuals i expressius.</p></main>`,
+    bumBum: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Bum Bum - Exercicis de Glutis a Barcelona</h1><p>Classes especialitzades per a glutis i cames. Tonifica, enforteix i modela amb música i energia. Primera classe gratis.</p></main>`,
+    cuerpoFitPage: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Acondicionament Físic per a Ballarins</h1><p>Millora força, flexibilitat i resistència amb el Mètode Farray. Entrenament funcional especialitzat.</p></main>`,
     // New non-class pages
     profesores: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Professors de Ball a Barcelona</h1><p>Coneix el nostre equip de ballarins professionals de tot el món amb anys d'experiència. Formació CID-UNESCO.</p></main>`,
     faq: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Preguntes Freqüents</h1><p>Resol els teus dubtes sobre horaris, preus, nivells, inscripció i tot el que necessites saber.</p></main>`,
@@ -1530,6 +1578,8 @@ const initialContent = {
     hipHop: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Hip Hop Classes in Barcelona</h1><p>Learn with expert teachers. Old School, New Style, House and more. First class free.</p></main>`,
     entrenamientoBailarines: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Training for Dancers</h1><p>Improve your technique, strength, endurance and flexibility. Program designed by dance professionals.</p></main>`,
     bachataLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Bachata Lady Style Classes</h1><p>Develop your femininity, elegance and personal style dancing bachata. Sensual and expressive movements.</p></main>`,
+    bumBum: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Bum Bum - Glute Exercises in Barcelona</h1><p>Specialized classes for glutes and legs. Tone, strengthen and sculpt with music and energy. First class free.</p></main>`,
+    cuerpoFitPage: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Body Conditioning for Dancers</h1><p>Improve strength, flexibility and endurance with the Farray Method. Specialized functional training.</p></main>`,
     // New non-class pages
     profesores: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Teachers in Barcelona</h1><p>Meet our team of professional dancers from around the world with years of experience. CID-UNESCO certified.</p></main>`,
     faq: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Frequently Asked Questions</h1><p>Get answers about schedules, prices, levels, registration and everything you need to know.</p></main>`,
@@ -1570,6 +1620,8 @@ const initialContent = {
     hipHop: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Hip Hop à Barcelone</h1><p>Apprenez avec des professeurs experts. Old School, New Style, House et plus. Premier cours gratuit.</p></main>`,
     entrenamientoBailarines: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Entraînement pour Danseurs</h1><p>Améliorez votre technique, force, endurance et flexibilité. Programme conçu par des professionnels de la danse.</p></main>`,
     bachataLadyStyle: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cours de Bachata Lady Style</h1><p>Développez votre féminité, élégance et style personnel en dansant la bachata. Mouvements sensuels et expressifs.</p></main>`,
+    bumBum: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Bum Bum - Exercices Fessiers à Barcelone</h1><p>Cours spécialisés pour fessiers et jambes. Tonifiez, renforcez et sculptez avec musique et énergie. Premier cours gratuit.</p></main>`,
+    cuerpoFitPage: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Conditionnement Physique pour Danseurs</h1><p>Améliorez force, flexibilité et endurance avec la Méthode Farray. Entraînement fonctionnel spécialisé.</p></main>`,
     // New non-class pages
     profesores: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Professeurs de Danse à Barcelone</h1><p>Rencontrez notre équipe de danseurs professionnels du monde entier avec des années d'expérience. Certifiés CID-UNESCO.</p></main>`,
     faq: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Questions Fréquentes</h1><p>Obtenez des réponses sur les horaires, tarifs, niveaux, inscription et tout ce que vous devez savoir.</p></main>`,
