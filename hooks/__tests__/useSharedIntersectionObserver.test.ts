@@ -73,10 +73,10 @@ describe('useSharedIntersectionObserver', () => {
     expect(typeof result.current[1]).toBe('boolean'); // isVisible
   });
 
-  it('initially returns false for visibility', () => {
+  it('initially returns true for visibility (elements start visible)', () => {
     const { result } = renderHook(() => useSharedIntersectionObserver(OBSERVER_CONFIGS.animation));
 
-    expect(result.current[1]).toBe(false);
+    expect(result.current[1]).toBe(true);
   });
 
   it('uses default animation config when no config provided', () => {

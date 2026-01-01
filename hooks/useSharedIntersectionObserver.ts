@@ -151,7 +151,7 @@ export function useSharedIntersectionObserver<T extends HTMLElement = HTMLElemen
   config: ObserverConfig = OBSERVER_CONFIGS.animation
 ): [React.RefObject<T | null>, boolean] {
   const ref = useRef<T>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const element = ref.current;

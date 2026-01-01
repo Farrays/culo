@@ -14,14 +14,15 @@ describe('AnimateOnScroll', () => {
     expect(screen.getByText('Test Content')).toBeInTheDocument();
   });
 
-  it('should apply animation class', () => {
+  it('should apply animation class (starts visible)', () => {
     const { container } = render(
       <AnimateOnScroll>
         <div>Content</div>
       </AnimateOnScroll>
     );
 
-    const wrapper = container.querySelector('[class*="opacity-0"]');
+    // Elements start visible (opacity-100) to prevent disappearing on refresh
+    const wrapper = container.querySelector('[class*="opacity-100"]');
     expect(wrapper).toBeInTheDocument();
   });
 
