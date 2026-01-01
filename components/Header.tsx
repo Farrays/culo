@@ -322,6 +322,7 @@ const Header: React.FC = () => {
                   alt="Farray's International Dance Center"
                   width="256"
                   height="256"
+                  fetchPriority="high"
                   className="w-40 h-40 sm:w-44 sm:h-44 md:w-44 md:h-44 lg:w-28 lg:h-28 xl:w-32 xl:h-32 transition-all duration-300 group-hover:scale-105 drop-shadow-[0_0_15px_rgba(200,34,96,0.3)]"
                 />
               </picture>
