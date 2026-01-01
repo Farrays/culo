@@ -34,6 +34,7 @@ export default defineConfig({
       ext: '.br',
       threshold: 1024, // Only compress files larger than 1KB
       deleteOriginFile: false,
+      filter: /\.(js|css|html|svg)$/i, // Only compress web assets, not JSON manifests
     }),
     // Gzip compression (fallback for older browsers)
     viteCompression({
@@ -41,6 +42,7 @@ export default defineConfig({
       ext: '.gz',
       threshold: 1024,
       deleteOriginFile: false,
+      filter: /\.(js|css|html|svg)$/i, // Only compress web assets, not JSON manifests
     }),
   ],
   build: {

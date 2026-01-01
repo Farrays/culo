@@ -107,7 +107,10 @@ const Header: React.FC = () => {
     const debouncedScroll = debounce(handleScroll, 100);
 
     window.addEventListener('scroll', debouncedScroll, { passive: true });
-    return () => window.removeEventListener('scroll', debouncedScroll);
+    return () => {
+      window.removeEventListener('scroll', debouncedScroll);
+      debouncedScroll.cancel(); // Limpiar timer pendiente
+    };
   }, []);
 
   // Close dropdowns when clicking outside
@@ -252,6 +255,7 @@ const Header: React.FC = () => {
         { path: `/${locale}/alquiler-salas-baile-barcelona`, textKey: 'navAlquilerSalas' },
         { path: `/${locale}/estudio-grabacion-barcelona`, textKey: 'navEstudioGrabacion' },
         { path: `/${locale}/regala-baile`, textKey: 'navRegalaBaile' },
+        { path: `/${locale}/merchandising`, textKey: 'headerMerchandising' },
       ],
     },
     aboutUs: {

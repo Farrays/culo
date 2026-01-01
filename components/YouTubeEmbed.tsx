@@ -145,30 +145,62 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
         document.body.appendChild(script);
       }
 
-      // Usar un array de callbacks para manejar múltiples componentes
-      const win = window as unknown as { ytCallbacks?: (() => void)[] };
-      const existingCallbacks = win.ytCallbacks || [];
-      existingCallbacks.push(initPlayer);
-      win.ytCallbacks = existingCallbacks;
+      // Usar Map con ID único para manejar múltiples componentes sin memory leak
+      const win = window as unknown as {
+        ytCallbacks?: Map<string, () => void>;
+        ytApiLoaded?: boolean;
+      };
 
-      // Solo configurar el callback global si no existe
+      // Generar ID único para este callback
+      const callbackId = `yt_${videoId}_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+
+      if (!win.ytCallbacks) {
+        win.ytCallbacks = new Map();
+      }
+      win.ytCallbacks.set(callbackId, initPlayer);
+
+      // Configurar callback global (solo una vez)
       if (!window.onYouTubeIframeAPIReady) {
         window.onYouTubeIframeAPIReady = () => {
-          const w = window as unknown as { ytCallbacks?: (() => void)[] };
-          const callbacks = w.ytCallbacks || [];
-          callbacks.forEach(cb => cb());
-          w.ytCallbacks = [];
+          const w = window as unknown as {
+            ytCallbacks?: Map<string, () => void>;
+            ytApiLoaded?: boolean;
+          };
+          w.ytApiLoaded = true;
+          if (w.ytCallbacks) {
+            w.ytCallbacks.forEach(cb => cb());
+            w.ytCallbacks.clear();
+          }
         };
       }
+
+      // Si la API ya se cargó pero llegamos tarde, ejecutar directamente
+      if (win.ytApiLoaded && window.YT && window.YT.Player) {
+        win.ytCallbacks.delete(callbackId);
+        window.setTimeout(initPlayer, 50);
+      }
+
+      // Guardar ID para cleanup en una ref-like variable
+      (containerRef.current as unknown as { _ytCallbackId?: string })?._ytCallbackId &&
+        delete (containerRef.current as unknown as { _ytCallbackId?: string })._ytCallbackId;
+      if (containerRef.current) {
+        (containerRef.current as unknown as { _ytCallbackId?: string })._ytCallbackId = callbackId;
+      }
     }
+
+    // Capture container ref for cleanup (fixes react-hooks/exhaustive-deps warning)
+    const containerElement = containerRef.current;
 
     return () => {
       isMounted = false;
 
-      // Remover callback del array global para evitar memory leak
-      const w = window as unknown as { ytCallbacks?: (() => void)[] };
-      if (w.ytCallbacks) {
-        w.ytCallbacks = w.ytCallbacks.filter(cb => cb !== initPlayer);
+      // Remover callback del Map usando el ID guardado
+      const w = window as unknown as { ytCallbacks?: Map<string, () => void> };
+      const savedId = containerElement
+        ? (containerElement as unknown as { _ytCallbackId?: string })._ytCallbackId
+        : undefined;
+      if (w.ytCallbacks && savedId) {
+        w.ytCallbacks.delete(savedId);
       }
 
       if (playerRef.current) {

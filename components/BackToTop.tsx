@@ -18,6 +18,7 @@ const BackToTop: React.FC = () => {
 
     return () => {
       window.removeEventListener('scroll', debouncedToggle);
+      debouncedToggle.cancel(); // Limpiar timer pendiente
     };
   }, []);
 

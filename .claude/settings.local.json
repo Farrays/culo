@@ -248,7 +248,9 @@
       "Bash(git commit -m \"$\\(cat <<''EOF''\nfix\\(csp\\): add unsafe-inline to script-src for GTM compatibility\n\nGTM dynamically generates inline scripts that cannot be pre-hashed.\nAdding ''unsafe-inline'' is the pragmatic solution for GTM-heavy sites.\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nfix\\(HappinessStory\\): remove animation from first line\n\nThe first paragraph was not visible on initial load due to\nAnimateOnScroll + IntersectionObserver timing issues.\nRemoved animation wrapper so text is always visible immediately.\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(git -C \"c:\\\\Users\\\\fabio\\\\Desktop\\\\Gitclone\" log --oneline)",
-      "Bash(git -C \"c:\\\\Users\\\\fabio\\\\Desktop\\\\Gitclone\" log --all --format=\"%h %s\")"
+      "Bash(git -C \"c:\\\\Users\\\\fabio\\\\Desktop\\\\Gitclone\" log --all --format=\"%h %s\")",
+      "Bash(comm:*)",
+      "Bash(npx vite build)"
     ],
     "deny": [],
     "ask": []
