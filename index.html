@@ -17,11 +17,18 @@
         'wait_for_update': 500
       });
     </script>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TT2V8Z4');</script>
+    <!-- GTM loader - deferred to not block LCP (loads after page interactive) -->
+    <script>
+      // Defer GTM and Facebook Pixel (loaded via GTM) until after page load
+      // This removes ~257 KiB from critical path while maintaining functionality
+      window.addEventListener('load', function() {
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TT2V8Z4');
+      });
+    </script>
     <!-- End Google Tag Manager -->
 
     <!-- Microsoft Clarity is loaded via analytics.ts after user consent (GDPR) -->
@@ -41,9 +48,7 @@
 
 
     <!-- Performance optimization: Resource Hints -->
-    <!-- DNS prefetch for external domains -->
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <!-- DNS prefetch for external domains (critical resources only) -->
     <link rel="dns-prefetch" href="https://i.ytimg.com">
     <link rel="dns-prefetch" href="https://www.youtube.com">
     <link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
@@ -52,8 +57,7 @@
     <link rel="dns-prefetch" href="https://iframe.mediadelivery.net">
 
     <!-- Preconnect to critical external resources (reduce DNS + TLS time) -->
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
+    <!-- GTM and GA removed - deferred analytics don't need preconnect -->
     <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
     <link rel="preconnect" href="https://www.youtube.com" crossorigin>
     <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin>
