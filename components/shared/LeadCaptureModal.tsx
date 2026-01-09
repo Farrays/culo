@@ -531,44 +531,26 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                  FORM STATE
               ============================================================ */
               <>
-                {/* Benefits - Mobile: compact 2 items, Desktop: full box */}
-                {/* Mobile version - compact */}
-                <div className="md:hidden mb-3">
-                  <p className="text-sm font-semibold text-neutral mb-2">
+                {/* Benefits - Responsive: compact on mobile, full box on desktop */}
+                <div className="bg-white/5 rounded-xl p-3 md:p-4 mb-3 md:mb-6 border border-white/10">
+                  <p className="text-xs md:text-sm font-semibold text-neutral mb-2 md:mb-3">
                     {t('leadModal_benefits_title')}
                   </p>
-                  <ul className="space-y-1">
-                    <li className="flex items-center gap-2 text-xs text-neutral/80">
-                      <CheckIcon className="w-3.5 h-3.5 text-primary-accent flex-shrink-0" />
+                  <ul className="space-y-1.5 md:space-y-2">
+                    <li className="flex items-center gap-2 text-xs md:text-sm text-neutral/80">
+                      <CheckIcon className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary-accent flex-shrink-0" />
                       <span>{t('leadModal_benefit1')}</span>
                     </li>
-                    <li className="flex items-center gap-2 text-xs text-neutral/80">
-                      <CheckIcon className="w-3.5 h-3.5 text-primary-accent flex-shrink-0" />
-                      <span>{t('leadModal_benefit4')}</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Desktop version - full box */}
-                <div className="hidden md:block bg-white/5 rounded-xl p-4 mb-6 border border-white/10">
-                  <p className="text-sm font-semibold text-neutral mb-3">
-                    {t('leadModal_benefits_title')}
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm text-neutral/80">
-                      <CheckIcon className="w-4 h-4 text-primary-accent flex-shrink-0 mt-0.5" />
-                      <span>{t('leadModal_benefit1')}</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm text-neutral/80">
-                      <CheckIcon className="w-4 h-4 text-primary-accent flex-shrink-0 mt-0.5" />
+                    <li className="flex items-center gap-2 text-xs md:text-sm text-neutral/80">
+                      <CheckIcon className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary-accent flex-shrink-0" />
                       <span>{t('leadModal_benefit2')}</span>
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-neutral/80">
-                      <CheckIcon className="w-4 h-4 text-primary-accent flex-shrink-0 mt-0.5" />
+                    <li className="flex items-center gap-2 text-xs md:text-sm text-neutral/80">
+                      <CheckIcon className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary-accent flex-shrink-0" />
                       <span>{t('leadModal_benefit3')}</span>
                     </li>
-                    <li className="flex items-start gap-2 text-sm text-neutral/80">
-                      <CheckIcon className="w-4 h-4 text-primary-accent flex-shrink-0 mt-0.5" />
+                    <li className="flex items-center gap-2 text-xs md:text-sm text-neutral/80">
+                      <CheckIcon className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary-accent flex-shrink-0" />
                       <span>{t('leadModal_benefit4')}</span>
                     </li>
                   </ul>
