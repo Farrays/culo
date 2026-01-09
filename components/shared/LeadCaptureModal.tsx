@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useRef, memo } from 'react';
+import React, { useEffect, useState, useCallback, useRef, memo, useTransition } from 'react';
 import { Link } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
 import { XMarkIcon, CheckIcon, CheckCircleIcon } from '../../lib/icons';
@@ -99,6 +99,9 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
   const lastFocusableRef = useRef<HTMLButtonElement>(null);
   const historyPushedRef = useRef(false);
 
+  // Transition for non-urgent updates (INP optimization)
+  const [, startTransition] = useTransition();
+
   // ============================================================================
   // HISTORY API - Para que el boton atras cierre el modal
   // ============================================================================
@@ -121,9 +124,16 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
       return () => {
         window.removeEventListener('popstate', handlePopState);
         // Si el modal se cierra sin usar el boton atras, limpiar el historial
+        // Defer history.back() to avoid blocking main thread (INP optimization)
         if (historyPushedRef.current) {
           historyPushedRef.current = false;
-          window.history.back();
+          // Use requestIdleCallback if available, otherwise setTimeout
+          const deferredBack = () => window.history.back();
+          if (typeof window.requestIdleCallback === 'function') {
+            window.requestIdleCallback(deferredBack, { timeout: 100 });
+          } else {
+            setTimeout(deferredBack, 0);
+          }
         }
       };
     }
@@ -153,24 +163,26 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
   // Reset form when modal closes (separate effect to avoid dependency issues)
   useEffect(() => {
     if (!isOpen) {
-      // Small delay to allow closing animation
+      // Small delay to allow closing animation, then reset with low priority
       const timer = window.setTimeout(() => {
-        setFormData({
-          firstName: defaultValues.firstName || '',
-          lastName: defaultValues.lastName || '',
-          email: defaultValues.email || '',
-          phoneNumber: defaultValues.phoneNumber || '',
-          discoveryAnswer: defaultValues.discoveryAnswer || '',
-          estilo: defaultValues.estilo || '',
-          acceptsMarketing: false,
+        startTransition(() => {
+          setFormData({
+            firstName: defaultValues.firstName || '',
+            lastName: defaultValues.lastName || '',
+            email: defaultValues.email || '',
+            phoneNumber: defaultValues.phoneNumber || '',
+            discoveryAnswer: defaultValues.discoveryAnswer || '',
+            estilo: defaultValues.estilo || '',
+            acceptsMarketing: false,
+          });
+          setStatus('idle');
+          setErrorMessage('');
         });
-        setStatus('idle');
-        setErrorMessage('');
       }, 300);
       return () => window.clearTimeout(timer);
     }
     return undefined;
-  }, [isOpen, defaultValues]);
+  }, [isOpen, defaultValues, startTransition]);
 
   // ============================================================================
   // BLOQUEAR SCROLL
@@ -193,8 +205,15 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
 
   const handleClose = useCallback(() => {
     if (status === 'loading') return;
-    onClose();
-  }, [onClose, status]);
+    // Start visual fade-out immediately for perceived performance
+    setShowContent(false);
+    // Defer the actual close to next frame to avoid blocking INP
+    requestAnimationFrame(() => {
+      startTransition(() => {
+        onClose();
+      });
+    });
+  }, [onClose, status, startTransition]);
 
   const handleBackdropClick = useCallback(
     (e: React.MouseEvent) => {
@@ -412,10 +431,10 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
           />
 
           {/* Header with close button */}
-          <div className="sticky top-0 z-10 bg-black/95 backdrop-blur-sm border-b border-white/10 px-6 py-4">
+          <div className="sticky top-0 z-10 bg-black/95 backdrop-blur-sm border-b border-white/10 px-4 py-3 md:px-6 md:py-4">
             <div className="flex items-start justify-between">
               <div className="flex-1 pr-4">
-                <h2 id="lead-modal-title" className="text-xl font-black text-neutral">
+                <h2 id="lead-modal-title" className="text-lg md:text-xl font-black text-neutral">
                   {status === 'success' || status === 'success_existing'
                     ? t('leadModal_success_title')
                     : t('leadModal_title')}
@@ -436,21 +455,21 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
           </div>
 
           {/* Content */}
-          <div className="p-6">
+          <div className="p-4 md:p-6">
             {status === 'success' || status === 'success_existing' ? (
               /* ============================================================
                  SUCCESS STATE - Confirmacion educativa
               ============================================================ */
-              <div className="text-center py-6">
+              <div className="text-center py-4 md:py-6">
                 {/* Success icon */}
-                <div className="flex justify-center mb-6">
+                <div className="flex justify-center mb-4 md:mb-6">
                   <div className="relative">
                     <div
                       className="absolute inset-0 bg-primary-accent/30 rounded-full blur-xl motion-reduce:blur-none"
                       aria-hidden="true"
                     />
-                    <div className="relative w-20 h-20 bg-gradient-to-br from-primary-dark to-primary-accent rounded-full flex items-center justify-center">
-                      <CheckIcon className="w-10 h-10 text-white" />
+                    <div className="relative w-14 h-14 md:w-20 md:h-20 bg-gradient-to-br from-primary-dark to-primary-accent rounded-full flex items-center justify-center">
+                      <CheckIcon className="w-7 h-7 md:w-10 md:h-10 text-white" />
                     </div>
                   </div>
                 </div>
@@ -483,14 +502,14 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                       {t('leadModal_success_spam_note')}
                     </p>
 
-                    {/* Promo badge */}
-                    <div className="inline-flex items-center gap-2 bg-primary-accent/20 text-primary-accent px-5 py-3 rounded-xl text-sm font-semibold mb-6">
+                    {/* Promo badge - hidden on mobile */}
+                    <div className="hidden md:inline-flex items-center gap-2 bg-primary-accent/20 text-primary-accent px-5 py-3 rounded-xl text-sm font-semibold mb-6">
                       <CheckCircleIcon className="w-5 h-5" />
                       {t('leadModal_success_promo_included')}
                     </div>
 
-                    {/* Deliverability tip */}
-                    <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                    {/* Deliverability tip - hidden on mobile */}
+                    <div className="hidden md:block bg-white/5 rounded-xl p-4 border border-white/10">
                       <p className="text-xs text-neutral/60">
                         {t('leadModal_success_deliverability')}
                       </p>
@@ -513,10 +532,10 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
               ============================================================ */
               <>
                 {/* Intro text */}
-                <p className="text-neutral/70 text-sm mb-6">{t('leadModal_intro')}</p>
+                <p className="text-neutral/70 text-sm mb-3 md:mb-6">{t('leadModal_intro')}</p>
 
-                {/* Benefits preview */}
-                <div className="bg-white/5 rounded-xl p-4 mb-6 border border-white/10">
+                {/* Benefits preview - hidden on mobile to save space */}
+                <div className="hidden md:block bg-white/5 rounded-xl p-4 mb-6 border border-white/10">
                   <p className="text-sm font-semibold text-neutral mb-3">
                     {t('leadModal_benefits_title')}
                   </p>
@@ -541,7 +560,7 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                 </div>
 
                 {/* Form */}
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
                   {/* Name row */}
                   <div className="grid grid-cols-2 gap-4">
                     <div>
@@ -734,7 +753,7 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                   <button
                     type="submit"
                     disabled={status === 'loading'}
-                    className="w-full py-4 bg-primary-accent text-white font-bold rounded-xl transition-all duration-300 hover:shadow-accent-glow hover:scale-[1.02] disabled:opacity-70 disabled:hover:scale-100 disabled:hover:shadow-none flex items-center justify-center gap-2 mt-2"
+                    className="w-full py-3 md:py-4 bg-primary-accent text-white font-bold rounded-xl transition-all duration-300 hover:shadow-accent-glow hover:scale-[1.02] disabled:opacity-70 disabled:hover:scale-100 disabled:hover:shadow-none flex items-center justify-center gap-2 mt-2"
                   >
                     {status === 'loading' ? (
                       <>
@@ -757,8 +776,8 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                   )}
                 </form>
 
-                {/* Legal text */}
-                <div className="mt-6 pt-4 border-t border-white/10">
+                {/* Legal text - hidden on mobile to save space */}
+                <div className="hidden md:block mt-6 pt-4 border-t border-white/10">
                   <p className="text-[10px] leading-relaxed text-neutral/40">
                     {t('leadModal_legal_text')}
                   </p>
