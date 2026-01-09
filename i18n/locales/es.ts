@@ -1666,6 +1666,11 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   danzaBarcelona_whichStyle_cultural_why:
     'Fusión de técnica occidental con raíces afrocubanas. Polirritmia, movimientos de columna y cadera, trabajo de suelo y energía ancestral.',
 
+  danzaBarcelona_whichStyle_flexibility_goal: 'Flexibilidad, elongación y control corporal',
+  danzaBarcelona_whichStyle_flexibility_style: 'Ballet Clásico + Contemporáneo',
+  danzaBarcelona_whichStyle_flexibility_why:
+    'Combinar ballet y contemporáneo maximiza tu rango de movimiento. Stretching activo, trabajo de suelo y técnicas de release mejoran la flexibilidad de forma segura.',
+
   danzaBarcelona_whichStyle_foundation_goal: 'Base sólida para empezar de cero',
   danzaBarcelona_whichStyle_foundation_style: 'Ballet Clásico Nivel Iniciación',
   danzaBarcelona_whichStyle_foundation_why:
@@ -12836,10 +12841,10 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   leadModal_success_close: 'Entendido',
 
   // Existing lead (ya registrado dentro de 90 días)
-  leadModal_existing_heading: 'Ya estas registrado',
-  leadModal_existing_message: 'Vemos que ya te registraste anteriormente para una clase de prueba.',
-  leadModal_existing_contact:
-    'Si tienes alguna duda o no has recibido informacion, escribenos a info@farrayscenter.com',
+  leadModal_existing_heading: 'Ya estás registrado',
+  leadModal_existing_message:
+    'Vemos que ya te hemos enviado la guía anteriormente. Si tienes alguna duda o no has recibido la información, escríbenos a info@farrayscenter.com',
+  leadModal_existing_contact: '',
 
   // Generic labels used in pricing pages
   members: 'socios',

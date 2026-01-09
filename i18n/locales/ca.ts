@@ -1152,6 +1152,11 @@ export const ca = {
   danzaBarcelona_whichStyle_cultural_why:
     'Fusió de tècnica occidental amb arrels afrocubanes. Polirítmia, moviments de columna i maluc, treball de terra i energia ancestral.',
 
+  danzaBarcelona_whichStyle_flexibility_goal: 'Flexibilitat, elongació i control corporal',
+  danzaBarcelona_whichStyle_flexibility_style: 'Ballet Clàssic + Contemporani',
+  danzaBarcelona_whichStyle_flexibility_why:
+    'Combinar ballet i contemporani maximitza el teu rang de moviment. Stretching actiu, treball de terra i tècniques de release milloren la flexibilitat de forma segura.',
+
   danzaBarcelona_whichStyle_foundation_goal: 'Base sòlida per començar de zero',
   danzaBarcelona_whichStyle_foundation_style: 'Ballet Clàssic Nivell Iniciació',
   danzaBarcelona_whichStyle_foundation_why:
@@ -16499,9 +16504,9 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   consultarDisponibilidad: `Consultar Disponibilidad`,
   contactanos: `Contáctanos`,
   solicitarTour: `Solicitar Tour`,
-  leadModal_existing_heading: `Ya estas registrado`,
-  leadModal_existing_message: `Vemos que ya te registraste anteriormente per a una classe de prova.`,
-  leadModal_existing_contact: `Si tienes alguna duda o no has recibido informacion, escribenos a info@farrayscenter.com`,
+  leadModal_existing_heading: `Ja estàs registrat`,
+  leadModal_existing_message: `Veiem que ja t'hem enviat la guia anteriorment. Si tens algun dubte o no has rebut la informació, escriu-nos a info@farrayscenter.com`,
+  leadModal_existing_contact: ``,
   blog_authorRoleMar: `Copywriter y Bailarina`,
   blog_authorBioMar: `Copywriter professional y eterna enamorada del ball. Alumna de Farray's International Dance Center, donde ha descubierto que la salsa es mucho más que un ball: es un lenguaje universal.`,
   blog_credential_alumna: `Alumna de Farray's`,

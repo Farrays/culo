@@ -8716,8 +8716,14 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   danzaBarcelona_whichStyle_cultural_goal: 'Conexión cultural africana y ritmo',
   danzaBarcelona_whichStyle_cultural_style: 'Afro Jazz / Afro Contemporáneo',
   danzaBarcelona_whichStyle_cultural_why:
-    'Fusión de técnica occidental con raíces afrocubanas. Polirritmia, movimientos de columna y cadera, trabajo de suelo y energía ancestral.',
-  danzaBarcelona_whichStyle_foundation_goal: 'Base sólida para empezar de cero',
+    'Fusion de la technique occidentale avec les racines afro-cubaines. Polyrythmie, mouvements de la colonne et des hanches, travail au sol et énergie ancestrale.',
+
+  danzaBarcelona_whichStyle_flexibility_goal: 'Flexibilité, élongation et contrôle corporel',
+  danzaBarcelona_whichStyle_flexibility_style: 'Ballet Classique + Contemporain',
+  danzaBarcelona_whichStyle_flexibility_why:
+    'Combiner ballet et contemporain maximise votre amplitude de mouvement. Étirements actifs, travail au sol et techniques de release améliorent la flexibilité en toute sécurité.',
+
+  danzaBarcelona_whichStyle_foundation_goal: 'Base solide pour commencer de zéro',
   danzaBarcelona_whichStyle_foundation_style: 'Ballet Clásico Nivel Iniciación',
   danzaBarcelona_whichStyle_foundation_why:
     'Aprende desde los fundamentos: postura, alineación, coordinación y vocabulario básico. La mejor manera de comenzar tu viaje en la danza.',
@@ -16759,9 +16765,9 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   consultarDisponibilidad: `Consultar Disponibilidad`,
   contactanos: `Contáctanos`,
   solicitarTour: `Solicitar Tour`,
-  leadModal_existing_heading: `Ya estas registrado`,
-  leadModal_existing_message: `Vemos que ya te registraste anteriormente pour una cours de essai.`,
-  leadModal_existing_contact: `Si tienes alguna duda o no has recibido informacion, escribenos a info@farrayscenter.com`,
+  leadModal_existing_heading: `Vous êtes déjà inscrit`,
+  leadModal_existing_message: `Nous voyons que nous vous avons déjà envoyé le guide. Si vous avez des questions ou n'avez pas reçu les informations, écrivez-nous à info@farrayscenter.com`,
+  leadModal_existing_contact: ``,
   blog_authorRoleMar: `Copywriter y Bailarina`,
   blog_authorBioMar: `Copywriter professionnel y eterna enamorada del danse. Alumna de Farray's International Dance Center, donde ha descubierto que la salsa es mucho más que un danse: es un lenguaje universal.`,
   blog_credential_alumna: `Alumna de Farray's`,

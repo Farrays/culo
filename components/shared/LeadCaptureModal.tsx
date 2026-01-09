@@ -458,24 +458,36 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
           <div className="p-4 md:p-6">
             {status === 'success' || status === 'success_existing' ? (
               /* ============================================================
-                 SUCCESS STATE - Confirmacion educativa
+                 SUCCESS STATE - Centrado en pantalla
               ============================================================ */
-              <div className="text-center py-4 md:py-6">
-                {/* Success icon */}
+              <div className="min-h-[40vh] flex flex-col items-center justify-center text-center py-4 md:py-6">
+                {/* Icon - Check for success, X for duplicate */}
                 <div className="flex justify-center mb-4 md:mb-6">
                   <div className="relative">
                     <div
-                      className="absolute inset-0 bg-primary-accent/30 rounded-full blur-xl motion-reduce:blur-none"
+                      className={`absolute inset-0 rounded-full blur-xl motion-reduce:blur-none ${
+                        status === 'success_existing' ? 'bg-amber-500/30' : 'bg-primary-accent/30'
+                      }`}
                       aria-hidden="true"
                     />
-                    <div className="relative w-14 h-14 md:w-20 md:h-20 bg-gradient-to-br from-primary-dark to-primary-accent rounded-full flex items-center justify-center">
-                      <CheckIcon className="w-7 h-7 md:w-10 md:h-10 text-white" />
+                    <div
+                      className={`relative w-14 h-14 md:w-20 md:h-20 rounded-full flex items-center justify-center ${
+                        status === 'success_existing'
+                          ? 'bg-gradient-to-br from-amber-600 to-amber-500'
+                          : 'bg-gradient-to-br from-primary-dark to-primary-accent'
+                      }`}
+                    >
+                      {status === 'success_existing' ? (
+                        <XMarkIcon className="w-7 h-7 md:w-10 md:h-10 text-white" />
+                      ) : (
+                        <CheckIcon className="w-7 h-7 md:w-10 md:h-10 text-white" />
+                      )}
                     </div>
                   </div>
                 </div>
 
-                {/* Success title */}
-                <h3 className="text-2xl font-black text-neutral mb-4">
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl font-black text-neutral mb-4">
                   {status === 'success_existing'
                     ? t('leadModal_existing_heading')
                     : t('leadModal_success_heading')}
@@ -483,22 +495,19 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
 
                 {status === 'success_existing' ? (
                   /* Mensaje para leads duplicados */
-                  <>
-                    <p className="text-lg text-neutral/90 mb-2">
-                      {t('leadModal_existing_message')}
-                    </p>
-                    <p className="text-sm text-neutral/70 mb-6">
-                      {t('leadModal_existing_contact')}
-                    </p>
-                  </>
+                  <p className="text-sm md:text-base text-neutral/80 max-w-sm">
+                    {t('leadModal_existing_message')}
+                  </p>
                 ) : (
                   /* Mensaje para leads nuevos */
                   <>
                     {/* Main message */}
-                    <p className="text-lg text-neutral/90 mb-2">{t('leadModal_success_message')}</p>
+                    <p className="text-base md:text-lg text-neutral/90 mb-2">
+                      {t('leadModal_success_message')}
+                    </p>
 
                     {/* Secondary message */}
-                    <p className="text-sm text-neutral/70 mb-6">
+                    <p className="text-sm text-neutral/70 mb-4 md:mb-6">
                       {t('leadModal_success_spam_note')}
                     </p>
 
