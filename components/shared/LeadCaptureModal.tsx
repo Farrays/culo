@@ -531,10 +531,25 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                  FORM STATE
               ============================================================ */
               <>
-                {/* Intro text */}
-                <p className="text-neutral/70 text-sm mb-3 md:mb-6">{t('leadModal_intro')}</p>
+                {/* Benefits - Mobile: compact 2 items, Desktop: full box */}
+                {/* Mobile version - compact */}
+                <div className="md:hidden mb-3">
+                  <p className="text-sm font-semibold text-neutral mb-2">
+                    {t('leadModal_benefits_title')}
+                  </p>
+                  <ul className="space-y-1">
+                    <li className="flex items-center gap-2 text-xs text-neutral/80">
+                      <CheckIcon className="w-3.5 h-3.5 text-primary-accent flex-shrink-0" />
+                      <span>{t('leadModal_benefit1')}</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-xs text-neutral/80">
+                      <CheckIcon className="w-3.5 h-3.5 text-primary-accent flex-shrink-0" />
+                      <span>{t('leadModal_benefit4')}</span>
+                    </li>
+                  </ul>
+                </div>
 
-                {/* Benefits preview - hidden on mobile to save space */}
+                {/* Desktop version - full box */}
                 <div className="hidden md:block bg-white/5 rounded-xl p-4 mb-6 border border-white/10">
                   <p className="text-sm font-semibold text-neutral mb-3">
                     {t('leadModal_benefits_title')}
