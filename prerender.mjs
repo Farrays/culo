@@ -128,6 +128,62 @@ const LANDING_METADATA = generateLandingMetadata();
 const LANDING_CONTENT = generateLandingContent();
 
 // =============================================================================
+// AUTO-GENERATE INITIAL CONTENT FROM METADATA (SEO para LLMs)
+// =============================================================================
+// Genera contenido HTML mínimo desde la metadata existente para que los LLMs
+// que no ejecutan JavaScript puedan ver contenido básico de la página.
+// Ref: ROADMAP_ENTERPRISE.md - Sección 11 (SEO para LLMs)
+//
+// NOTA: Este contenido será reemplazado por React al hidratar. El usuario
+// no verá diferencia, pero los crawlers que no ejecutan JS verán:
+// - <h1> con el título de la página
+// - <p> con la descripción meta
+//
+// Páginas excluidas (mantienen '' vacío):
+// - home: muy dinámica, contenido complejo
+// - horariosPrecio: datos en tiempo real
+// - landings: tienen su propio sistema (LANDING_CONTENT)
+// - páginas legales: ya tienen contenido manual
+
+const PAGES_TO_EXCLUDE_FROM_AUTO_CONTENT = [
+  'home',           // Muy dinámica
+  'horariosPrecio', // Datos en tiempo real
+  'calendario',     // Datos dinámicos
+  'notFound',       // Ya tiene contenido
+  // Páginas legales - ya tienen contenido manual
+  'termsConditions',
+  'legalNotice',
+  'privacyPolicy',
+  'cookiePolicy',
+  'serviciosBaile',
+];
+
+/**
+ * Genera HTML simple desde la metadata de una página.
+ * @param {string} pageKey - Clave de la página (ej: 'dancehall')
+ * @param {string} lang - Idioma (es, ca, en, fr)
+ * @param {object} allMetadata - Objeto con toda la metadata por idioma
+ * @returns {string} HTML string o '' si debe excluirse
+ */
+const generateContentFromMetadata = (pageKey, lang, allMetadata) => {
+  // Si está en la lista de exclusión, retornar vacío
+  if (PAGES_TO_EXCLUDE_FROM_AUTO_CONTENT.includes(pageKey)) {
+    return '';
+  }
+
+  const meta = allMetadata[lang]?.[pageKey];
+  if (!meta || !meta.title || !meta.description) {
+    return '';
+  }
+
+  // Extraer título limpio (quitar "| Farray's Center" y similares)
+  const cleanTitle = meta.title.split('|')[0].trim();
+
+  // Generar HTML simple y semántico
+  return `<main id="main-content"><h1>${cleanTitle}</h1><p>${meta.description}</p></main>`;
+};
+
+// =============================================================================
 
 // All language/page combinations to prerender
 const routes = [
@@ -1581,223 +1637,88 @@ const metadata = {
   },
 };
 
-// Basic prerendered content for each page (bots will see this)
-// NOTE: Home pages use empty content to avoid React hydration mismatch errors (React error #418).
-// The HomePage component has complex dynamic content that cannot be accurately prerendered.
-// Only metadata (title, description, robots) is prerendered for SEO.
-const initialContent = {
+// =============================================================================
+// INITIAL CONTENT GENERATION
+// =============================================================================
+// Genera contenido pre-renderizado para cada página.
+// - Páginas con metadata: genera automáticamente desde title/description
+// - Páginas excluidas: mantienen '' vacío (home, horarios, etc.)
+// - Páginas legales: tienen contenido manual específico (mejor calidad)
+// - Landings: usan LANDING_CONTENT (su propio sistema)
+
+/**
+ * Genera el objeto initialContent completo para un idioma.
+ * Combina: contenido auto-generado + overrides manuales + landings
+ */
+const generateInitialContentForLang = (lang, manualOverrides) => {
+  const result = {};
+
+  // 1. Generar contenido automático para todas las páginas con metadata
+  const langMetadata = metadata[lang] || {};
+  for (const pageKey of Object.keys(langMetadata)) {
+    result[pageKey] = generateContentFromMetadata(pageKey, lang, metadata);
+  }
+
+  // 2. Aplicar overrides manuales (páginas legales, notFound, etc.)
+  Object.assign(result, manualOverrides);
+
+  // 3. Añadir landings
+  Object.assign(result, LANDING_CONTENT[lang] || {});
+
+  return result;
+};
+
+// Overrides manuales por idioma (páginas que necesitan contenido específico)
+const manualOverrides = {
   es: {
-    // Empty content - React will render from scratch to avoid hydration mismatch
-    home: '',
-    about: '',
-    classes: '',
-    danza: '',
-    salsaBachata: '',
-    salsaCubana: '',
-    salsaLadyStyle: '',
-    folkloreCubano: '',
-    timba: '',
-    danzasUrbanas: '',
-    dancehall: '',
-    clasesParticulares: '',
-    blog: '',
-    blogLifestyle: '',
-    blogBeneficiosSalsa: '',
-    blogHistoria: '',
-    blogHistoriaSalsa: '',
-    blogClasesSalsaBarcelona: '',
-    blogTips: '',
-    blogClasesPrincipiantes: '',
-    baileManananas: '',
-    classesHub: '',
-    horariosPrecio: '',
-    // New class pages
-    afroContemporaneo: '',
-    afroJazz: '',
-    contemporaneo: '',
-    stretching: '',
-    hipHop: '',
-    entrenamientoBailarines: '',
-    bachataLadyStyle: '',
-    bumBum: '',
-    cuerpoFitPage: '',
-    // New non-class pages
-    profesores: '',
-    faq: '',
-    alquilerSalas: '',
-    estudioGrabacion: '',
-    // Legal pages
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Términos y Condiciones</h1><p>Información legal sobre inscripciones, pagos y políticas de Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Aviso Legal</h1><p>Información sobre la empresa, propiedad intelectual y condiciones de uso.</p></main>`,
     privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Política de Privacidad</h1><p>Información sobre el tratamiento de datos personales según el RGPD.</p></main>`,
     cookiePolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Política de Cookies</h1><p>Información sobre las cookies utilizadas en nuestro sitio web.</p></main>`,
-    // Additional pages
     serviciosBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Servicios de Baile</h1><p>Clases particulares, coreografías para eventos, shows y espectáculos profesionales.</p></main>`,
     calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Calendario de Eventos</h1><p>Workshops, masterclasses y actividades especiales en Farray's Center Barcelona.</p></main>`,
-    salsaLadyStyleV2: '',
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Página No Encontrada</h1><p>La página que buscas no existe. Vuelve a la página principal o explora nuestras clases de baile.</p></main>`,
-    // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
-    ...LANDING_CONTENT.es,
   },
-  // Simplified content for other languages
-  // NOTE: Home pages use empty content to avoid React hydration mismatch errors (React error #418)
   ca: {
-    home: '',
-    about: '',
-    classes: '',
-    danza: '',
-    salsaBachata: '',
-    salsaCubana: '',
-    salsaLadyStyle: '',
-    folkloreCubano: '',
-    timba: '',
-    danzasUrbanas: '',
-    dancehall: '',
-    clasesParticulares: '',
-    blog: '',
-    blogLifestyle: '',
-    blogBeneficiosSalsa: '',
-    blogHistoria: '',
-    blogHistoriaSalsa: '',
-    blogClasesSalsaBarcelona: '',
-    blogTips: '',
-    blogClasesPrincipiantes: '',
-    baileManananas: '',
-    classesHub: '',
-    horariosPrecio: '',
-    // New class pages
-    afroContemporaneo: '',
-    afroJazz: '',
-    contemporaneo: '',
-    stretching: '',
-    hipHop: '',
-    entrenamientoBailarines: '',
-    bachataLadyStyle: '',
-    bumBum: '',
-    cuerpoFitPage: '',
-    // New non-class pages
-    profesores: '',
-    faq: '',
-    alquilerSalas: '',
-    estudioGrabacion: '',
-    // Legal pages
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Termes i Condicions</h1><p>Informació legal sobre inscripcions, pagaments i polítiques de Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Avís Legal</h1><p>Informació sobre l'empresa, propietat intel·lectual i condicions d'ús.</p></main>`,
     privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Política de Privacitat</h1><p>Informació sobre el tractament de dades personals segons el RGPD.</p></main>`,
     cookiePolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Política de Cookies</h1><p>Informació sobre les cookies utilitzades al nostre lloc web.</p></main>`,
-    // Additional pages
     serviciosBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Serveis de Ball</h1><p>Classes particulars, coreografies per a esdeveniments, shows i espectacles professionals.</p></main>`,
     calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Calendari d'Esdeveniments</h1><p>Workshops, masterclasses i activitats especials a Farray's Center Barcelona.</p></main>`,
-    salsaLadyStyleV2: '',
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Pàgina No Trobada</h1><p>La pàgina que busques no existeix. Torna a la pàgina principal o explora les nostres classes de ball.</p></main>`,
-    // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
-    ...LANDING_CONTENT.ca,
   },
   en: {
-    home: '',
-    about: '',
-    classes: '',
-    danza: '',
-    salsaBachata: '',
-    salsaCubana: '',
-    salsaLadyStyle: '',
-    folkloreCubano: '',
-    timba: '',
-    danzasUrbanas: '',
-    dancehall: '',
-    clasesParticulares: '',
-    blog: '',
-    blogLifestyle: '',
-    blogBeneficiosSalsa: '',
-    blogHistoria: '',
-    blogHistoriaSalsa: '',
-    blogClasesSalsaBarcelona: '',
-    blogTips: '',
-    blogClasesPrincipiantes: '',
-    baileManananas: '',
-    classesHub: '',
-    horariosPrecio: '',
-    // New class pages
-    afroContemporaneo: '',
-    afroJazz: '',
-    contemporaneo: '',
-    stretching: '',
-    hipHop: '',
-    entrenamientoBailarines: '',
-    bachataLadyStyle: '',
-    bumBum: '',
-    cuerpoFitPage: '',
-    // New non-class pages
-    profesores: '',
-    faq: '',
-    alquilerSalas: '',
-    estudioGrabacion: '',
-    // Legal pages
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Terms and Conditions</h1><p>Legal information about registration, payments and policies at Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Legal Notice</h1><p>Information about the company, intellectual property and terms of use.</p></main>`,
     privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Privacy Policy</h1><p>Information about personal data processing in accordance with GDPR.</p></main>`,
     cookiePolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Cookie Policy</h1><p>Information about cookies used on our website.</p></main>`,
-    // Additional pages
     serviciosBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Dance Services</h1><p>Private lessons, event choreography, professional shows and performances.</p></main>`,
     calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Events Calendar</h1><p>Workshops, masterclasses and special activities at Farray's Center Barcelona.</p></main>`,
-    salsaLadyStyleV2: '',
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Page Not Found</h1><p>The page you are looking for does not exist. Go back to the home page or explore our dance classes.</p></main>`,
-    // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
-    ...LANDING_CONTENT.en,
   },
   fr: {
-    home: '',
-    about: '',
-    classes: '',
-    danza: '',
-    salsaBachata: '',
-    salsaCubana: '',
-    salsaLadyStyle: '',
-    folkloreCubano: '',
-    timba: '',
-    danzasUrbanas: '',
-    dancehall: '',
-    clasesParticulares: '',
-    blog: '',
-    blogLifestyle: '',
-    blogBeneficiosSalsa: '',
-    blogHistoria: '',
-    blogHistoriaSalsa: '',
-    blogClasesSalsaBarcelona: '',
-    blogTips: '',
-    blogClasesPrincipiantes: '',
-    baileManananas: '',
-    classesHub: '',
-    horariosPrecio: '',
-    // New class pages
-    afroContemporaneo: '',
-    afroJazz: '',
-    contemporaneo: '',
-    stretching: '',
-    hipHop: '',
-    entrenamientoBailarines: '',
-    bachataLadyStyle: '',
-    bumBum: '',
-    cuerpoFitPage: '',
-    // New non-class pages
-    profesores: '',
-    faq: '',
-    alquilerSalas: '',
-    estudioGrabacion: '',
-    // Legal pages
     termsConditions: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Conditions Générales</h1><p>Informations légales sur les inscriptions, paiements et politiques de Farray's Center.</p></main>`,
     legalNotice: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Mentions Légales</h1><p>Informations sur l'entreprise, propriété intellectuelle et conditions d'utilisation.</p></main>`,
     privacyPolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Politique de Confidentialité</h1><p>Informations sur le traitement des données personnelles conformément au RGPD.</p></main>`,
     cookiePolicy: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Politique de Cookies</h1><p>Informations sur les cookies utilisés sur notre site web.</p></main>`,
-    // Additional pages
     serviciosBaile: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Services de Danse</h1><p>Cours particuliers, chorégraphies pour événements, shows et spectacles professionnels.</p></main>`,
     calendario: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Calendrier des Événements</h1><p>Workshops, masterclasses et activités spéciales à Farray's Center Barcelone.</p></main>`,
-    salsaLadyStyleV2: '',
     notFound: `<main id="main-content"><h1 class="holographic-text text-4xl font-bold">Page Non Trouvée</h1><p>La page que vous recherchez n'existe pas. Retournez à la page d'accueil ou explorez nos cours de danse.</p></main>`,
-    // Generic Dance Landing Pages (auto-generated from LANDING_CONTENT)
-    ...LANDING_CONTENT.fr,
   },
 };
+
+// Generar initialContent automáticamente para cada idioma
+const initialContent = {
+  es: generateInitialContentForLang('es', manualOverrides.es),
+  ca: generateInitialContentForLang('ca', manualOverrides.ca),
+  en: generateInitialContentForLang('en', manualOverrides.en),
+  fr: generateInitialContentForLang('fr', manualOverrides.fr),
+};
+
+// Log de páginas con contenido generado (para debug)
+const pagesWithContent = Object.keys(initialContent.es).filter(k => initialContent.es[k] !== '');
+console.log(`📝 SEO para LLMs: ${pagesWithContent.length} páginas con contenido pre-renderizado`);
 
 console.log('🚀 Starting prerendering process...\n');
 

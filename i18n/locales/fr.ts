@@ -2583,7 +2583,7 @@ export const fr = {
   yunaisyFarray_career_p5:
     'Plus tard, elle consolide sa figure en tant que soliste avec son partenaire de danse Alexander Carbó, créant un style propre où elle mélange danse contemporaine, afro et salsa, influençant profondément le style de toute la scène salsa internationale.',
   yunaisyFarray_career_p6:
-    "Elle participe à d'innombrables congrès internationaux et fait partie de la distribution de danseurs du film STREET DANCE 2 3D, où la danse devient le langage principal de l'histoire.",
+    "Elle participe à d'innombrables congrès internationaux et fait partie de la distribution de danseurs du film Street Dance 2, où la danse devient le langage principal de l'histoire.",
 
   yunaisyFarray_barcelona_title: 'Barcelone : le rêve qui devient école et mouvement',
   yunaisyFarray_barcelona_p1:
@@ -8716,8 +8716,14 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   danzaBarcelona_whichStyle_cultural_goal: 'Conexión cultural africana y ritmo',
   danzaBarcelona_whichStyle_cultural_style: 'Afro Jazz / Afro Contemporáneo',
   danzaBarcelona_whichStyle_cultural_why:
-    'Fusión de técnica occidental con raíces afrocubanas. Polirritmia, movimientos de columna y cadera, trabajo de suelo y energía ancestral.',
-  danzaBarcelona_whichStyle_foundation_goal: 'Base sólida para empezar de cero',
+    'Fusion de la technique occidentale avec les racines afro-cubaines. Polyrythmie, mouvements de la colonne et des hanches, travail au sol et énergie ancestrale.',
+
+  danzaBarcelona_whichStyle_flexibility_goal: 'Flexibilité, élongation et contrôle corporel',
+  danzaBarcelona_whichStyle_flexibility_style: 'Ballet Classique + Contemporain',
+  danzaBarcelona_whichStyle_flexibility_why:
+    'Combiner ballet et contemporain maximise votre amplitude de mouvement. Étirements actifs, travail au sol et techniques de release améliorent la flexibilité en toute sécurité.',
+
+  danzaBarcelona_whichStyle_foundation_goal: 'Base solide pour commencer de zéro',
   danzaBarcelona_whichStyle_foundation_style: 'Ballet Clásico Nivel Iniciación',
   danzaBarcelona_whichStyle_foundation_why:
     'Aprende desde los fundamentos: postura, alineación, coordinación y vocabulario básico. La mejor manera de comenzar tu viaje en la danza.',
@@ -8730,49 +8736,49 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   danzaBarcelona_whichStyle_combine_title: '¿Puedo combinar varios estilos?',
   danzaBarcelona_whichStyle_combine_text:
     'Absolutamente. De hecho, lo recomendamos. Combinar Ballet Clásico y Danza Contemporánea o Modern Jazz y Afro Jazz te da versatilidad técnica. Muchos bailarines entrenan múltiples disciplinas para ser más completos.',
-  danzasUrbanas_whichStyle_title: '¿Qué Estilo Urbano Elegir? Encuentra tu Baile Perfecto',
+  danzasUrbanas_whichStyle_title: 'Quel Style Urbain Choisir ? Trouvez Votre Danse Parfaite',
   danzasUrbanas_whichStyle_intro:
-    'Cada estilo urbano tiene su personalidad, energía y beneficios únicos. Usa esta guía para descubrir qué clase se adapta mejor a lo que buscas. No hay respuestas incorrectas: puedes combinar varios estilos y explorar libremente.',
-  danzasUrbanas_whichStyle_tableHeader_goal: 'Si buscas…',
-  danzasUrbanas_whichStyle_tableHeader_style: 'Estilo Recomendado',
-  danzasUrbanas_whichStyle_tableHeader_why: 'Por qué',
-  danzasUrbanas_whichStyle_flow_goal: 'Mucho flow y cardio intenso',
+    "Chaque style urbain a sa personnalité, son énergie et ses avantages uniques. Utilisez ce guide pour découvrir quel cours correspond le mieux à ce que vous recherchez. Il n'y a pas de mauvaises réponses : vous pouvez combiner plusieurs styles et explorer librement.",
+  danzasUrbanas_whichStyle_tableHeader_goal: 'Si vous cherchez…',
+  danzasUrbanas_whichStyle_tableHeader_style: 'Style Recommandé',
+  danzasUrbanas_whichStyle_tableHeader_why: 'Pourquoi',
+  danzasUrbanas_whichStyle_flow_goal: 'Beaucoup de flow et cardio intense',
   danzasUrbanas_whichStyle_flow_style: 'Dancehall',
   danzasUrbanas_whichStyle_flow_why:
-    'Energía jamaicana explosiva, pasos rápidos, mucho movimiento de cadera y cardio. Quemas calorías mientras desarrollas groove y actitud.',
-  danzasUrbanas_whichStyle_sensual_goal: 'Sensualidad y técnica femenina en tacones',
+    'Énergie jamaïcaine explosive, pas rapides, beaucoup de mouvement de hanches et cardio. Brûlez des calories tout en développant groove et attitude.',
+  danzasUrbanas_whichStyle_sensual_goal: 'Sensualité et technique féminine en talons',
   danzasUrbanas_whichStyle_sensual_style: 'Heels / Femmology / Sexy Style',
   danzasUrbanas_whichStyle_sensual_why:
-    'Trabaja feminidad, confianza, isolaciones corporales y movimientos sensuales. Entrenas en tacones con técnica de alta calidad, fuerza de piernas y elegancia.',
-  danzasUrbanas_whichStyle_precision_goal: 'Disciplina y precisión coreográfica',
+    'Travaillez la féminité, la confiance, les isolations corporelles et les mouvements sensuels. Entraînez-vous en talons avec une technique de haute qualité, force des jambes et élégance.',
+  danzasUrbanas_whichStyle_precision_goal: 'Discipline et précision chorégraphique',
   danzasUrbanas_whichStyle_precision_style: 'K-Pop',
   danzasUrbanas_whichStyle_precision_why:
-    'Coreografías de K-Pop con sincronización perfecta, formaciones y estética coreana. Ideal si te gusta el detalle y la coordinación grupal.',
-  danzasUrbanas_whichStyle_foundation_goal: 'Base sólida y cultura urbana',
+    'Chorégraphies K-Pop avec synchronisation parfaite, formations et esthétique coréenne. Idéal si vous aimez le détail et la coordination de groupe.',
+  danzasUrbanas_whichStyle_foundation_goal: 'Base solide et culture urbaine',
   danzasUrbanas_whichStyle_foundation_style: 'Hip Hop',
   danzasUrbanas_whichStyle_foundation_why:
-    'Fundamentos del Old School (Locking, Popping, House), groove, musicalidad y freestyle. La base de todas las danzas urbanas modernas.',
-  danzasUrbanas_whichStyle_power_goal: 'Energía africana y potencia',
+    'Fondamentaux du Old School (Locking, Popping, House), groove, musicalité et freestyle. La base de toutes les danses urbaines modernes.',
+  danzasUrbanas_whichStyle_power_goal: 'Énergie africaine et puissance',
   danzasUrbanas_whichStyle_power_style: 'Afrobeat / Afrodance',
   danzasUrbanas_whichStyle_power_why:
-    'Ritmos africanos contemporáneos, pasos potentes, conexión con raíces culturales y energía contagiosa. Cardio + expresión cultural.',
-  danzasUrbanas_whichStyle_glutes_goal: 'Trabajo de glúteos y twerking',
+    'Rythmes africains contemporains, pas puissants, connexion avec les racines culturelles et énergie contagieuse. Cardio + expression culturelle.',
+  danzasUrbanas_whichStyle_glutes_goal: 'Travail des fessiers et twerking',
   danzasUrbanas_whichStyle_glutes_style: 'Twerk',
   danzasUrbanas_whichStyle_glutes_why:
-    'Entrenamiento intenso de glúteos, piernas y core. Técnica de aislamiento, fuerza y tonificación. Resultados físicos visibles y mejora de autoestima corporal.',
-  danzasUrbanas_whichStyle_commercial_goal: 'Prepararte para videoclips y audiciones',
+    "Entraînement intense des fessiers, jambes et gainage. Technique d'isolation, force et tonification. Résultats physiques visibles et amélioration de l'estime corporelle.",
+  danzasUrbanas_whichStyle_commercial_goal: 'Vous préparer pour les clips vidéo et auditions',
   danzasUrbanas_whichStyle_commercial_style: 'Commercial Dance',
   danzasUrbanas_whichStyle_commercial_why:
-    'Fusión de estilos urbanos con técnica comercial. Te prepara para castings, videoclips y la industria del entretenimiento profesional.',
-  danzasUrbanas_whichStyle_beginner_title: '¿Primera vez en danzas urbanas? Empieza aquí',
+    "Fusion de styles urbains avec technique commerciale. Vous prépare pour les castings, clips vidéo et l'industrie du divertissement professionnel.",
+  danzasUrbanas_whichStyle_beginner_title: 'Première fois en danses urbaines ? Commencez ici',
   danzasUrbanas_whichStyle_beginner_text:
-    'Si nunca has bailado urbano, los mejores estilos para empezar son Hip Hop (base y fundamentos), Dancehall (energía y diversión inmediata) o Reggaeton (ritmo latino accesible). Luego puedes expandirte a K-Pop, Heels, Afrobeat o Commercial.',
-  danzasUrbanas_whichStyle_adult_title: '¿Adulto sin experiencia previa? Sin problema',
+    "Si vous n'avez jamais dansé urbain, les meilleurs styles pour commencer sont Hip Hop (base et fondamentaux), Dancehall (énergie et plaisir immédiat) ou Reggaeton (rythme latino accessible). Ensuite, vous pouvez vous étendre au K-Pop, Heels, Afrobeat ou Commercial.",
+  danzasUrbanas_whichStyle_adult_title: 'Adulte sans expérience préalable ? Pas de problème',
   danzasUrbanas_whichStyle_adult_text:
-    'Muchos adultos empiezan desde cero en nuestras clases de danzas urbanas. Tenemos grupos específicos para adultos principiantes en Hip Hop, Dancehall, K-Pop y Reggaeton. La edad no importa: importa la actitud y las ganas de moverte.',
-  danzasUrbanas_whichStyle_combine_title: '¿Puedo combinar varios estilos?',
+    "Beaucoup d'adultes commencent de zéro dans nos cours de danses urbaines. Nous avons des groupes spécifiques pour adultes débutants en Hip Hop, Dancehall, K-Pop et Reggaeton. L'âge n'a pas d'importance : ce qui compte c'est l'attitude et l'envie de bouger.",
+  danzasUrbanas_whichStyle_combine_title: 'Puis-je combiner plusieurs styles ?',
   danzasUrbanas_whichStyle_combine_text:
-    'Absolutamente sí. De hecho, te lo recomendamos. Hip Hop y Dancehall te da base y flow. K-Pop y Commercial te prepara para la industria. Heels y Dancehall fusiona sensualidad con energía. Experimenta y encuentra tu combinación perfecta.',
+    "Absolument oui. En fait, nous vous le recommandons. Hip Hop et Dancehall vous donnent base et flow. K-Pop et Commercial vous préparent pour l'industrie. Heels et Dancehall fusionnent sensualité et énergie. Expérimentez et trouvez votre combinaison parfaite.",
   contact_breadcrumb_home: 'Accueil',
   contact_breadcrumb_current: 'Contact',
   merchandising_breadcrumb_home: 'Accueil',
@@ -12219,66 +12225,68 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   videoComingSoon: 'Vidéo Bientôt',
   videoComingSoonDesc: 'Nous préparons quelque chose de spécial pour vous',
 
-  leadModal_title: "Descubre cómo empezar en Farray's Center",
+  leadModal_title: "Découvrez comment commencer à Farray's Center",
   leadModal_subtitle:
-    'Te enviamos toda la información para empezar a bailar con nosotros de forma clara y sin compromiso.',
-  leadModal_success_title: 'Enviado correctamente',
+    'Nous vous envoyons toutes les informations pour commencer à danser avec nous de manière claire et sans engagement.',
+  leadModal_success_title: 'Envoyé avec succès',
   close: 'Fermer',
   leadModal_intro:
-    'Completa el formulario y recibe en tu email toda la información que necesitas para decidir con calma y elegir la opción que mejor encaje contigo.',
-  leadModal_benefits_title: 'Qué recibirás:',
-  leadModal_benefit1: 'Opciones de participación y precios',
-  leadModal_benefit2: 'Horarios disponibles y niveles recomendados',
-  leadModal_benefit3: 'Cómo funciona el club y qué incluye ser socio',
-  leadModal_benefit4: 'Puertas Abiertas de Enero y promoción de bienvenida',
-  leadModal_field_firstName: 'Nombre',
-  leadModal_field_lastName: 'Apellido',
+    "Remplissez le formulaire et recevez par email toutes les informations dont vous avez besoin pour décider tranquillement et choisir l'option qui vous convient le mieux.",
+  leadModal_benefits_title: 'Ce que vous recevrez :',
+  leadModal_benefit1: 'Options de participation et tarifs',
+  leadModal_benefit2: 'Horaires disponibles et niveaux recommandés',
+  leadModal_benefit3: "Comment fonctionne le club et ce qu'inclut l'adhésion",
+  leadModal_benefit4: 'Portes Ouvertes de Janvier et promotion de bienvenue',
+  leadModal_field_firstName: 'Prénom',
+  leadModal_field_lastName: 'Nom',
   leadModal_field_email: 'Email',
-  leadModal_field_phone: 'Teléfono',
-  leadModal_field_discovery: 'Cómo nos conociste',
-  leadModal_field_style: 'Estilo de baile preferido',
-  leadModal_placeholder_firstName: 'Tu nombre',
-  leadModal_placeholder_lastName: 'Tu apellido',
-  leadModal_placeholder_email: 'tu@email.com',
+  leadModal_field_phone: 'Téléphone',
+  leadModal_field_discovery: 'Comment nous avez-vous connu',
+  leadModal_field_style: 'Style de danse préféré',
+  leadModal_placeholder_firstName: 'Votre prénom',
+  leadModal_placeholder_lastName: 'Votre nom',
+  leadModal_placeholder_email: 'vous@email.com',
   leadModal_placeholder_phone: '+34 600 000 000',
-  leadModal_discovery_placeholder: 'Selecciona una opción',
+  leadModal_discovery_placeholder: 'Sélectionnez une option',
   leadModal_discovery_google: 'Google',
   leadModal_discovery_instagram: 'Instagram',
-  leadModal_discovery_passingby: 'Pasé por delante del centro',
-  leadModal_discovery_friend: 'Un amigo me lo recomendó',
-  leadModal_discovery_event: 'Vi un evento o actuación',
-  leadModal_discovery_other: 'Otro',
-  leadModal_style_placeholder: 'Selecciona un estilo',
-  leadModal_style_latinos: 'Ritmos Latinos (Salsa, Bachata, Lady Style...)',
-  leadModal_style_urbanos: 'Bailes Urbanos (Hip Hop, Reggaeton, Heels...)',
-  leadModal_style_danza: 'Danza (Contemporáneo, Jazz, Ballet...)',
-  leadModal_style_fitness: 'Préparation Physique (Stretching, Cuerpo Fit...)',
-  leadModal_style_other: 'Otros',
-  leadModal_submit: 'Descubre Cómo Empezar',
-  leadModal_sending: 'Enviando...',
-  leadModal_error_firstName: 'Por favor, introduce tu nombre',
-  leadModal_error_lastName: 'Por favor, introduce tu apellido',
-  leadModal_error_email: 'Por favor, introduce un email válido',
-  leadModal_error_phone: 'Por favor, introduce tu teléfono',
-  leadModal_error_discovery: 'Por favor, indica cómo nos conociste',
-  leadModal_error_style: 'Por favor, selecciona un estilo de baile',
-  leadModal_error_consent: 'Debes aceptar la política de privacidad para continuar',
-  leadModal_error_generic: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
-  leadModal_error_retry: 'Puedes volver a intentarlo',
+  leadModal_discovery_passingby: 'Je suis passé(e) devant le centre',
+  leadModal_discovery_friend: "Un(e) ami(e) me l'a recommandé",
+  leadModal_discovery_event: "J'ai vu un événement ou spectacle",
+  leadModal_discovery_other: 'Autre',
+  leadModal_style_placeholder: 'Sélectionnez un style',
+  leadModal_style_latinos: 'Rythmes Latins (Salsa, Bachata, Lady Style...)',
+  leadModal_style_urbanos: 'Danses Urbaines (Hip Hop, Reggaeton, Heels...)',
+  leadModal_style_danza: 'Danse (Contemporain, Jazz, Ballet...)',
+  leadModal_style_fitness: 'Préparation Physique (Stretching, Body Fit...)',
+  leadModal_style_other: 'Autres',
+  leadModal_submit: 'Découvrez Comment Commencer',
+  leadModal_sending: 'Envoi en cours...',
+  leadModal_error_firstName: 'Veuillez entrer votre prénom',
+  leadModal_error_lastName: 'Veuillez entrer votre nom',
+  leadModal_error_email: 'Veuillez entrer un email valide',
+  leadModal_error_phone: 'Veuillez entrer votre téléphone',
+  leadModal_error_discovery: 'Veuillez indiquer comment vous nous avez connu',
+  leadModal_error_style: 'Veuillez sélectionner un style de danse',
+  leadModal_error_consent: 'Vous devez accepter la politique de confidentialité pour continuer',
+  leadModal_error_generic: "Une erreur s'est produite. Veuillez réessayer.",
+  leadModal_error_retry: 'Vous pouvez réessayer',
   leadModal_consent_text:
-    "Acepto recibir información sobre precios, horarios y promociones de Farray's Center. Puedo darme de baja en cualquier momento.",
-  leadModal_consent_link: 'Política de privacidad',
+    "J'accepte de recevoir des informations sur les tarifs, horaires et promotions de Farray's Center. Je peux me désinscrire à tout moment.",
+  leadModal_consent_link: 'Politique de confidentialité',
   leadModal_legal_text:
-    "La información solicitada se envía automáticamente desde Farray's Center como parte de su servicio de información y orientación. La inscripción como socio y la participación en las actividades deportivas se formaliza exclusivamente con Club Esportiu Farray Barcelona (entidad deportiva), de acuerdo con su normativa interna y condiciones de socio. Este formulario no implica inscripción, reserva de plaza ni contratación.",
-  leadModal_legal_link: 'Ver aviso legal y política de privacidad',
-  leadModal_success_heading: 'Todo listo',
-  leadModal_success_message: 'Te hemos enviado la guía a tu email.',
+    "Les informations demandées sont envoyées automatiquement par Farray's Center dans le cadre de son service d'information et d'orientation. L'inscription en tant que membre et la participation aux activités sportives se formalisent exclusivement avec Club Esportiu Farray Barcelona (entité sportive), conformément à sa réglementation interne et conditions d'adhésion. Ce formulaire n'implique pas d'inscription, de réservation de place ni de contrat.",
+  leadModal_legal_link: 'Voir mentions légales et politique de confidentialité',
+  leadModal_success_heading: "C'est prêt",
+  leadModal_success_message: 'Nous vous avons envoyé le guide par email.',
   leadModal_success_spam_note:
-    'Si no lo ves en unos minutos, revisa las carpetas de Promociones o Spam.',
-  leadModal_success_promo_included: 'Promoción de bienvenida incluida',
+    'Si vous ne le voyez pas dans quelques minutes, vérifiez les dossiers Promotions ou Spam.',
+  leadModal_success_promo_included: 'Promotion de bienvenue incluse',
   leadModal_success_deliverability:
-    'Para asegurarte de recibir toda la información, te recomendamos añadir nuestro correo a tu lista de contactos.',
-  leadModal_success_close: 'Entendido',
+    "Pour vous assurer de recevoir toutes les informations, nous vous recommandons d'ajouter notre email à votre liste de contacts.",
+  leadModal_success_close: 'Compris',
+  leadModal_success_language_note:
+    'Note Importante : Toutes les informations sont envoyées exclusivement en espagnol.',
   members: 'membres',
   years_in_barcelona: 'años en Barcelona',
   horariosV2_page_title: 'Horarios Clases de Baile Barcelona | Farray Center',
@@ -15345,6 +15353,56 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   btLeadModal_legal_text:
     "Vos données seront traitées par Farray's International Dance Center pour gérer votre cours de bienvenue. Vous pouvez exercer vos droits en nous écrivant à info@farrayscenter.com.",
 
+  // ============================================================================
+  // BACHATA SENSUAL LEAD MODAL (ba)
+  // ============================================================================
+  baLeadModal_title: 'Découvrez comment commencer la Bachata Sensual',
+  baLeadModal_subtitle: "Essayez un cours de bienvenue et décidez calmement s'il vous convient.",
+
+  // Micro commitment
+  baLeadModal_microCommit_question: 'Aimeriez-vous essayer un cours de Bachata Sensual ?',
+  baLeadModal_microCommit_yes: 'Oui, je veux essayer !',
+  baLeadModal_microCommit_curious: "Je veux juste plus d'informations",
+
+  baLeadModal_intro:
+    "Complétez le formulaire et nous vous contacterons pour réserver votre cours de bienvenue de Bachata Sensual. C'est gratuit et sans engagement.",
+
+  // Benefits
+  baLeadModal_benefits_title: 'Ce que vous recevrez :',
+  baLeadModal_benefit1: 'Horaires de Bachata Sensual disponibles par niveau',
+  baLeadModal_benefit3: 'Confirmation et rappels par WhatsApp',
+  baLeadModal_benefit4: 'Accès au cours de bienvenue (sans engagement)',
+
+  // Form fields
+  baLeadModal_field_firstName: 'Prénom',
+  baLeadModal_field_lastName: 'Nom',
+  baLeadModal_field_email: 'Email',
+  baLeadModal_field_phone: 'Téléphone',
+  baLeadModal_placeholder_firstName: 'Votre prénom',
+  baLeadModal_placeholder_lastName: 'Votre nom',
+  baLeadModal_placeholder_email: 'votre@email.com',
+  baLeadModal_placeholder_phone: '+34 600 000 000',
+
+  // Consent
+  baLeadModal_consent_text:
+    "J'accepte de recevoir des informations sur les horaires, prix et promotions de Bachata Sensual. Consulter la",
+  baLeadModal_consent_link: 'politique de confidentialité',
+
+  // Submit
+  baLeadModal_submit: 'Réserver Mon Cours Gratuit',
+  baLeadModal_submitLoading: 'Traitement...',
+
+  // Success
+  baLeadModal_success_title: 'Réservation Confirmée !',
+  baLeadModal_success_message:
+    'Nous vous avons envoyé toutes les informations pour votre cours de bienvenue.',
+  baLeadModal_success_cta: 'Fermer',
+
+  // Errors
+  baLeadModal_error_title: 'Erreur de traitement',
+  baLeadModal_error_message: "Une erreur s'est produite. Veuillez réessayer.",
+  baLeadModal_error_cta: 'Réessayer',
+
   // Legal Notice Page
   legalNotice_page_title: 'Mentions Légales',
   legalNotice_page_description:
@@ -16759,9 +16817,9 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   consultarDisponibilidad: `Consultar Disponibilidad`,
   contactanos: `Contáctanos`,
   solicitarTour: `Solicitar Tour`,
-  leadModal_existing_heading: `Ya estas registrado`,
-  leadModal_existing_message: `Vemos que ya te registraste anteriormente pour una cours de essai.`,
-  leadModal_existing_contact: `Si tienes alguna duda o no has recibido informacion, escribenos a info@farrayscenter.com`,
+  leadModal_existing_heading: `Vous êtes déjà inscrit`,
+  leadModal_existing_message: `Nous voyons que nous vous avons déjà envoyé le guide. Si vous avez des questions ou n'avez pas reçu les informations, écrivez-nous à info@farrayscenter.com`,
+  leadModal_existing_contact: ``,
   blog_authorRoleMar: `Copywriter y Bailarina`,
   blog_authorBioMar: `Copywriter professionnel y eterna enamorada del danse. Alumna de Farray's International Dance Center, donde ha descubierto que la salsa es mucho más que un danse: es un lenguaje universal.`,
   blog_credential_alumna: `Alumna de Farray's`,

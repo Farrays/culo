@@ -125,5 +125,12 @@ export default [js.configs.recommended, {
     '*.config.mjs',
     'vite.config.ts',
     'scripts/',
+    // Example/documentation files (not part of codebase)
+    'FormularioReserva-*.tsx',
+    'api-*.js',
+    'src-components-*.tsx',
+    '*-example.tsx',
+    '*-example.js',
+    'src/pages/test/',
   ],
 }, ...storybook.configs["flat/recommended"]];

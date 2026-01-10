@@ -63,16 +63,13 @@
     background: #e63d7e;
   }
 
+  /* 3D Text Effect - Opción 1: Sutil (blanco con sombra rosa 3D) */
   .holographic-text {
     color: white;
     text-shadow:
-      0 0 5px #fff,
-      0 0 10px #fff,
-      0 0 20px #c82260,
-      0 0 30px #c82260,
-      0 0 40px #c82260,
-      0 0 55px #c82260,
-      0 0 75px #c82260;
+      1px 1px 0 #c82260,
+      2px 2px 0 #a01d4d,
+      3px 3px 3px rgba(0, 0, 0, 0.3);
   }
 
   /* Calendar event glow effects */

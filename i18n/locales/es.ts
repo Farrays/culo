@@ -1666,6 +1666,11 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   danzaBarcelona_whichStyle_cultural_why:
     'Fusión de técnica occidental con raíces afrocubanas. Polirritmia, movimientos de columna y cadera, trabajo de suelo y energía ancestral.',
 
+  danzaBarcelona_whichStyle_flexibility_goal: 'Flexibilidad, elongación y control corporal',
+  danzaBarcelona_whichStyle_flexibility_style: 'Ballet Clásico + Contemporáneo',
+  danzaBarcelona_whichStyle_flexibility_why:
+    'Combinar ballet y contemporáneo maximiza tu rango de movimiento. Stretching activo, trabajo de suelo y técnicas de release mejoran la flexibilidad de forma segura.',
+
   danzaBarcelona_whichStyle_foundation_goal: 'Base sólida para empezar de cero',
   danzaBarcelona_whichStyle_foundation_style: 'Ballet Clásico Nivel Iniciación',
   danzaBarcelona_whichStyle_foundation_why:
@@ -2609,7 +2614,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   yunaisyFarray_career_p5:
     'Más adelante consolida su figura como solista con su pareja de baile Alexander Carbó, creando un estilo propio donde mezcla danza contemporánea, afro y salsa, influyendo profundamente en el estilo de todo el panorama salsero internacional.',
   yunaisyFarray_career_p6:
-    'Participa en innumerables congresos internacionales y forma parte del elenco de bailarines de la película STREET DANCE 2 3D, donde el baile se convierte en el lenguaje principal de la historia.',
+    'Participa en innumerables congresos internacionales y forma parte del elenco de bailarines de la película Street Dance 2, donde el baile se convierte en el lenguaje principal de la historia.',
 
   yunaisyFarray_barcelona_title: 'Barcelona: el sueño que se convierte en escuela y movimiento',
   yunaisyFarray_barcelona_p1:
@@ -12834,12 +12839,14 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   leadModal_success_deliverability:
     'Para asegurarte de recibir toda la información, te recomendamos añadir nuestro correo a tu lista de contactos.',
   leadModal_success_close: 'Entendido',
+  leadModal_success_language_note:
+    'Nota Importante: Toda la información se envía exclusivamente en español.',
 
   // Existing lead (ya registrado dentro de 90 días)
-  leadModal_existing_heading: 'Ya estas registrado',
-  leadModal_existing_message: 'Vemos que ya te registraste anteriormente para una clase de prueba.',
-  leadModal_existing_contact:
-    'Si tienes alguna duda o no has recibido informacion, escribenos a info@farrayscenter.com',
+  leadModal_existing_heading: 'Ya estás registrado',
+  leadModal_existing_message:
+    'Vemos que ya te hemos enviado la guía anteriormente. Si tienes alguna duda o no has recibido la información, escríbenos a info@farrayscenter.com',
+  leadModal_existing_contact: '',
 
   // Generic labels used in pricing pages
   members: 'socios',

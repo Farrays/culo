@@ -319,7 +319,7 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
       {/* Modal */}
       <div
         ref={modalRef}
-        className="relative w-full max-w-md bg-gradient-to-br from-primary-dark to-black border border-primary-accent/30 rounded-2xl shadow-2xl shadow-primary-accent/20 p-6 sm:p-8 animate-fade-in motion-reduce:animate-none"
+        className="relative w-full max-w-md bg-gradient-to-br from-primary-dark to-black border border-primary-accent/30 rounded-2xl shadow-2xl shadow-primary-accent/20 p-4 md:p-6 animate-fade-in motion-reduce:animate-none max-h-[95vh] overflow-y-auto"
       >
         {/* Close button */}
         <button
@@ -348,16 +348,16 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
         {status !== 'success' ? (
           <>
             {/* Header with badge */}
-            <div className="text-center mb-6">
+            <div className="text-center mb-4 md:mb-6">
               {/* Exclusive offer badge */}
-              <span className="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-wider uppercase bg-primary-accent text-white rounded-full">
+              <span className="inline-block px-3 py-1 mb-3 md:mb-4 text-xs font-bold tracking-wider uppercase bg-primary-accent text-white rounded-full">
                 {t('exitIntent_badge') || 'OFERTA EXCLUSIVA'}
               </span>
 
               {/* Gift icon */}
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary-accent/20 flex items-center justify-center">
+              <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-full bg-primary-accent/20 flex items-center justify-center">
                 <svg
-                  className="w-8 h-8 text-primary-accent"
+                  className="w-6 h-6 md:w-8 md:h-8 text-primary-accent"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -375,7 +375,7 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
               {/* Title */}
               <h2
                 id="exit-intent-title"
-                className="text-2xl sm:text-3xl font-black text-neutral mb-2"
+                className="text-xl md:text-2xl font-black text-neutral mb-2"
               >
                 {t('exitIntent_title') || `${discountPercent}% de descuento en tu matrícula`}
               </h2>
@@ -387,7 +387,7 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
             </div>
 
             {/* Countdown */}
-            <div className="flex flex-col items-center mb-6 p-3 bg-black/50 rounded-xl border border-primary-accent/20">
+            <div className="flex flex-col items-center mb-4 md:mb-6 p-2 md:p-3 bg-black/50 rounded-xl border border-primary-accent/20">
               <span className="text-xs text-neutral/60 uppercase tracking-wider mb-2">
                 {t('exitIntent_countdown_label') || 'Termina en:'}
               </span>
@@ -395,7 +395,7 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
             </div>
 
             {/* Benefits */}
-            <ul className="space-y-2 mb-6" role="list">
+            <ul className="space-y-1.5 md:space-y-2 mb-4 md:mb-6" role="list">
               {[
                 t('exitIntent_benefit1') || 'Primera clase de prueba GRATIS',
                 t('exitIntent_benefit2') || 'Válido para cualquier estilo de baile',
@@ -420,7 +420,7 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
             </ul>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+            <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4" noValidate>
               <div>
                 <label htmlFor="exit-intent-email" className="sr-only">
                   {t('exitIntent_email_label') || 'Tu email'}
@@ -457,7 +457,7 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
                 type="submit"
                 disabled={status === 'submitting' || !isValidEmail(email)}
                 aria-busy={status === 'submitting'}
-                className="w-full py-4 bg-primary-accent text-white font-bold text-lg rounded-xl hover:bg-primary-accent/90 transition-all motion-reduce:transition-none transform hover:scale-[1.02] motion-reduce:hover:scale-100 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-lg shadow-primary-accent/30"
+                className="w-full py-3 md:py-4 bg-primary-accent text-white font-bold text-base md:text-lg rounded-xl hover:bg-primary-accent/90 transition-all motion-reduce:transition-none transform hover:scale-[1.02] motion-reduce:hover:scale-100 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-lg shadow-primary-accent/30"
               >
                 {status === 'submitting'
                   ? t('exitIntent_sending') || 'Reservando...'
@@ -473,10 +473,14 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
           </>
         ) : (
           /* Success state */
-          <div className="text-center py-8" role="status" aria-live="polite">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-500/20 flex items-center justify-center">
+          <div
+            className="min-h-[40vh] flex flex-col items-center justify-center text-center py-4 md:py-8"
+            role="status"
+            aria-live="polite"
+          >
+            <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-full bg-green-500/20 flex items-center justify-center">
               <svg
-                className="w-8 h-8 text-green-500"
+                className="w-6 h-6 md:w-8 md:h-8 text-green-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -490,16 +494,16 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
                 />
               </svg>
             </div>
-            <h2 className="text-2xl font-bold text-neutral mb-2">
+            <h2 className="text-xl md:text-2xl font-bold text-neutral mb-2">
               {t('exitIntent_success_title') || '¡Descuento reservado!'}
             </h2>
-            <p className="text-neutral/80 mb-6">
+            <p className="text-neutral/80 mb-4 md:mb-6 text-sm md:text-base">
               {t('exitIntent_success_message') ||
                 `Te contactaremos pronto para activar tu ${discountPercent}% de descuento en la matrícula.`}
             </p>
             <button
               onClick={() => closeModal(true)}
-              className="px-6 py-3 bg-primary-accent/20 text-primary-accent font-semibold rounded-xl hover:bg-primary-accent/30 transition-colors motion-reduce:transition-none"
+              className="px-5 py-2.5 md:px-6 md:py-3 bg-primary-accent/20 text-primary-accent font-semibold rounded-xl hover:bg-primary-accent/30 transition-colors motion-reduce:transition-none"
             >
               {t('exitIntent_success_cta') || 'Continuar navegando'}
             </button>

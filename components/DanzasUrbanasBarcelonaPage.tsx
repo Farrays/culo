@@ -153,8 +153,8 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
       {/* SEO metadata (title, description, og, hreflang) is handled by the global SEO.tsx component */}
       {/* Page-specific Schema Markup */}
       <CourseSchema
-        name={t('danzasUrbanasBarcelona_h1')}
-        description={t('danzasUrbanasBarcelona_description')}
+        name={t('danzasUrbanas_h1')}
+        description={t('danzasUrbanas_description')}
         provider={{
           name: "Farray's International Dance Center",
           url: baseUrl,
@@ -165,7 +165,7 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
       />
       <LocalBusinessSchema
         name="Farray's International Dance Center"
-        description={t('danzasUrbanasBarcelona_description')}
+        description={t('danzasUrbanas_description')}
         url={baseUrl}
         telephone="+34622247085"
         email="info@farrayscenter.com"
