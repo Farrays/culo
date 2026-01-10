@@ -14,7 +14,6 @@ import { SUPPORTED_LOCALES } from '../types';
 import TestimonialsSection from './TestimonialsSection';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 import LeadCaptureModal from './shared/LeadCaptureModal';
-import LazyImage from './LazyImage';
 import OptimizedImage from './OptimizedImage';
 import { getStyleImage, getContextualAltKey } from '../constants/style-images';
 
@@ -650,12 +649,15 @@ const DanzaBarcelonaPage: React.FC = () => {
                       aria-label={`${t('relatedBalletName')} - ${t('relatedClassesViewClass')}`}
                     >
                       <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
-                        <LazyImage
-                          src="/images/classes/ballet/img/clases-ballet-barcelona_480.webp"
+                        <OptimizedImage
+                          src="/images/classes/ballet/img/clases-ballet-barcelona"
                           alt={`Clase de ${t('relatedBalletName')} en Barcelona - Farray's Dance Center`}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                           width={480}
                           height={320}
+                          breakpoints={[320, 640, 768]}
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 480px"
+                          priority="auto"
                         />
                         <div
                           className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
@@ -783,13 +785,16 @@ const DanzaBarcelonaPage: React.FC = () => {
                       aria-label={`${t('relatedModernJazzName')} - ${t('relatedClassesViewClass')}`}
                     >
                       <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
-                        <LazyImage
-                          src="/images/classes/modern-jazz/img/clases-modern-jazz-barcelona_480.webp"
+                        <OptimizedImage
+                          src="/images/classes/modern-jazz/img/clases-modern-jazz-barcelona"
                           alt={`Clase de ${t('relatedModernJazzName')} en Barcelona - Farray's Dance Center`}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                          style={{ objectPosition: 'center 25%' }}
+                          objectPosition="center 25%"
                           width={480}
                           height={320}
+                          breakpoints={[320, 640, 768]}
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 480px"
+                          priority="auto"
                         />
                         <div
                           className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"

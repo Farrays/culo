@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo, useCallback, useTransition } from 'react';
 import { Helmet } from 'react-helmet-async';
 import DOMPurify from 'dompurify';
 import { useI18n } from '../hooks/useI18n';
@@ -22,178 +22,205 @@ const FAQPage: React.FC = () => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
+  const [, startTransition] = useTransition();
 
-  const toggleItem = (id: string) => {
-    const newOpenItems = new Set(openItems);
-    if (newOpenItems.has(id)) {
-      newOpenItems.delete(id);
-    } else {
-      newOpenItems.add(id);
-    }
-    setOpenItems(newOpenItems);
-  };
+  const toggleItem = useCallback(
+    (id: string) => {
+      // Use startTransition to mark this update as non-urgent (INP optimization)
+      startTransition(() => {
+        setOpenItems(prev => {
+          const newOpenItems = new Set(prev);
+          if (newOpenItems.has(id)) {
+            newOpenItems.delete(id);
+          } else {
+            newOpenItems.add(id);
+          }
+          return newOpenItems;
+        });
+      });
+    },
+    [startTransition]
+  );
 
-  // Categorías de FAQ
-  const faqCategories: FAQCategory[] = [
-    {
-      id: 'reservas-altas',
-      title: t('faq_category_reservas_title'),
-      faqs: [
-        {
-          id: 'faq_reservas_1',
-          question: t('faq_reservas_1_q'),
-          answer: t('faq_reservas_1_a'),
+  // Categorías de FAQ - memoized to avoid recreating on each render
+  const faqCategories: FAQCategory[] = useMemo(
+    () => [
+      {
+        id: 'reservas-altas',
+        title: t('faq_category_reservas_title'),
+        faqs: [
+          {
+            id: 'faq_reservas_1',
+            question: t('faq_reservas_1_q'),
+            answer: t('faq_reservas_1_a'),
+          },
+          {
+            id: 'faq_reservas_2',
+            question: t('faq_reservas_2_q'),
+            answer: t('faq_reservas_2_a'),
+          },
+          {
+            id: 'faq_reservas_3',
+            question: t('faq_reservas_3_q'),
+            answer: t('faq_reservas_3_a'),
+          },
+          {
+            id: 'faq_reservas_4',
+            question: t('faq_reservas_4_q'),
+            answer: t('faq_reservas_4_a'),
+          },
+          {
+            id: 'faq_reservas_5',
+            question: t('faq_reservas_5_q'),
+            answer: t('faq_reservas_5_a'),
+          },
+          {
+            id: 'faq_reservas_6',
+            question: t('faq_reservas_6_q'),
+            answer: t('faq_reservas_6_a'),
+          },
+          {
+            id: 'faq_reservas_7',
+            question: t('faq_reservas_7_q'),
+            answer: t('faq_reservas_7_a'),
+          },
+          {
+            id: 'faq_reservas_8',
+            question: t('faq_reservas_8_q'),
+            answer: t('faq_reservas_8_a'),
+          },
+          {
+            id: 'faq_reservas_9',
+            question: t('faq_reservas_9_q'),
+            answer: t('faq_reservas_9_a'),
+          },
+          {
+            id: 'faq_reservas_10',
+            question: t('faq_reservas_10_q'),
+            answer: t('faq_reservas_10_a'),
+          },
+          {
+            id: 'faq_reservas_11',
+            question: t('faq_reservas_11_q'),
+            answer: t('faq_reservas_11_a'),
+          },
+          {
+            id: 'faq_reservas_12',
+            question: t('faq_reservas_12_q'),
+            answer: t('faq_reservas_12_a'),
+          },
+          {
+            id: 'faq_reservas_13',
+            question: t('faq_reservas_13_q'),
+            answer: t('faq_reservas_13_a'),
+          },
+        ],
+      },
+      {
+        id: 'cuenta-pagos',
+        title: t('faq_category_cuenta_title'),
+        faqs: [
+          {
+            id: 'faq_cuenta_1',
+            question: t('faq_cuenta_1_q'),
+            answer: t('faq_cuenta_1_a'),
+          },
+          {
+            id: 'faq_cuenta_2',
+            question: t('faq_cuenta_2_q'),
+            answer: t('faq_cuenta_2_a'),
+          },
+          {
+            id: 'faq_cuenta_3',
+            question: t('faq_cuenta_3_q'),
+            answer: t('faq_cuenta_3_a'),
+          },
+          {
+            id: 'faq_cuenta_4',
+            question: t('faq_cuenta_4_q'),
+            answer: t('faq_cuenta_4_a'),
+          },
+          {
+            id: 'faq_cuenta_5',
+            question: t('faq_cuenta_5_q'),
+            answer: t('faq_cuenta_5_a'),
+          },
+          {
+            id: 'faq_cuenta_6',
+            question: t('faq_cuenta_6_q'),
+            answer: t('faq_cuenta_6_a'),
+          },
+          {
+            id: 'faq_cuenta_7',
+            question: t('faq_cuenta_7_q'),
+            answer: t('faq_cuenta_7_a'),
+          },
+          {
+            id: 'faq_cuenta_8',
+            question: t('faq_cuenta_8_q'),
+            answer: t('faq_cuenta_8_a'),
+          },
+          {
+            id: 'faq_cuenta_9',
+            question: t('faq_cuenta_9_q'),
+            answer: t('faq_cuenta_9_a'),
+          },
+        ],
+      },
+      {
+        id: 'otras-cuestiones',
+        title: t('faq_category_otras_title'),
+        faqs: [
+          {
+            id: 'faq_otras_1',
+            question: t('faq_otras_1_q'),
+            answer: t('faq_otras_1_a'),
+          },
+          {
+            id: 'faq_otras_2',
+            question: t('faq_otras_2_q'),
+            answer: t('faq_otras_2_a'),
+          },
+          {
+            id: 'faq_otras_3',
+            question: t('faq_otras_3_q'),
+            answer: t('faq_otras_3_a'),
+          },
+          {
+            id: 'faq_otras_4',
+            question: t('faq_otras_4_q'),
+            answer: t('faq_otras_4_a'),
+          },
+          {
+            id: 'faq_otras_5',
+            question: t('faq_otras_5_q'),
+            answer: t('faq_otras_5_a'),
+          },
+          {
+            id: 'faq_otras_6',
+            question: t('faq_otras_6_q'),
+            answer: t('faq_otras_6_a'),
+          },
+        ],
+      },
+    ],
+    [t]
+  );
+
+  // Pre-sanitize all answers once (expensive operation, memoized)
+  const sanitizedAnswers = useMemo(
+    () =>
+      faqCategories.reduce(
+        (acc, category) => {
+          category.faqs.forEach(faq => {
+            acc[faq.id] = DOMPurify.sanitize(faq.answer);
+          });
+          return acc;
         },
-        {
-          id: 'faq_reservas_2',
-          question: t('faq_reservas_2_q'),
-          answer: t('faq_reservas_2_a'),
-        },
-        {
-          id: 'faq_reservas_3',
-          question: t('faq_reservas_3_q'),
-          answer: t('faq_reservas_3_a'),
-        },
-        {
-          id: 'faq_reservas_4',
-          question: t('faq_reservas_4_q'),
-          answer: t('faq_reservas_4_a'),
-        },
-        {
-          id: 'faq_reservas_5',
-          question: t('faq_reservas_5_q'),
-          answer: t('faq_reservas_5_a'),
-        },
-        {
-          id: 'faq_reservas_6',
-          question: t('faq_reservas_6_q'),
-          answer: t('faq_reservas_6_a'),
-        },
-        {
-          id: 'faq_reservas_7',
-          question: t('faq_reservas_7_q'),
-          answer: t('faq_reservas_7_a'),
-        },
-        {
-          id: 'faq_reservas_8',
-          question: t('faq_reservas_8_q'),
-          answer: t('faq_reservas_8_a'),
-        },
-        {
-          id: 'faq_reservas_9',
-          question: t('faq_reservas_9_q'),
-          answer: t('faq_reservas_9_a'),
-        },
-        {
-          id: 'faq_reservas_10',
-          question: t('faq_reservas_10_q'),
-          answer: t('faq_reservas_10_a'),
-        },
-        {
-          id: 'faq_reservas_11',
-          question: t('faq_reservas_11_q'),
-          answer: t('faq_reservas_11_a'),
-        },
-        {
-          id: 'faq_reservas_12',
-          question: t('faq_reservas_12_q'),
-          answer: t('faq_reservas_12_a'),
-        },
-        {
-          id: 'faq_reservas_13',
-          question: t('faq_reservas_13_q'),
-          answer: t('faq_reservas_13_a'),
-        },
-      ],
-    },
-    {
-      id: 'cuenta-pagos',
-      title: t('faq_category_cuenta_title'),
-      faqs: [
-        {
-          id: 'faq_cuenta_1',
-          question: t('faq_cuenta_1_q'),
-          answer: t('faq_cuenta_1_a'),
-        },
-        {
-          id: 'faq_cuenta_2',
-          question: t('faq_cuenta_2_q'),
-          answer: t('faq_cuenta_2_a'),
-        },
-        {
-          id: 'faq_cuenta_3',
-          question: t('faq_cuenta_3_q'),
-          answer: t('faq_cuenta_3_a'),
-        },
-        {
-          id: 'faq_cuenta_4',
-          question: t('faq_cuenta_4_q'),
-          answer: t('faq_cuenta_4_a'),
-        },
-        {
-          id: 'faq_cuenta_5',
-          question: t('faq_cuenta_5_q'),
-          answer: t('faq_cuenta_5_a'),
-        },
-        {
-          id: 'faq_cuenta_6',
-          question: t('faq_cuenta_6_q'),
-          answer: t('faq_cuenta_6_a'),
-        },
-        {
-          id: 'faq_cuenta_7',
-          question: t('faq_cuenta_7_q'),
-          answer: t('faq_cuenta_7_a'),
-        },
-        {
-          id: 'faq_cuenta_8',
-          question: t('faq_cuenta_8_q'),
-          answer: t('faq_cuenta_8_a'),
-        },
-        {
-          id: 'faq_cuenta_9',
-          question: t('faq_cuenta_9_q'),
-          answer: t('faq_cuenta_9_a'),
-        },
-      ],
-    },
-    {
-      id: 'otras-cuestiones',
-      title: t('faq_category_otras_title'),
-      faqs: [
-        {
-          id: 'faq_otras_1',
-          question: t('faq_otras_1_q'),
-          answer: t('faq_otras_1_a'),
-        },
-        {
-          id: 'faq_otras_2',
-          question: t('faq_otras_2_q'),
-          answer: t('faq_otras_2_a'),
-        },
-        {
-          id: 'faq_otras_3',
-          question: t('faq_otras_3_q'),
-          answer: t('faq_otras_3_a'),
-        },
-        {
-          id: 'faq_otras_4',
-          question: t('faq_otras_4_q'),
-          answer: t('faq_otras_4_a'),
-        },
-        {
-          id: 'faq_otras_5',
-          question: t('faq_otras_5_q'),
-          answer: t('faq_otras_5_a'),
-        },
-        {
-          id: 'faq_otras_6',
-          question: t('faq_otras_6_q'),
-          answer: t('faq_otras_6_a'),
-        },
-      ],
-    },
-  ];
+        {} as Record<string, string>
+      ),
+    [faqCategories]
+  );
 
   // Schema Markup - BreadcrumbList
   const breadcrumbSchema = {
@@ -319,7 +346,7 @@ const FAQPage: React.FC = () => {
                                 <div
                                   className="px-6 pb-5 text-neutral/90 leading-relaxed prose prose-invert max-w-none"
                                   dangerouslySetInnerHTML={{
-                                    __html: DOMPurify.sanitize(faq.answer),
+                                    __html: sanitizedAnswers[faq.id],
                                   }}
                                 />
                               </div>

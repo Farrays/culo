@@ -369,12 +369,12 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
           />
 
           {/* Header */}
-          <div className="sticky top-0 z-10 bg-black/95 backdrop-blur-sm border-b border-white/10 px-6 py-4">
+          <div className="sticky top-0 z-10 bg-black/95 backdrop-blur-sm border-b border-white/10 px-4 py-3 md:px-6 md:py-4">
             <div className="flex items-start justify-between">
               <div className="flex-1 pr-4">
                 <h2
                   id={`${config.id}-lead-modal-title`}
-                  className="text-xl font-black text-neutral"
+                  className="text-lg md:text-xl font-black text-neutral"
                 >
                   {status === 'success' || status === 'success_existing'
                     ? t(`${modalPrefix}_success_title`)
@@ -396,25 +396,29 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
           </div>
 
           {/* Content */}
-          <div className="p-6">
+          <div className="p-4 md:p-6">
             {status === 'success' || status === 'success_existing' ? (
               /* SUCCESS STATE */
-              <div className="text-center py-4">
-                <div className="flex justify-center mb-6">
+              <div className="min-h-[40vh] flex flex-col items-center justify-center text-center py-4">
+                <div className="flex justify-center mb-4 md:mb-6">
                   <div className="relative">
                     <div
-                      className={`absolute inset-0 ${theme.bgPrimaryLight} rounded-full blur-xl motion-reduce:blur-none`}
+                      className={`absolute inset-0 ${status === 'success_existing' ? 'bg-amber-500/20' : theme.bgPrimaryLight} rounded-full blur-xl motion-reduce:blur-none`}
                       aria-hidden="true"
                     />
                     <div
-                      className={`relative w-20 h-20 ${theme.bgPrimary} rounded-full flex items-center justify-center`}
+                      className={`relative w-14 h-14 md:w-20 md:h-20 ${status === 'success_existing' ? 'bg-gradient-to-br from-amber-600 to-amber-500' : theme.bgPrimary} rounded-full flex items-center justify-center`}
                     >
-                      <CheckIcon className="w-10 h-10 text-white" />
+                      {status === 'success_existing' ? (
+                        <XMarkIcon className="w-7 h-7 md:w-10 md:h-10 text-white" />
+                      ) : (
+                        <CheckIcon className="w-7 h-7 md:w-10 md:h-10 text-white" />
+                      )}
                     </div>
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-black text-neutral mb-4">
+                <h3 className="text-xl md:text-2xl font-black text-neutral mb-3 md:mb-4">
                   {status === 'success_existing'
                     ? t(`${modalPrefix}_existing_heading`)
                     : t(`${modalPrefix}_success_heading`)}
@@ -470,9 +474,16 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
                   </div>
                 )}
 
-                <p className="text-xs text-neutral/70 mb-4">
+                <p className="text-xs text-neutral/70 mb-2">
                   {t(`${modalPrefix}_success_spam_note`)}
                 </p>
+
+                {/* Language note - only for success, not existing */}
+                {status === 'success' && (
+                  <p className="text-xs text-amber-400/80 mb-4">
+                    {t('leadModal_success_language_note')}
+                  </p>
+                )}
 
                 <button
                   onClick={handleClose}
@@ -483,20 +494,20 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
               </div>
             ) : !hasMicroCommitment ? (
               /* MICRO COMMITMENT STEP */
-              <div className="text-center py-4">
-                <p className="text-lg font-semibold text-neutral mb-6">
+              <div className="min-h-[40vh] flex flex-col items-center justify-center text-center py-4">
+                <p className="text-base md:text-lg font-semibold text-neutral mb-4 md:mb-6">
                   {t(`${modalPrefix}_microCommit_question`)}
                 </p>
-                <div className="space-y-3">
+                <div className="space-y-3 w-full">
                   <button
                     onClick={() => setHasMicroCommitment(true)}
-                    className={`w-full py-4 ${theme.bgPrimary} ${theme.bgPrimaryHover} text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02]`}
+                    className={`w-full py-3 md:py-4 ${theme.bgPrimary} ${theme.bgPrimaryHover} text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02]`}
                   >
                     {t(`${modalPrefix}_microCommit_yes`)}
                   </button>
                   <button
                     onClick={() => setHasMicroCommitment(true)}
-                    className={`w-full py-3 ${theme.bgPrimaryLight} ${theme.textPrimary} font-medium rounded-xl transition-all ${theme.borderPrimary} border hover:opacity-80`}
+                    className={`w-full py-2.5 md:py-3 ${theme.bgPrimaryLight} ${theme.textPrimary} font-medium rounded-xl transition-all ${theme.borderPrimary} border hover:opacity-80`}
                   >
                     {t(`${modalPrefix}_microCommit_curious`)}
                   </button>
@@ -505,11 +516,11 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
             ) : (
               /* FORM STATE */
               <>
-                <p className="text-neutral/70 text-sm mb-6">{t(`${modalPrefix}_intro`)}</p>
+                <p className="text-neutral/70 text-sm mb-4 md:mb-6">{t(`${modalPrefix}_intro`)}</p>
 
                 {/* Benefits */}
                 <div
-                  className={`${theme.bgPrimaryLight} rounded-xl p-4 mb-6 ${theme.borderPrimaryLight} border`}
+                  className={`${theme.bgPrimaryLight} rounded-xl p-3 md:p-4 mb-4 md:mb-6 ${theme.borderPrimaryLight} border`}
                 >
                   <p className="text-sm font-semibold text-neutral mb-3">
                     {t(`${modalPrefix}_benefits_title`)}
@@ -531,7 +542,7 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
                 </div>
 
                 {/* Form */}
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
                   {/* Name row */}
                   <div className="grid grid-cols-2 gap-4">
                     <div>
@@ -668,7 +679,7 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
                   <button
                     type="submit"
                     disabled={status === 'loading'}
-                    className={`w-full py-4 ${theme.bgPrimary} ${theme.bgPrimaryHover} text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02] disabled:opacity-70 disabled:hover:scale-100 flex items-center justify-center gap-2 mt-2`}
+                    className={`w-full py-3 md:py-4 ${theme.bgPrimary} ${theme.bgPrimaryHover} text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02] disabled:opacity-70 disabled:hover:scale-100 flex items-center justify-center gap-2 mt-2`}
                   >
                     {status === 'loading' ? (
                       <>
@@ -685,7 +696,7 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
                 </form>
 
                 {/* Legal text */}
-                <div className="mt-6 pt-4 border-t border-white/10">
+                <div className="hidden md:block mt-6 pt-4 border-t border-white/10">
                   <p className="text-[10px] leading-relaxed text-neutral/40">
                     {t(`${modalPrefix}_legal_text`)}
                   </p>

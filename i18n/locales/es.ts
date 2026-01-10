@@ -2614,7 +2614,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   yunaisyFarray_career_p5:
     'Más adelante consolida su figura como solista con su pareja de baile Alexander Carbó, creando un estilo propio donde mezcla danza contemporánea, afro y salsa, influyendo profundamente en el estilo de todo el panorama salsero internacional.',
   yunaisyFarray_career_p6:
-    'Participa en innumerables congresos internacionales y forma parte del elenco de bailarines de la película STREET DANCE 2 3D, donde el baile se convierte en el lenguaje principal de la historia.',
+    'Participa en innumerables congresos internacionales y forma parte del elenco de bailarines de la película Street Dance 2, donde el baile se convierte en el lenguaje principal de la historia.',
 
   yunaisyFarray_barcelona_title: 'Barcelona: el sueño que se convierte en escuela y movimiento',
   yunaisyFarray_barcelona_p1:
@@ -12839,6 +12839,8 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   leadModal_success_deliverability:
     'Para asegurarte de recibir toda la información, te recomendamos añadir nuestro correo a tu lista de contactos.',
   leadModal_success_close: 'Entendido',
+  leadModal_success_language_note:
+    'Nota Importante: Toda la información se envía exclusivamente en español.',
 
   // Existing lead (ya registrado dentro de 90 días)
   leadModal_existing_heading: 'Ya estás registrado',

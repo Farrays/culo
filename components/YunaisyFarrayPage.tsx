@@ -11,7 +11,7 @@ import OptimizedImage from './OptimizedImage';
 const EXTERNAL_LINKS: { pattern: RegExp; url: string; title: string }[] = [
   {
     pattern: /Street Dance 2|STREET DANCE 2|StreetDance 2/gi,
-    url: 'https://www.imdb.com/title/tt1800741/',
+    url: 'https://www.imdb.com/es-es/title/tt1718903/',
     title: 'Street Dance 2 on IMDb',
   },
   {

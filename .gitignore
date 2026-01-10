@@ -46,3 +46,9 @@ nul
 
 # Coverage reports
 coverage/
+
+# Test pages (no commit)
+src/pages/test/
+src/components/test/
+*.test-page.tsx
+*.playground.tsx

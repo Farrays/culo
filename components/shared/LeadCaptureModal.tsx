@@ -507,8 +507,13 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
                     </p>
 
                     {/* Secondary message */}
-                    <p className="text-sm text-neutral/70 mb-4 md:mb-6">
+                    <p className="text-sm text-neutral/70 mb-2">
                       {t('leadModal_success_spam_note')}
+                    </p>
+
+                    {/* Language note */}
+                    <p className="text-xs text-amber-400/80 mb-4 md:mb-6">
+                      {t('leadModal_success_language_note')}
                     </p>
 
                     {/* Promo badge - hidden on mobile */}

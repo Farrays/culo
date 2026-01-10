@@ -1,4 +1,4 @@
-import React, { useState, memo, useMemo, useCallback } from 'react';
+import React, { useState, memo, useMemo, useCallback, useTransition } from 'react';
 import { Helmet } from 'react-helmet-async';
 import DOMPurify from 'dompurify';
 import AnimateOnScroll from './AnimateOnScroll';
@@ -53,18 +53,38 @@ interface FAQSectionProps {
  */
 const FAQSection: React.FC<FAQSectionProps> = memo(function FAQSection({ title, faqs }) {
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
+  const [, startTransition] = useTransition();
 
-  const toggleItem = useCallback((id: string) => {
-    setOpenItems(prev => {
-      const newOpenItems = new Set(prev);
-      if (newOpenItems.has(id)) {
-        newOpenItems.delete(id);
-      } else {
-        newOpenItems.add(id);
-      }
-      return newOpenItems;
-    });
-  }, []);
+  // Pre-sanitize all answers once (expensive operation, memoized)
+  const sanitizedAnswers = useMemo(
+    () =>
+      faqs.reduce(
+        (acc, faq) => {
+          acc[faq.id] = DOMPurify.sanitize(faq.answer);
+          return acc;
+        },
+        {} as Record<string, string>
+      ),
+    [faqs]
+  );
+
+  const toggleItem = useCallback(
+    (id: string) => {
+      // Use startTransition to mark this update as non-urgent (INP optimization)
+      startTransition(() => {
+        setOpenItems(prev => {
+          const newOpenItems = new Set(prev);
+          if (newOpenItems.has(id)) {
+            newOpenItems.delete(id);
+          } else {
+            newOpenItems.add(id);
+          }
+          return newOpenItems;
+        });
+      });
+    },
+    [startTransition]
+  );
 
   // Generate FAQ Schema for Google SGE - memoized to prevent re-computation
   const faqSchema = useMemo(
@@ -133,7 +153,7 @@ const FAQSection: React.FC<FAQSectionProps> = memo(function FAQSection({ title, 
                     >
                       <div
                         className="px-6 pb-5 text-neutral/90 leading-relaxed"
-                        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(faq.answer) }}
+                        dangerouslySetInnerHTML={{ __html: sanitizedAnswers[faq.id] }}
                       />
                     </div>
                   </div>

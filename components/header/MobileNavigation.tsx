@@ -47,11 +47,28 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
   const location = useLocation();
   const menuRef = useRef<HTMLDivElement>(null);
   const firstFocusableRef = useRef<HTMLAnchorElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Accordion states
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
 
+  // Scroll indicator state
+  const [canScrollDown, setCanScrollDown] = useState(true);
+
+  // Swipe to close state
+  const [swipeOffset, setSwipeOffset] = useState(0);
+  const touchStartX = useRef(0);
+  const isSwiping = useRef(false);
+
+  // Haptic feedback helper (enterprise touch)
+  const triggerHaptic = () => {
+    if ('vibrate' in navigator) {
+      navigator.vibrate(10); // Very subtle 10ms vibration
+    }
+  };
+
   const toggleSection = (section: string) => {
+    triggerHaptic();
     setOpenSections(prev => ({
       ...prev,
       [section]: !prev[section],
@@ -110,6 +127,64 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
     };
   }, [isMenuOpen, setIsMenuOpen]);
 
+  // Scroll indicator: detect if user can scroll down
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container || !isMenuOpen) return;
+
+    const handleScroll = () => {
+      const { scrollTop, scrollHeight, clientHeight } = container;
+      setCanScrollDown(scrollTop + clientHeight < scrollHeight - 20);
+    };
+
+    container.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+
+    return () => container.removeEventListener('scroll', handleScroll);
+  }, [isMenuOpen]);
+
+  // Swipe to close: detect swipe right gesture
+  useEffect(() => {
+    if (!isMenuOpen || !menuRef.current) return;
+
+    const menu = menuRef.current;
+    const SWIPE_THRESHOLD = 100; // px to trigger close
+
+    const handleTouchStart = (e: globalThis.TouchEvent) => {
+      touchStartX.current = e.touches[0].clientX;
+      isSwiping.current = true;
+    };
+
+    const handleTouchMove = (e: globalThis.TouchEvent) => {
+      if (!isSwiping.current) return;
+      const currentX = e.touches[0].clientX;
+      const diff = currentX - touchStartX.current;
+      // Only allow swipe to right (positive diff)
+      if (diff > 0) {
+        setSwipeOffset(diff);
+      }
+    };
+
+    const handleTouchEnd = () => {
+      if (swipeOffset > SWIPE_THRESHOLD) {
+        triggerHaptic();
+        setIsMenuOpen(false);
+      }
+      setSwipeOffset(0);
+      isSwiping.current = false;
+    };
+
+    menu.addEventListener('touchstart', handleTouchStart, { passive: true });
+    menu.addEventListener('touchmove', handleTouchMove, { passive: true });
+    menu.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+    return () => {
+      menu.removeEventListener('touchstart', handleTouchStart);
+      menu.removeEventListener('touchmove', handleTouchMove);
+      menu.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, [isMenuOpen, swipeOffset, setIsMenuOpen]);
+
   // Accordion header component - Enterprise styling
   const AccordionHeader: React.FC<{
     label: string;
@@ -141,12 +216,13 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           {label}
         </Link>
       ) : (
-        <span
-          className={`flex-1 flex items-center gap-3 text-left font-bold tracking-wide ${isPrimary ? 'text-lg sm:text-xl' : 'text-base sm:text-lg'} text-white`}
+        <button
+          onClick={onClick}
+          className={`flex-1 flex items-center gap-3 text-left font-bold tracking-wide cursor-pointer ${isPrimary ? 'text-lg sm:text-xl' : 'text-base sm:text-lg'} text-white hover:text-primary-accent transition-all duration-300`}
         >
           {isPrimary && <span className="w-2 h-2 rounded-full bg-white/30" />}
           {label}
-        </span>
+        </button>
       )}
       <button
         onClick={onClick}
@@ -165,7 +241,13 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
     <div
       ref={menuRef}
       id="mobile-menu"
-      className={`fixed inset-0 bg-gradient-to-b from-black via-black/98 to-black/95 backdrop-blur-xl z-40 transition-all duration-400 ease-out transform ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'} lg:hidden`}
+      className={`fixed inset-0 bg-gradient-to-b from-black via-black/98 to-black/95 backdrop-blur-xl z-40 ease-out transform lg:hidden ${
+        swipeOffset > 0 ? '' : 'transition-all duration-400'
+      } ${isMenuOpen ? 'opacity-100' : 'translate-x-full opacity-0'}`}
+      style={{
+        transform: isMenuOpen ? `translateX(${swipeOffset}px)` : 'translateX(100%)',
+        opacity: isMenuOpen ? Math.max(0.3, 1 - swipeOffset / 300) : 0,
+      }}
       role="dialog"
       aria-modal="true"
       aria-label="Main navigation menu"
@@ -173,7 +255,38 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
       {/* Decorative gradient accent */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-accent via-brand-500 to-primary-accent" />
 
-      <div className="flex flex-col h-full overflow-y-auto pt-28 sm:pt-32 pb-8 px-6 sm:px-8">
+      <div
+        ref={scrollContainerRef}
+        className="flex flex-col h-full overflow-y-auto pt-28 sm:pt-32 pb-8 px-6 sm:px-8"
+      >
+        {/* Language Selector - Top */}
+        <div className="mb-6 bg-white/5 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-sm">
+          <div className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-primary-accent/20 to-brand-500/20 border-b border-white/10">
+            <GlobeIcon className="w-5 h-5 text-primary-accent" />
+            <span className="text-sm font-bold text-white/90 tracking-wide">
+              {t('headerLanguage') || 'Idioma'}
+            </span>
+          </div>
+          <div className="grid grid-cols-4 gap-2 p-3">
+            {SUPPORTED_LOCALES.map(lang => (
+              <button
+                key={lang}
+                onClick={() => {
+                  triggerHaptic();
+                  handleLanguageChange(lang);
+                }}
+                className={`py-3 px-3 rounded-xl text-sm sm:text-base font-bold transition-all duration-300 ${
+                  locale === lang
+                    ? 'bg-gradient-to-r from-primary-accent to-brand-500 text-white shadow-lg'
+                    : 'text-white/70 hover:bg-white/10 hover:text-white'
+                }`}
+              >
+                {lang.toUpperCase()}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <nav className="flex flex-col space-y-2">
           {/* 1. Inicio */}
           <Link
@@ -352,17 +465,16 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                         )}
                       </div>
                     ) : (
-                      // Simple link
+                      // Simple link (Baile de Mañanas, Horarios, Precios) - same style as Salsa & Bachata
                       <Link
                         to={item.path}
                         onClick={() => setIsMenuOpen(false)}
-                        className={`flex items-center gap-2 py-3 px-3 text-base sm:text-lg font-medium rounded-lg transition-all duration-300 ${
+                        className={`flex-1 flex items-center gap-3 py-3 px-3 text-base sm:text-lg font-bold tracking-wide transition-all duration-300 ${
                           location.pathname === item.path
-                            ? 'text-primary-accent bg-primary-accent/10'
-                            : 'text-white/80 hover:text-white hover:bg-white/5'
+                            ? 'text-primary-accent'
+                            : 'text-white hover:text-primary-accent'
                         }`}
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary-accent/50" />
                         {t(item.textKey)}
                       </Link>
                     )}
@@ -375,42 +487,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           {/* Divider */}
           <div className="border-b border-white/10 my-3" />
 
-          {/* 4. Horarios */}
-          <Link
-            to={`/${locale}/horarios-clases-baile-barcelona`}
-            onClick={() => setIsMenuOpen(false)}
-            className={`flex items-center gap-3 py-4 px-4 text-lg sm:text-xl font-bold tracking-wide transition-all duration-300 rounded-xl ${
-              location.pathname === `/${locale}/horarios-clases-baile-barcelona`
-                ? 'text-white bg-primary-accent/20 border-l-4 border-primary-accent'
-                : 'text-white hover:text-white hover:bg-white/5'
-            }`}
-          >
-            <span
-              className={`w-2 h-2 rounded-full ${location.pathname === `/${locale}/horarios-clases-baile-barcelona` ? 'bg-primary-accent' : 'bg-white/30'}`}
-            />
-            {t('navSchedule')}
-          </Link>
-
-          {/* 5. Cuotas (Precios) */}
-          <Link
-            to={`/${locale}/precios-clases-baile-barcelona`}
-            onClick={() => setIsMenuOpen(false)}
-            className={`flex items-center gap-3 py-4 px-4 text-lg sm:text-xl font-bold tracking-wide transition-all duration-300 rounded-xl ${
-              location.pathname === `/${locale}/precios-clases-baile-barcelona`
-                ? 'text-white bg-primary-accent/20 border-l-4 border-primary-accent'
-                : 'text-white hover:text-white hover:bg-white/5'
-            }`}
-          >
-            <span
-              className={`w-2 h-2 rounded-full ${location.pathname === `/${locale}/precios-clases-baile-barcelona` ? 'bg-primary-accent' : 'bg-white/30'}`}
-            />
-            {t('navPricing')}
-          </Link>
-
-          {/* Divider */}
-          <div className="border-b border-white/10 my-3" />
-
-          {/* 6. Servicios - Accordion */}
+          {/* 4. Servicios - Accordion */}
           <div>
             <AccordionHeader
               label={t('navServices')}
@@ -512,36 +589,8 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           </Link>
         </nav>
 
-        {/* Bottom Section - Language & CTA - Enterprise styling */}
-        <div className="mt-auto pt-8 space-y-5">
-          {/* Language Selector */}
-          <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-sm">
-            <div className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-primary-accent/20 to-brand-500/20 border-b border-white/10">
-              <GlobeIcon className="w-5 h-5 text-primary-accent" />
-              <span className="text-sm font-bold text-white/90 tracking-wide">
-                {t('headerLanguage') || 'Idioma'}
-              </span>
-            </div>
-            <div className="grid grid-cols-4 gap-2 p-3">
-              {SUPPORTED_LOCALES.map(lang => (
-                <button
-                  key={lang}
-                  onClick={() => {
-                    handleLanguageChange(lang);
-                    setIsMenuOpen(false);
-                  }}
-                  className={`py-3 px-3 rounded-xl text-sm sm:text-base font-bold transition-all duration-300 ${
-                    locale === lang
-                      ? 'bg-gradient-to-r from-primary-accent to-brand-500 text-white shadow-lg'
-                      : 'text-white/70 hover:bg-white/10 hover:text-white'
-                  }`}
-                >
-                  {lang.toUpperCase()}
-                </button>
-              ))}
-            </div>
-          </div>
-
+        {/* Bottom Section - CTA - Enterprise styling */}
+        <div className="mt-auto pt-8">
           {/* CTA Button - Enterprise */}
           <button
             onClick={() => {
@@ -554,6 +603,11 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           </button>
         </div>
       </div>
+
+      {/* Scroll indicator - shows gradient when more content below */}
+      {canScrollDown && (
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none z-10 transition-opacity duration-300" />
+      )}
     </div>
   );
 };
