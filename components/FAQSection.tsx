@@ -153,7 +153,7 @@ const FAQSection: React.FC<FAQSectionProps> = memo(function FAQSection({ title, 
                     >
                       <div
                         className="px-6 pb-5 text-neutral/90 leading-relaxed"
-                        dangerouslySetInnerHTML={{ __html: sanitizedAnswers[faq.id] }}
+                        dangerouslySetInnerHTML={{ __html: sanitizedAnswers[faq.id] || '' }}
                       />
                     </div>
                   </div>

@@ -151,13 +151,17 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
     const SWIPE_THRESHOLD = 100; // px to trigger close
 
     const handleTouchStart = (e: globalThis.TouchEvent) => {
-      touchStartX.current = e.touches[0].clientX;
+      const touch = e.touches[0];
+      if (!touch) return;
+      touchStartX.current = touch.clientX;
       isSwiping.current = true;
     };
 
     const handleTouchMove = (e: globalThis.TouchEvent) => {
       if (!isSwiping.current) return;
-      const currentX = e.touches[0].clientX;
+      const touch = e.touches[0];
+      if (!touch) return;
+      const currentX = touch.clientX;
       const diff = currentX - touchStartX.current;
       // Only allow swipe to right (positive diff)
       if (diff > 0) {

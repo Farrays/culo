@@ -346,7 +346,7 @@ const FAQPage: React.FC = () => {
                                 <div
                                   className="px-6 pb-5 text-neutral/90 leading-relaxed prose prose-invert max-w-none"
                                   dangerouslySetInnerHTML={{
-                                    __html: sanitizedAnswers[faq.id],
+                                    __html: sanitizedAnswers[faq.id] || '',
                                   }}
                                 />
                               </div>
