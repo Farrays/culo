@@ -292,7 +292,7 @@ const Header: React.FC = () => {
             <div className="lg:hidden flex items-center">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="z-50 relative p-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
+                className="z-[70] relative p-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
                 aria-controls="mobile-menu"
                 aria-expanded={isMenuOpen}
                 aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
