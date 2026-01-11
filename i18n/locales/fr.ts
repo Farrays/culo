@@ -15632,20 +15632,20 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogHistoriaBachata_statCalderonLabel: 'Premier enregistrement bachata',
   blogHistoriaBachata_statUNESCOLabel: 'Patrimoine Immatériel UNESCO',
   blogHistoriaBachata_intro:
-    'La bachata surgit comme un plan-séquence sensuel : des corps qui fusionnent en parfait balancement, des guitares qui pleurent le désamour et un rythme né dans les quartiers marginaux de Santo Domingo pour conquérir les pistes de danse du monde entier. Selon [Peter Manuel (1995)](https://doi.org/10.2307/780250), la bachata représente une fusion unique de bolero romantique, son cubain et merengue dominicain cristallisée dans les années 60.',
+    'La bachata surgit comme un plan-séquence sensuel : des corps qui fusionnent en parfait balancement, des guitares qui pleurent le désamour et un rythme né dans les quartiers marginaux de Santo Domingo pour conquérir les pistes de danse du monde entier. Selon [Peter Manuel (1995)](https://books.google.com/books/about/Caribbean_Currents.html?id=TUUhDQAAQBAJ), la bachata représente une fusion unique de bolero romantique, son cubain et merengue dominicain cristallisée dans les années 60.',
   blogHistoriaBachata_introFarrays:
     "Chez **[Farray's International Dance Center](/fr/clases)** nous enseignons la bachata depuis ses racines traditionnelles jusqu'au sensuel contemporain. Ici nous vous racontons l'histoire complète : de \"Borracho de amor\" (1962) aux cours que nous proposons à Barcelone.",
   blogHistoriaBachata_origenesTitle:
     'Origines de la Bachata : Racines Dominicaines, Marginalité et Naissance (années 60)',
   blogHistoriaBachata_origenesContent1:
-    "L'ADN de la bachata se forge en [République Dominicaine](https://fr.wikipedia.org/wiki/R%C3%A9publique_dominicaine) dans les années 60. Elle fusionne le **bolero romantique** cubain, le **son** et le **merengue** local, créant un son distinctif caractérisé par la guitare requinto, le güiro et le bongó. Selon [Deborah Pacini Hernández (1995)](https://www.jstor.org/stable/3052288), la bachata émerge comme expression musicale des classes populaires urbaines.",
+    "L'ADN de la bachata se forge en [République Dominicaine](https://fr.wikipedia.org/wiki/R%C3%A9publique_dominicaine) dans les années 60. Elle fusionne le **bolero romantique** cubain, le **son** et le **merengue** local, créant un son distinctif caractérisé par la guitare requinto, le güiro et le bongó. Selon [Deborah Pacini Hernández (1995)](https://archive.org/details/bachatasocialhist00paci), la bachata émerge comme expression musicale des classes populaires urbaines.",
   blogHistoriaBachata_origenesContent2:
-    'L\'étape marginale (1962-1970) marque la naissance du genre. Vue avec mépris comme "musique d\'amargue" par les élites, la bachata résonnait dans les épiceries, bordels et quartiers pauvres. **José Manuel Calderón** (1937-2010), considéré comme le père de la bachata, enregistre "Borracho de amor" et "Condena" en 1962, établissant les bases du genre selon [Paul Austerlitz (1997)](https://www.jstor.org/stable/j.ctt1bh2k1h).',
+    'L\'étape marginale (1962-1970) marque la naissance du genre. Vue avec mépris comme "musique d\'amargue" par les élites, la bachata résonnait dans les épiceries, bordels et quartiers pauvres. **[José Manuel Calderón](https://es.wikipedia.org/wiki/Jos%C3%A9_Manuel_Calder%C3%B3n_(m%C3%BAsico))** (1937-2010), considéré comme le père de la bachata, enregistre "Borracho de amor" et "Condena" en 1962, établissant les bases du genre selon [Paul Austerlitz (1997)](https://www.abebooks.com/9781566394840/Merengue-Dominican-Music-Identity-Paul-1566394848/plp).',
   blogHistoriaBachata_origenesBarcelona:
     "La migration dominicaine vers l'Espagne, surtout vers Barcelone depuis les années 80, a apporté la bachata traditionnelle. Elle se dansait d'abord dans les réunions familiales et fêtes privées avant de conquérir les écoles de danse.",
   blogHistoriaBachata_etimologiaTitle: 'Pourquoi "Bachata" ? Étymologie, Stigmate et Rebranding',
   blogHistoriaBachata_etimologiaIntro:
-    'Le mot "bachata" signifiait originellement une **fête rurale créole** ou réunion informelle, selon [Martha Ellen Davis (1994)](https://muse.jhu.edu/article/515850). Dans les années 60, le terme a acquis une connotation péjorative en s\'associant à la musique des quartiers marginaux.',
+    'Le mot "bachata" signifiait originellement une **fête rurale créole** ou réunion informelle, selon [Martha Ellen Davis](https://en.wikipedia.org/wiki/Martha_Ellen_Davis). Dans les années 60, le terme a acquis une connotation péjorative en s\'associant à la musique des quartiers marginaux.',
   blogHistoriaBachata_etimologiaTeoriasTitle: 'Évolution du terme "bachata" :',
   blogHistoriaBachata_teoria1:
     '**Fête créole (pré-1960s) :** Réunion festive rurale avec musique, boissons et danse. Documentée dans le folklore dominicain depuis le XIXe siècle.',

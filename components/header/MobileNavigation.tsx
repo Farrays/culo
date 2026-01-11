@@ -56,7 +56,6 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
   const [canScrollDown, setCanScrollDown] = useState(true);
 
   // Swipe to close state
-  const [swipeOffset, setSwipeOffset] = useState(0);
   const touchStartX = useRef(0);
   const isSwiping = useRef(false);
 
@@ -144,6 +143,8 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
   }, [isMenuOpen]);
 
   // Swipe to close: detect swipe right gesture
+  const swipeOffsetRef = useRef(0);
+
   useEffect(() => {
     if (!isMenuOpen || !menuRef.current) return;
 
@@ -155,6 +156,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
       if (!touch) return;
       touchStartX.current = touch.clientX;
       isSwiping.current = true;
+      swipeOffsetRef.current = 0;
     };
 
     const handleTouchMove = (e: globalThis.TouchEvent) => {
@@ -165,16 +167,16 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
       const diff = currentX - touchStartX.current;
       // Only allow swipe to right (positive diff)
       if (diff > 0) {
-        setSwipeOffset(diff);
+        swipeOffsetRef.current = diff;
       }
     };
 
     const handleTouchEnd = () => {
-      if (swipeOffset > SWIPE_THRESHOLD) {
+      if (swipeOffsetRef.current > SWIPE_THRESHOLD) {
         triggerHaptic();
         setIsMenuOpen(false);
       }
-      setSwipeOffset(0);
+      swipeOffsetRef.current = 0;
       isSwiping.current = false;
     };
 
@@ -187,7 +189,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
       menu.removeEventListener('touchmove', handleTouchMove);
       menu.removeEventListener('touchend', handleTouchEnd);
     };
-  }, [isMenuOpen, swipeOffset, setIsMenuOpen]);
+  }, [isMenuOpen, setIsMenuOpen]);
 
   // Accordion header component - Enterprise styling
   const AccordionHeader: React.FC<{
@@ -609,7 +611,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
               setIsMenuOpen(false);
               onOpenLeadModal();
             }}
-            className="block w-full text-center bg-gradient-to-r from-primary-accent to-brand-500 text-white text-lg font-bold py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-accent-glow"
+            className="block w-full text-center bg-gradient-to-r from-primary-accent to-brand-500 text-white text-lg font-bold py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-accent-glow animate-pulse-slow"
           >
             {t('enrollNow')}
           </button>
