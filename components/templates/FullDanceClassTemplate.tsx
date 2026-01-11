@@ -406,9 +406,9 @@ const TeacherCard: React.FC<{
           </p>
           <p className="text-neutral/90 leading-relaxed text-sm">
             {/* Contextual prefix (if exists) + canonical bio */}
-            {teacher.bioPrefixKey &&
-              t(teacher.bioPrefixKey, '') !== teacher.bioPrefixKey &&
-              t(teacher.bioPrefixKey, '') !== '' && <>{t(teacher.bioPrefixKey)} </>}
+            {teacher.bioPrefixKey && t(teacher.bioPrefixKey) !== teacher.bioPrefixKey && (
+              <>{t(teacher.bioPrefixKey)} </>
+            )}
             {t(teacher.bioKey)}
           </p>
           {teacher.tags && teacher.tags.length > 0 && (

@@ -366,7 +366,22 @@ export const BENEFICIOS_SALSA_CONFIG: BlogArticleConfig = {
   },
 
   // === RELATED ARTICLES ===
-  relatedArticles: ['historia-salsa-barcelona', 'clases-de-salsa-barcelona'],
+  relatedArticles: [
+    {
+      slug: 'historia-salsa-barcelona',
+      category: 'historia',
+      titleKey: 'blogHistoriaSalsa_title',
+      excerptKey: 'blogHistoriaSalsa_excerpt',
+      image: '/images/blog/historia-salsa/hero.webp',
+    },
+    {
+      slug: 'clases-de-salsa-barcelona',
+      category: 'lifestyle',
+      titleKey: 'blogClasesSalsaBarcelona_title',
+      excerptKey: 'blogClasesSalsaBarcelona_excerpt',
+      image: '/images/blog/clases-salsa-barcelona/hero.webp',
+    },
+  ],
 
   // === RELATED CLASSES (internal linking) ===
   relatedClasses: ['salsa-cubana-barcelona', 'salsa-bachata-barcelona', 'bachata-barcelona'],
