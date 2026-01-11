@@ -245,7 +245,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
     <div
       ref={menuRef}
       id="mobile-menu"
-      className={`fixed inset-0 bg-gradient-to-b from-black via-black/98 to-black/95 backdrop-blur-xl z-40 ease-out transform lg:hidden ${
+      className={`fixed inset-0 bg-gradient-to-b from-black via-black/98 to-black/95 backdrop-blur-xl z-[60] ease-out transform lg:hidden ${
         swipeOffset > 0 ? '' : 'transition-all duration-400'
       } ${isMenuOpen ? 'opacity-100' : 'translate-x-full opacity-0'}`}
       style={{
