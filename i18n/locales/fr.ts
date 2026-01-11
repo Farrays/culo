@@ -11408,87 +11408,93 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // ========================================
 
   // Meta
-  blogBeneficiosSalsa_title: '10 Bienfaits Scientifiques de Danser la Salsa à Barcelone',
+  blogBeneficiosSalsa_title: 'Bienfaits de Danser la Salsa : 11 Raisons Appuyées par la Science',
   blogBeneficiosSalsa_metaDescription:
-    "Brûlez 400 cal/heure, réduisez la démence de 76%, diminuez le stress : 10 bienfaits prouvés des cours de salsa à Barcelone. Rejoignez Farray's International Dance Center.",
+    "Découvrez les bienfaits de danser la salsa : brûlez jusqu'à 400 kcal/heure, protégez votre cerveau (étude NEJM), réduisez le stress et améliorez votre vie sociale. Guide complet 2025.",
 
   // Summary Bullets (GEO Critical)
   blogBeneficiosSalsa_summaryBullet1:
-    'Brûle 300-450 calories par heure (équivalent à la course modérée)',
-  blogBeneficiosSalsa_summaryBullet2: 'Réduit le risque de démence de 76% (étude NEJM 2003)',
+    'Dépense calorique approximative de 300-450 kcal par heure (similaire à la course modérée)',
+  blogBeneficiosSalsa_summaryBullet2:
+    'Associé à 76% moins de risque de démence chez les plus de 75 ans (étude NEJM 2003)',
   blogBeneficiosSalsa_summaryBullet3:
-    'Diminue le stress de 20-30% et augmente la satisfaction de vie de 25%',
+    "Amélioration du bien-être psychologique et réduction des symptômes d'anxiété et de stress",
 
   // Summary Stats (Holographic Cards)
-  blogBeneficiosSalsa_statCaloriesLabel: 'calories brûlées par heure en dansant la salsa',
-  blogBeneficiosSalsa_statDementiaLabel: 'risque de démence en moins vs sédentaires',
+  blogBeneficiosSalsa_statCaloriesLabel: 'kcal approximatives par heure de danse vigoureuse',
+  blogBeneficiosSalsa_statDementiaLabel: 'moins de risque de démence chez les danseurs fréquents',
 
   // Breadcrumb
-  blogBeneficiosSalsa_breadcrumbCurrent: '10 Bienfaits Scientifiques',
+  blogBeneficiosSalsa_breadcrumbCurrent: 'Bienfaits de Danser la Salsa',
 
   // Intro
   blogBeneficiosSalsa_intro:
-    "Danser la salsa brûle jusqu'à **400 calories par heure**, protège le cerveau (**76% moins de risque de démence**) et réduit significativement le stress. Ce n'est pas de la magie : c'est de la science.\n\nDécouvrez les **10 bienfaits soutenus par des études scientifiques** des cours de salsa à Barcelone, et pourquoi des milliers de personnes ont déjà choisi Farray's International Dance Center pour transformer leur corps et leur esprit en dansant.",
+    "Danser la salsa n'est pas seulement amusant : c'est un outil puissant pour améliorer votre santé physique, mentale et sociale, avec des bienfaits appuyés par des recherches d'institutions comme Harvard et le *New England Journal of Medicine*.\n\nJe vois depuis des années des personnes qui commencent à danser expérimenter des changements réels dans leur corps et leur humeur. Dans ce guide, je partage les **11 principaux bienfaits** de danser la salsa, avec des liens vers les études originales. Si vous êtes à Barcelone, je vous explique aussi comment commencer dans [nos cours de salsa cubaine](/fr/clases/salsa-cubana-barcelona).",
 
   // Bienfait 1 : Calories
-  blogBeneficiosSalsa_benefit1Title: '1. Brûle 300-450 Calories par Heure',
+  blogBeneficiosSalsa_benefit1Title: '1. Brûle Entre 300 et 450 Calories par Heure',
   blogBeneficiosSalsa_benefit1Content:
-    "Une heure de salsa intense brûle entre **300 et 450 calories** (personne de 70kg), équivalent à courir à rythme modéré. Selon [Harvard Medical School](https://www.health.harvard.edu/diet-and-weight-loss/calories-burned-in-30-minutes-for-people-of-three-different-weights), c'est de l'exercice cardiovasculaire déguisé en amusement.\n\nLa différence clé : en courant vous comptez les minutes pour finir, en dansant la salsa cubaine le temps vole parce que vous vous amusez. Cela facilite la constance, la vraie clé de tout programme d'exercice.",
-  blogBeneficiosSalsa_stat1Label: 'calories brûlées par heure',
+    "Une séance de salsa cubaine à intensité modérée-haute peut représenter une dépense approximative de **300-450 kcal par heure** pour une personne d'environ 70 kg. Ce chiffre est comparable à la course à rythme modéré, selon les estimations basées sur les tables de dépense énergétique de [Harvard Health](https://www.health.harvard.edu/diet-and-weight-loss/calories-burned-in-30-minutes-for-people-of-three-different-weights).\n\nLa grande différence avec d'autres exercices est que dans un [cours de salsa](/fr/clases/salsa-cubana-barcelona) le temps passe vite parce qu'on s'amuse. Et c'est clé : la constance est ce qui transforme vraiment le corps, et c'est beaucoup plus facile d'être constant quand on s'amuse.",
+  blogBeneficiosSalsa_stat1Label: 'kcal approximatives par heure',
 
   // Bienfait 2 : Cardiovasculaire
-  blogBeneficiosSalsa_benefit2Title: '2. Améliore la Santé Cardiovasculaire',
+  blogBeneficiosSalsa_benefit2Title: '2. Améliore Votre Santé Cardiovasculaire',
   blogBeneficiosSalsa_benefit2Content:
-    "La salsa est un exercice aérobique d'intensité modérée à élevée. Selon des études publiées dans [JAMA Cardiology](https://jamanetwork.com/journals/jamacardiology), danser 3 heures par semaine **réduit le risque cardiaque de 30 à 50%**.\n\nLes mouvements constants, les tours et les changements de direction maintiennent le cœur efficace, abaissent la pression artérielle et optimisent le cholestérol HDL. Votre cœur vous remerciera.",
+    "La salsa est un exercice aérobique d'intensité modérée qui combine mouvements continus, changements de direction, travail des jambes et du core. Des études sur [danse et santé cardiovasculaire](https://www.sciencedirect.com/science/article/abs/pii/S053155651830439X) montrent des améliorations de la capacité cardiorespiratoire, de la pression artérielle et de la composition corporelle chez les adultes qui dansent régulièrement.\n\nC'est pourquoi beaucoup de professionnels de santé considèrent la danse comme une forme efficace d'entraînement cardiovasculaire \"déguisé\" en amusement. Si vous cherchez à prendre soin de votre cœur sans vous ennuyer, essayez nos [cours de salsa bachata](/fr/clases/salsa-bachata-barcelona).",
 
   // Bienfait 3 : Muscles
-  blogBeneficiosSalsa_benefit3Title: '3. Renforce Muscles et Équilibre',
+  blogBeneficiosSalsa_benefit3Title: '3. Renforce Muscles, Équilibre et Coordination',
   blogBeneficiosSalsa_benefit3Content:
-    'Chaque pas de salsa fait travailler plusieurs groupes musculaires : **abdominaux, jambes, fessiers et bras** dans des mouvements fonctionnels. Une étude du [British Journal of Sports Medicine](https://bjsm.bmj.com/) confirme que la danse améliore la flexibilité et prévient les chutes.\n\nContrairement à la gym répétitive, la salsa offre un entraînement fonctionnel complet qui développe force, équilibre et coordination naturellement.',
+    "Chaque pas de salsa fait travailler plusieurs groupes musculaires : **jambes, fessiers, abdominaux** et, dans beaucoup de figures, aussi bras et dos. Les revues systématiques sur [danse et fonction motrice](https://pubmed.ncbi.nlm.nih.gov/30543905/) soulignent des améliorations de l'équilibre, de la coordination, de la force fonctionnelle et de la flexibilité.\n\nContrairement à répéter toujours les mêmes exercices sur une machine, la salsa propose un entraînement fonctionnel complet avec des patterns qui exigent réaction et transferts de poids constants. Complétez votre pratique avec nos cours de [stretching](/fr/clases/stretching-barcelona).",
 
   // Bienfait 4 : Cerveau
-  blogBeneficiosSalsa_benefit4Title: '4. Réduit la Démence de 76% (Étude NEJM 2003)',
+  blogBeneficiosSalsa_benefit4Title: '4. Protège Votre Cerveau : Réduit le Risque de Démence',
   blogBeneficiosSalsa_benefit4Content:
-    "C'est le bienfait le plus impressionnant. Le [New England Journal of Medicine (2003)](https://www.nejm.org/doi/full/10.1056/NEJMoa022252) a découvert que **danser réduit le risque de démence de 76%** – plus que les mots croisés, la lecture ou toute autre activité étudiée.\n\nPourquoi ? La salsa combine exercice physique et défis mentaux : mémoriser des pas + se coordonner avec le partenaire + improviser. Cette combinaison unique crée de nouvelles connexions neuronales et maintient le cerveau jeune.",
+    "L'une des découvertes les plus citées sur danse et santé cérébrale vient de l'étude de l'Albert Einstein College of Medicine publiée dans le [*New England Journal of Medicine* en 2003](https://www.nejm.org/doi/full/10.1056/NEJMoa022252). Dans cette étude observationnelle, les personnes de plus de 75 ans qui dansaient fréquemment ont présenté un **76% moins de risque de développer une démence** que celles qui ne dansaient pas, après plus de 20 ans de suivi.\n\nLa salsa combine défi physique, coordination avec le partenaire, mémoire des pas et improvisation : une combinaison qui stimule différentes zones du cerveau et peut favoriser la réserve cognitive à long terme. En savoir plus sur [notre méthodologie](/fr/metodo-farray).",
   blogBeneficiosSalsa_stat2Label: 'moins de risque de démence',
 
   // Bienfait 5 : Stress
-  blogBeneficiosSalsa_benefit5Title: '5. Libère des Endorphines et Réduit le Cortisol',
+  blogBeneficiosSalsa_benefit5Title: '5. Réduit le Stress et Améliore Votre Humeur',
   blogBeneficiosSalsa_benefit5Content:
-    'Des études publiées dans [Psychoneuroendocrinology](https://www.sciencedirect.com/journal/psychoneuroendocrinology) démontrent que danser **réduit le stress de 20 à 30%** après la séance, mesuré par les niveaux de cortisol.\n\nQuand vous dansez, votre corps libère des endorphines, dopamine et sérotonine – les neurotransmetteurs du bonheur. Après un cours de salsa à Barcelone, vous ressentirez bien-être et calme pendant des heures. La meilleure thérapie anti-stress.',
+    "Les interventions de danse montrent des réductions significatives des symptômes d'anxiété et de dépression selon une [méta-analyse publiée dans *Frontiers in Psychology*](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2019.01806/full) par Koch et collaborateurs. La danse ne fait pas que bouger le corps : elle libère aussi endorphines, dopamine et sérotonine.\n\nBeaucoup d'élèves décrivent le cours de salsa comme une \"soupape d'échappement\" : musique forte, mouvement, connexion avec les autres et sentiment d'accomplissement. Un cocktail qui aide à baisser le cortisol et sortir avec l'esprit beaucoup plus léger. Découvrez [nos horaires](/fr/horarios-clases-baile-barcelona).",
 
   // Bienfait 6 : Confiance
-  blogBeneficiosSalsa_benefit6Title: "6. Augmente l'Estime de Soi et la Confiance",
+  blogBeneficiosSalsa_benefit6Title: '6. Augmente Votre Estime de Soi et Confiance',
   blogBeneficiosSalsa_benefit6Content:
-    "Chaque pas que vous maîtrisez, chaque tour que vous réussissez, chaque chanson que vous dansez sans trébucher... ce sont des 'petites victoires' qui déclenchent la dopamine et construisent la confiance.\n\nLa salsa vous apprend à **vous sentir à l'aise dans votre corps**, à occuper l'espace, à vous exprimer sans mots. Cette confiance est transférable : elle se voit au travail, dans les relations, dans la vie sociale.",
+    "Les études sur la danse-thérapie indiquent que danser améliore les compétences interpersonnelles, l'expression émotionnelle et la perception du corps. Selon des [revues publiées dans PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC6710484/), on observe des améliorations de la qualité de vie, de l'estime de soi et du sentiment d'auto-efficacité.\n\nChaque pas que vous maîtrisez, chaque tour que vous réussissez, chaque chanson que vous dansez sans vous arrêter nourrit ces \"petites victoires\" qui renforcent la confiance. C'est quelque chose qui finit par se voir au travail, dans les relations et dans la vie quotidienne. Nos [professeurs de danse](/fr/profesores-baile-barcelona) vous accompagnent dans ce processus.",
 
   // Bienfait 7 : Posture
-  blogBeneficiosSalsa_benefit7Title: '7. Corrige la Posture et la Proprioception',
+  blogBeneficiosSalsa_benefit7Title: '7. Améliore Votre Posture et Proprioception',
   blogBeneficiosSalsa_benefit7Content:
-    'La technique de salsa exige **posture droite + hanches libres** = alignement naturel. En quelques semaines de cours de salsa à Barcelone, vous remarquerez cette posture même quand vous ne dansez pas.\n\nLa coordination entre pieds, bras, hanches et partenaire développe des compétences proprioceptives qui vous rendent plus agile au quotidien.',
+    "La technique de salsa exige une posture droite, un poids bien réparti et un axe stable, tandis que les hanches et le torse bougent librement. Ce travail continu d'alignement entraîne la **proprioception** : la capacité de sentir la position de son corps dans l'espace.\n\nLes revues sur [danse chez les personnes âgées](https://pmc.ncbi.nlm.nih.gov/articles/PMC10331838/) soulignent que cette combinaison se traduit par un meilleur équilibre et moins d'instabilité au quotidien. Si vous voulez approfondir, combinez avec nos cours de [ballet](/fr/clases/ballet-barcelona).",
 
   // Bienfait 8 : Social
   blogBeneficiosSalsa_benefit8Title: '8. Élargit Votre Réseau Social à Barcelone',
   blogBeneficiosSalsa_benefit8Content:
-    "Les cours de salsa cubaine sont le meilleur endroit pour rencontrer de nouvelles personnes. Vous partagez une passion, travaillez en équipe, l'ambiance est naturellement sociale.\n\nChez Farray's International Dance Center (Eixample Gauche, Barcelone) nous avons vu naître des amitiés pour la vie, des couples, des mariages. La **communauté salsera barcelonaise** est diverse : tous âges, professions, nationalités.",
+    "La danse en groupe est l'une des formes les plus efficaces de combiner activité physique et contact social. Les revues sur [danse et bien-être](https://pmc.ncbi.nlm.nih.gov/articles/PMC11127814/) identifient le composant social comme facteur clé des bienfaits psychologiques.\n\nChez Farray's International Dance Center ([Eixample Gauche, Barcelone](/fr/contacto)) s'est créée une communauté salsera diverse en âges, professions et nationalités. Ici sont nées des amitiés, des couples et même des mariages grâce au partage de la piste de danse semaine après semaine.",
 
   // Bienfait 9 : Culture
-  blogBeneficiosSalsa_benefit9Title: '9. Vous Connecte à la Culture Salsa Cubaine',
+  blogBeneficiosSalsa_benefit9Title: '9. Vous Connecte à la Culture de la Salsa Cubaine',
   blogBeneficiosSalsa_benefit9Content:
-    "Danser la salsa, c'est plonger dans une culture vibrante : de Celia Cruz à Fania, du son au mambo, les rythmes afro-caribéens. Dans nos cours nous expliquons **l'histoire et le contexte** de chaque pas.\n\nVous apprenez sur Cuba, Porto Rico, la scène new-yorkaise. La salsa vous connecte à quelque chose de plus grand que vous – c'est une expérience culturelle, pas seulement de l'exercice.",
+    "La salsa n'est pas qu'une séquence de pas : c'est la porte d'entrée vers une culture afro-caribéenne très riche qui s'inspire du son cubain, du mambo, de la rumba et de la scène new-yorkaise de Fania Records. Danser la salsa vous connecte à quelque chose de plus grand que vous-même.\n\nDans nos [cours à Barcelone](/fr/clases/salsa-cubana-barcelona) vous n'apprenez pas seulement la technique : vous découvrez aussi le contexte musical, historique et culturel de chaque style. Lisez-en plus sur l'[histoire de la salsa](/fr/blog/historia/historia-salsa-barcelona) sur notre blog.",
 
-  // Bienfait 10 : Bonheur
-  blogBeneficiosSalsa_benefit10Title: '10. Élève Votre Bonheur (Frontiers Psychology)',
+  // Bienfait 10 : Neuroplasticité
+  blogBeneficiosSalsa_benefit10Title: '10. Neuroplasticité : Changements Réels dans Votre Cerveau',
   blogBeneficiosSalsa_benefit10Content:
-    "Une étude publiée dans [Frontiers in Psychology](https://www.frontiersin.org/journals/psychology) a démontré que les danseurs rapportent **+25% de satisfaction de vie en plus** que les personnes sédentaires.\n\nCe n'est pas un hasard : musique + mouvement + contact social + accomplissement personnel = le cocktail parfait de bien-être. Comme nous disons chez Farray's : 'Qui danse, vit plus heureux'.",
+    "Au-delà de la démence, une [revue systématique sur danse et neuroplasticité](https://pubmed.ncbi.nlm.nih.gov/30543905/) a analysé des essais cliniques où la danse a été associée à des changements structurels et fonctionnels dans le cerveau adulte. Des augmentations du volume de l'hippocampe, des changements de matière grise et des améliorations de la mémoire et de l'attention ont été observés.\n\nDanser aide à créer de nouvelles connexions neuronales. Ce n'est pas de la magie : c'est le résultat de combiner mouvement, musique, coordination et défi cognitif. En savoir plus sur [notre méthodologie](/fr/metodo-farray) basée sur ces principes.",
+
+  // Bienfait 11 : Bonheur
+  blogBeneficiosSalsa_benefit11Title: '11. Élève Votre Bonheur et Satisfaction de Vie',
+  blogBeneficiosSalsa_benefit11Content:
+    'Des études récentes dans [*Frontiers in Psychology*](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.864327/full) montrent que les personnes qui participent régulièrement à des activités de danse rapportent un plus grand bien-être subjectif, satisfaction de vie et connexion sociale que les personnes sédentaires.\n\nC\'est pourquoi chez Farray\'s nous répétons souvent une phrase que la science appuie de plus en plus : "Qui danse, vit plus heureux". Consultez nos [prix](/fr/precios-clases-baile-barcelona) et commencez à le vérifier par vous-même.',
 
   // Image Captions
   blogBeneficiosSalsa_imageFitnessCaption:
-    "Danser la salsa brûle jusqu'à 400 calories par heure tout en tonifiant tout le corps",
+    'Une heure de salsa à rythme intense équivaut à la course modérée en dépense calorique',
   blogBeneficiosSalsa_imageConfidenceCaption:
-    'La transformation personnelle commence quand vous osez bouger avec confiance',
+    'La confiance que vous gagnez en dansant se transfère à tous les domaines de votre vie',
   blogBeneficiosSalsa_imageSocialCaption:
-    'La communauté salsa : de vraies amitiés qui naissent sur la piste de danse',
+    'La communauté salsera de Barcelone : de vraies amitiés qui naissent sur la piste de danse',
 
   // Section FAQ
   blogBeneficiosSalsa_faqTitle: 'Questions Fréquentes sur Danser la Salsa',
@@ -11508,21 +11514,33 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
     'Quelle est la différence entre la salsa cubaine et la salsa en ligne ?',
   blogBeneficiosSalsa_faq5Answer:
     "La salsa cubaine (casino) se danse en cercle, avec des mouvements plus fluides et sensuels, très connectée à la musique afro-cubaine. La salsa en ligne (style LA/NY) se danse sur une ligne droite, avec plus d'acrobaties. Chez Farray's nous enseignons la salsa cubaine authentique.",
+  blogBeneficiosSalsa_faq6Question: "Est-il vrai que danser protège contre l'Alzheimer ?",
+  blogBeneficiosSalsa_faq6Answer:
+    "Selon l'étude du New England Journal of Medicine (2003), les personnes âgées qui dansaient fréquemment ont présenté 76% moins de risque de développer une démence. La danse combine exercice physique, coordination, mémoire et socialisation, facteurs qui contribuent à maintenir le cerveau actif.",
+  blogBeneficiosSalsa_faq7Question:
+    'Quels vêtements et chaussures faut-il pour les cours de salsa ?',
+  blogBeneficiosSalsa_faq7Answer:
+    "Pour commencer, des vêtements confortables permettant de bouger librement (leggings, pantalon de jogging, t-shirt). Pour les chaussures, baskets à semelle lisse ou chaussures de danse. Évitez les semelles en caoutchouc qui adhèrent au sol. Avec le temps, beaucoup d'élèves investissent dans des chaussures de salsa, mais ce n'est pas obligatoire.",
+  blogBeneficiosSalsa_faq8Question:
+    "Puis-je danser la salsa si j'ai des problèmes de genoux ou de dos ?",
+  blogBeneficiosSalsa_faq8Answer:
+    'Dans la plupart des cas, oui. La salsa est à faible impact comparée à la course ou aux sauts. Beaucoup de kinésithérapeutes recommandent la danse pour améliorer la mobilité articulaire. Cela dit, consultez votre médecin si vous avez une blessure active, et prévenez le professeur pour adapter les mouvements à votre situation.',
 
   // === REFERENCES (E-E-A-T Authority) ===
-  blogBeneficiosSalsa_referencesIntro: 'Sources scientifiques consultées pour cet article :',
-  blogBeneficiosSalsa_refHarvardTitle: 'Les Bienfaits de la Danse pour la Santé',
+  blogBeneficiosSalsa_referencesIntro: 'Études scientifiques citées dans cet article :',
+  blogBeneficiosSalsa_refHarvardTitle: 'Calories Brûlées par Activité Physique',
   blogBeneficiosSalsa_refHarvardDesc:
-    'Étude de Harvard sur comment la danse brûle des calories et améliore la santé cardiovasculaire.',
-  blogBeneficiosSalsa_refNEJMTitle: 'Activités de Loisirs et Risque de Démence',
+    'Tables de référence de Harvard Health sur la dépense calorique pour différentes activités, y compris la danse.',
+  blogBeneficiosSalsa_refNEJMTitle: 'Leisure Activities and Risk of Dementia (2003)',
   blogBeneficiosSalsa_refNEJMDesc:
-    'Étude pionnière démontrant que danser réduit le risque de démence de 76%.',
-  blogBeneficiosSalsa_refAPATitle: 'Les Bienfaits Psychologiques de la Danse',
-  blogBeneficiosSalsa_refAPADesc:
-    "Recherche sur l'impact de la danse sur la santé mentale et le bien-être émotionnel.",
-  blogBeneficiosSalsa_refNCBITitle: 'Effets de la Danse sur la Neuroplasticité',
+    "Étude observationnelle de l'Albert Einstein College publiée dans NEJM qui a trouvé 76% moins de risque de démence chez les danseurs fréquents.",
+  blogBeneficiosSalsa_refFrontiersTitle:
+    'Méta-analyse : Danse et Santé Psychologique (Koch et al. 2019)',
+  blogBeneficiosSalsa_refFrontiersDesc:
+    "Revue systématique sur les effets de la danse sur l'anxiété, la dépression et le bien-être général.",
+  blogBeneficiosSalsa_refNCBITitle: 'Dance for Neuroplasticity : Revue Systématique',
   blogBeneficiosSalsa_refNCBIDesc:
-    'Méta-analyse sur comment la danse améliore la fonction cognitive et la mémoire.',
+    "Analyse d'études cliniques sur les changements structurels du cerveau associés à la pratique de la danse.",
 
   // =====================================================
   // BLOG ARTICLE: Historia de la Salsa en Barcelona (FR)

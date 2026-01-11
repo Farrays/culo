@@ -75,6 +75,8 @@ export interface TeacherInfo {
   name: string;
   specialtyKey: string;
   bioKey: string;
+  /** Optional contextual bio prefix key - prepended to canonical bio */
+  bioPrefixKey?: string;
   image?: string;
   imageSrcSet?: string;
   /** AVIF srcset for modern browsers (best compression) */
@@ -402,7 +404,13 @@ const TeacherCard: React.FC<{
           <p className="text-primary-accent font-semibold mb-3 sm:mb-4">
             {t(teacher.specialtyKey)}
           </p>
-          <p className="text-neutral/90 leading-relaxed text-sm">{t(teacher.bioKey)}</p>
+          <p className="text-neutral/90 leading-relaxed text-sm">
+            {/* Contextual prefix (if exists) + canonical bio */}
+            {teacher.bioPrefixKey &&
+              t(teacher.bioPrefixKey, '') !== teacher.bioPrefixKey &&
+              t(teacher.bioPrefixKey, '') !== '' && <>{t(teacher.bioPrefixKey)} </>}
+            {t(teacher.bioKey)}
+          </p>
           {teacher.tags && teacher.tags.length > 0 && (
             <ul className="flex flex-wrap gap-2 justify-center mt-4" aria-label="Especialidades">
               {teacher.tags.map(tag => (

@@ -1307,12 +1307,20 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   dhV3TeachersTitle: 'Conoce a nuestras profesoras de dancehall',
   dhV3TeachersSubtitle: 'Expertas en Dancehall con años de experiencia',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  // Specialties are contextual, bios reference canonical teacher.*.bio
+  'dhV3.teacher.isabelLopez.specialty': 'Profesora de Dancehall | +5 años de Experiencia',
+  'dhV3.teacher.sandraGomez.specialty': 'Profesora de Dancehall y Twerk | +6 años de Experiencia',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   dhV3Teacher1Specialty: 'Profesora de Dancehall | +5 años de Experiencia',
   dhV3Teacher1Bio:
     "Isabel López es una apasionada del dancehall con más de 5 años de experiencia como profesora especializada en baile urbano. Entrenada con maestros jamaicanos, su energía contagiosa y técnica profesional la convierten en una de las instructoras más queridas de Farray\'s Center. Sus clases mezclan old school moves (Willie Bounce, Nuh Linga) con los últimos hits.",
   dhV3Teacher2Specialty: 'Profesora de Dancehall y Twerk | +6 años de Experiencia',
   dhV3Teacher2Bio:
     'Sandra Gómez es una bailarina profesional con más de 6 años de experiencia en dancehall y twerk. Su estilo único fusiona movimientos del Twerk/Bootydance con la esencia jamaicana. Su técnica impecable y metodología de enseñanza la convierten en una de las profesoras más solicitadas. Energía, sensualidad y feminidad pura.',
+
   dhV3TeachersClosing:
     'Con Isabel y Sandra, no solo aprendes a bailar Dancehall: descubres una nueva forma de conectar con tu cuerpo, tu confianza y el flow jamaicano.',
 
@@ -4035,12 +4043,20 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // Teachers Section
   twerkTeachersTitle: 'Conoce a tus instructoras de Twerk',
   twerkTeachersSubtitle: 'Expertas en Twerk y Dancehall con años de experiencia',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  // Specialties are contextual (emphasize twerk), bios reference canonical teacher.*.bio
+  'twerk.teacher.isabelLopez.specialty': 'Profesora de Twerk y Dancehall | +5 años de Experiencia',
+  'twerk.teacher.sandraGomez.specialty': 'Profesora de Twerk y Dancehall | +6 años de Experiencia',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   twerkTeacher1Specialty: 'Profesora de Twerk y Dancehall | +5 años de Experiencia',
   twerkTeacher1Bio:
     "Isabel López es una apasionada del twerk y dancehall con más de 5 años de experiencia como profesora especializada en baile urbano. Entrenada con maestros jamaicanos y especialistas en Twerk, su energía contagiosa y técnica profesional la convierten en una de las instructoras más queridas de Farray\'s Center.",
   twerkTeacher2Specialty: 'Profesora de Twerk y Dancehall | +6 años de Experiencia',
   twerkTeacher2Bio:
     'Sandra Gómez es una bailarina profesional con más de 6 años de experiencia en twerk y dancehall. Su estilo único fusiona movimientos del Twerk/Bootydance con la esencia jamaicana. Su técnica impecable y metodología de enseñanza la convierten en una de las profesoras más solicitadas. Energía, sensualidad y feminidad pura.',
+
   twerkTeachersClosing:
     'Con Isabel y Sandra, no solo aprendes a bailar Twerk: descubres una nueva forma de conectar con tu cuerpo, tu confianza y tu poder.',
 
@@ -13534,6 +13550,101 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   blogHistoriaSalsa_refNEJMTitle: 'Actividades de Ocio y Riesgo de Demencia',
   blogHistoriaSalsa_refNEJMDesc:
     'Estudio científico sobre los beneficios cognitivos del baile, publicado en el New England Journal of Medicine.',
+
+  // =============================================
+  // TEACHER CANONICAL DATA - Source of Truth
+  // =============================================
+  // These are the CANONICAL descriptions used across all pages.
+  // Each teacher has ONE specialty and ONE bio that serves as
+  // the single source of truth. Class pages can add contextual
+  // prefixes but reference these canonical bios.
+
+  // DIRECTOR
+  'teacher.yunaisyFarray.specialty':
+    'Directora | Creadora del Método Farray® | Miembro CID-UNESCO | Bailarina de Hollywood',
+  'teacher.yunaisyFarray.bio':
+    'Bailarina de Hollywood, esta profesional cubana formada en la Escuela Nacional de Arte de Cuba (ENA), es nuestra fundadora y directora. Con más de dos décadas de experiencia internacional, Yunaisy ha participado en la película "Street Dance 2", las finales de "Got Talent" y programas como "The Dancer". Considerada una de las bailarinas más completas del mundo, participa en los festivales de danza más importantes a nivel global. Creadora del Método Farray®, un sistema exclusivo que fusiona la disciplina técnica de la escuela clásica rusa con los ritmos y el sabor afrocubanos, diseñado específicamente para que los bailarines europeos dominen las diferentes disciplinas de forma más eficiente, garantizando resultados rápidos y sólidos.',
+
+  // CUBAN TEACHERS
+  'teacher.danielSene.specialty':
+    'Ballet Clásico, Contemporáneo, Yoga, Tai-Chi & Stretching | Escuela Nacional de Ballet de Cuba | Referente Nacional',
+  'teacher.danielSene.bio':
+    'Daniel Sené es bailarín profesional formado en la prestigiosa Escuela Nacional de Ballet de Cuba. Especialista en técnica clásica cubana y danza contemporánea, aporta la rigurosidad académica y elegancia propias de la tradición cubana. Profundo conocedor del cuerpo humano, también se destaca por su maestría en Yoga, Tai-Chi y Stretching. Este maestro es un referente en el país, combinando precisión técnica con expresión artística y bienestar corporal.',
+
+  'teacher.alejandroMinoso.specialty':
+    'Ballet, Modern Jazz, Afro Jazz & Contemporáneo | ENA Cuba | Ex Solista Cía. Carlos Acosta',
+  'teacher.alejandroMinoso.bio':
+    'Alejandro Miñoso es bailarín profesional cubano formado en la ENA y ex solista de la prestigiosa compañía Carlos Acosta, uno de los mejores bailarines de la historia. Su expertise en la fusión de estilos clásicos y afro lo convierte en un profesor versátil, capaz de transitar entre ballet, modern jazz, afro jazz, contemporáneo y afro contemporáneo con igual maestría. Técnica académica cubana de primer nivel.',
+
+  'teacher.liaValdes.specialty':
+    'Salsa Cubana & Lady Style | ENA Cuba | +20 años carrera | El Rey León París',
+  'teacher.liaValdes.bio':
+    'Maestra y artista internacional cubana, con más de 20 años de carrera artística, Lia Valdes es una referente a nivel mundial. Presencia asidua en los festivales de ritmos latinos más importantes del mundo, esta maestra aporta el sabor auténtico de Cuba a cada clase. Formada en la ENA (Escuela Nacional de Arte de Cuba), ha integrado el elenco del prestigioso espectáculo "El Rey León" en París durante varios años, transmitiendo no solo los pasos sino también la alegría y el espíritu del baile caribeño.',
+
+  'teacher.iroelBastarreche.specialty':
+    'Folklore Cubano & Afro Contemporáneo | Ballet Folklórico de Camagüey | Método Farray®',
+  'teacher.iroelBastarreche.bio':
+    'Iroel Bastarreche, conocido como Iro, nació en Camagüey (Cuba) y se formó en la Escuela Vocacional de Arte de Cuba. Formó parte del prestigioso Conjunto Artístico de Maraguán, recibiendo formación en folklore campesino, baile popular cubano y raíces haitianas, jamaicanas y congas, participando en innumerables festivales internacionales. Posteriormente integró el Ballet Folklórico de Camagüey, complementando su formación afro-contemporánea con maestros como Santiago Alfonso. Desde 2014 en Barcelona, se ha formado en el Método Farray® con Yunaisy Farray y actualmente es considerado por muchos como uno de los referentes en la enseñanza de estilos cubanos en toda Barcelona.',
+
+  'teacher.charlieBreezy.specialty': 'Afro Contemporáneo, Hip Hop & Afrobeats | ENA Cuba',
+  'teacher.charlieBreezy.bio':
+    'Charlie Breezy es maestro internacional y bailarín cubano, formado en la prestigiosa ENA (Escuela Nacional de Arte de Cuba). Nació en un país donde la cultura africana está totalmente arraigada, lo que le permite dominar diferentes estilos de danza africana y afrobeats, además de contemporáneo, ballet y danzas urbanas. Versatilidad y formación académica excepcional.',
+
+  'teacher.grechenMendez.specialty': 'Danzas Afrocubanas | ISA Cuba | +25 años experiencia',
+  'teacher.grechenMendez.bio':
+    'Grechén Méndez es una maestra internacional de referencia en danzas afrocubanas con más de 25 años dedicados a la enseñanza del folklore cubano. Formada en el prestigioso Instituto Superior de Arte de Cuba (ISA), la máxima institución artística del país, domina las danzas a los Orishas, la rumba y todas las manifestaciones del patrimonio afrocubano. Autoridad reconocida a nivel mundial, ha formado bailarines profesionales en Cuba, Europa y América, transmitiendo técnica y el profundo significado espiritual y cultural de cada movimiento.',
+
+  // HIP HOP SPECIALIST
+  'teacher.marcosMartinez.specialty': 'Hip Hop | Juez Internacional | Referente España',
+  'teacher.marcosMartinez.bio':
+    'Marcos Martínez es uno de los referentes del Hip Hop en España. Con décadas de experiencia como bailarín, maestro y juez de competiciones internacionales, ha formado a generaciones de bailarines. Su estilo único combina la técnica old school con las tendencias actuales, siempre respetando las raíces de la cultura hip hop.',
+
+  // BODY CONDITIONING SPECIALIST
+  'teacher.crisag.specialty':
+    'Body Conditioning, Cuerpo Fit, Bum Bum Glúteos & Stretching | Método Farray® desde 2012',
+  'teacher.crisag.bio':
+    'CrisAg comenzó su pasión por el baile desde temprana edad. Licenciada en Filología Inglesa por la Universidad de Barcelona, se ha formado con Jorge Camagüey e integró su compañía Calle Real de Camagüey. Completó su formación en The Cuban School of Arts de Londres, trabajando junto a prestigiosas bailarinas como Yunaisy Farray, Kirenia Cantin y Damarys Farrés. Desde 2012 se ha formado en el Método Farray® y actualmente es un referente en Barcelona como profesora de Body Conditioning, Cuerpo Fit, Bum Bum Glúteos y Stretching, fusionando sus dos pasiones: el baile y el fitness.',
+
+  // SALSA/BACHATA SPECIALISTS
+  'teacher.yasminaFernandez.specialty':
+    'Salsa Cubana, Lady Style, Sexy Style & Sexy Reggaeton | Método Farray® desde 2016',
+  'teacher.yasminaFernandez.bio':
+    'Yasmina Fernández es una profesora extraordinariamente versátil con una formación muy amplia en las mejores escuelas de Barcelona. Certificada en el Método Farray® desde 2016, destaca por su capacidad de conectar con los alumnos y hacer que cada persona saque lo mejor de sí en sus clases. Especialista en salsa cubana, Lady Style, Sexy Style y Sexy Reggaeton, combina años de experiencia con una metodología clara, accesible y un don de gentes excepcional.',
+
+  'teacher.eugeniaTrujillo.specialty':
+    'Bachata Lady Style & Bachata en Pareja | Campeona Mundial Salsa LA',
+  'teacher.eugeniaTrujillo.bio':
+    "Eugenia Trujillo es maestra y bailarina internacional uruguaya, campeona mundial de Salsa LA junto a Mathias Font. Profesora en Farray's desde hace 4 años, aporta una técnica impecable y es especialista en bachata en pareja y bachata lady style con excelentes resultados. Su carisma, simpatía y cercanía la hacen una de las profesoras más queridas del claustro.",
+
+  'teacher.mathiasFont.specialty': 'Bachata Sensual | Campeón Mundial Salsa LA',
+  'teacher.mathiasFont.bio':
+    'Mathias Font es campeón mundial de Salsa LA junto a su pareja de baile Eugenia Trujillo. Especialista en bachata sensual, destaca por su enfoque único en la musicalidad, la conexión en pareja y la dinamización de las clases. Referente en la escena latina de Barcelona.',
+
+  'teacher.carlosCanto.specialty': 'Bachata & Bachata Moderna | Talento Emergente Barcelona',
+  'teacher.carlosCanto.bio':
+    'Carlos Canto es un talento emergente en Barcelona con don de gentes que ha demostrado gran capacidad para conectar con sus alumnos. Especialista en bachata con enfoque en técnica y musicalidad, su estilo fresco y accesible lo ha convertido en un profesor muy querido de sus alumnos.',
+
+  'teacher.noemi.specialty': 'Bachata & Bachata Lady Style | Talento Emergente Barcelona',
+  'teacher.noemi.bio':
+    "Noemi es un talento emergente en el que Farray's apostó fuerte. Pareja de Carlos Canto, están floreciendo como una de las parejas más prometedoras de la escena de Barcelona. Sus alumnos se convierten en fans fieles gracias a su enfoque en bachata y técnicas femeninas, además de sus dones de gente.",
+
+  'teacher.juanAlvarez.specialty': 'Bachata Sensual | Método Farray® | Talento Emergente Barcelona',
+  'teacher.juanAlvarez.bio':
+    'Juan Alvarez es otro de los talentos emergentes en Barcelona. Instructor de Bachata Sensual, la forma como transmite la esencia de este baile latino con pasión, técnica depurada, conexión y musicalidad, junto con su enfoque práctico y cercano que facilita el aprendizaje desde el primer día, le ha permitido conectar con sus alumnos desde el primer momento.',
+
+  // DANCEHALL/TWERK SPECIALISTS
+  'teacher.sandraGomez.specialty': 'Dancehall & Twerk | Formación Jamaicana',
+  'teacher.sandraGomez.bio':
+    'Sandra Gómez es bailarina profesional con formación jamaicana en dancehall y twerk. Su estilo único fusiona movimientos del Twerk/Bootydance con la esencia jamaicana auténtica. Técnica impecable y metodología de enseñanza probada la convierten en una de las profesoras más solicitadas. Energía, sensualidad y feminidad pura en cada clase.',
+
+  'teacher.isabelLopez.specialty': 'Dancehall & Dancehall Female | Formación Jamaica',
+  'teacher.isabelLopez.bio':
+    'Isabel López es una apasionada del dancehall con más de 5 años de experiencia como profesora especializada. Entrenada con maestros jamaicanos, su energía contagiosa y técnica profesional la convierten en una de las instructoras más queridas. Sus clases mezclan old school moves (Willie Bounce, Nuh Linga) con los últimos hits.',
+
+  // AFROBEATS SPECIALIST
+  'teacher.redbhlue.specialty': 'Afrobeats & Ntcham | Nativo Tanzania',
+  'teacher.redbhlue.bio':
+    'Redblueh es profesor y bailarín internacional, nativo de Tanzania y especialista en Ntcham. Sus raíces africanas, conocimientos profundos, energía y alegría contagiante lo convierten en uno de los maestros más recomendados de toda Barcelona. Autenticidad africana en cada movimiento.',
 
   // =============================================
   // TEACHERS PAGE - Profesores de Baile Barcelona
