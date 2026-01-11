@@ -18,7 +18,7 @@ import {
   CUERPO_FIT_LEVELS,
   CUERPO_FIT_PREPARE_CONFIG,
 } from './cuerpo-fit';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const CUERPO_FIT_PAGE_CONFIG: FullDanceClassConfig = {
@@ -32,12 +32,7 @@ export const CUERPO_FIT_PAGE_CONFIG: FullDanceClassConfig = {
   scheduleKeys: CUERPO_FIT_SCHEDULE_KEYS,
 
   // Teachers (sistema centralizado con fotos optimizadas)
-  teachers: [
-    getTeacherInfo('cris-ag', 'cuerpofitTeacher1Specialty', 'cuerpofitTeacher1Bio', [
-      'Body Conditioning',
-      'Método Farray',
-    ]),
-  ],
+  teachers: [getTeacherForClass('cris-ag', 'cuerpoFit', ['Body Conditioning', 'Método Farray'])],
 
   // Breadcrumb (4 levels: Home > Classes > Prep Física > Body Conditioning)
   breadcrumbConfig: {

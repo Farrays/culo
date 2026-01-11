@@ -9,7 +9,7 @@ import {
   FEMMOLOGY_LEVELS,
   FEMMOLOGY_PREPARE_CONFIG,
 } from './femmology';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const FEMMOLOGY_PAGE_CONFIG: FullDanceClassConfig = {
@@ -23,12 +23,7 @@ export const FEMMOLOGY_PAGE_CONFIG: FullDanceClassConfig = {
   scheduleKeys: FEMMOLOGY_SCHEDULE_KEYS,
 
   // Teachers (sistema centralizado con fotos optimizadas)
-  teachers: [
-    getTeacherInfo('yunaisy-farray', 'femTeacher1Specialty', 'femTeacher1Bio', [
-      'Femmology',
-      'Creadora',
-    ]),
-  ],
+  teachers: [getTeacherForClass('yunaisy-farray', 'femmology', ['Femmology', 'Creadora'])],
 
   // Breadcrumb (5 levels: Home > Classes > Urban > Heels > Femmology)
   breadcrumbConfig: {

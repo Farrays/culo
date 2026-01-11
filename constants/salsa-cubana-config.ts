@@ -10,7 +10,7 @@ import {
   SALSA_CUBANA_PREPARE_CONFIG,
   SALSA_CUBANA_NEARBY_AREAS,
 } from './salsa-cubana';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const SALSA_CUBANA_PAGE_CONFIG: FullDanceClassConfig = {
@@ -25,19 +25,13 @@ export const SALSA_CUBANA_PAGE_CONFIG: FullDanceClassConfig = {
 
   // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    getTeacherInfo('yunaisy-farray', 'salsaCubanaTeacher1Specialty', 'salsaCubanaTeacher1Bio', [
+    getTeacherForClass('yunaisy-farray', 'salsaCubana', [
       'Directora',
       'Creadora Método Farray',
       'CID-UNESCO',
     ]),
-    getTeacherInfo('yasmina-fernandez', 'salsaCubanaTeacher2Specialty', 'salsaCubanaTeacher2Bio', [
-      'Salsa Cubana',
-      'Lady Style',
-    ]),
-    getTeacherInfo('iroel-bastarreche', 'salsaCubanaTeacher3Specialty', 'salsaCubanaTeacher3Bio', [
-      'Casino',
-      'Método Farray',
-    ]),
+    getTeacherForClass('yasmina-fernandez', 'salsaCubana', ['Salsa Cubana', 'Lady Style']),
+    getTeacherForClass('iroel-bastarreche', 'salsaCubana', ['Casino', 'Método Farray']),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Latin > Salsa Cubana)

@@ -11,7 +11,7 @@ import {
   FOLKLORE_CUBANO_LEVELS,
   FOLKLORE_CUBANO_PREPARE_CONFIG,
 } from './folklore-cubano';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const FOLKLORE_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
@@ -26,10 +26,7 @@ export const FOLKLORE_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
 
   // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    getTeacherInfo('grechen-mendez', 'folkloreTeacher1Specialty', 'folkloreTeacher1Bio', [
-      'Folklore',
-      'Danzas Cubanas',
-    ]),
+    getTeacherForClass('grechen-mendez', 'folkloreCubano', ['Folklore', 'Danzas Cubanas']),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Salsa/Bachata > Folklore Cubano)

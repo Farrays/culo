@@ -24,7 +24,7 @@ import {
   FULL_BODY_CARDIO_LEVELS,
   FULL_BODY_CARDIO_PREPARE_CONFIG,
 } from './full-body-cardio';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const FULL_BODY_CARDIO_PAGE_CONFIG: FullDanceClassConfig = {
@@ -38,12 +38,7 @@ export const FULL_BODY_CARDIO_PAGE_CONFIG: FullDanceClassConfig = {
   scheduleKeys: FULL_BODY_CARDIO_SCHEDULE_KEYS,
 
   // Teachers (sistema centralizado con fotos optimizadas)
-  teachers: [
-    getTeacherInfo('cris-ag', 'fullBodyCardioTeacher1Specialty', 'fullBodyCardioTeacher1Bio', [
-      'Cardio Dance',
-      'Full Body',
-    ]),
-  ],
+  teachers: [getTeacherForClass('cris-ag', 'fullBodyCardio', ['Cardio Dance', 'Full Body'])],
 
   // Breadcrumb (4 levels: Home > Classes > Fitness > Cuerpo-Fit)
   breadcrumbConfig: {

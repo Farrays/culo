@@ -10,7 +10,7 @@ import {
   SEXY_REGGAETON_PREPARE_CONFIG,
   SEXY_REGGAETON_VIDEO_ID,
 } from './sexy-reggaeton';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const SEXY_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
@@ -24,12 +24,7 @@ export const SEXY_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
   scheduleKeys: SEXY_REGGAETON_SCHEDULE_KEYS,
 
   // Teachers (sistema centralizado con fotos optimizadas)
-  teachers: [
-    getTeacherInfo('yasmina-fernandez', 'sxrTeacher1Specialty', 'sxrTeacher1Bio', [
-      'Sexy Reggaeton',
-      'Método Farray',
-    ]),
-  ],
+  teachers: [getTeacherForClass('yasmina-fernandez', 'sxr', ['Sexy Reggaeton', 'Método Farray'])],
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Sexy Reggaeton)
   breadcrumbConfig: {

@@ -20,7 +20,7 @@ import {
   STRETCHING_LEVELS,
   STRETCHING_PREPARE_CONFIG,
 } from './stretching';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const STRETCHING_PAGE_CONFIG: FullDanceClassConfig = {
@@ -35,14 +35,8 @@ export const STRETCHING_PAGE_CONFIG: FullDanceClassConfig = {
 
   // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    getTeacherInfo('cris-ag', 'stretchingTeacher1Specialty', 'stretchingTeacher1Bio', [
-      'Stretching',
-      'Backbending',
-    ]),
-    getTeacherInfo('daniel-sene', 'stretchingTeacher2Specialty', 'stretchingTeacher2Bio', [
-      'Stretching',
-      'Ballet',
-    ]),
+    getTeacherForClass('cris-ag', 'stretching', ['Stretching', 'Backbending']),
+    getTeacherForClass('daniel-sene', 'stretching', ['Stretching', 'Ballet']),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Prep Física > Stretching)

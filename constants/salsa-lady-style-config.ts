@@ -7,7 +7,8 @@
 import type { LadyStyleTemplateConfig } from '../components/templates/LadyStyleTemplate';
 import { GOOGLE_REVIEWS_TESTIMONIALS } from './testimonials';
 import type { Testimonial } from '../types';
-import { getTeacherInfo, getTeacherQuoteInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
+import { getTeacherQuoteInfo } from './teacher-images';
 
 // Testimonials for Salsa Lady Style page
 const SALSA_LADY_STYLE_TESTIMONIALS: Testimonial[] = [
@@ -194,17 +195,9 @@ export const SALSA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
 
   // Teachers - Enterprise: Sistema centralizado con srcSet y AVIF
   teachers: (() => {
-    const yunaisy = getTeacherInfo(
-      'yunaisy-farray',
-      'salsaLadyTeacherCredential',
-      'salsaLadyTeacherBio'
-    );
-    const lia = getTeacherInfo('lia-valdes', 'salsaLadyTeacher2Specialty', 'salsaLadyTeacher2Bio');
-    const yasmina = getTeacherInfo(
-      'yasmina-fernandez',
-      'salsaLadyTeacher3Specialty',
-      'salsaLadyTeacher3Bio'
-    );
+    const yunaisy = getTeacherForClass('yunaisy-farray', 'salsaLady');
+    const lia = getTeacherForClass('lia-valdes', 'salsaLady');
+    const yasmina = getTeacherForClass('yasmina-fernandez', 'salsaLady');
     return [
       {
         name: yunaisy.name,

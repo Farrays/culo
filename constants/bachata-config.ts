@@ -12,7 +12,7 @@ import {
   BACHATA_PREPARE_CONFIG,
   BACHATA_NEARBY_AREAS,
 } from './bachata';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const BACHATA_PAGE_CONFIG: FullDanceClassConfig = {
@@ -25,26 +25,16 @@ export const BACHATA_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: BACHATA_TESTIMONIALS,
   scheduleKeys: BACHATA_SCHEDULE_KEYS,
 
-  // Teachers - 5 profesores de bachata sensual (usando sistema centralizado)
+  // Teachers - 4 profesores de bachata sensual (usando sistema centralizado)
   teachers: [
-    getTeacherInfo('mathias-font', 'bachataV3Teacher1Specialty', 'bachataV3Teacher1Bio', [
-      'Campeón Mundial',
-      'Musicalidad',
-      'Conexión',
-    ]),
-    getTeacherInfo('eugenia-trujillo', 'bachataV3Teacher2Specialty', 'bachataV3Teacher2Bio', [
+    getTeacherForClass('mathias-font', 'bachataV3', ['Campeón Mundial', 'Musicalidad', 'Conexión']),
+    getTeacherForClass('eugenia-trujillo', 'bachataV3', [
       'Campeona Mundial',
       'Salsa LA',
       'Bachata Sensual',
     ]),
-    getTeacherInfo('carlos-canto', 'bachataV3Teacher3Specialty', 'bachataV3Teacher3Bio', [
-      'Bachata Sensual',
-      'Principiantes',
-    ]),
-    getTeacherInfo('noemi', 'bachataV3Teacher4Specialty', 'bachataV3Teacher4Bio', [
-      'Bachata Sensual',
-      'Lady Style',
-    ]),
+    getTeacherForClass('carlos-canto', 'bachataV3', ['Bachata Sensual', 'Principiantes']),
+    getTeacherForClass('noemi', 'bachataV3', ['Bachata Sensual', 'Lady Style']),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Latin > Current)

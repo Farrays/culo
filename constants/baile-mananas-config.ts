@@ -18,7 +18,7 @@ import {
   BAILE_MANANAS_LEVELS,
   BAILE_MANANAS_PREPARE_CONFIG,
 } from './baile-mananas';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
@@ -33,22 +33,9 @@ export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
 
   // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    getTeacherInfo(
-      'alejandro-minoso',
-      'bailemanananasTeacher1Specialty',
-      'bailemanananasTeacher1Bio',
-      ['ENA Cuba', 'Ballet']
-    ),
-    getTeacherInfo(
-      'yasmina-fernandez',
-      'bailemanananasTeacher2Specialty',
-      'bailemanananasTeacher2Bio',
-      ['Salsa Cubana', 'Lady Style']
-    ),
-    getTeacherInfo('isabel-lopez', 'bailemanananasTeacher3Specialty', 'bailemanananasTeacher3Bio', [
-      'Dancehall',
-      'Twerk',
-    ]),
+    getTeacherForClass('alejandro-minoso', 'baileMananas', ['ENA Cuba', 'Ballet']),
+    getTeacherForClass('yasmina-fernandez', 'baileMananas', ['Salsa Cubana', 'Lady Style']),
+    getTeacherForClass('isabel-lopez', 'baileMananas', ['Dancehall', 'Twerk']),
   ],
 
   // Breadcrumb (4 levels: Home > Clases > Baile Barcelona > Clases de Mañanas)

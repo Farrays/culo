@@ -273,32 +273,6 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
         ref={scrollContainerRef}
         className="flex flex-col h-full overflow-y-auto pt-16 pb-8 px-4"
       >
-        {/* Language Selector - Top - MORE VISIBLE */}
-        <div className="mb-4 bg-white/20 border-2 border-primary-accent rounded-2xl overflow-hidden">
-          <div className="flex items-center justify-center gap-2 px-4 py-2 bg-primary-accent">
-            <GlobeIcon className="w-5 h-5 text-white" />
-            <span className="text-sm font-bold text-white tracking-wide">
-              {t('headerLanguage') || 'Idioma'}
-            </span>
-          </div>
-          <div className="grid grid-cols-4 gap-2 p-3 bg-black/50">
-            {SUPPORTED_LOCALES.map(lang => (
-              <button
-                key={lang}
-                onClick={() => {
-                  triggerHaptic();
-                  handleLanguageChange(lang);
-                }}
-                className={`py-3 px-2 rounded-xl text-base font-bold ${
-                  locale === lang ? 'bg-primary-accent text-white' : 'bg-white/20 text-white'
-                }`}
-              >
-                {lang.toUpperCase()}
-              </button>
-            ))}
-          </div>
-        </div>
-
         <nav className="flex flex-col space-y-2">
           {/* 1. Inicio */}
           <Link
@@ -601,9 +575,35 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           </Link>
         </nav>
 
-        {/* Bottom Section - CTA - Enterprise styling */}
-        <div className="mt-auto pt-8">
-          {/* CTA Button - Enterprise */}
+        {/* Bottom Section */}
+        <div className="mt-auto pt-6 space-y-4">
+          {/* Language Selector */}
+          <div className="bg-white/20 border-2 border-primary-accent rounded-2xl overflow-hidden">
+            <div className="flex items-center justify-center gap-2 px-4 py-2 bg-primary-accent">
+              <GlobeIcon className="w-5 h-5 text-white" />
+              <span className="text-sm font-bold text-white tracking-wide">
+                {t('headerLanguage') || 'Idioma'}
+              </span>
+            </div>
+            <div className="grid grid-cols-4 gap-2 p-3 bg-black/50">
+              {SUPPORTED_LOCALES.map(lang => (
+                <button
+                  key={lang}
+                  onClick={() => {
+                    triggerHaptic();
+                    handleLanguageChange(lang);
+                  }}
+                  className={`py-3 px-2 rounded-xl text-base font-bold ${
+                    locale === lang ? 'bg-primary-accent text-white' : 'bg-white/20 text-white'
+                  }`}
+                >
+                  {lang.toUpperCase()}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA Button */}
           <button
             onClick={() => {
               setIsMenuOpen(false);

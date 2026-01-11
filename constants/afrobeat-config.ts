@@ -9,7 +9,7 @@ import {
   AFROBEAT_LEVELS,
   AFROBEAT_PREPARE_CONFIG,
 } from './afrobeat';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const AFROBEAT_PAGE_CONFIG: FullDanceClassConfig = {
@@ -24,11 +24,8 @@ export const AFROBEAT_PAGE_CONFIG: FullDanceClassConfig = {
 
   // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    getTeacherInfo('redbhlue', 'afroTeacher1Specialty', 'afroTeacher1Bio', [
-      'Afrobeats',
-      'Afro Dance',
-    ]),
-    getTeacherInfo('charlie-breezy', 'afroTeacher2Specialty', 'afroTeacher2Bio', ['Afro', 'Urban']),
+    getTeacherForClass('redbhlue', 'afro', ['Afrobeats', 'Afro Dance']),
+    getTeacherForClass('charlie-breezy', 'afro', ['Afro', 'Urban']),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Afrobeat)
