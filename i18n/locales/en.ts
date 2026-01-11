@@ -11219,7 +11219,12 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogHistoriaSalsa_section1Content3:
     'The 1960s were crucial: the **[Bronx and Spanish Harlem](https://elpais.com/us/entretenimiento/2024-06-08/la-salsa-nacio-y-vive-en-nueva-york-con-permiso-de-cali.html)** became epicenters where the Caribbean diaspora fused Afro-Caribbean sounds with Latin jazz, soul and R&B influences, and an unmistakable urban energy. Artists like **Tito Puente, Tito Rodríguez and Charlie Palmieri** led this movement that gave rise to **salsa dura**: powerful music with intense brass, aggressive percussion and lyrics about life in the barrio.',
   blogHistoriaSalsa_section1Content4:
-    'In 1964, **[Fania Records](https://www.udiscovermusica.com/articulos/fania-records-historia/)**—founded by Johnny Pacheco (Dominican) and Jerry Masucci (New Yorker)—crystallized and projected this phenomenon. Fania didn\'t "invent" salsa, but turned it into a **global identity**, combining commercial strategy with Latino cultural pride. The creation of **[Fania All-Stars](https://es.wikipedia.org/wiki/Fania_All-Stars)** in 1968 and iconic concerts like those at the Cheetah Club or Yankee Stadium marked the moment when salsa became the symbol of urban, proud Latinidad.',
+    'In 1964, [**Fania Records**](https://es.wikipedia.org/wiki/Salsa_%28g%C3%A9nero_musical%29)—founded by Johnny Pacheco (Dominican) and Jerry Masucci (New Yorker)—crystallized and projected this phenomenon internationally. Fania didn\'t "invent" salsa, but turned it into a **global identity**, combining commercial strategy with Latino cultural pride.',
+
+  // === SECTION 1B: FANIA ALL-STARS ===
+  blogHistoriaSalsa_section1bTitle: 'Fania All-Stars: the salsa "dream team"',
+  blogHistoriaSalsa_section1bContent:
+    'The creation of [**Fania All-Stars**](https://es.wikipedia.org/wiki/Fania_All-Stars) in 1968 and iconic concerts like those at the Cheetah Club or Yankee Stadium marked the moment when salsa became the symbol of urban, proud and transnational Latinidad. From then on, the word "salsa" became massively associated with this sound and the New York scene.',
 
   // === IMAGE CAPTIONS ===
   blogHistoriaSalsa_imageFaniaCaption:
@@ -11280,9 +11285,11 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // === SECTION 4: BARCELONA ===
   blogHistoriaSalsa_section4Title: 'From New York and the Caribbean to Barcelona',
   blogHistoriaSalsa_section4Content1:
-    'In recent decades, Barcelona has transformed into one of the **European capitals of Latin dance**, where tradition and modernity coexist. [Academic studies](https://www.academia.edu/24917752/Tesis_ISABEL_LLANO_La_Salsa_en_Barcelona) document how the city hosts a large Latin American and Afro-Caribbean community, generating a [plural salsa scene](https://marulacafe.com/noches-de-salsa-en-barcelona/): from clubs in Eixample to specialized schools in Gràcia or Poblenou, where rhythm blends with everyday life.',
+    "In recent decades, Barcelona has established itself as one of **Europe's most important salsa scenes**, where tradition and modernity coexist. [Academic studies such as Isabel Llano's doctoral thesis (UAB)](https://ddd.uab.cat/pub/tesis/2016/hdl_10803_377467/illc1de1.pdf) document how the city hosts a large Latin American and Afro-Caribbean community that has driven a plural scene of clubs, schools and festivals.",
   blogHistoriaSalsa_section4Content2:
-    "[Farray's International Dance Center](/en/clases), a pioneering institution in professional Afro-Caribbean dance education, keeps this heritage alive through programs combining technique, culture and history. Here salsa is taught not only with technical precision, but with awareness of the context that originated it. Meet [our teachers](/en/profesores-baile-barcelona) and discover the [Farray® Method](/en/yunaisy-farray).",
+    "This scene extends through neighborhoods like Eixample, Gràcia and Poblenou, where rhythm blends with everyday life and nightlife. In this context, [Farray's International Dance Center](/en/clases) positions itself as a pioneering institution in professional Afro-Caribbean dance education in Barcelona.",
+  blogHistoriaSalsa_section4Content3:
+    'At [FIDC](/en/clases), salsa is taught not only with technical precision, but also with historical and cultural awareness. Our programs combine technique, musicality, history and salsa culture, so each student understands where the steps they learn come from. You can meet [our teachers](/en/profesores-baile-barcelona) and discover the [Farray® Method](/en/yunaisy-farray), a pedagogical approach that integrates artistic training with Afro-Caribbean roots.',
 
   // === SECTION 5: BENEFITS ===
   blogHistoriaSalsa_section5Title: 'More than exercise: what science says about dance',
@@ -11314,22 +11321,34 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     "Barcelona is considered one of Europe's Latin dance capitals. The city has a vibrant Latin American community, numerous dance venues, international congresses like the Barcelona Salsa Congress, and specialized schools like Farray's International Dance Center.",
   blogHistoriaSalsa_faq5Question: 'What health benefits does dancing salsa have?',
   blogHistoriaSalsa_faq5Answer:
-    'According to New England Journal of Medicine studies, dancing regularly can reduce dementia risk by up to 76%. Additionally, an hour of salsa burns 350-450 kcal, improves coordination, reduces stress and increases happiness by 25% according to Frontiers in Psychology.',
+    'According to New England Journal of Medicine studies, dancing regularly can reduce dementia risk by up to 76%. Additionally, an hour of salsa burns 350-450 kcal, improves coordination and reduces stress according to Frontiers in Psychology studies.',
+  blogHistoriaSalsa_faq6Question: 'Who were the most influential artists in salsa history?',
+  blogHistoriaSalsa_faq6Answer:
+    'Among the most influential are: **Tito Puente** (the King of Timbal), **Celia Cruz** (the Queen of Salsa), **Héctor Lavoe** (iconic voice of salsa dura), **Willie Colón** (trombone innovator), **Rubén Blades** (social and poetic salsa), and Fania All-Stars groups. In modern Cuban salsa, Los Van Van and NG La Banda marked the evolution towards timba.',
+  blogHistoriaSalsa_faq7Question: 'What is Fania Records and why is it important?',
+  blogHistoriaSalsa_faq7Answer:
+    'Fania Records was a record label founded in New York in 1964 by Johnny Pacheco and Jerry Masucci. Although it didn\'t "invent" salsa, it was fundamental in consolidating it as a global Latin identity. Its dream team, Fania All-Stars, brought together the best figures of the genre and held historic concerts like the one at Yankee Stadium in 1973.',
+  blogHistoriaSalsa_faq8Question: 'Why is Barcelona considered the European capital of salsa?',
+  blogHistoriaSalsa_faq8Answer:
+    "Barcelona hosts one of Europe's largest Latin American communities, generating a vibrant salsa scene with clubs, international congresses and specialized schools. Isabel Llano's doctoral thesis (UAB, 2016) documents how the city has become a Latin dance reference on the continent. Schools like Farray's International Dance Center keep this tradition alive with professional training.",
 
   // === REFERENCES (E-E-A-T Authority) ===
   blogHistoriaSalsa_referencesIntro: 'Historical and academic sources consulted:',
-  blogHistoriaSalsa_refWikipediaTitle: 'Salsa (music genre) - Complete History',
+  blogHistoriaSalsa_refWikipediaTitle: 'Salsa (music genre) – Wikipedia',
   blogHistoriaSalsa_refWikipediaDesc:
     'Encyclopedic article on the origins, evolution and characteristics of salsa as a musical genre.',
-  blogHistoriaSalsa_refSmithsonianTitle: 'The Birth of Salsa',
+  blogHistoriaSalsa_refSmithsonianTitle: 'The Birth of Salsa – Smithsonian Institution',
   blogHistoriaSalsa_refSmithsonianDesc:
-    'Smithsonian exhibition on the cultural history of salsa and its global impact.',
-  blogHistoriaSalsa_refLOCTitle: 'Latin Music Archives',
+    'Exhibition on the cultural history of salsa, its global impact and Afro-Latin heritage.',
+  blogHistoriaSalsa_refLOCTitle: 'Latin Music Archives – Library of Congress',
   blogHistoriaSalsa_refLOCDesc:
     'Library of Congress collection on the history of Latin music in the United States.',
-  blogHistoriaSalsa_refNEJMTitle: 'Leisure Activities and Risk of Dementia',
+  blogHistoriaSalsa_refNEJMTitle: 'Leisure Activities and the Risk of Dementia',
   blogHistoriaSalsa_refNEJMDesc:
-    'Scientific study on the cognitive benefits of dancing, published in the New England Journal of Medicine.',
+    'Longitudinal study by Verghese et al. on cognitive benefits of dancing, published in NEJM (2003).',
+  blogHistoriaSalsa_refUABTitle: 'Salsa in Barcelona – UAB Doctoral Thesis',
+  blogHistoriaSalsa_refUABDesc:
+    'Research by Isabel Llano Camacho on immigration, identity, Latin music and dance in Barcelona (2016).',
 
   // =============================================
   // TEACHER CANONICAL DATA - Source of Truth
@@ -17869,4 +17888,97 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   jpaLeadModal_error_title: 'Processing Error',
   jpaLeadModal_error_message: 'An error occurred. Please try again.',
   jpaLeadModal_error_cta: 'Retry',
+
+  // --- AFROBEATS ---
+  'afro.teacher.redbhlue.specialty': 'Afrobeats & Ntcham | Tanzania Native',
+  'afro.teacher.charlieBreezy.specialty': 'Afrobeats, Hip Hop & Afro Contemporary',
+
+  // --- HIP HOP REGGAETON ---
+  'hhr.teacher.charlieBreezy.specialty': 'Hip Hop Reggaeton, Afrobeats & Urban Dance',
+
+  // --- SEXY REGGAETON ---
+  'sxr.teacher.yasminaFernandez.specialty': 'Sexy Reggaeton & Sexy Style',
+
+  // --- REGGAETON CUBANO ---
+  'rcb.teacher.charlieBreezy.specialty': 'Cuban Reggaeton, Reparto & Urban Dance',
+  'rcb.teacher.alejandroMinoso.specialty': 'Cuban Reggaeton, Reparto & Improvisation',
+
+  // --- FEMMOLOGY ---
+  'femmology.teacher.yunaisyFarray.specialty':
+    'Creator of Farray Method® | Female Movement Specialist',
+
+  // --- SEXY STYLE ---
+  'sexyStyle.teacher.yasminaFernandez.specialty': 'Sexy Style & Body Expression',
+
+  // --- MODERN JAZZ ---
+  'modernjazz.teacher.alejandroMinoso.specialty':
+    'Modern Jazz | Former Carlos Acosta Company Soloist',
+
+  // --- BALLET ---
+  'ballet.teacher.danielSene.specialty': 'Classical Ballet | National Ballet School of Cuba',
+  'ballet.teacher.alejandroMinoso.specialty':
+    'Classical Ballet | ENA Cuba | Former Carlos Acosta Co. Soloist',
+
+  // --- CONTEMPORANEO ---
+  'contemporaneo.teacher.danielSene.specialty': 'Lyrical Contemporary | Cuban School',
+  'contemporaneo.teacher.alejandroMinoso.specialty': 'Floor Contemporary & Flow | ENA Cuba',
+
+  // --- AFRO CONTEMPORANEO ---
+  'afrocontemporaneo.teacher.yunaisyFarray.specialty':
+    'Creator of Farray Method® | Afro-Contemporary Fusion',
+  'afrocontemporaneo.teacher.charlieBreezy.specialty':
+    'Afro Contemporary | ENA Cuba | International Master',
+
+  // --- AFRO JAZZ ---
+  'afrojazz.teacher.yunaisyFarray.specialty': 'Creator of Farray Method® | Afro Jazz',
+  'afrojazz.teacher.alejandroMinoso.specialty':
+    'Afro Jazz | ENA Cuba | Former Carlos Acosta Co. Soloist',
+
+  // --- HIP HOP ---
+  'hiphop.teacher.marcosMartinez.specialty': 'Competition Judge | International Master',
+
+  // --- STRETCHING ---
+  'stretching.teacher.crisAg.specialty': 'Stretching & Backbending',
+  'stretching.teacher.danielSene.specialty': 'Stretching & Classical Ballet',
+
+  // --- CUERPO FIT ---
+  'cuerpoFit.teacher.crisAg.specialty': 'Body Conditioning & Physical Training',
+
+  // --- BUM BUM ---
+  'bumBum.teacher.crisAg.specialty': 'Toning & Glutes',
+
+  // --- BACHATA V3 ---
+  'bachataV3.teacher.mathiasFont.specialty': 'Sensual Bachata | Musicality | Partner Connection',
+  'bachataV3.teacher.eugeniaTrujillo.specialty': 'Sensual Bachata | World Champion Salsa LA',
+  'bachataV3.teacher.carlosCanto.specialty': 'Sensual Bachata',
+  'bachataV3.teacher.noemi.specialty': 'Sensual Bachata | Bachata Lady Style',
+
+  // --- SALSA CUBANA ---
+  'salsaCubana.teacher.yunaisyFarray.specialty': 'Creator of Farray Method® | CID-UNESCO Master',
+  'salsaCubana.teacher.yasminaFernandez.specialty': 'Cuban Salsa Teacher | Farray Method®',
+  'salsaCubana.teacher.iroelBastarreche.specialty': 'Cuban Salsa Teacher | Farray Method®',
+
+  // --- SALSA LADY STYLE ---
+  'salsaLady.teacher.yunaisyFarray.specialty': 'Creator of Farray Method® | Lady Style Specialist',
+  'salsaLady.teacher.liaValdes.specialty': 'Cuban International Master & Artist',
+  'salsaLady.teacher.yasminaFernandez.specialty': 'Lady Style Teacher | Farray Method®',
+
+  // --- TIMBA ---
+  'timba.teacher.yunaisyFarray.specialty': 'Director | Lady Timba Intermediate-Advanced',
+  'timba.teacher.grechenMendez.specialty': 'Partner Timba Teacher',
+  'timba.teacher.liaValdes.specialty': 'Basic Lady Timba Teacher',
+
+  // --- FOLKLORE CUBANO ---
+  'folkloreCubano.teacher.grechenMendez.specialty':
+    'International Afro-Cuban Dance Master | ISA Cuba | +25 years',
+
+  // --- BAILE MAÑANAS ---
+  'baileMananas.teacher.alejandroMinoso.specialty':
+    'Contemporary Dance, Ballet, Modern Jazz and Afro Jazz',
+  'baileMananas.teacher.yasminaFernandez.specialty':
+    'Sexy Style, Sexy Reggaeton and Salsa Lady Style',
+  'baileMananas.teacher.isabelLopez.specialty': 'Dancehall Female and Twerk',
+
+  // --- FULL BODY CARDIO ---
+  'fullBodyCardio.teacher.crisAg.specialty': 'Body-Fit, Stretching & Physical Conditioning',
 };
