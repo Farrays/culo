@@ -14,12 +14,13 @@ export interface TeacherPageInfo {
 }
 
 // Director/Fundadora - Featured at top
+// Uses canonical keys from teacher-registry (source of truth)
 export const DIRECTOR_INFO: TeacherPageInfo = {
   id: 'yunaisy-farray',
   name: 'Yunaisy Farray',
   image: '/images/teachers/img/maestra-yunaisy-farray_320.webp',
-  specialtyKey: 'teachersPageDirectorSpecialty',
-  bioKey: 'teachersPageDirectorBio',
+  specialtyKey: 'teacher.yunaisyFarray.specialty',
+  bioKey: 'teacher.yunaisyFarray.bio',
   styles: [
     'Afro Jazz',
     'Salsa Lady Style',
@@ -32,6 +33,7 @@ export const DIRECTOR_INFO: TeacherPageInfo = {
 
 // Rest of the teaching team
 // Enterprise Order: Cuban teachers → Marcos → CrisAg → Yasmina → Redbhlue → rest
+// All teachers use canonical keys from teacher-registry (source of truth)
 export const TEACHERS_LIST: TeacherPageInfo[] = [
   // ============================================================================
   // CUBAN TEACHERS (formación académica cubana)
@@ -40,48 +42,48 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
     id: 'daniel-sene',
     name: 'Daniel Sené',
     image: '/images/teachers/img/profesor-daniel-sen-_320.webp',
-    specialtyKey: 'teachersPageTeacher1Specialty',
-    bioKey: 'teachersPageTeacher1Bio',
+    specialtyKey: 'teacher.danielSene.specialty',
+    bioKey: 'teacher.danielSene.bio',
     styles: ['Ballet Clásico', 'Contemporáneo', 'Yoga', 'Tai-Chi', 'Stretching'],
   },
   {
     id: 'alejandro-minoso',
     name: 'Alejandro Miñoso',
     image: '/images/teachers/img/profesor-alejandro-mi-oso_320.webp',
-    specialtyKey: 'teachersPageTeacher2Specialty',
-    bioKey: 'teachersPageTeacher2Bio',
+    specialtyKey: 'teacher.alejandroMinoso.specialty',
+    bioKey: 'teacher.alejandroMinoso.bio',
     styles: ['Ballet', 'Modern Jazz', 'Afro Jazz', 'Afro Contemporáneo', 'Contemporáneo'],
   },
   {
     id: 'lia-valdes',
     name: 'Lia Valdes',
     image: '/images/teachers/img/profesora-lia-valdes_320.webp',
-    specialtyKey: 'teachersPageTeacher7Specialty',
-    bioKey: 'teachersPageTeacher7Bio',
+    specialtyKey: 'teacher.liaValdes.specialty',
+    bioKey: 'teacher.liaValdes.bio',
     styles: ['Salsa Cubana', 'Salsa Lady Style'],
   },
   {
     id: 'iroel-bastarreche',
     name: 'Iroel Bastarreche',
     image: '/images/teachers/img/profesor-iroel-bastarreche_320.webp',
-    specialtyKey: 'teachersPageTeacher8Specialty',
-    bioKey: 'teachersPageTeacher8Bio',
+    specialtyKey: 'teacher.iroelBastarreche.specialty',
+    bioKey: 'teacher.iroelBastarreche.bio',
     styles: ['Folklore Cubano', 'Afro Contemporáneo'],
   },
   {
     id: 'charlie-breezy',
     name: 'Charlie Breezy',
     image: '/images/teachers/img/profesor-charlie-breezy_320.webp',
-    specialtyKey: 'teachersPageTeacher9Specialty',
-    bioKey: 'teachersPageTeacher9Bio',
+    specialtyKey: 'teacher.charlieBreezy.specialty',
+    bioKey: 'teacher.charlieBreezy.bio',
     styles: ['Afro Contemporáneo', 'Hip Hop', 'Afrobeats'],
   },
   {
     id: 'grechen-mendez',
     name: 'Grechén Méndez',
     image: '/images/teachers/img/profesora-grechen-m-ndez_320.webp',
-    specialtyKey: 'teachersPageTeacherGrechenSpecialty',
-    bioKey: 'teachersPageTeacherGrechenBio',
+    specialtyKey: 'teacher.grechenMendez.specialty',
+    bioKey: 'teacher.grechenMendez.bio',
     styles: ['Danzas Afrocubanas', 'Folklore Cubano', 'Rumba'],
   },
   // ============================================================================
