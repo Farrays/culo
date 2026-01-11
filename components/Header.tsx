@@ -279,7 +279,9 @@ const Header: React.FC = () => {
       </a>
 
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 transition-all duration-300 ${
+          isMenuOpen ? 'z-[70]' : 'z-50'
+        } ${
           isScrolled
             ? 'bg-black/90 backdrop-blur-xl shadow-xl shadow-primary-accent/20'
             : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent'
@@ -292,7 +294,7 @@ const Header: React.FC = () => {
             <div className="lg:hidden flex items-center">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="z-[70] relative p-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
+                className="relative p-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
                 aria-controls="mobile-menu"
                 aria-expanded={isMenuOpen}
                 aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
