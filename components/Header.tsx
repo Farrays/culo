@@ -279,9 +279,7 @@ const Header: React.FC = () => {
       </a>
 
       <header
-        className={`fixed top-0 left-0 right-0 transition-all duration-300 ${
-          isMenuOpen ? 'z-[70]' : 'z-50'
-        } ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
             ? 'bg-black/90 backdrop-blur-xl shadow-xl shadow-primary-accent/20'
             : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent'

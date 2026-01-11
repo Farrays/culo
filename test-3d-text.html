@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Efectos 3D - Farray's</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 40px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 60px;
+      font-size: 1.5rem;
+      color: #888;
+    }
+
+    .section {
+      margin-bottom: 80px;
+      padding: 40px;
+      border: 1px solid #333;
+      border-radius: 12px;
+      background: #0a0a0a;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      color: #c82260;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-desc {
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 30px;
+      font-family: monospace;
+    }
+
+    .demo-text {
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .demo-text-small {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    /* ============================================
+       EFECTO ACTUAL: HOLOGRÁFICO (referencia)
+       ============================================ */
+    .holographic-current {
+      color: white;
+      text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #c82260,
+        0 0 30px #c82260,
+        0 0 40px #c82260,
+        0 0 55px #c82260,
+        0 0 75px #c82260;
+    }
+
+    /* ============================================
+       OPCIÓN 1: 3D SUTIL (2-3px)
+       ============================================ */
+    .text-3d-subtle {
+      color: white;
+      text-shadow:
+        1px 1px 0 #c82260,
+        2px 2px 0 #a01d4d,
+        3px 3px 3px rgba(0,0,0,0.3);
+    }
+
+    /* ============================================
+       OPCIÓN 2: 3D PRONUNCIADO (4-5px)
+       ============================================ */
+    .text-3d-pronounced {
+      color: white;
+      text-shadow:
+        1px 1px 0 #c82260,
+        2px 2px 0 #c82260,
+        3px 3px 0 #a01d4d,
+        4px 4px 0 #8a1840,
+        5px 5px 8px rgba(0,0,0,0.4);
+    }
+
+    /* ============================================
+       OPCIÓN 3: 3D CON BORDE + SOMBRA
+       ============================================ */
+    .text-3d-border {
+      color: white;
+      -webkit-text-stroke: 1px #c82260;
+      text-shadow:
+        2px 2px 0 #c82260,
+        3px 3px 0 #a01d4d,
+        4px 4px 6px rgba(0,0,0,0.4);
+    }
+
+    /* ============================================
+       OPCIÓN 4: 3D RETRO/POP (muy marcado)
+       ============================================ */
+    .text-3d-retro {
+      color: white;
+      text-shadow:
+        1px 1px 0 #c82260,
+        2px 2px 0 #c82260,
+        3px 3px 0 #c82260,
+        4px 4px 0 #c82260,
+        5px 5px 0 #a01d4d,
+        6px 6px 0 #8a1840,
+        7px 7px 0 #6a1230,
+        8px 8px 15px rgba(0,0,0,0.5);
+    }
+
+    /* ============================================
+       OPCIÓN 5: 3D ELEGANTE (sombra suave)
+       ============================================ */
+    .text-3d-elegant {
+      color: white;
+      text-shadow:
+        1px 1px 0 rgba(200, 34, 96, 0.8),
+        2px 2px 0 rgba(200, 34, 96, 0.6),
+        3px 3px 0 rgba(200, 34, 96, 0.4),
+        4px 4px 0 rgba(200, 34, 96, 0.2),
+        5px 5px 10px rgba(0,0,0,0.3);
+    }
+
+    /* ============================================
+       OPCIÓN 6: 3D NEON (glow + profundidad)
+       ============================================ */
+    .text-3d-neon {
+      color: white;
+      text-shadow:
+        0 0 5px #fff,
+        1px 1px 0 #c82260,
+        2px 2px 0 #c82260,
+        3px 3px 0 #a01d4d,
+        4px 4px 10px rgba(200, 34, 96, 0.5),
+        0 0 20px rgba(200, 34, 96, 0.3);
+    }
+
+    /* ============================================
+       OPCIÓN 7: 3D MINIMALISTA
+       ============================================ */
+    .text-3d-minimal {
+      color: white;
+      text-shadow:
+        1px 1px 0 #c82260,
+        2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    /* ============================================
+       OPCIÓN 8: 3D HACIA ARRIBA-IZQUIERDA
+       ============================================ */
+    .text-3d-upleft {
+      color: white;
+      text-shadow:
+        -1px -1px 0 #c82260,
+        -2px -2px 0 #c82260,
+        -3px -3px 0 #a01d4d,
+        -4px -4px 8px rgba(0,0,0,0.4);
+    }
+
+    /* Comparison grid */
+    .comparison {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .comparison-item {
+      padding: 30px;
+      background: #111;
+      border-radius: 8px;
+      border: 1px solid #222;
+    }
+
+    .comparison-item h3 {
+      font-size: 0.75rem;
+      color: #c82260;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .comparison-item p {
+      font-size: 1.8rem;
+      font-weight: 900;
+    }
+
+    .code {
+      background: #1a1a1a;
+      padding: 15px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 0.7rem;
+      color: #888;
+      margin-top: 15px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      background: #c82260;
+      color: white;
+      font-size: 0.65rem;
+      border-radius: 4px;
+      margin-left: 10px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <h1>Test de Efectos 3D para Texto - Farray's Center</h1>
+
+  <!-- REFERENCIA: Efecto Actual -->
+  <div class="section">
+    <div class="section-title">Referencia: Efecto Holográfico Actual</div>
+    <div class="section-desc">text-shadow con glow difuminado (7 capas)</div>
+    <p class="demo-text holographic-current">Como no sabíamos que era imposible, lo hicimos.</p>
+    <p class="demo-text-small holographic-current">Y hay quienes buscan la escuela que siempre soñaron.</p>
+  </div>
+
+  <!-- GRID DE COMPARACIÓN -->
+  <h2 style="color: #c82260; margin-bottom: 30px; font-size: 1.2rem;">Opciones de Efecto 3D con Sombra Rosa</h2>
+
+  <div class="comparison">
+
+    <!-- Opción 1 -->
+    <div class="comparison-item">
+      <h3>Opción 1: 3D Sutil <span class="badge">Recomendada</span></h3>
+      <p class="text-3d-subtle">Como no sabíamos que era imposible</p>
+      <div class="code">text-shadow:
+  1px 1px 0 #c82260,
+  2px 2px 0 #a01d4d,
+  3px 3px 3px rgba(0,0,0,0.3);</div>
+    </div>
+
+    <!-- Opción 2 -->
+    <div class="comparison-item">
+      <h3>Opción 2: 3D Pronunciado</h3>
+      <p class="text-3d-pronounced">Como no sabíamos que era imposible</p>
+      <div class="code">text-shadow:
+  1px 1px 0 #c82260,
+  2px 2px 0 #c82260,
+  3px 3px 0 #a01d4d,
+  4px 4px 0 #8a1840,
+  5px 5px 8px rgba(0,0,0,0.4);</div>
+    </div>
+
+    <!-- Opción 3 -->
+    <div class="comparison-item">
+      <h3>Opción 3: 3D con Borde</h3>
+      <p class="text-3d-border">Como no sabíamos que era imposible</p>
+      <div class="code">-webkit-text-stroke: 1px #c82260;
+text-shadow:
+  2px 2px 0 #c82260,
+  3px 3px 0 #a01d4d,
+  4px 4px 6px rgba(0,0,0,0.4);</div>
+    </div>
+
+    <!-- Opción 4 -->
+    <div class="comparison-item">
+      <h3>Opción 4: 3D Retro/Pop</h3>
+      <p class="text-3d-retro">Como no sabíamos que era imposible</p>
+      <div class="code">text-shadow: (8 capas de profundidad)</div>
+    </div>
+
+    <!-- Opción 5 -->
+    <div class="comparison-item">
+      <h3>Opción 5: 3D Elegante</h3>
+      <p class="text-3d-elegant">Como no sabíamos que era imposible</p>
+      <div class="code">text-shadow con opacidades
+  degradadas (0.8 → 0.2)</div>
+    </div>
+
+    <!-- Opción 6 -->
+    <div class="comparison-item">
+      <h3>Opción 6: 3D Neon (híbrido)</h3>
+      <p class="text-3d-neon">Como no sabíamos que era imposible</p>
+      <div class="code">Combina glow blanco +
+  profundidad 3D rosa</div>
+    </div>
+
+    <!-- Opción 7 -->
+    <div class="comparison-item">
+      <h3>Opción 7: 3D Minimalista</h3>
+      <p class="text-3d-minimal">Como no sabíamos que era imposible</p>
+      <div class="code">text-shadow:
+  1px 1px 0 #c82260,
+  2px 2px 4px rgba(0,0,0,0.3);</div>
+    </div>
+
+    <!-- Opción 8 -->
+    <div class="comparison-item">
+      <h3>Opción 8: 3D Arriba-Izquierda</h3>
+      <p class="text-3d-upleft">Como no sabíamos que era imposible</p>
+      <div class="code">Sombra hacia arriba-izquierda
+  (efecto "elevado")</div>
+    </div>
+
+  </div>
+
+  <!-- Textos más largos para comparar -->
+  <div class="section" style="margin-top: 60px;">
+    <div class="section-title">Comparación en textos largos</div>
+
+    <div style="margin-bottom: 40px;">
+      <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">3D Sutil:</p>
+      <p class="demo-text text-3d-subtle">Y hay quienes buscan la escuela que siempre soñaron.</p>
+    </div>
+
+    <div style="margin-bottom: 40px;">
+      <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">3D Elegante:</p>
+      <p class="demo-text text-3d-elegant">Y hay quienes buscan la escuela que siempre soñaron.</p>
+    </div>
+
+    <div style="margin-bottom: 40px;">
+      <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">3D Neon (híbrido):</p>
+      <p class="demo-text text-3d-neon">Y hay quienes buscan la escuela que siempre soñaron.</p>
+    </div>
+
+    <div>
+      <p style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">Holográfico Actual (referencia):</p>
+      <p class="demo-text holographic-current">Y hay quienes buscan la escuela que siempre soñaron.</p>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 60px; color: #444; font-size: 0.8rem;">
+    <p>Abre este archivo en el navegador: <code>test-3d-text.html</code></p>
+    <p>Dime cuál opción te gusta más y la implemento.</p>
+  </div>
+
+</body>
+</html>

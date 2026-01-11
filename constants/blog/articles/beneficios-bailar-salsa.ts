@@ -15,11 +15,11 @@ export const BENEFICIOS_SALSA_CONFIG: BlogArticleConfig = {
 
   // === DATES ===
   datePublished: '2025-01-15',
-  dateModified: '2025-01-15',
+  dateModified: '2026-01-11',
 
   // === READING METRICS ===
-  readingTime: 8,
-  wordCount: 1800,
+  readingTime: 10,
+  wordCount: 2200,
 
   // === SUMMARY (GEO Optimized) ===
   summaryBullets: [
@@ -230,7 +230,7 @@ export const BENEFICIOS_SALSA_CONFIG: BlogArticleConfig = {
       },
     },
 
-    // Benefit 10: Happiness
+    // Benefit 10: Neuroplasticity
     {
       id: 'beneficio-10',
       type: 'heading',
@@ -243,6 +243,19 @@ export const BENEFICIOS_SALSA_CONFIG: BlogArticleConfig = {
       contentKey: 'blogBeneficiosSalsa_benefit10Content',
     },
 
+    // Benefit 11: Happiness
+    {
+      id: 'beneficio-11',
+      type: 'heading',
+      level: 2,
+      contentKey: 'blogBeneficiosSalsa_benefit11Title',
+    },
+    {
+      id: 'beneficio-11-content',
+      type: 'paragraph',
+      contentKey: 'blogBeneficiosSalsa_benefit11Content',
+    },
+
     // === REFERENCES SECTION (E-E-A-T Authority) ===
     {
       id: 'references',
@@ -252,9 +265,9 @@ export const BENEFICIOS_SALSA_CONFIG: BlogArticleConfig = {
         {
           id: 'harvard',
           titleKey: 'blogBeneficiosSalsa_refHarvardTitle',
-          url: 'https://www.health.harvard.edu/staying-healthy/the-health-benefits-of-dancing',
-          publisher: 'Harvard Medical School',
-          year: '2023',
+          url: 'https://www.health.harvard.edu/diet-and-weight-loss/calories-burned-in-30-minutes-for-people-of-three-different-weights',
+          publisher: 'Harvard Health Publishing',
+          year: '2021',
           descriptionKey: 'blogBeneficiosSalsa_refHarvardDesc',
         },
         {
@@ -266,19 +279,19 @@ export const BENEFICIOS_SALSA_CONFIG: BlogArticleConfig = {
           descriptionKey: 'blogBeneficiosSalsa_refNEJMDesc',
         },
         {
-          id: 'apa-dance',
-          titleKey: 'blogBeneficiosSalsa_refAPATitle',
-          url: 'https://www.apa.org/monitor/2019/06/benefit-dancing',
-          publisher: 'American Psychological Association',
+          id: 'frontiers-2019',
+          titleKey: 'blogBeneficiosSalsa_refFrontiersTitle',
+          url: 'https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2019.01806/full',
+          publisher: 'Frontiers in Psychology',
           year: '2019',
-          descriptionKey: 'blogBeneficiosSalsa_refAPADesc',
+          descriptionKey: 'blogBeneficiosSalsa_refFrontiersDesc',
         },
         {
-          id: 'ncbi-dance-brain',
+          id: 'ncbi-neuroplasticity',
           titleKey: 'blogBeneficiosSalsa_refNCBITitle',
-          url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5649320/',
-          publisher: 'National Institutes of Health',
-          year: '2017',
+          url: 'https://pubmed.ncbi.nlm.nih.gov/30543905/',
+          publisher: 'Neuroscience & Biobehavioral Reviews',
+          year: '2019',
           descriptionKey: 'blogBeneficiosSalsa_refNCBIDesc',
         },
       ],
@@ -334,14 +347,29 @@ export const BENEFICIOS_SALSA_CONFIG: BlogArticleConfig = {
         questionKey: 'blogBeneficiosSalsa_faq5Question',
         answerKey: 'blogBeneficiosSalsa_faq5Answer',
       },
+      {
+        id: '6',
+        questionKey: 'blogBeneficiosSalsa_faq6Question',
+        answerKey: 'blogBeneficiosSalsa_faq6Answer',
+      },
+      {
+        id: '7',
+        questionKey: 'blogBeneficiosSalsa_faq7Question',
+        answerKey: 'blogBeneficiosSalsa_faq7Answer',
+      },
+      {
+        id: '8',
+        questionKey: 'blogBeneficiosSalsa_faq8Question',
+        answerKey: 'blogBeneficiosSalsa_faq8Answer',
+      },
     ],
   },
 
   // === RELATED ARTICLES ===
-  relatedArticles: [],
+  relatedArticles: ['historia-salsa-barcelona', 'clases-de-salsa-barcelona'],
 
   // === RELATED CLASSES (internal linking) ===
-  relatedClasses: ['salsa-cubana-barcelona'],
+  relatedClasses: ['salsa-cubana-barcelona', 'salsa-bachata-barcelona', 'bachata-barcelona'],
 
   // === UX TOGGLES ===
   tableOfContents: {
@@ -357,5 +385,11 @@ export const BENEFICIOS_SALSA_CONFIG: BlogArticleConfig = {
   },
 
   // === SPEAKABLE (Voice Search) ===
-  speakableSelectors: ['#article-summary', '#intro', '#beneficio-1', '#beneficio-4'],
+  speakableSelectors: [
+    '#article-summary',
+    '#intro',
+    '#beneficio-1',
+    '#beneficio-4',
+    '#beneficio-11',
+  ],
 };

@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado de Clases - Farray's International Dance Center</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+      color: #f5f5f5;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #fbbf24, #f59e0b, #fbbf24);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
+
+    .header p {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1.1rem;
+    }
+
+    /* Section Divider */
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #fbbf24, transparent);
+      margin: 40px 0;
+      opacity: 0.5;
+    }
+
+    /* Time Block Header */
+    .time-block {
+      margin-bottom: 50px;
+    }
+
+    .time-block-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 30px;
+      padding: 20px 25px;
+      background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(251, 191, 36, 0.05));
+      border-radius: 15px;
+      border-left: 4px solid #fbbf24;
+    }
+
+    .time-block-header .icon {
+      font-size: 2rem;
+    }
+
+    .time-block-header h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fbbf24;
+    }
+
+    .time-block-header span {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.9rem;
+    }
+
+    /* Category Section */
+    .category {
+      margin-bottom: 35px;
+    }
+
+    .category-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Category Colors */
+    .category-danza .category-header {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .category-latino .category-header {
+      background: rgba(251, 191, 36, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(251, 191, 36, 0.3);
+    }
+
+    .category-urbano .category-header {
+      background: rgba(244, 63, 94, 0.15);
+      color: #fb7185;
+      border: 1px solid rgba(244, 63, 94, 0.3);
+    }
+
+    .category-fitness .category-header {
+      background: rgba(14, 165, 233, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(14, 165, 233, 0.3);
+    }
+
+    /* Class List */
+    .class-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .class-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 18px 20px;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .class-item:hover {
+      background: rgba(0, 0, 0, 0.6);
+      border-color: rgba(251, 191, 36, 0.2);
+      transform: translateX(5px);
+    }
+
+    .class-name {
+      flex: 1;
+      font-weight: 600;
+      color: #f5f5f5;
+    }
+
+    .class-teacher {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.9rem;
+    }
+
+    .class-teacher strong {
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 500;
+    }
+
+    .class-schedule {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: rgba(251, 191, 36, 0.1);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: #fbbf24;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* Level Badges */
+    .level-badge {
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .level-principiantes { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+    .level-basico { background: rgba(14, 165, 233, 0.2); color: #38bdf8; }
+    .level-intermedio { background: rgba(251, 191, 36, 0.2); color: #fbbf24; }
+    .level-avanzado { background: rgba(244, 63, 94, 0.2); color: #fb7185; }
+    .level-open { background: rgba(168, 85, 247, 0.2); color: #c084fc; }
+
+    /* Subcategory */
+    .subcategory {
+      margin-bottom: 25px;
+    }
+
+    .subcategory-header {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      padding-left: 15px;
+      border-left: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer p {
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 10px;
+    }
+
+    .footer .stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    .footer .stat {
+      text-align: center;
+    }
+
+    .footer .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fbbf24;
+    }
+
+    .footer .stat-label {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 { font-size: 1.8rem; }
+      .class-item { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .class-schedule { width: 100%; justify-content: center; }
+      .footer .stats { flex-direction: column; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      <h1>FARRAY'S INTERNATIONAL DANCE CENTER</h1>
+      <p>Listado Completo de Clases - Temporada 2024/2025</p>
+    </div>
+
+    <!-- ==================== CLASES DE MANANAS ==================== -->
+    <div class="time-block">
+      <div class="time-block-header">
+        <span class="icon">☀️</span>
+        <div>
+          <h2>CLASES DE MAÑANAS</h2>
+          <span>10:00h - 13:00h</span>
+        </div>
+      </div>
+
+      <!-- DANZA -->
+      <div class="category category-danza">
+        <div class="category-header">🩰 Danza Clásica & Contemporánea</div>
+        <div class="class-list">
+          <div class="class-item">
+            <span class="class-name">Contemporáneo Lírico Básico</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Alejandro Miñoso</strong></span>
+            <span class="class-schedule">📅 Lunes 11:00h - 12:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Contemporáneo Suelo & Flow Básico/Intermedio</span>
+            <span class="level-badge level-intermedio">Intermedio</span>
+            <span class="class-teacher">con <strong>Alejandro Miñoso</strong></span>
+            <span class="class-schedule">📅 Miércoles 11:00h - 12:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Afro Jazz Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Alejandro Miñoso</strong></span>
+            <span class="class-schedule">📅 Miércoles 12:00h - 13:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Ballet Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Alejandro Miñoso</strong></span>
+            <span class="class-schedule">📅 Jueves 11:00h - 12:00h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LATINO -->
+      <div class="category category-latino">
+        <div class="category-header">💃 Bailes Latinos</div>
+        <div class="class-list">
+          <div class="class-item">
+            <span class="class-name">Salsa Cubana Ladies Styling Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Yasmina Fernández Ruiz</strong></span>
+            <span class="class-schedule">📅 Miércoles 11:00h - 12:00h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- URBANO -->
+      <div class="category category-urbano">
+        <div class="category-header">🔥 Bailes Urbanos</div>
+        <div class="class-list">
+          <div class="class-item">
+            <span class="class-name">Sexy Reggaeton Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Yasmina Fernández Ruiz</strong></span>
+            <span class="class-schedule">📅 Lunes 11:00h - 12:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Sexy Style Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Yasmina Fernández Ruiz</strong></span>
+            <span class="class-schedule">📅 Lunes 12:00h - 13:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Sexy Reggaeton Open Level</span>
+            <span class="level-badge level-open">Open Level</span>
+            <span class="class-teacher">con <strong>Yasmina Fernández Ruiz</strong></span>
+            <span class="class-schedule">📅 Jueves 10:00h - 11:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Reggaeton Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Alejandro Miñoso</strong></span>
+            <span class="class-schedule">📅 Jueves 10:00h - 11:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Sexy Style Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Yasmina Fernández Ruiz</strong></span>
+            <span class="class-schedule">📅 Jueves 11:00h - 12:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Twerk Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Isa López</strong></span>
+            <span class="class-schedule">📅 Jueves 11:00h - 12:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Dancehall Female Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Isa López</strong></span>
+            <span class="class-schedule">📅 Miércoles 12:00h - 13:00h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FITNESS -->
+      <div class="category category-fitness">
+        <div class="category-header">💪 Stretching & Fitness</div>
+        <div class="class-list">
+          <div class="class-item">
+            <span class="class-name">Stretching Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Alejandro Miñoso</strong></span>
+            <span class="class-schedule">📅 Lunes 12:00h - 13:00h</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ==================== CLASES DE TARDES/NOCHES ==================== -->
+    <div class="time-block">
+      <div class="time-block-header">
+        <span class="icon">🌙</span>
+        <div>
+          <h2>CLASES DE TARDES / NOCHES</h2>
+          <span>18:00h - 23:00h</span>
+        </div>
+      </div>
+
+      <!-- DANZA TARDES -->
+      <div class="category category-danza">
+        <div class="category-header">🩰 Danza Clásica & Contemporánea</div>
+        <div class="class-list">
+          <div class="class-item">
+            <span class="class-name">Contemporáneo Lírico Básico</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Daniel Sené</strong></span>
+            <span class="class-schedule">📅 Lunes 19:00h - 20:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Ballet Clásico Intermedio</span>
+            <span class="level-badge level-intermedio">Intermedio</span>
+            <span class="class-teacher">con <strong>Daniel Sené</strong></span>
+            <span class="class-schedule">📅 Lunes 20:00h - 21:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Afro Contemporáneo Básico</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Charlie Breezy</strong></span>
+            <span class="class-schedule">📅 Lunes 21:00h - 22:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Modern Jazz Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Alejandro Miñoso</strong></span>
+            <span class="class-schedule">📅 Martes 18:00h - 19:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Afro Contemporáneo Intermedio/Avanzado</span>
+            <span class="level-badge level-avanzado">Int/Avanzado</span>
+            <span class="class-teacher">con <strong>Yunaisy Farray</strong></span>
+            <span class="class-schedule">📅 Martes 19:00h - 20:30h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Contemporáneo Lírico Intermedio</span>
+            <span class="level-badge level-intermedio">Intermedio</span>
+            <span class="class-teacher">con <strong>Daniel Sené</strong></span>
+            <span class="class-schedule">📅 Miércoles 20:00h - 21:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Contemporáneo Lírico Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Daniel Sené</strong></span>
+            <span class="class-schedule">📅 Jueves 18:00h - 19:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Afro Jazz Intermedio/Avanzado</span>
+            <span class="level-badge level-avanzado">Int/Avanzado</span>
+            <span class="class-teacher">con <strong>Yunaisy Farray</strong></span>
+            <span class="class-schedule">📅 Jueves 19:00h - 20:30h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SALSA PAREJAS -->
+      <div class="category category-latino">
+        <div class="category-header">💃 Salsa Cubana (parejas)</div>
+        <div class="class-list">
+          <div class="class-item">
+            <span class="class-name">Salsa Cubana Avanzado</span>
+            <span class="level-badge level-avanzado">Avanzado</span>
+            <span class="class-teacher">con <strong>Yunaisy Farray & Iroel Bastarreche</strong></span>
+            <span class="class-schedule">📅 Lunes 20:00h - 21:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Salsa Cubana Básico I</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Yunaisy Farray & Iroel Bastarreche</strong></span>
+            <span class="class-schedule">📅 Lunes 21:00h - 22:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Salsa Cubana Básico II</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Iroel Bastarreche</strong></span>
+            <span class="class-schedule">📅 Martes 19:00h - 20:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Salsa Cubana Intermedio II</span>
+            <span class="level-badge level-intermedio">Intermedio</span>
+            <span class="class-teacher">con <strong>Iroel Bastarreche</strong></span>
+            <span class="class-schedule">📅 Miércoles 18:00h - 19:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Salsa Cubana Intermedio I</span>
+            <span class="level-badge level-intermedio">Intermedio</span>
+            <span class="class-teacher">con <strong>Iroel Bastarreche</strong></span>
+            <span class="class-schedule">📅 Miércoles 19:00h - 20:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Salsa Cubana Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Iroel Bastarreche</strong></span>
+            <span class="class-schedule">📅 Miércoles 20:00h - 21:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Salsa Cubana Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Iroel Bastarreche</strong></span>
+            <span class="class-schedule">📅 Miércoles 21:00h - 22:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Salsa Cubana Básico I</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Iroel Bastarreche</strong></span>
+            <span class="class-schedule">📅 Jueves 18:00h - 19:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Salsa Cubana Intermedio II</span>
+            <span class="level-badge level-intermedio">Intermedio</span>
+            <span class="class-teacher">con <strong>Iroel Bastarreche</strong></span>
+            <span class="class-schedule">📅 Jueves 19:00h - 20:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Salsa Cubana Intermedio III</span>
+            <span class="level-badge level-intermedio">Intermedio</span>
+            <span class="class-teacher">con <strong>Iroel Bastarreche & Yasmina Fernández</strong></span>
+            <span class="class-schedule">📅 Jueves 20:00h - 21:00h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SALSA LADY STYLE -->
+      <div class="category category-latino">
+        <div class="category-header">💃 Salsa Lady Style (solo work)</div>
+        <div class="class-list">
+          <div class="class-item">
+            <span class="class-name">Salsa Cubana Ladies Styling Intermedio</span>
+            <span class="level-badge level-intermedio">Intermedio</span>
+            <span class="class-teacher">con <strong>Yunaisy Farray</strong></span>
+            <span class="class-schedule">📅 Lunes 19:00h - 20:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Salsa Cubana Ladies Styling Básico</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Yunaisy Farray</strong></span>
+            <span class="class-schedule">📅 Miércoles 19:00h - 20:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Salsa Cubana Ladies Styling Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Lía Valdes</strong></span>
+            <span class="class-schedule">📅 Miércoles 20:00h - 21:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Salsa Ladies Styling Timba Fusión Intermedio/Avanzado</span>
+            <span class="level-badge level-avanzado">Int/Avanzado</span>
+            <span class="class-teacher">con <strong>Yunaisy Farray</strong></span>
+            <span class="class-schedule">📅 Jueves 20:30h - 21:30h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Salsa Ladies Styling Timba Fusión Básico</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Lía Valdes</strong></span>
+            <span class="class-schedule">📅 Viernes 19:00h - 20:00h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BACHATA PAREJAS -->
+      <div class="category category-latino">
+        <div class="category-header">💃 Bachata (parejas)</div>
+        <div class="class-list">
+          <div class="class-item">
+            <span class="class-name">Bachata Básico</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Mathias Font & Eugenia Trujillo</strong></span>
+            <span class="class-schedule">📅 Lunes 22:00h - 23:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Bachata Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Mathias Font & Eugenia Trujillo</strong></span>
+            <span class="class-schedule">📅 Martes 19:00h - 20:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Bachata Intermedio</span>
+            <span class="level-badge level-intermedio">Intermedio</span>
+            <span class="class-teacher">con <strong>Eugenia Trujillo & Mathias Font</strong></span>
+            <span class="class-schedule">📅 Martes 20:00h - 21:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Bachata Avanzado</span>
+            <span class="level-badge level-avanzado">Avanzado</span>
+            <span class="class-teacher">con <strong>Mathias Font & Eugenia Trujillo</strong></span>
+            <span class="class-schedule">📅 Martes 21:30h - 22:30h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Bachata Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Carlos & Noemi</strong></span>
+            <span class="class-schedule">📅 Jueves 20:00h - 21:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Bachata Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Carlos & Noemi</strong></span>
+            <span class="class-schedule">📅 Jueves 22:00h - 23:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Bachata Intermedio</span>
+            <span class="level-badge level-intermedio">Intermedio</span>
+            <span class="class-teacher">con <strong>Eugenia Trujillo & Juanes</strong></span>
+            <span class="class-schedule">📅 Viernes 19:00h - 20:00h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BACHATA LADY STYLE -->
+      <div class="category category-latino">
+        <div class="category-header">💃 Bachata Lady Style (solo work)</div>
+        <div class="class-list">
+          <div class="class-item">
+            <span class="class-name">Bachata Lady Style Open Level</span>
+            <span class="level-badge level-open">Open Level</span>
+            <span class="class-teacher">con <strong>Eugenia Trujillo</strong></span>
+            <span class="class-schedule">📅 Jueves 21:00h - 22:00h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOLKLORE & TIMBA -->
+      <div class="category category-latino">
+        <div class="category-header">💃 Folklore & Timba</div>
+        <div class="class-list">
+          <div class="class-item">
+            <span class="class-name">Folklore Cubano Open Level</span>
+            <span class="level-badge level-open">Open Level</span>
+            <span class="class-teacher">con <strong>Greechen Mendez</strong></span>
+            <span class="class-schedule">📅 Martes 20:30h - 21:30h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Timba Cubana Básico</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Greechen Mendez</strong></span>
+            <span class="class-schedule">📅 Martes 21:30h - 22:30h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEXY STYLE & REGGAETON -->
+      <div class="category category-urbano">
+        <div class="category-header">🔥 Sexy Style & Sexy Reggaeton</div>
+        <div class="class-list">
+          <div class="class-item">
+            <span class="class-name">Sexy Reggaeton Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Yasmina Fernández Ruiz</strong></span>
+            <span class="class-schedule">📅 Lunes 18:00h - 19:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Sexy Style Intermedio/Avanzado</span>
+            <span class="level-badge level-avanzado">Int/Avanzado</span>
+            <span class="class-teacher">con <strong>Yasmina Fernández Ruiz</strong></span>
+            <span class="class-schedule">📅 Lunes 19:00h - 20:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Sexy Style Básico</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Yasmina Fernández Ruiz</strong></span>
+            <span class="class-schedule">📅 Lunes 20:00h - 21:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Sexy Reggaeton Básico</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Yasmina Fernández Ruiz</strong></span>
+            <span class="class-schedule">📅 Lunes 21:00h - 22:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Sexy Style Básico</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Yasmina Fernández Ruiz</strong></span>
+            <span class="class-schedule">📅 Martes 18:00h - 19:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Sexy Reggaeton Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Yasmina Fernández Ruiz</strong></span>
+            <span class="class-schedule">📅 Martes 20:00h - 21:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Sexy Style Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Yasmina Fernández Ruiz</strong></span>
+            <span class="class-schedule">📅 Martes 21:00h - 22:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Sexy Reggaeton Intermedio</span>
+            <span class="level-badge level-intermedio">Intermedio</span>
+            <span class="class-teacher">con <strong>Yasmina Fernández Ruiz</strong></span>
+            <span class="class-schedule">📅 Jueves 19:00h - 20:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Sexy Style Intermedio</span>
+            <span class="level-badge level-intermedio">Intermedio</span>
+            <span class="class-teacher">con <strong>Yasmina Fernández Ruiz</strong></span>
+            <span class="class-schedule">📅 Jueves 21:00h - 22:00h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HIP HOP & REGGAETON -->
+      <div class="category category-urbano">
+        <div class="category-header">🔥 Hip Hop & Reggaeton</div>
+        <div class="class-list">
+          <div class="class-item">
+            <span class="class-name">Hip Hop Reggaeton Básico</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Charlie Breezy</strong></span>
+            <span class="class-schedule">📅 Lunes 22:00h - 23:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Hip Hop Reggaeton Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Charlie Breezy</strong></span>
+            <span class="class-schedule">📅 Martes 18:00h - 19:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Reggaeton Cubano (Reparto) Open Level</span>
+            <span class="level-badge level-open">Open Level</span>
+            <span class="class-teacher">con <strong>Charlie Breezy</strong></span>
+            <span class="class-schedule">📅 Martes 19:00h - 20:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Hip Hop Reggaeton Intermedio/Avanzado</span>
+            <span class="level-badge level-avanzado">Int/Avanzado</span>
+            <span class="class-teacher">con <strong>Charlie Breezy</strong></span>
+            <span class="class-schedule">📅 Miércoles 19:00h - 20:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Hip Hop Urbano Open Level</span>
+            <span class="level-badge level-open">Open Level</span>
+            <span class="class-teacher">con <strong>Marcos Martínez</strong></span>
+            <span class="class-schedule">📅 Jueves 20:00h - 21:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Hip Hop Reggaeton Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Charlie Breezy</strong></span>
+            <span class="class-schedule">📅 Viernes 19:00h - 20:00h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AFROBEATS -->
+      <div class="category category-urbano">
+        <div class="category-header">🔥 Afrobeats</div>
+        <div class="class-list">
+          <div class="class-item">
+            <span class="class-name">Afrobeats "Ntcham" Básico</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>May Barleycorn</strong></span>
+            <span class="class-schedule">📅 Martes 18:00h - 19:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Afrobeats Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Charlie Breezy</strong></span>
+            <span class="class-schedule">📅 Miércoles 18:00h - 19:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Afrobeats Básico</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Charlie Breezy</strong></span>
+            <span class="class-schedule">📅 Viernes 18:00h - 19:00h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DANCEHALL -->
+      <div class="category category-urbano">
+        <div class="category-header">🔥 Dancehall</div>
+        <div class="class-list">
+          <div class="class-item">
+            <span class="class-name">Dancehall Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Sandra Gomez</strong></span>
+            <span class="class-schedule">📅 Lunes 22:00h - 23:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Dancehall Twerk Intermedio</span>
+            <span class="level-badge level-intermedio">Intermedio</span>
+            <span class="class-teacher">con <strong>Isa López</strong></span>
+            <span class="class-schedule">📅 Miércoles 21:00h - 22:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Dancehall Female Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Isa López</strong></span>
+            <span class="class-schedule">📅 Jueves 21:00h - 22:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Dancehall Female Intermedio</span>
+            <span class="level-badge level-intermedio">Intermedio</span>
+            <span class="class-teacher">con <strong>Isa López</strong></span>
+            <span class="class-schedule">📅 Jueves 21:00h - 22:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Dancehall Básico</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Sandra Gomez</strong></span>
+            <span class="class-schedule">📅 Jueves 22:00h - 23:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Dancehall Twerk Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Isa López</strong></span>
+            <span class="class-schedule">📅 Viernes 18:00h - 19:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Dancehall Female Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Isa López</strong></span>
+            <span class="class-schedule">📅 Viernes 19:00h - 20:00h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TWERK -->
+      <div class="category category-urbano">
+        <div class="category-header">🔥 Twerk</div>
+        <div class="class-list">
+          <div class="class-item">
+            <span class="class-name">Twerk Básico</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Sandra Gomez</strong></span>
+            <span class="class-schedule">📅 Lunes 18:00h - 19:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Twerk Básico</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Sandra Gomez</strong></span>
+            <span class="class-schedule">📅 Martes 22:00h - 23:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Twerk Intermedio</span>
+            <span class="level-badge level-intermedio">Intermedio</span>
+            <span class="class-teacher">con <strong>Sandra Gomez</strong></span>
+            <span class="class-schedule">📅 Miércoles 22:00h - 23:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Twerk Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Isa López</strong></span>
+            <span class="class-schedule">📅 Viernes 19:00h - 20:00h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEMMOLOGY -->
+      <div class="category category-urbano">
+        <div class="category-header">🔥 Femmology Heels</div>
+        <div class="class-list">
+          <div class="class-item">
+            <span class="class-name">Femmology Heels Technique Intermedio</span>
+            <span class="level-badge level-intermedio">Intermedio</span>
+            <span class="class-teacher">con <strong>Yunaisy Farray</strong></span>
+            <span class="class-schedule">📅 Martes 20:30h - 21:30h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Femmology Heels Technique Avanzado</span>
+            <span class="level-badge level-avanzado">Avanzado</span>
+            <span class="class-teacher">con <strong>Yunaisy Farray</strong></span>
+            <span class="class-schedule">📅 Martes 21:30h - 22:30h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Femmology Heels Technique Básico</span>
+            <span class="level-badge level-basico">Básico</span>
+            <span class="class-teacher">con <strong>Yunaisy Farray</strong></span>
+            <span class="class-schedule">📅 Miércoles 21:00h - 22:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Femmology Heels Technique Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Yunaisy Farray</strong></span>
+            <span class="class-schedule">📅 Jueves 21:30h - 22:30h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FITNESS TARDES -->
+      <div class="category category-fitness">
+        <div class="category-header">💪 Stretching & Fitness</div>
+        <div class="class-list">
+          <div class="class-item">
+            <span class="class-name">Stretching Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Cristina Aliaga</strong></span>
+            <span class="class-schedule">📅 Lunes 18:00h - 19:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Body Conditioning & Stretching Open Level</span>
+            <span class="level-badge level-open">Open Level</span>
+            <span class="class-teacher">con <strong>Cristina Aliaga</strong></span>
+            <span class="class-schedule">📅 Lunes 19:00h - 20:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Bum Bum Cuerpo Fit Open Level</span>
+            <span class="level-badge level-open">Open Level</span>
+            <span class="class-teacher">con <strong>Cristina Aliaga</strong></span>
+            <span class="class-schedule">📅 Lunes 20:00h - 21:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Stretching Backbending & Legs Avanzado</span>
+            <span class="level-badge level-avanzado">Avanzado</span>
+            <span class="class-teacher">con <strong>Cristina Aliaga</strong></span>
+            <span class="class-schedule">📅 Lunes 21:00h - 22:30h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Stretching Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Cristina Aliaga</strong></span>
+            <span class="class-schedule">📅 Miércoles 18:00h - 19:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Bum Bum Glúteos Maravillosos Open Level</span>
+            <span class="level-badge level-open">Open Level</span>
+            <span class="class-teacher">con <strong>Cristina Aliaga</strong></span>
+            <span class="class-schedule">📅 Miércoles 19:00h - 20:00h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Stretching Backbending & Legs Intermedio</span>
+            <span class="level-badge level-intermedio">Intermedio</span>
+            <span class="class-teacher">con <strong>Cristina Aliaga</strong></span>
+            <span class="class-schedule">📅 Miércoles 20:00h - 21:30h</span>
+          </div>
+          <div class="class-item">
+            <span class="class-name">Stretching Principiantes</span>
+            <span class="level-badge level-principiantes">Principiantes</span>
+            <span class="class-teacher">con <strong>Daniel Sené</strong></span>
+            <span class="class-schedule">📅 Jueves 19:00h - 20:00h</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Farray's International Dance Center - Barcelona</p>
+      <p>www.farrayscenter.com</p>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-number">93</div>
+          <div class="stat-label">Clases Semanales</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">14</div>
+          <div class="stat-label">Profesores</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Categorías</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

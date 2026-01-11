@@ -11191,86 +11191,93 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // ========================================
 
   // Meta
-  blogBeneficiosSalsa_title: '10 Beneficis Científics de Ballar Salsa a Barcelona',
+  blogBeneficiosSalsa_title: 'Beneficis de Ballar Salsa: 11 Raons Avalades per la Ciència',
   blogBeneficiosSalsa_metaDescription:
-    "Crema 400 cal/hora, redueix demència 76%, baixa l'estrès: 10 beneficis provats de classes de salsa a Barcelona. Uneix-te a Farray's International Dance Center.",
+    'Descobreix els beneficis de ballar salsa: crema fins a 400 kcal/hora, protegeix el cervell (estudi NEJM), redueix estrès i millora la vida social. Guia completa 2025.',
 
   // Summary Bullets (GEO Critical)
   blogBeneficiosSalsa_summaryBullet1:
-    'Crema 300-450 calories per hora (equivalent a córrer moderat)',
-  blogBeneficiosSalsa_summaryBullet2: 'Redueix risc de demència un 76% (estudi NEJM 2003)',
-  blogBeneficiosSalsa_summaryBullet3: "Baixa l'estrès 20-30% i augmenta satisfacció vital 25%",
+    'Despesa calòrica aproximada de 300-450 kcal per hora (similar a córrer a ritme moderat)',
+  blogBeneficiosSalsa_summaryBullet2:
+    'Associat a un 76% menys risc de demència en majors de 75 anys (estudi NEJM 2003)',
+  blogBeneficiosSalsa_summaryBullet3:
+    "Millora del benestar psicològic i reducció de símptomes d'ansietat i estrès",
 
   // Summary Stats (Holographic Cards)
-  blogBeneficiosSalsa_statCaloriesLabel: 'calories cremades per hora ballant salsa',
-  blogBeneficiosSalsa_statDementiaLabel: 'menys risc de demència vs sedentaris',
+  blogBeneficiosSalsa_statCaloriesLabel: 'kcal aproximades per hora de ball vigorós',
+  blogBeneficiosSalsa_statDementiaLabel: 'menys risc de demència en balladors freqüents',
 
   // Breadcrumb
-  blogBeneficiosSalsa_breadcrumbCurrent: '10 Beneficis Científics',
+  blogBeneficiosSalsa_breadcrumbCurrent: 'Beneficis de Ballar Salsa',
 
   // Intro
   blogBeneficiosSalsa_intro:
-    "Ballar salsa crema fins a **400 calories per hora**, protegeix el cervell (**76% menys risc de demència**) i redueix l'estrès significativament. No és màgia: és ciència.\n\nDescobreix els **10 beneficis avalats per estudis científics** de les classes de salsa a Barcelona, i per què milers de persones ja han triat Farray's International Dance Center per transformar el seu cos i la seva ment ballant.",
+    "Ballar salsa no és només diversió: és una eina poderosa per millorar la salut física, mental i social, amb beneficis avalats per investigacions d'institucions com Harvard i el *New England Journal of Medicine*.\n\nPorto anys veient com persones que comencen a ballar experimenten canvis reals al cos i a l'ànim. En aquesta guia et comparteixo els **11 beneficis principals** de ballar salsa, amb enllaços als estudis originals. Si ets a Barcelona, també et conto com pots començar a les [nostres classes de salsa cubana](/ca/clases/salsa-cubana-barcelona).",
 
   // Benefici 1: Calories
-  blogBeneficiosSalsa_benefit1Title: '1. Crema 300-450 Calories per Hora',
+  blogBeneficiosSalsa_benefit1Title: '1. Crema entre 300 i 450 Calories per Hora',
   blogBeneficiosSalsa_benefit1Content:
-    "Una hora de salsa intensa crema entre **300 i 450 calories** (persona de 70kg), equivalent a córrer a ritme moderat. Segons [Harvard Medical School](https://www.health.harvard.edu/diet-and-weight-loss/calories-burned-in-30-minutes-for-people-of-three-different-weights), és exercici cardiovascular disfressat de diversió.\n\nLa diferència clau: mentre corres comptes els minuts per acabar, ballant salsa cubana el temps vola perquè t'ho estàs passant bé. Això facilita la constància, la veritable clau de qualsevol programa d'exercici.",
-  blogBeneficiosSalsa_stat1Label: 'calories cremades per hora',
+    "Una sessió de salsa cubana a intensitat moderada-alta pot suposar una despesa aproximada de **300-450 kcal per hora** per a una persona d'uns 70 kg. Aquesta xifra és comparable a córrer a ritme moderat, segons estimacions basades en taules de despesa energètica de [Harvard Health](https://www.health.harvard.edu/diet-and-weight-loss/calories-burned-in-30-minutes-for-people-of-three-different-weights).\n\nLa gran diferència amb altres exercicis és que en una [classe de salsa](/ca/clases/salsa-cubana-barcelona) el temps vola perquè t'ho estàs passant bé. I això és clau: la constància és el que realment transforma el cos, i és molt més fàcil ser constant quan et diverteixes.",
+  blogBeneficiosSalsa_stat1Label: 'kcal aproximades per hora',
 
   // Benefici 2: Cardiovascular
-  blogBeneficiosSalsa_benefit2Title: '2. Millora la Salut Cardiovascular',
+  blogBeneficiosSalsa_benefit2Title: '2. Millora la Teva Salut Cardiovascular',
   blogBeneficiosSalsa_benefit2Content:
-    "La salsa és exercici aeròbic d'intensitat moderada-alta. Segons estudis publicats a [JAMA Cardiology](https://jamanetwork.com/journals/jamacardiology), ballar 3 hores per setmana **redueix el risc cardíac entre un 30% i 50%**.\n\nEls moviments constants, girs i canvis de direcció mantenen el cor eficient, baixen la pressió arterial i optimitzen el colesterol HDL. El teu cor t'ho agrairà.",
+    'La salsa és exercici aeròbic d\'intensitat moderada que combina moviments continus, canvis de direcció, treball de cames i core. Estudis sobre [ball i salut cardiovascular](https://www.sciencedirect.com/science/article/abs/pii/S053155651830439X) mostren millores en capacitat cardiorespiratòria, pressió arterial i composició corporal en adults que practiquen ball regularment.\n\nPer això molts professionals de la salut consideren el ball una forma eficaç d\'entrenament cardiovascular "disfressat" de diversió. Si busques cuidar el cor sense avorrir-te, prova les nostres [classes de salsa bachata](/ca/clases/salsa-bachata-barcelona).',
 
   // Benefici 3: Músculs
-  blogBeneficiosSalsa_benefit3Title: '3. Enforteix Músculs i Equilibri',
+  blogBeneficiosSalsa_benefit3Title: '3. Enforteix Músculs, Equilibri i Coordinació',
   blogBeneficiosSalsa_benefit3Content:
-    'Cada pas de salsa treballa múltiples grups musculars: **core, cames, glutis i braços** en moviments funcionals. Un estudi del [British Journal of Sports Medicine](https://bjsm.bmj.com/) confirma que el ball millora la flexibilitat i prevé caigudes.\n\nA diferència del gimnàs repetitiu, la salsa ofereix un entrenament funcional complet que desenvolupa força, equilibri i coordinació de forma natural.',
+    'Cada pas de salsa treballa múltiples grups musculars: **cames, glutis, core** i, en molts patrons, també braços i esquena. Les revisions sistemàtiques sobre [ball i funció motora](https://pubmed.ncbi.nlm.nih.gov/30543905/) destaquen millores en equilibri, coordinació, força funcional i flexibilitat.\n\nA diferència de repetir sempre els mateixos exercicis en una màquina, la salsa proposa un entrenament funcional complet amb patrons que exigeixen reacció i canvis de pes constants. Complementa la pràctica amb les nostres classes de [stretching](/ca/clases/stretching-barcelona).',
 
   // Benefici 4: Cervell
-  blogBeneficiosSalsa_benefit4Title: '4. Redueix Demència un 76% (Estudi NEJM 2003)',
+  blogBeneficiosSalsa_benefit4Title: '4. Protegeix el Teu Cervell: Redueix el Risc de Demència',
   blogBeneficiosSalsa_benefit4Content:
-    'Aquest és el benefici més impressionant. El [New England Journal of Medicine (2003)](https://www.nejm.org/doi/full/10.1056/NEJMoa022252) va trobar que **ballar redueix el risc de demència un 76%** – més que mots encreuats, lectura o qualsevol altra activitat estudiada.\n\nPer què? La salsa combina exercici físic amb reptes mentals: memoritzar passos + coordinar-se amb la parella + improvisar. Aquesta combinació única crea noves connexions neuronals i manté el cervell jove.',
+    "Una de les troballes més citades sobre ball i salut cerebral ve de l'estudi de l'Albert Einstein College of Medicine publicat al [*New England Journal of Medicine* el 2003](https://www.nejm.org/doi/full/10.1056/NEJMoa022252). En aquest estudi observacional, les persones majors de 75 anys que ballaven freqüentment van presentar un **76% menys risc de desenvolupar demència** que les que no ballaven, després de més de 20 anys de seguiment.\n\nLa salsa combina repte físic, coordinació amb parella, memòria de passos i improvisació: una combinació que estimula diferents àrees del cervell i pot afavorir la reserva cognitiva a llarg termini. Coneix més sobre [la nostra metodologia](/ca/metodo-farray).",
   blogBeneficiosSalsa_stat2Label: 'menys risc de demència',
 
   // Benefici 5: Estrès
-  blogBeneficiosSalsa_benefit5Title: '5. Allibera Endorfines i Baixa Cortisol',
+  blogBeneficiosSalsa_benefit5Title: "5. Redueix l'Estrès i Millora el Teu Estat d'Ànim",
   blogBeneficiosSalsa_benefit5Content:
-    "Estudis publicats a [Psychoneuroendocrinology](https://www.sciencedirect.com/journal/psychoneuroendocrinology) demostren que ballar **redueix l'estrès entre un 20% i 30%** post-sessió, mesurat en nivells de cortisol.\n\nQuan balles, el cos allibera endorfines, dopamina i serotonina – els neurotransmissors de la felicitat. Després d'una classe de salsa a Barcelona, sentiràs benestar i calma que dura hores. La millor teràpia anti-estrès.",
+    "Les intervencions de ball mostren reduccions significatives en símptomes d'ansietat i depressió segons un [meta-anàlisi publicat a *Frontiers in Psychology*](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2019.01806/full) per Koch i col·laboradors. El ball no només mou el cos: també allibera endorfines, dopamina i serotonina.\n\nMolts alumnes descriuen la classe de salsa com una \"vàlvula d'escapament\": música alta, moviment, connexió amb altres persones i sensació d'assoliment. Un còctel que ajuda a baixar el cortisol i sortir amb la ment molt més lleugera. Descobreix [els nostres horaris](/ca/horarios-clases-baile-barcelona).",
 
   // Benefici 6: Confiança
-  blogBeneficiosSalsa_benefit6Title: "6. Augmenta l'Autoestima i Confiança",
+  blogBeneficiosSalsa_benefit6Title: '6. Augmenta la Teva Autoestima i Confiança',
   blogBeneficiosSalsa_benefit6Content:
-    "Cada pas que domines, cada gir que aconsegueixes, cada cançó que balles sense ensopegar... són 'small wins' que disparen la dopamina i construeixen confiança.\n\nLa salsa t'ensenya a **sentir-te còmode al teu cos**, ocupar espai, expressar-te sense paraules. Aquesta confiança és transferible: es nota a la feina, les relacions, la vida social.",
+    "Els estudis sobre dansa-teràpia assenyalen que ballar millora les habilitats interpersonals, l'expressió emocional i la percepció del propi cos. Segons [revisions publicades a PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC6710484/), s'observen millores en qualitat de vida, autoestima i sensació d'autoeficàcia.\n\nCada pas que domines, cada gir que aconsegueixes, cada cançó que balles sense parar alimenta aquests \"petits triomfs\" que reforcen la confiança. És quelcom que acaba notant-se a la feina, a les relacions i a la vida diària. Els nostres [professors de ball](/ca/profesores-baile-barcelona) t'acompanyen en aquest procés.",
 
   // Benefici 7: Postura
-  blogBeneficiosSalsa_benefit7Title: '7. Corregeix Postura i Propiocepció',
+  blogBeneficiosSalsa_benefit7Title: '7. Millora la Teva Postura i Propiocepció',
   blogBeneficiosSalsa_benefit7Content:
-    'La tècnica de salsa exigeix **postura erecta + maluc lliure** = alineació natural. En poques setmanes de classes de salsa a Barcelona, notaràs aquesta postura fins i tot quan no balles.\n\nLa coordinació entre peus, braços, maluc i parella desenvolupa habilitats propioceptives que et fan més àgil en la vida quotidiana.',
+    "La tècnica de salsa exigeix postura erecta, pes ben distribuït i eix estable, mentre el maluc i el tors es mouen amb llibertat. Aquest treball continu d'alineació entrena la **propiocepció**: la capacitat de sentir la posició del cos a l'espai.\n\nLes revisions sobre [ball en persones grans](https://pmc.ncbi.nlm.nih.gov/articles/PMC10331838/) ressalten que aquesta combinació es tradueix en millor equilibri i menor inestabilitat a la vida quotidiana. Si t'interessa aprofundir, combina amb les nostres classes de [ballet](/ca/clases/ballet-barcelona).",
 
   // Benefici 8: Social
   blogBeneficiosSalsa_benefit8Title: '8. Expandeix la Teva Xarxa Social a Barcelona',
   blogBeneficiosSalsa_benefit8Content:
-    "Les classes de salsa cubana són el millor lloc per conèixer gent nova. Comparteixes passió, treballes en equip, l'ambient és naturalment social.\n\nA Farray's International Dance Center (Eixample Esquerre, Barcelona) hem vist néixer amistats per a tota la vida, parelles, matrimonis. La **comunitat salsera barcelonina** és diversa: totes les edats, professions, nacionalitats.",
+    "El ball en grup és una de les formes més eficaces de combinar activitat física i contacte social. Les revisions sobre [dansa i benestar](https://pmc.ncbi.nlm.nih.gov/articles/PMC11127814/) identifiquen el component social com a factor clau dels beneficis psicològics.\n\nA Farray's International Dance Center ([Eixample Esquerre, Barcelona](/ca/contacto)) s'ha creat una comunitat salsera diversa en edats, professions i nacionalitats. Aquí han nascut amistats, parelles i fins i tot matrimonis gràcies a compartir pista de ball setmana rere setmana.",
 
   // Benefici 9: Cultura
-  blogBeneficiosSalsa_benefit9Title: '9. Connecta amb la Cultura Salsa Cubana',
+  blogBeneficiosSalsa_benefit9Title: '9. Connecta amb la Cultura de la Salsa Cubana',
   blogBeneficiosSalsa_benefit9Content:
-    "Ballar salsa és submergir-te en cultura vibrant: de Celia Cruz a Fania, del son al mambo, els ritmes afro-caribenys. A les nostres classes expliquem la **història i el context** de cada pas.\n\nAprens sobre Cuba, Puerto Rico, l'escena novaiorquesa. La salsa et connecta amb quelcom més gran que tu – és experiència cultural, no només exercici.",
+    "La salsa no és només una seqüència de passos: és la porta d'entrada a una cultura afrocaribenca riquíssima que beu del son cubà, el mambo, la rumba i l'escena novaiorquesa de Fania Records. Ballar salsa et connecta amb quelcom més gran que tu mateix.\n\nA les nostres [classes a Barcelona](/ca/clases/salsa-cubana-barcelona) no només aprens tècnica: també coneixes el context musical, històric i cultural de cada estil. Llegeix més sobre la [història de la salsa](/ca/blog/historia/historia-salsa-barcelona) al nostre blog.",
 
-  // Benefici 10: Felicitat
-  blogBeneficiosSalsa_benefit10Title: '10. Eleva la Teva Felicitat (Frontiers Psychology)',
+  // Benefici 10: Neuroplasticitat
+  blogBeneficiosSalsa_benefit10Title: '10. Neuroplasticitat: Canvis Reals al Teu Cervell',
   blogBeneficiosSalsa_benefit10Content:
-    "Un estudi publicat a [Frontiers in Psychology](https://www.frontiersin.org/journals/psychology) va demostrar que els balladors reporten **+25% més satisfacció vital** que persones sedentàries.\n\nNo és casualitat: música + moviment + contacte social + assoliment personal = còctel perfecte de benestar. Com diem a Farray's: 'Qui balla, viu més feliç'.",
+    "Més enllà de la demència, una [revisió sistemàtica sobre ball i neuroplasticitat](https://pubmed.ncbi.nlm.nih.gov/30543905/) va analitzar assajos clínics on el ball es va associar a canvis estructurals i funcionals al cervell adult. Es van observar augments de volum a l'hipocamp, canvis en matèria grisa i millores en memòria i atenció.\n\nBallar ajuda a crear noves connexions neuronals. No és màgia: és el resultat de combinar moviment, música, coordinació i repte cognitiu. Aprèn més sobre [la nostra metodologia](/ca/metodo-farray) basada en aquests principis.",
+
+  // Benefici 11: Felicitat
+  blogBeneficiosSalsa_benefit11Title: '11. Eleva la Teva Felicitat i Satisfacció Vital',
+  blogBeneficiosSalsa_benefit11Content:
+    'Estudis recents a [*Frontiers in Psychology*](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.864327/full) mostren que les persones que participen regularment en activitats de ball reporten major benestar subjectiu, satisfacció amb la vida i connexió social que les persones sedentàries.\n\nPer això a Farray\'s solem repetir una frase que la ciència avala cada vegada amb més dades: "Qui balla, viu més feliç". Consulta els nostres [preus](/ca/precios-clases-baile-barcelona) i comença a comprovar-ho tu mateix.',
 
   // Image Captions
   blogBeneficiosSalsa_imageFitnessCaption:
-    'Ballar salsa crema fins a 400 calories per hora mentre tonifiques tot el cos',
+    'Una hora de salsa a ritme intens equival a córrer a pas moderat en despesa calòrica',
   blogBeneficiosSalsa_imageConfidenceCaption:
-    "La transformació personal comença quan t'atreveixes a moure't amb confiança",
+    'La confiança que guanyes ballant es trasllada a tots els àmbits de la vida',
   blogBeneficiosSalsa_imageSocialCaption:
-    'La comunitat salsera: amistats reals que neixen a la pista de ball',
+    'La comunitat salsera de Barcelona: amistats reals que neixen a la pista de ball',
 
   // Secció FAQ
   blogBeneficiosSalsa_faqTitle: 'Preguntes Freqüents sobre Ballar Salsa',
@@ -11290,21 +11297,31 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
     'Quina diferència hi ha entre la salsa cubana i la salsa en línia?',
   blogBeneficiosSalsa_faq5Answer:
     "La salsa cubana (casino) es balla en cercle, amb moviments més fluids i sensuals, molt connectada amb la música afro-cubana. La salsa en línia (LA/NY style) es balla en línia recta, amb més acrobàcies. A Farray's ensenyem salsa cubana autèntica.",
+  blogBeneficiosSalsa_faq6Question: "És cert que ballar protegeix contra l'Alzheimer?",
+  blogBeneficiosSalsa_faq6Answer:
+    "Segons l'estudi del New England Journal of Medicine (2003), les persones grans que ballaven freqüentment van presentar un 76% menys risc de desenvolupar demència. El ball combina exercici físic, coordinació, memòria i socialització, factors que contribueixen a mantenir el cervell actiu.",
+  blogBeneficiosSalsa_faq7Question: 'Quina roba i calçat necessito per a les classes de salsa?',
+  blogBeneficiosSalsa_faq7Answer:
+    "Per començar, roba còmoda que et permeti moure't lliurement (malles, pantaló de xandall, samarreta). Pel que fa al calçat, sabatilles de sola llisa o sabates de ball. Evita soles de goma que s'adhereixen al terra. Amb el temps, molts alumnes inverteixen en sabates de salsa, però no és obligatori.",
+  blogBeneficiosSalsa_faq8Question: 'Puc ballar salsa si tinc problemes de genolls o esquena?',
+  blogBeneficiosSalsa_faq8Answer:
+    'En la majoria de casos, sí. La salsa és de baix impacte comparada amb córrer o saltar. Molts fisioterapeutes recomanen el ball per millorar la mobilitat articular. Això sí, consulta amb el metge si tens una lesió activa, i avisa el professor per adaptar els moviments a la teva situació.',
 
   // === REFERENCES (E-E-A-T Authority) ===
-  blogBeneficiosSalsa_referencesIntro: 'Fonts científiques consultades per a aquest article:',
-  blogBeneficiosSalsa_refHarvardTitle: 'Els Beneficis del Ball per a la Salut',
+  blogBeneficiosSalsa_referencesIntro: 'Estudis científics citats en aquest article:',
+  blogBeneficiosSalsa_refHarvardTitle: 'Calories Cremades per Activitat Física',
   blogBeneficiosSalsa_refHarvardDesc:
-    'Estudi de Harvard sobre com el ball crema calories i millora la salut cardiovascular.',
-  blogBeneficiosSalsa_refNEJMTitle: "Activitats d'Oci i Risc de Demència",
+    'Taules de referència de Harvard Health sobre despesa calòrica en diferents activitats, incloent ball.',
+  blogBeneficiosSalsa_refNEJMTitle: 'Leisure Activities and Risk of Dementia (2003)',
   blogBeneficiosSalsa_refNEJMDesc:
-    'Estudi pioner que demostra que ballar redueix el risc de demència en un 76%.',
-  blogBeneficiosSalsa_refAPATitle: 'Els Beneficis Psicològics del Ball',
-  blogBeneficiosSalsa_refAPADesc:
-    "Investigació sobre l'impacte del ball en la salut mental i el benestar emocional.",
-  blogBeneficiosSalsa_refNCBITitle: 'Efectes del Ball en la Neuroplasticitat',
+    "Estudi observacional de l'Albert Einstein College publicat a NEJM que va trobar un 76% menys risc de demència en balladors freqüents.",
+  blogBeneficiosSalsa_refFrontiersTitle:
+    'Meta-anàlisi: Dansa i Salut Psicològica (Koch et al. 2019)',
+  blogBeneficiosSalsa_refFrontiersDesc:
+    'Revisió sistemàtica sobre els efectes de la dansa en ansietat, depressió i benestar general.',
+  blogBeneficiosSalsa_refNCBITitle: 'Dance for Neuroplasticity: Revisió Sistemàtica',
   blogBeneficiosSalsa_refNCBIDesc:
-    'Meta-anàlisi sobre com el ball millora la funció cognitiva i la memòria.',
+    "Anàlisi d'estudis clínics sobre canvis estructurals al cervell associats a la pràctica del ball.",
 
   // ============================================================================
   // BLOG ARTICLE: Història de la Salsa a Barcelona
