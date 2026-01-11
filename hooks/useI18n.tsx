@@ -175,14 +175,27 @@ export const I18nProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const t = useCallback(
     (key: string): string => {
-      const translation = currentTranslations[key];
+      let translation = currentTranslations[key];
 
       if (translation === undefined) {
-        // Report missing key in development
-        if (import.meta.env.DEV && Object.keys(currentTranslations).length > 0) {
-          console.warn(`Missing translation key: ${key} for locale: ${locale}`);
+        // Fallback: contextual teacher specialty → canonical teacher specialty
+        // Pattern: [style].teacher.[teacherId].specialty → teacher.[teacherId].specialty
+        if (key.includes('.teacher.') && key.endsWith('.specialty')) {
+          const parts = key.split('.');
+          if (parts.length >= 4) {
+            const teacherId = parts[2]; // e.g., 'isabelLopez'
+            const canonicalKey = `teacher.${teacherId}.specialty`;
+            translation = currentTranslations[canonicalKey];
+          }
         }
-        return key;
+
+        if (translation === undefined) {
+          // Report missing key in development
+          if (import.meta.env.DEV && Object.keys(currentTranslations).length > 0) {
+            console.warn(`Missing translation key: ${key} for locale: ${locale}`);
+          }
+          return key;
+        }
       }
 
       return translation;
