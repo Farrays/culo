@@ -261,7 +261,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
 
       <div
         ref={scrollContainerRef}
-        className="flex flex-col h-full overflow-y-auto pt-28 sm:pt-32 pb-8 px-6 sm:px-8"
+        className="flex flex-col h-full overflow-y-auto pt-44 sm:pt-48 pb-8 px-6 sm:px-8"
       >
         {/* Language Selector - Top */}
         <div className="mb-6 bg-white/5 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-sm">
