@@ -4651,6 +4651,12 @@ Esta fusión incorpora:
   // Teachers Section
   hhrTeachersTitle: 'Conoce a tu instructor de Hip Hop Reggaeton',
   hhrTeachersSubtitle: 'Experto en fusión urbana con años de experiencia',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  // Specialties are contextual, bios reference canonical teacher.*.bio
+  'hhr.teacher.charlieBreezy.specialty': 'Hip Hop Reggaeton, Afrobeats & Danzas Urbanas',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   hhrTeacher1Specialty: 'Hip Hop Reggaeton, Afrobeats & Danzas Urbanas',
   hhrTeacher1Bio:
     'Charlie Breezy es un maestro internacional y bailarín cubano formado en la ENA (Escuela Nacional de Arte de Cuba). Especialista en Hip Hop Reggaeton, domina la fusión de estilos urbanos con técnica impecable. Su energía, creatividad y capacidad para transmitir el "flow" lo convierten en uno de los profesores más recomendados de Barcelona.',
@@ -4953,6 +4959,12 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colombia), J Balvi
   // Teachers Section
   sxrTeachersTitle: 'Conoce a tu instructora de Sexy Reggaeton',
   sxrTeachersSubtitle: 'Experta en danzas urbanas sensuales con más de 8 años de experiencia',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  // Specialties are contextual, bios reference canonical teacher.*.bio
+  'sxr.teacher.yasminaFernandez.specialty': 'Sexy Reggaeton & Sexy Style',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   sxrTeacher1Specialty: 'Sexy Reggaeton & Sexy Style',
   sxrTeacher1Bio:
     'Yasmina Fernández es una de las profesoras más carismáticas de la academia. Lleva más de 8 años formando alumnas en danzas urbanas y sensuales. Su estilo combina técnica impecable con una actitud empoderada que contagia.',
@@ -5266,6 +5278,13 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
   // Teachers Section
   rcbTeachersTitle: 'Conoce a tus maestros de Reparto',
   rcbTeachersSubtitle: 'Cubanos de nacimiento, formados en la ENA y referentes en Barcelona',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  // Specialties are contextual, bios reference canonical teacher.*.bio
+  'rcb.teacher.charlieBreezy.specialty': 'Reggaeton Cubano, Reparto & Danzas Urbanas',
+  'rcb.teacher.alejandroMinoso.specialty': 'Reggaeton Cubano, Reparto & Improvisación',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   rcbTeacher1Name: 'Charlie Breezy',
   rcbTeacher1Specialty: 'Reggaeton Cubano, Reparto & Danzas Urbanas',
   rcbTeacher1Bio:
@@ -5782,6 +5801,12 @@ A lo largo de más de una década, Femmology ha transformado la vida de miles de
   // Teachers Section
   femTeachersTitle: 'Conoce a Yunaisy Farray',
   femTeachersSubtitle: 'Creadora de Femmology y una de las maestras más reconocidas del mundo',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  'femmology.teacher.yunaisyFarray.specialty':
+    'Creadora del Método Farray® | Street Dance 2 | CID-UNESCO',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   femTeacher1Specialty: 'Creadora del Método Farray® | Street Dance 2 | CID-UNESCO',
   femTeacher1Bio:
     'Yunaisy Farray es bailarina profesional, actriz de "Street Dance 2", finalista de "Got Talent" y creadora del Método Farray® exclusivo. Formada en la Escuela Nacional de Arte de Cuba y reconocida por CID-UNESCO, es una de las maestras de baile más reconocidas del mundo. Como fundadora de Farray\'s Center, trae Femmology en exclusiva a Barcelona.',
@@ -6115,6 +6140,11 @@ A lo largo de más de una década, Femmology ha transformado la vida de miles de
   // Teachers Section
   sexystyleTeachersTitle: 'Conoce a tu instructora de Sexy Style',
   sexystyleTeachersSubtitle: 'Especialista en expresión corporal y sensualidad',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  'sexyStyle.teacher.yasminaFernandez.specialty': 'Sexy Style & Expresión Corporal',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   sexystyleTeacher1Specialty: 'Sexy Style & Expresión Corporal',
   sexystyleTeacher1Bio:
     'Yasmina Fernández es una de las profesoras más carismáticas de la academia. Lleva más de 8 años formando alumnas en danzas urbanas y sensuales. Su estilo combina técnica impecable con una actitud empoderada que contagia.',
@@ -6458,6 +6488,13 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
   // Teachers Section
   modernjazzTeachersTitle: 'Conoce a tu profesor de Modern Jazz',
   modernjazzTeachersSubtitle: 'Técnica clásica, espíritu contemporáneo',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  // Specialties are contextual, bios reference canonical teacher.*.bio
+  'modernjazz.teacher.alejandroMinoso.specialty':
+    'Modern Jazz, Afro Jazz, Contemporáneo & Ballet | ENA Cuba | Ex Solista Cía. Carlos Acosta',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   modernjazzTeacher1Specialty: 'Modern Jazz, Afro Jazz, Contemporáneo & Ballet',
   modernjazzTeacher1Bio:
     'Alejandro Miñoso es maestro internacional cubano formado en la prestigiosa ENA (Escuela Nacional de Arte de Cuba). Ex solista de la compañía Carlos Acosta, combina la exigencia técnica del ballet clásico con la libertad expresiva del jazz moderno, creando clases dinámicas donde cada alumno progresa a su ritmo.',
@@ -6917,6 +6954,15 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
   // ===== Teachers Section =====
   balletTeachersTitle: 'Conoce a tus profesores de Ballet',
   balletTeachersSubtitle: 'Escuela Cubana, experiencia internacional',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  // Specialties are contextual, bios reference canonical teacher.*.bio
+  'ballet.teacher.danielSene.specialty':
+    'Ballet Clásico & Contemporáneo | Escuela Nacional de Ballet de Cuba',
+  'ballet.teacher.alejandroMinoso.specialty':
+    'Ballet & Modern Jazz | ENA Cuba | Ex Solista Cía. Carlos Acosta',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   balletTeacher1Specialty: 'Ballet Clásico & Contemporáneo',
   balletTeacher1Bio:
     'Daniel Sene es especialista en ballet clásico formado en la Escuela Nacional de Ballet de Cuba, la misma donde se formó Carlos Acosta. Su metodología combina el rigor técnico de la escuela clásica con un enfoque accesible para adultos principiantes y avanzados.',
@@ -7356,6 +7402,13 @@ Trabaja integralmente: **flexibilidad, fuerza funcional, coordinación, propioce
   contemporaneoTeachersTitle: 'Tus Maestros de Danza Contemporánea',
   contemporaneoTeachersSubtitle:
     'Bailarines profesionales formados en la Escuela Cubana con carrera internacional',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  // Specialties are contextual, bios reference canonical teacher.*.bio
+  'contemporaneo.teacher.danielSene.specialty': 'Contemporáneo Lírico | Escuela Cubana',
+  'contemporaneo.teacher.alejandroMinoso.specialty': 'Contemporáneo Suelo & Flow | ENA Cuba',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   contemporaneoTeacher1Specialty: 'Contemporáneo Lírico',
   contemporaneoTeacher1Bio:
     'Daniel Sené es bailarín profesional con formación de carrera en la Escuela Cubana. Su metodología combina la técnica rigurosa con la expresión lírica, guiándote para que desarrolles tu propio lenguaje corporal mientras dominas los fundamentos de la danza contemporánea.',
@@ -7737,6 +7790,15 @@ El Afro Contemporáneo impartido en **Farray's International Dance Center** form
   // Teachers Section
   afrocontemporaneoTeachersTitle: 'Tus maestros de Afro Contemporáneo',
   afrocontemporaneoTeachersSubtitle: 'Formación directa de la Escuela Nacional de Arte de Cuba',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  // Specialties are contextual, bios reference canonical teacher.*.bio
+  'afrocontemporaneo.teacher.yunaisyFarray.specialty':
+    'Técnica Afro Cubana | Maestra CID-UNESCO | ENA Cuba',
+  'afrocontemporaneo.teacher.charlieBreezy.specialty':
+    'Técnica Afro Cubana | Instructor Certificado ENA',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   afrocontemporaneoTeacher1Specialty: 'Técnica Afro Cubana - Maestra CID-UNESCO',
   afrocontemporaneoTeacher1Bio:
     'Yunaisy Farray se formó en la prestigiosa Escuela Nacional de Arte de Cuba (ENA), donde aprendió la técnica original del Afro Contemporáneo. Maestra reconocida por el CID-UNESCO (Consejo Internacional de la Danza de París), combina el rigor técnico de la escuela cubana con su experiencia internacional en Street Dance 2 y compañías de danza contemporánea. Su metodología mantiene la esencia de la ENA adaptada para bailarines de todos los niveles.',
@@ -8141,6 +8203,15 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   // Teachers Section
   afrojazzTeachersTitle: 'Tus profesores de Afro Jazz',
   afrojazzTeachersSubtitle: 'Formación de élite con el equipo del Método Farray',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  // Specialties are contextual, bios reference canonical teacher.*.bio
+  'afrojazz.teacher.yunaisyFarray.specialty':
+    'Afro Jazz Intermedio/Avanzado | Creadora del Método Farray | CID-UNESCO',
+  'afrojazz.teacher.alejandroMinoso.specialty':
+    'Afro Jazz Básico | Formado en el Método Farray | ENA Cuba',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   afrojazzTeacher1Specialty: 'Afro Jazz Intermedio/Avanzado - Creadora del Método Farray',
   afrojazzTeacher1Bio:
     'Yunaisy Farray es maestra formada en la Escuela Nacional de Arte de Cuba (ENA), miembro del Consejo Internacional de la Danza de la UNESCO y actriz de Street Dance 2. Creadora del Afro Jazz como disciplina única, imparte las clases de nivel intermedio y avanzado los jueves de 19h a 20:30h.',
@@ -8429,6 +8500,12 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   // Teachers
   hiphopTeachersTitle: 'Conoce a tu profesor de Hip Hop',
   hiphopTeachersSubtitle: 'Un referente del Hip Hop en España',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  // Specialties are contextual, bios reference canonical teacher.*.bio
+  'hiphop.teacher.marcosMartinez.specialty': 'Juez de competiciones | Maestro internacional',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   hiphopTeacher1Specialty: 'Juez de competiciones • Maestro internacional',
   hiphopTeacher1Bio:
     'Marcos Martínez es uno de los referentes del Hip Hop en España. Con décadas de experiencia como bailarín, maestro y juez de competiciones internacionales, ha formado a generaciones de bailarines y lleva la esencia del Hip Hop auténtico en cada clase. Su estilo único combina la técnica old school con las tendencias actuales, siempre respetando las raíces de la cultura.',
@@ -11187,6 +11264,12 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
   // === TEACHERS SECTION ===
   stretchingTeachersTitle: 'Tus Profesores de Stretching',
   stretchingTeachersSubtitle: 'Especialistas en flexibilidad con el Método Farray',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  'stretching.teacher.crisAg.specialty': 'Stretching & Backbending',
+  'stretching.teacher.danielSene.specialty': 'Stretching & Ballet Clásico',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   stretchingTeacher1Specialty: 'Stretching & Backbending',
   stretchingTeacher1Bio:
     'Cris Ag es especialista en flexibilidad y backbending, formada en el Método Farray. Su enfoque paciente y técnico ha ayudado a cientos de alumnos a superar sus límites de forma segura. Experta en elongación de piernas y espalda, prevención de lesiones y fortalecimiento de core.',
@@ -11505,6 +11588,11 @@ Estudios científicos confirman que el stretching regular de 3+ veces por semana
   // === TEACHERS SECTION ===
   cuerpofitTeachersTitle: 'Tu Profesora de Body Conditioning',
   cuerpofitTeachersSubtitle: 'Especialista en acondicionamiento para bailarines',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  'cuerpoFit.teacher.crisAg.specialty': 'Body Conditioning & Preparación Física',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   cuerpofitTeacher1Specialty: 'Body Conditioning & Preparación Física',
   cuerpofitTeacher1Bio:
     'Cris Ag es especialista en acondicionamiento físico para bailarines, formada en el Método Farray. Su enfoque combina conocimiento anatómico con experiencia práctica en danza, creando programas de entrenamiento que mejoran el rendimiento y previenen lesiones. Sus clases integran fuerza funcional, flexibilidad activa y movilidad articular específica para bailarines.',
@@ -12068,6 +12156,11 @@ El Método Farray integra elementos de Pilates, yoga funcional, entrenamiento de
   // === TEACHERS SECTION ===
   bumbumTeachersTitle: 'Tu Profesora de Bum Bum Glúteos',
   bumbumTeachersSubtitle: 'Especialista en tonificación con el Método Farray',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  'bumBum.teacher.crisAg.specialty': 'Tonificación y Glúteos',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   bumbumTeacher1Specialty: 'Tonificación y Glúteos',
   bumbumTeacher1Bio:
     'Cris Ag es especialista en tonificación corporal y ejercicios de glúteos con el Método Farray. Su enfoque combina técnicas de fitness con elementos de danza para hacer el entrenamiento efectivo y divertido. Experta en hip thrust, sentadillas y técnicas de activación glútea.',
@@ -13682,6 +13775,17 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   'timba.teacher.grechenMendez.specialty': 'Maestra de Timba en Pareja',
   'timba.teacher.liaValdes.specialty': 'Profesora de Lady Timba Básico',
 
+  // --- FOLKLORE CUBANO ---
+  'folkloreCubano.teacher.grechenMendez.specialty':
+    'Maestra Internacional de Danzas Afrocubanas | ISA Cuba | +25 años de experiencia',
+
+  // --- BAILE MANANAS ---
+  'baileMananas.teacher.alejandroMinoso.specialty':
+    'Danza Contemporánea, Ballet, Modern Jazz y Afro Jazz',
+  'baileMananas.teacher.yasminaFernandez.specialty':
+    'Sexy Style, Sexy Reggaeton y Salsa Lady Style',
+  'baileMananas.teacher.isabelLopez.specialty': 'Dancehall Female y Twerk',
+
   // =============================================
   // TEACHERS PAGE - Profesores de Baile Barcelona
   // =============================================
@@ -14652,6 +14756,11 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
   // === TEACHERS SECTION ===
   fullBodyCardioTeachersTitle: 'Tu Profesora de Cuerpo-Fit',
   fullBodyCardioTeachersSubtitle: 'Especialista en entrenamiento funcional y cardio dance',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  'fullBodyCardio.teacher.crisAg.specialty': 'Cuerpo-Fit, Stretching & Acondicionamiento Físico',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   fullBodyCardioTeacher1Specialty: 'Cuerpo-Fit, Stretching & Acondicionamiento Físico',
   fullBodyCardioTeacher1Bio:
     'Cris Ag es especialista en entrenamiento full body y cardio dance, formada en el Método Farray. Su estilo combina la intensidad del fitness funcional con la alegría del movimiento. Su objetivo: que salgas de cada clase sintiéndote más fuerte y más feliz. Imparte también Stretching y Backbending en la academia.',

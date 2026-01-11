@@ -20,7 +20,7 @@ import {
   BUM_BUM_LEVELS,
   BUM_BUM_PREPARE_CONFIG,
 } from './bum-bum';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const BUM_BUM_PAGE_CONFIG: FullDanceClassConfig = {
@@ -34,12 +34,7 @@ export const BUM_BUM_PAGE_CONFIG: FullDanceClassConfig = {
   scheduleKeys: BUM_BUM_SCHEDULE_KEYS,
 
   // Teachers (sistema centralizado con fotos optimizadas)
-  teachers: [
-    getTeacherInfo('cris-ag', 'bumbumTeacher1Specialty', 'bumbumTeacher1Bio', [
-      'Bum Bum',
-      'Fitness',
-    ]),
-  ],
+  teachers: [getTeacherForClass('cris-ag', 'bumBum', ['Bum Bum', 'Fitness'])],
 
   // Breadcrumb (4 levels: Home > Classes > Prep Física > Bum Bum)
   breadcrumbConfig: {

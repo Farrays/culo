@@ -10,7 +10,7 @@ import {
   SEXY_STYLE_PREPARE_CONFIG,
   SEXY_STYLE_VIDEO_ID,
 } from './sexy-style';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const SEXY_STYLE_PAGE_CONFIG: FullDanceClassConfig = {
@@ -24,12 +24,7 @@ export const SEXY_STYLE_PAGE_CONFIG: FullDanceClassConfig = {
   scheduleKeys: SEXY_STYLE_SCHEDULE_KEYS,
 
   // Teachers (sistema centralizado con fotos optimizadas)
-  teachers: [
-    getTeacherInfo('yasmina-fernandez', 'sexystyleTeacher1Specialty', 'sexystyleTeacher1Bio', [
-      'Sexy Style',
-      'Método Farray',
-    ]),
-  ],
+  teachers: [getTeacherForClass('yasmina-fernandez', 'sexyStyle', ['Sexy Style', 'Método Farray'])],
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Sexy Style)
   breadcrumbConfig: {
