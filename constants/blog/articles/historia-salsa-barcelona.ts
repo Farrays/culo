@@ -19,7 +19,7 @@ export const HISTORIA_SALSA_CONFIG: BlogArticleConfig = {
 
   // === DATES ===
   datePublished: '2025-01-20',
-  dateModified: '2025-01-20',
+  dateModified: '2026-01-11',
 
   // === READING METRICS ===
   readingTime: 12,
@@ -108,6 +108,19 @@ export const HISTORIA_SALSA_CONFIG: BlogArticleConfig = {
       id: 'origenes-fania',
       type: 'paragraph',
       contentKey: 'blogHistoriaSalsa_section1Content4',
+    },
+
+    // === SECTION 1B: FANIA ALL-STARS ===
+    {
+      id: 'fania-allstars',
+      type: 'heading',
+      level: 3,
+      contentKey: 'blogHistoriaSalsa_section1bTitle',
+    },
+    {
+      id: 'fania-allstars-content',
+      type: 'paragraph',
+      contentKey: 'blogHistoriaSalsa_section1bContent',
     },
 
     // =====================================================
@@ -225,6 +238,11 @@ export const HISTORIA_SALSA_CONFIG: BlogArticleConfig = {
       type: 'paragraph',
       contentKey: 'blogHistoriaSalsa_section4Content2',
     },
+    {
+      id: 'barcelona-fidc',
+      type: 'paragraph',
+      contentKey: 'blogHistoriaSalsa_section4Content3',
+    },
 
     // === IMAGE: Barcelona Salsa Scene ===
     {
@@ -322,6 +340,14 @@ export const HISTORIA_SALSA_CONFIG: BlogArticleConfig = {
           year: '2003',
           descriptionKey: 'blogHistoriaSalsa_refNEJMDesc',
         },
+        {
+          id: 'uab-thesis',
+          titleKey: 'blogHistoriaSalsa_refUABTitle',
+          url: 'https://ddd.uab.cat/pub/tesis/2016/hdl_10803_377467/illc1de1.pdf',
+          publisher: 'Universitat Autònoma de Barcelona',
+          year: '2016',
+          descriptionKey: 'blogHistoriaSalsa_refUABDesc',
+        },
       ],
     },
   ],
@@ -375,6 +401,21 @@ export const HISTORIA_SALSA_CONFIG: BlogArticleConfig = {
         questionKey: 'blogHistoriaSalsa_faq5Question',
         answerKey: 'blogHistoriaSalsa_faq5Answer',
       },
+      {
+        id: '6',
+        questionKey: 'blogHistoriaSalsa_faq6Question',
+        answerKey: 'blogHistoriaSalsa_faq6Answer',
+      },
+      {
+        id: '7',
+        questionKey: 'blogHistoriaSalsa_faq7Question',
+        answerKey: 'blogHistoriaSalsa_faq7Answer',
+      },
+      {
+        id: '8',
+        questionKey: 'blogHistoriaSalsa_faq8Question',
+        answerKey: 'blogHistoriaSalsa_faq8Answer',
+      },
     ],
   },
 
@@ -382,10 +423,17 @@ export const HISTORIA_SALSA_CONFIG: BlogArticleConfig = {
   relatedArticles: [
     {
       slug: 'beneficios-bailar-salsa',
-      category: 'fitness',
+      category: 'lifestyle',
       titleKey: 'blogBeneficiosSalsa_title',
       excerptKey: 'blogBeneficiosSalsa_excerpt',
       image: '/images/blog/beneficios-salsa/hero.webp',
+    },
+    {
+      slug: 'clases-de-salsa-barcelona',
+      category: 'lifestyle',
+      titleKey: 'blogClasesSalsaBarcelona_title',
+      excerptKey: 'blogClasesSalsaBarcelona_excerpt',
+      image: '/images/blog/clases-salsa-barcelona/hero.webp',
     },
   ],
 

@@ -198,14 +198,14 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
     isPrimary?: boolean;
   }> = ({ label, isOpen, onClick, linkTo, isPrimary = false }) => (
     <div
-      className={`flex items-center justify-between w-full ${isPrimary ? 'py-4 px-4 rounded-xl hover:bg-white/5 transition-all duration-300' : 'py-3 px-3'}`}
+      className={`flex items-center justify-between w-full ${isPrimary ? 'py-2 px-3 rounded-xl hover:bg-white/5 transition-all duration-300' : 'py-1.5 px-2'}`}
     >
       {linkTo ? (
         <Link
           to={linkTo}
           onClick={() => setIsMenuOpen(false)}
-          className={`flex-1 flex items-center gap-3 text-left font-bold tracking-wide transition-all duration-300 ${
-            isPrimary ? 'text-lg sm:text-xl' : 'text-base sm:text-lg'
+          className={`flex-1 flex items-center gap-2 text-left font-bold tracking-wide transition-all duration-300 ${
+            isPrimary ? 'text-base' : 'text-sm'
           } ${
             location.pathname === linkTo
               ? 'text-primary-accent'
@@ -214,7 +214,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
         >
           {isPrimary && (
             <span
-              className={`w-2 h-2 rounded-full ${location.pathname === linkTo ? 'bg-primary-accent' : 'bg-white/30'}`}
+              className={`w-1.5 h-1.5 rounded-full ${location.pathname === linkTo ? 'bg-primary-accent' : 'bg-white/30'}`}
             />
           )}
           {label}
@@ -222,20 +222,20 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
       ) : (
         <button
           onClick={onClick}
-          className={`flex-1 flex items-center gap-3 text-left font-bold tracking-wide cursor-pointer ${isPrimary ? 'text-lg sm:text-xl' : 'text-base sm:text-lg'} text-white hover:text-primary-accent transition-all duration-300`}
+          className={`flex-1 flex items-center gap-2 text-left font-bold tracking-wide cursor-pointer ${isPrimary ? 'text-base' : 'text-sm'} text-white hover:text-primary-accent transition-all duration-300`}
         >
-          {isPrimary && <span className="w-2 h-2 rounded-full bg-white/30" />}
+          {isPrimary && <span className="w-1.5 h-1.5 rounded-full bg-white/30" />}
           {label}
         </button>
       )}
       <button
         onClick={onClick}
-        className={`p-2.5 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-all duration-300 ${isOpen ? 'bg-white/10' : ''}`}
+        className={`p-1.5 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-all duration-300 ${isOpen ? 'bg-white/10' : ''}`}
         aria-expanded={isOpen}
         aria-label={isOpen ? `Collapse ${label}` : `Expand ${label}`}
       >
         <ChevronDownIcon
-          className={`w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
     </div>
@@ -271,28 +271,28 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
 
       <div
         ref={scrollContainerRef}
-        className="flex flex-col h-full overflow-y-auto pt-16 pb-8 px-4"
+        className="flex flex-col h-full overflow-y-auto pt-14 pb-4 px-3"
       >
-        <nav className="flex flex-col space-y-2">
+        <nav className="flex flex-col space-y-0.5">
           {/* 1. Inicio */}
           <Link
             ref={firstFocusableRef}
             to={menuStructure.home.path}
             onClick={() => setIsMenuOpen(false)}
-            className={`flex items-center gap-3 py-4 px-4 text-lg sm:text-xl font-bold tracking-wide transition-all duration-300 rounded-xl ${
+            className={`flex items-center gap-3 py-2 px-3 text-base font-bold tracking-wide transition-all duration-300 rounded-xl ${
               location.pathname === menuStructure.home.path
                 ? 'text-white bg-primary-accent/20 border-l-4 border-primary-accent'
                 : 'text-white hover:text-white hover:bg-white/5'
             }`}
           >
             <span
-              className={`w-2 h-2 rounded-full ${location.pathname === menuStructure.home.path ? 'bg-primary-accent' : 'bg-white/30'}`}
+              className={`w-1.5 h-1.5 rounded-full ${location.pathname === menuStructure.home.path ? 'bg-primary-accent' : 'bg-white/30'}`}
             />
             {t(menuStructure.home.textKey)}
           </Link>
 
           {/* Divider */}
-          <div className="border-b border-white/10 my-3" />
+          <div className="border-b border-white/10 my-1" />
 
           {/* 2. Quiénes Somos - Accordion */}
           <div>
@@ -304,11 +304,11 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
             />
 
             {openSections['about'] && (
-              <div className="ml-6 pl-4 space-y-1 border-l-2 border-primary-accent/40 animate-slideDown">
+              <div className="ml-4 pl-3 space-y-0 border-l-2 border-primary-accent/40 animate-slideDown">
                 <Link
                   to={`/${locale}/sobre-nosotros`}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`flex items-center gap-2 py-3 px-3 text-base sm:text-lg font-medium rounded-lg transition-all duration-300 ${
+                  className={`flex items-center gap-2 py-1.5 px-2 text-sm font-medium rounded-lg transition-all duration-300 ${
                     location.pathname === `/${locale}/sobre-nosotros`
                       ? 'text-primary-accent bg-primary-accent/10'
                       : 'text-white/80 hover:text-white hover:bg-white/5'
@@ -321,7 +321,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                 <Link
                   to={`/${locale}/yunaisy-farray`}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`flex items-center gap-2 py-3 px-3 text-base sm:text-lg font-medium rounded-lg transition-all duration-300 ${
+                  className={`flex items-center gap-2 py-1.5 px-2 text-sm font-medium rounded-lg transition-all duration-300 ${
                     location.pathname === `/${locale}/yunaisy-farray`
                       ? 'text-primary-accent bg-primary-accent/10'
                       : 'text-white/80 hover:text-white hover:bg-white/5'
@@ -334,7 +334,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                 <Link
                   to={`/${locale}/profesores-baile-barcelona`}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`flex items-center gap-2 py-3 px-3 text-base sm:text-lg font-medium rounded-lg transition-all duration-300 ${
+                  className={`flex items-center gap-2 py-1.5 px-2 text-sm font-medium rounded-lg transition-all duration-300 ${
                     location.pathname === `/${locale}/profesores-baile-barcelona`
                       ? 'text-primary-accent bg-primary-accent/10'
                       : 'text-white/80 hover:text-white hover:bg-white/5'
@@ -347,7 +347,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                 <Link
                   to={`/${locale}/instalaciones-escuela-baile-barcelona`}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`flex items-center gap-2 py-3 px-3 text-base sm:text-lg font-medium rounded-lg transition-all duration-300 ${
+                  className={`flex items-center gap-2 py-1.5 px-2 text-sm font-medium rounded-lg transition-all duration-300 ${
                     location.pathname === `/${locale}/instalaciones-escuela-baile-barcelona`
                       ? 'text-primary-accent bg-primary-accent/10'
                       : 'text-white/80 hover:text-white hover:bg-white/5'
@@ -360,7 +360,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                 <Link
                   to={`/${locale}/preguntas-frecuentes`}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`flex items-center gap-2 py-3 px-3 text-base sm:text-lg font-medium rounded-lg transition-all duration-300 ${
+                  className={`flex items-center gap-2 py-1.5 px-2 text-sm font-medium rounded-lg transition-all duration-300 ${
                     location.pathname === `/${locale}/preguntas-frecuentes`
                       ? 'text-primary-accent bg-primary-accent/10'
                       : 'text-white/80 hover:text-white hover:bg-white/5'
@@ -374,7 +374,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           </div>
 
           {/* Divider */}
-          <div className="border-b border-white/10 my-3" />
+          <div className="border-b border-white/10 my-1" />
 
           {/* 3. Clases de Baile - Accordion */}
           <div>
@@ -387,7 +387,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
             />
 
             {openSections['classes'] && (
-              <div className="ml-6 pl-4 space-y-1 border-l-2 border-primary-accent/40 animate-slideDown">
+              <div className="ml-4 pl-3 space-y-0 border-l-2 border-primary-accent/40 animate-slideDown">
                 {menuStructure.classes.submenu?.map(item => (
                   <div key={item.path}>
                     {item.submenu ? (
@@ -471,7 +471,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           </div>
 
           {/* Divider */}
-          <div className="border-b border-white/10 my-3" />
+          <div className="border-b border-white/10 my-1" />
 
           {/* 4. Servicios - Accordion */}
           <div>
@@ -483,11 +483,11 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
             />
 
             {openSections['services'] && (
-              <div className="ml-6 pl-4 space-y-1 border-l-2 border-primary-accent/40 animate-slideDown">
+              <div className="ml-4 pl-3 space-y-0 border-l-2 border-primary-accent/40 animate-slideDown">
                 <Link
                   to={`/${locale}/clases-particulares-baile`}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`flex items-center gap-2 py-3 px-3 text-base sm:text-lg font-medium rounded-lg transition-all duration-300 ${
+                  className={`flex items-center gap-2 py-1.5 px-2 text-sm font-medium rounded-lg transition-all duration-300 ${
                     location.pathname === `/${locale}/clases-particulares-baile`
                       ? 'text-primary-accent bg-primary-accent/10'
                       : 'text-white/80 hover:text-white hover:bg-white/5'
@@ -500,7 +500,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                 <Link
                   to={`/${locale}/alquiler-salas-baile-barcelona`}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`flex items-center gap-2 py-3 px-3 text-base sm:text-lg font-medium rounded-lg transition-all duration-300 ${
+                  className={`flex items-center gap-2 py-1.5 px-2 text-sm font-medium rounded-lg transition-all duration-300 ${
                     location.pathname === `/${locale}/alquiler-salas-baile-barcelona`
                       ? 'text-primary-accent bg-primary-accent/10'
                       : 'text-white/80 hover:text-white hover:bg-white/5'
@@ -513,7 +513,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                 <Link
                   to={`/${locale}/estudio-grabacion-barcelona`}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`flex items-center gap-2 py-3 px-3 text-base sm:text-lg font-medium rounded-lg transition-all duration-300 ${
+                  className={`flex items-center gap-2 py-1.5 px-2 text-sm font-medium rounded-lg transition-all duration-300 ${
                     location.pathname === `/${locale}/estudio-grabacion-barcelona`
                       ? 'text-primary-accent bg-primary-accent/10'
                       : 'text-white/80 hover:text-white hover:bg-white/5'
@@ -526,7 +526,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                 <Link
                   to={`/${locale}/regala-baile`}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`flex items-center gap-2 py-3 px-3 text-base sm:text-lg font-medium rounded-lg transition-all duration-300 ${
+                  className={`flex items-center gap-2 py-1.5 px-2 text-sm font-medium rounded-lg transition-all duration-300 ${
                     location.pathname === `/${locale}/regala-baile`
                       ? 'text-primary-accent bg-primary-accent/10'
                       : 'text-white/80 hover:text-white hover:bg-white/5'
@@ -540,20 +540,20 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           </div>
 
           {/* Divider */}
-          <div className="border-b border-white/10 my-3" />
+          <div className="border-b border-white/10 my-1" />
 
           {/* 7. Blog */}
           <Link
             to={`/${locale}/blog`}
             onClick={() => setIsMenuOpen(false)}
-            className={`flex items-center gap-3 py-4 px-4 text-lg sm:text-xl font-bold tracking-wide transition-all duration-300 rounded-xl ${
+            className={`flex items-center gap-3 py-2 px-3 text-base font-bold tracking-wide transition-all duration-300 rounded-xl ${
               location.pathname.includes('/blog')
                 ? 'text-white bg-primary-accent/20 border-l-4 border-primary-accent'
                 : 'text-white hover:text-white hover:bg-white/5'
             }`}
           >
             <span
-              className={`w-2 h-2 rounded-full ${location.pathname.includes('/blog') ? 'bg-primary-accent' : 'bg-white/30'}`}
+              className={`w-1.5 h-1.5 rounded-full ${location.pathname.includes('/blog') ? 'bg-primary-accent' : 'bg-white/30'}`}
             />
             {t('navBlog')}
           </Link>
@@ -562,30 +562,30 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           <Link
             to={`/${locale}/contacto`}
             onClick={() => setIsMenuOpen(false)}
-            className={`flex items-center gap-3 py-4 px-4 text-lg sm:text-xl font-bold tracking-wide transition-all duration-300 rounded-xl ${
+            className={`flex items-center gap-3 py-2 px-3 text-base font-bold tracking-wide transition-all duration-300 rounded-xl ${
               location.pathname === `/${locale}/contacto`
                 ? 'text-white bg-primary-accent/20 border-l-4 border-primary-accent'
                 : 'text-white hover:text-white hover:bg-white/5'
             }`}
           >
             <span
-              className={`w-2 h-2 rounded-full ${location.pathname === `/${locale}/contacto` ? 'bg-primary-accent' : 'bg-white/30'}`}
+              className={`w-1.5 h-1.5 rounded-full ${location.pathname === `/${locale}/contacto` ? 'bg-primary-accent' : 'bg-white/30'}`}
             />
             {t('headerContact')}
           </Link>
         </nav>
 
         {/* Bottom Section */}
-        <div className="mt-auto pt-6 space-y-4">
+        <div className="mt-auto pt-3 space-y-2">
           {/* Language Selector */}
-          <div className="bg-white/20 border-2 border-primary-accent rounded-2xl overflow-hidden">
-            <div className="flex items-center justify-center gap-2 px-4 py-2 bg-primary-accent">
-              <GlobeIcon className="w-5 h-5 text-white" />
-              <span className="text-sm font-bold text-white tracking-wide">
+          <div className="bg-white/20 border border-primary-accent rounded-xl overflow-hidden">
+            <div className="flex items-center justify-center gap-2 px-3 py-1.5 bg-primary-accent">
+              <GlobeIcon className="w-4 h-4 text-white" />
+              <span className="text-xs font-bold text-white tracking-wide">
                 {t('headerLanguage') || 'Idioma'}
               </span>
             </div>
-            <div className="grid grid-cols-4 gap-2 p-3 bg-black/50">
+            <div className="grid grid-cols-4 gap-1.5 p-2 bg-black/50">
               {SUPPORTED_LOCALES.map(lang => (
                 <button
                   key={lang}
@@ -593,7 +593,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                     triggerHaptic();
                     handleLanguageChange(lang);
                   }}
-                  className={`py-3 px-2 rounded-xl text-base font-bold ${
+                  className={`py-2 px-1 rounded-lg text-sm font-bold ${
                     locale === lang ? 'bg-primary-accent text-white' : 'bg-white/20 text-white'
                   }`}
                 >
@@ -609,7 +609,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
               setIsMenuOpen(false);
               onOpenLeadModal();
             }}
-            className="block w-full text-center bg-gradient-to-r from-primary-accent to-brand-500 text-white text-lg sm:text-xl font-bold py-5 rounded-2xl transition-all duration-300 shadow-xl hover:shadow-accent-glow animate-glow"
+            className="block w-full text-center bg-gradient-to-r from-primary-accent to-brand-500 text-white text-base font-bold py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-accent-glow"
           >
             {t('enrollNow')}
           </button>

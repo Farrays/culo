@@ -13500,22 +13500,22 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   // === META & SEO ===
   blogHistoriaSalsa_title: 'Historia de la Salsa: del Caribe al Corazón de Barcelona',
   blogHistoriaSalsa_metaDescription:
-    "Descubre la historia completa de la salsa: raíces afrocubanas, revolución en Nueva York y cómo se vive hoy en Barcelona en Farray's International Dance Center.",
+    'Descubre la historia completa de la salsa: raíces afrocubanas (1850-1970), Fania Records, etimología del nombre y cómo se vive hoy en Barcelona. Artículo con fuentes académicas.',
   blogHistoriaSalsa_excerpt:
-    'Raíces afrocubanas, explosión en Nueva York con Fania Records y tradición viva en Barcelona. Descubre la historia completa de la salsa.',
+    'Raíces afrocubanas, explosión en Nueva York con Fania Records, debate etimológico y tradición viva en Barcelona. Historia completa con fuentes académicas.',
 
   // === BREADCRUMB ===
   blogHistoriaSalsa_breadcrumbCurrent: 'Historia de la Salsa',
 
   // === SUMMARY BULLETS (GEO Optimized) ===
   blogHistoriaSalsa_summaryBullet1:
-    'Raíces afrocubanas: son, guaracha, mambo y guaguancó fusionados en Nueva York',
+    'Raíces afrocubanas: el son cubano (1890-1910) fusionó tradiciones yoruba y congo con estructuras europeas',
   blogHistoriaSalsa_summaryBullet2:
-    'Fania Records (1964): el sello que cristalizó la salsa como identidad global latina',
+    'Fania Records (1964): Johnny Pacheco y Jerry Masucci cristalizaron la salsa como identidad latina global',
   blogHistoriaSalsa_summaryBullet3:
-    'Barcelona: capital europea de la salsa con escena vibrante desde los 80-90',
+    'Barcelona: capital europea de la salsa documentada en tesis doctoral de la UAB (Isabel Llano, 2016)',
   blogHistoriaSalsa_summaryBullet4:
-    'Bailar reduce un 76% el riesgo de demencia según el New England Journal of Medicine',
+    'Bailar reduce un 76% el riesgo de demencia según estudio longitudinal del NEJM (2003)',
 
   // === SUMMARY STATS (Holographic Cards) ===
   blogHistoriaSalsa_statFaniaLabel: 'Fundación de Fania Records',
@@ -13538,7 +13538,12 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   blogHistoriaSalsa_section1Content3:
     'La década de 1960 fue crucial: el **[Bronx y el Spanish Harlem](https://elpais.com/us/entretenimiento/2024-06-08/la-salsa-nacio-y-vive-en-nueva-york-con-permiso-de-cali.html)** se convirtieron en epicentros donde la diáspora caribeña fusionó sonidos afrocaribeños con jazz latino, influencias de soul y R&B, y una energía urbana inconfundible. Artistas como **Tito Puente, Tito Rodríguez y Charlie Palmieri** lideraron este movimiento que dio origen a la llamada **salsa dura**: una música poderosa, con metales intensos, percusión agresiva y letras que contaban la vida en el barrio.',
   blogHistoriaSalsa_section1Content4:
-    'En 1964, el sello **[Fania Records](https://www.udiscovermusica.com/articulos/fania-records-historia/)** —fundado por Johnny Pacheco (dominicano) y Jerry Masucci (neoyorquino)— cristalizó y proyectó este fenómeno. Fania no "inventó" la salsa, pero la convirtió en una **identidad global**, combinando estrategia comercial y orgullo cultural latino. La creación de **[Fania All-Stars](https://es.wikipedia.org/wiki/Fania_All-Stars)** en 1968 y conciertos icónicos como los del Cheetah Club o el Yankee Stadium marcaron el momento en que la salsa se consolidó como símbolo de la latinidad urbana y orgullosa.',
+    'En 1964, el sello [**Fania Records**](https://es.wikipedia.org/wiki/Salsa_%28g%C3%A9nero_musical%29) —fundado por Johnny Pacheco (dominicano) y Jerry Masucci (neoyorquino)— cristalizó y proyectó este fenómeno a escala internacional. Fania no "inventó" la salsa, pero la convirtió en una **identidad global**, combinando estrategia comercial con orgullo cultural latino.',
+
+  // === SECTION 1B: FANIA ALL-STARS ===
+  blogHistoriaSalsa_section1bTitle: 'Fania All-Stars: el "dream team" de la salsa',
+  blogHistoriaSalsa_section1bContent:
+    'La creación de [**Fania All-Stars**](https://es.wikipedia.org/wiki/Fania_All-Stars) en 1968 y conciertos icónicos como los del Cheetah Club o el Yankee Stadium marcaron el momento en que la salsa se consolidó como símbolo de una latinidad urbana, orgullosa y transnacional. A partir de entonces, la palabra "salsa" comenzó a asociarse de forma masiva con este sonido y con la escena neoyorquina.',
 
   // === IMAGE CAPTIONS ===
   blogHistoriaSalsa_imageFaniaCaption:
@@ -13550,18 +13555,18 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   blogHistoriaSalsa_section2Title:
     'Etimología de "Salsa": Teorías, Debate Académico y Etiqueta Comercial',
   blogHistoriaSalsa_section2Intro:
-    'El término "salsa" nunca tuvo un único origen confirmado, pero sí múltiples caminos convergentes. Entre las teorías más sólidas destacan:',
+    'El término "salsa" nunca tuvo un único origen confirmado, sino varios caminos convergentes que se superponen en el tiempo. Entre las teorías más aceptadas destacan las siguientes, que se refuerzan mutuamente más que excluirse:',
   blogHistoriaSalsa_section2TeoriasTitle: 'Principales teorías sobre el origen del nombre',
   blogHistoriaSalsa_teoria1:
-    '**[Analogía culinaria](https://www.uspto.gov/learning-and-resources/journeys-innovation/historical-stories/inventing-salsa-es)**: popularizada en los años 60 por el locutor venezolano Phidias Danilo Escalona, asocia "salsa" con mezcla sabrosa y picante, metáfora de la fusión musical (son + jazz + barrio)',
+    '**Analogía culinaria**: la idea de "salsa" como mezcla sabrosa y picante se popularizó en los años 60, asociada a locutores y promotores como el venezolano Phidias Danilo Escalona, que usaban "¡salsa!" para evocar sabor, energía y fusión musical.',
   blogHistoriaSalsa_teoria2:
-    '**["Échale salsita" (1933)](https://pieslatinos.com/origen-nombre-salsa-baile/)**: del compositor cubano Ignacio Piñeiro y su Septeto Nacional, una de las primeras menciones directas al término',
+    '**"Échale salsita" (1933)**: la canción de Ignacio Piñeiro y su Septeto Nacional es una de las primeras menciones explícitas del término en un contexto musical cubano.',
   blogHistoriaSalsa_teoria3:
-    '**Cheo Marquetti y "Los Salseros" (1940s)**: usan el término de forma artística antes de Fania',
+    '**Cheo Marquetti y "Los Salseros"**: en los años 40 ya aparece el término en nombres de agrupaciones, mostrando que la palabra circulaba en el ambiente antes de su uso masivo como etiqueta de género.',
   blogHistoriaSalsa_teoria4:
-    '**[Uso comercial de Fania](https://costaricasalsa.com/como-nace-la-palabra-salsa/) (1960s–1970s)**: títulos como "Salsa Na\' Ma\'" o campañas radiofónicas neoyorquinas consolidan el término como marca internacional',
+    '**[Uso comercial de Fania](https://costaricasalsa.com/como-nace-la-palabra-salsa/)**: en los años 60–70, títulos como "Salsa Na\' Ma\'" y campañas radiofónicas en Nueva York consolidaron el término como marca internacional para un conjunto de estilos afrolatinos actualizados.',
   blogHistoriaSalsa_section2Debate:
-    'La [musicología contemporánea](https://es.wikipedia.org/wiki/Salsa_%28g%C3%A9nero_musical%29) distingue dos perspectivas: la **visión académica** (etiqueta paraguas para géneros afrocubanos actualizados) y la **visión popular** (género propio con identidad sonora basada en la clave 2-3, el piano montuno y los coros responsoriales).',
+    'La musicología contemporánea distingue dos perspectivas complementarias: una **visión académica**, que entiende "salsa" como etiqueta paraguas para géneros afrocubanos modernizados, y una **visión popular**, que reconoce la salsa como género con identidad sonora propia basada en la clave, el piano montuno, la sección de metales y los coros responsoriales.',
   blogHistoriaSalsa_section2Callout:
     "En [Farray's International Dance Center](/es/clases), este debate cobra vida en las clases. Aprender [salsa cubana](/es/clases/salsa-cubana-barcelona) —centrada en raíces del son— frente a salsa en línea, desarrollada en Nueva York, permite a los alumnos vivir en su propio cuerpo esa tensión entre tradición y evolución.",
 
@@ -13600,23 +13605,25 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   // === SECTION 4: BARCELONA ===
   blogHistoriaSalsa_section4Title: 'De Nueva York y el Caribe a Barcelona',
   blogHistoriaSalsa_section4Content1:
-    'En las últimas décadas, Barcelona se ha transformado en una de las **capitales europeas del baile latino**, donde conviven tradición y modernidad. [Estudios académicos](https://www.academia.edu/24917752/Tesis_ISABEL_LLANO_La_Salsa_en_Barcelona) documentan cómo la ciudad acoge a una amplia comunidad latinoamericana y afrocaribeña, generando una [escena salsera plural](https://marulacafe.com/noches-de-salsa-en-barcelona/): desde clubes en Eixample hasta escuelas especializadas en Gràcia o Poblenou, donde el ritmo se mezcla con la vida cotidiana.',
+    'En las últimas décadas, Barcelona se ha consolidado como una de las **escenas salseras más importantes de Europa**, donde conviven tradición y modernidad. [Estudios académicos como la tesis doctoral de Isabel Llano (UAB)](https://ddd.uab.cat/pub/tesis/2016/hdl_10803_377467/illc1de1.pdf) documentan cómo la ciudad acoge una amplia comunidad latinoamericana y afrocaribeña que ha impulsado una escena plural de clubes, escuelas y festivales.',
   blogHistoriaSalsa_section4Content2:
-    "[Farray's International Dance Center](/es/clases), institución pionera en la enseñanza profesional de danza afrocaribeña, mantiene viva esta herencia a través de programas que combinan técnica, cultura e historia. Aquí la salsa se enseña no solo con precisión técnica, sino con conciencia del contexto que la originó. Conoce a [nuestros profesores](/es/profesores-baile-barcelona) y descubre el [Método Farray®](/es/yunaisy-farray).",
+    "Esa escena se extiende por barrios como Eixample, Gràcia o Poblenou, donde el ritmo se mezcla con la vida cotidiana y el ocio nocturno. En este contexto, [Farray's International Dance Center](/es/clases) se posiciona como institución pionera en la enseñanza profesional de danza afrocaribeña en Barcelona.",
+  blogHistoriaSalsa_section4Content3:
+    'En [FIDC](/es/clases), la salsa se enseña no solo con precisión técnica, sino también con conciencia histórica y cultural. Nuestros programas combinan técnica, musicalidad, historia y cultura de la salsa, para que cada alumno comprenda de dónde vienen los pasos que aprende. Puedes conocer a [nuestros profesores](/es/profesores-baile-barcelona) y descubrir el [Método Farray®](/es/yunaisy-farray), un enfoque pedagógico que integra formación artística y raíz afrocaribeña.',
 
   // === SECTION 5: BENEFICIOS ===
   blogHistoriaSalsa_section5Title: 'Más que ejercicio: lo que la ciencia dice del baile',
   blogHistoriaSalsa_section5Intro:
-    'La salsa no es solo un ejercicio físico. La ciencia ha demostrado que bailar de forma regular tiene un impacto positivo a múltiples niveles: mejora la salud cardiovascular, refuerza la memoria y la concentración, libera endorfinas y crea vínculos sociales profundos.',
+    'La salsa no es solo un ejercicio físico; es una práctica integral que involucra cuerpo, mente y comunidad. La investigación científica muestra que bailar de forma regular mejora la salud cardiovascular, potencia la memoria y la concentración, favorece la liberación de endorfinas y refuerza los vínculos sociales.',
   blogHistoriaSalsa_beneficiosDetalle:
-    'Un estudio del [New England Journal of Medicine (2003)](https://www.nejm.org/doi/full/10.1056/NEJMoa022252) encontró que bailar puede reducir hasta un **76% el riesgo de demencia** en adultos mayores. Cada clase es una inversión en salud física y mental que, además, te conecta con una tradición cultural viva.',
+    'Un estudio longitudinal publicado en el [New England Journal of Medicine (2003)](https://www.nejm.org/doi/full/10.1056/NEJMoa022252) encontró que, en adultos mayores, quienes bailaban con frecuencia presentaban hasta un **76% menos riesgo relativo de desarrollar demencia** que quienes no bailaban, dentro de ese grupo de estudio. Se trata de un estudio observacional, pero respalda la idea de que cada clase de baile es una inversión en salud física, mental y emocional.',
 
   // === SECTION 6: CONCLUSIÓN ===
   blogHistoriaSalsa_section6Title: 'Tradición viva en Barcelona',
   blogHistoriaSalsa_section6Content1:
-    'La salsa es un espejo de la historia latinoamericana: raíz africana, alma caribeña y corazón global. Su viaje desde los solares cubanos hasta los barrios de Nueva York —y hoy, hasta las academias de Barcelona— demuestra el poder del arte para unir culturas y trascender épocas.',
+    'La salsa es un espejo de la historia latinoamericana: raíz africana, alma caribeña y vocación global. Su viaje desde los solares cubanos hasta los barrios de Nueva York —y hoy hasta las academias de Barcelona— demuestra el poder del arte para unir culturas y atravesar generaciones.',
   blogHistoriaSalsa_conclusionCTA:
-    "Si deseas sentir el pulso del Caribe en el corazón de Barcelona, consulta nuestros [horarios y precios](/es/horarios-clases-baile-barcelona) y [reserva tu primera clase](/es/clases/salsa-cubana-barcelona). En [Farray's](/es/clases), la salsa no se aprende: se vive.",
+    "Si deseas sentir el pulso del Caribe en el corazón de la ciudad, consulta nuestros [horarios y precios](/es/horarios-clases-baile-barcelona) y [reserva tu primera clase de salsa cubana en Barcelona](/es/clases/salsa-cubana-barcelona). En [Farray's International Dance Center](/es/clases), la salsa no solo se aprende: se vive, se comparte y se celebra en comunidad.",
 
   // === FAQ (SEO Schema) ===
   blogHistoriaSalsa_faqTitle: 'Preguntas Frecuentes sobre la Historia de la Salsa',
@@ -13634,22 +13641,35 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
     "Barcelona es considerada una de las capitales europeas del baile latino. La ciudad tiene una vibrante comunidad latinoamericana, numerosas salas de baile, congresos internacionales como el Barcelona Salsa Congress, y escuelas especializadas como Farray's International Dance Center.",
   blogHistoriaSalsa_faq5Question: '¿Qué beneficios tiene bailar salsa para la salud?',
   blogHistoriaSalsa_faq5Answer:
-    'Según estudios del New England Journal of Medicine, bailar regularmente puede reducir hasta un 76% el riesgo de demencia. Además, una hora de salsa quema entre 350-450 kcal, mejora la coordinación, reduce el estrés y aumenta la felicidad en un 25% según Frontiers in Psychology.',
+    'Según estudios del New England Journal of Medicine, bailar regularmente puede reducir hasta un 76% el riesgo de demencia. Además, una hora de salsa quema entre 350-450 kcal, mejora la coordinación, reduce el estrés y aumenta la felicidad según estudios de Frontiers in Psychology.',
+  blogHistoriaSalsa_faq6Question:
+    '¿Quiénes fueron los artistas más influyentes en la historia de la salsa?',
+  blogHistoriaSalsa_faq6Answer:
+    'Entre los más influyentes destacan: **Tito Puente** (el Rey del Timbal), **Celia Cruz** (la Reina de la Salsa), **Héctor Lavoe** (voz emblemática de la salsa dura), **Willie Colón** (innovador del trombón), **Rubén Blades** (salsa social y poética), y los grupos de Fania All-Stars. En la salsa cubana moderna, Los Van Van y NG La Banda marcaron la evolución hacia la timba.',
+  blogHistoriaSalsa_faq7Question: '¿Qué es Fania Records y por qué es importante?',
+  blogHistoriaSalsa_faq7Answer:
+    'Fania Records fue un sello discográfico fundado en Nueva York en 1964 por Johnny Pacheco y Jerry Masucci. Aunque no "inventó" la salsa, fue fundamental para consolidarla como identidad global latina. Su dream team, Fania All-Stars, reunió a las mejores figuras del género y realizó conciertos históricos como el del Yankee Stadium en 1973.',
+  blogHistoriaSalsa_faq8Question: '¿Por qué se considera a Barcelona capital europea de la salsa?',
+  blogHistoriaSalsa_faq8Answer:
+    "Barcelona acoge una de las comunidades latinoamericanas más grandes de Europa, lo que ha generado una escena salsera vibrante con clubes, congresos internacionales y escuelas especializadas. La tesis doctoral de Isabel Llano (UAB, 2016) documenta cómo la ciudad se ha convertido en referente del baile latino en el continente. Escuelas como Farray's International Dance Center mantienen viva esta tradición con formación profesional.",
 
   // === REFERENCES (E-E-A-T Authority) ===
   blogHistoriaSalsa_referencesIntro: 'Fuentes históricas y académicas consultadas:',
-  blogHistoriaSalsa_refWikipediaTitle: 'Salsa (género musical) - Historia Completa',
+  blogHistoriaSalsa_refWikipediaTitle: 'Salsa (género musical) – Wikipedia',
   blogHistoriaSalsa_refWikipediaDesc:
     'Artículo enciclopédico sobre los orígenes, evolución y características de la salsa como género musical.',
-  blogHistoriaSalsa_refSmithsonianTitle: 'El Nacimiento de la Salsa',
+  blogHistoriaSalsa_refSmithsonianTitle: 'El Nacimiento de la Salsa – Smithsonian Institution',
   blogHistoriaSalsa_refSmithsonianDesc:
-    'Exposición del Smithsonian sobre la historia cultural de la salsa y su impacto global.',
-  blogHistoriaSalsa_refLOCTitle: 'Archivos de Música Latina',
+    'Exposición sobre la historia cultural de la salsa, su impacto global y patrimonio afrolatino.',
+  blogHistoriaSalsa_refLOCTitle: 'Archivos de Música Latina – Library of Congress',
   blogHistoriaSalsa_refLOCDesc:
     'Colección de la Biblioteca del Congreso sobre la historia de la música latina en Estados Unidos.',
-  blogHistoriaSalsa_refNEJMTitle: 'Actividades de Ocio y Riesgo de Demencia',
+  blogHistoriaSalsa_refNEJMTitle: 'Leisure Activities and the Risk of Dementia',
   blogHistoriaSalsa_refNEJMDesc:
-    'Estudio científico sobre los beneficios cognitivos del baile, publicado en el New England Journal of Medicine.',
+    'Estudio longitudinal de Verghese et al. sobre beneficios cognitivos del baile, publicado en NEJM (2003).',
+  blogHistoriaSalsa_refUABTitle: 'La Salsa en Barcelona – Tesis Doctoral UAB',
+  blogHistoriaSalsa_refUABDesc:
+    'Investigación de Isabel Llano Camacho sobre inmigración, identidad, músicas latinas y baile en Barcelona (2016).',
 
   // =============================================
   // TEACHER CANONICAL DATA - Source of Truth
