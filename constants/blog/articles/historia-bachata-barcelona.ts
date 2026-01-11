@@ -19,7 +19,7 @@ export const HISTORIA_BACHATA_CONFIG: BlogArticleConfig = {
 
   // === DATES ===
   datePublished: '2025-01-20',
-  dateModified: '2025-01-20',
+  dateModified: '2026-01-11',
 
   // === READING METRICS ===
   readingTime: 12,
@@ -308,6 +308,63 @@ export const HISTORIA_BACHATA_CONFIG: BlogArticleConfig = {
       type: 'paragraph',
       contentKey: 'blogHistoriaBachata_conclusionCTA',
     },
+
+    // =====================================================
+    // REFERENCES (E-E-A-T Authority)
+    // =====================================================
+    {
+      id: 'references',
+      type: 'heading',
+      level: 2,
+      contentKey: 'blogHistoriaBachata_referencesTitle',
+    },
+    {
+      id: 'references-section',
+      type: 'references',
+      contentKey: 'blogHistoriaBachata_referencesIntro',
+      references: [
+        {
+          id: 'unesco-bachata',
+          titleKey: 'blogHistoriaBachata_refUNESCOTitle',
+          url: 'https://ich.unesco.org/es/RL/la-bachata-dominicana-01514',
+          publisher: 'UNESCO',
+          year: '2019',
+          descriptionKey: 'blogHistoriaBachata_refUNESCODesc',
+        },
+        {
+          id: 'pacini-hernandez',
+          titleKey: 'blogHistoriaBachata_refPaciniTitle',
+          url: 'https://archive.org/details/bachatasocialhist00paci',
+          publisher: 'Temple University Press',
+          year: '1995',
+          descriptionKey: 'blogHistoriaBachata_refPaciniDesc',
+        },
+        {
+          id: 'peter-manuel',
+          titleKey: 'blogHistoriaBachata_refManuelTitle',
+          url: 'https://books.google.com/books/about/Caribbean_Currents.html?id=TUUhDQAAQBAJ',
+          publisher: 'Temple University Press',
+          year: '1995',
+          descriptionKey: 'blogHistoriaBachata_refManuelDesc',
+        },
+        {
+          id: 'paul-austerlitz',
+          titleKey: 'blogHistoriaBachata_refAusterlitzTitle',
+          url: 'https://www.abebooks.com/9781566394840/Merengue-Dominican-Music-Identity-Paul-1566394848/plp',
+          publisher: 'Temple University Press',
+          year: '1997',
+          descriptionKey: 'blogHistoriaBachata_refAusterlitzDesc',
+        },
+        {
+          id: 'nejm-dance-brain',
+          titleKey: 'blogHistoriaBachata_refNEJMTitle',
+          url: 'https://www.nejm.org/doi/full/10.1056/NEJMoa022252',
+          publisher: 'New England Journal of Medicine',
+          year: '2003',
+          descriptionKey: 'blogHistoriaBachata_refNEJMDesc',
+        },
+      ],
+    },
   ],
 
   // === FEATURED IMAGE ===
@@ -359,6 +416,21 @@ export const HISTORIA_BACHATA_CONFIG: BlogArticleConfig = {
         questionKey: 'blogHistoriaBachata_faq5Question',
         answerKey: 'blogHistoriaBachata_faq5Answer',
       },
+      {
+        id: '6',
+        questionKey: 'blogHistoriaBachata_faq6Question',
+        answerKey: 'blogHistoriaBachata_faq6Answer',
+      },
+      {
+        id: '7',
+        questionKey: 'blogHistoriaBachata_faq7Question',
+        answerKey: 'blogHistoriaBachata_faq7Answer',
+      },
+      {
+        id: '8',
+        questionKey: 'blogHistoriaBachata_faq8Question',
+        answerKey: 'blogHistoriaBachata_faq8Answer',
+      },
     ],
   },
 
@@ -373,7 +445,7 @@ export const HISTORIA_BACHATA_CONFIG: BlogArticleConfig = {
     },
     {
       slug: 'beneficios-bailar-salsa',
-      category: 'fitness',
+      category: 'lifestyle',
       titleKey: 'blogBeneficiosSalsa_title',
       excerptKey: 'blogBeneficiosSalsa_excerpt',
       image: '/images/blog/beneficios-salsa/hero.webp',
