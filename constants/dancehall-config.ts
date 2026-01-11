@@ -11,7 +11,7 @@ import {
   DANCEHALL_LEVELS,
   DANCEHALL_PREPARE_CONFIG,
 } from './dancehall';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
@@ -24,16 +24,12 @@ export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: DANCEHALL_TESTIMONIALS,
   scheduleKeys: DANCEHALL_SCHEDULE_KEYS,
 
-  // Teachers (usando sistema centralizado con fotos optimizadas)
+  // Teachers (using enterprise centralized system)
+  // Specialty: contextual from dhV3.teacher.*.specialty
+  // Bio: canonical from teacher.*.bio (source of truth)
   teachers: [
-    getTeacherInfo('isabel-lopez', 'dhV3Teacher1Specialty', 'dhV3Teacher1Bio', [
-      'Dancehall Female',
-      'Competidora Internacional',
-    ]),
-    getTeacherInfo('sandra-gomez', 'dhV3Teacher2Specialty', 'dhV3Teacher2Bio', [
-      'Twerk',
-      'Dancehall',
-    ]),
+    getTeacherForClass('isabel-lopez', 'dhV3', ['Dancehall Female', 'Competidora Internacional']),
+    getTeacherForClass('sandra-gomez', 'dhV3', ['Twerk', 'Dancehall']),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Dancehall)

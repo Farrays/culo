@@ -11481,6 +11481,104 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogHistoriaSalsa_refNEJMDesc:
     'Estudi científic sobre els beneficis cognitius del ball, publicat al New England Journal of Medicine.',
 
+  // =============================================
+  // TEACHER CANONICAL DATA - Source of Truth
+  // =============================================
+  // DIRECTOR
+  'teacher.yunaisyFarray.specialty':
+    'Directora | Creadora del Mètode Farray® | Membre CID-UNESCO | Ballarina de Hollywood',
+  'teacher.yunaisyFarray.bio':
+    'Ballarina de Hollywood, aquesta professional cubana formada a l\'Escola Nacional d\'Art de Cuba (ENA), és la nostra fundadora i directora. Amb més de dues dècades d\'experiència internacional, Yunaisy ha participat en la pel·lícula "Street Dance 2", les finals de "Got Talent" i programes com "The Dancer". Considerada una de les ballarines més completes del món, participa en els festivals de dansa més importants a nivell global. Creadora del Mètode Farray®, un sistema exclusiu que fusiona la disciplina tècnica de l\'escola clàssica russa amb els ritmes i el sabor afrocubans, dissenyat específicament perquè els ballarins europeus dominin les diferents disciplines de forma més eficient, garantint resultats ràpids i sòlids.',
+
+  // CUBAN TEACHERS
+  'teacher.danielSene.specialty':
+    'Ballet Clàssic, Contemporani, Ioga, Tai-Chi & Stretching | Escola Nacional de Ballet de Cuba | Referent Nacional',
+  'teacher.danielSene.bio':
+    'Daniel Sené és ballarí professional format a la prestigiosa Escola Nacional de Ballet de Cuba. Especialista en tècnica clàssica cubana i dansa contemporània, aporta la rigorositat acadèmica i elegància pròpies de la tradició cubana. Profund coneixedor del cos humà, també es destaca per la seva mestria en Ioga, Tai-Chi i Stretching. Aquest mestre és un referent al país, combinant precisió tècnica amb expressió artística i benestar corporal.',
+
+  'teacher.alejandroMinoso.specialty':
+    'Ballet, Modern Jazz, Afro Jazz & Contemporani | ENA Cuba | Ex Solista Cia. Carlos Acosta',
+  'teacher.alejandroMinoso.bio':
+    "Alejandro Miñoso és ballarí professional cubà format a l'ENA i ex solista de la prestigiosa companyia Carlos Acosta, un dels millors ballarins de la història. La seva expertise en la fusió d'estils clàssics i afro el converteix en un professor versàtil, capaç de transitar entre ballet, modern jazz, afro jazz, contemporani i afro contemporani amb igual mestria. Tècnica acadèmica cubana de primer nivell.",
+
+  'teacher.liaValdes.specialty':
+    'Salsa Cubana & Lady Style | ENA Cuba | +20 anys carrera | El Rei Lleó París',
+  'teacher.liaValdes.bio':
+    "Mestra i artista internacional cubana, amb més de 20 anys de carrera artística, Lia Valdes és una referent a nivell mundial. Presència assídua als festivals de ritmes llatins més importants del món, aquesta mestra aporta el sabor autèntic de Cuba a cada classe. Formada a l'ENA (Escola Nacional d'Art de Cuba), ha integrat l'elenc del prestigiós espectacle \"El Rei Lleó\" a París durant diversos anys, transmetent no només els passos sinó també l'alegria i l'esperit del ball caribeny.",
+
+  'teacher.iroelBastarreche.specialty':
+    'Folklore Cubà & Afro Contemporani | Ballet Folklòric de Camagüey | Mètode Farray®',
+  'teacher.iroelBastarreche.bio':
+    "Iroel Bastarreche, conegut com a Iro, va néixer a Camagüey (Cuba) i es va formar a l'Escola Vocacional d'Art de Cuba. Va formar part del prestigiós Conjunt Artístic de Maraguán, rebent formació en folklore camperol, ball popular cubà i arrels haitianes, jamaicanes i congues, participant en innombrables festivals internacionals. Posteriorment va integrar el Ballet Folklòric de Camagüey, complementant la seva formació afro-contemporània amb mestres com Santiago Alfonso. Des de 2014 a Barcelona, s'ha format en el Mètode Farray® amb Yunaisy Farray i actualment és considerat per molts com un dels referents en l'ensenyament d'estils cubans a tot Barcelona.",
+
+  'teacher.charlieBreezy.specialty': 'Afro Contemporani, Hip Hop & Afrobeats | ENA Cuba',
+  'teacher.charlieBreezy.bio':
+    "Charlie Breezy és mestre internacional i ballarí cubà, format a la prestigiosa ENA (Escola Nacional d'Art de Cuba). Va néixer en un país on la cultura africana està totalment arrelada, cosa que li permet dominar diferents estils de dansa africana i afrobeats, a més de contemporani, ballet i danses urbanes. Versatilitat i formació acadèmica excepcional.",
+
+  'teacher.grechenMendez.specialty': 'Danses Afrocubanes | ISA Cuba | +25 anys experiència',
+  'teacher.grechenMendez.bio':
+    "Grechén Méndez és una mestra internacional de referència en danses afrocubanes amb més de 25 anys dedicats a l'ensenyament del folklore cubà. Formada al prestigiós Institut Superior d'Art de Cuba (ISA), la màxima institució artística del país, domina les danses als Orixàs, la rumba i totes les manifestacions del patrimoni afrocubà. Autoritat reconeguda a nivell mundial, ha format ballarins professionals a Cuba, Europa i Amèrica, transmetent tècnica i el profund significat espiritual i cultural de cada moviment.",
+
+  // HIP HOP SPECIALIST
+  'teacher.marcosMartinez.specialty': 'Hip Hop | Jutge Internacional | Referent Espanya',
+  'teacher.marcosMartinez.bio':
+    "Marcos Martínez és un dels referents del Hip Hop a Espanya. Amb dècades d'experiència com a ballarí, mestre i jutge de competicions internacionals, ha format generacions de ballarins. El seu estil únic combina la tècnica old school amb les tendències actuals, sempre respectant les arrels de la cultura hip hop.",
+
+  // BODY CONDITIONING SPECIALIST
+  'teacher.crisag.specialty':
+    'Body Conditioning, Cos Fit, Bum Bum Glutis & Stretching | Mètode Farray® des de 2012',
+  'teacher.crisag.bio':
+    "CrisAg va començar la seva passió pel ball des de ben petita. Llicenciada en Filologia Anglesa per la Universitat de Barcelona, s'ha format amb Jorge Camagüey i va integrar la seva companyia Calle Real de Camagüey. Va completar la seva formació a The Cuban School of Arts de Londres, treballant al costat de prestigioses ballarines com Yunaisy Farray, Kirenia Cantin i Damarys Farrés. Des de 2012 s'ha format en el Mètode Farray® i actualment és un referent a Barcelona com a professora de Body Conditioning, Cos Fit, Bum Bum Glutis i Stretching, fusionant les seves dues passions: el ball i el fitness.",
+
+  // SALSA/BACHATA SPECIALISTS
+  'teacher.yasminaFernandez.specialty':
+    'Salsa Cubana, Lady Style, Sexy Style & Sexy Reggaeton | Mètode Farray® des de 2016',
+  'teacher.yasminaFernandez.bio':
+    "Yasmina Fernández és una professora extraordinàriament versàtil amb una formació molt àmplia a les millors escoles de Barcelona. Certificada en el Mètode Farray® des de 2016, destaca per la seva capacitat de connectar amb els alumnes i fer que cada persona tregui el millor de si en les seves classes. Especialista en salsa cubana, Lady Style, Sexy Style i Sexy Reggaeton, combina anys d'experiència amb una metodologia clara, accessible i un do de gents excepcional.",
+
+  'teacher.eugeniaTrujillo.specialty':
+    'Bachata Lady Style & Bachata en Parella | Campiona Mundial Salsa LA',
+  'teacher.eugeniaTrujillo.bio':
+    "Eugenia Trujillo és mestra i ballarina internacional uruguaiana, campiona mundial de Salsa LA juntament amb Mathias Font. Professora a Farray's des de fa 4 anys, aporta una tècnica impecable i és especialista en bachata en parella i bachata lady style amb excel·lents resultats. El seu carisma, simpatia i proximitat la fan una de les professores més estimades del claustre.",
+
+  'teacher.mathiasFont.specialty': 'Bachata Sensual | Campió Mundial Salsa LA',
+  'teacher.mathiasFont.bio':
+    "Mathias Font és campió mundial de Salsa LA juntament amb la seva parella de ball Eugenia Trujillo. Especialista en bachata sensual, destaca pel seu enfocament únic en la musicalitat, la connexió en parella i la dinamització de les classes. Referent a l'escena llatina de Barcelona.",
+
+  'teacher.carlosCanto.specialty': 'Bachata & Bachata Moderna | Talent Emergent Barcelona',
+  'teacher.carlosCanto.bio':
+    "Carlos Canto és un talent emergent a Barcelona amb do de gents que ha demostrat gran capacitat per connectar amb els seus alumnes. Especialista en bachata amb enfocament en tècnica i musicalitat, el seu estil fresc i accessible l'ha convertit en un professor molt estimat pels seus alumnes.",
+
+  'teacher.noemi.specialty': 'Bachata & Bachata Lady Style | Talent Emergent Barcelona',
+  'teacher.noemi.bio':
+    "Noemi és un talent emergent en el qual Farray's va apostar fort. Parella de Carlos Canto, estan florint com una de les parelles més prometedores de l'escena de Barcelona. Els seus alumnes es converteixen en fans fidels gràcies al seu enfocament en bachata i tècniques femenines, a més dels seus dons de gent.",
+
+  'teacher.juanAlvarez.specialty': 'Bachata Sensual | Mètode Farray® | Talent Emergent Barcelona',
+  'teacher.juanAlvarez.bio':
+    "Juan Alvarez és un altre dels talents emergents a Barcelona. Instructor de Bachata Sensual, la forma com transmet l'essència d'aquest ball llatí amb passió, tècnica depurada, connexió i musicalitat, juntament amb el seu enfocament pràctic i proper que facilita l'aprenentatge des del primer dia, li ha permès connectar amb els seus alumnes des del primer moment.",
+
+  // DANCEHALL/TWERK SPECIALISTS
+  'teacher.sandraGomez.specialty': 'Dancehall & Twerk | Formació Jamaicana',
+  'teacher.sandraGomez.bio':
+    "Sandra Gómez és ballarina professional amb formació jamaicana en dancehall i twerk. El seu estil únic fusiona moviments del Twerk/Bootydance amb l'essència jamaicana autèntica. Tècnica impecable i metodologia d'ensenyament provada la converteixen en una de les professores més sol·licitades. Energia, sensualitat i feminitat pura a cada classe.",
+
+  'teacher.isabelLopez.specialty': 'Dancehall & Dancehall Female | Formació Jamaica',
+  'teacher.isabelLopez.bio':
+    "Isabel López és una apassionada del dancehall amb més de 5 anys d'experiència com a professora especialitzada. Entrenada amb mestres jamaicans, la seva energia contagiosa i tècnica professional la converteixen en una de les instructores més estimades. Les seves classes barregen old school moves (Willie Bounce, Nuh Linga) amb els últims hits.",
+
+  // AFROBEATS SPECIALIST
+  'teacher.redbhlue.specialty': 'Afrobeats & Ntcham | Natiu Tanzània',
+  'teacher.redbhlue.bio':
+    'Redblueh és professor i ballarí internacional, natiu de Tanzània i especialista en Ntcham. Les seves arrels africanes, coneixements profunds, energia i alegria contagiant el converteixen en un dels mestres més recomanats de tot Barcelona. Autenticitat africana a cada moviment.',
+
+  // CONTEXTUAL KEYS - Dancehall
+  'dhV3.teacher.isabelLopez.specialty': "Professora de Dancehall | +5 anys d'Experiència",
+  'dhV3.teacher.sandraGomez.specialty': "Professora de Dancehall i Twerk | +6 anys d'Experiència",
+
+  // CONTEXTUAL KEYS - Twerk
+  'twerk.teacher.isabelLopez.specialty': "Professora de Twerk i Dancehall | +5 anys d'Experiència",
+  'twerk.teacher.sandraGomez.specialty': "Professora de Twerk i Dancehall | +6 anys d'Experiència",
+
   // === AUTO-ADDED TRANSLATIONS (2025-12-19) ===
   openLevel: 'Nivell Obert',
   dhV3CompareTitle:

@@ -9,7 +9,7 @@ import {
   TWERK_LEVELS,
   TWERK_PREPARE_CONFIG,
 } from './twerk';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const TWERK_PAGE_CONFIG: FullDanceClassConfig = {
@@ -22,16 +22,12 @@ export const TWERK_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: TWERK_TESTIMONIALS,
   scheduleKeys: TWERK_SCHEDULE_KEYS,
 
-  // Teachers (sistema centralizado con fotos optimizadas)
+  // Teachers (using enterprise centralized system)
+  // Specialty: contextual from twerk.teacher.*.specialty
+  // Bio: canonical from teacher.*.bio (source of truth)
   teachers: [
-    getTeacherInfo('sandra-gomez', 'twerkTeacher1Specialty', 'twerkTeacher1Bio', [
-      'Twerk',
-      'Dancehall',
-    ]),
-    getTeacherInfo('isabel-lopez', 'twerkTeacher2Specialty', 'twerkTeacher2Bio', [
-      'Twerk',
-      'Urban',
-    ]),
+    getTeacherForClass('sandra-gomez', 'twerk', ['Twerk', 'Dancehall']),
+    getTeacherForClass('isabel-lopez', 'twerk', ['Twerk', 'Urban']),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Twerk)

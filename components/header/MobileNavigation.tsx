@@ -241,16 +241,17 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
     </div>
   );
 
+  // Don't render if menu is closed (cleaner than CSS hiding)
+  if (!isMenuOpen) return null;
+
   return (
     <div
       ref={menuRef}
       id="mobile-menu"
-      className={`fixed inset-0 bg-gradient-to-b from-black via-black/98 to-black/95 backdrop-blur-xl z-[100] ease-out transform lg:hidden ${
-        swipeOffset > 0 ? '' : 'transition-all duration-400'
-      } ${isMenuOpen ? 'opacity-100' : 'translate-x-full opacity-0'}`}
+      className="fixed inset-0 bg-black z-[100] lg:hidden"
       style={{
-        transform: isMenuOpen ? `translateX(${swipeOffset}px)` : 'translateX(100%)',
-        opacity: isMenuOpen ? Math.max(0.3, 1 - swipeOffset / 300) : 0,
+        paddingTop: 'env(safe-area-inset-top, 0px)',
+        paddingBottom: 'env(safe-area-inset-bottom, 0px)',
       }}
       role="dialog"
       aria-modal="true"
@@ -259,28 +260,28 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
       {/* Decorative gradient accent */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-accent via-brand-500 to-primary-accent" />
 
-      {/* Close button */}
+      {/* Close button - more visible */}
       <button
         onClick={() => setIsMenuOpen(false)}
-        className="absolute top-6 right-6 p-3 rounded-xl bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300"
+        className="absolute top-4 right-4 p-3 rounded-xl bg-primary-accent text-white z-10"
         aria-label="Close menu"
       >
-        <XMarkIcon className="w-6 h-6 text-white" />
+        <XMarkIcon className="w-7 h-7" />
       </button>
 
       <div
         ref={scrollContainerRef}
-        className="flex flex-col h-full overflow-y-auto pt-20 pb-8 px-6 sm:px-8"
+        className="flex flex-col h-full overflow-y-auto pt-16 pb-8 px-4"
       >
-        {/* Language Selector - Top */}
-        <div className="mb-6 bg-white/5 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-sm">
-          <div className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-primary-accent/20 to-brand-500/20 border-b border-white/10">
-            <GlobeIcon className="w-5 h-5 text-primary-accent" />
-            <span className="text-sm font-bold text-white/90 tracking-wide">
+        {/* Language Selector - Top - MORE VISIBLE */}
+        <div className="mb-4 bg-white/20 border-2 border-primary-accent rounded-2xl overflow-hidden">
+          <div className="flex items-center justify-center gap-2 px-4 py-2 bg-primary-accent">
+            <GlobeIcon className="w-5 h-5 text-white" />
+            <span className="text-sm font-bold text-white tracking-wide">
               {t('headerLanguage') || 'Idioma'}
             </span>
           </div>
-          <div className="grid grid-cols-4 gap-2 p-3">
+          <div className="grid grid-cols-4 gap-2 p-3 bg-black/50">
             {SUPPORTED_LOCALES.map(lang => (
               <button
                 key={lang}
@@ -288,10 +289,8 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                   triggerHaptic();
                   handleLanguageChange(lang);
                 }}
-                className={`py-3 px-3 rounded-xl text-sm sm:text-base font-bold transition-all duration-300 ${
-                  locale === lang
-                    ? 'bg-gradient-to-r from-primary-accent to-brand-500 text-white shadow-lg'
-                    : 'text-white/70 hover:bg-white/10 hover:text-white'
+                className={`py-3 px-2 rounded-xl text-base font-bold ${
+                  locale === lang ? 'bg-primary-accent text-white' : 'bg-white/20 text-white'
                 }`}
               >
                 {lang.toUpperCase()}
