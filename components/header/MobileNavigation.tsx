@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
-import { GlobeIcon, ChevronDownIcon } from '../../lib/icons';
+import { GlobeIcon, ChevronDownIcon, XMarkIcon } from '../../lib/icons';
 import type { Locale } from '../../types';
 import { SUPPORTED_LOCALES } from '../../types';
 
@@ -245,7 +245,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
     <div
       ref={menuRef}
       id="mobile-menu"
-      className={`fixed inset-0 bg-gradient-to-b from-black via-black/98 to-black/95 backdrop-blur-xl z-[60] ease-out transform lg:hidden ${
+      className={`fixed inset-0 bg-gradient-to-b from-black via-black/98 to-black/95 backdrop-blur-xl z-[100] ease-out transform lg:hidden ${
         swipeOffset > 0 ? '' : 'transition-all duration-400'
       } ${isMenuOpen ? 'opacity-100' : 'translate-x-full opacity-0'}`}
       style={{
@@ -259,9 +259,18 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
       {/* Decorative gradient accent */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-accent via-brand-500 to-primary-accent" />
 
+      {/* Close button */}
+      <button
+        onClick={() => setIsMenuOpen(false)}
+        className="absolute top-6 right-6 p-3 rounded-xl bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300"
+        aria-label="Close menu"
+      >
+        <XMarkIcon className="w-6 h-6 text-white" />
+      </button>
+
       <div
         ref={scrollContainerRef}
-        className="flex flex-col h-full overflow-y-auto pt-44 sm:pt-48 pb-8 px-6 sm:px-8"
+        className="flex flex-col h-full overflow-y-auto pt-20 pb-8 px-6 sm:px-8"
       >
         {/* Language Selector - Top */}
         <div className="mb-6 bg-white/5 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-sm">
