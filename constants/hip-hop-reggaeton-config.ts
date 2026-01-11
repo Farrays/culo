@@ -10,7 +10,7 @@ import {
   HIP_HOP_REGGAETON_PREPARE_CONFIG,
   HIP_HOP_REGGAETON_VIDEO_ID,
 } from './hip-hop-reggaeton';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const HIP_HOP_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
@@ -24,12 +24,7 @@ export const HIP_HOP_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
   scheduleKeys: HIP_HOP_REGGAETON_SCHEDULE_KEYS,
 
   // Teachers (sistema centralizado con fotos optimizadas)
-  teachers: [
-    getTeacherInfo('charlie-breezy', 'hhrTeacher1Specialty', 'hhrTeacher1Bio', [
-      'Hip Hop',
-      'Reggaeton',
-    ]),
-  ],
+  teachers: [getTeacherForClass('charlie-breezy', 'hhr', ['Hip Hop', 'Reggaeton'])],
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Hip Hop Reggaeton)
   breadcrumbConfig: {

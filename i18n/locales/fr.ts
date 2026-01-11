@@ -11701,6 +11701,105 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogHistoriaSalsa_refNEJMDesc:
     'Étude scientifique sur les bienfaits cognitifs de la danse, publiée dans le New England Journal of Medicine.',
 
+  // =============================================
+  // TEACHER CANONICAL DATA - Source of Truth
+  // =============================================
+  // DIRECTOR
+  'teacher.yunaisyFarray.specialty':
+    'Directrice | Créatrice de la Méthode Farray® | Membre CID-UNESCO | Danseuse de Hollywood',
+  'teacher.yunaisyFarray.bio':
+    'Danseuse de Hollywood, cette professionnelle cubaine formée à l\'École Nationale d\'Art de Cuba (ENA), est notre fondatrice et directrice. Avec plus de deux décennies d\'expérience internationale, Yunaisy a participé au film "Street Dance 2", aux finales de "Got Talent" et à des programmes comme "The Dancer". Considérée comme l\'une des danseuses les plus complètes au monde, elle participe aux festivals de danse les plus importants à l\'échelle mondiale. Créatrice de la Méthode Farray®, un système exclusif qui fusionne la discipline technique de l\'école classique russe avec les rythmes et la saveur afro-cubains, spécialement conçu pour que les danseurs européens maîtrisent les différentes disciplines plus efficacement, garantissant des résultats rapides et solides.',
+
+  // CUBAN TEACHERS
+  'teacher.danielSene.specialty':
+    'Ballet Classique, Contemporain, Yoga, Tai-Chi & Stretching | École Nationale de Ballet de Cuba | Référence Nationale',
+  'teacher.danielSene.bio':
+    "Daniel Sené est un danseur professionnel formé à la prestigieuse École Nationale de Ballet de Cuba. Spécialiste de la technique classique cubaine et de la danse contemporaine, il apporte la rigueur académique et l'élégance propres à la tradition cubaine. Grand connaisseur du corps humain, il se distingue également par sa maîtrise du Yoga, du Tai-Chi et du Stretching. Ce maître est une référence dans le pays, combinant précision technique avec expression artistique et bien-être corporel.",
+
+  'teacher.alejandroMinoso.specialty':
+    'Ballet, Modern Jazz, Afro Jazz & Contemporain | ENA Cuba | Ex Soliste Cie. Carlos Acosta',
+  'teacher.alejandroMinoso.bio':
+    "Alejandro Miñoso est un danseur professionnel cubain formé à l'ENA et ex soliste de la prestigieuse compagnie Carlos Acosta, l'un des meilleurs danseurs de l'histoire. Son expertise dans la fusion des styles classiques et afro en fait un professeur polyvalent, capable de passer du ballet au modern jazz, afro jazz, contemporain et afro contemporain avec une maîtrise égale. Technique académique cubaine de premier niveau.",
+
+  'teacher.liaValdes.specialty':
+    'Salsa Cubaine & Lady Style | ENA Cuba | +20 ans de carrière | Le Roi Lion Paris',
+  'teacher.liaValdes.bio':
+    "Maître et artiste internationale cubaine, avec plus de 20 ans de carrière artistique, Lia Valdes est une référence mondiale. Présence assidue aux festivals de rythmes latins les plus importants du monde, cette maître apporte la saveur authentique de Cuba à chaque cours. Formée à l'ENA (École Nationale d'Art de Cuba), elle a fait partie de la distribution du prestigieux spectacle \"Le Roi Lion\" à Paris pendant plusieurs années, transmettant non seulement les pas mais aussi la joie et l'esprit de la danse caribéenne.",
+
+  'teacher.iroelBastarreche.specialty':
+    'Folklore Cubain & Afro Contemporain | Ballet Folklorique de Camagüey | Méthode Farray®',
+  'teacher.iroelBastarreche.bio':
+    "Iroel Bastarreche, connu sous le nom d'Iro, est né à Camagüey (Cuba) et s'est formé à l'École Vocationnelle d'Art de Cuba. Il a fait partie du prestigieux Ensemble Artistique de Maraguán, recevant une formation en folklore paysan, danse populaire cubaine et racines haïtiennes, jamaïcaines et congolaises, participant à d'innombrables festivals internationaux. Il a ensuite intégré le Ballet Folklorique de Camagüey, complétant sa formation afro-contemporaine avec des maîtres comme Santiago Alfonso. Depuis 2014 à Barcelone, il s'est formé à la Méthode Farray® avec Yunaisy Farray et est actuellement considéré par beaucoup comme l'une des références dans l'enseignement des styles cubains à Barcelone.",
+
+  'teacher.charlieBreezy.specialty': 'Afro Contemporain, Hip Hop & Afrobeats | ENA Cuba',
+  'teacher.charlieBreezy.bio':
+    "Charlie Breezy est maître international et danseur cubain, formé à la prestigieuse ENA (École Nationale d'Art de Cuba). Il est né dans un pays où la culture africaine est totalement enracinée, ce qui lui permet de maîtriser différents styles de danse africaine et afrobeats, en plus du contemporain, ballet et danses urbaines. Polyvalence et formation académique exceptionnelle.",
+
+  'teacher.grechenMendez.specialty': "Danses Afro-cubaines | ISA Cuba | +25 ans d'expérience",
+  'teacher.grechenMendez.bio':
+    "Grechén Méndez est une maître internationale de référence en danses afro-cubaines avec plus de 25 ans consacrés à l'enseignement du folklore cubain. Formée au prestigieux Institut Supérieur d'Art de Cuba (ISA), la plus haute institution artistique du pays, elle maîtrise les danses aux Orishas, la rumba et toutes les manifestations du patrimoine afro-cubain. Autorité reconnue mondialement, elle a formé des danseurs professionnels à Cuba, en Europe et en Amérique, transmettant la technique et la signification spirituelle et culturelle profonde de chaque mouvement.",
+
+  // HIP HOP SPECIALIST
+  'teacher.marcosMartinez.specialty': 'Hip Hop | Juge International | Référence Espagne',
+  'teacher.marcosMartinez.bio':
+    "Marcos Martínez est l'une des références du Hip Hop en Espagne. Avec des décennies d'expérience comme danseur, maître et juge de compétitions internationales, il a formé des générations de danseurs. Son style unique combine la technique old school avec les tendances actuelles, respectant toujours les racines de la culture hip hop.",
+
+  // BODY CONDITIONING SPECIALIST
+  'teacher.crisag.specialty':
+    'Body Conditioning, Corps Fit, Bum Bum Fessiers & Stretching | Méthode Farray® depuis 2012',
+  'teacher.crisag.bio':
+    "CrisAg a commencé sa passion pour la danse dès son plus jeune âge. Diplômée en Philologie Anglaise de l'Université de Barcelone, elle s'est formée avec Jorge Camagüey et a intégré sa compagnie Calle Real de Camagüey. Elle a complété sa formation à The Cuban School of Arts de Londres, travaillant aux côtés de prestigieuses danseuses comme Yunaisy Farray, Kirenia Cantin et Damarys Farrés. Depuis 2012, elle s'est formée à la Méthode Farray® et est actuellement une référence à Barcelone comme professeure de Body Conditioning, Corps Fit, Bum Bum Fessiers et Stretching, fusionnant ses deux passions : la danse et le fitness.",
+
+  // SALSA/BACHATA SPECIALISTS
+  'teacher.yasminaFernandez.specialty':
+    'Salsa Cubaine, Lady Style, Sexy Style & Sexy Reggaeton | Méthode Farray® depuis 2016',
+  'teacher.yasminaFernandez.bio':
+    "Yasmina Fernández est une professeure extraordinairement polyvalente avec une formation très large dans les meilleures écoles de Barcelone. Certifiée dans la Méthode Farray® depuis 2016, elle se distingue par sa capacité à se connecter avec les élèves et à faire ressortir le meilleur de chaque personne dans ses cours. Spécialiste de la salsa cubaine, Lady Style, Sexy Style et Sexy Reggaeton, elle combine des années d'expérience avec une méthodologie claire, accessible et un don exceptionnel pour les relations humaines.",
+
+  'teacher.eugeniaTrujillo.specialty':
+    'Bachata Lady Style & Bachata en Couple | Championne du Monde Salsa LA',
+  'teacher.eugeniaTrujillo.bio':
+    "Eugenia Trujillo est maître et danseuse internationale uruguayenne, championne du monde de Salsa LA avec Mathias Font. Professeure chez Farray's depuis 4 ans, elle apporte une technique impeccable et est spécialiste de la bachata en couple et bachata lady style avec d'excellents résultats. Son charisme, sa sympathie et sa proximité en font l'une des professeures les plus appréciées du corps enseignant.",
+
+  'teacher.mathiasFont.specialty': 'Bachata Sensuelle | Champion du Monde Salsa LA',
+  'teacher.mathiasFont.bio':
+    'Mathias Font est champion du monde de Salsa LA avec sa partenaire de danse Eugenia Trujillo. Spécialiste de la bachata sensuelle, il se distingue par son approche unique de la musicalité, la connexion en couple et la dynamisation des cours. Référence dans la scène latine de Barcelone.',
+
+  'teacher.carlosCanto.specialty': 'Bachata & Bachata Moderne | Talent Émergent Barcelone',
+  'teacher.carlosCanto.bio':
+    'Carlos Canto est un talent émergent à Barcelone avec un don pour les relations humaines qui a démontré une grande capacité à se connecter avec ses élèves. Spécialiste de la bachata avec un focus sur la technique et la musicalité, son style frais et accessible en a fait un professeur très apprécié de ses élèves.',
+
+  'teacher.noemi.specialty': 'Bachata & Bachata Lady Style | Talent Émergent Barcelone',
+  'teacher.noemi.bio':
+    "Noemi est un talent émergent sur lequel Farray's a fortement parié. Partenaire de Carlos Canto, ils s'épanouissent comme l'un des couples les plus prometteurs de la scène barcelonaise. Ses élèves deviennent des fans fidèles grâce à son approche de la bachata et des techniques féminines, en plus de ses dons pour les relations humaines.",
+
+  'teacher.juanAlvarez.specialty':
+    'Bachata Sensuelle | Méthode Farray® | Talent Émergent Barcelone',
+  'teacher.juanAlvarez.bio':
+    "Juan Alvarez est un autre talent émergent à Barcelone. Instructeur de Bachata Sensuelle, la façon dont il transmet l'essence de cette danse latine avec passion, technique raffinée, connexion et musicalité, combinée à son approche pratique et accessible qui facilite l'apprentissage dès le premier jour, lui a permis de se connecter avec ses élèves dès le premier instant.",
+
+  // DANCEHALL/TWERK SPECIALISTS
+  'teacher.sandraGomez.specialty': 'Dancehall & Twerk | Formation Jamaïcaine',
+  'teacher.sandraGomez.bio':
+    "Sandra Gómez est danseuse professionnelle avec une formation jamaïcaine en dancehall et twerk. Son style unique fusionne les mouvements du Twerk/Bootydance avec l'essence jamaïcaine authentique. Technique impeccable et méthodologie d'enseignement éprouvée en font l'une des professeures les plus demandées. Énergie, sensualité et féminité pure à chaque cours.",
+
+  'teacher.isabelLopez.specialty': 'Dancehall & Dancehall Female | Formation Jamaïque',
+  'teacher.isabelLopez.bio':
+    "Isabel López est passionnée de dancehall avec plus de 5 ans d'expérience comme professeure spécialisée. Formée avec des maîtres jamaïcains, son énergie contagieuse et sa technique professionnelle en font l'une des instructrices les plus appréciées. Ses cours mélangent les old school moves (Willie Bounce, Nuh Linga) avec les derniers hits.",
+
+  // AFROBEATS SPECIALIST
+  'teacher.redbhlue.specialty': 'Afrobeats & Ntcham | Natif de Tanzanie',
+  'teacher.redbhlue.bio':
+    "Redblueh est professeur et danseur international, natif de Tanzanie et spécialiste en Ntcham. Ses racines africaines, ses connaissances profondes, son énergie et sa joie contagieuse en font l'un des maîtres les plus recommandés de tout Barcelone. Authenticité africaine dans chaque mouvement.",
+
+  // CONTEXTUAL KEYS - Dancehall
+  'dhV3.teacher.isabelLopez.specialty': "Professeure de Dancehall | +5 ans d'Expérience",
+  'dhV3.teacher.sandraGomez.specialty': "Professeure de Dancehall et Twerk | +6 ans d'Expérience",
+
+  // CONTEXTUAL KEYS - Twerk
+  'twerk.teacher.isabelLopez.specialty': "Professeure de Twerk et Dancehall | +5 ans d'Expérience",
+  'twerk.teacher.sandraGomez.specialty': "Professeure de Twerk et Dancehall | +6 ans d'Expérience",
+
   // === AUTO-ADDED TRANSLATIONS (2025-12-19) ===
   openLevel: 'Niveau Ouvert',
   dhV3CompareTitle:

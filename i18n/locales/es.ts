@@ -4325,6 +4325,13 @@ En Farray's International Dance Center, el Afrobeats se enseña con técnica, re
   // Teachers
   afroTeachersTitle: 'Conoce a nuestros profesores de Afrobeats',
   afroTeachersSubtitle: 'Expertos en Afrodance con años de experiencia',
+
+  // NEW CONTEXTUAL KEYS (enterprise centralized system)
+  // Specialties are contextual, bios reference canonical teacher.*.bio
+  'afro.teacher.redbhlue.specialty': 'Afrobeats & Ntcham | Nativo Tanzania',
+  'afro.teacher.charlieBreezy.specialty': 'Afrobeats, Hip Hop & Afro Contemporáneo',
+
+  // DEPRECATED (kept for backward compatibility during migration)
   afroTeacher1Specialty: '+6 años enseñando Afrobeats y Ntcham',
   afroTeacher1Bio:
     'Redblueh es un profesor y bailarín internacional, nativo de Tanzania y especialista en Ntcham. Sus raíces, conocimientos, energía y alegría contagiante lo convierten en uno de los maestros más recomendados de toda Barcelona.',
@@ -13645,6 +13652,35 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   'teacher.redbhlue.specialty': 'Afrobeats & Ntcham | Nativo Tanzania',
   'teacher.redbhlue.bio':
     'Redblueh es profesor y bailarín internacional, nativo de Tanzania y especialista en Ntcham. Sus raíces africanas, conocimientos profundos, energía y alegría contagiante lo convierten en uno de los maestros más recomendados de toda Barcelona. Autenticidad africana en cada movimiento.',
+
+  // =============================================
+  // CONTEXTUAL TEACHER SPECIALTIES PER CLASS PAGE
+  // =============================================
+  // These provide context-specific specialty descriptions for each teacher
+  // on different class pages. Format: [styleKey].teacher.[teacherCamelId].specialty
+
+  // --- BACHATA V3 (Bachata Sensual) ---
+  'bachataV3.teacher.mathiasFont.specialty': 'Bachata Sensual | Musicalidad | Conexión en Pareja',
+  'bachataV3.teacher.eugeniaTrujillo.specialty': 'Bachata Sensual | Campeona Mundial Salsa LA',
+  'bachataV3.teacher.carlosCanto.specialty': 'Bachata Sensual',
+  'bachataV3.teacher.noemi.specialty': 'Bachata Sensual | Bachata Lady Style',
+
+  // --- SALSA CUBANA ---
+  'salsaCubana.teacher.yunaisyFarray.specialty': 'Creadora del Método Farray® | Maestra CID-UNESCO',
+  'salsaCubana.teacher.yasminaFernandez.specialty': 'Profesora de Salsa Cubana | Método Farray®',
+  'salsaCubana.teacher.iroelBastarreche.specialty': 'Profesor de Salsa Cubana | Método Farray®',
+
+  // --- SALSA LADY STYLE ---
+  'salsaLady.teacher.yunaisyFarray.specialty':
+    'Creadora del Método Farray® | Miembro CID-UNESCO | Formada en ENA Cuba',
+  'salsaLady.teacher.liaValdes.specialty': 'Maestra y Artista Internacional Cubana',
+  'salsaLady.teacher.yasminaFernandez.specialty':
+    'Instructora de Lady Style | Especialista en Técnica Femenina',
+
+  // --- TIMBA ---
+  'timba.teacher.yunaisyFarray.specialty': 'Directora | Lady Timba Intermedio-Avanzado',
+  'timba.teacher.grechenMendez.specialty': 'Maestra de Timba en Pareja',
+  'timba.teacher.liaValdes.specialty': 'Profesora de Lady Timba Básico',
 
   // =============================================
   // TEACHERS PAGE - Profesores de Baile Barcelona

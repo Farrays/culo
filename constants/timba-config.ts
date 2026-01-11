@@ -11,7 +11,7 @@ import {
   TIMBA_PREPARE_CONFIG,
   TIMBA_NEARBY_AREAS,
 } from './timba';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const TIMBA_PAGE_CONFIG: FullDanceClassConfig = {
@@ -26,19 +26,9 @@ export const TIMBA_PAGE_CONFIG: FullDanceClassConfig = {
 
   // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    getTeacherInfo('yunaisy-farray', 'timbaTeacher1Specialty', 'timbaTeacher1Bio', [
-      'Directora',
-      'Timba',
-      'Lady Timba',
-    ]),
-    getTeacherInfo('grechen-mendez', 'timbaTeacher2Specialty', 'timbaTeacher2Bio', [
-      'Timba',
-      'Salsa',
-    ]),
-    getTeacherInfo('lia-valdes', 'timbaTeacher3Specialty', 'timbaTeacher3Bio', [
-      'Salsa Cubana',
-      'Lady Style',
-    ]),
+    getTeacherForClass('yunaisy-farray', 'timba', ['Directora', 'Timba', 'Lady Timba']),
+    getTeacherForClass('grechen-mendez', 'timba', ['Timba', 'Salsa']),
+    getTeacherForClass('lia-valdes', 'timba', ['Salsa Cubana', 'Lady Style']),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Latin > Timba)

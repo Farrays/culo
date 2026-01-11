@@ -9,7 +9,7 @@ import {
   REGGAETON_CUBANO_LEVELS,
   REGGAETON_CUBANO_PREPARE_CONFIG,
 } from './reggaeton-cubano';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const REGGAETON_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
@@ -24,14 +24,8 @@ export const REGGAETON_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
 
   // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    getTeacherInfo('charlie-breezy', 'rcbTeacher1Specialty', 'rcbTeacher1Bio', [
-      'Reggaeton',
-      'Urban',
-    ]),
-    getTeacherInfo('alejandro-minoso', 'rcbTeacher2Specialty', 'rcbTeacher2Bio', [
-      'ENA Cuba',
-      'Afro',
-    ]),
+    getTeacherForClass('charlie-breezy', 'rcb', ['Reggaeton', 'Urban']),
+    getTeacherForClass('alejandro-minoso', 'rcb', ['ENA Cuba', 'Afro']),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Reggaeton Cubano)

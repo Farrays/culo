@@ -9,7 +9,7 @@ import {
   AFRO_JAZZ_LEVELS,
   AFRO_JAZZ_PREPARE_CONFIG,
 } from './afro-jazz';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const AFRO_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
@@ -22,17 +22,14 @@ export const AFRO_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: AFRO_JAZZ_TESTIMONIALS,
   scheduleKeys: AFRO_JAZZ_SCHEDULE_KEYS,
 
-  // Teachers (sistema centralizado con fotos optimizadas)
+  // Teachers (sistema centralizado de profesores)
   teachers: [
-    getTeacherInfo('yunaisy-farray', 'afrojazzTeacher1Specialty', 'afrojazzTeacher1Bio', [
+    getTeacherForClass('yunaisy-farray', 'afrojazz', [
       'Directora',
       'CID-UNESCO',
       'Creadora Método Farray',
     ]),
-    getTeacherInfo('alejandro-minoso', 'afrojazzTeacher2Specialty', 'afrojazzTeacher2Bio', [
-      'ENA Cuba',
-      'Modern Jazz',
-    ]),
+    getTeacherForClass('alejandro-minoso', 'afrojazz', ['ENA Cuba', 'Modern Jazz']),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Dance > Afro Jazz)

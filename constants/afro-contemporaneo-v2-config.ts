@@ -12,7 +12,7 @@ import {
   AFRO_CONTEMPORANEO_PREPARE_CONFIG,
   AFRO_CONTEMPORANEO_NEARBY_AREAS,
 } from './afro-contemporaneo';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfigV2 } from '../components/templates/FullDanceClassTemplateV2';
 
 export const AFRO_CONTEMPORANEO_V2_CONFIG: FullDanceClassConfigV2 = {
@@ -25,20 +25,14 @@ export const AFRO_CONTEMPORANEO_V2_CONFIG: FullDanceClassConfigV2 = {
   testimonials: AFRO_CONTEMPORANEO_TESTIMONIALS,
   scheduleKeys: AFRO_CONTEMPORANEO_SCHEDULE_KEYS,
 
-  // Teachers (sistema centralizado con fotos optimizadas)
+  // Teachers (sistema centralizado de profesores)
   teachers: [
-    getTeacherInfo(
-      'yunaisy-farray',
-      'afrocontemporaneoTeacher1Specialty',
-      'afrocontemporaneoTeacher1Bio',
-      ['Directora', 'CID-UNESCO', 'ENA Cuba']
-    ),
-    getTeacherInfo(
-      'charlie-breezy',
-      'afrocontemporaneoTeacher2Specialty',
-      'afrocontemporaneoTeacher2Bio',
-      ['Afro', 'Urban']
-    ),
+    getTeacherForClass('yunaisy-farray', 'afrocontemporaneo', [
+      'Directora',
+      'CID-UNESCO',
+      'ENA Cuba',
+    ]),
+    getTeacherForClass('charlie-breezy', 'afrocontemporaneo', ['Afro', 'Urban']),
   ],
 
   // Breadcrumb

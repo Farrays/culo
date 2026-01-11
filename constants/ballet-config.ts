@@ -10,7 +10,7 @@ import {
   BALLET_PREPARE_CONFIG,
   BALLET_NEARBY_AREAS,
 } from './ballet';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const BALLET_PAGE_CONFIG: FullDanceClassConfig = {
@@ -23,16 +23,10 @@ export const BALLET_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: BALLET_TESTIMONIALS,
   scheduleKeys: BALLET_SCHEDULE_KEYS,
 
-  // Teachers (usando sistema centralizado con fotos optimizadas)
+  // Teachers (sistema centralizado de profesores)
   teachers: [
-    getTeacherInfo('daniel-sene', 'balletTeacher1Specialty', 'balletTeacher1Bio', [
-      'ENA Cuba',
-      'Técnica Cubana',
-    ]),
-    getTeacherInfo('alejandro-minoso', 'balletTeacher2Specialty', 'balletTeacher2Bio', [
-      'ENA Cuba',
-      'Modern Jazz',
-    ]),
+    getTeacherForClass('daniel-sene', 'ballet', ['ENA Cuba', 'Técnica Cubana']),
+    getTeacherForClass('alejandro-minoso', 'ballet', ['ENA Cuba', 'Modern Jazz']),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Dance > Ballet)

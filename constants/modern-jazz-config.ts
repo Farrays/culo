@@ -11,7 +11,7 @@ import {
   MODERN_JAZZ_NEARBY_AREAS,
   MODERN_JAZZ_VIDEO_ID,
 } from './modern-jazz';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const MODERN_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
@@ -24,13 +24,8 @@ export const MODERN_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
   testimonials: MODERN_JAZZ_TESTIMONIALS,
   scheduleKeys: MODERN_JAZZ_SCHEDULE_KEYS,
 
-  // Teachers (sistema centralizado con fotos optimizadas)
-  teachers: [
-    getTeacherInfo('alejandro-minoso', 'modernjazzTeacher1Specialty', 'modernjazzTeacher1Bio', [
-      'Modern Jazz',
-      'ENA Cuba',
-    ]),
-  ],
+  // Teachers (sistema centralizado de profesores)
+  teachers: [getTeacherForClass('alejandro-minoso', 'modernjazz', ['Modern Jazz', 'ENA Cuba'])],
 
   // Breadcrumb (4 levels: Home > Classes > Dance > Modern Jazz)
   breadcrumbConfig: {

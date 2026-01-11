@@ -10,7 +10,7 @@ import {
   HIPHOP_PREPARE_CONFIG,
   HIPHOP_NEARBY_AREAS,
 } from './hip-hop';
-import { getTeacherInfo } from './teacher-images';
+import { getTeacherForClass } from './teacher-registry';
 import type { FullDanceClassConfig } from '../components/templates/FullDanceClassTemplate';
 
 export const HIPHOP_PAGE_CONFIG: FullDanceClassConfig = {
@@ -25,11 +25,7 @@ export const HIPHOP_PAGE_CONFIG: FullDanceClassConfig = {
 
   // Teachers (usando sistema centralizado con fotos optimizadas)
   teachers: [
-    getTeacherInfo('marcos-martinez', 'hiphopTeacher1Specialty', 'hiphopTeacher1Bio', [
-      'Juez Internacional',
-      'Breaking',
-      'Locking',
-    ]),
+    getTeacherForClass('marcos-martinez', 'hiphop', ['Juez Internacional', 'Breaking', 'Locking']),
   ],
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Hip Hop)
