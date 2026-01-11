@@ -14339,24 +14339,24 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
 
   // === INTRODUCTION ===
   blogHistoriaBachata_intro:
-    'La bachata irrumpe como un plano secuencia sensual: cuerpos que se funden en perfecto vaivén, guitarras que lloran desamor y un ritmo que nació en los barrios marginales de Santo Domingo para conquistar pistas de todo el planeta. Según [Peter Manuel (1995)](https://doi.org/10.2307/780250), la bachata representa una fusión única de bolero romántico, son cubano y merengue dominicano que cristalizó en los años 60.',
+    'La bachata irrumpe como un plano secuencia sensual: cuerpos que se funden en perfecto vaivén, guitarras que lloran desamor y un ritmo que nació en los barrios marginales de Santo Domingo para conquistar pistas de todo el planeta. Según [Peter Manuel (1995)](https://books.google.com/books/about/Caribbean_Currents.html?id=TUUhDQAAQBAJ), la bachata representa una fusión única de bolero romántico, son cubano y merengue dominicano que cristalizó en los años 60.',
   blogHistoriaBachata_introFarrays:
-    'En **[Farray\'s International Dance Center](/es/clases)** enseñamos bachata desde sus raíces tradicionales hasta el sensual contemporáneo. Aquí te contamos la historia completa: desde "Borracho de amor" (1962) hasta las clases que ofrecemos en Barcelona.',
+    'En **[Farray\'s International Dance Center](/es/clases)** enseñamos bachata desde sus raíces tradicionales hasta el sensual contemporáneo. Aquí te contamos la historia completa: desde "Borracho de amor" (1962) hasta las [clases de bachata en Barcelona](/es/clases/bachata-barcelona) que ofrecemos hoy.',
 
   // === SECTION 1: ORÍGENES ===
   blogHistoriaBachata_origenesTitle:
     'Orígenes de la Bachata: Raíces Dominicanas, Marginalidad y Nacimiento (1960s)',
   blogHistoriaBachata_origenesContent1:
-    'El ADN bachatero se forja en la [República Dominicana](https://es.wikipedia.org/wiki/Rep%C3%BAblica_Dominicana) de los años 60. Fusiona el **bolero romántico** cubano, el **son** y el **merengue** local, creando un sonido distintivo caracterizado por la guitarra requinto, el güiro y el bongó. Según [Deborah Pacini Hernández (1995)](https://www.jstor.org/stable/3052288), la bachata surge como expresión musical de las clases populares urbanas.',
+    'El ADN bachatero se forja en la [República Dominicana](https://es.wikipedia.org/wiki/Rep%C3%BAblica_Dominicana) de los años 60. Fusiona el **bolero romántico** cubano, el **son** y el **merengue** local, creando un sonido distintivo caracterizado por la guitarra requinto, el güiro y el bongó. Según [Deborah Pacini Hernández (1995)](https://archive.org/details/bachatasocialhist00paci), la bachata surge como expresión musical de las clases populares urbanas.',
   blogHistoriaBachata_origenesContent2:
-    'La etapa marginal (1962-1970) marca el nacimiento del género. Vista despectivamente como "música de amargue" por las élites, la bachata sonaba en colmados, prostíbulos y barrios pobres. **José Manuel Calderón** (1937-2010), considerado el padre de la bachata, graba "Borracho de amor" y "Condena" en 1962, estableciendo las bases del género según [Paul Austerlitz (1997)](https://www.jstor.org/stable/j.ctt1bh2k1h).',
+    'La etapa marginal (1962-1970) marca el nacimiento del género. Vista despectivamente como "música de amargue" por las élites, la bachata sonaba en colmados, prostíbulos y barrios pobres. **[José Manuel Calderón](https://es.wikipedia.org/wiki/Jos%C3%A9_Manuel_Calder%C3%B3n_(m%C3%BAsico))** (1937-2010), considerado el padre de la bachata, graba "Borracho de amor" y "Condena" en 1962, estableciendo las bases del género según [Paul Austerlitz (1997)](https://www.abebooks.com/9781566394840/Merengue-Dominican-Music-Identity-Paul-1566394848/plp).',
   blogHistoriaBachata_origenesBarcelona:
     'La migración dominicana a España, especialmente a Barcelona desde los años 80, trajo consigo la bachata tradicional. Inicialmente se bailaba en reuniones familiares y fiestas privadas antes de conquistar las escuelas de baile.',
 
   // === SECTION 2: ETIMOLOGÍA ===
   blogHistoriaBachata_etimologiaTitle: '¿Por Qué "Bachata"? Etimología, Estigma y Rebranding',
   blogHistoriaBachata_etimologiaIntro:
-    'La palabra "bachata" significaba originalmente una **fiesta rural criolla** o parranda informal, según documenta [Martha Ellen Davis (1994)](https://muse.jhu.edu/article/515850). En los años 60, el término adquirió connotación peyorativa al asociarse con la música de los barrios marginales.',
+    'La palabra "bachata" significaba originalmente una **fiesta rural criolla** o parranda informal, según documenta [Martha Ellen Davis](https://en.wikipedia.org/wiki/Martha_Ellen_Davis). En los años 60, el término adquirió connotación peyorativa al asociarse con la música de los barrios marginales.',
   blogHistoriaBachata_etimologiaTeoriasTitle: 'Evolución del término "bachata":',
   blogHistoriaBachata_teoria1:
     '**Fiesta criolla (pre-1960s):** Reunión festiva rural con música, bebida y baile. Documentado en folclore dominicano desde el siglo XIX.',
@@ -14370,7 +14370,7 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
   // === SECTION 3: EVOLUCIÓN ESTILÍSTICA ===
   blogHistoriaBachata_evolucionTitle: 'Evolución Estilística: Del Amargue al Sensual (1962-2025)',
   blogHistoriaBachata_evolucionIntro:
-    'La bachata ha atravesado tres etapas principales según la periodización de [Deborah Pacini Hernández (2014)](https://www.dukeupress.edu/bachata). Cada época aportó sonidos, estilos de baile y figuras representativas:',
+    'La bachata ha atravesado tres etapas principales según la periodización de [Deborah Pacini Hernández (2014)](https://www.dukeupress.edu/bachata). Cada época aportó sonidos, estilos de baile y figuras representativas. En [nuestras clases en Barcelona](/es/clases/bachata-barcelona) enseñamos esta diversidad:',
   blogHistoriaBachata_evolucionTableTitle: 'Evolución histórica de la bachata',
 
   // Table headers
@@ -14473,6 +14473,38 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
   blogHistoriaBachata_faq5Question: '¿Dónde aprender bachata sensual en Barcelona?',
   blogHistoriaBachata_faq5Answer:
     "En Farray's International Dance Center ofrecemos clases de bachata tradicional, sensual y dominicana para todos los niveles. Contamos con profesores especializados, ambiente acogedor y horarios flexibles. Consulta nuestra programación en la web.",
+  blogHistoriaBachata_faq6Question: '¿Quiénes son los artistas más importantes de la bachata?',
+  blogHistoriaBachata_faq6Answer:
+    'Los artistas más influyentes incluyen: **José Manuel Calderón** (padre de la bachata, 1962), **Luis Segura** (el Añoñaíto), **Juan Luis Guerra** (globalizó el género con "Bachata Rosa" en 1990), **Aventura/Romeo Santos** (revolución urbana con "Obsesión" en 2002) y **Prince Royce** (crossover pop internacional). Cada uno definió una era del género.',
+  blogHistoriaBachata_faq7Question:
+    '¿Qué diferencia hay entre bachata tradicional, sensual y dominicana?',
+  blogHistoriaBachata_faq7Answer:
+    "La **bachata tradicional** (dominicana) mantiene los pasos básicos laterales con movimiento de cadera sutil. La **bachata sensual** (desarrollada en España) añade ondulaciones corporales, aislamientos y conexión cercana. La **bachata moderna/urbana** incorpora elementos de hip-hop y R&B. En Farray's enseñamos los tres estilos.",
+  blogHistoriaBachata_faq8Question:
+    '¿Por qué la UNESCO declaró la bachata Patrimonio de la Humanidad?',
+  blogHistoriaBachata_faq8Answer:
+    'La UNESCO reconoció la bachata dominicana como Patrimonio Cultural Inmaterial de la Humanidad en diciembre de 2019. El reconocimiento destaca su valor como expresión de identidad cultural, su evolución de género marginal a fenómeno global, y su papel en la cohesión social de las comunidades dominicanas.',
+
+  // === REFERENCES (E-E-A-T Authority) ===
+  blogHistoriaBachata_referencesTitle: 'Fuentes y Referencias',
+  blogHistoriaBachata_referencesIntro:
+    'Fuentes académicas y oficiales consultadas para este artículo:',
+  blogHistoriaBachata_refUNESCOTitle: 'La Bachata Dominicana – UNESCO',
+  blogHistoriaBachata_refUNESCODesc:
+    'Declaración oficial de la bachata como Patrimonio Cultural Inmaterial de la Humanidad (2019).',
+  blogHistoriaBachata_refPaciniTitle: 'Bachata: A Social History – Deborah Pacini Hernández',
+  blogHistoriaBachata_refPaciniDesc:
+    'Estudio académico fundamental sobre los orígenes sociales y culturales de la bachata dominicana.',
+  blogHistoriaBachata_refManuelTitle: 'Caribbean Currents – Peter Manuel',
+  blogHistoriaBachata_refManuelDesc:
+    'Análisis musicológico de la fusión de bolero, son y merengue en la bachata.',
+  blogHistoriaBachata_refAusterlitzTitle:
+    'Merengue: Dominican Music and Identity – Paul Austerlitz',
+  blogHistoriaBachata_refAusterlitzDesc:
+    'Contexto histórico de la música dominicana y el surgimiento de la bachata.',
+  blogHistoriaBachata_refNEJMTitle: 'Leisure Activities and the Risk of Dementia',
+  blogHistoriaBachata_refNEJMDesc:
+    'Estudio longitudinal de Verghese et al. sobre beneficios cognitivos del baile, publicado en NEJM (2003).',
 
   // ============================================================================
   // BLOG ARTICLE: Hombres y mujeres, ¿hablamos salsa?

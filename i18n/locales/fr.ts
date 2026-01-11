@@ -15741,6 +15741,39 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogHistoriaBachata_faq5Question: 'Où apprendre la bachata sensuelle à Barcelone ?',
   blogHistoriaBachata_faq5Answer:
     "Chez Farray's International Dance Center nous proposons des cours de bachata traditionnelle, sensuelle et dominicaine pour tous les niveaux. Nous avons des professeurs spécialisés, une ambiance accueillante et des horaires flexibles. Consultez notre programmation sur le site web.",
+  blogHistoriaBachata_faq6Question: 'Quels sont les artistes les plus importants de la bachata ?',
+  blogHistoriaBachata_faq6Answer:
+    'Les artistes les plus influents incluent : **José Manuel Calderón** (père de la bachata, 1962), **Luis Segura** (el Añoñaíto), **Juan Luis Guerra** (a mondialisé le genre avec "Bachata Rosa" en 1990), **Aventura/Romeo Santos** (révolution urbaine avec "Obsesión" en 2002), et **Prince Royce** (crossover pop international). Chacun a défini une ère du genre.',
+  blogHistoriaBachata_faq7Question:
+    'Quelle est la différence entre bachata traditionnelle, sensuelle et dominicaine ?',
+  blogHistoriaBachata_faq7Answer:
+    "La **bachata traditionnelle** (dominicaine) maintient les pas de base latéraux avec mouvement subtil des hanches. La **bachata sensuelle** (développée en Espagne) ajoute des ondulations corporelles, des isolations et une connexion proche. La **bachata moderne/urbaine** incorpore des éléments hip-hop et R&B. Chez Farray's nous enseignons les trois styles.",
+  blogHistoriaBachata_faq8Question:
+    "Pourquoi l'UNESCO a-t-elle déclaré la bachata Patrimoine Mondial ?",
+  blogHistoriaBachata_faq8Answer:
+    "En 2019, l'UNESCO a reconnu la bachata comme Patrimoine Culturel Immatériel de l'Humanité pour représenter l'identité culturelle dominicaine, son évolution de la marginalisation à l'acceptation mondiale, et son rôle dans la cohésion communautaire. Elle a rejoint le merengue (déclaré en 2016) comme trésors culturels dominicains.",
+
+  // === REFERENCES ===
+  blogHistoriaBachata_referencesTitle: 'Sources et Références',
+  blogHistoriaBachata_referencesIntro:
+    'Cet article est basé sur des sources académiques rigoureuses et des documents primaires :',
+  blogHistoriaBachata_refUNESCOTitle: 'La Bachata Dominicaine – UNESCO',
+  blogHistoriaBachata_refUNESCODesc:
+    "Déclaration officielle de la bachata comme Patrimoine Culturel Immatériel de l'Humanité (2019).",
+  blogHistoriaBachata_refPaciniTitle: 'Bachata: A Social History – Deborah Pacini Hernández',
+  blogHistoriaBachata_refPaciniDesc:
+    "Référence académique définitive sur l'histoire sociale et culturelle de la bachata en République Dominicaine.",
+  blogHistoriaBachata_refManuelTitle: 'Caribbean Currents – Peter Manuel',
+  blogHistoriaBachata_refManuelDesc:
+    'Étude essentielle sur la musique caribéenne, le merengue, la bachata et leurs transformations culturelles.',
+  blogHistoriaBachata_refAusterlitzTitle:
+    'Merengue: Dominican Music and Dominican Identity – Paul Austerlitz',
+  blogHistoriaBachata_refAusterlitzDesc:
+    "Analyse académique de la musique dominicaine incluant la bachata et son rôle dans l'identité nationale.",
+  blogHistoriaBachata_refNEJMTitle:
+    'Leisure Activities and the Risk of Dementia in the Elderly – NEJM',
+  blogHistoriaBachata_refNEJMDesc:
+    'Étude référence démontrant les bénéfices cognitifs de la danse : 76% de réduction du risque de démence.',
 
   // ============================================================================
   // BLOG ARTICLE: Hommes et femmes, parlons salsa ?
