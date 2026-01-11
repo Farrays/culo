@@ -11440,14 +11440,6 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   'teacher.redbhlue.bio':
     'Redblueh is an international teacher and dancer, native of Tanzania and specialist in Ntcham. His African roots, deep knowledge, energy and contagious joy make him one of the most recommended masters in all of Barcelona. African authenticity in every movement.',
 
-  // CONTEXTUAL KEYS - Dancehall
-  'dhV3.teacher.isabelLopez.specialty': 'Dancehall Teacher | +5 Years Experience',
-  'dhV3.teacher.sandraGomez.specialty': 'Dancehall and Twerk Teacher | +6 Years Experience',
-
-  // CONTEXTUAL KEYS - Twerk
-  'twerk.teacher.isabelLopez.specialty': 'Twerk and Dancehall Teacher | +5 Years Experience',
-  'twerk.teacher.sandraGomez.specialty': 'Twerk and Dancehall Teacher | +6 Years Experience',
-
   // === AUTO-ADDED TRANSLATIONS (2025-12-19) ===
   openLevel: 'Open Level',
   dhV3CompareTitle: "Why learn Dancehall at Farray's and not at another academy in Barcelona?",
@@ -17920,97 +17912,4 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   jpaLeadModal_error_title: 'Processing Error',
   jpaLeadModal_error_message: 'An error occurred. Please try again.',
   jpaLeadModal_error_cta: 'Retry',
-
-  // --- AFROBEATS ---
-  'afro.teacher.redbhlue.specialty': 'Afrobeats & Ntcham | Tanzania Native',
-  'afro.teacher.charlieBreezy.specialty': 'Afrobeats, Hip Hop & Afro Contemporary',
-
-  // --- HIP HOP REGGAETON ---
-  'hhr.teacher.charlieBreezy.specialty': 'Hip Hop Reggaeton, Afrobeats & Urban Dance',
-
-  // --- SEXY REGGAETON ---
-  'sxr.teacher.yasminaFernandez.specialty': 'Sexy Reggaeton & Sexy Style',
-
-  // --- REGGAETON CUBANO ---
-  'rcb.teacher.charlieBreezy.specialty': 'Cuban Reggaeton, Reparto & Urban Dance',
-  'rcb.teacher.alejandroMinoso.specialty': 'Cuban Reggaeton, Reparto & Improvisation',
-
-  // --- FEMMOLOGY ---
-  'femmology.teacher.yunaisyFarray.specialty':
-    'Creator of Farray Method® | Female Movement Specialist',
-
-  // --- SEXY STYLE ---
-  'sexyStyle.teacher.yasminaFernandez.specialty': 'Sexy Style & Body Expression',
-
-  // --- MODERN JAZZ ---
-  'modernjazz.teacher.alejandroMinoso.specialty':
-    'Modern Jazz | Former Carlos Acosta Company Soloist',
-
-  // --- BALLET ---
-  'ballet.teacher.danielSene.specialty': 'Classical Ballet | National Ballet School of Cuba',
-  'ballet.teacher.alejandroMinoso.specialty':
-    'Classical Ballet | ENA Cuba | Former Carlos Acosta Co. Soloist',
-
-  // --- CONTEMPORANEO ---
-  'contemporaneo.teacher.danielSene.specialty': 'Lyrical Contemporary | Cuban School',
-  'contemporaneo.teacher.alejandroMinoso.specialty': 'Floor Contemporary & Flow | ENA Cuba',
-
-  // --- AFRO CONTEMPORANEO ---
-  'afrocontemporaneo.teacher.yunaisyFarray.specialty':
-    'Creator of Farray Method® | Afro-Contemporary Fusion',
-  'afrocontemporaneo.teacher.charlieBreezy.specialty':
-    'Afro Contemporary | ENA Cuba | International Master',
-
-  // --- AFRO JAZZ ---
-  'afrojazz.teacher.yunaisyFarray.specialty': 'Creator of Farray Method® | Afro Jazz',
-  'afrojazz.teacher.alejandroMinoso.specialty':
-    'Afro Jazz | ENA Cuba | Former Carlos Acosta Co. Soloist',
-
-  // --- HIP HOP ---
-  'hiphop.teacher.marcosMartinez.specialty': 'Competition Judge | International Master',
-
-  // --- STRETCHING ---
-  'stretching.teacher.crisAg.specialty': 'Stretching & Backbending',
-  'stretching.teacher.danielSene.specialty': 'Stretching & Classical Ballet',
-
-  // --- CUERPO FIT ---
-  'cuerpoFit.teacher.crisAg.specialty': 'Body Conditioning & Physical Training',
-
-  // --- BUM BUM ---
-  'bumBum.teacher.crisAg.specialty': 'Toning & Glutes',
-
-  // --- BACHATA V3 ---
-  'bachataV3.teacher.mathiasFont.specialty': 'Sensual Bachata | Musicality | Partner Connection',
-  'bachataV3.teacher.eugeniaTrujillo.specialty': 'Sensual Bachata | World Champion Salsa LA',
-  'bachataV3.teacher.carlosCanto.specialty': 'Sensual Bachata',
-  'bachataV3.teacher.noemi.specialty': 'Sensual Bachata | Bachata Lady Style',
-
-  // --- SALSA CUBANA ---
-  'salsaCubana.teacher.yunaisyFarray.specialty': 'Creator of Farray Method® | CID-UNESCO Master',
-  'salsaCubana.teacher.yasminaFernandez.specialty': 'Cuban Salsa Teacher | Farray Method®',
-  'salsaCubana.teacher.iroelBastarreche.specialty': 'Cuban Salsa Teacher | Farray Method®',
-
-  // --- SALSA LADY STYLE ---
-  'salsaLady.teacher.yunaisyFarray.specialty': 'Creator of Farray Method® | Lady Style Specialist',
-  'salsaLady.teacher.liaValdes.specialty': 'Cuban International Master & Artist',
-  'salsaLady.teacher.yasminaFernandez.specialty': 'Lady Style Teacher | Farray Method®',
-
-  // --- TIMBA ---
-  'timba.teacher.yunaisyFarray.specialty': 'Director | Lady Timba Intermediate-Advanced',
-  'timba.teacher.grechenMendez.specialty': 'Partner Timba Teacher',
-  'timba.teacher.liaValdes.specialty': 'Basic Lady Timba Teacher',
-
-  // --- FOLKLORE CUBANO ---
-  'folkloreCubano.teacher.grechenMendez.specialty':
-    'International Afro-Cuban Dance Master | ISA Cuba | +25 years',
-
-  // --- BAILE MAÑANAS ---
-  'baileMananas.teacher.alejandroMinoso.specialty':
-    'Contemporary Dance, Ballet, Modern Jazz and Afro Jazz',
-  'baileMananas.teacher.yasminaFernandez.specialty':
-    'Sexy Style, Sexy Reggaeton and Salsa Lady Style',
-  'baileMananas.teacher.isabelLopez.specialty': 'Dancehall Female and Twerk',
-
-  // --- FULL BODY CARDIO ---
-  'fullBodyCardio.teacher.crisAg.specialty': 'Body-Fit, Stretching & Physical Conditioning',
 };
