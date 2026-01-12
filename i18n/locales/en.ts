@@ -612,22 +612,8 @@ export const en = {
 
   dhV3TeachersTitle: 'Meet our Dancehall teachers',
   dhV3TeachersSubtitle: 'Dancehall experts with years of experience',
-  dhV3Teacher1Specialty: 'Dancehall Teacher | 5+ years of Experience',
-  dhV3Teacher1Bio:
-    "Isabel López is passionate about dancehall with over 5 years of experience as a teacher specialized in urban dance. Trained with Jamaican masters, her contagious energy and professional technique make her one of the most beloved instructors at Farray's Center. Her classes mix old school moves (Willie Bounce, Nuh Linga) with the latest hits.",
-  dhV3Teacher2Specialty: 'Dancehall & Twerk Teacher | 6+ years of Experience',
-  dhV3Teacher2Bio:
-    'Sandra Gómez is a professional dancer with over 6 years of experience in dancehall and twerk. Her unique style fuses Twerk/Bootydance movements with Jamaican essence. Her impeccable technique and teaching methodology make her one of the most sought-after teachers. Energy, sensuality, and pure femininity.',
-  dhV3TeachersClosing:
-    "With Isabel and Sandra, you don't just learn to dance Dancehall: you discover a new way to connect with your body, your confidence, and the Jamaican flow.",
-
-  dhV3ScheduleTitle: 'Our Dancehall Class Schedule',
-  dhV3ScheduleSubtitle: 'Available practically every day of the week',
 
   // Dancehall schedule class names (enterprise i18n)
-  dhScheduleClassFemaleBeginner: 'Dancehall Female Beginners',
-  dhScheduleClassFemaleBasic: 'Dancehall Female Basic',
-  dhScheduleClassTwerkBeginner: 'Dancehall Twerk Beginners',
   dhScheduleClassTwerkIntermediate: 'Dancehall Twerk Intermediate',
   dhScheduleClassBasic: 'Dancehall Basic',
 
@@ -3196,26 +3182,13 @@ export const en = {
   // Teachers Section
   twerkTeachersTitle: 'Meet your Twerk instructors',
   twerkTeachersSubtitle: 'Experts in Twerk and Dancehall with years of experience',
-  twerkTeacher1Specialty: 'Twerk & Dancehall Teacher | 5+ years of Experience',
-  twerkTeacher1Bio:
-    "Isabel López is passionate about twerk and dancehall with over 5 years of experience as a teacher specialized in urban dance. Trained with Jamaican masters and Twerk specialists, her contagious energy and professional technique make her one of the most beloved instructors at Farray's Center.",
-  twerkTeacher2Specialty: 'Twerk & Dancehall Teacher | 6+ years of Experience',
-  twerkTeacher2Bio:
-    'Sandra Gómez is a professional dancer with over 6 years of experience in twerk and dancehall. Her unique style fuses Twerk/Bootydance movements with Jamaican essence. Her impeccable technique and teaching methodology make her one of the most sought-after teachers. Energy, sensuality, and pure femininity.',
-  twerkTeachersClosing:
-    "With Isabel and Sandra, you don't just learn to dance Twerk: you discover a new way to connect with your body, your confidence, and your power.",
 
   // Schedule Section
-  twerkScheduleTitle: 'Twerk class schedule',
-  twerkScheduleSubtitle: 'Three levels so you can find your perfect class',
-
   // Video Section
-  twerkVideoTitle: 'Come discover our Twerk classes',
   twerkVideoDesc:
     "See what a class at Farray's Center is like: energy, technique, and good vibes. We're waiting for you!",
 
   // Why Today Section
-  twerkWhyTodayFullTitle: 'Why is today the best time to start dancing Twerk with us?',
   twerkWhyToday1:
     'Because you keep waiting for "the perfect moment" but the only perfect thing is to start today.',
   twerkWhyToday2:
@@ -3411,26 +3384,9 @@ At Farray's International Dance Center, Afrobeats is taught with technique, resp
   // Teachers
   afroTeachersTitle: 'Meet our Afrobeats teachers',
   afroTeachersSubtitle: 'Afrodance experts with years of experience',
-  afroTeacher1Specialty: '+6 years teaching Afrobeats and Ntcham',
-  afroTeacher1Bio:
-    'Redblueh is an international teacher and dancer, native of Tanzania and Ntcham specialist. His roots, knowledge, energy and contagious joy make him one of the most recommended teachers in all of Barcelona.',
-  afroTeacher2Specialty: '+5 years as an expert in Afrobeats and African Dances',
-  afroTeacher2Bio:
-    'Charlie Breezy, international master and Cuban dancer. He was born in a country where African culture is totally rooted. Trained at the ENA (National School of Art of Cuba), Charlie is a versatile dancer who, besides mastering different African dance styles, excels in contemporary, ballet and a wide range of urban dances.',
-  afroTeachersClosing:
-    'Our teachers do not just teach steps: they transmit culture, history and passion for Afrodance.',
-
   // Schedule
-  afroScheduleTitle: 'Schedules for our Afrobeats classes',
-  afroScheduleSubtitle: 'Classes available several times a week',
-
   // Video
-  afroVideoTitle: 'Watch how we dance Afrobeats and Afrodance',
-  afroVideoDesc:
-    'Discover the energy and rhythm of our Afrobeats and Afrodance classes in Barcelona',
-
   // Why Today
-  afroWhyTodayFullTitle: 'Why is today the best time to start dancing Afrobeats?',
   afroWhyToday1:
     'Because you keep waiting for "the perfect moment" but the only perfect thing is to start today.',
   afroWhyToday2:
@@ -3693,27 +3649,13 @@ This fusion incorporates:
   // Teachers Section
   hhrTeachersTitle: 'Meet your Hip Hop Reggaeton instructor',
   hhrTeachersSubtitle: 'Urban fusion expert with years of experience',
-  hhrTeacher1Specialty: 'Hip Hop Reggaeton, Afrobeats & Urban Dances',
-  hhrTeacher1Bio:
-    'Charlie Breezy is an international master and Cuban dancer trained at the ENA (National Art School of Cuba). Specialist in Hip Hop Reggaeton, he masters the fusion of urban styles with impeccable technique. His energy, creativity and ability to transmit "flow" make him one of the most recommended teachers in Barcelona.',
-  hhrTeachersClosing:
-    "With Charlie Breezy you don't just learn to dance Hip Hop Reggaeton: you discover your own style and connect with your creativity.",
 
   // Schedule Section
-  hhrScheduleTitle: 'Hip Hop Reggaeton class schedule',
-  hhrScheduleSubtitle: 'Various levels to find your perfect class',
-
   // Video Section
-  hhrVideoTitle: 'Come discover our Hip Hop Reggaeton classes',
   hhrVideoDesc:
     "See what a class at Farray's Center is like: fusion, flow and good vibes. We're waiting for you!",
 
   // Why Today Section
-  hhrWhyTodayFullTitle: 'Why is today the best time to start dancing Hip Hop Reggaeton?',
-  hhrWhyToday1:
-    'Because you\'re always waiting for "the perfect moment" but the only perfect thing is to start today.',
-  hhrWhyToday2:
-    "Because you're just ONE class away from changing your routine and feeling better than yesterday.",
   hhrWhyToday3: "Because it's not about dancing well, but about feeling good dancing.",
   hhrWhyTodayClosing1: "At Farray's we don't sell classes. We create experiences.",
   hhrWhyTodayClosing2:
@@ -3933,19 +3875,8 @@ Today, Cubatón has expanded internationally while maintaining its essence: impr
   rcbLogosIntlFestivalsText: 'and at the best dance festivals worldwide',
   rcbTeachersTitle: 'Meet your Reparto instructors',
   rcbTeachersSubtitle: 'Cuban-born, trained at ENA and references in Barcelona',
-  rcbTeacher1Name: 'Charlie Breezy',
-  rcbTeacher1Specialty: 'Cuban Reggaeton, Reparto & Urban Dances',
-  rcbTeacher1Bio:
-    'Charlie Breezy is an international instructor and Cuban dancer trained at ENA (National School of Art of Cuba). Specialist in Cuban Reggaeton and Reparto, he masters improvisation and body dissociation with impeccable technique. His energy, creativity, and ability to transmit Cuban flavor make him one of the most recommended teachers in Barcelona.',
-  rcbTeacher2Name: 'Alejandro Miñoso',
-  rcbTeacher2Specialty: 'Cuban Reggaeton, Reparto & Improvisation',
-  rcbTeacher2Bio:
-    'Alejandro Miñoso is an international Cuban instructor trained at ENA (National School of Art of Cuba). Specialist in Reparto and improvisation technique, he brings a unique methodology that connects Cuban rhythm with body expression. His passion for transmitting authentic reggaeton culture makes him a reference in Barcelona.',
   rcbTeachersClosing:
     "With Charlie and Alejandro, you don't just learn to dance Reparto: you discover the authentic flavor that only Cubans can transmit.",
-  rcbScheduleTitle: 'Cuban Reggaeton class schedule',
-  rcbScheduleSubtitle: 'Various levels to find your perfect class',
-  rcbVideoTitle: 'Discover Cuban Reggaeton in action',
   rcbVideoDesc:
     'Watch how authentic Cuban reggaeton is danced. Improvisation, dissociation, and pure flavor.',
   rcbWhyTodayFullTitle: 'Why is today the best time to learn Cuban Reggaeton?',
@@ -4388,27 +4319,13 @@ Over more than a decade, Femmology has transformed the lives of thousands of wom
   // Teachers Section
   femTeachersTitle: 'Meet Yunaisy Farray',
   femTeachersSubtitle: 'Creator of Femmology and one of the most recognized teachers in the world',
-  femTeacher1Specialty: 'Creator of Farray Method® | Street Dance 2 | CID-UNESCO',
-  femTeacher1Bio:
-    'Yunaisy Farray is a professional dancer trained at the National School of Art of Cuba, Street Dance 2 actress, Got Talent performer and CID-UNESCO recognized teacher. Considered one of the greatest references in Cuban female dance, she has created the exclusive Farray Method® and founded Farray\'s Center in Barcelona. Figures like Albert Torres and Eddie Torres call her "the new Celia Cruz of salsa".',
-  femTeachersClosing:
-    'With Yunaisy you will not just learn to dance in heels: you will discover your full potential and love yourself more every day.',
 
   // Schedule Section
-  femScheduleTitle: 'Femmology class schedule',
-  femScheduleSubtitle: 'Classes directly with Yunaisy Farray',
-
   // Video Section
-  femVideoTitle: 'Discover Femmology in action',
   femVideoDesc:
     "See how we dance in heels at Farray's Center: technique, sensuality and the Farray Method® with Yunaisy in person.",
 
   // Why Today Section
-  femWhyTodayFullTitle: 'Why become a Femmology member today?',
-  femWhyToday1:
-    'Because you have spent too long watching others dance while saying "I wish I could do that".',
-  femWhyToday2:
-    'Because you are ONE class away from discovering a version of yourself that moves with confidence and feels powerful.',
   femWhyToday3:
     'Because in addition to learning to dance like a professional, you will work on your self-esteem and confidence naturally.',
   femWhyTodayClosing1:
@@ -4680,26 +4597,12 @@ Over more than a decade, Femmology has transformed the lives of thousands of wom
   // Teachers Section
   sexystyleTeachersTitle: 'Meet your Sexy Style instructor',
   sexystyleTeachersSubtitle: 'Specialist in body expression and sensuality',
-  sexystyleTeacher1Specialty: 'Sexy Style & Body Expression',
-  sexystyleTeacher1Bio:
-    'Yasmina Fernández is one of the most charismatic instructors at the academy. She has been training students in urban and sensual dances for over 8 years. Her style combines impeccable technique with an empowered attitude that is contagious.',
-  sexystyleTeachersClosing:
-    "With Yasmina you don't just learn to dance Sexy Style: you discover a new way to inhabit your body.",
-
   // Schedule Section
-  sexystyleScheduleTitle: 'Sexy Style class schedule',
-  sexystyleScheduleSubtitle: 'Various levels to find your perfect class',
-
   // Video Section
-  sexystyleVideoTitle: 'Discover our Sexy Style classes',
   sexystyleVideoDesc:
     "See what a class at Farray's Center is like: energy, technique and lots of empowerment.",
 
   // Why Today Section
-  sexystyleWhyTodayFullTitle: 'Why is today the best time to start dancing Sexy Style?',
-  sexystyleWhyToday1:
-    'Because every day you wait is one less day feeling comfortable in your own body.',
-  sexystyleWhyToday2: 'Because your body is already ready, even if your mind tells you no.',
   sexystyleWhyToday3: 'Because you deserve to feel sexy, powerful and free. Not "someday". Today.',
   sexystyleWhyTodayClosing1: "At Farray's we don't sell classes. We create Experiences.",
   sexystyleWhyTodayClosing2:
@@ -4947,27 +4850,12 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colombia), J Balvi
   // Teachers Section
   sxrTeachersTitle: 'Meet your Sexy Reggaeton instructor',
   sxrTeachersSubtitle: 'Expert in sensual urban dances with over 8 years of experience',
-  sxrTeacher1Specialty: 'Sexy Reggaeton & Sexy Style',
-  sxrTeacher1Bio:
-    "Yasmina Fernández is one of the most charismatic teachers at the academy. She has been training students in urban and sensual dances for over 8 years. Her style combines impeccable technique with an empowered attitude that's contagious.",
-  sxrTeachersClosing:
-    "With Yasmina you don't just learn to dance Sexy Reggaeton: you discover a way to connect with your femininity and your power without asking permission.",
-
   // Schedule Section
-  sxrScheduleTitle: 'Sexy Reggaeton class schedule',
-  sxrScheduleSubtitle: 'Various levels to find your perfect class',
-
   // Video Section
-  sxrVideoTitle: 'Come discover our Sexy Reggaeton classes',
   sxrVideoDesc:
     "See what a class at Farray's Center is like: energy, technique, sensuality and good vibes. We're waiting for you!",
 
   // Why Today Section
-  sxrWhyTodayFullTitle: 'Why is today the best time to start dancing Sexy Reggaeton?',
-  sxrWhyToday1:
-    'Because you\'ve been feeling uncomfortable with your body for too long and waiting for the "perfect moment" that never comes.',
-  sxrWhyToday2:
-    "Because you're ONE class away from discovering a version of you that moves her hips without complexes and feels powerful.",
   sxrWhyToday3:
     "Because it's not about dancing perfectly, but about feeling sexy while dancing. And that can be trained.",
   sxrWhyTodayClosing1: 'We Create Experiences.',
@@ -5208,27 +5096,14 @@ Farray's International Dance Center is rated close to **5/5 on Google**, with hu
   // Teachers Section
   modernjazzTeachersTitle: 'Meet your Modern Jazz teacher',
   modernjazzTeachersSubtitle: 'Classical technique, contemporary spirit',
-  modernjazzTeacher1Specialty: 'Modern Jazz, Afro Jazz, Contemporary & Ballet',
-  modernjazzTeacher1Bio:
-    'Alejandro Miñoso is an international Cuban master trained at the prestigious ENA (National School of Art of Cuba). Former soloist of the Carlos Acosta company, he combines the technical demands of classical ballet with the expressive freedom of modern jazz, creating dynamic classes where each student progresses at their own pace.',
-  modernjazzTeachersClosing:
-    "With Alejandro you'll learn solid technique while discovering your own way of expressing yourself.",
-
   // Schedule Section
-  modernjazzScheduleTitle: 'Our Modern Jazz class schedule',
-  modernjazzScheduleSubtitle: 'Classes with Alejandro Miñoso',
-
   // Video Section
-  modernjazzVideoTitle: 'Discover our Modern Jazz classes',
   modernjazzVideoDesc:
     "See what a class at Farray's Center is like: technique, expression and passion for dance.",
 
   // Why Today Section
-  modernjazzWhyTodayFullTitle: 'Why is today the best time to start Modern Jazz?',
   modernjazzWhyToday1:
     "Because technique takes time to build, and the sooner you start, the sooner you'll see results.",
-  modernjazzWhyToday2:
-    'Because your body needs more than office and couch: it needs to stretch, spin, jump and breathe music.',
   modernjazzWhyToday3:
     'Because you deserve an activity that demands from you, clears your mind and makes you feel stronger and more elegant.',
   modernjazzWhyTodayClosing1: "At Farray's we don't sell classes. We create Experiences.",
@@ -5666,25 +5541,9 @@ All ballet terms are in French, a legacy of its development at the court of Vers
   // ===== Teachers Section =====
   balletTeachersTitle: 'Meet your Ballet teachers',
   balletTeachersSubtitle: 'Cuban School, international experience',
-  balletTeacher1Specialty: 'Classical Ballet & Contemporary',
-  balletTeacher1Bio:
-    'Daniel Sene is a classical ballet specialist trained at the National Ballet School of Cuba, the same school where Carlos Acosta trained. His methodology combines the technical rigor of the classical school with an accessible approach for beginner and advanced adults.',
-  balletTeacher2Specialty: 'Ballet & Modern Jazz & Contemporary',
-  balletTeacher2Bio:
-    'Alejandro Miñoso, Cuban teacher trained at the ENA (National School of Art of Cuba), former soloist of the prestigious Carlos Acosta company. His impeccable technique and pedagogical ability make every student feel progress from the first class.',
-  balletTeachersClosing:
-    'Two teachers, two complementary approaches. Daniel for intermediate and advanced, Alejandro for beginners. The perfect combination for your ballet training.',
-
   // ===== Schedule Section =====
-  balletScheduleTitle: 'Our Ballet class schedule',
-  balletScheduleSubtitle: 'Choose your level and start this week',
-
   // ===== Video Section =====
-  balletVideoTitle: 'Discover our Ballet classes',
-  balletVideoDesc: "See what a real ballet class is like at Farray's Center",
-
   // ===== Why Today Section =====
-  balletWhyTodayFullTitle: 'Why is today the best time to start Ballet?',
   balletWhyToday1:
     'Because you keep waiting for "the perfect moment" to sign up for ballet... but the only perfect thing is to start today.',
   balletWhyToday2:
@@ -6080,23 +5939,10 @@ Dancers from around the world travel to Barcelona specifically to train in Afro 
   // ===== Teachers Section =====
   afrojazzTeachersTitle: 'Your Afro Jazz teachers',
   afrojazzTeachersSubtitle: 'Elite training with the Farray Method team',
-  afrojazzTeacher1Specialty: 'Afro Jazz Intermediate/Advanced - Creator of the Farray Method',
   afrojazzTeacher1Bio:
     "Yunaisy Farray is a master trained at Cuba's National School of Art (ENA), member of UNESCO's International Dance Council and actress in Street Dance 2. Creator of Afro Jazz as a unique discipline, she teaches intermediate and advanced classes on Thursdays from 7pm to 8:30pm.",
-  afrojazzTeacher2Specialty: 'Afro Jazz Basic - Trained in the Farray Method',
-  afrojazzTeacher2Bio:
-    'Alejandro Miñoso is a professional dancer and teacher trained directly by Yunaisy Farray in the Farray Method. His mastery of contemporary and afro technique allows him to guide basic level students on Wednesdays from 12pm to 1pm with the same methodological excellence.',
-  afrojazzTeachersClosing:
-    "With our team you don't just learn choreographies: you develop the tools to create your own movement with solid technical foundation.",
-
   // ===== Schedule Section =====
-  afrojazzScheduleTitle: 'Afro Jazz class schedule',
-  afrojazzScheduleSubtitle: 'Classes for all levels, from beginners to advanced',
-
   // Level Cards Section
-  afrojazzLevelsTitle: 'Our Afro Jazz Levels',
-  afrojazzLevelsSubtitle: 'Choose the one that best suits you',
-  afrojazzLevelBasicTitle: 'Basic Afro Jazz',
   afrojazzLevelBasicDesc:
     'For those starting in this discipline or with little dance experience. Learn the fundamentals of Afro + Jazz fusion: basic coordination, African rhythms, posture and first steps of the Afro Jazz vocabulary. No previous requirements.',
   afrojazzLevelIntAdvTitle: 'Intermediate/Advanced Afro Jazz',
@@ -6442,19 +6288,7 @@ Works comprehensively: **flexibility, functional strength, coordination, proprio
   contemporaneoTeachersTitle: 'Your Contemporary Dance Masters',
   contemporaneoTeachersSubtitle:
     'Professional dancers trained in the Cuban School with international career',
-  contemporaneoTeacher1Specialty: 'Lyrical Contemporary',
-  contemporaneoTeacher1Bio:
-    'Daniel Sené is a professional dancer with career training at the Cuban School. His methodology combines rigorous technique with lyrical expression, guiding you to develop your own body language while mastering the fundamentals of contemporary dance.',
-  contemporaneoTeacher2Specialty: 'Floor & Flow Contemporary',
-  contemporaneoTeacher2Bio:
-    'Alejandro Miñoso is a professional dancer trained in Cuba, specialized in floor techniques and floorwork. His approach connects movement with breath, teaching you to flow with your body and explore new movement possibilities.',
-  contemporaneoTeachersClosing:
-    'With Daniel and Alejandro you not only learn contemporary technique: you discover a new way to express yourself, connect with your body and develop your own movement language.',
-
   // Schedule Section
-  contemporaneoScheduleTitle: 'Contemporary Dance class schedule',
-  contemporaneoScheduleSubtitle: 'Two styles, multiple schedules: find your perfect class',
-
   // Level Cards Section
   contemporaneoLevelBeginnerTitle: 'Lyrical Beginners',
   contemporaneoLevelBeginnerDesc:
@@ -6840,24 +6674,8 @@ The Afro Contemporary taught at **Farray's International Dance Center** is part 
   // Teachers Section
   afrocontemporaneoTeachersTitle: 'Your Afro Contemporary masters',
   afrocontemporaneoTeachersSubtitle: 'Direct training from the National School of Art of Cuba',
-  afrocontemporaneoTeacher1Specialty: 'Afro Cuban Technique - CID-UNESCO Master',
-  afrocontemporaneoTeacher1Bio:
-    'Yunaisy Farray trained at the prestigious National School of Art of Cuba (ENA), where she learned the original technique of Afro Contemporary. Master recognized by the CID-UNESCO (International Dance Council of Paris), she combines the technical rigor of the Cuban school with her international experience in Street Dance 2 and contemporary dance companies. Her methodology maintains the essence of the ENA adapted for dancers of all levels.',
-  afrocontemporaneoTeacher2Specialty: 'Afro Cuban Technique - Certified Instructor',
-  afrocontemporaneoTeacher2Bio:
-    'Charlie Breezy is a certified Afro Contemporary instructor trained in the methodology of the National School of Art of Cuba. Specialized in basic level, his pedagogical approach allows dancers of any background to access Afro Cuban technique progressively and structuredly.',
-  afrocontemporaneoTeacher3Specialty: 'Afro Cuban Technique - Certified Instructor',
-  afrocontemporaneoTeacher3Bio:
-    'Alejandro Miñoso is a certified Afro Contemporary instructor with training in ENA methodology. His experience in Cuban dance and his pedagogical ability allow him to transmit the essence of Afro Contemporary while maintaining the technical rigor characteristic of this discipline.',
-  afrocontemporaneoTeachersClosing:
-    'With our Cuban masters you not only learn Afro Contemporary: you access the original methodology of the National School of Art of Cuba.',
-
   // Schedule Section
-  afrocontemporaneoScheduleTitle: 'Schedule of our Afro Contemporary classes',
-  afrocontemporaneoScheduleSubtitle: 'Technical refinement classes for all levels',
-
   // Video Section
-  afrocontemporaneoVideoTitle: 'Discover our Afro Contemporary classes',
   afrocontemporaneoVideoDesc:
     "Watch in this video what Afro Contemporary classes are like at Farray's International Dance Center in Barcelona. Don't think twice and come try a class.",
 
@@ -7058,18 +6876,6 @@ The Afro Contemporary taught at **Farray's International Dance Center** is part 
     'Open class for all levels where you will work on technique, musicality, freestyle and improvisation. Each week we explore different styles and movements so you can develop your own flow and personal style. With Marcos Martínez on Thursdays from 8pm to 9pm.',
   hiphopTeachersTitle: 'Meet your Hip Hop teacher',
   hiphopTeachersSubtitle: 'A reference of Hip Hop in Spain',
-  hiphopTeacher1Specialty: 'Competition judge • International master',
-  hiphopTeacher1Bio:
-    'Marcos Martínez is one of the references of Hip Hop in Spain. With decades of experience as a dancer, teacher and judge of international competitions, he has trained generations of dancers and brings the essence of authentic Hip Hop to every class. His unique style combines old school technique with current trends, always respecting the roots of the culture.',
-  hiphopTeachersClosing:
-    'Learn from a master who has dedicated his life to Hip Hop and who transmits not only technique, but the culture and attitude that defines this style.',
-  hiphopPrepareTitle: 'Prepare for your first Hip Hop class',
-  hiphopPrepareSubtitle: 'Everything you need to know before coming',
-  hiphopPrepareWhatToBring: 'What to bring?',
-  hiphopPrepareItem1: 'Comfortable sports shoes (preferably with flat sole)',
-  hiphopPrepareItem2: 'Loose, comfortable clothing that allows movement',
-  hiphopPrepareItem3: 'Water bottle',
-  hiphopPrepareItem4: 'Small towel',
   hiphopPrepareItem5: 'Desire to release your flow',
   hiphopPrepareBefore: 'Before arriving',
   hiphopPrepareBeforeItem1: 'Arrive 10-15 minutes early to warm up',
@@ -8436,9 +8242,6 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   contemporaneoConfidenceGuaranteed: 'Own language guaranteed',
   contemporaneoCaloriesStat: 'Calories Burned',
   contemporaneoDanceStat: 'Dance',
-  contemporaneoLevelsTitle: 'What type of Contemporary suits you?',
-  contemporaneoLevelsSubtitle: 'Four modalities for different objectives and sensibilities',
-
   // ===== DANCE STYLE PAGES TRANSLATIONS =====
   twerkLevelsTitle: 'Our Twerk Levels',
   twerkPrepareTitle: 'Prepare for your first Twerk class',
@@ -9962,23 +9765,8 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   // === TEACHERS SECTION ===
   stretchingTeachersTitle: 'Your Stretching Teachers',
   stretchingTeachersSubtitle: 'Flexibility specialists with the Farray Method',
-  stretchingTeacher1Specialty: 'Stretching & Backbending',
-  stretchingTeacher1Bio:
-    'Cris Ag is a flexibility and backbending specialist, trained in the Farray Method. Her patient and technical approach has helped hundreds of students safely exceed their limits. Expert in leg and back elongation, injury prevention and core strengthening.',
-  stretchingTeacher2Specialty: 'Stretching & Classical Ballet',
-  stretchingTeacher2Bio:
-    'Daniel Sené is a professional dancer trained at the Cuban National Ballet School. His knowledge of classical technique brings a unique dimension to stretching classes, combining technical rigor with an accessible approach for all levels.',
-  stretchingTeachersClosing:
-    'Two teachers, two complementary approaches. Cris for deep backbending and Legs work, Daniel for base technique. The perfect combination for your flexibility.',
-
   // === SCHEDULE SECTION ===
-  stretchingScheduleTitle: 'Stretching Class Schedule',
-  stretchingScheduleSubtitle: '5 weekly classes for all levels',
-  stretchingScheduleNote: '* Backbending & Legs classes are 1h30',
-
   // === WHY CHOOSE US SECTION ===
-  stretchingWhyChooseTitle: 'Why choose us for your Stretching?',
-  stretchingWhyChooseSubtitle: '7 reasons that set us apart',
   stretchingWhyChoose1Title: 'Farray Method',
   stretchingWhyChoose1Desc:
     "A progressive methodology that respects your body. We don't force, we guide. Each student advances at their own pace.",
@@ -10278,23 +10066,8 @@ Scientific studies confirm that regular stretching 3+ times per week:
   // === TEACHERS SECTION ===
   bumbumTeachersTitle: 'Your Bum Bum Glutes Teacher',
   bumbumTeachersSubtitle: 'Toning specialist with the Farray Method',
-  bumbumTeacher1Specialty: 'Toning and Glutes',
-  bumbumTeacher1Bio:
-    'Cris Ag is a specialist in body toning and glute exercises with the Farray Method. Her approach combines fitness techniques with dance elements to make training effective and fun. Expert in hip thrust, squats and glute activation techniques.',
-  bumbumTeachersClosing:
-    "With Cris you'll achieve real results because she knows exactly how to safely and effectively activate and work each glute muscle.",
-
   // === SCHEDULE SECTION ===
-  bumbumScheduleTitle: 'Bum Bum Amazing Glutes Schedule',
-  bumbumScheduleSubtitle: '1 weekly class to transform your glutes',
-  bumbumScheduleNote: '* 60-minute class',
-
   // === WHY CHOOSE US SECTION ===
-  bumbumWhyChooseTitle: 'Why choose us for your glute exercises?',
-  bumbumWhyChooseSubtitle: '7 reasons that set us apart',
-  bumbumWhyChoose1Title: 'Applied Farray Method',
-  bumbumWhyChoose1Desc:
-    'Our exclusive methodology combines glute exercises with dance techniques for more effective and sustainable results.',
   bumbumWhyChoose2Title: 'Hip Thrust and Advanced Techniques',
   bumbumWhyChoose2Desc:
     'We work on scientifically proven exercises as the most effective for gluteus maximus development.',
@@ -16191,16 +15964,6 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   cuerpofitLevelOpenDesc: `Class adaptable to all levels. Each exercise has variations from beginner to advanced. Cris guides you according to your current level, ensuring you work in your optimal development zone without risk of injury.`,
   cuerpofitTeachersTitle: `Your Body Conditioning Teacher`,
   cuerpofitTeachersSubtitle: `Specialist in conditioning for dancers`,
-  cuerpofitTeacher1Specialty: `Body Conditioning & Physical Preparation`,
-  cuerpofitTeacher1Bio: `Cris Ag is a specialist in physical conditioning for dancers, trained in the Farray Method®. Her approach combines anatomical knowledge with practical dance experience, creating training programs that improve performance and prevent injuries. Her classes integrate functional strength, active flexibility and specific joint mobility for dancers.`,
-  cuerpofitTeachersClosing: `At Farray's Center, physical conditioning is not a complement: it's the foundation of your evolution as a dancer.`,
-  cuerpofitScheduleTitle: `Body Conditioning Schedule`,
-  cuerpofitScheduleSubtitle: `1 weekly class to transform your body`,
-  cuerpofitScheduleNote: `* 60-minute class`,
-  cuerpofitWhyChooseTitle: `Why choose us for your Body Conditioning?`,
-  cuerpofitWhyChooseSubtitle: `7 reasons that set us apart`,
-  cuerpofitWhyChoose1Title: `Farray Method® Applied`,
-  cuerpofitWhyChoose1Desc: `It's not generic fitness. It's conditioning designed specifically for dance demands, with Yunaisy Farray's exclusive method.`,
   cuerpofitWhyChoose2Title: `Focus on Injury Prevention`,
   cuerpofitWhyChoose2Desc: `Each exercise aims to strengthen the most vulnerable areas for dancers: hips, knees, ankles and back.`,
   cuerpofitWhyChoose3Title: `Small Groups`,
@@ -16603,16 +16366,6 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   fullBodyCardioLevelOpenDesc: `Cuerpo-Fit is open level. Each exercise has intensity variations: you choose yours. Absolute beginners work alongside experienced people, each at their own pace. No pressure, no comparisons.`,
   fullBodyCardioTeachersTitle: `Tu Profesora for Cuerpo-Fit`,
   fullBodyCardioTeachersSubtitle: `Specialist in functional training and cardio dance`,
-  fullBodyCardioTeacher1Specialty: `Cuerpo-Fit, Stretching & Acondicionamiento Físico`,
-  fullBodyCardioTeacher1Bio: `Cris Ag is a specialist in full body training and cardio dance, trained in the Farray Method. Her style combines the intensity of functional fitness with the joy of movement. Her goal: that you leave each class feeling stronger and happier. She also teaches Stretching and Backbending at the academy.`,
-  fullBodyCardioTeachersClosing: `Cris adapts each exercise to your level. It doesn't matter if it's your first class or you've been training for months: you'll always have a challenge suited to you.`,
-  fullBodyCardioScheduleTitle: `Horarios for Cuerpo-Fit`,
-  fullBodyCardioScheduleSubtitle: `1 weekly class to transform your body`,
-  fullBodyCardioWhyChooseTitle: `Why choose us for your Cuerpo-Fit?`,
-  fullBodyCardioWhyChooseSubtitle: `7 reasons that set us apart`,
-  fullBodyCardioWhyChoose1Title: `Farray Method`,
-  fullBodyCardioWhyChoose1Desc: `A proven methodology that combines the best of functional fitness with dance elements. Fast results, zero boredom.`,
-  fullBodyCardioWhyChoose2Title: `For all levels`,
   fullBodyCardioWhyChoose2Desc: `You don't need experience. Each exercise has intensity variations. You choose your level at each moment.`,
   fullBodyCardioWhyChoose3Title: `Small groups`,
   fullBodyCardioWhyChoose3Desc: `Maximum 20 people per class to guarantee personalized attention and individual corrections.`,
@@ -17282,7 +17035,6 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   homev2_interrupt6: `One last thing:\\nWe're not selling you anything.\\nWe're showing you an option.\\nThe decision is yours. It always has been.`,
 
   // Contemporary Dance - Beginner Level
-  contemporaneoLevelPrincipianteTitle: `Lyrical Beginners`,
   contemporaneoLevelPrincipianteDesc: `First contact with contemporary dance. Fluid movement, emotional expression and connection with music. No prior requirements.`,
 
   // Blog Article: Beginner Dance Classes

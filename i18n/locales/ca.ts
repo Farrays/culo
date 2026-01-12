@@ -610,22 +610,8 @@ export const ca = {
 
   dhV3TeachersTitle: 'Coneix les nostres professores de dancehall',
   dhV3TeachersSubtitle: "Expertes en Dancehall amb anys d'experiència",
-  dhV3Teacher1Specialty: "Professora de Dancehall | +5 anys d'Experiència",
-  dhV3Teacher1Bio:
-    "Isabel López és una apassionada del dancehall amb més de 5 anys d'experiència com a professora especialitzada en ball urbà. Entrenada amb mestres jamaicans, la seva energia contagiosa i tècnica professional la converteixen en una de les instructores més estimades de Farray's Center. Les seves classes barregen old school moves (Willie Bounce, Nuh Linga) amb els últims èxits.",
-  dhV3Teacher2Specialty: "Professora de Dancehall i Twerk | +6 anys d'Experiència",
-  dhV3Teacher2Bio:
-    "Sandra Gómez és una ballarina professional amb més de 6 anys d'experiència en dancehall i twerk. El seu estil únic fusiona moviments del Twerk/Bootydance amb l'essència jamaicana. La seva tècnica impecable i metodologia d'ensenyament la converteixen en una de les professores més sol·licitades. Energia, sensualitat i feminitat pura.",
-  dhV3TeachersClosing:
-    'Amb Isabel i Sandra, no només aprens a ballar Dancehall: descobreixes una nova forma de connectar amb el teu cos, la teva confiança i el flow jamaicà.',
-
-  dhV3ScheduleTitle: 'Horaris de les nostres classes de Dancehall',
-  dhV3ScheduleSubtitle: 'Disponibles pràcticament tots els dies de la setmana',
 
   // Dancehall schedule class names (enterprise i18n)
-  dhScheduleClassFemaleBeginner: 'Dancehall Female Principiants',
-  dhScheduleClassFemaleBasic: 'Dancehall Female Bàsic',
-  dhScheduleClassTwerkBeginner: 'Dancehall Twerk Principiants',
   dhScheduleClassTwerkIntermediate: 'Dancehall Twerk Intermedi',
   dhScheduleClassBasic: 'Dancehall Bàsic',
 
@@ -3200,27 +3186,12 @@ export const ca = {
   // Teachers Section
   twerkTeachersTitle: 'Coneix les teves instructores de Twerk',
   twerkTeachersSubtitle: "Expertes en Twerk i Dancehall amb anys d'experiència",
-  twerkTeacher1Specialty: "Professora de Twerk i Dancehall | +5 anys d'Experiència",
-  twerkTeacher1Bio:
-    "Isabel López és una apassionada del twerk i dancehall amb més de 5 anys d'experiència com a professora especialitzada en ball urbà. Entrenada amb mestres jamaicans i especialistes en Twerk, la seva energia contagiosa i tècnica professional la converteixen en una de les instructores més estimades de Farray's Center.",
-  twerkTeacher2Specialty: "Professora de Twerk i Dancehall | +6 anys d'Experiència",
-  twerkTeacher2Bio:
-    "Sandra Gómez és una ballarina professional amb més de 6 anys d'experiència en twerk i dancehall. El seu estil únic fusiona moviments del Twerk/Bootydance amb l'essència jamaicana. La seva tècnica impecable i metodologia d'ensenyament la converteixen en una de les professores més sol·licitades. Energia, sensualitat i feminitat pura.",
-  twerkTeachersClosing:
-    'Amb Isabel i Sandra, no només aprens a ballar Twerk: descobreixes una nova forma de connectar amb el teu cos, la teva confiança i el teu poder.',
-
   // Schedule Section
-  twerkScheduleTitle: 'Horaris de les nostres classes de Twerk',
-  twerkScheduleSubtitle: 'Tres nivells perquè trobis la teva classe perfecta',
-
   // Video Section
-  twerkVideoTitle: 'Vine a descobrir les nostres classes de Twerk',
   twerkVideoDesc:
     "Mira com és una classe a Farray's Center: energia, tècnica i bon rotllo. T'esperem!",
 
   // Why Today Section
-  twerkWhyTodayFullTitle:
-    'Per què avui és el millor moment per començar a ballar Twerk amb nosaltres?',
   twerkWhyToday1:
     'Perquè segueixes esperant "el moment perfecte" però l\'únic perfecte és començar avui.',
   twerkWhyToday2:
@@ -3415,26 +3386,14 @@ A Farray's International Dance Center, l'Afrobeats s'ensenya amb tècnica, respe
   // Teachers
   afroTeachersTitle: "Coneix els nostres professors d'Afrobeats",
   afroTeachersSubtitle: "Experts en Afrodance amb anys d'experiència",
-  afroTeacher1Specialty: '+6 anys ensenyant Afrobeat i Ntcham',
-  afroTeacher1Bio:
-    'Redblueh és un professor i ballarí internacional, natiu de Tanzània i especialista en Ntcham. Les seves arrels, coneixements, energia i alegria contagiant el converteixen en un dels mestres més recomanats de tot Barcelona.',
-  afroTeacher2Specialty: '+5 anys com a expert en Afrobeat i Danses Africanes',
   afroTeacher2Bio:
     "Charlie Breezy, mestre internacional i ballarí cubà. Va néixer en un país on la cultura africana està totalment arrelada. Format a l'ENA (Escola Nacional d'Art de Cuba), Charlie és un ballarí polifacètic que, a més de dominar diferents estils de dansa africana, destaca en contemporani, ballet i un ampli ventall de danses urbanes.",
   afroTeachersClosing:
     "Els nostres professors no només ensenyen passos: transmeten cultura, història i passió per l'Afrodance.",
 
   // Schedule
-  afroScheduleTitle: "Horaris de les nostres classes d'Afrobeats",
-  afroScheduleSubtitle: 'Classes disponibles diverses vegades per setmana',
-
   // Video
-  afroVideoTitle: 'Mira com ballem Afrobeats i Afrodance',
-  afroVideoDesc:
-    "Descobreix l'energia i el ritme de les nostres classes d'Afrobeats i Afrodance a Barcelona",
-
   // Why Today
-  afroWhyTodayFullTitle: 'Per què avui és el millor moment per començar a ballar Afrobeat?',
   afroWhyToday1:
     'Perquè cada dia que passa és un dia menys gaudint dels beneficis del ball africà.',
   afroWhyToday2:
@@ -3696,25 +3655,12 @@ Aquesta fusió incorpora:
   // Teachers Section
   hhrTeachersTitle: 'Coneix el teu instructor de Hip Hop Reggaeton',
   hhrTeachersSubtitle: "Expert en fusió urbana amb anys d'experiència",
-  hhrTeacher1Specialty: 'Hip Hop Reggaeton, Afrobeats & Danses Urbanes',
-  hhrTeacher1Bio:
-    "Charlie Breezy és un mestre internacional i ballarí cubà format a l'ENA (Escola Nacional d'Art de Cuba). Especialista en Hip Hop Reggaeton, domina la fusió d'estils urbans amb tècnica impecable. La seva energia, creativitat i capacitat per transmetre el \"flow\" el converteixen en un dels professors més recomanats de Barcelona.",
-  hhrTeachersClosing:
-    'Amb Charlie Breezy no només aprens a ballar Hip Hop Reggaeton: descobreixes el teu propi estil i connectes amb la teva creativitat.',
 
   // Schedule Section
-  hhrScheduleTitle: 'Horari de classes de Hip Hop Reggaeton',
-  hhrScheduleSubtitle: 'Diversos nivells perquè trobis la teva classe perfecta',
-
   // Video Section
-  hhrVideoTitle: 'Vine a descobrir les nostres classes de Hip Hop Reggaeton',
   hhrVideoDesc: "Mira com és una classe a Farray's Center: fusió, flow i bon rotllo. T'esperem!",
 
   // Why Today Section
-  hhrWhyTodayFullTitle: 'Per què avui és el millor moment per començar a ballar Hip Hop Reggaeton?',
-  hhrWhyToday1:
-    'Perquè sempre esperes "el moment perfecte" però l\'únic perfecte és començar avui.',
-  hhrWhyToday2: 'Perquè estàs a UNA classe de canviar la teva rutina i sentir-te millor que ahir.',
   hhrWhyToday3: 'Perquè no es tracta de ballar bé, sinó de sentir-se bé ballant.',
   hhrWhyTodayClosing1: "A Farray's no venem classes. Creem experiències.",
   hhrWhyTodayClosing2:
@@ -3914,23 +3860,12 @@ Aquesta fusió incorpora:
   // Teachers Section
   rcbTeachersTitle: 'Coneix els teus mestres de Reparto',
   rcbTeachersSubtitle: "Cubans de naixement, formats a l'ENA i referents a Barcelona",
-  rcbTeacher1Name: 'Charlie Breezy',
-  rcbTeacher1Specialty: 'Reggaeton Cubà, Reparto & Danses Urbanes',
   rcbTeacher1Bio:
     "Charlie Breezy és un mestre internacional i ballarí cubà format a l'ENA (Escola Nacional d'Art de Cuba). Especialista en Reggaeton Cubà i Reparto, domina la improvisació i la disociació corporal amb tècnica impecable. La seva energia, creativitat i capacitat per transmetre el sabor cubà el converteixen en un dels professors més recomanats de Barcelona.",
-  rcbTeacher2Name: 'Alejandro Miñoso',
-  rcbTeacher2Specialty: 'Reggaeton Cubà, Reparto & Improvisació',
   rcbTeacher2Bio:
     "Alejandro Miñoso és mestre internacional cubà format a l'ENA (Escola Nacional d'Art de Cuba). Especialista en Reparto i tècnica d'improvisació, aporta una metodologia única que connecta el ritme cubà amb l'expressió corporal. La seva passió per transmetre la cultura del reggaeton autèntic el fa un referent a Barcelona.",
-  rcbTeachersClosing:
-    'Amb Charlie i Alejandro no només aprens a ballar Reparto: descobreixes el sabor autèntic que només els cubans poden transmetre.',
-
   // Schedule Section
-  rcbScheduleTitle: 'Horari de classes de Reggaeton Cubà',
-  rcbScheduleSubtitle: 'Troba el teu nivell i horari perfecte',
-
   // Video Section
-  rcbVideoTitle: 'Descobreix les nostres classes de Reggaeton Cubà',
   rcbVideoDesc:
     "Mira com es viu una classe a Farray's Center: sabrosura, improvisació i ritme cubà. T'esperem!",
 
@@ -4379,27 +4314,13 @@ Al llarg de més d'una dècada, Femmology ha transformat la vida de milers de do
   // Teachers Section
   femTeachersTitle: 'Coneix a Yunaisy Farray',
   femTeachersSubtitle: 'Creadora de Femmology i una de les mestres més reconegudes del món',
-  femTeacher1Specialty: 'Creadora del Mètode Farray® | Street Dance 2 | CID-UNESCO',
-  femTeacher1Bio:
-    "Yunaisy Farray és ballarina professional formada a l'Escola Nacional d'Art de Cuba, actriu de Street Dance 2, artista de Got Talent i mestra reconeguda pel CID-UNESCO. Considerada una de les majors referents de la dansa femenina cubana, ha creat el Mètode Farray® exclusiu i fundat Farray's Center a Barcelona. Figures com Albert Torres i Eddie Torres l'anomenen \"la nova Celia Cruz de la salsa\".",
-  femTeachersClosing:
-    "Amb Yunaisy no només aprendràs a ballar amb talons: descobriràs tot el teu potencial i t'estimaràs cada dia més.",
 
   // Schedule Section
-  femScheduleTitle: 'Horari de classes de Femmology',
-  femScheduleSubtitle: 'Classes directament amb Yunaisy Farray',
-
   // Video Section
-  femVideoTitle: 'Descobreix Femmology en acció',
   femVideoDesc:
     "Mira com ballem amb talons a Farray's Center: tècnica, sensualitat i el Mètode Farray® amb Yunaisy en persona.",
 
   // Why Today Section
-  femWhyTodayFullTitle: 'Per què fer-te sòcia de Femmology avui?',
-  femWhyToday1:
-    'Perquè portes massa temps mirant com ballen altres mentre dius "m\'agradaria saber fer això".',
-  femWhyToday2:
-    'Perquè estàs a UNA classe de descobrir una versió de tu que es mou amb confiança i se sent poderosa.',
   femWhyToday3:
     "Perquè a més d'aprendre a ballar com una professional, treballaràs la teva autoestima i confiança de manera natural.",
   femWhyTodayClosing1: "Femmology by Yunaisy Farray: perquè t'estimis cada dia més, preciosa dona.",
@@ -4672,27 +4593,12 @@ Al llarg de més d'una dècada, Femmology ha transformat la vida de milers de do
   // Teachers Section
   sexystyleTeachersTitle: 'Coneix la teva instructora de Sexy Style',
   sexystyleTeachersSubtitle: 'Especialista en expressió corporal i sensualitat',
-  sexystyleTeacher1Specialty: 'Sexy Style & Expressió Corporal',
-  sexystyleTeacher1Bio:
-    "Yasmina Fernández és una de les professores més carismàtiques de l'acadèmia. Porta més de 8 anys formant alumnes en danses urbanes i sensuals. El seu estil combina tècnica impecable amb una actitud empoderada que contagia.",
-  sexystyleTeachersClosing:
-    "Amb Yasmina no només aprens a ballar Sexy Style: descobreixes una nova forma d'habitar el teu cos.",
-
   // Schedule Section
-  sexystyleScheduleTitle: 'Horari de classes de Sexy Style',
-  sexystyleScheduleSubtitle: 'Diversos nivells perquè trobis la teva classe perfecta',
-
   // Video Section
-  sexystyleVideoTitle: 'Descobreix les nostres classes de Sexy Style',
   sexystyleVideoDesc:
     "Mira com és una classe a Farray's Center: energia, tècnica i molt empoderament.",
 
   // Why Today Section
-  sexystyleWhyTodayFullTitle: 'Per què avui és el millor moment per començar a ballar Sexy Style?',
-  sexystyleWhyToday1:
-    'Perquè cada dia que esperes és un dia menys sentint-te a gust en el teu propi cos.',
-  sexystyleWhyToday2:
-    'Perquè el teu cos ja està preparat, encara que la teva ment et digui que no.',
   sexystyleWhyToday3: 'Perquè mereixes sentir-te sexy, poderosa i lliure. No "algun dia". Avui.',
   sexystyleWhyTodayClosing1: "A Farray's no venem classes. Creem Experiències.",
   sexystyleWhyTodayClosing2:
@@ -4939,27 +4845,12 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colòmbia), J Balv
   // Teachers Section
   sxrTeachersTitle: 'Coneix la teva instructora de Sexy Reggaeton',
   sxrTeachersSubtitle: "Experta en danses urbanes sensuals amb més de 8 anys d'experiència",
-  sxrTeacher1Specialty: 'Sexy Reggaeton & Sexy Style',
-  sxrTeacher1Bio:
-    "Yasmina Fernández és una de les professores més carismàtiques de l'acadèmia. Porta més de 8 anys formant alumnes en danses urbanes i sensuals. El seu estil combina tècnica impecable amb una actitud empoderada que contagia.",
-  sxrTeachersClosing:
-    'Amb Yasmina no només aprens a ballar Sexy Reggaeton: descobreixes una forma de connectar amb la teva feminitat i el teu poder sense demanar permís.',
-
   // Schedule Section
-  sxrScheduleTitle: 'Horari de classes de Sexy Reggaeton',
-  sxrScheduleSubtitle: 'Diversos nivells perquè trobis la teva classe perfecta',
-
   // Video Section
-  sxrVideoTitle: 'Vine a descobrir les nostres classes de Sexy Reggaeton',
   sxrVideoDesc:
     "Mira com és una classe a Farray's Center: energia, tècnica, sensualitat i bon rotllo. T'esperem!",
 
   // Why Today Section
-  sxrWhyTodayFullTitle: 'Per què avui és el millor moment per començar a ballar Sexy Reggaeton?',
-  sxrWhyToday1:
-    'Perquè portes massa temps sentint-te incòmoda amb el teu cos i esperant el "moment perfecte" que mai arriba.',
-  sxrWhyToday2:
-    'Perquè estàs a UNA classe de descobrir una versió de tu que mou els malucs sense complexos i se sent poderosa.',
   sxrWhyToday3:
     "Perquè no es tracta de ballar perfecte, sinó de sentir-se sexy ballant. I això s'entrena.",
   sxrWhyTodayClosing1: 'Creem Experiències.',
@@ -5199,27 +5090,14 @@ Farray's International Dance Center està valorat prop del **5/5 a Google**, amb
   // Teachers Section
   modernjazzTeachersTitle: 'Coneix el teu professor de Modern Jazz',
   modernjazzTeachersSubtitle: 'Tècnica clàssica, esperit contemporani',
-  modernjazzTeacher1Specialty: 'Modern Jazz, Afro Jazz, Contemporani & Ballet',
   modernjazzTeacher1Bio:
     "Alejandro Miñoso és mestre internacional cubà format a la prestigiosa ENA (Escola Nacional d'Art de Cuba). Ex solista de la companyia Carlos Acosta, combina l'exigència tècnica del ballet clàssic amb la llibertat expressiva del jazz modern, creant classes dinàmiques on cada alumne progressa al seu ritme.",
-  modernjazzTeachersClosing:
-    "Amb Alejandro aprendràs tècnica sòlida mentre descobreixes la teva pròpia forma d'expressar-te.",
-
   // Schedule Section
-  modernjazzScheduleTitle: 'Horari de les nostres classes de Modern Jazz',
-  modernjazzScheduleSubtitle: 'Classes amb Alejandro Miñoso',
-
   // Video Section
-  modernjazzVideoTitle: 'Descobreix les nostres classes de Modern Jazz',
   modernjazzVideoDesc:
     "Mira com és una classe a Farray's Center: tècnica, expressió i passió pel ball.",
 
   // Why Today Section
-  modernjazzWhyTodayFullTitle: 'Per què avui és el millor moment per començar Modern Jazz?',
-  modernjazzWhyToday1:
-    'Perquè la tècnica es construeix amb temps, i com abans comencis, abans veuràs resultats.',
-  modernjazzWhyToday2:
-    'Perquè el teu cos necessita alguna cosa més que oficina i sofà: necessita estirar-se, girar, saltar i respirar música.',
   modernjazzWhyToday3:
     "Perquè mereixes una activitat que t'exigeixi, et buidi la ment i et faci sentir més fort i més elegant.",
   modernjazzWhyTodayClosing1: "A Farray's no venem classes. Creem Experiències.",
@@ -5568,25 +5446,13 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
   // ===== Teachers Section =====
   balletTeachersTitle: 'Coneix els teus professors de Ballet',
   balletTeachersSubtitle: 'Escola Cubana, experiència internacional',
-  balletTeacher1Specialty: 'Ballet Clàssic i Contemporani',
   balletTeacher1Bio:
     "Daniel Sene és especialista en ballet clàssic format a l'Escola Nacional de Ballet de Cuba, la mateixa on es va formar Carlos Acosta. La seva metodologia combina el rigor tècnic de l'escola clàssica amb un enfocament accessible per a adults principiants i avançats.",
-  balletTeacher2Specialty: 'Ballet & Modern Jazz & Contemporani',
   balletTeacher2Bio:
     "Alejandro Miñoso, mestre cubà format a l'ENA (Escola Nacional d'Art de Cuba), ex solista de la prestigiosa companyia de Carlos Acosta. La seva tècnica impecable i la seva capacitat pedagògica fan que cada alumne senti el progrés des de la primera classe.",
-  balletTeachersClosing:
-    'Dos mestres, dos enfocaments complementaris. Daniel per a intermedi i avançat, Alejandro per a principiants. La combinació perfecta per a la teva formació en ballet.',
-
   // ===== Schedule Section =====
-  balletScheduleTitle: 'Horari de les nostres classes de Ballet',
-  balletScheduleSubtitle: 'Tria el teu nivell i comença aquesta setmana',
-
   // ===== Video Section =====
-  balletVideoTitle: 'Descobreix les nostres classes de Ballet',
-  balletVideoDesc: "Mira com és una classe real de ballet a Farray's Center",
-
   // ===== Why Today Section =====
-  balletWhyTodayFullTitle: 'Per què avui és el millor moment per començar Ballet?',
   balletWhyToday1:
     'Perquè segueixes esperant "el moment perfecte" per apuntar-te a ballet… però l\'únic perfecte és començar avui.',
   balletWhyToday2:
@@ -6032,21 +5898,9 @@ Ballarins de tot el món viatgen a Barcelona específicament per formar-se en Af
   afrojazzLogosIntlFestivalsText: 'i als millors festivals de dansa de tot el món',
   afrojazzTeachersTitle: "Els teus professors d'Afro Jazz",
   afrojazzTeachersSubtitle: "Formació d'elit amb l'equip del Mètode Farray",
-  afrojazzTeacher1Specialty: 'Afro Jazz Intermedi/Avançat - Creadora del Mètode Farray',
   afrojazzTeacher1Bio:
     "Yunaisy Farray és mestra formada a l'Escola Nacional d'Art de Cuba (ENA), membre del Consell Internacional de la Dansa de la UNESCO i actriu de Street Dance 2. Creadora de l'Afro Jazz com a disciplina única, imparteix les classes de nivell intermedi i avançat els dijous de 19h a 20:30h.",
-  afrojazzTeacher2Specialty: 'Afro Jazz Bàsic - Format en el Mètode Farray',
-  afrojazzTeacher2Bio:
-    'Alejandro Miñoso és ballarí professional i professor format directament per Yunaisy Farray en el Mètode Farray. El seu domini de la tècnica contemporània i afro li permet guiar els alumnes de nivell bàsic els dimecres de 12h a 13h amb la mateixa excel·lència metodològica.',
-  afrojazzTeachersClosing:
-    'Amb el nostre equip no només aprens coreografies: desenvolupes les eines per crear el teu propi moviment amb fonament tècnic sòlid.',
-  afrojazzScheduleTitle: "Horari de classes d'Afro Jazz",
-  afrojazzScheduleSubtitle: 'Classes per a tots els nivells, des de principiants fins a avançats',
-
   // Level Cards Section
-  afrojazzLevelsTitle: "Els nostres Nivells d'Afro Jazz",
-  afrojazzLevelsSubtitle: "Tria el que millor s'adapti a tu",
-  afrojazzLevelBasicTitle: 'Afro Jazz Bàsic',
   afrojazzLevelBasicDesc:
     "Per als qui s'inicien en aquesta disciplina o tenen poca experiència en dansa. Aprèn els fonaments de la fusió Afro + Jazz: coordinació bàsica, ritmes africans, postura i primers passos del vocabulari Afro Jazz. Sense requisits previs.",
   afrojazzLevelIntAdvTitle: 'Afro Jazz Intermedi/Avançat',
@@ -6375,19 +6229,12 @@ Treballa integralment: **flexibilitat, força funcional, coordinació, propiocep
   contemporaneoTeachersTitle: 'Els teus Mestres de Dansa Contemporània',
   contemporaneoTeachersSubtitle:
     "Ballarins professionals formats a l'Escola Cubana amb carrera internacional",
-  contemporaneoTeacher1Specialty: 'Contemporani Líric',
   contemporaneoTeacher1Bio:
     "Daniel Sené és ballarí professional amb formació de carrera a l'Escola Cubana. La seva metodologia combina la tècnica rigorosa amb l'expressió lírica, guiant-te perquè desenvolupis el teu propi llenguatge corporal mentre domines els fonaments de la dansa contemporània.",
-  contemporaneoTeacher2Specialty: 'Contemporani Terra & Flow',
-  contemporaneoTeacher2Bio:
-    'Alejandro Miñoso és ballarí professional format a Cuba, especialitzat en tècniques de terra i floorwork. El seu enfocament connecta el moviment amb la respiració, ensenyant-te a fluir amb el teu cos i explorar noves possibilitats de moviment.',
   contemporaneoTeachersClosing:
     "Amb Daniel i Alejandro no només aprens tècnica contemporània: descobreixes una nova forma d'expressar-te, connectar amb el teu cos i desenvolupar el teu propi llenguatge de moviment.",
 
   // Schedule Section
-  contemporaneoScheduleTitle: 'Horari de classes de Dansa Contemporània',
-  contemporaneoScheduleSubtitle: 'Dos estils, múltiples horaris: troba la teva classe perfecta',
-
   // Level Cards Section
   contemporaneoLevelPrincipiantTitle: 'Líric Principiants',
   contemporaneoLevelPrincipiantDesc:
@@ -6753,24 +6600,12 @@ L'Afro Contemporani impartit a **Farray's International Dance Center** forma par
   // Teachers Section
   afrocontemporaneoTeachersTitle: "Els teus mestres d'Afro Contemporani",
   afrocontemporaneoTeachersSubtitle: "Formació directa de l'Escola Nacional d'Art de Cuba",
-  afrocontemporaneoTeacher1Specialty: 'Tècnica Afro Cubana - Mestra CID-UNESCO',
   afrocontemporaneoTeacher1Bio:
     "Yunaisy Farray es va formar a la prestigiosa Escola Nacional d'Art de Cuba (ENA), on va aprendre la tècnica original de l'Afro Contemporani. Mestra reconeguda pel CID-UNESCO (Consell Internacional de la Dansa de París), combina el rigor tècnic de l'escola cubana amb la seva experiència internacional a Street Dance 2 i companyies de dansa contemporània. La seva metodologia manté l'essència de l'ENA adaptada per a ballarins de tots els nivells.",
-  afrocontemporaneoTeacher2Specialty: 'Tècnica Afro Cubana - Instructor Certificat',
   afrocontemporaneoTeacher2Bio:
     "Charlie Breezy és instructor certificat d'Afro Contemporani format en la metodologia de l'Escola Nacional d'Art de Cuba. Especialitzat en nivell bàsic, el seu enfocament pedagògic permet que ballarins de qualsevol background accedeixin a la tècnica afro cubana de forma progressiva i estructurada.",
-  afrocontemporaneoTeacher3Specialty: 'Tècnica Afro Cubana - Instructor Certificat',
-  afrocontemporaneoTeacher3Bio:
-    "Alejandro Miñoso és instructor certificat d'Afro Contemporani amb formació en la metodologia ENA. La seva experiència en dansa cubana i la seva capacitat pedagògica permeten transmetre l'essència de l'Afro Contemporani mantenint el rigor tècnic característic d'aquesta disciplina.",
-  afrocontemporaneoTeachersClosing:
-    "Amb els nostres mestres cubans no només aprens Afro Contemporani: accedeixes a la metodologia original de l'Escola Nacional d'Art de Cuba.",
-
   // Schedule Section
-  afrocontemporaneoScheduleTitle: "Horari de les nostres classes d'Afro Contemporani",
-  afrocontemporaneoScheduleSubtitle: 'Classes de perfeccionament tècnic per a tots els nivells',
-
   // Video Section
-  afrocontemporaneoVideoTitle: "Descobreix les nostres classes d'Afro Contemporani",
   afrocontemporaneoVideoDesc:
     "Mira en aquest vídeo com són les classes d'Afro Contemporani a Farray's International Dance Center de Barcelona. No t'ho pensis més i vine a provar una classe.",
 
@@ -7009,7 +6844,6 @@ L'Afro Contemporani impartit a **Farray's International Dance Center** forma par
   hiphopTeachersTitle: 'El teu professor de Hip Hop',
   hiphopTeachersSubtitle: 'Aprèn dels millors professionals',
   hiphopTeacher1Name: 'Marcos Martínez',
-  hiphopTeacher1Specialty: 'Jutge de competicions • Mestre internacional',
   hiphopTeacher1Bio:
     "Marcos Martínez és un dels referents del Hip Hop a Espanya. Com a jutge de competicions internacionals i mestre reconegut, porta més de 15 anys formant balladors i transmetent l'essència autèntica del Hip Hop. La seva metodologia combina tècnica rigorosa amb l'esperit de la cultura urbana.",
 
@@ -7162,13 +6996,6 @@ L'Afro Contemporani impartit a **Farray's International Dance Center** forma par
     'Classes obertes a tots els nivells on treballem groove, fonaments i coreografies. Marcos Martínez guia des dels passos base fins a combinacions avançades, adaptant-se a cada alumne.',
 
   // Prepare Section
-  hiphopPrepareTitle: 'Prepara la teva primera classe de Hip Hop',
-  hiphopPrepareSubtitle: 'Tot el que necessites saber abans de venir',
-  hiphopPrepareWhatToBring: 'Què portar:',
-  hiphopPrepareItem1: 'Roba còmoda i àmplia (joggers, pantalons amples)',
-  hiphopPrepareItem2: 'Samarreta o sudadera',
-  hiphopPrepareItem3: 'Sabatilles esportives de sola plana (molt important)',
-  hiphopPrepareItem4: "Ampolla d'aigua",
   hiphopPrepareItem5: 'Tovallola petita',
   hiphopPrepareBefore: "Abans d'arribar:",
   hiphopPrepareBeforeItem1: 'Arriba 10 minuts abans per canviar-te',
@@ -8395,8 +8222,6 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   contemporaneoConfidenceGuaranteed: 'Llenguatge propi garantit',
   contemporaneoCaloriesStat: 'Calories Cremades',
   contemporaneoDanceStat: 'Dansa',
-  contemporaneoLevelsTitle: 'Quin tipus de Contemporani va amb tu?',
-  contemporaneoLevelsSubtitle: 'Quatre modalitats per a diferents objectius i sensibilitats',
   danceClassesHub_cta_member: 'Fes-te Soci Ara',
   danceClassesHub_cta_trial: 'Reserva la Teva Classe de Prova',
 
@@ -10108,23 +9933,12 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   // === TEACHERS SECTION ===
   stretchingTeachersTitle: "Els teus Professors d'Stretching",
   stretchingTeachersSubtitle: 'Especialistes en flexibilitat amb el Mètode Farray',
-  stretchingTeacher1Specialty: 'Stretching & Backbending',
   stretchingTeacher1Bio:
     "Cris Ag és especialista en flexibilitat i backbending, formada en el Mètode Farray. El seu enfocament pacient i tècnic ha ajudat centenars d'alumnes a superar els seus límits de forma segura. Experta en elongació de cames i esquena, prevenció de lesions i enfortiment de core.",
-  stretchingTeacher2Specialty: 'Stretching & Ballet Clàssic',
   stretchingTeacher2Bio:
     "Daniel Sené és ballarí professional format a l'Escola Nacional de Ballet de Cuba. El seu coneixement de la tècnica clàssica aporta una dimensió única a les classes d'stretching, combinant rigor tècnic amb un enfocament accessible per a tots els nivells.",
-  stretchingTeachersClosing:
-    'Dos professors, dos enfocaments complementaris. Cris per al treball profund de backbending i Legs, Daniel per a la tècnica de base. La combinació perfecta per a la teva flexibilitat.',
-
   // === SCHEDULE SECTION ===
-  stretchingScheduleTitle: "Horaris de Classes d'Stretching",
-  stretchingScheduleSubtitle: '5 classes setmanals per a tots els nivells',
-  stretchingScheduleNote: '* Les classes de Backbending & Legs duren 1h30',
-
   // === WHY CHOOSE US SECTION ===
-  stretchingWhyChooseTitle: 'Per què triar-nos per al teu Stretching?',
-  stretchingWhyChooseSubtitle: '7 raons que ens diferencien',
   stretchingWhyChoose1Title: 'Mètode Farray',
   stretchingWhyChoose1Desc:
     'Una metodologia progressiva que respecta el teu cos. No forcem, guiem. Cada alumne avança al seu ritme.',
@@ -10427,23 +10241,10 @@ Estudis científics confirmen que l'stretching regular de 3+ vegades per setmana
   // === TEACHERS SECTION ===
   bumbumTeachersTitle: 'La teva Professora de Bum Bum Glutis',
   bumbumTeachersSubtitle: 'Especialista en tonificació amb el Mètode Farray',
-  bumbumTeacher1Specialty: 'Tonificació i Glutis',
   bumbumTeacher1Bio:
     "Cris Ag és especialista en tonificació corporal i exercicis de glutis amb el Mètode Farray. El seu enfocament combina tècniques de fitness amb elements de dansa per fer l'entrenament efectiu i divertit. Experta en hip thrust, esquats i tècniques d'activació glútia.",
-  bumbumTeachersClosing:
-    'Amb Cris aconseguiràs resultats reals perquè sap exactament com activar i treballar cada múscul del gluti de forma segura i efectiva.',
-
   // === SCHEDULE SECTION ===
-  bumbumScheduleTitle: 'Horari de Bum Bum Glutis Meravellosos',
-  bumbumScheduleSubtitle: '1 classe setmanal per transformar els teus glutis',
-  bumbumScheduleNote: '* Classe de 60 minuts',
-
   // === WHY CHOOSE US SECTION ===
-  bumbumWhyChooseTitle: 'Per què triar-nos per als teus exercicis de glutis?',
-  bumbumWhyChooseSubtitle: '7 raons que ens diferencien',
-  bumbumWhyChoose1Title: 'Mètode Farray Aplicat',
-  bumbumWhyChoose1Desc:
-    'La nostra metodologia exclusiva combina exercicis de glutis amb tècniques de dansa per a resultats més efectius i sostenibles.',
   bumbumWhyChoose2Title: 'Hip Thrust i Tècniques Avançades',
   bumbumWhyChoose2Desc:
     'Treballem els exercicis científicament provats com a més efectius per al desenvolupament del gluti major.',
@@ -16398,16 +16199,6 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   cuerpofitLevelOpenDesc: `Classe adaptable a tots els nivells. Cada exercici té variacions des de principiant fins a avançat. Cris et guia segons el teu nivell actual, assegurant que treballis a la teva zona de desenvolupament òptim sense risc de lesió.`,
   cuerpofitTeachersTitle: `La teva Professora de Body Conditioning`,
   cuerpofitTeachersSubtitle: `Especialista en condicionament per a ballarins`,
-  cuerpofitTeacher1Specialty: `Body Conditioning & Preparació Física`,
-  cuerpofitTeacher1Bio: `Cris Ag és especialista en condicionament físic per a ballarins, formada en el Mètode Farray. El seu enfocament combina coneixement anatòmic amb experiència pràctica en dansa, creant programes d'entrenament que milloren el rendiment i prevenen lesions. Les seves classes integren força funcional, flexibilitat activa i mobilitat articular específica per a ballarins.`,
-  cuerpofitTeachersClosing: `A Farray's Center, el condicionament físic no és un complement: és la base de la teva evolució com a ballarí.`,
-  cuerpofitScheduleTitle: `Horari de Body Conditioning`,
-  cuerpofitScheduleSubtitle: `1 classe setmanal per transformar el teu cos`,
-  cuerpofitScheduleNote: `* Classe de 60 minuts`,
-  cuerpofitWhyChooseTitle: `Per què triar-nos per al teu Body Conditioning?`,
-  cuerpofitWhyChooseSubtitle: `7 raons que ens diferencien`,
-  cuerpofitWhyChoose1Title: `Mètode Farray Aplicat`,
-  cuerpofitWhyChoose1Desc: `No és fitness genèric. És condicionament dissenyat específicament per a les demandes de la dansa, amb el mètode exclusiu de Yunaisy Farray.`,
   cuerpofitWhyChoose2Title: `Enfocament en Prevenció de Lesions`,
   cuerpofitWhyChoose2Desc: `Cada exercici té com a objectiu enfortir les àrees més vulnerables del ballarí: malucs, genolls, turmells i esquena.`,
   cuerpofitWhyChoose3Title: `Grups Reduïts`,
@@ -16810,16 +16601,6 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   fullBodyCardioLevelOpenDesc: `Cuerpo-Fit és nivell obert. Cada exercici té variants d'intensitat: tu tries la teva. Principiants absolutos trabajan al lado de personas amb experiència, cada uno a su ritmo. Sense pressió, sense comparacions.`,
   fullBodyCardioTeachersTitle: `La teva Professora de Cuerpo-Fit`,
   fullBodyCardioTeachersSubtitle: `Especialista en entrenament funcional i cardio dance`,
-  fullBodyCardioTeacher1Specialty: `Cuerpo-Fit, Stretching & Acondicionamiento Físico`,
-  fullBodyCardioTeacher1Bio: `Cris Ag és especialista en entrenament full body i cardio dance, formada en el Mètode Farray. El seu estil combina la intensitat del fitness funcional amb l'alegria del moviment. El seu objectiu: que sortis de cada classe sentint-te més fort i més feliç. Imparteix també Stretching i Backbending a l'acadèmia.`,
-  fullBodyCardioTeachersClosing: `Cris adapta cada exercici al teu nivell. No importa si és la teva primera classe o portes mesos entrenant: sempre tindràs un repte a la teva mida.`,
-  fullBodyCardioScheduleTitle: `Horaris de Cuerpo-Fit`,
-  fullBodyCardioScheduleSubtitle: `1 classe setmanal per transformar el teu cos`,
-  fullBodyCardioWhyChooseTitle: `Per què triar-nos per al teu Cuerpo-Fit?`,
-  fullBodyCardioWhyChooseSubtitle: `7 raons que ens diferencien`,
-  fullBodyCardioWhyChoose1Title: `Mètode Farray`,
-  fullBodyCardioWhyChoose1Desc: `Una metodologia provada que combina el millor del fitness funcional amb elements de dansa. Resultats ràpids, zero avorriment.`,
-  fullBodyCardioWhyChoose2Title: `Per a tots els nivells`,
   fullBodyCardioWhyChoose2Desc: `No necessites experiència. Cada exercici té variants d'intensitat. Tu tries el teu nivell a cada moment.`,
   fullBodyCardioWhyChoose3Title: `Grups reduïts`,
   fullBodyCardioWhyChoose3Desc: `Màxim 20 persones per classe per garantir atenció personalitzada i correccions individuals.`,
@@ -17489,7 +17270,6 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   homev2_interrupt6: `Última cosa:\\nNo te estamos vendiendo nada.\\nTe estamos mostrando una opción.\\nLa decisión es tuya. Siempre lo ha sido.`,
 
   // Dansa Contemporània - Nivell Principiant
-  contemporaneoLevelPrincipianteTitle: `Líric Principiants`,
   contemporaneoLevelPrincipianteDesc: `Primera presa de contacte amb la dansa contemporània. Moviment fluid, expressió emocional i connexió amb la música. Sense requisits previs.`,
 
   // Article de Blog: Classes per a Principiants
