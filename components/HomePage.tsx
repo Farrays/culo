@@ -13,6 +13,7 @@ import FinalCTA from './FinalCTA';
 const Services = lazy(() => import('./Services'));
 const Teachers = lazy(() => import('./Teachers'));
 const Testimonials = lazy(() => import('./Testimonials'));
+const ReviewsSection = lazy(() => import('./reviews/ReviewsSection'));
 const FAQSection = lazy(() => import('./FAQSection'));
 const HowToGetHere = lazy(() => import('./HowToGetHere'));
 const CalendarWidget = lazy(() => import('./CalendarWidget'));
@@ -61,6 +62,13 @@ const HomePage: React.FC = () => {
         <Teachers />
         <CalendarWidget />
         <Testimonials />
+        <ReviewsSection
+          category="general"
+          limit={6}
+          showGoogleBadge={true}
+          layout="grid"
+          showCategory={true}
+        />
         <FAQSection title={t('faqTitle')} faqs={homeFaqs} pageUrl={`${baseUrl}/${locale}`} />
         <FinalCTA />
         <HowToGetHere />

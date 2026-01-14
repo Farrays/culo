@@ -119,6 +119,14 @@ export const REGGAETON_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'rcbCulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'urbanas',
+    limit: 4,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches: 'Reggaeton Cubano, Reparto, Cubatón, disociación corporal, improvisación',

@@ -136,6 +136,14 @@ export const BACHATA_PAGE_CONFIG: FullDanceClassConfig = {
     highlightedStyle: 'bachata', // Destacar bachata en la tabla comparativa
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'bachata',
+    limit: 4,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches:

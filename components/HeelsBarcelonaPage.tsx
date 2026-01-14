@@ -11,6 +11,7 @@ import Icon, { type IconName } from './Icon';
 import type { ValuePillar } from '../types';
 import { SUPPORTED_LOCALES } from '../types';
 import TestimonialsSection from './TestimonialsSection';
+import { ReviewsSection } from './reviews';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 import { CheckIcon } from '../lib/icons';
 import LazyImage from './LazyImage';
@@ -775,6 +776,9 @@ const HeelsBarcelonaPage: React.FC = () => {
           titleKey="heelsBarcelona_testimonials_title"
           testimonials={heelsTestimonials}
         />
+
+        {/* Google Reviews Section */}
+        <ReviewsSection category="heels-femmology" limit={4} showGoogleBadge={true} layout="grid" />
 
         {/* FAQ Section */}
         <FAQSection

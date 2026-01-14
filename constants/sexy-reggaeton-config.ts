@@ -122,6 +122,14 @@ export const SEXY_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'sxrCulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'urbanas',
+    limit: 4,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches: 'Sexy Reggaeton, perreo, body roll, sensualidad, disociación corporal',

@@ -22,6 +22,7 @@ import CulturalHistorySection from '../CulturalHistorySection';
 import ScheduleSection from '../ScheduleSection';
 import FAQSection from '../FAQSection';
 import TestimonialsSection from '../TestimonialsSection';
+import { ReviewsSection } from '../reviews';
 import LevelCardsSection, { type LevelConfig } from '../shared/LevelCardsSection';
 import PrepareClassSection, { type PrepareConfig } from '../shared/PrepareClassSection';
 import WhyUsComparisonSection, {
@@ -286,6 +287,20 @@ export interface FullDanceClassConfig {
   whyUsComparison?: WhyUsComparisonConfig;
   nearbySection?: NearbyAreasConfig;
   testimonialsSection?: { enabled: boolean; position?: 'default' | 'after-why-choose' };
+  googleReviewsSection?: {
+    enabled: boolean;
+    category?:
+      | 'salsa-cubana'
+      | 'bachata'
+      | 'heels-femmology'
+      | 'urbanas'
+      | 'contemporaneo'
+      | 'afro'
+      | 'fitness'
+      | 'general';
+    limit?: number;
+    showGoogleBadge?: boolean;
+  };
   faqSection?: { enabled: boolean };
 
   // === LATIN DANCE COMPARISON TABLE (for Latin styles like Salsa, Bachata, etc.) ===
@@ -1827,6 +1842,17 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
               titleKey="testimonialsNotRequested"
             />
           )}
+
+        {/* ===== 10b. GOOGLE REVIEWS SECTION (real Google reviews) ===== */}
+        {config.googleReviewsSection?.enabled && (
+          <ReviewsSection
+            category={config.googleReviewsSection.category}
+            limit={config.googleReviewsSection.limit || 4}
+            showGoogleBadge={config.googleReviewsSection.showGoogleBadge ?? true}
+            layout="grid"
+            showCategory={false}
+          />
+        )}
 
         {/* ===== 11. CULTURAL HISTORY SECTION (SEO content) ===== */}
         {config.culturalHistory?.enabled && (

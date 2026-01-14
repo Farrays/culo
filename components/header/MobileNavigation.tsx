@@ -579,15 +579,10 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
 
         {/* Bottom Section */}
         <div className="mt-auto pt-4 space-y-3">
-          {/* Language Selector */}
-          <div className="bg-white/20 border border-primary-accent rounded-xl overflow-hidden">
-            <div className="flex items-center justify-center gap-2 px-4 py-2 bg-primary-accent">
-              <GlobeIcon className="w-5 h-5 text-white" />
-              <span className="text-sm font-bold text-white tracking-wide">
-                {t('headerLanguage') || 'Idioma'}
-              </span>
-            </div>
-            <div className="grid grid-cols-4 gap-2 p-3 bg-black/50">
+          {/* Language Selector - Enterprise compact design */}
+          <div className="flex items-center justify-center gap-1.5">
+            <GlobeIcon className="w-4 h-4 text-white/60" />
+            <div className="flex items-center bg-white/10 rounded-full p-0.5">
               {SUPPORTED_LOCALES.map(lang => (
                 <button
                   key={lang}
@@ -595,11 +590,13 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
                     triggerHaptic();
                     handleLanguageChange(lang);
                   }}
-                  className={`py-2.5 px-2 rounded-lg text-base font-bold ${
-                    locale === lang ? 'bg-primary-accent text-white' : 'bg-white/20 text-white'
+                  className={`px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
+                    locale === lang
+                      ? 'bg-primary-accent text-white shadow-sm'
+                      : 'text-white/70 hover:text-white hover:bg-white/10'
                   }`}
                 >
-                  {lang.toUpperCase()}
+                  {lang}
                 </button>
               ))}
             </div>

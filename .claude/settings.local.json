@@ -253,7 +253,8 @@
       "Bash(node replace-holographic.mjs:*)",
       "Bash(vercel --version:*)",
       "Bash(vercel --prod --yes:*)",
-      "Bash(git check-ignore:*)"
+      "Bash(git check-ignore:*)",
+      "Bash(git diff:*)"
     ],
     "deny": [],
     "ask": []

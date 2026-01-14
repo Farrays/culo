@@ -127,6 +127,14 @@ export const TWERK_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'twerkCulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'urbanas',
+    limit: 4,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches: 'Twerk, técnica de danza, musicalidad',

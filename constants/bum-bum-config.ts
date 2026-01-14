@@ -137,6 +137,14 @@ export const BUM_BUM_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'bumbumCulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'fitness',
+    limit: 4,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches:

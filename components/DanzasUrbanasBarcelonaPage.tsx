@@ -16,6 +16,7 @@ import Icon, { type IconName } from './Icon';
 import type { ValuePillar } from '../types';
 import { SUPPORTED_LOCALES } from '../types';
 import TestimonialsSection from './TestimonialsSection';
+import { ReviewsSection } from './reviews';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 import LeadCaptureModal from './shared/LeadCaptureModal';
 import OptimizedImage from './OptimizedImage';
@@ -555,6 +556,9 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
           titleKey="danzasUrbanas_testimonials_title"
           testimonials={danzasUrbanasTestimonials}
         />
+
+        {/* Google Reviews Section */}
+        <ReviewsSection category="urbanas" limit={4} showGoogleBadge={true} layout="grid" />
 
         {/* FAQ Section */}
         <FAQSection

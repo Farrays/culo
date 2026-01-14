@@ -141,6 +141,14 @@ export const STRETCHING_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'stretchingCulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'fitness',
+    limit: 4,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches:

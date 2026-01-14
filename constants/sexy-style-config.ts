@@ -123,6 +123,14 @@ export const SEXY_STYLE_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'sexystyleCulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'heels-femmology',
+    limit: 4,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches: 'Sexy Style, sensualidad, expresión corporal, feminidad, coreografía, confianza',

@@ -136,6 +136,14 @@ export const AFRO_CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
     highlightedStyle: 'afrocontemporaneo',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'afro',
+    limit: 4,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches: 'Afro Contemporáneo, técnica cubana ENA, disociación corporal, folklore afrocubano',

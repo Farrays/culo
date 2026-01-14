@@ -6,6 +6,7 @@ import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import FAQSection from './FAQSection';
 import Icon from './Icon';
+import { ReviewsSection } from './reviews';
 
 const ClasesParticularesPage: React.FC = () => {
   const { t, locale } = useI18n();
@@ -627,6 +628,15 @@ const ClasesParticularesPage: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Reviews Section */}
+        <ReviewsSection
+          category="general"
+          limit={4}
+          showGoogleBadge={true}
+          title="Lo que dicen nuestros alumnos"
+          layout="grid"
+        />
 
         {/* FAQ Section - Sin fondo y más cerca de packs */}
         <section className="pt-2 pb-6 md:pt-4 md:pb-8 bg-black">

@@ -1,0 +1,27 @@
+{
+  "total": 347,
+  "avgRating": 5,
+  "byCategory": {
+    "salsa-cubana": 24,
+    "bachata": 10,
+    "heels-femmology": 4,
+    "urbanas": 16,
+    "contemporaneo": 5,
+    "afro": 5,
+    "fitness": 6,
+    "general": 292
+  },
+  "byTeacher": {
+    "charlie": 2,
+    "yunaisy": 65,
+    "cristina": 3,
+    "mathias": 5,
+    "eugenia": 6,
+    "iroel": 10,
+    "augusto": 5,
+    "yasmina": 5,
+    "marcos": 1,
+    "sandra": 2,
+    "crisag": 5
+  }
+}

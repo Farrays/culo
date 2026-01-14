@@ -6,6 +6,7 @@ import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import Icon, { type IconName } from './Icon';
+import { ReviewsSection } from './reviews';
 
 // ============================================================================
 // ENTERPRISE ROOM DATA - Salas con nomenclatura por letras (A, B, C, D)
@@ -943,6 +944,15 @@ const AlquilerSalasPage: React.FC = () => {
             </AnimateOnScroll>
           </div>
         </section>
+
+        {/* Reviews Section */}
+        <ReviewsSection
+          category="general"
+          limit={4}
+          showGoogleBadge={true}
+          title="Lo que dicen de nuestras instalaciones"
+          layout="grid"
+        />
 
         {/* Final CTA Section */}
         <section className="relative py-12 md:py-16 overflow-hidden">

@@ -122,6 +122,14 @@ export const BALLET_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'balletCulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'contemporaneo',
+    limit: 4,
+    showGoogleBadge: true,
+  },
+
   // === ARTISTIC DANCE COMPARISON TABLE ===
   artisticDanceComparison: {
     enabled: true,

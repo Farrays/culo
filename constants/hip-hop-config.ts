@@ -119,6 +119,14 @@ export const HIPHOP_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'hiphopCulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'urbanas',
+    limit: 4,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches: 'Hip Hop, Breaking, Locking, Popping, Freestyle, Urban Dance',

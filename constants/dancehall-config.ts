@@ -139,6 +139,14 @@ export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'dhV3CulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'urbanas',
+    limit: 4,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches: 'Dancehall jamaicano, técnica de danza urbana, musicalidad',

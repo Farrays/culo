@@ -131,6 +131,14 @@ export const MODERN_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
     highlightedStyle: 'modernjazz',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'contemporaneo',
+    limit: 4,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches: 'Modern Jazz, técnica de danza, musicalidad, expresión corporal, giros, saltos',

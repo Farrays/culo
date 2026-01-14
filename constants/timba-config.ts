@@ -126,6 +126,14 @@ export const TIMBA_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'timbaCulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'salsa-cubana',
+    limit: 4,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches:

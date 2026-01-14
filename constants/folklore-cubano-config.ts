@@ -137,6 +137,14 @@ export const FOLKLORE_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'folkloreCulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'afro',
+    limit: 4,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches: 'Folklore Cubano, danzas a los Orishas, Yoruba, rumba cubana, expresión corporal',

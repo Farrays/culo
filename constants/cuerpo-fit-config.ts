@@ -136,6 +136,14 @@ export const CUERPO_FIT_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'cuerpofitCulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'fitness',
+    limit: 4,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches:
