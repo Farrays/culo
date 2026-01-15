@@ -130,7 +130,7 @@ export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
   googleReviewsSection: {
     enabled: true,
     category: 'general',
-    limit: 4,
+    limit: 6,
     showGoogleBadge: true,
   },
 

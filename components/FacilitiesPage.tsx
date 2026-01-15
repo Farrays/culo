@@ -501,10 +501,18 @@ const FacilitiesPage: React.FC = () => {
         {/* Google Reviews Section */}
         <ReviewsSection
           category="general"
-          limit={4}
+          limit={6}
           showGoogleBadge={true}
           title="Lo que dicen de nuestras instalaciones"
           layout="grid"
+          selectedAuthors={[
+            'garcia lam',
+            'Annina Moser',
+            'Yosefin Cabeza Carrillo',
+            'Micaela Llull (MicaPower)',
+            'Michelle Lu',
+            'Alejandra Amorín',
+          ]}
         />
 
         {/* FAQ Section */}

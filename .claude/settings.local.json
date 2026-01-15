@@ -254,7 +254,8 @@
       "Bash(vercel --version:*)",
       "Bash(vercel --prod --yes:*)",
       "Bash(git check-ignore:*)",
-      "Bash(git diff:*)"
+      "Bash(git diff:*)",
+      "Bash(ping:*)"
     ],
     "deny": [],
     "ask": []

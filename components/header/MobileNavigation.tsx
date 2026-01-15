@@ -262,20 +262,43 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
       {/* Decorative gradient accent */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-accent via-brand-500 to-primary-accent" />
 
-      {/* Close button - more visible */}
-      <button
-        onClick={() => setIsMenuOpen(false)}
-        className="absolute top-4 right-4 p-3 rounded-xl bg-primary-accent text-white z-10"
-        aria-label="Close menu"
-      >
-        <XMarkIcon className="w-7 h-7" />
-      </button>
+      {/* Header with language selector and close button */}
+      <div className="flex items-center justify-between px-5 pt-5 pb-3">
+        {/* Language Selector - Enterprise compact design */}
+        <div className="flex items-center gap-1.5">
+          <GlobeIcon className="w-4 h-4 text-white/60" />
+          <div className="flex items-center bg-white/10 rounded-full p-0.5">
+            {SUPPORTED_LOCALES.map(lang => (
+              <button
+                key={lang}
+                onClick={() => {
+                  triggerHaptic();
+                  handleLanguageChange(lang);
+                }}
+                className={`px-2.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
+                  locale === lang
+                    ? 'bg-primary-accent text-white shadow-sm'
+                    : 'text-white/70 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                {lang}
+              </button>
+            ))}
+          </div>
+        </div>
 
-      <div
-        ref={scrollContainerRef}
-        className="flex flex-col h-full overflow-y-auto pt-18 pb-8 px-5"
-      >
-        <nav className="flex flex-col space-y-2">
+        {/* Close button - vibrant like desktop */}
+        <button
+          onClick={() => setIsMenuOpen(false)}
+          className="p-2.5 rounded-full bg-gradient-to-r from-primary-accent to-brand-500 text-white shadow-lg shadow-primary-accent/30 hover:shadow-accent-glow transition-all duration-300"
+          aria-label="Close menu"
+        >
+          <XMarkIcon className="w-6 h-6" />
+        </button>
+      </div>
+
+      <div ref={scrollContainerRef} className="flex flex-col flex-1 overflow-y-auto pb-8 px-5">
+        <nav className="flex flex-col space-y-1.5">
           {/* 1. Inicio */}
           <Link
             ref={firstFocusableRef}
@@ -578,30 +601,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
         </nav>
 
         {/* Bottom Section */}
-        <div className="mt-auto pt-4 space-y-3">
-          {/* Language Selector - Enterprise compact design */}
-          <div className="flex items-center justify-center gap-1.5">
-            <GlobeIcon className="w-4 h-4 text-white/60" />
-            <div className="flex items-center bg-white/10 rounded-full p-0.5">
-              {SUPPORTED_LOCALES.map(lang => (
-                <button
-                  key={lang}
-                  onClick={() => {
-                    triggerHaptic();
-                    handleLanguageChange(lang);
-                  }}
-                  className={`px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
-                    locale === lang
-                      ? 'bg-primary-accent text-white shadow-sm'
-                      : 'text-white/70 hover:text-white hover:bg-white/10'
-                  }`}
-                >
-                  {lang}
-                </button>
-              ))}
-            </div>
-          </div>
-
+        <div className="mt-auto pt-6">
           {/* CTA Button */}
           <button
             onClick={() => {

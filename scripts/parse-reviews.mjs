@@ -55,16 +55,28 @@ const VALID_TEACHERS = {
   juan: ['juan alvarez'],
   augusto: ['augusto'],
   cristina: ['cristina'],
+  thomas: ['thomas'],
+  ella: ['ella', ' ela '],
+  natalie: ['natalie'],
+  kristofer: ['kristofer'],
+  // NOT included: silvio (not a teacher), yenifer/jenifer (not a teacher)
 };
 
-const EXCLUDED_TEACHERS = [
-  'yenifer', 'lavin',
-  'thomas', 'toams', 'keita',
-  'ela arnal', ' ela ', 'ella arnal', ' ella ',
-  'adrian', 'adrián',
-  'makurya',
-  'danger',
-  'julio napoles', 'julio nápoles',
+// Negative indicators - these are reviews with < 4 stars
+// Be careful not to include phrases that could appear in positive contexts
+const NEGATIVE_INDICATORS = [
+  'lamentable', 'decepcionada', 'decepcionado',
+  'experiencia muy negativa', 'experiencia negativa',
+  'pésima', 'pésimo', 'nefasta', 'nefasto', 'horrible',
+  'terrible', 'no vayas', 'no vayan', 'no recomiendo',
+  'frustrante', 'desastre', 'peor experiencia', 'gentuza',
+  'perdí la paciencia', 'no les importa nada',
+];
+
+// Exclude reviews about online classes (we only offer in-person now)
+const ONLINE_CLASS_INDICATORS = [
+  'clases online', 'clase online', 'clases en línea',
+  'online en la escuela', 'baile online', 'clases virtuales',
 ];
 
 // =============================================================================
@@ -124,12 +136,17 @@ function detectTeachers(text) {
   return mentioned;
 }
 
-function hasExcludedTeacher(text) {
+function isNegativeReview(text) {
   const lowerText = text.toLowerCase();
-  return EXCLUDED_TEACHERS.some(teacher => lowerText.includes(teacher.toLowerCase()));
+  return NEGATIVE_INDICATORS.some(indicator => lowerText.includes(indicator.toLowerCase()));
 }
 
-function generateReviewId(author, date, index) {
+function isOnlineClassReview(text) {
+  const lowerText = text.toLowerCase();
+  return ONLINE_CLASS_INDICATORS.some(indicator => lowerText.includes(indicator.toLowerCase()));
+}
+
+function generateReviewId(author, index) {
   const sanitized = author
     .toLowerCase()
     .replace(/[^a-z0-9]/g, '-')
@@ -137,54 +154,125 @@ function generateReviewId(author, date, index) {
   return `review-${sanitized}-${index}`;
 }
 
+function isOwnerResponse(line) {
+  return line.includes("Farray's International Dance Center") &&
+         (line.includes('propietario') || line.includes('(propietario)'));
+}
+
+function isDateLine(line) {
+  // Match: "Hace X semanas/meses/años/días" where X can be a number, "un/una", or nothing
+  return /^Hace\s+(un\s+|una\s+|\d+\s+)?(semana|mes|año|día)/i.test(line.trim()) ||
+         /^Fecha de edición:\s+Hace/i.test(line.trim());
+}
+
+function isAuthorInfoLine(line) {
+  return /^(Local Guide·)?\d+\s*reseñas?/i.test(line.trim()) ||
+         /reseñas?·\d+\s*fotos?/i.test(line.trim());
+}
+
+function isSkipLine(line) {
+  const trimmed = line.trim();
+  if (!trimmed) return true;
+  if (trimmed === 'Reseñas' || trimmed === 'Todas') return true;
+  if (/^[a-záéíóúñ]+\d+$/i.test(trimmed)) return true; // "clases58"
+  if (/^\+\d+$/.test(trimmed)) return true; // "+6"
+  if (/^Responder$/i.test(trimmed)) return true;
+  if (/^Nueva$/i.test(trimmed)) return true;
+  if (/^Traducido por Google/i.test(trimmed)) return true;
+  if (/^Ver original/i.test(trimmed)) return true;
+  if (/^[❤️🙏🤯💖💕🫶✨🔥💃🕺😍😊🫶🏼😃☺️❣️😘🩵💗🧡🤍😄😂👍👑🇯🇲🌍⭐]+\d*$/.test(trimmed)) return true; // Emoji reactions
+  if (/^\d+$/.test(trimmed)) return true; // Just numbers (like reaction counts)
+  return false;
+}
+
+// Check if a line looks like an author name (not review text)
+function looksLikeAuthorName(line) {
+  const trimmed = line.trim();
+
+  // Too long for a name (names are usually < 40 chars)
+  if (trimmed.length > 45) return false;
+
+  // Too short
+  if (trimmed.length < 2) return false;
+
+  // Contains common review text patterns (not author names)
+  const reviewTextPatterns = [
+    // Common sentence starters
+    /^(me |mi |muy |las |los |la |el |un |una |en |de |que |es |son |con |sin |por |para |al |del )/i,
+    /^(hemos |nos |te |se |lo |le |he |ha |han |fue |fui |era |iba |voy |vas |van |hay )/i,
+    /^(desde |hasta |cuando |donde |como |porque |aunque |pero |sin embargo)/i,
+
+    // Review-specific words
+    /\b(clase|escuela|profesor|academia|baile|bailar|experiencia|ambiente)\b/i,
+    /\b(genial|increíble|encanta|recomiendo|maravill|fantástic|espectacular)\b/i,
+    /\b(enseñ|aprend|disfrut|divert|trabaj|sentir)\b/i,
+
+    // Sentence structure indicators
+    /^\!/,      // Starts with exclamation
+    /^¡/,       // Starts with inverted exclamation
+    /^¿/,       // Starts with question mark
+    /\.\s+\w/,  // Period followed by space and word (multiple sentences)
+    /,\s+\w+\s+\w+\s+\w+/,  // Comma followed by 3+ words (sentence structure)
+  ];
+
+  for (const pattern of reviewTextPatterns) {
+    if (pattern.test(trimmed)) return false;
+  }
+
+  return true;
+}
+
 // =============================================================================
-// PARSER
+// PARSER - IMPROVED VERSION
 // =============================================================================
 
 function parseReviewsFromText(content) {
-  // Remove line number prefixes
-  const cleanContent = content.replace(/^\s*\d+→/gm, '');
-  const lines = cleanContent.split('\n');
-
+  const lines = content.split('\n');
   const reviews = [];
   let i = 0;
 
   while (i < lines.length) {
     const line = lines[i].trim();
 
-    // Skip empty lines and headers
-    if (!line || line === 'Reseñas' || line === 'Todas' || /^[a-záéíóúñ]+\d+$/i.test(line) || /^\+\d+$/.test(line)) {
+    // Skip empty/irrelevant lines
+    if (isSkipLine(line)) {
       i++;
       continue;
     }
 
-    // Skip owner responses
-    if (line.includes("Farray's International Dance Center")) {
-      // Skip until we find a new review
+    // Skip owner responses entirely
+    if (isOwnerResponse(line)) {
       i++;
+      // Skip all lines until we find a new potential author
       while (i < lines.length) {
         const nextLine = lines[i].trim();
-        // Check if this looks like a new author (followed by date pattern)
-        let j = i + 1;
-        while (j < lines.length && j < i + 4) {
-          if (/^Hace\s+/i.test(lines[j]?.trim() || '')) {
-            break;
+        // Look for next author (line that looks like a name AND has date within 3 lines)
+        if (!isSkipLine(nextLine) && !isOwnerResponse(nextLine) && !isDateLine(nextLine) && looksLikeAuthorName(nextLine)) {
+          let hasDateAhead = false;
+          for (let k = i + 1; k < Math.min(i + 4, lines.length); k++) {
+            if (isDateLine(lines[k]?.trim() || '')) {
+              hasDateAhead = true;
+              break;
+            }
           }
-          j++;
-        }
-        if (j < i + 4 && /^Hace\s+/i.test(lines[j]?.trim() || '')) {
-          break;
+          if (hasDateAhead) break;
         }
         i++;
       }
       continue;
     }
 
-    // Look for author pattern: Name, then optional info, then date
-    // Check if next few lines contain a date
+    // Check if this line looks like an author name
+    if (!looksLikeAuthorName(line)) {
+      i++;
+      continue;
+    }
+
+    // Look for date pattern in next few lines to identify a review start
     let dateIndex = -1;
     for (let j = i + 1; j < Math.min(i + 4, lines.length); j++) {
-      if (/^Hace\s+/i.test(lines[j]?.trim() || '')) {
+      const potentialDate = lines[j]?.trim() || '';
+      if (isDateLine(potentialDate)) {
         dateIndex = j;
         break;
       }
@@ -198,12 +286,17 @@ function parseReviewsFromText(content) {
     // We found a potential review
     const author = line;
     let authorInfo = undefined;
-    const date = lines[dateIndex].trim();
+    let dateRaw = lines[dateIndex].trim();
+
+    // Clean up date
+    if (dateRaw.startsWith('Fecha de edición:')) {
+      dateRaw = dateRaw.replace('Fecha de edición:', '').trim();
+    }
 
     // Check for author info between author and date
     if (dateIndex > i + 1) {
       const infoLine = lines[i + 1]?.trim() || '';
-      if (/reseñas?|fotos?|Local Guide/i.test(infoLine)) {
+      if (isAuthorInfoLine(infoLine)) {
         authorInfo = infoLine;
       }
     }
@@ -215,60 +308,39 @@ function parseReviewsFromText(content) {
     while (j < lines.length) {
       const textLine = lines[j].trim();
 
-      // Stop conditions
-      if (!textLine) {
-        j++;
-        continue;
-      }
-
-      // Skip "Nueva" tag
-      if (/^Nueva$/i.test(textLine)) {
+      // Skip irrelevant lines but continue looking
+      if (isSkipLine(textLine)) {
         j++;
         continue;
       }
 
       // Stop at owner response
-      if (textLine.includes("Farray's International Dance Center")) {
+      if (isOwnerResponse(textLine)) {
         break;
       }
 
-      // Stop at likes/reactions
-      if (/^[❤️🙏🤯]+\d*$/.test(textLine)) {
-        j++;
-        continue;
+      // Stop at date line (might be owner response date)
+      if (isDateLine(textLine)) {
+        break;
       }
 
-      // Skip "Responder"
-      if (/^Responder$/i.test(textLine)) {
-        j++;
-        continue;
-      }
-
-      // Check for translation indicator
-      if (/^Traducido por Google/i.test(textLine)) {
-        j++;
-        continue;
-      }
-
-      // Check if this is the start of a new review (name followed by date within 3 lines)
-      let isNewReview = false;
-      for (let k = j + 1; k < Math.min(j + 4, lines.length); k++) {
-        if (/^Hace\s+/i.test(lines[k]?.trim() || '')) {
-          isNewReview = true;
+      // Check if this looks like a new author (looks like a name AND has date within next 3 lines)
+      if (looksLikeAuthorName(textLine) && !isAuthorInfoLine(textLine)) {
+        let hasDateAhead = false;
+        for (let k = j + 1; k < Math.min(j + 4, lines.length); k++) {
+          if (isDateLine(lines[k]?.trim() || '')) {
+            hasDateAhead = true;
+            break;
+          }
+        }
+        // If it looks like an author with upcoming date, stop collecting text
+        if (hasDateAhead) {
           break;
         }
       }
-      if (isNewReview && !/^Hace\s+/i.test(textLine)) {
-        break;
-      }
 
-      // Skip date lines
-      if (/^Hace\s+/i.test(textLine)) {
-        break;
-      }
-
-      // Skip author info patterns for new reviews
-      if (/^(?:Local Guide·)?\d+\s*reseñas?/i.test(textLine)) {
+      // Skip author info for new reviews
+      if (isAuthorInfoLine(textLine)) {
         break;
       }
 
@@ -278,13 +350,14 @@ function parseReviewsFromText(content) {
 
     const text = textLines.join(' ').trim();
 
-    if (author && date && text && text.length > 10) {
+    // Only add reviews with valid authors and text
+    if (author && author.length > 1 && author.length < 60) {
       reviews.push({
         author,
         authorInfo,
-        date,
-        text,
-        isTranslated: false,
+        date: dateRaw,
+        text: text || '', // Allow empty text (5-star only reviews)
+        hasText: text.length > 0,
       });
     }
 
@@ -300,29 +373,29 @@ function parseReviewsFromText(content) {
 
 function processReviews(rawReviews) {
   const processed = [];
-  let index = 0;
-  let excludedByTeacher = 0;
+  const withoutText = [];
   let excludedByNegative = 0;
+  let excludedByOnline = 0;
+  let index = 0;
 
   for (const raw of rawReviews) {
-    // Skip if mentions excluded teacher
-    if (hasExcludedTeacher(raw.text)) {
-      excludedByTeacher++;
+    // Track reviews without text separately
+    if (!raw.hasText || raw.text.length < 10) {
+      withoutText.push(raw.author);
       continue;
     }
 
-    // Skip negative reviews
-    const negativeIndicators = [
-      'lamentable', 'decepcionada', 'decepcionado', 'negativa',
-      'pésima', 'pésimo', 'nefasta', 'nefasto', 'horrible',
-      'terrible', 'no vayas', 'no vayan', 'no recomiendo',
-      'frustrante', 'desastre', 'peor experiencia',
-    ];
-    const isNegative = negativeIndicators.some(indicator =>
-      raw.text.toLowerCase().includes(indicator)
-    );
-    if (isNegative) {
+    // Skip negative reviews (< 4 stars)
+    if (isNegativeReview(raw.text)) {
       excludedByNegative++;
+      console.log(`  - Negative: ${raw.author.substring(0, 30)}`);
+      continue;
+    }
+
+    // Skip online class reviews (we only offer in-person now)
+    if (isOnlineClassReview(raw.text)) {
+      excludedByOnline++;
+      console.log(`  - Online: ${raw.author.substring(0, 30)}`);
       continue;
     }
 
@@ -330,22 +403,23 @@ function processReviews(rawReviews) {
     const teachers = detectTeachers(raw.text);
 
     processed.push({
-      id: generateReviewId(raw.author, raw.date, index++),
+      id: generateReviewId(raw.author, index++),
       author: raw.author,
       authorInfo: raw.authorInfo,
       rating: 5,
       date: raw.date,
       dateISO: relativeToISO(raw.date),
       text: raw.text,
-      isTranslated: raw.isTranslated || false,
+      isTranslated: false,
       categories,
       teachers,
       sentiment: 'positive',
     });
   }
 
-  console.log(`  Excluded by teacher: ${excludedByTeacher}`);
-  console.log(`  Excluded by negative: ${excludedByNegative}`);
+  console.log(`  Reviews without text: ${withoutText.length}`);
+  console.log(`  Excluded by negative sentiment: ${excludedByNegative}`);
+  console.log(`  Excluded by online class mention: ${excludedByOnline}`);
 
   return processed;
 }
@@ -388,7 +462,7 @@ function calculateStats(reviews) {
 // =============================================================================
 
 console.log('='.repeat(60));
-console.log('Google Reviews Parser');
+console.log('Google Reviews Parser v2 - No teacher filtering');
 console.log('='.repeat(60));
 
 // Read input file
@@ -400,11 +474,13 @@ console.log(`  File size: ${(content.length / 1024).toFixed(2)} KB`);
 console.log('\nParsing reviews...');
 const rawReviews = parseReviewsFromText(content);
 console.log(`  Found ${rawReviews.length} raw reviews`);
+console.log(`  With text: ${rawReviews.filter(r => r.hasText).length}`);
+console.log(`  Without text (5-star only): ${rawReviews.filter(r => !r.hasText).length}`);
 
 // Process and filter
 console.log('\nProcessing and filtering...');
 const processedReviews = processReviews(rawReviews);
-console.log(`  Kept ${processedReviews.length} valid reviews`);
+console.log(`  Kept ${processedReviews.length} valid reviews with text`);
 
 // Calculate stats
 console.log('\nCalculating statistics...');
@@ -414,7 +490,7 @@ const stats = calculateStats(processedReviews);
 console.log('\n' + '-'.repeat(40));
 console.log('STATISTICS');
 console.log('-'.repeat(40));
-console.log(`Total reviews: ${stats.total}`);
+console.log(`Total reviews with text: ${stats.total}`);
 console.log(`Average rating: ${stats.avgRating}`);
 console.log('\nBy Category:');
 for (const [category, count] of Object.entries(stats.byCategory)) {
@@ -424,7 +500,7 @@ for (const [category, count] of Object.entries(stats.byCategory)) {
 }
 console.log('\nTop Teachers Mentioned:');
 const sortedTeachers = Object.entries(stats.byTeacher).sort((a, b) => b[1] - a[1]);
-for (const [teacher, count] of sortedTeachers.slice(0, 10)) {
+for (const [teacher, count] of sortedTeachers.slice(0, 15)) {
   console.log(`  ${teacher}: ${count}`);
 }
 

@@ -632,10 +632,18 @@ const ClasesParticularesPage: React.FC = () => {
         {/* Reviews Section */}
         <ReviewsSection
           category="general"
-          limit={4}
+          limit={6}
           showGoogleBadge={true}
           title="Lo que dicen nuestros alumnos"
           layout="grid"
+          selectedAuthors={[
+            'Anne Hein',
+            'Marina T',
+            'Katarzyna Bakuła-Soltani',
+            'Annina Moser',
+            'Arjan Hendrickx',
+            'Michelle Lu',
+          ]}
         />
 
         {/* FAQ Section - Sin fondo y más cerca de packs */}

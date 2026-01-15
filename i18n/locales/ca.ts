@@ -535,6 +535,7 @@ export const ca = {
   allLevelsLevel: 'Tots els nivells',
 
   // Testimonials
+  reviewsSectionTitle: 'Testimonis No Sol·licitats dels Nostres Socis',
   testimonialsNotRequested: 'Testimonis No Sol·licitats dels Nostres Estudiants',
   excellent: 'EXCEL·LENT',
   basedOnReviews: 'Basat en {count} ressenyes',

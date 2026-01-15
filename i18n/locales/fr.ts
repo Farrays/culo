@@ -537,6 +537,7 @@ export const fr = {
   allLevelsLevel: 'Tous les niveaux',
 
   // Testimonials
+  reviewsSectionTitle: 'Témoignages Non Sollicités de Nos Membres',
   testimonialsNotRequested: 'Témoignages Non Sollicités de Nos Étudiants',
   excellent: 'EXCELLENT',
   basedOnReviews: 'Basé sur {count} avis',

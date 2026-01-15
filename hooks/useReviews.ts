@@ -23,6 +23,8 @@ interface UseReviewsOptions {
   limit?: number;
   shuffle?: boolean;
   minTextLength?: number;
+  /** Curated list of author names to show (exact match, case-insensitive) */
+  selectedAuthors?: string[];
 }
 
 interface UseReviewsResult {
@@ -95,11 +97,40 @@ function shuffleArray<T>(array: T[]): T[] {
  * const { reviews } = useReviews({ teacher: 'iroel', shuffle: true });
  */
 export function useReviews(options: UseReviewsOptions = {}): UseReviewsResult {
-  const { category, teacher, limit, shuffle = false, minTextLength = 30 } = options;
+  const {
+    category,
+    teacher,
+    limit,
+    shuffle = false,
+    minTextLength = 30,
+    selectedAuthors,
+  } = options;
 
   const result = useMemo(() => {
     const data = reviewsData as ReviewsData;
     let filtered = data.reviews.filter(isValidReview);
+
+    // If selectedAuthors is provided, use ONLY those reviews (curated mode)
+    if (selectedAuthors && selectedAuthors.length > 0) {
+      const authorsLower = selectedAuthors.map(a => a.toLowerCase().trim());
+      // Find reviews matching selected authors, maintaining the order
+      const curatedReviews: GoogleReview[] = [];
+      for (const authorName of authorsLower) {
+        const review = filtered.find(r => r.author.toLowerCase().trim() === authorName);
+        if (review) {
+          curatedReviews.push(review);
+        }
+      }
+      return {
+        reviews: curatedReviews,
+        stats: {
+          total: data.totalReviews,
+          filtered: curatedReviews.length,
+          avgRating: data.averageRating,
+        },
+        isLoading: false,
+      };
+    }
 
     // Filter by minimum text length
     if (minTextLength > 0) {
@@ -145,7 +176,7 @@ export function useReviews(options: UseReviewsOptions = {}): UseReviewsResult {
       },
       isLoading: false,
     };
-  }, [category, teacher, limit, shuffle, minTextLength]);
+  }, [category, teacher, limit, shuffle, minTextLength, selectedAuthors]);
 
   return result;
 }

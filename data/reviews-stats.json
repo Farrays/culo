@@ -1,27 +1,31 @@
 {
-  "total": 347,
+  "total": 380,
   "avgRating": 5,
   "byCategory": {
-    "salsa-cubana": 24,
-    "bachata": 10,
+    "salsa-cubana": 29,
+    "bachata": 11,
     "heels-femmology": 4,
-    "urbanas": 16,
-    "contemporaneo": 5,
-    "afro": 5,
+    "urbanas": 22,
+    "contemporaneo": 8,
+    "afro": 7,
     "fitness": 6,
-    "general": 292
+    "general": 310
   },
   "byTeacher": {
     "charlie": 2,
-    "yunaisy": 65,
-    "cristina": 3,
+    "iroel": 15,
+    "yunaisy": 79,
+    "sandra": 4,
+    "cristina": 2,
     "mathias": 5,
     "eugenia": 6,
-    "iroel": 10,
     "augusto": 5,
-    "yasmina": 5,
-    "marcos": 1,
-    "sandra": 2,
-    "crisag": 5
+    "yasmina": 4,
+    "marcos": 2,
+    "ella": 13,
+    "thomas": 2,
+    "crisag": 6,
+    "natalie": 2,
+    "kristofer": 1
   }
 }

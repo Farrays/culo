@@ -125,8 +125,8 @@ export const BALLET_PAGE_CONFIG: FullDanceClassConfig = {
   // === GOOGLE REVIEWS SECTION ===
   googleReviewsSection: {
     enabled: true,
-    category: 'contemporaneo',
-    limit: 4,
+    category: 'general',
+    limit: 6,
     showGoogleBadge: true,
   },
 

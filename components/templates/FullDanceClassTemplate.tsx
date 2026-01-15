@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
 import { useImageAlt } from '../../hooks/useImageAlt';
+import { useReviews } from '../../hooks/useReviews';
 import Breadcrumb from '../shared/Breadcrumb';
 import {
   StarRating,
@@ -21,7 +22,6 @@ import OptimizedImage from '../OptimizedImage';
 import CulturalHistorySection from '../CulturalHistorySection';
 import ScheduleSection from '../ScheduleSection';
 import FAQSection from '../FAQSection';
-import TestimonialsSection from '../TestimonialsSection';
 import { ReviewsSection } from '../reviews';
 import LevelCardsSection, { type LevelConfig } from '../shared/LevelCardsSection';
 import PrepareClassSection, { type PrepareConfig } from '../shared/PrepareClassSection';
@@ -300,6 +300,8 @@ export interface FullDanceClassConfig {
       | 'general';
     limit?: number;
     showGoogleBadge?: boolean;
+    /** Curated list of author names to show (overrides category/limit) */
+    selectedAuthors?: string[];
   };
   faqSection?: { enabled: boolean };
 
@@ -664,6 +666,15 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
   const pageUrl = `${baseUrl}/${locale}/clases/${config.stylePath}`;
   const currentDate = new Date().toISOString().split('T')[0];
 
+  // ===== REAL GOOGLE REVIEWS FOR SCHEMA =====
+  // Get real Google reviews filtered by category for Schema.org markup
+  const googleReviewsCategory = config.googleReviewsSection?.category || 'general';
+  const { reviews: realGoogleReviews } = useReviews({
+    category: googleReviewsCategory,
+    limit: 10, // Top 10 reviews for schema
+    minTextLength: 50, // Only meaningful reviews
+  });
+
   // Defaults
   const hero = config.hero || { minutes: 60, calories: 400, funPercent: 100 };
   const nearbyAreas = config.nearbyAreas || BARCELONA_NEARBY_AREAS;
@@ -742,20 +753,34 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
     [config.faqsConfig, t]
   );
 
-  const reviewsSchemaData = useMemo(
-    () =>
-      config.testimonials.map(testimonial => ({
+  // Enterprise: Use REAL Google reviews for Schema.org markup (SEO)
+  // Falls back to testimonials if no Google reviews available
+  const reviewsSchemaData = useMemo(() => {
+    // Prefer real Google reviews for Schema.org
+    if (realGoogleReviews.length > 0) {
+      return realGoogleReviews.map(review => ({
         itemReviewed: {
           name: `${t(`${config.styleKey}PageTitle`)} - Farray's Center`,
           type: 'Course',
         },
-        author: testimonial.name,
-        reviewRating: { ratingValue: testimonial.rating.toString(), bestRating: '5' },
-        reviewBody: testimonial.quote[locale],
-        datePublished: currentDate,
-      })),
-    [config.testimonials, locale, config.styleKey, t, currentDate]
-  );
+        author: review.author,
+        reviewRating: { ratingValue: '5', bestRating: '5' },
+        reviewBody: review.text,
+        datePublished: review.dateISO || currentDate,
+      }));
+    }
+    // Fallback to static testimonials if no Google reviews
+    return config.testimonials.map(testimonial => ({
+      itemReviewed: {
+        name: `${t(`${config.styleKey}PageTitle`)} - Farray's Center`,
+        type: 'Course',
+      },
+      author: testimonial.name,
+      reviewRating: { ratingValue: testimonial.rating.toString(), bestRating: '5' },
+      reviewBody: testimonial.quote[locale],
+      datePublished: currentDate,
+    }));
+  }, [realGoogleReviews, config.testimonials, locale, config.styleKey, t, currentDate]);
 
   const breadcrumbItems = useMemo(
     () => [
@@ -1656,15 +1681,6 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
           </section>
         )}
 
-        {/* ===== 7b. TESTIMONIALS (early position - after Why Choose) ===== */}
-        {config.testimonialsSection?.enabled !== false &&
-          config.testimonialsSection?.position === 'after-why-choose' && (
-            <TestimonialsSection
-              testimonials={config.testimonials}
-              titleKey="testimonialsNotRequested"
-            />
-          )}
-
         {/* ===== 8. WHY TODAY SECTION (Single Card Design) ===== */}
         {config.whyTodaySection?.enabled && (
           <section className="py-12 md:py-16 bg-gradient-to-b from-primary-dark/20 to-black">
@@ -1834,16 +1850,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
           </section>
         )}
 
-        {/* ===== 10. TESTIMONIALS SECTION (default position) ===== */}
-        {config.testimonialsSection?.enabled !== false &&
-          config.testimonialsSection?.position !== 'after-why-choose' && (
-            <TestimonialsSection
-              testimonials={config.testimonials}
-              titleKey="testimonialsNotRequested"
-            />
-          )}
-
-        {/* ===== 10b. GOOGLE REVIEWS SECTION (real Google reviews) ===== */}
+        {/* ===== 10. TESTIMONIALS SECTION (Real Google Reviews) ===== */}
         {config.googleReviewsSection?.enabled && (
           <ReviewsSection
             category={config.googleReviewsSection.category}
@@ -1851,6 +1858,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
             showGoogleBadge={config.googleReviewsSection.showGoogleBadge ?? true}
             layout="grid"
             showCategory={false}
+            selectedAuthors={config.googleReviewsSection.selectedAuthors}
           />
         )}
 

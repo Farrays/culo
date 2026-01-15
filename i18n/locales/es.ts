@@ -1087,6 +1087,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // Testimonials
   basedOn: 'basado en',
   reviews: 'reseñas',
+  reviewsSectionTitle: 'Testimonios No Solicitados de Nuestros Socios',
   testimonialsNotRequested: 'Testimonios No Solicitados de Nuestros Socios',
   thankYouForLove: 'Gracias por Tanto Amor',
   excellent: 'EXCELENTE',

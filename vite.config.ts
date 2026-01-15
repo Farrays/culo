@@ -10,7 +10,7 @@ export default defineConfig({
     react(),
     // Image optimization - automatically generates WebP/AVIF
     imagetools({
-      defaultDirectives: (url) => {
+      defaultDirectives: url => {
         if (url.searchParams.has('optimize')) {
           return new URLSearchParams({
             format: 'webp;avif;jpg',
@@ -60,20 +60,23 @@ export default defineConfig({
     rollupOptions: {
       output: {
         // Better chunk naming for long-term caching
-        chunkFileNames: (chunkInfo) => {
+        chunkFileNames: chunkInfo => {
           // Stable names for translation chunks (locale files)
           if (chunkInfo.name && /^(es|en|ca|fr)$/.test(chunkInfo.name)) {
             return `assets/${chunkInfo.name}-[hash].js`;
           }
           return 'assets/[name]-[hash].js';
         },
-        manualChunks: (id) => {
+        manualChunks: id => {
           // Vendor chunks - core React
           if (id.includes('node_modules/react-dom') || id.includes('node_modules/react/')) {
             return 'react-vendor';
           }
           // Router and helmet
-          if (id.includes('node_modules/react-router') || id.includes('node_modules/react-helmet')) {
+          if (
+            id.includes('node_modules/react-router') ||
+            id.includes('node_modules/react-helmet')
+          ) {
             return 'router-vendor';
           }
           // Analytics (lazy-loaded)
