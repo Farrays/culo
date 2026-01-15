@@ -9,14 +9,12 @@ import * as fs from 'fs';
 import * as path from 'path';
 import {
   GoogleReview,
-  DanceCategory,
   ReviewStats,
   detectCategories,
   detectTeachers,
   hasExcludedTeacher,
   relativeToISO,
   generateReviewId,
-  EXCLUDED_TEACHERS,
 } from '../constants/reviews-data';
 
 // =============================================================================
@@ -74,7 +72,9 @@ function parseReviewsFromText(content: string): RawReview[] {
   let skipNextLines = 0;
 
   for (let i = 0; i < lines.length; i++) {
-    const line = lines[i].trim();
+    const currentLine = lines[i];
+    if (!currentLine) continue;
+    const line = currentLine.trim();
 
     // Skip empty lines or header
     if (!line || line === 'Reseñas' || line === 'Todas') continue;
@@ -137,7 +137,9 @@ function parseReviewsFromText(content: string): RawReview[] {
       // Look backwards for author name and info
       let authorFound = false;
       for (let j = i - 1; j >= Math.max(0, i - 3); j--) {
-        const prevLine = lines[j].trim();
+        const prevLineRaw = lines[j];
+        if (!prevLineRaw) continue;
+        const prevLine = prevLineRaw.trim();
         if (!prevLine) continue;
 
         if (PATTERNS.authorInfo.test(prevLine)) {
@@ -165,11 +167,10 @@ function parseReviewsFromText(content: string): RawReview[] {
     // Skip if in owner response
     if (isInOwnerResponse) {
       // Check if we've reached a new author (not the owner)
-      const nextLine = lines[i + 1]?.trim();
-      const nextNextLine = lines[i + 2]?.trim();
+      const nextLineCheck = lines[i + 1]?.trim();
       if (
-        nextLine &&
-        (PATTERNS.authorInfo.test(nextLine) || PATTERNS.date.test(nextLine)) &&
+        nextLineCheck &&
+        (PATTERNS.authorInfo.test(nextLineCheck) || PATTERNS.date.test(nextLineCheck)) &&
         !PATTERNS.ownerResponse.test(line)
       ) {
         isInOwnerResponse = false;
