@@ -124,6 +124,14 @@ export const SALSA_CUBANA_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'salsaCubanaCulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'general',
+    limit: 6,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches: 'Salsa Cubana, Casino, Rueda de Casino, guía y seguimiento, Método Farray',

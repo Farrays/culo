@@ -12,6 +12,7 @@ import Icon, { type IconName } from './Icon';
 import type { ValuePillar } from '../types';
 import { SUPPORTED_LOCALES } from '../types';
 import TestimonialsSection from './TestimonialsSection';
+import { ReviewsSection } from './reviews';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 import LeadCaptureModal from './shared/LeadCaptureModal';
 import OptimizedImage from './OptimizedImage';
@@ -550,6 +551,9 @@ const DanzaBarcelonaPage: React.FC = () => {
           titleKey="danzaBarcelona_testimonials_title"
           testimonials={danzaTestimonials}
         />
+
+        {/* Reviews Section - Google Reviews */}
+        <ReviewsSection category="contemporaneo" limit={4} showGoogleBadge={true} layout="grid" />
 
         {/* FAQ Section */}
         <FAQSection

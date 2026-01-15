@@ -122,6 +122,14 @@ export const AFRO_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'afrojazzCulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'general',
+    limit: 6,
+    showGoogleBadge: true,
+  },
+
   // === ARTISTIC DANCE COMPARISON TABLE ===
   artisticDanceComparison: {
     enabled: true,

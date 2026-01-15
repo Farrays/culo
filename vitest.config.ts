@@ -58,11 +58,7 @@ export default defineConfig({
         // === INDEX FILES (re-exports only) ===
         '**/index.ts',
       ],
-      include: [
-        'components/**/*.{ts,tsx}',
-        'hooks/**/*.{ts,tsx}',
-        'utils/**/*.{ts,tsx}',
-      ],
+      include: ['components/**/*.{ts,tsx}', 'hooks/**/*.{ts,tsx}', 'utils/**/*.{ts,tsx}'],
     },
   },
 });

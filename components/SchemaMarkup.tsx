@@ -838,3 +838,110 @@ export const BreadcrumbListSchema: React.FC<BreadcrumbListSchemaProps> = ({ item
     </Helmet>
   );
 };
+
+/**
+ * DanceSchoolWithRatingSchema - Global schema with AggregateRating
+ * Combines DanceSchool type with Google Business Profile rating data.
+ * This is the key schema for showing stars in Google search results.
+ *
+ * @see https://developers.google.com/search/docs/appearance/structured-data/local-business
+ * @see https://schema.org/AggregateRating
+ */
+export const DanceSchoolWithRatingSchema: React.FC = () => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'DanceSchool',
+    '@id': 'https://www.farrayscenter.com/#danceschool',
+    name: "Farray's International Dance Center",
+    alternateName: "Farray's Center",
+    description:
+      'Escuela de baile en Barcelona con más de 25 estilos: Salsa, Bachata, Dancehall, Twerk, Afrobeats, Hip Hop, Heels, Ballet, Contemporáneo y más. Formación profesional con los mejores maestros.',
+    url: 'https://www.farrayscenter.com',
+    telephone: '+34622247085',
+    email: 'info@farrayscenter.com',
+    priceRange: '€€',
+    image: 'https://www.farrayscenter.com/images/og-home.jpg',
+    logo: 'https://www.farrayscenter.com/images/logo-fidc.png',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Calle Entenca, 100',
+      addressLocality: 'Barcelona',
+      postalCode: '08015',
+      addressRegion: 'Cataluña',
+      addressCountry: 'ES',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '41.3751',
+      longitude: '2.1482',
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '10:00',
+        closes: '22:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Saturday',
+        opens: '10:00',
+        closes: '20:00',
+      },
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '505',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    sameAs: [
+      'https://www.instagram.com/farrays_centerbcn/',
+      'https://www.facebook.com/farrayscenter/',
+      'https://www.youtube.com/@farraysinternationaldance',
+      'https://www.tiktok.com/@farrays_centerbcn',
+      'https://g.page/r/CWBvYu8J9aJAEBM',
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Clases de Baile',
+      itemListElement: [
+        {
+          '@type': 'OfferCatalog',
+          name: 'Bailes Latinos',
+          itemListElement: [
+            { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Salsa Cubana' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Bachata' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Salsa Lady Style' } },
+          ],
+        },
+        {
+          '@type': 'OfferCatalog',
+          name: 'Danzas Urbanas',
+          itemListElement: [
+            { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Hip Hop' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Dancehall' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Twerk' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Afrobeats' } },
+          ],
+        },
+        {
+          '@type': 'OfferCatalog',
+          name: 'Danza',
+          itemListElement: [
+            { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Contemporáneo' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Ballet' } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Modern Jazz' } },
+          ],
+        },
+      ],
+    },
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};

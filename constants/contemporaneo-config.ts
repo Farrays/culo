@@ -129,6 +129,14 @@ export const CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
     highlightedStyle: 'contemporaneo',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'general',
+    limit: 6,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches: 'Danza Contemporánea, técnica de suelo, release, improvisación, expresión corporal',

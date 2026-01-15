@@ -6,6 +6,7 @@ import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import Icon, { type IconName } from './Icon';
 import LeadCaptureModal from './shared/LeadCaptureModal';
+import { ReviewsSection } from './reviews';
 
 // Value pillars for "Why Farray's" section
 interface ValuePillar {
@@ -439,6 +440,15 @@ const AboutPage: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Reviews Section */}
+        <ReviewsSection
+          category="general"
+          limit={6}
+          showGoogleBadge={true}
+          layout="grid"
+          showCategory={true}
+        />
 
         {/* Final CTA Section */}
         <section className="relative py-12 md:py-16 overflow-hidden">

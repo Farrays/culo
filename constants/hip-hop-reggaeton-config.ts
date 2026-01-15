@@ -127,6 +127,14 @@ export const HIP_HOP_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'hhrCulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'general',
+    limit: 6,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches: 'Hip Hop Reggaeton, fusión urbana, técnica de danza, improvisación, flow',

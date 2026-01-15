@@ -4,6 +4,7 @@ import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import LeadCaptureModal from './shared/LeadCaptureModal';
+import { ReviewsSection } from './reviews';
 import {
   CheckIcon,
   ChevronDownIcon,
@@ -866,6 +867,11 @@ const PreciosPage: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* ================================================================
+            SECTION: REVIEWS
+        ================================================================ */}
+        <ReviewsSection category="general" limit={4} showGoogleBadge={true} layout="grid" />
 
         {/* ================================================================
             SECTION 8: FAQ

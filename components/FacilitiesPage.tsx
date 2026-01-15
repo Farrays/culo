@@ -7,6 +7,7 @@ import FacilityFeatureList from './FacilityFeatureList';
 import SocialAmenities from './SocialAmenities';
 import FacilitiesFullGallery from './FacilitiesFullGallery';
 import FAQSection from './FAQSection';
+import { ReviewsSection } from './reviews';
 import AnimateOnScroll from './AnimateOnScroll';
 import AnimatedCounter from './AnimatedCounter';
 import { LocalBusinessSchema } from './SchemaMarkup';
@@ -496,6 +497,23 @@ const FacilitiesPage: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Google Reviews Section */}
+        <ReviewsSection
+          category="general"
+          limit={6}
+          showGoogleBadge={true}
+          title="Lo que dicen de nuestras instalaciones"
+          layout="grid"
+          selectedAuthors={[
+            'garcia lam',
+            'Annina Moser',
+            'Yosefin Cabeza Carrillo',
+            'Micaela Llull (MicaPower)',
+            'Michelle Lu',
+            'Alejandra Amorín',
+          ]}
+        />
 
         {/* FAQ Section */}
         <div className="-mt-20 md:-mt-24">

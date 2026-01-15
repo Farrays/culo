@@ -12,6 +12,7 @@ import Icon, { type IconName } from './Icon';
 import type { ValuePillar } from '../types';
 import { SUPPORTED_LOCALES } from '../types';
 import TestimonialsSection from './TestimonialsSection';
+import { ReviewsSection } from './reviews';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 import { CheckIcon } from '../lib/icons';
 import LeadCaptureModal from './shared/LeadCaptureModal';
@@ -655,6 +656,14 @@ const SalsaBachataPage: React.FC = () => {
         <TestimonialsSection
           titleKey="salsaBachataBarcelona_testimonials_title"
           testimonials={salsaBachataTestimonials}
+        />
+
+        {/* Google Reviews Section */}
+        <ReviewsSection
+          category={['salsa-cubana', 'bachata']}
+          limit={4}
+          showGoogleBadge={true}
+          layout="grid"
         />
 
         {/* FAQ Section */}

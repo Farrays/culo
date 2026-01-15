@@ -11,6 +11,563 @@
       "maxDuration": 10
     }
   },
+  "redirects": [
+    { "source": "/classes/", "destination": "/es/clases/baile-barcelona", "permanent": true },
+    {
+      "source": "/classes/afrobeat-en-barcelona/",
+      "destination": "/es/clases/afrobeats-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/afro-contemporaneo-barcelona/",
+      "destination": "/es/clases/afro-contemporaneo-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/afro-jazz-en-barcelona/",
+      "destination": "/es/clases/afro-jazz",
+      "permanent": true
+    },
+    {
+      "source": "/classes/clases-ballet-en-barcelona/",
+      "destination": "/es/clases/ballet-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/clases-de-bachata-en-barcelona/",
+      "destination": "/es/clases/bachata-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/clases-de-dancehall-en-barcelona/",
+      "destination": "/es/clases/dancehall-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/clases-de-hip-hop-en-barcelona/",
+      "destination": "/es/clases/hip-hop-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/clases-de-sexy-style/",
+      "destination": "/es/clases/sexy-style-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/danza-contemporanea-barcelona/",
+      "destination": "/es/clases/contemporaneo-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/femmology-sexy-style-en-barcelona/",
+      "destination": "/es/clases/femmology",
+      "permanent": true
+    },
+    {
+      "source": "/classes/folklore-cubano/",
+      "destination": "/es/clases/folklore-cubano",
+      "permanent": true
+    },
+    {
+      "source": "/classes/hip-hop-reggaeton-barcelona/",
+      "destination": "/es/clases/hip-hop-reggaeton-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/modern-jazz-en-barcelona/",
+      "destination": "/es/clases/modern-jazz-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/reggaeton-en-barcelona/",
+      "destination": "/es/clases/sexy-reggaeton-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/salsa-cubana-en-barcelona/",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/salsa-cubana-estilo-chica/",
+      "destination": "/es/clases/salsa-lady-style-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/stretching-en-barcelona/",
+      "destination": "/es/clases/stretching-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/timba-en-barcelona/",
+      "destination": "/es/clases/timba-barcelona",
+      "permanent": true
+    },
+    { "source": "/classes/timba/", "destination": "/es/clases/timba-barcelona", "permanent": true },
+    { "source": "/classes/twerk/", "destination": "/es/clases/twerk-barcelona", "permanent": true },
+    {
+      "source": "/classes/street-heels-baile-barcelona/",
+      "destination": "/es/clases/heels-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/bum-bum-gluteos-maravillosos/",
+      "destination": "/es/clases/ejercicios-gluteos-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/condicionamento-fisico-bailarines/",
+      "destination": "/es/clases/acondicionamiento-fisico-bailarines",
+      "permanent": true
+    },
+    {
+      "source": "/classes/ballet-en-tacones/",
+      "destination": "/es/clases/heels-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/clases-de-afrocubano-en-barcelona/",
+      "destination": "/es/clases/folklore-cubano",
+      "permanent": true
+    },
+    {
+      "source": "/classes/clases-de-danza-jazz-en-barcelona/",
+      "destination": "/es/clases/modern-jazz-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/rumba-cubana/",
+      "destination": "/es/clases/folklore-cubano",
+      "permanent": true
+    },
+    {
+      "source": "/classes/son-cubano-en-barcelona/",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/son-moderno/",
+      "destination": "/es/clases/timba-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/ballet-ninos/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/contemporaneo-ninos/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/hip-hop-ninos/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/jazz-ninos/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/commercial-dance-ninos/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/predanza/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/bailes-de-salon-en-barcelona/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/kizomba-en-barcelona/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/men-s-style-barcelona/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/classes/semba-en-barcelona/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    { "source": "/trainer/", "destination": "/es/profesores-baile-barcelona", "permanent": true },
+    {
+      "source": "/trainer/fabio-pinto/",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/trainer/yunaisy-farray/",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/trainer/yexy-jr/",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/trainer/natalie-bryzhata/",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/trainer/cris-ag-crisag/",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/trainer/ela-arnal/",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/trainer/yasmina-fernandez-ruiz-yass/",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/trainer/yenifer-lavin/",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/trainer/iroel-iro/",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/trainer/danger/",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/trainer/farrays-center/",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    { "source": "/horarios/", "destination": "/es/horarios-precios", "permanent": true },
+    { "source": "/precios/", "destination": "/es/horarios-precios", "permanent": true },
+    { "source": "/contacto/", "destination": "/es/contacto", "permanent": true },
+    {
+      "source": "/preguntas-frecuentes/",
+      "destination": "/es/preguntas-frecuentes",
+      "permanent": true
+    },
+    {
+      "source": "/alquiler-de-salas-en-barcelona/",
+      "destination": "/es/alquiler-salas-baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/instalaciones-de-farrays-international-dance-center/",
+      "destination": "/es/instalaciones-escuela-baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/profesores-farray-s-center-barcelona/",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/equipo-farrays-center/",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    { "source": "/clase-baile-gratis-en-barcelona/", "destination": "/es", "permanent": true },
+    {
+      "source": "/multimedia-artistas-y-profesores/",
+      "destination": "/es/profesores-baile-barcelona",
+      "permanent": true
+    },
+    { "source": "/blog-de-farrays/", "destination": "/es", "permanent": true },
+    { "source": "/8-razones-para-ir-a-clases-de-salsa/", "destination": "/es", "permanent": true },
+    { "source": "/historia-de-la-salsa/", "destination": "/es", "permanent": true },
+    { "source": "/historia-de-la-bachata/", "destination": "/es", "permanent": true },
+    { "source": "/salsa-un-genero-bailable-singular/", "destination": "/es", "permanent": true },
+    { "source": "/hablemos-salsa/", "destination": "/es", "permanent": true },
+    { "source": "/empezar-a-bailar/", "destination": "/es", "permanent": true },
+    { "source": "/clases-de-baile-gratis/", "destination": "/es", "permanent": true },
+    {
+      "source": "/clases-de-baile-para-ninos/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/cursos-de-danza-para-ninos-en-barcelona/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/clases-de-baile-por-las-mananas-en-barcelona/",
+      "destination": "/es/clases/baile-mananas",
+      "permanent": true
+    },
+    {
+      "source": "/bum-bum-barcelona/",
+      "destination": "/es/clases/ejercicios-gluteos-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/high-heels-en-barcelona/",
+      "destination": "/es/clases/heels-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/clases-de-afro-y-rumba/",
+      "destination": "/es/clases/folklore-cubano",
+      "permanent": true
+    },
+    { "source": "/regalo-baile/", "destination": "/es", "permanent": true },
+    {
+      "source": "/clases-kizomba-barcelona-tomas-keita/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/kizomba-intermedio-en-barcelona/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    { "source": "/ladies-revolution-championship/", "destination": "/es", "permanent": true },
+    { "source": "/ladies-revolution-mans-bootcamp/", "destination": "/es", "permanent": true },
+    { "source": "/ladies-revolution-2019/", "destination": "/es", "permanent": true },
+    { "source": "/tacolandia-bootcamp/", "destination": "/es", "permanent": true },
+    { "source": "/tacolandia-boocamp1/", "destination": "/es", "permanent": true },
+    { "source": "/tacolandia-bootcamp-2019/", "destination": "/es", "permanent": true },
+    { "source": "/bootcamp-salsa/", "destination": "/es", "permanent": true },
+    { "source": "/alexander-carbo-bootcamp/", "destination": "/es", "permanent": true },
+    { "source": "/carrera-de-la-mujer-de-barcelona/", "destination": "/es", "permanent": true },
+    { "source": "/casting-coreografico-yunaisy-farray/", "destination": "/es", "permanent": true },
+    { "source": "/jornada-de-la-danza/", "destination": "/es", "permanent": true },
+    { "source": "/baile-regalo-de-navidad-2019/", "destination": "/es", "permanent": true },
+    { "source": "/salsealo/", "destination": "/es", "permanent": true },
+    { "source": "/yanis-marshall/", "destination": "/es", "permanent": true },
+    { "source": "/baile-intensivos-de-verano-barcelona/", "destination": "/es", "permanent": true },
+    { "source": "/cursos-intensivos-de-baile-verano/", "destination": "/es", "permanent": true },
+    {
+      "source": "/cursos-intensivos-de-baile-y-danza-verano/",
+      "destination": "/es",
+      "permanent": true
+    },
+    { "source": "/femmology-camp/", "destination": "/es/clases/femmology", "permanent": true },
+    { "source": "/intensivos-agosto/", "destination": "/es", "permanent": true },
+    { "source": "/intensivos-de-baile/", "destination": "/es", "permanent": true },
+    {
+      "source": "/intensivos-de-danza-sexy-style/",
+      "destination": "/es/clases/sexy-style-barcelona",
+      "permanent": true
+    },
+    { "source": "/intensivos-de-danza-verano/", "destination": "/es", "permanent": true },
+    {
+      "source": "/intensivos-de-kizomba/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/intensivos-de-salsa-y-bachata-barcelona/",
+      "destination": "/es/clases/salsa-bachata-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/intensivos-de-verano-afrobeat-camp/",
+      "destination": "/es/clases/afrobeats-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/intensivos-de-verano-dancehall-camp/",
+      "destination": "/es/clases/dancehall-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/intensivos-de-verano-urbanos/",
+      "destination": "/es/clases/danzas-urbanas-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/intensivos-verano-lady-style/",
+      "destination": "/es/clases/salsa-lady-style-barcelona",
+      "permanent": true
+    },
+    { "source": "/pump-camp/", "destination": "/es", "permanent": true },
+    { "source": "/tacolandia-bootcamp-2018/", "destination": "/es", "permanent": true },
+    {
+      "source": "/clases-particulares/",
+      "destination": "/es/clases-particulares-baile",
+      "permanent": true
+    },
+    {
+      "source": "/estudio-fotos/",
+      "destination": "/es/estudio-grabacion-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/farrays-photo-studio-experience/",
+      "destination": "/es/estudio-grabacion-barcelona",
+      "permanent": true
+    },
+    { "source": "/formacion-en-danza-barcelona/", "destination": "/es", "permanent": true },
+    { "source": "/clases-de-baile-online/", "destination": "/es", "permanent": true },
+    { "source": "/clases-baile-online-registro/", "destination": "/es", "permanent": true },
+    { "source": "/aviso-legal/", "destination": "/es/aviso-legal", "permanent": true },
+    {
+      "source": "/politica-de-privacidad/",
+      "destination": "/es/politica-privacidad",
+      "permanent": true
+    },
+    {
+      "source": "/terminos-y-condiciones/",
+      "destination": "/es/terminos-y-condiciones",
+      "permanent": true
+    },
+    { "source": "/uso-de-cookies/", "destination": "/es/politica-cookies", "permanent": true },
+    {
+      "source": "/formulario-de-desistimiento/",
+      "destination": "/es/terminos-y-condiciones",
+      "permanent": true
+    },
+    { "source": "/bachata/", "destination": "/es/clases/bachata-barcelona", "permanent": true },
+    {
+      "source": "/bachata-lady/",
+      "destination": "/es/clases/bachata-lady-style-barcelona",
+      "permanent": true
+    },
+    { "source": "/dancehall/", "destination": "/es/clases/dancehall-barcelona", "permanent": true },
+    { "source": "/hip-hop/", "destination": "/es/clases/hip-hop-barcelona", "permanent": true },
+    {
+      "source": "/reggaeton/",
+      "destination": "/es/clases/sexy-reggaeton-barcelona",
+      "permanent": true
+    },
+    { "source": "/twerk/", "destination": "/es/clases/twerk-barcelona", "permanent": true },
+    { "source": "/afrobeats/", "destination": "/es/clases/afrobeats-barcelona", "permanent": true },
+    {
+      "source": "/afro-contemporaneo/",
+      "destination": "/es/clases/afro-contemporaneo-barcelona",
+      "permanent": true
+    },
+    { "source": "/afro-jazz/", "destination": "/es/clases/afro-jazz", "permanent": true },
+    {
+      "source": "/contemporaneo/",
+      "destination": "/es/clases/contemporaneo-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/folklore-cubano/",
+      "destination": "/es/clases/folklore-cubano",
+      "permanent": true
+    },
+    { "source": "/fitness/", "destination": "/es/clases/cuerpo-fit", "permanent": true },
+    {
+      "source": "/clases-de-salsa/",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/clases-de-kizomba/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/clases-de-kizomba-en-barcelona/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/clases-sexy-style/",
+      "destination": "/es/clases/sexy-style-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/clases-de-estiramientos/",
+      "destination": "/es/clases/stretching-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/clases-de-timba-para-chicas/",
+      "destination": "/es/clases/salsa-lady-style-barcelona",
+      "permanent": true
+    },
+    { "source": "/danza/", "destination": "/es/clases/danza-barcelona", "permanent": true },
+    { "source": "/danzas/", "destination": "/es/clases/danza-barcelona", "permanent": true },
+    {
+      "source": "/danzas-urbanas/",
+      "destination": "/es/clases/danzas-urbanas-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/danza-urbana/",
+      "destination": "/es/clases/danzas-urbanas-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/cuban-salsa-lady-styling/",
+      "destination": "/es/clases/salsa-lady-style-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/sexy-reggaeton/",
+      "destination": "/es/clases/sexy-reggaeton-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/sexy-reggaeton-2/",
+      "destination": "/es/clases/sexy-reggaeton-barcelona",
+      "permanent": true
+    },
+    { "source": "/son-moderno/", "destination": "/es/clases/timba-barcelona", "permanent": true },
+    { "source": "/femmology-1/", "destination": "/es/clases/femmology", "permanent": true },
+    {
+      "source": "/urban-contemporaneo-3/",
+      "destination": "/es/clases/danzas-urbanas-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/clases-baile-barcelona/",
+      "destination": "/es/clases/baile-barcelona",
+      "permanent": true
+    },
+    {
+      "source": "/clases-de-salsa-cubana-dy/",
+      "destination": "/es/clases/salsa-cubana-barcelona",
+      "permanent": true
+    },
+    { "source": "/gracias-por-escribirnos/", "destination": "/es", "permanent": true },
+    { "source": "/gracias-por-escribirnos-contacto/", "destination": "/es", "permanent": true },
+    { "source": "/gracias-por-reservar-tus-clases/", "destination": "/es", "permanent": true },
+    { "source": "/gracias-por-reservar-tus-clases-1/", "destination": "/es", "permanent": true },
+    { "source": "/reserva-segunda-clase-gratis/", "destination": "/es", "permanent": true },
+    { "source": "/reserva-tu-tercera-clase-gratis/", "destination": "/es", "permanent": true },
+    { "source": "/eventos/", "destination": "/es", "permanent": true },
+    { "source": "/colaboradores/", "destination": "/es", "permanent": true },
+    { "source": "/nuevos-cursos/", "destination": "/es", "permanent": true },
+    { "source": "/baile-social/", "destination": "/es", "permanent": true },
+    { "source": "/bailes-sociales/", "destination": "/es", "permanent": true },
+    { "source": "/grupos/", "destination": "/es", "permanent": true },
+    { "source": "/reparto/", "destination": "/es", "permanent": true },
+    { "source": "/alejandro/", "destination": "/es", "permanent": true },
+    { "source": "/covid19/", "destination": "/es", "permanent": true },
+    { "source": "/black-friday/", "destination": "/es", "permanent": true },
+    { "source": "/fiesta-de-navidad-en-farrays/", "destination": "/es", "permanent": true },
+    { "source": "/jornada-puertas-abiertas/", "destination": "/es", "permanent": true },
+    { "source": "/farraysolidario/", "destination": "/es", "permanent": true },
+    { "source": "/cid-unesco/", "destination": "/es", "permanent": true },
+    { "source": "/programa-puntos-farrays-center/", "destination": "/es", "permanent": true },
+    { "source": "/full-pass-baile-ninos/", "destination": "/es", "permanent": true },
+    { "source": "/salsa-prueba-nivel/", "destination": "/es", "permanent": true },
+    { "source": "/multimedia-clases/", "destination": "/es", "permanent": true },
+    { "source": "/multimedia-quedadas-sociales/", "destination": "/es", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/:locale(es|en|ca|fr)/horarios-precios", "destination": "/index.html" },
     {

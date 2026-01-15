@@ -111,6 +111,14 @@ export const FEMMOLOGY_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'femCulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'general',
+    limit: 6,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches: 'Femmology, danzaterapia, baile en tacones, feminidad, sensualidad, autoestima',

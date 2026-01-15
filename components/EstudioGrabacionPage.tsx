@@ -7,6 +7,7 @@ import AnimateOnScroll from './AnimateOnScroll';
 import AnimatedCounter from './AnimatedCounter';
 import FAQSection from './FAQSection';
 import Icon, { type IconName } from './Icon';
+import { ReviewsSection } from './reviews';
 
 const EstudioGrabacionPage: React.FC = () => {
   const { t, locale } = useI18n();
@@ -490,6 +491,27 @@ const EstudioGrabacionPage: React.FC = () => {
                 </div>
               </AnimateOnScroll>
             </div>
+          </div>
+        </section>
+
+        {/* Reviews Section */}
+        <section className="py-12 md:py-16 bg-black">
+          <div className="container mx-auto px-6">
+            <ReviewsSection
+              category="general"
+              limit={6}
+              showGoogleBadge={true}
+              title="Lo que dicen de nuestras instalaciones"
+              layout="grid"
+              selectedAuthors={[
+                'garcia lam',
+                'Annina Moser',
+                'Yosefin Cabeza Carrillo',
+                'Micaela Llull (MicaPower)',
+                'Michelle Lu',
+                'Alejandra Amorín',
+              ]}
+            />
           </div>
         </section>
 

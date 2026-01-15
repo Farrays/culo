@@ -142,6 +142,14 @@ export const FULL_BODY_CARDIO_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'fullBodyCardioCulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'general',
+    limit: 6,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches:

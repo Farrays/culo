@@ -126,6 +126,14 @@ export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: '',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'general',
+    limit: 6,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches:

@@ -126,6 +126,14 @@ export const TIMBA_PAGE_CONFIG: FullDanceClassConfig = {
     fullHistoryKey: 'timbaCulturalFull',
   },
 
+  // === GOOGLE REVIEWS SECTION ===
+  googleReviewsSection: {
+    enabled: true,
+    category: 'general',
+    limit: 6,
+    showGoogleBadge: true,
+  },
+
   // === SCHEMA MARKUP ===
   courseConfig: {
     teaches:
