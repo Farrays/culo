@@ -18078,4 +18078,175 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   jpaLeadModal_error_title: 'Erreur de traitement',
   jpaLeadModal_error_message: 'Une erreur est survenue. Veuillez réessayer.',
   jpaLeadModal_error_cta: 'Réessayer',
+
+  // =============================================================================
+  // BLOG ARTICLE: Salsa vs Bachata - Quel Style Choisir ?
+  // =============================================================================
+
+  // === META ===
+  blogSalsaVsBachata_title: 'Salsa vs Bachata : Quel Style Choisir ? Guide Complet 2026',
+  blogSalsaVsBachata_metaDescription:
+    "Salsa vs bachata : différences de rythme, pas et expression. Guide complet pour choisir votre style de danse latine. Cours chez Farray's Barcelone.",
+  blogSalsaVsBachata_excerpt:
+    'Découvrez les différences entre salsa et bachata : origine, musique, mouvements et lequel choisir selon votre personnalité',
+  blogSalsaVsBachata_breadcrumbCurrent: 'Salsa vs Bachata',
+
+  // === SUMMARY BULLETS (GEO Optimized) ===
+  blogSalsaVsBachata_summaryBullet1:
+    'Salsa : énergie explosive née à New York (années 60) aux racines cubaines',
+  blogSalsaVsBachata_summaryBullet2:
+    'Bachata : sensualité dominicaine, Patrimoine UNESCO depuis 2019',
+  blogSalsaVsBachata_summaryBullet3:
+    'Différences clés : tempo, mouvement des hanches et connexion en couple',
+  blogSalsaVsBachata_summaryBullet4:
+    "Chez Farray's Barcelone nous enseignons les deux styles pour des danseurs complets",
+
+  // === STATS ===
+  blogSalsaVsBachata_statSalsaOrigenLabel: 'Salsa cristallise à NYC',
+  blogSalsaVsBachata_statBachataOrigenLabel: 'Bachata naît en RD',
+  blogSalsaVsBachata_statUNESCOLabel: 'Bachata Patrimoine Immatériel',
+
+  // === INTRODUCTION ===
+  blogSalsaVsBachata_intro:
+    "Salsa et bachata sont comme deux langues différentes du même cœur latin. La première vous invite à exploser dans des tours palpitants ; la seconde, à vous fondre dans une étreinte sensuelle qui n'a pas besoin de se presser. Selon l'[étude de Ramos Gandía (2023)](https://www.muchomasquebaile.es/wp-content/uploads/2021/11/Historia-de-la-salsa-desde-las-raices-hasta-el-1975.pdf), la salsa a cristallisé à New York dans les années 60 en fusionnant le son cubain avec le jazz et la soul, tandis que la bachata émergeait simultanément dans les quartiers de Santo Domingo.",
+  blogSalsaVsBachata_intro2:
+    "Lequel choisir ? La réponse dépend de votre personnalité, de votre façon de ressentir la musique et de ce que vous recherchez sur la piste. Chez **[Farray's International Dance Center](/fr/clases)** nous enseignons les deux styles car nous croyons qu'un danseur complet maîtrise les deux langages. Ce guide vous aidera à découvrir lequel résonne le plus avec vous, ou pourquoi vous devriez apprendre les deux.",
+
+  // === SECTION 1: ORIGINS ===
+  blogSalsaVsBachata_origenesTitle: 'Origines : Deux Histoires Parallèles des Caraïbes',
+  blogSalsaVsBachata_origenesSalsa:
+    "**La salsa** est née comme expression de la diaspora latine à New York. Selon [Wikipédia](https://fr.wikipedia.org/wiki/Salsa_(musique)), elle fusionne le son cubain, le mambo, le cha-cha-cha avec le jazz et le R&B américains. Le label Fania Records et des artistes comme Héctor Lavoe, Celia Cruz et Willie Colón l'ont catapultée mondialement dans les années 70. C'est une musique de quartier, de résistance, de célébration collective.",
+  blogSalsaVsBachata_origenesBachata:
+    "**La bachata** a émergé en République Dominicaine comme « música de amargue » (musique d'amertume), reléguée aux bars et bordels par les élites. [Deborah Pacini Hernández (1995)](https://archive.org/details/bachatasocialhist00paci) documente comment José Manuel Calderón a enregistré les premières bachatas en 1962. Le genre a souffert de décennies de stigmatisation jusqu'à ce que des artistes comme Juan Luis Guerra et Romeo Santos l'élèvent au rang de phénomène mondial. En 2019, l'[UNESCO a déclaré la bachata Patrimoine Immatériel de l'Humanité](http://crespial.org/es/noticias/bachata-dominicana-es-declarada-patrimonio-de-la-humanidad-por-la-unesco/).",
+
+  // === SECTION 2: THE MUSIC ===
+  blogSalsaVsBachata_musicaTitle: 'La Musique : Des Rythmes qui Parlent Différemment',
+  blogSalsaVsBachata_musicaSalsa:
+    '**Rythme salsa** : tempo rapide (160-220 BPM), clave afro-cubaine (3-2 ou 2-3), section de cuivres puissante, piano montuno et percussions énergiques (congas, timbales, bongos). La musique vous pousse à bouger, vous ne pouvez pas rester immobile. Écoutez « Pedro Navaja » de Rubén Blades ou « Quimbara » de Celia Cruz pour ressentir cette descarga.',
+  blogSalsaVsBachata_musicaBachata:
+    "**Rythme bachata** : tempo plus lent (120-160 BPM), guitare requinto caractéristique qui « pleure », basse syncopée et bongos doux. La musique vous enveloppe, vous invite à vous connecter avec votre partenaire. Du son traditionnel d'Antony Santos à la bachata urbaine de Romeo Santos, le genre a évolué tout en conservant son essence romantique.",
+
+  // === IMAGE: Rhythms ===
+  blogSalsaVsBachata_imageRitmosCaption:
+    "Salsa et bachata : deux rythmes, deux expressions de l'âme latine",
+
+  // === SECTION 3: THE DANCE ===
+  blogSalsaVsBachata_baileTitle: 'La Danse : Mouvement et Expression Corporelle',
+  blogSalsaVsBachata_baileSalsa:
+    "**Danser la salsa** c'est comme une conversation animée : tours rapides, jeu de jambes complexe, changements de direction constants. Le leader guide avec précision, la suiveuse répond avec fluidité. Le corps bouge verticalement, les épaules restent stables tandis que les hanches accentuent le rythme. Dans [nos cours de salsa cubaine](/fr/clases/salsa-cubana-barcelona) nous travaillons du pas de base aux figures les plus complexes.",
+  blogSalsaVsBachata_baileBachata:
+    "**Danser la bachata** c'est comme un murmure intime : mouvements ondulants, hanches qui dessinent des huit, connexion proche avec le partenaire. Le « pop » de hanche sur le quatrième temps est la signature du genre. La bachata sensuelle, popularisée en Europe, ajoute des vagues corporelles et des isolations. Dans [nos cours de bachata](/fr/clases/bachata-barcelona) nous enseignons du traditionnel au contemporain.",
+
+  // === COMPARISON TABLE ===
+  blogSalsaVsBachata_tablaTitle: 'Tableau Comparatif : Salsa vs Bachata',
+  blogSalsaVsBachata_tablaHeader1: 'Caractéristique',
+  blogSalsaVsBachata_tablaHeader2: 'Salsa',
+  blogSalsaVsBachata_tablaHeader3: 'Bachata',
+  blogSalsaVsBachata_tablaRow1Col1: 'Tempo',
+  blogSalsaVsBachata_tablaRow1Col2: 'Rapide (160-220 BPM)',
+  blogSalsaVsBachata_tablaRow1Col3: 'Modéré (120-160 BPM)',
+  blogSalsaVsBachata_tablaRow2Col1: 'Origine',
+  blogSalsaVsBachata_tablaRow2Col2: 'New York / Cuba',
+  blogSalsaVsBachata_tablaRow2Col3: 'République Dominicaine',
+  blogSalsaVsBachata_tablaRow3Col1: 'Mouvement hanches',
+  blogSalsaVsBachata_tablaRow3Col2: 'Subtil, accent latéral',
+  blogSalsaVsBachata_tablaRow3Col3: 'Prononcé, « pop » sur 4',
+  blogSalsaVsBachata_tablaRow4Col1: 'Connexion couple',
+  blogSalsaVsBachata_tablaRow4Col2: 'Ouverte, beaucoup de tours',
+  blogSalsaVsBachata_tablaRow4Col3: 'Proche, sensuelle',
+  blogSalsaVsBachata_tablaRow5Col1: 'Instrument clé',
+  blogSalsaVsBachata_tablaRow5Col2: 'Piano, cuivres, clave',
+  blogSalsaVsBachata_tablaRow5Col3: 'Guitare requinto',
+
+  // === SECTION 4: LEARNING ===
+  blogSalsaVsBachata_aprendizajeTitle: 'Laquelle est Plus Facile à Apprendre ?',
+  blogSalsaVsBachata_aprendizajeIntro:
+    "Question piège : aucune n'est « facile » si vous voulez bien danser. Mais il y a des différences dans la courbe d'apprentissage initiale.",
+  blogSalsaVsBachata_aprendizajeBachata:
+    "**Bachata pour débutants** : le pas de base (côté-côté-côté-tap) est plus intuitif et le tempo plus lent permet de traiter les mouvements. Beaucoup de personnes sentent qu'elles « connectent » avec la bachata plus rapidement. Dans [nos cours pour débutants](/fr/clases/clases-baile-principiantes-barcelona) nous voyons des élèves danser la bachata sociale en quelques semaines.",
+  blogSalsaVsBachata_aprendizajeSalsa:
+    "**Salsa pour débutants** : le pas de base demande plus de coordination rythmique (le fameux « 1-2-3, pause, 5-6-7, pause ») et le tempo rapide peut submerger au début. Cependant, une fois le timing maîtrisé, la salsa offre un vocabulaire de figures presque infini. L'investissement initial est plus grand, mais les possibilités sont immenses.",
+
+  // === IMAGE: Classes ===
+  blogSalsaVsBachata_imageClasesCaption:
+    "Cours de salsa et bachata chez Farray's Dance Center Barcelone",
+
+  // === SECTION 5: BENEFITS ===
+  blogSalsaVsBachata_beneficiosTitle: 'Bienfaits pour la Santé : La Science de la Danse Latine',
+  blogSalsaVsBachata_beneficiosIntro:
+    'Les deux danses offrent des bienfaits extraordinaires soutenus par des études scientifiques :',
+  blogSalsaVsBachata_beneficiosListaTitle: 'Bienfaits prouvés :',
+  blogSalsaVsBachata_beneficioCardio:
+    "**Santé cardiovasculaire** : la danse en couple élève le rythme cardiaque de façon soutenue, améliorant l'endurance aérobique",
+  blogSalsaVsBachata_beneficioCognitivo:
+    '**Fonction cognitive** : selon le [NEJM (2003)](https://www.nejm.org/doi/full/10.1056/NEJMoa022252), la danse fréquente réduit de 76% le risque de démence, plus que toute autre activité physique ou cognitive',
+  blogSalsaVsBachata_beneficioEmocional:
+    '**Bien-être émotionnel** : des études sur [ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S1090513816300113) montrent que la danse synchronisée libère des endorphines et renforce les liens sociaux',
+  blogSalsaVsBachata_beneficioSocial:
+    "**Communauté** : danser régulièrement crée des connexions sociales profondes qui combattent l'isolement et améliorent la santé mentale",
+
+  // === SECTION 6: BOTH ===
+  blogSalsaVsBachata_ambosTitle: 'Pourquoi Ne Pas Apprendre les Deux Styles ?',
+  blogSalsaVsBachata_ambosContent:
+    "La vérité est que salsa et bachata se complètent parfaitement. Dans les soirées latines, le DJ alterne entre les deux genres. Si vous n'en connaissez qu'un, vous êtes assis la moitié de la soirée. De plus, les compétences sont transférables : la musicalité, le lead/follow, la connexion avec le partenaire.",
+  blogSalsaVsBachata_ambosFarrays:
+    "Chez **[Farray's International Dance Center](/fr/clases/salsa-bachata-barcelona)** nous offrons un programme combiné salsa et bachata qui vous transforme en danseur polyvalent. Nos professeurs, avec plus de 20 ans d'expérience, vous guident de zéro au niveau social. [Réservez votre cours d'essai gratuit](/fr/contacto) et découvrez votre rythme... ou les deux.",
+
+  // === SECTION 7: CONCLUSION ===
+  blogSalsaVsBachata_conclusionTitle: 'Conclusion : Votre Rythme, Votre Choix',
+  blogSalsaVsBachata_conclusionContent:
+    "Salsa ou bachata ? Si vous cherchez l'adrénaline, les tours et l'énergie débordante, commencez par la salsa. Si vous préférez la sensualité, la connexion intime et un tempo qui permet de savourer chaque mouvement, la bachata est votre porte d'entrée. Mais rappelez-vous : les meilleurs danseurs maîtrisent les deux langages.",
+  blogSalsaVsBachata_conclusionCTA:
+    "**[Venez chez Farray's](/fr/contacto)** et essayez les deux styles. Votre premier cours est gratuit. Nous vous attendons au cœur de Barcelone pour découvrir quel rythme fait battre plus fort votre cœur latin.",
+
+  // === FAQ SECTION (8 FAQs for Schema) ===
+  blogSalsaVsBachata_faqTitle: 'Questions Fréquentes : Salsa vs Bachata',
+  blogSalsaVsBachata_faq1Question: "Qu'est-ce qui est plus facile, la salsa ou la bachata ?",
+  blogSalsaVsBachata_faq1Answer:
+    'La **bachata** tend à être plus accessible pour les débutants grâce à son tempo plus lent (120-160 BPM) et son pas de base intuitif. La salsa (160-220 BPM) demande plus de coordination rythmique initiale. Cependant, les deux danses ont des niveaux avancés tout aussi exigeants.',
+  blogSalsaVsBachata_faq2Question: 'Quelle est la différence principale entre salsa et bachata ?',
+  blogSalsaVsBachata_faq2Answer:
+    'Les différences principales sont : **tempo** (salsa plus rapide), **origine** (salsa NYC/Cuba, bachata République Dominicaine), **mouvement des hanches** (bachata plus prononcé avec « pop » sur le temps 4), et **connexion** (salsa plus ouverte avec tours, bachata plus proche et sensuelle).',
+  blogSalsaVsBachata_faq3Question: 'Puis-je apprendre la salsa et la bachata en même temps ?',
+  blogSalsaVsBachata_faq3Answer:
+    "Oui, c'est très recommandé. Chez **[Farray's Barcelone](/fr/clases/salsa-bachata-barcelona)** nous offrons des programmes combinés car les compétences sont transférables et dans les soirées latines les deux genres alternent. Les apprendre ensemble vous rend danseur polyvalent.",
+  blogSalsaVsBachata_faq4Question: 'Quels sont les bienfaits de danser la salsa ou la bachata ?',
+  blogSalsaVsBachata_faq4Answer:
+    'Selon le [NEJM](https://www.nejm.org/doi/full/10.1056/NEJMoa022252), la danse fréquente réduit de 76% le risque de démence. Elle améliore aussi la santé cardiovasculaire, libère des endorphines, combat le stress et crée des connexions sociales profondes.',
+  blogSalsaVsBachata_faq5Question: "La bachata est-elle Patrimoine de l'UNESCO ?",
+  blogSalsaVsBachata_faq5Answer:
+    "Oui, en décembre 2019 l'[UNESCO a déclaré la bachata dominicaine Patrimoine Immatériel de l'Humanité](http://crespial.org/es/noticias/bachata-dominicana-es-declarada-patrimonio-de-la-humanidad-por-la-unesco/), reconnaissant sa valeur culturelle et sa contribution à l'identité dominicaine.",
+  blogSalsaVsBachata_faq6Question: 'Où puis-je apprendre la salsa et la bachata à Barcelone ?',
+  blogSalsaVsBachata_faq6Answer:
+    "**[Farray's International Dance Center](/fr/clases)** offre des cours de salsa cubaine, bachata sensuelle et programmes combinés pour tous les niveaux. Situé au centre de Barcelone, avec plus de 20 ans d'expérience dans la formation de danseurs.",
+  blogSalsaVsBachata_faq7Question: 'Quels vêtements porter pour les cours de salsa ou bachata ?',
+  blogSalsaVsBachata_faq7Answer:
+    'Des vêtements confortables qui permettent le mouvement : pantalons élastiques ou jupes fluides, t-shirts respirants. Pour les pieds, chaussures à semelle lisse (pas de baskets en caoutchouc). Aux niveaux avancés, les chaussures de danse latine améliorent les tours et la technique.',
+  blogSalsaVsBachata_faq8Question:
+    'Combien de temps faut-il pour apprendre à danser la salsa ou la bachata ?',
+  blogSalsaVsBachata_faq8Answer:
+    'Avec des cours réguliers (2-3 fois par semaine), la plupart des élèves dansent socialement en **2-3 mois**. Pour le niveau intermédiaire-avancé, comptez 1-2 ans de pratique constante. La clé est la régularité et pratiquer dans les soirées sociales.',
+
+  // === REFERENCES ===
+  blogSalsaVsBachata_referencesTitle: 'Sources et Références Académiques',
+  blogSalsaVsBachata_referencesIntro:
+    'Cet article est soutenu par des sources académiques vérifiées :',
+  blogSalsaVsBachata_refRamosTitle: 'Histoire de la Salsa : Des Racines à 1975',
+  blogSalsaVsBachata_refRamosDesc:
+    'Document académique complet sur les origines du son, mambo et la cristallisation de la salsa à New York.',
+  blogSalsaVsBachata_refPaciniTitle: 'Bachata: A Social History of Dominican Popular Music',
+  blogSalsaVsBachata_refPaciniDesc:
+    "Étude ethnomusicologique de référence sur l'origine et l'évolution de la bachata en République Dominicaine.",
+  blogSalsaVsBachata_refUNESCOTitle: 'Bachata Dominicaine - Patrimoine UNESCO',
+  blogSalsaVsBachata_refUNESCODesc:
+    "Déclaration officielle de l'UNESCO reconnaissant la bachata comme Patrimoine Immatériel de l'Humanité (2019).",
+  blogSalsaVsBachata_refNEJMTitle: 'Leisure Activities and Dementia Risk – NEJM',
+  blogSalsaVsBachata_refNEJMDesc:
+    'Étude de référence démontrant les bienfaits cognitifs de la danse : 76% de réduction du risque de démence.',
+  blogSalsaVsBachata_refEndorphinsTitle: 'Synchronized Dancing and Endorphin Release',
+  blogSalsaVsBachata_refEndorphinsDesc:
+    "Recherche sur la libération d'endorphines et la cohésion sociale à travers la danse synchronisée.",
+  blogSalsaVsBachata_refDiarioLibreTitle: 'La Bachata Reçoit la Reconnaissance UNESCO',
+  blogSalsaVsBachata_refDiarioLibreDesc:
+    'Couverture journalistique de la reconnaissance de la bachata comme patrimoine culturel immatériel.',
 };

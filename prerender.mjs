@@ -458,6 +458,7 @@ const routes = [
   { path: 'es/blog/historia/historia-bachata-barcelona', lang: 'es', page: 'blogHistoriaBachata' },
   { path: 'es/blog/tutoriales', lang: 'es', page: 'blogTutoriales' },
   { path: 'es/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'es', page: 'blogSalsaRitmo' },
+  { path: 'es/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'es', page: 'blogSalsaVsBachata' },
   { path: 'es/blog/tips', lang: 'es', page: 'blogTips' },
   { path: 'es/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'es', page: 'blogClasesPrincipiantes' },
 
@@ -470,6 +471,7 @@ const routes = [
   { path: 'ca/blog/historia/historia-bachata-barcelona', lang: 'ca', page: 'blogHistoriaBachata' },
   { path: 'ca/blog/tutoriales', lang: 'ca', page: 'blogTutoriales' },
   { path: 'ca/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'ca', page: 'blogSalsaRitmo' },
+  { path: 'ca/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'ca', page: 'blogSalsaVsBachata' },
   { path: 'ca/blog/tips', lang: 'ca', page: 'blogTips' },
   { path: 'ca/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'ca', page: 'blogClasesPrincipiantes' },
 
@@ -482,6 +484,7 @@ const routes = [
   { path: 'en/blog/historia/historia-bachata-barcelona', lang: 'en', page: 'blogHistoriaBachata' },
   { path: 'en/blog/tutoriales', lang: 'en', page: 'blogTutoriales' },
   { path: 'en/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'en', page: 'blogSalsaRitmo' },
+  { path: 'en/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'en', page: 'blogSalsaVsBachata' },
   { path: 'en/blog/tips', lang: 'en', page: 'blogTips' },
   { path: 'en/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'en', page: 'blogClasesPrincipiantes' },
 
@@ -494,6 +497,7 @@ const routes = [
   { path: 'fr/blog/historia/historia-bachata-barcelona', lang: 'fr', page: 'blogHistoriaBachata' },
   { path: 'fr/blog/tutoriales', lang: 'fr', page: 'blogTutoriales' },
   { path: 'fr/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'fr', page: 'blogSalsaRitmo' },
+  { path: 'fr/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'fr', page: 'blogSalsaVsBachata' },
   { path: 'fr/blog/tips', lang: 'fr', page: 'blogTips' },
   { path: 'fr/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'fr', page: 'blogClasesPrincipiantes' },
 
@@ -680,6 +684,10 @@ const metadata = {
     blogSalsaRitmo: {
       title: 'Salsa: El Ritmo que Conquistó el Mundo | Farray\'s Center',
       description: 'Descubre los diferentes estilos de salsa: cubana, rueda de casino, salsa en línea y más. Guía completa para entender y bailar salsa en Barcelona.',
+    },
+    blogSalsaVsBachata: {
+      title: 'Salsa vs Bachata: ¿Qué Estilo Elegir? Guía Completa | Farray\'s Center',
+      description: 'Salsa vs bachata: diferencias en ritmo, pasos y expresión. Guía completa para elegir tu estilo de baile latino. Clases en Barcelona.',
     },
     blogClasesSalsaBarcelona: {
       title: 'Hombres y mujeres, ¿hablamos salsa? | Farray\'s Center Blog',
@@ -961,6 +969,10 @@ const metadata = {
       title: 'Salsa: El Ritme que Va Conquistar el Món | Farray\'s Center',
       description: 'Descobreix els diferents estils de salsa: cubana, roda de casino, salsa en línia i més. Guia completa per entendre i ballar salsa a Barcelona.',
     },
+    blogSalsaVsBachata: {
+      title: 'Salsa vs Bachata: Quin Estil Triar? Guia Completa | Farray\'s Center',
+      description: 'Salsa vs bachata: diferències en ritme, passos i expressió. Guia completa per triar el teu estil de ball llatí. Classes a Barcelona.',
+    },
     blogClasesSalsaBarcelona: {
       title: 'Homes i dones, parlem salsa? | Farray\'s Center Blog',
       description: 'La salsa com a llenguatge universal: reflexions sobre la pista de ball com a espai de connexió entre homes i dones. Per Mar Guerrero.',
@@ -1241,6 +1253,10 @@ const metadata = {
       title: 'Salsa: The Rhythm that Conquered the World | Farray\'s Center',
       description: 'Discover the different salsa styles: Cuban, rueda de casino, line salsa and more. Complete guide to understand and dance salsa in Barcelona.',
     },
+    blogSalsaVsBachata: {
+      title: 'Salsa vs Bachata: Which Style to Choose? Complete Guide | Farray\'s Center',
+      description: 'Salsa vs bachata: differences in rhythm, steps and expression. Complete guide to choose your Latin dance style. Classes in Barcelona.',
+    },
     blogClasesSalsaBarcelona: {
       title: 'Men and Women, Shall We Speak Salsa? | Farray\'s Center Blog',
       description: 'Salsa as a universal language: reflections on the dance floor as a space of connection between men and women. By Mar Guerrero.',
@@ -1520,6 +1536,10 @@ const metadata = {
     blogSalsaRitmo: {
       title: 'Salsa : Le Rythme qui a Conquis le Monde | Farray\'s Center',
       description: 'Découvrez les différents styles de salsa : cubaine, rueda de casino, salsa en ligne et plus. Guide complet pour comprendre et danser la salsa à Barcelone.',
+    },
+    blogSalsaVsBachata: {
+      title: 'Salsa vs Bachata : Quel Style Choisir ? Guide Complet | Farray\'s Center',
+      description: 'Salsa vs bachata : différences de rythme, pas et expression. Guide complet pour choisir votre style de danse latine. Cours à Barcelone.',
     },
     blogClasesSalsaBarcelona: {
       title: 'Hommes et femmes, parlons salsa ? | Farray\'s Center Blog',
@@ -1839,6 +1859,8 @@ routes.forEach(route => {
     pagePath = 'blog/tutoriales';
   } else if (page === 'blogSalsaRitmo') {
     pagePath = 'blog/tutoriales/salsa-ritmo-conquisto-mundo';
+  } else if (page === 'blogSalsaVsBachata') {
+    pagePath = 'blog/tutoriales/salsa-vs-bachata-que-estilo-elegir';
   } else if (page === 'blogClasesSalsaBarcelona') {
     pagePath = 'blog/lifestyle/clases-de-salsa-barcelona';
   } else if (page === 'blogTips') {
