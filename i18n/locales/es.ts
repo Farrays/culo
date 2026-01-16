@@ -19330,9 +19330,9 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // === SECTION 1: ORÍGENES ===
   blogSalsaVsBachata_origenesTitle: 'Orígenes: Dos Historias Paralelas del Caribe',
   blogSalsaVsBachata_origenesSalsa:
-    '**La salsa** nació como expresión de la diáspora latina en Nueva York. Según la [Wikipedia](https://es.wikipedia.org/wiki/Salsa_(g%C3%A9nero_musical)), fusiona son cubano, mambo, chachachá con jazz y R&B estadounidense. El sello Fania Records y artistas como Héctor Lavoe, Celia Cruz y Willie Colón la catapultaron globalmente en los 70. Es música de barrio, de resistencia, de celebración colectiva.',
+    '**La salsa** cristalizó en los barrios latinos de Nueva York durante los años 60. Fusiona son cubano, mambo y chachachá con jazz y R&B estadounidense. El sello Fania Records y artistas como Héctor Lavoe, Celia Cruz y Willie Colón la catapultaron globalmente en los 70. Es música de barrio, de resistencia, de celebración colectiva.',
   blogSalsaVsBachata_origenesBachata:
-    '**La bachata** emergió en la República Dominicana como "música de amargue", relegada a bares y prostíbulos por las élites. [Deborah Pacini Hernández (1995)](https://archive.org/details/bachatasocialhist00paci) documenta cómo José Manuel Calderón grabó las primeras bachatas en 1962. El género sufrió décadas de estigma hasta que artistas como Juan Luis Guerra y Romeo Santos lo elevaron a fenómeno mundial. En 2019, la [UNESCO declaró la bachata Patrimonio Inmaterial de la Humanidad](http://crespial.org/es/noticias/bachata-dominicana-es-declarada-patrimonio-de-la-humanidad-por-la-unesco/).',
+    '**La bachata** emergió en la República Dominicana como "música de amargue", relegada a bares y prostíbulos por las élites. [Deborah Pacini Hernández (1995)](https://archive.org/details/bachatasocialhist00paci) documenta cómo José Manuel Calderón grabó las primeras bachatas en 1962. El género sufrió décadas de estigma hasta que artistas como Juan Luis Guerra y Romeo Santos lo elevaron a fenómeno mundial. En 2019, la [UNESCO declaró la bachata Patrimonio Inmaterial de la Humanidad](https://ich.unesco.org/es/RL/la-bachata-dominicana-01514).',
 
   // === SECTION 2: LA MÚSICA ===
   blogSalsaVsBachata_musicaTitle: 'La Música: Ritmos que Hablan Diferente',
@@ -19430,7 +19430,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
     'Según el [NEJM](https://www.nejm.org/doi/full/10.1056/NEJMoa022252), el baile frecuente reduce un 76% el riesgo de demencia. Además mejora la salud cardiovascular, libera endorfinas, combate el estrés y crea conexiones sociales profundas.',
   blogSalsaVsBachata_faq5Question: '¿La bachata es Patrimonio de la UNESCO?',
   blogSalsaVsBachata_faq5Answer:
-    'Sí, en diciembre de 2019 la [UNESCO declaró la bachata dominicana Patrimonio Inmaterial de la Humanidad](http://crespial.org/es/noticias/bachata-dominicana-es-declarada-patrimonio-de-la-humanidad-por-la-unesco/), reconociendo su valor cultural y su contribución a la identidad dominicana.',
+    'Sí, en diciembre de 2019 la [UNESCO declaró la bachata dominicana Patrimonio Inmaterial de la Humanidad](https://ich.unesco.org/es/RL/la-bachata-dominicana-01514), reconociendo su valor cultural y su contribución a la identidad dominicana.',
   blogSalsaVsBachata_faq6Question: '¿Dónde puedo aprender salsa y bachata en Barcelona?',
   blogSalsaVsBachata_faq6Answer:
     "**[Farray's International Dance Center](/es/clases)** ofrece clases de salsa cubana, bachata sensual y programas combinados para todos los niveles. Ubicados en el centro de Barcelona, con más de 20 años de experiencia formando bailadores.",

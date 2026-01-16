@@ -17729,9 +17729,9 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // === SECTION 1: ORIGINS ===
   blogSalsaVsBachata_origenesTitle: 'Origins: Two Parallel Caribbean Stories',
   blogSalsaVsBachata_origenesSalsa:
-    "**Salsa** was born as an expression of the Latin diaspora in New York. According to [Wikipedia](https://en.wikipedia.org/wiki/Salsa_music), it fuses Cuban son, mambo, cha-cha-chá with American jazz and R&B. The Fania Records label and artists like Héctor Lavoe, Celia Cruz and Willie Colón catapulted it globally in the 70s. It's neighborhood music, resistance music, collective celebration.",
+    "**Salsa** crystallized in New York's Latin neighborhoods during the 1960s. It fuses Cuban son, mambo and cha-cha-chá with American jazz and R&B. The Fania Records label and artists like Héctor Lavoe, Celia Cruz and Willie Colón catapulted it globally in the 70s. It's neighborhood music, resistance music, collective celebration.",
   blogSalsaVsBachata_origenesBachata:
-    '**Bachata** emerged in the Dominican Republic as "música de amargue" (music of bitterness), relegated to bars and brothels by the elites. [Deborah Pacini Hernández (1995)](https://archive.org/details/bachatasocialhist00paci) documents how José Manuel Calderón recorded the first bachatas in 1962. The genre suffered decades of stigma until artists like Juan Luis Guerra and Romeo Santos elevated it to a global phenomenon. In 2019, [UNESCO declared bachata Intangible Heritage of Humanity](http://crespial.org/es/noticias/bachata-dominicana-es-declarada-patrimonio-de-la-humanidad-por-la-unesco/).',
+    '**Bachata** emerged in the Dominican Republic as "música de amargue" (music of bitterness), relegated to bars and brothels by the elites. [Deborah Pacini Hernández (1995)](https://archive.org/details/bachatasocialhist00paci) documents how José Manuel Calderón recorded the first bachatas in 1962. The genre suffered decades of stigma until artists like Juan Luis Guerra and Romeo Santos elevated it to a global phenomenon. In 2019, [UNESCO declared bachata Intangible Heritage of Humanity](https://ich.unesco.org/es/RL/la-bachata-dominicana-01514).',
 
   // === SECTION 2: THE MUSIC ===
   blogSalsaVsBachata_musicaTitle: 'The Music: Rhythms That Speak Differently',
@@ -17829,7 +17829,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     'According to the [NEJM](https://www.nejm.org/doi/full/10.1056/NEJMoa022252), frequent dancing reduces dementia risk by 76%. It also improves cardiovascular health, releases endorphins, combats stress and creates deep social connections.',
   blogSalsaVsBachata_faq5Question: 'Is bachata a UNESCO Heritage?',
   blogSalsaVsBachata_faq5Answer:
-    'Yes, in December 2019 [UNESCO declared Dominican bachata Intangible Heritage of Humanity](http://crespial.org/es/noticias/bachata-dominicana-es-declarada-patrimonio-de-la-humanidad-por-la-unesco/), recognizing its cultural value and contribution to Dominican identity.',
+    'Yes, in December 2019 [UNESCO declared Dominican bachata Intangible Heritage of Humanity](https://ich.unesco.org/es/RL/la-bachata-dominicana-01514), recognizing its cultural value and contribution to Dominican identity.',
   blogSalsaVsBachata_faq6Question: 'Where can I learn salsa and bachata in Barcelona?',
   blogSalsaVsBachata_faq6Answer:
     "**[Farray's International Dance Center](/en/clases)** offers Cuban salsa, sensual bachata and combined programs for all levels. Located in the center of Barcelona, with over 20 years of experience training dancers.",
