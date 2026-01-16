@@ -2,7 +2,7 @@ export const es = {
   // General
   pageTitle: "Farray's International Dance Center | Escuela de Baile en Barcelona",
   metaDescription:
-    'Escuela de baile en Barcelona con +25 estilos: salsa, bachata, hip hop, ballet y más. Método Farray® exclusivo. Centro CID-UNESCO. Primera clase gratis.',
+    'Escuela de baile en Barcelona con +25 estilos: salsa, bachata, hip hop, ballet y más. Método Farray® exclusivo. Centro CID-UNESCO. Reserva tu clase de bienvenida.',
   skipToMainContent: 'Saltar al contenido principal',
   ratingAriaLabel: '{rating} de 5 estrellas',
   closeButton: 'Cerrar',
@@ -66,7 +66,7 @@ export const es = {
   heroTagline: 'Bailar es trabajar tu felicidad.',
   heroValue:
     'No necesitas más clases de baile. Necesitas las clases correctas. Si buscas clases de baile en Barcelona donde por fin avances y no te sientas un número, estás en el sitio correcto. Con el Método Farray® aprendes bien, rápido y con estilo… y te diviertes más que en cualquier gimnasio.',
-  heroCTA1: 'Reserva tu Clase de Prueba',
+  heroCTA1: 'Reserva tu Clase de Bienvenida',
   heroCTA2: 'Explora las Clases',
   heroScroll: 'Despliega Tu Potencial',
   // Philosophy
@@ -237,7 +237,7 @@ export const es = {
   finalCtaSubtitleLine2: 'La diferencia es que dieron el primer paso.',
   finalCtaSubtitleLine3: 'Hazlo tú también. Matricúlate hoy.',
   finalCtaButton1: 'Hazte Socio Ahora',
-  finalCtaButton2: 'Reserva tu Clase de Prueba',
+  finalCtaButton2: 'Reserva tu Clase de Bienvenida',
   // Footer
   followOnFacebook: 'Síguenos en Facebook',
   followOnInstagram: 'Síguenos en Instagram',
@@ -422,7 +422,7 @@ export const es = {
     'Somos multidisciplinares de verdad: Salsa, Bachata, Kizomba, Dancehall, Hip Hop, Reggaeton, Commercial Dance, Ballet, Jazz, Contemporáneo, Heels y más. Desde ritmos latinos hasta danza urbana y clásica. El Método Farray® fusiona todo esto con una pedagogía única que combina disciplina rusa, sabor afrodescendiente e innovación global. Aquí encuentras tu estilo... o descubres varios.',
   homeFaqQ5: '¿Necesito experiencia previa para empezar?',
   homeFaqA5:
-    'Para nada. Tenemos clases desde nivel cero absoluto hasta avanzado/profesional. El Método Farray® está diseñado para que progreses rápido sin importar tu punto de partida. Muchos de nuestros mejores alumnos empezaron sin haber bailado nunca. Lo importante es querer aprender y disfrutar. Tu primera clase es gratis para que lo compruebes sin compromiso.',
+    'Para nada. Tenemos clases desde nivel cero absoluto hasta avanzado/profesional. El Método Farray® está diseñado para que progreses rápido sin importar tu punto de partida. Muchos de nuestros mejores alumnos empezaron sin haber bailado nunca. Lo importante es querer aprender y disfrutar. Tu primera clase de bienvenida es especial para que lo compruebes sin compromiso.',
   homeFaqQ6: '¿Ofrecen actuaciones, eventos o espectáculos?',
   homeFaqA6:
     '¡Sí! Organizamos showcases en teatros profesionales, participamos en eventos culturales de Barcelona, competiciones, workshops con profesores internacionales y fiestas temáticas. Si quieres subir al escenario, aquí tienes la oportunidad. Y si prefieres solo disfrutar bailando, también perfecto. Tú decides tu nivel de implicación.',
@@ -431,7 +431,7 @@ export const es = {
     "El CID-UNESCO (Consejo Internacional de la Danza) es la organización oficial de la UNESCO para la danza a nivel mundial. Que Farray's esté acreditado por ellos significa que cumplimos los más altos estándares internacionales de enseñanza. Yunaisy Farray es miembro activa. Esto garantiza calidad pedagógica, reconocimiento internacional y profesionalidad seria.",
   homeFaqQ8: '¿Puedo probar una clase de baile antes de inscribirme?',
   homeFaqA8:
-    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en la parte superior de esta página.',
+    'Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Bienvenida" en la parte superior de esta página.',
   // Dancehall Key Stats
   classMinutes: 'Minutos de Clase',
   caloriesBurned: 'Calorías Quemadas',
@@ -461,7 +461,7 @@ export const es = {
     '¡Por supuesto! De hecho, lo recomendamos. Aprender múltiples estilos de baile te hace un bailarín más completo y versátil. Por ejemplo, el ballet mejora tu postura y técnica para la salsa, mientras que el hip hop puede hacer tu bachata más dinámica. Nuestros paquetes de clases te permiten asistir a diferentes tipos de clases según tus intereses. Muchos de nuestros estudiantes más avanzados practican 3-4 estilos simultáneamente.',
   classesFaqQ3: '¿Cómo sé qué nivel es el adecuado para mí?',
   classesFaqA3:
-    'Si es tu primera clase, siempre recomendamos comenzar en el nivel de fundamentos o principiantes. Sin embargo, si tienes experiencia previa en baile, nuestros instructores pueden evaluarte en tu primera clase de prueba y recomendarte el nivel más apropiado. También puedes probar una clase de nivel intermedio si sientes que los fundamentos son demasiado básicos. Lo importante es que te sientas desafiado pero no abrumado.',
+    'Si es tu primera clase, siempre recomendamos comenzar en el nivel de fundamentos o principiantes. Sin embargo, si tienes experiencia previa en baile, nuestros instructores pueden evaluarte en tu primera clase de bienvenida y recomendarte el nivel más apropiado. También puedes probar una clase de nivel intermedio si sientes que los fundamentos son demasiado básicos. Lo importante es que te sientas desafiado pero no abrumado.',
   classesFaqQ4: '¿Con qué frecuencia debería asistir a clases para ver progreso?',
   classesFaqA4:
     'Para un progreso constante y notable, recomendamos asistir al menos 2 veces por semana. Con esta frecuencia, la mayoría de los estudiantes ven mejoras significativas en 2-3 meses. Si puedes asistir 3-4 veces por semana, el progreso será aún más rápido. Sin embargo, incluso una clase semanal te permitirá avanzar, aunque a un ritmo más gradual. La consistencia es más importante que la intensidad.',
@@ -496,7 +496,7 @@ export const es = {
 
   // CTA Buttons
   danceClassesHub_cta_member: 'Hazte Socio Ahora',
-  danceClassesHub_cta_trial: 'Reserva tu Clase de Prueba',
+  danceClassesHub_cta_trial: 'Reserva tu Clase de Bienvenida',
 
   // Category Bullets - Contemporary
   danceClassesHub_contemporary_bullet1: 'Escuela Cubana y estilos contemporáneos',
@@ -757,7 +757,7 @@ export const es = {
 
   danceClassesHub_whichCategory_schedule_title: '¿Cómo elegir mi horario ideal?',
   danceClassesHub_whichCategory_schedule_text:
-    'Ofrecemos horarios flexibles de lunes a viernes: mañanas (10h-14h), tardes (16h-21h) y en breve fines de semana. Elige según tu disponibilidad y el nivel que buscas. Consulta el planning completo en nuestra web o reserva una clase de prueba para conocer el ambiente.',
+    'Ofrecemos horarios flexibles de lunes a viernes: mañanas (10h-14h), tardes (16h-21h) y en breve fines de semana. Elige según tu disponibilidad y el nivel que buscas. Consulta el planning completo en nuestra web o reserva una clase de bienvenida para conocer el ambiente.',
 
   // Dance Classes Hub - Why FIDC Section
   danceClassesHub_why_title:
@@ -799,10 +799,10 @@ export const es = {
     'Explora nuestros horarios completos y descubre la clase perfecta según tu objetivo y disponibilidad.',
   danceClassesHub_cta1_button: 'Ver todos los horarios',
 
-  danceClassesHub_cta2_title: 'Prueba tu primera clase GRATIS',
+  danceClassesHub_cta2_title: 'Prueba tu clase de bienvenida',
   danceClassesHub_cta2_subtitle:
     'Sin compromiso, sin permanencia. Ven a conocer nuestras instalaciones, profesores y método.',
-  danceClassesHub_cta2_button: 'Reservar clase gratis',
+  danceClassesHub_cta2_button: 'Reservar clase de bienvenida',
   danceClassesHub_cta2_stat1_number: '8+',
   danceClassesHub_cta2_stat1_label: 'Años de experiencia',
   danceClassesHub_cta2_stat2_number: '1500+',
@@ -977,7 +977,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // Mid-page CTA
   dancehallMidCTATitle: '¿Listo Para Transformar Tu Vida?',
   dancehallMidCTADesc:
-    'Habla con nosotros por WhatsApp y reserva tu clase gratis ahora mismo. ¡Te respondemos en minutos!',
+    'Habla con nosotros por WhatsApp y reserva tu clase de bienvenida ahora mismo. ¡Te respondemos en minutos!',
   whatsappCTA: 'Escríbenos por WhatsApp',
 
   // How It Works Section
@@ -1100,7 +1100,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
     'Reserva tu plaza ahora y no dejes que te lo cuenten… ni que te lo bailen.',
   dancehallCommunityFunny:
     '¡Las plazas vuelan más rápido que un «Dutty Wine» en viernes por la noche! Tienes que dejarte seducir por la energía y el feeling del Dancehall.',
-  trialClassCTA: 'Prueba una Clase Gratuita',
+  trialClassCTA: 'Prueba tu Clase de Bienvenida',
 
   // Additional FAQs
   dancehallFaqQ8: '¿Qué pasa si no tengo buena coordinación?',
@@ -1196,7 +1196,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // ===== DancehallPage (Clases de Dancehall Barcelona) =====
   dhV3PageTitle: "Clases de Dancehall en Barcelona | Academia Farray\'s Center",
   dhV3MetaDescription:
-    'Aprende Dancehall jamaicano auténtico en Barcelona. Clases desde iniciación hasta avanzado. Profesoras expertas. Entre Plaza España y Sants. ¡Prueba gratis!',
+    'Aprende Dancehall jamaicano auténtico en Barcelona. Clases desde iniciación hasta avanzado. Profesoras expertas. Entre Plaza España y Sants. ¡Reserva tu clase de bienvenida!',
 
   dhV3BreadcrumbHome: 'Inicio',
   dhV3BreadcrumbClasses: 'Clases de Baile Barcelona',
@@ -1212,7 +1212,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   dhV3CTA1: 'Hazte Socio Ahora',
   dhV3CTA1Subtext: 'Quedan pocas plazas este mes',
-  dhV3CTA2: 'Reserva tu Clase de Prueba',
+  dhV3CTA2: 'Reserva tu Clase de Bienvenida',
   dhV3CTA2Subtext: 'Válido por tiempo limitado',
 
   dhV3WhatIsTitle: '¿Qué es el Dancehall y por qué está arrasando en Barcelona?',
@@ -1360,7 +1360,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
     'Sí. Ofrecemos descuentos si te apuntas a más de un curso. Consulta la web o pregúntanos directamente para más detalles.',
   dhV3FaqQ9: '¿Puedo probar una clase de Dancehall antes de inscribirme?',
   dhV3FaqA9:
-    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en la parte superior de esta página.',
+    'Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Bienvenida" en la parte superior de esta página.',
   dhV3FaqQ10: '¿Y si falto a una clase por trabajo o compromisos?',
   dhV3FaqA10:
     'Si tienes una membresía y cancelas una clase, dispones de 30 días para recuperarla desde la fecha de la clase cancelada. Si tienes un abono de horas, gestionas tus clases de forma flexible: cancela y reserva otro día dentro del periodo de caducidad. Todas las gestiones se realizan exclusivamente desde la aplicación digital de la academia.',
@@ -1447,7 +1447,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
     'Aquí no eres un número. Conocerás gente, irás a prácticas, y tendrás una familia de baile real.',
 
   // CTA
-  dhV3CompareCTA: 'Compruébalo: primera clase de prueba',
+  dhV3CompareCTA: 'Compruébalo: primera clase de bienvenida',
   dhV3CompareNote: 'Sin permanencia. Sin trucos. Sin presión.',
 
   dhV3FinalCTATitle: 'Únete a la comunidad de Dancehall más activa de Barcelona',
@@ -1483,7 +1483,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   home_categories_urbano_image_alt:
     "Bailarinas practicando Hip Hop Reggaeton en clase de danzas urbanas - Farray's Center Barcelona",
   home_categories_urbano_bullets:
-    '11 estilos urbanos diferentes, Desde principiante a profesional, Primera clase gratis',
+    '11 estilos urbanos diferentes, Desde principiante a profesional, Clase de bienvenida',
   home_categories_urbano_intro:
     'Siente la energía de la calle con los estilos de Hip Hop, Reggaeton, Dancehall y Commercial.',
   home_categories_urbano_styles_afrobeat: 'Afrobeat',
@@ -1587,7 +1587,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   danzaBarcelona_title:
     "Clases de Danza en Barcelona | Ballet, Contemporáneo y Jazz | Farray\'s Center",
   danzaBarcelona_description:
-    'Descubre nuestras clases de danza en Barcelona: Ballet Clásico Cubano, Danza Contemporánea, Modern Jazz, Afro Jazz y más. Academia reconocida por CID-UNESCO. Reserva tu clase de prueba.',
+    'Descubre nuestras clases de danza en Barcelona: Ballet Clásico Cubano, Danza Contemporánea, Modern Jazz, Afro Jazz y más. Academia reconocida por CID-UNESCO. Reserva tu clase de bienvenida.',
   danzaBarcelona_breadcrumb_home: 'Inicio',
   danzaBarcelona_breadcrumb_classes: 'Clases de Baile en Barcelona',
   danzaBarcelona_breadcrumb_current: 'Clases de Danza en Barcelona',
@@ -1750,7 +1750,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   danzaFaqQ10: '¿Puedo probar una clase de Ballet, Jazz o Contemporáneo antes de inscribirme?',
   danzaFaqA10:
-    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en la parte superior de esta página.',
+    'Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Bienvenida" en la parte superior de esta página.',
 
   // CTA Final - Danza Barcelona
   danzaCTA_title: 'Tu Primera Clase de Danza Te Está Esperando',
@@ -1771,7 +1771,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   salsaBachataBarcelona_title:
     "Clases de Salsa y Bachata en Barcelona | Salsa Cubana, Bachata Sensual y más | Farray\'s Center",
   salsaBachataBarcelona_description:
-    'Aprende a bailar Salsa Cubana, Bachata Sensual y Dominicana, Timba, Son y más en Barcelona. Escuela fundada por maestros cubanos con experiencia en las mejores academias de La Habana. Reserva tu clase de prueba.',
+    'Aprende a bailar Salsa Cubana, Bachata Sensual y Dominicana, Timba, Son y más en Barcelona. Escuela fundada por maestros cubanos con experiencia en las mejores academias de La Habana. Reserva tu clase de bienvenida.',
   salsaBachataBarcelona_breadcrumb_home: 'Inicio',
   salsaBachataBarcelona_breadcrumb_classes: 'Clases de Baile en Barcelona',
   salsaBachataBarcelona_breadcrumb_parent: 'Baile Barcelona',
@@ -1843,7 +1843,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   salsaBachataFaqQ10: '¿Puedo probar una clase de salsa o bachata antes de inscribirme?',
   salsaBachataFaqA10:
-    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas experimentar nuestra metodología, conocer a los profesores y sentir la energía de nuestra academia de baile sin compromiso.',
+    'Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. La idea es que puedas experimentar nuestra metodología, conocer a los profesores y sentir la energía de nuestra academia de baile sin compromiso.',
 
   // CTA Final - Salsa/Bachata Barcelona
   salsaBachataCTA_title: 'Aprende a bailar Salsa y Bachata Como Siempre Soñaste',
@@ -2135,7 +2135,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   urbanFaqQ10: '¿Puedo probar una clase de Hip Hop o Dancehall antes de inscribirme?',
   urbanFaqA10:
-    'Mira, lo importante es que pruebes. Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
+    'Mira, lo importante es que pruebes. Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. La idea es que puedas probar la experiencia sin compromiso.',
 
   // Urban-specific CTA
   danzasUrbanas_viewMore: 'Ver más →',
@@ -2769,7 +2769,8 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   // CTA
   metodoFarray_cta_title: 'Descubre Cómo Empezar',
-  metodoFarray_cta_subtitle: 'Tu primera clase es gratis. Ven a probar y siente la diferencia.',
+  metodoFarray_cta_subtitle:
+    'Tu primera clase de bienvenida es especial. Ven a probar y siente la diferencia.',
   metodoFarray_cta_button: 'Descubre Cómo Empezar',
   metodoFarray_cta_secondary: 'Ver Todas las Clases',
 
@@ -3634,7 +3635,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   facilitiesHeroDesc:
     "Farray's International Dance Center es una escuela de baile en Barcelona con más de 700 m² de instalaciones diseñadas específicamente para la danza, el entrenamiento físico y la creación artística.",
   facilitiesHeroLocation: 'Calle Entença 100, Barcelona - Entre Plaza España y Sants',
-  facilitiesCTA1: 'Reserva Tu Clase de Prueba',
+  facilitiesCTA1: 'Reserva Tu Clase de Bienvenida',
   facilitiesCTA1Subtext: 'Conoce nuestras instalaciones en persona',
   facilitiesCTA2: 'Solicita un Tour',
   facilitiesCTA2Subtext: 'Descubre nuestros espacios',
@@ -3901,7 +3902,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
     'Sí. Ofrecemos descuentos si te apuntas a más de un curso de baile. Consulta la web o pregúntanos directamente para más detalles sobre nuestras clases de Twerk dance.',
   twerkFaqQ8: '¿Puedo probar una clase de Twerk antes de inscribirme?',
   twerkFaqA8:
-    'Según la temporada, la clase de prueba de Twerking para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia de bailar Twerk sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en la parte superior de esta página.',
+    'Según la temporada, la clase de bienvenida de Twerking para residentes tiene un precio de bienvenida especial. La idea es que puedas probar la experiencia de bailar Twerk sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Bienvenida" en la parte superior de esta página.',
   twerkFaqQ9: '¿Y si falto a una clase de Twerk por trabajo o compromisos?',
   twerkFaqA9:
     'Si tienes una membresía y cancelas una clase de Twerking, dispones de 30 días para recuperarla desde la fecha de la clase cancelada. Si tienes un abono de horas, gestionas tus clases de Twerk de forma flexible. Todas las gestiones se realizan exclusivamente desde la aplicación digital de la academia.',
@@ -3936,7 +3937,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // CTA keys
   twerkCTA1: 'Hazte Socio Ahora',
   twerkCTA1Subtext: 'Quedan pocas plazas este mes',
-  twerkCTA2: 'Reserva tu Clase de Prueba',
+  twerkCTA2: 'Reserva tu Clase de Bienvenida',
   twerkCTA2Subtext: 'Válido por tiempo limitado',
 
   // What Is Section
@@ -4138,7 +4139,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // CTAs
   afroCTA1: 'Hazte Socio Ahora',
   afroCTA1Subtext: 'Quedan pocas plazas este mes',
-  afroCTA2: 'Reserva tu Clase de Prueba',
+  afroCTA2: 'Reserva tu Clase de Bienvenida',
   afroCTA2Subtext: 'Válido por tiempo limitado',
 
   // What is Afrobeats
@@ -4319,7 +4320,7 @@ En Farray's International Dance Center, el Afrobeats se enseña con técnica, re
     'Sí, ofrecemos descuentos si te apuntas a más de un curso. Consulta nuestra web o pregúntanos directamente para más detalles.',
   afroFaqQ8: '¿Puedo probar una clase de Afrobeats antes de inscribirme?',
   afroFaqA8:
-    'Mira, lo importante es que pruebes. Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
+    'Mira, lo importante es que pruebes. Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. La idea es que puedas probar la experiencia sin compromiso.',
   afroFaqQ9: '¿Y si falto a una clase por trabajo o compromisos?',
   afroFaqA9:
     'Si tienes una membresía y cancelas una clase tienes 30 días para recuperarla, contando desde la fecha de la clase cancelada. Si tienes un abono de horas, eres tú quien gestiona tus clases de manera flexible y solamente debes cancelar tu clase y reservarla para otro día cuando así lo desees, antes de que termine el periodo de caducidad. Todas las gestiones se hacen exclusivamente desde la aplicación digital de la academia.',
@@ -4433,7 +4434,7 @@ En Farray's International Dance Center, el Afrobeats se enseña con técnica, re
   // CTAs
   hhrCTA1: 'Hazte Socio Ahora',
   hhrCTA1Subtext: 'Quedan pocas plazas este mes',
-  hhrCTA2: 'Reserva tu Clase de Prueba',
+  hhrCTA2: 'Reserva tu Clase de Bienvenida',
   hhrCTA2Subtext: 'Oferta por tiempo limitado',
 
   // Flow Guaranteed (instead of Fun)
@@ -4628,7 +4629,7 @@ Esta fusión incorpora:
     'Sí. Ofrecemos descuentos si te apuntas a más de un curso. Consulta la web o pregúntanos directamente para más detalles.',
   hhrFaqQ8: '¿Puedo probar una clase antes de inscribirme?',
   hhrFaqA8:
-    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en la parte superior de esta página.',
+    'Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Bienvenida" en la parte superior de esta página.',
   hhrFaqQ9: '¿Y si falto a una clase por trabajo o compromisos?',
   hhrFaqA9:
     'Si tienes una membresía y cancelas una clase, dispones de 30 días para recuperarla desde la fecha de la clase cancelada. Si tienes un abono de horas, gestionas tus clases de forma flexible: cancela y reserva otro día dentro del periodo de caducidad. Todas las gestiones se realizan exclusivamente desde la aplicación digital de la academia.',
@@ -4744,10 +4745,10 @@ Esta fusión incorpora:
   // CTAs
   sxrCTA1: 'Hazte Socia Ahora',
   sxrCTA1Subtext: 'Quedan pocas plazas este mes',
-  sxrCTA2: 'Reserva tu Clase de Prueba',
+  sxrCTA2: 'Reserva tu Clase de Bienvenida',
   sxrCTA2Subtext: 'Oferta por tiempo limitado',
   sxrCTA1AriaLabel: 'Ver horario de clases de Sexy Reggaeton y darte de alta',
-  sxrCTA2AriaLabel: 'Reservar una clase de prueba de Sexy Reggaeton',
+  sxrCTA2AriaLabel: 'Reservar una clase de bienvenida de Sexy Reggaeton',
   sxrOgImageAlt: "Clases de Sexy Reggaeton en Barcelona - Farray\'s Center",
 
   // Stat
@@ -4921,7 +4922,7 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colombia), J Balvi
     'Sí. Ofrecemos descuentos si te apuntas a más de un curso. Consulta la web o pregúntanos directamente para más detalles.',
   sxrFaqQ9: '¿Puedo probar una clase de Sexy Reggaeton antes de inscribirme?',
   sxrFaqA9:
-    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en la parte superior de esta página.',
+    'Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Bienvenida" en la parte superior de esta página.',
   sxrFaqQ10: '¿Y si falto a una clase por trabajo o compromisos?',
   sxrFaqA10:
     'Si tienes una membresía y cancelas una clase, dispones de 30 días para recuperarla desde la fecha de la clase cancelada. Si tienes un abono de horas, gestionas tus clases de forma flexible: cancela y reserva otro día dentro del periodo de caducidad. Todas las gestiones se realizan exclusivamente desde la aplicación digital de la academia.',
@@ -5032,7 +5033,7 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colombia), J Balvi
   // CTAs
   rcbCTA1: 'Hazte Socio Ahora',
   rcbCTA1Subtext: 'Quedan pocas plazas este mes',
-  rcbCTA2: 'Reserva tu Clase de Prueba',
+  rcbCTA2: 'Reserva tu Clase de Bienvenida',
   rcbCTA2Subtext: 'Oferta por tiempo limitado',
 
   // Stats
@@ -5227,7 +5228,7 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
     'Sí. Organizamos masterclasses con artistas cubanos invitados, showcases y nuestra gala anual donde puedes lucirte en un escenario profesional.',
   rcbFaqQ10: '¿Puedo probar una clase antes de inscribirme?',
   rcbFaqA10:
-    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en la parte superior de esta página.',
+    'Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Bienvenida" en la parte superior de esta página.',
   rcbFaqQ11: '¿Tenéis algún descuento especial?',
   rcbFaqA11:
     'Sí. Ofrecemos descuentos si te apuntas a más de un curso. Consulta la web o pregúntanos directamente para más detalles.',
@@ -5551,7 +5552,7 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
   // CTAs
   femCTA1: '¡Hazte Socia Ahora!',
   femCTA1Subtext: 'Quedan pocas plazas este mes',
-  femCTA2: 'Reserva tu Clase de Prueba',
+  femCTA2: 'Reserva tu Clase de Bienvenida',
   femCTA2Subtext: 'Válido por tiempo limitado',
 
   // Stats
@@ -5722,7 +5723,7 @@ A lo largo de más de una década, Femmology ha transformado la vida de miles de
 
   femFaqQ8: '¿Puedo probar una clase de Femmology antes de inscribirme?',
   femFaqA8:
-    'Sí. Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. Pulsa "Reserva tu Clase de Prueba" y descubre si esta disciplina es para ti.',
+    'Sí. Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. Pulsa "Reserva tu Clase de Bienvenida" y descubre si esta disciplina es para ti.',
 
   femFaqQ9: '¿Qué aprenderé en las clases de Femmology?',
   femFaqA9:
@@ -5839,7 +5840,7 @@ A lo largo de más de una década, Femmology ha transformado la vida de miles de
   // CTAs
   sexystyleCTA1: 'Hazte Socia Ahora',
   sexystyleCTA1Subtext: 'Quedan pocas plazas este mes',
-  sexystyleCTA2: 'Reserva tu Clase de Prueba',
+  sexystyleCTA2: 'Reserva tu Clase de Bienvenida',
   sexystyleCTA2Subtext: 'Oferta por tiempo limitado',
 
   // What Is Section
@@ -6036,7 +6037,7 @@ A lo largo de más de una década, Femmology ha transformado la vida de miles de
 
   sexystyleFaqQ7: '¿Puedo probar una clase de Sexy Style antes de inscribirme?',
   sexystyleFaqA7:
-    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en la parte superior de esta página.',
+    'Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Bienvenida" en la parte superior de esta página.',
 
   sexystyleFaqQ8: '¿Qué niveles de Sexy Style tenéis?',
   sexystyleFaqA8:
@@ -6060,7 +6061,7 @@ A lo largo de más de una década, Femmology ha transformado la vida de miles de
 
   sexystyleFaqQ13: '¿Tenéis descuentos o bonos especiales?',
   sexystyleFaqA13:
-    'Sí, tenemos varias opciones de ahorro:<br/><br/>• <strong>Descuento multicurso:</strong> Si te apuntas a más de un estilo (ej: Sexy Style + Femmology), obtienes un precio reducido por clase.<br/>• <strong>Bonos mensuales ilimitados:</strong> Clases ilimitadas de un estilo o de todos los estilos.<br/>• <strong>Bonos trimestrales y anuales:</strong> Mayor ahorro cuanto más tiempo te comprometas.<br/>• <strong>Ofertas para nuevas alumnas:</strong> Primera clase de prueba con precio especial.<br/><br/>Consulta precios actualizados en recepción o escríbenos por WhatsApp.',
+    'Sí, tenemos varias opciones de ahorro:<br/><br/>• <strong>Descuento multicurso:</strong> Si te apuntas a más de un estilo (ej: Sexy Style + Femmology), obtienes un precio reducido por clase.<br/>• <strong>Bonos mensuales ilimitados:</strong> Clases ilimitadas de un estilo o de todos los estilos.<br/>• <strong>Bonos trimestrales y anuales:</strong> Mayor ahorro cuanto más tiempo te comprometas.<br/>• <strong>Ofertas para nuevas alumnas:</strong> Primera clase de bienvenida con precio especial.<br/><br/>Consulta precios actualizados en recepción o escríbenos por WhatsApp.',
 
   sexystyleFaqQ14: '¿Dónde está la academia?',
   sexystyleFaqA14:
@@ -6169,7 +6170,7 @@ A lo largo de más de una década, Femmology ha transformado la vida de miles de
   // CTAs
   modernjazzCTA1: 'Hazte Socio Ahora',
   modernjazzCTA1Subtext: 'Quedan pocas plazas este mes',
-  modernjazzCTA2: 'Reserva tu Clase de Prueba',
+  modernjazzCTA2: 'Reserva tu Clase de Bienvenida',
   modernjazzCTA2Subtext: 'Oferta por tiempo limitado',
 
   // What Is Section
@@ -6366,7 +6367,7 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
 
   modernjazzFaqQ7: '¿Puedo probar una clase de Modern Jazz antes de inscribirme?',
   modernjazzFaqA7:
-    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en la parte superior de esta página.',
+    'Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Bienvenida" en la parte superior de esta página.',
 
   modernjazzFaqQ8: '¿Qué niveles de Modern Jazz tenéis?',
   modernjazzFaqA8:
@@ -6435,7 +6436,7 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
     'Consulta nuestros horarios y elige entre nivel principiante, intermedio o avanzado. Si nunca has bailado, empieza por principiante.',
   modernjazzHowToStep2Name: 'Reserva tu primera clase',
   modernjazzHowToStep2Text:
-    'Contacta con nosotros por WhatsApp al +34 622 247 085 o email a info@farrayscenter.com para reservar tu clase de prueba gratuita.',
+    'Contacta con nosotros por WhatsApp al +34 622 247 085 o email a info@farrayscenter.com para reservar tu clase de bienvenida.',
   modernjazzHowToStep3Name: 'Prepárate para la clase',
   modernjazzHowToStep3Text:
     'Ven con ropa cómoda que permita movimiento. Zapatillas de jazz ideales, pero puedes empezar con calcetines. Trae agua.',
@@ -6594,7 +6595,7 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
   // ===== CTAs =====
   balletCTA1: 'Hazte Socio Ahora',
   balletCTA1Subtext: 'Quedan pocas plazas este mes',
-  balletCTA2: 'Reserva tu Clase de Prueba',
+  balletCTA2: 'Reserva tu Clase de Bienvenida',
   balletCTA2Subtext: 'Válido por tiempo limitado',
 
   // ===== What is Ballet Section =====
@@ -6814,7 +6815,7 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
 
   balletFaqQ8: '¿Puedo probar una clase de Ballet antes de inscribirme?',
   balletFaqA8:
-    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. Para turistas, es de pago. Si te gusta y decides quedarte, el importe se descuenta de tu primera cuota.',
+    'Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. Para turistas, es de pago. Si te gusta y decides quedarte, el importe se descuenta de tu primera cuota.',
 
   balletFaqQ9: '¿Qué niveles de ballet tenéis?',
   balletFaqA9:
@@ -6875,7 +6876,7 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
     'Principiantes (sin experiencia o poca) o Intermedio (dominas posiciones básicas). En duda, empieza por principiantes.',
   balletHowToStep2Name: 'Reserva tu primera clase',
   balletHowToStep2Text:
-    'Contacta por WhatsApp al +34 622 247 085 o email a info@farrayscenter.com para reservar tu clase de prueba gratuita.',
+    'Contacta por WhatsApp al +34 622 247 085 o email a info@farrayscenter.com para reservar tu clase de bienvenida.',
   balletHowToStep3Name: 'Prepárate para la clase',
   balletHowToStep3Text:
     'Ven con ropa ajustada que permita ver tu postura. Zapatillas de media punta ideales, pero puedes empezar con calcetines.',
@@ -7042,7 +7043,7 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
   // CTAs
   contemporaneoCTA1: 'Hazte Socio Ahora',
   contemporaneoCTA1Subtext: 'Quedan pocas plazas este mes',
-  contemporaneoCTA2: 'Reserva tu Clase de Prueba',
+  contemporaneoCTA2: 'Reserva tu Clase de Bienvenida',
   contemporaneoCTA2Subtext: 'Oferta por tiempo limitado',
   contemporaneoCTAGroup: 'Opciones de inscripción',
 
@@ -7315,7 +7316,7 @@ Trabaja integralmente: **flexibilidad, fuerza funcional, coordinación, propioce
     'Trabajamos múltiples técnicas: suelo, release, contact improvisation, y elementos de diversas escuelas. Un enfoque multidisciplinar para que desarrolles tu propio lenguaje.',
   contemporaneoFaqQ8: '¿Puedo probar una clase antes de inscribirme?',
   contemporaneoFaqA8:
-    'Por supuesto. Puedes reservar una clase de prueba para ver si es lo que buscas. Ven a probar y descubre cómo dejar fluir tu talento a través del baile.',
+    'Por supuesto. Puedes reservar una clase de bienvenida para ver si es lo que buscas. Ven a probar y descubre cómo dejar fluir tu talento a través del baile.',
   contemporaneoFaqQ9: '¿Y si falto a una clase por trabajo o compromisos?',
   contemporaneoFaqA9:
     'Las clases son recuperables, así que si faltas un día, puedes venir a la siguiente clase disponible en tu mismo nivel.',
@@ -7398,7 +7399,7 @@ Trabaja integralmente: **flexibilidad, fuerza funcional, coordinación, propioce
   // CTAs
   afrocontemporaneoCTA1: 'Hazte Socio Ahora',
   afrocontemporaneoCTA1Subtext: 'Pocas plazas disponibles',
-  afrocontemporaneoCTA2: 'Reserva Tu Clase de Prueba',
+  afrocontemporaneoCTA2: 'Reserva Tu Clase de Bienvenida',
   afrocontemporaneoCTA2Subtext: 'Descubre la técnica cubana',
 
   // What Is Section
@@ -7611,7 +7612,7 @@ El Afro Contemporáneo impartido en **Farray's International Dance Center** form
 
   afrocontemporaneoFaqQ8: '¿Puedo probar una clase antes de inscribirme?',
   afrocontemporaneoFaqA8:
-    'Sí, puedes reservar una clase de prueba para ver si es lo que buscas. Preferimos que experimentes la energía del Afro Contemporáneo antes de decidir.',
+    'Sí, puedes reservar una clase de bienvenida para ver si es lo que buscas. Preferimos que experimentes la energía del Afro Contemporáneo antes de decidir.',
 
   afrocontemporaneoFaqQ9: '¿Qué ropa debo llevar a las clases?',
   afrocontemporaneoFaqA9:
@@ -7810,7 +7811,7 @@ El Afro Contemporáneo impartido en **Farray's International Dance Center** form
   // CTAs
   afrojazzCTA1: 'Hazte Miembro Ahora',
   afrojazzCTA1Subtext: 'Plazas limitadas para grupos reducidos',
-  afrojazzCTA2: 'Reserva Tu Clase de Prueba',
+  afrojazzCTA2: 'Reserva Tu Clase de Bienvenida',
   afrojazzCTA2Subtext: 'Descubre la fusión única',
 
   // What Is Section
@@ -8004,7 +8005,7 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
 
   afrojazzFaqQ8: '¿Puedo probar una clase antes de inscribirme?',
   afrojazzFaqA8:
-    'Sí, puedes reservar una clase de prueba. Ten en cuenta que necesitas experiencia previa en danza para poder seguir el nivel de la clase.',
+    'Sí, puedes reservar una clase de bienvenida. Ten en cuenta que necesitas experiencia previa en danza para poder seguir el nivel de la clase.',
 
   afrojazzFaqQ9: '¿Qué ropa y calzado debo llevar?',
   afrojazzFaqA9:
@@ -8178,7 +8179,7 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   // CTAs
   hiphopCTA1: 'Hazte Socio Ahora',
   hiphopCTA1Subtext: 'Quedan pocas plazas este mes',
-  hiphopCTA2: 'Reserva tu Clase de Prueba',
+  hiphopCTA2: 'Reserva tu Clase de Bienvenida',
   hiphopCTA2Subtext: 'Oferta por tiempo limitado',
   hiphopCTAGroup: 'Opciones de inscripción',
 
@@ -8386,7 +8387,7 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
     'Sí. Ofrecemos bonos de clases y descuentos para estudiantes, desempleados y personas que combinen varias disciplinas. Consulta en recepción las ofertas vigentes.',
   hiphopFaqQ9: '¿Puedo probar una clase antes de inscribirme?',
   hiphopFaqA9:
-    'Claro. Ofrecemos clase de prueba para que compruebes el ambiente, conozcas a Marcos y decidas si es lo que buscas. Contacta con nosotros para reservar.',
+    'Claro. Ofrecemos clase de bienvenida para que compruebes el ambiente, conozcas a Marcos y decidas si es lo que buscas. Contacta con nosotros para reservar.',
   hiphopFaqQ10: '¿Las clases son coreográficas o de freestyle?',
   hiphopFaqA10:
     'Combinamos ambos enfoques. Aprendemos movimientos y combinaciones, pero el énfasis está en desarrollar tu capacidad de improvisar y crear tu propio estilo.',
@@ -8520,7 +8521,7 @@ Nuestro profesor **Marcos Martínez**, juez de competiciones internacionales y r
   salsaCubanaCTAGroup: 'Opciones de inscripción',
   salsaCubanaCTA1: 'Hazte Socio Ahora',
   salsaCubanaCTA1Subtext: 'Quedan pocas plazas por clase',
-  salsaCubanaCTA2: 'Reserva tu Clase de Prueba',
+  salsaCubanaCTA2: 'Reserva tu Clase de Bienvenida',
   salsaCubanaCTA2Subtext: 'Válido por tiempo limitado',
 
   // OCÉANO AZUL - Por qué miles de barceloneses eligieron salsa cubana
@@ -8922,7 +8923,7 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
     'Ropa cómoda y ligera. Bambas o zapatos cómodos. Para las chicas, zapatos de tacón con sujeción en el tobillo son recomendables pero no obligatorios.',
   salsaCubanaFaqQ7: '¿Puedo probar una clase antes de inscribirme?',
   salsaCubanaFaqA7:
-    'Sí, ofrecemos una primera clase de prueba sin compromiso. Ven a conocernos, prueba el Método Farray® y decide si es para ti.',
+    'Sí, ofrecemos una primera clase de bienvenida sin compromiso. Ven a conocernos, prueba el Método Farray® y decide si es para ti.',
   salsaCubanaFaqQ8: '¿Qué es la Rueda de Casino?',
   salsaCubanaFaqA8:
     'Es una forma de bailar salsa cubana en grupo, en círculo, donde todas las parejas ejecutan figuras sincronizadas siguiendo las indicaciones de un "cantante". Es muy divertida y social.',
@@ -8931,13 +8932,13 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
     "Farray\'s Center es la academia de referencia en Barcelona, acreditada por el CID-UNESCO con el Método Farray® exclusivo. Con más de 15.000 alumnos formados, 8 años de experiencia y una valoración de 4.9/5 en Google (505+ reseñas), ofrece un sistema progresivo que enseña a bailar de verdad, no solo a memorizar figuras.",
   salsaCubanaFaqQ10: '¿Cuánto cuestan las clases de salsa cubana en Barcelona?',
   salsaCubanaFaqA10:
-    "Farray\'s Center ofrece una clase de prueba GRATIS para que experimentes el Método Farray® sin compromiso. Las cuotas mensuales varían según la frecuencia de clases. Contacta para conocer las tarifas actuales y promociones.",
+    "Farray\'s Center ofrece una clase de bienvenida para que experimentes el Método Farray® sin compromiso. Las cuotas mensuales varían según la frecuencia de clases. Contacta para conocer las tarifas actuales y promociones.",
   salsaCubanaFaqQ11: "¿Dónde está la academia Farray's en Barcelona?",
   salsaCubanaFaqA11:
     "Farray\'s Center está ubicada entre Plaza España y Sants, una zona céntrica y bien comunicada de Barcelona. Accesible en metro (L1, L3, L5) y múltiples líneas de bus. A 5 minutos andando de las estaciones Hostafrancs y Tarragona.",
   salsaCubanaFaqQ12: '¿Qué horarios tienen las clases de salsa cubana?',
   salsaCubanaFaqA12:
-    'Ofrecemos clases de salsa cubana de lunes a viernes a las 20:00h, con un nivel diferente cada día para que puedas encontrar el que mejor se adapte a ti. Los lunes: Nivel 0 (principiantes absolutos), martes: Básico I, miércoles: Básico II-III, jueves: Intermedio, viernes: Avanzado. Si no sabes tu nivel, ven a una clase de prueba y te orientaremos.',
+    'Ofrecemos clases de salsa cubana de lunes a viernes a las 20:00h, con un nivel diferente cada día para que puedas encontrar el que mejor se adapte a ti. Los lunes: Nivel 0 (principiantes absolutos), martes: Básico I, miércoles: Básico II-III, jueves: Intermedio, viernes: Avanzado. Si no sabes tu nivel, ven a una clase de bienvenida y te orientaremos.',
   salsaCubanaFaqQ13: '¿Organizáis salidas a bailar?',
   salsaCubanaFaqA13:
     'Sí, organizamos regularmente salidas a salas de baile y eventos para que puedas practicar lo aprendido en un ambiente real y divertido.',
@@ -9186,7 +9187,7 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
   // CTAs
   salsaLadyCTA1: 'Hazte Socia Ahora',
   salsaLadyCTA1Subtext: 'Plazas limitadas este trimestre',
-  salsaLadyCTA2: 'Reserva tu Clase de Prueba',
+  salsaLadyCTA2: 'Reserva tu Clase de Bienvenida',
   salsaLadyCTA2Subtext: 'Descubre el Método Farray®',
 
   // Stats
@@ -9465,7 +9466,7 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
     'Desde la primera clase notarás cambios en tu postura y conciencia corporal. En 2-3 meses de práctica regular, verás una transformación significativa en tu estilo y confianza.',
   salsaLadyFaqQ7: '¿Puedo probar una clase antes de inscribirme?',
   salsaLadyFaqA7:
-    'Según la temporada, la clase de prueba puede ser gratuita o tener un precio simbólico. La idea es que puedas experimentar el Método Farray® sin compromiso.',
+    'Según la temporada, la clase de bienvenida tiene un precio de bienvenida especial. La idea es que puedas experimentar el Método Farray® sin compromiso.',
   salsaLadyFaqQ8: '¿Qué ropa debo llevar?',
   salsaLadyFaqA8:
     'Ropa cómoda que permita movimiento. Muchas alumnas prefieren vestidos o faldas para practicar giros, pero no es obligatorio. Lo importante es sentirte cómoda.',
@@ -9508,7 +9509,7 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
   salsaLadyFinalCTAFunny: 'Las plazas vuelan más rápido que un giro triple con tacones de 10 cm.',
   salsaLadyFinalCTA1: 'Hazte Socia Ahora',
   salsaLadyFinalCTA1Subtext: 'Plazas limitadas este trimestre',
-  salsaLadyFinalCTA2: 'Reserva tu Clase de Prueba',
+  salsaLadyFinalCTA2: 'Reserva tu Clase de Bienvenida',
   salsaLadyFinalCTA2Subtext: 'Descubre el Método Farray®',
 
   // Course Schema
@@ -9618,7 +9619,7 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
   salsaLadyV2HeroSubtitle: 'El Método que Transforma tu Baile',
   salsaLadyV2HeroDesc:
     'Deja de improvisar en los shines. Aprende técnica femenina real con el único sistema estructurado de Lady Style en Barcelona.',
-  salsaLadyV2CTA1: 'Reserva tu Clase de Prueba',
+  salsaLadyV2CTA1: 'Reserva tu Clase de Bienvenida',
   salsaLadyV2CTA2: 'Ver el Método Farray®',
 
   // Problema-Agitación Section
@@ -9864,7 +9865,7 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
   // CTAs
   bachataLadyCTA1: 'Hazte Socio Ahora',
   bachataLadyCTA1Subtext: 'Quedan pocas plazas este mes',
-  bachataLadyCTA2: 'Reserva tu Clase de Prueba',
+  bachataLadyCTA2: 'Reserva tu Clase de Bienvenida',
   bachataLadyCTA2Subtext: 'Válido por tiempo limitado',
 
   // What Is Section
@@ -10231,7 +10232,7 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
     'Desde la primera clase notarás cambios en tu postura y conciencia corporal. En 2-3 meses de práctica regular, verás una transformación significativa en tu estilo y confianza.',
   bachataLadyFaqQ7: '¿Puedo probar una clase antes de inscribirme?',
   bachataLadyFaqA7:
-    'Según la temporada, la clase de prueba puede ser gratuita o tener un precio simbólico. La idea es que puedas experimentar el Método Farray® sin compromiso.',
+    'Según la temporada, la clase de bienvenida tiene un precio de bienvenida especial. La idea es que puedas experimentar el Método Farray® sin compromiso.',
   bachataLadyFaqQ8: '¿Qué ropa debo llevar?',
   bachataLadyFaqA8:
     'Ropa cómoda que permita movimiento. Muchas alumnas prefieren vestidos o faldas para practicar giros y ondulaciones, pero no es obligatorio. Lo importante es sentirte cómoda.',
@@ -10271,7 +10272,7 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
     'No importa si vienes a desconectar del trabajo. A conocer gente nueva. A reconectar con tu feminidad. A demostrar que SÍ puedes bailar de forma elegante.\n\nLo que importa es que des el primer paso.\n\nCon el Método Farray® no aprenderás "trucos". Aprenderás a bailar con fundamento. Con técnica. Con estilo. Y lo más importante: disfrutando cada minuto.',
   bachataLadyFinalCTA1: 'Hazte Socia Ahora',
   bachataLadyFinalCTA1Subtext: 'Quedan pocas plazas este mes',
-  bachataLadyFinalCTA2: 'Reserva tu Clase de Prueba',
+  bachataLadyFinalCTA2: 'Reserva tu Clase de Bienvenida',
   bachataLadyFinalCTA2Subtext: 'Válido por tiempo limitado',
 
   // ===== FOLKLORE CUBANO PAGE =====
@@ -10302,7 +10303,7 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
   // CTAs
   folkloreCTA1: 'Hazte Socio Ahora',
   folkloreCTA1Subtext: 'Plazas limitadas',
-  folkloreCTA2: 'Reserva tu Clase de Prueba',
+  folkloreCTA2: 'Reserva tu Clase de Bienvenida',
   folkloreCTA2Subtext: 'Sin compromiso',
   folkloreCTAGroup: 'Opciones de inscripción',
 
@@ -10510,7 +10511,7 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
     'El folklore cubano es para todos. De hecho, muchas danzas a los Orishas tienen versiones masculinas muy potentes (como Changó u Ogún). Hombres y mujeres son bienvenidos en todas nuestras clases.',
   folkloreFaqQ8: '¿Puedo probar una clase antes de inscribirme?',
   folkloreFaqA8:
-    'Sí. Ofrecemos clase de prueba para que experimentes nuestra metodología sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en esta página.',
+    'Sí. Ofrecemos clase de bienvenida para que experimentes nuestra metodología sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Bienvenida" en esta página.',
   folkloreFaqQ9: '¿Hacéis eventos o presentaciones de folklore?',
   folkloreFaqA9:
     'Sí. Organizamos nuestra gala anual donde los alumnos pueden mostrar lo aprendido en un teatro profesional. También realizamos workshops con maestros invitados y participamos en eventos culturales de la ciudad.',
@@ -10605,7 +10606,7 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
   timbaCTAGroup: 'Opciones de inscripción a Timba',
   timbaCTA1: 'Hazte Socio Ahora',
   timbaCTA1Subtext: 'Plazas limitadas',
-  timbaCTA2: 'Reserva tu Clase de Prueba',
+  timbaCTA2: 'Reserva tu Clase de Bienvenida',
   timbaCTA2Subtext: 'Sin compromiso',
 
   // === WHAT IS TIMBA SECTION ===
@@ -10824,9 +10825,9 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
   timbaFaqQ6: '¿La Timba me ayudará a mejorar mi salsa cubana?',
   timbaFaqA6:
     'Absolutamente. La Timba y la salsa cubana van de la mano. Lo que aprendes en Timba (interpretación musical, improvisación, despelote) mejora directamente tu baile en pareja.',
-  timbaFaqQ7: '¿Cuánto cuesta la clase de prueba?',
+  timbaFaqQ7: '¿Cuánto cuesta la clase de bienvenida?',
   timbaFaqA7:
-    'La clase de prueba cuesta 10€. Si te apuntas ese mismo día, se te descuenta del primer mes.',
+    'La clase de bienvenida cuesta 10€. Si te apuntas ese mismo día, se te descuenta del primer mes.',
   timbaFaqQ8: '¿Hay contrato o permanencia mínima?',
   timbaFaqA8:
     "No. En Farray's trabajamos mes a mes, sin contratos ni permanencias. Pagas solo los meses que vienes.",
@@ -10886,7 +10887,7 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
   stretchingCTAGroup: 'Opciones de inscripción',
   stretchingCTA1: 'Hazte Socio Ahora',
   stretchingCTA1Subtext: 'Quedan pocas plazas por clase',
-  stretchingCTA2: 'Reserva tu Clase de Prueba',
+  stretchingCTA2: 'Reserva tu Clase de Bienvenida',
   stretchingCTA2Subtext: 'Válido por tiempo limitado',
 
   // === WHAT IS STRETCHING SECTION ===
@@ -11092,9 +11093,9 @@ Estudios científicos confirman que el stretching regular de 3+ veces por semana
   stretchingFaqQ7: '¿Las clases de stretching son solo para bailarines?',
   stretchingFaqA7:
     'No. Solo el 30% de nuestros alumnos de stretching son bailarines. El 70% restante son: oficinistas con tensión cervical/lumbar, deportistas que quieren prevenir lesiones, personas mayores de 40 que quieren mantener movilidad, y cualquiera que quiera sentirse mejor en su cuerpo. El stretching beneficia a todas las edades y condiciones físicas.',
-  stretchingFaqQ8: '¿Cuánto cuesta la clase de prueba de stretching?',
+  stretchingFaqQ8: '¿Cuánto cuesta la clase de bienvenida de stretching?',
   stretchingFaqA8:
-    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba".',
+    'Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Bienvenida".',
   stretchingFaqQ9: '¿Hay contrato o permanencia mínima?',
   stretchingFaqA9:
     "No hay contrato ni permanencia mínima. En Farray\'s Center trabajamos mes a mes: pagas solo los meses que asistes. Puedes pausar o cancelar en cualquier momento sin penalizaciones. Flexibilidad total para adaptarnos a tu vida.",
@@ -11195,7 +11196,7 @@ Estudios científicos confirman que el stretching regular de 3+ veces por semana
   cuerpofitCTAGroup: 'Opciones de inscripción',
   cuerpofitCTA1: 'Hazte Socio Ahora',
   cuerpofitCTA1Subtext: 'Quedan pocas plazas por clase',
-  cuerpofitCTA2: 'Reserva tu Clase de Prueba',
+  cuerpofitCTA2: 'Reserva tu Clase de Bienvenida',
   cuerpofitCTA2Subtext: 'Válido por tiempo limitado',
 
   // === WHAT IS SECTION ===
@@ -11369,9 +11370,9 @@ El Método Farray integra elementos de Pilates, yoga funcional, entrenamiento de
   cuerpofitFaqQ6: '¿Sirve para prevenir lesiones de baile?',
   cuerpofitFaqA6:
     'Sí, es uno de los principales objetivos. Estudios demuestran que bailarines con entrenamiento de fuerza regular tienen un 50-70% menos de lesiones. El body conditioning fortalece las áreas más vulnerables (caderas, rodillas, tobillos, espalda) y corrige desequilibrios musculares.',
-  cuerpofitFaqQ7: '¿Cuánto cuesta la clase de prueba?',
+  cuerpofitFaqQ7: '¿Cuánto cuesta la clase de bienvenida?',
   cuerpofitFaqA7:
-    'La clase de prueba cuesta 10€ y es sin compromiso. Puedes probar cualquier lunes a las 19h. Si te gusta, tienes bonos mensuales desde 40€. Consulta todos los precios en recepción o en nuestra web.',
+    'La clase de bienvenida cuesta 10€ y es sin compromiso. Puedes probar cualquier lunes a las 19h. Si te gusta, tienes bonos mensuales desde 40€. Consulta todos los precios en recepción o en nuestra web.',
   cuerpofitFaqQ8: '¿Hay contrato o permanencia?',
   cuerpofitFaqA8:
     'No. Bonos mensuales sin permanencia. Puedes entrar y salir cuando quieras. Valoramos tu libertad y queremos que vengas porque quieres, no porque estás atado/a a un contrato.',
@@ -11474,7 +11475,7 @@ El Método Farray integra elementos de Pilates, yoga funcional, entrenamiento de
   bailemanananasClassesPerWeek: 'clases por semana',
   bailemanananasCTA1: 'Ver Horarios de Mañanas',
   bailemanananasCTA1Subtext: 'Grupos reducidos',
-  bailemanananasCTA2: 'Reserva tu Clase de Prueba',
+  bailemanananasCTA2: 'Reserva tu Clase de Bienvenida',
   bailemanananasCTA2Subtext: '10€ sin compromiso',
 
   // === WHAT IS SECTION ===
@@ -11629,7 +11630,7 @@ El Método Farray integra elementos de Pilates, yoga funcional, entrenamiento de
     'Depende del estilo. El Contemporáneo y Ballet son más técnicos y conscientes. El Sexy Reggaeton tiene la misma energía que por la tarde, pero con grupos más pequeños. En general hay menos alumnos, más espacio, más atención personalizada y un ambiente más relajado para aprender.',
   bailemanananasFaqQ7: '¿Puedo probar una clase antes de apuntarme?',
   bailemanananasFaqA7:
-    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia de bailar sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba" en la parte superior de esta página.',
+    'Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. La idea es que puedas probar la experiencia de bailar sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Bienvenida" en la parte superior de esta página.',
 
   // 7 FAQs adicionales para SEO
   bailemanananasFaqQ8: '¿Cuántas clases de baile hay por las mañanas?',
@@ -11732,7 +11733,7 @@ El Método Farray integra elementos de Pilates, yoga funcional, entrenamiento de
   // === SEO & META ===
   bumbumPageTitle: 'Clases de Ejercicios de Glúteos en Barcelona | Bum Bum Glúteos Maravillosos',
   bumbumMetaDescription:
-    'Clases de Glúteos en Barcelona: hip thrust, sentadillas y técnicas de danza. Tonifica y aumenta con el Método Farray®. Plaza España. Clase de prueba gratis.',
+    'Clases de Glúteos en Barcelona: hip thrust, sentadillas y técnicas de danza. Tonifica y aumenta con el Método Farray®. Plaza España. Clase de bienvenida.',
 
   // === HERO SECTION ===
   bumbumHeroTitle: 'Bum Bum Glúteos Maravillosos',
@@ -11744,7 +11745,7 @@ El Método Farray integra elementos de Pilates, yoga funcional, entrenamiento de
   bumbumCTAGroup: 'Opciones de inscripción',
   bumbumCTA1: 'Hazte Socio Ahora',
   bumbumCTA1Subtext: 'Quedan pocas plazas por clase',
-  bumbumCTA2: 'Reserva tu Clase de Prueba',
+  bumbumCTA2: 'Reserva tu Clase de Bienvenida',
   bumbumCTA2Subtext: 'Válido por tiempo limitado',
 
   // === WHAT IS BUM BUM SECTION ===
@@ -11942,9 +11943,9 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   bumbumFaqQ7: '¿Es solo para mujeres?',
   bumbumFaqA7:
     'No. Aunque la mayoría de participantes son mujeres, los hombres también pueden beneficiarse enormemente del entrenamiento de glúteos. Unos glúteos fuertes mejoran el rendimiento deportivo, previenen lesiones y mejoran la postura en cualquier persona.',
-  bumbumFaqQ8: '¿Cuánto cuesta la clase de prueba de Bum Bum Glúteos?',
+  bumbumFaqQ8: '¿Cuánto cuesta la clase de bienvenida de Bum Bum Glúteos?',
   bumbumFaqA8:
-    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Prueba".',
+    'Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. La idea es que puedas probar la experiencia sin compromiso. Reserva tu plaza pulsando el botón "Reserva tu Clase de Bienvenida".',
   bumbumFaqQ9: '¿Hay contrato o permanencia mínima?',
   bumbumFaqA9:
     "No hay contrato ni permanencia mínima. En Farray\'s Center trabajamos mes a mes: pagas solo los meses que asistes. Puedes pausar o cancelar en cualquier momento sin penalizaciones.",
@@ -12100,7 +12101,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   // SEO & Meta
   pricing_page_title: 'Precios Clases de Baile Barcelona | Cuotas 2025',
   pricing_page_description:
-    'Conoce las cuotas de socio de FIDC Barcelona: planes mensuales desde 50€, cuotas flexibles, entrenamientos personalizados. Sin permanencia. Primera clase gratis.',
+    'Conoce las cuotas de socio de FIDC Barcelona: planes mensuales desde 50€, cuotas flexibles, entrenamientos personalizados. Sin permanencia. Clase de bienvenida.',
   pricing_breadcrumb_home: 'Inicio',
   pricing_breadcrumb_current: 'Horarios y Precios',
 
@@ -12279,7 +12280,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
     "La cuota de inscripción es de 60€ el primer año y 20€/año de renovación para todos los socios. Esta cuota te garantiza el acceso al sistema, tu plaza fija en el horario, y todas las ventajas exclusivas de socio de Farray's: seguro de accidentes, entrada prioritaria a eventos y actividades internas, programa de referidos (2 participaciones puntuales por amigo), descuentos en merchandising y fiestas, y todos los beneficios de formar parte de nuestra comunidad de +10.000 bailarines. A veces tenemos promociones donde la bonificamos.",
   pricing_faq2_q: '¿Puedo probar una clase antes de inscribirme?',
   pricing_faq2_a:
-    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
+    'Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. La idea es que puedas probar la experiencia sin compromiso.',
   pricing_faq3_q: '¿Hay compromiso de permanencia?',
   pricing_faq3_a:
     'No, no hay permanencia obligatoria. Puedes cancelar tu cuota mensual cuando quieras, solicitándolo a través del formulario de contacto de la web con un mínimo de 15 días de antelación del siguiente cobro.',
@@ -12347,7 +12348,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   // Page Meta
   pricingV2_page_title: 'Precios Clases de Baile Barcelona | Desde 50 euros/mes',
   pricingV2_page_description:
-    'Descubre los precios de clases de baile en Barcelona. Cuotas mensuales desde 50 euros, bonos flexibles y opciones puntuales. Sin permanencia. Primera clase gratis.',
+    'Descubre los precios de clases de baile en Barcelona. Cuotas mensuales desde 50 euros, bonos flexibles y opciones puntuales. Sin permanencia. Clase de bienvenida.',
 
   // Hero
   pricingV2_hero_title: 'Precios de Clases de Baile en Barcelona',
@@ -12621,7 +12622,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   horariosV2_hero_subtitle:
     'Encuentra el horario y el estilo que encajan contigo y descubre cómo empezar en Farray Center de forma clara y sin compromiso.',
   horariosV2_hero_cta: 'Recibir Horarios Completos',
-  horariosV2_hero_ctaSubtext: 'Gratis y sin compromiso',
+  horariosV2_hero_ctaSubtext: 'Sin compromiso',
   horariosV2_hero_years: 'años en Barcelona',
 
   // Preview notice section
@@ -12632,7 +12633,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   horariosV2_preview_point3: 'Todos los niveles y edades',
   horariosV2_preview_point4: 'Información de profesores y salas',
   horariosV2_preview_cta: 'Recibir Horarios Completos por Email',
-  horariosV2_preview_free: 'Gratis y sin compromiso',
+  horariosV2_preview_free: 'Sin compromiso',
 
   // More schedules CTA
   horariosV2_moreSchedules_title: 'Hay muchos más horarios disponibles',
@@ -12646,7 +12647,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   // Trust badges
   horariosV2_trust_noCommitment: 'Sin permanencia',
   horariosV2_trust_byLevel: 'Grupos por nivel',
-  horariosV2_trust_freeClass: 'Primera clase gratuita',
+  horariosV2_trust_freeClass: 'Clase de bienvenida',
 
   // Authority badges
   horariosV2_authority_since2017: 'Desde 2017',
@@ -12796,7 +12797,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
     'Los horarios son orientativos y pueden variar según la temporada, el nivel y la disponibilidad de plazas. Siempre te enviamos la información actualizada antes de empezar.',
   horariosV2_faq6_q: '¿Puedo probar una clase antes de inscribirme?',
   horariosV2_faq6_a:
-    'Mira, lo importante es que pruebes. Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
+    'Mira, lo importante es que pruebes. Según la temporada, la clase de bienvenida para residentes tiene un precio de bienvenida especial. La idea es que puedas probar la experiencia sin compromiso.',
   horariosV2_faq7_q: '¿Dónde está Farray Center y a quién van dirigidas las actividades de baile?',
   horariosV2_faq7_a:
     'Estamos en Calle Entença nº 100 en Barcelona y nuestras clases están dirigidas a adultos de todos los niveles que quieren aprender, mejorar o disfrutar del baile en un entorno profesional y cercano.',
@@ -12927,7 +12928,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   horariosV2_cta_emotional2:
     'Se trata de encontrar un lugar donde disfrutar, progresar y sentirte parte de una comunidad.',
   horariosV2_cta_primary: 'Recibir Horarios Completos',
-  horariosV2_cta_subtext: 'Gratis y sin compromiso - Te contactamos de manera inmediata',
+  horariosV2_cta_subtext: 'Sin compromiso - Te contactamos de manera inmediata',
 
   // ============================================================================
   // BLOG
@@ -13081,7 +13082,7 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   // CTA
   blogBeneficiosSalsa_ctaTitle: 'Empieza a Bailar Salsa en Barcelona',
   blogBeneficiosSalsa_ctaText:
-    'Clases de salsa cubana en el Eixample Izquierdo de Barcelona. Todos los niveles, desde principiante hasta avanzado. Profesores cubanos con más de 20 años de experiencia. Tu primera clase de prueba te espera.',
+    'Clases de salsa cubana en el Eixample Izquierdo de Barcelona. Todos los niveles, desde principiante hasta avanzado. Profesores cubanos con más de 20 años de experiencia. Tu primera clase de bienvenida te espera.',
   blogBeneficiosSalsa_ctaButton: 'Ver Horarios y Reservar',
 
   // FAQ
@@ -13532,9 +13533,9 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   bachataV3HeroStudents: '+15.000 estudiantes formados',
   bachataV3CTA1: 'Hazte Socio Ahora',
   bachataV3CTA1Subtext: 'Quedan pocas plazas este mes',
-  bachataV3CTA2: 'Reserva tu Clase de Prueba',
+  bachataV3CTA2: 'Reserva tu Clase de Bienvenida',
   bachataV3CTA2Subtext: 'Válido por tiempo limitado',
-  bachataV3CTAGroup: 'Clase de Prueba',
+  bachataV3CTAGroup: 'Clase de Bienvenida',
 
   // What Is Section
   bachataV3WhatIsTitle: '¿Qué es la Bachata Sensual y por qué aprenderla en Barcelona?',
@@ -13746,7 +13747,7 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
     "Sí, organizamos regularmente prácticas internas, sociales temáticos y eventos especiales. Además, la comunidad de bachata de Barcelona tiene sociales cada fin de semana en diferentes locales. Como alumno de Farray's, te mantenemos informado de todos los eventos y muchos alumnos van juntos en grupo. También organizamos viajes a congresos internacionales de bachata.",
   bachataV3FaqQ10: '¿Cuánto cuestan las clases de bachata sensual en Barcelona?',
   bachataV3FaqA10:
-    'Ofrecemos diferentes modalidades: mensualidad con acceso a múltiples clases, bonos de horas, y clases sueltas. Según la temporada, la clase de prueba puede ser gratuita o tener un precio simbólico de bienvenida. Reserva tu clase de prueba para conocernos y te explicaremos todas las opciones. Consulta nuestra página de precios para información detallada.',
+    'Ofrecemos diferentes modalidades: mensualidad con acceso a múltiples clases, bonos de horas, y clases sueltas. Según la temporada, la clase de bienvenida tiene un precio de bienvenida especial. Reserva tu clase de bienvenida para conocernos y te explicaremos todas las opciones. Consulta nuestra página de precios para información detallada.',
 
   // Nearby Areas
   bachataV3NearbyTitle: 'Clases de Bachata Sensual cerca de ti',
@@ -14077,7 +14078,7 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
   blogHistoriaBachata_conclusionContent:
     'De los barrios de Santo Domingo a las academias de Barcelona, la bachata ha recorrido un camino épico: de género marginal a Patrimonio UNESCO, de "música de amargue" a fenómeno global con Romeo Santos llenando estadios.',
   blogHistoriaBachata_conclusionCTA:
-    "La bachata no se detuvo en Santo Domingo: pulsa en el Eixample de Barcelona. **[Reserva tu clase de prueba](/es/clases/bachata-barcelona)** en Farray's y escribe tu propio capítulo en esta historia de ritmo y pasión.",
+    "La bachata no se detuvo en Santo Domingo: pulsa en el Eixample de Barcelona. **[Reserva tu clase de bienvenida](/es/clases/bachata-barcelona)** en Farray's y escribe tu propio capítulo en esta historia de ritmo y pasión.",
 
   // === FAQ SECTION ===
   blogHistoriaBachata_faqTitle: 'Preguntas Frecuentes sobre la Historia de la Bachata',
@@ -14184,7 +14185,7 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
 
   // === CTA: CLASES DE SALSA ===
   blogClasesSalsaBarcelona_ctaClases:
-    '**¿Quieres empezar a hablar salsa?** Descubre nuestras <a href="/es/clases/salsa-cubana-barcelona">clases de Salsa Cubana</a>, <a href="/es/clases/salsa-bachata-barcelona">Salsa y Bachata</a> o <a href="/es/clases/timba-barcelona">Timba</a>. Primera clase de prueba gratis. <a href="/es/horarios"><strong>Ver horarios y reservar →</strong></a>',
+    '**¿Quieres empezar a hablar salsa?** Descubre nuestras <a href="/es/clases/salsa-cubana-barcelona">clases de Salsa Cubana</a>, <a href="/es/clases/salsa-bachata-barcelona">Salsa y Bachata</a> o <a href="/es/clases/timba-barcelona">Timba</a>. Reserva tu clase de bienvenida. <a href="/es/horarios"><strong>Ver horarios y reservar →</strong></a>',
 
   // ============================================================================
   // BLOG ARTICLE: Clases de baile para principiantes en Barcelona
@@ -14203,7 +14204,7 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
 
   // === SUMMARY BULLETS ===
   blogClasesPrincipiantes_summaryBullet1:
-    "Clase de bienvenida en Farray's (Eixample) – gratuita en temporada promocional o desde 10€",
+    "Clase de bienvenida en Farray's (Eixample) – desde 10€ o precio especial en temporada promocional",
   blogClasesPrincipiantes_summaryBullet2: 'No necesitas experiencia previa ni venir con pareja',
   blogClasesPrincipiantes_summaryBullet3:
     'Guía paso a paso: qué llevar, qué estilo elegir y cómo progresar',
@@ -14212,7 +14213,7 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
 
   // === INTRODUCTION ===
   blogClasesPrincipiantes_intro:
-    "¿Te apetece empezar a bailar desde cero y no sabes por dónde empezar? Estás en el sitio correcto. En <a href='/es'>Farray's International Dance Center</a> (Barcelona, Eixample) puedes reservar una <strong>clase de bienvenida</strong> para conocernos: <strong>gratuita en temporada promocional</strong>, o con precio de cortesía (desde 10€) el resto del año. También puedes venir con participación puntual desde 20€. Sin presión, sin postureo y con un equipo que te lo pone fácil desde el minuto uno.",
+    "¿Te apetece empezar a bailar desde cero y no sabes por dónde empezar? Estás en el sitio correcto. En <a href='/es'>Farray's International Dance Center</a> (Barcelona, Eixample) puedes reservar una <strong>clase de bienvenida</strong> para conocernos: con <strong>precio especial de cortesía desde 10€</strong>. También puedes venir con participación puntual desde 20€. Sin presión, sin postureo y con un equipo que te lo pone fácil desde el minuto uno.",
 
   // === CTA HERO ===
   blogClasesPrincipiantes_ctaHero:
@@ -14307,7 +14308,7 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
   blogClasesPrincipiantes_section8Content:
     'Si esta guía te ha quitado un poco de ruido mental, ya está: eso era lo que faltaba.',
   blogClasesPrincipiantes_ctaReserva:
-    '<strong><a href="/es/contacto">Reserva tu clase de bienvenida →</a></strong><br/><br/>• <strong>En temporada promocional:</strong> clase de bienvenida gratuita<br/>• <strong>Resto del año:</strong> clase de cortesía desde 10€<br/>• <strong>Participación puntual:</strong> desde 20€<br/><br/>¿Dudas? Escríbenos y te ayudamos a elegir clase y nivel.',
+    '<strong><a href="/es/contacto">Reserva tu clase de bienvenida →</a></strong><br/><br/>• <strong>En temporada promocional:</strong> clase de bienvenida<br/>• <strong>Resto del año:</strong> clase de cortesía desde 10€<br/>• <strong>Participación puntual:</strong> desde 20€<br/><br/>¿Dudas? Escríbenos y te ayudamos a elegir clase y nivel.',
 
   // === SECTION 9: Ubicación ===
   blogClasesPrincipiantes_section9Title: 'Dónde estamos (Barcelona)',
@@ -14319,9 +14320,9 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
   blogClasesPrincipiantes_faq1Question: '¿Puedo empezar a bailar sin experiencia?',
   blogClasesPrincipiantes_faq1Answer:
     'Sí. Tenemos clases para principiantes donde se parte desde lo básico y se explica paso a paso.',
-  blogClasesPrincipiantes_faq2Question: '¿Hay clase de prueba para conocer el centro?',
+  blogClasesPrincipiantes_faq2Question: '¿Hay clase de bienvenida para conocer el centro?',
   blogClasesPrincipiantes_faq2Answer:
-    'Sí. En temporada promocional ofrecemos clase de bienvenida gratuita. El resto del año puedes venir a conocernos con una clase de cortesía desde 10€, o con participación puntual desde 20€.',
+    'Sí. En temporada promocional ofrecemos clase de bienvenida. El resto del año puedes venir a conocernos con una clase de cortesía desde 10€, o con participación puntual desde 20€.',
   blogClasesPrincipiantes_faq3Question: '¿Tengo que ir con pareja?',
   blogClasesPrincipiantes_faq3Answer:
     'No necesariamente. En muchos formatos puedes venir solo/a. Te orientamos según la clase.',
@@ -14363,7 +14364,7 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
   fullBodyCardioCTAGroup: 'Opciones de inscripción',
   fullBodyCardioCTA1: 'Hazte Socio Ahora',
   fullBodyCardioCTA1Subtext: 'Quedan pocas plazas',
-  fullBodyCardioCTA2: 'Reserva tu Clase de Prueba',
+  fullBodyCardioCTA2: 'Reserva tu Clase de Bienvenida',
   fullBodyCardioCTA2Subtext: 'Primera clase especial',
 
   // === WHAT IS CUERPO-FIT SECTION ===
@@ -14582,7 +14583,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
     'Depende de la lesión. <strong>Requisitos</strong>: consulta con tu médico o fisioterapeuta primero. Si tienes el alta médica, avísanos antes de clase para adaptar ejercicios. <strong>Contraindicaciones absolutas</strong>: lesiones agudas, problemas cardíacos no controlados, embarazo de riesgo. Cris puede modificar ejercicios para la mayoría de limitaciones comunes (rodillas, espalda, hombros).',
   fullBodyCardioFaqQ14: '¿Cuánto cuesta la clase de Cuerpo-Fit?',
   fullBodyCardioFaqA14:
-    'Cuerpo-Fit está incluido en los bonos mensuales de la academia. <strong>Clase de prueba</strong>: consulta condiciones actuales en recepción o web. <strong>Bono mensual</strong>: te da acceso a Cuerpo-Fit y otras clases de la academia. <strong>Sin permanencia</strong>: pagas mes a mes, sin compromiso. Consulta tarifas actualizadas en nuestra web o pulsando "Reserva tu Clase de Prueba".',
+    'Cuerpo-Fit está incluido en los bonos mensuales de la academia. <strong>Clase de prueba</strong>: consulta condiciones actuales en recepción o web. <strong>Bono mensual</strong>: te da acceso a Cuerpo-Fit y otras clases de la academia. <strong>Sin permanencia</strong>: pagas mes a mes, sin compromiso. Consulta tarifas actualizadas en nuestra web o pulsando "Reserva tu Clase de Bienvenida".',
   fullBodyCardioFaqQ15: '¿Dónde están las clases de Cuerpo-Fit en Barcelona?',
   fullBodyCardioFaqA15:
     '<strong>Dirección</strong>: Calle Entença 100, 08015 Barcelona (zona Plaza España, entre Sants y Hostafrancs).<br><strong>Metro</strong>: Plaza España (L1, L3), Hostafrancs (L1), Rocafort (L1), Entença (L5) – todos a 5 min andando.<br><strong>Horario</strong>: Lunes de 20:00 a 21:00h.<br><br>📞 <strong>Teléfono</strong>: +34 622 247 085<br>📧 <strong>Email</strong>: info@farrayscenter.com<br>🌐 <strong>Web</strong>: www.farrayscenter.com',
@@ -14794,17 +14795,17 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // ============================================================================
 
   // Page Meta
-  fbLandingPageTitle: "Clase de Baile GRATIS en Barcelona | Farray's Center",
+  fbLandingPageTitle: "Clase de Bienvenida de Baile en Barcelona | Farray's Center",
   fbLandingPageDescription:
-    'Reserva tu clase de prueba gratuita en la mejor escuela de baile de Barcelona. +15.000 alumnos, +40 estilos, profesores profesionales. Sin compromiso.',
+    'Reserva tu clase de bienvenida en la mejor escuela de baile de Barcelona. +15.000 alumnos, +40 estilos, profesores profesionales. Sin compromiso.',
 
   // Hero Section
   fbLandingBadge: 'Oferta Especial',
   fbLandingHeroTitle: 'Tu Primera Clase de Baile',
-  fbLandingHeroTitleAccent: 'GRATIS',
+  fbLandingHeroTitleAccent: 'HOY',
   fbLandingHeroSubtitle:
     "Descubre por qué +{students} alumnos han elegido Farray's Center en Barcelona",
-  fbLandingHeroCTA: 'RESERVA TU PLAZA GRATIS',
+  fbLandingHeroCTA: 'RESERVA TU PLAZA',
   fbLandingHeroSpots: 'Solo quedan {spots} plazas esta semana',
   fbLandingHeroTimer: 'La oferta termina en:',
   fbLandingHeroTrust: 'Sin tarjeta de crédito · Sin compromisos · Solo baile',
@@ -14818,7 +14819,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   fbLandingProofLocation: 'Plaza España',
 
   // Value Stack Section
-  fbLandingValueTitle: 'Esto es lo que recibes en tu clase de prueba:',
+  fbLandingValueTitle: 'Esto es lo que recibes en tu clase de bienvenida:',
   fbLandingValue1: '1 clase completa de 60 minutos con profesores profesionales',
   fbLandingValue1Price: 'Valor €{price}',
   fbLandingValue2: 'Elige entre +40 estilos: Salsa, Bachata, Reggaeton, Hip Hop, Heels...',
@@ -14831,8 +14832,8 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   fbLandingValue5Price: 'Incluido',
   fbLandingValueTotal: 'Valor total:',
   fbLandingValueYourPrice: 'Tu precio hoy:',
-  fbLandingValueFree: 'GRATIS',
-  fbLandingValueCTA: 'QUIERO MI CLASE GRATIS',
+  fbLandingValueFree: 'SIN COMPROMISO',
+  fbLandingValueCTA: 'QUIERO MI CLASE DE BIENVENIDA',
   fbLandingValueSubtext: 'Más de 500 personas reservan cada mes',
 
   // Transformation Section
@@ -14869,7 +14870,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   fbLandingFinalSubtitle: 'No lo dejes para mañana, tu yo del futuro te lo agradecerá',
   fbLandingFinalSpots: 'Solo quedan {spots} plazas',
   fbLandingFinalCountdown: 'Oferta expira en:',
-  fbLandingFinalCTA: 'RESERVA AHORA - ES GRATIS',
+  fbLandingFinalCTA: 'RESERVA TU CLASE DE BIENVENIDA',
   fbLandingTrust_noCard: 'Sin tarjeta',
   fbLandingTrust_noCommitment: 'Sin compromiso',
   fbLandingTrust_noSpam: 'Sin spam',
@@ -14882,12 +14883,12 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // =====================================================
 
   // Meta SEO
-  dhLandingPageTitle: "Clase de Bienvenida de Dancehall en Barcelona | GRATIS | Farray's Center",
+  dhLandingPageTitle: "Clase de Bienvenida de Dancehall en Barcelona | Farray's Center",
   dhLandingPageDescription:
-    'Viaja a Jamaica sin salir de Barcelona. Clase de Bienvenida de Dancehall totalmente GRATIS. Plazas limitadas. Sin compromiso. Reserva ahora.',
+    'Viaja a Jamaica sin salir de Barcelona. Clase de Bienvenida de Dancehall sin compromiso. Plazas limitadas. Sin compromiso. Reserva ahora.',
 
   // Hero Section
-  dhLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  dhLandingBadge: 'CLASE DE BIENVENIDA',
   dhLandingHeadline: 'Viaja A Jamaica sin Salir de Barcelona',
   dhLandingSubheadline:
     'Entra en el nuevo año moviéndote intensamente al ritmo de las músicas más placenteras y cañeras de Jamaica. Descubre este baile super divertido mientras compensas los excesos de las fiestas con una gran sonrisa en la cara.',
@@ -14916,11 +14917,11 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Experience Section
   dhLandingExperienceTitle: '¿Quieres viajar a Jamaica sin salir de Barcelona?',
   dhLandingExperienceDesc:
-    'Esta no es una clase cualquiera. Es tu acceso a una experiencia exclusiva y cultural, en la que te guiamos paso a paso para que descubras el verdadero sabor del Dancehall. ¿Primera vez con nosotros? Esta es tu ocasión: una clase de Bienvenida de Dancehall totalmente gratis, sin coste, sin compromiso y con plazas limitadas. Una bienvenida con todo el flow que mereces.',
+    'Esta no es una clase cualquiera. Es tu acceso a una experiencia exclusiva y cultural, en la que te guiamos paso a paso para que descubras el verdadero sabor del Dancehall. ¿Primera vez con nosotros? Esta es tu ocasión: una clase de Bienvenida de Dancehall sin compromiso, sin coste, sin compromiso y con plazas limitadas. Una bienvenida con todo el flow que mereces.',
 
   // Value Stack
   dhLandingValueTitle: '¿Qué incluye esta experiencia?',
-  dhLandingValueSubtitle: 'Todo esto completamente GRATIS para nuevas estudiantes',
+  dhLandingValueSubtitle: 'Todo esto sin compromiso para nuevas estudiantes',
   dhLandingValueItem1: 'Una clase completa de Dancehall de 60 minutos',
   dhLandingValuePrice1: 'Valor: {price}€',
   dhLandingValueItem2: 'Trato amable y cercano que nos caracteriza',
@@ -14930,7 +14931,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   dhLandingValueIncluded: 'Incluido',
   dhLandingValueTotal: 'VALOR TOTAL:',
   dhLandingValueYourPrice: 'TU PRECIO HOY:',
-  dhLandingValueFree: 'GRATIS',
+  dhLandingValueFree: 'SIN COMPROMISO',
 
   // Special Offer
   dhLandingOfferTitle: 'Solo por tiempo limitado',
@@ -15132,12 +15133,12 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // =====================================================
 
   // Meta SEO
-  femLandingPageTitle: "Clase de Bienvenida de Femmology en Barcelona | GRATIS | Farray's Center",
+  femLandingPageTitle: "Clase de Bienvenida de Femmology en Barcelona | Farray's Center",
   femLandingPageDescription:
-    'Descubre Femmology, el método exclusivo de Yunaisy Farray para reconectar con tu feminidad. Clase de Bienvenida totalmente GRATIS. Plazas limitadas. Reserva ahora.',
+    'Descubre Femmology, el método exclusivo de Yunaisy Farray para reconectar con tu feminidad. Clase de Bienvenida sin compromiso. Plazas limitadas. Reserva ahora.',
 
   // Hero Section
-  femLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  femLandingBadge: 'CLASE DE BIENVENIDA',
   femLandingHeadline: 'Reconecta con Tu Feminidad a Través del Movimiento',
   femLandingSubheadline:
     'Femmology es el método exclusivo creado por Yunaisy Farray que combina danza en tacones, expresión corporal y trabajo emocional para que te ames cada día más. Una experiencia transformadora que va más allá del baile.',
@@ -15166,11 +15167,11 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Experience Section
   femLandingExperienceTitle: '¿Quieres reconectar con tu esencia femenina?',
   femLandingExperienceDesc:
-    'Esta no es una clase de baile cualquiera. Femmology es un viaje hacia tu interior, una experiencia que combina el poder del movimiento en tacones con el trabajo emocional. Creado por Yunaisy Farray, este método único te ayuda a liberarte de inseguridades, abrazar tu sensualidad y quererte cada día más. ¿Primera vez con nosotras? Esta es tu ocasión: una clase de Bienvenida totalmente gratis.',
+    'Esta no es una clase de baile cualquiera. Femmology es un viaje hacia tu interior, una experiencia que combina el poder del movimiento en tacones con el trabajo emocional. Creado por Yunaisy Farray, este método único te ayuda a liberarte de inseguridades, abrazar tu sensualidad y quererte cada día más. ¿Primera vez con nosotras? Esta es tu ocasión: una clase de Bienvenida sin compromiso.',
 
   // Value Stack
   femLandingValueTitle: '¿Qué incluye esta experiencia?',
-  femLandingValueSubtitle: 'Todo esto completamente GRATIS para nuevas estudiantes',
+  femLandingValueSubtitle: 'Todo esto sin compromiso para nuevas estudiantes',
   femLandingValueItem1: 'Una clase completa de Femmology de 60 minutos',
   femLandingValuePrice1: 'Valor: {price}€',
   femLandingValueItem2: 'Conexión directa con Yunaisy Farray, creadora del método',
@@ -15180,7 +15181,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   femLandingValueIncluded: 'Incluido',
   femLandingValueTotal: 'VALOR TOTAL:',
   femLandingValueYourPrice: 'TU PRECIO HOY:',
-  femLandingValueFree: 'GRATIS',
+  femLandingValueFree: 'SIN COMPROMISO',
 
   // Special Offer
   femLandingOfferTitle: 'Solo por tiempo limitado',
@@ -15290,7 +15291,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Meta
   homev2_pageTitle: 'Escuela de Baile en Barcelona | Clases de Salsa, Bachata y Danza | FIDC',
   homev2_metaDescription:
-    'Escuela de baile en Barcelona con clases de salsa, bachata y danza para adultos. Centro CID-UNESCO con 4.9/5 en Google. Primera clase gratis. Reserva ahora.',
+    'Escuela de baile en Barcelona con clases de salsa, bachata y danza para adultos. Centro CID-UNESCO con 4.9/5 en Google. Clase de bienvenida. Reserva ahora.',
 
   // Hero
   homev2_heroHeadline: 'No necesitas más clases de baile.\nNecesitas las clases correctas.',
@@ -15300,7 +15301,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   homev2_heroValue:
     'En Barcelona hay decenas de escuelas de baile. Algunas tienen buenos profesores. Otras tienen buen ambiente. Pero casi ninguna puede responderte esto: "¿En qué nivel estoy y qué me falta para el siguiente?" Aquí sí.',
   homev2_heroCta1: 'Ver Horarios y Reservar',
-  homev2_heroCta1Subtext: 'Evaluación gratuita en tu primera clase',
+  homev2_heroCta1Subtext: 'Reserva tu clase de bienvenida',
   homev2_heroCta2: 'Descubre el Método',
 
   // Founder Section
@@ -15364,7 +15365,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   homev2_compRow8Others: '"Depende de ti..."',
   homev2_compRow8Us: 'Progreso medible clase a clase',
   homev2_comparisonCta: 'Compruébalo tú mismo',
-  homev2_comparisonCtaSubtext: 'Primera clase de evaluación gratuita',
+  homev2_comparisonCtaSubtext: 'Clase de bienvenida sin compromiso',
 
   // Style Finder Section
   homev2_styleFinderTitle: '25+ estilos. Un método. Tu viaje.',
@@ -15469,7 +15470,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // =====================================================
 
   // Hero V2 - Nuevas claves
-  hero_urgency: 'Oferta Enero: Primera semana GRATIS + Regalo sorpresa',
+  hero_urgency: 'Oferta Enero: Clase de bienvenida + Regalo sorpresa',
   hero_cta_schedule: 'Ver Horarios',
 
   // Trust Bar - Barra de credibilidad
@@ -15496,7 +15497,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   offer_badge: 'Oferta Especial',
   offer_title: 'Puertas Abiertas',
   offer_subtitle: 'Tu oportunidad de probar sin compromiso',
-  offer_benefit1: '1 Clase de Prueba GRATIS',
+  offer_benefit1: '1 Clase de Bienvenida',
   offer_value1: 'valor 20€',
   offer_benefit2: 'Tour por las instalaciones de 700m²',
   offer_value2: 'valor 15€',
@@ -15507,7 +15508,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   offer_benefit5: '10% descuento si te matriculas hoy',
   offer_value5: 'oferta limitada',
   offer_urgency: 'Plazas limitadas: Quedan {spots} plazas esta semana',
-  offer_cta: 'Reservar Mi Plaza Gratis',
+  offer_cta: 'Reservar Mi Plaza',
   offer_trust1: 'Sin compromiso',
   offer_trust2: 'Cancelación gratuita',
 
@@ -15550,7 +15551,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   instructors_viewall: 'Ver Todos Los Profesores',
 
   // Sticky Mobile CTA
-  sticky_cta: 'Clase Gratis',
+  sticky_cta: 'Clase de Bienvenida',
   sticky_trust1: 'Sin compromiso',
 
   // =====================================================
@@ -15560,10 +15561,10 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Meta
   twLandingPageTitle: 'Clase de Bienvenida de Twerk',
   twLandingPageDescription:
-    'Descubre el Twerk en Barcelona. Clase de Bienvenida totalmente GRATIS. Plazas limitadas. Sin compromiso. Reserva ahora.',
+    'Descubre el Twerk en Barcelona. Clase de Bienvenida sin compromiso. Plazas limitadas. Sin compromiso. Reserva ahora.',
 
   // Hero Section
-  twLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  twLandingBadge: 'CLASE DE BIENVENIDA',
   twLandingHeadline: 'Despierta Tu Poder con el Twerk',
   twLandingSubheadline:
     'Entra en el nuevo año liberando tu energía, conectando con tu cuerpo y descubriendo un baile que te empodera desde el primer minuto. Diversión garantizada mientras trabajas glúteos, core y autoestima.',
@@ -15587,7 +15588,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Experience Section
   twLandingExperienceTitle: '¿Lista para liberar tu poder interior?',
   twLandingExperienceDesc:
-    'El Twerk no es solo un baile, es una declaración de libertad. Es tu momento para conectar con tu cuerpo sin juicios, fortalecer tu confianza y pasarlo increíblemente bien. ¿Primera vez con nosotros? Esta es tu ocasión: una clase de Bienvenida de Twerk totalmente gratis, sin coste, sin compromiso y con plazas limitadas.',
+    'El Twerk no es solo un baile, es una declaración de libertad. Es tu momento para conectar con tu cuerpo sin juicios, fortalecer tu confianza y pasarlo increíblemente bien. ¿Primera vez con nosotros? Esta es tu ocasión: una clase de Bienvenida de Twerk sin compromiso, sin coste, sin compromiso y con plazas limitadas.',
 
   // Value Stack
   twLandingValueTitle: '¿Qué incluye esta experiencia?',
@@ -15600,7 +15601,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   twLandingValueIncluded: 'Incluido',
   twLandingValueTotal: 'VALOR TOTAL:',
   twLandingValueYourPrice: 'TU PRECIO HOY:',
-  twLandingValueFree: 'GRATIS',
+  twLandingValueFree: 'SIN COMPROMISO',
 
   // Special Offer
   twLandingOfferTitle: 'Solo por tiempo limitado',
@@ -15767,13 +15768,12 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Profesora: Yasmina Fernández
 
   // SEO
-  sxrLandingPageTitle:
-    "Clase de Bienvenida de Sexy Reggaeton en Barcelona | GRATIS | Farray's Center",
+  sxrLandingPageTitle: "Clase de Bienvenida de Sexy Reggaeton en Barcelona | Farray's Center",
   sxrLandingPageDescription:
-    'Prueba una clase GRATIS de Sexy Reggaeton con Yasmina Fernández en Barcelona. Descubre la sensualidad del perreo y el body roll. Sin experiencia previa. Academia CID-UNESCO.',
+    'Reserva tu clase de bienvenida de Sexy Reggaeton con Yasmina Fernández en Barcelona. Descubre la sensualidad del perreo y el body roll. Sin experiencia previa. Academia CID-UNESCO.',
 
   // Hero Section
-  sxrLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  sxrLandingBadge: 'CLASE DE BIENVENIDA',
   sxrLandingHeadline: 'Despierta Tu Sensualidad con Sexy Reggaeton',
   sxrLandingSubheadline:
     'Libera tu energía, conecta con tu cuerpo y descubre un baile que te empodera desde el primer minuto. Sensualidad, confianza y diversión garantizada mientras trabajas tu expresión corporal.',
@@ -15811,7 +15811,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   sxrLandingValueIncluded: 'Incluido',
   sxrLandingValueTotal: 'VALOR TOTAL:',
   sxrLandingValueYourPrice: 'TU PRECIO HOY:',
-  sxrLandingValueFree: 'GRATIS',
+  sxrLandingValueFree: 'SIN COMPROMISO',
 
   // Offer Section
   sxrLandingOfferTitle: 'Solo por tiempo limitado',
@@ -15869,7 +15869,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Final CTA Section
   sxrLandingFinalCTATitle: 'Tu cuerpo merece expresarse. Es hora de brillar.',
   sxrLandingFinalCTADesc:
-    'Reserva ahora tu clase de bienvenida gratuita y descubre por qué cientos de mujeres han encontrado en el Sexy Reggaeton su forma favorita de expresarse.',
+    'Reserva ahora tu clase de bienvenida y descubre por qué cientos de mujeres han encontrado en el Sexy Reggaeton su forma favorita de expresarse.',
   sxrLandingFinalCTAExtra:
     'La próxima alumna que reserve podría descubrir una nueva versión de sí misma.',
   sxrLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
@@ -15978,13 +15978,12 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Profesor: Charlie Breezy
 
   // SEO
-  hhrLandingPageTitle:
-    "Clase de Bienvenida de Hip Hop Reggaeton en Barcelona | GRATIS | Farray's Center",
+  hhrLandingPageTitle: "Clase de Bienvenida de Hip Hop Reggaeton en Barcelona | Farray's Center",
   hhrLandingPageDescription:
-    'Prueba una clase GRATIS de Hip Hop Reggaeton con Charlie Breezy en Barcelona. Fusiona el flow del Hip Hop con la energía del Reggaeton. Sin experiencia previa. Academia CID-UNESCO.',
+    'Reserva tu clase de bienvenida de Hip Hop Reggaeton con Charlie Breezy en Barcelona. Fusiona el flow del Hip Hop con la energía del Reggaeton. Sin experiencia previa. Academia CID-UNESCO.',
 
   // Hero
-  hhrLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  hhrLandingBadge: 'CLASE DE BIENVENIDA',
   hhrLandingHeadline: 'Fusiona Hip Hop + Reggaeton y Libera Tu Flow',
   hhrLandingSubheadline:
     'Prueba una clase con Charlie Breezy y descubre el estilo urbano que combina lo mejor de dos mundos. Sin experiencia previa. Sin compromiso.',
@@ -16013,7 +16012,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
 
   // Value Stack
   hhrLandingValueTitle: '¿Qué incluye esta experiencia?',
-  hhrLandingValueSubtitle: 'Todo esto completamente GRATIS para nuevos estudiantes',
+  hhrLandingValueSubtitle: 'Todo esto sin compromiso para nuevos estudiantes',
   hhrLandingValueItem1: 'Una clase completa de Hip Hop Reggaeton de 60 minutos',
   hhrLandingValuePrice1: 'Valor: {price}€',
   hhrLandingValueItem2: 'Aprende el flow y la actitud con Charlie Breezy',
@@ -16023,7 +16022,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   hhrLandingValueIncluded: 'Incluido',
   hhrLandingValueTotal: 'VALOR TOTAL:',
   hhrLandingValueYourPrice: 'TU PRECIO HOY:',
-  hhrLandingValueFree: 'GRATIS',
+  hhrLandingValueFree: 'SIN COMPROMISO',
 
   // Offer Section
   hhrLandingOfferTitle: 'Descuento exclusivo · Solo por tiempo limitado',
@@ -16091,7 +16090,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   hhrLandingFinalCTATitle:
     'El flow está dentro de ti. Solo necesitas la clase correcta para liberarlo.',
   hhrLandingFinalCTADesc:
-    'Reserva tu clase de bienvenida GRATIS ahora y descubre lo que Hip Hop + Reggaeton pueden hacer por ti.',
+    'Reserva tu clase de bienvenida ahora y descubre lo que Hip Hop + Reggaeton pueden hacer por ti.',
   hhrLandingFinalCTAExtra:
     'Charlie Breezy te espera en el corazón de Barcelona. Tu cuerpo ya conoce el ritmo.',
   hhrLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
@@ -16205,12 +16204,12 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // SEO: noindex, nofollow (landing de captación ads)
 
   // SEO
-  hhLandingPageTitle: "Clase de Bienvenida de Hip Hop en Barcelona | GRATIS | Farray's Center",
+  hhLandingPageTitle: "Clase de Bienvenida de Hip Hop en Barcelona | Farray's Center",
   hhLandingPageDescription:
-    'Prueba una clase GRATIS de Hip Hop con Marcos Martínez, juez internacional, en Barcelona. Aprende Breaking, Locking, Popping y Freestyle. Sin experiencia previa. Academia CID-UNESCO.',
+    'Reserva tu clase de bienvenida de Hip Hop con Marcos Martínez, juez internacional, en Barcelona. Aprende Breaking, Locking, Popping y Freestyle. Sin experiencia previa. Academia CID-UNESCO.',
 
   // Hero Section
-  hhLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  hhLandingBadge: 'CLASE DE BIENVENIDA',
   hhLandingHeadline: 'Domina el Arte del Street Dance',
   hhLandingSubheadline:
     'Aprende Hip Hop auténtico con Marcos Martínez, juez internacional de Hip Hop. Breaking, Locking, Popping, Freestyle... descubre tu propio estilo en la calle más importante de Barcelona.',
@@ -16240,7 +16239,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
 
   // Value Stack
   hhLandingValueTitle: '¿Qué incluye esta experiencia?',
-  hhLandingValueSubtitle: 'Todo esto completamente GRATIS para nuevos estudiantes',
+  hhLandingValueSubtitle: 'Todo esto sin compromiso para nuevos estudiantes',
   hhLandingValueItem1: 'Una clase completa de Hip Hop de 60 minutos',
   hhLandingValuePrice1: 'Valor: {price}€',
   hhLandingValueItem2: 'Aprende técnicas de Breaking, Locking y Popping con un juez internacional',
@@ -16250,12 +16249,12 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   hhLandingValueIncluded: 'Incluido',
   hhLandingValueTotal: 'VALOR TOTAL:',
   hhLandingValueYourPrice: 'TU PRECIO HOY:',
-  hhLandingValueFree: 'GRATIS',
+  hhLandingValueFree: 'SIN COMPROMISO',
 
   // Offer Section
   hhLandingOfferTitle: 'Solo por tiempo limitado',
   hhLandingOfferDesc:
-    'Esta clase de bienvenida gratuita es exclusiva para nuevos estudiantes. Las plazas son muy limitadas porque trabajamos con grupos reducidos para garantizar una atención personalizada.',
+    'Esta clase de bienvenida es exclusiva para nuevos estudiantes. Las plazas son muy limitadas porque trabajamos con grupos reducidos para garantizar una atención personalizada.',
 
   // Schedule Section
   hhLandingScheduleTitle: 'Elige tu horario',
@@ -16316,7 +16315,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Final CTA Section
   hhLandingFinalCTATitle: '¿Preparado para descubrir el verdadero Hip Hop?',
   hhLandingFinalCTADesc:
-    'Reserva tu clase de bienvenida gratuita ahora y empieza tu viaje en el street dance con un juez internacional de Hip Hop.',
+    'Reserva tu clase de bienvenida ahora y empieza tu viaje en el street dance con un juez internacional de Hip Hop.',
   hhLandingFinalCTAExtra:
     'Descuento exclusivo · Solo por tiempo limitado\n\nSi decides continuar después de la clase de bienvenida, tendrás acceso a un descuento exclusivo en tu primera mensualidad o paquete. Solo válido para nuevos alumnos.',
   hhLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
@@ -16428,12 +16427,12 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Profesores: Redblueh, Charlie Breezy
 
   // SEO
-  abLandingPageTitle: "Clase de Bienvenida de Afrobeats en Barcelona | GRATIS | Farray's Center",
+  abLandingPageTitle: "Clase de Bienvenida de Afrobeats en Barcelona | Farray's Center",
   abLandingPageDescription:
-    'Prueba una clase GRATIS de Afrobeats con Redblueh y Charlie Breezy en Barcelona. Descubre los ritmos africanos, la energía vibrante y los movimientos auténticos del Afrodance. Sin experiencia previa. Academia CID-UNESCO.',
+    'Reserva tu clase de bienvenida de Afrobeats con Redblueh y Charlie Breezy en Barcelona. Descubre los ritmos africanos, la energía vibrante y los movimientos auténticos del Afrodance. Sin experiencia previa. Academia CID-UNESCO.',
 
   // Hero Section
-  abLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  abLandingBadge: 'CLASE DE BIENVENIDA',
   abLandingHeadline: 'Siente la Energía de África con Afrobeats',
   abLandingSubheadline:
     'Entra en el nuevo año moviéndote intensamente al ritmo de África y descubre los bailes más divertidos de este continente, mientras compensas los excesos de las fiestas con una gran sonrisa en la cara.',
@@ -16459,11 +16458,11 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Experience Section
   abLandingExperienceTitle: '¿Quieres viajar a África sin salir de Barcelona?',
   abLandingExperienceDesc:
-    'Esta no es una clase cualquiera. Es tu acceso a una experiencia exclusiva y cultural, en la que te guiamos paso a paso para que descubras el verdadero sabor del Afrodance. ¿Primera vez con nosotros? Esta es tu ocasión: una clase de Bienvenida de Afrodance totalmente gratis, sin coste, sin compromiso y con plazas limitadas. Una bienvenida con toda la diversión que mereces.',
+    'Esta no es una clase cualquiera. Es tu acceso a una experiencia exclusiva y cultural, en la que te guiamos paso a paso para que descubras el verdadero sabor del Afrodance. ¿Primera vez con nosotros? Esta es tu ocasión: una clase de Bienvenida de Afrodance sin compromiso, sin coste, sin compromiso y con plazas limitadas. Una bienvenida con toda la diversión que mereces.',
 
   // Value Stack
   abLandingValueTitle: '¿Qué incluye esta experiencia?',
-  abLandingValueSubtitle: 'Todo esto completamente GRATIS para nuevos estudiantes',
+  abLandingValueSubtitle: 'Todo esto sin compromiso para nuevos estudiantes',
   abLandingValueItem1: 'Una clase completa de Afrobeats de 60 minutos',
   abLandingValuePrice1: 'Valor: {price}€',
   abLandingValueItem2: 'Aprende movimientos auténticos africanos con profesores especializados',
@@ -16473,7 +16472,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   abLandingValueIncluded: 'Incluido',
   abLandingValueTotal: 'VALOR TOTAL:',
   abLandingValueYourPrice: 'TU PRECIO HOY:',
-  abLandingValueFree: 'GRATIS',
+  abLandingValueFree: 'SIN COMPROMISO',
 
   // Offer Section
   abLandingOfferTitle: 'Solo por tiempo limitado',
@@ -16539,7 +16538,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Final CTA Section
   abLandingFinalCTATitle: 'La energía de África te está esperando. ¿Vienes a descubrirla?',
   abLandingFinalCTADesc:
-    'Reserva ahora tu clase de bienvenida gratuita y descubre por qué cientos de alumnos han encontrado en el Afrobeats su forma favorita de liberar energía y disfrutar.',
+    'Reserva ahora tu clase de bienvenida y descubre por qué cientos de alumnos han encontrado en el Afrobeats su forma favorita de liberar energía y disfrutar.',
   abLandingFinalCTAExtra: `África se mueve. ¿Te mueves con ella?`,
   abLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
   abLandingUrgencyReminder: 'Recuerda: las plazas son muy limitadas cada semana',
@@ -16575,12 +16574,12 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // =====================================================
 
   // Meta SEO
-  ajLandingPageTitle: "Clase de Bienvenida de Afro Jazz en Barcelona | GRATIS | Farray's Center",
+  ajLandingPageTitle: "Clase de Bienvenida de Afro Jazz en Barcelona | Farray's Center",
   ajLandingPageDescription:
-    'Descubre la fusión perfecta entre las raíces africanas y la técnica del jazz. Clase de Bienvenida de Afro Jazz totalmente GRATIS. Plazas limitadas. Sin compromiso.',
+    'Descubre la fusión perfecta entre las raíces africanas y la técnica del jazz. Clase de Bienvenida de Afro Jazz sin compromiso. Plazas limitadas. Sin compromiso.',
 
   // Hero Section
-  ajLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  ajLandingBadge: 'CLASE DE BIENVENIDA',
   ajLandingHeadline: 'Fusiona Raíces Africanas con la Elegancia del Jazz',
   ajLandingSubheadline:
     'Descubre una danza única que combina la fuerza y espiritualidad de los ritmos africanos con la técnica y fluidez del jazz moderno. Una experiencia que transforma cuerpo y alma.',
@@ -16609,11 +16608,11 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Experience Section
   ajLandingExperienceTitle: '¿Buscas una danza que combine técnica y expresión?',
   ajLandingExperienceDesc:
-    'El Afro Jazz es una fusión única creada por Yunaisy Farray que combina la energía ancestral de los ritmos africanos con la elegancia técnica del jazz contemporáneo. Esta no es una clase cualquiera: es tu entrada a un universo donde la fuerza de las raíces africanas se encuentra con la fluidez del movimiento moderno. ¿Primera vez? Una clase de Bienvenida totalmente gratis.',
+    'El Afro Jazz es una fusión única creada por Yunaisy Farray que combina la energía ancestral de los ritmos africanos con la elegancia técnica del jazz contemporáneo. Esta no es una clase cualquiera: es tu entrada a un universo donde la fuerza de las raíces africanas se encuentra con la fluidez del movimiento moderno. ¿Primera vez? Una clase de Bienvenida sin compromiso.',
 
   // Value Stack
   ajLandingValueTitle: '¿Qué incluye esta experiencia?',
-  ajLandingValueSubtitle: 'Todo esto completamente GRATIS para nuevos estudiantes',
+  ajLandingValueSubtitle: 'Todo esto sin compromiso para nuevos estudiantes',
   ajLandingValueItem1: 'Una clase completa de Afro Jazz de 60-90 minutos',
   ajLandingValuePrice1: 'Valor: {price}€',
   ajLandingValueItem2: 'Metodología única creada por Yunaisy Farray',
@@ -16623,7 +16622,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   ajLandingValueIncluded: 'Incluido',
   ajLandingValueTotal: 'VALOR TOTAL:',
   ajLandingValueYourPrice: 'TU PRECIO HOY:',
-  ajLandingValueFree: 'GRATIS',
+  ajLandingValueFree: 'SIN COMPROMISO',
 
   // Special Offer
   ajLandingOfferTitle: 'Solo por tiempo limitado',
@@ -16716,13 +16715,12 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // =====================================================
 
   // Page Meta
-  acLandingPageTitle:
-    "Clase de Bienvenida de Afro Contemporáneo en Barcelona | GRATIS | Farray's Center",
+  acLandingPageTitle: "Clase de Bienvenida de Afro Contemporáneo en Barcelona | Farray's Center",
   acLandingPageDescription:
-    'Descubre la Danza Contemporánea Cubana (DCC) con técnica de la ENA. Clase de Bienvenida de Afro Contemporáneo totalmente GRATIS. Plazas limitadas. Sin compromiso.',
+    'Descubre la Danza Contemporánea Cubana (DCC) con técnica de la ENA. Clase de Bienvenida de Afro Contemporáneo sin compromiso. Plazas limitadas. Sin compromiso.',
 
   // Hero Section
-  acLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  acLandingBadge: 'CLASE DE BIENVENIDA',
   acLandingHeadline: 'Descubre la Danza Contemporánea Cubana Auténtica',
   acLandingSubheadline:
     'Fusiona la técnica de la Escuela Nacional de Arte de Cuba con la fuerza ancestral de los ritmos afrocubanos. Una experiencia única que transforma tu cuerpo y tu expresión artística.',
@@ -16751,11 +16749,11 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Experience Section
   acLandingExperienceTitle: '¿Buscas una danza que conecte técnica, raíces y expresión?',
   acLandingExperienceDesc:
-    'El Afro Contemporáneo es la fusión de la técnica cubana de la ENA con los ritmos y movimientos afrocubanos. Yunaisy Farray, formada en la Escuela Nacional de Arte de Cuba, ha creado una metodología única que combina la precisión técnica de la danza contemporánea con la fuerza, musicalidad y espiritualidad de las danzas africanas. ¿Primera vez? Una clase de Bienvenida totalmente gratis.',
+    'El Afro Contemporáneo es la fusión de la técnica cubana de la ENA con los ritmos y movimientos afrocubanos. Yunaisy Farray, formada en la Escuela Nacional de Arte de Cuba, ha creado una metodología única que combina la precisión técnica de la danza contemporánea con la fuerza, musicalidad y espiritualidad de las danzas africanas. ¿Primera vez? Una clase de Bienvenida sin compromiso.',
 
   // Value Stack
   acLandingValueTitle: '¿Qué incluye esta experiencia?',
-  acLandingValueSubtitle: 'Todo esto completamente GRATIS para nuevos estudiantes',
+  acLandingValueSubtitle: 'Todo esto sin compromiso para nuevos estudiantes',
   acLandingValueItem1: 'Una clase completa de Afro Contemporáneo de 60-90 minutos',
   acLandingValuePrice1: 'Valor: {price}€',
   acLandingValueItem2: 'Metodología ENA auténtica con Yunaisy Farray',
@@ -16765,7 +16763,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   acLandingValueIncluded: 'Incluido',
   acLandingValueTotal: 'VALOR TOTAL:',
   acLandingValueYourPrice: 'TU PRECIO HOY:',
-  acLandingValueFree: 'GRATIS',
+  acLandingValueFree: 'SIN COMPROMISO',
 
   // Special Offer
   acLandingOfferTitle: 'Solo por tiempo limitado',
@@ -17103,12 +17101,12 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Profesora: Yasmina Fernández
 
   // SEO
-  ssLandingPageTitle: "Clase de Bienvenida de Sexy Style en Barcelona | GRATIS | Farray's Center",
+  ssLandingPageTitle: "Clase de Bienvenida de Sexy Style en Barcelona | Farray's Center",
   ssLandingPageDescription:
-    'Prueba una clase GRATIS de Sexy Style con Yasmina Fernández en Barcelona. Descubre la sensualidad, la expresión corporal y la confianza a través del baile. Sin experiencia previa. Academia CID-UNESCO.',
+    'Reserva tu clase de bienvenida de Sexy Style con Yasmina Fernández en Barcelona. Descubre la sensualidad, la expresión corporal y la confianza a través del baile. Sin experiencia previa. Academia CID-UNESCO.',
 
   // Hero Section
-  ssLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  ssLandingBadge: 'CLASE DE BIENVENIDA',
   ssLandingHeadline: 'Despierta Tu Poder Femenino con Sexy Style',
   ssLandingSubheadline:
     'Libera tu sensualidad, reconecta con tu cuerpo y descubre un baile que te empodera desde el primer paso. Confianza, feminidad y expresión corporal en estado puro.',
@@ -17146,7 +17144,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   ssLandingValueIncluded: 'Incluido',
   ssLandingValueTotal: 'VALOR TOTAL:',
   ssLandingValueYourPrice: 'TU PRECIO HOY:',
-  ssLandingValueFree: 'GRATIS',
+  ssLandingValueFree: 'SIN COMPROMISO',
 
   // Offer Section
   ssLandingOfferTitle: 'Solo por tiempo limitado',
@@ -17204,7 +17202,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Final CTA Section
   ssLandingFinalCTATitle: 'Tu feminidad merece brillar. Es hora de liberarla.',
   ssLandingFinalCTADesc:
-    'Reserva ahora tu clase de bienvenida gratuita y descubre por qué cientos de mujeres han encontrado en el Sexy Style su forma favorita de expresarse.',
+    'Reserva ahora tu clase de bienvenida y descubre por qué cientos de mujeres han encontrado en el Sexy Style su forma favorita de expresarse.',
   ssLandingFinalCTAExtra:
     'La próxima alumna que reserve podría descubrir una nueva versión de sí misma.',
   ssLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
@@ -17313,12 +17311,12 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Profesores: Yunaisy Farray, Iroel Bastarreche
 
   // SEO (noindex, nofollow - landing de captación ads)
-  scLandingPageTitle: "Clase de Bienvenida de Salsa Cubana en Barcelona | GRATIS | Farray's Center",
+  scLandingPageTitle: "Clase de Bienvenida de Salsa Cubana en Barcelona | Farray's Center",
   scLandingPageDescription:
-    'Prueba una clase GRATIS de Salsa Cubana con el Método Farray en Barcelona. Aprende con Yunaisy Farray, creadora del método. Casino, Rueda, musicalidad y conexión de pareja. Academia CID-UNESCO.',
+    'Reserva tu clase de bienvenida de Salsa Cubana con el Método Farray en Barcelona. Aprende con Yunaisy Farray, creadora del método. Casino, Rueda, musicalidad y conexión de pareja. Academia CID-UNESCO.',
 
   // Hero Section
-  scLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  scLandingBadge: 'CLASE DE BIENVENIDA',
   scLandingHeadline: 'Aprende Salsa Cubana con el Método Farray',
   scLandingSubheadline:
     'Descubre el único método probado que te enseña a bailar Casino en pareja desde cero. Guía perfecta, musicalidad auténtica y la alegría cubana que transforma tu forma de bailar.',
@@ -17348,7 +17346,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
 
   // Value Stack
   scLandingValueTitle: '¿Qué incluye esta experiencia?',
-  scLandingValueSubtitle: 'Todo esto completamente GRATIS para nuevos estudiantes',
+  scLandingValueSubtitle: 'Todo esto sin compromiso para nuevos estudiantes',
   scLandingValueItem1: 'Una clase completa de Salsa Cubana de 60 minutos',
   scLandingValuePrice1: 'Valor: {price}€',
   scLandingValueItem2: 'Introducción al Método Farray: guía y seguimiento desde el día 1',
@@ -17358,7 +17356,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   scLandingValueIncluded: 'Incluido',
   scLandingValueTotal: 'VALOR TOTAL:',
   scLandingValueYourPrice: 'TU PRECIO HOY:',
-  scLandingValueFree: 'GRATIS',
+  scLandingValueFree: 'SIN COMPROMISO',
 
   // Offer Section
   scLandingOfferTitle: 'Solo por tiempo limitado',
@@ -17424,7 +17422,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Final CTA Section
   scLandingFinalCTATitle: 'El ritmo cubano te está esperando. ¿Te atreves a probarlo?',
   scLandingFinalCTADesc:
-    'Reserva ahora tu clase de bienvenida gratuita y descubre por qué miles de alumnos han elegido el Método Farray para aprender Salsa Cubana en Barcelona.',
+    'Reserva ahora tu clase de bienvenida y descubre por qué miles de alumnos han elegido el Método Farray para aprender Salsa Cubana en Barcelona.',
   scLandingFinalCTAExtra:
     'Primeros 10 que reserven esta semana: acceso prioritario a horario preferente',
   scLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
@@ -17500,7 +17498,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   scLeadModal_consent_link: 'política de privacidad',
 
   // CTA
-  scLeadModal_submit: 'Reservar Mi Clase Gratis',
+  scLeadModal_submit: 'Reservar Mi Clase de Bienvenida',
   scLeadModal_sending: 'Procesando...',
 
   // Validation
@@ -17543,13 +17541,12 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Profesores: Daniel Sené, Alejandro Miñoso
 
   // SEO
-  ctLandingPageTitle:
-    "Clase de Bienvenida de Danza Contemporánea en Barcelona | GRATIS | Farray's Center",
+  ctLandingPageTitle: "Clase de Bienvenida de Danza Contemporánea en Barcelona | Farray's Center",
   ctLandingPageDescription:
-    'Prueba una clase GRATIS de Danza Contemporánea con Daniel Sené y Alejandro Miñoso en Barcelona. Técnica de suelo, release, improvisación y expresión corporal. Sin experiencia previa. Academia CID-UNESCO.',
+    'Reserva tu clase de bienvenida de Danza Contemporánea con Daniel Sené y Alejandro Miñoso en Barcelona. Técnica de suelo, release, improvisación y expresión corporal. Sin experiencia previa. Academia CID-UNESCO.',
 
   // Hero Section
-  ctLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  ctLandingBadge: 'CLASE DE BIENVENIDA',
   ctLandingHeadline: 'Descubre la Danza Contemporánea y Conecta con Tu Cuerpo',
   ctLandingSubheadline:
     'Una clase para explorar el movimiento fluido, la técnica de suelo y la expresión corporal. Sin experiencia previa necesaria.',
@@ -17587,7 +17584,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   ctLandingValueIncluded: 'Incluido',
   ctLandingValueTotal: 'VALOR TOTAL:',
   ctLandingValueYourPrice: 'TU PRECIO HOY:',
-  ctLandingValueFree: 'GRATIS',
+  ctLandingValueFree: 'SIN COMPROMISO',
 
   // Offer Section
   ctLandingOfferTitle: 'Descuento exclusivo para nuevos alumnos',
@@ -17646,7 +17643,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Final CTA
   ctLandingFinalCTATitle: 'Tu cuerpo tiene historias que contar. Es hora de expresarlas.',
   ctLandingFinalCTADesc:
-    'Únete a cientos de alumnos que han descubierto la danza contemporánea en Barcelona. Tu primera clase es completamente gratis.',
+    'Únete a cientos de alumnos que han descubierto la danza contemporánea en Barcelona. Tu primera clase es sin compromiso.',
   ctLandingFinalCTAExtra: '',
   ctLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
 
@@ -17754,16 +17751,15 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // =====================================================
 
   // Page Meta
-  btLandingPageTitle:
-    "Clase de Bienvenida de Ballet Clásico en Barcelona | GRATIS | Farray's Center",
+  btLandingPageTitle: "Clase de Bienvenida de Ballet Clásico en Barcelona | Farray's Center",
   btLandingPageDescription:
-    'Prueba una clase gratuita de ballet clásico en Barcelona. Profesores formados en la Escuela Nacional de Arte de Cuba. Técnica, postura y elegancia para todos los niveles.',
+    'Reserva tu clase de bienvenida de ballet clásico en Barcelona. Profesores formados en la Escuela Nacional de Arte de Cuba. Técnica, postura y elegancia para todos los niveles.',
 
   // Hero Section
-  btLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  btLandingBadge: 'CLASE DE BIENVENIDA',
   btLandingHeadline: 'Descubre la Elegancia del Ballet Clásico en Barcelona',
   btLandingSubheadline:
-    'Desarrolla postura perfecta, flexibilidad y gracia con profesores formados en la prestigiosa Escuela Nacional de Arte de Cuba. Tu primera clase es completamente gratis.',
+    'Desarrolla postura perfecta, flexibilidad y gracia con profesores formados en la prestigiosa Escuela Nacional de Arte de Cuba. Tu primera clase es sin compromiso.',
   btLandingCTA: 'RESERVA TU CLASE DE BIENVENIDA AHORA',
   btLandingTrustText: 'Sin coste · Sin compromiso · Plazas muy limitadas',
   btLandingTrustActiveStudents: '1.500+ alumnos activos',
@@ -17798,7 +17794,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   btLandingValueIncluded: 'Incluido',
   btLandingValueTotal: 'VALOR TOTAL:',
   btLandingValueYourPrice: 'TU PRECIO HOY:',
-  btLandingValueFree: 'GRATIS',
+  btLandingValueFree: 'SIN COMPROMISO',
 
   // Offer Section
   btLandingOfferTitle: 'Solo por tiempo limitado',
@@ -17856,7 +17852,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Final CTA
   btLandingFinalCTATitle: 'La disciplina más elegante del mundo te espera',
   btLandingFinalCTADesc:
-    'Únete a cientos de alumnos que han descubierto el ballet clásico en Barcelona. Tu primera clase es completamente gratis.',
+    'Únete a cientos de alumnos que han descubierto el ballet clásico en Barcelona. Tu primera clase es sin compromiso.',
   btLandingFinalCTAExtra:
     'Primeros 10 que reserven esta semana: sesión de orientación personalizada incluida',
   btLandingFinalTrust: 'Sin coste · Sin compromiso · Plazas muy limitadas',
@@ -18010,7 +18006,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   exitIntent_subtitle: 'Solo para nuevos alumnos',
   exitIntent_countdown_label: 'Termina en:',
   exitIntent_countdown_expired: 'Oferta finalizada',
-  exitIntent_benefit1: 'Primera clase de prueba GRATIS',
+  exitIntent_benefit1: 'Primera clase de bienvenida',
   exitIntent_benefit2: 'Válido para cualquier estilo de baile',
   exitIntent_benefit3: 'Reserva tu plaza antes de que se agoten',
   exitIntent_email_label: 'Tu email',
@@ -18915,10 +18911,10 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Page Meta
   baLandingPageTitle: 'Clase de Bienvenida de Bachata Sensual',
   baLandingPageDescription:
-    'Descubre la Bachata Sensual en Barcelona. Clase de Bienvenida totalmente GRATIS. Aprende con campeones mundiales. Plazas limitadas. Sin compromiso. Reserva ahora.',
+    'Descubre la Bachata Sensual en Barcelona. Clase de Bienvenida sin compromiso. Aprende con campeones mundiales. Plazas limitadas. Sin compromiso. Reserva ahora.',
 
   // Hero Section
-  baLandingBadge: 'CLASE GRATIS DE BIENVENIDA',
+  baLandingBadge: 'CLASE DE BIENVENIDA',
   baLandingHeadline: 'Conecta y Siente con la Bachata Sensual',
   baLandingSubheadline:
     'Aprende a bailar bachata sensual con campeones mundiales de Salsa LA. Descubre la conexión en pareja, las ondulaciones y la musicalidad que te harán destacar en cualquier pista de baile.',
@@ -18942,7 +18938,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Experience Section
   baLandingExperienceTitle: '¿Quieres sentir la conexión real del baile en pareja?',
   baLandingExperienceDesc:
-    'La bachata sensual no es solo un baile, es una conversación sin palabras. Es conectar con tu pareja a través del movimiento, las ondulaciones y la musicalidad. ¿Primera vez con nosotros? Esta es tu ocasión: una clase de Bienvenida de Bachata Sensual totalmente gratis, impartida por campeones mundiales, sin compromiso y con plazas limitadas.',
+    'La bachata sensual no es solo un baile, es una conversación sin palabras. Es conectar con tu pareja a través del movimiento, las ondulaciones y la musicalidad. ¿Primera vez con nosotros? Esta es tu ocasión: una clase de Bienvenida de Bachata Sensual sin compromiso, impartida por campeones mundiales, sin compromiso y con plazas limitadas.',
 
   // Value Stack
   baLandingValueTitle: '¿Qué incluye esta experiencia?',
@@ -18955,7 +18951,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   baLandingValueIncluded: 'Incluido',
   baLandingValueTotal: 'VALOR TOTAL:',
   baLandingValueYourPrice: 'TU PRECIO HOY:',
-  baLandingValueFree: 'GRATIS',
+  baLandingValueFree: 'SIN COMPROMISO',
 
   // Special Offer
   baLandingOfferTitle: 'Solo por tiempo limitado',
@@ -19080,7 +19076,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   baLeadModal_consent_link: 'política de privacidad',
 
   // Submit
-  baLeadModal_submit: 'Reservar Mi Clase Gratis',
+  baLeadModal_submit: 'Reservar Mi Clase de Bienvenida',
   baLeadModal_submitLoading: 'Procesando...',
 
   // Success
@@ -19103,15 +19099,15 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   jpaLandingPageTitle:
     "Jornada de Puertas Abiertas | Del 7 al 31 de Enero | Farray's Center Barcelona",
   jpaLandingPageDescription:
-    "Del 7 al 31 de enero, prueba una clase de baile GRATIS en Farray's Center. Más de 25 estilos: Dancehall, Contemporáneo, Hip-Hop, Salsa, Bachata y mucho más. Descuento exclusivo si te inscribes.",
+    "Del 7 al 31 de enero, reserva tu clase de bienvenida en Farray's Center. Más de 25 estilos: Dancehall, Contemporáneo, Hip-Hop, Salsa, Bachata y mucho más. Descuento exclusivo si te inscribes.",
 
   // Hero Section
   jpaLandingBadge: 'DEL 7 AL 31 DE ENERO',
-  jpaLandingHeadline: 'Prueba Una Clase de Baile GRATIS',
+  jpaLandingHeadline: 'Reserva Tu Clase de Bienvenida',
   jpaLandingSubheadline:
     'Jornada de Puertas Abiertas: ven a conocernos y descubre tu estilo de baile ideal entre más de 25 estilos diferentes. Elige la clase que más te interese y pruébala sin coste.',
   jpaLandingCTA: 'RESERVA TU CLASE DE BIENVENIDA',
-  jpaLandingTrustText: 'Una clase gratis · Sin compromiso · Plazas limitadas',
+  jpaLandingTrustText: 'Una clase de bienvenida · Sin compromiso · Plazas limitadas',
   jpaLandingTrustActiveStudents: '1.500+ alumnos activos',
   jpaLandingTrustYearsExp: '8+ años',
   jpaLandingTrustLocationShort: 'Barcelona - Plaza España',
@@ -19131,12 +19127,12 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Experience Section
   jpaLandingExperienceTitle: '¿Preparado/a para descubrir tu estilo de baile?',
   jpaLandingExperienceDesc:
-    "Durante la Jornada de Puertas Abiertas de Farray's Center (del 7 al 31 de enero) podrás probar una clase de baile completamente gratis. Latino, Urbano, Danza Clásica o Fitness: elige el estilo que más te llame la atención y pruébalo sin compromiso. Profesores profesionales te guiarán en cada paso.",
+    "Durante la Jornada de Puertas Abiertas de Farray's Center (del 7 al 31 de enero) podrás probar una clase de baile sin compromiso. Latino, Urbano, Danza Clásica o Fitness: elige el estilo que más te llame la atención y pruébalo sin compromiso. Profesores profesionales te guiarán en cada paso.",
 
   // Schedule Widget
   jpaLandingScheduleTitle: 'Consulta todos nuestros horarios',
   jpaLandingScheduleSubtitle:
-    'Elige el día y estilo que más te interese para tu clase de bienvenida gratuita.',
+    'Elige el día y estilo que más te interese para tu clase de bienvenida.',
 
   // Value Stack
   jpaLandingValueTitle: '¿Qué incluye tu clase de bienvenida?',
@@ -19147,7 +19143,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   jpaLandingValueItem4: 'Asesoramiento personalizado para elegir tu estilo',
   jpaLandingValueItem5: 'Acceso a descuento exclusivo si decides inscribirte',
   jpaLandingValueIncluded: 'Incluido',
-  jpaLandingValueFree: 'GRATIS',
+  jpaLandingValueFree: 'SIN COMPROMISO',
   jpaLandingValueTotal: 'VALOR TOTAL:',
   jpaLandingValueYourPrice: 'TU PRECIO HOY:',
 
@@ -19177,7 +19173,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Testimonials
   jpaLandingTestimonialsTitle: '¿Qué dicen nuestros alumnos?',
   jpaLandingTestimonial1:
-    'Vine a una clase de prueba sin saber qué estilo elegir y terminé enamorándome del Dancehall. Los profes son increíbles y el ambiente es súper acogedor.',
+    'Vine a una clase de bienvenida sin saber qué estilo elegir y terminé enamorándome del Dancehall. Los profes son increíbles y el ambiente es súper acogedor.',
   jpaLandingTestimonial2:
     "Mi clase de bienvenida fue en Hip-Hop y desde entonces no he parado. Ahora también hago Contemporáneo. Farray's es como una familia.",
   jpaLandingTestimonial3:
@@ -19185,9 +19181,9 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
 
   // FAQs
   jpaLandingFaqTitle: 'Preguntas frecuentes',
-  jpaLandingObjQ1: '¿Puedo probar más de una clase gratis?',
+  jpaLandingObjQ1: '¿Puedo probar más de una clase de bienvenida?',
   jpaLandingObjA1:
-    'La clase de bienvenida gratuita es una por persona. Si después de probarla quieres explorar otros estilos antes de inscribirte, puedes hacerlo abonando el precio de clase suelta (20€). Una vez inscrito, podrás disfrutar de todos los estilos incluidos en tu plan.',
+    'La clase de bienvenida es una por persona. Si después de probarla quieres explorar otros estilos antes de inscribirte, puedes hacerlo abonando el precio de clase suelta (20€). Una vez inscrito, podrás disfrutar de todos los estilos incluidos en tu plan.',
   jpaLandingObjQ2: '¿Necesito experiencia previa en baile?',
   jpaLandingObjA2:
     'No, tenemos clases para todos los niveles. Nuestros profesores adaptan las clases para que principiantes y bailarines con experiencia puedan disfrutar por igual.',
@@ -19196,7 +19192,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
     'Ropa cómoda que te permita moverte con libertad. Dependiendo del estilo, puedes bailar con zapatillas deportivas, descalzo o con calcetines. Te orientamos cuando reserves.',
   jpaLandingObjQ4: '¿Hay obligación de inscribirse después?',
   jpaLandingObjA4:
-    'Ninguna. La clase de bienvenida es completamente gratuita y sin compromiso. Si decides continuar, tendrás acceso a un descuento exclusivo en tu primera mensualidad o bono.',
+    'Ninguna. La clase de bienvenida es sin compromiso. Si decides continuar, tendrás acceso a un descuento exclusivo en tu primera mensualidad o bono.',
 
   // Video
   jpaLandingVideoTitle: 'Conoce nuestro centro',
@@ -19205,9 +19201,9 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Final CTA
   jpaLandingFinalCTATitle: 'El mejor momento para empezar a bailar es ahora',
   jpaLandingFinalCTADesc:
-    'Aprovecha la Jornada de Puertas Abiertas (7-31 de enero) para probar una clase gratis y descubrir tu pasión por el baile. Más de 25 estilos te esperan.',
+    'Aprovecha la Jornada de Puertas Abiertas (7-31 de enero) para probar una clase de bienvenida y descubrir tu pasión por el baile. Más de 25 estilos te esperan.',
   jpaLandingFinalCTAExtra: '',
-  jpaLandingFinalTrust: 'Una clase gratis · Sin compromiso · Descuento exclusivo',
+  jpaLandingFinalTrust: 'Una clase de bienvenida · Sin compromiso · Descuento exclusivo',
 
   // Footer
   jpaLandingFooterRights: 'Todos los derechos reservados',
@@ -19226,9 +19222,9 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Exit Intent Popup
   jpaExitIntent_title: '¿Te vas sin reservar tu clase de bienvenida?',
   jpaExitIntent_description:
-    'No pierdas la oportunidad de probar una clase de baile GRATIS durante la Jornada de Puertas Abiertas (7-31 de enero). Plazas limitadas.',
+    'No pierdas la oportunidad de reservar tu clase de bienvenida durante la Jornada de Puertas Abiertas (7-31 de enero). Plazas limitadas.',
   jpaExitIntent_ctaExplore: 'Ver clases disponibles',
-  jpaExitIntent_ctaDancehall: 'Reservar mi clase gratis',
+  jpaExitIntent_ctaDancehall: 'Reservar mi clase de bienvenida',
   jpaExitIntent_ctaClose: 'Cerrar',
   jpaExitIntent_hint: 'Dancehall, Hip-Hop, Contemporáneo, Salsa, Bachata, Ballet y mucho más...',
 
@@ -19237,16 +19233,16 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // =====================================================
 
   // Modal Header
-  jpaLeadModal_title: 'Reserva tu clase de bienvenida gratuita',
+  jpaLeadModal_title: 'Reserva tu clase de bienvenida',
   jpaLeadModal_subtitle: 'Jornada de Puertas Abiertas: del 7 al 31 de enero',
 
   // Micro Commitment
-  jpaLeadModal_microCommit_question: '¿Te gustaría probar una clase de baile GRATIS?',
-  jpaLeadModal_microCommit_yes: '¡Sí, quiero mi clase gratis!',
+  jpaLeadModal_microCommit_question: '¿Te gustaría reservar tu clase de bienvenida?',
+  jpaLeadModal_microCommit_yes: '¡Sí, quiero mi clase de bienvenida!',
   jpaLeadModal_microCommit_curious: 'Solo quiero más información',
 
   jpaLeadModal_intro:
-    'Completa el formulario y recibe toda la información para reservar tu clase de bienvenida gratuita.',
+    'Completa el formulario y recibe toda la información para reservar tu clase de bienvenida.',
 
   // Benefits
   jpaLeadModal_benefits_title: 'Qué recibirás:',
@@ -19405,14 +19401,14 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   blogSalsaVsBachata_ambosContent:
     'La verdad es que salsa y bachata se complementan perfectamente. En las fiestas latinas, el DJ alterna entre ambos géneros. Si solo sabes uno, te quedas sentado la mitad de la noche. Además, las habilidades son transferibles: la musicalidad, el leading/following, la conexión con la pareja.',
   blogSalsaVsBachata_ambosFarrays:
-    "En **[Farray's International Dance Center](/es/clases/salsa-bachata-barcelona)** ofrecemos un programa combinado de salsa y bachata que te convierte en bailador versátil. Nuestros profesores, con más de 20 años de experiencia, te guían desde cero hasta el nivel social. [Reserva tu clase de prueba gratuita](/es/contacto) y descubre cuál es tu ritmo... o ambos.",
+    "En **[Farray's International Dance Center](/es/clases/salsa-bachata-barcelona)** ofrecemos un programa combinado de salsa y bachata que te convierte en bailador versátil. Nuestros profesores, con más de 20 años de experiencia, te guían desde cero hasta el nivel social. [Reserva tu clase de bienvenida](/es/contacto) y descubre cuál es tu ritmo... o ambos.",
 
   // === SECTION 7: CONCLUSIÓN ===
   blogSalsaVsBachata_conclusionTitle: 'Conclusión: Tu Ritmo, Tu Elección',
   blogSalsaVsBachata_conclusionContent:
     '¿Salsa o bachata? Si buscas adrenalina, giros y energía desbordante, empieza por la salsa. Si prefieres sensualidad, conexión íntima y un tempo que permite saborear cada movimiento, la bachata es tu entrada. Pero recuerda: los mejores bailadores dominan ambos lenguajes.',
   blogSalsaVsBachata_conclusionCTA:
-    "**[Ven a Farray's](/es/contacto)** y prueba ambos estilos. Tu primera clase es gratuita. Te esperamos en el corazón de Barcelona para que descubras qué ritmo hace latir más fuerte tu corazón latino.",
+    "**[Ven a Farray's](/es/contacto)** y prueba ambos estilos. Tu primera clase de bienvenida te espera. Te esperamos en el corazón de Barcelona para que descubras qué ritmo hace latir más fuerte tu corazón latino.",
 
   // === FAQ SECTION (8 FAQs for Schema) ===
   blogSalsaVsBachata_faqTitle: 'Preguntas Frecuentes: Salsa vs Bachata',

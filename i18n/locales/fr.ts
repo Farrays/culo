@@ -8235,7 +8235,7 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
     'Pour les étudiants qui veulent améliorer technique, coordination et expression avec des pas plus complexes.',
   reviews: 'avis',
   thankYouForLove: "Merci pour Tant d'Amour",
-  trialClassCTA: 'Essayez un Cours Gratuit',
+  trialClassCTA: 'Essayez Votre Cours de Bienvenue',
   warmupDesc:
     'Préparez votre corps avec des exercices spécifiques pour éviter les blessures et améliorer votre technique.',
   warmupTitle: 'Échauffement',
@@ -18197,7 +18197,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogSalsaVsBachata_conclusionContent:
     "Salsa ou bachata ? Si vous cherchez l'adrénaline, les tours et l'énergie débordante, commencez par la salsa. Si vous préférez la sensualité, la connexion intime et un tempo qui permet de savourer chaque mouvement, la bachata est votre porte d'entrée. Mais rappelez-vous : les meilleurs danseurs maîtrisent les deux langages.",
   blogSalsaVsBachata_conclusionCTA:
-    "**[Venez chez Farray's](/fr/contacto)** et essayez les deux styles. Votre premier cours est gratuit. Nous vous attendons au cœur de Barcelone pour découvrir quel rythme fait battre plus fort votre cœur latin.",
+    "**[Venez chez Farray's](/fr/contacto)** et essayez les deux styles. Votre cours de bienvenue vous attend. Nous vous attendons au cœur de Barcelone pour découvrir quel rythme fait battre plus fort votre cœur latin.",
 
   // === FAQ SECTION (8 FAQs for Schema) ===
   blogSalsaVsBachata_faqTitle: 'Questions Fréquentes : Salsa vs Bachata',
