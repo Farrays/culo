@@ -18090,16 +18090,19 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogSalsaVsBachata_refPaciniTitle: 'Bachata: A Social History of Dominican Popular Music',
   blogSalsaVsBachata_refPaciniDesc:
     "Estudi etnomusicològic de referència sobre l'origen i evolució de la bachata a República Dominicana.",
-  blogSalsaVsBachata_refUNESCOTitle: 'Bachata Dominicana - Patrimoni UNESCO',
+  blogSalsaVsBachata_refUNESCOTitle: 'La Bachata Dominicana - Patrimoni Cultural Immaterial UNESCO',
   blogSalsaVsBachata_refUNESCODesc:
-    'Declaració oficial de la UNESCO reconeixent la bachata com a Patrimoni Immaterial de la Humanitat (2019).',
+    'Pàgina oficial de la UNESCO amb la declaració de la bachata com a Patrimoni Immaterial de la Humanitat (2019).',
   blogSalsaVsBachata_refNEJMTitle: 'Leisure Activities and Dementia Risk – NEJM',
   blogSalsaVsBachata_refNEJMDesc:
     'Estudi de referència que demostra els beneficis cognitius del ball: 76% reducció del risc de demència.',
+  blogSalsaVsBachata_refHarvardTitle: 'Calories Burned in 30 Minutes – Harvard Health',
+  blogSalsaVsBachata_refHarvardDesc:
+    'Taula de despesa calòrica de Harvard Health Publishing que inclou el ball social com a activitat física.',
+  blogSalsaVsBachata_refFrontiersTitle: 'Dance, Emotions and Well-being – Frontiers in Psychology',
+  blogSalsaVsBachata_refFrontiersDesc:
+    'Estudi sobre els efectes positius del ball en les emocions, benestar psicològic i salut mental.',
   blogSalsaVsBachata_refEndorphinsTitle: 'Synchronized Dancing and Endorphin Release',
   blogSalsaVsBachata_refEndorphinsDesc:
     "Investigació sobre l'alliberament d'endorfines i cohesió social a través del ball sincronitzat.",
-  blogSalsaVsBachata_refDiarioLibreTitle: 'Bachata Rep Reconeixement UNESCO',
-  blogSalsaVsBachata_refDiarioLibreDesc:
-    'Cobertura periodística del reconeixement de la bachata com a patrimoni cultural immaterial.',
 };

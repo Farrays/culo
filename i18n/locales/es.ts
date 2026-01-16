@@ -19451,16 +19451,20 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   blogSalsaVsBachata_refPaciniTitle: 'Bachata: A Social History of Dominican Popular Music',
   blogSalsaVsBachata_refPaciniDesc:
     'Estudio etnomusicológico de referencia sobre el origen y evolución de la bachata en República Dominicana.',
-  blogSalsaVsBachata_refUNESCOTitle: 'Bachata Dominicana - Patrimonio UNESCO',
+  blogSalsaVsBachata_refUNESCOTitle:
+    'La Bachata Dominicana - Patrimonio Cultural Inmaterial UNESCO',
   blogSalsaVsBachata_refUNESCODesc:
-    'Declaración oficial de la UNESCO reconociendo la bachata como Patrimonio Inmaterial de la Humanidad (2019).',
+    'Página oficial de la UNESCO con la declaración de la bachata como Patrimonio Inmaterial de la Humanidad (2019).',
   blogSalsaVsBachata_refNEJMTitle: 'Leisure Activities and Dementia Risk – NEJM',
   blogSalsaVsBachata_refNEJMDesc:
     'Estudio de referencia que demuestra los beneficios cognitivos del baile: 76% reducción del riesgo de demencia.',
+  blogSalsaVsBachata_refHarvardTitle: 'Calories Burned in 30 Minutes – Harvard Health',
+  blogSalsaVsBachata_refHarvardDesc:
+    'Tabla de gasto calórico de Harvard Health Publishing que incluye el baile social como actividad física.',
+  blogSalsaVsBachata_refFrontiersTitle: 'Dance, Emotions and Well-being – Frontiers in Psychology',
+  blogSalsaVsBachata_refFrontiersDesc:
+    'Estudio sobre los efectos positivos del baile en las emociones, bienestar psicológico y salud mental.',
   blogSalsaVsBachata_refEndorphinsTitle: 'Synchronized Dancing and Endorphin Release',
   blogSalsaVsBachata_refEndorphinsDesc:
     'Investigación sobre la liberación de endorfinas y cohesión social a través del baile sincronizado.',
-  blogSalsaVsBachata_refDiarioLibreTitle: 'Bachata Recibe Reconocimiento UNESCO',
-  blogSalsaVsBachata_refDiarioLibreDesc:
-    'Cobertura periodística del reconocimiento de la bachata como patrimonio cultural inmaterial.',
 };

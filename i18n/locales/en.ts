@@ -17849,16 +17849,19 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogSalsaVsBachata_refPaciniTitle: 'Bachata: A Social History of Dominican Popular Music',
   blogSalsaVsBachata_refPaciniDesc:
     'Reference ethnomusicological study on the origin and evolution of bachata in the Dominican Republic.',
-  blogSalsaVsBachata_refUNESCOTitle: 'Dominican Bachata - UNESCO Heritage',
+  blogSalsaVsBachata_refUNESCOTitle: 'Dominican Bachata - UNESCO Intangible Cultural Heritage',
   blogSalsaVsBachata_refUNESCODesc:
-    'Official UNESCO declaration recognizing bachata as Intangible Heritage of Humanity (2019).',
+    'Official UNESCO page declaring bachata as Intangible Cultural Heritage of Humanity (2019).',
   blogSalsaVsBachata_refNEJMTitle: 'Leisure Activities and Dementia Risk – NEJM',
   blogSalsaVsBachata_refNEJMDesc:
     'Reference study demonstrating cognitive benefits of dancing: 76% reduction in dementia risk.',
+  blogSalsaVsBachata_refHarvardTitle: 'Calories Burned in 30 Minutes – Harvard Health',
+  blogSalsaVsBachata_refHarvardDesc:
+    'Harvard Health Publishing calorie expenditure chart including social dancing as physical activity.',
+  blogSalsaVsBachata_refFrontiersTitle: 'Dance, Emotions and Well-being – Frontiers in Psychology',
+  blogSalsaVsBachata_refFrontiersDesc:
+    'Study on the positive effects of dance on emotions, psychological well-being and mental health.',
   blogSalsaVsBachata_refEndorphinsTitle: 'Synchronized Dancing and Endorphin Release',
   blogSalsaVsBachata_refEndorphinsDesc:
     'Research on endorphin release and social cohesion through synchronized dancing.',
-  blogSalsaVsBachata_refDiarioLibreTitle: 'Bachata Receives UNESCO Recognition',
-  blogSalsaVsBachata_refDiarioLibreDesc:
-    'News coverage of bachata recognition as intangible cultural heritage.',
 };

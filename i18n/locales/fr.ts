@@ -18237,16 +18237,20 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogSalsaVsBachata_refPaciniTitle: 'Bachata: A Social History of Dominican Popular Music',
   blogSalsaVsBachata_refPaciniDesc:
     "Étude ethnomusicologique de référence sur l'origine et l'évolution de la bachata en République Dominicaine.",
-  blogSalsaVsBachata_refUNESCOTitle: 'Bachata Dominicaine - Patrimoine UNESCO',
+  blogSalsaVsBachata_refUNESCOTitle:
+    'La Bachata Dominicaine - Patrimoine Culturel Immatériel UNESCO',
   blogSalsaVsBachata_refUNESCODesc:
-    "Déclaration officielle de l'UNESCO reconnaissant la bachata comme Patrimoine Immatériel de l'Humanité (2019).",
+    "Page officielle de l'UNESCO déclarant la bachata comme Patrimoine Immatériel de l'Humanité (2019).",
   blogSalsaVsBachata_refNEJMTitle: 'Leisure Activities and Dementia Risk – NEJM',
   blogSalsaVsBachata_refNEJMDesc:
     'Étude de référence démontrant les bienfaits cognitifs de la danse : 76% de réduction du risque de démence.',
+  blogSalsaVsBachata_refHarvardTitle: 'Calories Burned in 30 Minutes – Harvard Health',
+  blogSalsaVsBachata_refHarvardDesc:
+    'Tableau de dépense calorique de Harvard Health Publishing incluant la danse sociale comme activité physique.',
+  blogSalsaVsBachata_refFrontiersTitle: 'Dance, Emotions and Well-being – Frontiers in Psychology',
+  blogSalsaVsBachata_refFrontiersDesc:
+    'Étude sur les effets positifs de la danse sur les émotions, le bien-être psychologique et la santé mentale.',
   blogSalsaVsBachata_refEndorphinsTitle: 'Synchronized Dancing and Endorphin Release',
   blogSalsaVsBachata_refEndorphinsDesc:
     "Recherche sur la libération d'endorphines et la cohésion sociale à travers la danse synchronisée.",
-  blogSalsaVsBachata_refDiarioLibreTitle: 'La Bachata Reçoit la Reconnaissance UNESCO',
-  blogSalsaVsBachata_refDiarioLibreDesc:
-    'Couverture journalistique de la reconnaissance de la bachata comme patrimoine culturel immatériel.',
 };
