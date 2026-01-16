@@ -283,7 +283,7 @@ const Header: React.FC = () => {
           isMenuOpen ? 'hidden' : ''
         } ${
           isScrolled
-            ? 'bg-black/90 backdrop-blur-xl shadow-xl shadow-primary-accent/20'
+            ? 'bg-black/95 md:backdrop-blur-xl shadow-xl shadow-primary-accent/20'
             : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent'
         }`}
       >
