@@ -423,7 +423,16 @@ const SEO: React.FC = () => {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:locale" content={ogLocaleMap[locale]} />
+        {/* og:locale:alternate for other languages */}
+        {Object.entries(ogLocaleMap)
+          .filter(([lang]) => lang !== locale)
+          .map(([lang, ogLocale]) => (
+            <meta key={lang} property="og:locale:alternate" content={ogLocale} />
+          ))}
         <meta property="og:site_name" content="Farray's International Dance Center" />
 
         {/* Twitter Card */}

@@ -548,6 +548,12 @@ const CookiePolicyPage: React.FC = () => {
         <title>{t('cookies_page_title')}</title>
         <meta name="description" content={t('cookies_page_description')} />
         <link rel="canonical" href={`${baseUrl}/${locale}/politica-cookies`} />
+        {/* hreflang alternates for all locales */}
+        <link rel="alternate" hrefLang="es" href={`${baseUrl}/es/politica-cookies`} />
+        <link rel="alternate" hrefLang="ca" href={`${baseUrl}/ca/politica-cookies`} />
+        <link rel="alternate" hrefLang="en" href={`${baseUrl}/en/politica-cookies`} />
+        <link rel="alternate" hrefLang="fr" href={`${baseUrl}/fr/politica-cookies`} />
+        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/es/politica-cookies`} />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>

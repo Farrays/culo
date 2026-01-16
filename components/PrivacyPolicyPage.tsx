@@ -588,6 +588,12 @@ const PrivacyPolicyPage: React.FC = () => {
         <title>{t('privacy_page_title')}</title>
         <meta name="description" content={t('privacy_page_description')} />
         <link rel="canonical" href={`${baseUrl}/${locale}/politica-privacidad`} />
+        {/* hreflang alternates for all locales */}
+        <link rel="alternate" hrefLang="es" href={`${baseUrl}/es/politica-privacidad`} />
+        <link rel="alternate" hrefLang="ca" href={`${baseUrl}/ca/politica-privacidad`} />
+        <link rel="alternate" hrefLang="en" href={`${baseUrl}/en/politica-privacidad`} />
+        <link rel="alternate" hrefLang="fr" href={`${baseUrl}/fr/politica-privacidad`} />
+        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/es/politica-privacidad`} />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
