@@ -140,17 +140,42 @@ const YunaisyFarrayPage: React.FC = () => {
     },
   ];
 
-  // Schema Markup - Person
+  // Schema Markup - Person (Enhanced for E-E-A-T)
   const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': `${baseUrl}/yunaisy-farray#person`,
     name: 'Yunaisy Farray',
+    givenName: 'Yunaisy',
+    familyName: 'Farray',
     jobTitle: 'Founder & Director',
+    image: `${baseUrl}/images/yunaisy-portrait.jpg`,
+    url: `${baseUrl}/${locale}/yunaisy-farray`,
     worksFor: {
       '@type': 'DanceSchool',
       name: "Farray's International Dance Center",
+      url: baseUrl,
     },
     description: t('yunaisyFarray_meta_description'),
+    knowsAbout: [
+      'Cuban Dance',
+      'Salsa',
+      'Afro-Cuban Dance',
+      'Latin Dance',
+      'Dance Education',
+      'Choreography',
+    ],
+    nationality: {
+      '@type': 'Country',
+      name: 'Cuba',
+    },
+    sameAs: [
+      'https://www.instagram.com/farrays_center/',
+      'https://www.facebook.com/farrayscenter',
+      'https://www.youtube.com/@FarraysDanceCenter',
+      'https://www.tiktok.com/@farrayscenter',
+      'https://www.imdb.com/es-es/title/tt1718903/',
+    ],
     address: {
       '@type': 'PostalAddress',
       streetAddress: "Carrer d'Entença, 100, Local 1",

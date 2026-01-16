@@ -832,14 +832,22 @@ const ContactPage: React.FC = () => {
 
                       {/* Error message */}
                       {formStatus === 'error' && (
-                        <div className="bg-red-500/10 border border-red-500/50 rounded-lg p-4 text-red-400">
+                        <div
+                          className="bg-red-500/10 border border-red-500/50 rounded-lg p-4 text-red-400"
+                          role="alert"
+                          aria-live="assertive"
+                        >
                           {t('contact_form_error')}
                         </div>
                       )}
 
                       {/* Rate limited message */}
                       {formStatus === 'rate_limited' && (
-                        <div className="bg-red-500/10 border border-red-500/50 rounded-lg p-4 text-red-400">
+                        <div
+                          className="bg-red-500/10 border border-red-500/50 rounded-lg p-4 text-red-400"
+                          role="alert"
+                          aria-live="assertive"
+                        >
                           <p className="font-semibold">{t('contact_rate_limited_title')}</p>
                           <p className="text-sm mt-1">
                             {t('contact_rate_limited_message').replace(

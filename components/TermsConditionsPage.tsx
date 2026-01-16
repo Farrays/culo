@@ -45,6 +45,12 @@ const TermsConditionsPage: React.FC = () => {
         <title>{t('terms_page_title')}</title>
         <meta name="description" content={t('terms_page_description')} />
         <link rel="canonical" href={`${baseUrl}/${locale}/terminos-y-condiciones`} />
+        {/* hreflang alternates for all locales */}
+        <link rel="alternate" hrefLang="es" href={`${baseUrl}/es/terminos-y-condiciones`} />
+        <link rel="alternate" hrefLang="ca" href={`${baseUrl}/ca/terminos-y-condiciones`} />
+        <link rel="alternate" hrefLang="en" href={`${baseUrl}/en/terminos-y-condiciones`} />
+        <link rel="alternate" hrefLang="fr" href={`${baseUrl}/fr/terminos-y-condiciones`} />
+        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/es/terminos-y-condiciones`} />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
