@@ -12974,6 +12974,35 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogSalsaRitmo_faq5Question: 'Où apprendre la salsa à Barcelone?',
   blogSalsaRitmo_faq5Answer:
     "Chez Farray's International Dance Center, nous offrons des cours de salsa cubaine, salsa en ligne et rueda de casino pour tous les niveaux. Nous avons des professeurs certifiés, une ambiance accueillante et une communauté active de danseurs. Nous sommes à Barcelone et vous pouvez consulter nos horaires sur le site.",
+  blogSalsaRitmo_faq6Question: 'Quels sont les bienfaits de danser la salsa?',
+  blogSalsaRitmo_faq6Answer:
+    "La [recherche scientifique](https://www.nejm.org/doi/full/10.1056/NEJMoa022252) a démontré que la danse sociale améliore la coordination, l'endurance et la santé cardiovasculaire, tout en favorisant la plasticité cérébrale et en réduisant le risque de démence jusqu'à **76%**. Sur le plan émotionnel, la salsa renforce l'estime de soi, libère des [endorphines](https://www.sciencedirect.com/science/article/abs/pii/S1090513816300113) et favorise la connexion sociale.",
+  blogSalsaRitmo_faq7Question: "Qu'est-ce que la salsa caleña?",
+  blogSalsaRitmo_faq7Answer:
+    'La **salsa caleña** est le style développé à Cali, en Colombie, connue comme la "capitale mondiale de la salsa". Elle se caractérise par sa rapidité, son côté acrobatique et explosif, avec un travail de pieds très technique et rythmique. Les danseurs de Cali sont célèbres pour leur vitesse et leur énergie constante sur la piste.',
+  blogSalsaRitmo_faq8Question: 'Quand est née la salsa moderne?',
+  blogSalsaRitmo_faq8Answer:
+    'Selon les [études académiques](https://www.muchomasquebaile.es/wp-content/uploads/2021/11/Historia-de-la-salsa-desde-las-raices-hasta-el-1975.pdf), la salsa moderne a cristallisé dans les **années 1960-1970** à New York, lorsque les rythmes cubains (son, mambo, chachachá) ont fusionné avec le jazz, le soul et le R&B de la communauté latino. Le label Fania Records a été fondamental dans son expansion mondiale.',
+
+  // === REFERENCES ===
+  blogSalsaRitmo_referencesTitle: 'Sources et Références',
+  blogSalsaRitmo_referencesIntro:
+    'Cet article est basé sur des sources académiques rigoureuses et des documents primaires:',
+  blogSalsaRitmo_refRamosTitle: 'Histoire de la Salsa: Des Racines à 1975 – Ramos Gandía',
+  blogSalsaRitmo_refRamosDesc:
+    "Document académique exhaustif sur les origines du danzón, son, mambo, chachachá et l'expansion de la salsa à New York.",
+  blogSalsaRitmo_refAreciboTitle: 'La Salsa: Traditions Rythmiques – Université Interaméricaine',
+  blogSalsaRitmo_refAreciboDesc:
+    'Matériel pédagogique universitaire sur les traditions rythmiques africaines et mélodies européennes qui ont donné naissance à la salsa.',
+  blogSalsaRitmo_refNEJMTitle: 'Leisure Activities and Dementia Risk – NEJM',
+  blogSalsaRitmo_refNEJMDesc:
+    'Étude référence démontrant les bénéfices cognitifs de la danse: 76% de réduction du risque de démence.',
+  blogSalsaRitmo_refFrontiersTitle: 'Dance, Well-being and Positive Emotions – Frontiers',
+  blogSalsaRitmo_refFrontiersDesc:
+    'Recherche sur comment la danse améliore le bien-être émotionnel et libère des émotions positives.',
+  blogSalsaRitmo_refScienceDirectTitle: 'Synchronized Dancing, Endorphins and Social Bonding',
+  blogSalsaRitmo_refScienceDirectDesc:
+    "Étude scientifique sur la libération d'endorphines et la cohésion sociale à travers la danse synchronisée.",
 
   // =====================================================
   // TWERK LANDING PAGE

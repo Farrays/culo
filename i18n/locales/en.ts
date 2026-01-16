@@ -12546,6 +12546,35 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogSalsaRitmo_faq5Question: 'Where to learn salsa in Barcelona?',
   blogSalsaRitmo_faq5Answer:
     "At Farray's International Dance Center we offer Cuban salsa, line salsa and rueda de casino classes for all levels. We have certified teachers, a welcoming atmosphere and an active community of dancers. We are in Barcelona and you can check our schedules on the website.",
+  blogSalsaRitmo_faq6Question: 'What are the benefits of dancing salsa?',
+  blogSalsaRitmo_faq6Answer:
+    '[Scientific research](https://www.nejm.org/doi/full/10.1056/NEJMoa022252) has shown that social dancing improves coordination, endurance and cardiovascular health, while also promoting brain plasticity and reducing the risk of dementia by up to **76%**. Emotionally, salsa strengthens self-esteem, releases [endorphins](https://www.sciencedirect.com/science/article/abs/pii/S1090513816300113) and fosters social connection.',
+  blogSalsaRitmo_faq7Question: 'What is salsa caleña?',
+  blogSalsaRitmo_faq7Answer:
+    '**Salsa caleña** is the style developed in Cali, Colombia, known as the "world capital of salsa". It is characterized by being fast, acrobatic and explosive, with very technical and rhythmic footwork. Cali dancers are famous for their speed and constant energy on the floor.',
+  blogSalsaRitmo_faq8Question: 'When was modern salsa born?',
+  blogSalsaRitmo_faq8Answer:
+    'According to [academic studies](https://www.muchomasquebaile.es/wp-content/uploads/2021/11/Historia-de-la-salsa-desde-las-raices-hasta-el-1975.pdf), modern salsa crystallized in the **1960s-1970s** in New York, when Cuban rhythms (son, mambo, chachachá) merged with jazz, soul and R&B from the Latino community. Fania Records was instrumental in its global expansion.',
+
+  // === REFERENCES ===
+  blogSalsaRitmo_referencesTitle: 'Sources and References',
+  blogSalsaRitmo_referencesIntro:
+    'This article is based on rigorous academic sources and primary documents:',
+  blogSalsaRitmo_refRamosTitle: 'History of Salsa: From the Roots to 1975 – Ramos Gandía',
+  blogSalsaRitmo_refRamosDesc:
+    'Comprehensive academic document on the origins of danzón, son, mambo, chachachá and the expansion of salsa to New York.',
+  blogSalsaRitmo_refAreciboTitle: 'Salsa: Rhythmic Traditions – Interamerican University',
+  blogSalsaRitmo_refAreciboDesc:
+    'University teaching material on African rhythmic traditions and European melodies that originated salsa.',
+  blogSalsaRitmo_refNEJMTitle: 'Leisure Activities and Dementia Risk – NEJM',
+  blogSalsaRitmo_refNEJMDesc:
+    'Landmark study demonstrating the cognitive benefits of dancing: 76% reduction in dementia risk.',
+  blogSalsaRitmo_refFrontiersTitle: 'Dance, Well-being and Positive Emotions – Frontiers',
+  blogSalsaRitmo_refFrontiersDesc:
+    'Research on how dance improves emotional well-being and releases positive emotions.',
+  blogSalsaRitmo_refScienceDirectTitle: 'Synchronized Dancing, Endorphins and Social Bonding',
+  blogSalsaRitmo_refScienceDirectDesc:
+    'Scientific study on endorphin release and social cohesion through synchronized dancing.',
 
   // =====================================================
   // TWERK LANDING PAGE

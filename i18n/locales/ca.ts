@@ -12726,6 +12726,35 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogSalsaRitmo_faq5Question: 'On aprendre salsa a Barcelona?',
   blogSalsaRitmo_faq5Answer:
     "A Farray's International Dance Center oferim classes de salsa cubana, salsa en línia i roda de casino per a tots els nivells. Comptem amb professors certificats, un ambient acollidor i una comunitat activa de balladors. Som a Barcelona i pots consultar els nostres horaris a la web.",
+  blogSalsaRitmo_faq6Question: 'Quins són els beneficis de ballar salsa?',
+  blogSalsaRitmo_faq6Answer:
+    "La [investigació científica](https://www.nejm.org/doi/full/10.1056/NEJMoa022252) ha demostrat que el ball social millora la coordinació, resistència i salut cardiovascular, a més de afavorir la plasticitat cerebral i reduir fins a un **76% el risc de demència**. A nivell emocional, la salsa enforteix l'autoestima, allibera [endorfines](https://www.sciencedirect.com/science/article/abs/pii/S1090513816300113) i fomenta la connexió social.",
+  blogSalsaRitmo_faq7Question: 'Què és la salsa caleña?',
+  blogSalsaRitmo_faq7Answer:
+    'La **salsa caleña** és l\'estil desenvolupat a Cali, Colòmbia, coneguda com la "capital mundial de la salsa". Es caracteritza per ser veloz, acrobàtica i explosiva, amb un treball de peus molt tècnic i rítmic. Els balladors calenys són famosos per la seva velocitat i energia constant a la pista.',
+  blogSalsaRitmo_faq8Question: 'Quan va néixer la salsa moderna?',
+  blogSalsaRitmo_faq8Answer:
+    'Segons els [estudis acadèmics](https://www.muchomasquebaile.es/wp-content/uploads/2021/11/Historia-de-la-salsa-desde-las-raices-hasta-el-1975.pdf), la salsa moderna va cristal·litzar als **anys 1960-1970** a Nova York, quan els ritmes cubans (son, mambo, chachachá) es van fusionar amb el jazz, soul i R&B de la comunitat llatina. El segell Fania Records va ser fonamental en la seva expansió global.',
+
+  // === REFERENCES ===
+  blogSalsaRitmo_referencesTitle: 'Fonts i Referències',
+  blogSalsaRitmo_referencesIntro:
+    'Aquest article està basat en fonts acadèmiques rigoroses i documents primaris:',
+  blogSalsaRitmo_refRamosTitle: 'Historia de la Salsa: Desde las Raíces hasta 1975 – Ramos Gandía',
+  blogSalsaRitmo_refRamosDesc:
+    "Document acadèmic exhaustiu sobre els orígens del danzón, son, mambo, chachachá i l'expansió de la salsa a Nova York.",
+  blogSalsaRitmo_refAreciboTitle: 'La Salsa: Tradicions Rítmiques – Universitat Interamericana',
+  blogSalsaRitmo_refAreciboDesc:
+    'Material docent universitari sobre les tradicions rítmiques africanes i melodies europees que van originar la salsa.',
+  blogSalsaRitmo_refNEJMTitle: 'Leisure Activities and Dementia Risk – NEJM',
+  blogSalsaRitmo_refNEJMDesc:
+    'Estudi de referència que demostra els beneficis cognitius del ball: 76% de reducció del risc de demència.',
+  blogSalsaRitmo_refFrontiersTitle: 'Dance, Well-being and Positive Emotions – Frontiers',
+  blogSalsaRitmo_refFrontiersDesc:
+    'Investigació sobre com el ball millora el benestar emocional i allibera emocions positives.',
+  blogSalsaRitmo_refScienceDirectTitle: 'Synchronized Dancing, Endorphins and Social Bonding',
+  blogSalsaRitmo_refScienceDirectDesc:
+    "Estudi científic sobre l'alliberament d'endorfines i cohesió social a través del ball sincronitzat.",
 
   // =====================================================
   // TWERK LANDING PAGE
