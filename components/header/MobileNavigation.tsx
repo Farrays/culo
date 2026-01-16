@@ -142,20 +142,25 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
     return () => container.removeEventListener('scroll', handleScroll);
   }, [isMenuOpen]);
 
-  // Swipe to close: detect swipe right gesture
+  // Swipe to close: detect swipe right gesture (only horizontal, not interfering with scroll)
   const swipeOffsetRef = useRef(0);
+  const touchStartY = useRef(0);
+  const isHorizontalSwipe = useRef(false);
 
   useEffect(() => {
     if (!isMenuOpen || !menuRef.current) return;
 
     const menu = menuRef.current;
-    const SWIPE_THRESHOLD = 100; // px to trigger close
+    const SWIPE_THRESHOLD = 80; // px to trigger close
+    const DIRECTION_THRESHOLD = 10; // px to determine swipe direction
 
     const handleTouchStart = (e: globalThis.TouchEvent) => {
       const touch = e.touches[0];
       if (!touch) return;
       touchStartX.current = touch.clientX;
+      touchStartY.current = touch.clientY;
       isSwiping.current = true;
+      isHorizontalSwipe.current = false;
       swipeOffsetRef.current = 0;
     };
 
@@ -163,21 +168,30 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
       if (!isSwiping.current) return;
       const touch = e.touches[0];
       if (!touch) return;
-      const currentX = touch.clientX;
-      const diff = currentX - touchStartX.current;
-      // Only allow swipe to right (positive diff)
-      if (diff > 0) {
-        swipeOffsetRef.current = diff;
+
+      const diffX = touch.clientX - touchStartX.current;
+      const diffY = touch.clientY - touchStartY.current;
+
+      // Determine direction on first significant movement
+      if (!isHorizontalSwipe.current && Math.abs(diffX) > DIRECTION_THRESHOLD) {
+        // Only consider horizontal if moving more horizontally than vertically
+        isHorizontalSwipe.current = Math.abs(diffX) > Math.abs(diffY) * 1.5;
+      }
+
+      // Only track horizontal swipe to the right
+      if (isHorizontalSwipe.current && diffX > 0) {
+        swipeOffsetRef.current = diffX;
       }
     };
 
     const handleTouchEnd = () => {
-      if (swipeOffsetRef.current > SWIPE_THRESHOLD) {
+      if (isHorizontalSwipe.current && swipeOffsetRef.current > SWIPE_THRESHOLD) {
         triggerHaptic();
         setIsMenuOpen(false);
       }
       swipeOffsetRef.current = 0;
       isSwiping.current = false;
+      isHorizontalSwipe.current = false;
     };
 
     menu.addEventListener('touchstart', handleTouchStart, { passive: true });
@@ -250,7 +264,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
     <div
       ref={menuRef}
       id="mobile-menu"
-      className="fixed inset-0 bg-black z-[100] lg:hidden"
+      className="fixed inset-0 bg-black z-[100] lg:hidden flex flex-col"
       style={{
         paddingTop: 'env(safe-area-inset-top, 0px)',
         paddingBottom: 'env(safe-area-inset-bottom, 0px)',
@@ -297,7 +311,11 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
         </button>
       </div>
 
-      <div ref={scrollContainerRef} className="flex flex-col flex-1 overflow-y-auto pb-8 px-5">
+      <div
+        ref={scrollContainerRef}
+        className="flex flex-col flex-1 min-h-0 overflow-y-auto overscroll-contain pb-8 px-5"
+        style={{ WebkitOverflowScrolling: 'touch' }}
+      >
         <nav className="flex flex-col space-y-1.5">
           {/* 1. Inicio */}
           <Link
