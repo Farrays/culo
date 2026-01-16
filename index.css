@@ -15,6 +15,21 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Fix mobile overflow for long URLs and text */
+  a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  /* Ensure content doesn't overflow on mobile */
+  p,
+  li,
+  span {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
   /* Enterprise Design System: Section Spacing Variables */
   :root {
     /* Hero section spacing - reduced gap between hero and following section */
@@ -55,20 +70,20 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #c82260;
+    background: #b01e3c;
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #e63d7e;
+    background: #c73350;
   }
 
-  /* 3D Text Effect - Opción 1: Sutil (blanco con sombra rosa 3D) */
+  /* 3D Text Effect - Opción 1: Sutil (blanco con sombra carmesí 3D) */
   .holographic-text {
     color: white;
     text-shadow:
-      1px 1px 0 #c82260,
-      2px 2px 0 #a01d4d,
+      1px 1px 0 #b01e3c,
+      2px 2px 0 #8e1830,
       3px 3px 3px rgba(0, 0, 0, 0.3);
   }
 
@@ -119,7 +134,7 @@
   }
 
   *:focus-visible {
-    outline: 2px solid #c82260;
+    outline: 2px solid #b01e3c;
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -127,16 +142,16 @@
   button:focus-visible,
   a:focus-visible,
   [role='button']:focus-visible {
-    outline: 2px solid #c82260;
+    outline: 2px solid #b01e3c;
     outline-offset: 2px;
   }
 
   input:focus-visible,
   textarea:focus-visible,
   select:focus-visible {
-    outline: 2px solid #c82260;
+    outline: 2px solid #b01e3c;
     outline-offset: 1px;
-    border-color: #c82260;
+    border-color: #b01e3c;
   }
 
   /* Accessibility: Reduce motion */

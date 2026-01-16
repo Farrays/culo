@@ -139,7 +139,7 @@ const BlogArticleTemplate: React.FC<BlogArticleTemplateProps> = ({ config }) => 
       <ArticleHero config={config} />
 
       {/* ========== MAIN CONTENT ========== */}
-      <article className="py-12 md:py-16 bg-black">
+      <article className="py-12 md:py-16 bg-black overflow-x-hidden">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-12">
             {/* ===== SIDEBAR: ToC (Desktop) ===== */}
@@ -150,7 +150,7 @@ const BlogArticleTemplate: React.FC<BlogArticleTemplateProps> = ({ config }) => 
             )}
 
             {/* ===== MAIN COLUMN ===== */}
-            <div className="flex-1 max-w-3xl mx-auto lg:mx-0">
+            <div className="flex-1 max-w-3xl mx-auto lg:mx-0 overflow-hidden">
               {/* Summary Box (GEO Critical) */}
               <ArticleSummaryBox
                 bulletKeys={config.summaryBullets}

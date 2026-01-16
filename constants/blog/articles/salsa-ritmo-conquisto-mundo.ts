@@ -19,7 +19,7 @@ export const SALSA_RITMO_CONFIG: BlogArticleConfig = {
 
   // === DATES ===
   datePublished: '2025-01-20',
-  dateModified: '2025-01-20',
+  dateModified: '2026-01-16',
 
   // === READING METRICS ===
   readingTime: 10,
@@ -262,6 +262,57 @@ export const SALSA_RITMO_CONFIG: BlogArticleConfig = {
       type: 'paragraph',
       contentKey: 'blogSalsaRitmo_conclusionCTA',
     },
+
+    // =====================================================
+    // REFERENCES SECTION (E-E-A-T)
+    // =====================================================
+    {
+      id: 'references-section',
+      type: 'references',
+      contentKey: 'blogSalsaRitmo_referencesIntro',
+      references: [
+        {
+          id: 'ramos-gandia',
+          titleKey: 'blogSalsaRitmo_refRamosTitle',
+          url: 'https://www.muchomasquebaile.es/wp-content/uploads/2021/11/Historia-de-la-salsa-desde-las-raices-hasta-el-1975.pdf',
+          publisher: 'Mucho Más Que Baile',
+          year: '2023',
+          descriptionKey: 'blogSalsaRitmo_refRamosDesc',
+        },
+        {
+          id: 'arecibo-inter',
+          titleKey: 'blogSalsaRitmo_refAreciboTitle',
+          url: 'https://www.arecibo.inter.edu/wp-content/uploads/biblioteca/pdf/salsa.pdf',
+          publisher: 'Universidad Interamericana de Puerto Rico',
+          year: '2020',
+          descriptionKey: 'blogSalsaRitmo_refAreciboDesc',
+        },
+        {
+          id: 'nejm-dementia',
+          titleKey: 'blogSalsaRitmo_refNEJMTitle',
+          url: 'https://www.nejm.org/doi/full/10.1056/NEJMoa022252',
+          publisher: 'New England Journal of Medicine',
+          year: '2003',
+          descriptionKey: 'blogSalsaRitmo_refNEJMDesc',
+        },
+        {
+          id: 'frontiers-wellbeing',
+          titleKey: 'blogSalsaRitmo_refFrontiersTitle',
+          url: 'https://www.frontiersin.org/articles/10.3389/fpsyg.2019.01221/full',
+          publisher: 'Frontiers in Psychology',
+          year: '2019',
+          descriptionKey: 'blogSalsaRitmo_refFrontiersDesc',
+        },
+        {
+          id: 'sciencedirect-endorphins',
+          titleKey: 'blogSalsaRitmo_refScienceDirectTitle',
+          url: 'https://www.sciencedirect.com/science/article/abs/pii/S1090513816300113',
+          publisher: 'Evolution and Human Behavior',
+          year: '2016',
+          descriptionKey: 'blogSalsaRitmo_refScienceDirectDesc',
+        },
+      ],
+    },
   ],
 
   // === FEATURED IMAGE ===
@@ -313,6 +364,21 @@ export const SALSA_RITMO_CONFIG: BlogArticleConfig = {
         questionKey: 'blogSalsaRitmo_faq5Question',
         answerKey: 'blogSalsaRitmo_faq5Answer',
       },
+      {
+        id: '6',
+        questionKey: 'blogSalsaRitmo_faq6Question',
+        answerKey: 'blogSalsaRitmo_faq6Answer',
+      },
+      {
+        id: '7',
+        questionKey: 'blogSalsaRitmo_faq7Question',
+        answerKey: 'blogSalsaRitmo_faq7Answer',
+      },
+      {
+        id: '8',
+        questionKey: 'blogSalsaRitmo_faq8Question',
+        answerKey: 'blogSalsaRitmo_faq8Answer',
+      },
     ],
   },
 
@@ -320,7 +386,7 @@ export const SALSA_RITMO_CONFIG: BlogArticleConfig = {
   relatedArticles: [
     {
       slug: 'beneficios-bailar-salsa',
-      category: 'fitness',
+      category: 'lifestyle',
       titleKey: 'blogBeneficiosSalsa_title',
       excerptKey: 'blogBeneficiosSalsa_excerpt',
       image: '/images/blog/beneficios-salsa/hero.webp',

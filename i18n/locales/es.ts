@@ -13907,6 +13907,35 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
   blogSalsaRitmo_faq5Question: '¿Dónde aprender salsa en Barcelona?',
   blogSalsaRitmo_faq5Answer:
     "En Farray's International Dance Center ofrecemos clases de salsa cubana, salsa en línea y rueda de casino para todos los niveles. Contamos con profesores certificados, un ambiente acogedor y una comunidad activa de bailarines. Estamos en Barcelona y puedes consultar nuestros horarios en la web.",
+  blogSalsaRitmo_faq6Question: '¿Cuáles son los beneficios de bailar salsa?',
+  blogSalsaRitmo_faq6Answer:
+    'La [investigación científica](https://www.nejm.org/doi/full/10.1056/NEJMoa022252) ha demostrado que el baile social mejora la coordinación, resistencia y salud cardiovascular, además de favorecer la plasticidad cerebral y reducir hasta un **76% el riesgo de demencia**. A nivel emocional, la salsa fortalece la autoestima, libera [endorfinas](https://www.sciencedirect.com/science/article/abs/pii/S1090513816300113) y fomenta la conexión social.',
+  blogSalsaRitmo_faq7Question: '¿Qué es la salsa caleña?',
+  blogSalsaRitmo_faq7Answer:
+    'La **salsa caleña** es el estilo desarrollado en Cali, Colombia, conocida como la "capital mundial de la salsa". Se caracteriza por ser veloz, acrobática y explosiva, con un trabajo de pies muy técnico y rítmico. Los bailarines caleños son famosos por su velocidad y energía constante en la pista.',
+  blogSalsaRitmo_faq8Question: '¿Cuándo nació la salsa moderna?',
+  blogSalsaRitmo_faq8Answer:
+    'Según los [estudios académicos](https://www.muchomasquebaile.es/wp-content/uploads/2021/11/Historia-de-la-salsa-desde-las-raices-hasta-el-1975.pdf), la salsa moderna cristalizó en los **años 1960-1970** en Nueva York, cuando los ritmos cubanos (son, mambo, chachachá) se fusionaron con el jazz, soul y R&B de la comunidad latina. El sello Fania Records fue fundamental en su expansión global.',
+
+  // === REFERENCES ===
+  blogSalsaRitmo_referencesTitle: 'Fuentes y Referencias',
+  blogSalsaRitmo_referencesIntro:
+    'Este artículo está basado en fuentes académicas rigurosas y documentos primarios:',
+  blogSalsaRitmo_refRamosTitle: 'Historia de la Salsa: Desde las Raíces hasta 1975 – Ramos Gandía',
+  blogSalsaRitmo_refRamosDesc:
+    'Documento académico exhaustivo sobre los orígenes del danzón, son, mambo, chachachá y la expansión de la salsa a Nueva York.',
+  blogSalsaRitmo_refAreciboTitle: 'La Salsa: Tradiciones Rítmicas – Universidad Interamericana',
+  blogSalsaRitmo_refAreciboDesc:
+    'Material docente universitario sobre las tradiciones rítmicas africanas y melodías europeas que originaron la salsa.',
+  blogSalsaRitmo_refNEJMTitle: 'Leisure Activities and Dementia Risk – NEJM',
+  blogSalsaRitmo_refNEJMDesc:
+    'Estudio de referencia que demuestra los beneficios cognitivos del baile: 76% de reducción del riesgo de demencia.',
+  blogSalsaRitmo_refFrontiersTitle: 'Dance, Well-being and Positive Emotions – Frontiers',
+  blogSalsaRitmo_refFrontiersDesc:
+    'Investigación sobre cómo el baile mejora el bienestar emocional y libera emociones positivas.',
+  blogSalsaRitmo_refScienceDirectTitle: 'Synchronized Dancing, Endorphins and Social Bonding',
+  blogSalsaRitmo_refScienceDirectDesc:
+    'Estudio científico sobre la liberación de endorfinas y cohesión social a través del baile sincronizado.',
 
   // =============================================================================
   // BLOG ARTICLE: Historia de la Bachata - Del Barrio Dominicano a Barcelona
