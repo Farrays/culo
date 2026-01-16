@@ -33,14 +33,14 @@ const StickyMobileCTA: React.FC = () => {
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
         }`}
       >
-        {/* Gradient blur background */}
-        <div className="absolute inset-0 bg-black/90 backdrop-blur-md" />
+        {/* Solid background - no backdrop-blur for better mobile performance */}
+        <div className="absolute inset-0 bg-black/95" />
 
         {/* Content */}
         <div className="relative px-4 py-3 safe-area-inset-bottom">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="w-full bg-primary-accent text-white font-bold text-lg py-4 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-accent-glow animate-glow flex items-center justify-center gap-2"
+            className="w-full bg-primary-accent text-white font-bold text-lg py-4 px-6 rounded-full transition-colors duration-200 shadow-lg flex items-center justify-center gap-2"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path

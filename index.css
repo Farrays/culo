@@ -150,4 +150,19 @@
       scroll-behavior: auto !important;
     }
   }
+
+  /* Performance: Disable heavy infinite animations on mobile */
+  @media (max-width: 767px) {
+    .animate-glow {
+      animation: none !important;
+    }
+
+    .animate-pulse {
+      animation: none !important;
+    }
+
+    .animate-pulse-strong {
+      animation: none !important;
+    }
+  }
 }
