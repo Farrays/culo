@@ -145,14 +145,15 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
   // Swipe to close: detect swipe right gesture (only horizontal, not interfering with scroll)
   const swipeOffsetRef = useRef(0);
   const touchStartY = useRef(0);
+  const swipeDecided = useRef(false);
   const isHorizontalSwipe = useRef(false);
 
   useEffect(() => {
     if (!isMenuOpen || !menuRef.current) return;
 
     const menu = menuRef.current;
-    const SWIPE_THRESHOLD = 80; // px to trigger close
-    const DIRECTION_THRESHOLD = 10; // px to determine swipe direction
+    const SWIPE_THRESHOLD = 60; // px to trigger close (reduced for easier swipe)
+    const DIRECTION_THRESHOLD = 8; // px to determine swipe direction
 
     const handleTouchStart = (e: globalThis.TouchEvent) => {
       const touch = e.touches[0];
@@ -160,6 +161,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
       touchStartX.current = touch.clientX;
       touchStartY.current = touch.clientY;
       isSwiping.current = true;
+      swipeDecided.current = false;
       isHorizontalSwipe.current = false;
       swipeOffsetRef.current = 0;
     };
@@ -172,13 +174,19 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
       const diffX = touch.clientX - touchStartX.current;
       const diffY = touch.clientY - touchStartY.current;
 
-      // Determine direction on first significant movement
-      if (!isHorizontalSwipe.current && Math.abs(diffX) > DIRECTION_THRESHOLD) {
-        // Only consider horizontal if moving more horizontally than vertically
-        isHorizontalSwipe.current = Math.abs(diffX) > Math.abs(diffY) * 1.5;
+      // Decide direction once on first significant movement
+      if (!swipeDecided.current) {
+        const absDiffX = Math.abs(diffX);
+        const absDiffY = Math.abs(diffY);
+
+        if (absDiffX > DIRECTION_THRESHOLD || absDiffY > DIRECTION_THRESHOLD) {
+          swipeDecided.current = true;
+          // Horizontal if X movement is greater than Y movement
+          isHorizontalSwipe.current = absDiffX > absDiffY && diffX > 0;
+        }
       }
 
-      // Only track horizontal swipe to the right
+      // Track horizontal swipe to the right
       if (isHorizontalSwipe.current && diffX > 0) {
         swipeOffsetRef.current = diffX;
       }
@@ -191,6 +199,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
       }
       swipeOffsetRef.current = 0;
       isSwiping.current = false;
+      swipeDecided.current = false;
       isHorizontalSwipe.current = false;
     };
 
@@ -214,7 +223,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
     isPrimary?: boolean;
   }> = ({ label, isOpen, onClick, linkTo, isPrimary = false }) => (
     <div
-      className={`flex items-center justify-between w-full ${isPrimary ? 'py-3 px-4 rounded-xl hover:bg-white/5 transition-all duration-300' : 'py-2 px-3'}`}
+      className={`flex items-center justify-between w-full ${isPrimary ? 'py-4 px-4 rounded-xl hover:bg-white/5 transition-all duration-300' : 'py-2.5 px-3'}`}
     >
       {linkTo ? (
         <Link
@@ -313,16 +322,16 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
 
       <div
         ref={scrollContainerRef}
-        className="flex flex-col flex-1 min-h-0 overflow-y-auto overscroll-contain pb-8 px-5"
+        className="flex flex-col flex-1 min-h-0 overflow-y-auto overscroll-contain py-4 px-6"
         style={{ WebkitOverflowScrolling: 'touch' }}
       >
-        <nav className="flex flex-col space-y-1.5">
+        <nav className="flex flex-col space-y-3">
           {/* 1. Inicio */}
           <Link
             ref={firstFocusableRef}
             to={menuStructure.home.path}
             onClick={() => setIsMenuOpen(false)}
-            className={`flex items-center gap-3 py-3 px-4 text-lg font-bold tracking-wide transition-all duration-300 rounded-xl ${
+            className={`flex items-center gap-3 py-4 px-4 text-lg font-bold tracking-wide transition-all duration-300 rounded-xl ${
               location.pathname === menuStructure.home.path
                 ? 'text-white bg-primary-accent/20 border-l-4 border-primary-accent'
                 : 'text-white hover:text-white hover:bg-white/5'
@@ -335,7 +344,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           </Link>
 
           {/* Divider */}
-          <div className="border-b border-white/10 my-1" />
+          <div className="border-b border-white/10 my-2" />
 
           {/* 2. Quiénes Somos - Accordion */}
           <div>
@@ -347,7 +356,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
             />
 
             {openSections['about'] && (
-              <div className="ml-4 pl-3 space-y-1 border-l-2 border-primary-accent/40 animate-slideDown">
+              <div className="ml-4 pl-3 space-y-2 border-l-2 border-primary-accent/40 animate-slideDown">
                 <Link
                   to={`/${locale}/sobre-nosotros`}
                   onClick={() => setIsMenuOpen(false)}
@@ -417,7 +426,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           </div>
 
           {/* Divider */}
-          <div className="border-b border-white/10 my-1" />
+          <div className="border-b border-white/10 my-2" />
 
           {/* 3. Clases de Baile - Accordion */}
           <div>
@@ -430,7 +439,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
             />
 
             {openSections['classes'] && (
-              <div className="ml-4 pl-3 space-y-1 border-l-2 border-primary-accent/40 animate-slideDown">
+              <div className="ml-4 pl-3 space-y-2 border-l-2 border-primary-accent/40 animate-slideDown">
                 {menuStructure.classes.submenu?.map(item => (
                   <div key={item.path}>
                     {item.submenu ? (
@@ -514,7 +523,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           </div>
 
           {/* Divider */}
-          <div className="border-b border-white/10 my-1" />
+          <div className="border-b border-white/10 my-2" />
 
           {/* 4. Servicios - Accordion */}
           <div>
@@ -526,7 +535,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
             />
 
             {openSections['services'] && (
-              <div className="ml-4 pl-3 space-y-1 border-l-2 border-primary-accent/40 animate-slideDown">
+              <div className="ml-4 pl-3 space-y-2 border-l-2 border-primary-accent/40 animate-slideDown">
                 <Link
                   to={`/${locale}/clases-particulares-baile`}
                   onClick={() => setIsMenuOpen(false)}
@@ -583,13 +592,13 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           </div>
 
           {/* Divider */}
-          <div className="border-b border-white/10 my-1" />
+          <div className="border-b border-white/10 my-2" />
 
           {/* 7. Blog */}
           <Link
             to={`/${locale}/blog`}
             onClick={() => setIsMenuOpen(false)}
-            className={`flex items-center gap-3 py-3 px-4 text-lg font-bold tracking-wide transition-all duration-300 rounded-xl ${
+            className={`flex items-center gap-3 py-4 px-4 text-lg font-bold tracking-wide transition-all duration-300 rounded-xl ${
               location.pathname.includes('/blog')
                 ? 'text-white bg-primary-accent/20 border-l-4 border-primary-accent'
                 : 'text-white hover:text-white hover:bg-white/5'
@@ -605,7 +614,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           <Link
             to={`/${locale}/contacto`}
             onClick={() => setIsMenuOpen(false)}
-            className={`flex items-center gap-3 py-3 px-4 text-lg font-bold tracking-wide transition-all duration-300 rounded-xl ${
+            className={`flex items-center gap-3 py-4 px-4 text-lg font-bold tracking-wide transition-all duration-300 rounded-xl ${
               location.pathname === `/${locale}/contacto`
                 ? 'text-white bg-primary-accent/20 border-l-4 border-primary-accent'
                 : 'text-white hover:text-white hover:bg-white/5'
@@ -619,7 +628,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
         </nav>
 
         {/* Bottom Section */}
-        <div className="mt-auto pt-6">
+        <div className="mt-auto pt-8">
           {/* CTA Button */}
           <button
             onClick={() => {

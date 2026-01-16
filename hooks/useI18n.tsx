@@ -12,7 +12,7 @@ import { loadTranslations, type TranslationKeys } from '../i18n/locales';
 interface I18nContextType {
   locale: Locale;
   setLocale: (_locale: Locale) => void;
-  t: (_key: string) => string;
+  t: (_key: string, _params?: Record<string, string | number>) => string;
   isLoading: boolean;
 }
 
@@ -174,7 +174,7 @@ export const I18nProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   }, [locale]);
 
   const t = useCallback(
-    (key: string): string => {
+    (key: string, params?: Record<string, string | number>): string => {
       let translation = currentTranslations[key];
 
       if (translation === undefined) {
@@ -196,6 +196,14 @@ export const I18nProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           }
           return key;
         }
+      }
+
+      // Interpolate params: replace {paramName} with value
+      if (params) {
+        return translation.replace(/\{(\w+)\}/g, (_, paramName) => {
+          const value = params[paramName];
+          return value !== undefined ? String(value) : `{${paramName}}`;
+        });
       }
 
       return translation;

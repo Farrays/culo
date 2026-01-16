@@ -2,7 +2,7 @@ export const en = {
   // General
   pageTitle: "Farray's International Dance Center | Dance School in Barcelona",
   metaDescription:
-    'Dance school in Barcelona with 25+ styles: salsa, bachata, hip hop, ballet and more. Exclusive Farray Method®. CID-UNESCO center. First class free.',
+    'Dance school in Barcelona with 25+ styles: salsa, bachata, hip hop, ballet and more. Exclusive Farray Method®. CID-UNESCO center. Book your welcome class.',
   skipToMainContent: 'Skip to main content',
   ratingAriaLabel: '{rating} out of 5 stars',
   closeButton: 'Close',
@@ -58,7 +58,7 @@ export const en = {
   heroTagline: 'Dancing is working on your happiness.',
   heroValue:
     "You don't need more dance classes. You need the right classes. If you're looking for dance classes in Barcelona where you finally make progress and don't feel like just a number, you're in the right place. With the Farray Method® you learn well, fast and with style… and you have more fun than in any gym.",
-  heroCTA1: 'Book Your Trial Class',
+  heroCTA1: 'Book Your Welcome Class',
   heroCTA2: 'Explore Classes',
   heroScroll: 'Unfold Your Potential',
   // Philosophy
@@ -197,6 +197,8 @@ export const en = {
   serviceMerchandisingCTA: 'View Products',
   // Teachers
   teachersTitle: 'Meet Our World-Class Instructors',
+  teachersSubtitle:
+    'Cuban professionals trained at the finest art schools in Cuba, with decades of international experience',
   teachersCTA: 'View All Teachers',
   teacher1Specialty: 'Founder & Master Instructor | Método Farray®',
   teacher1Bio:
@@ -229,7 +231,7 @@ export const en = {
   finalCtaSubtitleLine2: 'The difference is they took the first step.',
   finalCtaSubtitleLine3: 'Do it too. Enroll today.',
   finalCtaButton1: 'Become a Member Now',
-  finalCtaButton2: 'Book Your Free Trial',
+  finalCtaButton2: 'Book Your Welcome Class',
   // Footer
   followOnFacebook: 'Follow us on Facebook',
   followOnInstagram: 'Follow us on Instagram',
@@ -414,7 +416,7 @@ export const en = {
     "We're truly multidisciplinary: Salsa, Bachata, Kizomba, Dancehall, Hip Hop, Reggaeton, Commercial Dance, Ballet, Jazz, Contemporary, Heels, and more. From Latin rhythms to urban and classical dance. The Farray Method® fuses all of this with a unique pedagogy that combines Russian discipline, Afro-descendant flavor, and global innovation. Here you find your style... or discover several.",
   homeFaqQ5: 'Do I need previous experience to start?',
   homeFaqA5:
-    'Not at all. We have classes from absolute beginner level to advanced/professional. The Farray Method® is designed for you to progress quickly regardless of your starting point. Many of our best students started without ever having danced. What matters is wanting to learn and enjoy. Your first class is free so you can try it without commitment.',
+    'Not at all. We have classes from absolute beginner level to advanced/professional. The Farray Method® is designed for you to progress quickly regardless of your starting point. Many of our best students started without ever having danced. What matters is wanting to learn and enjoy. Your welcome class is special so you can try it without commitment.',
   homeFaqQ6: 'Do you offer performances, events, or shows?',
   homeFaqA6:
     "Yes! We organize showcases in professional theaters, participate in Barcelona cultural events, competitions, workshops with international teachers, and themed parties. If you want to get on stage, here's your chance. And if you prefer just to enjoy dancing, that's perfect too. You decide your level of involvement.",
@@ -423,7 +425,7 @@ export const en = {
     "CID-UNESCO (International Dance Council) is the official UNESCO organization for dance worldwide. That Farray's is accredited by them means we meet the highest international teaching standards. Yunaisy Farray is an active member. This guarantees pedagogical quality, international recognition, and serious professionalism.",
   homeFaqQ8: 'Can I try a dance class before enrolling?',
   homeFaqA8:
-    'Depending on the season, the trial class for residents may be free or have a symbolic welcome price. The idea is that you can try the experience without commitment. Book your spot by clicking the "Book Your Trial Class" button at the top of this page.',
+    'Depending on the season, the welcome class for residents has a special welcome price. The idea is that you can try the experience without commitment. Book your spot by clicking the "Book Your Welcome Class" button at the top of this page.',
   // Dancehall Key Stats
   classMinutes: 'Class Minutes',
   caloriesBurned: 'Calories Burned',
@@ -458,7 +460,7 @@ export const en = {
     'Of course! In fact, we recommend it. Learning multiple dance styles makes you a more complete and versatile dancer. For example, ballet improves your posture and technique for salsa, while hip hop can make your bachata more dynamic. Our class packages allow you to attend different types of classes according to your interests. Many of our most advanced students practice 3-4 styles simultaneously.',
   classesFaqQ3: 'How do I know which level is right for me?',
   classesFaqA3:
-    "If it's your first class, we always recommend starting at the fundamentals or beginner level. However, if you have previous dance experience, our instructors can assess you in your first trial class and recommend the most appropriate level. You can also try an intermediate level class if you feel the fundamentals are too basic. The important thing is that you feel challenged but not overwhelmed.",
+    "If it's your first class, we always recommend starting at the fundamentals or beginner level. However, if you have previous dance experience, our instructors can assess you in your first welcome class and recommend the most appropriate level. You can also try an intermediate level class if you feel the fundamentals are too basic. The important thing is that you feel challenged but not overwhelmed.",
   classesFaqQ4: 'How often should I attend classes to see progress?',
   classesFaqA4:
     'For consistent and noticeable progress, we recommend attending at least twice a week. At this frequency, most students see significant improvements in 2-3 months. If you can attend 3-4 times a week, progress will be even faster. However, even a weekly class will allow you to advance, albeit at a more gradual pace. Consistency is more important than intensity.',
@@ -476,7 +478,7 @@ export const en = {
   // ===== DancehallPage (Dancehall Classes Barcelona) =====
   dhV3PageTitle: "Dancehall Classes in Barcelona | Farray's Center Academy",
   dhV3MetaDescription:
-    'Learn authentic Jamaican Dancehall in Barcelona. Classes from beginner to advanced. Expert teachers. Between Plaza España and Sants. Try for free!',
+    'Learn authentic Jamaican Dancehall in Barcelona. Classes from beginner to advanced. Expert teachers. Between Plaza España and Sants. Book your welcome class!',
 
   dhV3BreadcrumbHome: 'Home',
   dhV3BreadcrumbClasses: 'Dance Classes Barcelona',
@@ -491,7 +493,7 @@ export const en = {
 
   dhV3CTA1: 'Become a Member Now',
   dhV3CTA1Subtext: 'Limited spots this month',
-  dhV3CTA2: 'Book Your Trial Class',
+  dhV3CTA2: 'Book Your Welcome Class',
   dhV3CTA2Subtext: 'Valid for a limited time',
 
   dhV3WhatIsTitle: 'What is Dancehall and why is it taking Barcelona by storm?',
@@ -539,6 +541,23 @@ export const en = {
   testimonialsNotRequested: 'Unsolicited Testimonials from Our Students',
   excellent: 'EXCELLENT',
   basedOnReviews: 'Based on {count} reviews',
+
+  // Reviews UI
+  reviews_seeMore: 'See more',
+  reviews_seeLess: 'See less',
+  reviews_starRating: '{rating} out of 5 stars',
+  reviews_google: 'Google',
+
+  // Review Categories
+  reviews_category_salsa: 'Salsa',
+  reviews_category_bachata: 'Bachata',
+  reviews_category_heels: 'Heels',
+  reviews_category_urbanas: 'Urban',
+  reviews_category_contemporaneo: 'Contemporary',
+  reviews_category_afro: 'Afro',
+  reviews_category_fitness: 'Fitness',
+  reviews_category_general: 'General',
+  reviews_translatedFrom: 'Translated from Spanish',
 
   dhV3IdentifyTitle: 'Do you identify with any of these situations?',
   dhV3Identify1:
@@ -664,7 +683,7 @@ export const en = {
     'Yes. We offer discounts if you sign up for more than one course. Check the website or ask us directly for more details.',
   dhV3FaqQ9: 'Can I try a Dancehall class before enrolling?',
   dhV3FaqA9:
-    'Depending on the season, the trial class for residents may be free or have a symbolic welcome price. The idea is that you can try the experience without commitment. Book your spot by clicking the "Book Your Trial Class" button at the top of this page.',
+    'Depending on the season, the welcome class for residents has a special welcome price. The idea is that you can try the experience without commitment. Book your spot by clicking the "Book Your Welcome Class" button at the top of this page.',
   dhV3FaqQ10: 'What if I miss a class due to work or commitments?',
   dhV3FaqA10:
     "If you have a membership and cancel a class, you have 30 days to make it up from the cancelled class date. If you have an hours package, you manage your classes flexibly: cancel and book another day within the expiration period. All management is done exclusively through the academy's digital app.",
@@ -708,7 +727,7 @@ export const en = {
   home_categories_urbano_image_alt:
     "Dancers practicing Hip Hop Reggaeton in urban dance class - Farray's Center Barcelona",
   home_categories_urbano_bullets:
-    '11 different urban styles, From beginner to professional, First class free',
+    '11 different urban styles, From beginner to professional, Book your welcome class',
   home_categories_urbano_intro:
     'Feel the energy of the streets with Hip Hop, Reggaeton, Dancehall, and Commercial styles.',
 
@@ -965,7 +984,7 @@ export const en = {
   danceClassesHub_whichCategory_beginner_goal: "I'm an absolute beginner, never danced before",
   danceClassesHub_whichCategory_beginner_category: 'Any category with INITIATION level',
   danceClassesHub_whichCategory_beginner_why:
-    'All our categories have initiation groups for beginners with no experience. Choose according to what attracts you: partner, urban, classical technique or fitness. First class FREE to try without commitment.',
+    'All our categories have initiation groups for beginners with no experience. Choose according to what attracts you: partner, urban, classical technique or fitness. Welcome class available to try without commitment.',
 
   danceClassesHub_whichCategory_morning_goal: 'I want to dance in the mornings (early schedule)',
   danceClassesHub_whichCategory_morning_category: 'Morning Dance Classes',
@@ -981,7 +1000,7 @@ export const en = {
   // Which Category - Info Cards
   danceClassesHub_whichCategory_beginner_title: 'First time dancing?',
   danceClassesHub_whichCategory_beginner_text:
-    "All our categories have specific initiation groups for absolute beginners. You don't need previous experience, partner or special equipment. First class FREE to try without commitment. Book your spot and discover your style.",
+    "All our categories have specific initiation groups for absolute beginners. You don't need previous experience, partner or special equipment. Welcome class available to try without commitment. Book your spot and discover your style.",
 
   danceClassesHub_whichCategory_combine_title: 'Can I combine several categories?',
   danceClassesHub_whichCategory_combine_text:
@@ -989,7 +1008,7 @@ export const en = {
 
   danceClassesHub_whichCategory_schedule_title: 'How to choose my ideal schedule?',
   danceClassesHub_whichCategory_schedule_text:
-    "We offer flexible schedules from Monday to Sunday: mornings (10am-2pm), afternoons (4pm-9pm) and weekends. Choose according to your availability and the level you're looking for. Check the complete schedule on our website or book your free trial class to experience the atmosphere.",
+    "We offer flexible schedules from Monday to Sunday: mornings (10am-2pm), afternoons (4pm-9pm) and weekends. Choose according to your availability and the level you're looking for. Check the complete schedule on our website or book your welcome class to experience the atmosphere.",
 
   // Dance Classes Hub - Why FIDC Section
   danceClassesHub_why_title:
@@ -1031,10 +1050,10 @@ export const en = {
     'Explore our complete schedule and discover the perfect class according to your goal and availability.',
   danceClassesHub_cta1_button: 'View all schedules',
 
-  danceClassesHub_cta2_title: 'Try your first class FREE',
+  danceClassesHub_cta2_title: 'Book Your Welcome Class',
   danceClassesHub_cta2_subtitle:
     'No commitment, no permanence. Come meet our facilities, teachers and method.',
-  danceClassesHub_cta2_button: 'Book free class',
+  danceClassesHub_cta2_button: 'Book welcome class',
   danceClassesHub_cta2_stat1_number: '8+',
   danceClassesHub_cta2_stat1_label: 'Years of experience',
   danceClassesHub_cta2_stat2_number: '1500+',
@@ -1080,7 +1099,7 @@ export const en = {
   danzaBarcelona_title:
     "Dance Classes in Barcelona | Ballet, Contemporary & Jazz | Farray's Center",
   danzaBarcelona_description:
-    'Discover our dance classes in Barcelona: Cuban Classical Ballet, Contemporary Dance, Modern Jazz, Afro Jazz and more. CID-UNESCO accredited academy. Book your trial class.',
+    'Discover our dance classes in Barcelona: Cuban Classical Ballet, Contemporary Dance, Modern Jazz, Afro Jazz and more. CID-UNESCO accredited academy. Book your welcome class.',
   danzaBarcelona_breadcrumb_home: 'Home',
   danzaBarcelona_breadcrumb_classes: 'Dance Classes in Barcelona',
   danzaBarcelona_breadcrumb_current: 'Dance Classes in Barcelona',
@@ -1233,7 +1252,7 @@ export const en = {
 
   danzaFaqQ10: 'Can I try a Ballet, Jazz or Contemporary class before enrolling?',
   danzaFaqA10:
-    'Depending on the season, the trial class for residents may be free or have a symbolic welcome price. The idea is that you can try the experience without commitment. Book your spot by clicking the "Book Your Trial Class" button at the top of this page.',
+    'Depending on the season, the welcome class for residents has a special welcome price. The idea is that you can try the experience without commitment. Book your spot by clicking the "Book Your Welcome Class" button at the top of this page.',
 
   // Career Opportunities - Danza Barcelona
   danzaWhyCareerTitle: 'Job Board & Competitions',
@@ -1447,7 +1466,7 @@ export const en = {
 
   urbanFaqQ10: 'Can I try a Hip Hop or Dancehall class before enrolling?',
   urbanFaqA10:
-    "Look, what's important is that you try it. Depending on the season, the trial class for residents may be free or have a symbolic welcome price. The idea is that you can try the experience without commitment.",
+    "Look, what's important is that you try it. Depending on the season, the welcome class for residents has a special welcome price. The idea is that you can try the experience without commitment.",
 
   // Urban-specific CTA
   danzasUrbanas_viewMore: 'View more →',
@@ -1668,7 +1687,7 @@ export const en = {
   salsaBachataBarcelona_title:
     "Salsa and Bachata Classes in Barcelona | Cuban Salsa, Sensual Bachata & more | Farray's Center",
   salsaBachataBarcelona_description:
-    "Learn to dance Cuban Salsa, Sensual and Dominican Bachata, Timba, Son and more in Barcelona. School founded by Cuban masters with experience in Havana's best academies. Book your trial class.",
+    "Learn to dance Cuban Salsa, Sensual and Dominican Bachata, Timba, Son and more in Barcelona. School founded by Cuban masters with experience in Havana's best academies. Book your welcome class.",
   salsaBachataBarcelona_breadcrumb_home: 'Home',
   salsaBachataBarcelona_breadcrumb_classes: 'Dance Classes in Barcelona',
   salsaBachataBarcelona_breadcrumb_parent: 'Dance Barcelona',
@@ -1739,7 +1758,7 @@ export const en = {
 
   salsaBachataFaqQ10: 'Can I try a salsa or bachata class before enrolling?',
   salsaBachataFaqA10:
-    'Depending on the season, the trial class for residents may be free or have a symbolic welcome price. The idea is that you can experience our methodology, meet the teachers and feel the energy of our dance academy without commitment.',
+    'Depending on the season, the welcome class for residents has a special welcome price. The idea is that you can experience our methodology, meet the teachers and feel the energy of our dance academy without commitment.',
 
   // CTA Final - Salsa/Bachata Barcelona
   salsaBachataCTA_title: 'Learn to Dance Salsa and Bachata As You Always Dreamed',
@@ -2482,7 +2501,7 @@ export const en = {
   faq_otras_5_q: 'Do you have an enrollment fee?',
   faq_otras_5_a:
     '<p>Yes, we have an enrollment of 60 euros the first year. For subsequent years, the enrollment price for students is 20 euros and will be automatically charged on August 1 of each year.</p><p class="mt-3">That reduced fee of 20 euros is only maintained, as long as the student is continuously enrolled, over the years.</p>',
-  faq_otras_6_q: 'Can I take trial classes?',
+  faq_otras_6_q: 'Can I take welcome classes?',
   faq_otras_6_a:
     '<p>Yes. Trial class bookings must be made online through our digital booking platform or through the mobile app. You will see that it is very easy, fast and convenient. It will take you less than a minute to book a class.</p>',
   faq_cta_title: "Can't find what you're looking for?",
@@ -2834,7 +2853,7 @@ export const en = {
 
   // CTA
   metodoFarray_cta_title: 'Discover How to Start',
-  metodoFarray_cta_subtitle: 'Your first class is free. Come try and feel the difference.',
+  metodoFarray_cta_subtitle: 'Your welcome class is special. Come try and feel the difference.',
   metodoFarray_cta_button: 'Discover How to Start',
   metodoFarray_cta_secondary: 'View All Classes',
 
@@ -3063,7 +3082,7 @@ export const en = {
     'Yes. We offer discounts if you sign up for more than one dance course. Check the website or ask us directly for more details about our Twerk dance classes.',
   twerkFaqQ8: 'Can I try a Twerk class before signing up?',
   twerkFaqA8:
-    'Depending on the season, the Twerking trial class for residents may be free or have a symbolic welcome price. The idea is that you can try the Twerk dance experience without commitment. Book your spot by clicking the "Book Your Trial Class" button at the top of this page.',
+    'Depending on the season, the Twerking welcome class for residents has a special welcome price. The idea is that you can try the Twerk dance experience without commitment. Book your spot by clicking the "Book Your Welcome Class" button at the top of this page.',
   twerkFaqQ9: 'What if I miss a Twerk class due to work or commitments?',
   twerkFaqA9:
     "If you have a membership and cancel a Twerking class, you have 30 days to make it up from the date of the cancelled class. If you have an hour package, you manage your Twerk classes flexibly. All management is done exclusively from the academy's digital app.",
@@ -3097,7 +3116,7 @@ export const en = {
   // CTA keys
   twerkCTA1: 'Become a Member Now',
   twerkCTA1Subtext: 'Few spots left this month',
-  twerkCTA2: 'Book Your Trial Class',
+  twerkCTA2: 'Book Your Welcome Class',
   twerkCTA2Subtext: 'Limited time offer',
 
   // What Is Section
@@ -3241,7 +3260,7 @@ export const en = {
   // CTAs
   afroCTA1: 'Become a Member Now',
   afroCTA1Subtext: 'Few spots left this month',
-  afroCTA2: 'Book Your Trial Class',
+  afroCTA2: 'Book Your Welcome Class',
   afroCTA2Subtext: 'Valid for limited time',
 
   // What is Afrobeats
@@ -3422,7 +3441,7 @@ At Farray's International Dance Center, Afrobeats is taught with technique, resp
     'Yes, we offer discounts if you sign up for more than one course. Check our website or ask us directly for more details.',
   afroFaqQ8: 'Can I try an Afrobeats class before enrolling?',
   afroFaqA8:
-    'Look, the important thing is that you try. Depending on the season, the trial class for residents may be free or have a symbolic welcome price. The idea is that you can try the experience with no commitment.',
+    'Look, the important thing is that you try. Depending on the season, the welcome class for residents has a special welcome price. The idea is that you can try the experience with no commitment.',
   afroFaqQ9: 'What if I miss a class due to work or commitments?',
   afroFaqA9:
     'If you have a membership and cancel a class you have 30 days to make it up, counting from the date of the cancelled class. If you have an hour package, you are the one who manages your classes flexibly and you only need to cancel your class and book it for another day whenever you want, before the expiration period ends. All management is done exclusively from the academy digital app.',
@@ -3499,7 +3518,7 @@ At Farray's International Dance Center, Afrobeats is taught with technique, resp
   // CTAs
   hhrCTA1: 'Become a Member Now',
   hhrCTA1Subtext: 'Limited spots this month',
-  hhrCTA2: 'Book Your Trial Class',
+  hhrCTA2: 'Book Your Welcome Class',
   hhrCTA2Subtext: 'Limited time offer',
 
   // Flow Guaranteed
@@ -3694,7 +3713,7 @@ This fusion incorporates:
     'Yes. We offer discounts if you sign up for more than one course. Check the website or ask us directly for more details.',
   hhrFaqQ8: 'Can I try a class before enrolling?',
   hhrFaqA8:
-    'Depending on the season, the trial class for residents may be free or have a symbolic welcome price. The idea is for you to try the experience with no commitment. Book your spot by clicking the "Book Your Trial Class" button at the top of this page.',
+    'Depending on the season, the welcome class for residents has a special welcome price. The idea is for you to try the experience with no commitment. Book your spot by clicking the "Book Your Welcome Class" button at the top of this page.',
   hhrFaqQ9: 'What if I miss a class due to work or commitments?',
   hhrFaqA9:
     "If you have a membership and cancel a class, you have 30 days to make it up from the date of the cancelled class. If you have an hours package, you manage your classes flexibly: cancel and book another day within the expiration period. All management is done exclusively through the academy's digital app.",
@@ -3754,7 +3773,7 @@ This fusion incorporates:
     'Classes with Cuban instructors who come directly from Havana, between Plaza España and Sants.',
   rcbCTA1: 'Become a Member Now',
   rcbCTA1Subtext: 'Few spots left this month',
-  rcbCTA2: 'Book Your Trial Class',
+  rcbCTA2: 'Book Your Welcome Class',
   rcbCTA2Subtext: 'Limited time offer',
   rcbAuthenticGuaranteed: 'Cuban Flavor',
   rcbWhatIsTitle: 'What is Cuban Reggaeton and why is it different?',
@@ -3925,7 +3944,7 @@ Today, Cubatón has expanded internationally while maintaining its essence: impr
     'Yes. We organize masterclasses with invited Cuban artists, showcases, and our annual gala where you can shine on a professional stage.',
   rcbFaqQ10: 'Can I try a class before enrolling?',
   rcbFaqA10:
-    'Depending on the season, the trial class for residents may be free or have a symbolic welcome price. The idea is that you can try the experience without commitment. Book your spot by clicking the "Book Your Trial Class" button at the top of this page.',
+    'Depending on the season, the welcome class for residents has a special welcome price. The idea is that you can try the experience without commitment. Book your spot by clicking the "Book Your Welcome Class" button at the top of this page.',
   rcbFaqQ11: 'Do you have any special discounts?',
   rcbFaqA11:
     'Yes. We offer discounts if you sign up for more than one course. Check the website or ask us directly for more details.',
@@ -4197,7 +4216,7 @@ Today, Cubatón has expanded internationally while maintaining its essence: impr
   // CTAs
   femCTA1: 'Become a Member Now!',
   femCTA1Subtext: 'Few spots left this month',
-  femCTA2: 'Book Your Trial Class',
+  femCTA2: 'Book Your Welcome Class',
   femCTA2Subtext: 'Valid for limited time',
 
   // Stats
@@ -4373,7 +4392,7 @@ Over more than a decade, Femmology has transformed the lives of thousands of wom
 
   femFaqQ8: 'Can I try a Femmology class before signing up?',
   femFaqA8:
-    'Yes. Depending on the season, trial classes for residents may be free or have a symbolic welcome price. Click "Book Your Trial Class" and discover if this discipline is for you.',
+    'Yes. Depending on the season, welcome classes for residents has a special welcome price. Click "Book Your Welcome Class" and discover if this discipline is for you.',
 
   femFaqQ9: 'What will I learn in Femmology classes?',
   femFaqA9:
@@ -4450,7 +4469,7 @@ Over more than a decade, Femmology has transformed the lives of thousands of wom
   // CTAs
   sexystyleCTA1: 'Become a Member Now',
   sexystyleCTA1Subtext: 'Few spots left this month',
-  sexystyleCTA2: 'Book Your Trial Class',
+  sexystyleCTA2: 'Book Your Welcome Class',
   sexystyleCTA2Subtext: 'Limited time offer',
 
   // What Is Section
@@ -4646,7 +4665,7 @@ Over more than a decade, Femmology has transformed the lives of thousands of wom
 
   sexystyleFaqQ7: 'Can I try a Sexy Style class before enrolling?',
   sexystyleFaqA7:
-    'Depending on the season, the trial class for residents may be free or have a symbolic welcome price. The idea is that you can try the experience with no commitment. Reserve your spot by clicking the "Book Your Trial Class" button at the top of this page.',
+    'Depending on the season, the welcome class for residents has a special welcome price. The idea is that you can try the experience with no commitment. Reserve your spot by clicking the "Book Your Welcome Class" button at the top of this page.',
 
   sexystyleFaqQ8: 'What Sexy Style levels do you have?',
   sexystyleFaqA8:
@@ -4670,7 +4689,7 @@ Over more than a decade, Femmology has transformed the lives of thousands of wom
 
   sexystyleFaqQ13: 'Do you have special discounts or packages?',
   sexystyleFaqA13:
-    'Yes, we have several savings options:<br/><br/>• <strong>Multi-course discount:</strong> If you sign up for more than one style (e.g., Sexy Style + Femmology), you get a reduced price per class.<br/>• <strong>Unlimited monthly passes:</strong> Unlimited classes of one style or all styles.<br/>• <strong>Quarterly and annual passes:</strong> Greater savings the longer you commit.<br/>• <strong>New student offers:</strong> First trial class at a special price.<br/><br/>Check updated prices at reception or contact us via WhatsApp.',
+    'Yes, we have several savings options:<br/><br/>• <strong>Multi-course discount:</strong> If you sign up for more than one style (e.g., Sexy Style + Femmology), you get a reduced price per class.<br/>• <strong>Unlimited monthly passes:</strong> Unlimited classes of one style or all styles.<br/>• <strong>Quarterly and annual passes:</strong> Greater savings the longer you commit.<br/>• <strong>New student offers:</strong> First welcome class at a special price.<br/><br/>Check updated prices at reception or contact us via WhatsApp.',
 
   sexystyleFaqQ14: 'Where is the academy?',
   sexystyleFaqA14:
@@ -4722,10 +4741,10 @@ Over more than a decade, Femmology has transformed the lives of thousands of wom
   // CTAs
   sxrCTA1: 'Become a Member Now',
   sxrCTA1Subtext: 'Few spots left this month',
-  sxrCTA2: 'Book Your Trial Class',
+  sxrCTA2: 'Book Your Welcome Class',
   sxrCTA2Subtext: 'Limited time offer',
   sxrCTA1AriaLabel: 'View Sexy Reggaeton class schedule and sign up',
-  sxrCTA2AriaLabel: 'Book a Sexy Reggaeton trial class',
+  sxrCTA2AriaLabel: 'Book a Sexy Reggaeton welcome class',
   sxrOgImageAlt: "Sexy Reggaeton Classes in Barcelona - Farray's Center",
 
   // Stat
@@ -4900,7 +4919,7 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colombia), J Balvi
     'Yes. We offer discounts if you sign up for more than one course. Check the website or ask us directly for more details.',
   sxrFaqQ9: 'Can I try a Sexy Reggaeton class before signing up?',
   sxrFaqA9:
-    'Depending on the season, the trial class for residents may be free or have a symbolic welcome price. The idea is that you can try the experience without commitment. Book your spot by clicking the "Book Your Trial Class" button at the top of this page.',
+    'Depending on the season, the welcome class for residents has a special welcome price. The idea is that you can try the experience without commitment. Book your spot by clicking the "Book Your Welcome Class" button at the top of this page.',
   sxrFaqQ10: 'What if I miss a class due to work or commitments?',
   sxrFaqA10:
     "If you have a membership and cancel a class, you have 30 days to make it up from the date of the cancelled class. If you have an hours package, you manage your classes flexibly: cancel and book another day within the expiration period. All management is done exclusively through the academy's digital app.",
@@ -4976,7 +4995,7 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colombia), J Balvi
   // CTAs
   modernjazzCTA1: 'Become a Member Now',
   modernjazzCTA1Subtext: 'Few spots left this month',
-  modernjazzCTA2: 'Book Your Trial Class',
+  modernjazzCTA2: 'Book Your Welcome Class',
   modernjazzCTA2Subtext: 'Limited time offer',
 
   // What Is Section
@@ -5147,7 +5166,7 @@ Farray's International Dance Center is rated close to **5/5 on Google**, with hu
 
   modernjazzFaqQ7: 'Can I try a Modern Jazz class before enrolling?',
   modernjazzFaqA7:
-    'Depending on the season, the trial class for residents may be free or have a symbolic welcome price. The idea is that you can try the experience without commitment. Book your spot by clicking the "Book Your Trial Class" button at the top of this page.',
+    'Depending on the season, the welcome class for residents has a special welcome price. The idea is that you can try the experience without commitment. Book your spot by clicking the "Book Your Welcome Class" button at the top of this page.',
 
   modernjazzFaqQ8: 'What Modern Jazz levels do you have?',
   modernjazzFaqA8: 'We currently offer basic level classes for people with little experience.',
@@ -5214,7 +5233,7 @@ Farray's International Dance Center is rated close to **5/5 on Google**, with hu
     'Check our schedule and choose between beginner, intermediate or advanced level. If you have never danced, start with beginner.',
   modernjazzHowToStep2Name: 'Book your first class',
   modernjazzHowToStep2Text:
-    'Contact us via WhatsApp at +34 622 247 085 or email info@farrayscenter.com to book your free trial class.',
+    'Contact us via WhatsApp at +34 622 247 085 or email info@farrayscenter.com to book your welcome class.',
   modernjazzHowToStep3Name: 'Prepare for class',
   modernjazzHowToStep3Text:
     'Come in comfortable clothes that allow movement. Jazz shoes are ideal, but you can start with socks. Bring water.',
@@ -5376,7 +5395,7 @@ Farray's International Dance Center is rated close to **5/5 on Google**, with hu
   // ===== CTAs =====
   balletCTA1: 'Become a Member Now',
   balletCTA1Subtext: 'Limited spots available this month',
-  balletCTA2: 'Book Your Trial Class',
+  balletCTA2: 'Book Your Welcome Class',
   balletCTA2Subtext: 'Valid for limited time',
 
   // ===== What is Ballet Section =====
@@ -5595,7 +5614,7 @@ All ballet terms are in French, a legacy of its development at the court of Vers
 
   balletFaqQ8: 'Can I try a Ballet class before enrolling?',
   balletFaqA8:
-    'Depending on the season, the trial class for residents may be free or have a symbolic welcome price. For tourists, it is paid. If you like it and decide to stay, the amount is deducted from your first payment.',
+    'Depending on the season, the welcome class for residents has a special welcome price. For tourists, it is paid. If you like it and decide to stay, the amount is deducted from your first payment.',
 
   balletFaqQ9: 'What ballet levels do you have?',
   balletFaqA9:
@@ -5656,7 +5675,7 @@ All ballet terms are in French, a legacy of its development at the court of Vers
     'Beginners (no or little experience) or Intermediate (you master basic positions). If in doubt, start with beginners.',
   balletHowToStep2Name: 'Book your first class',
   balletHowToStep2Text:
-    'Contact via WhatsApp at +34 622 247 085 or email info@farrayscenter.com to book your free trial class.',
+    'Contact via WhatsApp at +34 622 247 085 or email info@farrayscenter.com to book your welcome class.',
   balletHowToStep3Name: 'Prepare for the class',
   balletHowToStep3Text:
     'Come in fitted clothes that show your posture. Ballet slippers ideal, but you can start with socks.',
@@ -5813,7 +5832,7 @@ All ballet terms are in French, a legacy of its development at the court of Vers
   // ===== CTAs =====
   afrojazzCTA1: 'Become a Member Now',
   afrojazzCTA1Subtext: 'Limited spots for small groups',
-  afrojazzCTA2: 'Book Your Trial Class',
+  afrojazzCTA2: 'Book Your Welcome Class',
   afrojazzCTA2Subtext: 'Discover the unique fusion',
 
   // ===== What Is Section =====
@@ -5999,7 +6018,7 @@ Dancers from around the world travel to Barcelona specifically to train in Afro 
     'Yes. Improvisation is a fundamental part of Afro Jazz. We develop the ability to create movement in real time while maintaining stylistic coherence and connection with music.',
   afrojazzFaqQ8: 'Can I try a class before enrolling?',
   afrojazzFaqA8:
-    'Yes, you can book a trial class. Note that you need previous dance experience to follow the class level.',
+    'Yes, you can book a welcome class. Note that you need previous dance experience to follow the class level.',
   afrojazzFaqQ9: 'What clothes and footwear should I wear?',
   afrojazzFaqA9:
     'Comfortable clothing that allows wide movement (leggings, dance pants, fitted t-shirt). Footwear depends on the surface: Jazz shoes, dance socks or barefoot as indicated.',
@@ -6147,7 +6166,7 @@ Dancers from around the world travel to Barcelona specifically to train in Afro 
   // CTAs
   contemporaneoCTA1: 'Become a Member Now',
   contemporaneoCTA1Subtext: 'Limited spots available this month',
-  contemporaneoCTA2: 'Book Your Trial Class',
+  contemporaneoCTA2: 'Book Your Welcome Class',
   contemporaneoCTA2Subtext: 'Limited time offer',
   contemporaneoCTAGroup: 'Registration options',
 
@@ -6421,7 +6440,7 @@ Works comprehensively: **flexibility, functional strength, coordination, proprio
     'We work with multiple techniques: floor, release, contact improvisation, and elements from various schools. A multidisciplinary approach for you to develop your own language.',
   contemporaneoFaqQ8: 'Can I try a class before signing up?',
   contemporaneoFaqA8:
-    'Of course. You can book a trial class to see if it is what you are looking for. Come try and discover how to let your talent flow through dance.',
+    'Of course. You can book a welcome class to see if it is what you are looking for. Come try and discover how to let your talent flow through dance.',
   contemporaneoFaqQ9: 'What if I miss a class due to work or commitments?',
   contemporaneoFaqA9:
     'Classes are recoverable, so if you miss a day, you can come to the next available class at your same level.',
@@ -6521,7 +6540,7 @@ Works comprehensively: **flexibility, functional strength, coordination, proprio
   // CTAs
   afrocontemporaneoCTA1: 'Become a Member Now',
   afrocontemporaneoCTA1Subtext: 'Few spots available',
-  afrocontemporaneoCTA2: 'Book Your Trial Class',
+  afrocontemporaneoCTA2: 'Book Your Welcome Class',
   afrocontemporaneoCTA2Subtext: 'Discover Cuban technique',
 
   // What Is Section
@@ -6689,7 +6708,7 @@ The Afro Contemporary taught at **Farray's International Dance Center** is part 
   afrocontemporaneoWhyToday3:
     "What are you waiting for? Don't let another year pass without giving your dance the technical foundation it needs.",
   afrocontemporaneoWhyTodayClosing1:
-    'Every master dancer started with a trial class. Yours could be today.',
+    'Every master dancer started with a welcome class. Yours could be today.',
   afrocontemporaneoWhyTodayClosing2:
     "Your body is ready. Your mind is ready. The only thing missing is for you to come to Farray's.",
 
@@ -6726,7 +6745,7 @@ The Afro Contemporary taught at **Farray's International Dance Center** is part 
     'The ENA methodology is the systematization of Afro Contemporary created by Ramiro Guerra in 1959 and perfected over 65 years. It is the official reference in the dance world, recognized by institutions like CID-UNESCO.',
   afrocontemporaneoFaqQ8: 'Can I try a class before enrolling?',
   afrocontemporaneoFaqA8:
-    'Yes, we offer trial classes so you can experience Afro Contemporary before committing. Contact us to book your trial class.',
+    'Yes, we offer welcome classes so you can experience Afro Contemporary before committing. Contact us to book your welcome class.',
   afrocontemporaneoFaqQ9: 'What clothes should I wear to class?',
   afrocontemporaneoFaqA9:
     'Comfortable, fitted clothing that allows seeing the body line (leggings, tights, dance pants). Dance socks optional, you can go barefoot. Bring water bottle and small towel.',
@@ -6852,7 +6871,7 @@ The Afro Contemporary taught at **Farray's International Dance Center** is part 
   hiphopHeroLocation: 'Open level classes for all levels, between Plaza España and Sants',
   hiphopCTA1: 'Become a Member Now',
   hiphopCTA1Subtext: 'Limited spots available this month',
-  hiphopCTA2: 'Book Your Trial Class',
+  hiphopCTA2: 'Book Your Welcome Class',
   hiphopCTA2Subtext: 'Limited time offer',
   hiphopCTAGroup: 'Enrollment options',
   flowGuaranteed: 'Flow',
@@ -7029,7 +7048,7 @@ The Afro Contemporary taught at **Farray's International Dance Center** is part 
     'Yes. We offer class packages and discounts for students, unemployed and people who combine several disciplines. Ask at reception for current offers.',
   hiphopFaqQ9: 'Can I try a class before signing up?',
   hiphopFaqA9:
-    "Of course. We offer a trial class so you can check out the atmosphere, meet Marcos and decide if it's what you're looking for. Contact us to book.",
+    "Of course. We offer a welcome class so you can check out the atmosphere, meet Marcos and decide if it's what you're looking for. Contact us to book.",
   hiphopFaqQ10: 'Are the classes choreographic or freestyle?',
   hiphopFaqA10:
     'We combine both approaches. We learn movements and combinations, but the emphasis is on developing your ability to improvise and create your own style.',
@@ -7142,7 +7161,7 @@ Our teacher **Marcos Martínez**, judge of international competitions and refere
   salsaCubanaCTAGroup: 'Registration options',
   salsaCubanaCTA1: 'Become a Member Now',
   salsaCubanaCTA1Subtext: 'Only 8 spots left per class',
-  salsaCubanaCTA2: 'Book Your FREE Trial Class',
+  salsaCubanaCTA2: 'Book Your Welcome Class',
   salsaCubanaCTA2Subtext: 'Limited time offer',
 
   // Problem Section
@@ -7443,7 +7462,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
     'Comfortable and light clothing. Sneakers or comfortable shoes. For women, heels with ankle support are recommended but not mandatory.',
   salsaCubanaFaqQ7: 'Can I try a class before enrolling?',
   salsaCubanaFaqA7:
-    "Yes, we offer a first trial class with no commitment. Come meet us, try the Farray Method® and decide if it's for you.",
+    "Yes, we offer a first welcome class with no commitment. Come meet us, try the Farray Method® and decide if it's for you.",
   salsaCubanaFaqQ8: 'What is Rueda de Casino?',
   salsaCubanaFaqA8:
     'It\'s a way of dancing Cuban salsa in a group, in a circle, where all couples execute synchronized figures following the instructions of a "singer". It\'s very fun and social.',
@@ -7458,7 +7477,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
     'Yes, we have changing rooms with showers so you can freshen up after class if needed.',
   salsaCubanaFaqQ12: 'How do I know what level is right for me?',
   salsaCubanaFaqA12:
-    "If you've never danced, start with Level 0. If you have experience, come to a trial class and we'll guide you to the most suitable level for you.",
+    "If you've never danced, start with Level 0. If you have experience, come to a welcome class and we'll guide you to the most suitable level for you.",
   salsaCubanaFaqQ13: 'Do you organize outings to dance?',
   salsaCubanaFaqA13:
     "Yes, we regularly organize outings to dance halls and events so you can practice what you've learned in a real and fun environment.",
@@ -7701,7 +7720,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   // CTAs
   salsaLadyCTA1: 'Become a Member Now',
   salsaLadyCTA1Subtext: 'Limited spots this quarter',
-  salsaLadyCTA2: 'Book Your Trial Class',
+  salsaLadyCTA2: 'Book Your Welcome Class',
   salsaLadyCTA2Subtext: 'Discover the Farray Method®',
 
   // Stats
@@ -7962,7 +7981,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
     'From the first class you will notice changes in your posture and body awareness. In 2-3 months of regular practice, you will see a significant transformation in your style and confidence.',
   salsaLadyFaqQ7: 'Can I try a class before enrolling?',
   salsaLadyFaqA7:
-    'Depending on the season, the trial class may be free or have a symbolic price. The idea is that you can experience the Farray Method® without commitment.',
+    'Depending on the season, the welcome class may be free or have a symbolic price. The idea is that you can experience the Farray Method® without commitment.',
   salsaLadyFaqQ8: 'What clothes should I wear?',
   salsaLadyFaqA8:
     'Comfortable clothes that allow movement. Many students prefer dresses or skirts to practice spins, but it is not mandatory. The important thing is to feel comfortable.',
@@ -8005,7 +8024,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   salsaLadyFinalCTAFunny: 'Spots fly faster than a triple spin in 10 cm heels.',
   salsaLadyFinalCTA1: 'Become a Member Now',
   salsaLadyFinalCTA1Subtext: 'Limited spots this quarter',
-  salsaLadyFinalCTA2: 'Book Your Trial Class',
+  salsaLadyFinalCTA2: 'Book Your Welcome Class',
   salsaLadyFinalCTA2Subtext: 'Discover the Farray Method®',
 
   // Course Schema
@@ -8168,7 +8187,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   danceClassesHub_style_acro_yoga_desc:
     'Fusion of yoga, acrobatics and Thai massage practiced in pairs or groups. Learn bases, flyers, aerial poses, acrobatic balance and body confidence while developing strength, flexibility and human connection. Playful practice combining fitness, body art and community.',
   danceClassesHub_cta_member: 'Become a Member Now',
-  danceClassesHub_cta_trial: 'Book Your Trial Class',
+  danceClassesHub_cta_trial: 'Book Your Welcome Class',
   howItWorksTitle: 'How Do Our Dancehall Classes in Barcelona Work?',
   howItWorksIntro:
     'In our Dancehall classes in Barcelona we generally teach a choreographed sequence, but in practice Dancehall is an improvised dance.',
@@ -8556,7 +8575,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
     'You will learn new music and rhythms, exercise your coordination and memory, and improve your improvisation and musical interpretation skills.',
   dancehallMidCTATitle: 'Ready to Transform Your Life?',
   dancehallMidCTADesc:
-    'Talk to us on WhatsApp and book your free class right now. We respond in minutes!',
+    'Talk to us on WhatsApp and book your welcome class right now. We respond in minutes!',
   dancehallHowItWorksTitle: 'How Do Our Dancehall Classes in Barcelona Work?',
   dancehallClassStructureTitle: 'Structure of Each Class (60 min)',
   dancehallClassStructureDesc:
@@ -8867,7 +8886,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   facilitiesWhy6Desc: 'Fire systems, emergency exits and compliance with all regulations',
   facilitiesCTATitle: 'Ready to dance?',
   facilitiesCTAP1: 'Discover for yourself why hundreds of students choose our facilities.',
-  facilitiesCTAP2: 'Book your trial class or visit our facilities.',
+  facilitiesCTAP2: 'Book your welcome class or visit our facilities.',
 
   // Gallery Section
   facilitiesGalleryTitle: 'Facilities Gallery',
@@ -8903,7 +8922,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
     "We don't have our own parking, but there are several public parkings nearby and good public transport connections.",
   facilitiesFaqQ3: 'Can I visit the facilities before signing up?',
   facilitiesFaqA3:
-    'Of course! You can visit us during opening hours or book a trial class to get to know our spaces.',
+    'Of course! You can visit us during opening hours or book a welcome class to get to know our spaces.',
   facilitiesFaqQ4: 'Do you have equipment for photoshoots?',
   facilitiesFaqA4:
     'We have professional lighting and neutral backgrounds. For specific needs, contact us in advance.',
@@ -8976,7 +8995,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   salsaCubanaBlueOcean4P2: 'Join our community and experience it for yourself.',
   salsaCubanaBlueOcean4P3: 'Your transformation starts with a single step.',
   salsaCubanaBlueOceanClose1: 'Ready to start your salsa journey?',
-  salsaCubanaBlueOceanClose2: 'Book your trial class today',
+  salsaCubanaBlueOceanClose2: 'Book your welcome class today',
   salsaCubanaBlueOceanClose3: "And discover why we're Barcelona's reference in Cuban Salsa",
   salsaCubanaTeacher4Bio:
     'Expert instructor with extensive experience in Cuban salsa and Caribbean rhythms.',
@@ -9036,7 +9055,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   // CTAs
   folkloreCTA1: 'Become a Member Now',
   folkloreCTA1Subtext: 'Limited spots',
-  folkloreCTA2: 'Book Your Trial Class',
+  folkloreCTA2: 'Book Your Welcome Class',
   folkloreCTA2Subtext: 'No commitment',
   folkloreCTAGroup: 'Enrollment options',
 
@@ -9243,7 +9262,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
     'Cuban folklore is for everyone. In fact, many dances to the Orishas have very powerful masculine versions (like Changó or Ogún). Men and women are welcome in all our classes.',
   folkloreFaqQ8: 'Can I try a class before enrolling?',
   folkloreFaqA8:
-    'Yes. We offer a trial class so you can experience our methodology without commitment. Book your spot by clicking the "Book Your Trial Class" button on this page.',
+    'Yes. We offer a welcome class so you can experience our methodology without commitment. Book your spot by clicking the "Book Your Welcome Class" button on this page.',
   folkloreFaqQ9: 'Do you organize folklore events or performances?',
   folkloreFaqA9:
     "Yes. We organize our annual gala where students can showcase what they've learned in a professional theater. We also hold workshops with guest masters and participate in cultural events in the city.",
@@ -9338,7 +9357,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   timbaCTAGroup: 'Timba enrollment options',
   timbaCTA1: 'Become a Member Now',
   timbaCTA1Subtext: 'Limited spots',
-  timbaCTA2: 'Book Your Trial Class',
+  timbaCTA2: 'Book Your Welcome Class',
   timbaCTA2Subtext: 'No commitment',
 
   // === WHAT IS TIMBA SECTION ===
@@ -9557,9 +9576,9 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   timbaFaqQ6: 'Will Timba help me improve my Cuban salsa?',
   timbaFaqA6:
     'Absolutely. Timba and Cuban salsa go hand in hand. What you learn in Timba (musical interpretation, improvisation, despelote) directly improves your partner dancing.',
-  timbaFaqQ7: 'How much does the trial class cost?',
+  timbaFaqQ7: 'How much does the welcome class cost?',
   timbaFaqA7:
-    'The trial class costs €10. If you sign up that same day, it is deducted from the first month.',
+    'The welcome class costs €10. If you sign up that same day, it is deducted from the first month.',
   timbaFaqQ8: 'Is there a contract or minimum commitment?',
   timbaFaqA8:
     "No. At Farray's we work month to month, without contracts or commitments. You only pay for the months you come.",
@@ -9696,7 +9715,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   stretchingCTAGroup: 'Enrollment options',
   stretchingCTA1: 'Become a Member Now',
   stretchingCTA1Subtext: 'Limited spots per class',
-  stretchingCTA2: 'Book Your Trial Class',
+  stretchingCTA2: 'Book Your Welcome Class',
   stretchingCTA2Subtext: 'Available for limited time',
 
   // === WHAT IS STRETCHING SECTION ===
@@ -9902,9 +9921,9 @@ Scientific studies confirm that regular stretching 3+ times per week:
   stretchingFaqQ7: 'Are stretching classes only for dancers?',
   stretchingFaqA7:
     'No. Only 30% of our stretching students are dancers. The remaining 70% are: office workers with neck/lower back tension, athletes who want to prevent injuries, people over 40 who want to maintain mobility, and anyone who wants to feel better in their body. Stretching benefits all ages and physical conditions.',
-  stretchingFaqQ8: 'How much does the stretching trial class cost?',
+  stretchingFaqQ8: 'How much does the stretching welcome class cost?',
   stretchingFaqA8:
-    'Depending on the season, the trial class for residents may be free or have a symbolic welcome price. The idea is that you can try the experience without commitment. Reserve your spot by clicking the "Book Your Trial Class" button.',
+    'Depending on the season, the welcome class for residents has a special welcome price. The idea is that you can try the experience without commitment. Reserve your spot by clicking the "Book Your Welcome Class" button.',
   stretchingFaqQ9: 'Is there a contract or minimum commitment?',
   stretchingFaqA9:
     "There is no contract or minimum commitment. At Farray's Center we work month to month: you only pay for the months you attend. You can pause or cancel at any time without penalties. Total flexibility to adapt to your life.",
@@ -10003,7 +10022,7 @@ Scientific studies confirm that regular stretching 3+ times per week:
   bumbumCTAGroup: 'Enrollment options',
   bumbumCTA1: 'Become a Member Now',
   bumbumCTA1Subtext: 'Limited spots per class',
-  bumbumCTA2: 'Book Your Trial Class',
+  bumbumCTA2: 'Book Your Welcome Class',
   bumbumCTA2Subtext: 'Valid for limited time',
 
   // === WHAT IS BUM BUM SECTION ===
@@ -10199,9 +10218,9 @@ Regular glute training (2-3 times/week):
   bumbumFaqQ7: 'Is it only for women?',
   bumbumFaqA7:
     'No. Although most participants are women, men can also benefit greatly from glute training. Strong glutes improve athletic performance, prevent injuries and improve posture in anyone.',
-  bumbumFaqQ8: 'How much does the Bum Bum Glutes trial class cost?',
+  bumbumFaqQ8: 'How much does the Bum Bum Glutes welcome class cost?',
   bumbumFaqA8:
-    'Depending on the season, the trial class for residents may be free or have a symbolic welcome price. The idea is for you to try the experience without commitment. Reserve your spot by clicking the "Book Your Trial Class" button.',
+    'Depending on the season, the welcome class for residents has a special welcome price. The idea is for you to try the experience without commitment. Reserve your spot by clicking the "Book Your Welcome Class" button.',
   bumbumFaqQ9: 'Is there a contract or minimum commitment?',
   bumbumFaqA9:
     "There's no contract or minimum commitment. At Farray's Center we work month to month: you only pay for the months you attend. You can pause or cancel at any time without penalties.",
@@ -10295,7 +10314,7 @@ Regular glute training (2-3 times/week):
   // CTAs
   bachataLadyCTA1: 'Become a Member Now',
   bachataLadyCTA1Subtext: 'Limited spots available this month',
-  bachataLadyCTA2: 'Book Your Trial Class',
+  bachataLadyCTA2: 'Book Your Welcome Class',
   bachataLadyCTA2Subtext: 'Available for limited time',
 
   // What Is Section
@@ -10662,7 +10681,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     "From the first class you'll notice changes in your posture and body awareness. In 2-3 months of regular practice, you'll see a significant transformation in your style and confidence.",
   bachataLadyFaqQ7: 'Can I try a class before signing up?',
   bachataLadyFaqA7:
-    'Depending on the season, the trial class may be free or have a symbolic price. The idea is for you to experience the Farray Method® without commitment.',
+    'Depending on the season, the welcome class may be free or have a symbolic price. The idea is for you to experience the Farray Method® without commitment.',
   bachataLadyFaqQ8: 'What clothes should I wear?',
   bachataLadyFaqA8:
     "Comfortable clothing that allows movement. Many students prefer dresses or skirts to practice spins and body waves, but it's not required. The important thing is to feel comfortable.",
@@ -10703,7 +10722,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     "It doesn't matter if you come to disconnect from work. To meet new people. To reconnect with your femininity. To prove that YES you can dance elegantly.\n\nWhat matters is that you take the first step.\n\nWith the Farray Method® you won't learn \"tricks\". You'll learn to dance with foundation. With technique. With style. And most importantly: enjoying every minute.",
   bachataLadyFinalCTA1: 'Become a Member Now',
   bachataLadyFinalCTA1Subtext: 'Limited spots available this month',
-  bachataLadyFinalCTA2: 'Book Your Trial Class',
+  bachataLadyFinalCTA2: 'Book Your Welcome Class',
   bachataLadyFinalCTA2Subtext: 'Available for limited time',
 
   // Pricing - Exclusive Member Benefits
@@ -11257,7 +11276,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   dhV3CompareMeaning4Title: 'If you seek community:',
   dhV3CompareMeaning4Desc:
     "Here you're not a number. You'll meet people, go to practices, and have a real dance family.",
-  dhV3CompareCTA: 'See for yourself: first trial class',
+  dhV3CompareCTA: 'See for yourself: first welcome class',
   dhV3CompareNote: 'No commitment. No tricks. No pressure.',
   navBachataLadyStyle: 'Bachata Lady Style',
   navBachataSensual: 'Sensual Bachata',
@@ -11281,7 +11300,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   salsaLadyV2HeroSubtitle: 'The Method That Transforms Your Dance',
   salsaLadyV2HeroDesc:
     'Stop improvising on shines. Learn real feminine technique with the only structured Lady Style system in Barcelona.',
-  salsaLadyV2CTA1: 'Book Your Trial Class',
+  salsaLadyV2CTA1: 'Book Your Welcome Class',
   salsaLadyV2CTA2: 'See the Farray® Method',
   salsaLadyV2ProblemTitle: 'The glass ceiling of Lady Style',
   salsaLadyV2ProblemP1: "You've been dancing salsa for months (or years).",
@@ -12058,7 +12077,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogBeneficiosSalsa_ctaTitle: '¿Listo para experimentar estos beneficios?',
   blogBeneficiosSalsa_ctaText:
     "En Farray's International Dance Center tenemos clases de salsa cubana para todos los niveles. Profesores cubanos con más de 20 años de experiencia te guiarán desde tus primeros pasos hasta movimientos avanzados.",
-  blogBeneficiosSalsa_ctaButton: 'Probar Clase Gratis',
+  blogBeneficiosSalsa_ctaButton: 'Book Welcome Class',
 
   // =============================================
   // TEACHERS PAGE - Profesores de Baile Barcelona
@@ -12214,7 +12233,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   bachataV3ScheduleSubtitle:
     '5 weekly classes for all levels. Find the schedule that fits your routine and start dancing.',
   bachataV3ScheduleCTA: 'Book Your First Class',
-  bachataV3ScheduleNote: 'First class is FREE to try',
+  bachataV3ScheduleNote: 'Welcome class available to try',
 
   // === LEVEL CARDS ===
   bachataV3LevelBeginnerTitle: 'Beginner',
@@ -12340,7 +12359,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   bachataV3WhyTodayP2:
     'Sensual bachata is at its peak. Events are everywhere, the community is growing, and now is the best time to join. In a few months you will be on the dance floor wondering why you waited so long.',
   bachataV3WhyTodayP3:
-    "At Farray's we welcome new students every week. Today could be your day. The first class is free so you have nothing to lose and a new passion to gain.",
+    "At Farray's we welcome new students every week. Today could be your day. The welcome class is special so you have nothing to lose and a new passion to gain.",
 
   // === LOGOS SECTION ===
   bachataV3LogosTitle: 'Recognized by the Best',
@@ -12386,7 +12405,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     "Yes! We organize weekly practices and monthly socials where you can dance what you learn in class. We also organize trips to national and international bachata congresses. Our community is very active and you'll always have somewhere to dance.",
   bachataV3FaqQ10: 'How much do bachata classes cost in Barcelona?',
   bachataV3FaqA10:
-    "At Farray's we have flexible options: individual classes, monthly packages and unlimited passes. The first class is FREE so you can try without commitment. After that, prices start at €40/month for 1 weekly class. Check our rates page for more details.",
+    "At Farray's we have flexible options: individual classes, monthly packages and unlimited passes. The welcome class is available so you can try without commitment. After that, prices start at €40/month for 1 weekly class. Check our rates page for more details.",
 
   // === NEARBY SECTION ===
   bachataV3NearbyTitle: 'Sensual Bachata Classes Near You',
@@ -12398,8 +12417,8 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // === FINAL CTA SECTION ===
   bachataV3FinalCtaTitle: 'Ready to Start Dancing Sensual Bachata?',
   bachataV3FinalCtaSubtitle:
-    "Your first class is FREE. Come meet us and discover why thousands of students have chosen Farray's.",
-  bachataV3FinalCtaPrimary: 'Book Free Class',
+    "Your welcome class is available. Come meet us and discover why thousands of students have chosen Farray's.",
+  bachataV3FinalCtaPrimary: 'Book Welcome Class',
   bachataV3FinalCtaSecondary: 'View All Schedules',
   bachataV3FinalCtaGuarantee: '100% satisfaction guarantee on your first class',
   bachataV3FinalCtaSocial: 'Join our community of +15,000 students',
@@ -12582,9 +12601,9 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
 
   twLandingPageTitle: 'Twerk Welcome Class',
   twLandingPageDescription:
-    'Discover Twerk in Barcelona. Completely FREE Welcome Class. Limited spots. No commitment. Book now.',
+    'Discover Twerk in Barcelona. Welcome Class. Limited spots. No commitment. Book now.',
 
-  twLandingBadge: 'FREE WELCOME CLASS',
+  twLandingBadge: 'WELCOME CLASS',
   twLandingHeadline: 'Awaken Your Power with Twerk',
   twLandingSubheadline:
     'Start the new year releasing your energy, connecting with your body and discovering a dance that empowers you from the first minute. Guaranteed fun while working glutes, core and self-esteem.',
@@ -12605,7 +12624,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
 
   twLandingExperienceTitle: 'Ready to unleash your inner power?',
   twLandingExperienceDesc:
-    "Twerk is not just a dance, it's a statement of freedom. It's your moment to connect with your body without judgment, build confidence and have an amazing time. First time with us? This is your chance: a completely free Twerk Welcome Class, no cost, no commitment, with limited spots.",
+    "Twerk is not just a dance, it's a statement of freedom. It's your moment to connect with your body without judgment, build confidence and have an amazing time. First time with us? This is your chance: a Twerk Welcome Class, no cost, no commitment, with limited spots.",
 
   twLandingValueTitle: "What's included in this experience?",
   twLandingValueItem1: 'A full 60-minute Twerk class',
@@ -12617,7 +12636,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   twLandingValueIncluded: 'Included',
   twLandingValueTotal: 'TOTAL VALUE:',
   twLandingValueYourPrice: 'YOUR PRICE TODAY:',
-  twLandingValueFree: 'FREE',
+  twLandingValueFree: 'NO COMMITMENT',
 
   twLandingOfferTitle: 'Limited time only',
   twLandingOfferDesc:
@@ -12748,12 +12767,12 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // Teacher: Yasmina Fernández
 
   // SEO
-  sxrLandingPageTitle: "Sexy Reggaeton Welcome Class in Barcelona | FREE | Farray's Center",
+  sxrLandingPageTitle: "Sexy Reggaeton Welcome Class in Barcelona | Farray's Center",
   sxrLandingPageDescription:
     'Try a FREE Sexy Reggaeton class with Yasmina Fernández in Barcelona. Discover the sensuality of perreo and body roll. No previous experience needed. CID-UNESCO Academy.',
 
   // Hero Section
-  sxrLandingBadge: 'FREE WELCOME CLASS',
+  sxrLandingBadge: 'WELCOME CLASS',
   sxrLandingHeadline: 'Awaken Your Sensuality with Sexy Reggaeton',
   sxrLandingSubheadline:
     'Release your energy, connect with your body and discover a dance that empowers you from the first minute. Sensuality, confidence and guaranteed fun while working on your body expression.',
@@ -12791,7 +12810,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   sxrLandingValueIncluded: 'Included',
   sxrLandingValueTotal: 'TOTAL VALUE:',
   sxrLandingValueYourPrice: 'YOUR PRICE TODAY:',
-  sxrLandingValueFree: 'FREE',
+  sxrLandingValueFree: 'NO COMMITMENT',
 
   // Offer Section
   sxrLandingOfferTitle: 'Limited time only',
@@ -12848,7 +12867,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // Final CTA Section
   sxrLandingFinalCTATitle: "Your body deserves to express itself. It's time to shine.",
   sxrLandingFinalCTADesc:
-    'Book your free welcome class now and discover why hundreds of women have found in Sexy Reggaeton their favorite way to express themselves.',
+    'Book your welcome class now and discover why hundreds of women have found in Sexy Reggaeton their favorite way to express themselves.',
   sxrLandingFinalCTAExtra: 'The next student who books could discover a new version of herself.',
   sxrLandingFinalTrust: 'No cost · No commitment · Very limited spots',
 
@@ -12952,10 +12971,10 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // =====================================================
   // HIP HOP REGGAETON LANDING PAGE
   // =====================================================
-  hhrLandingPageTitle: "Hip Hop Reggaeton Welcome Class in Barcelona | FREE | Farray's Center",
+  hhrLandingPageTitle: "Hip Hop Reggaeton Welcome Class in Barcelona | Farray's Center",
   hhrLandingPageDescription:
     'Try a FREE Hip Hop Reggaeton class with Charlie Breezy in Barcelona. Fuse Hip Hop flow with Reggaeton energy. No experience needed. CID-UNESCO certified academy.',
-  hhrLandingBadge: 'FREE WELCOME CLASS',
+  hhrLandingBadge: 'WELCOME CLASS',
   hhrLandingHeadline: 'Fuse Hip Hop + Reggaeton and Unleash Your Flow',
   hhrLandingSubheadline:
     'Try a class with Charlie Breezy and discover the urban style that combines the best of both worlds. No experience needed. No commitment.',
@@ -12976,7 +12995,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   hhrLandingExperienceDesc:
     'Hip Hop Reggaeton is the perfect fusion of Hip Hop swagger and Reggaeton perreo. Charlie Breezy has created a unique style combining urban technique, stage attitude, and Latin rhythms. You will learn choreographies that mix the best of both worlds.',
   hhrLandingValueTitle: 'What does this experience include?',
-  hhrLandingValueSubtitle: 'All this completely FREE for new students',
+  hhrLandingValueSubtitle: 'All this available for new students',
   hhrLandingValueItem1: 'A full 60-minute Hip Hop Reggaeton class',
   hhrLandingValuePrice1: 'Value: {price}€',
   hhrLandingValueItem2: 'Learn flow and attitude with Charlie Breezy',
@@ -12986,7 +13005,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   hhrLandingValueIncluded: 'Included',
   hhrLandingValueTotal: 'TOTAL VALUE:',
   hhrLandingValueYourPrice: 'YOUR PRICE TODAY:',
-  hhrLandingValueFree: 'FREE',
+  hhrLandingValueFree: 'NO COMMITMENT',
   hhrLandingOfferTitle: 'Exclusive discount · Limited time only',
   hhrLandingOfferDesc:
     'If you decide to continue after the welcome class, you will have access to an exclusive discount on your first monthly pass or package. Only valid for new students.',
@@ -13036,7 +13055,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     "Farray's International Dance Center · Calle Entença 100 · Barcelona · Metro: Tarragona (L3)",
   hhrLandingFinalCTATitle: 'The flow is inside you. You just need the right class to unleash it.',
   hhrLandingFinalCTADesc:
-    'Book your FREE welcome class now and discover what Hip Hop + Reggaeton can do for you.',
+    'Book your welcome class now and discover what Hip Hop + Reggaeton can do for you.',
   hhrLandingFinalCTAExtra:
     'Charlie Breezy is waiting for you in the heart of Barcelona. Your body already knows the rhythm.',
   hhrLandingFinalTrust: 'No cost · No commitment · Very limited spots',
@@ -13121,7 +13140,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     'Try a FREE Hip Hop class with Marcos Martínez, international judge, in Barcelona. Learn Breaking, Locking, Popping and Freestyle. No prior experience needed. CID-UNESCO Academy.',
 
   // Hero Section
-  hhLandingBadge: 'FREE WELCOME CLASS',
+  hhLandingBadge: 'WELCOME CLASS',
   hhLandingHeadline: 'Master the Art of Street Dance',
   hhLandingSubheadline:
     'Learn authentic Hip Hop with Marcos Martínez, international Hip Hop judge. Breaking, Locking, Popping, Freestyle... discover your own style in Barcelona.',
@@ -13151,7 +13170,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
 
   // Value Stack
   hhLandingValueTitle: 'What does this experience include?',
-  hhLandingValueSubtitle: 'All this completely FREE for new students',
+  hhLandingValueSubtitle: 'All this available for new students',
   hhLandingValueItem1: 'A complete 60-minute Hip Hop class',
   hhLandingValuePrice1: 'Value: {price}€',
   hhLandingValueItem2: 'Learn Breaking, Locking and Popping techniques with an international judge',
@@ -13161,12 +13180,12 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   hhLandingValueIncluded: 'Included',
   hhLandingValueTotal: 'TOTAL VALUE:',
   hhLandingValueYourPrice: 'YOUR PRICE TODAY:',
-  hhLandingValueFree: 'FREE',
+  hhLandingValueFree: 'NO COMMITMENT',
 
   // Offer Section
   hhLandingOfferTitle: 'Limited time only',
   hhLandingOfferDesc:
-    'This free welcome class is exclusive to new students. Spots are very limited because we work with small groups to ensure personalized attention.',
+    'This welcome class is exclusive to new students. Spots are very limited because we work with small groups to ensure personalized attention.',
 
   // Schedule Section
   hhLandingScheduleTitle: 'Choose your schedule',
@@ -13227,7 +13246,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // Final CTA Section
   hhLandingFinalCTATitle: 'Ready to discover real Hip Hop?',
   hhLandingFinalCTADesc:
-    'Book your free welcome class now and start your street dance journey with an international Hip Hop judge.',
+    'Book your welcome class now and start your street dance journey with an international Hip Hop judge.',
   hhLandingFinalCTAExtra:
     'Exclusive discount · Limited time only\n\nIf you decide to continue after the welcome class, you will have access to an exclusive discount on your first monthly fee or package. Only valid for new students.',
   hhLandingFinalTrust: 'No cost · No commitment · Very limited spots',
@@ -13341,11 +13360,11 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     'Try a FREE Afrobeats class with Redblueh and Charlie Breezy in Barcelona. Discover African rhythms, vibrant energy and authentic Afrodance movements. No prior experience needed. CID-UNESCO Academy.',
 
   // Hero Section
-  abLandingBadge: 'FREE WELCOME CLASS',
+  abLandingBadge: 'WELCOME CLASS',
   abLandingHeadline: 'Feel the Energy of Africa with Afrobeats',
   abLandingSubheadline:
     'Start the new year moving intensely to the rhythm of Africa and discover the most fun dances of this continent, while making up for the holiday excesses with a big smile on your face.',
-  abLandingCTA: 'BOOK YOUR FREE WELCOME CLASS NOW',
+  abLandingCTA: 'BOOK YOUR WELCOME CLASS NOW',
   abLandingTrustText: 'No cost · No commitment · Very limited spots',
   abLandingTrustActiveStudents: '1,500+ active students',
   abLandingTrustYearsExp: '8+ years',
@@ -13367,11 +13386,11 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // Experience Section
   abLandingExperienceTitle: 'Want to travel to Africa without leaving Barcelona?',
   abLandingExperienceDesc:
-    'This is not just any class. It is your access to an exclusive and cultural experience, where we guide you step by step to discover the true flavor of Afrodance. First time with us? This is your chance: a completely free Welcome Afrodance class, no cost, no commitment and limited spots. A welcome with all the fun you deserve.',
+    'This is not just any class. It is your access to an exclusive and cultural experience, where we guide you step by step to discover the true flavor of Afrodance. First time with us? This is your chance: a Welcome Afrodance class, no cost, no commitment and limited spots. A welcome with all the fun you deserve.',
 
   // Value Stack
   abLandingValueTitle: 'What does this experience include?',
-  abLandingValueSubtitle: 'All this completely FREE for new students',
+  abLandingValueSubtitle: 'All this available for new students',
   abLandingValueItem1: 'A full 60-minute Afrobeats class',
   abLandingValuePrice1: 'Value: {price}€',
   abLandingValueItem2: 'Learn authentic African movements with specialized teachers',
@@ -13381,7 +13400,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   abLandingValueIncluded: 'Included',
   abLandingValueTotal: 'TOTAL VALUE:',
   abLandingValueYourPrice: 'YOUR PRICE TODAY:',
-  abLandingValueFree: 'FREE',
+  abLandingValueFree: 'NO COMMITMENT',
 
   // Offer Section
   abLandingOfferTitle: 'Limited time only',
@@ -13446,7 +13465,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // Final CTA Section
   abLandingFinalCTATitle: 'The energy of Africa is waiting for you. Are you coming to discover it?',
   abLandingFinalCTADesc:
-    'Book your free welcome class now and discover why hundreds of students have found in Afrobeats their favorite way to release energy and enjoy.',
+    'Book your welcome class now and discover why hundreds of students have found in Afrobeats their favorite way to release energy and enjoy.',
   abLandingFinalCTAExtra: `Africa moves. Do you move with it?`,
   abLandingFinalTrust: 'No cost · No commitment · Very limited spots',
   abLandingUrgencyReminder: 'Remember: spots are very limited each week',
@@ -13481,12 +13500,12 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // =====================================================
 
   // Meta SEO
-  ajLandingPageTitle: "Afro Jazz Welcome Class in Barcelona | FREE | Farray's Center",
+  ajLandingPageTitle: "Afro Jazz Welcome Class in Barcelona | Farray's Center",
   ajLandingPageDescription:
     'Discover the perfect fusion of African roots and jazz technique. Completely FREE Afro Jazz Welcome Class. Limited spots. No commitment.',
 
   // Hero Section
-  ajLandingBadge: 'FREE WELCOME CLASS',
+  ajLandingBadge: 'WELCOME CLASS',
   ajLandingHeadline: 'Fuse African Roots with Jazz Elegance',
   ajLandingSubheadline:
     'Discover a unique dance that combines the strength and spirituality of African rhythms with the technique and fluidity of modern jazz. An experience that transforms body and soul.',
@@ -13515,11 +13534,11 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // Experience Section
   ajLandingExperienceTitle: 'Looking for a dance that combines technique and expression?',
   ajLandingExperienceDesc:
-    'Afro Jazz is a unique fusion created by Yunaisy Farray that combines the ancestral energy of African rhythms with the technical elegance of contemporary jazz. This is not just any class: it is your gateway to a universe where the strength of African roots meets the fluidity of modern movement. First time? A completely free Welcome Class.',
+    'Afro Jazz is a unique fusion created by Yunaisy Farray that combines the ancestral energy of African rhythms with the technical elegance of contemporary jazz. This is not just any class: it is your gateway to a universe where the strength of African roots meets the fluidity of modern movement. First time? A Welcome Class.',
 
   // Value Stack
   ajLandingValueTitle: 'What does this experience include?',
-  ajLandingValueSubtitle: 'All this completely FREE for new students',
+  ajLandingValueSubtitle: 'All this available for new students',
   ajLandingValueItem1: 'A complete 60-90 minute Afro Jazz class',
   ajLandingValuePrice1: 'Value: {price}€',
   ajLandingValueItem2: 'Unique methodology created by Yunaisy Farray',
@@ -13529,7 +13548,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   ajLandingValueIncluded: 'Included',
   ajLandingValueTotal: 'TOTAL VALUE:',
   ajLandingValueYourPrice: 'YOUR PRICE TODAY:',
-  ajLandingValueFree: 'FREE',
+  ajLandingValueFree: 'NO COMMITMENT',
 
   // Special Offer
   ajLandingOfferTitle: 'Limited time only',
@@ -13621,12 +13640,12 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // =====================================================
 
   // Page Meta
-  acLandingPageTitle: "Afro Contemporary Welcome Class in Barcelona | FREE | Farray's Center",
+  acLandingPageTitle: "Afro Contemporary Welcome Class in Barcelona | Farray's Center",
   acLandingPageDescription:
     'Discover Cuban Contemporary Dance (DCC) with ENA technique. Completely FREE Afro Contemporary Welcome Class. Limited spots. No commitment.',
 
   // Hero Section
-  acLandingBadge: 'FREE WELCOME CLASS',
+  acLandingBadge: 'WELCOME CLASS',
   acLandingHeadline: 'Discover Authentic Cuban Contemporary Dance',
   acLandingSubheadline:
     'Fuse the technique of the National Art School of Cuba with the ancestral power of Afro-Cuban rhythms. A unique experience that transforms your body and artistic expression.',
@@ -13655,11 +13674,11 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // Experience Section
   acLandingExperienceTitle: 'Looking for a dance that connects technique, roots and expression?',
   acLandingExperienceDesc:
-    'Afro Contemporary is the fusion of Cuban ENA technique with Afro-Cuban rhythms and movements. Yunaisy Farray, trained at the National Art School of Cuba, has created a unique methodology that combines the technical precision of contemporary dance with the strength, musicality and spirituality of African dances. First time? A completely free Welcome Class.',
+    'Afro Contemporary is the fusion of Cuban ENA technique with Afro-Cuban rhythms and movements. Yunaisy Farray, trained at the National Art School of Cuba, has created a unique methodology that combines the technical precision of contemporary dance with the strength, musicality and spirituality of African dances. First time? A Welcome Class.',
 
   // Value Stack
   acLandingValueTitle: 'What does this experience include?',
-  acLandingValueSubtitle: 'All this completely FREE for new students',
+  acLandingValueSubtitle: 'All this available for new students',
   acLandingValueItem1: 'A complete 60-90 minute Afro Contemporary class',
   acLandingValuePrice1: 'Value: {price}€',
   acLandingValueItem2: 'Authentic ENA methodology with Yunaisy Farray',
@@ -13669,7 +13688,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   acLandingValueIncluded: 'Included',
   acLandingValueTotal: 'TOTAL VALUE:',
   acLandingValueYourPrice: 'YOUR PRICE TODAY:',
-  acLandingValueFree: 'FREE',
+  acLandingValueFree: 'NO COMMITMENT',
 
   // Special Offer
   acLandingOfferTitle: 'Limited time only',
@@ -14010,7 +14029,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     'Try a FREE Sexy Style class with Yasmina Fernández in Barcelona. Discover sensuality, body expression and confidence through dance. No previous experience required. CID-UNESCO Academy.',
 
   // Hero Section
-  ssLandingBadge: 'FREE WELCOME CLASS',
+  ssLandingBadge: 'WELCOME CLASS',
   ssLandingHeadline: 'Awaken Your Feminine Power with Sexy Style',
   ssLandingSubheadline:
     'Release your sensuality, reconnect with your body and discover a dance that empowers you from the first step. Confidence, femininity and body expression in its purest form.',
@@ -14048,7 +14067,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   ssLandingValueIncluded: 'Included',
   ssLandingValueTotal: 'TOTAL VALUE:',
   ssLandingValueYourPrice: 'YOUR PRICE TODAY:',
-  ssLandingValueFree: 'FREE',
+  ssLandingValueFree: 'NO COMMITMENT',
 
   // Offer Section
   ssLandingOfferTitle: 'Limited time only',
@@ -14105,7 +14124,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // Final CTA Section
   ssLandingFinalCTATitle: "Your femininity deserves to shine. It's time to release it.",
   ssLandingFinalCTADesc:
-    'Book your free welcome class now and discover why hundreds of women have found in Sexy Style their favorite way to express themselves.',
+    'Book your welcome class now and discover why hundreds of women have found in Sexy Style their favorite way to express themselves.',
   ssLandingFinalCTAExtra: 'The next student who books might discover a new version of herself.',
   ssLandingFinalTrust: 'No cost · No commitment · Very limited spots',
 
@@ -14211,12 +14230,12 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // Teachers: Yunaisy Farray, Iroel Bastarreche
 
   // SEO (noindex, nofollow - ads landing page)
-  scLandingPageTitle: "Cuban Salsa Welcome Class in Barcelona | FREE | Farray's Center",
+  scLandingPageTitle: "Cuban Salsa Welcome Class in Barcelona | Farray's Center",
   scLandingPageDescription:
     'Try a FREE Cuban Salsa class with the Farray Method in Barcelona. Learn with Yunaisy Farray, creator of the method. Casino, Rueda, musicality and partner connection. CID-UNESCO Academy.',
 
   // Hero Section
-  scLandingBadge: 'FREE WELCOME CLASS',
+  scLandingBadge: 'WELCOME CLASS',
   scLandingHeadline: 'Learn Cuban Salsa with the Farray Method',
   scLandingSubheadline:
     'Discover the only proven method that teaches you to dance Casino as a couple from scratch. Perfect lead, authentic musicality and the Cuban joy that transforms your dancing.',
@@ -14246,7 +14265,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
 
   // Value Stack
   scLandingValueTitle: 'What does this experience include?',
-  scLandingValueSubtitle: 'All this completely FREE for new students',
+  scLandingValueSubtitle: 'All this available for new students',
   scLandingValueItem1: 'A complete 60-minute Cuban Salsa class',
   scLandingValuePrice1: 'Value: €{price}',
   scLandingValueItem2: 'Introduction to the Farray Method: lead and follow from day 1',
@@ -14256,7 +14275,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   scLandingValueIncluded: 'Included',
   scLandingValueTotal: 'TOTAL VALUE:',
   scLandingValueYourPrice: 'YOUR PRICE TODAY:',
-  scLandingValueFree: 'FREE',
+  scLandingValueFree: 'NO COMMITMENT',
 
   // Offer Section
   scLandingOfferTitle: 'Limited time only',
@@ -14321,7 +14340,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // Final CTA Section
   scLandingFinalCTATitle: 'The Cuban rhythm is waiting for you. Do you dare to try it?',
   scLandingFinalCTADesc:
-    'Book your free welcome class now and discover why thousands of students have chosen the Farray Method to learn Cuban Salsa in Barcelona.',
+    'Book your welcome class now and discover why thousands of students have chosen the Farray Method to learn Cuban Salsa in Barcelona.',
   scLandingFinalCTAExtra: 'First 10 to book this week: priority access to preferred schedule',
   scLandingFinalTrust: 'No cost · No commitment · Very limited spots',
   scLandingUrgencyReminder: 'Remember: spots are very limited each week',
@@ -14396,7 +14415,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   scLeadModal_consent_link: 'privacy policy',
 
   // CTA
-  scLeadModal_submit: 'Book My Free Class',
+  scLeadModal_submit: 'Book My Welcome Class',
   scLeadModal_sending: 'Processing...',
 
   // Validation
@@ -14437,12 +14456,12 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // Teachers: Daniel Sené, Alejandro Miñoso
 
   // SEO
-  ctLandingPageTitle: "Contemporary Dance Welcome Class in Barcelona | FREE | Farray's Center",
+  ctLandingPageTitle: "Contemporary Dance Welcome Class in Barcelona | Farray's Center",
   ctLandingPageDescription:
     'Try a FREE Contemporary Dance class with Daniel Sené and Alejandro Miñoso in Barcelona. Floor technique, release, improvisation and body expression. No previous experience needed. CID-UNESCO Academy.',
 
   // Hero Section
-  ctLandingBadge: 'FREE WELCOME CLASS',
+  ctLandingBadge: 'WELCOME CLASS',
   ctLandingHeadline: 'Discover Contemporary Dance and Connect with Your Body',
   ctLandingSubheadline:
     'A class to explore fluid movement, floor technique and body expression. No previous experience needed.',
@@ -14480,7 +14499,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   ctLandingValueIncluded: 'Included',
   ctLandingValueTotal: 'TOTAL VALUE:',
   ctLandingValueYourPrice: 'YOUR PRICE TODAY:',
-  ctLandingValueFree: 'FREE',
+  ctLandingValueFree: 'NO COMMITMENT',
 
   // Offer Section
   ctLandingOfferTitle: 'Exclusive discount for new students',
@@ -14646,12 +14665,12 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // =====================================================
 
   // Page Meta
-  btLandingPageTitle: "Classical Ballet Welcome Class in Barcelona | FREE | Farray's Center",
+  btLandingPageTitle: "Classical Ballet Welcome Class in Barcelona | Farray's Center",
   btLandingPageDescription:
-    'Try a free classical ballet class in Barcelona. Teachers trained at the National School of Art of Cuba. Technique, posture and elegance for all levels.',
+    'Try a welcome classical ballet class in Barcelona. Teachers trained at the National School of Art of Cuba. Technique, posture and elegance for all levels.',
 
   // Hero Section
-  btLandingBadge: 'FREE WELCOME CLASS',
+  btLandingBadge: 'WELCOME CLASS',
   btLandingHeadline: 'Discover the Elegance of Classical Ballet in Barcelona',
   btLandingSubheadline:
     'Develop perfect posture, flexibility and grace with teachers trained at the prestigious National School of Art of Cuba. Your first class is completely free.',
@@ -14689,7 +14708,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   btLandingValueIncluded: 'Included',
   btLandingValueTotal: 'TOTAL VALUE:',
   btLandingValueYourPrice: 'YOUR PRICE TODAY:',
-  btLandingValueFree: 'FREE',
+  btLandingValueFree: 'NO COMMITMENT',
 
   // Offer Section
   btLandingOfferTitle: 'Limited time only',
@@ -14896,7 +14915,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   exitIntent_subtitle: 'For new students only',
   exitIntent_countdown_label: 'Ends in:',
   exitIntent_countdown_expired: 'Offer expired',
-  exitIntent_benefit1: 'First trial class FREE',
+  exitIntent_benefit1: 'First welcome class FREE',
   exitIntent_benefit2: 'Valid for any dance style',
   exitIntent_benefit3: 'Reserve your spot before they run out',
   exitIntent_email_label: 'Your email',
@@ -15023,7 +15042,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogHistoriaBachata_conclusionContent:
     'From Santo Domingo barrios to Barcelona academies, bachata has traveled an epic path: from marginal genre to UNESCO Heritage, from "bitter music" to global phenomenon with Romeo Santos filling stadiums.',
   blogHistoriaBachata_conclusionCTA:
-    "Bachata didn't stop in Santo Domingo: it pulses in Barcelona's Eixample. **[Book your trial class](/en/clases/bachata-barcelona)** at Farray's and write your own chapter in this story of rhythm and passion.",
+    "Bachata didn't stop in Santo Domingo: it pulses in Barcelona's Eixample. **[Book your welcome class](/en/clases/bachata-barcelona)** at Farray's and write your own chapter in this story of rhythm and passion.",
   blogHistoriaBachata_faqTitle: 'Frequently Asked Questions About Bachata History',
   blogHistoriaBachata_faq1Question: 'What is the origin of bachata as a musical genre?',
   blogHistoriaBachata_faq1Answer:
@@ -15109,7 +15128,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogClasesSalsaBarcelona_section4Content:
     "And if you want to learn this language, do it with teachers who think like you; who not only give wings to your feet, but also to your mind; who teach you the basics of the language with rigor, while infecting you with the emotion of the bright future that awaits you. At Farray's, we know how to speak and teach salsa. And timba, and rumba, and son, and bachata, and kizomba, and afro contemporary, and jazz, and reggaeton, and hip-hop, and dancehall... It's our language, our culture, our passion. And we feel very happy to transmit it!",
   blogClasesSalsaBarcelona_ctaClases:
-    '**Want to start speaking salsa?** Discover our <a href="/en/clases/salsa-cubana-barcelona">Cuban Salsa classes</a>, <a href="/en/clases/salsa-bachata-barcelona">Salsa and Bachata</a> or <a href="/en/clases/timba-barcelona">Timba</a>. First trial class free. <a href="/en/horarios"><strong>See schedules and book →</strong></a>',
+    '**Want to start speaking salsa?** Discover our <a href="/en/clases/salsa-cubana-barcelona">Cuban Salsa classes</a>, <a href="/en/clases/salsa-bachata-barcelona">Salsa and Bachata</a> or <a href="/en/clases/timba-barcelona">Timba</a>. First welcome class free. <a href="/en/horarios"><strong>See schedules and book →</strong></a>',
 
   // ============================================================================
   // BLOG ARTICLE: Dance classes for beginners in Barcelona
@@ -15122,14 +15141,14 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     'Complete guide to start dancing from scratch in Barcelona. Welcome class, no partner needed, all levels. Drop-in from €20.',
   blogClasesBeginners_breadcrumbCurrent: 'Classes for beginners',
   blogClasesBeginners_summaryBullet1:
-    "Welcome class at Farray's (Eixample) – free during promotional season or from €10",
+    "Welcome class at Farray's (Eixample) – special price during promotional season or from €10",
   blogClasesBeginners_summaryBullet2: "You don't need previous experience or a partner",
   blogClasesBeginners_summaryBullet3:
     'Step-by-step guide: what to bring, which style to choose and how to progress',
   blogClasesBeginners_summaryBullet4:
     '+25 styles available: Latin, urban, technical dance and more',
   blogClasesBeginners_intro:
-    "Feel like starting to dance from scratch and don't know where to begin? You're in the right place. At <a href='/en'>Farray's International Dance Center</a> (Barcelona, Eixample) you can book a <strong>welcome class</strong> to get to know us: <strong>free during promotional season</strong>, or with courtesy price (from €10) the rest of the year. You can also come with drop-in from €20. No pressure, no posing and a team that makes it easy from minute one.",
+    "Feel like starting to dance from scratch and don't know where to begin? You're in the right place. At <a href='/en'>Farray's International Dance Center</a> (Barcelona, Eixample) you can book a <strong>welcome class</strong> to get to know us: <strong>special price during promotional season</strong>, or with courtesy price (from €10) the rest of the year. You can also come with drop-in from €20. No pressure, no posing and a team that makes it easy from minute one.",
   blogClasesBeginners_ctaHero:
     '<strong><a href="/en/contacto">Book your welcome class →</a></strong>',
   blogClasesBeginners_section1Title:
@@ -15202,7 +15221,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogClasesBeginners_section8Content:
     "If this guide has taken away some mental noise, that's it: that was what was missing.",
   blogClasesBeginners_ctaReserva:
-    '<strong><a href="/en/contacto">Book your welcome class →</a></strong><br/><br/>• <strong>During promotional season:</strong> free welcome class<br/>• <strong>Rest of the year:</strong> courtesy class from €10<br/>• <strong>Drop-in:</strong> from €20<br/><br/>Questions? Write to us and we\'ll help you choose class and level.',
+    '<strong><a href="/en/contacto">Book your welcome class →</a></strong><br/><br/>• <strong>During promotional season:</strong> welcome class<br/>• <strong>Rest of the year:</strong> courtesy class from €10<br/>• <strong>Drop-in:</strong> from €20<br/><br/>Questions? Write to us and we\'ll help you choose class and level.',
   blogClasesBeginners_section9Title: 'Where we are (Barcelona)',
   blogClasesBeginners_section9Content:
     "<strong>Farray's International Dance Center</strong><br/>C/ Entença, 100 (ground floor), 08015 Barcelona, Catalonia<br/>Tel. <a href='tel:+34622247085'>(+34) 622 247 085</a><br/>Email: <a href='mailto:info@farrayscenter.com'>info@farrayscenter.com</a><br/><br/><strong>Class schedule:</strong> 10:00 to 22:00<br/><strong>Phone service:</strong> Mon–Fri 10:00 to 22:00<br/><br/><em>Dance academy in Barcelona (Eixample) - Near Plaza España and Sants Station</em>",
@@ -15210,9 +15229,9 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogClasesBeginners_faq1Question: 'Can I start dancing without experience?',
   blogClasesBeginners_faq1Answer:
     'Yes. We have beginner classes where you start from the basics and everything is explained step by step.',
-  blogClasesBeginners_faq2Question: 'Is there a trial class to get to know the center?',
+  blogClasesBeginners_faq2Question: 'Is there a welcome class to get to know the center?',
   blogClasesBeginners_faq2Answer:
-    'Yes. During promotional season we offer a free welcome class. The rest of the year you can come meet us with a courtesy class from €10, or with drop-in from €20.',
+    'Yes. During promotional season we offer a welcome class. The rest of the year you can come meet us with a courtesy class from €10, or with drop-in from €20.',
   blogClasesBeginners_faq3Question: 'Do I have to go with a partner?',
   blogClasesBeginners_faq3Answer:
     "Not necessarily. In many formats you can come alone. We'll guide you according to the class.",
@@ -15953,7 +15972,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   cuerpofitCTAGroup: `Enrollment options`,
   cuerpofitCTA1: `Become a Member Now`,
   cuerpofitCTA1Subtext: `Limited spots per class`,
-  cuerpofitCTA2: `Book Your Trial Class`,
+  cuerpofitCTA2: `Book Your Welcome Class`,
   cuerpofitCTA2Subtext: `Limited time offer`,
   cuerpofitWhatIsTitle: `What is Body Conditioning and why do you need it?`,
   cuerpofitWhatIsP1: `Body conditioning or physical conditioning is comprehensive training designed specifically for the demands of dance. It combines functional strength exercises, active flexibility, joint mobility and core stability to create a stronger, more agile body resistant to injuries.`,
@@ -16038,8 +16057,8 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   cuerpofitFaqA5: `Comfortable workout clothes that allow wide movement (leggings, fitted t-shirt or top). Barefoot or with socks (no shoes). Small towel and water bottle. We provide the mats.`,
   cuerpofitFaqQ6: `Does it help prevent dance injuries?`,
   cuerpofitFaqA6: `Yes, it's one of the main objectives. Studies show that dancers with regular strength training have 50-70% fewer injuries. Body conditioning strengthens the most vulnerable areas (hips, knees, ankles, back) and corrects muscular imbalances.`,
-  cuerpofitFaqQ7: `How much does the trial class cost?`,
-  cuerpofitFaqA7: `The trial class costs 10€ and has no commitment. You can try any Monday at 7pm. If you like it, there are monthly passes from 40€. Check all prices at reception or on our website.`,
+  cuerpofitFaqQ7: `How much does the welcome class cost?`,
+  cuerpofitFaqA7: `The welcome class costs 10€ and has no commitment. You can try any Monday at 7pm. If you like it, there are monthly passes from 40€. Check all prices at reception or on our website.`,
   cuerpofitFaqQ8: `Is there a contract or commitment?`,
   cuerpofitFaqA8: `No. Monthly passes without commitment. You can come and go as you please. We value your freedom and want you to come because you want to, not because you're tied to a contract.`,
   cuerpofitFaqQ9: `Can I combine body conditioning with other classes?`,
@@ -16103,7 +16122,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   bailemanananasClassesPerWeek: `classes per week`,
   bailemanananasCTA1: `See Morning Schedule`,
   bailemanananasCTA1Subtext: `Small groups`,
-  bailemanananasCTA2: `Book Your Trial Class`,
+  bailemanananasCTA2: `Book Your Welcome Class`,
   bailemanananasCTA2Subtext: `€10 no commitment`,
   bailemanananasWhatIsTitle: `La activity matinal que necesitabas... Y que cambiará tus días`,
   bailemanananasWhatIsP1: `¿Trabajas by las tardes? ¿Tienes turnos cambiantes? ¿O simplemente quieres empezar el día with buena energía, moviéndote y una gran sonrisa en la cara?`,
@@ -16194,7 +16213,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   bailemanananasFaqQ6: `¿Las classes de mañana son más tranquilas que las de tarde?`,
   bailemanananasFaqA6: `Depende del style. El Contemporáneo y Ballet son más técnicos y conscientes. El Sexy Reggaeton tiene la misma energía que by la tarde, pero with groups más pequeños. En general hay menos alumnos, más espacio, más atención personalizada y un ambiente más relajado for learn.`,
   bailemanananasFaqQ7: `¿Puedo probar una class before de apuntarme?`,
-  bailemanananasFaqA7: `Según la temporada, la class de trial for residentes puede ser gratuita o tener un price simbólico de bienvenida. La idea es que puedas probar la experience de dance without compromiso. Book tu plaza pulsando el botón "Book Your Trial Class" en la parte superior de esta página.`,
+  bailemanananasFaqA7: `Según la temporada, la class de trial for residentes puede ser gratuita o tener un price simbólico de bienvenida. La idea es que puedas probar la experience de dance without compromiso. Book tu plaza pulsando el botón "Book Your Welcome Class" en la parte superior de esta página.`,
   bailemanananasFaqQ8: `¿Cuántas classes de dance hay by las mañanas?`,
   bailemanananasFaqA8: `Actualmente ofrecemos 15 classes semanales de mañanas, de lunes a jueves, en schedule de 10:00 a 13:00. Estilos: Body Conditioning, Contemporáneo Lírico, Modern Jazz, Stretching, Afro Jazz, Ballet, Dancehall, Sexy Reggaeton, Sexy Style, Salsa Lady Style, Reggaeton Cubano y Twerk.`,
   bailemanananasFaqQ9: `¿Qué estilos de dance puedo hacer by las mañanas?`,
@@ -16261,9 +16280,9 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   bachataV3HeroStudents: `+15,000 students trained`,
   bachataV3CTA1: `Become a Member Now`,
   bachataV3CTA1Subtext: `Limited spots this month`,
-  bachataV3CTA2: `Book Your Trial Class`,
+  bachataV3CTA2: `Book Your Welcome Class`,
   bachataV3CTA2Subtext: `Valid for limited time`,
-  bachataV3CTAGroup: `Trial Class`,
+  bachataV3CTAGroup: `Welcome Class`,
   bachataV3WhatIsQuestionTitle: `Why choose sensual bachata?`,
   bachataV3WhatIsQuestionAnswer: `Sensual bachata allows you to express emotions through dance in a unique way. It's accessible for beginners, incredibly social and connects you with an active community of dancers in Barcelona and worldwide.`,
   bachataV3LevelsTitle: `Sensual Bachata Levels`,
@@ -16355,7 +16374,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   fullBodyCardioCTAGroup: `Enrollment options`,
   fullBodyCardioCTA1: `Become a Member Now`,
   fullBodyCardioCTA1Subtext: `Limited spots available`,
-  fullBodyCardioCTA2: `Book Your Trial Class`,
+  fullBodyCardioCTA2: `Book Your Welcome Class`,
   fullBodyCardioCTA2Subtext: `Special first class`,
   fullBodyCardioWhatIsTitle: `What is Cuerpo-Fit and why does it work?`,
   fullBodyCardioWhatIsP1: `Cuerpo-Fit is the workout that changes the fitness game in Barcelona. Imagine combining the intensity of full body training with the energy of cardio dance, all in 60 minutes that fly by. It's not a gym. It's not a conventional dance class. It's the best of both worlds.`,
@@ -16454,7 +16473,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   fullBodyCardioFaqQ13: `Can I do Cuerpo-Fit if I have injuries?`,
   fullBodyCardioFaqA13: `Depende de la lesión. <strong>Requisitos</strong>: consult with your doctor or physiotherapist first. If you have medical clearance, let us know before class to adapt exercises. <strong>Contraindicaciones absolutas</strong>: lesiones agudas, problemas cardíacos no controlados, embarazo de riesgo. Cris can modify exercises for most common limitations (knees, back, shoulders).`,
   fullBodyCardioFaqQ14: `¿Cuánto cuesta la class for Cuerpo-Fit?`,
-  fullBodyCardioFaqA14: `Cuerpo-Fit is included in the academy's monthly memberships. <strong>Trial class</strong>: consulta condiciones actuales en recepción o web. <strong>Bono mensual</strong>: gives you access to Cuerpo-Fit and other classes at the academy. <strong>No commitment</strong>: you pay month to month, without commitment. Consulta tarifas actualizadas en nuestra web o pulsando "Book Your Trial Class".`,
+  fullBodyCardioFaqA14: `Cuerpo-Fit is included in the academy's monthly memberships. <strong>Trial class</strong>: consulta condiciones actuales en recepción o web. <strong>Bono mensual</strong>: gives you access to Cuerpo-Fit and other classes at the academy. <strong>No commitment</strong>: you pay month to month, without commitment. Consulta tarifas actualizadas en nuestra web o pulsando "Book Your Welcome Class".`,
   fullBodyCardioFaqQ15: `¿Dónde están las classes for Cuerpo-Fit in Barcelona?`,
   fullBodyCardioFaqA15: `<strong>Dirección</strong>: Calle Entença 100, 08015 Barcelona (zona Plaza España, entre Sants y Hostafrancs).<br><strong>Metro</strong>: Plaza España (L1, L3), Hostafrancs (L1), Rocafort (L1), Entença (L5) – todos a 5 min andando.<br><strong>Horario</strong>: Lunes de 20:00 a 21:00h.<br><br>📞 <strong>Teléfono</strong>: +34 622 247 085<br>📧 <strong>Email</strong>: info@farrayscenter.com<br>🌐 <strong>Web</strong>: www.farrayscenter.com`,
   fullBodyCardioNearbyTitle: `Classes for Cuerpo-Fit cerca de ti in Barcelona`,
@@ -16594,7 +16613,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   testClassCourseSchemaName: `Experimental Class V2`,
   testClassCourseSchemaDesc: `Trial page for the new visual template.`,
   testClassCourseTeaches: `Enhanced visual design for class pages`,
-  fbLandingPageTitle: `FREE Dance Class in Barcelona | Farray's Center`,
+  fbLandingPageTitle: `Welcome Dance Class in Barcelona | Farray's Center`,
   fbLandingPageDescription: `Book tu class de trial gratuita en la mejor school de dance de Barcelona. +15,000 students, +40 estilos, teachers profesionales. Sin compromiso.`,
   fbLandingBadge: `Special Offer`,
   fbLandingHeroTitle: `Your First Dance Class`,
@@ -16610,7 +16629,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   fbLandingProofStudents: `students trained`,
   fbLandingProofYears: `years of experience`,
   fbLandingProofLocation: `Plaza España`,
-  fbLandingValueTitle: `Here's what you get in your trial class:`,
+  fbLandingValueTitle: `Here's what you get in your welcome class:`,
   fbLandingValue1: `1 complete 60-minute class with professional teachers`,
   fbLandingValue1Price: `Value €{price}`,
   fbLandingValue2: `Choose from +40 styles: Salsa, Bachata, Reggaeton, Hip Hop, Heels...`,
@@ -16623,8 +16642,8 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   fbLandingValue5Price: `Included`,
   fbLandingValueTotal: `Total value:`,
   fbLandingValueYourPrice: `Your price today:`,
-  fbLandingValueFree: `FREE`,
-  fbLandingValueCTA: `I WANT MY FREE CLASS`,
+  fbLandingValueFree: `NO COMMITMENT`,
+  fbLandingValueCTA: `I WANT MY WELCOME CLASS`,
   fbLandingValueSubtext: `Over 500 people book every month`,
   fbLandingTransformTitle: `From "I have two left feet" to dancing with confidence`,
   fbLandingTransformSubtitle: `This is what our students say:`,
@@ -16654,8 +16673,8 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   fbLandingTrust_noSpam: `No spam`,
   fbLandingFinalLegal: `By booking you agree to receive information about your class. You can cancel at any time. Your data is protected according to GDPR.`,
   dhLandingPageTitle: `Class de Bienvenida de Dancehall in Barcelona | GRATIS | Farray's Center`,
-  dhLandingPageDescription: `Travel to Jamaica without leaving Barcelona. Totally FREE Dancehall Welcome Class. Limited spots. No commitment. Book now.`,
-  dhLandingBadge: `FREE WELCOME CLASS`,
+  dhLandingPageDescription: `Travel to Jamaica without leaving Barcelona. Dancehall Welcome Class. Limited spots. No commitment. Book now.`,
+  dhLandingBadge: `WELCOME CLASS`,
   dhLandingHeadline: `Travel To Jamaica Without Leaving Barcelona`,
   dhLandingSubheadline: `Start the new year moving intensely to Jamaica's most enjoyable and powerful music. Discover this super fun dance while balancing out the holiday excesses with a big smile on your face.`,
   dhLandingCTA: `BOOK YOUR WELCOME CLASS NOW`,
@@ -16676,9 +16695,9 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   dhLandingStatActive: `Active Students`,
   dhLandingStatSatisfied: `Satisfied Students`,
   dhLandingExperienceTitle: `Want to travel to Jamaica without leaving Barcelona?`,
-  dhLandingExperienceDesc: `This is not just any class. It's your access to an exclusive and cultural experience, where we guide you step by step to discover the true flavor of Dancehall. First time with us? This is your chance: a totally free Dancehall Welcome class, no cost, no commitment, with limited spots. A welcome with all the flow you deserve.`,
+  dhLandingExperienceDesc: `This is not just any class. It's your access to an exclusive and cultural experience, where we guide you step by step to discover the true flavor of Dancehall. First time with us? This is your chance: a Dancehall Welcome class, no cost, no commitment, with limited spots. A welcome with all the flow you deserve.`,
   dhLandingValueTitle: `What does this experience include?`,
-  dhLandingValueSubtitle: `All this completely FREE for new students`,
+  dhLandingValueSubtitle: `All this available for new students`,
   dhLandingValueItem1: `A complete 60-minute Dancehall class`,
   dhLandingValuePrice1: `Value: {price}€`,
   dhLandingValueItem2: `Friendly and warm treatment that characterizes us`,
@@ -16688,7 +16707,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   dhLandingValueIncluded: `Included`,
   dhLandingValueTotal: `TOTAL VALUE:`,
   dhLandingValueYourPrice: `YOUR PRICE TODAY:`,
-  dhLandingValueFree: `FREE`,
+  dhLandingValueFree: `NO COMMITMENT`,
   dhLandingOfferTitle: `For a limited time only`,
   dhLandingOfferDesc: `Book your class now and if you decide to sign up the same day, you'll receive an exclusive welcome special offer only valid after the class. We want you to join Farray's only if you connect with our energy... but if you do, don't waste time.`,
   dhLandingPrepareTitle: `¿What to bring a tu class?`,
@@ -16810,11 +16829,11 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // =====================================================
 
   // Meta SEO
-  femLandingPageTitle: `Femmology Welcome Class in Barcelona | FREE | Farray's Center`,
-  femLandingPageDescription: `Discover Femmology, Yunaisy Farray's exclusive method to reconnect with your femininity. Completely FREE Welcome Class. Limited spots. Book now.`,
+  femLandingPageTitle: `Femmology Welcome Class in Barcelona | Farray's Center`,
+  femLandingPageDescription: `Discover Femmology, Yunaisy Farray's exclusive method to reconnect with your femininity. Welcome Class. Limited spots. Book now.`,
 
   // Hero Section
-  femLandingBadge: `FREE WELCOME CLASS`,
+  femLandingBadge: `WELCOME CLASS`,
   femLandingHeadline: `Reconnect with Your Femininity Through Movement`,
   femLandingSubheadline: `Femmology is the exclusive method created by Yunaisy Farray that combines heels dance, body expression and emotional work so you love yourself more every day. A transformative experience that goes beyond dance.`,
   femLandingCTA: `BOOK YOUR WELCOME CLASS NOW`,
@@ -16841,11 +16860,11 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
 
   // Experience Section
   femLandingExperienceTitle: `Want to reconnect with your feminine essence?`,
-  femLandingExperienceDesc: `This is not just any dance class. Femmology is a journey inward, an experience that combines the power of movement in heels with emotional work. Created by Yunaisy Farray, this unique method helps you free yourself from insecurities, embrace your sensuality and love yourself more each day. First time with us? This is your chance: a completely free Welcome class.`,
+  femLandingExperienceDesc: `This is not just any dance class. Femmology is a journey inward, an experience that combines the power of movement in heels with emotional work. Created by Yunaisy Farray, this unique method helps you free yourself from insecurities, embrace your sensuality and love yourself more each day. First time with us? This is your chance: a Welcome class.`,
 
   // Value Stack
   femLandingValueTitle: `What does this experience include?`,
-  femLandingValueSubtitle: `All this completely FREE for new students`,
+  femLandingValueSubtitle: `All this available for new students`,
   femLandingValueItem1: `A complete 60-minute Femmology class`,
   femLandingValuePrice1: `Value: {price}€`,
   femLandingValueItem2: `Direct connection with Yunaisy Farray, creator of the method`,
@@ -16855,7 +16874,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   femLandingValueIncluded: `Included`,
   femLandingValueTotal: `TOTAL VALUE:`,
   femLandingValueYourPrice: `YOUR PRICE TODAY:`,
-  femLandingValueFree: `FREE`,
+  femLandingValueFree: `NO COMMITMENT`,
 
   // Special Offer
   femLandingOfferTitle: `For a limited time only`,
@@ -16943,13 +16962,13 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   femExitIntent_hint: `Sexy Style, Heels, Salsa Lady Style, Bachata and much more...`,
 
   homev2_pageTitle: `Dance School in Barcelona | Salsa, Bachata & Dance Classes | FIDC`,
-  homev2_metaDescription: `Dance school in Barcelona with salsa, bachata and dance classes for adults. CID-UNESCO Center with 4.9/5 on Google. First class free. Book now.`,
+  homev2_metaDescription: `Dance school in Barcelona with salsa, bachata and dance classes for adults. CID-UNESCO Center with 4.9/5 on Google. Book your welcome class. Book now.`,
   homev2_heroHeadline: `You don't need more dance classes.\\nYou need the right classes.`,
   homev2_heroSubheadline: `The Farray Method® is the only dance teaching system registered with UNESCO that tracks your progress class by class.`,
   homev2_heroTagline: `Dancing is working on your happiness. But only if you truly progress.`,
   homev2_heroValue: `In Barcelona there are dozens of dance schools. Some have good teachers. Others have a great atmosphere. But almost none can answer this: "What level am I at and what do I need for the next one?" We can.`,
   homev2_heroCta1: `View Schedule and Book`,
-  homev2_heroCta1Subtext: `Free assessment in your first class`,
+  homev2_heroCta1Subtext: `Welcome assessment in your first class`,
   homev2_heroCta2: `Discover the Method`,
   homev2_founderTitle: `Behind every class there's a story. This is mine.`,
   homev2_founderPara1: `From Cuba's National School of Arts to Barcelona. Over 20 years training dancers who today shine on stages around the world.`,
@@ -16996,7 +17015,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   homev2_compRow8Others: `"It depends on you..."`,
   homev2_compRow8Us: `Measurable progress class by class`,
   homev2_comparisonCta: `See for yourself`,
-  homev2_comparisonCtaSubtext: `First free assessment class`,
+  homev2_comparisonCtaSubtext: `Welcome class with assessment`,
   homev2_styleFinderTitle: `25+ styles. One method. Your journey.`,
   homev2_styleFinderSubtitle: `What motivates you to dance? Find your path.`,
   homev2_persona1Title: `I want to feel powerful`,
@@ -17072,11 +17091,11 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogClasesPrincipiantes_metaDescription: `Start dancing from scratch in Barcelona (Eixample). Come meet Farray's with a welcome class and follow this guide: what to bring, how to choose a style and how to progress.`,
   blogClasesPrincipiantes_excerpt: `Complete guide to start dancing from scratch in Barcelona. Welcome class, no partner needed, all levels. Drop-in participation from 20€.`,
   blogClasesPrincipiantes_breadcrumbCurrent: `Beginner Classes`,
-  blogClasesPrincipiantes_summaryBullet1: `Welcome class at Farray's (Eixample) – free during promotional season or from 10€`,
+  blogClasesPrincipiantes_summaryBullet1: `Welcome class at Farray's (Eixample) – special price during promotional season or from 10€`,
   blogClasesPrincipiantes_summaryBullet2: `You don't need previous experience or come with a partner`,
   blogClasesPrincipiantes_summaryBullet3: `Step-by-step guide: what to bring, which style to choose and how to progress`,
   blogClasesPrincipiantes_summaryBullet4: `+25 styles available: Latin, urban, technical dance and more`,
-  blogClasesPrincipiantes_intro: `Want to start dancing from scratch and don't know where to begin? You're in the right place. At <a href='/en'>Farray's International Dance Center</a> (Barcelona, Eixample) you can book a <strong>welcome class</strong> to get to know us: <strong>free during promotional season</strong>, or with a courtesy price (from 10€) the rest of the year. You can also come with drop-in participation from 20€. No pressure, no pretense, and with a team that makes it easy from minute one.`,
+  blogClasesPrincipiantes_intro: `Want to start dancing from scratch and don't know where to begin? You're in the right place. At <a href='/en'>Farray's International Dance Center</a> (Barcelona, Eixample) you can book a <strong>welcome class</strong> to get to know us: <strong>special price during promotional season</strong>, or with a courtesy price (from 10€) the rest of the year. You can also come with drop-in participation from 20€. No pressure, no pretense, and with a team that makes it easy from minute one.`,
   blogClasesPrincipiantes_ctaHero: `<strong><a href="/en/contact">Book your welcome class →</a></strong>`,
   blogClasesPrincipiantes_section1Title: `The first thing I want you to know (because it will take pressure off you)`,
   blogClasesPrincipiantes_section1Content: `At Farray's, <strong>being a beginner is completely normal</strong>. In fact, more than 80% of our students started without any prior experience. And I can guarantee you one thing: <strong>nobody cares about your level</strong>. Everyone is focused on their own process.`,
@@ -17126,14 +17145,14 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogClasesPrincipiantes_section7Privadas: `And if you want to advance faster, there's the shortcut: <a href="/en/private-dance-classes">private classes</a> to work on what your body needs (no distractions and with direct feedback).`,
   blogClasesPrincipiantes_section8Title: `Will you come meet us?`,
   blogClasesPrincipiantes_section8Content: `If this guide has cleared some mental noise for you, that's it: that's what was missing.`,
-  blogClasesPrincipiantes_ctaReserva: `<strong><a href="/en/contact">Book your welcome class →</a></strong><br/><br/>• <strong>During promotional season:</strong> free welcome class<br/>• <strong>Rest of the year:</strong> courtesy class from 10€<br/>• <strong>Drop-in participation:</strong> from 20€<br/><br/>Questions? Write us and we'll help you choose class and level.`,
+  blogClasesPrincipiantes_ctaReserva: `<strong><a href="/en/contact">Book your welcome class →</a></strong><br/><br/>• <strong>During promotional season:</strong> welcome class<br/>• <strong>Rest of the year:</strong> courtesy class from 10€<br/>• <strong>Drop-in participation:</strong> from 20€<br/><br/>Questions? Write us and we'll help you choose class and level.`,
   blogClasesPrincipiantes_section9Title: `Where we are (Barcelona)`,
   blogClasesPrincipiantes_section9Content: `<strong>Farray's International Dance Center</strong><br/>C/ Entença, 100 (ground floor), 08015 Barcelona, Catalunya<br/>Tel. <a href='tel:+34622247085'>(+34) 622 247 085</a><br/>Email: <a href='mailto:info@farrayscenter.com'>info@farrayscenter.com</a><br/><br/><strong>Class hours:</strong> 10:00 to 22:00<br/><strong>Phone hours:</strong> Mon–Fri 10:00 to 22:00<br/><br/><em>Dance school in Barcelona (Eixample) - Near Plaza España and Sants Estació</em>`,
   blogClasesPrincipiantes_faqTitle: `Frequently asked questions about beginner dance classes`,
   blogClasesPrincipiantes_faq1Question: `Can I start dancing without experience?`,
   blogClasesPrincipiantes_faq1Answer: `Yes. We have beginner classes where we start from the basics and explain step by step.`,
-  blogClasesPrincipiantes_faq2Question: `Is there a trial class to get to know the center?`,
-  blogClasesPrincipiantes_faq2Answer: `Yes. During promotional season we offer a free welcome class. The rest of the year you can come meet us with a courtesy class from 10€, or with drop-in participation from 20€.`,
+  blogClasesPrincipiantes_faq2Question: `Is there a welcome class to get to know the center?`,
+  blogClasesPrincipiantes_faq2Answer: `Yes. During promotional season we offer a welcome class. The rest of the year you can come meet us with a courtesy class from 10€, or with drop-in participation from 20€.`,
   blogClasesPrincipiantes_faq3Question: `Do I have to go with a partner?`,
   blogClasesPrincipiantes_faq3Answer: `Not necessarily. In many formats you can come alone. We'll guide you according to the class.`,
   blogClasesPrincipiantes_faq4Question: `What clothes do I need?`,
@@ -17319,10 +17338,10 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // Page Meta
   baLandingPageTitle: 'Bachata Sensual Welcome Class',
   baLandingPageDescription:
-    'Discover Sensual Bachata in Barcelona. Completely FREE Welcome Class. Learn from world champions. Limited spots. No commitment. Book now.',
+    'Discover Sensual Bachata in Barcelona. Welcome Class. Learn from world champions. Limited spots. No commitment. Book now.',
 
   // Hero Section
-  baLandingBadge: 'FREE WELCOME CLASS',
+  baLandingBadge: 'WELCOME CLASS',
   baLandingHeadline: 'Connect and Feel with Sensual Bachata',
   baLandingSubheadline:
     'Learn to dance sensual bachata with Salsa LA world champions. Discover the partner connection, waves and musicality that will make you stand out on any dance floor.',
@@ -17346,7 +17365,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // Experience Section
   baLandingExperienceTitle: 'Want to feel the real connection of partner dancing?',
   baLandingExperienceDesc:
-    "Sensual bachata is not just a dance, it's a conversation without words. It's connecting with your partner through movement, waves and musicality. First time with us? This is your chance: a completely free Sensual Bachata Welcome Class, taught by world champions, no commitment and limited spots.",
+    "Sensual bachata is not just a dance, it's a conversation without words. It's connecting with your partner through movement, waves and musicality. First time with us? This is your chance: a Sensual Bachata Welcome Class, taught by world champions, no commitment and limited spots.",
 
   // Value Stack
   baLandingValueTitle: "What's included in this experience?",
@@ -17359,7 +17378,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   baLandingValueIncluded: 'Included',
   baLandingValueTotal: 'TOTAL VALUE:',
   baLandingValueYourPrice: 'YOUR PRICE TODAY:',
-  baLandingValueFree: 'FREE',
+  baLandingValueFree: 'NO COMMITMENT',
 
   // Special Offer
   baLandingOfferTitle: 'Limited time only',
@@ -17483,7 +17502,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   baLeadModal_consent_link: 'privacy policy',
 
   // Submit
-  baLeadModal_submit: 'Book My Free Class',
+  baLeadModal_submit: 'Book My Welcome Class',
   baLeadModal_submitLoading: 'Processing...',
 
   // Success
@@ -17502,17 +17521,17 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // =====================================================
 
   // SEO
-  jpaLandingPageTitle: "Open Doors Day | Farray's Center Barcelona | FREE Welcome Dance Class",
+  jpaLandingPageTitle: "Open Doors Day | Farray's Center Barcelona | Welcome Dance Class",
   jpaLandingPageDescription:
-    'Come to our Open Doors Day (January 7-31) and try a dance class FOR FREE. Over 25 styles: Dancehall, Contemporary, Hip-Hop, Salsa, Bachata and much more. No commitment.',
+    'Come to our Open Doors Day (January 7-31) and try a dance class TODAY. Over 25 styles: Dancehall, Contemporary, Hip-Hop, Salsa, Bachata and much more. No commitment.',
 
   // Hero Section
   jpaLandingBadge: 'JANUARY 7 TO 31',
-  jpaLandingHeadline: 'Try One Dance Class FOR FREE',
+  jpaLandingHeadline: 'Try One Dance Class TODAY',
   jpaLandingSubheadline:
     'Come meet us during our Open Doors Day and discover your ideal dance style. Over 25 different styles await you. No commitment.',
   jpaLandingCTA: 'BOOK YOUR WELCOME CLASS',
-  jpaLandingTrustText: 'One free class · No commitment · Limited spots',
+  jpaLandingTrustText: 'Welcome class · No commitment · Limited spots',
   jpaLandingTrustActiveStudents: '1,500+ active students',
   jpaLandingTrustYearsExp: '8+ years',
   jpaLandingTrustLocationShort: 'Barcelona - Plaza España',
@@ -17537,7 +17556,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // Schedule Widget
   jpaLandingScheduleTitle: 'Check all our schedules',
   jpaLandingScheduleSubtitle:
-    'Choose the day and style that interests you most for your free welcome class.',
+    'Choose the day and style that interests you most for your welcome class.',
 
   // Value Stack
   jpaLandingValueTitle: "What's included in your welcome class?",
@@ -17548,7 +17567,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   jpaLandingValueItem4: 'Personalized advice to choose your style',
   jpaLandingValueItem5: 'Access to exclusive discount if you decide to sign up',
   jpaLandingValueIncluded: 'Included',
-  jpaLandingValueFree: 'FREE',
+  jpaLandingValueFree: 'NO COMMITMENT',
   jpaLandingValueTotal: 'TOTAL VALUE:',
   jpaLandingValueYourPrice: 'YOUR PRICE TODAY:',
 
@@ -17586,9 +17605,9 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
 
   // FAQs
   jpaLandingFaqTitle: 'Frequently asked questions',
-  jpaLandingObjQ1: 'Can I try more than one free class?',
+  jpaLandingObjQ1: 'Can I try more than one welcome class?',
   jpaLandingObjA1:
-    'The free welcome class is one per person. If after trying it you want to explore other styles before signing up, you can do so by paying the drop-in class price (€20). This way you can truly discover which style best suits you.',
+    'The welcome class is one per person. If after trying it you want to explore other styles before signing up, you can do so by paying the drop-in class price (€20). This way you can truly discover which style best suits you.',
   jpaLandingObjQ2: 'Do I need previous dance experience?',
   jpaLandingObjA2:
     'No, we have classes for all levels. Our teachers adapt classes so beginners and experienced dancers can enjoy equally.',
@@ -17608,7 +17627,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   jpaLandingFinalCTADesc:
     "Join Farray's Center Open Doors Day (January 7-31) and discover your passion for dance. Over 25 styles await you.",
   jpaLandingFinalCTAExtra: '',
-  jpaLandingFinalTrust: 'One free class · No commitment · Exclusive discount',
+  jpaLandingFinalTrust: 'Welcome class · No commitment · Exclusive discount',
 
   // Footer
   jpaLandingFooterRights: 'All rights reserved',
@@ -17627,7 +17646,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // Exit Intent Popup
   jpaExitIntent_title: 'Leaving without booking your class?',
   jpaExitIntent_description:
-    "Don't miss the chance to try a dance class FOR FREE. The Open Doors Day (January 7-31) is a special event with limited spots.",
+    "Don't miss the chance to try a dance class TODAY. The Open Doors Day (January 7-31) is a special event with limited spots.",
   jpaExitIntent_ctaExplore: 'See available classes',
   jpaExitIntent_ctaDancehall: 'Book my welcome class',
   jpaExitIntent_ctaClose: 'Close',
@@ -17638,16 +17657,16 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // =====================================================
 
   // Modal Header
-  jpaLeadModal_title: 'Book your Free Welcome Class',
+  jpaLeadModal_title: 'Book your Welcome Class',
   jpaLeadModal_subtitle: 'Open Doors Day: January 7-31',
 
   // Micro Commitment
-  jpaLeadModal_microCommit_question: 'Would you like to try a FREE dance class?',
-  jpaLeadModal_microCommit_yes: 'Yes, I want my free class!',
+  jpaLeadModal_microCommit_question: 'Would you like to try a dance class?',
+  jpaLeadModal_microCommit_yes: 'Yes, I want my welcome class!',
   jpaLeadModal_microCommit_curious: 'I just want more information',
 
   jpaLeadModal_intro:
-    'Complete the form and receive all the information to book your free welcome class.',
+    'Complete the form and receive all the information to book your welcome class.',
 
   // Benefits
   jpaLeadModal_benefits_title: 'What you will receive:',
@@ -17681,7 +17700,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   jpaLeadModal_consent_link: 'privacy policy',
 
   // Submit
-  jpaLeadModal_submit: 'Book My Free Class',
+  jpaLeadModal_submit: 'Book My Welcome Class',
   jpaLeadModal_submitLoading: 'Processing...',
 
   // Success
@@ -17715,10 +17734,57 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogSalsaVsBachata_summaryBullet4:
     "At Farray's Barcelona we teach both styles for complete dancers",
 
-  // === STATS ===
+  // === STATS (Holographic Cards) ===
   blogSalsaVsBachata_statSalsaOrigenLabel: 'Salsa crystallizes in NYC',
   blogSalsaVsBachata_statBachataOrigenLabel: 'Bachata born in DR',
   blogSalsaVsBachata_statUNESCOLabel: 'Bachata Intangible Heritage',
+  blogSalsaVsBachata_statDemenciaLabel: 'Dementia risk reduction',
+
+  // === ANSWER CAPSULES (72% AI Citation Rate) ===
+  blogSalsaVsBachata_answerCualElegir: 'Direct answer for search engines',
+  blogSalsaVsBachata_answerCualElegirQ: 'Salsa or bachata? Which should I choose?',
+  blogSalsaVsBachata_answerCualElegirA:
+    'If you want energy, spins and fast rhythm, choose salsa. If you prefer sensuality, intimate connection and relaxed tempo, choose bachata. Ideally, learn both: at Latin parties they alternate and the skills are transferable.',
+
+  blogSalsaVsBachata_answerMasFacil: 'Comparative difficulty',
+  blogSalsaVsBachata_answerMasFacilQ: 'Which is easier to learn, salsa or bachata?',
+  blogSalsaVsBachata_answerMasFacilA:
+    'Bachata is generally easier for beginners: its 120-160 BPM tempo is slower than salsa (160-220 BPM) and the basic step is more intuitive. In 2-4 weeks you can dance bachata socially. Salsa requires more initial rhythmic coordination.',
+
+  blogSalsaVsBachata_answerBeneficios: 'Scientific benefits of dancing',
+  blogSalsaVsBachata_answerBeneficiosQ: 'What are the benefits of dancing salsa or bachata?',
+  blogSalsaVsBachata_answerBeneficiosA:
+    'Dancing regularly reduces dementia risk by 76% (NEJM, 2003), burns 400-600 calories per hour, releases endorphins, improves cardiovascular health and creates deep social connections that combat isolation.',
+
+  // === DEFINITIONS (LLM Extraction) ===
+  blogSalsaVsBachata_defSalsaTerm: 'Salsa (dance)',
+  blogSalsaVsBachata_defSalsa:
+    'Salsa is a Latin partner dance originating in New York in the 1960s-70s, fusing Cuban son, mambo, jazz and Afro-Caribbean rhythms. It is characterized by its fast tempo (160-220 BPM), dynamic spins, footwork and overflowing energy. Several styles exist: Cuban salsa (in rueda), salsa on line (LA/NY style) and Puerto Rican salsa.',
+
+  blogSalsaVsBachata_defBachataTerm: 'Bachata (dance)',
+  blogSalsaVsBachata_defBachata:
+    'Bachata is a musical genre and dance originating from the Dominican Republic, emerging in the 1960s in marginal neighborhoods. Declared UNESCO Intangible Heritage in 2019. It is characterized by its sensual tempo (120-160 BPM), pronounced hip movement with "pop" on beat 4, and intimate connection between dancers. Main styles: traditional, sensual and modern bachata.',
+
+  // === STATISTICS CONTENT ===
+  blogSalsaVsBachata_statUNESCOContent:
+    'In 2019, UNESCO declared Dominican bachata Intangible Cultural Heritage of Humanity, recognizing its unique cultural value.',
+  blogSalsaVsBachata_statCaloriasContent:
+    'One hour of Latin dancing burns between 400-600 calories, equivalent to running or swimming, but much more fun.',
+  blogSalsaVsBachata_statDemenciaContent:
+    'Frequent dancing reduces dementia risk by 76%, more than any other physical or cognitive activity studied.',
+  blogSalsaVsBachata_statEndorfinasContent:
+    'Synchronized dancing increases endorphin release by 21% compared to individual exercise.',
+
+  // === CALLOUTS ===
+  blogSalsaVsBachata_calloutTip:
+    "**Tip for beginners**: Start with bachata if you've never danced partner dances. Its slower tempo allows you to focus on connection and leading/following. After 1-2 months, add salsa to your repertoire.",
+  blogSalsaVsBachata_calloutCTA:
+    "**Ready to discover your rhythm?** [Book your welcome class at Farray's](/en/contacto) and try both salsa and bachata. Our instructors with 20+ years of experience will guide you from the first step.",
+
+  // === TESTIMONIAL ===
+  blogSalsaVsBachata_testimonial: 'Student testimonial',
+  blogSalsaVsBachata_testimonialText:
+    "I arrived at Farray's not knowing what to choose between salsa and bachata. Yunaisy recommended trying both and it was the best decision. In 3 months I was already dancing at Latin parties all night long. The atmosphere is incredible and the teachers make everything easy.",
 
   // === INTRODUCTION ===
   blogSalsaVsBachata_intro:
@@ -17804,7 +17870,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogSalsaVsBachata_ambosContent:
     "The truth is that salsa and bachata complement each other perfectly. At Latin parties, the DJ alternates between both genres. If you only know one, you're sitting out half the night. Plus, the skills are transferable: musicality, leading/following, partner connection.",
   blogSalsaVsBachata_ambosFarrays:
-    "At **[Farray's International Dance Center](/en/clases/salsa-bachata-barcelona)** we offer a combined salsa and bachata program that turns you into a versatile dancer. Our instructors, with over 20 years of experience, guide you from zero to social level. [Book your free trial class](/en/contacto) and discover your rhythm... or both.",
+    "At **[Farray's International Dance Center](/en/clases/salsa-bachata-barcelona)** we offer a combined salsa and bachata program that turns you into a versatile dancer. Our instructors, with over 20 years of experience, guide you from zero to social level. [Book your welcome class](/en/contacto) and discover your rhythm... or both.",
 
   // === SECTION 7: CONCLUSION ===
   blogSalsaVsBachata_conclusionTitle: 'Conclusion: Your Rhythm, Your Choice',
@@ -17864,4 +17930,339 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogSalsaVsBachata_refEndorphinsTitle: 'Synchronized Dancing and Endorphin Release',
   blogSalsaVsBachata_refEndorphinsDesc:
     'Research on endorphin release and social cohesion through synchronized dancing.',
+
+  // ============================================================================
+  // BLOG: HOW TO OVERCOME THE FEAR OF DANCING
+  // ============================================================================
+
+  // === META ===
+  blogPerderMiedoBailar_title:
+    'How to Overcome the Fear of Dancing: A Scientific Guide for Beginners',
+  blogPerderMiedoBailar_excerpt:
+    'Discover proven techniques to overcome shyness and the fear of dancing. 80% of adults feel anxiety when dancing, but with the right approach, 90% overcome it in weeks.',
+  blogPerderMiedoBailar_breadcrumbCurrent: 'How to Overcome the Fear of Dancing',
+
+  // === SUMMARY BULLETS ===
+  blogPerderMiedoBailar_summaryBullet1:
+    "80% of adults feel social anxiety when dancing: it's completely normal",
+  blogPerderMiedoBailar_summaryBullet2:
+    'Scientific gradual exposure techniques work in 85% of cases',
+  blogPerderMiedoBailar_summaryBullet3:
+    'With 3-6 classes in a safe environment, 90% lose their shyness',
+  blogPerderMiedoBailar_summaryBullet4:
+    "At Farray's Barcelona we create a judgment-free space for beginners",
+
+  // === STATS ===
+  blogPerderMiedoBailar_statAnsiedadLabel: 'Adults with dancing anxiety',
+  blogPerderMiedoBailar_statClasesLabel: 'Classes to feel comfortable',
+  blogPerderMiedoBailar_statExitoLabel: 'Students who overcome fear',
+  blogPerderMiedoBailar_statEndorfinasLabel: 'More endorphins dancing in groups',
+
+  // === ANSWER CAPSULES ===
+  blogPerderMiedoBailar_answerComoPerder: 'Direct answer: how to lose the fear',
+  blogPerderMiedoBailar_answerComoPerderQ: 'How can I overcome the fear of dancing?',
+  blogPerderMiedoBailar_answerComoPerderA:
+    'To overcome the fear of dancing: (1) Choose a school with a safe, judgment-free environment, (2) Start with beginner classes where everyone is at your level, (3) Practice gradual exposure - each class gets easier, (4) Remember that most adults feel the same and, based on our 20+ years of experience, the vast majority overcome it within a few weeks.',
+
+  blogPerderMiedoBailar_answerEsNormal: 'Is it normal to feel shy?',
+  blogPerderMiedoBailar_answerEsNormalQ: 'Is it normal to feel shy or afraid to dance?',
+  blogPerderMiedoBailar_answerEsNormalA:
+    'Yes, it\'s completely normal. According to Psychology Today, social anxiety when dancing in public affects most adults to varying degrees. The fear of being judged and of "doing it wrong" are natural evolutionary responses. The good news: with gradual exposure in a safe environment, this fear can be overcome.',
+
+  blogPerderMiedoBailar_answerCuantoTiempo: 'How long to lose the fear?',
+  blogPerderMiedoBailar_answerCuantoTiempoQ:
+    'How long does it take to overcome the fear of dancing?',
+  blogPerderMiedoBailar_answerCuantoTiempoA:
+    'In our 20+ years of teaching experience, the vast majority of students feel comfortable after 3-6 classes. The first class is the hardest; after that, each session becomes easier and more fun. Within a month of regular classes, most dance with confidence.',
+
+  // === DEFINITIONS ===
+  blogPerderMiedoBailar_defMiedoEscenicoTerm: 'Stage fright (in dancing)',
+  blogPerderMiedoBailar_defMiedoEscenico:
+    'Stage fright in dancing is a form of social anxiety that manifests as intense fear of dancing in front of others. It is characterized by negative anticipatory thoughts ("they will judge me", "I will do it wrong"), physical symptoms (sweating, muscle tension) and avoidance behaviors. It is a natural response that can be overcome with gradual exposure and practice in a safe environment.',
+
+  blogPerderMiedoBailar_defAnsiedadSocialTerm: 'Social anxiety',
+  blogPerderMiedoBailar_defAnsiedadSocial:
+    'Social anxiety is an intense fear of situations where one can be evaluated by others. In the context of dancing, it manifests as fear of looking clumsy, not following the rhythm, or being the center of attention. It affects most adults to varying degrees and is the main barrier to starting to dance.',
+
+  // === INTRODUCTION ===
+  blogPerderMiedoBailar_intro:
+    'Would you like to dance but something holds you back? That knot in your stomach when you think of a dance floor, that little voice saying "everyone will look at me", that fear of "doing it wrong"... If you identify with this, you\'re in the right place. And above all: **you\'re not alone**.',
+  blogPerderMiedoBailar_intro2:
+    "At **[Farray's International Dance Center](/en/clases)** we've been helping people like you take the first step for over 20 years. We've seen hundreds of students arrive with trembling legs and, weeks later, enjoy dancing without thinking about anything else. This guide explains why we feel afraid to dance and, more importantly, **how to overcome it with techniques that work**.",
+
+  // === SECTION 1 ===
+  blogPerderMiedoBailar_porQueMiedoTitle: 'Why We Fear Dancing: The Science Behind It',
+  blogPerderMiedoBailar_porQueMiedoContent:
+    "The fear of dancing is not a weakness or something to be ashamed of. It's a completely natural evolutionary response. Our brain is programmed to avoid situations where we can be negatively judged by the group, because in ancestral times, social rejection meant real danger.",
+  blogPerderMiedoBailar_statAnsiedadContent:
+    'Social anxiety when dancing is one of the main barriers to signing up for dance classes or going out to dance.',
+  blogPerderMiedoBailar_porQueMiedoContent2:
+    'The good news is that, just as we learned this fear, we can unlearn it. The brain is plastic: with the right experiences, the neural connections associating "dance" with "danger" get rewritten. The key is **gradual exposure in a safe environment**.',
+
+  // === SECTION 2 ===
+  blogPerderMiedoBailar_miedosComunesTitle:
+    'The 5 Most Common Dancing Fears (and How to Overcome Them)',
+  blogPerderMiedoBailar_miedosComunesIntro:
+    "After 20 years of teaching, we've identified the most common fears. Recognizing them is the first step to overcoming them:",
+  blogPerderMiedoBailar_miedosListaTitle: 'The most frequent fears:',
+  blogPerderMiedoBailar_miedo1:
+    '**"I have no rhythm"** – Rhythm can be trained. 95% of people who say they "have no rhythm" simply never practiced it. In a few classes, your ear will tune in.',
+  blogPerderMiedoBailar_miedo2:
+    '**"Everyone will look at me"** – Reality: in class, everyone is focused on their own feet. No one judges you because everyone started the same way.',
+  blogPerderMiedoBailar_miedo3:
+    '**"I\'m too clumsy/old/inflexible"** – Social dancing doesn\'t require acrobatics. People of all ages and conditions dance and enjoy themselves.',
+  blogPerderMiedoBailar_miedo4:
+    '**"I don\'t want to look foolish"** – The only foolish thing is sitting while others enjoy. Everyone makes mistakes at first; it\'s part of the process.',
+  blogPerderMiedoBailar_miedo5:
+    '**"I don\'t have a partner"** – Most of our students come alone. In class, partners rotate constantly; you don\'t need to come accompanied.',
+
+  // === SECTION 3 ===
+  blogPerderMiedoBailar_tecnicasTitle: 'Scientific Techniques to Overcome the Fear of Dancing',
+  blogPerderMiedoBailar_tecnicasIntro:
+    'Behavioral psychology has shown that gradual exposure is the most effective method for overcoming phobias and social anxieties. Applied to dancing:',
+  blogPerderMiedoBailar_statExposicionContent:
+    'Exposure-based treatments show high effectiveness in managing social anxiety.',
+  blogPerderMiedoBailar_tecnicasListaTitle: 'Steps to overcome fear:',
+  blogPerderMiedoBailar_tecnica1:
+    '**Gradual exposure**: Start with beginner classes where everyone is at the same level. Each class will be a bit easier than the last.',
+  blogPerderMiedoBailar_tecnica2:
+    '**Safe environment**: Choose a school where teachers create a judgment-free space. Mistakes are part of learning, not a reason for shame.',
+  blogPerderMiedoBailar_tecnica3:
+    '**Cognitive restructuring**: Change your inner dialogue from "I\'m going to look foolish" to "I\'m learning something new and that\'s brave".',
+  blogPerderMiedoBailar_tecnica4:
+    '**Celebrate small victories**: Every class you complete is an achievement. Progress in dancing is measurable and motivating.',
+  blogPerderMiedoBailar_statEndorfinasContent:
+    'Studies show that dancing in sync with others is associated with increased pain tolerance, an indirect indicator of endorphin release and natural well-being.',
+
+  // === SECTION 4 ===
+  blogPerderMiedoBailar_primerPasoTitle: 'Your First Step: Classes for Absolute Beginners',
+  blogPerderMiedoBailar_primerPasoContent:
+    "The first class is always the hardest, but also the most transformative. At **[Farray's](/en/clases)** we offer a welcome class designed especially for people who have never danced or who feel very shy.",
+  blogPerderMiedoBailar_calloutTip:
+    "**Tip for your first class**: Arrive 10 minutes early to get to know the space and breathe calmly. Wear comfortable clothes you won't worry about. Remember: everyone there started exactly like you. Farray's teachers are trained to make you feel welcome from the first moment.",
+  blogPerderMiedoBailar_statExitoContent:
+    'Most students describe a notable change in their perception after the first few weeks of regular practice.',
+  blogPerderMiedoBailar_primerPasoContent2:
+    'Which dance to choose? For shy beginners, we recommend **[bachata](/en/bachata)** for its slower tempo and intuitive movements. Once you gain confidence, you can expand to **[salsa](/en/salsa-cubana)** or other styles. In our **[combined classes](/en/clases/salsa-bachata-barcelona)** you can try both.',
+
+  // === TESTIMONIAL ===
+  blogPerderMiedoBailar_testimonial: 'Student testimonial',
+  blogPerderMiedoBailar_testimonialText:
+    "I arrived at Farray's at 42, convinced it was impossible for me to dance. I had spent my whole life rejecting party invitations out of embarrassment. The first class I was paralyzed, but Yunaisy made me feel like I was in the right place. Three months later, I was the one organizing a dance outing with my friends. Losing the fear of dancing has been one of the best decisions of my life.",
+
+  // === SECTION 5 ===
+  blogPerderMiedoBailar_ambienteSeguroTitle: 'How to Choose a School with a Safe Environment',
+  blogPerderMiedoBailar_ambienteSeguroIntro:
+    'Not all dance schools are the same. To overcome fear, you need a supportive environment. This is what you should look for:',
+  blogPerderMiedoBailar_checklistTitle: 'Good school checklist:',
+  blogPerderMiedoBailar_check1:
+    '**Real level classes**: Beginner means beginner. No one should feel out of place.',
+  blogPerderMiedoBailar_check2:
+    '**Empathetic teachers**: Who normalize mistakes and celebrate small progress.',
+  blogPerderMiedoBailar_check3:
+    "**Partner rotation**: So you don't feel pressured to come accompanied.",
+  blogPerderMiedoBailar_check4:
+    '**Judgment-free environment**: Where laughing at yourself is normal and no one criticizes.',
+  blogPerderMiedoBailar_check5:
+    '**Accessible trial class**: So you can experience the atmosphere before committing.',
+  blogPerderMiedoBailar_statSatisfaccionContent:
+    'Our Google Reviews score: 4.9/5 based on 127 reviews, many from students who arrived afraid.',
+
+  // === CONCLUSION ===
+  blogPerderMiedoBailar_conclusionTitle: 'Conclusion: Fear is Temporary, Dancing is Forever',
+  blogPerderMiedoBailar_conclusionContent:
+    "The fear of dancing is real, but it's also overcomable. Millions of people have done it before you. The difference between those who dance and those who watch is not talent, it's the decision to take the first step despite the fear.",
+  blogPerderMiedoBailar_statDemenciaContent:
+    'Dancing regularly reduces dementia risk by 76%, more than any other physical or cognitive activity. Your brain will thank you.',
+  blogPerderMiedoBailar_conclusionCTA:
+    "Ready to transform fear into movement? Your future dancing self is waiting. And remember: at **[Farray's](/en/contacto)**, the only requirement is wanting to try.",
+  blogPerderMiedoBailar_calloutCTA:
+    '**Ready to take the first step?** [Book your welcome class](/en/contacto) in a safe, judgment-free environment. Our teachers with 20+ years of experience will guide you patiently. The vast majority of students overcome their fear within weeks. Will you be next?',
+
+  // === FAQ SECTION ===
+  blogPerderMiedoBailar_faqTitle: 'FAQ: Overcoming the Fear of Dancing',
+  blogPerderMiedoBailar_faq1Question: 'Is it normal to be afraid of dancing?',
+  blogPerderMiedoBailar_faq1Answer:
+    "Completely normal. **Most adults** experience some degree of social anxiety when dancing. It's a natural evolutionary response to the fear of being judged. The good news: it's overcome with gradual exposure in a safe environment.",
+  blogPerderMiedoBailar_faq2Question: 'How to overcome the embarrassment of dancing in public?',
+  blogPerderMiedoBailar_faq2Answer:
+    'The key is **gradual exposure**: start in beginner classes where everyone is at your level, in a school with a judgment-free atmosphere. Each class gets easier. Based on our experience, the vast majority of students notice a significant change within a few weeks.',
+  blogPerderMiedoBailar_faq3Question: 'Are dance classes for people with no experience?',
+  blogPerderMiedoBailar_faq3Answer:
+    "Yes, beginner level classes are designed for people who have **never danced**. At [Farray's](/en/clases) we rigorously separate levels so no one feels out of place.",
+  blogPerderMiedoBailar_faq4Question: 'Can I go to dance classes without a partner?',
+  blogPerderMiedoBailar_faq4Answer:
+    "Of course. **Most of our students come alone**. In class, partners rotate constantly, so you don't need to come accompanied. It's a great way to meet new people.",
+  blogPerderMiedoBailar_faq5Question: 'How long does it take to lose the fear of dancing?',
+  blogPerderMiedoBailar_faq5Answer:
+    'It varies by person, but most students feel comfortable after **3-6 classes** (about 2-3 weeks). The first class is the hardest; after that, each session is easier and more fun.',
+  blogPerderMiedoBailar_faq6Question: 'Which dance is easiest for shy beginners?',
+  blogPerderMiedoBailar_faq6Answer:
+    "We recommend **[bachata](/en/bachata)** for its slower tempo (120-160 BPM) and intuitive movements. It's easier to connect with the rhythm from the start. Once you gain confidence, you can expand to salsa or other styles.",
+  blogPerderMiedoBailar_faq7Question: 'Are there special classes for people with anxiety?',
+  blogPerderMiedoBailar_faq7Answer:
+    "Our beginner level classes are designed with anxious people in mind. Small groups, empathetic teachers, judgment-free environment. At [Farray's](/en/contacto) we create a safe space for everyone.",
+  blogPerderMiedoBailar_faq8Question: 'What is the atmosphere like in the first classes?',
+  blogPerderMiedoBailar_faq8Answer:
+    'Relaxed and welcoming. Teachers normalize mistakes, small progress is celebrated, and no one judges anyone. All students started just like you. The atmosphere is one of mutual support and good humor.',
+
+  // === REFERENCES ===
+  blogPerderMiedoBailar_referencesIntro:
+    'This article is supported by scientific studies and our 20+ years of experience:',
+  blogPerderMiedoBailar_refPsychologyTodayTitle: 'Social Anxiety – Psychology Today',
+  blogPerderMiedoBailar_refPsychologyTodayDesc:
+    'Resource on social anxiety, its causes and evidence-based treatments.',
+  blogPerderMiedoBailar_refNEJMTitle: 'Leisure Activities and Dementia Risk – NEJM',
+  blogPerderMiedoBailar_refNEJMDesc:
+    'Reference study showing that frequent dancing reduces dementia risk by 76%.',
+  blogPerderMiedoBailar_refFrontiersTitle: 'Dance and Psychological Well-being – Frontiers',
+  blogPerderMiedoBailar_refFrontiersDesc:
+    'Research on the positive effects of dance on mental health and emotional well-being.',
+  blogPerderMiedoBailar_refEndorphinsTitle: 'Synchronized Dancing and Endorphin Release',
+  blogPerderMiedoBailar_refEndorphinsDesc:
+    'Study showing how group dancing increases endorphin release by 21%.',
+
+  // =============================================================================
+  // BOOKING WIDGET - Enterprise Booking System
+  // =============================================================================
+
+  // Page Meta
+  booking_meta_title: "Book Your Welcome Class | Farray's Center Barcelona",
+  booking_meta_description:
+    'Book your welcome class at the Barcelona dance school. Over 25 styles: salsa, bachata, hip hop, ballet and more. Exclusive Farray® Method.',
+
+  // Header
+  booking_title: 'Book Your Welcome Class',
+  booking_subtitle: 'Choose your style, select a class and confirm your attendance',
+  booking_step1: 'Choose Style',
+  booking_step2: 'Select Class',
+  booking_step3: 'Confirm Details',
+
+  // Style Selection
+  booking_style_title: 'Which style interests you?',
+  booking_style_all: 'All styles',
+
+  // Class Selection
+  booking_class_title: 'Available classes',
+  booking_class_empty: 'No classes available for this style',
+  booking_class_loading: 'Loading classes...',
+  booking_class_error: 'Error loading classes. Please try again.',
+  booking_week_this: 'This week',
+  booking_week_prev: 'Previous week',
+  booking_week_next: 'Next week',
+  booking_style_clear: 'Clear style filter',
+  booking_class_retry: 'Retry',
+  booking_class_share: 'Share link to this class',
+  booking_class_copied: 'Link copied',
+  booking_class_spots: '{spots} spots available',
+  booking_class_full: 'Full',
+  booking_class_select: 'Select',
+  booking_class_selected: 'Selected',
+  booking_class_teacher: 'with {teacher}',
+  booking_class_duration: '{duration} min',
+  booking_class_level: 'Level: {level}',
+  booking_level_beginner: 'Beginner',
+  booking_level_intermediate: 'Intermediate',
+  booking_level_advanced: 'Advanced',
+  booking_level_all: 'All levels',
+
+  // Advanced Filters
+  booking_filter_level: 'Level',
+  booking_filter_day: 'Day',
+  booking_filter_time: 'Time',
+  booking_filter_instructor: 'Instructor',
+  booking_filter_clear_all: 'Clear filters',
+  booking_filter_all: 'All',
+  booking_filter_level_iniciacion: 'Beginner',
+  booking_filter_level_basico: 'Basic',
+  booking_filter_level_intermedio: 'Intermediate',
+  booking_filter_level_avanzado: 'Advanced',
+  booking_filter_level_abierto: 'All levels',
+  booking_filter_day_monday: 'Monday',
+  booking_filter_day_tuesday: 'Tuesday',
+  booking_filter_day_wednesday: 'Wednesday',
+  booking_filter_day_thursday: 'Thursday',
+  booking_filter_day_friday: 'Friday',
+  booking_filter_day_saturday: 'Saturday',
+  booking_filter_day_sunday: 'Sunday',
+  booking_filter_time_morning: 'Morning (before 12pm)',
+  booking_filter_time_afternoon: 'Afternoon (12-6pm)',
+  booking_filter_time_evening: 'Evening (after 6pm)',
+
+  // Form Fields
+  booking_form_title: 'Your details',
+  booking_field_firstName: 'First name',
+  booking_field_lastName: 'Last name',
+  booking_field_email: 'Email',
+  booking_field_phone: 'Phone',
+  booking_placeholder_firstName: 'Your first name',
+  booking_placeholder_lastName: 'Your last name',
+  booking_placeholder_email: 'your@email.com',
+  booking_placeholder_phone: '+34 612 345 678',
+
+  // RGPD Checkboxes - Mandatory
+  booking_consent_terms: 'I have read and accept the',
+  booking_consent_terms_link: 'general terms and conditions',
+  booking_consent_terms_required: 'You must accept the general terms and conditions',
+
+  booking_consent_marketing:
+    'I authorize receiving commercial communications about activities, promotions and news',
+  booking_consent_marketing_required: 'You must authorize communications to continue',
+
+  booking_consent_age:
+    'I confirm that I am 16 years or older, or have authorization from my legal guardian',
+  booking_consent_age_required: 'You must confirm your age to continue',
+
+  booking_consent_norefund:
+    'I understand that the welcome class is non-refundable once attendance is confirmed',
+  booking_consent_norefund_required: 'You must accept the no-refund policy',
+
+  booking_consent_privacy: 'I have read and accept the',
+  booking_consent_privacy_link: 'privacy policy',
+  booking_consent_privacy_required: 'You must accept the privacy policy',
+
+  // RGPD Checkboxes - Conditional (Heels)
+  booking_consent_heels:
+    'I understand and accept that this class is performed in high heels. I commit to using appropriate footwear and assume responsibility for my safety',
+  booking_consent_heels_required: 'You must accept the high heels conditions',
+
+  // RGPD Checkboxes - Optional
+  booking_consent_image:
+    'I authorize the use of my image in photos and videos taken during classes for promotional purposes on social media and website',
+  booking_consent_image_optional: '(Optional)',
+
+  // Submit
+  booking_submit: 'Confirm Booking',
+  booking_submit_loading: 'Processing...',
+
+  // Success State
+  booking_success_title: 'Booking Confirmed!',
+  booking_success_message:
+    'Your spot is secured. You will receive a WhatsApp and email with all the details.',
+  booking_success_class: 'Booked class',
+  booking_success_date: 'Date and time',
+  booking_success_location: 'Location',
+  booking_success_address: "Farray's Center - C/ Mallorca 179, Barcelona",
+  booking_success_reminder: 'We will remind you 24h before the class',
+  booking_success_cta: 'View full schedule',
+  booking_success_close: 'Close',
+
+  // Error State
+  booking_error_title: 'Processing error',
+  booking_error_message: 'An error occurred. Please try again.',
+  booking_error_cta: 'Retry',
+  booking_error_firstName: 'Please enter your first name',
+  booking_error_lastName: 'Please enter your last name',
+  booking_error_email: 'Please enter a valid email',
+  booking_error_phone: 'Please enter a valid phone number',
+  booking_error_class: 'Please select a class',
+
+  // Legal Text
+  booking_legal_responsible: "Data Controller: Farray's International Dance Center S.L.",
+  booking_legal_purpose: 'Purpose: Manage your booking and send you information about the class.',
+  booking_legal_legitimation: 'Legal basis: Your express consent.',
+  booking_legal_recipients: 'Recipients: Momence (booking management), Meta (conversion analysis).',
+  booking_legal_rights:
+    'Rights: Access, rectification, erasure, restriction, portability and objection.',
+  booking_legal_info: 'More information in our privacy policy.',
 };

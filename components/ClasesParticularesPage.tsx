@@ -6,6 +6,7 @@ import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import FAQSection from './FAQSection';
 import Icon from './Icon';
+import OptimizedImage from './OptimizedImage';
 import { ReviewsSection } from './reviews';
 
 const ClasesParticularesPage: React.FC = () => {
@@ -375,36 +376,36 @@ const ClasesParticularesPage: React.FC = () => {
             </AnimateOnScroll>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-              <AnimateOnScroll delay={100}>
-                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 text-center hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
-                  <div className="text-5xl md:text-6xl font-black text-primary-accent mb-4">
+              <AnimateOnScroll delay={100} className="h-full">
+                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 text-center hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 h-full flex flex-col justify-center">
+                  <div className="text-5xl md:text-6xl font-black text-primary-accent mb-4 whitespace-nowrap">
                     {t('particularesPage_stat1_value')}
                   </div>
                   <div className="text-lg text-neutral/90">{t('particularesPage_stat1_label')}</div>
                 </div>
               </AnimateOnScroll>
 
-              <AnimateOnScroll delay={200}>
-                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 text-center hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
-                  <div className="text-5xl md:text-6xl font-black text-primary-accent mb-4">
+              <AnimateOnScroll delay={200} className="h-full">
+                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 text-center hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 h-full flex flex-col justify-center">
+                  <div className="text-5xl md:text-6xl font-black text-primary-accent mb-4 whitespace-nowrap">
                     {t('particularesPage_stat2_value')}
                   </div>
                   <div className="text-lg text-neutral/90">{t('particularesPage_stat2_label')}</div>
                 </div>
               </AnimateOnScroll>
 
-              <AnimateOnScroll delay={300}>
-                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 text-center hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
-                  <div className="text-5xl md:text-6xl font-black text-primary-accent mb-4">
+              <AnimateOnScroll delay={300} className="h-full">
+                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 text-center hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 h-full flex flex-col justify-center">
+                  <div className="text-5xl md:text-6xl font-black text-primary-accent mb-4 whitespace-nowrap">
                     {t('particularesPage_stat3_value')}
                   </div>
                   <div className="text-lg text-neutral/90">{t('particularesPage_stat3_label')}</div>
                 </div>
               </AnimateOnScroll>
 
-              <AnimateOnScroll delay={400}>
-                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 text-center hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300">
-                  <div className="text-5xl md:text-6xl font-black text-primary-accent mb-4">
+              <AnimateOnScroll delay={400} className="h-full">
+                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 text-center hover:border-primary-accent hover:shadow-accent-glow transition-all duration-300 h-full flex flex-col justify-center">
+                  <div className="text-5xl md:text-6xl font-black text-primary-accent mb-4 whitespace-nowrap">
                     {t('particularesPage_stat4_value')}
                   </div>
                   <div className="text-lg text-neutral/90">{t('particularesPage_stat4_label')}</div>
@@ -516,11 +517,16 @@ const ClasesParticularesPage: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
               <AnimateOnScroll>
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                  <div className="aspect-[4/3] bg-gradient-to-br from-primary-dark via-black to-primary-dark/50">
-                    <div className="absolute inset-0 flex items-center justify-center text-neutral/70 text-xl font-bold">
-                      {t('particularesPage_imagePlaceholder')}
-                    </div>
-                  </div>
+                  <OptimizedImage
+                    src="/images/clases-particulares/img/clase-particular-baile"
+                    alt="Clase particular de baile en Barcelona - Atención personalizada en Farray's Center"
+                    aspectRatio="4/3"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    objectFit="cover"
+                    placeholder="color"
+                    placeholderColor="#1a0a1e"
+                    className="w-full h-full"
+                  />
                 </div>
               </AnimateOnScroll>
 

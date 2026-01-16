@@ -2,7 +2,7 @@ export const fr = {
   // General
   pageTitle: "Farray's International Dance Center | École de Danse à Barcelone",
   metaDescription:
-    'École de danse à Barcelone avec +25 styles: salsa, bachata, hip hop, ballet et plus. Méthode Farray® exclusive. Centre CID-UNESCO. Premier cours gratuit.',
+    'École de danse à Barcelone avec +25 styles: salsa, bachata, hip hop, ballet et plus. Méthode Farray® exclusive. Centre CID-UNESCO. Réservez votre cours de bienvenue.',
   skipToMainContent: 'Passer au contenu principal',
   ratingAriaLabel: '{rating} sur 5 étoiles',
   closeButton: 'Fermer',
@@ -58,7 +58,7 @@ export const fr = {
   heroTagline: "Danser, c'est travailler à son bonheur.",
   heroValue:
     "Vous n'avez pas besoin de plus de cours de danse. Vous avez besoin des bons cours. Si vous cherchez des cours de danse à Barcelone où vous progressez enfin et ne vous sentez pas comme un simple numéro, vous êtes au bon endroit. Avec la Méthode Farray®, vous apprenez bien, vite et avec style… et vous vous amusez plus que dans n'importe quelle salle de sport.",
-  heroCTA1: "Réservez Votre Cours d'Essai",
+  heroCTA1: 'Réservez Votre Cours de Bienvenue',
   heroCTA2: 'Découvrir les Cours',
   heroScroll: 'Révélez Votre Potentiel',
   // Philosophy
@@ -198,6 +198,8 @@ export const fr = {
   serviceMerchandisingCTA: 'Voir les Produits',
   // Teachers
   teachersTitle: 'Rencontrez Nos Professeurs',
+  teachersSubtitle:
+    "Professionnels cubains formés dans les meilleures écoles d'art de Cuba, avec des décennies d'expérience internationale",
   teachersCTA: 'Voir Tous les Professeurs',
   teacher1Specialty: 'Fondatrice et Maître | Méthode Farray®',
   teacher1Bio:
@@ -230,7 +232,7 @@ export const fr = {
   finalCtaSubtitleLine2: "La différence, c'est qu'elles ont fait le premier pas.",
   finalCtaSubtitleLine3: "Faites-le aussi. Inscrivez-vous aujourd'hui.",
   finalCtaButton1: 'Devenez Membre Maintenant',
-  finalCtaButton2: "Réservez votre Cours d'Essai",
+  finalCtaButton2: 'Réservez votre Cours de Bienvenue',
   // Footer
   followOnFacebook: 'Suivez-nous sur Facebook',
   followOnInstagram: 'Suivez-nous sur Instagram',
@@ -416,7 +418,7 @@ export const fr = {
     'Nous sommes vraiment multidisciplinaires : Salsa, Bachata, Kizomba, Dancehall, Hip Hop, Reggaeton, Commercial Dance, Ballet, Jazz, Contemporain, Heels et plus. Des rythmes latins à la danse urbaine et classique. La Méthode Farray® fusionne tout cela avec une pédagogie unique qui combine discipline russe, saveur afro-descendante et innovation globale. Ici vous trouvez votre style... ou vous en découvrez plusieurs.',
   homeFaqQ5: "Ai-je besoin d'expérience préalable pour commencer ?",
   homeFaqA5:
-    "Pas du tout. Nous avons des cours du niveau débutant absolu au niveau avancé/professionnel. La Méthode Farray® est conçue pour que vous progressiez rapidement quel que soit votre point de départ. Beaucoup de nos meilleurs élèves ont commencé sans jamais avoir dansé. Ce qui compte, c'est vouloir apprendre et s'amuser. Votre premier cours est gratuit pour que vous puissiez essayer sans engagement.",
+    "Pas du tout. Nous avons des cours du niveau débutant absolu au niveau avancé/professionnel. La Méthode Farray® est conçue pour que vous progressiez rapidement quel que soit votre point de départ. Beaucoup de nos meilleurs élèves ont commencé sans jamais avoir dansé. Ce qui compte, c'est vouloir apprendre et s'amuser. Votre cours de bienvenue est spécial pour que vous puissiez essayer sans engagement.",
   homeFaqQ6: 'Proposez-vous des spectacles, événements ou shows ?',
   homeFaqA6:
     "Oui ! Nous organisons des showcases dans des théâtres professionnels, participons aux événements culturels de Barcelone, aux compétitions, aux workshops avec des professeurs internationaux et aux fêtes thématiques. Si vous voulez monter sur scène, c'est votre chance. Et si vous préférez juste profiter de la danse, c'est parfait aussi. Vous décidez de votre niveau d'implication.",
@@ -425,7 +427,7 @@ export const fr = {
     "Le CID-UNESCO (Conseil International de la Danse) est l'organisation officielle de l'UNESCO pour la danse dans le monde. Que Farray's soit accrédité par eux signifie que nous respectons les plus hauts standards d'enseignement internationaux. Yunaisy Farray est membre active. Cela garantit la qualité pédagogique, la reconnaissance internationale et le professionnalisme sérieux.",
   homeFaqQ8: "Puis-je essayer un cours de danse avant de m'inscrire ?",
   homeFaqA8:
-    "Selon la saison, le cours d'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L'idée est que vous puissiez essayer l'expérience sans engagement. Réservez votre place en cliquant sur le bouton \"Réservez Votre Cours d'Essai\" en haut de cette page.",
+    'Selon la saison, le cours de bienvenue pour les résidents a un prix spécial de bienvenue. L\'idée est que vous puissiez essayer l\'expérience sans engagement. Réservez votre place en cliquant sur le bouton "Réservez Votre Cours de Bienvenue" en haut de cette page.',
   // Dancehall Key Stats
   classMinutes: 'Minutes de Cours',
   caloriesBurned: 'Calories Brûlées',
@@ -460,7 +462,7 @@ export const fr = {
     "Bien sûr ! En fait, nous le recommandons. Apprendre plusieurs styles de danse fait de vous un danseur plus complet et polyvalent. Par exemple, le ballet améliore votre posture et votre technique pour la salsa, tandis que le hip hop peut rendre votre bachata plus dynamique. Nos forfaits de cours vous permettent d'assister à différents types de cours selon vos intérêts. Beaucoup de nos étudiants les plus avancés pratiquent 3 à 4 styles simultanément.",
   classesFaqQ3: 'Comment savoir quel niveau me convient ?',
   classesFaqA3:
-    "Si c'est votre premier cours, nous recommandons toujours de commencer au niveau fondamentaux ou débutants. Cependant, si vous avez une expérience préalable en danse, nos instructeurs peuvent vous évaluer lors de votre premier cours d'essai et vous recommander le niveau le plus approprié. Vous pouvez aussi essayer un cours de niveau intermédiaire si vous sentez que les fondamentaux sont trop basiques. L'important est que vous vous sentiez challengé mais pas submergé.",
+    "Si c'est votre premier cours, nous recommandons toujours de commencer au niveau fondamentaux ou débutants. Cependant, si vous avez une expérience préalable en danse, nos instructeurs peuvent vous évaluer lors de votre premier cours de bienvenue et vous recommander le niveau le plus approprié. Vous pouvez aussi essayer un cours de niveau intermédiaire si vous sentez que les fondamentaux sont trop basiques. L'important est que vous vous sentiez challengé mais pas submergé.",
   classesFaqQ4: 'À quelle fréquence devrais-je assister aux cours pour voir des progrès ?',
   classesFaqA4:
     "Pour un progrès constant et notable, nous recommandons d'assister au moins 2 fois par semaine. À cette fréquence, la plupart des étudiants voient des améliorations significatives en 2-3 mois. Si vous pouvez assister 3 à 4 fois par semaine, les progrès seront encore plus rapides. Cependant, même un cours par semaine vous permettra d'avancer, bien qu'à un rythme plus graduel. La constance est plus importante que l'intensité.",
@@ -478,7 +480,7 @@ export const fr = {
   // ===== DancehallPage (Cours de Dancehall Barcelona) =====
   dhV3PageTitle: "Cours de Dancehall à Barcelone | Académie Farray's Center",
   dhV3MetaDescription:
-    "Apprenez le Dancehall jamaïcain authentique à Barcelone. Cours du débutant à l'avancé. Professeurs experts. Entre Plaça España et Sants. Essayez gratuitement !",
+    "Apprenez le Dancehall jamaïcain authentique à Barcelone. Cours du débutant à l'avancé. Professeurs experts. Entre Plaça España et Sants. Réservez votre cours de bienvenue !",
 
   dhV3BreadcrumbHome: 'Accueil',
   dhV3BreadcrumbClasses: 'Cours de Danse Barcelone',
@@ -493,7 +495,7 @@ export const fr = {
 
   dhV3CTA1: 'Devenez Membre Maintenant',
   dhV3CTA1Subtext: 'Places limitées ce mois-ci',
-  dhV3CTA2: "Réservez Votre Cours d'Essai",
+  dhV3CTA2: 'Réservez Votre Cours de Bienvenue',
   dhV3CTA2Subtext: 'Valable pour une durée limitée',
 
   dhV3WhatIsTitle: "Qu'est-ce que le Dancehall et pourquoi cartonne-t-il à Barcelone ?",
@@ -541,6 +543,23 @@ export const fr = {
   testimonialsNotRequested: 'Témoignages Non Sollicités de Nos Étudiants',
   excellent: 'EXCELLENT',
   basedOnReviews: 'Basé sur {count} avis',
+
+  // Reviews UI
+  reviews_seeMore: 'Voir plus',
+  reviews_seeLess: 'Voir moins',
+  reviews_starRating: '{rating} sur 5 étoiles',
+  reviews_google: 'Google',
+
+  // Review Categories
+  reviews_category_salsa: 'Salsa',
+  reviews_category_bachata: 'Bachata',
+  reviews_category_heels: 'Heels',
+  reviews_category_urbanas: 'Urbain',
+  reviews_category_contemporaneo: 'Contemporain',
+  reviews_category_afro: 'Afro',
+  reviews_category_fitness: 'Fitness',
+  reviews_category_general: 'Général',
+  reviews_translatedFrom: "Traduit de l'espagnol",
 
   dhV3IdentifyTitle: "Vous vous identifiez à l'une de ces situations ?",
   dhV3Identify1:
@@ -669,7 +688,7 @@ export const fr = {
     "Oui. Nous offrons des réductions si vous vous inscrivez à plus d'un cours. Consultez le site web ou demandez-nous directement pour plus de détails.",
   dhV3FaqQ9: "Puis-je essayer un cours de Dancehall avant de m'inscrire ?",
   dhV3FaqA9:
-    "Selon la saison, le cours d'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L'idée est que vous puissiez essayer l'expérience sans engagement. Réservez votre place en cliquant sur le bouton \"Réservez Votre Cours d'Essai\" en haut de cette page.",
+    'Selon la saison, le cours de bienvenue pour les résidents a un prix spécial de bienvenue. L\'idée est que vous puissiez essayer l\'expérience sans engagement. Réservez votre place en cliquant sur le bouton "Réservez Votre Cours de Bienvenue" en haut de cette page.',
   dhV3FaqQ10: 'Que se passe-t-il si je manque un cours pour le travail ou des engagements ?',
   dhV3FaqA10:
     "Si vous avez un abonnement et annulez un cours, vous disposez de 30 jours pour le rattraper à partir de la date du cours annulé. Si vous avez un forfait d'heures, vous gérez vos cours de manière flexible : annulez et réservez un autre jour dans la période d'expiration. Toutes les gestions se font exclusivement via l'application numérique de l'académie.",
@@ -713,7 +732,7 @@ export const fr = {
   home_categories_urbano_image_alt:
     "Danseuses pratiquant le Hip Hop Reggaeton en cours de danse urbaine - Farray's Center Barcelone",
   home_categories_urbano_bullets:
-    '11 styles urbains différents, Du débutant au professionnel, Premier cours gratuit',
+    '11 styles urbains différents, Du débutant au professionnel, Réservez votre cours de bienvenue',
   home_categories_urbano_intro:
     "Ressentez l'énergie de la rue avec les styles Hip Hop, Reggaeton, Dancehall et Commercial.",
 
@@ -772,7 +791,7 @@ export const fr = {
   danceClassesHub_h1: 'Cours de danse à Barcelone',
   danceClassesHub_h1_sub: '+25 styles · Méthode Farray® · Professeurs cubains',
   danceClassesHub_intro:
-    "Au cœur de Barcelone, près de Plaça Catalunya (Métro L1/L2), vous trouverez plus de 30 styles de danse sous un même toit. De la salsa cubaine à la danse contemporaine, du hip hop au ballet classique. Explorez nos catégories, visitez chaque page pour voir les horaires, niveaux et professeurs, ou allez directement au style qui vous émeut le plus. Chez Farray's vous pouvez commencer de zéro, essayer votre premier cours GRATUITEMENT et découvrir ce que c'est d'apprendre avec la Méthode Farray® exclusive créée par Yunaisy Farray (danseuse de Street Dance 2) et des professeurs formés à l'École Cubaine.",
+    "Au cœur de Barcelone, près de Plaça Catalunya (Métro L1/L2), vous trouverez plus de 30 styles de danse sous un même toit. De la salsa cubaine à la danse contemporaine, du hip hop au ballet classique. Explorez nos catégories, visitez chaque page pour voir les horaires, niveaux et professeurs, ou allez directement au style qui vous émeut le plus. Chez Farray's vous pouvez commencer de zéro, essayer votre premier cours AUJOURD'HUI et découvrir ce que c'est d'apprendre avec la Méthode Farray® exclusive créée par Yunaisy Farray (danseuse de Street Dance 2) et des professeurs formés à l'École Cubaine.",
 
   // Category Bullets - Contemporary
   danceClassesHub_contemporary_bullet1: 'École Cubaine et styles contemporains',
@@ -975,7 +994,7 @@ export const fr = {
   danceClassesHub_whichCategory_beginner_category:
     "N'importe quelle catégorie avec niveau INITIATION",
   danceClassesHub_whichCategory_beginner_why:
-    "Toutes nos catégories ont des groupes d'initiation pour débutants sans expérience. Choisissez selon ce qui vous attire : couple, urbain, technique classique ou fitness. Premier cours GRATUIT pour essayer sans engagement.",
+    "Toutes nos catégories ont des groupes d'initiation pour débutants sans expérience. Choisissez selon ce qui vous attire : couple, urbain, technique classique ou fitness. Cours de bienvenue disponible pour essayer sans engagement.",
 
   danceClassesHub_whichCategory_morning_goal: 'Je veux danser le matin (horaire tôt)',
   danceClassesHub_whichCategory_morning_category: 'Cours de Danse le Matin',
@@ -992,7 +1011,7 @@ export const fr = {
   // Which Category - Info Cards
   danceClassesHub_whichCategory_beginner_title: 'Première fois en dansant?',
   danceClassesHub_whichCategory_beginner_text:
-    "Toutes nos catégories ont des groupes d'initiation spécifiques pour débutants absolus. Vous n'avez besoin ni d'expérience préalable, ni de partenaire, ni d'équipement spécial. Premier cours GRATUIT pour essayer sans engagement. Réservez votre place et découvrez votre style.",
+    "Toutes nos catégories ont des groupes d'initiation spécifiques pour débutants absolus. Vous n'avez besoin ni d'expérience préalable, ni de partenaire, ni d'équipement spécial. Cours de bienvenue disponible pour essayer sans engagement. Réservez votre place et découvrez votre style.",
 
   danceClassesHub_whichCategory_combine_title: 'Puis-je combiner plusieurs catégories?',
   danceClassesHub_whichCategory_combine_text:
@@ -1000,7 +1019,7 @@ export const fr = {
 
   danceClassesHub_whichCategory_schedule_title: 'Comment choisir mon horaire idéal?',
   danceClassesHub_whichCategory_schedule_text:
-    "Nous offrons des horaires flexibles du lundi au dimanche : matins (10h-14h), après-midis (16h-21h) et week-ends. Choisissez selon votre disponibilité et le niveau que vous recherchez. Consultez le planning complet sur notre site web ou réservez votre cours d'essai gratuit pour connaître l'ambiance.",
+    "Nous offrons des horaires flexibles du lundi au dimanche : matins (10h-14h), après-midis (16h-21h) et week-ends. Choisissez selon votre disponibilité et le niveau que vous recherchez. Consultez le planning complet sur notre site web ou réservez votre cours de bienvenue pour connaître l'ambiance.",
 
   // Dance Classes Hub - Why FIDC Section
   danceClassesHub_why_title:
@@ -1042,10 +1061,10 @@ export const fr = {
     'Explorez nos horaires complets et découvrez le cours parfait selon votre objectif et disponibilité.',
   danceClassesHub_cta1_button: 'Voir tous les horaires',
 
-  danceClassesHub_cta2_title: 'Essayez votre premier cours GRATUITEMENT',
+  danceClassesHub_cta2_title: "Essayez votre premier cours AUJOURD'HUI",
   danceClassesHub_cta2_subtitle:
     'Sans engagement, sans permanence. Venez découvrir nos installations, professeurs et méthode.',
-  danceClassesHub_cta2_button: 'Réserver cours gratuit',
+  danceClassesHub_cta2_button: 'Réserver cours de bienvenue',
   danceClassesHub_cta2_stat1_number: '8+',
   danceClassesHub_cta2_stat1_label: "Ans d'expérience",
   danceClassesHub_cta2_stat2_number: '1500+',
@@ -1091,7 +1110,7 @@ export const fr = {
   danzaBarcelona_title:
     "Cours de Danse à Barcelone | Ballet, Contemporain et Jazz | Farray's Center",
   danzaBarcelona_description:
-    "Découvrez nos cours de danse à Barcelone : Ballet Classique Cubain, Danse Contemporaine, Modern Jazz, Afro Jazz et plus. Académie accréditée par CID-UNESCO. Réservez votre cours d'essai.",
+    'Découvrez nos cours de danse à Barcelone : Ballet Classique Cubain, Danse Contemporaine, Modern Jazz, Afro Jazz et plus. Académie accréditée par CID-UNESCO. Réservez votre cours de bienvenue.',
   danzaBarcelona_breadcrumb_home: 'Accueil',
   danzaBarcelona_breadcrumb_classes: 'Cours de Danse à Barcelone',
   danzaBarcelona_breadcrumb_current: 'Cours de Danse à Barcelone',
@@ -1168,7 +1187,7 @@ export const fr = {
 
   danzaFaqQ10: "Puis-je essayer un cours de Ballet, Jazz ou Contemporain avant de m'inscrire?",
   danzaFaqA10:
-    "Selon la saison, le cours d'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L'idée est que vous puissiez essayer l'expérience sans engagement. Réservez votre place en cliquant sur le bouton \"Réservez Votre Cours d'Essai\" en haut de cette page.",
+    'Selon la saison, le cours de bienvenue pour les résidents a un prix spécial de bienvenue. L\'idée est que vous puissiez essayer l\'expérience sans engagement. Réservez votre place en cliquant sur le bouton "Réservez Votre Cours de Bienvenue" en haut de cette page.',
 
   // Career Opportunities - Danza Barcelona
   danzaWhyCareerTitle: "Bourse d'Emploi et Compétitions",
@@ -1330,7 +1349,7 @@ export const fr = {
 
   urbanFaqQ10: "Puis-je essayer un cours de Hip Hop ou Dancehall avant de m'inscrire ?",
   urbanFaqA10:
-    "Écoutez, l'important c'est que vous essayiez. Selon la saison, le cours d'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L'idée est que vous puissiez essayer l'expérience sans engagement.",
+    "Écoutez, l'important c'est que vous essayiez. Selon la saison, le cours de bienvenue pour les résidents a un prix spécial de bienvenue. L'idée est que vous puissiez essayer l'expérience sans engagement.",
 
   // Urban-specific CTA
   danzasUrbanas_viewMore: 'Voir plus →',
@@ -1557,7 +1576,7 @@ export const fr = {
   salsaBachataBarcelona_title:
     "Cours de Salsa et Bachata à Barcelone | Salsa Cubaine, Bachata Sensuelle et plus | Farray's Center",
   salsaBachataBarcelona_description:
-    "Apprenez à danser la Salsa Cubaine, la Bachata Sensuelle et Dominicaine, la Timba, le Son et plus à Barcelone. École fondée par des maîtres cubains avec expérience dans les meilleures académies de La Havane. Réservez votre cours d'essai.",
+    'Apprenez à danser la Salsa Cubaine, la Bachata Sensuelle et Dominicaine, la Timba, le Son et plus à Barcelone. École fondée par des maîtres cubains avec expérience dans les meilleures académies de La Havane. Réservez votre cours de bienvenue.',
   salsaBachataBarcelona_breadcrumb_home: 'Accueil',
   salsaBachataBarcelona_breadcrumb_classes: 'Cours de Danse à Barcelone',
   salsaBachataBarcelona_breadcrumb_parent: 'Danse Barcelone',
@@ -1631,7 +1650,7 @@ export const fr = {
 
   salsaBachataFaqQ10: "Puis-je essayer un cours de salsa ou bachata avant de m'inscrire ?",
   salsaBachataFaqA10:
-    "Selon la saison, le cours d'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L'idée est que vous puissiez expérimenter notre méthodologie, rencontrer les professeurs et ressentir l'énergie de notre académie de danse sans engagement.",
+    "Selon la saison, le cours de bienvenue pour les résidents a un prix spécial de bienvenue. L'idée est que vous puissiez expérimenter notre méthodologie, rencontrer les professeurs et ressentir l'énergie de notre académie de danse sans engagement.",
 
   // CTA Final - Salsa/Bachata Barcelone
   salsaBachataCTA_title:
@@ -2741,7 +2760,7 @@ export const fr = {
   // CTA
   metodoFarray_cta_title: 'Découvrez Comment Commencer',
   metodoFarray_cta_subtitle:
-    'Votre premier cours est gratuit. Venez essayer et ressentez la différence.',
+    'Votre cours de bienvenue est spécial. Venez essayer et ressentez la différence.',
   metodoFarray_cta_button: 'Découvrez Comment Commencer',
   metodoFarray_cta_secondary: 'Voir Tous les Cours',
 
@@ -2972,7 +2991,7 @@ export const fr = {
     'Oui. Nous avons des forfaits trimestriels et annuels qui offrent de grands avantages, ainsi que des offres de lancement pour les nouveaux membres. Contactez-nous ou passez à la réception pour voir quelle option vous convient le mieux pour les cours de Twerking.',
   twerkFaqQ8: "Puis-je essayer un cours de Twerk avant de m'inscrire ?",
   twerkFaqA8:
-    "Bien sûr. Vous pouvez réserver un cours d'essai de Twerk pour voir si c'est ce que vous cherchez. Nous n'aimons pas engager les gens dans des achats \"à l'aveugle\" ; nous préférons que vous découvriez d'abord l'énergie du Twerk dance.",
+    "Bien sûr. Vous pouvez réserver un cours de bienvenue de Twerk pour voir si c'est ce que vous cherchez. Nous n'aimons pas engager les gens dans des achats \"à l'aveugle\" ; nous préférons que vous découvriez d'abord l'énergie du Twerk dance.",
   twerkFaqQ9: "Et si je rate un cours de Twerk à cause du travail ou d'engagements ?",
   twerkFaqA9:
     "Les cours de Twerking sont récupérables, donc si vous manquez un jour, vous pouvez venir au prochain cours de Twerk disponible dans le même niveau. Nous enregistrons votre présence pour que vous ne perdiez pas votre place ni l'avancement du groupe de Twerk dance.",
@@ -3007,7 +3026,7 @@ export const fr = {
   // CTA keys
   twerkCTA1: 'Devenez Membre Maintenant',
   twerkCTA1Subtext: 'Peu de places restantes ce mois-ci',
-  twerkCTA2: "Réservez Votre Cours d'Essai",
+  twerkCTA2: 'Réservez Votre Cours de Bienvenue',
   twerkCTA2Subtext: 'Offre à durée limitée',
 
   // What Is Section
@@ -3155,7 +3174,7 @@ export const fr = {
   // CTAs
   afroCTA1: 'Deviens Membre Maintenant',
   afroCTA1Subtext: 'Peu de places restantes ce mois-ci',
-  afroCTA2: "Réserve ton Cours d'Essai",
+  afroCTA2: 'Réserve ton Cours de Bienvenue',
   afroCTA2Subtext: 'Valable pour un temps limité',
 
   // What is Afrobeat
@@ -3346,7 +3365,7 @@ Chez Farray's International Dance Center, l'Afrobeats est enseigné avec techniq
     "Oui, nous offrons des réductions si tu t'inscris à plus d'un cours. Consulte notre site web ou demande-nous directement pour plus de détails.",
   afroFaqQ8: "Puis-je essayer un cours d'Afrobeats avant de m'inscrire ?",
   afroFaqA8:
-    "Écoute, l'important c'est que tu essaies. Selon la saison, le cours d'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L'idée est que tu puisses essayer l'expérience sans engagement.",
+    "Écoute, l'important c'est que tu essaies. Selon la saison, le cours de bienvenue pour les résidents a un prix spécial de bienvenue. L'idée est que tu puisses essayer l'expérience sans engagement.",
   afroFaqQ9: "Et si je rate un cours à cause du travail ou d'engagements ?",
   afroFaqA9:
     "Si tu as un abonnement et que tu annules un cours, tu as 30 jours pour le rattraper, à compter de la date du cours annulé. Si tu as un forfait d'heures, c'est toi qui gères tes cours de manière flexible et tu dois seulement annuler ton cours et le réserver pour un autre jour quand tu le souhaites, avant la fin de la période d'expiration. Toute la gestion se fait exclusivement depuis l'application numérique de l'académie.",
@@ -3425,7 +3444,7 @@ Chez Farray's International Dance Center, l'Afrobeats est enseigné avec techniq
   // CTAs
   hhrCTA1: 'Deviens Membre Maintenant',
   hhrCTA1Subtext: 'Places limitées ce mois-ci',
-  hhrCTA2: "Réserve Ton Cours d'Essai",
+  hhrCTA2: 'Réserve Ton Cours de Bienvenue',
   hhrCTA2Subtext: 'Offre à durée limitée',
 
   // Flow Guaranteed
@@ -3625,7 +3644,7 @@ Cette fusion incorpore :
     "Oui. Nous offrons des réductions si tu t'inscris à plus d'un cours. Consulte le site web ou demande-nous directement pour plus de détails.",
   hhrFaqQ8: "Puis-je essayer un cours avant de m'inscrire ?",
   hhrFaqA8:
-    "Selon la saison, le cours d'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L'idée est que tu puisses essayer l'expérience sans engagement. Réserve ta place en cliquant sur le bouton \"Réserve ton Cours d'Essai\" en haut de cette page.",
+    'Selon la saison, le cours de bienvenue pour les résidents a un prix spécial de bienvenue. L\'idée est que tu puisses essayer l\'expérience sans engagement. Réserve ta place en cliquant sur le bouton "Réserve ton Cours de Bienvenue" en haut de cette page.',
   hhrFaqQ9: "Et si je manque un cours à cause du travail ou d'engagements ?",
   hhrFaqA9:
     "Si tu as un abonnement et annules un cours, tu disposes de 30 jours pour le rattraper à partir de la date du cours annulé. Si tu as un forfait d'heures, tu gères tes cours de manière flexible : annule et réserve un autre jour dans la période de validité. Toute la gestion se fait exclusivement via l'application numérique de l'académie.",
@@ -3690,7 +3709,7 @@ Cette fusion incorpore :
     'Cours avec des professeurs cubains qui viennent directement de La Havane, entre Plaza España et Sants.',
   rcbHeroCTA: 'Deviens Membre Maintenant',
   rcbHeroCTASubtext: 'Peu de places restantes ce mois',
-  rcbHeroSecondaryCTA: "Réserve ton Cours d'Essai",
+  rcbHeroSecondaryCTA: 'Réserve ton Cours de Bienvenue',
   rcbHeroSecondaryCTASubtext: 'Offre à durée limitée',
 
   // Breadcrumbs
@@ -3846,7 +3865,7 @@ Cette fusion incorpore :
     'Consulte les horaires en haut de cette page. Nous avons des cours le mardi, jeudi et samedi pour différents niveaux.',
   rcbFaqQ8: "Puis-je essayer un cours avant de m'inscrire ?",
   rcbFaqA8:
-    "Selon la saison, le cours d'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L'idée est que tu puisses essayer l'expérience sans engagement. Réserve ta place en cliquant sur le bouton \"Réserve ton Cours d'Essai\" en haut de cette page.",
+    'Selon la saison, le cours de bienvenue pour les résidents a un prix spécial de bienvenue. L\'idée est que tu puisses essayer l\'expérience sans engagement. Réserve ta place en cliquant sur le bouton "Réserve ton Cours de Bienvenue" en haut de cette page.',
   rcbFaqQ9: "Qu'est-ce que le Cubatón exactement ?",
   rcbFaqA9:
     "Cubatón est un autre nom pour le Reggaeton Cubain, mettant l'accent sur les racines cubaines du genre. Reparto et Cubatón font référence au même style.",
@@ -4130,7 +4149,7 @@ Cette fusion incorpore :
   // CTAs
   femCTA1: 'Devenez Membre Maintenant !',
   femCTA1Subtext: 'Peu de places restantes ce mois',
-  femCTA2: "Réservez votre Cours d'Essai",
+  femCTA2: 'Réservez votre Cours de Bienvenue',
   femCTA2Subtext: 'Valable pour une durée limitée',
 
   // Stats
@@ -4308,7 +4327,7 @@ Depuis plus d'une décennie, Femmology a transformé la vie de milliers de femme
 
   femFaqQ8: "Puis-je essayer un cours de Femmology avant de m'inscrire ?",
   femFaqA8:
-    'Oui. Selon la saison, le cours d\'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. Cliquez sur "Réservez votre Cours d\'Essai" et découvrez si cette discipline est faite pour vous.',
+    'Oui. Selon la saison, le cours d\'essai pour les résidents a un prix spécial de bienvenue. Cliquez sur "Réservez votre Cours d\'Essai" et découvrez si cette discipline est faite pour vous.',
 
   femFaqQ9: "Qu'apprendrai-je dans les cours de Femmology ?",
   femFaqA9:
@@ -4385,7 +4404,7 @@ Depuis plus d'une décennie, Femmology a transformé la vie de milliers de femme
   // CTAs
   sexystyleCTA1: 'Devenez Membre Maintenant',
   sexystyleCTA1Subtext: 'Peu de places restantes ce mois-ci',
-  sexystyleCTA2: "Réservez votre Cours d'Essai",
+  sexystyleCTA2: 'Réservez votre Cours de Bienvenue',
   sexystyleCTA2Subtext: 'Offre à durée limitée',
 
   // What Is Section
@@ -4589,7 +4608,7 @@ Depuis plus d'une décennie, Femmology a transformé la vie de milliers de femme
 
   sexystyleFaqQ7: "Puis-je essayer un cours de Sexy Style avant de m'inscrire ?",
   sexystyleFaqA7:
-    "Oui, nous offrons des cours d'essai qui peuvent être gratuits ou à un prix symbolique selon la saison. Vous pouvez réserver votre premier cours avec le bouton en haut de la page et découvrir l'ambiance et la méthodologie avant de vous engager.",
+    "Oui, nous offrons des cours de bienvenue qui ont un prix spécial de bienvenue selon la saison. Vous pouvez réserver votre premier cours avec le bouton en haut de la page et découvrir l'ambiance et la méthodologie avant de vous engager.",
 
   sexystyleFaqQ8: 'Quels niveaux de Sexy Style avez-vous ?',
   sexystyleFaqA8:
@@ -4613,7 +4632,7 @@ Depuis plus d'une décennie, Femmology a transformé la vie de milliers de femme
 
   sexystyleFaqQ13: 'Avez-vous des réductions ou des forfaits spéciaux ?',
   sexystyleFaqA13:
-    "Oui, nous avons plusieurs options d'économies :<br/><br/>• <strong>Réduction multi-cours :</strong> Si vous vous inscrivez à plus d'un style (ex : Sexy Style + Femmology), vous obtenez un prix réduit par cours.<br/>• <strong>Forfaits mensuels illimités :</strong> Cours illimités d'un style ou de tous les styles.<br/>• <strong>Forfaits trimestriels et annuels :</strong> Plus d'économies avec un engagement plus long.<br/>• <strong>Offres nouvelles élèves :</strong> Premier cours d'essai à un prix spécial.<br/><br/>Consultez les prix actualisés à la réception ou contactez-nous via WhatsApp.",
+    "Oui, nous avons plusieurs options d'économies :<br/><br/>• <strong>Réduction multi-cours :</strong> Si vous vous inscrivez à plus d'un style (ex : Sexy Style + Femmology), vous obtenez un prix réduit par cours.<br/>• <strong>Forfaits mensuels illimités :</strong> Cours illimités d'un style ou de tous les styles.<br/>• <strong>Forfaits trimestriels et annuels :</strong> Plus d'économies avec un engagement plus long.<br/>• <strong>Offres nouvelles élèves :</strong> Premier cours de bienvenue à un prix spécial.<br/><br/>Consultez les prix actualisés à la réception ou contactez-nous via WhatsApp.",
 
   sexystyleFaqQ14: "Où est l'académie ?",
   sexystyleFaqA14:
@@ -4666,10 +4685,10 @@ Depuis plus d'une décennie, Femmology a transformé la vie de milliers de femme
   // CTAs
   sxrCTA1: 'Devenez Membre Maintenant',
   sxrCTA1Subtext: 'Peu de places restantes ce mois-ci',
-  sxrCTA2: "Réservez Votre Cours d'Essai",
+  sxrCTA2: 'Réservez Votre Cours de Bienvenue',
   sxrCTA2Subtext: 'Offre limitée dans le temps',
   sxrCTA1AriaLabel: "Voir les horaires des cours de Sexy Reggaeton et s'inscrire",
-  sxrCTA2AriaLabel: "Réserver un cours d'essai de Sexy Reggaeton",
+  sxrCTA2AriaLabel: 'Réserver un cours de bienvenue de Sexy Reggaeton',
   sxrOgImageAlt: "Cours de Sexy Reggaeton à Barcelone - Farray's Center",
 
   // Stat
@@ -4852,7 +4871,7 @@ Daddy Yankee (Porto Rico), Bad Bunny (Porto Rico), Karol G (Colombie), J Balvin 
     "Oui. Nous offrons des réductions si vous vous inscrivez à plus d'un cours. Consultez le site web ou demandez-nous directement pour plus de détails.",
   sxrFaqQ9: "Puis-je essayer un cours de Sexy Reggaeton avant de m'inscrire ?",
   sxrFaqA9:
-    "Selon la saison, le cours d'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L'idée est que vous puissiez essayer l'expérience sans engagement. Réservez votre place en cliquant sur le bouton \"Réservez Votre Cours d'Essai\" en haut de cette page.",
+    'Selon la saison, le cours de bienvenue pour les résidents a un prix spécial de bienvenue. L\'idée est que vous puissiez essayer l\'expérience sans engagement. Réservez votre place en cliquant sur le bouton "Réservez Votre Cours de Bienvenue" en haut de cette page.',
   sxrFaqQ10: 'Et si je manque un cours pour le travail ou des engagements ?',
   sxrFaqA10:
     "Si vous avez un abonnement et annulez un cours, vous avez 30 jours pour le rattraper à partir de la date du cours annulé. Si vous avez un forfait d'heures, vous gérez vos cours de manière flexible : annulez et réservez un autre jour dans la période de validité. Toutes les gestions se font exclusivement via l'application numérique de l'académie.",
@@ -4928,7 +4947,7 @@ Daddy Yankee (Porto Rico), Bad Bunny (Porto Rico), Karol G (Colombie), J Balvin 
   // CTAs
   modernjazzCTA1: 'Devenez Membre Maintenant',
   modernjazzCTA1Subtext: 'Peu de places restantes ce mois-ci',
-  modernjazzCTA2: "Réservez Votre Cours d'Essai",
+  modernjazzCTA2: 'Réservez Votre Cours de Bienvenue',
   modernjazzCTA2Subtext: 'Offre limitée dans le temps',
 
   // What Is Section
@@ -5106,7 +5125,7 @@ Farray's International Dance Center est noté près de **5/5 sur Google**, avec 
 
   modernjazzFaqQ7: "Puis-je essayer un cours de Modern Jazz avant de m'inscrire ?",
   modernjazzFaqA7:
-    "Selon la saison, le cours d'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L'idée est que vous puissiez essayer l'expérience sans engagement. Réservez votre place en cliquant sur le bouton \"Réservez Votre Cours d'Essai\" en haut de cette page.",
+    'Selon la saison, le cours de bienvenue pour les résidents a un prix spécial de bienvenue. L\'idée est que vous puissiez essayer l\'expérience sans engagement. Réservez votre place en cliquant sur le bouton "Réservez Votre Cours de Bienvenue" en haut de cette page.',
 
   modernjazzFaqQ8: 'Quels niveaux de Modern Jazz avez-vous ?',
   modernjazzFaqA8:
@@ -5175,7 +5194,7 @@ Farray's International Dance Center est noté près de **5/5 sur Google**, avec 
     "Consultez nos horaires et choisissez entre niveau débutant, intermédiaire ou avancé. Si vous n'avez jamais dansé, commencez par débutant.",
   modernjazzHowToStep2Name: 'Réservez votre premier cours',
   modernjazzHowToStep2Text:
-    "Contactez-nous par WhatsApp au +34 622 247 085 ou par email à info@farrayscenter.com pour réserver votre cours d'essai gratuit.",
+    'Contactez-nous par WhatsApp au +34 622 247 085 ou par email à info@farrayscenter.com pour réserver votre cours de bienvenue.',
   modernjazzHowToStep3Name: 'Préparez-vous pour le cours',
   modernjazzHowToStep3Text:
     "Venez en vêtements confortables permettant le mouvement. Les chaussons de jazz sont idéaux, mais vous pouvez commencer avec des chaussettes. Apportez de l'eau.",
@@ -5247,7 +5266,7 @@ Farray's International Dance Center est noté près de **5/5 sur Google**, avec 
   // ===== CTAs =====
   balletCTA1: 'Devenez Membre Maintenant',
   balletCTA1Subtext: 'Places limitées ce mois-ci',
-  balletCTA2: "Réservez votre Cours d'Essai",
+  balletCTA2: 'Réservez votre Cours de Bienvenue',
   balletCTA2Subtext: 'Valable pour une durée limitée',
 
   // ===== What is Ballet Section =====
@@ -5478,7 +5497,7 @@ Tous les termes du ballet sont en français, héritage de son développement à 
 
   balletFaqQ8: "Puis-je essayer un cours de Ballet avant de m'inscrire ?",
   balletFaqA8:
-    "Selon la saison, le cours d'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. Pour les touristes, c'est payant. Si ça vous plaît et que vous décidez de rester, le montant est déduit de votre première mensualité.",
+    "Selon la saison, le cours de bienvenue pour les résidents a un prix spécial de bienvenue. Pour les touristes, c'est payant. Si ça vous plaît et que vous décidez de rester, le montant est déduit de votre première mensualité.",
 
   balletFaqQ9: 'Quels niveaux de ballet proposez-vous ?',
   balletFaqA9:
@@ -5539,7 +5558,7 @@ Tous les termes du ballet sont en français, héritage de son développement à 
     'Débutants (sans expérience ou peu) ou Intermédiaire (vous maîtrisez les positions de base). En cas de doute, commencez par débutant.',
   balletHowToStep2Name: 'Réservez votre premier cours',
   balletHowToStep2Text:
-    "Contactez-nous par WhatsApp au +34 622 247 085 ou par email à info@farrayscenter.com pour réserver votre cours d'essai gratuit.",
+    'Contactez-nous par WhatsApp au +34 622 247 085 ou par email à info@farrayscenter.com pour réserver votre cours de bienvenue.',
   balletHowToStep3Name: 'Préparez-vous pour le cours',
   balletHowToStep3Text:
     'Venez avec des vêtements ajustés permettant de voir votre posture. Les demi-pointes sont idéales, mais vous pouvez commencer avec des chaussettes.',
@@ -5763,7 +5782,7 @@ Tous les termes du ballet sont en français, héritage de son développement à 
   afrojazzHeroLocation: 'Cours pour tous les niveaux avec méthodologie professionnelle CID-UNESCO',
   afrojazzCTA1: 'Devenez Membre Maintenant',
   afrojazzCTA1Subtext: 'Places limitées pour groupes réduits',
-  afrojazzCTA2: "Réservez Votre Cours d'Essai",
+  afrojazzCTA2: 'Réservez Votre Cours de Bienvenue',
   afrojazzCTA2Subtext: 'Découvrez la fusion unique',
   afrojazzWhatIsTitle: "Qu'est-ce que l'Afro Jazz ?",
   afrojazzWhatIsP1:
@@ -5935,7 +5954,7 @@ Des danseurs du monde entier voyagent à Barcelone spécifiquement pour se forme
     "Oui. L'improvisation est une partie fondamentale de l'Afro Jazz. Nous développons la capacité de créer du mouvement en temps réel en maintenant cohérence stylistique et connexion avec la musique.",
   afrojazzFaqQ8: "Puis-je essayer un cours avant de m'inscrire ?",
   afrojazzFaqA8:
-    "Oui, vous pouvez réserver un cours d'essai. Notez que vous avez besoin d'expérience préalable en danse pour pouvoir suivre le niveau du cours.",
+    "Oui, vous pouvez réserver un cours de bienvenue. Notez que vous avez besoin d'expérience préalable en danse pour pouvoir suivre le niveau du cours.",
   afrojazzFaqQ9: 'Quels vêtements et chaussures dois-je apporter ?',
   afrojazzFaqA9:
     'Vêtements confortables permettant un mouvement ample (leggings, pantalon de danse, t-shirt ajusté). Les chaussures dépendent de la surface : chaussures de Jazz, chaussettes de danse ou pieds nus selon indication.',
@@ -6078,7 +6097,7 @@ Des danseurs du monde entier voyagent à Barcelone spécifiquement pour se forme
   // CTAs
   contemporaneoCTA1: 'Devenez Membre Maintenant',
   contemporaneoCTA1Subtext: 'Places limitées ce mois-ci',
-  contemporaneoCTA2: "Réservez Votre Cours d'Essai",
+  contemporaneoCTA2: 'Réservez Votre Cours de Bienvenue',
   contemporaneoCTA2Subtext: 'Offre limitée dans le temps',
   contemporaneoCTAGroup: "Options d'inscription",
 
@@ -6369,7 +6388,7 @@ Travaille intégralement : **flexibilité, force fonctionnelle, coordination, pr
     'Nous travaillons plusieurs techniques : sol, release, contact improvisation, et éléments de diverses écoles. Une approche multidisciplinaire pour que vous développiez votre propre langage.',
   contemporaneoFaqQ8: "Puis-je essayer un cours avant de m'inscrire ?",
   contemporaneoFaqA8:
-    "Bien sûr. Vous pouvez réserver un cours d'essai pour voir si c'est ce que vous cherchez. Venez essayer et découvrez comment laisser couler votre talent à travers la danse.",
+    "Bien sûr. Vous pouvez réserver un cours de bienvenue pour voir si c'est ce que vous cherchez. Venez essayer et découvrez comment laisser couler votre talent à travers la danse.",
   contemporaneoFaqQ9: "Et si je rate un cours à cause du travail ou d'engagements ?",
   contemporaneoFaqA9:
     'Les cours sont récupérables, donc si vous manquez un jour, vous pouvez venir au prochain cours disponible à votre même niveau.',
@@ -6451,7 +6470,7 @@ Travaille intégralement : **flexibilité, force fonctionnelle, coordination, pr
   // CTAs
   afrocontemporaneoCTA1: 'Devenez Membre Maintenant',
   afrocontemporaneoCTA1Subtext: 'Places limitées',
-  afrocontemporaneoCTA2: "Réservez Votre Cours d'Essai",
+  afrocontemporaneoCTA2: 'Réservez Votre Cours de Bienvenue',
   afrocontemporaneoCTA2Subtext: 'Découvrez la technique cubaine',
 
   // What Is Section
@@ -6679,7 +6698,7 @@ L'Afro Contemporain enseigné au **Farray's International Dance Center** fait pa
 
   afrocontemporaneoFaqQ8: "Puis-je essayer un cours avant de m'inscrire ?",
   afrocontemporaneoFaqA8:
-    "Oui, vous pouvez réserver un cours d'essai pour voir si c'est ce que vous cherchez. Nous préférons que vous expérimentiez l'énergie de l'Afro Contemporain avant de décider.",
+    "Oui, vous pouvez réserver un cours de bienvenue pour voir si c'est ce que vous cherchez. Nous préférons que vous expérimentiez l'énergie de l'Afro Contemporain avant de décider.",
 
   afrocontemporaneoFaqQ9: 'Quels vêtements dois-je porter aux cours ?',
   afrocontemporaneoFaqA9:
@@ -6910,7 +6929,7 @@ L'Afro Contemporain enseigné au **Farray's International Dance Center** fait pa
   hiphopIdentifyItem5: "Vous avez besoin d'une activité qui vous déconnecte et vous fait plaisir",
   hiphopIdentifyNotSure: "Vous n'êtes pas sûr ?",
   hiphopIdentifyNotSureText:
-    "Venez à un cours d'essai et découvrez si le Hip Hop est votre style. Sans engagement.",
+    'Venez à un cours de bienvenue et découvrez si le Hip Hop est votre style. Sans engagement.',
 
   // Why Today Section
   hiphopWhyTodayTitle: "Pourquoi commencer aujourd'hui ?",
@@ -6983,7 +7002,7 @@ L'Afro Contemporain enseigné au **Farray's International Dance Center** fait pa
     "Oui, nous organisons régulièrement des showcases et événements où les élèves peuvent montrer ce qu'ils ont appris. C'est optionnel mais très recommandé pour vivre le Hip Hop en communauté.",
   hiphopFaqQ9: "Puis-je essayer un cours avant de m'inscrire ?",
   hiphopFaqA9:
-    "Oui, nous offrons des cours d'essai pour que vous expérimentiez l'ambiance et la méthodologie avant de vous engager. Contactez-nous pour réserver le vôtre.",
+    "Oui, nous offrons des cours de bienvenue pour que vous expérimentiez l'ambiance et la méthodologie avant de vous engager. Contactez-nous pour réserver le vôtre.",
   hiphopFaqQ10: 'Que se passe-t-il si je ne peux pas suivre le rythme du cours ?',
   hiphopFaqA10:
     'Les cours sont structurés pour que chacun progresse à son rythme. Marcos et les assistants sont attentifs à tous les élèves. De plus, le Hip Hop consiste à trouver votre propre groove, pas à être parfait.',
@@ -7123,7 +7142,7 @@ L'Afro Contemporain enseigné au **Farray's International Dance Center** fait pa
   salsaCubanaCTAGroup: "Options d'inscription",
   salsaCubanaCTA1: 'Devenez Membre Maintenant',
   salsaCubanaCTA1Subtext: 'Plus que 8 places par cours',
-  salsaCubanaCTA2: "Réservez votre Cours d'Essai GRATUIT",
+  salsaCubanaCTA2: 'Réservez votre Cours de Bienvenue',
   salsaCubanaCTA2Subtext: 'Offre limitée',
 
   // Problem Section
@@ -7464,7 +7483,7 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
     'Vêtements confortables et légers. Baskets ou chaussures confortables. Pour les filles, des chaussures à talons avec maintien à la cheville sont recommandées mais pas obligatoires.',
   salsaCubanaFaqQ7: "Puis-je essayer un cours avant de m'inscrire ?",
   salsaCubanaFaqA7:
-    "Oui, nous offrons un premier cours d'essai sans engagement. Venez nous connaître, essayez la Méthode Farray® et décidez si c'est pour vous.",
+    "Oui, nous offrons un premier cours de bienvenue sans engagement. Venez nous connaître, essayez la Méthode Farray® et décidez si c'est pour vous.",
   salsaCubanaFaqQ8: "Qu'est-ce que la Rueda de Casino ?",
   salsaCubanaFaqA8:
     "C'est une façon de danser la salsa cubaine en groupe, en cercle, où tous les couples exécutent des figures synchronisées suivant les indications d'un 'chanteur'. C'est très amusant et social.",
@@ -7479,7 +7498,7 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
     'Oui, nous disposons de vestiaires avec douches pour que vous puissiez vous rafraîchir après le cours si nécessaire.',
   salsaCubanaFaqQ12: 'Comment savoir quel niveau me correspond ?',
   salsaCubanaFaqA12:
-    "Si vous n'avez jamais dansé, commencez par le Niveau 0. Si vous avez déjà de l'expérience, venez à un cours d'essai et nous vous orienterons vers le niveau le plus approprié pour vous.",
+    "Si vous n'avez jamais dansé, commencez par le Niveau 0. Si vous avez déjà de l'expérience, venez à un cours de bienvenue et nous vous orienterons vers le niveau le plus approprié pour vous.",
   salsaCubanaFaqQ13: 'Organisez-vous des sorties pour danser ?',
   salsaCubanaFaqA13:
     'Oui, nous organisons régulièrement des sorties en salles de danse et événements pour que vous puissiez pratiquer ce que vous avez appris dans une ambiance réelle et amusante.',
@@ -7732,7 +7751,7 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   // CTAs
   salsaLadyCTA1: 'Devenez Membre Maintenant',
   salsaLadyCTA1Subtext: 'Places limitées ce trimestre',
-  salsaLadyCTA2: "Réservez votre Cours d'Essai",
+  salsaLadyCTA2: 'Réservez votre Cours de Bienvenue',
   salsaLadyCTA2Subtext: 'Découvrez la Méthode Farray®',
 
   // Stats
@@ -7993,7 +8012,7 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
     'Dès le premier cours vous remarquerez des changements dans votre posture et votre conscience corporelle. En 2-3 mois de pratique régulière, vous verrez une transformation significative de votre style et de votre confiance.',
   salsaLadyFaqQ7: "Puis-je essayer un cours avant de m'inscrire ?",
   salsaLadyFaqA7:
-    "Selon la saison, le cours d'essai peut être gratuit ou avoir un prix symbolique. L'idée est que vous puissiez expérimenter la Méthode Farray® sans engagement.",
+    "Selon la saison, le cours de bienvenue a un prix spécial de bienvenue. L'idée est que vous puissiez expérimenter la Méthode Farray® sans engagement.",
   salsaLadyFaqQ8: 'Quels vêtements dois-je porter ?',
   salsaLadyFaqA8:
     "Des vêtements confortables qui permettent le mouvement. Beaucoup d'élèves préfèrent des robes ou des jupes pour pratiquer les tours, mais ce n'est pas obligatoire. L'important est de se sentir à l'aise.",
@@ -8036,7 +8055,7 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   salsaLadyFinalCTAFunny: "Les places partent plus vite qu'un triple tour en talons de 10 cm.",
   salsaLadyFinalCTA1: 'Devenez Membre Maintenant',
   salsaLadyFinalCTA1Subtext: 'Places limitées ce trimestre',
-  salsaLadyFinalCTA2: "Réservez votre Cours d'Essai",
+  salsaLadyFinalCTA2: 'Réservez votre Cours de Bienvenue',
   salsaLadyFinalCTA2Subtext: 'Découvrez la Méthode Farray®',
 
   // Course Schema
@@ -8274,7 +8293,7 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   contemporaneoCaloriesStat: 'Calories Brûlées',
   contemporaneoDanceStat: 'Danse',
   danceClassesHub_cta_member: 'Devenez Membre Maintenant',
-  danceClassesHub_cta_trial: "Réservez Votre Cours d'Essai",
+  danceClassesHub_cta_trial: 'Réservez Votre Cours de Bienvenue',
 
   // === AUTO-ADDED FR TRANSLATIONS (from ES) ===
   danceClassesHub_style_otras_danzas_desc:
@@ -9403,7 +9422,7 @@ Notre professeur **Marcos Martínez**, juge de compétitions internationales et 
   // CTAs
   folkloreCTA1: 'Devenez Membre Maintenant',
   folkloreCTA1Subtext: 'Places limitées',
-  folkloreCTA2: "Réservez Votre Cours d'Essai",
+  folkloreCTA2: 'Réservez Votre Cours de Bienvenue',
   folkloreCTA2Subtext: 'Sans engagement',
   folkloreCTAGroup: "Options d'inscription",
 
@@ -9716,7 +9735,7 @@ Notre professeur **Marcos Martínez**, juge de compétitions internationales et 
   timbaCTAGroup: "Options d'inscription à la Timba",
   timbaCTA1: 'Devenez Membre Maintenant',
   timbaCTA1Subtext: 'Places limitées',
-  timbaCTA2: "Réservez votre Cours d'Essai",
+  timbaCTA2: 'Réservez votre Cours de Bienvenue',
   timbaCTA2Subtext: 'Sans engagement',
 
   // === WHAT IS TIMBA SECTION ===
@@ -9938,9 +9957,9 @@ Notre professeur **Marcos Martínez**, juge de compétitions internationales et 
   timbaFaqQ6: "La Timba m'aidera-t-elle à améliorer ma salsa cubaine ?",
   timbaFaqA6:
     'Absolument. La Timba et la salsa cubaine vont de pair. Ce que vous apprenez en Timba (interprétation musicale, improvisation, despelote) améliore directement votre danse en couple.',
-  timbaFaqQ7: "Combien coûte le cours d'essai ?",
+  timbaFaqQ7: 'Combien coûte le cours de bienvenue ?',
   timbaFaqA7:
-    "Le cours d'essai coûte 10€. Si vous vous inscrivez le même jour, il est déduit du premier mois.",
+    'Le cours de bienvenue coûte 10€. Si vous vous inscrivez le même jour, il est déduit du premier mois.',
   timbaFaqQ8: 'Y a-t-il un contrat ou un engagement minimum ?',
   timbaFaqA8:
     "Non. Chez Farray's nous travaillons au mois, sans contrats ni engagements. Vous payez uniquement les mois où vous venez.",
@@ -10081,7 +10100,7 @@ Notre professeur **Marcos Martínez**, juge de compétitions internationales et 
   stretchingCTAGroup: "Options d'inscription",
   stretchingCTA1: 'Devenez Membre Maintenant',
   stretchingCTA1Subtext: 'Places limitées par cours',
-  stretchingCTA2: "Réservez votre Cours d'Essai",
+  stretchingCTA2: 'Réservez votre Cours de Bienvenue',
   stretchingCTA2Subtext: 'Disponible pour une durée limitée',
 
   // === WHAT IS STRETCHING SECTION ===
@@ -10295,9 +10314,9 @@ Les études scientifiques confirment qu'un stretching régulier de 3+ fois par s
   stretchingFaqQ7: 'Les cours de stretching sont-ils uniquement pour les danseurs ?',
   stretchingFaqA7:
     'Non. Seulement 30% de nos élèves de stretching sont des danseurs. Les 70% restants sont : des employés de bureau avec des tensions cervicales/lombaires, des sportifs qui veulent prévenir les blessures, des personnes de plus de 40 ans qui veulent maintenir leur mobilité, et tous ceux qui veulent se sentir mieux dans leur corps. Le stretching bénéficie à tous les âges et conditions physiques.',
-  stretchingFaqQ8: "Combien coûte le cours d'essai de stretching ?",
+  stretchingFaqQ8: 'Combien coûte le cours de bienvenue de stretching ?',
   stretchingFaqA8:
-    "Selon la saison, le cours d'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L'idée est que vous puissiez essayer l'expérience sans engagement. Réservez votre place en cliquant sur le bouton \"Réservez votre Cours d'Essai\".",
+    'Selon la saison, le cours de bienvenue pour les résidents a un prix spécial de bienvenue. L\'idée est que vous puissiez essayer l\'expérience sans engagement. Réservez votre place en cliquant sur le bouton "Réservez votre Cours de Bienvenue".',
   stretchingFaqQ9: 'Y a-t-il un contrat ou engagement minimum ?',
   stretchingFaqA9:
     "Il n'y a pas de contrat ni d'engagement minimum. Chez Farray's Center nous fonctionnons au mois : vous ne payez que les mois où vous venez. Vous pouvez suspendre ou annuler à tout moment sans pénalités. Flexibilité totale pour s'adapter à votre vie.",
@@ -10396,7 +10415,7 @@ Les études scientifiques confirment qu'un stretching régulier de 3+ fois par s
   bumbumCTAGroup: "Options d'inscription",
   bumbumCTA1: 'Devenez Membre Maintenant',
   bumbumCTA1Subtext: 'Places limitées par cours',
-  bumbumCTA2: "Réservez votre Cours d'Essai",
+  bumbumCTA2: 'Réservez votre Cours de Bienvenue',
   bumbumCTA2Subtext: 'Valable pour un temps limité',
 
   // === WHAT IS BUM BUM SECTION ===
@@ -10600,9 +10619,9 @@ L'entraînement régulier des fessiers (2-3 fois/semaine) :
   bumbumFaqQ7: "C'est uniquement pour les femmes ?",
   bumbumFaqA7:
     "Non. Bien que la majorité des participants soient des femmes, les hommes peuvent également bénéficier énormément de l'entraînement des fessiers. Des fessiers forts améliorent les performances sportives, préviennent les blessures et améliorent la posture chez tout le monde.",
-  bumbumFaqQ8: "Combien coûte le cours d'essai de Bum Bum Fessiers ?",
+  bumbumFaqQ8: 'Combien coûte le cours de bienvenue de Bum Bum Fessiers ?',
   bumbumFaqA8:
-    "Selon la saison, le cours d'essai pour les résidents peut être gratuit ou avoir un prix symbolique de bienvenue. L'idée est que vous puissiez tester l'expérience sans engagement. Réservez votre place en cliquant sur le bouton \"Réservez votre Cours d'Essai\".",
+    'Selon la saison, le cours de bienvenue pour les résidents a un prix spécial de bienvenue. L\'idée est que vous puissiez tester l\'expérience sans engagement. Réservez votre place en cliquant sur le bouton "Réservez votre Cours de Bienvenue".',
   bumbumFaqQ9: 'Y a-t-il un contrat ou engagement minimum ?',
   bumbumFaqA9:
     "Il n'y a pas de contrat ni d'engagement minimum. Chez Farray's Center, nous fonctionnons au mois : vous ne payez que les mois où vous venez. Vous pouvez mettre en pause ou annuler à tout moment sans pénalités.",
@@ -10697,7 +10716,7 @@ L'entraînement régulier des fessiers (2-3 fois/semaine) :
   // CTAs
   bachataLadyCTA1: 'Devenez Membre Maintenant',
   bachataLadyCTA1Subtext: 'Places limitées ce mois-ci',
-  bachataLadyCTA2: "Réservez votre Cours d'Essai",
+  bachataLadyCTA2: 'Réservez votre Cours de Bienvenue',
   bachataLadyCTA2Subtext: 'Valable pour un temps limité',
 
   // What Is Section
@@ -11069,7 +11088,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
     'Dès le premier cours vous remarquerez des changements dans votre posture et conscience corporelle. En 2-3 mois de pratique régulière, vous verrez une transformation significative dans votre style et confiance.',
   bachataLadyFaqQ7: "Puis-je essayer un cours avant de m'inscrire ?",
   bachataLadyFaqA7:
-    "Selon la saison, le cours d'essai peut être gratuit ou avoir un prix symbolique. L'idée est que vous puissiez expérimenter la Méthode Farray® sans engagement.",
+    "Selon la saison, le cours de bienvenue a un prix spécial de bienvenue. L'idée est que vous puissiez expérimenter la Méthode Farray® sans engagement.",
   bachataLadyFaqQ8: 'Quels vêtements dois-je porter ?',
   bachataLadyFaqA8:
     "Des vêtements confortables qui permettent le mouvement. Beaucoup d'élèves préfèrent des robes ou jupes pour pratiquer tours et ondulations, mais ce n'est pas obligatoire. L'important est de vous sentir à l'aise.",
@@ -11110,7 +11129,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
     'Peu importe si vous venez pour vous déconnecter du travail. Pour rencontrer de nouvelles personnes. Pour reconnecter avec votre féminité. Pour prouver que OUI vous pouvez danser avec élégance.\n\nCe qui compte c\'est que vous fassiez le premier pas.\n\nAvec la Méthode Farray® vous n\'apprendrez pas des "trucs". Vous apprendrez à danser avec des fondations. Avec technique. Avec style. Et le plus important : en profitant de chaque minute.',
   bachataLadyFinalCTA1: 'Devenez Membre Maintenant',
   bachataLadyFinalCTA1Subtext: 'Places limitées ce mois-ci',
-  bachataLadyFinalCTA2: "Réservez votre Cours d'Essai",
+  bachataLadyFinalCTA2: 'Réservez votre Cours de Bienvenue',
   bachataLadyFinalCTA2Subtext: 'Valable pour un temps limité',
 
   // Pricing - Exclusive Member Benefits
@@ -11671,7 +11690,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   dhV3CompareMeaning4Title: 'Si tu cherches une communauté :',
   dhV3CompareMeaning4Desc:
     "Ici, tu n'es pas un numéro. Tu rencontreras des gens, iras aux pratiques, et auras une vraie famille de danse.",
-  dhV3CompareCTA: "Vérifie par toi-même : premier cours d'essai",
+  dhV3CompareCTA: 'Vérifie par toi-même : premier cours de bienvenue',
   dhV3CompareNote: 'Sans engagement. Sans astuces. Sans pression.',
   navBachataLadyStyle: 'Bachata Lady Style',
   navBachataSensual: 'Bachata Sensual',
@@ -11695,7 +11714,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   salsaLadyV2HeroSubtitle: 'La Méthode qui Transforme ta Danse',
   salsaLadyV2HeroDesc:
     "Arrête d'improviser sur les shines. Apprends une vraie technique féminine avec le seul système structuré de Lady Style à Barcelone.",
-  salsaLadyV2CTA1: "Réserve ton Cours d'Essai",
+  salsaLadyV2CTA1: 'Réserve ton Cours de Bienvenue',
   salsaLadyV2CTA2: 'Voir la Méthode Farray®',
   salsaLadyV2ProblemTitle: 'Le plafond de verre du Lady Style',
   salsaLadyV2ProblemP1: 'Tu danses la salsa depuis des mois (ou des années).',
@@ -12480,7 +12499,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogBeneficiosSalsa_ctaTitle: '¿Listo para experimentar estos beneficios?',
   blogBeneficiosSalsa_ctaText:
     "En Farray's International Dance Center tenemos clases de salsa cubana para todos los niveles. Profesores cubanos con más de 20 años de experiencia te guiarán desde tus primeros pasos hasta movimientos avanzados.",
-  blogBeneficiosSalsa_ctaButton: 'Probar Clase Gratis',
+  blogBeneficiosSalsa_ctaButton: 'Réserver Cours de Bienvenue',
 
   // =============================================
   // TEACHERS PAGE - Professeurs de Danse Barcelone
@@ -12638,7 +12657,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   bachataV3ScheduleSubtitle:
     "5 cours hebdomadaires pour tous les niveaux. Trouvez l'horaire qui convient à votre routine et commencez à danser.",
   bachataV3ScheduleCTA: 'Réservez Votre Premier Cours',
-  bachataV3ScheduleNote: 'Premier cours GRATUIT pour essayer',
+  bachataV3ScheduleNote: 'Cours de bienvenue disponible pour essayer',
 
   // === LEVEL CARDS ===
   bachataV3LevelBeginnerTitle: 'Débutant',
@@ -12766,7 +12785,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   bachataV3WhyTodayP2:
     "La bachata sensuelle est à son apogée. Les événements sont partout, la communauté grandit, et maintenant c'est le meilleur moment pour rejoindre. Dans quelques mois, vous serez sur la piste de danse à vous demander pourquoi vous avez attendu si longtemps.",
   bachataV3WhyTodayP3:
-    "Chez Farray's, nous accueillons de nouveaux élèves chaque semaine. Aujourd'hui pourrait être votre jour. Le premier cours est gratuit, donc vous n'avez rien à perdre et une nouvelle passion à gagner.",
+    "Chez Farray's, nous accueillons de nouveaux élèves chaque semaine. Aujourd'hui pourrait être votre jour. Le cours de bienvenue est spécial, donc vous n'avez rien à perdre et une nouvelle passion à gagner.",
 
   // === LOGOS SECTION ===
   bachataV3LogosTitle: 'Reconnus par les Meilleurs',
@@ -12812,7 +12831,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
     'Oui! Nous organisons des pratiques hebdomadaires et des soirées mensuelles où vous pouvez danser ce que vous apprenez en cours. Nous organisons également des voyages aux congrès de bachata nationaux et internationaux. Notre communauté est très active et vous aurez toujours un endroit où danser.',
   bachataV3FaqQ10: 'Combien coûtent les cours de bachata à Barcelone?',
   bachataV3FaqA10:
-    "Chez Farray's, nous avons des options flexibles: cours individuels, forfaits mensuels et pass illimités. Le premier cours est GRATUIT pour que vous puissiez essayer sans engagement. Après cela, les prix commencent à 40€/mois pour 1 cours par semaine. Consultez notre page tarifs pour plus de détails.",
+    "Chez Farray's, nous avons des options flexibles: cours individuels, forfaits mensuels et pass illimités. Le cours de bienvenue est disponible pour que vous puissiez essayer sans engagement. Après cela, les prix commencent à 40€/mois pour 1 cours par semaine. Consultez notre page tarifs pour plus de détails.",
 
   // === NEARBY SECTION ===
   bachataV3NearbyTitle: 'Cours de Bachata Sensuelle Près de Chez Vous',
@@ -12824,8 +12843,8 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // === FINAL CTA SECTION ===
   bachataV3FinalCtaTitle: 'Prêt à Commencer à Danser la Bachata Sensuelle?',
   bachataV3FinalCtaSubtitle:
-    "Votre premier cours est GRATUIT. Venez nous rencontrer et découvrez pourquoi des milliers d'étudiants ont choisi Farray's.",
-  bachataV3FinalCtaPrimary: 'Réserver Cours Gratuit',
+    "Réservez votre cours de bienvenue. Venez nous rencontrer et découvrez pourquoi des milliers d'étudiants ont choisi Farray's.",
+  bachataV3FinalCtaPrimary: 'Réserver Cours de Bienvenue',
   bachataV3FinalCtaSecondary: 'Voir Tous les Horaires',
   bachataV3FinalCtaGuarantee: '100% garantie de satisfaction pour votre premier cours',
   bachataV3FinalCtaSocial: 'Rejoignez notre communauté de +15 000 étudiants',
@@ -13010,9 +13029,9 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
 
   twLandingPageTitle: 'Cours de Bienvenue de Twerk',
   twLandingPageDescription:
-    'Découvrez le Twerk à Barcelone. Cours de Bienvenue totalement GRATUIT. Places limitées. Sans engagement. Réservez maintenant.',
+    'Découvrez le Twerk à Barcelone. Cours de Bienvenue sans engagement. Places limitées. Sans engagement. Réservez maintenant.',
 
-  twLandingBadge: 'COURS GRATUIT DE BIENVENUE',
+  twLandingBadge: 'COURS DE BIENVENUE',
   twLandingHeadline: 'Éveillez Votre Pouvoir avec le Twerk',
   twLandingSubheadline:
     'Entrez dans la nouvelle année en libérant votre énergie, en vous connectant à votre corps et en découvrant une danse qui vous donne du pouvoir dès la première minute. Plaisir garanti tout en travaillant fessiers, abdos et estime de soi.',
@@ -13033,7 +13052,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
 
   twLandingExperienceTitle: 'Prête à libérer votre pouvoir intérieur ?',
   twLandingExperienceDesc:
-    "Le Twerk n'est pas qu'une danse, c'est une déclaration de liberté. C'est votre moment pour vous connecter à votre corps sans jugement, renforcer votre confiance et passer un moment incroyable. Première fois avec nous ? C'est votre chance : un cours de Bienvenue de Twerk totalement gratuit, sans coût, sans engagement et avec des places limitées.",
+    "Le Twerk n'est pas qu'une danse, c'est une déclaration de liberté. C'est votre moment pour vous connecter à votre corps sans jugement, renforcer votre confiance et passer un moment incroyable. Première fois avec nous ? C'est votre chance : un cours de Bienvenue de Twerk sans engagement, sans coût, sans engagement et avec des places limitées.",
 
   twLandingValueTitle: "Qu'inclut cette expérience ?",
   twLandingValueItem1: 'Un cours complet de Twerk de 60 minutes',
@@ -13045,7 +13064,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   twLandingValueIncluded: 'Inclus',
   twLandingValueTotal: 'VALEUR TOTALE :',
   twLandingValueYourPrice: "VOTRE PRIX AUJOURD'HUI :",
-  twLandingValueFree: 'GRATUIT',
+  twLandingValueFree: 'SANS ENGAGEMENT',
 
   twLandingOfferTitle: 'Temps limité seulement',
   twLandingOfferDesc:
@@ -13180,12 +13199,12 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Professeure: Yasmina Fernández
 
   // SEO
-  sxrLandingPageTitle: "Cours d'Accueil Sexy Reggaeton à Barcelone | GRATUIT | Farray's Center",
+  sxrLandingPageTitle: "Cours d'Accueil Sexy Reggaeton à Barcelone | Farray's Center",
   sxrLandingPageDescription:
-    'Essayez un cours GRATUIT de Sexy Reggaeton avec Yasmina Fernández à Barcelone. Découvrez la sensualité du perreo et du body roll. Sans expérience préalable. Académie CID-UNESCO.',
+    'Essayez un cours de bienvenue de Sexy Reggaeton avec Yasmina Fernández à Barcelone. Découvrez la sensualité du perreo et du body roll. Sans expérience préalable. Académie CID-UNESCO.',
 
   // Hero Section
-  sxrLandingBadge: "COURS D'ACCUEIL GRATUIT",
+  sxrLandingBadge: 'COURS DE BIENVENUE',
   sxrLandingHeadline: 'Éveillez Votre Sensualité avec le Sexy Reggaeton',
   sxrLandingSubheadline:
     'Libérez votre énergie, connectez-vous à votre corps et découvrez une danse qui vous donne du pouvoir dès la première minute. Sensualité, confiance et plaisir garanti tout en travaillant votre expression corporelle.',
@@ -13223,7 +13242,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   sxrLandingValueIncluded: 'Inclus',
   sxrLandingValueTotal: 'VALEUR TOTALE :',
   sxrLandingValueYourPrice: "VOTRE PRIX AUJOURD'HUI :",
-  sxrLandingValueFree: 'GRATUIT',
+  sxrLandingValueFree: 'SANS ENGAGEMENT',
 
   // Offer Section
   sxrLandingOfferTitle: 'Temps limité uniquement',
@@ -13281,7 +13300,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Final CTA Section
   sxrLandingFinalCTATitle: "Votre corps mérite de s'exprimer. Il est temps de briller.",
   sxrLandingFinalCTADesc:
-    "Réservez votre cours d'accueil gratuit maintenant et découvrez pourquoi des centaines de femmes ont trouvé dans le Sexy Reggaeton leur façon préférée de s'exprimer.",
+    "Réservez votre cours de bienvenue maintenant et découvrez pourquoi des centaines de femmes ont trouvé dans le Sexy Reggaeton leur façon préférée de s'exprimer.",
   sxrLandingFinalCTAExtra:
     "La prochaine élève qui réserve pourrait découvrir une nouvelle version d'elle-même.",
   sxrLandingFinalTrust: 'Sans frais · Sans engagement · Places très limitées',
@@ -13387,10 +13406,10 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // =====================================================
   // HIP HOP REGGAETON LANDING PAGE
   // =====================================================
-  hhrLandingPageTitle: "Cours d'Accueil Hip Hop Reggaeton à Barcelone | GRATUIT | Farray's Center",
+  hhrLandingPageTitle: "Cours d'Accueil Hip Hop Reggaeton à Barcelone | Farray's Center",
   hhrLandingPageDescription:
-    "Essayez un cours GRATUIT de Hip Hop Reggaeton avec Charlie Breezy à Barcelone. Fusionnez le flow du Hip Hop avec l'énergie du Reggaeton. Sans expérience préalable. Académie CID-UNESCO.",
-  hhrLandingBadge: "COURS D'ACCUEIL GRATUIT",
+    "Essayez un cours de bienvenue de Hip Hop Reggaeton avec Charlie Breezy à Barcelone. Fusionnez le flow du Hip Hop avec l'énergie du Reggaeton. Sans expérience préalable. Académie CID-UNESCO.",
+  hhrLandingBadge: 'COURS DE BIENVENUE',
   hhrLandingHeadline: 'Fusionnez Hip Hop + Reggaeton et Libérez Votre Flow',
   hhrLandingSubheadline:
     'Essayez un cours avec Charlie Breezy et découvrez le style urbain qui combine le meilleur des deux mondes. Sans expérience préalable. Sans engagement.',
@@ -13412,7 +13431,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   hhrLandingExperienceDesc:
     'Hip Hop Reggaeton est la fusion parfaite entre le swagger du Hip Hop et le perreo du Reggaeton. Charlie Breezy a créé un style unique qui combine technique urbaine, attitude scénique et rythmes latinos. Vous apprendrez des chorégraphies qui mélangent le meilleur des deux mondes.',
   hhrLandingValueTitle: 'Que comprend cette expérience ?',
-  hhrLandingValueSubtitle: 'Tout cela complètement GRATUIT pour les nouveaux étudiants',
+  hhrLandingValueSubtitle: 'Tout cela disponible pour les nouveaux étudiants',
   hhrLandingValueItem1: 'Un cours complet de Hip Hop Reggaeton de 60 minutes',
   hhrLandingValuePrice1: 'Valeur: {price}€',
   hhrLandingValueItem2: "Apprenez le flow et l'attitude avec Charlie Breezy",
@@ -13422,7 +13441,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   hhrLandingValueIncluded: 'Inclus',
   hhrLandingValueTotal: 'VALEUR TOTALE :',
   hhrLandingValueYourPrice: "VOTRE PRIX AUJOURD'HUI :",
-  hhrLandingValueFree: 'GRATUIT',
+  hhrLandingValueFree: 'SANS ENGAGEMENT',
   hhrLandingOfferTitle: 'Réduction exclusive · Temps limité seulement',
   hhrLandingOfferDesc:
     "Si vous décidez de continuer après le cours d'accueil, vous aurez accès à une réduction exclusive sur votre premier abonnement mensuel ou forfait. Valable uniquement pour les nouveaux élèves.",
@@ -13473,7 +13492,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
     "Farray's International Dance Center · Calle Entença 100 · Barcelone · Métro: Tarragona (L3)",
   hhrLandingFinalCTATitle: 'Le flow est en vous. Il vous faut juste le bon cours pour le libérer.',
   hhrLandingFinalCTADesc:
-    "Réservez votre cours d'accueil GRATUIT maintenant et découvrez ce que Hip Hop + Reggaeton peuvent faire pour vous.",
+    'Réservez votre cours de bienvenue maintenant et découvrez ce que Hip Hop + Reggaeton peuvent faire pour vous.',
   hhrLandingFinalCTAExtra:
     'Charlie Breezy vous attend au cœur de Barcelone. Votre corps connaît déjà le rythme.',
   hhrLandingFinalTrust: 'Sans frais · Sans engagement · Places très limitées',
@@ -13556,12 +13575,12 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // SEO : noindex, nofollow (landing page publicitaire)
 
   // SEO
-  hhLandingPageTitle: "Cours d'Accueil Hip Hop à Barcelone | GRATUIT | Farray's Center",
+  hhLandingPageTitle: "Cours d'Accueil Hip Hop à Barcelone | Farray's Center",
   hhLandingPageDescription:
-    'Essayez un cours GRATUIT de Hip Hop avec Marcos Martínez, juge international, à Barcelone. Apprenez Breaking, Locking, Popping et Freestyle. Sans expérience préalable. Académie CID-UNESCO.',
+    'Essayez un cours de bienvenue de Hip Hop avec Marcos Martínez, juge international, à Barcelone. Apprenez Breaking, Locking, Popping et Freestyle. Sans expérience préalable. Académie CID-UNESCO.',
 
   // Hero Section
-  hhLandingBadge: "COURS D'ACCUEIL GRATUIT",
+  hhLandingBadge: 'COURS DE BIENVENUE',
   hhLandingHeadline: "Maîtrisez l'Art du Street Dance",
   hhLandingSubheadline:
     'Apprenez le Hip Hop authentique avec Marcos Martínez, juge international de Hip Hop. Breaking, Locking, Popping, Freestyle... découvrez votre propre style à Barcelone.',
@@ -13592,7 +13611,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
 
   // Value Stack
   hhLandingValueTitle: "Qu'inclut cette expérience ?",
-  hhLandingValueSubtitle: 'Tout cela complètement GRATUIT pour les nouveaux étudiants',
+  hhLandingValueSubtitle: 'Tout cela disponible pour les nouveaux étudiants',
   hhLandingValueItem1: 'Un cours complet de Hip Hop de 60 minutes',
   hhLandingValuePrice1: 'Valeur : {price}€',
   hhLandingValueItem2:
@@ -13603,12 +13622,12 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   hhLandingValueIncluded: 'Inclus',
   hhLandingValueTotal: 'VALEUR TOTALE :',
   hhLandingValueYourPrice: "VOTRE PRIX AUJOURD'HUI :",
-  hhLandingValueFree: 'GRATUIT',
+  hhLandingValueFree: 'SANS ENGAGEMENT',
 
   // Offer Section
   hhLandingOfferTitle: 'Pour un temps limité seulement',
   hhLandingOfferDesc:
-    "Ce cours d'accueil gratuit est exclusif aux nouveaux étudiants. Les places sont très limitées car nous travaillons avec des petits groupes pour garantir une attention personnalisée.",
+    'Ce cours de bienvenue est exclusif aux nouveaux étudiants. Les places sont très limitées car nous travaillons avec des petits groupes pour garantir une attention personnalisée.',
 
   // Schedule Section
   hhLandingScheduleTitle: 'Choisissez votre horaire',
@@ -13669,7 +13688,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Final CTA Section
   hhLandingFinalCTATitle: 'Prêt(e) à découvrir le vrai Hip Hop ?',
   hhLandingFinalCTADesc:
-    "Réservez votre cours d'accueil gratuit maintenant et commencez votre voyage dans le street dance avec un juge international de Hip Hop.",
+    'Réservez votre cours de bienvenue maintenant et commencez votre voyage dans le street dance avec un juge international de Hip Hop.',
   hhLandingFinalCTAExtra:
     "Réduction exclusive · Temps limité uniquement\n\nSi vous décidez de continuer après le cours d'accueil, vous aurez accès à une réduction exclusive sur votre premier abonnement mensuel ou forfait. Valable uniquement pour les nouveaux élèves.",
   hhLandingFinalTrust: 'Sans frais · Sans engagement · Places très limitées',
@@ -13782,12 +13801,12 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Professeurs : Redblueh, Charlie Breezy
 
   // SEO
-  abLandingPageTitle: "Cours d'Accueil Afrobeats à Barcelone | GRATUIT | Farray's Center",
+  abLandingPageTitle: "Cours d'Accueil Afrobeats à Barcelone | Farray's Center",
   abLandingPageDescription:
-    "Essayez un cours GRATUIT d'Afrobeats avec Redblueh et Charlie Breezy à Barcelone. Découvrez les rythmes africains, l'énergie vibrante et les mouvements authentiques de l'Afrodance. Sans expérience préalable. Académie CID-UNESCO.",
+    "Essayez un cours de bienvenue d'Afrobeats avec Redblueh et Charlie Breezy à Barcelone. Découvrez les rythmes africains, l'énergie vibrante et les mouvements authentiques de l'Afrodance. Sans expérience préalable. Académie CID-UNESCO.",
 
   // Hero Section
-  abLandingBadge: "COURS D'ACCUEIL GRATUIT",
+  abLandingBadge: 'COURS DE BIENVENUE',
   abLandingHeadline: "Ressentez l'Énergie de l'Afrique avec l'Afrobeats",
   abLandingSubheadline:
     "Entrez dans la nouvelle année en bougeant intensément au rythme de l'Afrique. Danser l'Afrobeats est bien plus qu'un cours... c'est une explosion de joie, d'énergie et de connexion avec les rythmes les plus puissants de la planète.",
@@ -13818,7 +13837,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
 
   // Value Stack
   abLandingValueTitle: "Qu'inclut cette expérience ?",
-  abLandingValueSubtitle: 'Tout cela complètement GRATUIT pour les nouveaux étudiants',
+  abLandingValueSubtitle: 'Tout cela disponible pour les nouveaux étudiants',
   abLandingValueItem1: "Un cours complet d'Afrobeats de 60 minutes",
   abLandingValuePrice1: 'Valeur : {price}€',
   abLandingValueItem2:
@@ -13829,7 +13848,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   abLandingValueIncluded: 'Inclus',
   abLandingValueTotal: 'VALEUR TOTALE :',
   abLandingValueYourPrice: "VOTRE PRIX AUJOURD'HUI :",
-  abLandingValueFree: 'GRATUIT',
+  abLandingValueFree: 'SANS ENGAGEMENT',
 
   // Offer Section
   abLandingOfferTitle: 'Pour une durée limitée seulement',
@@ -13895,7 +13914,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Final CTA Section
   abLandingFinalCTATitle: "L'énergie de l'Afrique vous attend. Venez-vous la découvrir ?",
   abLandingFinalCTADesc:
-    "Réservez maintenant votre cours d'accueil gratuit et découvrez pourquoi des centaines d'élèves ont trouvé dans l'Afrobeats leur façon préférée de libérer de l'énergie et de profiter.",
+    "Réservez maintenant votre cours de bienvenue et découvrez pourquoi des centaines d'élèves ont trouvé dans l'Afrobeats leur façon préférée de libérer de l'énergie et de profiter.",
   abLandingFinalCTAExtra: `L'Afrique bouge. Bougez-vous avec elle ?`,
   abLandingFinalTrust: 'Sans frais · Sans engagement · Places très limitées',
   abLandingUrgencyReminder: 'Rappel : les places sont très limitées chaque semaine',
@@ -13930,12 +13949,12 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // =====================================================
 
   // Meta SEO
-  ajLandingPageTitle: "Cours d'Accueil Afro Jazz à Barcelone | GRATUIT | Farray's Center",
+  ajLandingPageTitle: "Cours d'Accueil Afro Jazz à Barcelone | Farray's Center",
   ajLandingPageDescription:
-    "Découvrez la fusion parfaite entre les racines africaines et la technique du jazz. Cours d'Accueil Afro Jazz totalement GRATUIT. Places limitées. Sans engagement.",
+    "Découvrez la fusion parfaite entre les racines africaines et la technique du jazz. Cours d'Accueil Afro Jazz sans engagement. Places limitées. Sans engagement.",
 
   // Hero Section
-  ajLandingBadge: "COURS D'ACCUEIL GRATUIT",
+  ajLandingBadge: 'COURS DE BIENVENUE',
   ajLandingHeadline: "Fusionnez Racines Africaines avec l'Élégance du Jazz",
   ajLandingSubheadline:
     "Découvrez une danse unique qui combine la force et la spiritualité des rythmes africains avec la technique et la fluidité du jazz moderne. Une expérience qui transforme le corps et l'âme.",
@@ -13965,11 +13984,11 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Experience Section
   ajLandingExperienceTitle: 'Vous cherchez une danse qui combine technique et expression ?',
   ajLandingExperienceDesc:
-    "L'Afro Jazz est une fusion unique créée par Yunaisy Farray qui combine l'énergie ancestrale des rythmes africains avec l'élégance technique du jazz contemporain. Ce n'est pas un cours ordinaire : c'est votre entrée dans un univers où la force des racines africaines rencontre la fluidité du mouvement moderne. Première fois ? Un cours d'Accueil totalement gratuit.",
+    "L'Afro Jazz est une fusion unique créée par Yunaisy Farray qui combine l'énergie ancestrale des rythmes africains avec l'élégance technique du jazz contemporain. Ce n'est pas un cours ordinaire : c'est votre entrée dans un univers où la force des racines africaines rencontre la fluidité du mouvement moderne. Première fois ? Un cours d'Accueil sans engagement.",
 
   // Value Stack
   ajLandingValueTitle: "Qu'inclut cette expérience ?",
-  ajLandingValueSubtitle: 'Tout cela complètement GRATUIT pour les nouveaux étudiants',
+  ajLandingValueSubtitle: 'Tout cela disponible pour les nouveaux étudiants',
   ajLandingValueItem1: "Un cours complet d'Afro Jazz de 60-90 minutes",
   ajLandingValuePrice1: 'Valeur : {price}€',
   ajLandingValueItem2: 'Méthodologie unique créée par Yunaisy Farray',
@@ -13979,7 +13998,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   ajLandingValueIncluded: 'Inclus',
   ajLandingValueTotal: 'VALEUR TOTALE :',
   ajLandingValueYourPrice: "VOTRE PRIX AUJOURD'HUI :",
-  ajLandingValueFree: 'GRATUIT',
+  ajLandingValueFree: 'SANS ENGAGEMENT',
 
   // Special Offer
   ajLandingOfferTitle: 'Pour une durée limitée seulement',
@@ -14073,12 +14092,12 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // =====================================================
 
   // Page Meta
-  acLandingPageTitle: "Cours d'Accueil Afro Contemporain à Barcelone | GRATUIT | Farray's Center",
+  acLandingPageTitle: "Cours d'Accueil Afro Contemporain à Barcelone | Farray's Center",
   acLandingPageDescription:
-    "Découvrez la Danse Contemporaine Cubaine (DCC) avec la technique de l'ENA. Cours d'Accueil Afro Contemporain totalement GRATUIT. Places limitées. Sans engagement.",
+    "Découvrez la Danse Contemporaine Cubaine (DCC) avec la technique de l'ENA. Cours d'Accueil Afro Contemporain sans engagement. Places limitées. Sans engagement.",
 
   // Hero Section
-  acLandingBadge: "COURS D'ACCUEIL GRATUIT",
+  acLandingBadge: 'COURS DE BIENVENUE',
   acLandingHeadline: 'Découvrez la Danse Contemporaine Cubaine Authentique',
   acLandingSubheadline:
     "Fusionnez la technique de l'École Nationale d'Art de Cuba avec la force ancestrale des rythmes afro-cubains. Une expérience unique qui transforme votre corps et votre expression artistique.",
@@ -14109,11 +14128,11 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   acLandingExperienceTitle:
     'Vous cherchez une danse qui connecte technique, racines et expression ?',
   acLandingExperienceDesc:
-    "L'Afro Contemporain est la fusion de la technique cubaine de l'ENA avec les rythmes et mouvements afro-cubains. Yunaisy Farray, formée à l'École Nationale d'Art de Cuba, a créé une méthodologie unique qui combine la précision technique de la danse contemporaine avec la force, la musicalité et la spiritualité des danses africaines. Première fois ? Un cours d'Accueil totalement gratuit.",
+    "L'Afro Contemporain est la fusion de la technique cubaine de l'ENA avec les rythmes et mouvements afro-cubains. Yunaisy Farray, formée à l'École Nationale d'Art de Cuba, a créé une méthodologie unique qui combine la précision technique de la danse contemporaine avec la force, la musicalité et la spiritualité des danses africaines. Première fois ? Un cours d'Accueil sans engagement.",
 
   // Value Stack
   acLandingValueTitle: 'Que comprend cette expérience ?',
-  acLandingValueSubtitle: 'Tout cela complètement GRATUIT pour les nouveaux étudiants',
+  acLandingValueSubtitle: 'Tout cela disponible pour les nouveaux étudiants',
   acLandingValueItem1: "Un cours complet d'Afro Contemporain de 60-90 minutes",
   acLandingValuePrice1: 'Valeur : {price}€',
   acLandingValueItem2: 'Méthodologie ENA authentique avec Yunaisy Farray',
@@ -14123,7 +14142,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   acLandingValueIncluded: 'Inclus',
   acLandingValueTotal: 'VALEUR TOTALE :',
   acLandingValueYourPrice: "VOTRE PRIX AUJOURD'HUI :",
-  acLandingValueFree: 'GRATUIT',
+  acLandingValueFree: 'SANS ENGAGEMENT',
 
   // Special Offer
   acLandingOfferTitle: 'Pour une durée limitée seulement',
@@ -14466,12 +14485,12 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Professeure : Yasmina Fernández
 
   // SEO
-  ssLandingPageTitle: "Cours d'Accueil de Sexy Style à Barcelone | GRATUIT | Farray's Center",
+  ssLandingPageTitle: "Cours d'Accueil de Sexy Style à Barcelone | Farray's Center",
   ssLandingPageDescription:
-    "Essayez un cours GRATUIT de Sexy Style avec Yasmina Fernández à Barcelone. Découvrez la sensualité, l'expression corporelle et la confiance à travers la danse. Aucune expérience préalable requise. Académie CID-UNESCO.",
+    "Essayez un cours de bienvenue de Sexy Style avec Yasmina Fernández à Barcelone. Découvrez la sensualité, l'expression corporelle et la confiance à travers la danse. Aucune expérience préalable requise. Académie CID-UNESCO.",
 
   // Hero Section
-  ssLandingBadge: "COURS D'ACCUEIL GRATUIT",
+  ssLandingBadge: 'COURS DE BIENVENUE',
   ssLandingHeadline: 'Éveillez Votre Pouvoir Féminin avec le Sexy Style',
   ssLandingSubheadline:
     "Libérez votre sensualité, reconnectez-vous à votre corps et découvrez une danse qui vous autonomise dès le premier pas. Confiance, féminité et expression corporelle à l'état pur.",
@@ -14509,7 +14528,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   ssLandingValueIncluded: 'Inclus',
   ssLandingValueTotal: 'VALEUR TOTALE :',
   ssLandingValueYourPrice: "VOTRE PRIX AUJOURD'HUI :",
-  ssLandingValueFree: 'GRATUIT',
+  ssLandingValueFree: 'SANS ENGAGEMENT',
 
   // Offer Section
   ssLandingOfferTitle: 'Pour un temps limité seulement',
@@ -14567,7 +14586,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Final CTA Section
   ssLandingFinalCTATitle: 'Votre féminité mérite de briller. Il est temps de la libérer.',
   ssLandingFinalCTADesc:
-    "Réservez maintenant votre cours d'accueil gratuit et découvrez pourquoi des centaines de femmes ont trouvé dans le Sexy Style leur façon préférée de s'exprimer.",
+    "Réservez maintenant votre cours de bienvenue et découvrez pourquoi des centaines de femmes ont trouvé dans le Sexy Style leur façon préférée de s'exprimer.",
   ssLandingFinalCTAExtra:
     "La prochaine élève qui réservera pourrait découvrir une nouvelle version d'elle-même.",
   ssLandingFinalTrust: 'Sans frais · Sans engagement · Places très limitées',
@@ -14677,12 +14696,12 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Professeurs : Yunaisy Farray, Iroel Bastarreche
 
   // SEO (noindex, nofollow - landing page de captation ads)
-  scLandingPageTitle: "Cours d'Accueil de Salsa Cubaine à Barcelone | GRATUIT | Farray's Center",
+  scLandingPageTitle: "Cours d'Accueil de Salsa Cubaine à Barcelone | Farray's Center",
   scLandingPageDescription:
-    'Essayez un cours GRATUIT de Salsa Cubaine avec la Méthode Farray à Barcelone. Apprenez avec Yunaisy Farray, créatrice de la méthode. Casino, Rueda, musicalité et connexion de couple. Académie CID-UNESCO.',
+    'Essayez un cours de bienvenue de Salsa Cubaine avec la Méthode Farray à Barcelone. Apprenez avec Yunaisy Farray, créatrice de la méthode. Casino, Rueda, musicalité et connexion de couple. Académie CID-UNESCO.',
 
   // Hero Section
-  scLandingBadge: "COURS D'ACCUEIL GRATUIT",
+  scLandingBadge: 'COURS DE BIENVENUE',
   scLandingHeadline: 'Apprenez la Salsa Cubaine avec la Méthode Farray',
   scLandingSubheadline:
     'Découvrez la seule méthode éprouvée qui vous apprend à danser le Casino en couple à partir de zéro. Guidage parfait, musicalité authentique et la joie cubaine qui transforme votre façon de danser.',
@@ -14713,7 +14732,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
 
   // Value Stack
   scLandingValueTitle: 'Que comprend cette expérience ?',
-  scLandingValueSubtitle: 'Tout cela entièrement GRATUIT pour les nouveaux étudiants',
+  scLandingValueSubtitle: 'Tout cela disponible pour les nouveaux étudiants',
   scLandingValueItem1: 'Un cours complet de Salsa Cubaine de 60 minutes',
   scLandingValuePrice1: 'Valeur : {price}€',
   scLandingValueItem2: 'Introduction à la Méthode Farray : guidage et suivi dès le jour 1',
@@ -14723,7 +14742,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   scLandingValueIncluded: 'Inclus',
   scLandingValueTotal: 'VALEUR TOTALE :',
   scLandingValueYourPrice: "VOTRE PRIX AUJOURD'HUI :",
-  scLandingValueFree: 'GRATUIT',
+  scLandingValueFree: 'SANS ENGAGEMENT',
 
   // Offer Section
   scLandingOfferTitle: 'Offre limitée dans le temps',
@@ -14789,7 +14808,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Final CTA Section
   scLandingFinalCTATitle: "Le rythme cubain vous attend. Osez-vous l'essayer ?",
   scLandingFinalCTADesc:
-    "Réservez maintenant votre cours d'accueil gratuit et découvrez pourquoi des milliers d'élèves ont choisi la Méthode Farray pour apprendre la Salsa Cubaine à Barcelone.",
+    "Réservez maintenant votre cours de bienvenue et découvrez pourquoi des milliers d'élèves ont choisi la Méthode Farray pour apprendre la Salsa Cubaine à Barcelone.",
   scLandingFinalCTAExtra:
     "Les 10 premiers à réserver cette semaine : accès prioritaire à l'horaire préféré",
   scLandingFinalTrust: 'Sans frais · Sans engagement · Places très limitées',
@@ -14865,7 +14884,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   scLeadModal_consent_link: 'politique de confidentialité',
 
   // CTA
-  scLeadModal_submit: 'Réserver Mon Cours Gratuit',
+  scLeadModal_submit: 'Réserver Mon Cours de Bienvenue',
   scLeadModal_sending: 'Traitement en cours...',
 
   // Validation
@@ -14909,13 +14928,12 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Professeurs : Daniel Sené, Alejandro Miñoso
 
   // SEO
-  ctLandingPageTitle:
-    "Cours d'Accueil de Danse Contemporaine à Barcelone | GRATUIT | Farray's Center",
+  ctLandingPageTitle: "Cours d'Accueil de Danse Contemporaine à Barcelone | Farray's Center",
   ctLandingPageDescription:
-    'Essayez un cours GRATUIT de Danse Contemporaine avec Daniel Sené et Alejandro Miñoso à Barcelone. Technique au sol, release, improvisation et expression corporelle. Sans expérience préalable. Académie CID-UNESCO.',
+    'Essayez un cours de bienvenue de Danse Contemporaine avec Daniel Sené et Alejandro Miñoso à Barcelone. Technique au sol, release, improvisation et expression corporelle. Sans expérience préalable. Académie CID-UNESCO.',
 
   // Hero Section
-  ctLandingBadge: "COURS D'ACCUEIL GRATUIT",
+  ctLandingBadge: 'COURS DE BIENVENUE',
   ctLandingHeadline: 'Découvrez la Danse Contemporaine et Connectez avec Votre Corps',
   ctLandingSubheadline:
     "Un cours pour explorer le mouvement fluide, la technique au sol et l'expression corporelle. Aucune expérience préalable nécessaire.",
@@ -14953,7 +14971,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   ctLandingValueIncluded: 'Inclus',
   ctLandingValueTotal: 'VALEUR TOTALE :',
   ctLandingValueYourPrice: "VOTRE PRIX AUJOURD'HUI :",
-  ctLandingValueFree: 'GRATUIT',
+  ctLandingValueFree: 'SANS ENGAGEMENT',
 
   // Offer Section
   ctLandingOfferTitle: 'Réduction exclusive pour nouveaux élèves',
@@ -15012,7 +15030,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Final CTA
   ctLandingFinalCTATitle: 'Votre corps a des histoires à raconter. Il est temps de les exprimer.',
   ctLandingFinalCTADesc:
-    "Rejoignez des centaines d'élèves qui ont découvert la danse contemporaine à Barcelone. Votre premier cours est entièrement gratuit.",
+    "Rejoignez des centaines d'élèves qui ont découvert la danse contemporaine à Barcelone. Votre premier cours est sans engagement.",
   ctLandingFinalCTAExtra: '',
   ctLandingFinalTrust: 'Sans frais · Sans engagement · Places très limitées',
 
@@ -15121,16 +15139,15 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // =====================================================
 
   // Page Meta
-  btLandingPageTitle:
-    "Cours de Bienvenue de Ballet Classique à Barcelone | GRATUIT | Farray's Center",
+  btLandingPageTitle: "Cours de Bienvenue de Ballet Classique à Barcelone | Farray's Center",
   btLandingPageDescription:
-    "Essayez un cours gratuit de ballet classique à Barcelone. Professeurs formés à l'École Nationale d'Art de Cuba. Technique, posture et élégance pour tous les niveaux.",
+    "Essayez un cours de bienvenue de ballet classique à Barcelone. Professeurs formés à l'École Nationale d'Art de Cuba. Technique, posture et élégance pour tous les niveaux.",
 
   // Hero Section
-  btLandingBadge: 'COURS DE BIENVENUE GRATUIT',
+  btLandingBadge: 'COURS DE BIENVENUE',
   btLandingHeadline: "Découvrez l'Élégance du Ballet Classique à Barcelone",
   btLandingSubheadline:
-    "Développez une posture parfaite, de la flexibilité et de la grâce avec des professeurs formés à la prestigieuse École Nationale d'Art de Cuba. Votre premier cours est entièrement gratuit.",
+    "Développez une posture parfaite, de la flexibilité et de la grâce avec des professeurs formés à la prestigieuse École Nationale d'Art de Cuba. Votre premier cours est sans engagement.",
   btLandingCTA: 'RÉSERVEZ VOTRE COURS DE BIENVENUE MAINTENANT',
   btLandingTrustText: 'Sans frais · Sans engagement · Places très limitées',
   btLandingTrustActiveStudents: '1 500+ élèves actifs',
@@ -15165,7 +15182,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   btLandingValueIncluded: 'Inclus',
   btLandingValueTotal: 'VALEUR TOTALE :',
   btLandingValueYourPrice: "VOTRE PRIX AUJOURD'HUI :",
-  btLandingValueFree: 'GRATUIT',
+  btLandingValueFree: 'SANS ENGAGEMENT',
 
   // Offer Section
   btLandingOfferTitle: 'Pour une durée limitée seulement',
@@ -15223,7 +15240,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Final CTA
   btLandingFinalCTATitle: 'La discipline la plus élégante du monde vous attend',
   btLandingFinalCTADesc:
-    "Rejoignez des centaines d'élèves qui ont découvert le ballet classique à Barcelone. Votre premier cours est entièrement gratuit.",
+    "Rejoignez des centaines d'élèves qui ont découvert le ballet classique à Barcelone. Votre premier cours est sans engagement.",
   btLandingFinalCTAExtra:
     "Les 10 premiers à réserver cette semaine : séance d'orientation personnalisée incluse",
   btLandingFinalTrust: 'Sans frais · Sans engagement · Places très limitées',
@@ -15338,7 +15355,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   baLeadModal_microCommit_curious: "Je veux juste plus d'informations",
 
   baLeadModal_intro:
-    "Complétez le formulaire et nous vous contacterons pour réserver votre cours de bienvenue de Bachata Sensual. C'est gratuit et sans engagement.",
+    'Complétez le formulaire et nous vous contacterons pour réserver votre cours de bienvenue de Bachata Sensual. Sans engagement.',
 
   // Benefits
   baLeadModal_benefits_title: 'Ce que vous recevrez :',
@@ -15362,7 +15379,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   baLeadModal_consent_link: 'politique de confidentialité',
 
   // Submit
-  baLeadModal_submit: 'Réserver Mon Cours Gratuit',
+  baLeadModal_submit: 'Réserver Mon Cours de Bienvenue',
   baLeadModal_submitLoading: 'Traitement...',
 
   // Success
@@ -15429,7 +15446,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   exitIntent_subtitle: 'Uniquement pour les nouveaux élèves',
   exitIntent_countdown_label: 'Se termine dans:',
   exitIntent_countdown_expired: 'Offre expirée',
-  exitIntent_benefit1: "Premier cours d'essai GRATUIT",
+  exitIntent_benefit1: 'Cours de bienvenue disponible',
   exitIntent_benefit2: 'Valable pour tout style de danse',
   exitIntent_benefit3: "Réservez votre place avant qu'il n'y en ait plus",
   exitIntent_email_label: 'Votre email',
@@ -15559,7 +15576,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogHistoriaBachata_conclusionContent:
     'Des quartiers de Santo Domingo aux académies de Barcelone, la bachata a parcouru un chemin épique : de genre marginal à Patrimoine UNESCO, de "musique d\'amargue" à phénomène mondial avec Romeo Santos remplissant des stades.',
   blogHistoriaBachata_conclusionCTA:
-    "La bachata ne s'est pas arrêtée à Santo Domingo : elle pulse dans l'Eixample de Barcelone. **[Réservez votre cours d'essai](/fr/clases/bachata-barcelona)** chez Farray's et écrivez votre propre chapitre dans cette histoire de rythme et de passion.",
+    "La bachata ne s'est pas arrêtée à Santo Domingo : elle pulse dans l'Eixample de Barcelone. **[Réservez votre cours de bienvenue](/fr/clases/bachata-barcelona)** chez Farray's et écrivez votre propre chapitre dans cette histoire de rythme et de passion.",
   blogHistoriaBachata_faqTitle: "Questions Fréquentes sur l'Histoire de la Bachata",
   blogHistoriaBachata_faq1Question: "Quelle est l'origine de la bachata comme genre musical ?",
   blogHistoriaBachata_faq1Answer:
@@ -15646,7 +15663,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogClasesSalsaBarcelona_section4Content:
     "Et si vous voulez apprendre cette langue, faites-le avec des professeurs qui pensent comme vous ; qui non seulement donnent des ailes à vos pieds, mais aussi à votre esprit ; qui vous enseignent avec rigueur les bases de la langue, tout en vous transmettant l'émotion face au brillant avenir qui vous attend. Chez Farray's, nous savons parler et enseigner la salsa. Et la timba, et la rumba, et le son, et la bachata, et la kizomba, et l'afro contemporain, et le jazz, et le reggaeton, et le hip-hop, et le dancehall... C'est notre langue, notre culture, notre passion. Et nous sommes très heureux de la transmettre !",
   blogClasesSalsaBarcelona_ctaClases:
-    '**Vous voulez commencer à parler salsa ?** Découvrez nos <a href="/fr/clases/salsa-cubana-barcelona">cours de Salsa Cubaine</a>, <a href="/fr/clases/salsa-bachata-barcelona">Salsa et Bachata</a> ou <a href="/fr/clases/timba-barcelona">Timba</a>. Premier cours d\'essai gratuit. <a href="/fr/horarios"><strong>Voir les horaires et réserver →</strong></a>',
+    '**Vous voulez commencer à parler salsa ?** Découvrez nos <a href="/fr/clases/salsa-cubana-barcelona">cours de Salsa Cubaine</a>, <a href="/fr/clases/salsa-bachata-barcelona">Salsa et Bachata</a> ou <a href="/fr/clases/timba-barcelona">Timba</a>. Cours de bienvenue disponible. <a href="/fr/horarios"><strong>Voir les horaires et réserver →</strong></a>',
 
   // ============================================================================
   // BLOG ARTICLE: Cours de danse pour débutants à Barcelone
@@ -15660,7 +15677,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
     'Guide complet pour commencer à danser depuis zéro à Barcelone. Cours de bienvenue, sans partenaire, tous niveaux. Participation ponctuelle dès 20€.',
   blogClasesDébutants_breadcrumbCurrent: 'Cours pour débutants',
   blogClasesDébutants_summaryBullet1:
-    "Cours de bienvenue chez Farray's (Eixample) – gratuit en saison promotionnelle ou dès 10€",
+    "Cours de bienvenue chez Farray's (Eixample) – prix spécial en saison promotionnelle ou dès 10€",
   blogClasesDébutants_summaryBullet2:
     "Pas besoin d'expérience préalable ni de venir avec partenaire",
   blogClasesDébutants_summaryBullet3:
@@ -15668,7 +15685,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogClasesDébutants_summaryBullet4:
     '+25 styles disponibles : latins, urbains, danse technique et plus',
   blogClasesDébutants_intro:
-    "Envie de commencer à danser depuis zéro et vous ne savez pas par où commencer ? Vous êtes au bon endroit. Chez <a href='/fr'>Farray's International Dance Center</a> (Barcelone, Eixample) vous pouvez réserver un <strong>cours de bienvenue</strong> pour nous connaître : <strong>gratuit en saison promotionnelle</strong>, ou avec prix de courtoisie (dès 10€) le reste de l'année. Vous pouvez aussi venir en participation ponctuelle dès 20€. Sans pression, sans posture et avec une équipe qui vous facilite les choses dès la première minute.",
+    "Envie de commencer à danser depuis zéro et vous ne savez pas par où commencer ? Vous êtes au bon endroit. Chez <a href='/fr'>Farray's International Dance Center</a> (Barcelone, Eixample) vous pouvez réserver un <strong>cours de bienvenue</strong> pour nous connaître : <strong>prix spécial en saison promotionnelle</strong>, ou avec prix de courtoisie (dès 10€) le reste de l'année. Vous pouvez aussi venir en participation ponctuelle dès 20€. Sans pression, sans posture et avec une équipe qui vous facilite les choses dès la première minute.",
   blogClasesDébutants_ctaHero:
     '<strong><a href="/fr/contacto">Réservez votre cours de bienvenue →</a></strong>',
   blogClasesDébutants_section1Title:
@@ -15743,7 +15760,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogClasesDébutants_section8Content:
     "Si ce guide vous a enlevé un peu de bruit mental, voilà : c'était ce qui manquait.",
   blogClasesDébutants_ctaReserva:
-    '<strong><a href="/fr/contacto">Réservez votre cours de bienvenue →</a></strong><br/><br/>• <strong>En saison promotionnelle :</strong> cours de bienvenue gratuit<br/>• <strong>Reste de l\'année :</strong> cours de courtoisie dès 10€<br/>• <strong>Participation ponctuelle :</strong> dès 20€<br/><br/>Des questions ? Écrivez-nous et on vous aide à choisir cours et niveau.',
+    '<strong><a href="/fr/contacto">Réservez votre cours de bienvenue →</a></strong><br/><br/>• <strong>En saison promotionnelle :</strong> cours de bienvenue<br/>• <strong>Reste de l\'année :</strong> cours de courtoisie dès 10€<br/>• <strong>Participation ponctuelle :</strong> dès 20€<br/><br/>Des questions ? Écrivez-nous et on vous aide à choisir cours et niveau.',
   blogClasesDébutants_section9Title: 'Où nous sommes (Barcelone)',
   blogClasesDébutants_section9Content:
     "<strong>Farray's International Dance Center</strong><br/>C/ Entença, 100 (rez-de-chaussée), 08015 Barcelone, Catalogne<br/>Tél. <a href='tel:+34622247085'>(+34) 622 247 085</a><br/>Email : <a href='mailto:info@farrayscenter.com'>info@farrayscenter.com</a><br/><br/><strong>Horaire des cours :</strong> 10:00 à 22:00<br/><strong>Attention téléphonique :</strong> Lun–Ven 10:00 à 22:00<br/><br/><em>Académie de danse à Barcelone (Eixample) - Près de Plaza España et Gare de Sants</em>",
@@ -15751,9 +15768,9 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogClasesDébutants_faq1Question: 'Puis-je commencer à danser sans expérience ?',
   blogClasesDébutants_faq1Answer:
     'Oui. Nous avons des cours pour débutants où on part des bases et tout est expliqué étape par étape.',
-  blogClasesDébutants_faq2Question: "Y a-t-il un cours d'essai pour connaître le centre ?",
+  blogClasesDébutants_faq2Question: 'Y a-t-il un cours de bienvenue pour connaître le centre ?',
   blogClasesDébutants_faq2Answer:
-    "Oui. En saison promotionnelle nous offrons un cours de bienvenue gratuit. Le reste de l'année vous pouvez venir nous connaître avec un cours de courtoisie dès 10€, ou avec participation ponctuelle dès 20€.",
+    "Oui. En saison promotionnelle nous offrons un cours de bienvenue. Le reste de l'année vous pouvez venir nous connaître avec un cours de courtoisie dès 10€, ou avec participation ponctuelle dès 20€.",
   blogClasesDébutants_faq3Question: 'Dois-je y aller avec un(e) partenaire ?',
   blogClasesDébutants_faq3Answer:
     'Pas nécessairement. Dans beaucoup de formats vous pouvez venir seul(e). On vous oriente selon le cours.',
@@ -16516,7 +16533,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   cuerpofitCTAGroup: `Options d'inscription`,
   cuerpofitCTA1: `Devenez Membre Maintenant`,
   cuerpofitCTA1Subtext: `Places limitées par cours`,
-  cuerpofitCTA2: `Réservez Votre Cours d'Essai`,
+  cuerpofitCTA2: `Réservez Votre Cours de Bienvenue`,
   cuerpofitCTA2Subtext: `Valable pour une durée limitée`,
   cuerpofitWhatIsTitle: `Qu'est-ce que le Body Conditioning et pourquoi en avez-vous besoin ?`,
   cuerpofitWhatIsP1: `Le body conditioning ou préparation physique est un entraînement complet conçu spécifiquement pour les exigences de la danse. Il combine exercices de force fonctionnelle, flexibilité active, mobilité articulaire et stabilité du core pour créer un corps plus fort, plus agile et résistant aux blessures.`,
@@ -16601,8 +16618,8 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   cuerpofitFaqA5: `Vêtements de sport confortables permettant une grande amplitude de mouvement (leggings, t-shirt ajusté ou top). Pieds nus ou avec chaussettes (pas de baskets). Petite serviette et bouteille d'eau. Nous fournissons les tapis.`,
   cuerpofitFaqQ6: `Cela sert-il à prévenir les blessures de danse ?`,
   cuerpofitFaqA6: `Oui, c'est l'un des principaux objectifs. Des études démontrent que les danseurs avec un entraînement de force régulier ont 50-70% moins de blessures. Le body conditioning renforce les zones les plus vulnérables (hanches, genoux, chevilles, dos) et corrige les déséquilibres musculaires.`,
-  cuerpofitFaqQ7: `Combien coûte le cours d'essai ?`,
-  cuerpofitFaqA7: `Le cours d'essai coûte 10€ et est sans engagement. Vous pouvez essayer n'importe quel lundi à 19h. Si ça vous plaît, il y a des forfaits mensuels à partir de 40€. Consultez tous les prix à la réception ou sur notre site.`,
+  cuerpofitFaqQ7: `Combien coûte le cours de bienvenue ?`,
+  cuerpofitFaqA7: `Le cours de bienvenue coûte 10€ et est sans engagement. Vous pouvez essayer n'importe quel lundi à 19h. Si ça vous plaît, il y a des forfaits mensuels à partir de 40€. Consultez tous les prix à la réception ou sur notre site.`,
   cuerpofitFaqQ8: `Y a-t-il un contrat ou un engagement ?`,
   cuerpofitFaqA8: `Non. Forfaits mensuels sans engagement. Vous pouvez entrer et sortir quand vous voulez. Nous valorisons votre liberté et voulons que vous veniez parce que vous le voulez, pas parce que vous êtes lié(e) à un contrat.`,
   cuerpofitFaqQ9: `Puis-je combiner le body conditioning avec d'autres cours ?`,
@@ -16666,7 +16683,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   bailemanananasClassesPerWeek: `cours par semaine`,
   bailemanananasCTA1: `Voir Horaires de Mañanas`,
   bailemanananasCTA1Subtext: `Petits groupes`,
-  bailemanananasCTA2: `Réservez Votre Cours d'Essai`,
+  bailemanananasCTA2: `Réservez Votre Cours de Bienvenue`,
   bailemanananasCTA2Subtext: `10€ sans compromiso`,
   bailemanananasWhatIsTitle: `La activité matinal que necesitabas... Y que cambiará tus días`,
   bailemanananasWhatIsP1: `¿Trabajas par las tardes? ¿Tienes turnos cambiantes? ¿O simplemente quieres empezar el día avec buena energía, moviéndote y una gran sonrisa en la cara?`,
@@ -16757,7 +16774,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   bailemanananasFaqQ6: `¿Las cours de mañana son más tranquilas que las de tarde?`,
   bailemanananasFaqA6: `Depende del style. El Contemporáneo y Ballet son más técnicos y conscientes. El Sexy Reggaeton tiene la misma energía que par la tarde, pero avec groupes más pequeños. En general hay menos alumnos, más espacio, más atención personalizada y un ambiente más relajado pour apprendre.`,
   bailemanananasFaqQ7: `¿Puedo probar una cours avant de apuntarme?`,
-  bailemanananasFaqA7: `Según la temporada, la cours de essai pour residentes puede ser gratuita o tener un prix simbólico de bienvenida. La idea es que puedas probar la expérience de danser sans compromiso. Réserve tu plaza pulsando el botón "Réservez Votre Cours d'Essai" en la parte superior de esta página.`,
+  bailemanananasFaqA7: `Según la temporada, la cours de essai pour residentes puede ser gratuita o tener un prix simbólico de bienvenida. La idea es que puedas probar la expérience de danser sans compromiso. Réserve tu plaza pulsando el botón "Réservez Votre Cours de Bienvenue" en la parte superior de esta página.`,
   bailemanananasFaqQ8: `¿Cuántas cours de danse hay par las mañanas?`,
   bailemanananasFaqA8: `Actualmente ofrecemos 15 cours semanales de mañanas, de lunes a jueves, en horaire de 10:00 a 13:00. Estilos: Body Conditioning, Contemporáneo Lírico, Modern Jazz, Stretching, Afro Jazz, Ballet, Dancehall, Sexy Reggaeton, Sexy Style, Salsa Lady Style, Reggaeton Cubano y Twerk.`,
   bailemanananasFaqQ9: `¿Qué estilos de danse puedo hacer par las mañanas?`,
@@ -16824,7 +16841,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   bachataV3HeroStudents: `+15.000 estudiantes formados`,
   bachataV3CTA1: `Devenez Membre Maintenant`,
   bachataV3CTA1Subtext: `Places limitées este mois`,
-  bachataV3CTA2: `Réservez Votre Cours d'Essai`,
+  bachataV3CTA2: `Réservez Votre Cours de Bienvenue`,
   bachataV3CTA2Subtext: `Válido par tiempo limitado`,
   bachataV3CTAGroup: `Cours de Prueba`,
   bachataV3WhatIsQuestionTitle: `¿Por qué elegir bachata sensuel?`,
@@ -16918,7 +16935,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   fullBodyCardioCTAGroup: `Options d'inscription`,
   fullBodyCardioCTA1: `Devenez Membre Maintenant`,
   fullBodyCardioCTA1Subtext: `Places limitées`,
-  fullBodyCardioCTA2: `Réservez Votre Cours d'Essai`,
+  fullBodyCardioCTA2: `Réservez Votre Cours de Bienvenue`,
   fullBodyCardioCTA2Subtext: `Premier cours spécial`,
   fullBodyCardioWhatIsTitle: `Qu'est-ce que Cuerpo-Fit et pourquoi ça fonctionne ?`,
   fullBodyCardioWhatIsP1: `Cuerpo-Fit est l'entraînement qui change les règles du fitness à Barcelone. Imaginez combiner l'intensité d'un entraînement full body avec l'énergie du cardio dance, le tout en 60 minutes qui passent vite. Ce n'est pas une salle de sport. Ce n'est pas un cours de danse conventionnel. C'est le meilleur des deux mondes.`,
@@ -17017,7 +17034,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   fullBodyCardioFaqQ13: `Puis-je faire Cuerpo-Fit si j'ai des blessures ?`,
   fullBodyCardioFaqA13: `Depende de la lesión. <strong>Requisitos</strong>: consultez votre médecin ou physiothérapeute d'abord. Si vous avez l'autorisation médicale, prévenez-nous avant le cours pour adapter les exercices. <strong>Contraindicaciones absolutas</strong>: lesiones agudas, problemas cardíacos no controlados, embarazo de riesgo. Cris peut modifier les exercices pour la plupart des limitations courantes (genoux, dos, épaules).`,
   fullBodyCardioFaqQ14: `Combien coûte le cours de Cuerpo-Fit ?`,
-  fullBodyCardioFaqA14: `Cuerpo-Fit est inclus dans les abonnements mensuels de l'académie. <strong>Cours d'essai</strong>: consulta condiciones actuales en recepción o web. <strong>Bono mensual</strong>: vous donne accès à Cuerpo-Fit et à d'autres cours de l'académie. <strong>Sans engagement</strong>: vous payez mois par mois, sans engagement. Consulta tarifas actualizadas en nuestra web o pulsando "Réservez Votre Cours d'Essai".`,
+  fullBodyCardioFaqA14: `Cuerpo-Fit est inclus dans les abonnements mensuels de l'académie. <strong>Cours d'essai</strong>: consulta condiciones actuales en recepción o web. <strong>Bono mensual</strong>: vous donne accès à Cuerpo-Fit et à d'autres cours de l'académie. <strong>Sans engagement</strong>: vous payez mois par mois, sans engagement. Consulta tarifas actualizadas en nuestra web o pulsando "Réservez Votre Cours de Bienvenue".`,
   fullBodyCardioFaqQ15: `¿Dónde están las cours de Cuerpo-Fit à Barcelone?`,
   fullBodyCardioFaqA15: `<strong>Dirección</strong>: Calle Entença 100, 08015 Barcelone (zona Plaza España, entre Sants y Hostafrancs).<br><strong>Metro</strong>: Plaza España (L1, L3), Hostafrancs (L1), Rocafort (L1), Entença (L5) – todos a 5 min andando.<br><strong>Horario</strong>: Lunes de 20:00 a 21:00h.<br><br>📞 <strong>Teléfono</strong>: +34 622 247 085<br>📧 <strong>Email</strong>: info@farrayscenter.com<br>🌐 <strong>Web</strong>: www.farrayscenter.com`,
   fullBodyCardioNearbyTitle: `Cours de Cuerpo-Fit près de chez vous à Barcelone`,
@@ -17157,13 +17174,13 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   testClassCourseSchemaName: `Cours Expérimental V2`,
   testClassCourseSchemaDesc: `Page d'essai pour le nouveau modèle visuel.`,
   testClassCourseTeaches: `Design visuel amélioré pour pages de cours`,
-  fbLandingPageTitle: `Cours de Danse GRATUIT à Barcelone | Farray's Center`,
+  fbLandingPageTitle: `Cours de Bienvenue à Barcelone | Farray's Center`,
   fbLandingPageDescription: `Réserve tu cours de essai gratuita en la mejor école de danse de Barcelone. +15.000 élèves, +40 estilos, professeurs profesionales. Sin compromiso.`,
   fbLandingBadge: `Offre Spéciale`,
   fbLandingHeroTitle: `Votre Premier Cours de Danse`,
-  fbLandingHeroTitleAccent: `GRATUIT`,
+  fbLandingHeroTitleAccent: `AUJOURD'HUI`,
   fbLandingHeroSubtitle: `Découvrez pourquoi +{students} élèves ont choisi Farray's Center à Barcelone`,
-  fbLandingHeroCTA: `RÉSERVEZ VOTRE PLACE GRATUITE`,
+  fbLandingHeroCTA: `RÉSERVEZ VOTRE PLACE`,
   fbLandingHeroSpots: `Il ne reste que {spots} places cette semaine`,
   fbLandingHeroTimer: `L'offre se termine dans:`,
   fbLandingHeroTrust: `Sans carte de crédit · Sans engagement · Que de la danse`,
@@ -17173,7 +17190,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   fbLandingProofStudents: `élèves formés`,
   fbLandingProofYears: `années d'expérience`,
   fbLandingProofLocation: `Plaza España`,
-  fbLandingValueTitle: `Voici ce que vous recevez dans votre cours d'essai:`,
+  fbLandingValueTitle: `Voici ce que vous recevez dans votre cours de bienvenue:`,
   fbLandingValue1: `1 cours complet de 60 minutes avec des professeurs professionnels`,
   fbLandingValue1Price: `Valeur €{price}`,
   fbLandingValue2: `Choisissez parmi +40 styles: Salsa, Bachata, Reggaeton, Hip Hop, Heels...`,
@@ -17186,8 +17203,8 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   fbLandingValue5Price: `Inclus`,
   fbLandingValueTotal: `Valeur totale:`,
   fbLandingValueYourPrice: `Votre prix aujourd'hui:`,
-  fbLandingValueFree: `GRATUIT`,
-  fbLandingValueCTA: `JE VEUX MON COURS GRATUIT`,
+  fbLandingValueFree: `SANS ENGAGEMENT`,
+  fbLandingValueCTA: `JE VEUX MON COURS DE BIENVENUE`,
   fbLandingValueSubtext: `Plus de 500 personnes réservent chaque mois`,
   fbLandingTransformTitle: `De "j'ai deux pieds gauches" à danser avec confiance`,
   fbLandingTransformSubtitle: `Voici ce que disent nos élèves:`,
@@ -17211,14 +17228,14 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   fbLandingFinalSubtitle: `Ne le laissez pas pour demain, votre futur vous remerciera`,
   fbLandingFinalSpots: `Il ne reste que {spots} places`,
   fbLandingFinalCountdown: `L'offre expire dans:`,
-  fbLandingFinalCTA: `RÉSERVEZ MAINTENANT - C'EST GRATUIT`,
+  fbLandingFinalCTA: `RÉSERVEZ VOTRE COURS DE BIENVENUE`,
   fbLandingTrust_noCard: `Sans carte`,
   fbLandingTrust_noCommitment: `Sans engagement`,
   fbLandingTrust_noSpam: `Sans spam`,
   fbLandingFinalLegal: `En réservant vous acceptez de recevoir des informations sur votre cours. Vous pouvez annuler à tout moment. Vos données sont protégées selon le RGPD.`,
-  dhLandingPageTitle: `Cours de Bienvenue Dancehall à Barcelone | GRATUIT | Farray's Center`,
-  dhLandingPageDescription: `Voyagez en Jamaïque sans quitter Barcelone. Cours de Bienvenue Dancehall totalement GRATUIT. Places limitées. Sans engagement. Réservez maintenant.`,
-  dhLandingBadge: `COURS GRATUIT DE BIENVENUE`,
+  dhLandingPageTitle: `Cours de Bienvenue Dancehall à Barcelone | Farray's Center`,
+  dhLandingPageDescription: `Voyagez en Jamaïque sans quitter Barcelone. Cours de Bienvenue Dancehall sans engagement. Places limitées. Sans engagement. Réservez maintenant.`,
+  dhLandingBadge: `COURS DE BIENVENUE`,
   dhLandingHeadline: `Voyagez En Jamaïque Sans Quitter Barcelone`,
   dhLandingSubheadline: `Commencez la nouvelle année en bougeant intensément au rythme des musiques les plus agréables et puissantes de la Jamaïque. Découvrez cette danse super amusante tout en compensant les excès des fêtes avec un grand sourire.`,
   dhLandingCTA: `RÉSERVEZ VOTRE COURS DE BIENVENUE MAINTENANT`,
@@ -17239,9 +17256,9 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   dhLandingStatActive: `Étudiants Actifs`,
   dhLandingStatSatisfied: `Élèves Satisfaits`,
   dhLandingExperienceTitle: `Voulez-vous voyager en Jamaïque sans quitter Barcelone?`,
-  dhLandingExperienceDesc: `Ce n'est pas un cours ordinaire. C'est votre accès à une expérience exclusive et culturelle, où nous vous guidons pas à pas pour découvrir la vraie saveur du Dancehall. Première fois avec nous? C'est votre occasion: un cours de Bienvenue Dancehall totalement gratuit, sans frais, sans engagement et avec des places limitées. Un accueil avec tout le flow que vous méritez.`,
+  dhLandingExperienceDesc: `Ce n'est pas un cours ordinaire. C'est votre accès à une expérience exclusive et culturelle, où nous vous guidons pas à pas pour découvrir la vraie saveur du Dancehall. Première fois avec nous? C'est votre occasion: un cours de Bienvenue Dancehall sans engagement, sans frais, sans engagement et avec des places limitées. Un accueil avec tout le flow que vous méritez.`,
   dhLandingValueTitle: `Qu'est-ce qui est inclus dans cette expérience?`,
-  dhLandingValueSubtitle: `Tout cela complètement GRATUIT pour les nouveaux élèves`,
+  dhLandingValueSubtitle: `Tout cela disponible pour les nouveaux élèves`,
   dhLandingValueItem1: `Un cours complet de Dancehall de 60 minutes`,
   dhLandingValuePrice1: `Valeur: {price}€`,
   dhLandingValueItem2: `Accueil chaleureux et proche qui nous caractérise`,
@@ -17251,7 +17268,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   dhLandingValueIncluded: `Inclus`,
   dhLandingValueTotal: `VALEUR TOTALE:`,
   dhLandingValueYourPrice: `VOTRE PRIX AUJOURD'HUI:`,
-  dhLandingValueFree: `GRATUIT`,
+  dhLandingValueFree: `SANS ENGAGEMENT`,
   dhLandingOfferTitle: `Pour une durée limitée seulement`,
   dhLandingOfferDesc: `Réservez votre cours maintenant et si vous décidez de vous inscrire le jour même, vous recevrez une offre spéciale de bienvenue exclusive valable uniquement après le cours. Nous voulons que vous fassiez partie de Farray's seulement si vous connectez avec notre énergie... mais si vous le faites, ne perdez pas de temps.`,
   dhLandingPrepareTitle: `¿Quoi apporter a tu cours?`,
@@ -17373,11 +17390,11 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // =====================================================
 
   // Meta SEO
-  femLandingPageTitle: `Cours de Bienvenue Femmology à Barcelone | GRATUIT | Farray's Center`,
-  femLandingPageDescription: `Découvrez Femmology, la méthode exclusive de Yunaisy Farray pour vous reconnecter avec votre féminité. Cours de Bienvenue totalement GRATUIT. Places limitées. Réservez maintenant.`,
+  femLandingPageTitle: `Cours de Bienvenue Femmology à Barcelone | Farray's Center`,
+  femLandingPageDescription: `Découvrez Femmology, la méthode exclusive de Yunaisy Farray pour vous reconnecter avec votre féminité. Cours de Bienvenue sans engagement. Places limitées. Réservez maintenant.`,
 
   // Hero Section
-  femLandingBadge: `COURS GRATUIT DE BIENVENUE`,
+  femLandingBadge: `COURS DE BIENVENUE`,
   femLandingHeadline: `Reconnectez-vous avec Votre Féminité à Travers le Mouvement`,
   femLandingSubheadline: `Femmology est la méthode exclusive créée par Yunaisy Farray qui combine la danse en talons, l'expression corporelle et le travail émotionnel pour que vous vous aimiez davantage chaque jour. Une expérience transformatrice qui va au-delà de la danse.`,
   femLandingCTA: `RÉSERVEZ VOTRE COURS DE BIENVENUE MAINTENANT`,
@@ -17404,11 +17421,11 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
 
   // Experience Section
   femLandingExperienceTitle: `Voulez-vous vous reconnecter avec votre essence féminine ?`,
-  femLandingExperienceDesc: `Ce n'est pas un cours de danse ordinaire. Femmology est un voyage intérieur, une expérience qui combine la puissance du mouvement en talons avec le travail émotionnel. Créée par Yunaisy Farray, cette méthode unique vous aide à vous libérer des insécurités, à embrasser votre sensualité et à vous aimer davantage chaque jour. Première fois avec nous ? C'est votre chance : un cours de Bienvenue totalement gratuit.`,
+  femLandingExperienceDesc: `Ce n'est pas un cours de danse ordinaire. Femmology est un voyage intérieur, une expérience qui combine la puissance du mouvement en talons avec le travail émotionnel. Créée par Yunaisy Farray, cette méthode unique vous aide à vous libérer des insécurités, à embrasser votre sensualité et à vous aimer davantage chaque jour. Première fois avec nous ? C'est votre chance : un cours de Bienvenue sans engagement.`,
 
   // Value Stack
   femLandingValueTitle: `Qu'inclut cette expérience ?`,
-  femLandingValueSubtitle: `Tout cela complètement GRATUIT pour les nouvelles élèves`,
+  femLandingValueSubtitle: `Tout cela disponible pour les nouvelles élèves`,
   femLandingValueItem1: `Un cours complet de Femmology de 60 minutes`,
   femLandingValuePrice1: `Valeur : {price}€`,
   femLandingValueItem2: `Connexion directe avec Yunaisy Farray, créatrice de la méthode`,
@@ -17418,7 +17435,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   femLandingValueIncluded: `Inclus`,
   femLandingValueTotal: `VALEUR TOTALE :`,
   femLandingValueYourPrice: `VOTRE PRIX AUJOURD'HUI :`,
-  femLandingValueFree: `GRATUIT`,
+  femLandingValueFree: `SANS ENGAGEMENT`,
 
   // Special Offer
   femLandingOfferTitle: `Pour un temps limité seulement`,
@@ -17506,13 +17523,13 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   femExitIntent_hint: `Sexy Style, Heels, Salsa Lady Style, Bachata et bien plus...`,
 
   homev2_pageTitle: `École de Danse à Barcelone | Cours de Salsa, Bachata et Danse | FIDC`,
-  homev2_metaDescription: `École de danse à Barcelone avec cours de salsa, bachata et danse pour adultes. Centre CID-UNESCO avec 4.9/5 sur Google. Premier cours gratuit. Réservez maintenant.`,
+  homev2_metaDescription: `École de danse à Barcelone avec cours de salsa, bachata et danse pour adultes. Centre CID-UNESCO avec 4.9/5 sur Google. Réservez votre cours de bienvenue. Réservez maintenant.`,
   homev2_heroHeadline: `Vous n'avez pas besoin de plus de cours de danse.\\nVous avez besoin des bons cours.`,
   homev2_heroSubheadline: `La Méthode Farray® est le seul système d'enseignement de la danse enregistré auprès de l'UNESCO qui mesure vos progrès cours après cours.`,
   homev2_heroTagline: `Danser, c\'est travailler sur votre bonheur. Mais seulement si vous progressez vraiment.`,
   homev2_heroValue: `À Barcelone, il y a des dizaines d\'écoles de danse. Certaines ont de bons professeurs. D\'autres ont une bonne ambiance. Mais presque aucune ne peut répondre à ceci : "À quel niveau suis-je et qu\'est-ce qu\'il me manque pour le suivant ?" Nous, oui.`,
   homev2_heroCta1: `Voir les Horaires et Réserver`,
-  homev2_heroCta1Subtext: `Évaluation gratuite lors de votre premier cours`,
+  homev2_heroCta1Subtext: `Évaluation lors de votre cours de bienvenue`,
   homev2_heroCta2: `Découvrez la Méthode`,
   homev2_founderTitle: `Derrière chaque cours, il y a une histoire. Voici la mienne.`,
   homev2_founderPara1: `De l'École Nationale d'Art de Cuba à Barcelone. Plus de 20 ans à former des danseurs qui brillent aujourd'hui sur des scènes du monde entier.`,
@@ -17559,7 +17576,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   homev2_compRow8Others: `"Ça dépend de vous..."`,
   homev2_compRow8Us: `Progrès mesurable cours après cours`,
   homev2_comparisonCta: `Voyez par vous-même`,
-  homev2_comparisonCtaSubtext: `Premier cours d'évaluation gratuit`,
+  homev2_comparisonCtaSubtext: `Cours de bienvenue avec évaluation`,
   homev2_styleFinderTitle: `25+ styles. Une méthode. Votre voyage.`,
   homev2_styleFinderSubtitle: `Qu'est-ce qui vous motive à danser ? Trouvez votre chemin.`,
   homev2_persona1Title: `Je veux me sentir puissante`,
@@ -17635,11 +17652,11 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogClasesPrincipiantes_metaDescription: `Commencez à danser depuis zéro à Barcelone (Eixample). Venez découvrir Farray's avec un cours de bienvenue et suivez ce guide : que porter, comment choisir un style et comment progresser.`,
   blogClasesPrincipiantes_excerpt: `Guide complet pour commencer à danser depuis zéro à Barcelone. Cours de bienvenue, pas besoin de partenaire, tous niveaux. Participation ponctuelle à partir de 20€.`,
   blogClasesPrincipiantes_breadcrumbCurrent: `Cours pour Débutants`,
-  blogClasesPrincipiantes_summaryBullet1: `Cours de bienvenue chez Farray's (Eixample) – gratuit en saison promotionnelle ou à partir de 10€`,
+  blogClasesPrincipiantes_summaryBullet1: `Cours de bienvenue chez Farray's (Eixample) – prix spécial en saison promotionnelle ou à partir de 10€`,
   blogClasesPrincipiantes_summaryBullet2: `Vous n'avez pas besoin d'expérience préalable ni de venir avec un partenaire`,
   blogClasesPrincipiantes_summaryBullet3: `Guide pas à pas : que porter, quel style choisir et comment progresser`,
   blogClasesPrincipiantes_summaryBullet4: `+25 styles disponibles : latins, urbains, danse technique et plus`,
-  blogClasesPrincipiantes_intro: `Vous voulez commencer à danser depuis zéro et vous ne savez pas par où commencer ? Vous êtes au bon endroit. Chez <a href='/fr'>Farray's International Dance Center</a> (Barcelone, Eixample) vous pouvez réserver un <strong>cours de bienvenue</strong> pour nous connaître : <strong>gratuit en saison promotionnelle</strong>, ou avec un prix de courtoisie (à partir de 10€) le reste de l'année. Vous pouvez aussi venir avec participation ponctuelle à partir de 20€. Sans pression, sans prétention, et avec une équipe qui vous facilite tout dès la première minute.`,
+  blogClasesPrincipiantes_intro: `Vous voulez commencer à danser depuis zéro et vous ne savez pas par où commencer ? Vous êtes au bon endroit. Chez <a href='/fr'>Farray's International Dance Center</a> (Barcelone, Eixample) vous pouvez réserver un <strong>cours de bienvenue</strong> pour nous connaître : <strong>prix spécial en saison promotionnelle</strong>, ou avec un prix de courtoisie (à partir de 10€) le reste de l'année. Vous pouvez aussi venir avec participation ponctuelle à partir de 20€. Sans pression, sans prétention, et avec une équipe qui vous facilite tout dès la première minute.`,
   blogClasesPrincipiantes_ctaHero: `<strong><a href="/fr/contact">Réservez votre cours de bienvenue →</a></strong>`,
   blogClasesPrincipiantes_section1Title: `La première chose que je veux que vous sachiez (parce que ça va vous soulager)`,
   blogClasesPrincipiantes_section1Content: `Chez Farray's, <strong>être débutant est complètement normal</strong>. En fait, plus de 80% de nos élèves ont commencé sans aucune expérience préalable. Et je peux vous garantir une chose : <strong>votre niveau n'intéresse personne</strong>. Tout le monde est concentré sur son propre processus.`,
@@ -17689,14 +17706,14 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogClasesPrincipiantes_section7Privadas: `Et si vous voulez avancer plus vite, il y a le raccourci : <a href="/fr/cours-prives-danse">cours privés</a> pour travailler ce dont votre corps a besoin (sans distractions et avec un retour direct).`,
   blogClasesPrincipiantes_section8Title: `Vous venez nous rencontrer ?`,
   blogClasesPrincipiantes_section8Content: `Si ce guide vous a enlevé un peu de bruit mental, c'est ça : c'est ce qu'il manquait.`,
-  blogClasesPrincipiantes_ctaReserva: `<strong><a href="/fr/contact">Réservez votre cours de bienvenue →</a></strong><br/><br/>• <strong>En saison promotionnelle :</strong> cours de bienvenue gratuit<br/>• <strong>Reste de l'année :</strong> cours de courtoisie à partir de 10€<br/>• <strong>Participation ponctuelle :</strong> à partir de 20€<br/><br/>Des questions ? Écrivez-nous et nous vous aiderons à choisir cours et niveau.`,
+  blogClasesPrincipiantes_ctaReserva: `<strong><a href="/fr/contact">Réservez votre cours de bienvenue →</a></strong><br/><br/>• <strong>En saison promotionnelle :</strong> cours de bienvenue<br/>• <strong>Reste de l'année :</strong> cours de courtoisie à partir de 10€<br/>• <strong>Participation ponctuelle :</strong> à partir de 20€<br/><br/>Des questions ? Écrivez-nous et nous vous aiderons à choisir cours et niveau.`,
   blogClasesPrincipiantes_section9Title: `Où nous sommes (Barcelone)`,
   blogClasesPrincipiantes_section9Content: `<strong>Farray's International Dance Center</strong><br/>C/ Entença, 100 (rez-de-chaussée), 08015 Barcelone, Catalogne<br/>Tél. <a href='tel:+34622247085'>(+34) 622 247 085</a><br/>Email: <a href='mailto:info@farrayscenter.com'>info@farrayscenter.com</a><br/><br/><strong>Horaires des cours :</strong> 10h00 à 22h00<br/><strong>Accueil téléphonique :</strong> Lun–Ven 10h00 à 22h00<br/><br/><em>École de danse à Barcelone (Eixample) - Près de Plaza España et Sants Estació</em>`,
   blogClasesPrincipiantes_faqTitle: `Questions fréquentes sur les cours de danse pour débutants`,
   blogClasesPrincipiantes_faq1Question: `Puis-je commencer à danser sans expérience ?`,
   blogClasesPrincipiantes_faq1Answer: `Oui. Nous avons des cours pour débutants où on part des bases et on explique pas à pas.`,
-  blogClasesPrincipiantes_faq2Question: `Y a-t-il un cours d'essai pour connaître le centre ?`,
-  blogClasesPrincipiantes_faq2Answer: `Oui. En saison promotionnelle nous offrons un cours de bienvenue gratuit. Le reste de l'année vous pouvez venir nous connaître avec un cours de courtoisie à partir de 10€, ou avec participation ponctuelle à partir de 20€.`,
+  blogClasesPrincipiantes_faq2Question: `Y a-t-il un cours de bienvenue pour connaître le centre ?`,
+  blogClasesPrincipiantes_faq2Answer: `Oui. En saison promotionnelle nous offrons un cours de bienvenue. Le reste de l'année vous pouvez venir nous connaître avec un cours de courtoisie à partir de 10€, ou avec participation ponctuelle à partir de 20€.`,
   blogClasesPrincipiantes_faq3Question: `Dois-je venir avec un partenaire ?`,
   blogClasesPrincipiantes_faq3Answer: `Pas nécessairement. Dans beaucoup de formats vous pouvez venir seul(e). Nous vous orienterons selon le cours.`,
   blogClasesPrincipiantes_faq4Question: `Quels vêtements dois-je avoir ?`,
@@ -17885,18 +17902,17 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // =====================================================
 
   // SEO
-  jpaLandingPageTitle:
-    "Journée Portes Ouvertes | Farray's Center Barcelone | Cours de Bienvenue GRATUIT",
+  jpaLandingPageTitle: "Journée Portes Ouvertes | Farray's Center Barcelone | Cours de Bienvenue",
   jpaLandingPageDescription:
-    'Venez à notre Journée Portes Ouvertes (du 7 au 31 janvier) et essayez GRATUITEMENT un cours de danse. Plus de 25 styles : Dancehall, Contemporain, Hip-Hop, Salsa, Bachata et bien plus. Sans engagement.',
+    "Venez à notre Journée Portes Ouvertes (du 7 au 31 janvier) et essayez AUJOURD'HUI un cours de danse. Plus de 25 styles : Dancehall, Contemporain, Hip-Hop, Salsa, Bachata et bien plus. Sans engagement.",
 
   // Hero Section
   jpaLandingBadge: 'DU 7 AU 31 JANVIER',
-  jpaLandingHeadline: 'Essayez Un Cours de Danse GRATUITEMENT',
+  jpaLandingHeadline: "Essayez Un Cours de Danse AUJOURD'HUI",
   jpaLandingSubheadline:
     'Venez nous rencontrer pendant notre Journée Portes Ouvertes et découvrez votre style de danse idéal. Plus de 25 styles différents vous attendent. Sans engagement.',
   jpaLandingCTA: 'RÉSERVEZ VOTRE COURS DE BIENVENUE',
-  jpaLandingTrustText: 'Un cours gratuit · Sans engagement · Places limitées',
+  jpaLandingTrustText: 'Cours de bienvenue · Sans engagement · Places limitées',
   jpaLandingTrustActiveStudents: '1 500+ étudiants actifs',
   jpaLandingTrustYearsExp: '8+ ans',
   jpaLandingTrustLocationShort: 'Barcelone - Plaza España',
@@ -17916,12 +17932,12 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Experience Section
   jpaLandingExperienceTitle: 'Prêt(e) à découvrir votre style de danse ?',
   jpaLandingExperienceDesc:
-    'Pendant la Journée Portes Ouvertes (du 7 au 31 janvier), vous pourrez essayer un cours de bienvenue entièrement gratuit. Latino, Urbain, Danse Classique ou Fitness : découvrez celui qui vous correspond le mieux. Des professeurs professionnels vous guideront à chaque pas.',
+    'Pendant la Journée Portes Ouvertes (du 7 au 31 janvier), vous pourrez essayer un cours de bienvenue sans engagement. Latino, Urbain, Danse Classique ou Fitness : découvrez celui qui vous correspond le mieux. Des professeurs professionnels vous guideront à chaque pas.',
 
   // Schedule Widget
   jpaLandingScheduleTitle: 'Consultez tous nos horaires',
   jpaLandingScheduleSubtitle:
-    'Choisissez le jour et le style qui vous intéresse pour votre cours de bienvenue gratuit.',
+    'Choisissez le jour et le style qui vous intéresse pour votre cours de bienvenue.',
 
   // Value Stack
   jpaLandingValueTitle: "Qu'est-ce qui est inclus dans votre cours de bienvenue ?",
@@ -17932,7 +17948,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   jpaLandingValueItem4: 'Conseils personnalisés pour choisir votre style',
   jpaLandingValueItem5: 'Accès à une réduction exclusive si vous décidez de vous inscrire',
   jpaLandingValueIncluded: 'Inclus',
-  jpaLandingValueFree: 'GRATUIT',
+  jpaLandingValueFree: 'SANS ENGAGEMENT',
   jpaLandingValueTotal: 'VALEUR TOTALE :',
   jpaLandingValueYourPrice: "VOTRE PRIX AUJOURD'HUI :",
 
@@ -17970,9 +17986,9 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
 
   // FAQs
   jpaLandingFaqTitle: 'Questions fréquentes',
-  jpaLandingObjQ1: "Puis-je essayer plus d'un cours gratuit ?",
+  jpaLandingObjQ1: "Puis-je essayer plus d'un cours de bienvenue ?",
   jpaLandingObjA1:
-    "Le cours de bienvenue gratuit est limité à un par personne. Si après l'avoir essayé vous souhaitez explorer d'autres styles avant de vous inscrire, vous pouvez le faire en payant le tarif cours à l'unité (20€). Ainsi vous pourrez vraiment découvrir quel style vous correspond le mieux.",
+    "Le cours de bienvenue est limité à un par personne. Si après l'avoir essayé vous souhaitez explorer d'autres styles avant de vous inscrire, vous pouvez le faire en payant le tarif cours à l'unité (20€). Ainsi vous pourrez vraiment découvrir quel style vous correspond le mieux.",
   jpaLandingObjQ2: "Ai-je besoin d'une expérience préalable en danse ?",
   jpaLandingObjA2:
     'Non, nous avons des cours pour tous les niveaux. Nos professeurs adaptent les cours pour que débutants et danseurs expérimentés puissent profiter de la même manière.',
@@ -17981,7 +17997,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
     'Des vêtements confortables qui vous permettent de bouger librement. Selon le style, vous pouvez danser avec des baskets, pieds nus ou avec des chaussettes. Nous vous guiderons lors de votre réservation.',
   jpaLandingObjQ4: "Y a-t-il une obligation de s'inscrire après ?",
   jpaLandingObjA4:
-    "Aucune. Le cours de bienvenue est entièrement gratuit et sans engagement. Nous voulons que vous connaissiez le centre et découvriez si c'est l'endroit idéal pour vous.",
+    "Aucune. Le cours de bienvenue est sans engagement et sans engagement. Nous voulons que vous connaissiez le centre et découvriez si c'est l'endroit idéal pour vous.",
 
   // Video
   jpaLandingVideoTitle: 'Découvrez notre centre',
@@ -17992,7 +18008,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   jpaLandingFinalCTADesc:
     "Rejoignez la Journée Portes Ouvertes de Farray's Center (du 7 au 31 janvier) et découvrez votre passion pour la danse. Plus de 25 styles vous attendent.",
   jpaLandingFinalCTAExtra: '',
-  jpaLandingFinalTrust: 'Un cours gratuit · Sans engagement · Réduction exclusive',
+  jpaLandingFinalTrust: 'Cours de bienvenue · Sans engagement · Réduction exclusive',
 
   // Footer
   jpaLandingFooterRights: 'Tous droits réservés',
@@ -18011,7 +18027,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Exit Intent Popup
   jpaExitIntent_title: 'Vous partez sans réserver votre cours ?',
   jpaExitIntent_description:
-    "Ne manquez pas l'opportunité d'essayer un cours de danse GRATUITEMENT. La Journée Portes Ouvertes (du 7 au 31 janvier) est un événement spécial avec des places limitées.",
+    "Ne manquez pas l'opportunité d'essayer un cours de danse AUJOURD'HUI. La Journée Portes Ouvertes (du 7 au 31 janvier) est un événement spécial avec des places limitées.",
   jpaExitIntent_ctaExplore: 'Voir les cours disponibles',
   jpaExitIntent_ctaDancehall: 'Réserver mon cours de bienvenue',
   jpaExitIntent_ctaClose: 'Fermer',
@@ -18022,16 +18038,16 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // =====================================================
 
   // Modal Header
-  jpaLeadModal_title: 'Réservez votre Cours de Bienvenue Gratuit',
+  jpaLeadModal_title: 'Réservez votre Cours de Bienvenue',
   jpaLeadModal_subtitle: 'Journée Portes Ouvertes : du 7 au 31 janvier',
 
   // Micro Commitment
-  jpaLeadModal_microCommit_question: 'Aimeriez-vous essayer un cours de danse GRATUIT ?',
-  jpaLeadModal_microCommit_yes: 'Oui, je veux mon cours gratuit !',
+  jpaLeadModal_microCommit_question: 'Aimeriez-vous essayer un cours de bienvenue ?',
+  jpaLeadModal_microCommit_yes: 'Oui, je veux mon cours de bienvenue !',
   jpaLeadModal_microCommit_curious: "Je veux juste plus d'informations",
 
   jpaLeadModal_intro:
-    'Remplissez le formulaire et recevez toutes les informations pour réserver votre cours de bienvenue gratuit.',
+    'Remplissez le formulaire et recevez toutes les informations pour réserver votre cours de bienvenue.',
 
   // Benefits
   jpaLeadModal_benefits_title: 'Ce que vous recevrez :',
@@ -18065,7 +18081,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   jpaLeadModal_consent_link: 'politique de confidentialité',
 
   // Submit
-  jpaLeadModal_submit: 'Réserver Mon Cours Gratuit',
+  jpaLeadModal_submit: 'Réserver Mon Cours de Bienvenue',
   jpaLeadModal_submitLoading: 'Traitement...',
 
   // Success
@@ -18101,10 +18117,59 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogSalsaVsBachata_summaryBullet4:
     "Chez Farray's Barcelone nous enseignons les deux styles pour des danseurs complets",
 
-  // === STATS ===
+  // === STATS (Holographic Cards) ===
   blogSalsaVsBachata_statSalsaOrigenLabel: 'Salsa cristallise à NYC',
   blogSalsaVsBachata_statBachataOrigenLabel: 'Bachata naît en RD',
   blogSalsaVsBachata_statUNESCOLabel: 'Bachata Patrimoine Immatériel',
+  blogSalsaVsBachata_statDemenciaLabel: 'Réduction risque démence',
+
+  // === ANSWER CAPSULES (72% AI Citation Rate) ===
+  blogSalsaVsBachata_answerCualElegir: 'Réponse directe pour les moteurs de recherche',
+  blogSalsaVsBachata_answerCualElegirQ: 'Salsa ou bachata ? Lequel choisir ?',
+  blogSalsaVsBachata_answerCualElegirA:
+    "Si vous cherchez l'énergie, les tours et le rythme rapide, choisissez la salsa. Si vous préférez la sensualité, la connexion intime et un tempo détendu, choisissez la bachata. L'idéal est d'apprendre les deux : dans les fêtes latines on alterne et les compétences sont transférables.",
+
+  blogSalsaVsBachata_answerMasFacil: 'Difficulté comparative',
+  blogSalsaVsBachata_answerMasFacilQ:
+    "Qu'est-ce qui est plus facile à apprendre, salsa ou bachata ?",
+  blogSalsaVsBachata_answerMasFacilA:
+    'La bachata est généralement plus facile pour les débutants : son tempo de 120-160 BPM est plus lent que la salsa (160-220 BPM) et le pas de base est plus intuitif. En 2-4 semaines vous pouvez danser la bachata socialement. La salsa nécessite plus de coordination rythmique initiale.',
+
+  blogSalsaVsBachata_answerBeneficios: 'Bénéfices scientifiques de la danse',
+  blogSalsaVsBachata_answerBeneficiosQ:
+    'Quels sont les avantages de danser la salsa ou la bachata ?',
+  blogSalsaVsBachata_answerBeneficiosA:
+    "Danser régulièrement réduit le risque de démence de 76% (NEJM, 2003), brûle 400-600 calories par heure, libère des endorphines, améliore la santé cardiovasculaire et crée des connexions sociales profondes qui combattent l'isolement.",
+
+  // === DEFINITIONS (LLM Extraction) ===
+  blogSalsaVsBachata_defSalsaTerm: 'Salsa (danse)',
+  blogSalsaVsBachata_defSalsa:
+    'La salsa est une danse latine en couple originaire de New York dans les années 1960-70, fusionnant son cubain, mambo, jazz et rythmes afro-caribéens. Elle se caractérise par son tempo rapide (160-220 BPM), ses tours dynamiques, son jeu de jambes et son énergie débordante. Plusieurs styles existent : salsa cubaine (en rueda), salsa en ligne (style LA/NY) et salsa portoricaine.',
+
+  blogSalsaVsBachata_defBachataTerm: 'Bachata (danse)',
+  blogSalsaVsBachata_defBachata:
+    "La bachata est un genre musical et une danse originaire de la République Dominicaine, apparu dans les années 1960 dans les quartiers marginaux. Déclarée Patrimoine Immatériel de l'UNESCO en 2019. Elle se caractérise par son tempo sensuel (120-160 BPM), son mouvement prononcé des hanches avec « pop » sur le temps 4, et la connexion intime entre les danseurs. Styles principaux : bachata traditionnelle, sensuelle et moderne.",
+
+  // === STATISTICS CONTENT ===
+  blogSalsaVsBachata_statUNESCOContent:
+    "En 2019, l'UNESCO a déclaré la bachata dominicaine Patrimoine Culturel Immatériel de l'Humanité, reconnaissant sa valeur culturelle unique.",
+  blogSalsaVsBachata_statCaloriasContent:
+    'Une heure de danse latine brûle entre 400-600 calories, équivalent à courir ou nager, mais beaucoup plus amusant.',
+  blogSalsaVsBachata_statDemenciaContent:
+    'La danse fréquente réduit le risque de démence de 76%, plus que toute autre activité physique ou cognitive étudiée.',
+  blogSalsaVsBachata_statEndorfinasContent:
+    "La danse synchronisée augmente la libération d'endorphines de 21% par rapport à l'exercice individuel.",
+
+  // === CALLOUTS ===
+  blogSalsaVsBachata_calloutTip:
+    "**Conseil pour débutants** : Commencez par la bachata si vous n'avez jamais dansé en couple. Son tempo plus lent vous permet de vous concentrer sur la connexion et le leading/following. Après 1-2 mois, ajoutez la salsa à votre répertoire.",
+  blogSalsaVsBachata_calloutCTA:
+    "**Prêt à découvrir votre rythme ?** [Réservez votre cours de bienvenue chez Farray's](/fr/contacto) et essayez à la fois la salsa et la bachata. Nos professeurs avec +20 ans d'expérience vous guideront dès le premier pas.",
+
+  // === TESTIMONIAL ===
+  blogSalsaVsBachata_testimonial: "Témoignage d'élève",
+  blogSalsaVsBachata_testimonialText:
+    "Je suis arrivée chez Farray's sans savoir quoi choisir entre salsa et bachata. Yunaisy m'a recommandé d'essayer les deux et c'était la meilleure décision. En 3 mois je dansais déjà dans les fêtes latines toute la nuit. L'ambiance est incroyable et les professeurs rendent tout facile.",
 
   // === INTRODUCTION ===
   blogSalsaVsBachata_intro:
@@ -18190,7 +18255,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogSalsaVsBachata_ambosContent:
     "La vérité est que salsa et bachata se complètent parfaitement. Dans les soirées latines, le DJ alterne entre les deux genres. Si vous n'en connaissez qu'un, vous êtes assis la moitié de la soirée. De plus, les compétences sont transférables : la musicalité, le lead/follow, la connexion avec le partenaire.",
   blogSalsaVsBachata_ambosFarrays:
-    "Chez **[Farray's International Dance Center](/fr/clases/salsa-bachata-barcelona)** nous offrons un programme combiné salsa et bachata qui vous transforme en danseur polyvalent. Nos professeurs, avec plus de 20 ans d'expérience, vous guident de zéro au niveau social. [Réservez votre cours d'essai gratuit](/fr/contacto) et découvrez votre rythme... ou les deux.",
+    "Chez **[Farray's International Dance Center](/fr/clases/salsa-bachata-barcelona)** nous offrons un programme combiné salsa et bachata qui vous transforme en danseur polyvalent. Nos professeurs, avec plus de 20 ans d'expérience, vous guident de zéro au niveau social. [Réservez votre cours de bienvenue](/fr/contacto) et découvrez votre rythme... ou les deux.",
 
   // === SECTION 7: CONCLUSION ===
   blogSalsaVsBachata_conclusionTitle: 'Conclusion : Votre Rythme, Votre Choix',
@@ -18253,4 +18318,346 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogSalsaVsBachata_refEndorphinsTitle: 'Synchronized Dancing and Endorphin Release',
   blogSalsaVsBachata_refEndorphinsDesc:
     "Recherche sur la libération d'endorphines et la cohésion sociale à travers la danse synchronisée.",
+
+  // ============================================================================
+  // BLOG: COMMENT SURMONTER LA PEUR DE DANSER
+  // ============================================================================
+
+  // === META ===
+  blogPerderMiedoBailar_title:
+    'Comment Surmonter la Peur de Danser : Guide Scientifique pour Débutants',
+  blogPerderMiedoBailar_excerpt:
+    "Découvrez des techniques éprouvées pour surmonter la timidité et la peur de danser. 80% des adultes ressentent de l'anxiété en dansant, mais avec la bonne approche, 90% la surmontent en quelques semaines.",
+  blogPerderMiedoBailar_breadcrumbCurrent: 'Comment Surmonter la Peur de Danser',
+
+  // === SUMMARY BULLETS ===
+  blogPerderMiedoBailar_summaryBullet1:
+    "80% des adultes ressentent de l'anxiété sociale en dansant : c'est complètement normal",
+  blogPerderMiedoBailar_summaryBullet2:
+    "Les techniques scientifiques d'exposition graduelle fonctionnent dans 85% des cas",
+  blogPerderMiedoBailar_summaryBullet3:
+    'Avec 3-6 cours dans un environnement sûr, 90% perdent leur timidité',
+  blogPerderMiedoBailar_summaryBullet4:
+    "Chez Farray's Barcelone, nous créons un espace sans jugement pour les débutants",
+
+  // === STATS ===
+  blogPerderMiedoBailar_statAnsiedadLabel: 'Adultes avec anxiété de danse',
+  blogPerderMiedoBailar_statClasesLabel: "Cours pour se sentir à l'aise",
+  blogPerderMiedoBailar_statExitoLabel: 'Élèves qui surmontent la peur',
+  blogPerderMiedoBailar_statEndorfinasLabel: "Plus d'endorphines en dansant en groupe",
+
+  // === ANSWER CAPSULES ===
+  blogPerderMiedoBailar_answerComoPerder: 'Réponse directe : comment perdre la peur',
+  blogPerderMiedoBailar_answerComoPerderQ: 'Comment puis-je surmonter la peur de danser ?',
+  blogPerderMiedoBailar_answerComoPerderA:
+    "Pour surmonter la peur de danser : (1) Choisissez une école avec un environnement sûr et sans jugement, (2) Commencez par des cours pour débutants où tout le monde est à votre niveau, (3) Pratiquez l'exposition graduelle - chaque cours sera plus facile, (4) Rappelez-vous que 80% des adultes ressentent la même chose et 90% la surmontent en 3-6 cours.",
+
+  blogPerderMiedoBailar_answerEsNormal: 'Est-ce normal de ressentir de la honte ?',
+  blogPerderMiedoBailar_answerEsNormalQ:
+    'Est-ce normal de ressentir de la honte ou de la peur de danser ?',
+  blogPerderMiedoBailar_answerEsNormalA:
+    "Oui, c'est complètement normal. Selon Psychology Today, 80% des adultes ressentent un certain degré d'anxiété sociale en dansant en public. La peur d'être jugé et de \"mal faire\" sont des réponses évolutives naturelles. La bonne nouvelle : avec une exposition graduelle dans un environnement sûr, cette peur se surmonte rapidement.",
+
+  blogPerderMiedoBailar_answerCuantoTiempo: 'Combien de temps pour perdre la peur ?',
+  blogPerderMiedoBailar_answerCuantoTiempoQ:
+    'Combien de temps faut-il pour surmonter la peur de danser ?',
+  blogPerderMiedoBailar_answerCuantoTiempoA:
+    "Avec nos 20+ ans d'expérience d'enseignement, 90% des élèves se sentent à l'aise après 3-6 cours. Le premier cours est le plus difficile ; après, chaque séance devient plus facile et amusante. En un mois de cours réguliers, la plupart dansent avec confiance.",
+
+  // === DEFINITIONS ===
+  blogPerderMiedoBailar_defMiedoEscenicoTerm: 'Trac (en danse)',
+  blogPerderMiedoBailar_defMiedoEscenico:
+    'Le trac en danse est une forme d\'anxiété sociale qui se manifeste par une peur intense de danser devant les autres. Il se caractérise par des pensées négatives anticipatoires ("ils vont me juger", "je vais mal faire"), des symptômes physiques (transpiration, tension musculaire) et des comportements d\'évitement. C\'est une réponse naturelle qui peut être surmontée par une exposition graduelle et une pratique dans un environnement sûr.',
+
+  blogPerderMiedoBailar_defAnsiedadSocialTerm: 'Anxiété sociale',
+  blogPerderMiedoBailar_defAnsiedadSocial:
+    "L'anxiété sociale est une peur intense des situations où l'on peut être évalué par les autres. Dans le contexte de la danse, elle se manifeste par la peur de paraître maladroit, de ne pas suivre le rythme ou d'être le centre d'attention. Elle affecte 80% des adultes à des degrés divers et constitue le principal obstacle pour commencer à danser.",
+
+  // === INTRODUCTION ===
+  blogPerderMiedoBailar_intro:
+    'Vous aimeriez danser mais quelque chose vous retient ? Ce nœud dans l\'estomac quand vous pensez à une piste de danse, cette petite voix qui dit "tout le monde va me regarder", cette peur de "mal faire"... Si vous vous reconnaissez, vous êtes au bon endroit. Et surtout : **vous n\'êtes pas seul(e)**.',
+  blogPerderMiedoBailar_intro2:
+    "Chez **[Farray's International Dance Center](/fr/clases)**, nous aidons des personnes comme vous à faire le premier pas depuis plus de 20 ans. Nous avons vu des centaines d'élèves arriver les jambes tremblantes et, quelques semaines plus tard, profiter de la danse sans penser à rien d'autre. Ce guide vous explique pourquoi nous avons peur de danser et, plus important, **comment la surmonter avec des techniques qui fonctionnent**.",
+
+  // === SECTION 1 ===
+  blogPerderMiedoBailar_porQueMiedoTitle:
+    'Pourquoi Avons-Nous Peur de Danser : La Science Derrière',
+  blogPerderMiedoBailar_porQueMiedoContent:
+    "La peur de danser n'est pas une faiblesse ni quelque chose dont on devrait avoir honte. C'est une réponse évolutive complètement naturelle. Notre cerveau est programmé pour éviter les situations où nous pouvons être jugés négativement par le groupe, car dans les temps ancestraux, le rejet social signifiait un danger réel.",
+  blogPerderMiedoBailar_statAnsiedadContent:
+    "80% des adultes ressentent un certain degré d'anxiété sociale en dansant en public, selon les études de Psychology Today.",
+  blogPerderMiedoBailar_porQueMiedoContent2:
+    'La bonne nouvelle est que, tout comme nous avons appris cette peur, nous pouvons la désapprendre. Le cerveau est plastique : avec les bonnes expériences, les connexions neuronales associant "danse" à "danger" se réécrivent. La clé est l\'**exposition graduelle dans un environnement sûr**.',
+
+  // === SECTION 2 ===
+  blogPerderMiedoBailar_miedosComunesTitle:
+    'Les 5 Peurs les Plus Courantes en Danse (et Comment les Surmonter)',
+  blogPerderMiedoBailar_miedosComunesIntro:
+    "Après 20 ans d'enseignement, nous avons identifié les peurs les plus répandues. Les reconnaître est la première étape pour les surmonter :",
+  blogPerderMiedoBailar_miedosListaTitle: 'Les peurs les plus fréquentes :',
+  blogPerderMiedoBailar_miedo1:
+    '**"Je n\'ai pas le rythme"** – Le rythme s\'entraîne. 95% des personnes qui disent "ne pas avoir le rythme" ne l\'ont simplement jamais pratiqué. En quelques cours, votre oreille s\'affinera.',
+  blogPerderMiedoBailar_miedo2:
+    '**"Tout le monde va me regarder"** – La réalité : en cours, chacun est concentré sur ses propres pieds. Personne ne vous juge car tout le monde a commencé pareil.',
+  blogPerderMiedoBailar_miedo3:
+    '**"Je suis trop maladroit/vieux/peu flexible"** – La danse sociale ne nécessite pas d\'acrobaties. Des personnes de tous âges et conditions dansent et s\'amusent.',
+  blogPerderMiedoBailar_miedo4:
+    '**"Je ne veux pas avoir l\'air ridicule"** – La seule chose ridicule est de rester assis pendant que les autres s\'amusent. Tout le monde fait des erreurs au début ; ça fait partie du processus.',
+  blogPerderMiedoBailar_miedo5:
+    '**"Je n\'ai pas de partenaire"** – 60% de nos élèves viennent seuls. En cours, on change de partenaire constamment ; pas besoin de venir accompagné.',
+
+  // === SECTION 3 ===
+  blogPerderMiedoBailar_tecnicasTitle: 'Techniques Scientifiques pour Surmonter la Peur de Danser',
+  blogPerderMiedoBailar_tecnicasIntro:
+    "La psychologie comportementale a démontré que l'exposition graduelle est la méthode la plus efficace pour surmonter les phobies et anxiétés sociales. Appliquée à la danse :",
+  blogPerderMiedoBailar_statExposicionContent:
+    "La thérapie d'exposition graduelle a une efficacité de 85% dans le traitement des anxiétés sociales.",
+  blogPerderMiedoBailar_tecnicasListaTitle: 'Étapes pour surmonter la peur :',
+  blogPerderMiedoBailar_tecnica1:
+    '**Exposition graduelle** : Commencez par des cours pour débutants où tout le monde est au même niveau. Chaque cours sera un peu plus facile que le précédent.',
+  blogPerderMiedoBailar_tecnica2:
+    "**Environnement sûr** : Choisissez une école où les professeurs créent un espace sans jugement. L'erreur fait partie de l'apprentissage, pas une raison d'avoir honte.",
+  blogPerderMiedoBailar_tecnica3:
+    '**Restructuration cognitive** : Changez votre dialogue intérieur de "je vais avoir l\'air ridicule" à "j\'apprends quelque chose de nouveau et c\'est courageux".',
+  blogPerderMiedoBailar_tecnica4:
+    '**Célébrez les petites victoires** : Chaque cours que vous terminez est une réussite. Les progrès en danse sont mesurables et motivants.',
+  blogPerderMiedoBailar_statEndorfinasContent:
+    "La danse en groupe augmente la libération d'endorphines de 21% par rapport à l'exercice individuel, créant une sensation naturelle de bien-être.",
+
+  // === SECTION 4 ===
+  blogPerderMiedoBailar_primerPasoTitle: 'Votre Premier Pas : Cours pour Débutants Absolus',
+  blogPerderMiedoBailar_primerPasoContent:
+    "Le premier cours est toujours le plus difficile, mais aussi le plus transformateur. Chez **[Farray's](/fr/clases)**, nous proposons un cours de bienvenue conçu spécialement pour les personnes qui n'ont jamais dansé ou qui sont très timides.",
+  blogPerderMiedoBailar_calloutTip:
+    "**Conseil pour votre premier cours** : Arrivez 10 minutes en avance pour découvrir l'espace et respirer calmement. Portez des vêtements confortables qui ne vous préoccupent pas. Rappelez-vous : tous ceux qui sont là ont commencé exactement comme vous. Les professeurs de Farray's sont formés pour vous faire sentir bienvenu dès le premier instant.",
+  blogPerderMiedoBailar_statExitoContent:
+    "90% de nos élèves rapportent se sentir à l'aise et profiter après seulement 3-6 cours.",
+  blogPerderMiedoBailar_primerPasoContent2:
+    "Quelle danse choisir ? Pour les débutants timides, nous recommandons la **[bachata](/fr/bachata)** pour son tempo plus lent et ses mouvements intuitifs. Une fois que vous aurez gagné en confiance, vous pourrez vous étendre à la **[salsa](/fr/salsa-cubana)** ou d'autres styles. Dans nos **[cours combinés](/fr/clases/salsa-bachata-barcelona)**, vous pouvez essayer les deux.",
+
+  // === TESTIMONIAL ===
+  blogPerderMiedoBailar_testimonial: "Témoignage d'élève",
+  blogPerderMiedoBailar_testimonialText:
+    "Je suis arrivé chez Farray's à 42 ans, convaincu que c'était impossible pour moi de danser. J'avais passé toute ma vie à refuser les invitations aux fêtes par gêne. Au premier cours, j'étais paralysé, mais Yunaisy m'a fait sentir que j'étais au bon endroit. Trois mois plus tard, c'est moi qui ai organisé une sortie danse avec mes amis. Perdre la peur de danser a été l'une des meilleures décisions de ma vie.",
+
+  // === SECTION 5 ===
+  blogPerderMiedoBailar_ambienteSeguroTitle: 'Comment Choisir une École avec un Environnement Sûr',
+  blogPerderMiedoBailar_ambienteSeguroIntro:
+    "Toutes les écoles de danse ne sont pas égales. Pour surmonter la peur, vous avez besoin d'un environnement qui vous soutient. Voici ce que vous devez rechercher :",
+  blogPerderMiedoBailar_checklistTitle: "Checklist d'une bonne école :",
+  blogPerderMiedoBailar_check1:
+    '**Cours par niveaux réels** : Débutant signifie débutant. Personne ne devrait se sentir déplacé.',
+  blogPerderMiedoBailar_check2:
+    '**Professeurs empathiques** : Qui normalisent les erreurs et célèbrent les petits progrès.',
+  blogPerderMiedoBailar_check3:
+    '**Rotation des partenaires** : Pour ne pas vous sentir obligé de venir accompagné.',
+  blogPerderMiedoBailar_check4:
+    '**Environnement sans jugement** : Où rire de soi-même est normal et personne ne critique.',
+  blogPerderMiedoBailar_check5:
+    "**Cours d'essai accessible** : Pour que vous puissiez expérimenter l'ambiance avant de vous engager.",
+  blogPerderMiedoBailar_statSatisfaccionContent:
+    "Notre note Google Reviews : 4.9/5 basée sur 127 avis, dont beaucoup d'élèves qui sont arrivés avec peur.",
+
+  // === CONCLUSION ===
+  blogPerderMiedoBailar_conclusionTitle:
+    'Conclusion : La Peur est Temporaire, la Danse est pour Toujours',
+  blogPerderMiedoBailar_conclusionContent:
+    "La peur de danser est réelle, mais elle est aussi surmontable. Des millions de personnes l'ont fait avant vous. La différence entre ceux qui dansent et ceux qui regardent n'est pas le talent, c'est la décision de faire le premier pas malgré la peur.",
+  blogPerderMiedoBailar_statDemenciaContent:
+    'Danser régulièrement réduit le risque de démence de 76%, plus que toute autre activité physique ou cognitive. Votre cerveau vous remerciera.',
+  blogPerderMiedoBailar_conclusionCTA:
+    "Prêt(e) à transformer la peur en mouvement ? Votre futur vous dansant vous attend. Et rappelez-vous : chez **[Farray's](/fr/contacto)**, la seule condition est de vouloir essayer.",
+  blogPerderMiedoBailar_calloutCTA:
+    "**Prêt(e) à faire le premier pas ?** [Réservez votre cours de bienvenue](/fr/contacto) dans un environnement sûr et sans jugement. Nos professeurs avec +20 ans d'expérience vous guideront patiemment. 90% des élèves surmontent leur peur en quelques semaines. Serez-vous le/la prochain(e) ?",
+
+  // === FAQ SECTION ===
+  blogPerderMiedoBailar_faqTitle: 'FAQ : Surmonter la Peur de Danser',
+  blogPerderMiedoBailar_faq1Question: "Est-ce normal d'avoir peur de danser ?",
+  blogPerderMiedoBailar_faq1Answer:
+    "Complètement normal. **80% des adultes** ressentent un certain degré d'anxiété sociale en dansant. C'est une réponse évolutive naturelle à la peur d'être jugé. La bonne nouvelle : elle se surmonte avec une exposition graduelle dans un environnement sûr.",
+  blogPerderMiedoBailar_faq2Question: 'Comment surmonter la gêne de danser en public ?',
+  blogPerderMiedoBailar_faq2Answer:
+    "La clé est l'**exposition graduelle** : commencez par des cours pour débutants où tout le monde est à votre niveau, dans une école avec une atmosphère sans jugement. Chaque cours sera plus facile. 90% des élèves perdent leur gêne en 3-6 cours.",
+  blogPerderMiedoBailar_faq3Question:
+    'Les cours de danse sont-ils pour les personnes sans expérience ?',
+  blogPerderMiedoBailar_faq3Answer:
+    "Oui, les cours de niveau débutant sont conçus pour les personnes qui n'ont **jamais dansé**. Chez [Farray's](/fr/clases), nous séparons rigoureusement les niveaux pour que personne ne se sente déplacé.",
+  blogPerderMiedoBailar_faq4Question: 'Puis-je aller aux cours de danse sans partenaire ?',
+  blogPerderMiedoBailar_faq4Answer:
+    "Bien sûr. **60% de nos élèves viennent seuls**. En cours, les partenaires tournent constamment, donc vous n'avez pas besoin de venir accompagné. C'est une excellente façon de rencontrer de nouvelles personnes.",
+  blogPerderMiedoBailar_faq5Question: 'Combien de temps faut-il pour perdre la peur de danser ?',
+  blogPerderMiedoBailar_faq5Answer:
+    "Cela varie selon la personne, mais la plupart des élèves se sentent à l'aise après **3-6 cours** (environ 2-3 semaines). Le premier cours est le plus difficile ; ensuite, chaque séance est plus facile et plus amusante.",
+  blogPerderMiedoBailar_faq6Question:
+    'Quelle danse est la plus facile pour les débutants timides ?',
+  blogPerderMiedoBailar_faq6Answer:
+    "Nous recommandons la **[bachata](/fr/bachata)** pour son tempo plus lent (120-160 BPM) et ses mouvements intuitifs. C'est plus facile de se connecter au rythme dès le début. Une fois que vous aurez gagné en confiance, vous pourrez vous étendre à la salsa ou d'autres styles.",
+  blogPerderMiedoBailar_faq7Question: 'Y a-t-il des cours spéciaux pour les personnes anxieuses ?',
+  blogPerderMiedoBailar_faq7Answer:
+    "Nos cours de niveau débutant sont conçus en pensant aux personnes anxieuses. Petits groupes, professeurs empathiques, environnement sans jugement. Chez [Farray's](/fr/contacto), nous créons un espace sûr pour tous.",
+  blogPerderMiedoBailar_faq8Question: "Comment est l'ambiance dans les premiers cours ?",
+  blogPerderMiedoBailar_faq8Answer:
+    "Détendue et accueillante. Les professeurs normalisent les erreurs, les petits progrès sont célébrés et personne ne juge personne. Tous les élèves ont commencé comme vous. L'ambiance est faite de soutien mutuel et de bonne humeur.",
+
+  // === REFERENCES ===
+  blogPerderMiedoBailar_referencesIntro:
+    "Cet article est soutenu par des études scientifiques et nos 20+ ans d'expérience :",
+  blogPerderMiedoBailar_refPsychologyTodayTitle: 'Social Anxiety – Psychology Today',
+  blogPerderMiedoBailar_refPsychologyTodayDesc:
+    "Ressource sur l'anxiété sociale, ses causes et traitements basés sur des preuves scientifiques.",
+  blogPerderMiedoBailar_refNEJMTitle: 'Leisure Activities and Dementia Risk – NEJM',
+  blogPerderMiedoBailar_refNEJMDesc:
+    'Étude de référence montrant que la danse fréquente réduit le risque de démence de 76%.',
+  blogPerderMiedoBailar_refFrontiersTitle: 'Dance and Psychological Well-being – Frontiers',
+  blogPerderMiedoBailar_refFrontiersDesc:
+    'Recherche sur les effets positifs de la danse sur la santé mentale et le bien-être émotionnel.',
+  blogPerderMiedoBailar_refEndorphinsTitle: 'Synchronized Dancing and Endorphin Release',
+  blogPerderMiedoBailar_refEndorphinsDesc:
+    "Étude montrant comment la danse en groupe augmente la libération d'endorphines de 21%.",
+
+  // =============================================================================
+  // BOOKING WIDGET - Système de Réservation Enterprise
+  // =============================================================================
+
+  // Page Meta
+  booking_meta_title: "Réservez votre Cours de Bienvenue | Farray's Center Barcelone",
+  booking_meta_description:
+    "Réservez votre cours de bienvenue à l'école de danse de Barcelone. Plus de 25 styles : salsa, bachata, hip hop, ballet et plus. Méthode Farray® exclusive.",
+
+  // Header
+  booking_title: 'Réservez votre Cours de Bienvenue',
+  booking_subtitle: 'Choisissez votre style, sélectionnez un cours et confirmez votre présence',
+  booking_step1: 'Choisir Style',
+  booking_step2: 'Sélectionner Cours',
+  booking_step3: 'Confirmer Données',
+
+  // Style Selection
+  booking_style_title: 'Quel style vous intéresse ?',
+  booking_style_all: 'Tous les styles',
+
+  // Class Selection
+  booking_class_title: 'Cours disponibles',
+  booking_class_empty: 'Aucun cours disponible pour ce style',
+  booking_class_loading: 'Chargement des cours...',
+  booking_class_error: 'Erreur lors du chargement. Veuillez réessayer.',
+  booking_week_this: 'Cette semaine',
+  booking_week_prev: 'Semaine précédente',
+  booking_week_next: 'Semaine suivante',
+  booking_style_clear: 'Supprimer le filtre de style',
+  booking_class_retry: 'Réessayer',
+  booking_class_share: 'Partager le lien de ce cours',
+  booking_class_copied: 'Lien copié',
+  booking_class_spots: '{spots} places disponibles',
+  booking_class_full: 'Complet',
+  booking_class_select: 'Sélectionner',
+  booking_class_selected: 'Sélectionné',
+  booking_class_teacher: 'avec {teacher}',
+  booking_class_duration: '{duration} min',
+  booking_class_level: 'Niveau : {level}',
+  booking_level_beginner: 'Débutant',
+  booking_level_intermediate: 'Intermédiaire',
+  booking_level_advanced: 'Avancé',
+  booking_level_all: 'Tous niveaux',
+
+  // Advanced Filters
+  booking_filter_level: 'Niveau',
+  booking_filter_day: 'Jour',
+  booking_filter_time: 'Heure',
+  booking_filter_instructor: 'Professeur',
+  booking_filter_clear_all: 'Effacer les filtres',
+  booking_filter_all: 'Tous',
+  booking_filter_level_iniciacion: 'Débutant',
+  booking_filter_level_basico: 'Basique',
+  booking_filter_level_intermedio: 'Intermédiaire',
+  booking_filter_level_avanzado: 'Avancé',
+  booking_filter_level_abierto: 'Tous niveaux',
+  booking_filter_day_monday: 'Lundi',
+  booking_filter_day_tuesday: 'Mardi',
+  booking_filter_day_wednesday: 'Mercredi',
+  booking_filter_day_thursday: 'Jeudi',
+  booking_filter_day_friday: 'Vendredi',
+  booking_filter_day_saturday: 'Samedi',
+  booking_filter_day_sunday: 'Dimanche',
+  booking_filter_time_morning: 'Matin (avant 12h)',
+  booking_filter_time_afternoon: 'Après-midi (12-18h)',
+  booking_filter_time_evening: 'Soir (après 18h)',
+
+  // Form Fields
+  booking_form_title: 'Vos coordonnées',
+  booking_field_firstName: 'Prénom',
+  booking_field_lastName: 'Nom',
+  booking_field_email: 'Email',
+  booking_field_phone: 'Téléphone',
+  booking_placeholder_firstName: 'Votre prénom',
+  booking_placeholder_lastName: 'Votre nom',
+  booking_placeholder_email: 'votre@email.com',
+  booking_placeholder_phone: '+33 6 12 34 56 78',
+
+  // RGPD Checkboxes - Mandatory
+  booking_consent_terms: "J'ai lu et j'accepte les",
+  booking_consent_terms_link: 'conditions générales',
+  booking_consent_terms_required: 'Vous devez accepter les conditions générales',
+
+  booking_consent_marketing:
+    "J'autorise l'envoi de communications commerciales sur les activités, promotions et nouveautés",
+  booking_consent_marketing_required: 'Vous devez autoriser les communications pour continuer',
+
+  booking_consent_age:
+    "Je confirme avoir 16 ans ou plus, ou disposer de l'autorisation de mon tuteur légal",
+  booking_consent_age_required: 'Vous devez confirmer votre âge pour continuer',
+
+  booking_consent_norefund:
+    "Je comprends que le cours de bienvenue n'est pas remboursable une fois la présence confirmée",
+  booking_consent_norefund_required: 'Vous devez accepter la politique de non-remboursement',
+
+  booking_consent_privacy: "J'ai lu et j'accepte la",
+  booking_consent_privacy_link: 'politique de confidentialité',
+  booking_consent_privacy_required: 'Vous devez accepter la politique de confidentialité',
+
+  // RGPD Checkboxes - Conditional (Heels)
+  booking_consent_heels:
+    "Je comprends et accepte que ce cours se déroule en talons hauts. Je m'engage à utiliser des chaussures appropriées et j'assume la responsabilité de ma sécurité",
+  booking_consent_heels_required: "Vous devez accepter les conditions d'utilisation des talons",
+
+  // RGPD Checkboxes - Optional
+  booking_consent_image:
+    "J'autorise l'utilisation de mon image dans les photos et vidéos réalisées pendant les cours à des fins promotionnelles sur les réseaux sociaux et le site web",
+  booking_consent_image_optional: '(Optionnel)',
+
+  // Submit
+  booking_submit: 'Confirmer la Réservation',
+  booking_submit_loading: 'Traitement...',
+
+  // Success State
+  booking_success_title: 'Réservation Confirmée !',
+  booking_success_message:
+    'Votre place est assurée. Vous recevrez un WhatsApp et un email avec tous les détails.',
+  booking_success_class: 'Cours réservé',
+  booking_success_date: 'Date et heure',
+  booking_success_location: 'Lieu',
+  booking_success_address: "Farray's Center - C/ Mallorca 179, Barcelone",
+  booking_success_reminder: 'Nous vous rappellerons 24h avant le cours',
+  booking_success_cta: 'Voir les horaires complets',
+  booking_success_close: 'Fermer',
+
+  // Error State
+  booking_error_title: 'Erreur de traitement',
+  booking_error_message: 'Une erreur est survenue. Veuillez réessayer.',
+  booking_error_cta: 'Réessayer',
+  booking_error_firstName: 'Veuillez entrer votre prénom',
+  booking_error_lastName: 'Veuillez entrer votre nom',
+  booking_error_email: 'Veuillez entrer un email valide',
+  booking_error_phone: 'Veuillez entrer un numéro de téléphone valide',
+  booking_error_class: 'Veuillez sélectionner un cours',
+
+  // Legal Text
+  booking_legal_responsible: "Responsable : Farray's International Dance Center S.L.",
+  booking_legal_purpose:
+    'Finalité : Gérer votre réservation et vous envoyer des informations sur le cours.',
+  booking_legal_legitimation: 'Base juridique : Votre consentement exprès.',
+  booking_legal_recipients:
+    'Destinataires : Momence (gestion des réservations), Meta (analyse des conversions).',
+  booking_legal_rights:
+    'Droits : Accès, rectification, suppression, limitation, portabilité et opposition.',
+  booking_legal_info: "Plus d'informations dans notre politique de confidentialité.",
 };

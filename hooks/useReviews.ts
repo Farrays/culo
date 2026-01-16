@@ -1,11 +1,20 @@
 /**
  * useReviews Hook
  * Provides filtered Google reviews based on context (category, teacher, etc.)
+ * Now with enterprise-level i18n support for curated reviews
  */
 
 import { useMemo } from 'react';
 import reviewsData from '../data/reviews.json';
+import reviewTranslations from '../data/reviews-translations.json';
 import type { DanceCategory, GoogleReview } from '../constants/reviews-data';
+import type { Locale } from '../types';
+
+// Type for review translations
+interface ReviewTranslations {
+  translations: Record<string, Record<Locale, string>>;
+  curatedReviewIds: string[];
+}
 
 // Re-export types for convenience
 export type { DanceCategory, GoogleReview };
@@ -232,6 +241,38 @@ export function useGoogleBusinessStats(): {
     averageRating: 5.0,
     name: "Farray's International Dance Center",
   };
+}
+
+/**
+ * Get translated text for a review based on locale
+ * Returns original text if no translation available
+ */
+export function getReviewText(review: GoogleReview, locale: Locale): string {
+  const translations = reviewTranslations as ReviewTranslations;
+  const reviewTranslation = translations.translations[review.id];
+
+  if (reviewTranslation && reviewTranslation[locale]) {
+    return reviewTranslation[locale];
+  }
+
+  // Fallback to original text (Spanish)
+  return review.text;
+}
+
+/**
+ * Check if a review has translations available
+ */
+export function hasTranslation(reviewId: string): boolean {
+  const translations = reviewTranslations as ReviewTranslations;
+  return reviewId in translations.translations;
+}
+
+/**
+ * Get list of curated review IDs with translations
+ */
+export function getCuratedReviewIds(): string[] {
+  const translations = reviewTranslations as ReviewTranslations;
+  return translations.curatedReviewIds;
 }
 
 export default useReviews;

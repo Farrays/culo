@@ -6,6 +6,14 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "functions": {
+    "api/clases.ts": {
+      "memory": 512,
+      "maxDuration": 30
+    },
+    "api/reservar.ts": {
+      "memory": 512,
+      "maxDuration": 15
+    },
     "api/*.ts": {
       "memory": 512,
       "maxDuration": 10
@@ -595,6 +603,7 @@
     { "source": "/:locale(es|en|ca|fr)/aviso-legal", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/politica-privacidad", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/politica-cookies", "destination": "/index.html" },
+    { "source": "/:locale(es|en|ca|fr)/reservas", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/test/:path*", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/404", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/:path*", "destination": "/index.html" }

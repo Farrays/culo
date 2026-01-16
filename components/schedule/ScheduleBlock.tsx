@@ -35,7 +35,7 @@ export const ScheduleBlock: React.FC<ScheduleBlockProps> = ({ config, showTestim
   const colorVariants: Record<string, string> = {
     emerald: 'from-emerald-500/20 to-emerald-600/10 border-emerald-500/30',
     amber: 'from-amber-500/20 to-amber-600/10 border-amber-500/30',
-    rose: 'from-rose-500/20 to-rose-600/10 border-rose-500/30',
+    rose: 'from-brand-600/20 to-brand-700/10 border-brand-500/30',
     orange: 'from-orange-500/20 to-orange-600/10 border-orange-500/30',
   };
 

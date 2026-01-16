@@ -205,6 +205,8 @@ export const es = {
   serviceMerchandisingCTA: 'Ver Productos',
   // Teachers
   teachersTitle: 'Conoce a Nuestros Profesores',
+  teachersSubtitle:
+    'Profesionales cubanos formados en las mejores escuelas de arte de Cuba, con décadas de experiencia internacional',
   teachersCTA: 'Ver Todo el Claustro',
   teacher1Specialty: 'Fundadora y Maestra | Método Farray®',
   teacher1Bio:
@@ -1092,6 +1094,23 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   thankYouForLove: 'Gracias por Tanto Amor',
   excellent: 'EXCELENTE',
   basedOnReviews: 'A base de {count} reseñas',
+
+  // Reviews UI
+  reviews_seeMore: 'Ver más',
+  reviews_seeLess: 'Ver menos',
+  reviews_starRating: '{rating} de 5 estrellas',
+  reviews_google: 'Google',
+
+  // Review Categories
+  reviews_category_salsa: 'Salsa',
+  reviews_category_bachata: 'Bachata',
+  reviews_category_heels: 'Heels',
+  reviews_category_urbanas: 'Urbanas',
+  reviews_category_contemporaneo: 'Contemporáneo',
+  reviews_category_afro: 'Afro',
+  reviews_category_fitness: 'Fitness',
+  reviews_category_general: 'General',
+  reviews_translatedFrom: 'Traducido del español',
 
   // Community Section
   dancehallCommunityTitle: 'Únete a la Comunidad de Dancehall Más Activa de Barcelona',
@@ -19276,7 +19295,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   jpaLeadModal_consent_link: 'política de privacidad',
 
   // Submit
-  jpaLeadModal_submit: 'Reservar Mi Clase Gratis',
+  jpaLeadModal_submit: 'Reservar Mi Clase de Bienvenida',
   jpaLeadModal_submitLoading: 'Procesando...',
 
   // Success
@@ -19312,10 +19331,57 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   blogSalsaVsBachata_summaryBullet4:
     "En Farray's Barcelona enseñamos ambos estilos para bailadores completos",
 
-  // === STATS ===
+  // === STATS (Holographic Cards) ===
   blogSalsaVsBachata_statSalsaOrigenLabel: 'Salsa cristaliza en NYC',
   blogSalsaVsBachata_statBachataOrigenLabel: 'Bachata nace en RD',
   blogSalsaVsBachata_statUNESCOLabel: 'Bachata Patrimonio Inmaterial',
+  blogSalsaVsBachata_statDemenciaLabel: 'Reducción riesgo demencia',
+
+  // === ANSWER CAPSULES (72% AI Citation Rate) ===
+  blogSalsaVsBachata_answerCualElegir: 'Respuesta directa para buscadores',
+  blogSalsaVsBachata_answerCualElegirQ: '¿Salsa o bachata? ¿Cuál debo elegir?',
+  blogSalsaVsBachata_answerCualElegirA:
+    'Si buscas energía, giros y ritmo acelerado, elige salsa. Si prefieres sensualidad, conexión íntima y tempo relajado, elige bachata. Lo ideal es aprender ambos: en las fiestas latinas se alternan y las habilidades son transferibles.',
+
+  blogSalsaVsBachata_answerMasFacil: 'Dificultad comparativa',
+  blogSalsaVsBachata_answerMasFacilQ: '¿Qué es más fácil aprender, salsa o bachata?',
+  blogSalsaVsBachata_answerMasFacilA:
+    'La bachata es generalmente más fácil para principiantes: su tempo de 120-160 BPM es más lento que la salsa (160-220 BPM) y el paso básico es más intuitivo. En 2-4 semanas puedes bailar bachata socialmente. La salsa requiere mayor coordinación rítmica inicial.',
+
+  blogSalsaVsBachata_answerBeneficios: 'Beneficios científicos del baile',
+  blogSalsaVsBachata_answerBeneficiosQ: '¿Qué beneficios tiene bailar salsa o bachata?',
+  blogSalsaVsBachata_answerBeneficiosA:
+    'Bailar regularmente reduce un 76% el riesgo de demencia (NEJM, 2003), quema 400-600 calorías por hora, libera endorfinas, mejora la salud cardiovascular y crea conexiones sociales profundas que combaten el aislamiento.',
+
+  // === DEFINITIONS (LLM Extraction) ===
+  blogSalsaVsBachata_defSalsaTerm: 'Salsa (baile)',
+  blogSalsaVsBachata_defSalsa:
+    'La salsa es un baile latino de pareja originado en Nueva York en los años 1960-70, fusionando son cubano, mambo, jazz y ritmos afrocaribeños. Se caracteriza por su tempo rápido (160-220 BPM), giros dinámicos, juego de pies y energía desbordante. Existen varios estilos: salsa cubana (en rueda), salsa en línea (LA/NY style) y salsa puertorriqueña.',
+
+  blogSalsaVsBachata_defBachataTerm: 'Bachata (baile)',
+  blogSalsaVsBachata_defBachata:
+    'La bachata es un género musical y baile originario de la República Dominicana, surgido en los años 1960 en los barrios marginales. Declarada Patrimonio Inmaterial de la UNESCO en 2019. Se caracteriza por su tempo sensual (120-160 BPM), movimiento marcado de caderas con "pop" en tiempo 4, y conexión íntima entre los bailarines. Estilos principales: bachata tradicional, sensual y moderna.',
+
+  // === STATISTICS CONTENT ===
+  blogSalsaVsBachata_statUNESCOContent:
+    'En 2019, la UNESCO declaró la bachata dominicana Patrimonio Cultural Inmaterial de la Humanidad, reconociendo su valor cultural único.',
+  blogSalsaVsBachata_statCaloriasContent:
+    'Una hora de baile latino quema entre 400-600 calorías, equivalente a correr o nadar, pero mucho más divertido.',
+  blogSalsaVsBachata_statDemenciaContent:
+    'El baile frecuente reduce un 76% el riesgo de demencia, más que cualquier otra actividad física o cognitiva estudiada.',
+  blogSalsaVsBachata_statEndorfinasContent:
+    'El baile sincronizado incrementa un 21% la liberación de endorfinas respecto al ejercicio individual.',
+
+  // === CALLOUTS ===
+  blogSalsaVsBachata_calloutTip:
+    '**Consejo para principiantes**: Empieza con bachata si nunca has bailado bailes de pareja. Su tempo más lento te permite concentrarte en la conexión y el leading/following. Después de 1-2 meses, añade salsa a tu repertorio.',
+  blogSalsaVsBachata_calloutCTA:
+    "**¿Listo para descubrir tu ritmo?** [Reserva tu clase de bienvenida en Farray's](/es/contacto) y prueba tanto salsa como bachata. Nuestros profesores con +20 años de experiencia te guiarán desde el primer paso.",
+
+  // === TESTIMONIAL ===
+  blogSalsaVsBachata_testimonial: 'Testimonio de alumna',
+  blogSalsaVsBachata_testimonialText:
+    "Llegué a Farray's sin saber qué elegir entre salsa y bachata. Yunaisy me recomendó probar ambos y fue la mejor decisión. En 3 meses ya bailaba en fiestas latinas sin parar toda la noche. El ambiente es increíble y los profesores hacen que todo sea fácil.",
 
   // === INTRODUCTION ===
   blogSalsaVsBachata_intro:
@@ -19463,4 +19529,340 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   blogSalsaVsBachata_refEndorphinsTitle: 'Synchronized Dancing and Endorphin Release',
   blogSalsaVsBachata_refEndorphinsDesc:
     'Investigación sobre la liberación de endorfinas y cohesión social a través del baile sincronizado.',
+
+  // ============================================================================
+  // BLOG: CÓMO PERDER EL MIEDO A BAILAR
+  // ============================================================================
+  // Target Keywords: "cómo perder el miedo a bailar" (720/mes), "clases de baile para tímidos" (260/mes)
+
+  // === META ===
+  blogPerderMiedoBailar_title: 'Cómo Perder el Miedo a Bailar: Guía Práctica 2025',
+  blogPerderMiedoBailar_excerpt:
+    'El miedo a bailar no es un defecto, es un punto de partida. Descubre técnicas basadas en psicología conductual para transformar la vergüenza en seguridad y disfrute.',
+  blogPerderMiedoBailar_breadcrumbCurrent: 'Cómo Perder el Miedo a Bailar',
+
+  // === SUMMARY BULLETS ===
+  blogPerderMiedoBailar_summaryBullet1:
+    'El miedo a bailar es una forma de ansiedad social: afecta a la mayoría de adultos',
+  blogPerderMiedoBailar_summaryBullet2:
+    'La exposición gradual en ambiente seguro es el método con más evidencia científica',
+  blogPerderMiedoBailar_summaryBullet3:
+    'Entre 3-6 clases suelen bastar para notar un cambio importante en la percepción',
+  blogPerderMiedoBailar_summaryBullet4:
+    'El baile frecuente se asocia a beneficios para la salud cerebral y emocional',
+
+  // === STATS (Holographic Cards) ===
+  blogPerderMiedoBailar_statAnsiedadLabel: 'Adultos con ansiedad al bailar',
+  blogPerderMiedoBailar_statClasesLabel: 'Clases para sentirse cómodo',
+  blogPerderMiedoBailar_statExitoLabel: 'Alumnos que superan el miedo',
+  blogPerderMiedoBailar_statEndorfinasLabel: 'Más endorfinas bailando en grupo',
+
+  // === ANSWER CAPSULES (72% AI Citation) ===
+  blogPerderMiedoBailar_answerComoPerder: 'Respuesta directa: cómo perder el miedo',
+  blogPerderMiedoBailar_answerComoPerderQ: '¿Cómo puedo perder el miedo a bailar?',
+  blogPerderMiedoBailar_answerComoPerderA:
+    'Para perder el miedo a bailar: (1) Elige una escuela con ambiente seguro y sin juicios, (2) Empieza con clases para principiantes donde todos están en tu nivel, (3) Practica exposición gradual - cada clase será más fácil, (4) Recuerda que la mayoría de adultos siente lo mismo y, según nuestra experiencia de +20 años, la gran mayoría lo supera en unas pocas semanas.',
+
+  blogPerderMiedoBailar_answerEsNormal: '¿Es normal tener vergüenza?',
+  blogPerderMiedoBailar_answerEsNormalQ: '¿Es normal tener vergüenza o miedo a bailar?',
+  blogPerderMiedoBailar_answerEsNormalA:
+    'Sí, es completamente normal. Según Psychology Today, la ansiedad social al bailar en público afecta a la mayoría de adultos en mayor o menor grado. El miedo a ser juzgado y a "hacerlo mal" son respuestas evolutivas naturales. La buena noticia: con exposición gradual en un ambiente seguro, este miedo se supera.',
+
+  blogPerderMiedoBailar_answerCuantoTiempo: '¿Cuánto tiempo para perder el miedo?',
+  blogPerderMiedoBailar_answerCuantoTiempoQ: '¿Cuánto tiempo se tarda en perder el miedo a bailar?',
+  blogPerderMiedoBailar_answerCuantoTiempoA:
+    'En nuestra experiencia con más de 20 años enseñando, la gran mayoría de alumnos se sienten cómodos después de 3-6 clases. La primera clase es la más difícil; después, cada sesión se vuelve más fácil y divertida. En un mes de clases regulares, la mayoría baila con confianza.',
+
+  // === DEFINITIONS (LLM Extraction) ===
+  blogPerderMiedoBailar_defMiedoEscenicoTerm: 'Miedo escénico (en el baile)',
+  blogPerderMiedoBailar_defMiedoEscenico:
+    'El miedo escénico en el baile es una forma de ansiedad social que se manifiesta como temor intenso a bailar delante de otros. Se caracteriza por pensamientos negativos anticipatorios ("me van a juzgar", "lo haré mal"), síntomas físicos (sudoración, tensión muscular) y conductas de evitación. Es una respuesta natural que se puede superar con exposición gradual y práctica en ambiente seguro.',
+
+  blogPerderMiedoBailar_defAnsiedadSocialTerm: 'Ansiedad social',
+  blogPerderMiedoBailar_defAnsiedadSocial:
+    'La ansiedad social es un miedo intenso a situaciones donde uno puede ser evaluado por otros. En el contexto del baile, se manifiesta como miedo a parecer torpe, a no seguir el ritmo o a ser el centro de atención. Afecta a la mayoría de adultos en mayor o menor medida y es la principal barrera para empezar a bailar.',
+
+  // === INTRODUCTION ===
+  blogPerderMiedoBailar_intro:
+    'El miedo a bailar no es un defecto, es un punto de partida. La mayoría de personas llega a una pista de baile con nervios, dudas y muchas excusas, pero con el contexto adecuado ese miedo se transforma en algo muy distinto: seguridad, disfrute y una sensación de libertad difícil de explicar con palabras.',
+  blogPerderMiedoBailar_intro2:
+    'Si estás leyendo esto, probablemente te reconoces en alguna de estas frases: "No tengo ritmo", "me da vergüenza", "ya soy mayor para empezar", "no quiero hacer el ridículo". Lo primero que necesitas saber es que todo eso es más común de lo que crees. En Barcelona, una ciudad llena de [salas latinas y academias de baile](/es/clases), ese miedo puede sentirse todavía más grande: parece que todo el mundo baila bien menos tú. La realidad es otra: casi todos los que hoy ves moverse con soltura empezaron con la misma sensación.',
+
+  // === SECTION 1: POR QUÉ SENTIMOS MIEDO ===
+  blogPerderMiedoBailar_porQueMiedoTitle: 'Por Qué Sentimos Miedo a Bailar: Lo Que Dice la Ciencia',
+  blogPerderMiedoBailar_porQueMiedoContent:
+    'El miedo a bailar delante de otras personas es, en gran medida, una forma de [ansiedad social](https://www.psychologytoday.com/us/basics/anxiety): miedo a ser juzgado, a equivocarse en público, a "no estar a la altura". Los psicólogos explican que nuestro cerebro sigue funcionando con un chip muy antiguo: en contextos ancestrales, ser rechazado por el grupo podía suponer un riesgo real, así que aprendimos a evitar cualquier situación donde pudiéramos "quedar mal".',
+  blogPerderMiedoBailar_statAnsiedadContent:
+    'La ansiedad social es una de las principales barreras para apuntarse a clases de baile o salir a bailar.',
+  blogPerderMiedoBailar_porQueMiedoContent2:
+    'Hoy ese mecanismo se activa cuando pensamos en entrar a una [clase de baile](/es/clases/baile-barcelona) o a una pista llena. Aparecen pensamientos del tipo "todos me van a mirar", "van a notar que no sé", "mejor espero a estar más preparado"... y al final, se pasa el tiempo y nunca se da el primer paso. La buena noticia es que ese miedo no es un sello permanente: **se puede reeducar**. El cerebro es plástico; con experiencias nuevas, las asociaciones "baile = peligro" se van sustituyendo por "baile = disfrute / logro / pertenencia".',
+
+  // === SECTION 2: LOS 5 MIEDOS MÁS COMUNES ===
+  blogPerderMiedoBailar_miedosComunesTitle:
+    'Miedos Más Frecuentes al Bailar (y Por Qué No Significan Que No Sirvas)',
+  blogPerderMiedoBailar_miedosComunesIntro:
+    'Después de años dando clase a principiantes, hay miedos que se repiten una y otra vez. Reconocerlos ayuda a quitarles poder:',
+  blogPerderMiedoBailar_miedosListaTitle: 'Los miedos más comunes:',
+  blogPerderMiedoBailar_miedo1:
+    '**"No tengo ritmo"** – En la mayoría de casos lo que falta no es talento, sino práctica. El oído rítmico se entrena, igual que un idioma nuevo.',
+  blogPerderMiedoBailar_miedo2:
+    '**"Todos me van a mirar"** – En clase, cada persona está ocupada intentando coordinar sus propios pies; la mirada hacia uno mismo es mucho más fuerte que la mirada hacia los demás.',
+  blogPerderMiedoBailar_miedo3:
+    '**"Soy muy torpe / mayor / poco flexible"** – El baile social no es una competición de acrobacias. Personas de distintas edades y condiciones físicas mejoran su coordinación y disfrutan, sin buscar resultados "de escenario".',
+  blogPerderMiedoBailar_miedo4:
+    '**"Voy a hacer el ridículo"** – Equivocarse en un contexto seguro forma parte del proceso de aprendizaje. Lo que suele dar más pena con el tiempo no es la caída, sino no haberlo intentado.',
+  blogPerderMiedoBailar_miedo5:
+    '**"No tengo pareja"** – En las academias especializadas como [Farray\'s](/es/clases), la rotación de parejas está integrada en la dinámica de clase; nadie necesita llegar con acompañante.',
+
+  // === SECTION 3: TÉCNICAS CIENTÍFICAS ===
+  blogPerderMiedoBailar_tecnicasTitle:
+    'Técnicas Que Funcionan: Cómo Se Supera el Miedo en la Práctica',
+  blogPerderMiedoBailar_tecnicasIntro:
+    'La [psicología conductual](https://pmc.ncbi.nlm.nih.gov/articles/PMC9901528/) lleva décadas estudiando cómo se superan las fobias y las ansiedades sociales. Una de las herramientas con más evidencia es la **exposición gradual**: enfrentar la situación temida, pero de manera progresiva, estructurada y en un entorno seguro.',
+  blogPerderMiedoBailar_statExposicionContent:
+    'Los tratamientos basados en exposición gradual muestran alta efectividad en el manejo de la ansiedad social.',
+  blogPerderMiedoBailar_tecnicasListaTitle: 'Aplicado al baile, funciona así:',
+  blogPerderMiedoBailar_tecnica1:
+    '**Entorno controlado** – Empezar en una [clase para principiantes](/es/clases/baile-barcelona) absolutos, donde todos están en un punto similar y el profesor marca un ritmo asumible. No es lo mismo lanzarse de golpe a una discoteca llena que entrar en una sala donde sabes que todo el mundo está aprendiendo.',
+  blogPerderMiedoBailar_tecnica2:
+    '**Pequeños pasos, repetidos muchas veces** – Al principio, quizá solo te centras en marcar el tiempo básico y en respirar. Clase a clase, se añaden elementos: una vuelta sencilla, un cambio de pareja, una pequeña secuencia. Esa repetición va enseñando al cerebro que "no pasa nada malo" al exponerse.',
+  blogPerderMiedoBailar_tecnica3:
+    '**Cambiar el diálogo interno** – De "seguro que lo hago fatal" a "estoy aprendiendo algo nuevo", de "qué vergüenza equivocarme" a "equivocarme es parte de la clase". Esta relectura de lo que ocurre es lo que se conoce como **reestructuración cognitiva**.',
+  blogPerderMiedoBailar_tecnica4:
+    '**Refuerzo positivo real** – No se trata de alabanzas vacías, sino de señalar progresos concretos: hoy marcas mejor el tiempo, hoy te atreviste a cambiar de pareja, hoy te reíste de un error que antes te hubiera bloqueado.',
+  blogPerderMiedoBailar_statEndorfinasContent:
+    'Los [estudios](https://pubmed.ncbi.nlm.nih.gov/27540276/) muestran que bailar en sincronía con otras personas se asocia a mayor tolerancia al dolor, un indicador indirecto de liberación de endorfinas y sensación de bienestar natural.',
+
+  // === SECTION 4: CUÁNTO SE TARDA ===
+  blogPerderMiedoBailar_primerPasoTitle: '¿Cuánto Se Tarda en Perder la Vergüenza a Bailar?',
+  blogPerderMiedoBailar_primerPasoContent:
+    'No existe una cifra mágica igual para todo el mundo, pero la experiencia de academias consolidadas y los [datos de investigación](https://pmc.ncbi.nlm.nih.gov/articles/PMC11127814/) dan algunas pistas. Muchas personas describen un cambio importante en su percepción después de las primeras **3-6 clases**, siempre que el entorno sea respetuoso y el ritmo de enseñanza esté adaptado.',
+  blogPerderMiedoBailar_calloutTip:
+    '**Consejo para tu primera clase**: Lo que al principio era "miedo a entrar por la puerta" se convierte con varias semanas de práctica regular en expectativa positiva: ganas de ver al grupo, de desconectar del día y de sentirse mejor físicamente. La clave está en la continuidad: no se trata de una clase aislada, sino de construir un hábito.',
+  blogPerderMiedoBailar_statExitoContent:
+    'La mayoría de alumnos describen un cambio notable en su percepción después de las primeras semanas de práctica regular.',
+  blogPerderMiedoBailar_primerPasoContent2:
+    '¿Qué baile elegir para empezar? Para principiantes tímidos, recomendamos **[bachata](/es/clases/bachata-barcelona)** por su tempo más lento y movimientos intuitivos. Una vez ganes confianza, puedes expandir a **[salsa](/es/clases/salsa-cubana-barcelona)** u otros estilos. En nuestras **[clases combinadas](/es/clases/salsa-bachata-barcelona)** puedes probar ambos en la misma sesión.',
+
+  // === TESTIMONIAL ===
+  blogPerderMiedoBailar_testimonial: 'Testimonio de alumno',
+  blogPerderMiedoBailar_testimonialText:
+    "Llegué a Farray's con 42 años, convencido de que era imposible para mí bailar. Llevaba toda la vida rechazando invitaciones a fiestas por vergüenza. La primera clase estuve muy nervioso, pero los profesores me hicieron sentir que estaba en el lugar correcto. Tres meses después, fui yo quien organizó una salida de baile con mis amigos. El baile, si le haces sitio, puede acompañarte muchos años.",
+
+  // === SECTION 5: AMBIENTE SEGURO ===
+  blogPerderMiedoBailar_ambienteSeguroTitle: 'Por Qué Elegir Bien la Escuela Marca la Diferencia',
+  blogPerderMiedoBailar_ambienteSeguroIntro:
+    'No todos los espacios de baile son iguales. Para una persona con miedo o mucha vergüenza, el contexto lo es casi todo. Al elegir una escuela en Barcelona o en cualquier ciudad, conviene fijarse en:',
+  blogPerderMiedoBailar_checklistTitle: 'Qué buscar en una buena escuela:',
+  blogPerderMiedoBailar_check1:
+    '**Clases por niveles reales** – Iniciación que sea de verdad iniciación, sin mezclar a gente muy avanzada con quienes dan sus primeros pasos.',
+  blogPerderMiedoBailar_check2:
+    '**Profesorado empático** – Docentes formados no solo en técnica, sino en pedagogía y manejo de grupo, que sepan normalizar errores y acompañar procesos.',
+  blogPerderMiedoBailar_check3:
+    '**Rotación de parejas organizada** – Para que nadie dependa de "llevar a alguien" para animarse a ir.',
+  blogPerderMiedoBailar_check4:
+    '**Ambiente sin juicios** – Una cultura clara de respeto, donde reírse con los demás sea posible, pero nunca reírse de alguien.',
+  blogPerderMiedoBailar_check5:
+    '**Opciones de clase de prueba o bienvenida** – Poder vivir la experiencia sin compromiso largo ayuda mucho a dar el primer paso.',
+  blogPerderMiedoBailar_statSatisfaccionContent:
+    'Una buena academia de baile social no se limita a enseñar pasos; diseña una experiencia que cuida tanto la técnica como la parte emocional del alumno.',
+
+  // === CONCLUSION ===
+  blogPerderMiedoBailar_conclusionTitle: 'El Papel del Baile en Tu Salud a Largo Plazo',
+  blogPerderMiedoBailar_conclusionContent:
+    'Más allá del miedo inicial, bailar tiene un impacto real en tu salud física y mental. A nivel cerebral, un [estudio clásico del New England Journal of Medicine](https://www.nejm.org/doi/full/10.1056/NEJMoa022252) vinculó la participación frecuente en bailes sociales con un menor riesgo de desarrollar demencia en personas mayores. A nivel psicológico, las [intervenciones basadas en danza](https://www.frontiersin.org/articles/10.3389/fpsyg.2019.01221/full) se asocian a menos síntomas de ansiedad y depresión, mejor autoestima y mayor sensación de vitalidad. A nivel social, bailar de forma regular crea redes de apoyo, amistades nuevas y un sentido de pertenencia que actúa como factor protector frente al estrés.',
+  blogPerderMiedoBailar_statDemenciaContent:
+    'El baile frecuente se asocia a una reducción del 76% en el riesgo de demencia, más que cualquier otra actividad física o cognitiva estudiada.',
+  blogPerderMiedoBailar_conclusionCTA:
+    'Por eso, perder el miedo a bailar no es solo un objetivo de ocio; puede ser una inversión importante en tu bienestar presente y futuro. Es probable que, incluso después de leer todo esto, sigas sintiendo nervios al imaginar tu primera clase. Eso también es normal. El objetivo nunca es que desaparezca toda sensación de miedo, sino que ganes recursos para actuar a pesar de él. **El miedo es temporal. El baile, si le haces sitio, puede acompañarte muchos años.**',
+  blogPerderMiedoBailar_calloutCTA:
+    '**¿Te pica la curiosidad?** Un buen punto de partida es: (1) Reconocer que no estás solo/a: muchas personas comparten las mismas dudas. (2) Buscar un espacio donde te sientas respetado desde el minuto uno. (3) Permitirte probar una [clase de bienvenida](/es/contacto) sin exigirte "bailar perfecto", sino simplemente estar, respirar y moverte un poco más que ayer.',
+
+  // === FAQ SECTION ===
+  blogPerderMiedoBailar_faqTitle: 'Preguntas Frecuentes: Superar el Miedo a Bailar',
+  blogPerderMiedoBailar_faq1Question: '¿Es normal tener miedo a bailar?',
+  blogPerderMiedoBailar_faq1Answer:
+    'Completamente normal. **La mayoría de adultos** experimenta algún grado de ansiedad social al bailar. Es una respuesta evolutiva natural al miedo a ser juzgados. La buena noticia: se supera con exposición gradual en un ambiente seguro.',
+  blogPerderMiedoBailar_faq2Question: '¿Cómo superar la vergüenza de bailar en público?',
+  blogPerderMiedoBailar_faq2Answer:
+    'La clave es la **exposición gradual**: empieza en clases para principiantes donde todos están en tu nivel, en una escuela con ambiente sin juicios. Cada clase será más fácil. Según nuestra experiencia, la gran mayoría de alumnos nota un cambio importante en unas pocas semanas.',
+  blogPerderMiedoBailar_faq3Question: '¿Las clases de baile son para personas sin experiencia?',
+  blogPerderMiedoBailar_faq3Answer:
+    "Sí, las clases de nivel principiante están diseñadas para personas que **nunca han bailado**. En [Farray's](/es/clases) separamos los niveles rigurosamente para que nadie se sienta fuera de lugar.",
+  blogPerderMiedoBailar_faq4Question: '¿Puedo ir a clases de baile sin pareja?',
+  blogPerderMiedoBailar_faq4Answer:
+    'Por supuesto. **La mayoría de nuestros alumnos viene solo/a**. En clase se rota de pareja constantemente, así que no necesitas venir acompañado. Es una excelente forma de conocer gente nueva.',
+  blogPerderMiedoBailar_faq5Question: '¿Cuánto tiempo se tarda en perder el miedo a bailar?',
+  blogPerderMiedoBailar_faq5Answer:
+    'Varía según la persona, pero la mayoría de alumnos se sienten cómodos después de **3-6 clases** (unas 2-3 semanas). La primera clase es la más difícil; después, cada sesión es más fácil y divertida.',
+  blogPerderMiedoBailar_faq6Question: '¿Qué baile es más fácil para principiantes tímidos?',
+  blogPerderMiedoBailar_faq6Answer:
+    'Recomendamos **[bachata](/es/bachata)** por su tempo más lento (120-160 BPM) y movimientos intuitivos. Es más fácil conectar con el ritmo desde el principio. Una vez ganes confianza, puedes expandir a salsa u otros estilos.',
+  blogPerderMiedoBailar_faq7Question: '¿Hay clases especiales para personas con ansiedad?',
+  blogPerderMiedoBailar_faq7Answer:
+    "Nuestras clases de nivel principiante están diseñadas pensando en personas con ansiedad. Grupos reducidos, profesores empáticos, ambiente sin juicios. En [Farray's](/es/contacto) creamos un espacio seguro para todos.",
+  blogPerderMiedoBailar_faq8Question: '¿Cómo es el ambiente en las primeras clases?',
+  blogPerderMiedoBailar_faq8Answer:
+    'Relajado y acogedor. Los profesores normalizan los errores, se celebran los pequeños avances y nadie juzga a nadie. Todos los alumnos empezaron igual que tú. El ambiente es de apoyo mutuo y buen humor.',
+
+  // === REFERENCES ===
+  blogPerderMiedoBailar_referencesIntro:
+    'Este artículo está respaldado por estudios científicos y nuestra experiencia de más de 20 años:',
+  blogPerderMiedoBailar_refPsychologyTodayTitle: 'Social Anxiety – Psychology Today',
+  blogPerderMiedoBailar_refPsychologyTodayDesc:
+    'Recurso sobre ansiedad social, sus causas y tratamientos basados en evidencia científica.',
+  blogPerderMiedoBailar_refNEJMTitle: 'Leisure Activities and Dementia Risk – NEJM',
+  blogPerderMiedoBailar_refNEJMDesc:
+    'Estudio de referencia que asocia el baile frecuente con una reducción significativa del riesgo de demencia (76% en participantes que bailaban regularmente).',
+  blogPerderMiedoBailar_refFrontiersTitle: 'Dance and Psychological Well-being – Frontiers',
+  blogPerderMiedoBailar_refFrontiersDesc:
+    'Investigación sobre los efectos positivos del baile en la salud mental y el bienestar emocional.',
+  blogPerderMiedoBailar_refEndorphinsTitle: 'Synchronized Dancing and Endorphin Release',
+  blogPerderMiedoBailar_refEndorphinsDesc:
+    'Estudio que muestra cómo bailar en sincronía con otros aumenta el umbral del dolor, un indicador de mayor liberación de endorfinas.',
+
+  // =============================================================================
+  // BOOKING WIDGET - Sistema de Reservas Enterprise
+  // =============================================================================
+
+  // Page Meta
+  booking_meta_title: "Reserva tu Clase de Bienvenida | Farray's Center Barcelona",
+  booking_meta_description:
+    'Reserva tu clase de bienvenida en la escuela de baile de Barcelona. Más de 25 estilos: salsa, bachata, hip hop, ballet y más. Método Farray® exclusivo.',
+
+  // Header
+  booking_title: 'Reserva tu Clase de Bienvenida',
+  booking_subtitle: 'Elige tu estilo, selecciona la clase y confirma tu asistencia',
+  booking_step1: 'Elige Estilo',
+  booking_step2: 'Selecciona Clase',
+  booking_step3: 'Confirma Datos',
+
+  // Style Selection
+  booking_style_title: '¿Qué estilo te interesa?',
+  booking_style_all: 'Todos los estilos',
+
+  // Class Selection
+  booking_class_title: 'Clases disponibles',
+  booking_class_empty: 'No hay clases disponibles para este estilo',
+  booking_class_loading: 'Cargando clases...',
+  booking_class_error: 'Error al cargar las clases. Inténtalo de nuevo.',
+  booking_week_this: 'Esta semana',
+  booking_week_prev: 'Semana anterior',
+  booking_week_next: 'Semana siguiente',
+  booking_style_clear: 'Quitar filtro de estilo',
+  booking_class_retry: 'Reintentar',
+  booking_class_share: 'Compartir enlace de esta clase',
+  booking_class_copied: 'Enlace copiado',
+  booking_class_spots: '{spots} plazas disponibles',
+  booking_class_full: 'Completo',
+  booking_class_select: 'Seleccionar',
+  booking_class_selected: 'Seleccionada',
+  booking_class_teacher: 'con {teacher}',
+  booking_class_duration: '{duration} min',
+  booking_class_level: 'Nivel: {level}',
+  booking_level_beginner: 'Principiante',
+  booking_level_intermediate: 'Intermedio',
+  booking_level_advanced: 'Avanzado',
+  booking_level_all: 'Todos los niveles',
+
+  // Advanced Filters
+  booking_filter_level: 'Nivel',
+  booking_filter_day: 'Día',
+  booking_filter_time: 'Hora',
+  booking_filter_instructor: 'Profesor',
+  booking_filter_clear_all: 'Limpiar filtros',
+  booking_filter_all: 'Todos',
+  booking_filter_level_iniciacion: 'Iniciación',
+  booking_filter_level_basico: 'Básico',
+  booking_filter_level_intermedio: 'Intermedio',
+  booking_filter_level_avanzado: 'Avanzado',
+  booking_filter_level_abierto: 'Todos los niveles',
+  booking_filter_day_monday: 'Lunes',
+  booking_filter_day_tuesday: 'Martes',
+  booking_filter_day_wednesday: 'Miércoles',
+  booking_filter_day_thursday: 'Jueves',
+  booking_filter_day_friday: 'Viernes',
+  booking_filter_day_saturday: 'Sábado',
+  booking_filter_day_sunday: 'Domingo',
+  booking_filter_time_morning: 'Mañana (antes 12h)',
+  booking_filter_time_afternoon: 'Tarde (12-18h)',
+  booking_filter_time_evening: 'Noche (después 18h)',
+
+  // Form Fields
+  booking_form_title: 'Tus datos',
+  booking_field_firstName: 'Nombre',
+  booking_field_lastName: 'Apellidos',
+  booking_field_email: 'Email',
+  booking_field_phone: 'Teléfono',
+  booking_placeholder_firstName: 'Tu nombre',
+  booking_placeholder_lastName: 'Tus apellidos',
+  booking_placeholder_email: 'tu@email.com',
+  booking_placeholder_phone: '+34 612 345 678',
+
+  // RGPD Checkboxes - Mandatory
+  booking_consent_terms: 'He leído y acepto las',
+  booking_consent_terms_link: 'condiciones generales',
+  booking_consent_terms_required: 'Debes aceptar las condiciones generales',
+
+  booking_consent_marketing:
+    'Autorizo el envío de comunicaciones comerciales sobre actividades, promociones y novedades',
+  booking_consent_marketing_required: 'Debes autorizar las comunicaciones para continuar',
+
+  booking_consent_age:
+    'Confirmo que tengo 16 años o más, o cuento con autorización de mi tutor legal',
+  booking_consent_age_required: 'Debes confirmar tu edad para continuar',
+
+  booking_consent_norefund:
+    'Entiendo que la clase de bienvenida es no reembolsable una vez confirmada la asistencia',
+  booking_consent_norefund_required: 'Debes aceptar la política de no reembolso',
+
+  booking_consent_privacy: 'He leído y acepto la',
+  booking_consent_privacy_link: 'política de privacidad',
+  booking_consent_privacy_required: 'Debes aceptar la política de privacidad',
+
+  // RGPD Checkboxes - Conditional (Heels)
+  booking_consent_heels:
+    'Comprendo y acepto que esta clase se realiza con tacones altos. Me comprometo a utilizar calzado adecuado y asumo la responsabilidad de mi seguridad',
+  booking_consent_heels_required: 'Debes aceptar las condiciones de uso de tacones',
+
+  // RGPD Checkboxes - Optional
+  booking_consent_image:
+    'Autorizo el uso de mi imagen en fotos y vídeos realizados durante las clases para fines promocionales en redes sociales y web',
+  booking_consent_image_optional: '(Opcional)',
+
+  // Submit
+  booking_submit: 'Confirmar Reserva',
+  booking_submit_loading: 'Procesando...',
+
+  // Success State
+  booking_success_title: '¡Reserva Confirmada!',
+  booking_success_message:
+    'Tu plaza está asegurada. Recibirás un WhatsApp y email con todos los detalles.',
+  booking_success_class: 'Clase reservada',
+  booking_success_date: 'Fecha y hora',
+  booking_success_location: 'Ubicación',
+  booking_success_address: "Farray's Center - C/ Mallorca 179, Barcelona",
+  booking_success_reminder: 'Te recordaremos 24h antes de la clase',
+  booking_success_cta: 'Ver horarios completos',
+  booking_success_close: 'Cerrar',
+
+  // Error State
+  booking_error_title: 'Error al procesar',
+  booking_error_message: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+  booking_error_cta: 'Reintentar',
+  booking_error_firstName: 'Por favor, introduce tu nombre',
+  booking_error_lastName: 'Por favor, introduce tus apellidos',
+  booking_error_email: 'Por favor, introduce un email válido',
+  booking_error_phone: 'Por favor, introduce un teléfono válido',
+  booking_error_class: 'Por favor, selecciona una clase',
+
+  // Legal Text
+  booking_legal_responsible: "Responsable: Farray's International Dance Center S.L.",
+  booking_legal_purpose: 'Finalidad: Gestionar tu reserva y enviarte información sobre la clase.',
+  booking_legal_legitimation: 'Legitimación: Tu consentimiento expreso.',
+  booking_legal_recipients:
+    'Destinatarios: Momence (gestión de reservas), Meta (análisis de conversiones).',
+  booking_legal_rights:
+    'Derechos: Acceso, rectificación, supresión, limitación, portabilidad y oposición.',
+  booking_legal_info: 'Más información en nuestra política de privacidad.',
 };

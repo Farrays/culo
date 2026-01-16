@@ -9,7 +9,7 @@ import AnimateOnScroll from '../AnimateOnScroll';
 import CulturalHistorySection from '../CulturalHistorySection';
 import ScheduleSection from '../ScheduleSection';
 import FAQSection from '../FAQSection';
-import TestimonialsSection from '../TestimonialsSection';
+import { ReviewsSection } from '../reviews';
 import AnimatedCounter from '../AnimatedCounter';
 import HowToGetHere from '../HowToGetHere';
 import { LocalBusinessSchema, CourseSchema, AggregateReviewsSchema } from '../SchemaMarkup';
@@ -597,10 +597,7 @@ const DanceClassPageTemplate: React.FC<DanceClassPageConfig> = ({
               </div>
             </AnimateOnScroll>
 
-            <TestimonialsSection
-              testimonials={testimonials}
-              titleKey={`${styleKey}TestimonialsTitle`}
-            />
+            <ReviewsSection category="general" limit={6} showGoogleBadge={true} layout="grid" />
           </div>
         </section>
 

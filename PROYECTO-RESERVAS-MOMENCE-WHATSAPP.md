@@ -1,8 +1,10 @@
 # 🎯 Proyecto: Sistema de Reservas Momence + WhatsApp
 
-> **Estado:** En progreso - Pendiente datos API Momence
-> **Última actualización:** Enero 2026
-> **Reanudable:** Sí
+> **Estado:** BACKEND COMPLETADO - Pendiente frontend /reservas
+> **Ultima actualizacion:** Enero 2026
+> **Reanudable:** Si
+> **Analisis API:** COMPLETADO (8 agentes)
+> **Endpoints:** /api/clases y /api/reservar CREADOS
 
 ---
 
@@ -46,15 +48,22 @@ Vercel Cron (cada 1h):
 
 ## 📁 Archivos Creados
 
-### **Backend (API Routes - Ejemplos):**
+### **Backend (API Routes - PRODUCCIÓN):**
+
+| Archivo                          | Descripción                                     | Estado         |
+| -------------------------------- | ----------------------------------------------- | -------------- |
+| [api/clases.ts](api/clases.ts)   | Listar clases disponibles (búsqueda binaria)    | ✅ PRODUCCIÓN  |
+| [api/reservar.ts](api/reservar.ts) | Crear reserva + Meta CAPI + Customer Leads    | ✅ PRODUCCIÓN  |
+
+### **Backend (API Routes - Ejemplos/Legacy):**
 
 | Archivo                                                                  | Descripción                               | Estado    |
 | ------------------------------------------------------------------------ | ----------------------------------------- | --------- |
-| [api-whatsapp-example.js](api-whatsapp-example.js)                       | Enviar WhatsApp via Meta Cloud API        | ✅ Creado |
-| [api-momence-integration-example.js](api-momence-integration-example.js) | Crear booking en Momence + WhatsApp       | ✅ Creado |
-| [api-cron-sync-clases-momence.js](api-cron-sync-clases-momence.js)       | Cron: sincronizar clases cada 6h          | ✅ Creado |
-| [api-clases-disponibles.js](api-clases-disponibles.js)                   | Endpoint: devolver clases para formulario | ✅ Creado |
-| [api-cron-recordatorios-momence.js](api-cron-recordatorios-momence.js)   | Cron: recordatorios WhatsApp 24h/2h       | ✅ Creado |
+| [api-whatsapp-example.js](api-whatsapp-example.js)                       | Enviar WhatsApp via Meta Cloud API        | 📝 Ejemplo |
+| [api-momence-integration-example.js](api-momence-integration-example.js) | Crear booking en Momence + WhatsApp       | 📝 Ejemplo |
+| [api-cron-sync-clases-momence.js](api-cron-sync-clases-momence.js)       | Cron: sincronizar clases cada 6h          | 📝 Ejemplo |
+| [api-clases-disponibles.js](api-clases-disponibles.js)                   | Endpoint: devolver clases para formulario | 📝 Ejemplo |
+| [api-cron-recordatorios-momence.js](api-cron-recordatorios-momence.js)   | Cron: recordatorios WhatsApp 24h/2h       | 📝 Ejemplo |
 
 ### **Frontend (Componentes - Ejemplos):**
 
@@ -70,17 +79,18 @@ Vercel Cron (cada 1h):
 | ---------------------------------------------------------------------------- | ------------------------------ | --------- |
 | [src/pages/test/WidgetReservaTest.tsx](src/pages/test/WidgetReservaTest.tsx) | Página de pruebas (gitignored) | ✅ Creado |
 
-### **Documentación:**
+### **Documentacion:**
 
-| Archivo                                                                          | Descripción                            |
+| Archivo                                                                          | Descripcion                            |
 | -------------------------------------------------------------------------------- | -------------------------------------- |
+| [ANALISIS-MOMENCE-API-ENTERPRISE.md](ANALISIS-MOMENCE-API-ENTERPRISE.md)         | **NUEVO** Analisis profundo API Momence |
 | [PROPUESTA-SISTEMA-RESERVAS-WHATSAPP.md](PROPUESTA-SISTEMA-RESERVAS-WHATSAPP.md) | Propuesta inicial completa             |
-| [INTEGRACION-MOMENCE-WHATSAPP.md](INTEGRACION-MOMENCE-WHATSAPP.md)               | Guía de integración Momence + WhatsApp |
+| [INTEGRACION-MOMENCE-WHATSAPP.md](INTEGRACION-MOMENCE-WHATSAPP.md)               | Guia de integracion Momence + WhatsApp |
 | [FLUJO-WHATSAPP-COMPLETO.md](FLUJO-WHATSAPP-COMPLETO.md)                         | Timeline detallada de WhatsApp         |
 | [RESUMEN-INTEGRACION-FINAL.md](RESUMEN-INTEGRACION-FINAL.md)                     | Resumen ejecutivo                      |
-| [EJEMPLOS-USO-WIDGET.md](EJEMPLOS-USO-WIDGET.md)                                 | Cómo usar el widget en landings        |
-| [GUIA-VISUAL-INTEGRACION-WIDGET.md](GUIA-VISUAL-INTEGRACION-WIDGET.md)           | Guía visual ASCII art                  |
-| [GUIA-TRABAJAR-SIN-COMMIT.md](GUIA-TRABAJAR-SIN-COMMIT.md)                       | Cómo crear páginas de test             |
+| [EJEMPLOS-USO-WIDGET.md](EJEMPLOS-USO-WIDGET.md)                                 | Como usar el widget en landings        |
+| [GUIA-VISUAL-INTEGRACION-WIDGET.md](GUIA-VISUAL-INTEGRACION-WIDGET.md)           | Guia visual ASCII art                  |
+| [GUIA-TRABAJAR-SIN-COMMIT.md](GUIA-TRABAJAR-SIN-COMMIT.md)                       | Como crear paginas de test             |
 
 ### **Configuración:**
 
@@ -88,6 +98,95 @@ Vercel Cron (cada 1h):
 | ---------------------------------------------------- | ----------------------------- | ------------- |
 | [.gitignore](.gitignore)                             | Actualizado con carpetas test | ✅ Modificado |
 | [vercel-cron-example.json](vercel-cron-example.json) | Ejemplo de config de crons    | ✅ Creado     |
+
+---
+
+## 🚀 API Endpoints Implementados
+
+### **GET /api/clases**
+
+Lista las clases disponibles de Momence para los próximos días.
+
+```bash
+# Todas las clases (próximos 7 días)
+GET /api/clases
+
+# Filtrar por estilo
+GET /api/clases?style=dancehall
+
+# Más días
+GET /api/clases?days=14&style=heels
+```
+
+**Respuesta:**
+```json
+{
+  "success": true,
+  "data": {
+    "classes": [...],
+    "byDay": { "2026-01-17": [...], "2026-01-18": [...] },
+    "total": 45,
+    "stylesAvailable": ["bachata", "dancehall", "heels", "salsa"]
+  }
+}
+```
+
+**Características:**
+- ✅ Búsqueda binaria para encontrar sesiones actuales (7 iteraciones vs 71 páginas)
+- ✅ Caché Redis de 15 minutos
+- ✅ Detección automática de estilo y nivel
+- ✅ Filtrado por estilo para URLs dinámicas de marketing
+
+---
+
+### **POST /api/reservar**
+
+Crea una reserva de clase de prueba gratuita.
+
+```bash
+POST /api/reservar
+Content-Type: application/json
+
+{
+  "firstName": "María",
+  "lastName": "García",
+  "email": "maria@example.com",
+  "phone": "+34666555444",
+  "sessionId": 12345,           # Opcional: ID de la clase
+  "className": "Dancehall",     # Para mostrar en confirmación
+  "classDate": "Lun 20 Ene",
+  "estilo": "dancehall",
+  "comoconoce": "Instagram",
+  "acceptsMarketing": true,
+  "fbc": "fb.1.1234...",        # Cookie Meta (opcional)
+  "fbp": "fb.1.5678...",        # Cookie Meta (opcional)
+  "sourceUrl": "https://...",   # URL de origen
+  "eventId": "unique_id"        # Para deduplicación Pixel+CAPI
+}
+```
+
+**Respuesta:**
+```json
+{
+  "success": true,
+  "status": "new",
+  "message": "¡Reserva confirmada! Te hemos enviado un email con los detalles.",
+  "data": {
+    "eventId": "booking_1234567890_abc123",
+    "className": "Dancehall",
+    "momenceSuccess": true,
+    "trackingSuccess": true
+  }
+}
+```
+
+**Flujo interno:**
+1. ✅ Validación de datos (email, teléfono España)
+2. ✅ Deduplicación Redis (90 días TTL)
+3. ✅ Crear booking en Momence (si hay sessionId)
+4. ✅ Enviar a Customer Leads (campos personalizados)
+5. ✅ Enviar evento Lead a Meta CAPI (€90 valor)
+6. ✅ Rate limiting (3 req/min por IP)
 
 ---
 

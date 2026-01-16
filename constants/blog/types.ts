@@ -83,6 +83,7 @@ export type ArticleSectionType =
   | 'heading'
   | 'paragraph'
   | 'list'
+  | 'numbered-list'
   | 'image'
   | 'video'
   | 'definition'
@@ -90,7 +91,9 @@ export type ArticleSectionType =
   | 'quote'
   | 'callout'
   | 'comparison-table'
-  | 'references';
+  | 'references'
+  | 'answer-capsule'
+  | 'testimonial';
 
 export interface ArticleSection {
   /** Unique section ID (used for ToC linking) */
@@ -123,6 +126,18 @@ export interface ArticleSection {
   tableConfig?: ComparisonTableConfig;
   /** References list - for 'references' type */
   references?: ReferenceItem[];
+
+  // === ANSWER CAPSULE (GEO Critical - 72% AI citation rate) ===
+  /** Answer capsule configuration - for 'answer-capsule' type */
+  answerCapsule?: AnswerCapsuleConfig;
+
+  // === TESTIMONIAL (Social Proof with Schema) ===
+  /** Testimonial configuration - for 'testimonial' type */
+  testimonial?: TestimonialConfig;
+
+  // === NUMBERED LIST (Better for HowTo/Steps) ===
+  /** Whether the numbered list should be rendered as steps (for HowTo schema) */
+  isStepList?: boolean;
 }
 
 /** Reference/source item for GEO citability */
@@ -152,6 +167,129 @@ export interface ComparisonTableConfig {
   rows: string[][];
   /** Column index to highlight (0-based) */
   highlightColumn?: number;
+}
+
+// ============================================================================
+// ANSWER CAPSULE (GEO Critical - 72% of AI-cited pages have these)
+// ============================================================================
+
+/**
+ * Answer Capsule Configuration
+ *
+ * Answer capsules are the #1 predictor of AI citation (72% correlation).
+ * They provide a concise, direct answer that LLMs can easily extract and cite.
+ *
+ * @example
+ * ```typescript
+ * answerCapsule: {
+ *   questionKey: 'blogArticle_answerQuestion',
+ *   answerKey: 'blogArticle_answerText',
+ *   sourceUrl: 'https://source.com/study',
+ *   sourcePublisher: 'Harvard Medical School',
+ *   confidence: 'high',
+ * }
+ * ```
+ */
+export interface AnswerCapsuleConfig {
+  /** i18n key for the question being answered */
+  questionKey: string;
+  /** i18n key for the direct answer (keep it 1-2 sentences) */
+  answerKey: string;
+  /** Optional source URL for the answer */
+  sourceUrl?: string;
+  /** Source publisher/organization name */
+  sourcePublisher?: string;
+  /** Year of the source */
+  sourceYear?: string;
+  /** Confidence level indicator */
+  confidence?: 'high' | 'medium' | 'verified';
+  /** Icon type for visual distinction */
+  icon?: 'info' | 'check' | 'star' | 'lightbulb';
+}
+
+// ============================================================================
+// TESTIMONIAL (Social Proof with Review Schema)
+// ============================================================================
+
+/**
+ * Testimonial Configuration
+ *
+ * Testimonials with proper schema support for AggregateRating and Review.
+ * Enhances E-E-A-T signals with real user experiences.
+ */
+export interface TestimonialConfig {
+  /** Testimonial author name */
+  authorName: string;
+  /** Author's location (e.g., "Barcelona") */
+  authorLocation?: string;
+  /** i18n key for the testimonial text */
+  textKey: string;
+  /** Rating out of 5 */
+  rating: number;
+  /** Author avatar image URL */
+  avatar?: string;
+  /** Date of review in ISO format */
+  datePublished?: string;
+  /** What the review is about */
+  reviewOf?: 'course' | 'instructor' | 'school';
+}
+
+// ============================================================================
+// SUMMARY STATISTICS (GEO-Optimized with Citation Schema)
+// ============================================================================
+
+/**
+ * Summary Statistic Configuration with Full Citation Support
+ *
+ * Statistics with proper citation are highly valued by AI search engines.
+ * The Citation schema helps LLMs attribute data correctly.
+ *
+ * @example
+ * ```typescript
+ * summaryStats: [
+ *   {
+ *     value: '76%',
+ *     labelKey: 'blogArticle_statDementiaLabel',
+ *     citation: {
+ *       source: 'New England Journal of Medicine',
+ *       url: 'https://www.nejm.org/doi/full/10.1056/NEJMoa022252',
+ *       year: '2003',
+ *       authors: 'Verghese et al.',
+ *     },
+ *   },
+ * ]
+ * ```
+ */
+export interface SummaryStatConfig {
+  /** The statistic value (e.g., "76%", "2,400+", "1960s") */
+  value: string;
+  /** i18n key for the label/description */
+  labelKey: string;
+  /** Source name for display (backwards compatible) */
+  source?: string;
+  /** Full citation configuration for schema.org Citation markup */
+  citation?: CitationConfig;
+}
+
+/**
+ * Citation Configuration for Schema.org markup
+ *
+ * Provides proper attribution for statistics and claims.
+ * LLMs use this to verify and cite information accurately.
+ */
+export interface CitationConfig {
+  /** Source publication/organization name */
+  source: string;
+  /** URL to the original source */
+  url?: string;
+  /** Publication year */
+  year?: string;
+  /** Authors (e.g., "Verghese et al." or "World Health Organization") */
+  authors?: string;
+  /** DOI if available */
+  doi?: string;
+  /** Access date in ISO format */
+  accessDate?: string;
 }
 
 // ============================================================================
@@ -276,12 +414,8 @@ export interface BlogArticleConfig {
   // === CONTENT ===
   /** i18n keys for summary bullets (3-4 recommended for GEO) */
   summaryBullets: string[];
-  /** Key statistics for summary box (holographic cards) */
-  summaryStats?: Array<{
-    value: string;
-    labelKey: string;
-    source?: string;
-  }>;
+  /** Key statistics for summary box (holographic cards) with GEO-optimized citations */
+  summaryStats?: SummaryStatConfig[];
   /** Article content sections */
   sections: ArticleSection[];
 
@@ -339,6 +473,57 @@ export interface BlogArticleConfig {
   howToSchema?: HowToSchemaConfig;
   /** CSS selectors for speakable content (voice search) */
   speakableSelectors?: string[];
+
+  // === PILLAR/CLUSTER STRATEGY (2026) ===
+  /** Content type for pillar/cluster strategy */
+  contentType?: 'pillar' | 'cluster' | 'standalone';
+  /** Pillar page slug (if this is a cluster page) */
+  pillarSlug?: string;
+  /** Cluster page slugs (if this is a pillar page) */
+  clusterSlugs?: string[];
+
+  // === ADDITIONAL SCHEMAS (2026 GEO) ===
+  /** LocalBusiness schema for local SEO */
+  localBusinessSchema?: {
+    enabled: boolean;
+  };
+  /** Course schema for class-related articles */
+  courseSchema?: {
+    enabled: boolean;
+    courseNameKey: string;
+    courseDescriptionKey: string;
+    provider: string;
+    courseMode: 'Online' | 'OnSite' | 'Blended';
+    offers?: {
+      price: string;
+      currency: string;
+      availability?: string;
+    };
+  };
+  /** Event schema for event-related articles */
+  eventSchema?: {
+    enabled: boolean;
+    eventNameKey: string;
+    startDate: string;
+    endDate?: string;
+    location: string;
+    offers?: {
+      price: string;
+      currency: string;
+    };
+  };
+  /** AggregateRating schema for reviews */
+  aggregateRatingSchema?: {
+    enabled: boolean;
+    ratingValue: number;
+    reviewCount: number;
+    bestRating?: number;
+    worstRating?: number;
+  };
+
+  // === GOOGLE DISCOVER (2026) ===
+  /** Enable Google Discover optimization (adds max-image-preview:large meta) */
+  discoverOptimized?: boolean;
 }
 
 // ============================================================================

@@ -2,14 +2,25 @@
  * BlogSchemas Component
  *
  * Centralizes all schema.org structured data for blog articles.
- * Includes Article, Person (author), BreadcrumbList, FAQPage, and SpeakableSpecification.
+ * Includes Article, Person (author), BreadcrumbList, FAQPage, SpeakableSpecification,
+ * Citation, DefinedTerm, and Review schemas for maximum GEO optimization.
+ *
+ * GEO Features:
+ * - Citation schema for statistics with proper source attribution
+ * - DefinedTerm schema with full @id and sameAs for definitions
+ * - Priority-based SpeakableSpecification for voice search
+ * - ItemList schema for answer capsules (LLM-friendly)
  */
 
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../../hooks/useI18n';
 import { DEFAULT_AUTHOR } from '../../constants/blog/author';
-import type { BlogArticleConfig, AuthorConfig } from '../../constants/blog/types';
+import type {
+  BlogArticleConfig,
+  AuthorConfig,
+  SummaryStatConfig,
+} from '../../constants/blog/types';
 
 interface BlogSchemasProps {
   /** Article configuration */
@@ -210,6 +221,161 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
       }
     : null;
 
+  // ============================================================================
+  // GEO-OPTIMIZED SCHEMAS (For AI Search Engines)
+  // ============================================================================
+
+  /**
+   * Citation Schema for Statistics
+   * Helps LLMs attribute data correctly when citing statistics
+   */
+  const buildCitationSchema = (stat: SummaryStatConfig) => {
+    if (!stat.citation) return null;
+    return {
+      '@type': 'Claim',
+      claimReviewed: `${stat.value} - ${t(stat.labelKey)}`,
+      appearance: {
+        '@type': 'ScholarlyArticle',
+        name: stat.citation.source,
+        url: stat.citation.url,
+        datePublished: stat.citation.year,
+        author: stat.citation.authors
+          ? {
+              '@type': 'Person',
+              name: stat.citation.authors,
+            }
+          : undefined,
+        identifier: stat.citation.doi
+          ? {
+              '@type': 'PropertyValue',
+              propertyID: 'DOI',
+              value: stat.citation.doi,
+            }
+          : undefined,
+      },
+    };
+  };
+
+  // ItemList Schema for key facts (GEO - helps LLMs extract key information)
+  const keyFactsSchema =
+    config.summaryStats && config.summaryStats.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          '@id': `${articleUrl}#key-facts`,
+          name: 'Key Facts',
+          description: t(`${config.articleKey}_metaDescription`),
+          numberOfItems: config.summaryStats.length,
+          itemListElement: config.summaryStats.map((stat, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: t(stat.labelKey),
+            description: stat.value,
+            ...(stat.citation && {
+              citation: buildCitationSchema(stat),
+            }),
+          })),
+        }
+      : null;
+
+  /**
+   * DefinedTerm Schema for definitions in content
+   * Enhanced with @id, url, inLanguage, and sameAs for better GEO
+   */
+  const definitionSections = config.sections.filter(s => s.type === 'definition');
+  const definedTermSchemas =
+    definitionSections.length > 0
+      ? definitionSections.map(section => ({
+          '@context': 'https://schema.org',
+          '@type': 'DefinedTerm',
+          '@id': `${articleUrl}#${section.id}`,
+          name: section.definitionTermKey ? t(section.definitionTermKey) : '',
+          description: t(section.contentKey),
+          inDefinedTermSet: {
+            '@type': 'DefinedTermSet',
+            name: 'Dance Terminology',
+            '@id': `${baseUrl}/${locale}/glosario`,
+          },
+          inLanguage:
+            locale === 'es'
+              ? 'es-ES'
+              : locale === 'ca'
+                ? 'ca-ES'
+                : locale === 'fr'
+                  ? 'fr-FR'
+                  : 'en',
+          url: `${articleUrl}#${section.id}`,
+        }))
+      : [];
+
+  /**
+   * Answer Capsule Schema (ClaimReview-like for AI extraction)
+   * Answer capsules are the #1 predictor of AI citation
+   */
+  const answerCapsuleSections = config.sections.filter(s => s.type === 'answer-capsule');
+  const answerCapsuleSchemas =
+    answerCapsuleSections.length > 0
+      ? answerCapsuleSections
+          .filter(section => section.answerCapsule)
+          .map(section => ({
+            '@context': 'https://schema.org',
+            '@type': 'Question',
+            '@id': `${articleUrl}#${section.id}`,
+            name: t(section.answerCapsule!.questionKey),
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: t(section.answerCapsule!.answerKey),
+              url: `${articleUrl}#${section.id}`,
+              ...(section.answerCapsule!.sourceUrl && {
+                citation: {
+                  '@type': 'CreativeWork',
+                  name: section.answerCapsule!.sourcePublisher,
+                  url: section.answerCapsule!.sourceUrl,
+                  datePublished: section.answerCapsule!.sourceYear,
+                },
+              }),
+            },
+          }))
+      : [];
+
+  /**
+   * Review Schema for testimonials
+   * Enhances E-E-A-T with real user experiences
+   */
+  const testimonialSections = config.sections.filter(s => s.type === 'testimonial');
+  const reviewSchemas =
+    testimonialSections.length > 0
+      ? testimonialSections
+          .filter(section => section.testimonial)
+          .map(section => ({
+            '@context': 'https://schema.org',
+            '@type': 'Review',
+            '@id': `${articleUrl}#${section.id}`,
+            reviewBody: t(section.testimonial!.textKey),
+            reviewRating: {
+              '@type': 'Rating',
+              ratingValue: section.testimonial!.rating,
+              bestRating: 5,
+            },
+            author: {
+              '@type': 'Person',
+              name: section.testimonial!.authorName,
+              ...(section.testimonial!.authorLocation && {
+                address: {
+                  '@type': 'PostalAddress',
+                  addressLocality: section.testimonial!.authorLocation,
+                },
+              }),
+            },
+            itemReviewed: {
+              '@type': 'DanceSchool',
+              name: "Farray's International Dance Center",
+              '@id': `${baseUrl}/#organization`,
+            },
+            datePublished: section.testimonial!.datePublished || config.datePublished,
+          }))
+      : [];
+
   return (
     <Helmet>
       {/* Article Schema */}
@@ -232,6 +398,36 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
 
       {/* HowTo Schema */}
       {howToSchema && <script type="application/ld+json">{JSON.stringify(howToSchema)}</script>}
+
+      {/* ============================================================ */}
+      {/* GEO-OPTIMIZED SCHEMAS (For AI Search Engines) */}
+      {/* ============================================================ */}
+
+      {/* Key Facts ItemList Schema */}
+      {keyFactsSchema && (
+        <script type="application/ld+json">{JSON.stringify(keyFactsSchema)}</script>
+      )}
+
+      {/* DefinedTerm Schemas */}
+      {definedTermSchemas.map((schema, index) => (
+        <script key={`defined-term-${index}`} type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      ))}
+
+      {/* Answer Capsule Schemas (Critical for GEO) */}
+      {answerCapsuleSchemas.map((schema, index) => (
+        <script key={`answer-capsule-${index}`} type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      ))}
+
+      {/* Review/Testimonial Schemas */}
+      {reviewSchemas.map((schema, index) => (
+        <script key={`review-${index}`} type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      ))}
     </Helmet>
   );
 };

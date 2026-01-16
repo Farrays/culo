@@ -35,7 +35,7 @@ const VideoTestimonialsSection: React.FC = () => {
       videoUrl: '/videos/testimonial-maria.mp4',
       thumbnailUrl: '/images/testimonials/maria-thumb.jpg',
       avatarInitials: 'MG',
-      avatarColor: 'from-pink-500 to-rose-600',
+      avatarColor: 'from-brand-500 to-brand-700',
     },
     {
       id: '2',

@@ -96,9 +96,9 @@ const Services: React.FC = () => {
         </AnimateOnScroll>
         <div className="flex flex-wrap justify-center -m-4">
           {servicesData.map((service, index) => (
-            <div key={service.id} className="w-full md:w-1/2 lg:w-1/3 p-4">
+            <div key={service.id} className="w-full md:w-1/2 lg:w-1/3 p-4 [perspective:1000px]">
               <AnimateOnScroll delay={index * 100} className="h-full">
-                <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-3 hover:scale-[1.02] h-full flex flex-col">
+                <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.75rem)_scale(1.02)_rotateY(5deg)_rotateX(2deg)] hover:border-primary-accent hover:shadow-accent-glow h-full flex flex-col">
                   <div className="mb-6">
                     <div className="bg-primary-dark/30 group-hover:bg-primary-accent/20 p-4 rounded-xl inline-block shadow-inner transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                       <service.Icon className="h-10 w-10 text-primary-accent transition-all duration-500 group-hover:scale-110" />

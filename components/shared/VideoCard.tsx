@@ -31,7 +31,7 @@ const VideoCard: React.FC<VideoCardProps> = memo(function VideoCard({
   return (
     <button
       onClick={onClick}
-      className="group relative block w-full overflow-hidden rounded-2xl bg-black focus:outline-none focus:ring-4 focus:ring-primary-accent/50 transition-all duration-300 hover:-translate-y-2"
+      className="group relative block w-full overflow-hidden rounded-2xl bg-black focus:outline-none focus:ring-4 focus:ring-primary-accent/50 transition-all duration-500 [perspective:1000px] [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)_rotateY(5deg)_rotateX(2deg)]"
       aria-label={`Ver video: ${title}`}
     >
       {/* Glow effect on hover */}

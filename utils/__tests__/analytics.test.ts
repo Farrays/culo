@@ -27,6 +27,7 @@ describe('analytics', () => {
         'GENERIC_LEAD',
         'TRIAL_CLASS',
         'MEMBERSHIP',
+        'BOOKING_LEAD',
       ];
       expect(Object.keys(LEAD_VALUES)).toEqual(expectedKeys);
     });

@@ -114,6 +114,9 @@ const ProfesoresBaileBarcelonaPage = lazy(
   () => import('./components/pages/ProfesoresBaileBarcelonaPage')
 );
 
+// ===== BOOKING PAGE =====
+const BookingPage = lazy(() => import('./components/pages/BookingPage'));
+
 // ===== LEGAL PAGES =====
 const TermsConditionsPage = lazy(() => import('./components/TermsConditionsPage'));
 const LegalNoticePage = lazy(() => import('./components/LegalNoticePage'));
@@ -256,8 +259,11 @@ const AppContent: React.FC = () => {
   // Legal pages without header/footer (accessed from landing modal links)
   const isMinimalLegalPage = location.pathname.includes('/politica-privacidad');
 
+  // Booking page without header/footer (clean funnel experience)
+  const isBookingPage = location.pathname.includes('/reservas');
+
   // Combined check for hiding header/footer
-  const hideHeaderFooter = isPromoLanding || isMinimalLegalPage;
+  const hideHeaderFooter = isPromoLanding || isMinimalLegalPage || isBookingPage;
 
   // Determine if exit intent modal should show on current page
   const shouldShowExitIntent = useMemo(() => {
@@ -677,6 +683,16 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <ContactPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/reservas"
+              element={
+                <>
+                  <LocaleSync />
+                  <BookingPage />
                 </>
               }
             />

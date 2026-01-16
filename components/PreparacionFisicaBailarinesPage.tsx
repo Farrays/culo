@@ -3,16 +3,13 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
-import {
-  PREPARACION_FISICA_TESTIMONIALS,
-  PREPARACION_FISICA_FAQS_CONFIG,
-} from '../constants/preparacion-fisica';
+import { PREPARACION_FISICA_FAQS_CONFIG } from '../constants/preparacion-fisica';
 import AnimateOnScroll from './AnimateOnScroll';
 import FAQSection from './FAQSection';
 import AnimatedCounter from './AnimatedCounter';
 import Icon, { type IconName } from './Icon';
 import type { ValuePillar } from '../types';
-import TestimonialsSection from './TestimonialsSection';
+import { ReviewsSection } from './reviews';
 import LeadCaptureModal from './shared/LeadCaptureModal';
 import OptimizedImage from './OptimizedImage';
 import { getStyleImage, getContextualAltKey } from '../constants/style-images';
@@ -100,9 +97,6 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
     question: t(faq.questionKey),
     answer: t(faq.answerKey),
   }));
-
-  // Testimonials from constants
-  const preparacionFisicaTestimonials = PREPARACION_FISICA_TESTIMONIALS;
 
   // Schema Markup - BreadcrumbList
   const breadcrumbSchema = {
@@ -552,11 +546,8 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        <TestimonialsSection
-          titleKey="prepFisica_testimonials_title"
-          testimonials={preparacionFisicaTestimonials}
-        />
+        {/* Reviews Section - Google Reviews */}
+        <ReviewsSection category="general" limit={6} showGoogleBadge={true} layout="grid" />
 
         {/* FAQ Section */}
         <FAQSection

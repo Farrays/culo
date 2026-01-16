@@ -2,11 +2,10 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../../hooks/useI18n';
 import { SUPPORTED_LOCALES } from '../../types';
-import { LocalBusinessSchema, CourseSchema, AggregateReviewsSchema } from '../SchemaMarkup';
+import { LocalBusinessSchema, CourseSchema } from '../SchemaMarkup';
 import FAQSection from '../FAQSection';
-import TestimonialsSection from '../TestimonialsSection';
+import { ReviewsSection } from '../reviews';
 import YouTubeEmbed from '../YouTubeEmbed';
-import type { Testimonial } from '../../types';
 
 export interface FAQ {
   id: string;
@@ -21,7 +20,6 @@ interface ClassPageTemplateProps {
 
   // Configuración de contenido
   faqsConfig: FAQ[];
-  testimonials?: Testimonial[];
 
   // Breadcrumb configuration
   breadcrumbItems?: Array<{
@@ -61,7 +59,6 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
   categoryKey,
   categoryPath,
   faqsConfig,
-  testimonials,
   breadcrumbItems,
   courseSchemaConfig,
   heroContent,
@@ -116,20 +113,6 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
       },
     })),
   };
-
-  // Reviews Schema Data
-  const reviewsSchemaData = testimonials
-    ? testimonials.map(testimonial => ({
-        itemReviewed: {
-          name: `${t(`${categoryKey}_pageTitle`)} - Farray's Center`,
-          type: 'Course',
-        },
-        author: testimonial.name,
-        reviewRating: { ratingValue: testimonial.rating.toString(), bestRating: '5' },
-        reviewBody: testimonial.quote[locale],
-        datePublished: '2025-01-01',
-      }))
-    : [];
 
   return (
     <>
@@ -214,14 +197,7 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
         availableLanguage={SUPPORTED_LOCALES}
       />
 
-      {/* AggregateReviews Schema */}
-      {testimonials && testimonials.length > 0 && (
-        <AggregateReviewsSchema
-          reviews={reviewsSchemaData}
-          itemName={`${t(`${categoryKey}_pageTitle`)} - Farray's Center`}
-          itemType="Course"
-        />
-      )}
+      {/* AggregateReviews Schema - handled by ReviewsSection component */}
 
       <div className="pt-20 md:pt-24">
         {/* Hero Content (customizable) */}
@@ -252,12 +228,9 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
           </section>
         )}
 
-        {/* Testimonials Section */}
-        {showTestimonials && testimonials && testimonials.length > 0 && (
-          <TestimonialsSection
-            titleKey={`${categoryKey}_testimonials_title`}
-            testimonials={testimonials}
-          />
+        {/* Reviews Section - Google Reviews */}
+        {showTestimonials && (
+          <ReviewsSection category="general" limit={6} showGoogleBadge={true} layout="grid" />
         )}
 
         {/* FAQs Section */}

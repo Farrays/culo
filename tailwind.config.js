@@ -12,20 +12,20 @@ export default {
     extend: {
       colors: {
         'primary-dark': '#800020',
-        'primary-accent': '#c82260',
+        'primary-accent': '#B01E3C', // Color exacto del logo (rojo carmesí)
         neutral: '#ffffff',
         'dark-text': '#000000',
-        // Colores del brand para landings
+        // Colores del brand para landings (basados en logo #B01E3C)
         brand: {
-          50: '#fef1f5',
-          100: '#fce7ed',
-          200: '#fbd0dc',
-          300: '#f8a9c1',
-          400: '#f2739c',
-          500: '#e63d7e', // Hover color
-          600: '#c82260', // Main brand color
-          700: '#b31749',
-          800: '#951440',
+          50: '#fef2f4',
+          100: '#fde6ea',
+          200: '#fbd0d8',
+          300: '#f8a8b8',
+          400: '#D64464', // Hover claro
+          500: '#C73350', // Hover color
+          600: '#B01E3C', // Main brand color (logo exacto)
+          700: '#8E1830', // Hover oscuro
+          800: '#6E1325',
           900: '#800020', // Dark brand color
         },
       },
@@ -44,12 +44,12 @@ export default {
         glow: {
           '0%, 100%': {
             boxShadow:
-              '0 0 10px #c82260, 0 0 20px #c82260, 0 0 30px #c82260, 0 4px 20px rgba(200, 34, 96, 0.4)',
+              '0 0 10px #B01E3C, 0 0 20px #B01E3C, 0 0 30px #B01E3C, 0 4px 20px rgba(176, 30, 60, 0.4)',
             filter: 'brightness(1)',
           },
           '50%': {
             boxShadow:
-              '0 0 20px #c82260, 0 0 35px #c82260, 0 0 50px #c82260, 0 4px 30px rgba(200, 34, 96, 0.6)',
+              '0 0 20px #B01E3C, 0 0 35px #B01E3C, 0 0 50px #B01E3C, 0 4px 30px rgba(176, 30, 60, 0.6)',
             filter: 'brightness(1.1)',
           },
         },
@@ -75,7 +75,7 @@ export default {
         },
       },
       boxShadow: {
-        'accent-glow': '0 0 15px rgba(200, 34, 96, 0.8)',
+        'accent-glow': '0 0 15px rgba(176, 30, 60, 0.8)',
       },
     },
   },

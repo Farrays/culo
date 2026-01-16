@@ -28,6 +28,7 @@ interface ReviewsSectionProps {
 
 // Google Badge (no external link)
 const GoogleRatingBadge: React.FC<{ className?: string }> = ({ className = '' }) => {
+  const { t } = useI18n();
   const googleStats = useGoogleBusinessStats();
 
   return (
@@ -38,7 +39,7 @@ const GoogleRatingBadge: React.FC<{ className?: string }> = ({ className = '' })
       `}
     >
       {/* EXCELENTE */}
-      <div className="mb-4 text-3xl font-black text-neutral">EXCELENTE</div>
+      <div className="mb-4 text-3xl font-black text-neutral">{t('excellent')}</div>
 
       {/* Stars */}
       <div className="flex items-center justify-center gap-1 mb-2">
@@ -55,8 +56,10 @@ const GoogleRatingBadge: React.FC<{ className?: string }> = ({ className = '' })
       </div>
 
       {/* Review count */}
-      <div className="text-sm text-neutral/70">Basado en {googleStats.totalReviews}+ reseñas</div>
-      <div className="mt-2 text-xs text-neutral/70">Google</div>
+      <div className="text-sm text-neutral/70">
+        {t('basedOnReviews', { count: `${googleStats.totalReviews}+` })}
+      </div>
+      <div className="mt-2 text-xs text-neutral/70">{t('reviews_google')}</div>
     </div>
   );
 };
@@ -126,7 +129,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({
         {layout === 'grid' && (
           <div className={`grid gap-6 sm:gap-8 mx-auto ${getGridClass()}`}>
             {reviews.map((review, index) => (
-              <AnimateOnScroll key={review.id} delay={index * 100}>
+              <AnimateOnScroll key={review.id} delay={index * 100} className="[perspective:1000px]">
                 <ReviewCard review={review} variant="compact" showCategory={showCategory} />
               </AnimateOnScroll>
             ))}
@@ -137,7 +140,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({
         {layout === 'list' && (
           <div className="max-w-3xl mx-auto space-y-6">
             {reviews.map((review, index) => (
-              <AnimateOnScroll key={review.id} delay={index * 100}>
+              <AnimateOnScroll key={review.id} delay={index * 100} className="[perspective:1000px]">
                 <ReviewCard review={review} variant="full" showCategory={showCategory} />
               </AnimateOnScroll>
             ))}

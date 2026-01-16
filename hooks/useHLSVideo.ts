@@ -4,6 +4,8 @@ import type Hls from 'hls.js';
 interface UseHLSVideoOptions {
   /** HLS playlist URL (.m3u8) */
   hlsUrl: string;
+  /** MP4 fallback URL for browsers that don't support HLS */
+  mp4Url?: string;
   /** Delay before loading video after intersection (ms) */
   loadDelay?: number;
   /** Respect user's reduced motion preference */
@@ -28,15 +30,17 @@ interface UseHLSVideoReturn {
  * - Dynamic import of hls.js (doesn't affect initial bundle)
  * - Intersection Observer for lazy loading
  * - Safari native HLS support (no hls.js needed)
+ * - MP4 fallback when HLS fails
  * - Respects prefers-reduced-motion
  * - Respects Save-Data header
  */
 export const useHLSVideo = (options: UseHLSVideoOptions): UseHLSVideoReturn => {
-  const { hlsUrl, loadDelay = 150, respectReducedMotion = true, respectDataSaver = true } = options;
+  const { hlsUrl, mp4Url, loadDelay = 150, respectReducedMotion = true, respectDataSaver = true } = options;
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const hlsInstanceRef = useRef<Hls | null>(null);
+  const hasTriedFallbackRef = useRef(false);
 
   const [isIntersecting, setIsIntersecting] = useState(false);
   const [isVideoReady, setIsVideoReady] = useState(false);
@@ -102,38 +106,44 @@ export const useHLSVideo = (options: UseHLSVideoOptions): UseHLSVideoReturn => {
       return;
     }
 
+    // Reset fallback flag on new initialization
+    hasTriedFallbackRef.current = false;
+
+    const handleVideoReady = () => setIsVideoReady(true);
+    const handleVideoPlaying = () => setIsVideoPlaying(true);
+
+    const tryMp4Fallback = async () => {
+      // Only try fallback once
+      if (hasTriedFallbackRef.current || !mp4Url || !video) return false;
+      hasTriedFallbackRef.current = true;
+
+      console.log('Trying MP4 fallback:', mp4Url);
+      video.src = mp4Url;
+
+      try {
+        await video.load();
+        await video.play();
+        setIsVideoReady(true);
+        setIsVideoPlaying(true);
+        return true;
+      } catch (playError) {
+        console.warn('MP4 fallback failed:', playError);
+        setError('Video playback failed');
+        return false;
+      }
+    };
+
     const initializeVideo = async () => {
       try {
-        // Check if browser supports HLS natively (Safari)
-        if (video.canPlayType('application/vnd.apple.mpegurl')) {
-          // Safari: use native HLS support
-          video.src = hlsUrl;
-          video.addEventListener('loadeddata', () => setIsVideoReady(true));
-          video.addEventListener('playing', () => setIsVideoPlaying(true));
-          video.addEventListener('error', () => setError('Video playback error'));
+        // Try hls.js first (works on Chrome, Firefox, Edge, and Safari)
+        const HlsModule = await import('hls.js');
+        const Hls = HlsModule.default;
 
-          try {
-            await video.play();
-          } catch (playError) {
-            // Autoplay blocked, video will show but not play
-            console.warn('Autoplay blocked:', playError);
-          }
-        } else {
-          // Chrome/Firefox: use hls.js
-          const HlsModule = await import('hls.js');
-          const Hls = HlsModule.default;
-
-          if (!Hls.isSupported()) {
-            setError('HLS not supported');
-            return;
-          }
-
+        if (Hls.isSupported()) {
           const hls = new Hls({
             enableWorker: true,
             lowLatencyMode: false,
-            // Start with lower quality for faster start
             startLevel: 0,
-            // Limit buffer to save bandwidth
             maxBufferLength: 30,
             maxMaxBufferLength: 60,
           });
@@ -153,17 +163,33 @@ export const useHLSVideo = (options: UseHLSVideoOptions): UseHLSVideoReturn => {
             }
           });
 
-          hls.on(Hls.Events.ERROR, (_event, data) => {
+          hls.on(Hls.Events.ERROR, async (_event, data) => {
             if (data.fatal) {
               console.error('HLS fatal error:', data.type, data.details);
-              setError(`HLS error: ${data.details}`);
               hls.destroy();
+              hlsInstanceRef.current = null;
+              await tryMp4Fallback();
             }
           });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          // Safari native HLS support
+          video.src = hlsUrl;
+          video.addEventListener('loadeddata', handleVideoReady);
+          video.addEventListener('playing', handleVideoPlaying);
+
+          try {
+            await video.play();
+          } catch (playError) {
+            console.warn('Safari HLS autoplay blocked, trying MP4:', playError);
+            await tryMp4Fallback();
+          }
+        } else {
+          // No HLS support, try MP4 directly
+          await tryMp4Fallback();
         }
       } catch (err) {
         console.error('Failed to initialize video:', err);
-        setError('Failed to load video');
+        await tryMp4Fallback();
       }
     };
 
@@ -175,8 +201,10 @@ export const useHLSVideo = (options: UseHLSVideoOptions): UseHLSVideoReturn => {
         hlsInstanceRef.current.destroy();
         hlsInstanceRef.current = null;
       }
+      video.removeEventListener('loadeddata', handleVideoReady);
+      video.removeEventListener('playing', handleVideoPlaying);
     };
-  }, [hlsUrl, isIntersecting, prefersReducedMotion, isDataSaverMode]);
+  }, [hlsUrl, mp4Url, isIntersecting, prefersReducedMotion, isDataSaverMode]);
 
   // Determine if video should be shown
   const shouldShowVideo = !prefersReducedMotion && !isDataSaverMode && !error;

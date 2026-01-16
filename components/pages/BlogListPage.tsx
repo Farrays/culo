@@ -25,6 +25,7 @@ import { SALSA_RITMO_CONFIG } from '../../constants/blog/articles/salsa-ritmo-co
 import { SALSA_VS_BACHATA_CONFIG } from '../../constants/blog/articles/salsa-vs-bachata';
 import { CLASES_SALSA_BARCELONA_CONFIG } from '../../constants/blog/articles/clases-de-salsa-barcelona';
 import { CLASES_PRINCIPIANTES_CONFIG } from '../../constants/blog/articles/clases-baile-principiantes-barcelona';
+import { COMO_PERDER_MIEDO_BAILAR_CONFIG } from '../../constants/blog/articles/como-perder-miedo-bailar';
 
 // Generate article card data from configs
 const ALL_ARTICLES: ArticleCardData[] = [
@@ -35,6 +36,7 @@ const ALL_ARTICLES: ArticleCardData[] = [
   getArticleCardData(SALSA_VS_BACHATA_CONFIG),
   getArticleCardData(CLASES_SALSA_BARCELONA_CONFIG),
   getArticleCardData(CLASES_PRINCIPIANTES_CONFIG),
+  getArticleCardData(COMO_PERDER_MIEDO_BAILAR_CONFIG),
 ];
 
 const BlogListPage: React.FC = () => {

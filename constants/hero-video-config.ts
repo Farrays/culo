@@ -5,18 +5,21 @@
 
 export const HERO_VIDEO_CONFIG = {
   // HLS Stream from Bunny.net CDN
-  hlsUrl: 'https://vz-c354d67e-cc3.b-cdn.net/44b29bf5-1e39-4442-9b78-efb65feee4a4/playlist.m3u8',
+  hlsUrl: 'https://vz-3d56a778-175.b-cdn.net/0296f3a9-d785-461a-b188-e73ddecfa734/playlist.m3u8',
+
+  // MP4 fallback (720p) for browsers that don't support HLS
+  mp4Url: 'https://vz-3d56a778-175.b-cdn.net/0296f3a9-d785-461a-b188-e73ddecfa734/play_720p.mp4',
 
   // Local optimized poster for fast LCP (49KB WebP)
   posterUrl: '/images/hero/hero-video-poster.webp',
 
   // Fallback poster from Bunny CDN (if local fails)
   posterFallbackUrl:
-    'https://vz-c354d67e-cc3.b-cdn.net/44b29bf5-1e39-4442-9b78-efb65feee4a4/thumbnail_eaafec29.jpg',
+    'https://vz-3d56a778-175.b-cdn.net/0296f3a9-d785-461a-b188-e73ddecfa734/thumbnail.jpg',
 
   // Optional: Preview animation (WebP)
   previewUrl:
-    'https://vz-c354d67e-cc3.b-cdn.net/44b29bf5-1e39-4442-9b78-efb65feee4a4/preview.webp?v=1766886027',
+    'https://vz-3d56a778-175.b-cdn.net/0296f3a9-d785-461a-b188-e73ddecfa734/preview.webp?v=1768662416',
 } as const;
 
 export type HeroVideoConfig = typeof HERO_VIDEO_CONFIG;

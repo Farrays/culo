@@ -38,14 +38,14 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, delay = 0, className
   };
 
   return (
-    <AnimateOnScroll delay={delay}>
+    <AnimateOnScroll delay={delay} className="[perspective:1000px]">
       <Link
         to={articleUrl}
         className={`group block h-full bg-black/50 backdrop-blur-md
                    border border-primary-dark/50 rounded-2xl overflow-hidden
-                   transition-all duration-500
-                   hover:border-primary-accent hover:shadow-accent-glow
-                   hover:-translate-y-3 hover:scale-[1.02] ${className}`}
+                   transition-all duration-500 [transform-style:preserve-3d]
+                   hover:[transform:translateY(-0.75rem)_scale(1.02)_rotateY(5deg)_rotateX(2deg)]
+                   hover:border-primary-accent hover:shadow-accent-glow ${className}`}
       >
         {/* Image */}
         <div className="relative h-56 overflow-hidden">

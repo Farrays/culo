@@ -7,7 +7,7 @@ import type { CategoryCardProps } from '../../types/categories';
 // Refactored: Direct link to pillar page (no modals)
 // Design: Square cards with 3D effects and hover descriptions
 // Verified: Vite + React + React Router v7 + useI18n hook
-// Primary color: #c82260 (primary-accent from tailwind.config)
+// Primary color: #B01E3C (rojo carmesí del logo)
 
 const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
   const { t, locale } = useI18n();

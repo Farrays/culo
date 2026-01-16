@@ -74,7 +74,7 @@ export interface TeacherAvatarProps {
 const GRADIENT_COLORS = [
   'from-primary-accent to-primary-dark',
   'from-purple-500 to-purple-800',
-  'from-pink-500 to-pink-800',
+  'from-brand-500 to-brand-800',
   'from-amber-500 to-amber-800',
   'from-emerald-500 to-emerald-800',
 ] as const;

@@ -18,6 +18,17 @@ export const SALSA_VS_BACHATA_CONFIG: BlogArticleConfig = {
   slug: 'salsa-vs-bachata-que-estilo-elegir',
   category: 'tutoriales',
 
+  // === AUTHOR (E-E-A-T) ===
+  authorId: 'yunaisy',
+
+  // === PILLAR/CLUSTER STRATEGY (2026 SEO) ===
+  contentType: 'pillar',
+  clusterSlugs: [
+    'salsa-ritmo-conquisto-mundo',
+    'historia-bachata-barcelona',
+    'beneficios-bailar-salsa',
+  ],
+
   // === DATES ===
   datePublished: '2026-01-16',
   dateModified: '2026-01-16',
@@ -34,22 +45,48 @@ export const SALSA_VS_BACHATA_CONFIG: BlogArticleConfig = {
     'blogSalsaVsBachata_summaryBullet4',
   ],
 
-  // === KEY STATISTICS (Holographic Cards) ===
+  // === KEY STATISTICS (Holographic Cards with GEO Citations) ===
   summaryStats: [
     {
       value: '1960s',
       labelKey: 'blogSalsaVsBachata_statSalsaOrigenLabel',
-      source: 'Ramos Gandía, 2023',
+      citation: {
+        source: 'Mucho Más Que Baile',
+        url: 'https://www.muchomasquebaile.es/wp-content/uploads/2021/11/Historia-de-la-salsa-desde-las-raices-hasta-el-1975.pdf',
+        year: '2023',
+        authors: 'Ramos Gandía',
+      },
     },
     {
       value: '1960s',
       labelKey: 'blogSalsaVsBachata_statBachataOrigenLabel',
-      source: 'Pacini Hernández',
+      citation: {
+        source: 'Temple University Press',
+        url: 'https://archive.org/details/bachatasocialhist00paci',
+        year: '1995',
+        authors: 'Pacini Hernández',
+      },
     },
     {
-      value: 'UNESCO',
+      value: '2019',
       labelKey: 'blogSalsaVsBachata_statUNESCOLabel',
-      source: 'CRESPIAL, 2019',
+      citation: {
+        source: 'UNESCO Patrimonio Cultural Inmaterial',
+        url: 'https://ich.unesco.org/es/RL/la-bachata-dominicana-01514',
+        year: '2019',
+        authors: 'UNESCO',
+      },
+    },
+    {
+      value: '76%',
+      labelKey: 'blogSalsaVsBachata_statDemenciaLabel',
+      citation: {
+        source: 'New England Journal of Medicine',
+        url: 'https://www.nejm.org/doi/full/10.1056/NEJMoa022252',
+        year: '2003',
+        authors: 'Verghese et al.',
+        doi: '10.1056/NEJMoa022252',
+      },
     },
   ],
 
@@ -70,6 +107,22 @@ export const SALSA_VS_BACHATA_CONFIG: BlogArticleConfig = {
     },
 
     // =====================================================
+    // ANSWER CAPSULE 1: ¿Cuál elegir? (72% AI Citation Rate)
+    // =====================================================
+    {
+      id: 'answer-cual-elegir',
+      type: 'answer-capsule',
+      contentKey: 'blogSalsaVsBachata_answerCualElegir',
+      answerCapsule: {
+        questionKey: 'blogSalsaVsBachata_answerCualElegirQ',
+        answerKey: 'blogSalsaVsBachata_answerCualElegirA',
+        sourcePublisher: "Farray's Dance Center",
+        confidence: 'verified',
+        icon: 'star',
+      },
+    },
+
+    // =====================================================
     // SECTION 1: ORÍGENES - DOS HISTORIAS PARALELAS
     // =====================================================
     {
@@ -78,15 +131,42 @@ export const SALSA_VS_BACHATA_CONFIG: BlogArticleConfig = {
       level: 2,
       contentKey: 'blogSalsaVsBachata_origenesTitle',
     },
+
+    // === DEFINITION: Salsa (LLM Extraction) ===
+    {
+      id: 'definition-salsa',
+      type: 'definition',
+      contentKey: 'blogSalsaVsBachata_defSalsa',
+      definitionTermKey: 'blogSalsaVsBachata_defSalsaTerm',
+    },
+
     {
       id: 'origenes-salsa',
       type: 'paragraph',
       contentKey: 'blogSalsaVsBachata_origenesSalsa',
     },
+
+    // === DEFINITION: Bachata (LLM Extraction) ===
+    {
+      id: 'definition-bachata',
+      type: 'definition',
+      contentKey: 'blogSalsaVsBachata_defBachata',
+      definitionTermKey: 'blogSalsaVsBachata_defBachataTerm',
+    },
+
     {
       id: 'origenes-bachata',
       type: 'paragraph',
       contentKey: 'blogSalsaVsBachata_origenesBachata',
+    },
+
+    // === STATISTIC: UNESCO Recognition ===
+    {
+      id: 'stat-unesco',
+      type: 'statistic',
+      contentKey: 'blogSalsaVsBachata_statUNESCOContent',
+      statisticValue: '2019',
+      statisticSource: 'UNESCO Patrimonio Cultural Inmaterial',
     },
 
     // =====================================================
@@ -195,6 +275,21 @@ export const SALSA_VS_BACHATA_CONFIG: BlogArticleConfig = {
       level: 2,
       contentKey: 'blogSalsaVsBachata_aprendizajeTitle',
     },
+
+    // === ANSWER CAPSULE 2: ¿Cuál es más fácil? (72% AI Citation) ===
+    {
+      id: 'answer-mas-facil',
+      type: 'answer-capsule',
+      contentKey: 'blogSalsaVsBachata_answerMasFacil',
+      answerCapsule: {
+        questionKey: 'blogSalsaVsBachata_answerMasFacilQ',
+        answerKey: 'blogSalsaVsBachata_answerMasFacilA',
+        sourcePublisher: "Experiencia docente Farray's Dance Center",
+        confidence: 'high',
+        icon: 'lightbulb',
+      },
+    },
+
     {
       id: 'aprendizaje-intro',
       type: 'paragraph',
@@ -209,6 +304,14 @@ export const SALSA_VS_BACHATA_CONFIG: BlogArticleConfig = {
       id: 'aprendizaje-salsa',
       type: 'paragraph',
       contentKey: 'blogSalsaVsBachata_aprendizajeSalsa',
+    },
+
+    // === CALLOUT TIP: Consejo para principiantes ===
+    {
+      id: 'callout-tip-principiantes',
+      type: 'callout',
+      contentKey: 'blogSalsaVsBachata_calloutTip',
+      calloutType: 'tip',
     },
 
     // === IMAGE: Clases de baile ===
@@ -236,11 +339,47 @@ export const SALSA_VS_BACHATA_CONFIG: BlogArticleConfig = {
       level: 2,
       contentKey: 'blogSalsaVsBachata_beneficiosTitle',
     },
+
+    // === ANSWER CAPSULE 3: Beneficios científicos (72% AI Citation) ===
+    {
+      id: 'answer-beneficios',
+      type: 'answer-capsule',
+      contentKey: 'blogSalsaVsBachata_answerBeneficios',
+      answerCapsule: {
+        questionKey: 'blogSalsaVsBachata_answerBeneficiosQ',
+        answerKey: 'blogSalsaVsBachata_answerBeneficiosA',
+        sourceUrl: 'https://www.nejm.org/doi/full/10.1056/NEJMoa022252',
+        sourcePublisher: 'New England Journal of Medicine',
+        sourceYear: '2003',
+        confidence: 'verified',
+        icon: 'check',
+      },
+    },
+
     {
       id: 'beneficios-intro',
       type: 'paragraph',
       contentKey: 'blogSalsaVsBachata_beneficiosIntro',
     },
+
+    // === STATISTIC: Calorías quemadas ===
+    {
+      id: 'stat-calorias',
+      type: 'statistic',
+      contentKey: 'blogSalsaVsBachata_statCaloriasContent',
+      statisticValue: '400-600',
+      statisticSource: 'Harvard Health Publishing, 2021',
+    },
+
+    // === STATISTIC: Reducción demencia ===
+    {
+      id: 'stat-demencia',
+      type: 'statistic',
+      contentKey: 'blogSalsaVsBachata_statDemenciaContent',
+      statisticValue: '76%',
+      statisticSource: 'New England Journal of Medicine, 2003',
+    },
+
     {
       id: 'beneficios-lista',
       type: 'list',
@@ -251,6 +390,15 @@ export const SALSA_VS_BACHATA_CONFIG: BlogArticleConfig = {
         'blogSalsaVsBachata_beneficioEmocional',
         'blogSalsaVsBachata_beneficioSocial',
       ],
+    },
+
+    // === STATISTIC: Liberación de endorfinas ===
+    {
+      id: 'stat-endorfinas',
+      type: 'statistic',
+      contentKey: 'blogSalsaVsBachata_statEndorfinasContent',
+      statisticValue: '+21%',
+      statisticSource: 'Evolution and Human Behavior, 2016',
     },
 
     // =====================================================
@@ -274,6 +422,23 @@ export const SALSA_VS_BACHATA_CONFIG: BlogArticleConfig = {
     },
 
     // =====================================================
+    // TESTIMONIAL SECTION (Social Proof with Schema)
+    // =====================================================
+    {
+      id: 'testimonial-alumno',
+      type: 'testimonial',
+      contentKey: 'blogSalsaVsBachata_testimonial',
+      testimonial: {
+        authorName: 'María González',
+        authorLocation: 'Barcelona',
+        textKey: 'blogSalsaVsBachata_testimonialText',
+        rating: 5,
+        datePublished: '2025-11-15',
+        reviewOf: 'course',
+      },
+    },
+
+    // =====================================================
     // SECTION 7: CONCLUSIÓN
     // =====================================================
     {
@@ -291,6 +456,14 @@ export const SALSA_VS_BACHATA_CONFIG: BlogArticleConfig = {
       id: 'conclusion-cta',
       type: 'paragraph',
       contentKey: 'blogSalsaVsBachata_conclusionCTA',
+    },
+
+    // === CALLOUT CTA: Reserva tu clase ===
+    {
+      id: 'callout-cta-clases',
+      type: 'callout',
+      contentKey: 'blogSalsaVsBachata_calloutCTA',
+      calloutType: 'cta',
     },
 
     // =====================================================
@@ -486,4 +659,21 @@ export const SALSA_VS_BACHATA_CONFIG: BlogArticleConfig = {
     '#ambos',
     '#conclusion',
   ],
+
+  // === LOCAL BUSINESS SCHEMA (Local SEO) ===
+  localBusinessSchema: {
+    enabled: true,
+  },
+
+  // === AGGREGATE RATING SCHEMA (Rich Snippets) ===
+  aggregateRatingSchema: {
+    enabled: true,
+    ratingValue: 4.9,
+    reviewCount: 127,
+    bestRating: 5,
+    worstRating: 1,
+  },
+
+  // === GOOGLE DISCOVER OPTIMIZATION ===
+  discoverOptimized: true,
 };

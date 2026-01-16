@@ -112,13 +112,21 @@ const HeroV2: React.FC<HeroV2Props> = ({ config }) => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="w-full sm:w-auto bg-primary-accent text-white font-bold text-xl py-5 px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
+              className="inline-flex items-center justify-center bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
             >
               {t(config.cta1.textKey)}
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
             </button>
             <Link
               to={`/${locale}/horarios-clases-baile-barcelona`}
-              className="w-full sm:w-auto bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-xl py-5 px-12 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
+              className="inline-flex items-center justify-center bg-transparent border-2 border-primary-accent text-primary-accent font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 hover:bg-primary-accent hover:text-white focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
             >
               {t('hero_cta_schedule')}
             </Link>
