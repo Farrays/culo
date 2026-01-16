@@ -165,4 +165,10 @@
       animation: none !important;
     }
   }
+
+  /* Performance: Skip rendering of off-screen sections until scrolled into view */
+  .content-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
 }

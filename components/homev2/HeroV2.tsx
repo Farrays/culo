@@ -52,6 +52,9 @@ const HeroV2: React.FC<HeroV2Props> = ({ config }) => {
                   src={config.backgroundImage}
                   alt=""
                   className="absolute inset-0 w-full h-full object-cover"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                 />
               )}
               <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black" />

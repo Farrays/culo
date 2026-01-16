@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
 import { HUB_CATEGORIES, FEATURED_STYLES } from '../constants/danceClassesHub';
-import { GOOGLE_REVIEWS_TESTIMONIALS } from '../constants/testimonials';
 import { getStyleImage, getContextualAltKey } from '../constants/style-images';
 import AnimateOnScroll from './AnimateOnScroll';
 import FAQSection from './FAQSection';
 import Icon from './Icon';
 import AnimatedCounter from './AnimatedCounter';
-import TestimonialsSection from './TestimonialsSection';
+import { ReviewsSection } from './reviews';
 import LeadCaptureModal from './shared/LeadCaptureModal';
 import OptimizedImage from './OptimizedImage';
 
@@ -721,11 +720,8 @@ const DanceClassesPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        <TestimonialsSection
-          titleKey="danceClassesHub_testimonials_title"
-          testimonials={GOOGLE_REVIEWS_TESTIMONIALS}
-        />
+        {/* Reviews Section - Google Reviews */}
+        <ReviewsSection category="general" limit={6} showGoogleBadge={true} layout="grid" />
 
         {/* FAQ Section */}
         <FAQSection
