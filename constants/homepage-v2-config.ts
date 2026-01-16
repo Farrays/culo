@@ -34,7 +34,7 @@ export const HOMEPAGE_V2_CONFIG = {
     },
     // Placeholder para video - cuando esté listo, cambiar a video URL
     backgroundType: 'image' as 'image' | 'video',
-    backgroundImage: '/images/hero-bg.jpg',
+    backgroundImage: '/images/hero/hero-video-poster.webp',
     backgroundVideo: null as string | null, // '/videos/hero-loop.mp4' cuando esté listo
   },
 
