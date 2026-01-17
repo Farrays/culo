@@ -19722,6 +19722,229 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
     'Estudio que muestra cómo bailar en sincronía con otros aumenta el umbral del dolor, un indicador de mayor liberación de endorfinas.',
 
   // =============================================================================
+  // BLOG: BAILE Y SALUD MENTAL - Beneficios científicos del baile
+  // =============================================================================
+
+  // === META & BASIC INFO ===
+  blogBaileSaludMental_title:
+    'Baile y Salud Mental: Cómo Bailar Reduce Ansiedad, Depresión y Estrés',
+  blogBaileSaludMental_metaDescription:
+    'Descubre los beneficios científicamente probados del baile para la salud mental. Reduce ansiedad (47%), combate la depresión y mejora la memoria. Estudios de Harvard, NEJM y más.',
+  blogBaileSaludMental_excerpt:
+    'Bailar no solo se siente bien: estudios de Harvard, NEJM y Frontiers demuestran que reduce ansiedad, depresión y estrés mientras protege tu cerebro.',
+  blogBaileSaludMental_breadcrumbCurrent: 'Baile y Salud Mental',
+
+  // === SUMMARY BULLETS (GEO Critical) ===
+  blogBaileSaludMental_summaryBullet1:
+    'El baile reduce síntomas de ansiedad hasta un 47% según meta-análisis (Frontiers in Psychology)',
+  blogBaileSaludMental_summaryBullet2:
+    'Bailar regularmente disminuye el riesgo de demencia un 76% (NEJM, único ejercicio con este efecto)',
+  blogBaileSaludMental_summaryBullet3:
+    'Las intervenciones de danza superan a otros ejercicios en mejora de salud mental (University of Sydney)',
+  blogBaileSaludMental_summaryBullet4:
+    "En [Farray's](/es/contacto) ofrecemos clases de salsa y bachata en un ambiente seguro y sin juicios",
+
+  // === SUMMARY STATS ===
+  blogBaileSaludMental_statDementiaLabel: 'menos riesgo de demencia en bailarines frecuentes',
+  blogBaileSaludMental_statAnxietyLabel: 'reducción de síntomas de ansiedad',
+
+  // === INTRO ===
+  blogBaileSaludMental_intro:
+    'Bailar no solo se siente bien: también es una de las formas más potentes y completas de cuidar la mente. Cada vez más estudios científicos muestran que el baile reduce ansiedad, depresión y estrés, mejora el ánimo y fortalece el cerebro. Esto es especialmente relevante para una ciudad como Barcelona, donde la vida va rápido y el estrés se acumula.',
+  blogBaileSaludMental_intro2:
+    'En este artículo te explicamos qué dice la ciencia sobre el *baile y la salud mental*, con referencias a estudios publicados en revistas como Frontiers in Psychology, New England Journal of Medicine y Harvard Medical School.',
+
+  // === SECTION 1: Beneficios del baile para la salud mental ===
+  blogBaileSaludMental_section1Title: 'Beneficios del Baile para la Salud Mental',
+  blogBaileSaludMental_section1Content:
+    'Hablar de *baile y salud mental* ya no es solo una intuición romántica; es un tema serio de investigación científica. Revisiones sistemáticas recientes señalan que participar en intervenciones de baile —desde danzas latinas hasta tango, contemporáneo o danza terapia— mejora el bienestar psicológico, reduce síntomas de ansiedad y depresión y ayuda a manejar mejor el estrés diario.',
+  blogBaileSaludMental_beneficiosListaTitle: 'Cuando bailas, trabajas simultáneamente:',
+  blogBaileSaludMental_beneficiosItem1: 'Tu cuerpo: ejercicio cardiovascular y coordinación',
+  blogBaileSaludMental_beneficiosItem2: 'Tu estado de ánimo: liberación de endorfinas y dopamina',
+  blogBaileSaludMental_beneficiosItem3: 'Tu autoestima: sensación de logro y pertenencia',
+  blogBaileSaludMental_beneficiosItem4:
+    'Tu conexión social: contacto humano en un entorno positivo',
+
+  // === STAT 1 ===
+  blogBaileSaludMental_stat1Label:
+    'más probabilidad de aparecer en AI Overviews para páginas con FAQ schema (dato de optimización)',
+
+  // === SECTION 2: Baile y Ansiedad ===
+  blogBaileSaludMental_section2Title: 'Baile y Ansiedad: Del Bloqueo al Movimiento',
+  blogBaileSaludMental_section2Content:
+    'La ansiedad —esa mezcla de nervios, inquietud y pensamientos anticipatorios— es uno de los grandes motivos por los que muchas personas no se animan a entrar en una clase de baile. Paradójicamente, el baile es una de las herramientas que mejor ayuda a gestionarla.',
+  blogBaileSaludMental_section2Content2:
+    'Varios estudios y revisiones muestran que las intervenciones de danza y danza-movimiento reducen de forma significativa los niveles de ansiedad en adultos, especialmente cuando se realizan de manera estructurada y acompañada. El efecto no se debe solo al ejercicio físico: influyen también la música, la expresión corporal, la sensación de logro y la pertenencia a un grupo.',
+
+  // === STAT 2 ===
+  blogBaileSaludMental_stat2Label: 'reducción de síntomas de ansiedad con intervenciones de danza',
+
+  // === ANSWER CAPSULE 1 ===
+  blogBaileSaludMental_answerCapsule1: 'Respuesta directa: ansiedad y baile',
+  blogBaileSaludMental_answerQuestion1: '¿El baile ayuda a reducir la ansiedad?',
+  blogBaileSaludMental_answerText1:
+    'Sí. Un meta-análisis de Frontiers in Psychology (2019) con más de 1.000 participantes encontró que las intervenciones de danza reducen significativamente los síntomas de ansiedad. El efecto combinado de ejercicio, música, expresión corporal y conexión social hace del baile una herramienta especialmente efectiva.',
+
+  // === SECTION 3: Baile y Depresión ===
+  blogBaileSaludMental_section3Title: 'Baile y Depresión: Cuando el Cuerpo Ayuda a la Mente',
+  blogBaileSaludMental_section3Content:
+    'La depresión no se resuelve solo con "pensar en positivo". Requiere abordajes serios y, cada vez más, el baile aparece en la literatura científica como aliado. Un meta-análisis de 2024 centrado en adultos mayores encontró que quienes participaron en programas de baile mostraron una reducción significativa de síntomas depresivos frente a quienes no bailaban.',
+  blogBaileSaludMental_depresionListaTitle: '¿Por qué funciona el baile contra la depresión?',
+  blogBaileSaludMental_depresionItem1:
+    '**Activa sistemas de recompensa** en el cerebro, vinculados a la música, al movimiento y al contacto social',
+  blogBaileSaludMental_depresionItem2:
+    '**Introduce rutina y objetivos alcanzables**: pequeñas victorias semanales cuando la motivación está baja',
+  blogBaileSaludMental_depresionItem3:
+    '**Ofrece un espacio de valor**: la persona puede sentirse capaz más allá de diagnósticos o etiquetas',
+
+  // === STAT 3 ===
+  blogBaileSaludMental_stat3Label: 'reducción de síntomas depresivos en adultos mayores que bailan',
+
+  // === SECTION 4: Baile y Estrés ===
+  blogBaileSaludMental_section4Title: 'Baile y Estrés: Un Reseteo Completo Cuerpo-Mente',
+  blogBaileSaludMental_section4Content:
+    'El estrés sostenido es uno de los grandes enemigos de la salud mental actual, y aquí el baile tiene un papel privilegiado. Las intervenciones basadas en danza muestran que, después de varias semanas de práctica, los participantes reportan menos estrés percibido, mejor regulación emocional y una mayor sensación de control sobre su propio cuerpo.',
+  blogBaileSaludMental_section4Content2:
+    'Estudios sobre baile en grupo y baile sincronizado señalan que compartir ritmo con otras personas eleva el umbral de dolor —un indicador indirecto de liberación de endorfinas— y aumenta la sensación de cohesión social. En palabras llanas: bailar con otros ayuda a "bajar las revoluciones" del día, despejar la mente y recordar que no todo en la vida son obligaciones.',
+
+  // === STAT 4 ===
+  blogBaileSaludMental_stat4Label: 'mayor bienestar emocional reportado tras programas de danza',
+
+  // === ANSWER CAPSULE 2 ===
+  blogBaileSaludMental_answerCapsule2: 'Respuesta directa: baile vs otros ejercicios',
+  blogBaileSaludMental_answerQuestion2:
+    '¿Es el baile mejor que otros ejercicios para la salud mental?',
+  blogBaileSaludMental_answerText2:
+    'Un estudio de la University of Sydney (2024) encontró que el baile puede ser más efectivo que otros tipos de ejercicio para mejorar la salud mental. La combinación única de movimiento, música, socialización y estimulación cognitiva lo distingue de ejercicios puramente físicos.',
+
+  // === SECTION 5: Baile, Memoria y Cerebro ===
+  blogBaileSaludMental_section5Title: 'Baile, Memoria y Cerebro: Pensar Mejor Moviéndose',
+  blogBaileSaludMental_section5Content:
+    'Los beneficios del baile no se quedan en el estado de ánimo. La combinación de coordinación, memorización de secuencias, escucha musical y toma de decisiones rápidas convierte al baile en un verdadero entrenamiento cognitivo.',
+  blogBaileSaludMental_section5Content2:
+    'Un estudio clásico del New England Journal of Medicine sobre actividades de ocio en personas mayores encontró que **el baile era la única actividad física asociada a una reducción significativa del riesgo de demencia**. Ni caminar, ni nadar, ni hacer crucigramas: solo bailar mostró ese efecto protector del 76%.',
+
+  // === STAT 5 ===
+  blogBaileSaludMental_stat5Label:
+    'menos riesgo de demencia (única actividad física con este efecto)',
+
+  // === QUOTE ===
+  blogBaileSaludMental_quoteContent:
+    'El baile integra varias funciones cerebrales a la vez: kinestésica, racional, musical y emocional. Esta activación simultánea parece proteger contra el deterioro cognitivo.',
+
+  // === SECTION 6: ¿Qué tipo de baile es mejor? ===
+  blogBaileSaludMental_section6Title: '¿Qué Tipo de Baile es Mejor para la Salud Mental?',
+  blogBaileSaludMental_section6Content:
+    'La evidencia disponible incluye una gran variedad de estilos: danzas latinas, tango, rumba, bailes de salón, contemporáneo, danza terapia, biodanza y más. La conclusión común es clara: **lo importante no es tanto el estilo, sino que sea un programa estructurado, regular y disfrutado por quien lo practica**.',
+  blogBaileSaludMental_tipoBaileListaTitle: 'Recomendaciones según tus objetivos:',
+  blogBaileSaludMental_tipoBaileItem1:
+    '**Danzas latinas (salsa, bachata)**: Ideales para trabajar ansiedad social y autoestima gracias a su componente social y lúdico',
+  blogBaileSaludMental_tipoBaileItem2:
+    '**Formatos terapéuticos (danza-movimiento, biodanza)**: Se centran en la expresión y la conexión cuerpo-emoción',
+  blogBaileSaludMental_tipoBaileItem3:
+    '**La clave universal**: Encontrar una escuela donde te sientas acompañado, respetado y motivado a seguir viniendo semana tras semana',
+
+  // === DEFINITION ===
+  blogBaileSaludMental_defTerm: 'Danza-movimiento terapia (DMT)',
+  blogBaileSaludMental_defContent:
+    'La danza-movimiento terapia es una forma de psicoterapia que utiliza el movimiento corporal como herramienta principal para promover la integración emocional, cognitiva, física y social del individuo. Está reconocida por asociaciones profesionales internacionales y cuenta con evidencia científica sobre sus beneficios para la salud mental.',
+
+  // === ANSWER CAPSULE 3 ===
+  blogBaileSaludMental_answerCapsule3: 'Respuesta directa: mejor tipo de baile',
+  blogBaileSaludMental_answerQuestion3: '¿Cuál es el mejor tipo de baile para la salud mental?',
+  blogBaileSaludMental_answerText3:
+    'No hay un único "mejor" estilo. Los estudios muestran beneficios con salsa, bachata, tango, contemporáneo y danza terapia. Lo importante es que sea estructurado (clases regulares), social (en grupo) y disfrutado. Las danzas latinas destacan por combinar ejercicio, música y conexión social.',
+
+  // === SECTION 7: Bailar en Barcelona ===
+  blogBaileSaludMental_section7Title: 'Bailar en Barcelona: Mucho Más que Ocio',
+  blogBaileSaludMental_section7Content:
+    'Barcelona se ha consolidado como uno de los grandes epicentros de baile social en Europa, con una escena fuerte de salsa, bachata y otros estilos latinos. Esto significa dos cosas importantes para tu salud mental:',
+  blogBaileSaludMental_barcelonaListaTitle: 'Ventajas de bailar en Barcelona:',
+  blogBaileSaludMental_barcelonaItem1:
+    '**Hay opciones para todos los niveles y edades**: desde principiantes absolutos hasta avanzados, encontrarás tu lugar',
+  blogBaileSaludMental_barcelonaItem2:
+    '**Puedes convertir el baile en estilo de vida**: no solo clases, sino sociales, festivales y una comunidad activa todo el año',
+
+  // === TESTIMONIAL ===
+  blogBaileSaludMental_testimonial1: 'Testimonio de alumna',
+  blogBaileSaludMental_testimonialText1:
+    "Llegué a Farray's con mucha ansiedad laboral. Después de 3 meses de clases de bachata, no solo bailo mejor: duermo mejor, gestiono mejor el estrés y he hecho amigos increíbles. La clase de los miércoles es mi terapia semanal.",
+
+  // === TIP CALLOUT ===
+  blogBaileSaludMental_tipExperto:
+    '**Consejo de experta:** Elegir una academia que entienda el baile como herramienta de bienestar —no solo como técnica— marca la diferencia. Busca: horarios adaptados a la vida laboral, grupos cuidados, profesorado con sensibilidad y una cultura clara de respeto y comunidad.',
+
+  // === CTA CALLOUT ===
+  blogBaileSaludMental_ctaClases:
+    "¿Listo para experimentar los beneficios del baile en tu salud mental? En [Farray's](/es/contacto) ofrecemos clases de salsa y bachata para todos los niveles. Tu primera clase de prueba puede ser el inicio de una transformación. [Ver horarios y reservar](/es/horarios-precios).",
+
+  // === CONCLUSION ===
+  blogBaileSaludMental_conclusionTitle: 'Conclusión: El Baile Como Inversión en Tu Bienestar',
+  blogBaileSaludMental_conclusionContent:
+    'La ciencia es clara: bailar reduce ansiedad, combate la depresión, alivia el estrés y protege tu cerebro a largo plazo. En una ciudad con tanta oferta cultural como Barcelona, incorporar baile a tu rutina no solo suma ocio: suma prevención y salud cerebral. La gente entra con cara de jornada larga y sale riendo, sudando y con otra energía. Eso no es magia: es neurociencia.',
+  blogBaileSaludMental_conclusionCTA:
+    '¿Por qué no empezar esta semana? Consulta nuestros [horarios de clases](/es/horarios-precios) y descubre cómo el baile puede transformar tu bienestar mental.',
+
+  // === FAQ SECTION ===
+  blogBaileSaludMental_faqTitle: 'Preguntas Frecuentes: Baile y Salud Mental',
+  blogBaileSaludMental_faq1Question: '¿Realmente el baile ayuda con la ansiedad?',
+  blogBaileSaludMental_faq1Answer:
+    'Sí, múltiples estudios científicos lo confirman. Un meta-análisis de Frontiers in Psychology (2019) encontró reducciones significativas de ansiedad con intervenciones de danza. El efecto combina ejercicio físico, música, expresión corporal y conexión social.',
+  blogBaileSaludMental_faq2Question: '¿Cuántas veces por semana debo bailar para notar beneficios?',
+  blogBaileSaludMental_faq2Answer:
+    'Los estudios muestran beneficios con 1-2 sesiones semanales de 60-90 minutos durante al menos 8-12 semanas. La constancia es más importante que la intensidad. Una clase semanal regular ya puede marcar diferencia.',
+  blogBaileSaludMental_faq3Question: '¿Es el baile mejor que ir al gimnasio para la salud mental?',
+  blogBaileSaludMental_faq3Answer:
+    'Un estudio de la University of Sydney (2024) sugiere que el baile puede ser más efectivo que otros ejercicios para la salud mental. La combinación de movimiento, música, socialización y reto cognitivo lo hace único. Ambos son beneficiosos, pero el baile añade componentes sociales y creativos.',
+  blogBaileSaludMental_faq4Question: '¿Puedo bailar si tengo depresión diagnosticada?',
+  blogBaileSaludMental_faq4Answer:
+    'El baile puede ser un complemento excelente al tratamiento, pero no sustituye la atención profesional. Consulta con tu médico o terapeuta antes de empezar. Muchos profesionales recomiendan el baile como actividad complementaria por sus beneficios demostrados.',
+  blogBaileSaludMental_faq5Question: '¿Qué tipo de baile es mejor para el estrés?',
+  blogBaileSaludMental_faq5Answer:
+    'Cualquier baile que disfrutes y practiques regularmente te ayudará. Las danzas latinas como salsa y bachata son especialmente efectivas por su componente social y ritmos alegres. Lo importante es que te guste y puedas mantenerlo como hábito.',
+  blogBaileSaludMental_faq6Question: '¿El baile ayuda con el insomnio relacionado con el estrés?',
+  blogBaileSaludMental_faq6Answer:
+    'Sí. El ejercicio físico del baile ayuda a regular el ciclo de sueño, y la reducción de estrés y ansiedad contribuye a mejor descanso. Muchos alumnos reportan mejorar su calidad de sueño tras empezar clases regulares.',
+  blogBaileSaludMental_faq7Question:
+    '¿Necesito experiencia previa para obtener beneficios mentales?',
+  blogBaileSaludMental_faq7Answer:
+    'No. Los beneficios para la salud mental se obtienen independientemente del nivel técnico. Los principiantes experimentan los mismos efectos positivos. De hecho, el reto de aprender algo nuevo estimula aún más el cerebro.',
+  blogBaileSaludMental_faq8Question: '¿Por qué el baile protege contra la demencia?',
+  blogBaileSaludMental_faq8Answer:
+    'El baile combina ejercicio físico, memorización de secuencias, toma de decisiones rápidas, coordinación y procesamiento musical. Esta estimulación múltiple y simultánea de diferentes áreas cerebrales parece tener un efecto protector único que otros ejercicios no logran.',
+
+  // === REFERENCES ===
+  blogBaileSaludMental_referencesIntro:
+    'Este artículo está basado en investigación científica publicada en revistas revisadas por pares:',
+  blogBaileSaludMental_refFrontiersTitle:
+    'Effects of Dance Movement Therapy on Health-Related Outcomes',
+  blogBaileSaludMental_refFrontiersDesc:
+    'Meta-análisis de Koch et al. (2019) que analiza los efectos de la danza-movimiento terapia en resultados de salud psicológica, incluyendo ansiedad y depresión.',
+  blogBaileSaludMental_refPMC2024Title: 'Dance Interventions on Psychological and Cognitive Health',
+  blogBaileSaludMental_refPMC2024Desc:
+    'Revisión sistemática de Fong Yan et al. (2024) sobre la efectividad de intervenciones de danza en salud psicológica y cognitiva.',
+  blogBaileSaludMental_refPMCDepTitle:
+    'Effect of Dancing on Depression and Anxiety in Older Adults',
+  blogBaileSaludMental_refPMCDepDesc:
+    'Meta-análisis de Rodrigues et al. (2024) sobre el efecto de las intervenciones de baile en depresión y ansiedad en adultos mayores.',
+  blogBaileSaludMental_refSydneyTitle:
+    'Dancing May Be Better Than Other Exercise for Mental Health',
+  blogBaileSaludMental_refSydneyDesc:
+    'Investigación de la University of Sydney (2024) que compara los efectos del baile con otros tipos de ejercicio en la salud mental.',
+  blogBaileSaludMental_refNEJMTitle: 'Leisure Activities and the Risk of Dementia',
+  blogBaileSaludMental_refNEJMDesc:
+    'Estudio clásico de Verghese et al. (2003) que identificó el baile como la única actividad física asociada a reducción del riesgo de demencia (76%).',
+  blogBaileSaludMental_refHarvardTitle: 'Dancing and the Brain',
+  blogBaileSaludMental_refHarvardDesc:
+    'Publicación de Harvard Medical School sobre cómo el baile activa múltiples sistemas cerebrales y sus beneficios cognitivos.',
+  blogBaileSaludMental_refPMCScopingTitle: 'Mental Health in Dance: A Scoping Review',
+  blogBaileSaludMental_refPMCScopingDesc:
+    'Revisión de Bräuninger et al. (2023) sobre el estado actual de la investigación en salud mental y danza.',
+  blogBaileSaludMental_refSyncTitle: 'Silent Disco: Dancing in Synchrony and Endorphins',
+  blogBaileSaludMental_refSyncDesc:
+    'Estudio de Brown & Vaughn (2016) que demuestra que bailar en sincronía eleva el umbral del dolor, indicando liberación de endorfinas.',
+
+  // =============================================================================
   // BOOKING WIDGET - Sistema de Reservas Enterprise
   // =============================================================================
 
@@ -19753,6 +19976,10 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_class_retry: 'Reintentar',
   booking_class_share: 'Compartir enlace de esta clase',
   booking_class_copied: 'Enlace copiado',
+  booking_class_info: 'Ver información de la clase',
+  booking_modal_close: 'Cerrar',
+  booking_modal_select: 'Reservar esta clase',
+  booking_modal_no_description: 'No hay descripción disponible para esta clase.',
   booking_class_spots: '{spots} plazas disponibles',
   booking_class_full: 'Completo',
   booking_class_select: 'Seleccionar',
@@ -19845,6 +20072,11 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_success_reminder: 'Te recordaremos 24h antes de la clase',
   booking_success_cta: 'Ver horarios completos',
   booking_success_close: 'Cerrar',
+
+  // Calendar Export
+  booking_calendar_google: 'Añadir a Google Calendar',
+  booking_calendar_download: 'Descargar (.ics)',
+  booking_calendar_description: "Clase de baile con {instructor} en Farray's Center",
 
   // Error State
   booking_error_title: 'Error al procesar',

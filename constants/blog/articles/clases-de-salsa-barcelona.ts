@@ -61,20 +61,6 @@ export const CLASES_SALSA_BARCELONA_CONFIG: BlogArticleConfig = {
       contentKey: 'blogClasesSalsaBarcelona_section1Content',
     },
 
-    // === IMAGE: Pareja bailando salsa ===
-    {
-      id: 'image-pareja',
-      type: 'image',
-      contentKey: 'blogClasesSalsaBarcelona_imagePareja',
-      image: {
-        src: '/images/blog/clases-salsa-barcelona/pareja-bailando.webp',
-        alt: 'Pareja bailando salsa en Barcelona - conexión y expresión a través del baile',
-        caption: 'blogClasesSalsaBarcelona_imagePareja',
-        width: 800,
-        height: 500,
-      },
-    },
-
     // =====================================================
     // SECTION 2: LA SALSA COMO LENGUAJE UNIVERSAL
     // =====================================================
@@ -93,20 +79,6 @@ export const CLASES_SALSA_BARCELONA_CONFIG: BlogArticleConfig = {
       id: 'lenguaje-universal-content2',
       type: 'paragraph',
       contentKey: 'blogClasesSalsaBarcelona_section2Content2',
-    },
-
-    // === IMAGE: Cuban Salsa ===
-    {
-      id: 'image-cuban',
-      type: 'image',
-      contentKey: 'blogClasesSalsaBarcelona_imageCuban',
-      image: {
-        src: '/images/blog/clases-salsa-barcelona/cuban-salsa.webp',
-        alt: 'Salsa cubana en Barcelona - lenguaje universal del baile',
-        caption: 'blogClasesSalsaBarcelona_imageCuban',
-        width: 800,
-        height: 500,
-      },
     },
 
     // =====================================================
@@ -148,9 +120,9 @@ export const CLASES_SALSA_BARCELONA_CONFIG: BlogArticleConfig = {
     },
   ],
 
-  // === FEATURED IMAGE ===
+  // === FEATURED IMAGE (using existing image as placeholder) ===
   featuredImage: {
-    src: '/images/blog/clases-salsa-barcelona/hero.webp',
+    src: '/images/blog/salsa-vs-bachata/hero.webp',
     alt: "Clases de salsa en Barcelona - Farray's Dance Center",
     width: 1200,
     height: 630,
@@ -168,18 +140,18 @@ export const CLASES_SALSA_BARCELONA_CONFIG: BlogArticleConfig = {
   // === RELATED ARTICLES ===
   relatedArticles: [
     {
-      slug: 'historia-salsa-barcelona',
-      category: 'historia',
-      titleKey: 'blogHistoriaSalsa_title',
-      excerptKey: 'blogHistoriaSalsa_excerpt',
-      image: '/images/blog/historia-salsa/hero.webp',
+      slug: 'salsa-vs-bachata',
+      category: 'tutoriales',
+      titleKey: 'blogSalsaVsBachata_title',
+      excerptKey: 'blogSalsaVsBachata_excerpt',
+      image: '/images/blog/salsa-vs-bachata/hero.webp',
     },
     {
-      slug: 'beneficios-bailar-salsa',
-      category: 'fitness',
-      titleKey: 'blogBeneficiosSalsa_title',
-      excerptKey: 'blogBeneficiosSalsa_excerpt',
-      image: '/images/blog/beneficios-salsa/hero.webp',
+      slug: 'salsa-ritmo-conquisto-mundo',
+      category: 'tutoriales',
+      titleKey: 'blogSalsaRitmo_title',
+      excerptKey: 'blogSalsaRitmo_excerpt',
+      image: '/images/blog/salsa-ritmo/hero.webp',
     },
   ],
 

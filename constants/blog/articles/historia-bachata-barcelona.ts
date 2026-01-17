@@ -176,22 +176,6 @@ export const HISTORIA_BACHATA_CONFIG: BlogArticleConfig = {
       },
     },
 
-    // === IMAGE: Íconos de la Bachata ===
-    {
-      id: 'image-iconos',
-      type: 'image',
-      contentKey: 'blogHistoriaBachata_imageIconosCaption',
-      image: {
-        src: '/images/blog/historia-bachata/iconos-bachata.webp',
-        srcSet:
-          '/images/blog/historia-bachata/iconos-bachata-480.webp 480w, /images/blog/historia-bachata/iconos-bachata-800.webp 800w',
-        alt: 'Íconos de la bachata: Calderón, Juan Luis Guerra, Romeo Santos',
-        caption: 'blogHistoriaBachata_imageIconosCaption',
-        width: 800,
-        height: 500,
-      },
-    },
-
     // =====================================================
     // SECTION 4: ÍCONOS DE LA BACHATA
     // =====================================================
@@ -243,22 +227,6 @@ export const HISTORIA_BACHATA_CONFIG: BlogArticleConfig = {
       id: 'barcelona-farrays',
       type: 'paragraph',
       contentKey: 'blogHistoriaBachata_barcelonaFarrays',
-    },
-
-    // === IMAGE: Farray's Bachata Barcelona ===
-    {
-      id: 'image-barcelona',
-      type: 'image',
-      contentKey: 'blogHistoriaBachata_imageBarcelonaCaption',
-      image: {
-        src: '/images/blog/historia-bachata/farrays-bachata.webp',
-        srcSet:
-          '/images/blog/historia-bachata/farrays-bachata-480.webp 480w, /images/blog/historia-bachata/farrays-bachata-800.webp 800w',
-        alt: "Clase de bachata sensual en Farray's International Dance Center Barcelona",
-        caption: 'blogHistoriaBachata_imageBarcelonaCaption',
-        width: 800,
-        height: 500,
-      },
     },
 
     // =====================================================
@@ -367,11 +335,11 @@ export const HISTORIA_BACHATA_CONFIG: BlogArticleConfig = {
     },
   ],
 
-  // === FEATURED IMAGE ===
+  // === FEATURED IMAGE (using existing image as placeholder) ===
   featuredImage: {
-    src: '/images/blog/historia-bachata/hero.webp',
+    src: '/images/blog/salsa-vs-bachata/hero.webp',
     srcSet:
-      '/images/blog/historia-bachata/hero-480.webp 480w, /images/blog/historia-bachata/hero-960.webp 960w, /images/blog/historia-bachata/hero.webp 1200w',
+      '/images/blog/salsa-vs-bachata/hero-480.webp 480w, /images/blog/salsa-vs-bachata/hero-960.webp 960w, /images/blog/salsa-vs-bachata/hero.webp 1200w',
     alt: "Historia de la bachata: del barrio dominicano a Barcelona - Farray's Dance Center",
     width: 1200,
     height: 630,
@@ -441,14 +409,14 @@ export const HISTORIA_BACHATA_CONFIG: BlogArticleConfig = {
       category: 'historia',
       titleKey: 'blogHistoriaSalsa_title',
       excerptKey: 'blogHistoriaSalsa_excerpt',
-      image: '/images/blog/historia-salsa/hero.webp',
+      image: '/images/blog/salsa-vs-bachata/hero.webp',
     },
     {
-      slug: 'beneficios-bailar-salsa',
+      slug: 'salsa-vs-bachata',
       category: 'lifestyle',
-      titleKey: 'blogBeneficiosSalsa_title',
-      excerptKey: 'blogBeneficiosSalsa_excerpt',
-      image: '/images/blog/beneficios-salsa/hero.webp',
+      titleKey: 'blogSalsaVsBachata_title',
+      excerptKey: 'blogSalsaVsBachata_excerpt',
+      image: '/images/blog/salsa-vs-bachata/hero.webp',
     },
   ],
 

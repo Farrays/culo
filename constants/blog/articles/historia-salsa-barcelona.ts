@@ -88,22 +88,6 @@ export const HISTORIA_SALSA_CONFIG: BlogArticleConfig = {
       contentKey: 'blogHistoriaSalsa_section1Content3',
     },
 
-    // === IMAGE: Fania All-Stars ===
-    {
-      id: 'image-fania',
-      type: 'image',
-      contentKey: 'blogHistoriaSalsa_imageFaniaCaption',
-      image: {
-        src: '/images/blog/historia-salsa/fania-nyc.webp',
-        srcSet:
-          '/images/blog/historia-salsa/fania-nyc-480.webp 480w, /images/blog/historia-salsa/fania-nyc-800.webp 800w',
-        alt: 'Fania All-Stars en el Yankee Stadium 1973 - origen de la salsa moderna',
-        caption: 'blogHistoriaSalsa_imageFaniaCaption',
-        width: 800,
-        height: 500,
-      },
-    },
-
     {
       id: 'origenes-fania',
       type: 'paragraph',
@@ -244,22 +228,6 @@ export const HISTORIA_SALSA_CONFIG: BlogArticleConfig = {
       contentKey: 'blogHistoriaSalsa_section4Content3',
     },
 
-    // === IMAGE: Barcelona Salsa Scene ===
-    {
-      id: 'image-barcelona',
-      type: 'image',
-      contentKey: 'blogHistoriaSalsa_imageBarcelonaCaption',
-      image: {
-        src: '/images/blog/historia-salsa/farrays-class.webp',
-        srcSet:
-          '/images/blog/historia-salsa/farrays-class-480.webp 480w, /images/blog/historia-salsa/farrays-class-800.webp 800w',
-        alt: "Clase de salsa cubana en Farray's International Dance Center Barcelona",
-        caption: 'blogHistoriaSalsa_imageBarcelonaCaption',
-        width: 800,
-        height: 500,
-      },
-    },
-
     // =====================================================
     // SECTION 5: BENEFICIOS - Más que ejercicio
     // =====================================================
@@ -352,11 +320,11 @@ export const HISTORIA_SALSA_CONFIG: BlogArticleConfig = {
     },
   ],
 
-  // === FEATURED IMAGE ===
+  // === FEATURED IMAGE (using existing image as placeholder) ===
   featuredImage: {
-    src: '/images/blog/historia-salsa/hero.webp',
+    src: '/images/blog/salsa-vs-bachata/hero.webp',
     srcSet:
-      '/images/blog/historia-salsa/hero-480.webp 480w, /images/blog/historia-salsa/hero-960.webp 960w, /images/blog/historia-salsa/hero.webp 1200w',
+      '/images/blog/salsa-vs-bachata/hero-480.webp 480w, /images/blog/salsa-vs-bachata/hero-960.webp 960w, /images/blog/salsa-vs-bachata/hero.webp 1200w',
     alt: "Historia de la salsa: del Caribe a Barcelona - Farray's Dance Center",
     width: 1200,
     height: 630,
@@ -426,14 +394,14 @@ export const HISTORIA_SALSA_CONFIG: BlogArticleConfig = {
       category: 'lifestyle',
       titleKey: 'blogBeneficiosSalsa_title',
       excerptKey: 'blogBeneficiosSalsa_excerpt',
-      image: '/images/blog/beneficios-salsa/hero.webp',
+      image: '/images/blog/salsa-vs-bachata/hero.webp',
     },
     {
-      slug: 'clases-de-salsa-barcelona',
+      slug: 'salsa-vs-bachata',
       category: 'lifestyle',
-      titleKey: 'blogClasesSalsaBarcelona_title',
-      excerptKey: 'blogClasesSalsaBarcelona_excerpt',
-      image: '/images/blog/clases-salsa-barcelona/hero.webp',
+      titleKey: 'blogSalsaVsBachata_title',
+      excerptKey: 'blogSalsaVsBachata_excerpt',
+      image: '/images/blog/salsa-vs-bachata/hero.webp',
     },
   ],
 

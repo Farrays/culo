@@ -97,22 +97,6 @@ export const BENEFICIOS_SALSA_CONFIG: BlogArticleConfig = {
       contentKey: 'blogBeneficiosSalsa_benefit3Content',
     },
 
-    // === IMAGE 1: Fitness/Cardio ===
-    {
-      id: 'image-fitness',
-      type: 'image',
-      contentKey: 'blogBeneficiosSalsa_imageFitnessCaption',
-      image: {
-        src: '/images/blog/beneficios-salsa/fitness-cardio.webp',
-        srcSet:
-          '/images/blog/beneficios-salsa/fitness-cardio-480.webp 480w, /images/blog/beneficios-salsa/fitness-cardio-800.webp 800w',
-        alt: 'Pareja bailando salsa con energía - beneficios cardiovasculares del baile',
-        caption: 'blogBeneficiosSalsa_imageFitnessCaption',
-        width: 800,
-        height: 500,
-      },
-    },
-
     // Benefit 4: Brain
     {
       id: 'beneficio-4',
@@ -159,22 +143,6 @@ export const BENEFICIOS_SALSA_CONFIG: BlogArticleConfig = {
       contentKey: 'blogBeneficiosSalsa_benefit6Content',
     },
 
-    // === IMAGE 2: Transformation/Confidence ===
-    {
-      id: 'image-confidence',
-      type: 'image',
-      contentKey: 'blogBeneficiosSalsa_imageConfidenceCaption',
-      image: {
-        src: '/images/blog/beneficios-salsa/confidence-transform.webp',
-        srcSet:
-          '/images/blog/beneficios-salsa/confidence-transform-480.webp 480w, /images/blog/beneficios-salsa/confidence-transform-800.webp 800w',
-        alt: 'Bailarina de salsa con expresión de confianza - transformación personal',
-        caption: 'blogBeneficiosSalsa_imageConfidenceCaption',
-        width: 800,
-        height: 500,
-      },
-    },
-
     // Benefit 7: Posture
     {
       id: 'beneficio-7',
@@ -212,22 +180,6 @@ export const BENEFICIOS_SALSA_CONFIG: BlogArticleConfig = {
       id: 'beneficio-9-content',
       type: 'paragraph',
       contentKey: 'blogBeneficiosSalsa_benefit9Content',
-    },
-
-    // === IMAGE 3: Social/Community ===
-    {
-      id: 'image-social',
-      type: 'image',
-      contentKey: 'blogBeneficiosSalsa_imageSocialCaption',
-      image: {
-        src: '/images/blog/beneficios-salsa/social-community.webp',
-        srcSet:
-          '/images/blog/beneficios-salsa/social-community-480.webp 480w, /images/blog/beneficios-salsa/social-community-800.webp 800w',
-        alt: 'Grupo de alumnos sonriendo en clase de salsa - comunidad y conexión social',
-        caption: 'blogBeneficiosSalsa_imageSocialCaption',
-        width: 800,
-        height: 500,
-      },
     },
 
     // Benefit 10: Neuroplasticity
@@ -298,11 +250,11 @@ export const BENEFICIOS_SALSA_CONFIG: BlogArticleConfig = {
     },
   ],
 
-  // === FEATURED IMAGE ===
+  // === FEATURED IMAGE (using existing image as placeholder) ===
   featuredImage: {
-    src: '/images/blog/beneficios-salsa/hero.webp',
+    src: '/images/blog/salsa-vs-bachata/hero.webp',
     srcSet:
-      '/images/blog/beneficios-salsa/hero-480.webp 480w, /images/blog/beneficios-salsa/hero-960.webp 960w, /images/blog/beneficios-salsa/hero.webp 1200w',
+      '/images/blog/salsa-vs-bachata/hero-480.webp 480w, /images/blog/salsa-vs-bachata/hero-960.webp 960w, /images/blog/salsa-vs-bachata/hero.webp 1200w',
     alt: 'Pareja bailando salsa cubana en Barcelona - Beneficios del baile',
     width: 1200,
     height: 630,
@@ -372,14 +324,14 @@ export const BENEFICIOS_SALSA_CONFIG: BlogArticleConfig = {
       category: 'historia',
       titleKey: 'blogHistoriaSalsa_title',
       excerptKey: 'blogHistoriaSalsa_excerpt',
-      image: '/images/blog/historia-salsa/hero.webp',
+      image: '/images/blog/salsa-vs-bachata/hero.webp',
     },
     {
-      slug: 'clases-de-salsa-barcelona',
+      slug: 'salsa-vs-bachata',
       category: 'lifestyle',
-      titleKey: 'blogClasesSalsaBarcelona_title',
-      excerptKey: 'blogClasesSalsaBarcelona_excerpt',
-      image: '/images/blog/clases-salsa-barcelona/hero.webp',
+      titleKey: 'blogSalsaVsBachata_title',
+      excerptKey: 'blogSalsaVsBachata_excerpt',
+      image: '/images/blog/salsa-vs-bachata/hero.webp',
     },
   ],
 

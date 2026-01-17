@@ -74,6 +74,7 @@ interface NormalizedClass {
   style: string;
   level: string;
   rawStartsAt: string;
+  description: string;
 }
 
 // Mapeo de estilos (normalización)
@@ -145,6 +146,7 @@ function normalizeSession(session: MomenceSession): NormalizedClass {
     style: detectStyle(session.name),
     level: detectLevel(session.name),
     rawStartsAt: session.startsAt,
+    description: session.description || '',
   };
 }
 

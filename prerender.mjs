@@ -466,6 +466,8 @@ const routes = [
   { path: 'es/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'es', page: 'blogSalsaVsBachata' },
   { path: 'es/blog/tips', lang: 'es', page: 'blogTips' },
   { path: 'es/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'es', page: 'blogClasesPrincipiantes' },
+  { path: 'es/blog/fitness', lang: 'es', page: 'blogFitness' },
+  { path: 'es/blog/fitness/baile-salud-mental', lang: 'es', page: 'blogBaileSaludMental' },
 
   { path: 'ca/blog', lang: 'ca', page: 'blog' },
   { path: 'ca/blog/lifestyle', lang: 'ca', page: 'blogLifestyle' },
@@ -480,6 +482,8 @@ const routes = [
   { path: 'ca/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'ca', page: 'blogSalsaVsBachata' },
   { path: 'ca/blog/tips', lang: 'ca', page: 'blogTips' },
   { path: 'ca/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'ca', page: 'blogClasesPrincipiantes' },
+  { path: 'ca/blog/fitness', lang: 'ca', page: 'blogFitness' },
+  { path: 'ca/blog/fitness/baile-salud-mental', lang: 'ca', page: 'blogBaileSaludMental' },
 
   { path: 'en/blog', lang: 'en', page: 'blog' },
   { path: 'en/blog/lifestyle', lang: 'en', page: 'blogLifestyle' },
@@ -494,6 +498,8 @@ const routes = [
   { path: 'en/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'en', page: 'blogSalsaVsBachata' },
   { path: 'en/blog/tips', lang: 'en', page: 'blogTips' },
   { path: 'en/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'en', page: 'blogClasesPrincipiantes' },
+  { path: 'en/blog/fitness', lang: 'en', page: 'blogFitness' },
+  { path: 'en/blog/fitness/baile-salud-mental', lang: 'en', page: 'blogBaileSaludMental' },
 
   { path: 'fr/blog', lang: 'fr', page: 'blog' },
   { path: 'fr/blog/lifestyle', lang: 'fr', page: 'blogLifestyle' },
@@ -508,6 +514,8 @@ const routes = [
   { path: 'fr/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'fr', page: 'blogSalsaVsBachata' },
   { path: 'fr/blog/tips', lang: 'fr', page: 'blogTips' },
   { path: 'fr/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'fr', page: 'blogClasesPrincipiantes' },
+  { path: 'fr/blog/fitness', lang: 'fr', page: 'blogFitness' },
+  { path: 'fr/blog/fitness/baile-salud-mental', lang: 'fr', page: 'blogBaileSaludMental' },
 
   // Facebook Ads Landing (promo)
   { path: 'es/promo/clase-gratis', lang: 'es', page: 'promoClaseGratis' },
@@ -716,6 +724,14 @@ const metadata = {
     blogPerderMiedoBailar: {
       title: 'Cómo Perder el Miedo a Bailar: Guía Práctica 2025 | Farray\'s Center',
       description: 'Descubre técnicas probadas para superar la vergüenza y el miedo a bailar. El 80% de adultos sienten ansiedad al bailar. Aprende cómo superarlo paso a paso.',
+    },
+    blogFitness: {
+      title: 'Fitness y Salud - Blog de Baile | Farray\'s Center Barcelona',
+      description: 'Artículos sobre los beneficios del baile para la salud física y mental. Consejos de fitness, bienestar y ejercicio a través del baile.',
+    },
+    blogBaileSaludMental: {
+      title: 'Baile y Salud Mental: Reduce Ansiedad, Depresión y Estrés | Farray\'s',
+      description: 'Descubre los beneficios científicos del baile para la salud mental. Reduce ansiedad 47%, menos demencia 76%. Estudios de Harvard, NEJM y más.',
     },
     promoClaseGratis: {
       title: 'Tu Primera Clase de Baile GRATIS | Farray\'s Center Barcelona',
@@ -1009,6 +1025,14 @@ const metadata = {
       title: 'Com Perdre la Por a Ballar: Guia Pràctica 2025 | Farray\'s Center',
       description: 'Descobreix tècniques provades per superar la vergonya i la por a ballar. El 80% dels adults senten ansietat en ballar. Aprèn com superar-ho pas a pas.',
     },
+    blogFitness: {
+      title: 'Fitness i Salut - Blog de Ball | Farray\'s Center Barcelona',
+      description: 'Articles sobre els beneficis del ball per a la salut física i mental. Consells de fitness, benestar i exercici a través del ball.',
+    },
+    blogBaileSaludMental: {
+      title: 'Ball i Salut Mental: Redueix Ansietat, Depressió i Estrès | Farray\'s',
+      description: 'Descobreix els beneficis científics del ball per a la salut mental. Redueix ansietat 47%, menys demència 76%. Estudis de Harvard, NEJM i més.',
+    },
     promoClaseGratis: {
       title: 'La Teva Primera Classe de Ball GRATIS | Farray\'s Center Barcelona',
       description: 'Reserva la teva classe de prova gratuïta a l\'escola de ball més completa de Barcelona. +15.000 alumnes, +40 estils. Places limitades!',
@@ -1301,6 +1325,14 @@ const metadata = {
       title: 'How to Overcome Fear of Dancing: Practical Guide 2025 | Farray\'s Center',
       description: 'Discover proven techniques to overcome shyness and fear of dancing. 80% of adults feel anxiety when dancing. Learn how to overcome it step by step.',
     },
+    blogFitness: {
+      title: 'Fitness & Health - Dance Blog | Farray\'s Center Barcelona',
+      description: 'Articles about the benefits of dancing for physical and mental health. Fitness tips, wellness and exercise through dance.',
+    },
+    blogBaileSaludMental: {
+      title: 'Dancing and Mental Health: Reduce Anxiety, Depression and Stress | Farray\'s',
+      description: 'Discover the scientific benefits of dancing for mental health. Reduces anxiety 47%, dementia risk 76% lower. Studies from Harvard, NEJM and more.',
+    },
     promoClaseGratis: {
       title: 'Your First Dance Class FREE | Farray\'s Center Barcelona',
       description: 'Book your free trial class at Barcelona\'s most complete dance school. +15,000 students, +40 styles. Limited spots!',
@@ -1592,6 +1624,14 @@ const metadata = {
     blogPerderMiedoBailar: {
       title: 'Comment Vaincre la Peur de Danser : Guide Pratique 2025 | Farray\'s Center',
       description: 'Découvrez des techniques éprouvées pour surmonter la timidité et la peur de danser. 80% des adultes ressentent de l\'anxiété en dansant. Apprenez à la surmonter pas à pas.',
+    },
+    blogFitness: {
+      title: 'Fitness et Santé - Blog de Danse | Farray\'s Center Barcelone',
+      description: 'Articles sur les bienfaits de la danse pour la santé physique et mentale. Conseils de fitness, bien-être et exercice à travers la danse.',
+    },
+    blogBaileSaludMental: {
+      title: 'Danse et Santé Mentale : Réduisez Anxiété, Dépression et Stress | Farray\'s',
+      description: 'Découvrez les bienfaits scientifiques de la danse pour la santé mentale. Réduit l\'anxiété 47%, risque de démence 76% moindre. Études de Harvard, NEJM et plus.',
     },
     promoClaseGratis: {
       title: 'Votre Premier Cours de Danse GRATUIT | Farray\'s Center Barcelone',
@@ -1909,6 +1949,10 @@ routes.forEach(route => {
     pagePath = 'blog/tips/clases-baile-principiantes-barcelona-farrays';
   } else if (page === 'blogPerderMiedoBailar') {
     pagePath = 'blog/lifestyle/como-perder-miedo-bailar';
+  } else if (page === 'blogFitness') {
+    pagePath = 'blog/fitness';
+  } else if (page === 'blogBaileSaludMental') {
+    pagePath = 'blog/fitness/baile-salud-mental';
   } else if (page === 'baileManananas') {
     pagePath = 'clases/baile-mananas';
   }

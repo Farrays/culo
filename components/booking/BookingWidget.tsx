@@ -11,6 +11,7 @@ import {
   ShareIcon,
 } from '../../lib/icons';
 import { trackLeadConversion, LEAD_VALUES, pushToDataLayer } from '../../utils/analytics';
+import { generateGoogleCalendarUrl, downloadICSFile } from '../../utils/calendarExport';
 
 // ============================================================================
 // TYPES
@@ -30,6 +31,7 @@ interface ClassData {
   level: string;
   rawStartsAt: string;
   duration: number; // Duration in minutes
+  description: string; // Class description from Momence
 }
 
 interface FormData {
@@ -53,6 +55,27 @@ type Step = 'style' | 'class' | 'form';
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
 // ============================================================================
+// HELPERS
+// ============================================================================
+
+/**
+ * Formats duration in minutes to a readable format
+ * 60 → "1h", 90 → "1h 30min", 45 → "45min"
+ */
+function formatDuration(minutes: number): string {
+  const hours = Math.floor(minutes / 60);
+  const mins = minutes % 60;
+
+  if (hours === 0) {
+    return `${mins}min`;
+  }
+  if (mins === 0) {
+    return `${hours}h`;
+  }
+  return `${hours}h ${mins}min`;
+}
+
+// ============================================================================
 // CONSTANTS
 // ============================================================================
 
@@ -68,6 +91,8 @@ function generateMockClasses(): ClassData[] {
       time: '19:00',
       dayOfWeek: 1,
       duration: 60,
+      description:
+        'Aprende los pasos básicos de la salsa cubana en un ambiente divertido. Ideal para principiantes sin experiencia previa.',
     },
     {
       name: 'Bachata Sensual - Básico',
@@ -77,6 +102,8 @@ function generateMockClasses(): ClassData[] {
       time: '20:00',
       dayOfWeek: 1,
       duration: 60,
+      description:
+        'Desarrolla tu conexión con la música y tu pareja. Trabajaremos ondas corporales, aislaciones y musicalidad.',
     },
     {
       name: 'Heels - Todos los niveles',
@@ -86,6 +113,8 @@ function generateMockClasses(): ClassData[] {
       time: '18:30',
       dayOfWeek: 2,
       duration: 60,
+      description:
+        'Baila con tacones y libera tu lado más sensual. Coreografías de estilo comercial que trabajan la feminidad y la confianza.',
     },
     {
       name: 'Dancehall - Intermedio',
@@ -95,6 +124,8 @@ function generateMockClasses(): ClassData[] {
       time: '19:30',
       dayOfWeek: 2,
       duration: 60,
+      description:
+        'Sumérgete en la cultura jamaicana con movimientos explosivos. Se requiere conocimiento previo de los pasos básicos.',
     },
     {
       name: 'Hip Hop - Iniciación',
@@ -104,6 +135,8 @@ function generateMockClasses(): ClassData[] {
       time: '17:00',
       dayOfWeek: 3,
       duration: 60,
+      description:
+        'Descubre los fundamentos del hip hop: grooves, bounces y aislaciones. Perfecto para empezar desde cero.',
     },
     {
       name: 'Reggaeton - Básico',
@@ -113,6 +146,8 @@ function generateMockClasses(): ClassData[] {
       time: '18:00',
       dayOfWeek: 3,
       duration: 60,
+      description:
+        'Aprende a moverte con el ritmo del reggaeton. Coreografías urbanas con movimientos de cadera y actitud.',
     },
     {
       name: 'Twerk - Todos los niveles',
@@ -122,6 +157,8 @@ function generateMockClasses(): ClassData[] {
       time: '19:00',
       dayOfWeek: 4,
       duration: 60,
+      description:
+        'Trabaja la técnica del twerk con ejercicios de aislación de glúteos. Clase divertida y de alto impacto.',
     },
     {
       name: 'Afrobeats - Iniciación',
@@ -131,6 +168,8 @@ function generateMockClasses(): ClassData[] {
       time: '20:00',
       dayOfWeek: 4,
       duration: 60,
+      description:
+        'Explora los ritmos africanos contemporáneos. Movimientos enérgicos que conectan cuerpo y música.',
     },
     {
       name: 'Commercial Dance',
@@ -140,6 +179,8 @@ function generateMockClasses(): ClassData[] {
       time: '17:30',
       dayOfWeek: 5,
       duration: 60,
+      description:
+        'Coreografías estilo videoclip mezclando hip hop, jazz y dancehall. El estilo que ves en los videos de tus artistas favoritos.',
     },
     {
       name: 'K-Pop - Iniciación',
@@ -149,6 +190,8 @@ function generateMockClasses(): ClassData[] {
       time: '16:00',
       dayOfWeek: 6,
       duration: 75,
+      description:
+        'Aprende las coreografías de tus grupos favoritos de K-Pop. Clase perfecta para fans que quieren bailar como sus idols.',
     },
     {
       name: 'Yoga para Bailarines',
@@ -158,6 +201,8 @@ function generateMockClasses(): ClassData[] {
       time: '10:00',
       dayOfWeek: 6,
       duration: 90,
+      description:
+        'Sesión de yoga diseñada para bailarines. Mejora tu flexibilidad, equilibrio y recuperación muscular.',
     },
     {
       name: 'Stretching & Flexibilidad',
@@ -167,6 +212,8 @@ function generateMockClasses(): ClassData[] {
       time: '11:30',
       dayOfWeek: 6,
       duration: 45,
+      description:
+        'Estiramientos profundos para aumentar tu rango de movimiento. Ideal como complemento a cualquier estilo de baile.',
     },
   ];
 
@@ -206,6 +253,7 @@ function generateMockClasses(): ClassData[] {
         level: template.level,
         rawStartsAt: classDate.toISOString(),
         duration: template.duration,
+        description: template.description,
       });
     });
   }
@@ -353,6 +401,41 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
       return classDate >= startOfWeek && classDate < endOfWeek;
     });
   }, []);
+
+  // Calculate which week offset a class belongs to (0-3)
+  const calculateWeekOffset = useCallback((classDate: Date): number => {
+    const now = new Date();
+    const dayOfWeek = now.getDay();
+    const mondayOffset = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
+    const startOfCurrentWeek = new Date(now);
+    startOfCurrentWeek.setDate(now.getDate() + mondayOffset);
+    startOfCurrentWeek.setHours(0, 0, 0, 0);
+
+    const diffMs = classDate.getTime() - startOfCurrentWeek.getTime();
+    const diffWeeks = Math.floor(diffMs / (7 * 24 * 60 * 60 * 1000));
+
+    // Clamp to 0-3 range
+    return Math.max(0, Math.min(3, diffWeeks));
+  }, []);
+
+  // Find the week offset of the earliest upcoming class
+  const findNextClassWeekOffset = useCallback(
+    (classesData: ClassData[]): number => {
+      const now = new Date();
+      // Filter only future classes and sort by date
+      const futureClasses = classesData
+        .filter(c => new Date(c.rawStartsAt) >= now)
+        .sort((a, b) => new Date(a.rawStartsAt).getTime() - new Date(b.rawStartsAt).getTime());
+
+      if (futureClasses.length === 0) return 0;
+
+      const nextClass = futureClasses[0];
+      if (!nextClass) return 0;
+
+      return calculateWeekOffset(new Date(nextClass.rawStartsAt));
+    },
+    [calculateWeekOffset]
+  );
 
   // Apply advanced filters to classes
   const applyAdvancedFilters = useCallback(
@@ -509,14 +592,45 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
   // HANDLERS
   // ============================================================================
 
-  const handleStyleSelect = (style: string) => {
+  const handleStyleSelect = async (style: string) => {
     setSelectedStyle(style);
-    setStep('class');
+
     // Track style selection
     pushToDataLayer({
       event: 'booking_style_selected',
       style: style || 'all',
     });
+
+    // Auto-navigate to the week with the next available class
+    try {
+      let classesForStyle: ClassData[] = [];
+
+      if (import.meta.env.DEV) {
+        // In dev mode, use MOCK_CLASSES directly
+        classesForStyle = style ? MOCK_CLASSES.filter(c => c.style === style) : MOCK_CLASSES;
+      } else {
+        // In production, fetch all classes for this style (4 weeks = 28 days)
+        const url = style
+          ? `/api/clases?style=${encodeURIComponent(style)}&days=28`
+          : '/api/clases?days=28';
+        const response = await fetch(url);
+        if (response.ok) {
+          const data = await response.json();
+          if (data.success) {
+            classesForStyle = data.data.classes || [];
+          }
+        }
+      }
+
+      // Find the week offset for the next available class
+      const nextWeekOffset = findNextClassWeekOffset(classesForStyle);
+      setWeekOffset(nextWeekOffset);
+    } catch {
+      // If something fails, default to week 0
+      setWeekOffset(0);
+    }
+
+    setStep('class');
   };
 
   const handleClassSelect = (classItem: ClassData) => {
@@ -533,6 +647,18 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
 
   // State for share feedback
   const [copiedClassId, setCopiedClassId] = useState<number | null>(null);
+
+  // State for info modal
+  const [infoModalClass, setInfoModalClass] = useState<ClassData | null>(null);
+
+  const handleOpenInfoModal = (e: React.MouseEvent, classItem: ClassData) => {
+    e.stopPropagation(); // Don't trigger class selection
+    setInfoModalClass(classItem);
+  };
+
+  const handleCloseInfoModal = () => {
+    setInfoModalClass(null);
+  };
 
   const handleShareClass = async (e: React.MouseEvent, classItem: ClassData) => {
     e.stopPropagation(); // Don't trigger class selection
@@ -772,6 +898,34 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
   const handleRetry = () => {
     setStatus('idle');
     setErrorMessage('');
+  };
+
+  // Calendar export handlers
+  const handleAddToGoogleCalendar = () => {
+    if (!selectedClass) return;
+    const url = generateGoogleCalendarUrl({
+      title: selectedClass.name,
+      description: t('booking_calendar_description', { instructor: selectedClass.instructor }),
+      startTime: selectedClass.rawStartsAt,
+      durationMinutes: selectedClass.duration,
+      location: "Farray's Center - C/ Mallorca 179, Barcelona",
+    });
+    window.open(url, '_blank');
+    pushToDataLayer({ event: 'booking_calendar_google' });
+  };
+
+  const handleDownloadICS = () => {
+    if (!selectedClass) return;
+    downloadICSFile({
+      title: selectedClass.name,
+      description: t('booking_calendar_description', { instructor: selectedClass.instructor }),
+      startTime: selectedClass.rawStartsAt,
+      durationMinutes: selectedClass.duration,
+      location: "Farray's Center - C/ Mallorca 179, Barcelona",
+      attendeeName: `${formData.firstName} ${formData.lastName}`,
+      attendeeEmail: formData.email,
+    });
+    pushToDataLayer({ event: 'booking_calendar_ics' });
   };
 
   // ============================================================================
@@ -1279,7 +1433,7 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
                       <ClockIcon className="w-4 h-4" />
                       {classItem.time}
                     </span>
-                    <span className="text-neutral/50">{classItem.duration}&apos;</span>
+                    <span className="text-neutral/50">{formatDuration(classItem.duration)}</span>
                     {classItem.instructor && (
                       <span className="flex items-center gap-1">
                         <UserIcon className="w-4 h-4" />
@@ -1291,6 +1445,16 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
 
                 <div className="flex flex-col items-end gap-2">
                   <div className="flex items-center gap-2">
+                    {/* Info button */}
+                    {classItem.description && (
+                      <button
+                        onClick={e => handleOpenInfoModal(e, classItem)}
+                        className="px-2 py-1 rounded-lg text-xs font-medium text-primary-accent hover:bg-primary-accent/10 transition-all"
+                        aria-label={t('booking_class_info')}
+                      >
+                        +info
+                      </button>
+                    )}
                     {/* Share button */}
                     <button
                       onClick={e => handleShareClass(e, classItem)}
@@ -1562,6 +1726,28 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
         </div>
       )}
 
+      {/* Add to Calendar buttons */}
+      {selectedClass && (
+        <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+          <button
+            onClick={handleAddToGoogleCalendar}
+            className="flex items-center justify-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl transition-colors text-neutral"
+          >
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.5 4H18V3a1 1 0 0 0-2 0v1H8V3a1 1 0 0 0-2 0v1H4.5A2.5 2.5 0 0 0 2 6.5v13A2.5 2.5 0 0 0 4.5 22h15a2.5 2.5 0 0 0 2.5-2.5v-13A2.5 2.5 0 0 0 19.5 4zM20 19.5a.5.5 0 0 1-.5.5h-15a.5.5 0 0 1-.5-.5V10h16v9.5zM20 8H4V6.5a.5.5 0 0 1 .5-.5H6v1a1 1 0 0 0 2 0V6h8v1a1 1 0 0 0 2 0V6h1.5a.5.5 0 0 1 .5.5V8z" />
+            </svg>
+            <span className="text-sm font-medium">{t('booking_calendar_google')}</span>
+          </button>
+          <button
+            onClick={handleDownloadICS}
+            className="flex items-center justify-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl transition-colors text-neutral"
+          >
+            <CalendarIcon className="w-5 h-5" />
+            <span className="text-sm font-medium">{t('booking_calendar_download')}</span>
+          </button>
+        </div>
+      )}
+
       <p className="text-sm text-neutral/60 mb-6">{t('booking_success_reminder')}</p>
 
       <Link
@@ -1638,6 +1824,72 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
           </>
         )}
       </div>
+
+      {/* Info Modal */}
+      {infoModalClass && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+          onClick={handleCloseInfoModal}
+        >
+          <div
+            className="relative bg-neutral-900 border border-white/10 rounded-2xl p-6 max-w-md w-full animate-fade-in"
+            onClick={e => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={handleCloseInfoModal}
+              className="absolute top-4 right-4 p-1 rounded-full text-neutral/50 hover:text-neutral hover:bg-white/10 transition-all"
+              aria-label={t('booking_modal_close')}
+            >
+              <XMarkIcon className="w-5 h-5" />
+            </button>
+
+            {/* Class name */}
+            <h3 className="text-xl font-bold text-neutral mb-4 pr-8">{infoModalClass.name}</h3>
+
+            {/* Level badge */}
+            <div className="mb-4">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary-accent/20 text-primary-accent">
+                {t(`booking_filter_level_${infoModalClass.level}`)}
+              </span>
+            </div>
+
+            {/* Description */}
+            <p className="text-neutral/80 text-sm leading-relaxed mb-4">
+              {infoModalClass.description || t('booking_modal_no_description')}
+            </p>
+
+            {/* Class details */}
+            <div className="flex flex-wrap gap-3 text-sm text-neutral/60 mb-6">
+              <span className="flex items-center gap-1">
+                <CalendarIcon className="w-4 h-4" />
+                {infoModalClass.dayOfWeek} {infoModalClass.date}
+              </span>
+              <span className="flex items-center gap-1">
+                <ClockIcon className="w-4 h-4" />
+                {infoModalClass.time} ({formatDuration(infoModalClass.duration)})
+              </span>
+              {infoModalClass.instructor && (
+                <span className="flex items-center gap-1">
+                  <UserIcon className="w-4 h-4" />
+                  {infoModalClass.instructor}
+                </span>
+              )}
+            </div>
+
+            {/* Action button */}
+            <button
+              onClick={() => {
+                handleCloseInfoModal();
+                handleClassSelect(infoModalClass);
+              }}
+              className="w-full py-3 bg-primary-accent text-white font-semibold rounded-xl hover:bg-primary-accent/90 transition-colors"
+            >
+              {t('booking_modal_select')}
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 });
