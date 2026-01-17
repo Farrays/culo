@@ -8,10 +8,20 @@ export const es = {
   closeButton: 'Cerrar',
   teacherAvatarAlt: 'Foto de {name}',
   breadcrumbHome: 'Inicio',
+  breadcrumb_home: 'Inicio',
+  home: 'Inicio',
+  contact: 'Contacto',
+  skipToMain: 'Saltar al contenido principal',
+  viewSchedule: 'Ver Horarios',
+  bookNow: 'Reservar Ahora',
+  bookTrialClass: 'Reserva tu Clase de Bienvenida',
   // V2 Template defaults
   limitedSpots: 'Plazas Limitadas',
   startToday: 'Empieza Hoy',
   finalCTADefaultNote: 'Consulta horarios disponibles',
+  nearbyAreasTitle: 'Zonas Cercanas',
+  trustStats: 'Estadísticas de Confianza',
+  classesPerSession: 'clases por sesión',
   // Header
   navHome: 'Inicio',
   navClasses: 'Clases de Baile',
@@ -219,6 +229,7 @@ export const es = {
     'Con la gracia y precisión perfeccionadas en las mejores compañías de Europa, Elena guía a los estudiantes a encontrar su voz expresiva a través de técnicas clásicas y modernas.',
   // Testimonials
   testimonialsTitle: 'Testimonios No Solicitados de Nuestros Estudiantes',
+  testimonialsSubtitle: 'Lo que dicen nuestros alumnos',
   // Video Testimonials Section
   videoTestimonialsTitle: "Vive el Ambiente Farray's",
   videoTestimonialsSubtitle: 'Momentos reales de nuestra academia. Sin filtros, sin guiones.',
@@ -304,6 +315,7 @@ export const es = {
   instagramHandle: '@farrays_centerbcn',
   // HowToGetHere
   howToGetHereTitle: "Cómo Llegar a Farray\'s Center",
+  howToGetHereSubtitle: 'Estamos en el corazón de Barcelona',
   howToGetHereIntro:
     'Encuéntranos en el corazón del Eixample Esquerra de Barcelona, perfectamente conectados con toda la ciudad.',
   metroTitle: 'Metro',
@@ -1605,6 +1617,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // ====================
   danzaBarcelona_title:
     "Clases de Danza en Barcelona | Ballet, Contemporáneo y Jazz | Farray\'s Center",
+  danzaBarcelona_hero_title: 'Clases de Danza en Barcelona',
   danzaBarcelona_description:
     'Descubre nuestras clases de danza en Barcelona: Ballet Clásico Cubano, Danza Contemporánea, Modern Jazz, Afro Jazz y más. Academia reconocida por CID-UNESCO. Reserva tu clase de bienvenida.',
   danzaBarcelona_breadcrumb_home: 'Inicio',
@@ -19960,6 +19973,11 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_step2: 'Selecciona Clase',
   booking_step3: 'Confirma Datos',
 
+  // V2 Steps (2-step flow)
+  booking_step1_classes: 'Elige tu clase',
+  booking_step2_form: 'Confirma tus datos',
+  booking_back_to_classes: 'Volver a clases',
+
   // Style Selection
   booking_style_title: '¿Qué estilo te interesa?',
   booking_style_all: 'Todos los estilos',
@@ -19972,6 +19990,9 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_week_this: 'Esta semana',
   booking_week_prev: 'Semana anterior',
   booking_week_next: 'Semana siguiente',
+  booking_week_current: 'Esta semana',
+  booking_week_previous: 'Semana anterior',
+  booking_week_future: 'En {weeks} semanas',
   booking_style_clear: 'Quitar filtro de estilo',
   booking_class_retry: 'Reintentar',
   booking_class_share: 'Compartir enlace de esta clase',
@@ -19980,9 +20001,17 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_modal_close: 'Cerrar',
   booking_modal_select: 'Reservar esta clase',
   booking_modal_no_description: 'No hay descripción disponible para esta clase.',
+  booking_info_day: 'Día',
+  booking_info_time: 'Hora',
+  booking_info_instructor: 'Profesor',
+  booking_info_location: 'Ubicación',
+  booking_info_description: 'Descripción',
   booking_class_spots: '{spots} plazas disponibles',
+  booking_class_spots_few: 'Últimas {count} plazas',
+  booking_class_spots_available: '{count} plazas',
   booking_class_full: 'Completo',
   booking_class_select: 'Seleccionar',
+  booking_select_class: 'Reservar',
   booking_class_selected: 'Seleccionada',
   booking_class_teacher: 'con {teacher}',
   booking_class_duration: '{duration} min',
@@ -19993,12 +20022,19 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_level_all: 'Todos los niveles',
 
   // Advanced Filters
+  booking_filter_style: 'Estilo',
   booking_filter_level: 'Nivel',
   booking_filter_day: 'Día',
   booking_filter_time: 'Hora',
   booking_filter_instructor: 'Profesor',
   booking_filter_clear_all: 'Limpiar filtros',
   booking_filter_all: 'Todos',
+  booking_filter_all_styles: 'Todos los estilos',
+  booking_filter_all_instructors: 'Todos los profesores',
+  booking_clear_all_filters: 'Limpiar todos',
+  booking_clear_filters: 'Quitar filtros',
+  booking_no_classes_match: 'No hay clases que coincidan con los filtros',
+  booking_classes_found: '{count} clases encontradas',
   booking_filter_level_iniciacion: 'Iniciación',
   booking_filter_level_basico: 'Básico',
   booking_filter_level_intermedio: 'Intermedio',
@@ -20056,6 +20092,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_consent_image:
     'Autorizo el uso de mi imagen en fotos y vídeos realizados durante las clases para fines promocionales en redes sociales y web',
   booking_consent_image_optional: '(Opcional)',
+  booking_consent_optional: '(opcional)',
 
   // Submit
   booking_submit: 'Confirmar Reserva',
@@ -20082,6 +20119,10 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_error_title: 'Error al procesar',
   booking_error_message: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
   booking_error_cta: 'Reintentar',
+  booking_error_generic: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+  booking_error_required_fields: 'Por favor, completa todos los campos obligatorios',
+  booking_error_consent_required: 'Por favor, acepta todos los consentimientos obligatorios',
+  booking_error_heels_consent_required: 'Por favor, acepta las condiciones para clases con tacones',
   booking_error_firstName: 'Por favor, introduce tu nombre',
   booking_error_lastName: 'Por favor, introduce tus apellidos',
   booking_error_email: 'Por favor, introduce un email válido',

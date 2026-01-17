@@ -8,6 +8,16 @@ export const ca = {
   closeButton: 'Tancar',
   teacherAvatarAlt: 'Foto de {name}',
   breadcrumbHome: 'Inici',
+  breadcrumb_home: 'Inici',
+  home: 'Inici',
+  contact: 'Contacte',
+  skipToMain: 'Salta al contingut principal',
+  viewSchedule: 'Veure Horaris',
+  bookNow: 'Reservar Ara',
+  bookTrialClass: 'Reserva la teva Classe de Benvinguda',
+  nearbyAreasTitle: 'Zones Properes',
+  trustStats: 'Estadístiques de Confiança',
+  classesPerSession: 'classes per sessió',
   // Header
   navHome: 'Inici',
   navClasses: 'Classes de Ball',
@@ -211,6 +221,7 @@ export const ca = {
     "Amb la gràcia i precisió perfeccionades a les millors companyies d'Europa, l'Elena guia els estudiants a trobar la seva veu expressiva a través de tècniques clàssiques i modernes.",
   // Testimonials
   testimonialsTitle: 'Testimonis No Sol·licitats dels Nostres Estudiants',
+  testimonialsSubtitle: 'El que diuen els nostres alumnes',
   // Video Testimonials Section
   videoTestimonialsTitle: "Viu l'Ambient Farray's",
   videoTestimonialsSubtitle: 'Moments reals de la nostra acadèmia. Sense filtres, sense guions.',
@@ -296,6 +307,7 @@ export const ca = {
   instagramHandle: '@farrays_centerbcn',
   // HowToGetHere
   howToGetHereTitle: "Com Arribar a Farray's Center",
+  howToGetHereSubtitle: 'Som al cor de Barcelona',
   howToGetHereIntro:
     "Troba'ns al cor de l'Eixample Esquerra de Barcelona, perfectament connectats amb tota la ciutat.",
   metroTitle: 'Metro',
@@ -1097,6 +1109,7 @@ export const ca = {
   // ====================
   danzaBarcelona_title:
     "Classes de Dansa a Barcelona | Ballet, Contemporani i Jazz | Farray's Center",
+  danzaBarcelona_hero_title: 'Classes de Dansa a Barcelona',
   danzaBarcelona_description:
     'Descobreix les nostres classes de dansa a Barcelona: Ballet Clàssic Cubà, Dansa Contemporània, Modern Jazz, Afro Jazz i més. Acadèmia reconeguda per CID-UNESCO. Reserva la teva classe de benvinguda.',
   danzaBarcelona_breadcrumb_home: 'Inici',

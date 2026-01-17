@@ -8,6 +8,16 @@ export const en = {
   closeButton: 'Close',
   teacherAvatarAlt: 'Photo of {name}',
   breadcrumbHome: 'Home',
+  breadcrumb_home: 'Home',
+  home: 'Home',
+  contact: 'Contact',
+  skipToMain: 'Skip to main content',
+  viewSchedule: 'View Schedule',
+  bookNow: 'Book Now',
+  bookTrialClass: 'Book Your Welcome Class',
+  nearbyAreasTitle: 'Nearby Areas',
+  trustStats: 'Trust Statistics',
+  classesPerSession: 'classes per session',
   // Header
   navHome: 'Home',
   navClasses: 'Dance Classes',
@@ -211,6 +221,7 @@ export const en = {
     "With grace and precision honed in Europe's top companies, Elena guides students to find their expressive voice through classical and modern techniques.",
   // Testimonials
   testimonialsTitle: 'Unsolicited Testimonials from Our Students',
+  testimonialsSubtitle: 'What our students say',
   // Video Testimonials Section
   videoTestimonialsTitle: "Experience the Farray's Vibe",
   videoTestimonialsSubtitle: 'Real moments from our academy. No filters, no scripts.',
@@ -296,6 +307,7 @@ export const en = {
   instagramHandle: '@farrays_centerbcn',
   // HowToGetHere
   howToGetHereTitle: "How to Get to Farray's Center",
+  howToGetHereSubtitle: "We're in the heart of Barcelona",
   howToGetHereIntro:
     "Find us in the heart of Barcelona's Eixample Esquerra, perfectly connected to the entire city.",
   metroTitle: 'Metro',
@@ -1098,6 +1110,7 @@ export const en = {
   // ====================
   danzaBarcelona_title:
     "Dance Classes in Barcelona | Ballet, Contemporary & Jazz | Farray's Center",
+  danzaBarcelona_hero_title: 'Dance Classes in Barcelona',
   danzaBarcelona_description:
     'Discover our dance classes in Barcelona: Cuban Classical Ballet, Contemporary Dance, Modern Jazz, Afro Jazz and more. CID-UNESCO accredited academy. Book your welcome class.',
   danzaBarcelona_breadcrumb_home: 'Home',
@@ -18349,6 +18362,11 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   booking_step2: 'Select Class',
   booking_step3: 'Confirm Details',
 
+  // V2 Steps (2-step flow)
+  booking_step1_classes: 'Choose your class',
+  booking_step2_form: 'Confirm your details',
+  booking_back_to_classes: 'Back to classes',
+
   // Style Selection
   booking_style_title: 'Which style interests you?',
   booking_style_all: 'All styles',
@@ -18361,6 +18379,9 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   booking_week_this: 'This week',
   booking_week_prev: 'Previous week',
   booking_week_next: 'Next week',
+  booking_week_current: 'This week',
+  booking_week_previous: 'Previous week',
+  booking_week_future: 'In {weeks} weeks',
   booking_style_clear: 'Clear style filter',
   booking_class_retry: 'Retry',
   booking_class_share: 'Share link to this class',
@@ -18369,9 +18390,17 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   booking_modal_close: 'Close',
   booking_modal_select: 'Book this class',
   booking_modal_no_description: 'No description available for this class.',
+  booking_info_day: 'Day',
+  booking_info_time: 'Time',
+  booking_info_instructor: 'Instructor',
+  booking_info_location: 'Location',
+  booking_info_description: 'Description',
   booking_class_spots: '{spots} spots available',
+  booking_class_spots_few: 'Last {count} spots',
+  booking_class_spots_available: '{count} spots',
   booking_class_full: 'Full',
   booking_class_select: 'Select',
+  booking_select_class: 'Book',
   booking_class_selected: 'Selected',
   booking_class_teacher: 'with {teacher}',
   booking_class_duration: '{duration} min',
@@ -18382,12 +18411,19 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   booking_level_all: 'All levels',
 
   // Advanced Filters
+  booking_filter_style: 'Style',
   booking_filter_level: 'Level',
   booking_filter_day: 'Day',
   booking_filter_time: 'Time',
   booking_filter_instructor: 'Instructor',
   booking_filter_clear_all: 'Clear filters',
   booking_filter_all: 'All',
+  booking_filter_all_styles: 'All styles',
+  booking_filter_all_instructors: 'All instructors',
+  booking_clear_all_filters: 'Clear all',
+  booking_clear_filters: 'Clear filters',
+  booking_no_classes_match: 'No classes match the selected filters',
+  booking_classes_found: '{count} classes found',
   booking_filter_level_iniciacion: 'Beginner',
   booking_filter_level_basico: 'Basic',
   booking_filter_level_intermedio: 'Intermediate',
@@ -18445,6 +18481,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   booking_consent_image:
     'I authorize the use of my image in photos and videos taken during classes for promotional purposes on social media and website',
   booking_consent_image_optional: '(Optional)',
+  booking_consent_optional: '(optional)',
 
   // Submit
   booking_submit: 'Confirm Booking',
@@ -18471,6 +18508,10 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   booking_error_title: 'Processing error',
   booking_error_message: 'An error occurred. Please try again.',
   booking_error_cta: 'Retry',
+  booking_error_generic: 'An error occurred. Please try again.',
+  booking_error_required_fields: 'Please fill in all required fields',
+  booking_error_consent_required: 'Please accept all required consents',
+  booking_error_heels_consent_required: 'Please accept the high heels class conditions',
   booking_error_firstName: 'Please enter your first name',
   booking_error_lastName: 'Please enter your last name',
   booking_error_email: 'Please enter a valid email',

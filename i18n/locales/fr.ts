@@ -8,6 +8,16 @@ export const fr = {
   closeButton: 'Fermer',
   teacherAvatarAlt: 'Photo de {name}',
   breadcrumbHome: 'Accueil',
+  breadcrumb_home: 'Accueil',
+  home: 'Accueil',
+  contact: 'Contact',
+  skipToMain: 'Passer au contenu principal',
+  viewSchedule: 'Voir les Horaires',
+  bookNow: 'Réserver Maintenant',
+  bookTrialClass: 'Réservez Votre Cours de Bienvenue',
+  nearbyAreasTitle: 'Zones Proches',
+  trustStats: 'Statistiques de Confiance',
+  classesPerSession: 'cours par session',
   // Header
   navHome: 'Accueil',
   navClasses: 'Cours de Danse',
@@ -212,6 +222,7 @@ export const fr = {
     'Avec la grâce et la précision affinées dans les plus grandes compagnies européennes, Elena guide les élèves à trouver leur voix expressive à travers les techniques classiques et modernes.',
   // Testimonials
   testimonialsTitle: 'Témoignages Non Sollicités de Nos Étudiants',
+  testimonialsSubtitle: 'Ce que disent nos élèves',
   // Video Testimonials Section
   videoTestimonialsTitle: "Vivez l'Ambiance Farray's",
   videoTestimonialsSubtitle: 'Moments réels de notre académie. Sans filtres, sans scénario.',
@@ -297,6 +308,7 @@ export const fr = {
   instagramHandle: '@farrays_centerbcn',
   // HowToGetHere
   howToGetHereTitle: "Comment se Rendre à Farray's Center",
+  howToGetHereSubtitle: 'Nous sommes au cœur de Barcelone',
   howToGetHereIntro:
     "Trouvez-nous au cœur de l'Eixample Esquerra de Barcelone, parfaitement connectés à toute la ville.",
   metroTitle: 'Métro',
@@ -1109,6 +1121,7 @@ export const fr = {
   // ====================
   danzaBarcelona_title:
     "Cours de Danse à Barcelone | Ballet, Contemporain et Jazz | Farray's Center",
+  danzaBarcelona_hero_title: 'Cours de Danse à Barcelone',
   danzaBarcelona_description:
     'Découvrez nos cours de danse à Barcelone : Ballet Classique Cubain, Danse Contemporaine, Modern Jazz, Afro Jazz et plus. Académie accréditée par CID-UNESCO. Réservez votre cours de bienvenue.',
   danzaBarcelona_breadcrumb_home: 'Accueil',
