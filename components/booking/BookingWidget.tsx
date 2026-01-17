@@ -1033,7 +1033,7 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
       description: t('booking_calendar_description', { instructor: selectedClass.instructor }),
       startTime: selectedClass.rawStartsAt,
       durationMinutes: selectedClass.duration,
-      location: "Farray's Center - C/ Mallorca 179, Barcelona",
+      location: "Farray's Center - C/ Entença 100, 08015 Barcelona",
     });
     window.open(url, '_blank');
     pushToDataLayer({ event: 'booking_calendar_google' });
@@ -1046,7 +1046,7 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
       description: t('booking_calendar_description', { instructor: selectedClass.instructor }),
       startTime: selectedClass.rawStartsAt,
       durationMinutes: selectedClass.duration,
-      location: "Farray's Center - C/ Mallorca 179, Barcelona",
+      location: "Farray's Center - C/ Entença 100, 08015 Barcelona",
       attendeeName: `${formData.firstName} ${formData.lastName}`,
       attendeeEmail: formData.email,
     });
