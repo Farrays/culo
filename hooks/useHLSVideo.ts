@@ -35,7 +35,13 @@ interface UseHLSVideoReturn {
  * - Respects Save-Data header
  */
 export const useHLSVideo = (options: UseHLSVideoOptions): UseHLSVideoReturn => {
-  const { hlsUrl, mp4Url, loadDelay = 150, respectReducedMotion = true, respectDataSaver = true } = options;
+  const {
+    hlsUrl,
+    mp4Url,
+    loadDelay = 150,
+    respectReducedMotion = true,
+    respectDataSaver = true,
+  } = options;
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -117,7 +123,7 @@ export const useHLSVideo = (options: UseHLSVideoOptions): UseHLSVideoReturn => {
       if (hasTriedFallbackRef.current || !mp4Url || !video) return false;
       hasTriedFallbackRef.current = true;
 
-      console.log('Trying MP4 fallback:', mp4Url);
+      console.warn('Trying MP4 fallback:', mp4Url);
       video.src = mp4Url;
 
       try {

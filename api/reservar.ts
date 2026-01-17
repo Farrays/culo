@@ -108,7 +108,7 @@ function hashForMeta(value: string): string {
 // Normalizar teléfono para Meta CAPI (E.164: solo dígitos con código país)
 function normalizePhone(phone: string): string {
   // Eliminar todo excepto dígitos y el + inicial
-  let cleaned = phone.replace(/[\s().-]/g, '');
+  const cleaned = phone.replace(/[\s().-]/g, '');
 
   // Si empieza con +, quitar el + y devolver solo dígitos
   if (cleaned.startsWith('+')) {
@@ -392,8 +392,7 @@ async function sendMetaConversionEvent(data: {
       return { success: false };
     }
 
-    const result = await response.json();
-    console.log('Meta CAPI success:', result);
+    await response.json();
     return { success: true };
   } catch (error) {
     console.error('Meta CAPI error:', error);

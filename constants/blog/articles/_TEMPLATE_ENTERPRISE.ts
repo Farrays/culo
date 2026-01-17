@@ -1033,7 +1033,8 @@ export const TEMPLATE_ENTERPRISE_CONFIG: BlogArticleConfig = {
         answerKey: 'blogTemplateEnterprise_answerText1',
         sourcePublisher: 'Harvard Medical School',
         sourceYear: '2023',
-        sourceUrl: 'https://www.health.harvard.edu/staying-healthy/the-many-health-benefits-of-dancing',
+        sourceUrl:
+          'https://www.health.harvard.edu/staying-healthy/the-many-health-benefits-of-dancing',
         confidence: 'high',
         icon: 'check',
       },
@@ -1700,13 +1701,7 @@ export const FARRAY_AUTHORS: Record<string, AuthorSchemaConfig> = {
       'Certificación Internacional de Baile Latino',
       'Formación en Danza Contemporánea - La Habana',
     ],
-    knowsAbout: [
-      'Salsa Cubana',
-      'Bachata',
-      'Danzas Latinas',
-      'Coreografía',
-      'Pedagogía del Baile',
-    ],
+    knowsAbout: ['Salsa Cubana', 'Bachata', 'Danzas Latinas', 'Coreografía', 'Pedagogía del Baile'],
   },
   mar: {
     id: 'mar',
@@ -1715,21 +1710,13 @@ export const FARRAY_AUTHORS: Record<string, AuthorSchemaConfig> = {
     description:
       "Instructor profesional en Farray's Dance Center Barcelona. Especialista en múltiples estilos de baile incluyendo salsa, bachata, heels y danzas urbanas. Experiencia en competiciones y shows.",
     image: '/images/team/mar.webp',
-    sameAs: [
-      'https://www.instagram.com/farraysdancecenter/',
-    ],
+    sameAs: ['https://www.instagram.com/farraysdancecenter/'],
     worksFor: {
       name: "Farray's Dance Center",
       url: 'https://www.farrays.com',
       type: 'DanceSchool',
     },
-    knowsAbout: [
-      'Salsa',
-      'Bachata',
-      'Heels',
-      'Danzas Urbanas',
-      'Hip Hop',
-    ],
+    knowsAbout: ['Salsa', 'Bachata', 'Heels', 'Danzas Urbanas', 'Hip Hop'],
   },
 };
 

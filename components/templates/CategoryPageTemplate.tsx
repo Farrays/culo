@@ -204,7 +204,8 @@ const StylesGrid: React.FC<StylesGridProps> = ({
   translationPrefix,
 }) => {
   const { t, locale } = useI18n();
-  const gridCols = columns === 2 ? 'lg:grid-cols-2' : columns === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3';
+  const gridCols =
+    columns === 2 ? 'lg:grid-cols-2' : columns === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3';
 
   return (
     <section
@@ -322,7 +323,11 @@ const CategoriesGrid: React.FC<CategoriesGridProps> = ({
         {/* Grid of Categories - 2x2 on desktop */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {categories.map((category, index) => (
-            <AnimateOnScroll key={category.key} delay={index * 100} className="[perspective:1000px]">
+            <AnimateOnScroll
+              key={category.key}
+              delay={index * 100}
+              className="[perspective:1000px]"
+            >
               <Link
                 to={`/${locale}${category.pillarUrl}`}
                 className="group block relative h-full rounded-xl overflow-hidden shadow-lg bg-black text-white transition-all duration-500 ease-in-out [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)_rotateY(5deg)_rotateX(2deg)] hover:shadow-accent-glow border border-white/10 hover:border-primary-accent flex flex-col"
@@ -533,7 +538,11 @@ const RelatedClassesSection: React.FC<RelatedClassesSectionProps> = ({ classes }
   const { t, locale } = useI18n();
 
   return (
-    <section id="related-classes" aria-labelledby="related-classes-title" className="py-12 md:py-16">
+    <section
+      id="related-classes"
+      aria-labelledby="related-classes-title"
+      className="py-12 md:py-16"
+    >
       <div className="container mx-auto px-6">
         <AnimateOnScroll>
           <header className="text-center mb-8 sm:mb-12 relative z-10">
