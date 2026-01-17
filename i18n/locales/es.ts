@@ -15,6 +15,14 @@ export const es = {
   viewSchedule: 'Ver Horarios',
   bookNow: 'Reservar Ahora',
   bookTrialClass: 'Reserva tu Clase de Bienvenida',
+  // StatsBar
+  statsbar_reviews: '509+ reseñas',
+  statsbar_certified: 'Centro Certificado',
+  statsbar_members: 'Socios Activos',
+  statsbar_space: 'Instalaciones',
+  statsbar_styles: 'Estilos',
+  statsbar_years: 'en Barcelona',
+
   // V2 Template defaults
   limitedSpots: 'Plazas Limitadas',
   startToday: 'Empieza Hoy',
@@ -96,18 +104,17 @@ export const es = {
   happinessStoryLine4Part2: 'decidimos crearla y está funcionando.',
   happinessStoryLine5: 'Como no sabíamos que era imposible, lo hicimos.',
   happinessStoryPara1Part1:
-    'No sabíamos que era imposible levantarla en un local abandonado durante 10 años. Tampoco sabíamos que era mala idea reformarlo a mano, sin presupuesto, solo con Yunaisy, Fábio, amigos, profesores y una brigada improvisada. No sabíamos nada de "lo imposible". Así que simplemente lo hicimos. Porque Farray\'s no nació de un plan de negocio.',
-  happinessStoryPara1Part2: 'Nació de una historia de amor.',
-  happinessStoryPara2:
-    'Del amor entre Yunaisy y Fábio, del amor por la danza y del amor por la gente. Por eso, cuando decimos que aquí se respira familia, no es un eslogan: es verdad.',
+    'No sabíamos nada de "lo imposible". Así que simplemente lo hicimos. Porque no nació de un plan de negocio.',
+  happinessStoryPara1Part2: 'Nació de un sueño.',
+  happinessStoryPara2: '',
   happinessStoryPara3Part1: 'Hoy ese sueño se llama',
   happinessStoryPara3Part2: "Farray's International Dance Center",
-  happinessStoryPara3Part3: ', una academia multidisciplinar reconocida por el',
+  happinessStoryPara3Part3: ', un centro deportivo y formativo reconocido por el',
   happinessStoryPara3Part4: 'CID-UNESCO',
   happinessStoryPara3Part5: ', dirigida por',
   happinessStoryPara3Part6: 'Yunaisy Farray',
   happinessStoryPara3Part7:
-    ' —bailarina, maestra internacional y alma de esta casa—, donde cada alumno importa, cada historia cuenta y cada momento te acerca a una versión mejor de ti.',
+    ' —bailarina, maestra internacional y motor de esta casa—, donde cada alumno importa, cada historia cuenta y cada momento te acerca a una versión mejor de ti.',
   happinessStoryPara4:
     'Un lugar que no copiamos de ningún sitio. Un lugar que no existía… hasta que lo construimos.',
   // About
@@ -176,7 +183,8 @@ export const es = {
   // Services
   servicesTitle: 'Servicios Adicionales',
   servicesIntro:
-    'En Farray’s International Dance Center ofrecemos mucho más que clases de baile. Descubre todos los servicios que ponemos a tu disposición para ayudarte a crear, celebrar y crecer bailando.',
+    "En Farray's International Dance Center ofrecemos mucho más que clases de baile. Descubre todos los servicios que ponemos a tu disposición para ayudarte a crear, celebrar y crecer bailando.",
+  servicesViewAll: 'Ver todos los servicios',
   serviceRentalTitle: 'Alquiler de Salas',
   serviceRentalDesc:
     'Salas amplias y equipadas para ensayos, clases y eventos privados en el corazón de Barcelona.',
@@ -2788,7 +2796,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   metodoFarray_results_title: 'Resultados que Hablan',
   metodoFarray_stats_students: 'Alumnos formados',
   metodoFarray_stats_years: 'Años perfeccionando el método',
-  metodoFarray_stats_rating: 'Valoración en Google (505+ reseñas)',
+  metodoFarray_stats_rating: 'Valoración en Google (509+ reseñas)',
   metodoFarray_stats_styles: 'Estilos de baile disponibles',
 
   metodoFarray_featured_quote:
@@ -3338,9 +3346,11 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   // Servicios Baile - Intro SEO Section
   serviciosBaile_intro_p1:
-    "En <strong>Farray's International Dance Center</strong> ofrecemos una amplia gama de <strong>servicios de baile en Barcelona</strong>. Más allá de nuestras clases regulares, ponemos a tu disposición espacios profesionales, formación personalizada y talento artístico para cualquier proyecto.",
+    "En <strong>Farray's International Dance Center</strong> ofrecemos una amplia gama de <strong>servicios de baile en Barcelona</strong>. Más allá de nuestras clases regulares, ponemos a tu disposición espacios profesionales, formación personalizada y talento artístico para cualquier proyecto. Academia reconocida por <strong>CID-UNESCO</strong> con el exclusivo <strong>Método Farray®</strong>.",
   serviciosBaile_intro_p2:
-    'Ya sea que busques un <strong>espacio para ensayar o grabar</strong>, clases privadas adaptadas a tu ritmo, o bailarines profesionales para tu evento, en nuestra academia de 700 m² encontrarás la solución perfecta. Estamos en el corazón de Barcelona, cerca de Plaza España.',
+    "Ya sea que busques un <strong>espacio para ensayar o grabar</strong>, clases privadas adaptadas a tu ritmo, o bailarines profesionales para tu evento, en nuestra academia de 700 m² encontrarás la solución perfecta. Ubicados en <strong>Eixample Esquerre</strong>, a 5 minutos de <strong>Plaza España</strong> y <strong>Estación de Sants</strong>. Fácil acceso desde L'Hospitalet, Poble Sec, Sant Antoni y Les Corts.",
+  serviciosBaile_table_service: 'Servicio',
+  serviciosBaile_table_ideal: 'Ideal para',
 
   // Servicios Baile - Categorías
   serviciosBaile_cat_spaces: 'Espacios y Producción',
@@ -3349,6 +3359,8 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   serviciosBaile_cat_training_desc: 'Clases a medida y experiencias únicas',
   serviciosBaile_cat_professional: 'Profesionales y Empresas',
   serviciosBaile_cat_professional_desc: 'Talento, eventos y soluciones corporativas',
+  serviciosBaile_cat_merchandising: 'Tienda Oficial',
+  serviciosBaile_cat_merchandising_desc: 'Productos exclusivos de la academia',
 
   // Servicios Baile - Why Section
   serviciosBaile_why_title: "¿Por qué elegir Farray's para tus servicios de baile?",
@@ -4394,6 +4406,8 @@ En Farray's International Dance Center, el Afrobeats se enseña con técnica, re
   // Teachers
   afroTeachersTitle: 'Conoce a nuestros profesores de Afrobeats',
   afroTeachersSubtitle: 'Expertos en Afrodance con años de experiencia',
+  afroTeachersClosing:
+    'Nuestros profesores no solo enseñan pasos: transmiten cultura, historia y pasión por el Afrodance.',
   // Schedule
   afroScheduleTitle: 'Horarios de Clases de Afrobeats',
   afroScheduleSubtitle: 'Clases semanales con expertos en Afrodance',
@@ -4991,6 +5005,8 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colombia), J Balvi
   // Teachers Section
   sxrTeachersTitle: 'Conoce a tu instructora de Sexy Reggaeton',
   sxrTeachersSubtitle: 'Experta en danzas urbanas sensuales con más de 8 años de experiencia',
+  sxrTeachersClosing:
+    'Con Yasmina no solo aprendes a bailar Sexy Reggaeton: descubres una forma de conectar con tu feminidad y tu poder sin pedir permiso.',
   // Schedule Section
   sxrScheduleTitle: 'Horarios de Clases de Sexy Reggaeton',
   sxrScheduleSubtitle: 'Clases semanales con instructoras especializadas',
@@ -5292,6 +5308,8 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
   // Teachers Section
   rcbTeachersTitle: 'Conoce a tus maestros de Reparto',
   rcbTeachersSubtitle: 'Cubanos de nacimiento, formados en la ENA y referentes en Barcelona',
+  rcbTeachersClosing:
+    'Con Charlie y Alejandro no solo aprendes a bailar Reparto: descubres el sabor auténtico que solo los cubanos pueden transmitir.',
   // Schedule Section
   rcbScheduleTitle: 'Horarios de Clases de Reggaeton Cubano',
   rcbScheduleSubtitle: 'Clases semanales con maestros cubanos auténticos',
@@ -6114,6 +6132,8 @@ A lo largo de más de una década, Femmology ha transformado la vida de miles de
   // Teachers Section
   sexystyleTeachersTitle: 'Conoce a tu instructora de Sexy Style',
   sexystyleTeachersSubtitle: 'Especialista en expresión corporal y sensualidad',
+  sexystyleTeachersClosing:
+    'Con Yasmina no solo aprendes a bailar Sexy Style: descubres una nueva forma de habitar tu cuerpo.',
   // Schedule Section
   sexystyleScheduleTitle: 'Horarios de Clases de Sexy Style',
   sexystyleScheduleSubtitle: 'Clases semanales con Yasmina Fernández',
@@ -6893,6 +6913,8 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
   // ===== Teachers Section =====
   balletTeachersTitle: 'Conoce a tus profesores de Ballet',
   balletTeachersSubtitle: 'Escuela Cubana, experiencia internacional',
+  balletTeachersClosing:
+    'Dos maestros, dos enfoques complementarios. Daniel para el nivel intermedio y avanzado, Alejandro para los principiantes. La combinación perfecta para tu formación en ballet.',
   // ===== Schedule Section =====
   balletScheduleTitle: 'Horarios de Clases de Ballet',
   balletScheduleSubtitle: 'Clases diarias con maestros de la Escuela Cubana',
@@ -7319,6 +7341,8 @@ Trabaja integralmente: **flexibilidad, fuerza funcional, coordinación, propioce
   contemporaneoTeachersTitle: 'Tus Maestros de Danza Contemporánea',
   contemporaneoTeachersSubtitle:
     'Bailarines profesionales formados en la Escuela Cubana con carrera internacional',
+  contemporaneoTeachersClosing:
+    'Con Daniel y Alejandro no solo aprendes técnica contemporánea: descubres una nueva forma de expresarte, conectar con tu cuerpo y desarrollar tu propio lenguaje de movimiento.',
   // Schedule Section
   contemporaneoScheduleTitle: 'Horarios de Clases de Danza Contemporánea',
   contemporaneoScheduleSubtitle:
@@ -7688,6 +7712,8 @@ El Afro Contemporáneo impartido en **Farray's International Dance Center** form
   // Teachers Section
   afrocontemporaneoTeachersTitle: 'Tus maestros de Afro Contemporáneo',
   afrocontemporaneoTeachersSubtitle: 'Formación directa de la Escuela Nacional de Arte de Cuba',
+  afrocontemporaneoTeachersClosing:
+    'Con nuestros maestros cubanos no solo aprendes Afro Contemporáneo: accedes a la metodología original de la Escuela Nacional de Arte de Cuba.',
   // Schedule Section
   afrocontemporaneoScheduleTitle: 'Horarios de Clases de Afro Contemporáneo',
   afrocontemporaneoScheduleSubtitle: 'Clases semanales con maestros formados en la ENA de Cuba',
@@ -8353,6 +8379,8 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   // Teachers
   hiphopTeachersTitle: 'Conoce a tu profesor de Hip Hop',
   hiphopTeachersSubtitle: 'Un referente del Hip Hop en España',
+  hiphopTeachersClosing:
+    'Aprende de un maestro que ha dedicado su vida al Hip Hop y que transmite no solo técnica, sino la cultura y la actitud que define este estilo.',
   // Prepare Section
   hiphopPrepareItem5: 'Ganas de soltar el flow',
   hiphopPrepareBefore: 'Antes de llegar',
@@ -9070,7 +9098,7 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
     'Es una forma de bailar salsa cubana en grupo, en círculo, donde todas las parejas ejecutan figuras sincronizadas siguiendo las indicaciones de un "cantante". Es muy divertida y social.',
   salsaCubanaFaqQ9: '¿Cuál es la mejor academia de salsa cubana en Barcelona?',
   salsaCubanaFaqA9:
-    "Farray\'s Center es la academia de referencia en Barcelona, acreditada por el CID-UNESCO con el Método Farray® exclusivo. Con más de 15.000 alumnos formados, 8 años de experiencia y una valoración de 4.9/5 en Google (505+ reseñas), ofrece un sistema progresivo que enseña a bailar de verdad, no solo a memorizar figuras.",
+    "Farray\'s Center es la academia de referencia en Barcelona, acreditada por el CID-UNESCO con el Método Farray® exclusivo. Con más de 15.000 alumnos formados, 8 años de experiencia y una valoración de 4.9/5 en Google (509+ reseñas), ofrece un sistema progresivo que enseña a bailar de verdad, no solo a memorizar figuras.",
   salsaCubanaFaqQ10: '¿Cuánto cuestan las clases de salsa cubana en Barcelona?',
   salsaCubanaFaqA10:
     "Farray\'s Center ofrece una clase de bienvenida para que experimentes el Método Farray® sin compromiso. Las cuotas mensuales varían según la frecuencia de clases. Contacta para conocer las tarifas actuales y promociones.",
@@ -9335,7 +9363,7 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
   salsaLadyStatMinutes: 'minutos',
   salsaLadyStatCalories: 'calorías',
   salsaLadyStatElegance: 'Elegancia',
-  salsaLadyStatReviewCount: '505+ reseñas',
+  salsaLadyStatReviewCount: '509+ reseñas',
   salsaLadyStatStudents: '+15.000 estudiantes formados',
   salsaLadyStatYears: '8 años en Barcelona',
   // Schedule class names
@@ -14997,7 +15025,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   fbLandingTestimonial3Name: 'Laura, 42 años',
   fbLandingTestimonial3Text:
     'Después de años queriendo y no atreviéndome, por fin lo hice. El ambiente es tan bueno que se me olvidó que tenía vergüenza.',
-  fbLandingGoogleReviews: '505+ reseñas en Google',
+  fbLandingGoogleReviews: '509+ reseñas en Google',
   fbLandingTransformCTA: 'QUIERO ESA TRANSFORMACIÓN',
 
   // Objection Buster (FAQ)
@@ -15496,8 +15524,8 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   homev2_compRow2Others: 'Vas a clase, pero ¿avanzas?',
   homev2_compRow2Us: 'Sabes exactamente en qué punto estás',
   homev2_compRow3Label: 'Profesores',
-  homev2_compRow3Others: 'Monitores con curso online',
-  homev2_compRow3Us: 'Maestros formados en academias de élite',
+  homev2_compRow3Others: 'Alta rotación de profesores',
+  homev2_compRow3Us: 'Equipo estable con formación continua',
   homev2_compRow4Label: 'Instalaciones',
   homev2_compRow4Others: 'Locales adaptados, suelo genérico',
   homev2_compRow4Us: '700m² con suelo profesional y climatización',
@@ -15513,8 +15541,14 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   homev2_compRow8Label: 'Resultados',
   homev2_compRow8Others: '"Depende de ti..."',
   homev2_compRow8Us: 'Progreso medible clase a clase',
-  homev2_comparisonCta: 'Compruébalo tú mismo',
-  homev2_comparisonCtaSubtext: 'Clase de bienvenida sin compromiso',
+  homev2_compRow9Label: 'Seriedad',
+  homev2_compRow9Others: 'Situación laboral variable',
+  homev2_compRow9Us: 'Equipo con contrato y derechos laborales',
+  homev2_compRow10Label: 'Enfoque',
+  homev2_compRow10Others: 'Solo enseñan a memorizar pasos y coreografías',
+  homev2_compRow10Us: 'Te enseñamos a entender el movimiento',
+  homev2_comparisonCta: 'Descubre Cómo Empezar',
+  homev2_comparisonCtaSubtext: 'Reserva tu Clase de Bienvenida',
 
   // Style Finder Section
   homev2_styleFinderTitle: '25+ estilos. Un método. Tu viaje.',
@@ -15538,7 +15572,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   homev2_styleFinderViewAll: 'Ver todos los 25+ estilos',
 
   // Social Proof Section
-  homev2_socialProofTitle: 'Lo que dicen 505 personas que ya bailaron aquí',
+  homev2_socialProofTitle: 'Lo que dicen 509 personas que ya bailaron aquí',
   homev2_stat1Label: 'alumnos activos',
   homev2_stat2Label: 'años de experiencia',
   homev2_stat3Label: 'estilos de baile',
@@ -20118,6 +20152,11 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_modal_close: 'Cerrar',
   booking_modal_select: 'Reservar esta clase',
   booking_modal_no_description: 'No hay descripción disponible para esta clase.',
+  booking_teacher_view_profile: 'Ver perfil del profesor',
+  booking_teacher_director: 'Directora',
+  booking_teacher_years: 'años',
+  booking_teacher_certifications: 'Formación',
+  booking_teacher_teaches: 'Estilos que imparte',
   booking_info_day: 'Día',
   booking_info_time: 'Hora',
   booking_info_instructor: 'Profesor',
@@ -20173,28 +20212,22 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_field_firstName: 'Nombre',
   booking_field_lastName: 'Apellidos',
   booking_field_email: 'Email',
-  booking_field_phone: 'Teléfono',
+  booking_field_phone: 'WhatsApp',
   booking_placeholder_firstName: 'Tu nombre',
   booking_placeholder_lastName: 'Tus apellidos',
   booking_placeholder_email: 'tu@email.com',
   booking_placeholder_phone: '+34 612 345 678',
 
   // RGPD Checkboxes - Mandatory
-  booking_consent_terms: 'He leído y acepto las',
+  booking_consent_terms: 'Acepto las',
   booking_consent_terms_link: 'condiciones generales',
   booking_consent_terms_required: 'Debes aceptar las condiciones generales',
-
-  booking_consent_marketing:
-    'Autorizo el envío de comunicaciones comerciales sobre actividades, promociones y novedades',
-  booking_consent_marketing_required: 'Debes autorizar las comunicaciones para continuar',
+  booking_consent_terms_note:
+    '(Incluye confirmación de reserva y recordatorios por WhatsApp/email, y posible uso de imagen en material promocional. Para no aparecer en fotos/vídeos, avisa en recepción o escribe a info@farrayscenter.com)',
 
   booking_consent_age:
     'Confirmo que tengo 16 años o más, o cuento con autorización de mi tutor legal',
   booking_consent_age_required: 'Debes confirmar tu edad para continuar',
-
-  booking_consent_norefund:
-    'Entiendo que la clase de bienvenida es no reembolsable una vez confirmada la asistencia',
-  booking_consent_norefund_required: 'Debes aceptar la política de no reembolso',
 
   booking_consent_privacy: 'He leído y acepto la',
   booking_consent_privacy_link: 'política de privacidad',
@@ -20204,12 +20237,6 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_consent_heels:
     'Comprendo y acepto que esta clase se realiza con tacones altos. Me comprometo a utilizar calzado adecuado y asumo la responsabilidad de mi seguridad',
   booking_consent_heels_required: 'Debes aceptar las condiciones de uso de tacones',
-
-  // RGPD Checkboxes - Optional
-  booking_consent_image:
-    'Autorizo el uso de mi imagen en fotos y vídeos realizados durante las clases para fines promocionales en redes sociales y web',
-  booking_consent_image_optional: '(Opcional)',
-  booking_consent_optional: '(opcional)',
 
   // Submit
   booking_submit: 'Confirmar Reserva',
@@ -20224,6 +20251,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_success_location: 'Ubicación',
   booking_success_address: "Farray's Center - C/ Mallorca 179, Barcelona",
   booking_success_reminder: 'Te recordaremos 24h antes de la clase',
+  booking_success_lang_note: 'Los mensajes de confirmación y recordatorio se envían en español',
   booking_success_cta: 'Ver horarios completos',
   booking_success_close: 'Cerrar',
 
@@ -20255,4 +20283,219 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_legal_rights:
     'Derechos: Acceso, rectificación, supresión, limitación, portabilidad y oposición.',
   booking_legal_info: 'Más información en nuestra política de privacidad.',
+
+  // ============================================================================
+  // Terms and Conditions Modal
+  // ============================================================================
+  terms_modal_title: 'Términos y Condiciones',
+  terms_item_1:
+    'Solo se puede probar una clase de bienvenida de un único estilo. Esto significa que puedes realizar una sola clase en total, no una clase gratuita por cada estilo.',
+  terms_item_2:
+    'La clase de bienvenida está destinada únicamente a personas que residen en Barcelona o en sus cercanías. Si solo estás de visita a Barcelona como turista o no resides en esta área, deberás abonar las clases que realices.',
+  terms_item_3:
+    'Es importante ser puntual para no perder el calentamiento, sobre todo en las clases de danza y fitness.',
+  terms_item_4:
+    'Es obligatorio respetar el nivel de las clases. De no hacerlo, nos reservamos el derecho de solicitar que abandones la clase.',
+  terms_item_5:
+    'Cuida tus pertenencias personales. La academia no se hace responsable de los objetos extraviados, olvidados o robados.',
+  terms_item_6:
+    'Si tienes alguna pregunta o necesitas más información, envíanos un correo a info@farrayscenter.com y te responderemos lo antes posible.',
+  terms_contact_info: '¿Tienes dudas? Escríbenos a',
+  terms_understood: 'Entendido',
+
+  // ============================================================================
+  // Privacy Policy Modal
+  // ============================================================================
+  privacy_modal_title: 'Política de Privacidad',
+  privacy_data_controller: 'Responsables del tratamiento',
+  privacy_data_controller_text:
+    "Según el servicio, el responsable puede ser: Farray's Dance & Fitness, S.L. (NIF: B67004812) para la web, merchandising y servicios; o Club Esportiu Farray Barcelona (NIF: G67317701) para actividades deportivas y gestión de socios.",
+  privacy_data_collected: 'Datos que tratamos',
+  privacy_data_collected_text:
+    'Datos identificativos y de contacto (nombre, email, teléfono), datos de actividad (reservas, asistencias), datos técnicos (IP, cookies según tu configuración) e imágenes/vídeos si consientes.',
+  privacy_purposes: 'Finalidades',
+  privacy_purposes_text:
+    'Gestionar tu reserva, alta como socio, comunicaciones operativas (horarios, avisos), y comunicaciones comerciales solo si lo autorizas expresamente.',
+  privacy_image_rights: 'Imágenes y vídeos',
+  privacy_image_rights_text:
+    'En actividades pueden captarse imágenes/vídeos con fines promocionales. Puedes retirar el consentimiento escribiendo a info@farrayscenter.com.',
+  privacy_user_rights: 'Tus derechos',
+  privacy_user_rights_text:
+    'Puedes ejercer acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a info@farrayscenter.com con asunto "Protección de datos – Derechos".',
+  privacy_full_policy_url: 'Política completa en:',
+  privacy_full_policy_link: 'https://farrayscenter.com/politica-de-privacidad/',
+  privacy_understood: 'Entendido',
+
+  // ============================================================================
+  // Team Building Page
+  // ============================================================================
+  teamBuilding_pageTitle:
+    "Team Building con Baile en Barcelona | Actividades Corporativas | Farray's",
+  teamBuilding_metaDescription:
+    'Team building con baile en Barcelona. Actividades corporativas originales: workshops, coreografías, videoclips y flashmobs. 500+ eventos. CID-UNESCO. Presupuesto sin compromiso.',
+  teamBuilding_heroTitle: 'Team Building Barcelona',
+  teamBuilding_heroSubtitle: 'con Baile',
+  teamBuilding_heroIntro:
+    "Transforma tu próximo evento corporativo con actividades de team building con baile en Barcelona. En Farray's International Dance Center llevamos 8 años creando experiencias únicas que fortalecen equipos, potencian la comunicación y generan recuerdos inolvidables. Más de 500 empresas ya han confiado en nosotros.",
+  teamBuilding_trust_rating: '4.9★',
+  teamBuilding_trust_rating_label: 'en Google',
+  teamBuilding_trust_unesco: 'CID-UNESCO',
+  teamBuilding_trust_unesco_label: 'Certificado',
+  teamBuilding_trust_years: '8+',
+  teamBuilding_trust_years_label: 'años',
+  teamBuilding_trust_events: '500+',
+  teamBuilding_trust_events_label: 'eventos',
+  teamBuilding_problem_title: '¿Reuniones corporativas aburridas?',
+  teamBuilding_problem_desc:
+    'Las actividades tradicionales de team building a menudo resultan predecibles y no generan el impacto deseado. Los empleados participan por obligación, no por motivación, y los beneficios se olvidan al día siguiente.',
+  teamBuilding_solution_title: 'Experiencias que transforman equipos',
+  teamBuilding_solution_desc:
+    'El baile rompe barreras, libera endorfinas y crea conexiones genuinas entre compañeros. Nuestras actividades de team building con baile generan un impacto duradero en la cohesión del equipo y la cultura empresarial.',
+  teamBuilding_features_title: 'Nuestras Actividades de Team Building',
+  teamBuilding_feature_workshops_title: 'Workshops de Baile',
+  teamBuilding_feature_workshops_desc:
+    'Sesiones de 1-3 horas donde tu equipo aprende una coreografía grupal. Adaptamos el estilo (salsa, bachata, hip hop, etc.) y nivel a vuestras preferencias.',
+  teamBuilding_feature_choreography_title: 'Coreografías Personalizadas',
+  teamBuilding_feature_choreography_desc:
+    'Creamos coreografías exclusivas para tu empresa, perfectas para presentaciones, convenciones o vídeos corporativos.',
+  teamBuilding_feature_competitions_title: 'Competiciones por Equipos',
+  teamBuilding_feature_competitions_desc:
+    'Divide tu equipo en grupos y compite por el mejor baile. Fomenta la creatividad, el liderazgo y el trabajo en equipo de forma divertida.',
+  teamBuilding_feature_videoclip_title: 'Videoclip Corporativo',
+  teamBuilding_feature_videoclip_desc:
+    'Grabamos un videoclip profesional con tu equipo bailando. Incluye coreografía, ensayos, grabación y edición profesional.',
+  teamBuilding_feature_flashmob_title: 'Flashmob Empresarial',
+  teamBuilding_feature_flashmob_desc:
+    'Sorprende en tu evento con un flashmob protagonizado por tu propio equipo. Planificación, ensayos y ejecución impecable.',
+  teamBuilding_feature_custom_title: 'Experiencias a Medida',
+  teamBuilding_feature_custom_desc:
+    'Diseñamos actividades personalizadas según tus objetivos: lanzamientos de producto, celebraciones, incentivos o cualquier ocasión especial.',
+  teamBuilding_benefits_title: "¿Por qué elegir Farray's?",
+  teamBuilding_benefit_experience_title: '8+ Años de Experiencia',
+  teamBuilding_benefit_experience_desc:
+    'Más de 500 eventos corporativos realizados con éxito. Conocemos qué funciona y cómo adaptar cada actividad a diferentes perfiles de empresa.',
+  teamBuilding_benefit_professionals_title: 'Instructores Profesionales',
+  teamBuilding_benefit_professionals_desc:
+    'Equipo de bailarines y coreógrafos profesionales con experiencia en formación corporativa. Certificación CID-UNESCO.',
+  teamBuilding_benefit_flexibility_title: 'Máxima Flexibilidad',
+  teamBuilding_benefit_flexibility_desc:
+    'Nos adaptamos a vuestros horarios, ubicación (en nuestras salas o en vuestras instalaciones) y presupuesto.',
+  teamBuilding_benefit_results_title: 'Resultados Medibles',
+  teamBuilding_benefit_results_desc:
+    'Mejora de la comunicación, reducción del estrés y fortalecimiento de vínculos entre compañeros de forma medible.',
+  teamBuilding_benefit_fun_title: 'Diversión Garantizada',
+  teamBuilding_benefit_fun_desc:
+    'Nuestras actividades están diseñadas para que todos participen y disfruten, independientemente de su experiencia previa con el baile.',
+  teamBuilding_benefit_location_title: 'Ubicación Céntrica',
+  teamBuilding_benefit_location_desc:
+    'Instalaciones propias de 400m² en el corazón de Barcelona (Eixample). Fácil acceso en metro y parking cercano.',
+  teamBuilding_process_title: '¿Cómo Funciona?',
+  teamBuilding_process_step1_title: 'Contacta con Nosotros',
+  teamBuilding_process_step1_desc:
+    'Cuéntanos sobre tu empresa, el número de participantes, fecha deseada y objetivos. Te responderemos en menos de 24 horas.',
+  teamBuilding_process_step2_title: 'Diseñamos tu Experiencia',
+  teamBuilding_process_step2_desc:
+    'Nuestro equipo crea una propuesta personalizada con la actividad ideal para tus objetivos y presupuesto.',
+  teamBuilding_process_step3_title: 'Preparación y Ensayos',
+  teamBuilding_process_step3_desc:
+    'Coordinamos todos los detalles logísticos y preparamos la coreografía o actividad adaptada a tu equipo.',
+  teamBuilding_process_step4_title: '¡A Bailar!',
+  teamBuilding_process_step4_desc:
+    'Disfrutad de una experiencia única que fortalecerá vuestro equipo y generará recuerdos inolvidables.',
+  teamBuilding_idealFor_title: 'Ideal Para...',
+  teamBuilding_idealFor_corporate: 'Empresas que buscan team building original',
+  teamBuilding_idealFor_startups: 'Startups y empresas tecnológicas',
+  teamBuilding_idealFor_departments: 'Departamentos que necesitan mejorar comunicación',
+  teamBuilding_idealFor_incentives: 'Viajes de incentivos y convenciones',
+  teamBuilding_idealFor_conventions: 'Eventos corporativos y lanzamientos',
+  teamBuilding_idealFor_celebrations: 'Celebraciones de empresa y aniversarios',
+  teamBuilding_packages_title: 'Nuestros Paquetes',
+  teamBuilding_package_popular_badge: 'Más Popular',
+  teamBuilding_package_express_title: 'Express',
+  teamBuilding_package_express_desc: 'Perfecto para equipos pequeños o actividades cortas',
+  teamBuilding_package_express_price: 'desde 300€',
+  teamBuilding_package_express_feature1: 'Duración: 1-2 horas',
+  teamBuilding_package_express_feature2: 'Hasta 20 participantes',
+  teamBuilding_package_express_feature3: 'Estilo de baile a elegir',
+  teamBuilding_package_express_feature4: 'En nuestras instalaciones',
+  teamBuilding_package_premium_title: 'Premium',
+  teamBuilding_package_premium_desc: 'La opción más completa para equipos medianos',
+  teamBuilding_package_premium_price: 'desde 600€',
+  teamBuilding_package_premium_feature1: 'Duración: 2-3 horas',
+  teamBuilding_package_premium_feature2: 'Hasta 50 participantes',
+  teamBuilding_package_premium_feature3: 'Coreografía personalizada',
+  teamBuilding_package_premium_feature4: 'Vídeo del evento incluido',
+  teamBuilding_package_premium_feature5: 'Catering opcional disponible',
+  teamBuilding_package_full_title: 'Full Experience',
+  teamBuilding_package_full_desc: 'Experiencia completa para grandes equipos',
+  teamBuilding_package_full_price: 'Consultar',
+  teamBuilding_package_full_feature1: 'Media jornada o jornada completa',
+  teamBuilding_package_full_feature2: 'Sin límite de participantes',
+  teamBuilding_package_full_feature3: 'Múltiples actividades',
+  teamBuilding_package_full_feature4: 'Videoclip profesional',
+  teamBuilding_package_full_feature5: 'Coordinación integral',
+  teamBuilding_package_full_feature6: 'En cualquier ubicación',
+  teamBuilding_stat_events: 'eventos realizados',
+  teamBuilding_stat_participants: 'participantes',
+  teamBuilding_stat_rating: 'valoración media',
+  teamBuilding_summaryTable_title: 'Resumen de Actividades Team Building',
+  teamBuilding_table_header_service: 'Actividad',
+  teamBuilding_table_header_duration: 'Duración',
+  teamBuilding_table_header_ideal: 'Ideal para',
+  teamBuilding_table_header_price: 'Desde',
+  teamBuilding_table_workshop: 'Workshop de Baile',
+  teamBuilding_table_workshop_duration: '1-3 horas',
+  teamBuilding_table_workshop_ideal: 'Equipos de 10-50 personas',
+  teamBuilding_table_workshop_price: '300€',
+  teamBuilding_table_choreography: 'Coreografía Corporativa',
+  teamBuilding_table_choreography_duration: '2-4 horas',
+  teamBuilding_table_choreography_ideal: 'Presentaciones y eventos',
+  teamBuilding_table_choreography_price: '500€',
+  teamBuilding_table_videoclip: 'Videoclip Empresarial',
+  teamBuilding_table_videoclip_duration: 'Media jornada',
+  teamBuilding_table_videoclip_ideal: 'Marketing interno y RRSS',
+  teamBuilding_table_videoclip_price: '1.200€',
+  teamBuilding_table_flashmob: 'Flashmob Corporativo',
+  teamBuilding_table_flashmob_duration: 'Jornada completa',
+  teamBuilding_table_flashmob_ideal: 'Eventos especiales',
+  teamBuilding_table_flashmob_price: '2.000€',
+  teamBuilding_faq_title: 'Preguntas Frecuentes',
+  teamBuilding_faq1_question: '¿Es necesario tener experiencia previa en baile?',
+  teamBuilding_faq1_answer:
+    'No, en absoluto. Nuestras actividades están diseñadas para que todos puedan participar y disfrutar, independientemente de su nivel de experiencia. Adaptamos la dificultad y el estilo a las características del grupo.',
+  teamBuilding_faq2_question: '¿Cuántas personas pueden participar?',
+  teamBuilding_faq2_answer:
+    'Desde grupos pequeños de 5-10 personas hasta grandes eventos de más de 200 participantes. Nuestras instalaciones tienen capacidad para 100 personas simultáneamente, y también nos desplazamos a vuestras instalaciones o venues externos.',
+  teamBuilding_faq3_question: '¿Pueden hacer la actividad en nuestras oficinas?',
+  teamBuilding_faq3_answer:
+    'Sí, nos desplazamos a cualquier ubicación en Barcelona y alrededores. Solo necesitamos un espacio suficientemente amplio (mínimo 2m² por persona) y sistema de sonido (podemos aportar el nuestro si es necesario).',
+  teamBuilding_faq4_question: '¿Qué estilos de baile ofrecéis?',
+  teamBuilding_faq4_answer:
+    'Ofrecemos más de 25 estilos: salsa, bachata, hip hop, reggaeton, afrobeat, dancehall, heels, y muchos más. Te recomendamos el estilo ideal según el perfil de tu equipo y los objetivos de la actividad.',
+  teamBuilding_faq5_question: '¿Con cuánta antelación hay que reservar?',
+  teamBuilding_faq5_answer:
+    'Recomendamos reservar con al menos 2 semanas de antelación, aunque para eventos más elaborados (videoclips, flashmobs) sugerimos 1 mes. Para fechas muy demandadas, mejor contactar con más tiempo.',
+  teamBuilding_faq6_question: '¿Incluye catering?',
+  teamBuilding_faq6_answer:
+    'El catering no está incluido en los paquetes básicos, pero podemos coordinarlo con nuestros proveedores de confianza o permitiros traer el vuestro a nuestras instalaciones.',
+  teamBuilding_faq7_question: '¿Cómo es el proceso de reserva?',
+  teamBuilding_faq7_answer:
+    'Contacta con nosotros vía formulario, email (info@farrayscenter.com) o teléfono (+34 622 247 085). Nos reunimos para entender tus necesidades, enviamos presupuesto personalizado y, una vez confirmado, coordinamos todos los detalles.',
+  teamBuilding_related_title: 'Otros Servicios',
+  teamBuilding_related_eventos_title: 'Agencia de Eventos',
+  teamBuilding_related_eventos_desc:
+    'Organización integral de eventos con espectáculos de baile y animación profesional.',
+  teamBuilding_related_fiestas_title: 'Fiestas y Despedidas',
+  teamBuilding_related_fiestas_desc:
+    'Despedidas de soltera, cumpleaños y celebraciones privadas con clase de baile incluida.',
+  teamBuilding_related_particulares_title: 'Clases Particulares',
+  teamBuilding_related_particulares_desc:
+    'Clases privadas para ejecutivos o grupos reducidos con horarios flexibles.',
+  teamBuilding_cta_title: '¿Listo para tu Team Building?',
+  teamBuilding_cta_desc:
+    'Contacta con nosotros y recibe un presupuesto personalizado en menos de 24 horas. Sin compromiso.',
+  teamBuilding_cta_button: 'Solicitar Presupuesto',
+  teamBuilding_schema_name: 'Team Building con Baile en Barcelona',
+  teamBuilding_schema_description:
+    'Actividades de team building con baile en Barcelona: workshops, coreografías, videoclips y flashmobs corporativos. 8+ años de experiencia, 500+ eventos. Centro CID-UNESCO.',
 };

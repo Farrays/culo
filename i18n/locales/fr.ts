@@ -15,6 +15,14 @@ export const fr = {
   viewSchedule: 'Voir les Horaires',
   bookNow: 'Réserver Maintenant',
   bookTrialClass: 'Réservez Votre Cours de Bienvenue',
+  // StatsBar
+  statsbar_reviews: '509+ avis',
+  statsbar_certified: 'Centre Certifié',
+  statsbar_members: 'Membres Actifs',
+  statsbar_space: 'Installations',
+  statsbar_styles: 'Styles',
+  statsbar_years: 'à Barcelone',
+
   nearbyAreasTitle: 'Zones Proches',
   trustStats: 'Statistiques de Confiance',
   classesPerSession: 'cours par session',
@@ -89,18 +97,17 @@ export const fr = {
   happinessStoryLine5:
     "Comme nous ne savions pas que c'était impossible, nous l'avons tout simplement fait.",
   happinessStoryPara1Part1:
-    "Nous ne savions pas qu'il était impossible de la construire dans un local abandonné depuis 10 ans. Nous ne savions pas non plus que c'était une mauvaise idée de le rénover à la main, sans budget—juste avec Yunaisy, Fábio, des amis, des professeurs et une équipe improvisée. Nous ne savions rien de \"l'impossible\". Alors nous l'avons simplement fait. Parce que Farray's n'est pas né d'un plan d'affaires.",
-  happinessStoryPara1Part2: "C'est né d'une histoire d'amour.",
-  happinessStoryPara2:
-    "De l'amour entre Yunaisy et Fábio, de l'amour pour la danse et de l'amour pour les gens. C'est pourquoi quand nous disons qu'ici l'esprit de famille règne, ce n'est pas un slogan—c'est la vérité.",
+    "Nous ne savions rien de \"l'impossible\". Alors nous l'avons simplement fait. Parce qu'il n'est pas né d'un plan d'affaires.",
+  happinessStoryPara1Part2: "C'est né d'un rêve.",
+  happinessStoryPara2: '',
   happinessStoryPara3Part1: "Aujourd'hui, ce rêve s'appelle",
   happinessStoryPara3Part2: "Farray's International Dance Center",
-  happinessStoryPara3Part3: ', une académie multidisciplinaire reconnue par le',
+  happinessStoryPara3Part3: ', un centre sportif et de formation reconnu par le',
   happinessStoryPara3Part4: 'CID-UNESCO',
   happinessStoryPara3Part5: ', dirigée par',
   happinessStoryPara3Part6: 'Yunaisy Farray',
   happinessStoryPara3Part7:
-    '—danseuse, maître internationale et âme de cette maison—où chaque élève compte, chaque histoire compte et chaque moment vous rapproche de la meilleure version de vous-même.',
+    '—danseuse, maître internationale et moteur de cette maison—où chaque élève compte, chaque histoire compte et chaque moment vous rapproche de la meilleure version de vous-même.',
   happinessStoryPara4:
     "Un endroit que nous n'avons copié de nulle part. Un endroit qui n'existait pas… jusqu'à ce que nous le construisions.",
   // About
@@ -169,7 +176,8 @@ export const fr = {
   // Services
   servicesTitle: 'Services Supplémentaires',
   servicesIntro:
-    'Au Farray’s International Dance Center, nous offrons bien plus que des cours de danse. Découvrez tous les services que nous proposons pour vous aider à créer, célébrer et grandir en dansant.',
+    "Au Farray's International Dance Center, nous offrons bien plus que des cours de danse. Découvrez tous les services que nous proposons pour vous aider à créer, célébrer et grandir en dansant.",
+  servicesViewAll: 'Voir tous les services',
   serviceRentalTitle: 'Location de Salles',
   serviceRentalDesc:
     'Studios spacieux et équipés pour répétitions, cours et événements privés au cœur de Barcelone.',
@@ -2453,6 +2461,12 @@ export const fr = {
   serviciosBaile_cat_training_desc: 'Cours sur mesure et expériences uniques',
   serviciosBaile_cat_professional: 'Professionnels et Entreprises',
   serviciosBaile_cat_professional_desc: 'Talent, événements et solutions corporate',
+  serviciosBaile_cat_merchandising: 'Boutique Officielle',
+  serviciosBaile_cat_merchandising_desc: "Produits exclusifs de l'académie",
+
+  // Services de Danse - Table
+  serviciosBaile_table_service: 'Service',
+  serviciosBaile_table_ideal: 'Idéal pour',
 
   // Services de Danse - Section Pourquoi
   serviciosBaile_why_title: "Pourquoi choisir Farray's pour vos services de danse ?",
@@ -2828,7 +2842,7 @@ export const fr = {
   metodoFarray_results_title: 'Des Résultats qui Parlent',
   metodoFarray_stats_students: 'Élèves formés',
   metodoFarray_stats_years: 'Années à perfectionner la méthode',
-  metodoFarray_stats_rating: 'Note Google (505+ avis)',
+  metodoFarray_stats_rating: 'Note Google (509+ avis)',
   metodoFarray_stats_styles: 'Styles de danse disponibles',
 
   metodoFarray_featured_quote:
@@ -7011,6 +7025,8 @@ L'Afro Contemporain enseigné au **Farray's International Dance Center** fait pa
   // Teachers Section
   hiphopTeachersTitle: 'Votre professeur de Hip Hop',
   hiphopTeachersSubtitle: 'Apprenez des meilleurs professionnels',
+  hiphopTeachersClosing:
+    "Apprenez d'un maître qui a dédié sa vie au Hip Hop et qui transmet non seulement la technique, mais aussi la culture et l'attitude qui définissent ce style.",
   hiphopTeacher1Name: 'Marcos Martínez',
   hiphopTeacher1Bio:
     "Marcos Martínez est l'une des références du Hip Hop en Espagne. En tant que juge de compétitions internationales et maître reconnu, il forme des danseurs depuis plus de 15 ans en transmettant l'essence authentique du Hip Hop. Sa méthodologie combine technique rigoureuse et esprit de la culture urbaine.",
@@ -7886,7 +7902,7 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   salsaLadyStatMinutes: 'minutes',
   salsaLadyStatCalories: 'calories',
   salsaLadyStatElegance: 'Élégance',
-  salsaLadyStatReviewCount: '505+ avis',
+  salsaLadyStatReviewCount: '509+ avis',
   salsaLadyStatStudents: '+15 000 élèves formés',
   salsaLadyStatYears: '8 ans à Barcelone',
   // Schedule class names
@@ -16706,6 +16722,8 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   cuerpofitLevelOpenDesc: `Cours adaptable à tous les niveaux. Chaque exercice a des variations du débutant à l'avancé. Cris vous guide selon votre niveau actuel, assurant que vous travaillez dans votre zone de développement optimale sans risque de blessure.`,
   cuerpofitTeachersTitle: `Votre Professeure de Body Conditioning`,
   cuerpofitTeachersSubtitle: `Spécialiste en préparation physique pour danseurs`,
+  cuerpofitTeachersClosing:
+    "Chez Farray's Center, la préparation physique n'est pas un complément : c'est la base de votre évolution en tant que danseur.",
   cuerpofitScheduleTitle: 'Horaires des Cours de Body Conditioning',
   cuerpofitScheduleSubtitle: 'Cours hebdomadaires de conditionnement physique',
   cuerpofitWhyChoose2Title: `Focus sur la Prévention des Blessures`,
@@ -17350,7 +17368,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   fbLandingTestimonial2Text: `Je suis venu seul et gêné. Maintenant j'ai un groupe d'amis danseurs et je vais aux soirées sociales chaque semaine. Meilleure décision de l'année.`,
   fbLandingTestimonial3Name: `Laura, 42 ans`,
   fbLandingTestimonial3Text: `Après des années à vouloir et ne pas oser, je l'ai finalement fait. L'ambiance est si bonne que j'ai oublié que j'étais gênée.`,
-  fbLandingGoogleReviews: `505+ avis sur Google`,
+  fbLandingGoogleReviews: `509+ avis sur Google`,
   fbLandingTransformCTA: `JE VEUX CETTE TRANSFORMATION`,
   fbLandingFaqTitle: `Vous vous demandez peut-être...`,
   fbLandingFaq1Q: `"Je ne sais pas du tout danser, je suis débutant complet"`,
@@ -17694,8 +17712,8 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   homev2_compRow2Others: `Vous allez aux cours, mais progressez-vous ?`,
   homev2_compRow2Us: `Vous savez exactement où vous en êtes`,
   homev2_compRow3Label: `Professeurs`,
-  homev2_compRow3Others: `Moniteurs avec cours en ligne`,
-  homev2_compRow3Us: `Maîtres formés dans des académies d'élite`,
+  homev2_compRow3Others: `Forte rotation du personnel`,
+  homev2_compRow3Us: `Équipe stable avec formation continue`,
   homev2_compRow4Label: `Installations`,
   homev2_compRow4Others: `Locaux adaptés, sol générique`,
   homev2_compRow4Us: `700m² avec sol professionnel et climatisation`,
@@ -17711,8 +17729,14 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   homev2_compRow8Label: `Résultats`,
   homev2_compRow8Others: `"Ça dépend de vous..."`,
   homev2_compRow8Us: `Progrès mesurable cours après cours`,
-  homev2_comparisonCta: `Voyez par vous-même`,
-  homev2_comparisonCtaSubtext: `Cours de bienvenue avec évaluation`,
+  homev2_compRow9Label: `Sérieux`,
+  homev2_compRow9Others: `Situation professionnelle variable`,
+  homev2_compRow9Us: `Équipe avec contrat et droits du travail`,
+  homev2_compRow10Label: `Approche`,
+  homev2_compRow10Others: `N'enseignent qu'à mémoriser des pas et des chorégraphies`,
+  homev2_compRow10Us: `Nous vous apprenons à comprendre le mouvement`,
+  homev2_comparisonCta: `Découvrez Comment Commencer`,
+  homev2_comparisonCtaSubtext: `Réservez Votre Cours de Bienvenue`,
   homev2_styleFinderTitle: `25+ styles. Une méthode. Votre voyage.`,
   homev2_styleFinderSubtitle: `Qu'est-ce qui vous motive à danser ? Trouvez votre chemin.`,
   homev2_persona1Title: `Je veux me sentir puissante`,
@@ -17728,7 +17752,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   homev2_persona4Desc: `Fitness dansant qui brûle des calories tout en s\'amusant. Améliorez votre condition physique.`,
   homev2_persona4Cta: `Explorer le fitness danse`,
   homev2_styleFinderViewAll: `Voir tous les 25+ styles`,
-  homev2_socialProofTitle: `Ce que disent 505 personnes qui ont déjà dansé ici`,
+  homev2_socialProofTitle: `Ce que disent 509 personnes qui ont déjà dansé ici`,
   homev2_stat1Label: `élèves actifs`,
   homev2_stat2Label: `années d'expérience`,
   homev2_stat3Label: `styles de danse`,
@@ -18974,28 +18998,22 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   booking_field_firstName: 'Prénom',
   booking_field_lastName: 'Nom',
   booking_field_email: 'Email',
-  booking_field_phone: 'Téléphone',
+  booking_field_phone: 'WhatsApp',
   booking_placeholder_firstName: 'Votre prénom',
   booking_placeholder_lastName: 'Votre nom',
   booking_placeholder_email: 'votre@email.com',
   booking_placeholder_phone: '+33 6 12 34 56 78',
 
   // RGPD Checkboxes - Mandatory
-  booking_consent_terms: "J'ai lu et j'accepte les",
+  booking_consent_terms: "J'accepte les",
   booking_consent_terms_link: 'conditions générales',
   booking_consent_terms_required: 'Vous devez accepter les conditions générales',
-
-  booking_consent_marketing:
-    "J'autorise l'envoi de communications commerciales sur les activités, promotions et nouveautés",
-  booking_consent_marketing_required: 'Vous devez autoriser les communications pour continuer',
+  booking_consent_terms_note:
+    "(Inclut la confirmation de réservation et les rappels par WhatsApp/email, et l'utilisation possible de l'image à des fins promotionnelles. Pour ne pas apparaître sur les photos/vidéos, prévenez la réception ou écrivez à info@farrayscenter.com)",
 
   booking_consent_age:
     "Je confirme avoir 16 ans ou plus, ou disposer de l'autorisation de mon tuteur légal",
   booking_consent_age_required: 'Vous devez confirmer votre âge pour continuer',
-
-  booking_consent_norefund:
-    "Je comprends que le cours de bienvenue n'est pas remboursable une fois la présence confirmée",
-  booking_consent_norefund_required: 'Vous devez accepter la politique de non-remboursement',
 
   booking_consent_privacy: "J'ai lu et j'accepte la",
   booking_consent_privacy_link: 'politique de confidentialité',
@@ -19025,6 +19043,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   booking_success_location: 'Lieu',
   booking_success_address: "Farray's Center - C/ Mallorca 179, Barcelone",
   booking_success_reminder: 'Nous vous rappellerons 24h avant le cours',
+  booking_success_lang_note: 'Les messages de confirmation et de rappel sont envoyés en espagnol',
   booking_success_cta: 'Voir les horaires complets',
   booking_success_close: 'Fermer',
 
@@ -19038,6 +19057,11 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   booking_modal_close: 'Fermer',
   booking_modal_select: 'Réserver ce cours',
   booking_modal_no_description: 'Aucune description disponible pour ce cours.',
+  booking_teacher_view_profile: 'Voir le profil du professeur',
+  booking_teacher_director: 'Directrice',
+  booking_teacher_years: 'ans',
+  booking_teacher_certifications: 'Formation',
+  booking_teacher_teaches: 'Styles enseignés',
   booking_info_day: 'Jour',
   booking_info_time: 'Heure',
   booking_info_instructor: 'Professeur',
@@ -19068,4 +19092,46 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   booking_legal_rights:
     'Droits : Accès, rectification, suppression, limitation, portabilité et opposition.',
   booking_legal_info: "Plus d'informations dans notre politique de confidentialité.",
+
+  // ============================================================================
+  // Terms and Conditions Modal
+  // ============================================================================
+  terms_modal_title: 'Conditions Générales',
+  terms_item_1:
+    "Vous ne pouvez essayer qu'un seul cours de bienvenue gratuit d'un seul style. Cela signifie que vous ne pouvez suivre qu'un seul cours au total, pas un cours gratuit pour chaque style.",
+  terms_item_2:
+    'Le cours de bienvenue gratuit est destiné uniquement aux personnes résidant à Barcelone ou dans les environs. Si vous êtes de passage à Barcelone en tant que touriste ou si vous ne résidez pas dans cette zone, vous devrez payer les cours auxquels vous assistez.',
+  terms_item_3:
+    "Il est important d'être ponctuel pour ne pas manquer l'échauffement, surtout pour les cours de danse et de fitness.",
+  terms_item_4:
+    'Il est obligatoire de respecter le niveau du cours. En cas de non-respect, nous nous réservons le droit de vous demander de quitter le cours.',
+  terms_item_5:
+    "Prenez soin de vos affaires personnelles. L'académie n'est pas responsable des objets perdus, oubliés ou volés.",
+  terms_item_6:
+    "Si vous avez des questions ou besoin de plus d'informations, envoyez-nous un email à info@farrayscenter.com et nous vous répondrons dès que possible.",
+  terms_contact_info: 'Des questions ? Écrivez-nous à',
+  terms_understood: 'Compris',
+
+  // ============================================================================
+  // Privacy Policy Modal
+  // ============================================================================
+  privacy_modal_title: 'Politique de Confidentialité',
+  privacy_data_controller: 'Responsables du traitement',
+  privacy_data_controller_text:
+    "Selon le service, le responsable peut être : Farray's Dance & Fitness, S.L. (NIF : B67004812) pour le site web, le merchandising et les services ; ou Club Esportiu Farray Barcelona (NIF : G67317701) pour les activités sportives et la gestion des membres.",
+  privacy_data_collected: 'Données que nous traitons',
+  privacy_data_collected_text:
+    "Données d'identification et de contact (nom, email, téléphone), données d'activité (réservations, présences), données techniques (IP, cookies selon vos paramètres) et images/vidéos si vous consentez.",
+  privacy_purposes: 'Finalités',
+  privacy_purposes_text:
+    'Gérer votre réservation, inscription comme membre, communications opérationnelles (horaires, avis), et communications commerciales uniquement si vous les autorisez expressément.',
+  privacy_image_rights: 'Images et vidéos',
+  privacy_image_rights_text:
+    'Des images/vidéos peuvent être capturées lors des activités à des fins promotionnelles. Vous pouvez retirer votre consentement en écrivant à info@farrayscenter.com.',
+  privacy_user_rights: 'Vos droits',
+  privacy_user_rights_text:
+    "Vous pouvez exercer l'accès, rectification, suppression, opposition, limitation et portabilité en écrivant à info@farrayscenter.com avec l'objet « Protection des données – Droits ».",
+  privacy_full_policy_url: 'Politique complète sur :',
+  privacy_full_policy_link: 'https://farrayscenter.com/politica-de-privacidad/',
+  privacy_understood: 'Compris',
 };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo, memo } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
 import {
   CheckIcon,
@@ -12,6 +12,10 @@ import {
 } from '../../lib/icons';
 import { trackLeadConversion, LEAD_VALUES, pushToDataLayer } from '../../utils/analytics';
 import { generateGoogleCalendarUrl, downloadICSFile } from '../../utils/calendarExport';
+import { TEACHER_REGISTRY } from '../../constants/teacher-registry';
+import { getTeacherImagePath } from '../../constants/teacher-images';
+import TermsModal from './TermsModal';
+import PrivacyModal from './PrivacyModal';
 
 // ============================================================================
 // TYPES
@@ -38,20 +42,16 @@ interface FormData {
   firstName: string;
   lastName: string;
   email: string;
-  phone: string;
+  phone: string; // WhatsApp number
   // RGPD Consents - Mandatory
-  acceptsTerms: boolean;
-  acceptsMarketing: boolean;
+  acceptsTerms: boolean; // Includes: communications, reminders, image rights
   acceptsAge: boolean;
-  acceptsNoRefund: boolean;
   acceptsPrivacy: boolean;
   // Conditional (Heels)
   acceptsHeels: boolean;
-  // Optional
-  acceptsImage: boolean;
 }
 
-type Step = 'style' | 'class' | 'form';
+type Step = 'class' | 'form';
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
 // ============================================================================
@@ -285,6 +285,81 @@ const STYLE_OPTIONS = [
 // Estilos que requieren checkbox de heels
 const HEELS_STYLES = ['heels', 'girly'];
 
+// ============================================================================
+// TEACHER NAME MAPPING (Momence → Registry)
+// Maps instructor names from Momence API to teacher registry IDs
+// This allows dynamic linking - add/remove here when teachers change
+// ============================================================================
+
+const INSTRUCTOR_NAME_TO_REGISTRY: Record<string, string> = {
+  // Full names (exact match from Momence)
+  'Yunaisy Farray': 'yunaisy-farray',
+  'Daniel Sené': 'daniel-sene',
+  'Alejandro Miñoso': 'alejandro-minoso',
+  'Sandra Gómez': 'sandra-gomez',
+  'Isabel López': 'isabel-lopez',
+  'Marcos Martínez': 'marcos-martinez',
+  'Yasmina Fernández': 'yasmina-fernandez',
+  'Lia Valdes': 'lia-valdes',
+  'Iroel Bastarreche': 'iroel-bastarreche',
+  'Charlie Breezy': 'charlie-breezy',
+  'Eugenia Trujillo': 'eugenia-trujillo',
+  'Mathias Font': 'mathias-font',
+  'Carlos Canto': 'carlos-canto',
+  Noemi: 'noemi',
+  Redbhlue: 'redbhlue',
+  'Juan Alvarez': 'juan-alvarez',
+  CrisAg: 'crisag',
+  'Grechén Méndez': 'grechen-mendez',
+  // Short names / aliases (for flexibility with Momence data)
+  Yunaisy: 'yunaisy-farray',
+  Daniel: 'daniel-sene',
+  Alejandro: 'alejandro-minoso',
+  Sandra: 'sandra-gomez',
+  Isabel: 'isabel-lopez',
+  Marcos: 'marcos-martinez',
+  Yasmina: 'yasmina-fernandez',
+  Lia: 'lia-valdes',
+  Iroel: 'iroel-bastarreche',
+  Charlie: 'charlie-breezy',
+  Eugenia: 'eugenia-trujillo',
+  Mathias: 'mathias-font',
+  Carlos: 'carlos-canto',
+  Juan: 'juan-alvarez',
+  Grechén: 'grechen-mendez',
+  // Common variations
+  Lía: 'lia-valdes',
+  Cris: 'crisag',
+  'Cris Ag': 'crisag',
+};
+
+/**
+ * Find teacher registry ID from Momence instructor name
+ * Returns undefined if teacher is not in our registry
+ */
+function findTeacherRegistryId(instructorName: string): string | undefined {
+  if (!instructorName) return undefined;
+
+  // Try exact match first
+  const exactMatch = INSTRUCTOR_NAME_TO_REGISTRY[instructorName];
+  if (exactMatch) return exactMatch;
+
+  // Try case-insensitive match
+  const lowerName = instructorName.toLowerCase();
+  for (const [name, id] of Object.entries(INSTRUCTOR_NAME_TO_REGISTRY)) {
+    if (name.toLowerCase() === lowerName) return id;
+  }
+
+  // Try partial match (first name only)
+  const firstName = instructorName.split(' ')[0];
+  if (firstName) {
+    const partialMatch = INSTRUCTOR_NAME_TO_REGISTRY[firstName];
+    if (partialMatch) return partialMatch;
+  }
+
+  return undefined;
+}
+
 // Filter options
 const LEVEL_OPTIONS = [
   { value: '', labelKey: 'booking_filter_all' },
@@ -332,22 +407,24 @@ const INITIAL_FILTERS: Filters = {
 // ============================================================================
 
 const BookingWidget: React.FC = memo(function BookingWidget() {
-  const { t, locale } = useI18n();
+  const { t, locale, setLocale } = useI18n();
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // State
-  const [step, setStep] = useState<Step>('style');
+  const [step, setStep] = useState<Step>('class');
   const [selectedStyle, setSelectedStyle] = useState<string>(searchParams.get('style') || '');
   const [selectedClass, setSelectedClass] = useState<ClassData | null>(null);
   const [classes, setClasses] = useState<ClassData[]>([]);
   // Initialize styles from mock data in dev mode, so step 1 buttons work
-  const [stylesAvailable, setStylesAvailable] = useState<string[]>(
+  const [_stylesAvailable, setStylesAvailable] = useState<string[]>(
     import.meta.env.DEV ? [...new Set(MOCK_CLASSES.map(c => c.style))] : []
   );
   const [status, setStatus] = useState<Status>('idle');
   const [loadingClasses, setLoadingClasses] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  // Week navigation state
+  // Week navigation state - auto-navigates to week with next available class on mount
   const [weekOffset, setWeekOffset] = useState(0);
   // Advanced filters state
   const [filters, setFilters] = useState<Filters>(INITIAL_FILTERS);
@@ -360,12 +437,9 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
     email: '',
     phone: '',
     acceptsTerms: false,
-    acceptsMarketing: false,
     acceptsAge: false,
-    acceptsNoRefund: false,
     acceptsPrivacy: false,
     acceptsHeels: false,
-    acceptsImage: false,
   });
 
   // Check if heels consent is required
@@ -540,10 +614,40 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
     }
   }, [step, selectedStyle, weekOffset, filters, fetchClasses]);
 
-  // If URL has style or classId param, handle deep linking
+  // Handle URL parameters for deep linking (all filters)
   useEffect(() => {
     const styleParam = searchParams.get('style');
     const classIdParam = searchParams.get('classId');
+    const levelParam = searchParams.get('level');
+    const dayParam = searchParams.get('day');
+    const timeBlockParam = searchParams.get('timeBlock');
+    const instructorParam = searchParams.get('instructor');
+    const weekParam = searchParams.get('week');
+
+    // Set filters from URL parameters
+    if (styleParam) {
+      setSelectedStyle(styleParam);
+    }
+
+    // Set advanced filters from URL
+    const urlFilters: Filters = {
+      level: levelParam || '',
+      day: dayParam || '',
+      timeBlock: timeBlockParam || '',
+      instructor: instructorParam || '',
+    };
+
+    if (levelParam || dayParam || timeBlockParam || instructorParam) {
+      setFilters(urlFilters);
+    }
+
+    // Set week offset from URL
+    if (weekParam) {
+      const weekNum = parseInt(weekParam, 10);
+      if (!isNaN(weekNum) && weekNum >= 0 && weekNum <= 3) {
+        setWeekOffset(weekNum);
+      }
+    }
 
     if (classIdParam) {
       // Deep link to specific class - go directly to form
@@ -556,12 +660,6 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
           setSelectedClass(foundClass);
           setSelectedStyle(foundClass.style);
           setStep('form');
-        } else {
-          // Class not found, fall back to style selection
-          if (styleParam) {
-            setSelectedStyle(styleParam);
-            setStep('class');
-          }
         }
       } else {
         // In production, fetch the class from API
@@ -574,64 +672,69 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
                 setSelectedClass(foundClass);
                 setSelectedStyle(foundClass.style);
                 setStep('form');
-              } else if (styleParam) {
-                setSelectedStyle(styleParam);
-                setStep('class');
               }
             }
           })
           .catch(console.error);
       }
-    } else if (styleParam) {
-      setSelectedStyle(styleParam);
-      setStep('class');
+    }
+
+    // Track deep link usage if any filter params present
+    if (styleParam || levelParam || dayParam || timeBlockParam || instructorParam || classIdParam) {
+      pushToDataLayer({
+        event: 'booking_deep_link_used',
+        style: styleParam || '',
+        level: levelParam || '',
+        day: dayParam || '',
+        timeBlock: timeBlockParam || '',
+        instructor: instructorParam || '',
+        classId: classIdParam || '',
+      });
     }
   }, [searchParams]);
+
+  // Auto-navigate to week with next available class on initial load (if no URL params set week)
+  useEffect(() => {
+    // Only run on initial load when no week param was provided
+    if (searchParams.get('week') || searchParams.get('classId')) return;
+
+    const initWeekOffset = async () => {
+      try {
+        let classesToCheck: ClassData[] = [];
+
+        if (import.meta.env.DEV) {
+          classesToCheck = selectedStyle
+            ? MOCK_CLASSES.filter(c => c.style === selectedStyle)
+            : MOCK_CLASSES;
+        } else {
+          const url = selectedStyle
+            ? `/api/clases?style=${encodeURIComponent(selectedStyle)}&days=28`
+            : '/api/clases?days=28';
+          const response = await fetch(url);
+          if (response.ok) {
+            const data = await response.json();
+            if (data.success) {
+              classesToCheck = data.data.classes || [];
+            }
+          }
+        }
+
+        const nextOffset = findNextClassWeekOffset(classesToCheck);
+        if (nextOffset !== weekOffset) {
+          setWeekOffset(nextOffset);
+        }
+      } catch {
+        // Keep default week offset
+      }
+    };
+
+    initWeekOffset();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // ============================================================================
   // HANDLERS
   // ============================================================================
-
-  const handleStyleSelect = async (style: string) => {
-    setSelectedStyle(style);
-
-    // Track style selection
-    pushToDataLayer({
-      event: 'booking_style_selected',
-      style: style || 'all',
-    });
-
-    // Auto-navigate to the week with the next available class
-    try {
-      let classesForStyle: ClassData[] = [];
-
-      if (import.meta.env.DEV) {
-        // In dev mode, use MOCK_CLASSES directly
-        classesForStyle = style ? MOCK_CLASSES.filter(c => c.style === style) : MOCK_CLASSES;
-      } else {
-        // In production, fetch all classes for this style (4 weeks = 28 days)
-        const url = style
-          ? `/api/clases?style=${encodeURIComponent(style)}&days=28`
-          : '/api/clases?days=28';
-        const response = await fetch(url);
-        if (response.ok) {
-          const data = await response.json();
-          if (data.success) {
-            classesForStyle = data.data.classes || [];
-          }
-        }
-      }
-
-      // Find the week offset for the next available class
-      const nextWeekOffset = findNextClassWeekOffset(classesForStyle);
-      setWeekOffset(nextWeekOffset);
-    } catch {
-      // If something fails, default to week 0
-      setWeekOffset(0);
-    }
-
-    setStep('class');
-  };
 
   const handleClassSelect = (classItem: ClassData) => {
     setSelectedClass(classItem);
@@ -651,6 +754,13 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
   // State for info modal
   const [infoModalClass, setInfoModalClass] = useState<ClassData | null>(null);
 
+  // State for teacher modal
+  const [teacherModalId, setTeacherModalId] = useState<string | null>(null);
+
+  // State for terms and privacy modals
+  const [termsModalOpen, setTermsModalOpen] = useState(false);
+  const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
+
   const handleOpenInfoModal = (e: React.MouseEvent, classItem: ClassData) => {
     e.stopPropagation(); // Don't trigger class selection
     setInfoModalClass(classItem);
@@ -658,6 +768,24 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
 
   const handleCloseInfoModal = () => {
     setInfoModalClass(null);
+  };
+
+  const handleOpenTeacherModal = (e: React.MouseEvent, instructorName: string) => {
+    e.stopPropagation(); // Don't trigger class selection
+    const registryId = findTeacherRegistryId(instructorName);
+    if (registryId) {
+      setTeacherModalId(registryId);
+      // Track teacher card view
+      pushToDataLayer({
+        event: 'booking_teacher_viewed',
+        teacher_id: registryId,
+        teacher_name: instructorName,
+      });
+    }
+  };
+
+  const handleCloseTeacherModal = () => {
+    setTeacherModalId(null);
   };
 
   const handleShareClass = async (e: React.MouseEvent, classItem: ClassData) => {
@@ -717,16 +845,8 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
       setErrorMessage(t('booking_consent_terms_required'));
       return false;
     }
-    if (!formData.acceptsMarketing) {
-      setErrorMessage(t('booking_consent_marketing_required'));
-      return false;
-    }
     if (!formData.acceptsAge) {
       setErrorMessage(t('booking_consent_age_required'));
-      return false;
-    }
-    if (!formData.acceptsNoRefund) {
-      setErrorMessage(t('booking_consent_norefund_required'));
       return false;
     }
     if (!formData.acceptsPrivacy) {
@@ -824,13 +944,8 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
     if (step === 'form') {
       setStep('class');
       setSelectedClass(null);
-    } else if (step === 'class') {
-      setStep('style');
-      setSelectedStyle('');
-      setWeekOffset(0); // Reset week when going back
-      setFilters(INITIAL_FILTERS); // Reset filters when going back
-      setOpenDropdown(null);
     }
+    // Note: No back action from 'class' step since it's now the first step
   };
 
   // Filter helpers
@@ -866,6 +981,16 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
     if (weekOffset < 3) {
       // Max 4 weeks ahead
       setWeekOffset(prev => prev + 1);
+    }
+  };
+
+  // Language switcher
+  const handleLanguageChange = (newLocale: 'es' | 'ca' | 'en' | 'fr') => {
+    if (newLocale !== locale) {
+      setLocale(newLocale);
+      // Update URL to reflect new locale
+      const newPath = location.pathname.replace(/^\/(es|ca|en|fr)/, `/${newLocale}`);
+      navigate(newPath + location.search, { replace: true });
     }
   };
 
@@ -934,11 +1059,9 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
 
   const renderStepIndicator = () => (
     <div className="flex items-center justify-center gap-2 mb-8">
-      {['style', 'class', 'form'].map((s, i) => {
+      {['class', 'form'].map((s, i) => {
         const isActive = step === s;
-        const isCompleted =
-          (s === 'style' && (step === 'class' || step === 'form')) ||
-          (s === 'class' && step === 'form');
+        const isCompleted = s === 'class' && step === 'form';
 
         return (
           <React.Fragment key={s}>
@@ -967,7 +1090,7 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
                 <div className="absolute inset-0 rounded-full bg-primary-accent/50 animate-ping" />
               )}
             </div>
-            {i < 2 && (
+            {i < 1 && (
               <div
                 className={`w-12 h-1 rounded-full transition-all duration-500 ${
                   isCompleted ? 'bg-primary-accent' : 'bg-white/10'
@@ -1013,73 +1136,8 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
   // RENDER STEPS
   // ============================================================================
 
-  const renderStyleStep = () => (
-    <div className="animate-fade-in">
-      <h2 className="text-2xl font-bold text-neutral mb-6 text-center">
-        {t('booking_style_title')}
-      </h2>
-
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-        {STYLE_OPTIONS.map(style => {
-          const isAvailable = !style.value || stylesAvailable.includes(style.value);
-
-          return (
-            <button
-              key={style.value}
-              onClick={() => handleStyleSelect(style.value)}
-              disabled={!isAvailable && style.value !== ''}
-              className={`
-                relative group p-4 rounded-2xl border-2 transition-all duration-300
-                transform hover:scale-105 hover:-translate-y-1
-                ${
-                  isAvailable || !style.value
-                    ? 'border-white/20 hover:border-primary-accent/50 bg-white/5 hover:bg-white/10'
-                    : 'border-white/10 bg-white/5 opacity-50 cursor-not-allowed'
-                }
-              `}
-              style={{
-                boxShadow: isAvailable ? `0 4px 20px ${style.color}20` : 'none',
-              }}
-            >
-              {/* 3D Glow effect */}
-              <div
-                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
-                style={{
-                  background: `radial-gradient(circle at center, ${style.color}30 0%, transparent 70%)`,
-                  filter: 'blur(20px)',
-                  transform: 'translateZ(-10px)',
-                }}
-              />
-
-              <div
-                className="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center"
-                style={{ backgroundColor: `${style.color}30` }}
-              >
-                <div className="w-6 h-6 rounded-full" style={{ backgroundColor: style.color }} />
-              </div>
-
-              <span className="text-sm font-semibold text-neutral block">
-                {style.labelKey ? t(style.labelKey) : style.label}
-              </span>
-            </button>
-          );
-        })}
-      </div>
-    </div>
-  );
-
   const renderClassStep = () => (
     <div className="animate-fade-in">
-      <button
-        onClick={handleBack}
-        className="flex items-center gap-2 text-neutral/60 hover:text-neutral mb-4 transition-colors"
-      >
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-        {t('booking_step1')}
-      </button>
-
       <h2 className="text-2xl font-bold text-neutral mb-4">{t('booking_class_title')}</h2>
 
       {/* Week Navigation */}
@@ -1125,8 +1183,74 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
         </button>
       </div>
 
-      {/* Advanced Filters */}
+      {/* Filters */}
       <div className="flex flex-wrap gap-2 mb-4">
+        {/* Style Filter */}
+        <div className="relative">
+          <button
+            onClick={() => setOpenDropdown(openDropdown === 'style' ? null : 'style')}
+            className={`flex items-center gap-2 px-3 py-2 rounded-xl border text-sm transition-all ${
+              selectedStyle
+                ? 'bg-primary-accent/20 border-primary-accent text-neutral'
+                : 'bg-white/5 border-white/20 text-neutral/70 hover:border-white/40'
+            }`}
+          >
+            <div
+              className="w-3 h-3 rounded-full"
+              style={{
+                backgroundColor: selectedStyle
+                  ? STYLE_OPTIONS.find(s => s.value === selectedStyle)?.color || '#B01E3C'
+                  : '#B01E3C',
+              }}
+            />
+            {t('booking_filter_style')}
+            <svg
+              className={`w-3 h-3 transition-transform ${openDropdown === 'style' ? 'rotate-180' : ''}`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          {openDropdown === 'style' && (
+            <div className="absolute z-20 top-full mt-1 left-0 min-w-[160px] bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-xl overflow-hidden max-h-[300px] overflow-y-auto">
+              {STYLE_OPTIONS.map(opt => (
+                <button
+                  key={opt.value}
+                  onClick={() => {
+                    setSelectedStyle(opt.value);
+                    setOpenDropdown(null);
+                    // Auto-navigate to week with next class for this style
+                    if (opt.value) {
+                      const classesForStyle = import.meta.env.DEV
+                        ? MOCK_CLASSES.filter(c => c.style === opt.value)
+                        : [];
+                      if (classesForStyle.length > 0) {
+                        const nextOffset = findNextClassWeekOffset(classesForStyle);
+                        setWeekOffset(nextOffset);
+                      }
+                    }
+                  }}
+                  className={`w-full px-4 py-2 text-left text-sm transition-colors flex items-center gap-2 ${
+                    selectedStyle === opt.value
+                      ? 'bg-primary-accent/20 text-primary-accent'
+                      : 'text-neutral/80 hover:bg-white/10'
+                  }`}
+                >
+                  <div className="w-3 h-3 rounded-full" style={{ backgroundColor: opt.color }} />
+                  {opt.labelKey ? t(opt.labelKey) : opt.label}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
         {/* Level Filter */}
         <div className="relative">
           <button
@@ -1434,12 +1558,24 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
                       {classItem.time}
                     </span>
                     <span className="text-neutral/50">{formatDuration(classItem.duration)}</span>
-                    {classItem.instructor && (
-                      <span className="flex items-center gap-1">
-                        <UserIcon className="w-4 h-4" />
-                        {classItem.instructor}
-                      </span>
-                    )}
+                    {classItem.instructor &&
+                      (findTeacherRegistryId(classItem.instructor) ? (
+                        <button
+                          onClick={e => handleOpenTeacherModal(e, classItem.instructor)}
+                          className="flex items-center gap-1 text-primary-accent hover:text-primary-accent/80 transition-colors"
+                          title={t('booking_teacher_view_profile')}
+                        >
+                          <UserIcon className="w-4 h-4" />
+                          <span className="underline underline-offset-2">
+                            {classItem.instructor}
+                          </span>
+                        </button>
+                      ) : (
+                        <span className="flex items-center gap-1">
+                          <UserIcon className="w-4 h-4" />
+                          {classItem.instructor}
+                        </span>
+                      ))}
                   </div>
                 </div>
 
@@ -1596,37 +1732,34 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
             'acceptsTerms',
             <>
               {t('booking_consent_terms')}{' '}
-              <Link
-                to={`/${locale}/condiciones-generales`}
+              <button
+                type="button"
+                onClick={() => setTermsModalOpen(true)}
                 className="text-primary-accent hover:underline"
-                target="_blank"
               >
                 {t('booking_consent_terms_link')}
-              </Link>
+              </button>
             </>
           )}
-
-          {/* Marketing */}
-          {renderCheckbox('acceptsMarketing', t('booking_consent_marketing'))}
+          <p className="text-[10px] text-neutral/40 ml-6 -mt-1">
+            {t('booking_consent_terms_note')}
+          </p>
 
           {/* Age */}
           {renderCheckbox('acceptsAge', t('booking_consent_age'))}
-
-          {/* No Refund */}
-          {renderCheckbox('acceptsNoRefund', t('booking_consent_norefund'))}
 
           {/* Privacy */}
           {renderCheckbox(
             'acceptsPrivacy',
             <>
               {t('booking_consent_privacy')}{' '}
-              <Link
-                to={`/${locale}/politica-privacidad`}
+              <button
+                type="button"
+                onClick={() => setPrivacyModalOpen(true)}
                 className="text-primary-accent hover:underline"
-                target="_blank"
               >
                 {t('booking_consent_privacy_link')}
-              </Link>
+              </button>
             </>
           )}
 
@@ -1636,9 +1769,6 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
               {renderCheckbox('acceptsHeels', t('booking_consent_heels'))}
             </div>
           )}
-
-          {/* Image (optional) */}
-          {renderCheckbox('acceptsImage', t('booking_consent_image'), false)}
         </div>
 
         {/* Error message */}
@@ -1670,12 +1800,13 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
             {t('booking_legal_responsible')} {t('booking_legal_purpose')}{' '}
             {t('booking_legal_legitimation')} {t('booking_legal_recipients')}{' '}
             {t('booking_legal_rights')}{' '}
-            <Link
-              to={`/${locale}/politica-privacidad`}
+            <button
+              type="button"
+              onClick={() => setPrivacyModalOpen(true)}
               className="text-primary-accent/70 hover:text-primary-accent"
             >
               {t('booking_legal_info')}
-            </Link>
+            </button>
           </p>
         </div>
       </form>
@@ -1686,8 +1817,8 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
     <div className="animate-fade-in text-center py-8">
       {/* Success icon with 3D effect */}
       <div className="relative inline-block mb-6">
-        <div className="absolute inset-0 bg-green-500/30 rounded-full blur-xl animate-pulse" />
-        <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center transform hover:scale-110 transition-transform">
+        <div className="absolute inset-0 bg-primary-accent/30 rounded-full blur-xl animate-pulse" />
+        <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-primary-accent to-primary-dark flex items-center justify-center transform hover:scale-110 transition-transform">
           <CheckIcon className="w-10 h-10 text-white" />
         </div>
       </div>
@@ -1748,7 +1879,8 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
         </div>
       )}
 
-      <p className="text-sm text-neutral/60 mb-6">{t('booking_success_reminder')}</p>
+      <p className="text-sm text-neutral/60 mb-2">{t('booking_success_reminder')}</p>
+      <p className="text-xs text-neutral/40 italic mb-6">{t('booking_success_lang_note')}</p>
 
       <Link
         to={`/${locale}/horarios`}
@@ -1800,6 +1932,34 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
         {/* Decorative gradient line */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-accent to-transparent" />
 
+        {/* Language selector - top right, small and discrete */}
+        <div className="flex justify-end mb-4">
+          <div className="flex items-center gap-0.5 bg-white/5 rounded-lg p-1">
+            {(['es', 'ca', 'en', 'fr'] as const).map(lang => (
+              <button
+                key={lang}
+                onClick={() => handleLanguageChange(lang)}
+                className={`px-2 py-1 text-xs font-medium rounded-md transition-all ${
+                  locale === lang
+                    ? 'bg-primary-accent text-white'
+                    : 'text-neutral/40 hover:text-neutral hover:bg-white/10'
+                }`}
+                title={
+                  lang === 'es'
+                    ? 'Español'
+                    : lang === 'ca'
+                      ? 'Català'
+                      : lang === 'en'
+                        ? 'English'
+                        : 'Français'
+                }
+              >
+                {lang.toUpperCase()}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* Header */}
         <div className="text-center mb-6">
           <h1 className="text-2xl md:text-3xl font-black text-neutral mb-2">
@@ -1818,7 +1978,6 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
           renderErrorStep()
         ) : (
           <>
-            {step === 'style' && renderStyleStep()}
             {step === 'class' && renderClassStep()}
             {step === 'form' && renderFormStep()}
           </>
@@ -1890,6 +2049,123 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
           </div>
         </div>
       )}
+
+      {/* Teacher Modal */}
+      {teacherModalId && TEACHER_REGISTRY[teacherModalId] && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+          onClick={handleCloseTeacherModal}
+        >
+          <div
+            className="relative bg-neutral-900 border border-white/10 rounded-2xl p-6 max-w-md w-full animate-fade-in"
+            onClick={e => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={handleCloseTeacherModal}
+              className="absolute top-4 right-4 p-1 rounded-full text-neutral/50 hover:text-neutral hover:bg-white/10 transition-all"
+              aria-label={t('booking_modal_close')}
+            >
+              <XMarkIcon className="w-5 h-5" />
+            </button>
+
+            {/* Teacher photo */}
+            <div className="flex justify-center mb-4">
+              <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-primary-accent/30">
+                <img
+                  src={getTeacherImagePath(teacherModalId, 320)}
+                  alt={TEACHER_REGISTRY[teacherModalId].name}
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: 'center 20%' }}
+                />
+              </div>
+            </div>
+
+            {/* Teacher name */}
+            <h3 className="text-xl font-bold text-neutral text-center mb-2">
+              {TEACHER_REGISTRY[teacherModalId].name}
+            </h3>
+
+            {/* Tags/badges */}
+            <div className="flex flex-wrap justify-center gap-2 mb-4">
+              {TEACHER_REGISTRY[teacherModalId].meta?.isDirector && (
+                <span className="px-3 py-1 rounded-full text-xs font-medium bg-amber-500/20 text-amber-400">
+                  {t('booking_teacher_director')}
+                </span>
+              )}
+              {TEACHER_REGISTRY[teacherModalId].meta?.origin && (
+                <span className="px-3 py-1 rounded-full text-xs font-medium bg-primary-accent/20 text-primary-accent">
+                  {TEACHER_REGISTRY[teacherModalId].meta?.origin}
+                </span>
+              )}
+              {TEACHER_REGISTRY[teacherModalId].meta?.yearsExperience && (
+                <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-neutral/70">
+                  {TEACHER_REGISTRY[teacherModalId].meta?.yearsExperience}+{' '}
+                  {t('booking_teacher_years')}
+                </span>
+              )}
+            </div>
+
+            {/* Certifications */}
+            {TEACHER_REGISTRY[teacherModalId].meta?.certifications && (
+              <div className="mb-4">
+                <p className="text-xs text-neutral/50 text-center mb-2">
+                  {t('booking_teacher_certifications')}
+                </p>
+                <div className="flex flex-wrap justify-center gap-1">
+                  {TEACHER_REGISTRY[teacherModalId].meta?.certifications?.map((cert, idx) => (
+                    <span
+                      key={idx}
+                      className="px-2 py-0.5 rounded text-xs bg-white/5 text-neutral/60"
+                    >
+                      {cert}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Bio */}
+            <p className="text-neutral/80 text-sm leading-relaxed text-center mb-6">
+              {t(TEACHER_REGISTRY[teacherModalId].canonicalBioKey)}
+            </p>
+
+            {/* Styles taught */}
+            <div className="mb-4">
+              <p className="text-xs text-neutral/50 text-center mb-2">
+                {t('booking_teacher_teaches')}
+              </p>
+              <div className="flex flex-wrap justify-center gap-1">
+                {TEACHER_REGISTRY[teacherModalId].teachesStyles.slice(0, 5).map(style => (
+                  <span
+                    key={style}
+                    className="px-2 py-0.5 rounded text-xs bg-primary-accent/10 text-primary-accent/80 capitalize"
+                  >
+                    {style.replace(/-/g, ' ')}
+                  </span>
+                ))}
+                {TEACHER_REGISTRY[teacherModalId].teachesStyles.length > 5 && (
+                  <span className="px-2 py-0.5 rounded text-xs bg-white/5 text-neutral/50">
+                    +{TEACHER_REGISTRY[teacherModalId].teachesStyles.length - 5}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {/* Close button */}
+            <button
+              onClick={handleCloseTeacherModal}
+              className="w-full py-3 bg-white/10 text-neutral font-semibold rounded-xl hover:bg-white/20 transition-colors"
+            >
+              {t('booking_modal_close')}
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Terms and Privacy Modals */}
+      <TermsModal isOpen={termsModalOpen} onClose={() => setTermsModalOpen(false)} />
+      <PrivacyModal isOpen={privacyModalOpen} onClose={() => setPrivacyModalOpen(false)} />
     </div>
   );
 });

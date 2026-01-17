@@ -15,6 +15,14 @@ export const ca = {
   viewSchedule: 'Veure Horaris',
   bookNow: 'Reservar Ara',
   bookTrialClass: 'Reserva la teva Classe de Benvinguda',
+  // StatsBar
+  statsbar_reviews: '509+ ressenyes',
+  statsbar_certified: 'Centre Certificat',
+  statsbar_members: 'Socis Actius',
+  statsbar_space: 'Instal·lacions',
+  statsbar_styles: 'Estils',
+  statsbar_years: 'a Barcelona',
+
   nearbyAreasTitle: 'Zones Properes',
   trustStats: 'Estadístiques de Confiança',
   classesPerSession: 'classes per sessió',
@@ -88,18 +96,17 @@ export const ca = {
   happinessStoryLine4Part2: 'vam decidir crear-la. I està funcionant.',
   happinessStoryLine5: 'Com no sabíem que era impossible, simplement ho vam fer.',
   happinessStoryPara1Part1:
-    "No sabíem que era impossible aixecar-la en un local abandonat durant 10 anys. Tampoc sabíem que era mala idea reformar-lo a mà, sense pressupost—només amb Yunaisy, Fábio, amics, professors i una brigada improvisada. No sabíem res de \"l'impossible\". Així que simplement ho vam fer. Perquè Farray's no va néixer d'un pla de negoci.",
-  happinessStoryPara1Part2: "Va néixer d'una història d'amor.",
-  happinessStoryPara2:
-    "De l'amor entre Yunaisy i Fábio, de l'amor per la dansa i de l'amor per la gent. Per això, quan diem que aquí es respira família, no és un eslògan—és veritat.",
+    'No sabíem res de "l\'impossible". Així que simplement ho vam fer. Perquè no va néixer d\'un pla de negoci.',
+  happinessStoryPara1Part2: "Va néixer d'un somni.",
+  happinessStoryPara2: '',
   happinessStoryPara3Part1: 'Avui, aquest somni es diu',
   happinessStoryPara3Part2: "Farray's International Dance Center",
-  happinessStoryPara3Part3: ', una acadèmia multidisciplinària reconeguda pel',
+  happinessStoryPara3Part3: ', un centre esportiu i formatiu reconegut pel',
   happinessStoryPara3Part4: 'CID-UNESCO',
   happinessStoryPara3Part5: ', dirigida per',
   happinessStoryPara3Part6: 'Yunaisy Farray',
   happinessStoryPara3Part7:
-    "—ballarina, mestra internacional i ànima d'aquesta casa—on cada alumne importa, cada història compta i cada moment t'acosta a la millor versió de tu mateix.",
+    "—ballarina, mestra internacional i motor d'aquesta casa—on cada alumne importa, cada història compta i cada moment t'acosta a la millor versió de tu mateix.",
   happinessStoryPara4:
     "Un lloc que no vam copiar d'enlloc. Un lloc que no existia… fins que el vam construir.",
   // About
@@ -168,7 +175,8 @@ export const ca = {
   // Services
   servicesTitle: 'Serveis Addicionals',
   servicesIntro:
-    'A Farray’s International Dance Center oferim molt més que classes de ball. Descobreix tots els serveis que posem a la teva disposició per ajudar-te a crear, celebrar i créixer ballant.',
+    "A Farray's International Dance Center oferim molt més que classes de ball. Descobreix tots els serveis que posem a la teva disposició per ajudar-te a crear, celebrar i créixer ballant.",
+  servicesViewAll: 'Veure tots els serveis',
   serviceRentalTitle: 'Lloguer de Sales',
   serviceRentalDesc:
     'Sales àmplies i equipades per a assajos, classes i esdeveniments privats al cor de Barcelona.',
@@ -2555,6 +2563,12 @@ export const ca = {
   serviciosBaile_cat_training_desc: 'Classes a mida i experiències úniques',
   serviciosBaile_cat_professional: 'Professionals i Empreses',
   serviciosBaile_cat_professional_desc: 'Talent, esdeveniments i solucions corporatives',
+  serviciosBaile_cat_merchandising: 'Botiga Oficial',
+  serviciosBaile_cat_merchandising_desc: "Productes exclusius de l'acadèmia",
+
+  // Servicios Baile - Table
+  serviciosBaile_table_service: 'Servei',
+  serviciosBaile_table_ideal: 'Ideal per a',
 
   // Servicios Baile - Why Section
   serviciosBaile_why_title: "Per què triar Farray's per als teus serveis de ball?",
@@ -2924,7 +2938,7 @@ export const ca = {
   metodoFarray_results_title: 'Resultats que Parlen',
   metodoFarray_stats_students: 'Alumnes formats',
   metodoFarray_stats_years: 'Anys perfeccionant el mètode',
-  metodoFarray_stats_rating: 'Valoració a Google (505+ ressenyes)',
+  metodoFarray_stats_rating: 'Valoració a Google (509+ ressenyes)',
   metodoFarray_stats_styles: 'Estils de ball disponibles',
 
   metodoFarray_featured_quote:
@@ -3975,6 +3989,8 @@ Aquesta fusió incorpora:
   // Teachers Section
   rcbTeachersTitle: 'Coneix els teus mestres de Reparto',
   rcbTeachersSubtitle: "Cubans de naixement, formats a l'ENA i referents a Barcelona",
+  rcbTeachersClosing:
+    'Amb Charlie i Alejandro no només aprens a ballar Reparto: descobreixes el sabor autèntic que només els cubans poden transmetre.',
   rcbScheduleTitle: 'Horaris de Classes de Reggaeton Cubà',
   rcbScheduleSubtitle: 'Classes setmanals amb mestres cubans autèntics',
   rcbTeacher1Bio:
@@ -4713,6 +4729,8 @@ Al llarg de més d'una dècada, Femmology ha transformat la vida de milers de do
   // Teachers Section
   sexystyleTeachersTitle: 'Coneix la teva instructora de Sexy Style',
   sexystyleTeachersSubtitle: 'Especialista en expressió corporal i sensualitat',
+  sexystyleTeachersClosing:
+    "Amb Yasmina no només aprens a ballar Sexy Style: descobreixes una nova forma d'habitar el teu cos.",
   sexystyleScheduleTitle: 'Horaris de Classes de Sexy Style',
   sexystyleScheduleSubtitle: 'Classes setmanals amb Yasmina Fernández',
   sexystyleWhyTodayFullTitle: 'Per què començar Sexy Style avui i no "quan em senti preparada"?',
@@ -4968,6 +4986,8 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colòmbia), J Balv
   // Teachers Section
   sxrTeachersTitle: 'Coneix la teva instructora de Sexy Reggaeton',
   sxrTeachersSubtitle: "Experta en danses urbanes sensuals amb més de 8 anys d'experiència",
+  sxrTeachersClosing:
+    'Amb Yasmina no només aprens a ballar Sexy Reggaeton: descobreixes una forma de connectar amb la teva feminitat i el teu poder sense demanar permís.',
   sxrScheduleTitle: 'Horaris de Classes de Sexy Reggaeton',
   sxrScheduleSubtitle: 'Classes setmanals amb instructores especialitzades',
   sxrWhyTodayFullTitle: 'Per què començar Sexy Reggaeton avui i no "quan em senti preparada"?',
@@ -5575,6 +5595,8 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
   // ===== Teachers Section =====
   balletTeachersTitle: 'Coneix els teus professors de Ballet',
   balletTeachersSubtitle: 'Escola Cubana, experiència internacional',
+  balletTeachersClosing:
+    'Dos mestres, dos enfocaments complementaris. Daniel per al nivell intermedi i avançat, Alejandro per als principiants. La combinació perfecta per a la teva formació en ballet.',
   balletScheduleTitle: 'Horaris de Classes de Ballet',
   balletScheduleSubtitle: "Classes diàries amb mestres de l'Escola Cubana",
   balletWhyTodayFullTitle: 'Per què començar ballet avui i no "quan tingui temps"?',
@@ -6736,6 +6758,8 @@ L'Afro Contemporani impartit a **Farray's International Dance Center** forma par
   // Teachers Section
   afrocontemporaneoTeachersTitle: "Els teus mestres d'Afro Contemporani",
   afrocontemporaneoTeachersSubtitle: "Formació directa de l'Escola Nacional d'Art de Cuba",
+  afrocontemporaneoTeachersClosing:
+    "Amb els nostres mestres cubans no només aprens Afro Contemporani: accedeixes a la metodologia original de l'Escola Nacional d'Art de Cuba.",
   afrocontemporaneoScheduleTitle: "Horaris de Classes d'Afro Contemporani",
   afrocontemporaneoScheduleSubtitle: "Classes setmanals amb mestres formats a l'ENA de Cuba",
   afrocontemporaneoTeacher1Bio:
@@ -7840,7 +7864,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   salsaLadyStatMinutes: 'minuts',
   salsaLadyStatCalories: 'calories',
   salsaLadyStatElegance: 'Elegància',
-  salsaLadyStatReviewCount: '505+ ressenyes',
+  salsaLadyStatReviewCount: '509+ ressenyes',
   salsaLadyStatStudents: '+15.000 estudiants formats',
   salsaLadyStatYears: '8 anys a Barcelona',
   // Schedule class names
@@ -16365,6 +16389,8 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   cuerpofitLevelOpenDesc: `Classe adaptable a tots els nivells. Cada exercici té variacions des de principiant fins a avançat. Cris et guia segons el teu nivell actual, assegurant que treballis a la teva zona de desenvolupament òptim sense risc de lesió.`,
   cuerpofitTeachersTitle: `La teva Professora de Body Conditioning`,
   cuerpofitTeachersSubtitle: `Especialista en condicionament per a ballarins`,
+  cuerpofitTeachersClosing:
+    "A Farray's Center, el condicionament físic no és un complement: és la base de la teva evolució com a ballarí.",
   cuerpofitScheduleTitle: 'Horaris de Classes de Body Conditioning',
   cuerpofitScheduleSubtitle: "Classes setmanals d'acondicionament físic",
   cuerpofitWhyChoose2Title: `Enfocament en Prevenció de Lesions`,
@@ -17009,7 +17035,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   fbLandingTestimonial2Text: `Vaig venir sol i amb vergonya. Ara tinc un grup d'amics ballarins i vaig a socials cada setmana. Millor decisió de l'any.`,
   fbLandingTestimonial3Name: `Laura, 42 anys`,
   fbLandingTestimonial3Text: `Després d'anys volent-ho i no atrevint-me, finalment ho vaig fer. L'ambient és tan bo que em vaig oblidar que tenia vergonya.`,
-  fbLandingGoogleReviews: `505+ ressenyes a Google`,
+  fbLandingGoogleReviews: `509+ ressenyes a Google`,
   fbLandingTransformCTA: `VULL AQUESTA TRANSFORMACIÓ`,
   fbLandingFaqTitle: `Potser et preguntes...`,
   fbLandingFaq1Q: `"No sé ballar res, sóc molt principiant"`,
@@ -17353,8 +17379,8 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   homev2_compRow2Others: `Vas a classe, però avances?`,
   homev2_compRow2Us: `Saps exactament en quin punt estàs`,
   homev2_compRow3Label: `Professors`,
-  homev2_compRow3Others: `Monitors amb curs online`,
-  homev2_compRow3Us: `Mestres formats a acadèmies d'elit`,
+  homev2_compRow3Others: `Alta rotació de professors`,
+  homev2_compRow3Us: `Equip estable amb formació contínua`,
   homev2_compRow4Label: `Instal·lacions`,
   homev2_compRow4Others: `Locals adaptats, terra genèric`,
   homev2_compRow4Us: `700m² amb terra professional i climatització`,
@@ -17370,8 +17396,14 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   homev2_compRow8Label: `Resultats`,
   homev2_compRow8Others: `"Depèn de tu..."`,
   homev2_compRow8Us: `Progrés mesurable classe a classe`,
-  homev2_comparisonCta: `Comprova-ho tu mateix`,
-  homev2_comparisonCtaSubtext: `Classe de benvinguda sense compromís`,
+  homev2_compRow9Label: `Serietat`,
+  homev2_compRow9Others: `Situació laboral variable`,
+  homev2_compRow9Us: `Equip amb contracte i drets laborals`,
+  homev2_compRow10Label: `Enfocament`,
+  homev2_compRow10Others: `Només ensenyen a memoritzar passos i coreografies`,
+  homev2_compRow10Us: `T'ensenyem a entendre el moviment`,
+  homev2_comparisonCta: `Descobreix Com Començar`,
+  homev2_comparisonCtaSubtext: `Reserva la teva Classe de Benvinguda`,
   homev2_styleFinderTitle: `25+ estils. Un mètode. El teu viatge.`,
   homev2_styleFinderSubtitle: `Què et motiva a ballar? Troba el teu camí.`,
   homev2_persona1Title: `Vull sentir-me poderosa`,
@@ -17387,7 +17419,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   homev2_persona4Desc: `Fitness dancístic que crema calories mentre et diverteixes. Millora la teva condició física.`,
   homev2_persona4Cta: `Explorar fitness dansa`,
   homev2_styleFinderViewAll: `Veure tots els 25+ estils`,
-  homev2_socialProofTitle: `El que diuen 505 persones que ja han ballat aquí`,
+  homev2_socialProofTitle: `El que diuen 509 persones que ja han ballat aquí`,
   homev2_stat1Label: `alumnes actius`,
   homev2_stat2Label: `anys d\'experiència`,
   homev2_stat3Label: `estils de ball`,
@@ -18748,6 +18780,11 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_modal_close: 'Tancar',
   booking_modal_select: 'Reservar aquesta classe',
   booking_modal_no_description: 'No hi ha descripció disponible per a aquesta classe.',
+  booking_teacher_view_profile: 'Veure perfil del professor',
+  booking_teacher_director: 'Directora',
+  booking_teacher_years: 'anys',
+  booking_teacher_certifications: 'Formació',
+  booking_teacher_teaches: 'Estils que imparteix',
   booking_info_day: 'Dia',
   booking_info_time: 'Hora',
   booking_info_instructor: 'Professor',
@@ -18803,28 +18840,22 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_field_firstName: 'Nom',
   booking_field_lastName: 'Cognoms',
   booking_field_email: 'Email',
-  booking_field_phone: 'Telèfon',
+  booking_field_phone: 'WhatsApp',
   booking_placeholder_firstName: 'El teu nom',
   booking_placeholder_lastName: 'Els teus cognoms',
   booking_placeholder_email: 'tu@email.com',
   booking_placeholder_phone: '+34 612 345 678',
 
   // RGPD Checkboxes - Mandatory
-  booking_consent_terms: 'He llegit i accepto les',
+  booking_consent_terms: 'Accepto les',
   booking_consent_terms_link: 'condicions generals',
   booking_consent_terms_required: "Has d'acceptar les condicions generals",
-
-  booking_consent_marketing:
-    "Autoritzo l'enviament de comunicacions comercials sobre activitats, promocions i novetats",
-  booking_consent_marketing_required: "Has d'autoritzar les comunicacions per continuar",
+  booking_consent_terms_note:
+    "(Inclou confirmació de reserva i recordatoris per WhatsApp/email, i possible ús d'imatge en material promocional. Per no aparèixer en fotos/vídeos, avisa a recepció o escriu a info@farrayscenter.com)",
 
   booking_consent_age:
     'Confirmo que tinc 16 anys o més, o compto amb autorització del meu tutor legal',
   booking_consent_age_required: 'Has de confirmar la teva edat per continuar',
-
-  booking_consent_norefund:
-    "Entenc que la classe de benvinguda no és reemborsable un cop confirmada l'assistència",
-  booking_consent_norefund_required: "Has d'acceptar la política de no reemborsament",
 
   booking_consent_privacy: 'He llegit i accepto la',
   booking_consent_privacy_link: 'política de privacitat',
@@ -18834,12 +18865,6 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_consent_heels:
     'Comprenc i accepto que aquesta classe es realitza amb talons alts. Em comprometo a utilitzar calçat adequat i assumeixo la responsabilitat de la meva seguretat',
   booking_consent_heels_required: "Has d'acceptar les condicions d'ús de talons",
-
-  // RGPD Checkboxes - Optional
-  booking_consent_image:
-    "Autoritzo l'ús de la meva imatge en fotos i vídeos realitzats durant les classes per a fins promocionals a xarxes socials i web",
-  booking_consent_image_optional: '(Opcional)',
-  booking_consent_optional: '(opcional)',
 
   // Submit
   booking_submit: 'Confirmar Reserva',
@@ -18854,6 +18879,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_success_location: 'Ubicació',
   booking_success_address: "Farray's Center - C/ Mallorca 179, Barcelona",
   booking_success_reminder: 'Et recordarem 24h abans de la classe',
+  booking_success_lang_note: "Els missatges de confirmació i recordatori s'envien en castellà",
   booking_success_cta: 'Veure horaris complets',
   booking_success_close: 'Tancar',
 
@@ -18887,4 +18913,46 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_legal_rights:
     'Drets: Accés, rectificació, supressió, limitació, portabilitat i oposició.',
   booking_legal_info: 'Més informació a la nostra política de privacitat.',
+
+  // ============================================================================
+  // Terms and Conditions Modal
+  // ============================================================================
+  terms_modal_title: 'Termes i Condicions',
+  terms_item_1:
+    "Només es pot provar una classe de benvinguda d'un únic estil. Això significa que pots fer una sola classe en total, no una classe gratuïta per cada estil.",
+  terms_item_2:
+    'La classe de benvinguda està destinada únicament a persones que resideixen a Barcelona o als seus voltants. Si només estàs de visita a Barcelona com a turista o no resideixes en aquesta àrea, hauràs de pagar les classes que facis.',
+  terms_item_3:
+    "És important ser puntual per no perdre l'escalfament, sobretot a les classes de dansa i fitness.",
+  terms_item_4:
+    'És obligatori respectar el nivell de les classes. En cas contrari, ens reservem el dret de sol·licitar que abandonis la classe.',
+  terms_item_5:
+    "Cuida les teves pertinences personals. L'acadèmia no es fa responsable dels objectes extraviats, oblidats o robats.",
+  terms_item_6:
+    "Si tens alguna pregunta o necessites més informació, envia'ns un correu a info@farrayscenter.com i et respondrem el més aviat possible.",
+  terms_contact_info: 'Tens dubtes? Escriu-nos a',
+  terms_understood: 'Entès',
+
+  // ============================================================================
+  // Privacy Policy Modal
+  // ============================================================================
+  privacy_modal_title: 'Política de Privacitat',
+  privacy_data_controller: 'Responsables del tractament',
+  privacy_data_controller_text:
+    "Segons el servei, el responsable pot ser: Farray's Dance & Fitness, S.L. (NIF: B67004812) per a la web, merchandising i serveis; o Club Esportiu Farray Barcelona (NIF: G67317701) per a activitats esportives i gestió de socis.",
+  privacy_data_collected: 'Dades que tractem',
+  privacy_data_collected_text:
+    "Dades identificatives i de contacte (nom, email, telèfon), dades d'activitat (reserves, assistències), dades tècniques (IP, cookies segons la teva configuració) i imatges/vídeos si consents.",
+  privacy_purposes: 'Finalitats',
+  privacy_purposes_text:
+    'Gestionar la teva reserva, alta com a soci, comunicacions operatives (horaris, avisos), i comunicacions comercials només si ho autoritzes expressament.',
+  privacy_image_rights: 'Imatges i vídeos',
+  privacy_image_rights_text:
+    'En activitats poden captar-se imatges/vídeos amb fins promocionals. Pots retirar el consentiment escrivint a info@farrayscenter.com.',
+  privacy_user_rights: 'Els teus drets',
+  privacy_user_rights_text:
+    'Pots exercir accés, rectificació, supressió, oposició, limitació i portabilitat escrivint a info@farrayscenter.com amb assumpte "Protecció de dades – Drets".',
+  privacy_full_policy_url: 'Política completa a:',
+  privacy_full_policy_link: 'https://farrayscenter.com/politica-de-privacidad/',
+  privacy_understood: 'Entès',
 };
