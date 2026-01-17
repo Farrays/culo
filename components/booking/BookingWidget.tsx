@@ -1883,7 +1883,7 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
       <p className="text-xs text-neutral/40 italic mb-6">{t('booking_success_lang_note')}</p>
 
       <Link
-        to={`/${locale}/horarios`}
+        to={`/${locale}/clases/baile-barcelona`}
         className="inline-block px-6 py-3 bg-primary-accent text-white font-semibold rounded-xl hover:bg-primary-accent/90 transition-colors"
       >
         {t('booking_success_cta')}

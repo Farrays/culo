@@ -121,7 +121,9 @@ export const es = {
   aboutTitle: "Yunaisy Farray: El Alma de Farray\'s Center",
   aboutSubtitle: 'Arte, Rigor y Pasión',
   aboutBio:
-    'Con más de dos décadas como artista global y maestra educadora, Yunaisy Farray se ha consolidado como un referente internacional de la danza. Su formación en la prestigiosa Escuela Nacional de Arte de Cuba (ENA) le inculcó una fusión única de disciplina rusa y los ritmos y el sabor de los bailarines afrodescendientes. Ha participado en la taquillera película “Street Dance 2” y cautivó a millones en las finales de “Got Talent”. Además, ha colaborado en diferentes programas de televisión, como “The Dancer”, y cuenta con innumerables participaciones en diversos ámbitos del espectáculo.\n\nComo miembro del CID‑UNESCO y creadora del exclusivo Método Farray®, Yunaisy dirige una escuela que combina rigor, creatividad y resultados rápidos en un ambiente familiar e inclusivo.\n\nSu experiencia transforma cada clase en un viaje cultural y emocional, garantizando una formación de élite para bailarines de todos los niveles.',
+    'Con más de dos décadas como artista global y maestra educadora, Yunaisy Farray se ha consolidado como un referente internacional de la danza. Su formación en la prestigiosa Escuela Nacional de Arte de Cuba (ENA) le inculcó una fusión única de disciplina rusa y los ritmos y el sabor de los bailarines afrodescendientes. Ha participado en la taquillera película "Street Dance 2" y cautivó a millones en las finales de "Got Talent". Además, ha colaborado en diferentes programas de televisión, como "The Dancer", y cuenta con innumerables participaciones en diversos ámbitos del espectáculo.\n\nComo miembro del CID‑UNESCO y creadora del exclusivo Método Farray®, Yunaisy dirige una escuela que combina rigor, creatividad y resultados rápidos en un ambiente familiar e inclusivo.\n\nSu experiencia transforma cada clase en un viaje cultural y emocional, garantizando una formación de élite para bailarines de todos los niveles.',
+  aboutYunaisyPhotoAlt:
+    "Yunaisy Farray, bailarina y coreógrafa profesional, fundadora de Farray's International Dance Center en Barcelona",
   aboutMethodTitle: 'Método Farray®: el camino más rápido entre tú y tu mejor versión bailando.',
   aboutMethodPillar1Title: 'Disciplina y Rigor',
   aboutMethodPillar1Desc:
@@ -20252,7 +20254,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_success_address: "Farray's Center - C/ Mallorca 179, Barcelona",
   booking_success_reminder: 'Te recordaremos 24h antes de la clase',
   booking_success_lang_note: 'Los mensajes de confirmación y recordatorio se envían en español',
-  booking_success_cta: 'Ver horarios completos',
+  booking_success_cta: 'Ver todas las clases',
   booking_success_close: 'Cerrar',
 
   // Calendar Export
