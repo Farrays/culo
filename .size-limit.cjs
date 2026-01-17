@@ -8,25 +8,25 @@ module.exports = [
   {
     name: 'ES Locale Bundle',
     path: 'dist/assets/i18n-es-*.js',
-    limit: '340 KB', // Increased for teacher profiles, class configs, landing pages
+    limit: '350 KB', // Increased for booking system filters + translations
     gzip: true,
   },
   {
     name: 'EN Locale Bundle',
     path: 'dist/assets/i18n-en-*.js',
-    limit: '336 KB', // Increased for teacher profiles, class configs, landing pages
+    limit: '345 KB', // Increased for booking system filters + translations
     gzip: true,
   },
   {
     name: 'CA Locale Bundle',
     path: 'dist/assets/i18n-ca-*.js',
-    limit: '358 KB', // Increased for teacher profiles, class configs, landing pages
+    limit: '368 KB', // Increased for booking system filters + translations
     gzip: true,
   },
   {
     name: 'FR Locale Bundle',
     path: 'dist/assets/i18n-fr-*.js',
-    limit: '371 KB', // Increased for landing pages translations
+    limit: '385 KB', // Increased for booking system filters + translations
     gzip: true,
   },
   {
