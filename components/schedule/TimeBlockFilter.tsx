@@ -65,8 +65,8 @@ const PREMIUM_STYLE_CATEGORIES = [
     styles: ['Salsa', 'Bachata', 'Timba'],
     Icon: MusicalNoteIcon,
     anchorId: 'salsa-bachata',
-    color: 'text-rose-400',
-    bgColor: 'from-rose-500/10 to-rose-600/5',
+    color: 'text-brand-400',
+    bgColor: 'from-brand-600/10 to-brand-700/5',
   },
   {
     id: 'urbano' as CategoryKey,
@@ -83,8 +83,8 @@ const PREMIUM_STYLE_CATEGORIES = [
     styles: ['Stretching', 'Bum Bum'],
     Icon: HeartIcon,
     anchorId: 'mananas',
-    color: 'text-pink-400',
-    bgColor: 'from-pink-500/10 to-pink-600/5',
+    color: 'text-brand-400',
+    bgColor: 'from-brand-500/10 to-brand-600/5',
   },
 ];
 

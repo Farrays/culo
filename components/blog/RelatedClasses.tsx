@@ -329,7 +329,7 @@ const ClassCard: React.FC<ClassCardProps> = memo(
                        transition-all duration-500
                        [transform-style:preserve-3d]
                        hover:border-primary-accent hover:shadow-accent-glow
-                       hover:[transform:translateY(-0.5rem)_scale(1.02)]
+                       hover:[transform:translateY(-0.5rem)_scale(1.02)_rotateY(5deg)_rotateX(2deg)]
                        focus:outline-none focus:ring-2 focus:ring-primary-accent
                        focus:ring-offset-2 focus:ring-offset-black"
             aria-label={`${className} - ${ctaText}`}

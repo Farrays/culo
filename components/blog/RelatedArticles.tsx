@@ -39,14 +39,18 @@ const RelatedArticles: React.FC<RelatedArticlesProps> = ({ articles, className =
           const articleUrl = `/${locale}/blog/${article.category}/${article.slug}`;
 
           return (
-            <AnimateOnScroll key={article.slug} delay={index * 100}>
+            <AnimateOnScroll
+              key={article.slug}
+              delay={index * 100}
+              className="[perspective:1000px]"
+            >
               <Link
                 to={articleUrl}
                 className="group block h-full bg-black/50 backdrop-blur-md
                            border border-primary-dark/50 rounded-2xl overflow-hidden
-                           transition-all duration-500
-                           hover:border-primary-accent hover:shadow-accent-glow
-                           hover:-translate-y-2"
+                           transition-all duration-500 [transform-style:preserve-3d]
+                           hover:[transform:translateY(-0.5rem)_scale(1.02)_rotateY(5deg)_rotateX(2deg)]
+                           hover:border-primary-accent hover:shadow-accent-glow"
               >
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">

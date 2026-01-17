@@ -26,3 +26,8 @@ export { HISTORIA_BACHATA_CONFIG } from './articles/historia-bachata-barcelona';
 export { SALSA_RITMO_CONFIG } from './articles/salsa-ritmo-conquisto-mundo';
 export { CLASES_SALSA_BARCELONA_CONFIG } from './articles/clases-de-salsa-barcelona';
 export { CLASES_PRINCIPIANTES_CONFIG } from './articles/clases-baile-principiantes-barcelona';
+export { SALSA_VS_BACHATA_CONFIG } from './articles/salsa-vs-bachata';
+export { COMO_PERDER_MIEDO_BAILAR_CONFIG } from './articles/como-perder-miedo-bailar';
+
+// Template Enterprise (Reference - Do not use in production routes)
+export { TEMPLATE_ENTERPRISE_CONFIG } from './articles/_TEMPLATE_ENTERPRISE';

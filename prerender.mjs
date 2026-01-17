@@ -221,6 +221,7 @@ const routes = [
   { path: 'es/regala-baile', lang: 'es', page: 'regalaBaile' },
   { path: 'es/instalaciones', lang: 'es', page: 'facilities' },
   { path: 'es/contacto', lang: 'es', page: 'contact' },
+  { path: 'es/reservas', lang: 'es', page: 'reservas' },
   // Missing class pages
   { path: 'es/clases/afro-contemporaneo-barcelona', lang: 'es', page: 'afroContemporaneo' },
   { path: 'es/clases/afro-jazz', lang: 'es', page: 'afroJazz' },
@@ -286,6 +287,7 @@ const routes = [
   { path: 'ca/regala-baile', lang: 'ca', page: 'regalaBaile' },
   { path: 'ca/instalaciones', lang: 'ca', page: 'facilities' },
   { path: 'ca/contacto', lang: 'ca', page: 'contact' },
+  { path: 'ca/reservas', lang: 'ca', page: 'reservas' },
   // Missing class pages
   { path: 'ca/clases/afro-contemporaneo-barcelona', lang: 'ca', page: 'afroContemporaneo' },
   { path: 'ca/clases/afro-jazz', lang: 'ca', page: 'afroJazz' },
@@ -351,6 +353,7 @@ const routes = [
   { path: 'en/regala-baile', lang: 'en', page: 'regalaBaile' },
   { path: 'en/instalaciones', lang: 'en', page: 'facilities' },
   { path: 'en/contacto', lang: 'en', page: 'contact' },
+  { path: 'en/reservas', lang: 'en', page: 'reservas' },
   // Missing class pages
   { path: 'en/clases/afro-contemporaneo-barcelona', lang: 'en', page: 'afroContemporaneo' },
   { path: 'en/clases/afro-jazz', lang: 'en', page: 'afroJazz' },
@@ -416,6 +419,7 @@ const routes = [
   { path: 'fr/regala-baile', lang: 'fr', page: 'regalaBaile' },
   { path: 'fr/instalaciones', lang: 'fr', page: 'facilities' },
   { path: 'fr/contacto', lang: 'fr', page: 'contact' },
+  { path: 'fr/reservas', lang: 'fr', page: 'reservas' },
   // Missing class pages
   { path: 'fr/clases/afro-contemporaneo-barcelona', lang: 'fr', page: 'afroContemporaneo' },
   { path: 'fr/clases/afro-jazz', lang: 'fr', page: 'afroJazz' },
@@ -453,11 +457,13 @@ const routes = [
   { path: 'es/blog/lifestyle', lang: 'es', page: 'blogLifestyle' },
   { path: 'es/blog/lifestyle/beneficios-bailar-salsa', lang: 'es', page: 'blogBeneficiosSalsa' },
   { path: 'es/blog/lifestyle/clases-de-salsa-barcelona', lang: 'es', page: 'blogClasesSalsaBarcelona' },
+  { path: 'es/blog/lifestyle/como-perder-miedo-bailar', lang: 'es', page: 'blogPerderMiedoBailar' },
   { path: 'es/blog/historia', lang: 'es', page: 'blogHistoria' },
   { path: 'es/blog/historia/historia-salsa-barcelona', lang: 'es', page: 'blogHistoriaSalsa' },
   { path: 'es/blog/historia/historia-bachata-barcelona', lang: 'es', page: 'blogHistoriaBachata' },
   { path: 'es/blog/tutoriales', lang: 'es', page: 'blogTutoriales' },
   { path: 'es/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'es', page: 'blogSalsaRitmo' },
+  { path: 'es/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'es', page: 'blogSalsaVsBachata' },
   { path: 'es/blog/tips', lang: 'es', page: 'blogTips' },
   { path: 'es/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'es', page: 'blogClasesPrincipiantes' },
 
@@ -465,11 +471,13 @@ const routes = [
   { path: 'ca/blog/lifestyle', lang: 'ca', page: 'blogLifestyle' },
   { path: 'ca/blog/lifestyle/beneficios-bailar-salsa', lang: 'ca', page: 'blogBeneficiosSalsa' },
   { path: 'ca/blog/lifestyle/clases-de-salsa-barcelona', lang: 'ca', page: 'blogClasesSalsaBarcelona' },
+  { path: 'ca/blog/lifestyle/como-perder-miedo-bailar', lang: 'ca', page: 'blogPerderMiedoBailar' },
   { path: 'ca/blog/historia', lang: 'ca', page: 'blogHistoria' },
   { path: 'ca/blog/historia/historia-salsa-barcelona', lang: 'ca', page: 'blogHistoriaSalsa' },
   { path: 'ca/blog/historia/historia-bachata-barcelona', lang: 'ca', page: 'blogHistoriaBachata' },
   { path: 'ca/blog/tutoriales', lang: 'ca', page: 'blogTutoriales' },
   { path: 'ca/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'ca', page: 'blogSalsaRitmo' },
+  { path: 'ca/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'ca', page: 'blogSalsaVsBachata' },
   { path: 'ca/blog/tips', lang: 'ca', page: 'blogTips' },
   { path: 'ca/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'ca', page: 'blogClasesPrincipiantes' },
 
@@ -477,11 +485,13 @@ const routes = [
   { path: 'en/blog/lifestyle', lang: 'en', page: 'blogLifestyle' },
   { path: 'en/blog/lifestyle/beneficios-bailar-salsa', lang: 'en', page: 'blogBeneficiosSalsa' },
   { path: 'en/blog/lifestyle/clases-de-salsa-barcelona', lang: 'en', page: 'blogClasesSalsaBarcelona' },
+  { path: 'en/blog/lifestyle/como-perder-miedo-bailar', lang: 'en', page: 'blogPerderMiedoBailar' },
   { path: 'en/blog/historia', lang: 'en', page: 'blogHistoria' },
   { path: 'en/blog/historia/historia-salsa-barcelona', lang: 'en', page: 'blogHistoriaSalsa' },
   { path: 'en/blog/historia/historia-bachata-barcelona', lang: 'en', page: 'blogHistoriaBachata' },
   { path: 'en/blog/tutoriales', lang: 'en', page: 'blogTutoriales' },
   { path: 'en/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'en', page: 'blogSalsaRitmo' },
+  { path: 'en/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'en', page: 'blogSalsaVsBachata' },
   { path: 'en/blog/tips', lang: 'en', page: 'blogTips' },
   { path: 'en/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'en', page: 'blogClasesPrincipiantes' },
 
@@ -489,11 +499,13 @@ const routes = [
   { path: 'fr/blog/lifestyle', lang: 'fr', page: 'blogLifestyle' },
   { path: 'fr/blog/lifestyle/beneficios-bailar-salsa', lang: 'fr', page: 'blogBeneficiosSalsa' },
   { path: 'fr/blog/lifestyle/clases-de-salsa-barcelona', lang: 'fr', page: 'blogClasesSalsaBarcelona' },
+  { path: 'fr/blog/lifestyle/como-perder-miedo-bailar', lang: 'fr', page: 'blogPerderMiedoBailar' },
   { path: 'fr/blog/historia', lang: 'fr', page: 'blogHistoria' },
   { path: 'fr/blog/historia/historia-salsa-barcelona', lang: 'fr', page: 'blogHistoriaSalsa' },
   { path: 'fr/blog/historia/historia-bachata-barcelona', lang: 'fr', page: 'blogHistoriaBachata' },
   { path: 'fr/blog/tutoriales', lang: 'fr', page: 'blogTutoriales' },
   { path: 'fr/blog/tutoriales/salsa-ritmo-conquisto-mundo', lang: 'fr', page: 'blogSalsaRitmo' },
+  { path: 'fr/blog/tutoriales/salsa-vs-bachata-que-estilo-elegir', lang: 'fr', page: 'blogSalsaVsBachata' },
   { path: 'fr/blog/tips', lang: 'fr', page: 'blogTips' },
   { path: 'fr/blog/tips/clases-baile-principiantes-barcelona-farrays', lang: 'fr', page: 'blogClasesPrincipiantes' },
 
@@ -649,6 +661,10 @@ const metadata = {
       title: 'Contacto | Farray\'s International Dance Center Barcelona',
       description: 'Contacta con nosotros. Carrer d\'Entença 100, Barcelona. Tel: +34 622 24 70 85. Reserva tu clase de prueba gratuita.',
     },
+    reservas: {
+      title: 'Reserva tu Clase de Bienvenida | Farray\'s Center Barcelona',
+      description: 'Reserva tu clase de bienvenida en la escuela de baile de Barcelona. Más de 25 estilos: salsa, bachata, hip hop, ballet y más. Método Farray® exclusivo.',
+    },
     blog: {
       title: 'Blog de Baile | Consejos, Tutoriales e Historia del Baile | Farray\'s Center',
       description: 'Descubre consejos, tutoriales y la fascinante historia del baile. Asesoramiento experto de bailarines profesionales para mejorar tu técnica y disfrutar cada paso.',
@@ -681,6 +697,10 @@ const metadata = {
       title: 'Salsa: El Ritmo que Conquistó el Mundo | Farray\'s Center',
       description: 'Descubre los diferentes estilos de salsa: cubana, rueda de casino, salsa en línea y más. Guía completa para entender y bailar salsa en Barcelona.',
     },
+    blogSalsaVsBachata: {
+      title: 'Salsa vs Bachata: ¿Qué Estilo Elegir? Guía Completa | Farray\'s Center',
+      description: 'Salsa vs bachata: diferencias en ritmo, pasos y expresión. Guía completa para elegir tu estilo de baile latino. Clases en Barcelona.',
+    },
     blogClasesSalsaBarcelona: {
       title: 'Hombres y mujeres, ¿hablamos salsa? | Farray\'s Center Blog',
       description: 'La salsa como lenguaje universal: reflexiones sobre la pista de baile como espacio de conexión entre hombres y mujeres. Por Mar Guerrero.',
@@ -692,6 +712,10 @@ const metadata = {
     blogClasesPrincipiantes: {
       title: 'Clases de baile para principiantes en Barcelona | Farray\'s Center',
       description: 'Guía completa para empezar a bailar desde cero en Barcelona. Clase de bienvenida gratuita (promocional) o desde 10€. Participación puntual desde 20€.',
+    },
+    blogPerderMiedoBailar: {
+      title: 'Cómo Perder el Miedo a Bailar: Guía Práctica 2025 | Farray\'s Center',
+      description: 'Descubre técnicas probadas para superar la vergüenza y el miedo a bailar. El 80% de adultos sienten ansiedad al bailar. Aprende cómo superarlo paso a paso.',
     },
     promoClaseGratis: {
       title: 'Tu Primera Clase de Baile GRATIS | Farray\'s Center Barcelona',
@@ -929,6 +953,10 @@ const metadata = {
       title: 'Contacte | Farray\'s International Dance Center Barcelona',
       description: 'Contacta amb nosaltres. Carrer d\'Entença 100, Barcelona. Tel: +34 622 24 70 85. Reserva la teva classe de prova gratuïta.',
     },
+    reservas: {
+      title: 'Reserva la teva Classe de Benvinguda | Farray\'s Center Barcelona',
+      description: 'Reserva la teva classe de benvinguda a l\'escola de ball de Barcelona. Més de 25 estils: salsa, bachata, hip hop, ballet i més. Mètode Farray® exclusiu.',
+    },
     blog: {
       title: 'Blog de Ball | Consells, Tutorials i Història del Ball | Farray\'s Center',
       description: 'Descobreix consells, tutorials i la fascinant història del ball. Assessorament expert de ballarins professionals per millorar la teva tècnica i gaudir cada pas.',
@@ -961,6 +989,10 @@ const metadata = {
       title: 'Salsa: El Ritme que Va Conquistar el Món | Farray\'s Center',
       description: 'Descobreix els diferents estils de salsa: cubana, roda de casino, salsa en línia i més. Guia completa per entendre i ballar salsa a Barcelona.',
     },
+    blogSalsaVsBachata: {
+      title: 'Salsa vs Bachata: Quin Estil Triar? Guia Completa | Farray\'s Center',
+      description: 'Salsa vs bachata: diferències en ritme, passos i expressió. Guia completa per triar el teu estil de ball llatí. Classes a Barcelona.',
+    },
     blogClasesSalsaBarcelona: {
       title: 'Homes i dones, parlem salsa? | Farray\'s Center Blog',
       description: 'La salsa com a llenguatge universal: reflexions sobre la pista de ball com a espai de connexió entre homes i dones. Per Mar Guerrero.',
@@ -972,6 +1004,10 @@ const metadata = {
     blogClasesPrincipiantes: {
       title: 'Classes de ball per a principiants a Barcelona | Farray\'s Center',
       description: 'Guia completa per començar a ballar des de zero a Barcelona. Classe de benvinguda gratuïta (promocional) o des de 10€. Participació puntual des de 20€.',
+    },
+    blogPerderMiedoBailar: {
+      title: 'Com Perdre la Por a Ballar: Guia Pràctica 2025 | Farray\'s Center',
+      description: 'Descobreix tècniques provades per superar la vergonya i la por a ballar. El 80% dels adults senten ansietat en ballar. Aprèn com superar-ho pas a pas.',
     },
     promoClaseGratis: {
       title: 'La Teva Primera Classe de Ball GRATIS | Farray\'s Center Barcelona',
@@ -1209,6 +1245,10 @@ const metadata = {
       title: 'Contact | Farray\'s International Dance Center Barcelona',
       description: 'Contact us. Carrer d\'Entença 100, Barcelona. Tel: +34 622 24 70 85. Book your free trial class.',
     },
+    reservas: {
+      title: 'Book Your Welcome Class | Farray\'s Center Barcelona',
+      description: 'Book your welcome class at the Barcelona dance school. Over 25 styles: salsa, bachata, hip hop, ballet and more. Exclusive Farray® Method.',
+    },
     blog: {
       title: 'Dance Blog | Tips, Tutorials & Dance History | Farray\'s Center',
       description: 'Discover tips, tutorials and the fascinating history of dance. Expert advice from professional dancers to improve your technique and enjoy every step.',
@@ -1241,6 +1281,10 @@ const metadata = {
       title: 'Salsa: The Rhythm that Conquered the World | Farray\'s Center',
       description: 'Discover the different salsa styles: Cuban, rueda de casino, line salsa and more. Complete guide to understand and dance salsa in Barcelona.',
     },
+    blogSalsaVsBachata: {
+      title: 'Salsa vs Bachata: Which Style to Choose? Complete Guide | Farray\'s Center',
+      description: 'Salsa vs bachata: differences in rhythm, steps and expression. Complete guide to choose your Latin dance style. Classes in Barcelona.',
+    },
     blogClasesSalsaBarcelona: {
       title: 'Men and Women, Shall We Speak Salsa? | Farray\'s Center Blog',
       description: 'Salsa as a universal language: reflections on the dance floor as a space of connection between men and women. By Mar Guerrero.',
@@ -1252,6 +1296,10 @@ const metadata = {
     blogClasesPrincipiantes: {
       title: 'Beginner Dance Classes in Barcelona | Farray\'s Center',
       description: 'Complete guide to start dancing from scratch in Barcelona. Free welcome class (promotional) or from €10. One-time participation from €17.',
+    },
+    blogPerderMiedoBailar: {
+      title: 'How to Overcome Fear of Dancing: Practical Guide 2025 | Farray\'s Center',
+      description: 'Discover proven techniques to overcome shyness and fear of dancing. 80% of adults feel anxiety when dancing. Learn how to overcome it step by step.',
     },
     promoClaseGratis: {
       title: 'Your First Dance Class FREE | Farray\'s Center Barcelona',
@@ -1489,6 +1537,10 @@ const metadata = {
       title: 'Contact | Farray\'s International Dance Center Barcelone',
       description: 'Contactez-nous. Carrer d\'Entença 100, Barcelone. Tél: +34 622 24 70 85. Réservez votre cours d\'essai gratuit.',
     },
+    reservas: {
+      title: 'Réservez votre Cours de Bienvenue | Farray\'s Center Barcelone',
+      description: 'Réservez votre cours de bienvenue à l\'école de danse de Barcelone. Plus de 25 styles : salsa, bachata, hip hop, ballet et plus. Méthode Farray® exclusive.',
+    },
     blog: {
       title: 'Blog de Danse | Conseils, Tutoriels et Histoire de la Danse | Farray\'s Center',
       description: 'Découvrez conseils, tutoriels et la fascinante histoire de la danse. Conseils experts de danseurs professionnels pour améliorer votre technique et profiter de chaque pas.',
@@ -1521,6 +1573,10 @@ const metadata = {
       title: 'Salsa : Le Rythme qui a Conquis le Monde | Farray\'s Center',
       description: 'Découvrez les différents styles de salsa : cubaine, rueda de casino, salsa en ligne et plus. Guide complet pour comprendre et danser la salsa à Barcelone.',
     },
+    blogSalsaVsBachata: {
+      title: 'Salsa vs Bachata : Quel Style Choisir ? Guide Complet | Farray\'s Center',
+      description: 'Salsa vs bachata : différences de rythme, pas et expression. Guide complet pour choisir votre style de danse latine. Cours à Barcelone.',
+    },
     blogClasesSalsaBarcelona: {
       title: 'Hommes et femmes, parlons salsa ? | Farray\'s Center Blog',
       description: 'La salsa comme langage universel : réflexions sur la piste de danse comme espace de connexion entre hommes et femmes. Par Mar Guerrero.',
@@ -1532,6 +1588,10 @@ const metadata = {
     blogClasesPrincipiantes: {
       title: 'Cours de danse pour débutants à Barcelone | Farray\'s Center',
       description: 'Guide complet pour commencer à danser à Barcelone. Cours de bienvenue gratuit (promotionnel) ou dès 10€. Participation ponctuelle dès 20€.',
+    },
+    blogPerderMiedoBailar: {
+      title: 'Comment Vaincre la Peur de Danser : Guide Pratique 2025 | Farray\'s Center',
+      description: 'Découvrez des techniques éprouvées pour surmonter la timidité et la peur de danser. 80% des adultes ressentent de l\'anxiété en dansant. Apprenez à la surmonter pas à pas.',
     },
     promoClaseGratis: {
       title: 'Votre Premier Cours de Danse GRATUIT | Farray\'s Center Barcelone',
@@ -1839,12 +1899,16 @@ routes.forEach(route => {
     pagePath = 'blog/tutoriales';
   } else if (page === 'blogSalsaRitmo') {
     pagePath = 'blog/tutoriales/salsa-ritmo-conquisto-mundo';
+  } else if (page === 'blogSalsaVsBachata') {
+    pagePath = 'blog/tutoriales/salsa-vs-bachata-que-estilo-elegir';
   } else if (page === 'blogClasesSalsaBarcelona') {
     pagePath = 'blog/lifestyle/clases-de-salsa-barcelona';
   } else if (page === 'blogTips') {
     pagePath = 'blog/tips';
   } else if (page === 'blogClasesPrincipiantes') {
     pagePath = 'blog/tips/clases-baile-principiantes-barcelona-farrays';
+  } else if (page === 'blogPerderMiedoBailar') {
+    pagePath = 'blog/lifestyle/como-perder-miedo-bailar';
   } else if (page === 'baileManananas') {
     pagePath = 'clases/baile-mananas';
   }

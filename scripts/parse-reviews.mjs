@@ -62,7 +62,7 @@ const VALID_TEACHERS = {
   // NOT included: silvio (not a teacher), yenifer/jenifer (not a teacher)
 };
 
-// Negative indicators - these are reviews with < 4 stars
+// Negative indicators - these are reviews with < 4 stars or negative sentiment despite 5 stars
 // Be careful not to include phrases that could appear in positive contexts
 const NEGATIVE_INDICATORS = [
   'lamentable', 'decepcionada', 'decepcionado',
@@ -71,6 +71,12 @@ const NEGATIVE_INDICATORS = [
   'terrible', 'no vayas', 'no vayan', 'no recomiendo',
   'frustrante', 'desastre', 'peor experiencia', 'gentuza',
   'perdí la paciencia', 'no les importa nada',
+  'impertinente', 'gosera', 'grosera', 'grosero', 'nunca más', // Negative despite 5 stars
+];
+
+// Exclude reviews mentioning former teachers who are no longer at the school
+const EXCLUDED_TEACHER_MENTIONS = [
+  'danger',
 ];
 
 // Exclude reviews about online classes (we only offer in-person now)
@@ -78,6 +84,45 @@ const ONLINE_CLASS_INDICATORS = [
   'clases online', 'clase online', 'clases en línea',
   'online en la escuela', 'baile online', 'clases virtuales',
 ];
+
+// =============================================================================
+// SPELLING CORRECTIONS
+// =============================================================================
+
+const SPELLING_CORRECTIONS = [
+  // Typos
+  { from: /\bProfessoras\b/g, to: 'Profesoras' },
+  { from: /\bsistena\b/gi, to: 'sistema' },
+  { from: /\brl mejor\b/gi, to: 'el mejor' },
+  { from: /\btrasmitir\b/gi, to: 'transmitir' },
+  { from: /\brecepcion\b/gi, to: 'recepción' },
+  { from: /\btambien\b/gi, to: 'también' },
+  { from: /\batencion\b/gi, to: 'atención' },
+  { from: /\bademas\b/gi, to: 'además' },
+  { from: /\ba mas clases\b/gi, to: 'a más clases' },
+  { from: /\bmas clases\b/gi, to: 'más clases' },
+  // Common missing accents
+  { from: /\bfacil\b/gi, to: 'fácil' },
+  { from: /\bmusica\b/gi, to: 'música' },
+  { from: /\bfantastico\b/gi, to: 'fantástico' },
+  { from: /\bfantastica\b/gi, to: 'fantástica' },
+  { from: /\binformacion\b/gi, to: 'información' },
+  { from: /\bsolucion\b/gi, to: 'solución' },
+  { from: /\bdiversion\b/gi, to: 'diversión' },
+  { from: /\beducacion\b/gi, to: 'educación' },
+  { from: /\blocacion\b/gi, to: 'locación' },
+  { from: /\bpasion\b/gi, to: 'pasión' },
+  // Double spaces
+  { from: /  +/g, to: ' ' },
+];
+
+function correctSpelling(text) {
+  let corrected = text;
+  for (const { from, to } of SPELLING_CORRECTIONS) {
+    corrected = corrected.replace(from, to);
+  }
+  return corrected;
+}
 
 // =============================================================================
 // HELPER FUNCTIONS
@@ -144,6 +189,11 @@ function isNegativeReview(text) {
 function isOnlineClassReview(text) {
   const lowerText = text.toLowerCase();
   return ONLINE_CLASS_INDICATORS.some(indicator => lowerText.includes(indicator.toLowerCase()));
+}
+
+function mentionsExcludedTeacher(text) {
+  const lowerText = text.toLowerCase();
+  return EXCLUDED_TEACHER_MENTIONS.some(teacher => lowerText.includes(teacher.toLowerCase()));
 }
 
 function generateReviewId(author, index) {
@@ -376,6 +426,7 @@ function processReviews(rawReviews) {
   const withoutText = [];
   let excludedByNegative = 0;
   let excludedByOnline = 0;
+  let excludedByTeacher = 0;
   let index = 0;
 
   for (const raw of rawReviews) {
@@ -385,10 +436,17 @@ function processReviews(rawReviews) {
       continue;
     }
 
-    // Skip negative reviews (< 4 stars)
+    // Skip negative reviews (< 4 stars or negative sentiment)
     if (isNegativeReview(raw.text)) {
       excludedByNegative++;
       console.log(`  - Negative: ${raw.author.substring(0, 30)}`);
+      continue;
+    }
+
+    // Skip reviews mentioning former teachers
+    if (mentionsExcludedTeacher(raw.text)) {
+      excludedByTeacher++;
+      console.log(`  - Excluded teacher mention: ${raw.author.substring(0, 30)}`);
       continue;
     }
 
@@ -402,6 +460,9 @@ function processReviews(rawReviews) {
     const categories = detectCategories(raw.text);
     const teachers = detectTeachers(raw.text);
 
+    // Apply spelling corrections to the text
+    const correctedText = correctSpelling(raw.text);
+
     processed.push({
       id: generateReviewId(raw.author, index++),
       author: raw.author,
@@ -409,7 +470,7 @@ function processReviews(rawReviews) {
       rating: 5,
       date: raw.date,
       dateISO: relativeToISO(raw.date),
-      text: raw.text,
+      text: correctedText,
       isTranslated: false,
       categories,
       teachers,
@@ -419,6 +480,7 @@ function processReviews(rawReviews) {
 
   console.log(`  Reviews without text: ${withoutText.length}`);
   console.log(`  Excluded by negative sentiment: ${excludedByNegative}`);
+  console.log(`  Excluded by former teacher mention: ${excludedByTeacher}`);
   console.log(`  Excluded by online class mention: ${excludedByOnline}`);
 
   return processed;

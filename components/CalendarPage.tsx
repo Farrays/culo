@@ -234,7 +234,7 @@ const TimelineEvent: React.FC<{
                 </span>
               )}
               {event.noClasses && (
-                <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-rose-500/30 text-rose-300 border border-rose-500/40">
+                <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-brand-600/30 text-brand-300 border border-brand-500/40">
                   {t('calendar_no_classes')}
                 </span>
               )}

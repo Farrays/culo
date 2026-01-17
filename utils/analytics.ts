@@ -29,6 +29,7 @@ export const LEAD_VALUES = Object.freeze({
   GENERIC_LEAD: 15, // Value of a generic lead modal (EUR)
   TRIAL_CLASS: 25, // Value of a trial class booking (EUR)
   MEMBERSHIP: 100, // Value of a membership purchase (EUR)
+  BOOKING_LEAD: 90, // Value of booking widget lead (50€/month × 6 months × 30% conversion)
 });
 
 // ============================================================================
@@ -237,7 +238,13 @@ export function pushToDataLayer(eventData: Record<string, unknown>): void {
  * Use for: Exit Intent Modal, Contact Form, Lead Modals
  */
 export function trackLeadConversion(params: {
-  leadSource: 'exit_intent' | 'contact_form' | 'generic_modal' | 'dancehall_modal' | 'landing_page';
+  leadSource:
+    | 'exit_intent'
+    | 'contact_form'
+    | 'generic_modal'
+    | 'dancehall_modal'
+    | 'landing_page'
+    | 'booking_widget';
   formName: string;
   leadValue: number;
   email?: string; // Optional, only pass if user consented

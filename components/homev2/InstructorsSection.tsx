@@ -58,7 +58,7 @@ const InstructorsSection: React.FC = () => {
       specialties: ['Ballet', 'Contemporáneo', 'Jazz'],
       imageUrl: '/images/instructors/elena.jpg',
       avatarInitials: 'EP',
-      avatarColor: 'from-rose-500 to-pink-600',
+      avatarColor: 'from-brand-500 to-brand-700',
     },
   ];
 
@@ -78,8 +78,8 @@ const InstructorsSection: React.FC = () => {
         {/* Instructors grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {instructors.map((instructor, index) => (
-            <AnimateOnScroll key={instructor.id} delay={100 + index * 100}>
-              <div className="group relative bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl overflow-hidden hover:border-primary-accent/50 transition-all duration-500 hover:shadow-accent-glow hover:-translate-y-2">
+            <AnimateOnScroll key={instructor.id} delay={100 + index * 100} className="[perspective:1000px]">
+              <div className="group relative bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl overflow-hidden hover:border-primary-accent/50 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)_rotateY(5deg)_rotateX(2deg)] hover:shadow-accent-glow">
                 {/* Image/Avatar area */}
                 <div className="relative h-64 bg-gradient-to-br from-primary-dark/50 to-black overflow-hidden">
                   {instructor.imageUrl ? (

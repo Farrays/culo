@@ -3,14 +3,13 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
 import Breadcrumb from './shared/Breadcrumb';
-import { HEELS_STYLES, HEELS_TESTIMONIALS, HEELS_FAQS_CONFIG } from '../constants/heels';
+import { HEELS_STYLES, HEELS_FAQS_CONFIG } from '../constants/heels';
 import AnimateOnScroll from './AnimateOnScroll';
 import FAQSection from './FAQSection';
 import AnimatedCounter from './AnimatedCounter';
 import Icon, { type IconName } from './Icon';
 import type { ValuePillar } from '../types';
 import { SUPPORTED_LOCALES } from '../types';
-import TestimonialsSection from './TestimonialsSection';
 import { ReviewsSection } from './reviews';
 import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 import { CheckIcon } from '../lib/icons';
@@ -68,9 +67,6 @@ const valuePillars: ValuePillarWithIcon[] = [
 const HeelsBarcelonaPage: React.FC = () => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
-
-  // Testimonials
-  const heelsTestimonials = HEELS_TESTIMONIALS;
 
   // FAQs - translate keys dynamically
   const heelsFaqs = HEELS_FAQS_CONFIG.map(faq => ({
@@ -771,14 +767,8 @@ const HeelsBarcelonaPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        <TestimonialsSection
-          titleKey="heelsBarcelona_testimonials_title"
-          testimonials={heelsTestimonials}
-        />
-
-        {/* Google Reviews Section */}
-        <ReviewsSection category="heels-femmology" limit={4} showGoogleBadge={true} layout="grid" />
+        {/* Reviews Section - Google Reviews */}
+        <ReviewsSection category="general" limit={6} showGoogleBadge={true} layout="grid" />
 
         {/* FAQ Section */}
         <FAQSection

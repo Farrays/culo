@@ -1,9 +1,12 @@
 /**
  * ReviewCard Component
  * Displays a single Google review styled like TestimonialsSection cards
+ * Now with enterprise-level i18n support for curated reviews
  */
 
 import React, { useState } from 'react';
+import { useI18n } from '../../hooks/useI18n';
+import { getReviewText, hasTranslation } from '../../hooks/useReviews';
 import type { GoogleReview } from '../../constants/reviews-data';
 
 interface ReviewCardProps {
@@ -13,22 +16,22 @@ interface ReviewCardProps {
   className?: string;
 }
 
-// Category labels
-const CATEGORY_LABELS: Record<string, string> = {
-  'salsa-cubana': 'Salsa',
-  bachata: 'Bachata',
-  'heels-femmology': 'Heels',
-  urbanas: 'Urbanas',
-  contemporaneo: 'Contemporáneo',
-  afro: 'Afro',
-  fitness: 'Fitness',
-  general: 'General',
+// Category keys mapping to i18n keys
+const CATEGORY_KEYS: Record<string, string> = {
+  'salsa-cubana': 'reviews_category_salsa',
+  bachata: 'reviews_category_bachata',
+  'heels-femmology': 'reviews_category_heels',
+  urbanas: 'reviews_category_urbanas',
+  contemporaneo: 'reviews_category_contemporaneo',
+  afro: 'reviews_category_afro',
+  fitness: 'reviews_category_fitness',
+  general: 'reviews_category_general',
 };
 
 // Star rating component
-function StarRating({ rating = 5 }: { rating?: number }) {
+function StarRating({ rating = 5, ariaLabel }: { rating?: number; ariaLabel: string }) {
   return (
-    <div className="flex gap-0.5" aria-label={`${rating} de 5 estrellas`}>
+    <div className="flex gap-0.5" aria-label={ariaLabel}>
       {[1, 2, 3, 4, 5].map(star => (
         <svg
           key={star}
@@ -49,14 +52,21 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   showCategory = false,
   className = '',
 }) => {
+  const { t, locale } = useI18n();
   const [isExpanded, setIsExpanded] = useState(false);
+
+  // Get translated text if available for current locale
+  const reviewText = getReviewText(review, locale);
+  const isTranslated = hasTranslation(review.id) && locale !== 'es';
+
   const maxLength = variant === 'compact' ? 180 : 300;
-  const shouldTruncate = review.text.length > maxLength;
+  const shouldTruncate = reviewText.length > maxLength;
 
   const displayText =
-    shouldTruncate && !isExpanded ? review.text.slice(0, maxLength) + '...' : review.text;
+    shouldTruncate && !isExpanded ? reviewText.slice(0, maxLength) + '...' : reviewText;
 
   const primaryCategory = review.categories[0] || 'general';
+  const categoryKey = CATEGORY_KEYS[primaryCategory] || 'reviews_category_general';
 
   return (
     <article
@@ -64,14 +74,18 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
         flex flex-col h-full min-h-[180px] p-5 sm:p-6
         bg-black/50 backdrop-blur-md
         border border-primary-dark/50 rounded-xl shadow-lg
-        transition-all duration-300
-        hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2
+        transition-all duration-500 [transform-style:preserve-3d]
+        hover:[transform:translateY(-0.5rem)_scale(1.02)_rotateY(5deg)_rotateX(2deg)]
+        hover:border-primary-accent hover:shadow-accent-glow
         ${className}
       `}
     >
       {/* Stars */}
       <div className="flex mb-3">
-        <StarRating rating={review.rating} />
+        <StarRating
+          rating={review.rating}
+          ariaLabel={t('reviews_starRating', { rating: review.rating })}
+        />
       </div>
 
       {/* Review Text */}
@@ -83,7 +97,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
               onClick={() => setIsExpanded(!isExpanded)}
               className="ml-2 text-primary-accent hover:text-primary-accent/80 text-sm font-medium transition-colors"
             >
-              {isExpanded ? 'Ver menos' : 'Ver más'}
+              {isExpanded ? t('reviews_seeLess') : t('reviews_seeMore')}
             </button>
           )}
         </p>
@@ -93,12 +107,17 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
       <div className="flex items-center justify-between gap-3 mt-auto pt-4 border-t border-primary-dark/30">
         <div>
           <cite className="font-bold text-neutral not-italic text-sm">{review.author}</cite>
+          {isTranslated && (
+            <span className="block text-xs text-neutral/50 mt-0.5">
+              {t('reviews_translatedFrom')}
+            </span>
+          )}
         </div>
 
         {/* Category Badge */}
         {showCategory && primaryCategory !== 'general' && (
           <span className="flex-shrink-0 px-2 py-1 bg-primary-accent/20 border border-primary-accent/40 rounded text-xs text-primary-accent font-medium">
-            {CATEGORY_LABELS[primaryCategory]}
+            {t(categoryKey)}
           </span>
         )}
       </div>

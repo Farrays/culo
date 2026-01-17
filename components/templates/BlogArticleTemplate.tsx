@@ -150,7 +150,7 @@ const BlogArticleTemplate: React.FC<BlogArticleTemplateProps> = ({ config }) => 
             )}
 
             {/* ===== MAIN COLUMN ===== */}
-            <div className="flex-1 max-w-3xl mx-auto lg:mx-0 overflow-hidden">
+            <div className="flex-1 w-full lg:max-w-3xl mx-auto lg:mx-0">
               {/* Summary Box (GEO Critical) */}
               <ArticleSummaryBox
                 bulletKeys={config.summaryBullets}

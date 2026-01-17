@@ -55,9 +55,9 @@ const CATEGORY_CONFIG: Record<
   },
   urbano: {
     labelKey: 'schedule_category_urbano',
-    bgClass: 'bg-rose-500/20',
-    textClass: 'text-rose-400',
-    borderClass: 'border-rose-500/30',
+    bgClass: 'bg-brand-600/20',
+    textClass: 'text-brand-400',
+    borderClass: 'border-brand-500/30',
   },
   danza: {
     labelKey: 'schedule_category_danza',
@@ -77,7 +77,7 @@ const LEVEL_CONFIG: Record<LevelKey, { labelKey: string; colorClass: string }> =
   beginner: { labelKey: 'schedule_level_beginner', colorClass: 'text-emerald-400' },
   basic: { labelKey: 'schedule_level_basic', colorClass: 'text-sky-400' },
   intermediate: { labelKey: 'schedule_level_intermediate', colorClass: 'text-amber-400' },
-  advanced: { labelKey: 'schedule_level_advanced', colorClass: 'text-rose-400' },
+  advanced: { labelKey: 'schedule_level_advanced', colorClass: 'text-brand-400' },
   intermediateAdvanced: {
     labelKey: 'schedule_level_intermediateAdvanced',
     colorClass: 'text-purple-400',
@@ -144,9 +144,9 @@ const LEVEL_FILTER_CONFIG: Record<
   },
   advanced: {
     labelKey: 'schedule_level_advanced',
-    bgClass: 'bg-rose-500/20',
-    textClass: 'text-rose-400',
-    borderClass: 'border-rose-500/30',
+    bgClass: 'bg-brand-600/20',
+    textClass: 'text-brand-400',
+    borderClass: 'border-brand-500/30',
   },
   intermediateAdvanced: {
     labelKey: 'schedule_level_intermediateAdvanced',

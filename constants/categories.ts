@@ -1,7 +1,7 @@
 import type { Category } from '../types/categories';
 
 // Categories data for Home Page
-// Primary color verified: #c82260 (primary-accent in tailwind.config)
+// Primary color verified: #B01E3C (rojo carmesí del logo)
 // Images: Optimized with AVIF, WebP, JPEG variants (processed by build-images script)
 
 export const CATEGORIES: Category[] = [

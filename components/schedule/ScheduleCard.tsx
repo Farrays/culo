@@ -171,12 +171,14 @@ export const ScheduleCard: React.FC<ScheduleCardProps> = ({
   // Wrap in link if class has a page
   if (scheduleClass.link) {
     return (
-      <Link
-        to={`/${locale}${scheduleClass.link}`}
-        className="group relative block p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary-accent/5"
-      >
-        {cardContent}
-      </Link>
+      <div className="[perspective:1000px]">
+        <Link
+          to={`/${locale}${scheduleClass.link}`}
+          className="group relative block p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)_rotateY(5deg)_rotateX(2deg)] hover:shadow-lg hover:shadow-primary-accent/10"
+        >
+          {cardContent}
+        </Link>
+      </div>
     );
   }
 

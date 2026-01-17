@@ -28,7 +28,7 @@ import AnimatedCounter from '../AnimatedCounter';
 import _CulturalHistorySection from '../CulturalHistorySection';
 import ScheduleSection from '../ScheduleSection';
 import FAQSection from '../FAQSection';
-import TestimonialsSection from '../TestimonialsSection';
+import { ReviewsSection } from '../reviews';
 import LevelCardsSection, { type LevelConfig } from '../shared/LevelCardsSection';
 import PrepareClassSection, { type PrepareConfig } from '../shared/PrepareClassSection';
 import _WhyUsComparisonSection, {
@@ -1457,12 +1457,9 @@ const FullDanceClassTemplateV2: React.FC<{ config: FullDanceClassConfigV2 }> = (
           </section>
         )}
 
-        {/* ===== 10. TESTIMONIALS SECTION ===== */}
+        {/* ===== 10. REVIEWS SECTION - Google Reviews ===== */}
         {config.testimonialsSection?.enabled !== false && (
-          <TestimonialsSection
-            testimonials={config.testimonials}
-            titleKey="testimonialsNotRequested"
-          />
+          <ReviewsSection category="general" limit={6} showGoogleBadge={true} layout="grid" />
         )}
 
         {/* ===== 12. FAQ SECTION ===== */}

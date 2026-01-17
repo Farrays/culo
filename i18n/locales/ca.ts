@@ -2,7 +2,7 @@ export const ca = {
   // General
   pageTitle: "Farray's International Dance Center | Escola de Ball a Barcelona",
   metaDescription:
-    'Escola de ball a Barcelona amb +25 estils: salsa, bachata, hip hop, ballet i més. Mètode Farray® exclusiu. Centre CID-UNESCO. Primera classe gratis.',
+    'Escola de ball a Barcelona amb +25 estils: salsa, bachata, hip hop, ballet i més. Mètode Farray® exclusiu. Centre CID-UNESCO. Reserva la teva classe de benvinguda.',
   skipToMainContent: 'Salta al contingut principal',
   ratingAriaLabel: '{rating} de 5 estrelles',
   closeButton: 'Tancar',
@@ -58,7 +58,7 @@ export const ca = {
   heroTagline: 'Ballar és treballar la teva felicitat.',
   heroValue:
     'No necessites més classes de ball. Necessites les classes correctes. Si busques classes de ball a Barcelona on per fi avancis i no et sentis un número, estàs al lloc correcte. Amb el Mètode Farray® aprens bé, ràpid i amb estil… i et diverteixes més que a qualsevol gimnàs.',
-  heroCTA1: 'Reserva la teva Classe de Prova',
+  heroCTA1: 'Reserva la teva Classe de Benvinguda',
   heroCTA2: 'Explora les Classes',
   heroScroll: 'Desplega el Teu Potencial',
   // Philosophy
@@ -197,6 +197,8 @@ export const ca = {
   serviceMerchandisingCTA: 'Veure Productes',
   // Teachers
   teachersTitle: 'Coneix els Nostres Professors',
+  teachersSubtitle:
+    "Professionals cubans formats a les millors escoles d'art de Cuba, amb dècades d'experiència internacional",
   teachersCTA: 'Veure Tot el Claustre',
   teacher1Specialty: 'Fundadora i Mestra | Mètode Farray®',
   teacher1Bio:
@@ -229,7 +231,7 @@ export const ca = {
   finalCtaSubtitleLine2: 'La diferència és que van fer el primer pas.',
   finalCtaSubtitleLine3: "Fes-ho tu també. Matricula't avui.",
   finalCtaButton1: 'Fes-te Soci Ara',
-  finalCtaButton2: 'Reserva la teva Classe de Prova',
+  finalCtaButton2: 'Reserva la teva Classe de Benvinguda',
   // Footer
   followOnFacebook: 'Segueix-nos a Facebook',
   followOnInstagram: 'Segueix-nos a Instagram',
@@ -416,7 +418,7 @@ export const ca = {
     'Som realment multidisciplinaris: Salsa, Bachata, Kizomba, Dancehall, Hip Hop, Reggaeton, Commercial Dance, Ballet, Jazz, Contemporani, Heels i més. Des de ritmes llatins fins a dansa urbana i clàssica. El Mètode Farray® fusiona tot això amb una pedagogia única que combina disciplina russa, sabor afrodescendent i innovació global. Aquí trobes el teu estil... o en descobreixes diversos.',
   homeFaqQ5: 'Necessito experiència prèvia per començar?',
   homeFaqA5:
-    "Per a res. Tenim classes des del nivell zero absolut fins a avançat/professional. El Mètode Farray® està dissenyat perquè progressis ràpid sense importar el teu punt de partida. Molts dels nostres millors alumnes van començar sense haver ballat mai. L'important és voler aprendre i gaudir. La teva primera classe és gratis perquè ho comprovis sense compromís.",
+    "Per a res. Tenim classes des del nivell zero absolut fins a avançat/professional. El Mètode Farray® està dissenyat perquè progressis ràpid sense importar el teu punt de partida. Molts dels nostres millors alumnes van començar sense haver ballat mai. L'important és voler aprendre i gaudir. La teva classe de benvinguda és especial perquè ho comprovis sense compromís.",
   homeFaqQ6: 'Oferiu actuacions, esdeveniments o espectacles?',
   homeFaqA6:
     "Sí! Organitzem showcases en teatres professionals, participem en esdeveniments culturals de Barcelona, competicions, workshops amb professors internacionals i festes temàtiques. Si vols pujar a l'escenari, aquí tens l'oportunitat. I si prefereixes només gaudir ballant, també perfecte. Tu decideixes el teu nivell d'implicació.",
@@ -425,7 +427,7 @@ export const ca = {
     "El CID-UNESCO (Consell Internacional de la Dansa) és l'organització oficial de la UNESCO per a la dansa a nivell mundial. Que Farray's estigui acreditat per ells significa que complim els més alts estàndards internacionals d'ensenyament. Yunaisy Farray és membre activa. Això garanteix qualitat pedagògica, reconeixement internacional i professionalitat seriosa.",
   homeFaqQ8: "Puc provar una classe de ball abans d'inscriure'm?",
   homeFaqA8:
-    'Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Prova" a la part superior d\'aquesta pàgina.',
+    'Segons la temporada, la classe de benvinguda per a residents té un preu de benvinguda especial. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Benvinguda" a la part superior d\'aquesta pàgina.',
   // Dancehall Key Stats
   classMinutes: 'Minuts de Classe',
   caloriesBurned: 'Calories Cremades',
@@ -458,7 +460,7 @@ export const ca = {
     'Per descomptat! De fet, ho recomanem. Aprendre múltiples estils de ball et fa un ballarí més complet i versàtil. Per exemple, el ballet millora la teva postura i tècnica per a la salsa, mentre que el hip hop pot fer la teva bachata més dinàmica. Els nostres paquets de classes et permeten assistir a diferents tipus de classes segons els teus interessos. Molts dels nostres estudiants més avançats practiquen 3-4 estils simultàniament.',
   classesFaqQ3: "Com sé quin nivell és l'adequat per a mi?",
   classesFaqA3:
-    "Si és la teva primera classe, sempre recomanem començar al nivell de fonaments o principiants. No obstant això, si tens experiència prèvia en ball, els nostres instructors poden avaluar-te a la teva primera classe de prova i recomanar-te el nivell més apropiat. També pots provar una classe de nivell intermedi si sents que els fonaments són massa bàsics. L'important és que et sentis desafiat però no aclaparat.",
+    "Si és la teva primera classe, sempre recomanem començar al nivell de fonaments o principiants. No obstant això, si tens experiència prèvia en ball, els nostres instructors poden avaluar-te a la teva primera classe de benvinguda i recomanar-te el nivell més apropiat. També pots provar una classe de nivell intermedi si sents que els fonaments són massa bàsics. L'important és que et sentis desafiat però no aclaparat.",
   classesFaqQ4: "Amb quina freqüència hauria d'assistir a classes per veure progrés?",
   classesFaqA4:
     'Per a un progrés constant i notable, recomanem assistir almenys 2 vegades per setmana. Amb aquesta freqüència, la majoria dels estudiants veuen millores significatives en 2-3 mesos. Si pots assistir 3-4 vegades per setmana, el progrés serà encara més ràpid. No obstant això, fins i tot una classe setmanal et permetrà avançar, tot i que a un ritme més gradual. La consistència és més important que la intensitat.',
@@ -476,7 +478,7 @@ export const ca = {
   // ===== DancehallPage (Classes de Dancehall Barcelona) =====
   dhV3PageTitle: "Classes de Dancehall a Barcelona | Acadèmia Farray's Center",
   dhV3MetaDescription:
-    "Aprèn Dancehall jamaicà autèntic a Barcelona. Classes des d'iniciació fins avançat. Professores expertes. Entre Plaça Espanya i Sants. Prova gratis!",
+    "Aprèn Dancehall jamaicà autèntic a Barcelona. Classes des d'iniciació fins avançat. Professores expertes. Entre Plaça Espanya i Sants. Reserva la teva classe de benvinguda!",
 
   dhV3BreadcrumbHome: 'Inici',
   dhV3BreadcrumbClasses: 'Classes de Ball Barcelona',
@@ -491,7 +493,7 @@ export const ca = {
 
   dhV3CTA1: 'Fes-te Soci Ara',
   dhV3CTA1Subtext: 'Queden poques places aquest mes',
-  dhV3CTA2: 'Reserva la teva Classe de Prova',
+  dhV3CTA2: 'Reserva la teva Classe de Benvinguda',
   dhV3CTA2Subtext: 'Vàlid per temps limitat',
 
   dhV3WhatIsTitle: 'Què és el Dancehall i per què està triomfant a Barcelona?',
@@ -539,6 +541,23 @@ export const ca = {
   testimonialsNotRequested: 'Testimonis No Sol·licitats dels Nostres Estudiants',
   excellent: 'EXCEL·LENT',
   basedOnReviews: 'Basat en {count} ressenyes',
+
+  // Reviews UI
+  reviews_seeMore: 'Veure més',
+  reviews_seeLess: 'Veure menys',
+  reviews_starRating: '{rating} de 5 estrelles',
+  reviews_google: 'Google',
+
+  // Review Categories
+  reviews_category_salsa: 'Salsa',
+  reviews_category_bachata: 'Bachata',
+  reviews_category_heels: 'Heels',
+  reviews_category_urbanas: 'Urbanes',
+  reviews_category_contemporaneo: 'Contemporani',
+  reviews_category_afro: 'Afro',
+  reviews_category_fitness: 'Fitness',
+  reviews_category_general: 'General',
+  reviews_translatedFrom: 'Traduït del castellà',
 
   dhV3IdentifyTitle: "T'identifiques amb alguna d'aquestes situacions?",
   dhV3Identify1:
@@ -663,7 +682,7 @@ export const ca = {
     "Sí. Oferim descomptes si t'apuntes a més d'un curs. Consulta el web o pregunta'ns directament per a més detalls.",
   dhV3FaqQ9: "Puc provar una classe de Dancehall abans d'inscriure'm?",
   dhV3FaqA9:
-    'Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Prova" a la part superior d\'aquesta pàgina.',
+    'Segons la temporada, la classe de benvinguda per a residents té un preu de benvinguda especial. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Benvinguda" a la part superior d\'aquesta pàgina.',
   dhV3FaqQ10: 'I si falto a una classe per feina o compromisos?',
   dhV3FaqA10:
     "Si tens una membresía i cancel·les una classe, disposes de 30 dies per recuperar-la des de la data de la classe cancel·lada. Si tens un abonament d'hores, gestiones les teves classes de forma flexible: cancel·la i reserva un altre dia dins del període de caducitat. Totes les gestions es realitzen exclusivament des de l'aplicació digital de l'acadèmia.",
@@ -707,7 +726,7 @@ export const ca = {
   home_categories_urbano_image_alt:
     "Balladores practicant Hip Hop Reggaeton en classe de danses urbanes - Farray's Center Barcelona",
   home_categories_urbano_bullets:
-    '11 estils urbans diferents, Des de principiant a professional, Primera classe gratis',
+    '11 estils urbans diferents, Des de principiant a professional, Classe de benvinguda',
   home_categories_urbano_intro:
     "Sent l'energia del carrer amb els estils de Hip Hop, Reggaeton, Dancehall i Commercial.",
 
@@ -767,7 +786,7 @@ export const ca = {
   danceClassesHub_h1: 'Classes de ball a Barcelona',
   danceClassesHub_h1_sub: '+25 estils · Mètode Farray® · Professors cubans',
   danceClassesHub_intro:
-    "Al cor de Barcelona, a prop de Plaça Catalunya (Metro L1/L2), trobaràs més de 30 estils de ball sota un mateix sostre. Des de salsa cubana fins a dansa contemporània, des de hip hop fins a ballet clàssic. Explora les nostres categories, entra a cada pàgina per veure horaris, nivells i professors, o ves directament a l'estil que més et mou. A Farray's pots començar des de zero, provar la teva primera classe GRATIS i descobrir què se sent aprendre amb l'exclusiu Mètode Farray® creat per Yunaisy Farray (ballarina de Street Dance 2) i professors formats a l'Escola Cubana.",
+    "Al cor de Barcelona, a prop de Plaça Catalunya (Metro L1/L2), trobaràs més de 30 estils de ball sota un mateix sostre. Des de salsa cubana fins a dansa contemporània, des de hip hop fins a ballet clàssic. Explora les nostres categories, entra a cada pàgina per veure horaris, nivells i professors, o ves directament a l'estil que més et mou. A Farray's pots començar des de zero, provar la teva classe de benvinguda i descobrir què se sent aprendre amb l'exclusiu Mètode Farray® creat per Yunaisy Farray (ballarina de Street Dance 2) i professors formats a l'Escola Cubana.",
 
   // Category Bullets - Contemporary
   danceClassesHub_contemporary_bullet1: 'Escola Cubana i estils contemporanis',
@@ -964,7 +983,7 @@ export const ca = {
   danceClassesHub_whichCategory_beginner_goal: 'Sóc principiant absolut, mai he ballat',
   danceClassesHub_whichCategory_beginner_category: 'Qualsevol categoria amb nivell INICIACIÓ',
   danceClassesHub_whichCategory_beginner_why:
-    "Totes les nostres categories tenen grups d'iniciació per a principiants sense experiència. Tria segons el que t'atraigui: parella, urbà, tècnica clàssica o fitness. Primera classe GRATUÏTA per provar sense compromís.",
+    "Totes les nostres categories tenen grups d'iniciació per a principiants sense experiència. Tria segons el que t'atraigui: parella, urbà, tècnica clàssica o fitness. Classe de benvinguda per provar sense compromís.",
 
   danceClassesHub_whichCategory_morning_goal: "Vull ballar pels matins (horari d'hora)",
   danceClassesHub_whichCategory_morning_category: 'Classes de Ball pels Matins',
@@ -980,7 +999,7 @@ export const ca = {
   // Which Category - Info Cards
   danceClassesHub_whichCategory_beginner_title: 'Primera vegada ballant?',
   danceClassesHub_whichCategory_beginner_text:
-    "Totes les nostres categories tenen grups d'iniciació específics per a principiants absoluts. No necessites experiència prèvia, parella ni equipament especial. Primera classe GRATUÏTA per provar sense compromís. Reserva la teva plaça i descobreix el teu estil.",
+    "Totes les nostres categories tenen grups d'iniciació específics per a principiants absoluts. No necessites experiència prèvia, parella ni equipament especial. Classe de benvinguda per provar sense compromís. Reserva la teva plaça i descobreix el teu estil.",
 
   danceClassesHub_whichCategory_combine_title: 'Puc combinar diverses categories?',
   danceClassesHub_whichCategory_combine_text:
@@ -988,7 +1007,7 @@ export const ca = {
 
   danceClassesHub_whichCategory_schedule_title: 'Com triar el meu horari ideal?',
   danceClassesHub_whichCategory_schedule_text:
-    "Oferim horaris flexibles de dilluns a diumenge: matins (10h-14h), tardes (16h-21h) i caps de setmana. Tria segons la teva disponibilitat i el nivell que busques. Consulta el planning complet al nostre web o reserva la teva classe de prova gratuïta per conèixer l'ambient.",
+    "Oferim horaris flexibles de dilluns a diumenge: matins (10h-14h), tardes (16h-21h) i caps de setmana. Tria segons la teva disponibilitat i el nivell que busques. Consulta el planning complet al nostre web o reserva la teva classe de benvinguda per conèixer l'ambient.",
 
   // Dance Classes Hub - Why FIDC Section
   danceClassesHub_why_title:
@@ -1030,10 +1049,10 @@ export const ca = {
     'Explora els nostres horaris complets i descobreix la classe perfecta segons el teu objectiu i disponibilitat.',
   danceClassesHub_cta1_button: 'Veure tots els horaris',
 
-  danceClassesHub_cta2_title: 'Prova la teva primera classe GRATIS',
+  danceClassesHub_cta2_title: 'Prova la teva classe de benvinguda',
   danceClassesHub_cta2_subtitle:
     'Sense compromís, sense permanència. Vine a conèixer les nostres instal·lacions, professors i mètode.',
-  danceClassesHub_cta2_button: 'Reservar classe gratuïta',
+  danceClassesHub_cta2_button: 'Reservar classe de benvinguda',
   danceClassesHub_cta2_stat1_number: '8+',
   danceClassesHub_cta2_stat1_label: "Anys d'experiència",
   danceClassesHub_cta2_stat2_number: '1500+',
@@ -1079,7 +1098,7 @@ export const ca = {
   danzaBarcelona_title:
     "Classes de Dansa a Barcelona | Ballet, Contemporani i Jazz | Farray's Center",
   danzaBarcelona_description:
-    'Descobreix les nostres classes de dansa a Barcelona: Ballet Clàssic Cubà, Dansa Contemporània, Modern Jazz, Afro Jazz i més. Acadèmia reconeguda per CID-UNESCO. Reserva la teva classe de prova.',
+    'Descobreix les nostres classes de dansa a Barcelona: Ballet Clàssic Cubà, Dansa Contemporània, Modern Jazz, Afro Jazz i més. Acadèmia reconeguda per CID-UNESCO. Reserva la teva classe de benvinguda.',
   danzaBarcelona_breadcrumb_home: 'Inici',
   danzaBarcelona_breadcrumb_classes: 'Classes de Ball a Barcelona',
   danzaBarcelona_breadcrumb_current: 'Classes de Dansa a Barcelona',
@@ -1230,7 +1249,7 @@ export const ca = {
 
   danzaFaqQ10: "Puc provar una classe de Ballet, Jazz o Contemporani abans d'inscriure'm?",
   danzaFaqA10:
-    'Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Prova" a la part superior d\'aquesta pàgina.',
+    'Segons la temporada, la classe de benvinguda per a residents té un preu de benvinguda especial. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Benvinguda" a la part superior d\'aquesta pàgina.',
 
   // Career Opportunities - Danza Barcelona
   danzaWhyCareerTitle: 'Borsa de Treball i Competicions',
@@ -1436,7 +1455,7 @@ export const ca = {
 
   urbanFaqQ10: "Puc provar una classe de Hip Hop o Dancehall abans d'inscriure'm?",
   urbanFaqA10:
-    "Mira, l'important és que provis. Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l'experiència sense compromís.",
+    "Mira, l'important és que provis. Segons la temporada, la classe de benvinguda per a residents té un preu de benvinguda especial. La idea és que puguis provar l'experiència sense compromís.",
 
   // Urban-specific CTA
   danzasUrbanas_viewMore: 'Veure més →',
@@ -1659,7 +1678,7 @@ export const ca = {
   salsaBachataBarcelona_title:
     "Classes de Salsa i Bachata a Barcelona | Salsa Cubana, Bachata Sensual i més | Farray's Center",
   salsaBachataBarcelona_description:
-    "Aprèn a ballar Salsa Cubana, Bachata Sensual i Dominicana, Timba, Son i més a Barcelona. Escola fundada per mestres cubans amb experiència en les millors acadèmies de L'Havana. Reserva la teva classe de prova.",
+    "Aprèn a ballar Salsa Cubana, Bachata Sensual i Dominicana, Timba, Son i més a Barcelona. Escola fundada per mestres cubans amb experiència en les millors acadèmies de L'Havana. Reserva la teva classe de benvinguda.",
   salsaBachataBarcelona_breadcrumb_home: 'Inici',
   salsaBachataBarcelona_breadcrumb_classes: 'Classes de Ball a Barcelona',
   salsaBachataBarcelona_breadcrumb_parent: 'Ball Barcelona',
@@ -1731,7 +1750,7 @@ export const ca = {
 
   salsaBachataFaqQ10: "Puc provar una classe de salsa o bachata abans d'inscriure'm?",
   salsaBachataFaqA10:
-    "Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis experimentar la nostra metodologia, conèixer els professors i sentir l'energia de la nostra acadèmia de ball sense compromís.",
+    "Segons la temporada, la classe de benvinguda per a residents té un preu de benvinguda especial. La idea és que puguis experimentar la nostra metodologia, conèixer els professors i sentir l'energia de la nostra acadèmia de ball sense compromís.",
 
   // CTA Final - Salsa/Bachata Barcelona
   salsaBachataCTA_title: 'Aprèn a ballar Salsa i Bachata Com Sempre Vas Somiar',
@@ -2836,7 +2855,7 @@ export const ca = {
   // CTA
   metodoFarray_cta_title: 'Descobreix Com Començar',
   metodoFarray_cta_subtitle:
-    'La teva primera classe és gratis. Vine a provar i sent la diferència.',
+    'La teva classe de benvinguda és especial. Vine a provar i sent la diferència.',
   metodoFarray_cta_button: 'Descobreix Com Començar',
   metodoFarray_cta_secondary: 'Veure Totes les Classes',
 
@@ -3067,7 +3086,7 @@ export const ca = {
     "Sí. Oferim descomptes si t'apuntes a més d'un curs de ball. Consulta la web o pregunta'ns directament per a més detalls sobre les nostres classes de Twerk dance.",
   twerkFaqQ8: "Puc provar una classe de Twerk abans d'inscriure'm?",
   twerkFaqA8:
-    "Segons la temporada, la classe de prova de Twerking per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l'experiència de ballar Twerk sense compromís.",
+    "Segons la temporada, la classe de benvinguda de Twerking per a residents té un preu de benvinguda especial. La idea és que puguis provar l'experiència de ballar Twerk sense compromís.",
   twerkFaqQ9: 'I si falto a una classe de Twerk per feina o compromisos?',
   twerkFaqA9:
     "Si tens una membresía i cancel·les una classe de Twerking, disposes de 30 dies per recuperar-la des de la data de la classe cancel·lada. Si tens un abonament d'hores, gestiones les teves classes de Twerk de forma flexible.",
@@ -3101,7 +3120,7 @@ export const ca = {
   // CTA keys
   twerkCTA1: 'Fes-te Soci Ara',
   twerkCTA1Subtext: 'Queden poques places aquest mes',
-  twerkCTA2: 'Reserva la teva Classe de Prova',
+  twerkCTA2: 'Reserva la teva Classe de Benvinguda',
   twerkCTA2Subtext: 'Vàlid per temps limitat',
 
   // What Is Section
@@ -3244,7 +3263,7 @@ export const ca = {
   // CTAs
   afroCTA1: 'Fes-te Soci Ara',
   afroCTA1Subtext: 'Queden poques places aquest mes',
-  afroCTA2: 'Reserva la teva Classe de Prova',
+  afroCTA2: 'Reserva la teva Classe de Benvinguda',
   afroCTA2Subtext: 'Vàlid per temps limitat',
 
   // What is Afrobeat
@@ -3429,7 +3448,7 @@ A Farray's International Dance Center, l'Afrobeats s'ensenya amb tècnica, respe
     "Sí, oferim descomptes si t'apuntes a més d'un curs. Consulta la nostra web o pregunta'ns directament per a més detalls.",
   afroFaqQ8: "Puc provar una classe d'Afrobeats abans d'inscriure'm?",
   afroFaqA8:
-    "Mira, l'important és que provis. Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l'experiència sense compromís.",
+    "Mira, l'important és que provis. Segons la temporada, la classe de benvinguda per a residents té un preu de benvinguda especial. La idea és que puguis provar l'experiència sense compromís.",
   afroFaqQ9: 'I si falto a una classe per feina o compromisos?',
   afroFaqA9:
     "Si tens una membresía i cancel·les una classe tens 30 dies per recuperar-la, comptant des de la data de la classe cancel·lada. Si tens un abonament d'hores, ets tu qui gestiona les teves classes de manera flexible i només has de cancel·lar la teva classe i reservar-la per a un altre dia quan així ho desitgis, abans que acabi el període de caducitat. Totes les gestions es fan exclusivament des de l'aplicació digital de l'acadèmia.",
@@ -3505,7 +3524,7 @@ A Farray's International Dance Center, l'Afrobeats s'ensenya amb tècnica, respe
   // CTAs
   hhrCTA1: 'Fes-te Soci Ara',
   hhrCTA1Subtext: 'Queden poques places aquest mes',
-  hhrCTA2: 'Reserva la Teva Classe de Prova',
+  hhrCTA2: 'Reserva la Teva Classe de Benvinguda',
   hhrCTA2Subtext: 'Oferta per temps limitat',
 
   // Flow Guaranteed
@@ -3699,7 +3718,7 @@ Aquesta fusió incorpora:
     "Sí. Oferim descomptes si t'apuntes a més d'un curs. Consulta la web o pregunta'ns directament per a més detalls.",
   hhrFaqQ8: "Puc provar una classe abans d'inscriure'm?",
   hhrFaqA8:
-    'Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça clicant el botó "Reserva la teva Classe de Prova" a la part superior d\'aquesta pàgina.',
+    'Segons la temporada, la classe de benvinguda per a residents té un preu de benvinguda especial. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça clicant el botó "Reserva la teva Classe de Benvinguda" a la part superior d\'aquesta pàgina.',
   hhrFaqQ9: 'I si falto a una classe per feina o compromisos?',
   hhrFaqA9:
     "Si tens una membresía i cancelles una classe, disposes de 30 dies per recuperar-la des de la data de la classe cancel·lada. Si tens un abonament d'hores, gestiones les teves classes de forma flexible: cancel·la i reserva un altre dia dins del període de caducitat. Totes les gestions es realitzen exclusivament des de l'aplicació digital de l'acadèmia.",
@@ -3763,7 +3782,7 @@ Aquesta fusió incorpora:
     "Classes amb mestres cubans que venen directament de l'Havana, entre Plaça Espanya i Sants.",
   rcbHeroCTA: 'Fes-te Soci Ara',
   rcbHeroCTASubtext: 'Queden poques places aquest mes',
-  rcbHeroSecondaryCTA: 'Reserva la teva Classe de Prova',
+  rcbHeroSecondaryCTA: 'Reserva la teva Classe de Benvinguda',
   rcbHeroSecondaryCTASubtext: 'Oferta per temps limitat',
 
   // Breadcrumbs
@@ -3913,7 +3932,7 @@ Aquesta fusió incorpora:
     "Consulta l'horari a dalt d'aquesta pàgina. Tenim classes dimarts, dijous i dissabte per a diferents nivells.",
   rcbFaqQ8: "Puc provar una classe abans d'inscriure'm?",
   rcbFaqA8:
-    'Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça clicant el botó "Reserva la teva Classe de Prova" a la part superior d\'aquesta pàgina.',
+    'Segons la temporada, la classe de benvinguda per a residents té un preu de benvinguda especial. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça clicant el botó "Reserva la teva Classe de Benvinguda" a la part superior d\'aquesta pàgina.',
   rcbFaqQ9: 'Què és el Cubatón exactament?',
   rcbFaqA9:
     'Cubatón és un altre nom per al Reggaeton Cubà, emfatitzant les arrels cubanes del gènere. Reparto i Cubatón es refereixen al mateix estil.',
@@ -4194,7 +4213,7 @@ Aquesta fusió incorpora:
   // CTAs
   femCTA1: 'Fes-te Sòcia Ara!',
   femCTA1Subtext: 'Queden poques places aquest mes',
-  femCTA2: 'Reserva la teva Classe de Prova',
+  femCTA2: 'Reserva la teva Classe de Benvinguda',
   femCTA2Subtext: 'Vàlid per temps limitat',
 
   // Stats
@@ -4367,7 +4386,7 @@ Al llarg de més d'una dècada, Femmology ha transformat la vida de milers de do
 
   femFaqQ8: "Puc provar una classe de Femmology abans d'inscriure'm?",
   femFaqA8:
-    'Sí. Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. Prem "Reserva la teva Classe de Prova" i descobreix si aquesta disciplina és per a tu.',
+    'Sí. Segons la temporada, la classe de benvinguda per a residents té un preu de benvinguda especial. Prem "Reserva la teva Classe de Benvinguda" i descobreix si aquesta disciplina és per a tu.',
 
   femFaqQ9: 'Què aprendré a les classes de Femmology?',
   femFaqA9:
@@ -4445,7 +4464,7 @@ Al llarg de més d'una dècada, Femmology ha transformat la vida de milers de do
   // CTAs
   sexystyleCTA1: 'Fes-te Sòcia Ara',
   sexystyleCTA1Subtext: 'Queden poques places aquest mes',
-  sexystyleCTA2: 'Reserva la teva Classe de Prova',
+  sexystyleCTA2: 'Reserva la teva Classe de Benvinguda',
   sexystyleCTA2Subtext: 'Oferta per temps limitat',
 
   // What Is Section
@@ -4642,7 +4661,7 @@ Al llarg de més d'una dècada, Femmology ha transformat la vida de milers de do
 
   sexystyleFaqQ7: "Puc provar una classe de Sexy Style abans d'inscriure'm?",
   sexystyleFaqA7:
-    'Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Prova" a la part superior d\'aquesta pàgina.',
+    'Segons la temporada, la classe de benvinguda per a residents té un preu de benvinguda especial. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Benvinguda" a la part superior d\'aquesta pàgina.',
 
   sexystyleFaqQ8: 'Quins nivells de Sexy Style teniu?',
   sexystyleFaqA8:
@@ -4666,7 +4685,7 @@ Al llarg de més d'una dècada, Femmology ha transformat la vida de milers de do
 
   sexystyleFaqQ13: 'Teniu descomptes o abonaments especials?',
   sexystyleFaqA13:
-    "Sí, tenim diverses opcions d'estalvi:<br/><br/>• <strong>Descompte multicurs:</strong> Si t'apuntes a més d'un estil (ex: Sexy Style + Femmology), obtens un preu reduït per classe.<br/>• <strong>Abonaments mensuals il·limitats:</strong> Classes il·limitades d'un estil o de tots els estils.<br/>• <strong>Abonaments trimestrals i anuals:</strong> Major estalvi com més temps et comprometis.<br/>• <strong>Ofertes per a noves alumnes:</strong> Primera classe de prova amb preu especial.<br/><br/>Consulta preus actualitzats a recepció o escriu-nos per WhatsApp.",
+    "Sí, tenim diverses opcions d'estalvi:<br/><br/>• <strong>Descompte multicurs:</strong> Si t'apuntes a més d'un estil (ex: Sexy Style + Femmology), obtens un preu reduït per classe.<br/>• <strong>Abonaments mensuals il·limitats:</strong> Classes il·limitades d'un estil o de tots els estils.<br/>• <strong>Abonaments trimestrals i anuals:</strong> Major estalvi com més temps et comprometis.<br/>• <strong>Ofertes per a noves alumnes:</strong> Primera classe de benvinguda amb preu especial.<br/><br/>Consulta preus actualitzats a recepció o escriu-nos per WhatsApp.",
 
   sexystyleFaqQ14: "On és l'acadèmia?",
   sexystyleFaqA14:
@@ -4718,10 +4737,10 @@ Al llarg de més d'una dècada, Femmology ha transformat la vida de milers de do
   // CTAs
   sxrCTA1: 'Fes-te Sòcia Ara',
   sxrCTA1Subtext: 'Queden poques places aquest mes',
-  sxrCTA2: 'Reserva la Teva Classe de Prova',
+  sxrCTA2: 'Reserva la Teva Classe de Benvinguda',
   sxrCTA2Subtext: 'Oferta per temps limitat',
   sxrCTA1AriaLabel: "Veure horari de classes de Sexy Reggaeton i donar-te d'alta",
-  sxrCTA2AriaLabel: 'Reservar una classe de prova de Sexy Reggaeton',
+  sxrCTA2AriaLabel: 'Reservar una classe de benvinguda de Sexy Reggaeton',
   sxrOgImageAlt: "Classes de Sexy Reggaeton a Barcelona - Farray's Center",
 
   // Stat
@@ -4894,7 +4913,7 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colòmbia), J Balv
     "Sí. Oferim descomptes si t'apuntes a més d'un curs. Consulta la web o pregunta'ns directament per a més detalls.",
   sxrFaqQ9: "Puc provar una classe de Sexy Reggaeton abans d'inscriure'm?",
   sxrFaqA9:
-    'Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la Teva Classe de Prova" a la part superior d\'aquesta pàgina.',
+    'Segons la temporada, la classe de benvinguda per a residents té un preu de benvinguda especial. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la Teva Classe de Benvinguda" a la part superior d\'aquesta pàgina.',
   sxrFaqQ10: 'I si falto a una classe per feina o compromisos?',
   sxrFaqA10:
     "Si tens una membresía i cancel·les una classe, disposes de 30 dies per recuperar-la des de la data de la classe cancel·lada. Si tens un abonament d'hores, gestiones les teves classes de forma flexible: cancel·la i reserva un altre dia dins del període de caducitat. Totes les gestions es realitzen exclusivament des de l'aplicació digital de l'acadèmia.",
@@ -4970,7 +4989,7 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colòmbia), J Balv
   // CTAs
   modernjazzCTA1: 'Fes-te Soci Ara',
   modernjazzCTA1Subtext: 'Queden poques places aquest mes',
-  modernjazzCTA2: 'Reserva la teva Classe de Prova',
+  modernjazzCTA2: 'Reserva la teva Classe de Benvinguda',
   modernjazzCTA2Subtext: 'Oferta per temps limitat',
 
   // What Is Section
@@ -5141,7 +5160,7 @@ Farray's International Dance Center està valorat prop del **5/5 a Google**, amb
 
   modernjazzFaqQ7: "Puc provar una classe de Modern Jazz abans d'inscriure'm?",
   modernjazzFaqA7:
-    'Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Prova" a la part superior d\'aquesta pàgina.',
+    'Segons la temporada, la classe de benvinguda per a residents té un preu de benvinguda especial. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Benvinguda" a la part superior d\'aquesta pàgina.',
 
   modernjazzFaqQ8: 'Quins nivells de Modern Jazz teniu?',
   modernjazzFaqA8: 'Actualment oferim classes de nivell bàsic per a persones amb poca experiència.',
@@ -5208,7 +5227,7 @@ Farray's International Dance Center està valorat prop del **5/5 a Google**, amb
     'Consulta els nostres horaris i tria entre nivell principiant, intermedi o avançat. Si mai has ballat, comença per principiant.',
   modernjazzHowToStep2Name: 'Reserva la teva primera classe',
   modernjazzHowToStep2Text:
-    'Contacta amb nosaltres per WhatsApp al +34 622 247 085 o correu a info@farrayscenter.com per reservar la teva classe de prova gratuïta.',
+    'Contacta amb nosaltres per WhatsApp al +34 622 247 085 o correu a info@farrayscenter.com per reservar la teva classe de benvinguda.',
   modernjazzHowToStep3Name: "Prepara't per a la classe",
   modernjazzHowToStep3Text:
     'Vine amb roba còmoda que permeti moviment. Sabatilles de jazz ideals, però pots començar amb mitjons. Porta aigua.',
@@ -5280,7 +5299,7 @@ Farray's International Dance Center està valorat prop del **5/5 a Google**, amb
   // ===== CTAs =====
   balletCTA1: 'Fes-te Soci Ara',
   balletCTA1Subtext: 'Queden poques places aquest mes',
-  balletCTA2: 'Reserva la teva Classe de Prova',
+  balletCTA2: 'Reserva la teva Classe de Benvinguda',
   balletCTA2Subtext: 'Vàlid per temps limitat',
 
   // ===== What is Ballet Section =====
@@ -5504,7 +5523,7 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
 
   balletFaqQ8: "Puc provar una classe de Ballet abans d'inscriure'm?",
   balletFaqA8:
-    "Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. Per a turistes, és de pagament. Si t'agrada i decideixes quedar-te, l'import es descompta de la teva primera quota.",
+    "Segons la temporada, la classe de benvinguda per a residents té un preu de benvinguda especial. Per a turistes, és de pagament. Si t'agrada i decideixes quedar-te, l'import es descompta de la teva primera quota.",
 
   balletFaqQ9: 'Quins nivells de ballet teniu?',
   balletFaqA9:
@@ -5565,7 +5584,7 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
     'Principiants (sense experiència o poca) o Intermedi (domines posicions bàsiques). En dubte, comença per principiants.',
   balletHowToStep2Name: 'Reserva la teva primera classe',
   balletHowToStep2Text:
-    'Contacta per WhatsApp al +34 622 247 085 o email a info@farrayscenter.com per reservar la teva classe de prova gratuïta.',
+    'Contacta per WhatsApp al +34 622 247 085 o email a info@farrayscenter.com per reservar la teva classe de benvinguda.',
   balletHowToStep3Name: "Prepara't per a la classe",
   balletHowToStep3Text:
     'Vine amb roba ajustada que permeti veure la teva postura. Sabatilles de mitja punta ideals, però pots començar amb mitjons.',
@@ -5785,7 +5804,7 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
   afrojazzHeroLocation: 'Classes per a tots els nivells amb metodologia professional CID-UNESCO',
   afrojazzCTA1: 'Fes-te Membre Ara',
   afrojazzCTA1Subtext: 'Places limitades per grups reduïts',
-  afrojazzCTA2: 'Reserva la Teva Classe de Prova',
+  afrojazzCTA2: 'Reserva la Teva Classe de Benvinguda',
   afrojazzCTA2Subtext: 'Descobreix la fusió única',
   afrojazzWhatIsTitle: "Què és l'Afro Jazz?",
   afrojazzWhatIsP1:
@@ -5949,7 +5968,7 @@ Ballarins de tot el món viatgen a Barcelona específicament per formar-se en Af
     "Sí. La improvisació és part fonamental de l'Afro Jazz. Desenvolupem la capacitat de crear moviment en temps real mantenint coherència estilística i connexió amb la música.",
   afrojazzFaqQ8: "Puc provar una classe abans d'inscriure'm?",
   afrojazzFaqA8:
-    'Sí, pots reservar una classe de prova. Tingues en compte que necessites experiència prèvia en dansa per poder seguir el nivell de la classe.',
+    'Sí, pots reservar una classe de benvinguda. Tingues en compte que necessites experiència prèvia en dansa per poder seguir el nivell de la classe.',
   afrojazzFaqQ9: 'Quina roba i calçat he de portar?',
   afrojazzFaqA9:
     'Roba còmoda que permeti moviment ampli (malles, pantaló de dansa, samarreta ajustada). El calçat depèn de la superfície: sabatilles de Jazz, mitjons de dansa o descalç segons indicació.',
@@ -6088,7 +6107,7 @@ Ballarins de tot el món viatgen a Barcelona específicament per formar-se en Af
   // CTAs
   contemporaneoCTA1: 'Fes-te Soci Ara',
   contemporaneoCTA1Subtext: 'Queden poques places aquest mes',
-  contemporaneoCTA2: 'Reserva la teva Classe de Prova',
+  contemporaneoCTA2: 'Reserva la teva Classe de Benvinguda',
   contemporaneoCTA2Subtext: 'Oferta per temps limitat',
   contemporaneoCTAGroup: "Opcions d'inscripció",
 
@@ -6368,7 +6387,7 @@ Treballa integralment: **flexibilitat, força funcional, coordinació, propiocep
     'Treballem múltiples tècniques: terra, release, contact improvisation, i elements de diverses escoles. Un enfocament multidisciplinari perquè desenvolupis el teu propi llenguatge.',
   contemporaneoFaqQ8: "Puc provar una classe abans d'inscriure'm?",
   contemporaneoFaqA8:
-    'Per descomptat. Pots reservar una classe de prova per veure si és el que busques. Vine a provar i descobreix com deixar fluir el teu talent a través del ball.',
+    'Per descomptat. Pots reservar una classe de benvinguda per veure si és el que busques. Vine a provar i descobreix com deixar fluir el teu talent a través del ball.',
   contemporaneoFaqQ9: 'I si falto a una classe per feina o compromisos?',
   contemporaneoFaqA9:
     'Les classes són recuperables, així que si faltes un dia, pots venir a la següent classe disponible al teu mateix nivell.',
@@ -6450,7 +6469,7 @@ Treballa integralment: **flexibilitat, força funcional, coordinació, propiocep
   // CTAs
   afrocontemporaneoCTA1: 'Fes-te Soci Ara',
   afrocontemporaneoCTA1Subtext: 'Poques places disponibles',
-  afrocontemporaneoCTA2: 'Reserva la Teva Classe de Prova',
+  afrocontemporaneoCTA2: 'Reserva la Teva Classe de Benvinguda',
   afrocontemporaneoCTA2Subtext: 'Descobreix la tècnica cubana',
 
   // What Is Section
@@ -6665,7 +6684,7 @@ L'Afro Contemporani impartit a **Farray's International Dance Center** forma par
 
   afrocontemporaneoFaqQ8: "Puc provar una classe abans d'inscriure'm?",
   afrocontemporaneoFaqA8:
-    "Sí, pots reservar una classe de prova per veure si és el que busques. Preferim que experimentis l'energia de l'Afro Contemporani abans de decidir.",
+    "Sí, pots reservar una classe de benvinguda per veure si és el que busques. Preferim que experimentis l'energia de l'Afro Contemporani abans de decidir.",
 
   afrocontemporaneoFaqQ9: 'Quina roba he de portar a les classes?',
   afrocontemporaneoFaqA9:
@@ -6888,7 +6907,7 @@ L'Afro Contemporani impartit a **Farray's International Dance Center** forma par
   hiphopIdentifyItem5: 'Necessites una activitat que et desconnecti i et faci gaudir',
   hiphopIdentifyNotSure: 'No estàs segur?',
   hiphopIdentifyNotSureText:
-    'Vine a una classe de prova i descobreix si el Hip Hop és el teu estil. Sense compromís.',
+    'Vine a una classe de benvinguda i descobreix si el Hip Hop és el teu estil. Sense compromís.',
 
   // Why Today Section
   hiphopWhyTodayTitle: 'Per què començar avui?',
@@ -7098,7 +7117,7 @@ L'Afro Contemporani impartit a **Farray's International Dance Center** forma par
   salsaCubanaCTAGroup: "Opcions d'inscripció",
   salsaCubanaCTA1: 'Fes-te Soci Ara',
   salsaCubanaCTA1Subtext: 'Només queden 8 places per classe',
-  salsaCubanaCTA2: 'Reserva la teva Classe de Prova GRATIS',
+  salsaCubanaCTA2: 'Reserva la teva Classe de Benvinguda',
   salsaCubanaCTA2Subtext: 'Vàlid per temps limitat',
 
   // Problem Section
@@ -7432,7 +7451,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
     'Roba còmoda i lleugera. Bambes o sabates còmodes. Per a les noies, sabates de taló amb subjecció al turmell són recomanables però no obligatòries.',
   salsaCubanaFaqQ7: "Puc provar una classe abans d'inscriure'm?",
   salsaCubanaFaqA7:
-    'Sí, oferim una primera classe de prova sense compromís. Vine a conèixer-nos, prova el Mètode Farray® i decideix si és per a tu.',
+    'Sí, oferim una primera classe de benvinguda sense compromís. Vine a conèixer-nos, prova el Mètode Farray® i decideix si és per a tu.',
   salsaCubanaFaqQ8: 'Què és la Rueda de Casino?',
   salsaCubanaFaqA8:
     "És una forma de ballar salsa cubana en grup, en cercle, on totes les parelles executen figures sincronitzades seguint les indicacions d'un 'cantant'. És molt divertida i social.",
@@ -7447,7 +7466,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
     'Sí, disposem de vestidors amb dutxes perquè puguis refrescar-te després de classe si ho necessites.',
   salsaCubanaFaqQ12: 'Com sé quin nivell em correspon?',
   salsaCubanaFaqA12:
-    "Si mai has ballat, comença pel Nivell 0. Si ja tens experiència, vine a una classe de prova i t'orientarem sobre el nivell més adequat per a tu.",
+    "Si mai has ballat, comença pel Nivell 0. Si ja tens experiència, vine a una classe de benvinguda i t'orientarem sobre el nivell més adequat per a tu.",
   salsaCubanaFaqQ13: 'Organitzeu sortides a ballar?',
   salsaCubanaFaqA13:
     'Sí, organitzem regularment sortides a sales de ball i esdeveniments perquè puguis practicar el que has après en un ambient real i divertit.',
@@ -7696,7 +7715,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   // CTAs
   salsaLadyCTA1: 'Fes-te Sòcia Ara',
   salsaLadyCTA1Subtext: 'Places limitades aquest trimestre',
-  salsaLadyCTA2: 'Reserva la teva Classe de Prova',
+  salsaLadyCTA2: 'Reserva la teva Classe de Benvinguda',
   salsaLadyCTA2Subtext: 'Descobreix el Mètode Farray®',
 
   // Stats
@@ -7954,7 +7973,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
     'Des de la primera classe notaràs canvis en la teva postura i consciència corporal. En 2-3 mesos de pràctica regular, veuràs una transformació significativa en el teu estil i confiança.',
   salsaLadyFaqQ7: "Puc provar una classe abans d'inscriure'm?",
   salsaLadyFaqA7:
-    'Segons la temporada, la classe de prova pot ser gratuïta o tenir un preu simbòlic. La idea és que puguis experimentar el Mètode Farray® sense compromís.',
+    'Segons la temporada, la classe de benvinguda té un preu de benvinguda especial. La idea és que puguis experimentar el Mètode Farray® sense compromís.',
   salsaLadyFaqQ8: 'Quina roba he de portar?',
   salsaLadyFaqA8:
     "Roba còmoda que permeti moviment. Moltes alumnes prefereixen vestits o faldilles per practicar girs, però no és obligatori. L'important és sentir-te còmoda.",
@@ -7996,7 +8015,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   salsaLadyFinalCTAFunny: 'Les places volen més ràpid que un gir triple amb talons de 10 cm.',
   salsaLadyFinalCTA1: 'Fes-te Sòcia Ara',
   salsaLadyFinalCTA1Subtext: 'Places limitades aquest trimestre',
-  salsaLadyFinalCTA2: 'Reserva la teva Classe de Prova',
+  salsaLadyFinalCTA2: 'Reserva la teva Classe de Benvinguda',
   salsaLadyFinalCTA2Subtext: 'Descobreix el Mètode Farray®',
 
   // Course Schema
@@ -8185,7 +8204,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
     'Per a estudiants que volen millorar tècnica, coordinació i expressió amb passos més complexos.',
   reviews: 'ressenyes',
   thankYouForLove: "Gràcies per Tant d'Amor",
-  trialClassCTA: 'Prova una Classe Gratuïta',
+  trialClassCTA: 'Prova la teva Classe de Benvinguda',
   warmupDesc:
     'Prepara el teu cos amb exercicis específics per evitar lesions i millorar la teva tècnica.',
   warmupTitle: 'Escalfament',
@@ -8224,7 +8243,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   contemporaneoCaloriesStat: 'Calories Cremades',
   contemporaneoDanceStat: 'Dansa',
   danceClassesHub_cta_member: 'Fes-te Soci Ara',
-  danceClassesHub_cta_trial: 'Reserva la Teva Classe de Prova',
+  danceClassesHub_cta_trial: 'Reserva la Teva Classe de Benvinguda',
 
   // === AUTO-ADDED CA TRANSLATIONS (from ES) ===
   danceClassesHub_style_otras_danzas_desc:
@@ -8314,7 +8333,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
     "Coneixeràs noves músiques i ritmes, exercitaràs la teva coordinació i memòria, i milloraràs la teva capacitat d'improvisació i interpretació musical.",
   dancehallMidCTATitle: 'Preparat Per Transformar la Teva Vida?',
   dancehallMidCTADesc:
-    'Parla amb nosaltres per WhatsApp i reserva la teva classe gratis ara mateix. Et responem en minuts!',
+    'Parla amb nosaltres per WhatsApp i reserva la teva classe de benvinguda ara mateix. Et responem en minuts!',
   dancehallHowItWorksTitle: 'Com Funcionen les Nostres Classes de Dancehall a Barcelona?',
   dancehallClassStructureTitle: 'Estructura de Cada Classe (60 min)',
   dancehallClassStructureDesc:
@@ -8530,7 +8549,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   facilitiesHeroDesc:
     "Farray's International Dance Center és una escola de ball a Barcelona amb més de 700 m² d'instal·lacions dissenyades específicament per a la dansa, l'entrenament físic i la creació artística.",
   facilitiesHeroLocation: 'Carrer Entença 100, Barcelona - Entre Plaça Espanya i Sants',
-  facilitiesCTA1: 'Reserva la Teva Classe de Prova',
+  facilitiesCTA1: 'Reserva la Teva Classe de Benvinguda',
   facilitiesCTA1Subtext: 'Coneix les nostres instal·lacions en persona',
   facilitiesCTA2: 'Sol·licita un Tour',
   facilitiesCTA2Subtext: 'Descobreix els nostres espais',
@@ -8828,7 +8847,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
     'Aprèn a ballar el reggaeton autèntic que es balla als carrers de Cuba. No el comercial, el de debò.',
   rcbCTA1: 'Fes-te Soci Ara',
   rcbCTA1Subtext: 'Queden poques places aquest mes',
-  rcbCTA2: 'Reserva la teva Classe de Prova',
+  rcbCTA2: 'Reserva la teva Classe de Benvinguda',
   rcbCTA2Subtext: 'Oferta per temps limitat',
   rcbAuthenticGuaranteed: 'Sabor Cubà',
   rcbWhatIsP3:
@@ -9014,7 +9033,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   hiphopHeroLocation: 'Classes open level per a tots els nivells, entre Plaça Espanya i Sants',
   hiphopCTA1: 'Fes-te Soci Ara',
   hiphopCTA1Subtext: 'Queden poques places aquest mes',
-  hiphopCTA2: 'Reserva la teva Classe de Prova',
+  hiphopCTA2: 'Reserva la teva Classe de Benvinguda',
   hiphopCTA2Subtext: 'Oferta per temps limitat',
   hiphopCTAGroup: "Opcions d'inscripció",
   flowGuaranteed: 'Flow',
@@ -9203,7 +9222,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   // CTAs
   folkloreCTA1: 'Fes-te Soci Ara',
   folkloreCTA1Subtext: 'Places limitades',
-  folkloreCTA2: 'Reserva la teva Classe de Prova',
+  folkloreCTA2: 'Reserva la teva Classe de Benvinguda',
   folkloreCTA2Subtext: 'Sense compromís',
   folkloreCTAGroup: "Opcions d'inscripció",
 
@@ -9410,7 +9429,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
     'El folklore cubà és per a tothom. De fet, moltes danses als Orixàs tenen versions masculines molt potents (com Changó o Ogún). Homes i dones són benvinguts a totes les nostres classes.',
   folkloreFaqQ8: "Puc provar una classe abans d'inscriure'm?",
   folkloreFaqA8:
-    'Sí. Oferim classe de prova perquè experimentis la nostra metodologia sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Prova" en aquesta pàgina.',
+    'Sí. Oferim classe de benvinguda perquè experimentis la nostra metodologia sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Benvinguda" en aquesta pàgina.',
   folkloreFaqQ9: 'Feu esdeveniments o presentacions de folklore?',
   folkloreFaqA9:
     'Sí. Organitzem la nostra gala anual on els alumnes poden mostrar el que han après en un teatre professional. També realitzem workshops amb mestres convidats i participem en esdeveniments culturals de la ciutat.',
@@ -9505,7 +9524,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   timbaCTAGroup: "Opcions d'inscripció a Timba",
   timbaCTA1: 'Fes-te Soci Ara',
   timbaCTA1Subtext: 'Places limitades',
-  timbaCTA2: 'Reserva la teva Classe de Prova',
+  timbaCTA2: 'Reserva la teva Classe de Benvinguda',
   timbaCTA2Subtext: 'Sense compromís',
 
   // === WHAT IS TIMBA SECTION ===
@@ -9723,9 +9742,9 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   timbaFaqQ6: "La Timba m'ajudarà a millorar la meva salsa cubana?",
   timbaFaqA6:
     'Absolutament. La Timba i la salsa cubana van de la mà. El que aprens a Timba (interpretació musical, improvisació, despelote) millora directament el teu ball en parella.',
-  timbaFaqQ7: 'Quant costa la classe de prova?',
+  timbaFaqQ7: 'Quant costa la classe de benvinguda?',
   timbaFaqA7:
-    "La classe de prova costa 10€. Si t'apuntes aquell mateix dia, es descompta del primer mes.",
+    "La classe de benvinguda costa 10€. Si t'apuntes aquell mateix dia, es descompta del primer mes.",
   timbaFaqQ8: 'Hi ha contracte o permanència mínima?',
   timbaFaqA8:
     "No. A Farray's treballem mes a mes, sense contractes ni permanències. Pagues només els mesos que véns.",
@@ -9863,7 +9882,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   stretchingCTAGroup: "Opcions d'inscripció",
   stretchingCTA1: 'Fes-te Soci/a Ara',
   stretchingCTA1Subtext: 'Queden poques places per classe',
-  stretchingCTA2: 'Reserva la teva Classe de Prova',
+  stretchingCTA2: 'Reserva la teva Classe de Benvinguda',
   stretchingCTA2Subtext: 'Vàlid per temps limitat',
 
   // === WHAT IS STRETCHING SECTION ===
@@ -10074,9 +10093,9 @@ Estudis científics confirmen que l'stretching regular de 3+ vegades per setmana
   stretchingFaqQ7: "Les classes d'stretching són només per a ballarins?",
   stretchingFaqA7:
     "No. Només el 30% dels nostres alumnes d'stretching són ballarins. El 70% restant són: oficinistes amb tensió cervical/lumbar, esportistes que volen prevenir lesions, persones majors de 40 que volen mantenir mobilitat, i qualsevol que vulgui sentir-se millor al seu cos. L'stretching beneficia totes les edats i condicions físiques.",
-  stretchingFaqQ8: "Quant costa la classe de prova d'stretching?",
+  stretchingFaqQ8: "Quant costa la classe de benvinguda d'stretching?",
   stretchingFaqA8:
-    'Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Prova".',
+    'Segons la temporada, la classe de benvinguda per a residents té un preu de benvinguda especial. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Benvinguda".',
   stretchingFaqQ9: 'Hi ha contracte o permanència mínima?',
   stretchingFaqA9:
     "No hi ha contracte ni permanència mínima. A Farray's Center treballem mes a mes: pagues només els mesos que assisteixes. Pots pausar o cancel·lar en qualsevol moment sense penalitzacions. Flexibilitat total per adaptar-nos a la teva vida.",
@@ -10174,7 +10193,7 @@ Estudis científics confirmen que l'stretching regular de 3+ vegades per setmana
   bumbumHeroStudents: '+15.000 alumnes formats',
   bumbumCTAGroup: "Opcions d'inscripció",
   bumbumCTA1: 'Fes-te Soci/Sòcia Ara',
-  bumbumCTA2: 'Reserva la teva Classe de Prova',
+  bumbumCTA2: 'Reserva la teva Classe de Benvinguda',
   bumbumCTA1Subtext: 'Queden poques places per classe',
   bumbumCTA2Subtext: 'Vàlid per temps limitat',
 
@@ -10376,9 +10395,9 @@ L'entrenament regular de glutis (2-3 vegades/setmana):
   bumbumFaqQ7: 'És només per a dones?',
   bumbumFaqA7:
     "No. Encara que la majoria de participants són dones, els homes també es poden beneficiar enormement de l'entrenament de glutis. Uns glutis forts milloren el rendiment esportiu, prevenen lesions i milloren la postura en qualsevol persona.",
-  bumbumFaqQ8: 'Quant costa la classe de prova de Bum Bum Glutis?',
+  bumbumFaqQ8: 'Quant costa la classe de benvinguda de Bum Bum Glutis?',
   bumbumFaqA8:
-    'Segons la temporada, la classe de prova per a residents pot ser gratuïta o tenir un preu simbòlic de benvinguda. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Prova".',
+    'Segons la temporada, la classe de benvinguda per a residents té un preu de benvinguda especial. La idea és que puguis provar l\'experiència sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Benvinguda".',
   bumbumFaqQ9: 'Hi ha contracte o permanència mínima?',
   bumbumFaqA9:
     "No hi ha contracte ni permanència mínima. A Farray's Center treballem mes a mes: pagues només els mesos que assisteixes. Pots pausar o cancel·lar en qualsevol moment sense penalitzacions.",
@@ -10472,7 +10491,7 @@ L'entrenament regular de glutis (2-3 vegades/setmana):
   // CTAs
   bachataLadyCTA1: 'Fes-te Soci/Sòcia Ara',
   bachataLadyCTA1Subtext: 'Queden poques places aquest mes',
-  bachataLadyCTA2: 'Reserva la teva Classe de Prova',
+  bachataLadyCTA2: 'Reserva la teva Classe de Benvinguda',
   bachataLadyCTA2Subtext: 'Vàlid per temps limitat',
 
   // What Is Section
@@ -10839,7 +10858,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
     'Des de la primera classe notaràs canvis en la teva postura i consciència corporal. En 2-3 mesos de pràctica regular, veuràs una transformació significativa en el teu estil i confiança.',
   bachataLadyFaqQ7: "Puc provar una classe abans d'inscriure'm?",
   bachataLadyFaqA7:
-    'Segons la temporada, la classe de prova pot ser gratuïta o tenir un preu simbòlic. La idea és que puguis experimentar el Mètode Farray® sense compromís.',
+    'Segons la temporada, la classe de benvinguda té un preu de benvinguda especial. La idea és que puguis experimentar el Mètode Farray® sense compromís.',
   bachataLadyFaqQ8: 'Quina roba he de portar?',
   bachataLadyFaqA8:
     "Roba còmoda que permeti moviment. Moltes alumnes prefereixen vestits o faldilles per practicar girs i ondulacions, però no és obligatori. L'important és sentir-te còmoda.",
@@ -10879,7 +10898,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
     'No importa si véns a desconnectar de la feina. A conèixer gent nova. A reconnectar amb la teva feminitat. A demostrar que SÍ pots ballar de forma elegant.\n\nEl que importa és que facis el primer pas.\n\nAmb el Mètode Farray® no aprendràs "trucs". Aprendràs a ballar amb fonament. Amb tècnica. Amb estil. I el més important: gaudint cada minut.',
   bachataLadyFinalCTA1: 'Fes-te Sòcia Ara',
   bachataLadyFinalCTA1Subtext: 'Queden poques places aquest mes',
-  bachataLadyFinalCTA2: 'Reserva la teva Classe de Prova',
+  bachataLadyFinalCTA2: 'Reserva la teva Classe de Benvinguda',
   bachataLadyFinalCTA2Subtext: 'Vàlid per temps limitat',
 
   // Pricing - Exclusive Member Benefits
@@ -11436,7 +11455,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   dhV3CompareMeaning4Title: 'Si busques comunitat:',
   dhV3CompareMeaning4Desc:
     'Aquí no ets un número. Coneixeràs gent, aniràs a pràctiques, i tindràs una família de ball real.',
-  dhV3CompareCTA: 'Comprova-ho: primera classe de prova',
+  dhV3CompareCTA: 'Comprova-ho: primera classe de benvinguda',
   dhV3CompareNote: 'Sense permanència. Sense trucs. Sense pressió.',
   navBachataLadyStyle: 'Bachata Lady Style',
   navBachataSensual: 'Bachata Sensual',
@@ -11460,7 +11479,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   salsaLadyV2HeroSubtitle: 'El Mètode que Transforma el teu Ball',
   salsaLadyV2HeroDesc:
     "Deixa d'improvisar en els shines. Aprèn tècnica femenina real amb l'únic sistema estructurat de Lady Style a Barcelona.",
-  salsaLadyV2CTA1: 'Reserva la teva Classe de Prova',
+  salsaLadyV2CTA1: 'Reserva la teva Classe de Benvinguda',
   salsaLadyV2CTA2: 'Veure el Mètode Farray®',
   salsaLadyV2ProblemTitle: 'El sostre de vidre del Lady Style',
   salsaLadyV2ProblemP1: 'Portes mesos (o anys) ballant salsa.',
@@ -11654,7 +11673,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   navPricing: 'Preus',
   pricing_page_title: 'Precios Clases de Baile Barcelona | Cuotas 2025',
   pricing_page_description:
-    'Conoce las cuotas de socio de FIDC Barcelona: planes mensuales desde 50€, cuotas flexibles, entrenamientos personalizados. Sin permanencia. Primera clase gratis.',
+    'Conoce las cuotas de socio de FIDC Barcelona: planes mensuales desde 50€, cuotas flexibles, entrenamientos personalizados. Sin permanencia. Classe de benvinguda.',
   pricing_breadcrumb_home: 'Inici',
   pricing_breadcrumb_current: 'Horaris i Preus',
   pricing_schema_name: "Cuotas Club Deportivo Farray\'s Center",
@@ -11763,7 +11782,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
     "La cuota de inscripción es de 60€ el primer año y 20€/año de renovación para todos los socios. Esta cuota te garantiza el acceso al sistema, tu plaza fija en el horario, y todas las ventajas exclusivas de socio de Farray's: seguro de accidentes, entrada prioritaria a eventos y actividades internas, programa de referidos (2 participaciones puntuales por amigo), descuentos en merchandising y fiestas, y todos los beneficios de formar parte de nuestra comunidad de +10.000 bailarines. A veces tenemos promociones donde la bonificamos.",
   pricing_faq2_q: '¿Puedo probar una clase antes de inscribirme?',
   pricing_faq2_a:
-    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
+    'Según la temporada, la clase de bienvenida tiene un precio especial. La idea es que puedas probar la experiencia sin compromiso.',
   pricing_faq3_q: '¿Hay compromiso de permanencia?',
   pricing_faq3_a:
     'No, no hay permanencia obligatoria. Puedes cancelar tu cuota mensual cuando quieras, solicitándolo a través del formulario de contacto de la web con un mínimo de 15 días de antelación del siguiente cobro.',
@@ -11823,7 +11842,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   pricing_cta_secondary_subtitle: 'Prueba el centro · Conoce horarios y niveles',
   pricingV2_page_title: 'Precios Clases de Baile Barcelona | Desde 50 euros/mes',
   pricingV2_page_description:
-    'Descubre los precios de clases de baile en Barcelona. Cuotas mensuales desde 50 euros, bonos flexibles y opciones puntuales. Sin permanencia. Primera clase gratis.',
+    'Descubre los precios de clases de baile en Barcelona. Cuotas mensuales desde 50 euros, bonos flexibles y opciones puntuales. Sin permanencia. Classe de benvinguda.',
   pricingV2_hero_title: 'Precios de Clases de Baile en Barcelona',
   pricingV2_hero_subtitle:
     'Descubre las opciones de participación en actividades de baile en uno de los centros de referencia en Barcelona.',
@@ -12003,7 +12022,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   horariosV2_hero_subtitle:
     'Encuentra el horario y el estilo que encajan contigo y descubre cómo empezar en Farray Center de forma clara y sin compromiso.',
   horariosV2_hero_cta: 'Recibir Horarios Completos',
-  horariosV2_hero_ctaSubtext: 'Gratis y sin compromiso',
+  horariosV2_hero_ctaSubtext: 'Sense compromís',
   horariosV2_hero_years: 'años en Barcelona',
   horariosV2_preview_title: 'Esto es solo una muestra',
   horariosV2_preview_subtitle: 'Tenemos muchos más horarios y estilos que mostrarte',
@@ -12012,7 +12031,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   horariosV2_preview_point3: 'Todos los niveles y edades',
   horariosV2_preview_point4: 'Información de profesores y salas',
   horariosV2_preview_cta: 'Recibir Horarios Completos por Email',
-  horariosV2_preview_free: 'Gratis y sin compromiso',
+  horariosV2_preview_free: 'Sense compromís',
   horariosV2_moreSchedules_title: 'Hay muchos más horarios disponibles',
   horariosV2_moreSchedules_desc:
     'Los horarios que ves aquí son solo una selección. Para ver todos los horarios disponibles, incluyendo clases de noche y fines de semana, solicita la información completa.',
@@ -12020,7 +12039,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   horariosV2_sample_preview_label: 'Muestra de horarios - Para ver todos, solicita info',
   horariosV2_trust_noCommitment: 'Sin permanencia',
   horariosV2_trust_byLevel: 'Grupos por nivel',
-  horariosV2_trust_freeClass: 'Primera clase gratuita',
+  horariosV2_trust_freeClass: 'Classe de benvinguda',
   horariosV2_authority_since2017: 'Desde 2017',
   horariosV2_authority_cidUnesco: 'CID-UNESCO',
   horariosV2_authority_members: '+15.000 socios',
@@ -12142,7 +12161,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
     'Los horarios son orientativos y pueden variar según la temporada, el nivel y la disponibilidad de plazas. Siempre te enviamos la información actualizada antes de empezar.',
   horariosV2_faq6_q: '¿Puedo probar una clase antes de inscribirme?',
   horariosV2_faq6_a:
-    'Mira, lo importante es que pruebes. Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
+    'Mira, lo importante es que pruebes. Según la temporada, la clase de bienvenida tiene un precio especial. La idea es que puedas probar la experiencia sin compromiso.',
   horariosV2_faq7_q: '¿Dónde está Farray Center y a quién van dirigidas las actividades de baile?',
   horariosV2_faq7_a:
     'Estamos en Calle Entença nº 100 en Barcelona y nuestras clases están dirigidas a adultos de todos los niveles que quieren aprender, mejorar o disfrutar del baile en un entorno profesional y cercano.',
@@ -12229,7 +12248,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   horariosV2_cta_emotional2:
     'Se trata de encontrar un lugar donde disfrutar, progresar y sentirte parte de una comunidad.',
   horariosV2_cta_primary: 'Recibir Horarios Completos',
-  horariosV2_cta_subtext: 'Gratis y sin compromiso - Te contactamos de manera inmediata',
+  horariosV2_cta_subtext: 'Sense compromís - Te contactamos de manera inmediata',
 
   blogBeneficiosSalsa_excerpt:
     'Bailar salsa no es solo divertido: es una de las actividades más completas para tu salud física, mental y social.',
@@ -12240,7 +12259,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogBeneficiosSalsa_ctaTitle: '¿Listo para experimentar estos beneficios?',
   blogBeneficiosSalsa_ctaText:
     "En Farray's International Dance Center tenemos clases de salsa cubana para todos los niveles. Profesores cubanos con más de 20 años de experiencia te guiarán desde tus primeros pasos hasta movimientos avanzados.",
-  blogBeneficiosSalsa_ctaButton: 'Probar Clase Gratis',
+  blogBeneficiosSalsa_ctaButton: 'Reservar Classe de Benvinguda',
 
   // =============================================
   // TEACHERS PAGE - Professors de Ball Barcelona
@@ -12398,7 +12417,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   bachataV3ScheduleSubtitle:
     "5 classes setmanals per a tots els nivells. Troba l'horari que encaixi amb la teva rutina i comença a ballar.",
   bachataV3ScheduleCTA: 'Reserva la Teva Primera Classe',
-  bachataV3ScheduleNote: 'Primera classe GRATIS per provar',
+  bachataV3ScheduleNote: 'Classe de benvinguda',
 
   // === LEVEL CARDS ===
   bachataV3LevelBeginnerTitle: 'Principiants',
@@ -12523,7 +12542,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   bachataV3WhyTodayP2:
     'La bachata sensual està al seu punt àlgid. Hi ha events per tot arreu, la comunitat creix, i ara és el millor moment per unir-te. En uns mesos estaràs a la pista preguntant-te per què vas esperar tant.',
   bachataV3WhyTodayP3:
-    "A Farray's donem la benvinguda a nous alumnes cada setmana. Avui podria ser el teu dia. La primera classe és gratuïta, així que no tens res a perdre i una nova passió a guanyar.",
+    "A Farray's donem la benvinguda a nous alumnes cada setmana. Avui podria ser el teu dia. La classe de benvinguda és especial, així que no tens res a perdre i una nova passió a guanyar.",
 
   // === LOGOS SECTION ===
   bachataV3LogosTitle: 'Reconeguts pels Millors',
@@ -12568,7 +12587,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
     'Sí! Organitzem pràctiques setmanals i socials mensuals on pots ballar el que aprens a classe. També organitzem viatges a congressos de bachata nacionals i internacionals. La nostra comunitat és molt activa i sempre tindràs on ballar.',
   bachataV3FaqQ10: 'Quant costen les classes de bachata a Barcelona?',
   bachataV3FaqA10:
-    "A Farray's tenim opcions flexibles: classes individuals, paquets mensuals i passis il·limitats. La primera classe és GRATIS perquè puguis provar sense compromís. Després d'això, els preus comencen a 40€/mes per 1 classe setmanal. Consulta la nostra pàgina de tarifes per a més detalls.",
+    "A Farray's tenim opcions flexibles: classes individuals, paquets mensuals i passis il·limitats. Reserva la teva classe de benvinguda perquè puguis provar sense compromís. Després d'això, els preus comencen a 40€/mes per 1 classe setmanal. Consulta la nostra pàgina de tarifes per a més detalls.",
 
   // === NEARBY SECTION ===
   bachataV3NearbyTitle: 'Classes de Bachata Sensual a Prop Teu',
@@ -12580,8 +12599,8 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // === FINAL CTA SECTION ===
   bachataV3FinalCtaTitle: 'Preparat per Començar a Ballar Bachata Sensual?',
   bachataV3FinalCtaSubtitle:
-    "La teva primera classe és GRATIS. Vine a conèixer-nos i descobreix per què milers d'estudiants han triat Farray's.",
-  bachataV3FinalCtaPrimary: 'Reservar Classe Gratis',
+    "Reserva la teva classe de benvinguda. Vine a conèixer-nos i descobreix per què milers d'estudiants han triat Farray's.",
+  bachataV3FinalCtaPrimary: 'Reservar Classe de Benvinguda',
   bachataV3FinalCtaSecondary: 'Veure Tots els Horaris',
   bachataV3FinalCtaGuarantee: '100% garantia de satisfacció en la teva primera classe',
   bachataV3FinalCtaSocial: 'Uneix-te a la nostra comunitat de +15.000 estudiants',
@@ -12762,9 +12781,9 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
 
   twLandingPageTitle: 'Classe de Benvinguda de Twerk',
   twLandingPageDescription:
-    'Descobreix el Twerk a Barcelona. Classe de Benvinguda totalment GRATIS. Places limitades. Sense compromís. Reserva ara.',
+    'Descobreix el Twerk a Barcelona. Classe de Benvinguda sense compromís. Places limitades. Sense compromís. Reserva ara.',
 
-  twLandingBadge: 'CLASSE GRATIS DE BENVINGUDA',
+  twLandingBadge: 'CLASSE DE BENVINGUDA',
   twLandingHeadline: 'Desperta el Teu Poder amb el Twerk',
   twLandingSubheadline:
     "Entra al nou any alliberant la teva energia, connectant amb el teu cos i descobrint un ball que t'empodera des del primer minut. Diversió garantida mentre treballes glutis, core i autoestima.",
@@ -12785,7 +12804,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
 
   twLandingExperienceTitle: 'Preparada per alliberar el teu poder interior?',
   twLandingExperienceDesc:
-    'El Twerk no és només un ball, és una declaració de llibertat. És el teu moment per connectar amb el teu cos sense judicis, enfortir la teva confiança i passar-ho increïblement bé. Primera vegada amb nosaltres? Aquesta és la teva ocasió: una classe de Benvinguda de Twerk totalment gratis, sense cost, sense compromís i amb places limitades.',
+    'El Twerk no és només un ball, és una declaració de llibertat. És el teu moment per connectar amb el teu cos sense judicis, enfortir la teva confiança i passar-ho increïblement bé. Primera vegada amb nosaltres? Aquesta és la teva ocasió: una classe de Benvinguda de Twerk sense compromís, sense cost, sense compromís i amb places limitades.',
 
   twLandingValueTitle: 'Què inclou aquesta experiència?',
   twLandingValueItem1: 'Una classe completa de Twerk de 60 minuts',
@@ -12797,7 +12816,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   twLandingValueIncluded: 'Inclòs',
   twLandingValueTotal: 'VALOR TOTAL:',
   twLandingValueYourPrice: 'EL TEU PREU AVUI:',
-  twLandingValueFree: 'GRATIS',
+  twLandingValueFree: 'SENSE COMPROMÍS',
 
   twLandingOfferTitle: 'Només per temps limitat',
   twLandingOfferDesc:
@@ -12932,13 +12951,12 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Professora: Yasmina Fernández
 
   // SEO
-  sxrLandingPageTitle:
-    "Classe de Benvinguda de Sexy Reggaeton a Barcelona | GRATIS | Farray's Center",
+  sxrLandingPageTitle: "Classe de Benvinguda de Sexy Reggaeton a Barcelona | Farray's Center",
   sxrLandingPageDescription:
-    'Prova una classe GRATIS de Sexy Reggaeton amb Yasmina Fernández a Barcelona. Descobreix la sensualitat del perreo i el body roll. Sense experiència prèvia. Acadèmia CID-UNESCO.',
+    'Reserva la teva classe de benvinguda de Sexy Reggaeton amb Yasmina Fernández a Barcelona. Descobreix la sensualitat del perreo i el body roll. Sense experiència prèvia. Acadèmia CID-UNESCO.',
 
   // Hero Section
-  sxrLandingBadge: 'CLASSE GRATIS DE BENVINGUDA',
+  sxrLandingBadge: 'CLASSE DE BENVINGUDA',
   sxrLandingHeadline: 'Desperta la Teva Sensualitat amb Sexy Reggaeton',
   sxrLandingSubheadline:
     "Allibera la teva energia, connecta amb el teu cos i descobreix un ball que t'empodera des del primer minut. Sensualitat, confiança i diversió garantida mentre treballes la teva expressió corporal.",
@@ -12976,7 +12994,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   sxrLandingValueIncluded: 'Inclòs',
   sxrLandingValueTotal: 'VALOR TOTAL:',
   sxrLandingValueYourPrice: 'EL TEU PREU AVUI:',
-  sxrLandingValueFree: 'GRATIS',
+  sxrLandingValueFree: 'SENSE COMPROMÍS',
 
   // Offer Section
   sxrLandingOfferTitle: 'Només per temps limitat',
@@ -13034,7 +13052,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Final CTA Section
   sxrLandingFinalCTATitle: 'El teu cos mereix expressar-se. És hora de brillar.',
   sxrLandingFinalCTADesc:
-    "Reserva ara la teva classe de benvinguda gratuïta i descobreix per què centenars de dones han trobat en el Sexy Reggaeton la seva forma preferida d'expressar-se.",
+    "Reserva ara la teva classe de benvinguda i descobreix per què centenars de dones han trobat en el Sexy Reggaeton la seva forma preferida d'expressar-se.",
   sxrLandingFinalCTAExtra:
     'La propera alumna que reservi podria descobrir una nova versió de si mateixa.',
   sxrLandingFinalTrust: 'Sense cost · Sense compromís · Places molt limitades',
@@ -13140,11 +13158,10 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // =====================================================
   // HIP HOP REGGAETON LANDING PAGE
   // =====================================================
-  hhrLandingPageTitle:
-    "Classe de Benvinguda de Hip Hop Reggaeton a Barcelona | GRATIS | Farray's Center",
+  hhrLandingPageTitle: "Classe de Benvinguda de Hip Hop Reggaeton a Barcelona | Farray's Center",
   hhrLandingPageDescription:
-    "Prova una classe GRATIS de Hip Hop Reggaeton amb Charlie Breezy a Barcelona. Fusiona el flow del Hip Hop amb l'energia del Reggaeton. Sense experiència prèvia. Acadèmia CID-UNESCO.",
-  hhrLandingBadge: 'CLASSE GRATIS DE BENVINGUDA',
+    "Reserva la teva classe de benvinguda de Hip Hop Reggaeton amb Charlie Breezy a Barcelona. Fusiona el flow del Hip Hop amb l'energia del Reggaeton. Sense experiència prèvia. Acadèmia CID-UNESCO.",
+  hhrLandingBadge: 'CLASSE DE BENVINGUDA',
   hhrLandingHeadline: 'Fusiona Hip Hop + Reggaeton i Allibera el Teu Flow',
   hhrLandingSubheadline:
     "Prova una classe amb Charlie Breezy i descobreix l'estil urbà que combina el millor de dos mons. Sense experiència prèvia. Sense compromís.",
@@ -13165,7 +13182,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   hhrLandingExperienceDesc:
     "Hip Hop Reggaeton és la fusió perfecta entre el swagger del Hip Hop i el perreo del Reggaeton. Charlie Breezy ha creat un estil únic que combina tècnica urbana, actitud escènica i ritmes llatins. Aprendràs coreografies que barregen el millor d'ambdós mons.",
   hhrLandingValueTitle: 'Què inclou aquesta experiència?',
-  hhrLandingValueSubtitle: 'Tot això completament GRATIS per a nous estudiants',
+  hhrLandingValueSubtitle: 'Tot això sense compromís per a nous estudiants',
   hhrLandingValueItem1: 'Una classe completa de Hip Hop Reggaeton de 60 minuts',
   hhrLandingValuePrice1: 'Valor: {price}€',
   hhrLandingValueItem2: "Aprèn el flow i l'actitud amb Charlie Breezy",
@@ -13175,7 +13192,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   hhrLandingValueIncluded: 'Inclòs',
   hhrLandingValueTotal: 'VALOR TOTAL:',
   hhrLandingValueYourPrice: 'EL TEU PREU AVUI:',
-  hhrLandingValueFree: 'GRATIS',
+  hhrLandingValueFree: 'SENSE COMPROMÍS',
   hhrLandingOfferTitle: 'Descompte exclusiu · Només per temps limitat',
   hhrLandingOfferDesc:
     'Si decideixes continuar després de la classe de benvinguda, tindràs accés a un descompte exclusiu en la teva primera mensualitat o paquet. Només vàlid per a nous alumnes.',
@@ -13226,7 +13243,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   hhrLandingFinalCTATitle:
     'El flow és dins teu. Només necessites la classe correcta per alliberar-lo.',
   hhrLandingFinalCTADesc:
-    'Reserva la teva classe de benvinguda GRATIS ara i descobreix el que Hip Hop + Reggaeton poden fer per tu.',
+    'Reserva la teva classe de benvinguda ara i descobreix el que Hip Hop + Reggaeton poden fer per tu.',
   hhrLandingFinalCTAExtra:
     "Charlie Breezy t'espera al cor de Barcelona. El teu cos ja coneix el ritme.",
   hhrLandingFinalTrust: 'Sense cost · Sense compromís · Places molt limitades',
@@ -13307,12 +13324,12 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // SEO: noindex, nofollow (landing de captació ads)
 
   // SEO
-  hhLandingPageTitle: "Classe de Benvinguda de Hip Hop a Barcelona | GRATIS | Farray's Center",
+  hhLandingPageTitle: "Classe de Benvinguda de Hip Hop a Barcelona | Farray's Center",
   hhLandingPageDescription:
-    'Prova una classe GRATIS de Hip Hop amb Marcos Martínez, jutge internacional, a Barcelona. Aprèn Breaking, Locking, Popping i Freestyle. Sense experiència prèvia. Acadèmia CID-UNESCO.',
+    'Reserva la teva classe de benvinguda de Hip Hop amb Marcos Martínez, jutge internacional, a Barcelona. Aprèn Breaking, Locking, Popping i Freestyle. Sense experiència prèvia. Acadèmia CID-UNESCO.',
 
   // Hero Section
-  hhLandingBadge: 'CLASSE GRATIS DE BENVINGUDA',
+  hhLandingBadge: 'CLASSE DE BENVINGUDA',
   hhLandingHeadline: "Domina l'Art del Street Dance",
   hhLandingSubheadline:
     'Aprèn Hip Hop autèntic amb Marcos Martínez, jutge internacional de Hip Hop. Breaking, Locking, Popping, Freestyle... descobreix el teu propi estil a Barcelona.',
@@ -13342,7 +13359,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
 
   // Value Stack
   hhLandingValueTitle: 'Què inclou aquesta experiència?',
-  hhLandingValueSubtitle: 'Tot això completament GRATIS per a nous estudiants',
+  hhLandingValueSubtitle: 'Tot això sense compromís per a nous estudiants',
   hhLandingValueItem1: 'Una classe completa de Hip Hop de 60 minuts',
   hhLandingValuePrice1: 'Valor: {price}€',
   hhLandingValueItem2: 'Aprèn tècniques de Breaking, Locking i Popping amb un jutge internacional',
@@ -13352,12 +13369,12 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   hhLandingValueIncluded: 'Inclòs',
   hhLandingValueTotal: 'VALOR TOTAL:',
   hhLandingValueYourPrice: 'EL TEU PREU AVUI:',
-  hhLandingValueFree: 'GRATIS',
+  hhLandingValueFree: 'SENSE COMPROMÍS',
 
   // Offer Section
   hhLandingOfferTitle: 'Només per temps limitat',
   hhLandingOfferDesc:
-    'Aquesta classe de benvinguda gratuïta és exclusiva per a nous estudiants. Les places són molt limitades perquè treballem amb grups reduïts per garantir una atenció personalitzada.',
+    'Aquesta classe de benvinguda és exclusiva per a nous estudiants. Les places són molt limitades perquè treballem amb grups reduïts per garantir una atenció personalitzada.',
 
   // Schedule Section
   hhLandingScheduleTitle: 'Tria el teu horari',
@@ -13418,7 +13435,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Final CTA Section
   hhLandingFinalCTATitle: 'Preparat per descobrir el veritable Hip Hop?',
   hhLandingFinalCTADesc:
-    'Reserva la teva classe de benvinguda gratuïta ara i comença el teu viatge al street dance amb un jutge internacional de Hip Hop.',
+    'Reserva la teva classe de benvinguda ara i comença el teu viatge al street dance amb un jutge internacional de Hip Hop.',
   hhLandingFinalCTAExtra:
     'Descompte exclusiu · Només per temps limitat\n\nSi decideixes continuar després de la classe de benvinguda, tindràs accés a un descompte exclusiu en la teva primera mensualitat o paquet. Només vàlid per a nous alumnes.',
   hhLandingFinalTrust: 'Sense cost · Sense compromís · Places molt limitades',
@@ -13531,12 +13548,12 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Professors: Redblueh, Charlie Breezy
 
   // SEO
-  abLandingPageTitle: "Classe de Benvinguda d'Afrobeats a Barcelona | GRATIS | Farray's Center",
+  abLandingPageTitle: "Classe de Benvinguda d'Afrobeats a Barcelona | Farray's Center",
   abLandingPageDescription:
-    "Prova una classe GRATIS d'Afrobeats amb Redblueh i Charlie Breezy a Barcelona. Descobreix els ritmes africans, l'energia vibrant i els moviments autèntics de l'Afrodance. Sense experiència prèvia. Acadèmia CID-UNESCO.",
+    "Reserva la teva classe de benvinguda d'Afrobeats amb Redblueh i Charlie Breezy a Barcelona. Descobreix els ritmes africans, l'energia vibrant i els moviments autèntics de l'Afrodance. Sense experiència prèvia. Acadèmia CID-UNESCO.",
 
   // Hero Section
-  abLandingBadge: 'CLASSE GRATIS DE BENVINGUDA',
+  abLandingBadge: 'CLASSE DE BENVINGUDA',
   abLandingHeadline: "Sent l'Energia d'Àfrica amb Afrobeats",
   abLandingSubheadline:
     "Entra al nou any movent-te intensament al ritme d'Àfrica i descobreix els balls més divertits d'aquest continent, mentre compenses els excessos de les festes amb un gran somriure a la cara.",
@@ -13562,11 +13579,11 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Experience Section
   abLandingExperienceTitle: 'Vols viatjar a Àfrica sense sortir de Barcelona?',
   abLandingExperienceDesc:
-    "Aquesta no és una classe qualsevol. És el teu accés a una experiència exclusiva i cultural, on et guiem pas a pas perquè descobreixis el veritable sabor de l'Afrodance. Primera vegada amb nosaltres? Aquesta és la teva ocasió: una classe de Benvinguda d'Afrodance totalment gratis, sense cost, sense compromís i amb places limitades. Una benvinguda amb tota la diversió que mereixes.",
+    "Aquesta no és una classe qualsevol. És el teu accés a una experiència exclusiva i cultural, on et guiem pas a pas perquè descobreixis el veritable sabor de l'Afrodance. Primera vegada amb nosaltres? Aquesta és la teva ocasió: una classe de Benvinguda d'Afrodance sense compromís, sense cost, sense compromís i amb places limitades. Una benvinguda amb tota la diversió que mereixes.",
 
   // Value Stack
   abLandingValueTitle: 'Què inclou aquesta experiència?',
-  abLandingValueSubtitle: 'Tot això completament GRATIS per a nous estudiants',
+  abLandingValueSubtitle: 'Tot això sense compromís per a nous estudiants',
   abLandingValueItem1: "Una classe completa d'Afrobeats de 60 minuts",
   abLandingValuePrice1: 'Valor: {price}€',
   abLandingValueItem2: 'Aprèn moviments autèntics africans amb professors especialitzats',
@@ -13576,7 +13593,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   abLandingValueIncluded: 'Inclòs',
   abLandingValueTotal: 'VALOR TOTAL:',
   abLandingValueYourPrice: 'EL TEU PREU AVUI:',
-  abLandingValueFree: 'GRATIS',
+  abLandingValueFree: 'SENSE COMPROMÍS',
 
   // Offer Section
   abLandingOfferTitle: 'Només per temps limitat',
@@ -13642,7 +13659,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Final CTA Section
   abLandingFinalCTATitle: "L'energia d'Àfrica t'està esperant. Véns a descobrir-la?",
   abLandingFinalCTADesc:
-    "Reserva ara la teva classe de benvinguda gratuïta i descobreix per què centenars d'alumnes han trobat en l'Afrobeats la seva forma preferida d'alliberar energia i gaudir.",
+    "Reserva ara la teva classe de benvinguda i descobreix per què centenars d'alumnes han trobat en l'Afrobeats la seva forma preferida d'alliberar energia i gaudir.",
   abLandingFinalCTAExtra: `Àfrica es mou. Et mous amb ella?`,
   abLandingFinalTrust: 'Sense cost · Sense compromís · Places molt limitades',
   abLandingUrgencyReminder: 'Recorda: les places són molt limitades cada setmana',
@@ -13677,12 +13694,12 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // =====================================================
 
   // Meta SEO
-  ajLandingPageTitle: "Classe de Benvinguda d'Afro Jazz a Barcelona | GRATIS | Farray's Center",
+  ajLandingPageTitle: "Classe de Benvinguda d'Afro Jazz a Barcelona | Farray's Center",
   ajLandingPageDescription:
-    "Descobreix la fusió perfecta entre les arrels africanes i la tècnica del jazz. Classe de Benvinguda d'Afro Jazz totalment GRATIS. Places limitades. Sense compromís.",
+    "Descobreix la fusió perfecta entre les arrels africanes i la tècnica del jazz. Classe de Benvinguda d'Afro Jazz sense compromís. Places limitades. Sense compromís.",
 
   // Hero Section
-  ajLandingBadge: 'CLASSE GRATIS DE BENVINGUDA',
+  ajLandingBadge: 'CLASSE DE BENVINGUDA',
   ajLandingHeadline: "Fusiona Arrels Africanes amb l'Elegància del Jazz",
   ajLandingSubheadline:
     'Descobreix una dansa única que combina la força i espiritualitat dels ritmes africans amb la tècnica i fluïdesa del jazz modern. Una experiència que transforma cos i ànima.',
@@ -13711,11 +13728,11 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Experience Section
   ajLandingExperienceTitle: 'Busques una dansa que combini tècnica i expressió?',
   ajLandingExperienceDesc:
-    "L'Afro Jazz és una fusió única creada per Yunaisy Farray que combina l'energia ancestral dels ritmes africans amb l'elegància tècnica del jazz contemporani. Aquesta no és una classe qualsevol: és la teva entrada a un univers on la força de les arrels africanes es troba amb la fluïdesa del moviment modern. Primera vegada? Una classe de Benvinguda totalment gratis.",
+    "L'Afro Jazz és una fusió única creada per Yunaisy Farray que combina l'energia ancestral dels ritmes africans amb l'elegància tècnica del jazz contemporani. Aquesta no és una classe qualsevol: és la teva entrada a un univers on la força de les arrels africanes es troba amb la fluïdesa del moviment modern. Primera vegada? Una classe de Benvinguda sense compromís.",
 
   // Value Stack
   ajLandingValueTitle: 'Què inclou aquesta experiència?',
-  ajLandingValueSubtitle: 'Tot això completament GRATIS per a nous estudiants',
+  ajLandingValueSubtitle: 'Tot això sense compromís per a nous estudiants',
   ajLandingValueItem1: "Una classe completa d'Afro Jazz de 60-90 minuts",
   ajLandingValuePrice1: 'Valor: {price}€',
   ajLandingValueItem2: 'Metodologia única creada per Yunaisy Farray',
@@ -13725,7 +13742,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   ajLandingValueIncluded: 'Inclòs',
   ajLandingValueTotal: 'VALOR TOTAL:',
   ajLandingValueYourPrice: 'EL TEU PREU AVUI:',
-  ajLandingValueFree: 'GRATIS',
+  ajLandingValueFree: 'SENSE COMPROMÍS',
 
   // Special Offer
   ajLandingOfferTitle: 'Només per temps limitat',
@@ -13818,13 +13835,12 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // =====================================================
 
   // Page Meta
-  acLandingPageTitle:
-    "Classe de Benvinguda d'Afro Contemporani a Barcelona | GRATIS | Farray's Center",
+  acLandingPageTitle: "Classe de Benvinguda d'Afro Contemporani a Barcelona | Farray's Center",
   acLandingPageDescription:
-    "Descobreix la Dansa Contemporània Cubana (DCC) amb tècnica de l'ENA. Classe de Benvinguda d'Afro Contemporani totalment GRATIS. Places limitades. Sense compromís.",
+    "Descobreix la Dansa Contemporània Cubana (DCC) amb tècnica de l'ENA. Classe de Benvinguda d'Afro Contemporani sense compromís. Places limitades. Sense compromís.",
 
   // Hero Section
-  acLandingBadge: 'CLASSE GRATIS DE BENVINGUDA',
+  acLandingBadge: 'CLASSE DE BENVINGUDA',
   acLandingHeadline: 'Descobreix la Dansa Contemporània Cubana Autèntica',
   acLandingSubheadline:
     "Fusiona la tècnica de l'Escola Nacional d'Art de Cuba amb la força ancestral dels ritmes afrocubans. Una experiència única que transforma el teu cos i la teva expressió artística.",
@@ -13853,11 +13869,11 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Experience Section
   acLandingExperienceTitle: 'Busques una dansa que connecti tècnica, arrels i expressió?',
   acLandingExperienceDesc:
-    "L'Afro Contemporani és la fusió de la tècnica cubana de l'ENA amb els ritmes i moviments afrocubans. Yunaisy Farray, formada a l'Escola Nacional d'Art de Cuba, ha creat una metodologia única que combina la precisió tècnica de la dansa contemporània amb la força, musicalitat i espiritualitat de les danses africanes. Primera vegada? Una classe de Benvinguda totalment gratis.",
+    "L'Afro Contemporani és la fusió de la tècnica cubana de l'ENA amb els ritmes i moviments afrocubans. Yunaisy Farray, formada a l'Escola Nacional d'Art de Cuba, ha creat una metodologia única que combina la precisió tècnica de la dansa contemporània amb la força, musicalitat i espiritualitat de les danses africanes. Primera vegada? Una classe de Benvinguda sense compromís.",
 
   // Value Stack
   acLandingValueTitle: 'Què inclou aquesta experiència?',
-  acLandingValueSubtitle: 'Tot això completament GRATIS per a nous estudiants',
+  acLandingValueSubtitle: 'Tot això sense compromís per a nous estudiants',
   acLandingValueItem1: "Una classe completa d'Afro Contemporani de 60-90 minuts",
   acLandingValuePrice1: 'Valor: {price}€',
   acLandingValueItem2: 'Metodologia ENA autèntica amb Yunaisy Farray',
@@ -13867,7 +13883,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   acLandingValueIncluded: 'Inclòs',
   acLandingValueTotal: 'VALOR TOTAL:',
   acLandingValueYourPrice: 'EL TEU PREU AVUI:',
-  acLandingValueFree: 'GRATIS',
+  acLandingValueFree: 'SENSE COMPROMÍS',
 
   // Special Offer
   acLandingOfferTitle: 'Només per temps limitat',
@@ -14208,12 +14224,12 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Professora: Yasmina Fernández
 
   // SEO
-  ssLandingPageTitle: "Classe de Benvinguda de Sexy Style a Barcelona | GRATIS | Farray's Center",
+  ssLandingPageTitle: "Classe de Benvinguda de Sexy Style a Barcelona | Farray's Center",
   ssLandingPageDescription:
-    "Prova una classe GRATIS de Sexy Style amb Yasmina Fernández a Barcelona. Descobreix la sensualitat, l'expressió corporal i la confiança a través del ball. Sense experiència prèvia. Acadèmia CID-UNESCO.",
+    "Reserva la teva classe de benvinguda de Sexy Style amb Yasmina Fernández a Barcelona. Descobreix la sensualitat, l'expressió corporal i la confiança a través del ball. Sense experiència prèvia. Acadèmia CID-UNESCO.",
 
   // Hero Section
-  ssLandingBadge: 'CLASSE GRATIS DE BENVINGUDA',
+  ssLandingBadge: 'CLASSE DE BENVINGUDA',
   ssLandingHeadline: 'Desperta el Teu Poder Femení amb Sexy Style',
   ssLandingSubheadline:
     "Allibera la teva sensualitat, reconnecta amb el teu cos i descobreix un ball que t'empodera des del primer pas. Confiança, feminitat i expressió corporal en estat pur.",
@@ -14251,7 +14267,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   ssLandingValueIncluded: 'Inclòs',
   ssLandingValueTotal: 'VALOR TOTAL:',
   ssLandingValueYourPrice: 'EL TEU PREU AVUI:',
-  ssLandingValueFree: 'GRATIS',
+  ssLandingValueFree: 'SENSE COMPROMÍS',
 
   // Offer Section
   ssLandingOfferTitle: 'Només per temps limitat',
@@ -14309,7 +14325,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Final CTA Section
   ssLandingFinalCTATitle: "La teva feminitat mereix brillar. És hora d'alliberar-la.",
   ssLandingFinalCTADesc:
-    "Reserva ara la teva classe de benvinguda gratuïta i descobreix per què centenars de dones han trobat en el Sexy Style la seva forma preferida d'expressar-se.",
+    "Reserva ara la teva classe de benvinguda i descobreix per què centenars de dones han trobat en el Sexy Style la seva forma preferida d'expressar-se.",
   ssLandingFinalCTAExtra:
     'La propera alumna que reservi podria descobrir una nova versió de si mateixa.',
   ssLandingFinalTrust: 'Sense cost · Sense compromís · Places molt limitades',
@@ -14419,12 +14435,12 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Professors: Yunaisy Farray, Iroel Bastarreche
 
   // SEO (noindex, nofollow - landing de captació ads)
-  scLandingPageTitle: "Classe de Benvinguda de Salsa Cubana a Barcelona | GRATIS | Farray's Center",
+  scLandingPageTitle: "Classe de Benvinguda de Salsa Cubana a Barcelona | Farray's Center",
   scLandingPageDescription:
-    'Prova una classe GRATIS de Salsa Cubana amb el Mètode Farray a Barcelona. Aprèn amb Yunaisy Farray, creadora del mètode. Casino, Roda, musicalitat i connexió de parella. Acadèmia CID-UNESCO.',
+    'Reserva la teva classe de benvinguda de Salsa Cubana amb el Mètode Farray a Barcelona. Aprèn amb Yunaisy Farray, creadora del mètode. Casino, Roda, musicalitat i connexió de parella. Acadèmia CID-UNESCO.',
 
   // Hero Section
-  scLandingBadge: 'CLASSE GRATIS DE BENVINGUDA',
+  scLandingBadge: 'CLASSE DE BENVINGUDA',
   scLandingHeadline: 'Aprèn Salsa Cubana amb el Mètode Farray',
   scLandingSubheadline:
     "Descobreix l'únic mètode provat que t'ensenya a ballar Casino en parella des de zero. Guia perfecta, musicalitat autèntica i l'alegria cubana que transforma la teva manera de ballar.",
@@ -14454,7 +14470,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
 
   // Value Stack
   scLandingValueTitle: 'Què inclou aquesta experiència?',
-  scLandingValueSubtitle: 'Tot això completament GRATIS per a nous estudiants',
+  scLandingValueSubtitle: 'Tot això sense compromís per a nous estudiants',
   scLandingValueItem1: 'Una classe completa de Salsa Cubana de 60 minuts',
   scLandingValuePrice1: 'Valor: {price}€',
   scLandingValueItem2: 'Introducció al Mètode Farray: guia i seguiment des del dia 1',
@@ -14464,7 +14480,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   scLandingValueIncluded: 'Inclòs',
   scLandingValueTotal: 'VALOR TOTAL:',
   scLandingValueYourPrice: 'EL TEU PREU AVUI:',
-  scLandingValueFree: 'GRATIS',
+  scLandingValueFree: 'SENSE COMPROMÍS',
 
   // Offer Section
   scLandingOfferTitle: 'Només per temps limitat',
@@ -14530,7 +14546,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Final CTA Section
   scLandingFinalCTATitle: "El ritme cubà t'està esperant. T'atreveixes a provar-lo?",
   scLandingFinalCTADesc:
-    "Reserva ara la teva classe de benvinguda gratuïta i descobreix per què milers d'alumnes han triat el Mètode Farray per aprendre Salsa Cubana a Barcelona.",
+    "Reserva ara la teva classe de benvinguda i descobreix per què milers d'alumnes han triat el Mètode Farray per aprendre Salsa Cubana a Barcelona.",
   scLandingFinalCTAExtra:
     'Primers 10 que reservin aquesta setmana: accés prioritari a horari preferent',
   scLandingFinalTrust: 'Sense cost · Sense compromís · Places molt limitades',
@@ -14606,7 +14622,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   scLeadModal_consent_link: 'política de privacitat',
 
   // CTA
-  scLeadModal_submit: 'Reservar La Meva Classe Gratis',
+  scLeadModal_submit: 'Reservar La Meva Classe de Benvinguda',
   scLeadModal_sending: 'Processant...',
 
   // Validation
@@ -14650,13 +14666,12 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Professors: Daniel Sené, Alejandro Miñoso
 
   // SEO
-  ctLandingPageTitle:
-    "Classe de Benvinguda de Dansa Contemporània a Barcelona | GRATIS | Farray's Center",
+  ctLandingPageTitle: "Classe de Benvinguda de Dansa Contemporània a Barcelona | Farray's Center",
   ctLandingPageDescription:
-    'Prova una classe GRATIS de Dansa Contemporània amb Daniel Sené i Alejandro Miñoso a Barcelona. Tècnica de terra, release, improvisació i expressió corporal. Sense experiència prèvia. Acadèmia CID-UNESCO.',
+    'Reserva la teva classe de benvinguda de Dansa Contemporània amb Daniel Sené i Alejandro Miñoso a Barcelona. Tècnica de terra, release, improvisació i expressió corporal. Sense experiència prèvia. Acadèmia CID-UNESCO.',
 
   // Hero Section
-  ctLandingBadge: 'CLASSE GRATIS DE BENVINGUDA',
+  ctLandingBadge: 'CLASSE DE BENVINGUDA',
   ctLandingHeadline: 'Descobreix la Dansa Contemporània i Connecta amb el Teu Cos',
   ctLandingSubheadline:
     "Una classe per explorar el moviment fluid, la tècnica de terra i l'expressió corporal. Sense experiència prèvia necessària.",
@@ -14694,7 +14709,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   ctLandingValueIncluded: 'Inclòs',
   ctLandingValueTotal: 'VALOR TOTAL:',
   ctLandingValueYourPrice: 'EL TEU PREU AVUI:',
-  ctLandingValueFree: 'GRATIS',
+  ctLandingValueFree: 'SENSE COMPROMÍS',
 
   // Offer Section
   ctLandingOfferTitle: 'Descompte exclusiu per a nous alumnes',
@@ -14752,7 +14767,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Final CTA
   ctLandingFinalCTATitle: "El teu cos té històries per explicar. És hora d'expressar-les.",
   ctLandingFinalCTADesc:
-    "Uneix-te a centenars d'alumnes que han descobert la dansa contemporània a Barcelona. La teva primera classe és completament gratis.",
+    "Uneix-te a centenars d'alumnes que han descobert la dansa contemporània a Barcelona. La teva primera classe és sense compromís.",
   ctLandingFinalCTAExtra: '',
   ctLandingFinalTrust: 'Sense cost · Sense compromís · Places molt limitades',
 
@@ -14861,16 +14876,15 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // =====================================================
 
   // Page Meta
-  btLandingPageTitle:
-    "Classe de Benvinguda de Ballet Clàssic a Barcelona | GRATIS | Farray's Center",
+  btLandingPageTitle: "Classe de Benvinguda de Ballet Clàssic a Barcelona | Farray's Center",
   btLandingPageDescription:
-    "Prova una classe gratuïta de ballet clàssic a Barcelona. Professors formats a l'Escola Nacional d'Art de Cuba. Tècnica, postura i elegància per a tots els nivells.",
+    "Prova una classe de benvinguda de ballet clàssic a Barcelona. Professors formats a l'Escola Nacional d'Art de Cuba. Tècnica, postura i elegància per a tots els nivells.",
 
   // Hero Section
-  btLandingBadge: 'CLASSE GRATIS DE BENVINGUDA',
+  btLandingBadge: 'CLASSE DE BENVINGUDA',
   btLandingHeadline: "Descobreix l'Elegància del Ballet Clàssic a Barcelona",
   btLandingSubheadline:
-    "Desenvolupa una postura perfecta, flexibilitat i gràcia amb professors formats a la prestigiosa Escola Nacional d'Art de Cuba. La teva primera classe és completament gratis.",
+    "Desenvolupa una postura perfecta, flexibilitat i gràcia amb professors formats a la prestigiosa Escola Nacional d'Art de Cuba. La teva primera classe és sense compromís.",
   btLandingCTA: 'RESERVA LA TEVA CLASSE DE BENVINGUDA ARA',
   btLandingTrustText: 'Sense cost · Sense compromís · Places molt limitades',
   btLandingTrustActiveStudents: '1.500+ alumnes actius',
@@ -14905,7 +14919,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   btLandingValueIncluded: 'Inclòs',
   btLandingValueTotal: 'VALOR TOTAL:',
   btLandingValueYourPrice: 'EL TEU PREU AVUI:',
-  btLandingValueFree: 'GRATIS',
+  btLandingValueFree: 'SENSE COMPROMÍS',
 
   // Offer Section
   btLandingOfferTitle: 'Només per temps limitat',
@@ -14962,7 +14976,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Final CTA
   btLandingFinalCTATitle: "La disciplina més elegant del món t'espera",
   btLandingFinalCTADesc:
-    "Uneix-te a centenars d'alumnes que han descobert el ballet clàssic a Barcelona. La teva primera classe és completament gratis.",
+    "Uneix-te a centenars d'alumnes que han descobert el ballet clàssic a Barcelona. La teva primera classe és sense compromís.",
   btLandingFinalCTAExtra:
     "Primers 10 que reservin aquesta setmana: sessió d'orientació personalitzada inclosa",
   btLandingFinalTrust: 'Sense cost · Sense compromís · Places molt limitades',
@@ -15117,7 +15131,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   exitIntent_subtitle: 'Només per a nous alumnes',
   exitIntent_countdown_label: 'Acaba en:',
   exitIntent_countdown_expired: 'Oferta finalitzada',
-  exitIntent_benefit1: 'Primera classe de prova GRATIS',
+  exitIntent_benefit1: 'Primera classe de benvinguda',
   exitIntent_benefit2: 'Vàlid per a qualsevol estil de ball',
   exitIntent_benefit3: "Reserva la teva plaça abans que s'esgotin",
   exitIntent_email_label: 'El teu email',
@@ -15245,7 +15259,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogHistoriaBachata_conclusionContent:
     'Dels barris de Santo Domingo a les acadèmies de Barcelona, la bachata ha recorregut un camí èpic: de gènere marginal a Patrimoni UNESCO, de "música d\'amargue" a fenomen global amb Romeo Santos omplint estadis.',
   blogHistoriaBachata_conclusionCTA:
-    "La bachata no es va aturar a Santo Domingo: palpita a l'Eixample de Barcelona. **[Reserva la teva classe de prova](/ca/clases/bachata-barcelona)** a Farray's i escriu el teu propi capítol en aquesta història de ritme i passió.",
+    "La bachata no es va aturar a Santo Domingo: palpita a l'Eixample de Barcelona. **[Reserva la teva classe de benvinguda](/ca/clases/bachata-barcelona)** a Farray's i escriu el teu propi capítol en aquesta història de ritme i passió.",
   blogHistoriaBachata_faqTitle: 'Preguntes Freqüents sobre la Història de la Bachata',
   blogHistoriaBachata_faq1Question: "Quin és l'origen de la bachata com a gènere musical?",
   blogHistoriaBachata_faq1Answer:
@@ -15330,7 +15344,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogClasesSalsaBarcelona_section4Content:
     "I si vols aprendre aquesta llengua, fes-ho amb professors que pensin com tu; que no només donin ales als teus peus, sinó també a la teva ment; que t'ensenyin amb rigor les bases de l'idioma, alhora que et contagien l'emoció davant el brillant futur que t'espera. A Farray's, sabem parlar i ensenyar salsa. I timba, i rumba, i son, i bachata, i kizomba, i afro contemporani, i jazz, i reggaeton, i hip-hop, i dancehall… És el nostre idioma, la nostra cultura, la nostra passió. I ens sentim molt feliços de transmetre-ho!",
   blogClasesSalsaBarcelona_ctaClases:
-    '**Vols començar a parlar salsa?** Descobreix les nostres <a href="/ca/clases/salsa-cubana-barcelona">classes de Salsa Cubana</a>, <a href="/ca/clases/salsa-bachata-barcelona">Salsa i Bachata</a> o <a href="/ca/clases/timba-barcelona">Timba</a>. Primera classe de prova gratis. <a href="/ca/horarios"><strong>Veure horaris i reservar →</strong></a>',
+    '**Vols començar a parlar salsa?** Descobreix les nostres <a href="/ca/clases/salsa-cubana-barcelona">classes de Salsa Cubana</a>, <a href="/ca/clases/salsa-bachata-barcelona">Salsa i Bachata</a> o <a href="/ca/clases/timba-barcelona">Timba</a>. Primera classe de benvinguda. <a href="/ca/horarios"><strong>Veure horaris i reservar →</strong></a>',
 
   // ============================================================================
   // BLOG ARTICLE: Classes de ball per a principiants a Barcelona
@@ -15344,14 +15358,14 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
     'Guia completa per començar a ballar des de zero a Barcelona. Classe de benvinguda, sense parella, tots els nivells. Participació puntual des de 20€.',
   blogClasesPrincipiants_breadcrumbCurrent: 'Classes per a principiants',
   blogClasesPrincipiants_summaryBullet1:
-    "Classe de benvinguda a Farray's (Eixample) – gratuïta en temporada promocional o des de 10€",
+    "Classe de benvinguda a Farray's (Eixample) – des de 10€ o preu especial en temporada promocional",
   blogClasesPrincipiants_summaryBullet2: 'No necessites experiència prèvia ni venir amb parella',
   blogClasesPrincipiants_summaryBullet3:
     'Guia pas a pas: què portar, quin estil triar i com progressar',
   blogClasesPrincipiants_summaryBullet4:
     '+25 estils disponibles: llatins, urbans, dansa tècnica i més',
   blogClasesPrincipiants_intro:
-    "Tens ganes de començar a ballar des de zero i no saps per on començar? Estàs al lloc correcte. A <a href='/ca'>Farray's International Dance Center</a> (Barcelona, Eixample) pots reservar una <strong>classe de benvinguda</strong> per conèixer-nos: <strong>gratuïta en temporada promocional</strong>, o amb preu de cortesia (des de 10€) la resta de l'any. També pots venir amb participació puntual des de 20€. Sense pressió, sense postureo i amb un equip que t'ho posa fàcil des del minut u.",
+    "Tens ganes de començar a ballar des de zero i no saps per on començar? Estàs al lloc correcte. A <a href='/ca'>Farray's International Dance Center</a> (Barcelona, Eixample) pots reservar una <strong>classe de benvinguda</strong> per conèixer-nos: <strong>amb preu especial en temporada promocional</strong>, o amb preu de cortesia (des de 10€) la resta de l'any. També pots venir amb participació puntual des de 20€. Sense pressió, sense postureo i amb un equip que t'ho posa fàcil des del minut u.",
   blogClasesPrincipiants_ctaHero:
     '<strong><a href="/ca/contacto">Reserva la teva classe de benvinguda →</a></strong>',
   blogClasesPrincipiants_section1Title:
@@ -15424,7 +15438,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogClasesPrincipiants_section8Content:
     "Si aquesta guia t'ha tret una mica de soroll mental, ja està: això era el que faltava.",
   blogClasesPrincipiants_ctaReserva:
-    '<strong><a href="/ca/contacto">Reserva la teva classe de benvinguda →</a></strong><br/><br/>• <strong>En temporada promocional:</strong> classe de benvinguda gratuïta<br/>• <strong>Resta de l\'any:</strong> classe de cortesia des de 10€<br/>• <strong>Participació puntual:</strong> des de 20€<br/><br/>Dubtes? Escriu-nos i t\'ajudem a triar classe i nivell.',
+    '<strong><a href="/ca/contacto">Reserva la teva classe de benvinguda →</a></strong><br/><br/>• <strong>En temporada promocional:</strong> classe de benvinguda<br/>• <strong>Resta de l\'any:</strong> classe de cortesia des de 10€<br/>• <strong>Participació puntual:</strong> des de 20€<br/><br/>Dubtes? Escriu-nos i t\'ajudem a triar classe i nivell.',
   blogClasesPrincipiants_section9Title: 'On som (Barcelona)',
   blogClasesPrincipiants_section9Content:
     "<strong>Farray's International Dance Center</strong><br/>C/ Entença, 100 (baixos), 08015 Barcelona, Catalunya<br/>Tel. <a href='tel:+34622247085'>(+34) 622 247 085</a><br/>Email: <a href='mailto:info@farrayscenter.com'>info@farrayscenter.com</a><br/><br/><strong>Horari classes:</strong> 10:00 a 22:00<br/><strong>Atenció telefònica:</strong> Dl–Dv 10:00 a 22:00<br/><br/><em>Acadèmia de ball a Barcelona (Eixample) - A prop de Plaça Espanya i Sants Estació</em>",
@@ -15432,9 +15446,9 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogClasesPrincipiants_faq1Question: 'Puc començar a ballar sense experiència?',
   blogClasesPrincipiants_faq1Answer:
     "Sí. Tenim classes per a principiants on es parteix des del bàsic i s'explica pas a pas.",
-  blogClasesPrincipiants_faq2Question: 'Hi ha classe de prova per conèixer el centre?',
+  blogClasesPrincipiants_faq2Question: 'Hi ha classe de benvinguda per conèixer el centre?',
   blogClasesPrincipiants_faq2Answer:
-    "Sí. En temporada promocional oferim classe de benvinguda gratuïta. La resta de l'any pots venir a conèixer-nos amb una classe de cortesia des de 10€, o amb participació puntual des de 20€.",
+    "Sí. En temporada promocional oferim classe de benvinguda. La resta de l'any pots venir a conèixer-nos amb una classe de cortesia des de 10€, o amb participació puntual des de 20€.",
   blogClasesPrincipiants_faq3Question: "He d'anar amb parella?",
   blogClasesPrincipiants_faq3Answer:
     "No necessàriament. En molts formats pots venir sol/a. T'orientem segons la classe.",
@@ -16188,7 +16202,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   cuerpofitCTAGroup: `Opcions d'inscripció`,
   cuerpofitCTA1: `Fes-te Soci Ara`,
   cuerpofitCTA1Subtext: `Queden poques places per classe`,
-  cuerpofitCTA2: `Reserva la teva Classe de Prova`,
+  cuerpofitCTA2: `Reserva la teva Classe de Benvinguda`,
   cuerpofitCTA2Subtext: `Vàlid per temps limitat`,
   cuerpofitWhatIsTitle: `Què és el Body Conditioning i per què el necessites?`,
   cuerpofitWhatIsP1: `El body conditioning o condicionament físic és un entrenament integral dissenyat específicament per a les demandes de la dansa. Combina exercicis de força funcional, flexibilitat activa, mobilitat articular i core stability per crear un cos més fort, àgil i resistent a les lesions.`,
@@ -16273,8 +16287,8 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   cuerpofitFaqA5: `Roba esportiva còmoda que permeti moviment ampli (leggings, samarreta ajustada o top). Descalços o amb mitjons (no sabatilles). Tovallola petita i ampolla d'aigua. Nosaltres proporcionem les estoretes.`,
   cuerpofitFaqQ6: `Serveix per prevenir lesions de ball?`,
   cuerpofitFaqA6: `Sí, és un dels principals objectius. Estudis demostren que ballarins amb entrenament de força regular tenen un 50-70% menys de lesions. El body conditioning enforteix les àrees més vulnerables (malucs, genolls, turmells, esquena) i corregeix desequilibris musculars.`,
-  cuerpofitFaqQ7: `Quant costa la classe de prova?`,
-  cuerpofitFaqA7: `La classe de prova costa 10€ i és sense compromís. Pots provar qualsevol dilluns a les 19h. Si t'agrada, tens bonos mensuals des de 40€. Consulta tots els preus a recepció o a la nostra web.`,
+  cuerpofitFaqQ7: `Quant costa la classe de benvinguda?`,
+  cuerpofitFaqA7: `La classe de benvinguda costa 10€ i és sense compromís. Pots provar qualsevol dilluns a les 19h. Si t'agrada, tens bonos mensuals des de 40€. Consulta tots els preus a recepció o a la nostra web.`,
   cuerpofitFaqQ8: `Hi ha contracte o permanència?`,
   cuerpofitFaqA8: `No. Bonos mensuals sense permanència. Pots entrar i sortir quan vulguis. Valorem la teva llibertat i volem que vinguis perquè vols, no perquè estàs lligat/da a un contracte.`,
   cuerpofitFaqQ9: `Puc combinar body conditioning amb altres classes?`,
@@ -16338,7 +16352,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   bailemanananasClassesPerWeek: `classes per setmana`,
   bailemanananasCTA1: `Veure Horaris de Mañanas`,
   bailemanananasCTA1Subtext: `Grups reduïts`,
-  bailemanananasCTA2: `Reserva la teva Classe de Prova`,
+  bailemanananasCTA2: `Reserva la teva Classe de Benvinguda`,
   bailemanananasCTA2Subtext: `10€ sense compromiso`,
   bailemanananasWhatIsTitle: `La activitat matinal que necesitabas... Y que cambiará tus días`,
   bailemanananasWhatIsP1: `¿Trabajas per las tardes? ¿Tienes turnos cambiantes? ¿O simplemente quieres empezar el día amb buena energía, moviéndote y una gran sonrisa en la cara?`,
@@ -16429,7 +16443,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   bailemanananasFaqQ6: `¿Las classes de mañana son más tranquilas que las de tarde?`,
   bailemanananasFaqA6: `Depende del estil. El Contemporáneo y Ballet son más técnicos y conscientes. El Sexy Reggaeton tiene la misma energía que per la tarde, pero amb grups más pequeños. En general hay menos alumnos, más espacio, más atención personalizada y un ambiente más relajado per a aprendre.`,
   bailemanananasFaqQ7: `¿Puedo probar una classe abans de apuntarme?`,
-  bailemanananasFaqA7: `Según la temporada, la classe de prova per a residentes puede ser gratuita o tener un preu simbólico de bienvenida. La idea es que puedas probar la experiència de ballar sense compromiso. Reserva tu plaza pulsando el botón "Reserva la teva Classe de Prova" en la parte superior de esta página.`,
+  bailemanananasFaqA7: `Sí. La classe de benvinguda té un preu especial. La idea és que puguis provar l'experiència de ballar sense compromís. Reserva la teva plaça prement el botó "Reserva la teva Classe de Benvinguda" a la part superior d'aquesta pàgina.`,
   bailemanananasFaqQ8: `¿Cuántas classes de ball hay per las mañanas?`,
   bailemanananasFaqA8: `Actualmente ofrecemos 15 classes semanales de mañanas, de lunes a jueves, en horari de 10:00 a 13:00. Estilos: Body Conditioning, Contemporáneo Lírico, Modern Jazz, Stretching, Afro Jazz, Ballet, Dancehall, Sexy Reggaeton, Sexy Style, Salsa Lady Style, Reggaeton Cubano y Twerk.`,
   bailemanananasFaqQ9: `¿Qué estilos de ball puedo hacer per las mañanas?`,
@@ -16496,9 +16510,9 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   bachataV3HeroStudents: `+15.000 estudiants formats`,
   bachataV3CTA1: `Fes-te Soci Ara`,
   bachataV3CTA1Subtext: `Queden poques places aquest mes`,
-  bachataV3CTA2: `Reserva la Teva Classe de Prova`,
+  bachataV3CTA2: `Reserva la Teva Classe de Benvinguda`,
   bachataV3CTA2Subtext: `Vàlid per temps limitat`,
-  bachataV3CTAGroup: `Classe de Prova`,
+  bachataV3CTAGroup: `Classe de Benvinguda`,
   bachataV3WhatIsQuestionTitle: `Per què triar bachata sensual?`,
   bachataV3WhatIsQuestionAnswer: `La bachata sensual et permet expressar emocions a través del ball d'una manera única. És accessible per a principiants, increïblement social i et connecta amb una comunitat activa de ballarins a Barcelona i arreu del món.`,
   bachataV3LevelsTitle: `Nivells de Bachata Sensual`,
@@ -16590,7 +16604,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   fullBodyCardioCTAGroup: `Opcions d'inscripció`,
   fullBodyCardioCTA1: `Fes-te Soci Ara`,
   fullBodyCardioCTA1Subtext: `Queden poques places`,
-  fullBodyCardioCTA2: `Reserva la teva Classe de Prova`,
+  fullBodyCardioCTA2: `Reserva la teva Classe de Benvinguda`,
   fullBodyCardioCTA2Subtext: `Primera classe especial`,
   fullBodyCardioWhatIsTitle: `Què és Cuerpo-Fit i per què funciona?`,
   fullBodyCardioWhatIsP1: `Cuerpo-Fit és l'entrenament que canvia les regles del fitness a Barcelona. Imagina combinar la intensitat d'un entrenament full body amb l'energia del cardio dance, tot en 60 minuts que passen volant. No és un gimnàs. No és una classe de ball convencional. És el millor dels dos mons.`,
@@ -16689,7 +16703,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   fullBodyCardioFaqQ13: `Puc fer Cuerpo-Fit si tinc lesions?`,
   fullBodyCardioFaqA13: `Depende de la lesión. <strong>Requisitos</strong>: consulta amb el teu metge o fisioterapeuta primer. Si tens l'alta mèdica, avisa'ns abans de classe per adaptar exercicis. <strong>Contraindicaciones absolutas</strong>: lesiones agudas, problemas cardíacos no controlados, embarazo de riesgo. Cris pot modificar exercicis per a la majoria de limitacions comunes (genolls, esquena, espatlles).`,
   fullBodyCardioFaqQ14: `Quant costa la classe de Cuerpo-Fit?`,
-  fullBodyCardioFaqA14: `Cuerpo-Fit està inclòs als bons mensuals de l'acadèmia. <strong>Classe de prova</strong>: consulta condiciones actuales en recepción o web. <strong>Bono mensual</strong>: et dóna accés a Cuerpo-Fit i altres classes de l'acadèmia. <strong>Sense permanència</strong>: pagues mes a mes, sense compromís. Consulta tarifas actualizadas en nuestra web o pulsando "Reserva la teva Classe de Prova".`,
+  fullBodyCardioFaqA14: `Cuerpo-Fit està inclòs als bons mensuals de l'acadèmia. <strong>Classe de prova</strong>: consulta condiciones actuales en recepción o web. <strong>Bono mensual</strong>: et dóna accés a Cuerpo-Fit i altres classes de l'acadèmia. <strong>Sense permanència</strong>: pagues mes a mes, sense compromís. Consulta tarifas actualizadas en nuestra web o pulsando "Reserva la teva Classe de Benvinguda".`,
   fullBodyCardioFaqQ15: `¿Dónde están las classes de Cuerpo-Fit a Barcelona?`,
   fullBodyCardioFaqA15: `<strong>Dirección</strong>: Calle Entença 100, 08015 Barcelona (zona Plaza España, entre Sants y Hostafrancs).<br><strong>Metro</strong>: Plaza España (L1, L3), Hostafrancs (L1), Rocafort (L1), Entença (L5) – todos a 5 min andando.<br><strong>Horario</strong>: Lunes de 20:00 a 21:00h.<br><br>📞 <strong>Teléfono</strong>: +34 622 247 085<br>📧 <strong>Email</strong>: info@farrayscenter.com<br>🌐 <strong>Web</strong>: www.farrayscenter.com`,
   fullBodyCardioNearbyTitle: `Classes de Cuerpo-Fit a prop teu a Barcelona`,
@@ -16829,13 +16843,13 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   testClassCourseSchemaName: `Classe Experimental V2`,
   testClassCourseSchemaDesc: `Pàgina de prova per a la nova plantilla visual.`,
   testClassCourseTeaches: `Disseny visual millorat per a pàgines de classes`,
-  fbLandingPageTitle: `Classe de Ball GRATUÏTA a Barcelona | Farray's Center`,
-  fbLandingPageDescription: `Reserva tu classe de prova gratuita en la mejor escola de ball de Barcelona. +15.000 alumnes, +40 estilos, professors profesionales. Sin compromiso.`,
+  fbLandingPageTitle: `Classe de Ball SENSE COMPROMÍS a Barcelona | Farray's Center`,
+  fbLandingPageDescription: `Reserva tu classe de benvinguda en la mejor escola de ball de Barcelona. +15.000 alumnes, +40 estilos, professors profesionales. Sin compromiso.`,
   fbLandingBadge: `Oferta Especial`,
   fbLandingHeroTitle: `La Teva Primera Classe de Ball`,
-  fbLandingHeroTitleAccent: `GRATUÏTA`,
+  fbLandingHeroTitleAccent: `SENSE COMPROMÍS`,
   fbLandingHeroSubtitle: `Descobreix per què +{students} alumnes han triat Farray's Center a Barcelona`,
-  fbLandingHeroCTA: `RESERVA LA TEVA PLAÇA GRATUÏTA`,
+  fbLandingHeroCTA: `RESERVA LA TEVA PLAÇA SENSE COMPROMÍS`,
   fbLandingHeroSpots: `Només queden {spots} places aquesta setmana`,
   fbLandingHeroTimer: `L'oferta acaba en:`,
   fbLandingHeroTrust: `Sense targeta de crèdit · Sense compromisos · Només ball`,
@@ -16845,7 +16859,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   fbLandingProofStudents: `alumnes formats`,
   fbLandingProofYears: `anys d'experiència`,
   fbLandingProofLocation: `Plaza España`,
-  fbLandingValueTitle: `Això és el que reps a la teva classe de prova:`,
+  fbLandingValueTitle: `Això és el que reps a la teva classe de benvinguda:`,
   fbLandingValue1: `1 classe completa de 60 minuts amb professors professionals`,
   fbLandingValue1Price: `Valor €{price}`,
   fbLandingValue2: `Tria entre +40 estils: Salsa, Bachata, Reggaeton, Hip Hop, Heels...`,
@@ -16859,7 +16873,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   fbLandingValueTotal: `Valor total:`,
   fbLandingValueYourPrice: `El teu preu avui:`,
   fbLandingValueFree: `GRATUÏT`,
-  fbLandingValueCTA: `VULL LA MEVA CLASSE GRATUÏTA`,
+  fbLandingValueCTA: `VULL LA MEVA CLASSE SENSE COMPROMÍS`,
   fbLandingValueSubtext: `Més de 500 persones reserven cada mes`,
   fbLandingTransformTitle: `De "tinc dos peus esquerres" a ballar amb confiança`,
   fbLandingTransformSubtitle: `Això és el que diuen els nostres alumnes:`,
@@ -16888,9 +16902,9 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   fbLandingTrust_noCommitment: `Sense compromís`,
   fbLandingTrust_noSpam: `Sense spam`,
   fbLandingFinalLegal: `En reservar acceptes rebre informació sobre la teva classe. Pots cancel·lar en qualsevol moment. Les teves dades estan protegides segons el RGPD.`,
-  dhLandingPageTitle: `Classe de Benvinguda de Dancehall a Barcelona | GRATUÏTA | Farray's Center`,
-  dhLandingPageDescription: `Viatja a Jamaica sense sortir de Barcelona. Classe de Benvinguda de Dancehall totalment GRATUÏTA. Places limitades. Sense compromís. Reserva ara.`,
-  dhLandingBadge: `CLASSE GRATUÏTA DE BENVINGUDA`,
+  dhLandingPageTitle: `Classe de Benvinguda de Dancehall a Barcelona | Farray's Center`,
+  dhLandingPageDescription: `Viatja a Jamaica sense sortir de Barcelona. Classe de Benvinguda de Dancehall totalment SENSE COMPROMÍS. Places limitades. Sense compromís. Reserva ara.`,
+  dhLandingBadge: `CLASSE DE BENVINGUDA`,
   dhLandingHeadline: `Viatja A Jamaica Sense Sortir de Barcelona`,
   dhLandingSubheadline: `Comença el nou any movent-te intensament al ritme de les músiques més plaents i potents de Jamaica. Descobreix aquest ball súper divertit mentre compenses els excessos de les festes amb un gran somriure a la cara.`,
   dhLandingCTA: `RESERVA LA TEVA CLASSE DE BENVINGUDA ARA`,
@@ -16911,7 +16925,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   dhLandingStatActive: `Estudiants Actius`,
   dhLandingStatSatisfied: `Alumnes Satisfets`,
   dhLandingExperienceTitle: `Vols viatjar a Jamaica sense sortir de Barcelona?`,
-  dhLandingExperienceDesc: `Aquesta no és una classe qualsevol. És el teu accés a una experiència exclusiva i cultural, on et guiem pas a pas perquè descobreixis el veritable sabor del Dancehall. Primera vegada amb nosaltres? Aquesta és la teva ocasió: una classe de Benvinguda de Dancehall totalment gratuïta, sense cost, sense compromís i amb places limitades. Una benvinguda amb tot el flow que et mereixes.`,
+  dhLandingExperienceDesc: `Aquesta no és una classe qualsevol. És el teu accés a una experiència exclusiva i cultural, on et guiem pas a pas perquè descobreixis el veritable sabor del Dancehall. Primera vegada amb nosaltres? Aquesta és la teva ocasió: una classe de Benvinguda de Dancehall sense compromís, sense compromís i amb places limitades. Una benvinguda amb tot el flow que et mereixes.`,
   dhLandingValueTitle: `Què inclou aquesta experiència?`,
   dhLandingValueSubtitle: `Tot això completament GRATUÏT per a nous estudiants`,
   dhLandingValueItem1: `Una classe completa de Dancehall de 60 minuts`,
@@ -17045,11 +17059,11 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // =====================================================
 
   // Meta SEO
-  femLandingPageTitle: `Classe de Benvinguda de Femmology a Barcelona | GRATIS | Farray's Center`,
-  femLandingPageDescription: `Descobreix Femmology, el mètode exclusiu de Yunaisy Farray per reconnectar amb la teva feminitat. Classe de Benvinguda totalment GRATIS. Places limitades. Reserva ara.`,
+  femLandingPageTitle: `Classe de Benvinguda de Femmology a Barcelona | Farray's Center`,
+  femLandingPageDescription: `Descobreix Femmology, el mètode exclusiu de Yunaisy Farray per reconnectar amb la teva feminitat. Classe de Benvinguda sense compromís. Places limitades. Reserva ara.`,
 
   // Hero Section
-  femLandingBadge: `CLASSE GRATIS DE BENVINGUDA`,
+  femLandingBadge: `CLASSE DE BENVINGUDA`,
   femLandingHeadline: `Reconnecta amb la Teva Feminitat a Través del Moviment`,
   femLandingSubheadline: `Femmology és el mètode exclusiu creat per Yunaisy Farray que combina dansa amb tacons, expressió corporal i treball emocional perquè t'estimis cada dia més. Una experiència transformadora que va més enllà del ball.`,
   femLandingCTA: `RESERVA LA TEVA CLASSE DE BENVINGUDA ARA`,
@@ -17076,11 +17090,11 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
 
   // Experience Section
   femLandingExperienceTitle: `Vols reconnectar amb la teva essència femenina?`,
-  femLandingExperienceDesc: `Aquesta no és una classe de ball qualsevol. Femmology és un viatge cap al teu interior, una experiència que combina el poder del moviment amb tacons amb el treball emocional. Creat per Yunaisy Farray, aquest mètode únic t'ajuda a alliberar-te d'inseguretats, abraçar la teva sensualitat i estimar-te cada dia més. Primera vegada amb nosaltres? Aquesta és la teva ocasió: una classe de Benvinguda totalment gratis.`,
+  femLandingExperienceDesc: `Aquesta no és una classe de ball qualsevol. Femmology és un viatge cap al teu interior, una experiència que combina el poder del moviment amb tacons amb el treball emocional. Creat per Yunaisy Farray, aquest mètode únic t'ajuda a alliberar-te d'inseguretats, abraçar la teva sensualitat i estimar-te cada dia més. Primera vegada amb nosaltres? Aquesta és la teva ocasió: una classe de Benvinguda sense compromís.`,
 
   // Value Stack
   femLandingValueTitle: `Què inclou aquesta experiència?`,
-  femLandingValueSubtitle: `Tot això completament GRATIS per a noves estudiants`,
+  femLandingValueSubtitle: `Tot això sense compromís per a noves estudiants`,
   femLandingValueItem1: `Una classe completa de Femmology de 60 minuts`,
   femLandingValuePrice1: `Valor: {price}€`,
   femLandingValueItem2: `Connexió directa amb Yunaisy Farray, creadora del mètode`,
@@ -17090,7 +17104,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   femLandingValueIncluded: `Inclòs`,
   femLandingValueTotal: `VALOR TOTAL:`,
   femLandingValueYourPrice: `EL TEU PREU AVUI:`,
-  femLandingValueFree: `GRATIS`,
+  femLandingValueFree: `SENSE COMPROMÍS`,
 
   // Special Offer
   femLandingOfferTitle: `Només per temps limitat`,
@@ -17178,13 +17192,13 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   femExitIntent_hint: `Sexy Style, Heels, Salsa Lady Style, Bachata i molt més...`,
 
   homev2_pageTitle: `Escola de Ball a Barcelona | Classes de Salsa, Batxata i Dansa | FIDC`,
-  homev2_metaDescription: `Escola de ball a Barcelona amb classes de salsa, batxata i dansa per a adults. Centre CID-UNESCO amb 4.9/5 a Google. Primera classe gratis. Reserva ara.`,
+  homev2_metaDescription: `Escola de ball a Barcelona amb classes de salsa, batxata i dansa per a adults. Centre CID-UNESCO amb 4.9/5 a Google. Classe de benvinguda. Reserva ara.`,
   homev2_heroHeadline: `No necessites més classes de ball.\\nNecessites les classes correctes.`,
   homev2_heroSubheadline: `El Mètode Farray® és l'únic sistema d'ensenyament de dansa registrat a UNESCO que mesura el teu progrés classe a classe.`,
   homev2_heroTagline: `Ballar és treballar la teva felicitat. Però només si avances de veritat.`,
   homev2_heroValue: `A Barcelona hi ha desenes d\'escoles de ball. Algunes tenen bons professors. Altres tenen bon ambient. Però gairebé cap pot respondre\'t això: "A quin nivell estic i què em falta per al següent?" Aquí sí.`,
   homev2_heroCta1: `Veure Horaris i Reservar`,
-  homev2_heroCta1Subtext: `Avaluació gratuïta a la teva primera classe`,
+  homev2_heroCta1Subtext: `Reserva la teva classe de benvinguda`,
   homev2_heroCta2: `Descobreix el Mètode`,
   homev2_founderTitle: `Darrere de cada classe hi ha una història. Aquesta és la meva.`,
   homev2_founderPara1: `De l'Escola Nacional d'Art de Cuba a Barcelona. Més de 20 anys formant ballarins que avui brillen en escenaris de tot el món.`,
@@ -17231,7 +17245,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   homev2_compRow8Others: `"Depèn de tu..."`,
   homev2_compRow8Us: `Progrés mesurable classe a classe`,
   homev2_comparisonCta: `Comprova-ho tu mateix`,
-  homev2_comparisonCtaSubtext: `Primera classe d\'avaluació gratuïta`,
+  homev2_comparisonCtaSubtext: `Classe de benvinguda sense compromís`,
   homev2_styleFinderTitle: `25+ estils. Un mètode. El teu viatge.`,
   homev2_styleFinderSubtitle: `Què et motiva a ballar? Troba el teu camí.`,
   homev2_persona1Title: `Vull sentir-me poderosa`,
@@ -17307,11 +17321,11 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogClasesPrincipiantes_metaDescription: `Comença a ballar des de zero a Barcelona (Eixample). Vine a conèixer Farray's amb una classe de benvinguda i segueix aquesta guia: què portar, com triar estil i com progressar.`,
   blogClasesPrincipiantes_excerpt: `Guia completa per començar a ballar des de zero a Barcelona. Classe de benvinguda, sense parella, tots els nivells. Participació puntual des de 20€.`,
   blogClasesPrincipiantes_breadcrumbCurrent: `Classes per a Principiants`,
-  blogClasesPrincipiantes_summaryBullet1: `Classe de benvinguda a Farray's (Eixample) – gratuïta en temporada promocional o des de 10€`,
+  blogClasesPrincipiantes_summaryBullet1: `Classe de benvinguda a Farray's (Eixample) – des de 10€ o preu especial en temporada promocional`,
   blogClasesPrincipiantes_summaryBullet2: `No necessites experiència prèvia ni venir amb parella`,
   blogClasesPrincipiantes_summaryBullet3: `Guia pas a pas: què portar, quin estil triar i com progressar`,
   blogClasesPrincipiantes_summaryBullet4: `+25 estils disponibles: llatins, urbans, dansa tècnica i més`,
-  blogClasesPrincipiantes_intro: `T'agradaria començar a ballar des de zero i no saps per on començar? Estàs al lloc correcte. A <a href='/ca'>Farray's International Dance Center</a> (Barcelona, Eixample) pots reservar una <strong>classe de benvinguda</strong> per conèixer-nos: <strong>gratuïta en temporada promocional</strong>, o amb preu de cortesia (des de 10€) la resta de l'any. També pots venir amb participació puntual des de 20€. Sense pressió, sense postureo i amb un equip que t'ho posa fàcil des del minut u.`,
+  blogClasesPrincipiantes_intro: `T'agradaria començar a ballar des de zero i no saps per on començar? Estàs al lloc correcte. A <a href='/ca'>Farray's International Dance Center</a> (Barcelona, Eixample) pots reservar una <strong>classe de benvinguda</strong> per conèixer-nos: <strong>amb preu especial en temporada promocional</strong>, o amb preu de cortesia (des de 10€) la resta de l'any. També pots venir amb participació puntual des de 20€. Sense pressió, sense postureo i amb un equip que t'ho posa fàcil des del minut u.`,
   blogClasesPrincipiantes_ctaHero: `<strong><a href="/ca/contacte">Reserva la teva classe de benvinguda →</a></strong>`,
   blogClasesPrincipiantes_section1Title: `El primer que vull que sàpigues (perquè et treurà pressió)`,
   blogClasesPrincipiantes_section1Content: `A Farray's, <strong>ser principiant és completament normal</strong>. De fet, més del 80% dels nostres alumnes van començar sense cap experiència prèvia. I et puc garantir una cosa: <strong>a ningú li importa el teu nivell</strong>. Tothom està centrat en el seu propi procés.`,
@@ -17361,14 +17375,14 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogClasesPrincipiantes_section7Privadas: `I si vols avançar més ràpid, existeix el camí curt: <a href="/ca/classes-particulars-ball">classes privades</a> per treballar el que el teu cos necessita (sense distraccions i amb feedback directe).`,
   blogClasesPrincipiantes_section8Title: `Et ve a conèixer-nos?`,
   blogClasesPrincipiantes_section8Content: `Si aquesta guia t'ha tret una mica de soroll mental, ja està: això era el que faltava.`,
-  blogClasesPrincipiantes_ctaReserva: `<strong><a href="/ca/contacte">Reserva la teva classe de benvinguda →</a></strong><br/><br/>• <strong>En temporada promocional:</strong> classe de benvinguda gratuïta<br/>• <strong>Resta de l'any:</strong> classe de cortesia des de 10€<br/>• <strong>Participació puntual:</strong> des de 20€<br/><br/>Dubtes? Escriu-nos i t'ajudem a triar classe i nivell.`,
+  blogClasesPrincipiantes_ctaReserva: `<strong><a href="/ca/contacte">Reserva la teva classe de benvinguda →</a></strong><br/><br/>• <strong>En temporada promocional:</strong> classe de benvinguda<br/>• <strong>Resta de l'any:</strong> classe de cortesia des de 10€<br/>• <strong>Participació puntual:</strong> des de 20€<br/><br/>Dubtes? Escriu-nos i t'ajudem a triar classe i nivell.`,
   blogClasesPrincipiantes_section9Title: `On estem (Barcelona)`,
   blogClasesPrincipiantes_section9Content: `<strong>Farray's International Dance Center</strong><br/>C/ Entença, 100 (baixos), 08015 Barcelona, Catalunya<br/>Tel. <a href='tel:+34622247085'>(+34) 622 247 085</a><br/>Email: <a href='mailto:info@farrayscenter.com'>info@farrayscenter.com</a><br/><br/><strong>Horari classes:</strong> 10:00 a 22:00<br/><strong>Atenció telefònica:</strong> Dl–Dv 10:00 a 22:00<br/><br/><em>Acadèmia de ball a Barcelona (Eixample) - A prop de Plaça Espanya i Sants Estació</em>`,
   blogClasesPrincipiantes_faqTitle: `Preguntes freqüents sobre classes de ball per a principiants`,
   blogClasesPrincipiantes_faq1Question: `Puc començar a ballar sense experiència?`,
   blogClasesPrincipiantes_faq1Answer: `Sí. Tenim classes per a principiants on es parteix des del bàsic i s'explica pas a pas.`,
-  blogClasesPrincipiantes_faq2Question: `Hi ha classe de prova per conèixer el centre?`,
-  blogClasesPrincipiantes_faq2Answer: `Sí. En temporada promocional oferim classe de benvinguda gratuïta. La resta de l'any pots venir a conèixer-nos amb una classe de cortesia des de 10€, o amb participació puntual des de 20€.`,
+  blogClasesPrincipiantes_faq2Question: `Hi ha classe de benvinguda per conèixer el centre?`,
+  blogClasesPrincipiantes_faq2Answer: `Sí. En temporada promocional oferim classe de benvinguda. La resta de l'any pots venir a conèixer-nos amb una classe de cortesia des de 10€, o amb participació puntual des de 20€.`,
   blogClasesPrincipiantes_faq3Question: `He d'anar amb parella?`,
   blogClasesPrincipiantes_faq3Answer: `No necessàriament. En molts formats pots venir sol/a. T'orientem segons la classe.`,
   blogClasesPrincipiantes_faq4Question: `Quina roba necessito?`,
@@ -17555,10 +17569,10 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Page Meta
   baLandingPageTitle: 'Classe de Benvinguda de Bachata Sensual',
   baLandingPageDescription:
-    'Descobreix la Bachata Sensual a Barcelona. Classe de Benvinguda totalment GRATIS. Aprèn amb campions mundials. Places limitades. Sense compromís. Reserva ara.',
+    'Descobreix la Bachata Sensual a Barcelona. Classe de Benvinguda sense compromís. Aprèn amb campions mundials. Places limitades. Sense compromís. Reserva ara.',
 
   // Hero Section
-  baLandingBadge: 'CLASSE GRATIS DE BENVINGUDA',
+  baLandingBadge: 'CLASSE DE BENVINGUDA',
   baLandingHeadline: 'Connecta i Sent amb la Bachata Sensual',
   baLandingSubheadline:
     'Aprèn a ballar bachata sensual amb campions mundials de Salsa LA. Descobreix la connexió en parella, les ondulacions i la musicalitat que et faran destacar a qualsevol pista de ball.',
@@ -17582,7 +17596,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Experience Section
   baLandingExperienceTitle: 'Vols sentir la connexió real del ball en parella?',
   baLandingExperienceDesc:
-    'La bachata sensual no és només un ball, és una conversa sense paraules. És connectar amb la teva parella a través del moviment, les ondulacions i la musicalitat. Primera vegada amb nosaltres? Aquesta és la teva ocasió: una classe de Benvinguda de Bachata Sensual totalment gratis, impartida per campions mundials, sense compromís i amb places limitades.',
+    'La bachata sensual no és només un ball, és una conversa sense paraules. És connectar amb la teva parella a través del moviment, les ondulacions i la musicalitat. Primera vegada amb nosaltres? Aquesta és la teva ocasió: una classe de Benvinguda de Bachata Sensual sense compromís, impartida per campions mundials, sense compromís i amb places limitades.',
 
   // Value Stack
   baLandingValueTitle: 'Què inclou aquesta experiència?',
@@ -17595,7 +17609,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   baLandingValueIncluded: 'Inclòs',
   baLandingValueTotal: 'VALOR TOTAL:',
   baLandingValueYourPrice: 'EL TEU PREU AVUI:',
-  baLandingValueFree: 'GRATIS',
+  baLandingValueFree: 'SENSE COMPROMÍS',
 
   // Special Offer
   baLandingOfferTitle: 'Només per temps limitat',
@@ -17720,7 +17734,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   baLeadModal_consent_link: 'política de privacitat',
 
   // Submit
-  baLeadModal_submit: 'Reservar La Meva Classe Gratis',
+  baLeadModal_submit: 'Reservar La Meva Classe de Benvinguda',
   baLeadModal_submitLoading: 'Processant...',
 
   // Success
@@ -17740,17 +17754,17 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
 
   // SEO
   jpaLandingPageTitle:
-    "Jornada de Portes Obertes | Farray's Center Barcelona | Classe de Benvinguda GRATIS",
+    "Jornada de Portes Obertes | Farray's Center Barcelona | Classe de Benvinguda",
   jpaLandingPageDescription:
-    'Vine a la nostra Jornada de Portes Obertes (del 7 al 31 de gener) i prova GRATIS una classe de ball. Més de 25 estils: Dancehall, Contemporani, Hip-Hop, Salsa, Bachata i molt més. Sense compromís.',
+    'Vine a la nostra Jornada de Portes Obertes (del 7 al 31 de gener) i reserva la teva classe de benvinguda. Més de 25 estils: Dancehall, Contemporani, Hip-Hop, Salsa, Bachata i molt més. Sense compromís.',
 
   // Hero Section
   jpaLandingBadge: 'DEL 7 AL 31 DE GENER',
-  jpaLandingHeadline: 'Prova Una Classe de Ball GRATIS',
+  jpaLandingHeadline: 'Reserva La Teva Classe de Benvinguda',
   jpaLandingSubheadline:
     "Vine a conèixer-nos durant la nostra Jornada de Portes Obertes i descobreix el teu estil de ball ideal. Més de 25 estils diferents t'esperen. Sense compromís.",
   jpaLandingCTA: 'RESERVA LA TEVA CLASSE DE BENVINGUDA',
-  jpaLandingTrustText: 'Una classe gratis · Sense compromís · Places limitades',
+  jpaLandingTrustText: 'Una classe de benvinguda · Sense compromís · Places limitades',
   jpaLandingTrustActiveStudents: '1.500+ alumnes actius',
   jpaLandingTrustYearsExp: '8+ anys',
   jpaLandingTrustLocationShort: 'Barcelona - Plaça Espanya',
@@ -17770,12 +17784,12 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Experience Section
   jpaLandingExperienceTitle: 'Preparat/da per descobrir el teu estil de ball?',
   jpaLandingExperienceDesc:
-    'Durant la Jornada de Portes Obertes (del 7 al 31 de gener), podràs provar una classe de benvinguda completament gratis. Llatí, Urbà, Dansa Clàssica o Fitness: descobreix quin connecta millor amb tu. Professors professionals et guiaran a cada pas.',
+    'Durant la Jornada de Portes Obertes (del 7 al 31 de gener), podràs provar una classe de benvinguda sense compromís. Llatí, Urbà, Dansa Clàssica o Fitness: descobreix quin connecta millor amb tu. Professors professionals et guiaran a cada pas.',
 
   // Schedule Widget
   jpaLandingScheduleTitle: 'Consulta tots els nostres horaris',
   jpaLandingScheduleSubtitle:
-    "Tria el dia i estil que més t'interessi per a la teva classe de benvinguda gratuïta.",
+    "Tria el dia i estil que més t'interessi per a la teva classe de benvinguda.",
 
   // Value Stack
   jpaLandingValueTitle: 'Què inclou la teva classe de benvinguda?',
@@ -17786,7 +17800,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   jpaLandingValueItem4: 'Assessorament personalitzat per triar el teu estil',
   jpaLandingValueItem5: "Accés a descompte exclusiu si decideixes inscriure't",
   jpaLandingValueIncluded: 'Inclòs',
-  jpaLandingValueFree: 'GRATIS',
+  jpaLandingValueFree: 'SENSE COMPROMÍS',
   jpaLandingValueTotal: 'VALOR TOTAL:',
   jpaLandingValueYourPrice: 'EL TEU PREU AVUI:',
 
@@ -17824,9 +17838,9 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
 
   // FAQs
   jpaLandingFaqTitle: 'Preguntes freqüents',
-  jpaLandingObjQ1: "Puc provar més d'una classe gratis?",
+  jpaLandingObjQ1: "Puc provar més d'una classe de benvinguda?",
   jpaLandingObjA1:
-    "La classe de benvinguda gratuïta és una per persona. Si després de provar-la vols explorar altres estils abans d'inscriure't, pots fer-ho abonant el preu de classe solta (20€). Així podràs descobrir realment quin estil s'adapta millor a tu.",
+    "La classe de benvinguda és una per persona. Si després de provar-la vols explorar altres estils abans d'inscriure't, pots fer-ho abonant el preu de classe solta (20€). Així podràs descobrir realment quin estil s'adapta millor a tu.",
   jpaLandingObjQ2: 'Necessito experiència prèvia en ball?',
   jpaLandingObjA2:
     'No, tenim classes per a tots els nivells. Els nostres professors adapten les classes perquè principiants i ballarins amb experiència puguin gaudir per igual.',
@@ -17835,7 +17849,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
     "Roba còmoda que et permeti moure't amb llibertat. Depenent de l'estil, pots ballar amb sabatilles esportives, descalç o amb mitjons. T'orientem quan reservis.",
   jpaLandingObjQ4: "Hi ha obligació d'inscriure's després?",
   jpaLandingObjA4:
-    'Cap. La classe de benvinguda és completament gratuïta i sense compromís. Volem que coneguis el centre i descobreixis si és el lloc ideal per a tu.',
+    'Cap. La classe de benvinguda és sense compromís. Volem que coneguis el centre i descobreixis si és el lloc ideal per a tu.',
 
   // Video
   jpaLandingVideoTitle: 'Coneix el nostre centre',
@@ -17846,7 +17860,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   jpaLandingFinalCTADesc:
     "Uneix-te a la Jornada de Portes Obertes de Farray's Center (del 7 al 31 de gener) i descobreix la teva passió pel ball. Més de 25 estils t'esperen.",
   jpaLandingFinalCTAExtra: '',
-  jpaLandingFinalTrust: 'Una classe gratis · Sense compromís · Descompte exclusiu',
+  jpaLandingFinalTrust: 'Una classe de benvinguda · Sense compromís · Descompte exclusiu',
 
   // Footer
   jpaLandingFooterRights: 'Tots els drets reservats',
@@ -17865,7 +17879,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Exit Intent Popup
   jpaExitIntent_title: "Te'n vas sense reservar la teva classe?",
   jpaExitIntent_description:
-    "No perdis l'oportunitat de provar una classe de ball GRATIS. La Jornada de Portes Obertes (del 7 al 31 de gener) és un esdeveniment especial amb places limitades.",
+    "No perdis l'oportunitat de reservar la teva classe de benvinguda. La Jornada de Portes Obertes (del 7 al 31 de gener) és un esdeveniment especial amb places limitades.",
   jpaExitIntent_ctaExplore: 'Veure classes disponibles',
   jpaExitIntent_ctaDancehall: 'Reservar la meva classe de benvinguda',
   jpaExitIntent_ctaClose: 'Tancar',
@@ -17876,16 +17890,16 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // =====================================================
 
   // Modal Header
-  jpaLeadModal_title: 'Reserva la teva Classe de Benvinguda Gratuïta',
+  jpaLeadModal_title: 'Reserva la teva Classe de Benvinguda',
   jpaLeadModal_subtitle: 'Jornada de Portes Obertes: del 7 al 31 de gener',
 
   // Micro Commitment
-  jpaLeadModal_microCommit_question: "T'agradaria provar una classe de ball GRATIS?",
-  jpaLeadModal_microCommit_yes: 'Sí, vull la meva classe gratis!',
+  jpaLeadModal_microCommit_question: "T'agradaria reservar la teva classe de benvinguda?",
+  jpaLeadModal_microCommit_yes: 'Sí, vull la meva classe de benvinguda!',
   jpaLeadModal_microCommit_curious: 'Només vull més informació',
 
   jpaLeadModal_intro:
-    'Completa el formulari i rep tota la informació per reservar la teva classe de benvinguda gratuïta.',
+    'Completa el formulari i rep tota la informació per reservar la teva classe de benvinguda.',
 
   // Benefits
   jpaLeadModal_benefits_title: 'Què rebràs:',
@@ -17919,7 +17933,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   jpaLeadModal_consent_link: 'política de privacitat',
 
   // Submit
-  jpaLeadModal_submit: 'Reservar La Meva Classe Gratis',
+  jpaLeadModal_submit: 'Reservar La Meva Classe de Benvinguda',
   jpaLeadModal_submitLoading: 'Processant...',
 
   // Success
@@ -17932,4 +17946,557 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   jpaLeadModal_error_title: 'Error al processar',
   jpaLeadModal_error_message: 'Hi ha hagut un error. Si us plau, torna-ho a intentar.',
   jpaLeadModal_error_cta: 'Reintentar',
+
+  // =============================================================================
+  // BLOG ARTICLE: Salsa vs Bachata - Quin Estil Triar?
+  // =============================================================================
+
+  // === META ===
+  blogSalsaVsBachata_title: 'Salsa vs Bachata: Quin Estil Triar? Guia Completa 2026',
+  blogSalsaVsBachata_metaDescription:
+    "Salsa vs bachata: diferències en ritme, passos i expressió. Guia completa per triar el teu estil de ball llatí. Classes a Farray's Barcelona.",
+  blogSalsaVsBachata_excerpt:
+    'Descobreix les diferències entre salsa i bachata: origen, música, moviments i quin triar segons la teva personalitat',
+  blogSalsaVsBachata_breadcrumbCurrent: 'Salsa vs Bachata',
+
+  // === SUMMARY BULLETS (GEO Optimized) ===
+  blogSalsaVsBachata_summaryBullet1:
+    'Salsa: energia explosiva nascuda a Nova York (1960s) amb arrels cubanes',
+  blogSalsaVsBachata_summaryBullet2:
+    'Bachata: sensualitat dominicana, Patrimoni UNESCO des de 2019',
+  blogSalsaVsBachata_summaryBullet3:
+    'Diferències clau: tempo, moviment de malucs i connexió en parella',
+  blogSalsaVsBachata_summaryBullet4:
+    "A Farray's Barcelona ensenyem ambdós estils per a balladors complets",
+
+  // === STATS (Holographic Cards) ===
+  blogSalsaVsBachata_statSalsaOrigenLabel: 'Salsa cristal·litza a NYC',
+  blogSalsaVsBachata_statBachataOrigenLabel: 'Bachata neix a RD',
+  blogSalsaVsBachata_statUNESCOLabel: 'Bachata Patrimoni Immaterial',
+  blogSalsaVsBachata_statDemenciaLabel: 'Reducció risc demència',
+
+  // === ANSWER CAPSULES (72% AI Citation Rate) ===
+  blogSalsaVsBachata_answerCualElegir: 'Resposta directa per a cercadors',
+  blogSalsaVsBachata_answerCualElegirQ: 'Salsa o bachata? Quin hauria de triar?',
+  blogSalsaVsBachata_answerCualElegirA:
+    "Si busques energia, girs i ritme accelerat, tria salsa. Si prefereixes sensualitat, connexió íntima i tempo relaxat, tria bachata. L'ideal és aprendre tots dos: a les festes llatines s'alternen i les habilitats són transferibles.",
+
+  blogSalsaVsBachata_answerMasFacil: 'Dificultat comparativa',
+  blogSalsaVsBachata_answerMasFacilQ: 'Què és més fàcil aprendre, salsa o bachata?',
+  blogSalsaVsBachata_answerMasFacilA:
+    'La bachata és generalment més fàcil per a principiants: el seu tempo de 120-160 BPM és més lent que la salsa (160-220 BPM) i el pas bàsic és més intuïtiu. En 2-4 setmanes pots ballar bachata socialment. La salsa requereix més coordinació rítmica inicial.',
+
+  blogSalsaVsBachata_answerBeneficios: 'Beneficis científics del ball',
+  blogSalsaVsBachata_answerBeneficiosQ: 'Quins beneficis té ballar salsa o bachata?',
+  blogSalsaVsBachata_answerBeneficiosA:
+    "Ballar regularment redueix un 76% el risc de demència (NEJM, 2003), crema 400-600 calories per hora, allibera endorfines, millora la salut cardiovascular i crea connexions socials profundes que combaten l'aïllament.",
+
+  // === DEFINITIONS (LLM Extraction) ===
+  blogSalsaVsBachata_defSalsaTerm: 'Salsa (ball)',
+  blogSalsaVsBachata_defSalsa:
+    'La salsa és un ball llatí de parella originat a Nova York als anys 1960-70, fusionant son cubà, mambo, jazz i ritmes afrocaribenys. Es caracteritza pel seu tempo ràpid (160-220 BPM), girs dinàmics, joc de peus i energia desbordant. Existeixen diversos estils: salsa cubana (en roda), salsa en línia (LA/NY style) i salsa porto-riquenya.',
+
+  blogSalsaVsBachata_defBachataTerm: 'Bachata (ball)',
+  blogSalsaVsBachata_defBachata:
+    'La bachata és un gènere musical i ball originari de la República Dominicana, sorgit als anys 1960 als barris marginals. Declarada Patrimoni Immaterial de la UNESCO el 2019. Es caracteritza pel seu tempo sensual (120-160 BPM), moviment marcat de malucs amb "pop" en temps 4, i connexió íntima entre els ballarins. Estils principals: bachata tradicional, sensual i moderna.',
+
+  // === STATISTICS CONTENT ===
+  blogSalsaVsBachata_statUNESCOContent:
+    'El 2019, la UNESCO va declarar la bachata dominicana Patrimoni Cultural Immaterial de la Humanitat, reconeixent el seu valor cultural únic.',
+  blogSalsaVsBachata_statCaloriasContent:
+    'Una hora de ball llatí crema entre 400-600 calories, equivalent a córrer o nedar, però molt més divertit.',
+  blogSalsaVsBachata_statDemenciaContent:
+    'El ball freqüent redueix un 76% el risc de demència, més que qualsevol altra activitat física o cognitiva estudiada.',
+  blogSalsaVsBachata_statEndorfinasContent:
+    "El ball sincronitzat incrementa un 21% l'alliberament d'endorfines respecte a l'exercici individual.",
+
+  // === CALLOUTS ===
+  blogSalsaVsBachata_calloutTip:
+    "**Consell per a principiants**: Comença amb bachata si mai has ballat balls de parella. El seu tempo més lent et permet concentrar-te en la connexió i el leading/following. Després d'1-2 mesos, afegeix salsa al teu repertori.",
+  blogSalsaVsBachata_calloutCTA:
+    "**Preparat per descobrir el teu ritme?** [Reserva la teva classe de benvinguda a Farray's](/ca/contacto) i prova tant salsa com bachata. Els nostres professors amb +20 anys d'experiència et guiaran des del primer pas.",
+
+  // === TESTIMONIAL ===
+  blogSalsaVsBachata_testimonial: "Testimoni d'alumna",
+  blogSalsaVsBachata_testimonialText:
+    "Vaig arribar a Farray's sense saber què triar entre salsa i bachata. Yunaisy em va recomanar provar tots dos i va ser la millor decisió. En 3 mesos ja ballava a festes llatines sense parar tota la nit. L'ambient és increïble i els professors fan que tot sigui fàcil.",
+
+  // === INTRODUCTION ===
+  blogSalsaVsBachata_intro:
+    "Salsa i bachata són com dos idiomes diferents del mateix cor llatí. La primera t'invita a esclatar en girs trepidants; la segona, a fondre't en una abraçada sensual que no necessita pressa. Segons l'[estudi de Ramos Gandía (2023)](https://www.muchomasquebaile.es/wp-content/uploads/2021/11/Historia-de-la-salsa-desde-las-raices-hasta-el-1975.pdf), la salsa va cristal·litzar a Nova York durant els anys 60 fusionant son cubà amb jazz i soul, mentre que la bachata va emergir simultàniament als barris de Santo Domingo.",
+  blogSalsaVsBachata_intro2:
+    "Quin triar? La resposta depèn de la teva personalitat, la teva manera de sentir la música i el que busques a la pista. A **[Farray's International Dance Center](/ca/clases)** ensenyem ambdós estils perquè creiem que un ballador complet domina els dos llenguatges. Aquesta guia t'ajudarà a descobrir quin ressona més amb tu, o per què hauries d'aprendre tots dos.",
+
+  // === SECTION 1: ORÍGENES ===
+  blogSalsaVsBachata_origenesTitle: 'Orígens: Dues Històries Paral·leles del Carib',
+  blogSalsaVsBachata_origenesSalsa:
+    '**La salsa** va cristal·litzar als barris llatins de Nova York durant els anys 60. Fusiona son cubà, mambo i chachachá amb jazz i R&B nord-americà. El segell Fania Records i artistes com Héctor Lavoe, Celia Cruz i Willie Colón la van catapultar globalment als 70. És música de barri, de resistència, de celebració col·lectiva.',
+  blogSalsaVsBachata_origenesBachata:
+    '**La bachata** va emergir a la República Dominicana com a "música d\'amargue", relegada a bars i prostíbuls per les elits. [Deborah Pacini Hernández (1995)](https://archive.org/details/bachatasocialhist00paci) documenta com José Manuel Calderón va gravar les primeres bachates el 1962. El gènere va patir dècades d\'estigma fins que artistes com Juan Luis Guerra i Romeo Santos el van elevar a fenomen mundial. El 2019, la [UNESCO va declarar la bachata Patrimoni Immaterial de la Humanitat](https://ich.unesco.org/es/RL/la-bachata-dominicana-01514).',
+
+  // === SECTION 2: LA MÚSICA ===
+  blogSalsaVsBachata_musicaTitle: 'La Música: Ritmes que Parlen Diferent',
+  blogSalsaVsBachata_musicaSalsa:
+    '**Ritme salser**: tempo ràpid (160-220 BPM), clau afrocubana (3-2 o 2-3), secció de metalls potent, piano montuno i percussió enèrgica (congues, timbals, bongos). La música t\'empeny a moure\'t, no pots quedar-te quiet. Escolta "Pedro Navaja" de Rubén Blades o "Quimbara" de Celia Cruz per sentir aquesta descàrrega.',
+  blogSalsaVsBachata_musicaBachata:
+    "**Ritme bachater**: tempo més lent (120-160 BPM), guitarra requinto característica que \"plora\", baix sincopat i bongos suaus. La música t'envolta, t'invita a connectar amb la teva parella. Des del so tradicional d'Antony Santos fins a la bachata urbana de Romeo Santos, el gènere ha evolucionat mantenint la seva essència romàntica.",
+
+  // === IMAGE: Ritmos ===
+  blogSalsaVsBachata_imageRitmosCaption:
+    "Salsa i bachata: dos ritmes, dues expressions de l'ànima llatina",
+
+  // === SECTION 3: EL BAILE ===
+  blogSalsaVsBachata_baileTitle: 'El Ball: Moviment i Expressió Corporal',
+  blogSalsaVsBachata_baileSalsa:
+    '**Ballar salsa** és com una conversa animada: girs ràpids, joc de peus intricat, canvis de direcció constants. El líder marca amb precisió, la seguidora respon amb fluïdesa. El cos es mou en vertical, les espatlles es mantenen estables mentre els malucs accentuen el ritme. A [les nostres classes de salsa cubana](/ca/clases/salsa-cubana-barcelona) treballem des del pas bàsic fins a les figures més complexes.',
+  blogSalsaVsBachata_baileBachata:
+    '**Ballar bachata** és com un xiuxiueig íntim: moviments ondulants, malucs que dibuixen vuits, connexió propera amb la parella. El "pop" de maluc en el quart temps és la signatura del gènere. La bachata sensual, popularitzada a Europa, afegeix ones corporals i aïllaments. A [les nostres classes de bachata](/ca/clases/bachata-barcelona) ensenyem des del tradicional fins al contemporani.',
+
+  // === COMPARISON TABLE ===
+  blogSalsaVsBachata_tablaTitle: 'Taula Comparativa: Salsa vs Bachata',
+  blogSalsaVsBachata_tablaHeader1: 'Característica',
+  blogSalsaVsBachata_tablaHeader2: 'Salsa',
+  blogSalsaVsBachata_tablaHeader3: 'Bachata',
+  blogSalsaVsBachata_tablaRow1Col1: 'Tempo',
+  blogSalsaVsBachata_tablaRow1Col2: 'Ràpid (160-220 BPM)',
+  blogSalsaVsBachata_tablaRow1Col3: 'Moderat (120-160 BPM)',
+  blogSalsaVsBachata_tablaRow2Col1: 'Origen',
+  blogSalsaVsBachata_tablaRow2Col2: 'Nova York / Cuba',
+  blogSalsaVsBachata_tablaRow2Col3: 'República Dominicana',
+  blogSalsaVsBachata_tablaRow3Col1: 'Moviment maluc',
+  blogSalsaVsBachata_tablaRow3Col2: 'Subtil, accent lateral',
+  blogSalsaVsBachata_tablaRow3Col3: 'Pronunciat, "pop" en 4',
+  blogSalsaVsBachata_tablaRow4Col1: 'Connexió parella',
+  blogSalsaVsBachata_tablaRow4Col2: 'Oberta, molts girs',
+  blogSalsaVsBachata_tablaRow4Col3: 'Propera, sensual',
+  blogSalsaVsBachata_tablaRow5Col1: 'Instrument clau',
+  blogSalsaVsBachata_tablaRow5Col2: 'Piano, metalls, clau',
+  blogSalsaVsBachata_tablaRow5Col3: 'Guitarra requinto',
+
+  // === SECTION 4: APRENDIZAJE ===
+  blogSalsaVsBachata_aprendizajeTitle: "Quin és Més Fàcil d'Aprendre?",
+  blogSalsaVsBachata_aprendizajeIntro:
+    'Pregunta trampa: cap és "fàcil" si vols ballar bé. Però sí que hi ha diferències en la corba d\'aprenentatge inicial.',
+  blogSalsaVsBachata_aprendizajeBachata:
+    '**Bachata per a principiants**: el pas bàsic (lateral-lateral-lateral-tap) és més intuïtiu i el tempo més lent permet processar els moviments. Moltes persones senten que "connecten" amb la bachata més ràpid. A [les nostres classes per a principiants](/ca/clases/clases-baile-principiantes-barcelona) veiem com estudiants ballen bachata social en poques setmanes.',
+  blogSalsaVsBachata_aprendizajeSalsa:
+    '**Salsa per a principiants**: el pas bàsic requereix més coordinació rítmica (el famós "1-2-3, pausa, 5-6-7, pausa") i el tempo ràpid pot aclaparar a l\'inici. No obstant això, un cop dominat el timing, la salsa ofereix un vocabulari de figures gairebé infinit. La inversió inicial és major, però les possibilitats són immenses.',
+
+  // === IMAGE: Clases ===
+  blogSalsaVsBachata_imageClasesCaption:
+    "Classes de salsa i bachata a Farray's Dance Center Barcelona",
+
+  // === SECTION 5: BENEFICIOS ===
+  blogSalsaVsBachata_beneficiosTitle: 'Beneficis per a la Salut: Ciència del Ball Llatí',
+  blogSalsaVsBachata_beneficiosIntro:
+    'Ambdós balls ofereixen beneficis extraordinaris recolzats per estudis científics:',
+  blogSalsaVsBachata_beneficiosListaTitle: 'Beneficis comprovats:',
+  blogSalsaVsBachata_beneficioCardio:
+    '**Salut cardiovascular**: el ball de parella eleva el ritme cardíac de forma sostinguda, millorant la resistència aeròbica',
+  blogSalsaVsBachata_beneficioCognitivo:
+    '**Funció cognitiva**: segons el [NEJM (2003)](https://www.nejm.org/doi/full/10.1056/NEJMoa022252), el ball freqüent redueix un 76% el risc de demència, més que qualsevol altra activitat física o cognitiva',
+  blogSalsaVsBachata_beneficioEmocional:
+    '**Benestar emocional**: estudis a [ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S1090513816300113) demostren que el ball sincronitzat allibera endorfines i enforteix vincles socials',
+  blogSalsaVsBachata_beneficioSocial:
+    "**Comunitat**: ballar regularment crea connexions socials profundes que combaten l'aïllament i milloren la salut mental",
+
+  // === SECTION 6: AMBOS ===
+  blogSalsaVsBachata_ambosTitle: 'Per Què No Aprendre Ambdós Estils?',
+  blogSalsaVsBachata_ambosContent:
+    'La veritat és que salsa i bachata es complementen perfectament. A les festes llatines, el DJ alterna entre ambdós gèneres. Si només en saps un, et quedes assegut la meitat de la nit. A més, les habilitats són transferibles: la musicalitat, el leading/following, la connexió amb la parella.',
+  blogSalsaVsBachata_ambosFarrays:
+    "A **[Farray's International Dance Center](/ca/clases/salsa-bachata-barcelona)** oferim un programa combinat de salsa i bachata que et converteix en ballador versàtil. Els nostres professors, amb més de 20 anys d'experiència, et guien des de zero fins al nivell social. [Reserva la teva classe de benvinguda](/ca/contacto) i descobreix quin és el teu ritme... o tots dos.",
+
+  // === SECTION 7: CONCLUSIÓN ===
+  blogSalsaVsBachata_conclusionTitle: 'Conclusió: El Teu Ritme, La Teva Elecció',
+  blogSalsaVsBachata_conclusionContent:
+    'Salsa o bachata? Si busques adrenalina, girs i energia desbordant, comença per la salsa. Si prefereixes sensualitat, connexió íntima i un tempo que permet assaborir cada moviment, la bachata és la teva entrada. Però recorda: els millors balladors dominen ambdós llenguatges.',
+  blogSalsaVsBachata_conclusionCTA:
+    "**[Vine a Farray's](/ca/contacto)** i prova ambdós estils. La teva primera classe de benvinguda t'espera. T'esperem al cor de Barcelona perquè descobreixis quin ritme fa bategar més fort el teu cor llatí.",
+
+  // === FAQ SECTION (8 FAQs for Schema) ===
+  blogSalsaVsBachata_faqTitle: 'Preguntes Freqüents: Salsa vs Bachata',
+  blogSalsaVsBachata_faq1Question: 'Què és més fàcil, salsa o bachata?',
+  blogSalsaVsBachata_faq1Answer:
+    'La **bachata** sol ser més accessible per a principiants pel seu tempo més lent (120-160 BPM) i pas bàsic intuïtiu. La salsa (160-220 BPM) requereix major coordinació rítmica inicial. No obstant això, ambdós balls tenen nivells avançats igualment desafiants.',
+  blogSalsaVsBachata_faq2Question: 'Quina és la diferència principal entre salsa i bachata?',
+  blogSalsaVsBachata_faq2Answer:
+    'Les diferències principals són: **tempo** (salsa més ràpida), **origen** (salsa NYC/Cuba, bachata República Dominicana), **moviment de maluc** (bachata més pronunciat amb "pop" en temps 4), i **connexió** (salsa més oberta amb girs, bachata més propera i sensual).',
+  blogSalsaVsBachata_faq3Question: 'Puc aprendre salsa i bachata alhora?',
+  blogSalsaVsBachata_faq3Answer:
+    "Sí, és molt recomanable. A **[Farray's Barcelona](/ca/clases/salsa-bachata-barcelona)** oferim programes combinats perquè les habilitats són transferibles i a les festes llatines s'alternen ambdós gèneres. Aprendre'ls junts et converteix en ballador versàtil.",
+  blogSalsaVsBachata_faq4Question: 'Quins beneficis té ballar salsa o bachata?',
+  blogSalsaVsBachata_faq4Answer:
+    "Segons el [NEJM](https://www.nejm.org/doi/full/10.1056/NEJMoa022252), el ball freqüent redueix un 76% el risc de demència. A més millora la salut cardiovascular, allibera endorfines, combat l'estrès i crea connexions socials profundes.",
+  blogSalsaVsBachata_faq5Question: 'La bachata és Patrimoni de la UNESCO?',
+  blogSalsaVsBachata_faq5Answer:
+    'Sí, al desembre de 2019 la [UNESCO va declarar la bachata dominicana Patrimoni Immaterial de la Humanitat](https://ich.unesco.org/es/RL/la-bachata-dominicana-01514), reconeixent el seu valor cultural i la seva contribució a la identitat dominicana.',
+  blogSalsaVsBachata_faq6Question: 'On puc aprendre salsa i bachata a Barcelona?',
+  blogSalsaVsBachata_faq6Answer:
+    "**[Farray's International Dance Center](/ca/clases)** ofereix classes de salsa cubana, bachata sensual i programes combinats per a tots els nivells. Ubicats al centre de Barcelona, amb més de 20 anys d'experiència formant balladors.",
+  blogSalsaVsBachata_faq7Question: 'Quina roba he de portar per a classes de salsa o bachata?',
+  blogSalsaVsBachata_faq7Answer:
+    'Roba còmoda que permeti moviment: pantalons elàstics o faldilles amb vol, samarretes transpirables. Per als peus, sabates de sola llisa (no esportives de goma). En nivells avançats, sabates de ball llatí milloren els girs i la tècnica.',
+  blogSalsaVsBachata_faq8Question: 'Quant de temps es triga a aprendre a ballar salsa o bachata?',
+  blogSalsaVsBachata_faq8Answer:
+    "Amb classes regulars (2-3 vegades per setmana), la majoria d'estudiants ballen socialment en **2-3 mesos**. Per a nivell intermedi-avançat, compta amb 1-2 anys de pràctica constant. La clau està en la consistència i practicar a festes socials.",
+
+  // === REFERENCES ===
+  blogSalsaVsBachata_referencesTitle: 'Fonts i Referències Acadèmiques',
+  blogSalsaVsBachata_referencesIntro:
+    'Aquest article està recolzat per fonts acadèmiques verificades:',
+  blogSalsaVsBachata_refRamosTitle: 'Historia de la Salsa: Desde las Raíces hasta 1975',
+  blogSalsaVsBachata_refRamosDesc:
+    'Document acadèmic exhaustiu sobre els orígens del son, mambo i la cristal·lització de la salsa a Nova York.',
+  blogSalsaVsBachata_refPaciniTitle: 'Bachata: A Social History of Dominican Popular Music',
+  blogSalsaVsBachata_refPaciniDesc:
+    "Estudi etnomusicològic de referència sobre l'origen i evolució de la bachata a República Dominicana.",
+  blogSalsaVsBachata_refUNESCOTitle: 'La Bachata Dominicana - Patrimoni Cultural Immaterial UNESCO',
+  blogSalsaVsBachata_refUNESCODesc:
+    'Pàgina oficial de la UNESCO amb la declaració de la bachata com a Patrimoni Immaterial de la Humanitat (2019).',
+  blogSalsaVsBachata_refNEJMTitle: 'Leisure Activities and Dementia Risk – NEJM',
+  blogSalsaVsBachata_refNEJMDesc:
+    'Estudi de referència que demostra els beneficis cognitius del ball: 76% reducció del risc de demència.',
+  blogSalsaVsBachata_refHarvardTitle: 'Calories Burned in 30 Minutes – Harvard Health',
+  blogSalsaVsBachata_refHarvardDesc:
+    'Taula de despesa calòrica de Harvard Health Publishing que inclou el ball social com a activitat física.',
+  blogSalsaVsBachata_refFrontiersTitle: 'Dance, Emotions and Well-being – Frontiers in Psychology',
+  blogSalsaVsBachata_refFrontiersDesc:
+    'Estudi sobre els efectes positius del ball en les emocions, benestar psicològic i salut mental.',
+  blogSalsaVsBachata_refEndorphinsTitle: 'Synchronized Dancing and Endorphin Release',
+  blogSalsaVsBachata_refEndorphinsDesc:
+    "Investigació sobre l'alliberament d'endorfines i cohesió social a través del ball sincronitzat.",
+
+  // ============================================================================
+  // BLOG: COM PERDRE LA POR A BALLAR
+  // ============================================================================
+
+  // === META ===
+  blogPerderMiedoBailar_title: 'Com Perdre la Por a Ballar: Guia Científica per a Principiants',
+  blogPerderMiedoBailar_excerpt:
+    "Descobreix tècniques provades per superar la vergonya i la por a ballar. El 80% d'adults sent ansietat al ballar, però amb el mètode adequat, el 90% ho supera en setmanes.",
+  blogPerderMiedoBailar_breadcrumbCurrent: 'Com Perdre la Por a Ballar',
+
+  // === SUMMARY BULLETS ===
+  blogPerderMiedoBailar_summaryBullet1:
+    "El 80% d'adults sent ansietat social al ballar: és completament normal",
+  blogPerderMiedoBailar_summaryBullet2:
+    "Tècniques científiques d'exposició gradual funcionen en el 85% de casos",
+  blogPerderMiedoBailar_summaryBullet3: 'Amb 3-6 classes en ambient segur, el 90% perd la vergonya',
+  blogPerderMiedoBailar_summaryBullet4:
+    "A Farray's Barcelona creem un espai sense judicis per a principiants",
+
+  // === STATS ===
+  blogPerderMiedoBailar_statAnsiedadLabel: 'Adults amb ansietat al ballar',
+  blogPerderMiedoBailar_statClasesLabel: 'Classes per sentir-se còmode',
+  blogPerderMiedoBailar_statExitoLabel: 'Alumnes que superen la por',
+  blogPerderMiedoBailar_statEndorfinasLabel: 'Més endorfines ballant en grup',
+
+  // === ANSWER CAPSULES ===
+  blogPerderMiedoBailar_answerComoPerder: 'Resposta directa: com perdre la por',
+  blogPerderMiedoBailar_answerComoPerderQ: 'Com puc perdre la por a ballar?',
+  blogPerderMiedoBailar_answerComoPerderA:
+    "Per perdre la por a ballar: (1) Tria una escola amb ambient segur i sense judicis, (2) Comença amb classes per a principiants on tothom està al teu nivell, (3) Practica exposició gradual - cada classe serà més fàcil, (4) Recorda que la majoria d'adults sent el mateix i, segons la nostra experiència de +20 anys, la gran majoria ho supera en poques setmanes.",
+
+  blogPerderMiedoBailar_answerEsNormal: 'És normal tenir vergonya?',
+  blogPerderMiedoBailar_answerEsNormalQ: 'És normal tenir vergonya o por a ballar?',
+  blogPerderMiedoBailar_answerEsNormalA:
+    'Sí, és completament normal. Segons Psychology Today, l\'ansietat social al ballar en públic afecta la majoria d\'adults en major o menor grau. La por a ser jutjat i a "fer-ho malament" són respostes evolutives naturals. La bona notícia: amb exposició gradual en un ambient segur, aquesta por se supera.',
+
+  blogPerderMiedoBailar_answerCuantoTiempo: 'Quant de temps per perdre la por?',
+  blogPerderMiedoBailar_answerCuantoTiempoQ: 'Quant de temps es tarda a perdre la por a ballar?',
+  blogPerderMiedoBailar_answerCuantoTiempoA:
+    "En la nostra experiència amb més de 20 anys ensenyant, la gran majoria d'alumnes se senten còmodes després de 3-6 classes. La primera classe és la més difícil; després, cada sessió es torna més fàcil i divertida. En un mes de classes regulars, la majoria balla amb confiança.",
+
+  // === DEFINITIONS ===
+  blogPerderMiedoBailar_defMiedoEscenicoTerm: 'Por escènica (en el ball)',
+  blogPerderMiedoBailar_defMiedoEscenico:
+    'La por escènica en el ball és una forma d\'ansietat social que es manifesta com a temor intens a ballar davant d\'altres. Es caracteritza per pensaments negatius anticipatoris ("em jutjaran", "ho faré malament"), símptomes físics (suor, tensió muscular) i conductes d\'evitació. És una resposta natural que es pot superar amb exposició gradual i pràctica en ambient segur.',
+
+  blogPerderMiedoBailar_defAnsiedadSocialTerm: 'Ansietat social',
+  blogPerderMiedoBailar_defAnsiedadSocial:
+    "L'ansietat social és una por intensa a situacions on un pot ser avaluat per altres. En el context del ball, es manifesta com a por a semblar maldestre, a no seguir el ritme o a ser el centre d'atenció. Afecta la majoria d'adults en major o menor mesura i és la principal barrera per començar a ballar.",
+
+  // === INTRODUCTION ===
+  blogPerderMiedoBailar_intro:
+    'T\'agradaria ballar però alguna cosa et frena? Aquell nus a l\'estómac quan penses en una pista de ball, aquella voceta que diu "tothom em mirarà", aquella por a "fer-ho malament"... Si t\'hi identifiques, estàs al lloc correcte. I sobretot: **no estàs sol/a**.',
+  blogPerderMiedoBailar_intro2:
+    "A **[Farray's International Dance Center](/ca/clases)** portem més de 20 anys ajudant persones com tu a fer el primer pas. Hem vist centenars d'alumnes arribar amb les cames tremolant i, setmanes després, gaudir ballant sense pensar en res més. Aquesta guia t'explica per què sentim por a ballar i, més important, **com superar-la amb tècniques que funcionen**.",
+
+  // === SECTION 1 ===
+  blogPerderMiedoBailar_porQueMiedoTitle: 'Per Què Sentim Por a Ballar: La Ciència Darrere',
+  blogPerderMiedoBailar_porQueMiedoContent:
+    'La por a ballar no és una debilitat ni quelcom de què avergonyir-se. És una resposta evolutiva completament natural. El nostre cervell està programat per evitar situacions on podem ser jutjats negativament pel grup, perquè en temps ancestrals, el rebuig social significava perill real.',
+  blogPerderMiedoBailar_statAnsiedadContent:
+    "L'ansietat social al ballar és una de les principals barreres per apuntar-se a classes de ball o sortir a ballar.",
+  blogPerderMiedoBailar_porQueMiedoContent2:
+    'La bona notícia és que, igual que vam aprendre aquesta por, podem desaprendre-la. El cervell és plàstic: amb les experiències correctes, les connexions neuronals que associen "ball" amb "perill" es reescriuen. La clau està en l\'**exposició gradual en un ambient segur**.',
+
+  // === SECTION 2 ===
+  blogPerderMiedoBailar_miedosComunesTitle: 'Les 5 Pors Més Comunes al Ballar (i Com Superar-les)',
+  blogPerderMiedoBailar_miedosComunesIntro:
+    'Després de 20 anys ensenyant, hem identificat les pors que més es repeteixen. Reconèixer-les és el primer pas per superar-les:',
+  blogPerderMiedoBailar_miedosListaTitle: 'Les pors més freqüents:',
+  blogPerderMiedoBailar_miedo1:
+    '**"No tinc ritme"** – El ritme s\'entrena. El 95% de persones que diuen "no tenir ritme" simplement mai ho han practicat. En poques classes, la teva oïda s\'afina.',
+  blogPerderMiedoBailar_miedo2:
+    '**"Tothom em mirarà"** – La realitat: a classe, cadascú està concentrat en els seus propis peus. Ningú et jutja perquè tots van començar igual.',
+  blogPerderMiedoBailar_miedo3:
+    '**"Sóc molt maldestre/gran/poc flexible"** – El ball social no requereix acrobàcies. Persones de totes les edats i condicions ballen i gaudeixen.',
+  blogPerderMiedoBailar_miedo4:
+    '**"No vull fer el ridícul"** – L\'únic ridícul és quedar-se assegut mentre altres gaudeixen. Tothom comet errors al principi; és part del procés.',
+  blogPerderMiedoBailar_miedo5:
+    '**"No tinc parella"** – La majoria dels nostres alumnes venen sols. A classe es rota de parella constantment; no necessites venir acompanyat.',
+
+  // === SECTION 3 ===
+  blogPerderMiedoBailar_tecnicasTitle: 'Tècniques Científiques per Superar la Por a Ballar',
+  blogPerderMiedoBailar_tecnicasIntro:
+    "La psicologia conductual ha demostrat que l'exposició gradual és el mètode més efectiu per superar fòbies i ansietats socials. Aplicat al ball:",
+  blogPerderMiedoBailar_statExposicionContent:
+    "Els tractaments basats en exposició gradual mostren alta efectivitat en el maneig de l'ansietat social.",
+  blogPerderMiedoBailar_tecnicasListaTitle: 'Passos per superar la por:',
+  blogPerderMiedoBailar_tecnica1:
+    "**Exposició gradual**: Comença amb classes per a principiants on tothom està al mateix nivell. Cada classe serà una mica més fàcil que l'anterior.",
+  blogPerderMiedoBailar_tecnica2:
+    "**Ambient segur**: Tria una escola on els professors creïn un espai sense judicis. L'error és part de l'aprenentatge, no motiu de vergonya.",
+  blogPerderMiedoBailar_tecnica3:
+    '**Reestructuració cognitiva**: Canvia el diàleg intern de "faré el ridícul" a "estic aprenent alguna cosa nova i això és valent".',
+  blogPerderMiedoBailar_tecnica4:
+    '**Celebra petites victòries**: Cada classe que completes és un èxit. El progrés en el ball és mesurable i motivador.',
+  blogPerderMiedoBailar_statEndorfinasContent:
+    "Els estudis mostren que ballar en sincronia amb altres persones s'associa a major tolerància al dolor, un indicador indirecte d'alliberament d'endorfines i sensació de benestar natural.",
+
+  // === SECTION 4 ===
+  blogPerderMiedoBailar_primerPasoTitle: 'El Teu Primer Pas: Classes per a Principiants Absoluts',
+  blogPerderMiedoBailar_primerPasoContent:
+    "La primera classe és sempre la més difícil, però també la més transformadora. A **[Farray's](/ca/clases)** oferim una classe de benvinguda dissenyada especialment per a persones que mai han ballat o que senten molta vergonya.",
+  blogPerderMiedoBailar_calloutTip:
+    "**Consell per a la teva primera classe**: Arriba 10 minuts abans per conèixer l'espai i respirar tranquil. Vesteix roba còmoda que no et preocupi. Recorda: tots els que són allà van començar exactament com tu. Els professors de Farray's estan entrenats per fer que et sentis benvingut des del primer moment.",
+  blogPerderMiedoBailar_statExitoContent:
+    "La majoria d'alumnes descriuen un canvi notable en la seva percepció després de les primeres setmanes de pràctica regular.",
+  blogPerderMiedoBailar_primerPasoContent2:
+    'Quin ball triar? Per a principiants tímids, recomanem **[bachata](/ca/bachata)** pel seu tempo més lent i moviments intuïtius. Un cop guanyis confiança, pots expandir a **[salsa](/ca/salsa-cubana)** o altres estils. A les nostres **[classes combinades](/ca/clases/salsa-bachata-barcelona)** pots provar tots dos.',
+
+  // === TESTIMONIAL ===
+  blogPerderMiedoBailar_testimonial: "Testimoni d'alumne",
+  blogPerderMiedoBailar_testimonialText:
+    "Vaig arribar a Farray's amb 42 anys, convençut que era impossible per a mi ballar. Portava tota la vida rebutjant invitacions a festes per vergonya. La primera classe vaig estar paralitzat, però Yunaisy em va fer sentir que estava al lloc correcte. Tres mesos després, vaig ser jo qui va organitzar una sortida de ball amb els meus amics. Perdre la por a ballar ha estat una de les millors decisions de la meva vida.",
+
+  // === SECTION 5 ===
+  blogPerderMiedoBailar_ambienteSeguroTitle: 'Com Triar una Escola amb Ambient Segur',
+  blogPerderMiedoBailar_ambienteSeguroIntro:
+    'No totes les escoles de ball són iguals. Per superar la por, necessites un ambient que et doni suport. Això és el que has de buscar:',
+  blogPerderMiedoBailar_checklistTitle: "Checklist d'una bona escola:",
+  blogPerderMiedoBailar_check1:
+    '**Classes per nivells reals**: Principiant significa principiant. Ningú hauria de sentir-se fora de lloc.',
+  blogPerderMiedoBailar_check2:
+    '**Professors empàtics**: Que normalitzin els errors i celebrin els petits avenços.',
+  blogPerderMiedoBailar_check3:
+    '**Rotació de parelles**: Perquè no et sentis pressionat a venir acompanyat.',
+  blogPerderMiedoBailar_check4:
+    "**Ambient sense judicis**: On riure's d'un mateix sigui normal i ningú critiqui.",
+  blogPerderMiedoBailar_check5:
+    "**Classe de prova accessible**: Perquè puguis experimentar l'ambient abans de comprometre't.",
+  blogPerderMiedoBailar_statSatisfaccionContent:
+    "La nostra puntuació a Google Reviews: 4.9/5 basat en 127 ressenyes, moltes d'alumnes que van arribar amb por.",
+
+  // === CONCLUSION ===
+  blogPerderMiedoBailar_conclusionTitle: 'Conclusió: La Por és Temporal, el Ball és per Sempre',
+  blogPerderMiedoBailar_conclusionContent:
+    'La por a ballar és real, però també és superable. Milions de persones ho han fet abans que tu. La diferència entre els que ballen i els que es queden mirant no és el talent, és la decisió de fer el primer pas malgrat la por.',
+  blogPerderMiedoBailar_statDemenciaContent:
+    "Ballar regularment redueix un 76% el risc de demència, més que qualsevol altra activitat física o cognitiva. El teu cervell t'ho agrairà.",
+  blogPerderMiedoBailar_conclusionCTA:
+    "Preparat/da per transformar la por en moviment? El teu futur jo ballant t'està esperant. I recorda: a **[Farray's](/ca/contacto)**, l'únic requisit és voler intentar-ho.",
+  blogPerderMiedoBailar_calloutCTA:
+    "**Preparat/da per fer el primer pas?** [Reserva la teva classe de benvinguda](/ca/contacto) en un ambient segur i sense judicis. Els nostres professors amb +20 anys d'experiència et guiaran amb paciència. La gran majoria d'alumnes supera la por en poques setmanes. Seràs el següent?",
+
+  // === FAQ SECTION ===
+  blogPerderMiedoBailar_faqTitle: 'Preguntes Freqüents: Superar la Por a Ballar',
+  blogPerderMiedoBailar_faq1Question: 'És normal tenir por a ballar?',
+  blogPerderMiedoBailar_faq1Answer:
+    "Completament normal. **La majoria d'adults** experimenta algun grau d'ansietat social al ballar. És una resposta evolutiva natural a la por de ser jutjats. La bona notícia: se supera amb exposició gradual en un ambient segur.",
+  blogPerderMiedoBailar_faq2Question: 'Com superar la vergonya de ballar en públic?',
+  blogPerderMiedoBailar_faq2Answer:
+    "La clau és l'**exposició gradual**: comença en classes per a principiants on tothom està al teu nivell, en una escola amb ambient sense judicis. Cada classe serà més fàcil. Segons la nostra experiència, la gran majoria d'alumnes nota un canvi important en poques setmanes.",
+  blogPerderMiedoBailar_faq3Question: 'Les classes de ball són per a persones sense experiència?',
+  blogPerderMiedoBailar_faq3Answer:
+    "Sí, les classes de nivell principiant estan dissenyades per a persones que **mai han ballat**. A [Farray's](/ca/clases) separem els nivells rigorosament perquè ningú se senti fora de lloc.",
+  blogPerderMiedoBailar_faq4Question: 'Puc anar a classes de ball sense parella?',
+  blogPerderMiedoBailar_faq4Answer:
+    'Per descomptat. **La majoria dels nostres alumnes ve sol/a**. A classe es rota de parella constantment, així que no necessites venir acompanyat. És una excel·lent manera de conèixer gent nova.',
+  blogPerderMiedoBailar_faq5Question: 'Quant de temps es tarda a perdre la por a ballar?',
+  blogPerderMiedoBailar_faq5Answer:
+    "Varia segons la persona, però la majoria d'alumnes se senten còmodes després de **3-6 classes** (unes 2-3 setmanes). La primera classe és la més difícil; després, cada sessió és més fàcil i divertida.",
+  blogPerderMiedoBailar_faq6Question: 'Quin ball és més fàcil per a principiants tímids?',
+  blogPerderMiedoBailar_faq6Answer:
+    'Recomanem **[bachata](/ca/bachata)** pel seu tempo més lent (120-160 BPM) i moviments intuïtius. És més fàcil connectar amb el ritme des del principi. Un cop guanyis confiança, pots expandir a salsa o altres estils.',
+  blogPerderMiedoBailar_faq7Question: 'Hi ha classes especials per a persones amb ansietat?',
+  blogPerderMiedoBailar_faq7Answer:
+    "Les nostres classes de nivell principiant estan dissenyades pensant en persones amb ansietat. Grups reduïts, professors empàtics, ambient sense judicis. A [Farray's](/ca/contacto) creem un espai segur per a tothom.",
+  blogPerderMiedoBailar_faq8Question: "Com és l'ambient a les primeres classes?",
+  blogPerderMiedoBailar_faq8Answer:
+    "Relaxat i acollidor. Els professors normalitzen els errors, es celebren els petits avenços i ningú jutja ningú. Tots els alumnes van començar igual que tu. L'ambient és de suport mutu i bon humor.",
+
+  // === REFERENCES ===
+  blogPerderMiedoBailar_referencesIntro:
+    'Aquest article està recolzat per estudis científics i la nostra experiència de més de 20 anys:',
+  blogPerderMiedoBailar_refPsychologyTodayTitle: 'Social Anxiety – Psychology Today',
+  blogPerderMiedoBailar_refPsychologyTodayDesc:
+    'Recurs sobre ansietat social, les seves causes i tractaments basats en evidència científica.',
+  blogPerderMiedoBailar_refNEJMTitle: 'Leisure Activities and Dementia Risk – NEJM',
+  blogPerderMiedoBailar_refNEJMDesc:
+    'Estudi de referència que associa el ball freqüent amb una reducció significativa del risc de demència (76% en participants que ballaven regularment).',
+  blogPerderMiedoBailar_refFrontiersTitle: 'Dance and Psychological Well-being – Frontiers',
+  blogPerderMiedoBailar_refFrontiersDesc:
+    'Investigació sobre els efectes positius del ball en la salut mental i el benestar emocional.',
+  blogPerderMiedoBailar_refEndorphinsTitle: 'Synchronized Dancing and Endorphin Release',
+  blogPerderMiedoBailar_refEndorphinsDesc:
+    "Estudi que mostra com ballar en sincronia amb altres augmenta el llindar del dolor, un indicador de major alliberament d'endorfines.",
+
+  // =============================================================================
+  // BOOKING WIDGET - Sistema de Reserves Enterprise
+  // =============================================================================
+
+  // Page Meta
+  booking_meta_title: "Reserva la teva Classe de Benvinguda | Farray's Center Barcelona",
+  booking_meta_description:
+    "Reserva la teva classe de benvinguda a l'escola de ball de Barcelona. Més de 25 estils: salsa, bachata, hip hop, ballet i més. Mètode Farray® exclusiu.",
+
+  // Header
+  booking_title: 'Reserva la teva Classe de Benvinguda',
+  booking_subtitle: "Tria el teu estil, selecciona la classe i confirma l'assistència",
+  booking_step1: 'Tria Estil',
+  booking_step2: 'Selecciona Classe',
+  booking_step3: 'Confirma Dades',
+
+  // Style Selection
+  booking_style_title: "Quin estil t'interessa?",
+  booking_style_all: 'Tots els estils',
+
+  // Class Selection
+  booking_class_title: 'Classes disponibles',
+  booking_class_empty: 'No hi ha classes disponibles per a aquest estil',
+  booking_class_loading: 'Carregant classes...',
+  booking_class_error: 'Error en carregar les classes. Torna-ho a provar.',
+  booking_week_this: 'Aquesta setmana',
+  booking_week_prev: 'Setmana anterior',
+  booking_week_next: 'Setmana següent',
+  booking_style_clear: "Treure filtre d'estil",
+  booking_class_retry: 'Reintentar',
+  booking_class_share: "Compartir enllaç d'aquesta classe",
+  booking_class_copied: 'Enllaç copiat',
+  booking_class_spots: '{spots} places disponibles',
+  booking_class_full: 'Complet',
+  booking_class_select: 'Seleccionar',
+  booking_class_selected: 'Seleccionada',
+  booking_class_teacher: 'amb {teacher}',
+  booking_class_duration: '{duration} min',
+  booking_class_level: 'Nivell: {level}',
+  booking_level_beginner: 'Principiant',
+  booking_level_intermediate: 'Intermedi',
+  booking_level_advanced: 'Avançat',
+  booking_level_all: 'Tots els nivells',
+
+  // Advanced Filters
+  booking_filter_level: 'Nivell',
+  booking_filter_day: 'Dia',
+  booking_filter_time: 'Hora',
+  booking_filter_instructor: 'Professor',
+  booking_filter_clear_all: 'Netejar filtres',
+  booking_filter_all: 'Tots',
+  booking_filter_level_iniciacion: 'Iniciació',
+  booking_filter_level_basico: 'Bàsic',
+  booking_filter_level_intermedio: 'Intermedi',
+  booking_filter_level_avanzado: 'Avançat',
+  booking_filter_level_abierto: 'Tots els nivells',
+  booking_filter_day_monday: 'Dilluns',
+  booking_filter_day_tuesday: 'Dimarts',
+  booking_filter_day_wednesday: 'Dimecres',
+  booking_filter_day_thursday: 'Dijous',
+  booking_filter_day_friday: 'Divendres',
+  booking_filter_day_saturday: 'Dissabte',
+  booking_filter_day_sunday: 'Diumenge',
+  booking_filter_time_morning: 'Matí (abans 12h)',
+  booking_filter_time_afternoon: 'Tarda (12-18h)',
+  booking_filter_time_evening: 'Nit (després 18h)',
+
+  // Form Fields
+  booking_form_title: 'Les teves dades',
+  booking_field_firstName: 'Nom',
+  booking_field_lastName: 'Cognoms',
+  booking_field_email: 'Email',
+  booking_field_phone: 'Telèfon',
+  booking_placeholder_firstName: 'El teu nom',
+  booking_placeholder_lastName: 'Els teus cognoms',
+  booking_placeholder_email: 'tu@email.com',
+  booking_placeholder_phone: '+34 612 345 678',
+
+  // RGPD Checkboxes - Mandatory
+  booking_consent_terms: 'He llegit i accepto les',
+  booking_consent_terms_link: 'condicions generals',
+  booking_consent_terms_required: "Has d'acceptar les condicions generals",
+
+  booking_consent_marketing:
+    "Autoritzo l'enviament de comunicacions comercials sobre activitats, promocions i novetats",
+  booking_consent_marketing_required: "Has d'autoritzar les comunicacions per continuar",
+
+  booking_consent_age:
+    'Confirmo que tinc 16 anys o més, o compto amb autorització del meu tutor legal',
+  booking_consent_age_required: 'Has de confirmar la teva edat per continuar',
+
+  booking_consent_norefund:
+    "Entenc que la classe de benvinguda no és reemborsable un cop confirmada l'assistència",
+  booking_consent_norefund_required: "Has d'acceptar la política de no reemborsament",
+
+  booking_consent_privacy: 'He llegit i accepto la',
+  booking_consent_privacy_link: 'política de privacitat',
+  booking_consent_privacy_required: "Has d'acceptar la política de privacitat",
+
+  // RGPD Checkboxes - Conditional (Heels)
+  booking_consent_heels:
+    'Comprenc i accepto que aquesta classe es realitza amb talons alts. Em comprometo a utilitzar calçat adequat i assumeixo la responsabilitat de la meva seguretat',
+  booking_consent_heels_required: "Has d'acceptar les condicions d'ús de talons",
+
+  // RGPD Checkboxes - Optional
+  booking_consent_image:
+    "Autoritzo l'ús de la meva imatge en fotos i vídeos realitzats durant les classes per a fins promocionals a xarxes socials i web",
+  booking_consent_image_optional: '(Opcional)',
+
+  // Submit
+  booking_submit: 'Confirmar Reserva',
+  booking_submit_loading: 'Processant...',
+
+  // Success State
+  booking_success_title: 'Reserva Confirmada!',
+  booking_success_message:
+    'La teva plaça està assegurada. Rebràs un WhatsApp i email amb tots els detalls.',
+  booking_success_class: 'Classe reservada',
+  booking_success_date: 'Data i hora',
+  booking_success_location: 'Ubicació',
+  booking_success_address: "Farray's Center - C/ Mallorca 179, Barcelona",
+  booking_success_reminder: 'Et recordarem 24h abans de la classe',
+  booking_success_cta: 'Veure horaris complets',
+  booking_success_close: 'Tancar',
+
+  // Error State
+  booking_error_title: 'Error en processar',
+  booking_error_message: "S'ha produït un error. Si us plau, torna-ho a provar.",
+  booking_error_cta: 'Reintentar',
+  booking_error_firstName: 'Si us plau, introdueix el teu nom',
+  booking_error_lastName: 'Si us plau, introdueix els teus cognoms',
+  booking_error_email: 'Si us plau, introdueix un email vàlid',
+  booking_error_phone: 'Si us plau, introdueix un telèfon vàlid',
+  booking_error_class: 'Si us plau, selecciona una classe',
+
+  // Legal Text
+  booking_legal_responsible: "Responsable: Farray's International Dance Center S.L.",
+  booking_legal_purpose:
+    'Finalitat: Gestionar la teva reserva i enviar-te informació sobre la classe.',
+  booking_legal_legitimation: 'Legitimació: El teu consentiment exprés.',
+  booking_legal_recipients:
+    'Destinataris: Momence (gestió de reserves), Meta (anàlisi de conversions).',
+  booking_legal_rights:
+    'Drets: Accés, rectificació, supressió, limitació, portabilitat i oposició.',
+  booking_legal_info: 'Més informació a la nostra política de privacitat.',
 };

@@ -10,6 +10,7 @@ const Hero: React.FC = () => {
 
   const { videoRef, containerRef, isVideoPlaying, shouldShowVideo } = useHLSVideo({
     hlsUrl: HERO_VIDEO_CONFIG.hlsUrl,
+    mp4Url: HERO_VIDEO_CONFIG.mp4Url,
     loadDelay: 150, // Wait for poster LCP
     respectReducedMotion: true,
     respectDataSaver: true,

@@ -232,4 +232,55 @@ for (const file of salasFiles) {
 
 console.log(`✔ Salas: todas las imágenes generadas\n`);
 
+// ============================================================================
+// PROCESAR FOTOS DE CLASES PARTICULARES
+// ============================================================================
+console.log("\n🎓 Procesando fotos de clases particulares...\n");
+const clasesParticularesRawDir = `public/images/clases-particulares/raw`;
+const clasesParticularesOutDir = `public/images/clases-particulares/img`;
+await mkdir(clasesParticularesOutDir, { recursive: true });
+
+let clasesParticularesFiles = [];
+try {
+  clasesParticularesFiles = (await readdir(clasesParticularesRawDir)).filter(f => /\.(jpe?g|png|webp)$/i.test(f));
+} catch {
+  console.log(`  ⚠️ No se encontró carpeta ${clasesParticularesRawDir} o está vacía`);
+}
+
+// Enterprise: 6 breakpoints for clases particulares images
+const clasesParticularesSizes = [320, 640, 768, 1024, 1440, 1920];
+
+for (const file of clasesParticularesFiles) {
+  const inPath = join(clasesParticularesRawDir, file);
+  const ext = extname(file).toLowerCase();
+  const base = basename(file, ext).toLowerCase().replace(/\s+/g, "-");
+
+  const meta = await sharp(inPath).metadata();
+  console.log(`  Processing clase particular: ${file} (${meta.width}x${meta.height})`);
+
+  for (const w of clasesParticularesSizes) {
+    // AVIF (best compression - Enterprise)
+    await sharp(inPath)
+      .resize({ width: w, withoutEnlargement: true })
+      .avif({ quality: 70, effort: 4 })
+      .toFile(join(clasesParticularesOutDir, `${base}_${w}.avif`));
+
+    // WEBP (good compression, wide support)
+    await sharp(inPath)
+      .resize({ width: w, withoutEnlargement: true })
+      .webp({ quality: 80 })
+      .toFile(join(clasesParticularesOutDir, `${base}_${w}.webp`));
+
+    // JPEG fallback (universal support)
+    await sharp(inPath)
+      .resize({ width: w, withoutEnlargement: true })
+      .jpeg({ quality: 82, mozjpeg: true })
+      .toFile(join(clasesParticularesOutDir, `${base}_${w}.jpg`));
+
+    console.log(`    ✓ Generated ${base}_${w} (.avif, .webp, .jpg)`);
+  }
+}
+
+console.log(`✔ Clases Particulares: todas las imágenes generadas\n`);
+
 console.log("🎉 Build completo!");

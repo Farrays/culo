@@ -20,12 +20,12 @@ import {
 // Avatar colors for teachers without photos
 const AVATAR_COLORS = [
   'from-primary-accent to-primary-dark',
-  'from-rose-500 to-rose-700',
+  'from-brand-500 to-brand-700',
   'from-amber-500 to-amber-700',
   'from-emerald-500 to-emerald-700',
   'from-violet-500 to-violet-700',
   'from-cyan-500 to-cyan-700',
-  'from-pink-500 to-pink-700',
+  'from-brand-400 to-brand-600',
   'from-indigo-500 to-indigo-700',
   'from-teal-500 to-teal-700',
   'from-orange-500 to-orange-700',

@@ -17,8 +17,10 @@ import { BENEFICIOS_SALSA_CONFIG } from '../../constants/blog/articles/beneficio
 import { HISTORIA_SALSA_CONFIG } from '../../constants/blog/articles/historia-salsa-barcelona';
 import { HISTORIA_BACHATA_CONFIG } from '../../constants/blog/articles/historia-bachata-barcelona';
 import { SALSA_RITMO_CONFIG } from '../../constants/blog/articles/salsa-ritmo-conquisto-mundo';
+import { SALSA_VS_BACHATA_CONFIG } from '../../constants/blog/articles/salsa-vs-bachata';
 import { CLASES_SALSA_BARCELONA_CONFIG } from '../../constants/blog/articles/clases-de-salsa-barcelona';
 import { CLASES_PRINCIPIANTES_CONFIG } from '../../constants/blog/articles/clases-baile-principiantes-barcelona';
+import { COMO_PERDER_MIEDO_BAILAR_CONFIG } from '../../constants/blog/articles/como-perder-miedo-bailar';
 
 // Map of slug -> config for all articles
 const ARTICLE_CONFIGS: Record<string, BlogArticleConfig> = {
@@ -26,8 +28,10 @@ const ARTICLE_CONFIGS: Record<string, BlogArticleConfig> = {
   'historia-salsa-barcelona': HISTORIA_SALSA_CONFIG,
   'historia-bachata-barcelona': HISTORIA_BACHATA_CONFIG,
   'salsa-ritmo-conquisto-mundo': SALSA_RITMO_CONFIG,
+  'salsa-vs-bachata-que-estilo-elegir': SALSA_VS_BACHATA_CONFIG,
   'clases-de-salsa-barcelona': CLASES_SALSA_BARCELONA_CONFIG,
   'clases-baile-principiantes-barcelona-farrays': CLASES_PRINCIPIANTES_CONFIG,
+  'como-perder-miedo-bailar': COMO_PERDER_MIEDO_BAILAR_CONFIG,
 };
 
 const BlogArticlePage: React.FC = () => {

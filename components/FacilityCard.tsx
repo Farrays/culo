@@ -50,7 +50,7 @@ const FacilityCard: React.FC<FacilityCardProps> = ({ room, t, index }) => {
 
   return (
     <AnimateOnScroll delay={index * 100} className="[perspective:1000px]">
-      <div className="group h-full bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-xl sm:rounded-2xl transition-all duration-500 overflow-hidden">
+      <div className="group h-full bg-black/50 backdrop-blur-md border border-primary-dark/50 hover:border-primary-accent rounded-xl sm:rounded-2xl transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)_rotateY(5deg)_rotateX(2deg)] hover:shadow-accent-glow overflow-hidden">
         {/* Gallery or Icon */}
         {areaId && imageCount && imageCount > 0 ? (
           <div className="relative">
