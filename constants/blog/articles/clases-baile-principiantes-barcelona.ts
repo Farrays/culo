@@ -109,20 +109,6 @@ export const CLASES_PRINCIPIANTES_CONFIG: BlogArticleConfig = {
       ],
     },
 
-    // === IMAGE ===
-    {
-      id: 'image-clase',
-      type: 'image',
-      contentKey: 'blogClasesPrincipiantes_imageClase',
-      image: {
-        src: '/images/blog/clases-principiantes/primera-clase.webp',
-        alt: "Primera clase de baile para principiantes en Barcelona - Farray's Center",
-        caption: 'blogClasesPrincipiantes_imageClase',
-        width: 800,
-        height: 500,
-      },
-    },
-
     // === Qué traer ===
     {
       id: 'que-traer',
@@ -301,9 +287,9 @@ export const CLASES_PRINCIPIANTES_CONFIG: BlogArticleConfig = {
     },
   ],
 
-  // === FEATURED IMAGE ===
+  // === FEATURED IMAGE (using existing image as placeholder) ===
   featuredImage: {
-    src: '/images/blog/clases-principiantes/hero.webp',
+    src: '/images/blog/salsa-vs-bachata/hero.webp',
     alt: "Clases de baile para principiantes en Barcelona - Farray's International Dance Center",
     width: 1200,
     height: 630,
@@ -354,18 +340,18 @@ export const CLASES_PRINCIPIANTES_CONFIG: BlogArticleConfig = {
   // === RELATED ARTICLES ===
   relatedArticles: [
     {
-      slug: 'beneficios-bailar-salsa',
-      category: 'fitness',
-      titleKey: 'blogBeneficiosSalsa_title',
-      excerptKey: 'blogBeneficiosSalsa_excerpt',
-      image: '/images/blog/beneficios-salsa/hero.webp',
+      slug: 'salsa-vs-bachata',
+      category: 'tutoriales',
+      titleKey: 'blogSalsaVsBachata_title',
+      excerptKey: 'blogSalsaVsBachata_excerpt',
+      image: '/images/blog/salsa-vs-bachata/hero.webp',
     },
     {
-      slug: 'clases-de-salsa-barcelona',
-      category: 'lifestyle',
-      titleKey: 'blogClasesSalsaBarcelona_title',
-      excerptKey: 'blogClasesSalsaBarcelona_excerpt',
-      image: '/images/blog/clases-salsa-barcelona/hero.webp',
+      slug: 'salsa-ritmo-conquisto-mundo',
+      category: 'tutoriales',
+      titleKey: 'blogSalsaRitmo_title',
+      excerptKey: 'blogSalsaRitmo_excerpt',
+      image: '/images/blog/salsa-ritmo/hero.webp',
     },
   ],
 

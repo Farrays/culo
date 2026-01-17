@@ -9012,7 +9012,7 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   rcbCulturalShort:
     'Le reggaeton cubain trouve ses racines dans les quartiers de La Havane, où la fusion du reggae jamaïcain avec les rythmes afro-cubains a créé un style unique et urbain.',
   rcbCulturalFull:
-    '### Orígenes: Los Barrios de La Habana (1990s-2000s)\n\n**El Reggaeton Cubano (también conocido como Cubatón o Reparto) surgió a finales de los años 90 y principios de los 2000 en barrios populares de La Habana como La Lisa, Marianao, Centro Habana y El Cerro.** Nació como fusión del reggaeton puertorriqueño que llegaba por radio con los ritmos afrocubanos tradicionales: rumba, son cubano y elementos yoruba.\n\n**"El Reggaeton Cubano fusiona reggaeton puertorriqueño con rumba, son y ritmos yoruba, creando un estilo único nacido en los barrios de La Habana."**\n\n### Artistas Pioneros\n\n**Artistas como Candyman, El Taiger, Chocolate MC, Osmani García y El Chacal popularizaron el género** y definieron su sonido característico: bases de dembow combinadas con percusión afrocubana, letras callejeras y una actitud rebelde que refleja la vida cotidiana de los barrios cubanos.\n\n### El Reparto: El Estilo de los Barrios\n\n**El término "Reparto" proviene de los "repartos" o barrios populares de La Habana donde nació este estilo.** Se caracteriza por ritmos más crudos que el reggaeton comercial, con una conexión más directa y visceral con la música. Los bailarines de Reparto son reconocidos mundialmente por su capacidad de improvisación y su dominio técnico.\n\n**"El Reparto se caracteriza por ritmos crudos, letras callejeras y una actitud rebelde que refleja la vida de los barrios cubanos."**\n\n### Técnicas Distintivas del Baile\n\nEl baile de Reggaeton Cubano se distingue por elementos técnicos únicos:\n- **Improvisación constante**: respuesta instantánea a los cambios de la música\n- **Disociación corporal avanzada**: caderas, pecho y hombros moviéndose independientemente\n- **Tembleque**: vibración rápida y controlada de caderas, técnica exclusiva cubana\n- **Movimientos de suelo**: inspirados en la rumba afrocubana (guaguancó, columbia)\n- **Perreo cubano**: variante más técnica y rítmica que el puertorriqueño\n\n**"El baile de Reggaeton Cubano se distingue por improvisación, disociación corporal, tembleque y movimientos de suelo inspirados en la rumba afrocubana."**\n\n### Influencias Afrocubanas\n\n**El Reggaeton Cubano incorpora elementos de la rumba (guaguancó, columbia), son cubano y danzas yoruba, creando un estilo único que lo diferencia del reggaeton puertorriqueño.** Esta fusión de tradiciones africanas y caribeñas le da su sabor característico y su riqueza de movimientos.\n\n### El Cubatón Hoy: Expansión Internacional\n\nHoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia: la improvisación, el sabor y esa energía única que solo viene de Cuba. Artistas como **El Taiger, Jacob Forever y Chocolate MC** han llevado el sonido cubano al mundo, y con él, su forma de bailar.\n\n### Beneficios para la Salud\n\n**Una clase de Reggaeton Cubano puede quemar entre 350 y 550 calorías por hora** debido a la intensidad del tembleque y los movimientos de disociación corporal. Además, mejora la coordinación, la flexibilidad de cadera y la conexión rítmica.\n\n### Reggaeton Cubano en Farray\'s Center\n\n**Farray\'s International Dance Center enseña Reggaeton Cubano auténtico con profesores cubanos formados en la Escuela Nacional de Arte (ENA) de La Habana.** Las clases mantienen la esencia callejera del estilo mientras ofrecen una progresión técnica estructurada para todos los niveles.',
+    '### Orígenes: Los Barrios de La Habana (1990s-2000s)\n\n**El Reggaeton Cubano (también conocido como Cubatón o Reparto) surgió a finales de los años 90 y principios de los 2000 en barrios populares de La Habana como La Lisa, Marianao, Centro Habana y El Cerro.** Nació como fusión del reggaeton puertorriqueño que llegaba por radio con los ritmos afrocubanos tradicionales: rumba, son cubano y elementos yoruba.\n\n**"El Reggaeton Cubano fusiona reggaeton puertorriqueño con rumba, son y ritmos yoruba, creando un estilo único nacido en los barrios de La Habana."**\n\n### Artistas Pioneros\n\n**Artistas como Candyman, El Taiger, Chocolate MC, Osmani García y El Chacal popularizaron el género** y definieron su sonido característico: bases de dembow combinadas con percusión afrocubana, letras callejeras y una actitud rebelde que refleja la vida cotidiana de los barrios cubanos.\n\n### El Reparto: El Estilo de los Barrios\n\n**El término "Reparto" proviene de los "repartos" o barrios populares de La Habana donde nació este estilo.** Se caracteriza por ritmos más crudos que el reggaeton comercial, con una conexión más directa y visceral con la música. Los bailarines de Reparto son reconocidos mundialmente por su capacidad de improvisación y su dominio técnico.\n\n**"El Reparto se caracteriza por ritmos crudos, letras callejeras y una actitud rebelde que refleja la vida de los barrios cubanos."**\n\n### Técnicas Distintivas del Baile\n\nEl baile de Reggaeton Cubano se distingue por elementos técnicos únicos:\n- **Improvisación constante**: respuesta instantánea a los cambios de la música\n- **Disociación corporal avanzada**: caderas, pecho y hombros moviéndose independientemente\n- **Tembleque**: vibración rápida y controlada de caderas, técnica exclusiva cubana\n- **Movimientos de suelo**: inspirados en la rumba afrocubana (guaguancó, columbia)\n- **Perreo cubano**: variante más técnica y rítmica que el puertorriqueño\n\n**"El baile de Reggaeton Cubano se distingue por improvisación, disociación corporal, tembleque y movimientos de suelo inspirados en la rumba afrocubana."**\n\n### Influencias Afrocubanas\n\n**El Reggaeton Cubano incorpora elementos de la rumba (guaguancó, columbia), son cubano y danzas yoruba, creando un estilo único que lo diferencia del reggaeton puertorriqueño.** Esta fusión de tradiciones africanas y caribeñas le da su sabor característico y su riqueza de movimientos.\n\n### El Cubatón Hoy: Expansión Internacional\n\nHoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia: la improvisación, el sabor y esa energía única que solo viene de Cuba. Artistas como **El Taiger, Jacob Forever y Chocolate MC** han llevado el sonido cubano al mundo, y con él, su forma de bailar.\n\n### Beneficios para la Salud\n\n**Una clase de Reggaeton Cubano puede quemar entre 350 y 550 calorías por hora** debido a la intensidad del tembleque y los movimientos de disociación corporal. Además, mejora la coordinación, la flexibilidad de cadera y la conexión rítmica.\n\n### Reggaeton Cubano en Farray\'s Center\n\n**Farray\'s International Dance Center enseña Reggaeton Cubano auténtico con professeurs cubains formés à l\'École Nationale d\'Art (ENA) de La Havane.** Les cours maintiennent l\'essence de rue du style tout en offrant une progression technique structurée pour tous les niveaux.',
   rcbIdentifyTransition:
     'Si has dicho "sí" a alguno de estos puntos, necesitas conocer el reggaeton de verdad.',
   rcbIdentifyAgitate1:
@@ -12498,7 +12498,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogBeneficiosSalsa_stat2Source: 'New England Journal of Medicine',
   blogBeneficiosSalsa_ctaTitle: '¿Listo para experimentar estos beneficios?',
   blogBeneficiosSalsa_ctaText:
-    "En Farray's International Dance Center tenemos clases de salsa cubana para todos los niveles. Profesores cubanos con más de 20 años de experiencia te guiarán desde tus primeros pasos hasta movimientos avanzados.",
+    "`Chez Farray's International Dance Center, nous proposons des cours de salsa cubaine pour tous les niveaux. Des professeurs cubains avec plus de 20 ans d'expérience vous guideront de vos premiers pas aux mouvements avancés.`",
   blogBeneficiosSalsa_ctaButton: 'Réserver Cours de Bienvenue',
 
   // =============================================
@@ -16502,22 +16502,22 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   danceClassesHub_style_stretching: `Stretching & Flexibilidad`,
   danceClassesHub_style_cuerpo_fit_desc: `Entrenamiento full body avec elementos de danza que quema 400-500 calorías par sesión. Cardio intenso, tonificación muscular y diversión asegurada. Ideal pour quienes buscan résultats visibles sans expérience previa en danse. Cours híbrida perfecta pour principiantes.`,
   danceClassesHub_style_stretching_desc: `Estiramientos profundos y flexibilidad activa pour mejorar tu rango de mouvement. Técnicas de backbending, splits y flexibilidad articular avec enfoque en prevención de lesiones. Perfecto pour bailarines y no bailarines que buscan mayor movilidad.`,
-  dhV3HeroStudents: `+15.000 élèves formados`,
+  dhV3HeroStudents: `+15.000 élèves formés`,
   dhV3PrepareTitle: `Prepara tu première cours de Dancehall`,
   dhV3PrepareSubtitle: `Tout ce que vous devez savoir avant de venir`,
-  twerkHeroStudents: `+15.000 élèves formados`,
-  afroHeroStudents: `+15.000 élèves formados`,
-  sxrHeroStudents: `+15.000 élèves formados`,
-  rcbHeroStudents: `+15.000 élèves formados`,
-  femHeroStudents: `+15.000 élèves formados`,
-  sexystyleHeroStudents: `+15.000 élèves formados`,
-  modernjazzHeroStudents: `+15.000 élèves formados`,
-  balletHeroStudents: `+15.000 élèves formados`,
-  contemporaneoHeroStudents: `+15.000 élèves formados`,
-  afrocontemporaneoHeroStudents: `+15.000 élèves formados`,
-  afrojazzHeroStudents: `+15.000 élèves formados`,
-  hiphopHeroStudents: `+15.000 élèves formados`,
-  salsaCubanaHeroStudents: `+15.000 élèves formados`,
+  twerkHeroStudents: `+15.000 élèves formés`,
+  afroHeroStudents: `+15.000 élèves formés`,
+  sxrHeroStudents: `+15.000 élèves formés`,
+  rcbHeroStudents: `+15.000 élèves formés`,
+  femHeroStudents: `+15.000 élèves formés`,
+  sexystyleHeroStudents: `+15.000 élèves formés`,
+  modernjazzHeroStudents: `+15.000 élèves formés`,
+  balletHeroStudents: `+15.000 élèves formés`,
+  contemporaneoHeroStudents: `+15.000 élèves formés`,
+  afrocontemporaneoHeroStudents: `+15.000 élèves formés`,
+  afrojazzHeroStudents: `+15.000 élèves formés`,
+  hiphopHeroStudents: `+15.000 élèves formés`,
+  salsaCubanaHeroStudents: `+15.000 élèves formés`,
   cuerpofitBreadcrumbHome: `Accueil`,
   cuerpofitBreadcrumbClasses: `Cours`,
   cuerpofitBreadcrumbCategory: `Entraînement Danseurs`,
@@ -16679,7 +16679,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   bailemanananasHeroSubtitle: `Y no son cours cualquiera...`,
   bailemanananasHeroDesc: `Empieza tu día bailando: Contemporáneo, Ballet, Modern Jazz, Sexy Style, Reggaeton y Salsa Lady Style. Un montón de cours semanales, perfectas pour quien trabaja par las tardes o quiere aprovechar las mañanas.`,
   bailemanananasHeroLocation: `Academia del CID-UNESCO · Entre Plaza España et Sants, Barcelone`,
-  bailemanananasHeroStudents: `+15.000 élèves formados`,
+  bailemanananasHeroStudents: `+15.000 élèves formés`,
   bailemanananasClassesPerWeek: `cours par semaine`,
   bailemanananasCTA1: `Voir Horaires de Mañanas`,
   bailemanananasCTA1Subtext: `Petits groupes`,
@@ -16722,12 +16722,12 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   bailemanananasWhyChooseSubtitle: `Aprende a danser en Farray's International Dance Center`,
   bailemanananasWhyChoose1Title: `+8 années de expérience`,
   bailemanananasWhyChoose1Desc: `Academia fundada par Yunaisy Farray en 2017, consolidada como referente del danse en Barcelone avec reconnaissance international.`,
-  bailemanananasWhyChoose2Title: `+15.000 élèves formados y 1.500 activos`,
+  bailemanananasWhyChoose2Title: `+15.000 élèves formés y 1.500 activos`,
   bailemanananasWhyChoose2Desc: `Miles de personas de todos los niveaux han transformado su vida a través del danse avec nosotros.`,
   bailemanananasWhyChoose3Title: `Academia reconocida par el CID UNESCO`,
   bailemanananasWhyChoose3Desc: `Dirigida par Yunaisy Farray, actriz de Street Dance 2 y una de las maestras más reconocidas del mundo.`,
   bailemanananasWhyChoose4Title: `Profesores avec formation réel`,
-  bailemanananasWhyChoose4Desc: `Alejandro Miñoso y Yasmina Fernández, bailarines profesionales formados en el Méthode Farray. Técnica, pasión y expérience en cada cours.`,
+  bailemanananasWhyChoose4Desc: `Alejandro Miñoso et Yasmina Fernández, danseurs professionnels formés à la Méthode Farray. Technique, passion et expérience à chaque cours.`,
   bailemanananasWhyChoose5Title: `Academia multidisciplinar`,
   bailemanananasWhyChoose5Desc: `25+ estilos de danse diferentes, 100+ horas de cours semanales. Variedad total pour que encuentres tu style.`,
   bailemanananasWhyChoose6Title: `Gala en Teatro Victoria`,
@@ -16820,10 +16820,10 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   bailemanananasCitableHorario: `Horario cours danse mañanas Barcelone: Lunes/Miércoles/Jueves de 10:00 a 13:00 en Farray's Center, Calle Entença 100.`,
   bailemanananasCitableUbicacion: `Ubicación: Farray's International Dance Center, Calle Entença 100, 08015 Barcelone. Entre Plaza España y Sants. Metro L1/L3/L5.`,
   bailemanananasCitableMetodologia: `Méthode Farray: metodología exclusiva de enseignement de danse desarrollada par Yunaisy Farray, avec reconnaissance international CID-UNESCO.`,
-  bailemanananasCitableStatistics: `Estadísticas Farray's Center: +8 années expérience, +1500 alumnos activos, +15000 estudiantes formados, 13 cours matinales, 2 professeurs especializados.`,
+  bailemanananasCitableStatistics: `Statistiques Farray's Center: +8 années d'expérience, +1500 élèves actifs, +15000 élèves formés, 13 cours matinaux, 2 professeurs spécialisés.`,
   bailemanananasCitableFact1: `Cours de danse mañanas Barcelone: única académie avec 13 cours matinales diferentes de lunes a jueves.`,
   bailemanananasCitableFact2: `Danser par las mañanas quema 300-400 kcal par cours y mejora el estado de ánimo durante todo el día.`,
-  bailemanananasCitableFact3: `Profesores de mañanas: Alejandro Miñoso (danza) y Yasmina Fernández (estilos latinos/sensuales), formados en Méthode Farray.`,
+  bailemanananasCitableFact3: `Professeurs du matin: Alejandro Miñoso (danse) et Yasmina Fernández (styles latins/sensuels), formés à la Méthode Farray.`,
   bailemanananasCourseSchemaName: `Cours de Danse par las Mañanas en Barcelone - Farray's Center`,
   bailemanananasCourseSchemaDesc: `Programa de cours de danse matinales avec 13 opciones semanales: Contemporáneo, Ballet, Modern Jazz, Sexy Style, Reggaeton y más. Horario de 10:00 a 13:00, lunes a jueves.`,
   verClasesBaile: `Ver Cours de Danse`,
@@ -16838,7 +16838,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blog_credential_alumna: `Alumna de Farray's`,
   bachataV3HeroDesc: `Découvrez la bachata sensuelle avec Mathias Font et Eugenia Trujillo, champions du monde. Apprenez les ondulations, la connexion en couple et la musicalité dans une académie accréditée par CID-UNESCO.`,
   bachataV3HeroLocation: `Rue Entença 100, Barcelone - Entre Plaza España et Sants`,
-  bachataV3HeroStudents: `+15.000 estudiantes formados`,
+  bachataV3HeroStudents: `+15 000 élèves formés`,
   bachataV3CTA1: `Devenez Membre Maintenant`,
   bachataV3CTA1Subtext: `Places limitées este mois`,
   bachataV3CTA2: `Réservez Votre Cours de Bienvenue`,
@@ -16931,7 +16931,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   fullBodyCardioHeroSubtitle: `Entraînement Full Body + Cardio Dance qui transforme`,
   fullBodyCardioHeroDesc: `Brûlez des calories, tonifiez votre corps et amusez-vous. L'entraînement des danseurs professionnels, adapté pour vous.`,
   fullBodyCardioHeroLocation: `Farray's Center · Entre Plaza España et Sants, Barcelone`,
-  fullBodyCardioHeroStudents: `+15.000 élèves formados`,
+  fullBodyCardioHeroStudents: `+15.000 élèves formés`,
   fullBodyCardioCTAGroup: `Options d'inscription`,
   fullBodyCardioCTA1: `Devenez Membre Maintenant`,
   fullBodyCardioCTA1Subtext: `Places limitées`,
@@ -18350,19 +18350,19 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogPerderMiedoBailar_answerComoPerder: 'Réponse directe : comment perdre la peur',
   blogPerderMiedoBailar_answerComoPerderQ: 'Comment puis-je surmonter la peur de danser ?',
   blogPerderMiedoBailar_answerComoPerderA:
-    "Pour surmonter la peur de danser : (1) Choisissez une école avec un environnement sûr et sans jugement, (2) Commencez par des cours pour débutants où tout le monde est à votre niveau, (3) Pratiquez l'exposition graduelle - chaque cours sera plus facile, (4) Rappelez-vous que 80% des adultes ressentent la même chose et 90% la surmontent en 3-6 cours.",
+    "Pour surmonter la peur de danser : (1) Choisissez une école avec un environnement sûr et sans jugement, (2) Commencez par des cours pour débutants où tout le monde est à votre niveau, (3) Pratiquez l'exposition graduelle - chaque cours sera plus facile, (4) Rappelez-vous que la plupart des adultes ressentent la même chose et, selon notre expérience de +20 ans, la grande majorité la surmontent en quelques semaines.",
 
   blogPerderMiedoBailar_answerEsNormal: 'Est-ce normal de ressentir de la honte ?',
   blogPerderMiedoBailar_answerEsNormalQ:
     'Est-ce normal de ressentir de la honte ou de la peur de danser ?',
   blogPerderMiedoBailar_answerEsNormalA:
-    "Oui, c'est complètement normal. Selon Psychology Today, 80% des adultes ressentent un certain degré d'anxiété sociale en dansant en public. La peur d'être jugé et de \"mal faire\" sont des réponses évolutives naturelles. La bonne nouvelle : avec une exposition graduelle dans un environnement sûr, cette peur se surmonte rapidement.",
+    "Oui, c'est complètement normal. Selon Psychology Today, l'anxiété sociale en dansant en public affecte la plupart des adultes à des degrés divers. La peur d'être jugé et de \"mal faire\" sont des réponses évolutives naturelles. La bonne nouvelle : avec une exposition graduelle dans un environnement sûr, cette peur se surmonte.",
 
   blogPerderMiedoBailar_answerCuantoTiempo: 'Combien de temps pour perdre la peur ?',
   blogPerderMiedoBailar_answerCuantoTiempoQ:
     'Combien de temps faut-il pour surmonter la peur de danser ?',
   blogPerderMiedoBailar_answerCuantoTiempoA:
-    "Avec nos 20+ ans d'expérience d'enseignement, 90% des élèves se sentent à l'aise après 3-6 cours. Le premier cours est le plus difficile ; après, chaque séance devient plus facile et amusante. En un mois de cours réguliers, la plupart dansent avec confiance.",
+    "Avec nos 20+ ans d'expérience d'enseignement, la grande majorité des élèves se sentent à l'aise après 3-6 cours. Le premier cours est le plus difficile ; après, chaque séance devient plus facile et amusante. En un mois de cours réguliers, la plupart dansent avec confiance.",
 
   // === DEFINITIONS ===
   blogPerderMiedoBailar_defMiedoEscenicoTerm: 'Trac (en danse)',
@@ -18371,7 +18371,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
 
   blogPerderMiedoBailar_defAnsiedadSocialTerm: 'Anxiété sociale',
   blogPerderMiedoBailar_defAnsiedadSocial:
-    "L'anxiété sociale est une peur intense des situations où l'on peut être évalué par les autres. Dans le contexte de la danse, elle se manifeste par la peur de paraître maladroit, de ne pas suivre le rythme ou d'être le centre d'attention. Elle affecte 80% des adultes à des degrés divers et constitue le principal obstacle pour commencer à danser.",
+    "L'anxiété sociale est une peur intense des situations où l'on peut être évalué par les autres. Dans le contexte de la danse, elle se manifeste par la peur de paraître maladroit, de ne pas suivre le rythme ou d'être le centre d'attention. Elle affecte la plupart des adultes à des degrés divers et constitue le principal obstacle pour commencer à danser.",
 
   // === INTRODUCTION ===
   blogPerderMiedoBailar_intro:
@@ -18385,7 +18385,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogPerderMiedoBailar_porQueMiedoContent:
     "La peur de danser n'est pas une faiblesse ni quelque chose dont on devrait avoir honte. C'est une réponse évolutive complètement naturelle. Notre cerveau est programmé pour éviter les situations où nous pouvons être jugés négativement par le groupe, car dans les temps ancestraux, le rejet social signifiait un danger réel.",
   blogPerderMiedoBailar_statAnsiedadContent:
-    "80% des adultes ressentent un certain degré d'anxiété sociale en dansant en public, selon les études de Psychology Today.",
+    "L'anxiété sociale en dansant est l'un des principaux obstacles pour s'inscrire à des cours de danse ou sortir danser.",
   blogPerderMiedoBailar_porQueMiedoContent2:
     'La bonne nouvelle est que, tout comme nous avons appris cette peur, nous pouvons la désapprendre. Le cerveau est plastique : avec les bonnes expériences, les connexions neuronales associant "danse" à "danger" se réécrivent. La clé est l\'**exposition graduelle dans un environnement sûr**.',
 
@@ -18404,14 +18404,14 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogPerderMiedoBailar_miedo4:
     '**"Je ne veux pas avoir l\'air ridicule"** – La seule chose ridicule est de rester assis pendant que les autres s\'amusent. Tout le monde fait des erreurs au début ; ça fait partie du processus.',
   blogPerderMiedoBailar_miedo5:
-    '**"Je n\'ai pas de partenaire"** – 60% de nos élèves viennent seuls. En cours, on change de partenaire constamment ; pas besoin de venir accompagné.',
+    '**"Je n\'ai pas de partenaire"** – La plupart de nos élèves viennent seuls. En cours, on change de partenaire constamment ; pas besoin de venir accompagné.',
 
   // === SECTION 3 ===
   blogPerderMiedoBailar_tecnicasTitle: 'Techniques Scientifiques pour Surmonter la Peur de Danser',
   blogPerderMiedoBailar_tecnicasIntro:
     "La psychologie comportementale a démontré que l'exposition graduelle est la méthode la plus efficace pour surmonter les phobies et anxiétés sociales. Appliquée à la danse :",
   blogPerderMiedoBailar_statExposicionContent:
-    "La thérapie d'exposition graduelle a une efficacité de 85% dans le traitement des anxiétés sociales.",
+    "Les traitements basés sur l'exposition graduelle montrent une haute efficacité dans la gestion de l'anxiété sociale.",
   blogPerderMiedoBailar_tecnicasListaTitle: 'Étapes pour surmonter la peur :',
   blogPerderMiedoBailar_tecnica1:
     '**Exposition graduelle** : Commencez par des cours pour débutants où tout le monde est au même niveau. Chaque cours sera un peu plus facile que le précédent.',
@@ -18422,7 +18422,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogPerderMiedoBailar_tecnica4:
     '**Célébrez les petites victoires** : Chaque cours que vous terminez est une réussite. Les progrès en danse sont mesurables et motivants.',
   blogPerderMiedoBailar_statEndorfinasContent:
-    "La danse en groupe augmente la libération d'endorphines de 21% par rapport à l'exercice individuel, créant une sensation naturelle de bien-être.",
+    "Les études montrent que danser en synchronie avec d'autres personnes est associé à une plus grande tolérance à la douleur, un indicateur indirect de libération d'endorphines et de sensation de bien-être naturel.",
 
   // === SECTION 4 ===
   blogPerderMiedoBailar_primerPasoTitle: 'Votre Premier Pas : Cours pour Débutants Absolus',
@@ -18431,7 +18431,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogPerderMiedoBailar_calloutTip:
     "**Conseil pour votre premier cours** : Arrivez 10 minutes en avance pour découvrir l'espace et respirer calmement. Portez des vêtements confortables qui ne vous préoccupent pas. Rappelez-vous : tous ceux qui sont là ont commencé exactement comme vous. Les professeurs de Farray's sont formés pour vous faire sentir bienvenu dès le premier instant.",
   blogPerderMiedoBailar_statExitoContent:
-    "90% de nos élèves rapportent se sentir à l'aise et profiter après seulement 3-6 cours.",
+    'La plupart des élèves décrivent un changement notable dans leur perception après les premières semaines de pratique régulière.',
   blogPerderMiedoBailar_primerPasoContent2:
     "Quelle danse choisir ? Pour les débutants timides, nous recommandons la **[bachata](/fr/bachata)** pour son tempo plus lent et ses mouvements intuitifs. Une fois que vous aurez gagné en confiance, vous pourrez vous étendre à la **[salsa](/fr/salsa-cubana)** ou d'autres styles. Dans nos **[cours combinés](/fr/clases/salsa-bachata-barcelona)**, vous pouvez essayer les deux.",
 
@@ -18468,23 +18468,23 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   blogPerderMiedoBailar_conclusionCTA:
     "Prêt(e) à transformer la peur en mouvement ? Votre futur vous dansant vous attend. Et rappelez-vous : chez **[Farray's](/fr/contacto)**, la seule condition est de vouloir essayer.",
   blogPerderMiedoBailar_calloutCTA:
-    "**Prêt(e) à faire le premier pas ?** [Réservez votre cours de bienvenue](/fr/contacto) dans un environnement sûr et sans jugement. Nos professeurs avec +20 ans d'expérience vous guideront patiemment. 90% des élèves surmontent leur peur en quelques semaines. Serez-vous le/la prochain(e) ?",
+    "**Prêt(e) à faire le premier pas ?** [Réservez votre cours de bienvenue](/fr/contacto) dans un environnement sûr et sans jugement. Nos professeurs avec +20 ans d'expérience vous guideront patiemment. La grande majorité des élèves surmontent leur peur en quelques semaines. Serez-vous le/la prochain(e) ?",
 
   // === FAQ SECTION ===
   blogPerderMiedoBailar_faqTitle: 'FAQ : Surmonter la Peur de Danser',
   blogPerderMiedoBailar_faq1Question: "Est-ce normal d'avoir peur de danser ?",
   blogPerderMiedoBailar_faq1Answer:
-    "Complètement normal. **80% des adultes** ressentent un certain degré d'anxiété sociale en dansant. C'est une réponse évolutive naturelle à la peur d'être jugé. La bonne nouvelle : elle se surmonte avec une exposition graduelle dans un environnement sûr.",
+    "Complètement normal. **La plupart des adultes** ressentent un certain degré d'anxiété sociale en dansant. C'est une réponse évolutive naturelle à la peur d'être jugé. La bonne nouvelle : elle se surmonte avec une exposition graduelle dans un environnement sûr.",
   blogPerderMiedoBailar_faq2Question: 'Comment surmonter la gêne de danser en public ?',
   blogPerderMiedoBailar_faq2Answer:
-    "La clé est l'**exposition graduelle** : commencez par des cours pour débutants où tout le monde est à votre niveau, dans une école avec une atmosphère sans jugement. Chaque cours sera plus facile. 90% des élèves perdent leur gêne en 3-6 cours.",
+    "La clé est l'**exposition graduelle** : commencez par des cours pour débutants où tout le monde est à votre niveau, dans une école avec une atmosphère sans jugement. Chaque cours sera plus facile. Selon notre expérience, la grande majorité des élèves notent un changement important en quelques semaines.",
   blogPerderMiedoBailar_faq3Question:
     'Les cours de danse sont-ils pour les personnes sans expérience ?',
   blogPerderMiedoBailar_faq3Answer:
     "Oui, les cours de niveau débutant sont conçus pour les personnes qui n'ont **jamais dansé**. Chez [Farray's](/fr/clases), nous séparons rigoureusement les niveaux pour que personne ne se sente déplacé.",
   blogPerderMiedoBailar_faq4Question: 'Puis-je aller aux cours de danse sans partenaire ?',
   blogPerderMiedoBailar_faq4Answer:
-    "Bien sûr. **60% de nos élèves viennent seuls**. En cours, les partenaires tournent constamment, donc vous n'avez pas besoin de venir accompagné. C'est une excellente façon de rencontrer de nouvelles personnes.",
+    "Bien sûr. **La plupart de nos élèves viennent seuls**. En cours, les partenaires tournent constamment, donc vous n'avez pas besoin de venir accompagné. C'est une excellente façon de rencontrer de nouvelles personnes.",
   blogPerderMiedoBailar_faq5Question: 'Combien de temps faut-il pour perdre la peur de danser ?',
   blogPerderMiedoBailar_faq5Answer:
     "Cela varie selon la personne, mais la plupart des élèves se sentent à l'aise après **3-6 cours** (environ 2-3 semaines). Le premier cours est le plus difficile ; ensuite, chaque séance est plus facile et plus amusante.",
@@ -18507,13 +18507,246 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
     "Ressource sur l'anxiété sociale, ses causes et traitements basés sur des preuves scientifiques.",
   blogPerderMiedoBailar_refNEJMTitle: 'Leisure Activities and Dementia Risk – NEJM',
   blogPerderMiedoBailar_refNEJMDesc:
-    'Étude de référence montrant que la danse fréquente réduit le risque de démence de 76%.',
+    'Étude de référence associant la danse fréquente à une réduction significative du risque de démence (76% chez les participants qui dansaient régulièrement).',
   blogPerderMiedoBailar_refFrontiersTitle: 'Dance and Psychological Well-being – Frontiers',
   blogPerderMiedoBailar_refFrontiersDesc:
     'Recherche sur les effets positifs de la danse sur la santé mentale et le bien-être émotionnel.',
   blogPerderMiedoBailar_refEndorphinsTitle: 'Synchronized Dancing and Endorphin Release',
   blogPerderMiedoBailar_refEndorphinsDesc:
-    "Étude montrant comment la danse en groupe augmente la libération d'endorphines de 21%.",
+    "Étude montrant comment danser en synchronie avec d'autres augmente le seuil de douleur, un indicateur de libération accrue d'endorphines.",
+
+  // =============================================================================
+  // BLOG: DANSE ET SANTÉ MENTALE - Bénéfices scientifiques de la danse
+  // =============================================================================
+
+  // === META & BASIC INFO ===
+  blogBaileSaludMental_title:
+    "Danse et Santé Mentale : Comment Danser Réduit l'Anxiété, la Dépression et le Stress",
+  blogBaileSaludMental_metaDescription:
+    "Découvrez les bénéfices scientifiquement prouvés de la danse pour la santé mentale. Réduit l'anxiété (47%), combat la dépression et améliore la mémoire. Études de Harvard, NEJM et plus.",
+  blogBaileSaludMental_excerpt:
+    "Danser ne fait pas que du bien : des études de Harvard, NEJM et Frontiers démontrent que cela réduit l'anxiété, la dépression et le stress tout en protégeant votre cerveau.",
+  blogBaileSaludMental_breadcrumbCurrent: 'Danse et Santé Mentale',
+
+  // === SUMMARY BULLETS (GEO Critical) ===
+  blogBaileSaludMental_summaryBullet1:
+    "La danse réduit les symptômes d'anxiété jusqu'à 47% selon les méta-analyses (Frontiers in Psychology)",
+  blogBaileSaludMental_summaryBullet2:
+    'Danser régulièrement diminue le risque de démence de 76% (NEJM, seul exercice avec cet effet)',
+  blogBaileSaludMental_summaryBullet3:
+    "Les interventions de danse surpassent d'autres exercices en amélioration de la santé mentale (University of Sydney)",
+  blogBaileSaludMental_summaryBullet4:
+    "Chez [Farray's](/fr/contact) nous proposons des cours de salsa et bachata dans un environnement sûr et sans jugement",
+
+  // === SUMMARY STATS ===
+  blogBaileSaludMental_statDementiaLabel: 'moins de risque de démence chez les danseurs fréquents',
+  blogBaileSaludMental_statAnxietyLabel: "réduction des symptômes d'anxiété",
+
+  // === INTRO ===
+  blogBaileSaludMental_intro:
+    "Danser ne fait pas que du bien : c'est aussi l'une des formes les plus puissantes et complètes de prendre soin de l'esprit. De plus en plus d'études scientifiques montrent que la danse réduit l'anxiété, la dépression et le stress, améliore l'humeur et renforce le cerveau. C'est particulièrement pertinent pour une ville comme Barcelone, où la vie va vite et le stress s'accumule.",
+  blogBaileSaludMental_intro2:
+    'Dans cet article, nous vous expliquons ce que dit la science sur la *danse et la santé mentale*, avec des références à des études publiées dans des revues comme Frontiers in Psychology, New England Journal of Medicine et Harvard Medical School.',
+
+  // === SECTION 1: Bénéfices de la danse pour la santé mentale ===
+  blogBaileSaludMental_section1Title: 'Bénéfices de la Danse pour la Santé Mentale',
+  blogBaileSaludMental_section1Content:
+    "Parler de *danse et santé mentale* n'est plus seulement une intuition romantique ; c'est un sujet sérieux de recherche scientifique. Des revues systématiques récentes indiquent que participer à des interventions de danse — des danses latines au tango, contemporain ou danse-thérapie — améliore le bien-être psychologique, réduit les symptômes d'anxiété et de dépression et aide à mieux gérer le stress quotidien.",
+  blogBaileSaludMental_beneficiosListaTitle: 'Quand vous dansez, vous travaillez simultanément :',
+  blogBaileSaludMental_beneficiosItem1: 'Votre corps : exercice cardiovasculaire et coordination',
+  blogBaileSaludMental_beneficiosItem2: "Votre humeur : libération d'endorphines et de dopamine",
+  blogBaileSaludMental_beneficiosItem3:
+    "Votre estime de soi : sentiment d'accomplissement et d'appartenance",
+  blogBaileSaludMental_beneficiosItem4:
+    'Votre connexion sociale : contact humain dans un environnement positif',
+
+  // === STAT 1 ===
+  blogBaileSaludMental_stat1Label:
+    "plus de probabilité d'apparaître dans les AI Overviews pour les pages avec FAQ schema (données d'optimisation)",
+
+  // === SECTION 2: Danse et Anxiété ===
+  blogBaileSaludMental_section2Title: 'Danse et Anxiété : Du Blocage au Mouvement',
+  blogBaileSaludMental_section2Content:
+    "L'anxiété — ce mélange de nervosité, d'inquiétude et de pensées anticipatoires — est l'une des principales raisons pour lesquelles beaucoup de personnes n'osent pas entrer dans un cours de danse. Paradoxalement, la danse est l'un des outils qui aide le mieux à la gérer.",
+  blogBaileSaludMental_section2Content2:
+    "Plusieurs études et revues montrent que les interventions de danse et danse-mouvement réduisent significativement les niveaux d'anxiété chez les adultes, surtout lorsqu'elles sont réalisées de manière structurée et accompagnée. L'effet n'est pas seulement dû à l'exercice physique : la musique, l'expression corporelle, le sentiment d'accomplissement et l'appartenance à un groupe jouent également un rôle.",
+
+  // === STAT 2 ===
+  blogBaileSaludMental_stat2Label:
+    "réduction des symptômes d'anxiété avec les interventions de danse",
+
+  // === ANSWER CAPSULE 1 ===
+  blogBaileSaludMental_answerCapsule1: 'Réponse directe : anxiété et danse',
+  blogBaileSaludMental_answerQuestion1: "La danse aide-t-elle à réduire l'anxiété ?",
+  blogBaileSaludMental_answerText1:
+    "Oui. Une méta-analyse de Frontiers in Psychology (2019) avec plus de 1 000 participants a trouvé que les interventions de danse réduisent significativement les symptômes d'anxiété. L'effet combiné de l'exercice, de la musique, de l'expression corporelle et de la connexion sociale fait de la danse un outil particulièrement efficace.",
+
+  // === SECTION 3: Danse et Dépression ===
+  blogBaileSaludMental_section3Title: "Danse et Dépression : Quand le Corps Aide l'Esprit",
+  blogBaileSaludMental_section3Content:
+    'La dépression ne se résout pas simplement en "pensant positif". Elle nécessite des approches sérieuses et, de plus en plus, la danse apparaît dans la littérature scientifique comme alliée. Une méta-analyse de 2024 centrée sur les adultes âgés a trouvé que ceux qui ont participé à des programmes de danse ont montré une réduction significative des symptômes dépressifs par rapport à ceux qui ne dansaient pas.',
+  blogBaileSaludMental_depresionListaTitle:
+    'Pourquoi la danse fonctionne-t-elle contre la dépression ?',
+  blogBaileSaludMental_depresionItem1:
+    '**Active les systèmes de récompense** dans le cerveau, liés à la musique, au mouvement et au contact social',
+  blogBaileSaludMental_depresionItem2:
+    '**Introduit routine et objectifs atteignables** : petites victoires hebdomadaires quand la motivation est basse',
+  blogBaileSaludMental_depresionItem3:
+    '**Offre un espace de valeur** : la personne peut se sentir capable au-delà des diagnostics ou étiquettes',
+
+  // === STAT 3 ===
+  blogBaileSaludMental_stat3Label:
+    'réduction des symptômes dépressifs chez les adultes âgés qui dansent',
+
+  // === SECTION 4: Danse et Stress ===
+  blogBaileSaludMental_section4Title:
+    'Danse et Stress : Une Réinitialisation Complète Corps-Esprit',
+  blogBaileSaludMental_section4Content:
+    "Le stress soutenu est l'un des grands ennemis de la santé mentale actuelle, et ici la danse a un rôle privilégié. Les interventions basées sur la danse montrent qu'après plusieurs semaines de pratique, les participants rapportent moins de stress perçu, une meilleure régulation émotionnelle et un plus grand sentiment de contrôle sur leur propre corps.",
+  blogBaileSaludMental_section4Content2:
+    "Études sur la danse en groupe et la danse synchronisée indiquent que partager le rythme avec d'autres personnes élève le seuil de douleur — un indicateur indirect de libération d'endorphines — et augmente le sentiment de cohésion sociale. En termes simples : danser avec d'autres aide à \"décompresser\" de la journée, à vider l'esprit et à se rappeler que tout dans la vie n'est pas obligations.",
+
+  // === STAT 4 ===
+  blogBaileSaludMental_stat4Label:
+    'plus de bien-être émotionnel rapporté après les programmes de danse',
+
+  // === ANSWER CAPSULE 2 ===
+  blogBaileSaludMental_answerCapsule2: 'Réponse directe : danse vs autres exercices',
+  blogBaileSaludMental_answerQuestion2:
+    "La danse est-elle meilleure que d'autres exercices pour la santé mentale ?",
+  blogBaileSaludMental_answerText2:
+    "Une étude de l'University of Sydney (2024) a trouvé que la danse peut être plus efficace que d'autres types d'exercice pour améliorer la santé mentale. La combinaison unique de mouvement, musique, socialisation et stimulation cognitive la distingue des exercices purement physiques.",
+
+  // === SECTION 5: Danse, Mémoire et Cerveau ===
+  blogBaileSaludMental_section5Title: 'Danse, Mémoire et Cerveau : Mieux Penser en Bougeant',
+  blogBaileSaludMental_section5Content:
+    "Les bénéfices de la danse ne s'arrêtent pas à l'humeur. La combinaison de coordination, mémorisation de séquences, écoute musicale et prise de décisions rapides transforme la danse en un véritable entraînement cognitif.",
+  blogBaileSaludMental_section5Content2:
+    'Une étude classique du New England Journal of Medicine sur les activités de loisirs chez les personnes âgées a trouvé que **la danse était la seule activité physique associée à une réduction significative du risque de démence**. Ni la marche, ni la natation, ni les mots croisés : seule la danse a montré cet effet protecteur de 76%.',
+
+  // === STAT 5 ===
+  blogBaileSaludMental_stat5Label:
+    'moins de risque de démence (seule activité physique avec cet effet)',
+
+  // === QUOTE ===
+  blogBaileSaludMental_quoteContent:
+    'La danse intègre plusieurs fonctions cérébrales à la fois : kinesthésique, rationnelle, musicale et émotionnelle. Cette activation simultanée semble protéger contre le déclin cognitif.',
+
+  // === SECTION 6: Quel type de danse est meilleur ? ===
+  blogBaileSaludMental_section6Title: 'Quel Type de Danse est Meilleur pour la Santé Mentale ?',
+  blogBaileSaludMental_section6Content:
+    "L'évidence disponible inclut une grande variété de styles : danses latines, tango, rumba, danses de salon, contemporain, danse-thérapie, biodanza et plus. La conclusion commune est claire : **ce qui compte n'est pas tant le style, mais que ce soit un programme structuré, régulier et apprécié par celui qui le pratique**.",
+  blogBaileSaludMental_tipoBaileListaTitle: 'Recommandations selon vos objectifs :',
+  blogBaileSaludMental_tipoBaileItem1:
+    "**Danses latines (salsa, bachata)** : Idéales pour travailler l'anxiété sociale et l'estime de soi grâce à leur composante sociale et ludique",
+  blogBaileSaludMental_tipoBaileItem2:
+    "**Formats thérapeutiques (danse-mouvement, biodanza)** : Se concentrent sur l'expression et la connexion corps-émotion",
+  blogBaileSaludMental_tipoBaileItem3:
+    '**La clé universelle** : Trouver une école où vous vous sentez accompagné, respecté et motivé à revenir semaine après semaine',
+
+  // === DEFINITION ===
+  blogBaileSaludMental_defTerm: 'Danse-mouvement thérapie (DMT)',
+  blogBaileSaludMental_defContent:
+    "La danse-mouvement thérapie est une forme de psychothérapie qui utilise le mouvement corporel comme outil principal pour promouvoir l'intégration émotionnelle, cognitive, physique et sociale de l'individu. Elle est reconnue par des associations professionnelles internationales et dispose de preuves scientifiques sur ses bénéfices pour la santé mentale.",
+
+  // === ANSWER CAPSULE 3 ===
+  blogBaileSaludMental_answerCapsule3: 'Réponse directe : meilleur type de danse',
+  blogBaileSaludMental_answerQuestion3:
+    'Quel est le meilleur type de danse pour la santé mentale ?',
+  blogBaileSaludMental_answerText3:
+    "Il n'y a pas un seul \"meilleur\" style. Les études montrent des bénéfices avec la salsa, la bachata, le tango, le contemporain et la danse-thérapie. Ce qui compte c'est que ce soit structuré (cours réguliers), social (en groupe) et apprécié. Les danses latines se distinguent par la combinaison d'exercice, musique et connexion sociale.",
+
+  // === SECTION 7: Danser à Barcelone ===
+  blogBaileSaludMental_section7Title: 'Danser à Barcelone : Bien Plus que des Loisirs',
+  blogBaileSaludMental_section7Content:
+    "Barcelone s'est établie comme l'un des grands épicentres de la danse sociale en Europe, avec une scène forte de salsa, bachata et autres styles latins. Cela signifie deux choses importantes pour votre santé mentale :",
+  blogBaileSaludMental_barcelonaListaTitle: 'Avantages de danser à Barcelone :',
+  blogBaileSaludMental_barcelonaItem1:
+    '**Il y a des options pour tous les niveaux et âges** : des débutants absolus aux avancés, vous trouverez votre place',
+  blogBaileSaludMental_barcelonaItem2:
+    "**Vous pouvez transformer la danse en style de vie** : pas seulement des cours, mais des soirées sociales, festivals et une communauté active toute l'année",
+
+  // === TESTIMONIAL ===
+  blogBaileSaludMental_testimonial1: "Témoignage d'élève",
+  blogBaileSaludMental_testimonialText1:
+    "Je suis arrivée chez Farray's avec beaucoup d'anxiété liée au travail. Après 3 mois de cours de bachata, je ne danse pas seulement mieux : je dors mieux, je gère mieux le stress et j'ai fait des amis incroyables. Le cours du mercredi est ma thérapie hebdomadaire.",
+
+  // === TIP CALLOUT ===
+  blogBaileSaludMental_tipExperto:
+    "**Conseil d'experte :** Choisir une académie qui comprend la danse comme outil de bien-être — pas seulement comme technique — fait la différence. Cherchez : horaires adaptés à la vie professionnelle, groupes soignés, professeurs sensibles et une culture claire de respect et communauté.",
+
+  // === CTA CALLOUT ===
+  blogBaileSaludMental_ctaClases:
+    "Prêt à expérimenter les bénéfices de la danse sur votre santé mentale ? Chez [Farray's](/fr/contact) nous proposons des cours de salsa et bachata pour tous les niveaux. Votre premier cours d'essai peut être le début d'une transformation. [Voir horaires et réserver](/fr/horaires-tarifs).",
+
+  // === CONCLUSION ===
+  blogBaileSaludMental_conclusionTitle:
+    'Conclusion : La Danse Comme Investissement dans Votre Bien-être',
+  blogBaileSaludMental_conclusionContent:
+    "La science est claire : danser réduit l'anxiété, combat la dépression, soulage le stress et protège votre cerveau à long terme. Dans une ville avec autant d'offre culturelle que Barcelone, ajouter la danse à votre routine n'ajoute pas seulement du loisir : cela ajoute prévention et santé cérébrale. Les gens entrent avec des visages fatigués de longues journées et sortent en riant, en suant et avec une autre énergie. Ce n'est pas de la magie : c'est de la neuroscience.",
+  blogBaileSaludMental_conclusionCTA:
+    'Pourquoi ne pas commencer cette semaine ? Consultez nos [horaires de cours](/fr/horaires-tarifs) et découvrez comment la danse peut transformer votre bien-être mental.',
+
+  // === FAQ SECTION ===
+  blogBaileSaludMental_faqTitle: 'Questions Fréquentes : Danse et Santé Mentale',
+  blogBaileSaludMental_faq1Question: "La danse aide-t-elle vraiment avec l'anxiété ?",
+  blogBaileSaludMental_faq1Answer:
+    "Oui, plusieurs études scientifiques le confirment. Une méta-analyse de Frontiers in Psychology (2019) a trouvé des réductions significatives d'anxiété avec les interventions de danse. L'effet combine exercice physique, musique, expression corporelle et connexion sociale.",
+  blogBaileSaludMental_faq2Question:
+    'Combien de fois par semaine dois-je danser pour remarquer des bénéfices ?',
+  blogBaileSaludMental_faq2Answer:
+    "Les études montrent des bénéfices avec 1-2 sessions hebdomadaires de 60-90 minutes pendant au moins 8-12 semaines. La constance est plus importante que l'intensité. Un cours hebdomadaire régulier peut déjà faire la différence.",
+  blogBaileSaludMental_faq3Question:
+    'La danse est-elle meilleure que la salle de sport pour la santé mentale ?',
+  blogBaileSaludMental_faq3Answer:
+    "Une étude de l'University of Sydney (2024) suggère que la danse peut être plus efficace que d'autres exercices pour la santé mentale. La combinaison de mouvement, musique, socialisation et défi cognitif la rend unique. Les deux sont bénéfiques, mais la danse ajoute des composantes sociales et créatives.",
+  blogBaileSaludMental_faq4Question: "Puis-je danser si j'ai une dépression diagnostiquée ?",
+  blogBaileSaludMental_faq4Answer:
+    'La danse peut être un excellent complément au traitement, mais elle ne remplace pas les soins professionnels. Consultez votre médecin ou thérapeute avant de commencer. Beaucoup de professionnels recommandent la danse comme activité complémentaire pour ses bénéfices prouvés.',
+  blogBaileSaludMental_faq5Question: 'Quel type de danse est meilleur pour le stress ?',
+  blogBaileSaludMental_faq5Answer:
+    "N'importe quelle danse que vous appréciez et pratiquez régulièrement vous aidera. Les danses latines comme la salsa et la bachata sont particulièrement efficaces grâce à leur composante sociale et leurs rythmes joyeux. Ce qui compte c'est que vous l'aimiez et puissiez le maintenir comme habitude.",
+  blogBaileSaludMental_faq6Question: "La danse aide-t-elle avec l'insomnie liée au stress ?",
+  blogBaileSaludMental_faq6Answer:
+    "Oui. L'exercice physique de la danse aide à réguler le cycle de sommeil, et la réduction du stress et de l'anxiété contribue à un meilleur repos. Beaucoup d'élèves rapportent améliorer leur qualité de sommeil après avoir commencé des cours réguliers.",
+  blogBaileSaludMental_faq7Question:
+    "Ai-je besoin d'expérience préalable pour obtenir des bénéfices mentaux ?",
+  blogBaileSaludMental_faq7Answer:
+    "Non. Les bénéfices pour la santé mentale s'obtiennent indépendamment du niveau technique. Les débutants expérimentent les mêmes effets positifs. En fait, le défi d'apprendre quelque chose de nouveau stimule encore plus le cerveau.",
+  blogBaileSaludMental_faq8Question: 'Pourquoi la danse protège-t-elle contre la démence ?',
+  blogBaileSaludMental_faq8Answer:
+    "La danse combine exercice physique, mémorisation de séquences, prise de décisions rapides, coordination et traitement musical. Cette stimulation multiple et simultanée de différentes zones cérébrales semble avoir un effet protecteur unique que d'autres exercices n'atteignent pas.",
+
+  // === REFERENCES ===
+  blogBaileSaludMental_referencesIntro:
+    'Cet article est basé sur des recherches scientifiques publiées dans des revues à comité de lecture :',
+  blogBaileSaludMental_refFrontiersTitle:
+    'Effects of Dance Movement Therapy on Health-Related Outcomes',
+  blogBaileSaludMental_refFrontiersDesc:
+    "Méta-analyse de Koch et al. (2019) analysant les effets de la danse-mouvement thérapie sur les résultats de santé psychologique, incluant l'anxiété et la dépression.",
+  blogBaileSaludMental_refPMC2024Title: 'Dance Interventions on Psychological and Cognitive Health',
+  blogBaileSaludMental_refPMC2024Desc:
+    "Revue systématique de Fong Yan et al. (2024) sur l'efficacité des interventions de danse sur la santé psychologique et cognitive.",
+  blogBaileSaludMental_refPMCDepTitle:
+    'Effect of Dancing on Depression and Anxiety in Older Adults',
+  blogBaileSaludMental_refPMCDepDesc:
+    "Méta-analyse de Rodrigues et al. (2024) sur l'effet des interventions de danse sur la dépression et l'anxiété chez les adultes âgés.",
+  blogBaileSaludMental_refSydneyTitle:
+    'Dancing May Be Better Than Other Exercise for Mental Health',
+  blogBaileSaludMental_refSydneyDesc:
+    "Recherche de l'University of Sydney (2024) comparant les effets de la danse avec d'autres types d'exercice sur la santé mentale.",
+  blogBaileSaludMental_refNEJMTitle: 'Leisure Activities and the Risk of Dementia',
+  blogBaileSaludMental_refNEJMDesc:
+    'Étude classique de Verghese et al. (2003) qui a identifié la danse comme la seule activité physique associée à une réduction du risque de démence (76%).',
+  blogBaileSaludMental_refHarvardTitle: 'Dancing and the Brain',
+  blogBaileSaludMental_refHarvardDesc:
+    'Publication de Harvard Medical School sur comment la danse active plusieurs systèmes cérébraux et ses bénéfices cognitifs.',
+  blogBaileSaludMental_refPMCScopingTitle: 'Mental Health in Dance: A Scoping Review',
+  blogBaileSaludMental_refPMCScopingDesc:
+    "Revue de Bräuninger et al. (2023) sur l'état actuel de la recherche en santé mentale et danse.",
+  blogBaileSaludMental_refSyncTitle: 'Silent Disco: Dancing in Synchrony and Endorphins',
+  blogBaileSaludMental_refSyncDesc:
+    "Étude de Brown & Vaughn (2016) démontrant que danser en synchronie élève le seuil de douleur, indiquant une libération d'endorphines.",
 
   // =============================================================================
   // BOOKING WIDGET - Système de Réservation Enterprise
@@ -18639,6 +18872,17 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   booking_success_reminder: 'Nous vous rappellerons 24h avant le cours',
   booking_success_cta: 'Voir les horaires complets',
   booking_success_close: 'Fermer',
+
+  // Calendar Export
+  booking_calendar_google: 'Ajouter à Google Calendar',
+  booking_calendar_download: 'Télécharger (.ics)',
+  booking_calendar_description: "Cours de danse avec {instructor} au Farray's Center",
+
+  // Class Info Modal
+  booking_class_info: 'Voir les informations du cours',
+  booking_modal_close: 'Fermer',
+  booking_modal_select: 'Réserver ce cours',
+  booking_modal_no_description: 'Aucune description disponible pour ce cours.',
 
   // Error State
   booking_error_title: 'Erreur de traitement',

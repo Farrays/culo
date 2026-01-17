@@ -114,22 +114,6 @@ export const SALSA_RITMO_CONFIG: BlogArticleConfig = {
       contentKey: 'blogSalsaRitmo_estilosCierre',
     },
 
-    // === IMAGE: Estilos de Salsa ===
-    {
-      id: 'image-estilos',
-      type: 'image',
-      contentKey: 'blogSalsaRitmo_imageEstilosCaption',
-      image: {
-        src: '/images/blog/salsa-ritmo/estilos-salsa.webp',
-        srcSet:
-          '/images/blog/salsa-ritmo/estilos-salsa-480.webp 480w, /images/blog/salsa-ritmo/estilos-salsa-800.webp 800w',
-        alt: 'Estilos de salsa: cubana, línea, caleña y puertorriqueña',
-        caption: 'blogSalsaRitmo_imageEstilosCaption',
-        width: 800,
-        height: 500,
-      },
-    },
-
     // =====================================================
     // SECTION 3: RUEDA DE CASINO
     // =====================================================
@@ -148,22 +132,6 @@ export const SALSA_RITMO_CONFIG: BlogArticleConfig = {
       id: 'rueda-content2',
       type: 'paragraph',
       contentKey: 'blogSalsaRitmo_ruedaContent2',
-    },
-
-    // === IMAGE: Rueda de Casino ===
-    {
-      id: 'image-rueda',
-      type: 'image',
-      contentKey: 'blogSalsaRitmo_imageRuedaCaption',
-      image: {
-        src: '/images/blog/salsa-ritmo/rueda-casino.webp',
-        srcSet:
-          '/images/blog/salsa-ritmo/rueda-casino-480.webp 480w, /images/blog/salsa-ritmo/rueda-casino-800.webp 800w',
-        alt: "Rueda de casino: baile grupal cubano en Farray's Barcelona",
-        caption: 'blogSalsaRitmo_imageRuedaCaption',
-        width: 800,
-        height: 500,
-      },
     },
 
     // =====================================================
@@ -385,18 +353,18 @@ export const SALSA_RITMO_CONFIG: BlogArticleConfig = {
   // === RELATED ARTICLES ===
   relatedArticles: [
     {
+      slug: 'salsa-vs-bachata',
+      category: 'tutoriales',
+      titleKey: 'blogSalsaVsBachata_title',
+      excerptKey: 'blogSalsaVsBachata_excerpt',
+      image: '/images/blog/salsa-vs-bachata/hero.webp',
+    },
+    {
       slug: 'beneficios-bailar-salsa',
       category: 'lifestyle',
       titleKey: 'blogBeneficiosSalsa_title',
       excerptKey: 'blogBeneficiosSalsa_excerpt',
-      image: '/images/blog/beneficios-salsa/hero.webp',
-    },
-    {
-      slug: 'historia-salsa-barcelona',
-      category: 'historia',
-      titleKey: 'blogHistoriaSalsa_title',
-      excerptKey: 'blogHistoriaSalsa_excerpt',
-      image: '/images/blog/historia-salsa/hero.webp',
+      image: '/images/blog/salsa-vs-bachata/hero.webp',
     },
   ],
 

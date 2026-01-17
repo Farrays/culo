@@ -49,6 +49,13 @@ function getRedisClient(): Redis | null {
 }
 
 // Tipos
+interface MomenceTeacher {
+  id: number;
+  firstName: string;
+  lastName: string;
+  pictureUrl?: string | null;
+}
+
 interface MomenceSession {
   id: number;
   name: string;
@@ -57,7 +64,8 @@ interface MomenceSession {
   capacity: number;
   bookingCount: number;
   locationName?: string;
-  instructorName?: string;
+  inPersonLocation?: string;
+  teacher?: MomenceTeacher;
   description?: string;
 }
 
@@ -74,6 +82,8 @@ interface NormalizedClass {
   style: string;
   level: string;
   rawStartsAt: string;
+  description: string;
+  duration: number;
 }
 
 // Mapeo de estilos (normalización)
@@ -130,7 +140,12 @@ function detectLevel(name: string): string {
 
 function normalizeSession(session: MomenceSession): NormalizedClass {
   const startDate = new Date(session.startsAt);
+  const endDate = new Date(session.endsAt);
   const dayNames = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+
+  // Calculate duration in minutes
+  const durationMs = endDate.getTime() - startDate.getTime();
+  const durationMinutes = Math.round(durationMs / (1000 * 60));
 
   return {
     id: session.id,
@@ -141,10 +156,14 @@ function normalizeSession(session: MomenceSession): NormalizedClass {
     spotsAvailable: Math.max(0, session.capacity - session.bookingCount),
     isFull: session.bookingCount >= session.capacity,
     location: session.locationName || "Farray's Center",
-    instructor: session.instructorName || '',
+    instructor: session.teacher
+      ? `${session.teacher.firstName} ${session.teacher.lastName}`.trim()
+      : '',
     style: detectStyle(session.name),
     level: detectLevel(session.name),
     rawStartsAt: session.startsAt,
+    description: session.description || '',
+    duration: durationMinutes > 0 ? durationMinutes : 60, // Default 60 min if invalid
   };
 }
 

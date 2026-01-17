@@ -11583,58 +11583,49 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   pricing_no_classpass:
     'No trabajamos con ClassPass ni intermediarios. Aquí recibes atención directa y personalizada de nuestro equipo.',
   pricing_testimonials_title: 'Testimonios No Solicitados de Nuestros Socios',
-  pricing_testimonial1_text:
-    '5 estrellas y porque no hay más. Espectacular, desde el minuto en el que pisas recepción, hasta los profesores, la calidad y el buen rollo.',
-  pricing_testimonial2_text:
-    'Llevo 3 años siendo socia y es la mejor inversión en mi bienestar. Los profesores son increíbles y el ambiente es único.',
-  pricing_testimonial3_text:
-    'Las cuotas son muy razonables para la calidad que ofrecen. Poder elegir entre tantos estilos con la misma cuota es fantástico.',
-  pricing_testimonial4_text:
-    'El sistema de cuotas es muy flexible. Puedo adaptar mis horas según mi disponibilidad cada mes sin problemas.',
-  pricing_testimonial_text:
-    'Llevo 3 años siendo socia y es la mejor inversión en mi bienestar. Los profesores son increíbles y el ambiente es único.',
-  pricing_testimonial_author: '— María L., socia desde 2022',
-  pricing_google_rating: '4.9/5 en Google Reviews (más de 200 opiniones)',
-  pricing_faq_title: 'Preguntas Frecuentes sobre nuestros horarios y precios',
-  pricing_faq1_q: '¿Cuánto cuesta la cuota de inscripción y qué incluye?',
-  pricing_faq1_a:
-    "La cuota de inscripción es de 60€ el primer año y 20€/año de renovación para todos los socios. Esta cuota te garantiza el acceso al sistema, tu plaza fija en el horario, y todas las ventajas exclusivas de socio de Farray's: seguro de accidentes, entrada prioritaria a eventos y actividades internas, programa de referidos (2 participaciones puntuales por amigo), descuentos en merchandising y fiestas, y todos los beneficios de formar parte de nuestra comunidad de +10.000 bailarines. A veces tenemos promociones donde la bonificamos.",
-  pricing_faq2_q: '¿Puedo probar una clase antes de inscribirme?',
+  pricing_testimonial1_text: `5 stars and only because there's no more. Spectacular, from the minute you step into reception, to the teachers, the quality and the great vibe.`,
+  pricing_testimonial2_text: `I've been a member for 3 years and it's the best investment in my wellbeing. The teachers are amazing and the atmosphere is unique.`,
+  pricing_testimonial3_text: `The fees are very reasonable for the quality they offer. Being able to choose from so many styles with the same fee is fantastic.`,
+  pricing_testimonial4_text: `The fee system is very flexible. I can adapt my hours according to my availability each month without any problems.`,
+  pricing_testimonial_text: `I've been a member for 3 years and it's the best investment in my wellbeing. The teachers are amazing and the atmosphere is unique.`,
+  pricing_testimonial_author: '— María L., member since 2022',
+  pricing_google_rating: '4.9/5 on Google Reviews (over 200 reviews)',
+  pricing_faq_title: 'Frequently Asked Questions about our schedules and prices',
+  pricing_faq1_q: 'How much is the registration fee and what does it include?',
+  pricing_faq1_a: `The registration fee is €60 the first year and €20/year for renewal for all members. This fee guarantees you access to the system, your fixed spot in the schedule, and all exclusive member benefits at Farray's: accident insurance, priority entry to events and internal activities, referral program (2 drop-in classes per friend), discounts on merchandise and parties, and all the benefits of being part of our community of +10,000 dancers. Sometimes we have promotions where we waive it.`,
+  pricing_faq2_q: 'Can I try a class before signing up?',
   pricing_faq2_a:
-    'Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
-  pricing_faq3_q: '¿Hay compromiso de permanencia?',
+    'Depending on the season, the trial class for residents may be free or have a symbolic welcome price. The idea is for you to try the experience with no commitment.',
+  pricing_faq3_q: 'Is there a commitment period?',
   pricing_faq3_a:
-    'No, no hay permanencia obligatoria. Puedes cancelar tu cuota mensual cuando quieras, solicitándolo a través del formulario de contacto de la web con un mínimo de 15 días de antelación del siguiente cobro.',
-  pricing_faq4_q: '¿Puedo cambiar de plan o de estilo cada mes?',
+    'No, there is no mandatory commitment. You can cancel your monthly fee whenever you want by requesting it through the contact form on the website at least 15 days before the next payment.',
+  pricing_faq4_q: 'Can I change plans or styles each month?',
   pricing_faq4_a:
-    'Sí, puedes cambiar tu cuota mensual y elegir entre +25 estilos de baile diferentes cada mes. Solo avísanos 15 días antes del siguiente cobro.',
-  pricing_faq5_q: '¿Qué incluyen las clases Premium con Yunaisy Farray?',
+    'Yes, you can change your monthly fee and choose from +25 different dance styles each month. Just let us know 15 days before the next payment.',
+  pricing_faq5_q: 'What do Premium classes with Yunaisy Farray include?',
   pricing_faq5_a:
-    'Las clases Premium son impartidas por Yunaisy Farray, nuestra fundadora y maestra internacional reconocida por CID-UNESCO. Tienen un suplemento de +5€/mes sobre la cuota regular. La experiencia y metodología es única.',
-  pricing_faq6_q: '¿Puedo recuperar clases si falto?',
+    'Premium classes are taught by Yunaisy Farray, our founder and internationally recognized master by CID-UNESCO. They have a supplement of +€5/month on top of the regular fee. The experience and methodology are unique.',
+  pricing_faq6_q: 'Can I make up classes if I miss one?',
   pricing_faq6_a:
-    'Las cuotas mensuales se basan en actividades por mes. Si faltas, puedes compensar haciendo más actividades otros días dentro del mismo mes. Con las cuotas flexibles, tienes hasta 6 o 12 meses para usar tus créditos.',
-  pricing_faq7_q: '¿Cómo funcionan las cuotas de participación flexibles?',
+    'Monthly fees are based on activities per month. If you miss one, you can make up for it by doing more activities on other days within the same month. With flexible fees, you have up to 6 or 12 months to use your credits.',
+  pricing_faq7_q: 'How do flexible participation fees work?',
   pricing_faq7_a:
-    'Compras un paquete de 10 o 20 actividades que puedes usar cuando quieras: 10 actividades tienen 6 meses de validez, y 20 actividades tienen 12 meses. Ideal si tu horario es variable o viajas frecuentemente.',
-  pricing_faq8_q: '¿Puedo venir a una clase suelta sin ser socio?',
-  pricing_faq8_a:
-    'Sí, ofrecemos participación puntual: 17€ (1h regular), 20€ (1.5h regular), 18€ (1h Premium) o 22€ (1.5h Premium). Es perfecto para visitantes o si quieres probar antes de comprometerte con una cuota.',
-  pricing_faq9_q: '¿Existe algún plan ilimitado?',
-  pricing_faq9_a:
-    'Sí, la Cuota Ilimitada cuesta 300€/mes y te permite asistir a todas las clases que quieras, todos los estilos, todos los días. Equivale a aproximadamente 5€ por actividad si aprovechas al máximo.',
-  pricing_faq10_q: '¿Cómo funciona el programa de referidos?',
+    'You buy a package of 10 or 20 activities that you can use whenever you want: 10 activities are valid for 6 months, and 20 activities are valid for 12 months. Ideal if your schedule is variable or you travel frequently.',
+  pricing_faq8_q: 'Can I come to a single class without being a member?',
+  pricing_faq8_a: `Yes, we offer drop-in participation: €17 (1h regular), €20 (1.5h regular), €18 (1h Premium) or €22 (1.5h Premium). It's perfect for visitors or if you want to try before committing to a fee.`,
+  pricing_faq9_q: 'Is there an unlimited plan?',
+  pricing_faq9_a: `Yes, the Unlimited Fee costs €300/month and allows you to attend all the classes you want, all styles, every day. It's equivalent to approximately €5 per activity if you make the most of it.`,
+  pricing_faq10_q: 'How does the referral program work?',
   pricing_faq10_a:
-    'Por cada amigo que se inscriba gracias a ti, recibes 2 participaciones puntuales (valoradas en 34€). Tu amigo también recibe beneficios de bienvenida. Pregunta en recepción los detalles.',
-  pricing_faq11_q: '¿Tenéis algún descuento especial?',
+    'For each friend who signs up thanks to you, you receive 2 drop-in participations (valued at €34). Your friend also receives welcome benefits. Ask at reception for details.',
+  pricing_faq11_q: 'Do you have any special discounts?',
   pricing_faq11_a:
-    'Sí, ofrecemos descuentos si te apuntas a más de un curso. Consulta nuestra web o pregúntanos directamente para más detalles.',
-  pricing_faq12_q: '¿Qué métodos de pago aceptan?',
+    'Yes, we offer discounts if you sign up for more than one course. Check our website or ask us directly for more details.',
+  pricing_faq12_q: 'What payment methods do you accept?',
   pricing_faq12_a:
-    'Aceptamos tarjeta de crédito/débito (pago recurrente automático para cuotas mensuales), transferencia bancaria y efectivo. Todo se gestiona a través de nuestra app Momence.',
-  pricing_faq13_q: '¿Cuánto cuestan las clases de baile in Barcelona?',
-  pricing_faq13_a:
-    "En Barcelona, los precios varían según el centro y la modalidad. En general, oscilan entre 50€ y 150€/mes para cuotas regulares, o entre 10€ y 25€ por clase suelta. En Farray's Center ofrecemos opciones desde 50€/mes con acceso a +25 estilos, sin permanencia.",
+    'We accept credit/debit card (automatic recurring payment for monthly fees), bank transfer and cash. Everything is managed through our Momence app.',
+  pricing_faq13_q: 'How much do dance classes cost in Barcelona?',
+  pricing_faq13_a: `In Barcelona, prices vary depending on the center and the type. Generally, they range between €50 and €150/month for regular fees, or between €10 and €25 per drop-in class. At Farray's Center we offer options from €50/month with access to +25 styles, with no commitment.`,
   pricing_faq14_q: '¿Puedo ir solo/a a las clases?',
   pricing_faq14_a:
     'Sí, la mayoría de nuestros socios vienen solos. No necesitas pareja para ningún estilo. En las clases de bailes en pareja rotamos continuamente, así que siempre tendrás con quién practicar. Es una forma estupenda de conocer gente.',
@@ -12076,7 +12067,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogBeneficiosSalsa_stat2Source: 'New England Journal of Medicine',
   blogBeneficiosSalsa_ctaTitle: '¿Listo para experimentar estos beneficios?',
   blogBeneficiosSalsa_ctaText:
-    "En Farray's International Dance Center tenemos clases de salsa cubana para todos los niveles. Profesores cubanos con más de 20 años de experiencia te guiarán desde tus primeros pasos hasta movimientos avanzados.",
+    "`At Farray's International Dance Center we have Cuban salsa classes for all levels. Cuban teachers with over 20 years of experience will guide you from your first steps to advanced moves.`",
   blogBeneficiosSalsa_ctaButton: 'Book Welcome Class',
 
   // =============================================
@@ -15941,22 +15932,22 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   danceClassesHub_style_stretching: `Stretching & Flexibilidad`,
   danceClassesHub_style_cuerpo_fit_desc: `Entrenamiento full body with elementos de danza que quema 400-500 calories per session. Cardio intenso, tonificación muscular y diversión asegurada. Ideal for quienes buscan results visibles without experience previa en dance. Class híbrida perfecta for principiantes.`,
   danceClassesHub_style_stretching_desc: `Estiramientos profundos y flexibilidad activa for mejorar tu rango de movement. Técnicas de backbending, splits y flexibilidad articular with enfoque en prevención de lesiones. Perfecto for bailarines y no bailarines que buscan mayor movilidad.`,
-  dhV3HeroStudents: `+15,000 students formados`,
+  dhV3HeroStudents: `+15,000 students trained`,
   dhV3PrepareTitle: `Prepara tu first class de Dancehall`,
   dhV3PrepareSubtitle: `Everything you need to know before coming`,
-  twerkHeroStudents: `+15,000 students formados`,
-  afroHeroStudents: `+15,000 students formados`,
-  sxrHeroStudents: `+15,000 students formados`,
-  rcbHeroStudents: `+15,000 students formados`,
-  femHeroStudents: `+15,000 students formados`,
-  sexystyleHeroStudents: `+15,000 students formados`,
-  modernjazzHeroStudents: `+15,000 students formados`,
-  balletHeroStudents: `+15,000 students formados`,
-  contemporaneoHeroStudents: `+15,000 students formados`,
-  afrocontemporaneoHeroStudents: `+15,000 students formados`,
-  afrojazzHeroStudents: `+15,000 students formados`,
-  hiphopHeroStudents: `+15,000 students formados`,
-  salsaCubanaHeroStudents: `+15,000 students formados`,
+  twerkHeroStudents: `+15,000 students trained`,
+  afroHeroStudents: `+15,000 students trained`,
+  sxrHeroStudents: `+15,000 students trained`,
+  rcbHeroStudents: `+15,000 students trained`,
+  femHeroStudents: `+15,000 students trained`,
+  sexystyleHeroStudents: `+15,000 students trained`,
+  modernjazzHeroStudents: `+15,000 students trained`,
+  balletHeroStudents: `+15,000 students trained`,
+  contemporaneoHeroStudents: `+15,000 students trained`,
+  afrocontemporaneoHeroStudents: `+15,000 students trained`,
+  afrojazzHeroStudents: `+15,000 students trained`,
+  hiphopHeroStudents: `+15,000 students trained`,
+  salsaCubanaHeroStudents: `+15,000 students trained`,
   cuerpofitBreadcrumbHome: `Home`,
   cuerpofitBreadcrumbClasses: `Classes`,
   cuerpofitBreadcrumbCategory: `Dancer Training`,
@@ -16161,12 +16152,12 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   bailemanananasWhyChooseSubtitle: `Aprende a dance en Farray's International Dance Center`,
   bailemanananasWhyChoose1Title: `+8 years de experience`,
   bailemanananasWhyChoose1Desc: `Academia fundada by Yunaisy Farray en 2017, consolidada como referente del dance in Barcelona with recognition international.`,
-  bailemanananasWhyChoose2Title: `+15,000 students formados y 1.500 activos`,
+  bailemanananasWhyChoose2Title: `+15,000 students trained y 1.500 activos`,
   bailemanananasWhyChoose2Desc: `Miles de personas de todos los levels han transformado su vida a través del dance with nosotros.`,
   bailemanananasWhyChoose3Title: `Academia reconocida by el CID UNESCO`,
   bailemanananasWhyChoose3Desc: `Dirigida by Yunaisy Farray, actriz de Street Dance 2 y una de las maestras más reconocidas del mundo.`,
   bailemanananasWhyChoose4Title: `Profesores with training real`,
-  bailemanananasWhyChoose4Desc: `Alejandro Miñoso y Yasmina Fernández, bailarines profesionales formados en el Farray Method. Técnica, pasión y experience en cada class.`,
+  bailemanananasWhyChoose4Desc: `Alejandro Miñoso and Yasmina Fernández, professional dancers trained in the Farray Method. Technique, passion and experience in every class.`,
   bailemanananasWhyChoose5Title: `Academia multidisciplinar`,
   bailemanananasWhyChoose5Desc: `25+ estilos de dance diferentes, 100+ horas de class semanales. Variedad total for que encuentres tu style.`,
   bailemanananasWhyChoose6Title: `Gala en Teatro Victoria`,
@@ -16259,10 +16250,10 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   bailemanananasCitableHorario: `Horario classes dance mañanas Barcelona: Lunes/Miércoles/Jueves de 10:00 a 13:00 en Farray's Center, Calle Entença 100.`,
   bailemanananasCitableUbicacion: `Ubicación: Farray's International Dance Center, Calle Entença 100, 08015 Barcelona. Between Plaza España y Sants. Metro L1/L3/L5.`,
   bailemanananasCitableMetodologia: `Farray Method: metodología exclusiva de teaching de dance desarrollada by Yunaisy Farray, with recognition international CID-UNESCO.`,
-  bailemanananasCitableStatistics: `Estadísticas Farray's Center: +8 years experience, +1500 alumnos activos, +15000 estudiantes formados, 13 classes matinales, 2 teachers especializados.`,
+  bailemanananasCitableStatistics: `Farray's Center Statistics: +8 years experience, +1500 active students, +15000 students trained, 13 morning classes, 2 specialized teachers.`,
   bailemanananasCitableFact1: `Classes de dance mañanas Barcelona: única academy with 13 classes matinales diferentes de lunes a jueves.`,
   bailemanananasCitableFact2: `Dance by las mañanas quema 300-400 kcal by class y mejora el estado de ánimo durante todo el día.`,
-  bailemanananasCitableFact3: `Profesores de mañanas: Alejandro Miñoso (danza) y Yasmina Fernández (estilos latinos/sensuales), formados en Farray Method.`,
+  bailemanananasCitableFact3: `Morning teachers: Alejandro Miñoso (dance) and Yasmina Fernández (Latin/sensual styles), trained in the Farray Method.`,
   bailemanananasCourseSchemaName: `Classes de Dance by las Mañanas in Barcelona - Farray's Center`,
   bailemanananasCourseSchemaDesc: `Programa de classes de dance matinales with 13 opciones semanales: Contemporáneo, Ballet, Modern Jazz, Sexy Style, Reggaeton y más. Horario de 10:00 a 13:00, lunes a jueves.`,
   verClasesBaile: `Ver Classes de Dance`,
@@ -16370,7 +16361,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   fullBodyCardioHeroSubtitle: `Full Body Training + Cardio Dance that transforms`,
   fullBodyCardioHeroDesc: `Burn calories, tone your body and have fun. Professional dancers' training, adapted for you.`,
   fullBodyCardioHeroLocation: `Farray's Center · Between Plaza España y Sants, Barcelona`,
-  fullBodyCardioHeroStudents: `+15,000 students formados`,
+  fullBodyCardioHeroStudents: `+15,000 students trained`,
   fullBodyCardioCTAGroup: `Enrollment options`,
   fullBodyCardioCTA1: `Become a Member Now`,
   fullBodyCardioCTA1Subtext: `Limited spots available`,
@@ -18114,13 +18105,233 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     'Resource on social anxiety, its causes and evidence-based treatments.',
   blogPerderMiedoBailar_refNEJMTitle: 'Leisure Activities and Dementia Risk – NEJM',
   blogPerderMiedoBailar_refNEJMDesc:
-    'Reference study showing that frequent dancing reduces dementia risk by 76%.',
+    'Reference study linking frequent dancing with a significant reduction in dementia risk (76% in participants who danced regularly).',
   blogPerderMiedoBailar_refFrontiersTitle: 'Dance and Psychological Well-being – Frontiers',
   blogPerderMiedoBailar_refFrontiersDesc:
     'Research on the positive effects of dance on mental health and emotional well-being.',
   blogPerderMiedoBailar_refEndorphinsTitle: 'Synchronized Dancing and Endorphin Release',
   blogPerderMiedoBailar_refEndorphinsDesc:
-    'Study showing how group dancing increases endorphin release by 21%.',
+    'Study showing how dancing in sync with others increases pain threshold, an indicator of greater endorphin release.',
+
+  // =============================================================================
+  // BLOG: DANCING AND MENTAL HEALTH - Scientific benefits of dancing
+  // =============================================================================
+
+  // === META & BASIC INFO ===
+  blogBaileSaludMental_title:
+    'Dancing and Mental Health: How Dancing Reduces Anxiety, Depression and Stress',
+  blogBaileSaludMental_metaDescription:
+    'Discover the scientifically proven benefits of dancing for mental health. Reduces anxiety (47%), fights depression and improves memory. Studies from Harvard, NEJM and more.',
+  blogBaileSaludMental_excerpt:
+    "Dancing doesn't just feel good: studies from Harvard, NEJM and Frontiers show it reduces anxiety, depression and stress while protecting your brain.",
+  blogBaileSaludMental_breadcrumbCurrent: 'Dancing and Mental Health',
+
+  // === SUMMARY BULLETS (GEO Critical) ===
+  blogBaileSaludMental_summaryBullet1:
+    'Dancing reduces anxiety symptoms by up to 47% according to meta-analyses (Frontiers in Psychology)',
+  blogBaileSaludMental_summaryBullet2:
+    'Regular dancing decreases dementia risk by 76% (NEJM, the only exercise with this effect)',
+  blogBaileSaludMental_summaryBullet3:
+    'Dance interventions outperform other exercises in mental health improvement (University of Sydney)',
+  blogBaileSaludMental_summaryBullet4:
+    "At [Farray's](/en/contact) we offer salsa and bachata classes in a safe, judgment-free environment",
+
+  // === SUMMARY STATS ===
+  blogBaileSaludMental_statDementiaLabel: 'lower dementia risk in frequent dancers',
+  blogBaileSaludMental_statAnxietyLabel: 'reduction in anxiety symptoms',
+
+  // === INTRO ===
+  blogBaileSaludMental_intro:
+    "Dancing doesn't just feel good: it's also one of the most powerful and complete ways to care for your mind. More and more scientific studies show that dancing reduces anxiety, depression and stress, improves mood and strengthens the brain. This is especially relevant for a city like Barcelona, where life moves fast and stress accumulates.",
+  blogBaileSaludMental_intro2:
+    'In this article we explain what science says about *dancing and mental health*, with references to studies published in journals like Frontiers in Psychology, New England Journal of Medicine and Harvard Medical School.',
+
+  // === SECTION 1: Benefits of dancing for mental health ===
+  blogBaileSaludMental_section1Title: 'Benefits of Dancing for Mental Health',
+  blogBaileSaludMental_section1Content:
+    "Talking about *dancing and mental health* is no longer just a romantic intuition; it's a serious topic of scientific research. Recent systematic reviews indicate that participating in dance interventions—from Latin dances to tango, contemporary or dance therapy—improves psychological well-being, reduces anxiety and depression symptoms and helps manage daily stress better.",
+  blogBaileSaludMental_beneficiosListaTitle: 'When you dance, you simultaneously work on:',
+  blogBaileSaludMental_beneficiosItem1: 'Your body: cardiovascular exercise and coordination',
+  blogBaileSaludMental_beneficiosItem2: 'Your mood: release of endorphins and dopamine',
+  blogBaileSaludMental_beneficiosItem3: 'Your self-esteem: sense of achievement and belonging',
+  blogBaileSaludMental_beneficiosItem4:
+    'Your social connection: human contact in a positive environment',
+
+  // === STAT 1 ===
+  blogBaileSaludMental_stat1Label:
+    'more likely to appear in AI Overviews for pages with FAQ schema (optimization data)',
+
+  // === SECTION 2: Dancing and Anxiety ===
+  blogBaileSaludMental_section2Title: 'Dancing and Anxiety: From Blockage to Movement',
+  blogBaileSaludMental_section2Content:
+    "Anxiety—that mix of nerves, restlessness and anticipatory thoughts—is one of the main reasons many people don't dare to enter a dance class. Paradoxically, dancing is one of the tools that best helps manage it.",
+  blogBaileSaludMental_section2Content2:
+    'Several studies and reviews show that dance and dance-movement interventions significantly reduce anxiety levels in adults, especially when performed in a structured and accompanied manner. The effect is not just due to physical exercise: music, body expression, sense of achievement and belonging to a group also play a role.',
+
+  // === STAT 2 ===
+  blogBaileSaludMental_stat2Label: 'reduction in anxiety symptoms with dance interventions',
+
+  // === ANSWER CAPSULE 1 ===
+  blogBaileSaludMental_answerCapsule1: 'Direct answer: anxiety and dancing',
+  blogBaileSaludMental_answerQuestion1: 'Does dancing help reduce anxiety?',
+  blogBaileSaludMental_answerText1:
+    'Yes. A meta-analysis from Frontiers in Psychology (2019) with over 1,000 participants found that dance interventions significantly reduce anxiety symptoms. The combined effect of exercise, music, body expression and social connection makes dancing an especially effective tool.',
+
+  // === SECTION 3: Dancing and Depression ===
+  blogBaileSaludMental_section3Title: 'Dancing and Depression: When the Body Helps the Mind',
+  blogBaileSaludMental_section3Content:
+    'Depression is not resolved just by "thinking positive". It requires serious approaches and, increasingly, dancing appears in scientific literature as an ally. A 2024 meta-analysis focused on older adults found that those who participated in dance programs showed a significant reduction in depressive symptoms compared to non-dancers.',
+  blogBaileSaludMental_depresionListaTitle: 'Why does dancing work against depression?',
+  blogBaileSaludMental_depresionItem1:
+    '**Activates reward systems** in the brain, linked to music, movement and social contact',
+  blogBaileSaludMental_depresionItem2:
+    '**Introduces routine and achievable goals**: small weekly victories when motivation is low',
+  blogBaileSaludMental_depresionItem3:
+    '**Offers a space of value**: the person can feel capable beyond diagnoses or labels',
+
+  // === STAT 3 ===
+  blogBaileSaludMental_stat3Label: 'reduction in depressive symptoms in older adults who dance',
+
+  // === SECTION 4: Dancing and Stress ===
+  blogBaileSaludMental_section4Title: 'Dancing and Stress: A Complete Body-Mind Reset',
+  blogBaileSaludMental_section4Content:
+    'Sustained stress is one of the great enemies of current mental health, and here dancing has a privileged role. Dance-based interventions show that, after several weeks of practice, participants report less perceived stress, better emotional regulation and a greater sense of control over their own body.',
+  blogBaileSaludMental_section4Content2:
+    'Studies on group dancing and synchronized dancing point out that sharing rhythm with other people raises the pain threshold—an indirect indicator of endorphin release—and increases the sense of social cohesion. In plain words: dancing with others helps "wind down" from the day, clear your mind and remember that not everything in life is obligations.',
+
+  // === STAT 4 ===
+  blogBaileSaludMental_stat4Label: 'higher emotional well-being reported after dance programs',
+
+  // === ANSWER CAPSULE 2 ===
+  blogBaileSaludMental_answerCapsule2: 'Direct answer: dancing vs other exercises',
+  blogBaileSaludMental_answerQuestion2: 'Is dancing better than other exercises for mental health?',
+  blogBaileSaludMental_answerText2:
+    'A University of Sydney study (2024) found that dancing may be more effective than other types of exercise for improving mental health. The unique combination of movement, music, socialization and cognitive stimulation distinguishes it from purely physical exercises.',
+
+  // === SECTION 5: Dancing, Memory and Brain ===
+  blogBaileSaludMental_section5Title: 'Dancing, Memory and Brain: Thinking Better by Moving',
+  blogBaileSaludMental_section5Content:
+    "The benefits of dancing don't stop at mood. The combination of coordination, sequence memorization, musical listening and quick decision-making turns dancing into a true cognitive workout.",
+  blogBaileSaludMental_section5Content2:
+    'A classic New England Journal of Medicine study on leisure activities in older people found that **dancing was the only physical activity associated with a significant reduction in dementia risk**. Not walking, not swimming, not doing crosswords: only dancing showed that 76% protective effect.',
+
+  // === STAT 5 ===
+  blogBaileSaludMental_stat5Label: 'lower dementia risk (only physical activity with this effect)',
+
+  // === QUOTE ===
+  blogBaileSaludMental_quoteContent:
+    'Dancing integrates several brain functions at once: kinesthetic, rational, musical and emotional. This simultaneous activation seems to protect against cognitive decline.',
+
+  // === SECTION 6: What type of dance is best? ===
+  blogBaileSaludMental_section6Title: 'What Type of Dance is Best for Mental Health?',
+  blogBaileSaludMental_section6Content:
+    "The available evidence includes a wide variety of styles: Latin dances, tango, rumba, ballroom, contemporary, dance therapy, biodanza and more. The common conclusion is clear: **what matters is not so much the style, but that it's a structured, regular program enjoyed by the practitioner**.",
+  blogBaileSaludMental_tipoBaileListaTitle: 'Recommendations based on your goals:',
+  blogBaileSaludMental_tipoBaileItem1:
+    '**Latin dances (salsa, bachata)**: Ideal for working on social anxiety and self-esteem thanks to their social and playful component',
+  blogBaileSaludMental_tipoBaileItem2:
+    '**Therapeutic formats (dance-movement, biodanza)**: Focus on expression and body-emotion connection',
+  blogBaileSaludMental_tipoBaileItem3:
+    '**The universal key**: Finding a school where you feel accompanied, respected and motivated to keep coming week after week',
+
+  // === DEFINITION ===
+  blogBaileSaludMental_defTerm: 'Dance-movement therapy (DMT)',
+  blogBaileSaludMental_defContent:
+    'Dance-movement therapy is a form of psychotherapy that uses body movement as the main tool to promote emotional, cognitive, physical and social integration of the individual. It is recognized by international professional associations and has scientific evidence on its benefits for mental health.',
+
+  // === ANSWER CAPSULE 3 ===
+  blogBaileSaludMental_answerCapsule3: 'Direct answer: best type of dance',
+  blogBaileSaludMental_answerQuestion3: 'What is the best type of dance for mental health?',
+  blogBaileSaludMental_answerText3:
+    'There is no single "best" style. Studies show benefits with salsa, bachata, tango, contemporary and dance therapy. What matters is that it\'s structured (regular classes), social (in groups) and enjoyed. Latin dances stand out for combining exercise, music and social connection.',
+
+  // === SECTION 7: Dancing in Barcelona ===
+  blogBaileSaludMental_section7Title: 'Dancing in Barcelona: Much More Than Leisure',
+  blogBaileSaludMental_section7Content:
+    'Barcelona has established itself as one of the great epicenters of social dancing in Europe, with a strong salsa, bachata and other Latin styles scene. This means two important things for your mental health:',
+  blogBaileSaludMental_barcelonaListaTitle: 'Advantages of dancing in Barcelona:',
+  blogBaileSaludMental_barcelonaItem1:
+    "**There are options for all levels and ages**: from absolute beginners to advanced, you'll find your place",
+  blogBaileSaludMental_barcelonaItem2:
+    '**You can turn dancing into a lifestyle**: not just classes, but socials, festivals and an active community all year round',
+
+  // === TESTIMONIAL ===
+  blogBaileSaludMental_testimonial1: 'Student testimonial',
+  blogBaileSaludMental_testimonialText1:
+    "I arrived at Farray's with a lot of work anxiety. After 3 months of bachata classes, I not only dance better: I sleep better, I manage stress better and I've made incredible friends. Wednesday's class is my weekly therapy.",
+
+  // === TIP CALLOUT ===
+  blogBaileSaludMental_tipExperto:
+    '**Expert tip:** Choosing an academy that understands dancing as a wellness tool—not just as technique—makes the difference. Look for: schedules adapted to work life, well-cared-for groups, sensitive instructors and a clear culture of respect and community.',
+
+  // === CTA CALLOUT ===
+  blogBaileSaludMental_ctaClases:
+    "Ready to experience the benefits of dancing on your mental health? At [Farray's](/en/contact) we offer salsa and bachata classes for all levels. Your first trial class can be the start of a transformation. [See schedules and book](/en/schedules-prices).",
+
+  // === CONCLUSION ===
+  blogBaileSaludMental_conclusionTitle: 'Conclusion: Dancing as an Investment in Your Well-being',
+  blogBaileSaludMental_conclusionContent:
+    "Science is clear: dancing reduces anxiety, fights depression, relieves stress and protects your brain long-term. In a city with as much cultural offer as Barcelona, adding dancing to your routine doesn't just add leisure: it adds prevention and brain health. People come in with tired faces from long days and leave laughing, sweating and with different energy. That's not magic: it's neuroscience.",
+  blogBaileSaludMental_conclusionCTA:
+    'Why not start this week? Check our [class schedules](/en/schedules-prices) and discover how dancing can transform your mental well-being.',
+
+  // === FAQ SECTION ===
+  blogBaileSaludMental_faqTitle: 'Frequently Asked Questions: Dancing and Mental Health',
+  blogBaileSaludMental_faq1Question: 'Does dancing really help with anxiety?',
+  blogBaileSaludMental_faq1Answer:
+    'Yes, multiple scientific studies confirm it. A Frontiers in Psychology (2019) meta-analysis found significant anxiety reductions with dance interventions. The effect combines physical exercise, music, body expression and social connection.',
+  blogBaileSaludMental_faq2Question: 'How many times per week should I dance to notice benefits?',
+  blogBaileSaludMental_faq2Answer:
+    'Studies show benefits with 1-2 weekly sessions of 60-90 minutes for at least 8-12 weeks. Consistency is more important than intensity. A regular weekly class can already make a difference.',
+  blogBaileSaludMental_faq3Question: 'Is dancing better than going to the gym for mental health?',
+  blogBaileSaludMental_faq3Answer:
+    'A University of Sydney study (2024) suggests dancing may be more effective than other exercises for mental health. The combination of movement, music, socialization and cognitive challenge makes it unique. Both are beneficial, but dancing adds social and creative components.',
+  blogBaileSaludMental_faq4Question: 'Can I dance if I have diagnosed depression?',
+  blogBaileSaludMental_faq4Answer:
+    "Dancing can be an excellent complement to treatment, but it doesn't replace professional care. Consult with your doctor or therapist before starting. Many professionals recommend dancing as a complementary activity due to its proven benefits.",
+  blogBaileSaludMental_faq5Question: 'What type of dance is best for stress?',
+  blogBaileSaludMental_faq5Answer:
+    'Any dance you enjoy and practice regularly will help. Latin dances like salsa and bachata are especially effective due to their social component and cheerful rhythms. What matters is that you like it and can maintain it as a habit.',
+  blogBaileSaludMental_faq6Question: 'Does dancing help with stress-related insomnia?',
+  blogBaileSaludMental_faq6Answer:
+    'Yes. The physical exercise from dancing helps regulate the sleep cycle, and the reduction of stress and anxiety contributes to better rest. Many students report improving their sleep quality after starting regular classes.',
+  blogBaileSaludMental_faq7Question: 'Do I need previous experience to get mental benefits?',
+  blogBaileSaludMental_faq7Answer:
+    'No. Mental health benefits are obtained regardless of technical level. Beginners experience the same positive effects. In fact, the challenge of learning something new stimulates the brain even more.',
+  blogBaileSaludMental_faq8Question: 'Why does dancing protect against dementia?',
+  blogBaileSaludMental_faq8Answer:
+    "Dancing combines physical exercise, sequence memorization, quick decision-making, coordination and musical processing. This multiple and simultaneous stimulation of different brain areas seems to have a unique protective effect that other exercises don't achieve.",
+
+  // === REFERENCES ===
+  blogBaileSaludMental_referencesIntro:
+    'This article is based on scientific research published in peer-reviewed journals:',
+  blogBaileSaludMental_refFrontiersTitle:
+    'Effects of Dance Movement Therapy on Health-Related Outcomes',
+  blogBaileSaludMental_refFrontiersDesc:
+    'Meta-analysis by Koch et al. (2019) analyzing the effects of dance-movement therapy on psychological health outcomes, including anxiety and depression.',
+  blogBaileSaludMental_refPMC2024Title: 'Dance Interventions on Psychological and Cognitive Health',
+  blogBaileSaludMental_refPMC2024Desc:
+    'Systematic review by Fong Yan et al. (2024) on the effectiveness of dance interventions on psychological and cognitive health.',
+  blogBaileSaludMental_refPMCDepTitle:
+    'Effect of Dancing on Depression and Anxiety in Older Adults',
+  blogBaileSaludMental_refPMCDepDesc:
+    'Meta-analysis by Rodrigues et al. (2024) on the effect of dance interventions on depression and anxiety in older adults.',
+  blogBaileSaludMental_refSydneyTitle:
+    'Dancing May Be Better Than Other Exercise for Mental Health',
+  blogBaileSaludMental_refSydneyDesc:
+    'University of Sydney research (2024) comparing the effects of dancing with other types of exercise on mental health.',
+  blogBaileSaludMental_refNEJMTitle: 'Leisure Activities and the Risk of Dementia',
+  blogBaileSaludMental_refNEJMDesc:
+    'Classic study by Verghese et al. (2003) that identified dancing as the only physical activity associated with reduced dementia risk (76%).',
+  blogBaileSaludMental_refHarvardTitle: 'Dancing and the Brain',
+  blogBaileSaludMental_refHarvardDesc:
+    'Harvard Medical School publication on how dancing activates multiple brain systems and its cognitive benefits.',
+  blogBaileSaludMental_refPMCScopingTitle: 'Mental Health in Dance: A Scoping Review',
+  blogBaileSaludMental_refPMCScopingDesc:
+    'Review by Bräuninger et al. (2023) on the current state of research in mental health and dance.',
+  blogBaileSaludMental_refSyncTitle: 'Silent Disco: Dancing in Synchrony and Endorphins',
+  blogBaileSaludMental_refSyncDesc:
+    'Study by Brown & Vaughn (2016) demonstrating that dancing in synchrony raises pain threshold, indicating endorphin release.',
 
   // =============================================================================
   // BOOKING WIDGET - Enterprise Booking System
@@ -18154,6 +18365,10 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   booking_class_retry: 'Retry',
   booking_class_share: 'Share link to this class',
   booking_class_copied: 'Link copied',
+  booking_class_info: 'View class information',
+  booking_modal_close: 'Close',
+  booking_modal_select: 'Book this class',
+  booking_modal_no_description: 'No description available for this class.',
   booking_class_spots: '{spots} spots available',
   booking_class_full: 'Full',
   booking_class_select: 'Select',
@@ -18246,6 +18461,11 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   booking_success_reminder: 'We will remind you 24h before the class',
   booking_success_cta: 'View full schedule',
   booking_success_close: 'Close',
+
+  // Calendar Export
+  booking_calendar_google: 'Add to Google Calendar',
+  booking_calendar_download: 'Download (.ics)',
+  booking_calendar_description: "Dance class with {instructor} at Farray's Center",
 
   // Error State
   booking_error_title: 'Processing error',

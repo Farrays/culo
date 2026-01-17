@@ -12258,7 +12258,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogBeneficiosSalsa_stat2Source: 'New England Journal of Medicine',
   blogBeneficiosSalsa_ctaTitle: '¿Listo para experimentar estos beneficios?',
   blogBeneficiosSalsa_ctaText:
-    "En Farray's International Dance Center tenemos clases de salsa cubana para todos los niveles. Profesores cubanos con más de 20 años de experiencia te guiarán desde tus primeros pasos hasta movimientos avanzados.",
+    "`A Farray's International Dance Center tenim classes de salsa cubana per a tots els nivells. Professors cubans amb més de 20 anys d'experiència et guiaran des dels teus primers passos fins a moviments avançats.`",
   blogBeneficiosSalsa_ctaButton: 'Reservar Classe de Benvinguda',
 
   // =============================================
@@ -16171,22 +16171,22 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   danceClassesHub_style_stretching: `Stretching & Flexibilidad`,
   danceClassesHub_style_cuerpo_fit_desc: `Entrenamiento full body amb elementos de danza que quema 400-500 calorías per sesión. Cardio intenso, tonificación muscular y diversión asegurada. Ideal per a quienes buscan resultats visibles sense experiència previa en ball. Classe híbrida perfecta per a principiantes.`,
   danceClassesHub_style_stretching_desc: `Estiramientos profundos y flexibilidad activa per a mejorar tu rango de moviment. Técnicas de backbending, splits y flexibilidad articular amb enfoque en prevención de lesiones. Perfecto per a bailarines y no bailarines que buscan mayor movilidad.`,
-  dhV3HeroStudents: `+15.000 alumnes formados`,
+  dhV3HeroStudents: `+15.000 alumnes formats`,
   dhV3PrepareTitle: `Prepara tu primera classe de Dancehall`,
   dhV3PrepareSubtitle: `Tot el que necessites saber abans de venir`,
-  twerkHeroStudents: `+15.000 alumnes formados`,
-  afroHeroStudents: `+15.000 alumnes formados`,
-  sxrHeroStudents: `+15.000 alumnes formados`,
-  rcbHeroStudents: `+15.000 alumnes formados`,
-  femHeroStudents: `+15.000 alumnes formados`,
-  sexystyleHeroStudents: `+15.000 alumnes formados`,
-  modernjazzHeroStudents: `+15.000 alumnes formados`,
-  balletHeroStudents: `+15.000 alumnes formados`,
-  contemporaneoHeroStudents: `+15.000 alumnes formados`,
-  afrocontemporaneoHeroStudents: `+15.000 alumnes formados`,
-  afrojazzHeroStudents: `+15.000 alumnes formados`,
-  hiphopHeroStudents: `+15.000 alumnes formados`,
-  salsaCubanaHeroStudents: `+15.000 alumnes formados`,
+  twerkHeroStudents: `+15.000 alumnes formats`,
+  afroHeroStudents: `+15.000 alumnes formats`,
+  sxrHeroStudents: `+15.000 alumnes formats`,
+  rcbHeroStudents: `+15.000 alumnes formats`,
+  femHeroStudents: `+15.000 alumnes formats`,
+  sexystyleHeroStudents: `+15.000 alumnes formats`,
+  modernjazzHeroStudents: `+15.000 alumnes formats`,
+  balletHeroStudents: `+15.000 alumnes formats`,
+  contemporaneoHeroStudents: `+15.000 alumnes formats`,
+  afrocontemporaneoHeroStudents: `+15.000 alumnes formats`,
+  afrojazzHeroStudents: `+15.000 alumnes formats`,
+  hiphopHeroStudents: `+15.000 alumnes formats`,
+  salsaCubanaHeroStudents: `+15.000 alumnes formats`,
   cuerpofitBreadcrumbHome: `Inici`,
   cuerpofitBreadcrumbClasses: `Classes`,
   cuerpofitBreadcrumbCategory: `Entrenament Ballarins`,
@@ -16348,7 +16348,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   bailemanananasHeroSubtitle: `Y no son classes cualquiera...`,
   bailemanananasHeroDesc: `Empieza tu día bailando: Contemporáneo, Ballet, Modern Jazz, Sexy Style, Reggaeton y Salsa Lady Style. Un montón de classes semanales, perfectas per a quien trabaja per las tardes o quiere aprovechar las mañanas.`,
   bailemanananasHeroLocation: `Academia del CID-UNESCO · Entre Plaça Espanya i Sants, Barcelona`,
-  bailemanananasHeroStudents: `+15.000 alumnes formados`,
+  bailemanananasHeroStudents: `+15.000 alumnes formats`,
   bailemanananasClassesPerWeek: `classes per setmana`,
   bailemanananasCTA1: `Veure Horaris de Mañanas`,
   bailemanananasCTA1Subtext: `Grups reduïts`,
@@ -16391,12 +16391,12 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   bailemanananasWhyChooseSubtitle: `Aprende a ballar en Farray's International Dance Center`,
   bailemanananasWhyChoose1Title: `+8 anys de experiència`,
   bailemanananasWhyChoose1Desc: `Academia fundada per Yunaisy Farray en 2017, consolidada como referente del ball en Barcelona amb reconeixement internacional.`,
-  bailemanananasWhyChoose2Title: `+15.000 alumnes formados y 1.500 activos`,
+  bailemanananasWhyChoose2Title: `+15.000 alumnes formats y 1.500 activos`,
   bailemanananasWhyChoose2Desc: `Miles de personas de todos los nivells han transformado su vida a través del ball amb nosotros.`,
   bailemanananasWhyChoose3Title: `Academia reconocida per el CID UNESCO`,
   bailemanananasWhyChoose3Desc: `Dirigida per Yunaisy Farray, actriz de Street Dance 2 y una de las maestras más reconocidas del mundo.`,
   bailemanananasWhyChoose4Title: `Profesores amb formació real`,
-  bailemanananasWhyChoose4Desc: `Alejandro Miñoso y Yasmina Fernández, bailarines profesionales formados en el Mètode Farray. Técnica, pasión y experiència en cada classe.`,
+  bailemanananasWhyChoose4Desc: `Alejandro Miñoso i Yasmina Fernández, ballarins professionals formats en el Mètode Farray. Tècnica, passió i experiència en cada classe.`,
   bailemanananasWhyChoose5Title: `Academia multidisciplinar`,
   bailemanananasWhyChoose5Desc: `25+ estilos de ball diferentes, 100+ horas de classe semanales. Variedad total per a que encuentres tu estil.`,
   bailemanananasWhyChoose6Title: `Gala en Teatro Victoria`,
@@ -16489,10 +16489,10 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   bailemanananasCitableHorario: `Horario classes ball mañanas Barcelona: Lunes/Miércoles/Jueves de 10:00 a 13:00 en Farray's Center, Calle Entença 100.`,
   bailemanananasCitableUbicacion: `Ubicación: Farray's International Dance Center, Calle Entença 100, 08015 Barcelona. Entre Plaza España y Sants. Metro L1/L3/L5.`,
   bailemanananasCitableMetodologia: `Mètode Farray: metodología exclusiva de ensenyament de ball desarrollada per Yunaisy Farray, amb reconeixement internacional CID-UNESCO.`,
-  bailemanananasCitableStatistics: `Estadísticas Farray's Center: +8 anys experiència, +1500 alumnos activos, +15000 estudiantes formados, 13 classes matinales, 2 professors especializados.`,
+  bailemanananasCitableStatistics: `Estadístiques Farray's Center: +8 anys experiència, +1500 alumnes actius, +15000 estudiants formats, 13 classes matinals, 2 professors especialitzats.`,
   bailemanananasCitableFact1: `Classes de ball mañanas Barcelona: única acadèmia amb 13 classes matinales diferentes de lunes a jueves.`,
   bailemanananasCitableFact2: `Ballar per las mañanas quema 300-400 kcal per classe y mejora el estado de ánimo durante todo el día.`,
-  bailemanananasCitableFact3: `Profesores de mañanas: Alejandro Miñoso (danza) y Yasmina Fernández (estilos latinos/sensuales), formados en Mètode Farray.`,
+  bailemanananasCitableFact3: `Professors de matins: Alejandro Miñoso (dansa) i Yasmina Fernández (estils llatins/sensuals), formats en el Mètode Farray.`,
   bailemanananasCourseSchemaName: `Classes de Ball per las Mañanas en Barcelona - Farray's Center`,
   bailemanananasCourseSchemaDesc: `Programa de classes de ball matinales amb 13 opciones semanales: Contemporáneo, Ballet, Modern Jazz, Sexy Style, Reggaeton y más. Horario de 10:00 a 13:00, lunes a jueves.`,
   verClasesBaile: `Ver Classes de Ball`,
@@ -16600,7 +16600,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   fullBodyCardioHeroSubtitle: `Entrenament Full Body + Cardio Dance que transforma`,
   fullBodyCardioHeroDesc: `Crema calories, tonifica el teu cos i diverteix-te. L'entrenament de ballarins professionals, adaptat per a tu.`,
   fullBodyCardioHeroLocation: `Farray's Center · Entre Plaça Espanya i Sants, Barcelona`,
-  fullBodyCardioHeroStudents: `+15.000 alumnes formados`,
+  fullBodyCardioHeroStudents: `+15.000 alumnes formats`,
   fullBodyCardioCTAGroup: `Opcions d'inscripció`,
   fullBodyCardioCTA1: `Fes-te Soci Ara`,
   fullBodyCardioCTA1Subtext: `Queden poques places`,
@@ -18355,6 +18355,230 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
     "Estudi que mostra com ballar en sincronia amb altres augmenta el llindar del dolor, un indicador de major alliberament d'endorfines.",
 
   // =============================================================================
+  // BLOG: BALL I SALUT MENTAL - Beneficis científics del ball
+  // =============================================================================
+
+  // === META & BASIC INFO ===
+  blogBaileSaludMental_title:
+    'Ball i Salut Mental: Com Ballar Redueix Ansietat, Depressió i Estrès',
+  blogBaileSaludMental_metaDescription:
+    'Descobreix els beneficis científicament provats del ball per a la salut mental. Redueix ansietat (47%), combat la depressió i millora la memòria. Estudis de Harvard, NEJM i més.',
+  blogBaileSaludMental_excerpt:
+    'Ballar no només fa sentir bé: estudis de Harvard, NEJM i Frontiers demostren que redueix ansietat, depressió i estrès mentre protegeix el teu cervell.',
+  blogBaileSaludMental_breadcrumbCurrent: 'Ball i Salut Mental',
+
+  // === SUMMARY BULLETS (GEO Critical) ===
+  blogBaileSaludMental_summaryBullet1:
+    "El ball redueix símptomes d'ansietat fins a un 47% segons meta-anàlisis (Frontiers in Psychology)",
+  blogBaileSaludMental_summaryBullet2:
+    'Ballar regularment disminueix el risc de demència un 76% (NEJM, únic exercici amb aquest efecte)',
+  blogBaileSaludMental_summaryBullet3:
+    'Les intervencions de dansa superen altres exercicis en millora de salut mental (University of Sydney)',
+  blogBaileSaludMental_summaryBullet4:
+    "A [Farray's](/ca/contacte) oferim classes de salsa i bachata en un ambient segur i sense judicis",
+
+  // === SUMMARY STATS ===
+  blogBaileSaludMental_statDementiaLabel: 'menys risc de demència en balladors freqüents',
+  blogBaileSaludMental_statAnxietyLabel: "reducció de símptomes d'ansietat",
+
+  // === INTRO ===
+  blogBaileSaludMental_intro:
+    "Ballar no només fa sentir bé: també és una de les formes més potents i completes de cuidar la ment. Cada vegada més estudis científics mostren que el ball redueix ansietat, depressió i estrès, millora l'ànim i enforteix el cervell. Això és especialment rellevant per a una ciutat com Barcelona, on la vida va ràpid i l'estrès s'acumula.",
+  blogBaileSaludMental_intro2:
+    "En aquest article t'expliquem què diu la ciència sobre el *ball i la salut mental*, amb referències a estudis publicats en revistes com Frontiers in Psychology, New England Journal of Medicine i Harvard Medical School.",
+
+  // === SECTION 1: Beneficis del ball per a la salut mental ===
+  blogBaileSaludMental_section1Title: 'Beneficis del Ball per a la Salut Mental',
+  blogBaileSaludMental_section1Content:
+    "Parlar de *ball i salut mental* ja no és només una intuïció romàntica; és un tema seriós d'investigació científica. Revisions sistemàtiques recents assenyalen que participar en intervencions de ball —des de danses llatines fins a tango, contemporani o dansa teràpia— millora el benestar psicològic, redueix símptomes d'ansietat i depressió i ajuda a gestionar millor l'estrès diari.",
+  blogBaileSaludMental_beneficiosListaTitle: 'Quan balles, treballes simultàniament:',
+  blogBaileSaludMental_beneficiosItem1: 'El teu cos: exercici cardiovascular i coordinació',
+  blogBaileSaludMental_beneficiosItem2: "El teu estat d'ànim: alliberament d'endorfines i dopamina",
+  blogBaileSaludMental_beneficiosItem3: "La teva autoestima: sensació d'èxit i pertinença",
+  blogBaileSaludMental_beneficiosItem4:
+    'La teva connexió social: contacte humà en un entorn positiu',
+
+  // === STAT 1 ===
+  blogBaileSaludMental_stat1Label:
+    "més probabilitat d'aparèixer en AI Overviews per a pàgines amb FAQ schema (dada d'optimització)",
+
+  // === SECTION 2: Ball i Ansietat ===
+  blogBaileSaludMental_section2Title: 'Ball i Ansietat: Del Bloqueig al Moviment',
+  blogBaileSaludMental_section2Content:
+    "L'ansietat —aquesta barreja de nervis, inquietud i pensaments anticipatoris— és un dels grans motius pels quals moltes persones no s'animen a entrar en una classe de ball. Paradoxalment, el ball és una de les eines que millor ajuda a gestionar-la.",
+  blogBaileSaludMental_section2Content2:
+    "Diversos estudis i revisions mostren que les intervencions de dansa i dansa-moviment redueixen de forma significativa els nivells d'ansietat en adults, especialment quan es realitzen de manera estructurada i acompanyada. L'efecte no es deu només a l'exercici físic: influeixen també la música, l'expressió corporal, la sensació d'èxit i la pertinença a un grup.",
+
+  // === STAT 2 ===
+  blogBaileSaludMental_stat2Label: "reducció de símptomes d'ansietat amb intervencions de dansa",
+
+  // === ANSWER CAPSULE 1 ===
+  blogBaileSaludMental_answerCapsule1: 'Resposta directa: ansietat i ball',
+  blogBaileSaludMental_answerQuestion1: "El ball ajuda a reduir l'ansietat?",
+  blogBaileSaludMental_answerText1:
+    "Sí. Una meta-anàlisi de Frontiers in Psychology (2019) amb més de 1.000 participants va trobar que les intervencions de dansa redueixen significativament els símptomes d'ansietat. L'efecte combinat d'exercici, música, expressió corporal i connexió social fa del ball una eina especialment efectiva.",
+
+  // === SECTION 3: Ball i Depressió ===
+  blogBaileSaludMental_section3Title: 'Ball i Depressió: Quan el Cos Ajuda a la Ment',
+  blogBaileSaludMental_section3Content:
+    'La depressió no es resol només amb "pensar en positiu". Requereix abordatges seriosos i, cada vegada més, el ball apareix a la literatura científica com a aliat. Una meta-anàlisi de 2024 centrada en adults grans va trobar que els qui van participar en programes de ball van mostrar una reducció significativa de símptomes depressius enfront dels qui no ballaven.',
+  blogBaileSaludMental_depresionListaTitle: 'Per què funciona el ball contra la depressió?',
+  blogBaileSaludMental_depresionItem1:
+    '**Activa sistemes de recompensa** al cervell, vinculats a la música, al moviment i al contacte social',
+  blogBaileSaludMental_depresionItem2:
+    '**Introdueix rutina i objectius assolibles**: petites victòries setmanals quan la motivació és baixa',
+  blogBaileSaludMental_depresionItem3:
+    '**Ofereix un espai de valor**: la persona pot sentir-se capaç més enllà de diagnòstics o etiquetes',
+
+  // === STAT 3 ===
+  blogBaileSaludMental_stat3Label: 'reducció de símptomes depressius en adults grans que ballen',
+
+  // === SECTION 4: Ball i Estrès ===
+  blogBaileSaludMental_section4Title: 'Ball i Estrès: Un Reinici Complet Cos-Ment',
+  blogBaileSaludMental_section4Content:
+    "L'estrès sostingut és un dels grans enemics de la salut mental actual, i aquí el ball té un paper privilegiat. Les intervencions basades en dansa mostren que, després de diverses setmanes de pràctica, els participants reporten menys estrès percebut, millor regulació emocional i una major sensació de control sobre el propi cos.",
+  blogBaileSaludMental_section4Content2:
+    'Estudis sobre ball en grup i ball sincronitzat assenyalen que compartir ritme amb altres persones eleva el llindar del dolor —un indicador indirecte d\'alliberament d\'endorfines— i augmenta la sensació de cohesió social. En paraules planes: ballar amb altres ajuda a "baixar les revolucions" del dia, netejar la ment i recordar que no tot a la vida són obligacions.',
+
+  // === STAT 4 ===
+  blogBaileSaludMental_stat4Label:
+    'major benestar emocional reportat després de programes de dansa',
+
+  // === ANSWER CAPSULE 2 ===
+  blogBaileSaludMental_answerCapsule2: 'Resposta directa: ball vs altres exercicis',
+  blogBaileSaludMental_answerQuestion2:
+    'És el ball millor que altres exercicis per a la salut mental?',
+  blogBaileSaludMental_answerText2:
+    "Un estudi de la University of Sydney (2024) va trobar que el ball pot ser més efectiu que altres tipus d'exercici per millorar la salut mental. La combinació única de moviment, música, socialització i estimulació cognitiva el distingeix d'exercicis purament físics.",
+
+  // === SECTION 5: Ball, Memòria i Cervell ===
+  blogBaileSaludMental_section5Title: 'Ball, Memòria i Cervell: Pensar Millor Movent-se',
+  blogBaileSaludMental_section5Content:
+    "Els beneficis del ball no es queden en l'estat d'ànim. La combinació de coordinació, memorització de seqüències, escolta musical i presa de decisions ràpides converteix el ball en un veritable entrenament cognitiu.",
+  blogBaileSaludMental_section5Content2:
+    "Un estudi clàssic del New England Journal of Medicine sobre activitats d'oci en persones grans va trobar que **el ball era l'única activitat física associada a una reducció significativa del risc de demència**. Ni caminar, ni nedar, ni fer mots encreuats: només ballar va mostrar aquest efecte protector del 76%.",
+
+  // === STAT 5 ===
+  blogBaileSaludMental_stat5Label:
+    'menys risc de demència (única activitat física amb aquest efecte)',
+
+  // === QUOTE ===
+  blogBaileSaludMental_quoteContent:
+    'El ball integra diverses funcions cerebrals alhora: cinestèsica, racional, musical i emocional. Aquesta activació simultània sembla protegir contra el deteriorament cognitiu.',
+
+  // === SECTION 6: Quin tipus de ball és millor? ===
+  blogBaileSaludMental_section6Title: 'Quin Tipus de Ball és Millor per a la Salut Mental?',
+  blogBaileSaludMental_section6Content:
+    "L'evidència disponible inclou una gran varietat d'estils: danses llatines, tango, rumba, balls de saló, contemporani, dansa teràpia, biodansa i més. La conclusió comuna és clara: **l'important no és tant l'estil, sinó que sigui un programa estructurat, regular i gaudit per qui el practica**.",
+  blogBaileSaludMental_tipoBaileListaTitle: 'Recomanacions segons els teus objectius:',
+  blogBaileSaludMental_tipoBaileItem1:
+    '**Danses llatines (salsa, bachata)**: Ideals per treballar ansietat social i autoestima gràcies al seu component social i lúdic',
+  blogBaileSaludMental_tipoBaileItem2:
+    "**Formats terapèutics (dansa-moviment, biodansa)**: Se centren en l'expressió i la connexió cos-emoció",
+  blogBaileSaludMental_tipoBaileItem3:
+    '**La clau universal**: Trobar una escola on et sentis acompanyat, respectat i motivat a seguir venint setmana rere setmana',
+
+  // === DEFINITION ===
+  blogBaileSaludMental_defTerm: 'Dansa-moviment teràpia (DMT)',
+  blogBaileSaludMental_defContent:
+    "La dansa-moviment teràpia és una forma de psicoteràpia que utilitza el moviment corporal com a eina principal per promoure la integració emocional, cognitiva, física i social de l'individu. Està reconeguda per associacions professionals internacionals i compta amb evidència científica sobre els seus beneficis per a la salut mental.",
+
+  // === ANSWER CAPSULE 3 ===
+  blogBaileSaludMental_answerCapsule3: 'Resposta directa: millor tipus de ball',
+  blogBaileSaludMental_answerQuestion3: 'Quin és el millor tipus de ball per a la salut mental?',
+  blogBaileSaludMental_answerText3:
+    'No hi ha un únic "millor" estil. Els estudis mostren beneficis amb salsa, bachata, tango, contemporani i dansa teràpia. L\'important és que sigui estructurat (classes regulars), social (en grup) i gaudit. Les danses llatines destaquen per combinar exercici, música i connexió social.',
+
+  // === SECTION 7: Ballar a Barcelona ===
+  blogBaileSaludMental_section7Title: 'Ballar a Barcelona: Molt Més que Oci',
+  blogBaileSaludMental_section7Content:
+    "Barcelona s'ha consolidat com un dels grans epicentres de ball social a Europa, amb una escena forta de salsa, bachata i altres estils llatins. Això significa dues coses importants per a la teva salut mental:",
+  blogBaileSaludMental_barcelonaListaTitle: 'Avantatges de ballar a Barcelona:',
+  blogBaileSaludMental_barcelonaItem1:
+    '**Hi ha opcions per a tots els nivells i edats**: des de principiants absoluts fins a avançats, trobaràs el teu lloc',
+  blogBaileSaludMental_barcelonaItem2:
+    "**Pots convertir el ball en estil de vida**: no només classes, sinó socials, festivals i una comunitat activa tot l'any",
+
+  // === TESTIMONIAL ===
+  blogBaileSaludMental_testimonial1: "Testimoni d'alumna",
+  blogBaileSaludMental_testimonialText1:
+    "Vaig arribar a Farray's amb molta ansietat laboral. Després de 3 mesos de classes de bachata, no només ballo millor: dormo millor, gestiono millor l'estrès i he fet amics increïbles. La classe dels dimecres és la meva teràpia setmanal.",
+
+  // === TIP CALLOUT ===
+  blogBaileSaludMental_tipExperto:
+    "**Consell d'experta:** Escollir una acadèmia que entengui el ball com a eina de benestar —no només com a tècnica— marca la diferència. Busca: horaris adaptats a la vida laboral, grups cuidats, professorat amb sensibilitat i una cultura clara de respecte i comunitat.",
+
+  // === CTA CALLOUT ===
+  blogBaileSaludMental_ctaClases:
+    "Preparat per experimentar els beneficis del ball en la teva salut mental? A [Farray's](/ca/contacte) oferim classes de salsa i bachata per a tots els nivells. La teva primera classe de prova pot ser l'inici d'una transformació. [Veure horaris i reservar](/ca/horaris-preus).",
+
+  // === CONCLUSION ===
+  blogBaileSaludMental_conclusionTitle: 'Conclusió: El Ball Com a Inversió en el Teu Benestar',
+  blogBaileSaludMental_conclusionContent:
+    "La ciència és clara: ballar redueix ansietat, combat la depressió, alleuja l'estrès i protegeix el teu cervell a llarg termini. En una ciutat amb tanta oferta cultural com Barcelona, incorporar ball a la teva rutina no només suma oci: suma prevenció i salut cerebral. La gent entra amb cara de jornada llarga i surt rient, suant i amb altra energia. Això no és màgia: és neurociència.",
+  blogBaileSaludMental_conclusionCTA:
+    'Per què no començar aquesta setmana? Consulta els nostres [horaris de classes](/ca/horaris-preus) i descobreix com el ball pot transformar el teu benestar mental.',
+
+  // === FAQ SECTION ===
+  blogBaileSaludMental_faqTitle: 'Preguntes Freqüents: Ball i Salut Mental',
+  blogBaileSaludMental_faq1Question: "Realment el ball ajuda amb l'ansietat?",
+  blogBaileSaludMental_faq1Answer:
+    "Sí, múltiples estudis científics ho confirmen. Una meta-anàlisi de Frontiers in Psychology (2019) va trobar reduccions significatives d'ansietat amb intervencions de dansa. L'efecte combina exercici físic, música, expressió corporal i connexió social.",
+  blogBaileSaludMental_faq2Question:
+    'Quantes vegades per setmana he de ballar per notar beneficis?',
+  blogBaileSaludMental_faq2Answer:
+    'Els estudis mostren beneficis amb 1-2 sessions setmanals de 60-90 minuts durant almenys 8-12 setmanes. La constància és més important que la intensitat. Una classe setmanal regular ja pot marcar diferència.',
+  blogBaileSaludMental_faq3Question: 'És el ball millor que anar al gimnàs per a la salut mental?',
+  blogBaileSaludMental_faq3Answer:
+    'Un estudi de la University of Sydney (2024) suggereix que el ball pot ser més efectiu que altres exercicis per a la salut mental. La combinació de moviment, música, socialització i repte cognitiu el fa únic. Ambdós són beneficiosos, però el ball afegeix components socials i creatius.',
+  blogBaileSaludMental_faq4Question: 'Puc ballar si tinc depressió diagnosticada?',
+  blogBaileSaludMental_faq4Answer:
+    "El ball pot ser un complement excel·lent al tractament, però no substitueix l'atenció professional. Consulta amb el teu metge o terapeuta abans de començar. Molts professionals recomanen el ball com a activitat complementària pels seus beneficis demostrats.",
+  blogBaileSaludMental_faq5Question: "Quin tipus de ball és millor per a l'estrès?",
+  blogBaileSaludMental_faq5Answer:
+    "Qualsevol ball que gaudeixis i practiquis regularment t'ajudarà. Les danses llatines com salsa i bachata són especialment efectives pel seu component social i ritmes alegres. L'important és que t'agradi i puguis mantenir-ho com a hàbit.",
+  blogBaileSaludMental_faq6Question: "El ball ajuda amb l'insomni relacionat amb l'estrès?",
+  blogBaileSaludMental_faq6Answer:
+    "Sí. L'exercici físic del ball ajuda a regular el cicle de son, i la reducció d'estrès i ansietat contribueix a millor descans. Molts alumnes reporten millorar la seva qualitat de son després de començar classes regulars.",
+  blogBaileSaludMental_faq7Question: 'Necessito experiència prèvia per obtenir beneficis mentals?',
+  blogBaileSaludMental_faq7Answer:
+    "No. Els beneficis per a la salut mental s'obtenen independentment del nivell tècnic. Els principiants experimenten els mateixos efectes positius. De fet, el repte d'aprendre alguna cosa nova estimula encara més el cervell.",
+  blogBaileSaludMental_faq8Question: 'Per què el ball protegeix contra la demència?',
+  blogBaileSaludMental_faq8Answer:
+    'El ball combina exercici físic, memorització de seqüències, presa de decisions ràpides, coordinació i processament musical. Aquesta estimulació múltiple i simultània de diferents àrees cerebrals sembla tenir un efecte protector únic que altres exercicis no aconsegueixen.',
+
+  // === REFERENCES ===
+  blogBaileSaludMental_referencesIntro:
+    'Aquest article està basat en investigació científica publicada en revistes revisades per parells:',
+  blogBaileSaludMental_refFrontiersTitle:
+    'Effects of Dance Movement Therapy on Health-Related Outcomes',
+  blogBaileSaludMental_refFrontiersDesc:
+    'Meta-anàlisi de Koch et al. (2019) que analitza els efectes de la dansa-moviment teràpia en resultats de salut psicològica, incloent ansietat i depressió.',
+  blogBaileSaludMental_refPMC2024Title: 'Dance Interventions on Psychological and Cognitive Health',
+  blogBaileSaludMental_refPMC2024Desc:
+    "Revisió sistemàtica de Fong Yan et al. (2024) sobre l'efectivitat d'intervencions de dansa en salut psicològica i cognitiva.",
+  blogBaileSaludMental_refPMCDepTitle:
+    'Effect of Dancing on Depression and Anxiety in Older Adults',
+  blogBaileSaludMental_refPMCDepDesc:
+    "Meta-anàlisi de Rodrigues et al. (2024) sobre l'efecte de les intervencions de ball en depressió i ansietat en adults grans.",
+  blogBaileSaludMental_refSydneyTitle:
+    'Dancing May Be Better Than Other Exercise for Mental Health',
+  blogBaileSaludMental_refSydneyDesc:
+    "Investigació de la University of Sydney (2024) que compara els efectes del ball amb altres tipus d'exercici en la salut mental.",
+  blogBaileSaludMental_refNEJMTitle: 'Leisure Activities and the Risk of Dementia',
+  blogBaileSaludMental_refNEJMDesc:
+    "Estudi clàssic de Verghese et al. (2003) que va identificar el ball com l'única activitat física associada a reducció del risc de demència (76%).",
+  blogBaileSaludMental_refHarvardTitle: 'Dancing and the Brain',
+  blogBaileSaludMental_refHarvardDesc:
+    'Publicació de Harvard Medical School sobre com el ball activa múltiples sistemes cerebrals i els seus beneficis cognitius.',
+  blogBaileSaludMental_refPMCScopingTitle: 'Mental Health in Dance: A Scoping Review',
+  blogBaileSaludMental_refPMCScopingDesc:
+    "Revisió de Bräuninger et al. (2023) sobre l'estat actual de la investigació en salut mental i dansa.",
+  blogBaileSaludMental_refSyncTitle: 'Silent Disco: Dancing in Synchrony and Endorphins',
+  blogBaileSaludMental_refSyncDesc:
+    "Estudi de Brown & Vaughn (2016) que demostra que ballar en sincronia eleva el llindar del dolor, indicant alliberament d'endorfines.",
+
+  // =============================================================================
   // BOOKING WIDGET - Sistema de Reserves Enterprise
   // =============================================================================
 
@@ -18386,6 +18610,10 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_class_retry: 'Reintentar',
   booking_class_share: "Compartir enllaç d'aquesta classe",
   booking_class_copied: 'Enllaç copiat',
+  booking_class_info: 'Veure informació de la classe',
+  booking_modal_close: 'Tancar',
+  booking_modal_select: 'Reservar aquesta classe',
+  booking_modal_no_description: 'No hi ha descripció disponible per a aquesta classe.',
   booking_class_spots: '{spots} places disponibles',
   booking_class_full: 'Complet',
   booking_class_select: 'Seleccionar',
@@ -18478,6 +18706,11 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_success_reminder: 'Et recordarem 24h abans de la classe',
   booking_success_cta: 'Veure horaris complets',
   booking_success_close: 'Tancar',
+
+  // Calendar Export
+  booking_calendar_google: 'Afegir a Google Calendar',
+  booking_calendar_download: 'Descarregar (.ics)',
+  booking_calendar_description: "Classe de ball amb {instructor} a Farray's Center",
 
   // Error State
   booking_error_title: 'Error en processar',

@@ -113,35 +113,28 @@ const Teachers: React.FC = () => {
           </div>
         </AnimateOnScroll>
 
-        <div className="relative flex flex-col items-center gap-6 md:gap-8 max-w-5xl mx-auto">
+        <div className="relative flex flex-col items-center gap-8 max-w-6xl mx-auto">
           {FEATURED_TEACHERS.map((teacher, index) => (
             <AnimateOnScroll
               key={teacher.id}
-              delay={index * 100}
-              className="w-full [perspective:1000px]"
+              delay={index * 150}
+              className="w-full max-w-4xl"
               style={{ zIndex: index }}
             >
               <article
-                className={`group bg-gradient-to-br from-black/60 to-black/40 backdrop-blur-md border rounded-2xl shadow-lg transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.01)] hover:shadow-accent-glow p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 md:gap-8 ${
-                  teacher.isDirector
-                    ? 'border-primary-accent/70 hover:border-primary-accent'
-                    : 'border-primary-dark/50 hover:border-primary-accent/70'
+                className={`group bg-black/50 backdrop-blur-md border rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:!z-50 hover:border-primary-accent hover:shadow-accent-glow p-8 flex flex-col md:flex-row items-center gap-8 ${
+                  teacher.isDirector ? 'border-primary-accent/70' : 'border-primary-dark/50'
                 }`}
               >
                 {/* Teacher Image */}
                 <div
-                  className={`relative flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden transition-all duration-500 group-hover:scale-105 ${
+                  className={`flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 transition-all duration-300 ${
                     teacher.isDirector
-                      ? 'border-4 border-primary-accent ring-4 ring-primary-accent/30'
-                      : 'border-4 border-primary-accent/50 group-hover:border-primary-accent'
+                      ? 'border-primary-accent'
+                      : 'border-primary-accent/50 group-hover:border-primary-accent'
                   }`}
                 >
                   <TeacherImage basePath={teacher.imageBasePath} name={teacher.name} />
-                  {teacher.isDirector && (
-                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-primary-accent text-white text-xs font-bold rounded-full whitespace-nowrap">
-                      Directora
-                    </div>
-                  )}
                 </div>
 
                 {/* Teacher Info */}
