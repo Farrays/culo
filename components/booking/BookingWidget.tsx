@@ -1855,7 +1855,7 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
             </div>
 
             {/* Description */}
-            <p className="text-neutral/80 text-sm leading-relaxed mb-4">
+            <p className="text-neutral/80 text-sm leading-relaxed mb-4 whitespace-pre-line">
               {infoModalClass.description || t('booking_modal_no_description')}
             </p>
 
