@@ -648,6 +648,8 @@ export const fr = {
 
   dhV3TeachersTitle: 'Rencontrez nos professeurs de dancehall',
   dhV3TeachersSubtitle: "Experts en Dancehall avec des années d'expérience",
+  dhV3ScheduleTitle: 'Horaires des Cours de Dancehall',
+  dhV3ScheduleSubtitle: 'Cours disponibles tous les jours de la semaine',
 
   // Dancehall schedule class names (enterprise i18n)
   dhScheduleClassTwerkIntermediate: 'Dancehall Twerk Intermédiaire',
@@ -2438,6 +2440,77 @@ export const fr = {
   serviciosBaile_finalCTA_button_primary: 'Réserver Maintenant',
   serviciosBaile_finalCTA_button_secondary: 'Nous Contacter',
 
+  // Services de Danse - Section Intro SEO
+  serviciosBaile_intro_p1:
+    "Chez <strong>Farray's International Dance Center</strong>, nous offrons une large gamme de <strong>services de danse à Barcelone</strong>. Au-delà de nos cours réguliers, nous mettons à votre disposition des espaces professionnels, une formation personnalisée et un talent artistique pour tout projet.",
+  serviciosBaile_intro_p2:
+    'Que vous cherchiez un <strong>espace pour répéter ou enregistrer</strong>, des cours privés adaptés à votre rythme, ou des danseurs professionnels pour votre événement, notre académie de 700 m² a la solution parfaite. Nous sommes situés au cœur de Barcelone, près de Plaza España.',
+
+  // Services de Danse - Catégories
+  serviciosBaile_cat_spaces: 'Espaces et Production',
+  serviciosBaile_cat_spaces_desc: 'Studios professionnels et services audiovisuels',
+  serviciosBaile_cat_training: 'Formation Personnalisée',
+  serviciosBaile_cat_training_desc: 'Cours sur mesure et expériences uniques',
+  serviciosBaile_cat_professional: 'Professionnels et Entreprises',
+  serviciosBaile_cat_professional_desc: 'Talent, événements et solutions corporate',
+
+  // Services de Danse - Section Pourquoi
+  serviciosBaile_why_title: "Pourquoi choisir Farray's pour vos services de danse ?",
+  serviciosBaile_pillar1_title: 'Emplacement Premium',
+  serviciosBaile_pillar1_desc:
+    'Au cœur de Barcelone, Eixample. À 5 minutes de Plaza España et de la gare de Sants. Métro et bus à la porte.',
+  serviciosBaile_pillar2_title: "8+ Ans d'Expérience",
+  serviciosBaile_pillar2_desc:
+    "Plus de 15 000 étudiants satisfaits et des centaines d'événements réalisés attestent de la qualité de nos services.",
+  serviciosBaile_pillar3_title: "700 m² d'Installations",
+  serviciosBaile_pillar3_desc:
+    '4 studios équipés de miroirs, son professionnel, parquet flottant et climatisation.',
+  serviciosBaile_pillar4_title: 'Équipe Pluridisciplinaire',
+  serviciosBaile_pillar4_desc:
+    'Professeurs cubains spécialisés dans plus de 25 styles de danse. Talent professionnel pour tout projet.',
+  serviciosBaile_pillar5_title: 'Horaires Flexibles',
+  serviciosBaile_pillar5_desc:
+    'Disponibilité du lundi au vendredi de 9h à 23h. Nous nous adaptons à votre emploi du temps et à vos besoins.',
+  serviciosBaile_pillar6_title: 'Attention Personnalisée',
+  serviciosBaile_pillar6_desc:
+    'Chaque projet est unique. Nous vous conseillons pour trouver la meilleure solution adaptée à vos besoins.',
+
+  // Services de Danse - Stats
+  serviciosBaile_stats_years: "Années d'Expérience",
+  serviciosBaile_stats_students: 'Clients Satisfaits',
+  serviciosBaile_stats_rooms: 'Studios Disponibles',
+  serviciosBaile_stats_events: 'Événements Réalisés',
+
+  // Services de Danse - FAQs
+  serviciosBaile_faq_title: 'Questions Fréquentes sur Nos Services',
+  serviciosBaile_faq1_q: 'Comment puis-je réserver une location de salle ?',
+  serviciosBaile_faq1_a:
+    'Vous pouvez nous contacter par téléphone (+34 622 24 70 85), email (info@farrayscenter.com) ou WhatsApp. Nous vous informerons sur la disponibilité, les prix et les conditions. Vous pouvez également nous rendre visite pour voir les espaces.',
+  serviciosBaile_faq2_q: "Proposez-vous des services pour les événements d'entreprise ?",
+  serviciosBaile_faq2_a:
+    "Oui, nous proposons du team building, des shows pour événements corporate, des cours de danse pour groupes d'entreprise et des activités de bien-être. Nous concevons des expériences sur mesure pour motiver et souder les équipes.",
+  serviciosBaile_faq3_q: 'Puis-je offrir des cours de danse en cadeau ?',
+  serviciosBaile_faq3_a:
+    'Absolument ! Nous avons des cartes cadeaux personnalisables pour des cours particuliers, des forfaits mensuels ou des expériences spéciales. Le cadeau parfait pour les amateurs de danse ou pour ceux qui veulent la découvrir.',
+  serviciosBaile_faq4_q: "Qu'inclut le service de studio d'enregistrement ?",
+  serviciosBaile_faq4_a:
+    "La location comprend l'espace avec miroirs, éclairage professionnel, équipement sonore et climatisation. Vous pouvez apporter votre propre équipement d'enregistrement ou engager des services de production audiovisuelle supplémentaires.",
+  serviciosBaile_faq5_q: 'Organisez-vous des enterrements de vie de jeune fille ?',
+  serviciosBaile_faq5_a:
+    'Oui ! Nous organisons des enterrements de vie de jeune fille personnalisés avec chorégraphies, cours de danse thématiques (reggaeton, bachata, twerk...) et moments inoubliables. Comprend salle privée, instructeur et musique.',
+  serviciosBaile_faq6_q: 'Puis-je engager des danseurs pour mon événement ?',
+  serviciosBaile_faq6_a:
+    "Via notre agence, vous pouvez engager des danseurs professionnels pour mariages, fêtes, événements corporate, clips musicaux, défilés de mode et tout type de show. Nous avons un large roster d'artistes.",
+  serviciosBaile_faq7_q: 'Les cours particuliers peuvent-ils être à domicile ?',
+  serviciosBaile_faq7_a:
+    "Oui, nous proposons des cours à l'académie ainsi qu'à domicile à Barcelone et ses environs. Vous avez juste besoin d'un espace minimum pour bouger et l'envie d'apprendre.",
+  serviciosBaile_faq8_q: 'Quels horaires sont disponibles pour la location de salles ?',
+  serviciosBaile_faq8_a:
+    "Les salles sont disponibles du lundi au vendredi de 9h à 23h, selon l'occupation des cours réguliers. Week-ends sur demande. Contactez-nous pour vérifier la disponibilité.",
+
+  // Services de Danse - Section Avis
+  serviciosBaile_reviews_title: 'Ce que disent nos clients',
+
   // Studio d'Enregistrement Page
   estudioGrabacion_breadcrumb_home: 'Accueil',
   estudioGrabacion_breadcrumb_current: "Studio d'Enregistrement",
@@ -3128,6 +3201,10 @@ export const fr = {
   // Teachers Section
   twerkTeachersTitle: 'Rencontrez vos instructrices de Twerk',
   twerkTeachersSubtitle: "Expertes en Twerk et Dancehall avec des années d'expérience",
+  twerkScheduleTitle: 'Horaires des Cours de Twerk',
+  twerkScheduleSubtitle: 'Cours hebdomadaires avec des instructrices spécialisées',
+  twerkWhyTodayFullTitle:
+    'Pourquoi commencer le Twerk aujourd\'hui plutôt que "la semaine prochaine" ?',
 
   // Schedule Section
   // Video Section
@@ -3332,6 +3409,10 @@ Chez Farray's International Dance Center, l'Afrobeats est enseigné avec techniq
   // Teachers
   afroTeachersTitle: "Rencontre nos professeurs d'Afrobeat",
   afroTeachersSubtitle: "Experts en Afrodance avec des années d'expérience",
+  afroScheduleTitle: "Horaires des Cours d'Afrobeats",
+  afroScheduleSubtitle: 'Cours hebdomadaires avec des experts en Afrodance',
+  afroWhyTodayFullTitle:
+    'Pourquoi commencer l\'Afrobeats aujourd\'hui plutôt que "quand je me sentirai prête" ?',
   afroTeacher1Bio:
     "Redblueh est un professeur et danseur international, natif de Tanzanie et spécialiste du Ntcham. Ses racines, connaissances, énergie et joie contagieuse en font l'un des maîtres les plus recommandés de tout Barcelone.",
   afroTeacher2Bio:
@@ -3612,6 +3693,10 @@ Cette fusion incorpore :
   // Teachers Section
   hhrTeachersTitle: 'Rencontre ton instructeur de Hip Hop Reggaeton',
   hhrTeachersSubtitle: "Expert en fusion urbaine avec des années d'expérience",
+  hhrScheduleTitle: 'Horaires des Cours de Hip Hop Reggaeton',
+  hhrScheduleSubtitle: 'Cours hebdomadaires avec Charlie Breezy',
+  hhrWhyTodayFullTitle:
+    'Pourquoi commencer le Hip Hop Reggaeton aujourd\'hui plutôt que "le mois prochain" ?',
 
   // Schedule Section
   // Video Section
@@ -3820,6 +3905,8 @@ Cette fusion incorpore :
   // Teachers Section
   rcbTeachersTitle: 'Découvre tes professeurs de Reparto',
   rcbTeachersSubtitle: "Nés à Cuba, formés à l'ENA et références à Barcelone",
+  rcbScheduleTitle: 'Horaires des Cours de Reggaeton Cubain',
+  rcbScheduleSubtitle: 'Cours hebdomadaires avec des professeurs cubains authentiques',
   rcbTeacher1Bio:
     "Charlie Breezy est un maître international et danseur cubain formé à l'ENA (École Nationale d'Art de Cuba). Spécialiste du Reggaeton Cubain et du Reparto, il maîtrise l'improvisation et l'isolation corporelle avec une technique impeccable. Son énergie, sa créativité et sa capacité à transmettre la saveur cubaine font de lui l'un des professeurs les plus recommandés de Barcelone.",
   rcbTeacher2Bio:
@@ -4286,6 +4373,10 @@ Depuis plus d'une décennie, Femmology a transformé la vie de milliers de femme
   femTeachersTitle: 'Rencontrez Yunaisy Farray',
   femTeachersSubtitle:
     "Créatrice de Femmology et l'une des professeures les plus reconnues au monde",
+  femScheduleTitle: 'Horaires des Cours de Femmology',
+  femScheduleSubtitle: 'Cours exclusifs avec Yunaisy Farray',
+  femWhyTodayFullTitle:
+    'Pourquoi commencer le Femmology aujourd\'hui plutôt que "quand je me sentirai prête" ?',
 
   // Schedule Section
   // Video Section
@@ -4568,6 +4659,10 @@ Depuis plus d'une décennie, Femmology a transformé la vie de milliers de femme
   // Teachers Section
   sexystyleTeachersTitle: 'Rencontrez votre instructrice de Sexy Style',
   sexystyleTeachersSubtitle: 'Spécialiste en expression corporelle et sensualité',
+  sexystyleScheduleTitle: 'Horaires des Cours de Sexy Style',
+  sexystyleScheduleSubtitle: 'Cours hebdomadaires avec Yasmina Fernández',
+  sexystyleWhyTodayFullTitle:
+    'Pourquoi commencer le Sexy Style aujourd\'hui plutôt que "quand je me sentirai prête" ?',
   sexystyleTeachersClosing:
     "Avec Yasmina, vous n'apprenez pas seulement à danser le Sexy Style : vous découvrez une nouvelle façon d'habiter votre corps.",
 
@@ -4832,6 +4927,10 @@ Daddy Yankee (Porto Rico), Bad Bunny (Porto Rico), Karol G (Colombie), J Balvin 
   // Teachers Section
   sxrTeachersTitle: 'Rencontrez votre instructrice de Sexy Reggaeton',
   sxrTeachersSubtitle: "Experte en danses urbaines sensuelles avec plus de 8 ans d'expérience",
+  sxrScheduleTitle: 'Horaires des Cours de Sexy Reggaeton',
+  sxrScheduleSubtitle: 'Cours hebdomadaires avec des instructrices spécialisées',
+  sxrWhyTodayFullTitle:
+    'Pourquoi commencer le Sexy Reggaeton aujourd\'hui plutôt que "quand je me sentirai prête" ?',
   sxrTeachersClosing:
     "Avec Yasmina, vous n'apprenez pas seulement à danser le Sexy Reggaeton : vous découvrez une façon de vous connecter à votre féminité et à votre pouvoir sans demander la permission.",
 
@@ -5083,6 +5182,10 @@ Farray's International Dance Center est noté près de **5/5 sur Google**, avec 
   // Teachers Section
   modernjazzTeachersTitle: 'Rencontrez votre professeur de Modern Jazz',
   modernjazzTeachersSubtitle: 'Technique classique, esprit contemporain',
+  modernjazzScheduleTitle: 'Horaires des Cours de Modern Jazz',
+  modernjazzScheduleSubtitle: 'Cours hebdomadaires avec Alejandro Miñoso',
+  modernjazzWhyTodayFullTitle:
+    'Pourquoi commencer le Modern Jazz aujourd\'hui plutôt que "quand j\'aurai plus de bases" ?',
   modernjazzTeacher1Bio:
     "Alejandro Miñoso est maître international cubain formé à la prestigieuse ENA (École Nationale d'Art de Cuba). Ancien soliste de la compagnie Carlos Acosta, il combine les exigences techniques du ballet classique avec la liberté expressive du jazz moderne, créant des cours dynamiques où chaque élève progresse à son rythme.",
   // Schedule Section
@@ -5448,6 +5551,10 @@ Tous les termes du ballet sont en français, héritage de son développement à 
   // ===== Teachers Section =====
   balletTeachersTitle: 'Rencontrez vos professeurs de Ballet',
   balletTeachersSubtitle: 'École Cubaine, expérience internationale',
+  balletScheduleTitle: 'Horaires des Cours de Ballet',
+  balletScheduleSubtitle: "Cours quotidiens avec des professeurs de l'École Cubaine",
+  balletWhyTodayFullTitle:
+    'Pourquoi commencer le ballet aujourd\'hui plutôt que "quand j\'aurai le temps" ?',
   balletTeacher1Bio:
     "Daniel Sene est spécialiste du ballet classique formé à l'École Nationale de Ballet de Cuba, la même où Carlos Acosta s'est formé. Sa méthodologie combine la rigueur technique de l'école classique avec une approche accessible pour adultes débutants et avancés.",
   balletTeacher2Bio:
@@ -5914,6 +6021,8 @@ Des danseurs du monde entier voyagent à Barcelone spécifiquement pour se forme
   afrojazzLogosIntlFestivalsText: 'et aux meilleurs festivals de danse du monde entier',
   afrojazzTeachersTitle: "Vos professeurs d'Afro Jazz",
   afrojazzTeachersSubtitle: "Formation d'élite avec l'équipe de la Méthode Farray",
+  afrojazzScheduleTitle: "Horaires des Cours d'Afro Jazz",
+  afrojazzScheduleSubtitle: "Cours hebdomadaires avec l'équipe de la Méthode Farray",
   afrojazzTeacher1Bio:
     "Yunaisy Farray est maître formée à l'École Nationale d'Art de Cuba (ENA), membre du Conseil International de la Danse de l'UNESCO et actrice de Street Dance 2. Créatrice de l'Afro Jazz comme discipline unique, elle donne les cours de niveau intermédiaire et avancé les jeudis de 19h à 20h30.",
   // Level Cards Section
@@ -6259,6 +6368,9 @@ Travaille intégralement : **flexibilité, force fonctionnelle, coordination, pr
   contemporaneoTeachersTitle: 'Vos Maîtres de Danse Contemporaine',
   contemporaneoTeachersSubtitle:
     "Danseurs professionnels formés à l'École Cubaine avec carrière internationale",
+  contemporaneoScheduleTitle: 'Horaires des Cours de Danse Contemporaine',
+  contemporaneoScheduleSubtitle:
+    "Cours hebdomadaires avec des danseurs professionnels de l'École Cubaine",
   contemporaneoTeacher1Bio:
     "Daniel Sené est danseur professionnel avec une formation de carrière à l'École Cubaine. Sa méthodologie combine la technique rigoureuse avec l'expression lyrique, vous guidant pour développer votre propre langage corporel tout en maîtrisant les fondamentaux de la danse contemporaine.",
   contemporaneoTeachersClosing:
@@ -6641,6 +6753,9 @@ L'Afro Contemporain enseigné au **Farray's International Dance Center** fait pa
   // Teachers Section
   afrocontemporaneoTeachersTitle: "Vos maîtres d'Afro Contemporain",
   afrocontemporaneoTeachersSubtitle: "Formation directe de l'École Nationale d'Art de Cuba",
+  afrocontemporaneoScheduleTitle: "Horaires des Cours d'Afro Contemporain",
+  afrocontemporaneoScheduleSubtitle:
+    "Cours hebdomadaires avec des professeurs formés à l'ENA de Cuba",
   afrocontemporaneoTeacher1Bio:
     "Yunaisy Farray s'est formée à la prestigieuse École Nationale d'Art de Cuba (ENA), où elle a appris la technique originale de l'Afro Contemporain. Maître reconnue par le CID-UNESCO (Conseil International de la Danse de Paris), elle combine la rigueur technique de l'école cubaine avec son expérience internationale dans Street Dance 2 et des compagnies de danse contemporaine. Sa méthodologie maintient l'essence de l'ENA adaptée aux danseurs de tous niveaux.",
   afrocontemporaneoTeacher2Bio:
@@ -10187,6 +10302,8 @@ Notre professeur **Marcos Martínez**, juge de compétitions internationales et 
   // === TEACHERS SECTION ===
   stretchingTeachersTitle: 'Vos Professeurs de Stretching',
   stretchingTeachersSubtitle: 'Spécialistes de la flexibilité avec la Méthode Farray',
+  stretchingScheduleTitle: 'Horaires des Cours de Stretching',
+  stretchingScheduleSubtitle: 'Cours hebdomadaires avec des spécialistes de la flexibilité',
   stretchingTeacher1Bio:
     "Cris Ag est spécialiste de la flexibilité et du backbending, formée à la Méthode Farray. Son approche patiente et technique a aidé des centaines d'élèves à dépasser leurs limites en toute sécurité. Experte en élongation des jambes et du dos, prévention des blessures et renforcement du core.",
   stretchingTeacher2Bio:
@@ -10498,6 +10615,8 @@ Les études scientifiques confirment qu'un stretching régulier de 3+ fois par s
   // === TEACHERS SECTION ===
   bumbumTeachersTitle: 'Votre Professeure de Bum Bum Fessiers',
   bumbumTeachersSubtitle: 'Spécialiste en tonification avec la Méthode Farray',
+  bumbumScheduleTitle: 'Horaires des Cours de Bum Bum Fessiers',
+  bumbumScheduleSubtitle: 'Cours hebdomadaires de tonification',
   bumbumTeacher1Bio:
     "Cris Ag est spécialiste en tonification corporelle et exercices de fessiers avec la Méthode Farray. Son approche combine techniques de fitness avec éléments de danse pour rendre l'entraînement efficace et amusant. Experte en hip thrust, squats et techniques d'activation des fessiers.",
   // === SCHEDULE SECTION ===
@@ -16587,6 +16706,8 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   cuerpofitLevelOpenDesc: `Cours adaptable à tous les niveaux. Chaque exercice a des variations du débutant à l'avancé. Cris vous guide selon votre niveau actuel, assurant que vous travaillez dans votre zone de développement optimale sans risque de blessure.`,
   cuerpofitTeachersTitle: `Votre Professeure de Body Conditioning`,
   cuerpofitTeachersSubtitle: `Spécialiste en préparation physique pour danseurs`,
+  cuerpofitScheduleTitle: 'Horaires des Cours de Body Conditioning',
+  cuerpofitScheduleSubtitle: 'Cours hebdomadaires de conditionnement physique',
   cuerpofitWhyChoose2Title: `Focus sur la Prévention des Blessures`,
   cuerpofitWhyChoose2Desc: `Chaque exercice vise à renforcer les zones les plus vulnérables du danseur : hanches, genoux, chevilles et dos.`,
   cuerpofitWhyChoose3Title: `Groupes Réduits`,
@@ -16989,6 +17110,8 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   fullBodyCardioLevelOpenDesc: `Cuerpo-Fit est niveau ouvert. Chaque exercice a des variantes d'intensité : vous choisissez la vôtre. Débutants absolutos trabajan al lado de personas avec expérience, cada uno a su ritmo. Sans pression, sans comparaisons.`,
   fullBodyCardioTeachersTitle: `Votre Professeure de Cuerpo-Fit`,
   fullBodyCardioTeachersSubtitle: `Spécialiste en entraînement fonctionnel et cardio dance`,
+  fullBodyCardioScheduleTitle: 'Horaires des Cours de Full Body Cardio',
+  fullBodyCardioScheduleSubtitle: "Cours hebdomadaires d'entraînement fonctionnel",
   fullBodyCardioWhyChoose2Desc: `Vous n'avez pas besoin d'expérience. Chaque exercice a des variantes d'intensité. Vous choisissez votre niveau à chaque instant.`,
   fullBodyCardioWhyChoose3Title: `Petits groupes`,
   fullBodyCardioWhyChoose3Desc: `Maximum 20 personnes par cours pour garantir une attention personnalisée et des corrections individuelles.`,
@@ -18777,6 +18900,11 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   booking_step2: 'Sélectionner Cours',
   booking_step3: 'Confirmer Données',
 
+  // V2 Steps (2-step flow)
+  booking_step1_classes: 'Choisissez votre cours',
+  booking_step2_form: 'Confirmez vos données',
+  booking_back_to_classes: 'Retour aux cours',
+
   // Style Selection
   booking_style_title: 'Quel style vous intéresse ?',
   booking_style_all: 'Tous les styles',
@@ -18789,13 +18917,19 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   booking_week_this: 'Cette semaine',
   booking_week_prev: 'Semaine précédente',
   booking_week_next: 'Semaine suivante',
+  booking_week_current: 'Cette semaine',
+  booking_week_previous: 'Semaine précédente',
+  booking_week_future: 'Dans {weeks} semaines',
   booking_style_clear: 'Supprimer le filtre de style',
   booking_class_retry: 'Réessayer',
   booking_class_share: 'Partager le lien de ce cours',
   booking_class_copied: 'Lien copié',
   booking_class_spots: '{spots} places disponibles',
+  booking_class_spots_few: 'Dernières {count} places',
+  booking_class_spots_available: '{count} places',
   booking_class_full: 'Complet',
   booking_class_select: 'Sélectionner',
+  booking_select_class: 'Réserver',
   booking_class_selected: 'Sélectionné',
   booking_class_teacher: 'avec {teacher}',
   booking_class_duration: '{duration} min',
@@ -18806,12 +18940,19 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   booking_level_all: 'Tous niveaux',
 
   // Advanced Filters
+  booking_filter_style: 'Style',
   booking_filter_level: 'Niveau',
   booking_filter_day: 'Jour',
   booking_filter_time: 'Heure',
   booking_filter_instructor: 'Professeur',
   booking_filter_clear_all: 'Effacer les filtres',
   booking_filter_all: 'Tous',
+  booking_filter_all_styles: 'Tous les styles',
+  booking_filter_all_instructors: 'Tous les professeurs',
+  booking_clear_all_filters: 'Tout effacer',
+  booking_clear_filters: 'Supprimer les filtres',
+  booking_no_classes_match: 'Aucun cours ne correspond aux filtres',
+  booking_classes_found: '{count} cours trouvés',
   booking_filter_level_iniciacion: 'Débutant',
   booking_filter_level_basico: 'Basique',
   booking_filter_level_intermedio: 'Intermédiaire',
@@ -18869,6 +19010,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   booking_consent_image:
     "J'autorise l'utilisation de mon image dans les photos et vidéos réalisées pendant les cours à des fins promotionnelles sur les réseaux sociaux et le site web",
   booking_consent_image_optional: '(Optionnel)',
+  booking_consent_optional: '(optionnel)',
 
   // Submit
   booking_submit: 'Confirmer la Réservation',
@@ -18896,11 +19038,20 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   booking_modal_close: 'Fermer',
   booking_modal_select: 'Réserver ce cours',
   booking_modal_no_description: 'Aucune description disponible pour ce cours.',
+  booking_info_day: 'Jour',
+  booking_info_time: 'Heure',
+  booking_info_instructor: 'Professeur',
+  booking_info_location: 'Lieu',
+  booking_info_description: 'Description',
 
   // Error State
   booking_error_title: 'Erreur de traitement',
   booking_error_message: 'Une erreur est survenue. Veuillez réessayer.',
   booking_error_cta: 'Réessayer',
+  booking_error_generic: 'Une erreur est survenue. Veuillez réessayer.',
+  booking_error_required_fields: 'Veuillez remplir tous les champs obligatoires',
+  booking_error_consent_required: 'Veuillez accepter tous les consentements obligatoires',
+  booking_error_heels_consent_required: 'Veuillez accepter les conditions pour les cours en talons',
   booking_error_firstName: 'Veuillez entrer votre prénom',
   booking_error_lastName: 'Veuillez entrer votre nom',
   booking_error_email: 'Veuillez entrer un email valide',

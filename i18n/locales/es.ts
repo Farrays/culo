@@ -1340,6 +1340,10 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   dhV3TeachersTitle: 'Conoce a nuestras profesoras de dancehall',
   dhV3TeachersSubtitle: 'Expertas en Dancehall con años de experiencia',
 
+  // Schedule Section
+  dhV3ScheduleTitle: 'Horarios de Clases de Dancehall',
+  dhV3ScheduleSubtitle: 'Clases disponibles todos los días de la semana',
+
   // Dancehall schedule class names (enterprise i18n)
   dhScheduleClassTwerkIntermediate: 'Dancehall Twerk Intermedio',
   dhScheduleClassBasic: 'Dancehall Básico',
@@ -3331,6 +3335,78 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
     'Contáctanos para más información sobre cualquiera de nuestros servicios',
   serviciosBaile_finalCTA_button_primary: 'Reservar Ahora',
   serviciosBaile_finalCTA_button_secondary: 'Contáctanos',
+
+  // Servicios Baile - Intro SEO Section
+  serviciosBaile_intro_p1:
+    "En <strong>Farray's International Dance Center</strong> ofrecemos una amplia gama de <strong>servicios de baile en Barcelona</strong>. Más allá de nuestras clases regulares, ponemos a tu disposición espacios profesionales, formación personalizada y talento artístico para cualquier proyecto.",
+  serviciosBaile_intro_p2:
+    'Ya sea que busques un <strong>espacio para ensayar o grabar</strong>, clases privadas adaptadas a tu ritmo, o bailarines profesionales para tu evento, en nuestra academia de 700 m² encontrarás la solución perfecta. Estamos en el corazón de Barcelona, cerca de Plaza España.',
+
+  // Servicios Baile - Categorías
+  serviciosBaile_cat_spaces: 'Espacios y Producción',
+  serviciosBaile_cat_spaces_desc: 'Salas profesionales y servicios audiovisuales',
+  serviciosBaile_cat_training: 'Formación Personalizada',
+  serviciosBaile_cat_training_desc: 'Clases a medida y experiencias únicas',
+  serviciosBaile_cat_professional: 'Profesionales y Empresas',
+  serviciosBaile_cat_professional_desc: 'Talento, eventos y soluciones corporativas',
+
+  // Servicios Baile - Why Section
+  serviciosBaile_why_title: "¿Por qué elegir Farray's para tus servicios de baile?",
+  serviciosBaile_pillar1_title: 'Ubicación Premium',
+  serviciosBaile_pillar1_desc:
+    'En el corazón de Barcelona, Eixample. A 5 minutos de Plaza España y Estación de Sants. Metro y bus a la puerta.',
+  serviciosBaile_pillar2_title: '8+ Años de Experiencia',
+  serviciosBaile_pillar2_desc:
+    'Más de 15.000 alumnos satisfechos y cientos de eventos realizados avalan la calidad de nuestros servicios.',
+  serviciosBaile_pillar3_title: '700 m² de Instalaciones',
+  serviciosBaile_pillar3_desc:
+    '4 salas equipadas con espejos, sonido profesional, suelo de tarima flotante y climatización.',
+  serviciosBaile_pillar4_title: 'Equipo Multidisciplinar',
+  serviciosBaile_pillar4_desc:
+    'Profesores cubanos especializados en más de 25 estilos de baile. Talento profesional para cualquier proyecto.',
+  serviciosBaile_pillar5_title: 'Flexibilidad Horaria',
+  serviciosBaile_pillar5_desc:
+    'Disponibilidad de lunes a viernes de 9h a 23h. Nos adaptamos a tu agenda y necesidades.',
+  serviciosBaile_pillar6_title: 'Atención Personalizada',
+  serviciosBaile_pillar6_desc:
+    'Cada proyecto es único. Te asesoramos para encontrar la mejor solución a tu medida.',
+
+  // Servicios Baile - Stats
+  serviciosBaile_stats_years: 'Años de Experiencia',
+  serviciosBaile_stats_students: 'Clientes Satisfechos',
+  serviciosBaile_stats_rooms: 'Salas Disponibles',
+  serviciosBaile_stats_events: 'Eventos Realizados',
+
+  // Servicios Baile - FAQs
+  serviciosBaile_faq_title: 'Preguntas Frecuentes sobre Nuestros Servicios',
+  serviciosBaile_faq1_q: '¿Cómo puedo reservar el alquiler de una sala?',
+  serviciosBaile_faq1_a:
+    'Puedes contactarnos por teléfono (+34 622 24 70 85), email (info@farrayscenter.com) o WhatsApp. Te informaremos sobre disponibilidad, precios y condiciones. También puedes visitarnos en persona para conocer los espacios.',
+  serviciosBaile_faq2_q: '¿Ofrecéis servicios para eventos de empresa?',
+  serviciosBaile_faq2_a:
+    'Sí, ofrecemos team building, shows para eventos corporativos, clases de baile para grupos de empresa y actividades de bienestar. Diseñamos experiencias a medida para motivar y cohesionar equipos.',
+  serviciosBaile_faq3_q: '¿Puedo regalar clases de baile a alguien?',
+  serviciosBaile_faq3_a:
+    '¡Por supuesto! Tenemos tarjetas regalo personalizables para clases particulares, bonos mensuales o experiencias especiales. El regalo perfecto para amantes del baile o para quienes quieran descubrirlo.',
+  serviciosBaile_faq4_q: '¿Qué incluye el servicio de estudio de grabación?',
+  serviciosBaile_faq4_a:
+    'El alquiler incluye el espacio con espejos, iluminación profesional, equipo de sonido y climatización. Puedes traer tu propio equipo de grabación o contratar servicios adicionales de producción audiovisual.',
+  serviciosBaile_faq5_q: '¿Organizáis fiestas de despedida de soltera?',
+  serviciosBaile_faq5_a:
+    '¡Sí! Organizamos despedidas personalizadas con coreografías, clases de baile temáticas (reggaeton, bachata, twerk...) y momentos inolvidables. Incluye sala privada, profesor/a y música.',
+  serviciosBaile_faq6_q: '¿Puedo contratar bailarines para mi evento?',
+  serviciosBaile_faq6_a:
+    'A través de nuestra agencia puedes contratar bailarines profesionales para bodas, fiestas, eventos corporativos, videoclips, desfiles y cualquier tipo de show. Contamos con un amplio roster de artistas.',
+  serviciosBaile_faq7_q: '¿Las clases particulares pueden ser a domicilio?',
+  serviciosBaile_faq7_a:
+    'Sí, ofrecemos clases tanto en la academia como a domicilio en Barcelona y alrededores. Solo necesitas un espacio mínimo para moverte y ganas de aprender.',
+  serviciosBaile_faq8_q: '¿Qué horarios tienen disponibles para alquiler de salas?',
+  serviciosBaile_faq8_a:
+    'Las salas están disponibles de lunes a viernes de 9h a 23h, dependiendo de la ocupación de clases regulares. Los fines de semana bajo consulta. Contacta con nosotros para verificar disponibilidad.',
+
+  // Servicios Baile - Reviews Section
+  serviciosBaile_reviews_title: 'Lo que dicen nuestros clientes',
+
   faq_cta_contact: 'Contactar',
   faq_cta_login: 'Acceder a Mi Cuenta',
 
@@ -4057,6 +4133,9 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   twerkTeachersSubtitle: 'Expertas en Twerk y Dancehall con años de experiencia',
 
   // Schedule Section
+  twerkScheduleTitle: 'Horarios de Clases de Twerk',
+  twerkScheduleSubtitle: 'Clases semanales con instructoras especializadas',
+  twerkWhyTodayFullTitle: '¿Por qué empezar Twerk hoy y no "la próxima semana"?',
   // Video Section
   twerkVideoDesc:
     "Mira cómo es una clase en Farray\'s Center: energía, técnica y buen rollo. ¡Te esperamos!",
@@ -4316,6 +4395,9 @@ En Farray's International Dance Center, el Afrobeats se enseña con técnica, re
   afroTeachersTitle: 'Conoce a nuestros profesores de Afrobeats',
   afroTeachersSubtitle: 'Expertos en Afrodance con años de experiencia',
   // Schedule
+  afroScheduleTitle: 'Horarios de Clases de Afrobeats',
+  afroScheduleSubtitle: 'Clases semanales con expertos en Afrodance',
+  afroWhyTodayFullTitle: '¿Por qué empezar Afrobeats hoy y no "cuando me sienta preparada"?',
   // Video
   // Why Today
   afroWhyToday1:
@@ -4619,6 +4701,9 @@ Esta fusión incorpora:
   hhrTeachersSubtitle: 'Experto en fusión urbana con años de experiencia',
 
   // Schedule Section
+  hhrScheduleTitle: 'Horarios de Clases de Hip Hop Reggaeton',
+  hhrScheduleSubtitle: 'Clases semanales con Charlie Breezy',
+  hhrWhyTodayFullTitle: '¿Por qué empezar Hip Hop Reggaeton hoy y no "el mes que viene"?',
   // Video Section
   hhrVideoDesc:
     "Mira cómo es una clase en Farray\'s Center: fusión, flow y buen rollo. ¡Te esperamos!",
@@ -4907,6 +4992,9 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colombia), J Balvi
   sxrTeachersTitle: 'Conoce a tu instructora de Sexy Reggaeton',
   sxrTeachersSubtitle: 'Experta en danzas urbanas sensuales con más de 8 años de experiencia',
   // Schedule Section
+  sxrScheduleTitle: 'Horarios de Clases de Sexy Reggaeton',
+  sxrScheduleSubtitle: 'Clases semanales con instructoras especializadas',
+  sxrWhyTodayFullTitle: '¿Por qué empezar Sexy Reggaeton hoy y no "cuando me sienta lista"?',
   // Video Section
   sxrVideoDesc:
     "Mira cómo es una clase en Farray\'s Center: energía, técnica, sensualidad y buen rollo. ¡Te esperamos!",
@@ -5205,6 +5293,8 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
   rcbTeachersTitle: 'Conoce a tus maestros de Reparto',
   rcbTeachersSubtitle: 'Cubanos de nacimiento, formados en la ENA y referentes en Barcelona',
   // Schedule Section
+  rcbScheduleTitle: 'Horarios de Clases de Reggaeton Cubano',
+  rcbScheduleSubtitle: 'Clases semanales con maestros cubanos auténticos',
   // Video Section
   rcbVideoDesc:
     'Mira cómo se baila el reggaeton auténtico de Cuba. Improvisación, disociación y puro sabor.',
@@ -5707,6 +5797,9 @@ A lo largo de más de una década, Femmology ha transformado la vida de miles de
   femTeachersSubtitle: 'Creadora de Femmology y una de las maestras más reconocidas del mundo',
 
   // Schedule Section
+  femScheduleTitle: 'Horarios de Clases de Femmology',
+  femScheduleSubtitle: 'Clases exclusivas con Yunaisy Farray',
+  femWhyTodayFullTitle: '¿Por qué empezar Femmology hoy y no "cuando me sienta preparada"?',
   // Video Section
   // Why Today Section
   femWhyToday3:
@@ -6022,6 +6115,9 @@ A lo largo de más de una década, Femmology ha transformado la vida de miles de
   sexystyleTeachersTitle: 'Conoce a tu instructora de Sexy Style',
   sexystyleTeachersSubtitle: 'Especialista en expresión corporal y sensualidad',
   // Schedule Section
+  sexystyleScheduleTitle: 'Horarios de Clases de Sexy Style',
+  sexystyleScheduleSubtitle: 'Clases semanales con Yasmina Fernández',
+  sexystyleWhyTodayFullTitle: '¿Por qué empezar Sexy Style hoy y no "cuando me sienta lista"?',
   // Video Section
   sexystyleVideoDesc:
     "Mira cómo es una clase en Farray\'s Center: energía, técnica y mucho empoderamiento.",
@@ -6351,6 +6447,9 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
   modernjazzTeachersTitle: 'Conoce a tu profesor de Modern Jazz',
   modernjazzTeachersSubtitle: 'Técnica clásica, espíritu contemporáneo',
   // Schedule Section
+  modernjazzScheduleTitle: 'Horarios de Clases de Modern Jazz',
+  modernjazzScheduleSubtitle: 'Clases semanales con Alejandro Miñoso',
+  modernjazzWhyTodayFullTitle: '¿Por qué empezar Modern Jazz hoy y no "cuando tenga más base"?',
   // Video Section
   modernjazzVideoDesc:
     "Mira cómo es una clase en Farray\'s Center: técnica, expresión y pasión por el baile.",
@@ -6795,8 +6894,11 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
   balletTeachersTitle: 'Conoce a tus profesores de Ballet',
   balletTeachersSubtitle: 'Escuela Cubana, experiencia internacional',
   // ===== Schedule Section =====
+  balletScheduleTitle: 'Horarios de Clases de Ballet',
+  balletScheduleSubtitle: 'Clases diarias con maestros de la Escuela Cubana',
   // ===== Video Section =====
   // ===== Why Today Section =====
+  balletWhyTodayFullTitle: '¿Por qué empezar ballet hoy y no "cuando tenga tiempo"?',
   balletWhyToday1:
     'Porque sigues esperando "el momento perfecto" para apuntarte a ballet… pero lo único perfecto es empezar hoy.',
   balletWhyToday2:
@@ -7218,6 +7320,9 @@ Trabaja integralmente: **flexibilidad, fuerza funcional, coordinación, propioce
   contemporaneoTeachersSubtitle:
     'Bailarines profesionales formados en la Escuela Cubana con carrera internacional',
   // Schedule Section
+  contemporaneoScheduleTitle: 'Horarios de Clases de Danza Contemporánea',
+  contemporaneoScheduleSubtitle:
+    'Clases semanales con bailarines profesionales de la Escuela Cubana',
   // Level Cards Section
   contemporaneoLevelPrincipianteDesc:
     'Primera toma de contacto con la danza contemporánea. Movimiento fluido, expresión emocional y conexión con la música. Sin requisitos previos.',
@@ -7584,6 +7689,8 @@ El Afro Contemporáneo impartido en **Farray's International Dance Center** form
   afrocontemporaneoTeachersTitle: 'Tus maestros de Afro Contemporáneo',
   afrocontemporaneoTeachersSubtitle: 'Formación directa de la Escuela Nacional de Arte de Cuba',
   // Schedule Section
+  afrocontemporaneoScheduleTitle: 'Horarios de Clases de Afro Contemporáneo',
+  afrocontemporaneoScheduleSubtitle: 'Clases semanales con maestros formados en la ENA de Cuba',
   // Video Section
   afrocontemporaneoVideoDesc:
     "Mira en este vídeo cómo son las clases de Afro Contemporánea en Farray's International Dance Center de Barcelona. No te lo pienses más y ven a probar una clase.",
@@ -7972,6 +8079,8 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   afrojazzTeachersTitle: 'Tus profesores de Afro Jazz',
   afrojazzTeachersSubtitle: 'Formación de élite con el equipo del Método Farray',
   // Schedule Section
+  afrojazzScheduleTitle: 'Horarios de Clases de Afro Jazz',
+  afrojazzScheduleSubtitle: 'Clases semanales con el equipo del Método Farray',
   // Level Cards Section
   afrojazzLevelBasicDesc:
     'Para quienes se inician en esta disciplina o tienen poca experiencia en danza. Aprende los fundamentos de la fusión Afro + Jazz: coordinación básica, ritmos africanos, postura y primeros pasos del vocabulario Afro Jazz. Sin requisitos previos.',
@@ -10990,6 +11099,8 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
   stretchingTeachersTitle: 'Tus Profesores de Stretching',
   stretchingTeachersSubtitle: 'Especialistas en flexibilidad con el Método Farray',
   // === SCHEDULE SECTION ===
+  stretchingScheduleTitle: 'Horarios de Clases de Stretching',
+  stretchingScheduleSubtitle: 'Clases semanales con especialistas en flexibilidad',
   // === WHY CHOOSE US SECTION ===
   stretchingWhyChoose1Title: 'Método Farray',
   stretchingWhyChoose1Desc:
@@ -11296,6 +11407,8 @@ Estudios científicos confirman que el stretching regular de 3+ veces por semana
     "En Farray's Center, el acondicionamiento físico no es un complemento: es la base de tu evolución como bailarín.",
 
   // === SCHEDULE SECTION ===
+  cuerpofitScheduleTitle: 'Horarios de Clases de Body Conditioning',
+  cuerpofitScheduleSubtitle: 'Clases semanales de acondicionamiento físico',
   // === WHY CHOOSE SECTION ===
   cuerpofitWhyChoose2Title: 'Enfoque en Prevención de Lesiones',
   cuerpofitWhyChoose2Desc:
@@ -11844,6 +11957,8 @@ El Método Farray integra elementos de Pilates, yoga funcional, entrenamiento de
   bumbumTeachersTitle: 'Tu Profesora de Bum Bum Glúteos',
   bumbumTeachersSubtitle: 'Especialista en tonificación con el Método Farray',
   // === SCHEDULE SECTION ===
+  bumbumScheduleTitle: 'Horarios de Clases de Bum Bum Glúteos',
+  bumbumScheduleSubtitle: 'Clases semanales de tonificación',
   // === WHY CHOOSE US SECTION ===
   bumbumWhyChoose2Title: 'Hip Thrust y Técnicas Avanzadas',
   bumbumWhyChoose2Desc:
@@ -14465,6 +14580,8 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
   fullBodyCardioTeachersTitle: 'Tu Profesora de Cuerpo-Fit',
   fullBodyCardioTeachersSubtitle: 'Especialista en entrenamiento funcional y cardio dance',
   // === SCHEDULE SECTION ===
+  fullBodyCardioScheduleTitle: 'Horarios de Clases de Cuerpo-Fit',
+  fullBodyCardioScheduleSubtitle: 'Clases semanales de entrenamiento funcional',
   // === WHY CHOOSE US SECTION ===
   fullBodyCardioWhyChoose2Desc:
     'No necesitas experiencia. Cada ejercicio tiene variantes de intensidad. Tú eliges tu nivel en cada momento.',
