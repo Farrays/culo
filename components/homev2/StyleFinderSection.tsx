@@ -88,7 +88,11 @@ const StyleFinderSection: React.FC<StyleFinderSectionProps> = ({ config }) => {
             const IconComponent = PersonaIcons[persona.icon] ?? PersonaIcons['sparkles'];
 
             return (
-              <AnimateOnScroll key={persona.id} delay={100 + index * 100} className="[perspective:1000px]">
+              <AnimateOnScroll
+                key={persona.id}
+                delay={100 + index * 100}
+                className="[perspective:1000px]"
+              >
                 <Link to={`/${locale}${persona.href}`} className="group block h-full">
                   <div
                     className={`h-full bg-gradient-to-br ${persona.gradient} p-[1px] rounded-2xl [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)_rotateY(5deg)_rotateX(2deg)] transition-all duration-500`}

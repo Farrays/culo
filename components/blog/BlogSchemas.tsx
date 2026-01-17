@@ -317,25 +317,30 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
     answerCapsuleSections.length > 0
       ? answerCapsuleSections
           .filter(section => section.answerCapsule)
-          .map(section => ({
-            '@context': 'https://schema.org',
-            '@type': 'Question',
-            '@id': `${articleUrl}#${section.id}`,
-            name: t(section.answerCapsule!.questionKey),
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: t(section.answerCapsule!.answerKey),
-              url: `${articleUrl}#${section.id}`,
-              ...(section.answerCapsule!.sourceUrl && {
-                citation: {
-                  '@type': 'CreativeWork',
-                  name: section.answerCapsule!.sourcePublisher,
-                  url: section.answerCapsule!.sourceUrl,
-                  datePublished: section.answerCapsule!.sourceYear,
-                },
-              }),
-            },
-          }))
+          .map(section => {
+            const capsule = section.answerCapsule;
+            if (!capsule) return null;
+            return {
+              '@context': 'https://schema.org',
+              '@type': 'Question',
+              '@id': `${articleUrl}#${section.id}`,
+              name: t(capsule.questionKey),
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: t(capsule.answerKey),
+                url: `${articleUrl}#${section.id}`,
+                ...(capsule.sourceUrl && {
+                  citation: {
+                    '@type': 'CreativeWork',
+                    name: capsule.sourcePublisher,
+                    url: capsule.sourceUrl,
+                    datePublished: capsule.sourceYear,
+                  },
+                }),
+              },
+            };
+          })
+          .filter(Boolean)
       : [];
 
   /**
@@ -347,33 +352,38 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
     testimonialSections.length > 0
       ? testimonialSections
           .filter(section => section.testimonial)
-          .map(section => ({
-            '@context': 'https://schema.org',
-            '@type': 'Review',
-            '@id': `${articleUrl}#${section.id}`,
-            reviewBody: t(section.testimonial!.textKey),
-            reviewRating: {
-              '@type': 'Rating',
-              ratingValue: section.testimonial!.rating,
-              bestRating: 5,
-            },
-            author: {
-              '@type': 'Person',
-              name: section.testimonial!.authorName,
-              ...(section.testimonial!.authorLocation && {
-                address: {
-                  '@type': 'PostalAddress',
-                  addressLocality: section.testimonial!.authorLocation,
-                },
-              }),
-            },
-            itemReviewed: {
-              '@type': 'DanceSchool',
-              name: "Farray's International Dance Center",
-              '@id': `${baseUrl}/#organization`,
-            },
-            datePublished: section.testimonial!.datePublished || config.datePublished,
-          }))
+          .map(section => {
+            const testimonial = section.testimonial;
+            if (!testimonial) return null;
+            return {
+              '@context': 'https://schema.org',
+              '@type': 'Review',
+              '@id': `${articleUrl}#${section.id}`,
+              reviewBody: t(testimonial.textKey),
+              reviewRating: {
+                '@type': 'Rating',
+                ratingValue: testimonial.rating,
+                bestRating: 5,
+              },
+              author: {
+                '@type': 'Person',
+                name: testimonial.authorName,
+                ...(testimonial.authorLocation && {
+                  address: {
+                    '@type': 'PostalAddress',
+                    addressLocality: testimonial.authorLocation,
+                  },
+                }),
+              },
+              itemReviewed: {
+                '@type': 'DanceSchool',
+                name: "Farray's International Dance Center",
+                '@id': `${baseUrl}/#organization`,
+              },
+              datePublished: testimonial.datePublished || config.datePublished,
+            };
+          })
+          .filter(Boolean)
       : [];
 
   return (

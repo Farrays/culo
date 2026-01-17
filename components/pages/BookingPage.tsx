@@ -36,12 +36,18 @@ const BookingPage: React.FC = () => {
     },
     mainEntity: {
       '@type': 'Service',
-      name: locale === 'en' ? 'Welcome Dance Class' : locale === 'fr' ? 'Cours de Bienvenue' : 'Clase de Bienvenida',
-      description: locale === 'en'
-        ? 'Free welcome class to try our dance styles'
-        : locale === 'fr'
-          ? 'Cours de bienvenue gratuit pour essayer nos styles de danse'
-          : 'Clase de bienvenida gratuita para probar nuestros estilos de baile',
+      name:
+        locale === 'en'
+          ? 'Welcome Dance Class'
+          : locale === 'fr'
+            ? 'Cours de Bienvenue'
+            : 'Clase de Bienvenida',
+      description:
+        locale === 'en'
+          ? 'Free welcome class to try our dance styles'
+          : locale === 'fr'
+            ? 'Cours de bienvenue gratuit pour essayer nos styles de danse'
+            : 'Clase de bienvenida gratuita para probar nuestros estilos de baile',
       provider: {
         '@type': 'LocalBusiness',
         name: "Farray's Center Barcelona",
@@ -99,7 +105,18 @@ const BookingPage: React.FC = () => {
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://www.farrayscenter.com/images/og/booking.jpg" />
-        <meta property="og:locale" content={locale === 'ca' ? 'ca_ES' : locale === 'en' ? 'en_GB' : locale === 'fr' ? 'fr_FR' : 'es_ES'} />
+        <meta
+          property="og:locale"
+          content={
+            locale === 'ca'
+              ? 'ca_ES'
+              : locale === 'en'
+                ? 'en_GB'
+                : locale === 'fr'
+                  ? 'fr_FR'
+                  : 'es_ES'
+          }
+        />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -111,7 +128,11 @@ const BookingPage: React.FC = () => {
         <link rel="alternate" hrefLang="ca" href="https://www.farrayscenter.com/ca/reservas" />
         <link rel="alternate" hrefLang="en" href="https://www.farrayscenter.com/en/reservas" />
         <link rel="alternate" hrefLang="fr" href="https://www.farrayscenter.com/fr/reservas" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.farrayscenter.com/es/reservas" />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href="https://www.farrayscenter.com/es/reservas"
+        />
 
         {/* Schema.org */}
         <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
