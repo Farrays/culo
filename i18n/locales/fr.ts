@@ -665,9 +665,16 @@ export const fr = {
 
   // Dancehall schedule class names (enterprise i18n)
   dhScheduleClassTwerkIntermediate: 'Dancehall Twerk Intermédiaire',
+  dhScheduleClassTwerkBeginner: 'Dancehall Twerk Débutant',
   dhScheduleClassBasic: 'Dancehall Basique',
+  dhScheduleClassFemaleBeginner: 'Dancehall Female Débutant',
+  dhScheduleClassFemaleBasic: 'Dancehall Female Basique',
+  dhScheduleClassFemaleIntermediate: 'Dancehall Female Intermédiaire',
 
   dhV3LevelsTitle: 'Niveaux et Progression',
+  dhV3LevelBasicTitle: 'Dancehall Basique',
+  dhV3TeachersClosing:
+    "Avec nos professeurs, vous n'apprenez pas seulement le Dancehall : vous accédez à l'énergie authentique et à la culture jamaïcaine qui définissent ce style.",
 
   dhV3TestimonialsTitle: 'Témoignages non sollicités de nos étudiants',
 
@@ -5890,6 +5897,8 @@ Tous les termes du ballet sont en français, héritage de son développement à 
 
   // ===== Level Cards Section =====
   modernjazzLevelsTitle: 'Niveaux de Modern Jazz',
+  modernjazzTeachersClosing:
+    "Avec nos professeurs, vous n'apprenez pas seulement la technique du Modern Jazz : vous développez votre expressivité et votre style personnel.",
   modernjazzLevelBasicTitle: 'Fondamentaux et expression',
   modernjazzLevelBasicDesc:
     'Cours idéal pour débutants ou ceux qui veulent construire des bases solides. Nous travaillons la posture, les isolations, la coordination et les premières chorégraphies avec une musique variée. Zéro pression, beaucoup de plaisir.',
@@ -6043,7 +6052,11 @@ Des danseurs du monde entier voyagent à Barcelone spécifiquement pour se forme
   afrojazzScheduleSubtitle: "Cours hebdomadaires avec l'équipe de la Méthode Farray",
   afrojazzTeacher1Bio:
     "Yunaisy Farray est maître formée à l'École Nationale d'Art de Cuba (ENA), membre du Conseil International de la Danse de l'UNESCO et actrice de Street Dance 2. Créatrice de l'Afro Jazz comme discipline unique, elle donne les cours de niveau intermédiaire et avancé les jeudis de 19h à 20h30.",
+  afrojazzTeachersClosing:
+    "Avec la créatrice de l'Afro Jazz, vous n'apprenez pas seulement une technique : vous accédez à la méthodologie originale d'une discipline unique au monde.",
   // Level Cards Section
+  afrojazzLevelsTitle: "Niveaux d'Afro Jazz",
+  afrojazzLevelBasicTitle: 'Afro Jazz Basique',
   afrojazzLevelBasicDesc:
     "Pour ceux qui débutent dans cette discipline ou ont peu d'expérience en danse. Apprenez les fondamentaux de la fusion Afro + Jazz : coordination de base, rythmes africains, posture et premiers pas du vocabulaire Afro Jazz. Sans prérequis.",
   afrojazzLevelIntAdvTitle: 'Afro Jazz Intermédiaire/Avancé',
@@ -6393,6 +6406,8 @@ Travaille intégralement : **flexibilité, force fonctionnelle, coordination, pr
     "Daniel Sené est danseur professionnel avec une formation de carrière à l'École Cubaine. Sa méthodologie combine la technique rigoureuse avec l'expression lyrique, vous guidant pour développer votre propre langage corporel tout en maîtrisant les fondamentaux de la danse contemporaine.",
   contemporaneoTeachersClosing:
     "Avec Daniel et Alejandro vous n'apprenez pas seulement la technique contemporaine : vous découvrez une nouvelle façon de vous exprimer, de vous connecter à votre corps et de développer votre propre langage de mouvement.",
+  contemporaneoLevelsTitle: 'Niveaux de Danse Contemporaine',
+  contemporaneoLevelBasicTitle: 'Contemporain Basique',
 
   // Schedule Section
   // Level Cards Section
@@ -7182,6 +7197,7 @@ L'Afro Contemporain enseigné au **Farray's International Dance Center** fait pa
 
   // Level cards
   hiphopLevelsTitle: "Maîtrisez l'Art du Hip Hop Urbain",
+  hiphopLevelBasicTitle: 'Hip Hop Basique',
   hiphopLevelOpenTitle: 'Hip Hop Urbain Open Level',
   hiphopLevelOpenDesc:
     "Cours ouverts à tous les niveaux où nous travaillons groove, fondamentaux et chorégraphies. Marcos Martínez guide depuis les pas de base jusqu'aux combinaisons avancées, en s'adaptant à chaque élève.",
@@ -8985,6 +9001,9 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   lightboxLoading: "Chargement de l'image...",
   lightboxGalleryLabel: "Galerie d'images des installations",
   twerkLevelsTitle: 'Nuestros Niveles de Twerk',
+  twerkLevelBasicTitle: 'Twerk Débutant',
+  twerkTeachersClosing:
+    'Avec nos professeurs, vous apprendrez à maîtriser les mouvements de hanches et de fessiers dans un environnement bienveillant et positif.',
   twerkPrepareTitle: 'Prepara tu primera clase de Twerk',
   twerkPrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
   twerkPrepareWhatToBring: 'Quoi apporter:',
@@ -9059,6 +9078,8 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   afroNearbyMetro:
     'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
   hhrLevelsTitle: 'Nuestros Niveles de Hip Hop Reggaeton',
+  hhrTeachersClosing:
+    "Avec nos professeurs, vous n'apprenez pas seulement le Hip Hop Reggaeton : vous découvrez une fusion unique d'énergie urbaine et de rythmes latinos.",
   hhrLevelBasicTitle: 'Hip Hop Reggaeton Básico',
   hhrLevelBasicDesc:
     'Para principiantes. Aprenderás los fundamentos: groove, bounce, pasos básicos de hip-hop y reggaeton, actitud y musicalidad. Sin experiencia previa necesaria.',
@@ -9212,6 +9233,8 @@ La Méthode Farray® récupère et enseigne cette tradition authentique avec une
   rcbNearbyMetro:
     'Metro: Plaza España (L1, L3), Rocafort (L1) - 5 min andando, Entença (L5) - 5 min andando o Hostafrancs (L1) - 5 min andando.',
   femLevelsTitle: 'Nuestros Niveles de Femmology',
+  femTeachersClosing:
+    'Avec nos professeurs, vous découvrirez comment exprimer votre féminité avec élégance, confiance et une technique raffinée.',
   femLevelBasicTitle: 'Femmology Iniciación',
   femLevelBasicDesc:
     'Perfecto para empezar tu viaje. Aprenderás a caminar en tacones con elegancia, trabajarás la postura básica, descubrirás el uso del pelo como elemento expresivo y comenzarás a conectar con tu feminidad a través del movimiento.',
@@ -9699,6 +9722,7 @@ Notre professeur **Marcos Martínez**, juge de compétitions internationales et 
   folkloreScheduleTitle: 'Horaires de nos cours de Folklore Cubain',
   folkloreScheduleSubtitle: 'Cours hebdomadaires avec des maîtres cubains spécialisés',
   folkloreLevelsTitle: 'Niveaux et Progression',
+  folkloreLevelBasicTitle: 'Initiation',
 
   // Level Cards
   folkloreLevelBeginnerTitle: 'Initiation',
@@ -10318,6 +10342,8 @@ Notre professeur **Marcos Martínez**, juge de compétitions internationales et 
   stretchingLevelInterAdvTitle: 'Intermédiaire/Avancé (Backbending & Legs)',
   stretchingLevelInterAdvDesc:
     'Niveau plus intense pour ceux qui ont déjà une bonne flexibilité. Travail profond du backbending avancé et des splits complets.',
+  stretchingTeachersClosing:
+    'Avec nos professeurs spécialisés, vous développerez votre flexibilité de manière progressive et sécurisée, essentielle pour tout danseur.',
 
   // === TEACHERS SECTION ===
   stretchingTeachersTitle: 'Vos Professeurs de Stretching',
@@ -10627,6 +10653,9 @@ Les études scientifiques confirment qu'un stretching régulier de 3+ fois par s
 
   // === LEVELS SECTION ===
   bumbumLevelsTitle: 'Niveau du Cours',
+  bumbumLevelBasicTitle: 'Bum Bum Basique',
+  bumbumTeachersClosing:
+    "Avec nos professeurs, vous découvrirez l'énergie explosive du Bum Bum brésilien et travaillerez votre technique avec un focus sur le mouvement des hanches.",
   bumbumLevelsSubtitle: 'Ouvert à tous les niveaux',
   bumbumLevelOpenTitle: 'Open Level',
   bumbumLevelOpenDesc:
@@ -10898,6 +10927,7 @@ L'entraînement régulier des fessiers (2-3 fois/semaine) :
 
   // Levels - Open Level
   bachataLadyLevelsTitle: 'Nos Niveaux de Bachata Lady Style',
+  bachataLadyLevelBasicTitle: 'Bachata Lady Basique',
   bachataLadyLevelOpenTitle: 'Open Level',
   bachataLadyLevelOpenDesc:
     "Cours conçus pour tous les niveaux. Chaque exercice s'adapte à votre expérience, des débutantes aux danseuses avancées. Nous travaillons ondulations, mouvement de hanches, expression corporelle et style personnel dans un environnement inclusif où chacune progresse à son rythme.",
@@ -16721,6 +16751,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   cuerpofitTransform6Desc: `Vous savez que votre corps peut relever n'importe quel défi.`,
   cuerpofitTransformCTA: `Pourquoi choisir Farray's Center pour votre Body Conditioning à Barcelone ?`,
   cuerpofitLevelsTitle: `Niveau du Cours`,
+  cuerpofitLevelBasicTitle: 'Open Level',
   cuerpofitLevelsSubtitle: `Ouvert à tous les niveaux`,
   cuerpofitLevelOpenTitle: `Open Level`,
   cuerpofitLevelOpenDesc: `Cours adaptable à tous les niveaux. Chaque exercice a des variations du débutant à l'avancé. Cris vous guide selon votre niveau actuel, assurant que vous travaillez dans votre zone de développement optimale sans risque de blessure.`,
@@ -17127,6 +17158,9 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   fullBodyCardioTransform6Desc: `Ce n'est pas souffrir dans une salle de sport. C'est s'amuser tout en se mettant en forme.`,
   fullBodyCardioTransformCTA: `¿Por qué elegir Farray's Center pour tu Cuerpo-Fit à Barcelone?`,
   fullBodyCardioLevelsTitle: `Niveau de Cuerpo-Fit`,
+  fullBodyCardioLevelBasicTitle: 'Tous les niveaux',
+  fullBodyCardioTeachersClosing:
+    "Chez Farray's Center, le cardio dansé n'est pas un simple entraînement : c'est une façon de combiner fitness et plaisir de la danse.",
   fullBodyCardioLevelsSubtitle: `Un cours ouvert à tous`,
   fullBodyCardioLevelOpenTitle: `Tous les niveaux`,
   fullBodyCardioLevelOpenDesc: `Cuerpo-Fit est niveau ouvert. Chaque exercice a des variantes d'intensité : vous choisissez la vôtre. Débutants absolutos trabajan al lado de personas avec expérience, cada uno a su ritmo. Sans pression, sans comparaisons.`,
@@ -18924,6 +18958,8 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Header
   booking_title: 'Réservez votre Cours de Bienvenue',
   booking_subtitle: 'Choisissez votre style, sélectionnez un cours et confirmez votre présence',
+  booking_subtitle_extended:
+    "Sélectionnez votre cours, complétez le formulaire et venez vivre l'expérience Farray's en personne",
   booking_step1: 'Choisir Style',
   booking_step2: 'Sélectionner Cours',
   booking_step3: 'Confirmer Données',
@@ -19429,4 +19465,33 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   trustbar_members: 'Membres Actifs',
   trustbar_years: 'ans',
   trustbar_inBarcelona: 'à Barcelone',
+
+  // ============================================================================
+  // Dynamic Schedule Section (Momence Integration)
+  // ============================================================================
+  scheduleTitle: 'Prochains Cours',
+  scheduleSubtitle: 'Horaires mis à jour en temps réel',
+  scheduleListLabel: 'Liste des prochains cours programmés',
+  scheduleVacationMessage: 'Aucun cours programmé pour le moment',
+  scheduleVacationSubtext:
+    'Nous revenons bientôt ! Laissez-nous votre email pour être averti quand les cours reprendront.',
+  scheduleVacationCTA: 'Prévenez-moi du retour des cours',
+  scheduleUsingCached: 'Affichage des horaires mis en cache',
+  // Enterprise status indicator
+  scheduleStatusRealtime: 'Synchronisé avec Momence',
+  scheduleStatusLive: 'EN DIRECT',
+  scheduleStatusUpdatedNow: 'Mis à jour maintenant',
+  scheduleStatusUpdatedMinutes: 'Mis à jour il y a {minutes} min',
+  classFull: 'COMPLET',
+  spotsAvailable: 'places disponibles',
+  retry: 'Réessayer',
+
+  // Day abbreviations (localized)
+  dayShort_monday: 'Lun',
+  dayShort_tuesday: 'Mar',
+  dayShort_wednesday: 'Mer',
+  dayShort_thursday: 'Jeu',
+  dayShort_friday: 'Ven',
+  dayShort_saturday: 'Sam',
+  dayShort_sunday: 'Dim',
 };
