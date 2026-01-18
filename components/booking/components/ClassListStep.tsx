@@ -507,9 +507,9 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
         </div>
 
         {/* Results count */}
-        {!loading && !error && classes.length > 0 && (
+        {!loading && !error && displayClasses.length > 0 && (
           <p className="text-center text-sm text-neutral/50">
-            {t('booking_classes_found', { count: classes.length })}
+            {t('booking_classes_found', { count: displayClasses.length })}
           </p>
         )}
 
