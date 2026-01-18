@@ -328,12 +328,26 @@ export const ClassCard: React.FC<ClassCardProps> = memo(
 
     const teacherRegistryId = findTeacherRegistryId(classData.instructor);
 
+    // Handle keyboard events for accessibility (Enter/Space to select)
+    const handleKeyDown = useCallback(
+      (e: React.KeyboardEvent) => {
+        if (classData.isFull) return;
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onSelect(classData);
+        }
+      },
+      [classData, onSelect]
+    );
+
     return (
       <>
-        <button
-          type="button"
+        <div
+          role="button"
+          tabIndex={classData.isFull ? -1 : 0}
           onClick={handleCardClick}
-          disabled={classData.isFull}
+          onKeyDown={handleKeyDown}
+          aria-disabled={classData.isFull}
           className={`
             w-full p-4 rounded-2xl border-2 text-left transition-all duration-300
             ${
@@ -341,7 +355,7 @@ export const ClassCard: React.FC<ClassCardProps> = memo(
                 ? 'border-primary-accent bg-primary-accent/10'
                 : classData.isFull
                   ? 'border-white/10 bg-white/5 opacity-60 cursor-not-allowed'
-                  : 'border-white/10 bg-white/5 hover:border-primary-accent hover:bg-white/10'
+                  : 'border-white/10 bg-white/5 hover:border-primary-accent hover:bg-white/10 cursor-pointer'
             }
           `}
         >
@@ -422,7 +436,7 @@ export const ClassCard: React.FC<ClassCardProps> = memo(
               {isSelected && <CheckIcon className="w-5 h-5 text-primary-accent" />}
             </div>
           </div>
-        </button>
+        </div>
 
         {/* Teacher Modal */}
         {teacherModalId && (

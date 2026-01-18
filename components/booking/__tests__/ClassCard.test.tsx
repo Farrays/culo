@@ -145,9 +145,9 @@ describe('ClassCard', () => {
         <ClassCard classData={classData} onSelect={mockOnSelect} onShowInfo={mockOnShowInfo} />
       );
 
-      // The main card button should be disabled
+      // The main card (div with role="button") should be aria-disabled
       const cardButton = screen.getAllByRole('button')[0];
-      expect(cardButton).toBeDisabled();
+      expect(cardButton).toHaveAttribute('aria-disabled', 'true');
     });
 
     it('should have reduced opacity when class is full', () => {
@@ -308,9 +308,12 @@ describe('ClassCard', () => {
       );
 
       const buttons = screen.getAllByRole('button');
-      buttons.forEach(button => {
+      // Filter to only check actual <button> elements (exclude div[role="button"])
+      const buttonElements = buttons.filter(btn => btn.tagName.toLowerCase() === 'button');
+      buttonElements.forEach(button => {
         expect(button).toHaveAttribute('type', 'button');
       });
+      expect(buttonElements.length).toBeGreaterThan(0);
     });
 
     it('should have aria-label on share button', () => {
