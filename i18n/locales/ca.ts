@@ -659,9 +659,16 @@ export const ca = {
 
   // Dancehall schedule class names (enterprise i18n)
   dhScheduleClassTwerkIntermediate: 'Dancehall Twerk Intermedi',
+  dhScheduleClassTwerkBeginner: 'Dancehall Twerk Principiant',
   dhScheduleClassBasic: 'Dancehall Bàsic',
+  dhScheduleClassFemaleBeginner: 'Dancehall Female Principiant',
+  dhScheduleClassFemaleBasic: 'Dancehall Female Bàsic',
+  dhScheduleClassFemaleIntermediate: 'Dancehall Female Intermedi',
 
   dhV3LevelsTitle: 'Nivells i Progressió',
+  dhV3LevelBasicTitle: 'Dancehall Bàsic',
+  dhV3TeachersClosing:
+    "Amb les nostres professores no només aprens Dancehall: descobreixes una forma d'expressar-te amb autenticitat jamaicana i connexió amb la cultura.",
 
   dhV3TestimonialsTitle: 'Testimonis no sol·licitats dels nostres estudiants',
 
@@ -5913,6 +5920,8 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
 
   // ===== Level Cards Section =====
   modernjazzLevelsTitle: 'Nivells de Modern Jazz',
+  modernjazzTeachersClosing:
+    "Amb els nostres professors no només aprens Modern Jazz: descobreixes el pont perfecte entre la tècnica clàssica i l'expressió contemporània.",
   modernjazzLevelBasicTitle: 'Fonaments i expressió',
   modernjazzLevelBasicDesc:
     'Classe ideal per a qui comença o vol assentar bases sòlides. Treballem postura, isolations, coordinació i primeres coreografies amb música variada. Zero pressió, molta diversió.',
@@ -6060,7 +6069,11 @@ Ballarins de tot el món viatgen a Barcelona específicament per formar-se en Af
   afrojazzScheduleSubtitle: "Classes setmanals amb l'equip del Mètode Farray",
   afrojazzTeacher1Bio:
     "Yunaisy Farray és mestra formada a l'Escola Nacional d'Art de Cuba (ENA), membre del Consell Internacional de la Dansa de la UNESCO i actriu de Street Dance 2. Creadora de l'Afro Jazz com a disciplina única, imparteix les classes de nivell intermedi i avançat els dijous de 19h a 20:30h.",
+  afrojazzTeachersClosing:
+    "Amb la creadora de l'Afro Jazz no només aprens una tècnica: accedeixes a la metodologia original d'una disciplina única al món.",
   // Level Cards Section
+  afrojazzLevelsTitle: "Nivells d'Afro Jazz",
+  afrojazzLevelBasicTitle: 'Afro Jazz Bàsic',
   afrojazzLevelBasicDesc:
     "Per als qui s'inicien en aquesta disciplina o tenen poca experiència en dansa. Aprèn els fonaments de la fusió Afro + Jazz: coordinació bàsica, ritmes africans, postura i primers passos del vocabulari Afro Jazz. Sense requisits previs.",
   afrojazzLevelIntAdvTitle: 'Afro Jazz Intermedi/Avançat',
@@ -6395,6 +6408,8 @@ Treballa integralment: **flexibilitat, força funcional, coordinació, propiocep
     "Daniel Sené és ballarí professional amb formació de carrera a l'Escola Cubana. La seva metodologia combina la tècnica rigorosa amb l'expressió lírica, guiant-te perquè desenvolupis el teu propi llenguatge corporal mentre domines els fonaments de la dansa contemporània.",
   contemporaneoTeachersClosing:
     "Amb Daniel i Alejandro no només aprens tècnica contemporània: descobreixes una nova forma d'expressar-te, connectar amb el teu cos i desenvolupar el teu propi llenguatge de moviment.",
+  contemporaneoLevelsTitle: 'Nivells de Dansa Contemporània',
+  contemporaneoLevelBasicTitle: 'Contemporani Bàsic',
 
   // Schedule Section
   // Level Cards Section
@@ -7157,6 +7172,7 @@ L'Afro Contemporani impartit a **Farray's International Dance Center** forma par
 
   // Level cards
   hiphopLevelsTitle: "Domina l'Art del Hip Hop Urbà",
+  hiphopLevelBasicTitle: 'Hip Hop Bàsic',
   hiphopLevelOpenTitle: 'Hip Hop Urbà Open Level',
   hiphopLevelOpenDesc:
     'Classes obertes a tots els nivells on treballem groove, fonaments i coreografies. Marcos Martínez guia des dels passos base fins a combinacions avançades, adaptant-se a cada alumne.',
@@ -8834,6 +8850,9 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   facilitiesBreadcrumbHome: 'Inici',
   facilitiesBreadcrumbCurrent: 'Instal·lacions',
   twerkLevelsTitle: 'Els Nostres Nivells de Twerk',
+  twerkLevelBasicTitle: 'Twerk Bàsic',
+  twerkTeachersClosing:
+    'Amb Sandra no només aprens Twerk: descobreixes el poder del teu cos i una nova forma de connectar amb el ritme i la teva confiança.',
   twerkPrepareTitle: 'Prepara la teva primera classe de Twerk',
   twerkPrepareSubtitle: 'Tot el que necessites saber abans de venir',
   twerkPrepareWhatToBring: 'Què portar:',
@@ -8908,6 +8927,8 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   afroNearbyMetro:
     'Metro: Plaça Espanya (L1, L3), Rocafort (L1) - 5 min caminant, Entença (L5) - 5 min caminant o Hostafrancs (L1) - 5 min caminant.',
   hhrLevelsTitle: 'Els Nostres Nivells de Hip Hop Reggaeton',
+  hhrTeachersClosing:
+    "Aprèn d'una mestra que combina el millor del Hip Hop i el Reggaeton, transmetent no només tècnica sinó l'energia i l'actitud que defineixen aquest estil.",
   hhrLevelBasicTitle: 'Hip Hop Reggaeton Bàsic',
   hhrLevelBasicDesc:
     'Per a principiants. Aprendràs els fonaments: groove, bounce, passos bàsics de hip-hop i reggaeton, actitud i musicalitat. Sense experiència prèvia necessària.',
@@ -9059,6 +9080,8 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   rcbNearbyMetro:
     'Metro: Plaça Espanya (L1, L3), Rocafort (L1) - 5 min caminant, Entença (L5) - 5 min caminant o Hostafrancs (L1) - 5 min caminant.',
   femLevelsTitle: 'Els Nostres Nivells de Femmology',
+  femTeachersClosing:
+    "Amb Yunaisy no només aprens Femmology: descobreixes la teva pròpia forma d'expressar feminitat i poder a través del moviment.",
   femLevelBasicTitle: 'Femmology Iniciació',
   femLevelBasicDesc:
     "Perfecte per començar el teu viatge. Aprendràs a caminar amb tacons amb elegància, treballaràs la postura bàsica, descobriràs l'ús del cabell com a element expressiu i començaràs a connectar amb la teva feminitat a través del moviment.",
@@ -9491,6 +9514,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   folkloreScheduleTitle: 'Horaris de les nostres classes de Folklore Cubà',
   folkloreScheduleSubtitle: 'Classes setmanals amb mestres cubans especialitzats',
   folkloreLevelsTitle: 'Nivells i Progressió',
+  folkloreLevelBasicTitle: 'Folklore Bàsic',
 
   // Level Cards
   folkloreLevelBeginnerTitle: 'Iniciació',
@@ -10082,6 +10106,8 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
 
   // === LEVELS SECTION ===
   stretchingLevelsTitle: "Els nostres Nivells d'Stretching",
+  stretchingTeachersClosing:
+    'Amb Cris i Daniel no només millores la teva flexibilitat: descobreixes el potencial del teu cos en un ambient sense pressió i amb atenció personalitzada.',
   stretchingLevelsSubtitle: 'Un camí progressiu adaptat a cada cos',
   stretchingLevelBeginnerTitle: 'Principiants',
   stretchingLevelBeginnerDesc:
@@ -10401,6 +10427,9 @@ Estudis científics confirmen que l'stretching regular de 3+ vegades per setmana
 
   // === LEVELS SECTION ===
   bumbumLevelsTitle: 'Nivell de la Classe',
+  bumbumLevelBasicTitle: 'Bum Bum Bàsic',
+  bumbumTeachersClosing:
+    'Amb Cris Ag no només enforteixes els teus glutis: descobreixes una forma divertida i efectiva de tonificar el teu cos amb música i ritme.',
   bumbumLevelsSubtitle: 'Oberta per a tots els nivells',
   bumbumLevelOpenTitle: 'Open Level',
   bumbumLevelOpenDesc:
@@ -10669,6 +10698,7 @@ L'entrenament regular de glutis (2-3 vegades/setmana):
 
   // Levels - Open Level
   bachataLadyLevelsTitle: 'Els nostres Nivells de Bachata Lady Style',
+  bachataLadyLevelBasicTitle: 'Bachata Lady Style Bàsic',
   bachataLadyLevelOpenTitle: 'Open Level',
   bachataLadyLevelOpenDesc:
     "Classes dissenyades per a tots els nivells. Cada exercici s'adapta a la teva experiència, des de principiants fins a balladores avançades. Treballem ondulacions, moviment de malucs, expressió corporal i estil personal en un ambient inclusiu on cadascuna progressa al seu ritme.",
@@ -16388,6 +16418,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   cuerpofitTransform6Desc: `Saps que el teu cos pot amb qualsevol repte.`,
   cuerpofitTransformCTA: `Per què triar Farray's Center per al teu Body Conditioning a Barcelona?`,
   cuerpofitLevelsTitle: `Nivell de la Classe`,
+  cuerpofitLevelBasicTitle: 'Body Conditioning Bàsic',
   cuerpofitLevelsSubtitle: `Oberta per a tots els nivells`,
   cuerpofitLevelOpenTitle: `Open Level`,
   cuerpofitLevelOpenDesc: `Classe adaptable a tots els nivells. Cada exercici té variacions des de principiant fins a avançat. Cris et guia segons el teu nivell actual, assegurant que treballis a la teva zona de desenvolupament òptim sense risc de lesió.`,
@@ -16794,6 +16825,9 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   fullBodyCardioTransform6Desc: `No és patir al gimnàs. És passar-t'ho bé mentre et poses en forma.`,
   fullBodyCardioTransformCTA: `¿Por qué elegir Farray's Center per a tu Cuerpo-Fit a Barcelona?`,
   fullBodyCardioLevelsTitle: `Nivell de Cuerpo-Fit`,
+  fullBodyCardioLevelBasicTitle: 'Cuerpo-Fit Bàsic',
+  fullBodyCardioTeachersClosing:
+    'Amb la nostra professora no només entrenes el cos: descobreixes una forma de posar-te en forma que és divertida, efectiva i sense avorriment.',
   fullBodyCardioLevelsSubtitle: `Una classe oberta per a tothom`,
   fullBodyCardioLevelOpenTitle: `Tots els nivells`,
   fullBodyCardioLevelOpenDesc: `Cuerpo-Fit és nivell obert. Cada exercici té variants d'intensitat: tu tries la teva. Principiants absolutos trabajan al lado de personas amb experiència, cada uno a su ritmo. Sense pressió, sense comparacions.`,
@@ -18752,6 +18786,8 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // Header
   booking_title: 'Reserva la teva Classe de Benvinguda',
   booking_subtitle: "Tria el teu estil, selecciona la classe i confirma l'assistència",
+  booking_subtitle_extended:
+    "Selecciona la teva classe, completa el formulari i vine a viure l'experiència Farray's en persona",
   booking_step1: 'Tria Estil',
   booking_step2: 'Selecciona Classe',
   booking_step3: 'Confirma Dades',
@@ -19254,4 +19290,33 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   trustbar_members: 'Socis Actius',
   trustbar_years: 'anys',
   trustbar_inBarcelona: 'a Barcelona',
+
+  // ============================================================================
+  // Dynamic Schedule Section (Momence Integration)
+  // ============================================================================
+  scheduleTitle: 'Properes Classes',
+  scheduleSubtitle: 'Horaris actualitzats en temps real',
+  scheduleListLabel: 'Llista de properes classes programades',
+  scheduleVacationMessage: 'No hi ha classes programades properament',
+  scheduleVacationSubtext:
+    "Tornem aviat! Deixa'ns el teu email per avisar-te quan comencin les classes.",
+  scheduleVacationCTA: "Avisa'm quan tornin",
+  scheduleUsingCached: 'Mostrant horaris emmagatzemats',
+  // Enterprise status indicator
+  scheduleStatusRealtime: 'Sincronitzat amb Momence',
+  scheduleStatusLive: 'EN DIRECTE',
+  scheduleStatusUpdatedNow: 'Actualitzat ara',
+  scheduleStatusUpdatedMinutes: 'Actualitzat fa {minutes} min',
+  classFull: 'COMPLET',
+  spotsAvailable: 'places disponibles',
+  retry: 'Reintentar',
+
+  // Day abbreviations (localized)
+  dayShort_monday: 'Dll',
+  dayShort_tuesday: 'Dm',
+  dayShort_wednesday: 'Dc',
+  dayShort_thursday: 'Dj',
+  dayShort_friday: 'Dv',
+  dayShort_saturday: 'Ds',
+  dayShort_sunday: 'Dg',
 };

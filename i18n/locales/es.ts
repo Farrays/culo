@@ -1358,9 +1358,16 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   // Dancehall schedule class names (enterprise i18n)
   dhScheduleClassTwerkIntermediate: 'Dancehall Twerk Intermedio',
+  dhScheduleClassTwerkBeginner: 'Dancehall Twerk Principiante',
   dhScheduleClassBasic: 'Dancehall Básico',
+  dhScheduleClassFemaleBeginner: 'Dancehall Female Principiante',
+  dhScheduleClassFemaleBasic: 'Dancehall Female Básico',
+  dhScheduleClassFemaleIntermediate: 'Dancehall Female Intermedio',
 
   dhV3LevelsTitle: 'Niveles y Progresión',
+  dhV3LevelBasicTitle: 'Dancehall Básico',
+  dhV3TeachersClosing:
+    'Con nuestras profesoras de Dancehall descubrirás el auténtico flow jamaicano mientras desarrollas tu propio estilo y actitud.',
 
   dhV3TestimonialsTitle: 'Testimonios de nuestros estudiantes',
 
@@ -3979,6 +3986,9 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   twerkClassesSubtitle: 'Clases para todos los niveles',
 
   twerkLevelsTitle: 'Nuestros Niveles de Twerk',
+  twerkLevelBasicTitle: 'Twerk Básico',
+  twerkTeachersClosing:
+    'Con Sandra Gómez descubrirás el poder del Twerk en un ambiente seguro, motivador y sin juicios donde todas se sienten empoderadas.',
   twerkLevelBeginnerTitle: 'Principiante',
   twerkLevelBeginnerDesc:
     'Ideal para quienes empiezan desde cero. Aprende los fundamentos del Twerk y movimientos básicos de cadera.',
@@ -4789,6 +4799,8 @@ Esta fusión incorpora:
 
   // ===== Niveles de Hip Hop Reggaeton =====
   hhrLevelsTitle: 'Nuestros Niveles de Hip Hop Reggaeton',
+  hhrTeachersClosing:
+    'Con Charlie Breezy aprenderás no solo técnica de Hip Hop y Reggaeton, sino la actitud y el flow que definen el baile urbano.',
   hhrLevelBasicTitle: 'Hip Hop Reggaeton Básico',
   hhrLevelBasicDesc:
     'Para principiantes. Aprenderás los fundamentos: groove, bounce, pasos básicos de hip-hop y reggaeton, actitud y musicalidad. Sin experiencia previa necesaria.',
@@ -5923,6 +5935,8 @@ A lo largo de más de una década, Femmology ha transformado la vida de miles de
 
   // ===== Niveles de Femmology =====
   femLevelsTitle: 'Nuestros Niveles de Femmology',
+  femTeachersClosing:
+    'Con Yunaisy Farray descubrirás tu feminidad a través del movimiento y los tacones con el único Método Farray® original.',
   femLevelBasicTitle: 'Femmology Iniciación',
   femLevelBasicDesc:
     'Perfecto para empezar tu viaje. Aprenderás a caminar en tacones con elegancia, trabajarás la postura básica, descubrirás el uso del pelo como elemento expresivo y comenzarás a conectar con tu feminidad a través del movimiento.',
@@ -6703,6 +6717,8 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
 
   // ===== Level Cards Section =====
   modernjazzLevelsTitle: 'Niveles de Modern Jazz',
+  modernjazzTeachersClosing:
+    'Con nuestros profesores de Modern Jazz combinarás técnica, expresión y diversión en cada clase.',
   modernjazzLevelBasicTitle: 'Fundamentos y expresión',
   modernjazzLevelBasicDesc:
     'Clase ideal para quien empieza o quiere asentar bases sólidas. Trabajamos postura, isolations, coordinación y primeras coreografías con música variada. Cero presión, mucho disfrute.',
@@ -7347,6 +7363,9 @@ Trabaja integralmente: **flexibilidad, fuerza funcional, coordinación, propioce
     'Bailarines profesionales formados en la Escuela Cubana con carrera internacional',
   contemporaneoTeachersClosing:
     'Con Daniel y Alejandro no solo aprendes técnica contemporánea: descubres una nueva forma de expresarte, conectar con tu cuerpo y desarrollar tu propio lenguaje de movimiento.',
+  // Levels Section
+  contemporaneoLevelsTitle: 'Niveles de Danza Contemporánea',
+  contemporaneoLevelBasicTitle: 'Contemporáneo Básico',
   // Schedule Section
   contemporaneoScheduleTitle: 'Horarios de Clases de Danza Contemporánea',
   contemporaneoScheduleSubtitle:
@@ -8108,10 +8127,14 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   // Teachers Section
   afrojazzTeachersTitle: 'Tus profesores de Afro Jazz',
   afrojazzTeachersSubtitle: 'Formación de élite con el equipo del Método Farray',
+  afrojazzTeachersClosing:
+    'Con la creadora del Afro Jazz no solo aprendes una técnica: accedes a la metodología original de una disciplina única en el mundo.',
   // Schedule Section
   afrojazzScheduleTitle: 'Horarios de Clases de Afro Jazz',
   afrojazzScheduleSubtitle: 'Clases semanales con el equipo del Método Farray',
   // Level Cards Section
+  afrojazzLevelsTitle: 'Niveles de Afro Jazz',
+  afrojazzLevelBasicTitle: 'Afro Jazz Básico',
   afrojazzLevelBasicDesc:
     'Para quienes se inician en esta disciplina o tienen poca experiencia en danza. Aprende los fundamentos de la fusión Afro + Jazz: coordinación básica, ritmos africanos, postura y primeros pasos del vocabulario Afro Jazz. Sin requisitos previos.',
   afrojazzLevelIntAdvTitle: 'Afro Jazz Intermedio/Avanzado',
@@ -8376,6 +8399,7 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
 
   // Levels
   hiphopLevelsTitle: 'Domina el Arte del Hip Hop Urbano',
+  hiphopLevelBasicTitle: 'Hip Hop Básico',
   hiphopLevelOpenTitle: 'Hip Hop Urbano Open Level',
   hiphopLevelOpenDesc:
     'Clase abierta a todos los niveles donde trabajarás técnica, musicalidad, freestyle e improvisación. Cada semana exploramos diferentes estilos y movimientos para que desarrolles tu propio flow y estilo personal. Con Marcos Martínez los jueves de 20h a 21h.',
@@ -10066,6 +10090,7 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
 
   // Levels - Open Level
   bachataLadyLevelsTitle: 'Nuestros Niveles de Bachata Lady Style',
+  bachataLadyLevelBasicTitle: 'Bachata Lady Básico',
   bachataLadyLevelOpenTitle: 'Open Level',
   bachataLadyLevelOpenDesc:
     'Clases diseñadas para todos los niveles. Cada ejercicio se adapta a tu experiencia, desde principiantes hasta bailarinas avanzadas. Trabajamos ondulaciones, movimiento de cadera, expresión corporal y estilo personal en un ambiente inclusivo donde cada una progresa a su ritmo.',
@@ -10600,6 +10625,7 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
   folkloreScheduleTitle: 'Horarios de nuestras clases de Folklore Cubano',
   folkloreScheduleSubtitle: 'Clases semanales con maestros cubanos especializados',
   folkloreLevelsTitle: 'Niveles y Progresión',
+  folkloreLevelBasicTitle: 'Folklore Básico',
 
   // Level Cards
   folkloreLevelBeginnerTitle: 'Iniciación',
@@ -11113,6 +11139,8 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
 
   // === LEVELS SECTION ===
   stretchingLevelsTitle: 'Nuestros Niveles de Stretching',
+  stretchingTeachersClosing:
+    'Con Cris y Daniel trabajarás tu flexibilidad de forma segura y progresiva, respetando los límites de tu cuerpo.',
   stretchingLevelsSubtitle: 'Un camino progresivo adaptado a cada cuerpo',
   stretchingLevelBeginnerTitle: 'Principiantes',
   stretchingLevelBeginnerDesc:
@@ -11427,6 +11455,7 @@ Estudios científicos confirman que el stretching regular de 3+ veces por semana
 
   // === LEVELS SECTION ===
   cuerpofitLevelsTitle: 'Nivel de la Clase',
+  cuerpofitLevelBasicTitle: 'Nivel Básico',
   cuerpofitLevelsSubtitle: 'Abierta para todos los niveles',
   cuerpofitLevelOpenTitle: 'Open Level',
   cuerpofitLevelOpenDesc:
@@ -11980,6 +12009,9 @@ El Método Farray integra elementos de Pilates, yoga funcional, entrenamiento de
 
   // === LEVELS SECTION ===
   bumbumLevelsTitle: 'Nivel de la Clase',
+  bumbumLevelBasicTitle: 'Nivel Básico',
+  bumbumTeachersClosing:
+    'Con Cris Ag trabajarás tu cuerpo con una metodología segura, efectiva y divertida que te hará ver resultados reales.',
   bumbumLevelsSubtitle: 'Abierta para todos los niveles',
   bumbumLevelOpenTitle: 'Open Level',
   bumbumLevelOpenDesc:
@@ -14603,6 +14635,9 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
 
   // === LEVELS SECTION ===
   fullBodyCardioLevelsTitle: 'Nivel de Cuerpo-Fit',
+  fullBodyCardioLevelBasicTitle: 'Nivel Básico',
+  fullBodyCardioTeachersClosing:
+    'Con Cris Ag descubrirás que ponerte en forma puede ser divertido, motivador y adaptado a tu nivel.',
   fullBodyCardioLevelsSubtitle: 'Una clase abierta para todos',
   fullBodyCardioLevelOpenTitle: 'Todos los niveles',
   fullBodyCardioLevelOpenDesc:
@@ -20129,6 +20164,8 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Header
   booking_title: 'Reserva tu Clase de Bienvenida',
   booking_subtitle: 'Elige tu estilo, selecciona la clase y confirma tu asistencia',
+  booking_subtitle_extended:
+    "Selecciona tu clase, completa el formulario y ven a vivir la experiencia Farray's en persona",
   booking_step1: 'Elige Estilo',
   booking_step2: 'Selecciona Clase',
   booking_step3: 'Confirma Datos',
@@ -20619,4 +20656,33 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   novedades_hipHopBattle_desc:
     'Batalla de Hip Hop abierta a todos los niveles. Premios para los ganadores. ¡Inscríbete y demuestra tu talento!',
   novedades_hipHopBattle_alt: 'Competición de Hip Hop Battle en Barcelona',
+
+  // ============================================================================
+  // Dynamic Schedule Section (Momence Integration)
+  // ============================================================================
+  scheduleTitle: 'Próximas Clases',
+  scheduleSubtitle: 'Horarios actualizados en tiempo real',
+  scheduleListLabel: 'Lista de próximas clases programadas',
+  scheduleVacationMessage: 'No hay clases programadas próximamente',
+  scheduleVacationSubtext:
+    '¡Volvemos pronto! Déjanos tu email para avisarte cuando empiecen las clases.',
+  scheduleVacationCTA: 'Avísame cuando vuelvan',
+  scheduleUsingCached: 'Mostrando horarios almacenados',
+  // Enterprise status indicator
+  scheduleStatusRealtime: 'Sincronizado con Momence',
+  scheduleStatusLive: 'EN DIRECTO',
+  scheduleStatusUpdatedNow: 'Actualizado ahora',
+  scheduleStatusUpdatedMinutes: 'Actualizado hace {minutes} min',
+  classFull: 'COMPLETO',
+  spotsAvailable: 'plazas disponibles',
+  retry: 'Reintentar',
+
+  // Day abbreviations (localized)
+  dayShort_monday: 'Lun',
+  dayShort_tuesday: 'Mar',
+  dayShort_wednesday: 'Mié',
+  dayShort_thursday: 'Jue',
+  dayShort_friday: 'Vie',
+  dayShort_saturday: 'Sáb',
+  dayShort_sunday: 'Dom',
 };
