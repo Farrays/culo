@@ -161,6 +161,19 @@ export const CONFIG = {
       aspectRatio: '16:9',
       breakpoints: [640, 768, 1024, 1440, 1920],
     },
+    yunaisy: {
+      path: 'yunaisy',
+      description: 'Yunaisy artistic photos',
+      aspectRatio: '3:4',
+      focus: 'top',  // Focus on face/upper body
+      breakpoints: [320, 640, 768, 1024, 1440],
+    },
+    novedades: {
+      path: 'novedades',
+      description: 'News carousel images (events, workshops, promos)',
+      aspectRatio: '16:9',
+      breakpoints: [320, 640, 768, 1024],
+    },
   },
 
   // ============================================================================
@@ -176,6 +189,8 @@ export const CONFIG = {
     logo: join(ROOT_DIR, 'public', 'images', 'logo'),
     blog: join(ROOT_DIR, 'public', 'images', 'blog'),
     hero: join(ROOT_DIR, 'public', 'images', 'hero'),
+    yunaisy: join(ROOT_DIR, 'public', 'images', 'yunaisy'),
+    novedades: join(ROOT_DIR, 'public', 'images', 'novedades'),
     manifests: join(ROOT_DIR, 'public', 'images', 'manifests'),
     cache: join(ROOT_DIR, 'node_modules', '.cache', 'build-images'),
   },

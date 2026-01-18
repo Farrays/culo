@@ -78,14 +78,14 @@ const Hero: React.FC = () => {
         </p>
 
         {/* CTA Button */}
-        <div className="flex flex-col items-center justify-center mb-6">
+        <div className="flex flex-col items-center justify-center">
           <button
             onClick={() => setIsLeadModalOpen(true)}
-            className="w-full sm:w-auto bg-primary-accent text-white font-bold text-sm xl:text-base py-2.5 xl:py-3 px-5 xl:px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
+            className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary-accent text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
           >
-            {t('puertasAbiertasCTA')}
+            <span>{t('puertasAbiertasCTA')}</span>
             <svg
-              className="w-4 h-4 ml-1.5 inline-block"
+              className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -102,9 +102,11 @@ const Hero: React.FC = () => {
             {t('puertasAbiertasSubtext')}
           </p>
         </div>
+      </div>
 
-        {/* Trust Bar - Credibilidad instantánea (después del CTA) */}
-        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 max-w-4xl mx-auto">
+      {/* Trust Bar - Credibilidad instantánea (posicionado en la parte inferior del hero) */}
+      <div className="absolute bottom-6 left-0 right-0 z-10 px-4">
+        <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4 max-w-5xl mx-auto">
           {/* Rating Google */}
           <div className="flex items-center gap-2 bg-neutral/10 backdrop-blur-sm rounded-full px-4 py-2 border border-primary-accent/30">
             <div className="flex text-yellow-400">
@@ -115,7 +117,7 @@ const Hero: React.FC = () => {
               ))}
             </div>
             <span className="text-neutral font-bold text-sm">4.9/5</span>
-            <span className="text-neutral/60 text-xs">(505+ reseñas)</span>
+            <span className="text-neutral/60 text-xs">(509+ reseñas)</span>
           </div>
 
           {/* CID-UNESCO */}

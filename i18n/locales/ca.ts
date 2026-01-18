@@ -11,10 +11,19 @@ export const ca = {
   breadcrumb_home: 'Inici',
   home: 'Inici',
   contact: 'Contacte',
+  contactUs: 'Contactar',
   skipToMain: 'Salta al contingut principal',
   viewSchedule: 'Veure Horaris',
   bookNow: 'Reservar Ara',
   bookTrialClass: 'Reserva la teva Classe de Benvinguda',
+  // StatsBar
+  statsbar_reviews: '509+ ressenyes',
+  statsbar_certified: 'Centre Certificat',
+  statsbar_members: 'Socis Actius',
+  statsbar_space: 'Instal·lacions',
+  statsbar_styles: 'Estils',
+  statsbar_years: 'a Barcelona',
+
   nearbyAreasTitle: 'Zones Properes',
   trustStats: 'Estadístiques de Confiança',
   classesPerSession: 'classes per sessió',
@@ -88,18 +97,17 @@ export const ca = {
   happinessStoryLine4Part2: 'vam decidir crear-la. I està funcionant.',
   happinessStoryLine5: 'Com no sabíem que era impossible, simplement ho vam fer.',
   happinessStoryPara1Part1:
-    "No sabíem que era impossible aixecar-la en un local abandonat durant 10 anys. Tampoc sabíem que era mala idea reformar-lo a mà, sense pressupost—només amb Yunaisy, Fábio, amics, professors i una brigada improvisada. No sabíem res de \"l'impossible\". Així que simplement ho vam fer. Perquè Farray's no va néixer d'un pla de negoci.",
-  happinessStoryPara1Part2: "Va néixer d'una història d'amor.",
-  happinessStoryPara2:
-    "De l'amor entre Yunaisy i Fábio, de l'amor per la dansa i de l'amor per la gent. Per això, quan diem que aquí es respira família, no és un eslògan—és veritat.",
+    'No sabíem res de "l\'impossible". Així que simplement ho vam fer. Perquè no va néixer d\'un pla de negoci.',
+  happinessStoryPara1Part2: "Va néixer d'un somni.",
+  happinessStoryPara2: '',
   happinessStoryPara3Part1: 'Avui, aquest somni es diu',
   happinessStoryPara3Part2: "Farray's International Dance Center",
-  happinessStoryPara3Part3: ', una acadèmia multidisciplinària reconeguda pel',
+  happinessStoryPara3Part3: ', un centre esportiu i formatiu reconegut pel',
   happinessStoryPara3Part4: 'CID-UNESCO',
   happinessStoryPara3Part5: ', dirigida per',
   happinessStoryPara3Part6: 'Yunaisy Farray',
   happinessStoryPara3Part7:
-    "—ballarina, mestra internacional i ànima d'aquesta casa—on cada alumne importa, cada història compta i cada moment t'acosta a la millor versió de tu mateix.",
+    "—ballarina, mestra internacional i motor d'aquesta casa—on cada alumne importa, cada història compta i cada moment t'acosta a la millor versió de tu mateix.",
   happinessStoryPara4:
     "Un lloc que no vam copiar d'enlloc. Un lloc que no existia… fins que el vam construir.",
   // About
@@ -107,6 +115,8 @@ export const ca = {
   aboutSubtitle: 'Art, Rigor i Passió',
   aboutBio:
     "Amb més de dues dècades com a artista global i mestra educadora, Yunaisy Farray s'ha consolidat com un referent internacional de la dansa. La seva formació a la prestigiosa Escola Nacional d'Art de Cuba (ENA) li va inculcar una fusió única de disciplina russa i els ritmes i el sabor dels ballarins afrodescendents. Ha participat en la reeixida pel·lícula 'Street Dance 2' i va captivar milions a les finals de 'Got Talent'. A més, ha col·laborat en diferents programes de televisió, com 'The Dancer', i compta amb innombrables participacions en diversos àmbits de l'espectacle.\n\nCom a membre del CID‑UNESCO i creadora de l'exclusiu Mètode Farray®, la Yunaisy dirigeix una escola que combina rigor, creativitat i resultats ràpids en un ambient familiar i inclusiu.\n\nLa seva experiència transforma cada classe en un viatge cultural i emocional, garantint una formació d'elit per a ballarins de tots els nivells.",
+  aboutYunaisyPhotoAlt:
+    "Yunaisy Farray, ballarina i coreògrafa professional, fundadora de Farray's International Dance Center a Barcelona",
   aboutMethodTitle: "El 'Mètode Farray®': La Cúspide de la Pedagogia de la Dansa.",
   aboutMethodPillar1Title: 'Disciplina i Rigor',
   aboutMethodPillar1Desc:
@@ -168,7 +178,8 @@ export const ca = {
   // Services
   servicesTitle: 'Serveis Addicionals',
   servicesIntro:
-    'A Farray’s International Dance Center oferim molt més que classes de ball. Descobreix tots els serveis que posem a la teva disposició per ajudar-te a crear, celebrar i créixer ballant.',
+    "A Farray's International Dance Center oferim molt més que classes de ball. Descobreix tots els serveis que posem a la teva disposició per ajudar-te a crear, celebrar i créixer ballant.",
+  servicesViewAll: 'Veure tots els serveis',
   serviceRentalTitle: 'Lloguer de Sales',
   serviceRentalDesc:
     'Sales àmplies i equipades per a assajos, classes i esdeveniments privats al cor de Barcelona.',
@@ -642,6 +653,8 @@ export const ca = {
 
   dhV3TeachersTitle: 'Coneix les nostres professores de dancehall',
   dhV3TeachersSubtitle: "Expertes en Dancehall amb anys d'experiència",
+  dhV3ScheduleTitle: 'Horaris de Classes de Dancehall',
+  dhV3ScheduleSubtitle: 'Classes disponibles cada dia de la setmana',
 
   // Dancehall schedule class names (enterprise i18n)
   dhScheduleClassTwerkIntermediate: 'Dancehall Twerk Intermedi',
@@ -2540,6 +2553,83 @@ export const ca = {
   serviciosBaile_finalCTA_button_primary: 'Reserva Ara',
   serviciosBaile_finalCTA_button_secondary: "Contacta'ns",
 
+  // Servicios Baile - Intro SEO Section
+  serviciosBaile_intro_p1:
+    "A <strong>Farray's International Dance Center</strong> oferim una àmplia gamma de <strong>serveis de ball a Barcelona</strong>. Més enllà de les nostres classes regulars, posem a la teva disposició espais professionals, formació personalitzada i talent artístic per a qualsevol projecte.",
+  serviciosBaile_intro_p2:
+    'Ja sigui que busquis un <strong>espai per assajar o gravar</strong>, classes privades adaptades al teu ritme, o ballarins professionals per al teu event, a la nostra acadèmia de 700 m² trobaràs la solució perfecta. Som al cor de Barcelona, a prop de Plaça Espanya.',
+
+  // Servicios Baile - Categorías
+  serviciosBaile_cat_spaces: 'Espais i Producció',
+  serviciosBaile_cat_spaces_desc: 'Sales professionals i serveis audiovisuals',
+  serviciosBaile_cat_training: 'Formació Personalitzada',
+  serviciosBaile_cat_training_desc: 'Classes a mida i experiències úniques',
+  serviciosBaile_cat_professional: 'Professionals i Empreses',
+  serviciosBaile_cat_professional_desc: 'Talent, esdeveniments i solucions corporatives',
+  serviciosBaile_cat_merchandising: 'Botiga Oficial',
+  serviciosBaile_cat_merchandising_desc: "Productes exclusius de l'acadèmia",
+
+  // Servicios Baile - Table
+  serviciosBaile_table_service: 'Servei',
+  serviciosBaile_table_ideal: 'Ideal per a',
+
+  // Servicios Baile - Why Section
+  serviciosBaile_why_title: "Per què triar Farray's per als teus serveis de ball?",
+  serviciosBaile_pillar1_title: 'Ubicació Premium',
+  serviciosBaile_pillar1_desc:
+    'Al cor de Barcelona, Eixample. A 5 minuts de Plaça Espanya i Estació de Sants. Metro i bus a la porta.',
+  serviciosBaile_pillar2_title: "8+ Anys d'Experiència",
+  serviciosBaile_pillar2_desc:
+    "Més de 15.000 alumnes satisfets i centenars d'esdeveniments realitzats avalen la qualitat dels nostres serveis.",
+  serviciosBaile_pillar3_title: "700 m² d'Instal·lacions",
+  serviciosBaile_pillar3_desc:
+    '4 sales equipades amb miralls, so professional, terra de tarima flotant i climatització.',
+  serviciosBaile_pillar4_title: 'Equip Multidisciplinari',
+  serviciosBaile_pillar4_desc:
+    'Professors cubans especialitzats en més de 25 estils de ball. Talent professional per a qualsevol projecte.',
+  serviciosBaile_pillar5_title: 'Flexibilitat Horària',
+  serviciosBaile_pillar5_desc:
+    'Disponibilitat de dilluns a divendres de 9h a 23h. Ens adaptem a la teva agenda i necessitats.',
+  serviciosBaile_pillar6_title: 'Atenció Personalitzada',
+  serviciosBaile_pillar6_desc:
+    "Cada projecte és únic. T'assessorem per trobar la millor solució a la teva mida.",
+
+  // Servicios Baile - Stats
+  serviciosBaile_stats_years: "Anys d'Experiència",
+  serviciosBaile_stats_students: 'Clients Satisfets',
+  serviciosBaile_stats_rooms: 'Sales Disponibles',
+  serviciosBaile_stats_events: 'Esdeveniments Realitzats',
+
+  // Servicios Baile - FAQs
+  serviciosBaile_faq_title: 'Preguntes Freqüents sobre els Nostres Serveis',
+  serviciosBaile_faq1_q: "Com puc reservar el lloguer d'una sala?",
+  serviciosBaile_faq1_a:
+    "Pots contactar-nos per telèfon (+34 622 24 70 85), email (info@farrayscenter.com) o WhatsApp. T'informarem sobre disponibilitat, preus i condicions. També pots visitar-nos en persona per conèixer els espais.",
+  serviciosBaile_faq2_q: "Oferiu serveis per a esdeveniments d'empresa?",
+  serviciosBaile_faq2_a:
+    "Sí, oferim team building, shows per a esdeveniments corporatius, classes de ball per a grups d'empresa i activitats de benestar. Dissenyem experiències a mida per motivar i cohesionar equips.",
+  serviciosBaile_faq3_q: 'Puc regalar classes de ball a algú?',
+  serviciosBaile_faq3_a:
+    'Per descomptat! Tenim targetes regal personalitzables per a classes particulars, bonos mensuals o experiències especials. El regal perfecte per als amants del ball o per a qui vulgui descobrir-lo.',
+  serviciosBaile_faq4_q: "Què inclou el servei d'estudi de gravació?",
+  serviciosBaile_faq4_a:
+    "El lloguer inclou l'espai amb miralls, il·luminació professional, equip de so i climatització. Pots portar el teu propi equip de gravació o contractar serveis addicionals de producció audiovisual.",
+  serviciosBaile_faq5_q: 'Organitzeu festes de comiat de soltera?',
+  serviciosBaile_faq5_a:
+    'Sí! Organitzem comiats personalitzats amb coreografies, classes de ball temàtiques (reggaeton, bachata, twerk...) i moments inoblidables. Inclou sala privada, professor/a i música.',
+  serviciosBaile_faq6_q: 'Puc contractar ballarins per al meu event?',
+  serviciosBaile_faq6_a:
+    "A través de la nostra agència pots contractar ballarins professionals per a casaments, festes, esdeveniments corporatius, videoclips, desfilades i qualsevol tipus de show. Comptem amb un ampli roster d'artistes.",
+  serviciosBaile_faq7_q: 'Les classes particulars poden ser a domicili?',
+  serviciosBaile_faq7_a:
+    "Sí, oferim classes tant a l'acadèmia com a domicili a Barcelona i rodalia. Només necessites un espai mínim per moure't i ganes d'aprendre.",
+  serviciosBaile_faq8_q: 'Quins horaris teniu disponibles per al lloguer de sales?',
+  serviciosBaile_faq8_a:
+    "Les sales estan disponibles de dilluns a divendres de 9h a 23h, depenent de l'ocupació de classes regulars. Els caps de setmana sota consulta. Contacta amb nosaltres per verificar disponibilitat.",
+
+  // Servicios Baile - Reviews Section
+  serviciosBaile_reviews_title: 'El que diuen els nostres clients',
+
   // Estudi Gravació Page
   estudioGrabacion_breadcrumb_home: 'Inici',
   estudioGrabacion_breadcrumb_current: 'Estudi de Gravació',
@@ -2851,7 +2941,7 @@ export const ca = {
   metodoFarray_results_title: 'Resultats que Parlen',
   metodoFarray_stats_students: 'Alumnes formats',
   metodoFarray_stats_years: 'Anys perfeccionant el mètode',
-  metodoFarray_stats_rating: 'Valoració a Google (505+ ressenyes)',
+  metodoFarray_stats_rating: 'Valoració a Google (509+ ressenyes)',
   metodoFarray_stats_styles: 'Estils de ball disponibles',
 
   metodoFarray_featured_quote:
@@ -3219,6 +3309,9 @@ export const ca = {
   // Teachers Section
   twerkTeachersTitle: 'Coneix les teves instructores de Twerk',
   twerkTeachersSubtitle: "Expertes en Twerk i Dancehall amb anys d'experiència",
+  twerkScheduleTitle: 'Horaris de Classes de Twerk',
+  twerkScheduleSubtitle: 'Classes setmanals amb instructores especialitzades',
+  twerkWhyTodayFullTitle: 'Per què començar Twerk avui i no "la setmana que ve"?',
   // Schedule Section
   // Video Section
   twerkVideoDesc:
@@ -3419,6 +3512,9 @@ A Farray's International Dance Center, l'Afrobeats s'ensenya amb tècnica, respe
   // Teachers
   afroTeachersTitle: "Coneix els nostres professors d'Afrobeats",
   afroTeachersSubtitle: "Experts en Afrodance amb anys d'experiència",
+  afroScheduleTitle: "Horaris de Classes d'Afrobeats",
+  afroScheduleSubtitle: 'Classes setmanals amb experts en Afrodance',
+  afroWhyTodayFullTitle: 'Per què començar Afrobeats avui i no "quan em senti preparada"?',
   afroTeacher2Bio:
     "Charlie Breezy, mestre internacional i ballarí cubà. Va néixer en un país on la cultura africana està totalment arrelada. Format a l'ENA (Escola Nacional d'Art de Cuba), Charlie és un ballarí polifacètic que, a més de dominar diferents estils de dansa africana, destaca en contemporani, ballet i un ampli ventall de danses urbanes.",
   afroTeachersClosing:
@@ -3688,6 +3784,9 @@ Aquesta fusió incorpora:
   // Teachers Section
   hhrTeachersTitle: 'Coneix el teu instructor de Hip Hop Reggaeton',
   hhrTeachersSubtitle: "Expert en fusió urbana amb anys d'experiència",
+  hhrScheduleTitle: 'Horaris de Classes de Hip Hop Reggaeton',
+  hhrScheduleSubtitle: 'Classes setmanals amb Charlie Breezy',
+  hhrWhyTodayFullTitle: 'Per què començar Hip Hop Reggaeton avui i no "el mes que ve"?',
 
   // Schedule Section
   // Video Section
@@ -3893,6 +3992,10 @@ Aquesta fusió incorpora:
   // Teachers Section
   rcbTeachersTitle: 'Coneix els teus mestres de Reparto',
   rcbTeachersSubtitle: "Cubans de naixement, formats a l'ENA i referents a Barcelona",
+  rcbTeachersClosing:
+    'Amb Charlie i Alejandro no només aprens a ballar Reparto: descobreixes el sabor autèntic que només els cubans poden transmetre.',
+  rcbScheduleTitle: 'Horaris de Classes de Reggaeton Cubà',
+  rcbScheduleSubtitle: 'Classes setmanals amb mestres cubans autèntics',
   rcbTeacher1Bio:
     "Charlie Breezy és un mestre internacional i ballarí cubà format a l'ENA (Escola Nacional d'Art de Cuba). Especialista en Reggaeton Cubà i Reparto, domina la improvisació i la disociació corporal amb tècnica impecable. La seva energia, creativitat i capacitat per transmetre el sabor cubà el converteixen en un dels professors més recomanats de Barcelona.",
   rcbTeacher2Bio:
@@ -4347,6 +4450,9 @@ Al llarg de més d'una dècada, Femmology ha transformat la vida de milers de do
   // Teachers Section
   femTeachersTitle: 'Coneix a Yunaisy Farray',
   femTeachersSubtitle: 'Creadora de Femmology i una de les mestres més reconegudes del món',
+  femScheduleTitle: 'Horaris de Classes de Femmology',
+  femScheduleSubtitle: 'Classes exclusives amb Yunaisy Farray',
+  femWhyTodayFullTitle: 'Per què començar Femmology avui i no "quan em senti preparada"?',
 
   // Schedule Section
   // Video Section
@@ -4626,6 +4732,11 @@ Al llarg de més d'una dècada, Femmology ha transformat la vida de milers de do
   // Teachers Section
   sexystyleTeachersTitle: 'Coneix la teva instructora de Sexy Style',
   sexystyleTeachersSubtitle: 'Especialista en expressió corporal i sensualitat',
+  sexystyleTeachersClosing:
+    "Amb Yasmina no només aprens a ballar Sexy Style: descobreixes una nova forma d'habitar el teu cos.",
+  sexystyleScheduleTitle: 'Horaris de Classes de Sexy Style',
+  sexystyleScheduleSubtitle: 'Classes setmanals amb Yasmina Fernández',
+  sexystyleWhyTodayFullTitle: 'Per què començar Sexy Style avui i no "quan em senti preparada"?',
   // Schedule Section
   // Video Section
   sexystyleVideoDesc:
@@ -4878,6 +4989,11 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colòmbia), J Balv
   // Teachers Section
   sxrTeachersTitle: 'Coneix la teva instructora de Sexy Reggaeton',
   sxrTeachersSubtitle: "Experta en danses urbanes sensuals amb més de 8 anys d'experiència",
+  sxrTeachersClosing:
+    'Amb Yasmina no només aprens a ballar Sexy Reggaeton: descobreixes una forma de connectar amb la teva feminitat i el teu poder sense demanar permís.',
+  sxrScheduleTitle: 'Horaris de Classes de Sexy Reggaeton',
+  sxrScheduleSubtitle: 'Classes setmanals amb instructores especialitzades',
+  sxrWhyTodayFullTitle: 'Per què començar Sexy Reggaeton avui i no "quan em senti preparada"?',
   // Schedule Section
   // Video Section
   sxrVideoDesc:
@@ -5123,6 +5239,9 @@ Farray's International Dance Center està valorat prop del **5/5 a Google**, amb
   // Teachers Section
   modernjazzTeachersTitle: 'Coneix el teu professor de Modern Jazz',
   modernjazzTeachersSubtitle: 'Tècnica clàssica, esperit contemporani',
+  modernjazzScheduleTitle: 'Horaris de Classes de Modern Jazz',
+  modernjazzScheduleSubtitle: 'Classes setmanals amb Alejandro Miñoso',
+  modernjazzWhyTodayFullTitle: 'Per què començar Modern Jazz avui i no "quan tingui més base"?',
   modernjazzTeacher1Bio:
     "Alejandro Miñoso és mestre internacional cubà format a la prestigiosa ENA (Escola Nacional d'Art de Cuba). Ex solista de la companyia Carlos Acosta, combina l'exigència tècnica del ballet clàssic amb la llibertat expressiva del jazz modern, creant classes dinàmiques on cada alumne progressa al seu ritme.",
   // Schedule Section
@@ -5479,6 +5598,11 @@ Tots els termes del ballet són en francès, llegat del seu desenvolupament a la
   // ===== Teachers Section =====
   balletTeachersTitle: 'Coneix els teus professors de Ballet',
   balletTeachersSubtitle: 'Escola Cubana, experiència internacional',
+  balletTeachersClosing:
+    'Dos mestres, dos enfocaments complementaris. Daniel per al nivell intermedi i avançat, Alejandro per als principiants. La combinació perfecta per a la teva formació en ballet.',
+  balletScheduleTitle: 'Horaris de Classes de Ballet',
+  balletScheduleSubtitle: "Classes diàries amb mestres de l'Escola Cubana",
+  balletWhyTodayFullTitle: 'Per què començar ballet avui i no "quan tingui temps"?',
   balletTeacher1Bio:
     "Daniel Sene és especialista en ballet clàssic format a l'Escola Nacional de Ballet de Cuba, la mateixa on es va formar Carlos Acosta. La seva metodologia combina el rigor tècnic de l'escola clàssica amb un enfocament accessible per a adults principiants i avançats.",
   balletTeacher2Bio:
@@ -5931,6 +6055,8 @@ Ballarins de tot el món viatgen a Barcelona específicament per formar-se en Af
   afrojazzLogosIntlFestivalsText: 'i als millors festivals de dansa de tot el món',
   afrojazzTeachersTitle: "Els teus professors d'Afro Jazz",
   afrojazzTeachersSubtitle: "Formació d'elit amb l'equip del Mètode Farray",
+  afrojazzScheduleTitle: "Horaris de Classes d'Afro Jazz",
+  afrojazzScheduleSubtitle: "Classes setmanals amb l'equip del Mètode Farray",
   afrojazzTeacher1Bio:
     "Yunaisy Farray és mestra formada a l'Escola Nacional d'Art de Cuba (ENA), membre del Consell Internacional de la Dansa de la UNESCO i actriu de Street Dance 2. Creadora de l'Afro Jazz com a disciplina única, imparteix les classes de nivell intermedi i avançat els dijous de 19h a 20:30h.",
   // Level Cards Section
@@ -6262,6 +6388,8 @@ Treballa integralment: **flexibilitat, força funcional, coordinació, propiocep
   contemporaneoTeachersTitle: 'Els teus Mestres de Dansa Contemporània',
   contemporaneoTeachersSubtitle:
     "Ballarins professionals formats a l'Escola Cubana amb carrera internacional",
+  contemporaneoScheduleTitle: 'Horaris de Classes de Dansa Contemporània',
+  contemporaneoScheduleSubtitle: "Classes setmanals amb ballarins professionals de l'Escola Cubana",
   contemporaneoTeacher1Bio:
     "Daniel Sené és ballarí professional amb formació de carrera a l'Escola Cubana. La seva metodologia combina la tècnica rigorosa amb l'expressió lírica, guiant-te perquè desenvolupis el teu propi llenguatge corporal mentre domines els fonaments de la dansa contemporània.",
   contemporaneoTeachersClosing:
@@ -6633,6 +6761,10 @@ L'Afro Contemporani impartit a **Farray's International Dance Center** forma par
   // Teachers Section
   afrocontemporaneoTeachersTitle: "Els teus mestres d'Afro Contemporani",
   afrocontemporaneoTeachersSubtitle: "Formació directa de l'Escola Nacional d'Art de Cuba",
+  afrocontemporaneoTeachersClosing:
+    "Amb els nostres mestres cubans no només aprens Afro Contemporani: accedeixes a la metodologia original de l'Escola Nacional d'Art de Cuba.",
+  afrocontemporaneoScheduleTitle: "Horaris de Classes d'Afro Contemporani",
+  afrocontemporaneoScheduleSubtitle: "Classes setmanals amb mestres formats a l'ENA de Cuba",
   afrocontemporaneoTeacher1Bio:
     "Yunaisy Farray es va formar a la prestigiosa Escola Nacional d'Art de Cuba (ENA), on va aprendre la tècnica original de l'Afro Contemporani. Mestra reconeguda pel CID-UNESCO (Consell Internacional de la Dansa de París), combina el rigor tècnic de l'escola cubana amb la seva experiència internacional a Street Dance 2 i companyies de dansa contemporània. La seva metodologia manté l'essència de l'ENA adaptada per a ballarins de tots els nivells.",
   afrocontemporaneoTeacher2Bio:
@@ -7735,7 +7867,7 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   salsaLadyStatMinutes: 'minuts',
   salsaLadyStatCalories: 'calories',
   salsaLadyStatElegance: 'Elegància',
-  salsaLadyStatReviewCount: '505+ ressenyes',
+  salsaLadyStatReviewCount: '509+ ressenyes',
   salsaLadyStatStudents: '+15.000 estudiants formats',
   salsaLadyStatYears: '8 anys a Barcelona',
   // Schedule class names
@@ -9966,6 +10098,8 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   // === TEACHERS SECTION ===
   stretchingTeachersTitle: "Els teus Professors d'Stretching",
   stretchingTeachersSubtitle: 'Especialistes en flexibilitat amb el Mètode Farray',
+  stretchingScheduleTitle: 'Horaris de Classes de Stretching',
+  stretchingScheduleSubtitle: 'Classes setmanals amb especialistes en flexibilitat',
   stretchingTeacher1Bio:
     "Cris Ag és especialista en flexibilitat i backbending, formada en el Mètode Farray. El seu enfocament pacient i tècnic ha ajudat centenars d'alumnes a superar els seus límits de forma segura. Experta en elongació de cames i esquena, prevenció de lesions i enfortiment de core.",
   stretchingTeacher2Bio:
@@ -10274,6 +10408,8 @@ Estudis científics confirmen que l'stretching regular de 3+ vegades per setmana
   // === TEACHERS SECTION ===
   bumbumTeachersTitle: 'La teva Professora de Bum Bum Glutis',
   bumbumTeachersSubtitle: 'Especialista en tonificació amb el Mètode Farray',
+  bumbumScheduleTitle: 'Horaris de Classes de Bum Bum Glutis',
+  bumbumScheduleSubtitle: 'Classes setmanals de tonificació',
   bumbumTeacher1Bio:
     "Cris Ag és especialista en tonificació corporal i exercicis de glutis amb el Mètode Farray. El seu enfocament combina tècniques de fitness amb elements de dansa per fer l'entrenament efectiu i divertit. Experta en hip thrust, esquats i tècniques d'activació glútia.",
   // === SCHEDULE SECTION ===
@@ -16256,6 +16392,10 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   cuerpofitLevelOpenDesc: `Classe adaptable a tots els nivells. Cada exercici té variacions des de principiant fins a avançat. Cris et guia segons el teu nivell actual, assegurant que treballis a la teva zona de desenvolupament òptim sense risc de lesió.`,
   cuerpofitTeachersTitle: `La teva Professora de Body Conditioning`,
   cuerpofitTeachersSubtitle: `Especialista en condicionament per a ballarins`,
+  cuerpofitTeachersClosing:
+    "A Farray's Center, el condicionament físic no és un complement: és la base de la teva evolució com a ballarí.",
+  cuerpofitScheduleTitle: 'Horaris de Classes de Body Conditioning',
+  cuerpofitScheduleSubtitle: "Classes setmanals d'acondicionament físic",
   cuerpofitWhyChoose2Title: `Enfocament en Prevenció de Lesions`,
   cuerpofitWhyChoose2Desc: `Cada exercici té com a objectiu enfortir les àrees més vulnerables del ballarí: malucs, genolls, turmells i esquena.`,
   cuerpofitWhyChoose3Title: `Grups Reduïts`,
@@ -16658,6 +16798,8 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   fullBodyCardioLevelOpenDesc: `Cuerpo-Fit és nivell obert. Cada exercici té variants d'intensitat: tu tries la teva. Principiants absolutos trabajan al lado de personas amb experiència, cada uno a su ritmo. Sense pressió, sense comparacions.`,
   fullBodyCardioTeachersTitle: `La teva Professora de Cuerpo-Fit`,
   fullBodyCardioTeachersSubtitle: `Especialista en entrenament funcional i cardio dance`,
+  fullBodyCardioScheduleTitle: 'Horaris de Classes de Cuerpo-Fit',
+  fullBodyCardioScheduleSubtitle: "Classes setmanals d'entrenament funcional",
   fullBodyCardioWhyChoose2Desc: `No necessites experiència. Cada exercici té variants d'intensitat. Tu tries el teu nivell a cada moment.`,
   fullBodyCardioWhyChoose3Title: `Grups reduïts`,
   fullBodyCardioWhyChoose3Desc: `Màxim 20 persones per classe per garantir atenció personalitzada i correccions individuals.`,
@@ -16896,7 +17038,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   fbLandingTestimonial2Text: `Vaig venir sol i amb vergonya. Ara tinc un grup d'amics ballarins i vaig a socials cada setmana. Millor decisió de l'any.`,
   fbLandingTestimonial3Name: `Laura, 42 anys`,
   fbLandingTestimonial3Text: `Després d'anys volent-ho i no atrevint-me, finalment ho vaig fer. L'ambient és tan bo que em vaig oblidar que tenia vergonya.`,
-  fbLandingGoogleReviews: `505+ ressenyes a Google`,
+  fbLandingGoogleReviews: `509+ ressenyes a Google`,
   fbLandingTransformCTA: `VULL AQUESTA TRANSFORMACIÓ`,
   fbLandingFaqTitle: `Potser et preguntes...`,
   fbLandingFaq1Q: `"No sé ballar res, sóc molt principiant"`,
@@ -17240,8 +17382,8 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   homev2_compRow2Others: `Vas a classe, però avances?`,
   homev2_compRow2Us: `Saps exactament en quin punt estàs`,
   homev2_compRow3Label: `Professors`,
-  homev2_compRow3Others: `Monitors amb curs online`,
-  homev2_compRow3Us: `Mestres formats a acadèmies d'elit`,
+  homev2_compRow3Others: `Alta rotació de professors`,
+  homev2_compRow3Us: `Equip estable amb formació contínua`,
   homev2_compRow4Label: `Instal·lacions`,
   homev2_compRow4Others: `Locals adaptats, terra genèric`,
   homev2_compRow4Us: `700m² amb terra professional i climatització`,
@@ -17257,8 +17399,14 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   homev2_compRow8Label: `Resultats`,
   homev2_compRow8Others: `"Depèn de tu..."`,
   homev2_compRow8Us: `Progrés mesurable classe a classe`,
-  homev2_comparisonCta: `Comprova-ho tu mateix`,
-  homev2_comparisonCtaSubtext: `Classe de benvinguda sense compromís`,
+  homev2_compRow9Label: `Serietat`,
+  homev2_compRow9Others: `Situació laboral variable`,
+  homev2_compRow9Us: `Equip amb contracte i drets laborals`,
+  homev2_compRow10Label: `Enfocament`,
+  homev2_compRow10Others: `Només ensenyen a memoritzar passos i coreografies`,
+  homev2_compRow10Us: `T'ensenyem a entendre el moviment`,
+  homev2_comparisonCta: `Descobreix Com Començar`,
+  homev2_comparisonCtaSubtext: `Reserva la teva Classe de Benvinguda`,
   homev2_styleFinderTitle: `25+ estils. Un mètode. El teu viatge.`,
   homev2_styleFinderSubtitle: `Què et motiva a ballar? Troba el teu camí.`,
   homev2_persona1Title: `Vull sentir-me poderosa`,
@@ -17274,7 +17422,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   homev2_persona4Desc: `Fitness dancístic que crema calories mentre et diverteixes. Millora la teva condició física.`,
   homev2_persona4Cta: `Explorar fitness dansa`,
   homev2_styleFinderViewAll: `Veure tots els 25+ estils`,
-  homev2_socialProofTitle: `El que diuen 505 persones que ja han ballat aquí`,
+  homev2_socialProofTitle: `El que diuen 509 persones que ja han ballat aquí`,
   homev2_stat1Label: `alumnes actius`,
   homev2_stat2Label: `anys d\'experiència`,
   homev2_stat3Label: `estils de ball`,
@@ -18607,6 +18755,11 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_step2: 'Selecciona Classe',
   booking_step3: 'Confirma Dades',
 
+  // V2 Steps (2-step flow)
+  booking_step1_classes: 'Tria la teva classe',
+  booking_step2_form: 'Confirma les teves dades',
+  booking_back_to_classes: 'Tornar a classes',
+
   // Style Selection
   booking_style_title: "Quin estil t'interessa?",
   booking_style_all: 'Tots els estils',
@@ -18619,6 +18772,9 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_week_this: 'Aquesta setmana',
   booking_week_prev: 'Setmana anterior',
   booking_week_next: 'Setmana següent',
+  booking_week_current: 'Aquesta setmana',
+  booking_week_previous: 'Setmana anterior',
+  booking_week_future: 'En {weeks} setmanes',
   booking_style_clear: "Treure filtre d'estil",
   booking_class_retry: 'Reintentar',
   booking_class_share: "Compartir enllaç d'aquesta classe",
@@ -18627,9 +18783,22 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_modal_close: 'Tancar',
   booking_modal_select: 'Reservar aquesta classe',
   booking_modal_no_description: 'No hi ha descripció disponible per a aquesta classe.',
+  booking_teacher_view_profile: 'Veure perfil del professor',
+  booking_teacher_director: 'Directora',
+  booking_teacher_years: 'anys',
+  booking_teacher_certifications: 'Formació',
+  booking_teacher_teaches: 'Estils que imparteix',
+  booking_info_day: 'Dia',
+  booking_info_time: 'Hora',
+  booking_info_instructor: 'Professor',
+  booking_info_location: 'Ubicació',
+  booking_info_description: 'Descripció',
   booking_class_spots: '{spots} places disponibles',
+  booking_class_spots_few: 'Últimes {count} places',
+  booking_class_spots_available: '{count} places',
   booking_class_full: 'Complet',
   booking_class_select: 'Seleccionar',
+  booking_select_class: 'Reservar',
   booking_class_selected: 'Seleccionada',
   booking_class_teacher: 'amb {teacher}',
   booking_class_duration: '{duration} min',
@@ -18640,12 +18809,19 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_level_all: 'Tots els nivells',
 
   // Advanced Filters
+  booking_filter_style: 'Estil',
   booking_filter_level: 'Nivell',
   booking_filter_day: 'Dia',
   booking_filter_time: 'Hora',
   booking_filter_instructor: 'Professor',
   booking_filter_clear_all: 'Netejar filtres',
   booking_filter_all: 'Tots',
+  booking_filter_all_styles: 'Tots els estils',
+  booking_filter_all_instructors: 'Tots els professors',
+  booking_clear_all_filters: 'Netejar tots',
+  booking_clear_filters: 'Treure filtres',
+  booking_no_classes_match: 'No hi ha classes que coincideixin amb els filtres',
+  booking_classes_found: '{count} classes trobades',
   booking_filter_level_iniciacion: 'Iniciació',
   booking_filter_level_basico: 'Bàsic',
   booking_filter_level_intermedio: 'Intermedi',
@@ -18667,28 +18843,22 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_field_firstName: 'Nom',
   booking_field_lastName: 'Cognoms',
   booking_field_email: 'Email',
-  booking_field_phone: 'Telèfon',
+  booking_field_phone: 'WhatsApp',
   booking_placeholder_firstName: 'El teu nom',
   booking_placeholder_lastName: 'Els teus cognoms',
   booking_placeholder_email: 'tu@email.com',
   booking_placeholder_phone: '+34 612 345 678',
 
   // RGPD Checkboxes - Mandatory
-  booking_consent_terms: 'He llegit i accepto les',
+  booking_consent_terms: 'Accepto les',
   booking_consent_terms_link: 'condicions generals',
   booking_consent_terms_required: "Has d'acceptar les condicions generals",
-
-  booking_consent_marketing:
-    "Autoritzo l'enviament de comunicacions comercials sobre activitats, promocions i novetats",
-  booking_consent_marketing_required: "Has d'autoritzar les comunicacions per continuar",
+  booking_consent_terms_note:
+    "(Inclou confirmació de reserva i recordatoris per WhatsApp/email, i possible ús d'imatge en material promocional. Per no aparèixer en fotos/vídeos, avisa a recepció o escriu a info@farrayscenter.com)",
 
   booking_consent_age:
     'Confirmo que tinc 16 anys o més, o compto amb autorització del meu tutor legal',
   booking_consent_age_required: 'Has de confirmar la teva edat per continuar',
-
-  booking_consent_norefund:
-    "Entenc que la classe de benvinguda no és reemborsable un cop confirmada l'assistència",
-  booking_consent_norefund_required: "Has d'acceptar la política de no reemborsament",
 
   booking_consent_privacy: 'He llegit i accepto la',
   booking_consent_privacy_link: 'política de privacitat',
@@ -18698,11 +18868,6 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_consent_heels:
     'Comprenc i accepto que aquesta classe es realitza amb talons alts. Em comprometo a utilitzar calçat adequat i assumeixo la responsabilitat de la meva seguretat',
   booking_consent_heels_required: "Has d'acceptar les condicions d'ús de talons",
-
-  // RGPD Checkboxes - Optional
-  booking_consent_image:
-    "Autoritzo l'ús de la meva imatge en fotos i vídeos realitzats durant les classes per a fins promocionals a xarxes socials i web",
-  booking_consent_image_optional: '(Opcional)',
 
   // Submit
   booking_submit: 'Confirmar Reserva',
@@ -18717,7 +18882,8 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_success_location: 'Ubicació',
   booking_success_address: "Farray's Center - C/ Mallorca 179, Barcelona",
   booking_success_reminder: 'Et recordarem 24h abans de la classe',
-  booking_success_cta: 'Veure horaris complets',
+  booking_success_lang_note: "Els missatges de confirmació i recordatori s'envien en castellà",
+  booking_success_cta: 'Veure totes les classes',
   booking_success_close: 'Tancar',
 
   // Calendar Export
@@ -18729,6 +18895,11 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_error_title: 'Error en processar',
   booking_error_message: "S'ha produït un error. Si us plau, torna-ho a provar.",
   booking_error_cta: 'Reintentar',
+  booking_error_generic: "S'ha produït un error. Si us plau, torna-ho a provar.",
+  booking_error_required_fields: 'Si us plau, omple tots els camps obligatoris',
+  booking_error_consent_required: 'Si us plau, accepta tots els consentiments obligatoris',
+  booking_error_heels_consent_required:
+    'Si us plau, accepta les condicions per a classes amb talons',
   booking_error_firstName: 'Si us plau, introdueix el teu nom',
   booking_error_lastName: 'Si us plau, introdueix els teus cognoms',
   booking_error_email: 'Si us plau, introdueix un email vàlid',
@@ -18745,4 +18916,285 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_legal_rights:
     'Drets: Accés, rectificació, supressió, limitació, portabilitat i oposició.',
   booking_legal_info: 'Més informació a la nostra política de privacitat.',
+
+  // ============================================================================
+  // Terms and Conditions Modal
+  // ============================================================================
+  terms_modal_title: 'Termes i Condicions',
+  terms_item_1:
+    "Només es pot provar una classe de benvinguda d'un únic estil. Això significa que pots fer una sola classe en total, no una classe gratuïta per cada estil.",
+  terms_item_2:
+    'La classe de benvinguda està destinada únicament a persones que resideixen a Barcelona o als seus voltants. Si només estàs de visita a Barcelona com a turista o no resideixes en aquesta àrea, hauràs de pagar les classes que facis.',
+  terms_item_3:
+    "És important ser puntual per no perdre l'escalfament, sobretot a les classes de dansa i fitness.",
+  terms_item_4:
+    'És obligatori respectar el nivell de les classes. En cas contrari, ens reservem el dret de sol·licitar que abandonis la classe.',
+  terms_item_5:
+    "Cuida les teves pertinences personals. L'acadèmia no es fa responsable dels objectes extraviats, oblidats o robats.",
+  terms_item_6:
+    "Si tens alguna pregunta o necessites més informació, envia'ns un correu a info@farrayscenter.com i et respondrem el més aviat possible.",
+  terms_contact_info: 'Tens dubtes? Escriu-nos a',
+  terms_understood: 'Entès',
+
+  // ============================================================================
+  // Privacy Policy Modal
+  // ============================================================================
+  privacy_modal_title: 'Política de Privacitat',
+  privacy_data_controller: 'Responsables del tractament',
+  privacy_data_controller_text:
+    "Segons el servei, el responsable pot ser: Farray's Dance & Fitness, S.L. (NIF: B67004812) per a la web, merchandising i serveis; o Club Esportiu Farray Barcelona (NIF: G67317701) per a activitats esportives i gestió de socis.",
+  privacy_data_collected: 'Dades que tractem',
+  privacy_data_collected_text:
+    "Dades identificatives i de contacte (nom, email, telèfon), dades d'activitat (reserves, assistències), dades tècniques (IP, cookies segons la teva configuració) i imatges/vídeos si consents.",
+  privacy_purposes: 'Finalitats',
+  privacy_purposes_text:
+    'Gestionar la teva reserva, alta com a soci, comunicacions operatives (horaris, avisos), i comunicacions comercials només si ho autoritzes expressament.',
+  privacy_image_rights: 'Imatges i vídeos',
+  privacy_image_rights_text:
+    'En activitats poden captar-se imatges/vídeos amb fins promocionals. Pots retirar el consentiment escrivint a info@farrayscenter.com.',
+  privacy_user_rights: 'Els teus drets',
+  privacy_user_rights_text:
+    'Pots exercir accés, rectificació, supressió, oposició, limitació i portabilitat escrivint a info@farrayscenter.com amb assumpte "Protecció de dades – Drets".',
+  privacy_full_policy_url: 'Política completa a:',
+  privacy_full_policy_link: 'https://farrayscenter.com/politica-de-privacidad/',
+  privacy_understood: 'Entès',
+
+  // ============================================================================
+  // Team Building Page
+  // ============================================================================
+  teamBuilding_pageTitle:
+    "Team Building amb Ball a Barcelona | Per a Empreses que No Creuen en Team Building | Farray's",
+  teamBuilding_metaDescription:
+    'Team building amb ball a Barcelona per a empreses que ja no creuen en team building. Sense dinàmiques buides: cos, emoció, presència real. CID-UNESCO. +500 esdeveniments.',
+  teamBuilding_heroTitle: 'Team Building Barcelona',
+  teamBuilding_heroSubtitle: 'per a empreses que ja no hi creuen',
+  teamBuilding_heroIntro:
+    "Per a empreses que ja no creuen en el team building. Si necessites un altre team building més, no segueixis llegint. Però si vols que el teu equip realment es miri a la cara, suï fred junt i després se'n rigui, potser paga la pena continuar.",
+  teamBuilding_trust_rating: '4.9★',
+  teamBuilding_trust_rating_label: 'a Google',
+  teamBuilding_trust_unesco: 'CID-UNESCO',
+  teamBuilding_trust_unesco_label: 'Certificat',
+  teamBuilding_trust_years: '8+',
+  teamBuilding_trust_years_label: 'anys',
+  teamBuilding_trust_events: '500+',
+  teamBuilding_trust_events_label: 'esdeveniments',
+  teamBuilding_problem_title: 'El problema que ningú verbalitza',
+  teamBuilding_problem_desc:
+    "Els equips conviuen. Col·laboren el just. Es toleren amb educació. I un cop l'any, RRHH els porta a fer paintball o escape rooms perquè «cal fer alguna cosa». Segons Gallup, només el 21% dels empleats a nivell mundial estan engaged. El cost global: $8.8 trillion. Però ningú ho diu en veu alta.",
+  teamBuilding_solution_title: "La mentida suau de l'engagement corporatiu",
+  teamBuilding_solution_desc:
+    'Es contracten dinàmiques que no mouen res. Es busquen activitats còmodes. On ningú hagi de mostrar-se vulnerable ni sortir de la seva zona segura. El resultat: fotos pel LinkedIn i zero impacte real.',
+  teamBuilding_features_title: 'No oferim classes de ball per a empreses',
+  teamBuilding_feature_workshops_title: 'Incomoditat col·lectiva',
+  teamBuilding_feature_workshops_desc:
+    "Sessions on el teu equip es veurà obligat a mirar-se, riure de si mateixos i deixar de fingir que tot està bé. Sessions d'1-3 hores de veritat incòmoda.",
+  teamBuilding_feature_choreography_title: 'Suor compartida',
+  teamBuilding_feature_choreography_desc:
+    "Coreografies que exigeixen coordinació real. Que exposen qui lidera i qui segueix. Que ensenyen més de l'equip que qualsevol test de personalitat.",
+  teamBuilding_feature_competitions_title: 'Reptes sense xarxa',
+  teamBuilding_feature_competitions_desc:
+    "Competicions per equips on el ridícul és inevitable. I on el ridícul compartit és l'únic que genera vincles de veritat.",
+  teamBuilding_feature_videoclip_title: 'Evidència permanent',
+  teamBuilding_feature_videoclip_desc:
+    'Videoclip professional del vostre equip fent el que mai pensava fer. Branding intern que no necessita explicació.',
+  teamBuilding_feature_flashmob_title: 'Risc públic calculat',
+  teamBuilding_feature_flashmob_desc:
+    "Flashmob al teu esdeveniment. Sorpresa, exposició i orgull barrejats. Per a empreses que no tenen por d'ensenyar-se com són.",
+  teamBuilding_feature_custom_title: 'Formats a mida (amb criteri)',
+  teamBuilding_feature_custom_desc:
+    'Dissenyem experiències segons els teus objectius reals. No et direm que sí a tot: et direm el que funciona.',
+  teamBuilding_benefits_title: 'Aquí és on entrem nosaltres',
+  teamBuilding_benefit_experience_title: '8 anys posant gent en evidència (amb amor)',
+  teamBuilding_benefit_experience_desc:
+    '+500 esdeveniments corporatius. Multinacionals, startups, equips en crisi. Hem vist de tot. I seguim aquí.',
+  teamBuilding_benefit_professionals_title: 'CID-UNESCO i Mètode Farray',
+  teamBuilding_benefit_professionals_desc:
+    "Certificació internacional que no usem per vendre. L'usem per fer-ho bé. I un mètode propi que funciona encara que no vulguis que funcioni.",
+  teamBuilding_benefit_flexibility_title: 'Cos, emoció, presència real',
+  teamBuilding_benefit_flexibility_desc:
+    "Treballem amb l'únic que no es pot fingir: el moviment. Si el teu equip no es mou junt, tampoc funcionarà junt.",
+  teamBuilding_benefit_results_title: 'Sense promeses de màrqueting',
+  teamBuilding_benefit_results_desc:
+    'No prometem que sortireu millors persones. Prometem que us veureu diferent. I que això canvia alguna cosa.',
+  teamBuilding_benefit_fun_title: 'No és diversió: és exposició',
+  teamBuilding_benefit_fun_desc:
+    'Passareu vergonya. Us fareu figa en algun pas. I després, estranyament, us sentireu més a prop. Així funciona.',
+  teamBuilding_benefit_location_title: 'Al cor de Barcelona (Eixample)',
+  teamBuilding_benefit_location_desc:
+    "400m² al Carrer d'Entença 100. O anem on ens digueu. La ubicació és el de menys.",
+  teamBuilding_process_title: 'Com Funciona?',
+  teamBuilding_process_step1_title: 'Contacta amb Nosaltres',
+  teamBuilding_process_step1_desc:
+    "Explica'ns sobre la teva empresa. Et respondrem en menys de 24 hores.",
+  teamBuilding_process_step2_title: 'Dissenyem la teva Experiència',
+  teamBuilding_process_step2_desc: 'El nostre equip crea una proposta personalitzada.',
+  teamBuilding_process_step3_title: 'Preparació i Assajos',
+  teamBuilding_process_step3_desc: 'Coordinem tots els detalls logístics.',
+  teamBuilding_process_step4_title: 'A Ballar!',
+  teamBuilding_process_step4_desc: "Gaudiu d'una experiència única.",
+  teamBuilding_idealFor_title: 'Això és per a tu si...',
+  teamBuilding_idealFor_corporate: 'El teu equip necessita quelcom que no sigui «més del mateix»',
+  teamBuilding_idealFor_startups:
+    "Estàs fart/a d'activitats que queden bé a la foto però no canvien res",
+  teamBuilding_idealFor_departments:
+    "Vols veure com reacciona la teva gent quan no pot amagar-se darrere d'un PowerPoint",
+  teamBuilding_idealFor_incentives:
+    'Busques un incentiu que recordin per alguna cosa més que el càtering',
+  teamBuilding_idealFor_conventions: 'Tens un esdeveniment i vols que passi alguna cosa de veritat',
+  teamBuilding_idealFor_celebrations:
+    "Creus que el teu equip té més potencial del que mostra a l'oficina",
+  teamBuilding_packages_title: 'Els Nostres Paquets',
+  teamBuilding_package_popular_badge: 'Més Popular',
+  teamBuilding_package_express_title: 'Express',
+  teamBuilding_package_express_desc: 'Perfecte per a equips petits',
+  teamBuilding_package_express_price: 'des de 300€',
+  teamBuilding_package_express_feature1: 'Durada: 1-2 hores',
+  teamBuilding_package_express_feature2: 'Fins a 20 participants',
+  teamBuilding_package_express_feature3: 'Estil de ball a triar',
+  teamBuilding_package_express_feature4: 'A les nostres instal·lacions',
+  teamBuilding_package_premium_title: 'Premium',
+  teamBuilding_package_premium_desc: "L'opció més completa per a equips mitjans",
+  teamBuilding_package_premium_price: 'des de 600€',
+  teamBuilding_package_premium_feature1: 'Durada: 2-3 hores',
+  teamBuilding_package_premium_feature2: 'Fins a 50 participants',
+  teamBuilding_package_premium_feature3: 'Coreografia personalitzada',
+  teamBuilding_package_premium_feature4: "Vídeo de l'esdeveniment inclòs",
+  teamBuilding_package_premium_feature5: 'Càtering opcional disponible',
+  teamBuilding_package_full_title: 'Full Experience',
+  teamBuilding_package_full_desc: 'Experiència completa per a grans equips',
+  teamBuilding_package_full_price: 'Consultar',
+  teamBuilding_package_full_feature1: 'Mitja jornada o jornada completa',
+  teamBuilding_package_full_feature2: 'Sense límit de participants',
+  teamBuilding_package_full_feature3: 'Múltiples activitats',
+  teamBuilding_package_full_feature4: 'Videoclip professional',
+  teamBuilding_package_full_feature5: 'Coordinació integral',
+  teamBuilding_package_full_feature6: 'A qualsevol ubicació',
+  teamBuilding_stat_events: 'esdeveniments realitzats',
+  teamBuilding_stat_participants: 'participants',
+  teamBuilding_stat_rating: 'valoració mitjana',
+  teamBuilding_summaryTable_title: 'Resum de Activitats Team Building',
+  teamBuilding_table_header_service: 'Activitat',
+  teamBuilding_table_header_duration: 'Durada',
+  teamBuilding_table_header_ideal: 'Ideal per',
+  teamBuilding_table_header_price: 'Des de',
+  teamBuilding_table_workshop: 'Workshop de Ball',
+  teamBuilding_table_workshop_duration: '1-3 hores',
+  teamBuilding_table_workshop_ideal: 'Equips de 10-50 persones',
+  teamBuilding_table_workshop_price: '300€',
+  teamBuilding_table_choreography: 'Coreografia Corporativa',
+  teamBuilding_table_choreography_duration: '2-4 hores',
+  teamBuilding_table_choreography_ideal: 'Presentacions i esdeveniments',
+  teamBuilding_table_choreography_price: '500€',
+  teamBuilding_table_videoclip: 'Videoclip Empresarial',
+  teamBuilding_table_videoclip_duration: 'Mitja jornada',
+  teamBuilding_table_videoclip_ideal: 'Màrqueting intern i XXSS',
+  teamBuilding_table_videoclip_price: '1.200€',
+  teamBuilding_table_flashmob: 'Flashmob Corporatiu',
+  teamBuilding_table_flashmob_duration: 'Jornada completa',
+  teamBuilding_table_flashmob_ideal: 'Esdeveniments especials',
+  teamBuilding_table_flashmob_price: '2.000€',
+  teamBuilding_faq_title: 'Preguntes Freqüents',
+  teamBuilding_faq1_question: 'Cal tenir experiència prèvia en ball?',
+  teamBuilding_faq1_answer:
+    'No, en absolut. Les nostres activitats estan dissenyades perquè tothom pugui participar.',
+  teamBuilding_faq2_question: 'Quantes persones poden participar?',
+  teamBuilding_faq2_answer:
+    'Des de grups petits de 5-10 persones fins a grans esdeveniments de més de 200 participants.',
+  teamBuilding_faq3_question: "Poden fer l'activitat a les nostres oficines?",
+  teamBuilding_faq3_answer: 'Sí, ens desplacem a qualsevol ubicació a Barcelona i rodalies.',
+  teamBuilding_faq4_question: 'Quins estils de ball oferiu?',
+  teamBuilding_faq4_answer:
+    'Oferim més de 25 estils: salsa, bachata, hip hop, reggaeton, afrobeat, dancehall, heels, i molts més.',
+  teamBuilding_faq5_question: 'Amb quanta antelació cal reservar?',
+  teamBuilding_faq5_answer: "Recomanem reservar amb almenys 2 setmanes d'antelació.",
+  teamBuilding_faq6_question: 'Inclou càtering?',
+  teamBuilding_faq6_answer:
+    'El càtering no està inclòs en els paquets bàsics, però podem coordinar-ho.',
+  teamBuilding_faq7_question: 'Com és el procés de reserva?',
+  teamBuilding_faq7_answer:
+    'Contacta amb nosaltres via formulari, email o telèfon (+34 622 247 085).',
+  teamBuilding_related_title: 'Altres Serveis',
+  teamBuilding_related_eventos_title: "Agència d'Esdeveniments",
+  teamBuilding_related_eventos_desc:
+    "Organització integral d'esdeveniments amb espectacles de ball.",
+  teamBuilding_related_fiestas_title: 'Festes i Comiats',
+  teamBuilding_related_fiestas_desc: 'Comiats de soltera, aniversaris i celebracions privades.',
+  teamBuilding_related_particulares_title: 'Classes Particulars',
+  teamBuilding_related_particulares_desc: 'Classes privades per a executius o grups reduïts.',
+  teamBuilding_cta_title: 'El filtre final (llegeix-ho a poc a poc)',
+  teamBuilding_cta_desc:
+    "Si busques complir l'expedient i que RRHH tingui fotos noves, no ens escriguis. Si vols alguna cosa que realment mogui al teu equip —encara que incomodi una mica—, llavors parlem. La resta pot seguir contractant escape rooms.",
+  teamBuilding_cta_button: 'Parlem (si tens criteri)',
+  teamBuilding_schema_name: 'Team Building amb Ball a Barcelona',
+  teamBuilding_schema_description:
+    'Team building amb ball a Barcelona per a empreses que ja no creuen en team building. Experiències corporatives amb cos, emoció i presència real. Centre certificat CID-UNESCO amb 8+ anys i +500 esdeveniments.',
+
+  // ============================================================================
+  // NOVEDADES CAROUSEL
+  // ============================================================================
+  novedades_title: 'Últimes Novetats',
+  novedades_subtitle:
+    'Esdeveniments, workshops i notícies de la nostra acadèmia. No et perdis res.',
+  novedades_prev: 'Veure novetat anterior',
+  novedades_next: 'Veure següent novetat',
+  novedades_carouselLabel: 'Carrusel de últimes novetats',
+  novedades_indicators: 'Indicadors de diapositives',
+  novedades_goToSlide: 'Anar a la diapositiva {n}',
+
+  // Badges
+  novedades_badge_destacado: 'Destacat',
+  novedades_badge_nuevo: 'Nou',
+  novedades_badge_plazasLimitadas: 'Places Limitades',
+  novedades_badge_ultimasPlazas: 'Últimes Places',
+  novedades_badge_evento: 'Esdeveniment',
+  novedades_badge_competicion: 'Competició',
+
+  // CTAs
+  novedades_cta_reservar: 'Reservar Plaça',
+  novedades_cta_apuntarse: 'Apuntar-se',
+  novedades_cta_info: 'Més Informació',
+  novedades_cta_entradas: 'Aconseguir Entrades',
+  novedades_cta_inscribirse: 'Inscriure-se',
+
+  // Puertas Abiertas
+  novedades_puertasAbiertas_title: 'Portes Obertes Gener 2026',
+  novedades_puertasAbiertas_subtitle: 'Prova el centre sense compromís',
+  novedades_puertasAbiertas_desc:
+    'Del 7 al 31 de gener, vine a conèixer les nostres instal·lacions, professors i mètodes. Classes de prova gratuïtes en tots els estils.',
+  novedades_puertasAbiertas_alt: "Portes obertes a Farray's International Dance Center",
+
+  // Workshop Afro
+  novedades_workshopAfro_title: 'Workshop Afro amb Artista Convidat',
+  novedades_workshopAfro_subtitle: 'Masterclass especial',
+  novedades_workshopAfro_desc:
+    'Workshop intensiu de dansa Afro amb tècniques tradicionals i contemporànies. Nivell intermedi-avançat.',
+  novedades_workshopAfro_alt: 'Workshop de dansa Afro a Barcelona',
+
+  // Formación Profesional
+  novedades_formacion_title: 'Formació Professional 2026',
+  novedades_formacion_subtitle: 'Dansa Clàssica, Contemporània i Urbana',
+  novedades_formacion_desc:
+    'Programa intensiu de 6 mesos per a ballarins que volen professionalitzar-se. 20 hores setmanals amb els millors professors.',
+  novedades_formacion_alt: 'Formació professional de dansa a Barcelona',
+
+  // Bachata Intensivo
+  novedades_bachataIntensivo_title: 'Intensiu de Bachata Sensual',
+  novedades_bachataIntensivo_subtitle: 'Per a parelles i sols',
+  novedades_bachataIntensivo_desc:
+    'Aprèn els moviments més sensuals de la bachata en aquest workshop intensiu. Principiants i avançats.',
+  novedades_bachataIntensivo_alt: 'Classe intensiva de bachata sensual a Barcelona',
+
+  // Heels Showcase
+  novedades_heelsShowcase_title: 'Heels Showcase - Dia de la Dona',
+  novedades_heelsShowcase_subtitle: 'Espectacle especial 8M',
+  novedades_heelsShowcase_desc:
+    'Celebra el Dia de la Dona amb un showcase espectacular de les nostres alumnes de Heels. Entrada lliure.',
+  novedades_heelsShowcase_alt: 'Showcase de Heels en el Dia de la Dona',
+
+  // Hip Hop Battle
+  novedades_hipHopBattle_title: 'Hip Hop Battle Barcelona',
+  novedades_hipHopBattle_subtitle: 'Competició oberta',
+  novedades_hipHopBattle_desc:
+    'Batalla de Hip Hop oberta a tots els nivells. Premis per als guanyadors. Inscriu-te i demostra el teu talent!',
+  novedades_hipHopBattle_alt: 'Competició de Hip Hop Battle a Barcelona',
 };

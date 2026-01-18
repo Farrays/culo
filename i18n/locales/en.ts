@@ -11,10 +11,19 @@ export const en = {
   breadcrumb_home: 'Home',
   home: 'Home',
   contact: 'Contact',
+  contactUs: 'Contact Us',
   skipToMain: 'Skip to main content',
   viewSchedule: 'View Schedule',
   bookNow: 'Book Now',
   bookTrialClass: 'Book Your Welcome Class',
+  // StatsBar
+  statsbar_reviews: '509+ reviews',
+  statsbar_certified: 'Certified Center',
+  statsbar_members: 'Active Members',
+  statsbar_space: 'Facilities',
+  statsbar_styles: 'Styles',
+  statsbar_years: 'in Barcelona',
+
   nearbyAreasTitle: 'Nearby Areas',
   trustStats: 'Trust Statistics',
   classesPerSession: 'classes per session',
@@ -88,18 +97,17 @@ export const en = {
   happinessStoryLine4Part2: "we decided to create it. And it's working.",
   happinessStoryLine5: "Because we didn't know it was impossible, we just did it.",
   happinessStoryPara1Part1:
-    "We didn't know it was impossible to build it in a space abandoned for 10 years. We also didn't know it was a bad idea to renovate it by hand, with no budget—just Yunaisy, Fábio, friends, teachers and an improvised crew. We knew nothing about \"the impossible\". So we simply did it. Because Farray's wasn't born from a business plan.",
-  happinessStoryPara1Part2: 'It was born from a love story.',
-  happinessStoryPara2:
-    "From the love between Yunaisy and Fábio, from the love for dance, and from the love for people. That's why when we say family is in the air here, it's not a slogan—it's the truth.",
+    'We knew nothing about "the impossible". So we simply did it. Because it wasn\'t born from a business plan.',
+  happinessStoryPara1Part2: 'It was born from a dream.',
+  happinessStoryPara2: '',
   happinessStoryPara3Part1: 'Today, that dream is called',
   happinessStoryPara3Part2: "Farray's International Dance Center",
-  happinessStoryPara3Part3: ', a multidisciplinary academy recognized by',
+  happinessStoryPara3Part3: ', a sports and training center recognized by',
   happinessStoryPara3Part4: 'CID-UNESCO',
   happinessStoryPara3Part5: ', directed by',
   happinessStoryPara3Part6: 'Yunaisy Farray',
   happinessStoryPara3Part7:
-    '—dancer, international master teacher, and the soul of this home—where every student matters, every story counts, and every moment brings you closer to the best version of yourself.',
+    '—dancer, international master teacher, and the driving force of this home—where every student matters, every story counts, and every moment brings you closer to the best version of yourself.',
   happinessStoryPara4:
     "A place we didn't copy from anywhere. A place that didn't exist… until we built it.",
   // About
@@ -107,6 +115,8 @@ export const en = {
   aboutSubtitle: 'Art, Rigor, and Passion',
   aboutBio:
     "With over two decades as a global artist and master educator, Yunaisy Farray has established herself as an international dance benchmark. Her training at the prestigious National School of Arts of Cuba (ENA) instilled in her a unique fusion of Russian discipline and the rhythms and flavor of Afro-descendant dancers. She participated in the blockbuster film 'Street Dance 2' and captivated millions in the 'Got Talent' finals. Additionally, she has collaborated on various television programs, such as 'The Dancer,' and has countless participations in diverse areas of the entertainment world.\n\nAs a member of CID-UNESCO and creator of the exclusive Farray Method®, Yunaisy leads a school that combines rigor, creativity, and rapid results in a familiar and inclusive environment.\n\nHer experience transforms each class into a cultural and emotional journey, guaranteeing elite training for dancers of all levels.",
+  aboutYunaisyPhotoAlt:
+    "Yunaisy Farray, professional dancer and choreographer, founder of Farray's International Dance Center in Barcelona",
   aboutMethodTitle: "The 'Método Farray®': The Pinnacle of Dance Pedagogy.",
   aboutMethodPillar1Title: 'Discipline & Rigor',
   aboutMethodPillar1Desc:
@@ -168,7 +178,8 @@ export const en = {
   // Services
   servicesTitle: 'Additional Services',
   servicesIntro:
-    'At Farray’s International Dance Center, we offer much more than just dance classes. Discover all the services we provide to help you create, celebrate, and grow through dancing.',
+    "At Farray's International Dance Center, we offer much more than just dance classes. Discover all the services we provide to help you create, celebrate, and grow through dancing.",
+  servicesViewAll: 'View all services',
   serviceRentalTitle: 'Room Rentals',
   serviceRentalDesc:
     'Spacious and equipped studios for rehearsals, classes, and private events in the heart of Barcelona.',
@@ -644,6 +655,8 @@ export const en = {
 
   dhV3TeachersTitle: 'Meet our Dancehall teachers',
   dhV3TeachersSubtitle: 'Dancehall experts with years of experience',
+  dhV3ScheduleTitle: 'Dancehall Class Schedule',
+  dhV3ScheduleSubtitle: 'Classes available every day of the week',
 
   // Dancehall schedule class names (enterprise i18n)
   dhScheduleClassTwerkIntermediate: 'Dancehall Twerk Intermediate',
@@ -2539,6 +2552,83 @@ export const en = {
   serviciosBaile_finalCTA_button_primary: 'Book Now',
   serviciosBaile_finalCTA_button_secondary: 'Contact Us',
 
+  // Dance Services - Intro SEO Section
+  serviciosBaile_intro_p1:
+    "At <strong>Farray's International Dance Center</strong> we offer a wide range of <strong>dance services in Barcelona</strong>. Beyond our regular classes, we provide professional spaces, personalized training, and artistic talent for any project.",
+  serviciosBaile_intro_p2:
+    'Whether you need a <strong>space to rehearse or record</strong>, private lessons tailored to your pace, or professional dancers for your event, our 700 m² academy has the perfect solution. We are located in the heart of Barcelona, near Plaza España.',
+
+  // Dance Services - Categories
+  serviciosBaile_cat_spaces: 'Spaces & Production',
+  serviciosBaile_cat_spaces_desc: 'Professional studios and audiovisual services',
+  serviciosBaile_cat_training: 'Personalized Training',
+  serviciosBaile_cat_training_desc: 'Custom classes and unique experiences',
+  serviciosBaile_cat_professional: 'Professionals & Companies',
+  serviciosBaile_cat_professional_desc: 'Talent, events and corporate solutions',
+  serviciosBaile_cat_merchandising: 'Official Store',
+  serviciosBaile_cat_merchandising_desc: 'Exclusive academy products',
+
+  // Dance Services - Table
+  serviciosBaile_table_service: 'Service',
+  serviciosBaile_table_ideal: 'Ideal for',
+
+  // Dance Services - Why Section
+  serviciosBaile_why_title: "Why choose Farray's for your dance services?",
+  serviciosBaile_pillar1_title: 'Premium Location',
+  serviciosBaile_pillar1_desc:
+    'In the heart of Barcelona, Eixample. 5 minutes from Plaza España and Sants Station. Metro and bus at the door.',
+  serviciosBaile_pillar2_title: '8+ Years of Experience',
+  serviciosBaile_pillar2_desc:
+    'Over 15,000 satisfied students and hundreds of events held attest to the quality of our services.',
+  serviciosBaile_pillar3_title: '700 m² of Facilities',
+  serviciosBaile_pillar3_desc:
+    '4 studios equipped with mirrors, professional sound, floating floor and air conditioning.',
+  serviciosBaile_pillar4_title: 'Multidisciplinary Team',
+  serviciosBaile_pillar4_desc:
+    'Cuban teachers specialized in over 25 dance styles. Professional talent for any project.',
+  serviciosBaile_pillar5_title: 'Flexible Hours',
+  serviciosBaile_pillar5_desc:
+    'Availability Monday to Friday from 9am to 11pm. We adapt to your schedule and needs.',
+  serviciosBaile_pillar6_title: 'Personalized Attention',
+  serviciosBaile_pillar6_desc:
+    'Every project is unique. We advise you to find the best solution tailored to your needs.',
+
+  // Dance Services - Stats
+  serviciosBaile_stats_years: 'Years of Experience',
+  serviciosBaile_stats_students: 'Satisfied Clients',
+  serviciosBaile_stats_rooms: 'Studios Available',
+  serviciosBaile_stats_events: 'Events Completed',
+
+  // Dance Services - FAQs
+  serviciosBaile_faq_title: 'Frequently Asked Questions About Our Services',
+  serviciosBaile_faq1_q: 'How can I book a room rental?',
+  serviciosBaile_faq1_a:
+    'You can contact us by phone (+34 622 24 70 85), email (info@farrayscenter.com) or WhatsApp. We will inform you about availability, prices and conditions. You can also visit us in person to see the spaces.',
+  serviciosBaile_faq2_q: 'Do you offer services for corporate events?',
+  serviciosBaile_faq2_a:
+    'Yes, we offer team building, shows for corporate events, dance classes for company groups and wellness activities. We design custom experiences to motivate and unite teams.',
+  serviciosBaile_faq3_q: 'Can I give dance classes as a gift?',
+  serviciosBaile_faq3_a:
+    'Absolutely! We have customizable gift cards for private lessons, monthly packages or special experiences. The perfect gift for dance lovers or for those who want to discover it.',
+  serviciosBaile_faq4_q: 'What does the recording studio service include?',
+  serviciosBaile_faq4_a:
+    'The rental includes the space with mirrors, professional lighting, sound equipment and air conditioning. You can bring your own recording equipment or hire additional audiovisual production services.',
+  serviciosBaile_faq5_q: 'Do you organize bachelorette parties?',
+  serviciosBaile_faq5_a:
+    'Yes! We organize personalized bachelorette parties with choreographies, themed dance classes (reggaeton, bachata, twerk...) and unforgettable moments. Includes private room, instructor and music.',
+  serviciosBaile_faq6_q: 'Can I hire dancers for my event?',
+  serviciosBaile_faq6_a:
+    'Through our agency you can hire professional dancers for weddings, parties, corporate events, music videos, fashion shows and any type of show. We have a wide roster of artists.',
+  serviciosBaile_faq7_q: 'Can private lessons be at home?',
+  serviciosBaile_faq7_a:
+    'Yes, we offer classes both at the academy and at home in Barcelona and surroundings. You just need a minimum space to move and the desire to learn.',
+  serviciosBaile_faq8_q: 'What hours are available for room rental?',
+  serviciosBaile_faq8_a:
+    'The rooms are available Monday to Friday from 9am to 11pm, depending on regular class occupancy. Weekends upon request. Contact us to check availability.',
+
+  // Dance Services - Reviews Section
+  serviciosBaile_reviews_title: 'What Our Clients Say',
+
   // Recording Studio Page
   estudioGrabacion_breadcrumb_home: 'Home',
   estudioGrabacion_breadcrumb_current: 'Recording Studio',
@@ -2850,7 +2940,7 @@ export const en = {
   metodoFarray_results_title: 'Results That Speak',
   metodoFarray_stats_students: 'Students trained',
   metodoFarray_stats_years: 'Years perfecting the method',
-  metodoFarray_stats_rating: 'Google rating (505+ reviews)',
+  metodoFarray_stats_rating: 'Google rating (509+ reviews)',
   metodoFarray_stats_styles: 'Dance styles available',
 
   metodoFarray_featured_quote:
@@ -3215,6 +3305,9 @@ export const en = {
   // Teachers Section
   twerkTeachersTitle: 'Meet your Twerk instructors',
   twerkTeachersSubtitle: 'Experts in Twerk and Dancehall with years of experience',
+  twerkScheduleTitle: 'Twerk Class Schedule',
+  twerkScheduleSubtitle: 'Weekly classes with specialized instructors',
+  twerkWhyTodayFullTitle: 'Why start Twerk today instead of "next week"?',
 
   // Schedule Section
   // Video Section
@@ -3417,6 +3510,11 @@ At Farray's International Dance Center, Afrobeats is taught with technique, resp
   // Teachers
   afroTeachersTitle: 'Meet our Afrobeats teachers',
   afroTeachersSubtitle: 'Afrodance experts with years of experience',
+  afroTeachersClosing:
+    "Our teachers don't just teach steps: they transmit culture, history and passion for Afrodance.",
+  afroScheduleTitle: 'Afrobeats Class Schedule',
+  afroScheduleSubtitle: 'Weekly classes with Afrodance experts',
+  afroWhyTodayFullTitle: 'Why start Afrobeats today instead of "when I feel ready"?',
   // Schedule
   // Video
   // Why Today
@@ -3682,6 +3780,9 @@ This fusion incorporates:
   // Teachers Section
   hhrTeachersTitle: 'Meet your Hip Hop Reggaeton instructor',
   hhrTeachersSubtitle: 'Urban fusion expert with years of experience',
+  hhrScheduleTitle: 'Hip Hop Reggaeton Class Schedule',
+  hhrScheduleSubtitle: 'Weekly classes with Charlie Breezy',
+  hhrWhyTodayFullTitle: 'Why start Hip Hop Reggaeton today instead of "next month"?',
 
   // Schedule Section
   // Video Section
@@ -3908,6 +4009,8 @@ Today, Cubatón has expanded internationally while maintaining its essence: impr
   rcbLogosIntlFestivalsText: 'and at the best dance festivals worldwide',
   rcbTeachersTitle: 'Meet your Reparto instructors',
   rcbTeachersSubtitle: 'Cuban-born, trained at ENA and references in Barcelona',
+  rcbScheduleTitle: 'Cuban Reggaeton Class Schedule',
+  rcbScheduleSubtitle: 'Weekly classes with authentic Cuban teachers',
   rcbTeachersClosing:
     "With Charlie and Alejandro, you don't just learn to dance Reparto: you discover the authentic flavor that only Cubans can transmit.",
   rcbVideoDesc:
@@ -4352,6 +4455,9 @@ Over more than a decade, Femmology has transformed the lives of thousands of wom
   // Teachers Section
   femTeachersTitle: 'Meet Yunaisy Farray',
   femTeachersSubtitle: 'Creator of Femmology and one of the most recognized teachers in the world',
+  femScheduleTitle: 'Femmology Class Schedule',
+  femScheduleSubtitle: 'Exclusive classes with Yunaisy Farray',
+  femWhyTodayFullTitle: 'Why start Femmology today instead of "when I feel ready"?',
 
   // Schedule Section
   // Video Section
@@ -4630,6 +4736,11 @@ Over more than a decade, Femmology has transformed the lives of thousands of wom
   // Teachers Section
   sexystyleTeachersTitle: 'Meet your Sexy Style instructor',
   sexystyleTeachersSubtitle: 'Specialist in body expression and sensuality',
+  sexystyleTeachersClosing:
+    "With Yasmina you don't just learn to dance Sexy Style: you discover a new way to inhabit your body.",
+  sexystyleScheduleTitle: 'Sexy Style Class Schedule',
+  sexystyleScheduleSubtitle: 'Weekly classes with Yasmina Fernández',
+  sexystyleWhyTodayFullTitle: 'Why start Sexy Style today instead of "when I feel ready"?',
   // Schedule Section
   // Video Section
   sexystyleVideoDesc:
@@ -4883,6 +4994,11 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colombia), J Balvi
   // Teachers Section
   sxrTeachersTitle: 'Meet your Sexy Reggaeton instructor',
   sxrTeachersSubtitle: 'Expert in sensual urban dances with over 8 years of experience',
+  sxrTeachersClosing:
+    "With Yasmina you don't just learn to dance Sexy Reggaeton: you discover a way to connect with your femininity and your power without asking permission.",
+  sxrScheduleTitle: 'Sexy Reggaeton Class Schedule',
+  sxrScheduleSubtitle: 'Weekly classes with specialized instructors',
+  sxrWhyTodayFullTitle: 'Why start Sexy Reggaeton today instead of "when I feel ready"?',
   // Schedule Section
   // Video Section
   sxrVideoDesc:
@@ -5129,6 +5245,10 @@ Farray's International Dance Center is rated close to **5/5 on Google**, with hu
   // Teachers Section
   modernjazzTeachersTitle: 'Meet your Modern Jazz teacher',
   modernjazzTeachersSubtitle: 'Classical technique, contemporary spirit',
+  modernjazzScheduleTitle: 'Modern Jazz Class Schedule',
+  modernjazzScheduleSubtitle: 'Weekly classes with Alejandro Miñoso',
+  modernjazzWhyTodayFullTitle:
+    'Why start Modern Jazz today instead of "when I have more foundation"?',
   // Schedule Section
   // Video Section
   modernjazzVideoDesc:
@@ -5574,9 +5694,14 @@ All ballet terms are in French, a legacy of its development at the court of Vers
   // ===== Teachers Section =====
   balletTeachersTitle: 'Meet your Ballet teachers',
   balletTeachersSubtitle: 'Cuban School, international experience',
+  balletTeachersClosing:
+    'Two teachers, two complementary approaches. Daniel for intermediate and advanced levels, Alejandro for beginners. The perfect combination for your ballet training.',
   // ===== Schedule Section =====
+  balletScheduleTitle: 'Ballet Class Schedule',
+  balletScheduleSubtitle: 'Daily classes with Cuban School teachers',
   // ===== Video Section =====
   // ===== Why Today Section =====
+  balletWhyTodayFullTitle: 'Why start ballet today instead of "when I have time"?',
   balletWhyToday1:
     'Because you keep waiting for "the perfect moment" to sign up for ballet... but the only perfect thing is to start today.',
   balletWhyToday2:
@@ -5972,6 +6097,8 @@ Dancers from around the world travel to Barcelona specifically to train in Afro 
   // ===== Teachers Section =====
   afrojazzTeachersTitle: 'Your Afro Jazz teachers',
   afrojazzTeachersSubtitle: 'Elite training with the Farray Method team',
+  afrojazzScheduleTitle: 'Afro Jazz Class Schedule',
+  afrojazzScheduleSubtitle: 'Weekly classes with the Farray Method team',
   afrojazzTeacher1Bio:
     "Yunaisy Farray is a master trained at Cuba's National School of Art (ENA), member of UNESCO's International Dance Council and actress in Street Dance 2. Creator of Afro Jazz as a unique discipline, she teaches intermediate and advanced classes on Thursdays from 7pm to 8:30pm.",
   // ===== Schedule Section =====
@@ -6321,7 +6448,11 @@ Works comprehensively: **flexibility, functional strength, coordination, proprio
   contemporaneoTeachersTitle: 'Your Contemporary Dance Masters',
   contemporaneoTeachersSubtitle:
     'Professional dancers trained in the Cuban School with international career',
+  contemporaneoTeachersClosing:
+    "With Daniel and Alejandro you don't just learn contemporary technique: you discover a new way to express yourself, connect with your body and develop your own movement language.",
   // Schedule Section
+  contemporaneoScheduleTitle: 'Contemporary Dance Class Schedule',
+  contemporaneoScheduleSubtitle: 'Weekly classes with Cuban School professionals',
   // Level Cards Section
   contemporaneoLevelBeginnerTitle: 'Lyrical Beginners',
   contemporaneoLevelBeginnerDesc:
@@ -6707,7 +6838,11 @@ The Afro Contemporary taught at **Farray's International Dance Center** is part 
   // Teachers Section
   afrocontemporaneoTeachersTitle: 'Your Afro Contemporary masters',
   afrocontemporaneoTeachersSubtitle: 'Direct training from the National School of Art of Cuba',
+  afrocontemporaneoTeachersClosing:
+    "With our Cuban masters you don't just learn Afro Contemporary: you access the original methodology of the National School of Art of Cuba.",
   // Schedule Section
+  afrocontemporaneoScheduleTitle: 'Afro Contemporary Class Schedule',
+  afrocontemporaneoScheduleSubtitle: 'Weekly classes with ENA-trained teachers',
   // Video Section
   afrocontemporaneoVideoDesc:
     "Watch in this video what Afro Contemporary classes are like at Farray's International Dance Center in Barcelona. Don't think twice and come try a class.",
@@ -6909,6 +7044,8 @@ The Afro Contemporary taught at **Farray's International Dance Center** is part 
     'Open class for all levels where you will work on technique, musicality, freestyle and improvisation. Each week we explore different styles and movements so you can develop your own flow and personal style. With Marcos Martínez on Thursdays from 8pm to 9pm.',
   hiphopTeachersTitle: 'Meet your Hip Hop teacher',
   hiphopTeachersSubtitle: 'A reference of Hip Hop in Spain',
+  hiphopTeachersClosing:
+    'Learn from a master who has dedicated his life to Hip Hop and who transmits not only technique, but the culture and attitude that defines this style.',
   hiphopPrepareItem5: 'Desire to release your flow',
   hiphopPrepareBefore: 'Before arriving',
   hiphopPrepareBeforeItem1: 'Arrive 10-15 minutes early to warm up',
@@ -7740,7 +7877,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   salsaLadyStatMinutes: 'minutes',
   salsaLadyStatCalories: 'calories',
   salsaLadyStatElegance: 'Elegance',
-  salsaLadyStatReviewCount: '505+ reviews',
+  salsaLadyStatReviewCount: '509+ reviews',
   salsaLadyStatStudents: '+15,000 students trained',
   salsaLadyStatYears: '8 years in Barcelona',
   // Schedule class names
@@ -9799,6 +9936,8 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   stretchingTeachersTitle: 'Your Stretching Teachers',
   stretchingTeachersSubtitle: 'Flexibility specialists with the Farray Method',
   // === SCHEDULE SECTION ===
+  stretchingScheduleTitle: 'Stretching Class Schedule',
+  stretchingScheduleSubtitle: 'Weekly classes with flexibility specialists',
   // === WHY CHOOSE US SECTION ===
   stretchingWhyChoose1Title: 'Farray Method',
   stretchingWhyChoose1Desc:
@@ -10100,6 +10239,8 @@ Scientific studies confirm that regular stretching 3+ times per week:
   bumbumTeachersTitle: 'Your Bum Bum Glutes Teacher',
   bumbumTeachersSubtitle: 'Toning specialist with the Farray Method',
   // === SCHEDULE SECTION ===
+  bumbumScheduleTitle: 'Bum Bum Glutes Class Schedule',
+  bumbumScheduleSubtitle: 'Weekly toning classes',
   // === WHY CHOOSE US SECTION ===
   bumbumWhyChoose2Title: 'Hip Thrust and Advanced Techniques',
   bumbumWhyChoose2Desc:
@@ -16017,6 +16158,10 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   cuerpofitLevelOpenDesc: `Class adaptable to all levels. Each exercise has variations from beginner to advanced. Cris guides you according to your current level, ensuring you work in your optimal development zone without risk of injury.`,
   cuerpofitTeachersTitle: `Your Body Conditioning Teacher`,
   cuerpofitTeachersSubtitle: `Specialist in conditioning for dancers`,
+  cuerpofitTeachersClosing:
+    "At Farray's Center, physical conditioning is not a supplement: it's the foundation of your evolution as a dancer.",
+  cuerpofitScheduleTitle: 'Body Conditioning Class Schedule',
+  cuerpofitScheduleSubtitle: 'Weekly physical conditioning classes',
   cuerpofitWhyChoose2Title: `Focus on Injury Prevention`,
   cuerpofitWhyChoose2Desc: `Each exercise aims to strengthen the most vulnerable areas for dancers: hips, knees, ankles and back.`,
   cuerpofitWhyChoose3Title: `Small Groups`,
@@ -16419,6 +16564,8 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   fullBodyCardioLevelOpenDesc: `Cuerpo-Fit is open level. Each exercise has intensity variations: you choose yours. Absolute beginners work alongside experienced people, each at their own pace. No pressure, no comparisons.`,
   fullBodyCardioTeachersTitle: `Tu Profesora for Cuerpo-Fit`,
   fullBodyCardioTeachersSubtitle: `Specialist in functional training and cardio dance`,
+  fullBodyCardioScheduleTitle: 'Full Body Cardio Class Schedule',
+  fullBodyCardioScheduleSubtitle: 'Weekly functional training classes',
   fullBodyCardioWhyChoose2Desc: `You don't need experience. Each exercise has intensity variations. You choose your level at each moment.`,
   fullBodyCardioWhyChoose3Title: `Small groups`,
   fullBodyCardioWhyChoose3Desc: `Maximum 20 people per class to guarantee personalized attention and individual corrections.`,
@@ -16657,7 +16804,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   fbLandingTestimonial2Text: `I came alone and embarrassed. Now I have a group of dancer friends and I go to social events every week. Best decision of the year.`,
   fbLandingTestimonial3Name: `Laura, 42 years old`,
   fbLandingTestimonial3Text: `After years of wanting to and not daring, I finally did it. The atmosphere is so good that I forgot I was embarrassed.`,
-  fbLandingGoogleReviews: `505+ Google reviews`,
+  fbLandingGoogleReviews: `509+ Google reviews`,
   fbLandingTransformCTA: `I WANT THAT TRANSFORMATION`,
   fbLandingFaqTitle: `You might be wondering...`,
   fbLandingFaq1Q: `"I don't know how to dance at all, I'm a complete beginner"`,
@@ -17001,8 +17148,8 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   homev2_compRow2Others: `You attend class, but are you progressing?`,
   homev2_compRow2Us: `You know exactly where you stand`,
   homev2_compRow3Label: `Teachers`,
-  homev2_compRow3Others: `Instructors with online course`,
-  homev2_compRow3Us: `Masters trained at elite academies`,
+  homev2_compRow3Others: `High staff turnover`,
+  homev2_compRow3Us: `Stable team with continuous training`,
   homev2_compRow4Label: `Facilities`,
   homev2_compRow4Others: `Adapted spaces, generic flooring`,
   homev2_compRow4Us: `700m² with professional flooring and air conditioning`,
@@ -17018,8 +17165,14 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   homev2_compRow8Label: `Results`,
   homev2_compRow8Others: `"It depends on you..."`,
   homev2_compRow8Us: `Measurable progress class by class`,
-  homev2_comparisonCta: `See for yourself`,
-  homev2_comparisonCtaSubtext: `Welcome class with assessment`,
+  homev2_compRow9Label: `Professionalism`,
+  homev2_compRow9Others: `Variable employment status`,
+  homev2_compRow9Us: `Team with contracts and labor rights`,
+  homev2_compRow10Label: `Approach`,
+  homev2_compRow10Others: `Only teach memorizing steps and choreographies`,
+  homev2_compRow10Us: `We teach you to understand movement`,
+  homev2_comparisonCta: `Discover How to Start`,
+  homev2_comparisonCtaSubtext: `Book Your Welcome Class`,
   homev2_styleFinderTitle: `25+ styles. One method. Your journey.`,
   homev2_styleFinderSubtitle: `What motivates you to dance? Find your path.`,
   homev2_persona1Title: `I want to feel powerful`,
@@ -17035,7 +17188,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   homev2_persona4Desc: `Fitness dancístico que quema calories mientras te diviertes. Mejora tu condición física.`,
   homev2_persona4Cta: `Explore dance fitness`,
   homev2_styleFinderViewAll: `View all 25+ styles`,
-  homev2_socialProofTitle: `What 505 people who already danced here say`,
+  homev2_socialProofTitle: `What 509 people who already danced here say`,
   homev2_stat1Label: `active students`,
   homev2_stat2Label: `years of experience`,
   homev2_stat3Label: `dance styles`,
@@ -18390,6 +18543,11 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   booking_modal_close: 'Close',
   booking_modal_select: 'Book this class',
   booking_modal_no_description: 'No description available for this class.',
+  booking_teacher_view_profile: 'View teacher profile',
+  booking_teacher_director: 'Director',
+  booking_teacher_years: 'years',
+  booking_teacher_certifications: 'Training',
+  booking_teacher_teaches: 'Styles taught',
   booking_info_day: 'Day',
   booking_info_time: 'Time',
   booking_info_instructor: 'Instructor',
@@ -18445,28 +18603,22 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   booking_field_firstName: 'First name',
   booking_field_lastName: 'Last name',
   booking_field_email: 'Email',
-  booking_field_phone: 'Phone',
+  booking_field_phone: 'WhatsApp',
   booking_placeholder_firstName: 'Your first name',
   booking_placeholder_lastName: 'Your last name',
   booking_placeholder_email: 'your@email.com',
   booking_placeholder_phone: '+34 612 345 678',
 
   // RGPD Checkboxes - Mandatory
-  booking_consent_terms: 'I have read and accept the',
+  booking_consent_terms: 'I accept the',
   booking_consent_terms_link: 'general terms and conditions',
   booking_consent_terms_required: 'You must accept the general terms and conditions',
-
-  booking_consent_marketing:
-    'I authorize receiving commercial communications about activities, promotions and news',
-  booking_consent_marketing_required: 'You must authorize communications to continue',
+  booking_consent_terms_note:
+    '(Includes booking confirmation and reminders via WhatsApp/email, and potential image use in promotional material. To opt-out of photos/videos, notify reception or email info@farrayscenter.com)',
 
   booking_consent_age:
     'I confirm that I am 16 years or older, or have authorization from my legal guardian',
   booking_consent_age_required: 'You must confirm your age to continue',
-
-  booking_consent_norefund:
-    'I understand that the welcome class is non-refundable once attendance is confirmed',
-  booking_consent_norefund_required: 'You must accept the no-refund policy',
 
   booking_consent_privacy: 'I have read and accept the',
   booking_consent_privacy_link: 'privacy policy',
@@ -18476,12 +18628,6 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   booking_consent_heels:
     'I understand and accept that this class is performed in high heels. I commit to using appropriate footwear and assume responsibility for my safety',
   booking_consent_heels_required: 'You must accept the high heels conditions',
-
-  // RGPD Checkboxes - Optional
-  booking_consent_image:
-    'I authorize the use of my image in photos and videos taken during classes for promotional purposes on social media and website',
-  booking_consent_image_optional: '(Optional)',
-  booking_consent_optional: '(optional)',
 
   // Submit
   booking_submit: 'Confirm Booking',
@@ -18496,7 +18642,8 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   booking_success_location: 'Location',
   booking_success_address: "Farray's Center - C/ Mallorca 179, Barcelona",
   booking_success_reminder: 'We will remind you 24h before the class',
-  booking_success_cta: 'View full schedule',
+  booking_success_lang_note: 'Confirmation and reminder messages are sent in Spanish',
+  booking_success_cta: 'View all classes',
   booking_success_close: 'Close',
 
   // Calendar Export
@@ -18526,4 +18673,279 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   booking_legal_rights:
     'Rights: Access, rectification, erasure, restriction, portability and objection.',
   booking_legal_info: 'More information in our privacy policy.',
+
+  // ============================================================================
+  // Terms and Conditions Modal
+  // ============================================================================
+  terms_modal_title: 'Terms and Conditions',
+  terms_item_1:
+    'You can only try one free welcome class of a single style. This means you may take only one class in total, not one free class for each style.',
+  terms_item_2:
+    'The free welcome class is intended only for people living in Barcelona or nearby areas. If you are visiting Barcelona as a tourist or you do not live in this area, you will need to pay for any classes you attend.',
+  terms_item_3:
+    'It is important to be punctual to avoid missing the warm-up, especially in dance and fitness classes.',
+  terms_item_4:
+    'It is mandatory to respect the class level. If you do not comply, we reserve the right to ask you to leave the class.',
+  terms_item_5:
+    'Take care of your personal belongings. The academy is not responsible for lost, forgotten, or stolen items.',
+  terms_item_6:
+    'If you have any questions or need more information, please send us an email at info@farrayscenter.com, and we will reply as soon as possible.',
+  terms_contact_info: 'Have questions? Email us at',
+  terms_understood: 'Understood',
+
+  // ============================================================================
+  // Privacy Policy Modal
+  // ============================================================================
+  privacy_modal_title: 'Privacy Policy',
+  privacy_data_controller: 'Data Controllers',
+  privacy_data_controller_text:
+    "Depending on the service, the controller may be: Farray's Dance & Fitness, S.L. (NIF: B67004812) for the website, merchandising and services; or Club Esportiu Farray Barcelona (NIF: G67317701) for sports activities and member management.",
+  privacy_data_collected: 'Data We Process',
+  privacy_data_collected_text:
+    'Identification and contact data (name, email, phone), activity data (bookings, attendance), technical data (IP, cookies based on your settings) and images/videos if you consent.',
+  privacy_purposes: 'Purposes',
+  privacy_purposes_text:
+    'Manage your booking, member registration, operational communications (schedules, notices), and commercial communications only if you expressly authorize them.',
+  privacy_image_rights: 'Images and Videos',
+  privacy_image_rights_text:
+    'Images/videos may be captured during activities for promotional purposes. You can withdraw consent by emailing info@farrayscenter.com.',
+  privacy_user_rights: 'Your Rights',
+  privacy_user_rights_text:
+    'You can exercise access, rectification, erasure, objection, restriction and portability by emailing info@farrayscenter.com with subject "Data Protection – Rights".',
+  privacy_full_policy_url: 'Full policy at:',
+  privacy_full_policy_link: 'https://farrayscenter.com/politica-de-privacidad/',
+  privacy_understood: 'Understood',
+
+  // ============================================================================
+  // Team Building Page
+  // ============================================================================
+  teamBuilding_pageTitle:
+    "Dance Team Building Barcelona | For Companies That No Longer Believe in Team Building | Farray's",
+  teamBuilding_metaDescription:
+    'Dance team building in Barcelona for companies done with empty corporate rituals. No fluffy dynamics: body, emotion, real presence. CID-UNESCO certified. 500+ events.',
+  teamBuilding_heroTitle: 'Team Building Barcelona',
+  teamBuilding_heroSubtitle: 'for companies that no longer believe',
+  teamBuilding_heroIntro:
+    'For companies that no longer believe in team building. If you just need another box-checking activity, stop reading. But if you want your team to actually look each other in the eye, sweat together, and laugh about it afterward, maybe keep going.',
+  teamBuilding_trust_rating: '4.9★',
+  teamBuilding_trust_rating_label: 'on Google',
+  teamBuilding_trust_unesco: 'CID-UNESCO',
+  teamBuilding_trust_unesco_label: 'Certified',
+  teamBuilding_trust_years: '8+',
+  teamBuilding_trust_years_label: 'years',
+  teamBuilding_trust_events: '500+',
+  teamBuilding_trust_events_label: 'events',
+  teamBuilding_problem_title: 'The problem nobody talks about',
+  teamBuilding_problem_desc:
+    "Teams coexist. They collaborate just enough. They tolerate each other politely. And once a year, HR takes them to paintball or escape rooms because 'we need to do something.' According to Gallup, only 21% of employees worldwide are engaged. The global cost: $8.8 trillion. But nobody says it out loud.",
+  teamBuilding_solution_title: 'The soft lie of corporate engagement',
+  teamBuilding_solution_desc:
+    'Companies book dynamics that move nothing. They look for comfortable activities. Where nobody has to be vulnerable or leave their safe zone. The result: photos for LinkedIn and zero real impact.',
+  teamBuilding_features_title: "We don't offer dance classes for companies",
+  teamBuilding_feature_workshops_title: 'Collective discomfort',
+  teamBuilding_feature_workshops_desc:
+    "Sessions where your team will have to look at each other, laugh at themselves, and stop pretending everything's fine. 1-3 hours of honest discomfort.",
+  teamBuilding_feature_choreography_title: 'Shared sweat',
+  teamBuilding_feature_choreography_desc:
+    'Choreographies that demand real coordination. That expose who leads and who follows. That reveal more about your team than any personality test.',
+  teamBuilding_feature_competitions_title: 'Challenges without a safety net',
+  teamBuilding_feature_competitions_desc:
+    'Team competitions where embarrassment is inevitable. And where shared embarrassment is the only thing that creates real bonds.',
+  teamBuilding_feature_videoclip_title: 'Permanent evidence',
+  teamBuilding_feature_videoclip_desc:
+    "Professional video of your team doing what they never thought they'd do. Internal branding that needs no explanation.",
+  teamBuilding_feature_flashmob_title: 'Calculated public risk',
+  teamBuilding_feature_flashmob_desc:
+    "Flashmob at your event. Surprise, exposure, and pride mixed together. For companies that aren't afraid to show who they are.",
+  teamBuilding_feature_custom_title: 'Custom formats (with standards)',
+  teamBuilding_feature_custom_desc:
+    "We design experiences based on your real objectives. We won't say yes to everything: we'll tell you what actually works.",
+  teamBuilding_benefits_title: 'This is where we come in',
+  teamBuilding_benefit_experience_title: '8 years putting people on the spot (with love)',
+  teamBuilding_benefit_experience_desc:
+    "500+ corporate events. Multinationals, startups, teams in crisis. We've seen it all. And we're still here.",
+  teamBuilding_benefit_professionals_title: 'CID-UNESCO and the Farray Method',
+  teamBuilding_benefit_professionals_desc:
+    "International certification we don't use to sell. We use it to do things right. And a proprietary method that works even when you don't want it to.",
+  teamBuilding_benefit_flexibility_title: 'Body, emotion, real presence',
+  teamBuilding_benefit_flexibility_desc:
+    "We work with the only thing you can't fake: movement. If your team can't move together, they won't work together either.",
+  teamBuilding_benefit_results_title: 'No marketing promises',
+  teamBuilding_benefit_results_desc:
+    "We don't promise you'll leave as better people. We promise you'll see each other differently. And that changes something.",
+  teamBuilding_benefit_fun_title: "It's not fun: it's exposure",
+  teamBuilding_benefit_fun_desc:
+    "You'll be embarrassed. You'll mess up some moves. And then, strangely, you'll feel closer. That's how it works.",
+  teamBuilding_benefit_location_title: 'Heart of Barcelona (Eixample)',
+  teamBuilding_benefit_location_desc:
+    "400m² at Carrer d'Entença 100. Or we come to you. Location is the least of it.",
+  teamBuilding_process_title: 'How Does It Work?',
+  teamBuilding_process_step1_title: 'Contact Us',
+  teamBuilding_process_step1_desc: 'Tell us about your company. We will respond within 24 hours.',
+  teamBuilding_process_step2_title: 'We Design Your Experience',
+  teamBuilding_process_step2_desc: 'Our team creates a personalized proposal.',
+  teamBuilding_process_step3_title: 'Preparation and Rehearsals',
+  teamBuilding_process_step3_desc: 'We coordinate all logistical details.',
+  teamBuilding_process_step4_title: "Let's Dance!",
+  teamBuilding_process_step4_desc: 'Enjoy a unique experience.',
+  teamBuilding_idealFor_title: 'This is for you if...',
+  teamBuilding_idealFor_corporate: "Your team needs something that isn't 'more of the same'",
+  teamBuilding_idealFor_startups:
+    "You're tired of activities that look good in photos but change nothing",
+  teamBuilding_idealFor_departments:
+    "You want to see how your people react when they can't hide behind a PowerPoint",
+  teamBuilding_idealFor_incentives:
+    "You're looking for an incentive they'll remember for more than just the catering",
+  teamBuilding_idealFor_conventions: 'You have an event and want something real to happen',
+  teamBuilding_idealFor_celebrations:
+    'You believe your team has more potential than what they show at the office',
+  teamBuilding_packages_title: 'Our Packages',
+  teamBuilding_package_popular_badge: 'Most Popular',
+  teamBuilding_package_express_title: 'Express',
+  teamBuilding_package_express_desc: 'Perfect for small teams',
+  teamBuilding_package_express_price: 'from €300',
+  teamBuilding_package_express_feature1: 'Duration: 1-2 hours',
+  teamBuilding_package_express_feature2: 'Up to 20 participants',
+  teamBuilding_package_express_feature3: 'Dance style of your choice',
+  teamBuilding_package_express_feature4: 'At our facilities',
+  teamBuilding_package_premium_title: 'Premium',
+  teamBuilding_package_premium_desc: 'The most complete option for medium teams',
+  teamBuilding_package_premium_price: 'from €600',
+  teamBuilding_package_premium_feature1: 'Duration: 2-3 hours',
+  teamBuilding_package_premium_feature2: 'Up to 50 participants',
+  teamBuilding_package_premium_feature3: 'Custom choreography',
+  teamBuilding_package_premium_feature4: 'Event video included',
+  teamBuilding_package_premium_feature5: 'Optional catering available',
+  teamBuilding_package_full_title: 'Full Experience',
+  teamBuilding_package_full_desc: 'Complete experience for large teams',
+  teamBuilding_package_full_price: 'Contact us',
+  teamBuilding_package_full_feature1: 'Half day or full day',
+  teamBuilding_package_full_feature2: 'No participant limit',
+  teamBuilding_package_full_feature3: 'Multiple activities',
+  teamBuilding_package_full_feature4: 'Professional music video',
+  teamBuilding_package_full_feature5: 'Full coordination',
+  teamBuilding_package_full_feature6: 'At any location',
+  teamBuilding_stat_events: 'events completed',
+  teamBuilding_stat_participants: 'participants',
+  teamBuilding_stat_rating: 'average rating',
+  teamBuilding_summaryTable_title: 'Team Building Activities Summary',
+  teamBuilding_table_header_service: 'Activity',
+  teamBuilding_table_header_duration: 'Duration',
+  teamBuilding_table_header_ideal: 'Ideal for',
+  teamBuilding_table_header_price: 'From',
+  teamBuilding_table_workshop: 'Dance Workshop',
+  teamBuilding_table_workshop_duration: '1-3 hours',
+  teamBuilding_table_workshop_ideal: 'Teams of 10-50 people',
+  teamBuilding_table_workshop_price: '€300',
+  teamBuilding_table_choreography: 'Corporate Choreography',
+  teamBuilding_table_choreography_duration: '2-4 hours',
+  teamBuilding_table_choreography_ideal: 'Presentations and events',
+  teamBuilding_table_choreography_price: '€500',
+  teamBuilding_table_videoclip: 'Corporate Music Video',
+  teamBuilding_table_videoclip_duration: 'Half day',
+  teamBuilding_table_videoclip_ideal: 'Internal marketing and social media',
+  teamBuilding_table_videoclip_price: '€1,200',
+  teamBuilding_table_flashmob: 'Corporate Flashmob',
+  teamBuilding_table_flashmob_duration: 'Full day',
+  teamBuilding_table_flashmob_ideal: 'Special events',
+  teamBuilding_table_flashmob_price: '€2,000',
+  teamBuilding_faq_title: 'Frequently Asked Questions',
+  teamBuilding_faq1_question: 'Do I need previous dance experience?',
+  teamBuilding_faq1_answer: 'Not at all. Our activities are designed for everyone to participate.',
+  teamBuilding_faq2_question: 'How many people can participate?',
+  teamBuilding_faq2_answer:
+    'From small groups of 5-10 people to large events with over 200 participants.',
+  teamBuilding_faq3_question: 'Can you do the activity at our offices?',
+  teamBuilding_faq3_answer: 'Yes, we travel to any location in Barcelona and surrounding areas.',
+  teamBuilding_faq4_question: 'What dance styles do you offer?',
+  teamBuilding_faq4_answer:
+    'We offer over 25 styles: salsa, bachata, hip hop, reggaeton, afrobeat, dancehall, heels, and many more.',
+  teamBuilding_faq5_question: 'How far in advance should I book?',
+  teamBuilding_faq5_answer: 'We recommend booking at least 2 weeks in advance.',
+  teamBuilding_faq6_question: 'Is catering included?',
+  teamBuilding_faq6_answer: 'Catering is not included in basic packages, but we can coordinate it.',
+  teamBuilding_faq7_question: 'What is the booking process?',
+  teamBuilding_faq7_answer: 'Contact us via form, email or phone (+34 622 247 085).',
+  teamBuilding_related_title: 'Other Services',
+  teamBuilding_related_eventos_title: 'Events Agency',
+  teamBuilding_related_eventos_desc: 'Full event organization with dance shows.',
+  teamBuilding_related_fiestas_title: 'Parties and Hen Parties',
+  teamBuilding_related_fiestas_desc: 'Hen parties, birthdays and private celebrations.',
+  teamBuilding_related_particulares_title: 'Private Classes',
+  teamBuilding_related_particulares_desc: 'Private classes for executives or small groups.',
+  teamBuilding_cta_title: 'The final filter (read it slowly)',
+  teamBuilding_cta_desc:
+    "If you're looking to tick a box and give HR some new photos, don't contact us. If you want something that actually moves your team—even if it's a bit uncomfortable—then let's talk. Everyone else can keep booking escape rooms.",
+  teamBuilding_cta_button: "Let's talk (if you have standards)",
+  teamBuilding_schema_name: 'Dance Team Building in Barcelona',
+  teamBuilding_schema_description:
+    'Dance team building in Barcelona for companies that no longer believe in team building. Corporate experiences with body, emotion, and real presence. CID-UNESCO certified center with 8+ years and 500+ events.',
+
+  // ============================================================================
+  // NOVEDADES CAROUSEL
+  // ============================================================================
+  novedades_title: 'Latest News',
+  novedades_subtitle: 'Events, workshops and news from our academy. Stay updated.',
+  novedades_prev: 'View previous news',
+  novedades_next: 'View next news',
+  novedades_carouselLabel: 'Latest news carousel',
+  novedades_indicators: 'Slide indicators',
+  novedades_goToSlide: 'Go to slide {n}',
+
+  // Badges
+  novedades_badge_destacado: 'Featured',
+  novedades_badge_nuevo: 'New',
+  novedades_badge_plazasLimitadas: 'Limited Spots',
+  novedades_badge_ultimasPlazas: 'Last Spots',
+  novedades_badge_evento: 'Event',
+  novedades_badge_competicion: 'Competition',
+
+  // CTAs
+  novedades_cta_reservar: 'Book Now',
+  novedades_cta_apuntarse: 'Sign Up',
+  novedades_cta_info: 'More Info',
+  novedades_cta_entradas: 'Get Tickets',
+  novedades_cta_inscribirse: 'Register',
+
+  // Puertas Abiertas
+  novedades_puertasAbiertas_title: 'Open Doors January 2026',
+  novedades_puertasAbiertas_subtitle: 'Try our center with no commitment',
+  novedades_puertasAbiertas_desc:
+    'From January 7 to 31, come discover our facilities, teachers and methods. Free trial classes in all styles.',
+  novedades_puertasAbiertas_alt: "Open doors at Farray's International Dance Center",
+
+  // Workshop Afro
+  novedades_workshopAfro_title: 'Afro Workshop with Guest Artist',
+  novedades_workshopAfro_subtitle: 'Special masterclass',
+  novedades_workshopAfro_desc:
+    'Intensive Afro dance workshop with traditional and contemporary techniques. Intermediate-advanced level.',
+  novedades_workshopAfro_alt: 'Afro dance workshop in Barcelona',
+
+  // Formación Profesional
+  novedades_formacion_title: 'Professional Training 2026',
+  novedades_formacion_subtitle: 'Classical, Contemporary and Urban Dance',
+  novedades_formacion_desc:
+    'Intensive 6-month program for dancers who want to go professional. 20 hours per week with the best teachers.',
+  novedades_formacion_alt: 'Professional dance training in Barcelona',
+
+  // Bachata Intensivo
+  novedades_bachataIntensivo_title: 'Sensual Bachata Intensive',
+  novedades_bachataIntensivo_subtitle: 'For couples and singles',
+  novedades_bachataIntensivo_desc:
+    'Learn the most sensual bachata moves in this intensive workshop. Beginners and advanced.',
+  novedades_bachataIntensivo_alt: 'Intensive sensual bachata class in Barcelona',
+
+  // Heels Showcase
+  novedades_heelsShowcase_title: "Heels Showcase - Women's Day",
+  novedades_heelsShowcase_subtitle: 'Special 8M show',
+  novedades_heelsShowcase_desc:
+    "Celebrate International Women's Day with a spectacular showcase from our Heels students. Free entry.",
+  novedades_heelsShowcase_alt: "Heels showcase on Women's Day",
+
+  // Hip Hop Battle
+  novedades_hipHopBattle_title: 'Hip Hop Battle Barcelona',
+  novedades_hipHopBattle_subtitle: 'Open competition',
+  novedades_hipHopBattle_desc:
+    'Hip Hop battle open to all levels. Prizes for winners. Register and show your talent!',
+  novedades_hipHopBattle_alt: 'Hip Hop Battle competition in Barcelona',
 };

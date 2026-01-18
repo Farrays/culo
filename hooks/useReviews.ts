@@ -237,7 +237,7 @@ export function useGoogleBusinessStats(): {
 } {
   return {
     url: 'https://g.page/r/CWBvYu8J9aJAEBM/review',
-    totalReviews: 505,
+    totalReviews: 509,
     averageRating: 5.0,
     name: "Farray's International Dance Center",
   };

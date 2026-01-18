@@ -167,11 +167,11 @@ const Teachers: React.FC = () => {
           <AnimateOnScroll delay={FEATURED_TEACHERS.length * 100}>
             <Link
               to={`/${locale}/profesores-baile-barcelona`}
-              className="inline-flex items-center gap-2 bg-primary-accent text-white font-bold py-4 px-10 rounded-full transition-all duration-300 hover:bg-white hover:text-primary-accent shadow-lg hover:shadow-accent-glow hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
+              className="group inline-flex items-center gap-3 bg-primary-accent text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
             >
-              {t('teachersCTA')}
+              <span>{t('teachersCTA')}</span>
               <svg
-                className="w-5 h-5 transition-transform group-hover:translate-x-1"
+                className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -180,7 +180,7 @@ const Teachers: React.FC = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
                 />
               </svg>
             </Link>

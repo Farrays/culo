@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
 import type { ServiceInfo } from '../types';
 import AnimateOnScroll from './AnimateOnScroll';
@@ -80,8 +81,20 @@ const servicesData: ServiceInfo[] = [
   },
 ];
 
-const Services: React.FC = () => {
-  const { t } = useI18n();
+// IDs de los 3 servicios destacados para la homepage
+const FEATURED_SERVICE_IDS = ['rental', 'corporate', 'gift'];
+
+interface ServicesProps {
+  showAll?: boolean;
+}
+
+const Services: React.FC<ServicesProps> = ({ showAll = false }) => {
+  const { t, locale } = useI18n();
+
+  // Filtrar servicios: solo los destacados o todos
+  const displayedServices = showAll
+    ? servicesData
+    : servicesData.filter(s => FEATURED_SERVICE_IDS.includes(s.id));
 
   return (
     <section id="services" className="py-12 md:py-16 bg-primary-dark/10">
@@ -95,7 +108,7 @@ const Services: React.FC = () => {
           </div>
         </AnimateOnScroll>
         <div className="flex flex-wrap justify-center -m-4">
-          {servicesData.map((service, index) => (
+          {displayedServices.map((service, index) => (
             <div key={service.id} className="w-full md:w-1/2 lg:w-1/3 p-4 [perspective:1000px]">
               <AnimateOnScroll delay={index * 100} className="h-full">
                 <div className="group p-8 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl shadow-lg transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.75rem)_scale(1.02)_rotateY(5deg)_rotateX(2deg)] hover:border-primary-accent hover:shadow-accent-glow h-full flex flex-col">
@@ -130,6 +143,33 @@ const Services: React.FC = () => {
             </div>
           ))}
         </div>
+
+        {/* Botón "Ver todos los servicios" - solo cuando no se muestran todos */}
+        {!showAll && (
+          <AnimateOnScroll delay={400}>
+            <div className="text-center mt-12">
+              <Link
+                to={`/${locale}/servicios-baile-barcelona`}
+                className="group inline-flex items-center gap-3 bg-primary-accent text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
+              >
+                <span>{t('servicesViewAll')}</span>
+                <svg
+                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </AnimateOnScroll>
+        )}
       </div>
     </section>
   );

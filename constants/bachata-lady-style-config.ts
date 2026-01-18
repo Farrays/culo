@@ -57,7 +57,7 @@ export const BACHATA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
     ctaSubtextKey: 'puertasAbiertasSubtext',
     stats: {
       rating: '4.9/5',
-      reviewCount: '505+ reseñas',
+      reviewCount: '509+ reseñas',
       students: '+15.000 estudiantes formados',
       yearsText: '8 años en Barcelona',
     },

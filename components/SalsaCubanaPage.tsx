@@ -185,7 +185,7 @@ const SalsaCubanaPage: React.FC = () => {
         priceRange="€€"
         aggregateRating={{
           ratingValue: '5',
-          reviewCount: '505',
+          reviewCount: '509',
         }}
       />
 
@@ -287,7 +287,7 @@ const SalsaCubanaPage: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <StarRating size="sm" />
                   <span className="font-semibold">4.9/5</span>
-                  <span className="text-sm">(505+ reseñas)</span>
+                  <span className="text-sm">(509+ reseñas)</span>
                 </div>
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
@@ -1292,7 +1292,7 @@ const SalsaCubanaPage: React.FC = () => {
                     <StarRating size="lg" />
                   </div>
                   <div className="text-xs sm:text-sm text-neutral/70">
-                    {t('basedOnReviews').replace('{count}', '505')}
+                    {t('basedOnReviews').replace('{count}', '509')}
                   </div>
                   <div className="mt-2 text-xs text-neutral/70">Google</div>
                 </div>

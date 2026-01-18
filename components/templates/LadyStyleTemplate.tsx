@@ -1501,7 +1501,7 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
                     <StarRating size="lg" />
                   </div>
                   <div className="text-xs sm:text-sm text-neutral/70">
-                    {t('basedOnReviews').replace('{count}', '505')}
+                    {t('basedOnReviews').replace('{count}', '509')}
                   </div>
                   <div className="mt-2 text-xs text-neutral/70">Google</div>
                 </div>

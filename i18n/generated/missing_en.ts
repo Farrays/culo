@@ -983,7 +983,7 @@ export const generated_en = {
   fbLandingTestimonial3Name: 'Laura, 42 years',
   fbLandingTestimonial3Text:
     'Después de years queriendo y no atreviéndome, by fin lo hice. El ambiente es tan bueno que se me olvidó que tenía vergüenza.',
-  fbLandingGoogleReviews: '505+ reseñas en Google',
+  fbLandingGoogleReviews: '509+ reseñas en Google',
   fbLandingTransformCTA: 'QUIERO ESA TRANSFORMACIÓN',
   fbLandingFaqTitle: 'Quizás te preguntas...',
   fbLandingFaq1Q: '"No sé dance nada, soy muy principiante"',
@@ -1272,7 +1272,7 @@ export const generated_en = {
     'Fitness dancístico que quema calorías mientras te diviertes. Mejora tu condición física.',
   homev2_persona4Cta: 'Explorar fitness danza',
   homev2_styleFinderViewAll: 'Ver todos los 25+ estilos',
-  homev2_socialProofTitle: 'Lo que dicen 505 personas que ya bailaron aquí',
+  homev2_socialProofTitle: 'Lo que dicen 509 personas que ya bailaron aquí',
   homev2_stat1Label: 'alumnos activos',
   homev2_stat2Label: 'years de experience',
   homev2_stat3Label: 'estilos de dance',
