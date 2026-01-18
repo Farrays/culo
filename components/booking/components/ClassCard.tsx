@@ -175,6 +175,13 @@ const formatDuration = (minutes: number): string => {
   return `${mins}min`;
 };
 
+// Check if class should show "NEW" badge
+const isClassNew = (classData: ClassData): boolean => {
+  if (!classData.isNew) return false;
+  if (!classData.newUntil) return true; // No expiry = always show
+  return new Date(classData.newUntil) > new Date();
+};
+
 interface ClassCardProps {
   classData: ClassData;
   onSelect: (classData: ClassData) => void;
@@ -416,8 +423,15 @@ export const ClassCard: React.FC<ClassCardProps> = memo(
           {/* Mobile: Stacked layout / Desktop: Side by side */}
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
             <div className="flex-1 min-w-0">
-              {/* Class name - no truncate, full text visible */}
-              <h3 className="font-bold text-neutral mb-1 leading-tight">{classData.name}</h3>
+              {/* Class name with optional NEW badge */}
+              <h3 className="font-bold text-neutral mb-1 leading-tight">
+                {isClassNew(classData) && (
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-semibold bg-amber-500/20 text-amber-400 rounded mr-2">
+                    ⭐ {t('booking_class_new')}
+                  </span>
+                )}
+                {classData.name}
+              </h3>
 
               {/* Class details - wrap nicely on mobile */}
               <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-neutral/70">

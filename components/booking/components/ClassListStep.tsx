@@ -234,8 +234,8 @@ function groupClassesByWeek(classes: ClassData[]): Map<string, ClassData[]> {
   return groups;
 }
 
-// Helper: Format week header (prepared for grouped week view)
-function _formatWeekHeader(weekKey: string, t: (key: string) => string): string {
+// Helper: Format week header
+function formatWeekHeader(weekKey: string, t: (key: string) => string): string {
   const date = new Date(weekKey);
   const day = date.getDate();
   const month = date.toLocaleDateString('es-ES', { month: 'short' });
@@ -269,12 +269,12 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
     const listContainerRef = useRef<HTMLDivElement>(null);
     const sentinelRef = useRef<HTMLDivElement>(null);
 
-    // Determine which classes to display (prepared for grouped week view)
-    const _displayClasses = showAllWeeks ? allWeeksClasses : classes;
+    // Determine which classes to display
+    const displayClasses = showAllWeeks ? allWeeksClasses : classes;
     const isLoading = showAllWeeks ? allWeeksLoading : loading;
 
-    // Group classes by week when in all-weeks mode (prepared for grouped week view)
-    const _groupedClasses = React.useMemo(() => {
+    // Group classes by week when in all-weeks mode
+    const groupedClasses = React.useMemo(() => {
       if (!showAllWeeks) return null;
       return groupClassesByWeek(allWeeksClasses);
     }, [showAllWeeks, allWeeksClasses]);
@@ -391,7 +391,7 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
                 {t('booking_class_retry')}
               </button>
             </div>
-          ) : classes.length === 0 ? (
+          ) : displayClasses.length === 0 ? (
             // Empty state
             <div className="text-center py-12">
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center">
@@ -421,6 +421,35 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
                   {t('booking_clear_filters')}
                 </button>
               )}
+            </div>
+          ) : showAllWeeks && groupedClasses ? (
+            // Grouped by week view (Acuity mode)
+            <div
+              ref={listContainerRef}
+              className="max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar"
+            >
+              {Array.from(groupedClasses.entries()).map(([weekKey, weekClasses]) => (
+                <div key={weekKey} className="mb-6">
+                  {/* Week header - sticky */}
+                  <div className="sticky top-0 z-10 py-2 mb-3 bg-black/95 backdrop-blur-sm border-b border-white/10">
+                    <h3 className="text-sm font-semibold text-primary-accent uppercase tracking-wide">
+                      {formatWeekHeader(weekKey, t)}
+                    </h3>
+                  </div>
+                  {/* Classes for this week */}
+                  <div className="grid gap-4">
+                    {weekClasses.map(classData => (
+                      <ClassCard
+                        key={classData.id}
+                        classData={classData}
+                        onSelect={onSelectClass}
+                        onShowInfo={handleShowInfo}
+                        isSelected={selectedClassId === classData.id}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           ) : (
             // Class list with virtualization for large lists
@@ -466,7 +495,7 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
                       <div className="w-6 h-6 border-2 border-primary-accent border-t-transparent rounded-full animate-spin" />
                     </div>
                   )}
-                  {!hasMore && classes.length > 0 && (
+                  {!hasMore && displayClasses.length > 0 && (
                     <p className="text-center text-sm text-neutral/40">
                       {t('booking_no_more_classes')}
                     </p>
@@ -478,9 +507,9 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
         </div>
 
         {/* Results count */}
-        {!loading && !error && classes.length > 0 && (
+        {!loading && !error && displayClasses.length > 0 && (
           <p className="text-center text-sm text-neutral/50">
-            {t('booking_classes_found', { count: classes.length })}
+            {t('booking_classes_found', { count: displayClasses.length })}
           </p>
         )}
 
