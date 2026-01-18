@@ -41,21 +41,31 @@ const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) =
   const modalId = `class-info-modal-${classData.id}`;
   const titleId = `class-info-title-${classData.id}`;
 
-  // Focus trap and keyboard handling
+  // Focus trap, keyboard handling, and browser back button
   useEffect(() => {
     const modal = modalRef.current;
     if (!modal) return;
 
     // Store previously focused element
     const previouslyFocused = document.activeElement as HTMLElement;
+    const previousOverflow = document.body.style.overflow;
 
     // Focus the close button on mount
     closeButtonRef.current?.focus();
 
+    // Push history state for modal
+    window.history.pushState({ modal: 'classInfo' }, '');
+
+    // Handle browser back button
+    const handlePopState = () => {
+      onClose();
+    };
+
     // Handle keyboard events
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        onClose();
+        // Go back in history instead of just closing
+        window.history.back();
         return;
       }
 
@@ -80,40 +90,48 @@ const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) =
     // Prevent body scroll
     document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('popstate', handlePopState);
 
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = previousOverflow;
       document.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('popstate', handlePopState);
       previouslyFocused?.focus();
     };
   }, [onClose]);
 
+  // Close via backdrop click - use history.back() for consistency
+  const handleBackdropClick = () => {
+    window.history.back();
+  };
+
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 z-[60] flex items-center justify-center p-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby={titleId}
       id={modalId}
     >
-      {/* Backdrop */}
+      {/* Backdrop - solid dark */}
       <div
-        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-        onClick={onClose}
+        className="absolute inset-0 bg-black/90 backdrop-blur-md"
+        onClick={handleBackdropClick}
         aria-hidden="true"
       />
 
       {/* Modal */}
       <div
         ref={modalRef}
-        className="relative bg-primary-dark border border-white/10 rounded-2xl p-6 max-w-lg w-full max-h-[80vh] overflow-y-auto"
+        tabIndex={-1}
+        className="relative bg-black border border-white/20 rounded-2xl p-6 max-w-lg w-full max-h-[85vh] overflow-y-auto shadow-2xl"
       >
         {/* Close button */}
         <button
           ref={closeButtonRef}
           type="button"
-          onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-lg text-neutral/60 hover:text-neutral hover:bg-white/10 transition-colors"
+          onClick={() => window.history.back()}
+          className="absolute top-4 right-4 p-2 rounded-lg text-neutral/60 hover:text-neutral hover:bg-white/10 transition-colors z-10"
           aria-label={t('booking_modal_close')}
         >
           <XMarkIcon className="w-5 h-5" />
@@ -187,6 +205,41 @@ interface ClassListStepProps {
   isLoadingMore?: boolean;
   /** Currently selected class ID for V1-style visual feedback */
   selectedClassId?: number | null;
+  /** Show all weeks mode (Acuity style) */
+  showAllWeeks?: boolean;
+  /** All weeks classes when in Acuity mode */
+  allWeeksClasses?: ClassData[];
+  /** Loading state for all weeks */
+  allWeeksLoading?: boolean;
+}
+
+// Helper: Group classes by week
+function groupClassesByWeek(classes: ClassData[]): Map<string, ClassData[]> {
+  const groups = new Map<string, ClassData[]>();
+
+  classes.forEach(classData => {
+    const date = new Date(classData.rawStartsAt);
+    // Get the Monday of the week
+    const day = date.getDay();
+    const diff = date.getDate() - day + (day === 0 ? -6 : 1);
+    const monday = new Date(date.setDate(diff));
+    const weekKey = monday.toISOString().split('T')[0] || '';
+
+    if (!groups.has(weekKey)) {
+      groups.set(weekKey, []);
+    }
+    groups.get(weekKey)?.push(classData);
+  });
+
+  return groups;
+}
+
+// Helper: Format week header (prepared for grouped week view)
+function _formatWeekHeader(weekKey: string, t: (key: string) => string): string {
+  const date = new Date(weekKey);
+  const day = date.getDate();
+  const month = date.toLocaleDateString('es-ES', { month: 'short' });
+  return `${t('booking_week_of')} ${day} ${month}`;
 }
 
 export const ClassListStep: React.FC<ClassListStepProps> = memo(
@@ -207,11 +260,24 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
     hasMore = false,
     isLoadingMore = false,
     selectedClassId = null,
+    showAllWeeks = false,
+    allWeeksClasses = [],
+    allWeeksLoading = false,
   }) => {
     const { t } = useI18n();
     const [infoModal, setInfoModal] = useState<ClassData | null>(null);
     const listContainerRef = useRef<HTMLDivElement>(null);
     const sentinelRef = useRef<HTMLDivElement>(null);
+
+    // Determine which classes to display (prepared for grouped week view)
+    const _displayClasses = showAllWeeks ? allWeeksClasses : classes;
+    const isLoading = showAllWeeks ? allWeeksLoading : loading;
+
+    // Group classes by week when in all-weeks mode (prepared for grouped week view)
+    const _groupedClasses = React.useMemo(() => {
+      if (!showAllWeeks) return null;
+      return groupClassesByWeek(allWeeksClasses);
+    }, [showAllWeeks, allWeeksClasses]);
 
     // Infinite scroll with IntersectionObserver
     useEffect(() => {
@@ -276,23 +342,34 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
           onClearAll={onClearAllFilters}
         />
 
-        {/* Week Navigation */}
-        <WeekNavigation weekOffset={weekOffset} onWeekChange={onWeekChange} loading={loading} />
+        {/* Week Navigation - hidden in all-weeks mode */}
+        {!showAllWeeks && (
+          <WeekNavigation weekOffset={weekOffset} onWeekChange={onWeekChange} loading={loading} />
+        )}
+
+        {/* All weeks header - shown when filters active */}
+        {showAllWeeks && !isLoading && (
+          <div className="text-center py-3 px-4 bg-primary-accent/10 border border-primary-accent/20 rounded-xl">
+            <p className="text-sm font-medium text-primary-accent">
+              {t('booking_all_weeks_showing')}
+            </p>
+          </div>
+        )}
 
         {/* Classes List - aria-live for screen reader announcements */}
         <div
           className="mt-4"
           role="region"
           aria-label={t('booking_classes_region')}
-          aria-busy={loading}
+          aria-busy={isLoading}
           aria-live="polite"
         >
           {/* Screen reader loading announcement */}
           <div className="sr-only" aria-live="assertive">
-            {loading && t('booking_loading_classes')}
+            {isLoading && t('booking_loading_classes')}
           </div>
 
-          {loading ? (
+          {isLoading ? (
             // Loading skeleton
             <div className="space-y-3" aria-hidden="true">
               {[1, 2, 3, 4].map(i => (

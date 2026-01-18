@@ -189,21 +189,72 @@ const TeacherModal: React.FC<{
 }> = ({ teacherId, onClose }) => {
   const { t } = useI18n();
   const teacher = TEACHER_REGISTRY[teacherId];
+  const modalRef = React.useRef<HTMLDivElement>(null);
+
+  // Lock body scroll, handle escape key, and browser back button
+  React.useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    // Push history state for modal
+    window.history.pushState({ modal: 'teacher' }, '');
+
+    // Handle browser back button
+    const handlePopState = () => {
+      onClose();
+    };
+
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        window.history.back();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    window.addEventListener('popstate', handlePopState);
+
+    // Focus the modal
+    modalRef.current?.focus();
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleEscape);
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [onClose]);
+
+  // Use history.back() for all close actions
+  const handleClose = () => {
+    window.history.back();
+  };
 
   if (!teacher) return null;
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
-      onClick={onClose}
+      className="fixed inset-0 z-[60] flex items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="teacher-modal-title"
     >
+      {/* Backdrop - solid dark with blur */}
       <div
-        className="relative bg-neutral-900 border border-white/10 rounded-2xl p-6 max-w-md w-full animate-fade-in"
+        className="absolute inset-0 bg-black/90 backdrop-blur-md"
+        onClick={handleClose}
+        aria-hidden="true"
+      />
+
+      {/* Modal content */}
+      <div
+        ref={modalRef}
+        tabIndex={-1}
+        className="relative bg-black border border-white/20 rounded-2xl p-6 max-w-md w-full max-h-[85vh] overflow-y-auto animate-fade-in shadow-2xl"
         onClick={e => e.stopPropagation()}
       >
         <button
-          onClick={onClose}
-          className="absolute top-4 right-4 p-1 rounded-full text-neutral/50 hover:text-neutral hover:bg-white/10 transition-all"
+          type="button"
+          onClick={handleClose}
+          className="absolute top-4 right-4 p-2 rounded-full text-neutral/60 hover:text-neutral hover:bg-white/10 transition-all z-10"
           aria-label={t('booking_modal_close')}
         >
           <XMarkIcon className="w-5 h-5" />
@@ -221,7 +272,9 @@ const TeacherModal: React.FC<{
           </div>
         </div>
 
-        <h3 className="text-xl font-bold text-neutral text-center mb-2">{teacher.name}</h3>
+        <h3 id="teacher-modal-title" className="text-xl font-bold text-neutral text-center mb-2">
+          {teacher.name}
+        </h3>
 
         {/* Tags */}
         <div className="flex flex-wrap justify-center gap-2 mb-4">
@@ -268,7 +321,8 @@ const TeacherModal: React.FC<{
         </div>
 
         <button
-          onClick={onClose}
+          type="button"
+          onClick={handleClose}
           className="w-full py-3 bg-white/10 text-neutral font-semibold rounded-xl hover:bg-white/20 transition-colors"
         >
           {t('booking_modal_close')}
@@ -359,11 +413,14 @@ export const ClassCard: React.FC<ClassCardProps> = memo(
             }
           `}
         >
-          <div className="flex items-start justify-between gap-4">
+          {/* Mobile: Stacked layout / Desktop: Side by side */}
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
             <div className="flex-1 min-w-0">
-              <h3 className="font-bold text-neutral mb-1 truncate">{classData.name}</h3>
+              {/* Class name - no truncate, full text visible */}
+              <h3 className="font-bold text-neutral mb-1 leading-tight">{classData.name}</h3>
 
-              <div className="flex flex-wrap gap-3 text-sm text-neutral/70">
+              {/* Class details - wrap nicely on mobile */}
+              <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-neutral/70">
                 <span className="flex items-center gap-1">
                   <CalendarIcon className="w-4 h-4 flex-shrink-0" />
                   {classData.dayOfWeek} {classData.date}
@@ -373,26 +430,29 @@ export const ClassCard: React.FC<ClassCardProps> = memo(
                   {classData.time}
                 </span>
                 <span className="text-neutral/50">{formatDuration(classData.duration)}</span>
+              </div>
 
-                {/* Instructor - clickable if in registry */}
-                {classData.instructor &&
-                  (teacherRegistryId ? (
+              {/* Instructor - on its own line for better readability */}
+              {classData.instructor && (
+                <div className="mt-1">
+                  {teacherRegistryId ? (
                     <button
                       type="button"
                       onClick={handleTeacherClick}
-                      className="flex items-center gap-1 text-primary-accent hover:text-primary-accent/80 transition-colors"
+                      className="flex items-center gap-1 text-sm text-primary-accent hover:text-primary-accent/80 transition-colors"
                       title={t('booking_teacher_view_profile')}
                     >
                       <UserIcon className="w-4 h-4 flex-shrink-0" />
                       <span className="underline underline-offset-2">{classData.instructor}</span>
                     </button>
                   ) : (
-                    <span className="flex items-center gap-1">
+                    <span className="flex items-center gap-1 text-sm text-neutral/70">
                       <UserIcon className="w-4 h-4 flex-shrink-0" />
                       {classData.instructor}
                     </span>
-                  ))}
-              </div>
+                  )}
+                </div>
+              )}
 
               {/* Full indicator */}
               {classData.isFull && (
@@ -402,7 +462,8 @@ export const ClassCard: React.FC<ClassCardProps> = memo(
               )}
             </div>
 
-            <div className="flex flex-col items-end gap-2 flex-shrink-0">
+            {/* Action buttons - row on mobile, column on desktop */}
+            <div className="flex sm:flex-col items-center sm:items-end gap-2 flex-shrink-0 mt-2 sm:mt-0">
               <div className="flex items-center gap-2">
                 {/* Info button - text style like V1 */}
                 {classData.description && (
@@ -430,10 +491,13 @@ export const ClassCard: React.FC<ClassCardProps> = memo(
                     <ShareIcon className="w-4 h-4" />
                   )}
                 </button>
+
+                {/* Selected indicator - inline on mobile */}
+                {isSelected && <CheckIcon className="w-5 h-5 text-primary-accent sm:hidden" />}
               </div>
 
-              {/* Selected indicator */}
-              {isSelected && <CheckIcon className="w-5 h-5 text-primary-accent" />}
+              {/* Selected indicator - below buttons on desktop */}
+              {isSelected && <CheckIcon className="hidden sm:block w-5 h-5 text-primary-accent" />}
             </div>
           </div>
         </div>

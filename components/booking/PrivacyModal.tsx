@@ -15,25 +15,57 @@ interface PrivacyModalProps {
 const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) => {
   const { t } = useI18n();
   const modalRef = useRef<HTMLDivElement>(null);
+  const historyPushedRef = useRef(false);
 
-  // Handle escape key
+  // Handle escape key, body scroll lock, and browser back button
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-    if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden';
+    if (!isOpen) {
+      historyPushedRef.current = false;
+      return;
     }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    // Push history state for modal (only once per open)
+    if (!historyPushedRef.current) {
+      window.history.pushState({ modal: 'privacy' }, '');
+      historyPushedRef.current = true;
+    }
+
+    // Handle browser back button
+    const handlePopState = () => {
+      onClose();
+    };
+
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        window.history.back();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    window.addEventListener('popstate', handlePopState);
+
     return () => {
+      document.body.style.overflow = previousOverflow;
       document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = '';
+      window.removeEventListener('popstate', handlePopState);
     };
   }, [isOpen, onClose]);
 
+  // Close via backdrop click or buttons - use history.back() for consistency
+  const handleClose = () => {
+    if (historyPushedRef.current) {
+      window.history.back();
+    } else {
+      onClose();
+    }
+  };
+
   // Handle click outside
   const handleBackdropClick = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) onClose();
+    if (e.target === e.currentTarget) handleClose();
   };
 
   if (!isOpen) return null;
@@ -59,7 +91,8 @@ const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) => {
             </h2>
           </div>
           <button
-            onClick={onClose}
+            type="button"
+            onClick={handleClose}
             className="p-2 rounded-full hover:bg-white/10 transition-colors"
             aria-label={t('close')}
           >
@@ -127,7 +160,8 @@ const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) => {
         {/* Footer */}
         <div className="sticky bottom-0 p-4 bg-[#1a1a1a] border-t border-white/10">
           <button
-            onClick={onClose}
+            type="button"
+            onClick={handleClose}
             className="w-full py-3 px-4 bg-primary-accent hover:bg-primary-accent/90 text-white font-semibold rounded-xl transition-colors"
           >
             {t('privacy_understood')}

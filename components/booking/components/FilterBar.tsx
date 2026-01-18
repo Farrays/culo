@@ -214,7 +214,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
 }) => {
   const { t } = useI18n();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [isExpanded, setIsExpanded] = useState(false);
+  // Filters visible by default on mobile, click to hide
+  const [isExpanded, setIsExpanded] = useState(true);
 
   const handleClose = useCallback(() => {
     setOpenDropdown(null);
@@ -362,7 +363,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             )}
           </span>
           <ChevronDownIcon
-            className={`w-4 h-4 ml-auto transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+            className={`w-4 h-4 ml-auto transition-transform ${isExpanded ? '' : 'rotate-180'}`}
           />
         </button>
 
