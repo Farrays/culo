@@ -67,6 +67,8 @@ interface UseBookingClassesOptions {
   enablePagination?: boolean;
   /** Page size for pagination (default: 20) */
   pageSize?: number;
+  /** Fetch all 4 weeks when true (Acuity mode for filters) */
+  fetchAllWeeks?: boolean;
 }
 
 interface UseBookingClassesReturn {
@@ -87,6 +89,10 @@ interface UseBookingClassesReturn {
   currentPage: number;
   /** Whether data came from cache */
   fromCache: boolean;
+  /** All weeks classes (when fetchAllWeeks is true) */
+  allWeeksClasses: ClassData[];
+  /** Loading state for all weeks fetch */
+  allWeeksLoading: boolean;
 }
 
 // Helper: Sleep with abort support
@@ -181,6 +187,17 @@ function generateMockClassesForWeek(weekOffset: number): ClassData[] {
     // Skip if the class is in the past (only for week 0)
     if (weekOffset === 0 && classDate < now) return;
 
+    // Mark some classes as "new" for demo (K-Pop and classes in future weeks)
+    const isNewClass =
+      weekOffset >= 1 &&
+      (template.style === 'kpop' ||
+        template.name.toLowerCase().includes('rueda') ||
+        (weekOffset === 2 && template.style === 'salsa'));
+
+    // Set newUntil to 2 weeks from now for demo
+    const newUntilDate = new Date();
+    newUntilDate.setDate(newUntilDate.getDate() + 14);
+
     classes.push({
       id: 1000 + weekOffset * 100 + idx,
       name: template.name,
@@ -196,6 +213,8 @@ function generateMockClassesForWeek(weekOffset: number): ClassData[] {
       rawStartsAt: classDate.toISOString(),
       duration: template.duration,
       description: template.description,
+      isNew: isNewClass,
+      newUntil: isNewClass ? newUntilDate.toISOString().split('T')[0] : undefined,
     });
   });
 
@@ -263,6 +282,7 @@ export function useBookingClasses({
   weekOffset,
   enablePagination = false,
   pageSize = PAGE_SIZE,
+  fetchAllWeeks = false,
 }: UseBookingClassesOptions): UseBookingClassesReturn {
   const [weekClasses, setWeekClasses] = useState<ClassData[]>([]);
   const [allClasses, setAllClasses] = useState<ClassData[]>([]);
@@ -273,6 +293,10 @@ export function useBookingClasses({
   const [currentPage, setCurrentPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [fromCache, setFromCache] = useState(false);
+
+  // All weeks mode state (Acuity mode)
+  const [allWeeksClasses, setAllWeeksClasses] = useState<ClassData[]>([]);
+  const [allWeeksLoading, setAllWeeksLoading] = useState(false);
 
   // AbortController ref for cleanup
   const abortControllerRef = useRef<AbortController | null>(null);
@@ -450,6 +474,59 @@ export function useBookingClasses({
     }
   }, [weekClasses]);
 
+  // Fetch all weeks when in Acuity mode (filters active)
+  useEffect(() => {
+    if (!fetchAllWeeks) {
+      setAllWeeksClasses([]);
+      return;
+    }
+
+    const fetchAll = async () => {
+      setAllWeeksLoading(true);
+
+      try {
+        // Fetch all 4 weeks in parallel
+        const weekPromises = [0, 1, 2, 3].map(async week => {
+          // Check cache first
+          const cached = classCache.get(week);
+          if (cached) return cached;
+
+          // Generate mock data in dev mode
+          if (import.meta.env.DEV) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+            const data = generateMockClassesForWeek(week);
+            classCache.set(week, data);
+            return data;
+          }
+
+          // Production: fetch from API
+          const params = new URLSearchParams({ week: week.toString(), days: '7' });
+          const response = await fetch(`${API_ENDPOINTS.CLASSES}?${params.toString()}`);
+          const data = await response.json();
+          if (data.success) {
+            classCache.set(week, data.data?.classes || []);
+            return data.data?.classes || [];
+          }
+          return [];
+        });
+
+        const results = await Promise.all(weekPromises);
+        const combined = results
+          .flat()
+          .sort((a, b) => new Date(a.rawStartsAt).getTime() - new Date(b.rawStartsAt).getTime());
+
+        setAllWeeksClasses(combined);
+      } catch (err) {
+        console.error('Failed to fetch all weeks:', err);
+        setAllWeeksClasses([]);
+      } finally {
+        setAllWeeksLoading(false);
+      }
+    };
+
+    fetchAll();
+  }, [fetchAllWeeks]);
+
   // Apply filters to current week classes
   const classes = useMemo(() => {
     return applyFilters(weekClasses, filters);
@@ -488,5 +565,7 @@ export function useBookingClasses({
     hasMore,
     currentPage,
     fromCache,
+    allWeeksClasses,
+    allWeeksLoading,
   };
 }

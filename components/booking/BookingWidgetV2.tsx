@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /**
  * BookingWidget V2
  * Enterprise-level booking widget with deep linking and URL-synced filters
@@ -11,7 +12,7 @@
  * - Retry with exponential backoff for API resilience
  */
 
-import React, { useEffect, memo } from 'react';
+import React, { useEffect, useCallback, useRef, memo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
 
@@ -226,6 +227,9 @@ const BookingWidgetV2: React.FC = memo(() => {
 
   const { trackClassSelected, trackBookingSuccess } = useBookingAnalytics();
 
+  // Track if we pushed a history state for the form step
+  const historyPushedRef = useRef(false);
+
   // Handle direct classId navigation from URL
   useEffect(() => {
     if (directClassId && classes.length > 0) {
@@ -236,17 +240,65 @@ const BookingWidgetV2: React.FC = memo(() => {
     }
   }, [directClassId, classes, selectClass]);
 
+  // Browser history management - handle back button
+  useEffect(() => {
+    // When entering the form step, push a history state
+    if (step === 'form' && !historyPushedRef.current) {
+      window.history.pushState({ bookingStep: 'form' }, '');
+      historyPushedRef.current = true;
+    }
+
+    // When going back to class step, reset the flag
+    if (step === 'class') {
+      historyPushedRef.current = false;
+    }
+  }, [step]);
+
+  // Handle browser back button (popstate event)
+  const handlePopState = useCallback(
+    (event: PopStateEvent) => {
+      // If we're on the form step and user presses back
+      if (step === 'form') {
+        // Check if we're returning TO the form state (from a modal like Terms/Privacy)
+        // When a modal is open and user presses back, history goes from modal state back to form state
+        // In this case, the modal's own handler closes it - we should NOT navigate further
+        const state = event.state as { bookingStep?: string; modal?: string } | null;
+        if (state && state.bookingStep === 'form') {
+          // Returning from a modal to the form - don't navigate to step 1
+          return;
+        }
+
+        // Actually leaving the form step to go back to class selection
+        event.preventDefault();
+        goBack();
+        clearError();
+        historyPushedRef.current = false;
+      }
+    },
+    [step, goBack, clearError]
+  );
+
+  useEffect(() => {
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [handlePopState]);
+
   // Handle class selection
   const handleSelectClass = (classData: ClassData) => {
     selectClass(classData);
     trackClassSelected(classData);
   };
 
-  // Handle going back to class list
-  const handleBack = () => {
-    goBack();
-    clearError();
-  };
+  // Handle going back to class list (via UI button)
+  const handleBack = useCallback(() => {
+    // Go back in history if we pushed a state
+    if (historyPushedRef.current) {
+      window.history.back();
+    } else {
+      goBack();
+      clearError();
+    }
+  }, [goBack, clearError]);
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
@@ -449,12 +501,20 @@ const BookingWidgetV2: React.FC = memo(() => {
         {/* Language selector */}
         <LanguageSelector locale={locale} onLanguageChange={handleLanguageChange} />
 
-        {/* Header */}
+        {/* Header with Logo */}
         <div className="text-center mb-6">
+          {/* Logo */}
+          <img
+            src="/images/logo/img/logo-fidc_128.webp"
+            alt="Farray's International Dance Center"
+            className="w-16 h-16 mx-auto mb-3"
+          />
           <h1 className="text-2xl md:text-3xl font-black text-neutral mb-2">
             {t('booking_title')}
           </h1>
-          <p className="text-neutral/60">{t('booking_subtitle')}</p>
+          <p className="text-neutral/60 text-sm md:text-base max-w-md mx-auto">
+            {t('booking_subtitle_extended')}
+          </p>
         </div>
 
         {/* Step indicator - hide on success/error */}
