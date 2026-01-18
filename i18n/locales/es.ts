@@ -62,6 +62,7 @@ export const es = {
   navAboutUs: '¿Quiénes Somos?',
   headerRoomRental: 'Alquiler de Salas',
   headerGiftDance: 'Regala Baile',
+  navTeamBuilding: 'Team Building',
   headerRecordingStudio: 'Estudio de Grabación',
   headerAbout: 'Sobre Nosotros',
   headerContact: 'Contacto',
@@ -282,7 +283,7 @@ export const es = {
     'Lun: 10:30-12:30, 17:30-23:00\nMar: 10:30-13:30, 17:30-23:00\nMié: 17:30-23:00\nJue: 09:30-11:30, 17:30-23:00\nVie: 17:30-20:30',
   footerPhoneHoursTitle: 'Atención Telefónica',
   footerPhoneHoursContent:
-    'L 10:30-13:00 | X 10:30-13:00 | J 09:30-12:00 | L-J 17:30-23:00 | V 17:30-20:00',
+    'Mañanas: L 10:30-13:00 | X 10:30-13:00 | J 09:30-12:00 | Tardes: L-J 17:30-23:00 | V 17:30-20:00',
   footerViewMap: 'Ver en Google Maps',
   footerSitemapTitle: 'Mapa del Sitio',
   sitemapSchool: 'La Escuela',
@@ -15660,11 +15661,16 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   hero_cta_schedule: 'Ver Horarios',
 
   // Trust Bar - Barra de credibilidad
+  trustbar_ariaLabel: 'Indicadores de credibilidad',
   trustbar_cidunesco: 'Acreditados',
   trustbar_students: 'Estudiantes',
   trustbar_facilities: 'Instalaciones',
   trustbar_styles: 'Estilos',
   trustbar_google: 'Google Reviews',
+  trustbar_reviews: 'reseñas',
+  trustbar_members: 'Socios Activos',
+  trustbar_years: 'años',
+  trustbar_inBarcelona: 'en Barcelona',
 
   // Problem-Solution Section (PAS Framework)
   pas_title: '¿Te Suena Familiar?',
@@ -20153,6 +20159,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_class_copied: 'Enlace copiado',
   booking_class_info: 'Ver información de la clase',
   booking_modal_close: 'Cerrar',
+  booking_skip_to_content: 'Saltar al contenido de reservas',
   booking_modal_select: 'Reservar esta clase',
   booking_modal_no_description: 'No hay descripción disponible para esta clase.',
   booking_teacher_view_profile: 'Ver perfil del profesor',
@@ -20181,6 +20188,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_level_all: 'Todos los niveles',
 
   // Advanced Filters
+  booking_filters: 'Filtros',
   booking_filter_style: 'Estilo',
   booking_filter_level: 'Nivel',
   booking_filter_day: 'Día',
@@ -20194,6 +20202,12 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_clear_filters: 'Quitar filtros',
   booking_no_classes_match: 'No hay clases que coincidan con los filtros',
   booking_classes_found: '{count} clases encontradas',
+
+  // Accessibility
+  booking_classes_region: 'Lista de clases disponibles',
+  booking_loading_classes: 'Cargando clases...',
+  booking_form_region: 'Formulario de reserva',
+
   booking_filter_level_iniciacion: 'Iniciación',
   booking_filter_level_basico: 'Básico',
   booking_filter_level_intermedio: 'Intermedio',
@@ -20241,6 +20255,21 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
     'Comprendo y acepto que esta clase se realiza con tacones altos. Me comprometo a utilizar calzado adecuado y asumo la responsabilidad de mi seguridad',
   booking_consent_heels_required: 'Debes aceptar las condiciones de uso de tacones',
 
+  // RGPD Checkboxes - Marketing & No Refund
+  booking_consent_marketing:
+    'Acepto recibir comunicaciones comerciales sobre clases, eventos y promociones',
+  booking_consent_norefund:
+    'Entiendo que las reservas no son reembolsables y que debo cancelar con al menos 24h de antelación',
+
+  // RGPD Checkboxes - Optional
+  booking_consent_image:
+    'Autorizo el uso de mi imagen en fotos y vídeos realizados durante las clases con fines promocionales en redes sociales y web',
+  booking_consent_image_optional: '(Opcional)',
+  booking_consent_optional: '(opcional)',
+
+  // Pagination
+  booking_no_more_classes: 'No hay más clases para mostrar',
+
   // Submit
   booking_submit: 'Confirmar Reserva',
   booking_submit_loading: 'Procesando...',
@@ -20276,6 +20305,27 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_error_email: 'Por favor, introduce un email válido',
   booking_error_phone: 'Por favor, introduce un teléfono válido',
   booking_error_class: 'Por favor, selecciona una clase',
+  booking_error_name_min: 'El nombre debe tener al menos 2 caracteres',
+  booking_error_name_max: 'El nombre no puede superar los 50 caracteres',
+  booking_error_name_invalid: 'El nombre contiene caracteres no válidos',
+  booking_error_email_required: 'El email es obligatorio',
+  booking_error_email_max: 'El email es demasiado largo',
+  booking_error_email_invalid: 'Por favor, introduce un email válido',
+  booking_error_phone_min: 'El teléfono debe tener al menos 6 dígitos',
+  booking_error_phone_max: 'El teléfono es demasiado largo',
+  booking_error_phone_invalid: 'Por favor, introduce un teléfono válido',
+  booking_error_field_required: 'Este campo es obligatorio',
+
+  // Error Boundary
+  booking_error_boundary_title: 'Algo salió mal',
+  booking_error_boundary_message:
+    'Ha ocurrido un error al cargar el sistema de reservas. Por favor, inténtalo de nuevo.',
+  booking_error_boundary_error_id: 'ID de error',
+  booking_error_boundary_retry: 'Reintentar',
+  booking_error_boundary_help: '¿Sigues teniendo problemas?',
+  booking_error_boundary_contact: 'Contáctanos por WhatsApp',
+
+  booking_unsaved_warning: 'Tienes datos sin guardar. ¿Seguro que quieres salir?',
 
   // Legal Text
   booking_legal_responsible: "Responsable: Farray's International Dance Center S.L.",

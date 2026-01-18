@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../../hooks/useI18n';
-import BookingWidget from '../booking/BookingWidget';
+import BookingWidgetV2 from '../booking/BookingWidgetV2';
 
 /**
  * BookingPage - Página de reservas de clases de bienvenida
@@ -165,7 +165,7 @@ const BookingPage: React.FC = () => {
 
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
-            <BookingWidget />
+            <BookingWidgetV2 />
           </div>
         </div>
       </main>

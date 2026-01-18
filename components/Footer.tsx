@@ -184,7 +184,7 @@ const Footer: React.FC = () => {
                     width="256"
                     height="256"
                     loading="lazy"
-                    className="w-28 h-28 lg:w-32 lg:h-32 opacity-70 hover:opacity-100 transition-opacity"
+                    className="w-40 h-40 sm:w-44 sm:h-44 md:w-44 md:h-44 lg:w-28 lg:h-28 xl:w-32 xl:h-32 opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </picture>
               </Link>

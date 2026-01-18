@@ -159,7 +159,7 @@ const ServiciosBailePage: React.FC = () => {
         titleKey: 'serviceCorporateTitle',
         descriptionKey: 'serviceCorporateDesc',
         ctaKey: 'serviceCorporateCTA',
-        url: `/${locale}/contacto`,
+        url: `/${locale}/team-building-barcelona`,
         category: 'professional',
       },
       {

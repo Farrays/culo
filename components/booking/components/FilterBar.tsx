@@ -1,6 +1,6 @@
 /**
- * FilterBar Component
- * Horizontal bar with dropdown filters for the booking widget
+ * FilterBar Component - V1 Style
+ * Collapsible on mobile, inline on desktop
  */
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
@@ -11,9 +11,10 @@ import {
   LEVEL_OPTIONS,
   DAY_OPTIONS,
   TIME_BLOCK_OPTIONS,
+  getStyleColor,
 } from '../constants/bookingOptions';
 
-// Chevron icon for dropdowns
+// Icons
 const ChevronDownIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg
     className={className}
@@ -26,14 +27,100 @@ const ChevronDownIcon: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
+const FilterIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
+    />
+  </svg>
+);
+
+const CalendarIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+    />
+  </svg>
+);
+
+const ClockIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+    />
+  </svg>
+);
+
+const UserIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+    />
+  </svg>
+);
+
+const LevelIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+    />
+  </svg>
+);
+
 interface FilterDropdownProps {
   label: string;
   value: string;
-  options: Array<{ value: string; label: string }>;
+  options: Array<{ value: string; label: string; color?: string }>;
   onChange: (value: string) => void;
   isOpen: boolean;
   onToggle: () => void;
   onClose: () => void;
+  icon?: React.ReactNode;
 }
 
 const FilterDropdown: React.FC<FilterDropdownProps> = ({
@@ -44,10 +131,10 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
   isOpen,
   onToggle,
   onClose,
+  icon,
 }) => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close on click outside
   useEffect(() => {
     if (!isOpen) return;
 
@@ -61,44 +148,31 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isOpen, onClose]);
 
-  // Find selected option label
-  const selectedOption = options.find(opt => opt.value === value);
-  const displayLabel = selectedOption?.label || label;
   const hasValue = value !== '';
+  const selectedOption = options.find(opt => opt.value === value);
 
   return (
     <div ref={dropdownRef} className="relative">
       <button
         type="button"
         onClick={onToggle}
-        className={`
-          flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium
-          transition-all duration-200 whitespace-nowrap
-          ${
-            hasValue
-              ? 'bg-primary-accent text-white shadow-lg shadow-primary-accent/30'
-              : 'bg-white/10 text-neutral/80 hover:bg-white/20 hover:text-neutral'
-          }
-          ${isOpen ? 'ring-2 ring-primary-accent/50' : ''}
-        `}
+        className={`flex items-center gap-2 px-3 py-2 rounded-xl border text-sm transition-all ${
+          hasValue
+            ? 'bg-primary-accent/20 border-primary-accent text-neutral'
+            : 'bg-white/5 border-white/20 text-neutral/70 hover:border-white/40'
+        }`}
       >
-        <span>{displayLabel}</span>
-        <ChevronDownIcon
-          className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
-        />
+        {selectedOption?.color ? (
+          <div className="w-3 h-3 rounded-full" style={{ backgroundColor: selectedOption.color }} />
+        ) : (
+          icon
+        )}
+        {label}
+        <ChevronDownIcon className={`w-3 h-3 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
-      {/* Dropdown menu */}
       {isOpen && (
-        <div
-          className="
-            absolute top-full left-0 mt-2 z-50
-            min-w-[180px] max-h-[300px] overflow-y-auto
-            bg-primary-dark/95 backdrop-blur-xl rounded-xl
-            border border-white/10 shadow-2xl
-            animate-in fade-in slide-in-from-top-2 duration-200
-          "
-        >
+        <div className="absolute z-20 top-full mt-1 left-0 min-w-[160px] max-h-[300px] overflow-y-auto bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-xl">
           {options.map(option => (
             <button
               key={option.value}
@@ -107,17 +181,15 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
                 onChange(option.value);
                 onClose();
               }}
-              className={`
-                w-full text-left px-4 py-3 text-sm
-                transition-colors duration-150
-                first:rounded-t-xl last:rounded-b-xl
-                ${
-                  option.value === value
-                    ? 'bg-primary-accent text-white'
-                    : 'text-neutral/80 hover:bg-white/10 hover:text-neutral'
-                }
-              `}
+              className={`w-full px-4 py-2 text-left text-sm transition-colors flex items-center gap-2 ${
+                option.value === value
+                  ? 'bg-primary-accent/20 text-primary-accent'
+                  : 'text-neutral/80 hover:bg-white/10'
+              }`}
             >
+              {option.color && (
+                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: option.color }} />
+              )}
               {option.label}
             </button>
           ))}
@@ -142,23 +214,26 @@ export const FilterBar: React.FC<FilterBarProps> = ({
 }) => {
   const { t } = useI18n();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  // Close dropdown handler
   const handleClose = useCallback(() => {
     setOpenDropdown(null);
   }, []);
 
-  // Toggle dropdown handler
   const handleToggle = useCallback((dropdown: string) => {
     setOpenDropdown(prev => (prev === dropdown ? null : dropdown));
   }, []);
 
-  // Build style options with available styles from API
+  // Count active filters
+  const activeFilterCount = Object.values(filters).filter(Boolean).length;
+
+  // Build style options
   const styleOptions = [
-    { value: '', label: t('booking_filter_all_styles') },
+    { value: '', label: t('booking_filter_all_styles'), color: undefined },
     ...STYLE_OPTIONS.filter(s => s.value !== '').map(style => ({
       value: style.value,
       label: style.label || t(style.labelKey || ''),
+      color: getStyleColor(style.value),
     })),
   ];
 
@@ -180,7 +255,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
     label: t(time.labelKey),
   }));
 
-  // Build instructor options from available instructors
+  // Build instructor options
   const instructorOptions = [
     { value: '', label: t('booking_filter_all_instructors') },
     ...filterOptions.instructors.map(instructor => ({
@@ -191,17 +266,17 @@ export const FilterBar: React.FC<FilterBarProps> = ({
 
   if (loading) {
     return (
-      <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
-        {[1, 2, 3, 4, 5].map(i => (
-          <div key={i} className="h-10 w-28 bg-white/10 rounded-xl animate-pulse flex-shrink-0" />
+      <div className="flex gap-2 flex-wrap">
+        {[1, 2, 3].map(i => (
+          <div key={i} className="h-9 w-24 bg-white/10 rounded-xl animate-pulse" />
         ))}
       </div>
     );
   }
 
-  return (
-    <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
-      {/* Style filter */}
+  const filterContent = (
+    <div className="flex flex-wrap gap-2">
+      {/* Style Filter */}
       <FilterDropdown
         label={t('booking_filter_style')}
         value={filters.style}
@@ -212,7 +287,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         onClose={handleClose}
       />
 
-      {/* Level filter */}
+      {/* Level Filter */}
       <FilterDropdown
         label={t('booking_filter_level')}
         value={filters.level}
@@ -221,9 +296,10 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         isOpen={openDropdown === 'level'}
         onToggle={() => handleToggle('level')}
         onClose={handleClose}
+        icon={<LevelIcon className="w-4 h-4" />}
       />
 
-      {/* Day filter */}
+      {/* Day Filter */}
       <FilterDropdown
         label={t('booking_filter_day')}
         value={filters.day}
@@ -232,9 +308,10 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         isOpen={openDropdown === 'day'}
         onToggle={() => handleToggle('day')}
         onClose={handleClose}
+        icon={<CalendarIcon className="w-4 h-4" />}
       />
 
-      {/* Time block filter */}
+      {/* Time Filter */}
       <FilterDropdown
         label={t('booking_filter_time')}
         value={filters.timeBlock}
@@ -243,9 +320,10 @@ export const FilterBar: React.FC<FilterBarProps> = ({
         isOpen={openDropdown === 'timeBlock'}
         onToggle={() => handleToggle('timeBlock')}
         onClose={handleClose}
+        icon={<ClockIcon className="w-4 h-4" />}
       />
 
-      {/* Instructor filter */}
+      {/* Instructor Filter */}
       {filterOptions.instructors.length > 0 && (
         <FilterDropdown
           label={t('booking_filter_instructor')}
@@ -255,9 +333,46 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           isOpen={openDropdown === 'instructor'}
           onToggle={() => handleToggle('instructor')}
           onClose={handleClose}
+          icon={<UserIcon className="w-4 h-4" />}
         />
       )}
     </div>
+  );
+
+  return (
+    <>
+      {/* Mobile: Collapsible filter toggle */}
+      <div className="sm:hidden mb-3">
+        <button
+          type="button"
+          onClick={() => setIsExpanded(!isExpanded)}
+          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all w-full justify-center ${
+            activeFilterCount > 0
+              ? 'bg-primary-accent/20 border border-primary-accent text-neutral'
+              : 'bg-white/10 border border-white/20 text-neutral/80'
+          }`}
+        >
+          <FilterIcon className="w-4 h-4" />
+          <span>
+            {t('booking_filters')}
+            {activeFilterCount > 0 && (
+              <span className="ml-1.5 px-1.5 py-0.5 text-xs bg-primary-accent text-white rounded-full">
+                {activeFilterCount}
+              </span>
+            )}
+          </span>
+          <ChevronDownIcon
+            className={`w-4 h-4 ml-auto transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+          />
+        </button>
+
+        {/* Expanded filters on mobile */}
+        {isExpanded && <div className="mt-3">{filterContent}</div>}
+      </div>
+
+      {/* Desktop: Always visible */}
+      <div className="hidden sm:block">{filterContent}</div>
+    </>
   );
 };
 

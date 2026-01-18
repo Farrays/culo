@@ -3,16 +3,20 @@
  * Step 1: Class selection with filters and week navigation
  */
 
-import React, { useState } from 'react';
+import React, { useState, memo, useCallback, useRef, useEffect } from 'react';
 import { useI18n } from '../../../hooks/useI18n';
 import type { ClassData, FilterState, FilterOptions } from '../types/booking';
 import { FilterBar } from './FilterBar';
 import { ActiveFilterBadges } from './ActiveFilterBadges';
 import { ClassCard } from './ClassCard';
 import { WeekNavigation } from './WeekNavigation';
+import { useVirtualList } from '../hooks/useVirtualList';
 
-// Info modal icon
-const XMarkIcon: React.FC<{ className?: string }> = ({ className }) => (
+// Estimated height of each ClassCard (in pixels)
+const CLASS_CARD_HEIGHT = 180;
+
+// Memoized icon component
+const XMarkIcon: React.FC<{ className?: string }> = memo(({ className }) => (
   <svg
     className={className}
     fill="none"
@@ -22,7 +26,8 @@ const XMarkIcon: React.FC<{ className?: string }> = ({ className }) => (
   >
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
   </svg>
-);
+));
+XMarkIcon.displayName = 'XMarkIcon';
 
 interface ClassInfoModalProps {
   classData: ClassData;
@@ -31,16 +36,81 @@ interface ClassInfoModalProps {
 
 const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) => {
   const { t } = useI18n();
+  const modalRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const modalId = `class-info-modal-${classData.id}`;
+  const titleId = `class-info-title-${classData.id}`;
+
+  // Focus trap and keyboard handling
+  useEffect(() => {
+    const modal = modalRef.current;
+    if (!modal) return;
+
+    // Store previously focused element
+    const previouslyFocused = document.activeElement as HTMLElement;
+
+    // Focus the close button on mount
+    closeButtonRef.current?.focus();
+
+    // Handle keyboard events
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+        return;
+      }
+
+      // Focus trap
+      if (e.key === 'Tab') {
+        const focusableElements = modal.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey && document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement?.focus();
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement?.focus();
+        }
+      }
+    };
+
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', handleKeyDown);
+      previouslyFocused?.focus();
+    };
+  }, [onClose]);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby={titleId}
+      id={modalId}
+    >
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose} />
+      <div
+        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+        onClick={onClose}
+        aria-hidden="true"
+      />
 
       {/* Modal */}
-      <div className="relative bg-primary-dark border border-white/10 rounded-2xl p-6 max-w-lg w-full max-h-[80vh] overflow-y-auto">
+      <div
+        ref={modalRef}
+        className="relative bg-primary-dark border border-white/10 rounded-2xl p-6 max-w-lg w-full max-h-[80vh] overflow-y-auto"
+      >
         {/* Close button */}
         <button
+          ref={closeButtonRef}
           type="button"
           onClick={onClose}
           className="absolute top-4 right-4 p-2 rounded-lg text-neutral/60 hover:text-neutral hover:bg-white/10 transition-colors"
@@ -50,7 +120,9 @@ const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) =
         </button>
 
         {/* Content */}
-        <h3 className="text-xl font-bold text-neutral mb-2 pr-10">{classData.name}</h3>
+        <h3 id={titleId} className="text-xl font-bold text-neutral mb-2 pr-10">
+          {classData.name}
+        </h3>
 
         <div className="flex flex-wrap gap-2 mb-4">
           <span className="px-3 py-1 bg-primary-accent/20 text-primary-accent rounded-full text-sm">
@@ -107,134 +179,241 @@ interface ClassListStepProps {
   onWeekChange: (week: number) => void;
   onSelectClass: (classData: ClassData) => void;
   onRetry: () => void;
+  /** Infinite scroll: load more handler */
+  onLoadMore?: () => void;
+  /** Infinite scroll: whether more items exist */
+  hasMore?: boolean;
+  /** Whether currently loading more */
+  isLoadingMore?: boolean;
+  /** Currently selected class ID for V1-style visual feedback */
+  selectedClassId?: number | null;
 }
 
-export const ClassListStep: React.FC<ClassListStepProps> = ({
-  classes,
-  filters,
-  filterOptions,
-  weekOffset,
-  loading,
-  error,
-  onFilterChange,
-  onClearFilter,
-  onClearAllFilters,
-  onWeekChange,
-  onSelectClass,
-  onRetry,
-}) => {
-  const { t } = useI18n();
-  const [infoModal, setInfoModal] = useState<ClassData | null>(null);
+export const ClassListStep: React.FC<ClassListStepProps> = memo(
+  ({
+    classes,
+    filters,
+    filterOptions,
+    weekOffset,
+    loading,
+    error,
+    onFilterChange,
+    onClearFilter,
+    onClearAllFilters,
+    onWeekChange,
+    onSelectClass,
+    onRetry,
+    onLoadMore,
+    hasMore = false,
+    isLoadingMore = false,
+    selectedClassId = null,
+  }) => {
+    const { t } = useI18n();
+    const [infoModal, setInfoModal] = useState<ClassData | null>(null);
+    const listContainerRef = useRef<HTMLDivElement>(null);
+    const sentinelRef = useRef<HTMLDivElement>(null);
 
-  // Check if any filters are active
-  const hasActiveFilters = Object.values(filters).some(Boolean);
+    // Infinite scroll with IntersectionObserver
+    useEffect(() => {
+      if (!onLoadMore || !hasMore || isLoadingMore) return;
 
-  return (
-    <div className="animate-fade-in space-y-4">
-      {/* Title */}
-      <h2 className="text-2xl font-bold text-neutral text-center mb-2">
-        {t('booking_step1_classes')}
-      </h2>
+      const sentinel = sentinelRef.current;
+      if (!sentinel) return;
 
-      {/* Filter Bar */}
-      <FilterBar
-        filters={filters}
-        onFilterChange={onFilterChange}
-        filterOptions={filterOptions}
-        loading={loading}
-      />
+      const observer = new IntersectionObserver(
+        entries => {
+          const [entry] = entries;
+          if (entry?.isIntersecting && hasMore && !isLoadingMore) {
+            onLoadMore();
+          }
+        },
+        { rootMargin: '100px', threshold: 0.1 }
+      );
 
-      {/* Active Filter Badges */}
-      <ActiveFilterBadges
-        filters={filters}
-        onClearFilter={onClearFilter}
-        onClearAll={onClearAllFilters}
-      />
+      observer.observe(sentinel);
+      return () => observer.disconnect();
+    }, [onLoadMore, hasMore, isLoadingMore]);
 
-      {/* Week Navigation */}
-      <WeekNavigation weekOffset={weekOffset} onWeekChange={onWeekChange} loading={loading} />
+    // Virtualization for large lists
+    const { virtualItems, totalHeight, isVirtualizing } = useVirtualList<ClassData>({
+      items: classes,
+      itemHeight: CLASS_CARD_HEIGHT,
+      containerRef: listContainerRef,
+      overscan: 3,
+    });
 
-      {/* Classes List */}
-      <div className="mt-4">
-        {loading ? (
-          // Loading skeleton
-          <div className="space-y-3">
-            {[1, 2, 3, 4].map(i => (
-              <div key={i} className="h-32 bg-white/5 rounded-2xl animate-pulse" />
-            ))}
+    // Memoized handlers
+    const handleCloseModal = useCallback(() => {
+      setInfoModal(null);
+    }, []);
+
+    const handleShowInfo = useCallback((classData: ClassData) => {
+      setInfoModal(classData);
+    }, []);
+
+    // Check if any filters are active
+    const hasActiveFilters = Object.values(filters).some(Boolean);
+
+    return (
+      <div className="animate-fade-in space-y-4">
+        {/* Title */}
+        <h2 className="text-2xl font-bold text-neutral text-center mb-2">
+          {t('booking_step1_classes')}
+        </h2>
+
+        {/* Filter Bar */}
+        <FilterBar
+          filters={filters}
+          onFilterChange={onFilterChange}
+          filterOptions={filterOptions}
+          loading={loading}
+        />
+
+        {/* Active Filter Badges */}
+        <ActiveFilterBadges
+          filters={filters}
+          onClearFilter={onClearFilter}
+          onClearAll={onClearAllFilters}
+        />
+
+        {/* Week Navigation */}
+        <WeekNavigation weekOffset={weekOffset} onWeekChange={onWeekChange} loading={loading} />
+
+        {/* Classes List - aria-live for screen reader announcements */}
+        <div
+          className="mt-4"
+          role="region"
+          aria-label={t('booking_classes_region')}
+          aria-busy={loading}
+          aria-live="polite"
+        >
+          {/* Screen reader loading announcement */}
+          <div className="sr-only" aria-live="assertive">
+            {loading && t('booking_loading_classes')}
           </div>
-        ) : error ? (
-          // Error state
-          <div className="text-center py-12">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-red-500/20 flex items-center justify-center">
-              <XMarkIcon className="w-8 h-8 text-red-400" />
+
+          {loading ? (
+            // Loading skeleton
+            <div className="space-y-3" aria-hidden="true">
+              {[1, 2, 3, 4].map(i => (
+                <div key={i} className="h-32 bg-white/5 rounded-2xl animate-pulse" />
+              ))}
             </div>
-            <p className="text-red-400 mb-4">{error}</p>
-            <button
-              type="button"
-              onClick={onRetry}
-              className="px-6 py-2 bg-primary-accent text-white rounded-xl hover:bg-primary-accent/90 transition-colors"
-            >
-              {t('booking_class_retry')}
-            </button>
-          </div>
-        ) : classes.length === 0 ? (
-          // Empty state
-          <div className="text-center py-12">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center">
-              <svg
-                className="w-8 h-8 text-neutral/40"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-            </div>
-            <p className="text-neutral/60 mb-4">
-              {hasActiveFilters ? t('booking_no_classes_match') : t('booking_class_empty')}
-            </p>
-            {hasActiveFilters && (
+          ) : error ? (
+            // Error state
+            <div className="text-center py-12">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-red-500/20 flex items-center justify-center">
+                <XMarkIcon className="w-8 h-8 text-red-400" />
+              </div>
+              <p className="text-red-400 mb-4">{error}</p>
               <button
                 type="button"
-                onClick={onClearAllFilters}
-                className="px-4 py-2 text-primary-accent hover:underline transition-colors"
+                onClick={onRetry}
+                className="px-6 py-2 bg-primary-accent text-white rounded-xl hover:bg-primary-accent/90 transition-colors"
               >
-                {t('booking_clear_filters')}
+                {t('booking_class_retry')}
               </button>
-            )}
-          </div>
-        ) : (
-          // Class list
-          <div className="grid gap-4 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
-            {classes.map(classData => (
-              <ClassCard
-                key={classData.id}
-                classData={classData}
-                onSelect={onSelectClass}
-                onShowInfo={setInfoModal}
-              />
-            ))}
-          </div>
+            </div>
+          ) : classes.length === 0 ? (
+            // Empty state
+            <div className="text-center py-12">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center">
+                <svg
+                  className="w-8 h-8 text-neutral/40"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <p className="text-neutral/60 mb-4">
+                {hasActiveFilters ? t('booking_no_classes_match') : t('booking_class_empty')}
+              </p>
+              {hasActiveFilters && (
+                <button
+                  type="button"
+                  onClick={onClearAllFilters}
+                  className="px-4 py-2 text-primary-accent hover:underline transition-colors"
+                >
+                  {t('booking_clear_filters')}
+                </button>
+              )}
+            </div>
+          ) : (
+            // Class list with virtualization for large lists
+            <div
+              ref={listContainerRef}
+              className="max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar"
+              style={isVirtualizing ? { position: 'relative' } : undefined}
+            >
+              {isVirtualizing ? (
+                // Virtualized list for 20+ items
+                <div style={{ height: totalHeight, position: 'relative' }}>
+                  {virtualItems.map(({ item, style }) => (
+                    <div key={item.id} style={{ ...style, paddingBottom: 16 }}>
+                      <ClassCard
+                        classData={item}
+                        onSelect={onSelectClass}
+                        onShowInfo={handleShowInfo}
+                        isSelected={selectedClassId === item.id}
+                      />
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                // Standard list for smaller lists
+                <div className="grid gap-4">
+                  {classes.map(classData => (
+                    <ClassCard
+                      key={classData.id}
+                      classData={classData}
+                      onSelect={onSelectClass}
+                      onShowInfo={handleShowInfo}
+                      isSelected={selectedClassId === classData.id}
+                    />
+                  ))}
+                </div>
+              )}
+
+              {/* Infinite scroll sentinel */}
+              {onLoadMore && (
+                <div ref={sentinelRef} className="py-4">
+                  {isLoadingMore && (
+                    <div className="flex justify-center">
+                      <div className="w-6 h-6 border-2 border-primary-accent border-t-transparent rounded-full animate-spin" />
+                    </div>
+                  )}
+                  {!hasMore && classes.length > 0 && (
+                    <p className="text-center text-sm text-neutral/40">
+                      {t('booking_no_more_classes')}
+                    </p>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* Results count */}
+        {!loading && !error && classes.length > 0 && (
+          <p className="text-center text-sm text-neutral/50">
+            {t('booking_classes_found', { count: classes.length })}
+          </p>
         )}
+
+        {/* Info Modal */}
+        {infoModal && <ClassInfoModal classData={infoModal} onClose={handleCloseModal} />}
       </div>
+    );
+  }
+);
 
-      {/* Results count */}
-      {!loading && !error && classes.length > 0 && (
-        <p className="text-center text-sm text-neutral/50">
-          {t('booking_classes_found', { count: classes.length })}
-        </p>
-      )}
-
-      {/* Info Modal */}
-      {infoModal && <ClassInfoModal classData={infoModal} onClose={() => setInfoModal(null)} />}
-    </div>
-  );
-};
+ClassListStep.displayName = 'ClassListStep';
 
 export default ClassListStep;

@@ -1,13 +1,17 @@
 /**
  * BookingFormStep Component
  * Step 2: Booking form with user data and consents
+ * Features: Invalid field highlighting, haptic feedback, legal modals
  */
 
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useRef, useEffect, useState } from 'react';
 import { useI18n } from '../../../hooks/useI18n';
 import type { ClassData, BookingFormData, Status } from '../types/booking';
 import { requiresHeelsConsent } from '../types/booking';
+import type { InvalidField } from '../hooks/useBookingState';
+import { sanitizeName, sanitizeEmail, sanitizePhone } from '../validation/sanitize';
+import TermsModal from '../TermsModal';
+import PrivacyModal from '../PrivacyModal';
 
 // Icons
 const CalendarIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -56,9 +60,11 @@ interface BookingFormStepProps {
   formData: BookingFormData;
   status: Status;
   errorMessage: string;
+  invalidFields?: InvalidField[];
   onBack: () => void;
   onFormChange: (data: Partial<BookingFormData>) => void;
   onSubmit: (e: React.FormEvent) => void;
+  onTriggerHaptic?: (type?: 'light' | 'medium' | 'heavy' | 'error' | 'success') => void;
 }
 
 export const BookingFormStep: React.FC<BookingFormStepProps> = ({
@@ -66,18 +72,93 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
   formData,
   status,
   errorMessage,
+  invalidFields = [],
   onBack,
   onFormChange,
   onSubmit,
+  onTriggerHaptic,
 }) => {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
   const isLoading = status === 'loading';
   const needsHeelsConsent = requiresHeelsConsent(selectedClass);
 
-  // Handle input change
+  // Modal states
+  const [showTermsModal, setShowTermsModal] = useState(false);
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+
+  // Refs for invalid fields to scroll and focus
+  const firstNameRef = useRef<HTMLInputElement>(null);
+  const lastNameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const phoneRef = useRef<HTMLInputElement>(null);
+
+  const fieldRefs: Record<InvalidField, React.RefObject<HTMLInputElement | null>> = {
+    firstName: firstNameRef,
+    lastName: lastNameRef,
+    email: emailRef,
+    phone: phoneRef,
+  };
+
+  // Check if a field is invalid
+  const isFieldInvalid = (field: InvalidField): boolean => invalidFields.includes(field);
+
+  // Get input classes based on validity
+  const getInputClasses = (field: InvalidField): string => {
+    const baseClasses = `
+      w-full px-4 py-3 bg-white/5 rounded-xl
+      text-neutral placeholder-neutral/40
+      focus:outline-none focus:ring-2
+      transition-all disabled:opacity-50
+    `;
+
+    if (isFieldInvalid(field)) {
+      return `${baseClasses} border-2 border-red-500 focus:border-red-500 focus:ring-red-500/20 animate-shake`;
+    }
+
+    return `${baseClasses} border border-white/20 focus:border-primary-accent focus:ring-primary-accent/20`;
+  };
+
+  // Scroll to and focus first invalid field
+  useEffect(() => {
+    if (invalidFields.length > 0) {
+      const firstInvalidField = invalidFields[0] as InvalidField;
+      const ref = fieldRefs[firstInvalidField];
+      if (ref?.current) {
+        ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        ref.current.focus();
+      }
+      // Trigger haptic feedback for error
+      onTriggerHaptic?.('error');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- fieldRefs and onTriggerHaptic are stable
+  }, [invalidFields]);
+
+  // Handle input change with real-time sanitization
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
-    onFormChange({ [name]: type === 'checkbox' ? checked : value });
+
+    if (type === 'checkbox') {
+      onFormChange({ [name]: checked });
+      onTriggerHaptic?.('light');
+      return;
+    }
+
+    // Apply field-specific sanitization on input
+    let sanitizedValue = value;
+    switch (name) {
+      case 'firstName':
+      case 'lastName':
+        sanitizedValue = sanitizeName(value);
+        break;
+      case 'email':
+        sanitizedValue = sanitizeEmail(value);
+        break;
+      case 'phone':
+        sanitizedValue = sanitizePhone(value);
+        break;
+    }
+
+    onFormChange({ [name]: sanitizedValue });
   };
 
   // Checkbox component
@@ -158,6 +239,7 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
               {t('booking_field_firstName')} <span className="text-red-400">*</span>
             </label>
             <input
+              ref={firstNameRef}
               type="text"
               id="firstName"
               name="firstName"
@@ -165,21 +247,24 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
               onChange={handleInputChange}
               disabled={isLoading}
               required
-              className="
-                w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl
-                text-neutral placeholder-neutral/40
-                focus:outline-none focus:border-primary-accent focus:ring-2 focus:ring-primary-accent/20
-                transition-all disabled:opacity-50
-              "
+              aria-invalid={isFieldInvalid('firstName')}
+              aria-describedby={isFieldInvalid('firstName') ? 'firstName-error' : undefined}
+              className={getInputClasses('firstName')}
               placeholder={t('booking_placeholder_firstName')}
               autoComplete="given-name"
             />
+            {isFieldInvalid('firstName') && (
+              <p id="firstName-error" className="mt-1 text-xs text-red-400">
+                {t('booking_error_field_required')}
+              </p>
+            )}
           </div>
           <div>
             <label htmlFor="lastName" className="block text-sm font-medium text-neutral/80 mb-1.5">
               {t('booking_field_lastName')} <span className="text-red-400">*</span>
             </label>
             <input
+              ref={lastNameRef}
               type="text"
               id="lastName"
               name="lastName"
@@ -187,15 +272,17 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
               onChange={handleInputChange}
               disabled={isLoading}
               required
-              className="
-                w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl
-                text-neutral placeholder-neutral/40
-                focus:outline-none focus:border-primary-accent focus:ring-2 focus:ring-primary-accent/20
-                transition-all disabled:opacity-50
-              "
+              aria-invalid={isFieldInvalid('lastName')}
+              aria-describedby={isFieldInvalid('lastName') ? 'lastName-error' : undefined}
+              className={getInputClasses('lastName')}
               placeholder={t('booking_placeholder_lastName')}
               autoComplete="family-name"
             />
+            {isFieldInvalid('lastName') && (
+              <p id="lastName-error" className="mt-1 text-xs text-red-400">
+                {t('booking_error_field_required')}
+              </p>
+            )}
           </div>
         </div>
 
@@ -205,6 +292,7 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
             {t('booking_field_email')} <span className="text-red-400">*</span>
           </label>
           <input
+            ref={emailRef}
             type="email"
             id="email"
             name="email"
@@ -212,15 +300,17 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
             onChange={handleInputChange}
             disabled={isLoading}
             required
-            className="
-              w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl
-              text-neutral placeholder-neutral/40
-              focus:outline-none focus:border-primary-accent focus:ring-2 focus:ring-primary-accent/20
-              transition-all disabled:opacity-50
-            "
+            aria-invalid={isFieldInvalid('email')}
+            aria-describedby={isFieldInvalid('email') ? 'email-error' : undefined}
+            className={getInputClasses('email')}
             placeholder={t('booking_placeholder_email')}
             autoComplete="email"
           />
+          {isFieldInvalid('email') && (
+            <p id="email-error" className="mt-1 text-xs text-red-400">
+              {t('booking_error_field_required')}
+            </p>
+          )}
         </div>
 
         {/* Phone */}
@@ -229,6 +319,7 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
             {t('booking_field_phone')} <span className="text-red-400">*</span>
           </label>
           <input
+            ref={phoneRef}
             type="tel"
             id="phone"
             name="phone"
@@ -236,44 +327,56 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
             onChange={handleInputChange}
             disabled={isLoading}
             required
-            className="
-              w-full px-4 py-3 bg-white/5 border border-white/20 rounded-xl
-              text-neutral placeholder-neutral/40
-              focus:outline-none focus:border-primary-accent focus:ring-2 focus:ring-primary-accent/20
-              transition-all disabled:opacity-50
-            "
+            aria-invalid={isFieldInvalid('phone')}
+            aria-describedby={isFieldInvalid('phone') ? 'phone-error' : undefined}
+            className={getInputClasses('phone')}
             placeholder={t('booking_placeholder_phone')}
             autoComplete="tel"
           />
+          {isFieldInvalid('phone') && (
+            <p id="phone-error" className="mt-1 text-xs text-red-400">
+              {t('booking_error_field_required')}
+            </p>
+          )}
         </div>
 
-        {/* RGPD Consents */}
-        <div className="pt-4 border-t border-white/10 space-y-1">
-          {/* Terms */}
-          <Checkbox
-            name="acceptsTerms"
-            label={
-              <>
-                {t('booking_consent_terms')}{' '}
-                <Link
-                  to={`/${locale}/condiciones-generales`}
-                  className="text-primary-accent hover:underline"
-                  target="_blank"
-                >
-                  {t('booking_consent_terms_link')}
-                </Link>
-              </>
-            }
-          />
+        {/* RGPD Consents - Simplified (3 checkboxes) */}
+        <div className="pt-4 border-t border-white/10 space-y-3">
+          {/* Terms with explanation */}
+          <div>
+            <Checkbox
+              name="acceptsTerms"
+              label={
+                <>
+                  {t('booking_consent_terms')}{' '}
+                  <button
+                    type="button"
+                    onClick={e => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      setShowTermsModal(true);
+                    }}
+                    className="text-primary-accent hover:underline"
+                  >
+                    {t('booking_consent_terms_link')}
+                  </button>
+                </>
+              }
+            />
+            <p className="ml-8 text-xs text-neutral/50 leading-relaxed">
+              {t('booking_consent_terms_note')}
+            </p>
+          </div>
 
-          {/* Marketing */}
-          <Checkbox name="acceptsMarketing" label={t('booking_consent_marketing')} />
+          {/* Heels consent (conditional) - before age */}
+          {needsHeelsConsent && (
+            <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-3">
+              <Checkbox name="acceptsHeels" label={t('booking_consent_heels')} />
+            </div>
+          )}
 
-          {/* Age */}
+          {/* Age confirmation */}
           <Checkbox name="acceptsAge" label={t('booking_consent_age')} />
-
-          {/* No Refund */}
-          <Checkbox name="acceptsNoRefund" label={t('booking_consent_norefund')} />
 
           {/* Privacy */}
           <Checkbox
@@ -281,34 +384,35 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
             label={
               <>
                 {t('booking_consent_privacy')}{' '}
-                <Link
-                  to={`/${locale}/politica-privacidad`}
+                <button
+                  type="button"
+                  onClick={e => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setShowPrivacyModal(true);
+                  }}
                   className="text-primary-accent hover:underline"
-                  target="_blank"
                 >
                   {t('booking_consent_privacy_link')}
-                </Link>
+                </button>
               </>
             }
           />
-
-          {/* Heels consent (conditional) */}
-          {needsHeelsConsent && (
-            <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-3 mt-3">
-              <Checkbox name="acceptsHeels" label={t('booking_consent_heels')} />
-            </div>
-          )}
-
-          {/* Image consent (optional) */}
-          <Checkbox name="acceptsImage" label={t('booking_consent_image')} required={false} />
         </div>
 
-        {/* Error message */}
-        {errorMessage && (
-          <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-xl">
-            <p className="text-sm text-red-400">{errorMessage}</p>
-          </div>
-        )}
+        {/* Error message - aria-live for screen reader announcements */}
+        <div
+          role="alert"
+          aria-live="polite"
+          aria-atomic="true"
+          className={errorMessage ? '' : 'sr-only'}
+        >
+          {errorMessage && (
+            <div className="p-3 bg-red-500/10 border border-red-500/30 rounded-xl">
+              <p className="text-sm text-red-400">{errorMessage}</p>
+            </div>
+          )}
+        </div>
 
         {/* Submit button */}
         <button
@@ -338,15 +442,23 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
             {t('booking_legal_responsible')} {t('booking_legal_purpose')}{' '}
             {t('booking_legal_legitimation')} {t('booking_legal_recipients')}{' '}
             {t('booking_legal_rights')}{' '}
-            <Link
-              to={`/${locale}/politica-privacidad`}
+            <button
+              type="button"
+              onClick={e => {
+                e.preventDefault();
+                setShowPrivacyModal(true);
+              }}
               className="text-primary-accent/70 hover:text-primary-accent"
             >
               {t('booking_legal_info')}
-            </Link>
+            </button>
           </p>
         </div>
       </form>
+
+      {/* Legal Modals */}
+      <TermsModal isOpen={showTermsModal} onClose={() => setShowTermsModal(false)} />
+      <PrivacyModal isOpen={showPrivacyModal} onClose={() => setShowPrivacyModal(false)} />
     </div>
   );
 };

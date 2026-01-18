@@ -138,7 +138,8 @@ describe('Services', () => {
   it('renders links with correct href attributes', () => {
     renderWithRouter(<Services />);
     const rentalLink = screen.getByRole('link', { name: /alquiler de salas/i });
-    expect(rentalLink).toHaveAttribute('href', '#rental');
+    // Link now points to dedicated rental page instead of anchor
+    expect(rentalLink).toHaveAttribute('href', '/es/alquiler-salas-baile-barcelona');
   });
 
   it('renders view all services link when not showing all', () => {

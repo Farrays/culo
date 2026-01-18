@@ -10,3 +10,4 @@ export { ClassListStep } from './ClassListStep';
 export { BookingFormStep } from './BookingFormStep';
 export { BookingSuccess } from './BookingSuccess';
 export { BookingError } from './BookingError';
+export { BookingErrorBoundary } from './BookingErrorBoundary';

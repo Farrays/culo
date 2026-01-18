@@ -45,6 +45,10 @@ import {
   DefinedTermSchema,
   EventSchema,
   FAQPageSchema,
+  // GEO & LLM Optimization Schemas
+  WebPageSchema,
+  LeadCaptureActionSchema,
+  BrandSchema,
 } from '../SchemaMarkup';
 import {
   ANIMATION_DELAYS,
@@ -664,7 +668,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
   const { getAlt } = useImageAlt();
   const baseUrl = 'https://www.farrayscenter.com';
   const pageUrl = `${baseUrl}/${locale}/clases/${config.stylePath}`;
-  const currentDate = new Date().toISOString().split('T')[0];
+  const currentDate = new Date().toISOString().split('T')[0] as string;
 
   // ===== REAL GOOGLE REVIEWS FOR SCHEMA =====
   // Get real Google reviews filtered by category for Schema.org markup
@@ -1069,6 +1073,42 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
           }
         />
       )}
+
+      {/* ===== GEO & LLM OPTIMIZATION SCHEMAS ===== */}
+      {/* WebPage Schema - Enhanced for search engines and LLMs */}
+      <WebPageSchema
+        url={pageUrl}
+        name={t(`${config.styleKey}PageTitle`)}
+        description={t(`${config.styleKey}MetaDescription`)}
+        datePublished="2024-01-01"
+        dateModified={currentDate}
+        inLanguage={locale || 'es'}
+        mainEntityId={`${pageUrl}#course`}
+        primaryImageUrl={
+          config.hero?.heroImage
+            ? `${baseUrl}${config.hero.heroImage.basePath}_1200.jpg`
+            : `${baseUrl}/images/og-${config.stylePath}.jpg`
+        }
+        breadcrumb={breadcrumbItems.map(item => ({
+          name: item.name,
+          url: `${baseUrl}${item.url}`,
+        }))}
+      />
+
+      {/* Lead Capture Action - Models the "Descubre cómo empezar" flow */}
+      <LeadCaptureActionSchema
+        pageUrl={pageUrl}
+        courseName={t(`${config.styleKey}PageTitle`)}
+        actionDescription={t('puertasAbiertasSubtext')}
+      />
+
+      {/* Brand Schema - For Método Farray methodology */}
+      <BrandSchema
+        name="Método Farray"
+        description="Metodología de enseñanza única desarrollada por Yunaisy Farray, avalada por CID-UNESCO. Combina técnica profesional con un enfoque inclusivo y divertido que ha formado a más de 15.000 alumnos en Barcelona."
+        url={`${baseUrl}/${locale}/metodo-farray`}
+        slogan="Dance Your Dreams"
+      />
 
       {/* ===== SKIP LINKS ===== */}
       <nav aria-label="Skip links" className="sr-only focus-within:not-sr-only">
