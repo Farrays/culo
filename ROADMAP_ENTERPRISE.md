@@ -122,6 +122,18 @@ Estas páginas tenían tráfico en WordPress:
 - [ ] Casos de éxito/transformaciones
 - [ ] Galería de fotos/eventos
 
+### OG Images Pendientes
+
+- [ ] `/images/og-servicios-baile.jpg` - Imagen específica para página de servicios (1200x630px)
+  - Actualmente usa `/images/og-image.jpg` como fallback
+
+### Mejoras Opcionales - Página de Servicios (actualmente 9/10)
+
+- [ ] Video showcase de servicios (reel o demo de cada servicio)
+- [ ] Testimonios específicos por servicio (no solo generales)
+- [ ] Precios indicativos ("desde X€")
+- [ ] Chat/WhatsApp flotante integrado
+
 ---
 
 ## 3. SEO Y E-E-A-T
@@ -365,6 +377,9 @@ Si han salido en prensa/TV/podcasts:
 ## 6. MEJORAS DE CONVERSIÓN
 
 ### 6.1 Exit-Intent Popup (ALTA PRIORIDAD)
+
+> **Estado actual:** ⏸️ DESACTIVADO temporalmente en `App.tsx` (`EXIT_INTENT_PROMO_CONFIG.enabled = false`)
+> Para habilitar: cambiar a `enabled: true` en línea ~229 de App.tsx
 
 Modal que aparece cuando el usuario va a abandonar la página.
 
@@ -724,6 +739,480 @@ Ver documentación en `CAMBIOS-COLOR-HOLOGRAFICO.md`
 
 ---
 
+## 14. WIDGET DE RESERVAS V2 - NOTIFICACIONES Y GESTIÓN
+
+> Sistema completo de notificaciones automáticas y autogestión de reservas para clases de prueba gratuitas.
+
+### 14.1 Estado Actual
+
+- [x] Widget de reservas funcional (`BookingWidgetV2.tsx`)
+- [x] API `/api/reservar` con integración Momence
+- [x] Deduplicación con Redis
+- [x] Tracking Meta CAPI
+- [ ] Sistema de notificaciones (WhatsApp + Email)
+- [ ] Página de autogestión de reservas
+
+### 14.2 Arquitectura del Sistema
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                     FLUJO COMPLETO                              │
+│                                                                 │
+│  1. Usuario reserva → Widget → /api/reservar                   │
+│     - Crea booking en Momence (bookingId)                      │
+│     - Genera managementToken único                             │
+│     - Guarda en Redis: booking:{email} + reminders:{fecha}     │
+│                                                                 │
+│  2. Confirmación inmediata                                     │
+│     - Momence Sequence → Email de confirmación                 │
+│                                                                 │
+│  3. Recordatorio 24h antes (Vercel Cron 9:00 AM)              │
+│     - Lee Redis: reminders:{mañana}                            │
+│     - Envía WhatsApp (Meta Cloud API) + Email (Resend)        │
+│     - Botones: [Ver reserva] [Cancelar/Cambiar]               │
+│                                                                 │
+│  4. Usuario quiere cambiar → /gestionar-reserva?token=xxx      │
+│     - Ve detalles de su reserva                                │
+│     - Puede CANCELAR (API Momence + limpia Redis)             │
+│     - Para reprogramar: cancela y reserva de nuevo            │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### 14.3 Modificar `/api/reservar` (datos adicionales)
+
+Añadir al guardar en Redis:
+
+```typescript
+const managementToken = crypto.randomBytes(16).toString('hex');
+
+await redis.setex(
+  `booking:${email}`,
+  TTL,
+  JSON.stringify({
+    // Datos actuales
+    timestamp,
+    sessionId,
+    className,
+    classDate,
+    eventId,
+    // NUEVOS - para recordatorios y gestión
+    bookingId, // ID del booking en Momence (para cancelar)
+    classTime, // Hora de la clase
+    phone, // Para WhatsApp
+    firstName, // Personalización
+    lastName,
+    managementToken, // Token único para acceder a gestión
+    reminderSent: false,
+    status: 'confirmed', // confirmed | cancelled
+  })
+);
+
+// Índice por token (búsqueda rápida)
+await redis.setex(`mgmt:${managementToken}`, TTL, email);
+
+// Índice por fecha (para cron de recordatorios)
+await redis.sadd(`reminders:${classDate}`, email);
+await redis.expire(`reminders:${classDate}`, 7 * 24 * 60 * 60);
+```
+
+### 14.4 Nuevas APIs de Gestión
+
+| Endpoint                   | Método | Función                            |
+| -------------------------- | ------ | ---------------------------------- |
+| `/api/booking/get`         | GET    | Obtener datos de reserva por token |
+| `/api/booking/cancel`      | POST   | Cancelar reserva (Momence + Redis) |
+| `/api/cron/send-reminders` | GET    | Cron diario de recordatorios       |
+
+#### `/api/booking/cancel` - Flujo
+
+```typescript
+// 1. Validar token
+const email = await redis.get(`mgmt:${token}`);
+
+// 2. Obtener datos reserva
+const booking = JSON.parse(await redis.get(`booking:${email}`));
+
+// 3. Cancelar en Momence
+await fetch(`${MOMENCE_API}/api/v2/host/session-bookings/${booking.bookingId}`, {
+  method: 'DELETE',
+  headers: { Authorization: `Bearer ${accessToken}` },
+});
+
+// 4. Limpiar Redis (IMPORTANTE para permitir nueva reserva)
+await redis.del(`booking:${email}`);
+await redis.del(`mgmt:${token}`);
+await redis.srem(`reminders:${booking.classDate}`, email);
+
+// 5. Responder con redirect a /reservas
+return { success: true, redirectUrl: '/reservas' };
+```
+
+### 14.5 Página de Gestión `/gestionar-reserva`
+
+**Ruta:** `/:locale/gestionar-reserva?token=xxx`
+
+**Componente:** `components/booking/ManageBookingPage.tsx`
+
+**UI:**
+
+```
+┌─────────────────────────────────────────┐
+│  🎉 Tu reserva de clase de prueba       │
+│                                         │
+│  📚 Clase: Salsa Cubana - Principiantes│
+│  📅 Fecha: Lunes 20 Enero 2025         │
+│  🕐 Hora: 19:00h                        │
+│  👨‍🏫 Instructor: Carlos                 │
+│                                         │
+│  📍 Farray's Center                     │
+│     C/ Balmes 177, Barcelona            │
+│                                         │
+│  ┌─────────────────────────────────┐   │
+│  │      ❌ Cancelar reserva        │   │
+│  └─────────────────────────────────┘   │
+│                                         │
+│  ℹ️ ¿Quieres otra fecha?                │
+│  Cancela esta reserva y elige otra     │
+│  clase en nuestro calendario.          │
+│                                         │
+│  [Ir al calendario de clases →]        │
+└─────────────────────────────────────────┘
+```
+
+**Estados:**
+
+- `loading` - Cargando datos
+- `confirmed` - Reserva activa (muestra botón cancelar)
+- `cancelled` - Ya cancelada (muestra link a reservas)
+- `error` - Token inválido o expirado
+
+### 14.6 Sistema de Recordatorios (Cron)
+
+**Configuración Vercel (`vercel.json`):**
+
+```json
+{
+  "crons": [
+    {
+      "path": "/api/cron/send-reminders",
+      "schedule": "0 9 * * *"
+    }
+  ]
+}
+```
+
+**Flujo `/api/cron/send-reminders`:**
+
+```typescript
+// 1. Calcular fecha de mañana
+const tomorrow = format(addDays(new Date(), 1), 'yyyy-MM-dd');
+
+// 2. Obtener emails con clase mañana
+const emails = await redis.smembers(`reminders:${tomorrow}`);
+
+// 3. Para cada email
+for (const email of emails) {
+  const booking = JSON.parse(await redis.get(`booking:${email}`));
+
+  if (booking && !booking.reminderSent && booking.status === 'confirmed') {
+    // 4. Enviar WhatsApp
+    await sendWhatsAppReminder(booking);
+
+    // 5. Enviar Email
+    await sendEmailReminder(booking);
+
+    // 6. Marcar como enviado
+    booking.reminderSent = true;
+    await redis.setex(`booking:${email}`, TTL, JSON.stringify(booking));
+  }
+}
+```
+
+### 14.7 WhatsApp - Meta Cloud API
+
+**Configuración necesaria:**
+
+- [ ] Cuenta en [developers.facebook.com](https://developers.facebook.com)
+- [ ] App de tipo Business con producto WhatsApp
+- [ ] Número de teléfono verificado (WhatsApp Business propio)
+- [ ] Token de acceso permanente (System User)
+- [ ] Plantilla aprobada por Meta
+
+**Variables de entorno:**
+
+```env
+WHATSAPP_PHONE_ID=tu_phone_number_id
+WHATSAPP_TOKEN=tu_access_token_permanente
+WHATSAPP_TEMPLATE_NAME=recordatorio_clase
+```
+
+**Plantilla WhatsApp (crear en Meta Business):**
+
+```
+Nombre: recordatorio_clase
+Categoría: UTILITY
+Idioma: es
+
+Contenido:
+📅 *Recordatorio de clase*
+
+¡Hola {{1}}! 👋
+
+Mañana tienes tu clase de prueba:
+🎵 *{{2}}*
+📆 {{3}} a las {{4}}
+
+📍 Farray's Center
+C/ Balmes 177, Barcelona
+
+¿Necesitas cambiar algo?
+
+Botones CTA:
+[Ver mi reserva] → URL dinámica
+[Cambiar/Cancelar] → URL dinámica
+```
+
+**Envío via API:**
+
+```typescript
+async function sendWhatsAppReminder(booking: BookingData) {
+  const url = `https://graph.facebook.com/v18.0/${PHONE_ID}/messages`;
+
+  await fetch(url, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${WHATSAPP_TOKEN}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      messaging_product: 'whatsapp',
+      to: booking.phone,
+      type: 'template',
+      template: {
+        name: 'recordatorio_clase',
+        language: { code: 'es' },
+        components: [
+          {
+            type: 'body',
+            parameters: [
+              { type: 'text', text: booking.firstName },
+              { type: 'text', text: booking.className },
+              { type: 'text', text: formatDate(booking.classDate) },
+              { type: 'text', text: booking.classTime },
+            ],
+          },
+          {
+            type: 'button',
+            sub_type: 'url',
+            index: 0,
+            parameters: [{ type: 'text', text: booking.managementToken }],
+          },
+          {
+            type: 'button',
+            sub_type: 'url',
+            index: 1,
+            parameters: [{ type: 'text', text: `${booking.managementToken}&action=cancel` }],
+          },
+        ],
+      },
+    }),
+  });
+}
+```
+
+### 14.8 Email - Resend
+
+**Configuración:**
+
+- [ ] Cuenta en [resend.com](https://resend.com) (3,000 emails/mes gratis)
+- [ ] Dominio verificado (opcional pero recomendado)
+- [ ] API Key
+
+**Variables de entorno:**
+
+```env
+RESEND_API_KEY=re_xxxxxxxxxxxx
+RESEND_FROM_EMAIL=reservas@farrayscenter.com
+```
+
+**Envío de recordatorio:**
+
+```typescript
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+async function sendEmailReminder(booking: BookingData) {
+  const manageUrl = `https://farrayscenter.com/es/gestionar-reserva?token=${booking.managementToken}`;
+
+  await resend.emails.send({
+    from: "Farray's Center <reservas@farrayscenter.com>",
+    to: booking.email,
+    subject: `📅 Recordatorio: Tu clase de ${booking.className} es mañana`,
+    html: `
+      <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
+        <h1 style="color: #E91E63;">¡Hola ${booking.firstName}!</h1>
+
+        <p>Te recordamos que mañana tienes tu <strong>clase de prueba gratuita</strong>:</p>
+
+        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <p><strong>🎵 Clase:</strong> ${booking.className}</p>
+          <p><strong>📅 Fecha:</strong> ${formatDate(booking.classDate)}</p>
+          <p><strong>🕐 Hora:</strong> ${booking.classTime}</p>
+          <p><strong>📍 Lugar:</strong> Farray's Center - C/ Balmes 177, Barcelona</p>
+        </div>
+
+        <p><strong>¿Qué necesitas traer?</strong></p>
+        <ul>
+          <li>Ropa cómoda para bailar</li>
+          <li>Agua</li>
+          <li>¡Muchas ganas de pasarlo bien!</li>
+        </ul>
+
+        <div style="margin: 30px 0; text-align: center;">
+          <a href="${manageUrl}"
+             style="background: #E91E63; color: white; padding: 12px 24px;
+                    text-decoration: none; border-radius: 8px; display: inline-block;">
+            Ver mi reserva
+          </a>
+          <a href="${manageUrl}&action=cancel"
+             style="background: #333; color: white; padding: 12px 24px;
+                    text-decoration: none; border-radius: 8px; display: inline-block; margin-left: 10px;">
+            Cambiar o cancelar
+          </a>
+        </div>
+
+        <p style="color: #666; font-size: 14px;">
+          ¿No puedes asistir? No hay problema, cancela y reserva otra fecha cuando te venga mejor.
+        </p>
+
+        <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;">
+
+        <p style="color: #999; font-size: 12px;">
+          Farray's Center - C/ Balmes 177, Barcelona<br>
+          Tel: +34 666 555 444
+        </p>
+      </div>
+    `,
+  });
+}
+```
+
+### 14.9 Archivos a Crear/Modificar
+
+```
+api/
+├── reservar.ts                    ← MODIFICAR (añadir bookingId, token, índices)
+├── booking/
+│   ├── get.ts                     ← NUEVO
+│   └── cancel.ts                  ← NUEVO
+├── cron/
+│   └── send-reminders.ts          ← NUEVO
+├── lib/
+│   ├── whatsapp.ts                ← NUEVO (Meta Cloud API client)
+│   ├── email.ts                   ← NUEVO (Resend client)
+│   └── momence.ts                 ← NUEVO (refactor auth común)
+
+components/
+├── booking/
+│   └── ManageBookingPage.tsx      ← NUEVO
+
+App.tsx                            ← MODIFICAR (añadir ruta)
+prerender.mjs                      ← MODIFICAR (añadir página)
+vercel.json                        ← MODIFICAR (añadir cron + rewrite)
+```
+
+### 14.10 Variables de Entorno Nuevas
+
+```env
+# WhatsApp Meta Cloud API
+WHATSAPP_PHONE_ID=
+WHATSAPP_TOKEN=
+WHATSAPP_TEMPLATE_NAME=recordatorio_clase
+
+# Resend (Email)
+RESEND_API_KEY=
+RESEND_FROM_EMAIL=reservas@farrayscenter.com
+
+# Ya existentes (verificar que estén)
+STORAGE_REDIS_URL=
+MOMENCE_CLIENT_ID=
+MOMENCE_CLIENT_SECRET=
+MOMENCE_USERNAME=
+MOMENCE_PASSWORD=
+```
+
+### 14.11 Checklist de Implementación
+
+**Fase 1: Configuración servicios externos**
+
+- [ ] Crear app en Meta Developers (WhatsApp)
+- [ ] Verificar número WhatsApp Business
+- [ ] Crear plantilla `recordatorio_clase` y esperar aprobación
+- [ ] Crear cuenta Resend y verificar dominio
+- [ ] Añadir variables de entorno en Vercel
+
+**Fase 2: Modificar API reservar**
+
+- [ ] Capturar `bookingId` de respuesta Momence
+- [ ] Generar `managementToken`
+- [ ] Guardar datos completos en Redis
+- [ ] Crear índice `reminders:{fecha}`
+- [ ] Crear índice `mgmt:{token}`
+
+**Fase 3: APIs de gestión**
+
+- [ ] Crear `/api/booking/get.ts`
+- [ ] Crear `/api/booking/cancel.ts`
+- [ ] Tests unitarios
+
+**Fase 4: Página de gestión**
+
+- [ ] Crear `ManageBookingPage.tsx`
+- [ ] Añadir ruta en `App.tsx`
+- [ ] Añadir en `prerender.mjs` (4 idiomas)
+- [ ] Añadir rewrite en `vercel.json`
+- [ ] Traducciones i18n
+
+**Fase 5: Sistema de recordatorios**
+
+- [ ] Crear `/api/cron/send-reminders.ts`
+- [ ] Crear `/api/lib/whatsapp.ts`
+- [ ] Crear `/api/lib/email.ts`
+- [ ] Configurar cron en `vercel.json`
+- [ ] Test manual del cron
+
+**Fase 6: Testing y deploy**
+
+- [ ] Test flujo completo en staging
+- [ ] Verificar WhatsApp se recibe correctamente
+- [ ] Verificar Email se recibe (revisar spam)
+- [ ] Test cancelación y nueva reserva
+- [ ] Deploy a producción
+
+### 14.12 Costes Estimados
+
+| Servicio          | Plan Gratuito            | Coste Pro              |
+| ----------------- | ------------------------ | ---------------------- |
+| WhatsApp Meta API | 1,000 conversaciones/mes | ~€0.04/mensaje después |
+| Resend            | 3,000 emails/mes         | $20/mes por 50k        |
+| Vercel KV (Redis) | 30MB, 30k requests       | $25/mes por más        |
+| Vercel Cron       | 2 cron jobs              | Incluido               |
+
+**Estimación mensual inicial:** €0 (dentro de tiers gratuitos)
+
+### 14.13 Flujo de Deduplicación
+
+| Situación                          | Acción                      | Resultado                      |
+| ---------------------------------- | --------------------------- | ------------------------------ |
+| Nueva reserva (no existe en Redis) | Crear booking               | ✅ Éxito                       |
+| Ya tiene reserva activa            | Rechazar                    | ❌ "Ya tienes reserva"         |
+| Usuario cancela                    | Eliminar de Redis + Momence | 🗑️ Limpio                      |
+| Reserva después de cancelar        | Crear booking               | ✅ Éxito (ya no hay duplicado) |
+
+---
+
 ## NOTAS TÉCNICAS
 
 ### Bunny.net Configuration
@@ -767,4 +1256,4 @@ Pasar a Pro ($20/mes) cuando:
 
 ---
 
-_Última actualización: 2025-01-14 (Roadmap consolidado)_
+_Última actualización: 2025-01-18 (Sección 14: Widget Reservas V2 - Notificaciones y Gestión añadida)_

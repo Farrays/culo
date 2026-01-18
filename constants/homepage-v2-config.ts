@@ -28,7 +28,7 @@ export const HOMEPAGE_V2_CONFIG = {
     },
     socialProof: {
       rating: '4.9',
-      reviewCount: '505+',
+      reviewCount: '509+',
       studentsActive: '1500+',
       badge: 'CID-UNESCO',
     },
@@ -121,6 +121,16 @@ export const HOMEPAGE_V2_CONFIG = {
         othersKey: 'homev2_compRow8Others',
         usKey: 'homev2_compRow8Us',
       },
+      {
+        labelKey: 'homev2_compRow9Label',
+        othersKey: 'homev2_compRow9Others',
+        usKey: 'homev2_compRow9Us',
+      },
+      {
+        labelKey: 'homev2_compRow10Label',
+        othersKey: 'homev2_compRow10Others',
+        usKey: 'homev2_compRow10Us',
+      },
     ],
     ctaTextKey: 'homev2_comparisonCta',
     ctaSubtextKey: 'homev2_comparisonCtaSubtext',
@@ -187,7 +197,7 @@ export const HOMEPAGE_V2_CONFIG = {
     ],
     googleReviews: {
       rating: '4.9',
-      count: '505+',
+      count: '509+',
       linkKey: 'homev2_googleReviewsLink',
     },
     logos: [

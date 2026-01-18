@@ -606,6 +606,7 @@
     { "source": "/:locale(es|en|ca|fr)/reservas", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/test/:path*", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/404", "destination": "/index.html" },
+    { "source": "/:locale(es|en|ca|fr)/team-building-barcelona", "destination": "/index.html" },
     { "source": "/:locale(es|en|ca|fr)/:path*", "destination": "/index.html" }
   ],
   "headers": [

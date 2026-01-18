@@ -8,9 +8,11 @@ import BookingWidget from '../booking/BookingWidget';
  *
  * Features:
  * - Sistema de reservas enterprise con integración Momence
- * - Multi-step flow: estilo → clase → formulario
+ * - 2-step flow: clase (con filtros) → formulario
+ * - Deep linking para campañas: ?style=, ?day=, ?level=, etc.
+ * - URL sync en tiempo real (compartir enlaces)
  * - RGPD compliant con todos los checkboxes requeridos
- * - Tracking Meta CAPI
+ * - Tracking Meta CAPI + Analytics
  * - Multi-idioma (es, ca, en, fr)
  */
 const BookingPage: React.FC = () => {

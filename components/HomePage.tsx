@@ -1,21 +1,24 @@
 import { lazy, Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../hooks/useI18n';
+import { HOMEPAGE_V2_CONFIG } from '../constants/homepage-v2-config';
 import Hero from './Hero';
 import HappinessStory from './HappinessStory';
 import About from './About';
-// import Classes from './Classes'; // Componente no encontrado - usando CategoriesSection en su lugar
-import CategoriesSection from './home/CategoriesSection';
+// import Classes from './Classes'; // Componente no encontrado - usando ClassesPreview en su lugar
+import ClassesPreview from './homev2/ClassesPreview';
 import WhyFIDC from './WhyFIDC';
 import FinalCTA from './FinalCTA';
 
 // Lazy load components below the fold for better initial page load performance
+const NovedadesCarousel = lazy(() => import('./novedades/NovedadesCarousel'));
 const Services = lazy(() => import('./Services'));
 const Teachers = lazy(() => import('./Teachers'));
 const ReviewsSection = lazy(() => import('./reviews/ReviewsSection'));
 const FAQSection = lazy(() => import('./FAQSection'));
 const HowToGetHere = lazy(() => import('./HowToGetHere'));
 const CalendarWidget = lazy(() => import('./CalendarWidget'));
+const ComparisonSection = lazy(() => import('./homev2/ComparisonSection'));
 
 const HomePage: React.FC = () => {
   const { t, locale } = useI18n();
@@ -52,11 +55,15 @@ const HomePage: React.FC = () => {
       </Helmet>
 
       <Hero />
+      <Suspense fallback={<div className="min-h-[400px]" />}>
+        <NovedadesCarousel />
+      </Suspense>
       <HappinessStory />
       <About />
-      <CategoriesSection />
+      <ClassesPreview />
       <WhyFIDC />
       <Suspense fallback={<div className="min-h-screen" />}>
+        <ComparisonSection config={HOMEPAGE_V2_CONFIG.comparison} />
         <Services />
         <Teachers />
         <CalendarWidget />

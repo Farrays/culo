@@ -196,7 +196,7 @@ const VideoTestimonialsSection: React.FC = () => {
 
               {/* Count */}
               <div className="text-neutral/70">
-                <span className="font-bold text-neutral">505+</span>{' '}
+                <span className="font-bold text-neutral">509+</span>{' '}
                 {t('videotestimonials_reviews')}
               </div>
 

@@ -1,6 +1,12 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import Services from '../Services';
+
+// Helper function to render with router
+const renderWithRouter = (component: React.ReactElement) => {
+  return render(<MemoryRouter>{component}</MemoryRouter>);
+};
 
 // Mock useI18n
 vi.mock('../../hooks/useI18n', () => ({
@@ -36,6 +42,7 @@ vi.mock('../../hooks/useI18n', () => ({
         serviceMerchandisingTitle: 'Merchandising',
         serviceMerchandisingDesc: 'Productos de la escuela.',
         serviceMerchandisingCTA: 'Ver productos',
+        servicesViewAll: 'Ver todos los servicios',
       };
       return translations[key] || key;
     },
@@ -65,23 +72,43 @@ vi.mock('../../lib/icons', () => ({
 
 describe('Services', () => {
   it('renders section title', () => {
-    render(<Services />);
+    renderWithRouter(<Services />);
     expect(screen.getByText('Nuestros Servicios')).toBeInTheDocument();
   });
 
   it('renders section intro', () => {
-    render(<Services />);
+    renderWithRouter(<Services />);
     expect(screen.getByText('Descubre todo lo que ofrecemos')).toBeInTheDocument();
   });
 
   it('renders section with id for navigation', () => {
-    const { container } = render(<Services />);
+    const { container } = renderWithRouter(<Services />);
     const section = container.querySelector('#services');
     expect(section).toBeInTheDocument();
   });
 
-  it('renders all service titles', () => {
-    render(<Services />);
+  it('renders 3 featured service cards by default', () => {
+    renderWithRouter(<Services />);
+    // By default, only 3 featured services are shown: rental, corporate, gift
+    const serviceTitles = screen.getAllByRole('heading', { level: 3 });
+    expect(serviceTitles.length).toBe(3);
+  });
+
+  it('renders all 9 service cards when showAll is true', () => {
+    renderWithRouter(<Services showAll />);
+    const serviceTitles = screen.getAllByRole('heading', { level: 3 });
+    expect(serviceTitles.length).toBe(9);
+  });
+
+  it('renders featured service titles (rental, corporate, gift)', () => {
+    renderWithRouter(<Services />);
+    expect(screen.getByText('Alquiler de Salas')).toBeInTheDocument();
+    expect(screen.getByText('Eventos Corporativos')).toBeInTheDocument();
+    expect(screen.getByText('Tarjetas Regalo')).toBeInTheDocument();
+  });
+
+  it('renders all service titles when showAll is true', () => {
+    renderWithRouter(<Services showAll />);
     expect(screen.getByText('Alquiler de Salas')).toBeInTheDocument();
     expect(screen.getByText('Sesiones Fotográficas')).toBeInTheDocument();
     expect(screen.getByText('Fiestas Privadas')).toBeInTheDocument();
@@ -89,33 +116,33 @@ describe('Services', () => {
   });
 
   it('renders service descriptions', () => {
-    render(<Services />);
+    renderWithRouter(<Services />);
     expect(screen.getByText('Alquila nuestras salas para tus ensayos.')).toBeInTheDocument();
   });
 
   it('renders service CTA links', () => {
-    render(<Services />);
+    renderWithRouter(<Services />);
     expect(screen.getByText('Reservar sala')).toBeInTheDocument();
-    expect(screen.getByText('Reservar sesión')).toBeInTheDocument();
+    expect(screen.getByText('Solicitar info')).toBeInTheDocument();
+    expect(screen.getByText('Comprar')).toBeInTheDocument();
   });
 
-  it('renders icons for each service', () => {
-    render(<Services />);
+  it('renders icons for featured services', () => {
+    renderWithRouter(<Services />);
+    // Featured services: rental (KeyIcon), corporate (BuildingOfficeIcon), gift (HeartIcon)
     expect(screen.getByTestId('key-icon')).toBeInTheDocument();
-    expect(screen.getByTestId('camera-icon')).toBeInTheDocument();
-    expect(screen.getByTestId('sparkles-icon')).toBeInTheDocument();
-  });
-
-  it('renders 9 service cards', () => {
-    render(<Services />);
-    // Count the number of service titles
-    const serviceTitles = screen.getAllByRole('heading', { level: 3 });
-    expect(serviceTitles.length).toBe(9);
+    expect(screen.getByTestId('building-icon')).toBeInTheDocument();
+    expect(screen.getByTestId('heart-icon')).toBeInTheDocument();
   });
 
   it('renders links with correct href attributes', () => {
-    render(<Services />);
+    renderWithRouter(<Services />);
     const rentalLink = screen.getByRole('link', { name: /alquiler de salas/i });
     expect(rentalLink).toHaveAttribute('href', '#rental');
+  });
+
+  it('renders view all services link when not showing all', () => {
+    renderWithRouter(<Services />);
+    expect(screen.getByText('Ver todos los servicios')).toBeInTheDocument();
   });
 });

@@ -175,7 +175,7 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
         priceRange="€€"
         aggregateRating={{
           ratingValue: '5',
-          reviewCount: '505',
+          reviewCount: '509',
         }}
       />
 

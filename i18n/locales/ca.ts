@@ -11,6 +11,7 @@ export const ca = {
   breadcrumb_home: 'Inici',
   home: 'Inici',
   contact: 'Contacte',
+  contactUs: 'Contactar',
   skipToMain: 'Salta al contingut principal',
   viewSchedule: 'Veure Horaris',
   bookNow: 'Reservar Ara',
@@ -18961,13 +18962,14 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   // ============================================================================
   // Team Building Page
   // ============================================================================
-  teamBuilding_pageTitle: "Team Building amb Ball a Barcelona | Activitats Corporatives | Farray's",
+  teamBuilding_pageTitle:
+    "Team Building amb Ball a Barcelona | Per a Empreses que No Creuen en Team Building | Farray's",
   teamBuilding_metaDescription:
-    'Team building amb ball a Barcelona. Activitats corporatives originals: workshops, coreografies, videoclips i flashmobs. 500+ esdeveniments. CID-UNESCO.',
+    'Team building amb ball a Barcelona per a empreses que ja no creuen en team building. Sense dinàmiques buides: cos, emoció, presència real. CID-UNESCO. +500 esdeveniments.',
   teamBuilding_heroTitle: 'Team Building Barcelona',
-  teamBuilding_heroSubtitle: 'amb Ball',
+  teamBuilding_heroSubtitle: 'per a empreses que ja no hi creuen',
   teamBuilding_heroIntro:
-    "Transforma el teu proper esdeveniment corporatiu amb activitats de team building amb ball a Barcelona. A Farray's International Dance Center portem 8 anys creant experiències úniques que enforteixen equips, potencien la comunicació i generen records inoblidables.",
+    "Per a empreses que ja no creuen en el team building. Si necessites un altre team building més, no segueixis llegint. Però si vols que el teu equip realment es miri a la cara, suï fred junt i després se'n rigui, potser paga la pena continuar.",
   teamBuilding_trust_rating: '4.9★',
   teamBuilding_trust_rating_label: 'a Google',
   teamBuilding_trust_unesco: 'CID-UNESCO',
@@ -18976,46 +18978,50 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   teamBuilding_trust_years_label: 'anys',
   teamBuilding_trust_events: '500+',
   teamBuilding_trust_events_label: 'esdeveniments',
-  teamBuilding_problem_title: 'Reunions corporatives avorrides?',
+  teamBuilding_problem_title: 'El problema que ningú verbalitza',
   teamBuilding_problem_desc:
-    "Les activitats tradicionals de team building sovint resulten previsibles i no generen l'impacte desitjat.",
-  teamBuilding_solution_title: 'Experiències que transformen equips',
+    "Els equips conviuen. Col·laboren el just. Es toleren amb educació. I un cop l'any, RRHH els porta a fer paintball o escape rooms perquè «cal fer alguna cosa». Segons Gallup, només el 21% dels empleats a nivell mundial estan engaged. El cost global: $8.8 trillion. Però ningú ho diu en veu alta.",
+  teamBuilding_solution_title: "La mentida suau de l'engagement corporatiu",
   teamBuilding_solution_desc:
-    'El ball trenca barreres, allibera endorfines i crea connexions genuïnes entre companys.',
-  teamBuilding_features_title: 'Les Nostres Activitats de Team Building',
-  teamBuilding_feature_workshops_title: 'Workshops de Ball',
+    'Es contracten dinàmiques que no mouen res. Es busquen activitats còmodes. On ningú hagi de mostrar-se vulnerable ni sortir de la seva zona segura. El resultat: fotos pel LinkedIn i zero impacte real.',
+  teamBuilding_features_title: 'No oferim classes de ball per a empreses',
+  teamBuilding_feature_workshops_title: 'Incomoditat col·lectiva',
   teamBuilding_feature_workshops_desc:
-    "Sessions d'1-3 hores on el teu equip aprèn una coreografia grupal.",
-  teamBuilding_feature_choreography_title: 'Coreografies Personalitzades',
-  teamBuilding_feature_choreography_desc: 'Creem coreografies exclusives per a la teva empresa.',
-  teamBuilding_feature_competitions_title: 'Competicions per Equips',
+    "Sessions on el teu equip es veurà obligat a mirar-se, riure de si mateixos i deixar de fingir que tot està bé. Sessions d'1-3 hores de veritat incòmoda.",
+  teamBuilding_feature_choreography_title: 'Suor compartida',
+  teamBuilding_feature_choreography_desc:
+    "Coreografies que exigeixen coordinació real. Que exposen qui lidera i qui segueix. Que ensenyen més de l'equip que qualsevol test de personalitat.",
+  teamBuilding_feature_competitions_title: 'Reptes sense xarxa',
   teamBuilding_feature_competitions_desc:
-    'Divideix el teu equip en grups i competeix pel millor ball.',
-  teamBuilding_feature_videoclip_title: 'Videoclip Corporatiu',
-  teamBuilding_feature_videoclip_desc: 'Gravem un videoclip professional amb el teu equip ballant.',
-  teamBuilding_feature_flashmob_title: 'Flashmob Empresarial',
+    "Competicions per equips on el ridícul és inevitable. I on el ridícul compartit és l'únic que genera vincles de veritat.",
+  teamBuilding_feature_videoclip_title: 'Evidència permanent',
+  teamBuilding_feature_videoclip_desc:
+    'Videoclip professional del vostre equip fent el que mai pensava fer. Branding intern que no necessita explicació.',
+  teamBuilding_feature_flashmob_title: 'Risc públic calculat',
   teamBuilding_feature_flashmob_desc:
-    'Sorprèn al teu esdeveniment amb un flashmob protagonitzat pel teu propi equip.',
-  teamBuilding_feature_custom_title: 'Experiències a Mida',
+    "Flashmob al teu esdeveniment. Sorpresa, exposició i orgull barrejats. Per a empreses que no tenen por d'ensenyar-se com són.",
+  teamBuilding_feature_custom_title: 'Formats a mida (amb criteri)',
   teamBuilding_feature_custom_desc:
-    'Dissenyem activitats personalitzades segons els teus objectius.',
-  teamBuilding_benefits_title: "Per què triar Farray's?",
-  teamBuilding_benefit_experience_title: "8+ Anys d'Experiència",
-  teamBuilding_benefit_experience_desc: 'Més de 500 esdeveniments corporatius realitzats amb èxit.',
-  teamBuilding_benefit_professionals_title: 'Instructors Professionals',
+    'Dissenyem experiències segons els teus objectius reals. No et direm que sí a tot: et direm el que funciona.',
+  teamBuilding_benefits_title: 'Aquí és on entrem nosaltres',
+  teamBuilding_benefit_experience_title: '8 anys posant gent en evidència (amb amor)',
+  teamBuilding_benefit_experience_desc:
+    '+500 esdeveniments corporatius. Multinacionals, startups, equips en crisi. Hem vist de tot. I seguim aquí.',
+  teamBuilding_benefit_professionals_title: 'CID-UNESCO i Mètode Farray',
   teamBuilding_benefit_professionals_desc:
-    'Equip de ballarins i coreògrafs professionals. Certificació CID-UNESCO.',
-  teamBuilding_benefit_flexibility_title: 'Màxima Flexibilitat',
-  teamBuilding_benefit_flexibility_desc: 'Ens adaptem als vostres horaris, ubicació i pressupost.',
-  teamBuilding_benefit_results_title: 'Resultats Mesurables',
+    "Certificació internacional que no usem per vendre. L'usem per fer-ho bé. I un mètode propi que funciona encara que no vulguis que funcioni.",
+  teamBuilding_benefit_flexibility_title: 'Cos, emoció, presència real',
+  teamBuilding_benefit_flexibility_desc:
+    "Treballem amb l'únic que no es pot fingir: el moviment. Si el teu equip no es mou junt, tampoc funcionarà junt.",
+  teamBuilding_benefit_results_title: 'Sense promeses de màrqueting',
   teamBuilding_benefit_results_desc:
-    'Millora de la comunicació i enfortiment de vincles entre companys.',
-  teamBuilding_benefit_fun_title: 'Diversió Garantida',
+    'No prometem que sortireu millors persones. Prometem que us veureu diferent. I que això canvia alguna cosa.',
+  teamBuilding_benefit_fun_title: 'No és diversió: és exposició',
   teamBuilding_benefit_fun_desc:
-    'Les nostres activitats estan dissenyades perquè tothom participi i gaudeixi.',
-  teamBuilding_benefit_location_title: 'Ubicació Cèntrica',
+    'Passareu vergonya. Us fareu figa en algun pas. I després, estranyament, us sentireu més a prop. Així funciona.',
+  teamBuilding_benefit_location_title: 'Al cor de Barcelona (Eixample)',
   teamBuilding_benefit_location_desc:
-    'Instal·lacions pròpies de 400m² al cor de Barcelona (Eixample).',
+    "400m² al Carrer d'Entença 100. O anem on ens digueu. La ubicació és el de menys.",
   teamBuilding_process_title: 'Com Funciona?',
   teamBuilding_process_step1_title: 'Contacta amb Nosaltres',
   teamBuilding_process_step1_desc:
@@ -19026,13 +19032,17 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   teamBuilding_process_step3_desc: 'Coordinem tots els detalls logístics.',
   teamBuilding_process_step4_title: 'A Ballar!',
   teamBuilding_process_step4_desc: "Gaudiu d'una experiència única.",
-  teamBuilding_idealFor_title: 'Ideal Per...',
-  teamBuilding_idealFor_corporate: 'Empreses que busquen team building original',
-  teamBuilding_idealFor_startups: 'Startups i empreses tecnològiques',
-  teamBuilding_idealFor_departments: 'Departaments que necessiten millorar comunicació',
-  teamBuilding_idealFor_incentives: "Viatges d'incentius i convencions",
-  teamBuilding_idealFor_conventions: 'Esdeveniments corporatius i llançaments',
-  teamBuilding_idealFor_celebrations: "Celebracions d'empresa i aniversaris",
+  teamBuilding_idealFor_title: 'Això és per a tu si...',
+  teamBuilding_idealFor_corporate: 'El teu equip necessita quelcom que no sigui «més del mateix»',
+  teamBuilding_idealFor_startups:
+    "Estàs fart/a d'activitats que queden bé a la foto però no canvien res",
+  teamBuilding_idealFor_departments:
+    "Vols veure com reacciona la teva gent quan no pot amagar-se darrere d'un PowerPoint",
+  teamBuilding_idealFor_incentives:
+    'Busques un incentiu que recordin per alguna cosa més que el càtering',
+  teamBuilding_idealFor_conventions: 'Tens un esdeveniment i vols que passi alguna cosa de veritat',
+  teamBuilding_idealFor_celebrations:
+    "Creus que el teu equip té més potencial del que mostra a l'oficina",
   teamBuilding_packages_title: 'Els Nostres Paquets',
   teamBuilding_package_popular_badge: 'Més Popular',
   teamBuilding_package_express_title: 'Express',
@@ -19111,11 +19121,80 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   teamBuilding_related_fiestas_desc: 'Comiats de soltera, aniversaris i celebracions privades.',
   teamBuilding_related_particulares_title: 'Classes Particulars',
   teamBuilding_related_particulares_desc: 'Classes privades per a executius o grups reduïts.',
-  teamBuilding_cta_title: 'Llest per al teu Team Building?',
+  teamBuilding_cta_title: 'El filtre final (llegeix-ho a poc a poc)',
   teamBuilding_cta_desc:
-    'Contacta amb nosaltres i rep un pressupost personalitzat en menys de 24 hores.',
-  teamBuilding_cta_button: 'Sol·licitar Pressupost',
+    "Si busques complir l'expedient i que RRHH tingui fotos noves, no ens escriguis. Si vols alguna cosa que realment mogui al teu equip —encara que incomodi una mica—, llavors parlem. La resta pot seguir contractant escape rooms.",
+  teamBuilding_cta_button: 'Parlem (si tens criteri)',
   teamBuilding_schema_name: 'Team Building amb Ball a Barcelona',
   teamBuilding_schema_description:
-    'Activitats de team building amb ball a Barcelona. Centre CID-UNESCO.',
+    'Team building amb ball a Barcelona per a empreses que ja no creuen en team building. Experiències corporatives amb cos, emoció i presència real. Centre certificat CID-UNESCO amb 8+ anys i +500 esdeveniments.',
+
+  // ============================================================================
+  // NOVEDADES CAROUSEL
+  // ============================================================================
+  novedades_title: 'Últimes Novetats',
+  novedades_subtitle:
+    'Esdeveniments, workshops i notícies de la nostra acadèmia. No et perdis res.',
+  novedades_prev: 'Veure novetat anterior',
+  novedades_next: 'Veure següent novetat',
+  novedades_carouselLabel: 'Carrusel de últimes novetats',
+  novedades_indicators: 'Indicadors de diapositives',
+  novedades_goToSlide: 'Anar a la diapositiva {n}',
+
+  // Badges
+  novedades_badge_destacado: 'Destacat',
+  novedades_badge_nuevo: 'Nou',
+  novedades_badge_plazasLimitadas: 'Places Limitades',
+  novedades_badge_ultimasPlazas: 'Últimes Places',
+  novedades_badge_evento: 'Esdeveniment',
+  novedades_badge_competicion: 'Competició',
+
+  // CTAs
+  novedades_cta_reservar: 'Reservar Plaça',
+  novedades_cta_apuntarse: 'Apuntar-se',
+  novedades_cta_info: 'Més Informació',
+  novedades_cta_entradas: 'Aconseguir Entrades',
+  novedades_cta_inscribirse: 'Inscriure-se',
+
+  // Puertas Abiertas
+  novedades_puertasAbiertas_title: 'Portes Obertes Gener 2026',
+  novedades_puertasAbiertas_subtitle: 'Prova el centre sense compromís',
+  novedades_puertasAbiertas_desc:
+    'Del 7 al 31 de gener, vine a conèixer les nostres instal·lacions, professors i mètodes. Classes de prova gratuïtes en tots els estils.',
+  novedades_puertasAbiertas_alt: "Portes obertes a Farray's International Dance Center",
+
+  // Workshop Afro
+  novedades_workshopAfro_title: 'Workshop Afro amb Artista Convidat',
+  novedades_workshopAfro_subtitle: 'Masterclass especial',
+  novedades_workshopAfro_desc:
+    'Workshop intensiu de dansa Afro amb tècniques tradicionals i contemporànies. Nivell intermedi-avançat.',
+  novedades_workshopAfro_alt: 'Workshop de dansa Afro a Barcelona',
+
+  // Formación Profesional
+  novedades_formacion_title: 'Formació Professional 2026',
+  novedades_formacion_subtitle: 'Dansa Clàssica, Contemporània i Urbana',
+  novedades_formacion_desc:
+    'Programa intensiu de 6 mesos per a ballarins que volen professionalitzar-se. 20 hores setmanals amb els millors professors.',
+  novedades_formacion_alt: 'Formació professional de dansa a Barcelona',
+
+  // Bachata Intensivo
+  novedades_bachataIntensivo_title: 'Intensiu de Bachata Sensual',
+  novedades_bachataIntensivo_subtitle: 'Per a parelles i sols',
+  novedades_bachataIntensivo_desc:
+    'Aprèn els moviments més sensuals de la bachata en aquest workshop intensiu. Principiants i avançats.',
+  novedades_bachataIntensivo_alt: 'Classe intensiva de bachata sensual a Barcelona',
+
+  // Heels Showcase
+  novedades_heelsShowcase_title: 'Heels Showcase - Dia de la Dona',
+  novedades_heelsShowcase_subtitle: 'Espectacle especial 8M',
+  novedades_heelsShowcase_desc:
+    'Celebra el Dia de la Dona amb un showcase espectacular de les nostres alumnes de Heels. Entrada lliure.',
+  novedades_heelsShowcase_alt: 'Showcase de Heels en el Dia de la Dona',
+
+  // Hip Hop Battle
+  novedades_hipHopBattle_title: 'Hip Hop Battle Barcelona',
+  novedades_hipHopBattle_subtitle: 'Competició oberta',
+  novedades_hipHopBattle_desc:
+    'Batalla de Hip Hop oberta a tots els nivells. Premis per als guanyadors. Inscriu-te i demostra el teu talent!',
+  novedades_hipHopBattle_alt: 'Competició de Hip Hop Battle a Barcelona',
 };

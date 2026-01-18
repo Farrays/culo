@@ -45,7 +45,7 @@ describe('SchemaMarkup', () => {
         ...defaultProps,
         aggregateRating: {
           ratingValue: '5',
-          reviewCount: '505',
+          reviewCount: '509',
         },
       };
 

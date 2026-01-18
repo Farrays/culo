@@ -283,4 +283,106 @@ for (const file of clasesParticularesFiles) {
 
 console.log(`✔ Clases Particulares: todas las imágenes generadas\n`);
 
+// ============================================================================
+// PROCESAR FOTOS DE YUNAISY (ARTÍSTICAS)
+// ============================================================================
+console.log("\n✨ Procesando fotos artísticas de Yunaisy...\n");
+const yunaisyRawDir = `public/images/yunaisy/raw`;
+const yunaisyOutDir = `public/images/yunaisy/img`;
+await mkdir(yunaisyOutDir, { recursive: true });
+
+let yunaisyFiles = [];
+try {
+  yunaisyFiles = (await readdir(yunaisyRawDir)).filter(f => /\.(jpe?g|png|webp)$/i.test(f));
+} catch {
+  console.log(`  ⚠️ No se encontró carpeta ${yunaisyRawDir} o está vacía`);
+}
+
+// Enterprise: 5 breakpoints for yunaisy images (3:4 portrait)
+const yunaisySizes = [320, 640, 768, 1024, 1440];
+
+for (const file of yunaisyFiles) {
+  const inPath = join(yunaisyRawDir, file);
+  const ext = extname(file).toLowerCase();
+  const base = basename(file, ext).toLowerCase().replace(/\s+/g, "-");
+
+  const meta = await sharp(inPath).metadata();
+  console.log(`  Processing yunaisy: ${file} (${meta.width}x${meta.height})`);
+
+  for (const w of yunaisySizes) {
+    // AVIF (best compression - Enterprise)
+    await sharp(inPath)
+      .resize({ width: w, withoutEnlargement: true })
+      .avif({ quality: 75, effort: 4 })
+      .toFile(join(yunaisyOutDir, `${base}_${w}.avif`));
+
+    // WEBP (good compression, wide support)
+    await sharp(inPath)
+      .resize({ width: w, withoutEnlargement: true })
+      .webp({ quality: 85 })
+      .toFile(join(yunaisyOutDir, `${base}_${w}.webp`));
+
+    // JPEG fallback (universal support)
+    await sharp(inPath)
+      .resize({ width: w, withoutEnlargement: true })
+      .jpeg({ quality: 85, mozjpeg: true })
+      .toFile(join(yunaisyOutDir, `${base}_${w}.jpg`));
+
+    console.log(`    ✓ Generated ${base}_${w} (.avif, .webp, .jpg)`);
+  }
+}
+
+console.log(`✔ Yunaisy: todas las imágenes generadas\n`);
+
+// ============================================================================
+// PROCESAR FOTOS DE NOVEDADES (CAROUSEL)
+// ============================================================================
+console.log("\n📰 Procesando fotos de novedades...\n");
+const novedadesRawDir = `public/images/novedades/raw`;
+const novedadesOutDir = `public/images/novedades/img`;
+await mkdir(novedadesOutDir, { recursive: true });
+
+let novedadesFiles = [];
+try {
+  novedadesFiles = (await readdir(novedadesRawDir)).filter(f => /\.(jpe?g|png|webp)$/i.test(f));
+} catch {
+  console.log(`  ⚠️ No se encontró carpeta ${novedadesRawDir} o está vacía`);
+}
+
+// Enterprise: 4 breakpoints for novedades carousel (16:9 landscape)
+const novedadesSizes = [320, 640, 768, 1024];
+
+for (const file of novedadesFiles) {
+  const inPath = join(novedadesRawDir, file);
+  const ext = extname(file).toLowerCase();
+  const base = basename(file, ext).toLowerCase().replace(/\s+/g, "-");
+
+  const meta = await sharp(inPath).metadata();
+  console.log(`  Processing novedad: ${file} (${meta.width}x${meta.height})`);
+
+  for (const w of novedadesSizes) {
+    // AVIF (best compression - Enterprise)
+    await sharp(inPath)
+      .resize({ width: w, withoutEnlargement: true })
+      .avif({ quality: 70, effort: 4 })
+      .toFile(join(novedadesOutDir, `${base}_${w}.avif`));
+
+    // WEBP (good compression, wide support)
+    await sharp(inPath)
+      .resize({ width: w, withoutEnlargement: true })
+      .webp({ quality: 80 })
+      .toFile(join(novedadesOutDir, `${base}_${w}.webp`));
+
+    // JPEG fallback (universal support)
+    await sharp(inPath)
+      .resize({ width: w, withoutEnlargement: true })
+      .jpeg({ quality: 82, mozjpeg: true })
+      .toFile(join(novedadesOutDir, `${base}_${w}.jpg`));
+
+    console.log(`    ✓ Generated ${base}_${w} (.avif, .webp, .jpg)`);
+  }
+}
+
+console.log(`✔ Novedades: todas las imágenes generadas\n`);
+
 console.log("🎉 Build completo!");

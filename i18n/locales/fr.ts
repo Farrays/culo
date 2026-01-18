@@ -11,6 +11,7 @@ export const fr = {
   breadcrumb_home: 'Accueil',
   home: 'Accueil',
   contact: 'Contact',
+  contactUs: 'Nous Contacter',
   skipToMain: 'Passer au contenu principal',
   viewSchedule: 'Voir les Horaires',
   bookNow: 'Réserver Maintenant',
@@ -19140,13 +19141,14 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // ============================================================================
   // Team Building Page
   // ============================================================================
-  teamBuilding_pageTitle: "Team Building Danse à Barcelone | Activités Corporatives | Farray's",
+  teamBuilding_pageTitle:
+    "Team Building Danse Barcelone | Pour Entreprises Qui Ne Croient Plus au Team Building | Farray's",
   teamBuilding_metaDescription:
-    'Team building danse à Barcelone. Activités corporatives originales : workshops, chorégraphies, clips vidéo et flashmobs. 500+ événements. CID-UNESCO.',
+    'Team building danse à Barcelone pour entreprises qui en ont fini avec les rituels vides. Pas de dynamiques creuses : corps, émotion, présence réelle. CID-UNESCO. 500+ événements.',
   teamBuilding_heroTitle: 'Team Building Barcelone',
-  teamBuilding_heroSubtitle: 'avec Danse',
+  teamBuilding_heroSubtitle: "pour entreprises qui n'y croient plus",
   teamBuilding_heroIntro:
-    "Transformez votre prochain événement corporatif avec des activités de team building danse à Barcelone. Chez Farray's International Dance Center, nous créons depuis 8 ans des expériences uniques qui renforcent les équipes et améliorent la communication.",
+    "Pour les entreprises qui ne croient plus au team building. Si vous avez juste besoin d'une activité de plus à cocher, arrêtez de lire. Mais si vous voulez que votre équipe se regarde vraiment dans les yeux, transpire ensemble et en rie après, peut-être que ça vaut le coup de continuer.",
   teamBuilding_trust_rating: '4.9★',
   teamBuilding_trust_rating_label: 'sur Google',
   teamBuilding_trust_unesco: 'CID-UNESCO',
@@ -19155,48 +19157,51 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   teamBuilding_trust_years_label: 'ans',
   teamBuilding_trust_events: '500+',
   teamBuilding_trust_events_label: 'événements',
-  teamBuilding_problem_title: "Réunions d'entreprise ennuyeuses ?",
+  teamBuilding_problem_title: 'Le problème dont personne ne parle',
   teamBuilding_problem_desc:
-    "Les activités traditionnelles de team building semblent souvent prévisibles et ne génèrent pas l'impact souhaité.",
-  teamBuilding_solution_title: 'Des expériences qui transforment les équipes',
+    "Les équipes coexistent. Elles collaborent juste assez. Elles se tolèrent poliment. Et une fois par an, les RH les emmènent faire du paintball ou des escape games parce qu'« il faut bien faire quelque chose ». Selon Gallup, seuls 21% des employés dans le monde sont engagés. Le coût mondial : 8,8 trillions de dollars. Mais personne n'en parle ouvertement.",
+  teamBuilding_solution_title: "Le doux mensonge de l'engagement corporate",
   teamBuilding_solution_desc:
-    'La danse brise les barrières, libère des endorphines et crée des connexions authentiques entre collègues.',
-  teamBuilding_features_title: 'Nos Activités de Team Building',
-  teamBuilding_feature_workshops_title: 'Ateliers de Danse',
+    "On réserve des dynamiques qui ne bougent rien. On cherche des activités confortables. Où personne n'a besoin de se montrer vulnérable ni de sortir de sa zone de confort. Le résultat : des photos pour LinkedIn et zéro impact réel.",
+  teamBuilding_features_title: 'Nous ne proposons pas des cours de danse pour entreprises',
+  teamBuilding_feature_workshops_title: 'Inconfort collectif',
   teamBuilding_feature_workshops_desc:
-    'Sessions de 1 à 3 heures où votre équipe apprend une chorégraphie de groupe.',
-  teamBuilding_feature_choreography_title: 'Chorégraphies Personnalisées',
+    "Sessions où votre équipe devra se regarder, rire d'elle-même et arrêter de prétendre que tout va bien. 1 à 3 heures d'inconfort honnête.",
+  teamBuilding_feature_choreography_title: 'Sueur partagée',
   teamBuilding_feature_choreography_desc:
-    'Nous créons des chorégraphies exclusives pour votre entreprise.',
-  teamBuilding_feature_competitions_title: 'Compétitions par Équipes',
+    "Chorégraphies qui exigent une vraie coordination. Qui révèlent qui dirige et qui suit. Qui en disent plus sur votre équipe que n'importe quel test de personnalité.",
+  teamBuilding_feature_competitions_title: 'Défis sans filet',
   teamBuilding_feature_competitions_desc:
-    'Divisez votre équipe en groupes et concourez pour la meilleure danse.',
-  teamBuilding_feature_videoclip_title: 'Clip Vidéo Corporatif',
+    "Compétitions par équipes où l'embarras est inévitable. Et où l'embarras partagé est la seule chose qui crée de vrais liens.",
+  teamBuilding_feature_videoclip_title: 'Preuve permanente',
   teamBuilding_feature_videoclip_desc:
-    'Nous enregistrons un clip vidéo professionnel avec votre équipe qui danse.',
-  teamBuilding_feature_flashmob_title: 'Flashmob Entreprise',
+    "Vidéo professionnelle de votre équipe faisant ce qu'elle n'aurait jamais cru faire. Du branding interne qui n'a pas besoin d'explication.",
+  teamBuilding_feature_flashmob_title: 'Risque public calculé',
   teamBuilding_feature_flashmob_desc:
-    'Surprenez lors de votre événement avec un flashmob mettant en vedette votre propre équipe.',
-  teamBuilding_feature_custom_title: 'Expériences Sur Mesure',
+    "Flashmob à votre événement. Surprise, exposition et fierté mélangées. Pour entreprises qui n'ont pas peur de montrer qui elles sont.",
+  teamBuilding_feature_custom_title: 'Formats sur mesure (avec exigence)',
   teamBuilding_feature_custom_desc:
-    'Nous concevons des activités personnalisées selon vos objectifs.',
-  teamBuilding_benefits_title: "Pourquoi Choisir Farray's ?",
-  teamBuilding_benefit_experience_title: "8+ Ans d'Expérience",
-  teamBuilding_benefit_experience_desc: 'Plus de 500 événements corporatifs réalisés avec succès.',
-  teamBuilding_benefit_professionals_title: 'Instructeurs Professionnels',
+    'Nous concevons des expériences selon vos objectifs réels. On ne dira pas oui à tout : on vous dira ce qui fonctionne vraiment.',
+  teamBuilding_benefits_title: "C'est là que nous intervenons",
+  teamBuilding_benefit_experience_title:
+    '8 ans à mettre les gens en situation (avec bienveillance)',
+  teamBuilding_benefit_experience_desc:
+    '500+ événements corporatifs. Multinationales, startups, équipes en crise. On a tout vu. Et on est toujours là.',
+  teamBuilding_benefit_professionals_title: 'CID-UNESCO et Méthode Farray',
   teamBuilding_benefit_professionals_desc:
-    'Équipe de danseurs et chorégraphes professionnels. Certification CID-UNESCO.',
-  teamBuilding_benefit_flexibility_title: 'Flexibilité Maximale',
-  teamBuilding_benefit_flexibility_desc: 'Nous nous adaptons à vos horaires, lieu et budget.',
-  teamBuilding_benefit_results_title: 'Résultats Mesurables',
+    "Certification internationale qu'on n'utilise pas pour vendre. On l'utilise pour bien faire. Et une méthode propriétaire qui fonctionne même quand vous ne voulez pas qu'elle fonctionne.",
+  teamBuilding_benefit_flexibility_title: 'Corps, émotion, présence réelle',
+  teamBuilding_benefit_flexibility_desc:
+    "On travaille avec la seule chose qu'on ne peut pas simuler : le mouvement. Si votre équipe ne bouge pas ensemble, elle ne fonctionnera pas ensemble non plus.",
+  teamBuilding_benefit_results_title: 'Pas de promesses marketing',
   teamBuilding_benefit_results_desc:
-    'Amélioration de la communication et renforcement des liens entre collègues.',
-  teamBuilding_benefit_fun_title: 'Plaisir Garanti',
+    'On ne promet pas que vous en sortirez meilleures personnes. On promet que vous vous verrez différemment. Et ça change quelque chose.',
+  teamBuilding_benefit_fun_title: "Ce n'est pas du divertissement : c'est de l'exposition",
   teamBuilding_benefit_fun_desc:
-    "Nos activités sont conçues pour que tout le monde participe et s'amuse.",
-  teamBuilding_benefit_location_title: 'Emplacement Central',
+    "Vous aurez honte. Vous raterez des pas. Et après, étrangement, vous vous sentirez plus proches. C'est comme ça que ça marche.",
+  teamBuilding_benefit_location_title: 'Cœur de Barcelone (Eixample)',
   teamBuilding_benefit_location_desc:
-    'Nos propres installations de 400m² au cœur de Barcelone (Eixample).',
+    "400m² au Carrer d'Entença 100. Ou on vient chez vous. L'emplacement, c'est le moins important.",
   teamBuilding_process_title: 'Comment Ça Marche ?',
   teamBuilding_process_step1_title: 'Contactez-nous',
   teamBuilding_process_step1_desc:
@@ -19207,13 +19212,19 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   teamBuilding_process_step3_desc: 'Nous coordonnons tous les détails logistiques.',
   teamBuilding_process_step4_title: 'On Danse !',
   teamBuilding_process_step4_desc: "Profitez d'une expérience unique.",
-  teamBuilding_idealFor_title: 'Idéal Pour...',
-  teamBuilding_idealFor_corporate: 'Entreprises cherchant un team building original',
-  teamBuilding_idealFor_startups: 'Startups et entreprises tech',
-  teamBuilding_idealFor_departments: 'Départements devant améliorer la communication',
-  teamBuilding_idealFor_incentives: "Voyages d'incentive et conventions",
-  teamBuilding_idealFor_conventions: 'Événements corporatifs et lancements',
-  teamBuilding_idealFor_celebrations: "Célébrations d'entreprise et anniversaires",
+  teamBuilding_idealFor_title: "C'est pour vous si...",
+  teamBuilding_idealFor_corporate:
+    'Votre équipe a besoin de quelque chose qui ne soit pas « encore la même chose »',
+  teamBuilding_idealFor_startups:
+    'Vous en avez assez des activités qui font bien sur les photos mais ne changent rien',
+  teamBuilding_idealFor_departments:
+    'Vous voulez voir comment vos gens réagissent quand ils ne peuvent pas se cacher derrière un PowerPoint',
+  teamBuilding_idealFor_incentives:
+    'Vous cherchez un incentive dont ils se souviendront pour autre chose que le traiteur',
+  teamBuilding_idealFor_conventions:
+    "Vous avez un événement et vous voulez qu'il se passe vraiment quelque chose",
+  teamBuilding_idealFor_celebrations:
+    "Vous croyez que votre équipe a plus de potentiel que ce qu'elle montre au bureau",
   teamBuilding_packages_title: 'Nos Forfaits',
   teamBuilding_package_popular_badge: 'Plus Populaire',
   teamBuilding_package_express_title: 'Express',
@@ -19291,10 +19302,79 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
     'Enterrements de vie de jeune fille, anniversaires et célébrations privées.',
   teamBuilding_related_particulares_title: 'Cours Particuliers',
   teamBuilding_related_particulares_desc: 'Cours privés pour cadres ou petits groupes.',
-  teamBuilding_cta_title: 'Prêt pour Votre Team Building ?',
-  teamBuilding_cta_desc: 'Contactez-nous et recevez un devis personnalisé sous 24 heures.',
-  teamBuilding_cta_button: 'Demander un Devis',
+  teamBuilding_cta_title: 'Le filtre final (lisez lentement)',
+  teamBuilding_cta_desc:
+    "Si vous cherchez juste à cocher une case et donner de nouvelles photos aux RH, ne nous contactez pas. Si vous voulez quelque chose qui fasse vraiment bouger votre équipe — même si c'est un peu inconfortable — alors parlons-en. Les autres peuvent continuer à réserver des escape games.",
+  teamBuilding_cta_button: 'Parlons-en (si vous avez des critères)',
   teamBuilding_schema_name: 'Team Building Danse à Barcelone',
   teamBuilding_schema_description:
-    'Activités de team building danse à Barcelone. Centre certifié CID-UNESCO.',
+    'Team building danse à Barcelone pour entreprises qui ne croient plus au team building. Expériences corporatives avec corps, émotion et présence réelle. Centre certifié CID-UNESCO avec 8+ ans et 500+ événements.',
+
+  // ============================================================================
+  // NOVEDADES CAROUSEL
+  // ============================================================================
+  novedades_title: 'Dernières Actualités',
+  novedades_subtitle: 'Événements, workshops et actualités de notre académie. Ne manquez rien.',
+  novedades_prev: 'Voir actualité précédente',
+  novedades_next: 'Voir actualité suivante',
+  novedades_carouselLabel: 'Carrousel des dernières actualités',
+  novedades_indicators: 'Indicateurs de diapositives',
+  novedades_goToSlide: 'Aller à la diapositive {n}',
+
+  // Badges
+  novedades_badge_destacado: 'En Vedette',
+  novedades_badge_nuevo: 'Nouveau',
+  novedades_badge_plazasLimitadas: 'Places Limitées',
+  novedades_badge_ultimasPlazas: 'Dernières Places',
+  novedades_badge_evento: 'Événement',
+  novedades_badge_competicion: 'Compétition',
+
+  // CTAs
+  novedades_cta_reservar: 'Réserver',
+  novedades_cta_apuntarse: "S'inscrire",
+  novedades_cta_info: "Plus d'Infos",
+  novedades_cta_entradas: 'Obtenir Billets',
+  novedades_cta_inscribirse: "S'inscrire",
+
+  // Puertas Abiertas
+  novedades_puertasAbiertas_title: 'Portes Ouvertes Janvier 2026',
+  novedades_puertasAbiertas_subtitle: 'Essayez le centre sans engagement',
+  novedades_puertasAbiertas_desc:
+    "Du 7 au 31 janvier, venez découvrir nos installations, professeurs et méthodes. Cours d'essai gratuits dans tous les styles.",
+  novedades_puertasAbiertas_alt: "Portes ouvertes à Farray's International Dance Center",
+
+  // Workshop Afro
+  novedades_workshopAfro_title: 'Workshop Afro avec Artiste Invité',
+  novedades_workshopAfro_subtitle: 'Masterclass spéciale',
+  novedades_workshopAfro_desc:
+    'Workshop intensif de danse Afro avec techniques traditionnelles et contemporaines. Niveau intermédiaire-avancé.',
+  novedades_workshopAfro_alt: 'Workshop de danse Afro à Barcelone',
+
+  // Formación Profesional
+  novedades_formacion_title: 'Formation Professionnelle 2026',
+  novedades_formacion_subtitle: 'Danse Classique, Contemporaine et Urbaine',
+  novedades_formacion_desc:
+    'Programme intensif de 6 mois pour danseurs souhaitant se professionnaliser. 20 heures par semaine avec les meilleurs professeurs.',
+  novedades_formacion_alt: 'Formation professionnelle de danse à Barcelone',
+
+  // Bachata Intensivo
+  novedades_bachataIntensivo_title: 'Intensif Bachata Sensuelle',
+  novedades_bachataIntensivo_subtitle: 'Pour couples et solos',
+  novedades_bachataIntensivo_desc:
+    'Apprenez les mouvements les plus sensuels de la bachata dans ce workshop intensif. Débutants et avancés.',
+  novedades_bachataIntensivo_alt: 'Cours intensif de bachata sensuelle à Barcelone',
+
+  // Heels Showcase
+  novedades_heelsShowcase_title: 'Heels Showcase - Journée de la Femme',
+  novedades_heelsShowcase_subtitle: 'Spectacle spécial 8M',
+  novedades_heelsShowcase_desc:
+    'Célébrez la Journée de la Femme avec un showcase spectaculaire de nos élèves de Heels. Entrée libre.',
+  novedades_heelsShowcase_alt: 'Showcase de Heels pour la Journée de la Femme',
+
+  // Hip Hop Battle
+  novedades_hipHopBattle_title: 'Hip Hop Battle Barcelone',
+  novedades_hipHopBattle_subtitle: 'Compétition ouverte',
+  novedades_hipHopBattle_desc:
+    'Bataille de Hip Hop ouverte à tous les niveaux. Prix pour les gagnants. Inscrivez-vous et montrez votre talent !',
+  novedades_hipHopBattle_alt: 'Compétition Hip Hop Battle à Barcelone',
 };

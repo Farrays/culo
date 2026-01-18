@@ -378,7 +378,7 @@ const HorariosPreciosPage: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <StarIcon className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                   <span className="font-semibold">4.9/5</span>
-                  <span className="text-sm">(505+ reseñas)</span>
+                  <span className="text-sm">(509+ reseñas)</span>
                 </div>
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
@@ -932,7 +932,7 @@ const HorariosPreciosPage: React.FC = () => {
                     ))}
                   </div>
                   <div className="text-xs sm:text-sm text-neutral/70">
-                    {t('basedOnReviews').replace('{count}', '505')}
+                    {t('basedOnReviews').replace('{count}', '509')}
                   </div>
                   <div className="mt-2 text-xs text-neutral/70">Google</div>
                 </div>

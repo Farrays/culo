@@ -48,6 +48,7 @@ const SalsaLadyStylePage = lazy(() => import('./components/SalsaLadyStylePage'))
 const SalsaLadyStylePageV2 = lazy(() => import('./components/SalsaLadyStylePageV2'));
 const BachataLadyStylePage = lazy(() => import('./components/BachataLadyStylePage'));
 const BachataPage = lazy(() => import('./components/BachataPage'));
+const TeamBuildingPage = lazy(() => import('./components/TeamBuildingPage'));
 
 // ===== DANCE CLASS PAGES USING UNIFIED TEMPLATE =====
 // Migrated from ~900 lines each to ~15 lines using FullDanceClassTemplate
@@ -226,6 +227,7 @@ const EXIT_INTENT_EXCLUDED_PATHS = [
 
 // Promotion configuration - easy to update
 const EXIT_INTENT_PROMO_CONFIG = {
+  enabled: false, // Set to true to enable the exit intent modal
   endDate: new Date('2026-01-31T23:59:59'),
   discountPercent: 50,
   delay: 5000, // 5 seconds before activating detection
@@ -267,6 +269,9 @@ const AppContent: React.FC = () => {
 
   // Determine if exit intent modal should show on current page
   const shouldShowExitIntent = useMemo(() => {
+    // Check if modal is enabled
+    if (!EXIT_INTENT_PROMO_CONFIG.enabled) return false;
+
     // Remove locale prefix to get the base path
     const pathWithoutLocale = location.pathname.replace(/^\/(es|en|ca|fr)/, '') || '/';
 
@@ -653,6 +658,16 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <ClasesParticularesPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/team-building-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <TeamBuildingPage />
                 </>
               }
             />

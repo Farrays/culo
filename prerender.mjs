@@ -214,6 +214,7 @@ const routes = [
   { path: 'es/clases/cuerpo-fit', lang: 'es', page: 'cuerpoFit' },
   { path: 'es/clases/baile-mananas', lang: 'es', page: 'baileManananas' },
   { path: 'es/clases-particulares-baile', lang: 'es', page: 'clasesParticulares' },
+  { path: 'es/team-building-barcelona', lang: 'es', page: 'teamBuilding' },
   { path: 'es/sobre-nosotros', lang: 'es', page: 'about' },
   { path: 'es/yunaisy-farray', lang: 'es', page: 'yunaisy' },
   { path: 'es/metodo-farray', lang: 'es', page: 'metodoFarray' },
@@ -280,6 +281,7 @@ const routes = [
   { path: 'ca/clases/cuerpo-fit', lang: 'ca', page: 'cuerpoFit' },
   { path: 'ca/clases/baile-mananas', lang: 'ca', page: 'baileManananas' },
   { path: 'ca/clases-particulares-baile', lang: 'ca', page: 'clasesParticulares' },
+  { path: 'ca/team-building-barcelona', lang: 'ca', page: 'teamBuilding' },
   { path: 'ca/sobre-nosotros', lang: 'ca', page: 'about' },
   { path: 'ca/yunaisy-farray', lang: 'ca', page: 'yunaisy' },
   { path: 'ca/metodo-farray', lang: 'ca', page: 'metodoFarray' },
@@ -346,6 +348,7 @@ const routes = [
   { path: 'en/clases/cuerpo-fit', lang: 'en', page: 'cuerpoFit' },
   { path: 'en/clases/baile-mananas', lang: 'en', page: 'baileManananas' },
   { path: 'en/clases-particulares-baile', lang: 'en', page: 'clasesParticulares' },
+  { path: 'en/team-building-barcelona', lang: 'en', page: 'teamBuilding' },
   { path: 'en/sobre-nosotros', lang: 'en', page: 'about' },
   { path: 'en/yunaisy-farray', lang: 'en', page: 'yunaisy' },
   { path: 'en/metodo-farray', lang: 'en', page: 'metodoFarray' },
@@ -412,6 +415,7 @@ const routes = [
   { path: 'fr/clases/cuerpo-fit', lang: 'fr', page: 'cuerpoFit' },
   { path: 'fr/clases/baile-mananas', lang: 'fr', page: 'baileManananas' },
   { path: 'fr/clases-particulares-baile', lang: 'fr', page: 'clasesParticulares' },
+  { path: 'fr/team-building-barcelona', lang: 'fr', page: 'teamBuilding' },
   { path: 'fr/sobre-nosotros', lang: 'fr', page: 'about' },
   { path: 'fr/yunaisy-farray', lang: 'fr', page: 'yunaisy' },
   { path: 'fr/metodo-farray', lang: 'fr', page: 'metodoFarray' },
@@ -640,6 +644,10 @@ const metadata = {
     clasesParticulares: {
       title: 'Clases Particulares de Baile en Barcelona | Personalizado y a Tu Ritmo | Farray\'s Center',
       description: 'Clases particulares de baile en Barcelona 100% personalizadas. Profesor exclusivo para ti, horarios flexibles, todos los estilos. Aprende 3x más rápido que en clases grupales. Bonos disponibles.',
+    },
+    teamBuilding: {
+      title: 'Team Building con Baile en Barcelona | Para Empresas que No Creen en Team Building | Farray\'s',
+      description: 'Team building con baile en Barcelona para empresas que ya no creen en team building. Sin dinámicas vacías: cuerpo, emoción, presencia real. CID-UNESCO. +500 eventos.',
     },
     about: {
       title: 'Sobre Nosotros | Farray\'s International Dance Center Barcelona',
@@ -941,6 +949,10 @@ const metadata = {
       title: 'Classes Particulars de Ball a Barcelona | Personalitzat i al Teu Ritme | Farray\'s Center',
       description: 'Classes particulars de ball a Barcelona 100% personalitzades. Professor exclusiu per a tu, horaris flexibles, tots els estils. Aprèn 3x més ràpid que en classes grupals. Bons disponibles.',
     },
+    teamBuilding: {
+      title: 'Team Building amb Ball a Barcelona | Per a Empreses que Ja No Creuen en Team Building | Farray\'s',
+      description: 'Team building amb ball a Barcelona per a empreses que ja no creuen en team building. Sense dinàmiques buides: cos, emoció, presència real. CID-UNESCO. +500 esdeveniments.',
+    },
     about: {
       title: 'Sobre Nosaltres | Farray\'s International Dance Center Barcelona',
       description: 'Coneix la nostra història, valors i equip. Acadèmia de ball a Barcelona fundada el 2017 amb mètode propi i professors internacionals.',
@@ -1241,6 +1253,10 @@ const metadata = {
       title: 'Private Dance Classes in Barcelona | Personalized and At Your Pace | Farray\'s Center',
       description: 'Private dance classes in Barcelona with 100% dedicated teacher. Salsa, Bachata, Dancehall, Contemporary Dance. Personalized teaching, flexible schedules and guaranteed results. Reserve your class now!',
     },
+    teamBuilding: {
+      title: 'Dance Team Building Barcelona | For Companies That No Longer Believe in Team Building | Farray\'s',
+      description: 'Dance team building in Barcelona for companies that no longer believe in team building. No empty dynamics: body, emotion, real presence. CID-UNESCO. +500 events.',
+    },
     about: {
       title: 'About Us | Farray\'s International Dance Center Barcelona',
       description: 'Learn about our history, values and team. Dance academy in Barcelona founded in 2017 with our own method and international teachers.',
@@ -1540,6 +1556,10 @@ const metadata = {
     clasesParticulares: {
       title: 'Cours Particuliers de Danse à Barcelone | Personnalisé et à Votre Rythme | Farray\'s Center',
       description: 'Cours particuliers de danse à Barcelone avec professeur 100% dédié. Salsa, Bachata, Dancehall, Danse Contemporaine. Enseignement personnalisé, horaires flexibles et résultats garantis. Réservez votre cours maintenant!',
+    },
+    teamBuilding: {
+      title: 'Team Building Danse Barcelone | Pour les Entreprises qui Ne Croient Plus au Team Building | Farray\'s',
+      description: 'Team building danse à Barcelone pour les entreprises qui ne croient plus au team building. Sans dynamiques vides : corps, émotion, présence réelle. CID-UNESCO. +500 événements.',
     },
     about: {
       title: 'À Propos | Farray\'s International Dance Center Barcelone',
@@ -1923,6 +1943,8 @@ routes.forEach(route => {
     pagePath = 'clases/modern-jazz-barcelona';
   } else if (page === 'clasesParticulares') {
     pagePath = 'clases-particulares-baile';
+  } else if (page === 'teamBuilding') {
+    pagePath = 'team-building-barcelona';
   } else if (page === 'blog') {
     pagePath = 'blog';
   } else if (page === 'blogLifestyle') {

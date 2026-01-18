@@ -11,6 +11,7 @@ export const es = {
   breadcrumb_home: 'Inicio',
   home: 'Inicio',
   contact: 'Contacto',
+  contactUs: 'Contactar',
   skipToMain: 'Saltar al contenido principal',
   viewSchedule: 'Ver Horarios',
   bookNow: 'Reservar Ahora',
@@ -20329,16 +20330,16 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   privacy_understood: 'Entendido',
 
   // ============================================================================
-  // Team Building Page
+  // Team Building Page - TONO PROVOCADOR ANTI-CORPORATIVO
   // ============================================================================
   teamBuilding_pageTitle:
-    "Team Building con Baile en Barcelona | Actividades Corporativas | Farray's",
+    "Team Building con Baile en Barcelona | Para Empresas que No Creen en Team Building | Farray's",
   teamBuilding_metaDescription:
-    'Team building con baile en Barcelona. Actividades corporativas originales: workshops, coreografías, videoclips y flashmobs. 500+ eventos. CID-UNESCO. Presupuesto sin compromiso.',
-  teamBuilding_heroTitle: 'Team Building Barcelona',
-  teamBuilding_heroSubtitle: 'con Baile',
+    'Team building con baile en Barcelona para empresas que ya no creen en el team building. Experiencias corporativas que incomodan y transforman. +500 eventos. CID-UNESCO.',
+  teamBuilding_heroTitle: 'Team Building con Baile',
+  teamBuilding_heroSubtitle: 'en Barcelona',
   teamBuilding_heroIntro:
-    "Transforma tu próximo evento corporativo con actividades de team building con baile en Barcelona. En Farray's International Dance Center llevamos 8 años creando experiencias únicas que fortalecen equipos, potencian la comunicación y generan recuerdos inolvidables. Más de 500 empresas ya han confiado en nosotros.",
+    'Para empresas que ya no creen en el team building. Si necesitas otro team building más, no sigas leyendo. Esto no es para "hacer algo chulo". Esto es para cambiar cómo se relacionan las personas dentro de tu organización. Y sí, eso incomoda un poco. Bienvenido.',
   teamBuilding_trust_rating: '4.9★',
   teamBuilding_trust_rating_label: 'en Google',
   teamBuilding_trust_unesco: 'CID-UNESCO',
@@ -20347,50 +20348,50 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   teamBuilding_trust_years_label: 'años',
   teamBuilding_trust_events: '500+',
   teamBuilding_trust_events_label: 'eventos',
-  teamBuilding_problem_title: '¿Reuniones corporativas aburridas?',
+  teamBuilding_problem_title: 'El problema que nadie verbaliza',
   teamBuilding_problem_desc:
-    'Las actividades tradicionales de team building a menudo resultan predecibles y no generan el impacto deseado. Los empleados participan por obligación, no por motivación, y los beneficios se olvidan al día siguiente.',
-  teamBuilding_solution_title: 'Experiencias que transforman equipos',
+    'Los equipos conviven. Colaboran lo justo. Son educados, profesionales, correctos. Y aun así, no están conectados de verdad. No por falta de talento. No por desmotivación. Sino porque nadie ha creado el espacio adecuado para que esa conexión ocurra. Según Gallup, solo el 21% de empleados a nivel mundial están engaged. El coste global: $8.8 trillion.',
+  teamBuilding_solution_title: 'La "mentira suave" del engagement corporativo',
   teamBuilding_solution_desc:
-    'El baile rompe barreras, libera endorfinas y crea conexiones genuinas entre compañeros. Nuestras actividades de team building con baile generan un impacto duradero en la cohesión del equipo y la cultura empresarial.',
-  teamBuilding_features_title: 'Nuestras Actividades de Team Building',
-  teamBuilding_feature_workshops_title: 'Workshops de Baile',
+    'Charlas motivacionales que se olvidan al día siguiente. Dinámicas "participativas" donde participa siempre el mismo. Actividades corporativas que no molestan, no mueven y no dejan huella. Como una playlist de ascensor: suena... pero no pasa nada. Aquí ofrecemos algo diferente. Algo que incomoda. Y algo que funciona.',
+  teamBuilding_features_title: 'No ofrecemos clases de baile para empresas',
+  teamBuilding_feature_workshops_title: 'Te equivocas delante de otros',
   teamBuilding_feature_workshops_desc:
-    'Sesiones de 1-3 horas donde tu equipo aprende una coreografía grupal. Adaptamos el estilo (salsa, bachata, hip hop, etc.) y nivel a vuestras preferencias.',
-  teamBuilding_feature_choreography_title: 'Coreografías Personalizadas',
+    'En nuestros workshops no puedes esconderte. No puedes fingir. No puedes delegar. Aprendes moviéndote, fallando, riéndote. Y ahí empiezan a pasar cosas que ningún consultor puede fabricar.',
+  teamBuilding_feature_choreography_title: 'Los roles se diluyen',
   teamBuilding_feature_choreography_desc:
-    'Creamos coreografías exclusivas para tu empresa, perfectas para presentaciones, convenciones o vídeos corporativos.',
-  teamBuilding_feature_competitions_title: 'Competiciones por Equipos',
+    'En la pista de baile, todos empiezan igual. Da igual si eres junior o director. Todos están aprendiendo los mismos pasos. Eso rompe silos y jerarquías de forma natural.',
+  teamBuilding_feature_competitions_title: 'Las personas aparecen',
   teamBuilding_feature_competitions_desc:
-    'Divide tu equipo en grupos y compite por el mejor baile. Fomenta la creatividad, el liderazgo y el trabajo en equipo de forma divertida.',
-  teamBuilding_feature_videoclip_title: 'Videoclip Corporativo',
+    'Cuando divides al equipo en grupos que compiten bailando, ves quiénes lideran de verdad, quiénes apoyan, quiénes se bloquean. Es un espejo que no miente.',
+  teamBuilding_feature_videoclip_title: 'Coreografía corporativa real',
   teamBuilding_feature_videoclip_desc:
-    'Grabamos un videoclip profesional con tu equipo bailando. Incluye coreografía, ensayos, grabación y edición profesional.',
-  teamBuilding_feature_flashmob_title: 'Flashmob Empresarial',
+    'Diseñamos experiencias corporativas basadas en el movimiento y la cultura. No enseñamos pasos. Provocamos encuentros reales. Un equipo no se une entendiendo algo. Se une viviendo algo juntos.',
+  teamBuilding_feature_flashmob_title: 'Flashmob que incomoda',
   teamBuilding_feature_flashmob_desc:
-    'Sorprende en tu evento con un flashmob protagonizado por tu propio equipo. Planificación, ensayos y ejecución impecable.',
-  teamBuilding_feature_custom_title: 'Experiencias a Medida',
+    'Un flashmob no es para "quedar bien". Es para soltar el control, confiar en el grupo y hacer algo que nunca harías solo. Eso deja marca.',
+  teamBuilding_feature_custom_title: 'Conexión auténtica',
   teamBuilding_feature_custom_desc:
-    'Diseñamos actividades personalizadas según tus objetivos: lanzamientos de producto, celebraciones, incentivos o cualquier ocasión especial.',
-  teamBuilding_benefits_title: "¿Por qué elegir Farray's?",
-  teamBuilding_benefit_experience_title: '8+ Años de Experiencia',
+    'Trabajamos con cuerpo, emoción y presencia real. Y cuando eso entra en juego: te tensas, te sueltas, te ríes. Ahí ocurre la conexión auténtica entre personas.',
+  teamBuilding_benefits_title: 'Aquí es donde entramos nosotros',
+  teamBuilding_benefit_experience_title: 'No trabajamos con teoría',
   teamBuilding_benefit_experience_desc:
-    'Más de 500 eventos corporativos realizados con éxito. Conocemos qué funciona y cómo adaptar cada actividad a diferentes perfiles de empresa.',
-  teamBuilding_benefit_professionals_title: 'Instructores Profesionales',
+    "En Farray's International Dance Center trabajamos con cuerpo, emoción y presencia real. 8 años. 500+ eventos corporativos. Empresas que repiten porque lo que hacemos funciona.",
+  teamBuilding_benefit_professionals_title: 'Profesionales CID-UNESCO',
   teamBuilding_benefit_professionals_desc:
-    'Equipo de bailarines y coreógrafos profesionales con experiencia en formación corporativa. Certificación CID-UNESCO.',
-  teamBuilding_benefit_flexibility_title: 'Máxima Flexibilidad',
+    'Instructores certificados internacionalmente que saben leer grupos, adaptar ritmos y provocar lo que necesita pasar. Sin fórmulas. Sin guiones.',
+  teamBuilding_benefit_flexibility_title: 'Esto no es bienestar corporativo',
   teamBuilding_benefit_flexibility_desc:
-    'Nos adaptamos a vuestros horarios, ubicación (en nuestras salas o en vuestras instalaciones) y presupuesto.',
-  teamBuilding_benefit_results_title: 'Resultados Medibles',
+    'El bienestar no se decreta. Se provoca. Y se provoca cuando una persona se siente vista, presente y conectada. No cuando recibe otro email de RRHH.',
+  teamBuilding_benefit_results_title: 'Resultados reales',
   teamBuilding_benefit_results_desc:
-    'Mejora de la comunicación, reducción del estrés y fortalecimiento de vínculos entre compañeros de forma medible.',
-  teamBuilding_benefit_fun_title: 'Diversión Garantizada',
+    "Después de una experiencia Farray's: la comunicación fluye diferente, la confianza aumenta, las conversaciones son más honestas. No prometemos magia. Prometemos efecto.",
+  teamBuilding_benefit_fun_title: 'Incomodidad productiva',
   teamBuilding_benefit_fun_desc:
-    'Nuestras actividades están diseñadas para que todos participen y disfruten, independientemente de su experiencia previa con el baile.',
-  teamBuilding_benefit_location_title: 'Ubicación Céntrica',
+    'Sí, puede ser incómodo al principio. Pero esa incomodidad es donde empieza el cambio. Donde se rompen las máscaras corporativas.',
+  teamBuilding_benefit_location_title: 'Barcelona, Eixample',
   teamBuilding_benefit_location_desc:
-    'Instalaciones propias de 400m² en el corazón de Barcelona (Eixample). Fácil acceso en metro y parking cercano.',
+    "Carrer d'Entença 100, Barcelona 08015. 400m² en el centro. También vamos a vuestras instalaciones o venues en toda Cataluña.",
   teamBuilding_process_title: '¿Cómo Funciona?',
   teamBuilding_process_step1_title: 'Contacta con Nosotros',
   teamBuilding_process_step1_desc:
@@ -20404,13 +20405,13 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   teamBuilding_process_step4_title: '¡A Bailar!',
   teamBuilding_process_step4_desc:
     'Disfrutad de una experiencia única que fortalecerá vuestro equipo y generará recuerdos inolvidables.',
-  teamBuilding_idealFor_title: 'Ideal Para...',
-  teamBuilding_idealFor_corporate: 'Empresas que buscan team building original',
-  teamBuilding_idealFor_startups: 'Startups y empresas tecnológicas',
-  teamBuilding_idealFor_departments: 'Departamentos que necesitan mejorar comunicación',
-  teamBuilding_idealFor_incentives: 'Viajes de incentivos y convenciones',
-  teamBuilding_idealFor_conventions: 'Eventos corporativos y lanzamientos',
-  teamBuilding_idealFor_celebrations: 'Celebraciones de empresa y aniversarios',
+  teamBuilding_idealFor_title: '¿Para qué tipo de empresa es esto?',
+  teamBuilding_idealFor_corporate: 'Lideras equipos y sientes que algo no termina de encajar',
+  teamBuilding_idealFor_startups: 'Estás cansado de invertir en team buildings sin impacto real',
+  teamBuilding_idealFor_departments: 'Quieres que tu gente se mire diferente después',
+  teamBuilding_idealFor_incentives: 'Buscas diferenciación auténtica, no postureo corporativo',
+  teamBuilding_idealFor_conventions: 'Multinacionales en Barcelona que quieren algo real',
+  teamBuilding_idealFor_celebrations: 'Empresas preparadas para vivir una experiencia incómoda',
   teamBuilding_packages_title: 'Nuestros Paquetes',
   teamBuilding_package_popular_badge: 'Más Popular',
   teamBuilding_package_express_title: 'Express',
@@ -20493,11 +20494,79 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   teamBuilding_related_particulares_title: 'Clases Particulares',
   teamBuilding_related_particulares_desc:
     'Clases privadas para ejecutivos o grupos reducidos con horarios flexibles.',
-  teamBuilding_cta_title: '¿Listo para tu Team Building?',
+  teamBuilding_cta_title: 'El filtro final (léelo despacio)',
   teamBuilding_cta_desc:
-    'Contacta con nosotros y recibe un presupuesto personalizado en menos de 24 horas. Sin compromiso.',
-  teamBuilding_cta_button: 'Solicitar Presupuesto',
+    'Si buscas una actividad corporativa para "cumplir"... no nos escribas. Si quieres que tu gente vuelva distinta al día siguiente, hablamos. No hacemos presupuestos estándar. No copiamos formatos. No trabajamos con cualquiera. El resto puede seguir contratando escape rooms.',
+  teamBuilding_cta_button: 'Hablemos (si tienes criterio)',
   teamBuilding_schema_name: 'Team Building con Baile en Barcelona',
   teamBuilding_schema_description:
-    'Actividades de team building con baile en Barcelona: workshops, coreografías, videoclips y flashmobs corporativos. 8+ años de experiencia, 500+ eventos. Centro CID-UNESCO.',
+    'Experiencias corporativas con baile en Barcelona para empresas que ya no creen en el team building convencional. Coreografía corporativa, flashmobs y dinámicas de grupo que transforman equipos. 8+ años, 500+ eventos, CID-UNESCO.',
+
+  // ============================================================================
+  // NOVEDADES CAROUSEL
+  // ============================================================================
+  novedades_title: 'Últimas Novedades',
+  novedades_subtitle: 'Eventos, workshops y noticias de nuestra academia. No te pierdas nada.',
+  novedades_prev: 'Ver novedad anterior',
+  novedades_next: 'Ver siguiente novedad',
+  novedades_carouselLabel: 'Carrusel de últimas novedades',
+  novedades_indicators: 'Indicadores de diapositivas',
+  novedades_goToSlide: 'Ir a la diapositiva {n}',
+
+  // Badges
+  novedades_badge_destacado: 'Destacado',
+  novedades_badge_nuevo: 'Nuevo',
+  novedades_badge_plazasLimitadas: 'Plazas Limitadas',
+  novedades_badge_ultimasPlazas: 'Últimas Plazas',
+  novedades_badge_evento: 'Evento',
+  novedades_badge_competicion: 'Competición',
+
+  // CTAs
+  novedades_cta_reservar: 'Reservar Plaza',
+  novedades_cta_apuntarse: 'Apuntarse',
+  novedades_cta_info: 'Más Información',
+  novedades_cta_entradas: 'Conseguir Entradas',
+  novedades_cta_inscribirse: 'Inscribirse',
+
+  // Puertas Abiertas
+  novedades_puertasAbiertas_title: 'Puertas Abiertas Enero 2026',
+  novedades_puertasAbiertas_subtitle: 'Prueba el centro sin compromiso',
+  novedades_puertasAbiertas_desc:
+    'Del 7 al 31 de enero, ven a conocer nuestras instalaciones, profesores y métodos. Clases de prueba gratuitas en todos los estilos.',
+  novedades_puertasAbiertas_alt: "Puertas abiertas en Farray's International Dance Center",
+
+  // Workshop Afro
+  novedades_workshopAfro_title: 'Workshop Afro con Artista Invitado',
+  novedades_workshopAfro_subtitle: 'Masterclass especial',
+  novedades_workshopAfro_desc:
+    'Workshop intensivo de danza Afro con técnicas tradicionales y contemporáneas. Nivel intermedio-avanzado.',
+  novedades_workshopAfro_alt: 'Workshop de danza Afro en Barcelona',
+
+  // Formación Profesional
+  novedades_formacion_title: 'Formación Profesional 2026',
+  novedades_formacion_subtitle: 'Danza Clásica, Contemporánea y Urbana',
+  novedades_formacion_desc:
+    'Programa intensivo de 6 meses para bailarines que quieren profesionalizarse. 20 horas semanales con los mejores profesores.',
+  novedades_formacion_alt: 'Formación profesional de danza en Barcelona',
+
+  // Bachata Intensivo
+  novedades_bachataIntensivo_title: 'Intensivo de Bachata Sensual',
+  novedades_bachataIntensivo_subtitle: 'Para parejas y solos',
+  novedades_bachataIntensivo_desc:
+    'Aprende los movimientos más sensuales de la bachata en este workshop intensivo. Principiantes y avanzados.',
+  novedades_bachataIntensivo_alt: 'Clase intensiva de bachata sensual en Barcelona',
+
+  // Heels Showcase
+  novedades_heelsShowcase_title: 'Heels Showcase - Día de la Mujer',
+  novedades_heelsShowcase_subtitle: 'Espectáculo especial 8M',
+  novedades_heelsShowcase_desc:
+    'Celebra el Día de la Mujer con un showcase espectacular de nuestras alumnas de Heels. Entrada libre.',
+  novedades_heelsShowcase_alt: 'Showcase de Heels en el Día de la Mujer',
+
+  // Hip Hop Battle
+  novedades_hipHopBattle_title: 'Hip Hop Battle Barcelona',
+  novedades_hipHopBattle_subtitle: 'Competición abierta',
+  novedades_hipHopBattle_desc:
+    'Batalla de Hip Hop abierta a todos los niveles. Premios para los ganadores. ¡Inscríbete y demuestra tu talento!',
+  novedades_hipHopBattle_alt: 'Competición de Hip Hop Battle en Barcelona',
 };

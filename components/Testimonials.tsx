@@ -164,7 +164,7 @@ const Testimonials: React.FC = () => {
                 </div>
               </div>
               <div className="text-neutral/70 text-sm">
-                A base de <span className="font-semibold">505 reseñas</span>
+                A base de <span className="font-semibold">509 reseñas</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg

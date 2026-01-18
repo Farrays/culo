@@ -11,6 +11,7 @@ export const en = {
   breadcrumb_home: 'Home',
   home: 'Home',
   contact: 'Contact',
+  contactUs: 'Contact Us',
   skipToMain: 'Skip to main content',
   viewSchedule: 'View Schedule',
   bookNow: 'Book Now',
@@ -18718,13 +18719,14 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // ============================================================================
   // Team Building Page
   // ============================================================================
-  teamBuilding_pageTitle: "Dance Team Building in Barcelona | Corporate Activities | Farray's",
+  teamBuilding_pageTitle:
+    "Dance Team Building Barcelona | For Companies That No Longer Believe in Team Building | Farray's",
   teamBuilding_metaDescription:
-    'Dance team building in Barcelona. Original corporate activities: workshops, choreographies, music videos and flashmobs. 500+ events. CID-UNESCO certified.',
+    'Dance team building in Barcelona for companies done with empty corporate rituals. No fluffy dynamics: body, emotion, real presence. CID-UNESCO certified. 500+ events.',
   teamBuilding_heroTitle: 'Team Building Barcelona',
-  teamBuilding_heroSubtitle: 'with Dance',
+  teamBuilding_heroSubtitle: 'for companies that no longer believe',
   teamBuilding_heroIntro:
-    "Transform your next corporate event with dance team building activities in Barcelona. At Farray's International Dance Center, we've been creating unique experiences for 8 years that strengthen teams, enhance communication and create unforgettable memories.",
+    'For companies that no longer believe in team building. If you just need another box-checking activity, stop reading. But if you want your team to actually look each other in the eye, sweat together, and laugh about it afterward, maybe keep going.',
   teamBuilding_trust_rating: '4.9★',
   teamBuilding_trust_rating_label: 'on Google',
   teamBuilding_trust_unesco: 'CID-UNESCO',
@@ -18733,46 +18735,50 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   teamBuilding_trust_years_label: 'years',
   teamBuilding_trust_events: '500+',
   teamBuilding_trust_events_label: 'events',
-  teamBuilding_problem_title: 'Boring corporate meetings?',
+  teamBuilding_problem_title: 'The problem nobody talks about',
   teamBuilding_problem_desc:
-    "Traditional team building activities often feel predictable and don't generate the desired impact.",
-  teamBuilding_solution_title: 'Experiences that transform teams',
+    "Teams coexist. They collaborate just enough. They tolerate each other politely. And once a year, HR takes them to paintball or escape rooms because 'we need to do something.' According to Gallup, only 21% of employees worldwide are engaged. The global cost: $8.8 trillion. But nobody says it out loud.",
+  teamBuilding_solution_title: 'The soft lie of corporate engagement',
   teamBuilding_solution_desc:
-    'Dance breaks barriers, releases endorphins and creates genuine connections between colleagues.',
-  teamBuilding_features_title: 'Our Team Building Activities',
-  teamBuilding_feature_workshops_title: 'Dance Workshops',
+    'Companies book dynamics that move nothing. They look for comfortable activities. Where nobody has to be vulnerable or leave their safe zone. The result: photos for LinkedIn and zero real impact.',
+  teamBuilding_features_title: "We don't offer dance classes for companies",
+  teamBuilding_feature_workshops_title: 'Collective discomfort',
   teamBuilding_feature_workshops_desc:
-    '1-3 hour sessions where your team learns a group choreography.',
-  teamBuilding_feature_choreography_title: 'Custom Choreographies',
-  teamBuilding_feature_choreography_desc: 'We create exclusive choreographies for your company.',
-  teamBuilding_feature_competitions_title: 'Team Competitions',
+    "Sessions where your team will have to look at each other, laugh at themselves, and stop pretending everything's fine. 1-3 hours of honest discomfort.",
+  teamBuilding_feature_choreography_title: 'Shared sweat',
+  teamBuilding_feature_choreography_desc:
+    'Choreographies that demand real coordination. That expose who leads and who follows. That reveal more about your team than any personality test.',
+  teamBuilding_feature_competitions_title: 'Challenges without a safety net',
   teamBuilding_feature_competitions_desc:
-    'Divide your team into groups and compete for the best dance.',
-  teamBuilding_feature_videoclip_title: 'Corporate Music Video',
+    'Team competitions where embarrassment is inevitable. And where shared embarrassment is the only thing that creates real bonds.',
+  teamBuilding_feature_videoclip_title: 'Permanent evidence',
   teamBuilding_feature_videoclip_desc:
-    'We record a professional music video with your team dancing.',
-  teamBuilding_feature_flashmob_title: 'Corporate Flashmob',
+    "Professional video of your team doing what they never thought they'd do. Internal branding that needs no explanation.",
+  teamBuilding_feature_flashmob_title: 'Calculated public risk',
   teamBuilding_feature_flashmob_desc:
-    'Surprise at your event with a flashmob starring your own team.',
-  teamBuilding_feature_custom_title: 'Custom Experiences',
-  teamBuilding_feature_custom_desc: 'We design personalized activities according to your goals.',
-  teamBuilding_benefits_title: "Why Choose Farray's?",
-  teamBuilding_benefit_experience_title: '8+ Years of Experience',
-  teamBuilding_benefit_experience_desc: 'Over 500 successful corporate events.',
-  teamBuilding_benefit_professionals_title: 'Professional Instructors',
+    "Flashmob at your event. Surprise, exposure, and pride mixed together. For companies that aren't afraid to show who they are.",
+  teamBuilding_feature_custom_title: 'Custom formats (with standards)',
+  teamBuilding_feature_custom_desc:
+    "We design experiences based on your real objectives. We won't say yes to everything: we'll tell you what actually works.",
+  teamBuilding_benefits_title: 'This is where we come in',
+  teamBuilding_benefit_experience_title: '8 years putting people on the spot (with love)',
+  teamBuilding_benefit_experience_desc:
+    "500+ corporate events. Multinationals, startups, teams in crisis. We've seen it all. And we're still here.",
+  teamBuilding_benefit_professionals_title: 'CID-UNESCO and the Farray Method',
   teamBuilding_benefit_professionals_desc:
-    'Team of professional dancers and choreographers. CID-UNESCO certification.',
-  teamBuilding_benefit_flexibility_title: 'Maximum Flexibility',
-  teamBuilding_benefit_flexibility_desc: 'We adapt to your schedules, location and budget.',
-  teamBuilding_benefit_results_title: 'Measurable Results',
+    "International certification we don't use to sell. We use it to do things right. And a proprietary method that works even when you don't want it to.",
+  teamBuilding_benefit_flexibility_title: 'Body, emotion, real presence',
+  teamBuilding_benefit_flexibility_desc:
+    "We work with the only thing you can't fake: movement. If your team can't move together, they won't work together either.",
+  teamBuilding_benefit_results_title: 'No marketing promises',
   teamBuilding_benefit_results_desc:
-    'Improved communication and strengthened bonds between colleagues.',
-  teamBuilding_benefit_fun_title: 'Guaranteed Fun',
+    "We don't promise you'll leave as better people. We promise you'll see each other differently. And that changes something.",
+  teamBuilding_benefit_fun_title: "It's not fun: it's exposure",
   teamBuilding_benefit_fun_desc:
-    'Our activities are designed for everyone to participate and enjoy.',
-  teamBuilding_benefit_location_title: 'Central Location',
+    "You'll be embarrassed. You'll mess up some moves. And then, strangely, you'll feel closer. That's how it works.",
+  teamBuilding_benefit_location_title: 'Heart of Barcelona (Eixample)',
   teamBuilding_benefit_location_desc:
-    'Our own 400m² facilities in the heart of Barcelona (Eixample).',
+    "400m² at Carrer d'Entença 100. Or we come to you. Location is the least of it.",
   teamBuilding_process_title: 'How Does It Work?',
   teamBuilding_process_step1_title: 'Contact Us',
   teamBuilding_process_step1_desc: 'Tell us about your company. We will respond within 24 hours.',
@@ -18782,13 +18788,17 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   teamBuilding_process_step3_desc: 'We coordinate all logistical details.',
   teamBuilding_process_step4_title: "Let's Dance!",
   teamBuilding_process_step4_desc: 'Enjoy a unique experience.',
-  teamBuilding_idealFor_title: 'Ideal For...',
-  teamBuilding_idealFor_corporate: 'Companies looking for original team building',
-  teamBuilding_idealFor_startups: 'Startups and tech companies',
-  teamBuilding_idealFor_departments: 'Departments needing to improve communication',
-  teamBuilding_idealFor_incentives: 'Incentive trips and conventions',
-  teamBuilding_idealFor_conventions: 'Corporate events and launches',
-  teamBuilding_idealFor_celebrations: 'Company celebrations and anniversaries',
+  teamBuilding_idealFor_title: 'This is for you if...',
+  teamBuilding_idealFor_corporate: "Your team needs something that isn't 'more of the same'",
+  teamBuilding_idealFor_startups:
+    "You're tired of activities that look good in photos but change nothing",
+  teamBuilding_idealFor_departments:
+    "You want to see how your people react when they can't hide behind a PowerPoint",
+  teamBuilding_idealFor_incentives:
+    "You're looking for an incentive they'll remember for more than just the catering",
+  teamBuilding_idealFor_conventions: 'You have an event and want something real to happen',
+  teamBuilding_idealFor_celebrations:
+    'You believe your team has more potential than what they show at the office',
   teamBuilding_packages_title: 'Our Packages',
   teamBuilding_package_popular_badge: 'Most Popular',
   teamBuilding_package_express_title: 'Express',
@@ -18863,10 +18873,79 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   teamBuilding_related_fiestas_desc: 'Hen parties, birthdays and private celebrations.',
   teamBuilding_related_particulares_title: 'Private Classes',
   teamBuilding_related_particulares_desc: 'Private classes for executives or small groups.',
-  teamBuilding_cta_title: 'Ready for Your Team Building?',
-  teamBuilding_cta_desc: 'Contact us and receive a personalized quote within 24 hours.',
-  teamBuilding_cta_button: 'Request Quote',
+  teamBuilding_cta_title: 'The final filter (read it slowly)',
+  teamBuilding_cta_desc:
+    "If you're looking to tick a box and give HR some new photos, don't contact us. If you want something that actually moves your team—even if it's a bit uncomfortable—then let's talk. Everyone else can keep booking escape rooms.",
+  teamBuilding_cta_button: "Let's talk (if you have standards)",
   teamBuilding_schema_name: 'Dance Team Building in Barcelona',
   teamBuilding_schema_description:
-    'Dance team building activities in Barcelona. CID-UNESCO certified center.',
+    'Dance team building in Barcelona for companies that no longer believe in team building. Corporate experiences with body, emotion, and real presence. CID-UNESCO certified center with 8+ years and 500+ events.',
+
+  // ============================================================================
+  // NOVEDADES CAROUSEL
+  // ============================================================================
+  novedades_title: 'Latest News',
+  novedades_subtitle: 'Events, workshops and news from our academy. Stay updated.',
+  novedades_prev: 'View previous news',
+  novedades_next: 'View next news',
+  novedades_carouselLabel: 'Latest news carousel',
+  novedades_indicators: 'Slide indicators',
+  novedades_goToSlide: 'Go to slide {n}',
+
+  // Badges
+  novedades_badge_destacado: 'Featured',
+  novedades_badge_nuevo: 'New',
+  novedades_badge_plazasLimitadas: 'Limited Spots',
+  novedades_badge_ultimasPlazas: 'Last Spots',
+  novedades_badge_evento: 'Event',
+  novedades_badge_competicion: 'Competition',
+
+  // CTAs
+  novedades_cta_reservar: 'Book Now',
+  novedades_cta_apuntarse: 'Sign Up',
+  novedades_cta_info: 'More Info',
+  novedades_cta_entradas: 'Get Tickets',
+  novedades_cta_inscribirse: 'Register',
+
+  // Puertas Abiertas
+  novedades_puertasAbiertas_title: 'Open Doors January 2026',
+  novedades_puertasAbiertas_subtitle: 'Try our center with no commitment',
+  novedades_puertasAbiertas_desc:
+    'From January 7 to 31, come discover our facilities, teachers and methods. Free trial classes in all styles.',
+  novedades_puertasAbiertas_alt: "Open doors at Farray's International Dance Center",
+
+  // Workshop Afro
+  novedades_workshopAfro_title: 'Afro Workshop with Guest Artist',
+  novedades_workshopAfro_subtitle: 'Special masterclass',
+  novedades_workshopAfro_desc:
+    'Intensive Afro dance workshop with traditional and contemporary techniques. Intermediate-advanced level.',
+  novedades_workshopAfro_alt: 'Afro dance workshop in Barcelona',
+
+  // Formación Profesional
+  novedades_formacion_title: 'Professional Training 2026',
+  novedades_formacion_subtitle: 'Classical, Contemporary and Urban Dance',
+  novedades_formacion_desc:
+    'Intensive 6-month program for dancers who want to go professional. 20 hours per week with the best teachers.',
+  novedades_formacion_alt: 'Professional dance training in Barcelona',
+
+  // Bachata Intensivo
+  novedades_bachataIntensivo_title: 'Sensual Bachata Intensive',
+  novedades_bachataIntensivo_subtitle: 'For couples and singles',
+  novedades_bachataIntensivo_desc:
+    'Learn the most sensual bachata moves in this intensive workshop. Beginners and advanced.',
+  novedades_bachataIntensivo_alt: 'Intensive sensual bachata class in Barcelona',
+
+  // Heels Showcase
+  novedades_heelsShowcase_title: "Heels Showcase - Women's Day",
+  novedades_heelsShowcase_subtitle: 'Special 8M show',
+  novedades_heelsShowcase_desc:
+    "Celebrate International Women's Day with a spectacular showcase from our Heels students. Free entry.",
+  novedades_heelsShowcase_alt: "Heels showcase on Women's Day",
+
+  // Hip Hop Battle
+  novedades_hipHopBattle_title: 'Hip Hop Battle Barcelona',
+  novedades_hipHopBattle_subtitle: 'Open competition',
+  novedades_hipHopBattle_desc:
+    'Hip Hop battle open to all levels. Prizes for winners. Register and show your talent!',
+  novedades_hipHopBattle_alt: 'Hip Hop Battle competition in Barcelona',
 };

@@ -892,7 +892,7 @@ export const DanceSchoolWithRatingSchema: React.FC = () => {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5.0',
-      reviewCount: '505',
+      reviewCount: '509',
       bestRating: '5',
       worstRating: '1',
     },
