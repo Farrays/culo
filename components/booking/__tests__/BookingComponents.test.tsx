@@ -87,7 +87,8 @@ describe('BookingSuccess', () => {
 
       // Get all buttons - first one is Google Calendar
       const buttons = screen.getAllByRole('button');
-      const googleButton = buttons[0];
+      expect(buttons.length).toBeGreaterThan(0);
+      const googleButton = buttons[0] as HTMLElement;
 
       fireEvent.click(googleButton);
 
@@ -107,7 +108,8 @@ describe('BookingSuccess', () => {
 
       // Get all buttons - second one is ICS download
       const buttons = screen.getAllByRole('button');
-      const downloadButton = buttons[1];
+      expect(buttons.length).toBeGreaterThan(1);
+      const downloadButton = buttons[1] as HTMLElement;
 
       fireEvent.click(downloadButton);
 

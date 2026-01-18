@@ -206,7 +206,8 @@ describe('useBookingPersistence', () => {
       );
       expect(expiryCalls.length).toBeGreaterThan(0);
 
-      const expiryTime = parseInt(expiryCalls[0][1], 10);
+      expect(expiryCalls[0]).toBeDefined();
+      const expiryTime = parseInt(expiryCalls[0]?.[1] ?? '0', 10);
       expect(expiryTime).toBeGreaterThanOrEqual(now + 29 * 60 * 1000);
       expect(expiryTime).toBeLessThanOrEqual(now + 31 * 60 * 1000);
     });
@@ -402,13 +403,15 @@ describe('useBookingPersistence', () => {
   describe('clear on success', () => {
     it('should clear persisted data when status becomes success', () => {
       const formData = { ...INITIAL_FORM_DATA, firstName: 'Juan' };
+      type StatusType = 'idle' | 'loading' | 'success' | 'error';
       const { rerender } = renderHook(
-        ({ status }) => useBookingPersistence(formData, null, status, mockT),
-        { initialProps: { status: 'idle' as const } }
+        ({ status }: { status: StatusType }) =>
+          useBookingPersistence(formData, null, status, mockT),
+        { initialProps: { status: 'idle' as StatusType } }
       );
 
       // Change to success
-      rerender({ status: 'success' as const });
+      rerender({ status: 'success' });
 
       expect(mockLocalStorage.removeItem).toHaveBeenCalledWith('booking_form_data');
     });

@@ -170,8 +170,9 @@ describe('ClassCard', () => {
       );
 
       // Click the main card button
-      const cardButton = screen.getAllByRole('button')[0];
-      fireEvent.click(cardButton);
+      const buttons = screen.getAllByRole('button');
+      expect(buttons.length).toBeGreaterThan(0);
+      fireEvent.click(buttons[0] as HTMLElement);
 
       expect(mockOnSelect).toHaveBeenCalledTimes(1);
       expect(mockOnSelect).toHaveBeenCalledWith(classData);
@@ -183,8 +184,9 @@ describe('ClassCard', () => {
         <ClassCard classData={classData} onSelect={mockOnSelect} onShowInfo={mockOnShowInfo} />
       );
 
-      const cardButton = screen.getAllByRole('button')[0];
-      fireEvent.click(cardButton);
+      const buttons = screen.getAllByRole('button');
+      expect(buttons.length).toBeGreaterThan(0);
+      fireEvent.click(buttons[0] as HTMLElement);
 
       expect(mockOnSelect).not.toHaveBeenCalled();
     });

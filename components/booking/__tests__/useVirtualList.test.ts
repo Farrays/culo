@@ -81,7 +81,9 @@ describe('useVirtualList', () => {
       expect(result.current.isVirtualizing).toBe(false);
       expect(result.current.virtualItems).toHaveLength(15);
       // Non-virtualized items should have empty style
-      expect(result.current.virtualItems[0].style).toEqual({});
+      const firstItem = result.current.virtualItems[0];
+      expect(firstItem).toBeDefined();
+      expect(firstItem?.style).toEqual({});
     });
 
     it('should virtualize when items > 20', () => {
@@ -148,10 +150,14 @@ describe('useVirtualList', () => {
         })
       );
 
-      expect(result.current.virtualItems[0].index).toBe(0);
-      expect(result.current.virtualItems[0].item).toEqual({ id: 1, name: 'Item 1' });
-      expect(result.current.virtualItems[1].index).toBe(1);
-      expect(result.current.virtualItems[1].item).toEqual({ id: 2, name: 'Item 2' });
+      const item0 = result.current.virtualItems[0];
+      const item1 = result.current.virtualItems[1];
+      expect(item0).toBeDefined();
+      expect(item1).toBeDefined();
+      expect(item0?.index).toBe(0);
+      expect(item0?.item).toEqual({ id: 1, name: 'Item 1' });
+      expect(item1?.index).toBe(1);
+      expect(item1?.item).toEqual({ id: 2, name: 'Item 2' });
     });
 
     it('should include positioning styles when virtualizing', () => {
@@ -172,9 +178,10 @@ describe('useVirtualList', () => {
       );
 
       const firstItem = result.current.virtualItems[0];
-      expect(firstItem.style.position).toBe('absolute');
-      expect(firstItem.style.height).toBe(100);
-      expect(firstItem.style.transform).toBeDefined();
+      expect(firstItem).toBeDefined();
+      expect(firstItem?.style.position).toBe('absolute');
+      expect(firstItem?.style.height).toBe(100);
+      expect(firstItem?.style.transform).toBeDefined();
     });
   });
 

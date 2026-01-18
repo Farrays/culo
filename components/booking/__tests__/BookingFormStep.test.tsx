@@ -177,7 +177,8 @@ describe('BookingFormStep', () => {
       renderComponent();
 
       const checkboxes = screen.getAllByRole('checkbox');
-      fireEvent.click(checkboxes[0]);
+      expect(checkboxes.length).toBeGreaterThan(0);
+      fireEvent.click(checkboxes[0] as HTMLElement);
 
       expect(mockOnFormChange).toHaveBeenCalled();
     });
@@ -186,7 +187,8 @@ describe('BookingFormStep', () => {
       renderComponent();
 
       const checkboxes = screen.getAllByRole('checkbox');
-      fireEvent.click(checkboxes[0]);
+      expect(checkboxes.length).toBeGreaterThan(0);
+      fireEvent.click(checkboxes[0] as HTMLElement);
 
       expect(mockOnTriggerHaptic).toHaveBeenCalledWith('light');
     });

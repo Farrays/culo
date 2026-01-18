@@ -36,7 +36,7 @@ interface UseCsrfTokenReturn {
   error: string | null;
   fetchToken: () => Promise<string | null>;
   refreshToken: () => Promise<string | null>;
-  getHeaders: () => Record<string, string>;
+  getCsrfHeaders: () => Record<string, string>;
 }
 
 /**

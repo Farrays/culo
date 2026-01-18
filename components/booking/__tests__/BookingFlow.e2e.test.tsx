@@ -186,7 +186,8 @@ describe('BookingWidgetV2 E2E Flow', () => {
 
       // Title should be rendered (translation key or actual text)
       const headings = screen.getAllByRole('heading');
-      expect(headings[0].textContent).toBeTruthy();
+      expect(headings.length).toBeGreaterThan(0);
+      expect(headings[0]?.textContent).toBeTruthy();
     });
   });
 });
