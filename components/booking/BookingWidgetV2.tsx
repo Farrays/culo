@@ -214,6 +214,9 @@ const BookingWidgetV2: React.FC = memo(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- Intentionally run once on mount
   }, []);
 
+  // Detect if any filter is active (for Acuity mode)
+  const hasActiveFilters = Object.values(filters).some(Boolean);
+
   const {
     classes,
     loading,
@@ -223,7 +226,14 @@ const BookingWidgetV2: React.FC = memo(() => {
     loadMore,
     hasMore,
     currentPage,
-  } = useBookingClasses({ filters, weekOffset, enablePagination: true });
+    allWeeksClasses,
+    allWeeksLoading,
+  } = useBookingClasses({
+    filters,
+    weekOffset,
+    enablePagination: true,
+    fetchAllWeeks: hasActiveFilters,
+  });
 
   const { trackClassSelected, trackBookingSuccess } = useBookingAnalytics();
 
@@ -469,6 +479,9 @@ const BookingWidgetV2: React.FC = memo(() => {
         hasMore={hasMore}
         isLoadingMore={loading && currentPage > 1}
         selectedClassId={selectedClass?.id ?? null}
+        showAllWeeks={hasActiveFilters}
+        allWeeksClasses={allWeeksClasses}
+        allWeeksLoading={allWeeksLoading}
       />
     );
   };
