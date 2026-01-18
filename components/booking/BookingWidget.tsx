@@ -1,3 +1,15 @@
+/**
+ * @deprecated Use BookingWidgetV2 instead.
+ * This legacy widget is kept for reference but should not be used in new code.
+ * BookingWidgetV2 provides:
+ * - Better code organization (hooks, components, validation separated)
+ * - Real-time input sanitization
+ * - Full i18n support including error boundary
+ * - Improved accessibility (aria-live, focus trap)
+ * - Better test coverage
+ *
+ * Migration: Replace `import BookingWidget` with `import BookingWidgetV2`
+ */
 import React, { useState, useEffect, useCallback, useMemo, memo } from 'react';
 import { Link, useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';

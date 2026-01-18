@@ -7,9 +7,12 @@
  * - URL parameters for deep linking campaigns
  * - Full filter support (style, level, day, timeBlock, instructor)
  * - Analytics tracking for all interactions
+ * - Error Boundary for crash protection
+ * - Retry with exponential backoff for API resilience
  */
 
 import React, { useEffect, memo } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
 
 // Hooks
@@ -17,73 +20,96 @@ import { useBookingFilters } from './hooks/useBookingFilters';
 import { useBookingState } from './hooks/useBookingState';
 import { useBookingClasses } from './hooks/useBookingClasses';
 import { useBookingAnalytics } from './hooks/useBookingAnalytics';
+import { useCsrfToken } from './hooks/useCsrfToken';
+import { useBookingPersistence } from './hooks/useBookingPersistence';
+import type { InvalidField } from './hooks/useBookingState';
 
 // Components
 import { ClassListStep } from './components/ClassListStep';
 import { BookingFormStep } from './components/BookingFormStep';
 import { BookingSuccess } from './components/BookingSuccess';
 import { BookingError } from './components/BookingError';
+import { BookingErrorBoundary } from './components/BookingErrorBoundary';
 
 // Types
 import type { ClassData, BookingFormData } from './types/booking';
 import { requiresHeelsConsent } from './types/booking';
 
-// Step indicator component
+// Validation
+import { validateBookingForm, sanitizeFormData } from './validation';
+
+// Utilities
+import { trackLeadConversion, LEAD_VALUES } from '../../utils/analytics';
+
+// Helper: Get cookie value
+function getCookie(name: string): string | null {
+  if (typeof document === 'undefined') return null;
+  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  return match ? (match[2] ?? null) : null;
+}
+
+// Helper: Generate unique event ID for Meta tracking
+function generateEventId(): string {
+  return `evt_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+}
+
+// Check icon component
+const CheckIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+  </svg>
+);
+
+// Step indicator component - V1 style with 3D effect and animations
 const StepIndicator: React.FC<{
   currentStep: 'class' | 'form';
-  t: (key: string) => string;
-}> = ({ currentStep, t }) => {
-  const steps = [
-    { key: 'class', label: t('booking_step1_classes') },
-    { key: 'form', label: t('booking_step2_form') },
-  ];
-
+}> = ({ currentStep }) => {
   return (
-    <div className="flex items-center justify-center gap-4 mb-8">
-      {steps.map((step, index) => {
-        const isActive = step.key === currentStep;
-        const isPast = currentStep === 'form' && step.key === 'class';
+    <div className="flex items-center justify-center gap-2 mb-8">
+      {['class', 'form'].map((s, i) => {
+        const isActive = currentStep === s;
+        const isCompleted = s === 'class' && currentStep === 'form';
 
         return (
-          <React.Fragment key={step.key}>
-            {index > 0 && (
-              <div className={`w-12 h-0.5 ${isPast ? 'bg-primary-accent' : 'bg-white/20'}`} />
-            )}
-            <div className="flex items-center gap-2">
-              <div
-                className={`
-                  w-8 h-8 rounded-full flex items-center justify-center
-                  text-sm font-bold transition-all duration-300
-                  ${
-                    isActive
-                      ? 'bg-primary-accent text-white scale-110'
-                      : isPast
-                        ? 'bg-primary-accent/20 text-primary-accent'
-                        : 'bg-white/10 text-neutral/50'
-                  }
-                `}
-              >
-                {isPast ? (
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                ) : (
-                  index + 1
-                )}
-              </div>
-              <span
-                className={`hidden sm:block text-sm ${
-                  isActive ? 'text-neutral font-medium' : 'text-neutral/50'
-                }`}
-              >
-                {step.label}
-              </span>
+          <React.Fragment key={s}>
+            <div
+              className={`
+                relative w-10 h-10 rounded-full flex items-center justify-center
+                transition-all duration-500 transform
+                ${
+                  isActive
+                    ? 'bg-primary-accent scale-110 shadow-lg shadow-primary-accent/50'
+                    : isCompleted
+                      ? 'bg-primary-accent/80'
+                      : 'bg-white/10'
+                }
+              `}
+              style={{
+                transform: isActive ? 'perspective(500px) rotateY(10deg)' : 'none',
+              }}
+            >
+              {isCompleted ? (
+                <CheckIcon className="w-5 h-5 text-white" />
+              ) : (
+                <span className="text-sm font-bold text-white">{i + 1}</span>
+              )}
+              {isActive && (
+                <div className="absolute inset-0 rounded-full bg-primary-accent/50 animate-ping" />
+              )}
             </div>
+            {i < 1 && (
+              <div
+                className={`w-12 h-1 rounded-full transition-all duration-500 ${
+                  isCompleted ? 'bg-primary-accent' : 'bg-white/10'
+                }`}
+              />
+            )}
           </React.Fragment>
         );
       })}
@@ -91,8 +117,52 @@ const StepIndicator: React.FC<{
   );
 };
 
+// Language selector component - V1 style
+const LanguageSelector: React.FC<{
+  locale: string;
+  onLanguageChange: (lang: 'es' | 'ca' | 'en' | 'fr') => void;
+}> = ({ locale, onLanguageChange }) => (
+  <div className="flex justify-end mb-4">
+    <div className="flex items-center gap-0.5 bg-white/5 rounded-lg p-1">
+      {(['es', 'ca', 'en', 'fr'] as const).map(lang => (
+        <button
+          key={lang}
+          onClick={() => onLanguageChange(lang)}
+          className={`px-2 py-1 text-xs font-medium rounded-md transition-all ${
+            locale === lang
+              ? 'bg-primary-accent text-white'
+              : 'text-neutral/40 hover:text-neutral hover:bg-white/10'
+          }`}
+          title={
+            lang === 'es'
+              ? 'Español'
+              : lang === 'ca'
+                ? 'Català'
+                : lang === 'en'
+                  ? 'English'
+                  : 'Français'
+          }
+        >
+          {lang.toUpperCase()}
+        </button>
+      ))}
+    </div>
+  </div>
+);
+
 const BookingWidgetV2: React.FC = memo(() => {
-  const { t } = useI18n();
+  const { t, locale, setLocale } = useI18n();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Language change handler
+  const handleLanguageChange = (newLocale: 'es' | 'ca' | 'en' | 'fr') => {
+    if (newLocale !== locale) {
+      setLocale(newLocale);
+      const newPath = location.pathname.replace(/^\/(es|ca|en|fr)/, `/${newLocale}`);
+      navigate(newPath + location.search, { replace: true });
+    }
+  };
 
   // Hooks
   const {
@@ -105,20 +175,43 @@ const BookingWidgetV2: React.FC = memo(() => {
     setWeekOffset,
   } = useBookingFilters();
 
+  // CSRF protection (optional - gracefully handles missing backend endpoint)
+  const { getCsrfHeaders } = useCsrfToken();
+
   const {
     step,
     status,
     selectedClass,
     formData,
     errorMessage,
+    invalidFields,
     selectClass,
     goBack,
     setStatus,
     updateForm,
     setError,
     clearError,
+    setInvalidFields,
+    restoreForm,
     reset,
   } = useBookingState(weekOffset);
+
+  // Persistence: localStorage, beforeunload warning, haptic feedback
+  const { loadPersistedData, clearPersistedData, triggerHaptic } = useBookingPersistence(
+    formData,
+    selectedClass,
+    status,
+    t
+  );
+
+  // Restore persisted data on mount
+  useEffect(() => {
+    const persisted = loadPersistedData();
+    if (persisted && (persisted.formData.firstName || persisted.formData.email)) {
+      restoreForm(persisted.formData, persisted.selectedClass);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- Intentionally run once on mount
+  }, []);
 
   const {
     classes,
@@ -126,7 +219,10 @@ const BookingWidgetV2: React.FC = memo(() => {
     error: classesError,
     filterOptions,
     refetch,
-  } = useBookingClasses({ filters, weekOffset });
+    loadMore,
+    hasMore,
+    currentPage,
+  } = useBookingClasses({ filters, weekOffset, enablePagination: true });
 
   const { trackClassSelected, trackBookingSuccess } = useBookingAnalytics();
 
@@ -158,47 +254,87 @@ const BookingWidgetV2: React.FC = memo(() => {
 
     if (!selectedClass) return;
 
-    // Validate required fields
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone) {
+    // Detect empty required fields for highlighting
+    const emptyFields: InvalidField[] = [];
+    if (!formData.firstName.trim()) emptyFields.push('firstName');
+    if (!formData.lastName.trim()) emptyFields.push('lastName');
+    if (!formData.email.trim()) emptyFields.push('email');
+    if (!formData.phone.trim()) emptyFields.push('phone');
+
+    if (emptyFields.length > 0) {
+      setInvalidFields(emptyFields);
       setError(t('booking_error_required_fields'));
+      triggerHaptic('error');
       return;
     }
 
-    // Validate required consents
-    if (
-      !formData.acceptsTerms ||
-      !formData.acceptsMarketing ||
-      !formData.acceptsAge ||
-      !formData.acceptsNoRefund ||
-      !formData.acceptsPrivacy
-    ) {
-      setError(t('booking_error_consent_required'));
-      return;
-    }
+    // Sanitize form data before validation
+    const sanitizedData = sanitizeFormData(formData);
 
-    // Validate heels consent if required
-    if (requiresHeelsConsent(selectedClass) && !formData.acceptsHeels) {
-      setError(t('booking_error_heels_consent_required'));
+    // Validate with Zod schema
+    const needsHeelsConsent = requiresHeelsConsent(selectedClass);
+    const validationResult = validateBookingForm(sanitizedData, needsHeelsConsent);
+
+    if (!validationResult.success) {
+      // Get the first error and translate it
+      const firstError = validationResult.errors[0] ?? 'booking_error_generic';
+      setError(t(firstError));
+      triggerHaptic('error');
       return;
     }
 
     setStatus('loading');
     clearError();
 
+    // Generate event ID for Meta tracking deduplication
+    const eventId = generateEventId();
+
     try {
+      // Build complete payload aligned with V1 and Momence requirements
+      const payload = {
+        // User data (sanitized and validated)
+        firstName: validationResult.data.firstName,
+        lastName: validationResult.data.lastName,
+        email: validationResult.data.email,
+        phone: validationResult.data.phone,
+
+        // Class data
+        sessionId: selectedClass.id,
+        classId: selectedClass.id,
+        className: selectedClass.name,
+        classDate: selectedClass.rawStartsAt,
+        classTime: selectedClass.time,
+        estilo: selectedClass.style,
+        classStyle: selectedClass.style,
+        classLevel: selectedClass.level,
+        classInstructor: selectedClass.instructor,
+
+        // Consents (RGPD)
+        acceptsTerms: validationResult.data.acceptsTerms,
+        acceptsPrivacy: validationResult.data.acceptsPrivacy,
+        acceptsMarketing: validationResult.data.acceptsMarketing,
+        acceptsAge: validationResult.data.acceptsAge,
+        acceptsNoRefund: validationResult.data.acceptsNoRefund,
+        acceptsImage: validationResult.data.acceptsImage,
+        acceptsHeels: validationResult.data.acceptsHeels,
+
+        // Source tracking (Momence)
+        comoconoce: 'Web - Sistema Reservas V2',
+
+        // Meta tracking (CAPI deduplication)
+        eventId,
+        sourceUrl: typeof window !== 'undefined' ? window.location.href : '',
+        fbc: getCookie('_fbc'),
+        fbp: getCookie('_fbp'),
+      };
+
       const response = await fetch('/api/reservar', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          classId: selectedClass.id,
-          className: selectedClass.name,
-          classDate: selectedClass.date,
-          classTime: selectedClass.time,
-          classStyle: selectedClass.style,
-          classLevel: selectedClass.level,
-          classInstructor: selectedClass.instructor,
-          ...formData,
-        }),
+        headers: {
+          'Content-Type': 'application/json',
+          ...getCsrfHeaders(),
+        },
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();
@@ -209,9 +345,17 @@ const BookingWidgetV2: React.FC = memo(() => {
 
       // Success
       setStatus('success');
+      clearPersistedData();
+      triggerHaptic('success');
 
-      // Track conversion
+      // Track conversion with analytics
       trackBookingSuccess(selectedClass);
+      trackLeadConversion({
+        leadSource: 'booking_widget',
+        formName: `Booking - ${selectedClass.style || 'General'}`,
+        leadValue: LEAD_VALUES.BOOKING_LEAD,
+        pagePath: typeof window !== 'undefined' ? window.location.pathname : '',
+      });
     } catch (err) {
       setStatus('error');
       setError(err instanceof Error ? err.message : t('booking_error_generic'));
@@ -246,9 +390,11 @@ const BookingWidgetV2: React.FC = memo(() => {
           formData={formData}
           status={status}
           errorMessage={errorMessage}
+          invalidFields={invalidFields}
           onBack={handleBack}
           onFormChange={handleFormChange}
           onSubmit={handleSubmit}
+          onTriggerHaptic={triggerHaptic}
         />
       );
     }
@@ -267,22 +413,41 @@ const BookingWidgetV2: React.FC = memo(() => {
         onWeekChange={setWeekOffset}
         onSelectClass={handleSelectClass}
         onRetry={refetch}
+        onLoadMore={loadMore}
+        hasMore={hasMore}
+        isLoadingMore={loading && currentPage > 1}
+        selectedClassId={selectedClass?.id ?? null}
       />
     );
   };
 
   return (
     <div className="relative">
+      {/* Skip link for accessibility - visible only on focus */}
+      <a
+        href="#booking-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary-accent focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
+      >
+        {t('booking_skip_to_content')}
+      </a>
+
       {/* 3D Background glow */}
       <div
         className="absolute -inset-4 bg-gradient-to-r from-primary-dark/20 via-primary-accent/10 to-primary-dark/20 rounded-3xl blur-2xl -z-10"
         style={{ transform: 'translateZ(-20px)' }}
+        aria-hidden="true"
       />
 
       {/* Main container */}
       <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 overflow-hidden">
         {/* Decorative gradient line */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-accent to-transparent" />
+        <div
+          className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-accent to-transparent"
+          aria-hidden="true"
+        />
+
+        {/* Language selector */}
+        <LanguageSelector locale={locale} onLanguageChange={handleLanguageChange} />
 
         {/* Header */}
         <div className="text-center mb-6">
@@ -293,10 +458,12 @@ const BookingWidgetV2: React.FC = memo(() => {
         </div>
 
         {/* Step indicator - hide on success/error */}
-        {status !== 'success' && status !== 'error' && <StepIndicator currentStep={step} t={t} />}
+        {status !== 'success' && status !== 'error' && <StepIndicator currentStep={step} />}
 
         {/* Content */}
-        {renderContent()}
+        <div id="booking-content" tabIndex={-1}>
+          {renderContent()}
+        </div>
       </div>
     </div>
   );
@@ -304,4 +471,19 @@ const BookingWidgetV2: React.FC = memo(() => {
 
 BookingWidgetV2.displayName = 'BookingWidgetV2';
 
-export default BookingWidgetV2;
+/**
+ * BookingWidgetV2 wrapped with Error Boundary
+ * Prevents crashes from propagating to the rest of the app
+ */
+const BookingWidgetV2WithErrorBoundary: React.FC = () => (
+  <BookingErrorBoundary>
+    <BookingWidgetV2 />
+  </BookingErrorBoundary>
+);
+
+BookingWidgetV2WithErrorBoundary.displayName = 'BookingWidgetV2WithErrorBoundary';
+
+export default BookingWidgetV2WithErrorBoundary;
+
+// Also export the unwrapped version for testing or custom error handling
+export { BookingWidgetV2 };

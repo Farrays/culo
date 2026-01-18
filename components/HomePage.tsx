@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../hooks/useI18n';
 import { HOMEPAGE_V2_CONFIG } from '../constants/homepage-v2-config';
 import Hero from './Hero';
+import TrustBarHero from './TrustBarHero';
 import HappinessStory from './HappinessStory';
 import About from './About';
 // import Classes from './Classes'; // Componente no encontrado - usando ClassesPreview en su lugar
@@ -55,6 +56,7 @@ const HomePage: React.FC = () => {
       </Helmet>
 
       <Hero />
+      <TrustBarHero />
       <Suspense fallback={<div className="min-h-[400px]" />}>
         <NovedadesCarousel />
       </Suspense>

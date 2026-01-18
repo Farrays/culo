@@ -39,6 +39,7 @@ export default {
         'fade-in-up': 'fade-in-up 1s ease-out forwards',
         fadeIn: 'fadeIn 0.2s ease-out forwards',
         slideDown: 'slideDown 0.3s ease-out forwards',
+        shake: 'shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both',
       },
       keyframes: {
         glow: {
@@ -72,6 +73,11 @@ export default {
         slideDown: {
           '0%': { opacity: '0', transform: 'translateY(-10px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        shake: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '10%, 30%, 50%, 70%, 90%': { transform: 'translateX(-4px)' },
+          '20%, 40%, 60%, 80%': { transform: 'translateX(4px)' },
         },
       },
       boxShadow: {

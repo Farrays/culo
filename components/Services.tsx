@@ -15,13 +15,19 @@ import {
   ShoppingBagIcon,
 } from '../lib/icons';
 
-const servicesData: ServiceInfo[] = [
+// Extended type with optional route
+interface ExtendedServiceInfo extends ServiceInfo {
+  route?: string; // If set, uses Link instead of anchor
+}
+
+const servicesData: ExtendedServiceInfo[] = [
   {
     id: 'rental',
     Icon: KeyIcon,
     titleKey: 'serviceRentalTitle',
     descriptionKey: 'serviceRentalDesc',
     ctaKey: 'serviceRentalCTA',
+    route: 'alquiler-salas-baile-barcelona',
   },
   {
     id: 'photo',
@@ -29,6 +35,7 @@ const servicesData: ServiceInfo[] = [
     titleKey: 'servicePhotoTitle',
     descriptionKey: 'servicePhotoDesc',
     ctaKey: 'servicePhotoCTA',
+    route: 'estudio-grabacion-barcelona',
   },
   {
     id: 'parties',
@@ -43,6 +50,7 @@ const servicesData: ServiceInfo[] = [
     titleKey: 'servicePrivateTitle',
     descriptionKey: 'servicePrivateDesc',
     ctaKey: 'servicePrivateCTA',
+    route: 'clases-particulares-baile',
   },
   {
     id: 'agency',
@@ -57,6 +65,7 @@ const servicesData: ServiceInfo[] = [
     titleKey: 'serviceCorporateTitle',
     descriptionKey: 'serviceCorporateDesc',
     ctaKey: 'serviceCorporateCTA',
+    route: 'team-building-barcelona',
   },
   {
     id: 'gift',
@@ -64,6 +73,7 @@ const servicesData: ServiceInfo[] = [
     titleKey: 'serviceGiftTitle',
     descriptionKey: 'serviceGiftDesc',
     ctaKey: 'serviceGiftCTA',
+    route: 'regala-baile',
   },
   {
     id: 'events',
@@ -78,6 +88,7 @@ const servicesData: ServiceInfo[] = [
     titleKey: 'serviceMerchandisingTitle',
     descriptionKey: 'serviceMerchandisingDesc',
     ctaKey: 'serviceMerchandisingCTA',
+    route: 'merchandising',
   },
 ];
 
@@ -124,19 +135,35 @@ const Services: React.FC<ServicesProps> = ({ showAll = false }) => {
                     {t(service.descriptionKey)}
                   </p>
                   <div className="mt-auto">
-                    <a
-                      href={`#${service.id}`}
-                      className="inline-flex items-center gap-2 font-bold text-primary-accent hover:text-white transition-all duration-300 group-hover:gap-4 focus:outline-none focus:ring-2 focus:ring-primary-accent/50 rounded-lg p-2 -m-2"
-                      aria-label={`${t(service.titleKey)} - ${t(service.ctaKey)}`}
-                    >
-                      <span>{t(service.ctaKey)}</span>
-                      <span
-                        className="inline-block transition-all duration-300 group-hover:translate-x-1 group-hover:scale-125"
-                        aria-hidden="true"
+                    {service.route ? (
+                      <Link
+                        to={`/${locale}/${service.route}`}
+                        className="inline-flex items-center gap-2 font-bold text-primary-accent hover:text-white transition-all duration-300 group-hover:gap-4 focus:outline-none focus:ring-2 focus:ring-primary-accent/50 rounded-lg p-2 -m-2"
+                        aria-label={`${t(service.titleKey)} - ${t(service.ctaKey)}`}
                       >
-                        →
-                      </span>
-                    </a>
+                        <span>{t(service.ctaKey)}</span>
+                        <span
+                          className="inline-block transition-all duration-300 group-hover:translate-x-1 group-hover:scale-125"
+                          aria-hidden="true"
+                        >
+                          →
+                        </span>
+                      </Link>
+                    ) : (
+                      <a
+                        href={`#${service.id}`}
+                        className="inline-flex items-center gap-2 font-bold text-primary-accent hover:text-white transition-all duration-300 group-hover:gap-4 focus:outline-none focus:ring-2 focus:ring-primary-accent/50 rounded-lg p-2 -m-2"
+                        aria-label={`${t(service.titleKey)} - ${t(service.ctaKey)}`}
+                      >
+                        <span>{t(service.ctaKey)}</span>
+                        <span
+                          className="inline-block transition-all duration-300 group-hover:translate-x-1 group-hover:scale-125"
+                          aria-hidden="true"
+                        >
+                          →
+                        </span>
+                      </a>
+                    )}
                   </div>
                 </div>
               </AnimateOnScroll>

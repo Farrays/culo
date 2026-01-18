@@ -189,7 +189,7 @@ export const BookingSuccess: React.FC<BookingSuccessProps> = ({ selectedClass })
 
       {/* CTA */}
       <Link
-        to={`/${locale}/horarios`}
+        to={`/${locale}/clases/baile-barcelona`}
         className="
           inline-block px-6 py-3 bg-primary-accent text-white
           font-semibold rounded-xl hover:bg-primary-accent/90 transition-colors

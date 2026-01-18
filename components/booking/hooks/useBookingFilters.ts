@@ -5,10 +5,13 @@
 /* global URLSearchParams */
 
 import { useSearchParams } from 'react-router-dom';
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import type { FilterState } from '../types/booking';
 import { INITIAL_FILTERS } from '../types/booking';
 import { pushToDataLayer } from '../../../utils/analytics';
+
+// Debounce delay for URL sync (ms)
+const URL_SYNC_DEBOUNCE = 300;
 
 // URL parameter keys
 const FILTER_PARAMS = ['style', 'level', 'day', 'timeBlock', 'instructor', 'time'] as const;
@@ -28,6 +31,18 @@ export interface UseBookingFiltersReturn {
 
 export function useBookingFilters(): UseBookingFiltersReturn {
   const [searchParams, setSearchParams] = useSearchParams();
+
+  // Debounce timer ref
+  const debounceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Cleanup debounce timer on unmount
+  useEffect(() => {
+    return () => {
+      if (debounceTimerRef.current) {
+        clearTimeout(debounceTimerRef.current);
+      }
+    };
+  }, []);
 
   // Parse URL params into FilterState
   const urlFilters = useMemo((): FilterState => {
@@ -67,44 +82,53 @@ export function useBookingFilters(): UseBookingFiltersReturn {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Update both state and URL
+  // Update both state and URL (with debounced URL sync)
   const setFilters = useCallback(
     (newFilters: Partial<FilterState>) => {
+      // Update state immediately for responsive UI
       setFiltersState(prev => {
         const updated = { ...prev, ...newFilters };
 
-        // Update URL params
-        const params = new URLSearchParams(searchParams);
+        // Clear any pending debounce
+        if (debounceTimerRef.current) {
+          clearTimeout(debounceTimerRef.current);
+        }
 
-        // Update filter params
-        Object.entries(updated).forEach(([key, value]) => {
-          if (value) {
-            params.set(key, value);
-          } else {
-            params.delete(key);
+        // Debounce URL sync and analytics
+        debounceTimerRef.current = setTimeout(() => {
+          // Update URL params
+          const params = new URLSearchParams(searchParams);
+
+          // Update filter params
+          Object.entries(updated).forEach(([key, value]) => {
+            if (value) {
+              params.set(key, value);
+            } else {
+              params.delete(key);
+            }
+          });
+
+          // Preserve classId if exists
+          const classId = searchParams.get('classId');
+          if (classId) {
+            params.set('classId', classId);
           }
-        });
 
-        // Preserve classId if exists
-        const classId = searchParams.get('classId');
-        if (classId) {
-          params.set('classId', classId);
-        }
+          // Preserve week if exists
+          const week = searchParams.get('week');
+          if (week) {
+            params.set('week', week);
+          }
 
-        // Preserve week if exists
-        const week = searchParams.get('week');
-        if (week) {
-          params.set('week', week);
-        }
+          setSearchParams(params, { replace: true });
 
-        setSearchParams(params, { replace: true });
-
-        // Track filter change
-        pushToDataLayer({
-          event: 'booking_filter_changed',
-          ...updated,
-          active_filter_count: Object.values(updated).filter(Boolean).length,
-        });
+          // Track filter change
+          pushToDataLayer({
+            event: 'booking_filter_changed',
+            ...updated,
+            active_filter_count: Object.values(updated).filter(Boolean).length,
+          });
+        }, URL_SYNC_DEBOUNCE);
 
         return updated;
       });

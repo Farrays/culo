@@ -54,6 +54,7 @@ export const ca = {
   navAboutUs: 'Qui Som',
   headerRoomRental: 'Lloguer de Sales',
   headerGiftDance: 'Regala Ball',
+  navTeamBuilding: 'Team Building',
   headerRecordingStudio: 'Estudi de Gravació',
   headerAbout: 'Sobre Nosaltres',
   headerContact: 'Contacte',
@@ -274,7 +275,7 @@ export const ca = {
     'Dl: 10:30-12:30, 17:30-23:00\nDm: 10:30-13:30, 17:30-23:00\nDc: 17:30-23:00\nDj: 09:30-11:30, 17:30-23:00\nDv: 17:30-20:30',
   footerPhoneHoursTitle: 'Atenció Telefònica',
   footerPhoneHoursContent:
-    'Dl 10:30-13:00 | Dc 10:30-13:00 | Dj 09:30-12:00 | Dl-Dj 17:30-23:00 | Dv 17:30-20:00',
+    'Matins: Dl 10:30-13:00 | Dc 10:30-13:00 | Dj 09:30-12:00 | Tardes: Dl-Dj 17:30-23:00 | Dv 17:30-20:00',
   footerViewMap: 'Veure a Google Maps',
   footerSitemapTitle: 'Mapa del Lloc',
   sitemapSchool: "L'Escola",
@@ -18781,6 +18782,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_class_copied: 'Enllaç copiat',
   booking_class_info: 'Veure informació de la classe',
   booking_modal_close: 'Tancar',
+  booking_skip_to_content: 'Saltar al contingut de reserves',
   booking_modal_select: 'Reservar aquesta classe',
   booking_modal_no_description: 'No hi ha descripció disponible per a aquesta classe.',
   booking_teacher_view_profile: 'Veure perfil del professor',
@@ -18809,6 +18811,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_level_all: 'Tots els nivells',
 
   // Advanced Filters
+  booking_filters: 'Filtres',
   booking_filter_style: 'Estil',
   booking_filter_level: 'Nivell',
   booking_filter_day: 'Dia',
@@ -18822,6 +18825,12 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_clear_filters: 'Treure filtres',
   booking_no_classes_match: 'No hi ha classes que coincideixin amb els filtres',
   booking_classes_found: '{count} classes trobades',
+
+  // Accessibility
+  booking_classes_region: 'Llista de classes disponibles',
+  booking_loading_classes: 'Carregant classes...',
+  booking_form_region: 'Formulari de reserva',
+
   booking_filter_level_iniciacion: 'Iniciació',
   booking_filter_level_basico: 'Bàsic',
   booking_filter_level_intermedio: 'Intermedi',
@@ -18869,6 +18878,21 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
     'Comprenc i accepto que aquesta classe es realitza amb talons alts. Em comprometo a utilitzar calçat adequat i assumeixo la responsabilitat de la meva seguretat',
   booking_consent_heels_required: "Has d'acceptar les condicions d'ús de talons",
 
+  // RGPD Checkboxes - Marketing & No Refund
+  booking_consent_marketing:
+    'Accepto rebre comunicacions comercials sobre classes, esdeveniments i promocions',
+  booking_consent_norefund:
+    "Entenc que les reserves no són reemborsables i que he de cancel·lar amb almenys 24h d'antelació",
+
+  // RGPD Checkboxes - Optional
+  booking_consent_image:
+    "Autoritzo l'ús de la meva imatge en fotos i vídeos realitzats durant les classes amb fins promocionals a xarxes socials i web",
+  booking_consent_image_optional: '(Opcional)',
+  booking_consent_optional: '(opcional)',
+
+  // Pagination
+  booking_no_more_classes: 'No hi ha més classes per mostrar',
+
   // Submit
   booking_submit: 'Confirmar Reserva',
   booking_submit_loading: 'Processant...',
@@ -18905,6 +18929,27 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_error_email: 'Si us plau, introdueix un email vàlid',
   booking_error_phone: 'Si us plau, introdueix un telèfon vàlid',
   booking_error_class: 'Si us plau, selecciona una classe',
+  booking_error_name_min: 'El nom ha de tenir almenys 2 caràcters',
+  booking_error_name_max: 'El nom no pot superar els 50 caràcters',
+  booking_error_name_invalid: 'El nom conté caràcters no vàlids',
+  booking_error_email_required: "L'email és obligatori",
+  booking_error_email_max: "L'email és massa llarg",
+  booking_error_email_invalid: 'Si us plau, introdueix un email vàlid',
+  booking_error_phone_min: 'El telèfon ha de tenir almenys 6 dígits',
+  booking_error_phone_max: 'El telèfon és massa llarg',
+  booking_error_phone_invalid: 'Si us plau, introdueix un telèfon vàlid',
+  booking_error_field_required: 'Aquest camp és obligatori',
+
+  // Error Boundary
+  booking_error_boundary_title: 'Alguna cosa ha anat malament',
+  booking_error_boundary_message:
+    "S'ha produït un error en carregar el sistema de reserves. Si us plau, torna-ho a provar.",
+  booking_error_boundary_error_id: "ID d'error",
+  booking_error_boundary_retry: 'Tornar a provar',
+  booking_error_boundary_help: 'Continues tenint problemes?',
+  booking_error_boundary_contact: "Contacta'ns per WhatsApp",
+
+  booking_unsaved_warning: 'Tens dades sense desar. Segur que vols sortir?',
 
   // Legal Text
   booking_legal_responsible: "Responsable: Farray's International Dance Center S.L.",
@@ -19197,4 +19242,16 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   novedades_hipHopBattle_desc:
     'Batalla de Hip Hop oberta a tots els nivells. Premis per als guanyadors. Inscriu-te i demostra el teu talent!',
   novedades_hipHopBattle_alt: 'Competició de Hip Hop Battle a Barcelona',
+
+  // Trust Bar - Barra de credibilitat
+  trustbar_ariaLabel: 'Indicadors de credibilitat',
+  trustbar_cidunesco: 'Acreditats',
+  trustbar_students: 'Estudiants',
+  trustbar_facilities: 'Instal·lacions',
+  trustbar_styles: 'Estils',
+  trustbar_google: 'Google Reviews',
+  trustbar_reviews: 'ressenyes',
+  trustbar_members: 'Socis Actius',
+  trustbar_years: 'anys',
+  trustbar_inBarcelona: 'a Barcelona',
 };

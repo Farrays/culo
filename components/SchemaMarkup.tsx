@@ -945,3 +945,358 @@ export const DanceSchoolWithRatingSchema: React.FC = () => {
     </Helmet>
   );
 };
+
+// ============================================================================
+// GEO & LLM OPTIMIZATION SCHEMAS
+// Schemas optimized for Generative Engine Optimization and Large Language Models
+// ============================================================================
+
+/**
+ * WebPage Schema - Enhanced for GEO/LLM optimization
+ * Provides search engines and LLMs with page-level metadata including:
+ * - dateModified for freshness signals
+ * - mainEntity linking to primary content
+ * - isPartOf for website relationship
+ * - primaryImageOfPage for visual context
+ *
+ * @see https://schema.org/WebPage
+ */
+interface WebPageSchemaProps {
+  /** Full page URL */
+  url: string;
+  /** Page title */
+  name: string;
+  /** Meta description */
+  description: string;
+  /** ISO date when page was first published */
+  datePublished?: string;
+  /** ISO date when page was last modified (important for freshness) */
+  dateModified: string;
+  /** Language code (es, en, ca, fr) */
+  inLanguage: string;
+  /** URL of the main entity this page is about (e.g., Course schema @id) */
+  mainEntityId?: string;
+  /** URL of primary image on the page */
+  primaryImageUrl?: string;
+  /** Breadcrumb trail for this page */
+  breadcrumb?: Array<{ name: string; url: string }>;
+}
+
+export const WebPageSchema: React.FC<WebPageSchemaProps> = ({
+  url,
+  name,
+  description,
+  datePublished = '2024-01-01',
+  dateModified,
+  inLanguage,
+  mainEntityId,
+  primaryImageUrl,
+  breadcrumb,
+}) => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${url}#webpage`,
+    url,
+    name,
+    description,
+    datePublished,
+    dateModified,
+    inLanguage,
+    isPartOf: {
+      '@id': 'https://www.farrayscenter.com/#website',
+    },
+    about: mainEntityId ? { '@id': mainEntityId } : undefined,
+    mainEntity: mainEntityId ? { '@id': mainEntityId } : undefined,
+    ...(primaryImageUrl && {
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: primaryImageUrl,
+      },
+    }),
+    ...(breadcrumb &&
+      breadcrumb.length > 0 && {
+        breadcrumb: {
+          '@type': 'BreadcrumbList',
+          itemListElement: breadcrumb.map((item, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: item.name,
+            item: item.url,
+          })),
+        },
+      }),
+    // GEO: Helps LLMs understand this is authoritative content
+    publisher: {
+      '@id': 'https://www.farrayscenter.com/#organization',
+    },
+    // GEO: Potential actions help LLMs understand what users can do
+    potentialAction: {
+      '@type': 'ReadAction',
+      target: url,
+    },
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};
+
+/**
+ * Lead Capture Action Schema - For "Descubre cómo empezar" flow
+ * Models the actual user journey:
+ * 1. User clicks CTA → Lead capture form
+ * 2. User receives email
+ * 3. User can book welcome class or enroll
+ *
+ * This is more accurate than ReserveAction since there's no direct booking.
+ *
+ * @see https://schema.org/InteractAction
+ */
+interface LeadCaptureActionSchemaProps {
+  /** Page URL where the action is available */
+  pageUrl: string;
+  /** Name of the course/class */
+  courseName: string;
+  /** Description of what happens when user takes action */
+  actionDescription?: string;
+}
+
+export const LeadCaptureActionSchema: React.FC<LeadCaptureActionSchemaProps> = ({
+  pageUrl,
+  courseName,
+  actionDescription = 'Solicita información y recibe acceso a clase de bienvenida gratuita',
+}) => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    '@id': `${pageUrl}#course-action`,
+    name: courseName,
+    potentialAction: [
+      {
+        '@type': 'InteractAction',
+        name: 'Descubre cómo empezar',
+        description: actionDescription,
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: `${pageUrl}#descubre`,
+          actionPlatform: [
+            'https://schema.org/DesktopWebPlatform',
+            'https://schema.org/MobileWebPlatform',
+          ],
+        },
+        // Result is receiving information, not a direct reservation
+        result: {
+          '@type': 'Message',
+          name: 'Email con información del curso',
+          description:
+            'Recibirás un email con toda la información para empezar: horarios, precios, y acceso a tu clase de bienvenida gratuita.',
+        },
+      },
+      {
+        '@type': 'AskAction',
+        name: 'Solicitar información',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: `${pageUrl}#contacto`,
+        },
+      },
+    ],
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};
+
+/**
+ * Brand Schema - For "Método Farray" methodology
+ * Establishes the unique teaching methodology as a recognized brand.
+ *
+ * @see https://schema.org/Brand
+ */
+interface BrandSchemaProps {
+  /** Brand name */
+  name: string;
+  /** Brand description */
+  description: string;
+  /** URL to brand page */
+  url?: string;
+  /** Logo URL */
+  logo?: string;
+  /** Slogan or tagline */
+  slogan?: string;
+}
+
+export const BrandSchema: React.FC<BrandSchemaProps> = ({
+  name,
+  description,
+  url,
+  logo,
+  slogan,
+}) => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Brand',
+    '@id': `https://www.farrayscenter.com/#brand-${name.toLowerCase().replace(/\s+/g, '-')}`,
+    name,
+    description,
+    ...(url && { url }),
+    ...(logo && { logo }),
+    ...(slogan && { slogan }),
+    // Link to parent organization
+    brand: {
+      '@id': 'https://www.farrayscenter.com/#organization',
+    },
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};
+
+/**
+ * LLM Optimized Article Schema - For content pages
+ * Provides rich context that helps LLMs cite and reference content accurately.
+ * Includes speakable sections, citations, and content categorization.
+ *
+ * @see https://schema.org/Article
+ */
+interface LLMArticleSchemaProps {
+  /** Article headline/title */
+  headline: string;
+  /** Article description */
+  description: string;
+  /** Full article URL */
+  url: string;
+  /** Primary image URL */
+  image?: string;
+  /** Author name */
+  author?: string;
+  /** Date published (ISO format) */
+  datePublished: string;
+  /** Date modified (ISO format) */
+  dateModified: string;
+  /** Main topics/keywords */
+  keywords?: string[];
+  /** CSS selectors for speakable/citeable content */
+  speakableSelectors?: string[];
+  /** Word count (helps LLMs gauge content depth) */
+  wordCount?: number;
+  /** Article section/category */
+  articleSection?: string;
+}
+
+export const LLMArticleSchema: React.FC<LLMArticleSchemaProps> = ({
+  headline,
+  description,
+  url,
+  image,
+  author = "Farray's International Dance Center",
+  datePublished,
+  dateModified,
+  keywords,
+  speakableSelectors,
+  wordCount,
+  articleSection,
+}) => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `${url}#article`,
+    headline,
+    description,
+    url,
+    ...(image && { image }),
+    author: {
+      '@type': 'Organization',
+      '@id': 'https://www.farrayscenter.com/#organization',
+      name: author,
+    },
+    publisher: {
+      '@id': 'https://www.farrayscenter.com/#organization',
+    },
+    datePublished,
+    dateModified,
+    ...(keywords && { keywords: keywords.join(', ') }),
+    ...(wordCount && { wordCount }),
+    ...(articleSection && { articleSection }),
+    // GEO: Speakable helps voice assistants and LLMs identify key content
+    ...(speakableSelectors &&
+      speakableSelectors.length > 0 && {
+        speakable: {
+          '@type': 'SpeakableSpecification',
+          cssSelector: speakableSelectors,
+        },
+      }),
+    // GEO: inLanguage helps LLMs with multilingual content
+    inLanguage: 'es-ES',
+    // GEO: mainEntityOfPage links to the WebPage
+    mainEntityOfPage: {
+      '@id': `${url}#webpage`,
+    },
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};
+
+/**
+ * Educational Organization Credential Schema
+ * For courses that provide certification (e.g., CID-UNESCO accreditation)
+ *
+ * @see https://schema.org/EducationalOccupationalCredential
+ */
+interface CredentialSchemaProps {
+  /** Course URL */
+  courseUrl: string;
+  /** Credential name */
+  credentialName: string;
+  /** Credential category (Certificate, Diploma, etc.) */
+  credentialCategory?: string;
+  /** Accrediting organization */
+  recognizedBy?: {
+    name: string;
+    url?: string;
+  };
+}
+
+export const CredentialSchema: React.FC<CredentialSchemaProps> = ({
+  courseUrl,
+  credentialName,
+  credentialCategory = 'Certificate',
+  recognizedBy,
+}) => {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    '@id': `${courseUrl}#course-credential`,
+    educationalCredentialAwarded: {
+      '@type': 'EducationalOccupationalCredential',
+      name: credentialName,
+      credentialCategory,
+      ...(recognizedBy && {
+        recognizedBy: {
+          '@type': 'Organization',
+          name: recognizedBy.name,
+          ...(recognizedBy.url && { url: recognizedBy.url }),
+        },
+      }),
+    },
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+};

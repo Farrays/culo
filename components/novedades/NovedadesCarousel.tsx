@@ -77,20 +77,24 @@ const NovedadesCarousel: React.FC<NovedadesCarouselProps> = ({
     setIsAtEnd(scrollLeft >= track.scrollWidth - track.clientWidth - 10);
   }, [novedades.length]);
 
-  // Scroll to specific index
+  // Scroll to specific index using scrollLeft (avoids page scroll)
   const scrollToIndex = useCallback(
     (index: number) => {
       const track = trackRef.current;
       if (!track) return;
 
-      const item = track.querySelectorAll('article')[index];
-      if (item) {
-        item.scrollIntoView({
-          behavior: prefersReducedMotion ? 'auto' : 'smooth',
-          block: 'nearest',
-          inline: 'start',
-        });
-      }
+      const items = track.querySelectorAll('article');
+      if (!items[index]) return;
+
+      // Calculate scroll position based on item width + gap
+      const itemWidth = items[0]?.offsetWidth ?? 380;
+      const gap = 24; // gap-6 = 24px
+      const targetScroll = index * (itemWidth + gap);
+
+      track.scrollTo({
+        left: targetScroll,
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      });
     },
     [prefersReducedMotion]
   );
@@ -159,12 +163,8 @@ const NovedadesCarousel: React.FC<NovedadesCarouselProps> = ({
   }
 
   return (
-    <section
-      id="novedades"
-      className="py-12 md:py-16 bg-black overflow-hidden"
-      aria-labelledby="novedades-title"
-    >
-      <div className="container mx-auto px-6">
+    <section id="novedades" className="py-12 md:py-16 bg-black" aria-labelledby="novedades-title">
+      <div className="container mx-auto px-6 overflow-visible">
         {/* Header */}
         <AnimateOnScroll>
           <div className="text-center mb-10">
@@ -254,7 +254,7 @@ const NovedadesCarousel: React.FC<NovedadesCarouselProps> = ({
             aria-live="polite"
             tabIndex={0}
             onKeyDown={handleKeyDown}
-            className="flex gap-6 overflow-x-auto scroll-snap-x-mandatory scrollbar-hide pb-4 -mx-6 px-6 md:mx-0 md:px-0 focus:outline-none focus:ring-2 focus:ring-primary-accent/30 rounded-lg"
+            className="flex gap-6 overflow-x-auto overflow-y-visible scroll-snap-x-mandatory scrollbar-hide py-4 -mx-6 px-6 md:mx-0 md:px-0 focus:outline-none focus:ring-2 focus:ring-primary-accent/30 rounded-lg"
             style={{
               scrollSnapType: 'x mandatory',
               WebkitOverflowScrolling: 'touch',
@@ -263,7 +263,7 @@ const NovedadesCarousel: React.FC<NovedadesCarouselProps> = ({
             }}
           >
             {novedades.map((novedad, index) => (
-              <div key={novedad.id} style={{ scrollSnapAlign: 'start' }}>
+              <div key={novedad.id} className="flex-shrink-0" style={{ scrollSnapAlign: 'start' }}>
                 <AnimateOnScroll delay={index * 100}>
                   <NovedadCard
                     novedad={novedad}
@@ -274,6 +274,8 @@ const NovedadesCarousel: React.FC<NovedadesCarouselProps> = ({
                 </AnimateOnScroll>
               </div>
             ))}
+            {/* End spacer for mobile */}
+            <div className="flex-shrink-0 w-1 md:hidden" aria-hidden="true" />
           </div>
 
           {/* Dot Indicators */}

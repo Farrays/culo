@@ -1256,4 +1256,226 @@ Pasar a Pro ($20/mes) cuando:
 
 ---
 
-_Última actualización: 2025-01-18 (Sección 14: Widget Reservas V2 - Notificaciones y Gestión añadida)_
+---
+
+## 15. EVALUACIÓN ENTERPRISE - MEJORAS PENDIENTES
+
+> Evaluación realizada 2025-01-18. Objetivo: llevar componentes críticos a 10/10.
+
+### 15.1 Team Building Page (Actual: 9.0/10 → Objetivo: 10/10)
+
+**Estado:** ✅ ServicePageTemplate completado, copy anti-corporativo implementado
+
+| Categoría       | Puntuación Actual | Objetivo |
+| --------------- | ----------------- | -------- |
+| Arquitectura    | 10/10             | ✅       |
+| SEO/Schema      | 9.5/10            | 10/10    |
+| Copy/Contenido  | 10/10             | ✅       |
+| Citabilidad LLM | 8.5/10            | 10/10    |
+| Accesibilidad   | 8/10              | 9.5/10   |
+| Rendimiento     | 8.5/10            | 9.5/10   |
+| Conversión      | 8/10              | 9.5/10   |
+| Multi-idioma    | 10/10             | ✅       |
+
+#### 🔴 Alta Prioridad
+
+- [ ] **Testimonios de empresas conocidas** - Añadir logos/nombres de clientes reales
+  - Archivo: `i18n/locales/*.ts` (nueva sección `teamBuilding_clients_*`)
+  - Componente: Añadir `ClientLogosSection` a `ServicePageTemplate.tsx`
+  - Schema: Añadir `Review` schema con testimonios específicos
+
+- [ ] **WhatsApp flotante para B2B** - CTA de contacto inmediato
+  - Archivo: `components/shared/WhatsAppFloatingButton.tsx` (crear)
+  - Añadir a `ServicePageTemplate.tsx` con prop `showWhatsAppButton`
+
+#### 🟡 Media Prioridad
+
+- [ ] **Video testimonial de team building** - Embed de un evento real
+  - Grabar/editar video de 60-90 segundos
+  - Subir a Bunny.net o YouTube
+  - Añadir a sección de reviews o crear sección específica
+
+- [ ] **Caso de estudio con ROI** - Datos medibles de un cliente
+  - Estructura: Empresa → Problema → Solución → Resultados
+  - Métricas: Engagement antes/después, satisfacción, etc.
+  - Archivo: Nueva key `teamBuilding_caseStudy_*`
+
+- [ ] **Lazy loading para ReviewsSection** - Skeleton mientras carga
+  - Archivo: `components/reviews/ReviewsSection.tsx`
+  - Añadir `Suspense` con skeleton placeholder
+
+#### 🟢 Baja Prioridad
+
+- [ ] **prefers-reduced-motion** - Respetar preferencias de usuario
+  - Archivo: `tailwind.config.js` y/o `global.css`
+  - Aplicar a todas las animaciones de `ServicePageTemplate`
+
+- [ ] **Contraste WCAG AA verificado** - Revisar `text-neutral/50`
+  - Verificar con herramienta WAVE o axe DevTools
+  - Ajustar opacidad si falla (mínimo 4.5:1)
+
+---
+
+### 15.2 BookingWidgetV2 (Actual: 7.3/10 → Objetivo: 9.0/10)
+
+**Estado:** ✅ Error Boundary y Retry con exponential backoff implementados
+
+| Categoría      | Puntuación Actual | Objetivo |
+| -------------- | ----------------- | -------- |
+| Arquitectura   | 9/10              | ✅       |
+| Rendimiento    | 7/10              | 8.5/10   |
+| Seguridad      | 6/10              | 8/10     |
+| Accesibilidad  | 6/10              | 8.5/10   |
+| UX             | 8/10              | 9/10     |
+| Mantenibilidad | 8.5/10            | ✅       |
+| Escalabilidad  | 7/10              | 8/10     |
+
+#### ✅ Completado (Enero 2025)
+
+- [x] **Error Boundary** - `BookingErrorBoundary.tsx` implementado
+- [x] **Retry con exponential backoff** - `fetchWithRetry()` en `useBookingClasses.ts`
+  - 3 reintentos máximo
+  - Backoff: 1s → 2s → 4s (con jitter ±20%)
+  - AbortController para cleanup
+
+#### 🔴 Alta Prioridad
+
+- [ ] **Validación con Zod** - Schema validation para formulario
+  - Archivo: `components/booking/types/booking.ts`
+  - Crear schema Zod para `BookingFormData`
+  - Validar en `BookingFormStep.tsx` antes de submit
+
+  ```typescript
+  // Ejemplo de implementación
+  import { z } from 'zod';
+
+  export const bookingFormSchema = z.object({
+    firstName: z.string().min(2, 'Mínimo 2 caracteres'),
+    lastName: z.string().min(2, 'Mínimo 2 caracteres'),
+    email: z.string().email('Email inválido'),
+    phone: z.string().regex(/^\+?[0-9]{9,15}$/, 'Teléfono inválido'),
+    acceptsTerms: z.literal(true, { errorMap: () => ({ message: 'Requerido' }) }),
+    acceptsPrivacy: z.literal(true),
+    // ... resto de campos
+  });
+  ```
+
+- [ ] **Focus trap en modal** - Accesibilidad crítica
+  - Archivo: `components/booking/components/ClassListStep.tsx` (ClassInfoModal)
+  - Instalar: `npm install focus-trap-react`
+  - Wrap modal content con `<FocusTrap>`
+
+- [ ] **Debounce en filtros** - Evitar re-renders excesivos
+  - Archivo: `components/booking/hooks/useBookingFilters.ts`
+  - Usar `useDebouncedCallback` de `use-debounce` (300ms)
+
+  ```typescript
+  const debouncedSetFilters = useDebouncedCallback((newFilters: Partial<FilterState>) => {
+    // lógica actual de setFilters
+  }, 300);
+  ```
+
+#### 🟡 Media Prioridad
+
+- [ ] **React Query / SWR** - Caching y deduplicación de requests
+  - Reemplazar fetch manual en `useBookingClasses.ts`
+  - Beneficios: cache automático, retry built-in, stale-while-revalidate
+  - Archivo: Crear `useBookingClassesQuery.ts` con React Query
+
+- [ ] **Virtualización para listas largas** - Performance con >100 clases
+  - Archivo: `components/booking/components/ClassListStep.tsx`
+  - Usar `react-window` o `@tanstack/react-virtual`
+  - Activar solo cuando `classes.length > 50`
+
+- [ ] **localStorage para progreso** - Persistir datos del formulario
+  - Archivo: `components/booking/hooks/useBookingState.ts`
+  - Guardar `formData` en localStorage al cambiar
+  - Restaurar al montar componente
+
+  ```typescript
+  // En useBookingState
+  useEffect(() => {
+    const saved = localStorage.getItem('booking_form_draft');
+    if (saved) dispatch({ type: 'UPDATE_FORM', payload: JSON.parse(saved) });
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('booking_form_draft', JSON.stringify(state.formData));
+  }, [state.formData]);
+  ```
+
+- [ ] **CSRF token** - Seguridad en form submission
+  - Generar token en servidor (API route)
+  - Incluir en hidden field del formulario
+  - Validar en `/api/reservar`
+
+#### 🟢 Baja Prioridad
+
+- [ ] **aria-live para errores** - Anunciar errores a screen readers
+  - Añadir `aria-live="polite"` al contenedor de errores
+  - Añadir `role="alert"` a mensajes de error
+
+- [ ] **role="dialog" en modal** - Semántica correcta
+  - Archivo: `ClassListStep.tsx` (ClassInfoModal)
+  - Añadir `role="dialog"` y `aria-modal="true"`
+  - Añadir `aria-labelledby` apuntando al título
+
+- [ ] **Tests unitarios** - Coverage de hooks
+  - Crear: `__tests__/hooks/useBookingFilters.test.ts`
+  - Crear: `__tests__/hooks/useBookingState.test.ts`
+  - Crear: `__tests__/hooks/useBookingClasses.test.ts`
+  - Objetivo: 80% coverage en hooks
+
+---
+
+### 15.3 Dependencias a Instalar
+
+```bash
+# Para validación con Zod
+npm install zod
+
+# Para focus trap en modales
+npm install focus-trap-react
+
+# Para debounce
+npm install use-debounce
+
+# Para React Query (opcional, si se implementa)
+npm install @tanstack/react-query
+
+# Para virtualización (opcional, si hay muchas clases)
+npm install @tanstack/react-virtual
+```
+
+---
+
+### 15.4 Checklist Resumen
+
+**Team Building (9.0 → 10.0):**
+
+- [ ] Testimonios de empresas conocidas
+- [ ] WhatsApp flotante B2B
+- [ ] Video testimonial
+- [ ] Caso de estudio con ROI
+- [ ] Lazy loading reviews
+- [ ] prefers-reduced-motion
+- [ ] Contraste WCAG verificado
+
+**BookingWidgetV2 (7.3 → 9.0):**
+
+- [x] Error Boundary ✅
+- [x] Retry exponential backoff ✅
+- [ ] Validación Zod
+- [ ] Focus trap en modal
+- [ ] Debounce en filtros
+- [ ] React Query / SWR
+- [ ] Virtualización
+- [ ] localStorage progreso
+- [ ] CSRF token
+- [ ] aria-live errores
+- [ ] role="dialog" modal
+- [ ] Tests unitarios hooks
+
+---
+
+_Última actualización: 2025-01-18 (Sección 15: Evaluación Enterprise - Mejoras pendientes añadida)_
