@@ -8,25 +8,25 @@ module.exports = [
   {
     name: 'ES Locale Bundle',
     path: 'dist/assets/i18n-es-*.js',
-    limit: '352 KB', // Increased for booking system + blog articles
+    limit: '365 KB', // Increased for booking system + service pages + blog
     gzip: true,
   },
   {
     name: 'EN Locale Bundle',
     path: 'dist/assets/i18n-en-*.js',
-    limit: '346 KB', // Increased for booking system + blog articles
+    limit: '360 KB', // Increased for booking system + service pages + blog
     gzip: true,
   },
   {
     name: 'CA Locale Bundle',
     path: 'dist/assets/i18n-ca-*.js',
-    limit: '370 KB', // Increased for booking system + blog articles
+    limit: '385 KB', // Increased for booking system + service pages + blog
     gzip: true,
   },
   {
     name: 'FR Locale Bundle',
     path: 'dist/assets/i18n-fr-*.js',
-    limit: '385 KB', // Increased for booking system filters + translations
+    limit: '400 KB', // Increased for booking system + service pages + translations
     gzip: true,
   },
   {
