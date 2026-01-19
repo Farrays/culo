@@ -18595,6 +18595,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   booking_class_spots_few: 'Last {count} spots',
   booking_class_spots_available: '{count} spots',
   booking_class_full: 'Full',
+  booking_class_new: 'NEW',
   booking_class_select: 'Select',
   booking_select_class: 'Book',
   booking_class_selected: 'Selected',

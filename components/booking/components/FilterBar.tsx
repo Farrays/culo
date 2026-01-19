@@ -151,6 +151,9 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
   const hasValue = value !== '';
   const selectedOption = options.find(opt => opt.value === value);
 
+  // Display the selected option label or the default label
+  const displayLabel = hasValue && selectedOption ? selectedOption.label : label;
+
   return (
     <div ref={dropdownRef} className="relative">
       <button
@@ -167,21 +170,29 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
         ) : (
           icon
         )}
-        {label}
+        {displayLabel}
         <ChevronDownIcon className={`w-3 h-3 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {isOpen && (
-        <div className="absolute z-20 top-full mt-1 left-0 min-w-[160px] max-h-[300px] overflow-y-auto bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-xl">
+        <div
+          className="absolute z-[100] top-full mt-1 left-0 min-w-[160px] max-h-[300px] overflow-y-auto bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-xl pointer-events-auto"
+          style={{ isolation: 'isolate' }}
+        >
           {options.map(option => (
             <button
               key={option.value}
               type="button"
-              onClick={() => {
+              onMouseDown={e => {
+                e.stopPropagation();
+                e.preventDefault();
+              }}
+              onClick={e => {
+                e.stopPropagation();
                 onChange(option.value);
                 onClose();
               }}
-              className={`w-full px-4 py-2 text-left text-sm transition-colors flex items-center gap-2 ${
+              className={`w-full px-4 py-2 text-left text-sm transition-colors flex items-center gap-2 cursor-pointer ${
                 option.value === value
                   ? 'bg-primary-accent/20 text-primary-accent'
                   : 'text-neutral/80 hover:bg-white/10'
@@ -214,7 +225,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({
 }) => {
   const { t } = useI18n();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [isExpanded, setIsExpanded] = useState(false);
+  // Filters visible by default on mobile, click to hide
+  const [isExpanded, setIsExpanded] = useState(true);
 
   const handleClose = useCallback(() => {
     setOpenDropdown(null);
@@ -362,7 +374,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
             )}
           </span>
           <ChevronDownIcon
-            className={`w-4 h-4 ml-auto transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+            className={`w-4 h-4 ml-auto transition-transform ${isExpanded ? '' : 'rotate-180'}`}
           />
         </button>
 

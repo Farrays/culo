@@ -18992,6 +18992,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   booking_class_spots_few: 'Dernières {count} places',
   booking_class_spots_available: '{count} places',
   booking_class_full: 'Complet',
+  booking_class_new: 'NOUVEAU',
   booking_class_select: 'Sélectionner',
   booking_select_class: 'Réserver',
   booking_class_selected: 'Sélectionné',

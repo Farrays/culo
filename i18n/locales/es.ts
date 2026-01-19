@@ -20213,6 +20213,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_class_spots_few: 'Últimas {count} plazas',
   booking_class_spots_available: '{count} plazas',
   booking_class_full: 'Completo',
+  booking_class_new: 'NUEVA',
   booking_class_select: 'Seleccionar',
   booking_select_class: 'Reservar',
   booking_class_selected: 'Seleccionada',
