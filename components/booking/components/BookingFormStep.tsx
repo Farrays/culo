@@ -457,8 +457,16 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
       </form>
 
       {/* Legal Modals */}
-      <TermsModal isOpen={showTermsModal} onClose={() => setShowTermsModal(false)} />
-      <PrivacyModal isOpen={showPrivacyModal} onClose={() => setShowPrivacyModal(false)} />
+      <TermsModal
+        isOpen={showTermsModal}
+        onClose={() => setShowTermsModal(false)}
+        onAccept={() => onFormChange({ acceptsTerms: true })}
+      />
+      <PrivacyModal
+        isOpen={showPrivacyModal}
+        onClose={() => setShowPrivacyModal(false)}
+        onAccept={() => onFormChange({ acceptsPrivacy: true })}
+      />
     </div>
   );
 };

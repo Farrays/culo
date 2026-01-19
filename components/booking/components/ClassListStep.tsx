@@ -35,6 +35,66 @@ interface WeekGroup {
 }
 
 /**
+ * Day group structure for standard view with day separators
+ */
+interface DayGroup {
+  dateKey: string; // YYYY-MM-DD
+  dayLabel: string; // "Lunes 20 Ene"
+  dayOfWeek: string; // "Lunes"
+  classes: ClassData[];
+}
+
+/**
+ * Groups classes by day based on rawStartsAt
+ * Returns sorted array of day groups with localized labels
+ */
+function groupClassesByDay(classes: ClassData[], locale: string): DayGroup[] {
+  if (classes.length === 0) return [];
+
+  const dayMap = new Map<string, DayGroup>();
+
+  classes.forEach(classData => {
+    const classDate = new Date(classData.rawStartsAt);
+    const dateKey = classDate.toISOString().split('T')[0] ?? '';
+
+    if (!dayMap.has(dateKey)) {
+      // Format day label: "Lunes 20 Ene"
+      const dayOfWeek = classDate.toLocaleDateString(locale === 'ca' ? 'ca-ES' : `${locale}-ES`, {
+        weekday: 'long',
+      });
+      const dateFormatted = classDate.toLocaleDateString(
+        locale === 'ca' ? 'ca-ES' : `${locale}-ES`,
+        {
+          day: 'numeric',
+          month: 'short',
+        }
+      );
+      // Capitalize first letter
+      const dayOfWeekCapitalized = dayOfWeek.charAt(0).toUpperCase() + dayOfWeek.slice(1);
+
+      dayMap.set(dateKey, {
+        dateKey,
+        dayLabel: `${dayOfWeekCapitalized} ${dateFormatted}`,
+        dayOfWeek: dayOfWeekCapitalized,
+        classes: [],
+      });
+    }
+
+    dayMap.get(dateKey)?.classes.push(classData);
+  });
+
+  // Sort days chronologically and sort classes within each day
+  return Array.from(dayMap.values())
+    .sort((a, b) => a.dateKey.localeCompare(b.dateKey))
+    .map(group => ({
+      ...group,
+      classes: group.classes.sort(
+        (a, b) => new Date(a.rawStartsAt).getTime() - new Date(b.rawStartsAt).getTime()
+      ),
+    }));
+}
+
+/**
  * Groups classes by week based on rawStartsAt
  * Returns sorted array of week groups with localized labels
  */
@@ -102,6 +162,37 @@ const CalendarWeekIcon: React.FC<{ className?: string }> = memo(({ className }) 
   </svg>
 ));
 CalendarWeekIcon.displayName = 'CalendarWeekIcon';
+
+/**
+ * Day header component for standard view with day separators
+ */
+const DayHeader: React.FC<{
+  dayLabel: string;
+  classCount: number;
+  isFirst?: boolean;
+}> = memo(({ dayLabel, classCount, isFirst = false }) => {
+  const { t } = useI18n();
+
+  return (
+    <div
+      className={`
+        sticky top-0 z-10 flex items-center gap-2 py-2 px-3
+        bg-gradient-to-r from-primary-accent/10 via-black/95 to-primary-accent/10
+        backdrop-blur-md border-b border-primary-accent/20
+        ${isFirst ? '' : 'mt-3'}
+      `}
+      role="heading"
+      aria-level={3}
+    >
+      <CalendarWeekIcon className="w-4 h-4 text-primary-accent flex-shrink-0" />
+      <span className="font-medium text-neutral text-sm">{dayLabel}</span>
+      <span className="ml-auto text-xs text-neutral/40">
+        {t('booking_classes_count', { count: classCount })}
+      </span>
+    </div>
+  );
+});
+DayHeader.displayName = 'DayHeader';
 
 /**
  * Week header component for grouped view
@@ -442,9 +533,18 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
       return groupClassesByWeek(displayClasses, locale);
     }, [showAllWeeks, displayClasses, locale]);
 
-    // Virtualization for large lists (only in standard mode, not grouped mode)
+    // Group classes by day for standard mode with day separators
+    const dayGroups = useMemo(() => {
+      if (showAllWeeks || displayClasses.length === 0) return [];
+      return groupClassesByDay(displayClasses, locale);
+    }, [showAllWeeks, displayClasses, locale]);
+
+    // Use day grouping in standard mode (better UX with day separators)
+    const useDayGrouping = !showAllWeeks && dayGroups.length > 0;
+
+    // Virtualization disabled when using day grouping for better UX
     const { virtualItems, totalHeight, isVirtualizing } = useVirtualList<ClassData>({
-      items: showAllWeeks ? [] : displayClasses, // Disable virtualization in grouped mode
+      items: showAllWeeks || useDayGrouping ? [] : displayClasses,
       itemHeight: CLASS_CARD_HEIGHT,
       containerRef: listContainerRef,
       overscan: 3,
@@ -592,17 +692,17 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
               ))}
             </div>
           ) : (
-            // Standard mode: Class list with optional virtualization
+            // Standard mode: Class list grouped by day with sticky headers
             <div
               ref={listContainerRef}
               className="max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar"
               style={isVirtualizing ? { position: 'relative' } : undefined}
             >
               {isVirtualizing ? (
-                // Virtualized list for 20+ items
+                // Virtualized list for 20+ items (fallback, rarely used now)
                 <div style={{ height: totalHeight, position: 'relative' }}>
                   {virtualItems.map(({ item, style }) => (
-                    <div key={item.id} style={{ ...style, paddingBottom: 16 }}>
+                    <div key={item.id} style={{ ...style, paddingBottom: 12 }}>
                       <ClassCard
                         classData={item}
                         onSelect={onSelectClass}
@@ -612,9 +712,35 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
                     </div>
                   ))}
                 </div>
+              ) : useDayGrouping ? (
+                // Day-grouped list with sticky day headers
+                <div className="space-y-1">
+                  {dayGroups.map((group, groupIndex) => (
+                    <div key={group.dateKey}>
+                      {/* Day Header - Sticky */}
+                      <DayHeader
+                        dayLabel={group.dayLabel}
+                        classCount={group.classes.length}
+                        isFirst={groupIndex === 0}
+                      />
+                      {/* Classes for this day */}
+                      <div className="grid gap-3 py-2">
+                        {group.classes.map(classData => (
+                          <ClassCard
+                            key={classData.id}
+                            classData={classData}
+                            onSelect={onSelectClass}
+                            onShowInfo={handleShowInfo}
+                            isSelected={selectedClassId === classData.id}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               ) : (
-                // Standard list for smaller lists
-                <div className="grid gap-4">
+                // Flat list fallback (no classes or edge case)
+                <div className="grid gap-3">
                   {displayClasses.map(classData => (
                     <ClassCard
                       key={classData.id}

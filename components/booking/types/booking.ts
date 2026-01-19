@@ -88,18 +88,21 @@ export interface BookingFormData {
 }
 
 // Initial form data
+// Note: acceptsMarketing, acceptsNoRefund, acceptsImage are legacy fields
+// that are now implicitly included when acceptsTerms is checked.
+// We default them to true since they're required by the API but hidden in the UI.
 export const INITIAL_FORM_DATA: BookingFormData = {
   firstName: '',
   lastName: '',
   email: '',
   phone: '',
   acceptsTerms: false,
-  acceptsMarketing: false,
+  acceptsMarketing: true, // Legacy: now included in acceptsTerms
   acceptsAge: false,
-  acceptsNoRefund: false,
+  acceptsNoRefund: true, // Legacy: now included in acceptsTerms
   acceptsPrivacy: false,
   acceptsHeels: false,
-  acceptsImage: false,
+  acceptsImage: true, // Legacy: now included in acceptsTerms
 };
 
 // Filter option type
