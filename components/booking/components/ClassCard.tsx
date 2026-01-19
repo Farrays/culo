@@ -9,6 +9,7 @@ import { useI18n } from '../../../hooks/useI18n';
 import type { ClassData } from '../types/booking';
 import { TEACHER_REGISTRY } from '../../../constants/teacher-registry';
 import { getTeacherImagePath } from '../../../constants/teacher-images';
+import { Portal } from './Portal';
 
 // Teacher name mapping (Momence → Registry)
 const INSTRUCTOR_NAME_TO_REGISTRY: Record<string, string> = {
@@ -175,12 +176,12 @@ const formatDuration = (minutes: number): string => {
   return `${mins}min`;
 };
 
-// Check if class should show "NEW" badge
-const isClassNew = (classData: ClassData): boolean => {
+// Helper to check if class should show NEW badge
+function isClassNew(classData: ClassData): boolean {
   if (!classData.isNew) return false;
   if (!classData.newUntil) return true; // No expiry = always show
   return new Date(classData.newUntil) > new Date();
-};
+}
 
 interface ClassCardProps {
   classData: ClassData;
@@ -189,153 +190,142 @@ interface ClassCardProps {
   isSelected?: boolean;
 }
 
-// Teacher Modal Component
+// Teacher Modal Component - with history management and proper scroll
 const TeacherModal: React.FC<{
   teacherId: string;
   onClose: () => void;
 }> = ({ teacherId, onClose }) => {
   const { t } = useI18n();
   const teacher = TEACHER_REGISTRY[teacherId];
-  const modalRef = React.useRef<HTMLDivElement>(null);
+  const historyPushedRef = React.useRef(false);
 
-  // Lock body scroll, handle escape key, and browser back button
+  // History management and body scroll lock
   React.useEffect(() => {
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
+    // Set global flag to indicate modal is open
+    window.__bookingModalOpen = true;
 
     // Push history state for modal
-    window.history.pushState({ modal: 'teacher' }, '');
+    if (!historyPushedRef.current) {
+      window.history.pushState({ modal: 'teacher', bookingWidget: true }, '');
+      historyPushedRef.current = true;
+    }
+
+    // Lock body scroll
+    document.body.style.overflow = 'hidden';
 
     // Handle browser back button
     const handlePopState = () => {
+      historyPushedRef.current = false;
+      window.__bookingModalOpen = false;
       onClose();
     };
-
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        window.history.back();
-      }
-    };
-
-    document.addEventListener('keydown', handleEscape);
     window.addEventListener('popstate', handlePopState);
 
-    // Focus the modal
-    modalRef.current?.focus();
-
     return () => {
-      document.body.style.overflow = previousOverflow;
-      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = '';
       window.removeEventListener('popstate', handlePopState);
+      window.__bookingModalOpen = false;
     };
   }, [onClose]);
 
-  // Use history.back() for all close actions
+  // Close with history
   const handleClose = () => {
-    window.history.back();
+    if (historyPushedRef.current) {
+      window.history.back();
+    } else {
+      onClose();
+    }
   };
 
   if (!teacher) return null;
 
   return (
-    <div
-      className="fixed inset-0 z-[60] flex items-center justify-center p-4"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="teacher-modal-title"
-    >
-      {/* Backdrop - solid dark with blur */}
+    <Portal>
       <div
-        className="absolute inset-0 bg-black/90 backdrop-blur-md"
+        className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
         onClick={handleClose}
-        aria-hidden="true"
-      />
-
-      {/* Modal content */}
-      <div
-        ref={modalRef}
-        tabIndex={-1}
-        className="relative bg-black border border-white/20 rounded-2xl p-6 max-w-md w-full max-h-[85vh] overflow-y-auto animate-fade-in shadow-2xl"
-        onClick={e => e.stopPropagation()}
       >
-        <button
-          type="button"
-          onClick={handleClose}
-          className="absolute top-4 right-4 p-2 rounded-full text-neutral/60 hover:text-neutral hover:bg-white/10 transition-all z-10"
-          aria-label={t('booking_modal_close')}
+        <div
+          className="relative bg-black border border-white/10 rounded-2xl p-6 max-w-md w-full max-h-[85vh] overflow-y-auto animate-fade-in"
+          onClick={e => e.stopPropagation()}
         >
-          <XMarkIcon className="w-5 h-5" />
-        </button>
+          <button
+            onClick={handleClose}
+            className="absolute top-4 right-4 p-1 rounded-full text-neutral/50 hover:text-neutral hover:bg-white/10 transition-all"
+            aria-label={t('booking_modal_close')}
+          >
+            <XMarkIcon className="w-5 h-5" />
+          </button>
 
-        {/* Teacher photo */}
-        <div className="flex justify-center mb-4">
-          <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-primary-accent/30">
-            <img
-              src={getTeacherImagePath(teacherId, 320)}
-              alt={teacher.name}
-              className="w-full h-full object-cover"
-              style={{ objectPosition: 'center 20%' }}
-            />
+          {/* Teacher photo */}
+          <div className="flex justify-center mb-4">
+            <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-primary-accent/30">
+              <img
+                src={getTeacherImagePath(teacherId, 320)}
+                alt={teacher.name}
+                className="w-full h-full object-cover"
+                style={{ objectPosition: 'center 20%' }}
+              />
+            </div>
           </div>
-        </div>
 
-        <h3 id="teacher-modal-title" className="text-xl font-bold text-neutral text-center mb-2">
-          {teacher.name}
-        </h3>
+          <h3 className="text-xl font-bold text-neutral text-center mb-2">{teacher.name}</h3>
 
-        {/* Tags */}
-        <div className="flex flex-wrap justify-center gap-2 mb-4">
-          {teacher.meta?.isDirector && (
-            <span className="px-3 py-1 rounded-full text-xs font-medium bg-amber-500/20 text-amber-400">
-              {t('booking_teacher_director')}
-            </span>
-          )}
-          {teacher.meta?.origin && (
-            <span className="px-3 py-1 rounded-full text-xs font-medium bg-primary-accent/20 text-primary-accent">
-              {teacher.meta.origin}
-            </span>
-          )}
-          {teacher.meta?.yearsExperience && (
-            <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-neutral/70">
-              {teacher.meta.yearsExperience}+ {t('booking_teacher_years')}
-            </span>
-          )}
-        </div>
-
-        {/* Bio */}
-        <p className="text-neutral/80 text-sm leading-relaxed text-center mb-6">
-          {t(teacher.canonicalBioKey)}
-        </p>
-
-        {/* Styles taught */}
-        <div className="mb-4">
-          <p className="text-xs text-neutral/50 text-center mb-2">{t('booking_teacher_teaches')}</p>
-          <div className="flex flex-wrap justify-center gap-1">
-            {teacher.teachesStyles.slice(0, 5).map(style => (
-              <span
-                key={style}
-                className="px-2 py-0.5 rounded text-xs bg-primary-accent/10 text-primary-accent/80 capitalize"
-              >
-                {style.replace(/-/g, ' ')}
+          {/* Tags */}
+          <div className="flex flex-wrap justify-center gap-2 mb-4">
+            {teacher.meta?.isDirector && (
+              <span className="px-3 py-1 rounded-full text-xs font-medium bg-amber-500/20 text-amber-400">
+                {t('booking_teacher_director')}
               </span>
-            ))}
-            {teacher.teachesStyles.length > 5 && (
-              <span className="px-2 py-0.5 rounded text-xs bg-white/5 text-neutral/50">
-                +{teacher.teachesStyles.length - 5}
+            )}
+            {teacher.meta?.origin && (
+              <span className="px-3 py-1 rounded-full text-xs font-medium bg-primary-accent/20 text-primary-accent">
+                {teacher.meta.origin}
+              </span>
+            )}
+            {teacher.meta?.yearsExperience && (
+              <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-neutral/70">
+                {teacher.meta.yearsExperience}+ {t('booking_teacher_years')}
               </span>
             )}
           </div>
-        </div>
 
-        <button
-          type="button"
-          onClick={handleClose}
-          className="w-full py-3 bg-white/10 text-neutral font-semibold rounded-xl hover:bg-white/20 transition-colors"
-        >
-          {t('booking_modal_close')}
-        </button>
+          {/* Bio */}
+          <p className="text-neutral/80 text-sm leading-relaxed text-center mb-6">
+            {t(teacher.canonicalBioKey)}
+          </p>
+
+          {/* Styles taught */}
+          <div className="mb-4">
+            <p className="text-xs text-neutral/50 text-center mb-2">
+              {t('booking_teacher_teaches')}
+            </p>
+            <div className="flex flex-wrap justify-center gap-1">
+              {teacher.teachesStyles.slice(0, 5).map(style => (
+                <span
+                  key={style}
+                  className="px-2 py-0.5 rounded text-xs bg-primary-accent/10 text-primary-accent/80 capitalize"
+                >
+                  {style.replace(/-/g, ' ')}
+                </span>
+              ))}
+              {teacher.teachesStyles.length > 5 && (
+                <span className="px-2 py-0.5 rounded text-xs bg-white/5 text-neutral/50">
+                  +{teacher.teachesStyles.length - 5}
+                </span>
+              )}
+            </div>
+          </div>
+
+          <button
+            onClick={handleClose}
+            className="w-full py-3 bg-white/10 text-neutral font-semibold rounded-xl hover:bg-white/20 transition-colors"
+          >
+            {t('booking_modal_close')}
+          </button>
+        </div>
       </div>
-    </div>
+    </Portal>
   );
 };
 
@@ -420,20 +410,19 @@ export const ClassCard: React.FC<ClassCardProps> = memo(
             }
           `}
         >
-          {/* Mobile: Stacked layout / Desktop: Side by side */}
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">
             <div className="flex-1 min-w-0">
-              {/* Class name with optional NEW badge */}
+              {/* Class name with optional NEW badge - no truncate for full visibility */}
               <h3 className="font-bold text-neutral mb-1 leading-tight">
                 {isClassNew(classData) && (
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-semibold bg-amber-500/20 text-amber-400 rounded mr-2">
-                    ⭐ {t('booking_class_new')}
+                  <span className="inline-flex items-center gap-1 px-1.5 py-0.5 text-[10px] font-bold bg-amber-500/20 text-amber-400 rounded mr-1.5 uppercase tracking-wide">
+                    {t('booking_class_new')}
                   </span>
                 )}
                 {classData.name}
               </h3>
 
-              {/* Class details - wrap nicely on mobile */}
+              {/* Class details - responsive layout */}
               <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-neutral/70">
                 <span className="flex items-center gap-1">
                   <CalendarIcon className="w-4 h-4 flex-shrink-0" />
@@ -446,21 +435,21 @@ export const ClassCard: React.FC<ClassCardProps> = memo(
                 <span className="text-neutral/50">{formatDuration(classData.duration)}</span>
               </div>
 
-              {/* Instructor - on its own line for better readability */}
+              {/* Instructor on separate line for better mobile visibility */}
               {classData.instructor && (
-                <div className="mt-1">
+                <div className="mt-1 text-sm">
                   {teacherRegistryId ? (
                     <button
                       type="button"
                       onClick={handleTeacherClick}
-                      className="flex items-center gap-1 text-sm text-primary-accent hover:text-primary-accent/80 transition-colors"
+                      className="flex items-center gap-1 text-primary-accent hover:text-primary-accent/80 transition-colors"
                       title={t('booking_teacher_view_profile')}
                     >
                       <UserIcon className="w-4 h-4 flex-shrink-0" />
                       <span className="underline underline-offset-2">{classData.instructor}</span>
                     </button>
                   ) : (
-                    <span className="flex items-center gap-1 text-sm text-neutral/70">
+                    <span className="flex items-center gap-1 text-neutral/70">
                       <UserIcon className="w-4 h-4 flex-shrink-0" />
                       {classData.instructor}
                     </span>
@@ -476,8 +465,8 @@ export const ClassCard: React.FC<ClassCardProps> = memo(
               )}
             </div>
 
-            {/* Action buttons - row on mobile, column on desktop */}
-            <div className="flex sm:flex-col items-center sm:items-end gap-2 flex-shrink-0 mt-2 sm:mt-0">
+            {/* Action buttons - positioned for mobile and desktop */}
+            <div className="flex sm:flex-col items-center sm:items-end gap-2 flex-shrink-0 self-start sm:self-auto">
               <div className="flex items-center gap-2">
                 {/* Info button - text style like V1 */}
                 {classData.description && (
@@ -506,12 +495,9 @@ export const ClassCard: React.FC<ClassCardProps> = memo(
                   )}
                 </button>
 
-                {/* Selected indicator - inline on mobile */}
-                {isSelected && <CheckIcon className="w-5 h-5 text-primary-accent sm:hidden" />}
+                {/* Selected indicator */}
+                {isSelected && <CheckIcon className="w-5 h-5 text-primary-accent" />}
               </div>
-
-              {/* Selected indicator - below buttons on desktop */}
-              {isSelected && <CheckIcon className="hidden sm:block w-5 h-5 text-primary-accent" />}
             </div>
           </div>
         </div>

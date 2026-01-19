@@ -18836,8 +18836,6 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_class_spots_available: '{count} places',
   booking_class_full: 'Complet',
   booking_class_new: 'NOVA',
-  booking_week_of: 'Setmana del',
-  booking_all_weeks_showing: 'Mostrant totes les classes de les properes 4 setmanes',
   booking_class_select: 'Seleccionar',
   booking_select_class: 'Reservar',
   booking_class_selected: 'Seleccionada',

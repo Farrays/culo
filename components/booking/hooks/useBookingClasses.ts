@@ -301,6 +301,16 @@ export function useBookingClasses({
   // AbortController ref for cleanup
   const abortControllerRef = useRef<AbortController | null>(null);
   const lastWeekOffsetRef = useRef<number>(weekOffset);
+  // Track if component is still mounted to prevent state updates after unmount
+  const isMountedRef = useRef(true);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    isMountedRef.current = true;
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
 
   // Fetch classes for a specific week (lazy loading)
   const fetchWeekClasses = useCallback(
@@ -308,29 +318,35 @@ export function useBookingClasses({
       // Check cache first
       const cached = classCache.get(week, enablePagination ? page : undefined);
       if (cached) {
-        setFromCache(true);
-        if (page === 1) {
-          setWeekClasses(cached);
-        } else {
-          setWeekClasses(prev => {
-            const existingIds = new Set(prev.map(c => c.id));
-            return [...prev, ...cached.filter(c => !existingIds.has(c.id))];
-          });
+        if (isMountedRef.current) {
+          setFromCache(true);
+          if (page === 1) {
+            setWeekClasses(cached);
+          } else {
+            setWeekClasses(prev => {
+              const existingIds = new Set(prev.map(c => c.id));
+              return [...prev, ...cached.filter(c => !existingIds.has(c.id))];
+            });
+          }
+          setHasMore(cached.length >= pageSize);
         }
-        setHasMore(cached.length >= pageSize);
         return cached;
       }
 
-      setFromCache(false);
+      if (isMountedRef.current) {
+        setFromCache(false);
+      }
       abortControllerRef.current?.abort();
       abortControllerRef.current = new AbortController();
 
-      if (page === 1) {
-        setLoading(true);
-        setError(null);
+      if (isMountedRef.current) {
+        if (page === 1) {
+          setLoading(true);
+          setError(null);
+        }
+        setRetryCount(0);
+        setIsRetrying(false);
       }
-      setRetryCount(0);
-      setIsRetrying(false);
 
       try {
         let classes: ClassData[];
@@ -344,10 +360,10 @@ export function useBookingClasses({
           if (enablePagination) {
             const start = (page - 1) * pageSize;
             classes = weekData.slice(start, start + pageSize);
-            setHasMore(start + pageSize < weekData.length);
+            if (isMountedRef.current) setHasMore(start + pageSize < weekData.length);
           } else {
             classes = weekData;
-            setHasMore(false);
+            if (isMountedRef.current) setHasMore(false);
           }
         } else {
           // Fetch only 7 days for current week (lazy loading)
@@ -368,14 +384,16 @@ export function useBookingClasses({
           }>(`${API_ENDPOINTS.CLASSES}?${params.toString()}`, {
             signal: abortControllerRef.current.signal,
             onRetry: attempt => {
-              setRetryCount(attempt);
-              setIsRetrying(true);
+              if (isMountedRef.current) {
+                setRetryCount(attempt);
+                setIsRetrying(true);
+              }
             },
           });
 
           if (data.success) {
             classes = data.data?.classes || [];
-            setHasMore(data.data?.hasMore ?? classes.length >= pageSize);
+            if (isMountedRef.current) setHasMore(data.data?.hasMore ?? classes.length >= pageSize);
           } else {
             throw new Error(data.error || 'Unknown error');
           }
@@ -384,14 +402,16 @@ export function useBookingClasses({
         // Update cache
         classCache.set(week, classes, enablePagination ? page : undefined);
 
-        // Update state
-        if (page === 1) {
-          setWeekClasses(classes);
-        } else {
-          setWeekClasses(prev => {
-            const existingIds = new Set(prev.map(c => c.id));
-            return [...prev, ...classes.filter(c => !existingIds.has(c.id))];
-          });
+        // Update state (only if still mounted)
+        if (isMountedRef.current) {
+          if (page === 1) {
+            setWeekClasses(classes);
+          } else {
+            setWeekClasses(prev => {
+              const existingIds = new Set(prev.map(c => c.id));
+              return [...prev, ...classes.filter(c => !existingIds.has(c.id))];
+            });
+          }
         }
 
         return classes;
@@ -401,13 +421,17 @@ export function useBookingClasses({
         }
 
         const message = err instanceof Error ? err.message : 'Error loading classes';
-        setError(message);
-        if (page === 1) setWeekClasses([]);
+        if (isMountedRef.current) {
+          setError(message);
+          if (page === 1) setWeekClasses([]);
+        }
         console.error('Failed to fetch classes:', err);
         return [];
       } finally {
-        setLoading(false);
-        setIsRetrying(false);
+        if (isMountedRef.current) {
+          setLoading(false);
+          setIsRetrying(false);
+        }
       }
     },
     [enablePagination, pageSize]
