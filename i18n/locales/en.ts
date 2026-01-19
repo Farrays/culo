@@ -18662,6 +18662,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // Accessibility
   booking_classes_region: 'Available classes list',
   booking_loading_classes: 'Loading classes...',
+  booking_loading_please_wait: 'One moment please, loading available classes...',
   booking_form_region: 'Booking form',
 
   booking_filter_level_iniciacion: 'Beginner',

@@ -20280,6 +20280,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   // Accessibility
   booking_classes_region: 'Lista de clases disponibles',
   booking_loading_classes: 'Cargando clases...',
+  booking_loading_please_wait: 'Un momento por favor, cargando clases disponibles...',
   booking_form_region: 'Formulario de reserva',
 
   booking_filter_level_iniciacion: 'Iniciación',

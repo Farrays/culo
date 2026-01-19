@@ -10,6 +10,10 @@
       "memory": 512,
       "maxDuration": 30
     },
+    "api/cache-warm.ts": {
+      "memory": 512,
+      "maxDuration": 60
+    },
     "api/reservar.ts": {
       "memory": 512,
       "maxDuration": 15

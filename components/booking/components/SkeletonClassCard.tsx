@@ -101,16 +101,29 @@ export const SkeletonClassCard: React.FC<{
 SkeletonClassCard.displayName = 'SkeletonClassCard';
 
 /**
- * Group of skeleton cards for loading state
+ * Group of skeleton cards for loading state with optional loading message
  */
 export const SkeletonClassList: React.FC<{
   /** Number of skeleton cards to show */
   count?: number;
-}> = memo(({ count = 4 }) => (
-  <div className="space-y-4" aria-hidden="true" role="presentation">
-    {Array.from({ length: count }, (_, i) => (
-      <SkeletonClassCard key={i} variant={i} />
-    ))}
+  /** Optional loading message to display */
+  loadingMessage?: string;
+}> = memo(({ count = 4, loadingMessage }) => (
+  <div className="space-y-4" role="presentation">
+    {/* Visible loading message */}
+    {loadingMessage && (
+      <div className="flex items-center justify-center gap-3 py-4 px-4 bg-white/5 rounded-xl border border-white/10">
+        <div className="w-5 h-5 border-2 border-primary-accent border-t-transparent rounded-full animate-spin" />
+        <p className="text-neutral/70 text-sm font-medium animate-pulse">{loadingMessage}</p>
+      </div>
+    )}
+    <div aria-hidden="true">
+      {Array.from({ length: count }, (_, i) => (
+        <div key={i} className={i > 0 ? 'mt-4' : ''}>
+          <SkeletonClassCard variant={i} />
+        </div>
+      ))}
+    </div>
   </div>
 ));
 SkeletonClassList.displayName = 'SkeletonClassList';
