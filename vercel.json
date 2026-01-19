@@ -1,10 +1,4 @@
 {
-  "crons": [
-    {
-      "path": "/api/cache-warm",
-      "schedule": "0 * * * *"
-    }
-  ],
   "buildCommand": "npm ci && npm run build",
   "installCommand": "npm ci",
   "outputDirectory": "dist",
