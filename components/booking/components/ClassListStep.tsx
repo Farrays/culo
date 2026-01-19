@@ -225,6 +225,12 @@ interface ClassListStepProps {
   isLoadingMore?: boolean;
   /** Currently selected class ID for V1-style visual feedback */
   selectedClassId?: number | null;
+  /** Show all weeks (Acuity mode when filters are active) */
+  showAllWeeks?: boolean;
+  /** All weeks classes when in Acuity mode */
+  allWeeksClasses?: ClassData[];
+  /** Loading state for all weeks fetch */
+  allWeeksLoading?: boolean;
 }
 
 export const ClassListStep: React.FC<ClassListStepProps> = memo(
@@ -245,6 +251,9 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
     hasMore = false,
     isLoadingMore = false,
     selectedClassId = null,
+    showAllWeeks = false,
+    allWeeksClasses = [],
+    allWeeksLoading = false,
   }) => {
     const { t } = useI18n();
     const [infoModal, setInfoModal] = useState<ClassData | null>(null);
@@ -272,9 +281,13 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
       return () => observer.disconnect();
     }, [onLoadMore, hasMore, isLoadingMore]);
 
+    // Determine which classes to display based on mode
+    const displayClasses = showAllWeeks && allWeeksClasses.length > 0 ? allWeeksClasses : classes;
+    const isLoading = showAllWeeks ? allWeeksLoading : loading;
+
     // Virtualization for large lists
     const { virtualItems, totalHeight, isVirtualizing } = useVirtualList<ClassData>({
-      items: classes,
+      items: displayClasses,
       itemHeight: CLASS_CARD_HEIGHT,
       containerRef: listContainerRef,
       overscan: 3,
@@ -322,15 +335,15 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
           className="mt-4"
           role="region"
           aria-label={t('booking_classes_region')}
-          aria-busy={loading}
+          aria-busy={isLoading}
           aria-live="polite"
         >
           {/* Screen reader loading announcement */}
           <div className="sr-only" aria-live="assertive">
-            {loading && t('booking_loading_classes')}
+            {isLoading && t('booking_loading_classes')}
           </div>
 
-          {loading ? (
+          {isLoading ? (
             // Loading skeleton
             <div className="space-y-3" aria-hidden="true">
               {[1, 2, 3, 4].map(i => (
@@ -352,7 +365,7 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
                 {t('booking_class_retry')}
               </button>
             </div>
-          ) : classes.length === 0 ? (
+          ) : displayClasses.length === 0 ? (
             // Empty state
             <div className="text-center py-12">
               <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/10 flex items-center justify-center">
@@ -407,7 +420,7 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
               ) : (
                 // Standard list for smaller lists
                 <div className="grid gap-4">
-                  {classes.map(classData => (
+                  {displayClasses.map(classData => (
                     <ClassCard
                       key={classData.id}
                       classData={classData}
@@ -420,14 +433,14 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
               )}
 
               {/* Infinite scroll sentinel */}
-              {onLoadMore && (
+              {onLoadMore && !showAllWeeks && (
                 <div ref={sentinelRef} className="py-4">
                   {isLoadingMore && (
                     <div className="flex justify-center">
                       <div className="w-6 h-6 border-2 border-primary-accent border-t-transparent rounded-full animate-spin" />
                     </div>
                   )}
-                  {!hasMore && classes.length > 0 && (
+                  {!hasMore && displayClasses.length > 0 && (
                     <p className="text-center text-sm text-neutral/40">
                       {t('booking_no_more_classes')}
                     </p>
@@ -439,9 +452,9 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
         </div>
 
         {/* Results count */}
-        {!loading && !error && classes.length > 0 && (
+        {!isLoading && !error && displayClasses.length > 0 && (
           <p className="text-center text-sm text-neutral/50">
-            {t('booking_classes_found', { count: classes.length })}
+            {t('booking_classes_found', { count: displayClasses.length })}
           </p>
         )}
 

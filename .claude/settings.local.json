@@ -255,7 +255,11 @@
       "Bash(vercel --prod --yes:*)",
       "Bash(git check-ignore:*)",
       "Bash(git diff:*)",
-      "Bash(ping:*)"
+      "Bash(ping:*)",
+      "Bash(for key in \"scheduleTitle\" \"scheduleSubtitle\" \"scheduleVacationMessage\" \"scheduleVacationCTA\" \"scheduleUsingCached\" \"classFull\" \"spotsAvailable\" \"retry\")",
+      "Bash(do echo \"=== Checking $key ===\")",
+      "Bash(for key in \"scheduleTitle\" \"scheduleSubtitle\")",
+      "Bash(do echo \"=== $key in ES ===\")"
     ],
     "deny": [],
     "ask": []
