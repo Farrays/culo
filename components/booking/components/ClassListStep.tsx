@@ -11,6 +11,7 @@ import { ActiveFilterBadges } from './ActiveFilterBadges';
 import { ClassCard } from './ClassCard';
 import { WeekNavigation } from './WeekNavigation';
 import { useVirtualList } from '../hooks/useVirtualList';
+import { Portal } from './Portal';
 
 // Estimated height of each ClassCard (in pixels)
 const CLASS_CARD_HEIGHT = 180;
@@ -38,10 +39,45 @@ const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) =
   const { t } = useI18n();
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const historyPushedRef = useRef(false);
   const modalId = `class-info-modal-${classData.id}`;
   const titleId = `class-info-title-${classData.id}`;
 
-  // Focus trap and keyboard handling
+  // Close with history support
+  const handleClose = useCallback(() => {
+    if (historyPushedRef.current) {
+      window.history.back();
+    } else {
+      onClose();
+    }
+  }, [onClose]);
+
+  // History management - must run immediately on mount
+  useEffect(() => {
+    // Set global flag to indicate modal is open
+    window.__bookingModalOpen = true;
+
+    // Push history state for modal (only once)
+    if (!historyPushedRef.current) {
+      window.history.pushState({ modal: 'classInfo', bookingWidget: true }, '');
+      historyPushedRef.current = true;
+    }
+
+    // Handle browser back button
+    const handlePopState = () => {
+      historyPushedRef.current = false;
+      window.__bookingModalOpen = false;
+      onClose();
+    };
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      window.__bookingModalOpen = false;
+    };
+  }, [onClose]);
+
+  // Focus trap, keyboard handling, and body scroll lock
   useEffect(() => {
     const modal = modalRef.current;
     if (!modal) return;
@@ -55,7 +91,7 @@ const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) =
     // Handle keyboard events
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        onClose();
+        handleClose();
         return;
       }
 
@@ -86,83 +122,85 @@ const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) =
       document.removeEventListener('keydown', handleKeyDown);
       previouslyFocused?.focus();
     };
-  }, [onClose]);
+  }, [handleClose]);
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby={titleId}
-      id={modalId}
-    >
-      {/* Backdrop */}
+    <Portal>
       <div
-        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-        onClick={onClose}
-        aria-hidden="true"
-      />
-
-      {/* Modal */}
-      <div
-        ref={modalRef}
-        className="relative bg-primary-dark border border-white/10 rounded-2xl p-6 max-w-lg w-full max-h-[80vh] overflow-y-auto"
+        className="fixed inset-0 z-[60] flex items-center justify-center p-4"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={titleId}
+        id={modalId}
       >
-        {/* Close button */}
-        <button
-          ref={closeButtonRef}
-          type="button"
-          onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-lg text-neutral/60 hover:text-neutral hover:bg-white/10 transition-colors"
-          aria-label={t('booking_modal_close')}
+        {/* Backdrop */}
+        <div
+          className="absolute inset-0 bg-black/90 backdrop-blur-sm"
+          onClick={handleClose}
+          aria-hidden="true"
+        />
+
+        {/* Modal - better background and scroll */}
+        <div
+          ref={modalRef}
+          className="relative bg-black border border-white/10 rounded-2xl p-6 max-w-lg w-full max-h-[85vh] overflow-y-auto"
         >
-          <XMarkIcon className="w-5 h-5" />
-        </button>
+          {/* Close button */}
+          <button
+            ref={closeButtonRef}
+            type="button"
+            onClick={handleClose}
+            className="absolute top-4 right-4 p-2 rounded-lg text-neutral/60 hover:text-neutral hover:bg-white/10 transition-colors"
+            aria-label={t('booking_modal_close')}
+          >
+            <XMarkIcon className="w-5 h-5" />
+          </button>
 
-        {/* Content */}
-        <h3 id={titleId} className="text-xl font-bold text-neutral mb-2 pr-10">
-          {classData.name}
-        </h3>
+          {/* Content */}
+          <h3 id={titleId} className="text-xl font-bold text-neutral mb-2 pr-10">
+            {classData.name}
+          </h3>
 
-        <div className="flex flex-wrap gap-2 mb-4">
-          <span className="px-3 py-1 bg-primary-accent/20 text-primary-accent rounded-full text-sm">
-            {classData.style}
-          </span>
-          {classData.level && (
-            <span className="px-3 py-1 bg-white/10 text-neutral/80 rounded-full text-sm">
-              {classData.level}
+          <div className="flex flex-wrap gap-2 mb-4">
+            <span className="px-3 py-1 bg-primary-accent/20 text-primary-accent rounded-full text-sm">
+              {classData.style}
             </span>
-          )}
-        </div>
-
-        <div className="space-y-2 mb-4 text-sm text-neutral/70">
-          <p>
-            <strong className="text-neutral">{t('booking_info_day')}:</strong> {classData.dayOfWeek}{' '}
-            {classData.date}
-          </p>
-          <p>
-            <strong className="text-neutral">{t('booking_info_time')}:</strong> {classData.time}
-          </p>
-          {classData.instructor && (
-            <p>
-              <strong className="text-neutral">{t('booking_info_instructor')}:</strong>{' '}
-              {classData.instructor}
-            </p>
-          )}
-          <p>
-            <strong className="text-neutral">{t('booking_info_location')}:</strong>{' '}
-            {classData.location || "Farray's Center"}
-          </p>
-        </div>
-
-        {classData.description && (
-          <div className="pt-4 border-t border-white/10">
-            <h4 className="font-medium text-neutral mb-2">{t('booking_info_description')}</h4>
-            <p className="text-sm text-neutral/70 whitespace-pre-line">{classData.description}</p>
+            {classData.level && (
+              <span className="px-3 py-1 bg-white/10 text-neutral/80 rounded-full text-sm">
+                {classData.level}
+              </span>
+            )}
           </div>
-        )}
+
+          <div className="space-y-2 mb-4 text-sm text-neutral/70">
+            <p>
+              <strong className="text-neutral">{t('booking_info_day')}:</strong>{' '}
+              {classData.dayOfWeek} {classData.date}
+            </p>
+            <p>
+              <strong className="text-neutral">{t('booking_info_time')}:</strong> {classData.time}
+            </p>
+            {classData.instructor && (
+              <p>
+                <strong className="text-neutral">{t('booking_info_instructor')}:</strong>{' '}
+                {classData.instructor}
+              </p>
+            )}
+            <p>
+              <strong className="text-neutral">{t('booking_info_location')}:</strong>{' '}
+              {classData.location || "Farray's Center"}
+            </p>
+          </div>
+
+          {classData.description && (
+            <div className="pt-4 border-t border-white/10">
+              <h4 className="font-medium text-neutral mb-2">{t('booking_info_description')}</h4>
+              <p className="text-sm text-neutral/70 whitespace-pre-line">{classData.description}</p>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </Portal>
   );
 };
 

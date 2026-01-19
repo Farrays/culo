@@ -11,7 +11,7 @@
  * - Retry with exponential backoff for API resilience
  */
 
-import React, { useEffect, memo } from 'react';
+import React, { useEffect, memo, useRef, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
 
@@ -46,6 +46,14 @@ function getCookie(name: string): string | null {
   if (typeof document === 'undefined') return null;
   const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
   return match ? (match[2] ?? null) : null;
+}
+
+// Global flag to track if a booking modal is open
+// This prevents the BookingWidgetV2 popstate handler from interfering with modal history
+declare global {
+  interface Window {
+    __bookingModalOpen?: boolean;
+  }
 }
 
 // Helper: Generate unique event ID for Meta tracking
@@ -155,6 +163,9 @@ const BookingWidgetV2: React.FC = memo(() => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Track if we pushed a history state for the form step
+  const historyPushedRef = useRef(false);
+
   // Language change handler
   const handleLanguageChange = (newLocale: 'es' | 'ca' | 'en' | 'fr') => {
     if (newLocale !== locale) {
@@ -226,6 +237,67 @@ const BookingWidgetV2: React.FC = memo(() => {
 
   const { trackClassSelected, trackBookingSuccess } = useBookingAnalytics();
 
+  // Browser history management - push state when entering form step
+  useEffect(() => {
+    if (step === 'form' && !historyPushedRef.current) {
+      window.history.pushState({ bookingStep: 'form', bookingWidget: true }, '');
+      historyPushedRef.current = true;
+    }
+    if (step === 'class') {
+      historyPushedRef.current = false;
+    }
+  }, [step]);
+
+  // Handle browser back button (popstate event)
+  const handlePopState = useCallback(
+    (event: globalThis.PopStateEvent) => {
+      // If a modal is open, let the modal handle the popstate
+      if (window.__bookingModalOpen) {
+        return;
+      }
+
+      // If booking is complete (success), prevent going back
+      if (status === 'success') {
+        // Push the success state back to prevent navigation
+        window.history.pushState({ bookingStep: 'success', bookingWidget: true }, '');
+        return;
+      }
+
+      // Check the state we're returning TO
+      const state = event.state as {
+        bookingStep?: string;
+        modal?: string;
+        bookingWidget?: boolean;
+      } | null;
+
+      // If returning to a modal state, ignore (modal will handle it)
+      if (state && state.modal) {
+        return;
+      }
+
+      // If we're on the form step and user presses back
+      if (step === 'form') {
+        // Check if returning TO form state (from a modal) - don't go back further
+        if (state && state.bookingStep === 'form') {
+          // Returning from a modal, stay on form
+          return;
+        }
+        // Actually leaving form to step 1
+        goBack();
+        clearError();
+        historyPushedRef.current = false;
+      }
+      // For step === 'class', we don't interfere with normal navigation
+    },
+    [step, status, goBack, clearError]
+  );
+
+  // Set up popstate listener
+  useEffect(() => {
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [handlePopState]);
+
   // Handle direct classId navigation from URL
   useEffect(() => {
     if (directClassId && classes.length > 0) {
@@ -244,8 +316,13 @@ const BookingWidgetV2: React.FC = memo(() => {
 
   // Handle going back to class list
   const handleBack = () => {
-    goBack();
-    clearError();
+    // If we pushed history state, use history.back() for proper UX
+    if (historyPushedRef.current) {
+      window.history.back();
+    } else {
+      goBack();
+      clearError();
+    }
   };
 
   // Handle form submission
@@ -348,6 +425,9 @@ const BookingWidgetV2: React.FC = memo(() => {
       clearPersistedData();
       triggerHaptic('success');
 
+      // Replace history state to prevent back navigation to form
+      window.history.replaceState({ bookingStep: 'success', bookingWidget: true }, '');
+
       // Track conversion with analytics
       trackBookingSuccess(selectedClass);
       trackLeadConversion({
@@ -439,7 +519,7 @@ const BookingWidgetV2: React.FC = memo(() => {
       />
 
       {/* Main container */}
-      <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 overflow-hidden">
+      <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8">
         {/* Decorative gradient line */}
         <div
           className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-accent to-transparent"
@@ -449,8 +529,17 @@ const BookingWidgetV2: React.FC = memo(() => {
         {/* Language selector */}
         <LanguageSelector locale={locale} onLanguageChange={handleLanguageChange} />
 
-        {/* Header */}
+        {/* Header with Logo */}
         <div className="text-center mb-6">
+          {/* Logo - prominent and mobile first */}
+          <div className="flex justify-center mb-4">
+            <img
+              src="/images/logo/img/logo-fidc_256.webp"
+              alt="Farray's Dance Center"
+              className="h-16 sm:h-20 w-auto object-contain"
+              loading="eager"
+            />
+          </div>
           <h1 className="text-2xl md:text-3xl font-black text-neutral mb-2">
             {t('booking_title')}
           </h1>
