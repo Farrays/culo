@@ -434,7 +434,8 @@ export default async function handler(
       classDate, // Fecha de la clase
       estilo, // Estilo de baile
       comoconoce, // Cómo nos conoció
-      acceptsMarketing,
+      acceptsTerms, // UI checkbox (consolidates marketing, no-refund, image)
+      acceptsMarketing, // Legacy: kept for backwards compatibility
       // Meta tracking cookies
       fbc,
       fbp,
@@ -447,7 +448,8 @@ export default async function handler(
       return res.status(400).json({ error: 'Faltan campos obligatorios' });
     }
 
-    if (!acceptsMarketing) {
+    // Check acceptsTerms (current UI) OR acceptsMarketing (legacy support)
+    if (!acceptsTerms && !acceptsMarketing) {
       return res.status(400).json({ error: 'Debes aceptar los términos y condiciones' });
     }
 
