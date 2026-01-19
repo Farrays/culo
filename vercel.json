@@ -1,4 +1,10 @@
 {
+  "crons": [
+    {
+      "path": "/api/cache-warm",
+      "schedule": "*/10 * * * *"
+    }
+  ],
   "buildCommand": "npm ci && npm run build",
   "installCommand": "npm ci",
   "outputDirectory": "dist",
@@ -9,6 +15,10 @@
     "api/clases.ts": {
       "memory": 512,
       "maxDuration": 30
+    },
+    "api/cache-warm.ts": {
+      "memory": 512,
+      "maxDuration": 60
     },
     "api/reservar.ts": {
       "memory": 512,

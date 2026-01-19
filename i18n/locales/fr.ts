@@ -19059,6 +19059,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   // Accessibility
   booking_classes_region: 'Liste des cours disponibles',
   booking_loading_classes: 'Chargement des cours...',
+  booking_loading_please_wait: "Un instant s'il vous plaît, chargement des cours disponibles...",
   booking_form_region: 'Formulaire de réservation',
 
   booking_filter_level_iniciacion: 'Débutant',

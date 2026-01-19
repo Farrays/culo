@@ -613,8 +613,8 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
           </div>
 
           {isLoading ? (
-            // Elaborated loading skeleton with shimmer effect
-            <SkeletonClassList count={4} />
+            // Elaborated loading skeleton with shimmer effect and loading message
+            <SkeletonClassList count={4} loadingMessage={t('booking_loading_please_wait')} />
           ) : error ? (
             // Error state
             <div className="text-center py-12">
