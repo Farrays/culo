@@ -42,7 +42,7 @@ export const KPOP_SCHEDULE_KEYS: Array<{
   levelKey: string;
 }> = [];
 
-// Level descriptions for cards - 3 levels for K-Pop
+// Level descriptions for cards - Only Iniciación for now
 export const KPOP_LEVELS = [
   {
     id: 'iniciacion',
@@ -52,22 +52,23 @@ export const KPOP_LEVELS = [
     duration: '0-3 meses',
     color: 'primary-dark' as const,
   },
-  {
-    id: 'intermedio',
-    levelKey: 'intermediateLevel',
-    titleKey: 'kpopLevelInterTitle',
-    descKey: 'kpopLevelInterDesc',
-    duration: '3-9 meses',
-    color: 'primary-accent-light' as const,
-  },
-  {
-    id: 'avanzado',
-    levelKey: 'advancedLevel',
-    titleKey: 'kpopLevelAdvancedTitle',
-    descKey: 'kpopLevelAdvancedDesc',
-    duration: '+9 meses',
-    color: 'primary-accent' as const,
-  },
+  // Intermediate and Advanced levels hidden for now
+  // {
+  //   id: 'intermedio',
+  //   levelKey: 'intermediateLevel',
+  //   titleKey: 'kpopLevelInterTitle',
+  //   descKey: 'kpopLevelInterDesc',
+  //   duration: '3-9 meses',
+  //   color: 'primary-accent-light' as const,
+  // },
+  // {
+  //   id: 'avanzado',
+  //   levelKey: 'advancedLevel',
+  //   titleKey: 'kpopLevelAdvancedTitle',
+  //   descKey: 'kpopLevelAdvancedDesc',
+  //   duration: '+9 meses',
+  //   color: 'primary-accent' as const,
+  // },
 ];
 
 // Prepare class configuration (placeholder teacher until assigned)

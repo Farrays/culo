@@ -203,6 +203,7 @@ const routes = [
   { path: 'es/clases/dancehall-barcelona', lang: 'es', page: 'dancehall' },
   { path: 'es/clases/twerk-barcelona', lang: 'es', page: 'twerk' },
   { path: 'es/clases/afrobeats-barcelona', lang: 'es', page: 'afrobeat' },
+  { path: 'es/clases/kpop-dance-barcelona', lang: 'es', page: 'kpop' },
   { path: 'es/clases/hip-hop-reggaeton-barcelona', lang: 'es', page: 'hipHopReggaeton' },
   { path: 'es/clases/sexy-reggaeton-barcelona', lang: 'es', page: 'sexyReggaeton' },
   { path: 'es/clases/reggaeton-cubano-barcelona', lang: 'es', page: 'reggaetonCubano' },
@@ -270,6 +271,7 @@ const routes = [
   { path: 'ca/clases/dancehall-barcelona', lang: 'ca', page: 'dancehall' },
   { path: 'ca/clases/twerk-barcelona', lang: 'ca', page: 'twerk' },
   { path: 'ca/clases/afrobeats-barcelona', lang: 'ca', page: 'afrobeat' },
+  { path: 'ca/clases/kpop-dance-barcelona', lang: 'ca', page: 'kpop' },
   { path: 'ca/clases/hip-hop-reggaeton-barcelona', lang: 'ca', page: 'hipHopReggaeton' },
   { path: 'ca/clases/sexy-reggaeton-barcelona', lang: 'ca', page: 'sexyReggaeton' },
   { path: 'ca/clases/reggaeton-cubano-barcelona', lang: 'ca', page: 'reggaetonCubano' },
@@ -337,6 +339,7 @@ const routes = [
   { path: 'en/clases/dancehall-barcelona', lang: 'en', page: 'dancehall' },
   { path: 'en/clases/twerk-barcelona', lang: 'en', page: 'twerk' },
   { path: 'en/clases/afrobeats-barcelona', lang: 'en', page: 'afrobeat' },
+  { path: 'en/clases/kpop-dance-barcelona', lang: 'en', page: 'kpop' },
   { path: 'en/clases/hip-hop-reggaeton-barcelona', lang: 'en', page: 'hipHopReggaeton' },
   { path: 'en/clases/sexy-reggaeton-barcelona', lang: 'en', page: 'sexyReggaeton' },
   { path: 'en/clases/reggaeton-cubano-barcelona', lang: 'en', page: 'reggaetonCubano' },
@@ -404,6 +407,7 @@ const routes = [
   { path: 'fr/clases/dancehall-barcelona', lang: 'fr', page: 'dancehall' },
   { path: 'fr/clases/twerk-barcelona', lang: 'fr', page: 'twerk' },
   { path: 'fr/clases/afrobeats-barcelona', lang: 'fr', page: 'afrobeat' },
+  { path: 'fr/clases/kpop-dance-barcelona', lang: 'fr', page: 'kpop' },
   { path: 'fr/clases/hip-hop-reggaeton-barcelona', lang: 'fr', page: 'hipHopReggaeton' },
   { path: 'fr/clases/sexy-reggaeton-barcelona', lang: 'fr', page: 'sexyReggaeton' },
   { path: 'fr/clases/reggaeton-cubano-barcelona', lang: 'fr', page: 'reggaetonCubano' },
@@ -600,6 +604,10 @@ const metadata = {
     afrobeat: {
       title: 'Clases de Afrobeats y Afrodance en Barcelona | Farray\'s Center',
       description: 'Aprende Afrobeats y Afrodance en Barcelona con profesores nativos de África. Clases de Amapiano, Ntcham y danzas africanas modernas para todos los niveles.',
+    },
+    kpop: {
+      title: 'Clases de K-Pop Dance en Barcelona | Farray\'s Center',
+      description: 'Clases de K-Pop Dance en Barcelona. Aprende coreografías de BTS, BLACKPINK, Stray Kids y más. Todos los niveles. Academia CID-UNESCO.',
     },
     hipHopReggaeton: {
       title: 'Clases de Hip Hop Reggaeton en Barcelona | Farray\'s Center',
@@ -905,6 +913,10 @@ const metadata = {
       title: 'Classes d\'Afrobeats i Afrodance a Barcelona | Farray\'s Center',
       description: 'Aprèn Afrobeats i Afrodance a Barcelona amb professors natius d\'Àfrica. Classes d\'Amapiano, Ntcham i danses africanes modernes per a tots els nivells.',
     },
+    kpop: {
+      title: 'Classes de K-Pop Dance a Barcelona | Farray\'s Center',
+      description: 'Classes de K-Pop Dance a Barcelona. Aprèn coreografies de BTS, BLACKPINK, Stray Kids i més. Tots els nivells. Acadèmia CID-UNESCO.',
+    },
     hipHopReggaeton: {
       title: 'Classes de Hip Hop Reggaeton a Barcelona | Farray\'s Center',
       description: 'Aprèn Hip Hop Reggaeton a Barcelona amb Charlie Breezy. Fusió única de hip-hop i reggaeton amb molt de flow. Classes per a tots els nivells a prop de Plaça Espanya i Sants.',
@@ -1209,6 +1221,10 @@ const metadata = {
       title: 'Afrobeats and Afrodance Classes in Barcelona | Farray\'s Center',
       description: 'Learn Afrobeats and Afrodance in Barcelona with native African instructors. Amapiano, Ntcham and modern African dance classes for all levels.',
     },
+    kpop: {
+      title: 'K-Pop Dance Classes in Barcelona | Farray\'s Center',
+      description: 'K-Pop Dance classes in Barcelona. Learn choreographies from BTS, BLACKPINK, Stray Kids and more. All levels. CID-UNESCO Academy.',
+    },
     hipHopReggaeton: {
       title: 'Hip Hop Reggaeton Classes in Barcelona | Farray\'s Center',
       description: 'Learn Hip Hop Reggaeton in Barcelona with Charlie Breezy. Unique fusion of hip-hop and reggaeton with lots of flow. Classes for all levels near Plaza España and Sants.',
@@ -1512,6 +1528,10 @@ const metadata = {
     afrobeat: {
       title: 'Cours d\'Afrobeats et Afrodance à Barcelone | Farray\'s Center',
       description: 'Apprenez l\'Afrobeats et l\'Afrodance à Barcelone avec des professeurs natifs d\'Afrique. Cours d\'Amapiano, Ntcham et danses africaines modernes pour tous les niveaux.',
+    },
+    kpop: {
+      title: 'Cours de K-Pop Dance à Barcelone | Farray\'s Center',
+      description: 'Cours de K-Pop Dance à Barcelone. Apprenez les chorégraphies de BTS, BLACKPINK, Stray Kids et plus. Tous niveaux. Académie CID-UNESCO.',
     },
     hipHopReggaeton: {
       title: 'Cours de Hip Hop Reggaeton à Barcelone | Farray\'s Center',
@@ -1937,6 +1957,8 @@ routes.forEach(route => {
     pagePath = 'clases/dancehall-barcelona';
   } else if (page === 'twerk') {
     pagePath = 'clases/twerk-barcelona';
+  } else if (page === 'kpop') {
+    pagePath = 'clases/kpop-dance-barcelona';
   } else if (page === 'heelsBarcelona') {
     pagePath = 'clases/heels-barcelona';
   } else if (page === 'modernJazz') {

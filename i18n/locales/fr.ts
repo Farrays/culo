@@ -19503,4 +19503,234 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   dayShort_friday: 'Ven',
   dayShort_saturday: 'Sam',
   dayShort_sunday: 'Dim',
+
+  // ===== K-Pop Dance Page =====
+  kpopPageTitle: "Cours de K-Pop Dance à Barcelone | Farray's Center",
+  kpopMetaDescription:
+    "Cours de K-Pop Dance à Barcelone. Apprenez les chorégraphies de BTS, BLACKPINK, Stray Kids et plus. Tous niveaux. Académie CID-UNESCO. Commencez aujourd'hui !",
+
+  // Breadcrumb
+  kpopBreadcrumbHome: 'Accueil',
+  kpopBreadcrumbClasses: 'Cours de Danse',
+  kpopBreadcrumbUrban: 'Danses Urbaines',
+  kpopBreadcrumbCurrent: 'Cours de K-Pop',
+
+  // Hero
+  kpopHeroTitle: 'Cours de K-Pop Dance à Barcelone',
+  kpopHeroSubtitle:
+    'Apprenez les chorégraphies de vos groupes préférés dans un environnement inclusif et professionnel',
+  kpopHeroDesc: 'Dansez comme vos idoles préférées',
+  kpopHeroLocation: 'Cours du niveau débutant au niveau avancé, entre Plaza España et Sants',
+  kpopHeroStudents: '+15 000 élèves formés',
+
+  // CTAs
+  kpopCTA1: 'Découvrez comment commencer',
+  kpopCTA1Subtext: "Liste d'attente active",
+  kpopCTA2: "Rejoignez la liste d'attente",
+  kpopCTA2Subtext: 'Nous vous préviendrons quand nous ouvrirons des places',
+
+  // What Is Section
+  kpopWhatIsTitle: "Qu'est-ce que la K-Pop Dance et pourquoi fait-elle fureur à Barcelone ?",
+  kpopWhatIsP1:
+    'La K-Pop Dance est le style de danse qui accompagne la musique pop coréenne, caractérisé par des chorégraphies synchronisées, précises et visuellement impressionnantes. Née en Corée du Sud dans les années 1990, elle a évolué pour devenir un phénomène mondial qui fusionne hip hop, jazz, contemporain et styles urbains.',
+  kpopWhatIsP2:
+    "À Barcelone, la K-Pop Dance a explosé grâce à des groupes comme BTS, BLACKPINK, Stray Kids, TWICE et aespa. Ce n'est pas seulement imiter des pas : c'est de la technique, de l'expression, de la musicalité et une connexion avec une communauté mondiale de fans qui partagent la même passion.",
+  kpopWhatIsP3:
+    "Les cours de K-Pop chez Farray's Center combinent l'apprentissage de chorégraphies originales avec les fondamentaux techniques de la danse, dans un environnement sans jugement où tout le monde peut apprendre, grandir et briller quel que soit son niveau ou son expérience antérieure.",
+  kpopWhatIsP4:
+    'Des covers de vos groupes préférés aux chorégraphies complètes pour événements et compétitions, chaque cours vous rapproche de danser comme vos idoles.',
+  kpopWhatIsQuestionTitle: "Vous vous demandez si c'est pour vous ?",
+  kpopWhatIsQuestionAnswer: "Oui, ça l'est.",
+
+  // Cultural History
+  kpopCulturalHistoryTitle: 'Vous voulez en savoir plus sur la K-Pop Dance ?',
+  kpopCulturalShort:
+    "La K-Pop Dance est le style de danse associé à la pop coréenne, caractérisé par des chorégraphies synchronisées, précises et visuellement impressionnantes. Née en Corée du Sud dans les années 90, elle fusionne hip hop, jazz, contemporain et styles urbains. À Barcelone, Farray's International Dance Center est une référence dans l'enseignement des danses urbaines depuis 2012.",
+  kpopCulturalFull:
+    "### Définition : Qu'est-ce que la K-Pop Dance ?\n\n**La K-Pop Dance est le style de danse qui accompagne la musique pop coréenne (Korean Pop), caractérisé par des chorégraphies synchronisées, précises et visuellement impressionnantes.** Bien que la K-Pop en tant que genre musical trouve ses racines dans les années 1990 avec des groupes pionniers comme Seo Taiji and Boys (1992), le style de danse a énormément évolué, fusionnant des éléments de hip hop américain, jazz, contemporain, vogueing et styles urbains.\n\n### Les origines : De Séoul au monde\n\nLes débuts de Seo Taiji and Boys le 11 avril 1992 à la télévision coréenne sont considérés comme le point de départ de la K-Pop moderne. Leur fusion de hip hop américain avec des sensibilités coréennes a eu un impact significatif sur l'industrie musicale asiatique. À partir de là, les agences de divertissement coréennes (SM, YG, JYP, HYBE) ont développé un système de formation rigoureux comprenant des années de pratique en chant, danse, langues et performance.\n\n### L'âge d'or : 2010-présent\n\nLa K-Pop a atteint une reconnaissance mondiale avec des groupes comme **BTS** (2013), **BLACKPINK** (2016), **Stray Kids** (2018), **TWICE** (2015), **aespa** (2020) et **NewJeans** (2022). BTS est devenu le premier groupe de K-Pop à atteindre le sommet du Billboard Hot 100 avec \"Dynamite\" (2020), tandis que BLACKPINK accumulait des records de vues sur YouTube.\n\n### Éléments techniques de la K-Pop Dance\n\n- **Synchronisation de groupe** : Plusieurs danseurs exécutant des mouvements identiques avec une précision millimétrique\n- **Points d'emphase (\"point moves\")** : Mouvements iconiques conçus pour être reconnaissables et viraux\n- **Expression faciale** : Fondamentale en K-Pop ; les idoles s'entraînent à transmettre des émotions spécifiques pendant chaque chanson\n- **Formations** : Changements de position complexes créant des motifs visuels du point de vue du spectateur\n- **Versatilité de styles** : Une même chanson peut combiner des sections de hip hop, contemporain et voguing\n\n### Bienfaits de la K-Pop Dance\n\n- **Condition physique** : Les chorégraphies de K-Pop sont physiquement exigeantes et offrent un entraînement cardiovasculaire complet\n- **Coordination et mémoire** : Apprendre des séquences complexes améliore la mémoire musculaire et cognitive\n- **Expression artistique** : Combine technique et interprétation émotionnelle\n- **Communauté** : La K-Pop dispose d'une communauté mondiale de fans très engagée\n- **Santé mentale** : La pratique régulière de la danse peut contribuer à réduire le stress et améliorer l'humeur\n\n### Le phénomène à Barcelone\n\nBarcelone dispose d'une communauté K-Pop en constante croissance, avec des événements réguliers, des compétitions de covers et une scène active de fans et de danseurs. Les random dance plays (événements où des chorégraphies sont dansées au hasard dans des espaces publics) attirent de nombreux participants dans différents endroits de la ville.\n\n### K-Pop Dance chez Farray's Center\n\n**Farray's International Dance Center**, situé au **Calle Entença 100, quartier de l'Eixample, Barcelone**, est une académie reconnue par le CID UNESCO offrant une formation dans de multiples styles urbains. Avec plus de 15 000 élèves formés depuis 2012 et une note de 4,9/5 sur Google avec plus de 500 avis, l'académie combine professionnalisme et ambiance familiale et inclusive.\n\n**Informations sur l'académie :**\n- **Adresse :** Calle Entença 100, 08015 Barcelone\n- **Accès :** Métro L1/L3 (Plaça Espanya), L5 (Entença), Rodalies (Barcelona-Sants)\n- **Installations :** +700 m², salles avec miroirs, son professionnel, climatisation",
+
+  // Identify Section
+  kpopIdentifyTitle: "Vous vous reconnaissez dans l'une de ces situations ?",
+  kpopIdentify1: 'Vous regardez des vidéos de K-Pop et rêvez de danser comme vos idoles',
+  kpopIdentify2: "Vous pratiquez chez vous mais sentez qu'il vous manque de la technique",
+  kpopIdentify3: 'Vous cherchez une communauté qui partage votre passion pour la K-Pop',
+  kpopIdentify4: 'Vous voulez vous préparer pour des compétitions ou des random dance plays',
+  kpopIdentify5: "Vous avez besoin d'un espace où personne ne juge votre niveau",
+  kpopIdentify6: 'Vous voulez améliorer votre coordination, expression et présence scénique',
+  kpopIdentifyTransition:
+    'Si vous avez dit "oui" à l\'un de ces points, vous savez ce dont vous avez besoin.',
+  kpopNeedEnrollTitle: 'Vous devez vous inscrire à des cours de K-Pop dans une académie de danse',
+  kpopIdentifyAgitate1:
+    'Continuer à pratiquer seul dans votre chambre ne vous donnera pas la technique ni la confiance dont vous avez besoin. Chaque semaine qui passe sans formation professionnelle est une opportunité manquée de vraiment progresser. "Je ne suis pas assez bon" n\'est qu\'une barrière mentale qui se brise dès le premier cours.',
+  kpopIdentifySolution:
+    "Chez Farray's Center, vous trouverez un espace conçu pour les fans de K-Pop comme vous : des professeurs qui comprennent le style, des camarades qui partagent votre passion et une méthode qui vous fera vraiment progresser.",
+  kpopIdentifyClosing: 'Laissez-vous porter par le rythme de la K-Pop.',
+
+  // Transform Section
+  kpopTransformTitle: 'Imaginez votre avant et après',
+  kpopTransform1Title: 'Vous dansez les chorés de vos groupes préférés',
+  kpopTransform1Desc: 'Avec une vraie technique, pas seulement en imitant des vidéos.',
+  kpopTransform2Title: 'Vous gagnez confiance dans votre danse',
+  kpopTransform2Desc: 'Vous vous lâchez, progressez et commencez à vraiment apprécier.',
+  kpopTransform3Title: 'Vous maîtrisez les fondamentaux techniques',
+  kpopTransform3Desc: 'Isolation, waves, footwork et expression faciale.',
+  kpopTransform4Title: 'Vous rencontrez des gens qui partagent votre passion',
+  kpopTransform4Desc: 'Une vraie communauté de fans de K-Pop à Barcelone.',
+  kpopTransform5Title: 'Vous êtes prêt pour les événements',
+  kpopTransform5Desc: 'Random dance plays, compétitions et covers.',
+  kpopTransform6Title: 'Vous apprenez de nouvelles chorés constamment',
+  kpopTransform6Desc: 'BTS, BLACKPINK, Stray Kids, aespa et plus.',
+  kpopTransformCTA: "Pourquoi choisir Farray's Center pour apprendre la K-Pop Dance ?",
+
+  // Why Choose Section (6 items: 1,2,3,4,5,7)
+  kpopWhyChoose1Title: 'Académie reconnue par le CID UNESCO',
+  kpopWhyChoose1Desc:
+    "Dirigée par Yunaisy Farray, actrice dans Street Dance 2 et l'une des professeures les plus reconnues au monde.",
+  kpopWhyChoose2Title: 'Emplacement imbattable',
+  kpopWhyChoose2Desc:
+    'Calle Entença 100, entre Plaza España et Sants, à 5 minutes de Plaça Espanya et Sants. Métro, bus et train à la porte.',
+  kpopWhyChoose3Title: 'Environnement inclusif et sans jugement',
+  kpopWhyChoose3Desc:
+    'Un espace où les fans de K-Pop de tous niveaux peuvent apprendre, grandir et partager leur passion.',
+  kpopWhyChoose4Title: 'Installations bien équipées',
+  kpopWhyChoose4Desc:
+    'Plus de 700 m², grandes salles, miroirs, son professionnel, climatisation et ventilation centralisée.',
+  kpopWhyChoose5Title: 'Académie multidisciplinaire',
+  kpopWhyChoose5Desc:
+    'Plus de 25 styles pour compléter votre formation : hip hop, contemporain, jazz et plus de fondamentaux qui améliorent votre K-Pop.',
+  kpopWhyChoose7Title: 'Communauté K-Pop active',
+  kpopWhyChoose7Desc:
+    "Connectez-vous avec d'autres fans, préparez des covers en groupe et participez aux événements de la communauté K-Pop de Barcelone.",
+
+  // Why Today Section
+  kpopWhyTodayFullTitle: 'Pourquoi commencer la K-Pop aujourd\'hui et pas "la semaine prochaine" ?',
+  kpopWhyToday1:
+    'Parce que vous continuez à regarder des vidéos et à rêver de danser comme ça, mais juste regarder ne vous fera pas progresser.',
+  kpopWhyToday2:
+    "Parce que vous n'êtes qu'à UN cours de vraiment commencer à danser les chorés que vous aimez tant.",
+  kpopWhyToday3:
+    "Parce que la K-Pop n'est pas une question de perfection, mais de plaisir à danser et de progression à chaque cours.",
+  kpopWhyTodayClosing1:
+    "Chez Farray's, nous ne vendons pas des cours. Nous créons des expériences.",
+  kpopWhyTodayClosing2:
+    'Nous vous attendons avec les chorés les plus récentes, des professeurs passionnés et une communauté K-Pop unique à Barcelone.',
+
+  // Levels Section
+  kpopLevelsTitle: 'Niveaux de K-Pop Dance',
+  kpopLevelBeginnerTitle: 'Débutant',
+  kpopLevelBeginnerDesc:
+    'Pour ceux qui commencent de zéro. Apprenez les fondamentaux de la K-Pop dance, les mouvements de base et vos premières chorégraphies.',
+  kpopLevelInterTitle: 'Intermédiaire',
+  kpopLevelInterDesc:
+    'Perfectionnez votre technique, apprenez des chorés plus complexes et développez votre expression et présence scénique.',
+  kpopLevelAdvancedTitle: 'Avancé',
+  kpopLevelAdvancedDesc:
+    'Maîtrisez des chorégraphies complètes avec synchronisation de groupe, formations et niveau de performance professionnel.',
+
+  // Schedule Section
+  kpopScheduleTitle: 'Horaires des cours de K-Pop',
+  kpopScheduleSubtitle: "Bientôt disponible - Rejoignez la liste d'attente",
+
+  // Teachers Section
+  kpopTeachersTitle: 'Prochainement',
+  kpopTeachersSubtitle: 'Professeurs de K-Pop Dance',
+  kpopTeachersClosing: 'Nous annoncerons bientôt nos professeurs de K-Pop Dance.',
+
+  // FAQs (15)
+  kpopFaqTitle: 'Questions Fréquentes sur la K-Pop Dance à Barcelone',
+  kpopFaqQ1: "Ai-je besoin d'une expérience préalable pour commencer les cours de K-Pop ?",
+  kpopFaqA1:
+    "Non. Nos cours de K-Pop sont conçus pour tous les niveaux. Si vous n'avez jamais dansé, vous commencerez au niveau débutant où vous apprendrez les fondamentaux pas à pas. L'important est d'avoir envie d'apprendre et de s'amuser.",
+  kpopFaqQ2: 'Quels groupes de K-Pop sont dansés dans les cours ?',
+  kpopFaqA2:
+    'Nous travaillons sur des chorégraphies des groupes les plus populaires : BTS, BLACKPINK, Stray Kids, TWICE, aespa, NewJeans, ITZY, TXT, (G)I-DLE, SEVENTEEN et plus. Les chorés sont mises à jour avec les nouvelles sorties.',
+  kpopFaqQ3: 'Les cours sont-ils des chorégraphies complètes ou seulement des parties ?',
+  kpopFaqA3:
+    'Cela dépend du niveau et de la durée de la chorégraphie. Au niveau débutant, nous travaillons généralement sur des sections (refrain, dance break). Aux niveaux plus avancés, nous apprenons des chorégraphies complètes. Nous indiquons toujours quelle choré nous allons travailler.',
+  kpopFaqQ4: 'Que dois-je apporter aux cours de K-Pop ?',
+  kpopFaqA4:
+    "Des vêtements de sport confortables qui vous permettent de bouger librement, des baskets propres à usage exclusif dans le studio, une serviette et une bouteille d'eau. Les cours sont intenses.",
+  kpopFaqQ5: "Puis-je m'inscrire juste pour apprendre une chorégraphie spécifique ?",
+  kpopFaqA5:
+    'Oui, nous organisons des ateliers spéciaux dédiés à des chorégraphies spécifiques. Pour une formation régulière, nous recommandons de vous inscrire à un cours mensuel pour vraiment progresser.',
+  kpopFaqQ6: 'Y a-t-il des cours pour les enfants ou seulement pour les adultes ?',
+  kpopFaqA6:
+    "Chez Farray's Center, nous avons des cours pour différents âges. Consultez nos horaires pour voir les options disponibles pour les mineurs. Tous les groupes maintiennent un environnement sûr et inclusif.",
+  kpopFaqQ7: 'Organisez-vous des événements K-Pop comme des random dance plays ?',
+  kpopFaqA7:
+    'Oui, nous participons et organisons des événements pour la communauté K-Pop de Barcelone. De plus, nous préparons nos élèves pour les compétitions de covers et les random dance plays.',
+  kpopFaqQ8: "Puis-je essayer un cours de K-Pop avant de m'inscrire ?",
+  kpopFaqA8:
+    'Oui. Nous offrons un cours de bienvenue à un prix spécial pour que vous puissiez essayer l\'expérience sans engagement. Cliquez sur le bouton "Découvrez comment commencer" pour plus d\'informations.',
+  kpopFaqQ9: 'Que se passe-t-il si je ne peux pas suivre le rythme du cours ?',
+  kpopFaqA9:
+    "Ne vous inquiétez pas. Nos professeurs adaptent les explications à tous les niveaux et répètent les pas autant de fois que nécessaire. L'ambiance est celle du soutien mutuel, pas de la compétition.",
+  kpopFaqQ10: 'Puis-je rattraper des cours si je manque un jour ?',
+  kpopFaqA10:
+    "Oui. Si vous avez un abonnement et annulez à l'avance, vous disposez de 30 jours pour rattraper le cours. Toute la gestion se fait via l'application de l'académie.",
+  kpopFaqQ11: "Les cours incluent-ils une formation à l'expression faciale ?",
+  kpopFaqA11:
+    "Oui. L'expression faciale est fondamentale en K-Pop. Nous travaillons non seulement les pas, mais aussi l'attitude, le regard et l'expression qui caractérisent chaque chanson et groupe.",
+  kpopFaqQ12: "Puis-je former un groupe de cover avec d'autres élèves ?",
+  kpopFaqA12:
+    "Bien sûr. Beaucoup d'élèves forment des groupes de cover à l'académie. Nous facilitons le contact entre élèves ayant des intérêts similaires et offrons des espaces pour répéter.",
+  kpopFaqQ13: 'La K-Pop est-elle un bon exercice physique ?',
+  kpopFaqA13:
+    "Absolument. Les chorégraphies de K-Pop sont intenses et peuvent brûler entre 300-500 calories par heure. Vous travaillez le cardio, la coordination, la mémoire musculaire et l'endurance de manière amusante.",
+  kpopFaqQ14: 'Où sont les cours de K-Pop à Barcelone ?',
+  kpopFaqA14:
+    "Farray's Center est situé Calle Entença 100, 08015 Barcelone, à 5 minutes de Plaza España et de la gare de Sants. Excellente connexion en métro (L1, L3, L5), bus et train.",
+  kpopFaqQ15: "Comment puis-je vous contacter pour plus d'informations sur la K-Pop ?",
+  kpopFaqA15:
+    'Vous pouvez nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a><br/>🌐 <strong>Web :</strong> <a href="https://www.farrayscenter.com/contacto" target="_blank" rel="noopener noreferrer" class="text-primary-accent hover:underline">www.farrayscenter.com/contacto</a>',
+
+  // Prepare Section
+  kpopPrepareTitle: 'Préparez votre premier cours de K-Pop',
+  kpopPrepareSubtitle: 'Tout ce que vous devez savoir avant de venir',
+  kpopPrepareWhatToBring: 'Quoi apporter :',
+  kpopPrepareItem1: 'Vêtements de sport confortables permettant de bouger librement',
+  kpopPrepareItem2: 'Baskets propres (usage exclusif dans la salle)',
+  kpopPrepareItem3: "Bouteille d'eau (minimum 500ml) - les cours sont intenses",
+  kpopPrepareItem4: 'Petite serviette pour la transpiration',
+  kpopPrepareItem5: 'Optionnel : genouillères si le travail au sol vous préoccupe',
+  kpopPrepareBefore: "Avant d'arriver :",
+  kpopPrepareBeforeItem1: "Arrivez 10-15 minutes à l'avance pour vous changer et vous étirer",
+  kpopPrepareBeforeItem2: 'Évitez les repas lourds 2 heures avant le cours',
+  kpopPrepareBeforeItem3: 'Si possible, regardez la choré avant pour vous familiariser',
+  kpopPrepareAvoid: 'Évitez :',
+  kpopPrepareAvoidItem1: 'Bijoux, bagues ou accessoires qui pourraient vous gêner',
+  kpopPrepareAvoidItem2: 'Vêtements qui limitent vos mouvements',
+  kpopPrepareAvoidItem3: 'Chaussures de ville dans la salle (il y a des vestiaires)',
+  kpopPrepareTeacherTip: 'Conseil :',
+  kpopPrepareQuote:
+    "La K-Pop est pour tout le monde. Votre niveau, votre âge ou le fait de n'avoir jamais dansé n'a pas d'importance. Ce qui compte, c'est que vous veniez avec l'envie d'apprendre, de vous amuser et de vous connecter à la musique.",
+
+  // Nearby Section
+  kpopNearbyTitle: 'Cours de K-Pop près de chez vous à Barcelone',
+  kpopNearbyDesc:
+    "Nous sommes l'académie de référence pour les cours de K-Pop dans la zone de Plaza España, Sants, Hostafrancs, Les Corts et Eixample Esquerra. Nous accueillons également des élèves de Poble Sec, Sant Antoni et L'Hospitalet cherchant une formation en K-Pop avec une méthodologie professionnelle.",
+  kpopNearbySearchText:
+    'Si vous cherchez "Cours de K-Pop près de moi" à Barcelone, nous sommes à :',
+  kpopNearbyMetro:
+    'Métro : Plaza España (L1, L3), Rocafort (L1) - 5 min à pied, Entença (L5) - 5 min à pied ou Hostafrancs (L1) - 5 min à pied.',
+
+  // Logos Section
+  kpopLogosTitle: 'Vous avez pu nous voir dans…',
+  kpopLogosIntlFestivalsText: 'et dans les meilleurs festivals de danse du monde entier',
+
+  // Final CTA Section
+  kpopFinalCTATitle: 'Rejoignez la communauté K-Pop la plus active de Barcelone',
+  kpopFinalCTASubtitle: 'Faites le pas.',
+  kpopFinalCTADesc:
+    "Inscrivez-vous sur la liste d'attente et soyez le premier informé quand nous ouvrirons des places.",
+  kpopFinalCTAFunny: 'Prêt pour votre "main dancer era" ?',
+
+  // Video Section (placeholder)
+  kpopVideoTitle: 'Cours de K-Pop à Barcelone',
+  kpopVideoDesc: 'Bientôt : vidéos de nos cours de K-Pop.',
+
+  // Course Schema
+  kpopCourseSchemaName: "Cours de K-Pop Dance à Barcelone - Farray's Center",
+  kpopCourseSchemaDesc:
+    'Apprenez la K-Pop Dance avec des chorégraphies de BTS, BLACKPINK, Stray Kids et plus. Cours pour tous les niveaux au cœur de Barcelone.',
 };
