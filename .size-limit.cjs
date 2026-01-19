@@ -8,25 +8,25 @@ module.exports = [
   {
     name: 'ES Locale Bundle',
     path: 'dist/assets/i18n-es-*.js',
-    limit: '370 KB', // Increased for K-Pop page translations
+    limit: '375 KB', // Increased for image ALT i18n + Commercial Dance
     gzip: true,
   },
   {
     name: 'EN Locale Bundle',
     path: 'dist/assets/i18n-en-*.js',
-    limit: '365 KB', // Increased for K-Pop page translations
+    limit: '370 KB', // Increased for image ALT i18n + Commercial Dance
     gzip: true,
   },
   {
     name: 'CA Locale Bundle',
     path: 'dist/assets/i18n-ca-*.js',
-    limit: '385 KB', // Increased for booking system + service pages + blog
+    limit: '395 KB', // Increased for image ALT i18n + Commercial Dance
     gzip: true,
   },
   {
     name: 'FR Locale Bundle',
     path: 'dist/assets/i18n-fr-*.js',
-    limit: '400 KB', // Increased for booking system + service pages + translations
+    limit: '410 KB', // Increased for image ALT i18n + Commercial Dance
     gzip: true,
   },
   {
