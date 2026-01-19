@@ -20241,6 +20241,13 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_no_classes_match: 'No hay clases que coincidan con los filtros',
   booking_classes_found: '{count} clases encontradas',
 
+  // Acuity mode (all weeks view)
+  booking_week_header: 'Semana del {date}',
+  booking_classes_count: '{count} clases',
+  booking_all_weeks_title: 'Todas las clases de {style}',
+  booking_all_weeks_filtered: 'Todas las clases filtradas',
+  booking_all_weeks_subtitle: 'Próximas 4 semanas · {count} clases disponibles',
+
   // Accessibility
   booking_classes_region: 'Lista de clases disponibles',
   booking_loading_classes: 'Cargando clases...',
