@@ -32,7 +32,7 @@ import { BookingSuccess } from './components/BookingSuccess';
 import { BookingError } from './components/BookingError';
 import { BookingErrorBoundary } from './components/BookingErrorBoundary';
 import { SocialProofTicker } from './components/SocialProofTicker';
-import { formatPhoneForAPI } from './components/CountryPhoneInput';
+import { formatPhoneForAPI, validatePhoneNumber } from './components/CountryPhoneInput';
 
 // Types
 import type { ClassData, BookingFormData } from './types/booking';
@@ -386,6 +386,14 @@ const BookingWidgetV2: React.FC = memo(() => {
     if (emptyFields.length > 0) {
       setInvalidFields(emptyFields);
       setError(t('booking_error_required_fields'));
+      triggerHaptic('error');
+      return;
+    }
+
+    // Validate phone number with libphonenumber-js (country-specific validation)
+    if (!validatePhoneNumber(formData.phone, formData.countryCode)) {
+      setInvalidFields(['phone']);
+      setError(t('booking_error_phone_invalid'));
       triggerHaptic('error');
       return;
     }
