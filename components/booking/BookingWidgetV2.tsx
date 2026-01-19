@@ -634,16 +634,21 @@ const BookingWidgetV2: React.FC = memo(() => {
             <img
               src="/images/logo/img/logo-fidc_256.webp"
               alt="Farray's Dance Center"
-              className="h-16 sm:h-20 w-auto object-contain"
+              className="h-24 sm:h-32 w-auto object-contain"
               loading="eager"
             />
           </div>
-          <h1 className="text-2xl md:text-3xl font-black text-neutral mb-2">
-            {t('booking_title')}
-          </h1>
-          <p className="text-neutral/60 text-sm md:text-base max-w-md mx-auto">
-            {t('booking_subtitle_extended')}
-          </p>
+          {/* Title and subtitle - hide on success page */}
+          {status !== 'success' && (
+            <>
+              <h1 className="text-2xl md:text-3xl font-black text-neutral mb-2">
+                {t('booking_title')}
+              </h1>
+              <p className="text-neutral/60 text-sm md:text-base max-w-md mx-auto">
+                {t('booking_subtitle_extended')}
+              </p>
+            </>
+          )}
 
           {/* Social Proof Ticker - show recent bookings */}
           {status !== 'success' && status !== 'error' && (
