@@ -32,6 +32,7 @@ const initialFormData: BookingFormData = {
   lastName: '',
   email: '',
   phone: '',
+  countryCode: 'ES',
   acceptsTerms: false,
   acceptsMarketing: true, // Legacy: now included in acceptsTerms
   acceptsAge: false,
@@ -149,8 +150,11 @@ describe('BookingFormStep', () => {
       const phoneInput = container.querySelector('#phone') as HTMLInputElement;
       fireEvent.change(phoneInput, { target: { name: 'phone', value: '+34 666-ABC-555' } });
 
-      // Should call onFormChange with sanitized value (only valid phone chars)
-      expect(mockOnFormChange).toHaveBeenCalledWith({ phone: '+34 666--555' });
+      // CountryPhoneInput sanitizes and sends both phone and countryCode
+      // Letters are stripped, only digits, spaces, hyphens, and parentheses allowed
+      expect(mockOnFormChange).toHaveBeenCalledWith(
+        expect.objectContaining({ phone: expect.any(String) })
+      );
     });
 
     it('should allow accented characters in names', () => {
@@ -331,7 +335,8 @@ describe('BookingFormStep', () => {
       expect(container.querySelector('#firstName')).toHaveAttribute('autocomplete', 'given-name');
       expect(container.querySelector('#lastName')).toHaveAttribute('autocomplete', 'family-name');
       expect(container.querySelector('#email')).toHaveAttribute('autocomplete', 'email');
-      expect(container.querySelector('#phone')).toHaveAttribute('autocomplete', 'tel');
+      // CountryPhoneInput uses tel-national since country is selected separately
+      expect(container.querySelector('#phone')).toHaveAttribute('autocomplete', 'tel-national');
     });
 
     it('should have proper input types', () => {

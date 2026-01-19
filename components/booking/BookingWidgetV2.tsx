@@ -32,6 +32,7 @@ import { BookingSuccess } from './components/BookingSuccess';
 import { BookingError } from './components/BookingError';
 import { BookingErrorBoundary } from './components/BookingErrorBoundary';
 import { SocialProofTicker } from './components/SocialProofTicker';
+import { formatPhoneForAPI } from './components/CountryPhoneInput';
 
 // Types
 import type { ClassData, BookingFormData } from './types/booking';
@@ -428,13 +429,20 @@ const BookingWidgetV2: React.FC = memo(() => {
     const eventId = generateEventId();
 
     try {
+      // Format phone number to E.164 format for Momence (+34612345678)
+      // Cast countryCode since Zod returns string but libphonenumber expects CountryCode
+      const formattedPhone = formatPhoneForAPI(
+        validationResult.data.phone,
+        validationResult.data.countryCode as import('libphonenumber-js').CountryCode
+      );
+
       // Build complete payload aligned with V1 and Momence requirements
       const payload = {
         // User data (sanitized and validated)
         firstName: validationResult.data.firstName,
         lastName: validationResult.data.lastName,
         email: validationResult.data.email,
-        phone: validationResult.data.phone,
+        phone: formattedPhone,
 
         // Class data
         sessionId: selectedClass.id,

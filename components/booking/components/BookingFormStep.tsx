@@ -4,12 +4,15 @@
  * Features: Invalid field highlighting, haptic feedback, legal modals
  */
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { useI18n } from '../../../hooks/useI18n';
+import type { CountryCode } from 'libphonenumber-js';
 import type { ClassData, BookingFormData, Status } from '../types/booking';
 import { requiresHeelsConsent } from '../types/booking';
 import type { InvalidField } from '../hooks/useBookingState';
-import { sanitizeName, sanitizeEmail, sanitizePhone } from '../validation/sanitize';
+import { sanitizeName, sanitizeEmail } from '../validation/sanitize';
+import { CountryPhoneInput } from './CountryPhoneInput';
+import { getDefaultCountry } from '../constants/countries';
 import TermsModal from '../TermsModal';
 import PrivacyModal from '../PrivacyModal';
 
@@ -78,7 +81,7 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
   onSubmit,
   onTriggerHaptic,
 }) => {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const isLoading = status === 'loading';
   const needsHeelsConsent = requiresHeelsConsent(selectedClass);
 
@@ -86,17 +89,28 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
   const [showTermsModal, setShowTermsModal] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
 
+  // Set default country code based on locale (only on first render if not set)
+  useEffect(() => {
+    if (!formData.countryCode || formData.countryCode === 'ES') {
+      const defaultCountry = getDefaultCountry(locale);
+      if (defaultCountry.code !== formData.countryCode) {
+        onFormChange({ countryCode: defaultCountry.code });
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- Only run on mount/locale change
+  }, [locale]);
+
   // Refs for invalid fields to scroll and focus
   const firstNameRef = useRef<HTMLInputElement>(null);
   const lastNameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
-  const phoneRef = useRef<HTMLInputElement>(null);
+  const phoneContainerRef = useRef<HTMLDivElement>(null);
 
-  const fieldRefs: Record<InvalidField, React.RefObject<HTMLInputElement | null>> = {
+  const fieldRefs: Record<InvalidField, React.RefObject<HTMLElement | null>> = {
     firstName: firstNameRef,
     lastName: lastNameRef,
     email: emailRef,
-    phone: phoneRef,
+    phone: phoneContainerRef,
   };
 
   // Check if a field is invalid
@@ -153,13 +167,18 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
       case 'email':
         sanitizedValue = sanitizeEmail(value);
         break;
-      case 'phone':
-        sanitizedValue = sanitizePhone(value);
-        break;
     }
 
     onFormChange({ [name]: sanitizedValue });
   };
+
+  // Handle phone input change from CountryPhoneInput
+  const handlePhoneChange = useCallback(
+    (phone: string, countryCode: CountryCode, _isValid: boolean) => {
+      onFormChange({ phone, countryCode });
+    },
+    [onFormChange]
+  );
 
   // Checkbox component
   const Checkbox: React.FC<{
@@ -313,29 +332,22 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
           )}
         </div>
 
-        {/* Phone */}
-        <div>
+        {/* Phone with country selector */}
+        <div ref={phoneContainerRef}>
           <label htmlFor="phone" className="block text-sm font-medium text-neutral/80 mb-1.5">
             {t('booking_field_phone')} <span className="text-red-400">*</span>
           </label>
-          <input
-            ref={phoneRef}
-            type="tel"
-            id="phone"
-            name="phone"
+          <CountryPhoneInput
             value={formData.phone}
-            onChange={handleInputChange}
+            countryCode={formData.countryCode}
+            onChange={handlePhoneChange}
             disabled={isLoading}
-            required
-            aria-invalid={isFieldInvalid('phone')}
-            aria-describedby={isFieldInvalid('phone') ? 'phone-error' : undefined}
-            className={getInputClasses('phone')}
-            placeholder={t('booking_placeholder_phone')}
-            autoComplete="tel"
+            isInvalid={isFieldInvalid('phone')}
+            placeholder={t('booking_placeholder_phone_number')}
           />
           {isFieldInvalid('phone') && (
             <p id="phone-error" className="mt-1 text-xs text-red-400">
-              {t('booking_error_field_required')}
+              {t('booking_error_phone_invalid')}
             </p>
           )}
         </div>

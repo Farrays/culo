@@ -3,6 +3,8 @@
  * Enterprise-level type definitions for the booking system
  */
 
+import type { CountryCode } from 'libphonenumber-js';
+
 // Time block options for filtering
 export type TimeBlock = 'morning' | 'afternoon' | 'evening' | '';
 
@@ -75,6 +77,7 @@ export interface BookingFormData {
   lastName: string;
   email: string;
   phone: string;
+  countryCode: CountryCode;
   // RGPD Mandatory Consents
   acceptsTerms: boolean;
   acceptsMarketing: boolean;
@@ -96,6 +99,7 @@ export const INITIAL_FORM_DATA: BookingFormData = {
   lastName: '',
   email: '',
   phone: '',
+  countryCode: 'ES', // Default to Spain
   acceptsTerms: false,
   acceptsMarketing: true, // Legacy: now included in acceptsTerms
   acceptsAge: false,

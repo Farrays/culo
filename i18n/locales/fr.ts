@@ -19087,6 +19087,12 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   booking_placeholder_lastName: 'Votre nom',
   booking_placeholder_email: 'votre@email.com',
   booking_placeholder_phone: '+33 6 12 34 56 78',
+  booking_placeholder_phone_number: '6 12 34 56 78',
+  booking_phone_country: 'Pays',
+  booking_phone_select_country: 'Sélectionner le pays',
+  booking_phone_search: 'Rechercher un pays...',
+  booking_phone_no_results: 'Aucun pays trouvé',
+  booking_error_phone_invalid: 'Numéro de téléphone invalide pour le pays sélectionné',
 
   // RGPD Checkboxes - Mandatory
   booking_consent_terms: "J'accepte les",
@@ -19184,7 +19190,6 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   booking_error_email_invalid: 'Veuillez entrer un email valide',
   booking_error_phone_min: 'Le téléphone doit contenir au moins 6 chiffres',
   booking_error_phone_max: 'Le numéro de téléphone est trop long',
-  booking_error_phone_invalid: 'Veuillez entrer un numéro de téléphone valide',
   booking_error_field_required: 'Ce champ est obligatoire',
 
   // Error Boundary
