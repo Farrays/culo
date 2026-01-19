@@ -8,13 +8,13 @@ module.exports = [
   {
     name: 'ES Locale Bundle',
     path: 'dist/assets/i18n-es-*.js',
-    limit: '365 KB', // Increased for booking system + service pages + blog
+    limit: '370 KB', // Increased for K-Pop page translations
     gzip: true,
   },
   {
     name: 'EN Locale Bundle',
     path: 'dist/assets/i18n-en-*.js',
-    limit: '360 KB', // Increased for booking system + service pages + blog
+    limit: '365 KB', // Increased for K-Pop page translations
     gzip: true,
   },
   {

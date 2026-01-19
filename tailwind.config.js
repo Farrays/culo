@@ -40,6 +40,8 @@ export default {
         fadeIn: 'fadeIn 0.2s ease-out forwards',
         slideDown: 'slideDown 0.3s ease-out forwards',
         shake: 'shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both',
+        shimmer: 'shimmer 1.5s ease-in-out infinite',
+        'fade-in': 'fade-in 0.3s ease-out forwards',
       },
       keyframes: {
         glow: {
@@ -78,6 +80,14 @@ export default {
           '0%, 100%': { transform: 'translateX(0)' },
           '10%, 30%, 50%, 70%, 90%': { transform: 'translateX(-4px)' },
           '20%, 40%, 60%, 80%': { transform: 'translateX(4px)' },
+        },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
       },
       boxShadow: {

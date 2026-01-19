@@ -1,9 +1,16 @@
 /**
  * ClassListStep Component
  * Step 1: Class selection with filters and week navigation
+ *
+ * Features:
+ * - Standard mode: Week navigation with single week view
+ * - Acuity mode: When filters active, shows ALL 4 weeks grouped by week
+ * - Virtualization for large lists (20+ items)
+ * - Infinite scroll support
+ * - Accessible with screen reader announcements
  */
 
-import React, { useState, memo, useCallback, useRef, useEffect } from 'react';
+import React, { useState, memo, useCallback, useRef, useEffect, useMemo } from 'react';
 import { useI18n } from '../../../hooks/useI18n';
 import type { ClassData, FilterState, FilterOptions } from '../types/booking';
 import { FilterBar } from './FilterBar';
@@ -12,9 +19,153 @@ import { ClassCard } from './ClassCard';
 import { WeekNavigation } from './WeekNavigation';
 import { useVirtualList } from '../hooks/useVirtualList';
 import { Portal } from './Portal';
+import { registerModalOpen, registerModalClose } from '../utils/modalHistoryManager';
+import { SkeletonClassList } from './SkeletonClassCard';
 
 // Estimated height of each ClassCard (in pixels)
 const CLASS_CARD_HEIGHT = 180;
+
+/**
+ * Week group structure for Acuity mode
+ */
+interface WeekGroup {
+  weekStart: Date;
+  weekLabel: string;
+  classes: ClassData[];
+}
+
+/**
+ * Groups classes by week based on rawStartsAt
+ * Returns sorted array of week groups with localized labels
+ */
+function groupClassesByWeek(classes: ClassData[], locale: string): WeekGroup[] {
+  if (classes.length === 0) return [];
+
+  const weekMap = new Map<string, WeekGroup>();
+
+  classes.forEach(classData => {
+    const classDate = new Date(classData.rawStartsAt);
+    // Get Monday of the week (ISO week starts on Monday)
+    const dayOfWeek = classDate.getDay();
+    const mondayOffset = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
+    const weekStart = new Date(classDate);
+    weekStart.setDate(classDate.getDate() + mondayOffset);
+    weekStart.setHours(0, 0, 0, 0);
+
+    const weekKey = weekStart.toISOString().split('T')[0] ?? '';
+
+    if (!weekMap.has(weekKey)) {
+      // Format week label based on locale
+      const weekLabel = weekStart.toLocaleDateString(locale === 'ca' ? 'ca-ES' : `${locale}-ES`, {
+        day: 'numeric',
+        month: 'short',
+      });
+
+      weekMap.set(weekKey, {
+        weekStart,
+        weekLabel,
+        classes: [],
+      });
+    }
+
+    weekMap.get(weekKey)?.classes.push(classData);
+  });
+
+  // Sort weeks chronologically and sort classes within each week
+  return Array.from(weekMap.values())
+    .sort((a, b) => a.weekStart.getTime() - b.weekStart.getTime())
+    .map(group => ({
+      ...group,
+      classes: group.classes.sort(
+        (a, b) => new Date(a.rawStartsAt).getTime() - new Date(b.rawStartsAt).getTime()
+      ),
+    }));
+}
+
+/**
+ * Calendar icon for week headers
+ */
+const CalendarWeekIcon: React.FC<{ className?: string }> = memo(({ className }) => (
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+    />
+  </svg>
+));
+CalendarWeekIcon.displayName = 'CalendarWeekIcon';
+
+/**
+ * Week header component for grouped view
+ */
+const WeekHeader: React.FC<{
+  weekLabel: string;
+  classCount: number;
+  isFirst?: boolean;
+}> = memo(({ weekLabel, classCount, isFirst = false }) => {
+  const { t } = useI18n();
+
+  return (
+    <div
+      className={`
+        sticky top-0 z-10 flex items-center gap-2 py-3 px-4
+        bg-gradient-to-r from-primary-dark/80 via-black/90 to-primary-dark/80
+        backdrop-blur-md border-b border-white/10
+        ${isFirst ? 'rounded-t-xl' : 'mt-4'}
+      `}
+      role="heading"
+      aria-level={3}
+    >
+      <CalendarWeekIcon className="w-5 h-5 text-primary-accent flex-shrink-0" />
+      <span className="font-semibold text-neutral">
+        {t('booking_week_header', { date: weekLabel })}
+      </span>
+      <span className="ml-auto text-sm text-neutral/50">
+        {t('booking_classes_count', { count: classCount })}
+      </span>
+    </div>
+  );
+});
+WeekHeader.displayName = 'WeekHeader';
+
+/**
+ * Acuity mode header showing filter context
+ */
+const AcuityModeHeader: React.FC<{
+  activeStyle?: string;
+  totalClasses: number;
+}> = memo(({ activeStyle, totalClasses }) => {
+  const { t } = useI18n();
+
+  return (
+    <div className="mb-4 p-4 rounded-xl bg-gradient-to-r from-primary-accent/10 via-primary-accent/5 to-transparent border border-primary-accent/20">
+      <div className="flex items-center gap-3">
+        <div className="w-10 h-10 rounded-full bg-primary-accent/20 flex items-center justify-center flex-shrink-0">
+          <CalendarWeekIcon className="w-5 h-5 text-primary-accent" />
+        </div>
+        <div>
+          <h3 className="font-semibold text-neutral">
+            {activeStyle
+              ? t('booking_all_weeks_title', { style: activeStyle })
+              : t('booking_all_weeks_filtered')}
+          </h3>
+          <p className="text-sm text-neutral/60">
+            {t('booking_all_weeks_subtitle', { count: totalClasses })}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+});
+AcuityModeHeader.displayName = 'AcuityModeHeader';
 
 // Memoized icon component
 const XMarkIcon: React.FC<{ className?: string }> = memo(({ className }) => (
@@ -54,8 +205,8 @@ const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) =
 
   // History management - must run immediately on mount
   useEffect(() => {
-    // Set global flag to indicate modal is open
-    window.__bookingModalOpen = true;
+    // Register modal as open (reference counting)
+    registerModalOpen();
 
     // Push history state for modal (only once)
     if (!historyPushedRef.current) {
@@ -66,14 +217,14 @@ const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) =
     // Handle browser back button
     const handlePopState = () => {
       historyPushedRef.current = false;
-      window.__bookingModalOpen = false;
+      registerModalClose();
       onClose();
     };
     window.addEventListener('popstate', handlePopState);
 
     return () => {
       window.removeEventListener('popstate', handlePopState);
-      window.__bookingModalOpen = false;
+      registerModalClose();
     };
   }, [onClose]);
 
@@ -255,7 +406,7 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
     allWeeksClasses = [],
     allWeeksLoading = false,
   }) => {
-    const { t } = useI18n();
+    const { t, locale } = useI18n();
     const [infoModal, setInfoModal] = useState<ClassData | null>(null);
     const listContainerRef = useRef<HTMLDivElement>(null);
     const sentinelRef = useRef<HTMLDivElement>(null);
@@ -285,9 +436,15 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
     const displayClasses = showAllWeeks && allWeeksClasses.length > 0 ? allWeeksClasses : classes;
     const isLoading = showAllWeeks ? allWeeksLoading : loading;
 
-    // Virtualization for large lists
+    // Group classes by week for Acuity mode (memoized for performance)
+    const weekGroups = useMemo(() => {
+      if (!showAllWeeks || displayClasses.length === 0) return [];
+      return groupClassesByWeek(displayClasses, locale);
+    }, [showAllWeeks, displayClasses, locale]);
+
+    // Virtualization for large lists (only in standard mode, not grouped mode)
     const { virtualItems, totalHeight, isVirtualizing } = useVirtualList<ClassData>({
-      items: displayClasses,
+      items: showAllWeeks ? [] : displayClasses, // Disable virtualization in grouped mode
       itemHeight: CLASS_CARD_HEIGHT,
       containerRef: listContainerRef,
       overscan: 3,
@@ -304,6 +461,11 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
 
     // Check if any filters are active
     const hasActiveFilters = Object.values(filters).some(Boolean);
+
+    // Get active style for Acuity header (capitalize first letter)
+    const activeStyle = filters.style
+      ? filters.style.charAt(0).toUpperCase() + filters.style.slice(1)
+      : undefined;
 
     return (
       <div className="animate-fade-in space-y-4">
@@ -327,8 +489,15 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
           onClearAll={onClearAllFilters}
         />
 
-        {/* Week Navigation */}
-        <WeekNavigation weekOffset={weekOffset} onWeekChange={onWeekChange} loading={loading} />
+        {/* Week Navigation - Hidden in Acuity mode (when filters are active) */}
+        {!showAllWeeks && (
+          <WeekNavigation weekOffset={weekOffset} onWeekChange={onWeekChange} loading={loading} />
+        )}
+
+        {/* Acuity Mode Header - Shows when viewing all weeks */}
+        {showAllWeeks && displayClasses.length > 0 && (
+          <AcuityModeHeader activeStyle={activeStyle} totalClasses={displayClasses.length} />
+        )}
 
         {/* Classes List - aria-live for screen reader announcements */}
         <div
@@ -344,12 +513,8 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
           </div>
 
           {isLoading ? (
-            // Loading skeleton
-            <div className="space-y-3" aria-hidden="true">
-              {[1, 2, 3, 4].map(i => (
-                <div key={i} className="h-32 bg-white/5 rounded-2xl animate-pulse" />
-              ))}
-            </div>
+            // Elaborated loading skeleton with shimmer effect
+            <SkeletonClassList count={4} />
           ) : error ? (
             // Error state
             <div className="text-center py-12">
@@ -396,8 +561,38 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
                 </button>
               )}
             </div>
+          ) : showAllWeeks && weekGroups.length > 0 ? (
+            // Acuity mode: Classes grouped by week with sticky headers
+            <div
+              ref={listContainerRef}
+              className="max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar rounded-xl border border-white/5"
+            >
+              {weekGroups.map((group, groupIndex) => (
+                <div key={group.weekStart.toISOString()} className="mb-2 last:mb-0">
+                  {/* Week Header - Sticky */}
+                  <WeekHeader
+                    weekLabel={group.weekLabel}
+                    classCount={group.classes.length}
+                    isFirst={groupIndex === 0}
+                  />
+
+                  {/* Classes for this week */}
+                  <div className="grid gap-3 p-3 bg-white/[0.02]">
+                    {group.classes.map(classData => (
+                      <ClassCard
+                        key={classData.id}
+                        classData={classData}
+                        onSelect={onSelectClass}
+                        onShowInfo={handleShowInfo}
+                        isSelected={selectedClassId === classData.id}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           ) : (
-            // Class list with virtualization for large lists
+            // Standard mode: Class list with optional virtualization
             <div
               ref={listContainerRef}
               className="max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar"

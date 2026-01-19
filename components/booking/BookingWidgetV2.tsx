@@ -20,6 +20,7 @@ import { useBookingFilters } from './hooks/useBookingFilters';
 import { useBookingState } from './hooks/useBookingState';
 import { useBookingClasses } from './hooks/useBookingClasses';
 import { useBookingAnalytics } from './hooks/useBookingAnalytics';
+import { useBookingFunnelAnalytics } from './hooks/useBookingFunnelAnalytics';
 import { useCsrfToken } from './hooks/useCsrfToken';
 import { useBookingPersistence } from './hooks/useBookingPersistence';
 import type { InvalidField } from './hooks/useBookingState';
@@ -40,6 +41,7 @@ import { validateBookingForm, sanitizeFormData } from './validation';
 
 // Utilities
 import { trackLeadConversion, LEAD_VALUES } from '../../utils/analytics';
+import { isAnyModalOpen } from './utils/modalHistoryManager';
 
 // Helper: Get cookie value
 function getCookie(name: string): string | null {
@@ -48,17 +50,9 @@ function getCookie(name: string): string | null {
   return match ? (match[2] ?? null) : null;
 }
 
-// Global flag to track if a booking modal is open
-// This prevents the BookingWidgetV2 popstate handler from interfering with modal history
-declare global {
-  interface Window {
-    __bookingModalOpen?: boolean;
-  }
-}
-
 // Helper: Generate unique event ID for Meta tracking
 function generateEventId(): string {
-  return `evt_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  return `evt_${Date.now()}_${Math.random().toString(36).substring(2, 11)}`;
 }
 
 // Check icon component
@@ -158,6 +152,9 @@ const LanguageSelector: React.FC<{
   </div>
 );
 
+// Form submission timeout in milliseconds (30 seconds)
+const FORM_SUBMISSION_TIMEOUT_MS = 30000;
+
 const BookingWidgetV2: React.FC = memo(() => {
   const { t, locale, setLocale } = useI18n();
   const navigate = useNavigate();
@@ -165,6 +162,25 @@ const BookingWidgetV2: React.FC = memo(() => {
 
   // Track if we pushed a history state for the form step
   const historyPushedRef = useRef(false);
+
+  // Track component mounted state for safe async updates
+  const isMountedRef = useRef(true);
+
+  // Track active form submission AbortController
+  const formAbortControllerRef = useRef<AbortController | null>(null);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    isMountedRef.current = true;
+    return () => {
+      isMountedRef.current = false;
+      // Abort any pending form submission
+      if (formAbortControllerRef.current) {
+        formAbortControllerRef.current.abort();
+        formAbortControllerRef.current = null;
+      }
+    };
+  }, []);
 
   // Language change handler
   const handleLanguageChange = (newLocale: 'es' | 'ca' | 'en' | 'fr') => {
@@ -247,6 +263,10 @@ const BookingWidgetV2: React.FC = memo(() => {
 
   const { trackClassSelected, trackBookingSuccess } = useBookingAnalytics();
 
+  // Funnel analytics for time tracking and abandonment
+  const { startStep, endStep, trackClassLoadTime, trackFormSubmitTime, trackInteraction } =
+    useBookingFunnelAnalytics();
+
   // Browser history management - push state when entering form step
   useEffect(() => {
     if (step === 'form' && !historyPushedRef.current) {
@@ -262,7 +282,7 @@ const BookingWidgetV2: React.FC = memo(() => {
   const handlePopState = useCallback(
     (event: globalThis.PopStateEvent) => {
       // If a modal is open, let the modal handle the popstate
-      if (window.__bookingModalOpen) {
+      if (isAnyModalOpen()) {
         return;
       }
 
@@ -322,10 +342,23 @@ const BookingWidgetV2: React.FC = memo(() => {
   const handleSelectClass = (classData: ClassData) => {
     selectClass(classData);
     trackClassSelected(classData);
+    // Track funnel step transition
+    endStep('class_selected');
+    startStep('form_started');
   };
+
+  // Track class load time when classes finish loading
+  const classLoadStartRef = useRef<number>(Date.now());
+  useEffect(() => {
+    if (!loading && classes.length > 0) {
+      trackClassLoadTime(classLoadStartRef.current);
+      startStep('class_list');
+    }
+  }, [loading, classes.length, trackClassLoadTime, startStep]);
 
   // Handle going back to class list (via UI button)
   const handleBack = useCallback(() => {
+    trackInteraction('back_to_class_list');
     // If we pushed history state, use history.back() for proper UX
     if (historyPushedRef.current) {
       window.history.back();
@@ -333,7 +366,7 @@ const BookingWidgetV2: React.FC = memo(() => {
       goBack();
       clearError();
     }
-  }, [goBack, clearError]);
+  }, [goBack, clearError, trackInteraction]);
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
@@ -372,6 +405,23 @@ const BookingWidgetV2: React.FC = memo(() => {
 
     setStatus('loading');
     clearError();
+
+    // Track form submit start time
+    const submitStartTime = Date.now();
+
+    // Abort any previous pending submission
+    if (formAbortControllerRef.current) {
+      formAbortControllerRef.current.abort();
+    }
+
+    // Create new AbortController for this submission
+    const controller = new AbortController();
+    formAbortControllerRef.current = controller;
+
+    // Set up timeout
+    const timeoutId = setTimeout(() => {
+      controller.abort();
+    }, FORM_SUBMISSION_TIMEOUT_MS);
 
     // Generate event ID for Meta tracking deduplication
     const eventId = generateEventId();
@@ -422,7 +472,14 @@ const BookingWidgetV2: React.FC = memo(() => {
           ...getCsrfHeaders(),
         },
         body: JSON.stringify(payload),
+        signal: controller.signal,
       });
+
+      // Clear timeout since request completed
+      clearTimeout(timeoutId);
+
+      // Check if component is still mounted before updating state
+      if (!isMountedRef.current) return;
 
       const data = await response.json();
 
@@ -430,25 +487,52 @@ const BookingWidgetV2: React.FC = memo(() => {
         throw new Error(data.error || t('booking_error_generic'));
       }
 
-      // Success
-      setStatus('success');
-      clearPersistedData();
-      triggerHaptic('success');
+      // Success - only update if still mounted
+      if (isMountedRef.current) {
+        setStatus('success');
+        clearPersistedData();
+        triggerHaptic('success');
 
-      // Replace history state to prevent back navigation to form
-      window.history.replaceState({ bookingStep: 'success', bookingWidget: true }, '');
+        // Track form submit performance and complete funnel
+        trackFormSubmitTime(submitStartTime);
+        endStep('form_completed');
 
-      // Track conversion with analytics
-      trackBookingSuccess(selectedClass);
-      trackLeadConversion({
-        leadSource: 'booking_widget',
-        formName: `Booking - ${selectedClass.style || 'General'}`,
-        leadValue: LEAD_VALUES.BOOKING_LEAD,
-        pagePath: typeof window !== 'undefined' ? window.location.pathname : '',
-      });
+        // Replace history state to prevent back navigation to form
+        window.history.replaceState({ bookingStep: 'success', bookingWidget: true }, '');
+
+        // Track conversion with analytics
+        trackBookingSuccess(selectedClass);
+        trackLeadConversion({
+          leadSource: 'booking_widget',
+          formName: `Booking - ${selectedClass.style || 'General'}`,
+          leadValue: LEAD_VALUES.BOOKING_LEAD,
+          pagePath: typeof window !== 'undefined' ? window.location.pathname : '',
+        });
+      }
     } catch (err) {
-      setStatus('error');
-      setError(err instanceof Error ? err.message : t('booking_error_generic'));
+      // Clear timeout on error
+      clearTimeout(timeoutId);
+
+      // If aborted due to unmount or timeout, don't update state
+      if (err instanceof DOMException && err.name === 'AbortError') {
+        // Check if it was a timeout (component still mounted) vs unmount
+        if (isMountedRef.current) {
+          setStatus('error');
+          setError(t('booking_error_timeout'));
+        }
+        return;
+      }
+
+      // Only update state if still mounted
+      if (isMountedRef.current) {
+        setStatus('error');
+        setError(err instanceof Error ? err.message : t('booking_error_generic'));
+      }
+    } finally {
+      // Clear the controller reference
+      if (formAbortControllerRef.current === controller) {
+        formAbortControllerRef.current = null;
+      }
     }
   };
 

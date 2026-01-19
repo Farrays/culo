@@ -43,6 +43,11 @@ const browserGlobals = {
   HTMLSelectElement: 'readonly',
   HTMLInputElement: 'readonly',
   Storage: 'readonly',
+  AbortController: 'readonly',
+  DOMException: 'readonly',
+  // Service Worker related
+  ServiceWorkerRegistration: 'readonly',
+  MessageEvent: 'readonly',
 };
 
 // Node globals (for scripts and tests)
@@ -137,6 +142,10 @@ export default [
       '*-example.tsx',
       '*-example.js',
       'src/pages/test/',
+      // E2E tests and service worker (different runtime)
+      'e2e/',
+      'playwright.config.ts',
+      'public/sw.js',
     ],
   },
   ...storybook.configs['flat/recommended'],

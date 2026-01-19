@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useCallback } from 'react';
 import { XMarkIcon } from '../../lib/icons';
 import { useI18n } from '../../hooks/useI18n';
 import { Portal } from './components/Portal';
+import { registerModalOpen, registerModalClose } from './utils/modalHistoryManager';
 
 interface TermsModalProps {
   isOpen: boolean;
@@ -34,8 +35,8 @@ const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose }) => {
       return;
     }
 
-    // Set global flag to indicate modal is open
-    window.__bookingModalOpen = true;
+    // Register modal as open (reference counting)
+    registerModalOpen();
 
     // Push history state for modal (only once per open)
     if (!historyPushedRef.current) {
@@ -46,7 +47,7 @@ const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose }) => {
     // Handle browser back button
     const handlePopState = () => {
       historyPushedRef.current = false;
-      window.__bookingModalOpen = false;
+      registerModalClose();
       onClose();
     };
     window.addEventListener('popstate', handlePopState);
@@ -60,7 +61,7 @@ const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose }) => {
     return () => {
       document.removeEventListener('keydown', handleEscape);
       window.removeEventListener('popstate', handlePopState);
-      window.__bookingModalOpen = false;
+      registerModalClose();
       document.body.style.overflow = '';
     };
   }, [isOpen, onClose, handleClose]);
