@@ -33,12 +33,12 @@ const initialFormData: BookingFormData = {
   email: '',
   phone: '',
   acceptsTerms: false,
-  acceptsMarketing: false,
+  acceptsMarketing: true, // Legacy: now included in acceptsTerms
   acceptsAge: false,
-  acceptsNoRefund: false,
+  acceptsNoRefund: true, // Legacy: now included in acceptsTerms
   acceptsPrivacy: false,
   acceptsHeels: false,
-  acceptsImage: false,
+  acceptsImage: true, // Legacy: now included in acceptsTerms
 };
 
 // Mock scrollIntoView which is not available in jsdom

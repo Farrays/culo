@@ -7,6 +7,7 @@ import { registerModalOpen, registerModalClose } from './utils/modalHistoryManag
 interface TermsModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onAccept?: () => void;
 }
 
 /**
@@ -14,7 +15,7 @@ interface TermsModalProps {
  * Muestra las condiciones de las clases de bienvenida
  * Includes browser history management for back button support
  */
-const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose }) => {
+const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose, onAccept }) => {
   const { t } = useI18n();
   const modalRef = useRef<HTMLDivElement>(null);
   const historyPushedRef = useRef(false);
@@ -27,6 +28,12 @@ const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose }) => {
       onClose();
     }
   }, [onClose]);
+
+  // Accept and close - triggers checkbox check
+  const handleAccept = useCallback(() => {
+    onAccept?.();
+    handleClose();
+  }, [onAccept, handleClose]);
 
   // Handle escape key, body scroll lock, and history management
   useEffect(() => {
@@ -134,7 +141,7 @@ const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose }) => {
           {/* Footer */}
           <div className="sticky bottom-0 p-4 bg-black border-t border-white/10">
             <button
-              onClick={handleClose}
+              onClick={handleAccept}
               className="w-full py-3 px-4 bg-primary-accent hover:bg-primary-accent/90 text-white font-semibold rounded-xl transition-colors"
             >
               {t('terms_understood')}
