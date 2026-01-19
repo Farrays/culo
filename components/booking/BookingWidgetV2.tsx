@@ -32,6 +32,7 @@ import { BookingSuccess } from './components/BookingSuccess';
 import { BookingError } from './components/BookingError';
 import { BookingErrorBoundary } from './components/BookingErrorBoundary';
 import { SocialProofTicker } from './components/SocialProofTicker';
+import { formatPhoneForAPI, validatePhoneNumber } from './components/CountryPhoneInput';
 
 // Types
 import type { ClassData, BookingFormData } from './types/booking';
@@ -389,6 +390,14 @@ const BookingWidgetV2: React.FC = memo(() => {
       return;
     }
 
+    // Validate phone number with libphonenumber-js (country-specific validation)
+    if (!validatePhoneNumber(formData.phone, formData.countryCode)) {
+      setInvalidFields(['phone']);
+      setError(t('booking_error_phone_invalid'));
+      triggerHaptic('error');
+      return;
+    }
+
     // Sanitize form data before validation
     const sanitizedData = sanitizeFormData(formData);
 
@@ -428,13 +437,20 @@ const BookingWidgetV2: React.FC = memo(() => {
     const eventId = generateEventId();
 
     try {
+      // Format phone number to E.164 format for Momence (+34612345678)
+      // Cast countryCode since Zod returns string but libphonenumber expects CountryCode
+      const formattedPhone = formatPhoneForAPI(
+        validationResult.data.phone,
+        validationResult.data.countryCode as import('libphonenumber-js').CountryCode
+      );
+
       // Build complete payload aligned with V1 and Momence requirements
       const payload = {
         // User data (sanitized and validated)
         firstName: validationResult.data.firstName,
         lastName: validationResult.data.lastName,
         email: validationResult.data.email,
-        phone: validationResult.data.phone,
+        phone: formattedPhone,
 
         // Class data
         sessionId: selectedClass.id,
@@ -634,16 +650,21 @@ const BookingWidgetV2: React.FC = memo(() => {
             <img
               src="/images/logo/img/logo-fidc_256.webp"
               alt="Farray's Dance Center"
-              className="h-16 sm:h-20 w-auto object-contain"
+              className="h-24 sm:h-32 w-auto object-contain"
               loading="eager"
             />
           </div>
-          <h1 className="text-2xl md:text-3xl font-black text-neutral mb-2">
-            {t('booking_title')}
-          </h1>
-          <p className="text-neutral/60 text-sm md:text-base max-w-md mx-auto">
-            {t('booking_subtitle_extended')}
-          </p>
+          {/* Title and subtitle - hide on success page */}
+          {status !== 'success' && (
+            <>
+              <h1 className="text-2xl md:text-3xl font-black text-neutral mb-2">
+                {t('booking_title')}
+              </h1>
+              <p className="text-neutral/60 text-sm md:text-base max-w-md mx-auto">
+                {t('booking_subtitle_extended')}
+              </p>
+            </>
+          )}
 
           {/* Social Proof Ticker - show recent bookings */}
           {status !== 'success' && status !== 'error' && (

@@ -50,6 +50,9 @@ export const bookingFormSchema = z.object({
     .max(MAX_PHONE_LENGTH, 'booking_error_phone_max')
     .regex(PHONE_REGEX, 'booking_error_phone_invalid'),
 
+  // Country code for phone validation (ISO 3166-1 alpha-2)
+  countryCode: z.string().length(2).default('ES'),
+
   // RGPD Mandatory Consents (Simplified: 3 checkboxes)
   // Terms now includes: confirmations, marketing, no-refund, image consent
   acceptsTerms: z.boolean().refine(val => val === true, 'booking_error_consent_required'),

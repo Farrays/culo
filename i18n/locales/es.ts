@@ -20308,6 +20308,12 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_placeholder_lastName: 'Tus apellidos',
   booking_placeholder_email: 'tu@email.com',
   booking_placeholder_phone: '+34 612 345 678',
+  booking_placeholder_phone_number: '612 345 678',
+  booking_phone_country: 'País',
+  booking_phone_select_country: 'Seleccionar país',
+  booking_phone_search: 'Buscar país...',
+  booking_phone_no_results: 'No se encontraron países',
+  booking_error_phone_invalid: 'Número de teléfono no válido para el país seleccionado',
 
   // RGPD Checkboxes - Mandatory
   booking_consent_terms: 'Acepto las',
@@ -20388,7 +20394,6 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_error_email_invalid: 'Por favor, introduce un email válido',
   booking_error_phone_min: 'El teléfono debe tener al menos 6 dígitos',
   booking_error_phone_max: 'El teléfono es demasiado largo',
-  booking_error_phone_invalid: 'Por favor, introduce un teléfono válido',
   booking_error_field_required: 'Este campo es obligatorio',
 
   // Error Boundary
