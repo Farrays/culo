@@ -532,6 +532,11 @@ export function useBookingClasses({
     return applyFilters(weekClasses, filters);
   }, [weekClasses, filters]);
 
+  // Apply filters to all weeks classes (Acuity mode)
+  const filteredAllWeeksClasses = useMemo(() => {
+    return applyFilters(allWeeksClasses, filters);
+  }, [allWeeksClasses, filters]);
+
   // Extract available filter options from all classes
   const filterOptions = useMemo((): FilterOptions => {
     const source = allClasses.length > 0 ? allClasses : weekClasses;
@@ -565,7 +570,7 @@ export function useBookingClasses({
     hasMore,
     currentPage,
     fromCache,
-    allWeeksClasses,
+    allWeeksClasses: filteredAllWeeksClasses,
     allWeeksLoading,
   };
 }
