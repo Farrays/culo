@@ -472,12 +472,18 @@ export function useBookingClasses({
     [enablePagination, pageSize]
   );
 
-  // Prefetch adjacent weeks for smooth navigation
+  // Prefetch adjacent weeks for smooth navigation (prefetch 2 weeks ahead)
   const prefetchAdjacentWeeks = useCallback(
     (currentWeek: number) => {
-      // Prefetch next week if not cached
-      if (!classCache.has(currentWeek + 1) && currentWeek < 3) {
+      // Prefetch next 2 weeks if not cached (for smoother navigation)
+      if (!classCache.has(currentWeek + 1) && currentWeek + 1 <= 3) {
         fetchWeekClasses(currentWeek + 1).catch(() => {});
+      }
+      if (!classCache.has(currentWeek + 2) && currentWeek + 2 <= 3) {
+        // Delay second prefetch slightly to prioritize immediate next week
+        setTimeout(() => {
+          fetchWeekClasses(currentWeek + 2).catch(() => {});
+        }, 500);
       }
       // Prefetch previous week if not cached
       if (!classCache.has(currentWeek - 1) && currentWeek > 0) {

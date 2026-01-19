@@ -12,7 +12,7 @@ interface CacheEntry {
   expiresAt: number;
 }
 
-const DEFAULT_TTL = 5 * 60 * 1000; // 5 minutes
+const DEFAULT_TTL = 10 * 60 * 1000; // 10 minutes
 const MAX_ENTRIES = 10;
 
 class ClassCache {

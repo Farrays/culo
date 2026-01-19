@@ -25,8 +25,8 @@ import Redis from 'ioredis';
 const MOMENCE_API_URL = 'https://api.momence.com';
 const MOMENCE_AUTH_URL = 'https://api.momence.com/api/v2/auth/token';
 
-// Cache TTL: 15 minutos (las clases no cambian muy frecuentemente)
-const CACHE_TTL_SECONDS = 15 * 60;
+// Cache TTL: 30 minutos (las clases no cambian muy frecuentemente)
+const CACHE_TTL_SECONDS = 30 * 60;
 const CACHE_KEY = 'momence:sessions:cache';
 const TOKEN_CACHE_KEY = 'momence:access_token';
 const TOKEN_TTL_SECONDS = 3500; // Token expira en 3600s, refrescamos antes

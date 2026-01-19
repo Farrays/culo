@@ -351,12 +351,36 @@ const BookingWidgetV2: React.FC = memo(() => {
 
   // Track class load time when classes finish loading
   const classLoadStartRef = useRef<number>(Date.now());
+  // Track if we've already attempted auto-advance to prevent loops
+  const autoAdvanceAttemptedRef = useRef(false);
+
   useEffect(() => {
     if (!loading && classes.length > 0) {
       trackClassLoadTime(classLoadStartRef.current);
       startStep('class_list');
     }
   }, [loading, classes.length, trackClassLoadTime, startStep]);
+
+  // Auto-advance to next week if current week has no classes (only on first load)
+  useEffect(() => {
+    // Only run when:
+    // 1. Not loading
+    // 2. No classes in current week
+    // 3. We haven't already attempted auto-advance
+    // 4. Currently on week 0 (first load scenario)
+    // 5. No active filters (filtering might hide classes)
+    if (
+      !loading &&
+      classes.length === 0 &&
+      !autoAdvanceAttemptedRef.current &&
+      weekOffset === 0 &&
+      !hasActiveFilters
+    ) {
+      autoAdvanceAttemptedRef.current = true;
+      // Advance to week 1 to show next week's classes
+      setWeekOffset(1);
+    }
+  }, [loading, classes.length, weekOffset, hasActiveFilters, setWeekOffset]);
 
   // Handle going back to class list (via UI button)
   const handleBack = useCallback(() => {
