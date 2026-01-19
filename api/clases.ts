@@ -361,16 +361,36 @@ export default async function handler(
         const [cached, ttl] = await Promise.all([redis.get(cacheKey), redis.ttl(cacheKey)]);
 
         if (cached) {
-          sessions = JSON.parse(cached);
-          fromCache = true;
+          const parsedSessions = JSON.parse(cached);
 
-          // STALE-WHILE-REVALIDATE: If cache expires in < 5 min, refresh in background
-          // User gets instant response, cache stays fresh
-          if (ttl > 0 && ttl < 300) {
+          // If cache has 0 sessions, it might be stale - fetch fresh data
+          if (parsedSessions.length === 0) {
             const accessToken = await getAccessToken();
             if (accessToken) {
-              // Don't await - let it run in background
-              refreshCacheInBackground(redis, cacheKey, accessToken, daysAhead, weekOffset);
+              sessions = await fetchFutureSessions(accessToken, daysAhead, weekOffset);
+              // Only cache if we got results (don't cache empty results)
+              if (sessions.length > 0) {
+                await redis.setex(cacheKey, CACHE_TTL_SECONDS, JSON.stringify(sessions));
+              } else {
+                // Delete the empty cache entry so next request tries again
+                await redis.del(cacheKey);
+              }
+            } else {
+              sessions = parsedSessions;
+              fromCache = true;
+            }
+          } else {
+            sessions = parsedSessions;
+            fromCache = true;
+
+            // STALE-WHILE-REVALIDATE: If cache expires in < 5 min, refresh in background
+            // User gets instant response, cache stays fresh
+            if (ttl > 0 && ttl < 300) {
+              const accessToken = await getAccessToken();
+              if (accessToken) {
+                // Don't await - let it run in background
+                refreshCacheInBackground(redis, cacheKey, accessToken, daysAhead, weekOffset);
+              }
             }
           }
         } else {
