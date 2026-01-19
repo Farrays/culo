@@ -20335,6 +20335,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_error_message: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
   booking_error_cta: 'Reintentar',
   booking_error_generic: 'Ha ocurrido un error. Por favor, inténtalo de nuevo.',
+  booking_error_timeout: 'La solicitud ha tardado demasiado. Por favor, inténtalo de nuevo.',
   booking_error_required_fields: 'Por favor, completa todos los campos obligatorios',
   booking_error_consent_required: 'Por favor, acepta todos los consentimientos obligatorios',
   booking_error_heels_consent_required: 'Por favor, acepta las condiciones para clases con tacones',

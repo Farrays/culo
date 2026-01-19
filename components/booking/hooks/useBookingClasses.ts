@@ -501,12 +501,19 @@ export function useBookingClasses({
   // Fetch all weeks when in Acuity mode (filters active)
   useEffect(() => {
     if (!fetchAllWeeks) {
-      setAllWeeksClasses([]);
+      if (isMountedRef.current) {
+        setAllWeeksClasses([]);
+      }
       return;
     }
 
+    // AbortController for canceling requests on cleanup
+    const controller = new AbortController();
+
     const fetchAll = async () => {
-      setAllWeeksLoading(true);
+      if (isMountedRef.current) {
+        setAllWeeksLoading(true);
+      }
 
       try {
         // Fetch all 4 weeks in parallel
@@ -523,9 +530,11 @@ export function useBookingClasses({
             return data;
           }
 
-          // Production: fetch from API
+          // Production: fetch from API with abort signal
           const params = new URLSearchParams({ week: week.toString(), days: '7' });
-          const response = await fetch(`${API_ENDPOINTS.CLASSES}?${params.toString()}`);
+          const response = await fetch(`${API_ENDPOINTS.CLASSES}?${params.toString()}`, {
+            signal: controller.signal,
+          });
           const data = await response.json();
           if (data.success) {
             classCache.set(week, data.data?.classes || []);
@@ -539,16 +548,32 @@ export function useBookingClasses({
           .flat()
           .sort((a, b) => new Date(a.rawStartsAt).getTime() - new Date(b.rawStartsAt).getTime());
 
-        setAllWeeksClasses(combined);
+        // Only update state if still mounted
+        if (isMountedRef.current) {
+          setAllWeeksClasses(combined);
+        }
       } catch (err) {
+        // Ignore abort errors
+        if (err instanceof DOMException && err.name === 'AbortError') {
+          return;
+        }
         console.error('Failed to fetch all weeks:', err);
-        setAllWeeksClasses([]);
+        if (isMountedRef.current) {
+          setAllWeeksClasses([]);
+        }
       } finally {
-        setAllWeeksLoading(false);
+        if (isMountedRef.current) {
+          setAllWeeksLoading(false);
+        }
       }
     };
 
     fetchAll();
+
+    // Cleanup: abort pending requests
+    return () => {
+      controller.abort();
+    };
   }, [fetchAllWeeks]);
 
   // Apply filters to current week classes

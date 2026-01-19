@@ -18957,6 +18957,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_error_message: "S'ha produït un error. Si us plau, torna-ho a provar.",
   booking_error_cta: 'Reintentar',
   booking_error_generic: "S'ha produït un error. Si us plau, torna-ho a provar.",
+  booking_error_timeout: 'La sol·licitud ha trigat massa. Si us plau, torna-ho a provar.',
   booking_error_required_fields: 'Si us plau, omple tots els camps obligatoris',
   booking_error_consent_required: 'Si us plau, accepta tots els consentiments obligatoris',
   booking_error_heels_consent_required:

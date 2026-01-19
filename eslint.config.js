@@ -43,6 +43,8 @@ const browserGlobals = {
   HTMLSelectElement: 'readonly',
   HTMLInputElement: 'readonly',
   Storage: 'readonly',
+  AbortController: 'readonly',
+  DOMException: 'readonly',
 };
 
 // Node globals (for scripts and tests)

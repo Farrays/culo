@@ -18717,6 +18717,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   booking_error_message: 'An error occurred. Please try again.',
   booking_error_cta: 'Retry',
   booking_error_generic: 'An error occurred. Please try again.',
+  booking_error_timeout: 'The request took too long. Please try again.',
   booking_error_required_fields: 'Please fill in all required fields',
   booking_error_consent_required: 'Please accept all required consents',
   booking_error_heels_consent_required: 'Please accept the high heels class conditions',

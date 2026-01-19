@@ -12,6 +12,7 @@ import { ClassCard } from './ClassCard';
 import { WeekNavigation } from './WeekNavigation';
 import { useVirtualList } from '../hooks/useVirtualList';
 import { Portal } from './Portal';
+import { registerModalOpen, registerModalClose } from '../utils/modalHistoryManager';
 
 // Estimated height of each ClassCard (in pixels)
 const CLASS_CARD_HEIGHT = 180;
@@ -54,8 +55,8 @@ const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) =
 
   // History management - must run immediately on mount
   useEffect(() => {
-    // Set global flag to indicate modal is open
-    window.__bookingModalOpen = true;
+    // Register modal as open (reference counting)
+    registerModalOpen();
 
     // Push history state for modal (only once)
     if (!historyPushedRef.current) {
@@ -66,14 +67,14 @@ const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) =
     // Handle browser back button
     const handlePopState = () => {
       historyPushedRef.current = false;
-      window.__bookingModalOpen = false;
+      registerModalClose();
       onClose();
     };
     window.addEventListener('popstate', handlePopState);
 
     return () => {
       window.removeEventListener('popstate', handlePopState);
-      window.__bookingModalOpen = false;
+      registerModalClose();
     };
   }, [onClose]);
 

@@ -19131,6 +19131,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   booking_error_message: 'Une erreur est survenue. Veuillez réessayer.',
   booking_error_cta: 'Réessayer',
   booking_error_generic: 'Une erreur est survenue. Veuillez réessayer.',
+  booking_error_timeout: 'La demande a pris trop de temps. Veuillez réessayer.',
   booking_error_required_fields: 'Veuillez remplir tous les champs obligatoires',
   booking_error_consent_required: 'Veuillez accepter tous les consentements obligatoires',
   booking_error_heels_consent_required: 'Veuillez accepter les conditions pour les cours en talons',
