@@ -49,6 +49,7 @@
     "esbuild": "^0.25.0",
     "path-to-regexp": "^8.0.0",
     "undici": "^6.0.0",
+    "diff": "^8.0.3",
     "react-helmet-async": {
       "react": "$react"
     }
