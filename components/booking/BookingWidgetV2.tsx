@@ -32,6 +32,7 @@ import { BookingSuccess } from './components/BookingSuccess';
 import { BookingError } from './components/BookingError';
 import { BookingErrorBoundary } from './components/BookingErrorBoundary';
 import { SocialProofTicker } from './components/SocialProofTicker';
+import { SkeletonClassListStep } from './components/SkeletonClassCard';
 import { formatPhoneForAPI, validatePhoneNumber } from './components/CountryPhoneInput';
 
 // Types
@@ -162,6 +163,14 @@ const BookingWidgetV2: React.FC = memo(() => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Client-only rendering to prevent hydration mismatch
+  // This is needed because the widget uses browser APIs (Date, window.matchMedia)
+  // that produce different results on server vs client
+  const [isClient, setIsClient] = React.useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   // Track if we pushed a history state for the form step
   const historyPushedRef = useRef(false);
 
@@ -270,6 +279,8 @@ const BookingWidgetV2: React.FC = memo(() => {
     useBookingFunnelAnalytics();
 
   // Browser history management - push state when entering form step
+  // Note: This effect uses window.history which is only available on client
+  // The isClient check inside prevents SSR issues
   useEffect(() => {
     if (step === 'form' && !historyPushedRef.current) {
       window.history.pushState({ bookingStep: 'form', bookingWidget: true }, '');
@@ -638,6 +649,36 @@ const BookingWidgetV2: React.FC = memo(() => {
       />
     );
   };
+
+  // Show skeleton during SSR/hydration to prevent mismatch errors
+  // The skeleton matches the visual structure so there's no layout shift
+  if (!isClient) {
+    return (
+      <div className="relative">
+        <div
+          className="absolute -inset-4 bg-gradient-to-r from-primary-dark/20 via-primary-accent/10 to-primary-dark/20 rounded-3xl blur-2xl -z-10"
+          aria-hidden="true"
+        />
+        <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8">
+          <div
+            className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-accent to-transparent"
+            aria-hidden="true"
+          />
+          <div className="text-center mb-6">
+            <div className="flex justify-center mb-4">
+              <img
+                src="/images/logo/img/logo-fidc_256.webp"
+                alt="Farray's Dance Center"
+                className="h-24 sm:h-32 w-auto object-contain"
+                loading="eager"
+              />
+            </div>
+          </div>
+          <SkeletonClassListStep cardCount={4} />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative">
