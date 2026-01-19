@@ -51,6 +51,7 @@ export const fr = {
   navPrepFisica: 'Entraînement pour Danseurs',
   navClasesParticulares: 'Cours Particuliers',
   navServices: 'Services',
+  navAllServices: 'Tous les Services',
   navAboutUs: 'Qui Sommes-Nous',
   headerRoomRental: 'Location de Salles',
   headerGiftDance: 'Offrir la Danse',
@@ -2674,6 +2675,12 @@ export const fr = {
   yunaisyFarray_hero_title: 'Découvrez Yunaisy Farray',
   yunaisyFarray_hero_subtitle:
     'Pour beaucoup, Yunaisy Farray reste la nº1 mondiale dans le domaine des festivals de danse cubaine. Mais sa grandeur va bien au-delà de la scène : elle est professeure, créatrice, activiste, leader et défenseure infatigable des femmes et des droits des animaux.',
+  yunaisyFarray_hero_cta: 'Découvrez comment commencer',
+
+  yunaisyFarray_gallery_title: 'Art en Mouvement',
+  yunaisyFarray_gallery_subtitle:
+    "Photographie artistique professionnelle capturant l'essence de la danse et l'expression corporelle de Yunaisy Farray.",
+  yunaisyFarray_gallery_view: 'Voir photo',
 
   yunaisyFarray_intro_title: 'Yunaisy Farray',
   yunaisyFarray_intro_subtitle: "Fondatrice et directrice du Farray's International Dance Center",
@@ -2777,6 +2784,28 @@ export const fr = {
     "Rejoignez l'école où Yunaisy Farray transmet sa passion, sa technique et son expérience.",
   yunaisyFarray_cta_classes: 'Voir les Cours',
   yunaisyFarray_method_link: 'Découvrez la Méthode Farray →',
+
+  // Témoignages sur Yunaisy
+  yunaisyFarray_testimonials_title: 'Ce Que Disent Ses Élèves',
+  yunaisyFarray_testimonials_subtitle:
+    'Expériences réelles de personnes qui ont appris avec Yunaisy Farray',
+  yunaisyFarray_testimonial_1_name: 'Emma S.',
+  yunaisyFarray_testimonial_1_text:
+    "Yunaisy Farray est une professeure formidable : amusante et motivante. Je suis contente d'être sortie de ma zone de confort pour suivre ce cours, je le recommande !",
+  yunaisyFarray_testimonial_2_name: 'Zhuqing W.',
+  yunaisyFarray_testimonial_2_text:
+    "Je ne peux pas exprimer avec des mots l'énergie que transmettent les professeurs de ce centre, surtout la directrice Yunaisy. C'est le meilleur centre que j'ai trouvé à BCN.",
+  yunaisyFarray_testimonial_3_name: 'Berta M.',
+  yunaisyFarray_testimonial_3_text:
+    'Ma progression en salsa a été incroyable grâce au professionnalisme et aux conseils personnalisés de Yunaisy. De plus, il y a une ambiance très familiale.',
+  yunaisyFarray_testimonial_4_name: 'Violetta P.',
+  yunaisyFarray_testimonial_4_text:
+    'Magnifique professeure Yunaisy. Un talent incroyable, énergie, motivation, technique. Très recommandée pour les danseurs professionnels.',
+  yunaisyFarray_testimonial_5_name: 'Karina I.',
+  yunaisyFarray_testimonial_5_text:
+    "J'ai été dans de nombreuses écoles dans différentes villes du monde. Les professeurs sont passionnés, expliquent bien et transmettent la culture des danses. Yunaisy est une reine.",
+  yunaisyFarray_testimonials_google_link: 'Voir tous les avis sur Google',
+  yunaisyFarray_testimonials_google_badge: '509+ avis sur Google',
 
   // ==================== MÉTHODE FARRAY PAGE ====================
   metodoFarray_page_title: "La Méthode Farray - Système Exclusif d'Enseignement de la Danse",
@@ -19495,6 +19524,12 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   spotsAvailable: 'places disponibles',
   retry: 'Réessayer',
 
+  // Social Proof Ticker
+  socialProofBooked: '{name} a réservé {className}',
+  socialProofMinutesAgo: 'il y a {minutes} min',
+  socialProofJustNow: "à l'instant",
+  socialProofClickToBook: 'Cliquez pour réserver votre cours',
+
   // Day abbreviations (localized)
   dayShort_monday: 'Lun',
   dayShort_tuesday: 'Mar',
@@ -19733,4 +19768,322 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   kpopCourseSchemaName: "Cours de K-Pop Dance à Barcelone - Farray's Center",
   kpopCourseSchemaDesc:
     'Apprenez la K-Pop Dance avec des chorégraphies de BTS, BLACKPINK, Stray Kids et plus. Cours pour tous les niveaux au cœur de Barcelone.',
+
+  // ==========================================
+  // COMMERCIAL DANCE PAGE TRANSLATIONS
+  // ==========================================
+
+  // Page Meta
+  commercialPageTitle: "Cours de Commercial Dance à Barcelone | Farray's Center",
+  commercialMetaDescription:
+    "Cours de Commercial Dance à Barcelone. Apprenez les chorégraphies style clip vidéo, technique de performance et présence scénique. Tous niveaux. Académie CID-UNESCO. Commencez aujourd'hui !",
+
+  // Breadcrumb
+  commercialBreadcrumbHome: 'Accueil',
+  commercialBreadcrumbClasses: 'Cours de Danse',
+  commercialBreadcrumbUrban: 'Danses Urbaines',
+  commercialBreadcrumbCurrent: 'Cours de Commercial Dance',
+
+  // Hero Section
+  commercialHeroTitle: 'Cours de Commercial Dance à Barcelone',
+  commercialHeroSubtitle:
+    'Maîtrisez les chorégraphies de clips et concerts avec une technique professionnelle',
+  commercialHeroDesc: 'Dansez comme dans les clips',
+  commercialHeroLocation: 'Cours du niveau débutant au niveau avancé, entre Plaza España et Sants',
+  commercialHeroStudents: '+15 000 élèves formés',
+
+  // CTAs
+  commercialCTA1: 'Découvrez comment commencer',
+  commercialCTA1Subtext: "Liste d'attente active",
+  commercialCTA2: "Rejoignez la liste d'attente",
+  commercialCTA2Subtext: 'Nous vous prévenons quand les places ouvrent',
+
+  // What Is Section
+  commercialWhatIsTitle:
+    "Qu'est-ce que le Commercial Dance et pourquoi tout le monde veut l'apprendre ?",
+  commercialWhatIsP1:
+    "Vous l'avez sûrement vu des milliers de fois sans savoir comment ça s'appelait. Cette danse synchronisée dans les clips de Beyoncé, les chorégraphies des concerts de Dua Lipa, les numéros de danse aux MTV Awards... C'est ça le Commercial Dance. C'est le style qui fait bouger l'industrie du divertissement.",
+  commercialWhatIsP2:
+    'Tout a commencé en 1983, quand Michael Jackson a révolutionné le monde avec "Beat It" et "Thriller". Pour la première fois, des millions de personnes ont vu des chorégraphies synchronisées fusionnant hip hop, jazz et styles urbains en format clip. Depuis, des chorégraphes comme Parris Goebel (le cerveau derrière les shows de Lady Gaga et Rihanna) ou JaQuel Knight (le créateur de l\'iconique "Single Ladies") ont porté le Commercial à un autre niveau.',
+  commercialWhatIsP3:
+    "Dans nos cours, vous n'apprenez pas que des pas. Nous travaillons la présence caméra, l'expression, l'énergie dont vous avez besoin pour donner vie à n'importe quelle chorégraphie. Nous combinons fondamentaux de hip hop, jazz funk et technique scénique pour vous donner une base solide et polyvalente.",
+  commercialWhatIsP4:
+    "Peu importe si vous n'avez jamais dansé ou si vous avez déjà de l'expérience. Le Commercial Dance est pour ceux qui veulent bouger avec attitude, apprendre des chorégraphies actuelles et, surtout, prendre du plaisir à danser.",
+  commercialWhatIsQuestionTitle: "Vous vous demandez si c'est pour vous ?",
+  commercialWhatIsQuestionAnswer: "Si vous lisez ceci, c'est probablement le cas.",
+
+  // Cultural History Section
+  commercialCulturalHistoryTitle: 'Vous voulez en savoir plus sur le Commercial Dance ?',
+  commercialCulturalShort:
+    "Le Commercial Dance est né en 1983 avec les clips de Michael Jackson et est devenu le style dominant de l'industrie musicale. Il fusionne hip hop, jazz funk, contemporain et heels. À Barcelone, Farray's International Dance Center enseigne les styles commerciaux depuis 2012, formant des danseurs pour l'industrie du divertissement.",
+  commercialCulturalFull: `### Qu'est-ce exactement que le Commercial Dance ?
+
+**Le Commercial Dance est le style de danse que vous voyez dans les clips, concerts, publicités TV et shows en direct.** On l'appelle aussi "Industry Dance" ou "Video Dance". Contrairement au freestyle ou aux battles de hip hop, le Commercial est chorégraphié spécifiquement pour les enregistrements et les grandes productions.
+
+Ce qui distingue le Commercial des autres styles, c'est sa **polyvalence** : il mélange hip hop, jazz, contemporain, heels et toute technique qui fonctionne pour la chanson ou l'artiste. Il n'a pas de "syllabus" fixe comme le ballet. Il est caméléon et évolue constamment avec les tendances.
+
+### 1983 : L'année qui a tout changé
+
+Bien que la danse ait toujours existé dans le divertissement, **1983 fut l'année de naissance du Commercial Dance moderne**. Cette année-là, Michael Jackson a sorti les clips de "Beat It" et "Thriller", chorégraphiés par Michael Peters et Vincent Paterson.
+
+Pour la première fois, des millions de personnes dans le monde ont vu des chorégraphies synchronisées avec des formations, fusionnant styles urbains et technique théâtrale. MTV venait de naître (1981) et ces vidéos ont prouvé que la danse pouvait être aussi protagoniste que la musique.
+
+### Les pionniers qui ont défini le style
+
+Dans les années 80 et 90, quatre chorégraphes ont posé les bases de ce que nous connaissons aujourd'hui :
+
+- **Vincent Paterson** : A chorégraphié "Smooth Criminal" et "Bad" de Michael Jackson, plus les shows de Madonna.
+- **Paula Abdul** : Est passée de pom-pom girl des Lakers à définir l'esthétique des clips des années 80-90.
+- **Tina Landon** : Son travail avec Janet Jackson sur "Rhythm Nation" et "If" a marqué une époque.
+- **Fatima Robinson** : A innové avec Aaliyah, Michael Jackson et les Backstreet Boys.
+
+### L'âge d'or : 90s-2000s
+
+Des chorégraphes comme Laurieann Gibson, Dave Scott et Brian Friedman ont porté le Commercial à son apogée avec des artistes comme Britney Spears, Christina Aguilera, Usher et Destiny's Child. Le style se caractérisait par :
+
+- Des mouvements propres, précis et percutants
+- Des formations complexes et des changements dynamiques
+- Une expression faciale intense qui connecte avec la caméra
+- Une fusion de styles selon les besoins de l'artiste
+
+### Le Commercial Dance aujourd'hui (2024-2025)
+
+L'industrie a énormément évolué. Voici quelques-uns des chorégraphes qui définissent le son visuel actuel :
+
+**Parris Goebel** (Nouvelle-Zélande) : Créatrice du style "polyswagg", elle a travaillé avec Rihanna, Justin Bieber ("Sorry") et Jennifer Lopez. En 2024, elle a chorégraphié le show historique de Doja Cat à Coachella (première rappeuse en tête d'affiche) et le clip "Disease" de Lady Gaga. En 2025, elle a co-réalisé et chorégraphié "Abracadabra" de Lady Gaga et son Coachella + Mayhem Ball Tour. Elle a aussi été directrice artistique et chorégraphe de Vogue World Paris 2024.
+
+**JaQuel Knight** (USA) : Créateur de la danse iconique "Single Ladies" de Beyoncé. Il a fait l'histoire en 2020 en devenant le premier chorégraphe à déposer le copyright de ses chorégraphies. En 2024, il a fait ses débuts à Broadway en chorégraphiant le revival de "The Wiz" et a réalisé le clip de Chris Stapleton "Think I'm in Love with You".
+
+**Sean Bankhead** (USA) : A dansé avec Usher au Super Bowl LVIII (2024). Ses chorégraphies incluent "Industry Baby" de Lil Nas X, "Motivation" et "Wild Side" de Normani, "2 Hands" et "It's Ok I'm Ok" de Tate McRae, "Rockstar" et "New Woman" de Lisa (BLACKPINK), et "On My Mama" de Victoria Monét. Chorégraphe des MTV VMAs 2024 (Lisa et GloRilla).
+
+Le K-Pop a également transformé le Commercial Dance en industrie mondiale, avec des chorégraphes de Corée, des USA et d'Europe collaborant constamment.
+
+### Qu'est-ce qu'on travaille en Commercial Dance ?
+
+- **Présence caméra** : Savoir quels angles vous mettent en valeur et comment s'exprimer avec le regard
+- **Isolations** : Contrôle corporel précis, bouger une partie du corps pendant que le reste reste immobile
+- **Grooves** : La base rythmique du hip hop qui donne du "flavor" au mouvement
+- **Performance quality** : Cette énergie supplémentaire qui donne vie à une chorégraphie
+- **Polyvalence** : Capacité de s'adapter à différents genres musicaux et styles chorégraphiques
+
+### Commercial Dance à Barcelone
+
+**Farray's International Dance Center**, dans le **quartier de l'Eixample (Calle Entença 100, entre Plaza España et Sants)**, est l'une des académies de référence à Barcelone pour les styles commerciaux.
+
+Reconnue par le CID UNESCO et dirigée par Yunaisy Farray (actrice dans Street Dance 2), l'académie forme des danseurs depuis 2012 avec plus de 25 styles disponibles. Avec une note de 4,9/5 sur Google et plus de 15 000 élèves formés, elle combine professionnalisme avec une ambiance chaleureuse et inclusive.`,
+
+  // Identify Section
+  commercialIdentifyTitle: "Vous vous identifiez à l'une de ces situations ?",
+  commercialIdentify1: 'Vous regardez des clips et voulez danser aussi professionnellement',
+  commercialIdentify2:
+    "Vous rêvez de travailler comme danseur/se dans l'industrie du divertissement",
+  commercialIdentify3: 'Vous voulez améliorer votre présence scénique et technique caméra',
+  commercialIdentify4: 'Vous cherchez une formation complète qui combine plusieurs styles',
+  commercialIdentify5: 'Vous devez vous préparer pour des castings et auditions',
+  commercialIdentify6:
+    'Vous voulez créer du contenu de danse professionnel pour les réseaux sociaux',
+  commercialIdentifyTransition:
+    'Si vous avez dit "oui" à l\'un de ces points, vous savez ce dont vous avez besoin.',
+  commercialNeedEnrollTitle:
+    'Vous devez vous inscrire à des cours de Commercial Dance dans une académie professionnelle',
+  commercialIdentifyAgitate1:
+    'Continuer à apprendre uniquement avec des vidéos YouTube ne vous donnera pas la technique ni le niveau dont vous avez besoin pour vous démarquer. Chaque mois sans formation professionnelle est du temps perdu pour votre carrière de danseur/se.',
+  commercialIdentifySolution:
+    "Au Farray's Center, vous trouverez une formation de niveau professionnel avec une méthodologie axée sur l'industrie du divertissement. Professeurs avec expérience dans les clips, tournées et émissions TV.",
+  commercialIdentifyClosing: 'Il est temps de danser comme les professionnels.',
+
+  // Transform Section
+  commercialTransformTitle: 'Imaginez votre avant et après',
+  commercialTransform1Title: 'Vous dansez des chorégraphies de niveau professionnel',
+  commercialTransform1Desc: 'Avec technique propre, présence et attitude.',
+  commercialTransform2Title: 'Vous maîtrisez la présence caméra',
+  commercialTransform2Desc: 'Vous savez bouger pour les photos, vidéos et spectacles.',
+  commercialTransform3Title: 'Vous avez une base technique solide',
+  commercialTransform3Desc: 'Hip hop, jazz funk, isolations et grooves.',
+  commercialTransform4Title: 'Vous êtes prêt/e pour les castings',
+  commercialTransform4Desc: 'Auditions, clips, shows et événements.',
+  commercialTransform5Title: 'Vous créez du contenu professionnel',
+  commercialTransform5Desc: 'Vos vidéos ont un autre niveau technique et esthétique.',
+  commercialTransform6Title: 'Vous apprenez des chorégraphies actuelles',
+  commercialTransform6Desc: 'Beyoncé, Dua Lipa, Rosalía, BTS et plus.',
+  commercialTransformCTA: "Pourquoi choisir Farray's Center pour apprendre le Commercial Dance ?",
+
+  // Why Choose Section
+  commercialWhyChoose1Title: 'Académie reconnue par le CID UNESCO',
+  commercialWhyChoose1Desc:
+    "Dirigée par Yunaisy Farray, actrice de Street Dance 2 et l'une des professeurs de danse les plus reconnues au monde.",
+  commercialWhyChoose2Title: 'Emplacement imbattable',
+  commercialWhyChoose2Desc:
+    'Calle Entença 100, entre Plaza España et Sants, à 5 minutes de Plaça Espanya et Sants. Métro, bus et train à la porte.',
+  commercialWhyChoose3Title: 'Formation orientée industrie',
+  commercialWhyChoose3Desc:
+    "Méthodologie professionnelle pour vous préparer aux castings, auditions et travail dans l'industrie du divertissement.",
+  commercialWhyChoose4Title: 'Installations vraiment préparées',
+  commercialWhyChoose4Desc:
+    'Plus de 700 m², grandes salles, miroirs, son professionnel, climatisation et ventilation centralisée.',
+  commercialWhyChoose5Title: 'Académie multidisciplinaire',
+  commercialWhyChoose5Desc:
+    'Plus de 25 styles pour compléter votre formation : hip hop, heels, jazz et plus de fondamentaux qui améliorent votre Commercial.',
+  commercialWhyChoose7Title: 'Professeurs avec une expérience réelle',
+  commercialWhyChoose7Desc:
+    "Professeurs qui ont travaillé dans des clips, tournées et shows professionnels. Apprenez de ceux qui l'ont vécu.",
+
+  // Why Today Section
+  commercialWhyTodayFullTitle:
+    'Pourquoi commencer le Commercial Dance aujourd\'hui et pas "la semaine prochaine" ?',
+  commercialWhyToday1:
+    'Parce que vous continuez à regarder des clips et à rêver de danser ainsi, mais juste regarder ne vous fera pas progresser.',
+  commercialWhyToday2:
+    "Parce que vous n'êtes qu'à UN cours de commencer à bouger comme les professionnels.",
+  commercialWhyToday3:
+    "Parce que le Commercial ne consiste pas à être parfait dès le premier jour, mais à s'entraîner régulièrement et à s'améliorer à chaque cours.",
+  commercialWhyTodayClosing1:
+    "Au Farray's, nous ne vendons pas des cours. Nous créons des danseurs.",
+  commercialWhyTodayClosing2:
+    "Nous vous attendons avec les chorégraphies les plus actuelles, des professeurs de l'industrie et un environnement qui vous pousse à grandir.",
+
+  // Levels Section
+  commercialLevelsTitle: 'Niveaux de Commercial Dance',
+  commercialLevelBeginnerTitle: 'Débutant',
+  commercialLevelBeginnerDesc:
+    'Pour ceux qui commencent de zéro. Apprenez les fondamentaux du Commercial : grooves, isolations, expression et vos premières chorégraphies.',
+  commercialLevelInterTitle: 'Intermédiaire',
+  commercialLevelInterDesc:
+    'Perfectionnez votre technique, apprenez des chorégraphies plus complexes et développez une présence scénique professionnelle.',
+  commercialLevelAdvancedTitle: 'Avancé',
+  commercialLevelAdvancedDesc:
+    'Maîtrisez des chorégraphies complètes de niveau industrie, avec formations, présence caméra et performance quality.',
+
+  // Schedule Section
+  commercialScheduleTitle: 'Horaires des Cours de Commercial Dance',
+  commercialScheduleSubtitle: "Prochainement - Rejoignez la liste d'attente",
+
+  // Teachers Section
+  commercialTeachersTitle: 'Prochainement',
+  commercialTeachersSubtitle: 'Professeurs de Commercial Dance',
+  commercialTeachersClosing: 'Nous annoncerons bientôt nos professeurs de Commercial Dance.',
+
+  // FAQs
+  commercialFaqTitle: 'Questions Fréquentes sur le Commercial Dance à Barcelone',
+  commercialFaqQ1: "Ai-je besoin d'expérience préalable pour commencer le Commercial Dance ?",
+  commercialFaqA1:
+    "Non. Nos cours sont conçus pour tous les niveaux. Si vous n'avez jamais dansé, vous commencerez au niveau débutant où vous apprendrez les fondamentaux. L'important est d'avoir envie d'apprendre.",
+  commercialFaqQ2: 'Quelle est la différence entre le Commercial Dance et les autres styles ?',
+  commercialFaqA2:
+    "Le Commercial est conçu pour l'industrie du divertissement : clips, concerts, TV. Il fusionne hip hop, jazz, heels et contemporain, avec accent sur la présence scénique et la technique caméra.",
+  commercialFaqQ3: 'Cela me prépare-t-il à travailler comme danseur professionnel ?',
+  commercialFaqA3:
+    'Oui. Le Commercial Dance est le style le plus demandé dans les castings et auditions. Vous apprendrez technique, attitude et présence professionnelle.',
+  commercialFaqQ4: 'Que dois-je apporter aux cours ?',
+  commercialFaqA4:
+    "Vêtements de sport confortables, baskets propres à usage exclusif en salle, serviette et bouteille d'eau. Les cours sont intenses.",
+  commercialFaqQ5: "Apprend-on des chorégraphies d'artistes connus ?",
+  commercialFaqA5:
+    "Oui. Nous travaillons sur des chorégraphies d'artistes actuels comme Beyoncé, Dua Lipa, Rosalía, Bad Bunny et plus. Nous créons également des chorégraphies originales.",
+  commercialFaqQ6: 'Y a-t-il des cours pour différents âges ?',
+  commercialFaqA6:
+    "Au Farray's Center, nous avons des cours pour différents groupes d'âge. Consultez les horaires pour voir les options disponibles.",
+  commercialFaqQ7: "Puis-je essayer un cours avant de m'inscrire ?",
+  commercialFaqA7:
+    'Oui. Nous offrons un cours de bienvenue à prix spécial pour que vous puissiez essayer sans engagement.',
+  commercialFaqQ8: 'Que se passe-t-il si je ne peux pas suivre le rythme du cours ?',
+  commercialFaqA8:
+    "Ne vous inquiétez pas. Les professeurs adaptent les explications et répètent les pas autant de fois que nécessaire. L'ambiance est de soutien, pas de compétition.",
+  commercialFaqQ9: "Puis-je rattraper des cours si j'en manque ?",
+  commercialFaqA9:
+    "Oui. Avec l'abonnement et annulation à l'avance, vous disposez de 30 jours pour rattraper. Tout via l'application.",
+  commercialFaqQ10: "Les cours incluent-ils le travail d'expression et d'attitude ?",
+  commercialFaqA10:
+    "Absolument. L'expression faciale et l'attitude sont fondamentales en Commercial. Nous travaillons la technique ET la performance quality.",
+  commercialFaqQ11: 'Est-ce un bon exercice physique ?',
+  commercialFaqA11:
+    'Oui. Les cours sont intenses et peuvent brûler 400-500 calories par heure. Vous travaillez cardio, coordination et endurance.',
+  commercialFaqQ12: 'Où sont les cours ?',
+  commercialFaqA12:
+    "Farray's Center est au Calle Entença 100, 08015 Barcelone, à 5 minutes de Plaza España et Sants. Excellente connexion.",
+  commercialFaqQ13: 'Organisez-vous des showcases ou événements ?',
+  commercialFaqA13:
+    'Oui. Nous organisons des showcases, enregistrements vidéo et événements où vous pouvez montrer ce que vous avez appris.',
+  commercialFaqQ14: "Puis-je combiner le Commercial avec d'autres styles ?",
+  commercialFaqA14:
+    'Bien sûr. Nous recommandons de compléter avec hip hop, heels ou jazz pour une formation plus complète.',
+  commercialFaqQ15: "Comment puis-je vous contacter pour plus d'informations ?",
+  commercialFaqA15:
+    'Vous pouvez nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a>',
+
+  // Prepare Section
+  commercialPrepareTitle: 'Préparez votre premier cours de Commercial Dance',
+  commercialPrepareSubtitle: 'Tout ce que vous devez savoir avant de venir',
+  commercialPrepareWhatToBring: 'Quoi apporter :',
+  commercialPrepareItem1: 'Vêtements de sport confortables qui permettent de bouger librement',
+  commercialPrepareItem2: 'Baskets propres (usage exclusif en salle)',
+  commercialPrepareItem3: "Bouteille d'eau (minimum 500ml) - les cours sont intenses",
+  commercialPrepareItem4: 'Petite serviette pour la transpiration',
+  commercialPrepareItem5: 'Optionnel : genouillères si vous êtes préoccupé par le travail au sol',
+  commercialPrepareBefore: "Avant d'arriver :",
+  commercialPrepareBeforeItem1: "Arrivez 10-15 minutes à l'avance pour vous changer et étirer",
+  commercialPrepareBeforeItem2: 'Évitez de manger lourd 2 heures avant le cours',
+  commercialPrepareBeforeItem3: "Venez avec une attitude positive et envie d'apprendre",
+  commercialPrepareAvoid: 'Évitez :',
+  commercialPrepareAvoidItem1: 'Bijoux, bagues ou accessoires qui pourraient vous gêner',
+  commercialPrepareAvoidItem2: 'Vêtements qui limitent vos mouvements',
+  commercialPrepareAvoidItem3: 'Chaussures de rue dans la salle (il y a des vestiaires)',
+  commercialPrepareTeacherTip: 'Conseil :',
+  commercialPrepareQuote:
+    "Le Commercial Dance est pour tout le monde. Votre niveau ou expérience n'a pas d'importance. L'important est de s'entraîner régulièrement et de profiter du processus.",
+
+  // Nearby Section
+  commercialNearbyTitle: 'Cours de Commercial Dance près de chez vous à Barcelone',
+  commercialNearbyDesc:
+    "Nous sommes l'académie de référence pour les cours de Commercial Dance au cœur de Barcelone. Parfaitement situés entre Plaza España et la Gare de Sants, nous accueillons des élèves des quartiers d'Hostafrancs, Sants-Badal, Les Corts, Eixample Esquerra, Poble Sec, Sant Antoni, La Bordeta et L'Hospitalet de Llobregat. Des danseurs viennent aussi de Gràcia, Sarrià-Sant Gervasi et le Raval grâce à nos excellentes connexions de transport.",
+  commercialNearbySearchText:
+    'Si vous cherchez "cours de Commercial Dance près de moi" ou "académie de danse clips Barcelone", vous êtes à quelques minutes :',
+  commercialNearbyMetro:
+    '🚇 Métro : Rocafort (L1) 4 min, Plaza España (L1, L3) 5 min, Entença (L5) 6 min, Hostafrancs (L1) 5 min | 🚆 Train : Sants Estació (Renfe, AVE, FGC) 8 min | 🚌 Bus : H10, 27, 109, D40 à notre porte | 🚲 Bicing : 3 stations à moins de 100m',
+
+  // Logos Section
+  commercialLogosTitle: 'Vous avez pu nous voir dans…',
+  commercialLogosIntlFestivalsText: 'et dans les meilleurs festivals de danse du monde entier',
+
+  // Final CTA Section
+  commercialFinalCTATitle: 'Commencez votre carrière dans le Commercial Dance',
+  commercialFinalCTASubtitle: 'Faites le pas.',
+  commercialFinalCTADesc:
+    "Inscrivez-vous à la liste d'attente et soyez le premier informé quand nous ouvrons des places.",
+  commercialFinalCTAFunny: 'Prêt à danser comme dans les clips ?',
+
+  // Video Section (placeholder)
+  commercialVideoTitle: 'Cours de Commercial Dance à Barcelone',
+  commercialVideoDesc: 'Bientôt : vidéos de nos cours de Commercial Dance.',
+
+  // Course Schema
+  commercialCourseSchemaName: "Cours de Commercial Dance à Barcelone - Farray's Center",
+  commercialCourseSchemaDesc:
+    'Apprenez le Commercial Dance avec des chorégraphies de niveau professionnel. Cours pour tous les niveaux au cœur de Barcelone.',
+
+  // ====================
+  // HERO & SECTION IMAGE ALTS
+  // ====================
+  about_hero_image_alt:
+    "Communauté d'élèves célébrant à Farray's Dance Center Barcelone - Plus de 500 étudiants dans notre école de danse Eixample",
+  servicios_hero_image_alt:
+    "Compagnie professionnelle de danseuses de Farray's Dance Center sur scène - Services de danse, événements et team building Barcelone",
+  precios_hero_image_alt:
+    "Danseuses de Farray's Dance Center en spectacle de danse - Tarifs et prix cours de danse Barcelone à partir de 45€/mois",
+  contacto_hero_image_alt:
+    "Groupe de danseurs de Farray's Dance Center Barcelone en performance - Contact Rue Entença 100, Eixample",
+  faq_hero_image_alt:
+    "Élèves pratiquant en cours de danse à Farray's Dance Center Barcelone - Questions fréquentes sur les cours et horaires",
+  metodo_hero_image_alt:
+    'Professeure enseignant la Méthode Farray exclusive - Méthodologie de danse unique certifiée CID-UNESCO à Barcelone',
+  regala_hero_image_alt:
+    "Couple dansant la salsa à Farray's Dance Center - Offrez des cours de danse, carte cadeau parfaite Barcelone Eixample",
+  clases_particulares_hero_image_alt:
+    "Danseuses professionnelles de Farray's Dance Center sur scène - Cours particuliers personnalisés de danse Barcelone Eixample",
+  happiness_story_bg_alt:
+    "Élèves heureux célébrant ensemble à Farray's Dance Center Barcelone - Communauté de plus de 500 danseurs Eixample",
+  why_fidc_bg_alt:
+    "Spectacle de danse professionnel à Farray's Dance Center - 7 raisons de choisir notre école de danse Barcelone",
+  testimonials_bg_alt:
+    "Élèves satisfaits de Farray's Dance Center Barcelone - 509 avis 5 étoiles sur Google école de danse",
 };

@@ -174,8 +174,9 @@ export function useBookingFilters(): UseBookingFiltersReturn {
   // Check for direct classId navigation
   const directClassId = searchParams.get('classId');
 
-  // Get week offset from URL
-  const weekOffset = parseInt(searchParams.get('week') || '0', 10);
+  // Get week offset from URL (validated: 0-4 range)
+  const rawWeekOffset = parseInt(searchParams.get('week') || '0', 10);
+  const weekOffset = Math.min(4, Math.max(0, isNaN(rawWeekOffset) ? 0 : rawWeekOffset));
 
   // Active filter count for UI
   const activeFilterCount = useMemo(() => Object.values(filters).filter(Boolean).length, [filters]);

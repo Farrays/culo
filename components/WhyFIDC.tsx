@@ -181,8 +181,26 @@ const WhyFIDC: React.FC = () => {
   const { t } = useI18n();
 
   return (
-    <section id="why-fidc" className="py-12 md:py-16 bg-black">
-      <div className="container mx-auto px-6">
+    <section id="why-fidc" className="relative py-12 md:py-16 bg-black overflow-hidden">
+      {/* Background - Enterprise pattern */}
+      <div className="absolute inset-0 bg-black">
+        {/* Background image with configurable opacity */}
+        <div className="absolute inset-0" style={{ opacity: 0.2 }}>
+          <picture>
+            <source srcSet="/images/optimized/mgs_4151.webp" type="image/webp" />
+            <img
+              src="/images/optimized/mgs_4151.jpg"
+              alt={t('why_fidc_bg_alt')}
+              className="w-full h-full object-cover"
+              style={{ objectPosition: 'center 30%' }}
+              loading="lazy"
+            />
+          </picture>
+        </div>
+        {/* Gradient overlays for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
         <AnimateOnScroll>
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">

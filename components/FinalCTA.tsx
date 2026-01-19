@@ -9,9 +9,10 @@ const FinalCTA: React.FC = () => {
 
   return (
     <section id="enroll" className="relative py-12 md:py-16 overflow-hidden">
-      {/* Background with stars */}
+      {/* Background */}
       <div className="absolute inset-0 bg-black">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-primary-dark/20 to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-transparent to-black/50"></div>
       </div>
 
       <div className="relative z-20 container mx-auto px-6 text-center">

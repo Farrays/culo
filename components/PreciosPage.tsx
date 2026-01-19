@@ -288,9 +288,25 @@ const PreciosPage: React.FC = () => {
             SECTION 1: HERO (mismo diseno que V1)
         ================================================================ */}
         <section className="relative text-center py-24 md:py-32 overflow-hidden flex items-center justify-center min-h-[500px]">
-          {/* Background */}
+          {/* Background - Enterprise pattern */}
           <div className="absolute inset-0 bg-black">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
+            {/* Hero background image with configurable opacity */}
+            <div className="absolute inset-0" style={{ opacity: 0.4 }}>
+              <picture>
+                <source srcSet="/images/optimized/mgs_3680.webp" type="image/webp" />
+                <img
+                  src="/images/optimized/mgs_3680.jpg"
+                  alt={t('precios_hero_image_alt')}
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: 'center 30%' }}
+                  loading="eager"
+                  fetchPriority="high"
+                />
+              </picture>
+            </div>
+            {/* Gradient overlays for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/20 via-transparent to-black/50"></div>
           </div>
 
           <div className="relative z-20 container mx-auto px-4 sm:px-6">

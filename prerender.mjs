@@ -204,6 +204,7 @@ const routes = [
   { path: 'es/clases/twerk-barcelona', lang: 'es', page: 'twerk' },
   { path: 'es/clases/afrobeats-barcelona', lang: 'es', page: 'afrobeat' },
   { path: 'es/clases/kpop-dance-barcelona', lang: 'es', page: 'kpop' },
+  { path: 'es/clases/commercial-dance-barcelona', lang: 'es', page: 'commercial' },
   { path: 'es/clases/hip-hop-reggaeton-barcelona', lang: 'es', page: 'hipHopReggaeton' },
   { path: 'es/clases/sexy-reggaeton-barcelona', lang: 'es', page: 'sexyReggaeton' },
   { path: 'es/clases/reggaeton-cubano-barcelona', lang: 'es', page: 'reggaetonCubano' },
@@ -246,7 +247,7 @@ const routes = [
   { path: 'es/politica-privacidad', lang: 'es', page: 'privacyPolicy' },
   { path: 'es/politica-cookies', lang: 'es', page: 'cookiePolicy' },
   // Additional pages
-  { path: 'es/servicios-baile', lang: 'es', page: 'serviciosBaile' },
+  { path: 'es/servicios-baile-barcelona', lang: 'es', page: 'serviciosBaile' },
   { path: 'es/calendario', lang: 'es', page: 'calendario' },
   { path: 'es/clases/salsa-lady-style-v2', lang: 'es', page: 'salsaLadyStyleV2' },
   // URL aliases (same content, different URL for SEO)
@@ -272,6 +273,7 @@ const routes = [
   { path: 'ca/clases/twerk-barcelona', lang: 'ca', page: 'twerk' },
   { path: 'ca/clases/afrobeats-barcelona', lang: 'ca', page: 'afrobeat' },
   { path: 'ca/clases/kpop-dance-barcelona', lang: 'ca', page: 'kpop' },
+  { path: 'ca/clases/commercial-dance-barcelona', lang: 'ca', page: 'commercial' },
   { path: 'ca/clases/hip-hop-reggaeton-barcelona', lang: 'ca', page: 'hipHopReggaeton' },
   { path: 'ca/clases/sexy-reggaeton-barcelona', lang: 'ca', page: 'sexyReggaeton' },
   { path: 'ca/clases/reggaeton-cubano-barcelona', lang: 'ca', page: 'reggaetonCubano' },
@@ -314,7 +316,7 @@ const routes = [
   { path: 'ca/politica-privacidad', lang: 'ca', page: 'privacyPolicy' },
   { path: 'ca/politica-cookies', lang: 'ca', page: 'cookiePolicy' },
   // Additional pages
-  { path: 'ca/servicios-baile', lang: 'ca', page: 'serviciosBaile' },
+  { path: 'ca/servicios-baile-barcelona', lang: 'ca', page: 'serviciosBaile' },
   { path: 'ca/calendario', lang: 'ca', page: 'calendario' },
   { path: 'ca/clases/salsa-lady-style-v2', lang: 'ca', page: 'salsaLadyStyleV2' },
   // URL aliases (same content, different URL for SEO)
@@ -340,6 +342,7 @@ const routes = [
   { path: 'en/clases/twerk-barcelona', lang: 'en', page: 'twerk' },
   { path: 'en/clases/afrobeats-barcelona', lang: 'en', page: 'afrobeat' },
   { path: 'en/clases/kpop-dance-barcelona', lang: 'en', page: 'kpop' },
+  { path: 'en/clases/commercial-dance-barcelona', lang: 'en', page: 'commercial' },
   { path: 'en/clases/hip-hop-reggaeton-barcelona', lang: 'en', page: 'hipHopReggaeton' },
   { path: 'en/clases/sexy-reggaeton-barcelona', lang: 'en', page: 'sexyReggaeton' },
   { path: 'en/clases/reggaeton-cubano-barcelona', lang: 'en', page: 'reggaetonCubano' },
@@ -382,7 +385,7 @@ const routes = [
   { path: 'en/politica-privacidad', lang: 'en', page: 'privacyPolicy' },
   { path: 'en/politica-cookies', lang: 'en', page: 'cookiePolicy' },
   // Additional pages
-  { path: 'en/servicios-baile', lang: 'en', page: 'serviciosBaile' },
+  { path: 'en/servicios-baile-barcelona', lang: 'en', page: 'serviciosBaile' },
   { path: 'en/calendario', lang: 'en', page: 'calendario' },
   { path: 'en/clases/salsa-lady-style-v2', lang: 'en', page: 'salsaLadyStyleV2' },
   // URL aliases (same content, different URL for SEO)
@@ -408,6 +411,7 @@ const routes = [
   { path: 'fr/clases/twerk-barcelona', lang: 'fr', page: 'twerk' },
   { path: 'fr/clases/afrobeats-barcelona', lang: 'fr', page: 'afrobeat' },
   { path: 'fr/clases/kpop-dance-barcelona', lang: 'fr', page: 'kpop' },
+  { path: 'fr/clases/commercial-dance-barcelona', lang: 'fr', page: 'commercial' },
   { path: 'fr/clases/hip-hop-reggaeton-barcelona', lang: 'fr', page: 'hipHopReggaeton' },
   { path: 'fr/clases/sexy-reggaeton-barcelona', lang: 'fr', page: 'sexyReggaeton' },
   { path: 'fr/clases/reggaeton-cubano-barcelona', lang: 'fr', page: 'reggaetonCubano' },
@@ -450,7 +454,7 @@ const routes = [
   { path: 'fr/politica-privacidad', lang: 'fr', page: 'privacyPolicy' },
   { path: 'fr/politica-cookies', lang: 'fr', page: 'cookiePolicy' },
   // Additional pages
-  { path: 'fr/servicios-baile', lang: 'fr', page: 'serviciosBaile' },
+  { path: 'fr/servicios-baile-barcelona', lang: 'fr', page: 'serviciosBaile' },
   { path: 'fr/calendario', lang: 'fr', page: 'calendario' },
   { path: 'fr/clases/salsa-lady-style-v2', lang: 'fr', page: 'salsaLadyStyleV2' },
   // URL aliases (same content, different URL for SEO)
@@ -608,6 +612,10 @@ const metadata = {
     kpop: {
       title: 'Clases de K-Pop Dance en Barcelona | Farray\'s Center',
       description: 'Clases de K-Pop Dance en Barcelona. Aprende coreografías de BTS, BLACKPINK, Stray Kids y más. Todos los niveles. Academia CID-UNESCO.',
+    },
+    commercial: {
+      title: 'Clases de Commercial Dance en Barcelona | Farray\'s Center',
+      description: 'Clases de Commercial Dance en Barcelona. Aprende coreografías estilo videoclip, técnica de performance y presencia escénica. Todos los niveles. Academia CID-UNESCO.',
     },
     hipHopReggaeton: {
       title: 'Clases de Hip Hop Reggaeton en Barcelona | Farray\'s Center',
@@ -917,6 +925,10 @@ const metadata = {
       title: 'Classes de K-Pop Dance a Barcelona | Farray\'s Center',
       description: 'Classes de K-Pop Dance a Barcelona. Aprèn coreografies de BTS, BLACKPINK, Stray Kids i més. Tots els nivells. Acadèmia CID-UNESCO.',
     },
+    commercial: {
+      title: 'Classes de Commercial Dance a Barcelona | Farray\'s Center',
+      description: 'Classes de Commercial Dance a Barcelona. Aprèn coreografies estil videoclip, tècnica de performance i presència escènica. Tots els nivells. Acadèmia CID-UNESCO.',
+    },
     hipHopReggaeton: {
       title: 'Classes de Hip Hop Reggaeton a Barcelona | Farray\'s Center',
       description: 'Aprèn Hip Hop Reggaeton a Barcelona amb Charlie Breezy. Fusió única de hip-hop i reggaeton amb molt de flow. Classes per a tots els nivells a prop de Plaça Espanya i Sants.',
@@ -1225,6 +1237,10 @@ const metadata = {
       title: 'K-Pop Dance Classes in Barcelona | Farray\'s Center',
       description: 'K-Pop Dance classes in Barcelona. Learn choreographies from BTS, BLACKPINK, Stray Kids and more. All levels. CID-UNESCO Academy.',
     },
+    commercial: {
+      title: 'Commercial Dance Classes in Barcelona | Farray\'s Center',
+      description: 'Commercial Dance classes in Barcelona. Learn music video style choreography, performance technique and stage presence. All levels. CID-UNESCO Academy.',
+    },
     hipHopReggaeton: {
       title: 'Hip Hop Reggaeton Classes in Barcelona | Farray\'s Center',
       description: 'Learn Hip Hop Reggaeton in Barcelona with Charlie Breezy. Unique fusion of hip-hop and reggaeton with lots of flow. Classes for all levels near Plaza España and Sants.',
@@ -1532,6 +1548,10 @@ const metadata = {
     kpop: {
       title: 'Cours de K-Pop Dance à Barcelone | Farray\'s Center',
       description: 'Cours de K-Pop Dance à Barcelone. Apprenez les chorégraphies de BTS, BLACKPINK, Stray Kids et plus. Tous niveaux. Académie CID-UNESCO.',
+    },
+    commercial: {
+      title: 'Cours de Commercial Dance à Barcelone | Farray\'s Center',
+      description: 'Cours de Commercial Dance à Barcelone. Apprenez les chorégraphies style clip vidéo, technique de performance et présence scénique. Tous niveaux. Académie CID-UNESCO.',
     },
     hipHopReggaeton: {
       title: 'Cours de Hip Hop Reggaeton à Barcelone | Farray\'s Center',
@@ -1959,6 +1979,8 @@ routes.forEach(route => {
     pagePath = 'clases/twerk-barcelona';
   } else if (page === 'kpop') {
     pagePath = 'clases/kpop-dance-barcelona';
+  } else if (page === 'commercial') {
+    pagePath = 'clases/commercial-dance-barcelona';
   } else if (page === 'heelsBarcelona') {
     pagePath = 'clases/heels-barcelona';
   } else if (page === 'modernJazz') {

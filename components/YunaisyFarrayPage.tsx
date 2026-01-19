@@ -2,10 +2,13 @@ import React, { useState, ReactNode } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
+import { useHLSVideo } from '../hooks/useHLSVideo';
+import { YUNAISY_VIDEO_CONFIG } from '../constants/yunaisy-video-config';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import LeadCaptureModal from './shared/LeadCaptureModal';
 import OptimizedImage from './OptimizedImage';
+import ReviewsSection from './reviews/ReviewsSection';
 
 // External links for E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)
 const EXTERNAL_LINKS: { pattern: RegExp; url: string; title: string }[] = [
@@ -110,6 +113,15 @@ const YunaisyFarrayPage: React.FC = () => {
   const baseUrl = 'https://www.farrayscenter.com';
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
+  // HLS Video for hero background
+  const { videoRef, containerRef, isVideoPlaying, shouldShowVideo } = useHLSVideo({
+    hlsUrl: YUNAISY_VIDEO_CONFIG.hlsUrl,
+    mp4Url: YUNAISY_VIDEO_CONFIG.mp4Url,
+    loadDelay: 150, // Wait for poster LCP
+    respectReducedMotion: true,
+    respectDataSaver: true,
+  });
+
   // Schema Markup - BreadcrumbList
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -186,6 +198,60 @@ const YunaisyFarrayPage: React.FC = () => {
     },
   };
 
+  // Schema Markup - AggregateRating for Yunaisy as instructor
+  const aggregateRatingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': `${baseUrl}/yunaisy-farray#instructor`,
+    name: 'Yunaisy Farray',
+    jobTitle: 'Dance Instructor & Director',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      bestRating: '5',
+      worstRating: '1',
+      ratingCount: '509',
+      reviewCount: '509',
+    },
+    review: [
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Emma S.' },
+        datePublished: '2026-01-09',
+        reviewBody: t('yunaisyFarray_testimonial_1_text'),
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      },
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Zhuqing W.' },
+        datePublished: '2025-01-15',
+        reviewBody: t('yunaisyFarray_testimonial_2_text'),
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      },
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Berta M.' },
+        datePublished: '2025-01-15',
+        reviewBody: t('yunaisyFarray_testimonial_3_text'),
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      },
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Violetta P.' },
+        datePublished: '2019-01-15',
+        reviewBody: t('yunaisyFarray_testimonial_4_text'),
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      },
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Karina I.' },
+        datePublished: '2025-01-15',
+        reviewBody: t('yunaisyFarray_testimonial_5_text'),
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      },
+    ],
+  };
+
   return (
     <>
       <Helmet>
@@ -208,17 +274,55 @@ const YunaisyFarrayPage: React.FC = () => {
         <meta name="twitter:image" content={`${baseUrl}/images/og-yunaisy-farray.jpg`} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(aggregateRatingSchema)}</script>
       </Helmet>
 
       <div className="pt-20 md:pt-24">
-        {/* Hero Section - Stellar Background */}
+        {/* Hero Section - Video Background */}
         <section
           id="yunaisy-hero"
-          className="relative text-center py-12 md:py-16 overflow-hidden flex items-center justify-center"
+          className="relative text-center py-12 md:py-16 overflow-hidden flex items-center justify-center min-h-[70vh]"
         >
-          {/* Background with stars */}
-          <div className="absolute inset-0 bg-black">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
+          {/* Background with Video */}
+          <div ref={containerRef} className="absolute inset-0 bg-black" aria-hidden="true">
+            {/* Poster Image - Always rendered for LCP (local optimized WebP) */}
+            <img
+              src={YUNAISY_VIDEO_CONFIG.posterUrl}
+              alt=""
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                isVideoPlaying ? 'opacity-0' : 'opacity-100'
+              }`}
+              fetchPriority="high"
+              decoding="sync"
+              loading="eager"
+              onError={e => {
+                // Fallback to CDN if local image fails
+                const target = e.currentTarget;
+                if (target.src !== YUNAISY_VIDEO_CONFIG.posterFallbackUrl) {
+                  target.src = YUNAISY_VIDEO_CONFIG.posterFallbackUrl;
+                }
+              }}
+            />
+
+            {/* Video - HLS streaming with lazy loading */}
+            {shouldShowVideo && (
+              <video
+                ref={videoRef}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="none"
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+                  isVideoPlaying ? 'opacity-100' : 'opacity-0'
+                }`}
+                aria-hidden="true"
+              />
+            )}
+
+            {/* Overlays for text readability */}
+            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black/20 to-black/40" />
           </div>
           <div className="relative z-20 container mx-auto px-6">
             {/* Breadcrumb with Microdata */}
@@ -235,50 +339,59 @@ const YunaisyFarrayPage: React.FC = () => {
                 <p className="max-w-4xl mx-auto text-xl md:text-2xl text-neutral/90 mt-8 leading-relaxed">
                   {t('yunaisyFarray_hero_subtitle')}
                 </p>
-              </div>
-            </AnimateOnScroll>
-
-            {/* Yunaisy Farray Photo */}
-            <AnimateOnScroll delay={200}>
-              <div className="max-w-md mx-auto">
-                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border-2 border-primary-accent/30 shadow-accent-glow">
-                  <OptimizedImage
-                    src="/images/teachers/img/maestra-yunaisy-farray"
-                    alt="Yunaisy Farray - Fundadora y Directora de Farray's International Dance Center"
-                    breakpoints={[320, 640, 960]}
-                    sizes="(max-width: 448px) 100vw, 448px"
-                    aspectRatio="3/4"
-                    objectFit="cover"
-                    objectPosition="center top"
-                    priority="high"
-                    blurDataURL="data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAAAQAwCdASoUABsAPzmQu1g+qaajqAqr0CcJZwDBzBd04sAA/uRi9FDE9N/DyZGXszGzoYQA"
-                  />
-                  {/* Holographic overlay effect */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary-accent/10 via-transparent to-primary-dark/10 pointer-events-none"></div>
-                </div>
+                {/* CTA Button */}
+                <button
+                  onClick={() => setIsLeadModalOpen(true)}
+                  className="mt-10 inline-flex items-center justify-center bg-primary-accent text-white font-bold text-lg py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow"
+                >
+                  {t('yunaisyFarray_hero_cta')}
+                </button>
               </div>
             </AnimateOnScroll>
           </div>
         </section>
 
         {/* Introduction Section */}
-        <section className="pt-6 pb-10 bg-black">
+        <section className="pt-12 md:pt-16 pb-10 bg-black">
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <AnimateOnScroll delay={100}>
-                <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-accent-glow/20 transition-shadow duration-500">
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter text-neutral mb-6 holographic-text">
-                    {t('yunaisyFarray_intro_title')}
-                  </h2>
-                  <div className="space-y-6 text-lg text-neutral/90 leading-relaxed">
-                    <p className="text-xl font-semibold text-primary-accent">
-                      {t('yunaisyFarray_intro_subtitle')}
-                    </p>
-                    <p>{renderTextWithLinks(t('yunaisyFarray_intro_p1'))}</p>
-                    <p>{t('yunaisyFarray_intro_p2')}</p>
+            <div className="max-w-6xl mx-auto">
+              <div className="grid lg:grid-cols-5 gap-8 items-start">
+                {/* Photo Column */}
+                <AnimateOnScroll delay={100} className="lg:col-span-2">
+                  <div className="max-w-sm mx-auto lg:mx-0">
+                    <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border-2 border-primary-accent/30 shadow-accent-glow">
+                      <OptimizedImage
+                        src="/images/teachers/img/maestra-yunaisy-farray"
+                        alt="Yunaisy Farray - Fundadora y Directora de Farray's International Dance Center"
+                        breakpoints={[320, 640, 960]}
+                        sizes="(max-width: 1024px) 384px, 384px"
+                        aspectRatio="3/4"
+                        objectFit="cover"
+                        objectPosition="center top"
+                        className="w-full"
+                      />
+                      {/* Holographic overlay effect */}
+                      <div className="absolute inset-0 bg-gradient-to-tr from-primary-accent/10 via-transparent to-primary-dark/10 pointer-events-none"></div>
+                    </div>
                   </div>
-                </div>
-              </AnimateOnScroll>
+                </AnimateOnScroll>
+
+                {/* Text Column */}
+                <AnimateOnScroll delay={200} className="lg:col-span-3">
+                  <div className="bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-2xl p-8 md:p-10 shadow-lg hover:shadow-accent-glow/20 transition-shadow duration-500 h-full">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter text-neutral mb-6 holographic-text">
+                      {t('yunaisyFarray_intro_title')}
+                    </h2>
+                    <div className="space-y-6 text-lg text-neutral/90 leading-relaxed">
+                      <p className="text-xl font-semibold text-primary-accent">
+                        {t('yunaisyFarray_intro_subtitle')}
+                      </p>
+                      <p>{renderTextWithLinks(t('yunaisyFarray_intro_p1'))}</p>
+                      <p>{t('yunaisyFarray_intro_p2')}</p>
+                    </div>
+                  </div>
+                </AnimateOnScroll>
+              </div>
             </div>
           </div>
         </section>
@@ -302,6 +415,27 @@ const YunaisyFarrayPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Artistic Photo - Vertical Jump */}
+        <section className="py-10 md:py-16 bg-black overflow-hidden">
+          <AnimateOnScroll>
+            <div className="max-w-md mx-auto px-6">
+              <div className="relative group rounded-2xl overflow-hidden border border-primary-accent/20 shadow-2xl shadow-primary-accent/10">
+                <OptimizedImage
+                  src="/images/yunaisy/img/yunaisy-artistica-1"
+                  alt="Yunaisy Farray ejecutando salto con extensión vertical - Directora de Farray's Dance Center Barcelona, maestra CID-UNESCO de danza cubana y contemporánea"
+                  breakpoints={[320, 640, 768, 1024, 1440]}
+                  sizes="(max-width: 768px) 100vw, 448px"
+                  aspectRatio="4/5"
+                  objectFit="cover"
+                  className="w-full"
+                />
+                {/* Diagonal hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-primary-accent/5 to-primary-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              </div>
+            </div>
+          </AnimateOnScroll>
+        </section>
+
         {/* Carrera Internacional */}
         <section className="py-10 bg-black">
           <div className="container mx-auto px-6">
@@ -323,6 +457,27 @@ const YunaisyFarrayPage: React.FC = () => {
               </AnimateOnScroll>
             </div>
           </div>
+        </section>
+
+        {/* Artistic Photo - Backbend */}
+        <section className="py-8 md:py-14 bg-gradient-to-b from-black via-primary-dark/5 to-black overflow-hidden">
+          <AnimateOnScroll>
+            <div className="max-w-md mx-auto px-4">
+              <div className="relative group rounded-2xl overflow-hidden border border-primary-dark/30 shadow-2xl">
+                <OptimizedImage
+                  src="/images/yunaisy/img/yunaisy-artistica-2"
+                  alt="Yunaisy Farray en backbend con extensión de pierna - Bailarina profesional y coreógrafa internacional, fundadora escuela de baile en Barcelona Eixample"
+                  breakpoints={[320, 640, 768, 1024, 1440]}
+                  sizes="(max-width: 768px) 100vw, 448px"
+                  aspectRatio="4/5"
+                  objectFit="cover"
+                  className="w-full"
+                />
+                {/* Diagonal hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-primary-accent/5 to-primary-accent/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              </div>
+            </div>
+          </AnimateOnScroll>
         </section>
 
         {/* Método Farray */}
@@ -360,6 +515,27 @@ const YunaisyFarrayPage: React.FC = () => {
               </AnimateOnScroll>
             </div>
           </div>
+        </section>
+
+        {/* Artistic Photo - Split Jump - Wide */}
+        <section className="py-10 md:py-20 bg-gradient-to-b from-black via-primary-dark/10 to-black overflow-hidden">
+          <AnimateOnScroll>
+            <div className="max-w-4xl mx-auto px-4">
+              <div className="relative group rounded-3xl overflow-hidden border-2 border-primary-accent/30 shadow-[0_0_60px_rgba(var(--color-primary-accent-rgb),0.12)]">
+                <OptimizedImage
+                  src="/images/yunaisy/img/yunaisy-artistica-3"
+                  alt="Yunaisy Farray realizando grand jeté split aéreo - Artista de danza contemporánea y cubana, profesora de baile Barcelona, actriz Street Dance 2"
+                  breakpoints={[320, 640, 768, 1024, 1440]}
+                  sizes="(max-width: 1024px) 100vw, 896px"
+                  aspectRatio="16/10"
+                  objectFit="cover"
+                  className="w-full"
+                />
+                {/* Diagonal hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-bl from-primary-accent/15 via-primary-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              </div>
+            </div>
+          </AnimateOnScroll>
         </section>
 
         {/* Barcelona */}
@@ -421,6 +597,27 @@ const YunaisyFarrayPage: React.FC = () => {
               </AnimateOnScroll>
             </div>
           </div>
+        </section>
+
+        {/* Artistic Photo - Pink Dress */}
+        <section className="py-10 md:py-16 bg-black overflow-hidden">
+          <AnimateOnScroll>
+            <div className="max-w-lg mx-auto px-4">
+              <div className="relative group rounded-3xl overflow-hidden border-2 border-primary-accent/25 shadow-[0_0_60px_rgba(var(--color-primary-accent-rgb),0.1)]">
+                <OptimizedImage
+                  src="/images/yunaisy/img/yunaisy-artistica-4"
+                  alt="Yunaisy Farray en salto artístico con vestido rosa - Coreógrafa y maestra de baile cubano en Barcelona, finalista Got Talent España, formadora CID-UNESCO"
+                  breakpoints={[320, 640, 768, 1024, 1440]}
+                  sizes="(max-width: 768px) 100vw, 512px"
+                  aspectRatio="4/5"
+                  objectFit="cover"
+                  className="w-full"
+                />
+                {/* Diagonal hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-primary-accent/8 to-primary-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              </div>
+            </div>
+          </AnimateOnScroll>
         </section>
 
         {/* Pionera Online */}
@@ -517,6 +714,42 @@ const YunaisyFarrayPage: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Artistic Photo - Floor Pose - Final Impact */}
+        <section className="py-12 md:py-20 bg-gradient-to-b from-black to-primary-dark/10 overflow-hidden">
+          <AnimateOnScroll>
+            <div className="max-w-4xl mx-auto px-4">
+              <div className="relative group rounded-3xl overflow-hidden border border-primary-accent/20 shadow-[0_0_80px_rgba(var(--color-primary-accent-rgb),0.1)]">
+                <OptimizedImage
+                  src="/images/yunaisy/img/yunaisy-artistica-5"
+                  alt="Yunaisy Farray en pose contemporánea de suelo - Bailarina y profesora de danza contemporánea Barcelona, técnica corporal avanzada, escuela Eixample"
+                  breakpoints={[320, 640, 768, 1024, 1440]}
+                  sizes="(max-width: 1024px) 100vw, 896px"
+                  aspectRatio="4/3"
+                  objectFit="cover"
+                  className="w-full"
+                />
+                {/* Diagonal hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-primary-accent/5 to-primary-accent/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              </div>
+            </div>
+          </AnimateOnScroll>
+        </section>
+
+        {/* Testimonials Section - Curated reviews that specifically mention Yunaisy */}
+        <ReviewsSection
+          selectedAuthors={[
+            'Emma S', // "Yunaisy Farray es una profesora estupenda..."
+            'Zhuqing Wang', // "sobre todo la directora Yunaisy..."
+            'Violetta Pena Bagés', // "Magnífica profesora Yunaisy. Un talento increíble..."
+            'Berta M', // "progresión en salsa increíble gracias a Yunaisy"
+            'Karina Indytska', // "Yunaisy es una reina 👑"
+            'Virginia Moreno', // "la mejor bailarina cubana Yunaisy Farray"
+          ]}
+          title={t('yunaisyFarray_testimonials_title')}
+          showGoogleBadge={true}
+          id="yunaisy-testimonials"
+        />
 
         {/* CTA Section */}
         <section className="relative py-12 md:py-16 overflow-hidden">

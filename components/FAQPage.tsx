@@ -277,8 +277,28 @@ const FAQPage: React.FC = () => {
 
       <div className="min-h-screen bg-black pt-20 md:pt-24">
         {/* Hero Section */}
-        <section className="relative py-12 md:py-16 bg-gradient-to-b from-black via-primary-dark/10 to-black">
-          <div className="container mx-auto px-6">
+        <section className="relative py-24 md:py-32 overflow-hidden min-h-[500px] flex items-center">
+          {/* Background - Enterprise pattern */}
+          <div className="absolute inset-0 bg-black">
+            {/* Hero background image with configurable opacity */}
+            <div className="absolute inset-0" style={{ opacity: 0.3 }}>
+              <picture>
+                <source srcSet="/images/optimized/foto1-scaled.webp" type="image/webp" />
+                <img
+                  src="/images/optimized/foto1-scaled.jpg"
+                  alt={t('faq_hero_image_alt')}
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: 'center 30%' }}
+                  loading="eager"
+                  fetchPriority="high"
+                />
+              </picture>
+            </div>
+            {/* Gradient overlays for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/20 via-transparent to-black/50"></div>
+          </div>
+          <div className="container mx-auto px-6 relative z-10">
             {/* Breadcrumb with Microdata */}
             <Breadcrumb items={breadcrumbItems} textColor="text-neutral/70" />
 

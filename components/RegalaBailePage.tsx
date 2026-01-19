@@ -144,16 +144,32 @@ const RegalaBailePage: React.FC = () => {
 
       <div className="pt-20 md:pt-24">
         {/* Hero Section with Stellar Background */}
-        <section className="relative min-h-[70vh] flex items-center justify-center bg-black overflow-hidden">
-          {/* Stellar Background */}
-          <div className="absolute inset-0 stellar-bg">
-            <div className="stars"></div>
-            <div className="stars2"></div>
-            <div className="stars3"></div>
+        <section className="relative min-h-[85vh] flex items-center justify-center bg-black overflow-hidden">
+          {/* Background - Enterprise pattern */}
+          <div className="absolute inset-0 bg-black">
+            {/* Hero background image with configurable opacity */}
+            <div className="absolute inset-0" style={{ opacity: 0.35 }}>
+              <picture>
+                <source srcSet="/images/optimized/foto2-scaled.webp" type="image/webp" />
+                <img
+                  src="/images/optimized/foto2-scaled.jpg"
+                  alt={t('regala_hero_image_alt')}
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: 'center 30%' }}
+                  loading="eager"
+                  fetchPriority="high"
+                />
+              </picture>
+            </div>
+            {/* Stellar Background */}
+            <div className="absolute inset-0 stellar-bg">
+              <div className="stars"></div>
+              <div className="stars2"></div>
+              <div className="stars3"></div>
+            </div>
+            {/* Gradient overlays for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80"></div>
           </div>
-
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black"></div>
 
           <div className="container mx-auto px-6 relative z-10 text-center">
             {/* Breadcrumb with Microdata */}
