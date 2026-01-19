@@ -20,6 +20,7 @@ import { WeekNavigation } from './WeekNavigation';
 import { useVirtualList } from '../hooks/useVirtualList';
 import { Portal } from './Portal';
 import { registerModalOpen, registerModalClose } from '../utils/modalHistoryManager';
+import { SkeletonClassList } from './SkeletonClassCard';
 
 // Estimated height of each ClassCard (in pixels)
 const CLASS_CARD_HEIGHT = 180;
@@ -512,12 +513,8 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
           </div>
 
           {isLoading ? (
-            // Loading skeleton
-            <div className="space-y-3" aria-hidden="true">
-              {[1, 2, 3, 4].map(i => (
-                <div key={i} className="h-32 bg-white/5 rounded-2xl animate-pulse" />
-              ))}
-            </div>
+            // Elaborated loading skeleton with shimmer effect
+            <SkeletonClassList count={4} />
           ) : error ? (
             // Error state
             <div className="text-center py-12">

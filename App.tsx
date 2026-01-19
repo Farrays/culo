@@ -22,6 +22,7 @@ import Footer from './components/Footer';
 import LoadingSpinner from './components/LoadingSpinner';
 import NotFoundPage from './components/NotFoundPage';
 import BackToTop from './components/BackToTop';
+import ServiceWorkerStatus from './components/ServiceWorkerStatus';
 
 // Code splitting: Lazy load secondary pages to reduce initial bundle size
 const DanceClassesPage = lazy(() => import('./components/DanceClassesPage'));
@@ -66,6 +67,7 @@ const ContemporaneoPage = lazy(() => import('./components/ContemporaneoPage'));
 const AfroContemporaneoPage = lazy(() => import('./components/AfroContemporaneoPage'));
 const AfroJazzPage = lazy(() => import('./components/AfroJazzPage'));
 const HipHopPage = lazy(() => import('./components/HipHopPage'));
+const KpopPage = lazy(() => import('./components/KpopPage'));
 const SalsaCubanaPage = lazy(() => import('./components/SalsaCubanaPage'));
 const FolkloreCubanoPage = lazy(() => import('./components/FolkloreCubanoPage'));
 const TimbaPage = lazy(() => import('./components/TimbaPage'));
@@ -362,6 +364,16 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <AfrobeatPage />
+                </>
+              }
+            />
+
+            <Route
+              path="/:locale/clases/kpop-dance-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <KpopPage />
                 </>
               }
             />
@@ -1192,6 +1204,7 @@ const AppContent: React.FC = () => {
         />
       )}
       <CookieBanner />
+      <ServiceWorkerStatus />
     </div>
   );
 };

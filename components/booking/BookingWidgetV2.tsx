@@ -20,6 +20,7 @@ import { useBookingFilters } from './hooks/useBookingFilters';
 import { useBookingState } from './hooks/useBookingState';
 import { useBookingClasses } from './hooks/useBookingClasses';
 import { useBookingAnalytics } from './hooks/useBookingAnalytics';
+import { useBookingFunnelAnalytics } from './hooks/useBookingFunnelAnalytics';
 import { useCsrfToken } from './hooks/useCsrfToken';
 import { useBookingPersistence } from './hooks/useBookingPersistence';
 import type { InvalidField } from './hooks/useBookingState';
@@ -262,6 +263,10 @@ const BookingWidgetV2: React.FC = memo(() => {
 
   const { trackClassSelected, trackBookingSuccess } = useBookingAnalytics();
 
+  // Funnel analytics for time tracking and abandonment
+  const { startStep, endStep, trackClassLoadTime, trackFormSubmitTime, trackInteraction } =
+    useBookingFunnelAnalytics();
+
   // Browser history management - push state when entering form step
   useEffect(() => {
     if (step === 'form' && !historyPushedRef.current) {
@@ -337,10 +342,23 @@ const BookingWidgetV2: React.FC = memo(() => {
   const handleSelectClass = (classData: ClassData) => {
     selectClass(classData);
     trackClassSelected(classData);
+    // Track funnel step transition
+    endStep('class_selected');
+    startStep('form_started');
   };
+
+  // Track class load time when classes finish loading
+  const classLoadStartRef = useRef<number>(Date.now());
+  useEffect(() => {
+    if (!loading && classes.length > 0) {
+      trackClassLoadTime(classLoadStartRef.current);
+      startStep('class_list');
+    }
+  }, [loading, classes.length, trackClassLoadTime, startStep]);
 
   // Handle going back to class list (via UI button)
   const handleBack = useCallback(() => {
+    trackInteraction('back_to_class_list');
     // If we pushed history state, use history.back() for proper UX
     if (historyPushedRef.current) {
       window.history.back();
@@ -348,7 +366,7 @@ const BookingWidgetV2: React.FC = memo(() => {
       goBack();
       clearError();
     }
-  }, [goBack, clearError]);
+  }, [goBack, clearError, trackInteraction]);
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
@@ -387,6 +405,9 @@ const BookingWidgetV2: React.FC = memo(() => {
 
     setStatus('loading');
     clearError();
+
+    // Track form submit start time
+    const submitStartTime = Date.now();
 
     // Abort any previous pending submission
     if (formAbortControllerRef.current) {
@@ -471,6 +492,10 @@ const BookingWidgetV2: React.FC = memo(() => {
         setStatus('success');
         clearPersistedData();
         triggerHaptic('success');
+
+        // Track form submit performance and complete funnel
+        trackFormSubmitTime(submitStartTime);
+        endStep('form_completed');
 
         // Replace history state to prevent back navigation to form
         window.history.replaceState({ bookingStep: 'success', bookingWidget: true }, '');

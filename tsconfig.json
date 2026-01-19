@@ -43,6 +43,8 @@
     "FormularioReserva-*.tsx",
     "api-*.js",
     "src-components-*.tsx",
-    "src/pages/test"
+    "src/pages/test",
+    "e2e",
+    "playwright.config.ts"
   ]
 }
