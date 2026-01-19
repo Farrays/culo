@@ -226,6 +226,36 @@ function generateMockClassesForWeek(weekOffset: number): ClassData[] {
 // Note: filterByWeek is no longer needed as we fetch per-week from the API
 // The server handles week filtering via the 'week' query parameter
 
+// Normaliza un string para comparación: lowercase + trim + remove accents
+function normalizeForComparison(value: string | null | undefined): string {
+  return (value ?? '')
+    .toLowerCase()
+    .trim()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, ''); // Remove diacritics (accents)
+}
+
+// Compara dos valores con normalización
+function matchesFilter(actual: string, filter: string, partial: boolean = false): boolean {
+  const normalizedActual = normalizeForComparison(actual);
+  const normalizedFilter = normalizeForComparison(filter);
+
+  if (partial) {
+    return normalizedActual.includes(normalizedFilter);
+  }
+  return normalizedActual === normalizedFilter;
+}
+
+// Deduplica un array de clases por ID (mantiene la primera ocurrencia)
+function deduplicateById(classes: ClassData[]): ClassData[] {
+  const seen = new Set<number>();
+  return classes.filter(c => {
+    if (seen.has(c.id)) return false;
+    seen.add(c.id);
+    return true;
+  });
+}
+
 // Apply time block filter
 function applyTimeBlockFilter(classes: ClassData[], timeBlock: string): ClassData[] {
   const blockOption = TIME_BLOCK_OPTIONS.find(t => t.value === timeBlock);
@@ -244,37 +274,42 @@ function applyTimeFilter(classes: ClassData[], time: string): ClassData[] {
   return classes.filter(c => c.time === time);
 }
 
-// Apply all filters
+// Apply all filters with normalized comparisons
 function applyFilters(classes: ClassData[], filters: FilterState): ClassData[] {
   let result = classes;
 
+  // Style: exact match (normalized)
   if (filters.style) {
-    result = result.filter(c => c.style === filters.style);
+    result = result.filter(c => matchesFilter(c.style, filters.style));
   }
 
+  // Level: exact match (normalized)
   if (filters.level) {
-    result = result.filter(c => c.level === filters.level);
+    result = result.filter(c => matchesFilter(c.level, filters.level));
   }
 
+  // Day: exact match (normalized) - handles accents
   if (filters.day) {
-    result = result.filter(c => c.dayOfWeek === filters.day);
+    result = result.filter(c => matchesFilter(c.dayOfWeek, filters.day));
   }
 
+  // Time block filter
   if (filters.timeBlock) {
     result = applyTimeBlockFilter(result, filters.timeBlock);
   }
 
+  // Specific time filter
   if (filters.time) {
     result = applyTimeFilter(result, filters.time);
   }
 
+  // Instructor: partial match (normalized) - "Yunaisy" matches "Yunaisy Farray"
   if (filters.instructor) {
-    result = result.filter(c =>
-      c.instructor.toLowerCase().includes(filters.instructor.toLowerCase())
-    );
+    result = result.filter(c => matchesFilter(c.instructor, filters.instructor, true));
   }
 
-  return result;
+  // Deduplicate before returning to avoid showing same class twice
+  return deduplicateById(result);
 }
 
 export function useBookingClasses({
@@ -491,8 +526,10 @@ export function useBookingClasses({
       const cached = classCache.get(w);
       if (cached) aggregated.push(...cached);
     }
-    if (aggregated.length > 0) {
-      setAllClasses(aggregated);
+    // Deduplicate to avoid duplicate classes from overlapping weeks
+    const deduplicated = deduplicateById(aggregated);
+    if (deduplicated.length > 0) {
+      setAllClasses(deduplicated);
     } else {
       setAllClasses(weekClasses);
     }
@@ -544,9 +581,10 @@ export function useBookingClasses({
         });
 
         const results = await Promise.all(weekPromises);
-        const combined = results
-          .flat()
-          .sort((a, b) => new Date(a.rawStartsAt).getTime() - new Date(b.rawStartsAt).getTime());
+        // Flatten, deduplicate, and sort by start time
+        const combined = deduplicateById(results.flat()).sort(
+          (a, b) => new Date(a.rawStartsAt).getTime() - new Date(b.rawStartsAt).getTime()
+        );
 
         // Only update state if still mounted
         if (isMountedRef.current) {

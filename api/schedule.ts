@@ -30,6 +30,9 @@ const SCHEDULE_CACHE_KEY = 'momence:schedule:cache';
 const TOKEN_CACHE_KEY = 'momence:access_token';
 const TOKEN_TTL_SECONDS = 3500;
 
+// Timezone para España (hora de Madrid)
+const SPAIN_TIMEZONE = 'Europe/Madrid';
+
 // Lazy Redis connection
 let redisClient: Redis | null = null;
 
@@ -179,17 +182,6 @@ const STYLE_TO_PAGE_SLUG: Record<string, string> = {
   folklore: 'folklore-cubano-barcelona',
 };
 
-// Day key mapping
-const DAY_INDEX_TO_KEY: Record<number, string> = {
-  0: 'sunday',
-  1: 'monday',
-  2: 'tuesday',
-  3: 'wednesday',
-  4: 'thursday',
-  5: 'friday',
-  6: 'saturday',
-};
-
 // Localized day names
 const DAY_NAMES: Record<string, Record<string, string>> = {
   es: {
@@ -258,29 +250,36 @@ function normalizeSession(session: MomenceSession, locale: string = 'es'): Sched
   const durationMs = endDate.getTime() - startDate.getTime();
   const durationMinutes = Math.round(durationMs / (1000 * 60));
 
-  // Get day key for i18n
-  const dayIndex = startDate.getDay();
-  const dayKey = DAY_INDEX_TO_KEY[dayIndex] ?? 'monday';
+  // Get day of week in Spain timezone using Intl formatter
+  const dayFormatter = new Intl.DateTimeFormat('en-US', {
+    weekday: 'long',
+    timeZone: SPAIN_TIMEZONE,
+  });
+  const dayNameEn = dayFormatter.format(startDate).toLowerCase();
+  const dayKey = dayNameEn as keyof (typeof DAY_NAMES)['es'];
 
   // Get localized day name
   const localeDayNames = DAY_NAMES[locale] || DAY_NAMES['es'];
   const dayOfWeek = localeDayNames?.[dayKey] ?? 'Lunes';
 
-  // Format date: "20 Ene"
+  // Format date: "20 Ene" - with explicit timezone
   const dateFormatted = startDate.toLocaleDateString(locale === 'ca' ? 'ca-ES' : `${locale}-ES`, {
     day: 'numeric',
     month: 'short',
+    timeZone: SPAIN_TIMEZONE,
   });
 
-  // Format time: "19:00"
+  // Format time: "19:00" - with explicit timezone
   const time = startDate.toLocaleTimeString('es-ES', {
     hour: '2-digit',
     minute: '2-digit',
+    timeZone: SPAIN_TIMEZONE,
   });
 
   const endTime = endDate.toLocaleTimeString('es-ES', {
     hour: '2-digit',
     minute: '2-digit',
+    timeZone: SPAIN_TIMEZONE,
   });
 
   const style = detectStyle(session.name);

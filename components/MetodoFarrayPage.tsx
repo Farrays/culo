@@ -141,8 +141,26 @@ const MetodoFarrayPage: React.FC = () => {
       <div className="pt-16 md:pt-20">
         {/* SECCIÓN 1: HERO PREMIUM */}
         <section className="relative min-h-[80vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
-          {/* Background con gradient premium */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/40 via-black to-primary-dark/20" />
+          {/* Background - Enterprise pattern */}
+          <div className="absolute inset-0 bg-black">
+            {/* Hero background image with configurable opacity */}
+            <div className="absolute inset-0" style={{ opacity: 0.4 }}>
+              <picture>
+                <source srcSet="/images/optimized/foto4.webp" type="image/webp" />
+                <img
+                  src="/images/optimized/foto4.jpg"
+                  alt={t('metodo_hero_image_alt')}
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: 'center 40%' }}
+                  loading="eager"
+                  fetchPriority="high"
+                />
+              </picture>
+            </div>
+            {/* Gradient overlays for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-transparent to-black/50"></div>
+          </div>
 
           {/* Glow decorativo */}
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary-accent/20 rounded-full blur-[150px] pointer-events-none" />

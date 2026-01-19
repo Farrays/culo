@@ -71,7 +71,7 @@ const PATH_TO_PAGE: ReadonlyArray<readonly [string, string]> = [
   ['/clases-particulares-baile', 'clasesParticulares'],
   ['/alquiler-salas-baile-barcelona', 'alquilerSalas'],
   ['/estudio-grabacion-barcelona', 'estudioGrabacion'],
-  ['/servicios-baile', 'servicios'],
+  ['/servicios-baile-barcelona', 'servicios'],
   ['/regala-baile', 'regalaBaile'],
   ['/merchandising', 'merchandising'],
   // Info pages
@@ -140,7 +140,7 @@ const SEO: React.FC = () => {
     clasesParticulares: 'clases-particulares-baile',
     alquilerSalas: 'alquiler-salas-baile-barcelona',
     estudioGrabacion: 'estudio-grabacion-barcelona',
-    servicios: 'servicios-baile',
+    servicios: 'servicios-baile-barcelona',
     regalaBaile: 'regala-baile',
     merchandising: 'merchandising',
     about: 'sobre-nosotros',

@@ -141,8 +141,25 @@ const AboutPage: React.FC = () => {
           id="about-hero"
           className="relative text-center py-32 md:py-40 overflow-hidden flex items-center justify-center min-h-[600px]"
         >
+          {/* Background - Enterprise pattern */}
           <div className="absolute inset-0 bg-black">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
+            {/* Hero background image with configurable opacity */}
+            <div className="absolute inset-0" style={{ opacity: 0.4 }}>
+              <picture>
+                <source srcSet="/images/optimized/comunidad-grupo.webp" type="image/webp" />
+                <img
+                  src="/images/optimized/comunidad-grupo.jpg"
+                  alt={t('about_hero_image_alt')}
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: 'center 35%' }}
+                  loading="eager"
+                  fetchPriority="high"
+                />
+              </picture>
+            </div>
+            {/* Gradient overlays for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-transparent to-black/50"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6">
             {/* Breadcrumb with Microdata */}

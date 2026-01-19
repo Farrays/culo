@@ -66,7 +66,7 @@ const routes = [
   // Servicios
   { path: 'alquiler-salas-baile-barcelona', priority: '0.7', changefreq: 'monthly' },
   { path: 'estudio-grabacion-barcelona', priority: '0.7', changefreq: 'monthly' },
-  { path: 'servicios-baile', priority: '0.6', changefreq: 'monthly' },
+  { path: 'servicios-baile-barcelona', priority: '0.6', changefreq: 'monthly' },
   { path: 'regala-baile', priority: '0.6', changefreq: 'monthly' },
 
   // Información

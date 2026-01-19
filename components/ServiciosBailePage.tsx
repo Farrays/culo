@@ -215,7 +215,7 @@ const ServiciosBailePage: React.FC = () => {
         '@type': 'ListItem',
         position: 2,
         name: t('serviciosBaile_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/servicios-baile`,
+        item: `${baseUrl}/${locale}/servicios-baile-barcelona`,
       },
     ],
   };
@@ -224,7 +224,7 @@ const ServiciosBailePage: React.FC = () => {
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    '@id': `${baseUrl}/${locale}/servicios-baile#services`,
+    '@id': `${baseUrl}/${locale}/servicios-baile-barcelona#services`,
     name: t('serviciosBaile_h1'),
     description: t('serviciosBaile_metaDescription'),
     serviceType: 'Dance Services',
@@ -402,7 +402,7 @@ const ServiciosBailePage: React.FC = () => {
     { name: t('serviciosBaile_breadcrumb_home'), url: `/${locale}` },
     {
       name: t('serviciosBaile_breadcrumb_current'),
-      url: `/${locale}/servicios-baile`,
+      url: `/${locale}/servicios-baile-barcelona`,
       isActive: true,
     },
   ];
@@ -416,20 +416,24 @@ const ServiciosBailePage: React.FC = () => {
           name="keywords"
           content="servicios baile barcelona, alquiler salas danza barcelona, clases particulares baile, team building baile, agencia bailarines barcelona, estudio grabación baile"
         />
-        <link rel="canonical" href={`${baseUrl}/${locale}/servicios-baile`} />
+        <link rel="canonical" href={`${baseUrl}/${locale}/servicios-baile-barcelona`} />
 
         {/* hreflang alternates for SEO */}
-        <link rel="alternate" hrefLang="es" href={`${baseUrl}/es/servicios-baile`} />
-        <link rel="alternate" hrefLang="ca" href={`${baseUrl}/ca/servicios-baile`} />
-        <link rel="alternate" hrefLang="en" href={`${baseUrl}/en/servicios-baile`} />
-        <link rel="alternate" hrefLang="fr" href={`${baseUrl}/fr/servicios-baile`} />
-        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/es/servicios-baile`} />
+        <link rel="alternate" hrefLang="es" href={`${baseUrl}/es/servicios-baile-barcelona`} />
+        <link rel="alternate" hrefLang="ca" href={`${baseUrl}/ca/servicios-baile-barcelona`} />
+        <link rel="alternate" hrefLang="en" href={`${baseUrl}/en/servicios-baile-barcelona`} />
+        <link rel="alternate" hrefLang="fr" href={`${baseUrl}/fr/servicios-baile-barcelona`} />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`${baseUrl}/es/servicios-baile-barcelona`}
+        />
 
         {/* Open Graph */}
         <meta property="og:title" content={t('serviciosBaile_pageTitle')} />
         <meta property="og:description" content={t('serviciosBaile_metaDescription')} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`${baseUrl}/${locale}/servicios-baile`} />
+        <meta property="og:url" content={`${baseUrl}/${locale}/servicios-baile-barcelona`} />
         <meta property="og:site_name" content="Farray's International Dance Center" />
         <meta property="og:locale" content={locale === 'es' ? 'es_ES' : locale} />
         <meta property="og:image" content={`${baseUrl}/images/og-image.jpg`} />
@@ -464,12 +468,28 @@ const ServiciosBailePage: React.FC = () => {
         ================================================================ */}
         <header
           id="servicios-baile-hero"
-          className="relative text-center py-24 md:py-32 overflow-hidden flex items-center justify-center min-h-[500px]"
+          className="relative z-10 text-center py-24 md:py-32 overflow-hidden flex items-center justify-center min-h-[500px]"
           aria-labelledby="servicios-hero-title"
         >
-          {/* Background */}
-          <div className="absolute inset-0 bg-black" aria-hidden="true">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
+          {/* Background - Enterprise pattern - z-0 to stay below header z-50 */}
+          <div className="absolute inset-0 z-0 bg-black" aria-hidden="true">
+            {/* Hero background image with configurable opacity */}
+            <div className="absolute inset-0" style={{ opacity: 0.4 }}>
+              <picture>
+                <source srcSet="/images/optimized/mgs_3447.webp" type="image/webp" />
+                <img
+                  src="/images/optimized/mgs_3447.jpg"
+                  alt={t('servicios_hero_image_alt')}
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: 'center 30%' }}
+                  loading="eager"
+                  fetchPriority="high"
+                />
+              </picture>
+            </div>
+            {/* Gradient overlays for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-transparent to-black/50"></div>
           </div>
 
           <div className="relative z-20 container mx-auto px-6">
@@ -806,7 +826,7 @@ const ServiciosBailePage: React.FC = () => {
         <FAQSection
           title={t('serviciosBaile_faq_title')}
           faqs={faqs}
-          pageUrl={`${baseUrl}/${locale}/servicios-baile`}
+          pageUrl={`${baseUrl}/${locale}/servicios-baile-barcelona`}
         />
 
         {/* ================================================================

@@ -196,7 +196,7 @@ export const SiteNavigationElementSchema: React.FC = () => {
     },
     {
       name: 'Servicios',
-      url: `${baseUrl}/es/servicios-baile`,
+      url: `${baseUrl}/es/servicios-baile-barcelona`,
     },
     {
       name: 'Blog',

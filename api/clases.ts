@@ -31,6 +31,9 @@ const CACHE_KEY = 'momence:sessions:cache';
 const TOKEN_CACHE_KEY = 'momence:access_token';
 const TOKEN_TTL_SECONDS = 3500; // Token expira en 3600s, refrescamos antes
 
+// Timezone para España (hora de Madrid)
+const SPAIN_TIMEZONE = 'Europe/Madrid';
+
 // Lazy Redis connection
 let redisClient: Redis | null = null;
 
@@ -141,18 +144,34 @@ function detectLevel(name: string): string {
 function normalizeSession(session: MomenceSession): NormalizedClass {
   const startDate = new Date(session.startsAt);
   const endDate = new Date(session.endsAt);
-  const dayNames = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
 
   // Calculate duration in minutes
   const durationMs = endDate.getTime() - startDate.getTime();
   const durationMinutes = Math.round(durationMs / (1000 * 60));
 
+  // Formatear día de la semana con timezone de España
+  const dayFormatter = new Intl.DateTimeFormat('es-ES', {
+    weekday: 'long',
+    timeZone: SPAIN_TIMEZONE,
+  });
+  const dayNameRaw = dayFormatter.format(startDate);
+  // Capitalizar primera letra
+  const dayOfWeek = dayNameRaw.charAt(0).toUpperCase() + dayNameRaw.slice(1);
+
   return {
     id: session.id,
     name: session.name,
-    date: startDate.toLocaleDateString('es-ES', { day: 'numeric', month: 'short' }),
-    time: startDate.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' }),
-    dayOfWeek: dayNames[startDate.getDay()] ?? 'Lunes',
+    date: startDate.toLocaleDateString('es-ES', {
+      day: 'numeric',
+      month: 'short',
+      timeZone: SPAIN_TIMEZONE,
+    }),
+    time: startDate.toLocaleTimeString('es-ES', {
+      hour: '2-digit',
+      minute: '2-digit',
+      timeZone: SPAIN_TIMEZONE,
+    }),
+    dayOfWeek,
     spotsAvailable: Math.max(0, session.capacity - session.bookingCount),
     isFull: session.bookingCount >= session.capacity,
     location: session.locationName || "Farray's Center",
@@ -310,12 +329,19 @@ async function findCurrentPage(
 // Obtener sesiones futuras
 async function fetchFutureSessions(
   accessToken: string,
-  daysAhead: number
+  daysAhead: number,
+  weekOffset: number = 0
 ): Promise<MomenceSession[]> {
-  const now = new Date();
-  const futureLimit = new Date(Date.now() + daysAhead * 24 * 60 * 60 * 1000);
+  // Calcular fecha de inicio basada en weekOffset
+  const baseDate = new Date();
+  baseDate.setHours(0, 0, 0, 0);
+  const startDate = new Date(baseDate.getTime() + weekOffset * 7 * 24 * 60 * 60 * 1000);
+  const futureLimit = new Date(startDate.getTime() + daysAhead * 24 * 60 * 60 * 1000);
 
-  const { page: startPage, totalPages } = await findCurrentPage(accessToken, now);
+  // Para week 0, usar now; para otras semanas, usar startDate
+  const filterFromDate = weekOffset === 0 ? new Date() : startDate;
+
+  const { page: startPage, totalPages } = await findCurrentPage(accessToken, startDate);
 
   const allSessions: MomenceSession[] = [];
   let currentPage = startPage;
@@ -340,7 +366,9 @@ async function fetchFutureSessions(
 
     if (sessions.length === 0) break;
 
-    const futureSessions = sessions.filter((s: MomenceSession) => new Date(s.startsAt) >= now);
+    const futureSessions = sessions.filter(
+      (s: MomenceSession) => new Date(s.startsAt) >= filterFromDate
+    );
 
     if (futureSessions.length > 0) {
       allSessions.push(...futureSessions);
@@ -359,7 +387,7 @@ async function fetchFutureSessions(
   return allSessions
     .filter(s => {
       const d = new Date(s.startsAt);
-      return d >= now && d <= futureLimit;
+      return d >= filterFromDate && d <= futureLimit;
     })
     .sort((a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime());
 }
@@ -379,13 +407,14 @@ export default async function handler(
   res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=600');
 
   try {
-    const { style, days } = req.query;
+    const { style, days, week } = req.query;
     const daysAhead = Math.min(14, Math.max(1, parseInt(days as string) || 7));
+    const weekOffset = Math.min(4, Math.max(0, parseInt(week as string) || 0));
     const styleFilter = style ? String(style).toLowerCase() : null;
 
-    // Intentar obtener de caché
+    // Intentar obtener de caché (incluye weekOffset para cache diferenciado por semana)
     const redis = getRedisClient();
-    const cacheKey = `${CACHE_KEY}:${daysAhead}`;
+    const cacheKey = `${CACHE_KEY}:${daysAhead}:week${weekOffset}`;
 
     let sessions: MomenceSession[];
 
@@ -399,7 +428,7 @@ export default async function handler(
           if (!accessToken) {
             return res.status(503).json({ error: 'Unable to authenticate with Momence' });
           }
-          sessions = await fetchFutureSessions(accessToken, daysAhead);
+          sessions = await fetchFutureSessions(accessToken, daysAhead, weekOffset);
           await redis.setex(cacheKey, CACHE_TTL_SECONDS, JSON.stringify(sessions));
         }
       } catch (e) {
@@ -408,14 +437,14 @@ export default async function handler(
         if (!accessToken) {
           return res.status(503).json({ error: 'Unable to authenticate with Momence' });
         }
-        sessions = await fetchFutureSessions(accessToken, daysAhead);
+        sessions = await fetchFutureSessions(accessToken, daysAhead, weekOffset);
       }
     } else {
       const accessToken = await getAccessToken();
       if (!accessToken) {
         return res.status(503).json({ error: 'Unable to authenticate with Momence' });
       }
-      sessions = await fetchFutureSessions(accessToken, daysAhead);
+      sessions = await fetchFutureSessions(accessToken, daysAhead, weekOffset);
     }
 
     // Normalizar sesiones

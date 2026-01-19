@@ -31,6 +31,7 @@ import { BookingFormStep } from './components/BookingFormStep';
 import { BookingSuccess } from './components/BookingSuccess';
 import { BookingError } from './components/BookingError';
 import { BookingErrorBoundary } from './components/BookingErrorBoundary';
+import { SocialProofTicker } from './components/SocialProofTicker';
 
 // Types
 import type { ClassData, BookingFormData } from './types/booking';
@@ -643,6 +644,13 @@ const BookingWidgetV2: React.FC = memo(() => {
           <p className="text-neutral/60 text-sm md:text-base max-w-md mx-auto">
             {t('booking_subtitle_extended')}
           </p>
+
+          {/* Social Proof Ticker - show recent bookings */}
+          {status !== 'success' && status !== 'error' && (
+            <div className="mt-4">
+              <SocialProofTicker limit={5} />
+            </div>
+          )}
         </div>
 
         {/* Step indicator - hide on success/error */}

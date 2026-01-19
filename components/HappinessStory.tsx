@@ -7,7 +7,24 @@ const HappinessStory: React.FC = () => {
 
   return (
     <section className="relative section-after-hero pb-12 md:pb-16 bg-black text-neutral">
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-primary-dark/10 to-black opacity-50"></div>
+      {/* Background - Enterprise pattern */}
+      <div className="absolute inset-0 bg-black">
+        {/* Background image with configurable opacity */}
+        <div className="absolute inset-0" style={{ opacity: 0.2 }}>
+          <picture>
+            <source srcSet="/images/optimized/comunidad-grupo.webp" type="image/webp" />
+            <img
+              src="/images/optimized/comunidad-grupo.jpg"
+              alt={t('happiness_story_bg_alt')}
+              className="w-full h-full object-cover"
+              style={{ objectPosition: 'center 30%' }}
+              loading="lazy"
+            />
+          </picture>
+        </div>
+        {/* Gradient overlays for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
+      </div>
       <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
         {/* First line: Large white text - no animation to ensure visibility on load */}
         <p className="text-3xl md:text-4xl text-white mb-6 leading-relaxed">

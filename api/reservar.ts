@@ -533,17 +533,31 @@ export default async function handler(
     // 3. Guardar en Redis
     if (redis) {
       try {
+        const bookingTimestamp = Date.now();
         await redis.setex(
           bookingKey,
           BOOKING_TTL_SECONDS,
           JSON.stringify({
-            timestamp: Date.now(),
+            timestamp: bookingTimestamp,
             sessionId,
             className,
             classDate,
             eventId: finalEventId,
           })
         );
+
+        // Añadir a lista de reservas recientes para Social Proof Ticker
+        const firstNameOnly = sanitize(firstName).split(' ')[0] || 'Usuario';
+        await redis.lpush(
+          'recent_bookings',
+          JSON.stringify({
+            firstName: firstNameOnly,
+            className: className || estilo || 'Clase de Prueba',
+            timestamp: bookingTimestamp,
+          })
+        );
+        // Mantener solo las últimas 50 reservas
+        await redis.ltrim('recent_bookings', 0, 49);
       } catch (e) {
         console.warn('Redis save failed:', e);
       }

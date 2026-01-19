@@ -245,7 +245,7 @@ const Header: React.FC = () => {
       ],
     },
     services: {
-      path: `/${locale}/servicios-baile`,
+      path: `/${locale}/servicios-baile-barcelona`,
       textKey: 'navServices',
       submenu: [
         { path: `/${locale}/clases-particulares-baile`, textKey: 'navClasesParticulares' },
@@ -778,6 +778,7 @@ const Header: React.FC = () => {
                 <button
                   onClick={() => toggleDropdown('services')}
                   className={`relative flex items-center gap-1 px-3 xl:px-4 py-2 text-sm xl:text-base font-semibold tracking-wide transition-all duration-300 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent ${
+                    location.pathname.includes('/servicios-baile-barcelona') ||
                     location.pathname.includes('/alquiler-salas') ||
                     location.pathname.includes('/estudio-grabacion') ||
                     location.pathname.includes('/regala-baile') ||
@@ -794,6 +795,15 @@ const Header: React.FC = () => {
                 </button>
                 {isDropdownOpen('services') && (
                   <div className="absolute top-full left-0 mt-3 bg-black/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl shadow-black/50 min-w-[260px] py-2 z-50 animate-fadeIn overflow-hidden">
+                    <Link
+                      to={`/${locale}/servicios-baile-barcelona`}
+                      onClick={closeAllDropdowns}
+                      className="flex items-center gap-3 px-5 py-3 text-sm font-bold text-primary-accent hover:bg-primary-accent/20 transition-all duration-200"
+                    >
+                      <span className="w-2 h-2 rounded-full bg-primary-accent" />
+                      {t('navAllServices')}
+                    </Link>
+                    <div className="border-t border-white/10 my-2 mx-4"></div>
                     <Link
                       to={`/${locale}/clases-particulares-baile`}
                       onClick={closeAllDropdowns}
