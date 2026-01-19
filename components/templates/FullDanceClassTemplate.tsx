@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useI18n } from '../../hooks/useI18n';
 import { useImageAlt } from '../../hooks/useImageAlt';
 import { useReviews } from '../../hooks/useReviews';
+import type { ScheduleSession } from '../../hooks/useScheduleSessions';
 import Breadcrumb from '../shared/Breadcrumb';
 import {
   StarRating,
@@ -21,6 +22,8 @@ import LazyImage from '../LazyImage';
 import OptimizedImage from '../OptimizedImage';
 import CulturalHistorySection from '../CulturalHistorySection';
 import ScheduleSection from '../ScheduleSection';
+import LazyDynamicScheduleSection from '../LazyDynamicScheduleSection';
+import { getMomenceStyle } from '../../constants/style-mappings';
 import FAQSection from '../FAQSection';
 import { ReviewsSection } from '../reviews';
 import LevelCardsSection, { type LevelConfig } from '../shared/LevelCardsSection';
@@ -265,6 +268,14 @@ export interface FullDanceClassConfig {
   // === IDENTIFICATION ===
   styleKey: string; // Translation prefix: 'ballet', 'dancehall', 'twerk', etc.
   stylePath: string; // URL path: 'ballet-barcelona', 'dancehall-barcelona', etc.
+
+  // === MOMENCE DYNAMIC SCHEDULES ===
+  /** Momence style for filtering (e.g., 'bachata', 'salsa'). Auto-detected from styleKey if not set. */
+  momenceStyle?: string;
+  /** Enable dynamic schedule fetching from Momence API (default: true) */
+  useDynamicSchedule?: boolean;
+  /** Number of days ahead to fetch for dynamic schedule (default: 14) */
+  scheduleDaysAhead?: number;
 
   // === REQUIRED DATA ===
   faqsConfig: FAQ[];
@@ -720,7 +731,67 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
   // Lead capture modal state
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
+  // ===== DYNAMIC SCHEDULE FROM MOMENCE =====
+  // Determine if we should use dynamic schedules (default: true)
+  const useDynamicSchedule = config.useDynamicSchedule !== false;
+  // Get Momence style for filtering (from config or auto-detect from styleKey)
+  const momenceStyle = config.momenceStyle || getMomenceStyle(config.styleKey);
+  // Days ahead for schedule (default: 14)
+  const scheduleDaysAhead = config.scheduleDaysAhead || 14;
+
+  // Create static fallback data from config.scheduleKeys
+  const staticFallbackData = useMemo((): ScheduleSession[] => {
+    // Convert static schedule to ScheduleSession format for fallback
+    // Note: This creates "fake" sessions with current week dates
+    const now = new Date();
+    return config.scheduleKeys.map((schedule, index) => {
+      const dayMap: Record<string, number> = {
+        monday: 1,
+        tuesday: 2,
+        wednesday: 3,
+        thursday: 4,
+        friday: 5,
+        saturday: 6,
+        sunday: 0,
+      };
+      const targetDay = dayMap[schedule.dayKey] ?? 1;
+      const currentDay = now.getDay();
+      let daysUntil = targetDay - currentDay;
+      if (daysUntil <= 0) daysUntil += 7;
+
+      const classDate = new Date(now.getTime() + daysUntil * 24 * 60 * 60 * 1000);
+      const [hours, minutes] = schedule.time.split(':').map(Number);
+      classDate.setHours(hours || 19, minutes || 0, 0, 0);
+
+      return {
+        id: 10000 + index,
+        name: schedule.classNameKey ? t(schedule.classNameKey) : schedule.className || '',
+        style: momenceStyle,
+        level: schedule.levelKey.replace('Level', '').toLowerCase(),
+        instructor: schedule.teacher,
+        dateFormatted: classDate.toLocaleDateString(locale === 'ca' ? 'ca-ES' : `${locale}-ES`, {
+          day: 'numeric',
+          month: 'short',
+        }),
+        dayKey: schedule.dayKey,
+        dayOfWeek: t(schedule.dayKey),
+        time: schedule.time,
+        endTime: '',
+        spotsAvailable: 10,
+        isFull: false,
+        capacity: 15,
+        rawStartsAt: classDate.toISOString(),
+        duration: 60,
+        category: 'urbano',
+        pageSlug: config.stylePath,
+      };
+    });
+  }, [config.scheduleKeys, config.stylePath, momenceStyle, locale, t]);
+
+  // Dynamic schedule is now handled by LazyDynamicScheduleSection with lazy loading
+
   // ===== MEMOIZED DATA =====
+  // Static schedules for backward compatibility (used when dynamic is disabled)
   const schedules = useMemo(
     () =>
       config.scheduleKeys.map(schedule => ({
@@ -1393,12 +1464,37 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         )}
 
         {/* ===== 3. SCHEDULE SECTION ===== */}
-        <ScheduleSection
-          titleKey={`${config.styleKey}ScheduleTitle`}
-          subtitleKey={`${config.styleKey}ScheduleSubtitle`}
-          schedules={schedules}
-          t={t}
-        />
+        {useDynamicSchedule ? (
+          <LazyDynamicScheduleSection
+            id="schedule"
+            t={t}
+            style={momenceStyle}
+            days={scheduleDaysAhead}
+            locale={locale}
+            courseName={t(`${config.styleKey}Title`)}
+            courseUrl={`https://www.farrayscenter.com/${locale}${config.stylePath}`}
+            courseDescription={t(`${config.styleKey}MetaDescription`)}
+            fallbackData={staticFallbackData}
+            titleKey={`${config.styleKey}ScheduleTitle`}
+            subtitleKey={`${config.styleKey}ScheduleSubtitle`}
+            showAvailability={false}
+            onNotifyMe={() => setIsLeadModalOpen(true)}
+            prefetch={true}
+            eager={false}
+            eventImage={
+              config.hero?.heroImage
+                ? `https://www.farrayscenter.com${config.hero.heroImage.basePath}_1200.jpg`
+                : `https://www.farrayscenter.com/images/og-${config.stylePath}.jpg`
+            }
+          />
+        ) : (
+          <ScheduleSection
+            titleKey={`${config.styleKey}ScheduleTitle`}
+            subtitleKey={`${config.styleKey}ScheduleSubtitle`}
+            schedules={schedules}
+            t={t}
+          />
+        )}
 
         {/* ===== 3b. LEVELS SECTION ===== */}
         {config.levels && config.levels.length > 0 && (

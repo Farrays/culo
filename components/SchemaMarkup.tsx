@@ -262,6 +262,8 @@ interface LocalBusinessSchemaProps {
     reviewCount: string;
   };
   openingHours?: string[];
+  /** Booking URL for ReserveAction (enables Google "Book" button in search) */
+  bookingUrl?: string;
 }
 
 /**
@@ -340,6 +342,25 @@ export const LocalBusinessSchema: React.FC<LocalBusinessSchemaProps> = props => 
       },
     }),
     ...(props.openingHours && { openingHoursSpecification: props.openingHours }),
+    // ReserveAction for Google "Book" button in search results
+    potentialAction: [
+      {
+        '@type': 'ReserveAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: props.bookingUrl || 'https://www.farrayscenter.com/es/horarios-precios',
+          inLanguage: ['es', 'ca', 'en', 'fr'],
+          actionPlatform: [
+            'https://schema.org/DesktopWebPlatform',
+            'https://schema.org/MobileWebPlatform',
+          ],
+        },
+        result: {
+          '@type': 'Reservation',
+          name: 'Reserva de clase de baile',
+        },
+      },
+    ],
   };
 
   return (

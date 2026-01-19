@@ -162,6 +162,83 @@ describe('ClassCard', () => {
     });
   });
 
+  describe('NEW badge', () => {
+    it('should show NEW badge when isNew is true', () => {
+      const classData = createMockClass({ isNew: true });
+      render(
+        <ClassCard classData={classData} onSelect={mockOnSelect} onShowInfo={mockOnShowInfo} />
+      );
+
+      expect(screen.getByText(/booking_class_new/)).toBeInTheDocument();
+    });
+
+    it('should not show NEW badge when isNew is false', () => {
+      const classData = createMockClass({ isNew: false });
+      render(
+        <ClassCard classData={classData} onSelect={mockOnSelect} onShowInfo={mockOnShowInfo} />
+      );
+
+      expect(screen.queryByText(/booking_class_new/)).not.toBeInTheDocument();
+    });
+
+    it('should not show NEW badge when isNew is undefined', () => {
+      const classData = createMockClass(); // isNew not set
+      render(
+        <ClassCard classData={classData} onSelect={mockOnSelect} onShowInfo={mockOnShowInfo} />
+      );
+
+      expect(screen.queryByText(/booking_class_new/)).not.toBeInTheDocument();
+    });
+
+    it('should show NEW badge when newUntil is in the future', () => {
+      const futureDate = new Date();
+      futureDate.setDate(futureDate.getDate() + 7); // 7 days from now
+      const classData = createMockClass({
+        isNew: true,
+        newUntil: futureDate.toISOString().split('T')[0],
+      });
+      render(
+        <ClassCard classData={classData} onSelect={mockOnSelect} onShowInfo={mockOnShowInfo} />
+      );
+
+      expect(screen.getByText(/booking_class_new/)).toBeInTheDocument();
+    });
+
+    it('should not show NEW badge when newUntil is in the past', () => {
+      const pastDate = new Date();
+      pastDate.setDate(pastDate.getDate() - 7); // 7 days ago
+      const classData = createMockClass({
+        isNew: true,
+        newUntil: pastDate.toISOString().split('T')[0],
+      });
+      render(
+        <ClassCard classData={classData} onSelect={mockOnSelect} onShowInfo={mockOnShowInfo} />
+      );
+
+      expect(screen.queryByText(/booking_class_new/)).not.toBeInTheDocument();
+    });
+
+    it('should show NEW badge when isNew is true and newUntil is not set', () => {
+      const classData = createMockClass({ isNew: true }); // No newUntil = always show
+      render(
+        <ClassCard classData={classData} onSelect={mockOnSelect} onShowInfo={mockOnShowInfo} />
+      );
+
+      expect(screen.getByText(/booking_class_new/)).toBeInTheDocument();
+    });
+
+    it('should have amber styling for NEW badge', () => {
+      const classData = createMockClass({ isNew: true });
+      const { container } = render(
+        <ClassCard classData={classData} onSelect={mockOnSelect} onShowInfo={mockOnShowInfo} />
+      );
+
+      // Should have amber-400 text color class
+      const badge = container.querySelector('.text-amber-400');
+      expect(badge).toBeInTheDocument();
+    });
+  });
+
   describe('card selection', () => {
     it('should call onSelect when card is clicked', () => {
       const classData = createMockClass();

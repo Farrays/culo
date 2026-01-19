@@ -63,9 +63,10 @@ export interface ClassData {
   rawStartsAt: string;
   duration: number;
   description: string;
-  // NEW badge fields
-  isNew?: boolean; // Flag to mark class as new
-  newUntil?: string; // ISO date until when to show the badge
+  /** Flag to mark class as new (shows badge) */
+  isNew?: boolean;
+  /** ISO date string - badge shows until this date (e.g., "2025-02-15") */
+  newUntil?: string;
 }
 
 // Form data for booking submission

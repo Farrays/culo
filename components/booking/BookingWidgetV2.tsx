@@ -224,6 +224,9 @@ const BookingWidgetV2: React.FC = memo(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- Intentionally run once on mount
   }, []);
 
+  // Detect if any filter is active (for Acuity mode)
+  const hasActiveFilters = Object.values(filters).some(Boolean);
+
   const {
     classes,
     loading,
@@ -233,7 +236,14 @@ const BookingWidgetV2: React.FC = memo(() => {
     loadMore,
     hasMore,
     currentPage,
-  } = useBookingClasses({ filters, weekOffset, enablePagination: true });
+    allWeeksClasses,
+    allWeeksLoading,
+  } = useBookingClasses({
+    filters,
+    weekOffset,
+    enablePagination: true,
+    fetchAllWeeks: hasActiveFilters,
+  });
 
   const { trackClassSelected, trackBookingSuccess } = useBookingAnalytics();
 
@@ -314,8 +324,8 @@ const BookingWidgetV2: React.FC = memo(() => {
     trackClassSelected(classData);
   };
 
-  // Handle going back to class list
-  const handleBack = () => {
+  // Handle going back to class list (via UI button)
+  const handleBack = useCallback(() => {
     // If we pushed history state, use history.back() for proper UX
     if (historyPushedRef.current) {
       window.history.back();
@@ -323,7 +333,7 @@ const BookingWidgetV2: React.FC = memo(() => {
       goBack();
       clearError();
     }
-  };
+  }, [goBack, clearError]);
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
@@ -497,6 +507,9 @@ const BookingWidgetV2: React.FC = memo(() => {
         hasMore={hasMore}
         isLoadingMore={loading && currentPage > 1}
         selectedClassId={selectedClass?.id ?? null}
+        showAllWeeks={hasActiveFilters}
+        allWeeksClasses={allWeeksClasses}
+        allWeeksLoading={allWeeksLoading}
       />
     );
   };
@@ -543,7 +556,9 @@ const BookingWidgetV2: React.FC = memo(() => {
           <h1 className="text-2xl md:text-3xl font-black text-neutral mb-2">
             {t('booking_title')}
           </h1>
-          <p className="text-neutral/60">{t('booking_subtitle')}</p>
+          <p className="text-neutral/60 text-sm md:text-base max-w-md mx-auto">
+            {t('booking_subtitle_extended')}
+          </p>
         </div>
 
         {/* Step indicator - hide on success/error */}
