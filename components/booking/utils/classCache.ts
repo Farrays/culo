@@ -107,8 +107,12 @@ class ClassCache {
     if (weekOffset === undefined) {
       this.cache.clear();
     } else {
+      // Keys now include date prefix: ${dateKey}_week_${weekOffset}
+      // So we need to check if key includes the week pattern
       for (const key of this.cache.keys()) {
-        if (key.startsWith(`week_${weekOffset}`)) this.cache.delete(key);
+        if (key.includes(`_week_${weekOffset}_`) || key.endsWith(`_week_${weekOffset}`)) {
+          this.cache.delete(key);
+        }
       }
     }
   }
