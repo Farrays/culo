@@ -314,7 +314,8 @@ async function createMomenceBooking(
       if (createMemberResponse.ok) {
         const newMember = await createMemberResponse.json();
         console.warn('[Momence Booking] Member creation response:', JSON.stringify(newMember));
-        customerId = newMember.payload?.id || newMember.id;
+        // API docs say response has 'memberId' field
+        customerId = newMember.memberId || newMember.payload?.id || newMember.id;
         console.warn('[Momence Booking] Created new member ID:', customerId);
       } else {
         const errorText = await createMemberResponse.text();
