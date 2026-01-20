@@ -306,7 +306,7 @@ async function createMomenceBooking(
           email: customerData.email,
           firstName: customerData.firstName,
           lastName: customerData.lastName,
-          phone: customerData.phone,
+          phoneNumber: customerData.phone,
           homeLocationId: hostLocationId,
         }),
       });
