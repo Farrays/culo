@@ -203,14 +203,20 @@ async function createMomenceBooking(
       customerData.email
     );
 
-    // Get hostLocationId from environment variable or try to fetch it
+    // Get hostLocationId from environment variable or use hardcoded fallback
     let hostLocationId: number | null = null;
 
-    // First check environment variable (most reliable)
+    // Farray's Center location ID in Momence
+    const FARRAY_LOCATION_ID = 36148;
+
+    // First check environment variable, then use hardcoded fallback
     const envLocationId = process.env['MOMENCE_LOCATION_ID'];
     if (envLocationId) {
       hostLocationId = parseInt(envLocationId, 10);
       console.warn('[Momence Booking] Using MOMENCE_LOCATION_ID from env:', hostLocationId);
+    } else {
+      hostLocationId = FARRAY_LOCATION_ID;
+      console.warn('[Momence Booking] Using hardcoded location ID:', hostLocationId);
     }
 
     // If not in env, try to get it from the session
