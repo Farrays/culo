@@ -213,8 +213,10 @@ async function createMomenceBooking(
       },
       body: JSON.stringify({
         page: 0,
-        pageSize: 1,
-        email: customerData.email,
+        pageSize: 100,
+        filters: {
+          email: customerData.email,
+        },
       }),
     });
 
@@ -224,8 +226,19 @@ async function createMomenceBooking(
       const memberData = await memberResponse.json();
       console.warn('[Momence Booking] Member search response:', JSON.stringify(memberData));
       if (memberData.payload && memberData.payload.length > 0) {
-        customerId = memberData.payload[0].id;
-        console.warn('[Momence Booking] Found existing member ID:', customerId);
+        // Verify the email matches - API may return all members instead of filtering
+        const foundMember = memberData.payload.find(
+          (m: { email?: string }) => m.email?.toLowerCase() === customerData.email.toLowerCase()
+        );
+        if (foundMember) {
+          customerId = foundMember.id;
+          console.warn('[Momence Booking] Found existing member ID:', customerId);
+        } else {
+          console.warn(
+            '[Momence Booking] API returned members but none match email:',
+            customerData.email
+          );
+        }
       } else {
         console.warn('[Momence Booking] No existing member found, will create new one');
       }
