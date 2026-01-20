@@ -250,11 +250,16 @@ async function getAccessToken(): Promise<string | null> {
   }
 }
 
-// Fetch a single page from Momence API
-async function fetchPage(
+// Fetch a single page from Momence API with date range info
+async function fetchPageWithDateRange(
   accessToken: string,
   page: number
-): Promise<{ sessions: MomenceSession[]; totalPages: number }> {
+): Promise<{
+  sessions: MomenceSession[];
+  totalPages: number;
+  minDate: Date | null;
+  maxDate: Date | null;
+}> {
   try {
     const response = await fetch(
       `${MOMENCE_API_URL}/api/v2/host/sessions?page=${page}&pageSize=100`,
@@ -266,20 +271,89 @@ async function fetchPage(
       }
     );
 
-    if (!response.ok) return { sessions: [], totalPages: 0 };
+    if (!response.ok) {
+      return { sessions: [], totalPages: 0, minDate: null, maxDate: null };
+    }
 
     const data = await response.json();
+    const sessions: MomenceSession[] = data.payload || [];
+    const totalCount = data.pagination?.totalCount || 0;
+
+    if (sessions.length === 0) {
+      return {
+        sessions: [],
+        totalPages: Math.ceil(totalCount / 100),
+        minDate: null,
+        maxDate: null,
+      };
+    }
+
+    const dates = sessions.map(s => new Date(s.startsAt).getTime());
     return {
-      sessions: data.payload || [],
-      totalPages: Math.ceil((data.pagination?.totalCount || 0) / 100),
+      sessions,
+      totalPages: Math.ceil(totalCount / 100),
+      minDate: new Date(Math.min(...dates)),
+      maxDate: new Date(Math.max(...dates)),
     };
   } catch {
-    return { sessions: [], totalPages: 0 };
+    return { sessions: [], totalPages: 0, minDate: null, maxDate: null };
   }
 }
 
-// OPTIMIZED: Fetch sessions using parallel requests (no binary search)
-// This is 5x faster than the old binary search approach
+// Binary search to find the page containing sessions for the target date
+// Momence returns ALL sessions (past and future) sorted by date, so we need
+// to find the right page instead of always starting from page 0
+async function findStartPage(
+  accessToken: string,
+  targetDate: Date
+): Promise<{ page: number; totalPages: number }> {
+  const firstPage = await fetchPageWithDateRange(accessToken, 0);
+  if (firstPage.totalPages === 0) return { page: 0, totalPages: 0 };
+
+  const totalPages = firstPage.totalPages;
+
+  // If page 0 already contains or is after our target date, start from 0
+  if (firstPage.minDate && firstPage.minDate >= targetDate) {
+    return { page: 0, totalPages };
+  }
+  if (firstPage.maxDate && firstPage.maxDate >= targetDate) {
+    return { page: 0, totalPages };
+  }
+
+  // Binary search for the correct page
+  let left = 0;
+  let right = totalPages - 1;
+  let resultPage = 0;
+  let iterations = 0;
+
+  while (left <= right && iterations < 20) {
+    iterations++;
+    const mid = Math.floor((left + right) / 2);
+    const pageData = await fetchPageWithDateRange(accessToken, mid);
+
+    if (!pageData.minDate) {
+      right = mid - 1;
+      continue;
+    }
+
+    // If target date is within this page's range, found it
+    if (pageData.minDate <= targetDate && pageData.maxDate && targetDate <= pageData.maxDate) {
+      resultPage = mid;
+      break;
+    }
+
+    if (pageData.minDate > targetDate) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
+      resultPage = mid;
+    }
+  }
+
+  return { page: resultPage, totalPages };
+}
+
+// Fetch future sessions using binary search to find the correct starting page
 async function fetchFutureSessions(
   accessToken: string,
   daysAhead: number,
@@ -294,21 +368,46 @@ async function fetchFutureSessions(
   // For week 0, filter from now; for other weeks, filter from startDate
   const filterFromDate = weekOffset === 0 ? new Date() : startDate;
 
-  // OPTIMIZATION: Fetch first 5 pages in parallel instead of binary search
-  // This covers most use cases (500 sessions = ~2-3 months of classes)
-  const pagePromises = [0, 1, 2, 3, 4].map(page => fetchPage(accessToken, page));
-  const results = await Promise.all(pagePromises);
+  // Find the page that contains our target date using binary search
+  const { page: startPage, totalPages } = await findStartPage(accessToken, filterFromDate);
 
-  // Combine all sessions
-  const allSessions: MomenceSession[] = results.flatMap(r => r.sessions);
+  if (totalPages === 0) {
+    console.warn('[clases] No pages found in Momence');
+    return [];
+  }
 
-  // Filter to the requested date range and sort
-  return allSessions
-    .filter(s => {
+  // Fetch pages starting from the found page until we have enough sessions
+  const allSessions: MomenceSession[] = [];
+  let currentPage = startPage;
+  const maxPagesToFetch = 10;
+  let pagesFetched = 0;
+
+  while (currentPage < totalPages && pagesFetched < maxPagesToFetch) {
+    const pageData = await fetchPageWithDateRange(accessToken, currentPage);
+    pagesFetched++;
+
+    if (pageData.sessions.length === 0) break;
+
+    // Filter to only sessions within our date range
+    const relevantSessions = pageData.sessions.filter(s => {
       const d = new Date(s.startsAt);
       return d >= filterFromDate && d <= futureLimit;
-    })
-    .sort((a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime());
+    });
+
+    allSessions.push(...relevantSessions);
+
+    // If the last session on this page is past our future limit, stop
+    if (pageData.maxDate && pageData.maxDate > futureLimit) {
+      break;
+    }
+
+    currentPage++;
+  }
+
+  // Sort by start time
+  return allSessions.sort(
+    (a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime()
+  );
 }
 
 // Background refresh function (stale-while-revalidate)
