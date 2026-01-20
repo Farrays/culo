@@ -223,8 +223,30 @@ function generateMockClassesForWeek(weekOffset: number): ClassData[] {
   );
 }
 
-// Note: filterByWeek is no longer needed as we fetch per-week from the API
-// The server handles week filtering via the 'week' query parameter
+// Filter classes by week offset (client-side filtering)
+function filterByWeek(classesData: ClassData[], offset: number): ClassData[] {
+  const now = new Date();
+
+  // Get start of current week (Monday)
+  const dayOfWeek = now.getDay();
+  const mondayOffset = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
+  const startOfWeek = new Date(now);
+  startOfWeek.setDate(now.getDate() + mondayOffset + offset * 7);
+  startOfWeek.setHours(0, 0, 0, 0);
+
+  const endOfWeek = new Date(startOfWeek);
+  endOfWeek.setDate(startOfWeek.getDate() + 7);
+  endOfWeek.setHours(0, 0, 0, 0);
+
+  return classesData.filter(c => {
+    const classDate = new Date(c.rawStartsAt);
+    // For week 0 (current week), include classes from now to end of week
+    if (offset === 0) {
+      return classDate >= now && classDate < endOfWeek;
+    }
+    return classDate >= startOfWeek && classDate < endOfWeek;
+  });
+}
 
 // Normaliza un string para comparación: lowercase + trim + remove accents
 function normalizeForComparison(value: string | null | undefined): string {
@@ -401,22 +423,12 @@ export function useBookingClasses({
             if (isMountedRef.current) setHasMore(false);
           }
         } else {
-          // Fetch only 7 days for current week (lazy loading)
-          const params = new URLSearchParams({
-            week: week.toString(),
-            days: '7',
-          });
-
-          if (enablePagination) {
-            params.set('page', page.toString());
-            params.set('pageSize', pageSize.toString());
-          }
-
+          // Fetch all data from API (28 days) and filter by week on client
           const data = await fetchWithRetry<{
             success: boolean;
             data?: { classes: ClassData[]; hasMore?: boolean; total?: number };
             error?: string;
-          }>(`${API_ENDPOINTS.CLASSES}?${params.toString()}`, {
+          }>(`${API_ENDPOINTS.CLASSES}`, {
             signal: abortControllerRef.current.signal,
             onRetry: attempt => {
               if (isMountedRef.current) {
@@ -427,22 +439,19 @@ export function useBookingClasses({
           });
 
           if (data.success) {
-            classes = data.data?.classes || [];
+            const allData = data.data?.classes || [];
+            // Filter by week on the client side
+            classes = filterByWeek(allData, week);
 
-            // Validate data freshness: for week 0, first class should not be in the past
-            if (week === 0 && classes.length > 0) {
-              const now = new Date();
-              const firstClassDate = new Date(classes[0]?.rawStartsAt || '');
-              // If first class is more than 1 hour in the past, data is stale
-              if (firstClassDate.getTime() < now.getTime() - 60 * 60 * 1000) {
-                console.warn('[useBookingClasses] Stale data detected, invalidating cache');
-                classCache.invalidate();
-                // Don't use this stale data, let the next effect refetch
-                throw new Error('Stale data detected');
-              }
+            // Apply pagination if enabled
+            if (enablePagination) {
+              const start = (page - 1) * pageSize;
+              const paginatedClasses = classes.slice(start, start + pageSize);
+              if (isMountedRef.current) setHasMore(start + pageSize < classes.length);
+              classes = paginatedClasses;
+            } else {
+              if (isMountedRef.current) setHasMore(false);
             }
-
-            if (isMountedRef.current) setHasMore(data.data?.hasMore ?? classes.length >= pageSize);
           } else {
             throw new Error(data.error || 'Unknown error');
           }
@@ -587,15 +596,16 @@ export function useBookingClasses({
             return data;
           }
 
-          // Production: fetch from API with abort signal
-          const params = new URLSearchParams({ week: week.toString(), days: '7' });
-          const response = await fetch(`${API_ENDPOINTS.CLASSES}?${params.toString()}`, {
+          // Production: fetch all data from API and filter by week
+          const response = await fetch(`${API_ENDPOINTS.CLASSES}`, {
             signal: controller.signal,
           });
           const data = await response.json();
           if (data.success) {
-            classCache.set(week, data.data?.classes || []);
-            return data.data?.classes || [];
+            const allData = data.data?.classes || [];
+            const weekData = filterByWeek(allData, week);
+            classCache.set(week, weekData);
+            return weekData;
           }
           return [];
         });

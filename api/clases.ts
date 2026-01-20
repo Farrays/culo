@@ -278,34 +278,26 @@ async function fetchPage(
   }
 }
 
-// OPTIMIZED: Fetch sessions using parallel requests (no binary search)
-// This is 5x faster than the old binary search approach
+// Fetch all future sessions (returns 28 days of data for frontend filtering)
 async function fetchFutureSessions(
   accessToken: string,
-  daysAhead: number,
-  weekOffset: number = 0
+  daysAhead: number
 ): Promise<MomenceSession[]> {
-  // Calculate date range based on weekOffset
-  const baseDate = new Date();
-  baseDate.setHours(0, 0, 0, 0);
-  const startDate = new Date(baseDate.getTime() + weekOffset * 7 * 24 * 60 * 60 * 1000);
-  const futureLimit = new Date(startDate.getTime() + daysAhead * 24 * 60 * 60 * 1000);
+  const now = new Date();
+  const futureLimit = new Date(now.getTime() + daysAhead * 24 * 60 * 60 * 1000);
 
-  // For week 0, filter from now; for other weeks, filter from startDate
-  const filterFromDate = weekOffset === 0 ? new Date() : startDate;
-
-  // OPTIMIZATION: Fetch first 3 pages in parallel (300 sessions = ~4 weeks at 80/week)
+  // Fetch first 3 pages in parallel (300 sessions = ~4 weeks at 80/week)
   const pagePromises = [0, 1, 2].map(page => fetchPage(accessToken, page));
   const results = await Promise.all(pagePromises);
 
   // Combine all sessions
   const allSessions: MomenceSession[] = results.flatMap(r => r.sessions);
 
-  // Filter to the requested date range and sort
+  // Filter to future sessions only (from now to daysAhead) and sort
   return allSessions
     .filter(s => {
       const d = new Date(s.startsAt);
-      return d >= filterFromDate && d <= futureLimit;
+      return d >= now && d <= futureLimit;
     })
     .sort((a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime());
 }
@@ -315,11 +307,10 @@ async function refreshCacheInBackground(
   redis: Redis,
   cacheKey: string,
   accessToken: string,
-  daysAhead: number,
-  weekOffset: number
+  daysAhead: number
 ): Promise<void> {
   try {
-    const freshSessions = await fetchFutureSessions(accessToken, daysAhead, weekOffset);
+    const freshSessions = await fetchFutureSessions(accessToken, daysAhead);
     await redis.setex(cacheKey, CACHE_TTL_SECONDS, JSON.stringify(freshSessions));
   } catch (error) {
     console.warn('[clases] Background refresh failed:', error);
@@ -341,15 +332,14 @@ export default async function handler(
   res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=600');
 
   try {
-    const { style, days, week } = req.query;
-    const daysAhead = Math.min(14, Math.max(1, parseInt(days as string) || 7));
-    const weekOffset = Math.min(4, Math.max(0, parseInt(week as string) || 0));
+    const { style } = req.query;
+    // Always fetch 28 days - frontend handles week filtering
+    const daysAhead = 28;
     const styleFilter = style ? String(style).toLowerCase() : null;
 
-    // OPTIMIZED: Stale-while-revalidate cache strategy
-    // Returns cached data instantly, refreshes in background if stale
+    // Simple cache key - all data for 28 days
     const redis = getRedisClient();
-    const cacheKey = `${CACHE_KEY}:${daysAhead}:week${weekOffset}`;
+    const cacheKey = `${CACHE_KEY}:${daysAhead}`;
 
     let sessions: MomenceSession[];
     let fromCache = false;
@@ -366,7 +356,7 @@ export default async function handler(
           if (parsedSessions.length === 0) {
             const accessToken = await getAccessToken();
             if (accessToken) {
-              sessions = await fetchFutureSessions(accessToken, daysAhead, weekOffset);
+              sessions = await fetchFutureSessions(accessToken, daysAhead);
               // Only cache if we got results (don't cache empty results)
               if (sessions.length > 0) {
                 await redis.setex(cacheKey, CACHE_TTL_SECONDS, JSON.stringify(sessions));
@@ -388,7 +378,7 @@ export default async function handler(
               const accessToken = await getAccessToken();
               if (accessToken) {
                 // Don't await - let it run in background
-                refreshCacheInBackground(redis, cacheKey, accessToken, daysAhead, weekOffset);
+                refreshCacheInBackground(redis, cacheKey, accessToken, daysAhead);
               }
             }
           }
@@ -398,7 +388,7 @@ export default async function handler(
           if (!accessToken) {
             return res.status(503).json({ error: 'Unable to authenticate with Momence' });
           }
-          sessions = await fetchFutureSessions(accessToken, daysAhead, weekOffset);
+          sessions = await fetchFutureSessions(accessToken, daysAhead);
           await redis.setex(cacheKey, CACHE_TTL_SECONDS, JSON.stringify(sessions));
         }
       } catch (e) {
@@ -408,7 +398,7 @@ export default async function handler(
         if (!accessToken) {
           return res.status(503).json({ error: 'Unable to authenticate with Momence' });
         }
-        sessions = await fetchFutureSessions(accessToken, daysAhead, weekOffset);
+        sessions = await fetchFutureSessions(accessToken, daysAhead);
       }
     } else {
       // No Redis - fetch directly
@@ -416,7 +406,7 @@ export default async function handler(
       if (!accessToken) {
         return res.status(503).json({ error: 'Unable to authenticate with Momence' });
       }
-      sessions = await fetchFutureSessions(accessToken, daysAhead, weekOffset);
+      sessions = await fetchFutureSessions(accessToken, daysAhead);
     }
 
     // Normalizar sesiones
