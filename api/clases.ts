@@ -453,6 +453,7 @@ async function fetchFutureSessions(
 
   const lastSession = sorted.length > 0 ? sorted[sorted.length - 1] : null;
   console.warn('[clases] Final result:', {
+    weekOffset,
     totalSessions: sorted.length,
     firstDate: sorted[0] ? new Date(sorted[0].startsAt).toISOString() : null,
     lastDate: lastSession ? new Date(lastSession.startsAt).toISOString() : null,
@@ -497,6 +498,13 @@ export default async function handler(
     const daysAhead = Math.min(14, Math.max(1, parseInt(days as string) || 7));
     const weekOffset = Math.min(4, Math.max(0, parseInt(week as string) || 0));
     const styleFilter = style ? String(style).toLowerCase() : null;
+
+    console.warn('[clases] Request received:', {
+      rawWeek: week,
+      parsedWeekOffset: weekOffset,
+      daysAhead,
+      styleFilter,
+    });
 
     // Get today's date in Spain timezone for cache key
     const now = new Date();
