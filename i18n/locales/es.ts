@@ -20362,7 +20362,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_success_class: 'Clase reservada',
   booking_success_date: 'Fecha y hora',
   booking_success_location: 'Ubicación',
-  booking_success_address: "Farray's Center - C/ Mallorca 179, Barcelona",
+  booking_success_address: "Farray's Center - C/ Entença 100, 08015 Barcelona",
   booking_success_reminder: 'Te recordaremos 24h antes de la clase',
   booking_success_lang_note: 'Los mensajes de confirmación y recordatorio se envían en español',
   booking_success_cta: 'Ver todas las clases',
@@ -21228,7 +21228,7 @@ Reconocida por el CID UNESCO y dirigida por Yunaisy Farray (actriz en Street Dan
   commercialNearbySearchText:
     'Si buscas "clases de Commercial Dance cerca de mí" o "academia de baile videoclips Barcelona", estás a pocos minutos:',
   commercialNearbyMetro:
-    '🚇 Metro: Rocafort (L1) 4 min, Plaza España (L1, L3) 5 min, Entença (L5) 6 min, Hostafrancs (L1) 5 min | 🚆 Tren: Sants Estació (Renfe, AVE, FGC) 8 min | 🚌 Bus: H10, 27, 109, D40 en la puerta | 🚲 Bicing: 3 estaciones a menos de 100m',
+    'Metro: Rocafort (L1) 4 min, Plaza España (L1, L3) 5 min, Entença (L5) 6 min, Hostafrancs (L1) 5 min. Tren: Sants Estació (Renfe, AVE, FGC) 8 min. Bus: H10, 27, 109, D40 en la puerta. Bicing: 3 estaciones a menos de 100m.',
 
   // Logos Section
   commercialLogosTitle: 'Has podido vernos en…',

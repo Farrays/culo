@@ -488,17 +488,17 @@ const AlquilerSalasPage: React.FC = () => {
       image: `${baseUrl}/images/logo/farrays-logo.png`,
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Carrer de Mallorca, 323',
+        streetAddress: "Carrer d'Entença, 100",
         addressLocality: 'Barcelona',
-        postalCode: '08037',
+        postalCode: '08015',
         addressCountry: 'ES',
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 41.3971,
-        longitude: 2.1645,
+        latitude: 41.3851,
+        longitude: 2.1489,
       },
-      telephone: '+34 644 67 02 25',
+      telephone: '+34622247085',
       priceRange: '€€',
     },
     areaServed: {

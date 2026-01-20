@@ -97,7 +97,7 @@ describe('BookingSuccess', () => {
         startTime: mockClass.rawStartsAt,
         durationMinutes: mockClass.duration,
         description: mockClass.description,
-        location: expect.stringContaining("Farray's Center"),
+        location: expect.stringContaining("Farray's"),
       });
       expect(mockWindowOpen).toHaveBeenCalledWith('https://calendar.google.com/mock', '_blank');
     });
@@ -118,7 +118,7 @@ describe('BookingSuccess', () => {
         startTime: mockClass.rawStartsAt,
         durationMinutes: mockClass.duration,
         description: mockClass.description,
-        location: expect.stringContaining("Farray's Center"),
+        location: expect.stringContaining("Farray's"),
       });
     });
   });

@@ -86,6 +86,10 @@ interface BookingSuccessProps {
 export const BookingSuccess: React.FC<BookingSuccessProps> = ({ selectedClass }) => {
   const { t, locale } = useI18n();
 
+  // Studio address - single source of truth
+  const STUDIO_ADDRESS =
+    "Farray's International Dance Center, Carrer d'Entença 100, 08015 Barcelona";
+
   // Handle Google Calendar
   const handleAddToGoogleCalendar = () => {
     const url = generateGoogleCalendarUrl({
@@ -93,7 +97,7 @@ export const BookingSuccess: React.FC<BookingSuccessProps> = ({ selectedClass })
       startTime: selectedClass.rawStartsAt,
       durationMinutes: selectedClass.duration,
       description: selectedClass.description,
-      location: "Farray's Center, Carrer de Balmes 191, Barcelona",
+      location: STUDIO_ADDRESS,
     });
     window.open(url, '_blank');
   };
@@ -105,7 +109,7 @@ export const BookingSuccess: React.FC<BookingSuccessProps> = ({ selectedClass })
       startTime: selectedClass.rawStartsAt,
       durationMinutes: selectedClass.duration,
       description: selectedClass.description,
-      location: "Farray's Center, Carrer de Balmes 191, Barcelona",
+      location: STUDIO_ADDRESS,
     });
   };
 
