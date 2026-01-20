@@ -330,6 +330,45 @@ async function createMomenceBooking(
     }
 
     console.warn('[Momence Booking] SUCCESS! Created booking:', bookingId);
+
+    // Verify booking exists by fetching session bookings
+    try {
+      const verifyResponse = await fetch(
+        `${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}/bookings`,
+        {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      if (verifyResponse.ok) {
+        const verifyData = await verifyResponse.json();
+        console.warn(
+          '[Momence Booking] Session bookings after creation:',
+          JSON.stringify(verifyData)
+        );
+        // Check if our booking is in the list
+        const bookings = verifyData.payload || verifyData || [];
+        const ourBooking = Array.isArray(bookings)
+          ? bookings.find(
+              (b: { id?: number; sessionBookingId?: number; memberId?: number }) =>
+                b.id === bookingId || b.sessionBookingId === bookingId || b.memberId === customerId
+            )
+          : null;
+        console.warn(
+          '[Momence Booking] Our booking found in list:',
+          ourBooking ? 'YES' : 'NO',
+          ourBooking
+        );
+      } else {
+        console.warn('[Momence Booking] Could not verify booking:', verifyResponse.status);
+      }
+    } catch (verifyError) {
+      console.warn('[Momence Booking] Verification error:', verifyError);
+    }
+
     return { success: true, bookingId };
   } catch (error) {
     console.error('[Momence Booking] Error:', error);
