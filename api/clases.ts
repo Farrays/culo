@@ -250,35 +250,8 @@ async function getAccessToken(): Promise<string | null> {
   }
 }
 
-// Fetch a single page from Momence API
-async function fetchPage(
-  accessToken: string,
-  page: number
-): Promise<{ sessions: MomenceSession[]; totalPages: number }> {
-  try {
-    const response = await fetch(
-      `${MOMENCE_API_URL}/api/v2/host/sessions?page=${page}&pageSize=100`,
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
-        },
-      }
-    );
-
-    if (!response.ok) return { sessions: [], totalPages: 0 };
-
-    const data = await response.json();
-    return {
-      sessions: data.payload || [],
-      totalPages: Math.ceil((data.pagination?.totalCount || 0) / 100),
-    };
-  } catch {
-    return { sessions: [], totalPages: 0 };
-  }
-}
-
-// Fetch all future sessions (returns 28 days of data for frontend filtering)
+// Fetch sessions from Momence API with native date filtering
+// Uses startAfter/startBefore params for efficient server-side filtering
 async function fetchFutureSessions(
   accessToken: string,
   daysAhead: number
@@ -286,20 +259,56 @@ async function fetchFutureSessions(
   const now = new Date();
   const futureLimit = new Date(now.getTime() + daysAhead * 24 * 60 * 60 * 1000);
 
-  // Fetch first 3 pages in parallel (300 sessions = ~4 weeks at 80/week)
-  const pagePromises = [0, 1, 2].map(page => fetchPage(accessToken, page));
-  const results = await Promise.all(pagePromises);
+  // Format dates for Momence API (ISO 8601)
+  const startAfter = now.toISOString();
+  const startBefore = futureLimit.toISOString();
 
-  // Combine all sessions
-  const allSessions: MomenceSession[] = results.flatMap(r => r.sessions);
+  const allSessions: MomenceSession[] = [];
+  let page = 0;
+  let hasMore = true;
 
-  // Filter to future sessions only (from now to daysAhead) and sort
-  return allSessions
-    .filter(s => {
-      const d = new Date(s.startsAt);
-      return d >= now && d <= futureLimit;
-    })
-    .sort((a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime());
+  // Fetch pages until we have all sessions in the date range
+  // Using Momence's native filtering: startAfter, startBefore, sortBy
+  while (hasMore && page < 5) {
+    // Max 5 pages (500 sessions) as safety limit
+    try {
+      const url = new URL(`${MOMENCE_API_URL}/api/v2/host/sessions`);
+      url.searchParams.set('page', page.toString());
+      url.searchParams.set('pageSize', '100');
+      url.searchParams.set('startAfter', startAfter);
+      url.searchParams.set('startBefore', startBefore);
+      url.searchParams.set('sortBy', 'startsAt');
+      url.searchParams.set('sortOrder', 'ASC');
+
+      const response = await fetch(url.toString(), {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        console.warn(`[clases] Momence API returned ${response.status}`);
+        break;
+      }
+
+      const data = await response.json();
+      const sessions = data.payload || [];
+      allSessions.push(...sessions);
+
+      // Check if there are more pages
+      const totalCount = data.pagination?.totalCount || 0;
+      const fetchedCount = (page + 1) * 100;
+      hasMore = fetchedCount < totalCount && sessions.length === 100;
+      page++;
+    } catch (error) {
+      console.warn('[clases] Error fetching page:', error);
+      break;
+    }
+  }
+
+  // Sessions are already sorted by Momence API (sortBy=startsAt)
+  return allSessions;
 }
 
 // Background refresh function (stale-while-revalidate)

@@ -337,8 +337,9 @@ function applyFilters(classes: ClassData[], filters: FilterState): ClassData[] {
 export function useBookingClasses({
   filters,
   weekOffset,
-  enablePagination = false,
-  pageSize = PAGE_SIZE,
+  // These are kept for API compatibility but not used in new implementation
+  enablePagination: _enablePagination = false,
+  pageSize: _pageSize = PAGE_SIZE,
   fetchAllWeeks = false,
 }: UseBookingClassesOptions): UseBookingClassesReturn {
   const [weekClasses, setWeekClasses] = useState<ClassData[]>([]);
@@ -347,8 +348,8 @@ export function useBookingClasses({
   const [error, setError] = useState<string | null>(null);
   const [retryCount, setRetryCount] = useState(0);
   const [isRetrying, setIsRetrying] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [hasMore, setHasMore] = useState(true);
+  const [currentPage] = useState(1); // Not used but kept for API compatibility
+  const [hasMore, setHasMore] = useState(false); // Always false - all data loaded at once
   const [fromCache, setFromCache] = useState(false);
 
   // All weeks mode state (Acuity mode)
@@ -357,7 +358,6 @@ export function useBookingClasses({
 
   // AbortController ref for cleanup
   const abortControllerRef = useRef<AbortController | null>(null);
-  const lastWeekOffsetRef = useRef<number>(weekOffset);
   // Track if component is still mounted to prevent state updates after unmount
   const isMountedRef = useRef(true);
 
@@ -369,202 +369,135 @@ export function useBookingClasses({
     };
   }, []);
 
-  // Fetch classes for a specific week (lazy loading)
-  const fetchWeekClasses = useCallback(
-    async (week: number, page = 1) => {
-      // Check cache first
-      const cached = classCache.get(week, enablePagination ? page : undefined);
-      if (cached) {
-        if (isMountedRef.current) {
-          setFromCache(true);
-          if (page === 1) {
-            setWeekClasses(cached);
-          } else {
-            setWeekClasses(prev => {
-              const existingIds = new Set(prev.map(c => c.id));
-              return [...prev, ...cached.filter(c => !existingIds.has(c.id))];
-            });
-          }
-          setHasMore(cached.length >= pageSize);
-        }
-        return cached;
-      }
-
+  // Fetch ALL classes from API and filter by week for display
+  const fetchClasses = useCallback(async () => {
+    // Check cache first - returns ALL 28 days of classes
+    const cached = classCache.getAll();
+    if (cached) {
       if (isMountedRef.current) {
-        setFromCache(false);
+        setFromCache(true);
+        setAllClasses(cached);
+        // Filter by current week for display
+        const weekFiltered = filterByWeek(cached, weekOffset);
+        setWeekClasses(weekFiltered);
+        setHasMore(false);
+        setLoading(false);
       }
-      abortControllerRef.current?.abort();
-      abortControllerRef.current = new AbortController();
-
-      if (isMountedRef.current) {
-        if (page === 1) {
-          setLoading(true);
-          setError(null);
-        }
-        setRetryCount(0);
-        setIsRetrying(false);
-      }
-
-      try {
-        let classes: ClassData[];
-
-        if (import.meta.env.DEV) {
-          // Use mock data in development - simulate per-week fetch
-          await new Promise(resolve => setTimeout(resolve, 200));
-          const weekData = generateMockClassesForWeek(week);
-
-          // Simulate pagination
-          if (enablePagination) {
-            const start = (page - 1) * pageSize;
-            classes = weekData.slice(start, start + pageSize);
-            if (isMountedRef.current) setHasMore(start + pageSize < weekData.length);
-          } else {
-            classes = weekData;
-            if (isMountedRef.current) setHasMore(false);
-          }
-        } else {
-          // Fetch all data from API (28 days) and filter by week on client
-          const data = await fetchWithRetry<{
-            success: boolean;
-            data?: { classes: ClassData[]; hasMore?: boolean; total?: number };
-            error?: string;
-          }>(`${API_ENDPOINTS.CLASSES}`, {
-            signal: abortControllerRef.current.signal,
-            onRetry: attempt => {
-              if (isMountedRef.current) {
-                setRetryCount(attempt);
-                setIsRetrying(true);
-              }
-            },
-          });
-
-          if (data.success) {
-            const allData = data.data?.classes || [];
-            // Filter by week on the client side
-            classes = filterByWeek(allData, week);
-
-            // Apply pagination if enabled
-            if (enablePagination) {
-              const start = (page - 1) * pageSize;
-              const paginatedClasses = classes.slice(start, start + pageSize);
-              if (isMountedRef.current) setHasMore(start + pageSize < classes.length);
-              classes = paginatedClasses;
-            } else {
-              if (isMountedRef.current) setHasMore(false);
-            }
-          } else {
-            throw new Error(data.error || 'Unknown error');
-          }
-        }
-
-        // Update cache (only if data is valid)
-        classCache.set(week, classes, enablePagination ? page : undefined);
-
-        // Update state (only if still mounted)
-        if (isMountedRef.current) {
-          if (page === 1) {
-            setWeekClasses(classes);
-          } else {
-            setWeekClasses(prev => {
-              const existingIds = new Set(prev.map(c => c.id));
-              return [...prev, ...classes.filter(c => !existingIds.has(c.id))];
-            });
-          }
-        }
-
-        return classes;
-      } catch (err) {
-        if (err instanceof DOMException && err.name === 'AbortError') {
-          return [];
-        }
-
-        const message = err instanceof Error ? err.message : 'Error loading classes';
-        if (isMountedRef.current) {
-          setError(message);
-          if (page === 1) setWeekClasses([]);
-        }
-        console.error('Failed to fetch classes:', err);
-        return [];
-      } finally {
-        if (isMountedRef.current) {
-          setLoading(false);
-          setIsRetrying(false);
-        }
-      }
-    },
-    [enablePagination, pageSize]
-  );
-
-  // Prefetch adjacent weeks for smooth navigation (prefetch 2 weeks ahead)
-  const prefetchAdjacentWeeks = useCallback(
-    (currentWeek: number) => {
-      // Prefetch next 2 weeks if not cached (for smoother navigation)
-      if (!classCache.has(currentWeek + 1) && currentWeek + 1 <= 3) {
-        fetchWeekClasses(currentWeek + 1).catch(() => {});
-      }
-      if (!classCache.has(currentWeek + 2) && currentWeek + 2 <= 3) {
-        // Delay second prefetch slightly to prioritize immediate next week
-        setTimeout(() => {
-          fetchWeekClasses(currentWeek + 2).catch(() => {});
-        }, 500);
-      }
-      // Prefetch previous week if not cached
-      if (!classCache.has(currentWeek - 1) && currentWeek > 0) {
-        fetchWeekClasses(currentWeek - 1).catch(() => {});
-      }
-    },
-    [fetchWeekClasses]
-  );
-
-  // Load more for pagination (infinite scroll)
-  const loadMore = useCallback(async () => {
-    if (!hasMore || loading) return;
-    const nextPage = currentPage + 1;
-    setCurrentPage(nextPage);
-    await fetchWeekClasses(weekOffset, nextPage);
-  }, [hasMore, loading, currentPage, weekOffset, fetchWeekClasses]);
-
-  // Refetch current week
-  const refetch = useCallback(async () => {
-    classCache.invalidate(weekOffset);
-    setCurrentPage(1);
-    await fetchWeekClasses(weekOffset, 1);
-  }, [weekOffset, fetchWeekClasses]);
-
-  // Fetch on week change
-  useEffect(() => {
-    if (lastWeekOffsetRef.current !== weekOffset) {
-      setCurrentPage(1);
-      lastWeekOffsetRef.current = weekOffset;
+      return cached;
     }
 
-    fetchWeekClasses(weekOffset, 1).then(() => {
-      // Prefetch adjacent weeks after current week loads
-      prefetchAdjacentWeeks(weekOffset);
-    });
+    if (isMountedRef.current) {
+      setFromCache(false);
+      setLoading(true);
+      setError(null);
+      setRetryCount(0);
+      setIsRetrying(false);
+    }
+
+    abortControllerRef.current?.abort();
+    abortControllerRef.current = new AbortController();
+
+    try {
+      let allData: ClassData[];
+
+      if (import.meta.env.DEV) {
+        // Use mock data in development - generate all 4 weeks
+        await new Promise(resolve => setTimeout(resolve, 200));
+        allData = [];
+        for (let w = 0; w < 4; w++) {
+          allData.push(...generateMockClassesForWeek(w));
+        }
+        // Sort by date
+        allData.sort(
+          (a, b) => new Date(a.rawStartsAt).getTime() - new Date(b.rawStartsAt).getTime()
+        );
+      } else {
+        // Fetch all 28 days from API
+        const data = await fetchWithRetry<{
+          success: boolean;
+          data?: { classes: ClassData[] };
+          error?: string;
+        }>(`${API_ENDPOINTS.CLASSES}`, {
+          signal: abortControllerRef.current.signal,
+          onRetry: attempt => {
+            if (isMountedRef.current) {
+              setRetryCount(attempt);
+              setIsRetrying(true);
+            }
+          },
+        });
+
+        if (data.success) {
+          allData = data.data?.classes || [];
+        } else {
+          throw new Error(data.error || 'Unknown error');
+        }
+      }
+
+      // Cache ALL data
+      classCache.setAll(allData);
+
+      // Update state (only if still mounted)
+      if (isMountedRef.current) {
+        setAllClasses(allData);
+        // Filter by current week for display
+        const weekFiltered = filterByWeek(allData, weekOffset);
+        setWeekClasses(weekFiltered);
+        setHasMore(false);
+      }
+
+      return allData;
+    } catch (err) {
+      if (err instanceof DOMException && err.name === 'AbortError') {
+        return [];
+      }
+
+      const message = err instanceof Error ? err.message : 'Error loading classes';
+      if (isMountedRef.current) {
+        setError(message);
+        setWeekClasses([]);
+        setAllClasses([]);
+      }
+      console.error('Failed to fetch classes:', err);
+      return [];
+    } finally {
+      if (isMountedRef.current) {
+        setLoading(false);
+        setIsRetrying(false);
+      }
+    }
+  }, [weekOffset]);
+
+  // Load more is not needed since we fetch all data at once
+  const loadMore = useCallback(async () => {
+    // No-op - all data is loaded at once
+  }, []);
+
+  // Refetch all data
+  const refetch = useCallback(async () => {
+    classCache.invalidate();
+    await fetchClasses();
+  }, [fetchClasses]);
+
+  // Initial fetch on mount
+  useEffect(() => {
+    fetchClasses();
 
     return () => {
       abortControllerRef.current?.abort();
     };
-  }, [weekOffset, fetchWeekClasses, prefetchAdjacentWeeks]);
+  }, [fetchClasses]);
 
-  // Maintain allClasses for filter options (aggregate from cache)
+  // When weekOffset changes, filter from cached data
   useEffect(() => {
-    const aggregated: ClassData[] = [];
-    for (let w = 0; w < 4; w++) {
-      const cached = classCache.get(w);
-      if (cached) aggregated.push(...cached);
+    const cached = classCache.getAll();
+    if (cached && isMountedRef.current) {
+      const weekFiltered = filterByWeek(cached, weekOffset);
+      setWeekClasses(weekFiltered);
     }
-    // Deduplicate to avoid duplicate classes from overlapping weeks
-    const deduplicated = deduplicateById(aggregated);
-    if (deduplicated.length > 0) {
-      setAllClasses(deduplicated);
-    } else {
-      setAllClasses(weekClasses);
-    }
-  }, [weekClasses]);
+  }, [weekOffset]);
 
-  // Fetch all weeks when in Acuity mode (filters active)
+  // When Acuity mode (filters active), use all cached data
   useEffect(() => {
     if (!fetchAllWeeks) {
       if (isMountedRef.current) {
@@ -573,76 +506,16 @@ export function useBookingClasses({
       return;
     }
 
-    // AbortController for canceling requests on cleanup
-    const controller = new AbortController();
-
-    const fetchAll = async () => {
-      if (isMountedRef.current) {
-        setAllWeeksLoading(true);
-      }
-
-      try {
-        // Fetch all 4 weeks in parallel
-        const weekPromises = [0, 1, 2, 3].map(async week => {
-          // Check cache first
-          const cached = classCache.get(week);
-          if (cached) return cached;
-
-          // Generate mock data in dev mode
-          if (import.meta.env.DEV) {
-            await new Promise(resolve => setTimeout(resolve, 100));
-            const data = generateMockClassesForWeek(week);
-            classCache.set(week, data);
-            return data;
-          }
-
-          // Production: fetch all data from API and filter by week
-          const response = await fetch(`${API_ENDPOINTS.CLASSES}`, {
-            signal: controller.signal,
-          });
-          const data = await response.json();
-          if (data.success) {
-            const allData = data.data?.classes || [];
-            const weekData = filterByWeek(allData, week);
-            classCache.set(week, weekData);
-            return weekData;
-          }
-          return [];
-        });
-
-        const results = await Promise.all(weekPromises);
-        // Flatten, deduplicate, and sort by start time
-        const combined = deduplicateById(results.flat()).sort(
-          (a, b) => new Date(a.rawStartsAt).getTime() - new Date(b.rawStartsAt).getTime()
-        );
-
-        // Only update state if still mounted
-        if (isMountedRef.current) {
-          setAllWeeksClasses(combined);
-        }
-      } catch (err) {
-        // Ignore abort errors
-        if (err instanceof DOMException && err.name === 'AbortError') {
-          return;
-        }
-        console.error('Failed to fetch all weeks:', err);
-        if (isMountedRef.current) {
-          setAllWeeksClasses([]);
-        }
-      } finally {
-        if (isMountedRef.current) {
-          setAllWeeksLoading(false);
-        }
-      }
-    };
-
-    fetchAll();
-
-    // Cleanup: abort pending requests
-    return () => {
-      controller.abort();
-    };
-  }, [fetchAllWeeks]);
+    // Use all cached data - already has 28 days
+    const cached = classCache.getAll();
+    if (cached && isMountedRef.current) {
+      setAllWeeksClasses(cached);
+      setAllWeeksLoading(false);
+    } else {
+      // If no cache yet, data will be available after initial fetch
+      setAllWeeksLoading(loading);
+    }
+  }, [fetchAllWeeks, allClasses, loading]);
 
   // Apply filters to current week classes
   const classes = useMemo(() => {
