@@ -307,7 +307,7 @@ async function createMomenceBooking(
     const bookingData = await bookingResponse.json();
     console.warn('[Momence Booking] Full response:', JSON.stringify(bookingData));
 
-    const bookingId = bookingData.payload?.id || bookingData.id;
+    const bookingId = bookingData.sessionBookingId || bookingData.payload?.id || bookingData.id;
 
     // Validate we actually got a booking ID
     if (!bookingId) {
