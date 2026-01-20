@@ -206,8 +206,8 @@ async function createMomenceBooking(
     // Get hostLocationId from environment variable or use hardcoded fallback
     let hostLocationId: number | null = null;
 
-    // Farray's Center location ID in Momence
-    const FARRAY_LOCATION_ID = 36148;
+    // Farray's Center location ID in Momence (from dashboard URL: /locations/26485)
+    const FARRAY_LOCATION_ID = 26485;
 
     // First check environment variable, then use hardcoded fallback
     const envLocationId = process.env['MOMENCE_LOCATION_ID'];
