@@ -60,6 +60,10 @@ const RETRY_CONFIG = {
 // Pagination configuration
 const PAGE_SIZE = 20;
 
+// Minimum hours in advance required to book a class
+// Classes starting within this window won't be shown to users
+const MIN_BOOKING_HOURS = 24;
+
 interface UseBookingClassesOptions {
   filters: FilterState;
   weekOffset: number;
@@ -226,6 +230,8 @@ function generateMockClassesForWeek(weekOffset: number): ClassData[] {
 // Filter classes by week offset (client-side filtering)
 function filterByWeek(classesData: ClassData[], offset: number): ClassData[] {
   const now = new Date();
+  // Minimum booking time: classes must start at least MIN_BOOKING_HOURS from now
+  const minBookingTime = new Date(now.getTime() + MIN_BOOKING_HOURS * 60 * 60 * 1000);
 
   // Get start of current week (Monday)
   const dayOfWeek = now.getDay();
@@ -240,9 +246,13 @@ function filterByWeek(classesData: ClassData[], offset: number): ClassData[] {
 
   return classesData.filter(c => {
     const classDate = new Date(c.rawStartsAt);
-    // For week 0 (current week), include classes from now to end of week
+    // All classes must be at least MIN_BOOKING_HOURS in the future
+    if (classDate < minBookingTime) {
+      return false;
+    }
+    // For week 0 (current week), include classes from minBookingTime to end of week
     if (offset === 0) {
-      return classDate >= now && classDate < endOfWeek;
+      return classDate < endOfWeek;
     }
     return classDate >= startOfWeek && classDate < endOfWeek;
   });
