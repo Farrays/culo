@@ -203,6 +203,26 @@ async function createMomenceBooking(
       customerData.email
     );
 
+    // Get session details to find hostLocationId
+    let hostLocationId: number | null = null;
+    try {
+      const sessionResponse = await fetch(`${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      if (sessionResponse.ok) {
+        const sessionData = await sessionResponse.json();
+        console.warn('[Momence Booking] Session data:', JSON.stringify(sessionData));
+        hostLocationId = sessionData.payload?.hostLocationId || sessionData.hostLocationId;
+        console.warn('[Momence Booking] Found hostLocationId:', hostLocationId);
+      }
+    } catch (err) {
+      console.warn('[Momence Booking] Could not fetch session details:', err);
+    }
+
     // Primero, buscar o crear el customer
     console.warn('[Momence Booking] Searching for existing member...');
     const memberResponse = await fetch(`${MOMENCE_API_URL}/api/v2/host/members/list`, {
@@ -249,7 +269,11 @@ async function createMomenceBooking(
 
     // Si no existe, crear el customer
     if (!customerId) {
-      console.warn('[Momence Booking] Creating new member...');
+      if (!hostLocationId) {
+        console.error('[Momence Booking] Cannot create member without hostLocationId');
+        return { success: false, error: 'Missing hostLocationId for member creation' };
+      }
+      console.warn('[Momence Booking] Creating new member with homeLocationId:', hostLocationId);
       const createMemberResponse = await fetch(`${MOMENCE_API_URL}/api/v2/host/members`, {
         method: 'POST',
         headers: {
@@ -261,6 +285,7 @@ async function createMomenceBooking(
           firstName: customerData.firstName,
           lastName: customerData.lastName,
           phone: customerData.phone,
+          homeLocationId: hostLocationId,
         }),
       });
 
