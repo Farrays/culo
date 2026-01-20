@@ -519,7 +519,10 @@ export function useBookingClasses({
     // Use all cached data - already has 28 days
     const cached = classCache.getAll();
     if (cached && isMountedRef.current) {
-      setAllWeeksClasses(cached);
+      // Apply 24h minimum booking filter to all weeks too
+      const minBookingTime = new Date(Date.now() + MIN_BOOKING_HOURS * 60 * 60 * 1000);
+      const filtered = cached.filter(c => new Date(c.rawStartsAt) >= minBookingTime);
+      setAllWeeksClasses(filtered);
       setAllWeeksLoading(false);
     } else {
       // If no cache yet, data will be available after initial fetch
