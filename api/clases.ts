@@ -294,9 +294,8 @@ async function fetchFutureSessions(
   // For week 0, filter from now; for other weeks, filter from startDate
   const filterFromDate = weekOffset === 0 ? new Date() : startDate;
 
-  // OPTIMIZATION: Fetch first 5 pages in parallel instead of binary search
-  // This covers most use cases (500 sessions = ~2-3 months of classes)
-  const pagePromises = [0, 1, 2, 3, 4].map(page => fetchPage(accessToken, page));
+  // OPTIMIZATION: Fetch first 3 pages in parallel (300 sessions = ~4 weeks at 80/week)
+  const pagePromises = [0, 1, 2].map(page => fetchPage(accessToken, page));
   const results = await Promise.all(pagePromises);
 
   // Combine all sessions
