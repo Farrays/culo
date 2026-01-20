@@ -196,7 +196,15 @@ async function createMomenceBooking(
   }
 ): Promise<{ success: boolean; bookingId?: number; error?: string }> {
   try {
+    console.warn(
+      '[Momence Booking] Starting for sessionId:',
+      sessionId,
+      'email:',
+      customerData.email
+    );
+
     // Primero, buscar o crear el customer
+    console.warn('[Momence Booking] Searching for existing member...');
     const memberResponse = await fetch(`${MOMENCE_API_URL}/api/v2/host/members/list`, {
       method: 'POST',
       headers: {
@@ -214,13 +222,23 @@ async function createMomenceBooking(
 
     if (memberResponse.ok) {
       const memberData = await memberResponse.json();
+      console.warn(
+        '[Momence Booking] Member search result:',
+        memberData.payload?.length || 0,
+        'members found'
+      );
       if (memberData.payload && memberData.payload.length > 0) {
         customerId = memberData.payload[0].id;
+        console.warn('[Momence Booking] Found existing member:', customerId);
       }
+    } else {
+      const errorText = await memberResponse.text();
+      console.error('[Momence Booking] Member search failed:', memberResponse.status, errorText);
     }
 
     // Si no existe, crear el customer
     if (!customerId) {
+      console.warn('[Momence Booking] Creating new member...');
       const createMemberResponse = await fetch(`${MOMENCE_API_URL}/api/v2/host/members`, {
         method: 'POST',
         headers: {
@@ -238,16 +256,31 @@ async function createMomenceBooking(
       if (createMemberResponse.ok) {
         const newMember = await createMemberResponse.json();
         customerId = newMember.payload?.id || newMember.id;
+        console.warn('[Momence Booking] Created new member:', customerId);
+      } else {
+        const errorText = await createMemberResponse.text();
+        console.error(
+          '[Momence Booking] Member creation failed:',
+          createMemberResponse.status,
+          errorText
+        );
       }
     }
 
     if (!customerId) {
+      console.error('[Momence Booking] Could not create or find customer');
       return { success: false, error: 'Could not create or find customer' };
     }
 
     // Crear el booking gratuito
     // API docs: POST /api/v2/host/sessions/{sessionId}/bookings/free
     // Body: { memberId: number (required), createRecurringBooking?: boolean }
+    console.warn(
+      '[Momence Booking] Creating booking for memberId:',
+      customerId,
+      'sessionId:',
+      sessionId
+    );
     const bookingResponse = await fetch(
       `${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}/bookings/free`,
       {
@@ -264,14 +297,20 @@ async function createMomenceBooking(
 
     if (!bookingResponse.ok) {
       const errorText = await bookingResponse.text();
-      console.error('Booking creation failed:', bookingResponse.status, errorText);
-      return { success: false, error: `Booking failed: ${bookingResponse.status}` };
+      console.error(
+        '[Momence Booking] Booking creation failed:',
+        bookingResponse.status,
+        errorText
+      );
+      return { success: false, error: `Booking failed: ${bookingResponse.status} - ${errorText}` };
     }
 
     const bookingData = await bookingResponse.json();
-    return { success: true, bookingId: bookingData.payload?.id || bookingData.id };
+    const bookingId = bookingData.payload?.id || bookingData.id;
+    console.warn('[Momence Booking] SUCCESS! Created booking:', bookingId);
+    return { success: true, bookingId };
   } catch (error) {
-    console.error('Momence booking error:', error);
+    console.error('[Momence Booking] Error:', error);
     return { success: false, error: 'Momence API error' };
   }
 }
@@ -328,28 +367,37 @@ async function sendToCustomerLeads(data: {
   }
 
   try {
+    const payload = {
+      token: MOMENCE_TOKEN,
+      email: data.email,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      phoneNumber: data.phone,
+      // Enviar nombre de clase real, no el estilo normalizado
+      estilo: data.className || data.estilo || '',
+      // Formatear fecha con hora de Madrid
+      date: formatDateForLeads(data.date || ''),
+      comoconoce: data.comoconoce || 'Web - Formulario Reservas',
+    };
+
+    console.warn('[Customer Leads] Sending to:', MOMENCE_LEADS_URL);
+    console.warn('[Customer Leads] Payload:', { ...payload, token: '[REDACTED]' });
+
     const response = await fetch(MOMENCE_LEADS_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        token: MOMENCE_TOKEN,
-        email: data.email,
-        firstName: data.firstName,
-        lastName: data.lastName,
-        phoneNumber: data.phone,
-        // Enviar nombre de clase real, no el estilo normalizado
-        estilo: data.className || data.estilo || '',
-        // Formatear fecha con hora de Madrid
-        date: formatDateForLeads(data.date || ''),
-        comoconoce: data.comoconoce || 'Web - Formulario Reservas',
-      }),
+      body: JSON.stringify(payload),
     });
+
+    const responseText = await response.text();
+    console.warn('[Customer Leads] Response status:', response.status);
+    console.warn('[Customer Leads] Response body:', responseText);
 
     return { success: response.ok };
   } catch (error) {
-    console.error('Customer Leads error:', error);
+    console.error('[Customer Leads] Error:', error);
     return { success: false };
   }
 }
@@ -524,11 +572,22 @@ export default async function handler(
       eventId || `booking_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
     // 1. Crear booking en Momence o enviar a Customer Leads
-    let momenceResult: { success: boolean; bookingId?: number } = { success: false };
+    let momenceResult: { success: boolean; bookingId?: number; error?: string } = {
+      success: false,
+    };
+
+    console.warn('[reservar] Starting booking process:', {
+      hasSessionId: !!sessionId,
+      sessionId,
+      email: normalizedEmail,
+      className,
+    });
 
     if (sessionId) {
       // Si tenemos sessionId, crear booking real
       const accessToken = await getAccessToken();
+      console.warn('[reservar] Got access token:', !!accessToken);
+
       if (accessToken) {
         momenceResult = await createMomenceBooking(accessToken, parseInt(sessionId), {
           email: normalizedEmail,
@@ -536,11 +595,22 @@ export default async function handler(
           lastName: sanitize(lastName),
           phone: sanitize(phone),
         });
+        console.warn('[reservar] Momence booking result:', momenceResult);
+      } else {
+        console.error('[reservar] Failed to get Momence access token - check OAuth credentials');
       }
+    } else {
+      console.warn('[reservar] No sessionId provided, will use Customer Leads');
     }
 
     // Si no hay sessionId o el booking falló, enviar a Customer Leads
     if (!momenceResult.success) {
+      console.warn('[reservar] Booking failed or no sessionId, trying Customer Leads...');
+      console.warn('[reservar] Customer Leads env check:', {
+        hasLeadsUrl: !!process.env['MOMENCE_API_URL'],
+        hasToken: !!process.env['MOMENCE_TOKEN'],
+      });
+
       const leadsResult = await sendToCustomerLeads({
         email: normalizedEmail,
         firstName: sanitize(firstName),
@@ -551,6 +621,7 @@ export default async function handler(
         date: sanitize(classDate || ''),
         comoconoce: sanitize(comoconoce || ''),
       });
+      console.warn('[reservar] Customer Leads result:', leadsResult);
       momenceResult = { success: leadsResult.success };
     }
 
