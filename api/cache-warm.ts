@@ -122,7 +122,105 @@ async function getAccessToken(): Promise<string | null> {
   }
 }
 
-// Fetch sessions for a specific week (parallel page fetching)
+// Fetch a single page with date range info
+async function fetchPageWithDateRange(
+  accessToken: string,
+  page: number
+): Promise<{
+  sessions: MomenceSession[];
+  totalPages: number;
+  minDate: Date | null;
+  maxDate: Date | null;
+}> {
+  try {
+    const response = await fetch(
+      `${MOMENCE_API_URL}/api/v2/host/sessions?page=${page}&pageSize=100`,
+      {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+
+    if (!response.ok) {
+      return { sessions: [], totalPages: 0, minDate: null, maxDate: null };
+    }
+
+    const data = await response.json();
+    const sessions: MomenceSession[] = data.payload || [];
+    const totalCount = data.pagination?.totalCount || 0;
+
+    if (sessions.length === 0) {
+      return {
+        sessions: [],
+        totalPages: Math.ceil(totalCount / 100),
+        minDate: null,
+        maxDate: null,
+      };
+    }
+
+    const dates = sessions.map(s => new Date(s.startsAt).getTime());
+    return {
+      sessions,
+      totalPages: Math.ceil(totalCount / 100),
+      minDate: new Date(Math.min(...dates)),
+      maxDate: new Date(Math.max(...dates)),
+    };
+  } catch {
+    return { sessions: [], totalPages: 0, minDate: null, maxDate: null };
+  }
+}
+
+// Binary search to find the page containing sessions for the target date
+async function findStartPage(
+  accessToken: string,
+  targetDate: Date
+): Promise<{ page: number; totalPages: number }> {
+  const firstPage = await fetchPageWithDateRange(accessToken, 0);
+  if (firstPage.totalPages === 0) return { page: 0, totalPages: 0 };
+
+  const totalPages = firstPage.totalPages;
+
+  if (firstPage.minDate && firstPage.minDate >= targetDate) {
+    return { page: 0, totalPages };
+  }
+  if (firstPage.maxDate && firstPage.maxDate >= targetDate) {
+    return { page: 0, totalPages };
+  }
+
+  let left = 0;
+  let right = totalPages - 1;
+  let resultPage = 0;
+  let iterations = 0;
+
+  while (left <= right && iterations < 20) {
+    iterations++;
+    const mid = Math.floor((left + right) / 2);
+    const pageData = await fetchPageWithDateRange(accessToken, mid);
+
+    if (!pageData.minDate) {
+      right = mid - 1;
+      continue;
+    }
+
+    if (pageData.minDate <= targetDate && pageData.maxDate && targetDate <= pageData.maxDate) {
+      resultPage = mid;
+      break;
+    }
+
+    if (pageData.minDate > targetDate) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
+      resultPage = mid;
+    }
+  }
+
+  return { page: resultPage, totalPages };
+}
+
+// Fetch sessions for a specific week using binary search
 async function fetchSessionsForWeek(
   accessToken: string,
   weekOffset: number,
@@ -134,37 +232,38 @@ async function fetchSessionsForWeek(
   const futureLimit = new Date(startDate.getTime() + daysAhead * 24 * 60 * 60 * 1000);
   const filterFromDate = weekOffset === 0 ? new Date() : startDate;
 
-  // Fetch first 5 pages in parallel (covers most use cases)
-  const pagePromises = [0, 1, 2, 3, 4].map(async page => {
-    try {
-      const response = await fetch(
-        `${MOMENCE_API_URL}/api/v2/host/sessions?page=${page}&pageSize=100`,
-        {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-            'Content-Type': 'application/json',
-          },
-        }
-      );
+  const { page: startPage, totalPages } = await findStartPage(accessToken, filterFromDate);
 
-      if (!response.ok) return [];
-      const data = await response.json();
-      return data.payload || [];
-    } catch {
-      return [];
-    }
-  });
+  if (totalPages === 0) return [];
 
-  const results = await Promise.all(pagePromises);
-  const allSessions: MomenceSession[] = results.flat();
+  const allSessions: MomenceSession[] = [];
+  let currentPage = startPage;
+  const maxPagesToFetch = 10;
+  let pagesFetched = 0;
 
-  // Filter to the requested date range
-  return allSessions
-    .filter(s => {
+  while (currentPage < totalPages && pagesFetched < maxPagesToFetch) {
+    const pageData = await fetchPageWithDateRange(accessToken, currentPage);
+    pagesFetched++;
+
+    if (pageData.sessions.length === 0) break;
+
+    const relevantSessions = pageData.sessions.filter(s => {
       const d = new Date(s.startsAt);
       return d >= filterFromDate && d <= futureLimit;
-    })
-    .sort((a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime());
+    });
+
+    allSessions.push(...relevantSessions);
+
+    if (pageData.maxDate && pageData.maxDate > futureLimit) {
+      break;
+    }
+
+    currentPage++;
+  }
+
+  return allSessions.sort(
+    (a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime()
+  );
 }
 
 // Warm cache for all week configurations

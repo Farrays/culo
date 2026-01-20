@@ -149,6 +149,7 @@ const PAGES_TO_EXCLUDE_FROM_AUTO_CONTENT = [
   'home',           // Muy dinámica
   'horariosPrecio', // Datos en tiempo real
   'calendario',     // Datos dinámicos
+  'reservas',       // Widget interactivo con APIs del navegador - causa hydration mismatch
   'notFound',       // Ya tiene contenido
   // Páginas legales - ya tienen contenido manual
   'termsConditions',
