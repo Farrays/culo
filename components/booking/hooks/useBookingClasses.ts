@@ -428,13 +428,27 @@ export function useBookingClasses({
 
           if (data.success) {
             classes = data.data?.classes || [];
+
+            // Validate data freshness: for week 0, first class should not be in the past
+            if (week === 0 && classes.length > 0) {
+              const now = new Date();
+              const firstClassDate = new Date(classes[0]?.rawStartsAt || '');
+              // If first class is more than 1 hour in the past, data is stale
+              if (firstClassDate.getTime() < now.getTime() - 60 * 60 * 1000) {
+                console.warn('[useBookingClasses] Stale data detected, invalidating cache');
+                classCache.invalidate();
+                // Don't use this stale data, let the next effect refetch
+                throw new Error('Stale data detected');
+              }
+            }
+
             if (isMountedRef.current) setHasMore(data.data?.hasMore ?? classes.length >= pageSize);
           } else {
             throw new Error(data.error || 'Unknown error');
           }
         }
 
-        // Update cache
+        // Update cache (only if data is valid)
         classCache.set(week, classes, enablePagination ? page : undefined);
 
         // Update state (only if still mounted)
