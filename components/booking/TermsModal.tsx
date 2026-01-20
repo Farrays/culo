@@ -19,6 +19,7 @@ const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose, onAccept }) =>
   const { t } = useI18n();
   const modalRef = useRef<HTMLDivElement>(null);
   const historyPushedRef = useRef(false);
+  const isRegisteredRef = useRef(false); // Track if we've registered this modal
 
   // Close with history support
   const handleClose = useCallback(() => {
@@ -39,11 +40,15 @@ const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose, onAccept }) =>
   useEffect(() => {
     if (!isOpen) {
       historyPushedRef.current = false;
+      isRegisteredRef.current = false;
       return;
     }
 
-    // Register modal as open (reference counting)
-    registerModalOpen();
+    // Register modal as open (reference counting) - only once
+    if (!isRegisteredRef.current) {
+      registerModalOpen();
+      isRegisteredRef.current = true;
+    }
 
     // Push history state for modal (only once per open)
     if (!historyPushedRef.current) {
@@ -54,7 +59,11 @@ const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose, onAccept }) =>
     // Handle browser back button
     const handlePopState = () => {
       historyPushedRef.current = false;
-      registerModalClose();
+      // Only unregister if we registered
+      if (isRegisteredRef.current) {
+        registerModalClose();
+        isRegisteredRef.current = false;
+      }
       onClose();
     };
     window.addEventListener('popstate', handlePopState);
@@ -68,7 +77,11 @@ const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose, onAccept }) =>
     return () => {
       document.removeEventListener('keydown', handleEscape);
       window.removeEventListener('popstate', handlePopState);
-      registerModalClose();
+      // Only unregister in cleanup if still registered (not done by popstate)
+      if (isRegisteredRef.current) {
+        registerModalClose();
+        isRegisteredRef.current = false;
+      }
       document.body.style.overflow = '';
     };
   }, [isOpen, onClose, handleClose]);

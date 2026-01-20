@@ -282,6 +282,7 @@ const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) =
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const historyPushedRef = useRef(false);
+  const isRegisteredRef = useRef(false); // Track if we've registered this modal
   const modalId = `class-info-modal-${classData.id}`;
   const titleId = `class-info-title-${classData.id}`;
 
@@ -296,8 +297,11 @@ const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) =
 
   // History management - must run immediately on mount
   useEffect(() => {
-    // Register modal as open (reference counting)
-    registerModalOpen();
+    // Register modal as open (reference counting) - only once
+    if (!isRegisteredRef.current) {
+      registerModalOpen();
+      isRegisteredRef.current = true;
+    }
 
     // Push history state for modal (only once)
     if (!historyPushedRef.current) {
@@ -308,14 +312,22 @@ const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) =
     // Handle browser back button
     const handlePopState = () => {
       historyPushedRef.current = false;
-      registerModalClose();
+      // Only unregister if we registered
+      if (isRegisteredRef.current) {
+        registerModalClose();
+        isRegisteredRef.current = false;
+      }
       onClose();
     };
     window.addEventListener('popstate', handlePopState);
 
     return () => {
       window.removeEventListener('popstate', handlePopState);
-      registerModalClose();
+      // Only unregister in cleanup if still registered (not done by popstate)
+      if (isRegisteredRef.current) {
+        registerModalClose();
+        isRegisteredRef.current = false;
+      }
     };
   }, [onClose]);
 
