@@ -486,10 +486,11 @@ export default async function handler(
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // CORS headers
+  // CORS headers - NO CACHE to ensure fresh data
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET');
-  res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=600');
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
+  res.setHeader('Pragma', 'no-cache');
 
   try {
     const { style, days, week } = req.query;
@@ -497,10 +498,18 @@ export default async function handler(
     const weekOffset = Math.min(4, Math.max(0, parseInt(week as string) || 0));
     const styleFilter = style ? String(style).toLowerCase() : null;
 
-    // OPTIMIZED: Stale-while-revalidate cache strategy
-    // Returns cached data instantly, refreshes in background if stale
+    // Get today's date in Spain timezone for cache key
+    const now = new Date();
+    const spainDate = new Intl.DateTimeFormat('en-CA', {
+      timeZone: SPAIN_TIMEZONE,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    }).format(now); // Format: YYYY-MM-DD
+
+    // Cache key includes today's date to ensure fresh data each day
     const redis = getRedisClient();
-    const cacheKey = `${CACHE_KEY}:${daysAhead}:week${weekOffset}`;
+    const cacheKey = `${CACHE_KEY}:${spainDate}:${daysAhead}:week${weekOffset}`;
 
     let sessions: MomenceSession[];
     let fromCache = false;
