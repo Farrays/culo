@@ -203,8 +203,10 @@ async function createMomenceBooking(
       customerData.email
     );
 
-    // Get session details to find hostLocationId
+    // Get hostLocationId - try session first, then host locations endpoint
     let hostLocationId: number | null = null;
+
+    // First try to get it from the session
     try {
       const sessionResponse = await fetch(`${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}`, {
         method: 'GET',
@@ -216,11 +218,40 @@ async function createMomenceBooking(
       if (sessionResponse.ok) {
         const sessionData = await sessionResponse.json();
         console.warn('[Momence Booking] Session data:', JSON.stringify(sessionData));
-        hostLocationId = sessionData.payload?.hostLocationId || sessionData.hostLocationId;
-        console.warn('[Momence Booking] Found hostLocationId:', hostLocationId);
+        // Try different field names
+        const session = sessionData.payload || sessionData;
+        hostLocationId = session.hostLocationId || session.locationId || session.location?.id;
+        console.warn('[Momence Booking] hostLocationId from session:', hostLocationId);
       }
     } catch (err) {
       console.warn('[Momence Booking] Could not fetch session details:', err);
+    }
+
+    // If not found in session, try to get host locations
+    if (!hostLocationId) {
+      try {
+        // Endpoint: /api/v2/member/host/locations (not /host/locations)
+        const locationsResponse = await fetch(`${MOMENCE_API_URL}/api/v2/member/host/locations`, {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+          },
+        });
+        if (locationsResponse.ok) {
+          const locationsData = await locationsResponse.json();
+          console.warn('[Momence Booking] Host locations:', JSON.stringify(locationsData));
+          const locations = locationsData.payload || locationsData || [];
+          if (Array.isArray(locations) && locations.length > 0) {
+            hostLocationId = locations[0].id;
+            console.warn('[Momence Booking] Using first host location:', hostLocationId);
+          }
+        } else {
+          console.warn('[Momence Booking] Locations endpoint status:', locationsResponse.status);
+        }
+      } catch (err) {
+        console.warn('[Momence Booking] Could not fetch host locations:', err);
+      }
     }
 
     // Primero, buscar o crear el customer
