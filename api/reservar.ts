@@ -203,54 +203,39 @@ async function createMomenceBooking(
       customerData.email
     );
 
-    // Get hostLocationId - try session first, then host locations endpoint
+    // Get hostLocationId from environment variable or try to fetch it
     let hostLocationId: number | null = null;
 
-    // First try to get it from the session
-    try {
-      const sessionResponse = await fetch(`${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}`, {
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-          'Content-Type': 'application/json',
-        },
-      });
-      if (sessionResponse.ok) {
-        const sessionData = await sessionResponse.json();
-        console.warn('[Momence Booking] Session data:', JSON.stringify(sessionData));
-        // Try different field names
-        const session = sessionData.payload || sessionData;
-        hostLocationId = session.hostLocationId || session.locationId || session.location?.id;
-        console.warn('[Momence Booking] hostLocationId from session:', hostLocationId);
-      }
-    } catch (err) {
-      console.warn('[Momence Booking] Could not fetch session details:', err);
+    // First check environment variable (most reliable)
+    const envLocationId = process.env['MOMENCE_LOCATION_ID'];
+    if (envLocationId) {
+      hostLocationId = parseInt(envLocationId, 10);
+      console.warn('[Momence Booking] Using MOMENCE_LOCATION_ID from env:', hostLocationId);
     }
 
-    // If not found in session, try to get host locations
+    // If not in env, try to get it from the session
     if (!hostLocationId) {
       try {
-        // Endpoint: /api/v2/member/host/locations (not /host/locations)
-        const locationsResponse = await fetch(`${MOMENCE_API_URL}/api/v2/member/host/locations`, {
-          method: 'GET',
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-            'Content-Type': 'application/json',
-          },
-        });
-        if (locationsResponse.ok) {
-          const locationsData = await locationsResponse.json();
-          console.warn('[Momence Booking] Host locations:', JSON.stringify(locationsData));
-          const locations = locationsData.payload || locationsData || [];
-          if (Array.isArray(locations) && locations.length > 0) {
-            hostLocationId = locations[0].id;
-            console.warn('[Momence Booking] Using first host location:', hostLocationId);
+        const sessionResponse = await fetch(
+          `${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}`,
+          {
+            method: 'GET',
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+              'Content-Type': 'application/json',
+            },
           }
-        } else {
-          console.warn('[Momence Booking] Locations endpoint status:', locationsResponse.status);
+        );
+        if (sessionResponse.ok) {
+          const sessionData = await sessionResponse.json();
+          console.warn('[Momence Booking] Session data:', JSON.stringify(sessionData));
+          // Try different field names
+          const session = sessionData.payload || sessionData;
+          hostLocationId = session.hostLocationId || session.locationId || session.location?.id;
+          console.warn('[Momence Booking] hostLocationId from session:', hostLocationId);
         }
       } catch (err) {
-        console.warn('[Momence Booking] Could not fetch host locations:', err);
+        console.warn('[Momence Booking] Could not fetch session details:', err);
       }
     }
 
