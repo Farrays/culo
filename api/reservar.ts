@@ -222,14 +222,12 @@ async function createMomenceBooking(
 
     if (memberResponse.ok) {
       const memberData = await memberResponse.json();
-      console.warn(
-        '[Momence Booking] Member search result:',
-        memberData.payload?.length || 0,
-        'members found'
-      );
+      console.warn('[Momence Booking] Member search response:', JSON.stringify(memberData));
       if (memberData.payload && memberData.payload.length > 0) {
         customerId = memberData.payload[0].id;
-        console.warn('[Momence Booking] Found existing member:', customerId);
+        console.warn('[Momence Booking] Found existing member ID:', customerId);
+      } else {
+        console.warn('[Momence Booking] No existing member found, will create new one');
       }
     } else {
       const errorText = await memberResponse.text();
@@ -255,8 +253,9 @@ async function createMomenceBooking(
 
       if (createMemberResponse.ok) {
         const newMember = await createMemberResponse.json();
+        console.warn('[Momence Booking] Member creation response:', JSON.stringify(newMember));
         customerId = newMember.payload?.id || newMember.id;
-        console.warn('[Momence Booking] Created new member:', customerId);
+        console.warn('[Momence Booking] Created new member ID:', customerId);
       } else {
         const errorText = await createMemberResponse.text();
         console.error(
@@ -306,7 +305,16 @@ async function createMomenceBooking(
     }
 
     const bookingData = await bookingResponse.json();
+    console.warn('[Momence Booking] Full response:', JSON.stringify(bookingData));
+
     const bookingId = bookingData.payload?.id || bookingData.id;
+
+    // Validate we actually got a booking ID
+    if (!bookingId) {
+      console.error('[Momence Booking] No booking ID in response:', bookingData);
+      return { success: false, error: 'Momence returned no booking ID' };
+    }
+
     console.warn('[Momence Booking] SUCCESS! Created booking:', bookingId);
     return { success: true, bookingId };
   } catch (error) {
