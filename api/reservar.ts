@@ -272,8 +272,9 @@ async function createMomenceBooking(
     }
 
     // Crear el booking gratuito
-    // API docs: POST /api/v2/host/sessions/{sessionId}/bookings/free
-    // Body: { memberId: number (required), createRecurringBooking?: boolean }
+    // API docs: POST /api/v2/host/sessions/{sessionId}/add-for-free
+    // Body: { memberId: number (required) }
+    // Ref: https://api.docs.momence.com/reference/apiv2hostsessionbookingcontroller_addforfree
     console.warn(
       '[Momence Booking] Creating booking for memberId:',
       customerId,
@@ -281,7 +282,7 @@ async function createMomenceBooking(
       sessionId
     );
     const bookingResponse = await fetch(
-      `${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}/bookings/free`,
+      `${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}/add-for-free`,
       {
         method: 'POST',
         headers: {
@@ -289,7 +290,7 @@ async function createMomenceBooking(
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          memberId: customerId, // API expects 'memberId', not 'customerId'
+          memberId: customerId,
         }),
       }
     );
