@@ -246,6 +246,8 @@ async function createMomenceBooking(
     }
 
     // Crear el booking gratuito
+    // API docs: POST /api/v2/host/sessions/{sessionId}/bookings/free
+    // Body: { memberId: number (required), createRecurringBooking?: boolean }
     const bookingResponse = await fetch(
       `${MOMENCE_API_URL}/api/v2/host/sessions/${sessionId}/bookings/free`,
       {
@@ -255,7 +257,7 @@ async function createMomenceBooking(
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          customerId,
+          memberId: customerId, // API expects 'memberId', not 'customerId'
         }),
       }
     );
@@ -274,13 +276,46 @@ async function createMomenceBooking(
   }
 }
 
+// Timezone de España para formatear fechas
+const SPAIN_TIMEZONE = 'Europe/Madrid';
+
+// Formatear fecha ISO a formato ISO local de Madrid (para automatizaciones de Momence)
+// Entrada: "2024-01-20T18:00:00.000Z" (UTC)
+// Salida: "2024-01-20T19:00:00" (Madrid local, sin Z)
+function formatDateForLeads(isoDate: string): string {
+  if (!isoDate) return '';
+  try {
+    const date = new Date(isoDate);
+    if (isNaN(date.getTime())) return isoDate;
+
+    // Obtener componentes en timezone de Madrid
+    const parts = new Intl.DateTimeFormat('en-CA', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false,
+      timeZone: SPAIN_TIMEZONE,
+    }).formatToParts(date);
+
+    // Construir ISO string local (sin Z = interpretado como local)
+    const get = (type: string) => parts.find(p => p.type === type)?.value || '00';
+    return `${get('year')}-${get('month')}-${get('day')}T${get('hour')}:${get('minute')}:${get('second')}`;
+  } catch {
+    return isoDate; // Fallback al original si hay error
+  }
+}
+
 // Enviar a Customer Leads (alternativa cuando no hay sessionId específico)
 async function sendToCustomerLeads(data: {
   email: string;
   firstName: string;
   lastName: string;
   phone: string;
-  estilo?: string;
+  className?: string; // Nombre real de la clase (ej: "Sexy Style Iniciación")
+  estilo?: string; // Estilo normalizado (legacy, como fallback)
   date?: string;
   comoconoce?: string;
 }): Promise<{ success: boolean }> {
@@ -304,8 +339,10 @@ async function sendToCustomerLeads(data: {
         firstName: data.firstName,
         lastName: data.lastName,
         phoneNumber: data.phone,
-        estilo: data.estilo || '',
-        date: data.date || '',
+        // Enviar nombre de clase real, no el estilo normalizado
+        estilo: data.className || data.estilo || '',
+        // Formatear fecha con hora de Madrid
+        date: formatDateForLeads(data.date || ''),
         comoconoce: data.comoconoce || 'Web - Formulario Reservas',
       }),
     });
@@ -509,7 +546,8 @@ export default async function handler(
         firstName: sanitize(firstName),
         lastName: sanitize(lastName),
         phone: sanitize(phone),
-        estilo: sanitize(estilo || ''),
+        className: sanitize(className || ''), // Nombre real de la clase
+        estilo: sanitize(estilo || ''), // Fallback al estilo normalizado
         date: sanitize(classDate || ''),
         comoconoce: sanitize(comoconoce || ''),
       });

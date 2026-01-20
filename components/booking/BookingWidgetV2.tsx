@@ -659,17 +659,17 @@ const BookingWidgetV2: React.FC = memo(() => {
           className="absolute -inset-4 bg-gradient-to-r from-primary-dark/20 via-primary-accent/10 to-primary-dark/20 rounded-3xl blur-2xl -z-10"
           aria-hidden="true"
         />
-        <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8">
+        <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-4 sm:p-6 md:p-8">
           <div
             className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-accent to-transparent"
             aria-hidden="true"
           />
-          <div className="text-center mb-6">
-            <div className="flex justify-center mb-4">
+          <div className="text-center mb-4 sm:mb-6">
+            <div className="flex justify-center mb-3 sm:mb-4">
               <img
                 src="/images/logo/img/logo-fidc_256.webp"
                 alt="Farray's Dance Center"
-                className="h-24 sm:h-32 w-auto object-contain"
+                className="h-20 sm:h-24 md:h-32 w-auto object-contain"
                 loading="eager"
               />
             </div>
@@ -698,7 +698,7 @@ const BookingWidgetV2: React.FC = memo(() => {
       />
 
       {/* Main container */}
-      <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8">
+      <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-4 sm:p-6 md:p-8">
         {/* Decorative gradient line */}
         <div
           className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-accent to-transparent"
@@ -709,13 +709,13 @@ const BookingWidgetV2: React.FC = memo(() => {
         <LanguageSelector locale={locale} onLanguageChange={handleLanguageChange} />
 
         {/* Header with Logo */}
-        <div className="text-center mb-6">
+        <div className="text-center mb-4 sm:mb-6">
           {/* Logo - prominent and mobile first */}
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center mb-3 sm:mb-4">
             <img
               src="/images/logo/img/logo-fidc_256.webp"
               alt="Farray's Dance Center"
-              className="h-24 sm:h-32 w-auto object-contain"
+              className="h-20 sm:h-24 md:h-32 w-auto object-contain"
               loading="eager"
             />
           </div>
