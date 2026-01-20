@@ -145,7 +145,8 @@ describe('BookingWidgetV2 E2E Flow', () => {
     it('should have responsive padding', () => {
       const { container } = render(<BookingWidgetV2WithErrorBoundary />);
 
-      const responsiveElement = container.querySelector('.p-6');
+      // Mobile-first padding: p-4 sm:p-6 md:p-8
+      const responsiveElement = container.querySelector('.p-4');
       expect(responsiveElement).toBeInTheDocument();
     });
 
