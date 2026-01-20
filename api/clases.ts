@@ -360,16 +360,45 @@ async function fetchFutureSessions(
   weekOffset: number = 0
 ): Promise<MomenceSession[]> {
   // Calculate date range based on weekOffset
-  const baseDate = new Date();
-  baseDate.setHours(0, 0, 0, 0);
+  // Use Spain timezone for consistent date calculations
+  const now = new Date();
+  const spainFormatter = new Intl.DateTimeFormat('es-ES', {
+    timeZone: SPAIN_TIMEZONE,
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  });
+  const spainDateStr = spainFormatter.format(now);
+  const parts = spainDateStr.split('/').map(Number);
+  const day = parts[0] ?? 1;
+  const month = parts[1] ?? 1;
+  const year = parts[2] ?? new Date().getFullYear();
+  const baseDate = new Date(year, month - 1, day, 0, 0, 0, 0);
+
   const startDate = new Date(baseDate.getTime() + weekOffset * 7 * 24 * 60 * 60 * 1000);
   const futureLimit = new Date(startDate.getTime() + daysAhead * 24 * 60 * 60 * 1000);
 
-  // For week 0, filter from now; for other weeks, filter from startDate
-  const filterFromDate = weekOffset === 0 ? new Date() : startDate;
+  // For week 0, filter from NOW (Spain time); for other weeks, filter from startDate
+  const filterFromDate = weekOffset === 0 ? now : startDate;
+
+  console.warn('[clases] fetchFutureSessions params:', {
+    weekOffset,
+    daysAhead,
+    now: now.toISOString(),
+    baseDate: baseDate.toISOString(),
+    startDate: startDate.toISOString(),
+    futureLimit: futureLimit.toISOString(),
+    filterFromDate: filterFromDate.toISOString(),
+  });
 
   // Find the page that contains our target date using binary search
   const { page: startPage, totalPages } = await findStartPage(accessToken, filterFromDate);
+
+  console.warn('[clases] Binary search result:', {
+    startPage,
+    totalPages,
+    filterFromDate: filterFromDate.toISOString(),
+  });
 
   if (totalPages === 0) {
     console.warn('[clases] No pages found in Momence');
@@ -396,6 +425,19 @@ async function fetchFutureSessions(
 
     allSessions.push(...relevantSessions);
 
+    if (pagesFetched === 1) {
+      console.warn('[clases] First page sessions:', {
+        page: currentPage,
+        totalOnPage: pageData.sessions.length,
+        filteredCount: relevantSessions.length,
+        pageMinDate: pageData.minDate?.toISOString(),
+        pageMaxDate: pageData.maxDate?.toISOString(),
+        firstSessionDate: relevantSessions[0]
+          ? new Date(relevantSessions[0].startsAt).toISOString()
+          : null,
+      });
+    }
+
     // If the last session on this page is past our future limit, stop
     if (pageData.maxDate && pageData.maxDate > futureLimit) {
       break;
@@ -405,9 +447,18 @@ async function fetchFutureSessions(
   }
 
   // Sort by start time
-  return allSessions.sort(
+  const sorted = allSessions.sort(
     (a, b) => new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime()
   );
+
+  const lastSession = sorted.length > 0 ? sorted[sorted.length - 1] : null;
+  console.warn('[clases] Final result:', {
+    totalSessions: sorted.length,
+    firstDate: sorted[0] ? new Date(sorted[0].startsAt).toISOString() : null,
+    lastDate: lastSession ? new Date(lastSession.startsAt).toISOString() : null,
+  });
+
+  return sorted;
 }
 
 // Background refresh function (stale-while-revalidate)

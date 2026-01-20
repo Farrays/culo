@@ -55,12 +55,12 @@ const BookingPage: React.FC = () => {
         name: "Farray's Center Barcelona",
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'Carrer de Mallorca 179',
+          streetAddress: "Carrer d'Entença, 100",
           addressLocality: 'Barcelona',
-          postalCode: '08036',
+          postalCode: '08015',
           addressCountry: 'ES',
         },
-        telephone: '+34933232567',
+        telephone: '+34622247085',
         priceRange: '€€',
       },
       areaServed: {

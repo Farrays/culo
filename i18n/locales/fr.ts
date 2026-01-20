@@ -19141,7 +19141,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   booking_success_class: 'Cours réservé',
   booking_success_date: 'Date et heure',
   booking_success_location: 'Lieu',
-  booking_success_address: "Farray's Center - C/ Mallorca 179, Barcelone",
+  booking_success_address: "Farray's Center - C/ Entença 100, 08015 Barcelone",
   booking_success_reminder: 'Nous vous rappellerons 24h avant le cours',
   booking_success_lang_note: 'Les messages de confirmation et de rappel sont envoyés en espagnol',
   booking_success_cta: 'Voir tous les cours',
@@ -20045,7 +20045,7 @@ Reconnue par le CID UNESCO et dirigée par Yunaisy Farray (actrice dans Street D
   commercialNearbySearchText:
     'Si vous cherchez "cours de Commercial Dance près de moi" ou "académie de danse clips Barcelone", vous êtes à quelques minutes :',
   commercialNearbyMetro:
-    '🚇 Métro : Rocafort (L1) 4 min, Plaza España (L1, L3) 5 min, Entença (L5) 6 min, Hostafrancs (L1) 5 min | 🚆 Train : Sants Estació (Renfe, AVE, FGC) 8 min | 🚌 Bus : H10, 27, 109, D40 à notre porte | 🚲 Bicing : 3 stations à moins de 100m',
+    'Métro : Rocafort (L1) 4 min, Plaza España (L1, L3) 5 min, Entença (L5) 6 min, Hostafrancs (L1) 5 min. Train : Sants Estació (Renfe, AVE, FGC) 8 min. Bus : H10, 27, 109, D40 à notre porte. Bicing : 3 stations à moins de 100m.',
 
   // Logos Section
   commercialLogosTitle: 'Vous avez pu nous voir dans…',
