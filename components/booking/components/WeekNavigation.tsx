@@ -55,8 +55,11 @@ interface WeekNavigationProps {
   weekOffset: number;
   onWeekChange: (week: number) => void;
   loading?: boolean;
-  /** Current visible day name for dynamic display (e.g., "Lunes", "Martes") */
-  currentVisibleDay?: string | null;
+  /** Current visible day info for dynamic display */
+  currentVisibleDay?: {
+    dayOfWeek: string; // "Lunes", "Martes", etc.
+    dateFormatted: string; // "19 ene"
+  } | null;
 }
 
 export const WeekNavigation: React.FC<WeekNavigationProps> = ({
@@ -142,14 +145,20 @@ export const WeekNavigation: React.FC<WeekNavigationProps> = ({
       <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 bg-white/5 rounded-xl justify-center transition-all duration-300 min-w-[180px] sm:min-w-[240px]">
         <CalendarIcon className="w-4 h-4 sm:w-5 sm:h-5 text-primary-accent flex-shrink-0" />
         <div className="text-center min-w-0">
-          {/* Week label with dynamic day: "Esta semana - Lunes" */}
-          <div className="text-sm font-medium text-neutral">
-            {getWeekLabel(weekOffset)}
-            {currentVisibleDay && (
-              <span className="text-primary-accent"> - {currentVisibleDay}</span>
-            )}
-          </div>
-          <div className="text-xs text-neutral/60">{formatWeekRange(weekOffset)}</div>
+          {/* Dynamic day display: "Semana del 19 ene · JUEVES" */}
+          {currentVisibleDay ? (
+            <div className="text-sm sm:text-base font-semibold text-neutral">
+              <span className="text-neutral/70">{t('booking_week_of')}</span>{' '}
+              <span className="text-primary-accent">{currentVisibleDay.dateFormatted}</span>
+              <span className="mx-1.5 sm:mx-2 text-neutral/40">·</span>
+              <span className="uppercase tracking-wide">{currentVisibleDay.dayOfWeek}</span>
+            </div>
+          ) : (
+            <>
+              <div className="text-sm font-medium text-neutral">{getWeekLabel(weekOffset)}</div>
+              <div className="text-xs text-neutral/60">{formatWeekRange(weekOffset)}</div>
+            </>
+          )}
         </div>
       </div>
 

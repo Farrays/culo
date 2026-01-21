@@ -430,8 +430,11 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
   }) => {
     const { t, locale } = useI18n();
     const [infoModal, setInfoModal] = useState<ClassData | null>(null);
-    // State for dynamic day indicator: just the day name (e.g., "Lunes", "Martes")
-    const [currentVisibleDay, setCurrentVisibleDay] = useState<string | null>(null);
+    // State for dynamic day indicator: { dayOfWeek: "Jueves", dateFormatted: "19 ene" }
+    const [currentVisibleDay, setCurrentVisibleDay] = useState<{
+      dayOfWeek: string;
+      dateFormatted: string;
+    } | null>(null);
     const listContainerRef = useRef<HTMLDivElement>(null);
     const sentinelRef = useRef<HTMLDivElement>(null);
     const dayHeaderRefs = useRef<Map<string, HTMLDivElement>>(new Map());
@@ -491,11 +494,23 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
       const container = listContainerRef.current;
       if (!container) return;
 
+      // Helper to format date from dateKey
+      const formatDateFromKey = (dateKey: string): string => {
+        const date = new Date(dateKey);
+        return date.toLocaleDateString(locale === 'ca' ? 'ca-ES' : `${locale}-ES`, {
+          day: 'numeric',
+          month: 'short',
+        });
+      };
+
       // Set initial visible day to first day
       if (dayGroups.length > 0 && !currentVisibleDay) {
         const firstGroup = dayGroups[0];
         if (firstGroup) {
-          setCurrentVisibleDay(firstGroup.dayOfWeek);
+          setCurrentVisibleDay({
+            dayOfWeek: firstGroup.dayOfWeek,
+            dateFormatted: formatDateFromKey(firstGroup.dateKey),
+          });
         }
       }
 
@@ -516,7 +531,10 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
             if (dateKey) {
               const dayGroup = dayGroups.find(g => g.dateKey === dateKey);
               if (dayGroup) {
-                setCurrentVisibleDay(dayGroup.dayOfWeek);
+                setCurrentVisibleDay({
+                  dayOfWeek: dayGroup.dayOfWeek,
+                  dateFormatted: formatDateFromKey(dateKey),
+                });
               }
             }
           }
@@ -534,7 +552,7 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
       });
 
       return () => observer.disconnect();
-    }, [dayGroups, currentVisibleDay]);
+    }, [dayGroups, currentVisibleDay, locale]);
 
     // Virtualization disabled when using day grouping for better UX
     const { virtualItems, totalHeight, isVirtualizing } = useVirtualList<ClassData>({
