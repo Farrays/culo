@@ -69,6 +69,7 @@ const AfroJazzPage = lazy(() => import('./components/AfroJazzPage'));
 const HipHopPage = lazy(() => import('./components/HipHopPage'));
 const KpopPage = lazy(() => import('./components/KpopPage'));
 const CommercialDancePage = lazy(() => import('./components/CommercialDancePage'));
+const KizombaDancePage = lazy(() => import('./components/KizombaDancePage'));
 const SalsaCubanaPage = lazy(() => import('./components/SalsaCubanaPage'));
 const FolkloreCubanoPage = lazy(() => import('./components/FolkloreCubanoPage'));
 const TimbaPage = lazy(() => import('./components/TimbaPage'));
@@ -384,6 +385,15 @@ const AppContent: React.FC = () => {
                 <>
                   <LocaleSync />
                   <CommercialDancePage />
+                </>
+              }
+            />
+            <Route
+              path="/:locale/clases/kizomba-barcelona"
+              element={
+                <>
+                  <LocaleSync />
+                  <KizombaDancePage />
                 </>
               }
             />

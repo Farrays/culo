@@ -36,6 +36,63 @@ interface DayGroup {
 }
 
 /**
+ * Week group structure for Acuity mode
+ */
+interface WeekGroup {
+  weekStart: Date;
+  weekLabel: string;
+  classes: ClassData[];
+}
+
+/**
+ * Groups classes by week based on rawStartsAt
+ * Returns sorted array of week groups with localized labels
+ */
+function groupClassesByWeek(classes: ClassData[], locale: string): WeekGroup[] {
+  if (classes.length === 0) return [];
+
+  const weekMap = new Map<string, WeekGroup>();
+
+  classes.forEach(classData => {
+    const classDate = new Date(classData.rawStartsAt);
+    // Get Monday of the week (ISO week starts on Monday)
+    const dayOfWeek = classDate.getDay();
+    const mondayOffset = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
+    const weekStart = new Date(classDate);
+    weekStart.setDate(classDate.getDate() + mondayOffset);
+    weekStart.setHours(0, 0, 0, 0);
+
+    const weekKey = weekStart.toISOString().split('T')[0] ?? '';
+
+    if (!weekMap.has(weekKey)) {
+      // Format week label based on locale
+      const weekLabel = weekStart.toLocaleDateString(locale === 'ca' ? 'ca-ES' : `${locale}-ES`, {
+        day: 'numeric',
+        month: 'short',
+      });
+
+      weekMap.set(weekKey, {
+        weekStart,
+        weekLabel,
+        classes: [],
+      });
+    }
+
+    weekMap.get(weekKey)?.classes.push(classData);
+  });
+
+  // Sort weeks chronologically and sort classes within each week
+  return Array.from(weekMap.values())
+    .sort((a, b) => a.weekStart.getTime() - b.weekStart.getTime())
+    .map(group => ({
+      ...group,
+      classes: group.classes.sort(
+        (a, b) => new Date(a.rawStartsAt).getTime() - new Date(b.rawStartsAt).getTime()
+      ),
+    }));
+}
+
+/**
  * Groups classes by day based on rawStartsAt
  * Returns sorted array of day groups with localized labels
  */
@@ -145,6 +202,39 @@ const DayHeader = memo(
   })
 );
 DayHeader.displayName = 'DayHeader';
+
+/**
+ * Week header component for Acuity mode (grouped by week)
+ */
+const WeekHeader: React.FC<{
+  weekLabel: string;
+  classCount: number;
+  isFirst?: boolean;
+}> = memo(({ weekLabel, classCount, isFirst = false }) => {
+  const { t } = useI18n();
+
+  return (
+    <div
+      className={`
+        sticky top-0 z-10 flex items-center gap-2 py-3 px-4
+        bg-gradient-to-r from-primary-dark/80 via-black/90 to-primary-dark/80
+        backdrop-blur-md border-b border-white/10
+        ${isFirst ? 'rounded-t-xl' : 'mt-4'}
+      `}
+      role="heading"
+      aria-level={3}
+    >
+      <CalendarWeekIcon className="w-5 h-5 text-primary-accent flex-shrink-0" />
+      <span className="font-semibold text-neutral">
+        {t('booking_week_header', { date: weekLabel })}
+      </span>
+      <span className="ml-auto text-sm text-neutral/50">
+        {t('booking_classes_count', { count: classCount })}
+      </span>
+    </div>
+  );
+});
+WeekHeader.displayName = 'WeekHeader';
 
 /**
  * Acuity mode header showing filter context
@@ -430,21 +520,15 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
   }) => {
     const { t, locale } = useI18n();
     const [infoModal, setInfoModal] = useState<ClassData | null>(null);
-    // State for dynamic day indicator: { dayOfWeek: "Jueves", dateFormatted: "19 ene" }
-    const [currentVisibleDay, setCurrentVisibleDay] = useState<{
-      dayOfWeek: string;
-      dateFormatted: string;
-    } | null>(null);
     const listContainerRef = useRef<HTMLDivElement>(null);
     const sentinelRef = useRef<HTMLDivElement>(null);
     const dayHeaderRefs = useRef<Map<string, HTMLDivElement>>(new Map());
 
-    // Reset scroll position and visible day when week changes
+    // Reset scroll position when week changes
     useEffect(() => {
       if (listContainerRef.current) {
         listContainerRef.current.scrollTop = 0;
       }
-      setCurrentVisibleDay(null);
     }, [weekOffset]);
 
     // Infinite scroll with IntersectionObserver
@@ -480,79 +564,14 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
       return groupClassesByDay(displayClasses, locale);
     }, [displayClasses, locale]);
 
+    // Group classes by week for Acuity mode (memoized for performance)
+    const weekGroups = useMemo(() => {
+      if (!showAllWeeks || displayClasses.length === 0) return [];
+      return groupClassesByWeek(displayClasses, locale);
+    }, [showAllWeeks, displayClasses, locale]);
+
     // Use day grouping for rendering only in standard mode
     const useDayGrouping = !showAllWeeks && dayGroups.length > 0;
-
-    // Track visible day using IntersectionObserver for dynamic week header
-    // Works in both standard and Acuity modes
-    useEffect(() => {
-      if (dayGroups.length === 0) {
-        setCurrentVisibleDay(null);
-        return;
-      }
-
-      const container = listContainerRef.current;
-      if (!container) return;
-
-      // Helper to format date from dateKey
-      const formatDateFromKey = (dateKey: string): string => {
-        const date = new Date(dateKey);
-        return date.toLocaleDateString(locale === 'ca' ? 'ca-ES' : `${locale}-ES`, {
-          day: 'numeric',
-          month: 'short',
-        });
-      };
-
-      // Set initial visible day to first day
-      if (dayGroups.length > 0 && !currentVisibleDay) {
-        const firstGroup = dayGroups[0];
-        if (firstGroup) {
-          setCurrentVisibleDay({
-            dayOfWeek: firstGroup.dayOfWeek,
-            dateFormatted: formatDateFromKey(firstGroup.dateKey),
-          });
-        }
-      }
-
-      const observer = new IntersectionObserver(
-        entries => {
-          // Find all intersecting day headers
-          const visibleEntries = entries.filter(entry => entry.isIntersecting);
-
-          if (visibleEntries.length > 0) {
-            // Get the topmost visible entry
-            const topEntry = visibleEntries.reduce((closest, entry) => {
-              const closestRect = closest.boundingClientRect;
-              const entryRect = entry.boundingClientRect;
-              return entryRect.top < closestRect.top ? entry : closest;
-            });
-
-            const dateKey = topEntry.target.getAttribute('data-date-key');
-            if (dateKey) {
-              const dayGroup = dayGroups.find(g => g.dateKey === dateKey);
-              if (dayGroup) {
-                setCurrentVisibleDay({
-                  dayOfWeek: dayGroup.dayOfWeek,
-                  dateFormatted: formatDateFromKey(dateKey),
-                });
-              }
-            }
-          }
-        },
-        {
-          root: container,
-          rootMargin: '-10% 0px -70% 0px', // Trigger when header enters top 30% of container
-          threshold: 0,
-        }
-      );
-
-      // Observe all day headers
-      dayHeaderRefs.current.forEach(element => {
-        observer.observe(element);
-      });
-
-      return () => observer.disconnect();
-    }, [dayGroups, currentVisibleDay, locale]);
 
     // Virtualization disabled when using day grouping for better UX
     const { virtualItems, totalHeight, isVirtualizing } = useVirtualList<ClassData>({
@@ -601,13 +620,8 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
           onClearAll={onClearAllFilters}
         />
 
-        {/* Week/Day Navigation - Always visible, with dynamic day indicator */}
-        <WeekNavigation
-          weekOffset={weekOffset}
-          onWeekChange={onWeekChange}
-          loading={loading}
-          currentVisibleDay={currentVisibleDay}
-        />
+        {/* Week Navigation */}
+        <WeekNavigation weekOffset={weekOffset} onWeekChange={onWeekChange} loading={loading} />
 
         {/* Acuity Mode Header - Additional info when viewing all weeks */}
         {showAllWeeks && displayClasses.length > 0 && (
@@ -676,44 +690,35 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
                 </button>
               )}
             </div>
-          ) : showAllWeeks && dayGroups.length > 0 ? (
-            // Acuity mode: Classes grouped by day with sticky headers for scroll tracking
+          ) : showAllWeeks && weekGroups.length > 0 ? (
+            // Acuity mode: Classes grouped by week with sticky headers
             <div
               ref={listContainerRef}
               className="max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar rounded-xl border border-white/5"
             >
-              <div className="space-y-1">
-                {dayGroups.map((group, groupIndex) => (
-                  <div key={group.dateKey}>
-                    {/* Day Header - Sticky, tracked for scroll detection */}
-                    <DayHeader
-                      ref={el => {
-                        if (el) {
-                          dayHeaderRefs.current.set(group.dateKey, el);
-                        } else {
-                          dayHeaderRefs.current.delete(group.dateKey);
-                        }
-                      }}
-                      dateKey={group.dateKey}
-                      dayLabel={group.dayLabel}
-                      classCount={group.classes.length}
-                      isFirst={groupIndex === 0}
-                    />
-                    {/* Classes for this day */}
-                    <div className="grid gap-3 p-3 bg-white/[0.02]">
-                      {group.classes.map(classData => (
-                        <ClassCard
-                          key={classData.id}
-                          classData={classData}
-                          onSelect={onSelectClass}
-                          onShowInfo={handleShowInfo}
-                          isSelected={selectedClassId === classData.id}
-                        />
-                      ))}
-                    </div>
+              {weekGroups.map((group, groupIndex) => (
+                <div key={group.weekStart.toISOString()} className="mb-2 last:mb-0">
+                  {/* Week Header - Sticky */}
+                  <WeekHeader
+                    weekLabel={group.weekLabel}
+                    classCount={group.classes.length}
+                    isFirst={groupIndex === 0}
+                  />
+
+                  {/* Classes for this week */}
+                  <div className="grid gap-3 p-3 bg-white/[0.02]">
+                    {group.classes.map(classData => (
+                      <ClassCard
+                        key={classData.id}
+                        classData={classData}
+                        onSelect={onSelectClass}
+                        onShowInfo={handleShowInfo}
+                        isSelected={selectedClassId === classData.id}
+                      />
+                    ))}
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           ) : (
             // Standard mode: Class list grouped by day with sticky headers

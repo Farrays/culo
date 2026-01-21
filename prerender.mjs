@@ -206,6 +206,7 @@ const routes = [
   { path: 'es/clases/afrobeats-barcelona', lang: 'es', page: 'afrobeat' },
   { path: 'es/clases/kpop-dance-barcelona', lang: 'es', page: 'kpop' },
   { path: 'es/clases/commercial-dance-barcelona', lang: 'es', page: 'commercial' },
+  { path: 'es/clases/kizomba-barcelona', lang: 'es', page: 'kizomba' },
   { path: 'es/clases/hip-hop-reggaeton-barcelona', lang: 'es', page: 'hipHopReggaeton' },
   { path: 'es/clases/sexy-reggaeton-barcelona', lang: 'es', page: 'sexyReggaeton' },
   { path: 'es/clases/reggaeton-cubano-barcelona', lang: 'es', page: 'reggaetonCubano' },
@@ -275,6 +276,7 @@ const routes = [
   { path: 'ca/clases/afrobeats-barcelona', lang: 'ca', page: 'afrobeat' },
   { path: 'ca/clases/kpop-dance-barcelona', lang: 'ca', page: 'kpop' },
   { path: 'ca/clases/commercial-dance-barcelona', lang: 'ca', page: 'commercial' },
+  { path: 'ca/clases/kizomba-barcelona', lang: 'ca', page: 'kizomba' },
   { path: 'ca/clases/hip-hop-reggaeton-barcelona', lang: 'ca', page: 'hipHopReggaeton' },
   { path: 'ca/clases/sexy-reggaeton-barcelona', lang: 'ca', page: 'sexyReggaeton' },
   { path: 'ca/clases/reggaeton-cubano-barcelona', lang: 'ca', page: 'reggaetonCubano' },
@@ -344,6 +346,7 @@ const routes = [
   { path: 'en/clases/afrobeats-barcelona', lang: 'en', page: 'afrobeat' },
   { path: 'en/clases/kpop-dance-barcelona', lang: 'en', page: 'kpop' },
   { path: 'en/clases/commercial-dance-barcelona', lang: 'en', page: 'commercial' },
+  { path: 'en/clases/kizomba-barcelona', lang: 'en', page: 'kizomba' },
   { path: 'en/clases/hip-hop-reggaeton-barcelona', lang: 'en', page: 'hipHopReggaeton' },
   { path: 'en/clases/sexy-reggaeton-barcelona', lang: 'en', page: 'sexyReggaeton' },
   { path: 'en/clases/reggaeton-cubano-barcelona', lang: 'en', page: 'reggaetonCubano' },
@@ -413,6 +416,7 @@ const routes = [
   { path: 'fr/clases/afrobeats-barcelona', lang: 'fr', page: 'afrobeat' },
   { path: 'fr/clases/kpop-dance-barcelona', lang: 'fr', page: 'kpop' },
   { path: 'fr/clases/commercial-dance-barcelona', lang: 'fr', page: 'commercial' },
+  { path: 'fr/clases/kizomba-barcelona', lang: 'fr', page: 'kizomba' },
   { path: 'fr/clases/hip-hop-reggaeton-barcelona', lang: 'fr', page: 'hipHopReggaeton' },
   { path: 'fr/clases/sexy-reggaeton-barcelona', lang: 'fr', page: 'sexyReggaeton' },
   { path: 'fr/clases/reggaeton-cubano-barcelona', lang: 'fr', page: 'reggaetonCubano' },
@@ -617,6 +621,10 @@ const metadata = {
     commercial: {
       title: 'Clases de Commercial Dance en Barcelona | Farray\'s Center',
       description: 'Clases de Commercial Dance en Barcelona. Aprende coreografías estilo videoclip, técnica de performance y presencia escénica. Todos los niveles. Academia CID-UNESCO.',
+    },
+    kizomba: {
+      title: 'Clases de Kizomba en Barcelona | Farray\'s Center',
+      description: 'Clases de Kizomba en Barcelona. Aprende este sensual baile angoleño con conexión en pareja y musicalidad africana. Todos los niveles. Academia CID-UNESCO.',
     },
     hipHopReggaeton: {
       title: 'Clases de Hip Hop Reggaeton en Barcelona | Farray\'s Center',
@@ -930,6 +938,10 @@ const metadata = {
       title: 'Classes de Commercial Dance a Barcelona | Farray\'s Center',
       description: 'Classes de Commercial Dance a Barcelona. Aprèn coreografies estil videoclip, tècnica de performance i presència escènica. Tots els nivells. Acadèmia CID-UNESCO.',
     },
+    kizomba: {
+      title: 'Classes de Kizomba a Barcelona | Farray\'s Center',
+      description: 'Classes de Kizomba a Barcelona. Aprèn aquest sensual ball angolès amb connexió en parella i musicalitat africana. Tots els nivells. Acadèmia CID-UNESCO.',
+    },
     hipHopReggaeton: {
       title: 'Classes de Hip Hop Reggaeton a Barcelona | Farray\'s Center',
       description: 'Aprèn Hip Hop Reggaeton a Barcelona amb Charlie Breezy. Fusió única de hip-hop i reggaeton amb molt de flow. Classes per a tots els nivells a prop de Plaça Espanya i Sants.',
@@ -1242,6 +1254,10 @@ const metadata = {
       title: 'Commercial Dance Classes in Barcelona | Farray\'s Center',
       description: 'Commercial Dance classes in Barcelona. Learn music video style choreography, performance technique and stage presence. All levels. CID-UNESCO Academy.',
     },
+    kizomba: {
+      title: 'Kizomba Classes in Barcelona | Farray\'s Center',
+      description: 'Kizomba classes in Barcelona. Learn this sensual Angolan dance with partner connection and African musicality. All levels. CID-UNESCO Academy.',
+    },
     hipHopReggaeton: {
       title: 'Hip Hop Reggaeton Classes in Barcelona | Farray\'s Center',
       description: 'Learn Hip Hop Reggaeton in Barcelona with Charlie Breezy. Unique fusion of hip-hop and reggaeton with lots of flow. Classes for all levels near Plaza España and Sants.',
@@ -1553,6 +1569,10 @@ const metadata = {
     commercial: {
       title: 'Cours de Commercial Dance à Barcelone | Farray\'s Center',
       description: 'Cours de Commercial Dance à Barcelone. Apprenez les chorégraphies style clip vidéo, technique de performance et présence scénique. Tous niveaux. Académie CID-UNESCO.',
+    },
+    kizomba: {
+      title: 'Cours de Kizomba à Barcelone | Farray\'s Center',
+      description: 'Cours de Kizomba à Barcelone. Apprenez cette danse angolaise sensuelle avec connexion en couple et musicalité africaine. Tous niveaux. Académie CID-UNESCO.',
     },
     hipHopReggaeton: {
       title: 'Cours de Hip Hop Reggaeton à Barcelone | Farray\'s Center',
@@ -1982,6 +2002,8 @@ routes.forEach(route => {
     pagePath = 'clases/kpop-dance-barcelona';
   } else if (page === 'commercial') {
     pagePath = 'clases/commercial-dance-barcelona';
+  } else if (page === 'kizomba') {
+    pagePath = 'clases/kizomba-barcelona';
   } else if (page === 'heelsBarcelona') {
     pagePath = 'clases/heels-barcelona';
   } else if (page === 'modernJazz') {
