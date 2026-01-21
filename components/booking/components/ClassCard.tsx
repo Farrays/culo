@@ -4,12 +4,13 @@
  * Includes: +info button, share button, clickable teacher name
  */
 
-import React, { memo, useCallback, useState } from 'react';
+import React, { memo, useCallback, useState, useEffect, useRef } from 'react';
 import { useI18n } from '../../../hooks/useI18n';
 import type { ClassData } from '../types/booking';
 import { TEACHER_REGISTRY } from '../../../constants/teacher-registry';
 import { getTeacherImagePath } from '../../../constants/teacher-images';
 import { Portal } from './Portal';
+import { registerModalOpen, registerModalClose } from '../utils/modalHistoryManager';
 
 // Teacher name mapping (Momence → Registry)
 const INSTRUCTOR_NAME_TO_REGISTRY: Record<string, string> = {
@@ -197,45 +198,61 @@ const TeacherModal: React.FC<{
 }> = ({ teacherId, onClose }) => {
   const { t } = useI18n();
   const teacher = TEACHER_REGISTRY[teacherId];
-  const historyPushedRef = React.useRef(false);
+  const historyPushedRef = useRef(false);
+  const isRegisteredRef = useRef(false);
 
-  // History management and body scroll lock
-  React.useEffect(() => {
-    // Set global flag to indicate modal is open
-    window.__bookingModalOpen = true;
-
-    // Push history state for modal
-    if (!historyPushedRef.current) {
-      window.history.pushState({ modal: 'teacher', bookingWidget: true }, '');
-      historyPushedRef.current = true;
-    }
-
-    // Lock body scroll
-    document.body.style.overflow = 'hidden';
-
-    // Handle browser back button
-    const handlePopState = () => {
-      historyPushedRef.current = false;
-      window.__bookingModalOpen = false;
-      onClose();
-    };
-    window.addEventListener('popstate', handlePopState);
-
-    return () => {
-      document.body.style.overflow = '';
-      window.removeEventListener('popstate', handlePopState);
-      window.__bookingModalOpen = false;
-    };
-  }, [onClose]);
-
-  // Close with history
-  const handleClose = () => {
+  // Close with history support
+  const handleClose = useCallback(() => {
     if (historyPushedRef.current) {
       window.history.back();
     } else {
       onClose();
     }
-  };
+  }, [onClose]);
+
+  // History management - must run immediately on mount
+  useEffect(() => {
+    // Register modal as open (reference counting) - only once
+    if (!isRegisteredRef.current) {
+      registerModalOpen();
+      isRegisteredRef.current = true;
+    }
+
+    // Push history state for modal (only once)
+    if (!historyPushedRef.current) {
+      window.history.pushState({ modal: 'teacher', bookingWidget: true }, '');
+      historyPushedRef.current = true;
+    }
+
+    // Handle browser back button
+    const handlePopState = () => {
+      historyPushedRef.current = false;
+      // Only unregister if we registered
+      if (isRegisteredRef.current) {
+        registerModalClose();
+        isRegisteredRef.current = false;
+      }
+      onClose();
+    };
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      // Only unregister in cleanup if still registered (not done by popstate)
+      if (isRegisteredRef.current) {
+        registerModalClose();
+        isRegisteredRef.current = false;
+      }
+    };
+  }, [onClose]);
+
+  // Body scroll lock
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   if (!teacher) return null;
 

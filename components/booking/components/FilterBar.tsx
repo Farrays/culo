@@ -201,7 +201,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
 
       {isOpen && (
         <div
-          className="absolute z-[100] top-full mt-2 left-0 min-w-[180px] max-h-[320px] overflow-y-auto bg-neutral-900/98 backdrop-blur-xl border border-neutral-700/60 rounded-lg shadow-2xl shadow-black/50 pointer-events-auto"
+          className="absolute z-[100] top-full mt-2 left-0 min-w-[180px] max-h-[320px] overflow-y-auto bg-black border border-neutral-600 rounded-lg shadow-2xl shadow-black/80 pointer-events-auto"
           style={{ isolation: 'isolate' }}
         >
           <div className="py-1">
