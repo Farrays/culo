@@ -108,8 +108,11 @@ const STYLE_KEYWORDS: Record<string, string[]> = {
 
   // Urbano
   dancehall: ['dancehall', 'dance hall'],
-  reggaeton: ['reggaeton', 'reggaetón', 'perreo', 'sexy reggaeton', 'reggaeton cubano'],
-  hiphop: ['hip hop', 'hip-hop', 'hiphop', 'urban', 'hip hop reggaeton'],
+  // Reggaeton variants - específicos primero
+  hiphopreggaeton: ['hip hop reggaeton', 'hip-hop reggaeton', 'hiphop reggaeton'],
+  sexyreggaeton: ['sexy reggaeton', 'sexy reggaetón'],
+  reparto: ['reparto', 'reggaeton', 'reggaetón', 'perreo'],
+  hiphop: ['hip hop', 'hip-hop', 'hiphop', 'urban'],
   afro: ['afrobeat', 'afrodance', 'afro jazz', 'afro dance'],
   girly: ['girly'],
 

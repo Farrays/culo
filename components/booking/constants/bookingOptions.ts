@@ -43,7 +43,9 @@ export const STYLE_OPTIONS: readonly StyleOption[] = [
   { value: 'salsaladystyle', label: 'Salsa Lady Style', color: '#FF7F7F', category: 'latino' },
   { value: 'folklore', label: 'Folklore Cubano', color: '#D97706', category: 'latino' },
   // Urban styles
-  { value: 'reggaeton', label: 'Reggaeton', color: '#F8B500', category: 'urbano' },
+  { value: 'reparto', label: 'Reparto', color: '#F8B500', category: 'urbano' },
+  { value: 'sexyreggaeton', label: 'Sexy Reggaeton', color: '#FF6B35', category: 'urbano' },
+  { value: 'hiphopreggaeton', label: 'Hip Hop Reggaeton', color: '#E85D04', category: 'urbano' },
   { value: 'twerk', label: 'Twerk', color: '#FF1493', category: 'urbano' },
   { value: 'dancehall', label: 'Dancehall', color: '#00D9A5', category: 'urbano' },
   { value: 'afro', label: 'Afrobeats', color: '#FF8C00', category: 'urbano' },

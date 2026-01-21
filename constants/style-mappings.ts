@@ -25,7 +25,9 @@ export type MomenceStyle =
   | 'heels'
   | 'sexystyle'
   | 'femmology'
-  | 'reggaeton'
+  | 'reparto'
+  | 'sexyreggaeton'
+  | 'hiphopreggaeton'
   | 'twerk'
   | 'bumbum'
   | 'afro'
@@ -71,7 +73,6 @@ export const CONFIG_TO_MOMENCE_STYLE: Record<string, MomenceStyle> = {
 
   // Hip Hop variants
   hipHopV2: 'hiphop',
-  hipHopReggaeton: 'hiphop',
   urbanDance: 'hiphop',
 
   // Dancehall
@@ -83,9 +84,10 @@ export const CONFIG_TO_MOMENCE_STYLE: Record<string, MomenceStyle> = {
   stiletto: 'heels',
   femmology: 'femmology',
 
-  // Reggaeton
-  sexyReggaeton: 'reggaeton',
-  reggaetonCubano: 'reggaeton',
+  // Reggaeton variants
+  reparto: 'reparto',
+  sexyReggaeton: 'sexyreggaeton',
+  hipHopReggaeton: 'hiphopreggaeton',
 
   // Twerk
   twerk: 'twerk',
@@ -151,7 +153,9 @@ export const STYLE_TO_CATEGORY: Record<MomenceStyle, CategoryKey> = {
   // Urbano
   dancehall: 'urbano',
   twerk: 'urbano',
-  reggaeton: 'urbano',
+  reparto: 'urbano',
+  sexyreggaeton: 'urbano',
+  hiphopreggaeton: 'urbano',
   hiphop: 'urbano',
   afro: 'urbano',
   girly: 'urbano',
@@ -205,7 +209,9 @@ export const STYLE_TO_PAGE_SLUG: Record<MomenceStyle, string> = {
   heels: 'sexy-style-barcelona',
   sexystyle: 'sexy-style-barcelona',
   femmology: 'femmology-barcelona',
-  reggaeton: 'sexy-reggaeton-barcelona',
+  reparto: 'sexy-reggaeton-barcelona',
+  sexyreggaeton: 'sexy-reggaeton-barcelona',
+  hiphopreggaeton: 'hip-hop-barcelona',
   twerk: 'twerk-barcelona',
   afro: 'afrobeat-barcelona',
   afrocontemporaneo: 'afro-contemporaneo-barcelona',
@@ -243,8 +249,10 @@ export const STYLE_KEYWORDS: Record<MomenceStyle, string[]> = {
   timba: ['timba', 'timba cubana'],
   salsaladystyle: ['salsa lady', 'lady style salsa', 'salsa lady timba'],
   bachata: ['bachata', 'bachata sensual', 'bachata lady'],
-  hiphop: ['hip hop', 'hip-hop', 'hiphop', 'urban', 'hip hop reggaeton'],
-  reggaeton: ['reggaeton', 'reggaetón', 'perreo', 'sexy reggaeton'],
+  hiphopreggaeton: ['hip hop reggaeton', 'hip-hop reggaeton', 'hiphop reggaeton'],
+  sexyreggaeton: ['sexy reggaeton', 'sexy reggaetón'],
+  reparto: ['reparto', 'reggaeton', 'reggaetón', 'perreo'],
+  hiphop: ['hip hop', 'hip-hop', 'hiphop', 'urban'],
   afro: ['afrobeat', 'afrodance', 'afro jazz'],
   afrocontemporaneo: ['afro contemporáneo', 'afro contemporaneo'],
   commercial: ['commercial', 'comercial'],
