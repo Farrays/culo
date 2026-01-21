@@ -62,7 +62,7 @@ export interface SocialProofTickerProps {
 
 export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
   ({ limit = 5, className = '', onShow, onHide, onClick, scrollTargetId = 'booking-content' }) => {
-    const { t } = useI18n();
+    const { t, isLoading: translationsLoading } = useI18n();
     const [bookings, setBookings] = useState<SocialProofBooking[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [hasBookings, setHasBookings] = useState(false);
@@ -195,8 +195,8 @@ export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
       };
     }, [bookings.length]);
 
-    // Don't render if no bookings
-    if (bookings.length === 0 || !toastVisible) {
+    // Don't render if no bookings or translations still loading
+    if (bookings.length === 0 || !toastVisible || translationsLoading) {
       return null;
     }
 
