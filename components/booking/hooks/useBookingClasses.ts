@@ -46,6 +46,7 @@ import {
   DAY_NAMES,
   TIME_BLOCK_OPTIONS,
   API_ENDPOINTS,
+  getCategoryForStyle,
 } from '../constants/bookingOptions';
 import { classCache } from '../utils/classCache';
 
@@ -309,6 +310,14 @@ function applyTimeFilter(classes: ClassData[], time: string): ClassData[] {
 // Apply all filters with normalized comparisons
 function applyFilters(classes: ClassData[], filters: FilterState): ClassData[] {
   let result = classes;
+
+  // Category: filter by category first (if set)
+  if (filters.category) {
+    result = result.filter(c => {
+      const classCategory = getCategoryForStyle(c.style);
+      return classCategory === filters.category;
+    });
+  }
 
   // Style: exact match (normalized)
   if (filters.style) {

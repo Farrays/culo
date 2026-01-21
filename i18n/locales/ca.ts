@@ -3649,6 +3649,11 @@ A Farray's International Dance Center, l'Afrobeats s'ensenya amb tècnica, respe
   afroCitableBeneficios:
     "Revisions científiques associen el ball regular amb menor risc de deteriorament cognitiu i demència, destacant el seu valor cerebral en estils dinàmics com l'Afrobeats.",
 
+  // Video Section
+  afroVideoTitle: "Descobreix les classes d'Afrobeats a Farray's Center",
+  afroVideoDesc:
+    "Mira com són les classes d'Afrobeats i Afrodance a Barcelona: ritmes africans, energia contagiosa i professors amb arrels africanes.",
+
   // ===== Hip Hop Reggaeton Page =====
   hhrPageTitle: 'Classes de Hip Hop Reggaeton a Barcelona | Fusió Urbana amb Flow',
   hhrMetaDescription:
@@ -18887,6 +18892,12 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_filter_all: 'Tots',
   booking_filter_all_styles: 'Tots els estils',
   booking_filter_all_instructors: 'Tots els professors',
+  booking_filter_category: 'Categoria',
+  booking_filter_all_categories: 'Totes les categories',
+  booking_filter_category_danza: 'Dansa',
+  booking_filter_category_urbano: 'Danses Urbanes',
+  booking_filter_category_latino: 'Balls Llatins',
+  booking_filter_category_fitness: 'Entrenament Ballarins',
   booking_clear_all_filters: 'Netejar tots',
   booking_clear_filters: 'Treure filtres',
   booking_no_classes_match: 'No hi ha classes que coincideixin amb els filtres',
@@ -19357,6 +19368,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
 
   // Social Proof Ticker
   socialProofBooked: '{name} ha reservat {className}',
+  socialProofBookedShort: 'ha reservat',
   socialProofMinutesAgo: 'fa {minutes} min',
   socialProofJustNow: 'fa un moment',
   socialProofClickToBook: 'Fes clic per reservar la teva classe',
@@ -19883,6 +19895,281 @@ Reconeguda pel CID UNESCO i dirigida per Yunaisy Farray (actriu a Street Dance 2
   commercialCourseSchemaName: "Classes de Commercial Dance a Barcelona - Farray's Center",
   commercialCourseSchemaDesc:
     'Aprèn Commercial Dance amb coreografies de nivell professional. Classes per a tots els nivells al cor de Barcelona.',
+
+  // ======================
+  // KIZOMBA PAGE
+  // ======================
+
+  // Page Meta
+  kizombaPageTitle: "Classes de Kizomba a Barcelona | Farray's Center",
+  kizombaMetaDescription:
+    'Classes de Kizomba a Barcelona. Aprèn aquest sensual ball angolès amb connexió en parella i musicalitat africana. Tots els nivells. Acadèmia CID-UNESCO. Comença avui!',
+
+  // Breadcrumb
+  kizombaBreadcrumbHome: 'Inici',
+  kizombaBreadcrumbClasses: 'Classes de Ball',
+  kizombaBreadcrumbLatinas: 'Balls Llatins',
+  kizombaBreadcrumbCurrent: 'Classes de Kizomba',
+
+  // Hero Section
+  kizombaHeroTitle: 'Classes de Kizomba a Barcelona',
+  kizombaHeroSubtitle:
+    "Descobreix el ball més sensual d'Àfrica amb connexió, musicalitat i abraçada",
+  kizombaHeroDesc: 'Balla amb el cor',
+  kizombaHeroLocation: 'Classes des de iniciació fins a avançat, entre Plaça Espanya i Sants',
+  kizombaHeroStudents: '+15.000 alumnes formats',
+
+  // CTAs
+  kizombaCTA1: 'Descobreix com començar',
+  kizombaCTA1Subtext: "Llista d'espera activa",
+  kizombaCTA2: "Uneix-te a la llista d'espera",
+  kizombaCTA2Subtext: "T'avisem quan obrim places",
+
+  // What Is Section
+  kizombaWhatIsTitle: 'Què és la Kizomba i per què tothom en parla?',
+  kizombaWhatIsP1:
+    "Imagina un ball on la connexió amb la teva parella és tan intensa que sembla que us llegiu el pensament. On cada moviment surt de l'abraçada, no de passos memoritzats. Això és Kizomba: el ball més sensual d'Àfrica, nascut a Angola a finals dels 80 i que avui conquesta pistes de ball a tot el món.",
+  kizombaWhatIsP2:
+    'La Kizomba va néixer de la fusió del Semba angolès amb el Zouk de les Antilles Franceses. El nom significa "festa" en kimbundu, una de les llengües bantús d\'Angola. A diferència d\'altres balls llatins, la Kizomba es balla amb una abraçada propera i moviments ondulants de maluc, on el líder guia amb el tors, no amb les mans.',
+  kizombaWhatIsP3:
+    "A les nostres classes treballem la connexió real en parella, la musicalitat africana i aquella qualitat de moviment suau i controlat que fa la Kizomba tan especial. No es tracta d'aprendre figures complicades, sinó de sentir la música i comunicar-te amb la teva parella a través de l'abraçada.",
+  kizombaWhatIsP4:
+    'Tant és si véns sol/a o en parella, si mai has ballat o si ja coneixes altres estils. La Kizomba és per a qui busca connexió humana, musicalitat i una forma de ballar íntima i elegant.',
+  kizombaWhatIsQuestionTitle: 'Et preguntes si és per a tu?',
+  kizombaWhatIsQuestionAnswer: 'Si busques connexió i sensualitat en el ball, ho és.',
+
+  // Cultural History Section
+  kizombaCulturalHistoryTitle: 'Vols conèixer la història de la Kizomba?',
+  kizombaCulturalShort:
+    "La Kizomba va néixer a Angola a finals dels anys 80, fusionant el Semba tradicional amb el Zouk antillà. Des de Luanda es va expandir a Portugal, França i avui és un dels balls de parella més populars del món. A Farray's Center ensenyem Kizomba autèntica amb respecte a les seves arrels africanes.",
+  kizombaCulturalFull: `### D'on ve la Kizomba?
+
+**La Kizomba va néixer a Angola a finals dels anys 80**, principalment a Luanda, la capital. El nom ve del kimbundu, una llengua bantú, i significa "festa" o "celebració". Va sorgir quan els músics angolesos van començar a fusionar el **Semba** (el ball tradicional d'Angola) amb els ritmes electrònics del **Zouk** de les Antilles Franceses.
+
+### El Semba: l'arrel de tot
+
+Abans de la Kizomba existia el Semba, un ball de parella angolès caracteritzat per moviments ràpids de maluc i una abraçada propera. El Semba té segles d'història i és considerat un dels orígens de la samba brasilera (quan els esclaus angolesos van ser portats a Brasil).
+
+La Kizomba va agafar l'abraçada i la connexió del Semba, però la va alentir i li va afegir la sensualitat de la música Zouk, creant quelcom completament nou.
+
+### Eduardo Paim i els pioners
+
+**Eduardo Paim** és considerat el pare de la Kizomba moderna. El 1981 va començar a experimentar fusionant Semba amb ritmes electrònics. Altres artistes fonamentals van ser:
+
+- **Bibi dos Santos**: Compositor i productor que va definir el so clàssic
+- **Paulo Flores**: Va portar la Kizomba a noves audiències
+- **Bonga**: Encara que més conegut pel Semba, va influir en l'evolució de l'estil
+
+### L'expansió a Europa
+
+Als anys 90, amb la independència d'Angola i les migracions, la Kizomba va arribar a **Portugal**, on va trobar una segona llar. Lisboa es va convertir en l'epicentre europeu del ball. Des d'allà es va expandir a França, Espanya, Alemanya i la resta del món.
+
+Avui existeixen festivals de Kizomba a més de 50 països. A Barcelona, l'escena ha crescut enormement en l'última dècada.
+
+### Els estils dins de la Kizomba
+
+Amb la globalització, la Kizomba ha evolucionat en diversos estils:
+
+- **Kizomba tradicional**: L'estil original angolès, amb èmfasi en la connexió i la musicalitat
+- **Urban Kiz**: Versió més moderna amb influències de hip hop i moviments més tècnics
+- **Tarraxinha**: Estil més lent i sensual, centrat en els moviments de maluc
+- **Ghetto Zouk**: Fusió de Kizomba amb R&B i Zouk, popular a les festes
+
+### Què es treballa a les classes de Kizomba?
+
+- **Abraçada i connexió**: La base de tot. Aprendre a guiar i seguir des del tors
+- **Ginga**: El moviment bàsic de maluc característic de l'estil
+- **Musicalitat**: Interpretar els diferents instruments i capes de la música
+- **Saídas**: Figures i sortides que afegeixen varietat sense perdre la connexió
+- **Tarraxinha**: Els moviments ondulants més lents i sensuals
+
+### Kizomba a Barcelona
+
+**Farray's International Dance Center**, al **barri de l'Eixample (Carrer Entença 100, entre Plaça Espanya i Sants)**, ofereix classes de Kizomba amb enfocament en la connexió autèntica i el respecte a les arrels africanes del ball.
+
+Reconeguda pel CID UNESCO i amb més de 15.000 alumnes formats, l'acadèmia combina tècnica professional amb un ambient proper on pots aprendre a ballar Kizomba de veritat.`,
+
+  // Identify Section
+  kizombaIdentifyTitle: "T'identifiques amb alguna d'aquestes situacions?",
+  kizombaIdentify1: 'Vols aprendre un ball de parella íntim i sensual',
+  kizombaIdentify2: 'Busques connexió real amb la teva parella de ball',
+  kizombaIdentify3: "T'atreu la música africana i els seus ritmes",
+  kizombaIdentify4: 'Vols un ball elegant que no requereixi figures acrobàtiques',
+  kizombaIdentify5: "Necessites desconnectar de l'estrès i connectar amb una altra persona",
+  kizombaIdentify6: 'Has provat salsa o bachata i vols quelcom diferent',
+  kizombaIdentifyTransition: 'Si has dit "sí" a algun d\'aquests punts, ja saps el que necessites.',
+  kizombaNeedEnrollTitle: 'Necessites apuntar-te a classes de Kizomba en una acadèmia professional',
+  kizombaIdentifyAgitate1:
+    "Veure tutorials a YouTube no t'ensenyarà a connectar de veritat amb la teva parella de ball. La Kizomba requereix sentir l'abraçada, la guia i la comunicació no verbal que només s'aprèn en persona.",
+  kizombaIdentifySolution:
+    "A Farray's Center, aprendràs Kizomba autèntica amb èmfasi en la connexió i la musicalitat. Professors que respecten les arrels africanes del ball.",
+  kizombaIdentifyClosing: 'És hora de ballar amb el cor.',
+
+  // Transform Section
+  kizombaTransformTitle: 'Imagina el teu abans i després',
+  kizombaTransform1Title: 'Connectes de veritat amb la teva parella',
+  kizombaTransform1Desc: 'Comunicació no verbal, abraçada i guia fluida.',
+  kizombaTransform2Title: 'Domines la musicalitat africana',
+  kizombaTransform2Desc: 'Interpretes cada capa de la música Kizomba.',
+  kizombaTransform3Title: 'Et mous amb elegància i sensualitat',
+  kizombaTransform3Desc: 'Ginga, ondulacions i tarraxinha controlada.',
+  kizombaTransform4Title: 'Balles a qualsevol festa del món',
+  kizombaTransform4Desc: 'La Kizomba es balla igual a Angola, Lisboa o Tòquio.',
+  kizombaTransform5Title: "Redueixes l'estrès i connectes socialment",
+  kizombaTransform5Desc: "L'abraçada allibera oxitocina i millora el benestar.",
+  kizombaTransform6Title: 'Amplies el teu repertori de balls',
+  kizombaTransform6Desc: 'Complementa bachata, salsa o zouk perfectament.',
+  kizombaTransformCTA: "Per què triar Farray's Center per aprendre Kizomba?",
+
+  // Why Choose Section
+  kizombaWhyChoose1Title: 'Acadèmia reconeguda pel CID UNESCO',
+  kizombaWhyChoose1Desc:
+    'Dirigida per Yunaisy Farray, actriu de Street Dance 2 i una de les mestres més reconegudes del món.',
+  kizombaWhyChoose2Title: 'Ubicació immillorable',
+  kizombaWhyChoose2Desc:
+    'Carrer Entença 100, entre Plaça Espanya i Sants, a 5 minuts de Plaça Espanya i Sants. Metro, busos i tren a la porta.',
+  kizombaWhyChoose3Title: 'Kizomba autèntica amb arrels africanes',
+  kizombaWhyChoose3Desc:
+    'Ensenyem respectant els orígens angolesos del ball. Connexió i musicalitat abans que figures.',
+  kizombaWhyChoose4Title: 'Instal·lacions preparades de veritat',
+  kizombaWhyChoose4Desc:
+    'Més de 700 m², sales àmplies, miralls, so professional, aire condicionat i ventilació centralitzada.',
+  kizombaWhyChoose5Title: 'Acadèmia multidisciplinària',
+  kizombaWhyChoose5Desc:
+    'Més de 25 estils per complementar la teva formació: bachata, salsa, zouk i altres balls de parella.',
+  kizombaWhyChoose7Title: 'Rotació de parelles opcional',
+  kizombaWhyChoose7Desc:
+    'Pots venir sol/a o en parella. Ambient respectuós on aprendre és el primer.',
+
+  // Why Today Section
+  kizombaWhyTodayFullTitle: 'Per què començar Kizomba avui i no "la setmana que ve"?',
+  kizombaWhyToday1: 'Perquè segueixes veient vídeos de Kizomba i somiant ballar així de connectat.',
+  kizombaWhyToday2:
+    'Perquè estàs a tan sols UNA classe de sentir aquella abraçada i aquella connexió.',
+  kizombaWhyToday3:
+    'Perquè la Kizomba no va de passos perfectes, va de sentir la música i connectar amb una altra persona.',
+  kizombaWhyTodayClosing1: "A Farray's no venem classes. Creem connexions.",
+  kizombaWhyTodayClosing2:
+    "T'esperem amb música africana, professors que entenen l'essència del ball i un ambient que et fa sentir a casa.",
+
+  // Levels Section
+  kizombaLevelsTitle: 'Nivells de Kizomba',
+  kizombaLevelBeginnerTitle: 'Iniciació',
+  kizombaLevelBeginnerDesc:
+    "Per a qui comença des de zero. Aprèn l'abraçada, la ginga bàsica, la connexió i els teus primers passos en parella.",
+  kizombaLevelInterTitle: 'Intermedi',
+  kizombaLevelInterDesc:
+    'Perfecciona la teva connexió, aprèn saídas més complexes i desenvolupa la teva musicalitat africana.',
+  kizombaLevelAdvancedTitle: 'Avançat',
+  kizombaLevelAdvancedDesc:
+    'Domina tarraxinha, urban kiz i la interpretació musical completa. Balla amb qualsevol parella.',
+
+  // Schedule Section
+  kizombaScheduleTitle: 'Horaris de Classes de Kizomba',
+  kizombaScheduleSubtitle: "Pròximament - Uneix-te a la llista d'espera",
+
+  // Teachers Section
+  kizombaTeachersTitle: 'Pròximament',
+  kizombaTeachersSubtitle: 'Professors de Kizomba',
+  kizombaTeachersClosing: 'Pròximament anunciarem els nostres professors de Kizomba.',
+
+  // FAQs
+  kizombaFaqTitle: 'Preguntes Freqüents sobre Kizomba a Barcelona',
+  kizombaFaqQ1: 'Necessito experiència prèvia per començar Kizomba?',
+  kizombaFaqA1:
+    "No. Les nostres classes d'iniciació estan dissenyades per a principiants absoluts. Començaràs des de l'abraçada bàsica i la connexió.",
+  kizombaFaqQ2: 'Puc venir sense parella de ball?',
+  kizombaFaqA2:
+    "Sí. Molts alumnes vénen sols i rotem parelles durant la classe. És una forma excel·lent de conèixer gent i millorar la teva capacitat d'adaptació.",
+  kizombaFaqQ3: 'Quina diferència hi ha entre Kizomba i bachata?',
+  kizombaFaqA3:
+    "La Kizomba és més lenta i amb una abraçada més propera. Ve d'Angola (Àfrica), mentre la bachata és dominicana (Carib). La Kizomba emfatitza la connexió i ondulacions; la bachata té més passos laterals i girs.",
+  kizombaFaqQ4: 'Quina roba he de portar a les classes?',
+  kizombaFaqA4:
+    "Roba còmoda que permeti moure't amb llibertat. Sabates amb sola llisa (no esportives amb molta sola). Les noies poden usar sabates de taló baix o mitjons.",
+  kizombaFaqQ5: 'La Kizomba és molt sensual? És apropiada per a tothom?',
+  kizombaFaqA5:
+    "La Kizomba és sensual però sempre respectuosa. A classe treballem la connexió tècnica i el respecte mutu. El nivell d'intimitat el decideixes tu amb la teva parella.",
+  kizombaFaqQ6: 'Hi ha diferents estils de Kizomba?',
+  kizombaFaqA6:
+    'Sí. Existeix la Kizomba tradicional (angolesa), Urban Kiz (més moderna), Tarraxinha (més lenta i sensual) i Ghetto Zouk (fusió amb R&B).',
+  kizombaFaqQ7: "Puc provar una classe abans d'inscriure'm?",
+  kizombaFaqA7:
+    'Sí. Oferim una classe de benvinguda a preu especial perquè provis sense compromís.',
+  kizombaFaqQ8: "Quin tipus de música s'usa a Kizomba?",
+  kizombaFaqA8:
+    'Música Kizomba (artistes com Nelson Freitas, Mika Mendes, C4 Pedro), Ghetto Zouk, i remixes de R&B. Ritmes lents amb influència africana i antillana.',
+  kizombaFaqQ9: 'És bon exercici físic?',
+  kizombaFaqA9:
+    "Sí. Encara que és un ball lent, treballes core, cames, equilibri i coordinació. També redueix l'estrès gràcies a la connexió i l'abraçada.",
+  kizombaFaqQ10: "Quant de temps tarda a aprendre's?",
+  kizombaFaqA10:
+    "En 2-3 mesos de classes regulars pots ballar còmodament a festes. La Kizomba té una corba d'aprenentatge accessible comparada amb altres balls.",
+  kizombaFaqQ11: 'On són les classes?',
+  kizombaFaqA11:
+    "Farray's Center és al Carrer Entença 100, 08015 Barcelona, a 5 minuts de Plaça Espanya i Sants. Excel·lent connexió de metro, bus i tren.",
+  kizombaFaqQ12: 'Organitzeu festes o pràctiques de Kizomba?',
+  kizombaFaqA12:
+    'Sí. Organitzem socials i pràctiques on pots ballar el que has après en un ambient relaxat.',
+  kizombaFaqQ13: 'Puc combinar Kizomba amb altres estils?',
+  kizombaFaqA13:
+    'Per descomptat. Kizomba complementa perfectament bachata, salsa i zouk. Molts ballarins estudien diversos estils.',
+  kizombaFaqQ14: 'La Kizomba és adequada per a totes les edats?',
+  kizombaFaqA14:
+    'Sí. Tenim alumnes des de joves fins a majors de 60. En ser un ball sense salts ni moviments bruscos, és accessible per a tothom.',
+  kizombaFaqQ15: 'Com puc contactar per a més informació?',
+  kizombaFaqA15:
+    'Pots contactar-nos:<br/><br/>📞 <strong>Telèfon:</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email:</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a>',
+
+  // Prepare Section
+  kizombaPrepareTitle: 'Prepara la teva primera classe de Kizomba',
+  kizombaPrepareSubtitle: 'Tot el que necessites saber abans de venir',
+  kizombaPrepareWhatToBring: 'Què portar:',
+  kizombaPrepareItem1: "Roba còmoda que permeti moure't amb llibertat",
+  kizombaPrepareItem2: 'Sabates amb sola llisa (evita soles de goma gruixuda)',
+  kizombaPrepareItem3: "Ampolla d'aigua",
+  kizombaPrepareItem4: 'Desodorant o tovalloletes refrescants',
+  kizombaPrepareItem5: 'Opcional: mitjons per practicar girs',
+  kizombaPrepareBefore: "Abans d'arribar:",
+  kizombaPrepareBeforeItem1: 'Arriba 10 minuts abans per canviar-te',
+  kizombaPrepareBeforeItem2: 'Evita perfums molt forts (estaràs a prop de la teva parella)',
+  kizombaPrepareBeforeItem3: 'Vine amb ment oberta i respecte',
+  kizombaPrepareAvoid: 'Evita:',
+  kizombaPrepareAvoidItem1: "Rellotges, anells o polseres que puguin molestar a l'abraçada",
+  kizombaPrepareAvoidItem2: 'Roba amb cremalleres que ratllin la teva parella',
+  kizombaPrepareAvoidItem3: 'Menjar all o ceba abans de classe (estaràs molt a prop)',
+  kizombaPrepareTeacherTip: 'Consell:',
+  kizombaPrepareQuote:
+    "La Kizomba és el ball de l'abraçada. No et preocupis pels passos, preocupa't de connectar amb la teva parella i sentir la música.",
+
+  // Nearby Section
+  kizombaNearbyTitle: 'Classes de Kizomba a prop teu a Barcelona',
+  kizombaNearbyDesc:
+    "Som l'acadèmia de referència per a classes de Kizomba al cor de Barcelona. Perfectament ubicats entre Plaça Espanya i Estació de Sants, rebem alumnes dels barris de Hostafrancs, Sants-Badal, Les Corts, Eixample Esquerra, Poble Sec, Sant Antoni, La Bordeta i L'Hospitalet de Llobregat. També vénen ballarins de Gràcia, Sarrià-Sant Gervasi i el Raval gràcies a la nostra excel·lent connexió de transport.",
+  kizombaNearbySearchText:
+    'Si busques "classes de Kizomba a prop meu" o "acadèmia de ball africà Barcelona", estàs a pocs minuts:',
+  kizombaNearbyMetro:
+    'Metro: Rocafort (L1) 4 min, Plaça Espanya (L1, L3) 5 min, Entença (L5) 6 min, Hostafrancs (L1) 5 min. Tren: Sants Estació (Renfe, AVE, FGC) 8 min. Bus: H10, 27, 109, D40 a la porta. Bicing: 3 estacions a menys de 100m.',
+
+  // Logos Section
+  kizombaLogosTitle: 'Ens has pogut veure a…',
+  kizombaLogosIntlFestivalsText: 'i als millors festivals de dansa de tot el món',
+
+  // Final CTA Section
+  kizombaFinalCTATitle: 'Descobreix la connexió de la Kizomba',
+  kizombaFinalCTASubtitle: 'Fes el pas.',
+  kizombaFinalCTADesc:
+    "Apunta't a la llista d'espera i sigues el primer en assabentar-te quan obrim places.",
+  kizombaFinalCTAFunny: 'Preparat per ballar amb el cor?',
+
+  // Video Section (placeholder)
+  kizombaVideoTitle: 'Classes de Kizomba a Barcelona',
+  kizombaVideoDesc: 'Pròximament vídeos de les nostres classes de Kizomba.',
+
+  // Course Schema
+  kizombaCourseSchemaName: "Classes de Kizomba a Barcelona - Farray's Center",
+  kizombaCourseSchemaDesc:
+    'Aprèn Kizomba amb connexió autèntica i respecte a les arrels africanes. Classes per a tots els nivells al cor de Barcelona.',
 
   // ====================
   // HERO & SECTION IMAGE ALTS

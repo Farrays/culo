@@ -14,7 +14,15 @@ import { pushToDataLayer } from '../../../utils/analytics';
 const URL_SYNC_DEBOUNCE = 300;
 
 // URL parameter keys
-const FILTER_PARAMS = ['style', 'level', 'day', 'timeBlock', 'instructor', 'time'] as const;
+const FILTER_PARAMS = [
+  'category',
+  'style',
+  'level',
+  'day',
+  'timeBlock',
+  'instructor',
+  'time',
+] as const;
 
 export interface UseBookingFiltersReturn {
   filters: FilterState;
@@ -47,6 +55,7 @@ export function useBookingFilters(): UseBookingFiltersReturn {
   // Parse URL params into FilterState
   const urlFilters = useMemo((): FilterState => {
     return {
+      category: searchParams.get('category') || '',
       style: searchParams.get('style') || '',
       level: searchParams.get('level') || '',
       day: searchParams.get('day') || '',
@@ -70,6 +79,7 @@ export function useBookingFilters(): UseBookingFiltersReturn {
     if (hasUrlFilters) {
       pushToDataLayer({
         event: 'booking_deep_link_used',
+        category: searchParams.get('category') || undefined,
         style: searchParams.get('style') || undefined,
         level: searchParams.get('level') || undefined,
         day: searchParams.get('day') || undefined,

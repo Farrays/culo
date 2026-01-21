@@ -11,6 +11,7 @@ import {
   getLevelLabelKey,
   getDayLabelKey,
   getTimeBlockLabelKey,
+  CATEGORY_OPTIONS,
 } from '../constants/bookingOptions';
 
 // Close icon for badges
@@ -64,6 +65,17 @@ export const ActiveFilterBadges: React.FC<ActiveFilterBadgesProps> = ({
 
   // Build array of active filters with their display labels
   const activeFilters: Array<{ key: keyof FilterState; label: string }> = [];
+
+  // Category filter badge (shown first as it's the primary filter)
+  if (filters.category) {
+    const categoryOption = CATEGORY_OPTIONS.find(c => c.value === filters.category);
+    if (categoryOption) {
+      activeFilters.push({
+        key: 'category',
+        label: t(categoryOption.labelKey),
+      });
+    }
+  }
 
   if (filters.style) {
     activeFilters.push({

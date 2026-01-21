@@ -29,8 +29,12 @@ export interface BookingUrlParams {
   week?: string;
 }
 
+// Category type for dance class grouping
+export type Category = 'danza' | 'urbano' | 'latino' | 'fitness' | '';
+
 // Filter state (synced with URL)
 export interface FilterState {
+  category: string;
   style: string;
   level: string;
   day: string;
@@ -41,6 +45,7 @@ export interface FilterState {
 
 // Initial filter state
 export const INITIAL_FILTERS: FilterState = {
+  category: '',
   style: '',
   level: '',
   day: '',

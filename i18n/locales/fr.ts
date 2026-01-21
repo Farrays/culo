@@ -3570,6 +3570,11 @@ Chez Farray's International Dance Center, l'Afrobeats est enseigné avec techniq
   afroCitableBeneficios:
     "Les revues scientifiques associent la danse régulière à un risque moindre de déclin cognitif et de démence, soulignant sa valeur cérébrale dans les styles dynamiques comme l'Afrobeats.",
 
+  // Video Section
+  afroVideoTitle: "Découvrez les cours d'Afrobeats au Farray's Center",
+  afroVideoDesc:
+    "Regardez comment sont les cours d'Afrobeats et Afrodance à Barcelone : rythmes africains, énergie contagieuse et professeurs aux racines africaines.",
+
   // ===== Hip Hop Reggaeton Page =====
   hhrPageTitle: 'Cours de Hip Hop Reggaeton à Barcelone | Fusion Urbaine avec Flow',
   hhrMetaDescription:
@@ -19044,6 +19049,12 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   booking_filter_all: 'Tous',
   booking_filter_all_styles: 'Tous les styles',
   booking_filter_all_instructors: 'Tous les professeurs',
+  booking_filter_category: 'Catégorie',
+  booking_filter_all_categories: 'Toutes les catégories',
+  booking_filter_category_danza: 'Danse',
+  booking_filter_category_urbano: 'Danses Urbaines',
+  booking_filter_category_latino: 'Danses Latines',
+  booking_filter_category_fitness: 'Entraînement Danseurs',
   booking_clear_all_filters: 'Tout effacer',
   booking_clear_filters: 'Supprimer les filtres',
   booking_no_classes_match: 'Aucun cours ne correspond aux filtres',
@@ -19532,6 +19543,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
 
   // Social Proof Ticker
   socialProofBooked: '{name} a réservé {className}',
+  socialProofBookedShort: 'a réservé',
   socialProofMinutesAgo: 'il y a {minutes} min',
   socialProofJustNow: "à l'instant",
   socialProofClickToBook: 'Cliquez pour réserver votre cours',
@@ -20066,6 +20078,290 @@ Reconnue par le CID UNESCO et dirigée par Yunaisy Farray (actrice dans Street D
   commercialCourseSchemaName: "Cours de Commercial Dance à Barcelone - Farray's Center",
   commercialCourseSchemaDesc:
     'Apprenez le Commercial Dance avec des chorégraphies de niveau professionnel. Cours pour tous les niveaux au cœur de Barcelone.',
+
+  // ======================
+  // KIZOMBA PAGE
+  // ======================
+
+  // Page Meta
+  kizombaPageTitle: "Cours de Kizomba à Barcelone | Farray's Center",
+  kizombaMetaDescription:
+    "Cours de Kizomba à Barcelone. Apprenez cette danse angolaise sensuelle avec connexion en couple et musicalité africaine. Tous niveaux. Académie CID-UNESCO. Commencez aujourd'hui !",
+
+  // Breadcrumb
+  kizombaBreadcrumbHome: 'Accueil',
+  kizombaBreadcrumbClasses: 'Cours de Danse',
+  kizombaBreadcrumbLatinas: 'Danses Latines',
+  kizombaBreadcrumbCurrent: 'Cours de Kizomba',
+
+  // Hero Section
+  kizombaHeroTitle: 'Cours de Kizomba à Barcelone',
+  kizombaHeroSubtitle:
+    "Découvrez la danse la plus sensuelle d'Afrique avec connexion, musicalité et étreinte",
+  kizombaHeroDesc: 'Dansez avec le cœur',
+  kizombaHeroLocation: 'Cours de débutant à avancé, entre Plaza España et Sants',
+  kizombaHeroStudents: '+15 000 élèves formés',
+
+  // CTAs
+  kizombaCTA1: 'Découvrez comment commencer',
+  kizombaCTA1Subtext: "Liste d'attente active",
+  kizombaCTA2: "Rejoignez la liste d'attente",
+  kizombaCTA2Subtext: 'Nous vous informerons quand des places seront disponibles',
+
+  // What Is Section
+  kizombaWhatIsTitle: "Qu'est-ce que la Kizomba et pourquoi tout le monde en parle ?",
+  kizombaWhatIsP1:
+    "Imaginez une danse où la connexion avec votre partenaire est si intense qu'on dirait que vous lisez dans les pensées de l'autre. Où chaque mouvement naît de l'étreinte, pas de pas mémorisés. C'est la Kizomba : la danse la plus sensuelle d'Afrique, née en Angola à la fin des années 80 et qui conquiert aujourd'hui les pistes de danse du monde entier.",
+  kizombaWhatIsP2:
+    'La Kizomba est née de la fusion du Semba angolais avec le Zouk des Antilles françaises. Le nom signifie "fête" en kimbundu, l\'une des langues bantoues d\'Angola. Contrairement aux autres danses latines, la Kizomba se danse dans une étreinte proche avec des mouvements ondulants des hanches, où le leader guide avec le torse, pas avec les mains.',
+  kizombaWhatIsP3:
+    "Dans nos cours, nous travaillons la connexion réelle en couple, la musicalité africaine et cette qualité de mouvement douce et contrôlée qui rend la Kizomba si spéciale. Il ne s'agit pas d'apprendre des figures compliquées, mais de ressentir la musique et de communiquer avec votre partenaire à travers l'étreinte.",
+  kizombaWhatIsP4:
+    "Peu importe si vous venez seul(e) ou en couple, si vous n'avez jamais dansé ou si vous connaissez déjà d'autres styles. La Kizomba est pour ceux qui cherchent la connexion humaine, la musicalité et une façon de danser intime et élégante.",
+  kizombaWhatIsQuestionTitle: "Vous vous demandez si c'est pour vous ?",
+  kizombaWhatIsQuestionAnswer: "Si vous cherchez connexion et sensualité dans la danse, ça l'est.",
+
+  // Cultural History Section
+  kizombaCulturalHistoryTitle: "Voulez-vous connaître l'histoire de la Kizomba ?",
+  kizombaCulturalShort:
+    "La Kizomba est née en Angola à la fin des années 80, fusionnant le Semba traditionnel avec le Zouk antillais. De Luanda, elle s'est répandue au Portugal, en France, et aujourd'hui c'est l'une des danses de couple les plus populaires au monde. Chez Farray's Center, nous enseignons la Kizomba authentique avec respect pour ses racines africaines.",
+  kizombaCulturalFull: `### D'où vient la Kizomba ?
+
+**La Kizomba est née en Angola à la fin des années 80**, principalement à Luanda, la capitale. Le nom vient du kimbundu, une langue bantoue, et signifie "fête" ou "célébration". Elle a émergé quand les musiciens angolais ont commencé à fusionner le **Semba** (la danse traditionnelle d'Angola) avec les rythmes électroniques du **Zouk** des Antilles françaises.
+
+### Le Semba : la racine de tout
+
+Avant la Kizomba, il y avait le Semba, une danse de couple angolaise caractérisée par des mouvements rapides des hanches et une étreinte proche. Le Semba a des siècles d'histoire et est considéré comme l'une des origines de la samba brésilienne (quand les esclaves angolais ont été amenés au Brésil).
+
+La Kizomba a pris l'étreinte et la connexion du Semba, mais l'a ralentie et lui a ajouté la sensualité de la musique Zouk, créant quelque chose de complètement nouveau.
+
+### Eduardo Paim et les pionniers
+
+**Eduardo Paim** est considéré comme le père de la Kizomba moderne. En 1981, il a commencé à expérimenter en fusionnant le Semba avec des rythmes électroniques. D'autres artistes fondamentaux furent :
+
+- **Bibi dos Santos** : Compositeur et producteur qui a défini le son classique
+- **Paulo Flores** : A amené la Kizomba à de nouvelles audiences
+- **Bonga** : Bien que plus connu pour le Semba, a influencé l'évolution du style
+
+### L'expansion en Europe
+
+Dans les années 90, avec l'indépendance de l'Angola et les migrations, la Kizomba est arrivée au **Portugal**, où elle a trouvé une seconde maison. Lisbonne est devenue l'épicentre européen de la danse. De là, elle s'est répandue en France, en Espagne, en Allemagne et dans le reste du monde.
+
+Aujourd'hui, il existe des festivals de Kizomba dans plus de 50 pays. À Barcelone, la scène a énormément grandi ces dix dernières années.
+
+### Les styles au sein de la Kizomba
+
+Avec la mondialisation, la Kizomba a évolué en plusieurs styles :
+
+- **Kizomba traditionnelle** : Le style original angolais, avec accent sur la connexion et la musicalité
+- **Urban Kiz** : Version plus moderne avec influences hip hop et mouvements plus techniques
+- **Tarraxinha** : Style plus lent et sensuel, centré sur les mouvements des hanches
+- **Ghetto Zouk** : Fusion de Kizomba avec R&B et Zouk, populaire en soirée
+
+### Que travaille-t-on en cours de Kizomba ?
+
+- **Étreinte et connexion** : La base de tout. Apprendre à guider et suivre depuis le torse
+- **Ginga** : Le mouvement de base des hanches caractéristique du style
+- **Musicalité** : Interpréter les différents instruments et couches de la musique
+- **Saídas** : Figures et sorties qui ajoutent de la variété sans perdre la connexion
+- **Tarraxinha** : Les mouvements ondulants plus lents et sensuels
+
+### Kizomba à Barcelone
+
+**Farray's International Dance Center**, dans le **quartier de l'Eixample (Calle Entença 100, entre Plaza España et Sants)**, propose des cours de Kizomba axés sur la connexion authentique et le respect des racines africaines de la danse.
+
+Reconnue par le CID UNESCO et avec plus de 15 000 élèves formés, l'académie combine technique professionnelle et ambiance chaleureuse où vous pouvez vraiment apprendre à danser la Kizomba.`,
+
+  // Identify Section
+  kizombaIdentifyTitle: "Vous identifiez-vous à l'une de ces situations ?",
+  kizombaIdentify1: 'Vous voulez apprendre une danse de couple intime et sensuelle',
+  kizombaIdentify2: 'Vous recherchez une vraie connexion avec votre partenaire de danse',
+  kizombaIdentify3: 'Vous êtes attiré(e) par la musique africaine et ses rythmes',
+  kizombaIdentify4: 'Vous voulez une danse élégante qui ne nécessite pas de figures acrobatiques',
+  kizombaIdentify5:
+    'Vous avez besoin de vous déconnecter du stress et de vous connecter avec une autre personne',
+  kizombaIdentify6: 'Vous avez essayé la salsa ou la bachata et voulez quelque chose de différent',
+  kizombaIdentifyTransition:
+    'Si vous avez dit "oui" à l\'un de ces points, vous savez déjà ce dont vous avez besoin.',
+  kizombaNeedEnrollTitle:
+    'Vous devez vous inscrire à des cours de Kizomba dans une académie professionnelle',
+  kizombaIdentifyAgitate1:
+    "Regarder des tutoriels YouTube ne vous apprendra pas à vraiment vous connecter avec votre partenaire de danse. La Kizomba nécessite de ressentir l'étreinte, le guidage et la communication non verbale qui ne s'apprennent qu'en personne.",
+  kizombaIdentifySolution:
+    "Chez Farray's Center, vous apprendrez la Kizomba authentique avec accent sur la connexion et la musicalité. Des professeurs qui respectent les racines africaines de la danse.",
+  kizombaIdentifyClosing: 'Il est temps de danser avec le cœur.',
+
+  // Transform Section
+  kizombaTransformTitle: 'Imaginez votre avant et après',
+  kizombaTransform1Title: 'Vous vous connectez vraiment avec votre partenaire',
+  kizombaTransform1Desc: 'Communication non verbale, étreinte et guidage fluide.',
+  kizombaTransform2Title: 'Vous maîtrisez la musicalité africaine',
+  kizombaTransform2Desc: 'Vous interprétez chaque couche de la musique Kizomba.',
+  kizombaTransform3Title: 'Vous bougez avec élégance et sensualité',
+  kizombaTransform3Desc: 'Ginga, ondulations et tarraxinha contrôlée.',
+  kizombaTransform4Title: "Vous dansez à n'importe quelle fête dans le monde",
+  kizombaTransform4Desc: 'La Kizomba se danse de la même façon en Angola, à Lisbonne ou à Tokyo.',
+  kizombaTransform5Title: 'Vous réduisez le stress et vous connectez socialement',
+  kizombaTransform5Desc: "L'étreinte libère de l'ocytocine et améliore le bien-être.",
+  kizombaTransform6Title: 'Vous élargissez votre répertoire de danses',
+  kizombaTransform6Desc: 'Complète parfaitement bachata, salsa ou zouk.',
+  kizombaTransformCTA: "Pourquoi choisir Farray's Center pour apprendre la Kizomba ?",
+
+  // Why Choose Section
+  kizombaWhyChoose1Title: 'Académie reconnue par le CID UNESCO',
+  kizombaWhyChoose1Desc:
+    "Dirigée par Yunaisy Farray, actrice dans Street Dance 2 et l'une des enseignantes les plus reconnues au monde.",
+  kizombaWhyChoose2Title: 'Emplacement imbattable',
+  kizombaWhyChoose2Desc:
+    'Calle Entença 100, entre Plaza España et Sants, à 5 minutes de Plaça Espanya et Sants. Métro, bus et train à notre porte.',
+  kizombaWhyChoose3Title: 'Kizomba authentique aux racines africaines',
+  kizombaWhyChoose3Desc:
+    'Nous enseignons en respectant les origines angolaises de la danse. Connexion et musicalité avant les figures.',
+  kizombaWhyChoose4Title: 'Installations vraiment préparées',
+  kizombaWhyChoose4Desc:
+    'Plus de 700 m², salles spacieuses, miroirs, son professionnel, climatisation et ventilation centralisée.',
+  kizombaWhyChoose5Title: 'Académie multidisciplinaire',
+  kizombaWhyChoose5Desc:
+    'Plus de 25 styles pour compléter votre formation : bachata, salsa, zouk et autres danses de couple.',
+  kizombaWhyChoose7Title: 'Rotation de partenaires optionnelle',
+  kizombaWhyChoose7Desc:
+    "Vous pouvez venir seul(e) ou en couple. Environnement respectueux où l'apprentissage passe en premier.",
+
+  // Why Today Section
+  kizombaWhyTodayFullTitle:
+    'Pourquoi commencer la Kizomba aujourd\'hui et pas "la semaine prochaine" ?',
+  kizombaWhyToday1:
+    'Parce que vous continuez à regarder des vidéos de Kizomba et à rêver de danser aussi connecté(e).',
+  kizombaWhyToday2:
+    "Parce que vous n'êtes qu'à UN seul cours de ressentir cette étreinte et cette connexion.",
+  kizombaWhyToday3:
+    "Parce que la Kizomba n'est pas une question de pas parfaits, mais de ressentir la musique et de se connecter avec une autre personne.",
+  kizombaWhyTodayClosing1:
+    "Chez Farray's, nous ne vendons pas des cours. Nous créons des connexions.",
+  kizombaWhyTodayClosing2:
+    "Nous vous attendons avec de la musique africaine, des professeurs qui comprennent l'essence de la danse et une ambiance qui vous fait sentir chez vous.",
+
+  // Levels Section
+  kizombaLevelsTitle: 'Niveaux de Kizomba',
+  kizombaLevelBeginnerTitle: 'Débutant',
+  kizombaLevelBeginnerDesc:
+    "Pour ceux qui commencent de zéro. Apprenez l'étreinte, la ginga de base, la connexion et vos premiers pas en couple.",
+  kizombaLevelInterTitle: 'Intermédiaire',
+  kizombaLevelInterDesc:
+    'Perfectionnez votre connexion, apprenez des saídas plus complexes et développez votre musicalité africaine.',
+  kizombaLevelAdvancedTitle: 'Avancé',
+  kizombaLevelAdvancedDesc:
+    "Maîtrisez tarraxinha, urban kiz et l'interprétation musicale complète. Dansez avec n'importe quel partenaire.",
+
+  // Schedule Section
+  kizombaScheduleTitle: 'Horaires des Cours de Kizomba',
+  kizombaScheduleSubtitle: "Bientôt - Rejoignez la liste d'attente",
+
+  // Teachers Section
+  kizombaTeachersTitle: 'Bientôt',
+  kizombaTeachersSubtitle: 'Professeurs de Kizomba',
+  kizombaTeachersClosing: 'Nous annoncerons bientôt nos professeurs de Kizomba.',
+
+  // FAQs
+  kizombaFaqTitle: 'Questions Fréquentes sur la Kizomba à Barcelone',
+  kizombaFaqQ1: "Ai-je besoin d'une expérience préalable pour commencer la Kizomba ?",
+  kizombaFaqA1:
+    "Non. Nos cours débutants sont conçus pour les débutants absolus. Vous commencerez par l'étreinte de base et la connexion.",
+  kizombaFaqQ2: 'Puis-je venir sans partenaire de danse ?',
+  kizombaFaqA2:
+    "Oui. Beaucoup d'élèves viennent seuls et nous faisons tourner les partenaires pendant le cours. C'est une excellente façon de rencontrer des gens et d'améliorer votre adaptabilité.",
+  kizombaFaqQ3: 'Quelle est la différence entre Kizomba et bachata ?',
+  kizombaFaqA3:
+    "La Kizomba est plus lente et avec une étreinte plus proche. Elle vient d'Angola (Afrique), tandis que la bachata est dominicaine (Caraïbes). La Kizomba met l'accent sur la connexion et les ondulations ; la bachata a plus de pas latéraux et de tours.",
+  kizombaFaqQ4: 'Que dois-je porter aux cours ?',
+  kizombaFaqA4:
+    'Vêtements confortables qui permettent de bouger librement. Chaussures à semelles lisses (pas de baskets épaisses). Les dames peuvent porter des talons bas ou des chaussettes.',
+  kizombaFaqQ5: 'La Kizomba est-elle très sensuelle ? Est-elle appropriée pour tous ?',
+  kizombaFaqA5:
+    "La Kizomba est sensuelle mais toujours respectueuse. En cours, nous travaillons la connexion technique et le respect mutuel. Vous décidez du niveau d'intimité avec votre partenaire.",
+  kizombaFaqQ6: 'Y a-t-il différents styles de Kizomba ?',
+  kizombaFaqA6:
+    'Oui. Il y a la Kizomba traditionnelle (angolaise), Urban Kiz (plus moderne), Tarraxinha (plus lente et sensuelle) et Ghetto Zouk (fusion avec R&B).',
+  kizombaFaqQ7: "Puis-je essayer un cours avant de m'inscrire ?",
+  kizombaFaqA7:
+    'Oui. Nous proposons un cours de bienvenue à prix spécial pour que vous puissiez essayer sans engagement.',
+  kizombaFaqQ8: 'Quel type de musique est utilisé en Kizomba ?',
+  kizombaFaqA8:
+    'Musique Kizomba (artistes comme Nelson Freitas, Mika Mendes, C4 Pedro), Ghetto Zouk et remixes R&B. Rythmes lents avec influence africaine et antillaise.',
+  kizombaFaqQ9: 'Est-ce un bon exercice physique ?',
+  kizombaFaqA9:
+    "Oui. Bien que ce soit une danse lente, vous travaillez le core, les jambes, l'équilibre et la coordination. Cela réduit aussi le stress grâce à la connexion et l'étreinte.",
+  kizombaFaqQ10: 'Combien de temps faut-il pour apprendre ?',
+  kizombaFaqA10:
+    "En 2-3 mois de cours réguliers, vous pouvez danser confortablement en soirée. La Kizomba a une courbe d'apprentissage accessible comparée à d'autres danses.",
+  kizombaFaqQ11: 'Où sont les cours ?',
+  kizombaFaqA11:
+    "Farray's Center est au Calle Entença 100, 08015 Barcelone, à 5 minutes de Plaza España et Sants. Excellente connexion métro, bus et train.",
+  kizombaFaqQ12: 'Organisez-vous des soirées ou des pratiques de Kizomba ?',
+  kizombaFaqA12:
+    'Oui. Nous organisons des soirées sociales et des pratiques où vous pouvez danser ce que vous avez appris dans une atmosphère détendue.',
+  kizombaFaqQ13: "Puis-je combiner la Kizomba avec d'autres styles ?",
+  kizombaFaqA13:
+    'Absolument. La Kizomba complète parfaitement bachata, salsa et zouk. Beaucoup de danseurs étudient plusieurs styles.',
+  kizombaFaqQ14: 'La Kizomba est-elle adaptée à tous les âges ?',
+  kizombaFaqA14:
+    'Oui. Nous avons des élèves de jeunes à plus de 60 ans. Étant une danse sans sauts ni mouvements brusques, elle est accessible à tous.',
+  kizombaFaqQ15: "Comment puis-je vous contacter pour plus d'informations ?",
+  kizombaFaqA15:
+    'Vous pouvez nous contacter :<br/><br/>📞 <strong>Téléphone :</strong> <a href="tel:+34622247085" class="text-primary-accent hover:underline">+34 622 247 085</a><br/>📧 <strong>Email :</strong> <a href="mailto:info@farrayscenter.com" class="text-primary-accent hover:underline">info@farrayscenter.com</a>',
+
+  // Prepare Section
+  kizombaPrepareTitle: 'Préparez votre premier cours de Kizomba',
+  kizombaPrepareSubtitle: 'Tout ce que vous devez savoir avant de venir',
+  kizombaPrepareWhatToBring: 'Quoi apporter :',
+  kizombaPrepareItem1: 'Vêtements confortables permettant de bouger librement',
+  kizombaPrepareItem2: 'Chaussures à semelles lisses (évitez les semelles en caoutchouc épais)',
+  kizombaPrepareItem3: "Bouteille d'eau",
+  kizombaPrepareItem4: 'Déodorant ou lingettes rafraîchissantes',
+  kizombaPrepareItem5: 'Optionnel : chaussettes pour pratiquer les tours',
+  kizombaPrepareBefore: "Avant d'arriver :",
+  kizombaPrepareBeforeItem1: "Arrivez 10 minutes à l'avance pour vous changer",
+  kizombaPrepareBeforeItem2:
+    'Évitez les parfums très forts (vous serez proche de votre partenaire)',
+  kizombaPrepareBeforeItem3: "Venez avec l'esprit ouvert et du respect",
+  kizombaPrepareAvoid: 'Évitez :',
+  kizombaPrepareAvoidItem1: "Montres, bagues ou bracelets qui pourraient gêner l'étreinte",
+  kizombaPrepareAvoidItem2:
+    'Vêtements avec fermetures éclair qui pourraient rayer votre partenaire',
+  kizombaPrepareAvoidItem3:
+    "Manger de l'ail ou de l'oignon avant le cours (vous serez très proche)",
+  kizombaPrepareTeacherTip: 'Conseil :',
+  kizombaPrepareQuote:
+    "La Kizomba est la danse de l'étreinte. Ne vous souciez pas des pas, souciez-vous de vous connecter avec votre partenaire et de ressentir la musique.",
+
+  // Nearby Section
+  kizombaNearbyTitle: 'Cours de Kizomba près de chez vous à Barcelone',
+  kizombaNearbyDesc:
+    "Nous sommes l'académie de référence pour les cours de Kizomba au cœur de Barcelone. Parfaitement situés entre Plaza España et la gare de Sants, nous recevons des élèves des quartiers de Hostafrancs, Sants-Badal, Les Corts, Eixample Esquerra, Poble Sec, Sant Antoni, La Bordeta et L'Hospitalet de Llobregat. Des danseurs viennent aussi de Gràcia, Sarrià-Sant Gervasi et le Raval grâce à notre excellente connexion de transport.",
+  kizombaNearbySearchText:
+    'Si vous cherchez "cours de Kizomba près de moi" ou "académie de danse africaine Barcelone", vous n\'êtes qu\'à quelques minutes :',
+  kizombaNearbyMetro:
+    'Métro : Rocafort (L1) 4 min, Plaza España (L1, L3) 5 min, Entença (L5) 6 min, Hostafrancs (L1) 5 min. Train : Sants Estació (Renfe, AVE, FGC) 8 min. Bus : H10, 27, 109, D40 à notre porte. Bicing : 3 stations à moins de 100m.',
+
+  // Logos Section
+  kizombaLogosTitle: 'Vous avez pu nous voir dans…',
+  kizombaLogosIntlFestivalsText: 'et dans les meilleurs festivals de danse du monde entier',
+
+  // Final CTA Section
+  kizombaFinalCTATitle: 'Découvrez la connexion de la Kizomba',
+  kizombaFinalCTASubtitle: 'Faites le pas.',
+  kizombaFinalCTADesc:
+    "Inscrivez-vous sur la liste d'attente et soyez le premier informé quand nous ouvrirons des places.",
+  kizombaFinalCTAFunny: 'Prêt(e) à danser avec le cœur ?',
+
+  // Video Section (placeholder)
+  kizombaVideoTitle: 'Cours de Kizomba à Barcelone',
+  kizombaVideoDesc: 'Bientôt : vidéos de nos cours de Kizomba.',
+
+  // Course Schema
+  kizombaCourseSchemaName: "Cours de Kizomba à Barcelone - Farray's Center",
+  kizombaCourseSchemaDesc:
+    'Apprenez la Kizomba avec une connexion authentique et le respect des racines africaines. Cours pour tous les niveaux au cœur de Barcelone.',
 
   // ====================
   // HERO & SECTION IMAGE ALTS

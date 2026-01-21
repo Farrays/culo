@@ -11,8 +11,11 @@ import {
   LEVEL_OPTIONS,
   DAY_OPTIONS,
   TIME_BLOCK_OPTIONS,
+  CATEGORY_OPTIONS,
   getStyleColor,
+  getStylesByCategory,
 } from '../constants/bookingOptions';
+import type { Category } from '../types/booking';
 
 // Icons
 const ChevronDownIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -112,6 +115,23 @@ const LevelIcon: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
+const CategoryIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+    />
+  </svg>
+);
+
 interface FilterDropdownProps {
   label: string;
   value: string;
@@ -159,51 +179,76 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
       <button
         type="button"
         onClick={onToggle}
-        className={`flex items-center gap-2 px-3 py-2 rounded-xl border text-sm transition-all ${
+        className={`flex items-center gap-2 px-4 py-2.5 rounded-lg border text-sm font-medium transition-all duration-200 ${
           hasValue
-            ? 'bg-primary-accent/20 border-primary-accent text-neutral'
-            : 'bg-white/5 border-white/20 text-neutral/70 hover:border-white/40'
+            ? 'bg-primary-accent/15 border-primary-accent/60 text-white shadow-sm shadow-primary-accent/20'
+            : 'bg-neutral-900/80 border-neutral-700/50 text-neutral-300 hover:bg-neutral-800/80 hover:border-neutral-600/60 hover:text-white'
         }`}
       >
         {selectedOption?.color ? (
-          <div className="w-3 h-3 rounded-full" style={{ backgroundColor: selectedOption.color }} />
+          <div
+            className="w-3 h-3 rounded-full ring-1 ring-white/20"
+            style={{ backgroundColor: selectedOption.color }}
+          />
         ) : (
-          icon
+          icon && <span className="opacity-70">{icon}</span>
         )}
-        {displayLabel}
-        <ChevronDownIcon className={`w-3 h-3 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        <span className="whitespace-nowrap">{displayLabel}</span>
+        <ChevronDownIcon
+          className={`w-3.5 h-3.5 opacity-60 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+        />
       </button>
 
       {isOpen && (
         <div
-          className="absolute z-[100] top-full mt-1 left-0 min-w-[160px] max-h-[300px] overflow-y-auto bg-black/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-xl pointer-events-auto"
+          className="absolute z-[100] top-full mt-2 left-0 min-w-[180px] max-h-[320px] overflow-y-auto bg-neutral-900/98 backdrop-blur-xl border border-neutral-700/60 rounded-lg shadow-2xl shadow-black/50 pointer-events-auto"
           style={{ isolation: 'isolate' }}
         >
-          {options.map(option => (
-            <button
-              key={option.value}
-              type="button"
-              onMouseDown={e => {
-                e.stopPropagation();
-                e.preventDefault();
-              }}
-              onClick={e => {
-                e.stopPropagation();
-                onChange(option.value);
-                onClose();
-              }}
-              className={`w-full px-4 py-2 text-left text-sm transition-colors flex items-center gap-2 cursor-pointer ${
-                option.value === value
-                  ? 'bg-primary-accent/20 text-primary-accent'
-                  : 'text-neutral/80 hover:bg-white/10'
-              }`}
-            >
-              {option.color && (
-                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: option.color }} />
-              )}
-              {option.label}
-            </button>
-          ))}
+          <div className="py-1">
+            {options.map(option => (
+              <button
+                key={option.value}
+                type="button"
+                onMouseDown={e => {
+                  e.stopPropagation();
+                  e.preventDefault();
+                }}
+                onClick={e => {
+                  e.stopPropagation();
+                  onChange(option.value);
+                  onClose();
+                }}
+                className={`w-full px-4 py-2.5 text-left text-sm transition-all duration-150 flex items-center gap-3 cursor-pointer ${
+                  option.value === value
+                    ? 'bg-primary-accent/20 text-white font-medium'
+                    : 'text-neutral-300 hover:bg-neutral-800/80 hover:text-white'
+                }`}
+              >
+                {option.color && (
+                  <div
+                    className="w-3 h-3 rounded-full ring-1 ring-white/10 flex-shrink-0"
+                    style={{ backgroundColor: option.color }}
+                  />
+                )}
+                <span>{option.label}</span>
+                {option.value === value && (
+                  <svg
+                    className="w-4 h-4 ml-auto text-primary-accent"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                )}
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </div>
@@ -236,13 +281,41 @@ export const FilterBar: React.FC<FilterBarProps> = ({
     setOpenDropdown(prev => (prev === dropdown ? null : dropdown));
   }, []);
 
+  // Handle category change - clear style if it's not in the new category
+  const handleCategoryChange = useCallback(
+    (value: string) => {
+      onFilterChange('category', value);
+      // Clear style if it doesn't belong to the new category
+      if (filters.style && value) {
+        const stylesInCategory = getStylesByCategory(value as Category);
+        const styleExists = stylesInCategory.some(s => s.value === filters.style);
+        if (!styleExists) {
+          onFilterChange('style', '');
+        }
+      }
+    },
+    [filters.style, onFilterChange]
+  );
+
   // Count active filters
   const activeFilterCount = Object.values(filters).filter(Boolean).length;
 
-  // Build style options
+  // Build category options
+  const categoryOptions = CATEGORY_OPTIONS.map(cat => ({
+    value: cat.value,
+    label: t(cat.labelKey),
+    color: cat.color,
+  }));
+
+  // Build style options - filtered by selected category
+  const selectedCategory = filters.category as Category | '';
+  const availableStyles = selectedCategory
+    ? getStylesByCategory(selectedCategory)
+    : STYLE_OPTIONS.filter(s => s.value !== '');
+
   const styleOptions = [
     { value: '', label: t('booking_filter_all_styles'), color: undefined },
-    ...STYLE_OPTIONS.filter(s => s.value !== '').map(style => ({
+    ...availableStyles.map(style => ({
       value: style.value,
       label: style.label || t(style.labelKey || ''),
       color: getStyleColor(style.value),
@@ -288,7 +361,19 @@ export const FilterBar: React.FC<FilterBarProps> = ({
 
   const filterContent = (
     <div className="flex flex-wrap gap-2">
-      {/* Style Filter */}
+      {/* Category Filter - Primary filter */}
+      <FilterDropdown
+        label={t('booking_filter_category')}
+        value={filters.category}
+        options={categoryOptions}
+        onChange={handleCategoryChange}
+        isOpen={openDropdown === 'category'}
+        onToggle={() => handleToggle('category')}
+        onClose={handleClose}
+        icon={<CategoryIcon className="w-4 h-4" />}
+      />
+
+      {/* Style Filter - Shows styles based on selected category */}
       <FilterDropdown
         label={t('booking_filter_style')}
         value={filters.style}
@@ -354,32 +439,32 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   return (
     <>
       {/* Mobile: Collapsible filter toggle */}
-      <div className="sm:hidden mb-3">
+      <div className="sm:hidden mb-4">
         <button
           type="button"
           onClick={() => setIsExpanded(!isExpanded)}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all w-full justify-center ${
+          className={`flex items-center gap-2 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 w-full justify-center ${
             activeFilterCount > 0
-              ? 'bg-primary-accent/20 border border-primary-accent text-neutral'
-              : 'bg-white/10 border border-white/20 text-neutral/80'
+              ? 'bg-primary-accent/15 border border-primary-accent/60 text-white shadow-sm shadow-primary-accent/20'
+              : 'bg-neutral-900/80 border border-neutral-700/50 text-neutral-300 hover:bg-neutral-800/80 hover:border-neutral-600/60'
           }`}
         >
           <FilterIcon className="w-4 h-4" />
           <span>
             {t('booking_filters')}
             {activeFilterCount > 0 && (
-              <span className="ml-1.5 px-1.5 py-0.5 text-xs bg-primary-accent text-white rounded-full">
+              <span className="ml-2 px-2 py-0.5 text-xs bg-primary-accent text-white rounded-full font-semibold">
                 {activeFilterCount}
               </span>
             )}
           </span>
           <ChevronDownIcon
-            className={`w-4 h-4 ml-auto transition-transform ${isExpanded ? '' : 'rotate-180'}`}
+            className={`w-4 h-4 ml-auto transition-transform duration-200 ${isExpanded ? '' : 'rotate-180'}`}
           />
         </button>
 
         {/* Expanded filters on mobile */}
-        {isExpanded && <div className="mt-3">{filterContent}</div>}
+        {isExpanded && <div className="mt-3 space-y-2">{filterContent}</div>}
       </div>
 
       {/* Desktop: Always visible */}

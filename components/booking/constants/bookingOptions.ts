@@ -3,30 +3,85 @@
  * All options and configuration for the booking system
  */
 
+import type { Category } from '../types/booking';
+
+// Category option type
+export type CategoryOption = {
+  value: Category | '';
+  labelKey: string;
+  color: string;
+  icon?: string;
+};
+
 // Style option type
 export type StyleOption = {
   value: string;
   label?: string;
   labelKey?: string;
   color: string;
+  category?: Category;
 };
 
-// Style options with colors for visual UI
+// Category options with colors for visual differentiation
+export const CATEGORY_OPTIONS: readonly CategoryOption[] = [
+  { value: '', labelKey: 'booking_filter_all_categories', color: '#B01E3C' },
+  { value: 'danza', labelKey: 'booking_filter_category_danza', color: '#10B981' }, // Emerald
+  { value: 'urbano', labelKey: 'booking_filter_category_urbano', color: '#F43F5E' }, // Rose
+  { value: 'latino', labelKey: 'booking_filter_category_latino', color: '#F59E0B' }, // Amber
+  { value: 'fitness', labelKey: 'booking_filter_category_fitness', color: '#0EA5E9' }, // Sky
+] as const;
+
+// Style options with colors for visual UI - now with category mapping
 export const STYLE_OPTIONS: readonly StyleOption[] = [
   { value: '', labelKey: 'booking_style_all', color: '#B01E3C' },
-  { value: 'salsa', label: 'Salsa', color: '#FF6B6B' },
-  { value: 'bachata', label: 'Bachata', color: '#C44569' },
-  { value: 'hiphop', label: 'Hip Hop', color: '#574B90' },
-  { value: 'reggaeton', label: 'Reggaeton', color: '#F8B500' },
-  { value: 'heels', label: 'Heels', color: '#FF69B4' },
-  { value: 'dancehall', label: 'Dancehall', color: '#00D9A5' },
-  { value: 'afro', label: 'Afro', color: '#FF8C00' },
-  { value: 'twerk', label: 'Twerk', color: '#FF1493' },
-  { value: 'commercial', label: 'Commercial', color: '#4834D4' },
-  { value: 'kpop', label: 'K-Pop', color: '#A29BFE' },
-  { value: 'yoga', label: 'Yoga', color: '#00B894' },
-  { value: 'stretching', label: 'Stretching', color: '#81ECEC' },
+  // Latino styles
+  { value: 'salsa', label: 'Salsa', color: '#FF6B6B', category: 'latino' },
+  { value: 'bachata', label: 'Bachata', color: '#C44569', category: 'latino' },
+  { value: 'kizomba', label: 'Kizomba', color: '#8B5CF6', category: 'latino' },
+  { value: 'folklore', label: 'Folklore', color: '#D97706', category: 'latino' },
+  // Urban styles
+  { value: 'hiphop', label: 'Hip Hop', color: '#574B90', category: 'urbano' },
+  { value: 'reggaeton', label: 'Reggaeton', color: '#F8B500', category: 'urbano' },
+  { value: 'heels', label: 'Heels', color: '#FF69B4', category: 'urbano' },
+  { value: 'dancehall', label: 'Dancehall', color: '#00D9A5', category: 'urbano' },
+  { value: 'afro', label: 'Afro', color: '#FF8C00', category: 'urbano' },
+  { value: 'twerk', label: 'Twerk', color: '#FF1493', category: 'urbano' },
+  { value: 'commercial', label: 'Commercial', color: '#4834D4', category: 'urbano' },
+  { value: 'kpop', label: 'K-Pop', color: '#A29BFE', category: 'urbano' },
+  { value: 'girly', label: 'Girly', color: '#EC4899', category: 'urbano' },
+  { value: 'breaking', label: 'Breaking', color: '#6366F1', category: 'urbano' },
+  { value: 'house', label: 'House', color: '#8B5CF6', category: 'urbano' },
+  { value: 'locking', label: 'Locking', color: '#14B8A6', category: 'urbano' },
+  { value: 'popping', label: 'Popping', color: '#F97316', category: 'urbano' },
+  { value: 'waacking', label: 'Waacking', color: '#D946EF', category: 'urbano' },
+  // Danza styles
+  { value: 'ballet', label: 'Ballet', color: '#EC4899', category: 'danza' },
+  { value: 'contemporaneo', label: 'Contemporáneo', color: '#8B5CF6', category: 'danza' },
+  { value: 'jazz', label: 'Jazz', color: '#06B6D4', category: 'danza' },
+  // Fitness styles
+  { value: 'stretching', label: 'Stretching', color: '#81ECEC', category: 'fitness' },
+  { value: 'yoga', label: 'Yoga', color: '#00B894', category: 'fitness' },
+  { value: 'pilates', label: 'Pilates', color: '#34D399', category: 'fitness' },
+  { value: 'fitness', label: 'Fitness', color: '#22D3EE', category: 'fitness' },
 ];
+
+// Get styles filtered by category
+export function getStylesByCategory(category: Category | ''): StyleOption[] {
+  if (!category) return STYLE_OPTIONS.filter(s => s.value !== '');
+  return STYLE_OPTIONS.filter(s => s.category === category);
+}
+
+// Get category color
+export function getCategoryColor(category: Category | ''): string {
+  const cat = CATEGORY_OPTIONS.find(c => c.value === category);
+  return cat?.color || '#B01E3C';
+}
+
+// Get category for a style
+export function getCategoryForStyle(style: string): Category | '' {
+  const styleOption = STYLE_OPTIONS.find(s => s.value === style);
+  return styleOption?.category || '';
+}
 
 // Level options
 export const LEVEL_OPTIONS = [
