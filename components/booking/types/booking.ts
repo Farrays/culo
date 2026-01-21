@@ -164,8 +164,8 @@ export type BookingAction =
   | { type: 'SET_WEEK'; payload: number }
   | { type: 'RESET' };
 
-// Styles that require heels consent
-export const HEELS_STYLES = ['heels', 'girly', 'sexystyle', 'femmology', 'sexy'];
+// Styles that require heels consent (Femmology requires heels, Sexy Style is optional)
+export const HEELS_STYLES = ['heels', 'girly', 'femmology'];
 
 // Check if a class requires heels consent
 export function requiresHeelsConsent(classData: ClassData | null): boolean {
