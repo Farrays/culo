@@ -32,37 +32,28 @@ export const CATEGORY_OPTIONS: readonly CategoryOption[] = [
 ] as const;
 
 // Style options with colors for visual UI - now with category mapping
+// Only includes styles actually offered at Farray's (based on schedule data)
 export const STYLE_OPTIONS: readonly StyleOption[] = [
   { value: '', labelKey: 'booking_style_all', color: '#B01E3C' },
-  // Latino styles
-  { value: 'salsa', label: 'Salsa', color: '#FF6B6B', category: 'latino' },
+  // Latino styles (Salsa Cubana, Bachata, Timba, Folklore Cubano)
+  { value: 'salsa', label: 'Salsa Cubana', color: '#FF6B6B', category: 'latino' },
   { value: 'bachata', label: 'Bachata', color: '#C44569', category: 'latino' },
-  { value: 'kizomba', label: 'Kizomba', color: '#8B5CF6', category: 'latino' },
-  { value: 'folklore', label: 'Folklore', color: '#D97706', category: 'latino' },
-  // Urban styles
-  { value: 'hiphop', label: 'Hip Hop', color: '#574B90', category: 'urbano' },
+  { value: 'folklore', label: 'Folklore Cubano', color: '#D97706', category: 'latino' },
+  // Urban styles (Sexy Reggaeton, Sexy Style, Twerk, Dancehall, Afrobeats, Hip Hop, Femmology)
   { value: 'reggaeton', label: 'Reggaeton', color: '#F8B500', category: 'urbano' },
-  { value: 'heels', label: 'Heels', color: '#FF69B4', category: 'urbano' },
-  { value: 'dancehall', label: 'Dancehall', color: '#00D9A5', category: 'urbano' },
-  { value: 'afro', label: 'Afro', color: '#FF8C00', category: 'urbano' },
+  { value: 'heels', label: 'Sexy Style', color: '#FF69B4', category: 'urbano' },
   { value: 'twerk', label: 'Twerk', color: '#FF1493', category: 'urbano' },
-  { value: 'commercial', label: 'Commercial', color: '#4834D4', category: 'urbano' },
-  { value: 'kpop', label: 'K-Pop', color: '#A29BFE', category: 'urbano' },
-  { value: 'girly', label: 'Girly', color: '#EC4899', category: 'urbano' },
-  { value: 'breaking', label: 'Breaking', color: '#6366F1', category: 'urbano' },
-  { value: 'house', label: 'House', color: '#8B5CF6', category: 'urbano' },
-  { value: 'locking', label: 'Locking', color: '#14B8A6', category: 'urbano' },
-  { value: 'popping', label: 'Popping', color: '#F97316', category: 'urbano' },
-  { value: 'waacking', label: 'Waacking', color: '#D946EF', category: 'urbano' },
-  // Danza styles
-  { value: 'ballet', label: 'Ballet', color: '#EC4899', category: 'danza' },
+  { value: 'dancehall', label: 'Dancehall', color: '#00D9A5', category: 'urbano' },
+  { value: 'afro', label: 'Afrobeats', color: '#FF8C00', category: 'urbano' },
+  { value: 'hiphop', label: 'Hip Hop', color: '#574B90', category: 'urbano' },
+  { value: 'girly', label: 'Femmology', color: '#EC4899', category: 'urbano' },
+  // Danza styles (Contemporáneo, Modern Jazz, Ballet, Afro Jazz, Afro Contemporáneo)
   { value: 'contemporaneo', label: 'Contemporáneo', color: '#8B5CF6', category: 'danza' },
-  { value: 'jazz', label: 'Jazz', color: '#06B6D4', category: 'danza' },
-  // Fitness styles
+  { value: 'jazz', label: 'Modern Jazz', color: '#06B6D4', category: 'danza' },
+  { value: 'ballet', label: 'Ballet', color: '#EC4899', category: 'danza' },
+  // Fitness styles (Stretching, Body Conditioning)
   { value: 'stretching', label: 'Stretching', color: '#81ECEC', category: 'fitness' },
-  { value: 'yoga', label: 'Yoga', color: '#00B894', category: 'fitness' },
-  { value: 'pilates', label: 'Pilates', color: '#34D399', category: 'fitness' },
-  { value: 'fitness', label: 'Fitness', color: '#22D3EE', category: 'fitness' },
+  { value: 'fitness', label: 'Body Conditioning', color: '#22D3EE', category: 'fitness' },
 ];
 
 // Get styles filtered by category
