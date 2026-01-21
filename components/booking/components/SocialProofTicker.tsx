@@ -195,8 +195,13 @@ export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
       };
     }, [bookings.length]);
 
-    // Don't render if no bookings or translations still loading
-    if (bookings.length === 0 || !toastVisible || translationsLoading) {
+    // Check if translations are actually loaded (not just isLoading flag)
+    // If t() returns the key itself, translations aren't ready yet
+    const translationsReady =
+      !translationsLoading && t('socialProofBookedShort') !== 'socialProofBookedShort';
+
+    // Don't render if no bookings or translations not ready
+    if (bookings.length === 0 || !toastVisible || !translationsReady) {
       return null;
     }
 
