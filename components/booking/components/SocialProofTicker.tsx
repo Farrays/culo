@@ -36,11 +36,11 @@ const API_BASE = import.meta.env['VITE_API_URL'] || '';
 // Refresh interval: 60 seconds
 const REFRESH_INTERVAL = 60 * 1000;
 
-// How long to show each notification: 4 seconds
-const DISPLAY_DURATION = 4 * 1000;
+// How long to show each notification: 7 seconds (enough time to read)
+const DISPLAY_DURATION = 7 * 1000;
 
-// How long to wait between notifications: 8 seconds
-const PAUSE_BETWEEN = 8 * 1000;
+// How long to wait between notifications: 15 seconds
+const PAUSE_BETWEEN = 15 * 1000;
 
 // Animation duration for slide in/out
 const ANIMATION_DURATION = 400;
