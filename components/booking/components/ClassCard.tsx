@@ -59,6 +59,10 @@ const INSTRUCTOR_NAME_TO_REGISTRY: Record<string, string> = {
   'Grechen Mendez': 'grechen-mendez',
   'Grechén Mendez': 'grechen-mendez',
   'Grechen Méndez': 'grechen-mendez',
+  // Greechen with double 'e' (correct spelling)
+  Greechen: 'grechen-mendez',
+  'Greechen Mendez': 'grechen-mendez',
+  'Greechen Méndez': 'grechen-mendez',
   Isa: 'isabel-lopez',
   'Isa Lopez': 'isabel-lopez',
   'Isa López': 'isabel-lopez',
@@ -443,8 +447,8 @@ export const ClassCard: React.FC<ClassCardProps> = memo(
               isSelected
                 ? 'border-primary-accent bg-primary-accent/10'
                 : classData.isFull
-                  ? 'border-white/10 bg-white/5 opacity-60 cursor-not-allowed'
-                  : 'border-white/10 bg-white/5 hover:border-primary-accent hover:bg-white/10 cursor-pointer'
+                  ? 'border-transparent bg-white/5 opacity-60 cursor-not-allowed'
+                  : 'border-primary-accent/30 bg-white/5 hover:border-primary-accent hover:bg-white/10 cursor-pointer'
             }
           `}
         >

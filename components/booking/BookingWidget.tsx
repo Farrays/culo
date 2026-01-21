@@ -1907,7 +1907,7 @@ const BookingWidget: React.FC = memo(function BookingWidget() {
     <div className="animate-fade-in text-center py-8">
       <div className="relative inline-block mb-6">
         <div className="absolute inset-0 bg-red-500/30 rounded-full blur-xl" />
-        <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
+        <div className="relative w-20 h-20 aspect-square rounded-full bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
           <XMarkIcon className="w-10 h-10 text-white" />
         </div>
       </div>
