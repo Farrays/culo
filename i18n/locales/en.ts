@@ -18658,6 +18658,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   booking_filter_category_urbano: 'Urban Dance',
   booking_filter_category_latino: 'Latin Dance',
   booking_filter_category_fitness: 'Dancer Training',
+  booking_filter_category_heels: 'Heels',
   booking_clear_all_filters: 'Clear all',
   booking_clear_filters: 'Clear filters',
   booking_no_classes_match: 'No classes match the selected filters',

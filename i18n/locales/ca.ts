@@ -18898,6 +18898,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   booking_filter_category_urbano: 'Danses Urbanes',
   booking_filter_category_latino: 'Balls Llatins',
   booking_filter_category_fitness: 'Entrenament Ballarins',
+  booking_filter_category_heels: 'Heels',
   booking_clear_all_filters: 'Netejar tots',
   booking_clear_filters: 'Treure filtres',
   booking_no_classes_match: 'No hi ha classes que coincideixin amb els filtres',

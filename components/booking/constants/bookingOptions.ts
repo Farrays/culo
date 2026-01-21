@@ -29,6 +29,7 @@ export const CATEGORY_OPTIONS: readonly CategoryOption[] = [
   { value: 'urbano', labelKey: 'booking_filter_category_urbano', color: '#F43F5E' }, // Rose
   { value: 'latino', labelKey: 'booking_filter_category_latino', color: '#F59E0B' }, // Amber
   { value: 'fitness', labelKey: 'booking_filter_category_fitness', color: '#0EA5E9' }, // Sky
+  { value: 'heels', labelKey: 'booking_filter_category_heels', color: '#EC4899' }, // Pink
 ] as const;
 
 // Style options with colors for visual UI - now with category mapping
@@ -43,7 +44,6 @@ export const STYLE_OPTIONS: readonly StyleOption[] = [
   { value: 'folklore', label: 'Folklore Cubano', color: '#D97706', category: 'latino' },
   // Urban styles
   { value: 'reggaeton', label: 'Reggaeton', color: '#F8B500', category: 'urbano' },
-  { value: 'heels', label: 'Heels', color: '#FF69B4', category: 'urbano' },
   { value: 'twerk', label: 'Twerk', color: '#FF1493', category: 'urbano' },
   { value: 'dancehall', label: 'Dancehall', color: '#00D9A5', category: 'urbano' },
   { value: 'afro', label: 'Afrobeats', color: '#FF8C00', category: 'urbano' },
@@ -58,6 +58,9 @@ export const STYLE_OPTIONS: readonly StyleOption[] = [
   { value: 'fitness', label: 'Body Conditioning', color: '#22D3EE', category: 'fitness' },
   { value: 'cuerpofit', label: 'Cuerpo Fit', color: '#3498DB', category: 'fitness' },
   { value: 'bumbum', label: 'Bum Bum Glúteos', color: '#E91E63', category: 'fitness' },
+  // Heels styles
+  { value: 'sexystyle', label: 'Sexy Style', color: '#FF69B4', category: 'heels' },
+  { value: 'femmology', label: 'Femmology', color: '#DB2777', category: 'heels' },
 ];
 
 // Get styles filtered by category

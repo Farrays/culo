@@ -30,7 +30,7 @@ export interface BookingUrlParams {
 }
 
 // Category type for dance class grouping
-export type Category = 'danza' | 'urbano' | 'latino' | 'fitness' | '';
+export type Category = 'danza' | 'urbano' | 'latino' | 'fitness' | 'heels' | '';
 
 // Filter state (synced with URL)
 export interface FilterState {
@@ -165,7 +165,7 @@ export type BookingAction =
   | { type: 'RESET' };
 
 // Styles that require heels consent
-export const HEELS_STYLES = ['heels', 'girly'];
+export const HEELS_STYLES = ['heels', 'girly', 'sexystyle', 'femmology', 'sexy'];
 
 // Check if a class requires heels consent
 export function requiresHeelsConsent(classData: ClassData | null): boolean {

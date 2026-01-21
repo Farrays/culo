@@ -19055,6 +19055,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   booking_filter_category_urbano: 'Danses Urbaines',
   booking_filter_category_latino: 'Danses Latines',
   booking_filter_category_fitness: 'Entraînement Danseurs',
+  booking_filter_category_heels: 'Heels',
   booking_clear_all_filters: 'Tout effacer',
   booking_clear_filters: 'Supprimer les filtres',
   booking_no_classes_match: 'Aucun cours ne correspond aux filtres',
