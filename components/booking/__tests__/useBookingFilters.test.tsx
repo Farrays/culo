@@ -156,6 +156,7 @@ describe('useBookingFilters', () => {
       });
 
       expect(result.current.filters).toEqual({
+        category: '',
         style: '',
         level: '',
         day: '',
