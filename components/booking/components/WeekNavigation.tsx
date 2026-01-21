@@ -55,8 +55,13 @@ interface WeekNavigationProps {
   weekOffset: number;
   onWeekChange: (week: number) => void;
   loading?: boolean;
-  /** Current visible day label (e.g., "Lunes 20 Ene") - shown dynamically as user scrolls */
-  currentVisibleDay?: string | null;
+  /** Current visible day info for dynamic display */
+  currentVisibleDay?: {
+    dayOfWeek: string; // "Lunes", "Martes", etc.
+    dateFormatted: string; // "19 ene"
+  } | null;
+  /** Hide navigation arrows (when in filtered/all weeks mode) */
+  hideNavigation?: boolean;
 }
 
 export const WeekNavigation: React.FC<WeekNavigationProps> = ({
@@ -64,6 +69,7 @@ export const WeekNavigation: React.FC<WeekNavigationProps> = ({
   onWeekChange,
   loading = false,
   currentVisibleDay = null,
+  hideNavigation = false,
 }) => {
   const { t, locale } = useI18n();
 
@@ -120,38 +126,42 @@ export const WeekNavigation: React.FC<WeekNavigationProps> = ({
 
   return (
     <div className="flex items-center justify-center gap-3">
-      {/* Previous week button */}
-      <button
-        type="button"
-        onClick={() => onWeekChange(weekOffset - 1)}
-        disabled={!canGoPrevious}
-        className={`
-          p-2.5 rounded-xl transition-all duration-200
-          ${
-            canGoPrevious
-              ? 'bg-white/10 text-neutral/80 hover:bg-white/20 hover:text-neutral'
-              : 'bg-white/5 text-neutral/30 cursor-not-allowed'
-          }
-        `}
-        aria-label={t('booking_week_previous')}
-      >
-        <ChevronLeftIcon className="w-5 h-5" />
-      </button>
+      {/* Previous week button - hidden in filtered mode */}
+      {!hideNavigation && (
+        <button
+          type="button"
+          onClick={() => onWeekChange(weekOffset - 1)}
+          disabled={!canGoPrevious}
+          className={`
+            p-2.5 rounded-xl transition-all duration-200
+            ${
+              canGoPrevious
+                ? 'bg-white/10 text-neutral/80 hover:bg-white/20 hover:text-neutral'
+                : 'bg-white/5 text-neutral/30 cursor-not-allowed'
+            }
+          `}
+          aria-label={t('booking_week_previous')}
+        >
+          <ChevronLeftIcon className="w-5 h-5" />
+        </button>
+      )}
 
-      {/* Current week display - responsive design */}
-      <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 bg-white/5 rounded-xl min-w-[180px] sm:min-w-[240px] justify-center">
+      {/* Current week/day display - responsive design */}
+      <div
+        className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 bg-white/5 rounded-xl justify-center transition-all duration-300 ${
+          hideNavigation ? 'min-w-[200px] sm:min-w-[280px]' : 'min-w-[180px] sm:min-w-[240px]'
+        }`}
+      >
         <CalendarIcon className="w-4 h-4 sm:w-5 sm:h-5 text-primary-accent flex-shrink-0" />
         <div className="text-center min-w-0">
-          {/* Dynamic day display when user is scrolling through classes */}
+          {/* Dynamic day display: "Semana del 19 ene - JUEVES" */}
           {currentVisibleDay ? (
-            <>
-              <div className="text-sm sm:text-base font-semibold text-neutral truncate">
-                {currentVisibleDay}
-              </div>
-              <div className="text-[10px] sm:text-xs text-neutral/50">
-                {getWeekLabel(weekOffset)}
-              </div>
-            </>
+            <div className="text-sm sm:text-base font-semibold text-neutral">
+              <span className="text-neutral/70">{t('booking_week_of')}</span>{' '}
+              <span className="text-primary-accent">{currentVisibleDay.dateFormatted}</span>
+              <span className="mx-1.5 sm:mx-2 text-neutral/40">·</span>
+              <span className="uppercase tracking-wide">{currentVisibleDay.dayOfWeek}</span>
+            </div>
           ) : (
             <>
               <div className="text-sm font-medium text-neutral">{getWeekLabel(weekOffset)}</div>
@@ -161,23 +171,25 @@ export const WeekNavigation: React.FC<WeekNavigationProps> = ({
         </div>
       </div>
 
-      {/* Next week button */}
-      <button
-        type="button"
-        onClick={() => onWeekChange(weekOffset + 1)}
-        disabled={!canGoNext}
-        className={`
-          p-2.5 rounded-xl transition-all duration-200
-          ${
-            canGoNext
-              ? 'bg-white/10 text-neutral/80 hover:bg-white/20 hover:text-neutral'
-              : 'bg-white/5 text-neutral/30 cursor-not-allowed'
-          }
-        `}
-        aria-label={t('booking_week_next')}
-      >
-        <ChevronRightIcon className="w-5 h-5" />
-      </button>
+      {/* Next week button - hidden in filtered mode */}
+      {!hideNavigation && (
+        <button
+          type="button"
+          onClick={() => onWeekChange(weekOffset + 1)}
+          disabled={!canGoNext}
+          className={`
+            p-2.5 rounded-xl transition-all duration-200
+            ${
+              canGoNext
+                ? 'bg-white/10 text-neutral/80 hover:bg-white/20 hover:text-neutral'
+                : 'bg-white/5 text-neutral/30 cursor-not-allowed'
+            }
+          `}
+          aria-label={t('booking_week_next')}
+        >
+          <ChevronRightIcon className="w-5 h-5" />
+        </button>
+      )}
     </div>
   );
 };

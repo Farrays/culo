@@ -19062,6 +19062,7 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
 
   // Acuity mode (all weeks view)
   booking_week_header: 'Semaine du {date}',
+  booking_week_of: 'Semaine du',
   booking_classes_count: '{count} cours',
   booking_all_weeks_title: 'Tous les cours de {style}',
   booking_all_weeks_filtered: 'Tous les cours filtrés',

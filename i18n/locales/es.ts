@@ -20278,6 +20278,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   booking_filter_category_urbano: 'Danzas Urbanas',
   booking_filter_category_latino: 'Bailes Latinos',
   booking_filter_category_fitness: 'Entrenamiento Bailarines',
+  booking_filter_category_heels: 'Heels',
   booking_clear_all_filters: 'Limpiar todos',
   booking_clear_filters: 'Quitar filtros',
   booking_no_classes_match: 'No hay clases que coincidan con los filtros',
@@ -20285,6 +20286,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
 
   // Acuity mode (all weeks view)
   booking_week_header: 'Semana del {date}',
+  booking_week_of: 'Semana del',
   booking_classes_count: '{count} clases',
   booking_all_weeks_title: 'Todas las clases de {style}',
   booking_all_weeks_filtered: 'Todas las clases filtradas',

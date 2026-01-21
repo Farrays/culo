@@ -18665,6 +18665,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
 
   // Acuity mode (all weeks view)
   booking_week_header: 'Week of {date}',
+  booking_week_of: 'Week of',
   booking_classes_count: '{count} classes',
   booking_all_weeks_title: 'All {style} classes',
   booking_all_weeks_filtered: 'All filtered classes',
