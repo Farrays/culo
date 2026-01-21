@@ -108,11 +108,15 @@ const STYLE_KEYWORDS: Record<string, string[]> = {
 
   // Urbano
   dancehall: ['dancehall', 'dance hall'],
-  heels: ['heels', 'tacones', 'stiletto', 'sexy style', 'femmology'],
   reggaeton: ['reggaeton', 'reggaetón', 'perreo', 'sexy reggaeton', 'reggaeton cubano'],
   hiphop: ['hip hop', 'hip-hop', 'hiphop', 'urban', 'hip hop reggaeton'],
   afro: ['afrobeat', 'afrodance', 'afro jazz', 'afro dance'],
-  girly: ['girly', 'femme'],
+  girly: ['girly'],
+
+  // Heels category - específicos primero
+  sexystyle: ['sexy style', 'sexy-style'],
+  femmology: ['femmology'],
+  heels: ['heels', 'tacones', 'stiletto'],
   twerk: ['twerk', 'twerkeo'],
   commercial: ['commercial', 'comercial'],
   kpop: ['k-pop', 'kpop', 'k pop'],
