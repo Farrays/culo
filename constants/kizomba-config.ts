@@ -102,7 +102,7 @@ export const KIZOMBA_PAGE_CONFIG: FullDanceClassConfig = {
   // === GOOGLE REVIEWS SECTION ===
   googleReviewsSection: {
     enabled: true,
-    category: 'latinas',
+    category: 'general',
     limit: 6,
     showGoogleBadge: true,
   },
@@ -148,5 +148,8 @@ export const KIZOMBA_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   // Latin dance comparison enabled for Kizomba
-  latinDanceComparison: true,
+  latinDanceComparison: {
+    enabled: true,
+    highlightedStyle: 'bachata', // Kizomba es similar a bachata en conexión
+  },
 };

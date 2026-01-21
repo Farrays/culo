@@ -46,7 +46,8 @@ const mockApiResponse = {
 };
 
 describe('SocialProofTicker', () => {
-  let fetchSpy: ReturnType<typeof vi.spyOn>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let fetchSpy: any;
 
   beforeEach(() => {
     vi.clearAllMocks();
