@@ -165,33 +165,42 @@ CalendarWeekIcon.displayName = 'CalendarWeekIcon';
 
 /**
  * Day header component for standard view with day separators
+ * Supports ref callback for IntersectionObserver tracking
  */
-const DayHeader: React.FC<{
-  dayLabel: string;
-  classCount: number;
-  isFirst?: boolean;
-}> = memo(({ dayLabel, classCount, isFirst = false }) => {
-  const { t } = useI18n();
+const DayHeader = memo(
+  React.forwardRef<
+    HTMLDivElement,
+    {
+      dayLabel: string;
+      classCount: number;
+      isFirst?: boolean;
+      dateKey: string;
+    }
+  >(({ dayLabel, classCount, isFirst = false, dateKey }, ref) => {
+    const { t } = useI18n();
 
-  return (
-    <div
-      className={`
-        sticky top-0 z-10 flex items-center gap-2 py-2.5 px-4
-        bg-gradient-to-r from-primary-accent/20 via-black to-primary-accent/20
-        backdrop-blur-md border-y border-primary-accent/30
-        ${isFirst ? '' : 'mt-4'}
-      `}
-      role="heading"
-      aria-level={3}
-    >
-      <CalendarWeekIcon className="w-4 h-4 text-primary-accent flex-shrink-0" />
-      <span className="font-semibold text-neutral text-sm md:text-base">{dayLabel}</span>
-      <span className="ml-auto text-xs text-neutral/50 bg-white/5 px-2 py-0.5 rounded-full">
-        {t('booking_classes_count', { count: classCount })}
-      </span>
-    </div>
-  );
-});
+    return (
+      <div
+        ref={ref}
+        data-date-key={dateKey}
+        className={`
+          sticky top-0 z-10 flex items-center gap-2 py-2.5 px-3 sm:px-4
+          bg-gradient-to-r from-primary-accent/20 via-black to-primary-accent/20
+          backdrop-blur-md border-y border-primary-accent/30
+          ${isFirst ? '' : 'mt-4'}
+        `}
+        role="heading"
+        aria-level={3}
+      >
+        <CalendarWeekIcon className="w-4 h-4 text-primary-accent flex-shrink-0" />
+        <span className="font-semibold text-neutral text-sm md:text-base truncate">{dayLabel}</span>
+        <span className="ml-auto text-xs text-neutral/50 bg-white/5 px-2 py-0.5 rounded-full flex-shrink-0">
+          {t('booking_classes_count', { count: classCount })}
+        </span>
+      </div>
+    );
+  })
+);
 DayHeader.displayName = 'DayHeader';
 
 /**
@@ -511,14 +520,17 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
   }) => {
     const { t, locale } = useI18n();
     const [infoModal, setInfoModal] = useState<ClassData | null>(null);
+    const [currentVisibleDay, setCurrentVisibleDay] = useState<string | null>(null);
     const listContainerRef = useRef<HTMLDivElement>(null);
     const sentinelRef = useRef<HTMLDivElement>(null);
+    const dayHeaderRefs = useRef<Map<string, HTMLDivElement>>(new Map());
 
-    // Reset scroll position when week changes
+    // Reset scroll position and visible day when week changes
     useEffect(() => {
       if (listContainerRef.current) {
         listContainerRef.current.scrollTop = 0;
       }
+      setCurrentVisibleDay(null);
     }, [weekOffset]);
 
     // Infinite scroll with IntersectionObserver
@@ -560,6 +572,58 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
 
     // Use day grouping in standard mode (better UX with day separators)
     const useDayGrouping = !showAllWeeks && dayGroups.length > 0;
+
+    // Track visible day using IntersectionObserver for dynamic week header
+    useEffect(() => {
+      if (showAllWeeks || dayGroups.length === 0) {
+        setCurrentVisibleDay(null);
+        return;
+      }
+
+      const container = listContainerRef.current;
+      if (!container) return;
+
+      // Set initial visible day to first day
+      if (dayGroups.length > 0 && !currentVisibleDay) {
+        setCurrentVisibleDay(dayGroups[0]?.dayLabel ?? null);
+      }
+
+      const observer = new IntersectionObserver(
+        entries => {
+          // Find all intersecting day headers
+          const visibleEntries = entries.filter(entry => entry.isIntersecting);
+
+          if (visibleEntries.length > 0) {
+            // Get the topmost visible entry
+            const topEntry = visibleEntries.reduce((closest, entry) => {
+              const closestRect = closest.boundingClientRect;
+              const entryRect = entry.boundingClientRect;
+              return entryRect.top < closestRect.top ? entry : closest;
+            });
+
+            const dateKey = topEntry.target.getAttribute('data-date-key');
+            if (dateKey) {
+              const dayGroup = dayGroups.find(g => g.dateKey === dateKey);
+              if (dayGroup) {
+                setCurrentVisibleDay(dayGroup.dayLabel);
+              }
+            }
+          }
+        },
+        {
+          root: container,
+          rootMargin: '-10% 0px -70% 0px', // Trigger when header enters top 30% of container
+          threshold: 0,
+        }
+      );
+
+      // Observe all day headers
+      dayHeaderRefs.current.forEach(element => {
+        observer.observe(element);
+      });
+
+      return () => observer.disconnect();
+    }, [showAllWeeks, dayGroups, currentVisibleDay]);
 
     // Virtualization disabled when using day grouping for better UX
     const { virtualItems, totalHeight, isVirtualizing } = useVirtualList<ClassData>({
@@ -610,7 +674,12 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
 
         {/* Week Navigation - Hidden in Acuity mode (when filters are active) */}
         {!showAllWeeks && (
-          <WeekNavigation weekOffset={weekOffset} onWeekChange={onWeekChange} loading={loading} />
+          <WeekNavigation
+            weekOffset={weekOffset}
+            onWeekChange={onWeekChange}
+            loading={loading}
+            currentVisibleDay={currentVisibleDay}
+          />
         )}
 
         {/* Acuity Mode Header - Shows when viewing all weeks */}
@@ -736,8 +805,16 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
                 <div className="space-y-1">
                   {dayGroups.map((group, groupIndex) => (
                     <div key={group.dateKey}>
-                      {/* Day Header - Sticky */}
+                      {/* Day Header - Sticky, tracked for scroll detection */}
                       <DayHeader
+                        ref={el => {
+                          if (el) {
+                            dayHeaderRefs.current.set(group.dateKey, el);
+                          } else {
+                            dayHeaderRefs.current.delete(group.dateKey);
+                          }
+                        }}
+                        dateKey={group.dateKey}
                         dayLabel={group.dayLabel}
                         classCount={group.classes.length}
                         isFirst={groupIndex === 0}

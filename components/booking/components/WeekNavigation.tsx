@@ -55,12 +55,15 @@ interface WeekNavigationProps {
   weekOffset: number;
   onWeekChange: (week: number) => void;
   loading?: boolean;
+  /** Current visible day label (e.g., "Lunes 20 Ene") - shown dynamically as user scrolls */
+  currentVisibleDay?: string | null;
 }
 
 export const WeekNavigation: React.FC<WeekNavigationProps> = ({
   weekOffset,
   onWeekChange,
   loading = false,
+  currentVisibleDay = null,
 }) => {
   const { t, locale } = useI18n();
 
@@ -135,12 +138,26 @@ export const WeekNavigation: React.FC<WeekNavigationProps> = ({
         <ChevronLeftIcon className="w-5 h-5" />
       </button>
 
-      {/* Current week display */}
-      <div className="flex items-center gap-3 px-4 py-2 bg-white/5 rounded-xl min-w-[200px] justify-center">
-        <CalendarIcon className="w-5 h-5 text-primary-accent" />
-        <div className="text-center">
-          <div className="text-sm font-medium text-neutral">{getWeekLabel(weekOffset)}</div>
-          <div className="text-xs text-neutral/60">{formatWeekRange(weekOffset)}</div>
+      {/* Current week display - responsive design */}
+      <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 bg-white/5 rounded-xl min-w-[180px] sm:min-w-[240px] justify-center">
+        <CalendarIcon className="w-4 h-4 sm:w-5 sm:h-5 text-primary-accent flex-shrink-0" />
+        <div className="text-center min-w-0">
+          {/* Dynamic day display when user is scrolling through classes */}
+          {currentVisibleDay ? (
+            <>
+              <div className="text-sm sm:text-base font-semibold text-neutral truncate">
+                {currentVisibleDay}
+              </div>
+              <div className="text-[10px] sm:text-xs text-neutral/50">
+                {getWeekLabel(weekOffset)}
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="text-sm font-medium text-neutral">{getWeekLabel(weekOffset)}</div>
+              <div className="text-xs text-neutral/60">{formatWeekRange(weekOffset)}</div>
+            </>
+          )}
         </div>
       </div>
 
