@@ -18,18 +18,23 @@ export type CategoryKey = 'latino' | 'urbano' | 'danza' | 'fitness';
 export type MomenceStyle =
   | 'bachata'
   | 'salsa'
+  | 'timba'
+  | 'salsaladystyle'
   | 'hiphop'
   | 'dancehall'
   | 'heels'
   | 'reggaeton'
   | 'twerk'
+  | 'bumbum'
   | 'afro'
+  | 'afrocontemporaneo'
   | 'ballet'
   | 'contemporaneo'
   | 'jazz'
   | 'girly'
   | 'stretching'
   | 'fitness'
+  | 'cuerpofit'
   | 'folklore'
   | 'kpop'
   | 'commercial'
@@ -137,6 +142,8 @@ export const STYLE_TO_CATEGORY: Record<MomenceStyle, CategoryKey> = {
   // Latino
   salsa: 'latino',
   bachata: 'latino',
+  timba: 'latino',
+  salsaladystyle: 'latino',
   folklore: 'latino',
 
   // Urbano
@@ -158,6 +165,7 @@ export const STYLE_TO_CATEGORY: Record<MomenceStyle, CategoryKey> = {
   // Danza
   ballet: 'danza',
   contemporaneo: 'danza',
+  afrocontemporaneo: 'danza',
   jazz: 'danza',
 
   // Fitness
@@ -165,6 +173,8 @@ export const STYLE_TO_CATEGORY: Record<MomenceStyle, CategoryKey> = {
   yoga: 'fitness',
   pilates: 'fitness',
   fitness: 'fitness',
+  cuerpofit: 'fitness',
+  bumbum: 'fitness',
 
   // Default
   otros: 'urbano',
@@ -182,18 +192,23 @@ export const STYLE_TO_CATEGORY: Record<MomenceStyle, CategoryKey> = {
 export const STYLE_TO_PAGE_SLUG: Record<MomenceStyle, string> = {
   bachata: 'bachata-barcelona',
   salsa: 'salsa-cubana-barcelona',
+  timba: 'salsa-cubana-barcelona', // Grouped with salsa
+  salsaladystyle: 'salsa-cubana-barcelona', // Grouped with salsa
   hiphop: 'hip-hop-barcelona',
   dancehall: 'dancehall-barcelona',
   heels: 'sexy-style-barcelona',
   reggaeton: 'sexy-reggaeton-barcelona',
   twerk: 'twerk-barcelona',
   afro: 'afrobeat-barcelona',
+  afrocontemporaneo: 'afro-contemporaneo-barcelona',
   ballet: 'ballet-clasico-barcelona',
   contemporaneo: 'contemporaneo-barcelona',
   jazz: 'modern-jazz-barcelona',
   girly: 'femmology-barcelona',
   stretching: 'stretching-barcelona',
   fitness: 'full-body-cardio-barcelona',
+  cuerpofit: 'full-body-cardio-barcelona', // Grouped with fitness
+  bumbum: 'full-body-cardio-barcelona', // Grouped with fitness
   folklore: 'folklore-cubano-barcelona',
   kpop: 'hip-hop-barcelona', // Grouped with hip hop
   commercial: 'hip-hop-barcelona', // Grouped with hip hop
@@ -213,16 +228,20 @@ export const STYLE_TO_PAGE_SLUG: Record<MomenceStyle, string> = {
  */
 export const STYLE_KEYWORDS: Record<MomenceStyle, string[]> = {
   dancehall: ['dancehall', 'dance hall'],
-  heels: ['heels', 'tacones', 'stiletto', 'sexy style'],
-  salsa: ['salsa', 'salsa cubana', 'timba'],
+  heels: ['heels', 'tacones', 'stiletto', 'sexy style', 'femmology'],
+  salsa: ['salsa cubana'],
+  timba: ['timba', 'timba cubana'],
+  salsaladystyle: ['salsa lady', 'lady style salsa', 'salsa lady timba'],
   bachata: ['bachata', 'bachata sensual', 'bachata lady'],
   hiphop: ['hip hop', 'hip-hop', 'hiphop', 'urban', 'hip hop reggaeton'],
   reggaeton: ['reggaeton', 'reggaetón', 'perreo', 'sexy reggaeton'],
-  afro: ['afro', 'afrobeat', 'afrodance', 'afro contemporáneo', 'afro jazz'],
+  afro: ['afrobeat', 'afrodance', 'afro jazz'],
+  afrocontemporaneo: ['afro contemporáneo', 'afro contemporaneo'],
   commercial: ['commercial', 'comercial'],
   kpop: ['k-pop', 'kpop', 'k pop'],
-  twerk: ['twerk', 'twerkeo', 'bum bum'],
-  girly: ['girly', 'femmology', 'femme'],
+  twerk: ['twerk', 'twerkeo'],
+  bumbum: ['bum bum', 'bumbum', 'glúteos'],
+  girly: ['girly', 'femme'],
   breaking: ['breaking', 'breakdance', 'bboy'],
   house: ['house'],
   locking: ['locking'],
@@ -232,10 +251,11 @@ export const STYLE_KEYWORDS: Record<MomenceStyle, string[]> = {
   pilates: ['pilates'],
   stretching: ['stretching', 'estiramientos', 'flexibilidad'],
   ballet: ['ballet', 'ballet clásico'],
-  contemporaneo: ['contemporáneo', 'contemporaneo', 'contemporary', 'modern jazz'],
+  contemporaneo: ['contemporáneo', 'contemporaneo', 'contemporary'],
   jazz: ['jazz', 'modern jazz'],
   folklore: ['folklore', 'folklore cubano'],
-  fitness: ['fitness', 'full body', 'cardio', 'cuerpo fit'],
+  fitness: ['fitness', 'full body', 'cardio'],
+  cuerpofit: ['cuerpo fit', 'cuerpofit', 'body conditioning'],
   otros: [],
 };
 

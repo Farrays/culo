@@ -35,25 +35,29 @@ export const CATEGORY_OPTIONS: readonly CategoryOption[] = [
 // Only includes styles actually offered at Farray's (based on schedule data)
 export const STYLE_OPTIONS: readonly StyleOption[] = [
   { value: '', labelKey: 'booking_style_all', color: '#B01E3C' },
-  // Latino styles (Salsa Cubana, Bachata, Timba, Folklore Cubano)
+  // Latino styles
   { value: 'salsa', label: 'Salsa Cubana', color: '#FF6B6B', category: 'latino' },
   { value: 'bachata', label: 'Bachata', color: '#C44569', category: 'latino' },
+  { value: 'timba', label: 'Timba Cubana', color: '#E74C3C', category: 'latino' },
+  { value: 'salsaladystyle', label: 'Salsa Lady Style', color: '#FF7F7F', category: 'latino' },
   { value: 'folklore', label: 'Folklore Cubano', color: '#D97706', category: 'latino' },
-  // Urban styles (Sexy Reggaeton, Sexy Style, Twerk, Dancehall, Afrobeats, Hip Hop, Femmology)
+  // Urban styles
   { value: 'reggaeton', label: 'Reggaeton', color: '#F8B500', category: 'urbano' },
-  { value: 'heels', label: 'Sexy Style', color: '#FF69B4', category: 'urbano' },
+  { value: 'heels', label: 'Heels', color: '#FF69B4', category: 'urbano' },
   { value: 'twerk', label: 'Twerk', color: '#FF1493', category: 'urbano' },
   { value: 'dancehall', label: 'Dancehall', color: '#00D9A5', category: 'urbano' },
   { value: 'afro', label: 'Afrobeats', color: '#FF8C00', category: 'urbano' },
   { value: 'hiphop', label: 'Hip Hop', color: '#574B90', category: 'urbano' },
-  { value: 'girly', label: 'Femmology', color: '#EC4899', category: 'urbano' },
-  // Danza styles (Contemporáneo, Modern Jazz, Ballet, Afro Jazz, Afro Contemporáneo)
+  // Danza styles
   { value: 'contemporaneo', label: 'Contemporáneo', color: '#8B5CF6', category: 'danza' },
+  { value: 'afrocontemporaneo', label: 'Afro Contemporáneo', color: '#9B59B6', category: 'danza' },
   { value: 'jazz', label: 'Modern Jazz', color: '#06B6D4', category: 'danza' },
   { value: 'ballet', label: 'Ballet', color: '#EC4899', category: 'danza' },
-  // Fitness styles (Stretching, Body Conditioning)
+  // Fitness styles
   { value: 'stretching', label: 'Stretching', color: '#81ECEC', category: 'fitness' },
   { value: 'fitness', label: 'Body Conditioning', color: '#22D3EE', category: 'fitness' },
+  { value: 'cuerpofit', label: 'Cuerpo Fit', color: '#3498DB', category: 'fitness' },
+  { value: 'bumbum', label: 'Bum Bum Glúteos', color: '#E91E63', category: 'fitness' },
 ];
 
 // Get styles filtered by category
