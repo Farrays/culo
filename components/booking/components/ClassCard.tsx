@@ -51,6 +51,12 @@ const INSTRUCTOR_NAME_TO_REGISTRY: Record<string, string> = {
   Grechén: 'grechen-mendez',
   Cris: 'crisag',
   'Cris Ag': 'crisag',
+  // Aliases without accents (API variations)
+  Grechen: 'grechen-mendez',
+  'Grechen Mendez': 'grechen-mendez',
+  Isa: 'isabel-lopez',
+  'Isa Lopez': 'isabel-lopez',
+  'Isa López': 'isabel-lopez',
 };
 
 function findTeacherRegistryId(instructorName: string): string | undefined {
