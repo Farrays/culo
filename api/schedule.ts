@@ -98,31 +98,45 @@ export interface ScheduleSession {
 }
 
 // Mapeo de estilos (normalización) - extendido
+// IMPORTANTE: Debe coincidir con constants/style-mappings.ts STYLE_KEYWORDS
+// El orden importa - los estilos más específicos deben ir primero
 const STYLE_KEYWORDS: Record<string, string[]> = {
-  dancehall: ['dancehall', 'dance hall'],
-  heels: ['heels', 'tacones', 'stiletto', 'sexy style'],
-  salsa: ['salsa', 'salsa cubana', 'timba'],
+  // Danza - específicos primero
+  afrocontemporaneo: ['afro contemporáneo', 'afro contemporaneo', 'afro contemp'],
+  ballet: ['ballet', 'ballet clásico', 'ballet clasico'],
+  contemporaneo: ['contemporáneo', 'contemporaneo', 'contemporary', 'contemp'],
+  jazz: ['jazz', 'modern jazz', 'modern-jazz'],
+
+  // Latino - específicos primero
+  timba: ['timba', 'timba cubana'],
+  salsaladystyle: ['salsa lady', 'lady style', 'salsa ladies', 'ladies styling'],
+  salsa: ['salsa cubana', 'salsa'],
   bachata: ['bachata', 'bachata sensual', 'bachata lady'],
+  folklore: ['folklore', 'folklore cubano'],
+
+  // Urbano
+  dancehall: ['dancehall', 'dance hall'],
+  heels: ['heels', 'tacones', 'stiletto', 'sexy style', 'femmology'],
+  reggaeton: ['reggaeton', 'reggaetón', 'perreo', 'sexy reggaeton', 'reggaeton cubano'],
   hiphop: ['hip hop', 'hip-hop', 'hiphop', 'urban', 'hip hop reggaeton'],
-  reggaeton: ['reggaeton', 'reggaetón', 'perreo', 'sexy reggaeton'],
-  afro: ['afro', 'afrobeat', 'afrodance', 'afro contemporáneo', 'afro jazz'],
+  afro: ['afrobeat', 'afrodance', 'afro jazz', 'afro dance'],
+  girly: ['girly', 'femme'],
+  twerk: ['twerk', 'twerkeo'],
   commercial: ['commercial', 'comercial'],
   kpop: ['k-pop', 'kpop', 'k pop'],
-  twerk: ['twerk', 'twerkeo', 'bum bum'],
-  girly: ['girly', 'femmology', 'femme'],
   breaking: ['breaking', 'breakdance', 'bboy'],
-  house: ['house'],
+  house: ['house dance'],
   locking: ['locking'],
   popping: ['popping'],
   waacking: ['waacking'],
+
+  // Fitness - específicos primero
+  cuerpofit: ['cuerpo fit', 'cuerpofit', 'body conditioning'],
+  bumbum: ['bum bum', 'bumbum', 'glúteos', 'gluteos'],
+  fitness: ['fitness', 'full body', 'cardio'],
+  stretching: ['stretching', 'estiramientos', 'flexibilidad'],
   yoga: ['yoga'],
   pilates: ['pilates'],
-  stretching: ['stretching', 'estiramientos', 'flexibilidad'],
-  ballet: ['ballet', 'ballet clásico'],
-  contemporaneo: ['contemporáneo', 'contemporaneo', 'contemporary', 'modern jazz'],
-  jazz: ['jazz', 'modern jazz'],
-  folklore: ['folklore', 'folklore cubano'],
-  fitness: ['fitness', 'full body', 'cardio', 'cuerpo fit'],
 };
 
 // Mapeo de niveles
@@ -135,11 +149,16 @@ const LEVEL_KEYWORDS: Record<string, string[]> = {
 };
 
 // Mapeo de estilo a categoría
+// IMPORTANTE: Debe coincidir con constants/style-mappings.ts STYLE_TO_CATEGORY
 const STYLE_TO_CATEGORY: Record<string, string> = {
+  // Latino
   salsa: 'latino',
   bachata: 'latino',
   timba: 'latino',
+  salsaladystyle: 'latino',
   folklore: 'latino',
+
+  // Urbano
   dancehall: 'urbano',
   heels: 'urbano',
   twerk: 'urbano',
@@ -154,32 +173,61 @@ const STYLE_TO_CATEGORY: Record<string, string> = {
   locking: 'urbano',
   popping: 'urbano',
   waacking: 'urbano',
+
+  // Danza
   ballet: 'danza',
   contemporaneo: 'danza',
+  afrocontemporaneo: 'danza',
   jazz: 'danza',
+
+  // Fitness
   stretching: 'fitness',
   yoga: 'fitness',
   pilates: 'fitness',
   fitness: 'fitness',
+  cuerpofit: 'fitness',
+  bumbum: 'fitness',
 };
 
 // Mapeo de estilo a slug de página
+// IMPORTANTE: Debe coincidir con constants/style-mappings.ts STYLE_TO_PAGE_SLUG
 const STYLE_TO_PAGE_SLUG: Record<string, string> = {
+  // Latino
   bachata: 'bachata-barcelona',
   salsa: 'salsa-cubana-barcelona',
+  timba: 'salsa-cubana-barcelona',
+  salsaladystyle: 'salsa-cubana-barcelona',
+  folklore: 'folklore-cubano-barcelona',
+
+  // Urbano
   hiphop: 'hip-hop-barcelona',
   dancehall: 'dancehall-barcelona',
   heels: 'sexy-style-barcelona',
   reggaeton: 'sexy-reggaeton-barcelona',
   twerk: 'twerk-barcelona',
   afro: 'afrobeat-barcelona',
+  girly: 'femmology-barcelona',
+  kpop: 'hip-hop-barcelona',
+  commercial: 'hip-hop-barcelona',
+  breaking: 'hip-hop-barcelona',
+  house: 'hip-hop-barcelona',
+  locking: 'hip-hop-barcelona',
+  popping: 'hip-hop-barcelona',
+  waacking: 'hip-hop-barcelona',
+
+  // Danza
   ballet: 'ballet-clasico-barcelona',
   contemporaneo: 'contemporaneo-barcelona',
+  afrocontemporaneo: 'afro-contemporaneo-barcelona',
   jazz: 'modern-jazz-barcelona',
-  girly: 'femmology-barcelona',
+
+  // Fitness
   stretching: 'stretching-barcelona',
   fitness: 'full-body-cardio-barcelona',
-  folklore: 'folklore-cubano-barcelona',
+  cuerpofit: 'full-body-cardio-barcelona',
+  bumbum: 'full-body-cardio-barcelona',
+  yoga: 'stretching-barcelona',
+  pilates: 'stretching-barcelona',
 };
 
 // Localized day names

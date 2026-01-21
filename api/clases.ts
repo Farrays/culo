@@ -90,26 +90,45 @@ interface NormalizedClass {
 }
 
 // Mapeo de estilos (normalización)
+// IMPORTANTE: Debe coincidir con constants/style-mappings.ts STYLE_KEYWORDS
+// El orden importa - los estilos más específicos deben ir primero
 const STYLE_KEYWORDS: Record<string, string[]> = {
+  // Danza - específicos primero
+  afrocontemporaneo: ['afro contemporáneo', 'afro contemporaneo', 'afro contemp'],
+  ballet: ['ballet', 'ballet clásico', 'ballet clasico'],
+  contemporaneo: ['contemporáneo', 'contemporaneo', 'contemporary', 'contemp'],
+  jazz: ['jazz', 'modern jazz', 'modern-jazz'],
+
+  // Latino - específicos primero
+  timba: ['timba', 'timba cubana'],
+  salsaladystyle: ['salsa lady', 'lady style', 'salsa ladies', 'ladies styling'],
+  salsa: ['salsa cubana', 'salsa'],
+  bachata: ['bachata', 'bachata sensual', 'bachata lady'],
+  folklore: ['folklore', 'folklore cubano'],
+
+  // Urbano
   dancehall: ['dancehall', 'dance hall'],
-  heels: ['heels', 'tacones', 'stiletto'],
-  salsa: ['salsa'],
-  bachata: ['bachata'],
-  hiphop: ['hip hop', 'hip-hop', 'hiphop', 'urban'],
-  reggaeton: ['reggaeton', 'reggaetón', 'perreo'],
-  afro: ['afro', 'afrobeat', 'afrodance'],
+  heels: ['heels', 'tacones', 'stiletto', 'sexy style', 'femmology'],
+  reggaeton: ['reggaeton', 'reggaetón', 'perreo', 'sexy reggaeton', 'reggaeton cubano'],
+  hiphop: ['hip hop', 'hip-hop', 'hiphop', 'urban', 'hip hop reggaeton'],
+  afro: ['afrobeat', 'afrodance', 'afro jazz', 'afro dance'],
+  girly: ['girly', 'femme'],
+  twerk: ['twerk', 'twerkeo'],
   commercial: ['commercial', 'comercial'],
   kpop: ['k-pop', 'kpop', 'k pop'],
-  twerk: ['twerk', 'twerkeo'],
-  girly: ['girly', 'sexy style'],
   breaking: ['breaking', 'breakdance', 'bboy'],
-  house: ['house'],
+  house: ['house dance'],
   locking: ['locking'],
   popping: ['popping'],
-  waacking: ['waacking', 'waacking'],
+  waacking: ['waacking'],
+
+  // Fitness - específicos primero
+  cuerpofit: ['cuerpo fit', 'cuerpofit', 'body conditioning'],
+  bumbum: ['bum bum', 'bumbum', 'glúteos', 'gluteos'],
+  fitness: ['fitness', 'full body', 'cardio'],
+  stretching: ['stretching', 'estiramientos', 'flexibilidad'],
   yoga: ['yoga'],
   pilates: ['pilates'],
-  stretching: ['stretching', 'estiramientos', 'flexibilidad'],
 };
 
 // Mapeo de niveles
