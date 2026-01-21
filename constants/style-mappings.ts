@@ -13,7 +13,7 @@
  */
 
 // Type definitions
-export type CategoryKey = 'latino' | 'urbano' | 'danza' | 'fitness';
+export type CategoryKey = 'latino' | 'urbano' | 'danza' | 'fitness' | 'heels';
 
 export type MomenceStyle =
   | 'bachata'
@@ -23,6 +23,8 @@ export type MomenceStyle =
   | 'hiphop'
   | 'dancehall'
   | 'heels'
+  | 'sexystyle'
+  | 'femmology'
   | 'reggaeton'
   | 'twerk'
   | 'bumbum'
@@ -75,10 +77,11 @@ export const CONFIG_TO_MOMENCE_STYLE: Record<string, MomenceStyle> = {
   // Dancehall
   dancehallV2: 'dancehall',
 
-  // Heels/Sexy Style
-  sexyStyle: 'heels',
+  // Heels/Sexy Style/Femmology
+  sexyStyle: 'sexystyle',
   heels: 'heels',
   stiletto: 'heels',
+  femmology: 'femmology',
 
   // Reggaeton
   sexyReggaeton: 'reggaeton',
@@ -104,8 +107,7 @@ export const CONFIG_TO_MOMENCE_STYLE: Record<string, MomenceStyle> = {
   modernJazz: 'jazz',
   jazz: 'jazz',
 
-  // Girly/Femmology
-  femmology: 'girly',
+  // Girly Style
   girlyStyle: 'girly',
 
   // Fitness
@@ -148,7 +150,6 @@ export const STYLE_TO_CATEGORY: Record<MomenceStyle, CategoryKey> = {
 
   // Urbano
   dancehall: 'urbano',
-  heels: 'urbano',
   twerk: 'urbano',
   reggaeton: 'urbano',
   hiphop: 'urbano',
@@ -161,6 +162,11 @@ export const STYLE_TO_CATEGORY: Record<MomenceStyle, CategoryKey> = {
   locking: 'urbano',
   popping: 'urbano',
   waacking: 'urbano',
+
+  // Heels (Sexy Style, Femmology)
+  heels: 'heels',
+  sexystyle: 'heels',
+  femmology: 'heels',
 
   // Danza
   ballet: 'danza',
@@ -197,6 +203,8 @@ export const STYLE_TO_PAGE_SLUG: Record<MomenceStyle, string> = {
   hiphop: 'hip-hop-barcelona',
   dancehall: 'dancehall-barcelona',
   heels: 'sexy-style-barcelona',
+  sexystyle: 'sexy-style-barcelona',
+  femmology: 'femmology-barcelona',
   reggaeton: 'sexy-reggaeton-barcelona',
   twerk: 'twerk-barcelona',
   afro: 'afrobeat-barcelona',
@@ -228,7 +236,9 @@ export const STYLE_TO_PAGE_SLUG: Record<MomenceStyle, string> = {
  */
 export const STYLE_KEYWORDS: Record<MomenceStyle, string[]> = {
   dancehall: ['dancehall', 'dance hall'],
-  heels: ['heels', 'tacones', 'stiletto', 'sexy style', 'femmology'],
+  sexystyle: ['sexy style', 'sexy-style'],
+  femmology: ['femmology', 'femme'],
+  heels: ['heels', 'tacones', 'stiletto'],
   salsa: ['salsa cubana'],
   timba: ['timba', 'timba cubana'],
   salsaladystyle: ['salsa lady', 'lady style salsa', 'salsa lady timba'],
@@ -241,7 +251,7 @@ export const STYLE_KEYWORDS: Record<MomenceStyle, string[]> = {
   kpop: ['k-pop', 'kpop', 'k pop'],
   twerk: ['twerk', 'twerkeo'],
   bumbum: ['bum bum', 'bumbum', 'glúteos'],
-  girly: ['girly', 'femme'],
+  girly: ['girly'],
   breaking: ['breaking', 'breakdance', 'bboy'],
   house: ['house'],
   locking: ['locking'],
