@@ -57,6 +57,9 @@ const INSTRUCTOR_NAME_TO_REGISTRY: Record<string, string> = {
   Isa: 'isabel-lopez',
   'Isa Lopez': 'isabel-lopez',
   'Isa López': 'isabel-lopez',
+  // Redbhlue alternative names (Momence uses May Barleycorn)
+  May: 'redbhlue',
+  'May Barleycorn': 'redbhlue',
 };
 
 function findTeacherRegistryId(instructorName: string): string | undefined {
