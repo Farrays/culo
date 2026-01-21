@@ -179,6 +179,29 @@
     .animate-pulse-strong {
       animation: none !important;
     }
+
+    .animate-ping {
+      animation: none !important;
+    }
+
+    .animate-shimmer {
+      animation: none !important;
+    }
+
+    /* Desactivar backdrop-blur (GPU killer en móviles antiguos) */
+    .backdrop-blur-xl,
+    .backdrop-blur-md,
+    .backdrop-blur-sm {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background-color: rgba(0, 0, 0, 0.95) !important;
+    }
+
+    /* Desactivar blur en gradientes de fondo */
+    .blur-2xl,
+    .blur-xl {
+      filter: none !important;
+    }
   }
 
   /* Performance: Skip rendering of off-screen sections until scrolled into view */

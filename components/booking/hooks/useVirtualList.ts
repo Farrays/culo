@@ -7,6 +7,21 @@
 
 import { useState, useEffect, useRef, useMemo } from 'react';
 
+/**
+ * Throttle function to limit how often a function can be called
+ * Used to optimize scroll performance on older mobile devices
+ */
+function throttle<T extends (...args: unknown[]) => void>(func: T, limit: number): T {
+  let inThrottle = false;
+  return ((...args: unknown[]) => {
+    if (!inThrottle) {
+      func(...args);
+      inThrottle = true;
+      setTimeout(() => (inThrottle = false), limit);
+    }
+  }) as T;
+}
+
 interface UseVirtualListOptions {
   /** Array of items to virtualize */
   items: unknown[];
@@ -68,17 +83,17 @@ export function useVirtualList<T>({
     };
   }, [containerRef]);
 
-  // Handle scroll
+  // Handle scroll with throttle for better performance on older mobile devices
   useEffect(() => {
     const container = containerRef.current;
     if (!container || !isVirtualizing) return;
 
-    const handleScroll = () => {
-      // Use requestAnimationFrame for smooth scrolling
+    // Throttle to ~60fps max (16ms) to prevent excessive re-renders on scroll
+    const handleScroll = throttle(() => {
       requestAnimationFrame(() => {
         setScrollTop(container.scrollTop);
       });
-    };
+    }, 16);
 
     container.addEventListener('scroll', handleScroll, { passive: true });
 
