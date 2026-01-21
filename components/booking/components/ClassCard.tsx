@@ -225,13 +225,11 @@ const TeacherModal: React.FC<{
     }
 
     // Handle browser back button
+    // IMPORTANT: Don't unregister here - let cleanup handle it
+    // This prevents race condition with BookingWidgetV2's popstate handler
     const handlePopState = () => {
       historyPushedRef.current = false;
-      // Only unregister if we registered
-      if (isRegisteredRef.current) {
-        registerModalClose();
-        isRegisteredRef.current = false;
-      }
+      // Just close - the effect cleanup will handle unregistration
       onClose();
     };
     window.addEventListener('popstate', handlePopState);
