@@ -62,13 +62,12 @@ export interface SocialProofTickerProps {
 
 export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
   ({ limit = 5, className = '', onShow, onHide, onClick, scrollTargetId = 'booking-content' }) => {
-    const { t, isLoading: translationsLoading } = useI18n();
+    const { t } = useI18n();
     const [bookings, setBookings] = useState<SocialProofBooking[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [hasBookings, setHasBookings] = useState(false);
     const [toastVisible, setToastVisible] = useState(false);
     const [isSliding, setIsSliding] = useState<'in' | 'out' | 'hidden'>('hidden');
-    const [translationsReady, setTranslationsReady] = useState(false);
     const hasTrackedImpression = useRef(false);
     const cycleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -196,20 +195,8 @@ export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
       };
     }, [bookings.length]);
 
-    // Track when translations are actually loaded (not just isLoading flag)
-    // This effect ensures component re-renders when translations become available
-    useEffect(() => {
-      if (!translationsLoading) {
-        // Check if translation returns actual value, not the key itself
-        const translationValue = t('socialProofBookedShort');
-        const isReady =
-          translationValue !== 'socialProofBookedShort' && translationValue.length > 0;
-        setTranslationsReady(isReady);
-      }
-    }, [translationsLoading, t]);
-
-    // Don't render if no bookings or translations not ready
-    if (bookings.length === 0 || !toastVisible || !translationsReady) {
+    // Don't render if no bookings or toast not visible
+    if (bookings.length === 0 || !toastVisible) {
       return null;
     }
 
