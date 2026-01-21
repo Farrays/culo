@@ -463,6 +463,15 @@ const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) =
               <p className="text-sm text-neutral/70 whitespace-pre-line">{classData.description}</p>
             </div>
           )}
+
+          {/* Close button at bottom */}
+          <button
+            type="button"
+            onClick={handleClose}
+            className="w-full mt-6 py-3 bg-white/10 text-neutral font-semibold rounded-xl hover:bg-white/20 transition-colors"
+          >
+            {t('booking_modal_close')}
+          </button>
         </div>
       </div>
     </Portal>
