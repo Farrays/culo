@@ -68,6 +68,7 @@ export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
     const [hasBookings, setHasBookings] = useState(false);
     const [toastVisible, setToastVisible] = useState(false);
     const [isSliding, setIsSliding] = useState<'in' | 'out' | 'hidden'>('hidden');
+    const [translationsReady, setTranslationsReady] = useState(false);
     const hasTrackedImpression = useRef(false);
     const cycleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -195,10 +196,17 @@ export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
       };
     }, [bookings.length]);
 
-    // Check if translations are actually loaded (not just isLoading flag)
-    // If t() returns the key itself, translations aren't ready yet
-    const translationsReady =
-      !translationsLoading && t('socialProofBookedShort') !== 'socialProofBookedShort';
+    // Track when translations are actually loaded (not just isLoading flag)
+    // This effect ensures component re-renders when translations become available
+    useEffect(() => {
+      if (!translationsLoading) {
+        // Check if translation returns actual value, not the key itself
+        const translationValue = t('socialProofBookedShort');
+        const isReady =
+          translationValue !== 'socialProofBookedShort' && translationValue.length > 0;
+        setTranslationsReady(isReady);
+      }
+    }, [translationsLoading, t]);
 
     // Don't render if no bookings or translations not ready
     if (bookings.length === 0 || !toastVisible || !translationsReady) {
