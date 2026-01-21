@@ -1,17 +1,18 @@
 /**
  * SocialProofTicker Component
  *
- * Displays recent real bookings in an animated ticker format:
+ * Displays recent real bookings as toast notifications from the bottom:
  * "María reservó Bachata hace 2 min"
  *
  * Features:
  * - Fetches real booking data from /api/social-proof
- * - Rotates through recent bookings with smooth animations
- * - Auto-refreshes every 60 seconds
+ * - Shows as toast notification that slides up from bottom
+ * - Auto-hides after display duration, then shows next booking
+ * - Auto-refreshes data every 60 seconds
  * - Respects reduced motion preferences
  * - Hides automatically if no recent bookings
- * - Analytics tracking for visibility and clicks (Enterprise)
- * - Click-through to scroll to booking content (Enterprise)
+ * - Analytics tracking for visibility and clicks
+ * - Click-through to scroll to booking content
  */
 
 import React, { useState, useEffect, useCallback, memo, useRef } from 'react';
@@ -35,11 +36,14 @@ const API_BASE = import.meta.env['VITE_API_URL'] || '';
 // Refresh interval: 60 seconds
 const REFRESH_INTERVAL = 60 * 1000;
 
-// Rotation interval: 5 seconds between bookings
-const ROTATION_INTERVAL = 5 * 1000;
+// How long to show each notification: 4 seconds
+const DISPLAY_DURATION = 4 * 1000;
 
-// Animation duration
-const ANIMATION_DURATION = 500;
+// How long to wait between notifications: 8 seconds
+const PAUSE_BETWEEN = 8 * 1000;
+
+// Animation duration for slide in/out
+const ANIMATION_DURATION = 400;
 
 export interface SocialProofTickerProps {
   /** Maximum number of bookings to fetch */
@@ -61,10 +65,11 @@ export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
     const { t } = useI18n();
     const [bookings, setBookings] = useState<SocialProofBooking[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isVisible, setIsVisible] = useState(false);
-    const [isAnimating, setIsAnimating] = useState(false);
+    const [hasBookings, setHasBookings] = useState(false);
+    const [toastVisible, setToastVisible] = useState(false);
+    const [isSliding, setIsSliding] = useState<'in' | 'out' | 'hidden'>('hidden');
     const hasTrackedImpression = useRef(false);
-    const impressionCount = useRef(0);
+    const cycleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     // Check for reduced motion preference
     const prefersReducedMotion =
@@ -73,9 +78,8 @@ export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
 
     // Track impression when ticker becomes visible (only once per session)
     useEffect(() => {
-      if (isVisible && !hasTrackedImpression.current && bookings.length > 0) {
+      if (toastVisible && !hasTrackedImpression.current && bookings.length > 0) {
         hasTrackedImpression.current = true;
-        impressionCount.current = bookings.length;
         trackEvent('social_proof_impression', {
           event_category: 'engagement',
           event_label: 'social_proof_ticker',
@@ -83,11 +87,10 @@ export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
           first_booking_class: bookings[0]?.class || 'unknown',
         });
       }
-    }, [isVisible, bookings]);
+    }, [toastVisible, bookings]);
 
     // Handle click with analytics
     const handleClick = useCallback(() => {
-      // Track click event
       const currentBooking = bookings[currentIndex];
       trackEvent('social_proof_click', {
         event_category: 'engagement',
@@ -96,10 +99,15 @@ export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
         booking_minutes_ago: currentBooking?.minutesAgo || 0,
       });
 
-      // Execute callback if provided
       onClick?.();
 
-      // Scroll to target element
+      // Hide toast on click
+      setIsSliding('out');
+      setTimeout(() => {
+        setToastVisible(false);
+        setIsSliding('hidden');
+      }, ANIMATION_DURATION);
+
       if (scrollTargetId) {
         const targetElement = document.getElementById(scrollTargetId);
         if (targetElement) {
@@ -108,6 +116,16 @@ export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
         }
       }
     }, [bookings, currentIndex, onClick, scrollTargetId]);
+
+    // Dismiss toast
+    const handleDismiss = useCallback((e: React.MouseEvent) => {
+      e.stopPropagation();
+      setIsSliding('out');
+      setTimeout(() => {
+        setToastVisible(false);
+        setIsSliding('hidden');
+      }, ANIMATION_DURATION);
+    }, []);
 
     // Fetch recent bookings from API
     const fetchBookings = useCallback(async () => {
@@ -120,53 +138,65 @@ export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
 
         if (data.success && data.bookings.length > 0) {
           setBookings(data.bookings);
-          if (!isVisible) {
-            setIsVisible(true);
+          if (!hasBookings) {
+            setHasBookings(true);
             onShow?.();
           }
         } else {
           setBookings([]);
-          if (isVisible) {
-            setIsVisible(false);
+          if (hasBookings) {
+            setHasBookings(false);
             onHide?.();
           }
         }
       } catch (err) {
         console.warn('Social proof fetch error:', err);
-        // Don't hide on error - keep showing old data if available
       }
-    }, [limit, isVisible, onShow, onHide]);
+    }, [limit, hasBookings, onShow, onHide]);
 
     // Initial fetch and refresh interval
     useEffect(() => {
       fetchBookings();
-
       const intervalId = setInterval(fetchBookings, REFRESH_INTERVAL);
-
       return () => clearInterval(intervalId);
     }, [fetchBookings]);
 
-    // Rotate through bookings
+    // Show/hide toast cycle
     useEffect(() => {
-      if (bookings.length <= 1) return;
+      if (bookings.length === 0) return;
 
-      const rotateId = setInterval(() => {
-        if (!prefersReducedMotion) {
-          setIsAnimating(true);
+      const showToast = () => {
+        // Slide in
+        setToastVisible(true);
+        setIsSliding('in');
+
+        // After display duration, slide out
+        cycleTimerRef.current = setTimeout(() => {
+          setIsSliding('out');
+
+          // After animation, hide and prepare next
           setTimeout(() => {
+            setToastVisible(false);
+            setIsSliding('hidden');
             setCurrentIndex(prev => (prev + 1) % bookings.length);
-            setIsAnimating(false);
+
+            // Schedule next toast
+            cycleTimerRef.current = setTimeout(showToast, PAUSE_BETWEEN);
           }, ANIMATION_DURATION);
-        } else {
-          setCurrentIndex(prev => (prev + 1) % bookings.length);
-        }
-      }, ROTATION_INTERVAL);
+        }, DISPLAY_DURATION);
+      };
 
-      return () => clearInterval(rotateId);
-    }, [bookings.length, prefersReducedMotion]);
+      // Start the cycle with a small delay
+      const initialTimer = setTimeout(showToast, 1000);
 
-    // Don't render if no bookings or hidden
-    if (!isVisible || bookings.length === 0) {
+      return () => {
+        clearTimeout(initialTimer);
+        if (cycleTimerRef.current) clearTimeout(cycleTimerRef.current);
+      };
+    }, [bookings.length]);
+
+    // Don't render if no bookings
+    if (bookings.length === 0 || !toastVisible) {
       return null;
     }
 
@@ -179,58 +209,98 @@ export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
         ? t('socialProofJustNow')
         : t('socialProofMinutesAgo').replace('{minutes}', String(currentBooking.minutesAgo));
 
-    // Format the booking text
-    const bookingText = t('socialProofBooked')
-      .replace('{name}', currentBooking.name)
-      .replace('{className}', currentBooking.class);
+    // Get slide animation classes
+    const getSlideClasses = () => {
+      if (prefersReducedMotion) {
+        return isSliding === 'in' ? 'opacity-100' : 'opacity-0';
+      }
+      switch (isSliding) {
+        case 'in':
+          return 'translate-y-0 opacity-100';
+        case 'out':
+          return 'translate-y-full opacity-0';
+        default:
+          return 'translate-y-full opacity-0';
+      }
+    };
 
     return (
-      <button
-        type="button"
-        className={`social-proof-ticker w-full text-left ${className}`}
-        onClick={handleClick}
-        aria-label={`${bookingText} ${timeAgoText}. ${t('socialProofClickToBook') || 'Click to book your class'}`}
+      <div
+        className={`fixed bottom-4 left-4 right-4 z-50 md:left-auto md:right-4 md:max-w-sm ${className}`}
+        role="status"
+        aria-live="polite"
       >
         <div
           className={`
-            flex items-center gap-2 px-3 py-2
-            bg-gradient-to-r from-green-500/10 to-emerald-500/10
-            border border-green-500/20 rounded-lg
-            text-sm text-green-400
-            transition-all duration-300
-            hover:from-green-500/20 hover:to-emerald-500/20
-            hover:border-green-500/40 hover:scale-[1.02]
-            cursor-pointer group
-            ${isAnimating ? 'opacity-0 transform -translate-y-2' : 'opacity-100 transform translate-y-0'}
+            w-full
+            bg-gradient-to-r from-green-600 to-emerald-600
+            border border-green-400/30 rounded-xl shadow-2xl shadow-green-900/30
+            transform transition-all duration-${ANIMATION_DURATION}
+            hover:scale-[1.02] hover:shadow-green-900/50
+            group relative
+            ${getSlideClasses()}
           `}
-          role="status"
-          aria-live="polite"
-          aria-atomic="true"
         >
-          {/* Pulse indicator */}
-          <span className="relative flex h-2 w-2 flex-shrink-0">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-          </span>
-
-          {/* Booking info */}
-          <span className="flex-1 truncate">
-            <span className="font-medium">{bookingText}</span>
-            <span className="text-green-400/70 ml-1">• {timeAgoText}</span>
-          </span>
-
-          {/* Arrow indicator on hover */}
-          <svg
-            className="w-4 h-4 text-green-400/50 group-hover:text-green-400 group-hover:translate-x-0.5 transition-all flex-shrink-0"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
+          {/* Close button - positioned outside clickable area */}
+          <button
+            type="button"
+            onClick={handleDismiss}
+            className="absolute top-2 right-2 p-1 text-white/60 hover:text-white transition-colors z-10"
+            aria-label={t('close') || 'Close'}
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+
+          {/* Main clickable content */}
+          <button
+            type="button"
+            className="w-full text-left p-4 pr-10 cursor-pointer"
+            onClick={handleClick}
+            aria-label={`${currentBooking.name} ${t('socialProofBookedShort')} ${currentBooking.class} ${timeAgoText}. ${t('socialProofClickToBook') || 'Click to book your class'}`}
+          >
+            <div className="flex items-start gap-3">
+              {/* Pulse indicator */}
+              <span className="relative flex h-3 w-3 flex-shrink-0 mt-1">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-white" />
+              </span>
+
+              {/* Booking info - text wraps on mobile */}
+              <div className="flex-1 min-w-0">
+                <p className="text-white font-semibold text-sm sm:text-base leading-snug">
+                  <span className="font-bold">{currentBooking.name}</span>{' '}
+                  {t('socialProofBookedShort')}{' '}
+                  <span className="text-green-100">{currentBooking.class}</span>
+                </p>
+                <p className="text-green-100/80 text-xs sm:text-sm mt-0.5">{timeAgoText}</p>
+              </div>
+
+              {/* Arrow indicator */}
+              <svg
+                className="w-5 h-5 text-white/60 group-hover:text-white group-hover:translate-x-0.5 transition-all flex-shrink-0 mt-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </div>
+          </button>
         </div>
-      </button>
+      </div>
     );
   }
 );
