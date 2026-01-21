@@ -130,21 +130,19 @@ export const ActiveFilterBadges: React.FC<ActiveFilterBadgesProps> = ({
         <FilterBadge key={key} label={label} onRemove={() => onClearFilter(key)} />
       ))}
 
-      {/* Clear all button */}
-      {activeFilters.length > 1 && (
-        <button
-          type="button"
-          onClick={onClearAll}
-          className="
-            text-sm text-neutral/60 hover:text-neutral
-            underline underline-offset-2
-            transition-colors duration-150
-            ml-2
-          "
-        >
-          {t('booking_clear_all_filters')}
-        </button>
-      )}
+      {/* Clear all button - always show when filters are active */}
+      <button
+        type="button"
+        onClick={onClearAll}
+        className="
+          text-sm text-neutral/60 hover:text-neutral
+          underline underline-offset-2
+          transition-colors duration-150
+          ml-2
+        "
+      >
+        {t('booking_clear_all_filters')}
+      </button>
     </div>
   );
 };
