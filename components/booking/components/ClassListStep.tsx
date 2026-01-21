@@ -176,17 +176,17 @@ const DayHeader: React.FC<{
   return (
     <div
       className={`
-        sticky top-0 z-10 flex items-center gap-2 py-2 px-3
-        bg-gradient-to-r from-primary-accent/10 via-black/95 to-primary-accent/10
-        backdrop-blur-md border-b border-primary-accent/20
-        ${isFirst ? '' : 'mt-3'}
+        sticky top-0 z-10 flex items-center gap-2 py-2.5 px-4
+        bg-gradient-to-r from-primary-accent/20 via-black to-primary-accent/20
+        backdrop-blur-md border-y border-primary-accent/30
+        ${isFirst ? '' : 'mt-4'}
       `}
       role="heading"
       aria-level={3}
     >
       <CalendarWeekIcon className="w-4 h-4 text-primary-accent flex-shrink-0" />
-      <span className="font-medium text-neutral text-sm">{dayLabel}</span>
-      <span className="ml-auto text-xs text-neutral/40">
+      <span className="font-semibold text-neutral text-sm md:text-base">{dayLabel}</span>
+      <span className="ml-auto text-xs text-neutral/50 bg-white/5 px-2 py-0.5 rounded-full">
         {t('booking_classes_count', { count: classCount })}
       </span>
     </div>
@@ -513,6 +513,13 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
     const [infoModal, setInfoModal] = useState<ClassData | null>(null);
     const listContainerRef = useRef<HTMLDivElement>(null);
     const sentinelRef = useRef<HTMLDivElement>(null);
+
+    // Reset scroll position when week changes
+    useEffect(() => {
+      if (listContainerRef.current) {
+        listContainerRef.current.scrollTop = 0;
+      }
+    }, [weekOffset]);
 
     // Infinite scroll with IntersectionObserver
     useEffect(() => {
