@@ -235,7 +235,7 @@ export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
             w-full
             bg-gradient-to-r from-green-600 to-emerald-600
             border border-green-400/30 rounded-xl shadow-2xl shadow-green-900/30
-            transform transition-all duration-${ANIMATION_DURATION}
+            transform transition-all duration-300
             hover:scale-[1.02] hover:shadow-green-900/50
             group relative
             ${getSlideClasses()}
