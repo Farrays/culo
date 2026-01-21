@@ -180,6 +180,23 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
     [onFormChange]
   );
 
+  // Memoized modal callbacks to prevent effect re-runs when parent re-renders with filters
+  const handleCloseTermsModal = useCallback(() => {
+    setShowTermsModal(false);
+  }, []);
+
+  const handleClosePrivacyModal = useCallback(() => {
+    setShowPrivacyModal(false);
+  }, []);
+
+  const handleAcceptTerms = useCallback(() => {
+    onFormChange({ acceptsTerms: true });
+  }, [onFormChange]);
+
+  const handleAcceptPrivacy = useCallback(() => {
+    onFormChange({ acceptsPrivacy: true });
+  }, [onFormChange]);
+
   // Checkbox component
   const Checkbox: React.FC<{
     name: keyof BookingFormData;
@@ -468,16 +485,16 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
         </div>
       </form>
 
-      {/* Legal Modals */}
+      {/* Legal Modals - using memoized callbacks to prevent effect re-runs */}
       <TermsModal
         isOpen={showTermsModal}
-        onClose={() => setShowTermsModal(false)}
-        onAccept={() => onFormChange({ acceptsTerms: true })}
+        onClose={handleCloseTermsModal}
+        onAccept={handleAcceptTerms}
       />
       <PrivacyModal
         isOpen={showPrivacyModal}
-        onClose={() => setShowPrivacyModal(false)}
-        onAccept={() => onFormChange({ acceptsPrivacy: true })}
+        onClose={handleClosePrivacyModal}
+        onAccept={handleAcceptPrivacy}
       />
     </div>
   );

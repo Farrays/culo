@@ -21,20 +21,26 @@ const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose, onAccept }) =>
   const historyPushedRef = useRef(false);
   const isRegisteredRef = useRef(false); // Track if we've registered this modal
 
-  // Close with history support
+  // Store callbacks in refs to avoid effect re-runs when parent re-renders with filters
+  const onCloseRef = useRef(onClose);
+  const onAcceptRef = useRef(onAccept);
+  onCloseRef.current = onClose;
+  onAcceptRef.current = onAccept;
+
+  // Close with history support - uses ref for stable reference
   const handleClose = useCallback(() => {
     if (historyPushedRef.current) {
       window.history.back();
     } else {
-      onClose();
+      onCloseRef.current();
     }
-  }, [onClose]);
+  }, []);
 
-  // Accept and close - triggers checkbox check
+  // Accept and close - triggers checkbox check - uses ref for stable reference
   const handleAccept = useCallback(() => {
-    onAccept?.();
+    onAcceptRef.current?.();
     handleClose();
-  }, [onAccept, handleClose]);
+  }, [handleClose]);
 
   // Handle escape key, body scroll lock, and history management
   useEffect(() => {
@@ -61,8 +67,8 @@ const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose, onAccept }) =>
     // This prevents race condition with BookingWidgetV2's popstate handler
     const handlePopState = () => {
       historyPushedRef.current = false;
-      // Just close - the effect cleanup will handle unregistration
-      onClose();
+      // Just close using ref - the effect cleanup will handle unregistration
+      onCloseRef.current();
     };
     window.addEventListener('popstate', handlePopState);
 
@@ -82,7 +88,7 @@ const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose, onAccept }) =>
       }
       document.body.style.overflow = '';
     };
-  }, [isOpen, onClose, handleClose]);
+  }, [isOpen, handleClose]); // Removed onClose - using ref instead for stable reference
 
   // Handle click outside
   const handleBackdropClick = (e: React.MouseEvent) => {

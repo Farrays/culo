@@ -201,14 +201,18 @@ const TeacherModal: React.FC<{
   const historyPushedRef = useRef(false);
   const isRegisteredRef = useRef(false);
 
-  // Close with history support
+  // Store onClose in ref to avoid effect re-runs when parent re-renders with filters
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+
+  // Close with history support - uses ref for stable reference
   const handleClose = useCallback(() => {
     if (historyPushedRef.current) {
       window.history.back();
     } else {
-      onClose();
+      onCloseRef.current();
     }
-  }, [onClose]);
+  }, []);
 
   // History management - must run immediately on mount
   useEffect(() => {
@@ -229,8 +233,8 @@ const TeacherModal: React.FC<{
     // This prevents race condition with BookingWidgetV2's popstate handler
     const handlePopState = () => {
       historyPushedRef.current = false;
-      // Just close - the effect cleanup will handle unregistration
-      onClose();
+      // Just close using ref - the effect cleanup will handle unregistration
+      onCloseRef.current();
     };
     window.addEventListener('popstate', handlePopState);
 
@@ -242,7 +246,7 @@ const TeacherModal: React.FC<{
         isRegisteredRef.current = false;
       }
     };
-  }, [onClose]);
+  }, []); // Removed onClose - using ref instead for stable reference
 
   // Body scroll lock
   useEffect(() => {
@@ -394,6 +398,11 @@ export const ClassCard: React.FC<ClassCardProps> = memo(
 
     const teacherRegistryId = findTeacherRegistryId(classData.instructor);
 
+    // Memoized callback for closing teacher modal - prevents effect re-runs with filters
+    const handleCloseTeacherModal = useCallback(() => {
+      setTeacherModalId(null);
+    }, []);
+
     // Handle keyboard events for accessibility (Enter/Space to select)
     const handleKeyDown = useCallback(
       (e: React.KeyboardEvent) => {
@@ -517,9 +526,9 @@ export const ClassCard: React.FC<ClassCardProps> = memo(
           </div>
         </div>
 
-        {/* Teacher Modal */}
+        {/* Teacher Modal - using memoized callback to prevent effect re-runs */}
         {teacherModalId && (
-          <TeacherModal teacherId={teacherModalId} onClose={() => setTeacherModalId(null)} />
+          <TeacherModal teacherId={teacherModalId} onClose={handleCloseTeacherModal} />
         )}
       </>
     );

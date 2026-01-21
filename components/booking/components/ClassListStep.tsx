@@ -295,14 +295,18 @@ const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) =
   const modalId = `class-info-modal-${classData.id}`;
   const titleId = `class-info-title-${classData.id}`;
 
-  // Close with history support
+  // Store onClose in ref to avoid effect re-runs when parent re-renders with filters
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+
+  // Close with history support - uses ref for stable reference
   const handleClose = useCallback(() => {
     if (historyPushedRef.current) {
       window.history.back();
     } else {
-      onClose();
+      onCloseRef.current();
     }
-  }, [onClose]);
+  }, []);
 
   // History management - must run immediately on mount
   useEffect(() => {
@@ -323,8 +327,8 @@ const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) =
     // This prevents race condition with BookingWidgetV2's popstate handler
     const handlePopState = () => {
       historyPushedRef.current = false;
-      // Just close - the effect cleanup will handle unregistration
-      onClose();
+      // Just close using ref - the effect cleanup will handle unregistration
+      onCloseRef.current();
     };
     window.addEventListener('popstate', handlePopState);
 
@@ -336,7 +340,7 @@ const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) =
         isRegisteredRef.current = false;
       }
     };
-  }, [onClose]);
+  }, []); // Removed onClose - using ref instead for stable reference
 
   // Focus trap, keyboard handling, and body scroll lock
   useEffect(() => {
