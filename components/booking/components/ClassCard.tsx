@@ -51,9 +51,14 @@ const INSTRUCTOR_NAME_TO_REGISTRY: Record<string, string> = {
   Grechén: 'grechen-mendez',
   Cris: 'crisag',
   'Cris Ag': 'crisag',
+  // CrisAg full name (Momence uses Cristina Aliaga)
+  Cristina: 'crisag',
+  'Cristina Aliaga': 'crisag',
   // Aliases without accents (API variations)
   Grechen: 'grechen-mendez',
   'Grechen Mendez': 'grechen-mendez',
+  'Grechén Mendez': 'grechen-mendez',
+  'Grechen Méndez': 'grechen-mendez',
   Isa: 'isabel-lopez',
   'Isa Lopez': 'isabel-lopez',
   'Isa López': 'isabel-lopez',
