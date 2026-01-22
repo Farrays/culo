@@ -10,6 +10,7 @@ import About from './About';
 import ClassesPreview from './homev2/ClassesPreview';
 import WhyFIDC from './WhyFIDC';
 import FinalCTA from './FinalCTA';
+import ManifestoBanner from './shared/ManifestoBanner';
 
 // Lazy load components below the fold for better initial page load performance
 const NovedadesCarousel = lazy(() => import('./novedades/NovedadesCarousel'));
@@ -79,6 +80,7 @@ const HomePage: React.FC = () => {
         <FAQSection title={t('faqTitle')} faqs={homeFaqs} pageUrl={`${baseUrl}/${locale}`} />
         <FinalCTA />
         <HowToGetHere />
+        <ManifestoBanner />
       </Suspense>
     </>
   );

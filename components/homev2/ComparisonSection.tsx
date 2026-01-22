@@ -163,8 +163,8 @@ const ComparisonSection: React.FC<ComparisonSectionProps> = ({ config }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {/* Lado izquierdo: Otros */}
           <AnimateOnScroll delay={100}>
-            <div className="relative">
-              <div className="bg-black/70 backdrop-blur-md border border-zinc-600/40 rounded-2xl p-8">
+            <div className="[perspective:1000px]">
+              <div className="bg-black/70 backdrop-blur-md border border-zinc-600/40 hover:border-zinc-500 rounded-2xl p-8 transition-transform duration-500 ease-out [transform-style:preserve-3d] hover:shadow-xl hover:-translate-y-3 hover:scale-105">
                 <div className="flex items-center gap-3 mb-8">
                   <div className="w-12 h-12 rounded-full bg-zinc-500/20 flex items-center justify-center">
                     <svg
@@ -206,8 +206,8 @@ const ComparisonSection: React.FC<ComparisonSectionProps> = ({ config }) => {
 
           {/* Lado derecho: Nosotros */}
           <AnimateOnScroll delay={200}>
-            <div className="relative">
-              <div className="bg-black/70 backdrop-blur-md border border-primary-accent/50 rounded-2xl p-8">
+            <div className="[perspective:1000px]">
+              <div className="bg-black/70 backdrop-blur-md border border-primary-accent/50 hover:border-primary-accent rounded-2xl p-8 transition-transform duration-500 ease-out [transform-style:preserve-3d] hover:shadow-accent-glow hover:-translate-y-3 hover:scale-105">
                 <div className="flex items-center gap-3 mb-8">
                   <div className="w-12 h-12 rounded-full bg-primary-accent/20 flex items-center justify-center">
                     <svg

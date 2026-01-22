@@ -104,8 +104,8 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
     id: 'crisag',
     name: 'CrisAg',
     image: '/images/teachers/img/profesora-crisag_320.webp',
-    specialtyKey: 'teacher.crisag.specialty',
-    bioKey: 'teacher.crisag.bio',
+    specialtyKey: 'teacher.crisAg.specialty',
+    bioKey: 'teacher.crisAg.bio',
     styles: ['Body Conditioning', 'Cuerpo Fit', 'Bum Bum Glúteos', 'Stretching'],
   },
   // ============================================================================

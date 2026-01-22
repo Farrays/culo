@@ -264,6 +264,15 @@ export const es = {
   finalCtaSubtitleLine3: 'Hazlo tú también. Matricúlate hoy.',
   finalCtaButton1: 'Hazte Socio Ahora',
   finalCtaButton2: 'Reserva tu Clase de Bienvenida',
+  // Brand Tagline & Manifesto
+  brand_tagline: 'Baila Hoy, transforma tu mañana',
+  patternInterrupt_inspiration: 'Baila Hoy, transforma tu mañana.',
+  booking_inspiration: '¡Baila Hoy, transforma tu mañana!',
+  leadModal_success_inspiration: '¡Baila Hoy, transforma tu mañana!',
+  manifesto_aria_label: 'Nuestra filosofía',
+  manifesto_line1: 'BAILA HOY',
+  manifesto_line2: 'TRANSFORMA',
+  manifesto_line3: 'TU MAÑANA',
   // Footer
   followOnFacebook: 'Síguenos en Facebook',
   followOnInstagram: 'Síguenos en Instagram',
@@ -13602,9 +13611,9 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
     'Marcos Martínez es uno de los referentes del Hip Hop en España. Con décadas de experiencia como bailarín, maestro y juez de competiciones internacionales, ha formado a generaciones de bailarines. Su estilo único combina la técnica old school con las tendencias actuales, siempre respetando las raíces de la cultura hip hop.',
 
   // BODY CONDITIONING SPECIALIST
-  'teacher.crisag.specialty':
+  'teacher.crisAg.specialty':
     'Body Conditioning, Cuerpo Fit, Bum Bum Glúteos & Stretching | Método Farray® desde 2012',
-  'teacher.crisag.bio':
+  'teacher.crisAg.bio':
     'CrisAg comenzó su pasión por el baile desde temprana edad. Licenciada en Filología Inglesa por la Universidad de Barcelona, se ha formado con Jorge Camagüey e integró su compañía Calle Real de Camagüey. Completó su formación en The Cuban School of Arts de Londres, trabajando junto a prestigiosas bailarinas como Yunaisy Farray, Kirenia Cantin y Damarys Farrés. Desde 2012 se ha formado en el Método Farray® y actualmente es un referente en Barcelona como profesora de Body Conditioning, Cuerpo Fit, Bum Bum Glúteos y Stretching, fusionando sus dos pasiones: el baile y el fitness.',
 
   // SALSA/BACHATA SPECIALISTS
