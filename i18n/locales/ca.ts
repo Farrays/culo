@@ -256,6 +256,15 @@ export const ca = {
   finalCtaSubtitleLine3: "Fes-ho tu també. Matricula't avui.",
   finalCtaButton1: 'Fes-te Soci Ara',
   finalCtaButton2: 'Reserva la teva Classe de Benvinguda',
+  // Brand Tagline & Manifesto
+  brand_tagline: 'Balla Avui, transforma el teu demà',
+  patternInterrupt_inspiration: 'Balla Avui, transforma el teu demà.',
+  booking_inspiration: 'Balla Avui, transforma el teu demà!',
+  leadModal_success_inspiration: 'Balla Avui, transforma el teu demà!',
+  manifesto_aria_label: 'La nostra filosofia',
+  manifesto_line1: 'BALLA AVUI',
+  manifesto_line2: 'TRANSFORMA',
+  manifesto_line3: 'EL TEU DEMÀ',
   // Footer
   followOnFacebook: 'Segueix-nos a Facebook',
   followOnInstagram: 'Segueix-nos a Instagram',
@@ -11580,9 +11589,9 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
     "Marcos Martínez és un dels referents del Hip Hop a Espanya. Amb dècades d'experiència com a ballarí, mestre i jutge de competicions internacionals, ha format generacions de ballarins. El seu estil únic combina la tècnica old school amb les tendències actuals, sempre respectant les arrels de la cultura hip hop.",
 
   // BODY CONDITIONING SPECIALIST
-  'teacher.crisag.specialty':
+  'teacher.crisAg.specialty':
     'Body Conditioning, Cos Fit, Bum Bum Glutis & Stretching | Mètode Farray® des de 2012',
-  'teacher.crisag.bio':
+  'teacher.crisAg.bio':
     "CrisAg va començar la seva passió pel ball des de ben petita. Llicenciada en Filologia Anglesa per la Universitat de Barcelona, s'ha format amb Jorge Camagüey i va integrar la seva companyia Calle Real de Camagüey. Va completar la seva formació a The Cuban School of Arts de Londres, treballant al costat de prestigioses ballarines com Yunaisy Farray, Kirenia Cantin i Damarys Farrés. Des de 2012 s'ha format en el Mètode Farray® i actualment és un referent a Barcelona com a professora de Body Conditioning, Cos Fit, Bum Bum Glutis i Stretching, fusionant les seves dues passions: el ball i el fitness.",
 
   // SALSA/BACHATA SPECIALISTS

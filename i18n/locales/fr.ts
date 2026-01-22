@@ -257,6 +257,15 @@ export const fr = {
   finalCtaSubtitleLine3: "Faites-le aussi. Inscrivez-vous aujourd'hui.",
   finalCtaButton1: 'Devenez Membre Maintenant',
   finalCtaButton2: 'Réservez votre Cours de Bienvenue',
+  // Brand Tagline & Manifesto
+  brand_tagline: "Danse Aujourd'hui, transforme ton demain",
+  patternInterrupt_inspiration: "Danse Aujourd'hui, transforme ton demain.",
+  booking_inspiration: "Danse Aujourd'hui, transforme ton demain!",
+  leadModal_success_inspiration: "Danse Aujourd'hui, transforme ton demain!",
+  manifesto_aria_label: 'Notre philosophie',
+  manifesto_line1: "DANSE AUJOURD'HUI",
+  manifesto_line2: 'TRANSFORME',
+  manifesto_line3: 'TON DEMAIN',
   // Footer
   followOnFacebook: 'Suivez-nous sur Facebook',
   followOnInstagram: 'Suivez-nous sur Instagram',
@@ -11816,9 +11825,9 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
     "Marcos Martínez est l'une des références du Hip Hop en Espagne. Avec des décennies d'expérience comme danseur, maître et juge de compétitions internationales, il a formé des générations de danseurs. Son style unique combine la technique old school avec les tendances actuelles, respectant toujours les racines de la culture hip hop.",
 
   // BODY CONDITIONING SPECIALIST
-  'teacher.crisag.specialty':
+  'teacher.crisAg.specialty':
     'Body Conditioning, Corps Fit, Bum Bum Fessiers & Stretching | Méthode Farray® depuis 2012',
-  'teacher.crisag.bio':
+  'teacher.crisAg.bio':
     "CrisAg a commencé sa passion pour la danse dès son plus jeune âge. Diplômée en Philologie Anglaise de l'Université de Barcelone, elle s'est formée avec Jorge Camagüey et a intégré sa compagnie Calle Real de Camagüey. Elle a complété sa formation à The Cuban School of Arts de Londres, travaillant aux côtés de prestigieuses danseuses comme Yunaisy Farray, Kirenia Cantin et Damarys Farrés. Depuis 2012, elle s'est formée à la Méthode Farray® et est actuellement une référence à Barcelone comme professeure de Body Conditioning, Corps Fit, Bum Bum Fessiers et Stretching, fusionnant ses deux passions : la danse et le fitness.",
 
   // SALSA/BACHATA SPECIALISTS

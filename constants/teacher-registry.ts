@@ -176,8 +176,19 @@ export const TEACHER_REGISTRY: Record<string, TeacherRegistryEntry> = {
   crisag: {
     id: 'crisag',
     name: 'CrisAg',
-    canonicalSpecialtyKey: 'teacher.crisag.specialty',
-    canonicalBioKey: 'teacher.crisag.bio',
+    canonicalSpecialtyKey: 'teacher.crisAg.specialty',
+    canonicalBioKey: 'teacher.crisAg.bio',
+    teachesStyles: ['body-conditioning', 'cuerpo-fit', 'bum-bum', 'stretching'],
+    meta: {
+      certifications: ['Método Farray® desde 2012', 'The Cuban School of Arts Londres'],
+      origin: 'España',
+    },
+  },
+  'cris-ag': {
+    id: 'cris-ag',
+    name: 'CrisAg',
+    canonicalSpecialtyKey: 'teacher.crisAg.specialty',
+    canonicalBioKey: 'teacher.crisAg.bio',
     teachesStyles: ['body-conditioning', 'cuerpo-fit', 'bum-bum', 'stretching'],
     meta: {
       certifications: ['Método Farray® desde 2012', 'The Cuban School of Arts Londres'],

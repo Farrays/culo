@@ -256,6 +256,15 @@ export const en = {
   finalCtaSubtitleLine3: 'Do it too. Enroll today.',
   finalCtaButton1: 'Become a Member Now',
   finalCtaButton2: 'Book Your Welcome Class',
+  // Brand Tagline & Manifesto
+  brand_tagline: 'Dance Today, Transform Your Tomorrow',
+  patternInterrupt_inspiration: 'Dance Today, Transform Your Tomorrow.',
+  booking_inspiration: 'Dance Today, Transform Your Tomorrow!',
+  leadModal_success_inspiration: 'Dance Today, Transform Your Tomorrow!',
+  manifesto_aria_label: 'Our philosophy',
+  manifesto_line1: 'DANCE TODAY',
+  manifesto_line2: 'TRANSFORM',
+  manifesto_line3: 'YOUR TOMORROW',
   // Footer
   followOnFacebook: 'Follow us on Facebook',
   followOnInstagram: 'Follow us on Instagram',
@@ -11406,9 +11415,9 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     'Marcos Martínez is one of the Hip Hop references in Spain. With decades of experience as a dancer, teacher and judge of international competitions, he has trained generations of dancers. His unique style combines old school technique with current trends, always respecting the roots of hip hop culture.',
 
   // BODY CONDITIONING SPECIALIST
-  'teacher.crisag.specialty':
+  'teacher.crisAg.specialty':
     'Body Conditioning, Body Fit, Bum Bum Glutes & Stretching | Farray Method® since 2012',
-  'teacher.crisag.bio':
+  'teacher.crisAg.bio':
     'CrisAg began her passion for dance from an early age. Graduate in English Philology from the University of Barcelona, she has trained with Jorge Camagüey and joined his company Calle Real de Camagüey. She completed her training at The Cuban School of Arts in London, working alongside prestigious dancers like Yunaisy Farray, Kirenia Cantin and Damarys Farrés. Since 2012 she has trained in the Farray Method® and is currently a reference in Barcelona as a teacher of Body Conditioning, Body Fit, Bum Bum Glutes and Stretching, merging her two passions: dance and fitness.',
 
   // SALSA/BACHATA SPECIALISTS

@@ -513,10 +513,10 @@ export const IMAGE_ALT_TEXTS = {
     },
     crisag: {
       portrait: {
-        es: 'CrisAg - Instructora de Urban Dance en Barcelona',
-        en: 'CrisAg - Urban Dance Instructor in Barcelona',
-        ca: "CrisAg - Instructora d'Urban Dance a Barcelona",
-        fr: "CrisAg - Instructrice d'Urban Dance à Barcelone",
+        es: 'CrisAg - Instructora de Body Conditioning y Stretching en Barcelona',
+        en: 'CrisAg - Body Conditioning and Stretching Instructor in Barcelona',
+        ca: 'CrisAg - Instructora de Body Conditioning i Stretching a Barcelona',
+        fr: 'CrisAg - Instructrice de Body Conditioning et Stretching à Barcelone',
       },
     },
     'grechen-mendez': {
