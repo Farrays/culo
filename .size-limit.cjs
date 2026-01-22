@@ -8,7 +8,7 @@ module.exports = [
   {
     name: 'ES Locale Bundle',
     path: 'dist/assets/i18n-es-*.js',
-    limit: '375 KB', // Increased for image ALT i18n + Commercial Dance
+    limit: '378 KB', // Increased for image ALT i18n + Commercial Dance + Kizomba
     gzip: true,
   },
   {
