@@ -274,10 +274,10 @@ const DanceClassPageTemplate: React.FC<DanceClassPageConfig> = ({
           name: FARRAYS_LOCATION.name,
           url: baseUrl,
         }}
-        educationalLevel="Beginner, Intermediate, Advanced"
+        educationalLevel={t('schema_educationalLevel')}
         teaches={courseConfig?.teaches || t(`${styleKey}CourseTeaches`)}
-        coursePrerequisites={courseConfig?.prerequisites || 'Ninguno'}
-        numberOfLessons={courseConfig?.lessons || 'Clases semanales'}
+        coursePrerequisites={courseConfig?.prerequisites || t('schema_prerequisites')}
+        numberOfLessons={courseConfig?.lessons || t('schema_weeklyClasses')}
         timeRequired={courseConfig?.duration || 'PT1H'}
         availableLanguage={SUPPORTED_LOCALES}
       />

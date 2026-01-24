@@ -142,7 +142,7 @@ const PrivacyPolicyPage: React.FC = () => {
                 <strong>NIF:</strong> B67004812
               </li>
               <li>
-                <strong>Domicilio:</strong> C/ Entença 100, bajos 2, 08015 Barcelona (España)
+                <strong>Domicilio:</strong> C/ Entença 100, Local 1, 08015 Barcelona (España)
               </li>
               <li>
                 <strong>Email:</strong>{' '}

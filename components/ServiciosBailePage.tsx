@@ -233,13 +233,12 @@ const ServiciosBailePage: React.FC = () => {
       '@id': `${baseUrl}/#organization`,
       name: "Farray's International Dance Center",
       alternateName: "Farray's Center",
-      description:
-        'Academia de baile en Barcelona con más de 25 estilos, método exclusivo Farray® y reconocimiento CID-UNESCO.',
+      description: t('schema_servicios_providerDescription'),
       address: {
         '@type': 'PostalAddress',
-        streetAddress: "Carrer d'Entença, 100, Local 1",
+        streetAddress: t('schema_streetAddress'),
         addressLocality: 'Barcelona',
-        addressRegion: 'Cataluña',
+        addressRegion: t('schema_addressRegion'),
         postalCode: '08015',
         addressCountry: 'ES',
       },
@@ -288,7 +287,7 @@ const ServiciosBailePage: React.FC = () => {
     },
     areaServed: [
       { '@type': 'City', name: 'Barcelona' },
-      { '@type': 'AdministrativeArea', name: 'Área Metropolitana de Barcelona' },
+      { '@type': 'AdministrativeArea', name: t('schema_servicios_areaName') },
     ],
     availableChannel: {
       '@type': 'ServiceChannel',
@@ -298,7 +297,7 @@ const ServiciosBailePage: React.FC = () => {
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Catálogo de Servicios de Baile en Barcelona',
+      name: t('schema_servicios_catalogName'),
       itemListElement: servicesData.map((service, idx) => ({
         '@type': 'Offer',
         itemOffered: {
@@ -316,9 +315,8 @@ const ServiciosBailePage: React.FC = () => {
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: "Servicios de Baile en Barcelona - Farray's Center",
-    description:
-      'Lista completa de servicios profesionales de baile: alquiler de salas, clases particulares, eventos corporativos, agencia de bailarines y más.',
+    name: t('schema_servicios_serviceName'),
+    description: t('schema_servicios_itemListDescription'),
     numberOfItems: servicesData.length,
     itemListElement: servicesData.map((service, idx) => ({
       '@type': 'ListItem',
@@ -336,16 +334,15 @@ const ServiciosBailePage: React.FC = () => {
     '@id': `${baseUrl}/#localbusiness`,
     name: "Farray's International Dance Center",
     alternateName: "Farray's Center",
-    description:
-      'Academia de baile en Barcelona con servicios profesionales: alquiler de salas, clases particulares, team building, estudio de grabación y agencia de bailarines.',
+    description: t('schema_servicios_localBusinessDescription'),
     url: baseUrl,
     telephone: '+34622247085',
     email: 'info@farrayscenter.com',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: "Carrer d'Entença, 100, Local 1",
+      streetAddress: t('schema_streetAddress'),
       addressLocality: 'Barcelona',
-      addressRegion: 'Cataluña',
+      addressRegion: t('schema_addressRegion'),
       postalCode: '08015',
       addressCountry: 'ES',
     },

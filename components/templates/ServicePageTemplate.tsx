@@ -1017,7 +1017,11 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
       foundingDate: BUSINESS_INFO.foundingDate,
       address: {
         '@type': 'PostalAddress',
-        ...BUSINESS_INFO.address,
+        streetAddress: t('schema_streetAddress'),
+        addressLocality: BUSINESS_INFO.address.addressLocality,
+        addressRegion: t('schema_addressRegion'),
+        postalCode: BUSINESS_INFO.address.postalCode,
+        addressCountry: BUSINESS_INFO.address.addressCountry,
       },
       geo: {
         '@type': 'GeoCoordinates',

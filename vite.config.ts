@@ -3,11 +3,96 @@ import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { imagetools } from 'vite-imagetools';
 import viteCompression from 'vite-plugin-compression';
+import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
+    // PWA with Service Worker for offline caching and performance
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.ico', 'robots.txt', 'images/**/*'],
+      workbox: {
+        // Cache strategies for different resource types
+        runtimeCaching: [
+          {
+            // Cache images with stale-while-revalidate (fast, fresh eventually)
+            urlPattern: /\.(?:png|jpg|jpeg|webp|avif|svg|gif)$/i,
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'images-cache',
+              expiration: {
+                maxEntries: 100,
+                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+              },
+            },
+          },
+          {
+            // Cache fonts with cache-first (rarely change)
+            urlPattern: /\.(?:woff|woff2|ttf|eot)$/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'fonts-cache',
+              expiration: {
+                maxEntries: 20,
+                maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
+              },
+            },
+          },
+          {
+            // Cache JS/CSS with stale-while-revalidate
+            urlPattern: /\.(?:js|css)$/i,
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'static-cache',
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 60 * 60 * 24 * 7, // 7 days
+              },
+            },
+          },
+          {
+            // Cache API/page requests with network-first (always try fresh)
+            urlPattern: /^https:\/\/www\.farrayscenter\.com\/.*/i,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'pages-cache',
+              networkTimeoutSeconds: 3,
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 60 * 60 * 24, // 1 day
+              },
+            },
+          },
+        ],
+        // Pre-cache critical assets
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+        // Don't pre-cache everything to keep SW size small
+        globIgnores: ['**/stats.html', '**/node_modules/**'],
+      },
+      manifest: {
+        name: "Farray's International Dance Center",
+        short_name: "Farray's",
+        description: 'Academia de baile en Barcelona - Salsa, Bachata, Dancehall y más',
+        theme_color: '#0f0f0f',
+        background_color: '#0f0f0f',
+        display: 'standalone',
+        start_url: '/',
+        icons: [
+          {
+            src: '/images/logo-fidc.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/images/logo-fidc.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
+      },
+    }),
     // Image optimization - automatically generates WebP/AVIF
     imagetools({
       defaultDirectives: url => {

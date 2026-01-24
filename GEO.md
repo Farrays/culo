@@ -867,21 +867,21 @@ constants/blog/articles/*.ts
 
 ### Dirección
 
-| Archivo          | Actual               | Correcto                         |
-| ---------------- | -------------------- | -------------------------------- |
-| SchemaMarkup.tsx | "Calle Entenca, 100" | "Carrer d'Entença, 100, Local 1" |
+| Archivo          | Actual                           | Correcto     |
+| ---------------- | -------------------------------- | ------------ |
+| SchemaMarkup.tsx | "Carrer d'Entença, 100, Local 1" | ✅ CORREGIDO |
 
 ### Coordenadas
 
-| Archivo          | Actual          | Correcto (Google Maps) |
-| ---------------- | --------------- | ---------------------- |
-| SchemaMarkup.tsx | 41.3751, 2.1482 | 41.3804, 2.1480        |
+| Archivo          | Actual              | Correcto (Google Maps) |
+| ---------------- | ------------------- | ---------------------- |
+| SchemaMarkup.tsx | 41.380421, 2.148014 | ✅ CORREGIDO           |
 
 ### Año de Fundación
 
-| Archivo            | Actual | Correcto |
-| ------------------ | ------ | -------- |
-| OrganizationSchema | "2015" | "2017"   |
+| Archivo            | Actual | Correcto     |
+| ------------------ | ------ | ------------ |
+| OrganizationSchema | "2017" | ✅ CORREGIDO |
 
 ---
 

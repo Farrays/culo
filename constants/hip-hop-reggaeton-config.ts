@@ -137,9 +137,9 @@ export const HIP_HOP_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Hip Hop Reggaeton, fusión urbana, técnica de danza, improvisación, flow',
-    prerequisites: 'Ninguno',
-    lessons: '5 clases semanales',
+    teachesKey: 'schema_hhr_teaches',
+    prerequisitesKey: 'schema_hhr_prerequisites',
+    lessonsKey: 'schema_hhr_lessons',
     duration: 'PT1H',
   },
 
@@ -153,9 +153,8 @@ export const HIP_HOP_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
   personSchemas: [
     {
       name: 'Charlie Breezy',
-      jobTitle: 'Instructor de Hip Hop Reggaeton',
-      description:
-        'Especialista en fusión Hip Hop y Reggaeton con estilo único y flow característico.',
+      jobTitleKey: 'schema_hhr_charlie_jobTitle',
+      descriptionKey: 'schema_hhr_charlie_description',
       knowsAbout: ['Hip Hop Reggaeton', 'Urban Dance', 'Reggaeton', 'Hip Hop'],
     },
   ],

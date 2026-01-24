@@ -218,6 +218,14 @@ export function useScheduleSessions({
           throw new Error(`HTTP ${response.status}`);
         }
 
+        // Verify response is JSON before parsing (dev server may return HTML)
+        const contentType = response.headers.get('content-type');
+        if (!contentType?.includes('application/json')) {
+          throw new Error(
+            'API not available (expected JSON, got ' + (contentType || 'unknown') + ')'
+          );
+        }
+
         const result = await response.json();
 
         if (result.success) {
@@ -300,7 +308,17 @@ export function useScheduleSessions({
     }
 
     setLoading(false);
-    console.error('Failed to fetch schedule:', lastError);
+    // Only log error if fallback wasn't used (warn if using fallback)
+    if (fallbackData.length > 0) {
+      // In dev mode with fallback, this is expected - use warn level
+      if (import.meta.env.DEV) {
+        console.warn('Schedule API unavailable, using fallback data');
+      } else {
+        console.warn('Failed to fetch schedule, using fallback data:', lastError?.message);
+      }
+    } else {
+      console.error('Failed to fetch schedule:', lastError);
+    }
   }, [enabled, style, days, locale, fallbackData]);
 
   // Refetch function for manual refresh

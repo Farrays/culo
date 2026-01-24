@@ -12,12 +12,8 @@
       "dateISO": "2026-01-09",
       "text": "Yunaisy Farray es una profesora estupenda: divertida y motivadora. Me alegro de haber salido de mi zona de confort para tomar esta clase, ¡la recomiendo!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -29,9 +25,7 @@
       "dateISO": "2025-12-25",
       "text": "Las clases de twerk y de dancehall una maravilla!! Buena vibra y buena atención al público en recepción, repetiré 🫶🏼",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
+      "categories": ["urbanas"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -44,24 +38,20 @@
       "dateISO": "2025-12-15",
       "text": "¡Qué clase tan genial! Hice el nivel abierto de afrobeats y disfruté mucho la experiencia. Todos fueron muy amables y el ambiente de la clase fue abierto y divertido. ¡La recomiendo muchísimo!",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
+      "categories": ["urbanas"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-towy-vaughns-2",
-      "author": "towy vaughns",
+      "author": "Towy Vaughns",
       "authorInfo": "9 reseñas·3 fotos",
       "rating": 5,
       "date": "Hace un mes",
       "dateISO": "2025-12-15",
       "text": "Este se ha convertido en mi lugar favorito de Barcelona. Me encanta toda la energía de esta escuela.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -74,12 +64,8 @@
       "dateISO": "2025-11-15",
       "text": "Está clase me reinicia la vida. Nunca había bailado y me daba mucha vergüenza bailar en público,pero Charlie es una caña con ese flow y energía te contagia el amor por el baile. Las compañeras/os son super amables siempre. Desde que empecé me siento mucho más yo. Es la mejor decisión que he tomado en mucho tiempo. Bailar es invertir en salud y felicidad. Muchas gracias.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "charlie"
-      ],
+      "categories": ["general"],
+      "teachers": ["charlie"],
       "sentiment": "positive"
     },
     {
@@ -91,12 +77,8 @@
       "dateISO": "2025-10-15",
       "text": "De las mejores clases de baile: Iroel no solamente es ordenado con los procesos, claro en su comunicación y con muchísima escucha de los alumnos, sino también divertidísimo y muy buena onda! Más que recomendable!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "iroel"
-      ],
+      "categories": ["general"],
+      "teachers": ["iroel"],
       "sentiment": "positive"
     },
     {
@@ -108,12 +90,8 @@
       "dateISO": "2025-10-15",
       "text": "Viví en Barcelona hace dos años y este era mi estudio de baile principal. Iba allí semanalmente a cinco clases diferentes y era mi segundo hogar. Me encanta la amplia variedad de clases de diferentes estilos con profesores increíbles. ¡Y esto por la mañana y por la tarde! Como bailarina versátil, me gusta entrenar en diferentes estilos y Farrays puede ofrecer todo eso. Del 9 al 27 de septiembre (hoy) hice una especie de vacaciones al volver a Barcelona. Participé en once clases y el equipo me recibió como si nunca hubiera estado fuera. Fueron muy amables y atentos. Definitivamente recomiendo este estudio para entrenar. Tanto si vives aquí como si viajas para entrenar o estás de vacaciones y quieres seguir formándote. Sin duda volveré :)",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -125,12 +103,8 @@
       "dateISO": "2025-09-15",
       "text": "Llevo un año y medio yendo a clase de salsa cubana los miércoles con Iro y debo decir que ninguna academia como esta: técnica, sentimiento y buena onda. Un espacio donde, a parte de aprender a bailar, podrás conocer a mucha gente.",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
-      "teachers": [
-        "iroel"
-      ],
+      "categories": ["salsa-cubana"],
+      "teachers": ["iroel"],
       "sentiment": "positive"
     },
     {
@@ -142,12 +116,8 @@
       "dateISO": "2025-09-15",
       "text": "He ido a clase de prueba de twerking, la profe Sandra tiene la mejor energía, me ha encantado la clase, al final me apunte 😊",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
-      "teachers": [
-        "sandra"
-      ],
+      "categories": ["urbanas"],
+      "teachers": ["sandra"],
       "sentiment": "positive"
     },
     {
@@ -159,9 +129,7 @@
       "dateISO": "2025-08-15",
       "text": "Buen ambiente",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -174,9 +142,7 @@
       "dateISO": "2025-07-15",
       "text": "Me encantó la clase de danza Contemporánea! muy divertida y el profesor muy simpático!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -188,13 +154,8 @@
       "dateISO": "2025-09-15",
       "text": "¡Gracias, Cristina! 🧡 Qué bueno saber que te lo pasaste tan bien en la clase de danza contemporánea. La idea es justo esa: aprender, moverse y disfrutar a tope en un ambiente relajado. ¡Y sí, el profe es lo más! 😄 Cuando quieras volver a bailar con nosotros, aquí en Farray’s, ya sabes que esta escuela de baile en Barcelona es tu casa. ¡Nos vemos por los pasillos ❤️ --- ¿Quieres que te la adapte para otra red social también (Instagram, Facebook, etc.) o solo para Google?",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy",
-        "cristina"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy", "cristina"],
       "sentiment": "positive"
     },
     {
@@ -206,12 +167,8 @@
       "dateISO": "2025-06-15",
       "text": "Las clases de Mathi y Euge, son geniales. Nos lo pasamos muy bien, aprendemos a bailar y siempre nos hacen reír!!!! Muy bien!!!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "mathias"
-      ],
+      "categories": ["general"],
+      "teachers": ["mathias"],
       "sentiment": "positive"
     },
     {
@@ -223,12 +180,8 @@
       "dateISO": "2025-06-15",
       "text": "Euge y Mati los mejores entrenadores qu hemos tenido nunca. Amabl su 100% profesionales",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "eugenia"
-      ],
+      "categories": ["general"],
+      "teachers": ["eugenia"],
       "sentiment": "positive"
     },
     {
@@ -240,13 +193,8 @@
       "dateISO": "2025-06-15",
       "text": "¡Muy contenta con la escuela! Yunaisy e Iro son super profesionales pero también divertidos, tienen paciencia mil con nosotros y enseñan a bailar a cualquier persona por muy patata que sea! ¡Esto tiene mucho mérito!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy",
-        "iroel"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy", "iroel"],
       "sentiment": "positive"
     },
     {
@@ -258,9 +206,7 @@
       "dateISO": "2025-04-15",
       "text": "5 ⭐ y porque no hay más!! Espectacular, desde el minuto en el que pisas recepción, hasta los profesores, la calidad y el buen rollo entre el alumnado. Muy muy recomendable",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -273,9 +219,7 @@
       "dateISO": "2025-04-15",
       "text": "Me encantan las clases y todo muy profesional, dinero bien invertido",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -288,12 +232,8 @@
       "dateISO": "2025-04-15",
       "text": "Las clases en la escuela son súper divertidas y siempre me hacen sentir con mucha energía. Los profesores tienen una gran capacidad para enseñarnos mientras nos divertimos, lo que hace que cada sesión sea única y entretenida. Además, el recepcionista Augusto es increíblemente atento y amable, dispuesto a ayudarnos con cualquier duda. ¡Es un placer asistir!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "augusto"
-      ],
+      "categories": ["general"],
+      "teachers": ["augusto"],
       "sentiment": "positive"
     },
     {
@@ -305,13 +245,8 @@
       "dateISO": "2025-04-15",
       "text": "Augusto es el mejor y las clases de Yas increíbles! La mejor academia de Barcelona sin duda :)",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yasmina",
-        "augusto"
-      ],
+      "categories": ["general"],
+      "teachers": ["yasmina", "augusto"],
       "sentiment": "positive"
     },
     {
@@ -323,9 +258,7 @@
       "dateISO": "2025-03-15",
       "text": "Los profesores se desviven por sus alumnos",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -337,9 +270,7 @@
       "dateISO": "2025-02-15",
       "text": "Muy buena escuela! Profesores muy buenos, explican muy bien y es fácil seguir las coreografías.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -351,12 +282,8 @@
       "dateISO": "2025-09-15",
       "text": "¡Gracias mil, Lena! 💖 Nos encanta que lo vivas así: Toooop 😄 En Farray’s Center ponemos toda la ilusión y ganas en hacer de cada clase una experiencia única. ¡Un gustazo tenerte en nuestra academia de baile en Barcelona! 💃✨",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -368,9 +295,7 @@
       "dateISO": "2025-01-15",
       "text": "¡Un gran lugar para aprender salsa y otros bailes!",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
+      "categories": ["salsa-cubana"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -383,9 +308,7 @@
       "dateISO": "2025-01-15",
       "text": "Escuela de baile genial! El personal es muy amable y agradable. Los profesores son muy buenos y crean muy buen ambiente en las clases.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -397,9 +320,7 @@
       "dateISO": "2025-01-15",
       "text": "Lugar céntrico y buenos profesores, el ambiente es muy agradable y sano",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -412,14 +333,8 @@
       "dateISO": "2025-01-15",
       "text": "Una academia increíble con todo tipo de bailes y profesores increíbles (Marcos y Charlie) y Augusto de recepción que desde el primer momento ha sido encantador, amable y cortés, muy agradecida con su trato",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "charlie",
-        "marcos",
-        "augusto"
-      ],
+      "categories": ["general"],
+      "teachers": ["charlie", "marcos", "augusto"],
       "sentiment": "positive"
     },
     {
@@ -431,12 +346,8 @@
       "dateISO": "2025-01-15",
       "text": "Una escuela espectacular con unos profesores maravillosos y el mejor administrativo, Augusto!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "augusto"
-      ],
+      "categories": ["general"],
+      "teachers": ["augusto"],
       "sentiment": "positive"
     },
     {
@@ -448,12 +359,8 @@
       "dateISO": "2025-01-15",
       "text": "Genial!! Las clases son súper!! Mucha variedad de estilos !! El trato de personal es muy bueno y amable , te aconsejan y te orientan muy bien . Cristina fue quien me atendió y la verdad que encantado. Seguid así!!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "cristina"
-      ],
+      "categories": ["general"],
+      "teachers": ["cristina"],
       "sentiment": "positive"
     },
     {
@@ -465,13 +372,8 @@
       "dateISO": "2025-01-15",
       "text": "Ayer tuve mi primer clase de Twerk. Tenía un poco de miedo pero la profe Sandra hizo que todo se sintiera muy fácil y divertido. Lo mejor fue que hasta hicimos una pequeña coreografía y domíné mis primeros pasos ♡ Estoy encantada! Adenás la academia es muy bella y las personas muy amables. Voy por más",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
-      "teachers": [
-        "sandra",
-        "ella"
-      ],
+      "categories": ["urbanas"],
+      "teachers": ["sandra", "ella"],
       "sentiment": "positive"
     },
     {
@@ -483,12 +385,8 @@
       "dateISO": "2025-01-15",
       "text": "Excelente escuela, me encanta. Y Augusto es un crack! Siempre resuelve los problemas ❤️",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "augusto"
-      ],
+      "categories": ["general"],
+      "teachers": ["augusto"],
       "sentiment": "positive"
     },
     {
@@ -500,12 +398,8 @@
       "dateISO": "2025-01-15",
       "text": "¡Gran escuela de baile, 100% recomendable! Excelentes profesores que les apasiona enseñar, verte mejorar y disfrutar del baile. En mi experiencia, la progresión en salsa ha sido increíble gracias a la profesionalidad y consejos personalizados de Yunaisy. Además, existe un ambiente muy familiar. Te sientes muy bien cuidado y Fábio es un crack, ¡siempre pone facilidades!",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["salsa-cubana"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -517,25 +411,20 @@
       "dateISO": "2025-01-15",
       "text": "Realmente la mejor escuela a la que he ido en Barcelona. Las clases de afro jazz son excelentes. Recomiendo 200%",
       "isTranslated": false,
-      "categories": [
-        "contemporaneo",
-        "afro"
-      ],
+      "categories": ["contemporaneo", "afro"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-ir-kr-31",
-      "author": "ir kr",
+      "author": "Ir Kr",
       "authorInfo": "1 reseña",
       "rating": 5,
       "date": "Hace un año",
       "dateISO": "2025-01-15",
       "text": "Super buena experiencia, los mejores profesores y los dueños son unas personas maravillosas! En las clases se aprende mucho pero lo más importante es que se lo pasa super bien gracias al excelente vibe que crea la escuela! 🩵",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -548,9 +437,7 @@
       "dateISO": "2025-01-15",
       "text": "Escuela de danza top! Dancehall 🇯🇲 y muchos otros tipos de danza. La administración da un trato amable y promueve la comunidad.",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
+      "categories": ["urbanas"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -563,24 +450,20 @@
       "dateISO": "2025-01-15",
       "text": "Sin duda una escuela 10/10! No puedo estar más contenta de haberla elegido!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-marta-iba-ez-35",
-      "author": "marta ibañez",
+      "author": "Marta Ibañez",
       "authorInfo": "Local Guide·16 reseñas·7 fotos",
       "rating": 5,
       "date": "Hace un año",
       "dateISO": "2025-01-15",
       "text": "Escuela con mucha variedad de estilos y salas. Te sientes muy bien acogida y con profesores top. He estado asistiendo a clases durante 4 años pero ahora tendré que pausar por falta de tiempo. Espero poder volver pronto.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -593,12 +476,8 @@
       "dateISO": "2025-01-15",
       "text": "Farray's es mi escuela de baile favorita, y he estado en muchas en diferentes ciudades del mundo. Los profesores son apasionados, explican bien y transmiten la cultura de los bailes. Yunaisy es una reina.👑",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -610,9 +489,7 @@
       "dateISO": "2025-01-15",
       "text": "En la página mencionan que se puede probar la primera clase. Intente anotarme y no lo conseguia. Llamé para preguntar y me dijeron que no estaba funcionando la página pero que podía hacerlo por mensaje de wap o personalmente. 2 días después fui personalmente y me cobraron. La verdad que no me parece. Hasta ahora sigue apareciendo en la página que la primera clase de prueba es gratis. Pues no es cierto, no cumplen con lo que allí dice.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -625,9 +502,7 @@
       "dateISO": "2025-01-15",
       "text": "Simplemente la mejor escuela de baile en Bcn! Todos los estilos con los mejores profes... La escuela es muy grande y el ambiente es amable y International 🌍. Me encanta❤️",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -640,12 +515,8 @@
       "dateISO": "2025-01-15",
       "text": "No puedo explicar con palabras la energía que transmiten los profesores de este centro, sobre todo la directora Yunaisy. Es de momento el centro que más me ha gustado de BCN tanto por los profesores como por el nivel que tienen los compañeros.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -657,9 +528,7 @@
       "dateISO": "2025-01-15",
       "text": "Escuela de baile muy familiar y acogedora. Cuentan con gran variedad de actividades y en todas las que he probado me han acogido muy bien😃",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -672,9 +541,7 @@
       "dateISO": "2025-01-15",
       "text": "Muy bonita experiencia, aún soy alumna y me alegra haber elegido esta escuela. Muy amables, las clases son chulísimas y te dan flexibilidad para mover la hora si no puedes asistir. ☺️",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -687,24 +554,20 @@
       "dateISO": "2025-01-15",
       "text": "Muy contenta con la academia. Ya que me robaron el móvil, los llame porque no podía asistir a una clase y me la han podido cambiar de día para no perder una clase pagada. Muchas gracias. ☺️",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-alexandra-lopez-varg-43",
-      "author": "alexandra Lopez Vargas",
+      "author": "Alexandra Lopez Vargas",
       "authorInfo": "Local Guide·17 reseñas",
       "rating": 5,
       "date": "Hace un año",
       "dateISO": "2025-01-15",
       "text": "Soy Alumna de dance hall, además de sentirme muy bien integrada, y la actitud de la profesora que te motiva y te ayuda en todo momento. ¡Es una academia 100% recomendable!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -717,12 +580,8 @@
       "dateISO": "2025-01-15",
       "text": "Me encanta la escuela, donde hay un ambiente alegre y los profes super majos. Sigo las clases de Afrobeat con Thomas ...una pasada!",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
-      "teachers": [
-        "thomas"
-      ],
+      "categories": ["urbanas"],
+      "teachers": ["thomas"],
       "sentiment": "positive"
     },
     {
@@ -734,35 +593,20 @@
       "dateISO": "2025-01-15",
       "text": "Llevo más de 10 años viviendo en Barcelona y he estado en diferentes escuelas de baile, ¡pero esta es, sin duda, la mejor! Los profesores son increíbles (Yunaisy, Yas, Cris, Marcos, Daniel, Sandra, Ella, Iro y Charly...). Son bailarines increíbles y profesores apasionados. Si de verdad quieres aprender a bailar, este es tu lugar. Otra cosa que realmente aprecio de esta escuela es que es más que una simple escuela de baile; para mí es como un segundo hogar. ¡Muchas gracias a Fabio y Agusto por hacer de este lugar un lugar increíble!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy",
-        "iroel",
-        "marcos",
-        "sandra",
-        "ella"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy", "iroel", "marcos", "sandra", "ella"],
       "sentiment": "positive"
     },
     {
       "id": "review-big-hug-46",
-      "author": "Big hug",
+      "author": "Big Hug",
       "rating": 5,
       "date": "Hace un año",
       "dateISO": "2025-01-15",
       "text": "Soy estudiante de salsa cubana y no puedo estar más encantada con mi escuela de baile! Es increíble lo mucho que he aprendido en unos pocos meses y lo bien que me lo paso cada vez que voy :) Mi profesor es Iroel y hace salsa para muchos niveles, es un profesor que desde el minuto 1 hace que te lo pases en grande y disfrutes el momento para bailar y aprender al máximo. Sin duda es excelente en su trabajo, mucha gente viene a esta escuela solo por los increíbles profesores que tienen... Por no hablar de Yunaisy, la dueña de la escuela, pude ir a una de sus clases y en solo 1 sesión fue capaz de impresionarnos a todos con sus movimientos, es bastante dinámica y muy buena profesora, utiliza muchos recursos para que puedas interiorizar los pasos y puedas aprender con más facilidad, además si eres mujer da clases de sexy style y es una crack en ello. La recomiendo un montón a ella e Iroel en especial!!!!",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana",
-        "heels-femmology"
-      ],
-      "teachers": [
-        "yunaisy",
-        "iroel",
-        "ella"
-      ],
+      "categories": ["salsa-cubana", "heels-femmology"],
+      "teachers": ["yunaisy", "iroel", "ella"],
       "sentiment": "positive"
     },
     {
@@ -774,9 +618,7 @@
       "dateISO": "2025-01-15",
       "text": "¡Excelente servicio y ambiente maravilloso!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -789,9 +631,7 @@
       "dateISO": "2024-01-15",
       "text": "Mi experiencia fue genial. Muy buenos profesores y todos son muy amables. Recomiendo.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -804,9 +644,7 @@
       "dateISO": "2024-01-15",
       "text": "Gran escuela y profesores",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -819,9 +657,7 @@
       "dateISO": "2024-01-15",
       "text": "Excelente el trato de los profesores y el contenido de las clases inigualable",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -834,13 +670,8 @@
       "dateISO": "2024-01-15",
       "text": "Mi experiencia en Farray's es excelente. He tomado clases de salsa con Iroel y Yunaisy y he aprendido y disfrutado muchísimo. Recomiendo la academia 100%!",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
-      "teachers": [
-        "yunaisy",
-        "iroel"
-      ],
+      "categories": ["salsa-cubana"],
+      "teachers": ["yunaisy", "iroel"],
       "sentiment": "positive"
     },
     {
@@ -852,9 +683,7 @@
       "dateISO": "2024-01-15",
       "text": "Muchas opciones de clases con buenos profesores y Fabio para los temas de todos los días un genio. Gracias!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -867,9 +696,7 @@
       "dateISO": "2024-01-15",
       "text": "Super escuela de baile. No es fácil encontrar un lugar así, con profesores de altísima calidad, siempre muy amables y muy buen rollo. ❣️",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -882,13 +709,8 @@
       "dateISO": "2024-01-15",
       "text": "Mi experiencia en Farray's y con el profesor Silvio es excelente. En la escuela se baila con mucha energía y motivación, desde la dirección del centro Fabio es muy atento con todos y un profesional. El profesor Silvio tiene experiencia internacional como bailarín de la cultura cubana y lo demuestra en las clases de Folklore y Timba. En las clases muestra atención para corregir movimientos a todos, enseña desde el conocimiento de la cultura cubana, hace que todos bailemos con el máximo de nuestras energías y desde el corazón. La implicación es plena. Enhorabuena por la persona y el bailarín!!!!",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana",
-        "afro"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["salsa-cubana", "afro"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -900,9 +722,7 @@
       "dateISO": "2024-01-15",
       "text": "Gran estudio, buen rollo 💯Si estás en Bcn no dudes en pasarte, te garantizo que te encantará 😍",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -915,13 +735,8 @@
       "dateISO": "2024-01-15",
       "text": "Desde el primer momento en que entras a la escuela, puedes sentir lo excepcional que es este lugar. Fabio es muy servicial, amable y siempre dispuesto a charlar y aconsejarte sobre qué nivel de clases elegir :)) Euge y Mathias son unos bailarines y profesores increíbles, además de muy positivos, alegres, llenos de energía y amigos inspiradores. Es una escuela única en su tipo.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "eugenia",
-        "mathias"
-      ],
+      "categories": ["general"],
+      "teachers": ["eugenia", "mathias"],
       "sentiment": "positive"
     },
     {
@@ -933,13 +748,8 @@
       "dateISO": "2024-01-15",
       "text": "¡Qué bien lo pasamos aquí! Gracias, Fabio, por la bienvenida, y gracias, Euge y Mathias, por las clases increíbles y el ambiente tan genial que nos dieron. :) En cuanto vuelva a Barcelona, ​​¡volveré a contar con vosotros!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "eugenia",
-        "mathias"
-      ],
+      "categories": ["general"],
+      "teachers": ["eugenia", "mathias"],
       "sentiment": "positive"
     },
     {
@@ -951,24 +761,20 @@
       "dateISO": "2024-01-15",
       "text": "Fui a probar y me encantó!!!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-javier-ureta-l-pez-59",
-      "author": "Javier ureta lópez",
+      "author": "Javier Ureta López",
       "authorInfo": "7 reseñas",
       "rating": 5,
       "date": "Hace 2 años",
       "dateISO": "2024-01-15",
       "text": "El trato con profesores es genial, ambiente super familiar. Nivel de profesionalidad de los profesores muy alto y las instalaciones a la altura de las mejores escuelas que he visto nunca.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -981,24 +787,20 @@
       "dateISO": "2024-01-15",
       "text": "El personal es increíble, súper amable y siempre dispuesto a ayudar. ¡Vale la pena! ¡El ambiente, los profesores, los bailes! Muy recomendable. Recomiendo la clase de dancehall y twerk.",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
+      "categories": ["urbanas"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-maia-grondona-62",
-      "author": "maia grondona",
+      "author": "Maia Grondona",
       "authorInfo": "6 reseñas",
       "rating": 5,
       "date": "Hace 2 años",
       "dateISO": "2024-01-15",
       "text": "Las clases en este espacio son espectaculares! En mi caso especialmente la de hip hop y hip hop Reggaeton fueron las que más me gustaron. Es un lugar muy acogedor para aprender y divertirte un rato. El trato con todo el personal es inmejorable",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
+      "categories": ["urbanas"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1011,9 +813,7 @@
       "dateISO": "2024-01-15",
       "text": "Estamos encantados de estudiar en esta escuela porque encontramos excelentes profesionales, amigos y un ambiente maravilloso. Muy agradecidos a Yunaysa, Fabio y su equipo por su amabilidad y apoyo.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1026,9 +826,7 @@
       "dateISO": "2024-01-15",
       "text": "Me encanta este lugar! Me da mucha alegría venir todos los jueves a mis clases de Dancehall, se lo recomiendo a todo el mundo que quiera divertirse un rato ❤️💕🫶",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
+      "categories": ["urbanas"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1041,9 +839,7 @@
       "dateISO": "2024-01-15",
       "text": "¡Una escuela de baile de primera! Excelentes instructores, gente estupenda, un ambiente maravilloso, ¡y los dueños son profesionales, amables y empáticos! Se siente el alma, la pasión y el corazón de la escuela. ¡La recomiendo al 100%! ♥️",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1056,9 +852,7 @@
       "dateISO": "2024-01-15",
       "text": "Me encanta! El centro es genial, grande y con un montón de opciones! el personal es muy amable y la profesora muy talentosa y paciente. Me la paso muy bien bailando, y me divierto además de moverme mucho. Invité a una amiga y también le gustó. Estoy pensando en apuntarme a más clases! Muy recomendable",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1071,24 +865,20 @@
       "dateISO": "2024-01-15",
       "text": "Acudí una clase de prueba de Dancenall y me inscribí el mismo día. La calidad de las clases, mucho espacio en las salas, la organización, todo a tope. Muy recomendable 👍",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-mar-ga-69",
-      "author": "mar ga",
+      "author": "Mar Ga",
       "authorInfo": "1 reseña",
       "rating": 5,
       "date": "Hace 2 años",
       "dateISO": "2024-01-15",
       "text": "Excelente escuela con profesores de primer nivel. ¡Ambiente acogedor y agradable! Amplia variedad de clases para todos los estilos. ¡100% recomendable!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1101,13 +891,8 @@
       "dateISO": "2024-01-15",
       "text": "Fui a una clase de prueba de bachata y me quedé 🫶🏼 Mathi y Euge super buena onda siempre, me encantaron sus clases desde el primer día y el resto del equipo muy atentos, siempre organizando algun evento para que te sientas uno más ✨ la recomiendo 100%",
       "isTranslated": false,
-      "categories": [
-        "bachata"
-      ],
-      "teachers": [
-        "eugenia",
-        "mathias"
-      ],
+      "categories": ["bachata"],
+      "teachers": ["eugenia", "mathias"],
       "sentiment": "positive"
     },
     {
@@ -1119,9 +904,7 @@
       "dateISO": "2024-01-15",
       "text": "¡Lo recomiendo muchísimo! Excelentes instalaciones, profesores magníficos y una amplia variedad de bailes. ¡Un ambiente muy acogedor y céntrico!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1134,9 +917,7 @@
       "dateISO": "2024-01-15",
       "text": "Los profesores son muy buenos y las clases divertidas, me lo paso genial! Todo en la escuela es muy familiar y te hacen sentir en casa desde el primer día! Lo recomiendo totalmente!! Gracias X",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1149,9 +930,7 @@
       "dateISO": "2023-01-15",
       "text": "Profesores y personal talentosos y dedicados, siempre dispuestos a ayudar. Se siente como una gran familia. ¡Seguro que volveré! 🤍",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1164,9 +943,7 @@
       "dateISO": "2023-01-15",
       "text": "Una escuela con muy buena vibra ! Se siente como en casa y haciendo parte de una gran familia del baile. La escuela cuida mucho a sus alumnos además :) La recomiendo mucho !",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1179,9 +956,7 @@
       "dateISO": "2023-01-15",
       "text": "Escuela de baile competa y de gran calidad!! Van a respirar amor y pasión por las salas !!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1194,9 +969,7 @@
       "dateISO": "2023-01-15",
       "text": "Sólo fui a una clase de prueba, pero no me gustó",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1209,12 +982,8 @@
       "dateISO": "2023-01-15",
       "text": "Escuela de baile con un gran nivel y profesionalidad. Los profesores son de lo mejor que he visto!!! Y las salas una pasada, iluminación incluida. Muy buen ambiente y muchas iniciativas bonitas por parte de la escuela con sus alumnos. Lo mejor que podría haber hecho este 2022, formar parte de la familia Farray’s. Sin duda la recomiendo a todos los amantes del baile que busquen diversión y mucha disciplina",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -1226,9 +995,7 @@
       "dateISO": "2023-01-15",
       "text": "La mejor escuela de danza de Barcelona. Increíbles profesor@s y muy buen rollo con todo el equipo que forma parte de la escuela. Profesor@s y alumn@s💜💜💜",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1241,9 +1008,7 @@
       "dateISO": "2023-01-15",
       "text": "Buen lugar para aprender y trato muy cercano!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1256,14 +1021,8 @@
       "dateISO": "2023-01-15",
       "text": "Soy adicta a esta escuela. Empecé con salsa básico 0 en septiembre, pasé a básico 1 hace unas semanas y pasé del nivel 0 al 3 de bachata en dos meses. ¡Todas las clases son muy estimulantes y estoy aprendiendo un montón! Mis profesores favoritos: Yasmine e Iroel de salsa, Eugenia y Matthias de bachata. ¡Gracias! 🙏🏽✨💃🏼🤸🏽‍♀️",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana",
-        "bachata"
-      ],
-      "teachers": [
-        "iroel",
-        "eugenia"
-      ],
+      "categories": ["salsa-cubana", "bachata"],
+      "teachers": ["iroel", "eugenia"],
       "sentiment": "positive"
     },
     {
@@ -1275,9 +1034,7 @@
       "dateISO": "2023-01-15",
       "text": "Muy buenos profesores de salsa cubana. Muy buen ambiente.",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
+      "categories": ["salsa-cubana"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1290,12 +1047,8 @@
       "dateISO": "2023-01-15",
       "text": "Farrays es uno de los mejores estudios de baile de Barcelona. Los profesores son excelentes, el ambiente es siempre cálido y la atención inmejorable. Estoy apuntada a dos clases y quisiera hacer más. Muy recomendado!!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -1307,24 +1060,20 @@
       "dateISO": "2023-01-15",
       "text": "He sido muy feliz aquí. Los profesores son muy profesionales y explican con detalle. La coreografía es preciosa y hay muchos tipos de baile para elegir. Todos los profesores están llenos de entusiasmo durante la clase y el ambiente es especialmente bueno. Los amigos que bailan juntos también son muy amables. El estudio de baile es grande y nuevo, y el servicio es excelente. ¡Me encanta!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-rafael-murcia-87",
-      "author": "rafael murcia",
+      "author": "Rafael Murcia",
       "authorInfo": "Local Guide·16 reseñas",
       "rating": 5,
       "date": "Hace 3 años",
       "dateISO": "2023-01-15",
       "text": "¡Increíble escuela de baile!¡Gran gente, gran ambiente, lo recomiendo!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1337,12 +1086,8 @@
       "dateISO": "2023-01-15",
       "text": "Estoy encantada con las clases de Twerk que da Sandra, estoy aprendiendo mucho y hay muy buen ambiente. La escuela es muy grande con varias salas y mucha variedad de clases para todos los niveles. En recepción super amables también. Muy recomendable.",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
-      "teachers": [
-        "sandra"
-      ],
+      "categories": ["urbanas"],
+      "teachers": ["sandra"],
       "sentiment": "positive"
     },
     {
@@ -1354,9 +1099,7 @@
       "dateISO": "2023-01-15",
       "text": "Una gran escuela donde no sólo aprendes a bailar (y en mi caso era difícil porque se me daba fatal) sino que además la gente se convierte en una gran familia.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1369,24 +1112,20 @@
       "dateISO": "2023-01-15",
       "text": "Amo nuestra escuela y a nuestra increíble maestra Yenifer Lavin 💞 Llevo casi un año haciendo reggaetón y también quiero tomar bachata 💃🏻",
       "isTranslated": false,
-      "categories": [
-        "bachata"
-      ],
+      "categories": ["bachata"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-lu-del-bono-91",
-      "author": "Lu del bono",
+      "author": "Lu del Bono",
       "authorInfo": "Local Guide·33 reseñas·7 fotos",
       "rating": 5,
       "date": "Hace 3 años",
       "dateISO": "2023-01-15",
       "text": "Amo ir a mis clases, es mi momento de la semana. Son muy profesionales y cariñosos, una gran familia ♡",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1399,15 +1138,8 @@
       "dateISO": "2023-01-15",
       "text": "Una muy buena escuela de baila en el centro de Barcelona. Ponga clase de salsa y bachata desde algunas meses y estoy muy feliz. Los profesores son competentes, amable y todavía listos por ayudarte. Recomiendo Iroel y Yasmín por la salsa y Mathias y Eugenia por la bachata.",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana",
-        "bachata"
-      ],
-      "teachers": [
-        "iroel",
-        "eugenia",
-        "mathias"
-      ],
+      "categories": ["salsa-cubana", "bachata"],
+      "teachers": ["iroel", "eugenia", "mathias"],
       "sentiment": "positive"
     },
     {
@@ -1419,9 +1151,7 @@
       "dateISO": "2023-01-15",
       "text": "Genial la escuela, el trato, el ambiente cercano y familiar. Fui sólo porque me gustaba bailar (así en general) y quería aprender más. Entré enseguida en las clases y me lo empecé a pasar genial desde el primer día. Yenifer me parece muy buena profe, mete bastante caña pero está atenta a todo.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1434,14 +1164,8 @@
       "dateISO": "2023-01-15",
       "text": "Disfruté muchísimo mis dos meses en la Escuela Farray. Me sentí muy bien recibida desde la primera semana, tanto por los alumnos como por los profesores. ¡Los profesores son excelentes tanto en danza como en docencia! Se esfuerzan mucho para que todos en la clase aprendan algo y puedan desarrollar sus habilidades de baile, y lo hacen con éxito. Las clases son amenas sin perder profesionalismo. La escuela ofrece una amplia selección de clases, pero a la vez es muy informal y sencilla. Asistí a las siguientes clases durante mi estancia allí (Afro Jazz, Afro Contemporaño, Contemporaño Lírico, Hip Hop Reggaetón y Afrobeat) ¡y las recomiendo todas! Les agradezco de corazón el tiempo tan maravilloso que pasamos y ya tengo ganas de volver a verlos. ❤️",
       "isTranslated": false,
-      "categories": [
-        "urbanas",
-        "contemporaneo",
-        "afro"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["urbanas", "contemporaneo", "afro"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -1453,41 +1177,33 @@
       "dateISO": "2023-01-15",
       "text": "Empecé a bailar en Farray's Dance Center en mayo, después de un largo descanso. Vine a una clase de prueba y enseguida me aboné. Coreógrafos muy profesionales imparten clases magistrales por todo el mundo, con una gran variedad de estilos de baile para todos los niveles. Cuando buscaba una escuela de baile, asistí a algunas clases de prueba en otras escuelas, pero me decidí por Farray y nunca me he arrepentido. ¡Farray's Dance Studio, sois los mejores!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
       "id": "review-daniela-piras-96",
-      "author": "daniela piras",
+      "author": "Daniela Piras",
       "authorInfo": "10 reseñas",
       "rating": 5,
       "date": "Hace 3 años",
       "dateISO": "2023-01-15",
       "text": "Me quedo muy feliz de las clases de Dancehall female I (:",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
+      "categories": ["urbanas"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-ananda-moreno-carri--97",
-      "author": "ananda moreno carrión",
+      "author": "Ananda Moreno Carrión",
       "authorInfo": "15 reseñas",
       "rating": 5,
       "date": "Hace 3 años",
       "dateISO": "2023-01-15",
       "text": "Ambiente familiar en la escuela. Profes muy recomendables. Me encanta!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1500,9 +1216,7 @@
       "dateISO": "2023-01-15",
       "text": "La mejor opción! Los profesores son super profesionales y el ambiente en las clases es brutal! 100% recomendado ❤🔥💯",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1515,9 +1229,7 @@
       "dateISO": "2023-01-15",
       "text": "Fantástica escuela de baile. Muy buenos profesores, muy buen ambiente y sobre todo un equipo que se desvive por los alumnos, en especial su director Flavio.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1530,13 +1242,8 @@
       "dateISO": "2023-01-15",
       "text": "100% recomendado! Las clases de Afro Contemporáneo con Yenifer son súper buenas! Ella explica los movimientos de manera muy comprensible y anima a sus estudiantes a superarse y a bailar con mucha energía.",
       "isTranslated": false,
-      "categories": [
-        "contemporaneo",
-        "afro"
-      ],
-      "teachers": [
-        "ella"
-      ],
+      "categories": ["contemporaneo", "afro"],
+      "teachers": ["ella"],
       "sentiment": "positive"
     },
     {
@@ -1548,9 +1255,7 @@
       "dateISO": "2023-01-15",
       "text": "La mejor escuela de baile en Barcelona! Ya llevo 3 años en la escuela y puedo decir que todos los profesores y profesoras son muy profesionales y el ambiente es muy familiar, te sientes como en casa. Mi clase favorita es Reggaeton cubano con Yenifer, para mi lo mejor para desconectar y pasarla bien. Fabio también es súper amable siempre y flexible con cambios de clases.",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
+      "categories": ["urbanas"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1563,24 +1268,20 @@
       "dateISO": "2023-01-15",
       "text": "Es una escuela de calidad y el trato es amabilisimo",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-clara-niroc-103",
-      "author": "Clara niroc",
+      "author": "Clara Niroc",
       "authorInfo": "12 reseñas",
       "rating": 5,
       "date": "Hace 3 años",
       "dateISO": "2023-01-15",
       "text": "Profesores buenisimos, constancia, profesionalidad y conpromiso con lxs alumnes ❤️",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1593,9 +1294,7 @@
       "dateISO": "2023-01-15",
       "text": "Muy buena escuela de baile, en mi caso estoy aprendiendo salsa cubana y los profesores son muy atentos. Me encanta la profesora y fundadora de la escuela por su profesionalidad, es una gran bailarina y además sabe transmitir su pasión y enseñar muy bien la técnica a las alumnas. También recomiendo la escuela por la atención al cliente, son muy disponibles para darte apoyo en la gestión de tu suscripción.",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
+      "categories": ["salsa-cubana"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1608,9 +1307,7 @@
       "dateISO": "2023-01-15",
       "text": "Una escuela de baile que recomiendo muchísimo, con una amplia variedad de cursos y horarios. Profesores altamente cualificados, un ambiente acogedor y la disposición de todo el personal para satisfacer las necesidades de los alumnos. ¡A bailar!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1623,9 +1320,7 @@
       "dateISO": "2023-01-15",
       "text": "Después de la clase de prueba de contemporáneo lírico, decidí apuntarme. Con muchas ganas de aprender!!",
       "isTranslated": false,
-      "categories": [
-        "contemporaneo"
-      ],
+      "categories": ["contemporaneo"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1638,12 +1333,8 @@
       "dateISO": "2023-01-15",
       "text": "Vine a Barcelona unos días y quería probar una clase de salsa. Descubrí esta escuela tan interesante que ofrece muchísimas clases de baile diferentes, con diferentes niveles durante la semana. Tomé una clase para probarla y me encantó. Iroel explicó muy bien los pasos básicos de la salsa y realmente se nota su pasión por el baile. 😍 Además, me recibieron de maravilla en la recepción. Gracias de nuevo y sin duda volveré cuando esté en Barcelona. ¡Besos! 😘",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
-      "teachers": [
-        "iroel"
-      ],
+      "categories": ["salsa-cubana"],
+      "teachers": ["iroel"],
       "sentiment": "positive"
     },
     {
@@ -1655,12 +1346,8 @@
       "dateISO": "2023-01-15",
       "text": "En Farray's te enamoran 💕💕💕 comenzando por Fabio que razón llevas, cada profesor tiene su encanto, Yunaisy pura energía y ese bebé que te derrite de amor. Simplemente gracias a todos 😘",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -1672,27 +1359,21 @@
       "dateISO": "2023-01-15",
       "text": "Cancelada la clase de prueba en 2 ocasiones. La primera 25 minutos antes del inicio, cuando me dirigía en el transporte público, y la segunda hoy, en mi cara. Entiendo la gran afluencia de gente. Pero si fallas a una persona una vez, intentas que no se repita. Y no ha sido así. Me vuelvo de vacío, tras el amable ofrecimiento de poder quedarme a una de las otras clases que había y que no me interesaban. Tendrá buenos profesores, como bien dicen las opiniones, pero un buen negocio son muchas cosas. Y cuando falla la organización y la comunicación, merece ser también mencionado.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-leslie-vazquez-hurta-110",
-      "author": "leslie vazquez hurtado",
+      "author": "Leslie Vazquez Hurtado",
       "authorInfo": "2 reseñas",
       "rating": 5,
       "date": "Hace 3 años",
       "dateISO": "2023-01-15",
       "text": "Sin duda la mejor escuela de baile en Barcelona, los profesores tienen una muy buena formación y carisma para cada clase que dan. Yunaisy y Yenifer lo mejor de la escuela cada una en su estilo. El ambiente es genial, es una gran familia y Fabio en la entrada siempre muy amable, atento y flexible con cambios de clase o fechas. Recomendable 100%!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -1704,12 +1385,8 @@
       "dateISO": "2023-01-15",
       "text": "La mejor academia de baile en la que he estado. Iroel es el mejor profesor: técnico, profesional, apasionado y paciente. El trato de la academia insuperable. Recomendada 100%.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "iroel"
-      ],
+      "categories": ["general"],
+      "teachers": ["iroel"],
       "sentiment": "positive"
     },
     {
@@ -1721,13 +1398,8 @@
       "dateISO": "2023-01-15",
       "text": "Un estudio de baile tan bonito y acogedor. Como principiante en el baile y que no habla español, el equipo fue muy acogedor y los instructores también. Nunca me sentí fuera de lugar. Tomé la clase de Afrobeats de Thomas y me encantó la energía y la naturaleza acogedora de la clase. Definitivamente recomendaría Farray's Dance Studio, ¡gracias de nuevo!",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
-      "teachers": [
-        "yunaisy",
-        "thomas"
-      ],
+      "categories": ["urbanas"],
+      "teachers": ["yunaisy", "thomas"],
       "sentiment": "positive"
     },
     {
@@ -1739,9 +1411,7 @@
       "dateISO": "2023-01-15",
       "text": "¡La mejor escuela de baile! Increíbles profesionales y excelente atención. Sin dudas recomendaría esta escuela.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1754,9 +1424,7 @@
       "dateISO": "2023-01-15",
       "text": "Muy divertido, buen ambiente, y grandes profesionales ☺️",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1769,9 +1437,7 @@
       "dateISO": "2023-01-15",
       "text": "Buenísima escuela!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1784,9 +1450,7 @@
       "dateISO": "2023-01-15",
       "text": "Es un sitio para desconectar y pasarlo bien haciendo lo que te gusta y siempre aprendiendo y compartiendo. Muy buen rollo y ambiente. 100% recomendable!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1799,9 +1463,7 @@
       "dateISO": "2023-01-15",
       "text": "Súper buena escuela de danza, con grandes profesionales! :)",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1814,12 +1476,8 @@
       "dateISO": "2023-01-15",
       "text": "Soy más feliz cuando salgo de Farray's. Bailar allí, estar con buena gente y buenos profesores me cambia la energía y me hace sentir mucho mejor. ¡¡Gracias Fabio y gracias Farray's!!🥰",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -1831,9 +1489,7 @@
       "dateISO": "2023-01-15",
       "text": "Profesional, cercano y muy serios con la formación. Obviamente divertido y emocionante.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1846,24 +1502,20 @@
       "dateISO": "2023-01-15",
       "text": "Una gran familia ❤️‍🩹",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-vicky-122",
-      "author": "vicky",
+      "author": "Vicky",
       "authorInfo": "Local Guide·25 reseñas",
       "rating": 5,
       "date": "Hace 3 años",
       "dateISO": "2023-01-15",
       "text": "Muy bien lugar! La gente es increíble y las clases buenísimas",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1876,9 +1528,7 @@
       "dateISO": "2023-01-15",
       "text": "La mejor escuela de baile en Barcelona!! Te sientes como en una familia, todo el equipo es muy amable y siempre puede contar con ellos en lo que sea! Durante las clases disfrutas de una manera que no te quieres ir a tu casa. Gracias a esta escuela por la atmósfera , el cariño y los conocimientos que ofrecen!!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1891,9 +1541,7 @@
       "dateISO": "2023-01-15",
       "text": "Me inicié en dancehall y ha sido una experiencia increible. Un trato de 10 tanto de Fabio como de las profesoras. Y adaptación a tus horarios si algun dia no puedes ir y cambias de día mucha flexibilidad. Y una calidad excelente Estoy encantada con haber escogido este centro.",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
+      "categories": ["urbanas"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1906,9 +1554,7 @@
       "dateISO": "2023-01-15",
       "text": "¡Me lo he pasado genial en esta escuela! Las clases están muy bien organizadas y los profesores son muy profesionales y, en general, muy amables. Además, ofrecen un horario flexible, ideal para gente ocupada, lo cual es lo mejor.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1921,9 +1567,7 @@
       "dateISO": "2023-01-15",
       "text": "El mejor lugar para tomar clases de baile de una manera profesional, con el cariño de todas y todos los profesores que quieren ver tu crecimiento y que están allí para resolver todas tus dudas. El lugar y las salas, son maravillosas y se siente la buena energía desde que te recibe Fabio en la entrada.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1936,13 +1580,8 @@
       "dateISO": "2023-01-15",
       "text": "He quedado muy satisfecho con esta academia. Empecé clases de bachata y de salsa el septiembre pasado. Durante estos meses, he aprendido y progresado mucho con la ayuda de unos profesores expertos en la materia que saben lo que se hacen. Quiero destacar especialmente el ambiente que se respira en la academia y en las clases. Te hacen sentir como en casa. Los compañeros son increíbles. Viven la música y el baile con tremenda pasión. También quiero destacar la labor de Fabio y Yunaisy. Gran parte del éxito de la academia se debe a su trabajo y esfuerzo diario por mantener un ambiente familiar y agradable. Gracias por todo!!",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana",
-        "bachata"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["salsa-cubana", "bachata"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -1954,12 +1593,8 @@
       "dateISO": "2023-01-15",
       "text": "Farray's es una gran familia bailonga!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -1971,9 +1606,7 @@
       "dateISO": "2023-01-15",
       "text": "Esta es la mejor escuela de baile de Barcelona. Es una escuela dinámica y familiar, con alumnos y profesores excelentes. ¡Bienvenidos! Esta es la mejor escuela de baile de Barcelona. Es como una familia, con un ambiente acogedor, aulas amplias y profesores excelentes. ¡Os quiero!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -1986,26 +1619,20 @@
       "dateISO": "2023-01-15",
       "text": "Estoy muy complacida con las clases en Farray's. Los profesores son excelentes profesionales, las clases son agradables, tienen una amplia oferta , ofrecen varios niveles , el ambiente es agradable e ideal para aprender, las instalaciones están adecuadas y la atención es excelente. Lo recomiendo 100%.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
       "id": "review-sandra-diaz-canut-131",
-      "author": "sandra diaz canut",
+      "author": "Sandra Diaz Canut",
       "authorInfo": "12 reseñas",
       "rating": 5,
       "date": "Hace 3 años",
       "dateISO": "2023-01-15",
       "text": "Si buscas buena formación de calidad y diversión y buen ambiente esta es tu escuela!!!!!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2018,9 +1645,7 @@
       "dateISO": "2023-01-15",
       "text": "¡El mejor centro de baile de Barcelona! ¡Excelentes profesores y un ambiente genial!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2033,9 +1658,7 @@
       "dateISO": "2023-01-15",
       "text": "La mejor escuela de danza en Barcelona!! :)",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2048,9 +1671,7 @@
       "dateISO": "2023-01-15",
       "text": "Gran lugar para aprender a bailar y además pasarla bien (y hacer un poco de ejercicio también :). Fabio super dispuesto a ayudarte y asesorarte con las clases",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2063,9 +1684,7 @@
       "dateISO": "2023-01-15",
       "text": "¡Una escuela de baile fantástica en Barcelona! Llevo viniendo unas semanas y se centran mucho en ayudarte a aprender los pasos correctos rápidamente. La variedad de clases es enorme, así que hay para todos los gustos. Además, tiene un ambiente estupendo y muy agradable, y es muy fácil recuperar una clase si no puedes asistir.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2077,9 +1696,7 @@
       "dateISO": "2023-01-15",
       "text": "Excelente escuela de baile! Los profes muy buenos y tienen todos los estilos de baile cubiertos. Encantada con mi clase semanal. Fabio en la entrada excelente, siempre muy servicial, amable y dispuesto a ayudar. Un 10!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2092,13 +1709,8 @@
       "dateISO": "2023-01-15",
       "text": "Me uní a Farray's hace unos 6 meses y les aseguro que le daría a esta escuela 10 de 5 estrellas. He probado muchísimas escuelas de baile en Barcelona y ninguna se acerca al nivel de las clases de aquí ni a la profesionalidad de los dueños y profesores. Además, te sientes como en familia cuando vienes; los dueños están ahí para recibirte y, desde el primer día que entré, supe que seguiría allí mientras estuviera en Barcelona. ¡Gracias, Farray's, por llevar la alegría de la danza a todos sus alumnos!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy",
-        "ella"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy", "ella"],
       "sentiment": "positive"
     },
     {
@@ -2109,9 +1721,7 @@
       "dateISO": "2023-01-15",
       "text": "Ha sido una pasada! Súper profesionales! Seguid así!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2124,9 +1734,7 @@
       "dateISO": "2023-01-15",
       "text": "Magnífica escuela de baile, muy buenos profesionales y muy cercanos, una segunda familia a la que me gusta ir después de trabajar.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2139,12 +1747,8 @@
       "dateISO": "2023-01-15",
       "text": "FARRAY'S ES LO MEJOR. No importa tu nivel o si crees que puedes (o no) bailar, siempre te irás con la sensación de haber aprendido algo y haber hecho un entrenamiento increíble. La música es simplemente *beso del chef* y siempre me presentan una canción nueva. ¡Todos los profesores son tan amables y talentosos! ¿A qué esperas? ¡Prueba una clase cuanto antes! 😁",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -2155,9 +1759,7 @@
       "dateISO": "2023-01-15",
       "text": "Excelente la enseñanza de salsa: puliendo los detalles para que aprendas bien la técnica y bailes de la mejor manera posible!",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
+      "categories": ["salsa-cubana"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2169,12 +1771,8 @@
       "dateISO": "2023-01-15",
       "text": "Clases de stretching con Cris son las mejores que he hecho nunca. Escuela 100% recomendable",
       "isTranslated": false,
-      "categories": [
-        "fitness"
-      ],
-      "teachers": [
-        "crisag"
-      ],
+      "categories": ["fitness"],
+      "teachers": ["crisag"],
       "sentiment": "positive"
     },
     {
@@ -2185,12 +1783,8 @@
       "dateISO": "2023-01-15",
       "text": "Farray's lo tiene todo - Buen ambiente, gran variedad de estilos, profesionalidad y familiaridad en un mismo lugar! Desde recepción, donde conocen y se dirigen a cada alumno por su propio nombre hasta los profesores apasionados y comprometidos con la enseñanza, que no solo te enseñan a bailar, sino que te enriquecen culturalmente, explicándote el origen de algunos de los pasos de baile. ¡Ideal para cualquier persona que quiera aprender de cero, mejorar su técnica o simplemente pasárselo bien!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -2201,13 +1795,8 @@
       "dateISO": "2023-01-15",
       "text": "¡Pasé dos meses maravillosos en Farrays! Te dan la oportunidad de desarrollarte y expresarte libremente sin que falte un entrenamiento estructurado y disciplinado. Recomiendo especialmente \"Ballet Moderno\" y \"Contemporáneo Lírico\", ambos de Yenifer y con ella, y también los recomiendo precisamente en esta combinación: uno para la técnica y el otro para la expresión personal. ¡Perfectamente combinados con las clases de acondicionamiento de Cris! Todo el personal es increíblemente comprensivo y acogedor. Échale un vistazo, no te decepcionará 😉",
       "isTranslated": false,
-      "categories": [
-        "contemporaneo"
-      ],
-      "teachers": [
-        "yunaisy",
-        "ella"
-      ],
+      "categories": ["contemporaneo"],
+      "teachers": ["yunaisy", "ella"],
       "sentiment": "positive"
     },
     {
@@ -2218,12 +1807,8 @@
       "dateISO": "2023-01-15",
       "text": "Thank you very much for your feedback and positive comments. I'm happy to hear that Yenifer + Cris is a good match for dancers. They're really passionate teachers and dancers indeed! Looking forward to seeing you again.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "crisag"
-      ],
+      "categories": ["general"],
+      "teachers": ["crisag"],
       "sentiment": "positive"
     },
     {
@@ -2234,12 +1819,8 @@
       "dateISO": "2023-01-15",
       "text": "La enseñanza de danza que se imparte es de nivel profesional, donde se une tanto la técnica como la expresión desde la emoción. La profesora Yunaisy se nota que no ha sido una mera bailarina sino que su trayectoria artística es del más alto nivel del mundo del espectáculo y las artes escénicas. Mirad su biografía, y comprobad la clase! Desde el primer momento notas que estás en una academia de nivel internacional.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -2250,12 +1831,8 @@
       "dateISO": "2023-01-15",
       "text": "Desde que el año pasado retomé las clases de salsa cubana con Farrays se que no voy a dejar nunca esta academia! Agradecida con el nivel de los profes y con lo tanto que quieren que los alumnos crezcan y tomen mes tras mes más conociendo y experiencia.. Cada semana espero los días de las clases para desconectar y pasármela bien! Recomiendo 100%",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["salsa-cubana"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -2266,9 +1843,7 @@
       "dateISO": "2023-01-15",
       "text": "Es un lugar ideal para formarte como bailarín. Los profesores son apasionados de lo que hacen y eso se nota porque se esfuerzan mucho en hacer que las clases sean buenas. Las instalaciones son gigantes y el ambiente en clase es muy agradable y familiar. Se aprende muchísimo y se disfruta al mismo tiempo, no se puede pedir más!!! :D Aspectos positivos Comunicación, Calidad, Profesionalidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2280,9 +1855,7 @@
       "dateISO": "2023-01-15",
       "text": "Muy profesional, impresionante.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2294,9 +1867,7 @@
       "dateISO": "2023-01-15",
       "text": "Thanks for your positive vibes. Hugs,",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2308,9 +1879,7 @@
       "dateISO": "2023-01-15",
       "text": "¡La mejor escuela de baile de Barcelona! Me encanta este lugar. El único problema es encontrar tiempo para ir a todas las clases que me gustaría. Me siento como en casa, ¡todos los profesores son increíbles!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2323,9 +1892,7 @@
       "dateISO": "2023-01-15",
       "text": "Aspectos positivos Calidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2338,12 +1905,8 @@
       "dateISO": "2023-01-15",
       "text": "Farray es una escuela de baile acogedora, sin prejuicios, ¡donde te sentirás libre y feliz bailando! Farray es una escuela donde te sientes bienvenido y sin prejuicios (algo que para mí es muy importante). ¡Es un lugar donde te sientes libre y feliz bailando! Aspectos positivos Comunicación y Profesionalidad",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -2355,12 +1918,8 @@
       "dateISO": "2023-01-15",
       "text": "Trato excelente, el profe Iroel es muy bueno y organizan muchos eventos. Llevo 4 meses y, aunque me falta todavía mucho que aprender, ya me apano muy bien en las discotecas! Aspectos positivos Calidad, Profesionalidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "iroel"
-      ],
+      "categories": ["general"],
+      "teachers": ["iroel"],
       "sentiment": "positive"
     },
     {
@@ -2372,12 +1931,8 @@
       "dateISO": "2023-01-15",
       "text": "¡¡¡LA MEJOR ESCUELA DE BAILE DE BARCELONA!!! La escuela de baile es sumamente profesional y recomiendo especialmente las clases de reggaetón. El ambiente es agradable y te sientes a gusto. Las clases son de alto nivel, el instructor es muy perspicaz, detecta posibles errores y los corrige para que el alumno saque el máximo provecho de la clase. Todo se desarrolla en un ambiente muy agradable y se nota el compromiso del instructor. La escuela tiene una ubicación excelente, lo cual es una gran ventaja. En resumen, recomiendo encarecidamente Farray's International Dance Center; en mi opinión, todos quedarán satisfechos con su elección, como se puede ver en la cantidad de alumnos que asisten a las clases. Besos, KB Aspectos positivos Comunicación, Calidad, Profesionalidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -2389,9 +1944,7 @@
       "dateISO": "2023-01-15",
       "text": "Los profesores son grandes profesionales y el ambiente de la escuela es muy bueno :)",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2404,12 +1957,8 @@
       "dateISO": "2023-01-15",
       "text": "La mejor escuela de baile de Barcelona, desde lejos, y eso que probé varias. Me encanta la energía de los profes, la sonrisa con la cual te reciben siempre que llegas. Además la escuela es Pet friendly, que más pedir! Las clases de Yunaisy y Ela, una pa-sa-da.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -2421,12 +1970,8 @@
       "dateISO": "2023-01-15",
       "text": "El trato es muy familiar y al mismo tiempo todo el staff es muy profesional. Super recomiendo esta escuela si estás buscando clases de baile en Barcelona, tienen varios estilos diferentes y profesores especializados en cada uno de ellos. Gracias Farray's! Aspectos positivos Comunicación y Profesionalidad",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -2438,9 +1983,7 @@
       "dateISO": "2023-01-15",
       "text": "Equipo profesional, cálida recepción. Lo recomiendo ampliamente.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2453,9 +1996,7 @@
       "dateISO": "2022-01-15",
       "text": "Súper recomiendo esta escuela! A parte de contar con excelentes profesores, el ambiente que crean y el buen rollo hacen que desees apuntarte pasa vez a más clases. Aspectos positivos Comunicación, Calidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2468,9 +2009,7 @@
       "dateISO": "2022-01-15",
       "text": "Excelente bailarina reconocida ,que derrocha un talento exquisito .recomiendo esta academia para aquellos que de verdad quieran aprender a bailar.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2483,12 +2022,8 @@
       "dateISO": "2022-01-15",
       "text": "En esta academia, no solo encontre clases de baile (que son muy variadas, y con profe de alta calidad cada uno en la formacion que ofrece, tanto que quieres hacerlas todas😍) o de aptidud física.. Pero mas bien una felizidad y bien estar con personas bondadosas. Lo mejor en mi vida, las clases de cris ag. Esta apasionada, te hace disfrutar, te hace crecer físicamente y mentalmente. Es una crack, una profesional de stretching y de cuerpo fit. Su trabajo es magico💖. Tan con el cuerpo que con el corazón. Te mejora en todos los sentidos. Si estas apagada, te enciende. Hay que pasar la puerta de la academia, saludar a fabio, el guapetón de la recepción😉, y con placer te ayudara en escoger tus clases. Gracias por todo. Solène 🌺💞 Aspectos positivos Comunicación, Calidad, Profesionalidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "fitness"
-      ],
-      "teachers": [
-        "crisag"
-      ],
+      "categories": ["fitness"],
+      "teachers": ["crisag"],
       "sentiment": "positive"
     },
     {
@@ -2500,29 +2035,21 @@
       "dateISO": "2022-01-15",
       "text": "Muy contenta con la calidad de las clases de Farrays! Disfruto muchísimo de las clases siendo estas mi gran momento de la semana. Las clases son muy entretenidas y a medida que van pasando he notado como mejoraba mi nivel y la confianza en mi misma. El ambiente en general es muy distendido y ameno. Otro aspecto positivo a destacar es la gran variedad de tipos de clases que hay, despertando la curiosidad de probar nuevos bailes y estilos! Aspectos positivos Comunicación, Calidad, Profesionalidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
       "id": "review-veronica-barberena-p-165",
-      "author": "Veronica barberena pedrero",
+      "author": "Veronica Barberena Pedrero",
       "authorInfo": "3 reseñas·2 fotos",
       "rating": 5,
       "date": "Hace 4 años",
       "dateISO": "2022-01-15",
       "text": "Después de muchos años en busca de una escuela que me hiciera vibrar, por fin la encontré ☺️ Farrays tiene grandes profesionales y sobretodo una gran pasión por lo que hacen, que hace que te contagien de la magia de la danza. ¡Gracias farrays! ❤️",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -2534,9 +2061,7 @@
       "dateISO": "2022-01-15",
       "text": "Es más que una escuela es un lugar donde divertirse! Las clases son muy buenas y hay muy buen ambiente; te sientes como en casa! Grandes profesionales! Súper recomendado 🙌😊 Aspectos positivos Comunicación, Calidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2549,9 +2074,7 @@
       "dateISO": "2022-01-15",
       "text": "Muy buenos profesores e instalaciones!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2564,9 +2087,7 @@
       "dateISO": "2022-01-15",
       "text": "Aspectos positivos Calidad",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2579,9 +2100,7 @@
       "dateISO": "2022-01-15",
       "text": "Excelente escuela de baile, con profesionales de primer nivel y un trato exquisito al cliente, estamos felices de estar en esta escuela. Cecilia, mama de Sofia Aspectos positivos Comunicación, Calidad, Profesionalidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2594,9 +2113,7 @@
       "dateISO": "2022-01-15",
       "text": "Muy buena escuela, con maestros profesionales, buena pedagogía y sobre todo un trato amable, igual al del personal de recepción. Estoy muy contenta con esta elección.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2609,9 +2126,7 @@
       "dateISO": "2022-01-15",
       "text": "Hemos ido para la clase de prueba y super bien. Fabio nos atendio muy amablemente, la clase fue genial. A ver que tal el curso!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2623,9 +2138,7 @@
       "dateISO": "2023-01-15",
       "text": "Hola Chlo, Nos hubiese gustado que tu reseña fuera real y con fundamento, visto que primero, nunca has sido estudiante de la academia y nunca has frecuentado nuestras instalaciones y, segundo, tu reseña ha sido efectuada en período de vacaciones, cuando estabamos cerrados. Te invitamos a que vengas en persona a nuestra academia y ahí sí, podrás tener una idea más real y sincera sobre nosotros. Un saludo,",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2638,9 +2151,7 @@
       "dateISO": "2022-01-15",
       "text": "Un lugar increíble con grandes profesores!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2653,9 +2164,7 @@
       "dateISO": "2022-01-15",
       "text": "¡La clase de bachata fue genial! Los instructores fueron geniales y el dueño también fue muy amable. Bailaban muy bien y todos eran súper amables.",
       "isTranslated": false,
-      "categories": [
-        "bachata"
-      ],
+      "categories": ["bachata"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2668,9 +2177,7 @@
       "dateISO": "2022-01-15",
       "text": "Aspectos positivos Comunicación, Calidad, Profesionalidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2683,24 +2190,20 @@
       "dateISO": "2022-01-15",
       "text": "Experiencia increíble. Buenos profesionales, buen ambiente y un muy buen trato. Si te gusta bailar este es tu sitio! Hay una gran variedad de estilos y es imposible no querer probarlos todos!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-karla-pajares-179",
-      "author": "karla pajares",
+      "author": "Karla Pajares",
       "authorInfo": "5 reseñas·8 fotos",
       "rating": 5,
       "date": "Hace 4 años",
       "dateISO": "2022-01-15",
       "text": "La mejor escuela de baile, muy buen trato, y los mejores profesores. Flexibilidad y profesionalidad sobre todo. Carlos. Silne Bisset",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2713,9 +2216,7 @@
       "dateISO": "2022-01-15",
       "text": "Aspectos positivos Profesionalidad",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2728,9 +2229,7 @@
       "dateISO": "2022-01-15",
       "text": "Para mi la mejor escuela de baile en Barcelona: profesionales, dedicados y humanos! Además se nota que el baile es su pasión y lo transmiten a los estudiantes. Sin duda lo recomiendo a todos aquellos que buscan empezar a bailar, mejorar su técnica, o retomarlo después de muchos años (como fue mi caso). ♥️",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2743,9 +2242,7 @@
       "dateISO": "2022-01-15",
       "text": "Me encanta! 100% recomendadas las clases de Stretching son de lo mejor. Probé lo flexible que puedo ser y no lo sabía. Diversión y ejercicio al mismo tiempo.",
       "isTranslated": false,
-      "categories": [
-        "fitness"
-      ],
+      "categories": ["fitness"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2758,12 +2255,8 @@
       "dateISO": "2022-01-15",
       "text": "....muy buena calidad en las clases, ...., corrigiendo pasos, posturas, tiempos, ...., MUY BUENOS PROFESIONALES, IRO y YAS....SUPER Aspectos positivos Comunicación, Calidad, Profesionalidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "iroel"
-      ],
+      "categories": ["general"],
+      "teachers": ["iroel"],
       "sentiment": "positive"
     },
     {
@@ -2775,9 +2268,7 @@
       "dateISO": "2022-01-15",
       "text": "Un maravilloso lugar tanto para aprender, despejar y encontrar amigos... Los profesionales son excelentes y las clases maravillosas. Mi academia preferida😍",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2790,27 +2281,20 @@
       "dateISO": "2022-01-15",
       "text": "Hice las clases de Stretching y Bum Bum con Cris y son una pasada, aprendes rápido y si eres constante avanzas mucho a nivel de flexibilidad y condición física. Se nota que es una buena profesional y que le gusta enseñar y que sus alumnos mejoren. Mucha caña eso sí!! También el personal muy atento y te pasan las clases que no hayas podido asistir ya que quedan grabadas, destacar a Fabio que es quien me enviaba todo el material y siempre muy atento y agradable! No lo dudeis, si os apuntáis en esta academia estaréis muy contentos! Aspectos positivos Comunicación, Calidad, Profesionalidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "fitness"
-      ],
-      "teachers": [
-        "crisag",
-        "yasmina"
-      ],
+      "categories": ["fitness"],
+      "teachers": ["crisag", "yasmina"],
       "sentiment": "positive"
     },
     {
       "id": "review-silvia-aratun-bertos-186",
-      "author": "silvia aratun bertos",
+      "author": "Silvia Aratun Bertos",
       "authorInfo": "1 reseña",
       "rating": 5,
       "date": "Hace 4 años",
       "dateISO": "2022-01-15",
       "text": "Fui un día para probar y me apunté sin dudarlo! A los 2 minutos de empezar la clase sentí que tenía que ir, son increíbles! Aspectos positivos Comunicación, Calidad, Profesionalidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2823,9 +2307,7 @@
       "dateISO": "2022-01-15",
       "text": "Probé una clase en septiembre y allí que me he quedado. Empecé haciendo una clase y ahora voy 2 veces por semana. Una vez entras te quieres quedar, es un lugar muy familiar, con un trato profesional y cercano. Es como estar en casa, siempre hay un ambiente muy agradable. Lo recomiendo 100% Aspectos positivos Comunicación, Calidad, Profesionalidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2838,9 +2320,7 @@
       "dateISO": "2022-01-15",
       "text": "Aspectos positivos Calidad",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2853,9 +2333,7 @@
       "dateISO": "2022-01-15",
       "text": "Una escuela increíble! Mi puntuación es excelente! Tienen todo lo que puedes pedir de una escuela de baile. Aprender divirtiendote, bailando. Profesores buenos, que aman el baile, y se nota. Pero sumado a eso, son súper amables, flexibles y comprensibos. Recomendable al 200%! Aspectos positivos Comunicación, Calidad y Profesionalidad",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2868,9 +2346,7 @@
       "dateISO": "2022-01-15",
       "text": "Muy buena escuela, muy amables y siempre a disposición del alumno. Aspectos positivos Profesionalidad",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2883,9 +2359,7 @@
       "dateISO": "2022-01-15",
       "text": "Muy agradable y organizado, salones amplios, espacios limpios. Las clases están bien estructuradas, son de alta calidad y además divertidas 😉 Me gusta especialmente el recepcionista que habla inglés, ¡súper servicial! 👍😉",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2898,12 +2372,8 @@
       "dateISO": "2022-01-15",
       "text": "Estoy muy contenta con mi elección. Una escuela maravillosa con profesores talentosos. Además, muchos de sus estilos de baile no se encuentran en otras escuelas de Barcelona. ¡Y las clases con Yunaisy son increíbles!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -2915,9 +2385,7 @@
       "dateISO": "2022-01-15",
       "text": "Aspectos positivos Comunicación y Profesionalidad",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2930,9 +2398,7 @@
       "dateISO": "2022-01-15",
       "text": "Hicimos una clase de HipHop Reggaeton y nos encantó!!! Muy buen ambiente y la profesora muy buena ^^",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
+      "categories": ["urbanas"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2945,9 +2411,7 @@
       "dateISO": "2022-01-15",
       "text": "Llevo casi 3 años con ellos y espero seguir por muchos mas! El trato es inmejorable y el nivel de los profesores altisimo! Si quieres aprender a bailar y sentirte en familia, este es tu sitio sin duda :)",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2960,9 +2424,7 @@
       "dateISO": "2022-01-15",
       "text": "Sin duda, una de las mejores escuelas de baile de Barcelona... tanto el personal como los alumnos se sienten como en familia desde el primer día y son muy acogedores. Profesores de calidad, estudios y muchísimas opciones de clases. ¡10/10!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2975,9 +2437,7 @@
       "dateISO": "2022-01-15",
       "text": "Muy buena escuela de baile, ambiente, atención, profesores y coreografías 💃🏻✨👏🏻",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -2990,9 +2450,7 @@
       "dateISO": "2022-01-15",
       "text": "Me encanta!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3005,9 +2463,7 @@
       "dateISO": "2022-01-15",
       "text": "Me encantó la clase de prueba de danza lírica, muy profesional y las instalaciones muy limpias. Aspectos positivos Profesionalidad",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3020,9 +2476,7 @@
       "dateISO": "2022-01-15",
       "text": "Sin duda te hacen sonreir. Muy contento con la clase! Muy buen personal, super amable y cercano!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3035,9 +2489,7 @@
       "dateISO": "2022-01-15",
       "text": "Aspectos positivos Comunicación, Calidad, Profesionalidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3050,24 +2502,20 @@
       "dateISO": "2022-01-15",
       "text": "Magnífico lugar para aprender, divertirte y disfrutar del baile! Increíbles profesores y mejores personas!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-izel-torres-205",
-      "author": "izel torres",
+      "author": "Izel Torres",
       "authorInfo": "11 reseñas·4 fotos",
       "rating": 5,
       "date": "Hace 4 años",
       "dateISO": "2022-01-15",
       "text": "Un lugar cómodo y agradable para bailar!! Con ganas de bailarlo todo.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3080,9 +2528,7 @@
       "dateISO": "2022-01-15",
       "text": "Muy buenas clases de estilo chicas con Alicia! Aspectos positivos Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3095,9 +2541,7 @@
       "dateISO": "2022-01-15",
       "text": "Personal amable y clases excelentes y profesionales.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3110,9 +2554,7 @@
       "dateISO": "2022-01-15",
       "text": "Maravillosooo!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3125,12 +2567,8 @@
       "dateISO": "2022-01-15",
       "text": "Qué decir de Farray’s...❤️ Pues que son unos profesionales con los que aprendes muchísimo para que bailes con estilazo y técnica. Y te hacen sentir como en casa ✨",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -3141,9 +2579,7 @@
       "dateISO": "2022-01-15",
       "text": "Aspectos positivos Calidad, Profesionalidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3156,13 +2592,8 @@
       "dateISO": "2021-01-15",
       "text": "Estoy encantada con las clases impartidas en la escuela y sobre todo con cris y sus clases cuerpo fit , boom boom , Ella es impecable , profesional se preocupa y ocupa de todas nosotras al máximo , sus clases son de altísima calidad y muy productivas , mil gracias la recomendaría siempre Aspectos positivos Comunicación, Calidad, Profesionalidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "fitness"
-      ],
-      "teachers": [
-        "crisag",
-        "ella"
-      ],
+      "categories": ["fitness"],
+      "teachers": ["crisag", "ella"],
       "sentiment": "positive"
     },
     {
@@ -3174,24 +2605,20 @@
       "dateISO": "2021-01-15",
       "text": "Aspectos positivos Comunicación",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-almudena-de-la-fuent-213",
-      "author": "Almudena De La Fuente",
+      "author": "Almudena de la Fuente",
       "authorInfo": "3 reseñas",
       "rating": 5,
       "date": "Hace 5 años",
       "dateISO": "2021-01-15",
       "text": "Muchas facilidades y gran flexibilidad. El personal superagradable y profesional.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3204,9 +2631,7 @@
       "dateISO": "2021-01-15",
       "text": "Profesores buenísimos, ambiente genial!! Totalmente recomendado :)",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3219,9 +2644,7 @@
       "dateISO": "2021-01-15",
       "text": "La experiencia en el centro es buenísima, especialmente si amas la danza. Muy buena calidad de profesorado! Particularmente la energía y el arte cubano de Yennifer :) Aspectos positivos Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3234,9 +2657,7 @@
       "dateISO": "2021-01-15",
       "text": "La mejor escuela de baile de Barcelona! Recibes clases de grandes profesionales y a la vez sientes que formas parte de una gran familia.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3249,12 +2670,8 @@
       "dateISO": "2021-01-15",
       "text": "Muuuuy buena escuela de baile, yo en particular he dado clases con Ela (dancehall) aprendes mucho y te diviertes, en la escuela hay muy y buen rollo, y Fabio es un amor!!!!!",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
-      "teachers": [
-        "ella"
-      ],
+      "categories": ["urbanas"],
+      "teachers": ["ella"],
       "sentiment": "positive"
     },
     {
@@ -3266,9 +2683,7 @@
       "dateISO": "2021-01-15",
       "text": "Un lugar donde divertirse! Fabio es un amor, la atención de maravilla, te sientes como en casa, y las clases muy buenas. En mi caso de dancehall con Ela, todo un descubrimiento 😍",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
+      "categories": ["urbanas"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3281,9 +2696,7 @@
       "dateISO": "2021-01-15",
       "text": "excelente lugar! Aspectos positivos Calidad y Profesionalidad",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3296,9 +2709,7 @@
       "dateISO": "2021-01-15",
       "text": "Aspectos positivos Calidad",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3311,9 +2722,7 @@
       "dateISO": "2021-01-15",
       "text": "Mi primera clase, iba muy nerviosa por la dificultad que tiene la clase de baile estilo Pump Camp, ha sido genial, la atención y maestría es calidad alta, el trato super amable, el tiempo me ha pasado volando me he sentido muy agusto y con ganas de seguir. Gracias",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3326,9 +2735,7 @@
       "dateISO": "2021-01-15",
       "text": "Gran escuela, grandes profesionales pero sobre todo grandes personas las que lo gestionan y enseñan. Sin duda, para mi, la mejor escuela de baile de Barcelona.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3341,9 +2748,7 @@
       "dateISO": "2021-01-15",
       "text": "Una de las mejores escuelas de baile en la ciudad.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3356,9 +2761,7 @@
       "dateISO": "2021-01-15",
       "text": "Un espacio genial para desconectar de la rutina disfrutando del baile con profesores excelentes :) Aspectos positivos Profesionalidad",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3371,9 +2774,7 @@
       "dateISO": "2021-01-15",
       "text": "Aspectos positivos Comunicación, Calidad, Profesionalidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3386,29 +2787,21 @@
       "dateISO": "2021-01-15",
       "text": "Farray’s es una academia de baile excelente. Ofrece muchos cursos de alisad altísima y los profesores son todos muy profesionales. Se aprende mucho y te diviertes mucho. Seguramente una escuela de referencia en Barcelona.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
       "id": "review-judit-mu-oz-227",
-      "author": "judit muñoz",
+      "author": "Judit Muñoz",
       "authorInfo": "Local Guide·23 reseñas",
       "rating": 5,
       "date": "Hace 5 años",
       "dateISO": "2021-01-15",
       "text": "Una escuela de baile muy dedicada a los alumnos y con buenos profesores. Las clases de preparación física de cris son geniales ! Yexy Jr. Bachata",
       "isTranslated": false,
-      "categories": [
-        "bachata"
-      ],
-      "teachers": [
-        "crisag"
-      ],
+      "categories": ["bachata"],
+      "teachers": ["crisag"],
       "sentiment": "positive"
     },
     {
@@ -3420,9 +2813,7 @@
       "dateISO": "2021-01-15",
       "text": "Sin duda mucho más que un escuela de baile. La calidad del profesorado y los métodos de enseñanza son excelentes. Podrás encontrar gran variedad de disciplinas. Trato amable y cercano. Además de las clases, organizan encuentros, salidas y eventos para practicar y poder conocernos fuera de clase haciéndote sentir parte de una gran familia.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3435,9 +2826,7 @@
       "dateISO": "2021-01-15",
       "text": "Una escuela de baile increíble. Acogedora, enseñanza profesional y un ambiente agradable, todo combinado.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3450,9 +2839,7 @@
       "dateISO": "2021-01-15",
       "text": "Estoy agradecida y contenta de formar parte de esta familia q es la Escuela Ferrays Center Gracias tb a los Profesores q hacen q aprendas no sólo bailar sino q tb a sentirlo !",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3465,9 +2852,7 @@
       "dateISO": "2021-01-15",
       "text": "Excelentes instalaciones, excelente trato y excelentes profesionales.. Super preparados y dispuestos a enseñar. Recomendadísimo!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3480,9 +2865,7 @@
       "dateISO": "2021-01-15",
       "text": "Aspectos positivos Calidad y Profesionalidad",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3495,9 +2878,7 @@
       "dateISO": "2021-01-15",
       "text": "Super recomendable! Se aspira un ambiente muy familiar en la escuela , excelentes profesores y atención al cliente inmejorable.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3510,12 +2891,8 @@
       "dateISO": "2021-01-15",
       "text": "He podido empezar a aprender Bachata Fusión gracias a Yexi y Yasmina. Grandes profesionales y un gran ambiente en la academia. Recomendable 100%",
       "isTranslated": false,
-      "categories": [
-        "bachata"
-      ],
-      "teachers": [
-        "yasmina"
-      ],
+      "categories": ["bachata"],
+      "teachers": ["yasmina"],
       "sentiment": "positive"
     },
     {
@@ -3527,24 +2904,20 @@
       "dateISO": "2021-01-15",
       "text": "Profes excelentes y divertimiento asegurado. Aspectos positivos Calidad, Profesionalidad y Valor",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-ester-callejon-herna-236",
-      "author": "ester callejon hernandez",
+      "author": "Ester Callejon Hernandez",
       "authorInfo": "1 reseña",
       "rating": 5,
       "date": "Hace 5 años",
       "dateISO": "2021-01-15",
       "text": "Es una escuela que se preocupa por sus alumnos para que aprendan bien desde el principio, los pasos, la colocación de pies y manos... Es muy profesional. Los profesores estupendos y el trato es familiar y amigable. El Director Fabio siempre pendiente de los alumnos para solucionar cualquier problema. Se hacen grupos y amigos con los que salir a bailar. La recomiendo al 100%, es genial!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3557,9 +2930,7 @@
       "dateISO": "2021-01-15",
       "text": "¡La clase para principiantes fue genial! Al principio fue a un ritmo lento, lo que nos permitió recordar los pasos y ganar confianza. Los profesores fueron amables y el director fue muy servicial. ¡Sin duda volveré!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3572,9 +2943,7 @@
       "dateISO": "2021-01-15",
       "text": "Muy buena onda tanto los profesores como la dirección de la academia ya que permiten flexibilidad de horarios si tienes algún viaje o imprevisto. Las clases son muy dinámicas y creativas, hay ejercicios en el centro, diagonales y coreografías. Puedes aprender mucha técnica y también seguir el ritmo así como mejorar la memoria coreográfica gracias a la variedad de ejercicios semanales.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3587,9 +2956,7 @@
       "dateISO": "2021-01-15",
       "text": "Muy recomendable! Excelente nivel, profesionalidad y la mejor vibra. La bienvenida de cada vez q voy a tomar una clase hace que siempre quiera regresar🙌",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3602,12 +2969,8 @@
       "dateISO": "2021-01-15",
       "text": "Llevo solo unas semanas en Farray's, pero hasta ahora estoy impresionado. He estado tomando clases de afrobeat para principiantes y siempre disfruto del ambiente de Farray's. Es un espacio muy acogedor, con personas de todas las edades, todos los tipos de cuerpo y todos los niveles de habilidad, y todos reciben apoyo.",
       "isTranslated": false,
-      "categories": [
-        "urbanas"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["urbanas"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -3619,12 +2982,8 @@
       "dateISO": "2021-01-15",
       "text": "Es la mejor escuela de baile en la que he estado, y han sido unas cuantas. Me gustan por igual - Los profesores su profesionalidad y su carisma - La metodología de enseñanza - Los compañeros de clase - El ambiente que se crea en las mismas - El sentirse como en casa, gracias a Fabio cuando nos recibe todos los días y su disponibilidad para cualquier cosa que necesitemos - La organización de eventos externos a las clases Y un largo etc. Si queréis disfrutar y desconectar de la rutina no lo dudéis en ir a bailar a Farray's.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -3636,9 +2995,7 @@
       "dateISO": "2021-01-15",
       "text": "Clases muy buenas de todo tipo de bailes. Recomendada.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3651,11 +3008,7 @@
       "dateISO": "2021-01-15",
       "text": "¡No encontrarás una escuela como esta en toda Barcelona! ...y te diré por qué... Primero, es la mejor para quienes, como yo, buscan una experiencia auténtica con bailes afro (pero no solo...). Todos los profesores son cubanos, así que qué mejor que explorar diferentes estilos cada día, cambiarlos o combinarlos, con una enorme selección de disciplinas: afro contemporáneo, urbano, afro beat, hip hop, ballet moderno, etc. Segundo, la atención especial del dueño, Fabio, a cada persona que entra en su escuela... es sumamente amable y siempre intenta hacer todo lo posible por ayudarte. Tercero, los profesores que conozco, como Jennifer, Yass y Fatu, tienen una personalidad fuerte y no solo talento para la danza, sino también para la enseñanza, sensibilidad y paciencia para transmitirte sus conocimientos en un ambiente acogedor, sin importar tu nivel.",
       "isTranslated": false,
-      "categories": [
-        "urbanas",
-        "contemporaneo",
-        "afro"
-      ],
+      "categories": ["urbanas", "contemporaneo", "afro"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3668,26 +3021,20 @@
       "dateISO": "2021-01-15",
       "text": "Farray's es una academia increíble. De hecho, la mejor a la que he ido, y he tomado clases en muchas academias, tanto dentro como fuera de España. Lo primero que se nota es el calor humano. Verdadero. Nada de sonrisas comerciales de plástico. Luego destacan la variedad de estilos y la calidad del profesorado. Los profes son excelentes y se esfuerzan mucho para que los alumnos aprendan. En resumidas cuentas, aprendizaje y diversión con los mejores profes de Barcelona en un ambiente muy acogedor.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
       "id": "review-juliet-del-corzo-245",
-      "author": "Juliet Del corzo",
+      "author": "Juliet del Corzo",
       "authorInfo": "4 reseñas",
       "rating": 5,
       "date": "Hace 5 años",
       "dateISO": "2021-01-15",
       "text": "Excelente academia❤️",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3700,9 +3047,7 @@
       "dateISO": "2021-01-15",
       "text": "Me ha encantado había estado buscando y buscando, he acudido a la clase prueba y sin pensármelo al salir he decido comenzar clases aquí, por varías razones. Los profesores enseñan y bailan genial, muy atentos , profesionales y pacientes. En la recepción desde que llegan te indican la distribución de las instalaciones y te llevan a la sala donde tendrás la clase . Un lugar super recomendable",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3715,9 +3060,7 @@
       "dateISO": "2021-01-15",
       "text": "Bonita academia de baile, con buenas salas y profesores, buena atención al cliente y bien comunicada.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3730,27 +3073,21 @@
       "dateISO": "2021-01-15",
       "text": "Excelente Academia de baile. Muy Buenos profesores que enseñan todas las técnicas de baile 💃 lo recomiendo 😍",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-sergio-j-g-249",
-      "author": "sergio j g",
+      "author": "Sergio J G",
       "authorInfo": "4 reseñas",
       "rating": 5,
       "date": "Hace 5 años",
       "dateISO": "2021-01-15",
       "text": "Excelentes profesores y ambiente. Salas grandes y bien acondicionadas. De las escuelas que he probado, sin duda me quedo con Farray`s",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -3762,12 +3099,8 @@
       "dateISO": "2021-01-15",
       "text": "Los mejores profesionales de baile en BCN. Iro y Yass son excepcionales y hacen que disfrutes de la salsa a la vez que aprendes. Recomiendo la escuela 100%",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
-      "teachers": [
-        "iroel"
-      ],
+      "categories": ["salsa-cubana"],
+      "teachers": ["iroel"],
       "sentiment": "positive"
     },
     {
@@ -3779,9 +3112,7 @@
       "dateISO": "2021-01-15",
       "text": "Muy buena escuela de baile hay de todo y puedes aprender muchas clases de bailes, los profesores muy buenos, y el trato con el jefe Fabio muy bueno, es muy recomendable esta escuela",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3794,12 +3125,8 @@
       "dateISO": "2021-01-15",
       "text": "Las clases han sido geniales, si buscas una escuela dónde aprender de verdad, este es el sitio. Mi profesora Yas para sexy style fue muy buena, no es la típica profesora que va a lucirse, se para con los alumnos para que a todos nos salga bien, nos enseñó mucho y es estricta con el grupo, se nota que le gusta su trabajo y no va a pasar el tiempo ni a sacar dinero. Sin dudarlo volveré!",
       "isTranslated": false,
-      "categories": [
-        "heels-femmology"
-      ],
-      "teachers": [
-        "yasmina"
-      ],
+      "categories": ["heels-femmology"],
+      "teachers": ["yasmina"],
       "sentiment": "positive"
     },
     {
@@ -3811,9 +3138,7 @@
       "dateISO": "2020-01-15",
       "text": "¡Fantástica escuela de baile! Una escuela de baile absolutamente increíble en Barcelona. Profesores de primer nivel y clases con una gran variedad. ¡La recomiendo muchísimo!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3826,27 +3151,21 @@
       "dateISO": "2020-01-15",
       "text": "Grandes profesionales!! Excelentes con el trato a sus alumnos! Recomiendo 100%!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-laura-lopez-ros-255",
-      "author": "laura lopez ros",
+      "author": "Laura Lopez Ros",
       "authorInfo": "9 reseñas",
       "rating": 5,
       "date": "Hace 6 años",
       "dateISO": "2020-01-15",
       "text": "Grandes profesionales y unas bellas personas!!!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "ella"
-      ],
+      "categories": ["general"],
+      "teachers": ["ella"],
       "sentiment": "positive"
     },
     {
@@ -3858,12 +3177,8 @@
       "dateISO": "2020-01-15",
       "text": "Por la profesionalidad... atención, trato y un muy buen ambiente familiar!!!!! Tanto de Fabio en atención e información....y a los profes más cañeros y divertidos que tenemos que son Edgar y Natalie!!!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "natalie"
-      ],
+      "categories": ["general"],
+      "teachers": ["natalie"],
       "sentiment": "positive"
     },
     {
@@ -3875,12 +3190,8 @@
       "dateISO": "2020-01-15",
       "text": "¡Esta escuela es increíble! Es como una familia. Hay una gran variedad de clases. Tomé clases durante seis meses y participé en el espectáculo, ¡y fue una experiencia fantástica! Fabio, el recepcionista, es encantador, sonriente y siempre disponible, y Jenny es una profesora y bailarina fantástica. ¡Gracias, Farray's, por estos momentos!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -3892,9 +3203,7 @@
       "dateISO": "2020-01-15",
       "text": "Recomiendo 100%! Un trato maravilloso desde que entramos, hasta las clases que fuimos a probar, el profesor explicaba de maravilla, Edgar, así como el que había en recepción! La mejor decisión fue apuntarme.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3907,12 +3216,8 @@
       "dateISO": "2020-01-15",
       "text": "Farray’s es un sitio espectacular para aprender y practicar la danza. Me ha gustado demasiado todo el profesionalismo de los profesores y de Fabio el director. Las clases son en grupo pero muy personalizadas, las instalaciones son muy buenas. Estoy muy contenta pues he aprendido mucho y mejorado físicamente.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -3924,9 +3229,7 @@
       "dateISO": "2020-01-15",
       "text": "Lo recomiendo al 100%! Te sientes acogida desde el minuto uno con ellos, se preocupan por ti y sobre todo, obtienes los resultados que estás buscando! Además, tienen una amplia variedad de clases donde elegir :)",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3939,9 +3242,7 @@
       "dateISO": "2020-01-15",
       "text": "Lo mejor de lo mejor!!!! Gracias por todo 🙏🙏🙏🙌🙌🙌 🕺🏽 💃 .",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3954,9 +3255,7 @@
       "dateISO": "2020-01-15",
       "text": "Muy buena atención y variedad de clases , como dicen en recepción siempre tienen solución para todos!!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3969,9 +3268,7 @@
       "dateISO": "2020-01-15",
       "text": "Muy buena escuela para aprender a bailar y/o mejorar la técnica. Además el trato personal es increible, te hacen sentir como si formaras parte de una família.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -3984,31 +3281,21 @@
       "dateISO": "2020-01-15",
       "text": "Una escuela de baile fantástica; recomiendo Farrays Center a todo el mundo. Muy profesional y de alta calidad, tanto en baile como en enseñanza. El ambiente en las clases también es muy agradable. El personal es muy amable y el ambiente en la escuela es muy cálido e informal. Buena relación calidad-precio. Fui allí con dos amigas para una semana de formación intensiva (salsa y contemporáneo). Ya habíamos contactado con ellas antes de nuestro viaje y respondieron a nuestras preguntas de forma completa y rápida. Allí mismo, nos prepararon planes de entrenamiento individuales según nuestras necesidades, incluyendo sesiones individuales. El precio fue realmente muy razonable para la gran cantidad de clases que reservamos. Yunaisi es una bailarina y profesora de baile maravillosa, al igual que sus compañeras. Aprendimos muchísimo y nos divertimos muchísimo. Sin duda, volveré en cuanto tenga tiempo.",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana",
-        "contemporaneo"
-      ],
-      "teachers": [
-        "yunaisy",
-        "ella"
-      ],
+      "categories": ["salsa-cubana", "contemporaneo"],
+      "teachers": ["yunaisy", "ella"],
       "sentiment": "positive"
     },
     {
       "id": "review-olivia-carmona-267",
-      "author": "Olivia carmona",
+      "author": "Olivia Carmona",
       "authorInfo": "5 reseñas",
       "rating": 5,
       "date": "Hace 6 años",
       "dateISO": "2020-01-15",
       "text": "Si quieren unas clases de qualidad con unos profesores reconosidos en el mundo entero por su pedagogia, humildad y consciencia del trabajo bien hecho... Si quieren sentirse en casa, aprender en un ambiante familiar con gente generosa y siempre atenta al detalle.... FARRAY INTERNATIONAL DANCE CENTER ES EL LUGAR ADECUADO!!!! Hemos vivido un MASTERCLASS de alta qualidad, organizado para que podemos estar atentos al enseñanza con gente que Si sabian de que estaban hablando y capaces de contestar a today las preguntas. Gente estudiada, talentuosa!!! No tengo mas palabras .... Vayan, Prueban, Gozan :)",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -4020,12 +3307,8 @@
       "dateISO": "2020-01-15",
       "text": "Son simplemente los mejores, tanto en técnica de baile como en metodología de enseñanza. Recomiendo Farray's a estudiantes de todos los niveles y también para la formación de profesores; ¡no hay otro lugar donde se pueda acceder a esta calidad! El centro y el personal son muy amables y se dan todas las circunstancias necesarias para aprender. :-)",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -4037,9 +3320,7 @@
       "dateISO": "2020-01-15",
       "text": "Muy amables y atenso con todo. Puse una mala reseña y enseguida se pusieron en contacto conmigo para solucionarlo. Les estoy muy agradecida de todo lo que hicieron. ¡Es una escuela fantástica para ir a aprender y disfrutar de la danza!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4052,24 +3333,20 @@
       "dateISO": "2020-01-15",
       "text": "Descubrí este lugar demasiado tarde. Todos los profesores son entusiastas, la música que eligen es genial y los compañeros son como una gran familia. Es ideal para personas como yo que no tienen ambiente en casa y no quieren hacer ejercicio. P. D.: El chico de recepción no solo es guapo, sino también muy gracioso.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-garcia-lam-271",
-      "author": "garcia lam",
+      "author": "Garcia Lam",
       "authorInfo": "1 reseña",
       "rating": 5,
       "date": "Hace 6 años",
       "dateISO": "2020-01-15",
       "text": "El estudio de danza está totalmente equipado, incluso cuenta con una sala de vapor para los alumnos. Hay varios tipos de instructores. La recepcionista es amable y atenta, y habla inglés. Yo misma tomo clases de baile en Hong Kong, concretamente baile con tacones altos. Realza el encanto femenino y estiliza la figura. ¡Busqué durante mucho tiempo después de mudarme a España, y por fin encontré este lugar! Además de ser un pasatiempo, bailar ayuda a perder peso, mejora la salud física y mental, ¡y realza el encanto femenino! ¡Este lugar me ha ayudado muchísimo!",
       "isTranslated": false,
-      "categories": [
-        "heels-femmology"
-      ],
+      "categories": ["heels-femmology"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4082,9 +3359,7 @@
       "dateISO": "2020-01-15",
       "text": "Profesoras muy profesionales y con muy buen ambiente en clase. El chico de recepción, Fabio, es muy amable y te hace sentir como en casa siempre que llegas. Además tienen diferentes tarifas y un sistema de bonos que te permite flexibilidad horaria. Muy contenta :)",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4097,9 +3372,7 @@
       "dateISO": "2020-01-15",
       "text": "La mejor escuela de baile de Barcelona y sus alrededores. Nivel alto de enseñanza y con los mejores profesores. Son todos unos profesionales!! In love :D",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4112,9 +3385,7 @@
       "dateISO": "2020-01-15",
       "text": "Buenos profesionales! Los profesores muy atentos te explican hasta con rimas si hace falta y puedes repasar los videos, amplias instalaciones y personal muy amable...Ya veo progresos y a excepción de dos eramos unos patos mareados jijiji",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4127,9 +3398,7 @@
       "dateISO": "2020-01-15",
       "text": "Estoy muy feliz de poder tomar clases aquí. ¡Un profesor estupendo y muy divertido! :)",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4142,12 +3411,8 @@
       "dateISO": "2020-01-15",
       "text": "Tengo 42 años y nunca antes había bailado, empecé por salir de la zona de confort y sin la certeza de poder aprender, por experiencias pasadas me definía a mí misma como torpe y sin reflejos, todo un reto personal, me sentía que no era capaz de aprender ningún paso. Hace 7 meses que estoy aprendiendo salsa en Farray's, los profesores son expertos y saben transmitir muy bien su conocimiento, estoy muy contenta ya que su sistema de aprendizaje permite integrar el nuevo lenguaje, coordinar, ganar reflejos y divertirte en un buen ambiente.",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["salsa-cubana"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -4159,12 +3424,8 @@
       "dateISO": "2020-01-15",
       "text": "Son increíbles las dinámicas creadas por Farray’s Center. En apenas 2 años de existencia es increíble todo lo que han creado. Este fin de semana que pasó he marcado presencia en las masterclass del súper bailarín Yanis Marshall y salió todo increíble. Y solo de pensar que es la segunda vez que Yanis Marshall vienes a Farray’s en apenas 2 años de existencia de esta academia además que a tan temprana edad ya integran el Comité Internacional de la Danza de la UNESCO (CID UNESCO). Además, el trato, la calidad humana de su equipo, la calidad de sus profesores y de sus instalaciones hacen desta academia un sitio de referencia no solo en Barcelona pero también en el mundo. Felicidades Farray’s Center por vuestro súper trabajo.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -4176,12 +3437,8 @@
       "dateISO": "2020-01-15",
       "text": "El trato, la estructura, la profesionalidad, la música, las coreografías, la metodología, los profesores, la filosofía, la gente, la energía, los eventos que se organizan, el cariño y el amor con el que se hacen las cosas cada día! Es la única academia en Barcelona donde me hacen sentir parte de ella, y no como una alumna más.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "ella"
-      ],
+      "categories": ["general"],
+      "teachers": ["ella"],
       "sentiment": "positive"
     },
     {
@@ -4193,10 +3450,7 @@
       "dateISO": "2020-01-15",
       "text": "Fantástica academia. Las clases son amenas, entretenidas y didácticas a más no poder. En mi caso voy tanto a clases de salsa cubana como de bachata fusión y puedo decir que en ambos casos la progresión está siendo fantástica.",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana",
-        "bachata"
-      ],
+      "categories": ["salsa-cubana", "bachata"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4209,12 +3463,8 @@
       "dateISO": "2020-01-15",
       "text": "Encantada con Farray, s Center. Al fin encontré una escuela donde aprender cualquier estilo latino con metodología y profundidad. Todos los profesores están muy bien cualificados. En la escuela a demás hay un gran valor humano y magnífico ambiente. Las instalaciones estan perfectamente adecuadas para su fin y con buena ventilación. Lo recomiendo 100%",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -4226,9 +3476,7 @@
       "dateISO": "2020-01-15",
       "text": "Muy profesionales y la clase es muy divertida!!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4241,9 +3489,7 @@
       "dateISO": "2020-01-15",
       "text": "La mejor escuela donde hemos podido estar ambiente organización perfecta .",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4256,9 +3502,7 @@
       "dateISO": "2020-01-15",
       "text": "Genial escuela de baile!! Enganchado a la Bachata por los profesores y el ambiente!! Mucha pasión y mucha diversión!! Vale la pena 100%!!",
       "isTranslated": false,
-      "categories": [
-        "bachata"
-      ],
+      "categories": ["bachata"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4271,9 +3515,7 @@
       "dateISO": "2020-01-15",
       "text": "Escuela super recomendable por su trato tan cercano y por la gran profesionalidad. Sin duda la mejor escuela de Barcelona.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4286,12 +3528,8 @@
       "dateISO": "2019-01-15",
       "text": "El mejor centro lúdico en Barcelona que te ofrece las mejores instalaciones, los mejores profesores, la mejor ubicacion y sobre todo el mejor ambiente de baile de la ciudad. Conoces Farray's International Dance Center? Pues ya estas tardando. C/ Entenza,100 08015 BARCELONA",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -4303,12 +3541,8 @@
       "dateISO": "2019-01-15",
       "text": "Después de cinco años bailando socialmente, visitar esta escuela fue una verdadera revolución. 🙏 En agosto, asistí a dos clases magistrales con Yunaisy Farray y Alexander Carbo. El increíble ambiente festivo y el baile profesional me emocionaron tanto que me costaba conciliar el sueño por las noches, esperando con ansias la continuación al día siguiente. 😁😁😁💃💃💃 ¡Sin duda volveré!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -4320,12 +3554,8 @@
       "dateISO": "2019-01-15",
       "text": "Magnífica profesora Yunaisy. Un talento increíble, energía, motivación, técnica, etc. Muy recommandable para bailarines profesionales",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -4337,9 +3567,7 @@
       "dateISO": "2019-01-15",
       "text": "Muy buenos profes y trato excelente y cercano del Director asi como de todo el equipo. Recomendable 100% si se quiere aprender a bailar bien y se viene con ganas de pasarlo bien!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4352,9 +3580,7 @@
       "dateISO": "2019-01-15",
       "text": "Escuela con buen ambiente y buenos profesores. Las clases se disfrutan y aprendes. Totalmente recomendable!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4367,13 +3593,8 @@
       "dateISO": "2019-01-15",
       "text": "Farray's pone salsa en tu vida. Dile q si con Iroel y Natali. Post dedicado al gran Flabio de la escuela de baile Farray's :-P He V",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
-      "teachers": [
-        "yunaisy",
-        "iroel"
-      ],
+      "categories": ["salsa-cubana"],
+      "teachers": ["yunaisy", "iroel"],
       "sentiment": "positive"
     },
     {
@@ -4384,9 +3605,7 @@
       "dateISO": "2019-01-15",
       "text": "Encantada con la clase de prueba y deseosa de empezar las otras pruebas y el curso.. la escuela con mejores profesionales que he encontrado estos días de jornadas abiertas..",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4399,9 +3618,7 @@
       "dateISO": "2019-01-15",
       "text": "Amo el baile desde niña y esta escuela me ha hecho recuperar la ilusión. Me siento afortunada de haber encontrado a grandes profesionales que no solo se preocupan de sacar provecho de su negocio, como otras escuelas...Te dedican su máximo esfuerzo a que aprendas la técnica de cada estilo de baile. Destacaría sin duda, la gran CALIDAD HUMANA DE LOS PROFESORES Y EL EQUIPO.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4414,9 +3631,7 @@
       "dateISO": "2019-01-15",
       "text": "Estupenda escuela de baile. Clases con método y estilo. Foto 1 en revisión de Joaquin",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4429,9 +3644,7 @@
       "dateISO": "2019-01-15",
       "text": "Muy buen trato, tienes mucha disponibilidad de horarios y los profesores estupendos, lo recomiendo 100%",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4444,9 +3657,7 @@
       "dateISO": "2019-01-15",
       "text": "Gracias por todo. Me hicieron sentir como en casa desde el primer momento en que entré a su escuela y nunca me decepcionaron. Venir allí me llena de alegría y me acompaña hasta que vuelvo a casa, un poco cansada, pero increíblemente feliz :) Son muy profesionales, pero eso no les impide ser una familia, y esta mezcla es una de las cosas que los hace tan especiales. Feliz y afortunada de poder bailar en su escuela :)",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4459,9 +3670,7 @@
       "dateISO": "2019-01-15",
       "text": "Excelentes instalaciones, climatización perfecta en verano e invierno... profesionalidad y grandes profesores!!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4474,73 +3683,59 @@
       "dateISO": "2019-01-15",
       "text": "Gran lugar para aprender y divertirse!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-marcelo-gonzalez-299",
-      "author": "marcelo gonzalez",
+      "author": "Marcelo Gonzalez",
       "authorInfo": "5 reseñas",
       "rating": 5,
       "date": "Hace 7 años",
       "dateISO": "2019-01-15",
       "text": "En Farray’s enseñan cuidando los detalles que marcan la diferencia a la hora de bailar,Si estás cansado/a de solo dar vueltas y quieres mejorar tu estilo ,esta es tu academia .",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
       "id": "review-els-grans-de-la-fund-300",
-      "author": "Els grans de la Fundació",
+      "author": "Els Grans de la Fundació",
       "authorInfo": "1 reseña",
       "rating": 5,
       "date": "Hace 7 años",
       "dateISO": "2019-01-15",
       "text": "La mejor escuela de Barcelona!!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-rodriquez-martinez-301",
-      "author": "rodriquez martinez",
+      "author": "Rodriquez Martinez",
       "authorInfo": "4 reseñas",
       "rating": 5,
       "date": "Hace 7 años",
       "dateISO": "2019-01-15",
       "text": "Danza en su forma más pura, una escuela que rezuma pasión y profesionalismo, clases para todos, instrucción adaptada a cada nivel, profesores generosos y un ambiente maravillosamente amigable: para hacer más que solo aprender, \"Farray's Center\" se trata de vivir la danza, ¡para disfrutarla sin moderación!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
       "id": "review-claudia-bastida-302",
-      "author": "claudia bastida",
+      "author": "Claudia Bastida",
       "authorInfo": "Local Guide·17 reseñas·6 fotos",
       "rating": 5,
       "date": "Hace 7 años",
       "dateISO": "2019-01-15",
       "text": "Es una academia con mucha vida. Los profesores y Fabio (el director) son un amor de personas y eso conlleva que lo passes muy bien en las clases.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4553,12 +3748,8 @@
       "dateISO": "2019-01-15",
       "text": "Gran escuela de danza, con unos grandes professionales especializados en la materia, con una magnifica metodologia y habilidades tanto como bailarines como profesores. Ambiente cercano y familiar donde no solo vas aprender a bailar, sino que trabajas todo lo relacionado con mente, cuerpo y alma. No solo es una escuela de danza, un centro donde la constancia, el esfuerzo, el valor, la ilusion y las ganas de superacion son sus grandes pilares. A mas con un gran cariño y sensibilidad te ayudan a superar obstaculos, fortalezer tus habilidades y creer en ti!! Gran escuela, grande mi maestra Yunaisy Farray que siempre ve tu luz y hace qe brille, una gran familia!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -4570,9 +3761,7 @@
       "dateISO": "2019-01-15",
       "text": "Además de ser una academia profesional, hay un ambiente increíble!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4585,9 +3774,7 @@
       "dateISO": "2019-01-15",
       "text": "Como en familia!! Genial!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4600,9 +3787,7 @@
       "dateISO": "2019-01-15",
       "text": "Aquí no te enseñan solo a bailar. Te enseñan a entender el baile, disfrutar tu cuerpo y transformar la música en movimiento. Estas clases van más allá de unos pasos. La metodología y la técnica vienen con una explicación y raíces cubanas.",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
+      "categories": ["salsa-cubana"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4615,9 +3800,7 @@
       "dateISO": "2019-01-15",
       "text": "Profesores increíbles, personal amable y mucha pasión. Aprendí más sobre salsa en una semana que en un año de clases en otros lugares.",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
+      "categories": ["salsa-cubana"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4630,12 +3813,8 @@
       "dateISO": "2019-01-15",
       "text": "Pues les recomiendo a todos esta maravillosa escuela de baile donde se imparten espectaculares clases de todos los géneros ,además de la buena energía y profesionalidad de los profesores q imparten las mismas donde te ayudan a fortalecer tu cuerpo ,a conocerlo más a desarrollar tu elasticidad así como proyección escénica y buena quimica .Felicitar a sus profesores y personal de farrays center una escuela llena de sentimientos .Gracias por todo Farrays center .😍💪🏻",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -4647,9 +3826,7 @@
       "dateISO": "2019-01-15",
       "text": "Magníficos profesores con paciencia, dedicación y empatía. En solo un mes he aprendido a bailar más que en toda una vida. Lugar agradable donde aprender y sentirse como en casa.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4662,12 +3839,8 @@
       "dateISO": "2019-01-15",
       "text": "No bailo casi. Por no saber por pena. Pero decido aventurarme en farrays a aprender. Mi experiencia ha sido extraordinaria. Sus clases son muy entretenidas en un clima de aprendizaje muy amigable. Las instalaciones están muy bien y con excelente ventilación para ahora que es verano.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -4679,9 +3852,7 @@
       "dateISO": "2019-01-15",
       "text": "¡Ambiente genial, profesores dinámicos y atentos, nunca dejas de aprender y divertirte! ¡Salsa! 💃🏼🕺🌟",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
+      "categories": ["salsa-cubana"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4694,9 +3865,7 @@
       "dateISO": "2019-01-15",
       "text": "Excelentes instalaciones, fantástico centro de baile en el corazón de Barcelona. ¡Muy recomendable!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4709,9 +3878,7 @@
       "dateISO": "2019-01-15",
       "text": "Super experiencia! Genial los profesores y las clases! Super super recomendable!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4724,9 +3891,7 @@
       "dateISO": "2019-01-15",
       "text": "La mejor escuela que te vas a encontrar en Barcelona! profesores cercanos, buenos compañeros, simpatía y disciplina en un cocktail fantástico!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4739,12 +3904,8 @@
       "dateISO": "2019-01-15",
       "text": "Una muy buena experiencia, profesores muy atentos y agradables! Una buena matemáticas de aprender y pasarlo bien! Farrays forever🤣",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -4756,9 +3917,7 @@
       "dateISO": "2019-01-15",
       "text": "Todo perfecto, profesionalidad, amabilidad y buen ambiente.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4771,9 +3930,7 @@
       "dateISO": "2019-01-15",
       "text": "En tan sólo 2 clases me he dado cuenta del alto nivel técnico de los cursos y la atención de los profesores hacia sus alumnos. ¡Con muchas ganas de continuar!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4786,9 +3943,7 @@
       "dateISO": "2019-01-15",
       "text": "Profesores muy cualificados. Mucha técnica. Muy recomendable",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4801,9 +3956,7 @@
       "dateISO": "2019-01-15",
       "text": "Gran academia, profes espectáculares y un ambiente genial🤙🤙",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4816,9 +3969,7 @@
       "dateISO": "2019-01-15",
       "text": "Sentirte como en casa, compartir el amor por la danza, evolucionar superando tus límites , la conexión que se respira y la profesionalidad de los profesores....ésta es tu escuela ¡¡¡¡¡",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4831,9 +3982,7 @@
       "dateISO": "2019-01-15",
       "text": "El ambiente es genial, los profesores tienen mucha calidad técnica y son muy simpáticos, las clases siempre empiezan puntualmente, el local es enorme, hay varias salas. Yo recomiendo. Estoy encantada con la escuela! ♡",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4846,9 +3995,7 @@
       "dateISO": "2019-01-15",
       "text": "La mejor profesora de streching de Barcelona!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4861,9 +4008,7 @@
       "dateISO": "2019-01-15",
       "text": "Una excelente experiencia, siempre junto a tu ángel creador , dedicación , disciplina y constancia es lo q rodea a esta escuela .... Éxitos",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4876,9 +4021,7 @@
       "dateISO": "2019-01-15",
       "text": "Escuela con mucha diversidad en cuanto a estilos de baile, buen ambiente, buenos profes y buen servicio. 100% recomendable",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4891,12 +4034,8 @@
       "dateISO": "2019-01-15",
       "text": "Excelente experiencia... Yunaisy la mejor!... Para los que hemos bailado antes y conocemos este mundo es un centro con verdadero nivel y exigencia adaptados al nivel que cada uno se quiera exigir... Las instalaciones están muy bien y aunque sólo he visto clases con Yunaisy he visto otras y se nota el nivel... Si tuviera que decir algo sólo sugeriría que ofrecierais algún paquete pequeño con precios especiales para que más personas aún puedan acceder a esta experiencia tan interesante...",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -4908,9 +4047,7 @@
       "dateISO": "2019-01-15",
       "text": "Un ambiente maravilloso, ideal para aprender a divertirnos, los profes muy atentos y talentosos, recomiendo a todos llegarse al centro, para mí el mejor de Barcelona... muchas gracias por su excelente trabajo",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4923,9 +4060,7 @@
       "dateISO": "2019-01-15",
       "text": "Me he enamorada de esta escuela desde la primera clase! Los profesores tienen un talento y una pasión impresionante. Aparte de eso pueden reconocer tu talento y tirarlo por arriba Mas que recomendable !!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4938,12 +4073,8 @@
       "dateISO": "2019-01-15",
       "text": "Farray's es más que una escuela de baile, es como una gran familia. Sus profesores están altamente cualificados y además de enseñar las técnicas de baile, hacen que sientas y vivas la danza de una manera muy especial.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -4955,9 +4086,7 @@
       "dateISO": "2019-01-15",
       "text": "Sin duda alguna la mejor opción si quieres aprender los bailes cubanos desde sus raíces. Un centro que se caracteriza por la profesionalidad de sus profesores así como por la calidad humana que poseen todos sus integrantes.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4970,9 +4099,7 @@
       "dateISO": "2019-01-15",
       "text": "Excepcional a nivel pedagógico, superado únicamente por las más sublimes de las emociones que siento.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -4985,9 +4112,7 @@
       "dateISO": "2019-01-15",
       "text": "Muy buenas instalaciones, muy buenos profes y muy cercanos, familiar y lo mejor, el método de enseñanza, de 7 escuelas que he estado.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5000,12 +4125,8 @@
       "dateISO": "2019-01-15",
       "text": "Cada vez que voy al Centro Farray me voy con una sonrisa. Es una experiencia muy buena en general. Los profesores son muy profesionales y siempre es un placer trabajar con ellos. La escuela también responde a las peticiones, deseos y preguntas de cada estudiante de forma individual, lo cual agradezco mucho. <3",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -5017,9 +4138,7 @@
       "dateISO": "2019-01-15",
       "text": "¡Un lugar increíble para estar! Profesores profesionales que aportan inspiración a cada práctica. Varios estilos y niveles para aprender, talleres, gran espíritu, divertido y desafiante. ¡Pendiente!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5032,9 +4151,7 @@
       "dateISO": "2019-01-15",
       "text": "Profesores increíblemente buenos! Un ambiente súper familiar y siempre teniendo en cuenta a los alumnos en todos los aspectos.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5047,12 +4164,8 @@
       "dateISO": "2019-01-15",
       "text": "Después de valorar y probar diferentes opciones aquí en Barcelona, nos decantamos por Farrays por la profesionalidad de sus profesores, la calidad de sus salas de ensayo así como el trato personal que nos brinda su director cada vez que acudimos a clase. Sin duda, una de las mejores opciones para aprender a bailar en Barcelona 👍",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -5064,13 +4177,8 @@
       "dateISO": "2019-01-15",
       "text": "Es impresionante lo a gusto que te sientes en sus instalaciones! Sus directores son maravillosos, cálidos y receptivos, me han permitido contribuir con mi grano de arena como profesor y cada semana respiro alegría, danza, respeto y cariño. Gracias Farray's! Que tengan éxito siempre. 🙏💓",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy",
-        "iroel"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy", "iroel"],
       "sentiment": "positive"
     },
     {
@@ -5082,12 +4190,8 @@
       "dateISO": "2019-01-15",
       "text": "Una gran escuela de baile al mando de la mejor bailarina cubana Yunaisy Farray!",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["salsa-cubana"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -5099,9 +4203,7 @@
       "dateISO": "2019-01-15",
       "text": "Una escuela fantástica con muchas salas de baile y vestuarios y baños impecablemente limpios. ¡Un recibimiento muy cálido y amable! :-)",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5114,24 +4216,20 @@
       "dateISO": "2019-01-15",
       "text": "Escuela con grandes profesores, ambiente genial, trato inmejorable. Fabio es super amable. Recomiendo esta escuela.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-axel-martinez-341",
-      "author": "axel martinez",
+      "author": "Axel Martinez",
       "authorInfo": "12 reseñas",
       "rating": 5,
       "date": "Hace 7 años",
       "dateISO": "2019-01-15",
       "text": "Muy buenos profesores y muy buena escuela!!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5144,12 +4242,8 @@
       "dateISO": "2019-01-15",
       "text": "Las clases son increíbles. Me encanta el entusiasmo y profesionalidad de Tomás Keita y de todo el personal de Farray's",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -5161,12 +4255,8 @@
       "dateISO": "2019-01-15",
       "text": "Una gran escuela de baile donde no solo enseñan a bailar, enseñan calidad, respeto, disciplina y conocimiento. Nada de imitar...aprender a ser autónomo, tener recursos y respetar el baile. Grandes profesores y mejores personas. Desde que entras por la puerta ya formas parte de la familia Farrays. 100% recomendable para todos los niveles. Nosotros cada vez que nos vamos al acabar la clase salimos con una sonrisa.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -5178,9 +4268,7 @@
       "dateISO": "2019-01-15",
       "text": "Lo recomiendo, bailarines de calidad y una escuela de baile abierta a todo a lo que quieran aprender.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5193,12 +4281,8 @@
       "dateISO": "2019-01-15",
       "text": "Una familia donde aprendes con los mejores sin duda la mejor experiencia y seguir aprendiendo gracias a toda la familia farrays",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -5210,12 +4294,8 @@
       "dateISO": "2018-01-15",
       "text": "Desde luego la mejor escuela de baile de barcelona, no solo porque, sean artistas internacionales los que imparten clases, su método de enseñanza es efectivo, te enseñan a bailar propiamente. Hay clases de todo tipo para todos los niveles, y todas las disciplinas,amplia gama de horarios, y lo mejor de todo personas humanas detrás de todo esto,una gran familia farraya.sin duda mi sitio!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -5227,9 +4307,7 @@
       "dateISO": "2018-01-15",
       "text": "Ferrays Center, gran escuela de baile, donde vives experiencias únicas!!, con grandes profesores donde te muestran su dedicación, motivacion Y preocupación porq logres el arte de bailar. Gracias Escuela Ferrays !!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5242,12 +4320,8 @@
       "dateISO": "2018-01-15",
       "text": "Hace unos meses que soy alumno de Farray's y puedo decir a día de hoy que es una gran escuela y grandes profesionales. El trato es ideal, conoces a mucha gente, que se terminan compitiendo en familia. Un 10 de escuela!!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -5259,9 +4333,7 @@
       "dateISO": "2018-01-15",
       "text": "A pesar de mi dislexia, han conseguido enseñarme a bailar con facilidad y a la vez lo paso genial. Gracias.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5274,9 +4346,7 @@
       "dateISO": "2018-01-15",
       "text": "La mejor escuela y los mejores profes que uno puede tener!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5289,9 +4359,7 @@
       "dateISO": "2018-01-15",
       "text": "Maravillosos profesionales, que no cesan en su empeño de hacernos aprender disfrutando!!! Encantada de pertenecer a esta familia.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5304,9 +4372,7 @@
       "dateISO": "2018-01-15",
       "text": "Siempre habría querido bailar, pero nunca había tenido una escuela cerca y si encontraba algún sitio no había lo que yo buscaba. Cuando me mudé a Barcelona seguí buscando, hasta que vi un anuncio de una escuela con una artista internacional y tenían una página web muy interesante. Me presenté en la escuela, con bastante indecisión y miedo, que se me fue nada más conocer a la secretaria, que me informó muy bien. Lo que respaldaba la convicción con la que hablaba de la escuela era la experiencia de haber aprendido a bailar con grandes profesores. Es impresionante la calidad que hay en la escuela, gente muy amable, son muy cercanos y humildes, te enseñan todo paso a paso y la sonrisa de satisfacción que tienen al final de cada clase demuestra la pasión que tienen al bailar, y hoy en día es difícil encontrar algo así. GRACIAS.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5319,9 +4385,7 @@
       "dateISO": "2018-01-15",
       "text": "El lugar perfecto para dar rienda suelta a tu amor por el baile. Múltiples opciones, para probar y nunca aburrirte; profesores muy formados, didácticos y entusiastas. Posiblemente, el mejor momento del día.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5334,12 +4398,8 @@
       "dateISO": "2018-01-15",
       "text": "Excelentes profesores, muy profesionales y buen ambiente. Estilo exclusivo Farray's, me encanta, es el que estaba buscando.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -5351,9 +4411,7 @@
       "dateISO": "2018-01-15",
       "text": "Gran escuela de baile....aquí aprenderás al puro estilo cubano! Grandes profesores que saben sacar lo mejor de cada uno. Te hacen sentir como en casa, una gran familia. Aguaaaaaaa!😎💃🕺",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5366,24 +4424,20 @@
       "dateISO": "2018-01-15",
       "text": "Escuela con grandes profesionales, donde cuidan cada detalle por pequeño que sea, que te enseñan no sólo a bailar sino a conocer tu propio cuerpo. Lo mejor es que además de grandes profesionales son mejores personas. No dejéis de probarlo.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-mariangeles-ruiz-alb-357",
-      "author": "Mariangeles ruiz alba",
+      "author": "Mariangeles Ruiz Alba",
       "authorInfo": "1 reseña",
       "rating": 5,
       "date": "Hace 8 años",
       "dateISO": "2018-01-15",
       "text": "Escuela genial , muy buen ambiente y súper los profesores ,recomendados 100% 👍🏻",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5396,9 +4450,7 @@
       "dateISO": "2018-01-15",
       "text": "100% recomendable, los profesores son todos increíbles, las clases muy completas y variadas, el trato y el ambiente estupendos... Me encanta!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5411,9 +4463,7 @@
       "dateISO": "2018-01-15",
       "text": "Es una escuela fantásica. Todos los profesores y profesoras son grandísimos profesionales y desde el primer día saben transmitir la pasión por el baile. El ambiente es inmejorable.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5426,9 +4476,7 @@
       "dateISO": "2018-01-15",
       "text": "Una gran escuela en todo su conjunto, instalaciones, claustro de profesores, orden, espacios y atención personalizada a los alumnos.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5441,9 +4489,7 @@
       "dateISO": "2018-01-15",
       "text": "Simplemente genial! Un ambiente único y profesionales de pies a cabeza! 100% recomendable, si dudas ven a probar, te quedaras seguro!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5456,41 +4502,33 @@
       "dateISO": "2018-01-15",
       "text": "Me siento muy afortunada de poder ser alumna en Farray´s International Dance Center. Escuela creada con mucha pasión y corazón. Grandes profesores que sacan lo mejor de ti y te muestran que \" los limites solo existen en tu mente\". Un nivel de clases y profesionalismo que no encontré en otros sitios. Solo me queda dar muchísimas gracias a Yunaisy y todos profesores por despertar mis sueños y por la alegría que llevo a casa después de cada clase con vosotros. Gracias, gracias, gracias:)",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
       "id": "review-vanesa-moreno-gonzal-363",
-      "author": "Vanesa moreno gonzalez",
+      "author": "Vanesa Moreno Gonzalez",
       "authorInfo": "3 reseñas",
       "rating": 5,
       "date": "Hace 8 años",
       "dateISO": "2018-01-15",
       "text": "La mejor escuela que hay si quieres aprender a bailar. Las clases son super energicas y magnificas, y enseñan de verdad. Los profesores son unos cracks y el personal te hace sentir como en casa. Estoy encantada.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-nuria-bo-364",
-      "author": "nuria bo",
+      "author": "Nuria Bo",
       "authorInfo": "5 reseñas·3 fotos",
       "rating": 5,
       "date": "Hace 8 años",
       "dateISO": "2018-01-15",
       "text": "Todo unos grandes profesionales con diferencia, fantasticas las clases lograis sacar de cada uno de nosotros nuestras cualidades, mucho esfuerzo trabajo y constancia por parte de todo el equipo, mil gracias",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5503,13 +4541,8 @@
       "dateISO": "2018-01-15",
       "text": "Me apunte a esta escuela por mi amiga Monica y realmente quede encantada!!!!! Todo el mundo es muy amable contigo,te reciben como si fueras uno más de la familia !!!! Los profesores muy dedicados y profesionales!!!! Kristofer y Natalie son un encanto , con cuatro clases ya bailamos !!!!! Gracias 🙏 Tengo muchas ganas de probar más clases !!!!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "natalie",
-        "kristofer"
-      ],
+      "categories": ["general"],
+      "teachers": ["natalie", "kristofer"],
       "sentiment": "positive"
     },
     {
@@ -5521,24 +4554,20 @@
       "dateISO": "2018-01-15",
       "text": "Es la escuela de salsa cubana donde te sentirás y aprenderás todos los estilos de bailes cubanos.guiados por un grupo de profesores que dan y darán siempre lo máximo de sus talento para cada uno de sus alumnos. Un grupo desde la secretaria con su mayor sonrisa hasta el último de la fila de alumnos te acogerán con mucho amor.",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
+      "categories": ["salsa-cubana"],
       "teachers": [],
       "sentiment": "positive"
     },
     {
       "id": "review-jose-gonzalez-368",
-      "author": "jose gonzalez",
+      "author": "Jose Gonzalez",
       "authorInfo": "2 reseñas·2 fotos",
       "rating": 5,
       "date": "Hace 8 años",
       "dateISO": "2018-01-15",
       "text": "Una experiencia que no puedes perderte. Una vez que pruebes, desearás volver. La mejor escuela de salsa de Barcelona. Y la mejor metodología de enseñanza con los mejores profesores actuales.",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana"
-      ],
+      "categories": ["salsa-cubana"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5551,12 +4580,8 @@
       "dateISO": "2018-01-15",
       "text": "La escuela increíble! Estaba buscando una escuela más de 2 años y nada.. ahora estoy en Farray's Dance Center y hago classes cada día. Y la familia de la escuela.. lo mejor gente del mundo!. Ven a probar las clases!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["general"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     },
     {
@@ -5568,9 +4593,7 @@
       "dateISO": "2018-01-15",
       "text": "gran escuela donde encontraras la mejor calidad de clases y profesionales,con gran ambiente,gente encantadora y unas instalaciones increibles!disfrutaras en todos los sentidos!!😍",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5583,9 +4606,7 @@
       "dateISO": "2018-01-15",
       "text": "En esta escuela he averiguado que aprender a bailar tiene muchas apreciaciones. Aquí sacan lo mejor de ti, con técnica, estilo, dedicación, detalle y siempre pendiente de cada uno de los alumn@s. Además las instalaciones no pierden detalle. Si algo no es, es una escuela más, ES LA ESCUELA. Tenéis que probarlo, veréis a qué me refiero",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5598,9 +4619,7 @@
       "dateISO": "2018-01-15",
       "text": "Clases y profesorados del más alto nivel. Disciplina y profesionalidad en un ambiente mágico e intenso, además de diversión y disfrute.",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5613,9 +4632,7 @@
       "dateISO": "2018-01-15",
       "text": "Si quieres aprender a bailar, este es el mejor sitio!!! Super instalaciones y los mejores profesionales cargados de paciencia... Enseñanza de calidad, no pierdas el tiempo!!!",
       "isTranslated": false,
-      "categories": [
-        "general"
-      ],
+      "categories": ["general"],
       "teachers": [],
       "sentiment": "positive"
     },
@@ -5628,14 +4645,8 @@
       "dateISO": "2018-01-15",
       "text": "gran escuela con grandes profesionales y personas mejor dicho gran familia!!sitio idonio donde aprender lo mejor de la salsa cubana,rumba,afrocontemporaneo,stretching, reggeton y un sinfin de estilos con unos profes de infarto k no solo enseñan danza enseñan a trabjar en equipo,respeto,cariño alegria...yo personalemente puedo vivir esa experiencia cada dia una gran escuela de una increible y extraordinaria MUJER YUNAISY FARRAY!todo amor❤❤",
       "isTranslated": false,
-      "categories": [
-        "salsa-cubana",
-        "afro",
-        "fitness"
-      ],
-      "teachers": [
-        "yunaisy"
-      ],
+      "categories": ["salsa-cubana", "afro", "fitness"],
+      "teachers": ["yunaisy"],
       "sentiment": "positive"
     }
   ]

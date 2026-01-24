@@ -69,8 +69,9 @@ export const CATEGORIES: Category[] = [
       srcSetJpeg:
         '/images/categories/img/fitness_320.jpg 320w, /images/categories/img/fitness_640.jpg 640w, /images/categories/img/fitness_768.jpg 768w, /images/categories/img/fitness_1024.jpg 1024w',
       placeholder:
-        'data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAQAwCdASoUABQAPzmQvlm0qSYlKAgCkCcJYwDKABdzgoAA/tz/9vurbEOk7Zr5uDLEFOcujItAAAAA',
-      dominantColor: '#915231',
+        'data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAABwBACdASoUAB4APzmGuFOvKSUisAgB4CcJZwDIyy/Cs9VMvlaXELGskr1lhAD+50CtlRVvZ5cKrnKxJwec7wWnFERflQ5R4TqDMbj7tnePWWxlYErzxohaTG8zIUeuF+uUaatWVhl0pgCMKhXbXC/LAI5T57/b7CgCo2LywAA=',
+      dominantColor: '#fffdf5',
+      objectPosition: 'center 10%',
     },
   },
   {

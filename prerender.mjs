@@ -823,8 +823,8 @@ const metadata = {
       description: 'Resuelve tus dudas sobre nuestras clases de baile en Barcelona. Horarios, precios, niveles, inscripción y todo lo que necesitas saber antes de empezar.',
     },
     alquilerSalas: {
-      title: 'Alquiler de Salas de Baile en Barcelona | Espacios Profesionales | Farray\'s Center',
-      description: 'Alquila nuestras salas de baile profesionales en Barcelona. 3 espacios equipados con espejos, barras y suelo de danza. Ideal para ensayos, grabaciones y eventos.',
+      title: 'Alquiler de Salas de Baile en Barcelona | 4 Espacios Profesionales | Farray\'s Center',
+      description: 'Alquila nuestras 4 salas de baile profesionales en Barcelona (40-120m²). Suelo de danza, espejos, climatización y sonido. Desde 14€/hora. Entre Plaza España y Sants.',
     },
     estudioGrabacion: {
       title: 'Estudio de Grabación de Baile en Barcelona | Producción Audiovisual | Farray\'s Center',
@@ -1139,8 +1139,8 @@ const metadata = {
       description: 'Resol els teus dubtes sobre les nostres classes de ball a Barcelona. Horaris, preus, nivells, inscripció i tot el que necessites saber abans de començar.',
     },
     alquilerSalas: {
-      title: 'Lloguer de Sales de Ball a Barcelona | Espais Professionals | Farray\'s Center',
-      description: 'Lloga les nostres sales de ball professionals a Barcelona. 3 espais equipats amb miralls, barres i terra de dansa. Ideal per a assajos, gravacions i esdeveniments.',
+      title: 'Lloguer de Sales de Ball a Barcelona | 4 Espais Professionals | Farray\'s Center',
+      description: 'Lloga les nostres 4 sales de ball professionals a Barcelona (40-120m²). Sòl de dansa, miralls, climatització i so. Des de 14€/hora. Entre Plaça Espanya i Sants.',
     },
     estudioGrabacion: {
       title: 'Estudi de Gravació de Ball a Barcelona | Producció Audiovisual | Farray\'s Center',
@@ -1455,8 +1455,8 @@ const metadata = {
       description: 'Get answers about our dance classes in Barcelona. Schedules, prices, levels, registration and everything you need to know before starting.',
     },
     alquilerSalas: {
-      title: 'Dance Studio Rental in Barcelona | Professional Spaces | Farray\'s Center',
-      description: 'Rent our professional dance studios in Barcelona. 3 spaces equipped with mirrors, bars and dance flooring. Ideal for rehearsals, recordings and events.',
+      title: 'Dance Studio Rental in Barcelona | 4 Professional Spaces | Farray\'s Center',
+      description: 'Rent our 4 professional dance studios in Barcelona (40-120m²). Dance floor, mirrors, AC and sound. From €14/hour. Between Plaza España and Sants.',
     },
     estudioGrabacion: {
       title: 'Dance Video Studio in Barcelona | Audiovisual Production | Farray\'s Center',
@@ -1771,8 +1771,8 @@ const metadata = {
       description: 'Obtenez des réponses sur nos cours de danse à Barcelone. Horaires, tarifs, niveaux, inscription et tout ce que vous devez savoir avant de commencer.',
     },
     alquilerSalas: {
-      title: 'Location de Studios de Danse à Barcelone | Espaces Professionnels | Farray\'s Center',
-      description: 'Louez nos studios de danse professionnels à Barcelone. 3 espaces équipés de miroirs, barres et sol de danse. Idéal pour répétitions, enregistrements et événements.',
+      title: 'Location de Studios de Danse à Barcelone | 4 Espaces Professionnels | Farray\'s Center',
+      description: 'Louez nos 4 studios de danse professionnels à Barcelone (40-120m²). Sol de danse, miroirs, climatisation et son. Dès 14€/heure. Entre Plaza España et Sants.',
     },
     estudioGrabacion: {
       title: 'Studio de Tournage Vidéo Danse à Barcelone | Production Audiovisuelle | Farray\'s Center',

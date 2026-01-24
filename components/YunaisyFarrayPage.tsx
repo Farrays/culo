@@ -160,7 +160,7 @@ const YunaisyFarrayPage: React.FC = () => {
     name: 'Yunaisy Farray',
     givenName: 'Yunaisy',
     familyName: 'Farray',
-    jobTitle: 'Founder & Director',
+    jobTitle: t('schema_yunaisy_jobTitle_founder'),
     image: `${baseUrl}/images/yunaisy-portrait.jpg`,
     url: `${baseUrl}/${locale}/yunaisy-farray`,
     worksFor: {
@@ -190,9 +190,9 @@ const YunaisyFarrayPage: React.FC = () => {
     ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: "Carrer d'Entença, 100, Local 1",
+      streetAddress: t('schema_streetAddress'),
       addressLocality: 'Barcelona',
-      addressRegion: 'Catalonia',
+      addressRegion: t('schema_addressRegion'),
       postalCode: '08015',
       addressCountry: 'ES',
     },
@@ -204,7 +204,7 @@ const YunaisyFarrayPage: React.FC = () => {
     '@type': 'Person',
     '@id': `${baseUrl}/yunaisy-farray#instructor`,
     name: 'Yunaisy Farray',
-    jobTitle: 'Dance Instructor & Director',
+    jobTitle: t('schema_yunaisy_jobTitle_instructor'),
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5.0',

@@ -137,9 +137,9 @@ export const TWERK_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Twerk, técnica de danza, musicalidad',
-    prerequisites: 'Ninguno',
-    lessons: '4 clases semanales',
+    teachesKey: 'schema_twerk_teaches',
+    prerequisitesKey: 'schema_twerk_prerequisites',
+    lessonsKey: 'schema_twerk_lessons',
     duration: 'PT1H',
   },
 
@@ -153,16 +153,14 @@ export const TWERK_PAGE_CONFIG: FullDanceClassConfig = {
   personSchemas: [
     {
       name: 'Sandra Gómez',
-      jobTitle: 'Instructora de Twerk',
-      description:
-        'Especialista en Twerk y Dancehall con amplia experiencia en la enseñanza de danza urbana.',
+      jobTitleKey: 'schema_twerk_sandra_jobTitle',
+      descriptionKey: 'schema_twerk_sandra_description',
       knowsAbout: ['Twerk', 'Dancehall', 'Urban Dance', 'Choreography'],
     },
     {
       name: 'Isabel López',
-      jobTitle: 'Instructora de Twerk',
-      description:
-        'Profesora de Twerk y estilos urbanos con experiencia en competiciones internacionales.',
+      jobTitleKey: 'schema_twerk_isabel_jobTitle',
+      descriptionKey: 'schema_twerk_isabel_description',
       knowsAbout: ['Twerk', 'Dancehall', 'Urban Dance', 'Jamaican Dance'],
     },
   ],

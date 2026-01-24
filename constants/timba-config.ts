@@ -106,7 +106,7 @@ export const TIMBA_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false,
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -136,33 +136,29 @@ export const TIMBA_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches:
-      'Timba Cubana, Lady Timba, Timba en Pareja, Interpretación Musical, Improvisación, Despelote',
-    prerequisites: 'Nivel intermedio de Salsa Cubana (mínimo 1 año bailando)',
-    lessons: 'Clases semanales con 3 modalidades disponibles',
+    teachesKey: 'schema_timba_teaches',
+    prerequisitesKey: 'schema_timba_prerequisites',
+    lessonsKey: 'schema_timba_lessons',
     duration: 'PT1H',
   },
 
   personSchemas: [
     {
       name: 'Yunaisy Farray',
-      jobTitle: "Directora de Farray's Center - Especialista en Lady Timba",
-      description:
-        'Bailarina profesional cubana, miembro del CID-UNESCO, especialista en Lady Timba y estilos femeninos de la salsa cubana.',
+      jobTitleKey: 'schema_yunaisy_jobTitle_timba',
+      descriptionKey: 'schema_yunaisy_description_timba',
       knowsAbout: ['Lady Timba', 'Timba Cubana', 'Salsa Cubana', 'Despelote', 'Rumba'],
     },
     {
       name: 'Grechén Mendez',
-      jobTitle: 'Maestra de Timba en Pareja y Folklore Cubano',
-      description:
-        'Bailarina profesional cubana, especialista en Timba en pareja y danzas folclóricas cubanas.',
+      jobTitleKey: 'schema_grechen_jobTitle',
+      descriptionKey: 'schema_grechen_description',
       knowsAbout: ['Timba en Pareja', 'Folklore Cubano', 'Rumba', 'Son Cubano'],
     },
     {
       name: 'Lia Valdés',
-      jobTitle: 'Profesora de Lady Timba Básico',
-      description:
-        'Bailarina cubana especializada en introducir a nuevas alumnas al mundo del Lady Timba.',
+      jobTitleKey: 'schema_lia_jobTitle',
+      descriptionKey: 'schema_lia_description',
       knowsAbout: ['Lady Timba', 'Salsa Cubana', 'Estilo Femenino'],
     },
   ],

@@ -53,13 +53,18 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ config, className = '' }) => 
 
   return (
     <section className={`relative pt-20 md:pt-24 ${className}`}>
-      {/* Background with featured image */}
+      {/* Background with featured image - LCP optimized */}
       <div className="absolute inset-0 h-[600px] md:h-[700px]">
         <LazyImage
           src={config.featuredImage.src}
           srcSet={config.featuredImage.srcSet}
-          alt={config.featuredImage.alt}
+          sizes="100vw"
+          alt={
+            config.featuredImage.altKey ? t(config.featuredImage.altKey) : config.featuredImage.alt
+          }
           className="w-full h-full object-cover"
+          width={config.featuredImage.width}
+          height={config.featuredImage.height}
           priority="high"
         />
         {/* Gradient overlays */}

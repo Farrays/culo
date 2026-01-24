@@ -75,7 +75,7 @@ export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
     image: {
       src: '/images/classes/dancehall/img/dancehall-classes-barcelona-01_960.webp',
       srcSet:
-        '/images/classes/dancehall/img/dancehall-classes-barcelona-01_480.webp 480w, /images/classes/dancehall/img/dancehall-classes-barcelona-01_960.webp 960w',
+        '/images/classes/dancehall/img/dancehall-classes-barcelona-01_640.webp 640w, /images/classes/dancehall/img/dancehall-classes-barcelona-01_960.webp 960w, /images/classes/dancehall/img/dancehall-classes-barcelona-01_1440.webp 1440w',
       alt: 'Clases de Dancehall en Barcelona - Estudiantes bailando en la academia',
     },
   },
@@ -111,14 +111,7 @@ export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: true,
-    videos: [
-      {
-        videoId: '79nTjrMB7_A',
-        title: "Dancehall Classes at Farray's Center Barcelona",
-      },
-    ],
-    placeholderCount: 0, // No placeholders, only real video
+    enabled: true, // Shows "Video Próximamente" placeholder (video 79nTjrMB7_A has thumbnail issues)
   },
 
   logosSection: {
@@ -149,9 +142,9 @@ export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Dancehall jamaicano, técnica de danza urbana, musicalidad',
-    prerequisites: 'Ninguno',
-    lessons: '6 clases semanales',
+    teachesKey: 'schema_dancehall_teaches',
+    prerequisitesKey: 'schema_dancehall_prerequisites',
+    lessonsKey: 'schema_dancehall_lessons',
     duration: 'PT1H',
   },
 
@@ -166,16 +159,14 @@ export const DANCEHALL_PAGE_CONFIG: FullDanceClassConfig = {
   personSchemas: [
     {
       name: 'Isabel López',
-      jobTitle: 'Instructora de Dancehall',
-      description:
-        'Especialista en Dancehall con experiencia en competiciones internacionales y formación en Jamaica.',
+      jobTitleKey: 'schema_dancehall_isabel_jobTitle',
+      descriptionKey: 'schema_dancehall_isabel_description',
       knowsAbout: ['Dancehall', 'Dancehall Female', 'Dancehall Twerk', 'Jamaican Dance'],
     },
     {
       name: 'Sandra Gómez',
-      jobTitle: 'Instructora de Dancehall',
-      description:
-        'Profesora de Dancehall Female y estilos urbanos con amplia experiencia en pedagogía de la danza.',
+      jobTitleKey: 'schema_dancehall_sandra_jobTitle',
+      descriptionKey: 'schema_dancehall_sandra_description',
       knowsAbout: ['Dancehall', 'Dancehall Female', 'Urban Dance', 'Choreography'],
     },
   ],

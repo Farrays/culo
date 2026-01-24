@@ -80,13 +80,13 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
     ],
   };
 
-  // Person schemas for SEO with Geo-Local signals
+  // Person schemas for SEO with Geo-Local signals (i18n enabled)
   const personSchemas = TEACHERS_PERSON_SCHEMAS.map(teacher => ({
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: teacher.name,
-    jobTitle: teacher.jobTitle,
-    description: teacher.description,
+    jobTitle: t(teacher.jobTitleKey),
+    description: t(teacher.descriptionKey),
     knowsAbout: teacher.knowsAbout,
     worksFor: {
       '@type': 'DanceGroup',
@@ -98,9 +98,9 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
       name: "Farray's International Dance Center",
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Carrer de Llançà, 37',
+        streetAddress: t('schema_streetAddress'),
         addressLocality: 'Barcelona',
-        addressRegion: 'Cataluña',
+        addressRegion: t('schema_addressRegion'),
         postalCode: '08015',
         addressCountry: 'ES',
       },

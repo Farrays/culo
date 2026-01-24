@@ -8,25 +8,25 @@ module.exports = [
   {
     name: 'ES Locale Bundle',
     path: 'dist/assets/i18n-es-*.js',
-    limit: '378 KB', // Increased for image ALT i18n + Commercial Dance + Kizomba
+    limit: '395 KB', // Increased for blog articles + new teachers + manifesto
     gzip: true,
   },
   {
     name: 'EN Locale Bundle',
     path: 'dist/assets/i18n-en-*.js',
-    limit: '370 KB', // Increased for image ALT i18n + Commercial Dance
+    limit: '390 KB', // Increased for blog articles + new teachers + manifesto
     gzip: true,
   },
   {
     name: 'CA Locale Bundle',
     path: 'dist/assets/i18n-ca-*.js',
-    limit: '395 KB', // Increased for image ALT i18n + Commercial Dance
+    limit: '415 KB', // Increased for blog articles + new teachers + manifesto
     gzip: true,
   },
   {
     name: 'FR Locale Bundle',
     path: 'dist/assets/i18n-fr-*.js',
-    limit: '410 KB', // Increased for image ALT i18n + Commercial Dance
+    limit: '430 KB', // Increased for blog articles + new teachers + manifesto
     gzip: true,
   },
   {

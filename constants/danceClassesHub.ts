@@ -102,7 +102,7 @@ export const HUB_CATEGORIES: HubCategory[] = [
     descriptionKey: 'classCatFitnessDesc',
     detailedDescriptionKey: 'classDetailFitnessDesc',
     pillarUrl: '/clases/entrenamiento-bailarines-barcelona',
-    imageUrl: '/images/categories/fitness.webp',
+    imageUrl: '/images/categories/img/fitness_640.webp',
     featuredStyles: [
       { key: 'cuerpo_fit', url: '/clases/cuerpo-fit' },
       { key: 'body_conditioning', url: '/clases/acondicionamiento-fisico-bailarines' },

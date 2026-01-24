@@ -190,8 +190,8 @@ const VideoTestimonialsSection: React.FC<VideoTestimonialsSectionProps> = memo(
               __html: JSON.stringify({
                 '@context': 'https://schema.org',
                 '@type': 'ItemList',
-                name: 'Video testimonials de Farrays Center',
-                description: 'Videos de alumnos y momentos en nuestra academia de baile',
+                name: t('schema_videoTestimonials_name'),
+                description: t('schema_videoTestimonials_description'),
                 numberOfItems: videos.length,
                 itemListElement: videos.map((video, index) => ({
                   '@type': 'ListItem',

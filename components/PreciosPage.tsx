@@ -198,7 +198,23 @@ const PreciosPage: React.FC = () => {
     },
   ];
 
-  // Schema Markup
+  // ============================================================================
+  // ENTERPRISE SCHEMA MARKUP - GEO/AIEO/AIO Optimized
+  // ============================================================================
+
+  const pageUrl = `${baseUrl}/${locale}/precios-clases-baile-barcelona`;
+  const heroImageUrl = `${baseUrl}/images/precios/img/precios-clases-baile-barcelona-hero_1920.jpg`;
+  const ogImageUrl = `${baseUrl}/images/og-precios-clases-baile.jpg`;
+
+  // Language mapping for schema
+  const languageMap: Record<string, string> = {
+    es: 'es-ES',
+    ca: 'ca-ES',
+    en: 'en',
+    fr: 'fr-FR',
+  };
+
+  // BreadcrumbList Schema
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -213,27 +229,164 @@ const PreciosPage: React.FC = () => {
         '@type': 'ListItem',
         position: 2,
         name: t('pricing_breadcrumb_current'),
-        item: `${baseUrl}/${locale}/precios-clases-baile-barcelona`,
+        item: pageUrl,
       },
     ],
   };
 
-  // Pricing Schema for Google (precios orientativos)
-  const pricingSchema = {
+  // WebPage Schema with Speakable (Voice Search / GEO)
+  const webPageSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'WebPage',
+    '@id': pageUrl,
+    url: pageUrl,
+    name: t('pricingV2_page_title'),
+    description: t('pricingV2_page_description'),
+    inLanguage: languageMap[locale] || 'es-ES',
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': `${baseUrl}/#website`,
+      name: "Farray's International Dance Center",
+      url: baseUrl,
+    },
+    about: {
+      '@type': 'Service',
+      '@id': `${pageUrl}#service`,
+    },
+    primaryImageOfPage: {
+      '@type': 'ImageObject',
+      '@id': `${pageUrl}#primaryimage`,
+      url: heroImageUrl,
+      contentUrl: heroImageUrl,
+      width: 1920,
+      height: 1280,
+      caption: t('precios_hero_image_alt'),
+    },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: [
+        '#pricing-hero h1',
+        '#pricing-context',
+        '#pricing-cards',
+        '.faq-section [aria-expanded="true"]',
+      ],
+    },
+    breadcrumb: {
+      '@id': `${pageUrl}#breadcrumb`,
+    },
+  };
+
+  // Service Schema (más apropiado que Product para clases de baile)
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${pageUrl}#service`,
     name: t('pricing_schema_name'),
     description: t('pricing_schema_description'),
-    brand: {
-      '@type': 'Organization',
+    url: pageUrl,
+    image: {
+      '@type': 'ImageObject',
+      url: ogImageUrl,
+      width: 1200,
+      height: 630,
+    },
+    provider: {
+      '@type': 'DanceSchool',
+      '@id': `${baseUrl}/#organization`,
       name: "Farray's International Dance Center",
+      url: baseUrl,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${baseUrl}/images/logo-fidc.png`,
+        width: 512,
+        height: 512,
+      },
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: "Carrer d'Entença, 100",
+        addressLocality: 'Barcelona',
+        postalCode: '08015',
+        addressRegion: 'Cataluña',
+        addressCountry: 'ES',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 41.3784,
+        longitude: 2.1426,
+      },
+      telephone: '+34931255891',
+      priceRange: '€€',
+    },
+    serviceType: t('pricing_schema_serviceType'),
+    areaServed: {
+      '@type': 'City',
+      name: 'Barcelona',
+      '@id': 'https://www.wikidata.org/wiki/Q1492',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: t('pricing_schema_catalog_name'),
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: t('pricingV2_card_regular_title'),
+            description: t('pricingV2_card_regular_desc'),
+          },
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            priceCurrency: 'EUR',
+            price: 50,
+            unitText: t('pricing_schema_perMonth'),
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: t('pricingV2_card_flexible_title'),
+            description: t('pricingV2_card_flexible_desc'),
+          },
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            priceCurrency: 'EUR',
+            price: 145,
+            unitText: t('pricing_schema_bono10'),
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: t('pricingV2_card_puntual_title'),
+            description: t('pricingV2_card_puntual_desc'),
+          },
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            priceCurrency: 'EUR',
+            price: 20,
+            unitText: t('pricing_schema_perClass'),
+          },
+        },
+      ],
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: 4.9,
+      bestRating: 5,
+      worstRating: 1,
+      ratingCount: 509,
+      reviewCount: 509,
     },
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'EUR',
       lowPrice: 17,
       highPrice: 300,
-      offerCount: 20,
+      offerCount: 25,
+      availability: 'https://schema.org/InStock',
+      url: pageUrl,
     },
   };
 
@@ -249,9 +402,11 @@ const PreciosPage: React.FC = () => {
     { id: 'faq1', question: t('pricing_faq1_q'), answer: t('pricing_faq1_a') }, // Cuota inscripción
   ];
 
+  // FAQPage Schema
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    '@id': `${pageUrl}#faq`,
     mainEntity: pricingFAQs.map(faq => ({
       '@type': 'Question',
       name: faq.question,
@@ -271,12 +426,24 @@ const PreciosPage: React.FC = () => {
         <title>{t('pricingV2_page_title')} | Farray&apos;s Center</title>
         <meta name="description" content={t('pricingV2_page_description')} />
         <link rel="canonical" href={`${baseUrl}/${locale}/precios-clases-baile-barcelona`} />
+        {/* Open Graph / Facebook */}
         <meta property="og:title" content={t('pricingV2_page_title')} />
         <meta property="og:description" content={t('pricingV2_page_description')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${baseUrl}/${locale}/precios-clases-baile-barcelona`} />
+        <meta property="og:image" content={`${baseUrl}/images/og-precios-clases-baile.jpg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={t('precios_hero_image_alt')} />
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t('pricingV2_page_title')} />
+        <meta name="twitter:description" content={t('pricingV2_page_description')} />
+        <meta name="twitter:image" content={`${baseUrl}/images/og-precios-clases-baile.jpg`} />
+        {/* Enterprise Schema Markup - GEO/AIEO/AIO Optimized */}
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
-        <script type="application/ld+json">{JSON.stringify(pricingSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
@@ -287,20 +454,55 @@ const PreciosPage: React.FC = () => {
         {/* ================================================================
             SECTION 1: HERO (mismo diseno que V1)
         ================================================================ */}
-        <section className="relative text-center py-24 md:py-32 overflow-hidden flex items-center justify-center min-h-[500px]">
-          {/* Background - Enterprise pattern */}
+        <section
+          id="pricing-hero"
+          className="relative text-center py-24 md:py-32 overflow-hidden flex items-center justify-center min-h-[500px]"
+        >
+          {/* Background - Enterprise pattern with responsive images */}
           <div className="absolute inset-0 bg-black">
-            {/* Hero background image with configurable opacity */}
-            <div className="absolute inset-0" style={{ opacity: 0.4 }}>
+            {/* Hero background image with configurable opacity - Enterprise optimized */}
+            <div className="absolute inset-0" style={{ opacity: 0.45 }}>
               <picture>
-                <source srcSet="/images/optimized/mgs_3680.webp" type="image/webp" />
+                {/* AVIF - Best compression for modern browsers */}
+                <source
+                  type="image/avif"
+                  srcSet="/images/precios/img/precios-clases-baile-barcelona-hero_320.avif 320w,
+                          /images/precios/img/precios-clases-baile-barcelona-hero_640.avif 640w,
+                          /images/precios/img/precios-clases-baile-barcelona-hero_768.avif 768w,
+                          /images/precios/img/precios-clases-baile-barcelona-hero_1024.avif 1024w,
+                          /images/precios/img/precios-clases-baile-barcelona-hero_1440.avif 1440w,
+                          /images/precios/img/precios-clases-baile-barcelona-hero_1920.avif 1920w"
+                  sizes="100vw"
+                />
+                {/* WebP - Universal modern browser support */}
+                <source
+                  type="image/webp"
+                  srcSet="/images/precios/img/precios-clases-baile-barcelona-hero_320.webp 320w,
+                          /images/precios/img/precios-clases-baile-barcelona-hero_640.webp 640w,
+                          /images/precios/img/precios-clases-baile-barcelona-hero_768.webp 768w,
+                          /images/precios/img/precios-clases-baile-barcelona-hero_1024.webp 1024w,
+                          /images/precios/img/precios-clases-baile-barcelona-hero_1440.webp 1440w,
+                          /images/precios/img/precios-clases-baile-barcelona-hero_1920.webp 1920w"
+                  sizes="100vw"
+                />
+                {/* JPG fallback for older browsers */}
                 <img
-                  src="/images/optimized/mgs_3680.jpg"
+                  src="/images/precios/img/precios-clases-baile-barcelona-hero_1024.jpg"
+                  srcSet="/images/precios/img/precios-clases-baile-barcelona-hero_320.jpg 320w,
+                         /images/precios/img/precios-clases-baile-barcelona-hero_640.jpg 640w,
+                         /images/precios/img/precios-clases-baile-barcelona-hero_768.jpg 768w,
+                         /images/precios/img/precios-clases-baile-barcelona-hero_1024.jpg 1024w,
+                         /images/precios/img/precios-clases-baile-barcelona-hero_1440.jpg 1440w,
+                         /images/precios/img/precios-clases-baile-barcelona-hero_1920.jpg 1920w"
+                  sizes="100vw"
                   alt={t('precios_hero_image_alt')}
                   className="w-full h-full object-cover"
-                  style={{ objectPosition: 'center 30%' }}
+                  style={{ objectPosition: 'center 35%' }}
                   loading="eager"
                   fetchPriority="high"
+                  decoding="async"
+                  width={1920}
+                  height={1280}
                 />
               </picture>
             </div>
@@ -376,7 +578,10 @@ const PreciosPage: React.FC = () => {
         {/* ================================================================
             SECTION 2: PRICE CONTEXT - SEO Authority Section
         ================================================================ */}
-        <section className="py-8 md:py-12 bg-gradient-to-b from-black via-primary-dark/10 to-black">
+        <section
+          id="pricing-context"
+          className="py-8 md:py-12 bg-gradient-to-b from-black via-primary-dark/10 to-black"
+        >
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="max-w-4xl mx-auto [perspective:1000px]">
@@ -456,7 +661,7 @@ const PreciosPage: React.FC = () => {
         {/* ================================================================
             SECTION 3: LAS 3 FORMAS DE PARTICIPAR
         ================================================================ */}
-        <section className="py-12 md:py-16 bg-black">
+        <section id="pricing-cards" className="py-12 md:py-16 bg-black">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-12">
@@ -892,7 +1097,7 @@ const PreciosPage: React.FC = () => {
         {/* ================================================================
             SECTION 8: FAQ
         ================================================================ */}
-        <section className="py-12 md:py-16 bg-gradient-to-b from-black to-primary-dark/10">
+        <section className="faq-section py-12 md:py-16 bg-gradient-to-b from-black to-primary-dark/10">
           <div className="container mx-auto px-4 sm:px-6">
             <AnimateOnScroll>
               <div className="text-center mb-12">

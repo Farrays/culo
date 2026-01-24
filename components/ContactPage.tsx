@@ -423,9 +423,9 @@ const ContactPage: React.FC = () => {
       email: 'info@farrayscenter.com',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Calle Entenca, 100',
+        streetAddress: t('schema_streetAddress'),
         addressLocality: 'Barcelona',
-        addressRegion: 'Cataluña',
+        addressRegion: t('schema_addressRegion'),
         postalCode: '08015',
         addressCountry: 'ES',
       },
@@ -462,7 +462,7 @@ const ContactPage: React.FC = () => {
         name: 'Barcelona',
         containedInPlace: {
           '@type': 'AdministrativeArea',
-          name: 'Cataluña',
+          name: t('schema_addressRegion'),
         },
       },
     },

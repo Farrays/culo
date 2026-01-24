@@ -98,14 +98,7 @@ export const MODERN_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false,
-    videos: [
-      {
-        videoId: MODERN_JAZZ_VIDEO_ID,
-        title: "Modern Jazz Classes at Farray's Center Barcelona",
-      },
-    ],
-    placeholderCount: 1,
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -141,9 +134,9 @@ export const MODERN_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Modern Jazz, técnica de danza, musicalidad, expresión corporal, giros, saltos',
-    prerequisites: 'Ninguno',
-    lessons: '1 clase semanal',
+    teachesKey: 'schema_modernjazz_teaches',
+    prerequisitesKey: 'schema_modernjazz_prerequisites',
+    lessonsKey: 'schema_modernjazz_lessons',
     duration: 'PT1H',
   },
 
@@ -157,9 +150,8 @@ export const MODERN_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
   personSchemas: [
     {
       name: 'Alejandro Miñoso',
-      jobTitle: 'Profesor de Modern Jazz',
-      description:
-        'Bailarín profesional cubano con formación en la ENA, especialista en Modern Jazz.',
+      jobTitleKey: 'schema_modernjazz_alejandro_jobTitle',
+      descriptionKey: 'schema_modernjazz_alejandro_description',
       knowsAbout: ['Modern Jazz', 'Jazz Dance', 'Ballet', 'Cuban Technique'],
     },
   ],

@@ -103,7 +103,7 @@ export const AFRO_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false,
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -138,24 +138,23 @@ export const AFRO_JAZZ_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Afro Jazz, fusión Afro Contemporáneo + Jazz, técnica ENA, improvisación',
-    prerequisites: 'Experiencia previa en danza recomendada',
-    lessons: 'Clases semanales de perfeccionamiento',
+    teachesKey: 'schema_afroJazz_teaches',
+    prerequisitesKey: 'schema_afroJazz_prerequisites',
+    lessonsKey: 'schema_afroJazz_lessons',
     duration: 'PT1H30M',
   },
 
   personSchemas: [
     {
       name: 'Yunaisy Farray',
-      jobTitle: 'Creadora de Afro Jazz Fusión',
-      description:
-        'Bailarina profesional y coreógrafa cubana, creadora de la metodología Afro Jazz Fusión.',
+      jobTitleKey: 'schema_yunaisy_jobTitle_afroJazz',
+      descriptionKey: 'schema_yunaisy_description_afroJazz',
       knowsAbout: ['Afro Jazz', 'Cuban Dance', 'Jazz', 'Choreography', 'ENA Technique'],
     },
     {
       name: 'Alejandro Miñoso',
-      jobTitle: 'Profesor de Afro Jazz',
-      description: 'Bailarín profesional cubano con formación en la ENA.',
+      jobTitleKey: 'schema_alejandro_jobTitle_afroJazz',
+      descriptionKey: 'schema_alejandro_description_afroJazz',
       knowsAbout: ['Afro Jazz', 'Cuban Dance', 'Contemporary'],
     },
   ],

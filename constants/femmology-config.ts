@@ -44,10 +44,10 @@ export const FEMMOLOGY_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 400,
     funPercent: 100,
     gradientColor: 'rose',
-    // Enterprise: Hero background image
+    // Enterprise: Hero background image (nueva foto grupal escenario 2025)
     heroImage: {
-      basePath: '/images/classes/femmology/img/clases-de-femmology-barcelona',
-      alt: 'Clases de Femmology en Barcelona - Método exclusivo de Yunaisy Farray',
+      basePath: '/images/classes/femmology/img/femmology-hero-barcelona',
+      alt: 'Yunaisy Farray y su grupo de bailarinas de Femmology en Barcelona - Pose dramática en escenario con tacones',
       altKey: 'styleImages.femmology.hero',
       breakpoints: [320, 640, 768, 1024, 1440, 1920],
       formats: ['avif', 'webp', 'jpg'],
@@ -59,10 +59,10 @@ export const FEMMOLOGY_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
-    // Enterprise: OptimizedImage with multi-format srcset
+    // Enterprise: OptimizedImage with multi-format srcset (nueva foto grupal 2025)
     optimizedImage: {
-      basePath: '/images/classes/femmology/img/clases-de-femmology-barcelona',
-      alt: 'Clases de Femmology en Barcelona - Creado por Yunaisy Farray',
+      basePath: '/images/classes/femmology/img/femmology-hero-barcelona',
+      alt: 'Grupo de bailarinas de Femmology en Barcelona ejecutando coreografía sincronizada con Yunaisy Farray',
       altKey: 'styleImages.femmology.whatIs',
       breakpoints: [320, 640, 768, 1024, 1440, 1920],
       formats: ['avif', 'webp', 'jpg'],
@@ -92,7 +92,7 @@ export const FEMMOLOGY_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false,
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -121,18 +121,17 @@ export const FEMMOLOGY_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Femmology, danzaterapia, baile en tacones, feminidad, sensualidad, autoestima',
-    prerequisites: 'Ninguno',
-    lessons: '2 clases semanales',
+    teachesKey: 'schema_femmology_teaches',
+    prerequisitesKey: 'schema_femmology_prerequisites',
+    lessonsKey: 'schema_femmology_lessons',
     duration: 'PT1H',
   },
 
   personSchemas: [
     {
       name: 'Yunaisy Farray',
-      jobTitle: 'Creadora de Femmology',
-      description:
-        "Bailarina profesional y coreógrafa cubana, creadora de Femmology y directora de Farray's International Dance Center.",
+      jobTitleKey: 'schema_femmology_yunaisy_jobTitle',
+      descriptionKey: 'schema_femmology_yunaisy_description',
       knowsAbout: ['Femmology', 'Heels Dance', 'Cuban Dance', 'Dance Therapy', 'Choreography'],
     },
   ],

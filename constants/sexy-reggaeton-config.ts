@@ -132,9 +132,9 @@ export const SEXY_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Sexy Reggaeton, perreo, body roll, sensualidad, disociación corporal',
-    prerequisites: 'Ninguno',
-    lessons: '6 clases semanales',
+    teachesKey: 'schema_sxr_teaches',
+    prerequisitesKey: 'schema_sxr_prerequisites',
+    lessonsKey: 'schema_sxr_lessons',
     duration: 'PT1H',
   },
 
@@ -148,8 +148,8 @@ export const SEXY_REGGAETON_PAGE_CONFIG: FullDanceClassConfig = {
   personSchemas: [
     {
       name: 'Yasmina Fernández',
-      jobTitle: 'Instructora de Sexy Reggaeton',
-      description: 'Especialista en Sexy Reggaeton y estilos sensuales con amplia experiencia.',
+      jobTitleKey: 'schema_sxr_yasmina_jobTitle',
+      descriptionKey: 'schema_sxr_yasmina_description',
       knowsAbout: ['Sexy Reggaeton', 'Perreo', 'Sensual Dance', 'Urban Dance'],
     },
   ],

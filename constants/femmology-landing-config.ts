@@ -31,13 +31,15 @@ export const FEMMOLOGY_LANDING_CONFIG: LandingConfig = createLandingConfig('fuch
   discoveryValue: 'Facebook',
 
   // =========================================================================
-  // IMÁGENES
+  // IMÁGENES (Enterprise: nueva foto grupal escenario 2025)
   // =========================================================================
   images: {
-    hero: '/images/classes/femmology/img/clases-de-femmology-barcelona_1024.webp',
-    showcase: '/images/classes/femmology/img/clases-de-femmology-barcelona_768.webp',
-    heroAlt: 'Clases de Femmology en Barcelona - Método exclusivo de Yunaisy Farray',
-    showcaseAlt: 'Alumnas de Femmology bailando con tacones en Barcelona',
+    hero: '/images/classes/femmology/img/femmology-hero-barcelona_1024.webp',
+    showcase: '/images/classes/femmology/img/femmology-hero-barcelona_768.webp',
+    heroAlt:
+      'Yunaisy Farray y su grupo de bailarinas de Femmology en pose dramática sobre escenario - Clases de baile en tacones Barcelona',
+    showcaseAlt:
+      'Grupo de bailarinas ejecutando coreografía de Femmology con tacones en escenario profesional Barcelona',
   },
 
   // =========================================================================

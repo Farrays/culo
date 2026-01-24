@@ -35,6 +35,10 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
   const author = authorProp || DEFAULT_AUTHOR;
   const articleUrl = `${baseUrl}/${locale}/blog/${config.category}/${config.slug}`;
 
+  // Use ogImage for social sharing, fallback to featuredImage
+  const socialImage = config.ogImage || config.featuredImage.src;
+  const socialImageUrl = socialImage.startsWith('/') ? `${baseUrl}${socialImage}` : socialImage;
+
   // Article Schema (BlogPosting)
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -42,9 +46,13 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
     '@id': `${articleUrl}#article`,
     headline: t(`${config.articleKey}_title`),
     description: t(`${config.articleKey}_metaDescription`),
-    image: config.featuredImage.src.startsWith('/')
-      ? `${baseUrl}${config.featuredImage.src}`
-      : config.featuredImage.src,
+    image: {
+      '@type': 'ImageObject',
+      url: socialImageUrl,
+      width: config.featuredImage.width,
+      height: config.featuredImage.height,
+    },
+    thumbnailUrl: socialImageUrl,
     datePublished: config.datePublished,
     dateModified: config.dateModified,
     wordCount: config.wordCount,
@@ -263,7 +271,7 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
           '@context': 'https://schema.org',
           '@type': 'ItemList',
           '@id': `${articleUrl}#key-facts`,
-          name: 'Key Facts',
+          name: t('schema_keyFacts'),
           description: t(`${config.articleKey}_metaDescription`),
           numberOfItems: config.summaryStats.length,
           itemListElement: config.summaryStats.map((stat, index) => ({
@@ -293,7 +301,7 @@ const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp })
           description: t(section.contentKey),
           inDefinedTermSet: {
             '@type': 'DefinedTermSet',
-            name: 'Dance Terminology',
+            name: t('schema_danceTerminology'),
             '@id': `${baseUrl}/${locale}/glosario`,
           },
           inLanguage:

@@ -65,8 +65,10 @@ export const TEACHER_REGISTRY: Record<string, TeacherRegistryEntry> = {
       'bachata-lady-style',
       'afro-contemporaneo',
       'salsa-cubana',
+      'salsa',
       'timba',
       'femmology',
+      'heels',
       'cuerpo-fit',
       'full-body-cardio',
     ],
@@ -123,7 +125,7 @@ export const TEACHER_REGISTRY: Record<string, TeacherRegistryEntry> = {
     name: 'Iroel Bastarreche',
     canonicalSpecialtyKey: 'teacher.iroelBastarreche.specialty',
     canonicalBioKey: 'teacher.iroelBastarreche.bio',
-    teachesStyles: ['salsa-cubana', 'folklore-cubano', 'afro-contemporaneo'],
+    teachesStyles: ['salsa-cubana'],
     meta: {
       certifications: ['Ballet Folklórico de Camagüey', 'Método Farray®'],
       origin: 'Cuba',
@@ -381,8 +383,8 @@ export function getTeacherForClass(
     specialtyKey: `${styleKey}.teacher.${teacherCamelId}.specialty`,
     // Canonical bio (same for all pages, source of truth)
     bioKey: `teacher.${teacherCamelId}.bio`,
-    // Optional: prefix key for contextual emphasis
-    bioPrefixKey: `${styleKey}.teacher.${teacherCamelId}.bioPrefix`,
+    // Note: bioPrefixKey is optional and only added when translations exist
+    // Pattern: `${styleKey}.teacher.${teacherCamelId}.bioPrefix`
     tags,
   };
 

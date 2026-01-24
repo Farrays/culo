@@ -110,7 +110,7 @@ export const BACHATA_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false, // Habilitar cuando haya video de bachata sensual
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -146,33 +146,29 @@ export const BACHATA_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches:
-      'Bachata Sensual, ondulaciones, conexión en pareja, musicalidad, dips, waves, body movement, técnica de guía y seguimiento',
-    prerequisites: 'Ninguno - clases para todos los niveles desde principiante absoluto',
-    lessons: 'Clases semanales con progresión por niveles',
+    teachesKey: 'schema_bachata_teaches',
+    prerequisitesKey: 'schema_bachata_prerequisites',
+    lessonsKey: 'schema_bachata_lessons',
     duration: 'PT1H',
   },
 
   personSchemas: [
     {
       name: 'Mathias Font',
-      jobTitle: 'Profesor de Bachata Sensual - Campeón Mundial Salsa LA',
-      description:
-        'Campeón mundial de Salsa LA junto a Eugenia Trujillo. Especialista en bachata sensual con enfoque en musicalidad y conexión.',
+      jobTitleKey: 'schema_bachata_mathias_jobTitle',
+      descriptionKey: 'schema_bachata_mathias_description',
       knowsAbout: ['Bachata Sensual', 'Musicalidad', 'Conexión en pareja', 'Salsa LA'],
     },
     {
       name: 'Eugenia Trujillo',
-      jobTitle: 'Profesora de Bachata Sensual - Campeona Mundial Salsa LA',
-      description:
-        "Maestra y bailarina internacional uruguaya, campeona mundial de Salsa LA. Profesora de bachata sensual en Farray's Center.",
+      jobTitleKey: 'schema_bachata_eugenia_jobTitle',
+      descriptionKey: 'schema_bachata_eugenia_description',
       knowsAbout: ['Bachata Sensual', 'Bachata Lady Style', 'Salsa LA', 'Técnica femenina'],
     },
     {
       name: 'Carlos Canto',
-      jobTitle: 'Profesor de Bachata Sensual',
-      description:
-        "Talento emergente de la escena de bachata de Barcelona. Especialista en clases para principiantes en Farray's Center.",
+      jobTitleKey: 'schema_bachata_carlos_jobTitle',
+      descriptionKey: 'schema_bachata_carlos_description',
       knowsAbout: ['Bachata Sensual', 'Bachata para principiantes'],
     },
   ],

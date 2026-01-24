@@ -58,7 +58,7 @@ export const BUM_BUM_PAGE_CONFIG: FullDanceClassConfig = {
 
     // Enterprise: Hero background image
     heroImage: {
-      basePath: '/images/classes/bum-bum/img/bum-bum',
+      basePath: '/images/classes/bum-bum/img/bum-bum-gluteos-maravillosos',
       alt: 'Alumnas realizando ejercicios de glúteos Bum Bum en Barcelona - Método Farray con hip thrust y sentadillas',
       altKey: 'styleImages.bumBum.hero',
       breakpoints: [320, 640, 768, 1024, 1440, 1920],
@@ -78,8 +78,9 @@ export const BUM_BUM_PAGE_CONFIG: FullDanceClassConfig = {
     hasQuestionAnswer: true,
     // Enterprise OptimizedImage config (AVIF/WebP/JPG, 6 breakpoints)
     optimizedImage: {
-      basePath: '/images/classes/bum-bum/img/bum-bum-gluteos',
+      basePath: '/images/classes/bum-bum/img/bum-bum-gluteos-maravillosos',
       alt: 'Grupo de alumnas tonificando glúteos con ejercicios Bum Bum en academia de Barcelona',
+      altKey: 'styleImages.bumBum.whatIs',
       breakpoints: [320, 640, 768, 1024, 1440, 1920],
       formats: ['avif', 'webp', 'jpg'],
     },
@@ -116,9 +117,7 @@ export const BUM_BUM_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false, // No video yet
-    videos: [],
-    placeholderCount: 0,
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -147,10 +146,9 @@ export const BUM_BUM_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches:
-      'Ejercicios de glúteos, hip thrust, sentadillas, puente de glúteos, tonificación muscular, fortalecimiento tren inferior, técnicas de danza',
-    prerequisites: 'Ninguno - clase abierta para todos los niveles',
-    lessons: '1 clase semanal',
+    teachesKey: 'schema_bumbum_teaches',
+    prerequisitesKey: 'schema_bumbum_prerequisites',
+    lessonsKey: 'schema_bumbum_lessons',
     duration: 'PT1H',
   },
 
@@ -158,9 +156,8 @@ export const BUM_BUM_PAGE_CONFIG: FullDanceClassConfig = {
   personSchemas: [
     {
       name: 'Cris Ag',
-      jobTitle: 'Instructora de Bum Bum Glúteos Maravillosos',
-      description:
-        'Especialista en tonificación corporal y ejercicios de glúteos con el Método Farray. Experta en hip thrust, sentadillas y técnicas de fortalecimiento del tren inferior.',
+      jobTitleKey: 'schema_bumbum_cris_jobTitle',
+      descriptionKey: 'schema_bumbum_cris_description',
       knowsAbout: [
         'Ejercicios de glúteos',
         'Hip Thrust',

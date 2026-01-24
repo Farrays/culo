@@ -244,7 +244,7 @@ export const STYLE_TEACHERS: Record<string, string[]> = {
   bachataSensual: ['mathias-font', 'juan-alvarez'],
 
   // Afro styles
-  afrocontemporaneo: ['yunaisy-farray', 'charlie-breezy', 'alejandro-minoso', 'iroel-bastarreche'],
+  afrocontemporaneo: ['yunaisy-farray', 'charlie-breezy', 'alejandro-minoso'],
   afrojazz: ['yunaisy-farray', 'alejandro-minoso'],
   afro: ['redbhlue', 'charlie-breezy'], // Afrobeats
 

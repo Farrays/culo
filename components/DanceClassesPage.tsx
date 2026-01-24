@@ -20,7 +20,12 @@ const CATEGORY_IMAGES: Record<string, string> = {
   contemporary: '/images/categories/img/danza',
   urban: '/images/classes/hip-hop-reggaeton/img/clases-hip-hop-reaggaeton-barcelona',
   latin: '/images/categories/img/salsa-bachata',
-  fitness: '/images/categories/img/fitness',
+  fitness: '/images/categories/img/stretching', // Uses stretching image for prep física card
+};
+
+// Object positions for category images (to control cropping)
+const CATEGORY_OBJECT_POSITIONS: Record<string, string> = {
+  fitness: 'center 10%', // Adjusted for stretching image
 };
 
 const valuePillars: ValuePillarWithIcon[] = [
@@ -341,6 +346,7 @@ const DanceClassesPage: React.FC = () => {
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
+    '@id': `${baseUrl}/${locale}/clases/baile-barcelona#breadcrumb`,
     itemListElement: [
       {
         '@type': 'ListItem',
@@ -360,7 +366,7 @@ const DanceClassesPage: React.FC = () => {
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Categorías de clases de baile en Barcelona',
+    name: t('schema_danceClasses_itemListName'),
     itemListElement: HUB_CATEGORIES.map((cat, idx) => ({
       '@type': 'ListItem',
       position: idx + 1,
@@ -382,9 +388,44 @@ const DanceClassesPage: React.FC = () => {
     })),
   };
 
+  // WebPage schema with primary image + speakable (GEO/AIEO/Voice Search optimized)
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${baseUrl}/${locale}/clases/baile-barcelona#webpage`,
+    url: `${baseUrl}/${locale}/clases/baile-barcelona`,
+    name: t('danceClassesHub_h1'),
+    description: t('danceClassesHub_intro'),
+    inLanguage:
+      locale === 'ca' ? 'ca-ES' : locale === 'en' ? 'en-US' : locale === 'fr' ? 'fr-FR' : 'es-ES',
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': `${baseUrl}/#website`,
+      name: "Farray's International Dance Center",
+      url: baseUrl,
+    },
+    primaryImageOfPage: {
+      '@type': 'ImageObject',
+      '@id': `${baseUrl}/images/og-clases-baile-barcelona.jpg#primaryimage`,
+      url: `${baseUrl}/images/og-clases-baile-barcelona.jpg`,
+      contentUrl: `${baseUrl}/images/og-clases-baile-barcelona.jpg`,
+      width: 1200,
+      height: 630,
+      caption: t('alt_hero_clases_baile_barcelona'),
+    },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['#hero-title', '#category-hero p', '#categories-title', '#why-title'],
+    },
+    breadcrumb: {
+      '@id': `${baseUrl}/${locale}/clases/baile-barcelona#breadcrumb`,
+    },
+  };
+
   // Schemas component
   const schemas = (
     <Helmet>
+      <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -398,9 +439,18 @@ const DanceClassesPage: React.FC = () => {
       heroTitleKey="danceClassesHub_h1"
       heroSubtitleKey="danceClassesHub_h1_sub"
       heroIntroKey="danceClassesHub_intro"
+      heroImage={{
+        basePath: '/images/categories/hero/clases-baile-barcelona-hero',
+        altKey: 'alt_hero_clases_baile_barcelona',
+        altFallback:
+          "Clases de baile Barcelona - Bailarinas profesionales ejecutando coreografía elegante con atuendos dorados e iluminación escénica dramática verde en Farray's Center",
+        objectPosition: 'center 35%',
+        opacity: 100,
+      }}
       // Data - using categories instead of styles
       categories={categories}
       categoryImages={CATEGORY_IMAGES}
+      categoryObjectPositions={CATEGORY_OBJECT_POSITIONS}
       valuePillars={valuePillars}
       faqs={classesFaqs}
       // No relatedClasses for hub page

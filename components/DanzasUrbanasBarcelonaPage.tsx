@@ -63,6 +63,7 @@ const relatedClasses: RelatedClass[] = [
     url: '/clases/hip-hop-barcelona',
     imageSrc: getStyleImage('hip_hop').basePath,
     imageAlt: "Clase de Hip Hop en Barcelona - Farray's Dance Center",
+    breakpoints: getStyleImage('hip_hop').breakpoints,
   },
   {
     id: 'dancehall',
@@ -71,6 +72,7 @@ const relatedClasses: RelatedClass[] = [
     url: '/clases/dancehall-barcelona',
     imageSrc: getStyleImage('dancehall').basePath,
     imageAlt: "Clase de Dancehall en Barcelona - Farray's Dance Center",
+    breakpoints: getStyleImage('dancehall').breakpoints,
   },
   {
     id: 'afrobeats',
@@ -79,6 +81,7 @@ const relatedClasses: RelatedClass[] = [
     url: '/clases/afrobeats-barcelona',
     imageSrc: getStyleImage('afrobeat').basePath,
     imageAlt: "Clase de Afrobeats en Barcelona - Farray's Dance Center",
+    breakpoints: getStyleImage('afrobeat').breakpoints,
   },
 ];
 
@@ -306,7 +309,7 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: "Estilos de Danzas Urbanas en Barcelona - Farray's Center",
+    name: t('schema_urbanas_itemListName'),
     itemListElement: urbanCategory.allStyles.map((style, idx) => ({
       '@type': 'ListItem',
       position: idx + 1,
@@ -338,8 +341,8 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
           name: "Farray's International Dance Center",
           url: baseUrl,
         }}
-        educationalLevel="Beginner to Advanced"
-        teaches="Hip Hop, Dancehall, Afrobeats, House, Popping, Locking"
+        educationalLevel={t('schema_educationalLevelBeginnerAdvanced')}
+        teaches={t('schema_urbanas_teaches')}
         availableLanguage={SUPPORTED_LOCALES}
       />
       <LocalBusinessSchema
@@ -349,7 +352,7 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
         telephone="+34622247085"
         email="info@farrayscenter.com"
         address={{
-          streetAddress: "Carrer d'Entença, 100, Local 1",
+          streetAddress: t('schema_streetAddress'),
           addressLocality: 'Barcelona',
           postalCode: '08015',
           addressCountry: 'ES',
@@ -375,6 +378,16 @@ const DanzasUrbanasBarcelonaPage: React.FC = () => {
       heroTitleKey="danzasUrbanas_h1"
       heroSubtitleKey="danzasUrbanas_h1_sub"
       heroIntroKey="danzasUrbanas_intro"
+      heroImage={{
+        basePath: '/images/categories/img/urbano',
+        altKey: 'alt_hero_danzas_urbanas',
+        altFallback:
+          "Clases de danzas urbanas en Barcelona - Hip Hop, Dancehall, Reggaeton y más estilos en Farray's Center",
+        breakpoints: [320, 640, 768, 1024],
+        formats: ['avif', 'webp', 'jpg'],
+        objectPosition: 'center center',
+        opacity: 100,
+      }}
       // Data
       styles={urbanCategory.allStyles}
       valuePillars={valuePillars}

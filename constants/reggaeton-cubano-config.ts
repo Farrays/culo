@@ -100,7 +100,7 @@ export const REGGAETON_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false,
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -129,23 +129,23 @@ export const REGGAETON_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Reggaeton Cubano, Reparto, Cubatón, disociación corporal, improvisación',
-    prerequisites: 'Ninguno',
-    lessons: '3 clases semanales',
+    teachesKey: 'schema_rcb_teaches',
+    prerequisitesKey: 'schema_rcb_prerequisites',
+    lessonsKey: 'schema_rcb_lessons',
     duration: 'PT1H',
   },
 
   personSchemas: [
     {
       name: 'Charlie Breezy',
-      jobTitle: 'Instructor de Reggaeton Cubano',
-      description: 'Especialista en Reggaeton Cubano y estilos urbanos con raíces cubanas.',
+      jobTitleKey: 'schema_rcb_charlie_jobTitle',
+      descriptionKey: 'schema_rcb_charlie_description',
       knowsAbout: ['Reggaeton Cubano', 'Reparto', 'Cubatón', 'Urban Dance'],
     },
     {
       name: 'Alejandro Miñoso',
-      jobTitle: 'Instructor de Reggaeton Cubano',
-      description: 'Bailarín profesional cubano con amplia experiencia en estilos urbanos.',
+      jobTitleKey: 'schema_rcb_alejandro_jobTitle',
+      descriptionKey: 'schema_rcb_alejandro_description',
       knowsAbout: ['Reggaeton Cubano', 'Cuban Dance', 'Urban Dance'],
     },
   ],

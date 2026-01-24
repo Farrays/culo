@@ -102,7 +102,7 @@ export const BALLET_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false,
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -138,24 +138,23 @@ export const BALLET_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches:
-      'Ballet clásico, danza clásica, técnica de ballet, posiciones de ballet, flexibilidad, postura',
-    prerequisites: 'Ninguno',
-    lessons: '2 clases semanales',
+    teachesKey: 'schema_ballet_teaches',
+    prerequisitesKey: 'schema_ballet_prerequisites',
+    lessonsKey: 'schema_ballet_lessons',
     duration: 'PT1H',
   },
 
   personSchemas: [
     {
       name: 'Daniel Sené',
-      jobTitle: 'Profesor de Ballet',
-      description: 'Bailarín profesional formado en la Escuela Nacional de Arte de Cuba.',
+      jobTitleKey: 'schema_daniel_jobTitle_ballet',
+      descriptionKey: 'schema_daniel_description_ballet',
       knowsAbout: ['Ballet Clásico', 'Técnica Cubana', 'Danza Contemporánea'],
     },
     {
       name: 'Alejandro Miñoso',
-      jobTitle: 'Profesor de Ballet',
-      description: 'Bailarín profesional con formación en la Escuela Nacional de Arte de Cuba.',
+      jobTitleKey: 'schema_alejandro_jobTitle_ballet',
+      descriptionKey: 'schema_alejandro_description_ballet',
       knowsAbout: ['Ballet Clásico', 'Técnica Cubana', 'Contemporáneo'],
     },
   ],

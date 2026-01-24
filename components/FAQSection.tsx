@@ -116,6 +116,7 @@ const FAQSection: React.FC<FAQSectionProps> = memo(function FAQSection({ title, 
               <h2
                 id="faq-section-title"
                 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+                data-speakable="true"
               >
                 {title}
               </h2>

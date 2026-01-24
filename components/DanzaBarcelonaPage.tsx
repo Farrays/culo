@@ -10,6 +10,7 @@ import CategoryPageTemplate, {
   type ValuePillarWithIcon,
   type RelatedClass,
 } from './templates/CategoryPageTemplate';
+import { getStyleImage } from '../constants/style-images';
 
 // ============================================================================
 // PAGE-SPECIFIC DATA
@@ -60,25 +61,28 @@ const relatedClasses: RelatedClass[] = [
     nameKey: 'relatedBalletName',
     descKey: 'relatedBalletDesc',
     url: '/clases/ballet-barcelona',
-    imageSrc: '/images/classes/ballet/img/clases-ballet-barcelona',
+    imageSrc: getStyleImage('ballet_clasico').basePath,
     imageAlt: "Clase de Ballet en Barcelona - Farray's Dance Center",
+    breakpoints: getStyleImage('ballet_clasico').breakpoints,
   },
   {
     id: 'contemporaneo',
     nameKey: 'relatedContemporaneoName',
     descKey: 'relatedContemporaneoDesc',
     url: '/clases/contemporaneo-barcelona',
-    imageSrc: '/images/classes/contemporaneo/img/mgs_5189',
+    imageSrc: getStyleImage('danza_contemporanea').basePath,
     imageAlt: "Clase de Contemporáneo en Barcelona - Farray's Dance Center",
+    breakpoints: getStyleImage('danza_contemporanea').breakpoints,
   },
   {
     id: 'modernjazz',
     nameKey: 'relatedModernJazzName',
     descKey: 'relatedModernJazzDesc',
     url: '/clases/modern-jazz-barcelona',
-    imageSrc: '/images/classes/modern-jazz/img/clases-modern-jazz-barcelona',
+    imageSrc: getStyleImage('modern_jazz').basePath,
     imageAlt: "Clase de Modern Jazz en Barcelona - Farray's Dance Center",
-    objectPosition: 'center 25%',
+    objectPosition: getStyleImage('modern_jazz').objectPosition || 'center 25%',
+    breakpoints: getStyleImage('modern_jazz').breakpoints,
   },
 ];
 
@@ -301,7 +305,7 @@ const DanzaBarcelonaPage: React.FC = () => {
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: "Estilos de Danza en Barcelona - Farray's Center",
+    name: t('schema_danza_itemListName'),
     itemListElement: danzaCategory.allStyles.map((style, idx) => ({
       '@type': 'ListItem',
       position: idx + 1,
@@ -333,8 +337,8 @@ const DanzaBarcelonaPage: React.FC = () => {
           name: "Farray's International Dance Center",
           url: baseUrl,
         }}
-        educationalLevel="Beginner to Advanced"
-        teaches="Contemporary Dance, Modern Dance, Ballet"
+        educationalLevel={t('schema_educationalLevelBeginnerAdvanced')}
+        teaches={t('schema_danza_teaches')}
         availableLanguage={SUPPORTED_LOCALES}
       />
       <LocalBusinessSchema
@@ -344,7 +348,7 @@ const DanzaBarcelonaPage: React.FC = () => {
         telephone="+34622247085"
         email="info@farrayscenter.com"
         address={{
-          streetAddress: "Carrer d'Entença, 100, Local 1",
+          streetAddress: t('schema_streetAddress'),
           addressLocality: 'Barcelona',
           postalCode: '08015',
           addressCountry: 'ES',
@@ -370,6 +374,14 @@ const DanzaBarcelonaPage: React.FC = () => {
       heroTitleKey="danzaBarcelona_h1"
       heroSubtitleKey="danzaBarcelona_h1_sub"
       heroIntroKey="danzaBarcelona_intro"
+      heroImage={{
+        basePath: '/images/categories/hero/clases-de-danza',
+        altKey: 'alt_hero_clases_danza',
+        altFallback:
+          "Clases de danza en Barcelona - Ballet, contemporáneo y jazz en Farray's Center",
+        objectPosition: 'center 30%',
+        opacity: 100,
+      }}
       // Data
       styles={danzaCategory.allStyles}
       valuePillars={valuePillars}

@@ -103,7 +103,7 @@ const TermsConditionsPage: React.FC = () => {
                         <strong>NIF:</strong> B67004812
                       </li>
                       <li>
-                        <strong>Domicilio:</strong> C/ Entença 100, bajos 2, 08015 Barcelona
+                        <strong>Domicilio:</strong> C/ Entença 100, Local 1, 08015 Barcelona
                         (España)
                       </li>
                       <li>
@@ -309,7 +309,7 @@ const TermsConditionsPage: React.FC = () => {
                   <p className="text-neutral/70">
                     El merchandising puede pagarse o reservarse online, pero la entrega se realiza
                     exclusivamente mediante recogida en las instalaciones indicadas por la SL
-                    (actualmente: C/ Entença 100, bajos 2, 08015 Barcelona), dentro del horario de
+                    (actualmente: C/ Entença 100, Local 1, 08015 Barcelona), dentro del horario de
                     atención vigente.
                   </p>
 

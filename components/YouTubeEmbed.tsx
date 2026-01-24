@@ -64,13 +64,15 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   const hasFunctionalConsent = preferences?.functional ?? false;
 
   const [isLoaded, setIsLoaded] = useState(false);
+  // Fallback chain: maxresdefault → hqdefault → mqdefault → default
+  const [thumbnailFallback, setThumbnailFallback] = useState(0);
   const [thumbnailError, setThumbnailError] = useState(false);
   const playerRef = useRef<YTPlayer | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  // maxresdefault may not exist for all videos, use hqdefault as fallback
-  const thumbnailUrl = thumbnailError
-    ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
-    : `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+
+  // YouTube thumbnail quality hierarchy (best to worst)
+  const thumbnailQualities = ['maxresdefault', 'hqdefault', 'mqdefault', 'default'];
+  const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/${thumbnailQualities[thumbnailFallback]}.jpg`;
   const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}`;
 
   const videoSchema = {
@@ -256,13 +258,18 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
             loading="lazy"
             className="w-full h-full object-cover"
             onLoad={e => {
-              // YouTube returns 120x90 gray placeholder when maxresdefault doesn't exist
+              // YouTube returns 120x90 gray placeholder when high-res thumbnails don't exist
               const img = e.currentTarget;
-              if (!thumbnailError && img.naturalWidth <= 120) {
-                setThumbnailError(true);
+              if (thumbnailFallback < thumbnailQualities.length - 1 && img.naturalWidth <= 120) {
+                setThumbnailFallback(prev => prev + 1);
               }
             }}
-            onError={() => !thumbnailError && setThumbnailError(true)}
+            onError={() => {
+              // Try next thumbnail quality if available
+              if (thumbnailFallback < thumbnailQualities.length - 1) {
+                setThumbnailFallback(prev => prev + 1);
+              }
+            }}
           />
           <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
             <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">

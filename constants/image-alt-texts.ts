@@ -121,10 +121,10 @@ export const IMAGE_ALT_TEXTS = {
 
     femmology: {
       hero: {
-        es: 'Clases de Femmology en Barcelona - Baile en tacones con Yunaisy Farray',
-        en: 'Femmology Classes in Barcelona - Heels dance with Yunaisy Farray',
-        ca: 'Classes de Femmology a Barcelona - Ball amb talons amb Yunaisy Farray',
-        fr: 'Cours de Femmology à Barcelone - Danse en talons avec Yunaisy Farray',
+        es: 'Yunaisy Farray y su grupo de bailarinas de Femmology en pose dramática sobre escenario con iluminación púrpura - Clases de baile en tacones Barcelona',
+        en: 'Yunaisy Farray and her Femmology dance group in dramatic stage pose with purple lighting - Heels dance classes Barcelona',
+        ca: 'Yunaisy Farray i el seu grup de balladores de Femmology en pose dramàtica sobre escenari amb il·luminació porpra - Classes de ball amb talons Barcelona',
+        fr: 'Yunaisy Farray et son groupe de danseuses Femmology en pose dramatique sur scène avec éclairage violet - Cours de danse en talons Barcelone',
       },
     },
 
@@ -1128,6 +1128,13 @@ export const IMAGE_ALT_TEXTS = {
         ca: "Parelles ballant Salsa i Bachata a Barcelona - Ritmes llatins a Farray's Center",
         fr: "Couples dansant la Salsa et Bachata à Barcelone - Rythmes latins chez Farray's Center",
       },
+      // Hero de página de categoría - SEO/GEO optimizado (15-25 palabras)
+      pageHero: {
+        es: "Parejas bailando salsa cubana y bachata sensual en academia de Barcelona - Profesores cubanos, Método Farray exclusivo y ambiente social vibrante en Farray's Center",
+        en: "Couples dancing Cuban salsa and sensual bachata at Barcelona dance academy - Cuban instructors, exclusive Farray Method and vibrant social atmosphere at Farray's Center",
+        ca: "Parelles ballant salsa cubana i bachata sensual a acadèmia de Barcelona - Professors cubans, Mètode Farray exclusiu i ambient social vibrant a Farray's Center",
+        fr: "Couples dansant la salsa cubaine et bachata sensuelle à académie de Barcelone - Professeurs cubains, Méthode Farray exclusive et ambiance sociale vibrante chez Farray's Center",
+      },
     },
     salsaLadyStyle: {
       alt: {
@@ -1320,40 +1327,40 @@ export const IMAGE_ALT_TEXTS = {
       },
     },
     bumBum: {
-      // Alt genérico (fallback)
+      // Alt genérico (fallback) - Enterprise SEO/GEO/AIO optimized
       alt: {
-        es: "Clases de Bum Bum en Barcelona - Ejercicios de glúteos en Farray's Center",
-        en: "Bum Bum Classes in Barcelona - Glutes workout at Farray's Center",
-        ca: "Classes de Bum Bum a Barcelona - Exercicis de glutis a Farray's Center",
-        fr: "Cours de Bum Bum à Barcelone - Exercices fessiers chez Farray's Center",
+        es: "Alumnas realizando ejercicios de glúteos Bum Bum en academia de Barcelona - tonificación muscular con hip thrust, sentadillas y técnicas del Método Farray en Farray's Center",
+        en: "Students performing Bum Bum glute exercises at Barcelona dance academy - muscle toning with hip thrust, squats and Farray Method techniques at Farray's Center",
+        ca: "Alumnes realitzant exercicis de glutis Bum Bum a acadèmia de Barcelona - tonificació muscular amb hip thrust, esquats i tècniques del Mètode Farray a Farray's Center",
+        fr: "Élèves effectuant des exercices de fessiers Bum Bum à académie de Barcelone - tonification musculaire avec hip thrust, squats et techniques Méthode Farray chez Farray's Center",
       },
       // Para cards en hub de clases de baile (/clases/baile-barcelona)
       cardHub: {
-        es: 'Bum Bum Glúteos Barcelona - Tonifica y fortalece con el Método Farray',
-        en: 'Bum Bum Glutes Barcelona - Tone and strengthen with the Farray Method',
-        ca: 'Bum Bum Glutis Barcelona - Tonifica i enforteix amb el Mètode Farray',
-        fr: 'Bum Bum Fessiers Barcelone - Tonifiez et renforcez avec la Méthode Farray',
+        es: 'Clases de Bum Bum Glúteos Maravillosos en Barcelona - Tonifica y fortalece con hip thrust, sentadillas y el Método Farray exclusivo',
+        en: 'Bum Bum Amazing Glutes classes in Barcelona - Tone and strengthen with hip thrust, squats and the exclusive Farray Method',
+        ca: 'Classes de Bum Bum Glutis Meravellosos a Barcelona - Tonifica i enforteix amb hip thrust, esquats i el Mètode Farray exclusiu',
+        fr: 'Cours Bum Bum Fessiers Extraordinaires à Barcelone - Tonifiez et renforcez avec hip thrust, squats et la Méthode Farray exclusive',
       },
       // Para cards en categoría fitness (/clases/entrenamiento-bailarines-barcelona)
       cardFitness: {
-        es: 'Bum Bum - Ejercicios de glúteos con hip thrust, sentadillas y técnicas de baile',
-        en: 'Bum Bum - Glute exercises with hip thrust, squats and dance techniques',
-        ca: 'Bum Bum - Exercicis de glutis amb hip thrust, esquats i tècniques de ball',
-        fr: 'Bum Bum - Exercices fessiers avec hip thrust, squats et techniques de danse',
+        es: 'Bum Bum Glúteos Maravillosos - Ejercicios de tonificación con hip thrust, sentadillas, lunges y técnicas de baile del Método Farray',
+        en: 'Bum Bum Amazing Glutes - Toning exercises with hip thrust, squats, lunges and Farray Method dance techniques',
+        ca: 'Bum Bum Glutis Meravellosos - Exercicis de tonificació amb hip thrust, esquats, lunges i tècniques de ball del Mètode Farray',
+        fr: 'Bum Bum Fessiers Extraordinaires - Exercices de tonification avec hip thrust, squats, lunges et techniques de danse Méthode Farray',
       },
       // Para hero de la página de clase
       hero: {
-        es: 'Alumnas realizando ejercicios de glúteos Bum Bum en Barcelona - Método Farray con hip thrust y sentadillas',
-        en: 'Students performing Bum Bum glute exercises in Barcelona - Farray Method with hip thrust and squats',
-        ca: 'Alumnes realitzant exercicis de glutis Bum Bum a Barcelona - Mètode Farray amb hip thrust i esquats',
-        fr: 'Élèves effectuant des exercices Bum Bum fessiers à Barcelone - Méthode Farray avec hip thrust et squats',
+        es: 'Clase de Bum Bum Glúteos Maravillosos en Barcelona - Alumnas tonificando con hip thrust, sentadillas y el Método Farray exclusivo para glúteos firmes y definidos',
+        en: 'Bum Bum Amazing Glutes class in Barcelona - Students toning with hip thrust, squats and the exclusive Farray Method for firm and defined glutes',
+        ca: 'Classe de Bum Bum Glutis Meravellosos a Barcelona - Alumnes tonificant amb hip thrust, esquats i el Mètode Farray exclusiu per a glutis ferms i definits',
+        fr: 'Cours Bum Bum Fessiers Extraordinaires à Barcelone - Élèves tonifiant avec hip thrust, squats et la Méthode Farray exclusive pour des fessiers fermes et définis',
       },
       // Para sección "¿Qué es?" de la página de clase
       whatIs: {
-        es: 'Grupo de alumnas tonificando glúteos con ejercicios Bum Bum en academia de Barcelona',
-        en: 'Group of students toning glutes with Bum Bum exercises at Barcelona dance academy',
-        ca: "Grup d'alumnes tonificant glutis amb exercicis Bum Bum a acadèmia de Barcelona",
-        fr: "Groupe d'élèves tonifiant les fessiers avec exercices Bum Bum à académie de Barcelone",
+        es: 'Grupo de alumnas realizando ejercicios de Bum Bum Glúteos Maravillosos en academia de Barcelona - tonificación y fortalecimiento con técnicas profesionales del Método Farray',
+        en: 'Group of students performing Bum Bum Amazing Glutes exercises at Barcelona dance academy - toning and strengthening with professional Farray Method techniques',
+        ca: "Grup d'alumnes realitzant exercicis de Bum Bum Glutis Meravellosos a acadèmia de Barcelona - tonificació i enfortiment amb tècniques professionals del Mètode Farray",
+        fr: "Groupe d'élèves effectuant des exercices Bum Bum Fessiers Extraordinaires à académie de Barcelone - tonification et renforcement avec techniques professionnelles Méthode Farray",
       },
     },
     cuerpoFit: {
@@ -1431,31 +1438,111 @@ export const IMAGE_ALT_TEXTS = {
       },
     },
     bodyConditioning: {
+      // Alt genérico (fallback) - optimizado para SEO
       alt: {
-        es: "Acondicionamiento Físico para Bailarines en Barcelona - Farray's Center",
-        en: "Body Conditioning for Dancers in Barcelona - Farray's Center",
-        ca: "Condicionament Físic per a Ballarins a Barcelona - Farray's Center",
-        fr: "Conditionnement Physique pour Danseurs à Barcelone - Farray's Center",
+        es: "Bailarinas ejecutando ejercicios de acondicionamiento físico y preparación corporal para danza en academia de Barcelona - Farray's Center",
+        en: "Dancers performing body conditioning and physical preparation exercises for dance at Barcelona academy - Farray's Center",
+        ca: "Ballarines executant exercicis de condicionament físic i preparació corporal per a dansa a acadèmia de Barcelona - Farray's Center",
+        fr: "Danseuses effectuant des exercices de conditionnement physique et préparation corporelle pour la danse à académie de Barcelone - Farray's Center",
       },
+      // Para cards en hub de clases de baile (/clases/baile-barcelona)
       cardHub: {
-        es: 'Acondicionamiento Físico Barcelona - Preparación integral para bailarines profesionales',
-        en: 'Body Conditioning Barcelona - Comprehensive preparation for professional dancers',
-        ca: 'Condicionament Físic Barcelona - Preparació integral per a ballarins professionals',
-        fr: 'Conditionnement Physique Barcelone - Préparation complète pour danseurs professionnels',
+        es: 'Acondicionamiento Físico Barcelona - Fortalecimiento muscular, core y resistencia para bailarines con el Método Farray',
+        en: 'Body Conditioning Barcelona - Muscle strengthening, core and endurance for dancers with the Farray Method',
+        ca: 'Condicionament Físic Barcelona - Enfortiment muscular, core i resistència per a ballarins amb el Mètode Farray',
+        fr: 'Conditionnement Physique Barcelone - Renforcement musculaire, core et endurance pour danseurs avec la Méthode Farray',
       },
+      // Para cards en categoría fitness (/clases/entrenamiento-bailarines-barcelona)
       cardFitness: {
-        es: 'Acondicionamiento Físico - Fortalecimiento muscular, resistencia y prevención de lesiones',
-        en: 'Body Conditioning - Muscle strengthening, endurance and injury prevention',
-        ca: 'Condicionament Físic - Enfortiment muscular, resistència i prevenció de lesions',
-        fr: 'Conditionnement Physique - Renforcement musculaire, endurance et prévention des blessures',
+        es: 'Acondicionamiento Físico - Preparación corporal integral con ejercicios de fuerza, estabilidad y prevención de lesiones para bailarines',
+        en: 'Body Conditioning - Comprehensive body preparation with strength, stability and injury prevention exercises for dancers',
+        ca: 'Condicionament Físic - Preparació corporal integral amb exercicis de força, estabilitat i prevenció de lesions per a ballarins',
+        fr: 'Conditionnement Physique - Préparation corporelle complète avec exercices de force, stabilité et prévention des blessures pour danseurs',
       },
+      // Para hero de la página de clase individual
       hero: {
-        es: "Bailarines realizando acondicionamiento físico en Barcelona - Preparación profesional en Farray's Center",
-        en: "Dancers performing body conditioning in Barcelona - Professional preparation at Farray's Center",
-        ca: "Ballarins realitzant condicionament físic a Barcelona - Preparació professional a Farray's Center",
-        fr: "Danseurs effectuant du conditionnement physique à Barcelone - Préparation professionnelle chez Farray's Center",
+        es: "Bailarinas realizando ejercicios de acondicionamiento físico y preparación corporal en Barcelona - Entrenamiento funcional para danza en Farray's Center",
+        en: "Dancers performing body conditioning and physical preparation exercises in Barcelona - Functional dance training at Farray's Center",
+        ca: "Ballarines realitzant exercicis de condicionament físic i preparació corporal a Barcelona - Entrenament funcional per a dansa a Farray's Center",
+        fr: "Danseuses effectuant des exercices de conditionnement physique et préparation corporelle à Barcelone - Entraînement fonctionnel pour la danse chez Farray's Center",
+      },
+      // Para sección "¿Qué es?" de la página de clase
+      whatIs: {
+        es: 'Grupo de bailarines entrenando fuerza, core y resistencia con ejercicios de acondicionamiento físico en academia de danza de Barcelona',
+        en: 'Group of dancers training strength, core and endurance with body conditioning exercises at Barcelona dance academy',
+        ca: 'Grup de ballarins entrenant força, core i resistència amb exercicis de condicionament físic a acadèmia de dansa de Barcelona',
+        fr: 'Groupe de danseurs entraînant force, core et endurance avec exercices de conditionnement physique à académie de danse de Barcelone',
+      },
+      // Para imagen OG (redes sociales)
+      og: {
+        es: "Clases de Acondicionamiento Físico para Bailarines en Barcelona - Preparación corporal profesional en Farray's Center",
+        en: "Body Conditioning Classes for Dancers in Barcelona - Professional body preparation at Farray's Center",
+        ca: "Classes de Condicionament Físic per a Ballarins a Barcelona - Preparació corporal professional a Farray's Center",
+        fr: "Cours de Conditionnement Physique pour Danseurs à Barcelone - Préparation corporelle professionnelle chez Farray's Center",
       },
     },
+    baileMananas: {
+      alt: {
+        es: "Clases de Baile por las Mañanas en Barcelona - Empieza el día bailando en Farray's Center",
+        en: "Morning Dance Classes in Barcelona - Start your day dancing at Farray's Center",
+        ca: "Classes de Ball al Matí a Barcelona - Comença el dia ballant a Farray's Center",
+        fr: "Cours de Danse le Matin à Barcelone - Commencez la journée en dansant chez Farray's Center",
+      },
+      cardHub: {
+        es: 'Clases de Baile Mañanas Barcelona - Salsa, contemporáneo, ballet y fitness antes del trabajo',
+        en: 'Morning Dance Classes Barcelona - Salsa, contemporary, ballet and fitness before work',
+        ca: 'Classes de Ball Matí Barcelona - Salsa, contemporani, ballet i fitness abans de treballar',
+        fr: 'Cours de Danse Matin Barcelone - Salsa, contemporain, ballet et fitness avant le travail',
+      },
+      hero: {
+        es: "Grupo de alumnos bailando en clase matinal de baile en Barcelona - Energía y vitalidad en Farray's Center",
+        en: "Group of students dancing in morning dance class in Barcelona - Energy and vitality at Farray's Center",
+        ca: "Grup d'alumnes ballant a classe matinal de ball a Barcelona - Energia i vitalitat a Farray's Center",
+        fr: "Groupe d'élèves dansant en cours de danse matinal à Barcelone - Énergie et vitalité chez Farray's Center",
+      },
+      whatIs: {
+        es: 'Alumnas practicando coreografía en clase de baile por las mañanas en academia de Barcelona - Variedad de estilos en horario matinal',
+        en: 'Students practicing choreography in morning dance class at Barcelona dance academy - Variety of styles in morning schedule',
+        ca: "Alumnes practicant coreografia a classe de ball al matí a acadèmia de Barcelona - Varietat d'estils en horari matinal",
+        fr: 'Élèves pratiquant une chorégraphie en cours de danse le matin à académie de Barcelone - Variété de styles en horaire matinal',
+      },
+      og: {
+        es: "Clases de Baile por las Mañanas en Barcelona - Más de 20 clases matinales semanales en Farray's Center",
+        en: "Morning Dance Classes in Barcelona - Over 20 weekly morning classes at Farray's Center",
+        ca: "Classes de Ball al Matí a Barcelona - Més de 20 classes matinals setmanals a Farray's Center",
+        fr: "Cours de Danse le Matin à Barcelone - Plus de 20 cours matinaux par semaine chez Farray's Center",
+      },
+    },
+  },
+
+  // ==========================================================================
+  // PAGES - Alt texts para páginas específicas
+  // ==========================================================================
+  pages: {
+    horarios: {
+      hero: {
+        es: "Alumnas en clase de baile grupal consultando horarios de clases de salsa, bachata y danzas urbanas en Barcelona - Farray's International Dance Center con más de 100 clases semanales",
+        en: "Students in group dance class checking salsa, bachata and urban dance class schedules in Barcelona - Farray's International Dance Center with over 100 weekly classes",
+        ca: "Alumnes a classe de ball grupal consultant horaris de classes de salsa, bachata i danses urbanes a Barcelona - Farray's International Dance Center amb més de 100 classes setmanals",
+        fr: "Élèves en cours de danse en groupe consultant les horaires de cours de salsa, bachata et danses urbaines à Barcelone - Farray's International Dance Center avec plus de 100 cours par semaine",
+      },
+      og: {
+        es: "Horarios de Clases de Baile en Barcelona 2025 - Farray's Center | Salsa, Bachata, Hip Hop, Danza Contemporánea",
+        en: "Dance Class Schedules in Barcelona 2025 - Farray's Center | Salsa, Bachata, Hip Hop, Contemporary Dance",
+        ca: "Horaris de Classes de Ball a Barcelona 2025 - Farray's Center | Salsa, Bachata, Hip Hop, Dansa Contemporània",
+        fr: "Horaires des Cours de Danse à Barcelone 2025 - Farray's Center | Salsa, Bachata, Hip Hop, Danse Contemporaine",
+      },
+    },
+  },
+
+  // ==========================================================================
+  // CATEGORY PAGES - Alt texts for category page heroes
+  // ==========================================================================
+  alt_hero_clases_danza: {
+    es: "Clases de baile en Barcelona - Estudiantes practicando diversos estilos de danza en el estudio de Farray's Center",
+    en: "Dance classes in Barcelona - Students practicing various dance styles at Farray's Center studio",
+    ca: "Classes de ball a Barcelona - Estudiants practicant diversos estils de dansa a l'estudi de Farray's Center",
+    fr: "Cours de danse à Barcelone - Étudiants pratiquant divers styles de danse au studio Farray's Center",
   },
 
   // ==========================================================================

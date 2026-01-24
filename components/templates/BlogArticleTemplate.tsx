@@ -76,6 +76,15 @@ const BlogArticleTemplate: React.FC<BlogArticleTemplateProps> = ({ config }) => 
     <>
       {/* ========== HEAD: Meta Tags ========== */}
       <Helmet>
+        {/* Preload LCP hero image for performance */}
+        <link
+          rel="preload"
+          as="image"
+          href={config.featuredImage.src}
+          imageSrcSet={config.featuredImage.srcSet}
+          imageSizes="100vw"
+        />
+
         {/* Basic Meta */}
         <title>{t(`${config.articleKey}_title`)} | Farray&apos;s Center Blog</title>
         <meta name="description" content={t(`${config.articleKey}_metaDescription`)} />

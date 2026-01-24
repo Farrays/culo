@@ -23,8 +23,8 @@ describe('SchemaMarkup', () => {
         addressCountry: 'ES',
       },
       geo: {
-        latitude: '41.3751',
-        longitude: '2.1482',
+        latitude: '41.380421',
+        longitude: '2.148014',
       },
       priceRange: '€€',
     };

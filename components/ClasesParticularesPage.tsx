@@ -163,8 +163,8 @@ const ClasesParticularesPage: React.FC = () => {
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    serviceType: 'Private Dance Instruction',
-    name: 'Clases Particulares de Baile en Barcelona',
+    serviceType: t('schema_particulares_serviceType'),
+    name: t('schema_particulares_serviceName'),
     description: t('particularesPage_description'),
     provider: {
       '@type': 'DanceSchool',
@@ -175,13 +175,13 @@ const ClasesParticularesPage: React.FC = () => {
       founder: {
         '@type': 'Person',
         name: 'Yunaisy Farray',
-        jobTitle: 'Founder & Lead Dance Instructor',
+        jobTitle: t('schema_founderJobTitle'),
       },
       address: {
         '@type': 'PostalAddress',
-        streetAddress: "Carrer d'Entença, 100, Local 1",
+        streetAddress: t('schema_streetAddress'),
         addressLocality: 'Barcelona',
-        addressRegion: 'Catalonia',
+        addressRegion: t('schema_addressRegion'),
         postalCode: '08015',
         addressCountry: 'ES',
       },
@@ -197,7 +197,7 @@ const ClasesParticularesPage: React.FC = () => {
       name: 'Barcelona',
       containedInPlace: {
         '@type': 'AdministrativeArea',
-        name: 'Catalonia',
+        name: t('schema_addressRegion'),
       },
     },
     availableChannel: {
@@ -206,7 +206,7 @@ const ClasesParticularesPage: React.FC = () => {
         '@type': 'Place',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: "Carrer d'Entença, 100",
+          streetAddress: t('schema_streetAddress'),
           addressLocality: 'Barcelona',
           postalCode: '08015',
         },
@@ -214,14 +214,14 @@ const ClasesParticularesPage: React.FC = () => {
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Private Dance Classes',
+      name: t('schema_particulares_catalogName'),
       itemListElement: [
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Profesor Regular - 1 Alumno',
-            description: 'Clases particulares con profesor cualificado',
+            name: t('schema_particulares_offerRegularName'),
+            description: t('schema_particulares_offerRegularDesc'),
           },
           priceSpecification: {
             '@type': 'PriceSpecification',
@@ -234,8 +234,8 @@ const ClasesParticularesPage: React.FC = () => {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Profesor Premium - 1 Alumno',
-            description: 'Clases particulares con profesor de élite',
+            name: t('schema_particulares_offerPremiumName'),
+            description: t('schema_particulares_offerPremiumDesc'),
           },
           priceSpecification: {
             '@type': 'PriceSpecification',
@@ -266,6 +266,58 @@ const ClasesParticularesPage: React.FC = () => {
     <>
       <Helmet>
         <title>{t('particularesPage_title')} | Farray&apos;s Center</title>
+        <meta name="description" content={t('particularesPage_description')} />
+        <link rel="canonical" href={`${baseUrl}/${locale}/clases-particulares-baile`} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={`${t('particularesPage_title')} | Farray's Center`} />
+        <meta property="og:description" content={t('particularesPage_description')} />
+        <meta property="og:url" content={`${baseUrl}/${locale}/clases-particulares-baile`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${baseUrl}/images/og-clasesParticulares.jpg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={t('clases_particulares_og_image_alt')} />
+        <meta
+          property="og:locale"
+          content={
+            locale === 'es'
+              ? 'es_ES'
+              : locale === 'ca'
+                ? 'ca_ES'
+                : locale === 'fr'
+                  ? 'fr_FR'
+                  : 'en_US'
+          }
+        />
+        <meta property="og:site_name" content="Farray's International Dance Center" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${t('particularesPage_title')} | Farray's Center`} />
+        <meta name="twitter:description" content={t('particularesPage_description')} />
+        <meta name="twitter:image" content={`${baseUrl}/images/og-clasesParticulares.jpg`} />
+
+        {/* hreflang alternates */}
+        <link rel="alternate" hrefLang="es" href={`${baseUrl}/es/clases-particulares-baile`} />
+        <link rel="alternate" hrefLang="ca" href={`${baseUrl}/ca/clases-particulares-baile`} />
+        <link rel="alternate" hrefLang="en" href={`${baseUrl}/en/clases-particulares-baile`} />
+        <link rel="alternate" hrefLang="fr" href={`${baseUrl}/fr/clases-particulares-baile`} />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`${baseUrl}/es/clases-particulares-baile`}
+        />
+
+        {/* Preload hero image for LCP optimization */}
+        <link
+          rel="preload"
+          as="image"
+          type="image/avif"
+          imageSrcSet="/images/clases-particulares/img/clase-particular-baile-barcelona_320.avif 320w, /images/clases-particulares/img/clase-particular-baile-barcelona_640.avif 640w, /images/clases-particulares/img/clase-particular-baile-barcelona_768.avif 768w, /images/clases-particulares/img/clase-particular-baile-barcelona_1024.avif 1024w, /images/clases-particulares/img/clase-particular-baile-barcelona_1440.avif 1440w, /images/clases-particulares/img/clase-particular-baile-barcelona_1920.avif 1920w"
+          imageSizes="100vw"
+        />
+
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -277,16 +329,33 @@ const ClasesParticularesPage: React.FC = () => {
           {/* Background - Enterprise pattern */}
           <div className="absolute inset-0 bg-black">
             {/* Hero background image with configurable opacity */}
-            <div className="absolute inset-0" style={{ opacity: 0.4 }}>
+            <div className="absolute inset-0" style={{ opacity: 0.5 }}>
               <picture>
-                <source srcSet="/images/optimized/mgs_3665.webp" type="image/webp" />
+                {/* AVIF - Best compression (Enterprise SEO-optimized filenames) */}
+                <source
+                  type="image/avif"
+                  srcSet="/images/clases-particulares/img/clase-particular-baile-barcelona_320.avif 320w, /images/clases-particulares/img/clase-particular-baile-barcelona_640.avif 640w, /images/clases-particulares/img/clase-particular-baile-barcelona_768.avif 768w, /images/clases-particulares/img/clase-particular-baile-barcelona_1024.avif 1024w, /images/clases-particulares/img/clase-particular-baile-barcelona_1440.avif 1440w, /images/clases-particulares/img/clase-particular-baile-barcelona_1920.avif 1920w"
+                  sizes="100vw"
+                />
+                {/* WebP - Universal modern browsers */}
+                <source
+                  type="image/webp"
+                  srcSet="/images/clases-particulares/img/clase-particular-baile-barcelona_320.webp 320w, /images/clases-particulares/img/clase-particular-baile-barcelona_640.webp 640w, /images/clases-particulares/img/clase-particular-baile-barcelona_768.webp 768w, /images/clases-particulares/img/clase-particular-baile-barcelona_1024.webp 1024w, /images/clases-particulares/img/clase-particular-baile-barcelona_1440.webp 1440w, /images/clases-particulares/img/clase-particular-baile-barcelona_1920.webp 1920w"
+                  sizes="100vw"
+                />
+                {/* JPG - Fallback */}
                 <img
-                  src="/images/optimized/mgs_3665.jpg"
+                  src="/images/clases-particulares/img/clase-particular-baile-barcelona_1440.jpg"
+                  srcSet="/images/clases-particulares/img/clase-particular-baile-barcelona_320.jpg 320w, /images/clases-particulares/img/clase-particular-baile-barcelona_640.jpg 640w, /images/clases-particulares/img/clase-particular-baile-barcelona_768.jpg 768w, /images/clases-particulares/img/clase-particular-baile-barcelona_1024.jpg 1024w, /images/clases-particulares/img/clase-particular-baile-barcelona_1440.jpg 1440w, /images/clases-particulares/img/clase-particular-baile-barcelona_1920.jpg 1920w"
+                  sizes="100vw"
                   alt={t('clases_particulares_hero_image_alt')}
                   className="w-full h-full object-cover"
-                  style={{ objectPosition: 'center 35%' }}
+                  style={{ objectPosition: 'center 30%' }}
                   loading="eager"
                   fetchPriority="high"
+                  decoding="async"
+                  width={1920}
+                  height={1280}
                 />
               </picture>
             </div>
@@ -534,8 +603,8 @@ const ClasesParticularesPage: React.FC = () => {
               <AnimateOnScroll>
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                   <OptimizedImage
-                    src="/images/clases-particulares/img/clase-particular-baile"
-                    alt="Clase particular de baile en Barcelona - Atención personalizada en Farray's Center"
+                    src="/images/clases-particulares/img/clase-particular-baile-barcelona"
+                    alt={t('clases_particulares_hero_image_alt')}
                     aspectRatio="4/3"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     objectFit="cover"

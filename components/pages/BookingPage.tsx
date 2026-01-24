@@ -38,26 +38,17 @@ const BookingPage: React.FC = () => {
     },
     mainEntity: {
       '@type': 'Service',
-      name:
-        locale === 'en'
-          ? 'Welcome Dance Class'
-          : locale === 'fr'
-            ? 'Cours de Bienvenue'
-            : 'Clase de Bienvenida',
-      description:
-        locale === 'en'
-          ? 'Free welcome class to try our dance styles'
-          : locale === 'fr'
-            ? 'Cours de bienvenue gratuit pour essayer nos styles de danse'
-            : 'Clase de bienvenida gratuita para probar nuestros estilos de baile',
+      name: t('schema_booking_serviceName'),
+      description: t('schema_booking_serviceDescription'),
       provider: {
         '@type': 'LocalBusiness',
         name: "Farray's Center Barcelona",
         address: {
           '@type': 'PostalAddress',
-          streetAddress: "Carrer d'Entença, 100",
+          streetAddress: t('schema_streetAddress'),
           addressLocality: 'Barcelona',
           postalCode: '08015',
+          addressRegion: t('schema_addressRegion'),
           addressCountry: 'ES',
         },
         telephone: '+34622247085',
@@ -81,13 +72,13 @@ const BookingPage: React.FC = () => {
         {
           '@type': 'ListItem',
           position: 1,
-          name: 'Home',
+          name: t('schema_nav_home'),
           item: `https://www.farrayscenter.com/${locale}`,
         },
         {
           '@type': 'ListItem',
           position: 2,
-          name: locale === 'en' ? 'Book' : locale === 'fr' ? 'Réservation' : 'Reservas',
+          name: t('booking_breadcrumb_current'),
           item: canonicalUrl,
         },
       ],

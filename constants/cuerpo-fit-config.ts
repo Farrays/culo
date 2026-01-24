@@ -54,11 +54,11 @@ export const CUERPO_FIT_PAGE_CONFIG: FullDanceClassConfig = {
     funPercent: 100,
     gradientColor: 'emerald', // Green for wellness/health
 
-    // Enterprise: Hero background image
+    // Enterprise: Hero background image (using new body-conditioning category image)
     heroImage: {
-      basePath: '/images/classes/cuerpo-fit/img/cuerpo-fit-entrenamiento-bailarines',
-      alt: 'Alumnas realizando ejercicios de acondicionamiento físico Cuerpo Fit en Barcelona - Método Farray con entrenamiento funcional para bailarines',
-      altKey: 'styleImages.cuerpoFit.hero',
+      basePath: '/images/categories/img/body-conditioning',
+      alt: "Bailarinas realizando ejercicios de acondicionamiento físico y preparación corporal en Barcelona - Entrenamiento funcional para danza en Farray's Center",
+      altKey: 'styleImages.bodyConditioning.hero',
       breakpoints: [320, 640, 768, 1024, 1440, 1920],
       formats: ['avif', 'webp', 'jpg'] as const,
     },
@@ -74,10 +74,11 @@ export const CUERPO_FIT_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
-    // Enterprise OptimizedImage config (AVIF/WebP/JPG, 6 breakpoints)
+    // Enterprise OptimizedImage config (AVIF/WebP/JPG, 6 breakpoints for high-res displays)
     optimizedImage: {
-      basePath: '/images/classes/cuerpo-fit/img/cuerpo-fit-entrenamiento-bailarines',
-      alt: 'Grupo de bailarines entrenando fuerza y resistencia en clase de Cuerpo Fit en academia de Barcelona',
+      basePath: '/images/categories/img/body-conditioning',
+      alt: 'Grupo de bailarines entrenando fuerza, core y resistencia con ejercicios de acondicionamiento físico en academia de danza de Barcelona',
+      altKey: 'styleImages.bodyConditioning.whatIs',
       breakpoints: [320, 640, 768, 1024, 1440, 1920],
       formats: ['avif', 'webp', 'jpg'],
     },
@@ -114,9 +115,7 @@ export const CUERPO_FIT_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false, // No video yet
-    videos: [],
-    placeholderCount: 0,
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -146,10 +145,9 @@ export const CUERPO_FIT_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches:
-      'Body conditioning, acondicionamiento físico para bailarines, fuerza funcional, flexibilidad activa, movilidad articular, core stability, prevención de lesiones',
-    prerequisites: 'Ninguno - clase abierta para todos los niveles',
-    lessons: '1 clase semanal',
+    teachesKey: 'schema_cuerpofit_teaches',
+    prerequisitesKey: 'schema_cuerpofit_prerequisites',
+    lessonsKey: 'schema_cuerpofit_lessons',
     duration: 'PT1H',
   },
 
@@ -157,9 +155,8 @@ export const CUERPO_FIT_PAGE_CONFIG: FullDanceClassConfig = {
   personSchemas: [
     {
       name: 'Cris Ag',
-      jobTitle: 'Instructora de Body Conditioning y Acondicionamiento Físico',
-      description:
-        'Especialista en acondicionamiento físico para bailarines con el Método Farray. Experta en fuerza funcional, flexibilidad activa y prevención de lesiones.',
+      jobTitleKey: 'schema_cuerpofit_cris_jobTitle',
+      descriptionKey: 'schema_cuerpofit_cris_description',
       knowsAbout: [
         'Body Conditioning',
         'Fuerza Funcional',

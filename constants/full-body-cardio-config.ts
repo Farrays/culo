@@ -120,9 +120,7 @@ export const FULL_BODY_CARDIO_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false, // No video yet - recommended to add later
-    videos: [],
-    placeholderCount: 0,
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -152,10 +150,9 @@ export const FULL_BODY_CARDIO_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches:
-      'Cuerpo-Fit, entrenamiento full body, cardio dance, tonificación integral, ejercicios funcionales, quema de calorías, fitness dance',
-    prerequisites: 'Ninguno - clase abierta para todos los niveles sin experiencia previa',
-    lessons: '1 clase semanal',
+    teachesKey: 'schema_fullbodycardio_teaches',
+    prerequisitesKey: 'schema_fullbodycardio_prerequisites',
+    lessonsKey: 'schema_fullbodycardio_lessons',
     duration: 'PT1H',
   },
 
@@ -163,9 +160,8 @@ export const FULL_BODY_CARDIO_PAGE_CONFIG: FullDanceClassConfig = {
   personSchemas: [
     {
       name: 'Cris Ag',
-      jobTitle: 'Instructora de Cuerpo-Fit y Cardio Dance',
-      description:
-        'Especialista en entrenamiento full body y cardio dance con el Método Farray. Experta en ejercicios funcionales con música para quemar calorías de forma divertida.',
+      jobTitleKey: 'schema_fullbodycardio_cris_jobTitle',
+      descriptionKey: 'schema_fullbodycardio_cris_description',
       knowsAbout: [
         'Full Body Training',
         'Cardio Dance',

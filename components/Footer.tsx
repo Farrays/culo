@@ -4,8 +4,8 @@ import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../hooks/useI18n';
 import { CookieSettingsButton } from './shared/CookieBanner';
 
-// Schema.org Organization for SEO
-const organizationSchema = {
+// Schema.org Organization for SEO - Created dynamically for i18n
+const createOrganizationSchema = (t: (key: string) => string) => ({
   '@context': 'https://schema.org',
   '@type': 'DanceSchool',
   '@id': 'https://www.farrayscenter.com/#organization',
@@ -14,16 +14,15 @@ const organizationSchema = {
   url: 'https://www.farrayscenter.com',
   logo: 'https://www.farrayscenter.com/images/logo/img/logo-fidc_512.png',
   image: 'https://www.farrayscenter.com/images/logo/img/logo-fidc_512.png',
-  description:
-    'Academia de baile de élite en Barcelona, dirigida por Yunaisy Farray. Clases de Dancehall, Twerk, Salsa, Bachata y más de 25 estilos.',
+  description: t('schema_org_description'),
   telephone: '+34622247085',
   email: 'info@farrayscenter.com',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: "Carrer d'Entença, 100, Local 1",
+    streetAddress: t('schema_streetAddress'),
     addressLocality: 'Barcelona',
     postalCode: '08015',
-    addressRegion: 'Cataluña',
+    addressRegion: t('schema_addressRegion'),
     addressCountry: 'ES',
   },
   geo: {
@@ -79,14 +78,14 @@ const organizationSchema = {
   founder: {
     '@type': 'Person',
     name: 'Yunaisy Farray',
-    jobTitle: 'Directora y Fundadora',
+    jobTitle: t('schema_founderJobTitle'),
   },
   memberOf: {
     '@type': 'Organization',
     name: 'CID-UNESCO',
     url: 'https://cid-world.org/',
   },
-};
+});
 
 const SocialIcon: React.FC<{ href: string; ariaLabel: string; children: React.ReactNode }> = ({
   href,
@@ -155,6 +154,7 @@ const GOOGLE_MAPS_URL =
 
 const Footer: React.FC = () => {
   const { t, locale } = useI18n();
+  const organizationSchema = createOrganizationSchema(t);
 
   return (
     <>

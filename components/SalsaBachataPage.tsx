@@ -9,8 +9,26 @@ import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 import CategoryPageTemplate, {
   type ValuePillarWithIcon,
   type RelatedClass,
+  type HeroImageConfig,
 } from './templates/CategoryPageTemplate';
 import { getStyleImage } from '../constants/style-images';
+
+// ============================================================================
+// HERO IMAGE CONFIGURATION (Enterprise Level - SEO/GEO Optimized)
+// ============================================================================
+const HERO_IMAGE_CONFIG: HeroImageConfig = {
+  basePath: '/images/categories/hero/clases-salsa-bachata-barcelona',
+  altKey: 'styleImages.salsaBachata.pageHero',
+  altFallback:
+    "Parejas bailando salsa cubana y bachata sensual en academia de Barcelona - Farray's Center",
+  breakpoints: [320, 640, 768, 1024, 1440, 1920],
+  formats: ['avif', 'webp', 'jpg'],
+  objectPosition: 'center center',
+  opacity: 100,
+};
+
+// OG Image path for social media (must match prerender.mjs naming: og-{pageName}.jpg)
+const OG_IMAGE_PATH = '/images/og-salsaBachata.jpg';
 
 // ============================================================================
 // PAGE-SPECIFIC DATA
@@ -63,6 +81,7 @@ const relatedClasses: RelatedClass[] = [
     url: '/clases/salsa-cubana-barcelona',
     imageSrc: getStyleImage('salsa_cubana').basePath,
     imageAlt: "Clase de Salsa Cubana en Barcelona - Farray's Dance Center",
+    breakpoints: getStyleImage('salsa_cubana').breakpoints,
   },
   {
     id: 'bachata',
@@ -71,6 +90,7 @@ const relatedClasses: RelatedClass[] = [
     url: '/clases/bachata-barcelona',
     imageSrc: getStyleImage('bachata_sensual').basePath,
     imageAlt: "Clase de Bachata en Barcelona - Farray's Dance Center",
+    breakpoints: getStyleImage('bachata_sensual').breakpoints,
   },
   {
     id: 'timba',
@@ -79,6 +99,7 @@ const relatedClasses: RelatedClass[] = [
     url: '/clases/timba-barcelona',
     imageSrc: getStyleImage('timba_cubana').basePath,
     imageAlt: "Clase de Timba Cubana en Barcelona - Farray's Dance Center",
+    breakpoints: getStyleImage('timba_cubana').breakpoints,
   },
 ];
 
@@ -301,7 +322,7 @@ const SalsaBachataPage: React.FC = () => {
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: "Estilos de Salsa y Bachata en Barcelona - Farray's Center",
+    name: t('schema_salsaBachata_itemListName'),
     itemListElement: salsaBachataCategory.allStyles.map((style, idx) => ({
       '@type': 'ListItem',
       position: idx + 1,
@@ -323,6 +344,33 @@ const SalsaBachataPage: React.FC = () => {
     })),
   };
 
+  // ImageObject Schema for SEO/GEO (helps AI search engines understand the image)
+  const imageObjectSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ImageObject',
+    contentUrl: `${baseUrl}${HERO_IMAGE_CONFIG.basePath}_1920.jpg`,
+    url: `${baseUrl}/${locale}/clases/salsa-bachata-barcelona`,
+    name: t('salsaBachataBarcelona_h1'),
+    description: t('salsaBachataBarcelona_description'),
+    width: 1920,
+    height: 1280,
+    encodingFormat: 'image/jpeg',
+    creator: {
+      '@type': 'Organization',
+      name: "Farray's International Dance Center",
+      url: baseUrl,
+    },
+    copyrightHolder: {
+      '@type': 'Organization',
+      name: "Farray's International Dance Center",
+    },
+    license: `${baseUrl}/aviso-legal`,
+  };
+
+  // Canonical URL for this page
+  const canonicalUrl = `${baseUrl}/${locale}/clases/salsa-bachata-barcelona`;
+  const ogImageUrl = `${baseUrl}${OG_IMAGE_PATH}`;
+
   // Schemas component
   const schemas = (
     <>
@@ -333,8 +381,8 @@ const SalsaBachataPage: React.FC = () => {
           name: "Farray's International Dance Center",
           url: baseUrl,
         }}
-        educationalLevel="Beginner to Advanced"
-        teaches="Salsa Cubana, Salsa on2, Bachata Sensual, Bachata Dominicana"
+        educationalLevel={t('schema_educationalLevelBeginnerAdvanced')}
+        teaches={t('schema_salsaBachata_teaches')}
         availableLanguage={SUPPORTED_LOCALES}
       />
       <LocalBusinessSchema
@@ -344,7 +392,7 @@ const SalsaBachataPage: React.FC = () => {
         telephone="+34622247085"
         email="info@farrayscenter.com"
         address={{
-          streetAddress: "Carrer d'Entença, 100, Local 1",
+          streetAddress: t('schema_streetAddress'),
           addressLocality: 'Barcelona',
           postalCode: '08015',
           addressCountry: 'ES',
@@ -356,9 +404,50 @@ const SalsaBachataPage: React.FC = () => {
         priceRange="€€"
       />
       <Helmet>
+        {/* Canonical URL */}
+        <link rel="canonical" href={canonicalUrl} />
+
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta
+          property="og:title"
+          content={`${t('salsaBachataBarcelona_title')} | Farray's Center`}
+        />
+        <meta property="og:description" content={t('salsaBachataBarcelona_description')} />
+        <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={t('salsaBachataBarcelona_h1')} />
+        <meta
+          property="og:locale"
+          content={
+            locale === 'es'
+              ? 'es_ES'
+              : locale === 'ca'
+                ? 'ca_ES'
+                : locale === 'fr'
+                  ? 'fr_FR'
+                  : 'en_US'
+          }
+        />
+        <meta property="og:site_name" content="Farray's International Dance Center" />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content={`${t('salsaBachataBarcelona_title')} | Farray's Center`}
+        />
+        <meta name="twitter:description" content={t('salsaBachataBarcelona_description')} />
+        <meta name="twitter:image" content={ogImageUrl} />
+        <meta name="twitter:image:alt" content={t('salsaBachataBarcelona_h1')} />
+
+        {/* Schema Markup */}
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(imageObjectSchema)}</script>
       </Helmet>
     </>
   );
@@ -370,6 +459,7 @@ const SalsaBachataPage: React.FC = () => {
       heroTitleKey="salsaBachataBarcelona_h1"
       heroSubtitleKey="salsaBachataBarcelona_h1_sub"
       heroIntroKey="salsaBachataBarcelona_intro"
+      heroImage={HERO_IMAGE_CONFIG}
       // Data
       styles={salsaBachataCategory.allStyles}
       valuePillars={valuePillars}

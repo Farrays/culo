@@ -1678,14 +1678,21 @@ export interface AuthorSchemaConfig {
 
 /**
  * Configuración de autores disponibles en Farray's
+ *
+ * NOTA: Para uso real, importar de constants/blog/author.ts:
+ * - AUTHOR_YUNAISY (principal)
+ * - AUTHOR_MAR_GUERRERO (invitada)
+ *
+ * Estos autores ya usan translation keys (roleKey, bioKey, etc.)
+ * para soporte i18n completo.
  */
 export const FARRAY_AUTHORS: Record<string, AuthorSchemaConfig> = {
   yunaisy: {
     id: 'yunaisy',
     name: 'Yunaisy Farray',
-    jobTitle: 'Directora y Profesora Principal de Baile',
-    description:
-      "Bailarina profesional cubana con más de 20 años de experiencia. Directora de Farray's Dance Center Barcelona. Especialista en salsa cubana, bachata y danzas latinas. Ha formado a cientos de alumnos en Barcelona.",
+    // IMPORTANTE: Usar keys de traducción, no texto hardcodeado
+    jobTitle: 'blog_authorRole', // Se traduce con t('blog_authorRole')
+    description: 'blog_authorBio', // Se traduce con t('blog_authorBio')
     image: '/images/team/yunaisy-farray.webp',
     sameAs: [
       'https://www.instagram.com/farraysdancecenter/',
@@ -1698,17 +1705,19 @@ export const FARRAY_AUTHORS: Record<string, AuthorSchemaConfig> = {
       type: 'DanceSchool',
     },
     credentials: [
-      'Certificación Internacional de Baile Latino',
-      'Formación en Danza Contemporánea - La Habana',
+      'CID-UNESCO',
+      'blog_credential_specialization',
+      'blog_credential_experience',
+      'blog_credential_founder',
     ],
     knowsAbout: ['Salsa Cubana', 'Bachata', 'Danzas Latinas', 'Coreografía', 'Pedagogía del Baile'],
   },
   mar: {
     id: 'mar',
-    name: 'Mar',
-    jobTitle: 'Instructor de Baile y Coreógrafo',
-    description:
-      "Instructor profesional en Farray's Dance Center Barcelona. Especialista en múltiples estilos de baile incluyendo salsa, bachata, heels y danzas urbanas. Experiencia en competiciones y shows.",
+    name: 'Mar Guerrero',
+    // IMPORTANTE: Usar keys de traducción, no texto hardcodeado
+    jobTitle: 'blog_authorRoleMar', // Se traduce con t('blog_authorRoleMar')
+    description: 'blog_authorBioMar', // Se traduce con t('blog_authorBioMar')
     image: '/images/team/mar.webp',
     sameAs: ['https://www.instagram.com/farraysdancecenter/'],
     worksFor: {

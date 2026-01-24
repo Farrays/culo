@@ -78,9 +78,7 @@ export const KIZOMBA_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false,
-    videos: [],
-    placeholderCount: 0,
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -109,9 +107,9 @@ export const KIZOMBA_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Kizomba, técnica de conexión en pareja, musicalidad africana, baile sensual',
-    prerequisites: 'Ninguno',
-    lessons: 'Próximamente',
+    teachesKey: 'schema_kizomba_teaches',
+    prerequisitesKey: 'schema_kizomba_prerequisites',
+    lessonsKey: 'schema_kizomba_lessons',
     duration: 'PT1H',
   },
 

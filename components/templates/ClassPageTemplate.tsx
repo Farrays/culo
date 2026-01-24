@@ -163,20 +163,22 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
         telephone="+34622247085"
         email="info@farrayscenter.com"
         address={{
-          streetAddress: 'Calle Entença 100',
+          streetAddress: t('schema_streetAddress'),
           addressLocality: 'Barcelona',
           postalCode: '08015',
           addressCountry: 'ES',
+          addressRegion: t('schema_addressRegion'),
         }}
         geo={{
-          latitude: '41.3751',
-          longitude: '2.1482',
+          latitude: '41.380421',
+          longitude: '2.148014',
         }}
         priceRange="€€"
         aggregateRating={{
           ratingValue: '5',
           reviewCount: '509',
         }}
+        reserveActionName={t('schema_reserveActionName')}
       />
 
       {/* Course Schema */}
@@ -187,12 +189,12 @@ const ClassPageTemplate: React.FC<ClassPageTemplateProps> = ({
           name: "Farray's International Dance Center",
           url: baseUrl,
         }}
-        educationalLevel="Beginner, Intermediate, Advanced"
+        educationalLevel={t('schema_educationalLevel')}
         teaches={
           courseSchemaConfig?.teaches || t(`${categoryKey}_courseTeaches`) || 'Dance techniques'
         }
-        coursePrerequisites={courseSchemaConfig?.prerequisites || 'Ninguno'}
-        numberOfLessons={courseSchemaConfig?.lessons || 'Clases semanales'}
+        coursePrerequisites={courseSchemaConfig?.prerequisites || t('schema_prerequisites')}
+        numberOfLessons={courseSchemaConfig?.lessons || t('schema_weeklyClasses')}
         timeRequired={courseSchemaConfig?.duration || 'PT1H'}
         availableLanguage={SUPPORTED_LOCALES}
       />

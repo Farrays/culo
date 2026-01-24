@@ -106,9 +106,9 @@ const mockConfig: FullDanceClassConfig = {
     enabled: false,
   },
   courseConfig: {
-    teaches: 'Test dance techniques',
-    prerequisites: 'None',
-    lessons: 'Weekly classes',
+    teachesKey: 'schema_test_teaches',
+    prerequisitesKey: 'schema_test_prerequisites',
+    lessonsKey: 'schema_test_lessons',
     duration: 'PT1H',
   },
 };

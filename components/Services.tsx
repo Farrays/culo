@@ -112,10 +112,16 @@ const Services: React.FC<ServicesProps> = ({ showAll = false }) => {
       <div className="container mx-auto px-6">
         <AnimateOnScroll>
           <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
+            <h2
+              id="services-title"
+              className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+              data-speakable="true"
+            >
               {t('servicesTitle')}
             </h2>
-            <p className="text-lg text-neutral/90">{t('servicesIntro')}</p>
+            <p id="services-intro" className="text-lg text-neutral/90" data-speakable="true">
+              {t('servicesIntro')}
+            </p>
           </div>
         </AnimateOnScroll>
         <div className="flex flex-wrap justify-center -m-4">
