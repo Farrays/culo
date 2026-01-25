@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { GlobeIcon, ChevronDownIcon, XMarkIcon } from '../../lib/icons';
 import type { Locale } from '../../types';
 import { SUPPORTED_LOCALES } from '../../types';
@@ -43,7 +43,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
   onOpenLeadModal,
   languageNames: _languageNames,
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
   const location = useLocation();
   const menuRef = useRef<HTMLDivElement>(null);
   const firstFocusableRef = useRef<HTMLAnchorElement>(null);

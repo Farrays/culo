@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { HUB_CATEGORIES, FEATURED_STYLES } from '../constants/danceClassesHub';
 import { getStyleImage, getContextualAltKey } from '../constants/style-images';
 import AnimateOnScroll from './AnimateOnScroll';
@@ -87,7 +87,7 @@ const categories: CategoryItem[] = HUB_CATEGORIES.map(cat => ({
 // ============================================================================
 
 const WhatToExpectSection: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <section aria-labelledby="what-to-expect-title" className="py-12 md:py-16 bg-black">
@@ -126,7 +126,7 @@ const WhatToExpectSection: React.FC = () => {
 };
 
 const WhichCategorySection: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   const tableRows = [
     { goal: 'couples', category: 'couples', why: 'couples' },
@@ -235,7 +235,8 @@ const WhichCategorySection: React.FC = () => {
 };
 
 const FeaturedStylesSection: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   return (
     <section aria-labelledby="featured-title" className="py-12 md:py-16 bg-primary-dark/10">
@@ -317,7 +318,8 @@ const FeaturedStylesSection: React.FC = () => {
 // ============================================================================
 
 const DanceClassesPage: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
 
   // FAQ data

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from './AnimateOnScroll';
 import { Link } from 'react-router-dom';
 
@@ -59,7 +59,7 @@ const FEATURED_TEACHERS: FeaturedTeacher[] = [
  * Uses picture element with avif/webp/jpg fallback and srcset for optimal loading
  */
 const TeacherImage: React.FC<{ basePath: string; name: string }> = ({ basePath, name }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <picture>
@@ -99,7 +99,8 @@ const StyleBadge: React.FC<{ style: string }> = ({ style }) => (
 );
 
 const Teachers: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   return (
     <section id="teachers" className="py-12 md:py-16 bg-black overflow-hidden">

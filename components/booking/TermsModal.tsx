@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useCallback } from 'react';
 import { XMarkIcon } from '../../lib/icons';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { Portal } from './components/Portal';
 import { registerModalOpen, registerModalClose } from './utils/modalHistoryManager';
 
@@ -16,7 +16,7 @@ interface TermsModalProps {
  * Includes browser history management for back button support
  */
 const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose, onAccept }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
   const modalRef = useRef<HTMLDivElement>(null);
   const historyPushedRef = useRef(false);
   const isRegisteredRef = useRef(false); // Track if we've registered this modal

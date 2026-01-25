@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import BookingWidgetV2 from '../booking/BookingWidgetV2';
 
 /**
@@ -16,7 +16,8 @@ import BookingWidgetV2 from '../booking/BookingWidgetV2';
  * - Multi-idioma (es, ca, en, fr)
  */
 const BookingPage: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   // SEO metadata
   const title = t('booking_meta_title');

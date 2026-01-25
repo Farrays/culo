@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from '../AnimateOnScroll';
 import { HOMEPAGE_V2_CONFIG } from '../../constants/homepage-v2-config';
 
@@ -67,7 +67,8 @@ const PersonaIcons: Record<string, React.FC<{ className?: string }>> = {
  * 4. "Quiero cuidarme bailando" - Adultos fitness
  */
 const StyleFinderSection: React.FC<StyleFinderSectionProps> = ({ config }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   return (
     <section className="py-12 md:py-16 bg-gradient-to-b from-gray-900 to-black">

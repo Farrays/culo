@@ -1,5 +1,5 @@
 import React from 'react';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import type { Testimonial } from '../types';
 import AnimateOnScroll from './AnimateOnScroll';
 
@@ -130,7 +130,8 @@ const StarIcon: React.FC<React.SVGProps<SVGSVGElement>> = props => (
 );
 
 const Testimonials: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   return (
     <section

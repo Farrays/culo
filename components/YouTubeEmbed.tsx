@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useCookieConsent } from '../hooks/useCookieConsent';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 
 interface YouTubeEmbedProps {
   videoId: string;
@@ -59,7 +59,7 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   uploadDate = new Date().toISOString().split('T')[0],
   duration = 'PT5M',
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
   const { preferences, setShowBanner } = useCookieConsent();
   const hasFunctionalConsent = preferences?.functional ?? false;
 

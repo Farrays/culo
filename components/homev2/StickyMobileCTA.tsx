@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import LeadCaptureModal from '../shared/LeadCaptureModal';
 
 /**
@@ -9,7 +9,7 @@ import LeadCaptureModal from '../shared/LeadCaptureModal';
  * que aparece después de hacer scroll pasando el hero.
  */
 const StickyMobileCTA: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
   const [isVisible, setIsVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 

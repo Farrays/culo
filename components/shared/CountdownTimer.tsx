@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 
 interface CountdownTimerProps {
   /** Target date for countdown */
@@ -39,7 +39,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
   showLabels = true,
   compact = false,
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   const calculateTimeLeft = useCallback((): TimeLeft => {
     const now = new Date().getTime();

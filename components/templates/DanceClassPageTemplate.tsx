@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { SUPPORTED_LOCALES } from '../../types';
 import Breadcrumb from '../shared/Breadcrumb';
 import { StarRating, CheckCircleIcon, ClockIcon, FlameIcon } from '../../lib/icons';
@@ -147,7 +147,8 @@ const DanceClassPageTemplate: React.FC<DanceClassPageConfig> = ({
   culturalHistory,
   customSections,
 }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
   const pageUrl = `${baseUrl}/${locale}/clases/${stylePath}`;
 

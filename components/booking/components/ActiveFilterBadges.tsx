@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { useI18n } from '../../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import type { FilterState } from '../types/booking';
 import {
   getStyleLabel,
@@ -61,7 +61,7 @@ export const ActiveFilterBadges: React.FC<ActiveFilterBadgesProps> = ({
   onClearFilter,
   onClearAll,
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   // Build array of active filters with their display labels
   const activeFilters: Array<{ key: keyof FilterState; label: string }> = [];

@@ -5,7 +5,7 @@
 
 import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { parsePhoneNumber, isValidPhoneNumber, CountryCode } from 'libphonenumber-js';
-import { useI18n } from '../../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import {
   Country,
   getSortedCountries,
@@ -65,7 +65,8 @@ export const CountryPhoneInput: React.FC<CountryPhoneInputProps> = ({
   id = 'phone',
   name = 'phone',
 }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState('');
   const [selectedCountry, setSelectedCountry] = useState<Country>(

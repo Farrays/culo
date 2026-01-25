@@ -29,7 +29,7 @@
 
 import React, { useEffect, useCallback, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 
 // ============================================================================
 // TYPES
@@ -68,7 +68,7 @@ const ImageLightbox: React.FC<ImageLightboxProps> = ({
   onClose,
   onNavigate,
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
   const overlayRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const [touchStart, setTouchStart] = useState<number | null>(null);

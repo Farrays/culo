@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from './AnimateOnScroll';
 
 interface Pillar {
@@ -31,7 +31,7 @@ const pillars: Pillar[] = [
 ];
 
 const MethodInfographic: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
   const [activePillar, setActivePillar] = useState<Pillar | null>(null);
 
   const handlePillarClick = (pillar: Pillar) => {

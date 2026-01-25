@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import type { ClassData } from '../types/booking';
 import { generateGoogleCalendarUrl, downloadICSFile } from '../../../utils/calendarExport';
 
@@ -84,7 +84,8 @@ interface BookingSuccessProps {
 }
 
 export const BookingSuccess: React.FC<BookingSuccessProps> = ({ selectedClass }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   // Studio address - single source of truth
   const STUDIO_ADDRESS =

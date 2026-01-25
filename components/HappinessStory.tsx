@@ -1,9 +1,9 @@
 import React from 'react';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from './AnimateOnScroll';
 
 const HappinessStory: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <section className="relative section-after-hero pb-12 md:pb-16 bg-black text-neutral">

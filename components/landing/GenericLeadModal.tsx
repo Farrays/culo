@@ -9,7 +9,7 @@
 
 import React, { useEffect, useState, useCallback, useRef, memo } from 'react';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { XMarkIcon, CheckIcon, CheckCircleIcon } from '../../lib/icons';
 import type { LandingConfig } from '../../constants/landing-template-config';
 import { trackLeadConversion, LEAD_VALUES, pushToDataLayer } from '../../utils/analytics';
@@ -50,7 +50,8 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
   onClose,
   config,
 }) {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
   const { translationPrefix: prefix, sourceId, estiloValue, discoveryValue } = config;
   const theme = config.theme.classes;
 

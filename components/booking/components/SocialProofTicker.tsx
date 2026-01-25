@@ -16,7 +16,7 @@
  */
 
 import React, { useState, useEffect, useCallback, memo, useRef } from 'react';
-import { useI18n } from '../../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { trackEvent } from '../../../utils/analytics';
 
 interface SocialProofBooking {
@@ -62,7 +62,7 @@ export interface SocialProofTickerProps {
 
 export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
   ({ limit = 5, className = '', onShow, onHide, onClick, scrollTargetId = 'booking-content' }) => {
-    const { t } = useI18n();
+    const { t } = useTranslation(['common']);
     const [bookings, setBookings] = useState<SocialProofBooking[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [hasBookings, setHasBookings] = useState(false);

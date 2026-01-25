@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef, memo } from 'react';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { useCookieConsent, CookiePreferences } from '../../hooks/useCookieConsent';
 import { initializeAnalytics } from '../../utils/analytics';
 import { XMarkIcon } from '../../lib/icons';
@@ -99,7 +99,8 @@ const SettingsModal: React.FC<SettingsModalProps> = memo(function SettingsModal(
   onSave,
   initialPreferences,
 }) {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
   const modalRef = useRef<HTMLDivElement>(null);
 
   const [preferences, setPreferences] = useState({
@@ -290,7 +291,8 @@ const SettingsModal: React.FC<SettingsModalProps> = memo(function SettingsModal(
 // ============================================================================
 
 const CookieBanner: React.FC = memo(function CookieBanner() {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
   const {
     preferences,
     hasConsented,
@@ -429,7 +431,7 @@ export default CookieBanner;
 // Export a button component to reopen cookie settings from Footer
 export const CookieSettingsButton: React.FC<{ className?: string }> = memo(
   function CookieSettingsButton({ className = '' }) {
-    const { t } = useI18n();
+    const { t } = useTranslation(['common']);
     const [showSettings, setShowSettings] = useState(false);
     const { preferences, savePreferences } = useCookieConsent();
 

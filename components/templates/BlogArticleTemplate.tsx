@@ -22,7 +22,7 @@
 
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { SUPPORTED_LOCALES } from '../../types';
 import type { BlogArticleConfig, AuthorConfig } from '../../constants/blog/types';
 import { AUTHOR_YUNAISY, AUTHOR_MAR_GUERRERO } from '../../constants/blog/author';
@@ -57,7 +57,8 @@ interface BlogArticleTemplateProps {
 }
 
 const BlogArticleTemplate: React.FC<BlogArticleTemplateProps> = ({ config }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
   const articleUrl = `${baseUrl}/${locale}/blog/${config.category}/${config.slug}`;
   const ogImage = config.ogImage || config.featuredImage.src;

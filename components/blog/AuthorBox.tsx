@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { AUTHOR_YUNAISY } from '../../constants/blog/author';
 import type { AuthorConfig } from '../../constants/blog/types';
 import AnimateOnScroll from '../AnimateOnScroll';
@@ -27,7 +27,8 @@ const AuthorBox: React.FC<AuthorBoxProps> = ({
   delay = 0,
   className = '',
 }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   // Render credentials (some are i18n keys, some are plain text like CID-UNESCO)
   const renderCredential = (credential: string) => {

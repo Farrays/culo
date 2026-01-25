@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { HOMEPAGE_V2_CONFIG } from '../../constants/homepage-v2-config';
 import LeadCaptureModal from '../shared/LeadCaptureModal';
 
@@ -19,7 +19,8 @@ interface HeroV2Props {
  * - Urgencia sutil
  */
 const HeroV2: React.FC<HeroV2Props> = ({ config }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (

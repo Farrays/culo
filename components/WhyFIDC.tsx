@@ -1,5 +1,5 @@
 import React from 'react';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import type { ValuePillar } from '../types';
 import AnimateOnScroll from './AnimateOnScroll';
 
@@ -178,7 +178,7 @@ const valuePillars: ValuePillar[] = [
 ];
 
 const WhyFIDC: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <section id="why-fidc" className="relative py-12 md:py-16 bg-black overflow-hidden">

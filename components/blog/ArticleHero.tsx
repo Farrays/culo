@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { getCategoryMeta } from '../../constants/blog/categories';
 import { DEFAULT_AUTHOR } from '../../constants/blog/author';
 import type { BlogArticleConfig } from '../../constants/blog/types';
@@ -22,7 +22,8 @@ interface ArticleHeroProps {
 }
 
 const ArticleHero: React.FC<ArticleHeroProps> = ({ config, className = '' }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
   const categoryMeta = getCategoryMeta(config.category);
   const author = DEFAULT_AUTHOR;
 

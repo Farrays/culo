@@ -1,7 +1,7 @@
 import { useState, memo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import HorariosScheduleSection from './HorariosScheduleSection';
@@ -242,7 +242,8 @@ FAQItem.displayName = 'FAQItem';
 // ============================================================================
 
 const HorariosPreciosPage: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
 
   // State for tabs and accordions

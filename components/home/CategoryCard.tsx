@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import type { CategoryCardProps } from '../../types/categories';
 
 // CategoryCard Component
@@ -10,7 +10,8 @@ import type { CategoryCardProps } from '../../types/categories';
 // Primary color: #B01E3C (rojo carmesí del logo)
 
 const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   // Get translations with fallback
   const title = t(`home_categories_${category.key}_title`) || category.key;

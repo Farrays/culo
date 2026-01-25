@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback, useRef, memo, useTransition } from 'react';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { XMarkIcon, CheckIcon, CheckCircleIcon } from '../../lib/icons';
 import { trackLeadConversion, LEAD_VALUES, pushToDataLayer } from '../../utils/analytics';
 
@@ -76,7 +76,8 @@ const LeadCaptureModal: React.FC<LeadCaptureModalProps> = memo(function LeadCapt
   onClose,
   defaultValues = {},
 }) {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   // Form state
   const [formData, setFormData] = useState<FormData>({

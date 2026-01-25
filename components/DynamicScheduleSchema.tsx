@@ -22,7 +22,7 @@
 import React, { memo, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import type { ScheduleSession } from '../hooks/useScheduleSessions';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 
 interface DynamicScheduleSchemaProps {
   /** Schedule sessions from Momence API */
@@ -67,7 +67,7 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
     streetAddress: streetAddressProp,
     addressRegion: addressRegionProp,
   }) {
-    const { t } = useI18n();
+    const { t } = useTranslation(['common']);
 
     // Use translated defaults if props not provided
     const streetAddress = streetAddressProp || t('schema_streetAddress');
@@ -354,7 +354,7 @@ export const VacationSchema: React.FC<{
   courseUrl,
   baseUrl = 'https://www.farrayscenter.com',
 }) {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
   const vacationDescription = t('schema_vacation_description').replace('{courseName}', courseName);
 
   const schema = {

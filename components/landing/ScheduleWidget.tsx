@@ -4,7 +4,7 @@
  * Diseñado para Jornada Puertas Abiertas y eventos similares
  */
 import { useState, useMemo, useCallback, memo } from 'react';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import {
   SCHEDULE_DATA,
   DAY_ORDER,
@@ -447,7 +447,7 @@ const ScheduleWidget: React.FC<ScheduleWidgetProps> = ({
   showFilters = true,
   translationPrefix = 'jpaLanding',
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   // Filter state
   const [selectedDay, setSelectedDay] = useState<FilterDay>('all');

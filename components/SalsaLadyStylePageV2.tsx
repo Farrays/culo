@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import Breadcrumb from './shared/Breadcrumb';
 import {
   SALSA_LADY_STYLE_TESTIMONIALS,
@@ -138,7 +138,8 @@ const PillarIcon: React.FC<{ type: string; className?: string }> = ({ type, clas
 };
 
 const SalsaLadyStylePageV2: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
   const pageUrl = `${baseUrl}/${locale}/clases/salsa-lady-style-barcelona`;
 

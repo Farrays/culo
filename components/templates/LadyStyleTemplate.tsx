@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import Breadcrumb from '../shared/Breadcrumb';
 import { ANIMATION_DELAYS } from '../../constants/shared';
 import AnimateOnScroll from '../AnimateOnScroll';
@@ -464,7 +464,8 @@ const HERO_GRADIENT_PRESETS = {
 } as const;
 
 const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
   const baseUrl = 'https://www.farrayscenter.com';
   const pageUrl = `${baseUrl}/${locale}/clases/${config.pageSlug}`;

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import {
   OrganizationSchema,
   WebSiteSchema,
@@ -102,7 +102,8 @@ const getPageFromPath = (path: string): string | null => {
 };
 
 const SEO: React.FC = () => {
-  const { locale, t, isLoading: _isLoading } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
   const location = useLocation();
 
   const page = getPageFromPath(location.pathname);

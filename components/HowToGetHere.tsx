@@ -1,5 +1,5 @@
 import React from 'react';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from './AnimateOnScroll';
 import type { TransportOption } from '../types';
 
@@ -12,7 +12,7 @@ const transportData: TransportOption[] = [
 ];
 
 const HowToGetHere: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <section id="how-to-get-here" className="py-12 md:py-16 bg-black overflow-hidden">

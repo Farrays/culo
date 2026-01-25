@@ -15,7 +15,7 @@
 import React, { useState, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import Breadcrumb from '../shared/Breadcrumb';
 import AnimateOnScroll from '../AnimateOnScroll';
 import AnimatedCounter from '../AnimatedCounter';
@@ -89,7 +89,7 @@ const BUSINESS_INFO = {
  * Skip to Content Link (WCAG 2.2)
  */
 const SkipLink: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <a
@@ -115,7 +115,8 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
   ctaPhone,
   ctaWhatsApp,
 }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   return (
     <section
@@ -212,7 +213,7 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
  * Trust Bar (E-E-A-T signals) - Home-style pills
  */
 const TrustBar: React.FC<TrustBarProps> = ({ signals }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   if (!signals || signals.length === 0) return null;
 
@@ -270,7 +271,7 @@ const ProblemSolution: React.FC<ProblemSolutionProps> = ({
   solutionTitleKey,
   solutionDescKey,
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <section className="py-12 md:py-16 bg-black" aria-labelledby="problem-solution-title">
@@ -308,7 +309,8 @@ const ProblemSolution: React.FC<ProblemSolutionProps> = ({
  * Features Grid
  */
 const FeaturesGrid: React.FC<FeaturesGridProps> = ({ titleKey, features, columns }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   const gridCols =
     columns === 2 ? 'lg:grid-cols-2' : columns === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3';
@@ -386,7 +388,7 @@ const FeaturesGrid: React.FC<FeaturesGridProps> = ({ titleKey, features, columns
  * Benefits Section (Why Choose Us)
  */
 const BenefitsSection: React.FC<BenefitsSectionProps> = ({ titleKey, benefits }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <section className="py-12 md:py-16 bg-black" aria-labelledby="benefits-title">
@@ -433,7 +435,7 @@ const BenefitsSection: React.FC<BenefitsSectionProps> = ({ titleKey, benefits })
  * Process Section (How It Works) - Premium with theme colors
  */
 const ProcessSection: React.FC<ProcessSectionProps> = ({ titleKey, steps }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <section className="py-16 md:py-24 bg-black" aria-labelledby="process-title">
@@ -486,7 +488,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ titleKey, steps }) => {
  * Ideal For Section (Target Audience) - With premium hover effects
  */
 const IdealForSection: React.FC<IdealForSectionProps> = ({ titleKey, items }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <section className="py-12 md:py-16 bg-primary-dark/5" aria-labelledby="ideal-for-title">
@@ -525,7 +527,8 @@ const IdealForSection: React.FC<IdealForSectionProps> = ({ titleKey, items }) =>
  * Packages Section
  */
 const PackagesSection: React.FC<PackagesSectionProps> = ({ titleKey, packages }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   return (
     <section className="py-12 md:py-16 bg-primary-dark/10" aria-labelledby="packages-title">
@@ -602,7 +605,7 @@ const PackagesSection: React.FC<PackagesSectionProps> = ({ titleKey, packages })
  * Stats Section
  */
 const StatsSection: React.FC<StatsSectionProps> = ({ stats }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <section className="py-8 md:py-12 bg-black" aria-label="Statistics">
@@ -635,7 +638,7 @@ const StatsSection: React.FC<StatsSectionProps> = ({ stats }) => {
  * Summary Table (LLM Citability)
  */
 const SummaryTable: React.FC<SummaryTableProps> = ({ titleKey, headers, rows }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <section className="py-12 md:py-16 bg-black" aria-labelledby="summary-table-title">
@@ -703,7 +706,8 @@ const SummaryTable: React.FC<SummaryTableProps> = ({ titleKey, headers, rows }) 
  * Related Services Section
  */
 const RelatedServicesSection: React.FC<RelatedServicesSectionProps> = ({ titleKey, services }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   return (
     <section className="py-12 md:py-16 bg-primary-dark/5" aria-labelledby="related-services-title">
@@ -763,7 +767,8 @@ const FinalCTA: React.FC<FinalCTAProps> = ({
   email,
   showContactInfo = true,
 }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   return (
     <section className="relative py-16 md:py-24 overflow-hidden" id="contact">
@@ -928,7 +933,8 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
   schemaOptions,
   customSchemas,
 }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
   // Build breadcrumb items

@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { useReviews, useGoogleBusinessStats } from '../../hooks/useReviews';
 import type { DanceCategory } from '../../constants/reviews-data';
 import AnimateOnScroll from '../AnimateOnScroll';
@@ -28,7 +28,7 @@ interface ReviewsSectionProps {
 
 // Google Badge (no external link)
 const GoogleRatingBadge: React.FC<{ className?: string }> = ({ className = '' }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
   const googleStats = useGoogleBusinessStats();
 
   return (
@@ -77,7 +77,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({
   id = 'reviews',
   selectedAuthors,
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
   const { reviews } = useReviews({
     category,
     teacher,

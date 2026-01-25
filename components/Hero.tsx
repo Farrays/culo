@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { useHLSVideo } from '../hooks/useHLSVideo';
 import { HERO_VIDEO_CONFIG } from '../constants/hero-video-config';
 import LeadCaptureModal from './shared/LeadCaptureModal';
 
 const Hero: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
   const { videoRef, containerRef, isVideoPlaying, shouldShowVideo } = useHLSVideo({

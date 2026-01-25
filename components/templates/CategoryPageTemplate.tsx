@@ -1,7 +1,7 @@
 import React, { ReactNode, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import Breadcrumb from '../shared/Breadcrumb';
 import AnimateOnScroll from '../AnimateOnScroll';
 import FAQSection from '../FAQSection';
@@ -140,7 +140,7 @@ const CategoryHero: React.FC<CategoryHeroProps> = ({
   onCtaClick,
   heroImage,
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   // Default hero image settings
   const heroBreakpoints = heroImage?.breakpoints || [320, 640, 768, 1024, 1440, 1920];
@@ -254,7 +254,8 @@ const StylesGrid: React.FC<StylesGridProps> = ({
   context,
   translationPrefix,
 }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
   const gridCols =
     columns === 2 ? 'lg:grid-cols-2' : columns === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3';
 
@@ -351,7 +352,8 @@ const CategoriesGrid: React.FC<CategoriesGridProps> = ({
   categoryImages,
   categoryObjectPositions,
 }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   return (
     <section
@@ -433,7 +435,7 @@ interface WhySectionProps {
 }
 
 const WhySection: React.FC<WhySectionProps> = ({ pillars }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <section aria-labelledby="why-title" className="py-12 md:py-16 bg-black">
@@ -478,7 +480,7 @@ const WhySection: React.FC<WhySectionProps> = ({ pillars }) => {
 };
 
 const StatsWidget: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <section className="py-8 md:py-12 bg-black">
@@ -537,7 +539,7 @@ const FinalCTA: React.FC<FinalCTAProps> = ({
   descriptionKey,
   onCtaClick,
 }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <section className="relative py-12 md:py-16 overflow-hidden">
@@ -589,7 +591,8 @@ interface RelatedClassesSectionProps {
 }
 
 const RelatedClassesSection: React.FC<RelatedClassesSectionProps> = ({ classes }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   return (
     <section

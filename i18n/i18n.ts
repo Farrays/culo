@@ -59,25 +59,14 @@ i18n
 
     // Namespace configuration
     defaultNS: 'common',
-    // Load all namespaces for backward compatibility with bridge hook
-    // TODO Phase 3: Re-enable lazy loading after migrating components to useTranslation
-    ns: [
-      'common',
-      'booking',
-      'schedule',
-      'calendar',
-      'home',
-      'classes',
-      'blog',
-      'faq',
-      'about',
-      'contact',
-      'pages',
-    ],
+    // Phase 3: LAZY LOADING ENABLED ✅
+    // CORE + EAGER namespaces loaded on init, rest loaded on-demand
+    ns: ['common', 'booking', 'schedule', 'calendar'], // ~100KB initial load
+    // LAZY namespaces (loaded on-demand): home, classes, blog, faq, about, contact, pages
 
     // React integration
     react: {
-      useSuspense: false, // Disable suspense to avoid loading issues with bridge hook
+      useSuspense: true, // Re-enabled for proper async loading
     },
 
     // Interpolation

@@ -1,4 +1,4 @@
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from '../AnimateOnScroll';
 
 /**
@@ -12,7 +12,7 @@ import AnimateOnScroll from '../AnimateOnScroll';
  * - SEO friendly (texto real en HTML semántico)
  */
 const ManifestoBanner: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <section

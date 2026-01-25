@@ -5,7 +5,7 @@
  */
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { useI18n } from '../../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import type { CountryCode } from 'libphonenumber-js';
 import type { ClassData, BookingFormData, Status } from '../types/booking';
 import { requiresHeelsConsent } from '../types/booking';
@@ -81,7 +81,8 @@ export const BookingFormStep: React.FC<BookingFormStepProps> = ({
   onSubmit,
   onTriggerHaptic,
 }) => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
   const isLoading = status === 'loading';
   const needsHeelsConsent = requiresHeelsConsent(selectedClass);
 

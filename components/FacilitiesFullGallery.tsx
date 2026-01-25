@@ -19,7 +19,7 @@ import React, { useState, useMemo, useCallback } from 'react';
 import OptimizedImage from './OptimizedImage';
 import ImageLightbox, { type LightboxImage } from './ImageLightbox';
 import AnimateOnScroll from './AnimateOnScroll';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 
 // ============================================================================
 // TYPES
@@ -220,7 +220,7 @@ const ALL_IMAGES: GalleryImage[] = [
 // ============================================================================
 
 const FacilitiesFullGallery: React.FC = () => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

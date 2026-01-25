@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import { CATEGORIES } from '../../constants/categories';
 import CategoryCard from './CategoryCard';
 import CategoriesSchemaMarkup from './CategoriesSchemaMarkup';
@@ -27,7 +27,8 @@ const CIDLogo: React.FC = () => (
 );
 
 const CategoriesSection: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   const sectionTitle = t('home_categories_section_title') || 'Encuentra tu estilo de baile';
   const sectionDescription =

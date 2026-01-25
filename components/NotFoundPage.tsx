@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 
 const NotFoundPage: React.FC = () => {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   // Popular pages for quick navigation
   const popularPages = [
@@ -13,8 +14,8 @@ const NotFoundPage: React.FC = () => {
     { label: t('notFound_urbanDances'), path: `/${locale}/clases/danzas-urbanas-barcelona` },
     { label: t('notFound_heels'), path: `/${locale}/clases/heels-barcelona` },
     { label: t('notFound_teachers'), path: `/${locale}/profesores-baile-barcelona` },
-    { label: t('notFound_schedule'), path: `/${locale}/horarios-clases-baile` },
-    { label: t('notFound_prices'), path: `/${locale}/precios-clases-baile` },
+    { label: t('notFound_schedule'), path: `/${locale}/horarios-clases-baile-barcelona` },
+    { label: t('notFound_prices'), path: `/${locale}/precios-clases-baile-barcelona` },
     { label: t('notFound_contact'), path: `/${locale}/contacto` },
   ];
 

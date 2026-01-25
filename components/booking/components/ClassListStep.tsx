@@ -11,7 +11,7 @@
  */
 
 import React, { useState, memo, useCallback, useRef, useEffect, useMemo } from 'react';
-import { useI18n } from '../../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import type { ClassData, FilterState, FilterOptions } from '../types/booking';
 import { FilterBar } from './FilterBar';
 import { ActiveFilterBadges } from './ActiveFilterBadges';
@@ -177,7 +177,7 @@ const DayHeader = memo(
       dateKey: string;
     }
   >(({ dayLabel, classCount, isFirst = false, dateKey }, ref) => {
-    const { t } = useI18n();
+    const { t } = useTranslation(['common']);
 
     return (
       <div
@@ -211,7 +211,7 @@ const WeekHeader: React.FC<{
   classCount: number;
   isFirst?: boolean;
 }> = memo(({ weekLabel, classCount, isFirst = false }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <div
@@ -243,7 +243,7 @@ const AcuityModeHeader: React.FC<{
   activeStyle?: string;
   totalClasses: number;
 }> = memo(({ activeStyle, totalClasses }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
 
   return (
     <div className="mb-4 p-4 rounded-xl bg-gradient-to-r from-primary-accent/10 via-primary-accent/5 to-transparent border border-primary-accent/20">
@@ -287,7 +287,7 @@ interface ClassInfoModalProps {
 }
 
 const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const historyPushedRef = useRef(false);
@@ -529,7 +529,8 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
     allWeeksClasses = [],
     allWeeksLoading = false,
   }) => {
-    const { t, locale } = useI18n();
+    const { t, i18n } = useTranslation(['common']);
+    const locale = i18n.language;
     const [infoModal, setInfoModal] = useState<ClassData | null>(null);
     const listContainerRef = useRef<HTMLDivElement>(null);
     const sentinelRef = useRef<HTMLDivElement>(null);

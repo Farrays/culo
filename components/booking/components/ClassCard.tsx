@@ -5,7 +5,7 @@
  */
 
 import React, { memo, useCallback, useState, useEffect, useRef } from 'react';
-import { useI18n } from '../../../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import type { ClassData } from '../types/booking';
 import { TEACHER_REGISTRY } from '../../../constants/teacher-registry';
 import { getTeacherImagePath } from '../../../constants/teacher-images';
@@ -214,7 +214,7 @@ const TeacherModal: React.FC<{
   teacherId: string;
   onClose: () => void;
 }> = ({ teacherId, onClose }) => {
-  const { t } = useI18n();
+  const { t } = useTranslation(['common']);
   const teacher = TEACHER_REGISTRY[teacherId];
   const historyPushedRef = useRef(false);
   const isRegisteredRef = useRef(false);
@@ -369,7 +369,8 @@ const TeacherModal: React.FC<{
 // Memoized ClassCard - V1 compact style
 export const ClassCard: React.FC<ClassCardProps> = memo(
   ({ classData, onSelect, onShowInfo, isSelected = false }) => {
-    const { t, locale } = useI18n();
+    const { t, i18n } = useTranslation(['common']);
+    const locale = i18n.language;
     const [copied, setCopied] = useState(false);
     const [teacherModalId, setTeacherModalId] = useState<string | null>(null);
 

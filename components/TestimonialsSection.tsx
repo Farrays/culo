@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { useI18n } from '../hooks/useI18n';
+import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from './AnimateOnScroll';
 import type { Testimonial } from '../types';
 
@@ -12,7 +12,8 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = memo(function Te
   titleKey,
   testimonials,
 }) {
-  const { t, locale } = useI18n();
+  const { t, i18n } = useTranslation(['common']);
+  const locale = i18n.language;
 
   return (
     <section className="relative py-10 md:py-14 bg-black overflow-hidden">
