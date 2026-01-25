@@ -1,23 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '../../../test/test-utils';
 import SocialProofSection from '../SocialProofSection';
-
-// Mock useI18n
-vi.mock('../../../hooks/useI18n', () => ({
-  useI18n: () => ({
-    t: (key: string) => {
-      const translations: Record<string, string> = {
-        social_proof_title: 'Por qué confiar en nosotros',
-        social_students: 'Estudiantes',
-        social_years: 'Años',
-        social_styles: 'Estilos',
-        social_sqm: 'Metros cuadrados',
-        social_reviews_link: 'reseñas en Google',
-      };
-      return translations[key] || key;
-    },
-  }),
-}));
 
 // Mock AnimateOnScroll
 vi.mock('../../AnimateOnScroll', () => ({

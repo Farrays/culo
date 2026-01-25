@@ -1,16 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { render, screen, fireEvent } from '../../../test/test-utils';
 import { ScheduleCard } from '../ScheduleCard';
 import type { ScheduleClass } from '../../../constants/schedule-data';
-
-// Mock useI18n
-vi.mock('../../../hooks/useI18n', () => ({
-  useI18n: () => ({
-    t: (key: string) => key,
-    locale: 'es',
-  }),
-}));
 
 // Mock schedule data constants
 vi.mock('../../../constants/horarios-page-data', () => ({
@@ -42,56 +33,52 @@ const mockScheduleClassWithLink: ScheduleClass = {
   link: '/clases/salsa-cubana-barcelona',
 };
 
-const renderWithRouter = (component: React.ReactElement) => {
-  return render(<BrowserRouter>{component}</BrowserRouter>);
-};
-
 describe('ScheduleCard', () => {
   beforeEach(() => {
     vi.clearAllMocks();
   });
 
   it('renders class name', () => {
-    renderWithRouter(<ScheduleCard scheduleClass={mockScheduleClass} />);
+    render(<ScheduleCard scheduleClass={mockScheduleClass} />);
     expect(screen.getByText('Salsa Cubana')).toBeInTheDocument();
   });
 
   it('renders class time', () => {
-    renderWithRouter(<ScheduleCard scheduleClass={mockScheduleClass} />);
+    render(<ScheduleCard scheduleClass={mockScheduleClass} />);
     expect(screen.getByText('19:00')).toBeInTheDocument();
   });
 
   it('renders teacher name', () => {
-    renderWithRouter(<ScheduleCard scheduleClass={mockScheduleClass} />);
+    render(<ScheduleCard scheduleClass={mockScheduleClass} />);
     expect(screen.getByText(/Yunaisy Farray/)).toBeInTheDocument();
   });
 
   it('renders level badge', () => {
-    renderWithRouter(<ScheduleCard scheduleClass={mockScheduleClass} />);
+    render(<ScheduleCard scheduleClass={mockScheduleClass} />);
     expect(screen.getByText('horariosV2_level_principiantes')).toBeInTheDocument();
   });
 
   it('renders with default props', () => {
-    renderWithRouter(<ScheduleCard scheduleClass={mockScheduleClass} />);
+    render(<ScheduleCard scheduleClass={mockScheduleClass} />);
     expect(screen.getByText('Salsa Cubana')).toBeInTheDocument();
   });
 
   it('renders without actions when showActions is false', () => {
-    renderWithRouter(<ScheduleCard scheduleClass={mockScheduleClass} showActions={false} />);
+    render(<ScheduleCard scheduleClass={mockScheduleClass} showActions={false} />);
     // Share button should not be present
     const shareButtons = screen.queryAllByRole('button');
     expect(shareButtons.length).toBeLessThanOrEqual(1);
   });
 
   it('renders link to class page when link is provided', () => {
-    renderWithRouter(<ScheduleCard scheduleClass={mockScheduleClassWithLink} />);
+    render(<ScheduleCard scheduleClass={mockScheduleClassWithLink} />);
     // Find link containing the class URL
     const link = screen.getByRole('link');
     expect(link).toHaveAttribute('href', '/es/clases/salsa-cubana-barcelona');
   });
 
   it('renders as div when no link is provided', () => {
-    const { container } = renderWithRouter(<ScheduleCard scheduleClass={mockScheduleClass} />);
+    const { container } = render(<ScheduleCard scheduleClass={mockScheduleClass} />);
     // Should not render as a link
     const links = screen.queryAllByRole('link');
     expect(links.length).toBe(0);
@@ -108,7 +95,7 @@ describe('ScheduleCard', () => {
       configurable: true,
     });
 
-    renderWithRouter(<ScheduleCard scheduleClass={mockScheduleClass} />);
+    render(<ScheduleCard scheduleClass={mockScheduleClass} />);
 
     // The share button uses translation key as text
     const shareButton = screen.getByRole('button', { name: /horariosV2_card_share/i });
@@ -134,7 +121,7 @@ describe('ScheduleCard', () => {
       configurable: true,
     });
 
-    renderWithRouter(<ScheduleCard scheduleClass={mockScheduleClass} />);
+    render(<ScheduleCard scheduleClass={mockScheduleClass} />);
 
     // The share button uses translation key as text
     const shareButton = screen.getByRole('button', { name: /horariosV2_card_share/i });
@@ -149,19 +136,19 @@ describe('ScheduleCard', () => {
       level: 'advanced',
     };
 
-    renderWithRouter(<ScheduleCard scheduleClass={advancedClass} />);
+    render(<ScheduleCard scheduleClass={advancedClass} />);
     expect(screen.getByText('horariosV2_level_avanzado')).toBeInTheDocument();
   });
 
   it('renders with custom color class', () => {
-    const { container } = renderWithRouter(
+    const { container } = render(
       <ScheduleCard scheduleClass={mockScheduleClass} colorClass="emerald-500" />
     );
     expect(container.firstChild).toBeInTheDocument();
   });
 
   it('renders day of the week', () => {
-    renderWithRouter(<ScheduleCard scheduleClass={mockScheduleClass} />);
+    render(<ScheduleCard scheduleClass={mockScheduleClass} />);
     // The day should be rendered somewhere
     expect(screen.getByText(/lunes/i)).toBeInTheDocument();
   });

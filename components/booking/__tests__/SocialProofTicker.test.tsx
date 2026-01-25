@@ -4,27 +4,8 @@
  */
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, fireEvent, act } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '../../../test/test-utils';
 import React from 'react';
-
-// Mock the entire component's dependencies before importing
-vi.mock('../../../hooks/useI18n', () => ({
-  useI18n: () => ({
-    t: (key: string) => {
-      const translations: Record<string, string> = {
-        socialProofBooked: '{name} booked {className}',
-        socialProofBookedShort: 'booked',
-        socialProofMinutesAgo: '{minutes} min ago',
-        socialProofJustNow: 'just now',
-        socialProofClickToBook: 'Click to book your class',
-        close: 'Close',
-      };
-      return translations[key] || key;
-    },
-    locale: 'en',
-  }),
-  I18nProvider: ({ children }: { children: React.ReactNode }) => <>{children}</>,
-}));
 
 vi.mock('../../../utils/analytics', () => ({
   trackEvent: vi.fn(),

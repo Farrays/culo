@@ -1,34 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../../test/test-utils';
 import PrepareClassSection, { type PrepareConfig } from '../PrepareClassSection';
-
-// Mock useI18n
-vi.mock('../../../hooks/useI18n', () => ({
-  useI18n: () => ({
-    t: (key: string) => {
-      const translations: Record<string, string> = {
-        prepareTitle: 'Prepárate para tu clase',
-        prepareSubtitle: 'Todo lo que necesitas saber',
-        testPrepareWhatToBring: '¿Qué traer?',
-        testPrepareBefore: 'Antes de llegar',
-        testPrepareAvoid: 'Evita',
-        testPrepareItem1: 'Ropa cómoda',
-        testPrepareItem2: 'Zapatillas limpias',
-        testPrepareItem3: 'Botella de agua',
-        testPrepareBeforeItem1: 'Come ligero',
-        testPrepareBeforeItem2: 'Llega 10 minutos antes',
-        testPrepareAvoidItem1: 'Ropa ajustada',
-        testPrepareAvoidItem2: 'Perfume fuerte',
-        testPrepareTeacherTip: 'Consejo del profesor',
-        testPrepareTeacherQuote: 'La práctica hace al maestro',
-      };
-      return translations[key] || key;
-    },
-    locale: 'es',
-    isLoading: false,
-    setLocale: vi.fn(),
-  }),
-}));
 
 // Mock AnimateOnScroll
 vi.mock('../../AnimateOnScroll', () => ({
@@ -87,7 +59,7 @@ describe('PrepareClassSection', () => {
 
   it('renders what to bring card header', () => {
     render(<PrepareClassSection {...defaultProps} />);
-    expect(screen.getByText('¿Qué traer?')).toBeInTheDocument();
+    expect(screen.getByText('Qué traer')).toBeInTheDocument();
   });
 
   it('renders before arriving card header', () => {
@@ -97,32 +69,32 @@ describe('PrepareClassSection', () => {
 
   it('renders avoid card header', () => {
     render(<PrepareClassSection {...defaultProps} />);
-    expect(screen.getByText('Evita')).toBeInTheDocument();
+    expect(screen.getByText('Qué evitar')).toBeInTheDocument();
   });
 
   it('renders correct number of what to bring items', () => {
     render(<PrepareClassSection {...defaultProps} />);
-    expect(screen.getByText('Ropa cómoda')).toBeInTheDocument();
-    expect(screen.getByText('Zapatillas limpias')).toBeInTheDocument();
-    expect(screen.getByText('Botella de agua')).toBeInTheDocument();
+    expect(screen.getByText('Elemento 1')).toBeInTheDocument();
+    expect(screen.getByText('Elemento 2')).toBeInTheDocument();
+    expect(screen.getByText('Elemento 3')).toBeInTheDocument();
   });
 
   it('renders correct number of before items', () => {
     render(<PrepareClassSection {...defaultProps} />);
-    expect(screen.getByText('Come ligero')).toBeInTheDocument();
-    expect(screen.getByText('Llega 10 minutos antes')).toBeInTheDocument();
+    expect(screen.getByText('Antes item 1')).toBeInTheDocument();
+    expect(screen.getByText('Antes item 2')).toBeInTheDocument();
   });
 
   it('renders correct number of avoid items', () => {
     render(<PrepareClassSection {...defaultProps} />);
-    expect(screen.getByText('Ropa ajustada')).toBeInTheDocument();
-    expect(screen.getByText('Perfume fuerte')).toBeInTheDocument();
+    expect(screen.getByText('Evitar item 1')).toBeInTheDocument();
+    expect(screen.getByText('Evitar item 2')).toBeInTheDocument();
   });
 
   it('renders teacher quote section', () => {
     render(<PrepareClassSection {...defaultProps} />);
-    expect(screen.getByText('Consejo del profesor')).toBeInTheDocument();
-    expect(screen.getByText('La práctica hace al maestro')).toBeInTheDocument();
+    expect(screen.getByText('teacherQuoteTitle')).toBeInTheDocument();
+    expect(screen.getByText('teacherQuoteText')).toBeInTheDocument();
   });
 
   it('renders teacher name and credential', () => {

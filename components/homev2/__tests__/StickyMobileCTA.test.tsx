@@ -1,20 +1,7 @@
 /* global Event */
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, fireEvent, act } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '../../../test/test-utils';
 import StickyMobileCTA from '../StickyMobileCTA';
-
-// Mock useI18n
-vi.mock('../../../hooks/useI18n', () => ({
-  useI18n: () => ({
-    t: (key: string) => {
-      const translations: Record<string, string> = {
-        sticky_cta: 'Reserva tu clase',
-        sticky_trust1: 'Sin compromiso',
-      };
-      return translations[key] || key;
-    },
-  }),
-}));
 
 // Mock LeadCaptureModal
 vi.mock('../../shared/LeadCaptureModal', () => ({

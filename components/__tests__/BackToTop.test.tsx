@@ -1,21 +1,6 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, fireEvent, act } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '../../test/test-utils';
 import BackToTop from '../BackToTop';
-
-// Mock useI18n
-vi.mock('../../hooks/useI18n', () => ({
-  useI18n: () => ({
-    t: (key: string) => {
-      const translations: Record<string, string> = {
-        backToTop: 'Volver arriba',
-      };
-      return translations[key] || key;
-    },
-    locale: 'es',
-    isLoading: false,
-    setLocale: vi.fn(),
-  }),
-}));
 
 // Mock debounce to execute immediately
 vi.mock('../../utils/debounce', () => ({

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '../../test/test-utils';
 import { HelmetProvider } from 'react-helmet-async';
 import YouTubeEmbed from '../YouTubeEmbed';
 
@@ -14,14 +14,6 @@ vi.mock('../../hooks/useCookieConsent', () => ({
     },
     setShowBanner: vi.fn(),
     isLoading: false,
-  }),
-}));
-
-// Mock useI18n
-vi.mock('../../hooks/useI18n', () => ({
-  useI18n: () => ({
-    t: (key: string) => key,
-    locale: 'es',
   }),
 }));
 

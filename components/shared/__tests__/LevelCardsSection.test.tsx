@@ -1,27 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen } from '../../../test/test-utils';
 import LevelCardsSection, { type LevelConfig } from '../LevelCardsSection';
-
-// Mock useI18n
-vi.mock('../../../hooks/useI18n', () => ({
-  useI18n: () => ({
-    t: (key: string) => {
-      const translations: Record<string, string> = {
-        testLevelsTitle: 'Nuestros Niveles',
-        testBeginnerTitle: 'Nivel Principiante',
-        testBeginnerDesc: 'Para quienes empiezan desde cero',
-        testIntermediateTitle: 'Nivel Intermedio',
-        testIntermediateDesc: 'Para quienes ya tienen experiencia',
-        testAdvancedTitle: 'Nivel Avanzado',
-        testAdvancedDesc: 'Para bailarines experimentados',
-      };
-      return translations[key] || key;
-    },
-    locale: 'es',
-    isLoading: false,
-    setLocale: vi.fn(),
-  }),
-}));
 
 // Mock AnimateOnScroll
 vi.mock('../../AnimateOnScroll', () => ({
@@ -63,22 +42,22 @@ describe('LevelCardsSection', () => {
   it('renders section title', () => {
     render(<LevelCardsSection titleKey="testLevelsTitle" levels={twoLevels} />);
 
-    expect(screen.getByText('Nuestros Niveles')).toBeInTheDocument();
+    expect(screen.getByText('testLevelsTitle')).toBeInTheDocument();
   });
 
   it('renders all level cards', () => {
     render(<LevelCardsSection titleKey="testLevelsTitle" levels={threeLevels} />);
 
-    expect(screen.getByText('Nivel Principiante')).toBeInTheDocument();
-    expect(screen.getByText('Nivel Intermedio')).toBeInTheDocument();
-    expect(screen.getByText('Nivel Avanzado')).toBeInTheDocument();
+    expect(screen.getByText('testBeginnerTitle')).toBeInTheDocument();
+    expect(screen.getByText('testIntermediateTitle')).toBeInTheDocument();
+    expect(screen.getByText('testAdvancedTitle')).toBeInTheDocument();
   });
 
   it('renders level descriptions', () => {
     render(<LevelCardsSection titleKey="testLevelsTitle" levels={twoLevels} />);
 
-    expect(screen.getByText('Para quienes empiezan desde cero')).toBeInTheDocument();
-    expect(screen.getByText('Para quienes ya tienen experiencia')).toBeInTheDocument();
+    expect(screen.getByText('testBeginnerDesc')).toBeInTheDocument();
+    expect(screen.getByText('testIntermediateDesc')).toBeInTheDocument();
   });
 
   it('renders duration for each level', () => {
