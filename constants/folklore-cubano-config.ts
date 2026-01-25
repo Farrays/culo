@@ -109,7 +109,7 @@ export const FOLKLORE_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false, // No video yet
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -147,9 +147,9 @@ export const FOLKLORE_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Folklore Cubano, danzas a los Orishas, Yoruba, rumba cubana, expresión corporal',
-    prerequisites: 'Ninguno',
-    lessons: '2 clases semanales',
+    teachesKey: 'schema_folklore_teaches',
+    prerequisitesKey: 'schema_folklore_prerequisites',
+    lessonsKey: 'schema_folklore_lessons',
     duration: 'PT1H',
   },
 
@@ -157,9 +157,8 @@ export const FOLKLORE_CUBANO_PAGE_CONFIG: FullDanceClassConfig = {
   personSchemas: [
     {
       name: 'Grechén Mendez',
-      jobTitle: 'Maestra Internacional de Danzas Afrocubanas',
-      description:
-        'Maestra internacional de referencia en danzas afrocubanas con más de 25 años de experiencia. Formada en el Instituto Superior de Arte de Cuba (ISA), especializada en Folklore Cubano, danzas a los Orishas y ritmos afrocubanos.',
+      jobTitleKey: 'schema_folklore_grechen_jobTitle',
+      descriptionKey: 'schema_folklore_grechen_description',
       knowsAbout: [
         'Folklore Cubano',
         'Danzas Yoruba',

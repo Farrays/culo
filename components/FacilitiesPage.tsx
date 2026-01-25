@@ -170,41 +170,41 @@ const FacilitiesPage: React.FC = () => {
     url: pageUrl,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Calle Entença 100',
+      streetAddress: t('schema_streetAddress'),
       addressLocality: 'Barcelona',
       postalCode: '08015',
       addressCountry: 'ES',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '41.3751',
-      longitude: '2.1482',
+      latitude: '41.380421',
+      longitude: '2.148014',
     },
     amenityFeature: [
       {
         '@type': 'LocationFeatureSpecification',
-        name: 'Dance Studios',
-        value: '4 professional dance studios',
+        name: t('schema_facilities_danceStudios'),
+        value: t('schema_facilities_danceStudiosValue'),
       },
       {
         '@type': 'LocationFeatureSpecification',
-        name: 'Total Area',
+        name: t('schema_facilities_totalArea'),
         value: '700+ m²',
       },
       {
         '@type': 'LocationFeatureSpecification',
-        name: 'Air Conditioning',
-        value: 'Yes',
+        name: t('schema_facilities_airConditioning'),
+        value: t('schema_facilities_airConditioningValue'),
       },
       {
         '@type': 'LocationFeatureSpecification',
-        name: 'WiFi',
-        value: 'Free WiFi available',
+        name: t('schema_facilities_wifi'),
+        value: t('schema_facilities_wifiValue'),
       },
       {
         '@type': 'LocationFeatureSpecification',
-        name: 'Locker Rooms',
-        value: '2 locker rooms with showers',
+        name: t('schema_facilities_lockerRooms'),
+        value: t('schema_facilities_lockerRoomsValue'),
       },
     ],
   };
@@ -225,37 +225,37 @@ const FacilitiesPage: React.FC = () => {
         '@type': 'ImageObject',
         contentUrl: `${baseUrl}/images/salas/img/salaa-1.jpg`,
         name: 'Sala Principal A - 120m²',
-        description: 'Professional dance studio with floating linoleum floor',
+        description: t('schema_facilities_imageDesc_salaA'),
       },
       {
         '@type': 'ImageObject',
         contentUrl: `${baseUrl}/images/salas/img/salab-1.jpg`,
         name: 'Sala Ballet B - 80m²',
-        description: 'Ballet studio with mirrors and barres',
+        description: t('schema_facilities_imageDesc_salaB'),
       },
       {
         '@type': 'ImageObject',
         contentUrl: `${baseUrl}/images/salas/img/salac-1.jpg`,
         name: 'Sala Latinos C - 80m²',
-        description: 'Latin dance studio with parquet floor',
+        description: t('schema_facilities_imageDesc_salaC'),
       },
       {
         '@type': 'ImageObject',
         contentUrl: `${baseUrl}/images/salas/img/salad-1.jpg`,
         name: 'Sala Fitness D - 40m²',
-        description: 'Fitness room for dancer conditioning',
+        description: t('schema_facilities_imageDesc_salaD'),
       },
       {
         '@type': 'ImageObject',
         contentUrl: `${baseUrl}/images/salas/img/bar1.jpg`,
         name: 'Bar & Social Area',
-        description: 'Social space for relaxation and community',
+        description: t('schema_facilities_imageDesc_bar'),
       },
       {
         '@type': 'ImageObject',
         contentUrl: `${baseUrl}/images/salas/img/recepción1.jpg`,
         name: 'Reception',
-        description: "Welcome area at Farray's Center",
+        description: t('schema_facilities_imageDesc_reception'),
       },
     ],
   };
@@ -305,14 +305,15 @@ const FacilitiesPage: React.FC = () => {
         telephone="+34622247085"
         email="info@farrayscenter.com"
         address={{
-          streetAddress: 'Calle Entença 100',
+          streetAddress: t('schema_streetAddress'),
           addressLocality: 'Barcelona',
           postalCode: '08015',
           addressCountry: 'ES',
+          addressRegion: t('schema_addressRegion'),
         }}
         geo={{
-          latitude: '41.3751',
-          longitude: '2.1482',
+          latitude: '41.380421',
+          longitude: '2.148014',
         }}
         priceRange="€€"
         aggregateRating={{

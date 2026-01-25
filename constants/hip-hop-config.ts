@@ -99,7 +99,7 @@ export const HIPHOP_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false,
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -129,18 +129,17 @@ export const HIPHOP_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Hip Hop, Breaking, Locking, Popping, Freestyle, Urban Dance',
-    prerequisites: 'Ninguno - clases para todos los niveles',
-    lessons: '1 clase semanal',
+    teachesKey: 'schema_hiphop_teaches',
+    prerequisitesKey: 'schema_hiphop_prerequisites',
+    lessonsKey: 'schema_hiphop_lessons',
     duration: 'PT1H',
   },
 
   personSchemas: [
     {
       name: 'Marcos Martínez',
-      jobTitle: 'Instructor de Hip Hop',
-      description:
-        'Juez internacional de Hip Hop con amplia experiencia en competiciones y enseñanza.',
+      jobTitleKey: 'schema_hiphop_marcos_jobTitle',
+      descriptionKey: 'schema_hiphop_marcos_description',
       knowsAbout: ['Hip Hop', 'Breaking', 'Locking', 'Popping', 'Urban Dance'],
     },
   ],

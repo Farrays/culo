@@ -118,6 +118,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({
             <h2
               id="reviews-title"
               className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+              data-speakable="true"
             >
               {sectionTitle}
             </h2>

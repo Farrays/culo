@@ -30,109 +30,102 @@ interface Room {
   images: RoomImage[];
 }
 
-const rooms: Room[] = [
+// Enterprise i18n: Room data factory function
+const getRooms = (t: (key: string) => string): Room[] => [
   {
     id: 'A',
-    name: 'Sala A',
-    size: '40 m²',
+    name: t('roomRental_roomA_name'),
+    size: t('roomRental_roomA_size'),
     sizeM2: 40,
-    description:
-      'Sala diáfana con suelo de madera flotante. Ideal para ensayos pequeños, clases en grupos reducidos, coaching individual o castings.',
+    description: t('roomRental_roomA_desc'),
     weekdayPrices: [
-      { type: 'Compañías / ensayos', price: '14 €/hora', priceValue: 14 },
-      { type: 'Clases', price: '22 €/hora', priceValue: 22 },
+      {
+        type: t('roomRental_roomA_price1_type'),
+        price: t('roomRental_roomA_price1'),
+        priceValue: 14,
+      },
+      {
+        type: t('roomRental_roomA_price2_type'),
+        price: t('roomRental_roomA_price2'),
+        priceValue: 22,
+      },
     ],
     images: [
-      {
-        basePath: '/images/salas/img/salaa-1',
-        alt: 'Sala A - Vista principal del espacio de 40m² con suelo de madera flotante',
-      },
-      {
-        basePath: '/images/salas/img/salaa-2',
-        alt: 'Sala A - Vista lateral con espejos y equipo de sonido',
-      },
-      {
-        basePath: '/images/salas/img/salaa-3',
-        alt: 'Sala A - Detalle del suelo de madera profesional para danza',
-      },
+      { basePath: '/images/salas/img/salaa-1', alt: t('roomRental_roomA_img1_alt') },
+      { basePath: '/images/salas/img/salaa-2', alt: t('roomRental_roomA_img2_alt') },
+      { basePath: '/images/salas/img/salaa-3', alt: t('roomRental_roomA_img3_alt') },
     ],
   },
   {
     id: 'B',
-    name: 'Sala B',
-    size: '120 m²',
+    name: t('roomRental_roomB_name'),
+    size: t('roomRental_roomB_size'),
     sizeM2: 120,
-    description:
-      'Nuestra sala más grande. Suelo de linóleo profesional instalado sobre madera flotante con aproximadamente un 60% de amortiguación. Perfecta para clases grandes, eventos, workshops, rodajes y entrenamientos de compañías.',
+    description: t('roomRental_roomB_desc'),
     weekdayPrices: [
-      { type: 'Compañías / ensayos', price: '40 €/hora', priceValue: 40 },
-      { type: 'Clases / eventos', price: '50 €/hora', priceValue: 50 },
+      {
+        type: t('roomRental_roomB_price1_type'),
+        price: t('roomRental_roomB_price1'),
+        priceValue: 40,
+      },
+      {
+        type: t('roomRental_roomB_price2_type'),
+        price: t('roomRental_roomB_price2'),
+        priceValue: 50,
+      },
     ],
     images: [
-      {
-        basePath: '/images/salas/img/salab-1',
-        alt: 'Sala B - Amplio espacio de 120m² con suelo de linóleo profesional',
-      },
-      {
-        basePath: '/images/salas/img/salab-2',
-        alt: 'Sala B - Vista panorámica ideal para eventos y workshops',
-      },
-      {
-        basePath: '/images/salas/img/salab-3',
-        alt: 'Sala B - Detalle de la iluminación y equipamiento profesional',
-      },
+      { basePath: '/images/salas/img/salab-1', alt: t('roomRental_roomB_img1_alt') },
+      { basePath: '/images/salas/img/salab-2', alt: t('roomRental_roomB_img2_alt') },
+      { basePath: '/images/salas/img/salab-3', alt: t('roomRental_roomB_img3_alt') },
     ],
   },
   {
     id: 'C',
-    name: 'Sala C',
-    size: '80 m²',
+    name: t('roomRental_roomC_name'),
+    size: t('roomRental_roomC_size'),
     sizeM2: 80,
-    description:
-      'Sala diáfana con suelo de parquet especial para baile. Perfecta para grupos medianos, ensayos, cursos y entrenamientos técnicos.',
+    description: t('roomRental_roomC_desc'),
     weekdayPrices: [
-      { type: 'Compañías / ensayos', price: '25 €/hora', priceValue: 25 },
-      { type: 'Clases / eventos', price: '35 €/hora', priceValue: 35 },
+      {
+        type: t('roomRental_roomC_price1_type'),
+        price: t('roomRental_roomC_price1'),
+        priceValue: 25,
+      },
+      {
+        type: t('roomRental_roomC_price2_type'),
+        price: t('roomRental_roomC_price2'),
+        priceValue: 35,
+      },
     ],
     images: [
-      {
-        basePath: '/images/salas/img/salac-1',
-        alt: 'Sala C - Espacio de 80m² con parquet especial para baile',
-      },
-      {
-        basePath: '/images/salas/img/salac-2',
-        alt: 'Sala C - Vista del área de ensayo con espejos de pared completa',
-      },
-      {
-        basePath: '/images/salas/img/salac-3',
-        alt: 'Sala C - Detalle del equipamiento de audio y ambiente',
-      },
+      { basePath: '/images/salas/img/salac-1', alt: t('roomRental_roomC_img1_alt') },
+      { basePath: '/images/salas/img/salac-2', alt: t('roomRental_roomC_img2_alt') },
+      { basePath: '/images/salas/img/salac-3', alt: t('roomRental_roomC_img3_alt') },
     ],
   },
   {
     id: 'D',
-    name: 'Sala D',
-    size: '80 m²',
+    name: t('roomRental_roomD_name'),
+    size: t('roomRental_roomD_size'),
     sizeM2: 80,
-    description:
-      'Sala diáfana con suelo de linóleo profesional. Muy versátil para danzas urbanas, contemporáneo, ensayos, castings, shootings y pequeños eventos.',
+    description: t('roomRental_roomD_desc'),
     weekdayPrices: [
-      { type: 'Compañías / ensayos', price: '25 €/hora', priceValue: 25 },
-      { type: 'Clases / eventos', price: '35 €/hora', priceValue: 35 },
+      {
+        type: t('roomRental_roomD_price1_type'),
+        price: t('roomRental_roomD_price1'),
+        priceValue: 25,
+      },
+      {
+        type: t('roomRental_roomD_price2_type'),
+        price: t('roomRental_roomD_price2'),
+        priceValue: 35,
+      },
     ],
     images: [
-      {
-        basePath: '/images/salas/img/salad-1',
-        alt: 'Sala D - Espacio versátil de 80m² con linóleo profesional',
-      },
-      {
-        basePath: '/images/salas/img/salad-2',
-        alt: 'Sala D - Vista ideal para danzas urbanas y contemporáneo',
-      },
-      {
-        basePath: '/images/salas/img/salad-3',
-        alt: 'Sala D - Detalle del espacio para castings y shootings',
-      },
+      { basePath: '/images/salas/img/salad-1', alt: t('roomRental_roomD_img1_alt') },
+      { basePath: '/images/salas/img/salad-2', alt: t('roomRental_roomD_img2_alt') },
+      { basePath: '/images/salas/img/salad-3', alt: t('roomRental_roomD_img3_alt') },
     ],
   },
 ];
@@ -390,6 +383,9 @@ const AlquilerSalasPage: React.FC = () => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
 
+  // Enterprise i18n: Get translated room data
+  const rooms = getRooms(t);
+
   // Target audience - use translations
   const targetAudienceKeys = [
     'roomRental_forWhom_item1',
@@ -474,40 +470,62 @@ const AlquilerSalasPage: React.FC = () => {
     ],
   };
 
-  // Schema Markup - Service with Offers for each room
+  // Schema Markup - Service with Offers for each room (Enterprise i18n)
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': `${baseUrl}/${locale}/alquiler-salas-baile-barcelona#service`,
-    name: 'Alquiler de Salas de Baile',
+    name: t('roomRental_schema_serviceName'),
     description: t('roomRental_metaDescription'),
+    image: `${baseUrl}/images/alquiler-salas/og.jpg`,
     provider: {
       '@type': 'LocalBusiness',
       '@id': `${baseUrl}/#organization`,
-      name: "Farray's Center",
+      name: "Farray's International Dance Center",
       image: `${baseUrl}/images/logo/farrays-logo.png`,
       address: {
         '@type': 'PostalAddress',
-        streetAddress: "Carrer d'Entença, 100",
+        streetAddress: t('schema_streetAddress'),
         addressLocality: 'Barcelona',
         postalCode: '08015',
+        addressRegion: t('schema_addressRegion'),
         addressCountry: 'ES',
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 41.3851,
-        longitude: 2.1489,
+        latitude: 41.380421,
+        longitude: 2.148014,
       },
       telephone: '+34622247085',
+      email: 'info@farrayscenter.com',
+      url: baseUrl,
       priceRange: '€€',
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+          opens: '10:00',
+          closes: '22:00',
+        },
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Saturday'],
+          opens: '10:00',
+          closes: '14:00',
+        },
+      ],
     },
     areaServed: {
       '@type': 'City',
       name: 'Barcelona',
+      containedInPlace: {
+        '@type': 'AdministrativeArea',
+        name: t('schema_addressRegion'),
+      },
     },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Salas de Baile Disponibles',
+      name: t('roomRental_schema_catalogName'),
       itemListElement: rooms.map((room, index) => ({
         '@type': 'Offer',
         '@id': `${baseUrl}/${locale}/alquiler-salas-baile-barcelona#sala-${room.id}`,
@@ -518,7 +536,7 @@ const AlquilerSalasPage: React.FC = () => {
           '@type': 'PriceSpecification',
           price: price.priceValue,
           priceCurrency: 'EUR',
-          unitText: 'hora',
+          unitText: t('roomRental_schema_unitHour'),
           name: price.type,
         })),
         availability: 'https://schema.org/InStock',
@@ -527,11 +545,11 @@ const AlquilerSalasPage: React.FC = () => {
           '@type': 'Product',
           name: room.name,
           description: room.description,
-          category: 'Sala de ensayo para danza',
+          category: t('roomRental_schema_categoryDanceRoom'),
           additionalProperty: [
             {
               '@type': 'PropertyValue',
-              name: 'Superficie',
+              name: t('roomRental_schema_propertySurface'),
               value: room.sizeM2,
               unitCode: 'MTK',
             },
@@ -542,12 +560,12 @@ const AlquilerSalasPage: React.FC = () => {
     },
   };
 
-  // Schema Markup - ImageGallery for SEO
+  // Schema Markup - ImageGallery for SEO (Enterprise i18n)
   const imageGallerySchema = {
     '@context': 'https://schema.org',
     '@type': 'ImageGallery',
-    name: "Galería de Salas de Baile - Farray's Center",
-    description: 'Fotos de nuestras 4 salas de baile profesionales en Barcelona',
+    name: t('roomRental_schema_galleryName'),
+    description: t('roomRental_schema_galleryDesc'),
     image: rooms.flatMap(room =>
       room.images.map(img => ({
         '@type': 'ImageObject',
@@ -560,6 +578,54 @@ const AlquilerSalasPage: React.FC = () => {
         encodingFormat: 'image/jpeg',
       }))
     ),
+  };
+
+  // Schema Markup - FAQPage for GEO/AIEO Optimization
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: t('roomRental_faq1_q'),
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: t('roomRental_faq1_a'),
+        },
+      },
+      {
+        '@type': 'Question',
+        name: t('roomRental_faq2_q'),
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: t('roomRental_faq2_a'),
+        },
+      },
+      {
+        '@type': 'Question',
+        name: t('roomRental_faq3_q'),
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: t('roomRental_faq3_a'),
+        },
+      },
+      {
+        '@type': 'Question',
+        name: t('roomRental_faq4_q'),
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: t('roomRental_faq4_a'),
+        },
+      },
+      {
+        '@type': 'Question',
+        name: t('roomRental_faq5_q'),
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: t('roomRental_faq5_a'),
+        },
+      },
+    ],
   };
 
   // Breadcrumb items for visual navigation with microdata
@@ -582,18 +648,72 @@ const AlquilerSalasPage: React.FC = () => {
           name="keywords"
           content="alquiler salas baile Barcelona, alquiler salas danza Barcelona, alquiler espacios baile Barcelona, salas ensayo Barcelona, alquiler sala baile"
         />
-        {/* LCP Optimization - Preload first room image */}
+
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content={t('roomRental_pageTitle')} />
+        <meta property="og:description" content={t('roomRental_metaDescription')} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${baseUrl}/${locale}/alquiler-salas-baile-barcelona`} />
+        <meta property="og:image" content={`${baseUrl}/images/alquiler-salas/og.jpg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={t('roomRental_hero_image_alt')} />
+        <meta
+          property="og:locale"
+          content={
+            locale === 'es'
+              ? 'es_ES'
+              : locale === 'ca'
+                ? 'ca_ES'
+                : locale === 'fr'
+                  ? 'fr_FR'
+                  : 'en_US'
+          }
+        />
+        <meta property="og:site_name" content="Farray's International Dance Center" />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t('roomRental_pageTitle')} />
+        <meta name="twitter:description" content={t('roomRental_metaDescription')} />
+        <meta name="twitter:image" content={`${baseUrl}/images/alquiler-salas/og.jpg`} />
+        <meta name="twitter:image:alt" content={t('roomRental_hero_image_alt')} />
+
+        {/* Robots Directive - Enterprise Crawling */}
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href={`${baseUrl}/${locale}/alquiler-salas-baile-barcelona`} />
+
+        {/* Hreflang - International SEO */}
+        <link rel="alternate" hrefLang="es" href={`${baseUrl}/es/alquiler-salas-baile-barcelona`} />
+        <link rel="alternate" hrefLang="ca" href={`${baseUrl}/ca/alquiler-salas-baile-barcelona`} />
+        <link rel="alternate" hrefLang="en" href={`${baseUrl}/en/alquiler-salas-baile-barcelona`} />
+        <link rel="alternate" hrefLang="fr" href={`${baseUrl}/fr/alquiler-salas-baile-barcelona`} />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`${baseUrl}/es/alquiler-salas-baile-barcelona`}
+        />
+
+        {/* LCP Optimization - Preload hero image */}
         <link
           rel="preload"
           as="image"
           type="image/avif"
-          imageSrcSet={generateSrcSet(rooms[0]?.images[0]?.basePath ?? '', 'avif')}
-          imageSizes="(max-width: 768px) 100vw, 50vw"
+          href="/images/alquiler-salas/hero.avif"
+          imageSrcSet="/images/alquiler-salas/hero-480.avif 480w, /images/alquiler-salas/hero-960.avif 960w, /images/alquiler-salas/hero-1440.avif 1440w, /images/alquiler-salas/hero.avif 1920w"
+          imageSizes="100vw"
         />
-        {/* Enterprise Schema Markup */}
+
+        {/* Enterprise Schema Markup - SEO/GEO/AIEO/AEO */}
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(imageGallerySchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <div className="pt-20 md:pt-24">
@@ -602,9 +722,34 @@ const AlquilerSalasPage: React.FC = () => {
           id="alquiler-hero"
           className="relative text-center py-32 md:py-40 overflow-hidden flex items-center justify-center min-h-[600px]"
         >
-          {/* Background */}
-          <div className="absolute inset-0 bg-black">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
+          {/* Background Image with Overlay */}
+          <div className="absolute inset-0">
+            <picture>
+              <source
+                type="image/avif"
+                srcSet="/images/alquiler-salas/hero-480.avif 480w, /images/alquiler-salas/hero-960.avif 960w, /images/alquiler-salas/hero-1440.avif 1440w, /images/alquiler-salas/hero.avif 1920w"
+                sizes="100vw"
+              />
+              <source
+                type="image/webp"
+                srcSet="/images/alquiler-salas/hero-480.webp 480w, /images/alquiler-salas/hero-960.webp 960w, /images/alquiler-salas/hero-1440.webp 1440w, /images/alquiler-salas/hero.webp 1920w"
+                sizes="100vw"
+              />
+              <img
+                src="/images/alquiler-salas/hero.jpg"
+                srcSet="/images/alquiler-salas/hero-480.jpg 480w, /images/alquiler-salas/hero-960.jpg 960w, /images/alquiler-salas/hero-1440.jpg 1440w, /images/alquiler-salas/hero.jpg 1920w"
+                sizes="100vw"
+                alt={t('roomRental_hero_image_alt')}
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="eager"
+                fetchPriority="high"
+                decoding="sync"
+                width={1920}
+                height={1280}
+              />
+            </picture>
+            {/* Dark Overlay for Text Readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80"></div>
           </div>
           <div className="relative z-20 container mx-auto px-6">
             {/* Breadcrumb with Microdata */}
@@ -945,12 +1090,58 @@ const AlquilerSalasPage: React.FC = () => {
           </div>
         </section>
 
+        {/* FAQ Section - GEO/AIEO Optimization */}
+        <section id="faq" aria-labelledby="faq-title" className="py-12 md:py-16 bg-primary-dark/10">
+          <div className="container mx-auto px-6">
+            <AnimateOnScroll>
+              <h2
+                id="faq-title"
+                className="text-3xl md:text-4xl font-black tracking-tighter mb-12 text-center holographic-text"
+              >
+                {t('roomRental_faq_section_title')}
+              </h2>
+            </AnimateOnScroll>
+
+            <div className="max-w-4xl mx-auto space-y-4">
+              {[1, 2, 3, 4, 5].map((num, index) => (
+                <AnimateOnScroll key={num} delay={index * 100}>
+                  <details className="group bg-black/50 backdrop-blur-md border border-primary-accent/30 rounded-xl overflow-hidden hover:border-primary-accent transition-all duration-300">
+                    <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                      <h3 className="text-lg font-semibold text-white pr-4">
+                        {t(`roomRental_faq${num}_q`)}
+                      </h3>
+                      <svg
+                        className="w-5 h-5 text-primary-accent flex-shrink-0 transition-transform duration-300 group-open:rotate-180"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </summary>
+                    <div className="px-6 pb-6">
+                      <p className="text-neutral/80 leading-relaxed">
+                        {t(`roomRental_faq${num}_a`)}
+                      </p>
+                    </div>
+                  </details>
+                </AnimateOnScroll>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Reviews Section */}
         <ReviewsSection
           category="general"
           limit={4}
           showGoogleBadge={true}
-          title="Lo que dicen de nuestras instalaciones"
+          title={t('roomRental_reviews_title')}
           layout="grid"
         />
 

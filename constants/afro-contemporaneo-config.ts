@@ -146,24 +146,23 @@ export const AFRO_CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Afro Contemporáneo, técnica cubana ENA, disociación corporal, folklore afrocubano',
-    prerequisites: 'Ninguno - clases para todos los niveles',
-    lessons: 'Clases semanales de perfeccionamiento',
+    teachesKey: 'schema_afroContemporaneo_teaches',
+    prerequisitesKey: 'schema_afroContemporaneo_prerequisites',
+    lessonsKey: 'schema_afroContemporaneo_lessons',
     duration: 'PT1H',
   },
 
   personSchemas: [
     {
       name: 'Yunaisy Farray',
-      jobTitle: "Directora de Farray's Center",
-      description:
-        'Bailarina profesional cubana formada en la ENA, especialista en Danza Contemporánea Cubana.',
+      jobTitleKey: 'schema_yunaisy_jobTitle_afroContemporaneo',
+      descriptionKey: 'schema_yunaisy_description_afroContemporaneo',
       knowsAbout: ['Afro Contemporáneo', 'DCC', 'Cuban Dance', 'ENA Technique', 'Choreography'],
     },
     {
       name: 'Charlie Breezy',
-      jobTitle: 'Profesor de Afro Contemporáneo',
-      description: 'Bailarín profesional con experiencia en estilos afro y urbanos.',
+      jobTitleKey: 'schema_charlie_jobTitle',
+      descriptionKey: 'schema_charlie_description',
       knowsAbout: ['Afro Contemporáneo', 'Urban Dance', 'African Dance'],
     },
   ],

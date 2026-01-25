@@ -102,7 +102,7 @@ const RegalaBailePage: React.FC = () => {
   const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'Tarjeta Regalo - Clases de Baile',
+    name: t('schema_regalaBaile_productName'),
     description: t('regalaBaile_meta_description'),
     brand: {
       '@type': 'Organization',

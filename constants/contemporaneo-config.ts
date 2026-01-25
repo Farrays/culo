@@ -103,7 +103,7 @@ export const CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false,
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -139,24 +139,23 @@ export const CONTEMPORANEO_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Danza Contemporánea, técnica de suelo, release, improvisación, expresión corporal',
-    prerequisites: 'Ninguno',
-    lessons: '4 clases semanales',
+    teachesKey: 'schema_contemporaneo_teaches',
+    prerequisitesKey: 'schema_contemporaneo_prerequisites',
+    lessonsKey: 'schema_contemporaneo_lessons',
     duration: 'PT1H',
   },
 
   personSchemas: [
     {
       name: 'Daniel Sené',
-      jobTitle: 'Profesor de Danza Contemporánea',
-      description:
-        'Bailarín profesional formado en la Escuela Nacional de Arte de Cuba, especialista en contemporáneo lírico.',
+      jobTitleKey: 'schema_contemporaneo_daniel_jobTitle',
+      descriptionKey: 'schema_contemporaneo_daniel_description',
       knowsAbout: ['Danza Contemporánea', 'Release Technique', 'Floor Work', 'Cuban Dance'],
     },
     {
       name: 'Alejandro Miñoso',
-      jobTitle: 'Profesor de Danza Contemporánea',
-      description: 'Bailarín profesional cubano especialista en técnica de suelo y flow.',
+      jobTitleKey: 'schema_contemporaneo_alejandro_jobTitle',
+      descriptionKey: 'schema_contemporaneo_alejandro_description',
       knowsAbout: ['Danza Contemporánea', 'Suelo & Flow', 'Cuban Technique'],
     },
   ],

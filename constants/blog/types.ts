@@ -65,8 +65,10 @@ export interface ArticleImage {
   src: string;
   /** Responsive srcSet for different sizes */
   srcSet?: string;
-  /** Alt text for accessibility */
+  /** Alt text for accessibility (fallback if altKey not provided) */
   alt: string;
+  /** i18n key for localized alt text (preferred over alt) */
+  altKey?: string;
   /** Optional caption below image */
   caption?: string;
   /** Image width in pixels */
@@ -197,8 +199,10 @@ export interface AnswerCapsuleConfig {
   answerKey: string;
   /** Optional source URL for the answer */
   sourceUrl?: string;
-  /** Source publisher/organization name */
+  /** Source publisher/organization name (use sourcePublisherKey for i18n) */
   sourcePublisher?: string;
+  /** i18n key for source publisher (preferred over sourcePublisher for translated text) */
+  sourcePublisherKey?: string;
   /** Year of the source */
   sourceYear?: string;
   /** Confidence level indicator */

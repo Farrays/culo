@@ -229,9 +229,9 @@ export interface NearbyAreasConfig {
 }
 
 export interface CourseSchemaConfig {
-  teaches?: string;
-  prerequisites?: string;
-  lessons?: string;
+  teachesKey?: string;
+  prerequisitesKey?: string;
+  lessonsKey?: string;
   duration?: string;
 }
 
@@ -348,8 +348,8 @@ export interface FullDanceClassConfig {
   speakableSelectors?: string[];
   personSchemas?: Array<{
     name: string;
-    jobTitle: string;
-    description: string;
+    jobTitleKey: string;
+    descriptionKey: string;
     knowsAbout: string[];
   }>;
 
@@ -543,9 +543,10 @@ const RelatedClassesSchema: React.FC<{
             name: "Farray's International Dance Center",
             address: {
               '@type': 'PostalAddress',
-              streetAddress: 'Carrer de Pallars, 85',
+              streetAddress: t('schema_streetAddress'),
               addressLocality: 'Barcelona',
-              postalCode: '08018',
+              postalCode: '08015',
+              addressRegion: t('schema_addressRegion'),
               addressCountry: 'ES',
             },
           },
@@ -1025,8 +1026,8 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
               '@context': 'https://schema.org',
               '@type': 'Person',
               name: person.name,
-              jobTitle: person.jobTitle,
-              description: person.description,
+              jobTitle: t(person.jobTitleKey),
+              description: t(person.descriptionKey),
               worksFor: {
                 '@type': 'DanceSchool',
                 name: "Farray's International Dance Center",
@@ -1045,10 +1046,11 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
         telephone={FARRAYS_LOCATION.telephone}
         email={FARRAYS_LOCATION.email}
         address={{
-          streetAddress: FARRAYS_LOCATION.streetAddress,
+          streetAddress: t('schema_streetAddress'),
           addressLocality: FARRAYS_LOCATION.addressLocality,
           postalCode: FARRAYS_LOCATION.postalCode,
           addressCountry: FARRAYS_LOCATION.addressCountry,
+          addressRegion: t('schema_addressRegion'),
         }}
         geo={FARRAYS_LOCATION.geo}
         priceRange={FARRAYS_LOCATION.priceRange}
@@ -1056,6 +1058,7 @@ const FullDanceClassTemplate: React.FC<{ config: FullDanceClassConfig }> = ({ co
           ratingValue: SOCIAL_PROOF.ratingValue.toString(),
           reviewCount: SOCIAL_PROOF.reviewCount.replace('+', ''),
         }}
+        reserveActionName={t('schema_reserveActionName')}
       />
 
       {/* Enterprise Course Schema with CourseInstance for each schedule */}

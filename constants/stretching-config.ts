@@ -59,10 +59,10 @@ export const STRETCHING_PAGE_CONFIG: FullDanceClassConfig = {
     funPercent: 100,
     gradientColor: 'emerald', // Green for wellness/flexibility
 
-    // Enterprise: Hero background image (using fitness category - no stretching-specific images)
+    // Enterprise: Hero background image (dedicated stretching image)
     heroImage: {
-      basePath: '/images/categories/img/fitness',
-      alt: "Clases de Stretching en Barcelona - Farray's Center",
+      basePath: '/images/categories/img/stretching',
+      alt: "Bailarina realizando estiramientos y flexibilidad en clase de stretching Barcelona - Farray's Center",
       altKey: 'styleImages.stretching.hero',
       breakpoints: [320, 640, 768, 1024],
       formats: ['avif', 'webp', 'jpg'] as const,
@@ -80,9 +80,9 @@ export const STRETCHING_PAGE_CONFIG: FullDanceClassConfig = {
     paragraphCount: 4,
     hasQuestionAnswer: true,
     optimizedImage: {
-      basePath: '/images/categories/img/fitness',
-      alt: 'Clase de stretching y flexibilidad para bailarines en Barcelona - estiramientos profesionales',
-      altKey: 'classes.stretching.whatIs',
+      basePath: '/images/categories/img/stretching',
+      alt: 'Clase de stretching y flexibilidad para bailarines en Barcelona - estiramientos profesionales y técnicas de elongación',
+      altKey: 'styleImages.stretching.whatIs',
       breakpoints: [320, 640, 768, 1024],
       formats: ['avif', 'webp', 'jpg'],
     },
@@ -119,9 +119,7 @@ export const STRETCHING_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false, // No video yet - recommended to add later
-    videos: [],
-    placeholderCount: 0,
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -151,10 +149,9 @@ export const STRETCHING_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches:
-      'Stretching, estiramientos, flexibilidad, backbending, elongación de piernas, fortalecimiento de core',
-    prerequisites: 'Ninguno',
-    lessons: '5 clases semanales',
+    teachesKey: 'schema_stretching_teaches',
+    prerequisitesKey: 'schema_stretching_prerequisites',
+    lessonsKey: 'schema_stretching_lessons',
     duration: 'PT1H',
   },
 
@@ -162,9 +159,8 @@ export const STRETCHING_PAGE_CONFIG: FullDanceClassConfig = {
   personSchemas: [
     {
       name: 'Cris Ag',
-      jobTitle: 'Instructora de Stretching y Backbending',
-      description:
-        'Especialista en flexibilidad y backbending con formación en el Método Farray. Experta en elongación de piernas y espalda.',
+      jobTitleKey: 'schema_stretching_cris_jobTitle',
+      descriptionKey: 'schema_stretching_cris_description',
       knowsAbout: [
         'Stretching',
         'Backbending',
@@ -175,9 +171,8 @@ export const STRETCHING_PAGE_CONFIG: FullDanceClassConfig = {
     },
     {
       name: 'Daniel Sené',
-      jobTitle: 'Instructor de Stretching y Ballet',
-      description:
-        'Bailarín profesional formado en la Escuela Nacional de Ballet de Cuba. Experto en técnica clásica y flexibilidad.',
+      jobTitleKey: 'schema_stretching_daniel_jobTitle',
+      descriptionKey: 'schema_stretching_daniel_description',
       knowsAbout: ['Stretching', 'Ballet', 'Classical Technique', 'Flexibility', 'Posture'],
     },
   ],

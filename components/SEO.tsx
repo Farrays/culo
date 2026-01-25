@@ -49,6 +49,7 @@ const PATH_TO_PAGE: ReadonlyArray<readonly [string, string]> = [
   ['/clases/sexy-reggaeton-barcelona', 'sexyReggaeton'],
   ['/clases/reggaeton-cubano-barcelona', 'reggaetonCubano'],
   ['/clases/afro-contemporaneo-barcelona', 'afroContemporaneo'],
+  ['/clases/stretching-barcelona', 'stretching'],
   ['/clases/entrenamiento-bailarines-barcelona', 'prepFisica'],
   ['/clases/contemporaneo-barcelona', 'contemporaneo'],
   ['/clases/modern-jazz-barcelona', 'modernJazz'],
@@ -134,6 +135,7 @@ const SEO: React.FC = () => {
     contemporaneo: 'clases/contemporaneo-barcelona',
     afroContemporaneo: 'clases/afro-contemporaneo-barcelona',
     afroJazz: 'clases/afro-jazz',
+    stretching: 'clases/stretching-barcelona',
     prepFisica: 'clases/entrenamiento-bailarines-barcelona',
     cuerpofit: 'clases/acondicionamiento-fisico-bailarines',
     baileManananas: 'clases/baile-mananas',
@@ -160,7 +162,7 @@ const SEO: React.FC = () => {
     classes: {
       titleKey: 'danceClassesHub_h1',
       descKey: 'danceClassesHub_description',
-      image: `${baseUrl}/images/og-classes-hub.jpg`,
+      image: `${baseUrl}/images/og-clases-baile-barcelona.jpg`,
     },
     danza: {
       titleKey: 'danzaBarcelona_title',
@@ -235,7 +237,7 @@ const SEO: React.FC = () => {
     femmology: {
       titleKey: 'femPageTitle',
       descKey: 'femMetaDescription',
-      image: `${baseUrl}/images/classes/femmology/img/clases-de-femmology-barcelona_1440.webp`,
+      image: `${baseUrl}/images/classes/femmology/img/femmology-hero-barcelona_1440.webp`,
     },
     sexyStyle: {
       titleKey: 'sexystylePageTitle',
@@ -267,15 +269,20 @@ const SEO: React.FC = () => {
       descKey: 'afrojazzMetaDescription',
       image: `${baseUrl}/images/classes/afro-jazz/img/afro-jazz_1440.webp`,
     },
+    stretching: {
+      titleKey: 'stretchingPageTitle',
+      descKey: 'stretchingMetaDescription',
+      image: `${baseUrl}/images/og-stretching.jpg`,
+    },
     prepFisica: {
       titleKey: 'prepFisica_title',
       descKey: 'prepFisica_description',
-      image: `${baseUrl}/images/classes/cuerpo-fit/img/cuerpo-fit-entrenamiento-bailarines_1440.webp`,
+      image: `${baseUrl}/images/og-entrenamiento-bailarines.jpg`,
     },
     cuerpofit: {
       titleKey: 'cuerpofitPageTitle',
       descKey: 'cuerpofitMetaDescription',
-      image: `${baseUrl}/images/classes/cuerpo-fit/img/cuerpo-fit-entrenamiento-bailarines_1440.webp`,
+      image: `${baseUrl}/images/categories/img/body-conditioning-og.jpg`,
     },
     baileManananas: {
       titleKey: 'bailemanananasPageTitle',

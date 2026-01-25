@@ -18,8 +18,8 @@ const CategoriesSchemaMarkup: React.FC = () => {
   const schemaData = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Clases de Baile en Barcelona',
-    description: 'Categorías de clases de baile disponibles en Farrays Dance Academy',
+    name: t('schema_categories_itemListName'),
+    description: t('schema_categories_description'),
     numberOfItems: CATEGORIES.length,
     itemListElement: CATEGORIES.map((category, index) => {
       const title = t(`home_categories_${category.key}_title`) || category.key;

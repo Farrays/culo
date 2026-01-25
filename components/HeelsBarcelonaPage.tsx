@@ -15,7 +15,7 @@ import { CourseSchema, LocalBusinessSchema } from './SchemaMarkup';
 import { CheckIcon } from '../lib/icons';
 import LazyImage from './LazyImage';
 import OptimizedImage from './OptimizedImage';
-import { getRelatedClassImageUrl } from '../constants/style-images';
+import { getRelatedClassImageUrl, getStyleImage } from '../constants/style-images';
 
 const ANIMATION_DELAYS = {
   STAGGER_SMALL: 100,
@@ -126,7 +126,7 @@ const HeelsBarcelonaPage: React.FC = () => {
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: "Estilos de Heels en Barcelona - Farray's Center",
+    name: t('schema_heels_itemListName'),
     itemListElement: HEELS_STYLES.map((style, idx) => ({
       '@type': 'ListItem',
       position: idx + 1,
@@ -153,7 +153,7 @@ const HeelsBarcelonaPage: React.FC = () => {
   const aggregateRatingSchema = {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
-    name: "Farray's International Dance Center - Heels Barcelona",
+    name: t('schema_heels_educationalOrgName'),
     description: t('heelsBarcelona_description'),
     url: `${baseUrl}/${locale}/clases/heels-barcelona`,
     aggregateRating: {
@@ -177,8 +177,8 @@ const HeelsBarcelonaPage: React.FC = () => {
           name: "Farray's International Dance Center",
           url: baseUrl,
         }}
-        educationalLevel="Beginner to Advanced"
-        teaches="High Heels Dance, Femmology, Sexy Style, Sensuality, Femininity"
+        educationalLevel={t('schema_educationalLevelBeginnerAdvanced')}
+        teaches={t('schema_heels_teaches')}
         availableLanguage={SUPPORTED_LOCALES}
       />
       <LocalBusinessSchema
@@ -188,16 +188,20 @@ const HeelsBarcelonaPage: React.FC = () => {
         telephone="+34622247085"
         email="info@farrayscenter.com"
         address={{
-          streetAddress: "Carrer d'Entença, 100, Local 1",
+          streetAddress: t('schema_streetAddress'),
           addressLocality: 'Barcelona',
           postalCode: '08015',
           addressCountry: 'ES',
         }}
         geo={{
-          latitude: '41.380420',
+          latitude: '41.380421',
           longitude: '2.148014',
         }}
         priceRange="€€"
+        aggregateRating={{
+          ratingValue: '5',
+          reviewCount: '509',
+        }}
       />
       <Helmet>
         <title>{t('heelsBarcelona_title')}</title>
@@ -869,12 +873,15 @@ const HeelsBarcelonaPage: React.FC = () => {
                       aria-label={`${t('relatedSexyStyleName')} - ${t('relatedClassesViewClass')}`}
                     >
                       <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
-                        <LazyImage
-                          src="/images/classes/sexy-style/img/clases-sexy-style-barcelona_480.webp"
+                        <OptimizedImage
+                          src={getStyleImage('sexy_style').basePath}
                           alt={`Clase de ${t('relatedSexyStyleName')} en Barcelona - Farray's Dance Center`}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                           width={480}
                           height={320}
+                          breakpoints={getStyleImage('sexy_style').breakpoints}
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 480px"
+                          priority="auto"
                         />
                         <div
                           className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
@@ -937,12 +944,15 @@ const HeelsBarcelonaPage: React.FC = () => {
                       aria-label={`${t('relatedFemmologyName')} - ${t('relatedClassesViewClass')}`}
                     >
                       <div className="relative overflow-hidden" style={{ aspectRatio: '480/320' }}>
-                        <LazyImage
-                          src="/images/classes/femmology/img/clases-femmology-barcelona_480.webp"
+                        <OptimizedImage
+                          src={getStyleImage('femmology_heels').basePath}
                           alt={`Clase de ${t('relatedFemmologyName')} en Barcelona - Farray's Dance Center`}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                           width={480}
                           height={320}
+                          breakpoints={getStyleImage('femmology_heels').breakpoints}
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 480px"
+                          priority="auto"
                         />
                         <div
                           className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"

@@ -6,6 +6,7 @@ import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import Icon, { type IconName } from './Icon';
 import LeadCaptureModal from './shared/LeadCaptureModal';
+import ManifestoBanner from './shared/ManifestoBanner';
 import { ReviewsSection } from './reviews';
 
 // Value pillars for "Why Farray's" section
@@ -98,20 +99,20 @@ const AboutPage: React.FC = () => {
     founder: {
       '@type': 'Person',
       name: 'Yunaisy Farray',
-      jobTitle: 'Directora y Fundadora',
+      jobTitle: t('schema_founderJobTitle'),
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: "Carrer d'Entença, 100, Local 1",
+      streetAddress: t('schema_streetAddress'),
       addressLocality: 'Barcelona',
-      addressRegion: 'Cataluña',
+      addressRegion: t('schema_addressRegion'),
       postalCode: '08015',
       addressCountry: 'ES',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '41.3751',
-      longitude: '2.1482',
+      latitude: '41.380421',
+      longitude: '2.148014',
     },
     telephone: '+34622247085',
     email: 'info@farrayscenter.com',
@@ -466,6 +467,9 @@ const AboutPage: React.FC = () => {
           layout="grid"
           showCategory={true}
         />
+
+        {/* Manifesto Banner */}
+        <ManifestoBanner />
 
         {/* Final CTA Section */}
         <section className="relative py-12 md:py-16 overflow-hidden">

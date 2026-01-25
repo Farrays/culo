@@ -3,9 +3,9 @@ import type { Testimonial } from '../types';
 import type { FAQ } from '../components/templates/ClassPageTemplate';
 
 /**
- * Cuerpo-Fit (Full Body Cardio Dance) Page Data
+ * Cuerpo Fit (Cardio Dance Fitness) Page Data
  *
- * NOTA: Este archivo es para la NUEVA clase Cuerpo-Fit (cardio dance para todos).
+ * NOTA: Este archivo es para la clase Cuerpo Fit (cardio dance para todos).
  * No confundir con cuerpo-fit.ts que es Body Conditioning para bailarines.
  *
  * SEO Keywords:

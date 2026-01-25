@@ -196,9 +196,9 @@ export interface NearbyAreasConfig {
 }
 
 export interface CourseSchemaConfig {
-  teaches?: string;
-  prerequisites?: string;
-  lessons?: string;
+  teachesKey?: string;
+  prerequisitesKey?: string;
+  lessonsKey?: string;
   duration?: string;
 }
 
@@ -264,8 +264,8 @@ export interface FullDanceClassConfigV2 {
   speakableSelectors?: string[];
   personSchemas?: Array<{
     name: string;
-    jobTitle: string;
-    description: string;
+    jobTitleKey: string;
+    descriptionKey: string;
     knowsAbout: string[];
   }>;
   videoSchema?: {
@@ -732,10 +732,11 @@ const FullDanceClassTemplateV2: React.FC<{ config: FullDanceClassConfigV2 }> = (
         telephone={FARRAYS_LOCATION.telephone}
         email={FARRAYS_LOCATION.email}
         address={{
-          streetAddress: FARRAYS_LOCATION.streetAddress,
+          streetAddress: t('schema_streetAddress'),
           addressLocality: FARRAYS_LOCATION.addressLocality,
           postalCode: FARRAYS_LOCATION.postalCode,
           addressCountry: FARRAYS_LOCATION.addressCountry,
+          addressRegion: t('schema_addressRegion'),
         }}
         geo={FARRAYS_LOCATION.geo}
         priceRange={FARRAYS_LOCATION.priceRange}
@@ -743,6 +744,7 @@ const FullDanceClassTemplateV2: React.FC<{ config: FullDanceClassConfigV2 }> = (
           ratingValue: SOCIAL_PROOF.ratingValue.toString(),
           reviewCount: SOCIAL_PROOF.reviewCount.replace('+', ''),
         }}
+        reserveActionName={t('schema_reserveActionName')}
       />
 
       <CourseSchema
@@ -752,10 +754,22 @@ const FullDanceClassTemplateV2: React.FC<{ config: FullDanceClassConfigV2 }> = (
           name: FARRAYS_LOCATION.name,
           url: baseUrl,
         }}
-        educationalLevel="Beginner, Intermediate, Advanced"
-        teaches={config.courseConfig?.teaches || t(`${config.styleKey}CourseTeaches`)}
-        coursePrerequisites={config.courseConfig?.prerequisites || 'Ninguno'}
-        numberOfLessons={config.courseConfig?.lessons || 'Clases semanales'}
+        educationalLevel={t('schema_educationalLevel')}
+        teaches={
+          config.courseConfig?.teachesKey
+            ? t(config.courseConfig.teachesKey)
+            : t(`${config.styleKey}CourseTeaches`)
+        }
+        coursePrerequisites={
+          config.courseConfig?.prerequisitesKey
+            ? t(config.courseConfig.prerequisitesKey)
+            : t('schema_prerequisites')
+        }
+        numberOfLessons={
+          config.courseConfig?.lessonsKey
+            ? t(config.courseConfig.lessonsKey)
+            : t('schema_weeklyClasses')
+        }
         timeRequired={config.courseConfig?.duration || 'PT1H'}
         availableLanguage={SUPPORTED_LOCALES}
       />

@@ -57,6 +57,21 @@ export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
     calories: 350,
     funPercent: 100, // Will be overridden with custom stat
     gradientColor: 'amber', // Warm, energetic, morning color
+    // Enterprise: Hero background image (nueva foto 2025)
+    heroImage: {
+      basePath: '/images/classes/baile-mananas/img/clases-baile-mananas-hero-barcelona',
+      alt: "Clases de baile por las mañanas en Barcelona - Grupo de alumnos bailando en Farray's Center",
+      altKey: 'styleImages.baileMananas.hero',
+      breakpoints: [320, 640, 768, 1024, 1440, 1920],
+      formats: ['avif', 'webp', 'jpg'],
+    },
+    // Enterprise: Hero Visual Configuration
+    heroVisuals: {
+      imageOpacity: 45,
+      objectPosition: 'center 35%',
+      gradientStyle: 'vibrant',
+      textShadow: true,
+    },
   },
 
   // === SECTION TOGGLES ===
@@ -64,7 +79,13 @@ export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
     enabled: true,
     paragraphCount: 4,
     hasQuestionAnswer: true,
-    // No image yet - can be added later
+    // Enterprise: Optimized responsive image with AVIF/WebP/JPG formats
+    image: {
+      src: '/images/classes/baile-mananas/img/clases-baile-mananas-hero-barcelona_1024.webp',
+      srcSet:
+        '/images/classes/baile-mananas/img/clases-baile-mananas-hero-barcelona_320.avif 320w, /images/classes/baile-mananas/img/clases-baile-mananas-hero-barcelona_640.avif 640w, /images/classes/baile-mananas/img/clases-baile-mananas-hero-barcelona_768.avif 768w, /images/classes/baile-mananas/img/clases-baile-mananas-hero-barcelona_1024.avif 1024w',
+      alt: 'Alumnas practicando coreografía en clase de baile por las mañanas en academia de Barcelona - Variedad de estilos en horario matinal',
+    },
   },
 
   identificationSection: {
@@ -98,9 +119,7 @@ export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false, // No video yet
-    videos: [],
-    placeholderCount: 0,
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -136,10 +155,9 @@ export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches:
-      'Contemporáneo, Ballet, Modern Jazz, Afro Jazz, Sexy Style, Sexy Reggaeton, Salsa Lady Style, Stretching, Body Conditioning, Reggaeton Cubano, Dancehall Female, Twerk',
-    prerequisites: 'Ninguno - clases para todos los niveles desde principiante',
-    lessons: '15 clases semanales de lunes a jueves, horario de 10:00 a 13:00',
+    teachesKey: 'schema_bailemananas_teaches',
+    prerequisitesKey: 'schema_bailemananas_prerequisites',
+    lessonsKey: 'schema_bailemananas_lessons',
     duration: 'PT1H',
   },
 
@@ -147,9 +165,8 @@ export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
   personSchemas: [
     {
       name: 'Alejandro Miñoso',
-      jobTitle: 'Profesor de Danza Contemporánea, Ballet y Modern Jazz',
-      description:
-        "Bailarín profesional y coreógrafo formado en la Escuela Nacional de Arte de Cuba. Especialista en danza contemporánea, ballet clásico y modern jazz. Imparte clases matinales en Farray's Center.",
+      jobTitleKey: 'schema_bailemananas_alejandro_jobTitle',
+      descriptionKey: 'schema_bailemananas_alejandro_description',
       knowsAbout: [
         'Danza Contemporánea',
         'Ballet Clásico',
@@ -163,9 +180,8 @@ export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
     },
     {
       name: 'Yasmina Fernández',
-      jobTitle: 'Profesora de Sexy Style, Reggaeton y Salsa Lady Style',
-      description:
-        'Profesora certificada en el Método Farray, especializada en estilos sensuales y latinos. Referente en Sexy Style y Reggaeton en Barcelona. Imparte clases matinales enfocadas en empoderamiento y expresión corporal.',
+      jobTitleKey: 'schema_bailemananas_yasmina_jobTitle',
+      descriptionKey: 'schema_bailemananas_yasmina_description',
       knowsAbout: [
         'Sexy Style',
         'Sexy Reggaeton',
@@ -178,9 +194,8 @@ export const BAILE_MANANAS_PAGE_CONFIG: FullDanceClassConfig = {
     },
     {
       name: 'Isabel López',
-      jobTitle: 'Profesora de Dancehall Female y Twerk',
-      description:
-        "Profesora especializada en Dancehall y Twerk, con una energía contagiosa que transforma cada clase matinal en una fiesta. Imparte clases de Dancehall Female y Twerk en las mañanas de Farray's Center.",
+      jobTitleKey: 'schema_bailemananas_isabel_jobTitle',
+      descriptionKey: 'schema_bailemananas_isabel_description',
       knowsAbout: [
         'Dancehall Female',
         'Twerk',

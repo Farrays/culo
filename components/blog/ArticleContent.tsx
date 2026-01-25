@@ -262,8 +262,18 @@ const ArticleContent: React.FC<ArticleContentProps> = ({ sections, className = '
 
       case 'answer-capsule': {
         if (!section.answerCapsule) return null;
-        const { questionKey, answerKey, sourcePublisher, sourceYear, sourceUrl, confidence, icon } =
-          section.answerCapsule;
+        const {
+          questionKey,
+          answerKey,
+          sourcePublisher,
+          sourcePublisherKey,
+          sourceYear,
+          sourceUrl,
+          confidence,
+          icon,
+        } = section.answerCapsule;
+        // Use translated key if available, otherwise fall back to static string
+        const displayPublisher = sourcePublisherKey ? t(sourcePublisherKey) : sourcePublisher;
 
         const iconMap: Record<string, React.ReactNode> = {
           info: (
@@ -334,7 +344,7 @@ const ArticleContent: React.FC<ArticleContentProps> = ({ sections, className = '
                 />
 
                 {/* Source citation */}
-                {sourcePublisher && (
+                {displayPublisher && (
                   <div className="mt-4 flex items-center justify-between flex-wrap gap-3">
                     <div className="flex items-center gap-2 text-sm text-neutral/60">
                       <svg
@@ -357,12 +367,12 @@ const ArticleContent: React.FC<ArticleContentProps> = ({ sections, className = '
                           rel="noopener noreferrer"
                           className="hover:text-primary-accent transition-colors"
                         >
-                          {sourcePublisher}
+                          {displayPublisher}
                           {sourceYear && ` (${sourceYear})`}
                         </a>
                       ) : (
                         <span>
-                          {sourcePublisher}
+                          {displayPublisher}
                           {sourceYear && ` (${sourceYear})`}
                         </span>
                       )}

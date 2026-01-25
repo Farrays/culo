@@ -203,7 +203,11 @@ const WhyFIDC: React.FC = () => {
       <div className="container mx-auto px-6 relative z-10">
         <AnimateOnScroll>
           <div className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text">
+            <h2
+              id="why-fidc-title"
+              className="text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 holographic-text"
+              data-speakable="true"
+            >
               {t('whyTitle')}
             </h2>
           </div>

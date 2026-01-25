@@ -22,6 +22,7 @@
 import React, { memo, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import type { ScheduleSession } from '../hooks/useScheduleSessions';
+import { useI18n } from '../hooks/useI18n';
 
 interface DynamicScheduleSchemaProps {
   /** Schedule sessions from Momence API */
@@ -42,6 +43,10 @@ interface DynamicScheduleSchemaProps {
   eventImage?: string;
   /** Instructor image URL (optional, for Person schema) */
   instructorImage?: string;
+  /** Translated street address (e.g., "Carrer d'Entença, 100, Local 1") */
+  streetAddress?: string;
+  /** Translated address region (e.g., 'Cataluña', 'Catalunya', 'Catalonia', 'Catalogne') */
+  addressRegion?: string;
 }
 
 /**
@@ -59,7 +64,29 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
     maxEvents = 10,
     eventImage,
     instructorImage,
+    streetAddress: streetAddressProp,
+    addressRegion: addressRegionProp,
   }) {
+    const { t } = useI18n();
+
+    // Use translated defaults if props not provided
+    const streetAddress = streetAddressProp || t('schema_streetAddress');
+    const addressRegion = addressRegionProp || t('schema_addressRegion');
+
+    // Generate translated default descriptions
+    const defaultDescription = t('schema_dynamicSchedule_description').replace(
+      '{courseName}',
+      courseName
+    );
+    const itemListName = t('schema_dynamicSchedule_itemListName').replace(
+      '{courseName}',
+      courseName
+    );
+    const itemListDescription = t('schema_dynamicSchedule_itemListDescription').replace(
+      '{courseName}',
+      courseName
+    );
+
     const schema = useMemo(() => {
       if (!sessions || sessions.length === 0) {
         return null;
@@ -74,9 +101,7 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
         '@type': 'Course',
         '@id': `${courseUrl}#course`,
         name: courseName,
-        description:
-          courseDescription ||
-          `Clases de ${courseName} en Barcelona. Horarios actualizados en tiempo real.`,
+        description: courseDescription || defaultDescription,
         provider: {
           '@type': 'DanceSchool',
           '@id': `${baseUrl}/#organization`,
@@ -107,16 +132,16 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
             name: "Farray's International Dance Center",
             address: {
               '@type': 'PostalAddress',
-              streetAddress: 'Calle Entenca 100',
+              streetAddress,
               addressLocality: 'Barcelona',
               postalCode: '08015',
-              addressRegion: 'Cataluña',
+              addressRegion,
               addressCountry: 'ES',
             },
             geo: {
               '@type': 'GeoCoordinates',
-              latitude: '41.3751',
-              longitude: '2.1482',
+              latitude: '41.380421',
+              longitude: '2.148014',
             },
           },
           // Availability info for rich results
@@ -148,36 +173,36 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
               '@type': 'UnitPriceSpecification',
               price: '50',
               priceCurrency: 'EUR',
-              name: '1 hora/semana',
-              unitText: 'mes',
+              name: t('schema_price_1hourWeek'),
+              unitText: t('schema_price_month'),
               referenceQuantity: {
                 '@type': 'QuantitativeValue',
                 value: '4',
-                unitText: 'clases',
+                unitText: t('schema_price_classes'),
               },
             },
             {
               '@type': 'UnitPriceSpecification',
               price: '78',
               priceCurrency: 'EUR',
-              name: '2 horas/semana (Popular)',
-              unitText: 'mes',
+              name: t('schema_price_2hoursWeekPopular'),
+              unitText: t('schema_price_month'),
               referenceQuantity: {
                 '@type': 'QuantitativeValue',
                 value: '8',
-                unitText: 'clases',
+                unitText: t('schema_price_classes'),
               },
             },
             {
               '@type': 'UnitPriceSpecification',
               price: '145',
               priceCurrency: 'EUR',
-              name: '5 horas/semana',
-              unitText: 'mes',
+              name: t('schema_price_5hoursWeek'),
+              unitText: t('schema_price_month'),
               referenceQuantity: {
                 '@type': 'QuantitativeValue',
                 value: '20',
-                unitText: 'clases',
+                unitText: t('schema_price_classes'),
               },
             },
           ],
@@ -189,8 +214,8 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
         '@context': 'https://schema.org',
         '@type': 'ItemList',
         '@id': `${courseUrl}#schedule-list`,
-        name: `Próximas clases de ${courseName}`,
-        description: `Horario actualizado de clases de ${courseName} en Barcelona`,
+        name: itemListName,
+        description: itemListDescription,
         numberOfItems: limitedSessions.length,
         itemListElement: limitedSessions.map((session, index) => ({
           '@type': 'ListItem',
@@ -199,7 +224,9 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
             '@type': 'DanceEvent',
             '@id': `${courseUrl}#event-${session.id || index}`,
             name: session.name,
-            description: `${session.name} con ${session.instructor} en Farray's Center Barcelona`,
+            description: t('schema_dynamicSchedule_eventDescription')
+              .replace('{sessionName}', session.name)
+              .replace('{instructor}', session.instructor),
             startDate: session.rawStartsAt,
             endDate: calculateEndDate(session.rawStartsAt, session.duration),
             eventStatus: 'https://schema.org/EventScheduled',
@@ -211,10 +238,10 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
               name: "Farray's International Dance Center",
               address: {
                 '@type': 'PostalAddress',
-                streetAddress: 'Calle Entenca 100',
+                streetAddress,
                 addressLocality: 'Barcelona',
                 postalCode: '08015',
-                addressRegion: 'Cataluña',
+                addressRegion,
                 addressCountry: 'ES',
               },
               geo: {
@@ -267,11 +294,17 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
       courseName,
       courseUrl,
       courseDescription,
+      defaultDescription,
+      itemListName,
+      itemListDescription,
+      t,
       baseUrl,
       locale,
       maxEvents,
       eventImage,
       instructorImage,
+      streetAddress,
+      addressRegion,
     ]);
 
     if (!schema) {
@@ -321,12 +354,15 @@ export const VacationSchema: React.FC<{
   courseUrl,
   baseUrl = 'https://www.farrayscenter.com',
 }) {
+  const { t } = useI18n();
+  const vacationDescription = t('schema_vacation_description').replace('{courseName}', courseName);
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
     '@id': `${courseUrl}#course`,
     name: courseName,
-    description: `Clases de ${courseName} en Barcelona. Actualmente en periodo de vacaciones.`,
+    description: vacationDescription,
     provider: {
       '@type': 'DanceSchool',
       '@id': `${baseUrl}/#organization`,

@@ -24,6 +24,8 @@ import { Link } from 'react-router-dom';
 import OptimizedImage from '../OptimizedImage';
 import { getStyleImage, getContextualAltKey } from '../../constants/style-images';
 import LeadCaptureModal from '../shared/LeadCaptureModal';
+import ReviewsSection from '../reviews/ReviewsSection';
+import { useReviews } from '../../hooks/useReviews';
 
 // ============= CONFIG TYPES =============
 
@@ -257,8 +259,25 @@ export interface LadyStyleTemplateConfig {
     descKey: string;
   };
 
-  // Testimonials
-  testimonials: Testimonial[];
+  // Testimonials (deprecated - use googleReviewsSection for enterprise)
+  testimonials?: Testimonial[];
+
+  // Google Reviews Section (Enterprise - replaces testimonials)
+  googleReviewsSection?: {
+    enabled: boolean;
+    /** Filter by dance category */
+    category?: 'salsa-cubana' | 'heels-femmology' | 'bachata' | 'urbanas' | 'general';
+    /** Filter by teacher name (case-insensitive) */
+    teacher?: string;
+    /** Curated list of author names - when provided, shows ONLY these reviews */
+    selectedAuthors?: string[];
+    /** Maximum number of reviews to display (default: 6) */
+    limit?: number;
+    /** Show Google rating badge (default: true) */
+    showGoogleBadge?: boolean;
+    /** Layout style (default: 'grid') */
+    layout?: 'grid' | 'list';
+  };
 
   // Style comparison table
   styleComparison: {
@@ -485,14 +504,37 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
     answer: t(faq.answerKey),
   }));
 
-  // Schema Markup data for reviews
-  const reviewsSchemaData = config.testimonials.map(testimonial => ({
-    itemReviewed: { name: `Clases de ${t(config.pageTitleKey)} - Farray's Center`, type: 'Course' },
-    author: testimonial.name,
-    reviewRating: { ratingValue: testimonial.rating.toString(), bestRating: '5' },
-    reviewBody: testimonial.quote[locale],
-    datePublished: new Date().toISOString().split('T')[0],
-  }));
+  // Google Reviews hook for enterprise mode
+  const googleReviewsConfig = config.googleReviewsSection;
+  const { reviews: googleReviews } = useReviews({
+    category: googleReviewsConfig?.category,
+    teacher: googleReviewsConfig?.teacher,
+    selectedAuthors: googleReviewsConfig?.selectedAuthors,
+    limit: googleReviewsConfig?.enabled ? (googleReviewsConfig.limit ?? 6) : 0,
+  });
+
+  // Schema Markup data for reviews - Enterprise: use Google Reviews when enabled
+  const reviewsSchemaData = googleReviewsConfig?.enabled
+    ? googleReviews.map(review => ({
+        itemReviewed: {
+          name: `Clases de ${t(config.pageTitleKey)} - Farray's Center`,
+          type: 'Course',
+        },
+        author: review.author,
+        reviewRating: { ratingValue: review.rating.toString(), bestRating: '5' },
+        reviewBody: review.text,
+        datePublished: review.dateISO,
+      }))
+    : (config.testimonials ?? []).map(testimonial => ({
+        itemReviewed: {
+          name: `Clases de ${t(config.pageTitleKey)} - Farray's Center`,
+          type: 'Course',
+        },
+        author: testimonial.name,
+        reviewRating: { ratingValue: testimonial.rating.toString(), bestRating: '5' },
+        reviewBody: testimonial.quote[locale],
+        datePublished: new Date().toISOString().split('T')[0],
+      }));
 
   // VideoObject Schema
   const videoSchema = {
@@ -600,13 +642,15 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
         telephone="+34622247085"
         email="info@farrayscenter.com"
         address={{
-          streetAddress: 'Calle Entenca 100',
+          streetAddress: t('schema_streetAddress'),
           addressLocality: 'Barcelona',
           postalCode: '08015',
           addressCountry: 'ES',
+          addressRegion: t('schema_addressRegion'),
         }}
-        geo={{ latitude: '41.3784', longitude: '2.1456' }}
+        geo={{ latitude: '41.380421', longitude: '2.148014' }}
         priceRange="€€"
+        reserveActionName={t('schema_reserveActionName')}
       />
       {/* Enterprise Course Schema with CourseInstance for each schedule */}
       <CourseSchemaEnterprise
@@ -1482,61 +1526,74 @@ const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
           </div>
         </section>
 
-        {/* 14. Testimonials */}
-        <section aria-labelledby="testimonials-title" className="py-12 md:py-16 bg-black">
-          <div className="container mx-auto px-4 sm:px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-8 sm:mb-10 max-w-4xl mx-auto">
-                <h2
-                  id="testimonials-title"
-                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 sm:mb-6 holographic-text"
-                >
-                  {t('testimonialsNotRequested')}
-                </h2>
-                <div className="inline-block">
-                  <div className="mb-2 sm:mb-3 text-2xl sm:text-3xl font-black text-neutral">
-                    {t('excellent')}
-                  </div>
-                  <div className="flex items-center justify-center gap-1 mb-2">
-                    <StarRating size="lg" />
-                  </div>
-                  <div className="text-xs sm:text-sm text-neutral/70">
-                    {t('basedOnReviews').replace('{count}', '509')}
-                  </div>
-                  <div className="mt-2 text-xs text-neutral/70">Google</div>
-                </div>
-              </div>
-            </AnimateOnScroll>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
-              {config.testimonials.map((testimonial, index) => (
-                <AnimateOnScroll
-                  key={testimonial.id}
-                  delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
-                >
-                  <div className="flex flex-col h-full min-h-[180px] sm:min-h-[200px] p-4 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
-                    <div className="mb-2 sm:mb-3">
-                      <StarRating size="sm" label="5 estrellas" />
+        {/* 14. Reviews/Testimonials - Enterprise: Google Reviews System */}
+        {config.googleReviewsSection?.enabled ? (
+          <ReviewsSection
+            id="reviews"
+            category={config.googleReviewsSection.category}
+            teacher={config.googleReviewsSection.teacher}
+            selectedAuthors={config.googleReviewsSection.selectedAuthors}
+            limit={config.googleReviewsSection.limit ?? 6}
+            showGoogleBadge={config.googleReviewsSection.showGoogleBadge ?? true}
+            layout={config.googleReviewsSection.layout ?? 'grid'}
+            title={t('testimonialsNotRequested')}
+          />
+        ) : config.testimonials && config.testimonials.length > 0 ? (
+          <section aria-labelledby="testimonials-title" className="py-12 md:py-16 bg-black">
+            <div className="container mx-auto px-4 sm:px-6">
+              <AnimateOnScroll>
+                <div className="text-center mb-8 sm:mb-10 max-w-4xl mx-auto">
+                  <h2
+                    id="testimonials-title"
+                    className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 sm:mb-6 holographic-text"
+                  >
+                    {t('testimonialsNotRequested')}
+                  </h2>
+                  <div className="inline-block">
+                    <div className="mb-2 sm:mb-3 text-2xl sm:text-3xl font-black text-neutral">
+                      {t('excellent')}
                     </div>
-                    <blockquote className="flex-grow text-neutral/90 mb-3 sm:mb-4">
-                      <p className="text-xs sm:text-sm leading-relaxed">
-                        &ldquo;{testimonial.quote[locale]}&rdquo;
-                      </p>
-                    </blockquote>
-                    <div className="flex items-center gap-3 mt-auto pt-3 sm:pt-4 border-t border-primary-dark/30">
-                      <div>
-                        <cite className="font-bold text-neutral not-italic text-xs sm:text-sm">
-                          {testimonial.name}
-                        </cite>
-                        <p className="text-xs text-neutral/75">{testimonial.city[locale]}</p>
+                    <div className="flex items-center justify-center gap-1 mb-2">
+                      <StarRating size="lg" />
+                    </div>
+                    <div className="text-xs sm:text-sm text-neutral/70">
+                      {t('basedOnReviews').replace('{count}', '509')}
+                    </div>
+                    <div className="mt-2 text-xs text-neutral/70">Google</div>
+                  </div>
+                </div>
+              </AnimateOnScroll>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
+                {config.testimonials.map((testimonial, index) => (
+                  <AnimateOnScroll
+                    key={testimonial.id}
+                    delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
+                  >
+                    <div className="flex flex-col h-full min-h-[180px] sm:min-h-[200px] p-4 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
+                      <div className="mb-2 sm:mb-3">
+                        <StarRating size="sm" label="5 estrellas" />
+                      </div>
+                      <blockquote className="flex-grow text-neutral/90 mb-3 sm:mb-4">
+                        <p className="text-xs sm:text-sm leading-relaxed">
+                          &ldquo;{testimonial.quote[locale]}&rdquo;
+                        </p>
+                      </blockquote>
+                      <div className="flex items-center gap-3 mt-auto pt-3 sm:pt-4 border-t border-primary-dark/30">
+                        <div>
+                          <cite className="font-bold text-neutral not-italic text-xs sm:text-sm">
+                            {testimonial.name}
+                          </cite>
+                          <p className="text-xs text-neutral/75">{testimonial.city[locale]}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </AnimateOnScroll>
-              ))}
+                  </AnimateOnScroll>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        ) : null}
 
         {/* 15. Style Comparison */}
         <section className="py-12 md:py-16 bg-primary-dark/10">

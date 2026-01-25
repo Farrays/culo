@@ -466,13 +466,15 @@ export const BAILE_SALUD_MENTAL_CONFIG: BlogArticleConfig = {
 
   // === FEATURED IMAGE ===
   featuredImage: {
-    src: '/images/blog/salsa-vs-bachata/hero.webp',
+    src: '/images/blog/beneficios-salsa/hero.webp',
     srcSet:
-      '/images/blog/salsa-vs-bachata/hero-480.webp 480w, /images/blog/salsa-vs-bachata/hero-960.webp 960w, /images/blog/salsa-vs-bachata/hero.webp 1200w',
-    alt: 'Baile y salud mental - Beneficios del baile para reducir ansiedad y estrés',
+      '/images/blog/beneficios-salsa/hero-480.webp 480w, /images/blog/beneficios-salsa/hero-960.webp 960w, /images/blog/beneficios-salsa/hero.webp 1200w',
+    alt: 'Personas bailando salsa con expresión de alegría, ilustrando los beneficios científicos del baile para la salud mental: reducción de ansiedad, estrés y mejora cognitiva',
+    altKey: 'blogBaileSaludMental_heroAlt',
     width: 1200,
     height: 630,
   },
+  ogImage: '/images/blog/beneficios-salsa/og.jpg',
 
   // === NAVIGATION ===
   breadcrumbConfig: {
@@ -538,14 +540,14 @@ export const BAILE_SALUD_MENTAL_CONFIG: BlogArticleConfig = {
       category: 'lifestyle',
       titleKey: 'blogBeneficiosSalsa_title',
       excerptKey: 'blogBeneficiosSalsa_excerpt',
-      image: '/images/blog/salsa-vs-bachata/hero.webp',
+      image: '/images/blog/beneficios-salsa/hero.webp',
     },
     {
       slug: 'como-perder-miedo-bailar',
-      category: 'tips',
+      category: 'lifestyle',
       titleKey: 'blogPerderMiedoBailar_title',
       excerptKey: 'blogPerderMiedoBailar_excerpt',
-      image: '/images/blog/salsa-vs-bachata/hero.webp',
+      image: '/images/blog/como-perder-miedo/hero.webp',
     },
   ],
 

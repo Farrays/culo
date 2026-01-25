@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
         {/* Poster Image - Always rendered for LCP */}
         <img
           src={HERO_VIDEO_CONFIG.posterUrl}
-          alt=""
+          alt={t('heroPosterAlt')}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
             isVideoPlaying ? 'opacity-0' : 'opacity-100'
           }`}

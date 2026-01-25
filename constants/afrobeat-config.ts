@@ -136,9 +136,9 @@ export const AFROBEAT_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Afrobeats, Afrodance, Amapiano, Ntcham, técnica de danza africana',
-    prerequisites: 'Ninguno',
-    lessons: '2 clases semanales',
+    teachesKey: 'schema_afrobeat_teaches',
+    prerequisitesKey: 'schema_afrobeat_prerequisites',
+    lessonsKey: 'schema_afrobeat_lessons',
     duration: 'PT1H',
   },
 
@@ -152,14 +152,14 @@ export const AFROBEAT_PAGE_CONFIG: FullDanceClassConfig = {
   personSchemas: [
     {
       name: 'Redblueh',
-      jobTitle: 'Instructor de Afrobeats',
-      description: 'Especialista en Afrobeats con raíces africanas y experiencia internacional.',
+      jobTitleKey: 'schema_afrobeat_redblueh_jobTitle',
+      descriptionKey: 'schema_afrobeat_redblueh_description',
       knowsAbout: ['Afrobeats', 'Afrodance', 'Amapiano', 'African Dance'],
     },
     {
       name: 'Charlie Breezy',
-      jobTitle: 'Instructor de Afrobeats',
-      description: 'Profesor de danzas urbanas y afrobeats con experiencia en múltiples estilos.',
+      jobTitleKey: 'schema_afrobeat_charlie_jobTitle',
+      descriptionKey: 'schema_afrobeat_charlie_description',
       knowsAbout: ['Afrobeats', 'Hip Hop', 'Reggaeton', 'Urban Dance'],
     },
   ],

@@ -25,7 +25,14 @@ const FEATURED_TEACHERS: FeaturedTeacher[] = [
     imageBasePath: '/images/teachers/img/maestra-yunaisy-farray',
     specialtyKey: 'teacher.yunaisyFarray.specialty',
     bioKey: 'teacher.yunaisyFarray.bio',
-    styles: ['Afro Jazz', 'Salsa Lady Style', 'Bachata Lady Style', 'Afro Contemporáneo'],
+    styles: [
+      'Afro Jazz',
+      'Salsa Lady Style',
+      'Bachata Lady Style',
+      'Afro Contemporáneo',
+      'Salsa',
+      'Heels',
+    ],
     isDirector: true,
   },
   {
@@ -50,7 +57,7 @@ const FEATURED_TEACHERS: FeaturedTeacher[] = [
     imageBasePath: '/images/teachers/img/profesor-iroel-bastarreche',
     specialtyKey: 'teacher.iroelBastarreche.specialty',
     bioKey: 'teacher.iroelBastarreche.bio',
-    styles: ['Folklore Cubano', 'Afro Contemporáneo'],
+    styles: ['Salsa Cubana'],
   },
 ];
 
@@ -59,6 +66,8 @@ const FEATURED_TEACHERS: FeaturedTeacher[] = [
  * Uses picture element with avif/webp/jpg fallback and srcset for optimal loading
  */
 const TeacherImage: React.FC<{ basePath: string; name: string }> = ({ basePath, name }) => {
+  const { t } = useI18n();
+
   return (
     <picture>
       <source
@@ -75,7 +84,7 @@ const TeacherImage: React.FC<{ basePath: string; name: string }> = ({ basePath, 
         src={`${basePath}_320.jpg`}
         srcSet={`${basePath}_320.jpg 320w, ${basePath}_640.jpg 640w, ${basePath}_960.jpg 960w`}
         sizes="(max-width: 768px) 128px, 160px"
-        alt={name}
+        alt={t('teacher_photo_alt', { name })}
         className="w-full h-full object-cover"
         loading="lazy"
         decoding="async"
@@ -104,10 +113,18 @@ const Teachers: React.FC = () => {
       <div className="container mx-auto px-6">
         <AnimateOnScroll>
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text">
+            <h2
+              id="teachers-title"
+              className="text-4xl md:text-5xl font-black tracking-tighter text-neutral holographic-text"
+              data-speakable="true"
+            >
               {t('teachersTitle')}
             </h2>
-            <p className="mt-4 text-neutral/70 text-lg max-w-2xl mx-auto">
+            <p
+              id="teachers-intro"
+              className="mt-4 text-neutral/70 text-lg max-w-2xl mx-auto"
+              data-speakable="true"
+            >
               {t('teachersSubtitle')}
             </p>
           </div>
@@ -148,7 +165,7 @@ const Teachers: React.FC = () => {
 
                   {/* Style Badges */}
                   <div className="flex flex-wrap justify-center md:justify-start gap-1.5 mb-3">
-                    {teacher.styles.slice(0, 4).map(style => (
+                    {teacher.styles.slice(0, 6).map(style => (
                       <StyleBadge key={style} style={style} />
                     ))}
                   </div>

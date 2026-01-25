@@ -8,37 +8,43 @@ module.exports = [
   {
     name: 'ES Locale Bundle',
     path: 'dist/assets/i18n-es-*.js',
-    limit: '378 KB', // Increased for image ALT i18n + Commercial Dance + Kizomba
+    limit: '400 KB', // Increased for blog articles + new teachers + manifesto + SEO content
     gzip: true,
   },
   {
     name: 'EN Locale Bundle',
     path: 'dist/assets/i18n-en-*.js',
-    limit: '370 KB', // Increased for image ALT i18n + Commercial Dance
+    limit: '390 KB', // Increased for blog articles + new teachers + manifesto
     gzip: true,
   },
   {
     name: 'CA Locale Bundle',
     path: 'dist/assets/i18n-ca-*.js',
-    limit: '395 KB', // Increased for image ALT i18n + Commercial Dance
+    limit: '415 KB', // Increased for blog articles + new teachers + manifesto
     gzip: true,
   },
   {
     name: 'FR Locale Bundle',
     path: 'dist/assets/i18n-fr-*.js',
-    limit: '410 KB', // Increased for image ALT i18n + Commercial Dance
+    limit: '430 KB', // Increased for blog articles + new teachers + manifesto
     gzip: true,
   },
   {
-    name: 'React Vendor',
-    path: 'dist/assets/react-vendor-*.js',
-    limit: '65 KB', // React + ReactDOM is ~50-60 KB gzipped
+    name: 'React Core',
+    path: 'dist/assets/react-core-*.js',
+    limit: '10 KB', // React core library
     gzip: true,
   },
   {
-    name: 'Router Vendor',
-    path: 'dist/assets/router-vendor-*.js',
-    limit: '40 KB',
+    name: 'React DOM',
+    path: 'dist/assets/react-dom-*.js',
+    limit: '56 KB', // ReactDOM is the larger part
+    gzip: true,
+  },
+  {
+    name: 'Router',
+    path: 'dist/assets/router-*.js',
+    limit: '40 KB', // React Router
     gzip: true,
   },
   {

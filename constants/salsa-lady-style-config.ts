@@ -3,34 +3,31 @@
  *
  * This file contains all the configuration needed for the LadyStyleTemplate
  * to render the complete Salsa Lady Style page.
+ *
+ * Enterprise: Uses Google Reviews System for dynamic, SEO-optimized testimonials
  */
 import type { LadyStyleTemplateConfig } from '../components/templates/LadyStyleTemplate';
-import { GOOGLE_REVIEWS_TESTIMONIALS } from './testimonials';
-import type { Testimonial } from '../types';
 import { getTeacherForClass } from './teacher-registry';
 import { getTeacherQuoteInfo } from './teacher-images';
 
-// Testimonials for Salsa Lady Style page
-const SALSA_LADY_STYLE_TESTIMONIALS: Testimonial[] = [
-  ...GOOGLE_REVIEWS_TESTIMONIALS,
-  {
-    id: 4,
-    name: 'Laura G.',
-    image: '',
-    rating: 5,
-    city: {
-      en: 'Barcelona, Spain',
-      es: 'Barcelona, España',
-      ca: 'Barcelona, Espanya',
-      fr: 'Barcelone, Espagne',
-    },
-    quote: {
-      en: 'The Lady Style classes with Yunaisy transformed my way of dancing completely. Now I feel elegant, confident and my movements have a feminine quality I never thought possible. The Farray Method is unique.',
-      es: 'Las clases de Lady Style con Yunaisy transformaron mi forma de bailar por completo. Ahora me siento elegante, segura y mis movimientos tienen una calidad femenina que nunca pensé posible. El Método Farray es único.',
-      ca: 'Les classes de Lady Style amb Yunaisy van transformar la meva forma de ballar completament. Ara em sento elegant, segura i els meus moviments tenen una qualitat femenina que mai vaig pensar possible. El Mètode Farray és únic.',
-      fr: "Les cours de Lady Style avec Yunaisy ont complètement transformé ma façon de danser. Maintenant je me sens élégante, confiante et mes mouvements ont une qualité féminine que je n'aurais jamais cru possible. La Méthode Farray est unique.",
-    },
-  },
+/**
+ * Curated Google Reviews for Salsa Lady Style page
+ * Selected for relevance to: Yunaisy, Yasmina, Lía Valdes, salsa lady style
+ * These are real Google reviews filtered by author name
+ *
+ * Enterprise criteria:
+ * - Mention specific teachers (Yunaisy, Yasmina, Iroel)
+ * - Reference salsa/lady style classes
+ * - High-quality, descriptive testimonials
+ * - Recent and verified reviews
+ */
+const SALSA_LADY_STYLE_CURATED_AUTHORS = [
+  'Emma S', // Yunaisy - "profesora estupenda: divertida y motivadora"
+  'Berta M', // Yunaisy + salsa - "progresión en salsa increíble"
+  'Michelle Lu', // Yunaisy - detailed review about dance school experience
+  'Justine Suchanecki', // Yasmine + Iroel - salsa classes "profesores favoritos"
+  'Paula Galindo Calanda', // Yasmina (Yas) - "las clases de Yas increíbles"
+  'Karina Indytska', // Yunaisy - "Yunaisy es una reina" + experiencia internacional
 ];
 
 // Style comparison data
@@ -484,8 +481,15 @@ export const SALSA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
     descKey: 'salsaLadyVideoDesc',
   },
 
-  // Testimonials
-  testimonials: SALSA_LADY_STYLE_TESTIMONIALS,
+  // Google Reviews Section - Enterprise: Dynamic reviews system
+  // Replaces static testimonials with real Google reviews
+  // Optimized for SEO, GEO, AIEO with structured data
+  googleReviewsSection: {
+    enabled: true,
+    selectedAuthors: SALSA_LADY_STYLE_CURATED_AUTHORS,
+    showGoogleBadge: true,
+    layout: 'grid',
+  },
 
   // Style comparison
   styleComparison: {

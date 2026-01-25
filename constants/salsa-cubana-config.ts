@@ -104,7 +104,7 @@ export const SALSA_CUBANA_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false,
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -134,18 +134,17 @@ export const SALSA_CUBANA_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Salsa Cubana, Casino, Rueda de Casino, guía y seguimiento, Método Farray',
-    prerequisites: 'Ninguno - clases para todos los niveles desde principiante absoluto',
-    lessons: 'Clases semanales con progresión por niveles',
+    teachesKey: 'schema_salsaCubana_teaches',
+    prerequisitesKey: 'schema_salsaCubana_prerequisites',
+    lessonsKey: 'schema_salsaCubana_lessons',
     duration: 'PT1H',
   },
 
   personSchemas: [
     {
       name: 'Yunaisy Farray',
-      jobTitle: "Directora de Farray's Center - Creadora del Método Farray",
-      description:
-        "Bailarina profesional cubana, creadora del Método Farray para Salsa Cubana, directora de Farray's International Dance Center.",
+      jobTitleKey: 'schema_yunaisy_jobTitle_salsaCubana',
+      descriptionKey: 'schema_yunaisy_description_salsaCubana',
       knowsAbout: ['Salsa Cubana', 'Casino', 'Rueda de Casino', 'Método Farray', 'Cuban Dance'],
     },
   ],

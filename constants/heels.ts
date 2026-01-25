@@ -16,9 +16,10 @@ export const HEELS_STYLES: HeelsStyleConfig[] = [
   {
     key: 'femmology',
     url: '/clases/femmology',
-    basePath: '/images/classes/femmology/img/clases-de-femmology-barcelona',
+    basePath: '/images/classes/femmology/img/femmology-hero-barcelona',
     altKey: 'styleImages.femmology.cardHub',
-    fallbackAlt: 'Clases de Femmology en Barcelona - Baile en tacones con Yunaisy Farray',
+    fallbackAlt:
+      'Yunaisy Farray y grupo de bailarinas de Femmology en Barcelona - Pose dramática en escenario con tacones',
   },
   {
     key: 'sexy_style',

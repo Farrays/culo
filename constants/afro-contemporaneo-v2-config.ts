@@ -120,9 +120,9 @@ export const AFRO_CONTEMPORANEO_V2_CONFIG: FullDanceClassConfigV2 = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Afro Contemporáneo, técnica cubana ENA, disociación corporal, folklore afrocubano',
-    prerequisites: 'Ninguno - clases para todos los niveles',
-    lessons: 'Clases semanales de perfeccionamiento',
+    teachesKey: 'schema_afroContemporaneo_teaches',
+    prerequisitesKey: 'schema_afroContemporaneo_prerequisites',
+    lessonsKey: 'schema_afroContemporaneo_lessons',
     duration: 'PT1H',
   },
 };

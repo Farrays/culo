@@ -67,8 +67,7 @@
     <!-- Self-hosted fonts - preload critical weights with high priority -->
     <link rel="preload" href="/fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
     <link rel="preload" href="/fonts/roboto-v30-latin-700.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
-    <!-- Preload hero video poster for LCP (local optimized WebP - 49KB) -->
-    <link rel="preload" href="/images/hero/hero-video-poster.webp" as="image" type="image/webp" fetchpriority="high">
+    <!-- Hero video poster loads dynamically on homepage only to avoid unused preload warnings -->
 
     <!-- Critical CSS (above the fold) - INLINED for instant rendering -->
     <style>

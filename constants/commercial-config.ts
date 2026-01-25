@@ -79,9 +79,7 @@ export const COMMERCIAL_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false, // Disabled until video is available
-    videos: [],
-    placeholderCount: 0,
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -110,9 +108,9 @@ export const COMMERCIAL_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Commercial Dance, coreografías para videoclips, técnica de performance profesional',
-    prerequisites: 'Ninguno',
-    lessons: 'Próximamente',
+    teachesKey: 'schema_commercial_teaches',
+    prerequisitesKey: 'schema_commercial_prerequisites',
+    lessonsKey: 'schema_commercial_lessons',
     duration: 'PT1H',
   },
 

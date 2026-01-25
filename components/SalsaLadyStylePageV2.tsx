@@ -161,7 +161,7 @@ const SalsaLadyStylePageV2: React.FC = () => {
 
   // Schema Markup data for reviews
   const reviewsSchemaData = salsaLadyTestimonials.map(testimonial => ({
-    itemReviewed: { name: "Clases de Salsa Lady Style - Farray's Center", type: 'Course' },
+    itemReviewed: { name: t('schema_salsaLady_courseName'), type: 'Course' },
     author: testimonial.name,
     reviewRating: { ratingValue: testimonial.rating.toString(), bestRating: '5' },
     reviewBody: testimonial.quote[locale],
@@ -241,27 +241,27 @@ const SalsaLadyStylePageV2: React.FC = () => {
 
       {/* Schema Markup */}
       <LocalBusinessSchema
-        name="Farray's International Dance Center - Clases de Salsa Lady Style"
+        name={t('schema_salsaLady_businessName')}
         description={t('salsaLadyV2MetaDescription')}
         url={pageUrl}
         telephone="+34622247085"
         email="info@farrayscenter.com"
         address={{
-          streetAddress: 'Calle Entenca 100',
+          streetAddress: t('schema_streetAddress'),
           addressLocality: 'Barcelona',
           postalCode: '08015',
           addressCountry: 'ES',
         }}
-        geo={{ latitude: '41.3784', longitude: '2.1456' }}
+        geo={{ latitude: '41.380421', longitude: '2.148014' }}
         priceRange="$$"
       />
       <CourseSchema
-        name="Clases de Salsa Lady Style Barcelona - Método Farray"
+        name={t('schema_salsaLady_courseName')}
         description={t('salsaLadyV2MetaDescription')}
         provider={{ name: "Farray's International Dance Center", url: baseUrl }}
       />
       <AggregateReviewsSchema
-        itemName="Clases de Salsa Lady Style - Farray's Center"
+        itemName={t('schema_salsaLady_itemName')}
         itemType="Course"
         reviews={reviewsSchemaData}
       />

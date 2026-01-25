@@ -50,8 +50,8 @@ export const FARRAYS_LOCATION = {
   telephone: '+34622247085',
   email: 'info@farrayscenter.com',
   geo: {
-    latitude: '41.3751',
-    longitude: '2.1482',
+    latitude: '41.380421',
+    longitude: '2.148014',
   },
   priceRange: '€€',
 } as const;

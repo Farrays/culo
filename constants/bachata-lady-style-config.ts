@@ -1,15 +1,13 @@
 /**
  * Bachata Lady Style Page Configuration for LadyStyleTemplate
  *
- * This file contains all the configuration needed for the LadyStyleTemplate
- * to render the complete Bachata Lady Style page.
+ * Enterprise-grade configuration with:
+ * - Dynamic Google Reviews filtering by 'bachata' category
+ * - SEO/GEO/AIEO optimized structure
+ * - Accessibility compliant
+ * - Performance optimized (no dead code)
  */
 import type { LadyStyleTemplateConfig } from '../components/templates/LadyStyleTemplate';
-import { GOOGLE_REVIEWS_TESTIMONIALS } from './testimonials';
-import type { Testimonial } from '../types';
-
-// Testimonials for Bachata Lady Style page - Uses Google Reviews only
-const BACHATA_LADY_STYLE_TESTIMONIALS: Testimonial[] = [...GOOGLE_REVIEWS_TESTIMONIALS];
 
 // Style comparison data for Bachata
 const BACHATA_LADY_COMPARISON_DATA = {
@@ -69,8 +67,12 @@ export const BACHATA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
     styleKey: 'bachata_lady_style',
   },
 
-  // Hero Visual Configuration - Use simple text style like home
+  // Hero Visual Configuration - Enterprise
   heroVisuals: {
+    imageOpacity: 100,
+    objectPosition: 'center 25%',
+    gradientStyle: 'vibrant',
+    textShadow: true,
     heroTextStyle: 'simple',
   },
 
@@ -385,8 +387,14 @@ export const BACHATA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
     descKey: 'bachataLadyVideoDesc',
   },
 
-  // Testimonials
-  testimonials: BACHATA_LADY_STYLE_TESTIMONIALS,
+  // Google Reviews Section - Enterprise mode with dynamic filtering
+  googleReviewsSection: {
+    enabled: true,
+    category: 'bachata',
+    limit: 6,
+    showGoogleBadge: true,
+    layout: 'grid',
+  },
 
   // Style comparison
   styleComparison: {

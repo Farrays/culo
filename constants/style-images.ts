@@ -82,7 +82,8 @@ export const CATEGORY_FALLBACK_IMAGES: Record<string, CategoryFallbackConfig> = 
   },
   fitness: {
     basePath: '/images/categories/img/fitness',
-    fallbackAlt: "Fitness para Bailarines Barcelona - Clases en Farray's Center",
+    fallbackAlt:
+      "Bailarina realizando ejercicios de preparación física y acondicionamiento corporal para danza en academia de Barcelona - entrenamiento funcional en Farray's Center",
   },
 };
 
@@ -107,8 +108,8 @@ export const STYLE_IMAGES: Record<string, StyleImageConfig> = {
     basePath: '/images/classes/dancehall/img/dancehall-classes-barcelona-01',
     altKey: 'styleImages.dancehall.alt',
     fallbackAlt: "Clases de Dancehall en Barcelona - Aprende con profesionales en Farray's Center",
-    breakpoints: [640, 960, 1440],
-    formats: ['webp', 'jpg'],
+    breakpoints: [320, 640, 768, 1024, 1440, 1920],
+    formats: ['avif', 'webp', 'jpg'],
   },
 
   afrobeat: {
@@ -160,9 +161,10 @@ export const STYLE_IMAGES: Record<string, StyleImageConfig> = {
   },
 
   femmology_heels: {
-    basePath: '/images/classes/femmology/img/clases-de-femmology-barcelona',
+    basePath: '/images/classes/femmology/img/femmology-hero-barcelona',
     altKey: 'styleImages.femmology.alt',
-    fallbackAlt: "Clases de Femmology y Heels Barcelona - Farray's Center",
+    fallbackAlt:
+      'Yunaisy Farray y su grupo de bailarinas de Femmology en pose dramática - Clases de baile en tacones Barcelona',
     breakpoints: [320, 640, 768, 1024, 1440, 1920],
     formats: ['avif', 'webp', 'jpg'],
   },
@@ -310,17 +312,19 @@ export const STYLE_IMAGES: Record<string, StyleImageConfig> = {
   // =========================================================================
 
   stretching: {
-    basePath: '/images/categories/img/fitness',
+    basePath: '/images/categories/img/stretching',
     altKey: 'styleImages.stretching.alt',
-    fallbackAlt: "Clases de Stretching Barcelona - Flexibilidad en Farray's Center",
+    fallbackAlt:
+      "Bailarina realizando estiramientos profundos y ejercicios de flexibilidad en clase de stretching profesional para bailarines en Barcelona - técnicas de elongación, apertura de caderas y backbending en Farray's Center",
     breakpoints: [320, 640, 768, 1024],
     formats: ['avif', 'webp', 'jpg'],
   },
 
   bum_bum: {
-    basePath: '/images/classes/bum-bum/img/bum-bum-gluteos',
+    basePath: '/images/classes/bum-bum/img/bum-bum-gluteos-maravillosos',
     altKey: 'styleImages.bumBum.alt',
-    fallbackAlt: "Clases de Bum Bum Barcelona - Ejercicios de glúteos en Farray's Center",
+    fallbackAlt:
+      "Alumnas realizando ejercicios de glúteos Bum Bum en academia de Barcelona - tonificación con hip thrust, sentadillas y técnicas del Método Farray en Farray's Center",
     breakpoints: [320, 640, 768, 1024, 1440, 1920],
     formats: ['avif', 'webp', 'jpg'],
   },
@@ -329,7 +333,7 @@ export const STYLE_IMAGES: Record<string, StyleImageConfig> = {
     basePath: '/images/classes/cuerpo-fit/img/cuerpo-fit-entrenamiento-bailarines',
     altKey: 'styleImages.cuerpoFit.alt',
     fallbackAlt:
-      "Clases de Cuerpo Fit Barcelona - Acondicionamiento físico para bailarines en Farray's Center",
+      "Bailarina realizando entrenamiento funcional de Cuerpo Fit en Barcelona - cardio dance y acondicionamiento físico para bailarines en Farray's Center",
     breakpoints: [320, 640, 768, 1024, 1440, 1920],
     formats: ['avif', 'webp', 'jpg'],
   },
@@ -338,15 +342,29 @@ export const STYLE_IMAGES: Record<string, StyleImageConfig> = {
     basePath: '/images/classes/cuerpo-fit/img/cuerpo-fit-entrenamiento-bailarines',
     altKey: 'styleImages.fullBodyCardio.alt',
     fallbackAlt:
-      "Clases de Cuerpo-Fit Cardio Dance Barcelona - Entrenamiento full body en Farray's Center",
+      "Entrenamiento de Cuerpo-Fit Cardio Dance en Barcelona - ejercicio cardiovascular y baile para bailarines en Farray's Center",
     breakpoints: [320, 640, 768, 1024, 1440, 1920],
     formats: ['avif', 'webp', 'jpg'],
   },
 
   body_conditioning: {
-    basePath: '/images/classes/cuerpo-fit/img/cuerpo-fit-entrenamiento-bailarines',
+    basePath: '/images/categories/img/body-conditioning',
     altKey: 'styleImages.bodyConditioning.alt',
-    fallbackAlt: "Acondicionamiento Físico para Bailarines Barcelona - Farray's Center",
+    fallbackAlt:
+      "Bailarinas realizando acondicionamiento físico y preparación corporal para danza en academia de Barcelona - Farray's Center",
+    breakpoints: [320, 640, 768, 1024, 1440, 1920],
+    formats: ['avif', 'webp', 'jpg'],
+  },
+
+  // =========================================================================
+  // HERO IMAGES (Page-specific hero backgrounds)
+  // =========================================================================
+
+  entrenamiento_bailarines_hero: {
+    basePath: '/images/classes/entrenamiento-bailarines/img/entrenamiento-bailarines-hero',
+    altKey: 'styleImages.entrenamientoBailarinesHero.alt',
+    fallbackAlt:
+      "Bailarinas profesionales realizando entrenamiento físico especializado para danza en Barcelona - preparación corporal, flexibilidad y fuerza en Farray's International Dance Center",
     breakpoints: [320, 640, 768, 1024, 1440, 1920],
     formats: ['avif', 'webp', 'jpg'],
   },
@@ -395,6 +413,7 @@ export const STYLE_TO_CATEGORY: Record<string, string> = {
   cuerpo_fit: 'fitness',
   full_body_cardio: 'fitness',
   body_conditioning: 'fitness',
+  entrenamiento_bailarines_hero: 'fitness',
 };
 
 // ============================================================================
@@ -504,6 +523,7 @@ const STYLE_KEY_TO_CAMEL: Record<string, string> = {
   cuerpo_fit: 'cuerpoFit',
   full_body_cardio: 'fullBodyCardio',
   body_conditioning: 'bodyConditioning',
+  entrenamiento_bailarines_hero: 'entrenamientoBailarinesHero',
 };
 
 /**
@@ -584,8 +604,8 @@ export const SLUG_TO_STYLE_KEY: Record<string, string> = {
   'stretching-barcelona': 'stretching',
   'ejercicios-gluteos-barcelona': 'bum_bum',
   'cuerpo-fit': 'cuerpo_fit',
-  'full-body-cardio-barcelona': 'full_body_cardio',
   'body-conditioning-barcelona': 'body_conditioning',
+  'acondicionamiento-fisico-bailarines': 'body_conditioning', // Spanish URL slug
 };
 
 /**

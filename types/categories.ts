@@ -8,6 +8,7 @@ export interface OptimizedImage {
   srcSetJpeg: string; // JPEG srcset
   placeholder?: string; // LQIP base64 data URL
   dominantColor?: string; // Dominant color for placeholder
+  objectPosition?: string; // CSS object-position for cropping control (e.g., 'top', 'center 30%')
 }
 
 export interface Category {

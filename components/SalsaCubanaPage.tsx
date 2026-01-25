@@ -10,7 +10,6 @@ import {
   getRelatedClassImageUrl,
 } from '../constants/style-images';
 import {
-  SALSA_CUBANA_TESTIMONIALS,
   SALSA_CUBANA_FAQS_CONFIG,
   SALSA_CUBANA_SCHEDULE_KEYS,
   SALSA_CUBANA_NEARBY_AREAS,
@@ -27,7 +26,7 @@ import LevelCardsSection from './shared/LevelCardsSection';
 import PrepareClassSection from './shared/PrepareClassSection';
 import AnimatedCounter from './AnimatedCounter';
 import YouTubeEmbed from './YouTubeEmbed';
-import { LocalBusinessSchema, CourseSchema, AggregateReviewsSchema } from './SchemaMarkup';
+import { LocalBusinessSchema, CourseSchema } from './SchemaMarkup';
 import {
   StarRating,
   CheckIcon,
@@ -39,6 +38,7 @@ import {
 } from '../lib/icons';
 import LatinDanceComparisonTable from './shared/LatinDanceComparisonTable';
 import { UsersIcon, MapPinIcon } from './shared/CommonIcons';
+import { ReviewsSection } from './reviews';
 
 // Enterprise: Get salsa cubana image config from centralized system
 const salsaCubanaImage = getStyleImage('salsa_cubana');
@@ -61,18 +61,6 @@ const SalsaCubanaPage: React.FC = () => {
     id: faq.id,
     question: t(faq.questionKey),
     answer: t(faq.answerKey),
-  }));
-
-  // Testimonials - usar desde constants
-  const salsaCubanaTestimonials = SALSA_CUBANA_TESTIMONIALS;
-
-  // Schema Markup data for reviews
-  const reviewsSchemaData = salsaCubanaTestimonials.map(testimonial => ({
-    itemReviewed: { name: "Clases de Salsa Cubana - Farray's Center", type: 'Course' },
-    author: testimonial.name,
-    reviewRating: { ratingValue: testimonial.rating.toString(), bestRating: '5' },
-    reviewBody: testimonial.quote[locale],
-    datePublished: new Date().toISOString().split('T')[0],
   }));
 
   // VideoObject Schema
@@ -167,20 +155,20 @@ const SalsaCubanaPage: React.FC = () => {
 
       {/* Schema Markup */}
       <LocalBusinessSchema
-        name="Farray's International Dance Center - Clases de Salsa Cubana"
+        name={t('salsaCubana_schema_businessName')}
         description={t('salsaCubanaMetaDescription')}
         url={pageUrl}
         telephone="+34622247085"
         email="info@farrayscenter.com"
         address={{
-          streetAddress: 'Calle Entenca 100',
+          streetAddress: t('salsaCubana_schema_streetAddress'),
           addressLocality: 'Barcelona',
           postalCode: '08015',
           addressCountry: 'ES',
         }}
         geo={{
-          latitude: '41.3751',
-          longitude: '2.1482',
+          latitude: '41.380421',
+          longitude: '2.148014',
         }}
         priceRange="€€"
         aggregateRating={{
@@ -193,21 +181,15 @@ const SalsaCubanaPage: React.FC = () => {
         name={t('salsaCubanaCourseSchemaName')}
         description={t('salsaCubanaCourseSchemaDesc')}
         provider={{
-          name: "Farray's International Dance Center",
+          name: t('salsaCubana_schema_providerName'),
           url: baseUrl,
         }}
-        educationalLevel="Beginner, Intermediate, Advanced"
-        teaches="Salsa Cubana, Casino, Rueda de Casino, guía y seguimiento, técnica de pareja"
-        coursePrerequisites="Ninguno"
-        numberOfLessons="5 clases semanales"
+        educationalLevel={t('salsaCubana_schema_educationalLevel')}
+        teaches={t('salsaCubana_schema_teaches')}
+        coursePrerequisites={t('salsaCubana_schema_prerequisites')}
+        numberOfLessons={t('salsaCubana_schema_numberOfLessons')}
         timeRequired="PT1H"
         availableLanguage={['es', 'en', 'ca', 'fr']}
-      />
-
-      <AggregateReviewsSchema
-        reviews={reviewsSchemaData}
-        itemName="Clases de Salsa Cubana en Barcelona - Farray's Center"
-        itemType="Course"
       />
 
       {/* Skip Links for Accessibility */}
@@ -287,12 +269,12 @@ const SalsaCubanaPage: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <StarRating size="sm" />
                   <span className="font-semibold">4.9/5</span>
-                  <span className="text-sm">(509+ reseñas)</span>
+                  <span className="text-sm">{t('salsaCubana_socialProof_reviews')}</span>
                 </div>
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
                   <UsersIcon className="w-5 h-5 text-primary-accent" />
-                  <span>+15.000 alumnos formados</span>
+                  <span>{t('salsaCubana_socialProof_students')}</span>
                 </div>
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
@@ -486,7 +468,7 @@ const SalsaCubanaPage: React.FC = () => {
                       />
                       <img
                         src="/images/teachers/img/maestra-yunaisy-farray_320.webp"
-                        alt="Yunaisy Farray - Creadora del Método Farray, Maestra CID-UNESCO"
+                        alt={t('salsaCubana_alt_yunaisy')}
                         width="192"
                         height="192"
                         loading="lazy"
@@ -510,10 +492,10 @@ const SalsaCubanaPage: React.FC = () => {
                         CID-UNESCO
                       </span>
                       <span className="px-3 py-1 bg-primary-accent/20 text-primary-accent text-sm rounded-full">
-                        Método Farray
+                        {t('salsaCubana_tag_metodoFarray')}
                       </span>
                       <span className="px-3 py-1 bg-primary-accent/20 text-primary-accent text-sm rounded-full">
-                        +25 años exp.
+                        {t('salsaCubana_tag_experience')}
                       </span>
                     </div>
                   </div>
@@ -541,7 +523,7 @@ const SalsaCubanaPage: React.FC = () => {
                         />
                         <img
                           src="/images/teachers/img/profesor-iroel-bastarreche_320.webp"
-                          alt="Iroel Bastarreche - Profesor de Salsa Cubana"
+                          alt={t('salsaCubana_alt_iroel')}
                           width="96"
                           height="96"
                           loading="lazy"
@@ -581,7 +563,7 @@ const SalsaCubanaPage: React.FC = () => {
                         />
                         <img
                           src="/images/teachers/img/profesora-yasmina-fern%C3%A1ndez_320.webp"
-                          alt="Yasmina Fernández - Profesora de Salsa Cubana"
+                          alt={t('salsaCubana_alt_yasmina')}
                           width="96"
                           height="96"
                           loading="lazy"
@@ -621,7 +603,7 @@ const SalsaCubanaPage: React.FC = () => {
                         />
                         <img
                           src="/images/teachers/img/profesora-lia-valdes_320.webp"
-                          alt="Lia Valdes - Profesora de Salsa Cubana"
+                          alt={t('salsaCubana_alt_lia')}
                           width="96"
                           height="96"
                           loading="lazy"
@@ -1121,7 +1103,7 @@ const SalsaCubanaPage: React.FC = () => {
                 <AnimateOnScroll
                   key={num}
                   delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
-                  className="[perspective:1000px]"
+                  className={`[perspective:1000px]${num === 7 ? ' lg:col-start-2' : ''}`}
                 >
                   <div className="group h-full min-h-[140px] sm:min-h-[160px] p-4 sm:p-6 bg-black/30 rounded-xl border border-primary-dark/50 hover:border-primary-accent transition-all duration-500 [transform-style:preserve-3d] hover:[transform:translateY(-0.5rem)_scale(1.02)] hover:shadow-accent-glow">
                     <div className="flex items-start gap-3 sm:gap-4">
@@ -1189,7 +1171,7 @@ const SalsaCubanaPage: React.FC = () => {
                     <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center overflow-hidden rounded-lg">
                       <img
                         src="/images/cid-unesco-logo.webp"
-                        alt="CID UNESCO - Consejo Internacional de la Danza"
+                        alt={t('salsaCubana_alt_cidUnesco')}
                         loading="lazy"
                         className="w-full h-full object-contain"
                       />
@@ -1202,7 +1184,7 @@ const SalsaCubanaPage: React.FC = () => {
                     <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center overflow-hidden rounded-lg">
                       <img
                         src="/images/Street-Dance-2.webp"
-                        alt="Street Dance 2 - Película de danza"
+                        alt={t('salsaCubana_alt_streetDance')}
                         loading="lazy"
                         className="w-full h-full object-cover"
                       />
@@ -1215,7 +1197,7 @@ const SalsaCubanaPage: React.FC = () => {
                     <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center overflow-hidden rounded-lg">
                       <img
                         src="/images/the-dancer-espectaculo-baile-cuadrada.webp"
-                        alt="The Dancer - Espectáculo de baile"
+                        alt={t('salsaCubana_alt_theDancer')}
                         loading="lazy"
                         className="w-full h-full object-cover"
                       />
@@ -1228,7 +1210,7 @@ const SalsaCubanaPage: React.FC = () => {
                     <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center overflow-hidden rounded-lg">
                       <img
                         src="/images/telecinco-logo.webp"
-                        alt="Telecinco - Cadena de televisión española"
+                        alt={t('salsaCubana_alt_telecinco')}
                         loading="lazy"
                         className="w-full h-full object-cover"
                       />
@@ -1262,72 +1244,15 @@ const SalsaCubanaPage: React.FC = () => {
               <AnimateOnScroll delay={ANIMATION_DELAYS.STAGGER_SMALL}>
                 <YouTubeEmbed
                   videoId={SALSA_CUBANA_VIDEO_ID}
-                  title="Clases de Salsa Cubana en Barcelona - Farray's Center"
+                  title={t('salsaCubana_video_embedTitle')}
                 />
               </AnimateOnScroll>
             </div>
           </div>
         </section>
 
-        {/* 10. Testimonials */}
-        <section
-          id="testimonials"
-          aria-labelledby="testimonials-title"
-          className="py-12 md:py-16 bg-primary-dark/10"
-        >
-          <div className="container mx-auto px-4 sm:px-6">
-            <AnimateOnScroll>
-              <div className="text-center mb-8 sm:mb-10 max-w-4xl mx-auto">
-                <h2
-                  id="testimonials-title"
-                  className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-neutral mb-4 sm:mb-6 holographic-text"
-                >
-                  {t('testimonialsNotRequested')}
-                </h2>
-                <div className="inline-block">
-                  <div className="mb-2 sm:mb-3 text-2xl sm:text-3xl font-black text-neutral">
-                    {t('excellent')}
-                  </div>
-                  <div className="flex items-center justify-center gap-1 mb-2">
-                    <StarRating size="lg" />
-                  </div>
-                  <div className="text-xs sm:text-sm text-neutral/70">
-                    {t('basedOnReviews').replace('{count}', '509')}
-                  </div>
-                  <div className="mt-2 text-xs text-neutral/70">Google</div>
-                </div>
-              </div>
-            </AnimateOnScroll>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
-              {salsaCubanaTestimonials.map((testimonial, index) => (
-                <AnimateOnScroll
-                  key={testimonial.id}
-                  delay={index * ANIMATION_DELAYS.STAGGER_SMALL}
-                >
-                  <div className="flex flex-col h-full min-h-[180px] sm:min-h-[200px] p-4 sm:p-6 bg-black/50 backdrop-blur-md border border-primary-dark/50 rounded-xl shadow-lg transition-all duration-300 hover:border-primary-accent hover:shadow-accent-glow hover:-translate-y-2">
-                    <div className="mb-2 sm:mb-3">
-                      <StarRating size="sm" label="5 estrellas" />
-                    </div>
-                    <blockquote className="flex-grow text-neutral/90 mb-3 sm:mb-4">
-                      <p className="text-xs sm:text-sm leading-relaxed">
-                        &ldquo;{testimonial.quote[locale]}&rdquo;
-                      </p>
-                    </blockquote>
-                    <div className="flex items-center gap-3 mt-auto pt-3 sm:pt-4 border-t border-primary-dark/30">
-                      <div>
-                        <cite className="font-bold text-neutral not-italic text-xs sm:text-sm">
-                          {testimonial.name}
-                        </cite>
-                        <p className="text-xs text-neutral/75">{testimonial.city[locale]}</p>
-                      </div>
-                    </div>
-                  </div>
-                </AnimateOnScroll>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* 10. Reviews Section - Enterprise Professional System */}
+        <ReviewsSection category="salsa-cubana" limit={8} showGoogleBadge={true} layout="grid" />
 
         {/* 11. Cultural History */}
         <CulturalHistorySection

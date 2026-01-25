@@ -49,6 +49,7 @@ export interface RelatedClass {
   imageSrc: string;
   imageAlt: string;
   objectPosition?: string;
+  breakpoints?: number[];
 }
 
 // Category item for hub pages (like /clases/baile-barcelona)
@@ -60,17 +61,30 @@ export interface CategoryItem {
   imageUrl: string;
 }
 
+// Hero image configuration (Enterprise format for OptimizedImage)
+export interface HeroImageConfig {
+  basePath: string; // Path without size/format (e.g., "/images/categories/hero/clases-de-danza")
+  altKey?: string; // i18n key for alt text (for accessibility)
+  altFallback: string; // Fallback alt text
+  breakpoints?: number[]; // Default: [320, 640, 768, 1024, 1440, 1920]
+  formats?: ('avif' | 'webp' | 'jpg')[]; // Default: ['avif', 'webp', 'jpg']
+  objectPosition?: string; // CSS object-position (e.g., "center 30%")
+  opacity?: number; // Background opacity (0-100, default: 40)
+}
+
 export interface CategoryPageTemplateProps {
   // Hero config
   heroGradient: string; // e.g., "from-emerald-900/30"
   heroTitleKey: string;
   heroSubtitleKey?: string;
   heroIntroKey: string;
+  heroImage?: HeroImageConfig; // Optional hero background image
 
   // Data - styles OR categories (for hub page)
   styles?: StyleItem[];
   categories?: CategoryItem[]; // For hub page (shows category cards instead of style cards)
   categoryImages?: Record<string, string>; // Images for categories (hub page)
+  categoryObjectPositions?: Record<string, string>; // Object positions for category images
   valuePillars: ValuePillarWithIcon[];
   faqs: FAQ[];
   relatedClasses?: RelatedClass[]; // Optional for hub page
@@ -113,6 +127,7 @@ interface CategoryHeroProps {
   introKey: string;
   breadcrumbItems: BreadcrumbItem[];
   onCtaClick: () => void;
+  heroImage?: HeroImageConfig;
 }
 
 const CategoryHero: React.FC<CategoryHeroProps> = ({
@@ -122,17 +137,49 @@ const CategoryHero: React.FC<CategoryHeroProps> = ({
   introKey,
   breadcrumbItems,
   onCtaClick,
+  heroImage,
 }) => {
   const { t } = useI18n();
+
+  // Default hero image settings
+  const heroBreakpoints = heroImage?.breakpoints || [320, 640, 768, 1024, 1440, 1920];
+  const heroFormats = heroImage?.formats || ['avif', 'webp', 'jpg'];
+  const heroOpacity = heroImage?.opacity ?? 40;
 
   return (
     <section
       id="category-hero"
-      className="relative text-center py-16 md:py-20 overflow-hidden flex items-center justify-center min-h-[450px]"
+      aria-labelledby="hero-title"
+      className="relative text-center py-16 md:py-20 overflow-hidden flex items-center justify-center min-h-[450px] md:min-h-[500px]"
     >
       {/* Background */}
       <div className="absolute inset-0 bg-black">
-        <div className={`absolute inset-0 bg-gradient-to-br ${gradient} via-black to-black`}></div>
+        {/* Hero Image (if provided) */}
+        {heroImage && (
+          <div
+            className="absolute inset-0"
+            style={{ opacity: heroOpacity / 100 }}
+            aria-hidden="true"
+          >
+            <OptimizedImage
+              src={heroImage.basePath}
+              altKey={heroImage.altKey}
+              altFallback={heroImage.altFallback}
+              className="w-full h-full object-cover"
+              objectPosition={heroImage.objectPosition || 'center center'}
+              breakpoints={heroBreakpoints}
+              formats={heroFormats}
+              sizes="100vw"
+              priority="high"
+              placeholder="color"
+              placeholderColor="#000"
+            />
+          </div>
+        )}
+        {/* Gradient Overlay */}
+        <div
+          className={`absolute inset-0 bg-gradient-to-br ${gradient} via-black/40 to-black/60`}
+        />
       </div>
       <div className="relative z-20 container mx-auto px-6">
         {/* Breadcrumb */}
@@ -141,6 +188,7 @@ const CategoryHero: React.FC<CategoryHeroProps> = ({
         {/* H1 + Subheadline */}
         <AnimateOnScroll>
           <h1
+            id="hero-title"
             className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-tight mb-4 min-h-[100px] md:min-h-[140px] flex flex-col items-center justify-center text-white"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
           >
@@ -290,6 +338,7 @@ interface CategoriesGridProps {
   titleKey: string;
   descriptionKey: string;
   categoryImages: Record<string, string>;
+  categoryObjectPositions?: Record<string, string>;
 }
 
 const CategoriesGrid: React.FC<CategoriesGridProps> = ({
@@ -297,6 +346,7 @@ const CategoriesGrid: React.FC<CategoriesGridProps> = ({
   titleKey,
   descriptionKey,
   categoryImages,
+  categoryObjectPositions,
 }) => {
   const { t, locale } = useI18n();
 
@@ -344,6 +394,7 @@ const CategoriesGrid: React.FC<CategoriesGridProps> = ({
                     placeholder="color"
                     placeholderColor="#111"
                     breakpoints={[320, 640, 768, 1024]}
+                    objectPosition={categoryObjectPositions?.[category.key]}
                   />
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
@@ -585,7 +636,7 @@ const RelatedClassesSection: React.FC<RelatedClassesSectionProps> = ({ classes }
                         objectPosition={relatedClass.objectPosition}
                         width={480}
                         height={320}
-                        breakpoints={[320, 640, 768]}
+                        breakpoints={relatedClass.breakpoints || [320, 640, 768]}
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 480px"
                         priority="auto"
                       />
@@ -646,10 +697,12 @@ const CategoryPageTemplate: React.FC<CategoryPageTemplateProps> = ({
   heroTitleKey,
   heroSubtitleKey,
   heroIntroKey,
+  heroImage,
   // Data
   styles,
   categories,
   categoryImages,
+  categoryObjectPositions,
   valuePillars,
   faqs,
   relatedClasses,
@@ -698,6 +751,7 @@ const CategoryPageTemplate: React.FC<CategoryPageTemplateProps> = ({
           introKey={heroIntroKey}
           breadcrumbItems={breadcrumbItems}
           onCtaClick={handleCtaClick}
+          heroImage={heroImage}
         />
 
         {/* Styles Grid OR Categories Grid Section */}
@@ -707,6 +761,7 @@ const CategoryPageTemplate: React.FC<CategoryPageTemplateProps> = ({
             titleKey={stylesSectionTitleKey}
             descriptionKey={stylesDescriptionKey}
             categoryImages={categoryImages}
+            categoryObjectPositions={categoryObjectPositions}
           />
         ) : styles ? (
           <StylesGrid

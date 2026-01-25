@@ -43,11 +43,14 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
               className="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-110 opacity-40 group-hover:opacity-60"
               loading={category.key === 'salsa_bachata' ? 'eager' : 'lazy'}
               decoding="async"
-              style={
-                optimizedImage.dominantColor
-                  ? { backgroundColor: optimizedImage.dominantColor }
-                  : undefined
-              }
+              style={{
+                ...(optimizedImage.dominantColor && {
+                  backgroundColor: optimizedImage.dominantColor,
+                }),
+                ...(optimizedImage.objectPosition && {
+                  objectPosition: optimizedImage.objectPosition,
+                }),
+              }}
             />
           </picture>
         ) : (

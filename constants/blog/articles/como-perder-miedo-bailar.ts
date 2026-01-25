@@ -116,7 +116,7 @@ export const COMO_PERDER_MIEDO_BAILAR_CONFIG: BlogArticleConfig = {
       answerCapsule: {
         questionKey: 'blogPerderMiedoBailar_answerComoPerderQ',
         answerKey: 'blogPerderMiedoBailar_answerComoPerderA',
-        sourcePublisher: "Farray's Dance Center + Psicología Conductual",
+        sourcePublisherKey: 'blogPerderMiedoBailar_sourcePublisherBehavioral',
         confidence: 'verified',
         icon: 'star',
       },
@@ -360,7 +360,7 @@ export const COMO_PERDER_MIEDO_BAILAR_CONFIG: BlogArticleConfig = {
       type: 'statistic',
       contentKey: 'blogPerderMiedoBailar_statSatisfaccionContent',
       statisticValue: '4.9/5',
-      statisticSource: 'Google Reviews, 127 reseñas',
+      statisticSource: 'Google Reviews, 509 reseñas',
     },
 
     // =====================================================
@@ -461,15 +461,17 @@ export const COMO_PERDER_MIEDO_BAILAR_CONFIG: BlogArticleConfig = {
     },
   ],
 
-  // === FEATURED IMAGE (using existing image as placeholder) ===
+  // === FEATURED IMAGE ===
   featuredImage: {
-    src: '/images/blog/salsa-vs-bachata/hero.webp',
+    src: '/images/blog/como-perder-miedo/hero.webp',
     srcSet:
-      '/images/blog/salsa-vs-bachata/hero-480.webp 480w, /images/blog/salsa-vs-bachata/hero-960.webp 960w, /images/blog/salsa-vs-bachata/hero.webp 1200w',
-    alt: "Cómo perder el miedo a bailar - Clase de bienvenida en Farray's Barcelona",
+      '/images/blog/como-perder-miedo/hero-480.webp 480w, /images/blog/como-perder-miedo/hero-960.webp 960w, /images/blog/como-perder-miedo/hero.webp 1200w',
+    alt: 'Alumnos que fueron principiantes y superaron la ansiedad y el miedo escénico, guiados por los profesores de nuestra academia de baile en Barcelona',
+    altKey: 'blogPerderMiedoBailar_heroAlt',
     width: 1200,
     height: 630,
   },
+  ogImage: '/images/blog/como-perder-miedo/og.jpg',
 
   // === NAVIGATION ===
   breadcrumbConfig: {
@@ -531,18 +533,18 @@ export const COMO_PERDER_MIEDO_BAILAR_CONFIG: BlogArticleConfig = {
   // === RELATED ARTICLES ===
   relatedArticles: [
     {
+      slug: 'clases-baile-principiantes-barcelona-farrays',
+      category: 'tips',
+      titleKey: 'blogClasesPrincipiantes_title',
+      excerptKey: 'blogClasesPrincipiantes_excerpt',
+      image: '/images/blog/clases-principiantes/hero.webp',
+    },
+    {
       slug: 'salsa-vs-bachata',
-      category: 'tutoriales',
+      category: 'tips',
       titleKey: 'blogSalsaVsBachata_title',
       excerptKey: 'blogSalsaVsBachata_excerpt',
       image: '/images/blog/salsa-vs-bachata/hero.webp',
-    },
-    {
-      slug: 'salsa-ritmo-conquisto-mundo',
-      category: 'tutoriales',
-      titleKey: 'blogSalsaRitmo_title',
-      excerptKey: 'blogSalsaRitmo_excerpt',
-      image: '/images/blog/salsa-ritmo/hero.webp',
     },
   ],
 
@@ -586,7 +588,7 @@ export const COMO_PERDER_MIEDO_BAILAR_CONFIG: BlogArticleConfig = {
   aggregateRatingSchema: {
     enabled: true,
     ratingValue: 4.9,
-    reviewCount: 127,
+    reviewCount: 509,
     bestRating: 5,
     worstRating: 1,
   },

@@ -121,10 +121,10 @@ export const IMAGE_ALT_TEXTS = {
 
     femmology: {
       hero: {
-        es: 'Clases de Femmology en Barcelona - Baile en tacones con Yunaisy Farray',
-        en: 'Femmology Classes in Barcelona - Heels dance with Yunaisy Farray',
-        ca: 'Classes de Femmology a Barcelona - Ball amb talons amb Yunaisy Farray',
-        fr: 'Cours de Femmology à Barcelone - Danse en talons avec Yunaisy Farray',
+        es: 'Yunaisy Farray y su grupo de bailarinas de Femmology en pose dramática sobre escenario con iluminación púrpura - Clases de baile en tacones Barcelona',
+        en: 'Yunaisy Farray and her Femmology dance group in dramatic stage pose with purple lighting - Heels dance classes Barcelona',
+        ca: 'Yunaisy Farray i el seu grup de balladores de Femmology en pose dramàtica sobre escenari amb il·luminació porpra - Classes de ball amb talons Barcelona',
+        fr: 'Yunaisy Farray et son groupe de danseuses Femmology en pose dramatique sur scène avec éclairage violet - Cours de danse en talons Barcelone',
       },
     },
 
@@ -385,146 +385,146 @@ export const IMAGE_ALT_TEXTS = {
   teachers: {
     'yunaisy-farray': {
       portrait: {
-        es: 'Yunaisy Farray - Directora y Maestra CID-UNESCO de danza en Barcelona',
-        en: 'Yunaisy Farray - Director and CID-UNESCO Dance Master in Barcelona',
-        ca: 'Yunaisy Farray - Directora i Mestra CID-UNESCO de dansa a Barcelona',
-        fr: 'Yunaisy Farray - Directrice et Maître de danse CID-UNESCO à Barcelone',
+        es: "Retrato de Yunaisy Farray, directora de Farray's Center, bailarina de Hollywood, profesora de Salsa Cubana, Afro Jazz y Bachata Lady Style, creadora del Método Farray®, miembro CID-UNESCO con más de 25 años de experiencia internacional",
+        en: "Portrait of Yunaisy Farray, Farray's Center director, Hollywood dancer, Cuban Salsa, Afro Jazz and Bachata Lady Style instructor, creator of Farray® Method, CID-UNESCO member with over 25 years of international experience",
+        ca: "Retrat de Yunaisy Farray, directora de Farray's Center, ballarina de Hollywood, professora de Salsa Cubana, Afro Jazz i Bachata Lady Style, creadora del Mètode Farray®, membre CID-UNESCO amb més de 25 anys d'experiència internacional",
+        fr: "Portrait de Yunaisy Farray, directrice de Farray's Center, danseuse hollywoodienne, professeure de Salsa Cubaine, Afro Jazz et Bachata Lady Style, créatrice de la Méthode Farray®, membre CID-UNESCO avec plus de 25 ans d'expérience internationale",
       },
     },
     'daniel-sene': {
       portrait: {
-        es: 'Daniel Sené - Profesor de Ballet Clásico en Barcelona',
-        en: 'Daniel Sené - Classical Ballet Instructor in Barcelona',
-        ca: 'Daniel Sené - Professor de Ballet Clàssic a Barcelona',
-        fr: 'Daniel Sené - Professeur de Ballet Classique à Barcelone',
+        es: 'Retrato de Daniel Sené, profesor de Ballet Clásico, Contemporáneo, Yoga, Tai-Chi y Stretching en Barcelona, bailarín profesional formado en la prestigiosa Escuela Nacional de Ballet de Cuba, referente nacional en técnica clásica cubana',
+        en: 'Portrait of Daniel Sené, Classical Ballet, Contemporary, Yoga, Tai-Chi and Stretching instructor in Barcelona, professional dancer trained at prestigious National Ballet School of Cuba, national reference in Cuban classical technique',
+        ca: 'Retrat de Daniel Sené, professor de Ballet Clàssic, Contemporani, Ioga, Tai-Chi i Stretching a Barcelona, ballarí professional format a la prestigiosa Escola Nacional de Ballet de Cuba, referent nacional en tècnica clàssica cubana',
+        fr: 'Portrait de Daniel Sené, professeur de Ballet Classique, Contemporain, Yoga, Tai-Chi et Stretching à Barcelone, danseur professionnel formé à la prestigieuse École Nationale de Ballet de Cuba, référence nationale en technique classique cubaine',
       },
     },
     'alejandro-minoso': {
       portrait: {
-        es: 'Alejandro Miñoso - Profesor de Ballet y Afro Jazz en Barcelona',
-        en: 'Alejandro Miñoso - Ballet and Afro Jazz Instructor in Barcelona',
-        ca: 'Alejandro Miñoso - Professor de Ballet i Afro Jazz a Barcelona',
-        fr: 'Alejandro Miñoso - Professeur de Ballet et Afro Jazz à Barcelone',
+        es: 'Retrato de Alejandro Miñoso, profesor de Ballet, Modern Jazz, Afro Jazz y Contemporáneo en Barcelona, bailarín profesional cubano formado en ENA Cuba, ex solista de la prestigiosa compañía Carlos Acosta, técnica académica cubana de primer nivel',
+        en: 'Portrait of Alejandro Miñoso, Ballet, Modern Jazz, Afro Jazz and Contemporary instructor in Barcelona, Cuban professional dancer trained at ENA Cuba, former soloist of prestigious Carlos Acosta company, first-level Cuban academic technique',
+        ca: "Retrat d'Alejandro Miñoso, professor de Ballet, Modern Jazz, Afro Jazz i Contemporani a Barcelona, ballarí professional cubà format a ENA Cuba, exsolista de la prestigiosa companyia Carlos Acosta, tècnica acadèmica cubana de primer nivell",
+        fr: "Portrait d'Alejandro Miñoso, professeur de Ballet, Modern Jazz, Afro Jazz et Contemporain à Barcelone, danseur professionnel cubain formé à l'ENA Cuba, ancien soliste de la prestigieuse compagnie Carlos Acosta, technique académique cubaine de premier niveau",
       },
     },
     'sandra-gomez': {
       portrait: {
-        es: 'Sandra Gómez - Instructora de Dancehall y Twerk en Barcelona',
-        en: 'Sandra Gómez - Dancehall and Twerk Instructor in Barcelona',
-        ca: 'Sandra Gómez - Instructora de Dancehall i Twerk a Barcelona',
-        fr: 'Sandra Gómez - Instructrice de Dancehall et Twerk à Barcelone',
+        es: 'Retrato de Sandra Gómez, instructora profesional de Dancehall y Twerk en Barcelona con más de 6 años de experiencia, formación jamaicana auténtica, especialista en fusión de Twerk y Bootydance con esencia jamaicana, técnica impecable y energía contagiosa',
+        en: 'Portrait of Sandra Gómez, professional Dancehall and Twerk instructor in Barcelona with over 6 years of experience, authentic Jamaican training, specialist in Twerk and Bootydance fusion with Jamaican essence, impeccable technique and contagious energy',
+        ca: "Retrat de Sandra Gómez, instructora professional de Dancehall i Twerk a Barcelona amb més de 6 anys d'experiència, formació jamaicana autèntica, especialista en fusió de Twerk i Bootydance amb essència jamaicana, tècnica impecable i energia contagiosa",
+        fr: "Portrait de Sandra Gómez, instructrice professionnelle de Dancehall et Twerk à Barcelone avec plus de 6 ans d'expérience, formation jamaïcaine authentique, spécialiste en fusion de Twerk et Bootydance avec essence jamaïcaine, technique impeccable et énergie contagieuse",
       },
     },
     'isabel-lopez': {
       portrait: {
-        es: 'Isabel López - Instructora de Dancehall en Barcelona',
-        en: 'Isabel López - Dancehall Instructor in Barcelona',
-        ca: 'Isabel López - Instructora de Dancehall a Barcelona',
-        fr: 'Isabel López - Instructrice de Dancehall à Barcelone',
+        es: 'Retrato de Isabel López, instructora especializada de Dancehall y Dancehall Female en Barcelona con más de 5 años de experiencia, formación con maestros jamaicanos auténticos, energía contagiosa y técnica profesional combinando old school moves con últimos hits',
+        en: 'Portrait of Isabel López, specialized Dancehall and Dancehall Female instructor in Barcelona with over 5 years of experience, training with authentic Jamaican masters, contagious energy and professional technique combining old school moves with latest hits',
+        ca: "Retrat d'Isabel López, instructora especialitzada de Dancehall i Dancehall Female a Barcelona amb més de 5 anys d'experiència, formació amb mestres jamaicans autèntics, energia contagiosa i tècnica professional combinant old school moves amb últims hits",
+        fr: "Portrait d'Isabel López, instructrice spécialisée de Dancehall et Dancehall Female à Barcelone avec plus de 5 ans d'expérience, formation avec maîtres jamaïcains authentiques, énergie contagieuse et technique professionnelle combinant old school moves avec derniers hits",
       },
     },
     'marcos-martinez': {
       portrait: {
-        es: 'Marcos Martínez - Instructor de Hip Hop y Breaking en Barcelona',
-        en: 'Marcos Martínez - Hip Hop and Breaking Instructor in Barcelona',
-        ca: 'Marcos Martínez - Instructor de Hip Hop i Breaking a Barcelona',
-        fr: 'Marcos Martínez - Instructeur de Hip Hop et Breaking à Barcelone',
+        es: 'Retrato de Marcos Martínez, referente del Hip Hop en España, instructor especializado en Breaking, Locking y Popping en Barcelona, juez internacional de competiciones con décadas de experiencia, estilo único que combina técnica old school con tendencias actuales',
+        en: 'Portrait of Marcos Martínez, Hip Hop reference in Spain, specialized instructor in Breaking, Locking and Popping in Barcelona, international competition judge with decades of experience, unique style combining old school technique with current trends',
+        ca: "Retrat de Marcos Martínez, referent del Hip Hop a Espanya, instructor especialitzat en Breaking, Locking i Popping a Barcelona, jutge internacional de competicions amb dècades d'experiència, estil únic que combina tècnica old school amb tendències actuals",
+        fr: "Portrait de Marcos Martínez, référence du Hip Hop en Espagne, instructeur spécialisé en Breaking, Locking et Popping à Barcelone, juge international de compétitions avec décennies d'expérience, style unique combinant technique old school avec tendances actuelles",
       },
     },
     'yasmina-fernandez': {
       portrait: {
-        es: 'Yasmina Fernández - Profesora de Salsa Cubana en Barcelona',
-        en: 'Yasmina Fernández - Cuban Salsa Instructor in Barcelona',
-        ca: 'Yasmina Fernández - Professora de Salsa Cubana a Barcelona',
-        fr: 'Yasmina Fernández - Professeure de Salsa Cubaine à Barcelone',
+        es: 'Retrato de Yasmina Fernández, profesora extraordinariamente versátil de Salsa Cubana, Lady Style, Sexy Style y Sexy Reggaeton en Barcelona, certificada en Método Farray® desde 2016, don de gentes excepcional y capacidad única para conectar con alumnos',
+        en: 'Portrait of Yasmina Fernández, extraordinarily versatile Cuban Salsa, Lady Style, Sexy Style and Sexy Reggaeton instructor in Barcelona, certified in Farray® Method since 2016, exceptional people skills and unique ability to connect with students',
+        ca: 'Retrat de Yasmina Fernández, professora extraordinàriament versàtil de Salsa Cubana, Lady Style, Sexy Style i Sexy Reggaeton a Barcelona, certificada en Mètode Farray® des de 2016, do de gents excepcional i capacitat única per connectar amb alumnes',
+        fr: 'Portrait de Yasmina Fernández, professeure extraordinairement polyvalente de Salsa Cubaine, Lady Style, Sexy Style et Sexy Reggaeton à Barcelone, certifiée en Méthode Farray® depuis 2016, don exceptionnel avec les gens et capacité unique à se connecter avec les étudiants',
       },
     },
     'lia-valdes': {
       portrait: {
-        es: 'Lia Valdes - Maestra de Salsa Cubana en Barcelona',
-        en: 'Lia Valdes - Cuban Salsa Master in Barcelona',
-        ca: 'Lia Valdes - Mestra de Salsa Cubana a Barcelona',
-        fr: 'Lia Valdes - Maître de Salsa Cubaine à Barcelone',
+        es: 'Retrato de Lia Valdes, maestra internacional cubana de Salsa Cubana y Lady Style en Barcelona, formada en ENA Cuba, más de 20 años de carrera artística, presencia en El Rey León París, referente mundial que transmite sabor auténtico cubano',
+        en: 'Portrait of Lia Valdes, Cuban international master of Cuban Salsa and Lady Style in Barcelona, trained at ENA Cuba, over 20 years of artistic career, presence in The Lion King Paris, world reference transmitting authentic Cuban flavor',
+        ca: 'Retrat de Lia Valdes, mestra internacional cubana de Salsa Cubana i Lady Style a Barcelona, formada a ENA Cuba, més de 20 anys de carrera artística, presència a El Rei Lleó París, referent mundial que transmet sabor autèntic cubà',
+        fr: "Portrait de Lia Valdes, maître internationale cubaine de Salsa Cubaine et Lady Style à Barcelone, formée à l'ENA Cuba, plus de 20 ans de carrière artistique, présence dans Le Roi Lion Paris, référence mondiale transmettant la saveur cubaine authentique",
       },
     },
     'iroel-bastarreche': {
       portrait: {
-        es: 'Iroel Bastarreche - Profesor de Salsa Cubana en Barcelona',
-        en: 'Iroel Bastarreche - Cuban Salsa Instructor in Barcelona',
-        ca: 'Iroel Bastarreche - Professor de Salsa Cubana a Barcelona',
-        fr: 'Iroel Bastarreche - Professeur de Salsa Cubaine à Barcelone',
+        es: 'Retrato de Iroel Bastarreche, profesor de Salsa Cubana en Barcelona formado en Ballet Folklórico de Camagüey Cuba, certificado en Método Farray®, especialista en folklore campesino y danzas afrocubanas, considerado uno de los referentes en enseñanza de estilos cubanos en Barcelona',
+        en: 'Portrait of Iroel Bastarreche, Cuban Salsa instructor in Barcelona trained at Camagüey Folkloric Ballet Cuba, certified in Farray® Method, specialist in peasant folklore and Afro-Cuban dances, considered one of the references in teaching Cuban styles in Barcelona',
+        ca: "Retrat d'Iroel Bastarreche, professor de Salsa Cubana a Barcelona format al Ballet Folklòric de Camagüey Cuba, certificat en Mètode Farray®, especialista en folklore camperol i danses afrocubanes, considerat un dels referents en ensenyament d'estils cubans a Barcelona",
+        fr: "Portrait d'Iroel Bastarreche, professeur de Salsa Cubaine à Barcelone formé au Ballet Folklorique de Camagüey Cuba, certifié en Méthode Farray®, spécialiste en folklore paysan et danses afro-cubaines, considéré comme l'une des références en enseignement de styles cubains à Barcelone",
       },
     },
     'charlie-breezy': {
       portrait: {
-        es: 'Charlie Breezy - Profesor de Afro Contemporáneo y Hip Hop en Barcelona',
-        en: 'Charlie Breezy - Afro Contemporary and Hip Hop Instructor in Barcelona',
-        ca: "Charlie Breezy - Professor d'Afro Contemporani i Hip Hop a Barcelona",
-        fr: "Charlie Breezy - Professeur d'Afro Contemporain et Hip Hop à Barcelone",
+        es: 'Retrato de Charlie Breezy, maestro internacional cubano de Afro Contemporáneo, Hip Hop y Afrobeats en Barcelona, formado en prestigiosa ENA Cuba, especialista en danzas africanas con versatilidad excepcional en contemporáneo, ballet y danzas urbanas, formación académica de élite',
+        en: 'Portrait of Charlie Breezy, Cuban international master of Afro Contemporary, Hip Hop and Afrobeats in Barcelona, trained at prestigious ENA Cuba, specialist in African dances with exceptional versatility in contemporary, ballet and urban dances, elite academic training',
+        ca: "Retrat de Charlie Breezy, mestre internacional cubà d'Afro Contemporani, Hip Hop i Afrobeats a Barcelona, format a prestigiosa ENA Cuba, especialista en danses africanes amb versatilitat excepcional en contemporani, ballet i danses urbanes, formació acadèmica d'elit",
+        fr: "Portrait de Charlie Breezy, maître international cubain d'Afro Contemporain, Hip Hop et Afrobeats à Barcelone, formé à la prestigieuse ENA Cuba, spécialiste en danses africaines avec polyvalence exceptionnelle en contemporain, ballet et danses urbaines, formation académique d'élite",
       },
     },
     'eugenia-trujillo': {
       portrait: {
-        es: 'Eugenia Trujillo - Campeona Mundial Salsa LA en Barcelona',
-        en: 'Eugenia Trujillo - World Salsa LA Champion in Barcelona',
-        ca: 'Eugenia Trujillo - Campiona Mundial Salsa LA a Barcelona',
-        fr: 'Eugenia Trujillo - Championne Mondiale Salsa LA à Barcelone',
+        es: "Retrato de Eugenia Trujillo, maestra internacional uruguaya de Bachata Lady Style y en Pareja en Barcelona, campeona mundial de Salsa LA junto a Mathias Font, profesora en Farray's desde hace 4 años, técnica impecable con carisma y cercanía excepcionales",
+        en: "Portrait of Eugenia Trujillo, Uruguayan international master of Bachata Lady Style and Partner in Barcelona, world champion of Salsa LA with Mathias Font, instructor at Farray's for 4 years, impeccable technique with exceptional charisma and warmth",
+        ca: "Retrat d'Eugenia Trujillo, mestra internacional uruguaiana de Bachata Lady Style i en Parella a Barcelona, campiona mundial de Salsa LA amb Mathias Font, professora a Farray's des de fa 4 anys, tècnica impecable amb carisma i proximitat excepcionals",
+        fr: "Portrait d'Eugenia Trujillo, maître internationale uruguayenne de Bachata Lady Style et en Couple à Barcelone, championne mondiale de Salsa LA avec Mathias Font, professeure chez Farray's depuis 4 ans, technique impeccable avec charisme et chaleur exceptionnels",
       },
     },
     'mathias-font': {
       portrait: {
-        es: 'Mathias Font - Instructor de Bachata Sensual en Barcelona',
-        en: 'Mathias Font - Sensual Bachata Instructor in Barcelona',
-        ca: 'Mathias Font - Instructor de Bachata Sensual a Barcelona',
-        fr: 'Mathias Font - Instructeur de Bachata Sensual à Barcelone',
+        es: 'Retrato de Mathias Font, instructor especializado en Bachata Sensual en Barcelona, campeón mundial de Salsa LA junto a Eugenia Trujillo, enfoque único en musicalidad y conexión en pareja, referente en la escena latina de Barcelona, dinamización excepcional de clases',
+        en: 'Portrait of Mathias Font, specialized Sensual Bachata instructor in Barcelona, world champion of Salsa LA with Eugenia Trujillo, unique focus on musicality and partner connection, reference in Barcelona Latin scene, exceptional class dynamization',
+        ca: "Retrat de Mathias Font, instructor especialitzat en Bachata Sensual a Barcelona, campió mundial de Salsa LA amb Eugenia Trujillo, enfocament únic en musicalitat i connexió en parella, referent a l'escena llatina de Barcelona, dinamització excepcional de classes",
+        fr: 'Portrait de Mathias Font, instructeur spécialisé en Bachata Sensual à Barcelone, champion mondial de Salsa LA avec Eugenia Trujillo, focus unique sur la musicalité et connexion en couple, référence dans la scène latine de Barcelone, dynamisation exceptionnelle des cours',
       },
     },
     'carlos-canto': {
       portrait: {
-        es: 'Carlos Canto - Instructor de Bachata Moderna en Barcelona',
-        en: 'Carlos Canto - Modern Bachata Instructor in Barcelona',
-        ca: 'Carlos Canto - Instructor de Bachata Moderna a Barcelona',
-        fr: 'Carlos Canto - Instructeur de Bachata Moderna à Barcelone',
+        es: 'Retrato de Carlos Canto, instructor de Bachata y Bachata Moderna en Barcelona, talento emergente con don de gentes excepcional, enfoque en técnica y musicalidad, estilo fresco y accesible que lo convierte en uno de los profesores más queridos por sus alumnos',
+        en: 'Portrait of Carlos Canto, Bachata and Modern Bachata instructor in Barcelona, emerging talent with exceptional people skills, focus on technique and musicality, fresh and accessible style making him one of the most beloved teachers by his students',
+        ca: 'Retrat de Carlos Canto, instructor de Bachata i Bachata Moderna a Barcelona, talent emergent amb do de gents excepcional, enfocament en tècnica i musicalitat, estil fresc i accessible que el converteix en un dels professors més estimats pels seus alumnes',
+        fr: "Portrait de Carlos Canto, instructeur de Bachata et Bachata Moderne à Barcelone, talent émergent avec don exceptionnel avec les gens, focus sur technique et musicalité, style frais et accessible en faisant l'un des professeurs les plus aimés par ses étudiants",
       },
     },
     noemi: {
       portrait: {
-        es: 'Noemi - Instructora de Bachata Lady Style en Barcelona',
-        en: 'Noemi - Bachata Lady Style Instructor in Barcelona',
-        ca: 'Noemi - Instructora de Bachata Lady Style a Barcelona',
-        fr: 'Noemi - Instructrice de Bachata Lady Style à Barcelone',
+        es: "Retrato de Noemi, instructora de Bachata y Bachata Lady Style en Barcelona, talento emergente en quien Farray's apostó fuerte, pareja de Carlos Canto, especialista en técnicas femeninas con don de gentes que convierte alumnos en fans fieles desde el primer día",
+        en: "Portrait of Noemi, Bachata and Bachata Lady Style instructor in Barcelona, emerging talent in whom Farray's bet strongly, partner of Carlos Canto, specialist in feminine techniques with people skills turning students into loyal fans from day one",
+        ca: "Retrat de Noemi, instructora de Bachata i Bachata Lady Style a Barcelona, talent emergent en qui Farray's va apostar fort, parella de Carlos Canto, especialista en tècniques femenines amb do de gents que converteix alumnes en fans fidels des del primer dia",
+        fr: "Portrait de Noemi, instructrice de Bachata et Bachata Lady Style à Barcelone, talent émergent en qui Farray's a fortement misé, partenaire de Carlos Canto, spécialiste en techniques féminines avec don pour transformer étudiants en fans fidèles dès le premier jour",
       },
     },
     redbhlue: {
       portrait: {
-        es: 'Redbhlue - Instructor de Afrobeats y Afro Dance en Barcelona',
-        en: 'Redbhlue - Afrobeats and Afro Dance Instructor in Barcelona',
-        ca: "Redbhlue - Instructor d'Afrobeats i Afro Dance a Barcelona",
-        fr: "Redbhlue - Instructeur d'Afrobeats et Afro Dance à Barcelone",
+        es: 'Retrato de Redbhlue, profesor internacional nativo de Tanzania especialista en Afrobeats y Ntcham en Barcelona, raíces africanas auténticas con conocimientos profundos, energía y alegría contagiante, uno de los maestros más recomendados de Barcelona con autenticidad africana en cada movimiento',
+        en: 'Portrait of Redbhlue, international instructor native of Tanzania specialist in Afrobeats and Ntcham in Barcelona, authentic African roots with deep knowledge, contagious energy and joy, one of the most recommended masters in Barcelona with African authenticity in every movement',
+        ca: 'Retrat de Redbhlue, professor internacional natiu de Tanzània especialista en Afrobeats i Ntcham a Barcelona, arrels africanes autèntiques amb coneixements profunds, energia i alegria contagiosa, un dels mestres més recomanats de Barcelona amb autenticitat africana a cada moviment',
+        fr: "Portrait de Redbhlue, professeur international natif de Tanzanie spécialiste en Afrobeats et Ntcham à Barcelone, racines africaines authentiques avec connaissances profondes, énergie et joie contagieuses, l'un des maîtres les plus recommandés de Barcelone avec authenticité africaine dans chaque mouvement",
       },
     },
     'juan-alvarez': {
       portrait: {
-        es: 'Juan Alvarez - Profesor de Salsa Cubana en Barcelona',
-        en: 'Juan Alvarez - Cuban Salsa Instructor in Barcelona',
-        ca: 'Juan Alvarez - Professor de Salsa Cubana a Barcelona',
-        fr: 'Juan Alvarez - Professeur de Salsa Cubaine à Barcelone',
+        es: 'Retrato de Juan Alvarez, instructor de Bachata Sensual en Barcelona certificado en Método Farray®, talento emergente que transmite esencia del baile latino con pasión, técnica depurada, conexión y musicalidad excepcionales, enfoque práctico y cercano que facilita aprendizaje desde el primer día',
+        en: 'Portrait of Juan Alvarez, Sensual Bachata instructor in Barcelona certified in Farray® Method, emerging talent transmitting essence of Latin dance with passion, refined technique, exceptional connection and musicality, practical and close approach facilitating learning from day one',
+        ca: 'Retrat de Juan Alvarez, instructor de Bachata Sensual a Barcelona certificat en Mètode Farray®, talent emergent que transmet essència del ball llatí amb passió, tècnica depurada, connexió i musicalitat excepcionals, enfocament pràctic i proper que facilita aprenentatge des del primer dia',
+        fr: "Portrait de Juan Alvarez, instructeur de Bachata Sensual à Barcelone certifié en Méthode Farray®, talent émergent transmettant l'essence de la danse latine avec passion, technique raffinée, connexion et musicalité exceptionnelles, approche pratique et proche facilitant l'apprentissage dès le premier jour",
       },
     },
     crisag: {
       portrait: {
-        es: 'CrisAg - Instructora de Body Conditioning y Stretching en Barcelona',
-        en: 'CrisAg - Body Conditioning and Stretching Instructor in Barcelona',
-        ca: 'CrisAg - Instructora de Body Conditioning i Stretching a Barcelona',
-        fr: 'CrisAg - Instructrice de Body Conditioning et Stretching à Barcelone',
+        es: 'Retrato de CrisAg, instructora especializada en Body Conditioning, Cuerpo Fit, Bum Bum Glúteos y Stretching en Barcelona, certificada en Método Farray® desde 2012, formación en The Cuban School of Arts Londres, referente en fusión de baile y fitness que combina dos pasiones con metodología única',
+        en: 'Portrait of CrisAg, specialized instructor in Body Conditioning, Cuerpo Fit, Bum Bum Glutes and Stretching in Barcelona, certified in Farray® Method since 2012, training at The Cuban School of Arts London, reference in dance and fitness fusion combining two passions with unique methodology',
+        ca: 'Retrat de CrisAg, instructora especialitzada en Body Conditioning, Cuerpo Fit, Bum Bum Glutis i Stretching a Barcelona, certificada en Mètode Farray® des de 2012, formació a The Cuban School of Arts Londres, referent en fusió de ball i fitness que combina dues passions amb metodologia única',
+        fr: 'Portrait de CrisAg, instructrice spécialisée en Body Conditioning, Cuerpo Fit, Bum Bum Fessiers et Stretching à Barcelone, certifiée en Méthode Farray® depuis 2012, formation à The Cuban School of Arts Londres, référence en fusion de danse et fitness combinant deux passions avec méthodologie unique',
       },
     },
     'grechen-mendez': {
       portrait: {
-        es: 'Grechen Méndez - Instructora de Bachata y Salsa en Barcelona',
-        en: 'Grechen Méndez - Bachata and Salsa Instructor in Barcelona',
-        ca: 'Grechen Méndez - Instructora de Bachata i Salsa a Barcelona',
-        fr: 'Grechen Méndez - Instructrice de Bachata et Salsa à Barcelone',
+        es: 'Retrato de Grechén Méndez, maestra internacional de referencia en danzas afrocubanas en Barcelona con más de 25 años de experiencia, formada en ISA Cuba, especialista en danzas a los Orishas, rumba y folklore cubano, autoridad reconocida mundialmente en patrimonio afrocubano con profundo significado espiritual',
+        en: 'Portrait of Grechén Méndez, international reference master in Afro-Cuban dances in Barcelona with over 25 years of experience, trained at ISA Cuba, specialist in dances to Orishas, rumba and Cuban folklore, worldwide recognized authority in Afro-Cuban heritage with deep spiritual meaning',
+        ca: "Retrat de Grechén Méndez, mestra internacional de referència en danses afrocubanes a Barcelona amb més de 25 anys d'experiència, formada a ISA Cuba, especialista en danses als Orishas, rumba i folklore cubà, autoritat reconeguda mundialment en patrimoni afrocubà amb profund significat espiritual",
+        fr: "Portrait de Grechén Méndez, maître internationale de référence en danses afro-cubaines à Barcelone avec plus de 25 ans d'expérience, formée à l'ISA Cuba, spécialiste en danses aux Orishas, rumba et folklore cubain, autorité reconnue mondialement en patrimoine afro-cubain avec profonde signification spirituelle",
       },
     },
     default: {
@@ -1128,6 +1128,13 @@ export const IMAGE_ALT_TEXTS = {
         ca: "Parelles ballant Salsa i Bachata a Barcelona - Ritmes llatins a Farray's Center",
         fr: "Couples dansant la Salsa et Bachata à Barcelone - Rythmes latins chez Farray's Center",
       },
+      // Hero de página de categoría - SEO/GEO optimizado (15-25 palabras)
+      pageHero: {
+        es: "Parejas bailando salsa cubana y bachata sensual en academia de Barcelona - Profesores cubanos, Método Farray exclusivo y ambiente social vibrante en Farray's Center",
+        en: "Couples dancing Cuban salsa and sensual bachata at Barcelona dance academy - Cuban instructors, exclusive Farray Method and vibrant social atmosphere at Farray's Center",
+        ca: "Parelles ballant salsa cubana i bachata sensual a acadèmia de Barcelona - Professors cubans, Mètode Farray exclusiu i ambient social vibrant a Farray's Center",
+        fr: "Couples dansant la salsa cubaine et bachata sensuelle à académie de Barcelone - Professeurs cubains, Méthode Farray exclusive et ambiance sociale vibrante chez Farray's Center",
+      },
     },
     salsaLadyStyle: {
       alt: {
@@ -1320,40 +1327,40 @@ export const IMAGE_ALT_TEXTS = {
       },
     },
     bumBum: {
-      // Alt genérico (fallback)
+      // Alt genérico (fallback) - Enterprise SEO/GEO/AIO optimized
       alt: {
-        es: "Clases de Bum Bum en Barcelona - Ejercicios de glúteos en Farray's Center",
-        en: "Bum Bum Classes in Barcelona - Glutes workout at Farray's Center",
-        ca: "Classes de Bum Bum a Barcelona - Exercicis de glutis a Farray's Center",
-        fr: "Cours de Bum Bum à Barcelone - Exercices fessiers chez Farray's Center",
+        es: "Alumnas realizando ejercicios de glúteos Bum Bum en academia de Barcelona - tonificación muscular con hip thrust, sentadillas y técnicas del Método Farray en Farray's Center",
+        en: "Students performing Bum Bum glute exercises at Barcelona dance academy - muscle toning with hip thrust, squats and Farray Method techniques at Farray's Center",
+        ca: "Alumnes realitzant exercicis de glutis Bum Bum a acadèmia de Barcelona - tonificació muscular amb hip thrust, esquats i tècniques del Mètode Farray a Farray's Center",
+        fr: "Élèves effectuant des exercices de fessiers Bum Bum à académie de Barcelone - tonification musculaire avec hip thrust, squats et techniques Méthode Farray chez Farray's Center",
       },
       // Para cards en hub de clases de baile (/clases/baile-barcelona)
       cardHub: {
-        es: 'Bum Bum Glúteos Barcelona - Tonifica y fortalece con el Método Farray',
-        en: 'Bum Bum Glutes Barcelona - Tone and strengthen with the Farray Method',
-        ca: 'Bum Bum Glutis Barcelona - Tonifica i enforteix amb el Mètode Farray',
-        fr: 'Bum Bum Fessiers Barcelone - Tonifiez et renforcez avec la Méthode Farray',
+        es: 'Clases de Bum Bum Glúteos Maravillosos en Barcelona - Tonifica y fortalece con hip thrust, sentadillas y el Método Farray exclusivo',
+        en: 'Bum Bum Amazing Glutes classes in Barcelona - Tone and strengthen with hip thrust, squats and the exclusive Farray Method',
+        ca: 'Classes de Bum Bum Glutis Meravellosos a Barcelona - Tonifica i enforteix amb hip thrust, esquats i el Mètode Farray exclusiu',
+        fr: 'Cours Bum Bum Fessiers Extraordinaires à Barcelone - Tonifiez et renforcez avec hip thrust, squats et la Méthode Farray exclusive',
       },
       // Para cards en categoría fitness (/clases/entrenamiento-bailarines-barcelona)
       cardFitness: {
-        es: 'Bum Bum - Ejercicios de glúteos con hip thrust, sentadillas y técnicas de baile',
-        en: 'Bum Bum - Glute exercises with hip thrust, squats and dance techniques',
-        ca: 'Bum Bum - Exercicis de glutis amb hip thrust, esquats i tècniques de ball',
-        fr: 'Bum Bum - Exercices fessiers avec hip thrust, squats et techniques de danse',
+        es: 'Bum Bum Glúteos Maravillosos - Ejercicios de tonificación con hip thrust, sentadillas, lunges y técnicas de baile del Método Farray',
+        en: 'Bum Bum Amazing Glutes - Toning exercises with hip thrust, squats, lunges and Farray Method dance techniques',
+        ca: 'Bum Bum Glutis Meravellosos - Exercicis de tonificació amb hip thrust, esquats, lunges i tècniques de ball del Mètode Farray',
+        fr: 'Bum Bum Fessiers Extraordinaires - Exercices de tonification avec hip thrust, squats, lunges et techniques de danse Méthode Farray',
       },
       // Para hero de la página de clase
       hero: {
-        es: 'Alumnas realizando ejercicios de glúteos Bum Bum en Barcelona - Método Farray con hip thrust y sentadillas',
-        en: 'Students performing Bum Bum glute exercises in Barcelona - Farray Method with hip thrust and squats',
-        ca: 'Alumnes realitzant exercicis de glutis Bum Bum a Barcelona - Mètode Farray amb hip thrust i esquats',
-        fr: 'Élèves effectuant des exercices Bum Bum fessiers à Barcelone - Méthode Farray avec hip thrust et squats',
+        es: 'Clase de Bum Bum Glúteos Maravillosos en Barcelona - Alumnas tonificando con hip thrust, sentadillas y el Método Farray exclusivo para glúteos firmes y definidos',
+        en: 'Bum Bum Amazing Glutes class in Barcelona - Students toning with hip thrust, squats and the exclusive Farray Method for firm and defined glutes',
+        ca: 'Classe de Bum Bum Glutis Meravellosos a Barcelona - Alumnes tonificant amb hip thrust, esquats i el Mètode Farray exclusiu per a glutis ferms i definits',
+        fr: 'Cours Bum Bum Fessiers Extraordinaires à Barcelone - Élèves tonifiant avec hip thrust, squats et la Méthode Farray exclusive pour des fessiers fermes et définis',
       },
       // Para sección "¿Qué es?" de la página de clase
       whatIs: {
-        es: 'Grupo de alumnas tonificando glúteos con ejercicios Bum Bum en academia de Barcelona',
-        en: 'Group of students toning glutes with Bum Bum exercises at Barcelona dance academy',
-        ca: "Grup d'alumnes tonificant glutis amb exercicis Bum Bum a acadèmia de Barcelona",
-        fr: "Groupe d'élèves tonifiant les fessiers avec exercices Bum Bum à académie de Barcelone",
+        es: 'Grupo de alumnas realizando ejercicios de Bum Bum Glúteos Maravillosos en academia de Barcelona - tonificación y fortalecimiento con técnicas profesionales del Método Farray',
+        en: 'Group of students performing Bum Bum Amazing Glutes exercises at Barcelona dance academy - toning and strengthening with professional Farray Method techniques',
+        ca: "Grup d'alumnes realitzant exercicis de Bum Bum Glutis Meravellosos a acadèmia de Barcelona - tonificació i enfortiment amb tècniques professionals del Mètode Farray",
+        fr: "Groupe d'élèves effectuant des exercices Bum Bum Fessiers Extraordinaires à académie de Barcelone - tonification et renforcement avec techniques professionnelles Méthode Farray",
       },
     },
     cuerpoFit: {
@@ -1431,31 +1438,111 @@ export const IMAGE_ALT_TEXTS = {
       },
     },
     bodyConditioning: {
+      // Alt genérico (fallback) - optimizado para SEO
       alt: {
-        es: "Acondicionamiento Físico para Bailarines en Barcelona - Farray's Center",
-        en: "Body Conditioning for Dancers in Barcelona - Farray's Center",
-        ca: "Condicionament Físic per a Ballarins a Barcelona - Farray's Center",
-        fr: "Conditionnement Physique pour Danseurs à Barcelone - Farray's Center",
+        es: "Bailarinas ejecutando ejercicios de acondicionamiento físico y preparación corporal para danza en academia de Barcelona - Farray's Center",
+        en: "Dancers performing body conditioning and physical preparation exercises for dance at Barcelona academy - Farray's Center",
+        ca: "Ballarines executant exercicis de condicionament físic i preparació corporal per a dansa a acadèmia de Barcelona - Farray's Center",
+        fr: "Danseuses effectuant des exercices de conditionnement physique et préparation corporelle pour la danse à académie de Barcelone - Farray's Center",
       },
+      // Para cards en hub de clases de baile (/clases/baile-barcelona)
       cardHub: {
-        es: 'Acondicionamiento Físico Barcelona - Preparación integral para bailarines profesionales',
-        en: 'Body Conditioning Barcelona - Comprehensive preparation for professional dancers',
-        ca: 'Condicionament Físic Barcelona - Preparació integral per a ballarins professionals',
-        fr: 'Conditionnement Physique Barcelone - Préparation complète pour danseurs professionnels',
+        es: 'Acondicionamiento Físico Barcelona - Fortalecimiento muscular, core y resistencia para bailarines con el Método Farray',
+        en: 'Body Conditioning Barcelona - Muscle strengthening, core and endurance for dancers with the Farray Method',
+        ca: 'Condicionament Físic Barcelona - Enfortiment muscular, core i resistència per a ballarins amb el Mètode Farray',
+        fr: 'Conditionnement Physique Barcelone - Renforcement musculaire, core et endurance pour danseurs avec la Méthode Farray',
       },
+      // Para cards en categoría fitness (/clases/entrenamiento-bailarines-barcelona)
       cardFitness: {
-        es: 'Acondicionamiento Físico - Fortalecimiento muscular, resistencia y prevención de lesiones',
-        en: 'Body Conditioning - Muscle strengthening, endurance and injury prevention',
-        ca: 'Condicionament Físic - Enfortiment muscular, resistència i prevenció de lesions',
-        fr: 'Conditionnement Physique - Renforcement musculaire, endurance et prévention des blessures',
+        es: 'Acondicionamiento Físico - Preparación corporal integral con ejercicios de fuerza, estabilidad y prevención de lesiones para bailarines',
+        en: 'Body Conditioning - Comprehensive body preparation with strength, stability and injury prevention exercises for dancers',
+        ca: 'Condicionament Físic - Preparació corporal integral amb exercicis de força, estabilitat i prevenció de lesions per a ballarins',
+        fr: 'Conditionnement Physique - Préparation corporelle complète avec exercices de force, stabilité et prévention des blessures pour danseurs',
       },
+      // Para hero de la página de clase individual
       hero: {
-        es: "Bailarines realizando acondicionamiento físico en Barcelona - Preparación profesional en Farray's Center",
-        en: "Dancers performing body conditioning in Barcelona - Professional preparation at Farray's Center",
-        ca: "Ballarins realitzant condicionament físic a Barcelona - Preparació professional a Farray's Center",
-        fr: "Danseurs effectuant du conditionnement physique à Barcelone - Préparation professionnelle chez Farray's Center",
+        es: "Bailarinas realizando ejercicios de acondicionamiento físico y preparación corporal en Barcelona - Entrenamiento funcional para danza en Farray's Center",
+        en: "Dancers performing body conditioning and physical preparation exercises in Barcelona - Functional dance training at Farray's Center",
+        ca: "Ballarines realitzant exercicis de condicionament físic i preparació corporal a Barcelona - Entrenament funcional per a dansa a Farray's Center",
+        fr: "Danseuses effectuant des exercices de conditionnement physique et préparation corporelle à Barcelone - Entraînement fonctionnel pour la danse chez Farray's Center",
+      },
+      // Para sección "¿Qué es?" de la página de clase
+      whatIs: {
+        es: 'Grupo de bailarines entrenando fuerza, core y resistencia con ejercicios de acondicionamiento físico en academia de danza de Barcelona',
+        en: 'Group of dancers training strength, core and endurance with body conditioning exercises at Barcelona dance academy',
+        ca: 'Grup de ballarins entrenant força, core i resistència amb exercicis de condicionament físic a acadèmia de dansa de Barcelona',
+        fr: 'Groupe de danseurs entraînant force, core et endurance avec exercices de conditionnement physique à académie de danse de Barcelone',
+      },
+      // Para imagen OG (redes sociales)
+      og: {
+        es: "Clases de Acondicionamiento Físico para Bailarines en Barcelona - Preparación corporal profesional en Farray's Center",
+        en: "Body Conditioning Classes for Dancers in Barcelona - Professional body preparation at Farray's Center",
+        ca: "Classes de Condicionament Físic per a Ballarins a Barcelona - Preparació corporal professional a Farray's Center",
+        fr: "Cours de Conditionnement Physique pour Danseurs à Barcelone - Préparation corporelle professionnelle chez Farray's Center",
       },
     },
+    baileMananas: {
+      alt: {
+        es: "Clases de Baile por las Mañanas en Barcelona - Empieza el día bailando en Farray's Center",
+        en: "Morning Dance Classes in Barcelona - Start your day dancing at Farray's Center",
+        ca: "Classes de Ball al Matí a Barcelona - Comença el dia ballant a Farray's Center",
+        fr: "Cours de Danse le Matin à Barcelone - Commencez la journée en dansant chez Farray's Center",
+      },
+      cardHub: {
+        es: 'Clases de Baile Mañanas Barcelona - Salsa, contemporáneo, ballet y fitness antes del trabajo',
+        en: 'Morning Dance Classes Barcelona - Salsa, contemporary, ballet and fitness before work',
+        ca: 'Classes de Ball Matí Barcelona - Salsa, contemporani, ballet i fitness abans de treballar',
+        fr: 'Cours de Danse Matin Barcelone - Salsa, contemporain, ballet et fitness avant le travail',
+      },
+      hero: {
+        es: "Grupo de alumnos bailando en clase matinal de baile en Barcelona - Energía y vitalidad en Farray's Center",
+        en: "Group of students dancing in morning dance class in Barcelona - Energy and vitality at Farray's Center",
+        ca: "Grup d'alumnes ballant a classe matinal de ball a Barcelona - Energia i vitalitat a Farray's Center",
+        fr: "Groupe d'élèves dansant en cours de danse matinal à Barcelone - Énergie et vitalité chez Farray's Center",
+      },
+      whatIs: {
+        es: 'Alumnas practicando coreografía en clase de baile por las mañanas en academia de Barcelona - Variedad de estilos en horario matinal',
+        en: 'Students practicing choreography in morning dance class at Barcelona dance academy - Variety of styles in morning schedule',
+        ca: "Alumnes practicant coreografia a classe de ball al matí a acadèmia de Barcelona - Varietat d'estils en horari matinal",
+        fr: 'Élèves pratiquant une chorégraphie en cours de danse le matin à académie de Barcelone - Variété de styles en horaire matinal',
+      },
+      og: {
+        es: "Clases de Baile por las Mañanas en Barcelona - Más de 20 clases matinales semanales en Farray's Center",
+        en: "Morning Dance Classes in Barcelona - Over 20 weekly morning classes at Farray's Center",
+        ca: "Classes de Ball al Matí a Barcelona - Més de 20 classes matinals setmanals a Farray's Center",
+        fr: "Cours de Danse le Matin à Barcelone - Plus de 20 cours matinaux par semaine chez Farray's Center",
+      },
+    },
+  },
+
+  // ==========================================================================
+  // PAGES - Alt texts para páginas específicas
+  // ==========================================================================
+  pages: {
+    horarios: {
+      hero: {
+        es: "Alumnas en clase de baile grupal consultando horarios de clases de salsa, bachata y danzas urbanas en Barcelona - Farray's International Dance Center con más de 100 clases semanales",
+        en: "Students in group dance class checking salsa, bachata and urban dance class schedules in Barcelona - Farray's International Dance Center with over 100 weekly classes",
+        ca: "Alumnes a classe de ball grupal consultant horaris de classes de salsa, bachata i danses urbanes a Barcelona - Farray's International Dance Center amb més de 100 classes setmanals",
+        fr: "Élèves en cours de danse en groupe consultant les horaires de cours de salsa, bachata et danses urbaines à Barcelone - Farray's International Dance Center avec plus de 100 cours par semaine",
+      },
+      og: {
+        es: "Horarios de Clases de Baile en Barcelona 2025 - Farray's Center | Salsa, Bachata, Hip Hop, Danza Contemporánea",
+        en: "Dance Class Schedules in Barcelona 2025 - Farray's Center | Salsa, Bachata, Hip Hop, Contemporary Dance",
+        ca: "Horaris de Classes de Ball a Barcelona 2025 - Farray's Center | Salsa, Bachata, Hip Hop, Dansa Contemporània",
+        fr: "Horaires des Cours de Danse à Barcelone 2025 - Farray's Center | Salsa, Bachata, Hip Hop, Danse Contemporaine",
+      },
+    },
+  },
+
+  // ==========================================================================
+  // CATEGORY PAGES - Alt texts for category page heroes
+  // ==========================================================================
+  alt_hero_clases_danza: {
+    es: "Clases de baile en Barcelona - Estudiantes practicando diversos estilos de danza en el estudio de Farray's Center",
+    en: "Dance classes in Barcelona - Students practicing various dance styles at Farray's Center studio",
+    ca: "Classes de ball a Barcelona - Estudiants practicant diversos estils de dansa a l'estudi de Farray's Center",
+    fr: "Cours de danse à Barcelone - Étudiants pratiquant divers styles de danse au studio Farray's Center",
   },
 
   // ==========================================================================

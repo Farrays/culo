@@ -1,9 +1,30 @@
 import { useState, memo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../hooks/useI18n';
+import type { Locale } from '../constants/image-alt-texts';
 import Breadcrumb from './shared/Breadcrumb';
 import AnimateOnScroll from './AnimateOnScroll';
 import LeadCaptureModal from './shared/LeadCaptureModal';
+
+// ==========================================================================
+// HERO IMAGE CONFIGURATION - Enterprise SEO/GEO/AIEO Optimized
+// ==========================================================================
+const HERO_IMAGE = {
+  basePath: '/images/horarios/horarios-clases-baile-barcelona',
+  ogImage: '/images/og-horarios-clases-baile.jpg', // Enterprise standard: OG in root images folder
+  breakpoints: [320, 640, 768, 1024, 1440, 1920],
+  formats: ['avif', 'webp', 'jpg'], // Enterprise format priority
+  placeholder:
+    'data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAQBACdASoUAA4APtFYpEwoJKMhsAgBABoJYwC7ABIvv2gH8AGM/NRQvAD++A7/+fz/U9cIKf7mAAA/',
+  dominantColor: '#1c0e09',
+  altKey: 'pages.horarios.hero', // Reference to image-alt-texts.ts
+  alt: {
+    es: "Alumnas en clase de baile grupal consultando horarios de clases de salsa, bachata y danzas urbanas en Barcelona - Farray's International Dance Center con más de 100 clases semanales",
+    en: "Students in group dance class checking salsa, bachata and urban dance class schedules in Barcelona - Farray's International Dance Center with over 100 weekly classes",
+    ca: "Alumnes a classe de ball grupal consultant horaris de classes de salsa, bachata i danses urbanes a Barcelona - Farray's International Dance Center amb més de 100 classes setmanals",
+    fr: "Élèves en cours de danse en groupe consultant les horaires de cours de salsa, bachata et danses urbaines à Barcelone - Farray's International Dance Center avec plus de 100 cours par semaine",
+  } as Record<Locale, string>,
+};
 import {
   CheckIcon,
   ChevronDownIcon,
@@ -195,9 +216,24 @@ const HorariosPageV2: React.FC = () => {
   };
 
   // Schema Markup
+  // Helper for inLanguage formatting per Google best practices
+  const getInLanguage = () => {
+    switch (locale) {
+      case 'ca':
+        return 'ca-ES';
+      case 'en':
+        return 'en';
+      case 'fr':
+        return 'fr-FR';
+      default:
+        return 'es-ES';
+    }
+  };
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
+    inLanguage: getInLanguage(),
     itemListElement: [
       {
         '@type': 'ListItem',
@@ -217,6 +253,7 @@ const HorariosPageV2: React.FC = () => {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    inLanguage: getInLanguage(),
     mainEntity: SCHEDULE_FAQ.map(faq => ({
       '@type': 'Question',
       name: t(faq.questionKey),
@@ -227,18 +264,96 @@ const HorariosPageV2: React.FC = () => {
     })),
   };
 
+  // Organization Schema - Enterprise with translations
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
+    '@id': `${baseUrl}/#organization`,
     name: "Farray's International Dance Center",
+    alternateName: "Farray's Center Barcelona",
+    description: t('schema_org_description'), // Uses global schema translation
     url: baseUrl,
     foundingDate: '2017',
-    areaServed: { '@type': 'City', name: 'Barcelona' },
+    inLanguage: getInLanguage(),
+    areaServed: {
+      '@type': 'City',
+      name: 'Barcelona',
+      '@id': 'https://www.wikidata.org/wiki/Q1492', // Wikidata ID for Barcelona
+    },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Carrer de Pallars, 85',
+      addressLocality: 'Barcelona',
+      postalCode: '08018',
+      addressRegion: 'Cataluña',
+      addressCountry: 'ES',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 41.3979,
+      longitude: 2.1919,
+    },
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.9',
       reviewCount: '509',
+      bestRating: '5',
+      worstRating: '1',
     },
+    availableLanguage: ['es', 'ca', 'en', 'fr'],
+    sameAs: [
+      'https://www.instagram.com/farrayscenter/',
+      'https://www.facebook.com/farrayscenter/',
+      'https://www.youtube.com/@farrayscenter',
+    ],
+  };
+
+  // WebPage Schema - Enterprise GEO/AIEO optimized with full translations
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${baseUrl}/${locale}/horarios-clases-baile-barcelona#webpage`,
+    url: `${baseUrl}/${locale}/horarios-clases-baile-barcelona`,
+    name: t('horariosV2_page_title'),
+    headline: t('horariosV2_hero_title'), // H1 content for GEO
+    description: t('horariosV2_page_description'),
+    inLanguage: getInLanguage(),
+    isPartOf: {
+      '@id': `${baseUrl}/#website`,
+    },
+    about: {
+      '@id': `${baseUrl}/#organization`,
+    },
+    mainEntity: {
+      '@type': 'ItemList',
+      name: t('horariosV2_blocks_title'), // "Nuestros Bloques Horarios"
+      description: t('horariosV2_blocks_subtitle'),
+      numberOfItems: blockData.length,
+      itemListElement: blockData.map((block, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: t(block.titleKey),
+        description: t(block.subtitleKey),
+      })),
+    },
+    primaryImageOfPage: {
+      '@type': 'ImageObject',
+      '@id': `${baseUrl}/${locale}/horarios-clases-baile-barcelona#primaryimage`,
+      url: `${baseUrl}${HERO_IMAGE.ogImage}`,
+      contentUrl: `${baseUrl}${HERO_IMAGE.ogImage}`,
+      width: 1200,
+      height: 630,
+      caption: HERO_IMAGE.alt[locale as Locale] || HERO_IMAGE.alt.es,
+      inLanguage: getInLanguage(),
+      representativeOfPage: true,
+    },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '.holographic-text', '[data-speakable="true"]'],
+    },
+    keywords: t('horariosV2_schema_keywords'), // "horarios clases baile barcelona, schedule dance classes..."
+    dateModified: new Date().toISOString().split('T')[0],
+    datePublished: '2024-01-01',
   };
 
   // Handler para abrir modal
@@ -247,16 +362,66 @@ const HorariosPageV2: React.FC = () => {
   return (
     <>
       <Helmet>
+        <html lang={locale} />
         <title>{t('horariosV2_page_title')} | Farray&apos;s Center</title>
         <meta name="description" content={t('horariosV2_page_description')} />
         <link rel="canonical" href={`${baseUrl}/${locale}/horarios-clases-baile-barcelona`} />
+        {/* hreflang tags for multilingual SEO - Google recognition */}
+        <link
+          rel="alternate"
+          hrefLang="es"
+          href={`${baseUrl}/es/horarios-clases-baile-barcelona`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="ca"
+          href={`${baseUrl}/ca/horarios-clases-baile-barcelona`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="en"
+          href={`${baseUrl}/en/horarios-clases-baile-barcelona`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="fr"
+          href={`${baseUrl}/fr/horarios-clases-baile-barcelona`}
+        />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`${baseUrl}/es/horarios-clases-baile-barcelona`}
+        />
         <meta property="og:title" content={t('horariosV2_page_title')} />
         <meta property="og:description" content={t('horariosV2_page_description')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${baseUrl}/${locale}/horarios-clases-baile-barcelona`} />
+        <meta property="og:locale" content={getInLanguage().replace('-', '_')} />
+        <meta property="og:locale:alternate" content="es_ES" />
+        <meta property="og:locale:alternate" content="ca_ES" />
+        <meta property="og:locale:alternate" content="en" />
+        <meta property="og:locale:alternate" content="fr_FR" />
+        {/* OG Image - JPG for social crawlers compatibility */}
+        <meta property="og:image" content={`${baseUrl}${HERO_IMAGE.ogImage}`} />
+        <meta property="og:image:secure_url" content={`${baseUrl}${HERO_IMAGE.ogImage}`} />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+          property="og:image:alt"
+          content={HERO_IMAGE.alt[locale as Locale] || HERO_IMAGE.alt.es}
+        />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={`${baseUrl}${HERO_IMAGE.ogImage}`} />
+        <meta
+          name="twitter:image:alt"
+          content={HERO_IMAGE.alt[locale as Locale] || HERO_IMAGE.alt.es}
+        />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
       </Helmet>
 
       {/* Lead Capture Modal */}
@@ -264,12 +429,49 @@ const HorariosPageV2: React.FC = () => {
 
       <div className="min-h-screen bg-black pt-20 md:pt-24">
         {/* ================================================================
-            SECTION 1: HERO (mismo diseno que PreciosPage)
+            SECTION 1: HERO - Enterprise Image Optimized
         ================================================================ */}
-        <section className="relative text-center py-24 md:py-32 overflow-hidden flex items-center justify-center min-h-[500px]">
-          {/* Background */}
-          <div className="absolute inset-0 bg-black">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
+        <section className="relative text-center py-24 md:py-32 overflow-hidden flex items-center justify-center min-h-[500px] md:min-h-[600px]">
+          {/* Hero Background Image - Responsive with LQIP */}
+          <div className="absolute inset-0" style={{ backgroundColor: HERO_IMAGE.dominantColor }}>
+            <picture>
+              {/* AVIF - Best compression for modern browsers */}
+              <source
+                type="image/avif"
+                srcSet={HERO_IMAGE.breakpoints
+                  .map(w => `${HERO_IMAGE.basePath}_${w}.avif ${w}w`)
+                  .join(', ')}
+                sizes="100vw"
+              />
+              {/* WebP - Wide browser support */}
+              <source
+                type="image/webp"
+                srcSet={HERO_IMAGE.breakpoints
+                  .map(w => `${HERO_IMAGE.basePath}_${w}.webp ${w}w`)
+                  .join(', ')}
+                sizes="100vw"
+              />
+              {/* JPEG - Universal fallback */}
+              <img
+                src={`${HERO_IMAGE.basePath}_1920.jpg`}
+                srcSet={HERO_IMAGE.breakpoints
+                  .map(w => `${HERO_IMAGE.basePath}_${w}.jpg ${w}w`)
+                  .join(', ')}
+                sizes="100vw"
+                alt={HERO_IMAGE.alt[locale as Locale] || HERO_IMAGE.alt.es}
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                style={{
+                  backgroundImage: `url(${HERO_IMAGE.placeholder})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              />
+            </picture>
+            {/* Gradient overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
           </div>
 
           <div className="relative z-20 container mx-auto px-4 sm:px-6">

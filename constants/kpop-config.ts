@@ -79,9 +79,7 @@ export const KPOP_PAGE_CONFIG: FullDanceClassConfig = {
   },
 
   videoSection: {
-    enabled: false, // Disabled until video is available
-    videos: [],
-    placeholderCount: 0,
+    enabled: true, // Shows "Video Próximamente" placeholder
   },
 
   logosSection: {
@@ -110,9 +108,9 @@ export const KPOP_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'K-Pop Dance, coreografías K-Pop, técnica de danza coreana',
-    prerequisites: 'Ninguno',
-    lessons: 'Próximamente',
+    teachesKey: 'schema_kpop_teaches',
+    prerequisitesKey: 'schema_kpop_prerequisites',
+    lessonsKey: 'schema_kpop_lessons',
     duration: 'PT1H',
   },
 

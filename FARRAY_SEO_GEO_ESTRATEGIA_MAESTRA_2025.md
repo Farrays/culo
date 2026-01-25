@@ -133,7 +133,7 @@ TOTAL SIN EXPLOTAR: +25,000 búsquedas/mes de alto valor comercial
 ```typescript
 // Añadir a OrganizationSchema:
 {
-  "foundingDate": "2015",
+  "foundingDate": "2017",
   "numberOfEmployees": "10+",
   "award": ["CID-UNESCO Accreditation"],
   "knowsAbout": ["Salsa Cubana", "Dancehall", "Método Farray®"],
@@ -596,15 +596,15 @@ Ejemplo: "Salsa Cubana Tutorial | Principiantes Paso a Paso | Farray's Barcelona
 
 ## 13.1 PUNTUACIÓN GENERAL DEL SITIO
 
-| Área | Puntuación | Estado | Notas |
-|------|-----------|--------|-------|
-| **SEO Técnico** | 8.5/10 | ✅ Excelente | Schema, hreflang, pre-rendering |
-| **Schema Markup** | 9/10 | ✅ Enterprise | Completo y bien estructurado |
-| **Contenido/Keywords** | 7/10 | ⚠️ Bueno | Gaps en turismo/B2B |
-| **SEO Local** | 7.5/10 | ⚠️ Sólido | Falta páginas por barrio |
-| **Pre-rendering/SSR** | 8.5/10 | ✅ Muy bien | 400+ páginas SSG |
-| **Backlinks/Autoridad** | 5/10 | 🔴 Débil | CRÍTICO - Necesita trabajo |
-| **TOTAL** | **7.8/10** | - | Necesita mejoras en autoridad |
+| Área                    | Puntuación | Estado        | Notas                           |
+| ----------------------- | ---------- | ------------- | ------------------------------- |
+| **SEO Técnico**         | 8.5/10     | ✅ Excelente  | Schema, hreflang, pre-rendering |
+| **Schema Markup**       | 9/10       | ✅ Enterprise | Completo y bien estructurado    |
+| **Contenido/Keywords**  | 7/10       | ⚠️ Bueno      | Gaps en turismo/B2B             |
+| **SEO Local**           | 7.5/10     | ⚠️ Sólido     | Falta páginas por barrio        |
+| **Pre-rendering/SSR**   | 8.5/10     | ✅ Muy bien   | 400+ páginas SSG                |
+| **Backlinks/Autoridad** | 5/10       | 🔴 Débil      | CRÍTICO - Necesita trabajo      |
+| **TOTAL**               | **7.8/10** | -             | Necesita mejoras en autoridad   |
 
 ## 13.2 DESGLOSE SEO TÉCNICO
 
@@ -666,13 +666,13 @@ Archivo: prerender.mjs (1,962 líneas)
 
 ## 14.1 RANKING ACTUAL "ESCUELA DE BAILE BARCELONA"
 
-| Posición | Sitio | DA Est. | Reseñas | Por qué rankea |
-|----------|-------|---------|---------|----------------|
-| 1-3 | Directorios (TopEmpresas, Go&Dance) | 50-70 | N/A | Contenido "mejores escuelas" |
-| 4-5 | **Bailongu** | 35-40 | 193 (4.8★) | 28+ años, 700m², autoridad |
-| 6-7 | **Swing Maniacs** | 40-45 | 638 (4.9★) | Especialización swing, reviews |
-| 8-10 | **Dance Emotion** | 30-35 | Variable | K-pop, contemporáneo |
-| 10-15 | **Farray's** | 25-35 | 376 (5.0★) | Técnica excelente, falta DA |
+| Posición | Sitio                               | DA Est. | Reseñas    | Por qué rankea                 |
+| -------- | ----------------------------------- | ------- | ---------- | ------------------------------ |
+| 1-3      | Directorios (TopEmpresas, Go&Dance) | 50-70   | N/A        | Contenido "mejores escuelas"   |
+| 4-5      | **Bailongu**                        | 35-40   | 193 (4.8★) | 28+ años, 700m², autoridad     |
+| 6-7      | **Swing Maniacs**                   | 40-45   | 638 (4.9★) | Especialización swing, reviews |
+| 8-10     | **Dance Emotion**                   | 30-35   | Variable   | K-pop, contemporáneo           |
+| 10-15    | **Farray's**                        | 25-35   | 376 (5.0★) | Técnica excelente, falta DA    |
 
 ## 14.2 ANÁLISIS DE COMPETIDORES PRINCIPALES
 
@@ -716,16 +716,16 @@ DEBILIDADES vs Farray's:
 
 ## 14.3 VENTAJAS COMPETITIVAS DE FARRAY'S
 
-| Factor | Farray's | Bailongu | Swing Maniacs |
-|--------|----------|----------|---------------|
-| **Acreditación UNESCO** | ✅ CID-UNESCO | ❌ | ❌ |
-| **Multi-idioma** | ✅ 4 idiomas | ❌ ES/CA | ❌ ES/CA |
-| **Schema avanzado** | ✅ Enterprise | ⚠️ Básico | ⚠️ Básico |
-| **Variedad estilos** | ✅ 30+ | ✅ 30+ | ⚠️ 10 (swing) |
-| **Rating reseñas** | ✅ 5.0★ | ⚠️ 4.8★ | ⚠️ 4.9★ |
-| **Cantidad reseñas** | ⚠️ 376 | ⚠️ 193 | ✅ 638 |
-| **Blog activo** | ✅ 6 artículos | ❌ | ❌ |
-| **Celebridad/E-E-A-T** | ✅ Yunaisy (Street Dance 2) | ❌ | ❌ |
+| Factor                  | Farray's                    | Bailongu  | Swing Maniacs |
+| ----------------------- | --------------------------- | --------- | ------------- |
+| **Acreditación UNESCO** | ✅ CID-UNESCO               | ❌        | ❌            |
+| **Multi-idioma**        | ✅ 4 idiomas                | ❌ ES/CA  | ❌ ES/CA      |
+| **Schema avanzado**     | ✅ Enterprise               | ⚠️ Básico | ⚠️ Básico     |
+| **Variedad estilos**    | ✅ 30+                      | ✅ 30+    | ⚠️ 10 (swing) |
+| **Rating reseñas**      | ✅ 5.0★                     | ⚠️ 4.8★   | ⚠️ 4.9★       |
+| **Cantidad reseñas**    | ⚠️ 376                      | ⚠️ 193    | ✅ 638        |
+| **Blog activo**         | ✅ 6 artículos              | ❌        | ❌            |
+| **Celebridad/E-E-A-T**  | ✅ Yunaisy (Street Dance 2) | ❌        | ❌            |
 
 ## 14.4 GAP ANALYSIS - QUÉ FALTA PARA SER #1
 
@@ -754,24 +754,24 @@ OPTIMIZACIÓN:
 
 ### Schemas Globales (SchemaMarkup.tsx)
 
-| Schema | Completitud | Ubicación | Notas |
-|--------|------------|-----------|-------|
-| **OrganizationSchema** | 95% | Global | Nombre, logo, socials, CID-UNESCO |
-| **WebSiteSchema** | 90% | Global | SearchAction, languages |
-| **SiteNavigationElementSchema** | 100% | Global | 11 elementos |
-| **DanceSchoolWithRatingSchema** | 90% | About, Classes | AggregateRating incluido |
+| Schema                          | Completitud | Ubicación      | Notas                             |
+| ------------------------------- | ----------- | -------------- | --------------------------------- |
+| **OrganizationSchema**          | 95%         | Global         | Nombre, logo, socials, CID-UNESCO |
+| **WebSiteSchema**               | 90%         | Global         | SearchAction, languages           |
+| **SiteNavigationElementSchema** | 100%        | Global         | 11 elementos                      |
+| **DanceSchoolWithRatingSchema** | 90%         | About, Classes | AggregateRating incluido          |
 
 ### Schemas Por Página
 
-| Schema | Páginas | Completitud |
-|--------|---------|-------------|
-| **LocalBusinessSchema** | Contact, Footer | 95% |
-| **CourseSchema** | Todas las clases | 85% |
-| **CourseSchemaEnterprise** | Clases principales | 90% |
-| **FAQPageSchema** | Classes Hub, FAQ | 95% |
-| **BreadcrumbListSchema** | About, Blog | 90% |
-| **ArticleSchema** | Blog posts | 95% |
-| **PersonSchema** | Yunaisy, Profesores | 90% |
+| Schema                     | Páginas             | Completitud |
+| -------------------------- | ------------------- | ----------- |
+| **LocalBusinessSchema**    | Contact, Footer     | 95%         |
+| **CourseSchema**           | Todas las clases    | 85%         |
+| **CourseSchemaEnterprise** | Clases principales  | 90%         |
+| **FAQPageSchema**          | Classes Hub, FAQ    | 95%         |
+| **BreadcrumbListSchema**   | About, Blog         | 90%         |
+| **ArticleSchema**          | Blog posts          | 95%         |
+| **PersonSchema**           | Yunaisy, Profesores | 90%         |
 
 ### Schema de Blog (BlogSchemas.tsx)
 
@@ -853,14 +853,14 @@ OPTIMIZACIÓN:
 
 ## 16.1 ESTADO ACTUAL DE AUTORIDAD
 
-| Métrica | Actual | Objetivo 6m | Objetivo 12m |
-|---------|--------|-------------|--------------|
-| Domain Authority (DA) | ~25-35 | 40 | 50 |
-| Page Authority (Home) | ~30-40 | 45 | 55 |
-| Backlinks totales | ~30 | 100 | 200 |
-| Referring domains | ~20 | 60 | 120 |
-| Citation Flow | ~20-25 | 35 | 45 |
-| Trust Flow | ~15-20 | 30 | 40 |
+| Métrica               | Actual | Objetivo 6m | Objetivo 12m |
+| --------------------- | ------ | ----------- | ------------ |
+| Domain Authority (DA) | ~25-35 | 40          | 50           |
+| Page Authority (Home) | ~30-40 | 45          | 55           |
+| Backlinks totales     | ~30    | 100         | 200          |
+| Referring domains     | ~20    | 60          | 120          |
+| Citation Flow         | ~20-25 | 35          | 45           |
+| Trust Flow            | ~15-20 | 30          | 40           |
 
 ## 16.2 ENLACES EXTERNOS ACTUALES (Outbound)
 
@@ -890,37 +890,37 @@ Google Business Profile: https://g.page/r/... → ✅
 
 ### Fase 1: Directorios Locales (20 registros)
 
-| Directorio | DA | Prioridad | Estado |
-|------------|-----|-----------|--------|
-| Google Business Profile | 100 | 🔴 CRÍTICO | ⚠️ Optimizar |
-| Páginas Amarillas España | 70+ | 🔴 Alta | ❌ Pendiente |
-| TripAdvisor | 94 | 🔴 Alta | ❌ Pendiente |
-| Yelp España | 90+ | 🟠 Media | ❌ Pendiente |
-| Go&Dance | 45 | 🔴 Alta | ❌ Pendiente |
-| Cylex.es | 50 | 🟠 Media | ❌ Pendiente |
-| Barcelona Turisme | 75+ | 🔴 Alta | ❌ Pendiente |
-| TimeOut Barcelona | 80+ | 🔴 Alta | ❌ Pendiente |
-| InfoNegocios.es | 40 | 🟢 Baja | ❌ Pendiente |
-| ClassPass | 60 | 🟠 Media | ❌ Pendiente |
+| Directorio               | DA  | Prioridad  | Estado       |
+| ------------------------ | --- | ---------- | ------------ |
+| Google Business Profile  | 100 | 🔴 CRÍTICO | ⚠️ Optimizar |
+| Páginas Amarillas España | 70+ | 🔴 Alta    | ❌ Pendiente |
+| TripAdvisor              | 94  | 🔴 Alta    | ❌ Pendiente |
+| Yelp España              | 90+ | 🟠 Media   | ❌ Pendiente |
+| Go&Dance                 | 45  | 🔴 Alta    | ❌ Pendiente |
+| Cylex.es                 | 50  | 🟠 Media   | ❌ Pendiente |
+| Barcelona Turisme        | 75+ | 🔴 Alta    | ❌ Pendiente |
+| TimeOut Barcelona        | 80+ | 🔴 Alta    | ❌ Pendiente |
+| InfoNegocios.es          | 40  | 🟢 Baja    | ❌ Pendiente |
+| ClassPass                | 60  | 🟠 Media   | ❌ Pendiente |
 
 ### Fase 2: Guest Posts en Blogs de Danza
 
-| Blog/Publicación | DA | Estrategia | Estado |
-|------------------|-----|------------|--------|
-| Danza Ballet (ES) | 35+ | Guest post | ❌ |
-| Dance Magazine (US) | 60+ | Pitch PR | ❌ |
-| DancePlug | 40+ | Perfil + contenido | ❌ |
-| Bachata World | 30+ | Partnership | ❌ |
-| Salsa Forums | 35+ | Participación | ❌ |
+| Blog/Publicación    | DA  | Estrategia         | Estado |
+| ------------------- | --- | ------------------ | ------ |
+| Danza Ballet (ES)   | 35+ | Guest post         | ❌     |
+| Dance Magazine (US) | 60+ | Pitch PR           | ❌     |
+| DancePlug           | 40+ | Perfil + contenido | ❌     |
+| Bachata World       | 30+ | Partnership        | ❌     |
+| Salsa Forums        | 35+ | Participación      | ❌     |
 
 ### Fase 3: Menciones en Medios
 
-| Medio | DA | Ángulo de Pitch | Impacto DA |
-|-------|-----|-----------------|-----------|
-| La Vanguardia | 90+ | "Escuela CID-UNESCO en Barcelona" | +5-8 |
-| El Periódico | 85+ | "Yunaisy Farray: de Street Dance 2 a emprendedora" | +4-6 |
-| TimeOut Barcelona | 80+ | "Best dance classes in BCN" | +3-5 |
-| Barcelona Metropolitan | 65+ | "Dance for expats" | +2-3 |
+| Medio                  | DA  | Ángulo de Pitch                                    | Impacto DA |
+| ---------------------- | --- | -------------------------------------------------- | ---------- |
+| La Vanguardia          | 90+ | "Escuela CID-UNESCO en Barcelona"                  | +5-8       |
+| El Periódico           | 85+ | "Yunaisy Farray: de Street Dance 2 a emprendedora" | +4-6       |
+| TimeOut Barcelona      | 80+ | "Best dance classes in BCN"                        | +3-5       |
+| Barcelona Metropolitan | 65+ | "Dance for expats"                                 | +2-3       |
 
 ## 16.4 CONTENIDO LINKEABLE A CREAR
 
@@ -972,12 +972,12 @@ Coordenadas: 41.380421, 2.148014
 
 ### Ubicaciones en el Sitio
 
-| Ubicación | NAP Presente | Schema | Link GMB |
-|-----------|--------------|--------|----------|
-| Footer.tsx | ✅ Completo | ✅ PostalAddress | ✅ |
-| ContactPage.tsx | ✅ Completo | ✅ LocalBusiness | ✅ |
-| SchemaMarkup.tsx | ✅ Completo | ✅ Organization | ✅ |
-| About Page | ✅ Completo | ✅ DanceSchool | ✅ |
+| Ubicación        | NAP Presente | Schema           | Link GMB |
+| ---------------- | ------------ | ---------------- | -------- |
+| Footer.tsx       | ✅ Completo  | ✅ PostalAddress | ✅       |
+| ContactPage.tsx  | ✅ Completo  | ✅ LocalBusiness | ✅       |
+| SchemaMarkup.tsx | ✅ Completo  | ✅ Organization  | ✅       |
+| About Page       | ✅ Completo  | ✅ DanceSchool   | ✅       |
 
 **Consistencia: 100%** ✅
 
@@ -985,18 +985,18 @@ Coordenadas: 41.380421, 2.148014
 
 ### Estado Actual
 
-| Campo | Completitud | Acción |
-|-------|-------------|--------|
-| Nombre | ✅ | - |
-| Categoría principal | ✅ DanceSchool | - |
-| Dirección | ✅ | - |
-| Teléfono | ✅ | - |
-| Horarios | ✅ | Verificar actualización |
-| Fotos | ⚠️ | Añadir 10+ fotos nuevas |
-| Posts | ⚠️ | Crear posts semanales |
-| Reseñas | ✅ 376 (5.0★) | Mantener velocidad 4+/mes |
-| Q&A | ⚠️ | Responder preguntas |
-| Servicios | ⚠️ | Listar todos los estilos |
+| Campo               | Completitud    | Acción                    |
+| ------------------- | -------------- | ------------------------- |
+| Nombre              | ✅             | -                         |
+| Categoría principal | ✅ DanceSchool | -                         |
+| Dirección           | ✅             | -                         |
+| Teléfono            | ✅             | -                         |
+| Horarios            | ✅             | Verificar actualización   |
+| Fotos               | ⚠️             | Añadir 10+ fotos nuevas   |
+| Posts               | ⚠️             | Crear posts semanales     |
+| Reseñas             | ✅ 376 (5.0★)  | Mantener velocidad 4+/mes |
+| Q&A                 | ⚠️             | Responder preguntas       |
+| Servicios           | ⚠️             | Listar todos los estilos  |
 
 ### Optimización Pendiente
 
@@ -1036,11 +1036,11 @@ Por profesor:
 
 ### Comparativa con Competencia
 
-| Escuela | Reseñas | Rating | Velocidad Est. |
-|---------|---------|--------|----------------|
-| Swing Maniacs | 638 | 4.9★ | ~8/mes |
-| **Farray's** | 376 | 5.0★ | ~4/mes |
-| Bailongu | 193 | 4.8★ | ~3/mes |
+| Escuela       | Reseñas | Rating | Velocidad Est. |
+| ------------- | ------- | ------ | -------------- |
+| Swing Maniacs | 638     | 4.9★   | ~8/mes         |
+| **Farray's**  | 376     | 5.0★   | ~4/mes         |
+| Bailongu      | 193     | 4.8★   | ~3/mes         |
 
 ### Plan de Acción Reseñas
 
@@ -1064,13 +1064,13 @@ Tácticas:
 
 ### Páginas que FALTAN crear
 
-| Página | Keyword Target | Volumen | Prioridad |
-|--------|---------------|---------|-----------|
-| /es/baile-eixample | clases baile eixample | 200/mes | 🔴 Alta |
-| /es/baile-gracia | clases baile gracia | 150/mes | 🔴 Alta |
-| /es/baile-sant-antoni | clases baile sant antoni | 100/mes | 🟠 Media |
-| /es/baile-sants | clases baile sants | 150/mes | 🟠 Media |
-| /es/baile-cerca-metro-entenca | baile metro entenca | 50/mes | 🟢 Baja |
+| Página                        | Keyword Target           | Volumen | Prioridad |
+| ----------------------------- | ------------------------ | ------- | --------- |
+| /es/baile-eixample            | clases baile eixample    | 200/mes | 🔴 Alta   |
+| /es/baile-gracia              | clases baile gracia      | 150/mes | 🔴 Alta   |
+| /es/baile-sant-antoni         | clases baile sant antoni | 100/mes | 🟠 Media  |
+| /es/baile-sants               | clases baile sants       | 150/mes | 🟠 Media  |
+| /es/baile-cerca-metro-entenca | baile metro entenca      | 50/mes  | 🟢 Baja   |
 
 ### Contenido Sugerido por Página de Barrio
 
@@ -1083,14 +1083,17 @@ Tácticas:
 Dance Center está a solo [X] minutos en metro desde [estación más cercana].
 
 ### Cómo llegar desde [Barrio]
+
 - Metro: Línea [X] hasta Entença (5 min caminando)
 - Bus: Líneas [X, Y, Z]
 - Bicing: Estación más cercana a 2 min
 
 ### Testimonios de alumnos de [Barrio]
+
 [Insertar 3-5 testimonios de clientes del barrio]
 
 ### Horarios más populares para residentes de [Barrio]
+
 [Horarios de tarde/noche para trabajadores]
 ```
 
@@ -1125,6 +1128,7 @@ Dance Center está a solo [X] minutos en metro desde [estación más cercana].
 ### SEO Técnico
 
 - [ ] Añadir a robots.txt:
+
   ```
   User-agent: GPTBot
   Allow: /
@@ -1214,13 +1218,13 @@ Dance Center está a solo [X] minutos en metro desde [estación más cercana].
 
 ## 19.1 DIAGNÓSTICO
 
-| Área | Puntuación | Veredicto |
-|------|-----------|-----------|
-| Base técnica | 8.5/10 | **EXCELENTE** - Lista para competir |
-| Schema/Structured Data | 9/10 | **ENTERPRISE** - Mejor que competencia |
-| Contenido | 7/10 | **GAPS** - Turismo, B2B sin explotar |
-| Autoridad/Backlinks | 5/10 | **CRÍTICO** - Bloquea posición #1 |
-| SEO Local | 7.5/10 | **SÓLIDO** - Falta barrios |
+| Área                   | Puntuación | Veredicto                              |
+| ---------------------- | ---------- | -------------------------------------- |
+| Base técnica           | 8.5/10     | **EXCELENTE** - Lista para competir    |
+| Schema/Structured Data | 9/10       | **ENTERPRISE** - Mejor que competencia |
+| Contenido              | 7/10       | **GAPS** - Turismo, B2B sin explotar   |
+| Autoridad/Backlinks    | 5/10       | **CRÍTICO** - Bloquea posición #1      |
+| SEO Local              | 7.5/10     | **SÓLIDO** - Falta barrios             |
 
 ## 19.2 RESPUESTA: ¿PUEDEN SER #1?
 
@@ -1242,21 +1246,21 @@ FALTA EL 30% CRÍTICO:
 
 ## 19.3 TIMELINE PARA #1
 
-| Milestone | Timeline | Acciones Clave |
-|-----------|----------|----------------|
-| Top 10 | Actual | Ya conseguido |
-| Top 5 | 3-4 meses | +30 backlinks, +10 artículos |
-| Top 3 | 6 meses | +80 backlinks, YouTube activo |
-| **#1** | 9-12 meses | DA 50+, 150+ backlinks, dominio contenido |
+| Milestone | Timeline   | Acciones Clave                            |
+| --------- | ---------- | ----------------------------------------- |
+| Top 10    | Actual     | Ya conseguido                             |
+| Top 5     | 3-4 meses  | +30 backlinks, +10 artículos              |
+| Top 3     | 6 meses    | +80 backlinks, YouTube activo             |
+| **#1**    | 9-12 meses | DA 50+, 150+ backlinks, dominio contenido |
 
 ## 19.4 ROI PROYECTADO
 
-| Inversión | Retorno Estimado |
-|-----------|------------------|
-| Link building (€2,000-5,000) | +€50,000-100,000/año (turismo) |
-| Contenido (€3,000-6,000) | +€30,000-60,000/año (B2B) |
-| YouTube (€2,000-4,000) | +€20,000-40,000/año (awareness) |
-| **TOTAL** | **+€100,000-200,000/año** |
+| Inversión                    | Retorno Estimado                |
+| ---------------------------- | ------------------------------- |
+| Link building (€2,000-5,000) | +€50,000-100,000/año (turismo)  |
+| Contenido (€3,000-6,000)     | +€30,000-60,000/año (B2B)       |
+| YouTube (€2,000-4,000)       | +€20,000-40,000/año (awareness) |
+| **TOTAL**                    | **+€100,000-200,000/año**       |
 
 ---
 
@@ -1268,13 +1272,13 @@ FALTA EL 30% CRÍTICO:
 
 ## 20.1 POR QUÉ NO COMPRAR ENLACES
 
-| Riesgo | Consecuencia |
-|--------|--------------|
-| Penalización Google | Caída de 50-100 posiciones de golpe |
-| Penalización manual | Desindexación completa del sitio |
-| Enlaces tóxicos | Dañan DA a largo plazo |
-| Dinero tirado | Enlaces de baja calidad no ayudan |
-| Detección fácil | Google detecta patrones de PBN/compra |
+| Riesgo              | Consecuencia                          |
+| ------------------- | ------------------------------------- |
+| Penalización Google | Caída de 50-100 posiciones de golpe   |
+| Penalización manual | Desindexación completa del sitio      |
+| Enlaces tóxicos     | Dañan DA a largo plazo                |
+| Dinero tirado       | Enlaces de baja calidad no ayudan     |
+| Detección fácil     | Google detecta patrones de PBN/compra |
 
 ## 20.2 TIER 1: DIGITAL PR + AUTORIDAD (Mayor Impacto)
 
@@ -1512,31 +1516,31 @@ ROI: Excepcional (backlinks .edu valen oro)
 
 ## 20.8 PLAN DE EJECUCIÓN 6 MESES
 
-| Mes | Acción | Backlinks Est. | Coste |
-|-----|--------|----------------|-------|
-| 1 | Directorios (15) + GMB | 15 | €0 |
-| 1 | HARO/Connectively setup | 2-3 | €0 |
-| 2 | Infografía calorías | 10-20 | €200 |
-| 2 | 3 guest posts | 3 | €0 |
-| 3 | Press release CID-UNESCO | 3-5 | €0-300 |
-| 3 | Partnerships hoteles | 3-5 | €0 |
-| 4 | Estudio "Estado del Baile" | 10-20 | €200 |
-| 4 | 5 guest posts | 5 | €0 |
-| 5 | Beca universitaria | 10-20 | €500 |
-| 5 | Broken link building | 5-10 | €0 |
-| 6 | Infografía #2 + PR | 15-25 | €300 |
-| **TOTAL** | | **80-130** | **€1,200-1,500** |
+| Mes       | Acción                     | Backlinks Est. | Coste            |
+| --------- | -------------------------- | -------------- | ---------------- |
+| 1         | Directorios (15) + GMB     | 15             | €0               |
+| 1         | HARO/Connectively setup    | 2-3            | €0               |
+| 2         | Infografía calorías        | 10-20          | €200             |
+| 2         | 3 guest posts              | 3              | €0               |
+| 3         | Press release CID-UNESCO   | 3-5            | €0-300           |
+| 3         | Partnerships hoteles       | 3-5            | €0               |
+| 4         | Estudio "Estado del Baile" | 10-20          | €200             |
+| 4         | 5 guest posts              | 5              | €0               |
+| 5         | Beca universitaria         | 10-20          | €500             |
+| 5         | Broken link building       | 5-10           | €0               |
+| 6         | Infografía #2 + PR         | 15-25          | €300             |
+| **TOTAL** |                            | **80-130**     | **€1,200-1,500** |
 
 ## 20.9 COMPARATIVA: COMPRAR VS ORGÁNICO
 
-| Factor | Comprar Enlaces | Estrategia Orgánica |
-|--------|-----------------|---------------------|
-| Coste 100 backlinks | €3,000-10,000 | €1,500 + tiempo |
-| Riesgo penalización | 🔴 ALTO | 🟢 CERO |
-| Calidad enlaces | ⚠️ Variable | ✅ Alta |
-| Durabilidad | ⚠️ Pueden caer | ✅ Permanentes |
-| Tráfico referral | ❌ Ninguno | ✅ Real |
-| Brand awareness | ❌ Ninguno | ✅ Alto |
+| Factor              | Comprar Enlaces | Estrategia Orgánica |
+| ------------------- | --------------- | ------------------- |
+| Coste 100 backlinks | €3,000-10,000   | €1,500 + tiempo     |
+| Riesgo penalización | 🔴 ALTO         | 🟢 CERO             |
+| Calidad enlaces     | ⚠️ Variable     | ✅ Alta             |
+| Durabilidad         | ⚠️ Pueden caer  | ✅ Permanentes      |
+| Tráfico referral    | ❌ Ninguno      | ✅ Real             |
+| Brand awareness     | ❌ Ninguno      | ✅ Alto             |
 
 ---
 
@@ -1616,41 +1620,41 @@ RESULTADO: ~89K visitas/mes ⚠️ Cerca pero no llega
 
 ### Keywords Principales (Ya cubiertas)
 
-| Keyword | Volumen/mes |
-|---------|-------------|
-| clases de salsa barcelona | 3,600 |
-| escuela de baile barcelona | 2,900 |
-| clases de bachata barcelona | 2,900 |
-| clases de baile barcelona | 2,400 |
-| academia de baile barcelona | 1,600 |
-| clases hip hop barcelona | 1,300 |
-| clases de baile para adultos | 1,300 |
-| **Subtotal principales** | **~16,000** |
+| Keyword                      | Volumen/mes |
+| ---------------------------- | ----------- |
+| clases de salsa barcelona    | 3,600       |
+| escuela de baile barcelona   | 2,900       |
+| clases de bachata barcelona  | 2,900       |
+| clases de baile barcelona    | 2,400       |
+| academia de baile barcelona  | 1,600       |
+| clases hip hop barcelona     | 1,300       |
+| clases de baile para adultos | 1,300       |
+| **Subtotal principales**     | **~16,000** |
 
 ### Keywords Secundarias (Por atacar)
 
-| Keyword | Volumen/mes |
-|---------|-------------|
-| como aprender a bailar | 14,800 |
-| aprender a bailar desde cero | 1,600 |
-| beneficios de bailar | 1,300 |
-| tipos de baile | 2,400 |
-| estilos de baile | 1,900 |
-| baile para principiantes | 1,000 |
-| **Subtotal secundarias** | **~23,000** |
+| Keyword                      | Volumen/mes |
+| ---------------------------- | ----------- |
+| como aprender a bailar       | 14,800      |
+| aprender a bailar desde cero | 1,600       |
+| beneficios de bailar         | 1,300       |
+| tipos de baile               | 2,400       |
+| estilos de baile             | 1,900       |
+| baile para principiantes     | 1,000       |
+| **Subtotal secundarias**     | **~23,000** |
 
 ### Keywords de Turismo (Sin explotar)
 
-| Keyword | Volumen/mes |
-|---------|-------------|
-| dance classes barcelona | 2,900 |
-| salsa barcelona | 2,400 |
-| bachata barcelona | 1,900 |
-| things to do barcelona | 40,500 |
-| team building barcelona | 5,400 |
-| hen party barcelona | 14,800 |
-| bachelor party barcelona | 9,900 |
-| **Subtotal turismo** | **~77,800** |
+| Keyword                  | Volumen/mes |
+| ------------------------ | ----------- |
+| dance classes barcelona  | 2,900       |
+| salsa barcelona          | 2,400       |
+| bachata barcelona        | 1,900       |
+| things to do barcelona   | 40,500      |
+| team building barcelona  | 5,400       |
+| hen party barcelona      | 14,800      |
+| bachelor party barcelona | 9,900       |
+| **Subtotal turismo**     | **~77,800** |
 
 ### TOTAL VOLUMEN ATACABLE
 
@@ -1736,22 +1740,22 @@ Para multiplicar tráfico:
 
 **SÍ, pero es AMBICIOSO y requiere:**
 
-| Requisito | Esfuerzo | Probabilidad |
-|-----------|----------|--------------|
-| 8-9 contenidos/mes | ALTO | 70% |
-| 25-30 backlinks/mes | MUY ALTO | 50% |
-| YouTube activo | ALTO | 60% |
-| Inversión €5,000-10,000 | MEDIO | Variable |
-| Dedicación 20-30h/semana | ALTO | Variable |
+| Requisito                | Esfuerzo | Probabilidad |
+| ------------------------ | -------- | ------------ |
+| 8-9 contenidos/mes       | ALTO     | 70%          |
+| 25-30 backlinks/mes      | MUY ALTO | 50%          |
+| YouTube activo           | ALTO     | 60%          |
+| Inversión €5,000-10,000  | MEDIO    | Variable     |
+| Dedicación 20-30h/semana | ALTO     | Variable     |
 
 ### Escenarios Realistas
 
-| Escenario | Visitas Mes 12 | Probabilidad |
-|-----------|----------------|--------------|
-| **Pesimista** (mínimo esfuerzo) | 25,000-35,000 | 90% |
-| **Realista** (esfuerzo moderado) | 50,000-70,000 | 70% |
-| **Optimista** (esfuerzo máximo) | 80,000-100,000 | 40% |
-| **Moonshot** (todo perfecto) | 100,000-150,000 | 20% |
+| Escenario                        | Visitas Mes 12  | Probabilidad |
+| -------------------------------- | --------------- | ------------ |
+| **Pesimista** (mínimo esfuerzo)  | 25,000-35,000   | 90%          |
+| **Realista** (esfuerzo moderado) | 50,000-70,000   | 70%          |
+| **Optimista** (esfuerzo máximo)  | 80,000-100,000  | 40%          |
+| **Moonshot** (todo perfecto)     | 100,000-150,000 | 20%          |
 
 ### Mi Recomendación
 

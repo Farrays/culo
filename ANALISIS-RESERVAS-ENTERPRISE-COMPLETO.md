@@ -8,14 +8,14 @@
 
 ## 1. Estado Actual del Backend ✅
 
-| Componente | Estado | Notas |
-|------------|--------|-------|
-| `/api/clases` | ✅ Completado | Búsqueda binaria, caché Redis, filtro por estilo |
-| `/api/reservar` | ✅ Completado | Momence + CAPI + Customer Leads |
-| Validación teléfono | ✅ Internacional | ES, FR, USA y más |
-| Deduplicación | ✅ Redis 90 días | Evita leads duplicados |
-| Rate limiting | ✅ 3 req/min | Protección anti-spam |
-| Meta CAPI | ✅ €90/lead | Tracking server-side |
+| Componente          | Estado           | Notas                                            |
+| ------------------- | ---------------- | ------------------------------------------------ |
+| `/api/clases`       | ✅ Completado    | Búsqueda binaria, caché Redis, filtro por estilo |
+| `/api/reservar`     | ✅ Completado    | Momence + CAPI + Customer Leads                  |
+| Validación teléfono | ✅ Internacional | ES, FR, USA y más                                |
+| Deduplicación       | ✅ Redis 90 días | Evita leads duplicados                           |
+| Rate limiting       | ✅ 3 req/min     | Protección anti-spam                             |
+| Meta CAPI           | ✅ €90/lead      | Tracking server-side                             |
 
 ---
 
@@ -119,12 +119,14 @@
 ### 2.3 Traducciones - 4 IDIOMAS
 
 **Idiomas requeridos:**
+
 - `es` - Español (principal)
 - `ca` - Catalán
 - `en` - English
 - `fr` - Français
 
 **Contenido a traducir:**
+
 1. Términos y condiciones
 2. Checkboxes de consentimiento
 3. Labels del formulario
@@ -211,7 +213,7 @@ URL existente: https://farrayscenter.com/politica-de-privacidad/
 
 El texto debe incluir:
 - Responsable: FARRAY'S INTERNATIONAL DANCE CENTER
-- Dirección: C/ Entença nº 100, bajos 2, 08015 Barcelona
+- Dirección: C/ Entença nº 100, Local 1, 08015 Barcelona
 - Email: info@farrayscenter.com
 - Derechos: acceso, rectificación, supresión, oposición, limitación, portabilidad
 ```
@@ -224,8 +226,9 @@ El texto debe incluir:
 
 ```javascript
 // Si el estilo seleccionado incluye "heels" o "femmology"
-const needsHeelsConsent = ['heels', 'femmology', 'stiletto', 'tacones']
-  .some(kw => selectedClass.style.toLowerCase().includes(kw));
+const needsHeelsConsent = ['heels', 'femmology', 'stiletto', 'tacones'].some(kw =>
+  selectedClass.style.toLowerCase().includes(kw)
+);
 
 if (needsHeelsConsent) {
   // Mostrar checkbox adicional
@@ -237,11 +240,11 @@ if (needsHeelsConsent) {
 
 ```javascript
 const requiredConsents = [
-  'privacyPolicy',      // Política de privacidad + comunicaciones
-  'barcelonaResident',  // Residencia Barcelona
-  'singleTrialClass',   // Una sola clase de prueba
-  'exStudentAware',     // Conocimiento ex-estudiantes
-  'respectLevel',       // Respetar nivel
+  'privacyPolicy', // Política de privacidad + comunicaciones
+  'barcelonaResident', // Residencia Barcelona
+  'singleTrialClass', // Una sola clase de prueba
+  'exStudentAware', // Conocimiento ex-estudiantes
+  'respectLevel', // Respetar nivel
 ];
 
 // Solo si es clase de Heels
@@ -265,7 +268,7 @@ interface BookingFormData {
   firstName: string;
   lastName: string;
   email: string;
-  phone: string;       // Internacional
+  phone: string; // Internacional
 
   // Clase seleccionada
   sessionId: number;
@@ -275,13 +278,13 @@ interface BookingFormData {
 
   // Consentimientos (CRÍTICO)
   consents: {
-    privacyPolicy: boolean;      // OBLIGATORIO
-    barcelonaResident: boolean;  // OBLIGATORIO
-    singleTrialClass: boolean;   // OBLIGATORIO
-    exStudentAware: boolean;     // OBLIGATORIO
-    respectLevel: boolean;       // OBLIGATORIO
-    heelsRequired?: boolean;     // CONDICIONAL
-    imageRights: boolean;        // OPCIONAL
+    privacyPolicy: boolean; // OBLIGATORIO
+    barcelonaResident: boolean; // OBLIGATORIO
+    singleTrialClass: boolean; // OBLIGATORIO
+    exStudentAware: boolean; // OBLIGATORIO
+    respectLevel: boolean; // OBLIGATORIO
+    heelsRequired?: boolean; // CONDICIONAL
+    imageRights: boolean; // OPCIONAL
   };
 
   // Tracking
@@ -319,6 +322,7 @@ interface BookingFormData {
 ## 6. Checklist Final Enterprise
 
 ### 6.1 Backend ✅
+
 - [x] `/api/clases` con búsqueda binaria
 - [x] `/api/reservar` con Momence + CAPI
 - [x] Validación internacional de teléfono
@@ -327,6 +331,7 @@ interface BookingFormData {
 - [ ] **PENDIENTE:** Guardar consentimientos en respuesta
 
 ### 6.2 Frontend ⏳
+
 - [ ] Página `/reservas` dedicada
 - [ ] Flujo de 3 pasos
 - [ ] Filtro por estilo (?style=)
@@ -334,6 +339,7 @@ interface BookingFormData {
 - [ ] Textos informativos antes del formulario
 
 ### 6.3 RGPD/Legal ⏳
+
 - [ ] 5 checkboxes obligatorios
 - [ ] 1 checkbox condicional (heels)
 - [ ] 1 checkbox opcional (imagen)
@@ -341,12 +347,14 @@ interface BookingFormData {
 - [ ] Términos y condiciones visibles
 
 ### 6.4 Traducciones ⏳
+
 - [ ] Español (es)
 - [ ] Catalán (ca)
 - [ ] English (en)
 - [ ] Français (fr)
 
 ### 6.5 Pre-render (según CLAUDE.md) ⏳
+
 - [ ] Route en App.tsx
 - [ ] 4 rutas en prerender.mjs
 - [ ] 4 metadata en prerender.mjs
@@ -354,6 +362,7 @@ interface BookingFormData {
 - [ ] Rewrite en vercel.json
 
 ### 6.6 WhatsApp ⏳
+
 - [ ] Consentimiento explícito (incluido en checkbox 1)
 - [ ] Templates aprobados por Meta
 - [ ] Recordatorios 24h y 2h antes

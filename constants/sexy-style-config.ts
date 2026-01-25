@@ -133,9 +133,9 @@ export const SEXY_STYLE_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA MARKUP ===
   courseConfig: {
-    teaches: 'Sexy Style, sensualidad, expresión corporal, feminidad, coreografía, confianza',
-    prerequisites: 'Ninguno',
-    lessons: '6 clases semanales',
+    teachesKey: 'schema_sexystyle_teaches',
+    prerequisitesKey: 'schema_sexystyle_prerequisites',
+    lessonsKey: 'schema_sexystyle_lessons',
     duration: 'PT1H',
   },
 
@@ -149,8 +149,8 @@ export const SEXY_STYLE_PAGE_CONFIG: FullDanceClassConfig = {
   personSchemas: [
     {
       name: 'Yasmina Fernández',
-      jobTitle: 'Instructora de Sexy Style',
-      description: 'Especialista en Sexy Style y estilos sensuales con amplia experiencia.',
+      jobTitleKey: 'schema_sexystyle_yasmina_jobTitle',
+      descriptionKey: 'schema_sexystyle_yasmina_description',
       knowsAbout: ['Sexy Style', 'Sensual Dance', 'Femininity', 'Urban Dance'],
     },
   ],

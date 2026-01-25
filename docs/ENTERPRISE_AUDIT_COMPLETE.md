@@ -308,15 +308,15 @@ export const LocalBusinessSchema = () => (
         email: 'info@farrayscenter.com',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: "Carrer d'Entença 100",
+          streetAddress: "Carrer d'Entença, 100, Local 1",
           addressLocality: 'Barcelona',
           postalCode: '08015',
           addressCountry: 'ES',
         },
         geo: {
           '@type': 'GeoCoordinates',
-          latitude: '41.3784',
-          longitude: '2.1496',
+          latitude: '41.380421',
+          longitude: '2.148014',
         },
         openingHoursSpecification: [
           {

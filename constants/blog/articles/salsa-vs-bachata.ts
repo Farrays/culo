@@ -4,7 +4,7 @@
  * Enterprise SEO/GEO optimized article with comparison table,
  * internal links, verified references, and comprehensive FAQs.
  *
- * Category: Tutoriales
+ * Category: Tips
  * Target Keywords: salsa vs bachata, diferencias salsa bachata,
  *                  elegir estilo baile, comparativa bailes latinos,
  *                  aprender salsa o bachata barcelona
@@ -16,7 +16,7 @@ export const SALSA_VS_BACHATA_CONFIG: BlogArticleConfig = {
   // === IDENTIFICATION ===
   articleKey: 'blogSalsaVsBachata',
   slug: 'salsa-vs-bachata-que-estilo-elegir',
-  category: 'tutoriales',
+  category: 'tips',
 
   // === AUTHOR (E-E-A-T) ===
   authorId: 'yunaisy',
@@ -189,22 +189,6 @@ export const SALSA_VS_BACHATA_CONFIG: BlogArticleConfig = {
       contentKey: 'blogSalsaVsBachata_musicaBachata',
     },
 
-    // === IMAGE: Ritmos latinos ===
-    {
-      id: 'image-ritmos',
-      type: 'image',
-      contentKey: 'blogSalsaVsBachata_imageRitmosCaption',
-      image: {
-        src: '/images/blog/salsa-vs-bachata/ritmos-latinos.webp',
-        srcSet:
-          '/images/blog/salsa-vs-bachata/ritmos-latinos-480.webp 480w, /images/blog/salsa-vs-bachata/ritmos-latinos-800.webp 800w',
-        alt: 'Comparación de ritmos: salsa y bachata, dos idiomas del corazón latino',
-        caption: 'blogSalsaVsBachata_imageRitmosCaption',
-        width: 800,
-        height: 500,
-      },
-    },
-
     // =====================================================
     // SECTION 3: EL BAILE - MOVIMIENTO Y EXPRESIÓN
     // =====================================================
@@ -312,22 +296,6 @@ export const SALSA_VS_BACHATA_CONFIG: BlogArticleConfig = {
       type: 'callout',
       contentKey: 'blogSalsaVsBachata_calloutTip',
       calloutType: 'tip',
-    },
-
-    // === IMAGE: Clases de baile ===
-    {
-      id: 'image-clases',
-      type: 'image',
-      contentKey: 'blogSalsaVsBachata_imageClasesCaption',
-      image: {
-        src: '/images/blog/salsa-vs-bachata/clases-baile.webp',
-        srcSet:
-          '/images/blog/salsa-vs-bachata/clases-baile-480.webp 480w, /images/blog/salsa-vs-bachata/clases-baile-800.webp 800w',
-        alt: "Clases de salsa y bachata en Farray's Dance Center Barcelona",
-        caption: 'blogSalsaVsBachata_imageClasesCaption',
-        width: 800,
-        height: 500,
-      },
     },
 
     // =====================================================
@@ -539,17 +507,19 @@ export const SALSA_VS_BACHATA_CONFIG: BlogArticleConfig = {
     src: '/images/blog/salsa-vs-bachata/hero.webp',
     srcSet:
       '/images/blog/salsa-vs-bachata/hero-480.webp 480w, /images/blog/salsa-vs-bachata/hero-960.webp 960w, /images/blog/salsa-vs-bachata/hero.webp 1200w',
-    alt: "Salsa vs Bachata: ¿Qué estilo elegir? - Farray's Dance Center Barcelona",
+    alt: 'Parejas bailando estilos latinos en nuestra academia de baile de Barcelona, mostrando elegancia y conexión entre salsa y bachata',
+    altKey: 'blogSalsaVsBachata_heroAlt',
     width: 1200,
     height: 630,
   },
+  ogImage: '/images/blog/salsa-vs-bachata/og.jpg',
 
   // === NAVIGATION ===
   breadcrumbConfig: {
     homeKey: 'blog_breadcrumbHome',
     blogKey: 'blog_breadcrumbBlog',
-    categoryKey: 'blog_category_tutoriales',
-    categoryUrl: '/blog/tutoriales',
+    categoryKey: 'blog_category_tips',
+    categoryUrl: '/blog/tips',
     currentKey: 'blogSalsaVsBachata_breadcrumbCurrent',
   },
 
@@ -605,7 +575,7 @@ export const SALSA_VS_BACHATA_CONFIG: BlogArticleConfig = {
   relatedArticles: [
     {
       slug: 'salsa-ritmo-conquisto-mundo',
-      category: 'tutoriales',
+      category: 'historia',
       titleKey: 'blogSalsaRitmo_title',
       excerptKey: 'blogSalsaRitmo_excerpt',
       image: '/images/blog/salsa-ritmo/hero.webp',

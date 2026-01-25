@@ -139,7 +139,7 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: "Actividades de Preparación Física para Bailarines en Barcelona - Farray's Center",
+    name: t('schema_prepFisica_itemListName'),
     itemListElement: trainingActivities.map((activity, idx) => ({
       '@type': 'ListItem',
       position: idx + 1,
@@ -161,29 +161,37 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
     })),
   };
 
-  // Schema Markup - Course
+  // Enterprise: Hero image paths for preload and schema
+  const heroImageBase =
+    '/images/classes/entrenamiento-bailarines/img/entrenamiento-bailarines-hero';
+  const heroImageUrl = `${baseUrl}${heroImageBase}_1920.jpg`;
+
+  // Schema Markup - Course (Enterprise: includes image + inLanguage for multilingual SEO)
   const courseSchema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
-    name: 'Preparación Física para Bailarines en Barcelona',
+    name: t('schema_prepFisica_courseName'),
     description: t('prepFisica_description'),
+    image: heroImageUrl,
+    inLanguage: locale,
     provider: {
       '@type': 'Organization',
       name: "Farray's International Dance Center",
       sameAs: 'https://www.farrayscenter.com',
+      logo: `${baseUrl}/images/logo-farrays-center.png`,
     },
     hasCourseInstance: {
       '@type': 'CourseInstance',
-      name: 'Preparación Física para Bailarines',
+      name: t('schema_prepFisica_courseName'),
       courseMode: 'onsite',
       location: {
         '@type': 'Place',
         name: "Farray's International Dance Center",
         address: {
           '@type': 'PostalAddress',
-          streetAddress: "Carrer d'Entença, 100, Local 1",
+          streetAddress: t('schema_streetAddress'),
           addressLocality: 'Barcelona',
-          addressRegion: 'Catalonia',
+          addressRegion: t('schema_addressRegion'),
           postalCode: '08015',
           addressCountry: 'ES',
         },
@@ -194,9 +202,17 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
   return (
     <>
       {/* SEO metadata (title, description, og, hreflang) is handled by the global SEO.tsx component */}
-      {/* Page-specific Schema Markup */}
+      {/* Page-specific Schema Markup + Enterprise LCP Preload */}
       <Helmet>
         <title>{t('prepFisica_title')} | Farray&apos;s Center</title>
+        {/* Enterprise: Preload hero image for LCP optimization (AVIF preferred, WebP fallback handled by browser) */}
+        <link
+          rel="preload"
+          as="image"
+          href={`${heroImageBase}_1920.avif`}
+          type="image/avif"
+          fetchPriority="high"
+        />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(itemListSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
@@ -204,14 +220,37 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
       </Helmet>
 
       <div className="pt-20 md:pt-24">
-        {/* Hero Section */}
+        {/* Hero Section - Enterprise with OptimizedImage */}
         <section
           id="prep-fisica-hero"
+          aria-labelledby="hero-title"
           className="relative text-center py-32 md:py-40 overflow-hidden flex items-center justify-center min-h-[600px]"
         >
-          {/* Background */}
+          {/* Background - Enterprise OptimizedImage with heroVisuals */}
           <div className="absolute inset-0 bg-black">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
+            {/* Hero Image with optimized loading */}
+            <div className="absolute inset-0" style={{ opacity: 0.45 }}>
+              <OptimizedImage
+                src={heroImageBase}
+                altKey="styleImages.entrenamientoBailarinesHero.alt"
+                altFallback="Bailarinas profesionales realizando entrenamiento físico especializado para danza en Barcelona - preparación corporal, flexibilidad y fuerza en Farray's International Dance Center"
+                priority="high"
+                sizes="100vw"
+                aspectRatio="16/9"
+                className="w-full h-full"
+                objectFit="cover"
+                objectPosition="center 35%"
+                placeholder="color"
+                placeholderColor="#111"
+                breakpoints={[320, 640, 768, 1024, 1440, 1920]}
+                formats={['avif', 'webp', 'jpg']}
+              />
+            </div>
+            {/* Gradient overlay for text readability */}
+            <div
+              className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40"
+              style={{ opacity: 0.55 }}
+            ></div>
           </div>
           <div className="relative z-20 container mx-auto px-6">
             {/* Breadcrumb with Microdata */}
@@ -220,6 +259,7 @@ const PreparacionFisicaBailarinesPage: React.FC = () => {
             {/* H1 + Intro */}
             <AnimateOnScroll>
               <h1
+                id="hero-title"
                 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 text-white"
                 style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
               >

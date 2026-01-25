@@ -9,6 +9,35 @@ import FAQSection from './FAQSection';
 import Icon, { type IconName } from './Icon';
 import { ReviewsSection } from './reviews';
 
+// ============================================================================
+// ENTERPRISE IMAGE CONFIGURATION
+// ============================================================================
+// Images processed with build-estudio-grabacion-hero.mjs
+// Formats: AVIF (best), WebP (wide support), JPEG (fallback)
+// Breakpoints: 480w, 960w, 1440w, 1920w
+// ============================================================================
+
+const HERO_IMAGE = {
+  basePath: '/images/estudio-grabacion/hero',
+  srcSet: {
+    avif: '/images/estudio-grabacion/hero-480.avif 480w, /images/estudio-grabacion/hero-960.avif 960w, /images/estudio-grabacion/hero-1440.avif 1440w, /images/estudio-grabacion/hero.avif 1920w',
+    webp: '/images/estudio-grabacion/hero-480.webp 480w, /images/estudio-grabacion/hero-960.webp 960w, /images/estudio-grabacion/hero-1440.webp 1440w, /images/estudio-grabacion/hero.webp 1920w',
+    jpeg: '/images/estudio-grabacion/hero-480.jpg 480w, /images/estudio-grabacion/hero-960.jpg 960w, /images/estudio-grabacion/hero-1440.jpg 1440w, /images/estudio-grabacion/hero.jpg 1920w',
+  },
+  width: 1920,
+  height: 1080,
+};
+
+const OG_IMAGE = '/images/estudio-grabacion/og.jpg';
+
+// LQIP (Low Quality Image Placeholder) - Generated from build script
+// Provides instant visual feedback while high-res image loads
+const LQIP_PLACEHOLDER =
+  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"%3E%3Cdefs%3E%3ClinearGradient id="g" x1="0%25" y1="0%25" x2="100%25" y2="100%25"%3E%3Cstop offset="0%25" style="stop-color:%23010001"%3E%3C/stop%3E%3Cstop offset="100%25" style="stop-color:%230a0a0a"%3E%3C/stop%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="1920" height="1080" fill="url(%23g)"%3E%3C/rect%3E%3C/svg%3E';
+
+// Supported locales for hreflang
+const SUPPORTED_LOCALES = ['es', 'ca', 'en', 'fr'] as const;
+
 const EstudioGrabacionPage: React.FC = () => {
   const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
@@ -134,21 +163,34 @@ const EstudioGrabacionPage: React.FC = () => {
     },
   ];
 
-  // Schema Markup - Service
+  // Schema Markup - Service (Enhanced for GEO/AIEO)
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
+    '@id': `${baseUrl}/${locale}/estudio-grabacion-barcelona#service`,
     name: t('estudioGrabacion_h1'),
     description: t('estudioGrabacion_intro'),
+    image: {
+      '@type': 'ImageObject',
+      url: `${baseUrl}${OG_IMAGE}`,
+      width: 1200,
+      height: 630,
+      caption: t('estudioGrabacion_hero_image_alt'),
+    },
     provider: {
       '@type': 'Organization',
       name: "Farray's International Dance Center",
       url: 'https://www.farrayscenter.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.farrayscenter.com/images/logo/farray-logo.webp',
+      },
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Calle Entença 100',
+        streetAddress: t('schema_streetAddress'),
         addressLocality: 'Barcelona',
         postalCode: '08015',
+        addressRegion: t('schema_addressRegion'),
         addressCountry: 'ES',
       },
       telephone: '+34622247085',
@@ -156,25 +198,149 @@ const EstudioGrabacionPage: React.FC = () => {
         '@type': 'AggregateRating',
         ratingValue: '4.9',
         reviewCount: '500',
+        bestRating: '5',
+        worstRating: '1',
       },
     },
     areaServed: {
       '@type': 'City',
       name: 'Barcelona',
+      '@id': 'https://www.wikidata.org/wiki/Q1492',
     },
+    serviceType: 'Recording Studio Rental',
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
       priceCurrency: 'EUR',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'EUR',
+      },
     },
   };
+
+  // Schema Markup - ImageObject for hero (GEO optimization)
+  const heroImageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ImageObject',
+    '@id': `${baseUrl}/${locale}/estudio-grabacion-barcelona#heroImage`,
+    url: `${baseUrl}/images/estudio-grabacion/hero.jpg`,
+    contentUrl: `${baseUrl}/images/estudio-grabacion/hero.jpg`,
+    width: 1920,
+    height: 1080,
+    caption: t('estudioGrabacion_hero_image_alt'),
+    description: t('estudioGrabacion_intro'),
+    representativeOfPage: true,
+    creditText: "Farray's International Dance Center",
+    copyrightHolder: {
+      '@type': 'Organization',
+      name: "Farray's International Dance Center",
+    },
+  };
+
+  // Schema Markup - WebPage with SpeakableSpecification (GEO/AIEO - Voice Search)
+  // Required by Google for voice assistant optimization
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${baseUrl}/${locale}/estudio-grabacion-barcelona#webpage`,
+    url: `${baseUrl}/${locale}/estudio-grabacion-barcelona`,
+    name: t('estudioGrabacion_h1'),
+    description: t('estudioGrabacion_meta_description'),
+    inLanguage:
+      locale === 'es' ? 'es-ES' : locale === 'ca' ? 'ca-ES' : locale === 'en' ? 'en-US' : 'fr-FR',
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': `${baseUrl}/#website`,
+      name: "Farray's International Dance Center",
+      url: baseUrl,
+    },
+    primaryImageOfPage: {
+      '@id': `${baseUrl}/${locale}/estudio-grabacion-barcelona#heroImage`,
+    },
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['#estudio-h1', '#estudio-hero p', '#solution-title'],
+    },
+    mainEntity: {
+      '@id': `${baseUrl}/${locale}/estudio-grabacion-barcelona#service`,
+    },
+  };
+
+  // Canonical URL for hreflang
+  const canonicalUrl = `${baseUrl}/${locale}/estudio-grabacion-barcelona`;
+
+  // Hreflang URLs for international SEO
+  const hreflangUrls = SUPPORTED_LOCALES.map(loc => ({
+    locale: loc,
+    url: `${baseUrl}/${loc}/estudio-grabacion-barcelona`,
+    hreflang: loc === 'es' ? 'es' : loc === 'ca' ? 'ca' : loc === 'en' ? 'en' : 'fr',
+  }));
 
   return (
     <>
       <Helmet>
+        {/* Primary Meta Tags */}
         <title>{t('estudioGrabacion_h1')} | Farray&apos;s Center</title>
+        <meta name="description" content={t('estudioGrabacion_meta_description')} />
+        <link rel="canonical" href={canonicalUrl} />
+
+        {/* Hreflang - International SEO (4 locales) */}
+        {hreflangUrls.map(({ hreflang, url }) => (
+          <link key={hreflang} rel="alternate" hrefLang={hreflang} href={url} />
+        ))}
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href={`${baseUrl}/es/estudio-grabacion-barcelona`}
+        />
+
+        {/* LCP Optimization - Preload Hero Image */}
+        <link
+          rel="preload"
+          as="image"
+          type="image/avif"
+          href="/images/estudio-grabacion/hero.avif"
+          imageSrcSet={HERO_IMAGE.srcSet.avif}
+          imageSizes="100vw"
+        />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={`${t('estudioGrabacion_h1')} | Farray's Center`} />
+        <meta property="og:description" content={t('estudioGrabacion_meta_description')} />
+        <meta property="og:image" content={`${baseUrl}${OG_IMAGE}`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={t('estudioGrabacion_hero_image_alt')} />
+        <meta
+          property="og:locale"
+          content={
+            locale === 'es'
+              ? 'es_ES'
+              : locale === 'ca'
+                ? 'ca_ES'
+                : locale === 'en'
+                  ? 'en_US'
+                  : 'fr_FR'
+          }
+        />
+        <meta property="og:site_name" content="Farray's International Dance Center" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={canonicalUrl} />
+        <meta name="twitter:title" content={`${t('estudioGrabacion_h1')} | Farray's Center`} />
+        <meta name="twitter:description" content={t('estudioGrabacion_meta_description')} />
+        <meta name="twitter:image" content={`${baseUrl}${OG_IMAGE}`} />
+        <meta name="twitter:image:alt" content={t('estudioGrabacion_hero_image_alt')} />
+
+        {/* Schema Markup - Enterprise SEO/GEO/AIEO/AIO */}
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(heroImageSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(webPageSchema)}</script>
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
@@ -192,23 +358,57 @@ const EstudioGrabacionPage: React.FC = () => {
       </Helmet>
 
       <div className="pt-20 md:pt-24">
-        {/* Hero Section */}
+        {/* Hero Section - Enterprise LCP Optimized */}
         <section
           id="estudio-hero"
+          aria-labelledby="estudio-h1"
           className="relative text-center py-32 md:py-40 overflow-hidden flex items-center justify-center min-h-[600px]"
         >
-          {/* Background */}
-          <div className="absolute inset-0 bg-black">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/30 via-black to-black"></div>
+          {/* Background Image with Enterprise Multi-Format Picture Element */}
+          <div className="absolute inset-0">
+            {/* LQIP Blur Placeholder - Instant visual feedback */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 z-0"
+              style={{
+                backgroundImage: `url("${LQIP_PLACEHOLDER}")`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                filter: 'blur(20px)',
+                transform: 'scale(1.1)',
+              }}
+            />
+            <picture>
+              {/* AVIF - Best compression for modern browsers */}
+              <source type="image/avif" srcSet={HERO_IMAGE.srcSet.avif} sizes="100vw" />
+              {/* WebP - Wide browser support */}
+              <source type="image/webp" srcSet={HERO_IMAGE.srcSet.webp} sizes="100vw" />
+              {/* JPEG - Universal fallback */}
+              <img
+                src="/images/estudio-grabacion/hero.jpg"
+                srcSet={HERO_IMAGE.srcSet.jpeg}
+                sizes="100vw"
+                alt={t('estudioGrabacion_hero_image_alt')}
+                className="absolute inset-0 w-full h-full object-cover z-10"
+                loading="eager"
+                fetchPriority="high"
+                decoding="sync"
+                width={HERO_IMAGE.width}
+                height={HERO_IMAGE.height}
+              />
+            </picture>
+            {/* Dark Overlay for Text Readability - Accessibility */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80 z-20"></div>
           </div>
 
-          <div className="relative z-20 container mx-auto px-6">
+          <div className="relative z-30 container mx-auto px-6">
             {/* Breadcrumb with Microdata */}
             <Breadcrumb items={breadcrumbItems} textColor="text-neutral/70" />
 
-            {/* H1 + Intro */}
+            {/* H1 + Intro - GEO Optimized with speakable content */}
             <AnimateOnScroll>
               <h1
+                id="estudio-h1"
                 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-tight mb-6 text-white"
                 style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8), 0 4px 24px rgba(0,0,0,0.6)' }}
               >

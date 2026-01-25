@@ -4,7 +4,7 @@
  * Premium SEO-optimized article with GEO citability, internal links,
  * and comprehensive educational content about salsa dance styles.
  *
- * Category: Tutoriales
+ * Category: Historia
  * Target Keywords: salsa baile, estilos salsa, rueda casino, salsa cubana,
  *                  salsa barcelona, aprender salsa, clases salsa
  */
@@ -15,7 +15,7 @@ export const SALSA_RITMO_CONFIG: BlogArticleConfig = {
   // === IDENTIFICATION ===
   articleKey: 'blogSalsaRitmo',
   slug: 'salsa-ritmo-conquisto-mundo',
-  category: 'tutoriales',
+  category: 'historia',
 
   // === DATES ===
   datePublished: '2025-01-20',
@@ -33,17 +33,38 @@ export const SALSA_RITMO_CONFIG: BlogArticleConfig = {
     'blogSalsaRitmo_summaryBullet4',
   ],
 
-  // === KEY STATISTICS (Holographic Cards) ===
+  // === KEY STATISTICS (Holographic Cards with GEO Citations) ===
   summaryStats: [
     {
       value: '1960s',
       labelKey: 'blogSalsaRitmo_statNYCLabel',
-      source: 'Ramos Gandía, 2023',
+      citation: {
+        source: 'Universidad Interamericana de Puerto Rico',
+        url: 'https://www.arecibo.inter.edu/wp-content/uploads/biblioteca/pdf/salsa.pdf',
+        year: '2020',
+        authors: 'Departamento de Música',
+      },
     },
     {
       value: '4+',
       labelKey: 'blogSalsaRitmo_statEstilosLabel',
-      source: 'Estudios académicos',
+      citation: {
+        source: 'Mucho Más Que Baile',
+        url: 'https://www.muchomasquebaile.es/wp-content/uploads/2021/11/Historia-de-la-salsa-desde-las-raices-hasta-el-1975.pdf',
+        year: '2023',
+        authors: 'Ramos Gandía',
+      },
+    },
+    {
+      value: '76%',
+      labelKey: 'blogSalsaRitmo_statDemenciaLabel',
+      citation: {
+        source: 'New England Journal of Medicine',
+        url: 'https://www.nejm.org/doi/full/10.1056/NEJMoa022252',
+        year: '2003',
+        authors: 'Verghese et al.',
+        doi: '10.1056/NEJMoa022252',
+      },
     },
   ],
 
@@ -61,6 +82,32 @@ export const SALSA_RITMO_CONFIG: BlogArticleConfig = {
       id: 'intro-2',
       type: 'paragraph',
       contentKey: 'blogSalsaRitmo_intro2',
+    },
+
+    // =====================================================
+    // ANSWER CAPSULE: ¿Dónde nació la salsa? (72% AI Citation Rate)
+    // =====================================================
+    {
+      id: 'answer-origen',
+      type: 'answer-capsule',
+      contentKey: 'blogSalsaRitmo_answerOrigen',
+      answerCapsule: {
+        questionKey: 'blogSalsaRitmo_answerOrigenQ',
+        answerKey: 'blogSalsaRitmo_answerOrigenA',
+        sourceUrl: 'https://www.arecibo.inter.edu/wp-content/uploads/biblioteca/pdf/salsa.pdf',
+        sourcePublisher: 'Universidad Interamericana de Puerto Rico',
+        sourceYear: '2020',
+        confidence: 'verified',
+        icon: 'check',
+      },
+    },
+
+    // === DEFINITION: Salsa (LLM Extraction) ===
+    {
+      id: 'definition-salsa',
+      type: 'definition',
+      contentKey: 'blogSalsaRitmo_defSalsa',
+      definitionTermKey: 'blogSalsaRitmo_defSalsaTerm',
     },
 
     // =====================================================
@@ -288,17 +335,19 @@ export const SALSA_RITMO_CONFIG: BlogArticleConfig = {
     src: '/images/blog/salsa-ritmo/hero.webp',
     srcSet:
       '/images/blog/salsa-ritmo/hero-480.webp 480w, /images/blog/salsa-ritmo/hero-960.webp 960w, /images/blog/salsa-ritmo/hero.webp 1200w',
-    alt: "Salsa: el ritmo que conquistó el mundo - Farray's Dance Center Barcelona",
+    alt: 'Bailarines bailando salsa cubana en Barcelona, representando este estilo latino que conquistó el mundo desde Nueva York, Cali y Puerto Rico',
+    altKey: 'blogSalsaRitmo_heroAlt',
     width: 1200,
     height: 630,
   },
+  ogImage: '/images/blog/salsa-ritmo/og.jpg',
 
   // === NAVIGATION ===
   breadcrumbConfig: {
     homeKey: 'blog_breadcrumbHome',
     blogKey: 'blog_breadcrumbBlog',
-    categoryKey: 'blog_category_tutoriales',
-    categoryUrl: '/blog/tutoriales',
+    categoryKey: 'blog_category_historia',
+    categoryUrl: '/blog/historia',
     currentKey: 'blogSalsaRitmo_breadcrumbCurrent',
   },
 
@@ -354,7 +403,7 @@ export const SALSA_RITMO_CONFIG: BlogArticleConfig = {
   relatedArticles: [
     {
       slug: 'salsa-vs-bachata',
-      category: 'tutoriales',
+      category: 'tips',
       titleKey: 'blogSalsaVsBachata_title',
       excerptKey: 'blogSalsaVsBachata_excerpt',
       image: '/images/blog/salsa-vs-bachata/hero.webp',
@@ -364,7 +413,7 @@ export const SALSA_RITMO_CONFIG: BlogArticleConfig = {
       category: 'lifestyle',
       titleKey: 'blogBeneficiosSalsa_title',
       excerptKey: 'blogBeneficiosSalsa_excerpt',
-      image: '/images/blog/salsa-vs-bachata/hero.webp',
+      image: '/images/blog/beneficios-salsa/hero.webp',
     },
   ],
 
@@ -388,10 +437,29 @@ export const SALSA_RITMO_CONFIG: BlogArticleConfig = {
   speakableSelectors: [
     '#article-summary',
     '#intro',
+    '#answer-origen',
+    '#definition-salsa',
     '#origenes',
     '#estilos',
     '#rueda',
     '#beneficios',
     '#conclusion',
   ],
+
+  // === LOCAL BUSINESS SCHEMA (Local SEO) ===
+  localBusinessSchema: {
+    enabled: true,
+  },
+
+  // === AGGREGATE RATING SCHEMA (Rich Snippets) ===
+  aggregateRatingSchema: {
+    enabled: true,
+    ratingValue: 4.9,
+    reviewCount: 156,
+    bestRating: 5,
+    worstRating: 1,
+  },
+
+  // === GOOGLE DISCOVER OPTIMIZATION ===
+  discoverOptimized: true,
 };

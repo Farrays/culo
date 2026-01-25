@@ -190,6 +190,7 @@ export const PAGE_CATEGORY_MAP: Record<string, DanceCategory[]> = {
   // Bachata pages
   'bachata-barcelona': ['bachata'],
   'clases-bachata-barcelona': ['bachata'],
+  'bachata-lady-style-barcelona': ['bachata'],
 
   // Heels/Femmology pages
   'heels-barcelona': ['heels-femmology'],

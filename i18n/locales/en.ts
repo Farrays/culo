@@ -7,6 +7,10 @@ export const en = {
   ratingAriaLabel: '{rating} out of 5 stars',
   closeButton: 'Close',
   teacherAvatarAlt: 'Photo of {name}',
+  // Image Alt Texts - SEO Optimized
+  logo_alt: "Farray's International Dance Center Logo - Dance academy in Barcelona",
+  teacher_photo_alt: "{name} - Dance instructor in Barcelona | Farray's Center",
+  instagram_post_alt: "Dance classes in Barcelona - Students at Farray's Dance Center",
   breadcrumbHome: 'Home',
   breadcrumb_home: 'Home',
   home: 'Home',
@@ -113,10 +117,10 @@ export const en = {
   happinessStoryPara4:
     "A place we didn't copy from anywhere. A place that didn't exist… until we built it.",
   // About
-  aboutTitle: "Yunaisy Farray: The Architect of Innovation, The Soul of Farray's Center",
-  aboutSubtitle: 'Art, Rigor, and Passion',
+  aboutTitle: 'Yunaisy Farray: Creator of the Farray Method®',
+  aboutSubtitle: 'The Pedagogy Missing Outside Cuba',
   aboutBio:
-    "With over two decades as a global artist and master educator, Yunaisy Farray has established herself as an international dance benchmark. Her training at the prestigious National School of Arts of Cuba (ENA) instilled in her a unique fusion of Russian discipline and the rhythms and flavor of Afro-descendant dancers. She participated in the blockbuster film 'Street Dance 2' and captivated millions in the 'Got Talent' finals. Additionally, she has collaborated on various television programs, such as 'The Dancer,' and has countless participations in diverse areas of the entertainment world.\n\nAs a member of CID-UNESCO and creator of the exclusive Farray Method®, Yunaisy leads a school that combines rigor, creativity, and rapid results in a familiar and inclusive environment.\n\nHer experience transforms each class into a cultural and emotional journey, guaranteeing elite training for dancers of all levels.",
+    'Trained at Cuba\'s prestigious National School of Arts (ENA), Yunaisy Farray is a master teacher and artist who fuses Russian technical discipline with the authentic flavor of Afro-descendant rhythms. She has graced the world\'s most important stages, shone in "Street Dance 2," captivated millions on "Got Talent," collaborated on "The Dancer," and has countless appearances across the entertainment industry.\n\nBut her greatest achievement isn\'t on stage: it\'s having created a teaching system specifically designed for adults outside Cuba to learn dance faster, stronger, and more effectively.\n\nAfter 20+ years teaching adults, Yunaisy discovered that traditional methods that work so well in Cuba—designed for bodies that grew up dancing from childhood—didn\'t work the same for adults outside Cuba. Thus the Farray Method® was born, recognized by CID-UNESCO.\n\nToday, Yunaisy leads a center that combines rigor, creativity, and rapid results in a warm, inclusive environment. Her experience transforms every class into a cultural and emotional journey, guaranteeing elite training for dancers of all levels. Over 15,000 students have already experienced the difference.',
   aboutYunaisyPhotoAlt:
     "Yunaisy Farray, professional dancer and choreographer, founder of Farray's International Dance Center in Barcelona",
   aboutMethodTitle: "The 'Método Farray®': The Pinnacle of Dance Pedagogy.",
@@ -131,6 +135,28 @@ export const en = {
     'A constantly evolving methodology that fuses styles and breaks barriers, preparing you for the global stage.',
   aboutMethodPillarInfo: 'Click a pillar to learn more',
   aboutMethodCTA: "Explore Yunaisy's Full Legacy",
+  aboutMethodCTAAriaLabel:
+    "Discover more about the Farray Method and Yunaisy's teaching philosophy",
+  // E-E-A-T External verification links
+  aboutVerifyIMDb: "View Yunaisy Farray's IMDb profile",
+  aboutVerifyCID: 'Verify CID-UNESCO accreditation',
+  aboutVerifyStreetDance: 'View Street Dance 2 movie page on IMDb',
+  // GEO Schema translations
+  schema_metodoFarray_description:
+    'Exclusive dance teaching methodology created by Yunaisy Farray, specifically designed for European adults to learn dance faster, stronger, and more effectively. Recognized by CID-UNESCO.',
+  // Hero accessibility
+  heroPosterAlt:
+    'Dancers practicing Cuban salsa at the Farray International Dance Center Barcelona dance school',
+  // GEO Answer Capsules - About Section (FAQ Q&A for AI citations)
+  aboutQ1: 'Who is Yunaisy Farray?',
+  aboutA1:
+    "Yunaisy Farray is a professional Cuban dancer trained at Cuba's National School of Arts (ENA), founder of the Farray Method® and director of Farray International Dance Center in Barcelona. She has participated in Street Dance 2, Got Talent Spain, and The Dancer.",
+  aboutQ2: 'What is the Farray Method®?',
+  aboutA2:
+    'The Farray Method® is a CID-UNESCO recognized dance teaching methodology specifically designed for European adults to learn dance faster, stronger, and more effectively, fusing classical technique with Afro-descendant rhythms.',
+  aboutQ3: 'Why choose Farray International Dance Center?',
+  aboutA3:
+    "FIDC is the only center in Barcelona with the exclusive Farray Method®, CID-UNESCO accreditation, +15,000 trained students, and teachers from Cuba's National School of Arts. Fast results and family atmosphere guaranteed.",
   // Classes
   classesTitle: 'Dance Classes for Adults',
   classesIntro:
@@ -791,7 +817,7 @@ export const en = {
   // Category: Fitness for Dancers
   home_categories_fitness_title: 'Physical Preparation',
   home_categories_fitness_image_alt:
-    "Physical training classes for dancers in Barcelona - Farray's Center",
+    "Dancer performing physical preparation and body conditioning exercises for dance at Barcelona academy - functional training, strength and flexibility at Farray's Center",
   home_categories_fitness_intro:
     'Improve your strength, flexibility, and endurance with classes designed for dancers.',
 
@@ -823,6 +849,12 @@ export const en = {
   // Breadcrumb
   danceClassesHub_breadcrumb_home: 'Home',
   danceClassesHub_breadcrumb_current: 'Dance classes in Barcelona',
+
+  // Hero Image Alt Text (SEO/Accessibility)
+  alt_hero_clases_danza:
+    "Dance classes in Barcelona - Students practicing various dance styles at Farray's Center studio",
+  alt_hero_clases_baile_barcelona:
+    "Dance classes Barcelona - Professional dancers performing elegant choreography in golden bodysuits with dramatic green stage lighting at Farray's Center",
 
   // Header
   danceClassesHub_h1: 'Dance classes in Barcelona',
@@ -1331,7 +1363,7 @@ export const en = {
   danzasUrbanas_breadcrumb_classes: 'Dance Classes in Barcelona',
   danzasUrbanas_breadcrumb_current: 'Urban Dance',
   danzasUrbanas_h1: 'Urban Dance in Barcelona',
-  danzasUrbanas_h1_sub: 'Hip Hop · Dancehall · Reggaeton · Heels · Twerk',
+  danzasUrbanas_h1_sub: 'Afrobeats · Hip Hop · Dancehall · Reggaeton · Heels · Twerk',
   danzasUrbanas_intro:
     "At Farray's Center you train Dancehall, Hip Hop, Twerk, Reggaeton, Heels and more with the exclusive Farray Method® created by Yunaisy Farray (Street Dance 2 dancer) and specialist teachers who teach you from the basics: musicality, coordination, energy, presence… and Flow, lots of flow. Get in shape, release stress and enjoy a sports activity that does NOT bore: every class is different, dynamic and full of good vibes.",
 
@@ -1911,7 +1943,7 @@ export const en = {
 
   about_h1: 'About Us',
   about_intro:
-    "Some look for a dance school similar to the ones they already know. And some look for the school they always dreamed of. At Farray's we belong to this second group.",
+    "Farray's International Dance Center is a multidisciplinary dance academy in Barcelona, accredited by CID-UNESCO and directed by Yunaisy Farray. We offer over 25 dance styles with the exclusive Farray® method: from Cuban Salsa and Bachata to Hip Hop, Dancehall, Contemporary Dance and Ballet. Over 15,000 students trained since 2005.",
   about_cta_contact: 'Contact Us',
 
   // Our Story Section
@@ -2109,6 +2141,17 @@ export const en = {
   notFound_dancehall: 'Dancehall',
   notFound_salsaBachata: 'Salsa & Bachata',
   notFound_urbanDances: 'Urban Dances',
+  notFound_heels: 'Heels',
+  notFound_teachers: 'Teachers',
+  notFound_schedule: 'Schedule',
+  notFound_prices: 'Prices',
+  notFound_contact: 'Contact',
+  notFound_popularPages: 'Popular Pages',
+  notFound_helpText: 'Need help?',
+  notFound_contactLink: 'Contact us',
+  notFound_seo_title: 'Page Not Found | 404',
+  notFound_seo_description:
+    'The page you are looking for does not exist. Explore our dance classes in Barcelona or go back home.',
 
   // ==================== GIFT DANCE PAGE ====================
   regalaBaile_page_title: "Gift Dance - Gift Card Dance Classes Barcelona | Farray's Center",
@@ -2651,6 +2694,10 @@ export const en = {
   estudioGrabacion_breadcrumb_home: 'Home',
   estudioGrabacion_breadcrumb_current: 'Recording Studio',
   estudioGrabacion_h1: 'Recording and Photography Studio in Barcelona',
+  estudioGrabacion_meta_description:
+    'Rent our professional recording studio in Barcelona: 700m², 4 rooms with professional lighting, high-quality technical equipment. Perfect for music videos, photo sessions, reels and audiovisual productions.',
+  estudioGrabacion_hero_image_alt:
+    'Professional recording studio in Barcelona with professional lighting and technical equipment for audiovisual productions, music videos and photo sessions',
   estudioGrabacion_intro:
     'Your art deserves a stage. Rent our professional spaces, a facility of more than 700 square meters, for audiovisual productions, photo sessions, music videos, reels and creative projects. Unique spaces with the best lighting, sound and technical equipment.',
   estudioGrabacion_cta_primary: 'Request Quote',
@@ -2912,99 +2959,237 @@ export const en = {
   yunaisyFarray_testimonials_google_badge: '509+ reviews on Google',
 
   // ==================== FARRAY METHOD PAGE ====================
-  metodoFarray_page_title: 'The Farray Method - Exclusive Dance Teaching System',
+  metodoFarray_page_title: 'The Farray Method - Pedagogical System Adapted for Europeans',
   metodoFarray_meta_description:
-    'Discover the Farray Method: the exclusive teaching system that fuses classical discipline, Afro-descendant rhythms, and global innovation. Created by Yunaisy Farray, CID-UNESCO master.',
+    'Discover the Farray Method: the only dance teaching system created specifically for Europeans to learn faster and more effectively. Developed by Yunaisy Farray, master trained at the ENA of Cuba and CID-UNESCO member.',
   metodoFarray_breadcrumb_home: 'Home',
   metodoFarray_breadcrumb_current: 'Farray Method',
+  schema_metodoFarray_name: 'Farray Method',
+  schema_metodoFarray_credential: 'CID-UNESCO Certification',
+  schema_metodoFarray_teaches1: 'Dance discipline and technique',
+  schema_metodoFarray_teaches2: 'Afro-descendant rhythms',
+  schema_metodoFarray_teaches3: 'International styles fusion',
+  schema_metodoFarray_credentialDesc:
+    'Dance pedagogical system specifically adapted for European adult dancers, developed by Yunaisy Farray with over 20 years of experience.',
+  schema_metodoFarray_educationalLevel: 'All levels - From beginners to advanced',
+  schema_metodoFarray_competency1: 'Pedagogical adaptation for European adults',
+  schema_metodoFarray_competency2: 'Structured progression from scratch',
+  schema_metodoFarray_competency3: 'Analytical teaching methodology',
 
   // Hero
-  metodoFarray_hero_badge: 'Exclusive Teaching System',
+  metodoFarray_hero_badge: 'Pedagogical System Adapted for Europeans',
   metodoFarray_hero_title: 'The Farray Method',
   metodoFarray_hero_subtitle:
-    'The fastest path between you and your best dancing self. A unique teaching system that fuses the best of classical discipline with the soul of Afro-descendant rhythms.',
+    'The only dance teaching system created specifically for Europeans to learn faster and more effectively. Developed by Yunaisy Farray, master trained at the National School of Art of Cuba.',
 
-  // Problem
-  metodoFarray_problem_title: 'The Problem with Traditional Academies',
+  // Problem - Why Europeans struggle to progress
+  metodoFarray_problem_title: 'Why Is It So Hard for You to Progress?',
   metodoFarray_problem_p1:
-    'Most dance academies follow generic methods copied from other centers. Overcrowded classes where you are just another number, without personalized attention or real progress tracking.',
+    'Traditional dance methodologies were designed for bodies that grew up dancing since childhood. In Cuba, children develop polyrhythm, body dissociation, and "sabor" from age 3. When you arrive at an academy in Barcelona at 25, 35, or 45 years old, those methods simply do not work the same way.',
   metodoFarray_problem_p2:
-    'The result: months of classes and the feeling that you are not progressing. Frustration. Dropout.',
-  metodoFarray_problem_point1: 'Overcrowded classes without individual attention',
-  metodoFarray_problem_point2: 'Generic methods without pedagogical foundation',
-  metodoFarray_problem_point3: 'Teachers without certified professional training',
+    'The result: frustration, stagnation, and the feeling that "dancing is not for you."',
+  metodoFarray_problem_point1: 'Methods designed for bodies that grew up dancing',
+  metodoFarray_problem_point2: 'Teachers who assume a foundation you do not have',
+  metodoFarray_problem_point3: 'Classes that move too fast without building fundamentals',
+  metodoFarray_problem_point4: 'Intuitive explanations that do not work with analytical minds',
 
-  // Solution
+  // Origin Story - NEW SECTION
+  metodoFarray_origin_title: 'How the Farray Method Was Born',
+  metodoFarray_origin_intro:
+    'When Yunaisy Farray arrived in Europe after years of training at the National School of Art of Cuba (ENA), she discovered something that would change her teaching approach forever.',
+  metodoFarray_origin_p1:
+    'In Cuba, dancers grow up immersed in rhythm from childhood. By age 18, they already have 15 years of internalized polyrhythm, natural body dissociation, and a movement vocabulary that is part of their cultural DNA.',
+  metodoFarray_origin_p2:
+    'In Europe, adults arrived at class with a completely different background: analytical minds, bodies that had never danced, and a culture where dance is not part of everyday life.',
+  metodoFarray_origin_quote:
+    '"I realized that the ENA methodology —which works perfectly for Cubans— was not designed for European adults. I needed to adapt everything: the progression, the explanations, the exercises..."',
+  metodoFarray_origin_quote_author: '— Yunaisy Farray, Method Creator',
+  metodoFarray_origin_conclusion:
+    'Thus the Farray Method was born: a complete re-engineering of Cuban pedagogy, designed specifically for Europeans to achieve faster and more solid results than with any other method.',
+
+  // Answer Capsule GEO - NEW SECTION
+  metodoFarray_answerQ: 'What is the Farray Method?',
+  metodoFarray_answerA:
+    'The Farray Method is an exclusive pedagogical system created by Yunaisy Farray (master trained at the ENA of Cuba and CID-UNESCO member) that adapts Cuban dance methodology for European adult dancers. It offers a structured progression that builds the foundation from scratch, with analytical explanations and specific exercises for bodies that did not grow up dancing.',
+
+  // Adaptation for Europe - NEW SECTION (Core Differentiator)
+  metodoFarray_adaptation_title: 'Adapted Specifically for Europeans',
+  metodoFarray_adaptation_subtitle:
+    'What makes the Farray Method unique: a re-engineering of Cuban pedagogy for the European context.',
+  metodoFarray_adapt1_title: 'Builds the Foundation from Scratch',
+  metodoFarray_adapt1_desc:
+    'Does not assume you have years of prior training. We develop each skill progressively: dissociation, polyrhythm, coordination, expression...',
+  metodoFarray_adapt1_vs: 'vs. Traditional ENA: assumes 10+ years of foundation',
+  metodoFarray_adapt2_title: 'Analytical Methodology',
+  metodoFarray_adapt2_desc:
+    'Clear technical explanations that work with European analytical minds. Not just "feel the rhythm," but concrete steps to develop that feeling.',
+  metodoFarray_adapt2_vs: 'vs. Intuitive Cuban method',
+  metodoFarray_adapt3_title: 'Structured Progression',
+  metodoFarray_adapt3_desc:
+    'Specific exercises to develop polyrhythm and flavor in bodies that did not grow up dancing. Faster results than traditional methodology.',
+  metodoFarray_adapt3_vs: 'vs. ENA progression: designed for Cubans ages 8-18',
+
+  // Solution - What is the Method
   metodoFarray_solution_title: 'What is the Farray Method',
-  metodoFarray_solution_tagline: 'The teaching system Barcelona was missing.',
+  metodoFarray_solution_tagline: 'The teaching system Europe was missing.',
   metodoFarray_solution_p1:
     'The Farray Method is an exclusive pedagogical system created by Yunaisy Farray, the result of over 20 years of experience as a professional dancer, international teacher, and training at the prestigious National School of Art of Cuba (ENA).',
   metodoFarray_solution_p2:
-    'It is not a copy of other methods. It is a unique fusion of three fundamental pillars that guarantee fast, solid, and proven results.',
+    'It is not a copy of other methods. It is a unique adaptation of Cuban pedagogy for the European context, based on three fundamental pillars.',
 
   // Pillars
   metodoFarray_pillars_title: 'The 3 Pillars of the Farray Method',
   metodoFarray_pillars_subtitle:
-    'Each pillar provides an essential element for your transformation as a dancer.',
+    'Each pillar provides an essential element for your transformation as a European dancer.',
 
   metodoFarray_pillar1_title: 'Discipline and Rigor',
   metodoFarray_pillar1_desc:
     'Precision technical foundations inspired by Russian classical discipline. Structure, body control, and impeccable posture as the basis of all movement.',
-  metodoFarray_pillar1_origin: 'Heritage of the Russian and Cuban classical school',
+  metodoFarray_pillar1_origin:
+    'Heritage of the Russian and Cuban classical school — adapted for adults without prior training',
 
   metodoFarray_pillar2_title: 'Flavor and Rhythm',
   metodoFarray_pillar2_desc:
     'The soul of Afro-descendant rhythms. That deep musical connection, that natural fluidity, that expression that transforms a technical step into something you feel.',
-  metodoFarray_pillar2_origin: 'Afro-Cuban and Caribbean roots',
+  metodoFarray_pillar2_origin:
+    'Afro-Cuban and Caribbean roots — with specific exercises to develop "sabor" from scratch',
 
   metodoFarray_pillar3_title: 'Global Innovation',
   metodoFarray_pillar3_desc:
-    'A constantly evolving methodology that integrates international trends, fuses styles, and prepares you for the global stage. Without staying in the past.',
-  metodoFarray_pillar3_origin: 'International experience in 30+ countries',
+    'A constantly evolving methodology that integrates international trends, fuses styles, and prepares you for any stage. Without staying in the past.',
+  metodoFarray_pillar3_origin:
+    'International experience in 30+ countries — observing what works best for Europeans',
 
-  // Comparison
-  metodoFarray_comparison_title: 'Farray Method vs Typical Academy',
-  metodoFarray_comparison_subtitle: 'The difference is in the details',
-
-  metodoFarray_comparison_others_title: 'Typical Academy',
-  metodoFarray_comparison_others_1: 'Method copied from other academies',
-  metodoFarray_comparison_others_2: 'Overcrowded classes (+30 students)',
-  metodoFarray_comparison_others_3: 'Teachers without professional training',
-  metodoFarray_comparison_others_4: 'Poorly defined generic levels',
-  metodoFarray_comparison_others_5: 'No progress tracking',
-  metodoFarray_comparison_others_6: 'Focus on quantity, not quality',
+  // Comparison Enterprise - Traditional ENA vs Farray Method
+  metodoFarray_comparison_others_title: 'Traditional ENA Methodology',
+  metodoFarray_comparison_others_1: 'Designed for Cubans from childhood',
+  metodoFarray_comparison_others_2: 'Assumes 10+ years of prior training',
+  metodoFarray_comparison_others_3: 'Intuitive explanations by imitation',
+  metodoFarray_comparison_others_4: 'Polyrhythm developed naturally',
+  metodoFarray_comparison_others_5: 'Progression of 8-15 years',
+  metodoFarray_comparison_others_6: 'Works perfectly... in Cuba',
 
   metodoFarray_comparison_us_title: 'Farray Method',
-  metodoFarray_comparison_us_1: 'Exclusive system created over 20+ years',
-  metodoFarray_comparison_us_2: 'Small groups (max 15 students)',
-  metodoFarray_comparison_us_3: 'Teachers trained by Yunaisy Farray',
-  metodoFarray_comparison_us_4: 'Real levels with continuous evaluation',
-  metodoFarray_comparison_us_5: 'Personalized feedback every class',
-  metodoFarray_comparison_us_6: 'Focus on your real transformation',
 
   // Results
   metodoFarray_results_title: 'Results That Speak',
-  metodoFarray_stats_students: 'Students trained',
+  metodoFarray_stats_students: 'European students trained',
   metodoFarray_stats_years: 'Years perfecting the method',
   metodoFarray_stats_rating: 'Google rating (509+ reviews)',
   metodoFarray_stats_styles: 'Dance styles available',
 
   metodoFarray_featured_quote:
-    '"Technique is technique... and without technique, there is no technique. But technique without soul is just gymnastics. The Farray Method unites both worlds."',
+    '"The ENA technique is incredible, but I needed to adapt it so it worked just as well with Europeans who had never danced. The Farray Method is that adaptation."',
   metodoFarray_featured_quote_author: '— Yunaisy Farray, Method Creator',
 
   // Who teaches
   metodoFarray_teachers_title: 'Who Teaches the Farray Method',
-  metodoFarray_teachers_subtitle: 'Only certified teachers trained directly by Yunaisy',
+  metodoFarray_teachers_subtitle:
+    'Trained at the National School of Art of Cuba and certified in the Farray Method',
   metodoFarray_teachers_text:
-    'All our teachers have been personally trained by Yunaisy Farray and follow the method rigorously. There is no improvisation or unauthorized variations.',
+    'Yunaisy Farray trained at the prestigious National School of Art of Cuba (ENA), the same institution that trained legends like Carlos Acosta. After over 20 years teaching Europeans in Barcelona, she developed the Farray Method as a response to the specific needs of this audience. All academy teachers are trained directly by her and follow the methodology rigorously.',
   metodoFarray_teachers_cta: 'Meet Yunaisy Farray →',
 
   // CTA
   metodoFarray_cta_title: 'Discover How to Start',
-  metodoFarray_cta_subtitle: 'Your welcome class is special. Come try and feel the difference.',
+  metodoFarray_cta_subtitle:
+    'Your first welcome class is special. Come try and feel the difference of the Farray Method.',
   metodoFarray_cta_button: 'Discover How to Start',
   metodoFarray_cta_secondary: 'View All Classes',
+
+  // ==================== MÉTODO FARRAY - WHY YOU FAIL ====================
+  metodoFarray_whyYouFail_title: "Why You Don't Progress in Other Academies",
+  metodoFarray_whyYouFail_subtitle:
+    'Many of our students come frustrated from other schools. These are the most common reasons:',
+
+  metodoFarray_whyYouFail_reason1_title: 'Teacher ≠ Educator',
+  metodoFarray_whyYouFail_reason1_desc:
+    'They are excellent dancers, but never learned how to TEACH. They lack structured pedagogical training and clear progression.',
+
+  metodoFarray_whyYouFail_reason2_title: 'Improvised Classes',
+  metodoFarray_whyYouFail_reason2_desc:
+    "Each class depends on the teacher's mood. No curriculum, no follow-up, no measurable objectives.",
+
+  metodoFarray_whyYouFail_reason3_title: 'No Level System',
+  metodoFarray_whyYouFail_reason3_desc:
+    "They mix beginners with advanced students. No clear criteria to advance. You don't know your level or how to progress.",
+
+  metodoFarray_whyYouFail_reason4_title: 'Teacher Rotation',
+  metodoFarray_whyYouFail_reason4_desc:
+    "Different teacher each month. Each one teaches differently. Your progression is chaotic because there's no methodological continuity.",
+
+  metodoFarray_whyYouFail_testimonial:
+    '"The best dance school in Barcelona, by far, and I tried several. I love the energy of the teachers, the smile with which they always greet you when you arrive."',
+
+  // ==================== MÉTODO FARRAY - TRIPLE COMPARISON ====================
+  metodoFarray_comparison_title: 'Farray Method in Context',
+  metodoFarray_comparison_subtitle:
+    'Comparison: Academies without method vs Traditional ENA vs Farray Method',
+
+  // Column 1: Academies without method (NEW)
+  metodoFarray_comparison_noMethod_title: 'Academies Without Structured Method',
+  metodoFarray_comparison_noMethod_subtitle: 'The reality of many schools in Barcelona and Europe',
+  metodoFarray_comparison_noMethod_1: '0 teachers with ENA or CID-UNESCO certification',
+  metodoFarray_comparison_noMethod_2: 'No structured pedagogical plan or clear progression',
+  metodoFarray_comparison_noMethod_3: 'Mix all levels = frustration for everyone',
+  metodoFarray_comparison_noMethod_4: 'High teacher rotation (every 6-12 months)',
+  metodoFarray_comparison_noMethod_5: 'No individual follow-up or evaluations',
+  metodoFarray_comparison_noMethod_6:
+    "You'll learn choreographies, but won't understand the technique",
+
+  // Column 2: ENA (update subtitle)
+  metodoFarray_comparison_others_subtitle: 'Cuban system of excellence... in Cuba',
+
+  // Column 3: Farray Method (update)
+  metodoFarray_comparison_us_subtitle: 'The necessary middle ground for Europe',
+  metodoFarray_comparison_us_1: '7 maestros trained in Cuban method (ENA, ISA, National Ballet)',
+  metodoFarray_comparison_us_2: 'Structured pedagogical plan with measurable objectives',
+  metodoFarray_comparison_us_3: 'You understand the "why" of each movement, not just the "how"',
+  metodoFarray_comparison_us_4: 'We know your name, your level, and your specific challenges',
+  metodoFarray_comparison_us_5: 'Stable team certified CID-UNESCO (some 10+ years here)',
+  metodoFarray_comparison_us_6: 'ENA methodology adapted for adults outside Cuba',
+
+  // ==================== FARRAY METHOD - DETAILED COMPARISON TABLE ====================
+  metodoFarray_detailedComparison_title: 'Point-by-Point Comparison',
+  metodoFarray_detailedComparison_criterion: 'Criterion',
+  metodoFarray_detailedComparison_reviews: 'reviews',
+  metodoFarray_detailedComparison_years: 'years',
+  metodoFarray_detailedComparison_year: 'year',
+
+  // Row 1: Cuban-trained teachers
+  metodoFarray_detailedComparison_row1_criterion:
+    'Teachers trained in Cuban method (ENA/ISA/National Ballet)',
+
+  // Row 2: CID-UNESCO
+  metodoFarray_detailedComparison_row2_criterion: 'CID-UNESCO Member',
+
+  // Row 3: Students trained
+  metodoFarray_detailedComparison_row3_criterion: 'Students trained (verifiable)',
+  metodoFarray_detailedComparison_row3_noMethod: 'No data',
+
+  // Row 4: Verified reputation
+  metodoFarray_detailedComparison_row4_criterion: 'Verified online reputation',
+  metodoFarray_detailedComparison_row4_noMethod: 'Fewer reviews, lower rating',
+
+  // Row 5: Pedagogical plan
+  metodoFarray_detailedComparison_row5_criterion: 'Structured pedagogical plan',
+  metodoFarray_detailedComparison_row5_farray: 'weeks/months',
+
+  // Row 6: Adapted for Europeans
+  metodoFarray_detailedComparison_row6_criterion: 'Adapted for European adults',
+
+  // Row 7: Registered methodology
+  metodoFarray_detailedComparison_row7_criterion: 'Registered methodology',
+
+  // Row 9: Level system
+  metodoFarray_detailedComparison_row9_criterion: 'Clear level system',
+
+  // Row 11: Teacher stability
+  metodoFarray_detailedComparison_row11_criterion: 'Teacher stability (years)',
+
+  // CTA
+  metodoFarray_detailedComparison_cta_text: 'The data speaks for itself.',
+  metodoFarray_detailedComparison_cta_button: 'Discover How to Start',
 
   // Room Rental Page
   roomRental_pageTitle: "Dance Studio Rental in Barcelona | Farray's International Dance Center",
@@ -3132,6 +3317,8 @@ export const en = {
   // Additional room rental translations
   roomRental_hero_cta_availability: 'Request Availability',
   roomRental_hero_cta_view_rooms: 'View Studios & Rates',
+  roomRental_hero_image_alt:
+    "Professional 120m² dance studio with linoleum floor and mirrors at Farray's Center Barcelona - Studio rental for rehearsals, classes and dance events",
   roomRental_intro_ideal: 'Ideal for teachers, companies, schools, and content creators.',
   roomRental_features_main_title: 'Features of our dance studios in Barcelona',
   roomRental_features_item1: 'Spacious studios with floors suitable for dance and urban styles',
@@ -3159,6 +3346,87 @@ export const en = {
   roomRental_gallery_prev: 'Previous image',
   roomRental_gallery_next: 'Next image',
   roomRental_gallery_view: 'View image',
+
+  // Schema Markup Translations - Room Rental
+  roomRental_schema_serviceName: 'Dance Studio Rental in Barcelona',
+  roomRental_schema_catalogName: 'Dance Studios Available for Rent',
+  roomRental_schema_unitHour: 'hour',
+  roomRental_schema_categoryDanceRoom: 'Dance and rehearsal studio',
+  roomRental_schema_propertySurface: 'Floor area',
+  roomRental_schema_galleryName: "Dance Studio Gallery - Farray's Center Barcelona",
+  roomRental_schema_galleryDesc:
+    'Photos of our 4 professional dance studios in Barcelona: fully equipped spaces for rehearsals, classes and dance events',
+
+  // FAQ Schema - Room Rental (GEO Optimization)
+  roomRental_faq1_q: "How many dance studios does Farray's Center have for rent?",
+  roomRental_faq1_a:
+    "Farray's Center has 4 professional studios for rent: Studio A (40m²), Studio B (120m²), Studio C (80m²) and Studio D (80m²). All feature professional dance flooring, mirrors, air conditioning and sound equipment.",
+  roomRental_faq2_q: 'How much does it cost to rent a dance studio in Barcelona?',
+  roomRental_faq2_a:
+    'Prices vary by studio size and type of use. From €14/hour for rehearsals in Studio A up to €50/hour for classes and events in Studio B (120m²). We offer discounts for hour packages and recurring rentals.',
+  roomRental_faq3_q: "What is included in the dance studio rental at Farray's?",
+  roomRental_faq3_a:
+    'Rental includes: professional dance floor, full-wall mirrors, sound equipment, air conditioning, access to changing rooms and common areas. Audiovisual technical support is available upon request.',
+  roomRental_faq4_q: "Where is Farray's Center located in Barcelona?",
+  roomRental_faq4_a:
+    "Farray's Center is located at Carrer d'Entença 100, Barcelona (08015), between Plaza España and Sants. Excellent metro (lines L1 and L3) and bus connections.",
+  roomRental_faq5_q: 'What activities can I rent the studios for?',
+  roomRental_faq5_a:
+    'Our studios are ideal for: dance classes, company rehearsals, workshops, castings, filming, video recordings, photo shoots and private events. We offer online streaming options.',
+  roomRental_faq_section_title: 'Frequently Asked Questions about Studio Rental',
+  roomRental_reviews_title: 'What people say about our facilities',
+
+  // Room Data - Enterprise i18n (Studio A)
+  roomRental_roomA_name: 'Studio A',
+  roomRental_roomA_size: '40 m²',
+  roomRental_roomA_desc:
+    'Open-plan studio with floating wooden floor. Ideal for small rehearsals, reduced group classes, individual coaching or castings.',
+  roomRental_roomA_price1_type: 'Companies / rehearsals',
+  roomRental_roomA_price1: '€14/hour',
+  roomRental_roomA_price2_type: 'Classes',
+  roomRental_roomA_price2: '€22/hour',
+  roomRental_roomA_img1_alt: 'Studio A - Main view of the 40m² space with floating wooden floor',
+  roomRental_roomA_img2_alt: 'Studio A - Side view with mirrors and sound equipment',
+  roomRental_roomA_img3_alt: 'Studio A - Detail of the professional dance wooden floor',
+
+  // Room Data - Enterprise i18n (Studio B)
+  roomRental_roomB_name: 'Studio B',
+  roomRental_roomB_size: '120 m²',
+  roomRental_roomB_desc:
+    'Our largest studio. Professional linoleum floor installed over floating wood with approximately 60% shock absorption. Perfect for large classes, events, workshops, filming and company training.',
+  roomRental_roomB_price1_type: 'Companies / rehearsals',
+  roomRental_roomB_price1: '€40/hour',
+  roomRental_roomB_price2_type: 'Classes / events',
+  roomRental_roomB_price2: '€50/hour',
+  roomRental_roomB_img1_alt: 'Studio B - Spacious 120m² area with professional linoleum floor',
+  roomRental_roomB_img2_alt: 'Studio B - Panoramic view ideal for events and workshops',
+  roomRental_roomB_img3_alt: 'Studio B - Detail of lighting and professional equipment',
+
+  // Room Data - Enterprise i18n (Studio C)
+  roomRental_roomC_name: 'Studio C',
+  roomRental_roomC_size: '80 m²',
+  roomRental_roomC_desc:
+    'Open-plan studio with special parquet floor for dance. Perfect for medium groups, rehearsals, courses and technical training.',
+  roomRental_roomC_price1_type: 'Companies / rehearsals',
+  roomRental_roomC_price1: '€25/hour',
+  roomRental_roomC_price2_type: 'Classes / events',
+  roomRental_roomC_price2: '€35/hour',
+  roomRental_roomC_img1_alt: 'Studio C - 80m² space with special dance parquet',
+  roomRental_roomC_img2_alt: 'Studio C - View of the rehearsal area with full-wall mirrors',
+  roomRental_roomC_img3_alt: 'Studio C - Detail of audio equipment and atmosphere',
+
+  // Room Data - Enterprise i18n (Studio D)
+  roomRental_roomD_name: 'Studio D',
+  roomRental_roomD_size: '80 m²',
+  roomRental_roomD_desc:
+    'Open-plan studio with professional linoleum floor. Very versatile for urban dance, contemporary, rehearsals, castings, shootings and small events.',
+  roomRental_roomD_price1_type: 'Companies / rehearsals',
+  roomRental_roomD_price1: '€25/hour',
+  roomRental_roomD_price2_type: 'Classes / events',
+  roomRental_roomD_price2: '€35/hour',
+  roomRental_roomD_img1_alt: 'Studio D - Versatile 80m² space with professional linoleum',
+  roomRental_roomD_img2_alt: 'Studio D - View ideal for urban dance and contemporary',
+  roomRental_roomD_img3_alt: 'Studio D - Detail of the space for castings and shootings',
 
   // ===== Twerk Page =====
   twerkPageTitle: "Twerk Classes in Barcelona | Farray's Center",
@@ -3357,6 +3625,7 @@ export const en = {
 
   // Schedule Section
   // Video Section
+  twerkVideoTitle: 'Come discover our Twerk classes',
   twerkVideoDesc:
     "See what a class at Farray's Center is like: energy, technique, and good vibes. We're waiting for you!",
 
@@ -3837,10 +4106,15 @@ This fusion incorporates:
 
   // Schedule Section
   // Video Section
+  hhrVideoTitle: 'Come discover our Hip Hop Reggaeton classes',
   hhrVideoDesc:
     "See what a class at Farray's Center is like: fusion, flow and good vibes. We're waiting for you!",
 
   // Why Today Section
+  hhrWhyToday1:
+    'Because you keep waiting for "the perfect moment" but the only perfect thing is to start today.',
+  hhrWhyToday2:
+    "Because you're just ONE class away from changing your routine and feeling better than yesterday.",
   hhrWhyToday3: "Because it's not about dancing well, but about feeling good dancing.",
   hhrWhyTodayClosing1: "At Farray's we don't sell classes. We create experiences.",
   hhrWhyTodayClosing2:
@@ -4516,6 +4790,10 @@ Over more than a decade, Femmology has transformed the lives of thousands of wom
     "See how we dance in heels at Farray's Center: technique, sensuality and the Farray Method® with Yunaisy in person.",
 
   // Why Today Section
+  femWhyToday1:
+    'Because you keep waiting for "the perfect moment" but the only perfect thing is to start today.',
+  femWhyToday2:
+    'Because you are just ONE class away from reconnecting with your femininity and feeling more confident than ever.',
   femWhyToday3:
     'Because in addition to learning to dance like a professional, you will work on your self-esteem and confidence naturally.',
   femWhyTodayClosing1:
@@ -4794,10 +5072,15 @@ Over more than a decade, Femmology has transformed the lives of thousands of wom
   sexystyleWhyTodayFullTitle: 'Why start Sexy Style today instead of "when I feel ready"?',
   // Schedule Section
   // Video Section
+  sexystyleVideoTitle: 'Come discover our Sexy Style classes',
   sexystyleVideoDesc:
     "See what a class at Farray's Center is like: energy, technique and lots of empowerment.",
 
   // Why Today Section
+  sexystyleWhyToday1:
+    'Because you keep waiting for "the perfect moment" but the only perfect thing is to start today.',
+  sexystyleWhyToday2:
+    'Because you are just ONE class away from reconnecting with your sensuality and feeling more confident than ever.',
   sexystyleWhyToday3: 'Because you deserve to feel sexy, powerful and free. Not "someday". Today.',
   sexystyleWhyTodayClosing1: "At Farray's we don't sell classes. We create Experiences.",
   sexystyleWhyTodayClosing2:
@@ -5052,10 +5335,15 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colombia), J Balvi
   sxrWhyTodayFullTitle: 'Why start Sexy Reggaeton today instead of "when I feel ready"?',
   // Schedule Section
   // Video Section
+  sxrVideoTitle: 'Come discover our Sexy Reggaeton classes',
   sxrVideoDesc:
     "See what a class at Farray's Center is like: energy, technique, sensuality and good vibes. We're waiting for you!",
 
   // Why Today Section
+  sxrWhyToday1:
+    'Because you keep waiting for "the perfect moment" but the only perfect thing is to start today.',
+  sxrWhyToday2:
+    'Because you are just ONE class away from reconnecting with your sensuality and feeling more confident than ever.',
   sxrWhyToday3:
     "Because it's not about dancing perfectly, but about feeling sexy while dancing. And that can be trained.",
   sxrWhyTodayClosing1: 'We Create Experiences.',
@@ -6764,11 +7052,11 @@ Works comprehensively: **flexibility, functional strength, coordination, proprio
   afrocontemporaneoCulturalHistoryTitle: 'History and Technique of Afro Contemporary (DCC)',
   afrocontemporaneoCulturalShort:
     'Learn Afro Contemporary (Contemporary Dance of Cuba) with the Farray Method®: exclusive pedagogy created by Yunaisy Farray (ENA Cuba) adapted for Europeans. Original DCC technique (Ramiro Guerra, 1959) with optimized progression for faster and stronger results.',
-  afrocontemporaneoCulturalFull: `### The Farray Method®: DCC Adapted for Europeans
+  afrocontemporaneoCulturalFull: `### The Farray Method®: DCC Adapted for Adults Outside Cuba
 
-**The Farray Method® is an exclusive pedagogical system created by Yunaisy Farray to teach Afro Contemporary more solidly and effectively to European dancers.** Yunaisy, a Cuban trained at the National School of Art of Cuba (ENA), detected that the original Cuban methodology—designed for bodies that grow up dancing from childhood—needed to be adapted to the European context, where students arrive with different bodily and cultural backgrounds.
+**The Farray Method® is an exclusive pedagogical system created by Yunaisy Farray to teach Afro Contemporary more solidly and effectively to adults outside Cuba.** Yunaisy, a Cuban trained at the National School of Art of Cuba (ENA), detected that the original Cuban methodology—designed for bodies that grow up dancing from childhood—needed to be adapted for adults outside Cuba, where students arrive with different bodily and cultural backgrounds.
 
-**"Farray Method® (Barcelona): DCC/ENA pedagogy adapted to European bodies; structured progression for faster and more solid results than traditional methodology."**
+**"Farray Method® (Barcelona): DCC/ENA pedagogy adapted for adults outside Cuba; structured progression for faster and more solid results than traditional methodology."**
 
 ### The Origins: Contemporary Dance of Cuba (DCC, 1959)
 
@@ -6868,9 +7156,9 @@ The Afro Contemporary taught at **Farray's International Dance Center** is part 
   afrocontemporaneoTransformCTASubtitle: 'Discover what your body is capable of',
 
   // Why Choose Section
-  afrocontemporaneoWhyChoose1Title: 'Exclusive Farray Method® for Europeans',
+  afrocontemporaneoWhyChoose1Title: 'Exclusive Farray Method® for Adults Outside Cuba',
   afrocontemporaneoWhyChoose1Desc:
-    'Yunaisy Farray (ENA Cuba) created pedagogy specifically adapted for Europeans to learn DCC more effectively and with faster results.',
+    'Yunaisy Farray (ENA Cuba) created pedagogy specifically adapted for adults outside Cuba to learn DCC more effectively and with faster results.',
   afrocontemporaneoWhyChoose2Title: 'CID-UNESCO Master',
   afrocontemporaneoWhyChoose2Desc:
     'Yunaisy Farray is a master recognized by the International Dance Council of UNESCO in Paris. Training with international standards.',
@@ -6903,6 +7191,7 @@ The Afro Contemporary taught at **Farray's International Dance Center** is part 
   afrocontemporaneoScheduleTitle: 'Afro Contemporary Class Schedule',
   afrocontemporaneoScheduleSubtitle: 'Weekly classes with ENA-trained teachers',
   // Video Section
+  afrocontemporaneoVideoTitle: 'Come discover our Afro Contemporary classes',
   afrocontemporaneoVideoDesc:
     "Watch in this video what Afro Contemporary classes are like at Farray's International Dance Center in Barcelona. Don't think twice and come try a class.",
 
@@ -7106,6 +7395,14 @@ The Afro Contemporary taught at **Farray's International Dance Center** is part 
   hiphopTeachersSubtitle: 'A reference of Hip Hop in Spain',
   hiphopTeachersClosing:
     'Learn from a master who has dedicated his life to Hip Hop and who transmits not only technique, but the culture and attitude that defines this style.',
+  // Prepare Section
+  hiphopPrepareTitle: 'Prepare for Your First Hip Hop Class',
+  hiphopPrepareSubtitle: 'Everything you need to know before coming',
+  hiphopPrepareWhatToBring: 'What to bring',
+  hiphopPrepareItem1: 'Comfortable loose clothing that allows movement',
+  hiphopPrepareItem2: 'Sneakers with good soles',
+  hiphopPrepareItem3: 'Water bottle to stay hydrated',
+  hiphopPrepareItem4: 'Small towel',
   hiphopPrepareItem5: 'Desire to release your flow',
   hiphopPrepareBefore: 'Before arriving',
   hiphopPrepareBeforeItem1: 'Arrive 10-15 minutes early to warm up',
@@ -8308,6 +8605,7 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   salsaLadyIdentifyTransition: 'If you said "yes" to any of these points, you know what you need.',
 
   // Need Enroll + Agitation Section
+  salsaLadyIdentifyNeedTitle: "You Need to Learn Lady Style at Farray's Center",
   salsaLadyNeedEnrollTitle: 'You Need to Learn to dance Lady Style',
   salsaLadyIdentifyAgitate1:
     'Every day that passes without working on your feminine technique is a day less enjoying your full potential as a dancer.',
@@ -9113,6 +9411,8 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   facilitiesGallerySocial: 'Social Area',
   facilitiesGalleryServicios: 'Amenities',
   facilitiesGalleryPhotos: 'photos',
+  facilitiesGalleryPhotosLabel: 'photos',
+  facilitiesGalleryViewLarge: 'View large',
   facilitiesAreaSalaA: 'Room A',
   facilitiesAreaSalaB: 'Room B',
   facilitiesAreaSalaC: 'Room C',
@@ -11082,6 +11382,8 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
 
   // Breadcrumb
   blogBeneficiosSalsa_breadcrumbCurrent: 'Benefits of Dancing Salsa',
+  blogBeneficiosSalsa_heroAlt:
+    'Smiling dance group dancing Cuban salsa at Barcelona dance academy, demonstrating the cardiovascular and emotional benefits of Latin dance',
 
   // Intro
   blogBeneficiosSalsa_intro:
@@ -11195,6 +11497,23 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogBeneficiosSalsa_refNCBIDesc:
     'Analysis of clinical studies on structural brain changes associated with dance practice.',
 
+  // === NEW GEO ELEMENTS (Enterprise 10/10) ===
+  blogBeneficiosSalsa_summaryBullet4:
+    'Backed by studies published in Harvard, NEJM and Frontiers in Psychology',
+  blogBeneficiosSalsa_statEndorfinasLabel:
+    'increase in endorphin release with synchronized dancing',
+
+  // === ANSWER CAPSULE (GEO Critical - 72% AI citation rate) ===
+  blogBeneficiosSalsa_answerBeneficios: '',
+  blogBeneficiosSalsa_answerBeneficiosQ: 'What are the main benefits of dancing salsa?',
+  blogBeneficiosSalsa_answerBeneficiosA:
+    'The main benefits of dancing salsa include: cardiovascular improvement (burns 400-600 calories/hour), 76% reduction in dementia risk according to NEJM, endorphin increase (+21%), improved posture and coordination, stress and anxiety reduction, and strengthened social connections. It is a complete exercise that benefits body and mind.',
+
+  // === DEFINITION (LLM Extraction) ===
+  blogBeneficiosSalsa_defBaileSalsaTerm: 'Salsa dancing',
+  blogBeneficiosSalsa_defBaileSalsa:
+    'A Latin dance genre originated in Cuba and Puerto Rico that combines rhythmic movements with structured steps, danced in pairs or in a circle (rueda), characterized by its syncopated rhythm and body expression.',
+
   // ============================================================================
   // BLOG ARTICLE: History of Salsa in Barcelona
   // ============================================================================
@@ -11208,6 +11527,8 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
 
   // === BREADCRUMB ===
   blogHistoriaSalsa_breadcrumbCurrent: 'History of Salsa',
+  blogHistoriaSalsa_heroAlt:
+    'Artistic mural with Cuban cultural elements, representing the musical and dance roots of salsa and its Afro-Caribbean heritage',
 
   // === SUMMARY BULLETS (GEO Optimized) ===
   blogHistoriaSalsa_summaryBullet1:
@@ -11371,6 +11692,20 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogHistoriaSalsa_refUABDesc:
     'Research by Isabel Llano Camacho on immigration, identity, Latin music and dance in Barcelona (2016).',
 
+  // === NEW GEO ELEMENTS (Enterprise 10/10) ===
+  blogHistoriaSalsa_statSonCubanoLabel: 'period of origin of Cuban son, precursor to salsa',
+
+  // === ANSWER CAPSULE (GEO Critical - 72% AI citation rate) ===
+  blogHistoriaSalsa_answerOrigen: '',
+  blogHistoriaSalsa_answerOrigenQ: 'What is the origin of salsa?',
+  blogHistoriaSalsa_answerOrigenA:
+    'Salsa has its roots in Cuba, fusing African rhythms (Yoruba, Congo) with European musical structures. Cuban son (1890-1910) was its direct precursor. In the 1960s-70s, Latino musicians in New York popularized the term "salsa" with Fania Records (founded in 1964). According to the Smithsonian Institution, salsa represents an Afro-Latin cultural fusion that became a global phenomenon.',
+
+  // === DEFINITION (LLM Extraction) ===
+  blogHistoriaSalsa_defSalsaTerm: 'Salsa (music genre and dance)',
+  blogHistoriaSalsa_defSalsa:
+    'A music genre and dance style that emerged from the fusion of Afro-Cuban rhythms (son, mambo, guaracha) with jazz and other Caribbean elements, popularized in New York in the 1960s-70s. It is characterized by clave rhythm, brass and percussion instrumentation, and partner dancing with structured steps on the 1 or 2 count.',
+
   // =============================================
   // TEACHER CANONICAL DATA - Source of Truth
   // =============================================
@@ -11397,7 +11732,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     'International Cuban master and artist, with over 20 years of artistic career, Lia Valdes is a world reference. Regular presence at the most important Latin rhythm festivals in the world, this master brings the authentic flavor of Cuba to every class. Trained at the ENA (National School of Art of Cuba), she has been part of the prestigious "The Lion King" show in Paris for several years, transmitting not only the steps but also the joy and spirit of Caribbean dance.',
 
   'teacher.iroelBastarreche.specialty':
-    'Cuban Folklore & Afro Contemporary | Folkloric Ballet of Camagüey | Farray Method®',
+    'Cuban Salsa | Folkloric Ballet of Camagüey | Farray Method®',
   'teacher.iroelBastarreche.bio':
     'Iroel Bastarreche, known as Iro, was born in Camagüey (Cuba) and trained at the Vocational School of Art of Cuba. He was part of the prestigious Maraguán Artistic Ensemble, receiving training in peasant folklore, Cuban popular dance and Haitian, Jamaican and Conga roots, participating in countless international festivals. He later joined the Folkloric Ballet of Camagüey, complementing his afro-contemporary training with masters like Santiago Alfonso. Since 2014 in Barcelona, he has trained in the Farray Method® with Yunaisy Farray and is currently considered by many as one of the references in teaching Cuban styles throughout Barcelona.',
 
@@ -11490,7 +11825,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   dhV3CompareRow7Farrays: 'Academy accredited by CID-UNESCO',
   dhV3CompareRow8Label: 'Community and events',
   dhV3CompareRow8Others: 'You go to class and leave',
-  dhV3CompareRow8Farrays: 'Free practices, events, real family',
+  dhV3CompareRow8Farrays: 'Free practices, events, real community',
   dhV3CompareMeaningTitle: 'What does this mean for you?',
   dhV3CompareMeaning1Title: "If you've never danced Dancehall:",
   dhV3CompareMeaning1Desc:
@@ -11515,6 +11850,30 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   salsaCubanaWhyChoose7Title: 'Annual gala + salsa parties',
   salsaCubanaWhyChoose7Desc:
     "Shine on a professional stage, enjoy our themed parties and live experiences you won't find at any other school in Barcelona.",
+
+  // Enterprise: Translatable texts for SalsaCubanaPage
+  salsaCubana_socialProof_reviews: '(509+ reviews)',
+  salsaCubana_socialProof_students: '+15,000 students trained',
+  salsaCubana_tag_metodoFarray: 'Farray Method',
+  salsaCubana_tag_experience: '+25 years exp.',
+  salsaCubana_schema_educationalLevel: 'Beginner, Intermediate, Advanced',
+  salsaCubana_schema_teaches:
+    'Cuban Salsa, Casino, Rueda de Casino, lead and follow, partner technique',
+  salsaCubana_schema_prerequisites: 'None',
+  salsaCubana_alt_yunaisy: 'Yunaisy Farray - Creator of the Farray Method, CID-UNESCO Master',
+  salsaCubana_alt_iroel: 'Iroel Bastarreche - Cuban Salsa Instructor',
+  salsaCubana_alt_yasmina: 'Yasmina Fernández - Cuban Salsa Instructor',
+  salsaCubana_alt_lia: 'Lia Valdes - Cuban Salsa Instructor',
+  salsaCubana_alt_cidUnesco: 'CID UNESCO - International Dance Council',
+  salsaCubana_alt_streetDance: 'Street Dance 2 - Dance Film',
+  salsaCubana_alt_theDancer: 'The Dancer - Dance Show',
+  salsaCubana_alt_telecinco: 'Telecinco - Spanish Television Network',
+  salsaCubana_video_embedTitle: "Cuban Salsa Classes in Barcelona - Farray's Center",
+  salsaCubana_schema_businessName: "Farray's International Dance Center - Cuban Salsa Classes",
+  salsaCubana_schema_numberOfLessons: '5 weekly classes',
+  salsaCubana_schema_streetAddress: 'Entença Street 100, Local 1',
+  salsaCubana_schema_providerName: "Farray's International Dance Center - Cuban Salsa Academy",
+
   salsaLadyTeacher2Specialty: 'Cuban International Master and Artist',
   salsaLadyTeacher2Bio:
     "With over 20 years of artistic career, trained at Cuba's National School of Art (ENA). Lia Valdes is a world reference in Cabaret and Lady Style, bringing scenic elegance and impeccable technique to every class.",
@@ -11718,99 +12077,103 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   salsaLadyV2WhyFarray6Desc:
     'You are not a number. Events, meetups, exclusive workshops. Real friendships are made here.',
   navPricing: 'Pricing',
-  pricing_page_title: 'Precios Clases de Baile Barcelona | Cuotas 2025',
+  pricing_page_title: 'Dance Class Prices in Barcelona | Membership Rates 2025',
   pricing_page_description:
-    'Conoce las cuotas de socio de FIDC Barcelona: planes mensuales desde 50€, cuotas flexibles, entrenamientos personalizados. Sin permanencia. Primera clase gratis.',
+    'Discover FIDC Barcelona membership rates: monthly plans from €50, flexible packages, personalized training. No commitment. First class free.',
   pricing_breadcrumb_home: 'Home',
   pricing_breadcrumb_current: 'Schedules and Prices',
-  pricing_schema_name: "Cuotas Club Deportivo Farray\'s Center",
+  pricing_schema_name: "Farray's Center Sports Club Membership Rates",
   pricing_schema_description:
-    'Cuotas de socio para actividades de baile in Barcelona. Planes mensuales, flexibles y entrenamientos personalizados.',
-  pricing_hero_title: 'Horarios y Precios',
+    'Membership rates for dance activities in Barcelona. Monthly plans, flexible packages, and personalized training.',
+  pricing_schema_serviceType: 'Dance and fitness classes',
+  pricing_schema_catalog_name: "Farray's Center subscription plans",
+  pricing_schema_perMonth: 'per month',
+  pricing_schema_bono10: '10-class pack',
+  pricing_schema_perClass: 'per class',
+  pricing_hero_title: 'Schedules and Prices',
   pricing_hero_subtitle:
-    'Invierte en tu bienestar. Elige el plan que mejor se adapte a tu ritmo de vida y empieza a bailar hoy.',
-  pricing_badge_no_permanence: 'Sin permanencia',
-  pricing_badge_cancel_anytime: 'Cancela cuando quieras',
-  pricing_badge_first_class_free: 'Reserva sin compromiso',
+    'Invest in your wellbeing. Choose the plan that best fits your lifestyle and start dancing today.',
+  pricing_badge_no_permanence: 'No commitment',
+  pricing_badge_cancel_anytime: 'Cancel anytime',
+  pricing_badge_first_class_free: 'Book with no obligation',
   pricing_hero_cta: 'Become a Member Now',
-  pricing_trial_title: '¿Primera vez? Reserva tu clase de Bienvenida',
+  pricing_trial_title: 'First time? Book your Welcome class',
   pricing_trial_subtitle:
-    'En enero ven a conocernos sin compromiso. Prueba cualquier actividad y descubre por qué más de 1500 socios nos eligen cada semana.',
-  pricing_trial_cta: 'Reservar Clase De Bienvenida',
-  pricing_enrollment_title: 'Cuota de Inscripción',
+    'In January, come visit us with no obligation. Try any activity and discover why over 1,500 members choose us every week.',
+  pricing_trial_cta: 'Book Welcome Class',
+  pricing_enrollment_title: 'Registration Fee',
   pricing_enrollment_desc:
-    'Un pago único que te convierte en socio del club y te da acceso a todos los beneficios exclusivos de nuestra comunidad.',
-  pricing_enrollment_once: 'Pago único · Sin renovación',
-  enrollmentInclude1: 'Acceso al sistema y plaza fija en tu horario',
-  enrollmentInclude2: 'Seguro de accidentes incluido',
-  enrollmentInclude3: 'Todos los beneficios exclusivos de socio',
-  pricing_monthly_title: 'Cuotas Mensuales',
+    'A one-time payment that makes you a club member and gives you access to all the exclusive benefits of our community.',
+  pricing_enrollment_once: 'One-time payment · No renewal',
+  enrollmentInclude1: 'System access and fixed spot in your schedule',
+  enrollmentInclude2: 'Accident insurance included',
+  enrollmentInclude3: 'All exclusive member benefits',
+  pricing_monthly_title: 'Monthly Memberships',
   pricing_monthly_subtitle:
-    'Elige cuántas actividades quieres hacer a la semana. A más actividades, menor coste por session.',
+    'Choose how many activities you want per week. The more activities, the lower the cost per session.',
   pricing_tab_regular: 'Regular',
   pricing_tab_premium: 'Premium',
-  pricing_activities_month: 'actividades/mes',
-  pricing_per_activity: 'actividad',
-  pricing_per_week: 'semanales',
-  pricing_all_styles: 'Acceso a +25 estilos',
-  pricing_with_yunaisy: 'Incluye clases con Yunaisy Farray',
-  pricing_popular: 'Más popular',
-  pricing_select_plan: 'Seleccionar Plan',
-  pricing_show_more: 'Ver más opciones',
-  pricing_show_less: 'Ver menos',
-  pricing_unlimited_badge: 'Para los más apasionados',
-  pricing_unlimited_title: 'Cuota Ilimitada',
+  pricing_activities_month: 'activities/month',
+  pricing_per_activity: 'activity',
+  pricing_per_week: 'per week',
+  pricing_all_styles: 'Access to 25+ styles',
+  pricing_with_yunaisy: 'Includes classes with Yunaisy Farray',
+  pricing_popular: 'Most popular',
+  pricing_select_plan: 'Select Plan',
+  pricing_show_more: 'See more options',
+  pricing_show_less: 'See less',
+  pricing_unlimited_badge: 'For the most passionate',
+  pricing_unlimited_title: 'Unlimited Membership',
   pricing_unlimited_desc:
-    'Acceso ilimitado a todas las actividades, todos los días, todas las semanas. El plan perfecto para bailarines que no pueden parar.',
-  pricing_unlimited_cta: 'Quiero Ilimitado',
-  pricing_flexible_title: 'Cuotas de Participación Flexibles',
+    'Unlimited access to all activities, every day, every week. The perfect plan for dancers who just cannot stop.',
+  pricing_unlimited_cta: 'I Want Unlimited',
+  pricing_flexible_title: 'Flexible Participation Packages',
   pricing_flexible_subtitle:
-    'Ideal si tu horario es variable. Compra un paquete de actividades y úsalas cuando puedas.',
-  pricing_activities: 'actividades',
-  pricing_valid: 'Validez:',
-  pricing_months: 'meses',
-  pricing_activity: 'actividad',
-  pricing_duration: 'Duración',
+    'Ideal if your schedule varies. Buy an activity package and use them whenever you can.',
+  pricing_activities: 'activities',
+  pricing_valid: 'Valid for:',
+  pricing_months: 'months',
+  pricing_activity: 'activity',
+  pricing_duration: 'Duration',
   pricing_premium: 'Premium',
   pricing_regular: 'Regular',
-  pricing_dropin_title: 'Participación Puntual (Sin Inscripción)',
+  pricing_dropin_title: 'Drop-in Participation (No Registration)',
   pricing_session: 'session',
-  pricing_sessions: 'sesiones',
-  pricing_personal_title: 'Entrenamientos Personalizados',
+  pricing_sessions: 'sessions',
+  pricing_personal_title: 'Personalized Training',
   pricing_personal_subtitle:
-    'Formación a medida con nuestros profesores. Ideal para preparar audiciones, eventos o acelerar tu aprendizaje.',
-  pricing_save: 'Ahorra',
-  pricing_personal_more: 'Más información sobre entrenamientos privados',
+    'Customized training with our instructors. Ideal for preparing auditions, events, or accelerating your learning.',
+  pricing_save: 'Save',
+  pricing_personal_more: 'More information about private training',
   pricing_personal_reference_note:
-    'Los precios mostrados son de referencia y pueden variar según el profesor y tipo de entrenamiento.',
-  pricing_lead_title: '¿Quieres una guía completa de precios y horarios?',
+    'Prices shown are for reference and may vary depending on the instructor and type of training.',
+  pricing_lead_title: 'Want a complete guide to prices and schedules?',
   pricing_lead_subtitle:
-    'Déjanos tu email y te enviamos toda la información detallada: horarios de cada estilo, niveles disponibles y consejos para elegir tu cuota ideal.',
-  pricing_lead_discount: '...y recibe un descuento exclusivo para nuevos socios',
-  pricing_lead_cta: 'Solicitar Guía',
-  pricing_lead_privacy: 'Respetamos tu privacidad. Nunca compartimos tu email.',
-  pricing_benefits_title: '¿Por qué ser socio de FIDC?',
-  pricing_benefit1_title: 'Método Farray®',
+    'Leave us your email and we will send you all the detailed information: schedules for each style, available levels, and tips for choosing your ideal plan.',
+  pricing_lead_discount: '...and receive an exclusive discount for new members',
+  pricing_lead_cta: 'Request Guide',
+  pricing_lead_privacy: 'We respect your privacy. We never share your email.',
+  pricing_benefits_title: 'Why become a FIDC member?',
+  pricing_benefit1_title: 'Farray Method',
   pricing_benefit1_desc:
-    'Sistema exclusivo de enseñanza creado por Yunaisy Farray. Resultados rápidos, sólidos y contrastados.',
-  pricing_benefit2_title: 'Comunidad Real',
+    'Exclusive teaching system created by Yunaisy Farray. Fast, solid, and proven results.',
+  pricing_benefit2_title: 'Real Community',
   pricing_benefit2_desc:
-    'No eres un número. Conocerás a personas increíbles que comparten tu pasión por el baile.',
-  pricing_benefit3_title: '+25 Estilos de Baile',
+    'You are not just a number. You will meet incredible people who share your passion for dance.',
+  pricing_benefit3_title: '25+ Dance Styles',
   pricing_benefit3_desc:
-    'Desde salsa cubana hasta hip hop, pasando por contemporáneo, ballet, heels y mucho más.',
-  pricing_benefit4_title: 'Ambiente Familiar',
+    'From Cuban salsa to hip hop, including contemporary, ballet, heels, and much more.',
+  pricing_benefit4_title: 'Family Atmosphere',
   pricing_benefit4_desc:
-    'Profesores que conocen tu nombre, tu nivel y tus objetivos. Aquí nadie se queda atrás.',
-  pricing_benefit5_title: 'Sin Compromiso',
+    'Instructors who know your name, your level, and your goals. Nobody gets left behind here.',
+  pricing_benefit5_title: 'No Commitment',
   pricing_benefit5_desc:
-    'Sin permanencia obligatoria. Si no estás satisfecho, puedes cancelar en cualquier momento.',
-  pricing_benefit6_title: 'Reconocimiento Internacional',
-  pricing_benefit6_desc:
-    'Centro acreditado por CID-UNESCO. Formación de élite con sello de calidad.',
+    'No mandatory commitment. If you are not satisfied, you can cancel at any time.',
+  pricing_benefit6_title: 'International Recognition',
+  pricing_benefit6_desc: 'CID-UNESCO accredited center. Elite training with a quality seal.',
   pricing_no_classpass:
-    'No trabajamos con ClassPass ni intermediarios. Aquí recibes atención directa y personalizada de nuestro equipo.',
-  pricing_testimonials_title: 'Testimonios No Solicitados de Nuestros Socios',
+    'We do not work with ClassPass or intermediaries. Here you receive direct and personalized attention from our team.',
+  pricing_testimonials_title: 'Unsolicited Testimonials from Our Members',
   pricing_testimonial1_text: `5 stars and only because there's no more. Spectacular, from the minute you step into reception, to the teachers, the quality and the great vibe.`,
   pricing_testimonial2_text: `I've been a member for 3 years and it's the best investment in my wellbeing. The teachers are amazing and the atmosphere is unique.`,
   pricing_testimonial3_text: `The fees are very reasonable for the quality they offer. Being able to choose from so many styles with the same fee is fantastic.`,
@@ -11854,105 +12217,103 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     'We accept credit/debit card (automatic recurring payment for monthly fees), bank transfer and cash. Everything is managed through our Momence app.',
   pricing_faq13_q: 'How much do dance classes cost in Barcelona?',
   pricing_faq13_a: `In Barcelona, prices vary depending on the center and the type. Generally, they range between €50 and €150/month for regular fees, or between €10 and €25 per drop-in class. At Farray's Center we offer options from €50/month with access to +25 styles, with no commitment.`,
-  pricing_faq14_q: '¿Puedo ir solo/a a las clases?',
+  pricing_faq14_q: 'Can I attend classes on my own?',
   pricing_faq14_a:
-    'Sí, la mayoría de nuestros socios vienen solos. No necesitas pareja para ningún estilo. En las clases de bailes en pareja rotamos continuamente, así que siempre tendrás con quién practicar. Es una forma estupenda de conocer gente.',
-  pricing_faq15_q: '¿Tengo que apuntarme a todo el mes?',
+    'Yes, most of our members come alone. You do not need a partner for any style. In partner dance classes, we rotate continuously, so you will always have someone to practice with. It is a great way to meet people.',
+  pricing_faq15_q: 'Do I have to sign up for the whole month?',
   pricing_faq15_a:
-    'No necesariamente. Ofrecemos cuotas mensuales (la opción más económica), pero también bonos flexibles de 10 o 20 participaciones que puedes usar cuando quieras, y participaciones puntuales para días sueltos. Elige lo que mejor se adapte a tu agenda.',
-  pricing_faq16_q: '¿Qué estilos de baile ofrecéis?',
+    'Not necessarily. We offer monthly memberships (the most economical option), but also flexible packages of 10 or 20 participations you can use whenever you want, and drop-in options for single days. Choose what best fits your schedule.',
+  pricing_faq16_q: 'What dance styles do you offer?',
   pricing_faq16_a:
-    'Ofrecemos +25 estilos: Salsa Cubana, Bachata, Afrobeat, Dancehall, Hip Hop, Reggaeton, Ballet, Danza Contemporánea, Modern Jazz, Kizomba, Twerk, Stretching, y muchos más. Desde ritmos latinos hasta danzas urbanas y danza clásica.',
-  pricing_cta_title: '¿Listo para empezar a bailar?',
+    'We offer 25+ styles: Cuban Salsa, Bachata, Afrobeat, Dancehall, Hip Hop, Reggaeton, Ballet, Contemporary Dance, Modern Jazz, Kizomba, Twerk, Stretching, and many more. From Latin rhythms to urban dances and classical dance.',
+  pricing_cta_title: 'Ready to start dancing?',
   pricing_cta_subtitle:
-    'Reserva tu primera clase sin compromiso. Ven a conocernos y descubre por qué más de 1500 socios nos eligen cada semana.',
-  pricing_cta_emotional1: 'Imagínate entrando a tu primera clase...',
+    'Book your first class with no obligation. Come visit us and discover why over 1,500 members choose us every week.',
+  pricing_cta_emotional1: 'Imagine walking into your first class...',
   pricing_cta_emotional2:
-    'Sintiendo el ritmo, conectando con tu cuerpo, olvidando el estrés del día.',
-  pricing_cta_emotional_close: 'Ese momento puede ser esta semana.',
-  pricing_cta_technical1: 'Sin permanencia. Cancela cuando quieras. Empieza cuando quieras.',
-  pricing_cta_technical2: 'Más de 15.000 socios han confiado en nosotros desde 2017.',
+    'Feeling the rhythm, connecting with your body, forgetting the stress of the day.',
+  pricing_cta_emotional_close: 'That moment can be this week.',
+  pricing_cta_technical1: 'No commitment. Cancel anytime. Start whenever you want.',
+  pricing_cta_technical2: 'Over 15,000 members have trusted us since 2017.',
   pricing_cta_primary: 'Become a Member Now',
   pricing_cta_primary_subtext:
-    'Hacerte socio es fácil. Elige tu cuota, paga online y empieza cuando quieras.',
-  pricing_cta_secondary: 'Reservar Clase de Bienvenida',
-  pricing_cta_secondary_subtext: 'Puertas Abiertas · Del 7 al 31 de enero',
-  pricing_cta_secondary_subtitle: 'Prueba el centro · Conoce horarios y niveles',
-  pricingV2_page_title: 'Precios Clases de Baile Barcelona | Desde 50 euros/mes',
+    'Becoming a member is easy. Choose your plan, pay online, and start whenever you want.',
+  pricing_cta_secondary: 'Book Welcome Class',
+  pricing_cta_secondary_subtext: 'Open Doors · January 7-31',
+  pricing_cta_secondary_subtitle: 'Try the center · Learn about schedules and levels',
+  pricingV2_page_title: 'Dance Class Prices in Barcelona | From 50 euros/month',
   pricingV2_page_description:
-    'Descubre los precios de clases de baile in Barcelona. Cuotas mensuales desde 50 euros, bonos flexibles y opciones puntuales. Sin permanencia. Primera clase gratis.',
-  pricingV2_hero_title: 'Precios de Clases de Baile in Barcelona',
+    'Discover dance class prices in Barcelona. Monthly memberships from 50 euros, flexible packages, and drop-in options. No commitment. First class free.',
+  pricingV2_hero_title: 'Dance Class Prices in Barcelona',
   pricingV2_hero_subtitle:
-    'Descubre las opciones de participación en actividades de baile en uno de los centros de referencia in Barcelona.',
-  pricingV2_hero_subtitle2:
-    'Clases de salsa, bachata, afrobeat y más, adaptadas a todos los niveles.',
-  pricingV2_hero_cta: 'Descubre Cómo Empezar',
+    'Discover participation options for dance activities at one of the leading centers in Barcelona.',
+  pricingV2_hero_subtitle2: 'Salsa, bachata, afrobeat classes and more, adapted to all levels.',
+  pricingV2_hero_cta: 'Discover How to Get Started',
   pricingV2_hero_cta_subtext:
-    'Puertas Abiertas · Del 7 al 31 de enero · Prueba el centro · Conoce horarios y niveles',
-  pricingV2_reassurance1: 'Puedes empezar desde cero',
-  pricingV2_reassurance2: 'No necesitas venir en pareja',
-  pricingV2_reassurance3: 'Puedes cambiar de modalidad',
-  pricingV2_reassurance4: 'Te ayudamos a elegir bien',
-  pricingV2_priceContext_title: '¿Cuánto cuestan las clases de baile in Barcelona?',
+    'Open Doors · January 7-31 · Try the center · Learn about schedules and levels',
+  pricingV2_reassurance1: 'You can start from scratch',
+  pricingV2_reassurance2: 'No partner needed',
+  pricingV2_reassurance3: 'You can switch plans anytime',
+  pricingV2_reassurance4: 'We help you choose wisely',
+  pricingV2_priceContext_title: 'How much do dance classes cost in Barcelona?',
   pricingV2_priceContext_text1:
-    'En Barcelona, las clases de baile suelen oscilar entre 10€ y 25€ por session, o entre 50€ y 150€ al mes en formato de cuota, dependiendo de la frecuencia, el tipo de centro y el nivel de especialización.',
+    'In Barcelona, dance classes typically range from €10 to €25 per session, or €50 to €150 per month for memberships, depending on frequency, type of center, and level of specialization.',
   pricingV2_priceContext_text2:
-    "En Farray's Center apostamos por un modelo flexible, accesible y orientado a la práctica real del baile. No vendemos clases sueltas sin contexto: ofrecemos un sistema de participación que se adapta a tu ritmo de vida, con profesores certificados y una comunidad activa de más de 10.000 bailarines.",
+    "At Farray's Center, we believe in a flexible, accessible model focused on real dance practice. We don't sell standalone classes without context: we offer a participation system that adapts to your lifestyle, with certified instructors and an active community of over 10,000 dancers.",
   pricingV2_priceContext_highlight:
-    'Centro de referencia in Barcelona desde 2017 · Reconocido por CID-UNESCO · +25 estilos de baile',
-  pricingV2_howItWorks_title: "Cómo funcionan las cuotas en Farray's Center",
+    'Leading center in Barcelona since 2017 · Recognized by CID-UNESCO · 25+ dance styles',
+  pricingV2_howItWorks_title: "How memberships work at Farray's Center",
   pricingV2_howItWorks_text:
-    "En Farray's Center no pagas clases sueltas sin contexto. Eliges una forma de participación según tu disponibilidad y tus objetivos.",
-  pricingV2_howItWorks_point1: 'Puedes empezar desde cero',
-  pricingV2_howItWorks_point2: 'No necesitas venir en pareja',
-  pricingV2_howItWorks_point3: 'Puedes cambiar de modalidad',
-  pricingV2_howItWorks_point4: 'Te ayudamos a elegir bien',
-  pricingV2_participate_title: 'Elige cómo te gustaría empezar',
+    "At Farray's Center, you don't pay for standalone classes without context. You choose a participation method based on your availability and goals.",
+  pricingV2_howItWorks_point1: 'You can start from scratch',
+  pricingV2_howItWorks_point2: 'No partner needed',
+  pricingV2_howItWorks_point3: 'You can switch plans anytime',
+  pricingV2_howItWorks_point4: 'We help you choose wisely',
+  pricingV2_participate_title: 'Choose how you would like to start',
   pricingV2_participate_subtitle:
-    'Tres formas de ser socio de nuestro centro adaptadas a tu estilo de vida',
-  pricingV2_card_regular_title: 'Participación Regular',
+    'Three ways to become a member of our center, adapted to your lifestyle',
+  pricingV2_card_regular_title: 'Regular Participation',
   pricingV2_card_regular_desc:
-    'Ideal si quieres bailar cada semana, progresar y formar parte de una comunidad activa.',
-  pricingV2_card_regular_include1: 'Acceso a actividades semanales',
-  pricingV2_card_regular_include2: 'Plaza fija en tu horario',
-  pricingV2_card_regular_include3: 'Acceso a +25 estilos',
-  pricingV2_card_regular_include4: 'Beneficios exclusivos de socio',
-  pricingV2_card_regular_cta: 'Ver cuotas y horarios',
-  pricingV2_card_flexible_title: 'Participación Flexible',
-  pricingV2_card_flexible_desc:
-    'Para horarios variables o si no puedes comprometerte todas las semanas.',
-  pricingV2_card_flexible_include1: 'Paquetes de actividades',
-  pricingV2_card_flexible_include2: 'Validez amplia (6-12 meses)',
-  pricingV2_card_flexible_include3: 'Sin rutina fija',
-  pricingV2_card_flexible_cta: 'View Bundles and Rates',
-  pricingV2_card_puntual_title: 'Participación Puntual',
-  pricingV2_card_puntual_desc: 'Opciones limitadas para venir de forma puntual o en eventos.',
-  pricingV2_card_puntual_include1: 'Actividades puntuales',
-  pricingV2_card_puntual_include2: 'Jornadas de puertas abiertas',
-  pricingV2_card_puntual_cta: 'Consultar disponibilidad',
-  pricingV2_price_indicative: 'Precio orientativo',
-  pricingV2_price_from: 'Desde',
-  pricingV2_enrollment_title: 'Cuota de Inscripción',
+    'Ideal if you want to dance every week, make progress, and be part of an active community.',
+  pricingV2_card_regular_include1: 'Access to weekly activities',
+  pricingV2_card_regular_include2: 'Fixed spot in your schedule',
+  pricingV2_card_regular_include3: 'Access to 25+ styles',
+  pricingV2_card_regular_include4: 'Exclusive member benefits',
+  pricingV2_card_regular_cta: 'View rates and schedules',
+  pricingV2_card_flexible_title: 'Flexible Participation',
+  pricingV2_card_flexible_desc: 'For variable schedules or if you cannot commit every week.',
+  pricingV2_card_flexible_include1: 'Activity packages',
+  pricingV2_card_flexible_include2: 'Extended validity (6-12 months)',
+  pricingV2_card_flexible_include3: 'No fixed routine',
+  pricingV2_card_flexible_cta: 'View packages and rates',
+  pricingV2_card_puntual_title: 'Drop-in Participation',
+  pricingV2_card_puntual_desc: 'Limited options for occasional visits or events.',
+  pricingV2_card_puntual_include1: 'Single activities',
+  pricingV2_card_puntual_include2: 'Open door events',
+  pricingV2_card_puntual_cta: 'Check availability',
+  pricingV2_price_indicative: 'Indicative price',
+  pricingV2_price_from: 'From',
+  pricingV2_enrollment_title: 'Registration Fee',
   pricingV2_enrollment_desc:
-    'Para formar parte de nuestro centro es necesaria una cuota anual de inscripción.',
-  pricingV2_whyNotAll_title: 'Por qué no ves una tabla infinita de precios',
-  pricingV2_whyNotAll_text1: 'Porque queremos que elijas bien.',
-  pricingV2_whyNotAll_depends: 'Las cuotas y horarios dependen de:',
-  pricingV2_whyNotAll_dep1: 'Tu disponibilidad',
-  pricingV2_whyNotAll_dep2: 'Tu nivel actual',
-  pricingV2_whyNotAll_dep3: 'El tipo de actividad',
-  pricingV2_whyNotAll_dep4: 'La modalidad que elijas',
+    'To become part of our center, an annual registration fee is required.',
+  pricingV2_whyNotAll_title: "Why you don't see an endless price list",
+  pricingV2_whyNotAll_text1: 'Because we want you to choose wisely.',
+  pricingV2_whyNotAll_depends: 'Rates and schedules depend on:',
+  pricingV2_whyNotAll_dep1: 'Your availability',
+  pricingV2_whyNotAll_dep2: 'Your current level',
+  pricingV2_whyNotAll_dep3: 'The type of activity',
+  pricingV2_whyNotAll_dep4: 'The plan you choose',
   pricingV2_whyNotAll_text2:
-    'Por eso, toda la información se envía de forma automática y clara por email.',
-  pricingV2_whyNotAll_cta: 'Recibir guía completa de precios',
-  pricingV2_benefits_title: 'Por qué nuestros socios se quedan',
-  pricingV2_finalCta_title: "Descubre si Farray's Center es para ti",
+    "That's why all the information is sent automatically and clearly by email.",
+  pricingV2_whyNotAll_cta: 'Get complete pricing guide',
+  pricingV2_benefits_title: 'Why our members stay',
+  pricingV2_finalCta_title: "Discover if Farray's Center is right for you",
   pricingV2_finalCta_text:
-    'Déjanos tu email y te enviamos toda la información para empezar sin compromiso.',
-  pricingV2_finalCta_button: 'Recibir precios y horarios',
-  pricingV2_finalCta_privacy: 'Información enviada automáticamente. Sin spam.',
+    'Leave us your email and we will send you all the information to get started with no commitment.',
+  pricingV2_finalCta_button: 'Get prices and schedules',
+  pricingV2_finalCta_privacy: 'Information sent automatically. No spam.',
   pricingV2_footer_legal:
-    'La información mostrada es orientativa. La inscripción como socio y la participación en actividades deportivas se realiza exclusivamente con Club Esportiu Farray Barcelona, de acuerdo con su normativa interna.',
+    'The information shown is for reference only. Membership registration and participation in sports activities is carried out exclusively with Club Esportiu Farray Barcelona, in accordance with its internal regulations.',
   schedule_title: 'Horarios de Clases',
   schedule_subtitle: 'Over 100 weekly classes from Monday to Friday. Find your ideal schedule.',
   schedule_category_all: 'Todos',
@@ -12049,243 +12410,251 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     'Important Note: All information is sent exclusively in Spanish.',
   members: 'members',
   years_in_barcelona: 'años in Barcelona',
-  horariosV2_page_title: 'Horarios Clases de Baile Barcelona | Farray Center',
+  horariosV2_page_title: 'Dance Class Schedules Barcelona | Farray Center',
   horariosV2_page_description:
-    'Encuentra el horario perfecto para tus clases de baile in Barcelona. Mañanas, tardes y noches. +25 estilos de danza, salsa, bachata, urbano y más. Grupos por nivel.',
+    'Find the perfect schedule for your dance classes in Barcelona. Mornings, afternoons and evenings. +25 dance styles, salsa, bachata, urban and more. Groups by level.',
   horariosV2_breadcrumb: 'Schedules',
-  horariosV2_skipToContent: 'Saltar al contenido principal',
-  horariosV2_skipToFilters: 'Ir a filtros de horario',
-  horariosV2_hero_title: 'Horarios de Clases de Baile in Barcelona',
+  horariosV2_skipToContent: 'Skip to main content',
+  horariosV2_skipToFilters: 'Go to schedule filters',
+  horariosV2_hero_title: 'Dance Class Schedules in Barcelona',
   horariosV2_hero_subtitle:
-    'Encuentra el horario y el estilo que encajan contigo y descubre cómo empezar en Farray Center de forma clara y sin compromiso.',
-  horariosV2_hero_cta: 'Recibir Horarios Completos',
-  horariosV2_hero_ctaSubtext: 'Gratis y sin compromiso',
-  horariosV2_hero_years: 'años in Barcelona',
-  horariosV2_preview_title: 'Esto es solo una muestra',
-  horariosV2_preview_subtitle: 'Tenemos muchos más horarios y estilos que mostrarte',
-  horariosV2_preview_point1: '+100 clases semanales de baile',
-  horariosV2_preview_point2: 'Horarios de mañana, tarde y noche',
-  horariosV2_preview_point3: 'Todos los niveles y edades',
-  horariosV2_preview_point4: 'Información de profesores y salas',
-  horariosV2_preview_cta: 'Recibir Horarios Completos por Email',
-  horariosV2_preview_free: 'Gratis y sin compromiso',
-  horariosV2_moreSchedules_title: 'Hay muchos más horarios disponibles',
+    'Find the schedule and style that fit you and discover how to start at Farray Center in a clear and commitment-free way.',
+  horariosV2_hero_cta: 'Get Full Schedules',
+  horariosV2_hero_ctaSubtext: 'No commitment',
+  horariosV2_hero_years: 'years in Barcelona',
+  horariosV2_preview_title: 'This is just a sample',
+  horariosV2_preview_subtitle: 'We have many more schedules and styles to show you',
+  horariosV2_preview_point1: '+100 weekly dance classes',
+  horariosV2_preview_point2: 'Morning, afternoon and evening schedules',
+  horariosV2_preview_point3: 'All levels and ages',
+  horariosV2_preview_point4: 'Teacher and studio information',
+  horariosV2_preview_cta: 'Get Full Schedules by Email',
+  horariosV2_preview_free: 'No commitment',
+  horariosV2_moreSchedules_title: 'There are many more schedules available',
   horariosV2_moreSchedules_desc:
-    'Los horarios que ves aquí son solo una selección. Para ver todos los horarios disponibles, incluyendo clases de noche y fines de semana, solicita la información completa.',
-  horariosV2_moreSchedules_cta: 'Ver Todos los Horarios',
-  horariosV2_sample_preview_label: 'Muestra de horarios - Para ver todos, solicita info',
-  horariosV2_trust_noCommitment: 'Sin permanencia',
-  horariosV2_trust_byLevel: 'Grupos por nivel',
-  horariosV2_trust_freeClass: 'Primera clase gratuita',
-  horariosV2_authority_since2017: 'Desde 2017',
+    'The schedules you see here are just a selection. To see all available schedules, including evening and weekend classes, request the complete information.',
+  horariosV2_moreSchedules_cta: 'View All Schedules',
+  horariosV2_sample_preview_label: 'Schedule sample - To see all, request info',
+  horariosV2_trust_noCommitment: 'No minimum stay',
+  horariosV2_trust_byLevel: 'Groups by level',
+  horariosV2_trust_freeClass: 'Welcome class',
+  horariosV2_authority_since2017: 'Since 2017',
   horariosV2_authority_cidUnesco: 'CID-UNESCO',
-  horariosV2_authority_members: '+15.000 socios',
-  horariosV2_authority_styles: '+25 estilos',
+  horariosV2_authority_members: '+15,000 members',
+  horariosV2_authority_styles: '+25 styles',
   horariosV2_authority_rating: '4.9/5 Google',
-  horariosV2_authority_teachers: 'Profesores certificados',
-  horariosV2_orientation_title: 'Antes de elegir un horario, ten en cuenta esto',
-  horariosV2_orientation_subtitle:
-    'No te preocupes si es tu primera vez. Estamos aquí para ayudarte.',
-  horariosV2_orientation_noExperience: 'No necesitas experiencia previa en muchas actividades',
-  horariosV2_orientation_byLevel: 'Los grupos se organizan por nivel',
-  horariosV2_orientation_startAnytime: 'Puedes empezar en cualquier momento del año',
-  horariosV2_orientation_weHelp: 'Te ayudamos a elegir el grupo adecuado',
-  horariosV2_filter_title: 'Encuentra lo que encaja contigo',
-  horariosV2_filter_subtitle: 'Selecciona el momento del día o el estilo que prefieres',
-  horariosV2_filter_step1: 'Por horario',
-  horariosV2_filter_step2: 'Por estilo',
+  horariosV2_authority_teachers: 'Certified teachers',
+  horariosV2_orientation_title: 'Before choosing a schedule, keep this in mind',
+  horariosV2_orientation_subtitle: "Don't worry if it's your first time. We're here to help you.",
+  horariosV2_orientation_noExperience: 'No prior experience needed for many activities',
+  horariosV2_orientation_byLevel: 'Groups are organised by level',
+  horariosV2_orientation_startAnytime: 'You can start at any time of the year',
+  horariosV2_orientation_weHelp: 'We help you choose the right group',
+  horariosV2_filter_title: 'Find what fits you',
+  horariosV2_filter_subtitle: 'Select the time of day or style you prefer',
+  horariosV2_filter_step1: 'By schedule',
+  horariosV2_filter_step2: 'By style',
   horariosV2_filter_or: 'o',
-  horariosV2_filter_morning: 'Mañanas',
-  horariosV2_filter_afternoon: 'Tardes',
-  horariosV2_filter_evening: 'Noches',
-  horariosV2_filter_danza: 'Danza',
+  horariosV2_filter_morning: 'Mornings',
+  horariosV2_filter_afternoon: 'Afternoons',
+  horariosV2_filter_evening: 'Evenings',
+  horariosV2_filter_danza: 'Dance',
   horariosV2_filter_latino: 'Salsa & Bachata',
-  horariosV2_filter_urbano: 'Urbano',
-  horariosV2_filter_fitness: 'Prep. Física',
-  horariosV2_matrix_title: 'Vista rápida de disponibilidad',
-  horariosV2_matrix_available: 'Disponible',
-  horariosV2_matrix_unavailable: 'Sin clases',
-  horariosV2_day_monday: 'Lunes',
-  horariosV2_day_tuesday: 'Martes',
-  horariosV2_day_wednesday: 'Miércoles',
-  horariosV2_day_thursday: 'Jueves',
-  horariosV2_day_friday: 'Viernes',
-  horariosV2_day_saturday: 'Sábado',
-  horariosV2_day_sunday: 'Domingo',
-  horariosV2_block_morning_title: 'Clases de baile por la mañana in Barcelona',
-  horariosV2_block_morning_subtitle: 'Afro · Jazz · Contemporáneo · Preparación física',
-  horariosV2_block_evening_title: 'Clases de baile por la tarde y noche in Barcelona',
-  horariosV2_block_evening_subtitle: 'Afro · Jazz · Ballet · Contemporáneo',
-  horariosV2_block_salsa_title: 'Horarios de salsa y bachata in Barcelona',
-  horariosV2_block_salsa_subtitle: 'Social · Progresivo · Todos los niveles',
-  horariosV2_block_urbano_title: 'Clases de baile urbano in Barcelona',
+  horariosV2_filter_urbano: 'Urban',
+  horariosV2_filter_fitness: 'Fitness Prep',
+  horariosV2_matrix_title: 'Quick availability view',
+  horariosV2_matrix_available: 'Available',
+  horariosV2_matrix_unavailable: 'No classes',
+  horariosV2_day_monday: 'Monday',
+  horariosV2_day_tuesday: 'Tuesday',
+  horariosV2_day_wednesday: 'Wednesday',
+  horariosV2_day_thursday: 'Thursday',
+  horariosV2_day_friday: 'Friday',
+  horariosV2_day_saturday: 'Saturday',
+  horariosV2_day_sunday: 'Sunday',
+  horariosV2_block_morning_title: 'Morning dance classes in Barcelona',
+  horariosV2_block_morning_subtitle: 'Afro · Jazz · Contemporary · Physical preparation',
+  horariosV2_block_evening_title: 'Afternoon and evening dance classes in Barcelona',
+  horariosV2_block_evening_subtitle: 'Afro · Jazz · Ballet · Contemporary',
+  horariosV2_block_salsa_title: 'Salsa and bachata schedules in Barcelona',
+  horariosV2_block_salsa_subtitle: 'Social · Progressive · All levels',
+  horariosV2_block_urbano_title: 'Urban dance classes in Barcelona',
   horariosV2_block_urbano_subtitle: 'Afrobeats · Dancehall · Hip Hop · Reggaeton · Heels · Twerk',
-  horariosV2_block_showMore: 'Ver más clases',
+  horariosV2_block_showMore: 'See more classes',
   horariosV2_block_disclaimer:
-    'Horarios orientativos. Asignación definitiva según nivel y disponibilidad.',
-  horariosV2_cta_morning: 'Ver plazas disponibles para mañanas',
-  horariosV2_cta_evening: 'Ver grupos por nivel',
-  horariosV2_cta_salsa: 'Encontrar mi grupo de salsa ideal',
-  horariosV2_cta_urbano: 'Descubrir actividades urbanas',
+    'Indicative schedules. Final assignment according to level and availability.',
+  horariosV2_cta_morning: 'See available spots for mornings',
+  horariosV2_cta_evening: 'See groups by level',
+  horariosV2_cta_salsa: 'Find my ideal salsa group',
+  horariosV2_cta_urbano: 'Discover urban activities',
   horariosV2_testimonial_morning:
-    'Las clases de mañana me cambiaron la rutina. Ahora empiezo el día con energía.',
-  horariosV2_testimonial_morning_author: 'María, 34 años',
-  horariosV2_testimonial_evening: 'Después del trabajo, bailar es mi mejor forma de desconectar.',
-  horariosV2_testimonial_evening_author: 'Carlos, 28 años',
-  horariosV2_testimonial_salsa: 'Empecé sin saber nada y ahora no me pierdo una clase de bachata.',
-  horariosV2_testimonial_salsa_author: 'Laura, 31 años',
+    'Morning classes changed my routine. Now I start the day with energy.',
+  horariosV2_testimonial_morning_author: 'Maria, 34 years old',
+  horariosV2_testimonial_evening: 'After work, dancing is my best way to unwind.',
+  horariosV2_testimonial_evening_author: 'Carlos, 28 years old',
+  horariosV2_testimonial_salsa: 'I started knowing nothing and now I never miss a bachata class.',
+  horariosV2_testimonial_salsa_author: 'Laura, 31 years old',
   horariosV2_testimonial_urbano:
-    'El ambiente es increíble. Te sientes parte de una familia desde el primer día.',
-  horariosV2_testimonial_urbano_author: 'Pablo, 25 años',
-  horariosV2_badge_popular: 'Más demandado',
-  horariosV2_badge_limited: 'Plazas limitadas',
-  horariosV2_badge_new: 'Nuevo',
+    'The atmosphere is incredible. You feel part of a family from day one.',
+  horariosV2_testimonial_urbano_author: 'Pablo, 25 years old',
+  horariosV2_badge_popular: 'Most popular',
+  horariosV2_badge_limited: 'Limited spots',
+  horariosV2_badge_new: 'New',
   horariosV2_badge_smallGroup: 'Small groups',
-  horariosV2_card_teacher: 'Profesor/a',
-  horariosV2_card_reminder: 'Recordar',
-  horariosV2_card_share: 'Compartir',
-  horariosV2_levels_title: '¿Qué significan los niveles?',
-  horariosV2_levels_subtitle:
-    'Te ayudamos a encontrar el grupo perfecto para tu experiencia actual.',
+  horariosV2_card_teacher: 'Teacher',
+  horariosV2_card_reminder: 'Remind',
+  horariosV2_card_share: 'Share',
+  horariosV2_levels_title: 'What do the levels mean?',
+  horariosV2_levels_subtitle: 'We help you find the perfect group for your current experience.',
   horariosV2_level_principiantes: 'Beginners',
   horariosV2_level_principiantes_desc:
-    'Empiezas desde cero. No tienes experiencia previa en este estilo. Te guiaremos paso a paso.',
-  horariosV2_level_basico: 'Básico',
+    "You start from scratch. You have no prior experience in this style. We'll guide you step by step.",
+  horariosV2_level_basico: 'Basic',
   horariosV2_level_basico_desc:
-    'Conoces los fundamentos. Has practicado algo antes pero aún estás aprendiendo las bases.',
+    "You know the fundamentals. You've practised a bit before but are still learning the basics.",
   horariosV2_level_intermedio: 'Intermediate',
   horariosV2_level_intermedio_desc:
-    'Dominas la técnica básica. Puedes seguir coreografías y quieres perfeccionar tu estilo.',
-  horariosV2_level_avanzado: 'Avanzado',
+    "You've mastered basic technique. You can follow choreographies and want to perfect your style.",
+  horariosV2_level_avanzado: 'Advanced',
   horariosV2_level_avanzado_desc:
-    'Alto dominio técnico. Buscas retos, coreografías complejas y preparación para escenario.',
+    "High technical mastery. You're looking for challenges, complex choreographies and stage preparation.",
   horariosV2_level_open: 'Open Level',
   horariosV2_level_open_desc:
-    'Todos los niveles mezclados. Cada uno trabaja a su ritmo con adaptaciones del profesor.',
-  horariosV2_level_intermedioAvanzado: 'Intermediate-Avanzado',
+    'All levels mixed. Everyone works at their own pace with adaptations from the teacher.',
+  horariosV2_level_intermedioAvanzado: 'Intermediate-Advanced',
   horariosV2_levels_helpText:
-    '¿No sabes cuál es tu nivel? No te preocupes, te orientamos personalmente antes de empezar.',
-  horariosV2_season_current: 'Actual',
-  horariosV2_season_winter: 'Horario de invierno',
-  horariosV2_season_winter_desc: 'Estos son los horarios actuales (septiembre - junio).',
-  horariosV2_season_summer: 'Horario de verano',
-  horariosV2_season_summer_desc:
-    'Los horarios pueden variar en julio y agosto. Consulta disponibilidad.',
-  horariosV2_howToStart_title: 'Cómo empezar en Farray Center',
-  horariosV2_howToStart_subtitle: 'Cuatro pasos sencillos para comenzar tu aventura en el baile',
-  horariosV2_howToStart_step1: 'Recibe la información completa',
-  horariosV2_howToStart_step2: 'Valora horarios y niveles',
-  horariosV2_howToStart_step3: 'Ven a conocernos (opcional)',
-  horariosV2_howToStart_step4: 'Empieza cuando te sientas listo/a',
-  horariosV2_howToStart_cta: 'Descubre Cómo Empezar',
-  horariosV2_howToStart_microcopy: 'Sin compromiso · Información clara · A tu ritmo',
-  horariosV2_faq_title: 'Preguntas frecuentes sobre los horarios de nuestras clases de baile',
-  horariosV2_faq_subtitle: 'Las respuestas a las dudas más comunes sobre nuestras clases',
-  horariosV2_faq1_q: '¿Puedo empezar clases de baile aunque no tenga experiencia?',
+    "Don't know your level? Don't worry, we'll guide you personally before you start.",
+  horariosV2_season_current: 'Current',
+  horariosV2_season_winter: 'Winter schedule',
+  horariosV2_season_winter_desc: 'These are the current schedules (September - June).',
+  horariosV2_season_summer: 'Summer schedule',
+  horariosV2_season_summer_desc: 'Schedules may vary in July and August. Check availability.',
+  horariosV2_howToStart_title: 'How to start at Farray Center',
+  horariosV2_howToStart_subtitle: 'Four simple steps to begin your dance adventure',
+  horariosV2_howToStart_step1: 'Receive the complete information',
+  horariosV2_howToStart_step2: 'Evaluate schedules and levels',
+  horariosV2_howToStart_step3: 'Come meet us (optional)',
+  horariosV2_howToStart_step4: 'Start when you feel ready',
+  horariosV2_howToStart_cta: 'Discover How to Start',
+  horariosV2_howToStart_microcopy: 'No commitment · Clear information · At your own pace',
+  horariosV2_faq_title: 'Frequently asked questions about our dance class schedules',
+  horariosV2_faq_subtitle: 'Answers to the most common questions about our classes',
+  horariosV2_faq1_q: 'Can I start dance classes even if I have no experience?',
   horariosV2_faq1_a:
-    'Sí. Muchas de nuestras clases están pensadas para personas que empiezan desde cero. Además, te ayudamos a elegir el grupo adecuado según tu experiencia y objetivos.',
-  horariosV2_faq2_q: '¿Tengo que elegir un horario fijo desde el primer día?',
+    'Yes. Many of our classes are designed for people starting from scratch. Plus, we help you choose the right group based on your experience and goals.',
+  horariosV2_faq2_q: 'Do I have to choose a fixed schedule from day one?',
   horariosV2_faq2_a:
-    'Como club deportivo, trabajamos con horarios organizados por nivel. Una vez te orientamos, podrás elegir el horario que mejor encaje contigo dentro de las opciones disponibles.',
-  horariosV2_faq3_q: '¿Puedo cambiar de horario o de estilo más adelante?',
+    'As a sports club, we work with schedules organised by level. Once we guide you, you can choose the schedule that best fits you from the available options.',
+  horariosV2_faq3_q: 'Can I change my schedule or style later?',
   horariosV2_faq3_a:
-    'Sí. Nuestros socios pueden adaptar su participación según disponibilidad y evolución, siempre que haya plazas disponibles en el grupo.',
-  horariosV2_faq4_q: '¿Hay clases por la mañana y por la tarde?',
+    'Yes. Our members can adapt their participation according to availability and progress, as long as there are spots available in the group.',
+  horariosV2_faq4_q: 'Are there morning and afternoon classes?',
   horariosV2_faq4_a:
-    'Sí. Ofrecemos clases de baile tanto por la mañana como por la tarde y noche, según el estilo y la temporada.',
-  horariosV2_faq5_q: '¿Los horarios son siempre los mismos todo el año?',
+    'Yes. We offer dance classes in the morning as well as afternoon and evening, depending on the style and season.',
+  horariosV2_faq5_q: 'Are the schedules always the same throughout the year?',
   horariosV2_faq5_a:
-    'Los horarios son orientativos y pueden variar según la temporada, el nivel y la disponibilidad de plazas. Siempre te enviamos la información actualizada antes de empezar.',
-  horariosV2_faq6_q: '¿Puedo probar una clase antes de inscribirme?',
+    'Schedules are indicative and may vary according to season, level and availability. We always send you updated information before you start.',
+  horariosV2_faq6_q: 'Can I try a class before signing up?',
   horariosV2_faq6_a:
     'Mira, lo importante es que pruebes. Según la temporada, la clase de prueba para residentes puede ser gratuita o tener un precio simbólico de bienvenida. La idea es que puedas probar la experiencia sin compromiso.',
-  horariosV2_faq7_q: '¿Dónde está Farray Center y a quién van dirigidas las actividades de baile?',
+  horariosV2_faq7_q: 'Where is Farray Center and who are the dance activities aimed at?',
   horariosV2_faq7_a:
-    'Estamos en Calle Entença nº 100 in Barcelona y nuestras clases están dirigidas a adultos de todos los niveles que quieren aprender, mejorar o disfrutar del baile en un entorno profesional y cercano.',
+    "We're at Calle Entença 100 in Barcelona and our classes are aimed at adults of all levels who want to learn, improve or enjoy dancing in a professional and welcoming environment.",
   horariosV2_emotional_close:
-    'No se trata solo de encajar una clase en tu agenda. Se trata de encontrar un lugar donde disfrutar, progresar y sentirte parte de una comunidad.',
-  horariosV2_whatsapp_cta: '¿Tienes más dudas? Escríbenos por WhatsApp',
+    "It's not just about fitting a class into your schedule. It's about finding a place to enjoy, progress and feel part of a community.",
+  horariosV2_whatsapp_cta: 'Have more questions? Message us on WhatsApp',
   horariosV2_footer_legal:
-    'Los horarios y plazas mostrados son orientativos y pueden variar según temporada, nivel y disponibilidad. La asignación definitiva de grupo se realiza de forma personalizada tras solicitar información.',
-  horariosV2_nav_ariaLabel: 'Navegación rápida de secciones de horarios',
-  horariosV2_nav_progressLabel: 'Progreso de lectura',
-  horariosV2_nav_morning: 'Mañanas',
-  horariosV2_nav_evening: 'Tardes',
+    'Schedules and spots shown are indicative and may vary according to season, level and availability. Final group assignment is done on a personalised basis after requesting information.',
+
+  // Schema Keywords (SEO/GEO/AIEO)
+  horariosV2_schema_keywords:
+    'dance class schedule barcelona, salsa classes barcelona timetable, bachata barcelona schedule, hip hop barcelona classes, contemporary dance barcelona, morning dance classes barcelona, evening dance classes barcelona, dance school barcelona',
+
+  horariosV2_nav_ariaLabel: 'Quick navigation of schedule sections',
+  horariosV2_nav_progressLabel: 'Reading progress',
+  horariosV2_nav_morning: 'Mornings',
+  horariosV2_nav_evening: 'Evenings',
   horariosV2_nav_salsa: 'Salsa',
-  horariosV2_nav_urbano: 'Urbano',
-  horariosV2_nav_levels: 'Niveles',
+  horariosV2_nav_urbano: 'Urban',
+  horariosV2_nav_levels: 'Levels',
   horariosV2_nav_faq: 'FAQ',
   horariosV2_style_afroJazz: 'Afro Jazz',
-  horariosV2_style_contemporaneo: 'Contemporáneo',
-  horariosV2_style_contemporaneoLirico: 'Contemporáneo Lírico & Flow',
+  horariosV2_style_contemporaneo: 'Contemporary',
+  horariosV2_style_contemporaneoLirico: 'Lyrical Contemporary & Flow',
   horariosV2_style_modernJazz: 'Modern Jazz',
   horariosV2_style_pilates: 'Pilates',
   horariosV2_style_stretching: 'Stretching',
   horariosV2_style_barre: 'Barre',
-  horariosV2_style_afroContemporaneo: 'Afro Contemporáneo',
-  horariosV2_style_ballet: 'Ballet Clásico',
+  horariosV2_style_afroContemporaneo: 'Afro Contemporary',
+  horariosV2_style_ballet: 'Classical Ballet',
   horariosV2_style_bachata: 'Bachata',
   horariosV2_style_salsaCubana: 'Salsa Cubana',
   horariosV2_style_ladyStyle: 'Lady Style',
   horariosV2_style_timba: 'Timba',
   horariosV2_style_afrobeats: 'Afrobeats',
   horariosV2_style_dancehall: 'Dancehall',
-  horariosV2_style_hipHop: 'Hip Hop Urbano',
-  horariosV2_style_reggaeton: 'Reggaeton Comercial',
+  horariosV2_style_hipHop: 'Urban Hip Hop',
+  horariosV2_style_reggaeton: 'Commercial Reggaeton',
   horariosV2_style_heels: 'Heels',
   horariosV2_style_sexyStyle: 'Sexy Style',
   horariosV2_style_twerk: 'Twerk',
-  horariosV2_hero_subtitle2: 'Encuentra el horario perfecto para ti',
-  horariosV2_weekly_classes: 'clases semanales',
-  horariosV2_trust_noExperience: 'No necesitas experiencia',
+  horariosV2_hero_subtitle2: 'Find the perfect schedule for you',
+  horariosV2_weekly_classes: 'weekly classes',
+  horariosV2_trust_noExperience: 'No experience needed',
   horariosV2_preview_text1:
-    'Los horarios que ves aquí son solo una muestra. Tenemos más de 100 clases semanales de baile en diferentes estilos y niveles.',
-  horariosV2_preview_includes: 'La información completa incluye:',
-  horariosV2_howItWorks_title: 'Cómo funcionan nuestros horarios',
+    'The schedules you see here are just a sample. We have over 100 weekly dance classes in different styles and levels.',
+  horariosV2_preview_includes: 'The complete information includes:',
+  horariosV2_howItWorks_title: 'How our schedules work',
   horariosV2_howItWorks_text:
-    'Organizamos las clases por bloques horarios y niveles para que encuentres fácilmente el que mejor encaja contigo.',
-  horariosV2_reassurance1: 'Clases de mañana, tarde y noche',
-  horariosV2_reassurance2: 'Todos los niveles',
+    'We organise classes by time blocks and levels so you can easily find the one that best fits you.',
+  horariosV2_reassurance1: 'Morning, afternoon and evening classes',
+  horariosV2_reassurance2: 'All levels',
   horariosV2_reassurance3: 'Small groups',
-  horariosV2_reassurance4: 'Ambiente acogedor',
-  horariosV2_blocks_title: 'Bloques de Horarios',
+  horariosV2_reassurance4: 'Welcoming atmosphere',
+  horariosV2_blocks_title: 'Schedule Blocks',
   horariosV2_blocks_subtitle:
-    'Cada bloque agrupa clases en franjas horarias similares. Elige el que mejor se adapte a tu día a día.',
-  horariosV2_classes_available: 'clases disponibles',
-  horariosV2_see_schedule: 'Ver horarios completos',
-  horariosV2_blocks_cta: 'Recibir Todos los Horarios',
-  horariosV2_block_morning_ex1: 'Afro Jazz 10:30h',
-  horariosV2_block_morning_ex2: 'Contemporáneo 11:45h',
-  horariosV2_block_morning_ex3: 'Pilates y Stretching',
-  horariosV2_block_urbano_ex1: 'Afrobeats y Dancehall',
-  horariosV2_block_urbano_ex2: 'Hip Hop y Reggaeton',
-  horariosV2_block_urbano_ex3: 'Heels y Twerk',
+    'Each block groups classes in similar time slots. Choose the one that best fits your daily routine.',
+  horariosV2_classes_available: 'classes available',
+  horariosV2_see_schedule: 'View full schedules',
+  horariosV2_blocks_cta: 'Get All Schedules',
+  horariosV2_block_morning_ex1: 'Afro Jazz 10:30am',
+  horariosV2_block_morning_ex2: 'Contemporary 11:45am',
+  horariosV2_block_morning_ex3: 'Pilates and Stretching',
+  horariosV2_block_urbano_ex1: 'Afrobeats and Dancehall',
+  horariosV2_block_urbano_ex2: 'Hip Hop and Reggaeton',
+  horariosV2_block_urbano_ex3: 'Heels and Twerk',
+  'horariosV2_block_evening-danza_ex1': 'Ballet 6:00pm',
+  'horariosV2_block_evening-danza_ex2': 'Modern Jazz 7:15pm',
+  'horariosV2_block_evening-danza_ex3': 'Contemporary 8:30pm',
+  'horariosV2_block_salsa-bachata_ex1': 'Salsa Cubana all levels',
+  'horariosV2_block_salsa-bachata_ex2': 'Sensual Bachata',
+  'horariosV2_block_salsa-bachata_ex3': 'Lady Style',
   horariosV2_level_beginner: 'Beginner',
-  horariosV2_level_beginner_desc: 'Empiezas desde cero',
-  horariosV2_level_basic: 'Básico',
-  horariosV2_level_basic_desc: 'Conoces los fundamentos',
+  horariosV2_level_beginner_desc: 'You start from scratch',
+  horariosV2_level_basic: 'Basic',
+  horariosV2_level_basic_desc: 'You know the fundamentals',
   horariosV2_level_intermediate: 'Intermediate',
-  horariosV2_level_intermediate_desc: 'Dominas la técnica básica',
-  horariosV2_level_advanced: 'Avanzado',
-  horariosV2_level_advanced_desc: 'Alto dominio técnico',
-  horariosV2_whyNotAll_title: '¿Por qué no mostramos todos los horarios?',
+  horariosV2_level_intermediate_desc: "You've mastered basic technique",
+  horariosV2_level_advanced: 'Advanced',
+  horariosV2_level_advanced_desc: 'High technical mastery',
+  horariosV2_whyNotAll_title: "Why don't we show all schedules?",
   horariosV2_whyNotAll_text1:
-    'Porque cada persona es diferente. Queremos ayudarte a encontrar el grupo perfecto según tu nivel, tu disponibilidad y tus objetivos.',
+    'Because everyone is different. We want to help you find the perfect group according to your level, availability and goals.',
   horariosV2_whyNotAll_text2:
-    'Por eso preferimos enviarte la información completa y personalizada por email.',
-  horariosV2_testimonials_title: 'Lo que dicen nuestros alumnos',
+    "That's why we prefer to send you the complete and personalised information by email.",
+  horariosV2_testimonials_title: 'What our students say',
   horariosV2_testimonial1:
-    'Las clases de mañana me cambiaron la rutina. Ahora empiezo el día con energía y buen humor.',
+    'Morning classes changed my routine. Now I start the day with energy and good mood.',
   horariosV2_testimonial2:
-    'Después del trabajo, bailar es mi mejor forma de desconectar. El ambiente es increíble.',
+    'After work, dancing is my best way to unwind. The atmosphere is incredible.',
   horariosV2_testimonial3:
-    'Empecé sin saber nada y ahora no me pierdo una clase. Los profes son lo mejor.',
-  horariosV2_cta_title: 'Tu próximo paso',
-  horariosV2_cta_emotional1: 'No se trata solo de encajar una clase en tu agenda.',
+    'I started knowing nothing and now I never miss a class. The teachers are the best.',
+  horariosV2_cta_title: 'Your next step',
+  horariosV2_cta_emotional1: "It's not just about fitting a class into your schedule.",
   horariosV2_cta_emotional2:
-    'Se trata de encontrar un lugar donde disfrutar, progresar y sentirte parte de una comunidad.',
-  horariosV2_cta_primary: 'Recibir Horarios Completos',
-  horariosV2_cta_subtext: 'Gratis y sin compromiso - Te contactamos de manera inmediata',
+    "It's about finding a place to enjoy, progress and feel part of a community.",
+  horariosV2_cta_primary: 'Get Full Schedules',
+  horariosV2_cta_subtext: 'No commitment - We contact you immediately',
 
   blogBeneficiosSalsa_excerpt:
     'Bailar salsa no es solo divertido: es una de las actividades más completas para tu salud física, mental y social.',
@@ -12491,14 +12860,17 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   // === PREPARE CLASS SECTION ===
   bachataV3PrepareTitle: 'Prepare for Your First Class',
   bachataV3PrepareSubtitle: 'Everything you need to know before starting',
+  bachataV3PrepareWhatToBring: 'What to bring',
   bachataV3PrepareWhatToBring1: 'Comfortable clothes',
   bachataV3PrepareWhatToBring2: 'Dance shoes or clean sneakers',
   bachataV3PrepareWhatToBring3: 'Water bottle',
   bachataV3PrepareWhatToBring4: 'Good attitude',
   bachataV3PrepareWhatToBring5: 'You can come alone or as a couple',
+  bachataV3PrepareBefore: 'Before arriving',
   bachataV3PrepareBefore1: 'Eat something light 1-2 hours before',
   bachataV3PrepareBefore2: 'Stretch at home if you can',
   bachataV3PrepareBefore3: 'Arrive 10 minutes early on your first day',
+  bachataV3PrepareAvoid: 'Avoid',
   bachataV3PrepareAvoid1: 'Eating too much right before class',
   bachataV3PrepareAvoid2: 'Coming in without having hydrated',
   bachataV3PrepareAvoid3: 'Wearing jewelry that could scratch',
@@ -12589,8 +12961,29 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   bachataV3CulturalHistoryTitle: 'The History of Bachata: From Dominican Republic to the World',
   bachataV3CulturalShort:
     'Bachata was born in the Dominican Republic in the 1960s as music of popular neighborhoods. What started as music stigmatized by the upper classes became a global phenomenon.',
-  bachataV3CulturalFull:
-    "Bachata was born in the Dominican Republic in the 1960s as music of popular neighborhoods. What started as music stigmatized by the upper classes became a global phenomenon after Juan Luis Guerra's success in the 1990s. Sensual bachata emerged in Spain and Europe in the 2010s, adding body movement and couple connection elements that revolutionized social dancing. Today, bachata is danced worldwide and sensual bachata is the most popular style in Europe, especially in cities like Barcelona where schools like Farray's train thousands of students every year.",
+  bachataV3CulturalFull: `### From Dominican Neighborhoods to Dance Floors Around the World
+
+Bachata has its roots in the Dominican Republic, where it was born in the 1960s as the music of humble neighborhoods. For decades it was marginalized by the upper classes, considered cantina music. Everything changed in the 1990s when artists like Juan Luis Guerra brought it into the international mainstream.
+
+**"Bachata was born in the Dominican Republic (1960s): guitar music from popular neighborhoods that evolved to conquer the world."**
+
+### The Sensual Bachata Revolution
+
+In the 2000s, European dancers (especially in Spain) began fusing traditional bachata with elements of zouk, contemporary dance, and tango. Thus sensual bachata was born: a style that prioritizes body waves, intimate connection, and musical interpretation.
+
+**"Sensual Bachata: modern evolution (2000s) that fuses Dominican bachata with zouk, contemporary, and tango. Prioritizes body waves, connection, and musicality."**
+
+### Sensual Bachata vs Dominican Bachata
+
+Traditional Dominican bachata is characterized by fast footwork, pronounced hip movements, and a more "street" style. Sensual bachata, on the other hand, emphasizes body movement, waves between dancers, dips, and a closer connection.
+
+**"Key difference: Dominican = footwork and hips. Sensual = body waves, dips, and intimate connection."**
+
+### Sensual Bachata in Barcelona
+
+Barcelona has become one of the world epicenters of sensual bachata. Festivals, congresses, and an active community of dancers make the city a must-visit destination for dance lovers. At Farray's Center, we teach sensual bachata with internationally renowned instructors.
+
+**"Farray's International Dance Center: sensual bachata with world champions, CID-UNESCO certification, +15,000 students trained."**`,
 
   // === FAQ SECTION ===
   bachataV3FaqTitle: 'Frequently Asked Questions about Sensual Bachata',
@@ -12672,6 +13065,8 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogSalsaRitmo_excerpt:
     'From the Caribbean to the world: history, styles and how to learn salsa in Barcelona',
   blogSalsaRitmo_breadcrumbCurrent: 'Salsa: the Rhythm that Conquered the World',
+  blogSalsaRitmo_heroAlt:
+    'Dancers dancing Cuban salsa in Barcelona, representing this Latin style that conquered the world from New York, Cali and Puerto Rico',
 
   // === SUMMARY BULLETS ===
   blogSalsaRitmo_summaryBullet1:
@@ -12813,6 +13208,16 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogSalsaRitmo_refScienceDirectTitle: 'Synchronized Dancing, Endorphins and Social Bonding',
   blogSalsaRitmo_refScienceDirectDesc:
     'Scientific study on endorphin release and social cohesion through synchronized dancing.',
+
+  // Enterprise 10/10 GEO Keys
+  blogSalsaRitmo_statDemenciaLabel: 'reduced risk of dementia with frequent dancing',
+  blogSalsaRitmo_answerOrigen: '',
+  blogSalsaRitmo_answerOrigenQ: 'Where and when was salsa born?',
+  blogSalsaRitmo_answerOrigenA:
+    'Salsa was born in New York during the 1960s, as a fusion of Cuban rhythms (son, mambo, cha-cha-chá) and Puerto Rican sounds with American jazz. Latino musicians from El Barrio and the South Bronx created this genre that today is danced in more than 100 countries, with distinctive styles in Cuba, Cali, Puerto Rico and LA.',
+  blogSalsaRitmo_defSalsaTerm: 'Salsa (dance)',
+  blogSalsaRitmo_defSalsa:
+    'Musical genre and dance style originated in New York in the 1960s. It fuses Afro-Cuban rhythms (son, mambo, cha-cha-chá) with Puerto Rican influences and jazz. It is characterized by its syncopated clave rhythm, steps on counts 1-2-3, 5-6-7 and a dynamic partner style with turns and figures. Multiple styles exist: Cuban (casino), on line (LA/NY), Caleña and Puerto Rican.',
 
   // =====================================================
   // TWERK LANDING PAGE
@@ -15162,6 +15567,8 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogHistoriaBachata_excerpt:
     'From Dominican barrios to Barcelona: history, icons and how to learn sensual bachata',
   blogHistoriaBachata_breadcrumbCurrent: 'History of Bachata',
+  blogHistoriaBachata_heroAlt:
+    'Dance group dancing sensual bachata in Barcelona, reflecting the genre evolution from Dominican Republic barrios to UNESCO Heritage 2019',
   blogHistoriaBachata_summaryBullet1:
     'Origin Dominican Republic 1960s: fusion bolero + son + merengue',
   blogHistoriaBachata_summaryBullet2: 'José Manuel Calderón: father of bachata (1962)',
@@ -15169,6 +15576,14 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogHistoriaBachata_summaryBullet4: "Barcelona: European bachata capital with Farray's",
   blogHistoriaBachata_statCalderonLabel: 'First bachata recording',
   blogHistoriaBachata_statUNESCOLabel: 'UNESCO Intangible Heritage',
+  blogHistoriaBachata_statDemenciaLabel: 'reduced risk of dementia with frequent dancing',
+  blogHistoriaBachata_answerOrigen: '',
+  blogHistoriaBachata_answerOrigenQ: 'What is the origin of bachata?',
+  blogHistoriaBachata_answerOrigenA:
+    'Bachata was born in the Dominican Republic in the 1960s, emerging from the marginal neighborhoods of Santo Domingo. José Manuel Calderón recorded the first song recognized as bachata in 1962. Originally looked down upon by elites, it evolved until being declared Intangible Cultural Heritage of Humanity by UNESCO in 2019.',
+  blogHistoriaBachata_defBachataTerm: 'Bachata',
+  blogHistoriaBachata_defBachata:
+    'Musical genre and dance style originated in the Dominican Republic in the 1960s. It is characterized by its distinctive guitar rhythm, romantic or melancholic lyrics, and partner dancing with hip movement, side steps and turns. Recognized by UNESCO as Intangible Heritage in 2019.',
   blogHistoriaBachata_intro:
     'Bachata bursts in like a sensual sequence shot: bodies merging in perfect sway, guitars crying heartbreak and a rhythm born in the marginal barrios of Santo Domingo to conquer dance floors worldwide. According to [Peter Manuel (1995)](https://books.google.com/books/about/Caribbean_Currents.html?id=TUUhDQAAQBAJ), bachata represents a unique fusion of romantic bolero, Cuban son and Dominican merengue that crystallized in the 60s.',
   blogHistoriaBachata_introFarrays:
@@ -15321,6 +15736,8 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogClasesSalsaBarcelona_excerpt:
     'The dance floor as a space for connection: salsa is a universal language spoken by men and women',
   blogClasesSalsaBarcelona_breadcrumbCurrent: "Let's talk salsa",
+  blogClasesSalsaBarcelona_heroAlt:
+    'Couple connecting through salsa dancing on Barcelona social dance floor, expressing non-verbal communication and the universal language of Latin rhythm',
   blogClasesSalsaBarcelona_summaryBullet1:
     'The dance floor: a stage where men and women share more than a hobby',
   blogClasesSalsaBarcelona_summaryBullet2:
@@ -15348,6 +15765,72 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     "And if you want to learn this language, do it with teachers who think like you; who not only give wings to your feet, but also to your mind; who teach you the basics of the language with rigor, while infecting you with the emotion of the bright future that awaits you. At Farray's, we know how to speak and teach salsa. And timba, and rumba, and son, and bachata, and kizomba, and afro contemporary, and jazz, and reggaeton, and hip-hop, and dancehall... It's our language, our culture, our passion. And we feel very happy to transmit it!",
   blogClasesSalsaBarcelona_ctaClases:
     '**Want to start speaking salsa?** Discover our <a href="/en/clases/salsa-cubana-barcelona">Cuban Salsa classes</a>, <a href="/en/clases/salsa-bachata-barcelona">Salsa and Bachata</a> or <a href="/en/clases/timba-barcelona">Timba</a>. First welcome class free. <a href="/en/horarios"><strong>See schedules and book →</strong></a>',
+
+  // === SUMMARY STATS (GEO Citations) ===
+  blogClasesSalsaBarcelona_summaryBullet4:
+    'Scientifically proven benefits for mental and social health',
+  blogClasesSalsaBarcelona_statDemenciaLabel:
+    'reduction in dementia risk with frequent social dancing',
+  blogClasesSalsaBarcelona_statEndorfinasLabel:
+    'increase in endorphin release when dancing in groups',
+  blogClasesSalsaBarcelona_statUNESCOLabel: 'year UNESCO declared Latin dances intangible heritage',
+
+  // === ANSWER CAPSULE (GEO Critical - 72% AI citation rate) ===
+  blogClasesSalsaBarcelona_answerPorQueSalsa: '',
+  blogClasesSalsaBarcelona_answerPorQueSalsaQ: 'Why does dancing salsa improve social connection?',
+  blogClasesSalsaBarcelona_answerPorQueSalsaA:
+    'Social dancing like salsa improves human connection because it synchronizes movements, activates the release of endorphins and oxytocin, and creates intense non-verbal communication between dance partners. Studies in Frontiers in Psychology (2019) show that 94% of social dance participants report significant improvements in emotional wellbeing and social skills.',
+
+  // === DEFINITION (LLM Extraction) ===
+  blogClasesSalsaBarcelona_defSalsaSocialTerm: 'Social salsa',
+  blogClasesSalsaBarcelona_defSalsaSocial:
+    'Salsa dancing in a social context (dance floor, events, parties) where partners rotate and connection, improvisation, and shared enjoyment are prioritized over fixed choreography.',
+
+  // === STATISTICS CONTENT ===
+  blogClasesSalsaBarcelona_statBienestarContent:
+    'Of social dance participants report improvements in emotional wellbeing and connection with others',
+  blogClasesSalsaBarcelona_statEndorfinasContent:
+    'Greater endorphin release when dancing in synchrony with others compared to dancing alone',
+
+  // === REFERENCES SECTION (E-E-A-T) ===
+  blogClasesSalsaBarcelona_referencesIntro:
+    'This article is backed by peer-reviewed scientific research:',
+  blogClasesSalsaBarcelona_refNEJMTitle:
+    'Leisure Activities and the Risk of Dementia in the Elderly',
+  blogClasesSalsaBarcelona_refNEJMDesc:
+    'Longitudinal study demonstrating that frequent dancing reduces dementia risk by 76%.',
+  blogClasesSalsaBarcelona_refFrontiersTitle:
+    'The Effects of Dance Movement Therapy on Psychological Well-being',
+  blogClasesSalsaBarcelona_refFrontiersDesc:
+    'Meta-analysis on the positive effects of dance on psychological wellbeing.',
+  blogClasesSalsaBarcelona_refEndorphinsTitle:
+    'Synchrony and exertion during dance independently raise pain threshold and encourage social bonding',
+  blogClasesSalsaBarcelona_refEndorphinsDesc:
+    'Research on how synchronized dancing increases endorphins and social bonds.',
+  blogClasesSalsaBarcelona_refUNESCOTitle: 'Dominican bachata - Intangible Cultural Heritage',
+  blogClasesSalsaBarcelona_refUNESCODesc:
+    "UNESCO's official declaration recognizing Latin dances as heritage of humanity.",
+
+  // === FAQ SECTION (6 FAQs for SEO Schema) ===
+  blogClasesSalsaBarcelona_faqTitle: 'Frequently asked questions about salsa classes in Barcelona',
+  blogClasesSalsaBarcelona_faq1Question: 'Do I need to come with a partner to learn salsa?',
+  blogClasesSalsaBarcelona_faq1Answer:
+    "No, you don't need to come with a partner. At Farray's we rotate during classes so everyone practices with different people. This improves your adaptability as a dancer and makes it easy to meet new people.",
+  blogClasesSalsaBarcelona_faq2Question: 'What age is recommended to start dancing salsa?',
+  blogClasesSalsaBarcelona_faq2Answer:
+    "There's no age limit for dancing salsa. We have students from 18 to over 70 years old. Dancing adapts to each person, and the cognitive and social benefits are especially valuable at all stages of life.",
+  blogClasesSalsaBarcelona_faq3Question: 'How long does it take to learn social salsa dancing?',
+  blogClasesSalsaBarcelona_faq3Answer:
+    'With regular classes (2-3 times per week), most beginners can dance socially with confidence in 2-3 months. Learning is continuous, but you will enjoy it from the very first class.',
+  blogClasesSalsaBarcelona_faq4Question: 'What are the health benefits of dancing salsa?',
+  blogClasesSalsaBarcelona_faq4Answer:
+    'Salsa dancing offers multiple benefits: cardiovascular improvement, coordination, memory (reduces dementia risk by 76% according to NEJM), endorphin release, stress reduction, and improved social skills.',
+  blogClasesSalsaBarcelona_faq5Question: 'What should I bring to my first salsa class?',
+  blogClasesSalsaBarcelona_faq5Answer:
+    "Comfortable clothes that allow movement, clean shoes with smooth soles (avoid sneakers with too much grip), and a water bottle. You don't need special dance shoes to start.",
+  blogClasesSalsaBarcelona_faq6Question: 'Why is salsa called a "universal language"?',
+  blogClasesSalsaBarcelona_faq6Answer:
+    'Salsa is a universal language because communication in dancing is non-verbal: it relies on physical contact, body signals, and shared rhythm. You can dance with someone from any country without speaking the same language.',
 
   // ============================================================================
   // BLOG ARTICLE: Dance classes for beginners in Barcelona
@@ -16456,24 +16939,24 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   bailemanananasNearbyDesc: `Somos la academy with más variedad de classes de dance by las mañanas in Barcelona. Ubicación céntrica y perfectamente comunicada entre Plaza España y Sants.`,
   bailemanananasNearbySearchText: `¿Buscas "classes dance mañanas barcelona" o "school dance schedule mañana"? Mira lo fácil que es llegar:`,
   bailemanananasNearbyMetro: `Metro: L1/L3 Espanya (5 min), L5 Sants Estació (8 min). Bus: múltiples líneas. Parking: SABA Arenas.`,
-  bailemanananasPrepareTitle: `Prepárate for tu Primera Class de Mañanas`,
+  bailemanananasPrepareTitle: `Prepare for Your First Morning Class`,
   bailemanananasPrepareSubtitle: `Everything you need to know before coming`,
   bailemanananasPrepareWhatToBring: `What to bring`,
   bailemanananasPrepareBeforeLabel: `Before coming`,
   bailemanananasPrepareAvoid: `What to avoid`,
-  bailemanananasPrepareItem1: `Ropa deportiva cómoda (leggings, camiseta transpirable)`,
-  bailemanananasPrepareItem2: `Zapatillas limpias de suela lisa`,
-  bailemanananasPrepareItem3: `Botella de agua`,
-  bailemanananasPrepareItem4: `Toalla pequeña`,
-  bailemanananasPrepareItem5: `Ganas de empezar el día bailando`,
-  bailemanananasPrepareBeforeItem1: `Desayuna algo ligero 1 hora before`,
-  bailemanananasPrepareBeforeItem2: `Hidrátate bien desde que te levantes`,
-  bailemanananasPrepareBeforeItem3: `Llega 10 min before si es tu first vez`,
-  bailemanananasPrepareAvoidItem1: `Desayunar pesado justo before de class`,
-  bailemanananasPrepareAvoidItem2: `Venir without haber dormido bien`,
-  bailemanananasPrepareAvoidItem3: `Expectativas irreales de dominar todo el primer día`,
-  bailemanananasPrepareTeacherTip: `Consejo de Alejandro`,
-  bailemanananasPrepareTeacherQuote: `Las mañanas son for despertar el body with calma y alegría. Ven without presión, disfruta del proceso y verás how el dance transforma el resto de tu día.`,
+  bailemanananasPrepareItem1: `Comfortable sportswear (leggings, breathable t-shirt)`,
+  bailemanananasPrepareItem2: `Clean sneakers with smooth soles`,
+  bailemanananasPrepareItem3: `Water bottle`,
+  bailemanananasPrepareItem4: `Small towel`,
+  bailemanananasPrepareItem5: `Eagerness to start the day dancing`,
+  bailemanananasPrepareBeforeItem1: `Have a light breakfast 1 hour before`,
+  bailemanananasPrepareBeforeItem2: `Stay well hydrated from the moment you wake up`,
+  bailemanananasPrepareBeforeItem3: `Arrive 10 minutes early if it's your first time`,
+  bailemanananasPrepareAvoidItem1: `Having a heavy breakfast right before class`,
+  bailemanananasPrepareAvoidItem2: `Coming without having slept well`,
+  bailemanananasPrepareAvoidItem3: `Unrealistic expectations of mastering everything on the first day`,
+  bailemanananasPrepareTeacherTip: `Alejandro's Tip`,
+  bailemanananasPrepareTeacherQuote: `Mornings are for waking up the body with calm and joy. Come without pressure, enjoy the process and you'll see how dancing transforms the rest of your day.`,
   bailemanananasFinalCTATitle: `Puedes seguir with el café y el "voy tarde"…`,
   bailemanananasFinalCTASubtitle: `O puedes moverte 60 minutos y llegar al turno siendo otra persona.`,
   bailemanananasFinalCTADesc: `Contemporáneo, Ballet, Dancehall, Modern Jazz, Sexy Style, Reggaeton, Twerk… Elige tu style y estrena by las mañanas.`,
@@ -16582,9 +17065,9 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   bachataV3FinalCTATitle: `Your First Sensual Bachata Class Awaits`,
   bachataV3FinalCTASubtitle: `Learn with World Champions in Barcelona`,
   bachataV3FinalCTADesc: `No importa si vienes solo o en pareja. Si nunca has bailado o si ya tienes experience. Lo importante es que des el primer paso.\\n\\nCon Mathias, Eugenia, Carlos, Noemí y Juan learnás bachata sensual de truth: technique, conexión, musicality y mucha diversión.`,
-  bachataV3FinalCTAFunny: `Ready to make waves? 🌊`,
+  bachataV3FinalCTAFunny: `Ready to make waves?`,
   fullBodyCardioPageTitle: `Cuerpo-Fit: Full Body Training and Cardio Dance in Barcelona | Farray's Center`,
-  fullBodyCardioMetaDescription: `Full Body Cardio Dance classes in Barcelona. Burn 400-500 calories, tone and have fun. Farray Method®. Mondays 8pm. Plaza España. Start today!`,
+  fullBodyCardioMetaDescription: `Cuerpo Fit cardio dance classes in Barcelona. Burn 400-500 calories, tone and have fun. Farray Method®. Mondays 8pm. Plaza España. Start today!`,
   fullBodyCardioMetaKeywords: `body fit barcelona, full body training barcelona, cardio dance barcelona, fitness classes barcelona, burn calories dancing, fitness dance barcelona, full body exercises barcelona`,
   fullBodyCardioBreadcrumbHome: `Home`,
   fullBodyCardioBreadcrumbClasses: `Classes`,
@@ -16634,15 +17117,15 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   fullBodyCardioTransform6Desc: `It's not suffering at the gym. It's having fun while getting fit.`,
   fullBodyCardioTransformCTA: `¿Por qué elegir Farray's Center for tu Cuerpo-Fit in Barcelona?`,
   fullBodyCardioLevelsTitle: `Nivel for Cuerpo-Fit`,
-  fullBodyCardioLevelBasicTitle: 'Basic Full Body Cardio',
+  fullBodyCardioLevelBasicTitle: 'Basic Cuerpo Fit',
   fullBodyCardioTeachersClosing:
-    'Our Full Body Cardio instructors combine dance with fitness, making every session both effective and enjoyable.',
+    'Our Cuerpo Fit instructors combine dance with fitness, making every session both effective and enjoyable.',
   fullBodyCardioLevelsSubtitle: `An open class for everyone`,
   fullBodyCardioLevelOpenTitle: `All levels`,
   fullBodyCardioLevelOpenDesc: `Cuerpo-Fit is open level. Each exercise has intensity variations: you choose yours. Absolute beginners work alongside experienced people, each at their own pace. No pressure, no comparisons.`,
-  fullBodyCardioTeachersTitle: `Tu Profesora for Cuerpo-Fit`,
+  fullBodyCardioTeachersTitle: `Your Cuerpo-Fit Teacher`,
   fullBodyCardioTeachersSubtitle: `Specialist in functional training and cardio dance`,
-  fullBodyCardioScheduleTitle: 'Full Body Cardio Class Schedule',
+  fullBodyCardioScheduleTitle: 'Cuerpo Fit Class Schedule',
   fullBodyCardioScheduleSubtitle: 'Weekly functional training classes',
   fullBodyCardioWhyChoose2Desc: `You don't need experience. Each exercise has intensity variations. You choose your level at each moment.`,
   fullBodyCardioWhyChoose3Title: `Small groups`,
@@ -17239,7 +17722,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   homev2_compRow6Us: `CID-UNESCO accredited center`,
   homev2_compRow7Label: `Community`,
   homev2_compRow7Others: `You go to class and leave`,
-  homev2_compRow7Us: `Events, practices, real family`,
+  homev2_compRow7Us: `Events, practices, real community`,
   homev2_compRow8Label: `Results`,
   homev2_compRow8Others: `"It depends on you..."`,
   homev2_compRow8Us: `Measurable progress class by class`,
@@ -17248,7 +17731,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   homev2_compRow9Us: `Team with contracts and labor rights`,
   homev2_compRow10Label: `Approach`,
   homev2_compRow10Others: `Only teach memorizing steps and choreographies`,
-  homev2_compRow10Us: `We teach you to understand movement`,
+  homev2_compRow10Us: `We teach you to understand technique and movement`,
   homev2_comparisonCta: `Discover How to Start`,
   homev2_comparisonCtaSubtext: `Book Your Welcome Class`,
   homev2_styleFinderTitle: `25+ styles. One method. Your journey.`,
@@ -17326,6 +17809,8 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogClasesPrincipiantes_metaDescription: `Start dancing from scratch in Barcelona (Eixample). Come meet Farray's with a welcome class and follow this guide: what to bring, how to choose a style and how to progress.`,
   blogClasesPrincipiantes_excerpt: `Complete guide to start dancing from scratch in Barcelona. Welcome class, no partner needed, all levels. Drop-in participation from 20€.`,
   blogClasesPrincipiantes_breadcrumbCurrent: `Beginner Classes`,
+  blogClasesPrincipiantes_heroAlt:
+    'Group of beginner students learning their first salsa and bachata steps in Barcelona group class, welcoming atmosphere and attentive teachers',
   blogClasesPrincipiantes_summaryBullet1: `Welcome class at Farray's (Eixample) – special price during promotional season or from 10€`,
   blogClasesPrincipiantes_summaryBullet2: `You don't need previous experience or come with a partner`,
   blogClasesPrincipiantes_summaryBullet3: `Step-by-step guide: what to bring, which style to choose and how to progress`,
@@ -17394,6 +17879,43 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogClasesPrincipiantes_faq4Answer: `Comfortable clothes and comfortable footwear. You don't need anything special to start.`,
   blogClasesPrincipiantes_faq5Question: `How often should I come to notice improvement?`,
   blogClasesPrincipiantes_faq5Answer: `With consistency (for example, 2 times per week) you'll notice real progress in a few weeks.`,
+
+  // === SUMMARY STATS (GEO Citations) ===
+  blogClasesPrincipiantes_statDemenciaLabel: 'reduction in dementia risk with frequent dancing',
+  blogClasesPrincipiantes_statCaloriasLabel: 'calories burned per hour dancing Latin rhythms',
+  blogClasesPrincipiantes_statBienestarLabel:
+    'of participants report improvements in emotional wellbeing',
+
+  // === ANSWER CAPSULE (GEO Critical - 72% AI citation rate) ===
+  blogClasesPrincipiantes_answerEmpezar: '',
+  blogClasesPrincipiantes_answerEmpezarQ: 'How to start dancing from scratch in Barcelona?',
+  blogClasesPrincipiantes_answerEmpezarA:
+    "To start dancing from scratch in Barcelona, the most important thing is to choose an academy with specific classes for beginners, where you don't need previous experience or come with a partner. At Farray's we offer welcome classes where you'll learn the fundamentals in a pressure-free environment, with teachers who adapt the pace to each student.",
+
+  // === DEFINITION (LLM Extraction) ===
+  blogClasesPrincipiantes_defClasePrincipiantesTerm: 'Dance class for beginners',
+  blogClasesPrincipiantes_defClasePrincipiantes:
+    'A structured session designed for people with no previous experience, where the fundamentals of dance (posture, rhythm, basic steps) are taught in a safe, judgment-free environment, allowing learning at any age.',
+
+  // === STATISTICS CONTENT ===
+  blogClasesPrincipiantes_statCognitivoContent:
+    'Frequent dancing reduces dementia risk more than any other physical or cognitive activity studied',
+
+  // === REFERENCES SECTION (E-E-A-T) ===
+  blogClasesPrincipiantes_referencesIntro:
+    'This article is backed by peer-reviewed scientific research:',
+  blogClasesPrincipiantes_refNEJMTitle:
+    'Leisure Activities and the Risk of Dementia in the Elderly',
+  blogClasesPrincipiantes_refNEJMDesc:
+    'Longitudinal study demonstrating that frequent dancing reduces dementia risk by 76%.',
+  blogClasesPrincipiantes_refHarvardTitle:
+    'Calories burned in 30 minutes of leisure and routine activities',
+  blogClasesPrincipiantes_refHarvardDesc:
+    'Harvard data on caloric expenditure of different physical activities including dancing.',
+  blogClasesPrincipiantes_refFrontiersTitle:
+    'The Effects of Dance Movement Therapy on Psychological Well-being',
+  blogClasesPrincipiantes_refFrontiersDesc:
+    'Meta-analysis on the positive effects of dance on psychological wellbeing.',
 
   // ============================================================================
   // RELATED CLASSES SECTION (Internal Linking)
@@ -17472,7 +17994,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
     'Tone your glutes while dancing. Functional exercises with music and high energy.',
   relatedCuerpoFitName: 'Cuerpo-Fit',
   relatedCuerpoFitDesc: 'Physical conditioning for dancers. Strength, endurance, and body control.',
-  relatedFullBodyCardioName: 'Full Body Cardio',
+  relatedFullBodyCardioName: 'Cuerpo Fit',
   relatedFullBodyCardioDesc: 'Intense cardio with dance movements. Burn calories while having fun.',
 
   // ============================================================================
@@ -17560,11 +18082,34 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   'styleImages.salsaLadyTimba.hero':
     'Dancer performing Lady Timba in Barcelona class - Cuban feminine style with advanced technique and unique personal expression',
   'styleImages.folkloreCubano.alt': "Cuban Folklore Classes in Barcelona - Farray's Center",
-  'styleImages.stretching.alt': "Stretching Classes in Barcelona - Flexibility at Farray's Center",
-  'styleImages.bumBum.alt': "Bum Bum Classes in Barcelona - Glutes workout at Farray's Center",
-  'styleImages.cuerpoFit.alt': 'Cuerpo Fit Classes in Barcelona - Fitness for dancers',
+  'styleImages.stretching.alt':
+    "Dancer performing deep stretches and flexibility exercises in professional stretching class for dancers in Barcelona - elongation techniques, hip opening and backbending at Farray's Center",
+  'styleImages.stretching.hero':
+    "Stretching and flexibility class in Barcelona - Dancer performing deep stretches, splits and backbending with professional technique to improve range of motion at Farray's Center",
+  'styleImages.stretching.whatIs':
+    "Student practicing active and passive stretching in Barcelona stretching class - flexibility improvement, hip opening and elongation techniques for dancers at Farray's Center",
+  'styleImages.stretching.cardFitness':
+    'Stretching Barcelona - Improve your flexibility, achieve splits and prevent injuries with professional elongation techniques for dancers',
+  'styleImages.stretching.cardHub':
+    "Stretching Classes in Barcelona - Flexibility, splits, backbending and professional elongation for dancers of all levels at Farray's Center",
+  'styleImages.bumBum.alt':
+    "Students performing Bum Bum glute exercises at Barcelona dance academy - muscle toning with hip thrust, squats and Farray Method techniques at Farray's Center",
+  'styleImages.bumBum.hero':
+    'Bum Bum Amazing Glutes class in Barcelona - Students toning with hip thrust, squats and the exclusive Farray Method for firm and defined glutes',
+  'styleImages.bumBum.whatIs':
+    'Group of students performing Bum Bum Amazing Glutes exercises at Barcelona dance academy - toning and strengthening with professional Farray Method techniques',
+  'styleImages.bumBum.cardFitness':
+    'Bum Bum Amazing Glutes - Toning exercises with hip thrust, squats, lunges and Farray Method dance techniques',
+  'styleImages.bumBum.cardHub':
+    'Bum Bum Amazing Glutes classes in Barcelona - Tone and strengthen with hip thrust, squats and the exclusive Farray Method',
+  'styleImages.cuerpoFit.alt':
+    "Dancer performing Cuerpo Fit functional training in Barcelona - cardio dance and physical conditioning for dancers at Farray's Center",
   'styleImages.bodyConditioning.alt':
-    "Body Conditioning for Dancers in Barcelona - Farray's Center",
+    "Dancers performing body conditioning and physical preparation exercises for dance at Barcelona academy - Farray's Center",
+  'styleImages.entrenamientoBailarinesHero.alt':
+    "Professional dancers performing specialized physical training for dance in Barcelona - body conditioning, flexibility, strength and dance technique at Farray's International Dance Center",
+  'styleImages.baileMananas.hero':
+    "Morning dance classes in Barcelona - Students dancing together with morning energy at Farray's Center, 13 styles from 10am to 1pm near Plaza España",
 
   // =====================================================
   // BACHATA SENSUAL LANDING PAGE
@@ -17960,6 +18505,8 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogSalsaVsBachata_excerpt:
     'Discover the differences between salsa and bachata: origin, music, movements and which to choose based on your personality',
   blogSalsaVsBachata_breadcrumbCurrent: 'Salsa vs Bachata',
+  blogSalsaVsBachata_heroAlt:
+    'Couples dancing Latin styles at our Barcelona dance academy, showing elegance and connection between salsa and bachata',
 
   // === SUMMARY BULLETS (GEO Optimized) ===
   blogSalsaVsBachata_summaryBullet1:
@@ -18176,6 +18723,8 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogPerderMiedoBailar_excerpt:
     'Discover proven techniques to overcome shyness and the fear of dancing. 80% of adults feel anxiety when dancing, but with the right approach, 90% overcome it in weeks.',
   blogPerderMiedoBailar_breadcrumbCurrent: 'How to Overcome the Fear of Dancing',
+  blogPerderMiedoBailar_heroAlt:
+    'Students who were beginners and overcame anxiety and stage fright, guided by teachers at our dance academy in Barcelona',
 
   // === SUMMARY BULLETS ===
   blogPerderMiedoBailar_summaryBullet1:
@@ -18198,6 +18747,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogPerderMiedoBailar_answerComoPerderQ: 'How can I overcome the fear of dancing?',
   blogPerderMiedoBailar_answerComoPerderA:
     'To overcome the fear of dancing: (1) Choose a school with a safe, judgment-free environment, (2) Start with beginner classes where everyone is at your level, (3) Practice gradual exposure - each class gets easier, (4) Remember that most adults feel the same and, based on our 20+ years of experience, the vast majority overcome it within a few weeks.',
+  blogPerderMiedoBailar_sourcePublisherBehavioral: "Farray's Dance Center + Behavioral Psychology",
 
   blogPerderMiedoBailar_answerEsNormal: 'Is it normal to feel shy?',
   blogPerderMiedoBailar_answerEsNormalQ: 'Is it normal to feel shy or afraid to dance?',
@@ -18301,7 +18851,7 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogPerderMiedoBailar_check5:
     '**Accessible trial class**: So you can experience the atmosphere before committing.',
   blogPerderMiedoBailar_statSatisfaccionContent:
-    'Our Google Reviews score: 4.9/5 based on 127 reviews, many from students who arrived afraid.',
+    'Our Google Reviews score: 4.9/5 based on 509 reviews, many from students who arrived afraid.',
 
   // === CONCLUSION ===
   blogPerderMiedoBailar_conclusionTitle: 'Conclusion: Fear is Temporary, Dancing is Forever',
@@ -18356,6 +18906,15 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogPerderMiedoBailar_refEndorphinsTitle: 'Synchronized Dancing and Endorphin Release',
   blogPerderMiedoBailar_refEndorphinsDesc:
     'Study showing how dancing in sync with others increases pain threshold, an indicator of greater endorphin release.',
+  blogPerderMiedoBailar_refExposureTitle: 'Exposure Therapy for Anxiety Disorders – PMC',
+  blogPerderMiedoBailar_refExposureDesc:
+    'Systematic review of the effectiveness of exposure therapy for anxiety disorders, applicable to stage fright in dancing.',
+  blogPerderMiedoBailar_refDancePsychTitle: 'Dance Psychology and Emotional Well-being – PMC',
+  blogPerderMiedoBailar_refDancePsychDesc:
+    'Research on the psychological mechanisms through which dance improves emotional well-being and reduces anxiety.',
+  blogPerderMiedoBailar_refEndorphinsSyncTitle: 'Synchronized Dancing and Endorphin Release',
+  blogPerderMiedoBailar_refEndorphinsSyncDesc:
+    'Study demonstrating how synchronized dancing increases endorphin levels and strengthens social bonds.',
 
   // =============================================================================
   // BLOG: DANCING AND MENTAL HEALTH - Scientific benefits of dancing
@@ -18369,6 +18928,8 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   blogBaileSaludMental_excerpt:
     "Dancing doesn't just feel good: studies from Harvard, NEJM and Frontiers show it reduces anxiety, depression and stress while protecting your brain.",
   blogBaileSaludMental_breadcrumbCurrent: 'Dancing and Mental Health',
+  blogBaileSaludMental_heroAlt:
+    'People dancing salsa with joyful expressions, illustrating the scientific benefits of dancing for mental health: reduced anxiety, stress and cognitive improvement',
 
   // === SUMMARY BULLETS (GEO Critical) ===
   blogBaileSaludMental_summaryBullet1:
@@ -18585,6 +19146,9 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   booking_meta_title: "Book Your Welcome Class | Farray's Center Barcelona",
   booking_meta_description:
     'Book your welcome class at the Barcelona dance school. Over 25 styles: salsa, bachata, hip hop, ballet and more. Exclusive Farray® Method.',
+  booking_breadcrumb_current: 'Book',
+  schema_booking_serviceName: 'Welcome Dance Class',
+  schema_booking_serviceDescription: 'Free welcome class to try our dance styles',
 
   // Header
   booking_title: 'Book Your Welcome Class',
@@ -19938,7 +20502,7 @@ Recognized by CID UNESCO and with more than 15,000 students trained, the academy
   servicios_hero_image_alt:
     "Professional dance company from Farray's Dance Center on stage - Dance services, events and team building Barcelona",
   precios_hero_image_alt:
-    "Dancers from Farray's Dance Center in dance show - Rates and prices for dance classes Barcelona from €45/month",
+    "Group of students dancing at Farray's Dance Center Barcelona class - Dance class prices from €50/month, no commitment, first class free",
   contacto_hero_image_alt:
     "Group of dancers from Farray's Dance Center Barcelona in group performance - Contact Entença Street 100, Eixample",
   faq_hero_image_alt:
@@ -19949,10 +20513,514 @@ Recognized by CID UNESCO and with more than 15,000 students trained, the academy
     "Couple dancing salsa at Farray's Dance Center - Gift dance classes, perfect gift card Barcelona Eixample",
   clases_particulares_hero_image_alt:
     "Professional dancers from Farray's Dance Center on stage - Personalized private dance classes Barcelona Eixample",
+  clases_particulares_og_image_alt:
+    "Private dance class in Barcelona - 100% personalized attention with expert teachers at Farray's Center",
   happiness_story_bg_alt:
     "Happy students celebrating together at Farray's Dance Center Barcelona - Community of over 500 dancers Eixample",
   why_fidc_bg_alt:
     "Professional dance show at Farray's Dance Center - 7 reasons to choose our Barcelona dance school",
   testimonials_bg_alt:
     "Satisfied students from Farray's Dance Center Barcelona - 509 five-star Google reviews dance school",
+
+  // =============================================
+  // TEACHER SCHEMA TRANSLATIONS (SEO)
+  // =============================================
+  'teacherSchema.yunaisyFarray.jobTitle':
+    "Director and Founder of Farray's International Dance Center | Hollywood Dancer",
+  'teacherSchema.yunaisyFarray.description':
+    'Hollywood dancer and Cuban professional trained at the ENA, creator of the Farray Method that integrates the rigor of the Russian classical ballet school with Afro-Cuban roots, adapted for European dancers. Actress in Street Dance 2, Got Talent finalist and CID UNESCO member. Over 25 years of international experience.',
+
+  'teacherSchema.danielSene.jobTitle':
+    'Classical Ballet, Contemporary, Yoga, Tai-Chi and Stretching Teacher | National Ballet School of Cuba | National Reference',
+  'teacherSchema.danielSene.description':
+    'Professional dancer trained at the prestigious National Ballet School of Cuba. Specialist in Cuban classical technique and contemporary dance. Deep connoisseur of the human body, he also stands out for his mastery in Yoga, Tai-Chi and Stretching. National reference combining technical precision with body wellness.',
+
+  'teacherSchema.alejandroMinoso.jobTitle':
+    'Ballet, Modern Jazz, Afro Jazz and Contemporary Teacher | Former Carlos Acosta Company Soloist',
+  'teacherSchema.alejandroMinoso.description':
+    'Cuban professional dancer trained at the ENA and former soloist of the prestigious Carlos Acosta company, one of the best dancers in history. Versatile in fusion of classical, afro and contemporary styles.',
+
+  'teacherSchema.sandraGomez.jobTitle': 'Dancehall and Twerk Instructor | Jamaican Training',
+  'teacherSchema.sandraGomez.description':
+    'Professional dancer with authentic Jamaican training in dancehall and twerk. Her style fuses Twerk/Bootydance with genuine Jamaican essence. Impeccable technique and proven methodology.',
+
+  'teacherSchema.isabelLopez.jobTitle': 'Dancehall Female Instructor',
+  'teacherSchema.isabelLopez.description':
+    'Dancehall enthusiast with over 5 years of experience. Trained with Jamaican masters. Specialist in old school moves (Willie Bounce, Nuh Linga) and latest trends.',
+
+  'teacherSchema.marcosMartinez.jobTitle': 'Hip Hop Instructor and International Judge',
+  'teacherSchema.marcosMartinez.description':
+    'One of the Hip Hop references in Spain. Decades of experience as dancer, teacher and judge of international competitions. Combines old school technique with current trends.',
+
+  'teacherSchema.yasminaFernandez.jobTitle':
+    'Cuban Salsa, Lady Style, Sexy Style and Sexy Reggaeton Teacher | Farray Method since 2016',
+  'teacherSchema.yasminaFernandez.description':
+    'Extraordinarily versatile teacher certified in the Farray Method since 2016. Stands out for exceptional people skills that allow her to connect with students. Specialist in Cuban salsa, Lady Style, Sexy Style and Sexy Reggaeton.',
+
+  'teacherSchema.liaValdes.jobTitle':
+    'Cuban International Master and Artist | ENA Cuba | The Lion King Paris',
+  'teacherSchema.liaValdes.description':
+    'Cuban international master and artist with over 20 years of artistic career. Trained at the ENA (National School of Art of Cuba), she has danced in the prestigious production The Lion King in Paris. Transmits the joy and spirit of Caribbean dance.',
+
+  'teacherSchema.iroelBastarreche.jobTitle':
+    'Cuban Salsa Teacher | Folkloric Ballet of Camaguey | Farray Method',
+  'teacherSchema.iroelBastarreche.description':
+    'Known as Iro, trained at the Vocational School of Art of Cuba. Member of the Maragan Artistic Ensemble and Folkloric Ballet of Camaguey. Since 2014 training in the Farray Method, becoming a Cuban salsa reference in Barcelona.',
+
+  'teacherSchema.charlieBreezy.jobTitle': 'Afro Contemporary, Hip Hop and Afrobeats Teacher',
+  'teacherSchema.charlieBreezy.description':
+    'International master and Cuban dancer trained at the ENA. Masters African dance like Afrobeats, contemporary, ballet and urban dances. Exceptional versatility and academic training.',
+
+  'teacherSchema.eugeniaTrujillo.jobTitle': 'World Champion Salsa LA and Bachata Teacher',
+  'teacherSchema.eugeniaTrujillo.description':
+    'Uruguayan international master and dancer, world champion of Salsa LA with Mathias Font. Impeccable technique, specialist in partner bachata and bachata lady style with 4 years at Farrays.',
+
+  'teacherSchema.mathiasFont.jobTitle': 'World Champion Salsa LA and Bachata Instructor',
+  'teacherSchema.mathiasFont.description':
+    'World champion of Salsa LA with Eugenia Trujillo. Specialist in sensual bachata with unique focus on musicality, partner connection and class dynamization. Reference in Barcelona.',
+
+  'teacherSchema.carlosCanto.jobTitle': 'Bachata Instructor | Emerging Talent Barcelona',
+  'teacherSchema.carlosCanto.description':
+    'Emerging talent beloved by his students with great ability to connect. Bachata specialist with focus on technique and musicality. One of the most valued teachers at the school.',
+
+  'teacherSchema.noemi.jobTitle': 'Bachata Lady Style Instructor | Emerging Talent Barcelona',
+  'teacherSchema.noemi.description':
+    'Emerging talent with excellent people skills that allow her to connect immediately with students. Partner of Carlos Canto, one of the most promising couples in Barcelona. Specialist in bachata and feminine techniques.',
+
+  'teacherSchema.redblueh.jobTitle': 'Afrobeats and Ntcham Instructor',
+  'teacherSchema.redblueh.description':
+    'International teacher and dancer native to Tanzania, specialist in Ntcham. His African roots and contagious joy make him one of the most recommended in Barcelona.',
+
+  'teacherSchema.juanAlvarez.jobTitle':
+    'Sensual Bachata Teacher | Farray Method | Emerging Talent Barcelona',
+  'teacherSchema.juanAlvarez.description':
+    'Sensual Bachata instructor certified in the Farray Method. Possesses an extraordinary ability to connect from the first moment with students. Transmits the essence of Latin dance with passion and refined technique.',
+
+  'teacherSchema.crisAg.jobTitle':
+    'Body Conditioning, Body Fit, Bum Bum Glutes and Stretching Instructor | Farray Method since 2012',
+  'teacherSchema.crisAg.description':
+    'English Philology graduate from UB. Trained with Jorge Camaguey and at The Cuban School of Arts in London. Since 2012 training in the Farray Method and working as teacher, becoming a reference in body conditioning for dancers in Barcelona.',
+
+  'teacherSchema.grechenMendez.jobTitle':
+    'International Master of Afro-Cuban Dances | ISA Cuba | +25 years experience',
+  'teacherSchema.grechenMendez.description':
+    'International reference master in Afro-Cuban dances with over 25 years dedicated to teaching Cuban folklore. Trained at the ISA (Higher Institute of Art of Cuba). World authority on dances to the Orishas and rumba.',
+
+  // ============================================================================
+  // SCHEMA TRANSLATIONS - Global (Multilingual SEO)
+  // ============================================================================
+  schema_streetAddress: "Carrer d'Entença, 100, Local 1",
+  schema_addressRegion: 'Catalonia',
+  schema_founderJobTitle: 'Director and Founder',
+  schema_educationalLevel: 'Beginner, Intermediate, Advanced',
+  schema_educationalLevelBeginnerAdvanced: 'Beginner to Advanced',
+  schema_prerequisites: 'None',
+  schema_weeklyClasses: 'Weekly classes',
+  schema_reserveActionName: 'Dance class reservation',
+  schema_danceTerminology: 'Dance Terminology',
+
+  // Schema - Price plans (DynamicScheduleSchema)
+  schema_price_1hourWeek: '1 hour/week',
+  schema_price_2hoursWeekPopular: '2 hours/week (Popular)',
+  schema_price_5hoursWeek: '5 hours/week',
+  schema_price_month: 'month',
+  schema_price_classes: 'classes',
+
+  // Schema - Category Pages ItemList names
+  schema_danza_itemListName: "Dance Styles in Barcelona - Farray's Center",
+  schema_urbanas_itemListName: "Urban Dance Styles in Barcelona - Farray's Center",
+  schema_heels_itemListName: "Heels Styles in Barcelona - Farray's Center",
+  schema_salsaBachata_itemListName: "Salsa and Bachata Styles in Barcelona - Farray's Center",
+
+  // Schema - Course teaches
+  schema_danza_teaches: 'Contemporary Dance, Modern Jazz, Ballet',
+  schema_urbanas_teaches: 'Hip Hop, Dancehall, Afrobeats, House, Popping, Locking',
+  schema_heels_teaches: 'High Heels Dance, Femmology, Sexy Style, Sensuality, Femininity',
+  schema_salsaBachata_teaches: 'Salsa Cubana, Salsa on2, Sensual Bachata, Dominican Bachata',
+
+  // Schema - Heels specific
+  schema_heels_educationalOrgName: "Farray's International Dance Center - Heels Barcelona",
+
+  // Schema - ClasesParticulares
+  schema_particulares_serviceName: 'Private Dance Classes in Barcelona',
+  schema_particulares_serviceType: 'Private Dance Instruction',
+  schema_particulares_catalogName: 'Private Dance Classes',
+  schema_particulares_offerRegularName: 'Regular Teacher - 1 Student',
+  schema_particulares_offerRegularDesc: 'Private classes with qualified teacher',
+  schema_particulares_offerPremiumName: 'Premium Teacher - 1 Student',
+  schema_particulares_offerPremiumDesc: 'Private classes with elite teacher',
+
+  // Schema - RegalaBaile
+  schema_regalaBaile_productName: 'Gift Card - Dance Classes',
+
+  // Schema - SalsaLadyStyle
+  schema_salsaLady_businessName: "Farray's International Dance Center - Salsa Lady Style Classes",
+  schema_salsaLady_courseName: 'Salsa Lady Style Classes Barcelona - Farray Method',
+  schema_salsaLady_itemName: "Salsa Lady Style Classes - Farray's Center",
+
+  // Schema - Facilities amenityFeature
+  schema_facilities_danceStudios: 'Dance Studios',
+  schema_facilities_danceStudiosValue: '4 professional dance studios',
+  schema_facilities_totalArea: 'Total Area',
+  schema_facilities_airConditioning: 'Air Conditioning',
+  schema_facilities_airConditioningValue: 'Yes',
+  schema_facilities_wifi: 'WiFi',
+  schema_facilities_wifiValue: 'Free WiFi available',
+  schema_facilities_lockerRooms: 'Locker Rooms',
+  schema_facilities_lockerRoomsValue: '2 locker rooms with showers',
+
+  // ===== GLOBAL SCHEMAS (SchemaMarkup.tsx) =====
+  // OrganizationSchema
+  schema_org_description:
+    'Dance school in Barcelona specializing in Dancehall, Twerk, Afrobeats, Reggaeton, Hip Hop, Heels and more. Classes for all levels with the best teachers.',
+
+  // WebSiteSchema
+  schema_website_description:
+    'Dance school in Barcelona with over 25 styles: Dancehall, Twerk, Afrobeats, Reggaeton, Hip Hop, Salsa, Bachata, Ballet, Contemporary and more.',
+
+  // SiteNavigationElementSchema
+  schema_nav_home: 'Home',
+  schema_nav_danceClasses: 'Dance Classes',
+  schema_nav_dance: 'Dance',
+  schema_nav_urbanDances: 'Urban Dances',
+  schema_nav_salsaBachata: 'Salsa and Bachata',
+  schema_nav_services: 'Services',
+  schema_nav_blog: 'Blog',
+  schema_nav_aboutUs: 'About Us',
+  schema_nav_contact: 'Contact',
+  schema_nav_schedule: 'Schedule',
+  schema_nav_prices: 'Prices',
+
+  // DanceSchoolWithRatingSchema
+  schema_danceschool_description:
+    'Dance school in Barcelona with over 25 styles: Salsa, Bachata, Dancehall, Twerk, Afrobeats, Hip Hop, Heels, Ballet, Contemporary and more. Professional training with the best instructors.',
+  schema_catalog_danceClasses: 'Dance Classes',
+  schema_catalog_latinDances: 'Latin Dances',
+  schema_catalog_urbanDances: 'Urban Dances',
+  schema_catalog_dance: 'Dance',
+
+  // LeadCaptureActionSchema
+  schema_leadCapture_defaultDescription:
+    'Request information and receive access to a free welcome class',
+  schema_leadCapture_name: 'Discover how to start',
+  schema_leadCapture_resultName: 'Email with course information',
+  schema_leadCapture_resultDescription:
+    'You will receive an email with all the information to get started: schedules, prices, and access to your free welcome class.',
+  schema_leadCapture_askActionName: 'Request information',
+
+  // ===== DYNAMIC SCHEDULE SCHEMAS =====
+  schema_categories_itemListName: 'Dance Classes in Barcelona',
+  schema_categories_description: "Dance class categories available at Farray's Dance Academy",
+  schema_dynamicSchedule_description:
+    '{courseName} classes in Barcelona. Real-time updated schedules.',
+  schema_dynamicSchedule_itemListName: 'Upcoming {courseName} classes',
+  schema_dynamicSchedule_itemListDescription:
+    'Updated schedule for {courseName} classes in Barcelona',
+  schema_dynamicSchedule_eventDescription:
+    "{sessionName} with {instructor} at Farray's Center Barcelona",
+  schema_vacation_description: '{courseName} classes in Barcelona. Currently on vacation period.',
+
+  // ===== DANCE CLASS CONFIG SCHEMAS =====
+
+  // Bachata
+  schema_bachata_teaches:
+    'Bachata Sensual, body waves, partner connection, musicality, body movement',
+  schema_bachata_prerequisites: 'None',
+  schema_bachata_lessons: '6 weekly classes',
+  schema_bachata_mathias_jobTitle: 'Bachata Sensual Instructor',
+  schema_bachata_mathias_description:
+    'World champion in Bachata, specialist in body waves and partner connection.',
+  schema_bachata_lia_jobTitle: 'Bachata Lady Style Instructor',
+  schema_bachata_lia_description:
+    'Specialist in Bachata feminine style and Lady Style with extensive experience.',
+  schema_bachata_yasmina_jobTitle: 'Bachata Instructor',
+  schema_bachata_yasmina_description:
+    'Farray Method certified instructor, specialized in Bachata and Latin styles.',
+
+  // Timba
+  schema_timba_teaches: 'Cuban Timba, Lady Timba, son steps, despelote, reparto',
+  schema_timba_prerequisites: 'None',
+  schema_timba_lessons: '4 weekly classes',
+  schema_yunaisy_jobTitle_timba: "Director of Farray's Center - Lady Timba Specialist",
+  schema_yunaisy_description_timba:
+    'Professional Cuban dancer, creator of the Farray Method and specialist in Lady Timba and Cuban Timba.',
+  schema_grechen_jobTitle: 'Timba Instructor',
+  schema_grechen_description:
+    'International master of Afro-Cuban dances with over 25 years of experience.',
+  schema_lia_jobTitle: 'Timba Instructor',
+  schema_lia_description: 'Professional dancer specialized in Cuban Salsa and feminine styles.',
+
+  // Salsa Cubana
+  schema_salsaCubana_teaches: 'Cuban Salsa, Casino, Rueda de Casino, Farray Method',
+  schema_salsaCubana_prerequisites: 'None',
+  schema_salsaCubana_lessons: '6 weekly classes',
+  schema_yunaisy_jobTitle_salsaCubana: "Director of Farray's Center - Creator of the Farray Method",
+  schema_yunaisy_description_salsaCubana:
+    "Professional Cuban dancer, choreographer and director of Farray's Center. Creator of the CID-UNESCO certified Farray Method.",
+
+  // Contemporary
+  schema_contemporaneo_teaches:
+    'Contemporary Dance, floor technique, release, improvisation, body expression',
+  schema_contemporaneo_prerequisites: 'None',
+  schema_contemporaneo_lessons: '4 weekly classes',
+  schema_contemporaneo_daniel_jobTitle: 'Contemporary Dance Instructor',
+  schema_contemporaneo_daniel_description:
+    'Professional dancer trained at the National School of Art of Cuba, specialist in lyrical contemporary.',
+  schema_contemporaneo_alejandro_jobTitle: 'Contemporary Dance Instructor',
+  schema_contemporaneo_alejandro_description:
+    'Professional Cuban dancer specialist in floor technique and flow.',
+
+  // Dancehall
+  schema_dancehall_teaches: 'Jamaican Dancehall, urban dance technique, musicality',
+  schema_dancehall_prerequisites: 'None',
+  schema_dancehall_lessons: '6 weekly classes',
+  schema_dancehall_isabel_jobTitle: 'Dancehall Instructor',
+  schema_dancehall_isabel_description:
+    'Dancehall specialist with international competition experience and training in Jamaica.',
+  schema_dancehall_sandra_jobTitle: 'Dancehall Instructor',
+  schema_dancehall_sandra_description:
+    'Dancehall Female and urban styles instructor with extensive experience in dance pedagogy.',
+
+  // Twerk
+  schema_twerk_teaches: 'Twerk, dance technique, musicality',
+  schema_twerk_prerequisites: 'None',
+  schema_twerk_lessons: '4 weekly classes',
+  schema_twerk_sandra_jobTitle: 'Twerk Instructor',
+  schema_twerk_sandra_description:
+    'Twerk and Dancehall specialist with extensive experience teaching urban dance.',
+  schema_twerk_isabel_jobTitle: 'Twerk Instructor',
+  schema_twerk_isabel_description:
+    'Twerk and urban styles instructor with international competition experience.',
+
+  // Hip Hop
+  schema_hiphop_teaches: 'Hip Hop, Breaking, Locking, Popping, Freestyle, Urban Dance',
+  schema_hiphop_prerequisites: 'None - classes for all levels',
+  schema_hiphop_lessons: '1 weekly class',
+  schema_hiphop_marcos_jobTitle: 'Hip Hop Instructor',
+  schema_hiphop_marcos_description:
+    'International Hip Hop judge with extensive competition and teaching experience.',
+
+  // Hip Hop Reggaeton
+  schema_hhr_teaches: 'Hip Hop Reggaeton, urban fusion, dance technique, improvisation, flow',
+  schema_hhr_prerequisites: 'None',
+  schema_hhr_lessons: '5 weekly classes',
+  schema_hhr_charlie_jobTitle: 'Hip Hop Reggaeton Instructor',
+  schema_hhr_charlie_description:
+    'Specialist in Hip Hop and Reggaeton fusion with unique style and characteristic flow.',
+
+  // Femmology
+  schema_femmology_teaches:
+    'Femmology, dance therapy, heels dancing, femininity, sensuality, self-esteem',
+  schema_femmology_prerequisites: 'None',
+  schema_femmology_lessons: '2 weekly classes',
+  schema_femmology_yunaisy_jobTitle: 'Creator of Femmology',
+  schema_femmology_yunaisy_description:
+    "Professional Cuban dancer and choreographer, creator of Femmology and director of Farray's International Dance Center.",
+
+  // Sexy Style
+  schema_sexystyle_teaches:
+    'Sexy Style, sensuality, body expression, femininity, choreography, confidence',
+  schema_sexystyle_prerequisites: 'None',
+  schema_sexystyle_lessons: '6 weekly classes',
+  schema_sexystyle_yasmina_jobTitle: 'Sexy Style Instructor',
+  schema_sexystyle_yasmina_description:
+    'Specialist in Sexy Style and sensual styles with extensive experience.',
+
+  // Sexy Reggaeton
+  schema_sxr_teaches: 'Sexy Reggaeton, perreo, body roll, sensuality, body isolation',
+  schema_sxr_prerequisites: 'None',
+  schema_sxr_lessons: '6 weekly classes',
+  schema_sxr_yasmina_jobTitle: 'Sexy Reggaeton Instructor',
+  schema_sxr_yasmina_description:
+    'Specialist in Sexy Reggaeton and sensual styles with extensive experience.',
+
+  // Stretching
+  schema_stretching_teaches:
+    'Stretching, flexibility, backbending, leg elongation, core strengthening',
+  schema_stretching_prerequisites: 'None',
+  schema_stretching_lessons: '5 weekly classes',
+  schema_stretching_cris_jobTitle: 'Stretching and Backbending Instructor',
+  schema_stretching_cris_description:
+    'Flexibility and backbending specialist trained in the Farray Method. Expert in leg and back elongation.',
+  schema_stretching_daniel_jobTitle: 'Stretching and Ballet Instructor',
+  schema_stretching_daniel_description:
+    'Professional dancer trained at the National Ballet School of Cuba. Expert in classical technique and flexibility.',
+
+  // Cuban Reggaeton
+  schema_rcb_teaches: 'Cuban Reggaeton, Reparto, Cubatón, body isolation, improvisation',
+  schema_rcb_prerequisites: 'None',
+  schema_rcb_lessons: '3 weekly classes',
+  schema_rcb_charlie_jobTitle: 'Cuban Reggaeton Instructor',
+  schema_rcb_charlie_description:
+    'Specialist in Cuban Reggaeton and urban styles with Cuban roots.',
+  schema_rcb_alejandro_jobTitle: 'Cuban Reggaeton Instructor',
+  schema_rcb_alejandro_description:
+    'Professional Cuban dancer with extensive experience in urban styles.',
+
+  // Cuban Folklore
+  schema_folklore_teaches: 'Cuban Folklore, Orisha dances, Yoruba, Cuban rumba, body expression',
+  schema_folklore_prerequisites: 'None',
+  schema_folklore_lessons: '2 weekly classes',
+  schema_folklore_grechen_jobTitle: 'International Master of Afro-Cuban Dances',
+  schema_folklore_grechen_description:
+    'International master of Afro-Cuban dances with over 25 years of experience. Trained at the Higher Institute of Art of Cuba (ISA), specialized in Cuban Folklore, Orisha dances and Afro-Cuban rhythms.',
+
+  // Modern Jazz
+  schema_modernjazz_teaches:
+    'Modern Jazz, dance technique, musicality, body expression, turns, jumps',
+  schema_modernjazz_prerequisites: 'None',
+  schema_modernjazz_lessons: '1 weekly class',
+  schema_modernjazz_alejandro_jobTitle: 'Modern Jazz Instructor',
+  schema_modernjazz_alejandro_description:
+    'Professional Cuban dancer trained at ENA, specialist in Modern Jazz.',
+
+  // Morning Dance Classes
+  schema_bailemananas_teaches:
+    'Contemporary, Ballet, Modern Jazz, Afro Jazz, Sexy Style, Sexy Reggaeton, Salsa Lady Style, Stretching, Body Conditioning, Cuban Reggaeton, Dancehall Female, Twerk',
+  schema_bailemananas_prerequisites: 'None - classes for all levels from beginner',
+  schema_bailemananas_lessons: '15 weekly classes Monday to Thursday, 10:00 AM to 1:00 PM',
+  schema_bailemananas_alejandro_jobTitle: 'Contemporary Dance, Ballet and Modern Jazz Instructor',
+  schema_bailemananas_alejandro_description:
+    "Professional dancer and choreographer trained at the National School of Art of Cuba. Specialist in contemporary dance, classical ballet and modern jazz. Teaches morning classes at Farray's Center.",
+  schema_bailemananas_yasmina_jobTitle: 'Sexy Style, Reggaeton and Salsa Lady Style Instructor',
+  schema_bailemananas_yasmina_description:
+    'Farray Method certified instructor, specialized in sensual and Latin styles. Reference in Sexy Style and Reggaeton in Barcelona. Teaches morning classes focused on empowerment and body expression.',
+  schema_bailemananas_isabel_jobTitle: 'Dancehall Female and Twerk Instructor',
+  schema_bailemananas_isabel_description:
+    "Specialized instructor in Dancehall and Twerk, with contagious energy that transforms every morning class into a party. Teaches Dancehall Female and Twerk in the mornings at Farray's Center.",
+
+  // Bum Bum
+  schema_bumbum_teaches:
+    'Glute exercises, hip thrust, squats, glute bridge, muscle toning, lower body strengthening, dance techniques',
+  schema_bumbum_prerequisites: 'None - open class for all levels',
+  schema_bumbum_lessons: '1 weekly class',
+  schema_bumbum_cris_jobTitle: 'Bum Bum Glutes Instructor',
+  schema_bumbum_cris_description:
+    'Specialist in body toning and glute exercises with the Farray Method. Expert in hip thrust, squats and lower body strengthening techniques.',
+
+  // Cuerpo Fit (Body Conditioning)
+  schema_cuerpofit_teaches:
+    'Body conditioning for dancers, functional strength, active flexibility, joint mobility, core stability, injury prevention',
+  schema_cuerpofit_prerequisites: 'None - open class for all levels',
+  schema_cuerpofit_lessons: '1 weekly class',
+  schema_cuerpofit_cris_jobTitle: 'Body Conditioning Instructor',
+  schema_cuerpofit_cris_description:
+    'Specialist in body conditioning for dancers with the Farray Method. Expert in functional strength, active flexibility and injury prevention.',
+
+  // Cuerpo Fit (Cardio Dance Fitness)
+  schema_fullbodycardio_teaches:
+    'Cuerpo-Fit, full body training, cardio dance, integral toning, functional exercises, calorie burning, fitness dance',
+  schema_fullbodycardio_prerequisites: 'None - open class for all levels with no prior experience',
+  schema_fullbodycardio_lessons: '1 weekly class',
+  schema_fullbodycardio_cris_jobTitle: 'Cuerpo-Fit and Cardio Dance Instructor',
+  schema_fullbodycardio_cris_description:
+    'Specialist in full body training and cardio dance with the Farray Method. Expert in functional exercises with music to burn calories in a fun way.',
+
+  // Afrobeat
+  schema_afrobeat_teaches: 'Afrobeats, Afrodance, Amapiano, Ntcham, African dance technique',
+  schema_afrobeat_prerequisites: 'None',
+  schema_afrobeat_lessons: '2 weekly classes',
+  schema_afrobeat_redblueh_jobTitle: 'Afrobeats Instructor',
+  schema_afrobeat_redblueh_description:
+    'Afrobeats specialist with African roots and international experience.',
+  schema_afrobeat_charlie_jobTitle: 'Afrobeats Instructor',
+  schema_afrobeat_charlie_description:
+    'Urban dance and afrobeats instructor with experience in multiple styles.',
+
+  // Afro Jazz
+  schema_afrojazz_teaches:
+    'Afro Jazz, fusion of afro dance with contemporary jazz, technique, body expression',
+  schema_afrojazz_prerequisites: 'None',
+  schema_afrojazz_lessons: '2 weekly classes',
+  schema_afrojazz_alejandro_jobTitle: 'Afro Jazz Instructor',
+  schema_afrojazz_alejandro_description:
+    'Professional Cuban dancer trained at ENA, specialist in afro and jazz style fusion.',
+  schema_afrojazz_daniel_jobTitle: 'Afro Jazz Instructor',
+  schema_afrojazz_daniel_description:
+    'Professional dancer trained at the National School of Art of Cuba, specialist in afro dances and contemporary.',
+
+  // Afro Contemporary
+  schema_afrocontemporaneo_teaches:
+    'Afro Contemporary, fusion of African techniques with contemporary dance, body expression',
+  schema_afrocontemporaneo_prerequisites: 'None',
+  schema_afrocontemporaneo_lessons: '3 weekly classes',
+  schema_afrocontemporaneo_daniel_jobTitle: 'Afro Contemporary Instructor',
+  schema_afrocontemporaneo_daniel_description:
+    'Professional dancer trained at the National School of Art of Cuba, specialist in afro and contemporary style fusion.',
+  schema_afrocontemporaneo_alejandro_jobTitle: 'Afro Contemporary Instructor',
+  schema_afrocontemporaneo_alejandro_description:
+    'Professional Cuban dancer specialist in floor technique, flow and afro-contemporary fusion.',
+
+  // Ballet
+  schema_ballet_teaches:
+    'Classical ballet, pointe technique, barre, posture, coordination, artistic expression',
+  schema_ballet_prerequisites: 'None',
+  schema_ballet_lessons: '4 weekly classes',
+  schema_ballet_daniel_jobTitle: 'Classical Ballet Instructor',
+  schema_ballet_daniel_description:
+    'Professional dancer trained at the National Ballet School of Cuba. Specialist in classical technique and posture.',
+  schema_ballet_alejandro_jobTitle: 'Ballet Instructor',
+  schema_ballet_alejandro_description:
+    'Professional Cuban dancer with classical training at ENA, specialist in barre and center technique.',
+
+  // Kizomba
+  schema_kizomba_teaches:
+    'Kizomba, partner connection technique, African musicality, sensual dancing',
+  schema_kizomba_prerequisites: 'None',
+  schema_kizomba_lessons: 'Coming soon',
+
+  // K-Pop
+  schema_kpop_teaches:
+    'K-Pop Dance, K-Pop choreographies, Korean dance technique, group synchronization',
+  schema_kpop_prerequisites: 'None',
+  schema_kpop_lessons: 'Coming soon',
+
+  // Commercial Dance
+  schema_commercial_teaches:
+    'Commercial Dance, music video choreographies, professional performance technique',
+  schema_commercial_prerequisites: 'None',
+  schema_commercial_lessons: 'Coming soon',
+
+  // Test Class (development only)
+  schema_test_teaches: 'Experimental visual test class',
+  schema_test_prerequisites: 'None',
+  schema_test_lessons: 'Test classes',
+
+  // YunaisyFarrayPage - Person schemas
+  schema_yunaisy_jobTitle_founder: 'Founder & Director',
+  schema_yunaisy_jobTitle_instructor: 'Dance Instructor & Director',
+
+  // FacilitiesPage - ImageObject descriptions
+  schema_facilities_imageDesc_salaA: 'Professional dance studio with floating linoleum floor',
+  schema_facilities_imageDesc_salaB: 'Ballet studio with mirrors and barres',
+  schema_facilities_imageDesc_salaC: 'Latin dance studio with parquet floor',
+  schema_facilities_imageDesc_salaD: 'Fitness room for dancer conditioning',
+  schema_facilities_imageDesc_bar: 'Social space for relaxation and community',
+  schema_facilities_imageDesc_reception: "Welcome area at Farray's Center",
+
+  // VideoTestimonialsSection - Schema
+  schema_videoTestimonials_name: "Video testimonials from Farray's Center",
+  schema_videoTestimonials_description: 'Videos of students and moments at our dance academy',
+
+  // DanceClassesPage - Schema
+  schema_danceClasses_itemListName: 'Dance class categories in Barcelona',
+
+  // PreparacionFisicaBailarinesPage - Schema
+  schema_prepFisica_itemListName:
+    "Physical Conditioning Activities for Dancers in Barcelona - Farray's Center",
+  schema_prepFisica_courseName: 'Physical Conditioning for Dancers in Barcelona',
+
+  // ServiciosBailePage - Schema
+  schema_servicios_areaName: 'Barcelona Metropolitan Area',
+  schema_servicios_catalogName: 'Dance Services Catalog in Barcelona',
+  schema_servicios_serviceName: "Dance Services in Barcelona - Farray's Center",
+  schema_servicios_itemListDescription:
+    'Complete list of professional dance services: room rental, private lessons, corporate events, dance agency and more.',
+  schema_servicios_providerDescription:
+    'Dance academy in Barcelona with over 25 styles, exclusive Farray® method and CID-UNESCO recognition.',
+  schema_servicios_localBusinessDescription:
+    'Dance academy in Barcelona with professional services: room rental, private lessons, team building, recording studio and dance agency.',
+
+  // BlogSchemas - Key Facts
+  schema_keyFacts: 'Key Facts',
 };

@@ -34,6 +34,7 @@
  */
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useI18n } from '../hooks/useI18n';
 
 /**
  * Global Organization Schema - renders once at app level.
@@ -41,6 +42,8 @@ import { Helmet } from 'react-helmet-async';
  * This should be included in App.tsx or the main layout component.
  */
 export const OrganizationSchema: React.FC = () => {
+  const { t, locale } = useI18n();
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -55,27 +58,26 @@ export const OrganizationSchema: React.FC = () => {
       height: '512',
     },
     image: 'https://www.farrayscenter.com/images/og-home.jpg',
-    description:
-      'Escuela de baile en Barcelona especializada en Dancehall, Twerk, Afrobeats, Reggaeton, Hip Hop, Heels y más. Clases para todos los niveles con los mejores profesores.',
-    foundingDate: '2015',
+    description: t('schema_org_description'),
+    foundingDate: '2017',
     founder: {
       '@type': 'Person',
       name: 'Yunaisy Farray',
-      jobTitle: 'Directora y Fundadora',
-      url: 'https://www.farrayscenter.com/es/yunaisy-farray',
+      jobTitle: t('schema_founderJobTitle'),
+      url: `https://www.farrayscenter.com/${locale}/yunaisy-farray`,
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Calle Entenca, 100',
+      streetAddress: t('schema_streetAddress'),
       addressLocality: 'Barcelona',
       postalCode: '08015',
-      addressRegion: 'Cataluña',
+      addressRegion: t('schema_addressRegion'),
       addressCountry: 'ES',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '41.3751',
-      longitude: '2.1482',
+      latitude: '41.380421',
+      longitude: '2.148014',
     },
     telephone: '+34622247085',
     email: 'info@farrayscenter.com',
@@ -111,6 +113,27 @@ export const OrganizationSchema: React.FC = () => {
       'Modern Jazz',
     ],
     slogan: 'Dance Your Dreams',
+    priceRange: '€€',
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '10:00',
+        closes: '22:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Saturday',
+        opens: '10:00',
+        closes: '20:00',
+      },
+    ],
+    memberOf: {
+      '@type': 'Organization',
+      name: 'CID - International Dance Council UNESCO',
+      url: 'https://www.cid-world.org/',
+      description: 'Official partner of UNESCO for dance',
+    },
   };
 
   return (
@@ -126,24 +149,30 @@ export const OrganizationSchema: React.FC = () => {
  * This should be included in App.tsx or the main layout component.
  */
 export const WebSiteSchema: React.FC = () => {
+  const { t, locale } = useI18n();
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     '@id': 'https://www.farrayscenter.com/#website',
     url: 'https://www.farrayscenter.com',
     name: "Farray's International Dance Center",
-    description:
-      'Escuela de baile en Barcelona con mas de 25 estilos: Dancehall, Twerk, Afrobeats, Reggaeton, Hip Hop, Salsa, Bachata, Ballet, Contemporaneo y mas.',
+    description: t('schema_website_description'),
     publisher: {
       '@id': 'https://www.farrayscenter.com/#organization',
     },
     inLanguage: ['es-ES', 'ca-ES', 'en', 'fr-FR'],
+    datePublished: '2017-01-01',
+    dateModified: '2026-01-25',
+    copyrightYear: 2017,
+    copyrightHolder: {
+      '@id': 'https://www.farrayscenter.com/#organization',
+    },
     potentialAction: {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate:
-          'https://www.farrayscenter.com/es/clases/baile-barcelona?q={search_term_string}',
+        urlTemplate: `https://www.farrayscenter.com/${locale}/clases/baile-barcelona?q={search_term_string}`,
       },
       'query-input': 'required name=search_term_string',
     },
@@ -170,53 +199,54 @@ interface NavigationItem {
  * This should be included in App.tsx or Header component.
  */
 export const SiteNavigationElementSchema: React.FC = () => {
+  const { t, locale } = useI18n();
   const baseUrl = 'https://www.farrayscenter.com';
 
-  // Main navigation items matching the Header structure
+  // Main navigation items matching the Header structure - translated and locale-aware
   const navigationItems: NavigationItem[] = [
     {
-      name: 'Inicio',
-      url: `${baseUrl}/es`,
+      name: t('schema_nav_home'),
+      url: `${baseUrl}/${locale}`,
     },
     {
-      name: 'Clases de Baile',
-      url: `${baseUrl}/es/clases/baile-barcelona`,
+      name: t('schema_nav_danceClasses'),
+      url: `${baseUrl}/${locale}/clases/baile-barcelona`,
     },
     {
-      name: 'Danza',
-      url: `${baseUrl}/es/clases/danza-barcelona`,
+      name: t('schema_nav_dance'),
+      url: `${baseUrl}/${locale}/clases/danza-barcelona`,
     },
     {
-      name: 'Danzas Urbanas',
-      url: `${baseUrl}/es/clases/danzas-urbanas-barcelona`,
+      name: t('schema_nav_urbanDances'),
+      url: `${baseUrl}/${locale}/clases/danzas-urbanas-barcelona`,
     },
     {
-      name: 'Salsa y Bachata',
-      url: `${baseUrl}/es/clases/salsa-bachata-barcelona`,
+      name: t('schema_nav_salsaBachata'),
+      url: `${baseUrl}/${locale}/clases/salsa-bachata-barcelona`,
     },
     {
-      name: 'Servicios',
-      url: `${baseUrl}/es/servicios-baile-barcelona`,
+      name: t('schema_nav_services'),
+      url: `${baseUrl}/${locale}/servicios-baile-barcelona`,
     },
     {
-      name: 'Blog',
-      url: `${baseUrl}/es/blog`,
+      name: t('schema_nav_blog'),
+      url: `${baseUrl}/${locale}/blog`,
     },
     {
-      name: 'Sobre Nosotros',
-      url: `${baseUrl}/es/sobre-nosotros`,
+      name: t('schema_nav_aboutUs'),
+      url: `${baseUrl}/${locale}/sobre-nosotros`,
     },
     {
-      name: 'Contacto',
-      url: `${baseUrl}/es/contacto`,
+      name: t('schema_nav_contact'),
+      url: `${baseUrl}/${locale}/contacto`,
     },
     {
-      name: 'Horarios',
-      url: `${baseUrl}/es/horarios-clases-baile-barcelona`,
+      name: t('schema_nav_schedule'),
+      url: `${baseUrl}/${locale}/horarios-clases-baile-barcelona`,
     },
     {
-      name: 'Precios',
-      url: `${baseUrl}/es/precios-clases-baile-barcelona`,
+      name: t('schema_nav_prices'),
+      url: `${baseUrl}/${locale}/precios-clases-baile-barcelona`,
     },
   ];
 
@@ -251,6 +281,8 @@ interface LocalBusinessSchemaProps {
     addressLocality: string;
     postalCode: string;
     addressCountry: string;
+    /** Translated address region (e.g., 'Cataluña', 'Catalunya', 'Catalonia', 'Catalogne') */
+    addressRegion?: string;
   };
   geo: {
     latitude: string;
@@ -264,6 +296,8 @@ interface LocalBusinessSchemaProps {
   openingHours?: string[];
   /** Booking URL for ReserveAction (enables Google "Book" button in search) */
   bookingUrl?: string;
+  /** Translated reservation action name */
+  reserveActionName?: string;
 }
 
 /**
@@ -302,6 +336,8 @@ interface ReviewSchemaProps {
 }
 
 export const LocalBusinessSchema: React.FC<LocalBusinessSchemaProps> = props => {
+  const { t } = useI18n();
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'DanceSchool',
@@ -318,7 +354,7 @@ export const LocalBusinessSchema: React.FC<LocalBusinessSchemaProps> = props => 
       addressLocality: props.address.addressLocality,
       postalCode: props.address.postalCode,
       addressCountry: props.address.addressCountry,
-      addressRegion: 'Cataluña',
+      addressRegion: props.address.addressRegion,
     },
     geo: {
       '@type': 'GeoCoordinates',
@@ -357,7 +393,7 @@ export const LocalBusinessSchema: React.FC<LocalBusinessSchemaProps> = props => 
         },
         result: {
           '@type': 'Reservation',
-          name: 'Reserva de clase de baile',
+          name: props.reserveActionName || t('schema_reserveActionName'),
         },
       },
     ],
@@ -426,6 +462,10 @@ interface CourseSchemaEnterpriseProps {
   baseUrl: string;
   /** Array of schedule items - each becomes a CourseInstance */
   schedules: CourseScheduleItem[];
+  /** Translated street address (e.g., "Carrer d'Entença, 100, Local 1") */
+  streetAddress?: string;
+  /** Translated address region (e.g., 'Cataluña', 'Catalunya', 'Catalonia', 'Catalogne') */
+  addressRegion?: string;
 }
 
 /**
@@ -457,7 +497,15 @@ export const CourseSchemaEnterprise: React.FC<CourseSchemaEnterpriseProps> = ({
   pageUrl,
   baseUrl,
   schedules,
+  streetAddress: streetAddressProp,
+  addressRegion: addressRegionProp,
 }) => {
+  const { t } = useI18n();
+
+  // Use translated defaults if props not provided
+  const streetAddress = streetAddressProp || t('schema_streetAddress');
+  const addressRegion = addressRegionProp || t('schema_addressRegion');
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
@@ -491,9 +539,10 @@ export const CourseSchemaEnterprise: React.FC<CourseSchemaEnterpriseProps> = ({
         name: "Farray's International Dance Center",
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'Calle Entenca 100',
+          streetAddress,
           addressLocality: 'Barcelona',
           postalCode: '08015',
+          addressRegion,
           addressCountry: 'ES',
         },
       },
@@ -642,9 +691,13 @@ interface DefinedTermSchemaProps {
     description: string;
     url?: string;
   }[];
+  /** Translated name for the term set (e.g., 'Terminología de Danza', 'Dance Terminology') */
+  termSetName?: string;
 }
 
 export const DefinedTermSchema: React.FC<DefinedTermSchemaProps> = props => {
+  const { t } = useI18n();
+
   const schema = {
     '@context': 'https://schema.org',
     '@graph': props.terms.map(term => ({
@@ -654,7 +707,7 @@ export const DefinedTermSchema: React.FC<DefinedTermSchemaProps> = props => {
       ...(term.url && { url: term.url }),
       inDefinedTermSet: {
         '@type': 'DefinedTermSet',
-        name: 'Terminología de Danza',
+        name: props.termSetName || t('schema_danceTerminology'),
       },
     })),
   };
@@ -869,14 +922,15 @@ export const BreadcrumbListSchema: React.FC<BreadcrumbListSchemaProps> = ({ item
  * @see https://schema.org/AggregateRating
  */
 export const DanceSchoolWithRatingSchema: React.FC = () => {
+  const { t } = useI18n();
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'DanceSchool',
     '@id': 'https://www.farrayscenter.com/#danceschool',
     name: "Farray's International Dance Center",
     alternateName: "Farray's Center",
-    description:
-      'Escuela de baile en Barcelona con más de 25 estilos: Salsa, Bachata, Dancehall, Twerk, Afrobeats, Hip Hop, Heels, Ballet, Contemporáneo y más. Formación profesional con los mejores maestros.',
+    description: t('schema_danceschool_description'),
     url: 'https://www.farrayscenter.com',
     telephone: '+34622247085',
     email: 'info@farrayscenter.com',
@@ -885,16 +939,16 @@ export const DanceSchoolWithRatingSchema: React.FC = () => {
     logo: 'https://www.farrayscenter.com/images/logo-fidc.png',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Calle Entenca, 100',
+      streetAddress: t('schema_streetAddress'),
       addressLocality: 'Barcelona',
       postalCode: '08015',
-      addressRegion: 'Cataluña',
+      addressRegion: t('schema_addressRegion'),
       addressCountry: 'ES',
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '41.3751',
-      longitude: '2.1482',
+      latitude: '41.380421',
+      longitude: '2.148014',
     },
     openingHoursSpecification: [
       {
@@ -926,11 +980,11 @@ export const DanceSchoolWithRatingSchema: React.FC = () => {
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Clases de Baile',
+      name: t('schema_catalog_danceClasses'),
       itemListElement: [
         {
           '@type': 'OfferCatalog',
-          name: 'Bailes Latinos',
+          name: t('schema_catalog_latinDances'),
           itemListElement: [
             { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Salsa Cubana' } },
             { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Bachata' } },
@@ -939,7 +993,7 @@ export const DanceSchoolWithRatingSchema: React.FC = () => {
         },
         {
           '@type': 'OfferCatalog',
-          name: 'Danzas Urbanas',
+          name: t('schema_catalog_urbanDances'),
           itemListElement: [
             { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Hip Hop' } },
             { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Dancehall' } },
@@ -949,7 +1003,7 @@ export const DanceSchoolWithRatingSchema: React.FC = () => {
         },
         {
           '@type': 'OfferCatalog',
-          name: 'Danza',
+          name: t('schema_catalog_dance'),
           itemListElement: [
             { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Contemporáneo' } },
             { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Ballet' } },
@@ -1083,13 +1137,27 @@ interface LeadCaptureActionSchemaProps {
   courseName: string;
   /** Description of what happens when user takes action */
   actionDescription?: string;
+  /** Translated action name (e.g., 'Descubre cómo empezar') */
+  actionName?: string;
+  /** Translated result name (e.g., 'Email con información del curso') */
+  resultName?: string;
+  /** Translated result description */
+  resultDescription?: string;
+  /** Translated ask action name (e.g., 'Solicitar información') */
+  askActionName?: string;
 }
 
 export const LeadCaptureActionSchema: React.FC<LeadCaptureActionSchemaProps> = ({
   pageUrl,
   courseName,
-  actionDescription = 'Solicita información y recibe acceso a clase de bienvenida gratuita',
+  actionDescription,
+  actionName,
+  resultName,
+  resultDescription,
+  askActionName,
 }) => {
+  const { t } = useI18n();
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
@@ -1098,8 +1166,8 @@ export const LeadCaptureActionSchema: React.FC<LeadCaptureActionSchemaProps> = (
     potentialAction: [
       {
         '@type': 'InteractAction',
-        name: 'Descubre cómo empezar',
-        description: actionDescription,
+        name: actionName || t('schema_leadCapture_name'),
+        description: actionDescription || t('schema_leadCapture_defaultDescription'),
         target: {
           '@type': 'EntryPoint',
           urlTemplate: `${pageUrl}#descubre`,
@@ -1111,14 +1179,13 @@ export const LeadCaptureActionSchema: React.FC<LeadCaptureActionSchemaProps> = (
         // Result is receiving information, not a direct reservation
         result: {
           '@type': 'Message',
-          name: 'Email con información del curso',
-          description:
-            'Recibirás un email con toda la información para empezar: horarios, precios, y acceso a tu clase de bienvenida gratuita.',
+          name: resultName || t('schema_leadCapture_resultName'),
+          description: resultDescription || t('schema_leadCapture_resultDescription'),
         },
       },
       {
         '@type': 'AskAction',
-        name: 'Solicitar información',
+        name: askActionName || t('schema_leadCapture_askActionName'),
         target: {
           '@type': 'EntryPoint',
           urlTemplate: `${pageUrl}#contacto`,

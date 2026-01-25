@@ -107,9 +107,9 @@ export const TEST_CLASS_PAGE_CONFIG: FullDanceClassConfig = {
 
   // === SCHEMA ===
   courseConfig: {
-    teaches: 'Clase experimental de prueba visual',
-    prerequisites: 'Ninguno',
-    lessons: 'Clases de prueba',
+    teachesKey: 'schema_test_teaches',
+    prerequisitesKey: 'schema_test_prerequisites',
+    lessonsKey: 'schema_test_lessons',
     duration: 'PT1H',
   },
 };

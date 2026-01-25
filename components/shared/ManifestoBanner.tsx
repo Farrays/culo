@@ -38,37 +38,47 @@ const ManifestoBanner: React.FC = () => {
 
       <div className="relative z-10 container mx-auto px-4">
         <AnimateOnScroll>
-          {/* Main manifesto text */}
-          <div className="text-center" style={{ transform: 'rotate(-2deg)' }}>
-            {/* Línea 1 - BAILA HOY / DANCE TODAY */}
-            <p
-              className="font-black tracking-tighter leading-none text-primary-accent text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem]"
+          {/* 3D Perspective container */}
+          <div style={{ perspective: '800px' }}>
+            {/* Main manifesto text with 3D rotation */}
+            <div
+              className="text-center"
               style={{
-                textShadow: '0 0 60px rgba(200, 34, 96, 0.5), 0 0 120px rgba(200, 34, 96, 0.3)',
+                transform: 'rotateX(20deg)',
+                transformOrigin: 'center top',
+                transformStyle: 'preserve-3d',
               }}
             >
-              {t('manifesto_line1')}
-            </p>
+              {/* Línea 1 - BAILA HOY / DANCE TODAY */}
+              <p
+                className="font-black tracking-tighter leading-none text-primary-accent text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem]"
+                style={{
+                  textShadow: '0 0 60px rgba(200, 34, 96, 0.5), 0 0 120px rgba(200, 34, 96, 0.3)',
+                }}
+              >
+                {t('manifesto_line1')}
+              </p>
 
-            {/* Línea 2 - TRANSFORMA / TRANSFORM */}
-            <p
-              className="font-black tracking-tighter leading-none text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl my-2"
-              style={{
-                textShadow: '0 0 40px rgba(200, 34, 96, 0.4)',
-              }}
-            >
-              {t('manifesto_line2')}
-            </p>
+              {/* Línea 2 - TRANSFORMA / TRANSFORM */}
+              <p
+                className="font-black tracking-tighter leading-none text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl my-2"
+                style={{
+                  textShadow: '0 0 40px rgba(200, 34, 96, 0.4)',
+                }}
+              >
+                {t('manifesto_line2')}
+              </p>
 
-            {/* Línea 3 - TU MAÑANA / YOUR TOMORROW */}
-            <p
-              className="font-black tracking-tighter leading-none text-primary-accent text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem]"
-              style={{
-                textShadow: '0 0 60px rgba(200, 34, 96, 0.5), 0 0 120px rgba(200, 34, 96, 0.3)',
-              }}
-            >
-              {t('manifesto_line3')}
-            </p>
+              {/* Línea 3 - TU MAÑANA / YOUR TOMORROW */}
+              <p
+                className="font-black tracking-tighter leading-none text-primary-accent text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem]"
+                style={{
+                  textShadow: '0 0 60px rgba(200, 34, 96, 0.5), 0 0 120px rgba(200, 34, 96, 0.3)',
+                }}
+              >
+                {t('manifesto_line3')}
+              </p>
+            </div>
           </div>
 
           {/* Decorative line - theme color */}

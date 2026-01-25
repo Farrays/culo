@@ -91,7 +91,7 @@ const InstagramFeed: React.FC = () => {
                 >
                   <img
                     src={post.img}
-                    alt={`Bailarines en Instagram - Farray's Dance Center`}
+                    alt={t('instagram_post_alt')}
                     width="400"
                     height="400"
                     loading="lazy"
