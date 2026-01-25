@@ -1,6 +1,17 @@
 import { vi } from 'vitest';
 import '@testing-library/jest-dom/vitest';
 
+// ============================================================================
+// i18NEXT CONFIGURATION FOR TESTS
+// ============================================================================
+// Initialize i18next with test configuration
+// This ensures all react-i18next hooks work properly in tests
+import './i18n-test-config';
+
+// ============================================================================
+// GLOBAL MOCKS
+// ============================================================================
+
 // Mock IntersectionObserver - proper implementation
 class MockIntersectionObserver {
   readonly root: Element | null = null;

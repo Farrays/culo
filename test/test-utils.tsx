@@ -1,33 +1,72 @@
+/**
+ * Testing Utilities - Enterprise-grade Test Helpers
+ *
+ * Custom render function and utilities for testing React components
+ * with all necessary providers (i18n, routing, etc.)
+ *
+ * Usage:
+ *   import { render, screen } from '../test/test-utils';
+ *   render(<MyComponent />);
+ *
+ * @see https://testing-library.com/docs/react-testing-library/setup
+ */
+
 import React, { ReactElement } from 'react';
 import { render, RenderOptions, RenderResult } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
-import i18n from '../i18n/i18n';
-import { HelmetProvider } from 'react-helmet-async';
+import { BrowserRouter } from 'react-router-dom';
+import i18n from './i18n-test-config';
+
+// ============================================================================
+// PROVIDERS WRAPPER
+// ============================================================================
+
+interface AllProvidersProps {
+  children: React.ReactNode;
+}
 
 /**
- * Custom render function that wraps components with all necessary providers
- * for testing (Router, I18n, Helmet)
+ * Wrapper component that provides all necessary context providers for testing
+ * Add new providers here as needed (Redux, Theme, etc.)
  */
-const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
+const AllProviders: React.FC<AllProvidersProps> = ({ children }) => {
   return (
-    <HelmetProvider>
-      <BrowserRouter>
-        <I18nextProvider i18n={i18n}>{children}</I18nextProvider>
-      </BrowserRouter>
-    </HelmetProvider>
+    <I18nextProvider i18n={i18n}>
+      <BrowserRouter>{children}</BrowserRouter>
+    </I18nextProvider>
   );
 };
 
+// ============================================================================
+// CUSTOM RENDER
+// ============================================================================
+
 /**
- * Custom render with providers
- * Usage: renderWithProviders(<YourComponent />)
+ * Custom render function that wraps components with all providers
+ * Use this instead of RTL's render in all tests
+ *
+ * @example
+ * ```tsx
+ * import { render, screen } from '../test/test-utils';
+ *
+ * test('renders component', () => {
+ *   render(<MyComponent />);
+ *   expect(screen.getByText('Hello')).toBeInTheDocument();
+ * });
+ * ```
  */
 const customRender = (ui: ReactElement, options?: Omit<RenderOptions, 'wrapper'>): RenderResult =>
-  render(ui, { wrapper: AllTheProviders, ...options });
+  render(ui, { wrapper: AllProviders, ...options });
 
-// Re-export everything from @testing-library/react
+// ============================================================================
+// EXPORTS
+// ============================================================================
+
+// Re-export everything from React Testing Library
 export * from '@testing-library/react';
 
-// Override render method
+// Override render with our custom version
 export { customRender as render };
+
+// Export i18n instance for tests that need direct access
+export { i18n };
