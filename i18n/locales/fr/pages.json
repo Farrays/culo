@@ -9762,5 +9762,14 @@
   "schema_servicios_itemListDescription": "Liste complète de services de danse professionnels: location de salles, cours particuliers, événements corporatifs, agence de danseurs et plus.",
   "schema_servicios_providerDescription": "Académie de danse à Barcelone avec plus de 25 styles, méthode exclusive Farray® et reconnaissance CID-UNESCO.",
   "schema_servicios_localBusinessDescription": "Académie de danse à Barcelone avec services professionnels: location de salles, cours particuliers, team building, studio d'enregistrement et agence de danseurs.",
-  "schema_keyFacts": "Faits Clés"
+  "schema_keyFacts": "Faits Clés",
+  "femLevelInterTitle": "Intermedio",
+  "femLevelInterDesc": "Nivel intermedio para quienes ya dominan los fundamentos de Femmology. Coreografías más complejas y técnica refinada. Duración: 3-9 meses.",
+  "femLevelAdvancedTitle": "Avanzado",
+  "femLevelAdvancedDesc": "Nivel avanzado para bailarinas experimentadas. Floorwork avanzado, disociación corporal de élite y técnica de tacones de alto nivel. Duración: +9 meses.",
+  "salsaLadyV2PillarsSectionTitle": "El Método Farray®: Los 6 Pilares del Lady Style",
+  "salsaLadyV2PillarsSectionSubtitle": "El sistema completo que desarrolla cada aspecto de tu técnica femenina",
+  "fullBodyCardioVideoTitle": "Descubre el Entrenamiento Cuerpo-Fit en Acción",
+  "fullBodyCardioVideoDesc": "Mira cómo nuestras clases combinan cardio intenso con movimientos funcionales al ritmo de la música. Verás ejercicios para todo el cuerpo, trabajo de core y tonificación. Todo en un ambiente divertido y motivador.",
+  "bailemanananasPrepareBe": "Ven con ropa cómoda, zapatillas deportivas o pies descalzos (según la clase), agua y ganas de moverte. Todo lo demás lo ponemos nosotros."
 }

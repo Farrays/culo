@@ -9772,5 +9772,14 @@
   "schema_servicios_itemListDescription": "Lista completa de servicios profesionales de baile: alquiler de salas, clases particulares, eventos corporativos, agencia de bailarines y más.",
   "schema_servicios_providerDescription": "Academia de baile en Barcelona con más de 25 estilos, método exclusivo Farray® y reconocimiento CID-UNESCO.",
   "schema_servicios_localBusinessDescription": "Academia de baile en Barcelona con servicios profesionales: alquiler de salas, clases particulares, team building, estudio de grabación y agencia de bailarines.",
-  "schema_keyFacts": "Datos Clave"
+  "schema_keyFacts": "Datos Clave",
+  "femLevelInterTitle": "Intermedio",
+  "femLevelInterDesc": "Nivel intermedio para quienes ya dominan los fundamentos de Femmology. Coreografías más complejas y técnica refinada. Duración: 3-9 meses.",
+  "femLevelAdvancedTitle": "Avanzado",
+  "femLevelAdvancedDesc": "Nivel avanzado para bailarinas experimentadas. Floorwork avanzado, disociación corporal de élite y técnica de tacones de alto nivel. Duración: +9 meses.",
+  "salsaLadyV2PillarsSectionTitle": "El Método Farray®: Los 6 Pilares del Lady Style",
+  "salsaLadyV2PillarsSectionSubtitle": "El sistema completo que desarrolla cada aspecto de tu técnica femenina",
+  "fullBodyCardioVideoTitle": "Descubre el Entrenamiento Cuerpo-Fit en Acción",
+  "fullBodyCardioVideoDesc": "Mira cómo nuestras clases combinan cardio intenso con movimientos funcionales al ritmo de la música. Verás ejercicios para todo el cuerpo, trabajo de core y tonificación. Todo en un ambiente divertido y motivador.",
+  "bailemanananasPrepareBe": "Ven con ropa cómoda, zapatillas deportivas o pies descalzos (según la clase), agua y ganas de moverte. Todo lo demás lo ponemos nosotros."
 }

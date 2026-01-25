@@ -233,5 +233,17 @@
   "dayShort_thursday": "Thu",
   "dayShort_friday": "Fri",
   "dayShort_saturday": "Sat",
-  "dayShort_sunday": "Sun"
+  "dayShort_sunday": "Sun",
+  "horariosV2_block_evening-danza_ex1": "Ballet Clásico 19:00h",
+  "horariosV2_block_evening-danza_ex2": "Afro Jazz 20:15h",
+  "horariosV2_block_evening-danza_ex3": "Contemporáneo 21:30h",
+  "horariosV2_block_evening_ex1": "Ballet Clásico 19:00h",
+  "horariosV2_block_evening_ex2": "Afro Jazz 20:15h",
+  "horariosV2_block_evening_ex3": "Contemporáneo 21:30h",
+  "horariosV2_block_salsa-bachata_ex1": "Salsa Cubana 19:30h",
+  "horariosV2_block_salsa-bachata_ex2": "Bachata Sensual 20:30h",
+  "horariosV2_block_salsa-bachata_ex3": "Salsa Lady Style 21:30h",
+  "horariosV2_block_salsa_ex1": "Salsa Cubana 19:30h",
+  "horariosV2_block_salsa_ex2": "Bachata Sensual 20:30h",
+  "horariosV2_block_salsa_ex3": "Salsa Lady Style 21:30h"
 }
