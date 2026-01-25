@@ -5,7 +5,7 @@
 
     <!-- Google Tag Manager (GTM-TT2V8Z4) -->
     <!-- GDPR: Consent Mode - default denied until user accepts cookies -->
-    <script>
+    <script defer>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       // Default consent state (GDPR compliant - denied until user accepts)
@@ -42,27 +42,17 @@
 
 
     <!-- Performance optimization: Resource Hints -->
-    <!-- DNS prefetch for external domains -->
+    <!-- DNS prefetch for critical external domains only (reduced from 10 to 4 for PageSpeed) -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
-    <link rel="dns-prefetch" href="https://i.ytimg.com">
-    <link rel="dns-prefetch" href="https://www.youtube.com">
-    <link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
-    <link rel="dns-prefetch" href="https://browser.sentry-cdn.com">
     <link rel="dns-prefetch" href="https://vz-c354d67e-cc3.b-cdn.net">
     <link rel="dns-prefetch" href="https://vz-3d56a778-175.b-cdn.net">
-    <link rel="dns-prefetch" href="https://iframe.mediadelivery.net">
 
     <!-- Preconnect to critical external resources (reduce DNS + TLS time) -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://www.google-analytics.com">
-    <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
-    <link rel="preconnect" href="https://www.youtube.com" crossorigin>
-    <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin>
-    <link rel="preconnect" href="https://browser.sentry-cdn.com">
     <link rel="preconnect" href="https://vz-c354d67e-cc3.b-cdn.net" crossorigin>
     <link rel="preconnect" href="https://vz-3d56a778-175.b-cdn.net" crossorigin>
-    <link rel="preconnect" href="https://iframe.mediadelivery.net" crossorigin>
 
     <!-- Self-hosted fonts - preload critical weights with high priority -->
     <link rel="preload" href="/fonts/roboto-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin fetchpriority="high">
@@ -118,10 +108,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:1rem}
 
     <!-- Prefetch next likely navigation (with locale for static hosting) -->
     <link rel="prefetch" href="/es/clases/baile-barcelona" as="document">
-
-    <!-- Prefetch Unsplash domain for images -->
-    <link rel="dns-prefetch" href="https://images.unsplash.com">
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 
     <!-- Structured Data (JSON-LD) for SEO and E-E-A-T -->
     <script type="application/ld+json">

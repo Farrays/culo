@@ -2596,6 +2596,19 @@ export const ca = {
   faq_cta_contact: 'Contactar',
   faq_cta_login: 'Accedir al Meu Compte',
 
+  // FAQ GEO - Etiquetes d'Estadístiques (Optimització per Motors Generatius)
+  faq_stat_dance_styles: 'Estils de ball disponibles',
+  faq_stat_weekly_hours: 'Hores de classe setmanals',
+  faq_stat_days_recovery: 'Dies per recuperar classe cancel·lada',
+  faq_stat_hours_cancel: "Hores d'antelació per cancel·lar",
+  faq_stat_months_pack_validity: "Mesos de validesa de l'abonament",
+  faq_stat_days_cancellation_notice: "Dies d'antelació per donar-se de baixa",
+  faq_stat_maintenance_fee: 'Quota mensual de manteniment de matrícula',
+  faq_stat_beginner_classes: 'Classes recomanades per principiants',
+  faq_stat_enrollment_fee: 'Matrícula primer any',
+  faq_stat_renewal_fee: 'Matrícula renovació anual',
+  faq_stat_facility_size: 'Superfície total del centre',
+
   // Servicios Baile Page
   serviciosBaile_pageTitle:
     "Serveis de Ball Barcelona | Lloguer, Classes, Esdeveniments | Farray's",
@@ -18055,6 +18068,8 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogClasesPrincipiantes_faq4Answer: `Roba còmoda i calçat còmode. No necessites res especial per començar.`,
   blogClasesPrincipiantes_faq5Question: `Cada quant hauria de venir per notar millora?`,
   blogClasesPrincipiantes_faq5Answer: `Amb constància (per exemple, 2 vegades per setmana) notaràs avenços reals en poques setmanes.`,
+  blogClasesPrincipiantes_heroAlt:
+    "Grup d'alumnes principiants aprenent els seus primers passos de salsa i bachata en classe grupal de Barcelona, ambient acollidor i professors atents",
 
   // === SUMMARY STATS (GEO Citations) ===
   blogClasesPrincipiantes_statDemenciaLabel: 'reducció del risc de demència amb ball freqüent',
