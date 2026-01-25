@@ -19,7 +19,7 @@ export const YUNAISY_VIDEO_CONFIG = {
   mp4Url: 'https://vz-3d56a778-175.b-cdn.net/1bab760f-bc29-4732-9c1d-7cb930ac8f80/play_480p.mp4',
 
   // Local optimized poster for fast LCP (WebP, already optimized)
-  posterUrl: '/images/teachers/img/maestra-yunaisy-farray_1440.webp',
+  posterUrl: '/images/teachers/img/maestra-yunaisy-farray_960.webp',
 
   // Fallback poster from Bunny CDN (if local fails)
   posterFallbackUrl:

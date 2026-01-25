@@ -96,25 +96,32 @@ const EXTERNAL_LINKS: { pattern: RegExp; url: string; title: string; dofollow?: 
 ];
 
 // Component for external link with proper accessibility and SEO
-const ExternalLink: React.FC<{
+function ExternalLink({
+  href,
+  title,
+  children,
+  dofollow = true,
+}: {
   href: string;
   title: string;
   children: ReactNode;
   dofollow?: boolean;
-}> = ({ href, title, children, dofollow = true }) => (
-  <a
-    href={href}
-    target="_blank"
-    rel={dofollow ? 'noopener noreferrer' : 'nofollow noopener noreferrer'}
-    title={title}
-    className="text-primary-accent hover:text-white underline decoration-primary-accent/50 hover:decoration-white transition-colors duration-200"
-  >
-    {children}
-  </a>
-);
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel={dofollow ? 'noopener noreferrer' : 'nofollow noopener noreferrer'}
+      title={title}
+      className="text-primary-accent hover:text-white underline decoration-primary-accent/50 hover:decoration-white transition-colors duration-200"
+    >
+      {children}
+    </a>
+  );
+}
 
 // Function to render text with external links for E-E-A-T
-const renderTextWithLinks = (text: string): ReactNode => {
+function renderTextWithLinks(text: string): ReactNode {
   // Track which links we've already added to avoid duplicates in same text
   const usedPatterns = new Set<string>();
 
@@ -173,7 +180,7 @@ const renderTextWithLinks = (text: string): ReactNode => {
   }
 
   return result.length > 0 ? result : text;
-};
+}
 
 const YunaisyFarrayPage: React.FC = () => {
   const { t, locale } = useI18n();
