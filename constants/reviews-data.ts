@@ -139,7 +139,7 @@ export const VALID_TEACHERS: Record<string, string[]> = {
   marcos: ['marcos', 'martínez', 'martinez'],
   crisag: ['crisag', 'cris ag'],
   yasmina: ['yasmina', 'yas', 'fernández', 'fernandez'],
-  redbhlue: ['redbhlue', 'redblueh', 'red blue'],
+  redblueh: ['redblueh', 'redbhlue', 'red blue'],
   sandra: ['sandra', 'gómez', 'gomez'],
   isabel: ['isabel', 'lópez', 'lopez'],
   eugenia: ['eugenia', 'euge', 'trujillo'],

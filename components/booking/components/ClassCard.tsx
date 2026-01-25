@@ -28,7 +28,7 @@ const INSTRUCTOR_NAME_TO_REGISTRY: Record<string, string> = {
   'Mathias Font': 'mathias-font',
   'Carlos Canto': 'carlos-canto',
   Noemi: 'noemi',
-  Redbhlue: 'redbhlue',
+  Redbhlue: 'redblueh',
   'Juan Alvarez': 'juan-alvarez',
   CrisAg: 'crisag',
   'Grechén Méndez': 'grechen-mendez',
@@ -67,8 +67,8 @@ const INSTRUCTOR_NAME_TO_REGISTRY: Record<string, string> = {
   'Isa Lopez': 'isabel-lopez',
   'Isa López': 'isabel-lopez',
   // Redbhlue alternative names (Momence uses May Barleycorn)
-  May: 'redbhlue',
-  'May Barleycorn': 'redbhlue',
+  May: 'redblueh',
+  'May Barleycorn': 'redblueh',
 };
 
 function findTeacherRegistryId(instructorName: string): string | undefined {

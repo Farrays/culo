@@ -117,5 +117,5 @@ export const AFROBEAT_PREPARE_CONFIG = {
   whatToBringCount: 5,
   beforeCount: 3,
   avoidCount: 3,
-  teacher: getTeacherQuoteInfo('redbhlue', 'Especialista en Afrobeats'),
+  teacher: getTeacherQuoteInfo('redblueh', 'Especialista en Afrobeats'),
 };

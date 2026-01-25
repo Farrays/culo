@@ -303,7 +303,7 @@ export const TEACHER_REGISTRY: Record<string, TeacherRegistryEntry> = {
   // AFROBEATS SPECIALIST
   // ─────────────────────────────────────────────────
   redbhlue: {
-    id: 'redbhlue',
+    id: 'redblueh',
     name: 'Redbhlue',
     canonicalSpecialtyKey: 'teacher.redbhlue.specialty',
     canonicalBioKey: 'teacher.redbhlue.bio',

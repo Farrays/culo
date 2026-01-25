@@ -24,7 +24,7 @@ export const AFROBEAT_PAGE_CONFIG: FullDanceClassConfig = {
 
   // Teachers (sistema centralizado con fotos optimizadas)
   teachers: [
-    getTeacherForClass('redbhlue', 'afro', ['Afrobeats', 'Afro Dance']),
+    getTeacherForClass('redblueh', 'afro', ['Afrobeats', 'Afro Dance']),
     getTeacherForClass('charlie-breezy', 'afro', ['Afro', 'Urban']),
   ],
 

@@ -125,7 +125,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   // REDBHLUE (raíces africanas, Tanzania)
   // ============================================================================
   {
-    id: 'redbhlue',
+    id: 'redblueh',
     name: 'Redbhlue',
     image: '/images/teachers/img/profesor-redbhlue_320.webp',
     specialtyKey: 'teacher.redbhlue.specialty',
