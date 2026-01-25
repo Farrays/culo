@@ -2495,6 +2495,19 @@ export const fr = {
   faq_cta_contact: 'Contacter',
   faq_cta_login: 'Mon Compte',
 
+  // FAQ GEO - Libellés de Statistiques (Optimisation pour Moteurs Génératifs)
+  faq_stat_dance_styles: 'Styles de danse disponibles',
+  faq_stat_weekly_hours: 'Heures de cours hebdomadaires',
+  faq_stat_days_recovery: 'Jours pour récupérer un cours annulé',
+  faq_stat_hours_cancel: "Heures d'avance pour annuler",
+  faq_stat_months_pack_validity: "Mois de validité de l'abonnement",
+  faq_stat_days_cancellation_notice: 'Jours de préavis pour se désinscrire',
+  faq_stat_maintenance_fee: "Frais mensuels de maintien d'inscription",
+  faq_stat_beginner_classes: 'Cours recommandés pour débutants',
+  faq_stat_enrollment_fee: "Frais d'inscription première année",
+  faq_stat_renewal_fee: 'Frais de renouvellement annuel',
+  faq_stat_facility_size: 'Surface totale du centre',
+
   // Servicios Baile Page
   serviciosBaile_pageTitle: "Services de Danse Barcelone | Location, Cours, Événements | Farray's",
   serviciosBaile_metaDescription:

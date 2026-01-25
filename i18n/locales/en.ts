@@ -2597,6 +2597,19 @@ export const en = {
   faq_cta_contact: 'Contact',
   faq_cta_login: 'Access My Account',
 
+  // FAQ GEO - Statistics Labels (Generative Engine Optimization)
+  faq_stat_dance_styles: 'Available dance styles',
+  faq_stat_weekly_hours: 'Weekly class hours',
+  faq_stat_days_recovery: 'Days to recover cancelled class',
+  faq_stat_hours_cancel: 'Hours in advance to cancel',
+  faq_stat_months_pack_validity: 'Months of package validity',
+  faq_stat_days_cancellation_notice: 'Days notice for cancellation',
+  faq_stat_maintenance_fee: 'Monthly enrollment maintenance fee',
+  faq_stat_beginner_classes: 'Classes recommended for beginners',
+  faq_stat_enrollment_fee: 'First year enrollment fee',
+  faq_stat_renewal_fee: 'Annual renewal fee',
+  faq_stat_facility_size: 'Total facility area',
+
   // Servicios Baile Page
   serviciosBaile_pageTitle: "Dance Services Barcelona | Room Rental, Classes, Events | Farray's",
   serviciosBaile_metaDescription:
@@ -15831,118 +15844,6 @@ Barcelona has become one of the world epicenters of sensual bachata. Festivals, 
   blogClasesSalsaBarcelona_faq6Question: 'Why is salsa called a "universal language"?',
   blogClasesSalsaBarcelona_faq6Answer:
     'Salsa is a universal language because communication in dancing is non-verbal: it relies on physical contact, body signals, and shared rhythm. You can dance with someone from any country without speaking the same language.',
-
-  // ============================================================================
-  // BLOG ARTICLE: Dance classes for beginners in Barcelona
-  // ============================================================================
-
-  blogClasesBeginners_title: "Dance classes for beginners in Barcelona: guide to start at Farray's",
-  blogClasesBeginners_metaDescription:
-    "Start dancing from scratch in Barcelona (Eixample). Come meet Farray's with a welcome class and follow this guide: what to bring, how to choose a style and how to progress.",
-  blogClasesBeginners_excerpt:
-    'Complete guide to start dancing from scratch in Barcelona. Welcome class, no partner needed, all levels. Drop-in from €20.',
-  blogClasesBeginners_breadcrumbCurrent: 'Classes for beginners',
-  blogClasesBeginners_summaryBullet1:
-    "Welcome class at Farray's (Eixample) – special price during promotional season or from €10",
-  blogClasesBeginners_summaryBullet2: "You don't need previous experience or a partner",
-  blogClasesBeginners_summaryBullet3:
-    'Step-by-step guide: what to bring, which style to choose and how to progress',
-  blogClasesBeginners_summaryBullet4:
-    '+25 styles available: Latin, urban, technical dance and more',
-  blogClasesBeginners_intro:
-    "Feel like starting to dance from scratch and don't know where to begin? You're in the right place. At <a href='/en'>Farray's International Dance Center</a> (Barcelona, Eixample) you can book a <strong>welcome class</strong> to get to know us: <strong>special price during promotional season</strong>, or with courtesy price (from €10) the rest of the year. You can also come with drop-in from €20. No pressure, no posing and a team that makes it easy from minute one.",
-  blogClasesBeginners_ctaHero:
-    '<strong><a href="/en/contacto">Book your welcome class →</a></strong>',
-  blogClasesBeginners_section1Title:
-    "The first thing I want you to know (because it'll take the pressure off)",
-  blogClasesBeginners_section1Content:
-    "At Farray's you don't come to \"prove yourself\". You come to learn, disconnect and feel part of a community where dancing is a plan, not an exam. It doesn't matter if:",
-  blogClasesBeginners_section1ListTitle: "It doesn't matter if:",
-  blogClasesBeginners_list1Item1: 'You\'ve never danced and feel like a "stiff board"',
-  blogClasesBeginners_list1Item2: "You're embarrassed to make mistakes",
-  blogClasesBeginners_list1Item3: "You're worried about going alone",
-  blogClasesBeginners_list1Item4: 'You think you "have no rhythm"',
-  blogClasesBeginners_section1Conclusion:
-    'Here the rule is simple: <strong>nobody judges you</strong>, and everyone started the same way.',
-  blogClasesBeginners_section2Title: 'What your first class is like (step by step)',
-  blogClasesBeginners_section2Intro: 'So you come with confidence, this is how it normally works:',
-  blogClasesBeginners_section2ListTitle: 'Steps of your first class:',
-  blogClasesBeginners_paso1:
-    '<strong>You arrive and we orient you:</strong> Our staff welcomes you, explains how the space works and guides you according to your goal (social, urban, technique, etc.).',
-  blogClasesBeginners_paso2:
-    '<strong>You choose your real level:</strong> Zero is a valid level. There are classes for beginners and also people who repeat basics to improve. You come for your own thing.',
-  blogClasesBeginners_paso3:
-    "<strong>You start moving without overthinking:</strong> The first victory isn't doing it perfectly. It's doing it.",
-  blogClasesBeginners_imageClase:
-    'Your first dance class in Barcelona: no pressure, just enjoyment',
-  blogClasesBeginners_queTraerTitle: 'What to bring (and what not)',
-  blogClasesBeginners_queTraerListTitle: 'What you need:',
-  blogClasesBeginners_traer1: 'Comfortable clothes (like for walking fast)',
-  blogClasesBeginners_traer2: 'Clean sneakers or comfortable footwear',
-  blogClasesBeginners_traer3: 'Water',
-  blogClasesBeginners_traer4:
-    'And most importantly: <strong>willingness to try</strong> (the rest is learned)',
-  blogClasesBeginners_section3Title: 'Do I need to come with a partner?',
-  blogClasesBeginners_section3Content:
-    "In most <strong>beginner classes you don't need to come with a partner</strong>. And if some format requires partners or rotation, we explain it so you're comfortable from the start.",
-  blogClasesBeginners_section4Title: "Which style to choose if you're starting",
-  blogClasesBeginners_section4Intro:
-    'If right now you only know that you "want to dance", perfect. Choose by feeling, not by theory:',
-  blogClasesBeginners_section4ListTitle: 'Choose according to what you seek:',
-  blogClasesBeginners_estilo1:
-    '<strong>If you want to socialize and have fun quickly:</strong> <a href="/en/clases/salsa-bachata-barcelona">social/Latin dances</a>',
-  blogClasesBeginners_estilo2:
-    '<strong>If you like energy, cardio and attitude:</strong> <a href="/en/clases/danzas-urbanas-barcelona">urban</a>',
-  blogClasesBeginners_estilo3:
-    '<strong>If you\'re drawn to technique, posture and body control:</strong> <a href="/en/clases/danza-barcelona">dance/technique</a>',
-  blogClasesBeginners_section4Cta:
-    'Not sure? We make it easy: come to a <a href="/en/contacto">welcome class</a> and we\'ll guide you according to your goal.',
-  blogClasesBeginners_section5Title: 'The rule that makes you improve (and almost nobody applies)',
-  blogClasesBeginners_section5Content:
-    "In dance there's a formula that never fails: <strong>repetition + consistency</strong>. Your body learns like it learns a language: at first you think too much, you stumble, you get frustrated... and suddenly one day it happens: you start doing steps without thinking. That's called <strong>muscle memory</strong>. And it's the moment when dancing stops being effort and becomes pleasure.",
-  blogClasesBeginners_section5Tip:
-    '**Realistic tip:** better 2 days a week for 2 months than one intense week and then disappearing.',
-  blogClasesBeginners_section6Title: "Don't compare yourself to anyone (compare yourself to you)",
-  blogClasesBeginners_section6Content: 'In a beginner class you can find:',
-  blogClasesBeginners_section6ListTitle: 'Types of students:',
-  blogClasesBeginners_comparar1: 'People who are truly starting',
-  blogClasesBeginners_comparar2: 'People who repeat basics to polish technique',
-  blogClasesBeginners_comparar3: 'Students who come from other schools',
-  blogClasesBeginners_section6Conclusion:
-    "If you compare, you lose. Your useful comparison is this: <strong>today's me vs me from 3 weeks ago</strong>.",
-  blogClasesBeginners_section7Title:
-    "If you get stuck, ask (and if you want to accelerate, there's an option)",
-  blogClasesBeginners_section7Content: 'If a movement resists you:',
-  blogClasesBeginners_section7ListTitle: 'Options:',
-  blogClasesBeginners_pregunta1: 'Ask during or after class',
-  blogClasesBeginners_pregunta2:
-    'Ask for a specific correction ("what do I do with my weight?", "where do I look?", "how do I mark the time?")',
-  blogClasesBeginners_section7Privadas:
-    'And if you want to advance faster, there\'s the short path: <a href="/en/clases-particulares-baile">private classes</a> to work on what your body needs (without distractions and with direct feedback).',
-  blogClasesBeginners_section8Title: 'Coming to meet us?',
-  blogClasesBeginners_section8Content:
-    "If this guide has taken away some mental noise, that's it: that was what was missing.",
-  blogClasesBeginners_ctaReserva:
-    '<strong><a href="/en/contacto">Book your welcome class →</a></strong><br/><br/>• <strong>During promotional season:</strong> welcome class<br/>• <strong>Rest of the year:</strong> courtesy class from €10<br/>• <strong>Drop-in:</strong> from €20<br/><br/>Questions? Write to us and we\'ll help you choose class and level.',
-  blogClasesBeginners_section9Title: 'Where we are (Barcelona)',
-  blogClasesBeginners_section9Content:
-    "<strong>Farray's International Dance Center</strong><br/>C/ Entença, 100 (ground floor), 08015 Barcelona, Catalonia<br/>Tel. <a href='tel:+34622247085'>(+34) 622 247 085</a><br/>Email: <a href='mailto:info@farrayscenter.com'>info@farrayscenter.com</a><br/><br/><strong>Class schedule:</strong> 10:00 to 22:00<br/><strong>Phone service:</strong> Mon–Fri 10:00 to 22:00<br/><br/><em>Dance academy in Barcelona (Eixample) - Near Plaza España and Sants Station</em>",
-  blogClasesBeginners_faqTitle: 'Frequently asked questions about dance classes for beginners',
-  blogClasesBeginners_faq1Question: 'Can I start dancing without experience?',
-  blogClasesBeginners_faq1Answer:
-    'Yes. We have beginner classes where you start from the basics and everything is explained step by step.',
-  blogClasesBeginners_faq2Question: 'Is there a welcome class to get to know the center?',
-  blogClasesBeginners_faq2Answer:
-    'Yes. During promotional season we offer a welcome class. The rest of the year you can come meet us with a courtesy class from €10, or with drop-in from €20.',
-  blogClasesBeginners_faq3Question: 'Do I have to go with a partner?',
-  blogClasesBeginners_faq3Answer:
-    "Not necessarily. In many formats you can come alone. We'll guide you according to the class.",
-  blogClasesBeginners_faq4Question: 'What clothes do I need?',
-  blogClasesBeginners_faq4Answer:
-    "Comfortable clothes and comfortable footwear. You don't need anything special to start.",
-  blogClasesBeginners_faq5Question: 'How often should I come to notice improvement?',
-  blogClasesBeginners_faq5Answer:
-    "With consistency (for example, 2 times a week) you'll notice real progress in a few weeks.",
 
   // ===== TERMS AND CONDITIONS PAGE =====
   terms_page_title: "General Terms and Conditions | Farray's Center",

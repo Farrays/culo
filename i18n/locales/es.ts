@@ -3616,6 +3616,19 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   faq_cta_subtitle:
     'Si tienes alguna otra pregunta, no dudes en contactarnos o acceder a tu cuenta de Momence.',
 
+  // FAQ GEO - Statistics Labels (Generative Engine Optimization)
+  faq_stat_dance_styles: 'Estilos de baile disponibles',
+  faq_stat_weekly_hours: 'Horas de clase semanales',
+  faq_stat_days_recovery: 'Días para recuperar clase cancelada',
+  faq_stat_hours_cancel: 'Horas de antelación para cancelar',
+  faq_stat_months_pack_validity: 'Meses de validez del abono',
+  faq_stat_days_cancellation_notice: 'Días de antelación para darse de baja',
+  faq_stat_maintenance_fee: 'Cuota mensual de mantenimiento de matrícula',
+  faq_stat_beginner_classes: 'Clases recomendadas para principiantes',
+  faq_stat_enrollment_fee: 'Matrícula primer año',
+  faq_stat_renewal_fee: 'Matrícula renovación anual',
+  faq_stat_facility_size: 'Superficie total del centro',
+
   // Servicios Baile Page
   serviciosBaile_pageTitle: "Servicios de Baile Barcelona | Alquiler, Clases, Eventos | Farray's",
   serviciosBaile_metaDescription:
