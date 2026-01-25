@@ -1,3 +1,24 @@
+/**
+ * LEGACY FILE - Migrated to i18next
+ *
+ * This file now re-exports the bridge hook that uses i18next internally.
+ * All components can continue using useI18n without changes.
+ *
+ * Phase 2 Migration Status:
+ * - App.tsx: Using I18nextProvider ✅
+ * - All other components: Using useI18n bridge hook ✅
+ * - Legacy I18nProvider: DEPRECATED (kept for reference)
+ *
+ * TODO Phase 3: Gradually migrate components to useTranslation for namespace optimization
+ */
+
+// Re-export the bridge hook
+export { useI18n } from './useI18nBridge';
+
+// Legacy code below - DEPRECATED
+// Kept for reference during migration
+
+/*
 import React, {
   createContext,
   useState,
@@ -225,3 +246,4 @@ export const useI18n = (): I18nContextType => {
   }
   return context;
 };
+*/
