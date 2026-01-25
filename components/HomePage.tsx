@@ -109,6 +109,11 @@ const HomePage: React.FC = () => {
   const baseUrl = 'https://www.farrayscenter.com';
 
   const homeFaqs = [
+    // GEO Answer Capsules - Preguntas clave para citabilidad AI
+    { id: 'about-1', question: t('aboutQ1'), answer: t('aboutA1') },
+    { id: 'about-2', question: t('aboutQ2'), answer: t('aboutA2') },
+    { id: 'about-3', question: t('aboutQ3'), answer: t('aboutA3') },
+    // Preguntas prácticas
     { id: 'home-1', question: t('homeFaqQ1'), answer: t('homeFaqA1') },
     { id: 'home-2', question: t('homeFaqQ2'), answer: t('homeFaqA2') },
     { id: 'home-3', question: t('homeFaqQ3'), answer: t('homeFaqA3') },
@@ -281,6 +286,7 @@ const HomePage: React.FC = () => {
             'Micaela Llull (MicaPower)',
             'Michelle Lu',
             'garcia lam',
+            'Montse Solís Solís',
           ]}
         />
         <FAQSection title={t('faqTitle')} faqs={homeFaqs} pageUrl={`${baseUrl}/${locale}`} />
