@@ -32,6 +32,26 @@ const EXTERNAL_LINKS: { pattern: RegExp; url: string; title: string }[] = [
     url: 'https://es.wikipedia.org/wiki/The_Dancer_(programa_de_televisi%C3%B3n)',
     title: 'The Dancer - Wikipedia',
   },
+  {
+    pattern: /ENA Cuba|Escuela Nacional de Arte|Escuela Nacional de las Artes|ENA de Cuba/gi,
+    url: 'https://www.ena.cult.cu/',
+    title: 'Escuela Nacional de Arte de Cuba (ENA)',
+  },
+  {
+    pattern: /ISA Cuba|Instituto Superior de Arte|ISA de Cuba/gi,
+    url: 'https://www.isa.cult.cu/',
+    title: 'Instituto Superior de Arte de Cuba (ISA)',
+  },
+  {
+    pattern: /Compañía Carlos Acosta|Carlos Acosta Company|Acosta Danza/gi,
+    url: 'https://www.carlosacostadanza.com/',
+    title: 'Carlos Acosta Dance Company',
+  },
+  {
+    pattern: /Royal Ballet of London|Royal Ballet London|Royal Ballet/gi,
+    url: 'https://www.roh.org.uk/about/the-royal-ballet',
+    title: 'The Royal Ballet - Royal Opera House',
+  },
 ];
 
 // Component for external link with proper accessibility

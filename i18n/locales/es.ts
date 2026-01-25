@@ -7,6 +7,10 @@ export const es = {
   ratingAriaLabel: '{rating} de 5 estrellas',
   closeButton: 'Cerrar',
   teacherAvatarAlt: 'Foto de {name}',
+  // Image Alt Texts - SEO Optimized
+  logo_alt: "Logo Farray's International Dance Center - Academia de baile en Barcelona",
+  teacher_photo_alt: "{name} - Profesor de baile en Barcelona | Farray's Center",
+  instagram_post_alt: "Clases de baile en Barcelona - Alumnos de Farray's Dance Center",
   breadcrumbHome: 'Inicio',
   breadcrumb_home: 'Inicio',
   home: 'Inicio',
@@ -1581,7 +1585,11 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   home_categories_urbano_styles_afrobeat: 'Afrobeat',
   home_categories_urbano_styles_dancehall: 'Dancehall',
   home_categories_urbano_styles_femmology_heels: 'Femmology Heels',
+  home_categories_urbano_styles_heels:
+    'Técnica femenina en tacones que fusiona sensualidad y elegancia',
   home_categories_urbano_styles_hip_hop: 'Hip Hop',
+  home_categories_urbano_styles_reggaeton:
+    'Reggaeton auténtico de La Habana: flow cubano y sabor caribeño',
   home_categories_urbano_styles_hip_hop_reggaeton: 'Hip Hop Reggaeton',
   home_categories_urbano_styles_reggaeton_cubano: 'Reggaeton Cubano (Reparto)',
   home_categories_urbano_styles_sexy_reggaeton: 'Sexy Reggaeton',
@@ -1617,10 +1625,23 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
     'Explora la técnica y la expresión a través de la elegancia del Ballet, Contemporáneo y Jazz.',
   home_categories_danza_styles_afro_contemporaneo: 'Afro Contemporáneo (Técnica Cubana)',
   home_categories_danza_styles_afro_jazz: 'Afro Jazz (Técnica Cubana)',
+  home_categories_danza_styles_ballet:
+    'Ballet clásico con metodología cubana reconocida internacionalmente',
   home_categories_danza_styles_ballet_clasico: 'Ballet Clásico (Escuela Cubana)',
   home_categories_danza_styles_contemporaneo: 'Contemporáneo (Lírico y Suelo & Flow)',
   home_categories_danza_styles_modern_jazz: 'Modern Jazz',
   home_categories_danza_styles_bum_bum_gluteos: 'Bum Bum Glúteos Maravillosos',
+  home_categories_salsa_bullets:
+    'Salsa Cubana, Bachata, Son, Timba, Lady Style, Mens Style, Desde principiante hasta avanzado',
+  home_categories_salsa_styles_bachata: 'Baile sensual caribeño que te conecta con tu pareja',
+  home_categories_salsa_styles_lady_style:
+    'Técnica femenina individual: giros, trabajo de brazos, actitud femenina',
+  home_categories_salsa_styles_salsa_cubana:
+    'Salsa cubana auténtica con sabor circular, alegre y social',
+  home_categories_salsa_styles_son_cubano:
+    'El padre de la salsa: elegante, clásico y lleno de tradición',
+  home_categories_salsa_styles_timba:
+    'Salsa cubana moderna: rápida, enérgica y llena de actitud explosiva',
 
   // Category: Fitness para Bailarines
   home_categories_fitness_title: 'Preparación Física',
@@ -2455,7 +2476,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   about_h1: 'Sobre Nosotros',
   about_intro:
-    "Hay quienes buscan una escuela de baile parecida a las que ya conocen. Y hay quienes buscan la escuela que siempre soñaron. En Farray's somos de este segundo grupo.",
+    "Farray's International Dance Center es una academia de danza multidisciplinar en Barcelona, acreditada por CID-UNESCO y dirigida por Yunaisy Farray. Ofrecemos más de 25 estilos de baile con el método exclusivo Farray®: desde Salsa Cubana y Bachata hasta Hip Hop, Dancehall, Danza Contemporánea y Ballet. Más de 15.000 alumnos formados desde 2005.",
   about_cta_contact: 'Contacta con Nosotros',
 
   // Our Story Section
@@ -2658,6 +2679,17 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   notFound_dancehall: 'Dancehall',
   notFound_salsaBachata: 'Salsa y Bachata',
   notFound_urbanDances: 'Danzas Urbanas',
+  notFound_heels: 'Heels',
+  notFound_teachers: 'Profesores',
+  notFound_schedule: 'Horarios',
+  notFound_prices: 'Precios',
+  notFound_contact: 'Contacto',
+  notFound_popularPages: 'Páginas Populares',
+  notFound_helpText: '¿Necesitas ayuda?',
+  notFound_contactLink: 'Contáctanos',
+  notFound_seo_title: 'Página No Encontrada | 404',
+  notFound_seo_description:
+    'La página que buscas no existe. Explora nuestras clases de baile en Barcelona o vuelve al inicio.',
 
   // ==================== YUNAISY FARRAY PAGE ====================
   yunaisyFarray_page_title: 'Yunaisy Farray - Fundadora y Directora | Maestra CID-UNESCO',
@@ -3206,6 +3238,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   particularesPage_breadcrumb_home: 'Inicio',
   particularesPage_breadcrumb_current: 'Clases Particulares de Baile',
   particularesPage_h1: 'Clases Particulares de Baile en Barcelona',
+  particularesPage_subtitle: 'Enseñanza Personalizada, Dedicación Exclusiva, Flexibilidad Total',
   particularesPage_intro:
     'Aprende a tu ritmo con un profesor dedicado 100% a ti. Horarios flexibles, todos los estilos de baile, progreso 3x más rápido. Tu danza, tus reglas.',
 
@@ -3255,30 +3288,76 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   particularesPage_premium_feature5: 'Posibilidad de clases online',
   particularesPage_premium_feature6: 'Posibilidad de clases a domicilio',
 
+  // Comparison Table
+  particularesPage_comparisonTitle: 'Clases Particulares vs. Clases Premium',
+  particularesPage_comparisonSubtitle:
+    'Ambas son excelentes opciones, pero cada una sirve diferentes necesidades',
+  particularesPage_tableHeader_feature: 'Característica',
+  particularesPage_tableHeader_private: 'Clases Particulares',
+  particularesPage_tableHeader_premium: 'Clases Premium',
+  particularesPage_tableRow1_feature: 'Número de Estudiantes',
+  particularesPage_tableRow1_private: '1 estudiante (o pareja)',
+  particularesPage_tableRow1_premium: 'Máx. 10 estudiantes por clase',
+  particularesPage_tableRow2_feature: 'Dedicación del Profesor',
+  particularesPage_tableRow2_private: '100% exclusiva',
+  particularesPage_tableRow2_premium: 'Alta dedicación (grupo reducido)',
+  particularesPage_tableRow3_feature: 'Horario',
+  particularesPage_tableRow3_private: 'Flexibilidad total (tú eliges)',
+  particularesPage_tableRow3_premium: 'Horario fijo',
+  particularesPage_tableRow4_feature: 'Contenido',
+  particularesPage_tableRow4_private: 'Personalizado a tus objetivos',
+  particularesPage_tableRow4_premium: 'Programa progresivo estructurado',
+  particularesPage_tableRow5_feature: 'Ideal Para',
+  particularesPage_tableRow5_private: 'Objetivos específicos, eventos, horarios, velocidad máxima',
+  particularesPage_tableRow5_premium: 'Aprendizaje continuo, conexión social, grupos reducidos',
+
   // Packages Section
   particularesPage_packs_title: 'Nuestros Packs de Clases Particulares',
   particularesPage_packs_subtitle:
     'Elige el pack que mejor se adapte a tus necesidades. Todos incluyen validez de 12 meses.',
+  particularesPage_packagesTitle: 'Paquetes de Clases Particulares',
+  particularesPage_packagesSubtitle:
+    'Todos los paquetes incluyen grabación en vídeo de tus clases y seguimiento personalizado',
   particularesPage_pack_popular: 'Más Popular',
 
   particularesPage_pack1_name: 'Pack 1 Clase',
+  particularesPage_pack1_price: '65€',
   particularesPage_pack1_feature1: '1 hora de clase particular individual',
   particularesPage_pack1_feature2: 'Válida para cualquier estilo de baile',
   particularesPage_pack1_feature3: 'Profesor exclusivo para ti',
+  particularesPage_pack1_feature4: 'Horario flexible',
+  particularesPage_pack1_cta: 'Reservar Ahora',
 
   particularesPage_pack2_name: 'Pack 5 Clases',
+  particularesPage_pack2_price: '255€',
+  particularesPage_pack2_originalPrice: '325€',
+  particularesPage_pack2_popular: 'Más Popular',
   particularesPage_pack2_feature1: '5 horas de clases particulares',
   particularesPage_pack2_feature2: 'Ahorra 70€ vs. clases sueltas',
   particularesPage_pack2_feature3: 'Agéndalas cuando quieras',
   particularesPage_pack2_feature4: 'Validez: 12 meses desde la compra',
+  particularesPage_pack2_feature5: '3 meses de validez',
+  particularesPage_pack2_cta: 'Reservar Ahora',
 
   particularesPage_pack3_name: 'Pack 10 Clases',
+  particularesPage_pack3_price: '490€',
+  particularesPage_pack3_originalPrice: '650€',
   particularesPage_pack3_feature1: '10 horas de clases particulares',
   particularesPage_pack3_feature2: 'Ahorra 160€ vs. clases sueltas',
   particularesPage_pack3_feature3: 'Agéndalas cuando quieras',
   particularesPage_pack3_feature4: 'Validez: 12 meses desde la compra',
+  particularesPage_pack3_feature5: '6 meses de validez',
+  particularesPage_pack3_feature6: 'Prioridad para la programación',
+  particularesPage_pack3_cta: 'Reservar Ahora',
 
   particularesPage_pack_cta: 'Reservar Ahora',
+
+  // Final CTA Section
+  particularesPage_ctaTitle: '¿Listo para Llevar tu Baile al Siguiente Nivel?',
+  particularesPage_ctaText:
+    'Reserva tu clase particular ahora y empieza a ver resultados desde el primer día. Enseñanza personalizada, dedicación total y resultados garantizados.',
+  particularesPage_ctaButton: 'Reserva tu Primera Clase',
+  particularesPage_ctaSecondary: 'Tengo una Pregunta',
 
   // FAQ Section
   particularesPage_faq_title: 'Preguntas Frecuentes',
@@ -3338,10 +3417,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   particularesPage_benefitsSubtitle:
     'Descubre las ventajas que solo las clases privadas pueden ofrecerte',
 
-  // Redesigned Comparison Section
-  particularesPage_comparisonTitle: 'Elige Tu Modalidad de Aprendizaje',
-  particularesPage_comparisonSubtitle:
-    'Compara nuestras opciones y encuentra la que mejor se adapta a tus necesidades',
+  // Comparison Descriptions
   particularesPage_particulares_desc:
     'Atención exclusiva 100% dedicada a ti. Perfecto para quienes buscan el máximo progreso en el menor tiempo posible, con total privacidad y horarios ultra-flexibles. Ideal para principiantes absolutos, bailarines avanzados que buscan perfeccionarse, o cualquier persona que valore la eficiencia y personalización.',
   particularesPage_premium_desc:
@@ -4050,6 +4126,9 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   facilitiesPageTitle: 'Instalaciones - Escuela de Baile en Barcelona',
   facilitiesMetaDescription:
     "Instalaciones Farray's Center Barcelona: 700m², 4 salas con suelo de danza profesional, espejos, climatización. Vestuarios y zona social. Centro CID-UNESCO.",
+  facilitiesH1: 'Nuestras Instalaciones de Danza en Barcelona',
+  facilitiesIntro:
+    "En Farray's International Dance Center hemos creado un espacio diseñado por y para bailarines. 700 m² de instalaciones de primera clase en el corazón de Barcelona, entre Plaza España y estación de Sants.",
 
   // Hero Section
   facilitiesHeroTitle: '+700 m² Dedicados al Baile en Barcelona',
@@ -4115,6 +4194,15 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   // Amenities Section
   facilitiesAmenitiesTitle: 'Zona Social y Vestuarios de nuestra escuela de baile',
   facilitiesAmenitiesSubtitle: 'Más que una escuela: una comunidad',
+  facilitiesAmenities: 'Comodidades Generales',
+  facilitiesAmenity1: 'Vestuarios con taquillas',
+  facilitiesAmenity2: 'Duchas con agua caliente',
+  facilitiesAmenity3: 'Aire acondicionado en todos los estudios',
+  facilitiesAmenity4: 'Sistemas de sonido profesionales',
+  facilitiesAmenity5: 'Espejos de pared completa',
+  facilitiesAmenity6: 'Suelos flotantes profesionales',
+  facilitiesAmenity7: 'Área de descanso con máquinas expendedoras',
+  facilitiesAmenity8: 'WiFi gratuito',
 
   facilitiesAm1Title: 'Bar / Zona Social',
   facilitiesAm1Desc:
@@ -4127,6 +4215,10 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   facilitiesAm3Title: 'Zona Wi-Fi Gratuita',
   facilitiesAm3Desc:
     'Conexión Wi-Fi de alta velocidad en todas las instalaciones para que puedas trabajar, estudiar o compartir tus contenidos entre clases.',
+
+  facilitiesLocation: 'Ubicación Privilegiada',
+  facilitiesLocationDesc:
+    'Estamos en la calle Entença 100, Barcelona. A solo 5 minutos caminando de Plaza España (L1, L3) y estación de Sants. Fácil acceso en metro, autobús, tren y coche con aparcamiento cercano.',
 
   // Equipment Section
   facilitiesEquipmentTitle: 'Equipamiento Profesional en Cada Sala',
@@ -4199,6 +4291,8 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
   facilitiesGallerySocial: 'Zona Social',
   facilitiesGalleryServicios: 'Servicios',
   facilitiesGalleryPhotos: 'fotos',
+  facilitiesGalleryPhotosLabel: 'fotos',
+  facilitiesGalleryViewLarge: 'Ver en grande',
   facilitiesAreaSalaA: 'Sala A',
   facilitiesAreaSalaB: 'Sala B',
   facilitiesAreaSalaC: 'Sala C',
@@ -4712,6 +4806,10 @@ En Farray's International Dance Center, el Afrobeats se enseña con técnica, re
   // Teachers
   afroTeachersTitle: 'Conoce a nuestros profesores de Afrobeats',
   afroTeachersSubtitle: 'Expertos en Afrodance con años de experiencia',
+  afroTeacher1Bio:
+    'Redblueh es profesor y bailarín internacional, nativo de Tanzania y especialista en Ntcham. Sus raíces, conocimiento, energía y alegría contagiosa lo convierten en uno de los maestros más recomendados de toda Barcelona.',
+  afroTeacher2Bio:
+    'Charlie Breezy, maestro internacional y bailarín cubano. Nació en un país donde la cultura africana está totalmente arraigada. Formado en la ENA (Escuela Nacional de Arte de Cuba), Charlie es un bailarín versátil que, además de dominar diferentes estilos de danza africana, destaca en contemporáneo, ballet y un amplio abanico de danzas urbanas.',
   afroTeachersClosing:
     'Nuestros profesores no solo enseñan pasos: transmiten cultura, historia y pasión por el Afrodance.',
   // Schedule
@@ -5470,8 +5568,13 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colombia), J Balvi
   // ===== REGGAETON CUBANO / REPARTO PAGE =====
   // SEO & Meta
   rcbPageTitle: 'Clases de Reggaeton Cubano en Barcelona | Reparto y Cubatón Auténtico',
+  rcbMetaTitle: 'Clases de Reggaeton Cubano en Barcelona | Reparto y Cubatón Auténtico',
+  rcbMetaDesc:
+    "Aprende Reggaeton Cubano auténtico en Barcelona con profesores cubanos. Reparto, Cubatón, improvisación y disociación corporal. Clases para todos los niveles en Farray's Center.",
   rcbMetaDescription:
     'Clases de Reggaeton Cubano en Barcelona con maestros cubanos. Reparto, Cubatón e improvisación auténtica. Academia CID-UNESCO. Plaza España. ¡Empieza hoy!',
+  rcbMetaKeywords:
+    'reggaeton cubano barcelona, reparto barcelona, cubatón clases, reggaeton auténtico, clases reparto, academia reggaeton cubano',
 
   // Breadcrumb (4 levels: Home > Classes > Urban > Current)
   rcbBreadcrumbHome: 'Inicio',
@@ -5482,6 +5585,8 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colombia), J Balvi
   // Hero
   rcbHeroTitle: 'Reggaeton Cubano en Barcelona',
   rcbHeroSubtitle: 'Reparto y Cubatón Auténtico',
+  rcbHeroDescription:
+    'Aprende a bailar el reggaeton auténtico que se baila en las calles de Cuba. No el comercial, el de verdad.',
   rcbHeroDesc:
     'Aprende a bailar el reggaeton auténtico que se baila en las calles de Cuba. No el comercial, el de verdad.',
   rcbHeroLocation:
@@ -5489,6 +5594,10 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colombia), J Balvi
   rcbHeroStudents: '+15.000 alumnos formados',
 
   // CTAs
+  rcbHeroCTA: 'Hazte Socio Ahora',
+  rcbHeroCTASubtext: 'Quedan pocas plazas este mes',
+  rcbHeroSecondaryCTA: 'Reserva tu Clase de Bienvenida',
+  rcbHeroSecondaryCTASubtext: 'Oferta por tiempo limitado',
   rcbCTA1: 'Hazte Socio Ahora',
   rcbCTA1Subtext: 'Quedan pocas plazas este mes',
   rcbCTA2: 'Reserva tu Clase de Bienvenida',
@@ -5511,6 +5620,13 @@ Daddy Yankee (Puerto Rico), Bad Bunny (Puerto Rico), Karol G (Colombia), J Balvi
   rcbWhatIsQuestionAnswer: 'Entonces esto es para ti.',
 
   // Cultural History Section
+  rcbCulturalTitle: 'Historia del Reggaeton Cubano: Del Barrio al Mundo',
+  rcbCulturalP1:
+    'El Reggaeton Cubano nació en los barrios populares de La Habana a finales de los años 90, fusionando el reggae jamaicano con el hip hop americano y los ritmos afrocubanos. Mientras Puerto Rico desarrollaba su propio estilo, Cuba creaba algo diferente: más orgánico, más terrenal, más improvisado.',
+  rcbCulturalP2:
+    "El término 'Reparto' proviene de los barrios (repartos) de La Habana donde nació este movimiento. Artistas como El Chacal, Chocolate MC, Los 4 y Yomil y el Dany llevaron el sonido cubano al mundo, manteniendo esa esencia de calle que lo hace reconocible entre todos.",
+  rcbCulturalP3:
+    'Hoy, el Cubatón es reconocido mundialmente por su ritmo contagioso, sus letras directas y una forma de bailar que privilegia el feeling sobre la técnica. Si quieres bailar reggaeton como se baila en Cuba, debes aprender de un cubano.',
   rcbCulturalHistoryTitle: 'Historia y Orígenes del Reggaeton Cubano',
   rcbCulturalShort:
     'El reggaeton cubano tiene sus raíces en los barrios de La Habana, donde la fusión del reggae jamaicano con ritmos afrocubanos creó un estilo único y callejero.',
@@ -5572,10 +5688,19 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
 
   // Need to Enroll Section
   rcbNeedEnrollTitle: 'Necesitas aprender Reparto Cubano en una academia de baile',
+  rcbNeedEnroll1:
+    'Escuchas reggaeton cubano y tu cuerpo se mueve solo, pero no sabes canalizar ese ritmo',
+  rcbNeedEnroll2:
+    'Quieres bailar con la sabrosura cubana pero no encuentras a nadie que te enseñe de verdad',
+  rcbNeedEnroll3: 'Te aburren las coreografías y quieres aprender a improvisar',
+  rcbNeedEnroll4: 'Buscas una conexión más profunda con la música y tu cuerpo',
+  rcbNeedEnroll5: 'Quieres dominar la disociación corporal que caracteriza al Reparto',
+  rcbNeedEnrollClosing:
+    'Con el Reggaeton Cubano aprendes a sentir, no solo a ejecutar. Si buscas autenticidad, aquí la encontrarás.',
   rcbIdentifyAgitate1:
     'Seguir bailando el mismo reggaeton comercial de siempre te mantiene en tu zona de confort. Nunca desarrollarás tu propio estilo ni esa libertad que ves en los bailarines cubanos.',
   rcbIdentifySolution:
-    "En Farray\'s Center aprenderás con Alejandro Miñoso y Charlie Breezy, cubanos de nacimiento. No te enseñarán coreografías: te enseñarán a BAILAR con sentimiento.",
+    "En Farray's Center aprenderás con Alejandro Miñoso y Charlie Breezy, cubanos de nacimiento. No te enseñarán coreografías: te enseñarán a BAILAR con sentimiento.",
   rcbIdentifyClosing:
     'Deja el reggaeton de academia y descubre el reggaeton de las calles de Cuba.',
 
@@ -5630,6 +5755,10 @@ Hoy, el Cubatón se ha expandido internacionalmente mientras mantiene su esencia
   // Teachers Section
   rcbTeachersTitle: 'Conoce a tus maestros de Reparto',
   rcbTeachersSubtitle: 'Cubanos de nacimiento, formados en la ENA y referentes en Barcelona',
+  rcbTeacher1Bio:
+    'Charlie Breezy es maestro internacional y bailarín cubano formado en la ENA (Escuela Nacional de Arte de Cuba). Especialista en Reggaeton Cubano y Reparto, domina la improvisación y la disociación corporal con una técnica impecable. Su energía, creatividad y capacidad para transmitir el sabor cubano lo convierten en uno de los profesores más recomendados de Barcelona.',
+  rcbTeacher2Bio:
+    'Alejandro Miñoso es maestro internacional cubano formado en la ENA (Escuela Nacional de Arte de Cuba). Especialista en Reparto y técnica de improvisación, aporta una metodología única que conecta el ritmo cubano con la expresión corporal. Su pasión por transmitir la cultura del reggaeton auténtico lo hace un referente en Barcelona.',
   rcbTeachersClosing:
     'Con Charlie y Alejandro no solo aprendes a bailar Reparto: descubres el sabor auténtico que solo los cubanos pueden transmitir.',
   // Schedule Section
@@ -6801,6 +6930,8 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
   // Teachers Section
   modernjazzTeachersTitle: 'Conoce a tu profesor de Modern Jazz',
   modernjazzTeachersSubtitle: 'Técnica clásica, espíritu contemporáneo',
+  modernjazzTeacher1Bio:
+    'Alejandro Miñoso es maestro internacional cubano formado en la prestigiosa ENA (Escuela Nacional de Arte de Cuba). Ex solista de la compañía de Carlos Acosta, combina la exigencia técnica del ballet clásico con la libertad expresiva del jazz moderno, creando clases dinámicas donde cada alumno progresa a su ritmo.',
   // Schedule Section
   modernjazzScheduleTitle: 'Horarios de Clases de Modern Jazz',
   modernjazzScheduleSubtitle: 'Clases semanales con Alejandro Miñoso',
@@ -6810,6 +6941,10 @@ Una clase de Modern Jazz puede quemar **400-600 calorías por hora** según peso
     "Mira cómo es una clase en Farray\'s Center: técnica, expresión y pasión por el baile.",
 
   // Why Today Section
+  modernjazzWhyToday1:
+    'Porque la técnica requiere tiempo para construirse, y cuanto antes empieces, antes verás resultados.',
+  modernjazzWhyToday2:
+    'Porque tu cuerpo necesita más que el escritorio y el sofá: necesita estirarse, girar, saltar y respirar la música.',
   modernjazzWhyToday3:
     'Porque mereces una actividad que te exija, te vacíe la mente y te haga sentir más fuerte y más elegante.',
   modernjazzWhyTodayClosing1: "En Farray's no vendemos clases. Creamos Experiencias.",
@@ -7252,6 +7387,10 @@ Todos los términos del ballet son en francés, legado de su desarrollo en la co
   balletTeachersSubtitle: 'Escuela Cubana, experiencia internacional',
   balletTeachersClosing:
     'Dos maestros, dos enfoques complementarios. Daniel para el nivel intermedio y avanzado, Alejandro para los principiantes. La combinación perfecta para tu formación en ballet.',
+  balletTeacher1Bio:
+    'Daniel Sené es especialista en ballet clásico formado en la Escuela Nacional de Ballet de Cuba, la misma donde se formó Carlos Acosta. Su metodología combina el rigor técnico de la escuela clásica con un enfoque accesible para adultos principiantes y avanzados.',
+  balletTeacher2Bio:
+    'Alejandro Miñoso, maestro cubano formado en la ENA (Escuela Nacional de Arte de Cuba), ex solista de la prestigiosa compañía de Carlos Acosta. Su técnica impecable y su capacidad pedagógica hacen que cada alumno sienta el progreso desde la primera clase.',
   // ===== Schedule Section =====
   balletScheduleTitle: 'Horarios de Clases de Ballet',
   balletScheduleSubtitle: 'Clases diarias con maestros de la Escuela Cubana',
@@ -7680,6 +7819,8 @@ Trabaja integralmente: **flexibilidad, fuerza funcional, coordinación, propioce
     'Bailarines profesionales formados en la Escuela Cubana con carrera internacional',
   contemporaneoTeachersClosing:
     'Con Daniel y Alejandro no solo aprendes técnica contemporánea: descubres una nueva forma de expresarte, conectar con tu cuerpo y desarrollar tu propio lenguaje de movimiento.',
+  contemporaneoTeacher1Bio:
+    'Daniel Sené es bailarín profesional con formación de carrera en la Escuela Cubana. Su metodología combina la técnica rigurosa con la expresión lírica, guiándote para que desarrolles tu propio lenguaje corporal mientras dominas los fundamentos de la danza contemporánea.',
   // Levels Section
   contemporaneoLevelsTitle: 'Niveles de Danza Contemporánea',
   contemporaneoLevelBasicTitle: 'Contemporáneo Básico',
@@ -7688,13 +7829,25 @@ Trabaja integralmente: **flexibilidad, fuerza funcional, coordinación, propioce
   contemporaneoScheduleSubtitle:
     'Clases semanales con bailarines profesionales de la Escuela Cubana',
   // Level Cards Section
+  contemporaneoLevelPrincipianteTitle: 'Lírico Principiantes',
   contemporaneoLevelPrincipianteDesc:
+    'Primera toma de contacto con la danza contemporánea. Movimiento fluido, expresión emocional y conexión con la música. Sin requisitos previos.',
+  // Aliases for compatibility with other locales
+  contemporaneoLevelBeginnerTitle: 'Lírico Principiantes',
+  contemporaneoLevelBeginnerDesc:
+    'Primera toma de contacto con la danza contemporánea. Movimiento fluido, expresión emocional y conexión con la música. Sin requisitos previos.',
+  contemporaneoLevelPrincipiantTitle: 'Lírico Principiantes',
+  contemporaneoLevelPrincipiantDesc:
     'Primera toma de contacto con la danza contemporánea. Movimiento fluido, expresión emocional y conexión con la música. Sin requisitos previos.',
   contemporaneoLevelLiricoBasicoTitle: 'Lírico Básico',
   contemporaneoLevelLiricoBasicoDesc:
     'Continúa desarrollando tu técnica lírica con secuencias más elaboradas. Para alumnos que ya han tomado clases de contemporáneo o tienen bases de ballet/danza.',
   contemporaneoLevelLiricoIntermedioTitle: 'Lírico Intermedio',
   contemporaneoLevelLiricoIntermedioDesc:
+    'Secuencias complejas, trabajo interpretativo y desarrollo de tu estilo personal. Requisito: al menos 1 año de clases de contemporáneo o bases sólidas de danza.',
+  // Aliases for compatibility with English locale
+  contemporaneoLevelLiricoIntermediateTitle: 'Lírico Intermedio',
+  contemporaneoLevelLiricoIntermediateDesc:
     'Secuencias complejas, trabajo interpretativo y desarrollo de tu estilo personal. Requisito: al menos 1 año de clases de contemporáneo o bases sólidas de danza.',
   contemporaneoLevelSueloFlowTitle: 'Suelo & Flow',
   contemporaneoLevelSueloFlowDesc:
@@ -8052,6 +8205,10 @@ El Afro Contemporáneo impartido en **Farray's International Dance Center** form
   // Teachers Section
   afrocontemporaneoTeachersTitle: 'Tus maestros de Afro Contemporáneo',
   afrocontemporaneoTeachersSubtitle: 'Formación directa de la Escuela Nacional de Arte de Cuba',
+  afrocontemporaneoTeacher1Bio:
+    'Yunaisy Farray se formó en la prestigiosa Escuela Nacional de Arte de Cuba (ENA), donde aprendió la técnica original del Afro Contemporáneo. Maestra reconocida por el CID-UNESCO (Consejo Internacional de la Danza de París), combina el rigor técnico de la escuela cubana con su experiencia internacional en Street Dance 2 y compañías de danza contemporánea. Su metodología mantiene la esencia de la ENA adaptada a bailarines de todos los niveles.',
+  afrocontemporaneoTeacher2Bio:
+    'Charlie Breezy es instructor certificado de Afro Contemporáneo formado en la metodología de la Escuela Nacional de Arte de Cuba. Especializado en nivel básico, su enfoque pedagógico permite que bailarines de cualquier background accedan a la técnica afro cubana de manera progresiva y estructurada.',
   afrocontemporaneoTeachersClosing:
     'Con nuestros maestros cubanos no solo aprendes Afro Contemporáneo: accedes a la metodología original de la Escuela Nacional de Arte de Cuba.',
   // Schedule Section
@@ -8445,6 +8602,8 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   // Teachers Section
   afrojazzTeachersTitle: 'Tus profesores de Afro Jazz',
   afrojazzTeachersSubtitle: 'Formación de élite con el equipo del Método Farray',
+  afrojazzTeacher1Bio:
+    'Yunaisy Farray es maestra formada en la Escuela Nacional de Arte de Cuba (ENA), miembro del Consejo Internacional de la Danza de la UNESCO y actriz de Street Dance 2. Creadora del Afro Jazz como disciplina única, imparte las clases de nivel intermedio y avanzado los jueves de 19h a 20h30.',
   afrojazzTeachersClosing:
     'Con la creadora del Afro Jazz no solo aprendes una técnica: accedes a la metodología original de una disciplina única en el mundo.',
   // Schedule Section
@@ -8691,7 +8850,9 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   // CTAs
   hiphopCTA1: 'Hazte Socio Ahora',
   hiphopCTA1Subtext: 'Quedan pocas plazas este mes',
+  hiphopHeroCTA: 'Reserva tu clase',
   hiphopCTA2: 'Reserva tu Clase de Bienvenida',
+  hiphopHeroSecondaryCTA: 'Ver horarios',
   hiphopCTA2Subtext: 'Oferta por tiempo limitado',
   hiphopCTAGroup: 'Opciones de inscripción',
 
@@ -8700,14 +8861,20 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
 
   // What Is Section
   hiphopWhatIsTitle: '¿Qué es el Hip Hop y por qué te va a transformar?',
+  hiphopWhatIsText1:
+    'El Hip Hop es más que un estilo de baile: es un movimiento cultural nacido en los barrios del Bronx (Nueva York) en los años 70. Combina técnica, creatividad y expresión personal de manera única.',
   hiphopWhatIsP1:
     'El Hip Hop es mucho más que un baile: es una cultura, una forma de expresión y una actitud ante la vida que nació en el Bronx de Nueva York en los años 70.',
+  hiphopWhatIsText2:
+    'En nuestras clases trabajamos los fundamentos del Hip Hop Urbano: groove, musicalidad, estilo y freestyle. Aprendes a moverte con actitud mientras desarrollas tu propia personalidad como bailarín.',
   hiphopWhatIsP2:
     'La danza hip hop incluye una gran variedad de estilos, especialmente el breakdance, el locking y el popping, que fueron desarrollados por afroamericanos y latinoamericanos. Lo que diferencia el baile hip hop de otros tipos de danza es el freestyle y las batallas — competiciones que se realizan en un "cipher", un círculo que se forma naturalmente cuando la batalla comienza.',
   hiphopWhatIsP3:
     'Los tres elementos — freestyle, batallas y ciphers — son los componentes esenciales de la danza hip hop auténtica.',
   hiphopWhatIsP4:
     "En Farray\'s Center aprenderás Hip Hop con Marcos Martínez, juez de competiciones internacionales y uno de los referentes del Hip Hop en España. Con más de 30 años de existencia global, el Hip Hop es parte del plan curricular de formación profesional en danza avalado por el CID-UNESCO.",
+  hiphopWhatIsText3:
+    'Con Marcos Martínez, juez de competiciones internacionales y maestro reconocido, recibirás formación de alto nivel en un ambiente cálido y motivador.',
   hiphopWhatIsQuestionTitle: '¿Te preguntas si es para ti?',
   hiphopWhatIsQuestionAnswer: 'Si sientes el ritmo, ya lo eres.',
 
@@ -8725,6 +8892,9 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   // Teachers
   hiphopTeachersTitle: 'Conoce a tu profesor de Hip Hop',
   hiphopTeachersSubtitle: 'Un referente del Hip Hop en España',
+  hiphopTeacher1Name: 'Marcos Martínez',
+  hiphopTeacher1Bio:
+    'Marcos Martínez es uno de los referentes del Hip Hop en España. Como juez de competiciones internacionales y maestro reconocido, lleva más de 15 años formando bailarines transmitiendo la esencia auténtica del Hip Hop. Su metodología combina técnica rigurosa con el espíritu de la cultura urbana.',
   hiphopTeachersClosing:
     'Aprende de un maestro que ha dedicado su vida al Hip Hop y que transmite no solo técnica, sino la cultura y la actitud que define este estilo.',
   // Prepare Section
@@ -8786,18 +8956,26 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   // Identify Section
   hiphopIdentifyTitle: '¿Te identificas con alguna de estas situaciones?',
   hiphopIdentifyListLabel: 'Situaciones con las que te puedes identificar',
+  hiphopIdentifyItem1: 'Te atrae la música urbana y quieres aprender a bailarla de verdad',
   hiphopIdentify1:
     'Siempre has querido aprender Hip Hop pero pensabas que no tenías ritmo o que era solo para jóvenes.',
+  hiphopIdentifyItem2: 'Buscas un estilo que combine técnica y libertad creativa',
   hiphopIdentify2:
     'Te encanta la música hip hop y rap pero nunca supiste cómo bailarla más allá de mover los brazos.',
+  hiphopIdentifyItem3: 'Quieres mejorar tu coordinación y sentido del ritmo',
   hiphopIdentify3:
     'Buscas una forma de expresarte y liberarte del estrés sin tener que seguir coreografías rígidas.',
+  hiphopIdentifyItem4: 'Deseas formar parte de la cultura Hip Hop auténtica',
   hiphopIdentify4:
     'Quieres ganar confianza y soltura en cualquier situación social donde haya música.',
+  hiphopIdentifyItem5: 'Necesitas una actividad que te desconecte y te haga disfrutar',
   hiphopIdentify5:
     'Te atrae la cultura urbana auténtica, no la versión comercial que ves en los videoclips.',
   hiphopIdentify6:
     'Necesitas una actividad física que te motive de verdad y no te aburra como el gimnasio.',
+  hiphopIdentifyNotSure: '¿No estás seguro?',
+  hiphopIdentifyNotSureText:
+    'Ven a una clase de bienvenida y descubre si el Hip Hop es tu estilo. Sin compromiso.',
   hiphopIdentifyTransition:
     'Si has dicho "sí" a alguno de estos puntos, ya sabes lo que necesitas.',
   hiphopNeedEnrollTitle: 'Necesitas apuntarte a clases de Hip Hop',
@@ -8809,6 +8987,7 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
 
   // Transform Section
   hiphopTransformTitle: 'Imagina tu antes y después',
+  hiphopTransformSubtitle: 'Beneficios reales que notarás desde el primer mes',
   hiphopTransform1Title: 'De no tener ritmo a sentir cada beat',
   hiphopTransform1Desc:
     'Desarrollarás una conexión profunda con la música que transformará cómo escuchas y sientes cada canción.',
@@ -8830,7 +9009,31 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   hiphopTransformCTASubtitle:
     'La academia de Hip Hop en Barcelona con el profesor que marca la diferencia',
 
+  // Benefits Grid
+  hiphopBenefitsTitle: 'Beneficios del Hip Hop',
+  hiphopBenefitsSubtitle: 'Más que un baile, un estilo de vida',
+  hiphopBenefit1: 'Desarrolla coordinación y control corporal',
+  hiphopBenefit2: 'Mejora la condición cardiovascular',
+  hiphopBenefit3: 'Aumenta la confianza y autoestima',
+  hiphopBenefit4: 'Fomenta la creatividad y expresión personal',
+  hiphopBenefit5: 'Construye comunidad y nuevas amistades',
+  hiphopBenefit6: 'Aprende a interpretar y sentir la música de una nueva forma',
+
   // Why Choose Section (7 items)
+  hiphopWhyFarraysTitle: "¿Por qué aprender Hip Hop en Farray's Center?",
+  hiphopWhyFarraysSubtitle: 'Lo que nos diferencia de otras academias',
+  hiphopWhyFarraysReason1Title: 'Profesor de Referencia',
+  hiphopWhyFarraysReason1Desc:
+    'Marcos Martínez es juez de competiciones, maestro internacional y uno de los referentes del Hip Hop en España. Su experiencia y conocimientos garantizan formación de alto nivel.',
+  hiphopWhyFarraysReason2Title: 'Metodología Progresiva',
+  hiphopWhyFarraysReason2Desc:
+    'Clases estructuradas que te llevan desde los fundamentos hasta coreografías avanzadas. Cada sesión se construye sobre la anterior.',
+  hiphopWhyFarraysReason3Title: 'Ambiente Auténtico',
+  hiphopWhyFarraysReason3Desc:
+    "En Farray's Center respetamos la esencia del Hip Hop: comunidad, respeto y expresión personal. Aquí vendrás a crecer como bailarín.",
+  hiphopWhyFarraysReason4Title: 'Grupos Reducidos',
+  hiphopWhyFarraysReason4Desc:
+    'Clases con plazas limitadas para que cada alumno reciba la atención que merece y progrese a su ritmo.',
   hiphopWhyChoose1Title: 'Academia reconocida por el CID UNESCO',
   hiphopWhyChoose1Desc:
     'Dirigida por Yunaisy Farray, con reconocimiento internacional por nuestra excelencia educativa.',
@@ -8861,7 +9064,41 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   hiphopVideoTitle: 'Descubre nuestras clases de Hip Hop',
   hiphopVideoDesc: "Mira cómo es una clase en Farray's: técnica, freestyle y mucho flow.",
 
+  // Testimonials
+  hiphopTestimonialsTitle: 'Qué dicen nuestros alumnos',
+  hiphopTestimonialsSubtitle: 'Experiencias reales de la comunidad Hip Hop',
+  hiphopTestimonial1:
+    'Las clases de Marcos son increíbles. No solo te enseña pasos, te transmite la esencia del Hip Hop. He aprendido más en 3 meses aquí que en años en otras academias.',
+  hiphopTestimonial1Author: 'David R.',
+  hiphopTestimonial2:
+    'Vine sin saber nada de baile y ahora puedo improvisar y pasármelo bien en cualquier fiesta. El ambiente es genial y Marcos es un crack.',
+  hiphopTestimonial2Author: 'Laura M.',
+  hiphopTestimonial3:
+    'Como bailarín experimentado buscaba alguien que me hiciera subir de nivel. Marcos es el único que realmente me ha hecho progresar en los fundamentos.',
+  hiphopTestimonial3Author: 'Carlos T.',
+
+  // Cultural History Section
+  hiphopCulturalTitle: 'Historia y Cultura del Hip Hop',
+  hiphopCulturalSubtitle: 'Descubre las raíces del movimiento que cambió la danza para siempre',
+  hiphopCulturalOriginTitle: 'Origen en el Bronx (1973)',
+  hiphopCulturalOriginText:
+    "El Hip Hop nace en las calles del Bronx, Nueva York, en los años 70. DJ Kool Herc, considerado el padre del Hip Hop, comenzó a aislar y prolongar los 'breaks' de las canciones, creando la base para el baile. Los b-boys y b-girls desarrollaron movimientos para esos momentos, dando nacimiento al breaking.",
+  hiphopCulturalEvolutionTitle: 'Evolución de los Estilos',
+  hiphopCulturalEvolutionText:
+    'Del breaking original surgieron múltiples estilos: popping, locking, krumping, y el Hip Hop New Style que trabajamos en nuestras clases. Cada generación ha añadido su aporte manteniendo la esencia: groove, actitud y expresión personal.',
+  hiphopCulturalTodayTitle: 'El Hip Hop Hoy',
+  hiphopCulturalTodayText:
+    "Hoy el Hip Hop es un fenómeno mundial presente en videoclips, competiciones mundiales y la cultura popular. En Barcelona la escena Hip Hop es vibrante y en Farray's Center trabajamos para mantener viva la autenticidad del movimiento mientras formamos la nueva generación de bailarines.",
+  hiphopCulturalPioneersTitle: 'Pioneros del Movimiento',
+  hiphopCulturalPioneersText:
+    'Figuras como DJ Kool Herc, Afrika Bambaataa, Grandmaster Flash, y los Rock Steady Crew sentaron las bases. Bailarines como Mr. Wiggles, Poppin Pete y Buddha Stretch codificaron los estilos que hoy se enseñan en todo el mundo.',
+
   // Why Today
+  hiphopWhyTodayTitle: '¿Por qué empezar hoy?',
+  hiphopWhyTodayReason1: 'Cada semana que pasa es una semana menos de progreso',
+  hiphopWhyTodayReason2: 'Las plazas son limitadas para garantizar atención personalizada',
+  hiphopWhyTodayReason3: 'Cuanto antes empieces, antes disfrutarás bailando con confianza',
+  hiphopWhyTodayReason4: 'El mejor momento para empezar siempre es ahora',
   hiphopWhyTodayFullTitle: '¿Por qué hoy es el mejor momento para empezar?',
   hiphopWhyToday1:
     'Porque cada jueves que dejas pasar es una oportunidad menos de desarrollar tu estilo.',
@@ -8876,11 +9113,13 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   // Final CTA
   hiphopFinalCTATitle: 'Únete a la Energía y Flow de Nuestras Clases de Hip Hop',
   hiphopFinalCTASubtitle: 'Da el paso.',
+  hiphopFinalCTAButton: 'Reserva ahora',
   hiphopFinalCTADesc: 'Reserva tu plaza ahora y empieza a desarrollar tu propio flow.',
   hiphopFinalCTAFunny: 'Las plazas se agotan más rápido que un cambio de beat.',
 
   // FAQ Title
   hiphopFaqTitle: 'Preguntas Frecuentes sobre Hip Hop en Barcelona',
+  hiphopFaqSubtitle: 'Todo lo que necesitas saber antes de tu primera clase',
 
   // 15 FAQs
   hiphopFaqQ1: '¿Cómo funcionan las clases de Hip Hop?',
@@ -8929,12 +9168,20 @@ Bailarines de todo el mundo viajan a Barcelona específicamente para formarse en
   hiphopFaqA15:
     'Estamos en Calle Entença 100, 08015 Barcelona, entre Plaza España y Sants. Metro: Hostafrancs (L1) o Plaza España (L1, L3). Contacto: info@farrayscenter.com | WhatsApp: +34 622 247 085 | Tel: +34 932 890 356.',
 
+  // Image alts
+  hiphopImage1Alt: "Clases de Hip Hop en Barcelona - Farray's Center",
+  hiphopImage2Alt: 'Alumnos practicando Hip Hop Urbano',
+  hiphopImage3Alt: 'Marcos Martínez - Profesor de Hip Hop',
+
   // Local SEO
   hiphopNearbyTitle: 'Clases de Hip Hop cerca de ti',
   hiphopNearbyDesc:
     'Estamos en el corazón de Barcelona, accesibles desde cualquier punto de la ciudad.',
   hiphopNearbySearchText: '¿Buscas clases de Hip Hop cerca de...?',
   hiphopNearbyMetro: 'Metro Hostafrancs (L1), Plaza España (L1, L3), Sants Estació (L3, L5, Renfe)',
+
+  // Comparison Table
+  hiphopCompareReggaeton: 'Reggaeton',
 
   // Course Schema
   hiphopCourseSchemaName: "Clases de Hip Hop en Barcelona - Farray\'s Center",
@@ -8995,14 +9242,25 @@ En nuestra academia, el Hip Hop forma parte del plan curricular de formación pr
 Nuestro profesor **Marcos Martínez**, juez de competiciones internacionales y referente del Hip Hop en España, transmite no solo técnica sino los valores y la historia que hacen de este estilo algo único.`,
 
   // GEO Optimization Keys
+  hiphopGeoTitle: 'Datos sobre el Hip Hop',
+  hiphopGeoDefinicionTitle: 'Definición Cultural',
+  hiphopGeoOrigenTitle: 'Origen Histórico',
+  hiphopGeoEvolucionTitle: 'Evolución Mundial',
+  hiphopGeoMetodologiaTitle: 'Metodología Profesional',
+  hiphopGeoFact1Label: 'Década de origen',
+  hiphopGeoFact2Label: 'Lugar de nacimiento',
+  hiphopGeoFact3Label: 'Reconocimiento del instructor',
+
   hiphopCitableDefinicion:
-    'El Hip Hop es un estilo de danza urbana nacido en el Bronx de Nueva York en los años 70, caracterizado por el freestyle, las batallas en cipher, y técnicas como breaking, locking y popping.',
+    'Hip Hop: cultura nacida en el Bronx (1973), 4 elementos (MC, DJ, B-boying, Graffiti). Hip Hop dance = groove + fundamentos + estilo personal.',
   hiphopCitableOrigen:
-    'El Hip Hop dance nació entre 1973-1974 en el South Bronx de Nueva York, impulsado por DJ Kool Herc y desarrollado por comunidades afroamericanas y latinas como forma de expresión artística.',
+    'Hip Hop (Bronx, 1973): DJ Kool Herc, Afrika Bambaataa, Grandmaster Flash. Breaking > Popping/Locking > New Style (años 90).',
+  hiphopCitableEvolucion:
+    'Del Bronx al mundo: el Hip Hop es patrimonio cultural mundial. Competiciones mundiales (Juste Debout, Red Bull BC One) y presencia en la cultura pop.',
   hiphopCitableTecnicas:
     'Las técnicas principales del Hip Hop incluyen: grooves y bounces (base rítmica), social dances, toprock, footwork, freezes, power moves, y elementos de locking, popping y breaking.',
   hiphopCitableMetodologia:
-    "En Farray\'s Center, el Hip Hop se enseña respetando las raíces de la cultura: técnica base, musicalidad, historia del movimiento y desarrollo del estilo personal a través del freestyle.",
+    'Marcos Martínez (juez internacional): fundamentos + groove + musicalidad → freestyle y estilo personal. Metodología progresiva para todos los niveles.',
   hiphopStatistics:
     'El Hip Hop es practicado por más de 30 millones de personas en todo el mundo. Una clase de 60 minutos puede quemar entre 400-600 calorías mientras mejora coordinación, ritmo y expresión corporal.',
   hiphopCitableFact1:
@@ -9295,6 +9553,20 @@ Nuestro profesor **Marcos Martínez**, juez de competiciones internacionales y r
   salsaCubanaIdentifyTitle: '¿Para quién están pensadas nuestras clases de Salsa Cubana?',
   salsaCubanaIdentifyListLabel: 'Perfiles ideales para el curso',
 
+  // Simpler Identify keys (for compatibility with other pages)
+  salsaCubanaIdentify1:
+    'Para quienes nunca han bailado y quieren empezar con una base sólida desde el principio.',
+  salsaCubanaIdentify2:
+    'Para quienes quieren aprender más y superarse, llevando su baile al siguiente nivel.',
+  salsaCubanaIdentify3:
+    'Para quienes sienten que llevan tiempo sin avanzar en sus clases de salsa.',
+  salsaCubanaIdentify4:
+    'Para quienes quieren aprender el estilo cubano auténtico, no versiones diluidas.',
+  salsaCubanaIdentify5:
+    'Para personas curiosas y abiertas a aprender nuevos conceptos y dinámicas diferentes.',
+  salsaCubanaIdentify6:
+    'Para quienes buscan bailar socialmente con confianza y disfrutar en cualquier pista.',
+
   // Océano Azul - Buscando algo más que baile
   salsaCubanaIdentifyBlueOceanTitle: 'Si buscas algo más que baile...',
   salsaCubanaIdentifyBlue1: 'Personas hartas de apps que buscan conexión humana real',
@@ -9433,6 +9705,10 @@ El Método Farray® rescata y enseña esta tradición auténtica con un enfoque 
 
   // Final CTA - Dos Océanos
   salsaCubanaFinalCTATitle: 'Tu primera clase de salsa cubana te espera',
+  salsaCubanaFinalCTASubtitle: 'Ven a probar una clase',
+  salsaCubanaFinalCTADesc:
+    'Tenemos clases de salsa cubana para todos los niveles (iniciación, intermedio y avanzado) y varios horarios para adaptarnos a ti.',
+  salsaCubanaFinalCTAFunny: 'No te arrepentirás. La salsa cubana es pura diversión.',
 
   // Copy Emocional - Océano Azul
   salsaCubanaFinalCTAEmotional1: 'No importa si vienes a desconectar del trabajo.',
@@ -11508,6 +11784,10 @@ En ciudades como Barcelona, la bachata lady style forma parte de la oferta habit
   // === TEACHERS SECTION ===
   stretchingTeachersTitle: 'Tus Profesores de Stretching',
   stretchingTeachersSubtitle: 'Especialistas en flexibilidad con el Método Farray',
+  stretchingTeacher1Bio:
+    'Cris Ag es especialista en flexibilidad y backbending, formada en el Método Farray. Su enfoque paciente y técnico ha ayudado a cientos de alumnos a superar sus límites de forma segura. Experta en elongación de piernas y espalda, prevención de lesiones y fortalecimiento de core.',
+  stretchingTeacher2Bio:
+    'Daniel Sené es bailarín profesional formado en la Escuela Nacional de Ballet de Cuba. Su conocimiento de la técnica clásica aporta una dimensión única a las clases de stretching, combinando rigor técnico con un enfoque accesible para todos los niveles.',
   // === SCHEDULE SECTION ===
   stretchingScheduleTitle: 'Horarios de Clases de Stretching',
   stretchingScheduleSubtitle: 'Clases semanales con especialistas en flexibilidad',
@@ -12370,6 +12650,8 @@ El Método Farray integra elementos de Pilates, yoga funcional, entrenamiento de
   // === TEACHERS SECTION ===
   bumbumTeachersTitle: 'Tu Profesora de Bum Bum Glúteos',
   bumbumTeachersSubtitle: 'Especialista en tonificación con el Método Farray',
+  bumbumTeacher1Bio:
+    'Cris Ag es especialista en tonificación corporal y ejercicios de glúteos con el Método Farray. Su enfoque combina técnicas de fitness con elementos de danza para hacer el entrenamiento efectivo y divertido. Experta en hip thrust, sentadillas y técnicas de activación glútea.',
   // === SCHEDULE SECTION ===
   bumbumScheduleTitle: 'Horarios de Clases de Bum Bum Glúteos',
   bumbumScheduleSubtitle: 'Clases semanales de tonificación',
@@ -13526,6 +13808,23 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   blog_noArticles: 'Próximamente más artículos',
   blog_noArticlesDesc: 'Estamos preparando contenido increíble para ti. ¡Vuelve pronto!',
   blog_viewAllArticles: 'Ver todos los artículos',
+  blog_wordCount: '{count} palabras',
+  blog_keyPoints: 'Puntos Clave',
+  blog_definition: 'Definición',
+  blog_source: 'Fuente',
+  blog_authorAbout: 'Sobre la autora',
+  blog_authorCredentials: 'Credenciales',
+  blog_shareWhatsApp: 'Compartir en WhatsApp',
+  blog_shareFacebook: 'Compartir en Facebook',
+  blog_shareTwitter: 'Compartir en Twitter',
+  blog_shareLinkedIn: 'Compartir en LinkedIn',
+  blog_shareEmail: 'Compartir por Email',
+  blog_emailSubject: 'Artículo interesante: {title}',
+  blog_emailBody: 'Creo que te puede interesar:\n\n{title}\n\n{url}',
+  blog_relatedArticlesDesc: 'Continúa explorando temas que te encantan',
+  blog_previousArticle: 'Artículo anterior',
+  blog_nextArticle: 'Artículo siguiente',
+  blog_backToBlog: 'Volver al blog',
 
   // Blog - Author
   blog_authorRole: 'Fundadora y Directora de FIDC',
@@ -14122,6 +14421,8 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   bachataV3PageTitle: 'Clases de Bachata Sensual en Barcelona | Aprende con Campeones Mundiales',
   bachataV3MetaDescription:
     'Clases de Bachata Sensual en Barcelona con campeones mundiales. Conexión, ondulaciones y musicalidad. Academia CID-UNESCO. Todos los niveles. ¡Empieza hoy!',
+  bachataV3MetaKeywords:
+    'bachata sensual Barcelona, clases bachata Barcelona, bachata sensual campeones mundiales, Mathias Font, Eugenia Trujillo, CID-UNESCO, bachata Plaza España',
 
   // Breadcrumb (4 niveles)
   bachataV3BreadcrumbHome: 'Inicio',
@@ -14134,6 +14435,15 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   bachataV3HeroSubtitle: 'Aprende con Campeones Mundiales el Arte de la Conexión',
   bachataV3HeroDesc:
     'Descubre la bachata sensual de la mano de Mathias Font y Eugenia Trujillo, campeones mundiales. Aprende ondulaciones, conexión en pareja y musicalidad en una academia acreditada por CID-UNESCO.',
+  bachataV3HeroDescription:
+    'Aprende bachata sensual con campeones mundiales. Desde tu primer paso hasta el escenario, transforma tu forma de bailar y conectar.',
+  bachataV3HeroStatMinutes: '60 minutos por clase',
+  bachataV3HeroStatCalories: '300-400 calorías quemadas',
+  bachataV3HeroStatFun: '100% diversión garantizada',
+  bachataV3HeroCTA: 'Empieza a Bailar',
+  bachataV3HeroSecondaryCTA: 'Ver Horarios',
+  bachataV3HeroScrollText: 'Descubre la bachata sensual',
+  bachataV3HeroClassType: 'Clases de Bachata Sensual',
   bachataV3HeroLocation: 'Calle Entença 100, Barcelona - Entre Plaza España y Sants',
   bachataV3HeroStudents: '+15.000 estudiantes formados',
   bachataV3CTA1: 'Hazte Socio Ahora',
@@ -14155,11 +14465,16 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   bachataV3WhatIsQuestionTitle: '¿Por qué elegir bachata sensual?',
   bachataV3WhatIsQuestionAnswer:
     'La bachata sensual te permite expresar emociones a través del baile de una forma única. Es accesible para principiantes, increíblemente social y te conecta con una comunidad activa de bailarines en Barcelona y en todo el mundo.',
+  bachataV3WhatIsQuestion: '¿La bachata sensual es solo para bailarines experimentados?',
+  bachataV3WhatIsAnswer:
+    "Para nada. Aunque pueda parecer compleja, la bachata sensual empieza con fundamentos básicos que cualquiera puede aprender. En Farray's tenemos una clase específica de principiantes donde te enseñamos desde cero. En solo 3 meses estarás haciendo ondas y dips que nunca creíste posibles.",
 
   // Schedule Section
   bachataV3ScheduleTitle: 'Horarios de Bachata Sensual en Barcelona',
   bachataV3ScheduleSubtitle:
     'Clases todos los días de la semana. Elige el nivel y horario que mejor se adapte a ti.',
+  bachataV3ScheduleCTA: 'Reserva tu Primera Clase',
+  bachataV3ScheduleNote: 'Clase de bienvenida disponible para probar',
 
   // Levels
   bachataV3LevelsTitle: 'Niveles de Bachata Sensual',
@@ -14207,33 +14522,62 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
   bachataV3PrepareSubtitle: 'Todo lo que necesitas saber antes de venir',
   bachataV3PrepareWhatToBring: 'Qué traer',
   bachataV3PrepareItem1: 'Ropa cómoda que permita movimiento (evita jeans muy ajustados)',
+  bachataV3PrepareWhatToBring1: 'Ropa cómoda',
   bachataV3PrepareItem2: 'Zapatos de baile o zapatillas con suela lisa (no running)',
+  bachataV3PrepareWhatToBring2: 'Zapatos de baile o zapatillas limpias',
   bachataV3PrepareItem3: 'Botella de agua para hidratarte',
+  bachataV3PrepareWhatToBring3: 'Botella de agua',
   bachataV3PrepareItem4: 'Toalla pequeña - ¡vas a sudar bailando!',
+  bachataV3PrepareWhatToBring4: 'Buena actitud',
   bachataV3PrepareItem5: 'Actitud abierta y ganas de conectar con tu pareja de baile',
+  bachataV3PrepareWhatToBring5: 'Puedes venir solo o en pareja',
   bachataV3PrepareBefore: 'Antes de llegar',
   bachataV3PrepareBeforeItem1: 'Llega 10-15 minutos antes para cambiarte y relajarte',
+  bachataV3PrepareBefore1: 'Come algo ligero 1-2 horas antes',
   bachataV3PrepareBeforeItem2: 'Evita comer pesado 2 horas antes de la clase',
+  bachataV3PrepareBefore2: 'Estírate en casa si puedes',
   bachataV3PrepareBeforeItem3: 'Ven con la mente abierta a conocer gente nueva',
+  bachataV3PrepareBefore3: 'Llega 10 minutos antes si es tu primera vez',
   bachataV3PrepareAvoid: 'Evita',
   bachataV3PrepareAvoidItem1: 'Joyas que puedan molestar al bailar en pareja',
+  bachataV3PrepareAvoid1: 'Comer mucho justo antes de la clase',
   bachataV3PrepareAvoidItem2: 'Perfumes muy fuertes (estarás cerca de tu pareja)',
+  bachataV3PrepareAvoid2: 'Venir sin haber hidratado',
   bachataV3PrepareAvoidItem3: 'Miedo a equivocarte - aquí todos aprendemos juntos',
+  bachataV3PrepareAvoid3: 'Usar joyas que puedan arañar',
   bachataV3PrepareTeacherTip: 'Consejo de Mathias y Eugenia:',
   bachataV3PrepareTeacherQuote:
     'La bachata sensual es sobre conexión, no sobre perfección. Disfruta el proceso, escucha la música y deja que tu cuerpo se exprese. Los pasos vendrán solos.',
 
   // Identification Section (¿Te identificas?)
   bachataV3IdentifyTitle: '¿Te identificas con esto?',
+  bachataV3IdentificationTitle: '¿Es Esta Clase Para Ti?',
+  bachataV3IdentificationSubtitle:
+    "Si te identificas con alguna de estas situaciones, la bachata sensual en Farray's te está esperando:",
   bachataV3Identify1: 'Quieres aprender a bailar bachata pero no sabes por dónde empezar',
+  bachataV3IdentificationItem1:
+    'Siempre has querido bailar pero nunca te has atrevido a dar el primer paso',
   bachataV3Identify2: 'Ya bailas pero sientes que te falta conexión y fluidez con tu pareja',
+  bachataV3IdentificationItem2:
+    'Buscas algo diferente del gimnasio para mantenerte en forma mientras te diviertes',
   bachataV3Identify3: 'Ves a otras parejas hacer ondas y dips increíbles y quieres aprender',
+  bachataV3IdentificationItem3:
+    'Quieres conectar con tu pareja a través del baile o conocer gente que comparta tu pasión',
   bachataV3Identify4: 'Buscas una actividad para hacer en pareja que os conecte de verdad',
+  bachataV3IdentificationItem4:
+    'Te encanta la música de bachata y quieres expresarla con tu cuerpo',
   bachataV3Identify5: 'Quieres mejorar tu vida social y conocer gente en los sociales de bachata',
+  bachataV3IdentificationItem5:
+    'Has probado otros bailes pero te atrae la sensualidad y conexión de la bachata',
   bachataV3Identify6: 'Te gusta la música latina y quieres expresarte a través del baile',
+  bachataV3IdentificationItem6:
+    'Quieres ir a sociales y fiestas sintiéndote seguro en la pista de baile',
   bachataV3IdentifyTransition:
     'Si te identificas con alguno de estos puntos, las clases de bachata sensual son exactamente lo que necesitas.',
+  bachataV3IdentificationTransition: 'Si algo de esto resuena contigo, estás en el lugar correcto.',
   bachataV3NeedEnrollTitle: "Necesitas Aprender Bachata Sensual en Farray's Center",
+  bachataV3IdentificationNeedEnroll:
+    'Solo necesitas dar el primer paso. Del resto nos encargamos nosotros.',
   bachataV3IdentifyAgitate1:
     'Sin una metodología clara, puedes pasar años sin mejorar realmente. Muchas escuelas enseñan pasos sueltos sin conexión.',
   bachataV3IdentifySolution:
@@ -14243,57 +14587,109 @@ El entrenamiento regular de glúteos (2-3 veces/semana):
 
   // Transformation Section (Antes/Después)
   bachataV3TransformTitle: 'Tu Transformación con Bachata Sensual',
+  bachataV3TransformationTitle: '¿Cómo Te Transformará la Bachata Sensual?',
+  bachataV3TransformationSubtitle:
+    'Más allá de pasos y vueltas, la bachata sensual cambia la forma en que te mueves, conectas y te expresas.',
   bachataV3Transform1Title: 'Ritmo y Timing',
   bachataV3Transform1Desc: 'De perder el tiempo a bailar siempre en compás',
+  bachataV3TransformationItem1Title: 'Conexión con Tu Cuerpo',
+  bachataV3TransformationItem1Desc:
+    'Aprenderás a moverte con fluidez, sentir cada músculo y expresar emociones a través del movimiento.',
   bachataV3Transform2Title: 'Ondulaciones',
   bachataV3Transform2Desc: 'De movimientos rígidos a ondas fluidas y naturales',
+  bachataV3TransformationItem2Title: 'Confianza Social',
+  bachataV3TransformationItem2Desc:
+    'Entrarás a cualquier fiesta sabiendo que puedes bailar con cualquiera. Esa seguridad transforma cómo te relacionas con los demás.',
   bachataV3Transform3Title: 'Conexión en Pareja',
   bachataV3Transform3Desc: 'De bailar solo a comunicarte con el cuerpo',
+  bachataV3TransformationItem3Title: 'Forma Física',
+  bachataV3TransformationItem3Desc:
+    'Bailar bachata quema 300-400 calorías por hora y ni siquiera lo notas porque te estás divirtiendo tanto.',
   bachataV3Transform4Title: 'Guía y Seguimiento',
   bachataV3Transform4Desc: 'De tirar/empujar a guiar con el torso y la intención',
+  bachataV3TransformationItem4Title: 'Musicalidad',
+  bachataV3TransformationItem4Desc:
+    'Escucharás la música de una forma nueva. Cada pausa, cada corte, cada cambio tendrá sentido en tu cuerpo.',
   bachataV3Transform5Title: 'Musicalidad',
   bachataV3Transform5Desc: 'De ignorar la música a interpretar cada acento',
+  bachataV3TransformationItem5Title: 'Comunidad Auténtica',
+  bachataV3TransformationItem5Desc:
+    'Te unirás a una comunidad de gente que comparte tu pasión. Amistades que duran más allá de la pista de baile.',
   bachataV3Transform6Title: 'Confianza',
   bachataV3Transform6Desc: 'De miedo a sacar a bailar a sentirte cómodo en cualquier social',
+  bachataV3TransformationItem6Title: 'Expresión Creativa',
+  bachataV3TransformationItem6Desc:
+    'La bachata sensual te permite expresar quién eres. Cada baile es único, cada interpretación es personal.',
   bachataV3TransformCTA: 'Empieza tu transformación hoy',
 
   // Why Choose Section
   bachataV3WhyChooseTitle: "¿Por qué elegir Farray's para aprender Bachata Sensual?",
+  bachataV3WhyChooseSubtitle: 'No somos cualquier escuela. Somos donde se forman los campeones.',
   bachataV3WhyChoose1Title: 'Campeones Mundiales como Profesores',
   bachataV3WhyChoose1Desc:
     'Mathias Font y Eugenia Trujillo, campeones mundiales de Salsa LA, te enseñan bachata sensual con la misma técnica que los llevó a lo más alto.',
+  bachataV3WhyChooseItem1Title: 'Profesores Campeones Mundiales',
+  bachataV3WhyChooseItem1Desc:
+    'Mathias y Eugenia son Campeones Mundiales de Salsa LA. Su experiencia en escenarios internacionales se traduce en una calidad de enseñanza inigualable.',
   bachataV3WhyChoose2Title: 'Metodología Integral',
   bachataV3WhyChoose2Desc:
     'No solo pasos: trabajamos conexión, musicalidad, expresión corporal y técnica de guía/seguimiento. Formación completa.',
+  bachataV3WhyChooseItem2Title: 'Método Progresivo',
+  bachataV3WhyChooseItem2Desc:
+    'Nuestro sistema de niveles asegura que siempre estés aprendiendo a tu ritmo. De principiante a avanzado, cada paso se construye sobre el anterior.',
   bachataV3WhyChoose3Title: 'Academia Certificada CID-UNESCO',
   bachataV3WhyChoose3Desc:
     'La única academia de bachata sensual en Barcelona avalada por el Consejo Internacional de la Danza de la UNESCO.',
+  bachataV3WhyChooseItem3Title: 'Afiliación CID-UNESCO',
+  bachataV3WhyChooseItem3Desc:
+    "Farray's Center está oficialmente afiliado al Consejo Internacional de la Danza CID-UNESCO. Calidad garantizada.",
   bachataV3WhyChoose4Title: 'Comunidad Activa',
   bachataV3WhyChoose4Desc:
     'Sociales, prácticas, viajes a congresos internacionales. No solo aprendes a bailar, te unes a una familia de bailadores.',
+  bachataV3WhyChooseItem4Title: 'Comunidad Activa',
+  bachataV3WhyChooseItem4Desc:
+    'Sociales semanales, viajes a congresos, eventos especiales. Aquí no solo aprendes, vives la experiencia de la bachata.',
   bachataV3WhyChoose5Title: 'Instalaciones Premium',
   bachataV3WhyChoose5Desc:
     'Más de 700 m², salas climatizadas, suelo profesional de danza, espejos y sonido de alta calidad.',
+  bachataV3WhyChooseItem5Title: 'Ubicación Privilegiada',
+  bachataV3WhyChooseItem5Desc:
+    'A 5 minutos andando de Plaza España. Fácil acceso en metro, bus y tranvía.',
   bachataV3WhyChoose6Title: 'Ubicación Céntrica',
   bachataV3WhyChoose6Desc:
     'Calle Entença 100, a 5 minutos andando de Plaza España y Sants Estació. Fácil acceso en metro, tren y bus.',
+  bachataV3WhyChooseItem6Title: 'Resultados Garantizados',
+  bachataV3WhyChooseItem6Desc:
+    'En 3 meses de cero a bailar en fiestas. En 6 meses te sentirás como un bailarín diferente.',
   bachataV3WhyChoose7Title: 'Progresión por Niveles Reales',
   bachataV3WhyChoose7Desc:
     '4 niveles diferenciados (Principiantes, Básico, Intermedio, Avanzado) para que siempre estés con gente de tu nivel.',
+  bachataV3WhyChooseItem7Title: 'No Necesitas Pareja',
+  bachataV3WhyChooseItem7Desc:
+    'Puedes venir solo. Rotamos parejas en clase para que aprendas a bailar con todos. De hecho es mejor para aprender.',
 
   // Why Today Section
   bachataV3WhyTodayFullTitle: '¿Por qué empezar a bailar bachata sensual hoy?',
+  bachataV3WhyTodayTitle: '¿Por Qué Empezar Bachata Sensual Hoy?',
   bachataV3WhyToday1:
     'Cada día que pasa es un día que podrías estar bailando, conectando y disfrutando. La bachata sensual no requiere experiencia previa: empezamos desde cero.',
+  bachataV3WhyTodayP1:
+    'Cada semana que esperas es una semana menos bailando. Esa fiesta, ese congreso, ese viaje... llegarán y podrías estar ya preparado.',
   bachataV3WhyToday2:
     'Nuestras clases de principiantes se llenan rápido, especialmente las de Carlos y Noemí los jueves. Reservar tu plaza ahora te garantiza empezar este mes.',
+  bachataV3WhyTodayP2:
+    'La bachata sensual está en su mejor momento. Eventos por todas partes, la comunidad creciendo, y ahora es el mejor momento para unirte. En unos meses estarás en la pista preguntándote por qué esperaste tanto.',
   bachataV3WhyToday3:
     'Los sociales de bachata en Barcelona son cada fin de semana. En 3 meses podrías estar bailando con confianza en cualquiera de ellos.',
+  bachataV3WhyTodayP3:
+    "En Farray's recibimos nuevos alumnos cada semana. Hoy podría ser tu día. La clase de bienvenida es especial para que no tengas nada que perder y una nueva pasión que ganar.",
   bachataV3WhyTodayClosing1: 'El mejor momento para empezar fue hace un año.',
   bachataV3WhyTodayClosing2: 'El segundo mejor momento es ahora.',
 
   // Logos Section
   bachataV3LogosTitle: 'Nos has podido ver en...',
+  bachataV3LogosSubtitle:
+    'Hemos aparecido en TV3, Telecinco, Antena 3 y estamos afiliados a CID-UNESCO.',
   bachataV3LogosIntlFestivalsText: 'y en festivales internacionales de bachata y salsa',
 
   // Cultural History Section
@@ -14326,6 +14722,7 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
 
   // FAQs (10 preguntas SEO-optimizadas)
   bachataV3FaqTitle: 'Preguntas Frecuentes sobre Bachata Sensual en Barcelona',
+  bachataV3FaqSubtitle: 'Resolvemos tus dudas para que bailes con confianza.',
   bachataV3FaqQ1: '¿Qué es la bachata sensual y en qué se diferencia de otros estilos de bachata?',
   bachataV3FaqA1:
     "La bachata sensual es una evolución moderna de la bachata dominicana que incorpora ondulaciones corporales (body waves), dips, y una conexión más íntima entre los bailarines. A diferencia de la bachata dominicana tradicional (centrada en juego de pies rápido) o la bachata social (más básica y social), la sensual prioriza el body movement y la interpretación musical. En Farray's enseñamos principalmente bachata sensual, aunque en nuestras FAQs también cubrimos bachata social y bachata fusion para quienes buscan esos estilos.",
@@ -14359,6 +14756,10 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
 
   // Nearby Areas
   bachataV3NearbyTitle: 'Clases de Bachata Sensual cerca de ti',
+  bachataV3NearbySubtitle:
+    "Farray's Center está ubicado cerca de Plaza España, con excelentes conexiones desde todo Barcelona.",
+  bachataV3NearbyFrom: 'desde',
+  bachataV3NearbyAccess: 'Cómo llegar',
   bachataV3NearbyDesc:
     "Somos una de las academias de referencia para clases de bachata sensual en la zona de Plaza España, Sants, Hostafrancs, Les Corts y Eixample Esquerra. También recibimos alumnos de Poble Sec, Sant Antoni y L'Hospitalet que buscan formación en bachata con profesores de nivel internacional.",
   bachataV3NearbySearchText: 'Si buscas clases de bachata sensual en Barcelona, estás a:',
@@ -14371,6 +14772,13 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
   bachataV3FinalCTADesc:
     'No importa si vienes solo o en pareja. Si nunca has bailado o si ya tienes experiencia. Lo importante es que des el primer paso.\n\nCon Mathias, Eugenia, Carlos, Noemí y Juan aprenderás bachata sensual de verdad: técnica, conexión, musicalidad y mucha diversión.',
   bachataV3FinalCTAFunny: '¿Preparado para hacer ondas?',
+  bachataV3FinalCtaTitle: '¿Listo Para Empezar a Bailar Bachata Sensual?',
+  bachataV3FinalCtaSubtitle:
+    "Tu clase de bienvenida está disponible. Ven a conocernos y descubre por qué miles de alumnos han elegido Farray's.",
+  bachataV3FinalCtaPrimary: 'Reservar Clase de Bienvenida',
+  bachataV3FinalCtaSecondary: 'Ver Todos los Horarios',
+  bachataV3FinalCtaGuarantee: '100% garantía de satisfacción en tu primera clase',
+  bachataV3FinalCtaSocial: 'Únete a nuestra comunidad de +15.000 alumnos',
 
   // ===== GEO OPTIMIZATION: Citable Statistics for Bachata Sensual =====
 
@@ -15081,7 +15489,7 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
     'Meta-análisis sobre los efectos positivos del baile en el bienestar psicológico.',
 
   // ============================================================================
-  // CUERPO-FIT (Full Body Cardio Dance) PAGE TRANSLATIONS
+  // CUERPO-FIT (Cardio Dance Fitness) PAGE TRANSLATIONS
   // URL: /clases/cuerpo-fit
   // SEO Keywords: entrenamiento full body barcelona, cardio dance, fitness dance,
   // quemar calorías bailando, clases fitness barcelona
@@ -15091,7 +15499,7 @@ Barcelona se ha convertido en uno de los epicentros mundiales de la bachata sens
   fullBodyCardioPageTitle:
     "Cuerpo-Fit: Entrenamiento Full Body y Cardio Dance en Barcelona | Farray's Center",
   fullBodyCardioMetaDescription:
-    'Clases Full Body Cardio Dance en Barcelona. Quema 400-500 calorías, tonifica y diviértete. Método Farray®. Lunes 20h. Plaza España. ¡Empieza hoy!',
+    'Clases Cuerpo Fit en Barcelona. Quema 400-500 calorías, tonifica y diviértete. Método Farray®. Lunes 20h. Plaza España. ¡Empieza hoy!',
   fullBodyCardioMetaKeywords:
     'cuerpo fit barcelona, entrenamiento full body barcelona, cardio dance barcelona, clases fitness barcelona, quemar calorías bailando, fitness dance barcelona, ejercicios full body barcelona',
 
@@ -19570,7 +19978,7 @@ Con práctica regular de Cuerpo-Fit (1-2 veces por semana):
   relatedCuerpoFitName: 'Cuerpo-Fit',
   relatedCuerpoFitDesc:
     'Acondicionamiento físico para bailarines. Fuerza, resistencia y control corporal.',
-  relatedFullBodyCardioName: 'Full Body Cardio',
+  relatedFullBodyCardioName: 'Cuerpo Fit',
   relatedFullBodyCardioDesc:
     'Cardio intenso con movimientos de baile. Quema calorías mientras te diviertes.',
 
@@ -22390,6 +22798,9 @@ Reconocida por el CID UNESCO y con más de 15.000 alumnos formados, la academia 
   schema_hiphop_marcos_jobTitle: 'Instructor de Hip Hop',
   schema_hiphop_marcos_description:
     'Juez internacional de Hip Hop con amplia experiencia en competiciones y enseñanza.',
+  schema_hiphop_charlie_jobTitle: 'Profesor de Hip Hop',
+  schema_hiphop_charlie_description:
+    'Experto en Hip Hop y danzas urbanas con gran trayectoria en la escena internacional.',
 
   // Hip Hop Reggaeton
   schema_hhr_teaches: 'Hip Hop Reggaeton, fusión urbana, técnica de danza, improvisación, flow',
@@ -22398,6 +22809,14 @@ Reconocida por el CID UNESCO y con más de 15.000 alumnos formados, la academia 
   schema_hhr_charlie_jobTitle: 'Instructor de Hip Hop Reggaeton',
   schema_hhr_charlie_description:
     'Especialista en fusión Hip Hop y Reggaeton con estilo único y flow característico.',
+
+  schema_hiphopReggaeton_teaches:
+    'Hip Hop Reggaeton, perreo, dembow, flow urbano, coreografía urbana',
+  schema_hiphopReggaeton_prerequisites: 'Ninguno',
+  schema_hiphopReggaeton_lessons: '4 clases semanales',
+  schema_hiphopReggaeton_charlie_jobTitle: 'Profesor de Hip Hop Reggaeton',
+  schema_hiphopReggaeton_charlie_description:
+    'Especialista en la fusión de Hip Hop y Reggaeton con un estilo único y urbano.',
 
   // Femmology
   schema_femmology_teaches:
@@ -22499,7 +22918,7 @@ Reconocida por el CID UNESCO y con más de 15.000 alumnos formados, la academia 
   schema_cuerpofit_cris_description:
     'Especialista en acondicionamiento físico para bailarines con el Método Farray. Experta en fuerza funcional, flexibilidad activa y prevención de lesiones.',
 
-  // Full Body Cardio
+  // Cuerpo Fit (Cardio Dance Fitness)
   schema_fullbodycardio_teaches:
     'Cuerpo-Fit, entrenamiento full body, cardio dance, tonificación integral, ejercicios funcionales, quema de calorías, fitness dance',
   schema_fullbodycardio_prerequisites:

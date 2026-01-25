@@ -604,7 +604,6 @@ export const SLUG_TO_STYLE_KEY: Record<string, string> = {
   'stretching-barcelona': 'stretching',
   'ejercicios-gluteos-barcelona': 'bum_bum',
   'cuerpo-fit': 'cuerpo_fit',
-  'full-body-cardio-barcelona': 'full_body_cardio',
   'body-conditioning-barcelona': 'body_conditioning',
   'acondicionamiento-fisico-bailarines': 'body_conditioning', // Spanish URL slug
 };

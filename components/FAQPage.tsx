@@ -269,7 +269,7 @@ const FAQPage: React.FC = () => {
       <Helmet>
         <title>{t('faq_page_title')} | Farray&apos;s Center</title>
         <meta name="description" content={t('faq_page_description')} />
-        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${baseUrl}/${locale}/preguntas-frecuentes`} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>

@@ -141,7 +141,7 @@ export default defineConfig({
         drop_debugger: true,
       },
     },
-    // Optimize chunk splitting
+    // Optimize chunk splitting for better performance
     rollupOptions: {
       output: {
         // Better chunk naming for long-term caching
@@ -153,32 +153,63 @@ export default defineConfig({
           return 'assets/[name]-[hash].js';
         },
         manualChunks: id => {
-          // Vendor chunks - core React
-          if (id.includes('node_modules/react-dom') || id.includes('node_modules/react/')) {
-            return 'react-vendor';
+          // Separate React core from React-DOM for better caching
+          if (id.includes('node_modules/react/') && !id.includes('react-dom')) {
+            return 'react-core';
           }
-          // Router and helmet
-          if (
-            id.includes('node_modules/react-router') ||
-            id.includes('node_modules/react-helmet')
-          ) {
-            return 'router-vendor';
+          if (id.includes('node_modules/react-dom')) {
+            return 'react-dom';
+          }
+          // Router in its own chunk (rarely changes)
+          if (id.includes('node_modules/react-router')) {
+            return 'router';
+          }
+          // Helmet separate (small, frequently used)
+          if (id.includes('node_modules/react-helmet')) {
+            return 'helmet';
+          }
+          // Scheduler (React internals)
+          if (id.includes('node_modules/scheduler')) {
+            return 'react-core';
           }
           // Analytics (lazy-loaded)
           if (id.includes('node_modules/web-vitals')) return 'analytics';
           // Sanitization
           if (id.includes('node_modules/dompurify')) return 'sanitization';
-          // i18n translations - separate chunk per locale for reduced initial load
+
+          // i18n translations - separate chunk per locale for code-splitting
           if (id.includes('/locales/es.ts')) return 'i18n-es';
           if (id.includes('/locales/en.ts')) return 'i18n-en';
           if (id.includes('/locales/ca.ts')) return 'i18n-ca';
           if (id.includes('/locales/fr.ts')) return 'i18n-fr';
-          // Scheduler (React internals, often unused)
-          if (id.includes('node_modules/scheduler')) return 'react-vendor';
+
+          // Constants - separate chunk (large config files)
+          if (id.includes('/constants/') && !id.includes('/constants/blog/')) {
+            return 'constants';
+          }
+          // Blog constants separate (loaded on-demand)
+          if (id.includes('/constants/blog/')) {
+            return 'blog-constants';
+          }
+
+          // Templates - separate chunk (large components)
+          if (id.includes('/templates/')) {
+            return 'templates';
+          }
+
+          // Schema components
+          if (id.includes('SchemaMarkup') || id.includes('/schemas/')) {
+            return 'schemas';
+          }
+
           return undefined;
         },
       },
     },
+    // Increase warning limit for i18n bundles
+    // i18n locale files are 1.4-1.6MB each, but only ONE is loaded per user session
+    // This is acceptable because: 1) lazy-loaded per locale, 2) cached, 3) Brotli-compressed (~400KB)
+    chunkSizeWarningLimit: 1700,
     // Module preload for faster loading
     modulePreload: {
       polyfill: true,

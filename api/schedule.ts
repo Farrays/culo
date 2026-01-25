@@ -223,9 +223,9 @@ const STYLE_TO_PAGE_SLUG: Record<string, string> = {
 
   // Fitness
   stretching: 'stretching-barcelona',
-  fitness: 'full-body-cardio-barcelona',
-  cuerpofit: 'full-body-cardio-barcelona',
-  bumbum: 'full-body-cardio-barcelona',
+  fitness: 'cuerpo-fit',
+  cuerpofit: 'acondicionamiento-fisico-bailarines',
+  bumbum: 'ejercicios-gluteos-barcelona',
   yoga: 'stretching-barcelona',
   pilates: 'stretching-barcelona',
 };

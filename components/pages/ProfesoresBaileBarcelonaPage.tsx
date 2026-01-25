@@ -106,8 +106,8 @@ const ProfesoresBaileBarcelonaPage: React.FC = () => {
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 41.3762,
-        longitude: 2.1487,
+        latitude: 41.380421,
+        longitude: 2.148014,
       },
     },
   }));

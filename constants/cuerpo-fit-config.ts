@@ -169,7 +169,7 @@ export const CUERPO_FIT_PAGE_CONFIG: FullDanceClassConfig = {
   ],
 
   // === RELATED CLASSES (internal linking) ===
-  // Body Conditioning -> Stretching, Bum Bum, Full Body Cardio (fitness complementario)
+  // Body Conditioning -> Stretching, Bum Bum, Cuerpo Fit (fitness complementario)
   relatedClasses: {
     enabled: true,
     classes: [

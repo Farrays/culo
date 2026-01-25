@@ -43,7 +43,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'daniel-sene',
     name: 'Daniel Sené',
-    image: '/images/teachers/img/profesor-daniel-sen-_320.webp',
+    image: '/images/teachers/img/profesor-daniel-sene_320.webp',
     specialtyKey: 'teacher.danielSene.specialty',
     bioKey: 'teacher.danielSene.bio',
     styles: ['Ballet Clásico', 'Contemporáneo', 'Yoga', 'Tai-Chi', 'Stretching'],
@@ -51,7 +51,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'alejandro-minoso',
     name: 'Alejandro Miñoso',
-    image: '/images/teachers/img/profesor-alejandro-mi-oso_320.webp',
+    image: '/images/teachers/img/profesor-alejandro-minoso_320.webp',
     specialtyKey: 'teacher.alejandroMinoso.specialty',
     bioKey: 'teacher.alejandroMinoso.bio',
     styles: ['Ballet', 'Modern Jazz', 'Afro Jazz', 'Afro Contemporáneo', 'Contemporáneo'],
@@ -83,7 +83,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'grechen-mendez',
     name: 'Grechén Méndez',
-    image: '/images/teachers/img/profesora-grechen-m-ndez_320.webp',
+    image: '/images/teachers/img/profesora-greechen-mendez_320.webp',
     specialtyKey: 'teacher.grechenMendez.specialty',
     bioKey: 'teacher.grechenMendez.bio',
     styles: ['Danzas Afrocubanas', 'Folklore Cubano', 'Rumba'],
@@ -94,7 +94,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'marcos-martinez',
     name: 'Marcos Martínez',
-    image: '/images/teachers/img/profesor-marcos-mart-nez_320.webp',
+    image: '/images/teachers/img/profesor-marcos-martinez_320.webp',
     specialtyKey: 'teacher.marcosMartinez.specialty',
     bioKey: 'teacher.marcosMartinez.bio',
     styles: ['Hip Hop', 'Breaking', 'Locking', 'Popping'],
@@ -116,7 +116,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'yasmina-fernandez',
     name: 'Yasmina Fernández',
-    image: '/images/teachers/img/profesora-yasmina-fern-ndez_320.webp',
+    image: '/images/teachers/img/profesora-yasmina-fernandez_320.webp',
     specialtyKey: 'teacher.yasminaFernandez.specialty',
     bioKey: 'teacher.yasminaFernandez.bio',
     styles: ['Salsa Cubana', 'Salsa Lady Style', 'Sexy Style', 'Sexy Reggaeton'],
@@ -127,7 +127,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'redbhlue',
     name: 'Redbhlue',
-    image: '/images/teachers/img/profesor-redblueh_320.webp',
+    image: '/images/teachers/img/profesor-redbhlue_320.webp',
     specialtyKey: 'teacher.redbhlue.specialty',
     bioKey: 'teacher.redbhlue.bio',
     styles: ['Afrobeats', 'Afro Dance'],
@@ -146,7 +146,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'isabel-lopez',
     name: 'Isabel López',
-    image: '/images/teachers/img/profesora-isabel-l-pez_320.webp',
+    image: '/images/teachers/img/profesora-isabel-lopez_320.webp',
     specialtyKey: 'teacher.isabelLopez.specialty',
     bioKey: 'teacher.isabelLopez.bio',
     styles: ['Dancehall', 'Twerk'],
@@ -154,7 +154,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'eugenia-trujillo',
     name: 'Eugenia Trujillo',
-    image: '/images/teachers/img/profesora-eugenio-trujillo_320.webp',
+    image: '/images/teachers/img/profesora-eugenia-trujillo_320.webp',
     specialtyKey: 'teacher.eugeniaTrujillo.specialty',
     bioKey: 'teacher.eugeniaTrujillo.bio',
     styles: ['Bachata Lady Style', 'Bachata en Pareja', 'Salsa LA'],
@@ -178,7 +178,7 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
   {
     id: 'noemi',
     name: 'Noemi',
-    image: '/images/teachers/img/profesora-noemi-guerin-_320.webp',
+    image: '/images/teachers/img/profesora-noemie-guerin_320.webp',
     specialtyKey: 'teacher.noemi.specialty',
     bioKey: 'teacher.noemi.bio',
     styles: ['Bachata', 'Bachata Lady Style'],
@@ -357,8 +357,8 @@ export const TEACHERS_PERSON_SCHEMAS: TeacherSchemaInfo[] = [
   },
   {
     name: 'Redblueh',
-    jobTitleKey: 'teacherSchema.redblueh.jobTitle',
-    descriptionKey: 'teacherSchema.redblueh.description',
+    jobTitleKey: 'teacherSchema.redbhlue.jobTitle',
+    descriptionKey: 'teacherSchema.redbhlue.description',
     knowsAbout: ['Afrobeats', 'Ntcham', 'African Dance', 'Tanzanian Dance'],
   },
   {

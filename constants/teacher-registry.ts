@@ -70,7 +70,6 @@ export const TEACHER_REGISTRY: Record<string, TeacherRegistryEntry> = {
       'femmology',
       'heels',
       'cuerpo-fit',
-      'full-body-cardio',
     ],
     meta: {
       isDirector: true,

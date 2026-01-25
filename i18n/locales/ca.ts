@@ -7,6 +7,10 @@ export const ca = {
   ratingAriaLabel: '{rating} de 5 estrelles',
   closeButton: 'Tancar',
   teacherAvatarAlt: 'Foto de {name}',
+  // Image Alt Texts - SEO Optimized
+  logo_alt: "Logo Farray's International Dance Center - Acadèmia de ball a Barcelona",
+  teacher_photo_alt: "{name} - Professor de ball a Barcelona | Farray's Center",
+  instagram_post_alt: "Classes de ball a Barcelona - Alumnes de Farray's Dance Center",
   breadcrumbHome: 'Inici',
   breadcrumb_home: 'Inici',
   home: 'Inici',
@@ -1931,7 +1935,7 @@ export const ca = {
 
   about_h1: 'Sobre Nosaltres',
   about_intro:
-    "Hi ha qui busca una escola de ball semblant a les que ja coneixen. I hi ha qui busca l'escola que sempre van somiar. A Farray's som d'aquest segon grup.",
+    "Farray's International Dance Center és una acadèmia de dansa multidisciplinària a Barcelona, acreditada per CID-UNESCO i dirigida per Yunaisy Farray. Oferim més de 25 estils de ball amb el mètode exclusiu Farray®: des de Salsa Cubana i Bachata fins a Hip Hop, Dancehall, Dansa Contemporània i Ballet. Més de 15.000 alumnes formats des del 2005.",
   about_cta_contact: 'Contacta amb Nosaltres',
 
   // Our Story Section
@@ -2132,6 +2136,17 @@ export const ca = {
   notFound_dancehall: 'Dancehall',
   notFound_salsaBachata: 'Salsa i Bachata',
   notFound_urbanDances: 'Danses Urbanes',
+  notFound_heels: 'Heels',
+  notFound_teachers: 'Professors',
+  notFound_schedule: 'Horaris',
+  notFound_prices: 'Preus',
+  notFound_contact: 'Contacte',
+  notFound_popularPages: 'Pàgines Populars',
+  notFound_helpText: 'Necessites ajuda?',
+  notFound_contactLink: "Contacta'ns",
+  notFound_seo_title: 'Pàgina No Trobada | 404',
+  notFound_seo_description:
+    "La pàgina que cerques no existeix. Explora les nostres classes de ball a Barcelona o torna a l'inici.",
 
   // ==================== REGALA BAILE PAGE ====================
   regalaBaile_page_title: "Regala Ball - Targeta Regal Classes de Ball Barcelona | Farray's Center",
@@ -9103,6 +9118,8 @@ El Mètode Farray® rescata i ensenya aquesta tradició autèntica amb un enfoca
   facilitiesGallerySocial: 'Zona Social',
   facilitiesGalleryServicios: 'Serveis',
   facilitiesGalleryPhotos: 'fotos',
+  facilitiesGalleryPhotosLabel: 'fotos',
+  facilitiesGalleryViewLarge: 'Veure en gran',
   facilitiesAreaSalaA: 'Sala A',
   facilitiesAreaSalaB: 'Sala B',
   facilitiesAreaSalaC: 'Sala C',
@@ -12763,6 +12780,12 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   horariosV2_block_urbano_ex1: 'Afrobeats i Dancehall',
   horariosV2_block_urbano_ex2: 'Hip Hop i Reggaeton',
   horariosV2_block_urbano_ex3: 'Heels i Twerk',
+  'horariosV2_block_evening-danza_ex1': 'Ballet 18:00h',
+  'horariosV2_block_evening-danza_ex2': 'Modern Jazz 19:15h',
+  'horariosV2_block_evening-danza_ex3': 'Contemporani 20:30h',
+  'horariosV2_block_salsa-bachata_ex1': 'Salsa Cubana tots els nivells',
+  'horariosV2_block_salsa-bachata_ex2': 'Bachata Sensual',
+  'horariosV2_block_salsa-bachata_ex3': 'Lady Style',
   horariosV2_level_beginner: 'Principiant',
   horariosV2_level_beginner_desc: 'Comences des de zero',
   horariosV2_level_basic: 'Bàsic',
@@ -17222,7 +17245,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   bachataV3FinalCTADesc: `No importa si vienes solo o en pareja. Si nunca has bailado o si ya tienes experiència. Lo importante es que des el primer paso.\\n\\nCon Mathias, Eugenia, Carlos, Noemí y Juan aprendreás bachata sensual de veritat: tècnica, conexión, musicalitat y mucha diversión.`,
   bachataV3FinalCTAFunny: `Preparat per fer ones? 🌊`,
   fullBodyCardioPageTitle: `Cuerpo-Fit: Entrenament Full Body i Cardio Dance a Barcelona | Farray's Center`,
-  fullBodyCardioMetaDescription: `Classes Full Body Cardio Dance a Barcelona. Crema 400-500 calories, tonifica i diverteix-te. Mètode Farray®. Dilluns 20h. Plaça Espanya. Comença avui!`,
+  fullBodyCardioMetaDescription: `Classes Cuerpo Fit cardio dance a Barcelona. Crema 400-500 calories, tonifica i diverteix-te. Mètode Farray®. Dilluns 20h. Plaça Espanya. Comença avui!`,
   fullBodyCardioMetaKeywords: `cos fit barcelona, entrenament full body barcelona, cardio dance barcelona, classes fitness barcelona, cremar calories ballant, fitness dance barcelona, exercicis full body barcelona`,
   fullBodyCardioBreadcrumbHome: `Inici`,
   fullBodyCardioBreadcrumbClasses: `Classes`,
@@ -18147,7 +18170,7 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   relatedCuerpoFitName: 'Cuerpo-Fit',
   relatedCuerpoFitDesc:
     'Condicionament físic per a ballarins. Força, resistència i control corporal.',
-  relatedFullBodyCardioName: 'Full Body Cardio',
+  relatedFullBodyCardioName: 'Cuerpo Fit',
   relatedFullBodyCardioDesc:
     'Cardio intens amb moviments de ball. Crema calories mentre et diverteixes.',
 
@@ -18868,6 +18891,8 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogSalsaVsBachata_refEndorphinsTitle: 'Synchronized Dancing and Endorphin Release',
   blogSalsaVsBachata_refEndorphinsDesc:
     "Investigació sobre l'alliberament d'endorfines i cohesió social a través del ball sincronitzat.",
+  blogSalsaVsBachata_heroAlt:
+    'Parelles ballant estils llatins a la nostra acadèmia de ball de Barcelona, mostrant elegància i connexió entre salsa i bachata',
 
   // ============================================================================
   // BLOG: COM PERDRE LA POR A BALLAR
@@ -19279,6 +19304,8 @@ A ciutats com Barcelona, el bachata lady style forma part de l'oferta habitual d
   blogBaileSaludMental_refSyncTitle: 'Silent Disco: Dancing in Synchrony and Endorphins',
   blogBaileSaludMental_refSyncDesc:
     "Estudi de Brown & Vaughn (2016) que demostra que ballar en sincronia eleva el llindar del dolor, indicant alliberament d'endorfines.",
+  blogBaileSaludMental_heroAlt:
+    "Persones ballant salsa amb expressió d'alegria, il·lustrant els beneficis científics del ball per a la salut mental: reducció d'ansietat, estrès i millora cognitiva",
 
   // =============================================================================
   // BOOKING WIDGET - Sistema de Reserves Enterprise
@@ -21067,7 +21094,7 @@ Reconeguda pel CID UNESCO i amb més de 15.000 alumnes formats, l'acadèmia comb
   schema_cuerpofit_cris_description:
     'Especialista en condicionament físic per a ballarins amb el Mètode Farray. Experta en força funcional, flexibilitat activa i prevenció de lesions.',
 
-  // Full Body Cardio
+  // Cuerpo Fit (Cardio Dance Fitness)
   schema_fullbodycardio_teaches:
     'Cuerpo-Fit, entrenament full body, cardio dance, tonificació integral, exercicis funcionals, crema de calories, fitness dance',
   schema_fullbodycardio_prerequisites:

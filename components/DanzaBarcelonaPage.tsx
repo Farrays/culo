@@ -354,10 +354,14 @@ const DanzaBarcelonaPage: React.FC = () => {
           addressCountry: 'ES',
         }}
         geo={{
-          latitude: '41.380420',
+          latitude: '41.380421',
           longitude: '2.148014',
         }}
         priceRange="€€"
+        aggregateRating={{
+          ratingValue: '5',
+          reviewCount: '509',
+        }}
       />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>

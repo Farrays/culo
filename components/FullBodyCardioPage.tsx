@@ -3,7 +3,7 @@ import FullDanceClassTemplate from './templates/FullDanceClassTemplate';
 import { FULL_BODY_CARDIO_PAGE_CONFIG } from '../constants/full-body-cardio-config';
 
 /**
- * Cuerpo-Fit Page - Full Body Cardio Dance en Barcelona
+ * Cuerpo Fit Page - Cardio Dance Fitness en Barcelona
  *
  * SEO Keywords:
  * - cuerpo fit barcelona

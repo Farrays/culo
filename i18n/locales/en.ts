@@ -7,6 +7,10 @@ export const en = {
   ratingAriaLabel: '{rating} out of 5 stars',
   closeButton: 'Close',
   teacherAvatarAlt: 'Photo of {name}',
+  // Image Alt Texts - SEO Optimized
+  logo_alt: "Farray's International Dance Center Logo - Dance academy in Barcelona",
+  teacher_photo_alt: "{name} - Dance instructor in Barcelona | Farray's Center",
+  instagram_post_alt: "Dance classes in Barcelona - Students at Farray's Dance Center",
   breadcrumbHome: 'Home',
   breadcrumb_home: 'Home',
   home: 'Home',
@@ -1939,7 +1943,7 @@ export const en = {
 
   about_h1: 'About Us',
   about_intro:
-    "Some look for a dance school similar to the ones they already know. And some look for the school they always dreamed of. At Farray's we belong to this second group.",
+    "Farray's International Dance Center is a multidisciplinary dance academy in Barcelona, accredited by CID-UNESCO and directed by Yunaisy Farray. We offer over 25 dance styles with the exclusive Farray® method: from Cuban Salsa and Bachata to Hip Hop, Dancehall, Contemporary Dance and Ballet. Over 15,000 students trained since 2005.",
   about_cta_contact: 'Contact Us',
 
   // Our Story Section
@@ -2137,6 +2141,17 @@ export const en = {
   notFound_dancehall: 'Dancehall',
   notFound_salsaBachata: 'Salsa & Bachata',
   notFound_urbanDances: 'Urban Dances',
+  notFound_heels: 'Heels',
+  notFound_teachers: 'Teachers',
+  notFound_schedule: 'Schedule',
+  notFound_prices: 'Prices',
+  notFound_contact: 'Contact',
+  notFound_popularPages: 'Popular Pages',
+  notFound_helpText: 'Need help?',
+  notFound_contactLink: 'Contact us',
+  notFound_seo_title: 'Page Not Found | 404',
+  notFound_seo_description:
+    'The page you are looking for does not exist. Explore our dance classes in Barcelona or go back home.',
 
   // ==================== GIFT DANCE PAGE ====================
   regalaBaile_page_title: "Gift Dance - Gift Card Dance Classes Barcelona | Farray's Center",
@@ -9396,6 +9411,8 @@ The Farray Method® rescues and teaches this authentic tradition with a unique p
   facilitiesGallerySocial: 'Social Area',
   facilitiesGalleryServicios: 'Amenities',
   facilitiesGalleryPhotos: 'photos',
+  facilitiesGalleryPhotosLabel: 'photos',
+  facilitiesGalleryViewLarge: 'View large',
   facilitiesAreaSalaA: 'Room A',
   facilitiesAreaSalaB: 'Room B',
   facilitiesAreaSalaC: 'Room C',
@@ -12606,6 +12623,12 @@ In cities like Barcelona, bachata lady style is part of the regular offering of 
   horariosV2_block_urbano_ex1: 'Afrobeats and Dancehall',
   horariosV2_block_urbano_ex2: 'Hip Hop and Reggaeton',
   horariosV2_block_urbano_ex3: 'Heels and Twerk',
+  'horariosV2_block_evening-danza_ex1': 'Ballet 6:00pm',
+  'horariosV2_block_evening-danza_ex2': 'Modern Jazz 7:15pm',
+  'horariosV2_block_evening-danza_ex3': 'Contemporary 8:30pm',
+  'horariosV2_block_salsa-bachata_ex1': 'Salsa Cubana all levels',
+  'horariosV2_block_salsa-bachata_ex2': 'Sensual Bachata',
+  'horariosV2_block_salsa-bachata_ex3': 'Lady Style',
   horariosV2_level_beginner: 'Beginner',
   horariosV2_level_beginner_desc: 'You start from scratch',
   horariosV2_level_basic: 'Basic',
@@ -17094,15 +17117,15 @@ Barcelona has become one of the world epicenters of sensual bachata. Festivals, 
   fullBodyCardioTransform6Desc: `It's not suffering at the gym. It's having fun while getting fit.`,
   fullBodyCardioTransformCTA: `¿Por qué elegir Farray's Center for tu Cuerpo-Fit in Barcelona?`,
   fullBodyCardioLevelsTitle: `Nivel for Cuerpo-Fit`,
-  fullBodyCardioLevelBasicTitle: 'Basic Full Body Cardio',
+  fullBodyCardioLevelBasicTitle: 'Basic Cuerpo Fit',
   fullBodyCardioTeachersClosing:
-    'Our Full Body Cardio instructors combine dance with fitness, making every session both effective and enjoyable.',
+    'Our Cuerpo Fit instructors combine dance with fitness, making every session both effective and enjoyable.',
   fullBodyCardioLevelsSubtitle: `An open class for everyone`,
   fullBodyCardioLevelOpenTitle: `All levels`,
   fullBodyCardioLevelOpenDesc: `Cuerpo-Fit is open level. Each exercise has intensity variations: you choose yours. Absolute beginners work alongside experienced people, each at their own pace. No pressure, no comparisons.`,
   fullBodyCardioTeachersTitle: `Your Cuerpo-Fit Teacher`,
   fullBodyCardioTeachersSubtitle: `Specialist in functional training and cardio dance`,
-  fullBodyCardioScheduleTitle: 'Full Body Cardio Class Schedule',
+  fullBodyCardioScheduleTitle: 'Cuerpo Fit Class Schedule',
   fullBodyCardioScheduleSubtitle: 'Weekly functional training classes',
   fullBodyCardioWhyChoose2Desc: `You don't need experience. Each exercise has intensity variations. You choose your level at each moment.`,
   fullBodyCardioWhyChoose3Title: `Small groups`,
@@ -17971,7 +17994,7 @@ Barcelona has become one of the world epicenters of sensual bachata. Festivals, 
     'Tone your glutes while dancing. Functional exercises with music and high energy.',
   relatedCuerpoFitName: 'Cuerpo-Fit',
   relatedCuerpoFitDesc: 'Physical conditioning for dancers. Strength, endurance, and body control.',
-  relatedFullBodyCardioName: 'Full Body Cardio',
+  relatedFullBodyCardioName: 'Cuerpo Fit',
   relatedFullBodyCardioDesc: 'Intense cardio with dance movements. Burn calories while having fun.',
 
   // ============================================================================
@@ -20884,7 +20907,7 @@ Recognized by CID UNESCO and with more than 15,000 students trained, the academy
   schema_cuerpofit_cris_description:
     'Specialist in body conditioning for dancers with the Farray Method. Expert in functional strength, active flexibility and injury prevention.',
 
-  // Full Body Cardio
+  // Cuerpo Fit (Cardio Dance Fitness)
   schema_fullbodycardio_teaches:
     'Cuerpo-Fit, full body training, cardio dance, integral toning, functional exercises, calorie burning, fitness dance',
   schema_fullbodycardio_prerequisites: 'None - open class for all levels with no prior experience',

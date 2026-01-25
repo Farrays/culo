@@ -1,10 +1,10 @@
 /**
- * Cuerpo-Fit (Full Body Cardio Dance) Page Configuration
+ * Cuerpo Fit (Cardio Dance Fitness) Page Configuration
  *
  * This file contains all the configuration needed for the FullDanceClassTemplate
- * to render the complete Cuerpo-Fit page.
+ * to render the complete Cuerpo Fit page.
  *
- * NOTA: Este archivo es para la NUEVA clase Cuerpo-Fit (cardio dance para todos).
+ * NOTA: Este archivo es para la clase Cuerpo Fit (cardio dance para todos).
  * URL: /clases/cuerpo-fit
  * No confundir con cuerpo-fit-config.ts que es Body Conditioning para bailarines.
  *

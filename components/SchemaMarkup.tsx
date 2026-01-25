@@ -113,6 +113,27 @@ export const OrganizationSchema: React.FC = () => {
       'Modern Jazz',
     ],
     slogan: 'Dance Your Dreams',
+    priceRange: '€€',
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '10:00',
+        closes: '22:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Saturday',
+        opens: '10:00',
+        closes: '20:00',
+      },
+    ],
+    memberOf: {
+      '@type': 'Organization',
+      name: 'CID - International Dance Council UNESCO',
+      url: 'https://www.cid-world.org/',
+      description: 'Official partner of UNESCO for dance',
+    },
   };
 
   return (
@@ -141,6 +162,12 @@ export const WebSiteSchema: React.FC = () => {
       '@id': 'https://www.farrayscenter.com/#organization',
     },
     inLanguage: ['es-ES', 'ca-ES', 'en', 'fr-FR'],
+    datePublished: '2017-01-01',
+    dateModified: '2026-01-25',
+    copyrightYear: 2017,
+    copyrightHolder: {
+      '@id': 'https://www.farrayscenter.com/#organization',
+    },
     potentialAction: {
       '@type': 'SearchAction',
       target: {

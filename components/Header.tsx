@@ -321,7 +321,7 @@ const Header: React.FC = () => {
                 <img
                   src="/images/logo/img/logo-fidc_256.png"
                   srcSet="/images/logo/img/logo-fidc_256.png 1x, /images/logo/img/logo-fidc_512.png 2x"
-                  alt="Farray's International Dance Center"
+                  alt={t('logo_alt')}
                   width="256"
                   height="256"
                   fetchPriority="high"

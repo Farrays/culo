@@ -378,12 +378,12 @@ const HorariosPreciosPage: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <StarIcon className="w-5 h-5 text-yellow-400 fill-yellow-400" />
                   <span className="font-semibold">4.9/5</span>
-                  <span className="text-sm">(509+ reseñas)</span>
+                  <span className="text-sm">({t('statsbar_reviews')})</span>
                 </div>
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">
                   <UserIcon className="w-5 h-5 text-primary-accent" />
-                  <span>+15.000 socios</span>
+                  <span>{t('horariosV2_authority_members')}</span>
                 </div>
                 <div className="hidden sm:block w-px h-6 bg-neutral/30"></div>
                 <div className="flex items-center gap-2">

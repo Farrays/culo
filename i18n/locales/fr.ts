@@ -7,6 +7,10 @@ export const fr = {
   ratingAriaLabel: '{rating} sur 5 étoiles',
   closeButton: 'Fermer',
   teacherAvatarAlt: 'Photo de {name}',
+  // Image Alt Texts - SEO Optimized
+  logo_alt: "Logo Farray's International Dance Center - Académie de danse à Barcelone",
+  teacher_photo_alt: "{name} - Professeur de danse à Barcelone | Farray's Center",
+  instagram_post_alt: "Cours de danse à Barcelone - Élèves de Farray's Dance Center",
   breadcrumbHome: 'Accueil',
   breadcrumb_home: 'Accueil',
   home: 'Accueil',
@@ -1833,7 +1837,7 @@ export const fr = {
 
   about_h1: 'À Propos de Nous',
   about_intro:
-    "Certains cherchent une école de danse similaire à celles qu'ils connaissent déjà. Et d'autres cherchent l'école dont ils ont toujours rêvé. Chez Farray's, nous appartenons à ce deuxième groupe.",
+    "Farray's International Dance Center est une académie de danse multidisciplinaire à Barcelone, accréditée par le CID-UNESCO et dirigée par Yunaisy Farray. Nous offrons plus de 25 styles de danse avec la méthode exclusive Farray® : de la Salsa Cubaine et Bachata au Hip Hop, Dancehall, Danse Contemporaine et Ballet. Plus de 15 000 étudiants formés depuis 2005.",
   about_cta_contact: 'Contactez-nous',
 
   // Our Story Section
@@ -2034,6 +2038,17 @@ export const fr = {
   notFound_dancehall: 'Dancehall',
   notFound_salsaBachata: 'Salsa et Bachata',
   notFound_urbanDances: 'Danses Urbaines',
+  notFound_heels: 'Heels',
+  notFound_teachers: 'Professeurs',
+  notFound_schedule: 'Horaires',
+  notFound_prices: 'Tarifs',
+  notFound_contact: 'Contact',
+  notFound_popularPages: 'Pages Populaires',
+  notFound_helpText: "Besoin d'aide?",
+  notFound_contactLink: 'Contactez-nous',
+  notFound_seo_title: 'Page Non Trouvée | 404',
+  notFound_seo_description:
+    "La page que vous recherchez n'existe pas. Explorez nos cours de danse à Barcelone ou retournez à l'accueil.",
 
   // ==================== OFFRIR LA DANSE PAGE ====================
   regalaBaile_page_title:
@@ -13072,6 +13087,12 @@ Dans des villes comme Barcelone, le bachata lady style fait partie de l'offre ha
   horariosV2_block_urbano_ex1: 'Afrobeats et Dancehall',
   horariosV2_block_urbano_ex2: 'Hip Hop et Reggaeton',
   horariosV2_block_urbano_ex3: 'Heels et Twerk',
+  'horariosV2_block_evening-danza_ex1': 'Ballet 18h00',
+  'horariosV2_block_evening-danza_ex2': 'Modern Jazz 19h15',
+  'horariosV2_block_evening-danza_ex3': 'Contemporain 20h30',
+  'horariosV2_block_salsa-bachata_ex1': 'Salsa Cubaine tous niveaux',
+  'horariosV2_block_salsa-bachata_ex2': 'Bachata Sensuelle',
+  'horariosV2_block_salsa-bachata_ex3': 'Lady Style',
   horariosV2_level_beginner: 'Débutant',
   horariosV2_level_beginner_desc: 'Vous commencez de zéro',
   horariosV2_level_basic: 'Basique',
@@ -17657,7 +17678,7 @@ Barcelone est devenue l'un des épicentres mondiaux de la bachata sensuelle. Fes
   bachataV3FinalCTADesc: `No importa si vienes solo o en pareja. Si nunca has bailado o si ya tienes expérience. Lo importante es que des el primer paso.\\n\\nCon Mathias, Eugenia, Carlos, Noemí y Juan apprendreás bachata sensuel de vérité: technique, conexión, musicalité y mucha diversión.`,
   bachataV3FinalCTAFunny: `Prêt(e) à faire des vagues?`,
   fullBodyCardioPageTitle: `Cuerpo-Fit: Entraînement Full Body et Cardio Dance à Barcelone | Farray's Center`,
-  fullBodyCardioMetaDescription: `Cours Full Body Cardio Dance à Barcelone. Brûlez 400-500 calories, tonifiez et amusez-vous. Méthode Farray®. Lundis 20h. Plaza España. Commencez dès maintenant!`,
+  fullBodyCardioMetaDescription: `Cours Cuerpo Fit cardio dance à Barcelone. Brûlez 400-500 calories, tonifiez et amusez-vous. Méthode Farray®. Lundis 20h. Plaza España. Commencez dès maintenant!`,
   fullBodyCardioMetaKeywords: `corps fit barcelona, entraînement full body barcelona, cardio dance barcelona, cours fitness barcelona, brûler calories en dansant, fitness dance barcelona, exercices full body barcelona`,
   fullBodyCardioBreadcrumbHome: `Accueil`,
   fullBodyCardioBreadcrumbClasses: `Cours`,
@@ -17715,7 +17736,7 @@ Barcelone est devenue l'un des épicentres mondiaux de la bachata sensuelle. Fes
   fullBodyCardioLevelOpenDesc: `Cuerpo-Fit est niveau ouvert. Chaque exercice a des variantes d'intensité : vous choisissez la vôtre. Débutants absolutos trabajan al lado de personas avec expérience, cada uno a su ritmo. Sans pression, sans comparaisons.`,
   fullBodyCardioTeachersTitle: `Votre Professeure de Cuerpo-Fit`,
   fullBodyCardioTeachersSubtitle: `Spécialiste en entraînement fonctionnel et cardio dance`,
-  fullBodyCardioScheduleTitle: 'Horaires des Cours de Full Body Cardio',
+  fullBodyCardioScheduleTitle: 'Horaires des Cours de Cuerpo Fit',
   fullBodyCardioScheduleSubtitle: "Cours hebdomadaires d'entraînement fonctionnel",
   fullBodyCardioWhyChoose2Desc: `Vous n'avez pas besoin d'expérience. Chaque exercice a des variantes d'intensité. Vous choisissez votre niveau à chaque instant.`,
   fullBodyCardioWhyChoose3Title: `Petits groupes`,
@@ -18588,7 +18609,7 @@ Barcelone est devenue l'un des épicentres mondiaux de la bachata sensuelle. Fes
   relatedCuerpoFitName: 'Cuerpo-Fit',
   relatedCuerpoFitDesc:
     'Conditionnement physique pour danseurs. Force, endurance et contrôle corporel.',
-  relatedFullBodyCardioName: 'Full Body Cardio',
+  relatedFullBodyCardioName: 'Cuerpo Fit',
   relatedFullBodyCardioDesc:
     'Cardio intense avec mouvements de danse. Brûlez des calories en vous amusant.',
 
@@ -21377,12 +21398,12 @@ Reconnue par le CID UNESCO et avec plus de 15 000 élèves formés, l'académie 
   schema_cuerpofit_cris_description:
     "Spécialiste en conditionnement physique pour danseurs à Farray's Center.",
 
-  // Full Body Cardio
+  // Cuerpo Fit (Cardio Dance Fitness)
   schema_fullbodycardio_teaches:
-    'Full Body Cardio, cardio dance, entraînement complet du corps, brûler des calories en dansant',
+    'Cuerpo Fit, cardio dance, entraînement complet du corps, brûler des calories en dansant',
   schema_fullbodycardio_prerequisites: 'Aucun',
   schema_fullbodycardio_lessons: '4 cours hebdomadaires',
-  schema_fullbodycardio_cris_jobTitle: 'Professeure de Full Body Cardio',
+  schema_fullbodycardio_cris_jobTitle: 'Professeure de Cuerpo Fit',
   schema_fullbodycardio_cris_description:
     "Spécialiste en cardio dance et entraînement fonctionnel à Farray's Center.",
 

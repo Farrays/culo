@@ -66,6 +66,8 @@ const FEATURED_TEACHERS: FeaturedTeacher[] = [
  * Uses picture element with avif/webp/jpg fallback and srcset for optimal loading
  */
 const TeacherImage: React.FC<{ basePath: string; name: string }> = ({ basePath, name }) => {
+  const { t } = useI18n();
+
   return (
     <picture>
       <source
@@ -82,7 +84,7 @@ const TeacherImage: React.FC<{ basePath: string; name: string }> = ({ basePath, 
         src={`${basePath}_320.jpg`}
         srcSet={`${basePath}_320.jpg 320w, ${basePath}_640.jpg 640w, ${basePath}_960.jpg 960w`}
         sizes="(max-width: 768px) 128px, 160px"
-        alt={name}
+        alt={t('teacher_photo_alt', { name })}
         className="w-full h-full object-cover"
         loading="lazy"
         decoding="async"

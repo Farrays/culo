@@ -493,8 +493,8 @@ const AlquilerSalasPage: React.FC = () => {
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 41.3851,
-        longitude: 2.1489,
+        latitude: 41.380421,
+        longitude: 2.148014,
       },
       telephone: '+34622247085',
       email: 'info@farrayscenter.com',

@@ -29,3 +29,32 @@ Crawl-delay: 1
 User-agent: Slurp
 Allow: /
 Crawl-delay: 1
+
+# AI Crawlers - GEO Optimization (Added: 2026-01-25)
+# These AI search engines use our content to answer user queries
+# Crawl-delay: 0 for faster indexing in AI search results
+
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 0
+
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 0
+
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 0
+
+# CommonCrawl can maintain delay (not a primary search engine)
+User-agent: CCBot
+Allow: /
+Crawl-delay: 1
