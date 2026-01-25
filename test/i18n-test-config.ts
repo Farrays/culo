@@ -77,6 +77,67 @@ const mockTranslations = {
 
     // Mini FAQ
     miniFAQTitle: 'Preguntas Frecuentes',
+
+    // PAS (Problem-Agitation-Solution) Section
+    pas_title: '¿Te Suena Familiar?',
+    pas_subtitle: 'Si alguna de estas frases resuena contigo, no estás solo.',
+    pas_problem1: 'Llevas años queriendo aprender a bailar pero nunca das el paso.',
+    pas_problem2: 'Probaste otras escuelas y te sentiste un número más, sin atención real.',
+    pas_problem3: 'Los horarios nunca cuadran con tu vida y acabas dejándolo.',
+    pas_problem4: 'Sientes que "no tienes ritmo" o que "ya es muy tarde" para empezar.',
+    pas_agitation1: 'Cada día que pasa es un día menos para disfrutar bailando.',
+    pas_agitation2: 'Y la verdad es que el problema nunca fuiste tú...',
+    pas_solution1: 'El problema era no encontrar EL MÉTODO correcto.',
+    pas_solution2: "En Farray's, hemos creado algo diferente.",
+    pas_cta: 'Descubre el Método Farray®',
+
+    // Offer Section
+    offer_badge: 'Oferta Especial',
+    offer_title: 'Puertas Abiertas',
+    offer_subtitle: 'Tu oportunidad de probar sin compromiso',
+    offer_benefit1: '1 Clase de Bienvenida',
+    offer_value1: 'valor 20€',
+    offer_benefit2: 'Tour por las instalaciones de 700m²',
+    offer_value2: 'valor 15€',
+    offer_benefit3: 'Asesoría personalizada de nivel',
+    offer_value3: 'valor 25€',
+    offer_benefit4: 'Acceso al grupo de WhatsApp de la comunidad',
+    offer_value4: 'exclusivo',
+    offer_benefit5: '10% descuento si te matriculas hoy',
+    offer_value5: 'oferta limitada',
+    offer_urgency: 'Plazas limitadas: Quedan {spots} plazas esta semana',
+    offer_cta: 'Reservar Mi Plaza',
+    offer_trust1: 'Sin compromiso',
+    offer_trust2: 'Cancelación gratuita',
+
+    // Video Testimonials
+    videotestimonials_title: 'Ellos Tampoco Creían Que Podían Bailar',
+    videotestimonials_subtitle: 'Personas reales. Transformaciones reales. Sin filtros.',
+    videotestimonials_reviews: 'opiniones',
+    testimonial1_name: 'María García',
+    testimonial1_role: 'Oficinista, 34 años',
+    testimonial1_quote:
+      'Pensaba que no tenía ritmo. Después de 3 meses, estoy preparando mi primera coreografía para un showcase. El método funciona.',
+    testimonial2_name: 'Carlos Rodríguez',
+    testimonial2_role: '+50 años, jubilado',
+    testimonial2_quote:
+      'A mi edad pensé que era imposible. Aquí me demostraron que el límite estaba solo en mi cabeza. Ahora bailo salsa mejor que muchos jóvenes.',
+    testimonial3_name: 'Anna Kowalski',
+    testimonial3_role: 'Diseñadora, 28 años',
+    testimonial3_quote:
+      'Probé 3 academias antes. Ninguna me hizo sentir tan bienvenida ni me enseñó tan bien. La diferencia es brutal.',
+
+    // Instructors
+    instructor1_name: 'Yunaisy Farray',
+    instructor1_role: 'Fundadora & Directora Artística',
+    instructor1_bio:
+      '+25 años de experiencia internacional. Formada en la Escuela Nacional de Arte de Cuba. Ha trabajado con artistas como Madonna y participado en Street Dance 2.',
+    instructor1_quote: 'Mi misión es que cada alumno descubra el bailarín que lleva dentro.',
+    instructor2_name: 'Joni Pila',
+    instructor2_role: 'Director de Danzas Urbanas',
+    instructor2_bio:
+      'Especialista en Hip Hop, Dancehall y Afrobeat. Coreógrafo de videoclips y eventos internacionales.',
+    instructor2_quote: 'El baile urbano no es solo técnica, es actitud y expresión.',
   },
 
   pages: {
@@ -137,6 +198,29 @@ const mockTranslations = {
     footerContact: 'Contacto',
     footerPrivacy: 'Política de Privacidad',
     footerTerms: 'Términos y Condiciones',
+
+    // Salsa Cubana Prepare Section
+    salsaCubanaPrepareTitle: 'Prepara tu Primera Clase',
+    salsaCubanaPrepareSubtitle: 'Todo lo que necesitas saber para tu primera experiencia',
+    salsaCubanaPrepareWhatToBring: 'Qué traer',
+    salsaCubanaPrepareItem1: 'Ropa cómoda y ligera',
+    salsaCubanaPrepareItem2: 'Bambas o zapatos cómodos',
+    salsaCubanaPrepareItem3: 'Para chicas: zapatos de tacón con sujeción en el tobillo (opcional)',
+    salsaCubanaPrepareItem4: 'Cambio de ropa y toalla si quieres ducharte',
+    salsaCubanaPrepareBefore: 'Antes de llegar',
+    salsaCubanaPrepareBeforeItem1: 'Llega 10 minutos antes para registrarte',
+    salsaCubanaPrepareBeforeItem2: 'Ven con la mente abierta a aprender',
+    salsaCubanaPrepareBeforeItem3: 'No necesitas traer pareja',
+    salsaCubanaPrepareAvoid: 'Evita:',
+    salsaCubanaPrepareAvoidItem1: 'Joyas que puedan engancharse durante el baile en pareja',
+    salsaCubanaPrepareAvoidItem2: 'Perfumes muy fuertes (estarás cerca de tu pareja)',
+    salsaCubanaPrepareAvoidItem3: 'Miedo a equivocarte - aquí todos aprendemos juntos',
+    salsaCubanaPrepareNote: 'Nota importante',
+    salsaCubanaPrepareNoteDesc:
+      'No te preocupes si nunca has bailado. El Nivel 0 está diseñado específicamente para principiantes absolutos. Rotamos las parejas durante la clase para que todos practiquen.',
+    salsaCubanaPrepareTeacherTip: 'Consejo de Yunaisy:',
+    salsaCubanaPrepareTeacherQuote:
+      'La salsa cubana es diversión pura. Ven con ganas de pasártelo bien y de contagiarte del espíritu cubano. El resto viene solo.',
   },
 
   booking: {
