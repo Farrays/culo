@@ -160,13 +160,9 @@ export default defineConfig({
           if (id.includes('node_modules/react-dom')) {
             return 'react-dom';
           }
-          // Router in its own chunk (rarely changes)
-          if (id.includes('node_modules/react-router')) {
-            return 'router';
-          }
-          // Helmet separate (small, frequently used)
-          if (id.includes('node_modules/react-helmet')) {
-            return 'helmet';
+          // Router + Helmet bundled together (prevents initialization order issues)
+          if (id.includes('node_modules/react-router') || id.includes('node_modules/react-helmet')) {
+            return 'router-vendor';
           }
           // Scheduler (React internals)
           if (id.includes('node_modules/scheduler')) {
