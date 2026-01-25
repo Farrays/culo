@@ -77,7 +77,7 @@ i18n
 
     // React integration
     react: {
-      useSuspense: true, // Enable suspense for async loading
+      useSuspense: false, // Disable suspense to avoid loading issues with bridge hook
     },
 
     // Interpolation

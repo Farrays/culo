@@ -25,29 +25,9 @@ interface I18nContextType {
  * Bridge hook that provides legacy useI18n API using i18next
  */
 export const useI18n = (): I18nContextType => {
-  // Load all namespaces to ensure backward compatibility
-  // Using default namespace to avoid TypeScript type instantiation depth error
+  // Use default namespace - i18next will search all loaded namespaces automatically
+  // All namespaces are already configured to load in i18n.ts (lines 64-76)
   const { t: i18nextT, i18n, ready } = useTranslation();
-
-  // Ensure all namespaces are loaded
-  const namespaces = [
-    'common',
-    'booking',
-    'schedule',
-    'calendar',
-    'home',
-    'classes',
-    'blog',
-    'faq',
-    'about',
-    'contact',
-    'pages',
-  ];
-  namespaces.forEach(ns => {
-    if (!i18n.hasResourceBundle(i18n.language, ns)) {
-      i18n.loadNamespaces(ns);
-    }
-  });
 
   const locale = i18n.language as Locale;
 
