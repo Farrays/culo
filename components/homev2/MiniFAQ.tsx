@@ -17,7 +17,19 @@ interface MiniFAQProps {
  * - Hover effects con glow
  */
 const MiniFAQ: React.FC<MiniFAQProps> = ({ config }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 

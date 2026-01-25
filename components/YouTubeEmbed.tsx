@@ -59,7 +59,19 @@ const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   uploadDate = new Date().toISOString().split('T')[0],
   duration = 'PT5M',
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const { preferences, setShowBanner } = useCookieConsent();
   const hasFunctionalConsent = preferences?.functional ?? false;
 

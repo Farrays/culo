@@ -2,7 +2,19 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const SkipLink: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <a

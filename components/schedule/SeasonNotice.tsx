@@ -7,7 +7,19 @@ import { getCurrentSeason, SEASON_CONFIG } from '../../constants/horarios-page-d
  * Shows which schedule season is currently active
  */
 export const SeasonNotice: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const currentSeason = getCurrentSeason();
   const seasonInfo = SEASON_CONFIG[currentSeason];
   const otherSeason = currentSeason === 'winter' ? 'summer' : 'winter';

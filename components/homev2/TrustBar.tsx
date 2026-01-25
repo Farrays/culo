@@ -12,7 +12,19 @@ import AnimateOnScroll from '../AnimateOnScroll';
  * - Rating de Google
  */
 const TrustBar: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   const stats = [
     {

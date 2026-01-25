@@ -16,7 +16,19 @@ interface LegalSection {
 const LAST_UPDATED = '2025-01-15';
 
 const LegalNoticePage: React.FC = () => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
 

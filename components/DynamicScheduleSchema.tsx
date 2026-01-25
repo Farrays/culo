@@ -67,7 +67,19 @@ const DynamicScheduleSchema: React.FC<DynamicScheduleSchemaProps> = memo(
     streetAddress: streetAddressProp,
     addressRegion: addressRegionProp,
   }) {
-    const { t } = useTranslation(['common']);
+    const { t } = useTranslation([
+      'common',
+      'booking',
+      'schedule',
+      'calendar',
+      'home',
+      'classes',
+      'blog',
+      'faq',
+      'about',
+      'contact',
+      'pages',
+    ]);
 
     // Use translated defaults if props not provided
     const streetAddress = streetAddressProp || t('schema_streetAddress');
@@ -354,7 +366,19 @@ export const VacationSchema: React.FC<{
   courseUrl,
   baseUrl = 'https://www.farrayscenter.com',
 }) {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const vacationDescription = t('schema_vacation_description').replace('{courseName}', courseName);
 
   const schema = {

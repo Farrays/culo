@@ -100,7 +100,19 @@ interface ServicesProps {
 }
 
 const Services: React.FC<ServicesProps> = ({ showAll = false }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   // Filtrar servicios: solo los destacados o todos

@@ -35,7 +35,19 @@ interface WhyUsComparisonSectionProps {
 }
 
 const WhyUsComparisonSection: React.FC<WhyUsComparisonSectionProps> = ({ styleKey, config }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const rowCount = config.rowCount || 8;
   const meaningCount = config.meaningCount || 4;
   const showCTA = config.showCTA !== false;

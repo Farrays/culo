@@ -25,7 +25,19 @@ interface BookingErrorProps {
 }
 
 export const BookingError: React.FC<BookingErrorProps> = ({ errorMessage, onRetry }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <div className="animate-fade-in text-center py-8">

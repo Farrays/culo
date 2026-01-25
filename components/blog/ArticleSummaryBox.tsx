@@ -37,7 +37,19 @@ const ArticleSummaryBox: React.FC<ArticleSummaryBoxProps> = ({
   delay = 0,
   className = '',
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <AnimateOnScroll delay={delay}>

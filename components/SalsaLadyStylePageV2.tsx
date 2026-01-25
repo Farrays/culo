@@ -138,7 +138,19 @@ const PillarIcon: React.FC<{ type: string; className?: string }> = ({ type, clas
 };
 
 const SalsaLadyStylePageV2: React.FC = () => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
   const pageUrl = `${baseUrl}/${locale}/clases/salsa-lady-style-barcelona`;

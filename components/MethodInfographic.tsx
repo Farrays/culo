@@ -31,7 +31,19 @@ const pillars: Pillar[] = [
 ];
 
 const MethodInfographic: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const [activePillar, setActivePillar] = useState<Pillar | null>(null);
 
   const handlePillarClick = (pillar: Pillar) => {

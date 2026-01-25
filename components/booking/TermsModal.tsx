@@ -16,7 +16,19 @@ interface TermsModalProps {
  * Includes browser history management for back button support
  */
 const TermsModal: React.FC<TermsModalProps> = ({ isOpen, onClose, onAccept }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const modalRef = useRef<HTMLDivElement>(null);
   const historyPushedRef = useRef(false);
   const isRegisteredRef = useRef(false); // Track if we've registered this modal

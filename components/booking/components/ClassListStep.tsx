@@ -177,7 +177,19 @@ const DayHeader = memo(
       dateKey: string;
     }
   >(({ dayLabel, classCount, isFirst = false, dateKey }, ref) => {
-    const { t } = useTranslation(['common']);
+    const { t } = useTranslation([
+      'common',
+      'booking',
+      'schedule',
+      'calendar',
+      'home',
+      'classes',
+      'blog',
+      'faq',
+      'about',
+      'contact',
+      'pages',
+    ]);
 
     return (
       <div
@@ -211,7 +223,19 @@ const WeekHeader: React.FC<{
   classCount: number;
   isFirst?: boolean;
 }> = memo(({ weekLabel, classCount, isFirst = false }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <div
@@ -243,7 +267,19 @@ const AcuityModeHeader: React.FC<{
   activeStyle?: string;
   totalClasses: number;
 }> = memo(({ activeStyle, totalClasses }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <div className="mb-4 p-4 rounded-xl bg-gradient-to-r from-primary-accent/10 via-primary-accent/5 to-transparent border border-primary-accent/20">
@@ -287,7 +323,19 @@ interface ClassInfoModalProps {
 }
 
 const ClassInfoModal: React.FC<ClassInfoModalProps> = ({ classData, onClose }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const historyPushedRef = useRef(false);
@@ -529,7 +577,19 @@ export const ClassListStep: React.FC<ClassListStepProps> = memo(
     allWeeksClasses = [],
     allWeeksLoading = false,
   }) => {
-    const { t, i18n } = useTranslation(['common']);
+    const { t, i18n } = useTranslation([
+      'common',
+      'booking',
+      'schedule',
+      'calendar',
+      'home',
+      'classes',
+      'blog',
+      'faq',
+      'about',
+      'contact',
+      'pages',
+    ]);
     const locale = i18n.language;
     const [infoModal, setInfoModal] = useState<ClassData | null>(null);
     const listContainerRef = useRef<HTMLDivElement>(null);

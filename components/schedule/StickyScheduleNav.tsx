@@ -25,7 +25,19 @@ export const StickyScheduleNav: React.FC<StickyScheduleNavProps> = ({
   items,
   showAfterScroll = 400,
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const progress = useScrollProgress();
   const [isVisible, setIsVisible] = useState(false);
 

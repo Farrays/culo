@@ -419,7 +419,19 @@ const INITIAL_FILTERS: Filters = {
 // ============================================================================
 
 const BookingWidget: React.FC = memo(function BookingWidget() {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();

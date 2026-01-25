@@ -62,7 +62,19 @@ export interface SocialProofTickerProps {
 
 export const SocialProofTicker: React.FC<SocialProofTickerProps> = memo(
   ({ limit = 5, className = '', onShow, onHide, onClick, scrollTargetId = 'booking-content' }) => {
-    const { t } = useTranslation(['common']);
+    const { t } = useTranslation([
+      'common',
+      'booking',
+      'schedule',
+      'calendar',
+      'home',
+      'classes',
+      'blog',
+      'faq',
+      'about',
+      'contact',
+      'pages',
+    ]);
     const [bookings, setBookings] = useState<SocialProofBooking[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [hasBookings, setHasBookings] = useState(false);

@@ -7,7 +7,19 @@ import { useTranslation } from 'react-i18next';
  * Diseño limpio sin iconos, solo tipografía.
  */
 const StatsBar: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   const stats = [
     {

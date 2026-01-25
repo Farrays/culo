@@ -27,7 +27,19 @@ const AuthorBox: React.FC<AuthorBoxProps> = ({
   delay = 0,
   className = '',
 }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   // Render credentials (some are i18n keys, some are plain text like CID-UNESCO)

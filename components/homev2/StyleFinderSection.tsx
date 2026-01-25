@@ -67,7 +67,19 @@ const PersonaIcons: Record<string, React.FC<{ className?: string }>> = {
  * 4. "Quiero cuidarme bailando" - Adultos fitness
  */
 const StyleFinderSection: React.FC<StyleFinderSectionProps> = ({ config }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   return (

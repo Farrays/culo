@@ -59,10 +59,20 @@ i18n
 
     // Namespace configuration
     defaultNS: 'common',
-    // Phase 3: LAZY LOADING ENABLED ✅
-    // CORE + EAGER namespaces loaded on init, rest loaded on-demand
-    ns: ['common', 'booking', 'schedule', 'calendar'], // ~100KB initial load
-    // LAZY namespaces (loaded on-demand): home, classes, blog, faq, about, contact, pages
+    // Phase 3: ALL NAMESPACES LOADED (temporary fix while optimizing component-level loading)
+    ns: [
+      'common',
+      'booking',
+      'schedule',
+      'calendar',
+      'home',
+      'classes',
+      'blog',
+      'faq',
+      'about',
+      'contact',
+      'pages',
+    ],
 
     // React integration
     react: {

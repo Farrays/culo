@@ -24,7 +24,19 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
   sticky = false,
   className = '',
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const [activeId, setActiveId] = useState<string>('');
   const [isExpanded, setIsExpanded] = useState(!sticky);
 

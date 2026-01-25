@@ -99,7 +99,19 @@ const SettingsModal: React.FC<SettingsModalProps> = memo(function SettingsModal(
   onSave,
   initialPreferences,
 }) {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -291,7 +303,19 @@ const SettingsModal: React.FC<SettingsModalProps> = memo(function SettingsModal(
 // ============================================================================
 
 const CookieBanner: React.FC = memo(function CookieBanner() {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const {
     preferences,
@@ -431,7 +455,19 @@ export default CookieBanner;
 // Export a button component to reopen cookie settings from Footer
 export const CookieSettingsButton: React.FC<{ className?: string }> = memo(
   function CookieSettingsButton({ className = '' }) {
-    const { t } = useTranslation(['common']);
+    const { t } = useTranslation([
+      'common',
+      'booking',
+      'schedule',
+      'calendar',
+      'home',
+      'classes',
+      'blog',
+      'faq',
+      'about',
+      'contact',
+      'pages',
+    ]);
     const [showSettings, setShowSettings] = useState(false);
     const { preferences, savePreferences } = useCookieConsent();
 

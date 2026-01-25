@@ -16,7 +16,19 @@ import BookingWidgetV2 from '../booking/BookingWidgetV2';
  * - Multi-idioma (es, ca, en, fr)
  */
 const BookingPage: React.FC = () => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   // SEO metadata

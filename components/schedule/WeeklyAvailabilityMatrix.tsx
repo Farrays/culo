@@ -13,7 +13,19 @@ import {
  * Shows a visual grid of when classes are available
  */
 export const WeeklyAvailabilityMatrix: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const scrollToSection = useScrollToSection();
   const availability = getWeeklyAvailability();
 

@@ -27,7 +27,19 @@ interface ScheduleBlockProps {
  * Groups classes by time/category with testimonial and CTA
  */
 export const ScheduleBlock: React.FC<ScheduleBlockProps> = ({ config, showTestimonial = true }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   // Get classes for this block
   const classes = getClassesByBlockConfig(config);

@@ -171,7 +171,19 @@ const styleKeys: LatinDanceStyle[] = [
 const LatinDanceComparisonTable: React.FC<LatinDanceComparisonTableProps> = ({
   highlightedStyle,
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   // Get short names for mobile view
   const getShortName = (style: LatinDanceStyle): string => {

@@ -39,7 +39,19 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
   showLabels = true,
   compact = false,
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   const calculateTimeLeft = useCallback((): TimeLeft => {
     const now = new Date().getTime();

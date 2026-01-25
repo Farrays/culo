@@ -36,7 +36,19 @@ const ARTICLE_CONFIGS: Record<string, BlogArticleConfig> = {
 
 const BlogArticlePage: React.FC = () => {
   const { slug, category } = useParams<{ slug: string; category: string }>();
-  const { i18n } = useTranslation(['common']);
+  const { i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   // Find article config by slug

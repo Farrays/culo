@@ -27,7 +27,19 @@ const ShareButtons: React.FC<ShareButtonsProps> = ({
   platforms = ['whatsapp', 'facebook', 'twitter', 'linkedin', 'email'],
   className = '',
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const shareUrl = url || (typeof window !== 'undefined' ? window.location.href : '');
   const encodedUrl = encodeURIComponent(shareUrl);
   const encodedTitle = encodeURIComponent(title);

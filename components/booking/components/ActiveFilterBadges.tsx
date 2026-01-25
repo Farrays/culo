@@ -61,7 +61,19 @@ export const ActiveFilterBadges: React.FC<ActiveFilterBadgesProps> = ({
   onClearFilter,
   onClearAll,
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   // Build array of active filters with their display labels
   const activeFilters: Array<{ key: keyof FilterState; label: string }> = [];

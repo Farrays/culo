@@ -18,7 +18,19 @@ interface PatternInterruptProps {
  * - holographic: Efecto holográfico (glow rosa)
  */
 const PatternInterrupt: React.FC<PatternInterruptProps> = ({ textKey, variant = 'subtle' }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const text = t(textKey);
 
   // Si no hay traducción, no renderizar

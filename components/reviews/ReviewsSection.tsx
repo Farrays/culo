@@ -28,7 +28,19 @@ interface ReviewsSectionProps {
 
 // Google Badge (no external link)
 const GoogleRatingBadge: React.FC<{ className?: string }> = ({ className = '' }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const googleStats = useGoogleBusinessStats();
 
   return (
@@ -77,7 +89,19 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({
   id = 'reviews',
   selectedAuthors,
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const { reviews } = useReviews({
     category,
     teacher,

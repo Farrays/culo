@@ -268,7 +268,19 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   filterOptions,
   loading = false,
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   // Filters visible by default on mobile, click to hide
   const [isExpanded, setIsExpanded] = useState(true);

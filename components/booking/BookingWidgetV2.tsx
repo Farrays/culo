@@ -159,7 +159,19 @@ const LanguageSelector: React.FC<{
 const FORM_SUBMISSION_TIMEOUT_MS = 30000;
 
 const BookingWidgetV2: React.FC = memo(() => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const navigate = useNavigate();
   const location = useLocation();

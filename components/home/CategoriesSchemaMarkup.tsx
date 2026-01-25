@@ -8,7 +8,19 @@ import { CATEGORIES } from '../../constants/categories';
 // Uses react-helmet-async to inject into <head>
 
 const CategoriesSchemaMarkup: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const siteUrl = 'https://www.farrayscenter.com';
 
   // Schema Strategy (verified in section 0.3):

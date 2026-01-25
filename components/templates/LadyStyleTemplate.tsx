@@ -464,7 +464,19 @@ const HERO_GRADIENT_PRESETS = {
 } as const;
 
 const LadyStyleTemplate: React.FC<LadyStyleTemplateProps> = ({ config }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
   const baseUrl = 'https://www.farrayscenter.com';

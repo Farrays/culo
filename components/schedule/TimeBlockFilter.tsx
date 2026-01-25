@@ -106,7 +106,19 @@ export const TimeBlockFilter: React.FC<TimeBlockFilterProps> = ({
   selectedTime,
   selectedCategory,
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const scrollToSection = useScrollToSection();
 
   const handleTimeClick = (block: (typeof PREMIUM_TIME_BLOCKS)[0]) => {

@@ -133,7 +133,19 @@ EventCard.displayName = 'EventCard';
  * Displays upcoming events on the Home page
  */
 const CalendarWidget: React.FC = memo(() => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   // Get next 4 upcoming events

@@ -70,7 +70,19 @@ const servicesPreviewData: ServicePreview[] = [
  * Usa el estilo visual de Services.tsx (WhyFIDC cards).
  */
 const ServicesPreview: React.FC = () => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   return (

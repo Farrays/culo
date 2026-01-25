@@ -90,7 +90,19 @@ const relatedClasses: RelatedClass[] = [
 // ============================================================================
 
 const WhatIsUrbanSection: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <section aria-labelledby="what-is-title" className="py-12 md:py-16 bg-black">
@@ -139,7 +151,19 @@ const WhatIsUrbanSection: React.FC = () => {
 };
 
 const WhichStyleSection: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   const tableRows = [
     { goal: 'flow', style: 'flow', why: 'flow' },
@@ -252,7 +276,19 @@ const WhichStyleSection: React.FC = () => {
 // ============================================================================
 
 const DanzasUrbanasBarcelonaPage: React.FC = () => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
 

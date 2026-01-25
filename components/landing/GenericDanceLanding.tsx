@@ -68,7 +68,19 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({
   prefix,
   theme,
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   const intervalMs = intervalDays * 24 * 60 * 60 * 1000;
   const baseDateObj = useMemo(() => new Date(baseDate), [baseDate]);
@@ -184,7 +196,19 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({
   styleName,
   exploreUrl,
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   if (!isOpen) return null;
 
@@ -268,7 +292,19 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({
 // =============================================================================
 
 const GenericDanceLanding: React.FC<GenericDanceLandingProps> = ({ config }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const navigate = useNavigate();
   const location = useLocation();

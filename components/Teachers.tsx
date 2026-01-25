@@ -59,7 +59,19 @@ const FEATURED_TEACHERS: FeaturedTeacher[] = [
  * Uses picture element with avif/webp/jpg fallback and srcset for optimal loading
  */
 const TeacherImage: React.FC<{ basePath: string; name: string }> = ({ basePath, name }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <picture>
@@ -99,7 +111,19 @@ const StyleBadge: React.FC<{ style: string }> = ({ style }) => (
 );
 
 const Teachers: React.FC = () => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   return (

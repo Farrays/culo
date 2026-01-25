@@ -108,7 +108,19 @@ const FooterLink: React.FC<{ to?: string; href?: string; textKey: string }> = ({
   href,
   textKey,
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   if (to) {
     return (
       <li>
@@ -153,7 +165,19 @@ const GOOGLE_MAPS_URL =
   'https://www.google.com/maps/place/Farray%E2%80%99s+International+Dance+Center/@41.380421,2.148014,17z';
 
 const Footer: React.FC = () => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const organizationSchema = createOrganizationSchema(t);
 

@@ -5,7 +5,19 @@ import { HERO_VIDEO_CONFIG } from '../constants/hero-video-config';
 import LeadCaptureModal from './shared/LeadCaptureModal';
 
 const Hero: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
   const { videoRef, containerRef, isVideoPlaying, shouldShowVideo } = useHLSVideo({

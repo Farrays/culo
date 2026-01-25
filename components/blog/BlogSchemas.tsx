@@ -30,7 +30,19 @@ interface BlogSchemasProps {
 }
 
 const BlogSchemas: React.FC<BlogSchemasProps> = ({ config, author: authorProp }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
   const author = authorProp || DEFAULT_AUTHOR;

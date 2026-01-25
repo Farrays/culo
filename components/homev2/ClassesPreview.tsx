@@ -11,7 +11,19 @@ import CategoryCard from '../home/CategoryCard';
  * Usa el estilo visual de CategoriesSection.
  */
 const ClassesPreview: React.FC = () => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   // Mostrar solo las primeras 4 categorías (excluir "todas")

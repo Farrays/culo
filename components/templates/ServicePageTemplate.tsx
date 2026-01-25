@@ -89,7 +89,19 @@ const BUSINESS_INFO = {
  * Skip to Content Link (WCAG 2.2)
  */
 const SkipLink: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <a
@@ -115,7 +127,19 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
   ctaPhone,
   ctaWhatsApp,
 }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   return (
@@ -213,7 +237,19 @@ const ServiceHero: React.FC<ServiceHeroProps> = ({
  * Trust Bar (E-E-A-T signals) - Home-style pills
  */
 const TrustBar: React.FC<TrustBarProps> = ({ signals }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   if (!signals || signals.length === 0) return null;
 
@@ -271,7 +307,19 @@ const ProblemSolution: React.FC<ProblemSolutionProps> = ({
   solutionTitleKey,
   solutionDescKey,
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <section className="py-12 md:py-16 bg-black" aria-labelledby="problem-solution-title">
@@ -309,7 +357,19 @@ const ProblemSolution: React.FC<ProblemSolutionProps> = ({
  * Features Grid
  */
 const FeaturesGrid: React.FC<FeaturesGridProps> = ({ titleKey, features, columns }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   const gridCols =
@@ -388,7 +448,19 @@ const FeaturesGrid: React.FC<FeaturesGridProps> = ({ titleKey, features, columns
  * Benefits Section (Why Choose Us)
  */
 const BenefitsSection: React.FC<BenefitsSectionProps> = ({ titleKey, benefits }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <section className="py-12 md:py-16 bg-black" aria-labelledby="benefits-title">
@@ -435,7 +507,19 @@ const BenefitsSection: React.FC<BenefitsSectionProps> = ({ titleKey, benefits })
  * Process Section (How It Works) - Premium with theme colors
  */
 const ProcessSection: React.FC<ProcessSectionProps> = ({ titleKey, steps }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <section className="py-16 md:py-24 bg-black" aria-labelledby="process-title">
@@ -488,7 +572,19 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ titleKey, steps }) => {
  * Ideal For Section (Target Audience) - With premium hover effects
  */
 const IdealForSection: React.FC<IdealForSectionProps> = ({ titleKey, items }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <section className="py-12 md:py-16 bg-primary-dark/5" aria-labelledby="ideal-for-title">
@@ -527,7 +623,19 @@ const IdealForSection: React.FC<IdealForSectionProps> = ({ titleKey, items }) =>
  * Packages Section
  */
 const PackagesSection: React.FC<PackagesSectionProps> = ({ titleKey, packages }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   return (
@@ -605,7 +713,19 @@ const PackagesSection: React.FC<PackagesSectionProps> = ({ titleKey, packages })
  * Stats Section
  */
 const StatsSection: React.FC<StatsSectionProps> = ({ stats }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <section className="py-8 md:py-12 bg-black" aria-label="Statistics">
@@ -638,7 +758,19 @@ const StatsSection: React.FC<StatsSectionProps> = ({ stats }) => {
  * Summary Table (LLM Citability)
  */
 const SummaryTable: React.FC<SummaryTableProps> = ({ titleKey, headers, rows }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <section className="py-12 md:py-16 bg-black" aria-labelledby="summary-table-title">
@@ -706,7 +838,19 @@ const SummaryTable: React.FC<SummaryTableProps> = ({ titleKey, headers, rows }) 
  * Related Services Section
  */
 const RelatedServicesSection: React.FC<RelatedServicesSectionProps> = ({ titleKey, services }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   return (
@@ -767,7 +911,19 @@ const FinalCTA: React.FC<FinalCTAProps> = ({
   email,
   showContactInfo = true,
 }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   return (
@@ -933,7 +1089,19 @@ const ServicePageTemplate: React.FC<ServicePageTemplateProps> = ({
   schemaOptions,
   customSchemas,
 }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 

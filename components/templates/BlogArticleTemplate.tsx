@@ -57,7 +57,19 @@ interface BlogArticleTemplateProps {
 }
 
 const BlogArticleTemplate: React.FC<BlogArticleTemplateProps> = ({ config }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
   const articleUrl = `${baseUrl}/${locale}/blog/${config.category}/${config.slug}`;

@@ -220,7 +220,19 @@ const ALL_IMAGES: GalleryImage[] = [
 // ============================================================================
 
 const FacilitiesFullGallery: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

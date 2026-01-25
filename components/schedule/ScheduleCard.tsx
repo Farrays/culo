@@ -54,7 +54,19 @@ export const ScheduleCard: React.FC<ScheduleCardProps> = ({
   showActions = true,
   colorClass = 'primary-accent',
 }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const badges = getClassBadges(scheduleClass.className);
 

@@ -11,7 +11,19 @@ import { useTranslation } from 'react-i18next';
  * Offline indicator banner
  */
 const OfflineBanner: React.FC = memo(() => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <div
@@ -45,7 +57,19 @@ OfflineBanner.displayName = 'OfflineBanner';
  * Update available notification
  */
 const UpdateBanner: React.FC<{ onUpdate: () => void }> = memo(({ onUpdate }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <div

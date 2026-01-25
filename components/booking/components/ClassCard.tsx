@@ -214,7 +214,19 @@ const TeacherModal: React.FC<{
   teacherId: string;
   onClose: () => void;
 }> = ({ teacherId, onClose }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const teacher = TEACHER_REGISTRY[teacherId];
   const historyPushedRef = useRef(false);
   const isRegisteredRef = useRef(false);
@@ -369,7 +381,19 @@ const TeacherModal: React.FC<{
 // Memoized ClassCard - V1 compact style
 export const ClassCard: React.FC<ClassCardProps> = memo(
   ({ classData, onSelect, onShowInfo, isSelected = false }) => {
-    const { t, i18n } = useTranslation(['common']);
+    const { t, i18n } = useTranslation([
+      'common',
+      'booking',
+      'schedule',
+      'calendar',
+      'home',
+      'classes',
+      'blog',
+      'faq',
+      'about',
+      'contact',
+      'pages',
+    ]);
     const locale = i18n.language;
     const [copied, setCopied] = useState(false);
     const [teacherModalId, setTeacherModalId] = useState<string | null>(null);

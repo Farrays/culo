@@ -130,7 +130,19 @@ const ComparisonIcons: Record<string, React.FC<{ className?: string }>> = {
  * Usa el estilo visual coherente con WhyFIDC.
  */
 const ComparisonSection: React.FC<ComparisonSectionProps> = ({ config }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const [isLeadModalOpen, setIsLeadModalOpen] = useState(false);
 
   const iconKeys = [

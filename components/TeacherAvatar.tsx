@@ -194,7 +194,19 @@ export const TeacherAvatar: React.FC<TeacherAvatarProps> = memo(
     onClick,
     ariaLabel,
   }) => {
-    const { t } = useTranslation(['common']);
+    const { t } = useTranslation([
+      'common',
+      'booking',
+      'schedule',
+      'calendar',
+      'home',
+      'classes',
+      'blog',
+      'faq',
+      'about',
+      'contact',
+      'pages',
+    ]);
     const [imageLoaded, setImageLoaded] = useState(false);
     const [imageError, setImageError] = useState(false);
     const imgRef = useRef<HTMLImageElement>(null);

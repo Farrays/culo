@@ -43,7 +43,19 @@ const ExitIntentModal: React.FC<ExitIntentModalProps> = ({
   promoEndDate = new Date('2025-01-31T23:59:59'),
   discountPercent = 50,
 }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const [isOpen, setIsOpen] = useState(false);
   const [isEnabled, setIsEnabled] = useState(false);

@@ -3,7 +3,19 @@ import { useTranslation } from 'react-i18next';
 import AnimateOnScroll from './AnimateOnScroll';
 
 const HappinessStory: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <section className="relative section-after-hero pb-12 md:pb-16 bg-black text-neutral">

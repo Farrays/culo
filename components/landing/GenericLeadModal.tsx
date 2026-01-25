@@ -50,7 +50,19 @@ const GenericLeadModal: React.FC<GenericLeadModalProps> = memo(function GenericL
   onClose,
   config,
 }) {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const { translationPrefix: prefix, sourceId, estiloValue, discoveryValue } = config;
   const theme = config.theme.classes;

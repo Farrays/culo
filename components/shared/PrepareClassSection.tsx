@@ -41,7 +41,19 @@ const PrepareClassSection: React.FC<PrepareClassSectionProps> = ({
   config,
   className = '',
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const { prefix, whatToBringCount, beforeCount, avoidCount, teacher } = config;
 
   return (

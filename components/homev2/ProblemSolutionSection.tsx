@@ -10,7 +10,19 @@ import AnimateOnScroll from '../AnimateOnScroll';
  * 3. Solución: Presenta el Método Farray
  */
 const ProblemSolutionSection: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   const problems = [
     {

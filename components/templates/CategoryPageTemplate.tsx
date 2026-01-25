@@ -140,7 +140,19 @@ const CategoryHero: React.FC<CategoryHeroProps> = ({
   onCtaClick,
   heroImage,
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   // Default hero image settings
   const heroBreakpoints = heroImage?.breakpoints || [320, 640, 768, 1024, 1440, 1920];
@@ -254,7 +266,19 @@ const StylesGrid: React.FC<StylesGridProps> = ({
   context,
   translationPrefix,
 }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const gridCols =
     columns === 2 ? 'lg:grid-cols-2' : columns === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3';
@@ -352,7 +376,19 @@ const CategoriesGrid: React.FC<CategoriesGridProps> = ({
   categoryImages,
   categoryObjectPositions,
 }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   return (
@@ -435,7 +471,19 @@ interface WhySectionProps {
 }
 
 const WhySection: React.FC<WhySectionProps> = ({ pillars }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <section aria-labelledby="why-title" className="py-12 md:py-16 bg-black">
@@ -480,7 +528,19 @@ const WhySection: React.FC<WhySectionProps> = ({ pillars }) => {
 };
 
 const StatsWidget: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <section className="py-8 md:py-12 bg-black">
@@ -539,7 +599,19 @@ const FinalCTA: React.FC<FinalCTAProps> = ({
   descriptionKey,
   onCtaClick,
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <section className="relative py-12 md:py-16 overflow-hidden">
@@ -591,7 +663,19 @@ interface RelatedClassesSectionProps {
 }
 
 const RelatedClassesSection: React.FC<RelatedClassesSectionProps> = ({ classes }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   return (

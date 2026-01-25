@@ -12,7 +12,19 @@ import MethodSection from './homev2/MethodSection';
  * 2. MethodSection - Método Farray® (3 pilares)
  */
 const HomePageV2: React.FC = () => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
   const config = HOMEPAGE_V2_CONFIG;

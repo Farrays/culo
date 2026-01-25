@@ -447,7 +447,19 @@ const ScheduleWidget: React.FC<ScheduleWidgetProps> = ({
   showFilters = true,
   translationPrefix = 'jpaLanding',
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   // Filter state
   const [selectedDay, setSelectedDay] = useState<FilterDay>('all');

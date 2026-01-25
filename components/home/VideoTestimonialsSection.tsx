@@ -72,7 +72,19 @@ const VideoTestimonialsSection: React.FC<VideoTestimonialsSectionProps> = memo(
     titleKey = 'videoTestimonialsTitle',
     subtitleKey = 'videoTestimonialsSubtitle',
   }) {
-    const { t } = useTranslation(['common']);
+    const { t } = useTranslation([
+      'common',
+      'booking',
+      'schedule',
+      'calendar',
+      'home',
+      'classes',
+      'blog',
+      'faq',
+      'about',
+      'contact',
+      'pages',
+    ]);
     const [selectedVideo, setSelectedVideo] = useState<VideoTestimonial | null>(null);
 
     const handleOpenVideo = (video: VideoTestimonial) => {

@@ -9,7 +9,19 @@ import LeadCaptureModal from '../shared/LeadCaptureModal';
  * que aparece después de hacer scroll pasando el hero.
  */
 const StickyMobileCTA: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const [isVisible, setIsVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 

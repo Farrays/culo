@@ -21,7 +21,19 @@ interface RelatedArticlesProps {
 }
 
 const RelatedArticles: React.FC<RelatedArticlesProps> = ({ articles, className = '' }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   if (!articles || articles.length === 0) return null;

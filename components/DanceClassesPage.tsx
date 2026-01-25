@@ -87,7 +87,19 @@ const categories: CategoryItem[] = HUB_CATEGORIES.map(cat => ({
 // ============================================================================
 
 const WhatToExpectSection: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <section aria-labelledby="what-to-expect-title" className="py-12 md:py-16 bg-black">
@@ -126,7 +138,19 @@ const WhatToExpectSection: React.FC = () => {
 };
 
 const WhichCategorySection: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   const tableRows = [
     { goal: 'couples', category: 'couples', why: 'couples' },
@@ -235,7 +259,19 @@ const WhichCategorySection: React.FC = () => {
 };
 
 const FeaturedStylesSection: React.FC = () => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   return (
@@ -318,7 +354,19 @@ const FeaturedStylesSection: React.FC = () => {
 // ============================================================================
 
 const DanceClassesPage: React.FC = () => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
 

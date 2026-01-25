@@ -178,7 +178,19 @@ const valuePillars: ValuePillar[] = [
 ];
 
 const WhyFIDC: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <section id="why-fidc" className="relative py-12 md:py-16 bg-black overflow-hidden">

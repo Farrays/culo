@@ -19,7 +19,19 @@ interface HeroV2Props {
  * - Urgencia sutil
  */
 const HeroV2: React.FC<HeroV2Props> = ({ config }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const [isModalOpen, setIsModalOpen] = useState(false);
 

@@ -14,7 +14,19 @@ import LeadCaptureModal from '../shared/LeadCaptureModal';
  * - CTA prominente
  */
 const IrresistibleOfferSection: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [spotsLeft, setSpotsLeft] = useState(7);
 

@@ -23,7 +23,19 @@ interface Testimonial {
  * - Link a más opiniones
  */
 const VideoTestimonialsSection: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const [playingVideo, setPlayingVideo] = useState<string | null>(null);
 
   const testimonials: Testimonial[] = [

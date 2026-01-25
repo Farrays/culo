@@ -10,7 +10,19 @@ import type { CategoryCardProps } from '../../types/categories';
 // Primary color: #B01E3C (rojo carmesí del logo)
 
 const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   // Get translations with fallback

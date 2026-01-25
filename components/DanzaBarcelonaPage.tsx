@@ -91,7 +91,19 @@ const relatedClasses: RelatedClass[] = [
 // ============================================================================
 
 const WhatIsDanzaSection: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   return (
     <section aria-labelledby="what-is-title" className="py-12 md:py-16 bg-black">
@@ -136,7 +148,19 @@ const WhatIsDanzaSection: React.FC = () => {
 };
 
 const WhichStyleSection: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   const tableRows = [
     { goal: 'technique', style: 'technique', why: 'technique' },
@@ -248,7 +272,19 @@ const WhichStyleSection: React.FC = () => {
 // ============================================================================
 
 const DanzaBarcelonaPage: React.FC = () => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
 

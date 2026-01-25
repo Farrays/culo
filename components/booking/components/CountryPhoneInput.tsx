@@ -65,7 +65,19 @@ export const CountryPhoneInput: React.FC<CountryPhoneInputProps> = ({
   id = 'phone',
   name = 'phone',
 }) => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState('');

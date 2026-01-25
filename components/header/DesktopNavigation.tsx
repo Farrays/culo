@@ -95,7 +95,19 @@ const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
   toggleDropdown,
   closeAllDropdowns,
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const location = useLocation();
 
   // Refs for dropdown containers (keyboard navigation)

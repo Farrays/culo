@@ -128,7 +128,19 @@ const styleTranslationPrefixes: Record<ArtisticDanceStyle, string> = {
 const ArtisticDanceComparisonTable: React.FC<ArtisticDanceComparisonTableProps> = ({
   highlightedStyle,
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const prefix = styleTranslationPrefixes[highlightedStyle];
 
   // Get short names for mobile view

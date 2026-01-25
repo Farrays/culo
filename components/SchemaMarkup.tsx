@@ -42,7 +42,19 @@ import { useTranslation } from 'react-i18next';
  * This should be included in App.tsx or the main layout component.
  */
 export const OrganizationSchema: React.FC = () => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   const schema = {
@@ -150,7 +162,19 @@ export const OrganizationSchema: React.FC = () => {
  * This should be included in App.tsx or the main layout component.
  */
 export const WebSiteSchema: React.FC = () => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
 
   const schema = {
@@ -201,7 +225,19 @@ interface NavigationItem {
  * This should be included in App.tsx or Header component.
  */
 export const SiteNavigationElementSchema: React.FC = () => {
-  const { t, i18n } = useTranslation(['common']);
+  const { t, i18n } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const locale = i18n.language;
   const baseUrl = 'https://www.farrayscenter.com';
 
@@ -339,7 +375,19 @@ interface ReviewSchemaProps {
 }
 
 export const LocalBusinessSchema: React.FC<LocalBusinessSchemaProps> = props => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   const schema = {
     '@context': 'https://schema.org',
@@ -503,7 +551,19 @@ export const CourseSchemaEnterprise: React.FC<CourseSchemaEnterpriseProps> = ({
   streetAddress: streetAddressProp,
   addressRegion: addressRegionProp,
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   // Use translated defaults if props not provided
   const streetAddress = streetAddressProp || t('schema_streetAddress');
@@ -699,7 +759,19 @@ interface DefinedTermSchemaProps {
 }
 
 export const DefinedTermSchema: React.FC<DefinedTermSchemaProps> = props => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   const schema = {
     '@context': 'https://schema.org',
@@ -925,7 +997,19 @@ export const BreadcrumbListSchema: React.FC<BreadcrumbListSchemaProps> = ({ item
  * @see https://schema.org/AggregateRating
  */
 export const DanceSchoolWithRatingSchema: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   const schema = {
     '@context': 'https://schema.org',
@@ -1159,7 +1243,19 @@ export const LeadCaptureActionSchema: React.FC<LeadCaptureActionSchemaProps> = (
   resultDescription,
   askActionName,
 }) => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
 
   const schema = {
     '@context': 'https://schema.org',

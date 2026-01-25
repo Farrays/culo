@@ -3,7 +3,19 @@ import { useTranslation } from 'react-i18next';
 import { debounce } from '../utils/debounce';
 
 const BackToTop: React.FC = () => {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation([
+    'common',
+    'booking',
+    'schedule',
+    'calendar',
+    'home',
+    'classes',
+    'blog',
+    'faq',
+    'about',
+    'contact',
+    'pages',
+  ]);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
