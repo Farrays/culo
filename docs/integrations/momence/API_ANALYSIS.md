@@ -8,17 +8,17 @@
 
 ## Resumen Ejecutivo
 
-| Aspecto | Estado | Notas |
-|---------|--------|-------|
-| **Crear bookings via API** | ✅ CONFIRMADO | `POST /api/v2/host/sessions/{sessionId}/bookings/free` |
-| **Crear miembros via API** | ✅ CONFIRMADO | `POST /api/v2/host/members` |
-| **Listar clases/sessions** | ✅ CONFIRMADO | `GET /api/v2/host/sessions` con filtros |
-| **Buscar miembros** | ✅ CONFIRMADO | `POST /api/v2/host/members/list` |
-| **WhatsApp en Espana** | ✅ POSIBLE | Via Meta Cloud API (tu sistema) |
-| **SMS en Espana** | ❌ NO DISPONIBLE | Solo US, UK, Canada, Australia |
-| **Sequences automaticas** | ⚠️ PROBABLE | Necesita verificacion con API real |
-| **Zapier acciones** | ❌ NO DISPONIBLE | Solo triggers, no acciones |
-| **Webhooks** | ⚠️ PARCIAL | Documentacion no accesible |
+| Aspecto                    | Estado           | Notas                                                  |
+| -------------------------- | ---------------- | ------------------------------------------------------ |
+| **Crear bookings via API** | ✅ CONFIRMADO    | `POST /api/v2/host/sessions/{sessionId}/bookings/free` |
+| **Crear miembros via API** | ✅ CONFIRMADO    | `POST /api/v2/host/members`                            |
+| **Listar clases/sessions** | ✅ CONFIRMADO    | `GET /api/v2/host/sessions` con filtros                |
+| **Buscar miembros**        | ✅ CONFIRMADO    | `POST /api/v2/host/members/list`                       |
+| **WhatsApp en Espana**     | ✅ POSIBLE       | Via Meta Cloud API (tu sistema)                        |
+| **SMS en Espana**          | ❌ NO DISPONIBLE | Solo US, UK, Canada, Australia                         |
+| **Sequences automaticas**  | ⚠️ PROBABLE      | Necesita verificacion con API real                     |
+| **Zapier acciones**        | ❌ NO DISPONIBLE | Solo triggers, no acciones                             |
+| **Webhooks**               | ⚠️ PARCIAL       | Documentacion no accesible                             |
 
 ---
 
@@ -49,6 +49,7 @@ Content-Type: application/json
 ```
 
 ### Conclusion:
+
 **SI podemos crear reservas desde tu formulario web directamente en Momence.**
 
 ---
@@ -169,14 +170,14 @@ grant_type=password
 
 ### SMS via Momence:
 
-| Pais | Disponible |
-|------|------------|
-| USA | ✅ Si |
-| UK | ✅ Si |
-| Canada | ✅ Si |
-| Australia | ✅ Si |
-| **Espana** | ❌ **NO** |
-| Resto UE | ❌ NO |
+| Pais       | Disponible |
+| ---------- | ---------- |
+| USA        | ✅ Si      |
+| UK         | ✅ Si      |
+| Canada     | ✅ Si      |
+| Australia  | ✅ Si      |
+| **Espana** | ❌ **NO**  |
+| Resto UE   | ❌ NO      |
 
 **Conclusion:** SMS de Momence NO funciona en Espana.
 
@@ -188,6 +189,7 @@ Documentacion no especifica Espana claramente.
 ### Solucion recomendada: Meta Cloud API directo
 
 **Ventajas:**
+
 - 100% funcional en Espana
 - 1,000 conversaciones gratis/mes
 - Control total sobre mensajes
@@ -210,6 +212,7 @@ Documentacion no especifica Espana claramente.
 **Respuesta probable: SI**
 
 Razonamiento:
+
 - Las Sequences se basan en eventos del sistema
 - Un booking creado via API es un booking real en Momence
 - Deberia disparar los mismos triggers
@@ -276,13 +279,13 @@ Util para sincronizar si alguien reserva directamente en Momence.
 
 ### No disponible via API:
 
-| Feature | Estado |
-|---------|--------|
-| Tags de miembros | ❌ No gestionable via API |
-| Custom fields | ❌ No disponible |
-| Pagos/facturacion | ⚠️ Solo lectura |
-| Modificar sessions | ⚠️ Limitado |
-| Webhooks nativos | ⚠️ Documentacion no accesible |
+| Feature            | Estado                        |
+| ------------------ | ----------------------------- |
+| Tags de miembros   | ❌ No gestionable via API     |
+| Custom fields      | ❌ No disponible              |
+| Pagos/facturacion  | ⚠️ Solo lectura               |
+| Modificar sessions | ⚠️ Limitado                   |
+| Webhooks nativos   | ⚠️ Documentacion no accesible |
 
 ### Workarounds:
 
@@ -334,17 +337,17 @@ Util para sincronizar si alguien reserva directamente en Momence.
 
 ## 11. Verificacion: Propuesta Original vs Realidad
 
-| Lo que propuse | Verificado | Notas |
-|----------------|------------|-------|
-| Sincronizar clases desde Momence | ✅ SI | `GET /api/v2/host/sessions` |
-| Crear booking en Momence | ✅ SI | `POST .../bookings/free` |
-| Crear miembro si no existe | ✅ SI | `POST /api/v2/host/members` |
-| WhatsApp confirmacion | ✅ SI | Via Meta Cloud API |
-| WhatsApp recordatorios | ✅ SI | Via Meta Cloud API |
-| Emails via Momence Sequences | ⚠️ PROBABLE | Verificar con cuenta real |
-| Vercel KV para cache | ✅ SI | Sin dependencia de Momence |
-| Widget reutilizable | ✅ SI | React component |
-| Coste €0/mes | ✅ SI | Todo en planes gratuitos |
+| Lo que propuse                   | Verificado  | Notas                       |
+| -------------------------------- | ----------- | --------------------------- |
+| Sincronizar clases desde Momence | ✅ SI       | `GET /api/v2/host/sessions` |
+| Crear booking en Momence         | ✅ SI       | `POST .../bookings/free`    |
+| Crear miembro si no existe       | ✅ SI       | `POST /api/v2/host/members` |
+| WhatsApp confirmacion            | ✅ SI       | Via Meta Cloud API          |
+| WhatsApp recordatorios           | ✅ SI       | Via Meta Cloud API          |
+| Emails via Momence Sequences     | ⚠️ PROBABLE | Verificar con cuenta real   |
+| Vercel KV para cache             | ✅ SI       | Sin dependencia de Momence  |
+| Widget reutilizable              | ✅ SI       | React component             |
+| Coste €0/mes                     | ✅ SI       | Todo en planes gratuitos    |
 
 ---
 
@@ -416,6 +419,7 @@ Util para sincronizar si alguien reserva directamente en Momence.
 La arquitectura propuesta es **100% factible** con las APIs disponibles de Momence.
 
 **Lo que SI funciona:**
+
 - Crear reservas desde tu web → Momence
 - Sincronizar clases Momence → Tu formulario
 - WhatsApp automatico (via Meta, no Momence)
@@ -423,9 +427,11 @@ La arquitectura propuesta es **100% factible** con las APIs disponibles de Momen
 - Widget reutilizable
 
 **Lo que necesita verificacion:**
+
 - Sequences se activan con API bookings (muy probable que si)
 
 **Lo que NO funciona (pero tiene workaround):**
+
 - SMS en Espana → Usar WhatsApp
 - Zapier acciones → Usar API directa
 - Webhooks nativos → Usar Zapier triggers

@@ -39,14 +39,14 @@
 fbq('track', 'Lead', {
   value: 90,
   currency: 'EUR',
-  content_name: 'Clase de bienvenida'
+  content_name: 'Clase de bienvenida',
 });
 
 // 2. Purchase con valor real (para conteo)
 fbq('track', 'Purchase', {
   value: 0,
   currency: 'EUR',
-  content_name: 'Clase de bienvenida'
+  content_name: 'Clase de bienvenida',
 });
 ```
 
@@ -108,14 +108,14 @@ GOOGLE TAG MANAGER:      GTM-TT2V8Z4
 
 ### Eventos a Trackear
 
-| Evento | Trigger | Pixel (Client) | CAPI (Server) | GA4 |
-|--------|---------|----------------|---------------|-----|
-| PageView | Carga pagina | ✅ Auto | ❌ | ✅ Auto |
-| ViewContent | Ve clases | ✅ | ✅ | ✅ |
-| InitiateCheckout | Selecciona clase | ✅ | ✅ | ✅ |
-| AddPaymentInfo | Completa form | ✅ | ✅ | ✅ |
-| **Purchase** | Reserva confirmada | ✅ | ✅ | ✅ |
-| Lead | Reserva confirmada | ✅ | ✅ | ✅ |
+| Evento           | Trigger            | Pixel (Client) | CAPI (Server) | GA4     |
+| ---------------- | ------------------ | -------------- | ------------- | ------- |
+| PageView         | Carga pagina       | ✅ Auto        | ❌            | ✅ Auto |
+| ViewContent      | Ve clases          | ✅             | ✅            | ✅      |
+| InitiateCheckout | Selecciona clase   | ✅             | ✅            | ✅      |
+| AddPaymentInfo   | Completa form      | ✅             | ✅            | ✅      |
+| **Purchase**     | Reserva confirmada | ✅             | ✅            | ✅      |
+| Lead             | Reserva confirmada | ✅             | ✅            | ✅      |
 
 ### Flujo Completo de Tracking
 
@@ -254,47 +254,51 @@ useEffect(() => {
         item_id: c.id,
         item_name: c.name,
         item_category: c.style,
-        price: 0
-      }))
-    }
+        price: 0,
+      })),
+    },
   });
 }, [clases]);
 
 // Paso 2: Seleccionar clase
-const handleSelectClass = (clase) => {
+const handleSelectClass = clase => {
   window.dataLayer.push({
     event: 'select_class',
     ecommerce: {
-      items: [{
-        item_id: clase.id,
-        item_name: clase.name,
-        item_category: clase.style,
-        price: 0
-      }]
-    }
+      items: [
+        {
+          item_id: clase.id,
+          item_name: clase.name,
+          item_category: clase.style,
+          price: 0,
+        },
+      ],
+    },
   });
 };
 
 // Paso 3: Enviar formulario
-const handleSubmit = async (formData) => {
+const handleSubmit = async formData => {
   // Generar event_id unico para deduplicacion
   const eventId = `reserva_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
   // Trackear en cliente ANTES de enviar
   window.dataLayer.push({
     event: 'purchase',
-    event_id: eventId,  // IMPORTANTE: mismo ID que CAPI
+    event_id: eventId, // IMPORTANTE: mismo ID que CAPI
     ecommerce: {
       transaction_id: eventId,
       value: 0,
       currency: 'EUR',
-      items: [{
-        item_id: selectedClass.id,
-        item_name: selectedClass.name,
-        item_category: selectedClass.style,
-        price: 0
-      }]
-    }
+      items: [
+        {
+          item_id: selectedClass.id,
+          item_name: selectedClass.name,
+          item_category: selectedClass.style,
+          price: 0,
+        },
+      ],
+    },
   });
 
   // Enviar al backend con datos de tracking
@@ -308,8 +312,8 @@ const handleSubmit = async (formData) => {
       fbc: getCookie('_fbc'),
       fbp: getCookie('_fbp'),
       userAgent: navigator.userAgent,
-      sourceUrl: window.location.href
-    })
+      sourceUrl: window.location.href,
+    }),
   });
 };
 
@@ -347,31 +351,35 @@ export async function POST(request: Request) {
   const eventTime = Math.floor(Date.now() / 1000);
 
   const capiPayload = {
-    data: [{
-      event_name: 'Purchase',
-      event_time: eventTime,
-      event_id: eventId,  // Mismo ID que cliente para deduplicar
-      event_source_url: sourceUrl,
-      action_source: 'website',
-      user_data: {
-        em: [hashData(email)],
-        ph: [hashData(phone.replace(/\D/g, ''))],  // Solo numeros
-        fn: [hashData(name.split(' ')[0])],        // Primer nombre
-        ln: name.split(' ').length > 1 ? [hashData(name.split(' ').slice(1).join(' '))] : undefined,
-        client_ip_address: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip'),
-        client_user_agent: userAgent,
-        fbc: fbc,
-        fbp: fbp
+    data: [
+      {
+        event_name: 'Purchase',
+        event_time: eventTime,
+        event_id: eventId, // Mismo ID que cliente para deduplicar
+        event_source_url: sourceUrl,
+        action_source: 'website',
+        user_data: {
+          em: [hashData(email)],
+          ph: [hashData(phone.replace(/\D/g, ''))], // Solo numeros
+          fn: [hashData(name.split(' ')[0])], // Primer nombre
+          ln:
+            name.split(' ').length > 1 ? [hashData(name.split(' ').slice(1).join(' '))] : undefined,
+          client_ip_address:
+            request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip'),
+          client_user_agent: userAgent,
+          fbc: fbc,
+          fbp: fbp,
+        },
+        custom_data: {
+          value: 0,
+          currency: 'EUR',
+          content_type: 'product',
+          content_ids: [sessionId],
+          content_name: className, // Nombre de la clase
+          content_category: 'clase_bienvenida',
+        },
       },
-      custom_data: {
-        value: 0,
-        currency: 'EUR',
-        content_type: 'product',
-        content_ids: [sessionId],
-        content_name: className,  // Nombre de la clase
-        content_category: 'clase_bienvenida'
-      }
-    }]
+    ],
   };
 
   // Enviar a Facebook
@@ -381,7 +389,7 @@ export async function POST(request: Request) {
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(capiPayload)
+        body: JSON.stringify(capiPayload),
       }
     );
 
@@ -523,7 +531,7 @@ const utmData = {
   medium: body.utm_medium,
   campaign: body.utm_campaign,
   content: body.utm_content,
-  term: body.utm_term
+  term: body.utm_term,
 };
 
 // Guardar en KV junto con la reserva
@@ -534,8 +542,8 @@ await kv.set(`reserva:${bookingId}`, {
     fbc: body.fbc,
     fbp: body.fbp,
     referrer: request.headers.get('referer'),
-    timestamp: Date.now()
-  }
+    timestamp: Date.now(),
+  },
 });
 ```
 
@@ -566,7 +574,7 @@ export async function sendConfirmationEmail(data: ReservationEmailData) {
   const { to, name, className, date, time, teacher, location, bookingId } = data;
 
   await resend.emails.send({
-    from: 'Farray\'s Dance Center <reservas@farrayscenter.com>',
+    from: "Farray's Dance Center <reservas@farrayscenter.com>",
     to: [to],
     subject: `✅ Reserva confirmada: ${className}`,
     html: `
@@ -676,7 +684,7 @@ export async function sendConfirmationEmail(data: ReservationEmailData) {
 
       </body>
       </html>
-    `
+    `,
   });
 }
 ```
@@ -756,13 +764,13 @@ KV_REST_API_TOKEN="..."
 
 ### Que Consigues con Este Sistema
 
-| Aspecto | Sin CAPI | Con CAPI |
-|---------|----------|----------|
-| Conversiones detectadas | ~60% | ~95% |
-| iOS 14+ tracking | Bloqueado | Funciona |
-| Event Match Quality | 3-4 | 7-9 |
-| Optimizacion Facebook | Limitada | Optima |
-| Atribucion precisa | Parcial | Completa |
+| Aspecto                 | Sin CAPI  | Con CAPI |
+| ----------------------- | --------- | -------- |
+| Conversiones detectadas | ~60%      | ~95%     |
+| iOS 14+ tracking        | Bloqueado | Funciona |
+| Event Match Quality     | 3-4       | 7-9      |
+| Optimizacion Facebook   | Limitada  | Optima   |
+| Atribucion precisa      | Parcial   | Completa |
 
 ### Flujo Completo de una Reserva
 

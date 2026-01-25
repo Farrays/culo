@@ -50,15 +50,15 @@ Vercel Cron (cada 1h):
 
 ### **Backend (API Routes - PRODUCCIÓN):**
 
-| Archivo                          | Descripción                                     | Estado         |
-| -------------------------------- | ----------------------------------------------- | -------------- |
-| [api/clases.ts](api/clases.ts)   | Listar clases disponibles (búsqueda binaria)    | ✅ PRODUCCIÓN  |
-| [api/reservar.ts](api/reservar.ts) | Crear reserva + Meta CAPI + Customer Leads    | ✅ PRODUCCIÓN  |
+| Archivo                            | Descripción                                  | Estado        |
+| ---------------------------------- | -------------------------------------------- | ------------- |
+| [api/clases.ts](api/clases.ts)     | Listar clases disponibles (búsqueda binaria) | ✅ PRODUCCIÓN |
+| [api/reservar.ts](api/reservar.ts) | Crear reserva + Meta CAPI + Customer Leads   | ✅ PRODUCCIÓN |
 
 ### **Backend (API Routes - Ejemplos/Legacy):**
 
-| Archivo                                                                  | Descripción                               | Estado    |
-| ------------------------------------------------------------------------ | ----------------------------------------- | --------- |
+| Archivo                                                                  | Descripción                               | Estado     |
+| ------------------------------------------------------------------------ | ----------------------------------------- | ---------- |
 | [api-whatsapp-example.js](api-whatsapp-example.js)                       | Enviar WhatsApp via Meta Cloud API        | 📝 Ejemplo |
 | [api-momence-integration-example.js](api-momence-integration-example.js) | Crear booking en Momence + WhatsApp       | 📝 Ejemplo |
 | [api-cron-sync-clases-momence.js](api-cron-sync-clases-momence.js)       | Cron: sincronizar clases cada 6h          | 📝 Ejemplo |
@@ -81,16 +81,16 @@ Vercel Cron (cada 1h):
 
 ### **Documentacion:**
 
-| Archivo                                                                          | Descripcion                            |
-| -------------------------------------------------------------------------------- | -------------------------------------- |
+| Archivo                                                                          | Descripcion                             |
+| -------------------------------------------------------------------------------- | --------------------------------------- |
 | [ANALISIS-MOMENCE-API-ENTERPRISE.md](ANALISIS-MOMENCE-API-ENTERPRISE.md)         | **NUEVO** Analisis profundo API Momence |
-| [PROPUESTA-SISTEMA-RESERVAS-WHATSAPP.md](PROPUESTA-SISTEMA-RESERVAS-WHATSAPP.md) | Propuesta inicial completa             |
-| [INTEGRACION-MOMENCE-WHATSAPP.md](INTEGRACION-MOMENCE-WHATSAPP.md)               | Guia de integracion Momence + WhatsApp |
-| [FLUJO-WHATSAPP-COMPLETO.md](FLUJO-WHATSAPP-COMPLETO.md)                         | Timeline detallada de WhatsApp         |
-| [RESUMEN-INTEGRACION-FINAL.md](RESUMEN-INTEGRACION-FINAL.md)                     | Resumen ejecutivo                      |
-| [EJEMPLOS-USO-WIDGET.md](EJEMPLOS-USO-WIDGET.md)                                 | Como usar el widget en landings        |
-| [GUIA-VISUAL-INTEGRACION-WIDGET.md](GUIA-VISUAL-INTEGRACION-WIDGET.md)           | Guia visual ASCII art                  |
-| [GUIA-TRABAJAR-SIN-COMMIT.md](GUIA-TRABAJAR-SIN-COMMIT.md)                       | Como crear paginas de test             |
+| [PROPUESTA-SISTEMA-RESERVAS-WHATSAPP.md](PROPUESTA-SISTEMA-RESERVAS-WHATSAPP.md) | Propuesta inicial completa              |
+| [INTEGRACION-MOMENCE-WHATSAPP.md](INTEGRACION-MOMENCE-WHATSAPP.md)               | Guia de integracion Momence + WhatsApp  |
+| [FLUJO-WHATSAPP-COMPLETO.md](FLUJO-WHATSAPP-COMPLETO.md)                         | Timeline detallada de WhatsApp          |
+| [RESUMEN-INTEGRACION-FINAL.md](RESUMEN-INTEGRACION-FINAL.md)                     | Resumen ejecutivo                       |
+| [EJEMPLOS-USO-WIDGET.md](EJEMPLOS-USO-WIDGET.md)                                 | Como usar el widget en landings         |
+| [GUIA-VISUAL-INTEGRACION-WIDGET.md](GUIA-VISUAL-INTEGRACION-WIDGET.md)           | Guia visual ASCII art                   |
+| [GUIA-TRABAJAR-SIN-COMMIT.md](GUIA-TRABAJAR-SIN-COMMIT.md)                       | Como crear paginas de test              |
 
 ### **Configuración:**
 
@@ -119,6 +119,7 @@ GET /api/clases?days=14&style=heels
 ```
 
 **Respuesta:**
+
 ```json
 {
   "success": true,
@@ -132,6 +133,7 @@ GET /api/clases?days=14&style=heels
 ```
 
 **Características:**
+
 - ✅ Búsqueda binaria para encontrar sesiones actuales (7 iteraciones vs 71 páginas)
 - ✅ Caché Redis de 15 minutos
 - ✅ Detección automática de estilo y nivel
@@ -166,6 +168,7 @@ Content-Type: application/json
 ```
 
 **Respuesta:**
+
 ```json
 {
   "success": true,
@@ -181,6 +184,7 @@ Content-Type: application/json
 ```
 
 **Flujo interno:**
+
 1. ✅ Validación de datos (email, teléfono España)
 2. ✅ Deduplicación Redis (90 días TTL)
 3. ✅ Crear booking en Momence (si hay sessionId)

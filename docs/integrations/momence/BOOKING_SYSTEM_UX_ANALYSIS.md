@@ -10,13 +10,13 @@
 
 ### Conexion Momence API
 
-| Componente | Estado | Notas |
-|------------|--------|-------|
-| Autenticacion OAuth2 | ✅ FUNCIONANDO | Token obtenido correctamente |
-| Listar sesiones | ✅ FUNCIONANDO | Busqueda binaria implementada |
-| Crear miembros | ✅ VERIFICADO | `POST /api/v2/host/members` |
-| Crear bookings | ✅ VERIFICADO | `POST /api/v2/host/sessions/{id}/bookings/free` |
-| Buscar miembros | ✅ VERIFICADO | `POST /api/v2/host/members/list` |
+| Componente           | Estado         | Notas                                           |
+| -------------------- | -------------- | ----------------------------------------------- |
+| Autenticacion OAuth2 | ✅ FUNCIONANDO | Token obtenido correctamente                    |
+| Listar sesiones      | ✅ FUNCIONANDO | Busqueda binaria implementada                   |
+| Crear miembros       | ✅ VERIFICADO  | `POST /api/v2/host/members`                     |
+| Crear bookings       | ✅ VERIFICADO  | `POST /api/v2/host/sessions/{id}/bookings/free` |
+| Buscar miembros      | ✅ VERIFICADO  | `POST /api/v2/host/members/list`                |
 
 ### Datos Disponibles de Momence
 
@@ -32,6 +32,7 @@ Ubicacion:                    Farray's International Dance Center
 ### Problema Resuelto: Paginacion
 
 La API de Momence devuelve 7,100 sesiones historicas. Solucion implementada:
+
 - **Busqueda binaria** para encontrar la pagina actual
 - 6 iteraciones para encontrar entre 71 paginas
 - Eficiente y automatico (no hardcodeado)
@@ -50,15 +51,15 @@ Cada paso extra reduce la conversion un 20-30%
 
 ### Principios "Abuela-Friendly"
 
-| Principio | Implementacion |
-|-----------|----------------|
-| **Texto grande** | Minimo 18px en movil, 16px nunca |
-| **Botones enormes** | Min 48px altura, mejor 56px |
-| **Colores claros** | Verde = bueno, Rojo = error |
-| **Sin jerga** | "Reservar" no "Submit", "Tu telefono" no "Phone number" |
-| **Feedback inmediato** | Cada click debe producir algo visual |
-| **Sin sorpresas** | Precio 0€ visible, sin costes ocultos |
-| **Mobile-first** | 80% vendra de Instagram/WhatsApp |
+| Principio              | Implementacion                                          |
+| ---------------------- | ------------------------------------------------------- |
+| **Texto grande**       | Minimo 18px en movil, 16px nunca                        |
+| **Botones enormes**    | Min 48px altura, mejor 56px                             |
+| **Colores claros**     | Verde = bueno, Rojo = error                             |
+| **Sin jerga**          | "Reservar" no "Submit", "Tu telefono" no "Phone number" |
+| **Feedback inmediato** | Cada click debe producir algo visual                    |
+| **Sin sorpresas**      | Precio 0€ visible, sin costes ocultos                   |
+| **Mobile-first**       | 80% vendra de Instagram/WhatsApp                        |
 
 ### Anti-patrones a Evitar
 
@@ -327,12 +328,12 @@ Los tags de Momence se mapean asi:
 ```javascript
 const TAG_MAPPING = {
   // Tags de Momence → Filtro URL
-  "Estilo: Salsa Cubana": { style: "salsa-cubana" },
-  "Estilo: Bachata": { style: "bachata" },
-  "Estilo: Dancehall": { style: "dancehall" },
-  "Estilo: Heels": { style: "heels" },
-  "Categoría: Bailes Sociales": { category: "bailes-sociales" },
-  "Categoría: Danzas Urbanas": { category: "danzas-urbanas" },
+  'Estilo: Salsa Cubana': { style: 'salsa-cubana' },
+  'Estilo: Bachata': { style: 'bachata' },
+  'Estilo: Dancehall': { style: 'dancehall' },
+  'Estilo: Heels': { style: 'heels' },
+  'Categoría: Bailes Sociales': { category: 'bailes-sociales' },
+  'Categoría: Danzas Urbanas': { category: 'danzas-urbanas' },
   // ... etc
 };
 
@@ -346,9 +347,7 @@ const TAG_MAPPING = {
 
 ```html
 <!-- Email de promocion Dancehall -->
-<a href="https://farrayscenter.com/reservas?style=dancehall">
-  Reserva tu clase de Dancehall
-</a>
+<a href="https://farrayscenter.com/reservas?style=dancehall"> Reserva tu clase de Dancehall </a>
 
 <!-- Landing de Bachata -->
 <WidgetReserva preset="bachata" />
@@ -376,13 +375,13 @@ if (savedData) {
 
 ### B. Reduccion de Friccion
 
-| Friccion | Solucion |
-|----------|----------|
-| Escribir telefono | Auto-formato +34, teclado numerico |
-| Elegir fecha | Mostrar solo proximos 7 dias |
-| Escribir nombre | Un solo campo "Tu nombre" (no nombre/apellido) |
-| Leer terminos | Checkbox simple, link a terminos |
-| Confirmar email | NO requerir confirmacion |
+| Friccion          | Solucion                                       |
+| ----------------- | ---------------------------------------------- |
+| Escribir telefono | Auto-formato +34, teclado numerico             |
+| Elegir fecha      | Mostrar solo proximos 7 dias                   |
+| Escribir nombre   | Un solo campo "Tu nombre" (no nombre/apellido) |
+| Leer terminos     | Checkbox simple, link a terminos               |
+| Confirmar email   | NO requerir confirmacion                       |
 
 ### C. Urgencia y Escasez (etica)
 
@@ -538,39 +537,39 @@ gtag('event', 'reservation_failed', { ... });  // Error
 
 ### Fase 1: API Routes (Backend)
 
-| Tarea | Prioridad | Complejidad |
-|-------|-----------|-------------|
-| `/api/clases` - Listar clases con busqueda binaria | ALTA | Media |
-| `/api/reservar` - Crear booking + WhatsApp | ALTA | Alta |
-| Lib Momence (auth, cache token) | ALTA | Media |
-| Lib WhatsApp (templates) | ALTA | Baja |
+| Tarea                                              | Prioridad | Complejidad |
+| -------------------------------------------------- | --------- | ----------- |
+| `/api/clases` - Listar clases con busqueda binaria | ALTA      | Media       |
+| `/api/reservar` - Crear booking + WhatsApp         | ALTA      | Alta        |
+| Lib Momence (auth, cache token)                    | ALTA      | Media       |
+| Lib WhatsApp (templates)                           | ALTA      | Baja        |
 
 ### Fase 2: Frontend Reservas
 
-| Tarea | Prioridad | Complejidad |
-|-------|-----------|-------------|
-| Pagina `/reservas` | ALTA | Media |
-| Componente ClasesGrid | ALTA | Media |
-| Componente FormularioReserva | ALTA | Media |
-| Componente Confirmacion | ALTA | Baja |
-| Filtros por URL | MEDIA | Baja |
-| Animaciones/transiciones | BAJA | Baja |
+| Tarea                        | Prioridad | Complejidad |
+| ---------------------------- | --------- | ----------- |
+| Pagina `/reservas`           | ALTA      | Media       |
+| Componente ClasesGrid        | ALTA      | Media       |
+| Componente FormularioReserva | ALTA      | Media       |
+| Componente Confirmacion      | ALTA      | Baja        |
+| Filtros por URL              | MEDIA     | Baja        |
+| Animaciones/transiciones     | BAJA      | Baja        |
 
 ### Fase 3: Crons y Recordatorios
 
-| Tarea | Prioridad | Complejidad |
-|-------|-----------|-------------|
-| Cron sync clases (6h) | MEDIA | Media |
-| Cron recordatorios (1h) | MEDIA | Alta |
-| Vercel KV setup | ALTA | Baja |
+| Tarea                   | Prioridad | Complejidad |
+| ----------------------- | --------- | ----------- |
+| Cron sync clases (6h)   | MEDIA     | Media       |
+| Cron recordatorios (1h) | MEDIA     | Alta        |
+| Vercel KV setup         | ALTA      | Baja        |
 
 ### Fase 4: Optimizacion
 
-| Tarea | Prioridad | Complejidad |
-|-------|-----------|-------------|
-| Pre-llenado localStorage | BAJA | Baja |
-| Analytics/tracking | MEDIA | Baja |
-| A/B testing | BAJA | Media |
+| Tarea                    | Prioridad | Complejidad |
+| ------------------------ | --------- | ----------- |
+| Pre-llenado localStorage | BAJA      | Baja        |
+| Analytics/tracking       | MEDIA     | Baja        |
+| A/B testing              | BAJA      | Media       |
 
 ---
 
@@ -637,14 +636,14 @@ FRICCIONES: 0
 
 ### Diferenciadores vs Competencia
 
-| Aspecto | Competencia | Farray's |
-|---------|-------------|----------|
-| Pasos para reservar | 5-7 | 3 |
-| Requiere cuenta | Si | No |
-| Confirmacion | Email (lento) | WhatsApp (instant) |
-| Recordatorios | No tienen | 24h + 2h antes |
-| Pre-filtrado por URL | No | Si |
-| Mobile-first | Parcial | 100% |
+| Aspecto              | Competencia   | Farray's           |
+| -------------------- | ------------- | ------------------ |
+| Pasos para reservar  | 5-7           | 3                  |
+| Requiere cuenta      | Si            | No                 |
+| Confirmacion         | Email (lento) | WhatsApp (instant) |
+| Recordatorios        | No tienen     | 24h + 2h antes     |
+| Pre-filtrado por URL | No            | Si                 |
+| Mobile-first         | Parcial       | 100%               |
 
 ---
 
