@@ -11,46 +11,87 @@ import OptimizedImage from './OptimizedImage';
 import ReviewsSection from './reviews/ReviewsSection';
 
 // External links for E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)
-const EXTERNAL_LINKS: { pattern: RegExp; url: string; title: string }[] = [
+// dofollow: true = Educational institutions (pass PageRank authority)
+// dofollow: false = Wikipedia/IMDb (informational, no SEO value transfer)
+const EXTERNAL_LINKS: { pattern: RegExp; url: string; title: string; dofollow?: boolean }[] = [
   {
     pattern: /Street Dance 2|STREET DANCE 2|StreetDance 2/gi,
     url: 'https://www.imdb.com/es-es/title/tt1718903/',
     title: 'Street Dance 2 on IMDb',
+    dofollow: false,
   },
   {
     pattern: /CID-UNESCO|CID UNESCO/gi,
     url: 'https://cid-world.org/',
     title: 'International Dance Council - UNESCO',
+    dofollow: true,
   },
   {
     pattern: /Got Talent España|Got Talent Spain/gi,
     url: 'https://es.wikipedia.org/wiki/Got_Talent_Espa%C3%B1a',
     title: 'Got Talent España - Wikipedia',
+    dofollow: false,
   },
   {
     pattern: /The Dancer/gi,
     url: 'https://es.wikipedia.org/wiki/The_Dancer_(programa_de_televisi%C3%B3n)',
     title: 'The Dancer - Wikipedia',
+    dofollow: false,
   },
   {
     pattern: /ENA Cuba|Escuela Nacional de Arte|Escuela Nacional de las Artes|ENA de Cuba/gi,
     url: 'https://www.ena.cult.cu/',
     title: 'Escuela Nacional de Arte de Cuba (ENA)',
+    dofollow: true,
   },
   {
     pattern: /ISA Cuba|Instituto Superior de Arte|ISA de Cuba/gi,
     url: 'https://www.isa.cult.cu/',
     title: 'Instituto Superior de Arte de Cuba (ISA)',
+    dofollow: true,
   },
   {
     pattern: /Compañía Carlos Acosta|Carlos Acosta Company|Acosta Danza/gi,
     url: 'https://www.carlosacostadanza.com/',
     title: 'Carlos Acosta Dance Company',
+    dofollow: true,
   },
   {
     pattern: /Royal Ballet of London|Royal Ballet London|Royal Ballet/gi,
     url: 'https://www.roh.org.uk/about/the-royal-ballet',
     title: 'The Royal Ballet - Royal Opera House',
+    dofollow: true,
+  },
+  {
+    pattern:
+      /Escuela Nacional de Ballet de Cuba|Ballet Nacional de Cuba|Cuban National Ballet School/gi,
+    url: 'https://www.balletcuba.cult.cu/',
+    title: 'Ballet Nacional de Cuba - Official Site',
+    dofollow: true,
+  },
+  {
+    pattern: /Ballet Folklórico de Camagüey|Ballet Folklorico de Camagüey/gi,
+    url: 'http://www.pprincipe.cult.cu/ballet-folklorico-de-camaguey/',
+    title: 'Ballet Folklórico de Camagüey - Official Site',
+    dofollow: true,
+  },
+  {
+    pattern: /Danza Contemporánea de Cuba|Danza Contemporanea de Cuba/gi,
+    url: 'https://cubaescena.cult.cu/',
+    title: 'Danza Contemporánea de Cuba - Cubaescena',
+    dofollow: true,
+  },
+  {
+    pattern: /The Cuban School of Arts|Cuban School of Arts London/gi,
+    url: 'https://www.cubanschool.co.uk/',
+    title: 'The Cuban School of Arts - London',
+    dofollow: true,
+  },
+  {
+    pattern: /El Rey León|Le Roi Lion/gi,
+    url: 'https://www.stage-entertainment.fr/musicals-shows/le-roi-lion-le-musical-site-officiel',
+    title: 'Le Roi Lion - Théâtre Mogador Paris',
+    dofollow: true,
   },
 ];
 
