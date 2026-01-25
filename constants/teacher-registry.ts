@@ -302,11 +302,11 @@ export const TEACHER_REGISTRY: Record<string, TeacherRegistryEntry> = {
   // ─────────────────────────────────────────────────
   // AFROBEATS SPECIALIST
   // ─────────────────────────────────────────────────
-  redbhlue: {
+  redblueh: {
     id: 'redblueh',
-    name: 'Redbhlue',
-    canonicalSpecialtyKey: 'teacher.redbhlue.specialty',
-    canonicalBioKey: 'teacher.redbhlue.bio',
+    name: 'Redblueh',
+    canonicalSpecialtyKey: 'teacher.redblueh.specialty',
+    canonicalBioKey: 'teacher.redblueh.bio',
     teachesStyles: ['afrobeats', 'afro-dance'],
     meta: {
       origin: 'Tanzania',
@@ -374,14 +374,14 @@ export function getTeacherForClass(
     };
   }
 
-  const teacherCamelId = toCamelCase(teacherId);
-
   const result: TeacherInfo = {
     name: registryEntry.name,
-    // Contextual specialty (specific to this class page)
-    specialtyKey: `${styleKey}.teacher.${teacherCamelId}.specialty`,
+    // Use canonical specialty (no prefix) - same for all pages
+    // Previous pattern was: `${styleKey}.teacher.${teacherCamelId}.specialty`
+    // Changed to canonical to avoid creating hundreds of duplicate keys
+    specialtyKey: registryEntry.canonicalSpecialtyKey,
     // Canonical bio (same for all pages, source of truth)
-    bioKey: `teacher.${teacherCamelId}.bio`,
+    bioKey: registryEntry.canonicalBioKey,
     // Note: bioPrefixKey is optional and only added when translations exist
     // Pattern: `${styleKey}.teacher.${teacherCamelId}.bioPrefix`
     tags,
