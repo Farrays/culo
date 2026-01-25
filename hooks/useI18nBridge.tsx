@@ -22,77 +22,15 @@ interface I18nContextType {
 }
 
 /**
- * Namespace mapping for automatic namespace detection
- * Maps key prefixes to namespaces for backward compatibility
- */
-const NAMESPACE_MAP: Record<string, string> = {
-  // Common (always loaded)
-  nav: 'common',
-  footer: 'common',
-  seo: 'common',
-  social: 'common',
-  cta: 'common',
-  error: 'common',
-  loading: 'common',
-  accessibility: 'common',
-
-  // Booking (eager loaded)
-  booking: 'booking',
-
-  // Schedule (eager loaded)
-  schedule: 'schedule',
-  teacher: 'schedule',
-
-  // Calendar (eager loaded)
-  calendar: 'calendar',
-
-  // Home (lazy)
-  home: 'home',
-  hero: 'home',
-  stats: 'home',
-  videotestimonials: 'home',
-
-  // Classes (lazy)
-  classes: 'classes',
-
-  // Blog (lazy)
-  blog: 'blog',
-
-  // FAQ (lazy)
-  faq: 'faq',
-
-  // About (lazy)
-  about: 'about',
-  method: 'about',
-  team: 'about',
-  facilities: 'about',
-
-  // Contact (lazy)
-  contact: 'contact',
-
-  // Pages (lazy - fallback for everything else)
-};
-
-/**
- * Detect namespace from translation key
- * @param key Translation key (e.g., 'nav.home' or 'bookingWidget.title')
- */
-const detectNamespace = (key: string): string => {
-  const prefix = key.split('.')[0].toLowerCase();
-  return NAMESPACE_MAP[prefix] || 'pages'; // Default to pages namespace
-};
-
-/**
  * Bridge hook that provides legacy useI18n API using i18next
  */
 export const useI18n = (): I18nContextType => {
   // Load all namespaces to ensure backward compatibility
-  // TODO: Optimize by loading only needed namespaces per component
-  const {
-    t: i18nextT,
-    i18n,
-    ready,
-  } = useTranslation([
+  // Using default namespace to avoid TypeScript type instantiation depth error
+  const { t: i18nextT, i18n, ready } = useTranslation();
+
+  // Ensure all namespaces are loaded
+  const namespaces = [
     'common',
     'booking',
     'schedule',
@@ -104,7 +42,12 @@ export const useI18n = (): I18nContextType => {
     'about',
     'contact',
     'pages',
-  ]);
+  ];
+  namespaces.forEach(ns => {
+    if (!i18n.hasResourceBundle(i18n.language, ns)) {
+      i18n.loadNamespaces(ns);
+    }
+  });
 
   const locale = i18n.language as Locale;
 
@@ -121,45 +64,35 @@ export const useI18n = (): I18nContextType => {
   const t = useCallback(
     (key: string, params?: Record<string, string | number>): string => {
       try {
-        // Detect namespace from key
-        const namespace = detectNamespace(key);
+        // Let i18next search all loaded namespaces automatically
+        let translation = i18nextT(key, { defaultValue: '__MISSING__' });
 
-        // Try translation with detected namespace
-        const nsKey = `${namespace}:${key}`;
-        let translation = i18nextT(nsKey, { defaultValue: '__MISSING__' });
+        // Fallback: contextual teacher specialty → canonical teacher specialty
+        // Pattern: [style].teacher.[teacherId].specialty → teacher.[teacherId].specialty
+        if (
+          translation === '__MISSING__' &&
+          key.includes('.teacher.') &&
+          key.endsWith('.specialty')
+        ) {
+          const parts = key.split('.');
+          if (parts.length >= 4) {
+            const teacherId = parts[2]; // e.g., 'isabelLopez'
+            const canonicalKey = `teacher.${teacherId}.specialty`;
+            translation = i18nextT(canonicalKey, { defaultValue: '__MISSING__' });
+          }
+        }
 
-        // If not found in detected namespace, try all namespaces
+        // If still missing, return key
         if (translation === '__MISSING__') {
-          // Try key without namespace (i18next will search all loaded namespaces)
-          translation = i18nextT(key, { defaultValue: '__MISSING__' });
-
-          // Fallback: contextual teacher specialty → canonical teacher specialty
-          // Pattern: [style].teacher.[teacherId].specialty → teacher.[teacherId].specialty
-          if (
-            translation === '__MISSING__' &&
-            key.includes('.teacher.') &&
-            key.endsWith('.specialty')
-          ) {
-            const parts = key.split('.');
-            if (parts.length >= 4) {
-              const teacherId = parts[2]; // e.g., 'isabelLopez'
-              const canonicalKey = `teacher.${teacherId}.specialty`;
-              translation = i18nextT(canonicalKey, { defaultValue: '__MISSING__' });
-            }
+          if (import.meta.env.DEV) {
+            console.warn(`Missing translation key: ${key} for locale: ${locale}`);
           }
-
-          // If still missing, return key
-          if (translation === '__MISSING__') {
-            if (import.meta.env.DEV) {
-              console.warn(`Missing translation key: ${key} for locale: ${locale}`);
-            }
-            return key;
-          }
+          return key;
         }
 
         // Interpolate params (i18next handles this, but keep for compatibility)
         if (params && translation) {
-          return translation.replace(/\{(\w+)\}/g, (_, paramName) => {
+          return translation.replace(/\{(\w+)\}/g, (_match: string, paramName: string) => {
             const value = params[paramName];
             return value !== undefined ? String(value) : `{${paramName}}`;
           });

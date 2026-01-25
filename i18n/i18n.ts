@@ -59,7 +59,21 @@ i18n
 
     // Namespace configuration
     defaultNS: 'common',
-    ns: ['common', 'booking', 'schedule', 'calendar'], // Eager load (dynamic keys)
+    // Load all namespaces for backward compatibility with bridge hook
+    // TODO Phase 3: Re-enable lazy loading after migrating components to useTranslation
+    ns: [
+      'common',
+      'booking',
+      'schedule',
+      'calendar',
+      'home',
+      'classes',
+      'blog',
+      'faq',
+      'about',
+      'contact',
+      'pages',
+    ],
 
     // React integration
     react: {

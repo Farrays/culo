@@ -1,6 +1,14 @@
 import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
 import { renderHook, waitFor } from '@testing-library/react';
-import { I18nProvider, useI18n } from '../useI18n';
+import { useI18n } from '../useI18n';
+import { I18nextProvider } from 'react-i18next';
+import i18n from '../../i18n/i18n';
+import type { ReactNode } from 'react';
+
+// Wrapper component for tests
+const I18nTestWrapper = ({ children }: { children: ReactNode }) => (
+  <I18nextProvider i18n={i18n}>{children}</I18nextProvider>
+);
 
 describe('useI18n', () => {
   beforeEach(() => {
@@ -16,7 +24,7 @@ describe('useI18n', () => {
 
   it('provides locale and t function', async () => {
     const { result } = renderHook(() => useI18n(), {
-      wrapper: I18nProvider,
+      wrapper: I18nTestWrapper,
     });
 
     await waitFor(() => {
@@ -30,7 +38,7 @@ describe('useI18n', () => {
 
   it('translates keys correctly', async () => {
     const { result } = renderHook(() => useI18n(), {
-      wrapper: I18nProvider,
+      wrapper: I18nTestWrapper,
     });
 
     await waitFor(() => {
@@ -44,7 +52,7 @@ describe('useI18n', () => {
 
   it('returns key when translation is missing', async () => {
     const { result } = renderHook(() => useI18n(), {
-      wrapper: I18nProvider,
+      wrapper: I18nTestWrapper,
     });
 
     await waitFor(() => {
@@ -57,7 +65,7 @@ describe('useI18n', () => {
 
   it('provides a supported locale', async () => {
     const { result } = renderHook(() => useI18n(), {
-      wrapper: I18nProvider,
+      wrapper: I18nTestWrapper,
     });
 
     await waitFor(() => {
@@ -70,7 +78,7 @@ describe('useI18n', () => {
 
   it('setLocale function is available', async () => {
     const { result } = renderHook(() => useI18n(), {
-      wrapper: I18nProvider,
+      wrapper: I18nTestWrapper,
     });
 
     await waitFor(() => {
@@ -82,7 +90,7 @@ describe('useI18n', () => {
 
   it('isLoading becomes false after translations load', async () => {
     const { result } = renderHook(() => useI18n(), {
-      wrapper: I18nProvider,
+      wrapper: I18nTestWrapper,
     });
 
     // Eventually loading should be false
@@ -93,7 +101,7 @@ describe('useI18n', () => {
 
   it('t function works for multiple keys', async () => {
     const { result } = renderHook(() => useI18n(), {
-      wrapper: I18nProvider,
+      wrapper: I18nTestWrapper,
     });
 
     await waitFor(() => {
@@ -110,7 +118,7 @@ describe('useI18n', () => {
 
   it('locale is a valid string', async () => {
     const { result } = renderHook(() => useI18n(), {
-      wrapper: I18nProvider,
+      wrapper: I18nTestWrapper,
     });
 
     await waitFor(() => {
@@ -123,7 +131,7 @@ describe('useI18n', () => {
 
   it('t returns string type', async () => {
     const { result } = renderHook(() => useI18n(), {
-      wrapper: I18nProvider,
+      wrapper: I18nTestWrapper,
     });
 
     await waitFor(() => {
