@@ -50,7 +50,6 @@ export const TEACHER_IMAGES: Record<string, TeacherImageConfig> = {
     styles: [
       'afro-jazz',
       'salsa-lady-style',
-      'bachata-lady-style',
       'afro-contemporaneo',
       'salsa-cubana',
       'timba',

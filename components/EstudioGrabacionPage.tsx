@@ -704,12 +704,11 @@ const EstudioGrabacionPage: React.FC = () => {
               title="Lo que dicen de nuestras instalaciones"
               layout="grid"
               selectedAuthors={[
-                'garcia lam',
-                'Annina Moser',
+                'Karina Indytska',
                 'Yosefin Cabeza Carrillo',
                 'Micaela Llull (MicaPower)',
                 'Michelle Lu',
-                'Alejandra Amorín',
+                'garcia lam',
               ]}
             />
           </div>

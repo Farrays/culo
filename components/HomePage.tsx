@@ -275,6 +275,13 @@ const HomePage: React.FC = () => {
           showGoogleBadge={true}
           layout="grid"
           showCategory={true}
+          selectedAuthors={[
+            'Karina Indytska',
+            'Yosefin Cabeza Carrillo',
+            'Micaela Llull (MicaPower)',
+            'Michelle Lu',
+            'garcia lam',
+          ]}
         />
         <FAQSection title={t('faqTitle')} faqs={homeFaqs} pageUrl={`${baseUrl}/${locale}`} />
         <FinalCTA />
