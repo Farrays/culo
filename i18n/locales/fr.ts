@@ -205,7 +205,7 @@ export const fr = {
   whyPillar7Content:
     'Nous sommes situés au cœur de Barcelone, à seulement 5 minutes à pied de la Plaza España et de la gare de Sants.',
   // Services
-  servicesTitle: 'Services Supplémentaires',
+  servicesTitle: "Bien Plus Qu'une École de Danse",
   servicesIntro:
     "Au Farray's International Dance Center, nous offrons bien plus que des cours de danse. Découvrez tous les services que nous proposons pour vous aider à créer, célébrer et grandir en dansant.",
   servicesViewAll: 'Voir tous les services',
@@ -248,7 +248,7 @@ export const fr = {
   // Teachers
   teachersTitle: 'Rencontrez Nos Professeurs',
   teachersSubtitle:
-    "Professionnels cubains formés dans les meilleures écoles d'art de Cuba, avec des décennies d'expérience internationale",
+    "Une partie de notre équipe est composée de professionnels cubains formés dans les meilleures écoles d'art de Cuba, avec des années d'expérience internationale",
   teachersCTA: 'Voir Tous les Professeurs',
   teacher1Specialty: 'Fondatrice et Maître | Méthode Farray®',
   teacher1Bio:
@@ -2620,7 +2620,7 @@ export const fr = {
     'Réalisez des productions professionnelles pour les marques, documentaires, émissions TV ou projets personnels avec un équipement technique de premier ordre.',
   estudioGrabacion_service3_title: 'Séances Photo',
   estudioGrabacion_service3_desc:
-    'Capturez des images spectaculaires pour des portfolios, campagnes publicitaires, lookbooks mode ou séances artistiques avec éclairage naturel et artificiel.',
+    'Capturez des images spectaculaires pour des portfolios, campagnes publicitaires, lookbooks mode ou séances artistiques avec un éclairage professionnel contrôlable.',
   estudioGrabacion_service4_title: 'Castings et Auditions',
   estudioGrabacion_service4_desc:
     'Organisez des castings professionnels avec enregistrement haute qualité, espaces confortables et environnement propice pour que les talents brillent.',
@@ -2639,16 +2639,16 @@ export const fr = {
   estudioGrabacion_benefits_subtitle: 'Des avantages qui font la différence dans votre production',
   estudioGrabacion_benefit1_title: 'Espaces Polyvalents',
   estudioGrabacion_benefit1_desc:
-    "4 salles différentes de 40m² à 120m² avec des styles uniques. Des espaces ouverts avec lumière naturelle aux espaces urbains au caractère industriel. Vous décidez de l'ambiance.",
+    "4 salles différentes de 40m² à 120m² avec des styles uniques. Des espaces ouverts aux espaces urbains au caractère industriel. Vous décidez de l'ambiance.",
   estudioGrabacion_benefit2_title: 'Équipe Professionnelle',
   estudioGrabacion_benefit2_desc:
     "Notre équipe de production et nos techniciens peuvent vous soutenir à chaque étape de votre projet. Vous n'êtes pas seul, vous avez des professionnels qui comprennent votre vision.",
   estudioGrabacion_benefit3_title: 'Horaires Flexibles',
   estudioGrabacion_benefit3_desc:
     "Louez à l'heure, demi-journée ou journée complète. Horaires adaptés à votre calendrier et aux besoins de votre production.",
-  estudioGrabacion_benefit4_title: 'Éclairage de Studio',
+  estudioGrabacion_benefit4_title: 'Éclairage Professionnel',
   estudioGrabacion_benefit4_desc:
-    "Éclairage naturel et artificiel contrôlable. Grandes fenêtres + système d'éclairage professionnel pour tout type d'ambiance que vous devez créer.",
+    "Système d'éclairage artificiel entièrement contrôlable. Éclairage LED réglable + spots directionnels pour créer tout type d'ambiance dont vous avez besoin.",
   estudioGrabacion_benefit5_title: 'Équipement Inclus',
   estudioGrabacion_benefit5_desc:
     'Son de haute qualité, miroirs mur à mur, sols professionnels, climatisation, wifi haut débit et plus encore. Tout est prêt pour commencer à enregistrer.',

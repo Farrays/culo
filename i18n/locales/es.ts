@@ -212,7 +212,7 @@ export const es = {
   whyPillar7Content:
     'Estamos ubicados en el corazón de Barcelona, a tan solo 5 minutos caminando de Plaza España y Estación de Sants.',
   // Services
-  servicesTitle: 'Servicios Adicionales',
+  servicesTitle: 'Mucho Más Que Una Escuela de Baile',
   servicesIntro:
     "En Farray's International Dance Center ofrecemos mucho más que clases de baile. Descubre todos los servicios que ponemos a tu disposición para ayudarte a crear, celebrar y crecer bailando.",
   servicesViewAll: 'Ver todos los servicios',
@@ -255,7 +255,7 @@ export const es = {
   // Teachers
   teachersTitle: 'Conoce a Nuestros Profesores',
   teachersSubtitle:
-    'Profesionales cubanos formados en las mejores escuelas de arte de Cuba, con décadas de experiencia internacional',
+    'Parte de nuestro equipo está constituido por profesionales cubanos formados en las mejores escuelas de arte de Cuba, con años de experiencia internacional',
   teachersCTA: 'Ver Todo el Claustro',
   teacher1Specialty: 'Fundadora y Maestra | Método Farray®',
   teacher1Bio:
@@ -3747,7 +3747,7 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
     'Realiza producciones profesionales para marcas, documentales, programas de TV o proyectos personales con equipamiento técnico de primera.',
   estudioGrabacion_service3_title: 'Sesiones Fotográficas',
   estudioGrabacion_service3_desc:
-    'Captura imágenes espectaculares para portafolios, campañas publicitarias, lookbooks de moda o sesiones artísticas con iluminación natural y artificial.',
+    'Captura imágenes espectaculares para portafolios, campañas publicitarias, lookbooks de moda o sesiones artísticas con iluminación profesional controlable.',
   estudioGrabacion_service4_title: 'Casting y Audiciones',
   estudioGrabacion_service4_desc:
     'Organiza castings profesionales con grabación en alta calidad, espacios cómodos y ambiente propicio para que los talentos brillen.',
@@ -3771,16 +3771,16 @@ En Farray's International Dance Center, el Dancehall se enseña con técnica, re
 
   estudioGrabacion_benefit1_title: 'Espacios Versátiles',
   estudioGrabacion_benefit1_desc:
-    '4 salas diferentes de 40m² a 120m² con estilos únicos. Desde salas diáfanas con luz natural hasta espacios urbanos con carácter industrial. Tú decides el ambiente.',
+    '4 salas diferentes de 40m² a 120m² con estilos únicos. Desde salas diáfanas hasta espacios urbanos con carácter industrial. Tú decides el ambiente.',
   estudioGrabacion_benefit2_title: 'Equipo Profesional',
   estudioGrabacion_benefit2_desc:
     'Nuestro equipo de producción y técnicos puede apoyarte en cada etapa de tu proyecto. No estás solo, cuentas con profesionales que entienden tu visión.',
   estudioGrabacion_benefit3_title: 'Horarios Flexibles',
   estudioGrabacion_benefit3_desc:
     'Alquila por horas, medios días o jornadas completas. Horarios adaptados a tu calendario y a las necesidades de tu producción.',
-  estudioGrabacion_benefit4_title: 'Iluminación de Estudio',
+  estudioGrabacion_benefit4_title: 'Iluminación Profesional',
   estudioGrabacion_benefit4_desc:
-    'Iluminación natural y artificial controlable. Ventanales amplios + sistema de luces profesional para cualquier tipo de ambiente que necesites crear.',
+    'Sistema de iluminación artificial completamente controlable. Iluminación LED regulable + focos direccionales para crear cualquier tipo de ambiente que necesites.',
   estudioGrabacion_benefit5_title: 'Equipamiento Incluido',
   estudioGrabacion_benefit5_desc:
     'Sonido de alta calidad, espejos de pared a pared, suelos profesionales, aire acondicionado, wifi de alta velocidad y más. Todo listo para que empieces a grabar.',

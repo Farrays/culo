@@ -446,6 +446,7 @@ const DanceClassesPage: React.FC = () => {
           "Clases de baile Barcelona - Bailarinas profesionales ejecutando coreografía elegante con atuendos dorados e iluminación escénica dramática verde en Farray's Center",
         objectPosition: 'center 35%',
         opacity: 100,
+        overlayOpacity: 85,
       }}
       // Data - using categories instead of styles
       categories={categories}

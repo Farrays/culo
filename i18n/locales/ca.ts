@@ -204,7 +204,7 @@ export const ca = {
   whyPillar7Content:
     'Estem ubicats al cor de Barcelona, a només 5 minuts caminant de Plaça Espanya i Estació de Sants.',
   // Services
-  servicesTitle: 'Serveis Addicionals',
+  servicesTitle: 'Molt Més Que Una Escola de Ball',
   servicesIntro:
     "A Farray's International Dance Center oferim molt més que classes de ball. Descobreix tots els serveis que posem a la teva disposició per ajudar-te a crear, celebrar i créixer ballant.",
   servicesViewAll: 'Veure tots els serveis',
@@ -247,7 +247,7 @@ export const ca = {
   // Teachers
   teachersTitle: 'Coneix els Nostres Professors',
   teachersSubtitle:
-    "Professionals cubans formats a les millors escoles d'art de Cuba, amb dècades d'experiència internacional",
+    "Part del nostre equip està format per professionals cubans formats a les millors escoles d'art de Cuba, amb anys d'experiència internacional",
   teachersCTA: 'Veure Tot el Claustre',
   teacher1Specialty: 'Fundadora i Mestra | Mètode Farray®',
   teacher1Bio:
@@ -2721,7 +2721,7 @@ export const ca = {
     'Realitza produccions professionals per a marques, documentals, programes de TV o projectes personals amb equipament tècnic de primera.',
   estudioGrabacion_service3_title: 'Sessions Fotogràfiques',
   estudioGrabacion_service3_desc:
-    'Captura imatges espectaculars per a portafolis, campanyes publicitàries, lookbooks de moda o sessions artístiques amb il·luminació natural i artificial.',
+    'Captura imatges espectaculars per a portafolis, campanyes publicitàries, lookbooks de moda o sessions artístiques amb il·luminació professional controlable.',
   estudioGrabacion_service4_title: 'Càsting i Audicions',
   estudioGrabacion_service4_desc:
     'Organitza càstings professionals amb gravació en alta qualitat, espais còmodes i ambient propici perquè els talents brillin.',
@@ -2740,16 +2740,16 @@ export const ca = {
   estudioGrabacion_benefits_subtitle: 'Avantatges que marquen la diferència en la teva producció',
   estudioGrabacion_benefit1_title: 'Espais Versàtils',
   estudioGrabacion_benefit1_desc:
-    "4 sales diferents de 40m² a 120m² amb estils únics. Des de sales diàfanes amb llum natural fins a espais urbans amb caràcter industrial. Tu decideixes l'ambient.",
+    "4 sales diferents de 40m² a 120m² amb estils únics. Des de sales diàfanes fins a espais urbans amb caràcter industrial. Tu decideixes l'ambient.",
   estudioGrabacion_benefit2_title: 'Equip Professional',
   estudioGrabacion_benefit2_desc:
     'El nostre equip de producció i tècnics pot donar-te suport en cada etapa del teu projecte. No estàs sol, comptes amb professionals que entenen la teva visió.',
   estudioGrabacion_benefit3_title: 'Horaris Flexibles',
   estudioGrabacion_benefit3_desc:
     'Lloga per hores, mitjos dies o jornades completes. Horaris adaptats al teu calendari i a les necessitats de la teva producció.',
-  estudioGrabacion_benefit4_title: "Il·luminació d'Estudi",
+  estudioGrabacion_benefit4_title: 'Il·luminació Professional',
   estudioGrabacion_benefit4_desc:
-    "Il·luminació natural i artificial controlable. Finestrals amplis + sistema de llums professional per a qualsevol tipus d'ambient que necessitis crear.",
+    "Sistema d'il·luminació artificial completament controlable. Il·luminació LED regulable + focus direccionals per crear qualsevol tipus d'ambient que necessitis.",
   estudioGrabacion_benefit5_title: 'Equipament Inclòs',
   estudioGrabacion_benefit5_desc:
     "So d'alta qualitat, miralls de paret a paret, sòls professionals, aire condicionat, wifi d'alta velocitat i més. Tot llest perquè comencis a gravar.",

@@ -70,6 +70,7 @@ export interface HeroImageConfig {
   formats?: ('avif' | 'webp' | 'jpg')[]; // Default: ['avif', 'webp', 'jpg']
   objectPosition?: string; // CSS object-position (e.g., "center 30%")
   opacity?: number; // Background opacity (0-100, default: 40)
+  overlayOpacity?: number; // Gradient overlay opacity (0-100, default: 100)
 }
 
 export interface CategoryPageTemplateProps {
@@ -145,6 +146,7 @@ const CategoryHero: React.FC<CategoryHeroProps> = ({
   const heroBreakpoints = heroImage?.breakpoints || [320, 640, 768, 1024, 1440, 1920];
   const heroFormats = heroImage?.formats || ['avif', 'webp', 'jpg'];
   const heroOpacity = heroImage?.opacity ?? 40;
+  const overlayOpacity = heroImage?.overlayOpacity ?? 100;
 
   return (
     <section
@@ -179,6 +181,7 @@ const CategoryHero: React.FC<CategoryHeroProps> = ({
         {/* Gradient Overlay */}
         <div
           className={`absolute inset-0 bg-gradient-to-br ${gradient} via-black/40 to-black/60`}
+          style={{ opacity: overlayOpacity / 100 }}
         />
       </div>
       <div className="relative z-20 container mx-auto px-6">

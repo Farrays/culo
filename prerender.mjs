@@ -1872,7 +1872,7 @@ const manualOverrides = {
         <p>Equipo de 18+ profesores profesionales graduados de ENA Cuba, ISA Cuba, Compañía Carlos Acosta (Royal Ballet London), campeones mundiales de Bachata y bailarines de El Rey León París.</p>
       </section>
       <section>
-        <p><strong>Rating: 5.0 estrellas</strong> - Más de 505 reseñas en Google. Primera clase de prueba GRATIS.</p>
+        <p><strong>Rating: 5.0 estrellas</strong> - Más de 505 reseñas en Google. Reserva tu clase de bienvenida HOY.</p>
         <p><strong>Dirección:</strong> Carrer d'Entença, 100, Local 1, 08015 Barcelona | <strong>Tel:</strong> +34 622 247 085</p>
       </section>
     </main>`,
@@ -1905,7 +1905,7 @@ const manualOverrides = {
         <p>Equip de 18+ professors professionals graduats d'ENA Cuba, ISA Cuba, Companyia Carlos Acosta (Royal Ballet London), campions mundials de Bachata i ballarins d'El Rei Lleó París.</p>
       </section>
       <section>
-        <p><strong>Rating: 5.0 estrelles</strong> - Més de 505 ressenyes a Google. Primera classe de prova GRATIS.</p>
+        <p><strong>Rating: 5.0 estrelles</strong> - Més de 505 ressenyes a Google. Reserva la teva classe de benvinguda AVUI.</p>
         <p><strong>Adreça:</strong> Carrer d'Entença, 100, Local 1, 08015 Barcelona | <strong>Tel:</strong> +34 622 247 085</p>
       </section>
     </main>`,
@@ -1938,7 +1938,7 @@ const manualOverrides = {
         <p>Team of 18+ professional teachers graduated from ENA Cuba, ISA Cuba, Carlos Acosta Company (Royal Ballet London), World Bachata Champions, and dancers from The Lion King Paris.</p>
       </section>
       <section>
-        <p><strong>Rating: 5.0 stars</strong> - Over 505 Google reviews. First trial class FREE.</p>
+        <p><strong>Rating: 5.0 stars</strong> - Over 505 Google reviews. Book your welcome class TODAY.</p>
         <p><strong>Address:</strong> Carrer d'Entença, 100, Local 1, 08015 Barcelona | <strong>Phone:</strong> +34 622 247 085</p>
       </section>
     </main>`,
@@ -1971,7 +1971,7 @@ const manualOverrides = {
         <p>Équipe de 18+ professeurs professionnels diplômés d'ENA Cuba, ISA Cuba, Compagnie Carlos Acosta (Royal Ballet London), champions du monde de Bachata et danseurs du Roi Lion Paris.</p>
       </section>
       <section>
-        <p><strong>Note: 5.0 étoiles</strong> - Plus de 505 avis Google. École de danse accréditée CID-UNESCO.</p>
+        <p><strong>Note: 5.0 étoiles</strong> - Plus de 505 avis Google. Réservez votre cours de bienvenue AUJOURD'HUI.</p>
         <p><strong>Adresse:</strong> Carrer d'Entença, 100, Local 1, 08015 Barcelona | <strong>Tél:</strong> +34 622 247 085</p>
       </section>
     </main>`,
