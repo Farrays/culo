@@ -50,7 +50,6 @@ export const TEACHER_IMAGES: Record<string, TeacherImageConfig> = {
     styles: [
       'afro-jazz',
       'salsa-lady-style',
-      'bachata-lady-style',
       'afro-contemporaneo',
       'salsa-cubana',
       'timba',
@@ -177,10 +176,10 @@ export const TEACHER_IMAGES: Record<string, TeacherImageConfig> = {
     formats: ['avif', 'webp', 'jpg'],
     styles: ['bachata', 'bachata-lady-style'],
   },
-  redbhlue: {
-    id: 'redbhlue',
-    name: 'Redbhlue',
-    basePath: '/images/teachers/img/profesor-redbhlue',
+  redblueh: {
+    id: 'redblueh',
+    name: 'RedBlueh',
+    basePath: '/images/teachers/img/profesor-redblueh',
     objectPosition: 'center 20%',
     sizes: [320, 640, 960],
     formats: ['avif', 'webp', 'jpg'],
@@ -245,7 +244,7 @@ export const STYLE_TEACHERS: Record<string, string[]> = {
   // Afro styles
   afrocontemporaneo: ['yunaisy-farray', 'charlie-breezy', 'alejandro-minoso'],
   afrojazz: ['yunaisy-farray', 'alejandro-minoso'],
-  afro: ['redbhlue', 'charlie-breezy'], // Afrobeats
+  afro: ['redblueh', 'charlie-breezy'], // Afrobeats
 
   // Urban
   dancehall: ['sandra-gomez', 'isabel-lopez'],

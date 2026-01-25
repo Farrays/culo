@@ -21,15 +21,7 @@ export const DIRECTOR_INFO: TeacherPageInfo = {
   image: '/images/teachers/img/maestra-yunaisy-farray_320.webp',
   specialtyKey: 'teacher.yunaisyFarray.specialty',
   bioKey: 'teacher.yunaisyFarray.bio',
-  styles: [
-    'Afro Jazz',
-    'Salsa Lady Style',
-    'Bachata Lady Style',
-    'Afro Contemporáneo',
-    'Salsa Cubana',
-    'Salsa',
-    'Heels',
-  ],
+  styles: ['Afro Jazz', 'Salsa Lady Style', 'Afro Contemporáneo', 'Salsa Cubana', 'Salsa', 'Heels'],
   isDirector: true,
 };
 
@@ -122,12 +114,12 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
     styles: ['Salsa Cubana', 'Salsa Lady Style', 'Sexy Style', 'Sexy Reggaeton'],
   },
   // ============================================================================
-  // REDBHLUE (raíces africanas, Tanzania)
+  // REDBLUEH (raíces africanas, Tanzania)
   // ============================================================================
   {
-    id: 'redbhlue',
-    name: 'Redbhlue',
-    image: '/images/teachers/img/profesor-redbhlue_320.webp',
+    id: 'redblueh',
+    name: 'Redblueh',
+    image: '/images/teachers/img/profesor-redblueh_320.webp',
     specialtyKey: 'teacher.redbhlue.specialty',
     bioKey: 'teacher.redbhlue.bio',
     styles: ['Afrobeats', 'Afro Dance'],
@@ -217,7 +209,6 @@ export const TEACHERS_PERSON_SCHEMAS: TeacherSchemaInfo[] = [
     knowsAbout: [
       'Afro Jazz',
       'Salsa Lady Style',
-      'Bachata Lady Style',
       'Afro Contemporaneo',
       'Salsa Cubana',
       'Salsa',

@@ -319,7 +319,7 @@ const INSTRUCTOR_NAME_TO_REGISTRY: Record<string, string> = {
   'Mathias Font': 'mathias-font',
   'Carlos Canto': 'carlos-canto',
   Noemi: 'noemi',
-  Redbhlue: 'redbhlue',
+  Redbhlue: 'redblueh',
   'Juan Alvarez': 'juan-alvarez',
   CrisAg: 'crisag',
   'Grechén Méndez': 'grechen-mendez',

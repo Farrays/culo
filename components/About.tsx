@@ -1,6 +1,5 @@
 import React, { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { useI18n } from '../hooks/useI18n';
 import AnimateOnScroll from './AnimateOnScroll';
 import MethodInfographic from './MethodInfographic';
@@ -17,225 +16,160 @@ const EXTERNAL_LINKS = {
 const About: React.FC = () => {
   const { t, locale } = useI18n();
 
-  // Answer Capsules Q&A data for GEO optimization
-  const answerCapsules = [
-    { question: t('aboutQ1'), answer: t('aboutA1') },
-    { question: t('aboutQ2'), answer: t('aboutA2') },
-    { question: t('aboutQ3'), answer: t('aboutA3') },
-  ];
-
-  // FAQPage schema for AI citations
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: answerCapsules.map(item => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
-  };
-
   return (
-    <>
-      {/* FAQPage Schema for Answer Capsules - GEO optimization */}
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
-      </Helmet>
+    <section
+      id="about"
+      className="relative py-12 md:py-16 bg-black overflow-hidden"
+      role="region"
+      aria-labelledby="about-title"
+      itemScope
+      itemType="https://schema.org/Person"
+    >
+      {/* Hidden microdata for SEO */}
+      <meta itemProp="name" content="Yunaisy Farray" />
+      <meta itemProp="jobTitle" content="Directora y Fundadora" />
+      <meta itemProp="nationality" content="Cuba" />
+      <link itemProp="sameAs" href="https://www.instagram.com/yunaisyfarray/" />
+      <link itemProp="sameAs" href={EXTERNAL_LINKS.cidUnesco} />
 
-      <section
-        id="about"
-        className="relative py-12 md:py-16 bg-black overflow-hidden"
-        role="region"
-        aria-labelledby="about-title"
-        itemScope
-        itemType="https://schema.org/Person"
-      >
-        {/* Hidden microdata for SEO */}
-        <meta itemProp="name" content="Yunaisy Farray" />
-        <meta itemProp="jobTitle" content="Directora y Fundadora" />
-        <meta itemProp="nationality" content="Cuba" />
-        <link itemProp="sameAs" href="https://www.instagram.com/yunaisyfarray/" />
-        <link itemProp="sameAs" href={EXTERNAL_LINKS.cidUnesco} />
-
-        <div className="container mx-auto px-6 relative z-10">
-          {/* Sección superior: Texto a la izquierda, Foto a la derecha */}
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            {/* Columna izquierda: Texto sobre Yunaisy */}
-            <div className="space-y-6">
-              <AnimateOnScroll>
-                <h2
-                  id="about-title"
-                  className="text-4xl md:text-5xl font-black tracking-tighter mb-2 holographic-text"
-                  data-speakable="true"
-                >
-                  <span itemProp="name">{t('aboutTitle')}</span>
-                </h2>
-                <p
-                  id="about-subtitle"
-                  className="text-2xl md:text-3xl font-medium holographic-text"
-                  data-speakable="true"
-                >
-                  {t('aboutSubtitle')}
-                </p>
-              </AnimateOnScroll>
-              <AnimateOnScroll delay={200}>
-                <div
-                  id="about-bio"
-                  className="text-lg text-neutral/90 leading-relaxed space-y-4"
-                  itemProp="description"
-                  data-speakable="true"
-                >
-                  {t('aboutBio')
-                    .split('\n\n')
-                    .map((paragraph, index) => (
-                      <p key={index} id={`about-bio-para-${index + 1}`}>
-                        {paragraph}
-                      </p>
-                    ))}
-                  {/* E-E-A-T: External verification links */}
-                  <p className="text-sm text-neutral/60 mt-4 flex flex-wrap gap-x-4 gap-y-1">
-                    <a
-                      href={EXTERNAL_LINKS.streetDance2}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-primary-accent transition-colors underline underline-offset-2"
-                      aria-label={t('aboutVerifyStreetDance')}
-                    >
-                      Street Dance 2 (IMDb)
-                    </a>
-                    <a
-                      href={EXTERNAL_LINKS.cidUnesco}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-primary-accent transition-colors underline underline-offset-2"
-                      aria-label={t('aboutVerifyCID')}
-                    >
-                      CID-UNESCO
-                    </a>
-                  </p>
-                </div>
-              </AnimateOnScroll>
-            </div>
-
-            {/* Columna derecha: Foto artística de Yunaisy */}
-            <AnimateOnScroll delay={300}>
-              <figure
-                className="rounded-2xl overflow-hidden border border-primary-accent/30 shadow-lg"
-                itemProp="image"
-                itemScope
-                itemType="https://schema.org/ImageObject"
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Sección superior: Texto a la izquierda, Foto a la derecha */}
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+          {/* Columna izquierda: Texto sobre Yunaisy */}
+          <div className="space-y-6">
+            <AnimateOnScroll>
+              <h2
+                id="about-title"
+                className="text-4xl md:text-5xl font-black tracking-tighter mb-2 holographic-text"
+                data-speakable="true"
               >
-                <Suspense
-                  fallback={<div className="aspect-[3/4] bg-primary-dark/30 animate-pulse" />}
-                >
-                  <OptimizedImage
-                    src="/images/yunaisy/img/yunaisy-artistica-4"
-                    alt={t('aboutYunaisyPhotoAlt')}
-                    aspectRatio="3/4"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="w-full"
-                    objectFit="cover"
-                    objectPosition="top"
-                    breakpoints={[320, 640, 768, 1024, 1440]}
-                  />
-                </Suspense>
-                <meta
-                  itemProp="url"
-                  content="https://www.farrayscenter.com/images/yunaisy/img/yunaisy-artistica-4_1024.webp"
-                />
-                <meta itemProp="width" content="1024" />
-                <meta itemProp="height" content="1365" />
-              </figure>
+                <span itemProp="name">{t('aboutTitle')}</span>
+              </h2>
+              <p
+                id="about-subtitle"
+                className="text-2xl md:text-3xl font-medium holographic-text"
+                data-speakable="true"
+              >
+                {t('aboutSubtitle')}
+              </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={200}>
+              <div
+                id="about-bio"
+                className="text-lg text-neutral/90 leading-relaxed space-y-4"
+                itemProp="description"
+                data-speakable="true"
+              >
+                {t('aboutBio')
+                  .split('\n\n')
+                  .map((paragraph, index) => (
+                    <p key={index} id={`about-bio-para-${index + 1}`}>
+                      {paragraph}
+                    </p>
+                  ))}
+                {/* E-E-A-T: External verification links */}
+                <p className="text-sm text-neutral/60 mt-4 flex flex-wrap gap-x-4 gap-y-1">
+                  <a
+                    href={EXTERNAL_LINKS.streetDance2}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary-accent transition-colors underline underline-offset-2"
+                    aria-label={t('aboutVerifyStreetDance')}
+                  >
+                    Street Dance 2 (IMDb)
+                  </a>
+                  <a
+                    href={EXTERNAL_LINKS.cidUnesco}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary-accent transition-colors underline underline-offset-2"
+                    aria-label={t('aboutVerifyCID')}
+                  >
+                    CID-UNESCO
+                  </a>
+                </p>
+              </div>
             </AnimateOnScroll>
           </div>
 
-          {/* Sección inferior: Método Farray - Brand Schema */}
-          <AnimateOnScroll delay={400}>
-            <div
-              id="metodo-farray-section"
-              className="max-w-4xl mx-auto p-8 bg-black/50 backdrop-blur-md border border-primary-accent/20 rounded-2xl shadow-2xl"
+          {/* Columna derecha: Foto artística de Yunaisy */}
+          <AnimateOnScroll delay={300}>
+            <figure
+              className="rounded-2xl overflow-hidden border border-primary-accent/30 shadow-lg"
+              itemProp="image"
               itemScope
-              itemType="https://schema.org/Brand"
-              data-speakable="true"
+              itemType="https://schema.org/ImageObject"
             >
-              <meta itemProp="name" content="Método Farray®" />
-              <link itemProp="url" href={`https://www.farrayscenter.com/${locale}/metodo-farray`} />
-              <h3
-                id="metodo-farray-title"
-                className="text-3xl md:text-4xl font-bold holographic-text text-center mb-8"
-                itemProp="slogan"
+              <Suspense
+                fallback={<div className="aspect-[3/4] bg-primary-dark/30 animate-pulse" />}
               >
-                {t('aboutMethodTitle')}
-              </h3>
-              <MethodInfographic />
-              <div className="text-center mt-8">
-                <Link
-                  to={`/${locale}/metodo-farray`}
-                  className="group inline-flex items-center gap-3 bg-primary-accent text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
-                  aria-label={t('aboutMethodCTAAriaLabel')}
-                >
-                  <span>{t('aboutMethodCTA')}</span>
-                  <svg
-                    className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-          </AnimateOnScroll>
-
-          {/* GEO Answer Capsules - Q&A for AI citations */}
-          <AnimateOnScroll delay={500}>
-            <div
-              id="about-answer-capsules"
-              className="max-w-4xl mx-auto mt-12 grid gap-6 md:grid-cols-3"
-              role="region"
-              aria-label="Preguntas frecuentes sobre Yunaisy Farray"
-            >
-              {answerCapsules.map((item, index) => (
-                <div
-                  key={index}
-                  className="p-6 bg-black/40 backdrop-blur-sm border border-primary-accent/20 rounded-xl hover:border-primary-accent/40 transition-colors"
-                  data-answer-capsule="true"
-                  itemScope
-                  itemType="https://schema.org/Question"
-                >
-                  <h4
-                    className="text-lg font-bold text-primary-accent mb-3"
-                    itemProp="name"
-                    data-speakable="true"
-                  >
-                    {item.question}
-                  </h4>
-                  <p
-                    className="text-sm text-neutral/80 leading-relaxed"
-                    itemProp="acceptedAnswer"
-                    itemScope
-                    itemType="https://schema.org/Answer"
-                    data-speakable="true"
-                  >
-                    <span itemProp="text">{item.answer}</span>
-                  </p>
-                </div>
-              ))}
-            </div>
+                <OptimizedImage
+                  src="/images/yunaisy/img/yunaisy-artistica-4"
+                  alt={t('aboutYunaisyPhotoAlt')}
+                  aspectRatio="3/4"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="w-full"
+                  objectFit="cover"
+                  objectPosition="top"
+                  breakpoints={[320, 640, 768, 1024, 1440]}
+                />
+              </Suspense>
+              <meta
+                itemProp="url"
+                content="https://www.farrayscenter.com/images/yunaisy/img/yunaisy-artistica-4_1024.webp"
+              />
+              <meta itemProp="width" content="1024" />
+              <meta itemProp="height" content="1365" />
+            </figure>
           </AnimateOnScroll>
         </div>
-      </section>
-    </>
+
+        {/* Sección inferior: Método Farray - Brand Schema */}
+        <AnimateOnScroll delay={400}>
+          <div
+            id="metodo-farray-section"
+            className="max-w-4xl mx-auto p-8 bg-black/50 backdrop-blur-md border border-primary-accent/20 rounded-2xl shadow-2xl"
+            itemScope
+            itemType="https://schema.org/Brand"
+            data-speakable="true"
+          >
+            <meta itemProp="name" content="Método Farray®" />
+            <link itemProp="url" href={`https://www.farrayscenter.com/${locale}/metodo-farray`} />
+            <h3
+              id="metodo-farray-title"
+              className="text-3xl md:text-4xl font-bold holographic-text text-center mb-8"
+              itemProp="slogan"
+            >
+              {t('aboutMethodTitle')}
+            </h3>
+            <MethodInfographic />
+            <div className="text-center mt-8">
+              <Link
+                to={`/${locale}/metodo-farray`}
+                className="group inline-flex items-center gap-3 bg-primary-accent text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-accent-glow animate-glow focus:outline-none focus:ring-4 focus:ring-primary-accent/50"
+                aria-label={t('aboutMethodCTAAriaLabel')}
+              >
+                <span>{t('aboutMethodCTA')}</span>
+                <svg
+                  className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </AnimateOnScroll>
+      </div>
+    </section>
   );
 };
 

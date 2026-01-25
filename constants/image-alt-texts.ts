@@ -1545,6 +1545,13 @@ export const IMAGE_ALT_TEXTS = {
     fr: "Cours de danse à Barcelone - Étudiants pratiquant divers styles de danse au studio Farray's Center",
   },
 
+  alt_hero_clases_baile_barcelona: {
+    es: "Clases de Baile en Barcelona - Estudiantes de todas las edades disfrutando de salsa, bachata, dancehall y más en Farray's International Dance Center",
+    en: "Dance Classes in Barcelona - Students of all ages enjoying salsa, bachata, dancehall and more at Farray's International Dance Center",
+    ca: "Classes de Ball a Barcelona - Estudiants de totes les edats gaudint de salsa, bachata, dancehall i més al Farray's International Dance Center",
+    fr: "Cours de Danse à Barcelone - Étudiants de tous âges profitant de salsa, bachata, dancehall et plus au Farray's International Dance Center",
+  },
+
   // ==========================================================================
   // FACILITIES - Salas de baile e instalaciones
   // ==========================================================================
