@@ -78,8 +78,6 @@ const BumBumPage = lazy(() => import('./components/BumBumPage'));
 const CuerpoFitPage = lazy(() => import('./components/CuerpoFitPage'));
 const BaileMananasPage = lazy(() => import('./components/BaileMananasPage'));
 const FullBodyCardioPage = lazy(() => import('./components/FullBodyCardioPage'));
-const TestClassPage = lazy(() => import('./components/TestClassPage'));
-const AfroContemporaneoV2Page = lazy(() => import('./components/AfroContemporaneoV2Page'));
 const CalendarPage = lazy(() => import('./components/CalendarPage'));
 const HomePageV2 = lazy(() => import('./components/HomePageV2'));
 
@@ -917,24 +915,6 @@ const AppContent: React.FC = () => {
             />
 
             {/* ===== TEST/EXPERIMENTAL ROUTES ===== */}
-            <Route
-              path="/:locale/test/clase-experimental"
-              element={
-                <>
-                  <LocaleSync />
-                  <TestClassPage />
-                </>
-              }
-            />
-            <Route
-              path="/:locale/test/afro-contemporaneo-v2"
-              element={
-                <>
-                  <LocaleSync />
-                  <AfroContemporaneoV2Page />
-                </>
-              }
-            />
 
             {/* ===== LANDING PAGES (Lazy-loaded with code splitting) ===== */}
             <Route
