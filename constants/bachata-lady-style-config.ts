@@ -122,7 +122,7 @@ export const BACHATA_LADY_STYLE_CONFIG: LadyStyleTemplateConfig = {
       name: 'Eugenia Trujillo',
       specialty: 'bachataLadyTeacher2Specialty',
       bio: 'bachataLadyTeacher2Bio',
-      image: '/images/teachers/img/profesora-eugenio-trujillo_320.webp',
+      image: '/images/teachers/img/profesora-eugenia-trujillo_320.webp',
       objectPosition: 'center 35%',
     },
   ],
