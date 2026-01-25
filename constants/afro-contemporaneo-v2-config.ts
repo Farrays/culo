@@ -125,4 +125,26 @@ export const AFRO_CONTEMPORANEO_V2_CONFIG: FullDanceClassConfigV2 = {
     lessonsKey: 'schema_afroContemporaneo_lessons',
     duration: 'PT1H',
   },
+
+  // === RELATED CLASSES (Internal Linking & E-E-A-T) ===
+  relatedClasses: {
+    enabled: true,
+    classes: [
+      {
+        slug: 'afro-jazz',
+        nameKey: 'relatedAfroJazzName',
+        descriptionKey: 'relatedAfroJazzDesc',
+      },
+      {
+        slug: 'contemporaneo-barcelona',
+        nameKey: 'relatedContemporaneoName',
+        descriptionKey: 'relatedContemporaneoDesc',
+      },
+      {
+        slug: 'ballet-barcelona',
+        nameKey: 'relatedBalletName',
+        descriptionKey: 'relatedBalletDesc',
+      },
+    ],
+  },
 };
