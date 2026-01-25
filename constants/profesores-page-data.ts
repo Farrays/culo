@@ -120,8 +120,8 @@ export const TEACHERS_LIST: TeacherPageInfo[] = [
     id: 'redblueh',
     name: 'Redblueh',
     image: '/images/teachers/img/profesor-redblueh_320.webp',
-    specialtyKey: 'teacher.redbhlue.specialty',
-    bioKey: 'teacher.redbhlue.bio',
+    specialtyKey: 'teacher.redblueh.specialty',
+    bioKey: 'teacher.redblueh.bio',
     styles: ['Afrobeats', 'Afro Dance'],
   },
   // ============================================================================
@@ -348,8 +348,8 @@ export const TEACHERS_PERSON_SCHEMAS: TeacherSchemaInfo[] = [
   },
   {
     name: 'Redblueh',
-    jobTitleKey: 'teacherSchema.redbhlue.jobTitle',
-    descriptionKey: 'teacherSchema.redbhlue.description',
+    jobTitleKey: 'teacherSchema.redblueh.jobTitle',
+    descriptionKey: 'teacherSchema.redblueh.description',
     knowsAbout: ['Afrobeats', 'Ntcham', 'African Dance', 'Tanzanian Dance'],
   },
   {

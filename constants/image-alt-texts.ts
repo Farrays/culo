@@ -495,7 +495,7 @@ export const IMAGE_ALT_TEXTS = {
         fr: "Portrait de Noemi, instructrice de Bachata et Bachata Lady Style à Barcelone, talent émergent en qui Farray's a fortement misé, partenaire de Carlos Canto, spécialiste en techniques féminines avec don pour transformer étudiants en fans fidèles dès le premier jour",
       },
     },
-    redbhlue: {
+    redblueh: {
       portrait: {
         es: 'Retrato de Redbhlue, profesor internacional nativo de Tanzania especialista en Afrobeats y Ntcham en Barcelona, raíces africanas auténticas con conocimientos profundos, energía y alegría contagiante, uno de los maestros más recomendados de Barcelona con autenticidad africana en cada movimiento',
         en: 'Portrait of Redbhlue, international instructor native of Tanzania specialist in Afrobeats and Ntcham in Barcelona, authentic African roots with deep knowledge, contagious energy and joy, one of the most recommended masters in Barcelona with African authenticity in every movement',
