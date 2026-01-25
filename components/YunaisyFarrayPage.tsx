@@ -95,16 +95,17 @@ const EXTERNAL_LINKS: { pattern: RegExp; url: string; title: string; dofollow?: 
   },
 ];
 
-// Component for external link with proper accessibility
-const ExternalLink: React.FC<{ href: string; title: string; children: ReactNode }> = ({
-  href,
-  title,
-  children,
-}) => (
+// Component for external link with proper accessibility and SEO
+const ExternalLink: React.FC<{
+  href: string;
+  title: string;
+  children: ReactNode;
+  dofollow?: boolean;
+}> = ({ href, title, children, dofollow = true }) => (
   <a
     href={href}
     target="_blank"
-    rel="noopener noreferrer"
+    rel={dofollow ? 'noopener noreferrer' : 'nofollow noopener noreferrer'}
     title={title}
     className="text-primary-accent hover:text-white underline decoration-primary-accent/50 hover:decoration-white transition-colors duration-200"
   >
@@ -137,7 +138,12 @@ const renderTextWithLinks = (text: string): ReactNode => {
           index: match.index,
           length: match[0].length,
           replacement: (
-            <ExternalLink key={`${patternKey}-${match.index}`} href={link.url} title={link.title}>
+            <ExternalLink
+              key={`${patternKey}-${match.index}`}
+              href={link.url}
+              title={link.title}
+              dofollow={link.dofollow}
+            >
               {match[0]}
             </ExternalLink>
           ),
