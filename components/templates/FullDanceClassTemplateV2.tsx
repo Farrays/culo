@@ -274,6 +274,14 @@ export interface FullDanceClassConfigV2 {
     thumbnailUrl?: string;
     videoId?: string;
   };
+  relatedClasses?: {
+    enabled: boolean;
+    classes: Array<{
+      slug: string;
+      nameKey: string;
+      descriptionKey: string;
+    }>;
+  };
 }
 
 // ============================================================================
