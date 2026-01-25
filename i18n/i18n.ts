@@ -59,6 +59,19 @@ i18n
 
     // Namespace configuration
     defaultNS: 'common',
+    // Fallback to search in all namespaces if key not found in default
+    fallbackNS: [
+      'home',
+      'pages',
+      'classes',
+      'booking',
+      'schedule',
+      'calendar',
+      'blog',
+      'faq',
+      'about',
+      'contact',
+    ],
     // Phase 3: ALL NAMESPACES LOADED (temporary fix while optimizing component-level loading)
     ns: [
       'common',
@@ -76,7 +89,7 @@ i18n
 
     // React integration
     react: {
-      useSuspense: true, // Re-enabled for proper async loading
+      useSuspense: false, // Disabled for synchronous component rendering
     },
 
     // Interpolation
@@ -86,10 +99,6 @@ i18n
 
     // Development
     debug: false, // Set to true for debugging
-
-    // Performance
-    load: 'currentOnly', // Only load current language (not fallback)
-    preload: [], // Don't preload any languages (load on demand)
 
     // Detection
     detection: {
