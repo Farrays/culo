@@ -67,7 +67,9 @@ describe('HeroV2', () => {
 
   it('displays urgency message', () => {
     render(<HeroV2 config={mockConfig} />);
-    expect(screen.getByText('Primera clase gratis')).toBeInTheDocument();
+    expect(
+      screen.getByText('Oferta Enero: Clase de bienvenida + Regalo sorpresa')
+    ).toBeInTheDocument();
   });
 
   it('opens modal on CTA click', () => {
@@ -94,7 +96,7 @@ describe('HeroV2', () => {
   it('renders schedule link with correct href', () => {
     render(<HeroV2 config={mockConfig} />);
 
-    const scheduleLink = screen.getByText('Ver horarios');
+    const scheduleLink = screen.getByText('Ver Horarios');
     expect(scheduleLink.closest('a')).toHaveAttribute(
       'href',
       '/es/horarios-clases-baile-barcelona'

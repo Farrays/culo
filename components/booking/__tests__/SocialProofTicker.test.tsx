@@ -127,7 +127,7 @@ describe('SocialProofTicker', () => {
       await advanceTimers(100);
       await advanceTimers(1100);
 
-      expect(screen.getByText(/2 min ago/)).toBeInTheDocument();
+      expect(screen.getByText(/hace 2 min/)).toBeInTheDocument();
     });
   });
 
@@ -150,7 +150,7 @@ describe('SocialProofTicker', () => {
       await advanceTimers(1100);
 
       // Click the main content button (not the close button)
-      const mainButton = screen.getByLabelText(/Click to book/);
+      const mainButton = screen.getByLabelText(/Haz clic para reservar/);
       fireEvent.click(mainButton);
       expect(onClick).toHaveBeenCalledTimes(1);
     });
@@ -168,7 +168,7 @@ describe('SocialProofTicker', () => {
       await advanceTimers(100);
       await advanceTimers(1100);
 
-      const mainButton = screen.getByLabelText(/Click to book/);
+      const mainButton = screen.getByLabelText(/Haz clic para reservar/);
       fireEvent.click(mainButton);
 
       expect(targetElement.scrollIntoView).toHaveBeenCalledWith({
@@ -186,7 +186,7 @@ describe('SocialProofTicker', () => {
       await advanceTimers(100);
       await advanceTimers(1100);
 
-      const mainButton = screen.getByLabelText(/Click to book/);
+      const mainButton = screen.getByLabelText(/Haz clic para reservar/);
       fireEvent.click(mainButton);
 
       expect(trackEvent).toHaveBeenCalledWith('social_proof_click', expect.any(Object));
@@ -200,9 +200,9 @@ describe('SocialProofTicker', () => {
       await advanceTimers(100);
       await advanceTimers(1100);
 
-      const mainButton = screen.getByLabelText(/Click to book/);
+      const mainButton = screen.getByLabelText(/Haz clic para reservar/);
       expect(mainButton).toHaveAttribute('aria-label');
-      expect(mainButton.getAttribute('aria-label')).toContain('Click to book');
+      expect(mainButton.getAttribute('aria-label')).toContain('Haz clic para reservar');
     });
 
     it('should have aria-live region for screen readers', async () => {
@@ -255,7 +255,7 @@ describe('SocialProofTicker', () => {
       await advanceTimers(100);
       await advanceTimers(1100);
 
-      expect(screen.getByText(/just now/)).toBeInTheDocument();
+      expect(screen.getByText(/hace un momento/)).toBeInTheDocument();
     });
 
     it('should show minutes for bookings > 1 minute ago', async () => {
@@ -275,7 +275,7 @@ describe('SocialProofTicker', () => {
       await advanceTimers(100);
       await advanceTimers(1100);
 
-      expect(screen.getByText(/5 min ago/)).toBeInTheDocument();
+      expect(screen.getByText(/hace 5 min/)).toBeInTheDocument();
     });
   });
 
@@ -296,7 +296,7 @@ describe('SocialProofTicker', () => {
       await advanceTimers(100);
       await advanceTimers(1100);
 
-      const dismissButton = screen.getByLabelText('Close');
+      const dismissButton = screen.getByLabelText('Cerrar');
       expect(dismissButton).toBeInTheDocument();
     });
 
@@ -306,7 +306,7 @@ describe('SocialProofTicker', () => {
       await advanceTimers(100);
       await advanceTimers(1100);
 
-      const dismissButton = screen.getByLabelText('Close');
+      const dismissButton = screen.getByLabelText('Cerrar');
       fireEvent.click(dismissButton);
 
       // Advance through animation

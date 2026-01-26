@@ -40,7 +40,7 @@ describe('StickyMobileCTA', () => {
 
   it('renders without crashing', () => {
     render(<StickyMobileCTA />);
-    expect(screen.getByText('Reserva tu clase')).toBeInTheDocument();
+    expect(screen.getByText('Clase de Bienvenida')).toBeInTheDocument();
   });
 
   it('is hidden initially (before scrolling)', () => {
@@ -85,7 +85,7 @@ describe('StickyMobileCTA', () => {
   it('opens modal when CTA button is clicked', () => {
     render(<StickyMobileCTA />);
 
-    const ctaButton = screen.getByText('Reserva tu clase');
+    const ctaButton = screen.getByText('Clase de Bienvenida');
     fireEvent.click(ctaButton);
 
     expect(screen.getByTestId('lead-capture-modal')).toBeInTheDocument();
@@ -95,7 +95,7 @@ describe('StickyMobileCTA', () => {
     render(<StickyMobileCTA />);
 
     // Open modal
-    fireEvent.click(screen.getByText('Reserva tu clase'));
+    fireEvent.click(screen.getByText('Clase de Bienvenida'));
     expect(screen.getByTestId('lead-capture-modal')).toBeInTheDocument();
 
     // Close modal

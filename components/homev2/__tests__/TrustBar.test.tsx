@@ -29,11 +29,11 @@ describe('TrustBar', () => {
   it('displays translated labels', () => {
     render(<TrustBar />);
 
-    expect(screen.getByText('trustbar_cidunesco')).toBeInTheDocument();
-    expect(screen.getByText('trustbar_students')).toBeInTheDocument();
-    expect(screen.getByText('trustbar_facilities')).toBeInTheDocument();
-    expect(screen.getByText('trustbar_styles')).toBeInTheDocument();
-    expect(screen.getByText('trustbar_google')).toBeInTheDocument();
+    expect(screen.getByText('Acreditados')).toBeInTheDocument();
+    expect(screen.getByText('Estudiantes')).toBeInTheDocument();
+    expect(screen.getByText('Instalaciones')).toBeInTheDocument();
+    expect(screen.getByText('Estilos')).toBeInTheDocument();
+    expect(screen.getByText('Google Reviews')).toBeInTheDocument();
   });
 
   it('wraps content in AnimateOnScroll', () => {
@@ -49,7 +49,7 @@ describe('TrustBar', () => {
     expect(ratingValue).toBeInTheDocument();
 
     // Check that rating is near the Google Rating label
-    const ratingLabel = screen.getByText('trustbar_google');
+    const ratingLabel = screen.getByText('Google Reviews');
     expect(ratingLabel).toBeInTheDocument();
   });
 

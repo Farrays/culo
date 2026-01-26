@@ -55,7 +55,7 @@ describe('ScheduleCard', () => {
 
   it('renders level badge', () => {
     render(<ScheduleCard scheduleClass={mockScheduleClass} />);
-    expect(screen.getByText('horariosV2_level_principiantes')).toBeInTheDocument();
+    expect(screen.getByText('Principiantes')).toBeInTheDocument();
   });
 
   it('renders with default props', () => {
@@ -97,8 +97,8 @@ describe('ScheduleCard', () => {
 
     render(<ScheduleCard scheduleClass={mockScheduleClass} />);
 
-    // The share button uses translation key as text
-    const shareButton = screen.getByRole('button', { name: /horariosV2_card_share/i });
+    // The share button uses Spanish translation
+    const shareButton = screen.getByRole('button', { name: /Compartir/i });
     await fireEvent.click(shareButton);
 
     expect(mockShare).toHaveBeenCalled();
@@ -123,8 +123,8 @@ describe('ScheduleCard', () => {
 
     render(<ScheduleCard scheduleClass={mockScheduleClass} />);
 
-    // The share button uses translation key as text
-    const shareButton = screen.getByRole('button', { name: /horariosV2_card_share/i });
+    // The share button uses Spanish translation
+    const shareButton = screen.getByRole('button', { name: /Compartir/i });
     await fireEvent.click(shareButton);
 
     expect(mockClipboard.writeText).toHaveBeenCalled();
@@ -137,7 +137,7 @@ describe('ScheduleCard', () => {
     };
 
     render(<ScheduleCard scheduleClass={advancedClass} />);
-    expect(screen.getByText('horariosV2_level_avanzado')).toBeInTheDocument();
+    expect(screen.getByText('Avanzado')).toBeInTheDocument();
   });
 
   it('renders with custom color class', () => {

@@ -23,12 +23,16 @@ vi.mock('../../lib/icons', () => ({
 describe('Services', () => {
   it('renders section title', () => {
     render(<Services />);
-    expect(screen.getByText('Nuestros Servicios')).toBeInTheDocument();
+    expect(screen.getByText('Mucho Más Que Una Escuela de Baile')).toBeInTheDocument();
   });
 
   it('renders section intro', () => {
     render(<Services />);
-    expect(screen.getByText('Descubre todo lo que ofrecemos')).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /En Farray's International Dance Center ofrecemos mucho más que clases de baile/
+      )
+    ).toBeInTheDocument();
   });
 
   it('renders section with id for navigation', () => {
@@ -53,28 +57,28 @@ describe('Services', () => {
   it('renders featured service titles (rental, corporate, gift)', () => {
     render(<Services />);
     expect(screen.getByText('Alquiler de Salas')).toBeInTheDocument();
-    expect(screen.getByText('Eventos Corporativos')).toBeInTheDocument();
-    expect(screen.getByText('Tarjetas Regalo')).toBeInTheDocument();
+    expect(screen.getByText('Servicios para Empresas')).toBeInTheDocument();
+    expect(screen.getByText('Regala Baile')).toBeInTheDocument();
   });
 
   it('renders all service titles when showAll is true', () => {
     render(<Services showAll />);
     expect(screen.getByText('Alquiler de Salas')).toBeInTheDocument();
-    expect(screen.getByText('Sesiones Fotográficas')).toBeInTheDocument();
-    expect(screen.getByText('Fiestas Privadas')).toBeInTheDocument();
-    expect(screen.getByText('Clases Privadas')).toBeInTheDocument();
+    expect(screen.getByText('Grabaciones y Fotografía')).toBeInTheDocument();
+    expect(screen.getByText('Fiestas y Despedidas')).toBeInTheDocument();
+    expect(screen.getByText('Clases Particulares')).toBeInTheDocument();
   });
 
   it('renders service descriptions', () => {
     render(<Services />);
-    expect(screen.getByText('Alquila nuestras salas para tus ensayos.')).toBeInTheDocument();
+    expect(screen.getByText(/Salas amplias y equipadas para ensayos/)).toBeInTheDocument();
   });
 
   it('renders service CTA links', () => {
     render(<Services />);
-    expect(screen.getByText('Reservar sala')).toBeInTheDocument();
-    expect(screen.getByText('Solicitar info')).toBeInTheDocument();
-    expect(screen.getByText('Comprar')).toBeInTheDocument();
+    expect(screen.getByText('Reserva tu Sala')).toBeInTheDocument();
+    expect(screen.getByText('Solicitar Team Building')).toBeInTheDocument();
+    expect(screen.getByText('Regala una Experiencia')).toBeInTheDocument();
   });
 
   it('renders icons for featured services', () => {

@@ -136,7 +136,7 @@ describe('ClassCard', () => {
       );
 
       // Full indicator should appear
-      expect(screen.getByText(/booking_class_full/)).toBeInTheDocument();
+      expect(screen.getByText(/Completo/)).toBeInTheDocument();
     });
 
     it('should disable the card when class is full', () => {
@@ -169,7 +169,7 @@ describe('ClassCard', () => {
         <ClassCard classData={classData} onSelect={mockOnSelect} onShowInfo={mockOnShowInfo} />
       );
 
-      expect(screen.getByText(/booking_class_new/)).toBeInTheDocument();
+      expect(screen.getByText(/NUEVA/)).toBeInTheDocument();
     });
 
     it('should not show NEW badge when isNew is false', () => {
@@ -178,7 +178,7 @@ describe('ClassCard', () => {
         <ClassCard classData={classData} onSelect={mockOnSelect} onShowInfo={mockOnShowInfo} />
       );
 
-      expect(screen.queryByText(/booking_class_new/)).not.toBeInTheDocument();
+      expect(screen.queryByText(/NUEVA/)).not.toBeInTheDocument();
     });
 
     it('should not show NEW badge when isNew is undefined', () => {
@@ -187,7 +187,7 @@ describe('ClassCard', () => {
         <ClassCard classData={classData} onSelect={mockOnSelect} onShowInfo={mockOnShowInfo} />
       );
 
-      expect(screen.queryByText(/booking_class_new/)).not.toBeInTheDocument();
+      expect(screen.queryByText(/NUEVA/)).not.toBeInTheDocument();
     });
 
     it('should show NEW badge when newUntil is in the future', () => {
@@ -201,7 +201,7 @@ describe('ClassCard', () => {
         <ClassCard classData={classData} onSelect={mockOnSelect} onShowInfo={mockOnShowInfo} />
       );
 
-      expect(screen.getByText(/booking_class_new/)).toBeInTheDocument();
+      expect(screen.getByText(/NUEVA/)).toBeInTheDocument();
     });
 
     it('should not show NEW badge when newUntil is in the past', () => {
@@ -215,7 +215,7 @@ describe('ClassCard', () => {
         <ClassCard classData={classData} onSelect={mockOnSelect} onShowInfo={mockOnShowInfo} />
       );
 
-      expect(screen.queryByText(/booking_class_new/)).not.toBeInTheDocument();
+      expect(screen.queryByText(/NUEVA/)).not.toBeInTheDocument();
     });
 
     it('should show NEW badge when isNew is true and newUntil is not set', () => {
@@ -224,7 +224,7 @@ describe('ClassCard', () => {
         <ClassCard classData={classData} onSelect={mockOnSelect} onShowInfo={mockOnShowInfo} />
       );
 
-      expect(screen.getByText(/booking_class_new/)).toBeInTheDocument();
+      expect(screen.getByText(/NUEVA/)).toBeInTheDocument();
     });
 
     it('should have amber styling for NEW badge', () => {
@@ -342,7 +342,9 @@ describe('ClassCard', () => {
 
       // Should have a button with share aria-label
       const buttons = screen.getAllByRole('button');
-      const shareButton = buttons.find(btn => btn.getAttribute('aria-label')?.includes('share'));
+      const shareButton = buttons.find(btn =>
+        btn.getAttribute('aria-label')?.includes('Compartir')
+      );
       expect(shareButton).toBeInTheDocument();
     });
 
@@ -353,7 +355,9 @@ describe('ClassCard', () => {
       );
 
       const buttons = screen.getAllByRole('button');
-      const shareButton = buttons.find(btn => btn.getAttribute('aria-label')?.includes('share'));
+      const shareButton = buttons.find(btn =>
+        btn.getAttribute('aria-label')?.includes('Compartir')
+      );
 
       if (shareButton) {
         fireEvent.click(shareButton);
@@ -370,7 +374,9 @@ describe('ClassCard', () => {
       );
 
       const buttons = screen.getAllByRole('button');
-      const shareButton = buttons.find(btn => btn.getAttribute('aria-label')?.includes('share'));
+      const shareButton = buttons.find(btn =>
+        btn.getAttribute('aria-label')?.includes('Compartir')
+      );
 
       if (shareButton) {
         fireEvent.click(shareButton);
@@ -402,7 +408,9 @@ describe('ClassCard', () => {
       );
 
       const buttons = screen.getAllByRole('button');
-      const shareButton = buttons.find(btn => btn.getAttribute('aria-label')?.includes('share'));
+      const shareButton = buttons.find(btn =>
+        btn.getAttribute('aria-label')?.includes('Compartir')
+      );
       expect(shareButton).toHaveAttribute('aria-label');
     });
 
