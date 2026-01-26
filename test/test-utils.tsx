@@ -15,6 +15,7 @@ import React, { ReactElement } from 'react';
 import { render, RenderOptions, RenderResult } from '@testing-library/react';
 import { I18nextProvider } from 'react-i18next';
 import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import i18n from './i18n-test-config';
 
 // ============================================================================
@@ -31,9 +32,11 @@ interface AllProvidersProps {
  */
 const AllProviders: React.FC<AllProvidersProps> = ({ children }) => {
   return (
-    <I18nextProvider i18n={i18n}>
-      <BrowserRouter>{children}</BrowserRouter>
-    </I18nextProvider>
+    <HelmetProvider>
+      <I18nextProvider i18n={i18n}>
+        <BrowserRouter>{children}</BrowserRouter>
+      </I18nextProvider>
+    </HelmetProvider>
   );
 };
 
