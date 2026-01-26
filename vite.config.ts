@@ -173,11 +173,8 @@ export default defineConfig({
           // Sanitization
           if (id.includes('node_modules/dompurify')) return 'sanitization';
 
-          // i18n translations - separate chunk per locale for code-splitting
-          if (id.includes('/locales/es.ts')) return 'i18n-es';
-          if (id.includes('/locales/en.ts')) return 'i18n-en';
-          if (id.includes('/locales/ca.ts')) return 'i18n-ca';
-          if (id.includes('/locales/fr.ts')) return 'i18n-fr';
+          // i18n translations are now loaded dynamically via resourcesToBackend
+          // (JSON files loaded on demand, not bundled as JS chunks)
 
           // Constants - separate chunk (large config files)
           if (id.includes('/constants/') && !id.includes('/constants/blog/')) {
