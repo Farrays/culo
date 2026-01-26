@@ -12,6 +12,7 @@ import {
 import { HelmetProvider } from 'react-helmet-async';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n/i18n';
+import { preloadNamespaces } from './i18n/preloadNamespaces';
 import type { Locale } from './types';
 import { SUPPORTED_LOCALES } from './types';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -287,6 +288,12 @@ const AppContent: React.FC = () => {
   useEffect(() => {
     document.documentElement.lang = locale;
   }, [locale]);
+
+  // Preload namespaces for the current route (lazy loading optimization)
+  useEffect(() => {
+    const pathWithoutLocale = location.pathname.replace(/^\/(es|en|ca|fr)/, '') || '/';
+    preloadNamespaces(pathWithoutLocale);
+  }, [location.pathname]);
 
   return (
     <div className="bg-black text-neutral antialiased font-sans overflow-x-hidden">
