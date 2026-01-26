@@ -10,7 +10,7 @@ vi.mock('../AnimateOnScroll', () => ({
 describe('Teachers', () => {
   it('renders section title', () => {
     render(<Teachers />);
-    expect(screen.getByText('Nuestros Profesores')).toBeInTheDocument();
+    expect(screen.getByText('Nuestro Equipo de Maestros')).toBeInTheDocument();
   });
 
   it('renders all teacher names', () => {
@@ -52,7 +52,7 @@ describe('Teachers', () => {
 
   it('renders CTA link to teachers page', () => {
     render(<Teachers />);
-    const ctaLink = screen.getByRole('link', { name: /ver todos/i });
+    const ctaLink = screen.getByRole('link', { name: /conoce a todo el equipo/i });
     expect(ctaLink).toBeInTheDocument();
     // Link should point to the teachers page
     expect(ctaLink).toHaveAttribute('href', '/es/profesores-baile-barcelona');

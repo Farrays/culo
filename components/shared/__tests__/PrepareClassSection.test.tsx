@@ -93,8 +93,8 @@ describe('PrepareClassSection', () => {
 
   it('renders teacher quote section', () => {
     render(<PrepareClassSection {...defaultProps} />);
-    expect(screen.getByText('teacherQuoteTitle')).toBeInTheDocument();
-    expect(screen.getByText('teacherQuoteText')).toBeInTheDocument();
+    expect(screen.getByText('Consejo del profesor')).toBeInTheDocument();
+    expect(screen.getByText('La práctica hace al maestro')).toBeInTheDocument();
   });
 
   it('renders teacher name and credential', () => {
