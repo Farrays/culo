@@ -15,7 +15,15 @@
  */
 
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import type { ClassCategory } from './lib/whatsapp';
+import {
+  sendTestWhatsApp,
+  sendCustomTemplate,
+  sendBookingConfirmationWhatsApp,
+  getWhatsAppConfigInfo,
+  CLASS_CATEGORIES,
+  CATEGORY_LABELS,
+  type ClassCategory,
+} from './lib/whatsapp';
 
 export default async function handler(
   req: VercelRequest,
@@ -57,16 +65,6 @@ export default async function handler(
   };
 
   try {
-    // Importar dinámicamente para capturar errores
-    const {
-      sendTestWhatsApp,
-      sendCustomTemplate,
-      sendBookingConfirmationWhatsApp,
-      getWhatsAppConfigInfo,
-      CLASS_CATEGORIES,
-      CATEGORY_LABELS,
-    } = await import('./lib/whatsapp');
-
     const configInfo = getWhatsAppConfigInfo();
 
     if (!configInfo.hasToken || !configInfo.hasPhoneId) {
