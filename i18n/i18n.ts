@@ -1,15 +1,21 @@
 /**
- * i18next Configuration - Namespace Splitting Strategy
+ * i18next Configuration - Namespace Lazy Loading Strategy (Phase 2)
  *
  * Bundle Size Impact:
- * - Before: 370KB (all translations loaded)
- * - After: ~100KB initial load (common + eager namespaces)
- * - Savings: -73% (-270KB)
+ * - Before: ~1.5MB (all 11 namespaces loaded)
+ * - After: ~50KB initial load (common only)
+ * - Savings: -97%
  *
  * Namespace Strategy:
- * - CORE (common): Always loaded - Nav, footer, SEO (~50KB)
- * - EAGER (booking, schedule, calendar): Loaded with core - Dynamic keys (~50KB)
- * - LAZY: Loaded on demand per route (~10-20KB each)
+ * - INITIAL (common): Always loaded - Nav, footer, shared UI (~16KB)
+ * - LAZY: All others loaded on-demand per route via preloadNamespaces()
+ *   - home, classes: HomePage
+ *   - booking, schedule, calendar: BookingPage
+ *   - blog: BlogPage
+ *   - faq: FAQPage
+ *   - about: AboutPage
+ *   - contact: ContactPage
+ *   - pages: Landing pages (~1.16MB - loaded only when needed)
  *
  * Language Detection Priority:
  * 1. localStorage (key: fidc_preferred_locale)
@@ -17,7 +23,7 @@
  * 3. Browser language
  * 4. Fallback: 'es'
  *
- * Reference: docs/OPTIMIZATION_ROADMAP.md (Fase 1: Migración a i18next)
+ * Reference: docs/OPTIMIZATION_ROADMAP.md (Phase 2: Namespace Lazy Loading)
  */
 
 import i18n from 'i18next';
@@ -72,20 +78,9 @@ i18n
       'about',
       'contact',
     ],
-    // Phase 3: ALL NAMESPACES LOADED (temporary fix while optimizing component-level loading)
-    ns: [
-      'common',
-      'booking',
-      'schedule',
-      'calendar',
-      'home',
-      'classes',
-      'blog',
-      'faq',
-      'about',
-      'contact',
-      'pages',
-    ],
+    // Phase 2: Lazy loading - only load 'common' initially, others loaded on demand per route
+    // This reduces initial bundle from ~1.5MB to ~50KB
+    ns: ['common'],
 
     // React integration
     react: {
