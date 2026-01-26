@@ -143,7 +143,8 @@ interface UseImageAltReturn {
  * Hook for accessing localized image alt texts
  */
 export function useImageAlt(): UseImageAltReturn {
-  const { locale } = useI18n();
+  const { i18n } = useI18n();
+  const locale = i18n.language;
 
   /**
    * Get alt text for the current locale

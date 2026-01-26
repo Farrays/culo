@@ -5,7 +5,6 @@
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, fireEvent, act } from '../../../test/test-utils';
-import React from 'react';
 
 vi.mock('../../../utils/analytics', () => ({
   trackEvent: vi.fn(),

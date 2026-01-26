@@ -55,7 +55,7 @@ global.localStorage = localStorageMock as unknown as Storage;
 // Mock scrollTo
 global.scrollTo = vi.fn();
 
-// Mock useI18n hook globally
+// Mock useI18n hook globally - Phase 3: react-i18next interface
 vi.mock('../hooks/useI18n', () => {
   const mockTranslations: Record<string, string> = {
     // Common
@@ -92,10 +92,12 @@ vi.mock('../hooks/useI18n', () => {
 
   return {
     useI18n: () => ({
-      locale: 'en',
-      setLocale: vi.fn(),
       t: (key: string) => mockTranslations[key] || key,
-      isLoading: false,
+      i18n: {
+        language: 'en',
+        changeLanguage: vi.fn(),
+      },
+      ready: true,
     }),
     I18nProvider: ({ children }: { children: React.ReactNode }) => children,
   };

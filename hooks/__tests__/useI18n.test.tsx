@@ -22,18 +22,19 @@ describe('useI18n', () => {
     vi.restoreAllMocks();
   });
 
-  it('provides locale and t function', async () => {
+  it('provides i18n instance and t function', async () => {
     const { result } = renderHook(() => useI18n(), {
       wrapper: I18nTestWrapper,
     });
 
     await waitFor(() => {
-      expect(result.current.isLoading).toBe(false);
+      expect(result.current.ready).toBe(true);
     });
 
-    expect(result.current.locale).toBeDefined();
+    expect(result.current.i18n).toBeDefined();
+    expect(result.current.i18n.language).toBeDefined();
     expect(typeof result.current.t).toBe('function');
-    expect(typeof result.current.setLocale).toBe('function');
+    expect(typeof result.current.i18n.changeLanguage).toBe('function');
   });
 
   it('translates keys correctly', async () => {
@@ -42,7 +43,7 @@ describe('useI18n', () => {
     });
 
     await waitFor(() => {
-      expect(result.current.isLoading).toBe(false);
+      expect(result.current.ready).toBe(true);
     });
 
     const translation = result.current.t('navHome');
@@ -56,7 +57,7 @@ describe('useI18n', () => {
     });
 
     await waitFor(() => {
-      expect(result.current.isLoading).toBe(false);
+      expect(result.current.ready).toBe(true);
     });
 
     const missingKey = 'nonexistent.key';
@@ -69,33 +70,33 @@ describe('useI18n', () => {
     });
 
     await waitFor(() => {
-      expect(result.current.isLoading).toBe(false);
+      expect(result.current.ready).toBe(true);
     });
 
     // Should be one of the supported locales
-    expect(['en', 'es', 'ca', 'fr']).toContain(result.current.locale);
+    expect(['en', 'es', 'ca', 'fr']).toContain(result.current.i18n.language);
   });
 
-  it('setLocale function is available', async () => {
+  it('changeLanguage function is available', async () => {
     const { result } = renderHook(() => useI18n(), {
       wrapper: I18nTestWrapper,
     });
 
     await waitFor(() => {
-      expect(result.current.isLoading).toBe(false);
+      expect(result.current.ready).toBe(true);
     });
 
-    expect(typeof result.current.setLocale).toBe('function');
+    expect(typeof result.current.i18n.changeLanguage).toBe('function');
   });
 
-  it('isLoading becomes false after translations load', async () => {
+  it('ready becomes true after translations load', async () => {
     const { result } = renderHook(() => useI18n(), {
       wrapper: I18nTestWrapper,
     });
 
-    // Eventually loading should be false
+    // Eventually ready should be true
     await waitFor(() => {
-      expect(result.current.isLoading).toBe(false);
+      expect(result.current.ready).toBe(true);
     });
   });
 
@@ -105,7 +106,7 @@ describe('useI18n', () => {
     });
 
     await waitFor(() => {
-      expect(result.current.isLoading).toBe(false);
+      expect(result.current.ready).toBe(true);
     });
 
     // Test multiple common translation keys
@@ -116,17 +117,17 @@ describe('useI18n', () => {
     expect(contactTranslation).toBeTruthy();
   });
 
-  it('locale is a valid string', async () => {
+  it('language is a valid string', async () => {
     const { result } = renderHook(() => useI18n(), {
       wrapper: I18nTestWrapper,
     });
 
     await waitFor(() => {
-      expect(result.current.isLoading).toBe(false);
+      expect(result.current.ready).toBe(true);
     });
 
-    expect(typeof result.current.locale).toBe('string');
-    expect(result.current.locale.length).toBe(2);
+    expect(typeof result.current.i18n.language).toBe('string');
+    expect(result.current.i18n.language.length).toBe(2);
   });
 
   it('t returns string type', async () => {
@@ -135,7 +136,7 @@ describe('useI18n', () => {
     });
 
     await waitFor(() => {
-      expect(result.current.isLoading).toBe(false);
+      expect(result.current.ready).toBe(true);
     });
 
     expect(typeof result.current.t('navHome')).toBe('string');
